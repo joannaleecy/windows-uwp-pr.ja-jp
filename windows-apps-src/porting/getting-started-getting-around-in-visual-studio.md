@@ -1,54 +1,54 @@
 ---
-xxxxxxxxxxx: Xxxxxxx xxxxxx xx Xxxxxx Xxxxxx
-xxxxx: Xxxxxxx xxxxxx xx Xxxxxx Xxxxxx
-xx.xxxxxxx: YXXXYYXY-YXYY-YYYY-XYYY-YYYYXXXXXXYX
+description: Visual Studio の操作方法
+title: Visual Studio の操作方法
+ms.assetid: 7FBB50A2-6D22-4082-B333-5153DADDDE9A
 ---
 
-# Xxxxxxx xxxxxxx: Xxxxxxx xxxxxx xx Xxxxxx Xxxxxx
+# はじめに: Visual Studio の操作方法
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-## Xxxxxxx xxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx
+## Microsoft Visual Studio の操作方法
 
-Xxx'x xxx xxx xxxx xx xxx xxxxxxx xxxx xx xxxxxxx xxxxxxx, xxx xxxx xx xxx xxx xxxxx xxxx xxxx xxx xxxxxx xxx Xxxxxxxxx Xxxxxx Xxxxxx xxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx (XXX).
+ここでは、前の手順で作ったプロジェクトに戻り、Microsoft Visual Studio 統合開発環境 (IDE) の操作方法について示します。
 
-Xx xxx xxx xx Xxxxx xxxxxxxxx, xxx xxxxxxx xxxx xxxxx xxxxxx xx xxxxxxxx, xxxx xxxxxx xxxxx xx xxx xxxx xxxx, xxx xxxxxx (xxxxxx xxx XX xx xxxxxx xxxx) xx xxx xxxxxx xxxx, xxx xxxxxxxx xxx xxxxx xxxxxxxxxx xx xxx xxxxx xxxx.
+Xcode 開発者であれば、左側のウィンドウにソース ファイル、中央のウィンドウにエディター (UI またはソース コード)、コントロールとそのプロパティが右側のウィンドウにそれぞれ表示された、以下の既定のビューを見慣れていることと思われます。
 
-![xxxxx xxxxxxxxxxx xxxxxxxxxxx](images/ios-to-uwp/xcode-ide.png)
+![Xcode の開発環境](images/ios-to-uwp/xcode-ide.png)
 
-Xxxxxxxxx Xxxxxx Xxxxxx xxxxx xxxx xxxxxxx, xxxxxxxx xxx xxxxxxx xxxx xxx xxx xxxxxxxx xx xxx xxxx xxxx xx xxx **Xxxxxxx**. Xxx xxxxxx xxxxx xxx xx xxx **Xxxxxxxx Xxxxxxxx** xx xxx xxxxx xxxx, xxx xxxxxxxxxx xxx xx **Xxxxxxxxxx** xxxxx xxx **Xxxxxxxx Xxxxxxxx** xxxx, xxxx xxxx:
+Microsoft Visual Studio もこれによく似ています。ただし、既定のビューでは、左側の**ツールボックス**にコントロールが表示されます。 ソース ファイルは右側の**ソリューション エクスプローラー**に表示され、プロパティは次のように、**[ソリューション エクスプローラー]** ウィンドウの **[プロパティ]** に表示されます。
 
-![xxxxxx xxxxxx xxxxxxxxxxx xxxxxxxxxxx](images/ios-to-uwp/vs-ide.png)
+![Visual Studio の開発環境](images/ios-to-uwp/vs-ide.png)
 
-Xx xxxx xxxxx x xxxxxx xxxxx xx xxx, xxx'xx xx xxxxxxx xx xxxx xxx xxx xxxxxxxxx xxx xxxxx xx Xxxxxx Xxxxxx xx xxxxx xxx xxxxxx xxxxx xx xxx xxxx xx xxx xxxxxx xxx xxx xxxxxxx xx xxx xxxxx. Xx xxxx, xxx xxx xxxxx xxx xxxx xxx xxxxx xxx xx xxx xxxx xx xxxxxxxxxx xx, xxx Xxxxxx Xxxxxx xxxx xxxxxxx x xxxxxx xxx xxxxxxx xxx xxxxx xx xxxx xx xxxxxx xxxx xxx xxxxxxx xx. Xxxx xxxxx xxxx xxxx x xxxxx xxxxxxx xxx xxxx xx xxxxx xxxxx xxx. Xxxx xxxxxx xxx xx xxx xxx xxxxx xx-xx, xxxxxxx xx xx xxxxx. Xxxxx xxx xxxx, xxx xx xxx xx xxxxxxxxx xx xxxx xxxxx: xxxxxx xx xxxx xxxxxxx xx xx xxx xxxxxxx xxxx. Xx xxx xxxx xxxxxx xx (xxx'x xxxxx, xx'xx xxx xxxx xx), xxxxxx **Xxxxx Xxxxxx Xxxxxx** xxxx xxx **Xxxxxx** xxxx xx xxxxxxx xxxxx.
+これに少し違和感を感じる場合、Visual Studio ではウィンドウを並べ替えて、ソース ファイルを画面の左側に、ツールボックスを右側に配置することができます。 実際に、任意のウィンドウのタイトル バーをクリックしてドラッグすることによって位置変更ができ、リリースするとドッキングされる位置を示すボックスが影付きで表示されます。 多くのウィンドウのタイトル バーにも小さな描画ピン アイコンがあります。 これにより、パネルをそのまま固定して、その場所にロックできます。 ウィンドウのピン留めを外して、領域を節約するために折りたたむことができます。これは、モニターが幅の狭い側にある場合に便利です。 失敗した場合 (ご安心ください。すべて対応できます) は、**[ウィンドウ]** メニューの **[ウィンドウ レイアウトのリセット]** をクリックして順序を復元します。
 
-## Xxxxxx xxxxxxxx, xxxxxxx xxxxx xxxxxxxxxx, xxx xxxxxxxxxx xx xxxxxx
+## コントロールの追加、プロパティの設定、イベントへの応答
 
-Xxx'x xxx xxx xxxx xxxxxxxx xx xxxx xxxxxxx. Xx'xx xxxx xxxxxx xxxx xx xxxxx xxxxxxxxxx, xxx xxxxx xxxx xxxx xx xxxxxxx xx xxx xx xxx xxxxxxx'x xxxxxx.
+次は、プロジェクトにコントロールをいくつか追加しましょう。 ここでは、コントロールのプロパティをいくつか変更した後、コントロールのイベントの 1 つに応答するコードを記述します。
 
-Xx xxx xxxxxxxx xx Xxxxx, xxx xxxx xx xxx xxxxxxx .xxx xxxx xx xxx Xxxxxxxxxx xxx xxxx xxxx xxx xxxx xxxxxxxx, xxxx xx x**Xxxxx Xxxx Xxxxxx** xx x **Xxxxx**, xx xxxxx xxxxx:
+Xcode でコントロールを追加するには、目的の .xib ファイルまたはストーリーボードを開いた後、次に示すように、コントロールをドラッグ アンド ドロップします (**[Round Rect Button]** (角丸四角形ボタン) または **[Label]** (ラベル))。
 
-![xxxxxxxxx xx xx xxxxx](images/ios-to-uwp/xcode-add-button-label.png)
+![Xcode での UI の設計](images/ios-to-uwp/xcode-add-button-label.png)
 
-Xxx'x xx xxxxxxxxx xxxxxxx xx Xxxxxx Xxxxxx. Xxxx xxx **Xxxxxxx**, xxxx xxx **Xxxxxx** xxxxxxx, xxx xxxx xxxx xx xxxx xxx XxxxXxxx.xxxx xxxx'x xxxxxx xxxxxxx.
+次に、Visual Studio で同じような操作を行ってみましょう。 **ツールボックス**の **Button** コントロールをドラッグし、MainPage.xaml ファイルのデザイン サーフェスにドロップします。
 
-Xx xxx xxxx xxxx xxx **XxxxXxxxx** xxxxxxx, xx xx xxxxx xxxx xxxx:
+**TextBlock** コントロールについても同じ操作を行うと、次のように表示されます。
 
-![xxxxxxxxx xx xx xxxxxx xxxxxx](images/ios-to-uwp/vs-add-button-label.png)
+![Visual Studio での UI の設計](images/ios-to-uwp/vs-add-button-label.png)
 
-Xxxxxx Xxxxx, xxxxx xxxxx xxx xxxxxx xxx xxxxxxx xxxxxxxxxxx xxxxxx x .xxx xx Xxxxxxxxxx xxxx, Xxxxxx Xxxxxx xxxxxxxxxx xxx xx xxxx xxx XXXX xxxxx xxxx xx xxxxx xxxxx xxxxxxx xx xxx xxxx, xxxxxxxx, xxxxxxxxxxx, XXX-xxxx xxxxxxxx. Xxx xxxx xxxx xxxxx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX), xxx [XXXX xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185595). Xxx xxx, xxxx xxxx xxxxxxxxxx xxxxxxxxx xx xxx **Xxxxxx** xxxx xx xxxxxxx xx xxx **XXXX** xxxx. Xxx **XXXX** xxxx xxxxxx xxx xxxx xxxxxxx xxxxx xxxxxxxxx, xxx xx xxx xxxxx xxxx xxxxx xx, xxx xxx xxxxxxx xxxxxxx xxxx xxxxxxxxx xxxx xxxxxxxx. Xxx xxx, xxxxxxx, xxx'x xxxxx xx xxxx xxx **Xxxxxx** xxx **Xxxxxxxxxx** xxxxx.
+レイアウトとバインド情報が .xib ファイルまたはストーリーボード ファイル内に格納される Xcode とは異なり、Visual Studio では、これらの詳細を格納するために使用される XAML ファイルを、そのリッチで編集可能な宣言型の XML のような言語で編集することをお勧めします。 Extensible Application Markup Language (XAML) について詳しくは、「[XAML の概要](https://msdn.microsoft.com/library/windows/apps/mt185595)」をご覧ください。 ここでは、**[デザイン]** ウィンドウに表示されているものはすべて **[XAML]** ウィンドウに定義されていることを覚えておいてください。 **[XAML]** ウィンドウでは必要に応じて細かな調整を行うことができるため、慣れるにつれてユーザー インターフェイス コードを手動ですばやく開発できるようになります。 ただし、ここでは、**[デザイン]** ウィンドウと **[プロパティ]** ウィンドウにのみ注目します。
 
-Xxx'x xxxxxx xxx xxxxxx'x xxxxxxx. Xx xxx xxxx xxxx, xx xxxxxx xxx xxxxxx'x xxxx xx Xxxxx, xxx xxxxx xxxxxx xxx xxxxx xx xxx **Xxxxx** xxxxx xx xxx xxxxxxxxxx xxxxx.
+次に、ボタンの詳細を変更します。 おわかりのように、Xcode でボタンの名前を変更するには、ボタンのプロパティ パネルの **Title** フィールドの値を変更します。
 
-Xxxx xxxxx Xxxxxx Xxxxxx xxx xx xxxxxxxxx xxxx xxxxxxx. Xx xxx **Xxxxxx** xxxx, xxx xxx xxxxxx xx xxxx xx xxxxx. Xxxx xx xxx **Xxxxxxxxxx** xxxx, xxxxx xxx **Xxxxxxx** xxxxx xxxx "Xxxxxx" xx "Xxxxx Xx". Xxxx, xxxxxx xxx xxxx xx xxx xxxxxx xxxxxxx, xx xxxxxxxx xxx **Xxxx** xxxxx xxxx "&xx;Xx Xxxx&xx;" xx "xxXxxxxx", xx xxxxx xxxx:
+Visual Studio を使う場合、同じような操作を行ってみましょう。 **[デザイン]** ウィンドウで、このボタンをタップしてフォーカスを設定します。 **[プロパティ]** ウィンドウで、**[コンテンツ]** の値を "Button" から "Press Me" に変更します。 次に、ボタン コントロールの名前を更新するために、ここで示すように、**[名前]** の値を "&lt;名前なし&gt;" から "myButton" に変更します。
 
-![xxxxxx xxxxxxxxxx xxxxxx xx xxxxxx xxxxxx](images/ios-to-uwp/vs-button-properties.png)
+![Visual Studio の [ボタンのプロパティ] ウィンドウ](images/ios-to-uwp/vs-button-properties.png)
 
-Xxx, xxx'x xxxxx xxxx xxxx xx xxxxxx xxx **XxxxXxxxx** xxxxxxx'x xxxxxxxx xx "Xxxxx, Xxxxx!" xxxxx xxx xxxx xxxx xxx xxxxxx.
+次に、ユーザーによってボタンがタップされたときに **TextBlock** コントロールの内容を "Hello, World!" に変更する コードを記述します。
 
-Xx Xxxxx, xxx xxxxx xxxxxxxxx xx xxxxx xxxx x xxxxxxx xx xxxxxxx xxxx xxx xxxx xxxxxxxxxxx xxxx xxxx xxxx xxx xxxxxxx, xxxxx xx xxxxxxx-xxxxxxxx xxx xxxxxx xxxx xxx xxxxxx xxxx, xxxx xxxx:
+Xcode では、次に示すように、コードを記述した後でコントロールに関連付けることによって (多くの場合、そのボタンをソース コードにコントロールドラッグすることによって)、イベントをコントロールに関連付けます。
 
-![xxxxxx x xxxxxx xx xx xxxxx xx xxxxx](images/ios-to-uwp/xcode-add-button-event.png)
+![Xcode でのボタンとイベントの関連付け](images/ios-to-uwp/xcode-add-button-event.png)
 
 ```swift
 // Swift implementation.
@@ -58,11 +58,11 @@ Xx Xxxxx, xxx xxxxx xxxxxxxxx xx xxxxx xxxx x xxxxxxx xx xxxxxxx xxxx xxx xxxx x
 }
 ```
 
-Xxxxxx Xxxxxx xx xxxxxxx. Xx xxx xxx xxxxx xx **Xxxxxxxxxx** xx x xxxxxxxxx xxxx xxxxxx. Xxxx xx xxxxx xxx xxxxxxxx xxxxxx xxxxxxxxxx xxxx xxx xxxxxxxx xxxxxxx xxx xxxxxx, xxxx xxxx:
+Visual Studio の操作も似ています。 **[プロパティ]** の右上隅には、稲妻ボタンがあります。 このボタンを使うと、次のように、選んだコントロールに関連付けられている可能なイベントの一覧が表示されます。
 
-![xxxxxx xxxxxx xxxx xx xxxxxx xxxxxx](images/ios-to-uwp/vs-button-event.png)
+![Visual Studio でのボタンのイベントの一覧](images/ios-to-uwp/vs-button-event.png)
 
-Xx xxx xxxx xxx xxx xxxxxx'x xxxxx xxxxx, xxxxx xxxxxx xxx xxxxxx xx xxx **Xxxxxx** xxxx. Xxxx, xxxxx xxx xxxxxxxxx xxxx xxxxxx, xxx xxxxxx-xxxxx xxx xxxxx xxx xxxx xx xxx xxxx **Xxxxx**. Xxxxxx Xxxxxx xxxx xxxx xxx xxxxx "xxXxxxxx\_Xxxxx" xx xxx **Xxxxx** xxx, xxx xxxx xxxx xxx xxxxxxxx xxx xxxxxxxxxxxxx xxxxx xxxxxxx xx xxx XxxxXxxx.xxxx.xx xxxx, xxxx xxxx.
+ボタンのクリック イベントにコードを追加するには、**[デザイン]** ウィンドウで、まずそのボタンを選択します。 次に、稲妻ボタンをクリックし、**[Click]** という名前の横の空のボックスをダブルクリックします。 その後、Visual Studio によってイベント "myButton\_Click" が **[Click]** ボックスに追加されます。さらに、次のように、対応するイベント ハンドラーが MainPage.xaml.cs ファイルに追加され、表示されます。
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -71,9 +71,9 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Xxx'x xxx xxxx-xx xxx **XxxxXxxxx** xxxxxxx. Xx Xxxxx, xxx xxxxx xxxxxxx-xxxx xxx xxxxxx xx xxx xxxxxx xxxx xxxx xx xxxxxxxxx xxx xxxxxxx xxxx xxx xxxxxxxxxx, xxxx xxxx.
+次に、**TextBlock** コントロールをフックします。 Xcode では、このように、ボタンをソース コード ファイルにコントロールドラッグし、コントロールをその定義に関連付けます。
 
-![xxxxxx x xxxxx xx xxx xxxxxxxxxx xx xxxxx](images/ios-to-uwp/xcode-add-button-reference.png)
+![Xcode でのラベルと定義の関連付け](images/ios-to-uwp/xcode-add-button-reference.png)
 
 ```swift
 // Swift implentation.
@@ -81,16 +81,16 @@ Xxx'x xxx xxxx-xx xxx **XxxxXxxxx** xxxxxxx. Xx Xxxxx, xxx xxxxx xxxxxxx-xxxx xx
 @IBOutlet weak var myLabel : UILabel
 ```
 
-Xx Xxxxxx Xxxxxx, xxx xxx'x xxxx xxxxxxxxxx xxx xxxxxxx xx xxxx xx xxxxxx xxxx xxx xxx. Xxx'x xxxxxx xxxx xx xxx xxxxxxxxxx xxxxxx:
+Visual Studio では、これは常に実行されるため、コントロールの関連付けの必要はありません。 プロパティをいくつかを変更してみましょう。
 
-1.  Xxx xxx XxxxXxxx.xxxx xxxx xxx.
-2.  Xx xxx **Xxxxxx** xxxx, xxx xxx **XxxxXxxxx** xxxxxxx.
-3.  Xx xxx **Xxxxxxxxxx** xxxx, xxx xxx xxxxxx xxxxxx xx xxxxxxx xxx xxxxxxxxxx.
-4.  Xx xxx **Xxxx** xxx, xxxxxx "&xx;Xx Xxxx&xx;" xx "xxXxxxx".
+1.  MainPage.xaml ファイルのタブをタップします。
+2.  **[デザイン]** ウィンドウで、**TextBlock** コントロールをタップします。
+3.  **[プロパティ]** ウィンドウで、レンチ ボタンをタップしてプロパティを表示します。
+4.  **[名前]** ボックスで、"&lt;名前なし&gt;" を "myLabel" に変更します。
 
-![xxxxx xxxxxxxxxx xxxxxx xx xxxxxx xxxxxx](images/ios-to-uwp/vs-label-properties.png)
+![Visual Studio の [ラベルのプロパティ] ウィンドウ](images/ios-to-uwp/vs-label-properties.png)
 
-Xxx'x xxx xxx xxxx xxxx xx xxx xxxxxx'x xxxxx xxxxx. Xx xx xxxx, xxx xxx XxxxXxxx.xxxx.xx xxxx, xxx xxx xxx xxxxxxxxx xxxx xx xxx xxXxxxxx\_Xxxxx xxxxx xxxxxxx.
+次に、ボタンのクリック イベントにコードを追加してみましょう。 このためには、MainPage.xaml.cs ファイルをタップし、次のコードを myButton\_Click イベント ハンドラーに追加します。
 
 ```csharp
 private void myButton_Click(object sender, RoutedEventArgs e)
@@ -100,7 +100,7 @@ private void myButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Xxxx xx xxxxxxx xx xxxx xxx xxxxx xxxxx xx Xxxxx:
+これは Swift で記述した場合に似ています。
 
 ```swift
 @IBAction func buttonPressed(sender: UIButton) {
@@ -108,14 +108,18 @@ Xxxx xx xxxxxxx xx xxxx xxx xxxxx xxxxx xx Xxxxx:
 }
 ```
 
-Xxxxxxx, xx xxx xxx xxx, xxxxxx xxx **Xxxxx** xxxx, xxx xxxx xxxxxx **Xxxxx Xxxxxxxxx** (xx xxxx xxxxx XY). Xxxxx xxx xxx xxxxxx, xxxxx xxx "Xxxxx Xx" xxxxxx, xxx xxx xxx xxxxx'x xxxxxxxx xxxxxx xxxx "XxxxXxxxx" xx "Xxxxx, Xxxxx!", xx xxxxx xx xxx xxxxxxxxx xxxxxx.
+最後に、アプリを実行します。**[デバッグ]** メニュー、**[デバッグの開始]** の順に選択します (または、単に F5 キーを押します)。 アプリが起動されたら、[Press Me] ボタンをクリックして、次の図に示すように、ラベルの内容が "TextBlock" から "Hello, World!" に変わることを確かめます。
 
-![xxxxxxx xx xxxxxxx xxx xxxxx xxxxxxxxxxx: xxxxx, xxxxx!](images/ios-to-uwp/vs-hello-world.png)
+![最初のチュートリアルを実行した結果: Hello, World!](images/ios-to-uwp/vs-hello-world.png)
 
-Xx xxxx xxx xxx, xxxxxx xx Xxxxxx Xxxxxx, xxx xxx **Xxxxx** xxxx, xxx xxxx xxx **Xxxx Xxxxxxxxx** (xx xxxx xxxxx XXXXX + XY). Xxxxxx xxxx Xxxxxx Xxxxxx xxxx xxx xxx xxx xxx xx xxxx xxxxxxxxx xxxxxxx, xx xxxxx xxx xx xxxx xxxxxxx xx xxxx.
+アプリを中止するには、Visual Studio に戻り、**[デバッグ]** メニュー、**[デバッグの停止]** の順にタップします (または、単に Shift キーを押しながら F5 キーを押します)。 Visual Studio では、多数の異なるデバイスでアプリを試して、各デバイスでの動作を確認してみてください。
 
-## Xxxx xxxx
+## 次のステップ
 
-[Xxxxxxx xxxxxxx: Xxxxxx Xxxxxxxx](getting-started-common-controls.md)
+[はじめに: コモン コントロール](getting-started-common-controls.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

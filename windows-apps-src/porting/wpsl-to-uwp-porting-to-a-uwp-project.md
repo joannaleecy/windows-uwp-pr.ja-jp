@@ -1,34 +1,34 @@
 ---
-xxxxxxxxxxx: Xxx xxxxx xxx xxxxxxx xxxxxxx xx xxxxxxxx x xxx Xxxxxxx YY xxxxxxx xx Xxxxxx Xxxxxx xxx xxxxxxx xxxx xxxxx xxxx xx.
-xxxxx: Xxxxxxx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxxx xx x XXX xxxxxxx
-xx.xxxxxxx: xYYxYYxY-xxYY-YxYY-xYYY-YxYYYYYYxYxY
+description: You begin the porting process by creating a new Windows 10 project in Visual Studio and copying your files into it.
+title: Porting a Windows Phone Silverlight project to a UWP project
+ms.assetid: d86c99c5-eb13-4e37-b000-6a657543d8f4
 ---
 
-# Xxxxxxx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxxx xx x XXX xxxxxxx
+# Porting a Windows Phone Silverlight project to a UWP project
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxx xxxxxxxx xxxxx xxx [Xxxxxxxxx xxx xxxxx xxxxxxxx](wpsl-to-uwp-namespace-and-class-mappings.md).
+The previous topic was [Namespace and class mappings](wpsl-to-uwp-namespace-and-class-mappings.md).
 
-Xxx xxxxx xxx xxxxxxx xxxxxxx xx xxxxxxxx x xxx Xxxxxxx YY xxxxxxx xx Xxxxxx Xxxxxx xxx xxxxxxx xxxx xxxxx xxxx xx.
+You begin the porting process by creating a new Windows 10 project in Visual Studio and copying your files into it.
 
-## Xxxxxx xxx xxxxxxx xxx xxxx xxxxx xx xx
+## Create the project and copy files to it
 
-1.  Xxxxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY xxx xxxxxx x xxx Xxxxx Xxxxxxxxxxx (Xxxxxxx Xxxxxxxxx) xxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxx xxxx Xxxxxxx Xxxxx xxx xxxxx xxxxxxxxx (X#, X++, Xxxxxx Xxxxx)](https://msdn.microsoft.com/library/windows/apps/hh768232). Xxxx xxx xxxxxxx xxxxxx xx xxx xxxxxxx (xx xxxx xxxx) xxxx xxxx xxx xx xxx xxxxxx xxxxxxxx.
-2.  Xx xxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxxxxxx, xxxxxxxx xxx xxx xxxxxx xxxx xxxxx xxx xxxxxx xxxxx xxxxx xxxx xxx xxxx xx xxxxx. Xxxxx Xxxx Xxxxxxxx, xxxx xxxx xxxxxx, xxxx xxxxxx, xxxxxx xxxxxx, Xxxxxxxx Xxxxxxxxxxxx, xxxxxx xxxxxxxxx, xxx xxxxxxxx xxxx xxxx xxx xxxx xx xx-xxx, xx xxxx xxx xxxxxxx. Xxxx xx xxxxxx xxx-xxxxxxx xx xxxx xx xxxxxxxxx.
-3.  Xxxx xxxxx (xxx xxxxxxx, XxxxXxxx.xxxx xxx XxxxXxxx.xxxx.xx) xxxx xxx xxx xxxxxxx xxxx, xxx. Xxxxx, xxxxxx xxx xxx-xxxxxxx xx xxxxxxxxx, xxx xxxxxx xxx xxxxxxxx xxxxx xxxx xxx xxxxxxx. Xxx, xxxxxx xxx xxxx-xxxxx xx xxxxxx x xxxx xxxx Xxxxxx Xxxxxx xxxxxxxxx, xxxx x xxxx xxxxxxx xx xxx xx xxxxxx xx xxxxx xx xx xxxxx. Xxx xxxxx xxxxx xx xxxxxxx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxxxxxx xx xxxxxxx xx xx xxxx xxxx xxx xxxx xxxx xx xxx xxxxxx xxxxxx. Xxxxx, xxx'xx xxxx xxxx xxxxxxxxx xx xxxxxx xxxx xxx xxxxx xxxxx xxxxxxxxxx xxxx xx xxx xxxx xxxxxxx, xxx xxxxxxxxxx xx xxxxxx xxx xxxxxxxx xxxx xx xxx xxx xxxx xxxx x xxxxxxxxxx xxxxxx xxxxxx.
-4.  Xx **Xxxxxxxx Xxxxxxxx**, xxxx xxxx **Xxxx Xxx Xxxxx** xx xxxxxxx xx. Xxxxxx xxx xxxxx xxxx xxx xxxxxx, xxxxx-xxxxx xxxx, xxx xxxxx **Xxxxxxx Xx Xxxxxxx**. Xxxx xxxx xxxxxxxxxxxxx xxxxxxx xxxxx xxxxxxxxxx xxxxxxx. Xxx xxx xxxx xxxxxx **Xxxx Xxx Xxxxx** xxx xx xxx xxxx. Xx xxxxxxxxxxx xxxxxxxx, xx xxx xxxxxx, xx xx xxx xxx **Xxx Xxxxxxxx Xxxx** xxxxxxx, xxxxxx xxxxxxx xxx xxxxxxxxx xxx-xxxxxxx xx xxx Xxxxxx Xxxxxx **Xxxxxxxx Xxxxxxxx**. Xxxxxx-xxxxx xxxx xxxx xxxxxx xxxxxx xxxx **Xxxxx Xxxxxx** xxx xx **Xxxxxxx** xxx **Xxxx xx Xxxxxx Xxxxxxxxx** xxx xx **Xx xxx xxxx**.
-5.  Xxx xxxxxxxxxxx xx xxxxxxxxx xxx xxxxx xxxxx xxxx xxxxxxxx xxxx xx xxxxx xxxxxx xx xxxx xxxxx. Xxx xxxxxxx, xx xxx xxxx xxx xxxxx xxxx Xxxxxx Xxxxxx xxxxxxxxx, xxx'xx xxx xxxx xxxx xxx xx xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br227503), xxx xxx **XxxxxXxxxxxxxxxxXxxx**. Xxxxx xxx xxxx xx XXXX xxxxxx xxx xxxxxxxxxx xxxx xxxxxxxxxxx xxxx xxx xxxxxxxxx xxxxxx xx xxxx xxxxxxx xxxxx xxxxx xx xxxxxx. Xxx, xxx'xx xxxx xxxx xxxxxxxx xxxx xxxxxxxxx xxxxx xxxxxxx xxxxx: xxxxxx "xxx-xxxxxxxxx" xx "xxxxx" xx xxxx xxxxxxxxx xxxxxx xxxxxxxxxxxx xx XXXX xxxxxx; xxx xxx [Xxxxxxxxx xxx xxxxx xxxxxxxx](wpsl-to-uwp-namespace-and-class-mappings.md) xxxxx xxx Xxxxxx Xxxxxx'x **Xxxx xxx Xxxxxxx** xxxxxxx xx xxxx xxxx xxxxxxx xx xxxx xxxxxx xxxx (xxx xxxxxxx, xxxxxxx "Xxxxxx.Xxxxxxx" xxxx "Xxxxxxx.XX.Xxxx"); xxx xx xxx xxxxxxxxxx xxxx xxxxxx xx Xxxxxx Xxxxxx xxx xxx **Xxxxxxx** xxx **Xxxxxxxx Xxxxxx** xxxxxxxx xx xxx xxxxxxx xxxx xxx xxxx xxxxxxxx xxxxxxx.
+1.  Launch Microsoft Visual Studio 2015 and create a new Blank Application (Windows Universal) project. For more info, see [Jumpstart your Windows Store app using templates (C#, C++, Visual Basic)](https://msdn.microsoft.com/library/windows/apps/hh768232). Your new project builds an app package (an appx file) that will run on all device families.
+2.  In your Windows Phone Silverlight app project, identify all the source code files and visual asset files that you want to reuse. Using File Explorer, copy data models, view models, visual assets, Resource Dictionaries, folder structure, and anything else that you wish to re-use, to your new project. Copy or create sub-folders on disk as necessary.
+3.  Copy views (for example, MainPage.xaml and MainPage.xaml.cs) into the new project node, too. Again, create new sub-folders as necessary, and remove the existing views from the project. But, before you over-write or remove a view that Visual Studio generated, keep a copy because it may be useful to refer to it later. The first phase of porting a Windows Phone Silverlight app focuses on getting it to look good and work well on one device family. Later, you'll turn your attention to making sure the views adapt themselves well to all form factors, and optionally to adding any adaptive code to get the most from a particular device family.
+4.  In **Solution Explorer**, make sure **Show All Files** is toggled on. Select the files that you copied, right-click them, and click **Include In Project**. This will automatically include their containing folders. You can then toggle **Show All Files** off if you like. An alternative workflow, if you prefer, is to use the **Add Existing Item** command, having created any necessary sub-folders in the Visual Studio **Solution Explorer**. Double-check that your visual assets have **Build Action** set to **Content** and **Copy to Output Directory** set to **Do not copy**.
+5.  The differences in namespace and class names will generate lots of build errors at this stage. For example, if you open the views that Visual Studio generated, you'll see that they are of type [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503), and not **PhoneApplicationPage**. There are lots of XAML markup and imperative code differences that the following topics in this porting guide cover in detail. But, you'll make fast progress just following these general steps: change "clr-namespace" to "using" in your namespace prefix declarations in XAML markup; use the [Namespace and class mappings](wpsl-to-uwp-namespace-and-class-mappings.md) topic and Visual Studio's **Find and Replace** command to make bulk changes to your source code (for example, replace "System.Windows" with "Windows.UI.Xaml"); and in the imperative code editor in Visual Studio use the **Resolve** and **Organize Usings** commands on the context menu for more targeted changes.
 
-## Xxxxxxxxx XXXx
+## Extension SDKs
 
-Xxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XXXx xxxx xxxxxx xxx xxxx xxxx xxx xxxxxxxxxxx xx xxx xxx xx XXXx xxxxx xx xxx xxxxxxxxx xxxxxx xxxxxx. Xxx, xxxx xxx xxxxxxxxxxx xx xxxxxxxxx XXXx, xxx Xxxxxx Xxxxxx xxxx xxxxxxxxxx XXXx xxxx xxx xxxxxxxxxxx xx xxxx xxx'x xxxxxx xxxxxx xxxxxx xx xx xxx xxxxxxxxx XXXx xxxx xxx xxxx xxxxxxxxxx.
+Most of the Universal Windows Platform (UWP) APIs your ported app will call are implemented in the set of APIs known as the universal device family. But, some are implemented in extension SDKs, and Visual Studio only recognizes APIs that are implemented by your app's target device family or by any extension SDKs that you have referenced.
 
-Xx xxx xxx xxxxxxx xxxxxx xxxxx xxxxxxxxxx xx xxxxx xx xxxxxxx xxxx xxxxx xxx xx xxxxx, xxxx xxxx xx xxxxxx xx xx xxx xxxxx. Xxxx xxx XXX'x xxxxx xx xxx XXX xxxxxxxxx xxxxxxxxxxxxx xxx xxxxxxxx xx xxx Xxxxxxxxxxxx xxxxxxx: xxxx xxxx xxxx xxx xxxx xxx xxxxxxxxxxxx xxxxxx xxxxxx xx. Xx xxxx'x xxx xxxx xxxxxx xxxxxx xxxxxx, xxxx xx xxxx xxx XXX xxxxxxxxx xx xxxx xxxxxxx, xxx xxxx xxxx x xxxxxxxxx xx xxx xxxxxxxxx XXX xxx xxxx xxxxxx xxxxxx.
+If you get compile errors about namespaces or types or members that could not be found, then this is likely to be the cause. Open the API's topic in the API reference documentation and navigate to the Requirements section: that will tell you what the implementing device family is. If that's not your target device family, then to make the API available to your project, you will need a reference to the extension SDK for that device family.
 
-Xxxxx **Xxxxxxx** &xx; **Xxx Xxxxxxxxx** &xx; **Xxxxxxx Xxxxxxxxx** &xx; **Xxxxxxxxxx** xxx xxxxxx xxx xxxxxxxxxxx xxxxxxxxx XXX. Xxx xxxxxxx, xx xxx XXXx xxx xxxx xx xxxx xxx xxxxxxxxx xxxx xx xxx xxxxxx xxxxxx xxxxxx, xxx xxxx xxxx xxxxxxxxxx xx xxxxxxx YY.Y.x.x, xxxx xxxxxx **Xxxxxxx Xxxxxx Xxxxxxxxxx xxx xxx XXX**.
+Click **Project** &gt; **Add Reference** &gt; **Windows Universal** &gt; **Extensions** and select the appropriate extension SDK. For example, if the APIs you want to call are available only in the mobile device family, and they were introduced in version 10.0.x.y, then select **Windows Mobile Extensions for the UWP**.
 
-Xxxx xxxx xxx xxx xxxxxxxxx xxxxxxxxx xx xxxx xxxxxxx xxxx:
+That will add the following reference to your project file:
 
 ```XML
 <ItemGroup>
@@ -38,28 +38,28 @@ Xxxx xxxx xxx xxx xxxxxxxxx xxxxxxxxx xx xxxx xxxxxxx xxxx:
 </ItemGroup>
 ```
 
-Xxx xxxx xxx xxxxxxx xxxxxx xxxxx xxx xxxxxxx xx xxx xxxxxxxxx xxxxxxxx xx xxxx XXX. Xxx xxxxxxx, xxx xxxxx xxxxxxxxxxx xxxxxxx xxxx xxxxxx xxxx:
+The name and version number match the folders in the installed location of your SDK. For example, the above information matches this folder name:
 
 `\Program Files (x86)\Windows Kits\10\Extension SDKs\WindowsMobile\10.0.x.y`
 
-Xxxxxx xxxx xxx xxxxxxx xxx xxxxxx xxxxxx xxxx xxxxxxxxxx xxx XXX, xxx'xx xxxx xx xxx xxx [**XxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn949001) xxxxx xx xxxx xxx xxx xxxxxxxx xx xxx XXX xxxxxx xxx xxxx xx (xxxx xx xxxxxx xxxxxxxx xxxx). Xxxx xxxxxxxxx xxxx xxxx xx xxxxxxxxx xxxxxxxx xxxx xxx xxxx, xxx xx xxxx xxxx xxxxxxxx xx xxxx xx xxxxxxx xxxxx xxx XXX xx xxxxxxx xxx xxxxxxxxx xxxxxxxxx xx xxxx. Xxxx xxx xxxxxxxxx XXXx xxx xxxxxxxx xxxx xxxxx xxxxx xxxxxxxx xxxxxxx x xxxxxxxxx XXX xxxxxx. Xxxx xxxxxxxx xxx xxxxx xx xxx xxxxxxx xxxxx.
+Unless your app targets the device family that implements the API, you'll need to use the [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) class to test for the presence of the API before you call it (this is called adaptive code). This condition will then be evaluated wherever your app runs, but it will only evaluate to true on devices where the API is present and therefore available to call. Only use extension SDKs and adaptive code after first checking whether a universal API exists. Some examples are given in the section below.
 
-Xxxx, xxx [Xxx xxxxxxx xxxxxxxx](#appxpackage).
+Also, see [App package manifest](#appxpackage).
 
-## Xxxxxxxxxx xxxxxx xxx xxxx xxxxx
+## Maximizing markup and code reuse
 
-Xxx xxxx xxxx xxxx xxxxxxxxxxx x xxxxxx, xxx/xx xxxxxx xxxxxxxx xxxx (xxxxx xx xxxxxxxxx xxxxx), xxxx xxxxx xxx xx xxxxxxxx xxx xxxxxx xxx xxxx xxxx xxxxx xxxxxx xxx xxxxxx xxxxxxxx. Xxxx xxx xxxx xxxxxxx.
+You will find that refactoring a little, and/or adding adaptive code (which is explained below), will allow you to maximize the markup and code that works across all device families. Here are more details.
 
--   Xxxxx xxxx xxx xxxxxx xx xxx xxxxxx xxxxxxxx xxxx xx xxxxxxx xxxxxxxxxxxxx. Xxxxx xxxxx xxxx xx xxxx xx xxx xxx xx xxx xxx xxxxxx xxxxxxxx xxxx xx xxxx xx. Xxxx xxxxxxxx XXXX xxxxxx xxxxx, xxxxxxxxxx xxxxxx xxxx xxxxx, xxx xxxxx xxxxx.
--   Xx xx xxxxxxxx xxx xxxx xxx xx xxxxxx xxx xxxxxx xxxxxx xxxx xx xx xxxxxxx xx xxx xxxxxxxx xx x xxxx xxxx xxx xxxx xxxxxxxx xxxxxxxxxxxx xxx xxxx xxxxxx xxxxxx. Xxx xxxx xxxxxxx, xxx [Xxxxxxxxx xxx xxxxxxxx xxxx xxx xx xxxxxxx xx](wpsl-to-uwp-input-and-sensors.md#detecting-the-platform).
--   X xxxxxxx xxxxxxxxx xxxx xxx xxx xxxx xxxxxx xx xxxxx xx xx xxxxxxxxxxx xx xx xxxx x xxxxxx xxxx xx **XxxxxxxxXxxxxxxxxx** xxxx (xx xxx xxxxxx xxxx xxxxxxxx xxx xxxx) x xxxxxxx xxxx xxxx xxxx xx xx xxxxxxxxxxxxx xxxxxx xx xxxxxxx xxxx xxxx xxxx xxx xxxx xx x xxxxxxxxxx xxxxxx xxxxxx. Xxxx xxxxxxxxx xx xxxxxxxxxxx xx xxx [XxxxxxxxxY](wpsl-to-uwp-case-study-bookstore1.md#an-optional-adjustment) xxxx xxxxx.
--   Xx xxx xxxxxxxx xxxx xxx xxx xxxxxxxxx xx xxx xxxxxx xxxxxxxx (xxx xxxxxxx, xxxxxxxx, xxxxxxxx, xx xxx xxxxxx xxxxxx) xxx xxx xxxxx xxxxxxxx xxxx. Xxx xxx xxxxx xxxxxxx xx [Xxxxxxxxxxx xxxxxxxxxxx, xxx xxxxxxxx xxxx](#conditional-compilation) xx xxxx xxxxx.
--   Xx xxx xxxx xx xxxxxxx xxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxx Xxxxxxx YY, xxxx xxx xxx xx xxxx xx xxxxx xxxxxx xxxx xxxxx xxxxxxx xxxxxxxx. Xxxx'x xxx: xx Xxxxxx Xxxxxx, xxxxx-xxxxx xxx xxxxxxx xx **Xxxxxxxx Xxxxxxxx**, xxxxxx **Xxx Xxxxxxxx Xxxx**, xxxxxx xxx xxxxx xx xxxxx, xxx xxxx xxxxx **Xxx Xx Xxxx**. Xxxxx xxxx xxxxxx xxxx xxxxx xx x xxxxxx xxxxxx xx xxx xxxx xxxxxx xxxxx xxx xxxxxxxx xxxx xxxx xx xxxx xxx xxx xxxx, xxx xxx'x xxxxxx xx xxx xxxx xx xxxxxx xxxxxxx. Xx xxx xxx xxxxxx xxxx xxxxxxxxxx xxxxxx xxxx xx xxxx xxxx, xx xxx xxx, xx x xxxx xxxx xxxx xx xxxx xxxxxxxxx, xxxx xxx xxx'x xxxx xx xxxx xxx xxxxxx xx xx. Xxx xxx xxxx xxx xxxxxxxx-xxxxxxxx xxxxx xx xxx xxxx xxxxxx xxxxxxxxxxx xxxxxxxxxxx xxxxxxxxxx xxxxx xxxxxxxx, xx xxx-xxxx xxxxxxxxxx xxxxx xxxxxxxxx. Xxx xxx xxxx xxxxxxx xxxxx, xxx [X# Xxxxxxxxxxxx Xxxxxxxxxx](http://msdn.microsoft.com/library/ed8yd1ha.aspx).
--   Xxx xxxxx xx xxx xxxxxx xxxxx, xxxxxx xxxx xxx xxxxxx xxxx xxxxx, xxxxx xxx Xxxxxxxx Xxxxx Xxxxxxxxx, xxxxx xxxxxxx xxx xxxxxx xx .XXX XXXx xxxx xxx xxxxxxxxx xx Xxxxxxx Xxxxx Xxxxxxxxxxx xx xxxx xx xxx xxxxxx xxx Xxxxxxx YY xxxx (.XXX Xxxx). Xxxxxxxx Xxxxx Xxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxxxxxx xxxx xxxxx .XXX xxxxxxxxx xxx xxxx. Xxx Xxxxxx Xxxxxx xx xxxxxx x xxxxxxx xxxx xxxxxxx x Xxxxxxxx Xxxxx Xxxxxxx. Xxx [Xxxxx-Xxxxxxxx Xxxxxxxxxxx xxxx xxx Xxxxxxxx Xxxxx Xxxxxxx](http://msdn.microsoft.com/library/gg597391.aspx).
+-   Files that are common to all device families need no special consideration. Those files will be used by the app on all the device families that it runs on. This includes XAML markup files, imperative source code files, and asset files.
+-   It is possible for your app to detect the device family that it is running on and navigate to a view that has been designed specifically for that device family. For more details, see [Detecting the platform your app is running on](wpsl-to-uwp-input-and-sensors.md#detecting-the-platform).
+-   A similar technique that you may find useful if there is no alternative is to give a markup file or **ResourceDictionary** file (or the folder that contains the file) a special name such that it is automatically loaded at runtime only when your app runs on a particular device family. This technique is illustrated in the [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md#an-optional-adjustment) case study.
+-   To use features that are not available on all device families (for example, printers, scanners, or the camera button) you can write adaptive code. See the third example in [Conditional compilation, and adaptive code](#conditional-compilation) in this topic.
+-   If you want to support both Windows Phone Silverlight and Windows 10, then you may be able to share source code files between projects. Here's how: in Visual Studio, right-click the project in **Solution Explorer**, select **Add Existing Item**, select the files to share, and then click **Add As Link**. Store your source code files in a common folder on the file system where the projects that link to them can see them, and don't forget to add them to source control. If you can factor your imperative source code so that most, if not all, of a file will work on both platforms, then you don't need to have two copies of it. You can wrap any platform-specific logic in the file inside conditional compilation directives where possible, or run-time conditions where necessary. See the next section below, and [C# Preprocessor Directives](http://msdn.microsoft.com/library/ed8yd1ha.aspx).
+-   For reuse at the binary level, rather than the source code level, there are Portable Class Libraries, which support the subset of .NET APIs that are available in Windows Phone Silverlight as well as the subset for Windows 10 apps (.NET Core). Portable Class Library assemblies are binary compatible with these .NET platforms and more. Use Visual Studio to create a project that targets a Portable Class Library. See [Cross-Platform Development with the Portable Class Library](http://msdn.microsoft.com/library/gg597391.aspx).
 
-## Xxxxxxxxxxx xxxxxxxxxxx, xxx xxxxxxxx xxxx
+## Conditional compilation, and adaptive code
 
-Xx xxx xxxx xx xxxxxxx xxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxx Xxxxxxx YY xx x xxxxxx xxxx xxxx xxxx xxx xxx xx xxxx. Xx xxx xxxx xx xxxx Xxxxxxx YY xxxxxxx xx xxx xxxxxxx xxxxxxxxxx xxxxx, xxx'xx xxx xxxx xxx xxxxxxx xxxxxxx XXXXXXX\_XXX xx x xxxxxxxxxxx xxxxxxxxxxx xxxxxx. Xx xxxxxxx, xxx xxx xxx xxx xxxxxxxxx xxxxx xx xxxxxxx xxxxxxxxxxx xxxxxxxxxxx.
+If you want to support both Windows Phone Silverlight and Windows 10 in a single code file then you can do that. If you look in your Windows 10 project at the project properties pages, you'll see that the project defines WINDOWS\_UAP as a conditional compilation symbol. In general, you can use the following logic to perform conditional compilation.
 
 ```csharp
 #if WINDOWS_UAP
@@ -69,7 +69,7 @@ Xx xxx xxxx xx xxxxxxx xxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxx Xxxxxxx YY xx x xxxxxx
 #endif // WINDOWS_UAP
 ```
 
-Xx xxx xxxx xxxx xxxx xxx'xx xxxx xxxxxxx xxxxxxx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxx x Xxxxxxx Xxxxx xxx, xxxx xxx xxx xxxxxxx xxxx xxxxxx xxxx xxxx xxxxx xxxx xxxx:
+If you have code that you've been sharing between a Windows Phone Silverlight app and a Windows Store app, then you may already have source code with logic like this:
 
 ```csharp
 #if NETFX_CORE
@@ -79,7 +79,7 @@ Xx xxx xxxx xxxx xxxx xxx'xx xxxx xxxxxxx xxxxxxx x Xxxxxxx Xxxxx Xxxxxxxxxxx xx
 #endif // NETFX_CORE
 ```
 
-Xx xx, xxx xx xxx xxx xxxx xx xxxxxxx Xxxxxxx YY xx xxxxxxxx, xxxx xxx xxx xx xxxx, xxx.
+If so, and if you now want to support Windows 10 in addition, then you can do that, too.
 
 ```csharp
 #if WINDOWS_UAP
@@ -93,7 +93,7 @@ Xx xx, xxx xx xxx xxx xxxx xx xxxxxxx Xxxxxxx YY xx xxxxxxxx, xxxx xxx xxx xx xx
 #endif // WINDOWS_UAP
 ```
 
-Xxx xxx xxxx xxxx xxxxxxxxxxx xxxxxxxxxxx xx xxxxx xxxxxxxx xx xxx xxxxxxxx xxxx xxxxxx xx Xxxxxxx Xxxxx. Xx Xxxxxxx YY, xxx xxxx xxxxxx xxxxx xx x xxxxxxxxx xxxxxxx. Xxxx xxxxxxx xxxxxxxxxxx xx xxxxxxxx xx xx xxxxxxxx xxxx xxx xxxxx xxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn893596) xxxxx, xx xxxx'x xxx xxx xx xxxxxx.
+You may have used conditional compilation to limit handling of the hardware back button to Windows Phone. In Windows 10, the back button event is a universal concept. Back buttons implemented in hardware or in software will all raise the [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event, so that's the one to handle.
 
 ```csharp
        Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
@@ -108,7 +108,7 @@ Xxx xxx xxxx xxxx xxxxxxxxxxx xxxxxxxxxxx xx xxxxx xxxxxxxx xx xxx xxxxxxxx xxxx
 
 ```
 
-Xxx xxx xxxx xxxx xxxxxxxxxxx xxxxxxxxxxx xx xxxxx xxxxxxxx xx xxx xxxxxxxx xxxxxx xxxxxx xx Xxxxxxx Xxxxx. Xx Xxxxxxx YY, xxx xxxxxxxx xxxxxx xxxxxx xx x xxxxxxx xxxxxxxxxx xx xxx xxxxxx xxxxxx xxxxxx. Xxxxxxx xxx xxx xxxxxxx xxxx xx xxxxxxx xx xxx xxxxxxx, xx xxxxxx xxx xxxxxxx-xxxx xxxxxxxxx xxxx x xxx-xxxx xxxxxxxxx xxxxx xxxx xx xxxxx xx xxxxxxxx xxxx. Xx xx xxxx, xx xxx xxx [**XxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn949001) xxxxx xx xxxxx xx xxx-xxxx xxx xxx xxxxxxxx xx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/jj207557) xxxxx. **XxxxxxxxXxxxxxx** xx xxxxxxx xx xxx xxxxxx xxxxxxxxx XXX, xx xx'xx xxxx xx xxx x xxxxxxxxx xx xxxx XXX xx xxx xxxxxxx xxx xxxx xxxx xx xxxxxxx. Xxxx, xxxxxx, xxxx xxx xxxxxxx xxxx xxxx xx xxxxxxxx xx x xxxxxx xxxx xxxxxxxxxx xxx xxxxx xxxxxxx xx xxx xxxxxx xxxxxxxxx XXX, xxx xxxx'x xxx xxxxxx xxxxxx xxxxxx. Xx, xxx xxxxxxxxx xxxx xx xxxxxxx xxxx xx xxx xxxxxxxx xxxx xxx xxxxxxx, xxxxxxxx xx xxxxxxxx xx xx x xxxxxxxxx xxx xxxx xxxxxxxxxxx xxxxxxxxxxx.
+You may have used conditional compilation to limit handling of the hardware camera button to Windows Phone. In Windows 10, the hardware camera button is a concept particular to the mobile device family. Because one app package will be running on all devices, we change our compile-time condition into a run-time condition using what is known as adaptive code. To do that, we use the [**ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) class to query at run-time for the presence of the [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) class. **HardwareButtons** is defined in the mobile extension SDK, so we'll need to add a reference to that SDK to our project for this code to compile. Note, though, that the handler will only be executed on a device that implements the types defined in the mobile extension SDK, and that's the mobile device family. So, the following code is careful only to use features that are present, although it achieves it in a different way from conditional compilation.
 
 ```csharp
        // Note: Cache the value instead of querying it more than once.
@@ -129,16 +129,20 @@ Xxx xxx xxxx xxxx xxxxxxxxxxx xxxxxxxxxxx xx xxxxx xxxxxxxx xx xxx xxxxxxxx xxxx
     }
 ```
 
-Xxxx, xxx [Xxxxxxxxx xxx xxxxxxxx xxxx xxx xx xxxxxxx xx](wpsl-to-uwp-input-and-sensors.md#detecting-the-platform).
+Also, see [Detecting the platform your app is running on](wpsl-to-uwp-input-and-sensors.md#detecting-the-platform).
 
-## Xxx xxx xxxxxxx xxxxxxxx
+## The app package manifest
 
-Xxx xxxxxxxx xx xxxx xxxxxxx (xxxxxxxxx xxx xxxxxxxxx XXXx xxxxxxxxxx) xxxxxxxxx xxx XXX xxxxxxx xxxx xxxx xxxx xxx xxx xxxx. Xxx, xxxx xxx xxxxxxx xxxxxxxx xx xxxx xxxxxxxxxx xxx xxxxxx xxx xx xxxxxxx xxxx xxxx xxxxxxxxx xxx xxxxxxx xxxx xxx xxxx xxxx xxx Xxxxx. Xxx xxxx xxxx, xxx Xxxxxxxx xx [**XxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986903).
+The settings in your project (including any extension SDKs references) determine the API surface area that your app can call. But, your app package manifest is what determines the actual set of devices that your customers can install your app onto from the Store. For more info, see Examples in [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903).
 
-Xx'x xxxxx xxxxxxx xxx xx xxxx xxx xxx xxxxxxx xxxxxxxx, xxxxxxx xxx xxxxxx xxxx xxxxxx xxxx xxxxx xxxxx xx xxx xxxxxxx xxxxxxxxxxxx, xxxxxxxxxxxx, xxx xxxxx xxxxxxxx xxxx xxxx xxxxxxxx xxxx. Xxx xxx xxx xxx Xxxxxx Xxxxxx xxx xxxxxxx xxxxxxxx xxxxxx xx xxxx xx. Xx xxx **Xxxxxxxx Xxxxxxxx** xx xxx xxxxx, xxxxxx xx xxxx xxx **Xxxx** xxxx. Xxxxxx-xxxxx **Xxxxxxx.xxxxxxxxxxxx**. Xxxx xxxxx xxx xxxxxxxx xxxxxx xxxxxx. Xxxxxx xxx xxxxxxxxxxx xxx xx xxxx xxxxxxx xxx xxxx xxxx xxx xxxxxxx. Xxx xxx xxxx xx xxxxxx xxxx xxx **xx:XxxxxXxxxxxxx** xxxxxxx xx xxx xxxxxx xxx xxxxxxxx xxxxxxx xxxx xx xx xxx xxx xxxxxxxx xx xxx xxx xxx'xx xxxxxxx (xxx xxxx xxxxxxx, xxx xxx [**xx:XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn934763) xxxxx).
+It's worth knowing how to edit the app package manifest, because the topics that follow talk about using it for various declarations, capabilities, and other settings that some features need. You can use the Visual Studio app package manifest editor to edit it. If the **Solution Explorer** is not shown, choose it from the **View** menu. Double-click **Package.appxmanifest**. This opens the manifest editor window. Select the appropriate tab to make changes and then save the changes. You may want to ensure that the **pm:PhoneIdentity** element in the ported app manifest matches what is in the app manifest of the app you're porting (for full details, see the [**pm:PhoneIdentity**](https://msdn.microsoft.com/library/windows/apps/dn934763) topic).
 
-Xxx [Xxxxxxx xxxxxxxx xxxxxx xxxxxxxxx xxx Xxxxxxx YY](https://msdn.microsoft.com/library/windows/apps/dn934820).
+See [Package manifest schema reference for Windows 10](https://msdn.microsoft.com/library/windows/apps/dn934820).
 
-Xxx xxxx xxxxx xx [Xxxxxxxxxxxxxxx](wpsl-to-uwp-troubleshooting.md).
+The next topic is [Troubleshooting](wpsl-to-uwp-troubleshooting.md).
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

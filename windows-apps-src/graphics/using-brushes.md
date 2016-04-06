@@ -1,49 +1,48 @@
 ---
-xx.xxxxxxx: YYYYYXYY-YYYX-YYYY-YYXX-YXYYXYYYXYXX
-xxxxx: Xxx xxxxxxx
-xxxxxxxxxxx: Xxxxx xxxxxxx xxx xxxx xx xxxxx xxx xxxxxxxxx xx xxxxxxxx xx xxxxxx, xxxx, xxx xxxxx xx xxxxxxxx, xx xxxx xxx xxxxxx xxxxx xxxxxxx xx xxxxxxx xx x XX.
+ms.assetid: 02141F86-355E-4046-86EA-2A89D615B7DB
+title: Use brushes
+description: Brush objects are used to paint the interiors or outlines of shapes, text, and parts of controls, so that the object being painted is visible in a UI.
 ---
-# Xxx xxxxxxx
+# Use brushes
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Xxxxxxxxx XXXx **
+** Important APIs **
 
--   [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228076)
+-   [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)
 
-[
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228076) xxxxxxx xxx xxxx xx xxxxx xxx xxxxxxxxx xx xxxxxxxx xx xxxxxx, xxxx, xxx xxxxx xx xxxxxxxx, xx xxxx xxx xxxxxx xxxxx xxxxxxx xx xxxxxxx xx x XX. Xxx'x xxxx xx xxx xxxxxxxxx xxxxxxx xxx xxx xx xxx xxxx.
+[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) objects are used to paint the interiors or outlines of shapes, text, and parts of controls, so that the object being painted is visible in a UI. Let's look at the available brushes and how to use them.
 
-## Xxxxxxxxxxxx xx xxxxxxx
+## Introduction to brushes
 
-Xx xxxxx xx xxxxxx xxxx xx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243377) xx xxx xxxxx xx x [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209390) xxxx xx xxxxxxxxx xx xxx xxx xxxxxx, xxx xxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228076). Xxx xxxxxxx, xxx xxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) xxxxxxxx xx xxx **Xxxxx** xx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) xxxxxxxxxx xx x **Xxxxxxx** xx x **Xxxxx** xxxxx, xxx xxxx **Xxxxx** xxxxxxxxxx xxx xxx XX xxxxxxx xxxxxx xx xx xxxxxxxx xx XX. Xxx xxxxxxxxx xxxxx xx xxxxxxx xxx: [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962), [**XxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210108), [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210101), xxx [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227703).
+To paint an object such as a [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) or the parts of a [**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) that is displayed on the app canvas, you use a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). For example, you set the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of the **Shape** or the [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) and [**Foreground**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.foreground.aspx) properties of a **Control** to a **Brush** value, and that **Brush** determines how the UI element paints or is rendered in UI. The different types of brushes are: [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962), [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108), [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101), and [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703).
 
-## Xxxxx xxxxx xxxxxxx
+## Solid color brushes
 
-X [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962) xxxxxx xx xxxx xxxx x xxxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh673723), xxxx xx xxx xx xxxx. Xxxx xx xxx xxxx xxxxx xxxxx. Xxxxx xxx xxxxx xxxx xx XXXX xx xxxxxx x **XxxxxXxxxxXxxxx** xxx xxx xxxxx xxxxx xx xxxxxxxxx: xxxxxxxxxx xxxxx xxxxx, xxxxxxxxxxx xxxxx xxxxxx, xx xxx xxxxxxxx xxxxxxx xxxxxx.
+A [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) paints an area with a single [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723), such as red or blue. This is the most basic brush. There are three ways in XAML to define a **SolidColorBrush** and the solid color it specifies: predefined color names, hexadecimal color values, or the property element syntax.
 
-### Xxxxxxxxxx xxxxx xxxxx
+### Predefined color names
 
-Xxx xxx xxx x xxxxxxxxxx xxxxx xxxx, xxxx xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx). Xxxxx xxx YYY xxxxxxxxx xxxxx xxxxxx. Xxx XXXX xxxxxx xxxxxxxx xxx xxxxx xxxx xx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh673723) xxxxxxxxx xxxx xxx xxxxxxx xxxxx xxxxxxxx. Xxx YYY xxxxx xxxxxx xxx xxxxx xx xxx *XYY* xxxxx xxxxx xxxx xxx Xxxxxxxxx Xxxxx Xxxxxx, Xxxxx Y (XXXY) xxxxxxxxxxxxx, xx xxx xxx xxxxxxx xx xxxxxxxx xxxx xxxx xxxx xx xxxxx xxxxxx xx xxx xxxx xxxxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxxxx xx xxxxxx.
+You can use a predefined color name, such as [**Yellow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.yellow.aspx) or [**Magenta**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.magenta.aspx). There are 256 available named colors. The XAML parser converts the color name to a [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) structure with the correct color channels. The 256 named colors are based on the *X11* color names from the Cascading Style Sheets, Level 3 (CSS3) specification, so you may already be familiar with this list of named colors if you have previous experience with web development or design.
 
-Xxxx'x xx xxxxxxx xxxx xxxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) xxxxxxxx xx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371) xx xxx xxxxxxxxxx xxxxx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
+Here's an example that sets the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) to the predefined color [**Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
 
 ```xml
 <Rectangle Width="100" Height="100" Fill="Red" />
 ```
 
-Xxxx xxxxx xxxxx xxx [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962) xx xxxxxxx xx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371).
+This image shows the [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) as applied to the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371).
 
-![X xxxxxxxx XxxxxXxxxxXxxxx.](images/brushes-solidcolorbrush.jpg)
+![A rendered SolidColorBrush.](images/brushes-solidcolorbrush.jpg)
 
-Xx xxx xxx xxxxxxxx x [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962) xxxxx xxxx xxxxxx xxxx XXXX, xxxx xxxxx xxxxx xx xxxxxxxxx xx x xxxxxx xxxxxxxx xxxxx xx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh673723s) xxxxx. Xxx xxxxxxx, xx xxxxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) xxxxx xx x **XxxxxXxxxxXxxxx** xx xxxxxxxxx xxx xxxxx xxxxx "Xxxxxx", xxx xxx **Xxxxx** xxxxx xx xxx xxxxxx xxxxx [**Xxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx).
+If you are defining a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) using code rather than XAML, each named color is available as a static property value of the [**Colors**](https://msdn.microsoft.com/library/windows/apps/Hh673723s) class. For example, to declare a [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) value of a **SolidColorBrush** to represent the named color "Orchid", set the **Color** value to the static value [**Colors.Orchid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.orchid.aspx).
 
-### Xxxxxxxxxxx xxxxx xxxxxx
+### Hexadecimal color values
 
-Xxx xxx xxx x xxxxxxxxxxx xxxxxx xxxxxx xx xxxxxxx xxxxxxx YY-xxx xxxxx xxxxxx xxxx Y-xxx xxxxx xxxxxxx xxx x [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962). Xxx xxxxxxxxxx xx xxx xxxxx Y xx X xxxxxx xxxx xxxxxxxxx xxxxx, xxx xxx xxxxxxxxx xxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxx xx: xxxxx xxxxxxx (xxxxxxx), xxx xxxxxxx, xxxxx xxxxxxx, xxx xxxx xxxxxxx (**XXXX**). Xxx xxxxxxx, xxx xxxxxxxxxxx xxxxx "\#XXXXYYYY" xxxxxxx xxxxx xxxxxx xxx (xxxxx="XX", xxx="XX", xxxxx="YY", xxx xxxx="YY").
+You can use a hexadecimal format string to declare precise 24-bit color values with 8-bit alpha channel for a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962). Two characters in the range 0 to F define each component value, and the component value order of the hexadecimal string is: alpha channel (opacity), red channel, green channel, and blue channel (**ARGB**). For example, the hexadecimal value "\#FFFF0000" defines fully opaque red (alpha="FF", red="FF", green="00", and blue="00").
 
-Xxxx XXXX xxxxxxx xxxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) xxxxxxxx xx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371) xx xxx xxxxxxxxxxx xxxxx "\#XXXXYYYY", xxx xxxxx xx xxxxxxxxx xxxxxx xx xxxxx xxx xxxxx xxxxx [**Xxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
+This XAML example sets the [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property of a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) to the hexadecimal value "\#FFFF0000", and gives an identical result to using the named color [**Colors.Red**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.red.aspx).
 
 ```xml
 <StackPanel>
@@ -51,16 +50,11 @@ Xxxx XXXX xxxxxxx xxxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows
 </StackPanel>
 ```
 
-### <span id="Property_element_syntax__">
-            </span>
-            <span id="property_element_syntax__">
-            </span>
-            <span id="PROPERTY_ELEMENT_SYNTAX__">
-            </span>Xxxxxxxx xxxxxxx xxxxxx
+### <span id="Property_element_syntax__"></span><span id="property_element_syntax__"></span><span id="PROPERTY_ELEMENT_SYNTAX__"></span>Property element syntax
 
-Xxx xxx xxx xxxxxxxx xxxxxxx xxxxxx xx xxxxxx x [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962). Xxxx xxxxxx xx xxxx xxxxxxx xxxx xxx xxxxxxxx xxxxxxx, xxx xxx xxx xxxxxxx xxxxxxxxxx xxxxxxxx xxxxxx xx xx xxxxxxx, xxxx xx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx). Xxx xxxx xxxx xx XXXX xxxxxx, xxxxxxxxx xxxxxxxx xxxxxxx xxxxxx, xxx [XXXX xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185595) xxx [XXXX xxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185596).
+You can use property element syntax to define a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962). This syntax is more verbose than the previous methods, but you can specify additional property values on an element, such as the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx). For more info on XAML syntax, including property element syntax, see [XAML overview](https://msdn.microsoft.com/library/windows/apps/Mt185595) and [XAML syntax guide](https://msdn.microsoft.com/library/windows/apps/Mt185596).
 
-Xx xxx xxxxxxxx xxxxxxxx, xxx xxxxx xxxx xxx xxx xxxxxx "XxxxxXxxxxXxxxx" xxxxxx xx xxx xxxxxx. Xxx xxxxx xxxxx xxxxxxx xx xxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxxx, xx xxxx xx x xxxxxxxxxx XXXX xxxxxxxx xxxxxxxxx xxxx xxxxx xxxx XX xxxxxxxxxx xxxxxx xxx xxx xxxx xxxxxx xxxxx. Xxx xxxx xxxxxxx xxxxxxx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371) xxx xxxxxxxxxx xxxxxxx xxx [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962) xx xx xxxxxxx xxxxx xxx x [**Xxxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) xxxxxxxx. Xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) xx xxx **XxxxxXxxxxXxxxx** xx xxx xx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.blue.aspx) xxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx) xx xxx xx Y.Y.
+In the previous examples, you never even saw the string "SolidColorBrush" appear in the syntax. The brush being created is created implicitly and automatically, as part of a deliberate XAML language shorthand that helps keep UI definition simple for the most common cases. The next example creates a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) and explicitly creates the [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) as an element value for a [**Rectangle.Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) property. The [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.solidcolorbrush.color.aspx) of the **SolidColorBrush** is set to [**Blue**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.colors.blue.aspx) and the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.opacity.aspx) is set to 0.5.
 
 ```xml
 <Rectangle Width="200" Height="150">
@@ -70,22 +64,17 @@ Xx xxx xxxxxxxx xxxxxxxx, xxx xxxxx xxxx xxx xxx xxxxxx "XxxxxXxxxxXxxxx" xxxxxx
 </Rectangle>
 ```
 
-## <span id="Linear_gradient_brushes_">
-            </span>
-            <span id="linear_gradient_brushes_">
-            </span>
-            <span id="LINEAR_GRADIENT_BRUSHES_">
-            </span>Xxxxxx xxxxxxxx xxxxxxx
+## <span id="Linear_gradient_brushes_"></span><span id="linear_gradient_brushes_"></span><span id="LINEAR_GRADIENT_BRUSHES_"></span>Linear gradient brushes
 
-X [**XxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210108) xxxxxx xx xxxx xxxx x xxxxxxxx xxxx'x xxxxxxx xxxxx x xxxx. Xxxx xxxx xx xxxxxx xxx *xxxxxxxx xxxx*. Xxx xxxxxxx xxx xxxxxxxx'x xxxxxx xxx xxxxx xxxxxxxxx xxxxx xxx xxxxxxxx xxxx xxxxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210078) xxxxxxx. Xx xxxxxxx, xxx xxxxxxxx xxxx xxxx xxxx xxx xxxxx xxxx xxxxxx xx xxx xxxxx xxxxx xxxxxx xx xxx xxxx xxxx xxx xxxxx xxxxxx, xxxxxxxxx xx x xxxxxxxx xxxxxxx.
+A [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) paints an area with a gradient that's defined along a line. This line is called the *gradient axis*. You specify the gradient's colors and their locations along the gradient axis using [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) objects. By default, the gradient axis runs from the upper left corner to the lower right corner of the area that the brush paints, resulting in a diagonal shading.
 
-Xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210078) xx xxx xxxxx xxxxxxxx xxxxx xx x xxxxxxxx xxxxx. X xxxxxxxx xxxx xxxxxxxxx xxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) xx xxx xxxxx xx xx xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) xxxxx xxx xxxxxxxx xxxx, xxxx xxx xxxxx xx xxxxxxx xx xxx xxxx xxxxx xxxxxxx.
+The [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) is the basic building block of a gradient brush. A gradient stop specifies what the [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) of the brush is at an [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) along the gradient axis, when the brush is applied to the area being painted.
 
-Xxx xxxxxxxx xxxx'x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) xxxxxxxx xxxxxxxxx xxx xxxxx xx xxx xxxxxxxx xxxx. Xxx xxx xxx xxx xxxxx xx xxxxx x xxxxxxxxxx xxxxx xxxx xx xx xxxxxxxxxx xxx xxxxxxxxxxx **XXXX** xxxxxx.
+The gradient stop's [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) property specifies the color of the gradient stop. You can set the color by using a predefined color name or by specifying the hexadecimal **ARGB** values.
 
-Xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) xxxxxxxx xx x [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210078) xxxxxxxxx xxx xxxxxxxx xx xxxx **XxxxxxxxXxxx** xxxxx xxx xxxxxxxx xxxx. Xxx **Xxxxxx** xx x **xxxxxx** xxxx xxxxxx xxxx Y xx Y. Xx **Xxxxxx** xx Y xxxxxx xxx **XxxxxxxxXxxx** xx xxx xxxxx xx xxx xxxxxxxx xxxx, xx xxxxx xxxxx xxxx xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx). Xx **Xxxxxx** xx Y xxxxxx xxx **XxxxxxxxXxxx** xx xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx). Xx x xxxxxxx, x xxxxxx [**XxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210108) xxxxxx xxxx xxx **XxxxxxxxXxxx** xxxxxx, xxxxx xxxx **XxxxxxxxXxxx** xxxxxx xxxxxxx x xxxxxxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) xxx xxxx x xxxxxxxxx **Xxxxxx** xxxxxxx Y xxx Y.
+The [**Offset**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.offset.aspx) property of a [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) specifies the position of each **GradientStop** along the gradient axis. The **Offset** is a **double** that ranges from 0 to 1. An **Offset** of 0 places the **GradientStop** at the start of the gradient axis, in other words near its [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx). An **Offset** of 1 places the **GradientStop** at the [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx). At a minimum, a useful [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108) should have two **GradientStop** values, where each **GradientStop** should specify a different [**Color**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.gradientstop.color.aspx) and have a different **Offset** between 0 and 1.
 
-Xxxx xxxxxxx xxxxxxx x xxxxxx xxxxxxxx xxxx xxxx xxxxxx xxx xxxx xx xx xxxxx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371).
+This example creates a linear gradient with four colors and uses it to paint a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371).
 
 ```xml
 <!-- This rectangle is painted with a diagonal linear gradient. -->
@@ -101,38 +90,28 @@ Xxxx xxxxxxx xxxxxxx x xxxxxx xxxxxxxx xxxx xxxx xxxxxx xxx xxxx xx xx xxxxx x [
 </Rectangle>
 ```
 
-Xxx xxxxx xx xxxx xxxxx xxxxxxx xxxxxxxx xxxxx xx xxxxxxxx xxxxxxxxxxxx xx x xxxxxxxxxxx xx xxx xxxxx xxxxxxxxx xx xxx xxx xxxxxxxx xxxxxxxx xxxxx. Xxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxxxx xxxxx xx xxx xxxxxxxx xxxxxxx. Xxx xxxxxxx xxxx xxx xxxxxxxx xx xxx xxxxxxxx xxxxx, xxx xxx xxxxxx xxxx xxxxx xxx xxxxxxxx xxxx.
+The color of each point between gradient stops is linearly interpolated as a combination of the color specified by the two bounding gradient stops. The illustration highlights the gradient stops in the previous example. The circles mark the position of the gradient stops, and the dashed line shows the gradient axis.
 
-![Xxxxxxxx xxxxx](images/linear-gradients-stops.png)
-Xxx xxx xxxxxx xxx xxxx xx xxxxx xxx xxxxxxxx xxxxx xxx xxxxxxxxxx xx xxxxxxx xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) xxxxxxxxxx xx xx xxxxxxxxx xxxxxx xxxx xxx `(0,0)` xxx `(1,1)` xxxxxxxx xxxxxxxx. Xx xxxxxxxx xxx **XxxxxXxxxx** xxx **XxxXxxxx** xxxxxxxxxx xxxxxx, xxx xxx xxxxxx xxxxxxxxxx xx xxxxxxxx xxxxxxxxx, xxxxxxx xxx xxxxxxxx xxxxxxxxx, xx xxxxxxxx xxx xxxxxxxx xxxxxx xx xxxxx xx x xxxxxxx xxxxx xxxx xxx xxxx xxxxxxx xxxx. Xx xxxxxxxx xxx xxxxxxxx, xxx xxx xxxxxx xx **XxxxxXxxxx** xxx/xx **XxxXxxxx** xx xx xxxxxxxxx xxxx xx xxxxxxx xxx xxxxxx Y xxx Y. Xxx xxxxxxx, xx xxx xxxx x xxxxxxxxxx xxxxxxxx xxxxx xxx xxxx xxx xxxxxxx xx xxx xxxx xxxx xx xxx xxxxx xxx xxx xxxxx xxxx xx xxxxx xx xxxx xxxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210078) xxxxx, xxx xxxxxxx x **XxxxxXxxxx** xx `(0,0)` xxx xx **XxxXxxxx** xx `(0.5,0)`.
+![Gradient stops](images/linear-gradients-stops.png)
+You can change the line at which the gradient stops are positioned by setting the [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.startpoint.aspx) and [**EndPoint**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.lineargradientbrush.endpoint.aspx) properties to be different values than the `(0,0)` and `(1,1)` starting defaults. By changing the **StartPoint** and **EndPoint** coordinate values, you can create horizontal or vertical gradients, reverse the gradient direction, or condense the gradient spread to apply to a smaller range than the full painted area. To condense the gradient, you set values of **StartPoint** and/or **EndPoint** to be something that is between the values 0 and 1. For example, if you want a horizontal gradient where the fade all happens on the left half of the brush and the right side is solid to your last [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) color, you specify a **StartPoint** of `(0,0)` and an **EndPoint** of `(0.5,0)`.
 
-### <span id="Use_tools_to_make_gradients">
-            </span>
-            <span id="use_tools_to_make_gradients">
-            </span>
-            <span id="USE_TOOLS_TO_MAKE_GRADIENTS">
-            </span>Xxx xxxxx xx xxxx xxxxxxxxx
+### <span id="Use_tools_to_make_gradients"></span><span id="use_tools_to_make_gradients"></span><span id="USE_TOOLS_TO_MAKE_GRADIENTS"></span>Use tools to make gradients
 
-Xxx xxxx xxx xxxx xxx xxxxxx xxxxxxxxx xxxx, xxx xxx xxx Xxxxxx Xxxxxx xx Xxxxx xx xxxx xxxxxxxx xxxxx xxxxxxxxx xxxxxx. Xx xxxxxx x xxxxxxxx, xxxxxx xxx xxxxxx xxx xxxx xx xxxxx x xxxxxxxx xx xx xxx xxxxxx xxxxxxx xx xx XXXX xxxx. Xxxxxx **Xxxxx** xxx xxxxxx xxx **Xxxxxx Xxxxxxxx** xxx (xxx xxxx xxxxxxxxxx).
+Now that you know how linear gradients work, you can use Visual Studio or Blend to make creating these gradients easier. To create a gradient, select the object you want to apply a gradient to on the design surface or in XAML view. Expand **Brush** and select the **Linear Gradient** tab (see next screenshot).
 
-![Xxxxxx xxxxxx xxxxxxxx xxxxx Xxxxxx Xxxxxx.](images/tool-gradient-brush-1.png)
+![Create linear gradient using Visual Studio.](images/tool-gradient-brush-1.png)
 
-Xxx xxx xxx xxxxxx xxx xxxxxx xx xxx xxxxxxxx xxxxx xxx xxxxx xxxxx xxxxxxxxx xxxxx xxx xxx xx xxx xxxxxx. Xxx xxx xxxx xxx xxx xxxxxxxx xxxxx xx xxxxxxxx xx xxx xxx xxx xxxxxx xxxx xx xxxxxxxx xxx xxxxx xxx xx xxx xxx (xxx xxxx xxxxxxxxxx).
+Now you can change the colors of the gradient stops and slide their positions using the bar on the bottom. You can also add new gradient stops by clicking on the bar and remove them by dragging the stops off of the bar (see next screenshot).
 
-![Xxx xx xxxxxx xx xxxxxxxxxx xxxxxx xxxx xxxxxxxx xxxxxxxx xxxxx.](images/tool-gradient-brush-2.png)
+![Bar at bottom of properties window that controls gradient stops.](images/tool-gradient-brush-2.png)
 
-## <span id="Image_brushes">
-            </span>
-            <span id="image_brushes">
-            </span>
-            <span id="IMAGE_BRUSHES">
-            </span>Xxxxx xxxxxxx
+## <span id="Image_brushes"></span><span id="image_brushes"></span><span id="IMAGE_BRUSHES"></span>Image brushes
 
-Xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210101) xxxxxx xx xxxx xxxx xx xxxxx, xxxx xxx xxxxx xx xxxxx xxxxxx xxxx xx xxxxx xxxx xxxxxx. Xxx xxx xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210107) xxxxxxxx xxxx xxx xxxx xx xxx xxxxx xx xxxx. Xxxxxxxxx, xxx xxxxx xxxxxx xxxxx xxxx x **Xxxxxxx** xxxx xxxx xx xxxx xx xxxx xxx'x xxxxxxxxx.
+An [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) paints an area with an image, with the image to paint coming from an image file source. You set the [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) property with the path of the image to load. Typically, the image source comes from a **Content** item that is part of your app's resources.
 
-Xx xxxxxxx, xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210101) xxxxxxxxx xxx xxxxx xx xxxxxxxxxx xxxx xxx xxxxxxx xxxx, xxxxxxxx xxxxxxxxxx xxx xxxxx xx xxx xxxxxxx xxxx xxx x xxxxxxxxx xxxxxx xxxxx xxxx xxx xxxxx. Xxx xxx xxxxxx xxxx xxxxxxxx xx xxxxxxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242975) xxxxxxxx xxxx xxx xxxxxxx xxxxx xx **Xxxx** xxx xxxxxxx xx xx **Xxxx**, **Xxxxxxx**, xx **XxxxxxxXxXxxx**.
+By default, an [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) stretches its image to completely fill the painted area, possibly distorting the image if the painted area has a different aspect ratio than the image. You can change this behavior by changing the [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242975) property from its default value of **Fill** and setting it as **None**, **Uniform**, or **UniformToFill**.
 
-Xxx xxxx xxxxxxx xxxxxxx xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210101) xxx xxxx xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210107) xx xx xxxxx xxxxx xxxxxxxx.xxx, xxxxx xxx xxxx xxxxxxx xx x xxxxxxxx xx xxx xxx. Xxx **XxxxxXxxxx** xxxx xxxxxx xxx xxxx xxxxxxx xx xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243343) xxxxx.
+The next example creates an [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) and sets the [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/BR210107) to an image named licorice.jpg, which you must include as a resource in the app. The **ImageBrush** then paints the area defined by an [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) shape.
 
 ```xml
 <Ellipse Height="200" Width="300">
@@ -142,32 +121,31 @@ Xxx xxxx xxxxxxx xxxxxxx xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/
 </Ellipse>
 ```
 
-Xxxx'x xxxx xxx xxxxxxxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210101) xxxxx xxxx.
+Here's what the rendered [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) looks like.
 
-![X xxxxxxxx XxxxxXxxxx.](images/brushes-imagebrush.jpg)
+![A rendered ImageBrush.](images/brushes-imagebrush.jpg)
 
-[
-            **XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210101) xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242752) xxxx xxxxxxxxx xx xxxxx xxxxxx xxxx xx Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX), xxxxx xxxx xxxxx xxxxxx xxxx xxxx xxxxxxx xxxxxxxx xxxxx xxxxxxx. Xxxxx xxxxx xxxxxx xxxxx xxx xxxxxxxxx xx XXXx. Xxx xxxx xxxx xxxxx xxxxxxxxxx xxxxx xxxxxxx, xxx xxxxxx xxxxx xxxxxxx, xxx xxxxxxxxx xxxx xx xx xxx, xxx [Xxxxx xxx XxxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/Mt280382).
+[**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) and [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) both reference an image source file by Uniform Resource Identifier (URI), where that image source file uses several possible image formats. These image source files are specified as URIs. For more info about specifying image sources, the usable image formats, and packaging them in an app, see [Image and ImageBrush](https://msdn.microsoft.com/library/windows/apps/Mt280382).
 
-## Xxxxxxx xxx xxxx
+## Brushes and text
 
-Xxx xxx xxxx xxx xxxxxxx xx xxxxx xxxxxxxxx xxxxxxxxxxxxxxx xx xxxx xxxxxxxx. Xxx xxxxxxx, xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209665) xxxxxxxx xx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209652) xxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228076). Xxx xxx xxxxx xxx xx xxx xxxxxxx xxxxxxxxx xxxx xx xxxx. Xxx xx xxxxxxx xxxx xxxxxxx xxxxxxx xx xxxx, xxxxxxx xx'x xxxxxxxx xx xxxx xxx xxxx xxxxxxxxxx xx xxx xxx xxxxxxx xxxx xxxxx xxxx xxxxxxxx xxxxxxxxxx xxx xxxx xx xxxxxxxx xx xxx xx, xx xxxx xxxxxxxx xxxx xxx xxxxxxxx xx xxxx xxxxxxxxxx. Xxx [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962) xxx xxxxxxxxxxx xx xxxx xxxxxxxx xx xxxx xxxxx, xxxxxx xxx xxxx xxx xxxx xxxxxxx xx xx xxxxxx xxxxxxxxxx.
+You can also use brushes to apply rendering characteristics to text elements. For example, the [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) property of [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) takes a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). You can apply any of the brushes described here to text. But be careful with brushes applied to text, because it's possible to make the text unreadable if you use brushes that bleed into whatever background the text is rendered on top of, or that distract from the outlines of text characters. Use [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) for readability of text elements in most cases, unless you want the text element to be mostly decorative.
 
-Xxxx xxxx xxx xxx x xxxxx xxxxx, xxxx xxxx xxxx xxx xxxx xxxxx xxx xxxxxx xxx xxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxxx xxxxx xx xxx xxxx'x xxxxxx xxxxxxxxx. Xxx xxxxx xx xxxxxxxx xxxxxxx xxxx xxxxxxxxxx xxx xxxx xxxxxxxxx xxxxxxxxxx xx xx xxxxxxxxxxxxx xxxxxxxxxxxxx.
+Even when you use a solid color, make sure that the text color you choose has enough contrast against the background color of the text's layout container. The level of contrast between text foreground and text container background is an accessibility consideration.
 
-## XxxXxxxXxxxx
+## WebViewBrush
 
-X [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227703) xx x xxxxxxx xxxx xx xxxxx xxxx xxx xxxxxx xxx xxxxxxx xxxxxxxx xxxxxx xx x [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR227702) xxxxxxx. Xxxxxxx xx xxxxxxxxx xxx xxxxxxx xx xxx xxxxxxxxxxx **XxxXxxx** xxxxxxx xxxx, **XxxXxxxXxxxx** xxxxxx xxxx xxxxxxx xxxx xxxxxxx xxxxxxx xxxx xxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228076)-xxxx xxxxxxxx xxx x xxxxxx xxxxxxx. **XxxXxxxXxxxx** xxx'x xxxxxxxxxxx xxx xxxxx xxxxx xxxxxxxx, xxx xx xxxxxx xxx xxxxxxxxxxx xx x **XxxXxxx**. Xxx xxxx xxxx, xxx **XxxXxxxXxxxx**.
+A [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) is a special type of brush that can access the content normally viewed in a [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) control. Instead of rendering the content in the rectangular **WebView** control area, **WebViewBrush** paints that content onto another element that has a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076)-type property for a render surface. **WebViewBrush** isn't appropriate for every brush scenario, but is useful for transitions of a **WebView**. For more info, see **WebViewBrush**.
 
-## Xxxxxxx xx XXXX xxxxxxxxx
+## Brushes as XAML resources
 
-Xxx xxx xxxxxxx xxx xxxxx xx xx x xxxxx XXXX xxxxxxxx xx x XXXX xxxxxxxx xxxxxxxxxx. Xxxx xxxxx xx xxxx xx xxxxxxxxx xxx xxxx xxxxx xxxxxx xx xxxxxxx xx xxxxxxxx xxxxxxxx xx x XX. Xxx xxxxx xxxxxx xxx xxxx xxxxxx xxx xxxxxxx xx xxx xxxx xxxxx xxx xxxxxxxxx xxx xxxxx xxxxxxxx xx x [{XxxxxxXxxxxxxx}](https://msdn.microsoft.com/library/windows/apps/Mt185588) xxxxx xx xxxx XXXX. Xxxx xxxxxxxx xxxxx xxxxx xxx xxxx x XXXX xxxxxxx xxxxxxxx xxxx xxxxxxxxxx xxx xxxxxx xxxxx, xxx xxx xxxxxxx xxxxxxxx xx xxxxxx x xxxxx XXXX xxxxxxxx.
+You can declare any brush to be a keyed XAML resource in a XAML resource dictionary. This makes it easy to replicate the same brush values as applied to multiple elements in a UI. The brush values are then shared and applied to any case where you reference the brush resource as a [{StaticResource}](https://msdn.microsoft.com/library/windows/apps/Mt185588) usage in your XAML. This includes cases where you have a XAML control template that references the shared brush, and the control template is itself a keyed XAML resource.
 
-## Xxxxxxx xx xxxx
+## Brushes in code
 
-Xx'x xxxx xxxx xxxxxxx xx xxxxxxx xxxxxxx xxxxx XXXX xxxx xx xx xx xxx xxxx xx xxxxxx xxxxxxx. Xxxx xx xxxxxxx xxxxxxx xxx xxxxxxx xxxxxxx xx XXXX xxxxxxxxx, xxx xxxxxxx xxxxx xxxxxx xxx xxxxx xxx xxxxxx xx xxxxxx xxxxx xx xxxxxxxxx xx xxxx xx x XXXX XX xxxxxxxxxx. Xxxxx, xxx xxx xxxxxxxxxx xxxx xxxxx xxx xxxxx xxxx xx xxxxxx x xxxxx xxxxx xxxx, xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228076) xxxxx xxx xxxxxxxxx xxx xxxx xxxxxxxxxxxxx.
+It's much more typical to specify brushes using XAML than it is to use code to define brushes. This is because brushes are usually defined as XAML resources, and because brush values are often the output of design tools or otherwise as part of a XAML UI definition. Still, for the occasional case where you might want to define a brush using code, all the [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) types are available for code instantiation.
 
-Xx xxxxxx x [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962) xx xxxx, xxx xxx xxxxxxxxxxx xxxx xxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh673723) xxxxxxxxx. Xxxx x xxxxx xxxx xx x xxxxxx xxxxxxxx xx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh673723s) xxxxx, xxxx xxxx:
+To create a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) in code, use the constructor that takes a [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) parameter. Pass a value that is a static property of the [**Colors**](https://msdn.microsoft.com/library/windows/apps/Hh673723s) class, like this:
 
 ```cs
 SolidColorBrush blueBrush = new SolidColorBrush(Windows.UI.Colors.Blue);
@@ -181,18 +159,21 @@ Dim blueBrush as SolidColorBrush = New SolidColorBrush(Windows.UI.Colors.Blue)
 blueBrush = ref new SolidColorBrush(Windows::UI::Colors::Blue);
 ```
 
-Xxx [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227703) xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210101), xxx xxx xxxxxxx xxxxxxxxxxx xxx xxxx xxxx xxxxx XXXx xxxxxx xxx xxxxxxx xx xxx xxxx xxxxx xxx x XX xxxxxxxx.
+For [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) and [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101), use the default constructor and then call other APIs before you attempt to use that brush for a UI property.
 
--   [
-            **XxxxxXxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) xxxxxxxx x [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243235) (xxx x XXX) xxxx xxx xxxxxx xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210101) xxxxx xxxx. Xx xxxx xxxxxx xx x xxxxxx , xxx xxx [**XxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/JJ191522) xxxxxx xx xxxxxxxxxx xxx xxxxx. Xx xxxx xxxxxx xx x XXX, xxxxx xxxxxxxx xxxxxxx xx xxxx xxx xxxx xxxx xxx **xx-xxxx** xx **xx-xxxxxxxx** xxxxxxx, xxx xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/br243238.aspx) xxxxxxxxxxx xxxx xxxxx x XXX. Xxx xxxxx xxxx xxxxxxxx xxxxxxxx xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx) xxxxx xx xxxxx xxx xxx xxxxxx xxxxxx xxxx xxxxxxxxxx xx xxxxxxxx xxx xxxxx xxxxxx, xxxxx xxx xxxxx xxxx xxxxxxxxx xxxxxxx xx xxxxxxx xxxxx xxx xxxxx xxxxxx xx xxxxxxxxx.
--   Xxx [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227703) xxx xxxxx xxxx xx xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx) xx xxx'xx xxxxxxxx xxxxx xxx [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) xxxxxxxx xx xx xxx xxxxxxx xx xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR227702) xx xxxx xxxxx xxxxxxx xxxx xxxx.
+-   [**ImageSource**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.imagebrush.imagesourceproperty.aspx) requires a [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) (not a URI) when you define an [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) using code. If your source is a stream , use the [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) method to initialize the value. If your source is a URI, which includes content in your app that uses the **ms-appx** or **ms-resource** schemes, use the [**BitmapImage**](https://msdn.microsoft.com/en-us/library/windows/apps/br243238.aspx) constructor that takes a URI. You might also consider handling the [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imageopened.aspx) event if there are any timing issues with retrieving or decoding the image source, where you might need alternate content to display until the image source is available.
+-   For [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) you might need to call [**Redraw**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.redraw.aspx) if you've recently reset the [**SourceName**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.sourcename.aspx) property or if the content of the [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) is also being changed with code.
 
-Xxx xxxx xxxxxxxx, xxx xxxxxxxxx xxxxx xxx [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227703) xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210101).
+For code examples, see reference pages for [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227703) and [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101).
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

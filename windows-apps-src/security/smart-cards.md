@@ -1,26 +1,27 @@
 ---
-xxxxx: Xxxxx xxxxx
-xxxxxxxxxxx: Xxxx xxxxx xxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx xxx xxxxx xxxxx xx xxxxxxx xxxxx xx xxxxxx xxxxxxx xxxxxxxx, xxxxxxxxx xxx xx xxxxxx xxxxxxxx xxxxx xxxx xxxxxxx, xxxxxx xxxxxxx xxxxx xxxxx, xxxxxxxxxxx xxxx xxxxx xxxxx, xxxxxxxxxxxx xxxxx, xxxxx xxxx XXXx, xxx xxxxxx xx xxxxxxxxxx xxxxx xxxxx.
-xx.xxxxxxx: YYYYYYYY-YYXY-YYYY-XXYY-YYXYXYXYYYYY
+title: Smart cards
+description: This topic explains how Universal Windows Platform (UWP) apps can use smart cards to connect users to secure network services, including how to access physical smart card readers, create virtual smart cards, communicate with smart cards, authenticate users, reset user PINs, and remove or disconnect smart cards.
+ms.assetid: 86524267-50A0-4567-AE17-35C4B6D24745
+author: awkoren
 ---
 
-# Xxxxx xxxxx
+# Smart cards
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxx xxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx xxx xxxxx xxxxx xx xxxxxxx xxxxx xx xxxxxx xxxxxxx xxxxxxxx, xxxxxxxxx xxx xx xxxxxx xxxxxxxx xxxxx xxxx xxxxxxx, xxxxxx xxxxxxx xxxxx xxxxx, xxxxxxxxxxx xxxx xxxxx xxxxx, xxxxxxxxxxxx xxxxx, xxxxx xxxx XXXx, xxx xxxxxx xx xxxxxxxxxx xxxxx xxxxx.
+This topic explains how Universal Windows Platform (UWP) apps can use smart cards to connect users to secure network services, including how to access physical smart card readers, create virtual smart cards, communicate with smart cards, authenticate users, reset user PINs, and remove or disconnect smart cards.
 
-## Xxxxxxxxx xxx xxx xxxxxxxx
-
-
-Xxxxxx xxxx xxx xxx xxxxxxxxxxxx xxxxx xxxxx xxxxx xxxxx xx xxxxxxx xxxxx xxxxx, xxx xxxx xxx xxx **Xxxxxx Xxxx Xxxxxxxxxxxx** xxxxxxxxxx xx xxx xxxxxxx Xxxxxxx.xxxxxxxxxxxx xxxx.
-
-## Xxxxxx xxxxxxxxx xxxx xxxxxxx xxx xxxxx xxxxx
+## Configure the app manifest
 
 
-Xxx xxx xxxxx xxx xxxxxxx xxx xxxxxxxx xxxxx xxxxx xx xxxxxxx xxx xxxxxx XX (xxxxxxxxx xx [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225393)) xx xxx [**XxxxxXxxxXxxxxx.XxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263890) xxxxxx. Xx xxxxxx xxx xxxxx xxxxx xxxxxxxxx xxxxxxxx xx xxx xxxxxxxx xxxxxx xxxxxx, xxxx [**XxxxxXxxxXxxxxx.XxxxXxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263887).
+Before your app can authenticate users using smart cards or virtual smart cards, you must set the **Shared User Certificates** capability in the project Package.appxmanifest file.
+
+## Access connected card readers and smart cards
+
+
+You can query for readers and attached smart cards by passing the device ID (specified in [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393)) to the [**SmartCardReader.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn263890) method. To access the smart cards currently attached to the returned reader device, call [**SmartCardReader.FindAllCardsAsync**](https://msdn.microsoft.com/library/windows/apps/dn263887).
 
 ```cs
 string selector = SmartCardReader.GetDeviceSelector();
@@ -40,7 +41,7 @@ foreach (DeviceInformation device in devices)
 }
 ```
 
-Xxx xxxxxx xxxx xxxxxx xxxx xxx xx xxxxxxx xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263866) xxxxxx xx xxxxxxxxxxxx x xxxxxx xx xxxxxx xxx xxxxxxxx xx xxxx xxxxxxxxx.
+You should also enable your app to observe for [**CardAdded**](https://msdn.microsoft.com/library/windows/apps/dn263866) events by implementing a method to handle app behavior on card insertion.
 
 ```cs
 private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
@@ -49,16 +50,16 @@ private void reader_CardAdded(SmartCardReader sender, CardAddedEventArgs args)
 }
 ```
 
-Xxx xxx xxxx xxxx xxxx xxxxxxxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn297565) xxxxxx xx [**XxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263801) xx xxxxxx xxx xxxxxxx xxxx xxxxx xxxx xxx xx xxxxxx xxx xxxxxxxxx xxx xxxxxxxxxxxxx.
+You can then pass each returned [**SmartCard**](https://msdn.microsoft.com/library/windows/apps/dn297565) object to [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) to access the methods that allow your app to access and customize its configuration.
 
-## Xxxxxx x xxxxxxx xxxxx xxxx
+## Create a virtual smart card
 
 
-Xx xxxxxx x xxxxxxx xxxxx xxxx xxxxx [**XxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263801), xxxx xxx xxxx xxxxx xxxx xx xxxxxxx x xxxxxxxx xxxx, xx xxxxx xxx, xxx x [**XxxxxXxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297642). Xxx xxxxxxxx xxxx xx xxxxxxxxx xxxxxxxxx xxxxxxxx xx xxx xxx, xxx xxxx xxx xxxx xxxxx xxxx xx xxxxxxx xx xxxxx xxx xxx xxxxxxxx xx xxxxxxxx xx xxx xxxxxxx **XxxxxXxxxXxxXxxxxx** xxxxxx xxxxxxx xxx xxxxx xxxxxx xx [**XxxxxxxXxxxxxxXxxxxXxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263830).
+To create a virtual smart card using [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801), your app will first need to provide a friendly name, an admin key, and a [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642). The friendly name is generally something provided to the app, but your app will still need to provide an admin key and generate an instance of the current **SmartCardPinPolicy** before passing all three values to [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830).
 
-1.  Xxxxxx x xxx xxxxxxxx xx x [**XxxxxXxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297642)
-2.  Xxxxxxxx xxx xxxxx xxx xxxxx xx xxxxxxx [**XxxxxxxxxxxxxXxxxxx.XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241392) xx xxx xxxxx xxx xxxxx xxxxxxxx xx xxx xxxxxxx xx xxxxxxxxxx xxxx.
-3.  Xxxx xxxxx xxxxxx xxxxx xxxx xxx *XxxxxxxxXxxxXxxx* xxxxxx xx [**XxxxxxxXxxxxxxXxxxxXxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263830).
+1.  Create a new instance of a [**SmartCardPinPolicy**](https://msdn.microsoft.com/library/windows/apps/dn297642)
+2.  Generate the admin key value by calling [**CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392) on the admin key value provided by the service or management tool.
+3.  Pass these values along with the *FriendlyNameText* string to [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830).
 
 ```cs
 SmartCardPinPolicy pinPolicy = new SmartCardPinPolicy();
@@ -73,14 +74,14 @@ SmartCardProvisioning provisioning = await
           pinPolicy);
 ```
 
-Xxxx [**XxxxxxxXxxxxxxXxxxxXxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263830) xxx xxxxxxxx xxx xxxxxxxxxx [**XxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263801) xxxxxx, xxx xxxxxxx xxxxx xxxx xx xxxxxxxxxxx xxx xxxxx xxx xxx.
+Once [**RequestVirtualSmartCardCreationAsync**](https://msdn.microsoft.com/library/windows/apps/dn263830) has returned the associated [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) object, the virtual smart card is provisioned and ready for use.
 
-## Xxxxxx xxxxxxxxxxxxxx xxxxxxxxxx
+## Handle authentication challenges
 
 
-Xx xxxxxxxxxxxx xxxx xxxxx xxxxx xx xxxxxxx xxxxx xxxxx, xxxx xxx xxxx xxxxxxx xxx xxxxxxxx xx xxxxxxxx xxxxxxxxxx xxxxxxx xxx xxxxx xxx xxxx xxxxxx xx xxx xxxx, xxx xxx xxxxx xxx xxxx xxxxxxxxxx xx xxx xxxxxxxxxxxxxx xxxxxx xx xxxxxxxxxx xxxx.
+To authenticate with smart cards or virtual smart cards, your app must provide the behavior to complete challenges between the admin key data stored on the card, and the admin key data maintained by the authentication server or management tool.
 
-Xxx xxxxxxxxx xxxx xxxxx xxx xx xxxxxxx xxxxx xxxx xxxxxxxxxxxxxx xxx xxxxxxxx xx xxxxxxxxxxxx xx xxxxxxxx xx xxxxxxx xxxx xxxxxxx. Xx xxx xxxx xxxxxxxxx xxxxx xxx xxxxx xxx xx xxx xxxx ("xxxxxxxxx") xx xxx xxxx xx xxx xxxxx xxx xxxx xxxxxxxx xx xxx xxxxxx xx xxxxxxxxxx xxxx ("xxxxxxxx"), xxxxxxxxxxxxxx xx xxxxxxxxxx.
+The following code shows how to support smart card authentication for services or modification of physical or virtual card details. If the data generated using the admin key on the card ("challenge") is the same as the admin key data provided by the server or management tool ("adminkey"), authentication is successful.
 
 ```cs
 static class ChallengeResponseAlgorithm
@@ -100,19 +101,18 @@ static class ChallengeResponseAlgorithm
 }
 ```
 
-Xxx xxxx xxx xxxx xxxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xx xxxx xxxxx xxx xx xxxxxx xxx xx xxxxxxxx xx xxxxxxxxxxxxxx xxxxxx, xxx xxx xx xxxxx xxxxxxx xx xxxxx xxxx xxx xxxxxxx xxxxx xxxx xxxxxxxxxxx.
+You will see this code referenced throughout the remainder of this topic was we review how to complete an authentication action, and how to apply changes to smart card and virtual smart card information.
 
-## Xxxxxx xxxxx xxxx xx xxxxxxx xxxxx xxxx xxxxxxxxxxxxxx xxxxxxxx
+## Verify smart card or virtual smart card authentication response
 
 
-Xxx xxxx xx xxxx xxx xxxxx xxx xxxxxxxxxxxxxx xxxxxxxxxx xxxxxxx, xx xxx xxxxxxxxxxx xxxx xxx xxxxxx xx xxxxxx xxx xxxxx xxxx, xx xxxxxxxxxxxxx, xxxxxx x xxxxxxx xxxxx xxxx xxx xxxxxxxxxxxxxx.
+Now that we have the logic for authentication challenges defined, we can communicate with the reader to access the smart card, or alternatively, access a virtual smart card for authentication.
 
-1.  Xx xxxxx xxx xxxxxxxxx, xxxx [**XxxXxxxxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263811) xxxx xxx [**XxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263801) xxxxxx xxxxxxxxxx xxxx xxx xxxxx xxxx. Xxxx xxxx xxxxxxxx xx xxxxxxxx xx [**XxxxxXxxxXxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297570), xxxxx xxxxxxxx xxx xxxx'x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297578) xxxxx.
+1.  To begin the challenge, call [**GetChallengeContextAsync**](https://msdn.microsoft.com/library/windows/apps/dn263811) from the [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) object associated with the smart card. This will generate an instance of [**SmartCardChallengeContext**](https://msdn.microsoft.com/library/windows/apps/dn297570), which contains the card's [**Challenge**](https://msdn.microsoft.com/library/windows/apps/dn297578) value.
 
-2.  Xxxx, xxxx xxx xxxx'x xxxxxxxxx xxxxx xxx xxx xxxxx xxx xxxxxxxx xx xxx xxxxxxx xx xxxxxxxxxx xxxx xx xxx **XxxxxxxxxXxxxxxxxXxxxxxxxx** xxxx xx xxxxxxx xx xxx xxxxxxxx xxxxxxx.
+2.  Next, pass the card's challenge value and the admin key provided by the service or management tool to the **ChallengeResponseAlgorithm** that we defined in the previous example.
 
-3.  [
-            **XxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297627) xxxx xxxxxx **xxxx** xx xxxxxxxxxxxxxx xx xxxxxxxxxx.
+3.  [**VerifyResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn297627) will return **true** if authentication is successful.
 
 ```cs
 bool verifyResult = false;
@@ -131,14 +131,14 @@ using (SmartCardChallengeContext context =
 }
 ```
 
-## Xxxxxx xx xxxxx x xxxx XXX
+## Change or reset a user PIN
 
 
-Xx xxxxxx xxx XXX xxxxxxxxxx xxxx x xxxxx xxxx:
+To change the PIN associated with a smart card:
 
-1.  Xxxxxx xxx xxxx xxx xxxxxxxx xxx xxxxxxxxxx [**XxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263801) xxxxxx.
-2.  Xxxx [**XxxxxxxXxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263823) xx xxxxxxx x XX xx xxx xxxx xx xxxxxxxx xxxx xxxxxxxxx.
-3.  Xx xxx XXX xxx xxxxxxxxxxxx xxxxxxx xxx xxxx xxxx xxxxxx **xxxx**.
+1.  Access the card and generate the associated [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) object.
+2.  Call [**RequestPinChangeAsync**](https://msdn.microsoft.com/library/windows/apps/dn263823) to display a UI to the user to complete this operation.
+3.  If the PIN was successfully changed the call will return **true**.
 
 ```cs
 SmartCardProvisioning provisioning =
@@ -147,13 +147,12 @@ SmartCardProvisioning provisioning =
 bool result = await provisioning.RequestPinChangeAsync();
 ```
 
-Xx xxxxxxx x XXX xxxxx:
+To request a PIN reset:
 
-1.  Xxxx [**XxxxxxxXxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263825) xx xxxxxxxx xxx xxxxxxxxx. Xxxx xxxx xxxxxxxx x [**XxxxxXxxxXxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297701) xxxxxx xxxx xxxxxxxxxx xxx xxxxx xxxx xxx xxx xxx xxxxx xxxxxxx.
-2.  [
-            **XxxxxXxxxXxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297701) xxxxxxxx xxxxxxxxxxx xxxx xxx **XxxxxxxxxXxxxxxxxXxxxxxxxx**, xxxxxxx xx x [**XxxxxXxxxXxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297693) xxxx, xxxx xx xxxxxxx xxx xxxx'x xxxxxxxxx xxxxx xxx xxx xxxxx xxx xxxxxxxx xx xxx xxxxxxx xx xxxxxxxxxx xxxx xx xxxxxxxxxxxx xxx xxxxxxx.
+1.  Call [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) to initiate the operation. This call includes a [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) method that represents the smart card and the pin reset request.
+2.  [**SmartCardPinResetHandler**](https://msdn.microsoft.com/library/windows/apps/dn297701) provides information that our **ChallengeResponseAlgorithm**, wrapped in a [**SmartCardPinResetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn297693) call, uses to compare the card's challenge value and the admin key provided by the service or management tool to authenticate the request.
 
-3.  Xx xxx xxxxxxxxx xx xxxxxxxxxx, xxx [**XxxxxxxXxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263825) xxxx xx xxxxxxxxx; xxxxxxxxx **xxxx** xx xxx XXX xxx xxxxxxxxxxxx xxxxx.
+3.  If the challenge is successful, the [**RequestPinResetAsync**](https://msdn.microsoft.com/library/windows/apps/dn263825) call is completed; returning **true** if the PIN was successfully reset.
 
 ```cs
 SmartCardProvisioning provisioning =
@@ -181,30 +180,25 @@ bool result = await provisioning.RequestPinResetAsync(
 }
 ```
 
-## Xxxxxx x xxxxx xxxx xx xxxxxxx xxxxx xxxx
+## Remove a smart card or virtual smart card
 
 
-Xxxx x xxxxxxxx xxxxx xxxx xx xxxxxxx x [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263875) xxxxx xxxx xxxx xxxx xxx xxxx xx xxxxxxx.
+When a physical smart card is removed a [**CardRemoved**](https://msdn.microsoft.com/library/windows/apps/dn263875) event will fire when the card is deleted.
 
-Xxxxxxxxx xxx xxxxxx xx xxxx xxxxx xxxx xxx xxxx xxxxxx xxxx xxx xxxxxx xxxx xxxxxxx xxxx xxx'x xxxxxxxx xx xxxx xx xxxxxx xxxxxxx xx xx xxxxx xxxxxxx. Xxxx xxxxxxxx xxx xx xxxxxxxxx xx xxxxxx xx xxxxxxxxx xxxxxxxxxxxx xx xxx xxxx xxxx xxx xxxx xxx xxxxxxx.
+Associate the firing of this event with the card reader with the method that defines your app's behavior on card or reader removal as an event handler. This behavior can be something as simply as providing notification to the user that the card was removed.
 
 ```cs
 reader = card.Reader;
 reader.CardRemoved += HandleCardRemoved;
 ```
 
-Xxx xxxxxxx xx x xxxxxxx xxxxx xxxx xx xxxxxxx xxxxxxxxxxxxxxxx xx xxxxx xxxxxxxxxx xxx xxxx xxx xxxx xxxxxxx [**XxxxxxxXxxxxxxXxxxxXxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263850) xxxx xxx [**XxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263801) xxxxxxxx xxxxxx.
+The removal of a virtual smart card is handled programmatically by first retrieving the card and then calling [**RequestVirtualSmartCardDeletionAsync**](https://msdn.microsoft.com/library/windows/apps/dn263850) from the [**SmartCardProvisioning**](https://msdn.microsoft.com/library/windows/apps/dn263801) returned object.
 
 ```cs
 bool result = await SmartCardProvisioning
     .RequestVirtualSmartCardDeletionAsync(card);
 ```
 
- 
-
- 
+<!--HONumber=Mar16_HO5-->
 
 
-
-
-<!--HONumber=Mar16_HO1-->

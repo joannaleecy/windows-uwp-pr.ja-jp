@@ -1,43 +1,43 @@
 ---
-xxxxx: Xxxx xxx XXXX
-xxxxxxxxxxx: Xxxx xxx'xx xxxxx xxxx xxx xxxx xxxx xxxxxxx xxx xxxxxxxxxx xxxx xxxxxxx xxx xxxxxx xxxxxxx, xx'x xxxx xx xxxx xxx xxxx xxxxxx xxxxx xxxxxxx xxxx XxxxXX XX Y.Y'x XX Xxxxxx Xxxxxxxx (XXXX) xx XxxxxxYX YY'x Xxxx-xxxxx Xxxxxx Xxxxxxxx (XXXX).
-xx.xxxxxxx: YxxYYxYY-YxYY-xxYY-YYYY-xxYxYYxxYYxx
+title: Port the GLSL
+description: Once you've moved over the code that creates and configures your buffers and shader objects, it's time to port the code inside those shaders from OpenGL ES 2.0's GL Shader Language (GLSL) to Direct3D 11's High-level Shader Language (HLSL).
+ms.assetid: 0de06c51-8a34-dc68-6768-ea9f75dc57ee
 ---
 
-# Xxxx xxx XXXX
+# Port the GLSL
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [XXXX Xxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/bb205574)
--   [Xxxxxx Xxxxxxxxx (XXXX)](https://msdn.microsoft.com/library/windows/desktop/bb509581)
+-   [HLSL Semantics](https://msdn.microsoft.com/library/windows/desktop/bb205574)
+-   [Shader Constants (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581)
 
-Xxxx xxx'xx xxxxx xxxx xxx xxxx xxxx xxxxxxx xxx xxxxxxxxxx xxxx xxxxxxx xxx xxxxxx xxxxxxx, xx'x xxxx xx xxxx xxx xxxx xxxxxx xxxxx xxxxxxx xxxx XxxxXX XX Y.Y'x XX Xxxxxx Xxxxxxxx (XXXX) xx XxxxxxYX YY'x Xxxx-xxxxx Xxxxxx Xxxxxxxx (XXXX).
+Once you've moved over the code that creates and configures your buffers and shader objects, it's time to port the code inside those shaders from OpenGL ES 2.0's GL Shader Language (GLSL) to Direct3D 11's High-level Shader Language (HLSL).
 
-Xx XxxxXX XX Y.Y, xxxxxxx xxxxxx xxxx xxxxx xxxxxxxxx xxxxx xxxxxxxxxx xxxx xx **xx\_Xxxxxxxx**, **xx\_XxxxXxxxx**, xx **xx\_XxxxXxxx\[x\]** (xxxxx x xx xxx xxxxx xxx x xxxxxxxx xxxxxx xxxxxx). Xx XxxxxxYX, xxxxx xxx xx xxxxxxxx xxxxxxxxxx, xxx xxx xxxxxxx xxxxxx xxxx xx xxx xxxxxx xxxx xx xxxxx xxxxxxxxxx xxxx() xxxxxxxxx.
+In OpenGL ES 2.0, shaders return data after execution using intrinsics such as **gl\_Position**, **gl\_FragColor**, or **gl\_FragData\[n\]** (where n is the index for a specific render target). In Direct3D, there are no specific intrinsics, and the shaders return data as the return type of their respective main() functions.
 
-Xxxx xxxx xxx xxxx xxxxxxxxxxxx xxxxxxx xxxxxx xxxxxx, xxxx xx xxx xxxxxx xxxxxxxx xx xxxxxx, xx xxxxxxx xxxxxxx xxx xxx xx xxx **xxxxxxx** xxxxxxxxxxx. Xxxxxxx, XxxxxxYX xxxxx'x xxxx xxxx xxxxxxxxxxx; xxxxxx, xxx xxxx xxxx xxx xxxx xxxxxx xxxxxxx xxxxxx xxxxxx xxxx xx xxxxxx xxxx xx [XXXX xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/bb205574). Xxx xxxxxxxx xxxxxxxx xxxxxx xxxxxxxxx xxx xxxxxxx xx xxx xxxx, xxx xx. Xxx xxxxxxx, xxx'x xxxxxxx xxxxxx xxxx xxxx xxx xxxx xxxxxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxx xx:
+Data that you want interpolated between shader stages, such as the vertex position or normal, is handled through the use of the **varying** declaration. However, Direct3D doesn't have this declaration; rather, any data that you want passed between shader stages must be marked with an [HLSL semantic](https://msdn.microsoft.com/library/windows/desktop/bb205574). The specific semantic chosen indicates the purpose of the data, and is. For example, you'd declare vertex data that you want interpolated between the fragment shader as:
 
 `float4 vertPos : POSITION;`
 
-xx
+or
 
 `float4 vertColor : COLOR;`
 
-Xxxxx XXXXXXXX xx xxx xxxxxxxx xxxx xx xxxxxxxx xxxxxx xxxxxxxx xxxx. XXXXXXXX xx xxxx x xxxxxxx xxxx, xxxxx xxxxx xxxxxxxxxxxxx, xx xxxxxx xx xxxxxxxx xx xxx xxxxx xxxxxx. Xxxxxxxxx, xxx xxxx xxxxxxx xxxxx xx xxx xxxxx xxxxxx xxxx XX\_XXXXXXXX xxx xxx xxxxxxxxxxxx xxxxxx xxxx xxxx xx xxxxxx xx xxxx xxxxxxxx.
+Where POSITION is the semantic used to indicate vertex position data. POSITION is also a special case, since after interpolation, it cannot be accessed by the pixel shader. Therefore, you must specify input to the pixel shader with SV\_POSITION and the interpolated vertex data will be placed in that variable.
 
 `float4 position : SV_POSITION;`
 
-Xxxxxxxxx xxx xx xxxxxxxx xx xxx xxxx (xxxx) xxxxxxx xx xxxxxxx. Xxx xxxxx xxxxxxx, XX\_XXXXXX\[x\], xxxxx xxxxxxxxx x xxxxxx xxxxxx, xx xxxxxxxx xx xxx xxxx xxxxxx. (XX\_XXXXXX xxxxxxx x xxxxxxx xxxxxx xxxxxxxx xx xxxxxx xxxxxx xxxxx Y.)
+Semantics can be declared on the body (main) methods of shaders. For pixel shaders, SV\_TARGET\[n\], which indicates a render target, is required on the body method. (SV\_TARGET without a numeric suffix defaults to render target index 0.)
 
-Xxxx xxxx xxxx xxxxxx xxxxxxx xxx xxxxxxxx xx xxxxxx xxx XX\_XXXXXXXX xxxxxx xxxxx xxxxxxxx. Xxxx xxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxx xxxx xx xxxxxxxxxx xxxxxx xxxxx x xx xxxxxxx -Y xxx Y, x xx xxxxxxx -Y xxx Y, x xx xxxxxxx xx xxx xxxxxxxx xxxxxxxxxxx xxxxxxxxxx x xxxxx (x/x), xxx x xx Y xxxxxxx xx xxx xxxxxxxx x xxxxx (Y/x). Xxxxx xxxxxxx xxx xxx XX\_XXXXXXXX xxxxxx xxxxx xxxxxxxx xx xxxxxxxx xxx xxxxx xxxxxxxx xx xxx xxxxxx, xxxxx x xx xxxxxxx Y xxx xxx xxxxxx xxxxxx xxxxx xxx x xx xxxxxxx Y xxx xxx xxxxxx xxxxxx xxxxxx (xxxx xxxxxx xx Y.Y). Xxxxxxx xxxxx Y\_x xxxxx xxxxxxx xxxxxx xxxx xxxx xxx XX\_XXXXXXXX xxxxx.
+Also note that vertex shaders are required to output the SV\_POSITION system value semantic. This semantic resolves the vertex position data to coordinate values where x is between -1 and 1, y is between -1 and 1, z is divided by the original homogeneous coordinate w value (z/w), and w is 1 divided by the original w value (1/w). Pixel shaders use the SV\_POSITION system value semantic to retrieve the pixel location on the screen, where x is between 0 and the render target width and y is between 0 and the render target height (each offset by 0.5). Feature level 9\_x pixel shaders cannot read from the SV\_POSITION value.
 
-Xxxxxxxx xxxxxxx xxxx xx xxxxxxxx xxxx **xxxxxxx** xxx xx xxxxxxxxxx xxxx x xxxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxx.
+Constant buffers must be declared with **cbuffer** and be associated with a specific starting register for lookup.
 
-XxxxxxYX YY: Xx XXXX xxxxxxxx xxxxxx xxxxxxxxxxx
+Direct3D 11: An HLSL constant buffer declaration
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -46,16 +46,16 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 };
 ```
 
-Xxxx, xxx xxxxxxxx xxxxxx xxxx xxxxxxxx xY xx xxxx xxx xxxxxx xxxxxx. Xxx xxxxxxxxx xxx xxxxxxxx xx xx xxx xxxx x\#. Xxx xxxx xxxxxxxxxxx xx xxx XXXX xxxxxxxxxxxxxx xx xxxxxxxx xxxxxxx, xxxxxxxxx, xxx xxxx xxxxxxx, xxxx [Xxxxxx Xxxxxxxxx (XXXX)](https://msdn.microsoft.com/library/windows/desktop/bb509581).
+Here, the constant buffer uses register b0 to hold the packed buffer. All registers are referred to in the form b\#. For more information on the HLSL implementation of constant buffers, registers, and data packing, read [Shader Constants (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509581).
 
-Xxxxxxxxxxxx
+Instructions
 ------------
 
-### Xxxx Y: Xxxx xxx xxxxxx xxxxxx
+### Step 1: Port the vertex shader
 
-Xx xxx xxxxxx XxxxXX XX Y.Y xxxxxxx, xxx xxxxxx xxxxxx xxx xxxxx xxxxxx: x xxxxxxxx xxxxx-xxxx-xxxxxxxxxx YxY xxxxxx, xxx xxx Y-xxxxxxxxxx xxxxxxx. Xxxxx xxx xxxxxxx xxxxxxx xxx xxxxxx xxxxxxxx xxx xxx xxxxx. Xxx xxxxxx xxxxxxxxxx xxx xxxxxxxx xxxxxx xx xxxxxxxxxxx xxxxxxxxxxx xxx xxxxxxx xx xx xxx xx\_Xxxxxxxx xxxxxxxxx xxx xxxxxxxxxxxxx. Xxx xxxxxx xxxxx xx xxxxxx xx x xxxxxxx xxxxxxxx xxx xxxxxxxxxxxxx xxxxxx xxxxxxxxxxxxx, xx xxxx.
+In our simple OpenGL ES 2.0 example, the vertex shader has three inputs: a constant model-view-projection 4x4 matrix, and two 4-coordinate vectors. These two vectors contain the vertex position and its color. The shader transforms the position vector to perspective coordinates and assigns it to the gl\_Position intrinsic for rasterization. The vertex color is copied to a varying variable for interpolation during rasterization, as well.
 
-XxxxXX XX Y.Y: Xxxxxx xxxxxx xxx xxx xxxx xxxxxx (XXXX)
+OpenGL ES 2.0: Vertex shader for the cube object (GLSL)
 
 ``` syntax
 uniform mat4 u_mvpMatrix; 
@@ -70,9 +70,9 @@ void main()
 }
 ```
 
-Xxx, xx XxxxxxYX, xxx xxxxxxxx xxxxx-xxxx-xxxxxxxxxx xxxxxx xx xxxxxxxxx xx x xxxxxxxx xxxxxx xxxxxx xx xxxxxxxx xY, xxx xxx xxxxxx xxxxxxxx xxx xxxxx xxx xxxxxxxxxxxx xxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxxxx XXXX xxxxxxxxx: XXXXXXXX xxx XXXXX. Xxxxx xxx xxxxx xxxxxx xxxxxxxxx x xxxxxxxx xxxxxxxxxxx xx xxxxx xxx xxxxxx xxxxxx, xxx xxxxxx x xxxxxx xx xxxx xxxx xxx xxxxxxx xx xx xxx xxxx xxx xxx xxxxx xxxxxxxxx xx xxx xxxxxx xxxx xxxxxxxx (xxxx). (Xxx xxxxx xxxx xxxxxxx xxxx xx xxx xxxxxxxxxx xxxxxxxxxx, xxx xxxx xxxxx xxx xxxxxxxxxx.) Xxx xxxx xxxxxxx xx xxxxxx xxxx xxx xxxx xxxxx, xxxxx xxxxxxxx xxx xxxxxxxxxxxx xxxxxxxx xxx xxxxx, xxx xxxxxxx xx xx xxx xxxxxx xxxxx xxx xxx xxxx xxxxxxxx xx xxx xxxxxx xxxxxx.
+Now, in Direct3D, the constant model-view-projection matrix is contained in a constant buffer packed at register b0, and the vertex position and color are specifically marked with the appropriate respective HLSL semantics: POSITION and COLOR. Since our input layout indicates a specific arrangement of these two vertex values, you create a struct to hold them and declare it as the type for the input parameter on the shader body function (main). (You could also specify them as two individual parameters, but that could get cumbersome.) You also specify an output type for this stage, which contains the interpolated position and color, and declare it as the return value for the body function of the vertex shader.
 
-XxxxxxYX YY: Xxxxxx xxxxxx xxx xxx xxxx xxxxxx (XXXX)
+Direct3D 11: Vertex shader for the cube object (HLSL)
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -108,13 +108,13 @@ PixelShaderInput main(VertexShaderInput input)
 }
 ```
 
-Xxx xxxxxx xxxx xxxx, XxxxxXxxxxxXxxxx, xx xxxxxxxxx xxxxxx xxxxxxxxxxxxx xxx xxxxxxxx xx xxx xxxxxxxx (xxxxx) xxxxxx.
+The output data type, PixelShaderInput, is populated during rasterization and provided to the fragment (pixel) shader.
 
-### Xxxx Y: Xxxx xxx xxxxxxxx xxxxxx
+### Step 2: Port the fragment shader
 
-Xxx xxxxxxx xxxxxxxx xxxxxx xx XXXX xx xxxxxxxxx xxxxxx: xxxxxxx xxx xx\_XxxxXxxxx xxxxxxxxx xxxx xxx xxxxxxxxxxxx xxxxx xxxxx. XxxxXX XX Y.Y xxxx xxxxx xx xx xxx xxxxxxx xxxxxx xxxxxx.
+Our example fragment shader in GLSL is extremely simple: provide the gl\_FragColor intrinsic with the interpolated color value. OpenGL ES 2.0 will write it to the default render target.
 
-XxxxXX XX Y.Y: Xxxxxxxx xxxxxx xxx xxx xxxx xxxxxx (XXXX)
+OpenGL ES 2.0: Fragment shader for the cube object (GLSL)
 
 ``` syntax
 varying vec4 destColor;
@@ -125,9 +125,9 @@ void main()
 } 
 ```
 
-XxxxxxYX xx xxxxxx xx xxxxxx. Xxx xxxx xxxxxxxxxxx xxxxxxxxxx xx xxxx xxx xxxx xxxxxxxx xx xxx xxxxx xxxxxx xxxx xxxxxx x xxxxx. Xxxxx xxx xxxxx xx x Y-xxxxxxxxxx (XXXX) xxxxx xxxxx, xxx xxxxxxxx xxxxxY xx xxx xxxxxx xxxx, xxx xxxx xxxxxxx xxx xxxxxxx xxxxxx xxxxxx xx xxx XX\_XXXXXX xxxxxx xxxxx xxxxxxxx.
+Direct3D is almost as simple. The only significant difference is that the body function of the pixel shader must return a value. Since the color is a 4-coordinate (RGBA) float value, you indicate float4 as the return type, and then specify the default render target as the SV\_TARGET system value semantic.
 
-XxxxxxYX YY: Xxxxx xxxxxx xxx xxx xxxx xxxxxx (XXXX)
+Direct3D 11: Pixel shader for the cube object (HLSL)
 
 ``` syntax
 struct PixelShaderInput
@@ -143,44 +143,48 @@ float4 main(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-Xxx xxxxx xxx xxx xxxxx xx xxx xxxxxxxx xx xxxxxxx xx xxx xxxxxx xxxxxx. Xxx, xxx'x xxx xxx xx xxxxxxx xxx xxxxxxxx xx xxxx xxxxxx xxxxxx xx [Xxxx xx xxx xxxxxx](draw-to-the-screen.md)!
+The color for the pixel at the position is written to the render target. Now, let's see how to display the contents of that render target in [Draw to the screen](draw-to-the-screen.md)!
 
-## Xxxxxxxx xxxx
+## Previous step
 
 
-[Xxxx xxx xxxxxx xxxxxxx xxx xxxx](port-the-vertex-buffers-and-data-config.md)
-Xxxx xxxx
+[Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)
+Next step
 ---------
 
-[Xxxx xx xxx xxxxxx](draw-to-the-screen.md)
-Xxxxxxx
+[Draw to the screen](draw-to-the-screen.md)
+Remarks
 -------
 
-Xxxxxxxxxxxxx XXXX xxxxxxxxx xxx xxx xxxxxxx xx xxxxxxxx xxxxxxx xxx xxxx xxx x xxx xx x xxxxxxxxx xxxxxxxx, xx xxxx xx xxxxxxx xxxxxxxxxxxx xxxxxxxxxxxxx. Xx xxx xxx x xxxxxx, xxxx xxxxxxx [Xxxxxxxx Xxxxxx (XXXX)](https://msdn.microsoft.com/library/windows/desktop/bb509706), [Xxxxxxxxxxxx xx Xxxxxxx xx XxxxxxYX YY](https://msdn.microsoft.com/library/windows/desktop/ff476898), xxx [Xxx xx: Xxxxxx x Xxxxxxxx Xxxxxx](https://msdn.microsoft.com/library/windows/desktop/ff476896). Xx xxx, xxxxxx, xxxx'x x xxx xxxxxxxx xxxx xx xxxx xx xxxx xxxxx xxxxxxxxx xxx xxxxxxxx xxxxxxx:
+Understanding HLSL semantics and the packing of constant buffers can save you a bit of a debugging headache, as well as provide optimization opportunities. If you get a chance, read through [Variable Syntax (HLSL)](https://msdn.microsoft.com/library/windows/desktop/bb509706), [Introduction to Buffers in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476898), and [How to: Create a Constant Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476896). If not, though, here's a few starting tips to keep in mind about semantics and constant buffers:
 
--   Xxxxxx xxxxxx xxxxx xxxx xxxxxxxx'x XxxxxxYX xxxxxxxxxxxxx xxxx xx xxxx xxxx xxxx xxx xxxxxxxxxx xxx xxxx xxxxxxxx xxxxxxx xxxxx xxx xxxxxxx xxxxxx xxxxxxxxxxxx xx xxxx XXXX, xxx xxxx xxx xxxxxxxxx xxxxxx xxxxx xxxxx xxxxxx xxxx xxxxxxxxxxxx.
--   Xx xxxx xxxxxxxx'x X++ xxxx, xxx [XxxxxxXXxxx](https://msdn.microsoft.com/library/windows/desktop/hh437833) xxxxx xx xxxx xxxxxxxx xxxxxx xxxxxxxxxxxx xx xxxxxx xxxxxx xxxx xxxxxxx.
--   Xxx xxxx xxx xx xxxxxxxxxxx xxx xxxxxxxx xxxxxxx xx xx xxxxxxxx xxxxxx xxxxxxxxx xxxx xxxxxxxx xxxxxxx xxxxx xx xxxxx xxxxxxxxx xx xxxxxx. Xxx xxxxxxx, xx xxx xxxx xxxx xxxxxxx xxxx xxxx xx xxxxxxx xxxx xxx xxxxx, xxx xxxxx xxxxxxx xxxx xxxx xx xxxxxxx xxxx xxxx xxx xxxxxx xxxxx, xxxxxxxx xxxxxxxxxx xxxx xxxx xxxx xxx xxxxxxxx xxxxxxxx xxxxxxx.
--   Xxxxxxxxx xxxx xxx xxxx xxxxxxxxx xx xxxxx xx xxxxx xxx xxxx xxxxxxx xxxxxxxxxxx xxxx xx xxxx xxxxxxxx xxxxxx xx xxxxxx xxxxxxxxxxx (XXX) xxxxxx. Xxxxxx-xxxxx xxxx! Xxx xxxx xxx xx x xxx xxxxxxxxx, xx xxxx xxxxx xxxxx xxx xxxxxxx xxxxx xx xxxxxxxxx xxxxxxxx xx XXXX xxxxxxxxx xxxxx xx XxxxxxYX YY.
--   Xxxx xxxx xxx xxxx xxxxx XxxxxxYX xxxxxxx xxxxx xxx xxx xxxxxxxxx xxx xxxx xxxxxx. Xxx xxxxxxxxx xxx xxxxxxx xxxxx Y\_\* xxx xxxxxxxxx xxxx xxxxx xxx YY\_Y.
--   Xxx XX\_XXXXXXXX xxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxx-xxxxxxxxxxxxx xxxxxxxx xxxx xx xxxxxxxxxx xxxxxx xxxxx x xx xxxxxxx Y xxx xxx xxxxxx xxxxxx xxxxx, x xx xxxxxxx Y xxx xxx xxxxxx xxxxxx xxxxxx, x xx xxxxxxx xx xxx xxxxxxxx xxxxxxxxxxx xxxxxxxxxx x xxxxx (x/x), xxx x xx Y xxxxxxx xx xxx xxxxxxxx x xxxxx (Y/x).
+-   Always double check your renderer's Direct3D configuration code to make sure that the structures for your constant buffers match the cbuffer struct declarations in your HLSL, and that the component scalar types match across both declarations.
+-   In your renderer's C++ code, use [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) types in your constant buffer declarations to ensure proper data packing.
+-   The best way to efficiently use constant buffers is to organize shader variables into constant buffers based on their frequency of update. For example, if you have some uniform data that is updated once per frame, and other uniform data that is updated only when the camera moves, consider separating that data into two separate constant buffers.
+-   Semantics that you have forgotten to apply or which you have applied incorrectly will be your earliest source of shader compilation (FXC) errors. Double-check them! The docs can be a bit confusing, as many older pages and samples refer to different versions of HLSL semantics prior to Direct3D 11.
+-   Make sure you know which Direct3D feature level you are targeting for each shader. The semantics for feature level 9\_\* are different from those for 11\_1.
+-   The SV\_POSITION semantic resolves the associated post-interpolation position data to coordinate values where x is between 0 and the render target width, y is between 0 and the render target height, z is divided by the original homogeneous coordinate w value (z/w), and w is 1 divided by the original w value (1/w).
 
-## Xxxxxxx xxxxxx
+## Related topics
 
 
-[Xxx xx: xxxx x xxxxxx XxxxXX XX Y.Y xxxxxxxx xx XxxxxxYX YY](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+[How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
 
-[Xxxx xxx xxxxxx xxxxxxx](port-the-shader-config.md)
+[Port the shader objects](port-the-shader-config.md)
 
-[Xxxx xxx xxxxxx xxxxxxx xxx xxxx](port-the-vertex-buffers-and-data-config.md)
+[Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)
 
-[Xxxx xx xxx xxxxxx](draw-to-the-screen.md)
+[Draw to the screen](draw-to-the-screen.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

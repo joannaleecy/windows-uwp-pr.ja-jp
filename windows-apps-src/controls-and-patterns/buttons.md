@@ -1,44 +1,44 @@
 ---
-xxxxx: Xxxxxxx
-xxxxxxxx: xxxxxx.xxx
+label: ボタン
+template: detail.hbs
 ---
-# Xxxxxxx
-X xxxxxx xxxxx xxx xxxx x xxx xx xxxxxxx xx xxxxxxxxx xxxxxx.
+# ボタン
+ボタンは、特定の操作を直ちに実行する方法をユーザーに与えます。
 
-![Xxxxxxx xx xxxxxxx](images/controls_button_example.png)
+![ボタンの例](images/controls_button_example.png)
 
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**Xxxxxx xxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
--   [**XxxxxxXxxxxx xxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)
--   [**Xxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)
+-   [**Button クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
+-   [**RepeatButton クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx)
+-   [**Click イベント**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx)
 
-## Xxxxxxx
+## 例
 
-Xxxx xxxxxxx xxxx xxx xxxxxxx, xxxxxx xxx xxxxxx, xx x xxxxxx. 
+この例では、ダイアログ ボックスで、2 つのボタン ([送信] と [キャンセル]) を使います。 
 
-![Xxxxxxx xx xxxxxxx, xxxx xx x xxxxxx](images/controls_button_example_dialog.png)
+![ダイアログで使われるボタンの例](images/controls_button_example_dialog.png)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
+## 適切なコントロールの選択
 
-X xxxxxx xxxx xxx xxxx xxxxxxxx xx xxxxxxxxx xxxxxx, xxxx xx xxxxxxxxxx x xxxx.
+ボタンを使うと、ユーザーは直ちに操作を開始できます (フォームの送信など)。
 
-Xxx'x xxx x xxxxxx xxxx xxx xxxxxx xx xx xxxxxxxx xx xxxxxxx xxxx; xxx x xxxx xxxxxxx. Xxx [Xxxxxxxxxx](hyperlinks.md) xxx xxxx xxxx.
+他のページに移動する操作では、ボタンは使わず、リンクを使います。 詳しくは、「[ハイパーリンク](hyperlinks.md)」をご覧ください。
 
-> Xxxxxxxxx: Xxx xxxxxx xxxxxxxxxx, xxx xxxxxxx xxxxxxx "Xxxx" xxx "Xxxx". Xxx xxxxx xxxxx xx xxxxxxxxx xxxxxxxxxx xx xxxxxxxxxx xx xx xxxxx xxxxx, xxx x xxxx xxxxxx.
+> 例外: ウィザードでのページの移動には、[戻る] と [次へ] というラベルのボタンを使います。 他の種類の前に戻る移動や上位レベルへの移動では、[戻る] ボタンを使います。
 
-## Xxxxxx x xxxxxx
+## ボタンの作成
 
-Xxxx xxxxxxx xxxxx x xxxxxx xxxx xxxxxxxx xx x xxxxx. 
+クリックに応答するボタンの例を次に示します。 
 
-Xxxxxx xxx xxxxxx xx XXXX.
+XAML でボタンを作成します。
 
 ```xaml
 <Button Content="Submit" Click="SubmitButton_Click"/>
 ```
 
-Xx xxxxxx xxx xxxxxx xx xxxx.
+または、コードでボタンを作成します。
 
 ```csharp
 Button submitButton = new Button();
@@ -49,7 +49,7 @@ submitButton.Click += SubmitButton_Click;
 stackPanel1.Children.Add(submitButton);
 ```
 
-Xxxxxx xxx Xxxxx xxxxx.
+Click イベントを処理します。
 
 ```csharp
 private async void SubmitButton_Click(object sender, RoutedEventArgs e)
@@ -62,20 +62,20 @@ private async void SubmitButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-### Xxxxxx xxxxxxxxxxx
+### ボタンの対話式操作
 
-Xxxx xxx xxx x Xxxxxx xxxx x xxxxxx xx xxxxxx, xx xxxxx x xxxx xxxxx xxxxxx xxxxx xxx xxxxxxx xx xxxx xx, xxx xxxxxx xxxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) xxxxx. Xx x xxxxxx xxx xxxxxxxx xxxxx, xxxxxxxx xxx Xxxxx xxx xx xxx Xxxxxxxx xxx xxxx xxxxxx xxx Xxxxx xxxxx.
+ポインターがボタンの上にあるときに、指やスタイラスでそのボタンをタップするか、マウスの左ボタンを押すと、ボタンでは [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) イベントが発生します。 ボタンにキーボード フォーカスがある場合は、Enter キーまたは Space キーを押しても、Click イベントが発生します。
 
-Xxx xxxxxxxxx xxx'x xxxxxx xxx-xxxxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) xxxxxx xx x Xxxxxx xxxxxxx xx xxx xxx Xxxxx xxxxxxxx xxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxx xxx xxxxxx xxxxxx xxxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/mt185584.aspx).
+通常、ボタンでは低レベルな [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed.aspx) イベントを処理できません。これに代わる Click 動作があるためです。 詳しくは、「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/en-us/library/windows/apps/mt185584.aspx)」をご覧ください。
 
-Xxx xxx xxxxxx xxx x xxxxxx xxxxxx xxx Xxxxx xxxxx xx xxxxxxxx xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) xxxxxxxx. Xxx xxxxxxx XxxxxXxxx xxxxx xx **Xxxxxxx**. Xx XxxxxXxxx xx **Xxxxx**, xxx Xxxxx xxxxx xxx'x xx xxxxxx xxxx xxx xxxxxxxx xx xxxxx. 
+ボタンで Click イベントが発生する方法を変えるには、[**ClickMode**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.clickmode.aspx) プロパティを変更します。 ClickMode の既定値は **Release** です。 ClickMode が **Hover** の場合、キーボード操作やタッチ操作によって Click イベントを発生させることはできません。 
 
 
-### Xxxxxx xxxxxxx
+### ボタンのコンテンツ
 
-Xxxxxx xx x [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx). Xxx XXXX xxxxxxx xxxxxxxx xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx), xxxxx xxxxxxx x xxxxxx xxxx xxxx xxx XXXX: `<Button>A button's content</Button>`. Xxx xxx xxx xxx xxxxxx xx xxx xxxxxx'x xxxxxxx. Xx xxx xxxxxxx xx x [XXXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), xx xx xxxxxxxx xx xxx xxxxxx. Xx xxx xxxxxxx xx xxxxxxx xxxx xx xxxxxx, xxx xxxxxx xxxxxxxxxxxxxx xx xxxxx xx xxx xxxxxx.
+ボタンは [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.aspx) です。 その XAML コンテンツ プロパティは [**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx) で、`<Button>A button's content</Button>` のような XMAL 構文を使用できます。 任意のオブジェクトをボタンのコンテンツとして設定できます。 コンテンツが [UIElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx) の場合、ボタンにレンダリングされます。 コンテンツが別のタイプのオブジェクトの場合、その文字列表現がボタンに表示されます。
 
-Xxxx, x **XxxxxXxxxx** xxxx xxxxxxxx xx xxxxx xx x xxxxxx xxx xxxx xx xxx xx xxx xxxxxxx xx x xxxxxx.
+ここでは、バナナの画像とテキストを含む **StackPanel** がボタンのコンテンツとして設定されます。
 
 ```xaml
 <Button Click="Button_Click" 
@@ -89,15 +89,16 @@ Xxxx, x **XxxxxXxxxx** xxxx xxxxxxxx xx xxxxx xx x xxxxxx xxx xxxx xx xxx xx xxx
 </Button>
 ```
 
-Xxx xxxxxx xxxxx xxxx xxxx.
+ボタンは次のように表示されます。
 
-![X xxxxxx xxxx xxxxx xxx xxxx xxxxxxx](images/button-orange.png)
+![画像とテキスト コンテンツがあるボタン](images/button-orange.png)
 
-## Xxxxxx x xxxxxx xxxxxx
+## 繰り返しボタンの作成
 
-X [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) xx x xxxxxx xxxx xxxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) xxxxxx xxxxxxxxxx xxxx xxx xxxx xx'x xxxxxxx xxxxx xx'x xxxxxxxx. Xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx) xxxxxxxx xx xxxxxxx xxx xxxx xxxx xxx XxxxxxXxxxxx xxxxx xxxxx xx xx xxxxxxx xxxxxx xx xxxxxx xxxxxxxxx xxx xxxxx xxxxxx. Xxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx) xxxxxxxx xx xxxxxxx xxx xxxx xxxxxxx xxxxxxxxxxx xx xxx xxxxx xxxxxx. Xxxxx xxx xxxx xxxxxxxxxx xxx xxxxxxxxx xx xxxxxxxxxxxx.
+[
+            **RepeatButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.aspx) は、ボタンが押されてから離されるまで、繰り返し [**Click**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) イベントを発生させるボタンです。 ボタンが押されてからクリック操作の繰り返しを始めるまでの RepeatButton の待ち時間を指定するには、[**Delay**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.delay.aspx) プロパティを設定します。 クリック操作の繰り返し間隔を指定するには、[**Interval**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.repeatbutton.interval.aspx) プロパティを設定します。 これらのプロパティの時間はどちらもミリ秒単位で指定します。
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx XxxxxxXxxxxx xxxxxxxx xxxxx xxxxxxxxxx Xxxxx xxxxxx xxx xxxx xx xxxxxxxx xxx xxxxxxxx xxx xxxxx xxxxx xx x xxxx xxxxx.
+次の例は 2 つの RepeatButton コントロールを示しています。それぞれの Click イベントを使って、テキスト ブロックに表示される値を増減します。
 
 ```xaml
 <StackPanel>
@@ -125,121 +126,109 @@ private void Decrease_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Xxxxxxxxxxxxxxx
+## 推奨事項
 
--   Xxxx xxxx xxx xxxxxxx xxx xxxxx xx x xxxxxx xxx xxxxx xx xxx xxxx.
--   Xxx x xxxxxxx, xxxxxxxx, xxxx-xxxxxxxxxxx xxxx xxxx xxxxxxx xxxxxxxxx xxx xxxxxx xxxx xxx xxxxxx xxxxxxxx. Xxxxxxx xxxxxx xxxx xxxxxxx xx x xxxxxx xxxx, x xxxx.
--   Xx xxx xxxxxx'x xxxx xxxxxxx xx xxxxxxx, xxx xxxxxxx, xx xx xxxxxxxxx, xxxxxxxx xxx xxx xxxxxx xxxx xxxxxx xxx xxxx xxxx xxxxxx xx xxxxxxxx xxxxxx xx.
--   Xxx xxxxxxx xxxxxxx xxxx xxxx xxxxxxx, xxx x xxxxxxx xxxxxx xxxxx.
--   Xxxxx xxxxxx, xxxxx, xx xxxx xxxxxxx xxxxxxx xxxx xxxx xxxxxxx.
--   Xxx xxx xxxxxxx xxxx xxxxxx xxxx xxxxx xxxxxxxxxx xxxx xxx xx xxx xxxxxxxxx xxxxxxxxx.
--   Xxx xx xxxxxx xxxx xxxxx xx xx xxxxxxxxx xxxxxx xxxxxxxx xxxxx xxxxxx xxxx xxx, xxxxxxx xx xxxxxxxxxxx x xxxxxx xx xxxxxxxx xxxxx, xxxxxxxx xxxxx x [xxxxxx xxx xxx](app-bars.md).
--   Xxxxxx xxxx xxx xx xxx xxxxxxx xx xxx xxxx xx x xxxx, xxx xxxxxxx, Xxxxxx xxx Xxxxxx. Xx xxx xxxx xx xxxxxx xxxx xxxxxxx xx xxx xxxx, xxxxxxxx xxxxx [xxxxxxxxxx](checkbox.md) xx [xxxxx xxxxxxx](radio-button.md) xxxx xxxxx xxx xxxx xxx xxxxxx xxxxxxx, xxxx x xxxxxx xxxxxxx xxxxxx xx xxxxxxx xxxxx xxxxxxx.
--   Xxx xxx xxxxxxx xxxxxxx xxxxxx xx xxxxxxxx xxx xxxx xxxxxx xx xxxxxxxxxxx xxxxxx.
--   Xxxxxxxx xxxxxxxxxxx xxxx xxxxxxx. X xxxxxx'x xxxxx xx xxxxxxxxxxx xx xxxxxxx, xxx xxx xxx xxxxxxxxx xxx xxxxxxx xxxx xxxx xx xxx xxxxxx'x xxxxxxxxxx. X xxxxxx'x xxxxxxx xx xxxxxxx xxxx—xxx xxxxxxx, Xxxxxx xx Xxxxxx—xxx xxx xxxxx xxxxxxx xxx xxxx xxxx xx xxxx, xx xxx xx xxxx xxxx xxxx.
--   Xxxx xxxx xxxx xx xxx xxxx xxxxxxxxx xxxx x xxxxxx, xxx xxxxxx xxxxxxx xxxxx xxx xxxxxxxxxx xx xxxxxxx xxxxxxxx xx xxx xxxx. Xxxxxx, xxxxxxx, xxx xxxxxxxx xxx xxxxxxxx xx xxxxxx xxxxxx.
--   Xxxxxxx xxx xxxxxx'x xxxxxx xxxx xxx xxxx xxxx xx xxxxxxx xxx xxxxxx. Xxxxxxx xxx xxxxxx xx xxxxxxxxx xxxx xxx xxxx xxxxxxxx xxx xxxxxx, xxx xxx xxxx xxx xxx x xxxxxx'x xxxxxx xx xxxxxxx xxxx x xxxxxx xxxxx xxxxxxx xx.
--   Xxx'x xxx x xxxxxxx xxxxxx xx xxx xxxxx.
--   Xxx'x xxxxxx xxxxxx xxxx xxxxx xxx xxx xx xxxxxxx; xxx xxxxxxx, xxx'x xxxxxx xxx xxxx xx x xxxxxx xxxx xxxx "Xxxx" xx "Xxxxxxxx".
--   Xxx'x xxxx xxx xxxxxxx xxxxxx, xxxxx, xxx xxxxxx xxxxxx.
--   Xxx'x xxx xxx xxxx xxxxxxx xxxxxx x xxxxxx. Xxxx xxx xxxxxxx xxxxxxx xxx xxxx xx xxxxxxxxxx (xxxxxxx xxxx xxxx x xxxxxxx xxx xxxx xxxx).
+-   ボタンの用途と状態をユーザーがはっきりと理解できるようにします。
+-   ボタンによって行われる操作を明確に説明する、簡潔で具体的でわかりやすいテキストを使います。 通常、ボタンのテキスト コンテンツは、1 語の動詞です。
+-   ボタンのテキスト コンテンツが動的な場合 (ローカライズされる場合など) は、ボタンのサイズがどのように変化し、その周囲のコントロールに何が起こるかを考えます。
+-   テキスト コンテンツの付いたコマンド ボタンの場合は、最小のボタン幅を使います。
+-   テキスト コンテンツの付いた幅が狭い横長または縦長のコマンド ボタンは使わないようにします。
+-   ブランドのガイドラインで別のフォントが指示されていない限り、既定のフォントを使います。
+-   ある操作をアプリの複数のページで実行できるようにするには、各ページでボタンを使うのではなく、[下部のアプリ バー](app-bars.md) を使うことを検討します。
+-   ユーザーに対して表示するボタンは、1 つまたは 2 つにします (例: [承諾] と [キャンセル])。 3 つ以上の操作をユーザーに示す必要がある場合は、ユーザーが操作を選択できる [チェック ボックス](checkbox.md) または [オプション ボタン](radio-button.md) を、それらの操作を開始するための 1 つのコマンド ボタンと共に使うことを検討します。
+-   最も一般的な操作や推奨される操作を示す既定のコマンド ボタンを使います。
+-   ボタンをカスタマイズすることを検討します。 ボタンの形は既定では四角形ですが、ボタンの外観を構成する視覚効果をカスタマイズできます。 ボタンのコンテンツは、通常はテキスト (例: [承諾] や [キャンセル]) ですが、アイコンに置き換えるか、アイコンとテキストを使うことができます。
+-   ユーザーがボタンを操作したとき、ボタンの状態と外観を変更して、ユーザーにフィードバックを返します。 ボタンの状態には、Normal、Pressed、Disabled などがあります。
+-   ユーザーがボタンをタップまたはクリックしたときに、ボタンのアクションを開始します。 通常、アクションは、ユーザーがボタンを離したときに開始されますが、指がボタンを押したときにボタンのアクションを開始するように設定することもできます。
+-   コマンド ボタンは、状態の設定には使わないでください。
+-   アプリの実行中、ボタンのテキストは変更しないでください。たとえば、"次へ" というボタンのテキストは "続行" というテキストには変更しないでください。
+-   送信、リセット、標準ボタンの既定のスタイルを取り替えないでください。
+-   ボタン内に多すぎるコンテンツを配置しないでください。 ボタン内のコンテンツは、簡潔でわかりやすくします (画像と少しのテキストのみにします)。
 
-## Xxxx xxxxxxx
-Xxx xxxx xxxxxx xx x xxxxxx-xxxxxxxx XX xxxxxxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxxxx xxxxxxx xxxxxx xxx xxxx xxxxx xx xxxxxxxxxx xxxxxxx xx xxx xxxx.
+## 戻るボタン
+戻るボタンは、バック スタックまたはユーザーのナビゲーション履歴を使って "戻る" ナビゲーションを実現する、システムの UI アフォーダンスです。
 
-Xxx xxxxx xx xxx xxxxxxxxxx xxxxxxx (xxxxxxx xx-xxx xx xxxxxx) xxxxxxx xx xxx xxxxxx xxx xxxxxx xxxx.
+ナビゲーション履歴のスコープ (アプリ内かグローバルか) はデバイスとデバイス モードによって決まります。
 
-## <span id="examples">
-            </span>
-            <span id="EXAMPLES">
-            </span>Xxxxxxx
+## <span id="examples"></span><span id="EXAMPLES"></span>例
 
 
-Xxx XX xxx xxx xxxxxx xxxx xxxxxx xx xxxxxxxxx xxx xxxx xxxxxx xxx xxxxx xxxx, xxx xxx xxxxxxxxxx xxxxxxxxxx xx xxxxxx xxx xxxxxxxxxx xxxxxx xxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xxxxx xxxxxxxxx xxxxxxxxxxx xxxxxxx:
+システムの戻るボタンの UI は、デバイスや入力の種類ごとに最適化されますが、ナビゲーション エクスペリエンスはグローバルであり、デバイスやユニバーサル Windows プラットフォーム (UWP) アプリで一貫しています。 これらの異なるエクスペリエンスには次のものがあります。
 
-Xxxxxxx
-Xxxxx
-![xxxxxx xxxx xx x xxxxx](images/nav-back-phone.png)
--   Xxxxxx xxxxxxx.
--   X xxxxxxxx xx xxxxxxxx xxxxxx xx xxx xxxxxx xx xxx xxxxxx.
--   Xxxxxx xxxx xxxxxxxxxx xxxxxx xxx xxx xxx xxxxxxx xxxx.
+デバイス
+電話
+![電話でのシステムの戻るボタン](images/nav-back-phone.png)
+-   常に表示されます。
+-   デバイスの下部にあるソフトウェアまたはハードウェア ボタン。
+-   アプリ内部やアプリ間で、グローバルな戻るナビゲーションを実現します。
 
-<span id="Tablet">
-            </span>
-            <span id="tablet">
-            </span>
-            <span id="TABLET">
-            </span>Xxxxxx
-![xxxxxx xxxx xx x xxxxxx (xx xxxxxx xxxx)](images/nav-back-tablet.png)
--   Xxxxxx xxxxxxx xx Xxxxxx xxxx.
+<span id="Tablet"></span><span id="tablet"></span><span id="TABLET"></span>タブレット
+![タブレットでのシステムの戻るボタン (タブレット モード)](images/nav-back-tablet.png)
+-   タブレット モードでは、常に表示されます。
 
-    Xxx xxxxxxxxx xx Xxxxxxx xxxx. Xxxxx xxx xxxx xxxxxx xxx xx xxxxxxx, xxxxxxx. Xxx [XX, Xxxxxx, Xxxxxx](#PC).
+    デスクトップ モードでは利用できません。 代わりに、タイトル バーの戻るボタンを有効にすることができます。 「[PC、ノート PC、タブレット](#PC)」をご覧ください。
 
-    Xxxxx xxx xxxxxx xxxxxxx xxxxxxx xx Xxxxxx xxxx xxx Xxxxxxx xxxx xx xxxxx xx **Xxxxxxxx &xx; Xxxxxx &xx; Xxxxxx xxxx** xxx xxxxxxx **Xxxx Xxxxxxx xxxx xxxxx-xxxxxxxx xxxx xxxxx xxxx xxxxxx xx x xxxxxx**.
+    ユーザーは、**[設定]、[システム]、[タブレット モード]** の順に選択し、**[デバイスをタブレットとして使用すると、Windows のタッチ機能がより使いやすくなります]** をオンまたはオフにすることによって、タブレット モードでの実行とデスクトップ モードでの実行を切り替えることができます。
 
--   X xxxxxxxx xxxxxx xx xxx xxxxxxxxxx xxx xx xxx xxxxxx xx xxx xxxxxx.
--   Xxxxxx xxxx xxxxxxxxxx xxxxxx xxx xxx xxx xxxxxxx xxxx.
+-   デバイスの下部のナビゲーション バーにあるソフトウェア ボタン。
+-   アプリ内部やアプリ間で、グローバルな戻るナビゲーションを実現します。
 
-<span id="PC">
-            </span>
-            <span id="pc">
-            </span>XX, Xxxxxx, Xxxxxx
-![xxxxxx xxxx xx x xx xx xxxxxx](images/nav-back-pc.png)
--   Xxxxxxxx xx Xxxxxxx xxxx.
+<span id="PC"></span><span id="pc"></span>PC、ノート PC、タブレット
+![PC やノート PC でのシステムの戻るボタン](images/nav-back-pc.png)
+-   デスクトップ モードではオプションです。
 
-    Xxx xxxxxxxxx xx Xxxxxx xxxx. Xxx [Xxxxxx](#Tablet).
+    タブレット モードでは利用できません。 「[タブレット](#Tablet)」をご覧ください。
 
-    Xxxxxxxx xx xxxxxxx. Xxxx xxx xx xx xxxxxx xx.
+    既定では無効になっています。 有効にすることをオプトインする必要があります。
 
-    Xxxxx xxx xxxxxx xxxxxxx xxxxxxx xx Xxxxxx xxxx xxx Xxxxxxx xxxx xx xxxxx xx **Xxxxxxxx &xx; Xxxxxx &xx; Xxxxxx xxxx** xxx xxxxxxx **Xxxx Xxxxxxx xxxx xxxxx-xxxxxxxx xxxx xxxxx xxxx xxxxxx xx x xxxxxx**.
+    ユーザーは、**[設定]、[システム]、[タブレット モード]** の順に選択し、**[デバイスをタブレットとして使用すると、Windows のタッチ機能がより使いやすくなります]** をオンまたはオフにすることによって、タブレット モードでの実行とデスクトップ モードでの実行を切り替えることができます。
 
--   X xxxxxxxx xxxxxx xx xxx xxxxx xxx xx xxx xxx.
--   Xxxx xxxxxxxxxx xxxxxx xxx xxx xxxx. Xxxx xxx xxxxxxx xxx-xx-xxx xxxxxxxxxx.
+-   アプリのタイトル バーにあるソフトウェア ボタン。
+-   アプリ内部のみでの戻るナビゲーション。 アプリ間のナビゲーションはサポートされません。
 
-Xxxxxxx Xxx
-![xxxxxx xxxx xx x xxxxxxx xxx](images/nav-back-surfacehub.png)
--   Xxxxxx xxxxxxx.
--   X xxxxxxxx xxxxxx xx xxx xxxxxx xx xxx xxxxxx.
--   Xxxx xxxxxxxxxx xxxxxx xxx xxx xxx xxxxxxx xxxx.
+Surface Hub
+![Surface Hub でのシステムの戻るボタン](images/nav-back-surfacehub.png)
+-   常に表示されます。
+-   デバイスの下部にあるソフトウェア ボタン。
+-   アプリ内部やアプリ間での戻るナビゲーション。
 
  
 
-## <span id="Recommendations">
-            </span>
-            <span id="recommendations">
-            </span>
-            <span id="RECOMMENDATIONS">
-            </span>Xxxxxxxxxxxxxxx
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>推奨事項
 
 
--   Xxxxxx xxxx xxxxxxxxxx.
+-   "戻る" ナビゲーションを有効にします。
 
-    Xx xxxx xxxxxxxxxx xx xxx xxxxxxx, xxxx xxx xx xxxxxxxx xx xxx xxxxxx xxxx xxxxx, xxx xx-xxx xxxx xxxxxxxxxx xxxxxxx xx xxx xxxxxxxxxx.
+    "戻る" ナビゲーションが有効でない場合は、アプリはグローバルなバック スタックに含まれますが、アプリ内のページ ナビゲーション履歴は保持されません。
 
--   Xxxxxx xxx xxxxx xxx xxxx xxxxxx xx Xxxxxxx xxxx.
+-   デスクトップ モードではタイトル バーの戻るボタンを有効にします。
 
-    Xx-xxx xxxx xxxxxxxxxx xxxxxxx xx xxxxxxxxxx, xxx-xx-xxx xxxx xxxxxxxxxx xx xxx xxxxxxxxx.
+    アプリ内のページ ナビゲーション履歴は保持され、アプリ間の "戻る" ナビゲーションはサポートされていません。
 
-    **Xxxx**  Xx Xxxxxx xxxx, xxx xxxxx xxx xx xxxxxxxxx xxxx x xxxx xxxxxx xxxx xxxx xxx xxx xx xxx xxxxxx xx xxxxx x xxxxx xxxxxxx xxxx xxx xxx xx xxx xxxxxx. Xx xxxxx xxxxxxxxxxx xxx xxxxxxxxx, xxx xxxxx xxx xxxx xxxxxx xx xxx xxxxxxxxx xx Xxxxxx xxxx.
+    **注:** タブレット モードでは、ユーザーがデバイスの上部から下へスワイプするか、デバイスの上部付近にマウス ポインターを動かしたときに、タイトル バーが表示されます。 重複や混乱を避けるため、タイトル バーの戻るボタンは、タブレット モードでは表示されません。
 
      
 
--   Xxxx xx xxxxxxx xxx xxxxx xxx xxxx xxxxxx xx Xxxxxxx xxxx xxxx xx-xxx xxxxxxxxxx xxxxxxx xx xxxxxxxx xx xxxxxxxxxxx.
+-   アプリ内のナビゲーション履歴が使い果たされた場合や利用できない場合は、デスクトップ モードでタイトル バーの戻るボタンを非表示にするか、無効にします。
 
-    Xxxxxxxx x xxxxx xxxxxxxxxx xx xxx xxxx xxxx xxxx xxxx xxxxxxxxx xxxx xx xxx xx xxxxxxxx.
+    可能な限り "戻る" ナビゲーションを行ったことをユーザーに明確に示します。
 
--   Xxxx xxxx xxxxxxx xxxxxx xx xxxx xxx xxxx xx xxx xxxx xxxxx, xx, xx xxx xx Xxxxxxx xxxx, xx xxx xxxxxxxxxxx xxxxxxxxx xxx.
+-   各戻るコマンドでは、バック スタック内の 1 ページ前、または、デスクトップ モードでない場合は、直前のアプリに戻る必要があります。
 
-    Xxxxx xxxxx xxx xxxxxxxx xx xxxx xxxxxxxxxx xx xxx xxxxxxxxx, xxxxxxxxxx, xxx xxxxxxxxxxx.
+    "戻る" ナビゲーションが、直感的でない場合、一貫性がない場合、予測不可能な場合、ユーザーは混乱する可能性があります。
 
-## Xxxxxxx xxxxxxxx
+## 関連記事
 
-- [Xxxxx xxxxxxx](radio-button.md)
-- [Xxxxxx xxxxxxxx](toggles.md)
-- [Xxxxx xxxxx](checkbox.md)
+- [ラジオ ボタン](radio-button.md)
+- [トグル スイッチ](toggles.md)
+- [チェック ボックス](checkbox.md)
 
-**Xxx xxxxxxxxxx (XXXX)**
-- [**Xxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
+**開発者向け (XAML)**
+- [**Button クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.button.aspx)
+
+
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,133 +1,133 @@
 ---
-xxxxx: Xxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX xxxx
-xxxxxxxxxxx: Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxx, xxxxxxxxxx xxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxxx xxxx xxxxxx-xxxxxxxx xxxxxx xx xxxxxxx xxxxxxxx xxxx-xxxxxxxxxx xxxxxx, xxx xxxxxx xxxxxxx xx xxxxx xxxxx.
-xx.xxxxxxx: YYYYYYYY-xYYx-YYYx-YYYx-YxxxYYxYYxYY
+title: Package your Universal Windows Platform (UWP) DirectX game
+description: Larger Universal Windows Platform (UWP) games, especially those that support multiple languages with region-specific assets or feature optional high-definition assets, can easily balloon to large sizes.
+ms.assetid: 68254203-c43c-684f-010a-9cfa13a32a77
 ---
 
-#  Xxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX xxxx
+#  Package your Universal Windows Platform (UWP) DirectX game
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxx, xxxxxxxxxx xxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxxx xxxx xxxxxx-xxxxxxxx xxxxxx xx xxxxxxx xxxxxxxx xxxx-xxxxxxxxxx xxxxxx, xxx xxxxxx xxxxxxx xx xxxxx xxxxx. Xx xxxx xxxxx, xxxxx xxx xx xxx xxx xxxxxxxx xxx xxx xxxxxxx xx xxxxxxxxx xxxx xxx xx xxxx xxxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxx xxxx xxxxxxxx xxxx.
+Larger Universal Windows Platform (UWP) games, especially those that support multiple languages with region-specific assets or feature optional high-definition assets, can easily balloon to large sizes. In this topic, learn how to use app packages and app bundles to customize your app so that your customers only receive the resources they actually need.
 
-Xx xxxxxxxx xx xxx xxx xxxxxxx xxxxx, Xxxxxxx YY xxxxxxxx xxx xxxxxxx xxxxx xxxxx xxxxxxxx xxx xxxxx xx xxxxx:
+In addition to the app package model, Windows 10 supports app bundles which group together two types of packs:
 
--   Xxx xxxxx xxxxxxx xxxxxxxx-xxxxxxxx xxxxxxxxxxx xxx xxxxxxxxx. Xxxxxxxxx, x XXX xxxx xxx xxxx xx xx xxxxx xxx xxxxx: xxx xxxx xxx xxx xYY, xYY, xxx XXX XXX xxxxxxxxxxxxx. Xxx xxxx xxx xxxx xxxxxxxx xx xxxx xxxxxxxx xxxxxxxx xxxx xx xxxxxxxx xx xxx xxx xxxx. Xx xxx xxxx xxxxxx xxxx xxxxxxx xxx xxx xxxx xxxxxx xxx xxx xxxx xx xxx xxxx x xxxxxxxx xxxxx xx xxxxxxxx xxx xxxxxxxxxxx.
--   Xxxxxxxx xxxxx xxxxxxx xxxxxxxx xx xxxxxxxx xxxxxxxx-xxxxxxxx xxxx, xxxx xx xxxx xxxxxx (xxxxxxxx, xxxxxx, xxxxx, xxxx). X XXX xxxx xxx xxxx xxx xx xxxx xxxxxxxx xxxxx, xxxxxxxxx xxxxxxxx xxxxx xxx xxxx-xxxxxxxxxx xxxxxx xx xxxxxxxx, XxxxxxX xxxxxxx xxxxx YY+ xxxxxxxxx, xx xxxxxxxx-xxxxxxxx xxxxxx xxx xxxxxxxxx.
+-   App packs contain platform-specific executables and libraries. Typically, a UWP game can have up to three app packs: one each for the x86, x64, and ARM CPU architectures. All code and data specific to that hardware platform must be included in its app pack. An app pack should also contain all the core assets for the game to run with a baseline level of fidelity and performance.
+-   Resource packs contain optional or expanded platform-agnostic data, such as game assets (textures, meshes, sound, text). A UWP game can have one or more resource packs, including resource packs for high-definition assets or textures, DirectX feature level 11+ resources, or language-specific assets and resources.
 
-Xxx xxxx xxxxxxxxxxx xxxxx xxx xxxxxxx xxx xxx xxxxx, xxxx [Xxxxxxxx xxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321).
+For more information about app bundles and app packs, read [Defining app resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321).
 
-Xxxxx xxx xxx xxxxx xxx xxxxxxx xx xxxx xxx xxxxx, xxxx xx xxxxxxxxxxx xxx xxxxxxxxx. Xxx xxxx xxx xxxx xxxxx xxxxxxx xxxx xxxxxxxxxx xxxxx xxxxx xxx xxxx xxxxxxxx, xxxxxxxxxx xxx XXX xxxxxxxxx xxxx xxx xxx xxx xx? X xxxx xxxx xx xx xxx xx xxxxxxxx xxxx xxxx xxxxxxxx xxx xx xxxxxxxx, xx xxxx xxx xxxxx xxxxxxx xxxx xxxx xxxxxx, xxxx xxxxx xx xxxxx xxxxxx, xxx xxxxx xxxxxxxx xxxxxxx xxxxxxxxx xxxxx.
+While you can place all content in your app packs, this is inefficient and redundant. Why have the same large texture file replicated three times for each platform, especially for ARM platforms that may not use it? A good goal is to try to minimize what your customer has to download, so they can start playing your game sooner, save space on their device, and avoid possible metered bandwidth costs.
 
-Xx xxx xxxx xxxxxxx xx xxx XXX xxx xxxxxxxxx, xx xx xxxxxxxxx xx xxxxxxxx xxx xxxxxxxxx xxxxxx xxx xxxx xxxxxx xxxxxxxxxxx xxx xxx xxx xxxxxxxx xxxxxxxxx xxxxx xx xxxx xxxxxxxxxxx, xx xxxx xxxxx xxx xxxxxx xxx xxxxxx xxxx xxxxxxxxx xx x xxx xxxx xxxxx xxxxxxxxx xxxxxx. Xxxxxx xxx xxxxx xxxxxxxx xx xxxx xxx xxxx xxxxxxxxxx xx xxxxxxxxxxx xxxxx xxxxxxxx xxx xxxxxxxx xxxxx xxx xxxxxxx, xxx xxxx xxxxxxxxx xxxx xxxx xxxxx xx xxxxxxxxxx xxxxxxxxx.
+To use this feature of the UWP app installer, it is important to consider the directory layout and file naming conventions for app and resource packaging early in game development, so your tools and source can output them correctly in a way that makes packaging simple. Follow the rules outlined in this doc when developing or configuring asset creation and managing tools and scripts, and when authoring code that loads or references resources.
 
-## Xxx xxxxxx xxxxxxxx xxxxx?
+## Why create resource packs?
 
 
-Xxxx xxx xxxxxx xx xxx, xxxxxxxxxxxx x xxxx xxx xxxx xxx xx xxxx xx xxxx xxxxxxx xx x xxxxx xxxxxxx xx XXX xxxxxxxx xxxxxxxxx, xxx xxxxx xxxx xx xxxxxxx xxxxxxxx xxxxxxxx xx xxxx xxxxx xx xxxxxxx xxxxx xxxxxxx xx xxxxxxxxx. Xxx xxxxxxx, xx xxx xxx xxxxxxxxx xxxx xxxx xx xxxx xxx Xxxxxx Xxxxxx xxx Xxxxx, xxx xxxxx xxxx xxx xxx xx xxxxx xxxxx xx Xxxxxxx xxx xxx xx-xx xxxxxxx, xxx xxxxxxx xx Xxxxxxxx xxx xxx xx-xx xxxxxx. Xx, xx xxx xxxx xx xxx xx xxxxx xx xxxx xxxx xxx XXX xxxxxxx xx xxxx xx xYY xxx xYY xxxxxxxxx, xxx xxxx xxxxxx xxx xxxx xxxxx xxxxx Y xxxxx, xxxx xxx xxxx XXX xxxxxxxxxxxx.
+When you create an app, particularly a game app that can be sold in many locales or a broad variety of UWP hardware platforms, you often need to include multiple versions of many files to support those locales or platforms. For example, if you are releasing your game in both the United States and Japan, you might need one set of voice files in English for the en-us locales, and another in Japanese for the jp-jp locale. Or, if you want to use an image in your game for ARM devices as well as x86 and x64 platforms, you must upload the same image asset 3 times, once for each CPU architecture.
 
-Xxxxxxxxxxxx, xx xxxx xxxx xxx x xxx xx xxxx xxxxxxxxxx xxxxxxxxx xxxx xx xxx xxxxx xx xxxxxxxxx xxxx xxxxx XxxxxxX xxxxxxx xxxxxx, xxx xxxxxxx xxxx xx xxx xxxxxxxx xxx xxxx xxx xxxxxxx xxxx xxxx xx x xxxxxxxx x xxxxx xxxxxx xx xxxxxxxxxx xxxx xxx xxxxxx xxx’x xxx? Xxxxxxxxxx xxxxx xxxx-xxx xxxxxxxxx xxxx xx xxxxxxxx xxxxxxxx xxxx xxxxx xxxx xxxxxxxxx xxxx xxxxxxx xxxx xxxxxxx xxxxx xxxx-xxx xxxxxxxxx xxx xxxxxx xxxx xx xxx xxxx xx (xxxxxxxx xxxxxxx) xxxxxxxxx, xxxxx xxxxx xxx xx xxx xxxx xxxxxx-xxx xxxxxxx xxx xxx xxxxx xxxx xxxxxxx xxx xx x xxxxx xxxxxxx xxxxx xxxx.
+Additionally, if your game has a lot of high definition resources that do not apply to platforms with lower DirectX feature levels, why include them in the baseline app pack and require your user to a download a large volume of components that the device can’t use? Separating these high-def resources into an optional resource pack means that customers with devices that support those high-def resources can obtain them at the cost of (possibly metered) bandwidth, while those who do not have higher-end devices can get their game quicker and at a lower network usage cost.
 
-Xxxxxxx xxxxxxxxxx xxx xxxx xxxxxxxx xxxxx xxxxxxx:
+Content candidates for game resource packs include:
 
--   Xxxxxxxxxxxxx xxxxxx xxxxxxxx xxxxxx (xxxxxxxxx xxxx, xxxxx, xx xxxxxx)
--   Xxxx xxxxxxxxxx xxxxxx xxx xxxxxxxxx xxxxxx xxxxxxx xxxxxxx (Y.Yx, Y.Yx, xxx Y.Yx)
--   Xxxx xxxxxxxxxx xxxxxx xxx xxxxxx XxxxxxX xxxxxxx xxxxxx (Y, YY, xxx YY)
+-   International locale specific assets (localized text, audio, or images)
+-   High resolution assets for different device scaling factors (1.0x, 1.4x, and 1.8x)
+-   High definition assets for higher DirectX feature levels (9, 10, and 11)
 
-Xxx xx xxxx xx xxxxxxx xx xxx xxxxxxx.xxxxxxxxxxxx xxxx xx xxxx xx xxxx XXX xxxxxxx, xxx xx xxxx xxxxxxxxx xxxxxxxxx xx xxxx xxxxx xxxxxxx. Xxxxxxx xx xxx xxx Xxxxxx Xxxxxx XX, xx xxx xxxxxx xxx xxxxxxx xx xxxx xxxxxxxx, xxx xxxxxx xxx xxxx xx xxxx xx xxxxxxxx.
+All of this is defined in the package.appxmanifest that is part of your UWP project, and in your directory structure of your final package. Because of the new Visual Studio UI, if you follow the process in this document, you should not need to edit it manually.
 
-> **Xxxxxxxxx**   Xxx xxxxxxx xxx xxxxxxxxxx xx xxxxx xxxxxxxxx xxx xxxxxxx xxxxxxx xxx **Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxx**\* XXXx. Xx xxx xxx xxxxx xxx xxxxx xxxxxxxx XXXx xx xxxx xxx xxxxxxx xxxx xxx x xxxxxx, xxxxxxx xxxxxx, xx XxxxxxX xxxxxxx xxxxx, xxx xx xxx xxxx xx xxxx xxxx xxxxxx xxxxx xxxxxxxx xxxx xxxxx; xxxxxx, xxx xxxxxxx xxx xxxxxxxx XXXx xxxx xxxx xxx xxxxxxxxxxx xxxx xxxx xx xxx xxxxx xxx xxxx, xxx xxx xxx xxxxxxxx xxxxxxxxxx xxxxxx xxxxxx xxx xxxxxxx xxxxxxx xx xxx xxxxxxxx xxx xxx xxxx’x xxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxxxxxxx (xxxxx xxx xxx xxxxxxx xxxxxxxx xx xxxx xxxx xxxxx xxxx XXXx).
+> **Important**   The loading and management of these resources are handled through the **Windows.ApplicationModel.Resources**\* APIs. If you use these app model resource APIs to load the correct file for a locale, scaling factor, or DirectX feature level, you do not need to load your assets using explicit file paths; rather, you provide the resource APIs with just the generalized file name of the asset you want, and let the resource management system obtain the correct variant of the resource for the user’s current platform and locale configuration (which you can specify directly as well with these same APIs).
 
  
 
-Xxxxxxxxx xxx xxxxxxxx xxxxxxxxx xxx xxxxxxxxx xx xxx xx xxx xxxxx xxxx:
+Resources for resource packaging are specified in one of two basic ways:
 
--   Xxxxx xxxxx xxxx xxx xxxx xxxxxxxx, xxx xxx xxxxxxxx xxxx xxxxxxxx xxxxxxxx xxx xxxxxx xx xxxxxxxx xxxxx xxxxxxxxxxx. Xxxxx xxxxxxxxx xxxxx xxx xxxxxxxx xx xxx xxxxxx. Xxx xxxxxxx, \\xx-xx, \\xxxxx-YYY, \\xxxx-xxYY.
--   Xxxxx xxxxx xxx xxxxxx xx xxxxxxx xxxx xxxxxxxxx xxxxx, xxx xxx xxxxx xxx xxxxx xxxx x xxxxxx xxxxx xxxx xx xxxxxxxx xxxx xxxxxxx xxxxxxxx xx xxx xxxxxx xx xxxxxx xxxxxxxx xx xxxxx xxxxxxxxxx. Xxxxxxxxxxxx, xxx xxxxxxxxx xxxxxxx xxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxxx xx xxxxxxxxxx (“\_”). Xxx xxxxxxx, \\xxxxxx\\xxxx\_xxxxxxY\_xxxx-xx-xx.xxx, \\xxxxxx\\xxxx\_xxxxxxY\_xxxxx-YYY.xxx, \\xxxxxx\\xxxxxxxx\_xxxx-xxYY.xxx. Xxx xxx xxxx xxxxxxx xxxxx xxxxxxx. Xxx xxxxxxx, \\xxxxxx\\xxxx\_xxxxxxY\_xxxxx-YYY\_xxxx-xx-xx.xxx.
-    > **Xxxx**   Xxxx xxxx xx x xxxxxxxx xxxxxx xxxx xxxxx xx x xxxxxxxxx xxxx, x xxxxxxxx xxxxxxxxx xxxx xxxx xxx xxxx "xxxx-<tag>", x.x."xxxx-xx-xx" xx xxxxxxxxx xx [Xxx xx xxxx xxxxxxxxx xxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
+-   Asset files have the same filename, and the resource pack specific versions are placed in specific named directories. These directory names are reserved by the system. For example, \\en-us, \\scale-140, \\dxfl-dx11.
+-   Asset files are stored in folders with arbitrary names, but the files are named with a common label that is appended with strings reserved by the system to denote language or other qualifiers. Specifically, the qualifier strings are affixed to the generalized filename after an underscore (“\_”). For example, \\assets\\menu\_option1\_lang-en-us.png, \\assets\\menu\_option1\_scale-140.png, \\assets\\coolsign\_dxfl-dx11.dds. You may also combine these strings. For example, \\assets\\menu\_option1\_scale-140\_lang-en-us.png.
+    > **Note**   When used in a filename rather than alone in a directory name, a language qualifier must take the form "lang-<tag>", e.g."lang-en-us" as described in [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
 
      
 
-Xxxxxxxxx xxxxx xxx xx xxxxxxxx xxx xxxxxxxxxx xxxxxxxxxxx xx xxxxxxxx xxxxxxxxx. Xxxxxxx, xxxx xxxxxx xx xxxxxxxxx. Xxx xxxxxxx, \\xx-xx\\xxxx\_xxxxxxY\_xxxx-xx-xx.xxx xx xxxxxxxxx.
+Directory names can be combined for additional specificity in resource packaging. However, they cannot be redundant. For example, \\en-us\\menu\_option1\_lang-en-us.png is redundant.
 
-Xxx xxx xxxxxxx xxx xxx-xxxxxxxx xxxxxxxxxxxx xxxxx xxx xxxx xxxxxxxxxx x xxxxxxxx xxxxxxxxx, xx xxxx xx xxx xxxxxxxxx xxxxxxxxx xx xxxxxxxxx xx xxxx xxxxxxxx xxxxxxxxx. Xxx xxxxxxx, \\xxxx-xxYY\\xxxxxx\\xxxxxxxx\\xxxxxxxx.xxx. Xxxx xxx xxxx xx xxxxxxxxx xx xxxxx, xxx xxxxxxxx xxxx xx xxxxxxxxxxx, xxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxx, xxxxx, xx XxxxxxX xxxxxxx xxxxx, xxxxxxx xxxx xxx xx xxxxxx xxxxx xx xx xxx xxxx xxxxx. Xxx xxxxxxx, xx xxxxx xx xxxx xx xx xxxxx xxx xxxxx xxx xx xxx xxxxxxxx xx \\xxxx-xxYY\\xxxxxx\\xxxxxxxx\\xxxxxxxx.xxx, xxx \\xxxxxx\\xxxxxxxx\\xxxxxxxx.xxx. Xxxxxxxx, xx xxxxx xx xx xxxxx xxxx x xxxxxxx \\xxxxxx\\xxxxxxxxxx\_xxxxx-YYY.xxx, xxx \\xxxxxx\\xxxxxxxxxx.xxx.
+You may specify any non-reserved subdirectory names you need underneath a resource directory, as long as the directory structure is identical in each resource directory. For example, \\dxfl-dx10\\assets\\textures\\coolsign.dds. When you load or reference an asset, the pathname must be generalized, removing any qualifiers for language, scale, or DirectX feature level, whether they are in folder nodes or in the file names. For example, to refer in code to an asset for which one of the variants is \\dxfl-dx10\\assets\\textures\\coolsign.dds, use \\assets\\textures\\coolsign.dds. Likewise, to refer to an asset with a variant \\images\\background\_scale-140.png, use \\images\\background.png.
 
-Xxxx xxx xxx xxxxxxxxx xxxxxxxx xxxxxxxxx xxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxx:
+Here are the following reserved directory names and filename underscore prefixes:
 
-| Xxxxx xxxx                   | Xxxxxxxx xxxx xxxxxxxxx xxxx                                                                                                                  | Xxxxxxxx xxxx xxxxxxxx xxxxxx                                                                                                    |
+| Asset type                   | Resource pack directory name                                                                                                                  | Resource pack filename suffix                                                                                                    |
 |------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxxxx xxxxxx             | Xxx xxxxxxxx xxxxxxxxx, xx xxxxxxxx xxx xxxxxx xxxxxxxxxxxx, xxx Xxxxxxx YY. (Xxx xxxxxxxxx xxxxxx "xxxx-" xx xxx xxxxxxxx xx x xxxxxx xxxx.) | Xx "\_" xxxxxxxx xx xxx xxxxxxxx, xxxxxx, xx xxxxxxxx-xxxxxx xxxxxxxxx. Xxx xxxxxxx, "\_xx", "\_xx", xx "\_xx-xx", xxxxxxxxxxxx. |
-| Xxxxxxx xxxxxx xxxxxx        | xxxxx-YYY, xxxxx-YYY, xxxxx-YYY. Xxxxx xxx xxx xxx Y.Yx, Y.Yx, xxx Y.Yx XX xxxxxxx xxxxxxx, xxxxxxxxxxxx.                                     | Xx "\_" xxxxxxxx xx "xxxxx-YYY", "xxxxx-YYY", xx "xxxxx-YYY".                                                                    |
-| XxxxxxX xxxxxxx xxxxx xxxxxx | xxxx-xxY, xxxx-xxYY, xxx xxxx-xxYY. Xxxxx xxx xxx xxx XxxxxxX Y, YY, xxx YY xxxxxxx xxxxxx, xxxxxxxxxxxx.                                     | Xx "\_" xxxxxxxx xx "xxxx-xxY", "xxxx-xxYY", xx "xxxx-xxYY".                                                                     |
+| Localized assets             | All possible languages, or language and locale combinations, for Windows 10. (The qualifier prefix "lang-" is not required in a folder name.) | An "\_" followed by the language, locale, or language-locale specifier. For example, "\_en", "\_us", or "\_en-us", respectively. |
+| Scaling factor assets        | scale-100, scale-140, scale-180. These are for the 1.0x, 1.4x, and 1.8x UI scaling factors, respectively.                                     | An "\_" followed by "scale-100", "scale-140", or "scale-180".                                                                    |
+| DirectX feature level assets | dxfl-dx9, dxfl-dx10, and dxfl-dx11. These are for the DirectX 9, 10, and 11 feature levels, respectively.                                     | An "\_" followed by "dxfl-dx9", "dxfl-dx10", or "dxfl-dx11".                                                                     |
 
  
 
-## Xxxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxx xxxxx
+## Defining localized language resource packs
 
 
-Xxxxxx-xxxxxxxx xxxxx xxx xxxxxx xx xxxxxxx xxxxxxxxxxx xxxxx xxx xxx xxxxxxxx (xxx xxxxxxx, "xx").
+Locale-specific files are placed in project directories named for the language (for example, "en").
 
-Xxxx xxxxxxxxxxx xxxx xxx xx xxxxxxx xxxxxxxxx xxxxxx xxx xxxxxxxx xxxxxxxxx, xxx xxxxxx:
+When configuring your app to support localized assets for multiple languages, you should:
 
--   Xxxxxx xx xxx xxxxxxxxxxxx (xx xxxx xxxxxxx) xxx xxxx xxxxxxxx xxx xxxxxx xxx xxxx xxxxxxx (xxx xxxxxxx, xx-xx, xx-xx, xx-xx, xx-xx, xxx xx xx).
--   Xxxxxx xxxxxxxxxxx, xxxxx xxxxxx xx XXX xxxxxx (xxxx xx xxxxxxxxx xxxxx xxxxx, xxxxxxxx, xxx xxxx xxxxxxxx) xx xxx xxxxxxxxxxxxx xxxxxxxx xxxxxx xxxxxxxxxxxx, xxxx xx xxxx xxx xxx xxxxxxxxx xxxxxx xxxxxxxxx xx xxxxxxx. Xxx xxx xxxx xxxx xxxxxxxxxx, xxxxxx xxxx xxx xxxx xx xxxxxxx xx xxxx xxxx xxx xxxxxxxx xx xxxxxxxxx xxxxxxxx xxxxxxxx xxxx xxx xxxxx xxxxxx xx xxx xx xxxxxxxxx (xx xx xxxx xxxx xxxxxxxxxxxx xxxxxxx xx xxxxx xxxxxxxx xxx xxxxxxxxxxxx).
--   Xxxx xxxx xxxx xxxxx xx xxxxxx xxxxxxxx xxxx (.xxxx) xxx xxx xxxx xxxx xx xxxx xxxxxxxxx. Xxx xxxxxxx, xxxx\_xxxxxxY.xxx xxxxxx xxxx xxx xxxx xxxx xx xxxx xxx \\xx-xx xxx \\xx-xx xxxxxxxxxxx xxxx xx xxx xxxxxxx xx xxx xxxx xx xxx x xxxxxxxxx xxxxxxxx. Xx xxxx xxxx, xxx'x xxx xxxx xx \\xx-xx\\xxxx\_xxxxxxY.xxx xxx \\xx-xx\\xxxx\_xxxxxxY.xxx.
-    > **Xxxx**   Xxx xxx xxxxxxxxxx xxxxxx xxx xxxxxx xx xxx xxxx xxxx xxx xxxxx xxxx xx xxx xxxx xxxxxxxxx; xxx xxxxxxx, \\xxxxxx\\xxxx\_xxxxxxY\_xxxx-xx-xx.xxx, \\xxxxxx\\xxxx\_xxxxxxY\_xxxx-xx-xx.xxx.
-
-     
-
--   Xxx xxx XXXx xx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206022) xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225039) xx xxxxxxx xxx xxxx xxx xxxxxx-xxxxxxxx xxxxxxxxx xxx xxx xxx. Xxxx, xxx xxxxx xxxxxxxxxx xxxx xx xx xxxxxxx xxx xxxxxxxx xxxxxx, xxxxx xxxxx XXXx xxxxxxxxx xxx xxxxxxx xxxxxx xxxxx xx xxx xxxx'x xxxxxxxx xxx xxxx xxxxxxxx xxx xxxxxxx xxxxxxxx xxx xxx xxxx.
--   Xx Xxxxxxxxx Xxxxxx Xxxxxx YYYY, xxxxxx **XXXXXXX->Xxxxx->Xxxxxx Xxx Xxxxxxx...** xxx xxxxxx xxx xxxxxxx.
-
-## Xxxxxxxx xxxxxxx xxxxxx xxxxxxxx xxxxx
-
-
-Xxxxxxx YY xxxxxxxx xxxxx xxxx xxxxxxxxx xxxxxxx xxxxxxx: Y.Yx, Y.Yx, xxx Y.Yx. Xxxxxxx xxxxxx xxx xxxx xxxxxxx xxx xxx xxxxxx xxxxxxxxxxxx xxxxx xx x xxxxxx xx xxxxxxxx xxxxxxx: xxx xxxx xx xxx xxxxxx, xxx xxxxxxxxxx xx xxx xxxxxx, xxx xxx xxxxxxx xxxxxxx xxxxxxxx xx xxx xxxx xxxx xxx xxxxxx. Xxx xxxx xxx xxxx xxxxxx xxxxx xxxxxxx xx xxxxxxx xxxxxxxxxxx. Xxxx xxxx xxxxxx xx xxxx XXX-xxxxx xxx xxxxxxx xxxxxx-xxxxx xxx xxx xxxx xxxxxxxx xxxxxxxxxx. Xxxx xx xxxx xxxxxxxxx xxxxx xxxxxxxx xxxxxxxx xx xxxxxxxx xxxxxx xxxxxx xxx xxxx xx xxx xxxxx xxxxxxx xxxxxxx. Xxxx xxxx xxxxxxxx xxxxxxx xxxxxxxxxxx xxx xxx xxxxxxx!
-
-Xxxx xxxxxxxxxxx xxxx xxx xx xxxxxxx xxxxxxxx xxxxx xxx xxxxxxxxx XXX xxx xxxxxxx xxxxxxx, xxx xxxxxx:
-
--   Xxxxxx xx xxx xxxxxxxxxxxx (xx xxxx xxxxxxx) xxx xxxx xxxxxxx xxxxxx xxx xxxx xxxxxxx (xxxxx-YYY, xxxxx-YYY, xxx xxxxx-YYY).
--   Xxxxxx xxxxxxxxxxx, xxxxx xxxxx xxxxxx-xxxxxxxxxxx xxxxxx xx XXX xxxxxx xx xxxx xxxxx xxxxxx xxxxxxxx xxxxxxxxx, xxxx xx xxxx xxx xxx xxxxxxxxx xxxxxx xxxxxxx xxxxxxx.
--   Xxxx xxxx xxxx xxxxx xxx xxx xxxx xxxx xx xxxx xxxxxxxxx. Xxx xxxxxxx, xxxx\_xxxxxxY.xxx xxxxxx xxxx xxx xxxx xxxx xx xxxx xxx \\xxxxx-YYY xxx \\xxxxx-YYY xxxxxxxxxxx xxxx xx xxx xxxxxxx xx xxx xxxx xx xxxxxxxxx. Xx xxxx xxxx, xxx'x xxx xxxx xx \\xxxxx-YYY\\xxxx\_xxxxxxY.xxx xxx \\xxxxx-YYY\\xxxx\_xxxxxxY.xxx.
-    > **Xxxx**   Xxxxx, xxx xxx xxxxxxxxxx xxxxxx xxx xxxxxxx xxxxxx xxxxxx xx xxx xxxx xxxx xxx xxxxx xxxx xx xxx xxxx xxxxxxxxx; xxx xxxxxxx, \\xxxxxx\\xxxx\_xxxxxxY\_xxxxx-YYY.xxx, \\xxxxxx\\xxxx\_xxxxxxY\_xxxxx-YYY.xxx.
+-   Create an app subdirectory (or file version) for each language and locale you will support (for example, en-us, jp-jp, zh-cn, fr-fr, and so on).
+-   During development, place copies of ALL assets (such as localized audio files, textures, and menu graphics) in the corresponding language locale subdirectory, even if they are not different across languages or locales. For the best user experience, ensure that the user is alerted if they have not obtained an available language resource pack for their locale if one is available (or if they have accidentally deleted it after download and installation).
+-   Make sure each asset or string resource file (.resw) has the same name in each directory. For example, menu\_option1.png should have the same name in both the \\en-us and \\jp-jp directories even if the content of the file is for a different language. In this case, you'd see them as \\en-us\\menu\_option1.png and \\jp-jp\\menu\_option1.png.
+    > **Note**   You can optionally append the locale to the file name and store them in the same directory; for example, \\assets\\menu\_option1\_lang-en-us.png, \\assets\\menu\_option1\_lang-jp-jp.png.
 
      
 
--   Xxx xxx XXXx xx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225039) xx xxxx xxx xxxxxx. Xxxxx xxxxxxxxxx xxxxxx xx xxxxxxxxxxx (xx xxxxxx), xxxxxxx xxx xxx xxxxxxxx xxxxx xxxxxxxxx. Xxx xxxxxx xxxx xxxxxxxx xxx xxxxxxxxxxx xxxxx xxxxx xxx xxx xxxxxxx xxx xxx xxxx'x xxxxxxxx.
--   Xx Xxxxxx Xxxxxx YYYY, xxxxxx **XXXXXXX->Xxxxx->Xxxxxx Xxx Xxxxxxx...** xxx xxxxxx xxx xxxxxxx.
+-   Use the APIs in [**Windows.ApplicationModel.Resources**](https://msdn.microsoft.com/library/windows/apps/br206022) and [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) to specify and load the locale-specific resources for you app. Also, use asset references that do no include the specific locale, since these APIs determine the correct locale based on the user's settings and then retrieve the correct resource for the user.
+-   In Microsoft Visual Studio 2015, select **PROJECT->Store->Create App Package...** and create the package.
 
-## Xxxxxxxx XxxxxxX xxxxxxx xxxxx xxxxxxxx xxxxx
+## Defining scaling factor resource packs
 
 
-XxxxxxX xxxxxxx xxxxxx xxxxxxxxxx xx XXX xxxxxxx xxxx xxx xxxxx xxx xxxxxxx xxxxxxxx xx XxxxxxX (xxxxxxxxxxxx, XxxxxxYX). Xxxx xxxxxxxx xxxxxx xxxxx xxxxxxxxxxxxxx xxx xxxxxxxxxxxxx, xxxxxx xxxxxxxx xxxxxxx, xxxxxxx xxxxxxxxxxx xxxxxxx, xxx xxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx.
+Windows 10 provides three user interface scaling factors: 1.0x, 1.4x, and 1.8x. Scaling values for each display are set during installation based on a number of combined factors: the size of the screen, the resolution of the screen, and the assumed average distance of the user from the screen. The user can also adjust scale factors to improve readability. Your game should be both DPI-aware and scaling factor-aware for the best possible experience. Part of this awareness means creating versions of critical visual assets for each of the three scaling factors. This also includes pointer interaction and hit testing!
 
-Xxxx xxxxxxxx xxx xxxx xxxxxx xxx xxx xxxxxxxx xxxxxxx xxxxxxxxxxx xxxxxxx: XXY, XXY, xx XXY. Xxxxx xxxxxxx xxx xx xxxxxxxx xx xxx XXX xxxxxx, xxxx xxx-xxx XXX xxxxxxxxx xx xx xxxxxxxxx xxxxx-XXX xxxxxxxxxxxx xxx xxxxx xxxxxxxxx.
+When configuring your app to support resource packs for different UWP app scaling factors, you should:
 
-Xxxxxxx xxxxxx xxxxxxx xx XxxxxxX xxxxxxx xxxxx YY xx xxxxxx xxxxxx xx xxxxx xx x xxxxxxxx xxxx xx xxxxxxxx xxxxx xxxx xxxxx xxx xxxxxxxx xxxxxxxxx. Xxxx xxxxxxx xxxxx xxx xxxx xxxxxxxx xxxxxxxxxxx xxxxxxx xxx YY, xxxx XXYX xxx XXY. (Xxx xxxx xxxxxxx, xxx [Xxxxxxx xxxxx xxxxxxxxxxx xx XxxxxxYX YY](https://msdn.microsoft.com/library/windows/desktop/hh308955).) Xxxxx xxxxxxx xxx xxxx xxxxxxxxx xxx xxx xxxx-xxxxxxxxxx xxxxxxx xxxxxx xxxxxxxxx xx xxxxxx XXXx, xxx xxxxx xxxx xxxxxxxx xxx xxxx, xxxxxxxxxxx, xxx xxxxx xxxxxxxxxxxx xx xxxx xxxx xx xxxx-xxx xxxxxxxxx.
+-   Create an app subdirectory (or file version) for each scaling factor you will support (scale-100, scale-140, and scale-180).
+-   During development, place scale factor-appropriate copies of ALL assets in each scale factor resource directory, even if they are not different across scaling factors.
+-   Make sure each asset has the same name in each directory. For example, menu\_option1.png should have the same name in both the \\scale-100 and \\scale-180 directories even if the content of the file is different. In this case, you'd see them as \\scale-100\\menu\_option1.png and \\scale-140\\menu\_option1.png.
+    > **Note**   Again, you can optionally append the scaling factor suffix to the file name and store them in the same directory; for example, \\assets\\menu\_option1\_scale-100.png, \\assets\\menu\_option1\_scale-140.png.
 
-| XxxxxxX xxxxxxx xxxxx | Xxxxxxxxx xxxxxxx xxxxxxxxxxx |
+     
+
+-   Use the APIs in [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) to load the assets. Asset references should be generalized (no suffix), leaving out the specific scale variation. The system will retrieve the appropriate scale asset for the display and the user's settings.
+-   In Visual Studio 2015, select **PROJECT->Store->Create App Package...** and create the package.
+
+## Defining DirectX feature level resource packs
+
+
+DirectX feature levels correspond to GPU feature sets for prior and current versions of DirectX (specifically, Direct3D). This includes shader model specifications and functionality, shader language support, texture compression support, and overall graphics pipeline features.
+
+Your baseline app pack should use the baseline texture compression formats: BC1, BC2, or BC3. These formats can be consumed by any UWP device, from low-end ARM platforms up to dedicated multi-GPU workstations and media computers.
+
+Texture format support at DirectX feature level 10 or higher should be added in a resource pack to conserve local disk space and download bandwidth. This enables using the more advanced compression schemes for 11, like BC6H and BC7. (For more details, see [Texture block compression in Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh308955).) These formats are more efficient for the high-resolution texture assets supported by modern GPUs, and using them improves the look, performance, and space requirements of your game on high-end platforms.
+
+| DirectX feature level | Supported texture compression |
 |-----------------------|-------------------------------|
-| Y                     | XXY, XXY, XXY                 |
-| YY                    | XXY, XXY                      |
-| YY                    | XXYX, XXY                     |
+| 9                     | BC1, BC2, BC3                 |
+| 10                    | BC4, BC5                      |
+| 11                    | BC6H, BC7                     |
 
  
 
-Xxxx, xxxx XxxxxxX xxxxxxx xxxxxx xxxxxxxx xxxxxxxxx xxxxxx xxxxx xxxxxxxx. Xxxxxxxx xxxxxx xxxxxxxxx xxx xx xxxxxxx xx x xxx-xxxxxxx xxxxx xxxxx, xxx xxx xx xxxxxxxx xx XxxxxxX xxxxxxx xxxxx xxxxxxxx xxxxx. Xxxxxxxxxxxx, xxxx xxxxx xxxxxxx xxxxxx xxxxxx xxx xxx xxxxxx, xxxx xx xxxxxx xxxx, xxxx xxxxxxx xxxxxx xxxxx xxxxxxxx xxxxxx. Xxxxx xxxxxx xxxxx xxxxxxxx xxxxxx xxxxxx xx xxxxxxxx xx x XxxxxxX xxxxxxx xxxxx xxxxxxxx xxxx xx xxxx.
+Also, each DirectX feature levels supports different shader model versions. Compiled shader resources can be created on a per-feature level basis, and can be included in DirectX feature level resource packs. Additionally, some later version shader models can use assets, such as normal maps, that earlier shader model versions cannot. These shader model specific assets should be included in a DirectX feature level resource pack as well.
 
-Xxx xxxxxxxx xxxxxxxxx xx xxxxxxxxx xxxxxxx xx xxxxxxx xxxxxxx xxxxxxxxx xxx xxxxxx, xx xx xxxxxxxx xxxx xxx Y xxxxxxx xxxxxxx xxxxxx. Xx xxx xxxx xx xxxx xxxxxxxx xxxxxxx xxx xxx-xxxxxx (xxx xxxxxxxx) xxxx XXY\_Y xx XXY\_Y, xxxx xxxxx xxxxxxxxxx xxx xxxxxxxxx xxxx xxxx xxxxxx xxxx xxxxxxxxxx.
+The resource mechanism is primarily focused on texture formats supported for assets, so it supports only the 3 overall feature levels. If you need to have separate shaders for sub-levels (dot versions) like DX9\_1 vs DX9\_3, your asset management and rendering code must handle them explicitly.
 
-Xxxx xxxxxxxxxxx xxxx xxx xx xxxxxxx xxxxxxxx xxxxx xxx xxxxxxxxx XxxxxxX xxxxxxx xxxxxx, xxx xxxxxx:
+When configuring your app to support resource packs for different DirectX feature levels, you should:
 
--   Xxxxxx xx xxx xxxxxxxxxxxx (xx xxxx xxxxxxx) xxx xxxx XxxxxxX xxxxxxx xxxxx xxx xxxx xxxxxxx (xxxx-xxY, xxxx-xxYY, xxx xxxx-xxYY).
--   Xxxxxx xxxxxxxxxxx, xxxxx xxxxxxx xxxxx xxxxxxxx xxxxxx xx xxxx xxxxxxx xxxxx xxxxxxxx xxxxxxxxx. Xxxxxx xxxxxxx xxx xxxxxxx xxxxxxx, xxx xxx xxxx xxxxxxxxx xxxxxxxxx xxxx xxxxxxxx xxx xxxx xxxxxxx xxxxx xx xxxx xxxx, xxx xx xxx xxxx xxxxxxxx, xxxxxxxx xxxxxxx, xx xxxxx xxxxxx xxxx xxx xxxx xxxx xx xxx xx x xxxxxx xx xxx xxxxxxxxx xxxxxxx xxxxxx, xxx xxx xxxxxxxxxxxxx xxxxxx xxxx xx xxx xxxxxxxxxxx xxx xxx xxxxxxx xxxxxx xxxx xxx xxxx. Xxx xxxxxx xxxx xxx xxxxxx xxxxxx xxx xxxxxxx xxxxxx, xxxx xxxx xxxx xxxx xxxxxxx xxxxx xxxxxxxx xxxxxxxxx xxx x xxxxxxx xx xx xxxx xxx xxxx xxxx. Xxx xxxxxxx, xxx x xxxxxxx xxxxx xxxxxxxxxxx xxxxxxx xxxxx "xxxxxxxx.xxx", xxxxx xxx XXY-xxxxxxxxxx xxxxxxx xx xxx \\xxxx-xxY xxxxxxxxx xxx xxx XXY-xxxxxxxxxx xxxxxxx xx xxx \\xxxx-xxYY xxxxxxxxx.
--   Xxxx xxxx xxxx xxxxx (xx xx xx xxxxxxxxx xx xxxxxxxx xxxxxxx xxxxxx) xxx xxx xxxx xxxx xx xxxx xxxxxxxxx. Xxx xxxxxxx, xxxxxxxx.xxx xxxxxx xxxx xxx xxxx xxxx xx xxxx xxx \\xxxx-xxY xxx \\xxxx-xxYY xxxxxxxxxxx xxxx xx xxx xxxxxxx xx xxx xxxx xx xxxxxxxxx. Xx xxxx xxxx, xxx'x xxx xxxx xx \\xxxx-xxY\\xxxxxxxx.xxx xxx \\xxxx-xxYY\\xxxxxxxx.xxx.
-    > **Xxxx**   Xxxxx, xxx xxx xxxxxxxxxx xxxxxx xxx xxxxxxx xxxxx xxxxxx xx xxx xxxx xxxx xxx xxxxx xxxx xx xxx xxxx xxxxxxxxx; xxx xxxxxxx, \\xxxxxxxx\\xxxxxxxx\_xxxx-xxY.xxx, \\xxxxxxxx\\xxxxxxxx\_xxxx-xxYY.xxx.
+-   Create an app subdirectory (or file version) for each DirectX feature level you will support (dxfl-dx9, dxfl-dx10, and dxfl-dx11).
+-   During development, place feature level specific assets in each feature level resource directory. Unlike locales and scaling factors, you may have different rendering code branches for each feature level in your game, and if you have textures, compiled shaders, or other assets that are only used in one or a subset of all supported feature levels, put the corresponding assets only in the directories for the feature levels that use them. For assets that are loaded across all feature levels, make sure that each feature level resource directory has a version of it with the same name. For example, for a feature level independent texture named "coolsign.dds", place the BC3-compressed version in the \\dxfl-dx9 directory and the BC7-compressed version in the \\dxfl-dx11 directory.
+-   Make sure each asset (if it is available to multiple feature levels) has the same name in each directory. For example, coolsign.dds should have the same name in both the \\dxfl-dx9 and \\dxfl-dx11 directories even if the content of the file is different. In this case, you'd see them as \\dxfl-dx9\\coolsign.dds and \\dxfl-dx11\\coolsign.dds.
+    > **Note**   Again, you can optionally append the feature level suffix to the file name and store them in the same directory; for example, \\textures\\coolsign\_dxfl-dx9.dds, \\textures\\coolsign\_dxfl-dx11.dds.
 
      
 
--   Xxxxxxx xxx xxxxxxxxx XxxxxxX xxxxxxx xxxxxx xxxx xxxxxxxxxxx xxxx xxxxxxxx xxxxxxxxx.
+-   Declare the supported DirectX feature levels when configuring your graphics resources.
     ```cpp
     D3D_FEATURE_LEVEL featureLevels[] = 
     {
@@ -157,7 +157,7 @@ Xxxx xxxxxxxxxxx xxxx xxx xx xxxxxxx xxxxxxxx xxxxx xxx xxxxxxxxx XxxxxxX xxxxxx
     );
     ```
 
--   Xxx xxx XXXx xx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225039) xx xxxx xxx xxxxxxxxx. Xxxxx xxxxxxxxxx xxxxxx xx xxxxxxxxxxx (xx xxxxxx), xxxxxxx xxx xxx xxxxxxx xxxxx. Xxxxxxx, xxxxxx xxxxxxxx xxx xxxxx, xxx xxxxxx xxxx xxx xxxxxxxxxxxxx xxxxxxxxx xxxxx xxxxxxx xxxxx xx xxxxxxx xxx x xxxxx xxxxxxx; xxxx xx xxxx xx xxx xx xxxxxxxxx xxxxx xx xxxx xxxxx. Xxxx xxx xxxx xxxx xxxxxxxxxxxxx, xxx xxx XXXx xx xxxxxx xxx XX xx xxx xxxxxxxxx xxxxxxx xxxxx. Xxx xxxxxx xxxx xxxx xx xxxx xx xxxxxxxx xxx xxxxxxx xxxxx xxxxx xx xxxx xxxxxxxxxx. Xxxx xx x xxxx xxxxxx xxxx xxxxx xxx xx xxxxxx xxxx xxx xx xxx xxxxxxx XxxxxxX xxxxxxx xxxxx xxx xxx xxxxxxxx:
+-   Use the APIs in [**Windows.ApplicationModel.Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039) to load the resources. Asset references should be generalized (no suffix), leaving out the feature level. However, unlike language and scale, the system does not automatically determine which feature level is optimal for a given display; that is left to you to determine based on code logic. Once you make that determination, use the APIs to inform the OS of the preferred feature level. The system will then be able to retrieve the correct asset based on that preference. Here is a code sample that shows how to inform your app of the current DirectX feature level for the platform:
     
     ```cpp
     // Set the current UI thread's MRT ResourceContext's DXFeatureLevel with the right DXFL. 
@@ -181,11 +181,11 @@ Xxxx xxxxxxxxxxx xxxx xxx xx xxxxxxx xxxxxxxx xxxxx xxx xxxxxxxxx XxxxxxX xxxxxx
         ResourceContext::SetGlobalQualifierValue(L"DXFeatureLevel", dxFeatureLevel);
     ```
 
-    > **Xxxx**  Xx xxxx xxxx, xxxx xxx xxxxxxx xxxxxxxx xx xxxx (xx xxxx xxxxx xxx xxxxxxx xxxxx xxxxxxxxx). Xx xxx xxxxxxx xxxxxx xxx xxxxxxx xxxxx xxxxxxxxx xxxx xx xxx xxxxxx. Xxx xxxxxxx, xxxx "xxxxxxxx\\xxxxxxxx.xxx", xxx "xxxx-xxYY\\xxxxxxxx\\xxxxxxxx.xxx" xx "xxxxxxxx\\xxxxxxxx\_xxxx-xxYY.xxx".
+    > **Note**  In your code, load the texture directly by name (or path below the feature level directory). Do not include either the feature level directory name or the suffix. For example, load "textures\\coolsign.dds", not "dxfl-dx11\\textures\\coolsign.dds" or "textures\\coolsign\_dxfl-dx11.dds".
 
      
 
--   Xxx, xxx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206078) xx xxxxxx xxx xxxx xxxx xxxxxxx xxxxxxx XxxxxxX xxxxxxx xxxxx. Xxx **XxxxxxxxXxxxxxx** xxxxxxx x [**XxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br206089), xxxxx xxx xxxxx xxxx [**XxxxxxxxXxx::XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br206098) (xx [**XxxxxxxxXxx::XxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/jj655438)) xxx x xxxxxxxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206064). Xxxx xxxxxxx x [**XxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206051) xxxx xxxx xxxxxxx xxxxxxx xxx XxxxxxX xxxxxxx xxxxx xxxx xxx xxxxxxxxx xx xxxxxxx [**XxxXxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/mt622101).
+-   Now, use the [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/br206078) to locate the file that matches current DirectX feature level. The **ResourceManager** returns a [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/br206089), which you query with [**ResourceMap::GetValue**](https://msdn.microsoft.com/library/windows/apps/br206098) (or [**ResourceMap::TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj655438)) and a supplied [**ResourceContext**](https://msdn.microsoft.com/library/windows/apps/br206064). This returns a [**ResourceCandidate**](https://msdn.microsoft.com/library/windows/apps/br206051) that most closely matches the DirectX feature level that was specified by calling [**SetGlobalQualifierValue**](https://msdn.microsoft.com/library/windows/apps/mt622101).
     
     ```cpp
     // An explicit ResourceContext is needed to match the DirectX feature level for the display on which the current view is presented.
@@ -204,21 +204,25 @@ Xxxx xxxxxxxxxxx xxxx xxx xx xxxxxxx xxxxxxxx xxxxx xxx xxxxxxxxx XxxxxxX xxxxxx
     Platform::String^ resourceName = possibleResource->ValueAsString;
     ```
 
--   Xx Xxxxxx Xxxxxx YYYY, xxxxxx **XXXXXXX->Xxxxx->Xxxxxx Xxx Xxxxxxx...** xxx xxxxxx xxx xxxxxxx.
--   Xxxx xxxx xxxx xxx xxxxxx xxx xxxxxxx xx xxx xxxxxxx.xxxxxxxxxxxx xxxxxxxx xxxxxxxx.
+-   In Visual Studio 2015, select **PROJECT->Store->Create App Package...** and create the package.
+-   Make sure that you enable app bundles in the package.appxmanifest manifest settings.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
 
-* [Xxxxxxxx xxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)
-* [Xxxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt270969)
-* [Xxx xxxxxxxx (XxxxXxxx.xxx)](https://msdn.microsoft.com/library/windows/desktop/hh446767)
+* [Defining app resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)
+* [Packaging apps](https://msdn.microsoft.com/library/windows/apps/mt270969)
+* [App packager (MakeAppx.exe)](https://msdn.microsoft.com/library/windows/desktop/hh446767)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

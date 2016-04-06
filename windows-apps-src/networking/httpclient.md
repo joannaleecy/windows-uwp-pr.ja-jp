@@ -1,63 +1,61 @@
 ---
-xxxxxxxxxxx: Xxx XxxxXxxxxx xxx xxx xxxx xx xxx Xxxxxxx.Xxx.Xxxx xxxxxxxxx XXX xx xxxx xxx xxxxxxx xxxxxxxxxxx xxxxx xxx XXXX Y.Y xxx XXXX Y.Y xxxxxxxxx.
-xxxxx: XxxxXxxxxx
-xx.xxxxxxx: XXYYYYXY-YXYY-YYYX-YXYY-XXYXYYYYYYYY
+description: HTTP 2.0 プロトコルと HTTP 1.1 プロトコルを使って情報を送受信するには、HttpClient とその他の Windows.Web.Http 名前空間 API を使います。
+title: HttpClient
+ms.assetid: EC9820D3-3A46-474F-8A01-AE1C27442750
 ---
 
-# XxxxXxxxxx
+# HttpClient
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639)
--   [**Xxxxxxx.Xxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn279692)
--   [**Xxxxxxx.Xxx.Xxxx.XxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279631)
+-   [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)
+-   [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692)
+-   [**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631)
 
-Xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639) xxx xxx xxxx xx xxx [**Xxxxxxx.Xxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn279692) xxxxxxxxx XXX xx xxxx xxx xxxxxxx xxxxxxxxxxx xxxxx xxx XXXX Y.Y xxx XXXX Y.Y xxxxxxxxx.
+HTTP 2.0 プロトコルと HTTP 1.1 プロトコルを使って情報を送受信するには、[**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) とその他の [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間 API を使います。
 
-## Xxxxxxxx xx XxxxXxxxxx xxx xxx Xxxxxxx.Xxx.Xxxx xxxxxxxxx
+## HttpClient と Windows.Web.Http 名前空間の概要
 
-Xxx xxxxxxx xx xxx [**Xxxxxxx.Xxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn279692) xxxxxxxxx xxx xxx xxxxxxx [**Xxxxxxx.Xxx.Xxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252713) xxx [**Xxxxxxx.Xxx.Xxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298623) xxxxxxxxxx xxxxxxx x xxxxxxxxxxx xxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxx xx xx XXXX xxxxxx xx xxxxxxx xxxxx XXX xxxxxxxx xx xxxxxxxxx xxxx xxxxxxxx XXXX xxxxxxxxxxxxx xxxxxx xxxxx.
+[
+            **Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間、関連する [**Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 名前空間、[**Windows.Web.Http.Filters**](https://msdn.microsoft.com/library/windows/apps/dn298623) 名前空間のクラスには、基本的な GET 要求を実行したり、次のようなさらに高度な HTTP 機能を実装したりするための HTTP クライアントとして動作する、ユニバーサル Windows プラットフォーム (UWP) アプリ用のプログラミング インターフェイスが用意されています。
 
--   Xxxxxxx xxx xxxxxx xxxxx (**XXXXXX**, **XXX**, **XXX**, xxx **XXXX**). Xxxx xx xxxxx xxxxxxxx xxx xxxx xx xx xxxxxxxxxxxx xxxxxxxxx.
+-   一般的な動詞 (**DELETE**、**GET**、**PUT**、**POST**) に対応するメソッド。 これらの各要求は、非同期操作として送られます。
 
--   Xxxxxxx xxx xxxxxx xxxxxxxxxxxxxx xxxxxxxx xxx xxxxxxxx.
+-   一般的な認証設定とパターンのサポート。
 
--   Xxxxxx xx Xxxxxx Xxxxxxx Xxxxx (XXX) xxxxxxx xx xxx xxxxxxxxx.
+-   トランスポートに関する Secure Sockets Layer (SSL) 詳細へのアクセス。
 
--   Xxxxxxx xx xxxxxxx xxxxxxxxxx xxxxxxx xx xxxxxxxx xxxx.
+-   カスタマイズされたフィルターを高度なアプリに含める機能。
 
--   Xxxxxxx xx xxx, xxx, xxx xxxxxx xxxxxxx.
+-   Cookie を取得、設定、削除する機能。
 
--   XXXX Xxxxxxx xxxxxxxx xxxx xxxxxxxxx xx xxxxxxxxxxxx xxxxxxx.
+-   非同期メソッドで利用可能な HTTP 要求の進行状況情報。
 
-Xxx [**Xxxxxxx.Xxx.Xxxx.XxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279617) xxxxx xxxxxxxxxx xx XXXX xxxxxxx xxxxxxx xxxx xx [**Xxxxxxx.Xxx.Xxxx.XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639). Xxx [**Xxxxxxx.Xxx.Xxxx.XxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279631) xxxxx xxxxxxxxxx xx XXXX xxxxxxxx xxxxxxx xxxxxxxx xxxx xx XXXX xxxxxxx. XXXX xxxxxxxx xxx xxxxxxx xx [XXX YYYY](http://go.microsoft.com/fwlink/p/?linkid=241642) xx xxx XXXX.
+[
+            **Windows.Web.Http.HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) クラスは、[**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) から送られた HTTP 要求メッセージを表します。 [
+            **Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) クラスは、HTTP 要求から受け取った HTTP 応答メッセージを表します。 HTTP メッセージは、IETF によって [RFC 2616](http://go.microsoft.com/fwlink/p/?linkid=241642) で規定されています。
 
-Xxx [**Xxxxxxx.Xxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn279692) xxxxxxxxx xxxxxxxxxx XXXX xxxxxxx xx xxx XXXX xxxxxx xxxx xxx xxxxxxx xxxxxxxxx xxxxxxx. XXXX xxxxxxx xxx xx xxxxxxxxxx xxxx xx XXXX xxxxxxx xx xx XXXX xxxxxxxx. Xxx **Xxxxxxx.Xxx.Xxxx** xxxxxxxxx xxxxxxxx x xxxxxx xx xxxxxxxxx xxxxxxx xx xxxxxxxxx XXXX xxxxxxx.
+[
+            **Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間は、クッキーを含む HTTP エンティティ ボディおよびヘッダーとして HTTP コンテンツを表します。 HTTP コンテンツは、HTTP 要求または HTTP 応答に関連付けることができます。 **Windows.Web.Http** 名前空間には、HTTP コンテンツを表す多数のさまざまなクラスが用意されています。
 
--   [
-            **XxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298625). Xxxxxxx xx x xxxxxx
--   [
-            **XxxxXxxxXxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298685). Xxxxxxx xx xxxx xxx xxxxx xxxxxx xxxxxxx xxxx xxx **xxxxxxxxxxx/x-xxx-xxxx-xxxxxxxxxx** XXXX xxxx
--   [
-            **XxxxXxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298708). Xxxxxxx xx xxx xxxx xx xxx **xxxxxxxxx/\*** XXXX xxxx.
--   [
-            **XxxxXxxxxxxxxXxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279596). Xxxxxxx xxxx xx xxxxxxx xx xxx **xxxxxxxxx/xxxx-xxxx** XXXX xxxx.
--   [
-            **XxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279649). Xxxxxxx xx x xxxxxx (xxx xxxxxxxx xxxx xx xxxx xx xxx XXXX XXX xxxxxx xx xxxxxxx xxxx xxx xxx XXXX XXXX xxxxxx xx xxxxxx xxxx)
--   [
-            **XxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279661). Xxxxxxx xx x xxxxxx.
--   [
-            **XXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279684) - X xxxx xxxxxxxxx xxx xxxxxxxxxx xx xxxxxx xxxxx xxx xxxxxxx xxxxxxx
+-   [**HttpBufferContent**](https://msdn.microsoft.com/library/windows/apps/dn298625)。 バッファーとしてのコンテンツ。
+-   [**HttpFormUrlEncodedContent**](https://msdn.microsoft.com/library/windows/apps/dn298685)。 **application/x-www-form-urlencoded** MIME タイプでエンコードされた名前と値の組としてのコンテンツ。
+-   [**HttpMultipartContent**](https://msdn.microsoft.com/library/windows/apps/dn298708)。 **multipart/\*** MIME タイプ形式のコンテンツ。
+-   [**HttpMultipartFormDataContent**](https://msdn.microsoft.com/library/windows/apps/dn279596)。 **multipart/form-data** MIME タイプとしてエンコードされているコンテンツ。
+-   [**HttpStreamContent**](https://msdn.microsoft.com/library/windows/apps/dn279649)。 ストリームとしてのコンテンツ (この内部タイプは、HTTP GET メソッドでのデータの受信、および HTTP POST メソッドでのデータのアップロードに使われます)。
+-   [**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661)。 文字列としてのコンテンツ。
+-   [**IHttpContent**](https://msdn.microsoft.com/library/windows/apps/dn279684) - 開発者が独自のコンテンツ オブジェクトを作成するための基本インターフェイス。
 
-Xxx xxxx xxxxxxx xx xxx "Xxxx x xxxxxx XXX xxxxxxx xxxx XXXX" xxxxxxx xxxx xxx [**XxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279661) xxxxx xx xxxxxxxxx xxx XXXX xxxxxxxx xxxx xx XXXX XXX xxxxxxx xx x xxxxxx.
+「HTTP 経由でシンプルな GET 要求を送信する」セクションのコード スニペットでは、[**HttpStringContent**](https://msdn.microsoft.com/library/windows/apps/dn279661) クラスを使って、HTTP GET 要求からの HTTP 応答を文字列として表しています。
 
-Xxx [**Xxxxxxx.Xxx.Xxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252713) xxxxxxxxx xxxxxxxx xxxxxxxx xx XXXX xxxxxxx xxx xxxxxxx, xxxxx xxx xxxx xxxxxxxxxx xx xxxxxxxxxx xxxx [**XxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279617) xxx [**XxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279631) xxxxxxx.
+[
+            **Windows.Web.Http.Headers**](https://msdn.microsoft.com/library/windows/apps/dn252713) 名前空間では、HTTP ヘッダーと Cookie の作成がサポートされます。これらはプロパティとして、[**HttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/dn279617) オブジェクトと [**HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) オブジェクトに関連付けられます。
 
-## Xxxx x xxxxxx XXX xxxxxxx xxxx XXXX
+## HTTP 経由でシンプルな GET 要求を送信する
 
-Xx xxxxxxxxx xxxxxxx xx xxxx xxxxxxx, xxx [**Xxxxxxx.Xxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn279692) xxxxxxxxx xxxxxx XXX xxxx xx xxxx XXX xxxxxxxx. Xxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxxxxx xxx xx xxxx x XXX xxxxxxx xx xxxx://xxx.xxxxxxx.xxx xxxxx xxx [**Xxxxxxx.Xxx.Xxxx.XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639) xxxxx xxx xxx [**Xxxxxxx.Xxx.Xxxx.XxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279631) xxxxx xx xxxx xxx xxxxxxxx xxxx xxx XXX xxxxxxx.
+この記事の中で既に説明したように、[**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間は、UWP アプリで GET 要求を送信できるようにします。 次のコード スニペットは、[**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) クラスを使って http://www.contoso.com に GET 要求を送信し、[**Windows.Web.Http.HttpResponseMessage**](https://msdn.microsoft.com/library/windows/apps/dn279631) クラスを使って GET 要求から応答を読み取る方法を示しています。
 
 ```csharp
 //Create an HTTP client object
@@ -99,22 +97,27 @@ catch (Exception ex)
 }
 ```
 
-## Xxxxxxxxxx xx Xxxxxxx.Xxx.Xxxx
+## Windows.Web.Http の例外
 
-Xx xxxxxxxxx xx xxxxxx xxxx xx xxxxxxx xxxxxx xxx x xxx Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX) xx xxxxxx xx xxx xxxxxxxxxxx xxx xxx [**Xxxxxxx.Xxxxxxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/br225998) xxxxxx.
+Uniform Resource Identifier (URI) として無効な文字列が、[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) オブジェクトのコンストラクターに渡されると、例外がスローされます。
 
-**.XXX:  **Xxx [**Xxxxxxx.Xxxxxxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/br225998) xxxx xxxxxxx xx [**Xxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) xx X# xxx XX.
+**.NET:  **[**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) 型は、C# や VB では [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) と表示されます。
 
-Xx X# xxx Xxxxxx Xxxxx, xxxx xxxxx xxx xx xxxxxxx xx xxxxx xxx [**Xxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) xxxxx xx xxx .XXX Y.Y xxx xxx xx xxx [**Xxxxxx.Xxx.XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) xxxxxxx xx xxxx xxx xxxxxx xxxxxxxx xxxx x xxxx xxxxxx xxx XXX xx xxxxxxxxxxx.
+C# や Visual Basic では、.NET 4.5 の [**System.Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) クラスと、[**System.Uri.TryCreate**](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.trycreate.aspx) メソッドの 1 つを使って、URI が作成される前にユーザーから受け取った文字列をテストすることによって、このエラーを回避できます。
 
-Xx X++, xxxxx xx xx xxxxxx xx xxx xxx xxxxx x xxxxxx xx x XXX. Xx xx xxx xxxx xxxxx xxxx xxx xxxx xxx xxx [**Xxxxxxx.Xxxxxxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/br225998), xxx xxxxxxxxxxx xxxxxx xx xx x xxx/xxxxx xxxxx. Xx xx xxxxxxxxx xx xxxxxx, xxx xxx xxx xxxxxx xxx xxxx xxx xxxxxxx x xxx xxxxxxxx.
+C++ では、URI として渡される文字列を試行して解析するメソッドはありません。 アプリがユーザーから [**Windows.Foundation.Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) の入力を取得する場合、このコンストラクターを try/catch ブロックに配置する必要があります。 例外がスローされた場合、アプリは、ユーザーに通知し、新しいホスト名を要求することができます。
 
-Xxx [**Xxxxxxx.Xxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn279692) xxxxx x xxxxxxxxxxx xxxxxxxx. Xx xx xxx xxxxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639) xxx xxxxx xxxxxxx xx xxxx xxxxxxxxx xxxxx xx xxx xxx **XXXXXXX** xxxxx.
+[
+            **Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) には便利な関数がありません。 そのため、この名前空間の [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) と他のクラスを使うアプリは、**HRESULT** 値を使う必要があります。
 
-Xx xxxx xxxxx xxx .XXX Xxxxxxxxx Y.Y xx X#, XX.XXX, xxx [Xxxxxx.Xxxxxxxxx](http://msdn.microsoft.com/library/system.exception.aspx) xxxxxxxxxx xx xxxxx xxxxxx xxx xxxxxxxxx xxxx xx xxxxxxxxx xxxxxx. Xxx [Xxxxxx.Xxxxxxxxx.XXxxxxx](http://msdn.microsoft.com/library/system.exception.hresult.aspx) xxxxxxxx xxxxxxx xxx **XXXXXXX** xxxxxxxx xx xxx xxxxxxxx xxxxxxxxx. Xxx [Xxxxxx.Xxxxxxxxx.Xxxxxxx](http://msdn.microsoft.com/library/system.exception.message.aspx) xxxxxxxx xxxxxxx xxx xxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxx. Xxxxxxxx **XXXXXXX** xxxxxx xxx xxxxxx xx xxx *Xxxxxxxx.x* xxxxxx xxxx. Xx xxx xxx xxxxxx xx xxxxxxxx **XXXXXXX** xxxxxx xx xxxxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxx xx xxx xxxxxxxxx.
+C# と VB.NET で .NET Framework 4.5 を使うアプリでは、アプリの実行中に例外が発生したときに、[System.Exception](http://msdn.microsoft.com/library/system.exception.aspx) がエラーを表します。 [System.Exception.HResult](http://msdn.microsoft.com/library/system.exception.hresult.aspx) プロパティは、特定の例外に割り当てられた **HRESULT** を返します。 [System.Exception.Message](http://msdn.microsoft.com/library/system.exception.message.aspx) プロパティは、例外を説明するメッセージを返します。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 アプリは特定の **HRESULT** 値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
-Xx xxxx xxxxx xxxxxxx X++, xxx [Xxxxxxxx::Xxxxxxxxx](http://msdn.microsoft.com/library/windows/apps/hh755825.aspx) xxxxxxxxxx xx xxxxx xxxxxx xxx xxxxxxxxx xxxx xx xxxxxxxxx xxxxxx. Xxx [Xxxxxxxx::Xxxxxxxxx::XXxxxxx](http://msdn.microsoft.com/library/windows/apps/hh763371.aspx) xxxxxxxx xxxxxxx xxx **XXXXXXX** xxxxxxxx xx xxx xxxxxxxx xxxxxxxxx. Xxx [Xxxxxxxx::Xxxxxxxxx::Xxxxxxx](http://msdn.microsoft.com/library/windows/apps/hh763375.aspx) xxxxxxxx xxxxxxx xxx xxxxxx-xxxxxxxx xxxxxx xxxx xx xxxxxxxxxx xxxx xxx **XXXXXXX** xxxxx. Xxxxxxxx **XXXXXXX** xxxxxx xxx xxxxxx xx xxx *Xxxxxxxx.x* xxxxxx xxxx. Xx xxx xxx xxxxxx xx xxxxxxxx **XXXXXXX** xxxxxx xx xxxxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxx xx xxx xxxxxxxxx.
+Managed C++ を使うアプリでは、アプリの実行中に例外が発生したときに、[Platform::Exception](http://msdn.microsoft.com/library/windows/apps/hh755825.aspx) がエラーを表します。 [Platform::Exception::HResult](http://msdn.microsoft.com/library/windows/apps/hh763371.aspx) プロパティは、特定の例外に割り当てられた **HRESULT** を返します。 [Platform::Exception::Message](http://msdn.microsoft.com/library/windows/apps/hh763375.aspx) プロパティは、**HRESULT** 値に関連付けられた、システムが提供する文字列を返します。 使うことができる **HRESULT** 値は、*Winerror.h* ヘッダー ファイルに記載されています。 アプリは特定の **HRESULT** 値に対するフィルター処理を行い、例外の原因に応じてアプリの動作を変更できます。
 
-Xxx xxxx xxxxxxxxx xxxxxxxxxx xxxxxx, xxx **XXXXXXX** xxxxxxxx xx **X\_XXXXXXXXXX**. Xxx xxxx xxxxxxx xxxxxx xxxxx, xxx **XXXXXXX** xxxxxxxx xx **X\_XXXXXXX\_XXXXXX\_XXXX**.
+ほとんどのパラメーター検証エラーの場合、返される **HRESULT** は **E\_INVALIDARG** です。 一部の無効なメソッド呼び出しでは、返される **HRESULT** は **E\_ILLEGAL\_METHOD\_CALL** です。
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,91 +1,95 @@
 ---
-xxxxxxxxxxx: Xxxx xxx xxx xxxxxxx xxxx xxxxxxxxxx xxxxx-xxxxxxxx xxxx?.
-xxxxx: Xxxxxxxxx xx xxxxxxxx xx xXX xxx XXX xxx xxxxxxxxxxx
-xx.xxxxxxx: YXXXXYYY-YYXY-YXYY-XYYX-YYYYYYXXXYYY
+description: What are the choices when developing cross-platform apps?.
+title: Selecting an approach to iOS and UWP app development
+ms.assetid: 5CDAB313-07B7-4A32-A49B-026361DCC853
 ---
 
-# Xxxxxxxxx xx xxxxxxxx xx xXX xxx XXX xxx xxxxxxxxxxx
+# Selecting an approach to iOS and UWP app development
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx xxx xxx xxxxxxx xxxx xxxxxxxxxx xxxxx-xxxxxxxx xxxx?
+What are the choices when developing cross-platform apps?
 
-## Xxxx'x xxx xxxx xxx xx xxxxxxx xxxx xXX xxx Xxxxxxx?
+## What's the best way to support both iOS and Windows?
 
-Xxxxxxx xxx xXX xxx xxxx xx xx xxxx xxxxxxxxx xxxxxx, xxx x xxxxxxx xxxxxx xx xxxxx xxx xxxxxxxxxx xxx xxxxxxx xxxxxx xxx xx xxx xxxx xx xxxxx xxxx xxxx xxxxxxx xxxx xxxxxxxxx (xxx Xxxxxxx xxx). Xxx xxxx xxxxxxxx xxxxxxx xx xxx xxxx xx xxx xxx xxx xxxxxxx, xxx xxxxxxx xxx xxx xxxxxxxx xxxx xxxxxxx xx xxxxxxx xx xxxxxxxx xxxxxxx.
+Windows and iOS may seem to be very different beasts, but a growing number of tools and techniques can greatly assist you if you need to write apps that support both platforms (and Android too). The best solution depends on the type of app you are writing, and whether you are starting from scratch or porting an existing project.
 
-## Xxxxxxx x xxx xxx
+## Writing a new app
 
-Xxxx x xxxxx xxxxx, xxx xxxx xxxx xxxxxxx xx xxxx xxxxxxxx, xxxxxxxxx:
+With a clean slate, you have many options at your disposal, including:
 
--   [Xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=320484)
+-   [Xamarin](http://go.microsoft.com/fwlink/p/?LinkID=320484)
 
-    Xxxx Xxxxxxx, xxx xxx xxxxx xxxx xxx xx X#, xxxx xx xxx xx Xxxxxxx, xxx xxxxxx xxxxxx xXX xxxx xxx. Xxxxxxx xxx Xxxxxxx xx xxxxx xxxx Xxxxxx Xxxxxx; xxxx xxxxxx xxx xxxxxxx xxxxxxx xxxx.
+    With Xamarin, you can write your app in C#, have it run on Windows, and create native iOS apps too. Support for Xamarin is built into Visual Studio; just select the correct project type.
 
--   [Xxxxxx Xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=400439)
+-   [Apache Cordova](http://go.microsoft.com/fwlink/p/?LinkID=400439)
 
-    Xx Xxxxxxxxxx xxx XXXX xx xxxx xxxx xxxxx, Xxxxxx Xxxxxxx (xxx XxxxxXxx) xxxx xxxx xxx xxxxxx xxxxx-xxxxxxxx xxxx xxx xXX, Xxxxxxx, xxx Xxxxxxx. Xxxx xxxxxxx xxxx xx xxxx xxxxx xxxx Xxxxxx Xxxxxx.
+    If Javascript and HTML is more your thing, Apache Cordova (aka PhoneGap) will help you create cross-platform apps for iOS, Windows, and Android. This project type is also built into Visual Studio.
 
--   Xxxx-xxxxxxx
+-   Game-engines
 
-    Xxxx xxxxx xxxx [XxxxxYX](http://go.microsoft.com/fwlink/p/?LinkID=320479) xxx [Xxxxxx Xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=394062) xx xxxx xxxxxxxx, xxx xxx xxxxx XXX-xxxxxxx xxxxx xxx Xxxxxxx xxx xxxx xxxxx xxxxxxxxx, xxxxxxxxx xXX. Xxxxx xxxxxxxx X# xxxxxxxxx; Xxxxxx xxxx X++.
+    With tools like [Unity3D](http://go.microsoft.com/fwlink/p/?LinkID=320479) and [Unreal Engine](http://go.microsoft.com/fwlink/p/?LinkID=394062) at your disposal, you can write AAA-quality games for Windows and many other platforms, including iOS. Unity supports C# scripting; Unreal uses C++.
 
--   [XxxxXxxx](http://go.microsoft.com/fwlink/p/?LinkID=320483)
+-   [MonoGame](http://go.microsoft.com/fwlink/p/?LinkID=320483)
 
-    Xxx xxxxxxxxx xxxxxxxxx xx XXX. Xxx, xx'x xx xxxx-xxxxxx xxxxx-xxxxxxxx xxxxxxxxx, xxxxx xxxxx xxx xxx xxxxx xxxx xx X# xxx xxxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxx xxxxxxx, xxx YX xxx YX xxxxxxxx.
+    The spiritual successor to XNA. Now, it's an open-source cross-platform framework, which means you can write apps in C# for many platforms with support for physics engines, and 2D and 3D graphics.
 
-## Xxxxxxxx xx xxxxxxxx xxx
+## Adapting an existing app
 
-Xxxx xx xxxxxxxx xXX xxx, xxxx xxxxxxx xxx x xxxxxx xxxx xxxxxxx. Xxxxxxx, xxx xx xxxx xxxxxxxxx xxx xxxx.
+With an existing iOS app, your options are a little more limited. However, all is most certainly not lost.
 
--   [Xxxxxxx Xxxxxx xxx xXX](https://go.microsoft.com/fwlink/p/?LinkId=619014)
+-   [Windows Bridge for iOS](https://go.microsoft.com/fwlink/p/?LinkId=619014)
 
-    Xxxx xxxxx xx Xxxxxxx Xxxxxxxxxx, xxxx xx x xxxxx-xx-xxxxxxxxxxx xxxx xxxx xxx xxxxxx Xxxxx xxxxxxxx xxxxxxxx xxxx Xxxxxx Xxxxxx. Xxxxxxxxx-X xxxx xxx xx xxxxx xxx xxxxxxxx xxxx xxxxxx Xxxxxx Xxxxxx. Xx xxxx xxxxxxx xxxxx xxx xx xxxxxxxxx xxxx xx Xxxxx xxx xxxxxxxx, xxx xxxxx xxxx xxxx x xxxxxx xxx xx xxxxxxx xxxx xxxx xxx.
+    Also known as Project Islandwood, this is a still-in-development tool that can import Xcode projects directly into Visual Studio. Objective-C code can be built and debugged from within Visual Studio. If your project makes use of libraries such as Cocos for graphics, you might find this a useful way to quickly port your app.
 
--   Xxxxxxxxx xxxx X++ xxxx.
+-   Repurpose your C++ code.
 
-    Xx xxxx xxxx xxxxxxxx xxxxx xx xxxxxxx xx X++, xxxxxx xxxx Xxxxxxxxx-X xx Xxxxx, xxx xxx xxxxx xxx xxxx xxxx xxxx xxxx xxxxx xxxxxxx xx xxxx xxxxxxx. Xxx xxx xxxx xxx XXXX xx xxxxxx xxxx XX, xx xxxx xxxxx Xxxxxxx xxxx, xxx xxxx xxxx xxx X++ xxxx xxxx xxxxxxxxx.
+    If your core business logic is written in C++, rather than Objective-C or Swift, you can often use this code with only minor changes in your project. You can then use XAML to define your UI, as with other Windows apps, and call into the C++ code when necessary.
 
--   [Xxx XXXXX xx xxx XxxxXX XX xx Xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=618387)
+-   [Use ANGLE to run OpenGL ES on Windows](http://go.microsoft.com/fwlink/p/?linkid=618387)
 
-    Xx xxxxxxxxxxxx xxxx xx xxxxxxx xxxx XxxxXX XX Y.Y xxxxxxx xx xx xxx XXXXX. XXXXX xxxxxx xxx xx xxx XxxxXX XX xxxxxxx xx Xxxxxxx xx xxxxxxxxxxx XxxxXX XX XXX xxxxx xx XxxxxxX YY XXX xxxxx.
+    An intermediate step to porting your OpenGL ES 2.0 project is to use ANGLE. ANGLE allows you to run OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls.
 
-## Xxxxx xxxxx-xxxxxxxx xxxxxxxxx xxxxx
+## Other cross-platform authoring tools
 
--   [XxxxXxxxx](http://go.microsoft.com/fwlink/p/?LinkID=320480)
+-   [GameSalad](http://go.microsoft.com/fwlink/p/?LinkID=320480)
 
-    X xxxx xxxxxxxxx xxxxxxxxxxx.
+    A game authoring environment.
 
--   [Xxxxxxxxx Y]( http://go.microsoft.com/fwlink/p/?LinkID=320481)
+-   [Construct 2]( http://go.microsoft.com/fwlink/p/?LinkID=320481)
 
-    X xxxx xxxxxxxxx xxxxxxxxxxx.
+    A game authoring environment.
 
--   [Xxxxxxxx Xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=320482)
+-   [Titanium Studio](http://go.microsoft.com/fwlink/p/?LinkID=320482)
 
-    X xxxxx-xxxxxxxx xxxxxxxxx xxxxxxxxxxx.
+    A cross-platform authoring environment.
 
--   [XxxxxYX-x](http://go.microsoft.com/fwlink/p/?LinkID=320485)
+-   [Cocos2D-x](http://go.microsoft.com/fwlink/p/?LinkID=320485)
 
-    X xxxxx-xxxxxxxx xxxx xxxxxxx xxx xxxxxx xxxxxxxx xxx xxxxxxx xxxxxxxx.
+    A cross-platform code library for sprite handling and physics modeling.
 
--   [Xxxxxx.xx](http://go.microsoft.com/fwlink/p/?LinkID=320486)
+-   [Impact.js](http://go.microsoft.com/fwlink/p/?LinkID=320486)
 
-    Xx XXXX xxxxx xxxx xxxxxxx.
+    An HTML based game library.
 
--   [Xxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=320487)
+-   [Marmalade](http://go.microsoft.com/fwlink/p/?LinkID=320487)
 
-    X xxxxx-xxxxxxxx XXX.
+    A cross-platform SDK.
 
--   [XxxxXX](http://go.microsoft.com/fwlink/p/?LinkID=320488)
+-   [OpenFL](http://go.microsoft.com/fwlink/p/?LinkID=320488)
 
-    X xxxxx-xxxxxxxx xxxxxxxxxxx xxxx.
+    A cross-platform development tool.
 
--   [XxxxXxxxx](http://go.microsoft.com/fwlink/p/?LinkID=320490)
+-   [GameMaker](http://go.microsoft.com/fwlink/p/?LinkID=320490)
 
-    Xx xxxxxxxxx xxxxxxxxxxx xxxxxxxxxxxx xxx xxxxx.
+    An authoring environment specifically for games.
 
--   [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=394061)
+-   [PlayCanvas](http://go.microsoft.com/fwlink/p/?LinkID=394061)
 
-    Xx XXXX xxxxx xxxx xxxxxxxxxxx xxxx.
+    An HTML based game development tool.
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,79 +1,64 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxxx xxxxxxxxx xxx xxx xx xxxxxxx xxxxxxxx xxx xxxxx xxxxxxxxx xxx xxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxx xx Xxxxxxx Xxxxxxx xxxx.
-xxxxx: Xxxxxxxxx
-xx.xxxxxxx: YYxxYYYY-YYxY-YYxY-YxYY-YxxYYYYxxYxY
-xxxxx: Xxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: このトピックでは、タッチ補正のための接触形状の使用について説明し、Windows ランタイム アプリでのターゲット設定のベスト プラクティスを紹介します。
+title: ターゲット設定
+ms.assetid: 93ad2232-97f3-42f5-9e45-3fc2143ac4d2
+label: ターゲット設定
+template: detail.hbs
 ---
 
-# Xxxxxxxxxx xxx xxxxxxxxx
+# ターゲットの設定のガイドライン
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
 
-Xxxxx xxxxxxxxx xx Xxxxxxx xxxx xxx xxxx xxxxxxx xxxx xx xxxx xxxxxx xxxx xx xxxxxxxx xx x xxxxx xxxxxxxxx. Xxx xxxxxx, xxxx xxxxxxx xxx xx xxxxx xxxx xxxxxxxx xx xxx xxxxxxxxx xx xxxx xx xxxxxxxx xxxxxxxxx xxxx xxxxxxxxxxx xxx xxxx'x xxxxxxxx (xx xxxx xxxxxx) xxxxxx.
+Windows のタッチ補正では、タッチ デジタイザーで検出されるそれぞれの指が接触する領域全体を使います。 デジタイザーから伝えられる、より広く複雑なこの入力データのセットを使うと、ユーザーが意図した (または意図した可能性が高い) ターゲットをより正確に特定できます。
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**Xxxxxxx.XX.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Xxxxxxx.XX.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Xxxxxxx.XX.Xxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227994)
-
-
-
-Xxxx xxxxx xxxxxxxxx xxx xxx xx xxxxxxx xxxxxxxx xxx xxxxx xxxxxxxxx xxx xxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxx xx XXX xxxx.
-
-## <span id="Measurements_and_scaling">
-            </span>
-            <span id="measurements_and_scaling">
-            </span>
-            <span id="MEASUREMENTS_AND_SCALING">
-            </span>Xxxxxxxxxxxx xxx xxxxxxx
+-   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
+-   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+-   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 
-Xx xxxxxx xxxxxxxxxx xxxxxx xxxxxxxxx xxxxxx xxxxx xxx xxxxx xxxxxxxxx, xxx xxxxxx xxxxx xxx xxxxxxxxxxx xx xxxxxxxx xxxxx (xxxxxxxxxxx). Xxxxxxxx xxxxx xxx xx xxxxxxxxx xx xxxxxx xx xxxxx xxx xxxxxxxxx xxxxxxxx:
 
-Xxxxxx = Xxxxx Xxxxxxx × Xxxxxxxxxxx
+このトピックでは、タッチ補正のための接触形状の使用について説明し、UWP アプリでのターゲット設定のベスト プラクティスを紹介します。
 
-Xxx xxxxxxxxx xxxxxxx xxxx xxxx xxxxxxx xx xxxxxxxxx xxx xxxxx xxxx xx x Y xx xxxxxx xx x YYY xxxxx xxx xxxx (XXX) xxxxxxx xx x Yx xxxxxxx xxxxxxx:
-
-Xxxxxx = YYY XXX × Y xx
-
-Xxxxxx = YYY XXX × (Y.YYYYY xxxxxx xxx xx × Y xx)
-
-Xxxxxx = YYY XXX × Y.YYYYY xxxxxx
-
-Xxxxxx = YY xxxxxx
-
-Xxxx xxxxxx xxxx xx xxxxxxxx xxxxxxxxx xx xxxx xxxxxxx xxxxxxx xxxxxxx xx xxx xxxxxx.
-
-## <span id="Thresholds">
-            </span>
-            <span id="thresholds">
-            </span>
-            <span id="THRESHOLDS">
-            </span>Xxxxxxxxxx
+## <span id="Measurements_and_scaling"></span><span id="measurements_and_scaling"></span><span id="MEASUREMENTS_AND_SCALING"></span>サイズと表示スケール
 
 
-Xxxxxxxx xxx xxxx xxxxxxxxxx xxx xx xxxx xx xxxxxxxxx xxx xxxxxxx xx xx xxxxxxxxxxx.
+画面サイズとピクセル密度が変わっても一貫性が維持されるように、ターゲット サイズはすべて物理単位 (ミリメートル) で表されます。 物理単位は、次の式でピクセルに変換できます。
 
-Xxx xxxxxxx, xxxx x xxxxx-xxxx xx xxxxxxxx, x xxx xx xxxxxxxxxx xx xxx xxxxxx xx xxxxxxx xxxx xxxx Y.Y xx xxxx xxx xxxxx-xxxx xxxxx xxx xxx xxxxx xx xxxxxx xxxxxx Y.Y xxxxxx xx xxxx xx xxx xxxxx-xxxx. Xxxxxx xxx xxxxxx xxxxxx xxxx Y.Y xx xxxxxxxxx xxxxxxx xx xxx xxxxxx xxxxx xxxxxxx xxx xxxxxx xxxxxxxx xx xxxxx (xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxx-xxxxx](guidelines-for-cross-slide.md)). Xxxxxxxxx xx xxxx xxx, xxxxxxx xxx xxxxxx xxxx xxx xxxxxx xxxx Y.Y xxxxxx xxx xxxxx xxx xxxxxx xx xxxxxxx x xxxx-xxxxxxxxx xxxxxxxxxxx (xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxx xxxxxxxx](guidelines-for-visualfeedback.md#selfreveal)).
+ピクセル数 = ピクセル密度 × サイズ
 
-## <span id="Target_sizes">
-            </span>
-            <span id="target_sizes">
-            </span>
-            <span id="TARGET_SIZES">
-            </span>Xxxxxx xxxxx
+次の例ではこの式を使って、135 ppi (pixel per inch) のディスプレイと 1x の表示スケール プラトーでの 9 mm ターゲットのピクセル サイズを計算します。
+
+ピクセル数 = 135 ppi × 9 mm
+
+ピクセル数 = 135 ppi × (0.03937 インチ/mm × 9 mm)
+
+ピクセル数 = 135 ppi × 0.35433 インチ
+
+ピクセル数 = 48 ピクセル
+
+この結果は、システムで定義されている各表示スケール プラトーに従って調整する必要があります。
+
+## <span id="Thresholds"></span><span id="thresholds"></span><span id="THRESHOLDS"></span>しきい値
 
 
-Xx xxxxxxx, xxx xxxx xxxxx xxxxxx xxxx xx Y xx xxxxxx xx xxxxxxx (YYxYY xxxxxx xx x YYY XXX xxxxxxx xx x Y.Yx xxxxxxx xxxxxxx). Xxxxx xxxxx xxxxx xxxxxxx xxxx xxx xxxx xxxx Y xx xxxxxx.
+操作の結果を判断するために距離と時間のしきい値を使うことがあります。
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xxxxxx xxxx xx xxxxxxxxx x xxxxxxxxxxx xx x xxxxxx xxxxxx, xxxxxx xxxxxx xxxx, xxx xxx xxxxxxx xxxxxxx xxx xxxxxx xxxxxx xxx xxxxx xxxxxxxxx xxxxxxx.
+たとえば、タッチ ダウンが検出されたとき、オブジェクトがタッチ ダウン ポイントから 2.7 mm 未満の範囲でドラッグされて、タッチ ダウンから 0.1 秒以内に指が上げられた場合は、タップが登録されます。 この 2.7 mm のしきい値を超えて指を動かすと、オブジェクトはドラッグされ、選択または移動されます (詳しくは、「[クロススライドのガイドライン](guidelines-for-cross-slide.md)」をご覧ください)。 アプリによっては、0.1 秒より長く押し続けると自己説明操作が実行されることもあります (詳しくは、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md#selfreveal)」をご覧ください)。
 
-![xxxxxxx xxxxxxx xxx xxxxxxxxxxx xxxxx xxx xxx xxxxxx xxxxxx, xxxxxx xxxxxx, xxx xxxxxxx.](images/targeting-size.png)
+## <span id="Target_sizes"></span><span id="target_sizes"></span><span id="TARGET_SIZES"></span>ターゲット サイズ
 
-Xxx xxxxxxxxx xxxxx xxxxx xxx xxxxxxx xxx xxxxxxxxxxx xxxxx xxx xxx xxxxxxxxxx xx x xxxxx xxxxxx.
+
+一般に、タッチ ターゲットのサイズを一辺 9 mm 以上の正方形に設定します (1.0x のスケール プラトーで 135 ppi のディスプレイで 48x48 ピクセル)。 一辺 7 mm 未満の正方形であるタッチ ターゲットを使わないようにしてください。
+
+次の図は、ターゲット サイズが一般には外観上のターゲット、実際のターゲット サイズ、実際のターゲットと他の指定可能なターゲットの間の余白の組み合わせで決まることを示しています。
+
+![外観上のターゲット、実際のターゲット、余白の推奨サイズを示す図。](images/targeting-size.png)
+
+タッチ ターゲットのコンポーネントの最小サイズと推奨サイズを次の表に示します。
 
 <table>
 <colgroup>
@@ -83,119 +68,109 @@ Xxx xxxxxxxxx xxxxx xxxxx xxx xxxxxxx xxx xxxxxxxxxxx xxxxx xxx xxx xxxxxxxxxx x
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxx xxxxxxxxx</th>
-<th align="left">Xxxxxxx xxxx</th>
-<th align="left">Xxxxxxxxxxx xxxx</th>
+<th align="left">ターゲット コンポーネント</th>
+<th align="left">最小サイズ</th>
+<th align="left">推奨サイズ</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Xxxxxxx</td>
-<td align="left">Y xx</td>
-<td align="left">Xxx xxxxxxxxxx.</td>
+<td align="left">余白</td>
+<td align="left">2 mm</td>
+<td align="left">適用できません。</td>
 </tr>
 <tr class="even">
-<td align="left">Xxxxxx xxxxxx xxxx</td>
-<td align="left">&xx; YY% xx xxxxxx xxxx</td>
-<td align="left">YY-YYY% xx xxxxxx xxxx
-<p>Xxxx xxxxx xxx'x xxxxxxx x xxxxxx xxxxxx xx xxxxxxxxx xx xx'x xxxx xxxx Y.Y xx xxxxxx (YY% xx xxx xxxxxxxxxxx xxxxxxx xxxxxx xxxx xx Y xx).</p></td>
+<td align="left">外観上のターゲット サイズ</td>
+<td align="left">実際のサイズの 60% 未満</td>
+<td align="left">実際のサイズの 90 から 100%
+<p>ほとんどのユーザーは一辺 4.2 mm の正方形 (7 mm の推奨の最小ターゲットのサイズの 60%) よりも小さい場合、外観上のターゲットがタッチ可能であると実感しません。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">Xxxxxx xxxxxx xxxx</td>
-<td align="left">Y xx xxxxxx</td>
-<td align="left">Xxxxxxx xxxx xx xxxxx xx Y xx xxxxxx (YY x YY xx @ Yx)</td>
+<td align="left">実際のターゲット サイズ</td>
+<td align="left">7 mm の正方形</td>
+<td align="left">一辺 9 mm 以上の正方形 (48 x 48 ピクセル @ 1x)</td>
 </tr>
 <tr class="even">
-<td align="left">Xxxxx xxxxxx xxxx</td>
-<td align="left">YY x YY xx (xxxxxxxxxxxxx YY xx: xxxxx YY-xx xxxx xxxxx @ Yx)</td>
-<td align="left">YY.Y x YY.Y xx (YY x YY xx @ Yx)
-<p>Xxxx xxxxxxx xxxx xxx xxxx xx xxx xxxxxx xxxxxx xxx xxxxxxx xxxxxxxx xxxxxx xx xxxxxx xxxx xxxxx xxxxxxxxxx xxxxxxxx.</p></td>
+<td align="left">全体的なターゲット サイズ</td>
+<td align="left">11 x 11 mm (約 60 ピクセル: 3 個の 20 ピクセル グリッド @ 1x)</td>
+<td align="left">13.5 x 13.5 mm (72 x 72 ピクセル @ 1x)
+<p>これは、実際のターゲットと余白を組み合わせたサイズをそれぞれの最小サイズより大きくする必要があることを意味します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Xxxxx xxxxxx xxxx xxxxxxxxxxxxxxx xxx xx xxxxxxxx xx xxxxxxxx xx xxxx xxxxxxxxxx xxxxxxxx. Xxxx xx xxx xxxxxxxxxxxxxx xxxx xxxx xxxx xxxxx xxxxxxxxxxxxxxx xxxxxxx:
+表に示したターゲット サイズの推奨サイズは、個々のシナリオの必要に応じて調整できます。 この推奨サイズの設定では、次の点が考慮されています。
 
--   Xxxxxxxxx xx Xxxxxxx: Xxxxxxxx xxxxxx xxxxxxx xxxx xxx xxxxxxxxxx xx xxxxxxxxxx xxxxxxx xxxxxx xxxx xxx xxxxxxx xxxx.
--   Xxxxx Xxxxxxxxxxx: Xxxxxxx xxxx xxxx xxxxxx xxxxxxxxxxxx xx xxxxxxx xx xxxxx xxxxxx xxxx xxxxxxx xxxxxxx xxx xx xxxxxx xxxxxxx xxxx xxx xxxx xx xxx xxxxxxx xxxx. Xxxx xx xxxxxxxxxx xxxx xxx xxxxxxx xxxx xxx xxxxxxx xxxxxxxxxx.
--   Xxxxxxxx xx xxx xxxxxxx xxxx
--   Xxxx xxxxxx xxx xxxxxx xxxx
--   Xxxxxx xxxxxxx
--   Xxxxx xxxxxxxxxxxxxx
--   Xxxxxxxx xxx xxxxx xxxxxxxxxx
+-   タッチの頻度: 繰り返しタッチされたり、頻繁にタッチされたりするターゲットは、最小サイズより大きくするようにしてください。
+-   エラー防止: 誤ってタッチすると重大な結果をもたらすターゲットは、大きな余白を取り、コンテンツ領域の端から離して配置する必要があります。 特に当てはまるのは頻繁にタッチされるターゲットです。
+-   コンテンツ領域での位置
+-   フォーム ファクターと画面サイズ
+-   指の位置
+-   タッチの視覚エフェクト
+-   ハードウェアとタッチ デジタイザー
 
-## <span id="Targeting_assistance">
-            </span>
-            <span id="targeting_assistance">
-            </span>
-            <span id="TARGETING_ASSISTANCE">
-            </span>Xxxxxxxxx xxxxxxxxxx
+## <span id="Targeting_assistance"></span><span id="targeting_assistance"></span><span id="TARGETING_ASSISTANCE"></span>ターゲット設定支援
 
 
-Xxxxxxx xxxxxxxx xxxxxxxxx xxxxxxxxxx xx xxxxxxx xxxxxxxxx xxxxx xxx xxxxxxx xxxx xx xxxxxxx xxxxxxxxxxxxxxx xxxxxxxxx xxxx xxx xxx xxxxxxxxxx; xxx xxxxxxx, xxxxxxxxxx xx x xxxxxxx, xxxxxxxx xxxxxxxx, xxxx xxxx xxxxx xxx xxxxx xxxxx, xx xxxx xxxxxxxxx.
+Windows では、ここで示した最小サイズや推奨する余白サイズを適用できない状況に対応するためのターゲット設定支援機能を提供しています。対象となるのは、Web ページ上のハイパーリンク、カレンダー コントロール、ドロップダウン リストとコンボ ボックス、テキスト選択などです。
 
-Xxxxx xxxxxxxxx xxxxxxxx xxxxxxxxxxxx xxx xxxx xxxxxxxxx xxxxxxxxx xxxx xxxxxxxx xxxx xxxxxx xxxxxxxx (xxxxxxxxxxxxxx XX) xx xxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxx xxxxxxxx](guidelines-for-visualfeedback.md).
+このようにターゲット設定プラットフォームを強化し、ユーザー インターフェイスの動作を視覚的なフィードバック (不明瞭解消 UI) と連携させることで、ユーザーがより正確に、また安心して操作できるようになります。 詳しくは、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
 
-Xx x xxxxxxxxx xxxxxxx xxxx xx xxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxx xxxxxx xxxx, xxx xxxxxxxxx xxxxxxxxxx xxx xx xxxx xx xxxxxxxx xxx xxxxxxxxx xxxxxx xxxx xxxxxx.
+タッチ可能な要素を推奨の最小ターゲット サイズより小さくする必要がある場合は、次のテクニックを使ってターゲット設定で発生する問題を最小化できます。
 
-## <span id="Tethering">
-            </span>
-            <span id="tethering">
-            </span>
-            <span id="TETHERING">
-            </span>Xxxxxxxxx
+## <span id="Tethering"></span><span id="tethering"></span><span id="TETHERING"></span>テザー
 
 
-Xxxxxxxxx xx x xxxxxx xxx (x xxxxxxxxx xxxx x xxxxxxx xxxxx xx xxx xxxxxxxx xxxxxxxxx xx xx xxxxxx) xxxx xx xxxxxxxx xx x xxxx xxxx xxxx xxx xxxxxxxxx xx, xxx xxxxxxxxxxx xxxx, xx xxxxxx xxxx xxxxxx xxx xxxxx xxxxxxx xxx'x xxxxxxxx xx xxxxxxx xxxx xxx xxxxxx. Xxxx xxx xxxxx xxxx:
+テザーとは、入力接点がオブジェクトに直接触れていなくても、ユーザーがそのオブジェクトにつながっているか操作していることをユーザーに示すために使われる視覚的な合図 (接点からオブジェクトの境界の四角形までを結ぶコネクタ) です。 テザーは次の場合に使われます。
 
--   X xxxxx xxxxxxx xxx xxxxx xxxxxxxx xxxxxx xxxx xxxxxxxxx xxxxxxxxx xx xx xxxxxx xxx xxxx xxxxxx xxx xxxxxxxxxx xx xxx xxxx xxxxxx xxxxxx xx xxx xxxxxxx.
--   X xxxxx xxxxxxx xxx xxxxx xxx xx xxxxxx xxx xxx xxxxxxx xx xxxxx xxxxxx x xxxxxxxxx xxxxxxxxx.
+-   タッチによる接触がオブジェクトまでの近接しきい値の範囲内で最初に検出され、そのオブジェクトがそのタッチのターゲットとして最も可能性が高いと特定された場合。
+-   タッチによる接触がオブジェクトから離れたが、その接触が近接しきい値内にとどまっている場合。
 
-Xxxx xxxxxxx xx xxx xxxxxxx xx Xxxxxxx Xxxxx xxx xxxxx XxxxXxxxxx xxxxxxxxxx.
+この機能は、JavaScript を使った Windows ストア アプリの開発者には公開されていません。
 
-## <span id="scrubbing">
-            </span>
-            <span id="SCRUBBING">
-            </span>Xxxxxxxxx
+## <span id="scrubbing"></span><span id="SCRUBBING"></span>スクラブ
 
 
-Xxxxxxxxx xxxxx xx xxxxx xxxxxxxx xxxxxx x xxxxx xx xxxxxxx xxx xxxxx xx xxxxxx xxx xxxxxxx xxxxxx xxxxxxx xxxxxxx xxx xxxxxx xxxxx xx xx xxxx xxx xxxxxxx xxxxxx. Xxxx xx xxxx xxxxxxxx xx xx "xxxx-xxx xxxxxxxxxx", xxxxx xxx xxxxxx xxxx xx xxxxxxxxx xx xxx xxx xxxx xxx xxxx xxxxxxx xxxx xxx xxxxxx xxx xxxxxx xxxx xxx xxxxxx.
+スクラブとは、ターゲットのフィールド内をタッチし、そのまま指を持ち上げずに目的のターゲットまでスライドさせてそのターゲットを選ぶことを意味します。 この操作は "指を離すことによるアクティブ化" とも呼ばれます。この場合、アクティブ化されるオブジェクトは、指が画面から離れたときに最後にタッチされたオブジェクトです。
 
-Xxx xxx xxxxxxxxx xxxxxxxxxx xxxx xxx xxxxxx xxxxxxxxx xxxxxxxxxxxx:
+スクラブ操作を設計するときは、次のガイドラインに従ってください。
 
--   Xxxxxxxxx xx xxxx xx xxxxxxxxxxx xxxx xxxxxxxxxxxxxx XX. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxx xxxxxxxx](guidelines-for-visualfeedback.md).
--   Xxx xxxxxxxxxxx xxxxxxx xxxx xxx x xxxxxxxxx xxxxx xxxxxx xx YY xx (Y.YY xx @ Yx xxxx).
--   Xxxxxxxxx xxxxx xxxxxxxxxx xxxx xxxxxxxxx xx x xxxxxxxx xxxxxxx, xxxx xx x xxxxxxx.
--   Xxxxxxxxx xxxxxxx xxxxxx xx xxxxx xxxxxxxx.
--   Xx xxxxxx xx xxxxxxxx xxxx xxx xxxx xxxxx x xxxxxx xxx x xxxxxxxxx xxxxxx.
--   Xxxxxxxxx xx x xxxxxxxxx xxxxxx xx xxxxxxxxx xx xxx xxxxxxx xxxxxxxxx xx xxx xxxxxx xxx xxx-xxxxxxxxxxx, xxxx xx xxxxxxxxx xxxxxxx xxxxx xx x xxxxxxxx.
--   Xxxxxxxxx xx xxxxxxxxx xx x xxxxxx xxxxxxxxx, xxxxxxxxxxxx xx xxxxxxxxxx.
+-   スクラブは、不明瞭解消 UI と併用します。 詳しくは、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
+-   スクラブ対象のタッチ ターゲットの推奨最小サイズは、20 ピクセル (3.75 mm @ 1x サイズ) です。
+-   スクラブは、Web ページなどのパン対応サーフェイスで実行されたときに優先されます。
+-   スクラブ対象ターゲットは互いに近づける必要があります。
+-   ユーザーがドラッグによってスクラブ対象ターゲットから指を離すと、操作は取り消されます。
+-   ターゲットによって実行される操作が破棄的でなければ (カレンダーでの日付の切り替えなど)、スクラブ対象ターゲットに対してテザーが指定されます。
+-   テザーは、水平、垂直のいずれかの方向で指定されます。
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>関連記事
 
 
-**Xxxxxxx**
-* [Xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Xxx xxxxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Xxxx xxxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Xxxxxxx xxxxxxx**
-* [Xxxxx: XXXX xxxx xxxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Xxxxx: Xxxxxx xxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Xxxxx: Xxxxx xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XXXX xxxxxxxxx, xxxxxxx, xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Xxxxx: Xxxxxxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Xxxxx: Xxxxxxx Y xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Xxxxx: Xxxxxxxxxxxxx xxx xxxxxxxx (X++) xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [XxxxxxX xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+**サンプル**
+* [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**サンプルのアーカイブ**
+* [入力: XAML ユーザー入力イベントのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [入力: タッチのヒット テストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML のスクロール、パン、ズームのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [入力: 簡略化されたインクのサンプル](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [入力: Windows 8 のジェスチャのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [入力: 操作とジェスチャ (C++) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX タッチ入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

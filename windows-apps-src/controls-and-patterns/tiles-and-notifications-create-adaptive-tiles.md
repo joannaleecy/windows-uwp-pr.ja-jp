@@ -1,54 +1,39 @@
 ---
-Xxxxxxxxxxx: Xxxxxxxx xxxx xxxxxxxxx xxx x xxx xxxxxxx xx Xxxxxxx YY, xxxxxxxx xxx xx xxxxxx xxxx xxx xxxx xxxxxxxxxxxx xxxxxxx xxxxx x xxxxxx xxx xxxxxxxx xxxxxx xxxxxxxx xxxx xxxxxx xx xxxxxxxxx xxxxxx xxxxxxxxx.
-xxxxx: Xxxxxx xxxxxxxx xxxxx
-xx.xxxxxxx: YYYYXYYX-XYXY-YYXY-XXYX-YYYXYYYYYYXY
-xxxxx: Xxxxxx xxxxxxxx xxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities.
+title: Create adaptive tiles
+ms.assetid: 1246B58E-D6E3-48C7-AD7F-475D113600F9
+label: Create adaptive tiles
+template: detail.hbs
 ---
 
-# Xxxxxx xxxxxxxx xxxxx
+# Create adaptive tiles
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxxxx xxxx xxxxxxxxx xxx x xxx xxxxxxx xx Xxxxxxx YY, xxxxxxxx xxx xx xxxxxx xxxx xxx xxxx xxxxxxxxxxxx xxxxxxx xxxxx x xxxxxx xxx xxxxxxxx xxxxxx xxxxxxxx xxxx xxxxxx xx xxxxxxxxx xxxxxx xxxxxxxxx. Xxxx xxxxxxx xxxxx xxx xxx xx xxxxxx xxxxxxxx xxxx xxxxx xxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx. Xxx xxx xxxxxxxx xxxx xx xxxxxxxx xxxxxxxx xxx xxxxxxxxxx, xxx xxx [Xxxxxxxx xxxxx xxxxxx](tiles-and-notifications-adaptive-tiles-schema.md).
+Adaptive tile templates are a new feature in Windows 10, allowing you to design your own tile notification content using a simple and flexible markup language that adapts to different screen densities. This article tells you how to create adaptive live tiles for your Universal Windows Platform (UWP) app. For the complete list of adaptive elements and attributes, see the [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md).
 
-(Xx xxx'x xxxx, xxx xxx xxxxx xxx xxx xxxxxx xxxxxxxxx xxxx xxx [Xxxxxxx Y xxxx xxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh761491) xxxx xxxxxxxxx xxxxxxxxxxxxx xxx Xxxxxxx YY.)
+(If you'd like, you can still use the preset templates from the [Windows 8 tile template catalog](https://msdn.microsoft.com/library/windows/apps/hh761491) when designing notifications for Windows 10.)
 
-## <span id="Getting_started">
-            </span>
-            <span id="getting_started">
-            </span>
-            <span id="GETTING_STARTED">
-            </span>Xxxxxxx xxxxxxx
+## <span id="Getting_started"></span><span id="getting_started"></span><span id="GETTING_STARTED"></span>Getting started
 
 
-**Xxxxxxx XxxxxxxxxxxxxXxxxxxxxxx.** Xx xxx'x xxxx xx xxx X# xxxxxxx xx XXX xx xxxxxxxx xxxxxxxxxxxxx, xxxxxxx xxx XxXxx xxxxxxx xxxxx [XxxxxxxxxxxxxXxxxxxxxxx](https://github.com/WindowsNotifications/NotificationsExtensions/wiki). Xxx X# xxxxxxx xxxxxxxx xx xxxx xxxxxxx xxx XxxxxxxxxxxxxXxxxxxxxxx.
+**Install NotificationsExtensions.** If you'd like to use C# instead of XML to generate notifications, install the NuGet package named [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki). The C# samples provided in this article use NotificationsExtensions.
 
-**Xxxxxxx Xxxxxxxxxxxxx Xxxxxxxxxx.** Xxxx xxxx XXX xxx xxxxx xxx xxxxxx xxxxxxxx xxxx xxxxx xx xxxxxxxxx xx xxxxxxx xxxxxx xxxxxxx xx xxxx xxxx xx xxx xxxx xx, xxxxxxx xx Xxxxxx Xxxxxx'x XXXX xxxxxx/xxxxxx xxxx. Xxx xxx xxxx [xxxx xxxx xxxx](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx) xxx xxxx xxxxxxxxxxx, xxx xxx xxx xxxxxxxx Xxxxxxxxxxxxx Xxxxxxxxxx [xxxx](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
+**Install Notifications Visualizer.** This free UWP app helps you design adaptive live tiles by providing an instant visual preview of your tile as you edit it, similar to Visual Studio's XAML editor/design view. You can read [this blog post](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/09/22/introducing-notifications-visualizer-for-windows-10.aspx) for more information, and you can download Notifications Visualizer [here](https://www.microsoft.com/store/apps/notifications-visualizer/9nblggh5xsl1).
 
-## <span id="Usage_guidance">
-            </span>
-            <span id="usage_guidance">
-            </span>
-            <span id="USAGE_GUIDANCE">
-            </span>Xxxxx xxxxxxxx
+## <span id="Usage_guidance"></span><span id="usage_guidance"></span><span id="USAGE_GUIDANCE"></span>Usage guidance
 
 
-Xxxxxxxx xxxxxxxxx xxx xxxxxxxx xx xxxx xxxxxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxxxxx xxxxx. Xxxxxxxx xxxx xx xxxxx xxx xxxxxxxx xxxx xxxxxxxx xxxxxxx xxx xxx'x xxxxx x xxxxxxxxxx xxxxxx xxxxxxxx xx xxxxx xxx. Xxx xxxxx xxxxxxxxxx xx x xxxxxxxxxxxx xxxxxx xx xxxxx xx xxx xxxxxxxx xxxxxx xx xxxxx xx xxxx xxxxxx, xxxxxxx xx'x xxxxx, xxxxxx, xx xxxxxxx, xx xxxxxxx xxxxxx.
+Adaptive templates are designed to work across different form factors and notification types. Elements such as group and subgroup link together content and don't imply a particular visual behavior on their own. The final appearance of a notification should be based on the specific device on which it will appear, whether it's phone, tablet, or desktop, or another device.
 
-Xxxxx xxx xxxxxxxx xxxxxxxxxx xxxx xxx xx xxxxx xx xxxxxxxx xx xxxxx xx xxxxxxx x xxxxxxxx xxxxxx xxxxxxxx. Xxxxx xxx xx xxxxxx-xxxxxxxx xx xxxxxxxxxxxx-xxxxxxxx.
+Hints are optional attributes that can be added to elements in order to achieve a specific visual behavior. Hints can be device-specific or notification-specific.
 
-## <span id="A_basic_example">
-            </span>
-            <span id="a_basic_example">
-            </span>
-            <span id="A_BASIC_EXAMPLE">
-            </span>X xxxxx xxxxxxx
+## <span id="A_basic_example"></span><span id="a_basic_example"></span><span id="A_BASIC_EXAMPLE"></span>A basic example
 
 
-Xxxx xxxxxxx xxxxxxxxxxxx xxxx xxx xxxxxxxx xxxx xxxxxxxxx xxx xxxxxxx.
+This example demonstrates what the adaptive tile templates can produce.
 
 ```XML
 <tile>
@@ -111,26 +96,21 @@ TileContent content = new TileContent()
 };
 ```
 
-**Xxxxxx:**
+**Result:**
 
-![xxxxx xxxxxx xxxx](images/adaptive-tiles-quicksample.png)
+![quick sample tile](images/adaptive-tiles-quicksample.png)
 
-## <span id="Tile_sizes">
-            </span>
-            <span id="tile_sizes">
-            </span>
-            <span id="TILE_SIZES">
-            </span>Xxxx xxxxx
+## <span id="Tile_sizes"></span><span id="tile_sizes"></span><span id="TILE_SIZES"></span>Tile sizes
 
 
-Xxxxxxx xxx xxxx xxxx xxxx xx xxxxxxxxxxxx xxxxxxxxx xx xxxxxxxx [&xx;xxxxxxx&xx;](tiles-and-notifications-adaptive-tiles-schema.md) xxxxxxxx xxxxxx xxx XXX xxxxxxx. Xxxxxx xxx xxxxxx xxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxxx xx xxx xx xxx xxxxxxxxx xxxxxx:
+Content for each tile size is individually specified in separate [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) elements within the XML payload. Choose the target size by setting the template attribute to one of the following values:
 
--   XxxxXxxxx
--   XxxxXxxxxx
--   XxxxXxxx
--   XxxxXxxxx (xxxx xxx xxxxxxx)
+-   TileSmall
+-   TileMedium
+-   TileWide
+-   TileLarge (only for desktop)
 
-Xxx x xxxxxx xxxx xxxxxxxxxxxx XXX xxxxxxx, xxxxxxx &xx;xxxxxxx&xx; xxxxxxxx xxx xxxx xxxx xxxx xxxx xxx'x xxxx xx xxxxxxx, xx xxxxx xx xxxx xxxxxxx:
+For a single tile notification XML payload, provide &lt;binding&gt; elements for each tile size that you'd like to support, as shown in this example:
 
 ```XML
 <tile>
@@ -208,21 +188,16 @@ TileContent content = new TileContent()
 };
 ```
 
-**Xxxxxx:**
+**Result:**
 
-![xxxxxxxx xxxx xxxxx: xxxxx, xxxxxx, xxxx, xxx xxxxx](images/adaptive-tiles-sizes.png)
+![adaptive tile sizes: small, medium, wide, and large](images/adaptive-tiles-sizes.png)
 
-## <span id="Branding">
-            </span>
-            <span id="branding">
-            </span>
-            <span id="BRANDING">
-            </span>Xxxxxxxx
+## <span id="Branding"></span><span id="branding"></span><span id="BRANDING"></span>Branding
 
 
-Xxx xxx xxxxxxx xxx xxxxxxxx xx xxx xxxxxx xx x xxxx xxxx (xxx xxxxxxx xxxx xxx xxxxxx xxxx) xx xxxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxxxxxxxxx xxxxxxx. Xxx xxx xxxxxx xx xxxxxxx "xxxx," xxxx xxx "xxxx," xxxx xxx "xxxx," xx xxxx xxxx "xxxxXxxXxxx."
+You can control the branding on the bottom of a live tile (the display name and corner logo) by using the branding attribute on the notification payload. You can choose to display "none," only the "name," only the "logo," or both with "nameAndLogo."
 
-**Xxxx**  Xxxxxxx Xxxxx xxxxx'x xxxxxxx xxx xxxxxx xxxx, xx "xxxx" xxx "xxxxXxxXxxx" xxxxxxx xx "xxxx" xx xxxxx.
+**Note**  Windows Phone doesn't support the corner logo, so "logo" and "nameAndLogo" default to "name" on phone.
 
  
 
@@ -246,15 +221,15 @@ new TileVisual()
 }
 ```
 
-**Xxxxxx:**
+**Result:**
 
-![xxxxxxxx xxxxx, xxxx xxx xxxx](images/adaptive-tiles-namelogo.png)
+![adaptive tiles, name and logo](images/adaptive-tiles-namelogo.png)
 
-Xxxxxxxx xxx xx xxxxxxx xxx xxxxxxxx xxxx xxxxx xxx xx xxx xxxx:
+Branding can be applied for specific tile sizes one of two ways:
 
-1. Xx xxxxxxxx xxx xxxxxxxxx xx xxx [&xx;xxxxxxx&xx;](tiles-and-notifications-adaptive-tiles-schema.md) xxxxxxx
-2. Xx xxxxxxxx xxx xxxxxxxxx xx xxx [&xx;xxxxxx&xx;](tiles-and-notifications-adaptive-tiles-schema.md) xxxxxxx, xxxxx xxxxxxx xxx xxxxxx xxxxxxxxxxxx xxxxxxx
-Xx xxx xxx'x xxxxxxx xxxxxxxx xxx x xxxxxxx, xx xxxx xxx xxx xxxxxxxx xxxx'x xxxxxxxx xx xxx xxxxxx xxxxxxx.
+1. By applying the attribute on the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element
+2. By applying the attribute on the [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element, which affects the entire notification payload
+If you don't specify branding for a binding, it will use the branding that's provided on the visual element.
 
 ```XML
 <tile>
@@ -295,25 +270,20 @@ TileContent content = new TileContent()
 };
 ```
 
-**Xxxxxxx xxxxxxxx xxxxxx:**
+**Default branding result:**
 
-![xxxxxxx xxxxxxxx xx xxxxx](images/adaptive-tiles-defaultbranding.png)
+![default branding on tiles](images/adaptive-tiles-defaultbranding.png)
 
-Xx xxx xxx'x xxxxxxx xxx xxxxxxxx xx xxxx xxxxxxxxxxxx xxxxxxx, xxx xxxx xxxx'x xxxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxx. Xx xxx xxxx xxxx xxxxx xxx xxxxxxx xxxx, xxxx xxx xxxxxxxx xxxx xxxxxxx xx "xxxx." Xxxxxxxxx, xxx xxxxxxxx xxxx xxxxxxx xx "xxxx" xx xxx xxxxxxx xxxx xxx'x xxxxx.
+If you don't specify the branding in your notification payload, the base tile's properties will determine the branding. If the base tile shows the display name, then the branding will default to "name." Otherwise, the branding will default to "none" if the display name isn't shown.
 
-**Xxxx**   Xxxx xx x xxxxxx xxxx Xxxxxxx Y.x, xx xxxxx xxx xxxxxxx xxxxxxxx xxx "xxxx."
+**Note**   This is a change from Windows 8.x, in which the default branding was "logo."
 
  
 
-## <span id="Display_name">
-            </span>
-            <span id="display_name">
-            </span>
-            <span id="DISPLAY_NAME">
-            </span>Xxxxxxx xxxx
+## <span id="Display_name"></span><span id="display_name"></span><span id="DISPLAY_NAME"></span>Display name
 
 
-Xxx xxx xxxxxxxx xxx xxxxxxx xxxx xx x xxxxxxxxxxxx xx xxxxxxxx xxx xxxx xxxxxx xx xxxx xxxxxx xxxx xxx **xxxxxxxXxxx** xxxxxxxxx. Xx xxxx xxxxxxxx, xxx xxx xxxxxxx xxxx xx xxx [&xx;xxxxxx&xx;](tiles-and-notifications-adaptive-tiles-schema.md) xxxxxxx, xxxxx xxxxxxx xxx xxxxxx xxxxxxxxxxxx xxxxxxx, xx xx xxx [&xx;xxxxxxx&xx;](tiles-and-notifications-adaptive-tiles-schema.md) xxxxxxx, xxxxx xxxx xxxxxxx xxxxxxxxxx xxxxx.
+You can override the display name of a notification by entering the text string of your choice with the **displayName** attribute. As with branding, you can specify this on the [&lt;visual&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element, which affects the entire notification payload, or on the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element, which only affects individual tiles.
 
 ```XML
 <tile>
@@ -355,19 +325,14 @@ TileContent content = new TileContent()
 };
 ```
 
-**Xxxxxx:**
+**Result:**
 
-![xxxxxxxx xxxxx xxxxxxx xxxx](images/adaptive-tiles-displayname.png)
+![adaptive tiles display name](images/adaptive-tiles-displayname.png)
 
-## <span id="Text">
-            </span>
-            <span id="text">
-            </span>
-            <span id="TEXT">
-            </span>Xxxx
+## <span id="Text"></span><span id="text"></span><span id="TEXT"></span>Text
 
 
-Xxx [&xx;xxxx&xx;](tiles-and-notifications-adaptive-tiles-schema.md) xxxxxxx xx xxxx xx xxxxxxx xxxx. Xxx xxx xxx xxxxx xx xxxxxx xxx xxxx xxxxxxx.
+The [&lt;text&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element is used to display text. You can use hints to modify how text appears.
 
 ```XML
 <text>This is a line of text</text></code></pre></td>
@@ -394,19 +359,14 @@ new TileText()
 };
 ```
 
-**Xxxxxx:**
+**Result:**
 
-![xxxxxxxx xxxx xxxx](images/adaptive-tiles-text.png)
+![adaptive tile text](images/adaptive-tiles-text.png)
 
-## <span id="Text_wrapping">
-            </span>
-            <span id="text_wrapping">
-            </span>
-            <span id="TEXT_WRAPPING">
-            </span>Xxxx xxxxxxxx
+## <span id="Text_wrapping"></span><span id="text_wrapping"></span><span id="TEXT_WRAPPING"></span>Text wrapping
 
 
-Xx xxxxxxx, xxxx xxxxx'x xxxx xxx xxxx xxxxxxxx xxx xxx xxxx xx xxx xxxx. Xxx xxx **xxxx-xxxx** xxxxxxxxx xx xxx xxxx xxxxxxxx xx x xxxx xxxxxxx. Xxx xxx xxxx xxxxxxx xxx xxxxxxx xxx xxxxxxx xxxxxx xx xxxxx xx xxxxx **xxxx-xxxXxxxx** xxx **xxxx-xxxXxxxx**, xxxx xx xxxxx xxxxxx xxxxxxxx xxxxxxxx.
+By default, text doesn't wrap and will continue off the edge of the tile. Use the **hint-wrap** attribute to set text wrapping on a text element. You can also control the minimum and maximum number of lines by using **hint-minLines** and **hint-maxLines**, both of which accept positive integers.
 
 ```XML
 <text hint-wrap="true">This is a line of wrapping text</text></code></pre></td>
@@ -434,19 +394,14 @@ new TileText()
 };
 ```
 
-**Xxxxxx:**
+**Result:**
 
-![xxxxxxxx xxxx xxxx xxxx xxxxxxxx](images/adaptive-tiles-textwrapping.png)
+![adaptive tile with text wrapping](images/adaptive-tiles-textwrapping.png)
 
-## <span id="Text_styles">
-            </span>
-            <span id="text_styles">
-            </span>
-            <span id="TEXT_STYLES">
-            </span>Xxxx xxxxxx
+## <span id="Text_styles"></span><span id="text_styles"></span><span id="TEXT_STYLES"></span>Text styles
 
 
-Xxxxxx xxxxxxx xxx xxxx xxxx, xxxxx, xxx xxxxxx xx xxxx xxxxxxxx. Xxxxx xxx x xxxxxx xx xxxxxxxxx xxxxxx, xxxxxxxxx x "xxxxxx" xxxxxxxxx xx xxxx xxxxx xxxx xxxx xxx xxxxxxx xx YY%, xxxxx xxxxxxx xxxxx xxx xxxx xxxxx x xxxxx xx xxxxx xxxx.
+Styles control the font size, color, and weight of text elements. There are a number of available styles, including a "subtle" variation of each style that sets the opacity to 60%, which usually makes the text color a shade of light gray.
 
 ```XML
 <text hint-style="base">Header content</text>
@@ -467,69 +422,64 @@ new TileText()
 }
 ```
 
-**Xxxxxx:**
+**Result:**
 
-![xxxxxxxx xxxxx xxxx xxxxxx](images/adaptive-tiles-textstyles.png)
+![adaptive tiles text styles](images/adaptive-tiles-textstyles.png)
 
-**Xxxx**  Xxx xxxxx xxxxxxxx xx xxxxxxx xx xxxx-xxxxx xxx'x xxxxxxxxx.
+**Note**  The style defaults to caption if hint-style isn't specified.
 
  
 
-**Xxxxx xxxx xxxxxx**
+**Basic text styles**
 
 |                                |                           |             |
 |--------------------------------|---------------------------|-------------|
-| &xx;xxxx xxxx-xxxxx="\*" /&xx; | Xxxx xxxxxx               | Xxxx xxxxxx |
-| xxxxxxx                        | YY xxxxxxxxx xxxxxx (xxx) | Xxxxxxx     |
-| xxxx                           | YY xxx                    | Xxxxxxx     |
-| xxxx                           | YY xxx                    | Xxxxxxxx    |
-| xxxxxxxx                       | YY xxx                    | Xxxxxxx     |
-| xxxxx                          | YY xxx                    | Xxxxxxxxx   |
-| xxxxxxxxx                      | YY xxx                    | Xxxxx       |
-| xxxxxx                         | YY xxx                    | Xxxxx       |
+| &lt;text hint-style="\*" /&gt; | Font height               | Font weight |
+| caption                        | 12 effective pixels (epx) | Regular     |
+| body                           | 15 epx                    | Regular     |
+| base                           | 15 epx                    | Semibold    |
+| subtitle                       | 20 epx                    | Regular     |
+| title                          | 24 epx                    | Semilight   |
+| subheader                      | 34 epx                    | Light       |
+| header                         | 46 epx                    | Light       |
 
  
 
-**Xxxxxxx xxxx xxxxx xxxxxxxxxx**
+**Numeral text style variations**
 
-Xxxxx xxxxxxxxxx xxxxxx xxx xxxx xxxxxx xx xxxx xxxxxxx xxxxx xxx xxxxx xxxx xxxx xxxxxx xx xxx xxxx.
+These variations reduce the line height so that content above and below come much closer to the text.
 
 |                  |
 |------------------|
-| xxxxxXxxxxxx     |
-| xxxxxxxxxXxxxxxx |
-| xxxxxxXxxxxxx    |
+| titleNumeral     |
+| subheaderNumeral |
+| headerNumeral    |
 
  
 
-**Xxxxxx xxxx xxxxx xxxxxxxxxx**
+**Subtle text style variations**
 
-Xxxx xxxxx xxx x xxxxxx xxxxxxxxx xxxx xxxxx xxx xxxx x YY% xxxxxxx, xxxxx xxxxxxx xxxxx xxx xxxx xxxxx x xxxxx xx xxxxx xxxx.
+Each style has a subtle variation that gives the text a 60% opacity, which usually makes the text color a shade of light gray.
 
 |                        |
 |------------------------|
-| xxxxxxxXxxxxx          |
-| xxxxXxxxxx             |
-| xxxxXxxxxx             |
-| xxxxxxxxXxxxxx         |
-| xxxxxXxxxxx            |
-| xxxxxXxxxxxxXxxxxx     |
-| xxxxxxxxxXxxxxx        |
-| xxxxxxxxxXxxxxxxXxxxxx |
-| xxxxxxXxxxxx           |
-| xxxxxxXxxxxxxXxxxxx    |
+| captionSubtle          |
+| bodySubtle             |
+| baseSubtle             |
+| subtitleSubtle         |
+| titleSubtle            |
+| titleNumeralSubtle     |
+| subheaderSubtle        |
+| subheaderNumeralSubtle |
+| headerSubtle           |
+| headerNumeralSubtle    |
 
  
 
-## <span id="Text_alignment">
-            </span>
-            <span id="text_alignment">
-            </span>
-            <span id="TEXT_ALIGNMENT">
-            </span>Xxxx xxxxxxxxx
+## <span id="Text_alignment"></span><span id="text_alignment"></span><span id="TEXT_ALIGNMENT"></span>Text alignment
 
 
-Xxxx xxx xx xxxxxxxxxxxx xxxxxxx xxxx, xxxxxx, xx xxxxx. Xx xxxx-xx-xxxxx xxxxxxxxx xxxx Xxxxxxx, xxxx xxxxxxxx xx xxxx-xxxxxxx. Xx xxxxx-xx-xxxx xxxxxxxxx xxxx Xxxxxx, xxxx xxxxxxxx xx xxxxx-xxxxxxx. Xxx xxx xxxxxxxx xxx xxxxxxxxx xxxx xxx **xxxx-xxxxx** xxxxxxxxx xx xxxxxxxx.
+Text can be horizontally aligned left, center, or right. In left-to-right languages like English, text defaults to left-aligned. In right-to-left languages like Arabic, text defaults to right-aligned. You can manually set alignment with the **hint-align** attribute on elements.
 
 ```XML
 <text hint-align="center">Hello</text></code></pre></td>
@@ -557,23 +507,18 @@ new TileText()
 };
 ```
 
-**Xxxxxx:**
+**Result:**
 
-![xxxxxxxx xxxxx xxxx xxxxxxxxx](images/adaptive-tiles-textalignment.png)
+![adaptive tiles text alignment](images/adaptive-tiles-textalignment.png)
 
-## <span id="Groups_and_subgroups">
-            </span>
-            <span id="groups_and_subgroups">
-            </span>
-            <span id="GROUPS_AND_SUBGROUPS">
-            </span>Xxxxxx xxx xxxxxxxxx
+## <span id="Groups_and_subgroups"></span><span id="groups_and_subgroups"></span><span id="GROUPS_AND_SUBGROUPS"></span>Groups and subgroups
 
 
-Xxxxxx xxxxx xxx xx xxxxxxxxxxxx xxxxxxx xxxx xxx xxxxxxx xxxxxx xxx xxxxx xx xxxxxxx xxx xxxx xx xxxxxxxxx xx xxx xxxxxxxx xxx xxx xxxxxxx xx xxxx xxxxx. Xxx xxxxxxx, xxx xxxxx xxxx xxx xxxx xxxxxxxx, x xxxxxx, xxx x xxxxxxxxx, xxx xx xxxxx xxx xxxx xxxxx xxx xxxx xxx xxxxxx xx xx xxxxx. Xx xxxxxxxx xxxxx xxxxxxxx xxxxxx x xxxxxxxx, xxx xxxxxxxx xxxx xxxxxx xxx xx xxxxxxxxx (xx xxxx xxx xxx) xx xxx xx xxxxxxxxx xx xxx (xxxxxxx xxxx xxx'x xxx).
+Groups allow you to semantically declare that the content inside the group is related and must be displayed in its entirety for the content to make sense. For example, you might have two text elements, a header, and a subheader, and it would not make sense for only the header to be shown. By grouping those elements inside a subgroup, the elements will either all be displayed (if they can fit) or not be displayed at all (because they can't fit).
 
-Xx xxxxxxx xxx xxxx xxxxxxxxxx xxxxxx xxxxxxx xxx xxxxxxx, xxxxxxx xxxxxxxx xxxxxx. Xxxxxx xxxxxxxx xxxxxx xxxxxx xxxx xxxx xx xxxxx xx xxxxxx xxxxxxx.
+To provide the best experience across devices and screens, provide multiple groups. Having multiple groups allows your tile to adapt to larger screens.
 
-**Xxxx**  Xxx xxxx xxxxx xxxxx xx x xxxxx xx x xxxxxxxx.
+**Note**  The only valid child of a group is a subgroup.
 
  
 
@@ -664,21 +609,16 @@ private static TileGroup CreateGroup(string from, string subject, string body)
 }
 ```
 
-**Xxxxxx:**
+**Result:**
 
-![xxxxxxxx xxxxx xxxxxx xxx xxxxxxxxx](images/adaptive-tiles-groups-subgroups.png)
+![adaptive tiles groups and subgroups](images/adaptive-tiles-groups-subgroups.png)
 
-## <span id="Subgroups__columns_">
-            </span>
-            <span id="subgroups__columns_">
-            </span>
-            <span id="SUBGROUPS__COLUMNS_">
-            </span>Xxxxxxxxx (xxxxxxx)
+## <span id="Subgroups__columns_"></span><span id="subgroups__columns_"></span><span id="SUBGROUPS__COLUMNS_"></span>Subgroups (columns)
 
 
-Xxxxxxxxx xxxx xxxxx xxx xx xxxxxx xxxx xxxx xxxxxxxx xxxxxxxx xxxxxx x xxxxx. Xxx xxxx xxxxx, xxxx xxxxxxxx xxxxxxxxxx xx xxxxxxx.
+Subgroups also allow you to divide data into semantic sections within a group. For live tiles, this visually translates to columns.
 
-Xxx **xxxx-xxxxxx** xxxxxxxxx xxxx xxx xx xxxxxxx xxx xxxxxx xx xxxxxxx. Xxx xxxxx xx **xxxx-xxxxxx** xx xxxxxxxxx xx x xxxxxxxx xxxxxxxxxx xx xxxxxxxxx xxxxx, xxxxx xx xxxxxxxxx xx **XxxxXxxxXxxx.Xxxx** xxxxxxxx. Xxx xxxxx-xxxxx xxxxxxx, xxxxxx xxxx xxxxxx xx Y.
+The **hint-weight** attribute lets you to control the widths of columns. The value of **hint-weight** is expressed as a weighted proportion of available space, which is identical to **GridUnitType.Star** behavior. For equal-width columns, assign each weight to 1.
 
 <table>
 <colgroup>
@@ -687,27 +627,27 @@ Xxx **xxxx-xxxxxx** xxxxxxxxx xxxx xxx xx xxxxxxx xxx xxxxxx xx xxxxxxx. Xxx xxx
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">xxxx-xxxxxx</td>
-<td align="left">Xxxxxxxxxx xx xxxxx</td>
+<td align="left">hint-weight</td>
+<td align="left">Percentage of width</td>
 </tr>
 <tr class="even">
-<td align="left">Y</td>
-<td align="left">YY%</td>
+<td align="left">1</td>
+<td align="left">25%</td>
 </tr>
 <tr class="odd">
-<td align="left">Y</td>
-<td align="left">YY%</td>
+<td align="left">1</td>
+<td align="left">25%</td>
 </tr>
 <tr class="even">
-<td align="left">Y</td>
-<td align="left">YY%</td>
+<td align="left">1</td>
+<td align="left">25%</td>
 </tr>
 <tr class="odd">
-<td align="left">Y</td>
-<td align="left">YY%</td>
+<td align="left">1</td>
+<td align="left">25%</td>
 </tr>
 <tr class="even">
-<td align="left">Xxxxx xxxxxx: Y</td>
+<td align="left">Total weight: 4</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -715,9 +655,9 @@ Xxx **xxxx-xxxxxx** xxxxxxxxx xxxx xxx xx xxxxxxx xxx xxxxxx xx xxxxxxx. Xxx xxx
 
  
 
-![xxxxxxxxx, xxxx xxxxxxx](images/adaptive-tiles-subgroups01.png)
+![subgroups, even columns](images/adaptive-tiles-subgroups01.png)
 
-Xx xxxx xxx xxxxxx xxxxx xx xxxxx xx xxxxxxx xxxxxx, xxxxxx xxx xxxxxxx xxxxxx x xxxxxx xx Y xxx xxx xxxxxx xxxxxx x xxxxxx xx Y.
+To make one column twice as large as another column, assign the smaller column a weight of 1 and the larger column a weight of 2.
 
 <table>
 <colgroup>
@@ -726,19 +666,19 @@ Xx xxxx xxx xxxxxx xxxxx xx xxxxx xx xxxxxxx xxxxxx, xxxxxx xxx xxxxxxx xxxxxx x
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">xxxx-xxxxxx</td>
-<td align="left">Xxxxxxxxxx xx xxxxx</td>
+<td align="left">hint-weight</td>
+<td align="left">Percentage of width</td>
 </tr>
 <tr class="even">
-<td align="left">Y</td>
-<td align="left">YY.Y%</td>
+<td align="left">1</td>
+<td align="left">33.3%</td>
 </tr>
 <tr class="odd">
-<td align="left">Y</td>
-<td align="left">YY.Y%</td>
+<td align="left">2</td>
+<td align="left">66.7%</td>
 </tr>
 <tr class="even">
-<td align="left">Xxxxx xxxxxx: Y</td>
+<td align="left">Total weight: 3</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -746,9 +686,9 @@ Xx xxxx xxx xxxxxx xxxxx xx xxxxx xx xxxxxxx xxxxxx, xxxxxx xxx xxxxxxx xxxxxx x
 
  
 
-![xxxxxxxxx, xxx xxxxxx xxxxx xxx xxxx xx xxx xxxxx](images/adaptive-tiles-subgroups02.png)
+![subgroups, one column twice the size of the other](images/adaptive-tiles-subgroups02.png)
 
-Xx xxx xxxx xxxx xxxxx xxxxxx xx xxxx xx YY% xx xxx xxxxx xxxxx xxx xxxx xxxxxx xxxxxx xx xxxx xx YY% xx xxx xxxxx xxxxx, xxxxxx xxx xxxxx xxxxxx xx YY xxx xxx xxxxxx xxxxxx xx YY. Xx xxxx xxxxx xxxxxxx xxxxx YYY, xxxx'xx xxx xx xxxxxxxxxxx.
+If you want your first column to take up 20% of the total width and your second column to take up 80% of the total width, assign the first weight to 20 and the second weight to 80. If your total weights equal 100, they'll act as percentages.
 
 <table>
 <colgroup>
@@ -757,19 +697,19 @@ Xx xxx xxxx xxxx xxxxx xxxxxx xx xxxx xx YY% xx xxx xxxxx xxxxx xxx xxxx xxxxxx 
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left">xxxx-xxxxxx</td>
-<td align="left">Xxxxxxxxxx xx xxxxx</td>
+<td align="left">hint-weight</td>
+<td align="left">Percentage of width</td>
 </tr>
 <tr class="even">
-<td align="left">YY</td>
-<td align="left">YY%</td>
+<td align="left">20</td>
+<td align="left">20%</td>
 </tr>
 <tr class="odd">
-<td align="left">YY</td>
-<td align="left">YY%</td>
+<td align="left">80</td>
+<td align="left">80%</td>
 </tr>
 <tr class="even">
-<td align="left">Xxxxx xxxxxx: YYY</td>
+<td align="left">Total weight: 100</td>
 <td align="left"></td>
 </tr>
 </tbody>
@@ -777,15 +717,15 @@ Xx xxx xxxx xxxx xxxxx xxxxxx xx xxxx xx YY% xx xxx xxxxx xxxxx xxx xxxx xxxxxx 
 
  
 
-![xxxxxxxxx, xxxx xxxxxxx xxxxxxxxx YYY](images/adaptive-tiles-subgroups03.png)
+![subgroups, with weights totalling 100](images/adaptive-tiles-subgroups03.png)
 
-**Xxxx**  Xx Y-xxxxx xxxxxx xx xxxxxxxxxxxxx xxxxx xxxxxxx xxx xxxxxxx.
+**Note**  An 8-pixel margin is automatically added between the columns.
 
  
 
-Xxxx xxx xxxx xxxx xxxx xxx xxxxxxxxx, xxx xxxxxx xxxxxxx xxx **xxxx-xxxxxx**, xxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxx. Xx xxx xxx'x xxxxxxx xxxx-xxxxxx xxx xxx xxxxx xxxxxxxx, xx xxxx xx xxxxxxxx x xxxxxx xx YY. Xxx xxxx xxxxxxxx xxxx xxxxx'x xxxx x xxxxxxxxx xxxx-xxxxxx xxxx xx xxxxxxxx x xxxxxx xxxxx xx YYY xxxxx xxx xxx xx xxx xxxxxxxxx xxxxxxx, xx xx Y xx xxx xxxxxx xx xxxx. Xxx xxxxxxxxx xxxxxxxxx xxxx xxx'x xxxx xxxxxxxxx xxxx-xxxxxxx xxxx xx xxxxxxxx x xxxxxx xx Y.
+When you have more than two subgroups, you should specify the **hint-weight**, which only accepts positive integers. If you don't specify hint-weight for the first subgroup, it will be assigned a weight of 50. The next subgroup that doesn't have a specified hint-weight will be assigned a weight equal to 100 minus the sum of the preceding weights, or to 1 if the result is zero. The remaining subgroups that don't have specified hint-weights will be assigned a weight of 1.
 
-Xxxx'x xxxxxx xxxx xxx x xxxxxxx xxxx xxxx xxxxx xxx xxx xxx xxxxxxx x xxxx xxxx xxxx xxxxxxx xx xxxxx xxxxx:
+Here's sample code for a weather tile that shows how you can achieve a tile with five columns of equal width:
 
 ```XML
 ...
@@ -894,25 +834,20 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-**Xxxxxx:**
+**Result:**
 
-![xxxxxxx xx x xxxxxxx xxxx](images/adaptive-tiles-weathertile.png)
+![example of a weather tile](images/adaptive-tiles-weathertile.png)
 
-## <span id="Images">
-            </span>
-            <span id="images">
-            </span>
-            <span id="IMAGES">
-            </span>Xxxxxx
+## <span id="Images"></span><span id="images"></span><span id="IMAGES"></span>Images
 
 
-Xxx &xx;xxxxx&xx; xxxxxxx xx xxxx xx xxxxxxx xxxxxx xx xxx xxxx xxxxxxxxxxxx. Xxxxxx xxx xx xxxxxx xxxxxx xxxxxx xxx xxxx xxxxxxx (xxxxxxx), xx x xxxxxxxxxx xxxxx xxxxxx xxxx xxxxxxx, xx xx x xxxx xxxxx xxxx xxxxxxxx xx xxxx xxx xxx xx xxx xxxxxxxxxxxx.
+The &lt;image&gt; element is used to display images on the tile notification. Images can be placed inline within the tile content (default), as a background image behind your content, or as a peek image that animates in from the top of the notification.
 
-**Xxxx**   Xxxxx xxx [xxxxxxxxxxxx xx xxx xxxx xxxx xxx xxxxxxxxxx xx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh781198).
+**Note**   There are [restrictions on the file size and dimensions of images](https://msdn.microsoft.com/library/windows/apps/hh781198).
 
  
 
-Xxxx xx xxxxx xxxxxxxxx xxxxxxxxx, xxxxxx xxxx xxxxxxxxx xxxxxx xx xxxxxx xx xxxx xxx xxxxxxxxx xxxxx. Xxx xxxxxx xxxxx xxxxx x xxxx xxxxx xxx xxxxxxx xxx xxxxxx xxxxxx. Xxx xxxxxx xxxxxx xxxxxxx xx xxxx xxx xxxxx xx xxx xxxxxx.
+With no extra behaviors specified, images will uniformly shrink or expand to fill the available width. The sample below shows a tile using two columns and inline images. The inline images stretch to fill the width of the column.
 
 ```XML
 ...
@@ -995,20 +930,15 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-**Xxxxxx:**
+**Result:**
 
-![xxxxx xxxxxxx](images/adaptive-tiles-images01.png)
+![image example](images/adaptive-tiles-images01.png)
 
-Xxxxxx xxxxxx xx xxx &xx;xxxxxxx&xx; xxxx, xx xx xxx xxxxx xxxxx, xxxx xxxx xxxxxxx xx xxx xxx xxxxxxxxx xxxxxx.
+Images placed in the &lt;binding&gt; root, or in the first group, will also stretch to fit the available height.
 
-### <span id="Image_alignment">
-            </span>
-            <span id="image_alignment">
-            </span>
-            <span id="IMAGE_ALIGNMENT">
-            </span>Xxxxx xxxxxxxxx
+### <span id="Image_alignment"></span><span id="image_alignment"></span><span id="IMAGE_ALIGNMENT"></span>Image alignment
 
-Xxxxxx xxx xx xxx xx xxxxx xxxx, xxxxxx, xx xxxxx xxxxx xxx **xxxx-xxxxx** xxxxxxxxx. Xxxx xxxx xxxx xxxxx xxxxxx xx xxxxxxx xx xxxxx xxxxxx xxxxxxxxxx xxxxxxx xx xxxxxxxxxx xx xxxx xxxxx.
+Images can be set to align left, center, or right using the **hint-align** attribute. This will also cause images to display at their native resolution instead of stretching to fill width.
 
 ```XML
 ...
@@ -1037,18 +967,13 @@ TileLarge = new TileBinding()
 ...
 ```
 
-**Xxxxxx:**
+**Result:**
 
-![xxxxx xxxxxxxxx xxxxxxx (xxxx, xxxxxx, xxxxx)](images/adaptive-tiles-imagealignment.png)
+![image alignment example (left, center, right)](images/adaptive-tiles-imagealignment.png)
 
-### <span id="Image_margins">
-            </span>
-            <span id="image_margins">
-            </span>
-            <span id="IMAGE_MARGINS">
-            </span>Xxxxx xxxxxxx
+### <span id="Image_margins"></span><span id="image_margins"></span><span id="IMAGE_MARGINS"></span>Image margins
 
-Xx xxxxxxx, xxxxxx xxxxxx xxxx xx Y-xxxxx xxxxxx xxxxxxx xxx xxxxxxx xxxxx xx xxxxx xxx xxxxx. Xxxx xxxxxx xxx xx xxxxxxx xx xxxxx xxx **xxxx-xxxxxxXxxxxx** xxxxxxxxx xx xxx xxxxx. Xxxxxxx, xxxxxx xxxxxx xxxxxx xxx Y-xxxxx xxxxxx xxxx xxx xxxx xx xxx xxxx, xxx xxxxxxxxx (xxxxxxx) xxxxxx xxxxxx xxx Y-xxxxx xxxxxxx xxxxxxx xxxxxxx.
+By default, inline images have an 8-pixel margin between any content above or below the image. This margin can be removed by using the **hint-removeMargin** attribute on the image. However, images always retain the 8-pixel margin from the edge of the tile, and subgroups (columns) always retain the 8-pixel padding between columns.
 
 ```XML
 ...
@@ -1134,16 +1059,11 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-![xxxx xxxxxx xxxxxx xxxxxxx](images/adaptive-tiles-removemargin.png)
+![hint remove margin example](images/adaptive-tiles-removemargin.png)
 
-### <span id="Image_cropping">
-            </span>
-            <span id="image_cropping">
-            </span>
-            <span id="IMAGE_CROPPING">
-            </span>Xxxxx xxxxxxxx
+### <span id="Image_cropping"></span><span id="image_cropping"></span><span id="IMAGE_CROPPING"></span>Image cropping
 
-Xxxxxx xxx xx xxxxxxx xxxx x xxxxxx xxxxx xxx **xxxx-xxxx** xxxxxxxxx, xxxxx xxxxxxxxx xxxx xxxxxxxx xxx xxxxxx "xxxx" (xxxxxxx) xx "xxxxxx."
+Images can be cropped into a circle using the **hint-crop** attribute, which currently only supports the values "none" (default) or "circle."
 
 ```XML
 ...
@@ -1215,18 +1135,13 @@ TileLarge = new TileBinding()
 ...
 ```
 
-**Xxxxxx:**
+**Result:**
 
-![xxxxx xxxxxxxx xxxxxxx](images/adaptive-tiles-imagecropping.png)
+![image cropping example](images/adaptive-tiles-imagecropping.png)
 
-### <span id="Background_image">
-            </span>
-            <span id="background_image">
-            </span>
-            <span id="BACKGROUND_IMAGE">
-            </span>Xxxxxxxxxx xxxxx
+### <span id="Background_image"></span><span id="background_image"></span><span id="BACKGROUND_IMAGE"></span>Background image
 
-Xx xxx x xxxxxxxxxx xxxxx, xxxxx xx xxxxx xxxxxxx xx xxx xxxx xx xxx &xx;xxxxxxx&xx; xxx xxx xxx xxxxxxxxx xxxxxxxxx xx "xxxxxxxxxx."
+To set a background image, place an image element in the root of the &lt;binding&gt; and set the placement attribute to "background."
 
 ```XML
 ...
@@ -1309,11 +1224,11 @@ private static TileSubgroup CreateSubgroup(string day, string image, string high
 }
 ```
 
-**Xxxxxx:**
+**Result:**
 
-![xxxxxxxxxx xxxxx xxxxxxx](images/adaptive-tiles-backgroundimage.png)
+![background image example](images/adaptive-tiles-backgroundimage.png)
 
-Xxxxxxxxxxxx, xxx xxx xxx x xxxxx xxxxxxx xx xxxx xxxxxxxxxx xxxxx xxxxx **xxxx-xxxxxxx**, xxxxx xxxxxxx xxxxxxxx xxxx Y-YYY, xxxx Y xxxxx xx xxxxxxx xxx YYY xxxxx xxxx xxxxx xxxxxxx. Xxx xxxxxxx xxxxx xx YY.
+Additionally, you can set a black overlay on your background image using **hint-overlay**, which accepts integers from 0-100, with 0 being no overlay and 100 being full black overlay. The default value is 20.
 
 ```XML
 ...
@@ -1344,18 +1259,13 @@ TileWide = new TileBinding()
 ...
 ```
 
-**xxxx-xxxxxxx Xxxxxx:**
+**hint-overlay Result:**
 
-![xxxxxxx xx xx xxxxx xxxx xxxxxxx](images/adaptive-tiles-image-hintoverlay.png)
+![example of an image hint overlay](images/adaptive-tiles-image-hintoverlay.png)
 
-### <span id="Peek_image">
-            </span>
-            <span id="peek_image">
-            </span>
-            <span id="PEEK_IMAGE">
-            </span>Xxxx xxxxx
+### <span id="Peek_image"></span><span id="peek_image"></span><span id="PEEK_IMAGE"></span>Peek image
 
-Xxx xxx xxxxxxx xx xxxxx xxxx "xxxxx" xx xxxx xxx xxx xx xxx xxxx. Xxx xxxx xxxxx xxxx xx xxxxxxxxx xx xxxxx xxxx/xx xxxx xxx xxx xx xxx xxxx, xxxxxxx xxxx xxxx, xxx xxxx xxxxx xxxxxxx xxxx xxx xx xxxxxx xxx xxxx xxxxxxx xx xxx xxxx. Xx xxx x xxxx xxxxx, xxxxx xx xxxxx xxxxxxx xx xxx xxxx xx xxx &xx;xxxxxxx&xx;, xxx xxx xxx xxxxxxxxx xxxxxxxxx xx "xxxx."
+You can specify an image that "peeks" in from the top of the tile. The peek image uses an animation to slide down/up from the top of the tile, peeking into view, and then later sliding back out to reveal the main content on the tile. To set a peek image, place an image element in the root of the &lt;binding&gt;, and set the placement attribute to "peek."
 
 ```XML
 ...
@@ -1401,54 +1311,44 @@ TileWide = new TileBinding()
 ...
 ```
 
-![xxxxxxxx xx xxxxxxx xxxxxx](images/adaptive-tiles-imagepeeking.png)
+![examples of peeking images](images/adaptive-tiles-imagepeeking.png)
 
-**Xxxxxx xxxx xxx xxxx xxx xxxxxxxxxx xxxxxx**
+**Circle crop for peek and background images**
 
-Xxx xxx xxxxxxxxx xxxxxxxxx xx xxxx xxx xxxxxxxxxx xxxxxx xx xx x xxxxxx xxxx:
+Use the following attribute on peek and background images to do a circle crop:
 
-xxxx-xxxx="xxxxxx"
+hint-crop="circle"
 
-Xxx xxxxxx xxxx xxxx xxxx xxxx:
+The result will look like this:
 
-![xxxxxx xxxx xxx xxxx xxx xxxxxxxxxx xxxxx](images/circlecrop-image.png)
+![circle crop for peek and background image](images/circlecrop-image.png)
 
-**Xxx xxxx xxxx xxx xxxxxxxxxx xxxxx**
+**Use both peek and background image**
 
-Xx xxx xxxx x xxxx xxx x xxxxxxxxxx xxxxx xx x xxxx xxxxxxxxxxxx, xxxxxxx xxxx x xxxx xxxxx xxx x xxxxxxxxxx xxxxx xx xxxx xxxxxxxxxxxx xxxxxxx.
+To use both a peek and a background image on a tile notification, specify both a peek image and a background image in your notification payload.
 
-Xxx xxxxxx xxxx xxxx xxxx xxxx:
+The result will look like this:
 
-![xxxx xxx xxxxxxxxxx xxxxx xxxx xxxxxxxx](images/peekandbackground.png)
+![peek and background image used together](images/peekandbackground.png)
 
-**Xxx xxxx-xxxxxxx xx x xxxx xxxxx**
+**Use hint-overlay on a peek image**
 
-Xxx xxx xxx **xxxx-xxxxxxx** xx x xxxx xxxxx xx xxx xxxxxxx xxx xxxx xxx xxxx'x xxxxxxx xxxx xxxx xxxxxxx. Xx xxx xxxxxxx **xxxx-xxxxxxx** xx xxx &xx;xxxxxxx&xx; xxxxxxx, xxx xxxxxxx xxxx xx xxxxxxx xx xxxx xxx xxxxxxxxxx xxx xxx xxxx xxxxx.
+You can use **hint-overlay** on a peek image to add opacity and make the tile's display name more legible. If you specify **hint-overlay** on the &lt;binding&gt; element, the overlay will be applied to both the background and the peek image.
 
-Xxx xxx xxxx xxxxx **xxxx-xxxxxxx** xx xx &xx;xxxxx&xx; xxxxxxx xxxx xxx xxxxxxxxx="xxxx" xx xxxxxxxxx="xxxxxxxxxx" xx xxxx xxxxxxxx xxxxxxx xxxxxx xxx xxxx xx xxxxx xxxxxx. Xx xxx xxx'x xxxxxxx xx xxxxxxx, xxx xxxxxxxxxx xxxxx xxxxxxx xxxxxxxx xx YY% xxx xxx xxxx xxxxx xxxxxxx xxxxxxxx xx Y%.
+You can also apply **hint-overlay** to an &lt;image&gt; element that has placement="peek" or placement="background" to have discrete opacity levels for each of those images. If you don't specify an overlay, the background image opacity defaults to 20% and the peek image opacity defaults to 0%.
 
-Xxxx xxxxxxx xxxxx x xxxxxxxxxx xxxxx xx YY% xxxxxxx (xxxx) xxx xx Y% xxxxxxx (xxxxx):
+This example shows a background image at 20% opacity (left) and at 0% opacity (right):
 
-![xxxx-xxxxxxx xx x xxxx xxxxx](images/hintoverlay.png)
+![hint-overlay on a peek image](images/hintoverlay.png)
 
-## <span id="Vertical_alignment__text_stacking_">
-            </span>
-            <span id="vertical_alignment__text_stacking_">
-            </span>
-            <span id="VERTICAL_ALIGNMENT__TEXT_STACKING_">
-            </span>Xxxxxxxx xxxxxxxxx (xxxx xxxxxxxx)
+## <span id="Vertical_alignment__text_stacking_"></span><span id="vertical_alignment__text_stacking_"></span><span id="VERTICAL_ALIGNMENT__TEXT_STACKING_"></span>Vertical alignment (text stacking)
 
 
-Xxx xxx xxxxxxx xxx xxxxxxxx xxxxxxxxx xx xxxxxxx xx xxxx xxxx xx xxxxx xxx **xxxx-xxxxXxxxxxxx** xxxxxxxxx xx xxxx xxx [&xx;xxxxxxx&xx;](tiles-and-notifications-adaptive-tiles-schema.md) xxxxxxx xxx [&xx;xxxxxxxx&xx;](tiles-and-notifications-adaptive-tiles-schema.md) xxxxxxx. Xx xxxxxxx, xxxxxxxxxx xx xxxxxxxxxx xxxxxxx xx xxx xxx, xxx xxx xxx xxxx xxxxx xxxxxxx xx xxx xxxxxx xx xxxxxx.
+You can control the vertical alignment of content on your tile by using the **hint-textStacking** attribute on both the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element and [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) element. By default, everything is vertically aligned to the top, but you can also align content to the bottom or center.
 
-### <span id="Text_stacking_on_binding_element">
-            </span>
-            <span id="text_stacking_on_binding_element">
-            </span>
-            <span id="TEXT_STACKING_ON_BINDING_ELEMENT">
-            </span>Xxxx xxxxxxxx xx xxxxxxx xxxxxxx
+### <span id="Text_stacking_on_binding_element"></span><span id="text_stacking_on_binding_element"></span><span id="TEXT_STACKING_ON_BINDING_ELEMENT"></span>Text stacking on binding element
 
-Xxxx xxxxxxx xx xxx [&xx;xxxxxxx&xx;](tiles-and-notifications-adaptive-tiles-schema.md) xxxxx, xxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxxxxxxxxx xxxxxxx xx x xxxxx, xxxxxxxx xx xxx xxxxxxxxx xxxxxxxx xxxxx xxxxx xxx xxxxxxxx/xxxxx xxxx.
+When applied at the [&lt;binding&gt;](tiles-and-notifications-adaptive-tiles-schema.md) level, text stacking sets the vertical alignment of the notification content as a whole, aligning in the available vertical space above the branding/badge area.
 
 ```XML
 ...
@@ -1492,16 +1392,11 @@ TileMedium = new TileBinding()
 ...
 ```
 
-![xxxx xxxxxxxx xx xxxxxxx xxxxxxx](images/adaptive-tiles-textstack-bindingelement.png)
+![text stacking on binding element](images/adaptive-tiles-textstack-bindingelement.png)
 
-### <span id="Text_stacking_on_subgroup_element">
-            </span>
-            <span id="text_stacking_on_subgroup_element">
-            </span>
-            <span id="TEXT_STACKING_ON_SUBGROUP_ELEMENT">
-            </span>Xxxx xxxxxxxx xx xxxxxxxx xxxxxxx
+### <span id="Text_stacking_on_subgroup_element"></span><span id="text_stacking_on_subgroup_element"></span><span id="TEXT_STACKING_ON_SUBGROUP_ELEMENT"></span>Text stacking on subgroup element
 
-Xxxx xxxxxxx xx xxx [&xx;xxxxxxxx&xx;](tiles-and-notifications-adaptive-tiles-schema.md) xxxxx, xxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxxxxx (xxxxxx) xxxxxxx, xxxxxxxx xx xxx xxxxxxxxx xxxxxxxx xxxxx xxxxxx xxx xxxxxx xxxxx.
+When applied at the [&lt;subgroup&gt;](tiles-and-notifications-adaptive-tiles-schema.md) level, text stacking sets the vertical alignment of the subgroup (column) content, aligning in the available vertical space within the entire group.
 
 ```XML
 ...
@@ -1578,18 +1473,21 @@ TileWide = new TileBinding()
 ...
 ```
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxx
+## <span id="related_topics"></span>Related topics
 
 
-* [Xxxxxxxx xxxxx xxxxxx](tiles-and-notifications-adaptive-tiles-schema.md)
-* [XxxxxxxxxxxxxXxxxxxxxxx xx XxxXxx](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
-* [Xxxxxxx xxxx xxxxxxxxx xxxxxxx](tiles-and-notifications-special-tile-templates-catalog.md)
+* [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md)
+* [NotificationsExtensions on GitHub](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [Special tile templates catalog](tiles-and-notifications-special-tile-templates-catalog.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

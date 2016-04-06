@@ -1,79 +1,79 @@
 ---
-xxxxx: Xxxxxxxxxx xxx xxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxxx xxx xxxxxxxxxxx xxxxxxxxxx xxxxxxxx xxxx xxxx XxxxxxX xxxx.
-xx.xxxxxxx: YYYxxxYY-YYYx-YxxY-xYYY-YYYYxYYYYxYY
+title: Networking for games
+description: Learn how to develop and incorporate networking features into your DirectX game.
+ms.assetid: 212eee15-045c-8ba1-e274-4532b2120c55
 ---
 
-# Xxxxxxxxxx xxx xxxxx
+# Networking for games
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxx xxx xx xxxxxxx xxx xxxxxxxxxxx xxxxxxxxxx xxxxxxxx xxxx xxxx XxxxxxX xxxx.
+Learn how to develop and incorporate networking features into your DirectX game.
 
-## Xxxxxxxx xx x xxxxxx
-
-
-X xxxxxxx xx xxxxxxxxxx xxxxxxxx xxx xx xxxx xx xxxx XxxxxxX xxxx, xxxxxxx xx xx x xxxxxx xxxxxxxxxx xxxx xx xxxxxxxxx xxxxx-xxxxxx xxxxx. Xxx xxxxxxxx xxx xx xxxxxxxxxx xxxxx xx xx xxxxx xxxx xxxxx xxx xxxx xxxxxx xx x xxxxxxx xxxxxxx xxxxxx.
-
-Xxxxxxxxxx XXXx xxx xxxxxx xx xxxxx-xxxxxx xxxxx xxxx xxx xxx xxxxxxxxxxxxxx (xxxxxx-xxxxxx xx xxxxxxxx xxxx-xx-xxxx) xxxxx xxx xxxx xx xx xxx (xxxxx xxxx-xx-xxxx) xxxxx. Xxx xxxxxx-xxxxx xxxxx-xxxxxx xxxxx, x xxxxxxx xxxx xxxxxx xxxxxxx xxxxxxx xxxx xx xxx xxxx xxxxxxxxxx xxx xxx xxxxxx xxxx xxx xx xxxx xxx xxxxx, xxxxxxxxxx xxxxxxxx, xxxxxxx xxxxx, xxx xxxxx xxxxxxxx. Xxx xxxxx xxx xxxxxxx xx xxxxxxx xxxxxxxxx xx x xxxxxxx xxx x xxxxxxxxxxxx xxxx xxxxxxxxxx.
-
-Xxx xxxx-xx-xxxx xxxxx, xxxx xxxxxx'x xxx xxxxxxx xxx xxxxx xxx xxxxxxxx. Xx xxxx xxxxx, xxx xxxx xxxxxxx xxx xxxxxxx xx xxxxx xxxxxxxxx xx xxxx xxxxxxx xxxxxxx xxxxxx xx xxxxx xxx xx xxxxx x xxxxxxx. Xxx xx xxxxxxxxx xxxxx xxx xxxxxxxxx x xxxxxxxxxx xxxxxxx x xxxxxxx.
-
-Xxx xxxxxx-xxxxxx xxxxx, x xxxxxxx Xxx xxxxxx xx xxxxxxx xx xxxxx xxxx xx xxxxx xxxx xxxxx, xxxx xxxxxx, xxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxx. Xx xxxxx xxxxx, xxx xxxxx xxx xxxxxxx xx xxxxxxxxxx xxxxxxxxx xx xxxx xx x xxxxxxx xxxxx xx xxxxx'x xxxxxxxx xxxxxx xxxx xxxxxxxxx.
-
-Xxxxxxx xxxxxxxxxx xxx xxxxxx xx xxx xxxx, xx xxx xxxx xxxx xxxx xxxxxxxxxx XXXx xxxxx xx xxxxxx xxxxxxx xxxxxxxxxx xxxx xxx xxxxx. Xx xxxxx xxxx xxxxx xxxxxxxx xxxxxxx xxxxxxxxxx, xxx [Xxxxxxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/mt280233).
-
-Xxxxxxxxx xxx xxx xxxxxxx xxx xxxxxx xxx xxx xxxxxx xxx xxxxxxx xx xxx xxxxxxxxxx xxxxxxxx. X xxxx xxxx xxxx xxxxxxxxxx xxxxx xx xx xxxxxxxx xx xxxxxxxx xxxxxx xxxxxxxxx xxx xxxxxxx.
-
-Xxx xxxxxx xxxxxxx, xx xx xxxxxxxxx xx xxxxxxx xxxxxxxxx xxxxxxx xxxxxxxxx xxx xxxxxx xxxxxxxxxxx xxxx xx xxxxxxx xxxxxxxx xxxxx xxxxxxx xx xxxx xxxxx xxx xx xxxxxxxxxxx.
-
-Xxxxxxx xxxxxxxxx xx xxxx xx xxx xxx xxxxxxxx xxxxx xxxx xx Xxxxxxx. Xxxxxxx xxxxxxxx xxxxxxxxx xxxxxxx xxxxxxxxxx xxx xxxxxxxx xxxxxxx xxxxxx xxxxxxxxxxxx xxx xxxxxxx xxxxxxxxx. Xxxx xxxx xxxxxxx xxxxxxx xxxxxxxxx xxxxxxxxxxxx xx xxxxx xx xxxxxx xxx xxxxx xx xxxxxxx xxxxxx. Xxxxxxx xxxxxxxxx xxxxx xxxxxxxxxxxx, xxxx xxx xxxx xxx xxxx xxxxxx xx xxxxxxx xxxxxxxxx. Xx xxxxx xxxx xxxxx xxx Xxxxxxx xxxxxxxx xxxxxxx xxxxxxxxx xxx xxxx, xxx [Xxx xx xxxxxxxxx xxxxxxx xxxxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh770532).
-
-## Xxxxxx xxxxxxxxxxxxxx
+## Concepts at a glance
 
 
-X xxxxxxx xx xxxxxxxxxx XXXx xxx xx xxxx xx XxxxxxX xxxxx. Xx, xx xx xxxxxxxxx xx xxxx xxx xxxxx XXX. Xxxxxxx xxxxxxxx x xxxxxxx xx xxxxxxxxxx XXXx xxxx xxxx xxx xxx xxx xx xxxxxxxxxxx xxxx xxxxx xxxxxxxxx xxx xxxxxxx xxxx xxxxxx xxx Xxxxxxxx xx xxxxxxx xxxxxxxx. Xxxx xxxxx xxxx xx xx xxxxxx xxx xxxx xxxxxxxxxx xxxxxxxx xxxx xxx xxxxx.
+A variety of networking features can be used in your DirectX game, whether it is a simple standalone game to massively multi-player games. The simplest use of networking would be to store user names and game scores on a central network server.
 
-Xxx xxxx xxxxxxx xxxxxxx XXXx xxx xxxxx xxxxxxx:
+Networking APIs are needed in multi-player games that use the infrastructure (client-server or internet peer-to-peer) model and also by ad hoc (local peer-to-peer) games. For server-based multi-player games, a central game server usually handles most of the game operations and the client game app is used for input, displaying graphics, playing audio, and other features. The speed and latency of network transfers is a concern for a satisfactory game experience.
 
--   XXX xxx xxxxxxx - Xxxxxxxx x xxxxxxxx xxxxxxxxxx. Xxx XXX xxx xxxx xxxxxxxxxx xxxx xxx’x xxxx xxxxxxxx. XXX xxxxxx xxx xxxxxx xx xxxxxx xxxxx, xx xx xx xxxxxxxx xxxx xx xxxxx xxxx xxx xxx xxxxxxxxxxxxxx (xxxxxx-xxxxxx xx xxxxxxxx xxxx-xx-xxxx) xxxxx. XXX xxx xxxx xx xxxx xx xx xxx (xxxxx xxxx-xx-xxxx) xxxxx xxxx Xx-Xx Xxxxxx xxx Xxxxxxxxx. XXX xx xxxxxxxx xxxx xxx xxxx xxxxxx xxxxxxxx, xxxxxxxxx xxxxxxxxxxx, xxxx xxxx, xxx xxxxx xxxxxxxxxx. Xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxxxx xxxxxxxx x XXX xxxxxx xxxx xxx xx xxxx xx Xxxxxxx Xxxxx xxxxx. Xxx **XxxxxxXxxxxx** xxxxx xx xxxx xxxx xxxxxxx xxxxxxx xx xxx [**Xxxxxxx::Xxxxxxxxxx::Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226960) xxxxxxxxx.
--   XXX xxx xxxxxxx xxxxx XXX - Xxxxxxxx x xxxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxxxx. Xxx XXX xxxxxxxxxxx xxxx XXX xxx xxxx xxxxxxxxxx xxxx xxxx xxxxxxxx. Xxx xxxxxxxxxx xxx xxxxxxxx xx XXX xxxx x xxxx xx xxxxxxx xxx xxxxxxxxxxx, xx xx xx xxxx xxxx xxxx xxxxxxxx xx xxxxxx. XXX xxxx XXX xx xxxxxxxx xxxx xxx xxxxx, xxxxxxxxxx xxx xxxxxxx xxxxxx, xxxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx. Xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxxxx xxxxxxxx x XXX xxxxxx xxxx xxxxxxxx XXX.
--   XXX xxx xxxxxxx - Xxxxxxxx xxxxxxxxxx xxxxxxx xxxxxxxxx xxxx xxx xxxxxxxx. XXX xx xxxx xxx xxxx xxxxxxxxxx xxxx xxxxxxx xxx xxxxxxx xxx xxx xxxxxxxx xxxx xxxxxx xxxx. Xxxx xx xxxxx xxxx xxx xxxxxxxx xxxxx, xxxxxxxx xxx xxxxxxx, xxxxxxx xxxxx, xxx xxxxx xxxx. Xxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241319) xxxxx xxxxxxxx x XXX xxxxxx xxxx xxx xx xxxx xx Xxxxxxx Xxxxx xxxxx. Xxx **XxxxxxxxXxxxxx** xxxxx xx xxxx xxxx xxxxxxx xxxxxxx xx xxx [**Xxxxxxx::Xxxxxxxxxx::Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226960) xxxxxxxxx.
--   XXXX Xxxxxx - Xxxxxxxx x xxxxxxxx xxxxxxxxxx xx XXXX xxxxxxx. Xxx xxxx xxxxxx xxxxxxxxxx xxxxxxxx xx xx xxxxxx x xxx xxxx xx xxxxxxxx xx xxxxx xxxxxxxxxxx. X xxxxxx xxxxxxx xxxxx xx x xxxx xxxx xxxx x xxxxxxx xx xxxxx xxxx xxxxxxxxxxx xxx xxxx xxxxxx. Xxxx xxxx xxxx XXX xxx xxxxxxxx, xx XXXX xxxxxx xxx xx xxxx xxx xxxxx, xxxxxxxxxx, xxxxxxx xxxxxx, xxxx xxxxxxxxx xxxxxxxx, xxx xxxxxxxxxx. Xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639) xxxxx xxxxxxxx x xxxxxx XXXX xxxxxx XXX xxx xxx xx Xxxxxxx Xxxxx xxxxx. Xxx **XxxxXxxxxx** xxxxx xx xxxx xxxx xxxxxxx xxxxxxx xx xxx [**Xxxxxxx::Xxx::Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn279692) xxxxxxxxx.
+For peer-to-peer games, each player's app handles the input and graphics. In most cases, the game players are located in close proximity so that network latency should be lower but is still a concern. How to discovery peers and establish a connection becomes a concern.
 
-## Xxxxxxxx xxxxxxx xxxxxxxxxx xx xxxx XxxxxxX xxxx
+For single-player games, a central Web server or service is often used to store user names, game scores, and other miscellaneous information. In these games, the speed and latency of networking transfers is less of a concern since it doesn't directly affect game operation.
+
+Network conditions can change at any time, so any game that uses networking APIs needs to handle network exceptions that may occur. To learn more about handling network exceptions, see [Networking basics](https://msdn.microsoft.com/library/windows/apps/mt280233).
+
+Firewalls and web proxies are common and can affect the ability to use networking features. A game that uses networking needs to be prepared to properly handle firewalls and proxies.
+
+For mobile devices, it is important to monitor available network resources and behave accordingly when on metered networks where roaming or data costs can be significant.
+
+Network isolation is part of the app security model used by Windows. Windows actively discovers network boundaries and enforces network access restrictions for network isolation. Apps must declare network isolation capabilities in order to define the scope of network access. Without declaring these capabilities, your app will not have access to network resources. To learn more about how Windows enforces network isolation for apps, see [How to configure network isolation capabilities](https://msdn.microsoft.com/library/windows/apps/hh770532).
+
+## Design considerations
 
 
-Xxxx x xxxxxxx xxxxxxxxx xxxxxx xx xxxx XxxxxxX xxxx, xxxx xxxxxxxxx x xxxxxxxxxxx xxxxxxx xx xxxxxxx. Xxxxxxxxxx xxx xxxxx xxx xxxx xxxxxxx xxxx xxxxx xxxxxxxxxx XXXx. Xxxxx, xxx xxxxxxxxx xxx xxxxxx xxxx xxxxxxx xx xxxxxxx xxxxxxxxxxxx xx xxxxx xxxxxxxxxx xxxxxx xxxx xxx xxxxxx xxxx xx xxxxxx.
+A variety of networking APIs can be used in DirectX games. So, it is important to pick the right API. Windows supports a variety of networking APIs that your app can use to communicate with other computers and devices over either the Internet or private networks. Your first step is to figure out what networking features your app needs.
 
-Xxxx xxxxxx xx xxxxxxxxxx xxxx xxxxx xxxxxxxxxx XXXx xxxxxxx xxx xxxxxxxxx:
+The more popular network APIs for games include:
 
--   Xxxxx xxxx xxx xxxx xxx x xxxxxxxx xx x XXX xxxxxxxx xxxxxx xxx xx xxx xxxxx.
--   Xxxx xxxxxxxxxxx xxxxxxxx xxxx xxxxxxx xx x xxxxxxxx xx x XXx.
--   Xxxx xx xxxxxx xx xxxxxxx xxxxxxxxxxxx.
--   Xxxxxxx xxxxxxxxxx xxxxxxxx xxxxx xxxxxxx xx xxx XXXX xxxxxx XXXx.
--   Xxxxxxx xxxxxx xx xxxxxx xxxxxxxx xxxxxx.
--   Xxxxxxxxxxxxx xxxxxxxxxx xxxxxx.
+-   TCP and sockets - Provides a reliable connection. Use TCP for game operations that don’t need security. TCP allows the server to easily scale, so it is commonly used in games that use the infrastructure (client-server or internet peer-to-peer) model. TCP can also be used by ad hoc (local peer-to-peer) games over Wi-Fi Direct and Bluetooth. TCP is commonly used for game object movement, character interaction, text chat, and other operations. The [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) class provides a TCP socket that can be used in Windows Store games. The **StreamSocket** class is used with related classes in the [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace.
+-   TCP and sockets using SSL - Provides a reliable connection that prevents eavesdropping. Use TCP connections with SSL for game operations that need security. The encryption and overhead of SSL adds a cost in latency and performance, so it is only used when security is needed. TCP with SSL is commonly used for login, purchasing and trading assets, game character creation and management. The [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) class provides a TCP socket that supports SSL.
+-   UDP and sockets - Provides unreliable network transfers with low overhead. UDP is used for game operations that require low latency and can tolerate some packet loss. This is often used for fighting games, shooting and tracers, network audio, and voice chat. The [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) class provides a UDP socket that can be used in Windows Store games. The **DatagramSocket** class is used with related classes in the [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace.
+-   HTTP Client - Provides a reliable connection to HTTP servers. The most common networking scenario is to access a web site to retrieve or store information. A simple example would be a game that uses a website to store user information and game scores. When used with SSL for security, an HTTP client can be used for login, purchasing, trading assets, game character creation, and management. The [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class provides a modern HTTP client API for use in Windows Store games. The **HttpClient** class is used with related classes in the [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) namespace.
 
-Xxxxxxxxxx xxxx xxxxxxx xxxxxx (xxx xxxxxxx, xxxx xx xxxxxx xx xxxxxxxxxxxx, xxxxxxxxxx xxxxxxxx, xxx xxxxxx xxxxxxxx) xxx xxxxxx xx xxx xxxx. Xxxxx xxxxxx xxxxxx xx xxxxxxxxxx xxxxx xxxxxx. Xx xx xxxxxxxxx xx xxx xxxxxxx xx xxxx xxx, xx xxx xxxxx xxxx xxxxxx xxx xx xx xxxxxxxxxx xx xxx xxxxxxx.
+## Handling network exceptions in your DirectX game
 
-Xxx xxxx xxxxx xxxx xx xxxxxx xxxxxxxxxx xxxx xxx xxxx xxxx xxxxxxxxxxxx xxxxxxx xxxxxxx. Xxxxxxxxx, xxxx xx xxxxxxxxx xxxxxx, x xxxxxxx xxxxxx xxx xx xxxxxxx xx x xxx xx xxxxxxx xxx xxxxxxx. Xxxxx xxxxx, xxxx xxx xxx xxxx xx xxxx xx xxxxxxxx xxxxxxx xxxxxxx xxxxxxxxxxxx xxxxx xxxxxxxxxx xxxxxx xxxx.
 
-Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxxxxxxx xxxxx x xxxxxx xxxxxxxxx. Xxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxx xxx xxxxx xx xxx xxxxxxxxx xx xxxxxx xxxxxxxxxx xxx xxxxxxx xxx xxxx xxxxxxxxxxx xxxxxxxxx.
+When a network exception occurs in your DirectX game, this indicates a significant problem or failure. Exceptions can occur for many reasons when using networking APIs. Often, the exception can result from changes in network connectivity or other networking issues with the remote host or server.
 
-Xxxx xx xxxxxxxxx xxxxxx xx x XxxxxxX xxxx xxxx xx x XXX xxx, xxx **XXXXXXX** xxxxx xxx xxx xxxxx xx xxx xxxxx xxx xx xxxxxxxxx. Xxx *Xxxxxxxx.x* xxxxxxx xxxx xxxxxxxx x xxxxx xxxx xx xxxxxxxx **XXXXXXX** xxxxxx xxxx xxxxxxxx xxxxxxx xxxxxx.
+Some causes of exceptions when using networking APIs include the following:
 
-Xxx xxxxxxxxxx XXXx xxxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxx xxx xxxxx xx xx xxxxxxxxx.
+-   Input from the user for a hostname or a URI contains errors and is not valid.
+-   Name resolutions failures when looking up a hostname or a URi.
+-   Loss or change in network connectivity.
+-   Network connection failures using sockets or the HTTP client APIs.
+-   Network server or remote endpoint errors.
+-   Miscellaneous networking errors.
 
--   X xxxxxx xx xxxxxxxx xxx **XXXXXXX** xxxxx xx xxx xxxxx xxxx xxxxxx xxx xxxxxxxxx. Xxx xxxxxxxx xxxx xx xxxxxxxxx **XXXXXXX** xxxxxx xx xxxxx xxx xxxxxxxxxxx. Xxx **XXXXXXX** xxxxx xxx xx xxxxxxxxx xxxx xxxxx xxx xx xxx xxxxxxxxxx XXXx.
--   X xxxxxx xxxxxx xxxx xxxxxxxx xxx **XXXXXXX** xxxxx xx xx xxxxxxxxxxx xxxxx. Xxx xxxx xx xxxxxxxx xxxxxxxxxxx xxxxxx xx xxxxxxxxx xxx xxxxxxxxxx xxxxx. X xxxxxx xxxxxx xx xxxxxxxxx xxx xxx xxxxxx xxxxxxx xx xxx [**Xxxxxxx::Xxxxxxxxxx::Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226960).
+Exceptions from network errors (for example, loss or change of connectivity, connection failures, and server failures) can happen at any time. These errors result in exceptions being thrown. If an exception is not handled by your app, it can cause your entire app to be terminated by the runtime.
 
-### Xxxxxxxxxx xx Xxxxxxx.Xxxxxxxxxx.Xxxxxxx
+You must write code to handle exceptions when you call most asynchronous network methods. Sometimes, when an exception occurs, a network method can be retried as a way to resolve the problem. Other times, your app may need to plan to continue without network connectivity using previously cached data.
 
-Xxx xxxxxxxxxxx xxx xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207113) xxxxx xxxx xxxx xxxxxxx xxx xxxxx xx xxxxxxxxx xx xxx xxxxxx xxxxxx xx xxx x xxxxx xxxxxxxx (xxxxxxxx xxxxxxxxxx xxxx xxx xxx xxxxxxx xx x xxxx xxxx). Xx xx xxx xxxx xxxxx xxxx xxx xxxx xxx xxx **XxxxXxxx** xxx x xxxx xxxxxxxxxx xxx xxxxxx, xxx xxxxxxxxxxx xxxxxx xx xx x xxx/xxxxx xxxxx. Xx xx xxxxxxxxx xx xxxxxx, xxx xxx xxx xxxxxx xxx xxxx xxx xxxxxxx x xxx xxxxxxxx.
+Universal Windows Platform (UWP) apps generally throw a single exception. Your exception handler can retrieve more detailed information about the cause of the exception to better understand the failure and make appropriate decisions.
 
-Xxx xxxx xx xxxxxxxx x xxxxxx xxx x xxxxxxxx xxxx xxx xxxx
+When an exception occurs in a DirectX game that is a UWP app, the **HRESULT** value for the cause of the error can be retrieved. The *Winerror.h* include file contains a large list of possible **HRESULT** values that includes network errors.
+
+The networking APIs support different methods for retrieving this detailed information about the cause of an exception.
+
+-   A method to retrieve the **HRESULT** value of the error that caused the exception. The possible list of potential **HRESULT** values is large and unspecified. The **HRESULT** value can be retrieved when using any of the networking APIs.
+-   A helper method that converts the **HRESULT** value to an enumeration value. The list of possible enumeration values is specified and relatively small. A helper method is available for the socket classes in the [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960).
+
+### Exceptions in Windows.Networking.Sockets
+
+The constructor for the [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) class used with sockets can throw an exception if the string passed is not a valid hostname (contains characters that are not allowed in a host name). If an app gets input from the user for the **HostName** for a peer connection for gaming, the constructor should be in a try/catch block. If an exception is thrown, the app can notify the user and request a new hostname.
+
+Add code to validate a string for a hostname from the user
 
 ```cpp
 
@@ -109,13 +109,13 @@ Xxx xxxx xx xxxxxxxx x xxxxxx xxx x xxxxxxxx xxxx xxx xxxx
     // ... Continue with code to execute with a valid hostname.
 ```
 
-Xxx [**Xxxxxxx.Xxxxxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226960) xxxxxxxxx xxx xxxxxxxxxx xxxxxx xxxxxxx xxx xxxxxxxxxxxx xxx xxxxxxxx xxxxxx xxxx xxxxx xxxxxxx. Xxxx xxx xx xxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxx xxxxxxxxxx xxxxxxxxxxx xx xxxx xxx.
+The [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace has convenient helper methods and enumerations for handling errors when using sockets. This can be useful for handling specific network exceptions differently in your app.
 
-Xx xxxxx xxxxxxxxxxx xx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241319), [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882), xx [**XxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226906) xxxxxxxxx xxxxxxx xx xx xxxxxxxxx xxxxx xxxxxx. Xxx xxxxx xx xxx xxxxxxxxx xx xx xxxxx xxxxx xxxxxxxxxxx xx xx **XXXXXXX** xxxxx. Xxx [**XxxxxxXxxxx.XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701462) xxxxxx xx xxxx xx xxxxxxx x xxxxxxx xxxxx xxxx x xxxxxx xxxxxxxxx xx x [**XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701457) xxxxxxxxxxx xxxxx. Xxxx xx xxx **XxxxxxXxxxxXxxxxx** xxxxxxxxxxx xxxxxx xxxxxxxxxx xx xx xxxxx xxxxxxxx xx xxx xxxxxx Xxxxxxx xxxxxxx xxxxxxxxx. Xx xxx xxx xxxxxx xx xxxxxxxx **XxxxxxXxxxxXxxxxx** xxxxxxxxxxx xxxxxx xx xxxxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxx xx xxx xxxxxxxxx.
+An error encountered on [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) operation results in an exception being thrown. The cause of the exception is an error value represented as an **HRESULT** value. The [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) method is used to convert a network error from a socket operation to a [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) enumeration value. Most of the **SocketErrorStatus** enumeration values correspond to an error returned by the native Windows sockets operation. An app can filter on specific **SocketErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
 
-Xxx xxxxxxxxx xxxxxxxxxx xxxxxx, xx xxx xxx xxxx xxx xxx **XXXXXXX** xxxx xxx xxxxxxxxx xx xxxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxx xxx xxxxx xxxx xxxxxx xxx xxxxxxxxx. Xxxxxxxx **XXXXXXX** xxxxxx xxx xxxxxx xx xxx *Xxxxxxxx.x* xxxxxx xxxx. Xxx xxxx xxxxxxxxx xxxxxxxxxx xxxxxx, xxx **XXXXXXX** xxxxxxxx xx **X\_XXXXXXXXXX**.
+For parameter validation errors, an app can also use the **HRESULT** from the exception to learn more detailed information about the error that caused the exception. Possible **HRESULT** values are listed in the *Winerror.h* header file. For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**.
 
-Xxx xxxx xx xxxxxx xxxxxxxxxx xxxx xxxxxx xx xxxx x xxxxxx xxxxxx xxxxxxxxxx
+Add code to handle exceptions when trying to make a stream socket connection
 
 ```cpp
 using namespace Windows::Networking;
@@ -212,13 +212,13 @@ using namespace Windows::Networking::Sockets;
 
 ```
 
-### Xxxxxxxxxx xx Xxxxxxx.Xxx.Xxxx
+### Exceptions in Windows.Web.Http
 
-Xxx xxxxxxxxxxx xxx xxx [**Xxxxxxx::Xxxxxxxxxx::Xxx**](https://msdn.microsoft.com/library/windows/apps/br225998) xxxxx xxxx xxxx [**Xxxxxxx::Xxx::Xxxx::XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639) xxx xxxxx xx xxxxxxxxx xx xxx xxxxxx xxxxxx xx xxx x xxxxx XXX (xxxxxxxx xxxxxxxxxx xxxx xxx xxx xxxxxxx xx x XXX). Xx X++, xxxxx xx xx xxxxxx xx xxx xxx xxxxx x xxxxxx xx x XXX. Xx xx xxx xxxx xxxxx xxxx xxx xxxx xxx xxx **Xxxxxxx::Xxxxxxxxxx::Xxx**, xxx xxxxxxxxxxx xxxxxx xx xx x xxx/xxxxx xxxxx. Xx xx xxxxxxxxx xx xxxxxx, xxx xxx xxx xxxxxx xxx xxxx xxx xxxxxxx x xxx XXX.
+The constructor for the [**Windows::Foundation::Uri**](https://msdn.microsoft.com/library/windows/apps/br225998) class used with [**Windows::Web::Http::HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) can throw an exception if the string passed is not a valid URI (contains characters that are not allowed in a URI). In C++, there is no method to try and parse a string to a URI. If an app gets input from the user for the **Windows::Foundation::Uri**, the constructor should be in a try/catch block. If an exception is thrown, the app can notify the user and request a new URI.
 
-Xxxx xxx xxxxxx xxxx xxxxx xxxx xxx xxxxxx xx xxx XXX xx XXXX xx XXXXX xxxxx xxxxx xxx xxx xxxx xxxxxxx xxxxxxxxx xx xxx [**Xxxxxxx::Xxx::Xxxx::XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639).
+Your app should also check that the scheme in the URI is HTTP or HTTPS since these are the only schemes supported by the [**Windows::Web::Http::HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639).
 
-Xxx xxxx xx xxxxxxxx x xxxxxx xxx x XXX xxxx xxx xxxx
+Add code to validate a string for a URI from the user
 
 ```cpp
 
@@ -261,13 +261,13 @@ Xxx xxxx xx xxxxxxxx x xxxxxx xxx x XXX xxxx xxx xxxx
     // ... Continue with code to execute with a valid URI.
 ```
 
-Xxx [**Xxxxxxx::Xxx::Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.web.http.aspx) xxxxxxxxx xxxxx x xxxxxxxxxxx xxxxxxxx. Xx, xx xxx xxxxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639) xxx xxxxx xxxxxxx xx xxxx xxxxxxxxx xxxxx xx xxx xxx **XXXXXXX** xxxxx.
+The [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/windows.web.http.aspx) namespace lacks a convenience function. So, an app using [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) and other classes in this namespace needs to use the **HRESULT** value.
 
-Xx xxxx xxxxx X++, xxx [**Xxxxxxxx::Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) xxxxxxxxxx xx xxxxx xxxxxx xxx xxxxxxxxx xxxx xx xxxxxxxxx xxxxxx. Xxx [**Xxxxxxxx::Xxxxxxxxx::XXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) xxxxxxxx xxxxxxx xxx **XXXXXXX** xxxxxxxx xx xxx xxxxxxxx xxxxxxxxx. Xxx [**Xxxxxxxx::Xxxxxxxxx::Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) xxxxxxxx xxxxxxx xxx xxxxxx-xxxxxxxx xxxxxx xxxx xx xxxxxxxxxx xxxx xxx **XXXXXXX** xxxxx. Xxxxxxxx **XXXXXXX** xxxxxx xxx xxxxxx xx xxx *Xxxxxxxx.x* xxxxxx xxxx. Xx xxx xxx xxxxxx xx xxxxxxxx **XXXXXXX** xxxxxx xx xxxxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxx xx xxx xxxxxxxxx.
+In apps using C++, the [**Platform::Exception**](https://msdn.microsoft.com/library/windows/apps/hh755825.aspx) represents an error during app execution when an exception occurs. The [**Platform::Exception::HResult**](https://msdn.microsoft.com/library/windows/apps/hh763371.aspx) property returns the **HRESULT** assigned to the specific exception. The [**Platform::Exception::Message**](https://msdn.microsoft.com/library/windows/apps/hh763375.aspx) property returns the system-provided string that is associated with the **HRESULT** value. Possible **HRESULT** values are listed in the *Winerror.h* header file. An app can filter on specific **HRESULT** values to modify app behavior depending on the cause of the exception.
 
-Xxx xxxx xxxxxxxxx xxxxxxxxxx xxxxxx, xxx **XXXXXXX** xxxxxxxx xx **X\_XXXXXXXXXX**. Xxx xxxx xxxxxxx xxxxxx xxxxx, xxx **XXXXXXX** xxxxxxxx xx **X\_XXXXXXX\_XXXXXX\_XXXX**.
+For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**. For some illegal method calls, the **HRESULT** returned is **E\_ILLEGAL\_METHOD\_CALL**.
 
-Xxx xxxx xx xxxxxx xxxxxxxxxx xxxx xxxxxx xx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639) xx xxxxxxx xx xx XXXX xxxxxx
+Add code to handle exceptions when trying to use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) to connect to an HTTP server
 
 ```cpp
 using namespace Windows::Foundation;
@@ -357,31 +357,35 @@ using namespace Windows::Web::Http;
 
 ```
 
-## Xxxxxxx xxxxxx
+## Related topics
 
 
-**Xxxxx xxxxxxxxx**
+**Other resources**
 
-* [Xxxxxxxxxx xxxx x xxxxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/jj635238)
-* [Xxxxxxxxxx xx x xxxxxxx xxxxxxxx xxxx x xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/jj150599)
-* [Xxxxxxxxxx xx xxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
-* [Xxxxxxxxxx xx xxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
-* [Xxxxxxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/mt280233)
-* [Xxx xx xxxxxxxxx xxxxxxx xxxxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh770532)
-* [Xxx xx xxxxxx xxxxxxxx xxx xxxxx xxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh780593)
+* [Connecting with a datagram socket](https://msdn.microsoft.com/library/windows/apps/xaml/jj635238)
+* [Connecting to a network resource with a stream socket](https://msdn.microsoft.com/library/windows/apps/xaml/jj150599)
+* [Connecting to network services](https://msdn.microsoft.com/library/windows/apps/xaml/hh452976)
+* [Connecting to web services](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504)
+* [Networking basics](https://msdn.microsoft.com/library/windows/apps/mt280233)
+* [How to configure network isolation capabilities](https://msdn.microsoft.com/library/windows/apps/hh770532)
+* [How to enable loopback and debug network isolation](https://msdn.microsoft.com/library/windows/apps/hh780593)
 
-**Xxxxxxxxx**
+**Reference**
 
-* [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241319)
-* [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639)
-* [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882)
-* [**Xxxxxxx::Xxx::Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn279692)
-* [**Xxxxxxx::Xxxxxxxxxx::Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226960)
+* [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319)
+* [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639)
+* [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882)
+* [**Windows::Web::Http**](https://msdn.microsoft.com/library/windows/apps/dn279692)
+* [**Windows::Networking::Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
 
-**Xxxxxxx**
+**Samples**
 
-* [XxxxxxxxXxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=243037)
-* [XxxxXxxxxx Xxxxxx]( http://go.microsoft.com/fwlink/p/?linkid=242550)
-* [Xxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=245082)
-* [XxxxxxXxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=243037)
+* [DatagramSocket sample](http://go.microsoft.com/fwlink/p/?LinkID=243037)
+* [HttpClient Sample]( http://go.microsoft.com/fwlink/p/?linkid=242550)
+* [Proximity sample](http://go.microsoft.com/fwlink/p/?linkid=245082)
+* [StreamSocket sample](http://go.microsoft.com/fwlink/p/?linkid=243037)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

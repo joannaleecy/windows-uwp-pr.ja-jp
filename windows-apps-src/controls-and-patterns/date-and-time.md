@@ -1,118 +1,114 @@
 ---
-Xxxxxxxxxxx: Xxxx xxx xxxx xxxxxxxx xxx xxx xxxx xxx xxx xxx xxxx xxx xxxx. Xxxx xxxxxxx xxxxxxxx xxxxxx xxxxxxxxxx xxx xxxxx xxx xxxx xxx xxxxx xxxxxxx.
-xxxxx: Xxxxxxxxxx xxx xxxx xxx xxxx xxxxxxxx
-xx.xxxxxxx: YYYYXXXX-YXYY-YYYY-YYXY-XYYYYYYYYXYY
-xxxxx: Xxxxxxxx, xxxx, xxx xxxx xxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Date and time controls let you view and set the date and time. This article provides design guidelines and helps you pick the right control.
+title: Guidelines for date and time controls
+ms.assetid: 4641FFBB-8D82-4290-94C1-D87617997F61
+label: Calendar, date, and time controls
+template: detail.hbs
 ---
 
-# Xxxxxxxx, xxxx, xxx xxxx xxxxxxxx
+# Calendar, date, and time controls
 
-Xxxx xxx xxxx xxxxxxxx xxxx xxx xxxxxxxx, xxxxxxxxx xxxx xx xxx x xxxx xxxx xxx xxx xxxx xxx xxxx xxxxxx xx xxxx xxx. Xxxx xxxxxxx xxxxxxxx xxxxxx xxxxxxxxxx xxx xxxxx xxx xxxx xxx xxxxx xxxxxxx.
+Date and time controls give you standard, localized ways to let a user view and set date and time values in your app. This article provides design guidelines and helps you pick the right control.
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
 
--   [**XxxxxxxxXxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)
--   [**XxxxxxxxXxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)
--   [**XxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)
--   [**XxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
+-   [**CalendarView class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)
+-   [**CalendarDatePicker class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx)
+-   [**DatePicker class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)
+-   [**TimePicker class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
 
-## Xxxxx xxxx xx xxxx xxxxxxx xxxxxx xxx xxx?
+## Which date or time control should you use?
 
-Xxxxx xxx xxxx xxxx xxx xxxx xxxxxxxx xx xxxxxx xxxx; xxx xxxxxxx xxx xxx xxxxxxx xx xxxx xxxxxxxx. Xxx xxxx xxxx xx xxxx xxx xxxxx xxxxxxx xx xxx xx xxxx xxx.
+There are four date and time controls to choose from; the control you use depends on your scenario. Use this info to pick the right control to use in your app.
 
-&xxxx;|&xxxx;|&xxxx;                                                                                                                      
+&nbsp;|&nbsp;|&nbsp;                                                                                                                      
 --------------------|-------|-------------------------------------------------------------------------------------------------------------------------------
-Xxxxxxxx xxxx       |![Xxxxxxx xx xxxxxxxx xxxx](images/controls_calendar_monthview_small.png)|Xxx xx xxxx x xxxxxx xxxx xx x xxxxx xx xxxxx xxxx xx xxxxxx xxxxxxx xxxxxxxx.                   
-Xxxxxxxx xxxx xxxxxx|![Xxxxxxx xx xxxxxxxx xxxx xxxxxx](images/calendar-date-picker-closed.png)|Xxx xx xxxx x xxxxxx xxxx xxxx x xxxxxxxxxx xxxxxxxx. 
-Xxxx xxxxxx         |![Xxxxxxx xx xxxx xxxxxx](images/date-picker-closed.png)|Xxx xx xxxx x xxxxxx xxxxx xxxx xxxx xxxxxxxxxx xxxx xxx'x xxxxxxxxx.
-Xxxx xxxxxx         |![Xxxxxxx xx xxxx xxxxxx](images/time-picker-closed.png)|Xxx xx xxxx x xxxxxx xxxx xxxxx.                                        
+Calendar view       |![Example of calendar view](images/controls_calendar_monthview_small.png)|Use to pick a single date or a range of dates from an always visible calendar.                   
+Calendar date picker|![Example of calendar date picker](images/calendar-date-picker-closed.png)|Use to pick a single date from a contextual calendar. 
+Date picker         |![Example of date picker](images/date-picker-closed.png)|Use to pick a single known date when contextual info isn't important.
+Time picker         |![Example of time picker](images/time-picker-closed.png)|Use to pick a single time value.                                        
 
 <!-- This table seems redundant, not sure it's needed.-->
 
-### Xxxxxxxx xxxx
+### Calendar view
 
-**XxxxxxxxXxxx** xxxx x xxxx xxxx xxx xxxxxxxx xxxx x xxxxxxxx xxxx xxxx xxx xxxxxxxx xx xxxxx, xxxx, xx xxxxxx. X xxxx xxx xxxxxx x xxxxxx xxxx xx x xxxxx xx xxxxx. Xx xxxxx'x xxxx x xxxxxx xxxxxxx xxx xxx xxxxxxxx xx xxxxxx xxxxxxx.
+**CalendarView** lets a user view and interact with a calendar that they can navigate by month, year, or decade. A user can select a single date or a range of dates. It doesn't have a picker surface and the calendar is always visible.
 
-Xxx xxxxxxxx xxxx xx xxxx xx xx Y xxxxxxxx xxxxx: xxx xxxxx xxxx, xxxx xxxx, xxx xxxxxx xxxx. Xx xxxxxxx, xx xxxxxx xxxx xxx xxxxx xxxx xxxx, xxx xxx xxx xxxxxxx xxx xxxx xx xxx xxxxxxx xxxx.
+The calendar view is made up of 3 separate views: the month view, year view, and decade view. By default, it starts with the month view open, but you can specify any view as the startup view.
 
 ![Example of calendar date picker](images/calendar-view-3-views.png)
-            
 
-- Xx xxx xxxx xx xxx x xxxx xxxxxx xxxxxxxx xxxxx, xxx xxxx xxx x **XxxxxxxxXxxx**.
-- Xx xxx xxxx xx xxx x xxxx xxxx xxxx x xxxxxx xxxx xxx xxx’x xxxx x xxxxxxxx xx xx xxxxxx xxxxxxx, xxxxxxxx xxxxx x **XxxxxxxxXxxxXxxxxx** xx **XxxxXxxxxx** xxxxxxx.
+- If you need to let a user select multiple dates, you must use a **CalendarView**.
+- If you need to let a user pick only a single date and don’t need a calendar to be always visible, consider using a **CalendarDatePicker** or **DatePicker** control.
 
-### Xxxxxxxx xxxx xxxxxx
+### Calendar date picker
 
-**XxxxxxxxXxxxXxxxxx** xx x xxxx xxxx xxxxxxx xxxx’x xxxxxxxxx xxx xxxxxxx x xxxxxx xxxx xxxx x xxxxxxxx xxxx xxxxx xxxxxxxxxx xxxxxxxxxxx xxxx xxx xxx xx xxx xxxx xx xxxxxxxx xx xxx xxxxxxxx xx xxxxxxxxx. Xxx xxx xxxxxx xxx xxxxxxxx xx xxxxxxx xxxxxxxxxx xxxxxxx xx xx xxxxx xxxxxxxxx xxxxx.
+**CalendarDatePicker** is a drop down control that’s optimized for picking a single date from a calendar view where contextual information like the day of the week or fullness of the calendar is important. You can modify the calendar to provide additional context or to limit available dates.
 
-Xxx xxxxx xxxxx xxxxxxxx xxxxxxxxxxx xxxx xx x xxxx xxx xxx xxxx xxx; xxxxxxxxx, xx xxxxxxxx xxx xxxxxx xxxx. Xxxx xxx xxxx xxxxxxx xxx xxxxx xxxxx, x xxxxxxxx xxxx xxxxxxx xxx xxx xxxx xx xxxx x xxxx xxxxxxxxx. Xxx xxxxxxxx xxxx xxxxxxxx xxxxx XX; xx xxxxx'x xxxx xxxxx XX xxx xx xxx xxx.
+The entry point displays placeholder text if a date has not been set; otherwise, it displays the chosen date. When the user selects the entry point, a calendar view expands for the user to make a date selection. The calendar view overlays other UI; it doesn't push other UI out of the way.
 
 ![Example of calendar date picker](images/calendar-date-picker-2-views.png)
-            
 
-- Xxx x xxxxxxxx xxxx xxxxxx xxx xxxxxx xxxx xxxxxxxx xx xxxxxxxxxxx xx xxxxxxxxx xxxx. 
+- Use a calendar date picker for things like choosing an appointment or departure date. 
 
-### Xxxx xxxxxx
+### Date picker
 
-Xxx **XxxxXxxxxx** xxxxxxx xxxxxxxx x xxxxxxxxxxxx xxx xx xxxxxx x xxxxxxxx xxxx. 
+The **DatePicker** control provides a standardized way to choose a specific date. 
 
-Xxx xxxxx xxxxx xxxxxxxx xxx xxxxxx xxxx, xxx xxxx xxx xxxx xxxxxxx xxx xxxxx xxxxx, x xxxxxx xxxxxxx xxxxxxx xxxxxxxxxx xxxx xxx xxxxxx xxx xxx xxxx xx xxxx x xxxxxxxxx. Xxx xxxx xxxxxx xxxxxxxx xxxxx XX; xx xxxxx'x xxxx xxxxx XX xxx xx xxx xxx.
+The entry point displays the chosen date, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The date picker overlays other UI; it doesn't push other UI out of the way.
 
 ![Example of the date picker expanding](images/controls_datepicker_expand.png)
-            
 
-- Xxx x xxxx xxxxxx xx xxx x xxxx xxxx x xxxxx xxxx, xxxx xx x xxxx xx xxxxx, xxxxx xxx xxxxxxx xx xxx xxxxxxxx xx xxx xxxxxxxxx.
+- Use a date picker to let a user pick a known date, such as a date of birth, where the context of the calendar is not important.
 
-### Xxxx xxxxxx
+### Time picker
 
-Xxx **XxxxXxxxxx** xx xxxx xx xxxxxx x xxxxxx xxxx xxxxx xxx xxxxxx xxxx xxxxxxxxxxxx xx x xxxxxxxxx xxxx. Xx'x x xxxxxx xxxxxxx xxxx xx xxx xx xxx xxxx xx xx xxxx, xxx xx xxxxx'x xxxxxx xx xxxxxxx xxx xxxxxxx xxxx. 
+The **TimePicker** is used to select a single time value for things like appointments or a departure time. It's a static display that is set by the user or in code, but it doesn't update to display the current time. 
 
-Xxx xxxxx xxxxx xxxxxxxx xxx xxxxxx xxxx, xxx xxxx xxx xxxx xxxxxxx xxx xxxxx xxxxx, x xxxxxx xxxxxxx xxxxxxx xxxxxxxxxx xxxx xxx xxxxxx xxx xxx xxxx xx xxxx x xxxxxxxxx. Xxx xxxx xxxxxx xxxxxxxx xxxxx XX; xx xxxxx'x xxxx xxxxx XX xxx xx xxx xxx.
+The entry point displays the chosen time, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The time picker overlays other UI; it doesn't push other UI out of the way.
 
 ![Example of the time picker expanding](images/controls_timepicker_expand.png)
-            
 
-- Xxx x xxxx xxxxxx xx xxx x xxxx xxxx x xxxxxx xxxx xxxxx.
+- Use a time picker to let a user pick a single time value.
 
-## Xxxxxx x xxxx xx xxxx xxxxxxx
+## Create a date or time control
 
-Xxx xxxxx xxxxxxxx xxx xxxx xxx xxxxxxxx xxxxxxxx xx xxxx xxxx xxx xxxx xxxxxxx.
+See these articles for info and examples specific to each date and time control.
 
-- [
-            **Xxxxxxxx xxxx**](calendar-view.md)
-- [**Xxxxxxxx xxxx xxxxxx**](calendar-date-picker.md)
-- [**Xxxx xxxxxx**](date-picker.md)
-- [**Xxxx Xxxxxx**](time-picker.md)
+- [**Calendar view**](calendar-view.md)
+- [**Calendar date picker**](calendar-date-picker.md)
+- [**Date picker**](date-picker.md)
+- [**Time Picker**](time-picker.md)
 
-### Xxxxxxxxxxxxx
+### Globalization
 
-Xxx XXXX xxxx xxxxxxxx xxxxxxx xxxx xx xxx xxxxxxxx xxxxxxx xxxxxxxxx xx Xxxxxxx. Xxxxx xxxxxxxxx xxx xxxxxxxxx xx xxx [**Xxxxxxx.Xxxxxxxxxxxxx.XxxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendaridentifiers.aspx) xxxxx. Xxxx xxxxxxx xxxx xxx xxxxxxx xxxxxxxx xxx xxxx xxx'x xxxxxxx xxxxxxxx, xx xxx xxx xxx xxx **XxxxxxxxXxxxxxxxxx** xxxxxxxx xx xxx x xxxxxxxx xxxxxxxx xxxxxx.
+The XAML date controls support each of the calendar systems supported by Windows. These calendars are specified in the [**Windows.Globalization.CalendarIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendaridentifiers.aspx) class. Each control uses the correct calendar for your app's default language, or you can set the **CalendarIdentifier** property to use a specific calendar system.
 
-Xxx xxxx xxxxxx xxxxxxx xxxxxxxx xxxx xx xxx xxxxx xxxxxxx xxxxxxxxx xx xxx [**Xxxxxxx.Xxxxxxxxxxxxx.XxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx) xxxxx. Xxx xxx xxx xxx [**XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx) xxxxxxxx xx xxx xxxxxx x YY-xxxx xxxxx xx YY-xxxx xxxxx. Xxx xxxx xx xxx xxxxxxxx xx Xxxxxx, xxx xxx xxxx xxx xxxxxx xxxx xxxxxxxxxx xx xxx xxxxxx xxxxxx xxxxxxxxxx xx xxx XxxxxXxxxxxxxxxx xxxxx. Xxxxx xxx: XxxxxxXxxx (xxx xxxxxx "YYXxxxXxxxx")xxx XxxxxxXxxxXxxx (xxx xxxxxx "YYXxxxXxxxx"). "YYXxxxXxxxx" xx xxx xxxxxxx xxxxx.
+The time picker control supports each of the clock systems specified in the [**Windows.Globalization.ClockIdentifiers**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.clockidentifiers.aspx) class. You can set the [**ClockIdentifier**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.clockidentifier.aspx) property to use either a 12-hour clock or 24-hour clock. The type of the property is String, but you must use values that correspond to the static string properties of the ClockIdentifiers class. These are: TwelveHour (the string "12HourClock")and TwentyFourHour (the string "24HourClock"). "12HourClock" is the default value.
 
 
-### XxxxXxxx xxx Xxxxxxxx xxxxxx
+### DateTime and Calendar values
 
-Xxx xxxx xxxxxxx xxxx xx xxx XXXX xxxx xxx xxxx xxxxxxxx xxxx x xxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxx xx xxxx xxxxxxxxxxx xxxxxxxx. 
-- X# xxx Xxxxxx Xxxxx xxx xxx [**Xxxxxx.XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) xxxxxxxxx xxxx xx xxxx xx .XXX. 
-- X++/XX xxxx xxx [**Xxxxxxx::Xxxxxxxxxx::XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/br205770.aspx) xxxxxxxxx. 
+The date objects used in the XAML date and time controls have a different representation depending on your programming language. 
+- C# and Visual Basic use the [**System.DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) structure that is part of .NET. 
+- C++/CX uses the [**Windows::Foundation::DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/br205770.aspx) structure. 
 
-X xxxxxxx xxxxxxx xx xxx Xxxxxxxx xxxxx, xxxxx xxxxxxxxxx xxx xxxxx xxx xxxxxxxxxxx xx xxxxxxx. Xxx Xxxxxxx Xxxxxxx xxxx xxx xxx xxx [**Xxxxxxx.Xxxxxxxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendar.aspx) xxxxx. X# xxx Xxxxxx Xxxxx xxxx xxx xxxxxxxxxxxxx xxx xxx [**Xxxxxx.Xxxxxxxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.globalization.calendar.aspx) xxxxx, xxxxx xxx xxxx xxxxxxx xxxxxxxxxxxxx. (Xxxxxxx Xxxxxxx xxxx xxx xxx xxx xxxx .XXX Xxxxxxxx xxxxx xxx xxx xxx xxxxxxxx xxxxxxxxxxxxxxx; xxx xxxxxxx, XxxxxxxxxXxxxxxxx.)
+A related concept is the Calendar class, which influences how dates are interpreted in context. All Windows Runtime apps can use the [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.globalization.calendar.aspx) class. C# and Visual Basic apps can alternatively use the [**System.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/xaml/system.globalization.calendar.aspx) class, which has very similar functionality. (Windows Runtime apps can use the base .NET Calendar class but not the specific implementations; for example, GregorianCalendar.)
 
-.XXX xxxx xxxxxxxx x xxxx xxxxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx), xxxxx xx xxxxxxxxxx xxxxxxxxxxx xx x [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx). Xx xxx xxxxx xxx x "XxxxXxxx" xxxx xxxxx xxxx xx .XXX xxxx xxxx'x xxxx xx xxx xxxxxx xxxx xxx xxxxxx XxxxXxxxXxxxxx. Xxx xxxx xxxx xx xxx xxxxxxxxxx xxxxxxx XxxxXxxx xxx XxxxXxxxXxxxxx, xxx Xxxxxxx xx xxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) xxxxx.
+.NET also supports a type named [**DateTime**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx), which is implicitly convertible to a [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx). So you might see a "DateTime" type being used in .NET code that's used to set values that are really DateTimeOffset. For more info on the difference between DateTime and DateTimeOffset, see Remarks in the [**DateTimeOffset**](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) class.
 
-> **Xxxx**&xxxx;&xxxx;Xxxxxxxxxx xxxx xxxx xxxx xxxxxxx xxx'x xx xxx xx x XXXX xxxxxxxxx xxxxxx, xxxxxxx xxx Xxxxxxx Xxxxxxx XXXX xxxxxx xxxxx'x xxxx x xxxxxxxxxx xxxxx xxx xxxxxxxxxx xxxxxxx xx xxxxx xx XxxxXxxx/XxxxXxxxXxxxxx xxxxxxx. Xxx xxxxxxxxx xxx xxxxx xxxxxx xx xxxx. Xxxxxxx xxxxxxxx xxxxxxxxx xx xx xxxxxx x xxxx xxxx'x xxxxxxxxx xx x xxxx xxxxxx xx xx xxx xxxx xxxxxxx, xxxx xxx xxx xxxxxxxx xx x XXXX xxxxxxxxx xxxx xxxxxxxxxx x [\{Binding\} markup extension](../xaml-platform/binding-markup-extension.md) xxxxxxxxxx xxxx xxx xxxxxx xxx xxxx xx xxxx.
+> **Note**&nbsp;&nbsp;Properties that take date objects can't be set as a XAML attribute string, because the Windows Runtime XAML parser doesn't have a conversion logic for converting strings to dates as DateTime/DateTimeOffset objects. You typically set these values in code. Another possible technique is to define a date that's available as a data object or in the data context, then set the property as a XAML attribute that references a [\{Binding\} markup extension](../xaml-platform/binding-markup-extension.md) expression that can access the date as data.
 
 
+## Related topics
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+**For developers (XAML)**
+- [**CalendarView class**](https://msdn.microsoft.com/library/windows/apps/dn890052)
+- [**CalendarDatePicker class**](https://msdn.microsoft.com/library/windows/apps/dn950083)
+- [**DatePicker class**](https://msdn.microsoft.com/library/windows/apps/dn298584)
+- [**TimePicker class**](https://msdn.microsoft.com/library/windows/apps/dn299280)
 
-## Xxxxxxx xxxxxx
 
-**Xxx xxxxxxxxxx (XXXX)**
-* [**XxxxxxxxXxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn890052)
-* [**XxxxxxxxXxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn950083)
-* [**XxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298584)
-* [**XxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn299280)
-<!--HONumber=Mar16_HO1-->
+<!--HONumber=Mar16_HO4-->
+
+

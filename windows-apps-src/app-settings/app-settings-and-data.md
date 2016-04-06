@@ -1,22 +1,22 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xxxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxx xxx xxxxxxx xxxxx xxxxxxxx xx xxx xxxx.
-xxxxx: Xxx xxxxxxxx xxx xxxx
-xx.xxxxxxx: XYXYYYXY-YYXY-YYYX-YXYY-YYXXXYYXYYYY
-xxxxx: Xxx xxxxxxxx xxx xxxx
-xxxxxxxx: xxxxxx.xxx
+Description: このセクションでは、アプリ設定を示し、その設定をアプリ データとして格納するためのユーザー エクスペリエンス ガイドラインを取り上げます。
+title: アプリ設定とデータ
+ms.assetid: E7F312F7-54D8-411F-8D92-92FBB95C2463
+label: アプリ設定とデータ
+template: detail.hbs
 ---
 
-# Xxx xxxxxxxx xxx xxxx
+# アプリの設定とデータ
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
-Xxxx xxxxxxx xxxxxxxx xxxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxx xxx xxxxxxx xxxxx xxxxxxxx xx xxx xxxx.
+このセクションでは、アプリ設定を示し、その設定をアプリ データとして格納するためのユーザー エクスペリエンス ガイドラインを取り上げます。
 
-Xxx xxxxxxxx xxx xxx xxxx-xxxxxxxxxxxx xxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx. Xxx xxxxxxx, x xxxx xxxxxx xxx xxxxx xxx xxx xxxx xxxxxxx xxxxx xxxx xxxxxxx xx xxxxxxx xx xxx xxxx xxxxxxx xx xxxxxxx xx xxx xxxxxx.
+アプリ設定は、ユニバーサル Windows プラットフォーム (UWP) アプリの中で、ユーザーによるカスタマイズが可能な部分です。 たとえば、ニュース リーダー アプリで、表示するニュース ソースや画面に表示する記事の数をユーザーが指定できるようにすることが考えられます。
 
-Xxx xxxx xx xxxx xxxx xxx xxx xxxxxx xxxxxxx xxx xxxxxxx. Xx xxxxxxxx xxxxxxx xxxxx, xxx xxxxxxxx, xxxxxxxxx xxxxxxx (xxxx xx xxx xxxxxxxxxx xxxxxxxxxxx xx x xxxxxxxxxx xxx), xxx xxxxx xxxxxxxx. Xxx xxxx xx xxxx xx xxx xxxxxxxxx xx xxx xxx xxx xx xxxx xxxxxxxxxx xx xxxx xxx.
-## Xx xxxx xxxxxxx
+アプリ データは、アプリ自体が作成して管理するデータです。 アプリ データには、ランタイム状態、アプリ設定、参照コンテンツ (たとえば、辞書アプリの辞書定義)、その他の設定が含まれます。 アプリ データはアプリの存在に関連付けられ、そのアプリに対して意味を持ちます。
+## このセクションの内容
 <table>
 <colgroup>
 <col width="50%" />
@@ -24,22 +24,26 @@ Xxx xxxx xx xxxx xxxx xxx xxx xxxxxx xxxxxxx xxx xxxxxxx. Xx xxxxxxxx xxxxxxx xx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">記事</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Guidelines](guidelines-for-app-settings.md)</p></td>
-<td align="left"><p>Xxxx xxxxxxxxx xxx xxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxx.</p></td>
+<td align="left"><p>アプリ設定を作成し表示する際のベスト プラクティス。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Store and retrieve app data](store-and-retrieve-app-data.md)</p></td>
-<td align="left"><p>Xxx xx xxxxx xxx xxxxxxxx xxxxx, xxxxxxx, xxx xxxxxxxxx xxx xxxx.</p></td>
+<td align="left"><p>ローカル アプリ データ、ローミング アプリ データ、一時アプリ データの保存方法と取得方法。</p></td>
 </tr>
 </tbody>
 </table>
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,94 +1,73 @@
 ---
-Xxxxxxxxxxx: Xxx Xxxxxxx Xxxx Xxxxxxxxxxxx Xxxxxxxx (XXX) xxxxxxx xxxxx-xxxxx xxxxxxxxxx xx xxxx xxxxx, xxxx, xxxxx, xxx xxx xxxxxxx xxxx xxxxx xxx xxxxx xxxxxxx. Xxxx xxxxxxxx x xxxxxxxxx xx xxxxxxx xxx xxxxxxx xx xxxx xxxxx xx x xxxxx-xxxxxxxxx xxx xxxxxxxxxx xxx.
-xxxxx: Xxxxxxx Xxxx Xxxxxxxxxxxx Xxxxxxxx (XXX) xxxxxxxx
-xx.xxxxxxx: YYYYXYYX-XXYY-YYYY-YXXY-YYYXYXYXXXXX
-xxxxx: XXX
-xxxxxxxx: xxxxxx.xxx
+Description: The Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.
+title: Windows Push Notification Services (WNS) overview
+ms.assetid: 2125B09F-DB90-4515-9AA6-516C7E9ACCCD
+label: TBD
+template: detail.hbs
 ---
 
-# Xxxxxxx Xxxx Xxxxxxxxxxxx Xxxxxxxx (XXX) xxxxxxxx
+# Windows Push Notification Services (WNS) overview
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxx Xxxxxxx Xxxx Xxxxxxxxxxxx Xxxxxxxx (XXX) xxxxxxx xxxxx-xxxxx xxxxxxxxxx xx xxxx xxxxx, xxxx, xxxxx, xxx xxx xxxxxxx xxxx xxxxx xxx xxxxx xxxxxxx. Xxxx xxxxxxxx x xxxxxxxxx xx xxxxxxx xxx xxxxxxx xx xxxx xxxxx xx x xxxxx-xxxxxxxxx xxx xxxxxxxxxx xxx.
+The Windows Push Notification Services (WNS) enables third-party developers to send toast, tile, badge, and raw updates from their own cloud service. This provides a mechanism to deliver new updates to your users in a power-efficient and dependable way.
 
-## <span id="How_it_works">
-            </span>
-            <span id="how_it_works">
-            </span>
-            <span id="HOW_IT_WORKS">
-            </span>Xxx xx xxxxx
+## <span id="How_it_works"></span><span id="how_it_works"></span><span id="HOW_IT_WORKS"></span>How it works
 
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xxxxxxxx xxxx xxxx xxx xxxxxxx x xxxx xxxxxxxxxxxx. Xx xxxxxxxx xxxxx xxxxx:
+The following diagram shows the complete data flow for sending a push notification. It involves these steps:
 
-1.  Xxxx xxx xxxxxxxx x xxxx xxxxxxxxxxxx xxxxxxx xxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx.
-2.  Xxxxxxx xxxx XXX xx xxxxxx x xxxxxxxxxxxx xxxxxxx. Xxxx xxxxxxx xx xxxxxxxx xx xxx xxxxxxx xxxxxx xx xxx xxxx xx x Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX).
-3.  Xxx xxxxxxxxxxxx xxxxxxx XXX xx xxxxxxxx xx Xxxxxxx xx xxxx xxx.
-4.  Xxxx xxx xxxxx xxx XXX xx xxxx xxx xxxxx xxxxxxx. Xxx xxxx xxxxx xxx XXX xx xxxx xxx xxxxx xxxxxxx xx xxxx xxx xxx xxxxxx xxx XXX xxxx xxx xxxx xxxxxxxxxxxxx. Xxx XXX xx xx xxxxxxxxx xxxxxxx xxxx xxx xxx xxx xxxx xxx xxxxxxx; xx'x xxxx xxxxxxxxxxxxxx xx xxxxxxxxx xxxx xxxxxxxxx xxxx xxxx xxx xxxxxx xxx xxxxxxxxx.
-5.  Xxxx xxxx xxxxx xxxxxxx xxx xx xxxxxx xx xxxx, xx xxxxxxxx XXX xxxxx xxx xxxxxxx XXX. Xxxx xx xxxx xx xxxxxxx xx XXXX XXXX xxxxxxx, xxxxxxxxx xxx xxxxxxxxxxxx xxxxxxx, xxxx Xxxxxx Xxxxxxx Xxxxx (XXX). Xxxx xxxx xxxxxxxx xxxxxxxxxxxxxx.
-6.  XXX xxxxxxxx xxx xxxxxxx xxx xxxxxx xxx xxxxxxxxxxxx xx xxx xxxxxxxxxxx xxxxxx.
+1.  Your app requests a push notification channel from the Universal Windows Platform.
+2.  Windows asks WNS to create a notification channel. This channel is returned to the calling device in the form of a Uniform Resource Identifier (URI).
+3.  The notification channel URI is returned by Windows to your app.
+4.  Your app sends the URI to your own cloud service. You then store the URI on your own cloud service so that you can access the URI when you send notifications. The URI is an interface between your own app and your own service; it's your responsibility to implement this interface with safe and secure web standards.
+5.  When your cloud service has an update to send, it notifies WNS using the channel URI. This is done by issuing an HTTP POST request, including the notification payload, over Secure Sockets Layer (SSL). This step requires authentication.
+6.  WNS receives the request and routes the notification to the appropriate device.
 
-![xxx xxxx xxxx xxxxxxx xxx xxxx xxxxxxxxxxxx](images/wns-diagram-01.png)
+![wns data flow diagram for push notification](images/wns-diagram-01.png)
 
-## <span id="registering_wit_store">
-            </span>
-            <span id="REGISTERING_WIT_STORE">
-            </span>Xxxxxxxxxxx xxxx xxx xxx xxxxxxxxx xxx xxxxxxxxxxx xxx xxxx xxxxx xxxxxxx
+## <span id="registering_wit_store"></span><span id="REGISTERING_WIT_STORE"></span>Registering your app and receiving the credentials for your cloud service
 
 
-Xxxxxx xxx xxx xxxx xxxxxxxxxxxxx xxxxx XXX, xxxx xxx xxxx xx xxxxxxxxxx xxxx xxx Xxxxx Xxxxxxxxx. Xxxx xxxx xxxxxxx xxx xxxx xxxxxxxxxxx xxx xxxx xxx xxxx xxxx xxxxx xxxxxxx xxxx xxx xx xxxxxxxxxxxxxx xxxx XXX. Xxxxx xxxxxxxxxxx xxxxxxx xx x Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX) xxx x xxxxxx xxx. Xx xxxxxxx xxxx xxxxxxxxxxxx, xx xx xxx [Xxxxxxx Xxx Xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=511146) xxx xxxxxx **Xxxxxxxxx**.
+Before you can send notifications using WNS, your app must be registered with the Store Dashboard. This will provide you with credentials for your app that your cloud service will use in authenticating with WNS. These credentials consist of a Package Security Identifier (SID) and a secret key. To perform this registration, go to the [Windows Dev Center](http://go.microsoft.com/fwlink/p/?linkid=511146) and select **Dashboard**.
 
-Xxxx xxx xxx xxx xxx xxx xx xxxxxxxxxxx xxx xxx xxxxx xxxxxxx. Xxxxx xxxxxxxxxxx xxxxxx xx xxxx xx xxxx xxxxxxxxxxxxx xx xxx xxxxx xxx.
+Each app has its own set of credentials for its cloud service. These credentials cannot be used to send notifications to any other app.
 
-Xxx xxxx xxxxxxx xx xxx xx xxxxxxxx xxxx xxx, xxxxxx xxx [Xxx xx xxxxxxxxxxxx xxxx xxx Xxxxxxx Xxxxxxxxxxxx Xxxxxxx (XXX)](https://msdn.microsoft.com/library/windows/apps/hh465407).
+For more details on how to register your app, please see [How to authenticate with the Windows Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407).
 
-## <span id="Requesting_a_notification_channel">
-            </span>
-            <span id="requesting_a_notification_channel">
-            </span>
-            <span id="REQUESTING_A_NOTIFICATION_CHANNEL">
-            </span>Xxxxxxxxxx x xxxxxxxxxxxx xxxxxxx
+## <span id="Requesting_a_notification_channel"></span><span id="requesting_a_notification_channel"></span><span id="REQUESTING_A_NOTIFICATION_CHANNEL"></span>Requesting a notification channel
 
 
-Xxxx xx xxx xxxx xx xxxxxxx xx xxxxxxxxx xxxx xxxxxxxxxxxxx xxxx, xx xxxx xxxxx xxxxxxx x xxxxxxxxxxxx xxxxxxx xxxxxxx xxx [**XxxxxxXxxxXxxxxxxxxxxxXxxxxxxXxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241285). Xxx x xxxx xxxxxxxxxx xxx xxxxxxx xxxx, xxx [Xxx xx xxxxxxx, xxxxxx, xxx xxxx x xxxxxxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465412). Xxxx XXX xxxxxxx x xxxxxxx XXX xxxx xx xxxxxxxx xxxxxx xx xxx xxxxxxx xxxxxxxxxxx xxx xxx xxxx, xxx xxxxxxx xxxxx xxx xxxxxxxxxxxx xxxxx xxx xx xxxx.
+When an app that is capable of receiving push notifications runs, it must first request a notification channel through the [**CreatePushNotificationChannelForApplicationAsync**](https://msdn.microsoft.com/library/windows/apps/br241285). For a full discussion and example code, see [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412). This API returns a channel URI that is uniquely linked to the calling application and its tile, and through which all notification types can be sent.
 
-Xxxxx xxx xxx xxx xxxxxxxxxxxx xxxxxxx x xxxxxxx XXX, xx xxxxx xx xx xxx xxxxx xxxxxxx, xxxxxxxx xxxx xxx xxx-xxxxxxxx xxxxxxxx xxxx xxxxxx xx xxxxxxxxxx xxxx xxxx XXX.
+After the app has successfully created a channel URI, it sends it to its cloud service, together with any app-specific metadata that should be associated with this URI.
 
-### <span id="important_notes1">
-            </span>
-            <span id="IMPORTANT_NOTES1">
-            </span>Xxxxxxxxx xxxxx
+### <span id="important_notes1"></span><span id="IMPORTANT_NOTES1"></span>Important notes
 
--   Xx xx xxx xxxxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxx XXX xxx xx xxx xxxx xxxxxx xxxxxx xxx xxxx. Xx xxxxxx xxxx xxx xxx xxxxxxxx x xxx xxxxxxx xxxxx xxxx xx xxxx xxx xxxxxxx xxx xxxxxxx xxxx xxx XXX xxxxxxx. Xxx xxxxxxxxx xxxxxx xxxxx xxxxxx xxx xxxxxxx XXX xxx xxxxxx xxxxxxxx xx xx x xxxxx-xxx xxxxxx. Xx xxxx xxxx, xxxxxxx XXXx xxxxxx xxxxx YY xxxx. Xx xxxx Xxxxxxx YY xxx xxxx xxxxxxxxxxxx xxxxx xxx xxxxxxx xx xxx xxxxxxxxxx xxxx xxx xxx xxxxxxxx xxx [Xxxx xxx xxxxxxxx xxxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231476) xxx Xxxxxxx Y.Y xxx xx-xxx xxx xxxxxx xxxx xxx/xx xxx xxxxxxx xx xxxxxxxxxxxx.
--   Xxx xxxxxxxxx xxxxxxx xxx xxxxx xxxxxxx xxx xxx xxxxxx xxx xx xxxxxxxxxxx xx xxx, xxx xxxxxxxxx. Xx xxxxxxxxx xxxx xxx xxx xx xxxxxxx xx xxxxxxxxxxxxxx xxxxxxx xxxx xxx xxx xxxxxxx xxx xxxxxxxx xxxx xxxx x xxxxxx xxxxxxxx xxxx xx XXXXX.
--   Xx xx xxxxxxxxx xxxx xxx xxxxx xxxxxxx xxxxxx xxxxxxx xxxx xxx xxxxxxx XXX xxxx xxx xxxxxx "xxxxxx.xxxxxxx.xxx". Xxx xxxxxxx xxxxxx xxxxx xxxx xxxxxxxxxxxxx xx x xxxxxxx xx xxx xxxxx xxxxxx. Xx xxx xxxxxxxx xxx xxxx xxx xx xxxx xxxxxxxxxxx, x xxxxxxxxx xxxxxxxx xxxxx xxxxxx x xxxxxxx XXX xx xxxxx XXX. Xxxxxxx xxxxxxxxxx xxx xxxxxx, xxxx xxxxx xxxxxxx xxxxx xx xxxxxxxxxxx xxxxxxxx xxxxxxxxxxx xx xxxx xxxxxxxx xxxxxxxxxxx.
--   Xx xxxx xxxxx xxxxxxx xxxxxxxx xx xxxxxxx x xxxxxxxxxxxx xx xx xxxxxxx xxxxxxx, XXX xxxx xxxxxx [xxxxxxxx xxxx YYY](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes). Xx xxxxxxxx xx xxxx xxxx, xxxx xxxxxxx xxxxxx xx xxxxxx xxxxxxx xx xxxx xxxxxxxxxxxxx xx xxxx XXX.
+-   We do not guarantee that the notification channel URI for an app will always remain the same. We advise that the app requests a new channel every time it runs and updates its service when the URI changes. The developer should never modify the channel URI and should consider it as a black-box string. At this time, channel URIs expire after 30 days. If your Windows 10 app will periodically renew its channel in the background then you can download the [Push and periodic notifications sample](http://go.microsoft.com/fwlink/p/?linkid=231476) for Windows 8.1 and re-use its source code and/or the pattern it demonstrates.
+-   The interface between the cloud service and the client app is implemented by you, the developer. We recommend that the app go through an authentication process with its own service and transmit data over a secure protocol such as HTTPS.
+-   It is important that the cloud service always ensures that the channel URI uses the domain "notify.windows.com". The service should never push notifications to a channel on any other domain. If the callback for your app is ever compromised, a malicious attacker could submit a channel URI to spoof WNS. Without inspecting the domain, your cloud service could be potentially disclose information to this attacker unknowingly.
+-   If your cloud service attempts to deliver a notification to an expired channel, WNS will return [response code 410](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#WNSResponseCodes). In response to that code, your service should no longer attempt to send notifications to that URI.
 
-## <span id="Authenticating_your_cloud_service">
-            </span>
-            <span id="authenticating_your_cloud_service">
-            </span>
-            <span id="AUTHENTICATING_YOUR_CLOUD_SERVICE">
-            </span>Xxxxxxxxxxxxxx xxxx xxxxx xxxxxxx
+## <span id="Authenticating_your_cloud_service"></span><span id="authenticating_your_cloud_service"></span><span id="AUTHENTICATING_YOUR_CLOUD_SERVICE"></span>Authenticating your cloud service
 
 
-Xx xxxx x xxxxxxxxxxxx, xxx xxxxx xxxxxxx xxxx xx xxxxxxxxxxxxx xxxxxxx XXX. Xxx xxxxx xxxx xx xxxx xxxxxxx xxxxxx xxxx xxx xxxxxxxx xxxx xxx xxxx xxx Xxxxxxx Xxxxx Xxxxxxxxx. Xxxxxx xxx xxxxxxxxxxxx xxxxxxx, xxxx xxx xx xxxxx x Xxxxxxx xxxxxxxx xxxxxxxxxx (XXX) xxx x xxxxxx xxx. Xxxx xxxxxxxxxxx xx xxxx xx xxxx xxxxx xxxxxxx xx xxxxxxxxxxxx xxxx XXX.
+To send a notification, the cloud service must be authenticated through WNS. The first step in this process occurs when you register your app with the Windows Store Dashboard. During the registration process, your app is given a Package security identifier (SID) and a secret key. This information is used by your cloud service to authenticate with WNS.
 
-Xxx XXX xxxxxxxxxxxxxx xxxxxx xx xxxxxxxxxxx xxxxx xxx xxxxxx xxxxxxxxxxx xxxxxxx xxxx xxx [XXxxx Y.Y](http://go.microsoft.com/fwlink/p/?linkid=226787) xxxxxxxx. Xxx xxxxx xxxxxxx xxxxxxxxxxxxx xxxx XXX xx xxxxxxxxx xxx xxxxxxxxxxx (Xxxxxxx XXX xxx xxxxxx xxx). Xx xxxxxx, xx xxxxxxxx xx xxxxxx xxxxx. Xxxx xxxxxx xxxxx xxxxxx x xxxxx xxxxxxx xx xxxx x xxxxxxxxxxxx. Xxx xxxxx xx xxxxxxxx xxxx xxxxx xxxxxxxxxxxx xxxxxxx xxxx xx xxx XXX.
+The WNS authentication scheme is implemented using the client credentials profile from the [OAuth 2.0](http://go.microsoft.com/fwlink/p/?linkid=226787) protocol. The cloud service authenticates with WNS by providing its credentials (Package SID and secret key). In return, it receives an access token. This access token allows a cloud service to send a notification. The token is required with every notification request sent to the WNS.
 
-Xx x xxxx xxxxx, xxx xxxxxxxxxxx xxxxx xx xx xxxxxxx:
+At a high level, the information chain is as follows:
 
-1.  Xxx xxxxx xxxxxxx xxxxx xxx xxxxxxxxxxx xx XXX xxxx XXXXX xxxxxxxxx xxx XXxxx Y.Y xxxxxxxx. Xxxx xxxxxxxxxxxxx xxx xxxxxxx xxxx XXX.
-2.  XXX xxxxxxx xx xxxxxx xxxxx xx xxx xxxxxxxxxxxxxx xxx xxxxxxxxxx. Xxxx xxxxxx xxxxx xx xxxx xx xxx xxxxxxxxxx xxxxxxxxxxxx xxxxxxxx xxxxx xx xxxxxxx.
+1.  The cloud service sends its credentials to WNS over HTTPS following the OAuth 2.0 protocol. This authenticates the service with WNS.
+2.  WNS returns an access token if the authentication was successful. This access token is used in all subsequent notification requests until it expires.
 
-![xxx xxxxxxx xxx xxxxx xxxxxxx xxxxxxxxxxxxxx](images/wns-diagram-02.png)
+![wns diagram for cloud service authentication](images/wns-diagram-02.png)
 
-Xx xxx xxxxxxxxxxxxxx xxxx XXX, xxx xxxxx xxxxxxx xxxxxxx xx XXXX xxxxxxx xxxx Xxxxxx Xxxxxxx Xxxxx (XXX). Xxx xxxxxxxxxx xxx xxxxxxxx xx xxx "xxxxxxxxxxx/x-xxx-xxx-xxxxxxxxxx" xxxxxx. Xxxxxx xxxx Xxxxxxx XXX xx xxx "xxxxxx\_xx" xxxxx xxx xxxx xxxxxx xxx xx xxx "xxxxxx\_xxxxxx" xxxxx. Xxx xxxxxx xxxxxxx, xxx xxx [xxxxxx xxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request) xxxxxxxxx.
+In the authentication with WNS, the cloud service submits an HTTP request over Secure Sockets Layer (SSL). The parameters are supplied in the "application/x-www-for-urlencoded" format. Supply your Package SID in the "client\_id" field and your secret key in the "client\_secret" field. For syntax details, see the [access token request](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#access_token_request) reference.
 
-**Xxxx**  Xxxx xx xxxx xx xxxxxxx, xxx xxx-xxx-xxxxx xxxx xxxx xxx xxx xxxxxxxxxxxx xxx xx xxxx xxx xxxx.
+**Note**  This is just an example, not cut-and-paste code that you can successfully use in your own code.
 
  
 
@@ -101,9 +80,9 @@ Xx xxx xxxxxxxxxxxxxx xxxx XXX, xxx xxxxx xxxxxxx xxxxxxx xx XXXX xxxxxxx xxxx X
  grant_type=client_credentials&client_id=ms-app%3a%2f%2fS-1-15-2-2972962901-2322836549-3722629029-1345238579-3987825745-2155616079-650196962&client_secret=Vex8L9WOFZuj95euaLrvSH7XyoDhLJc7&scope=notify.windows.com
 ```
 
-Xxx XXX xxxxxxxxxxxxx xxx xxxxx xxxxxxx xxx, xx xxxxxxxxxx, xxxxx x xxxxxxxx xx "YYY XX". Xxx xxxxxx xxxxx xx xxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx xx xxx xxxx xx xxx XXXX xxxxxxxx, xxxxx xxx "xxxxxxxxxxx/xxxx" xxxxx xxxx. Xxxxx xxxx xxxxxxx xxx xxxxxxxx xxx xxxxxx xxxxx, xxx xxx xxxxx xx xxxx xxxxxxxxxxxxx.
+The WNS authenticates the cloud service and, if successful, sends a response of "200 OK". The access token is returned in the parameters included in the body of the HTTP response, using the "application/json" media type. After your service has received the access token, you are ready to send notifications.
 
-Xxx xxxxxxxxx xxxxxxx xxxxx x xxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxx, xxxxxxxxx xxx xxxxxx xxxxx. Xxx xxxxxx xxxxxxx, xxx [Xxxx xxxxxxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465435).
+The following example shows a successful authentication response, including the access token. For syntax details, see [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435).
 
 ``` syntax
  HTTP/1.1 200 OK   
@@ -117,33 +96,25 @@ Xxx xxxxxxxxx xxxxxxx xxxxx x xxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxx, xxxxxxxxx xxx 
  }
 ```
 
-### <span id="important_notes2">
-            </span>
-            <span id="IMPORTANT_NOTES2">
-            </span>Xxxxxxxxx xxxxx
+### <span id="important_notes2"></span><span id="IMPORTANT_NOTES2"></span>Important notes
 
--   Xxx XXxxx Y.Y xxxxxxxx xxxxxxxxx xx xxxx xxxxxxxxx xxxxxxx xxxxx xxxxxxx XYY.
--   Xxx XXxxx Xxxxxxx xxx Xxxxxxxx (XXX) xxxx xxx xxxx "xxxxxx" xx xxxxx xx xxx xxxxx xxxxxxx.
--   Xxxxx xxxxx xx xxxxxxx xx xxxx xxxxxxxxx xxxx xxx XXxxx xxxxx xx xxxxxxxxx.
--   Xxx xxxxxx xxxxx xxx xx xxxxxx xxx xxxxxxxx xxxxxxxxxxxx xxxxxxxx. Xxxx xxxxxx xxx xxxxx xxxxxxx xx xxxxxxxxxxxx xxxx xxxx xx xxxx xxxx xxxxxxxxxxxxx. Xxxxxxx, xxxx xxx xxxxxx xxxxx xxxxxxx, xxx xxxxx xxxxxxx xxxx xxxxxxxxxxxx xxxxx xx xxxxxxx x xxx xxxxxx xxxxx.
+-   The OAuth 2.0 protocol supported in this procedure follows draft version V16.
+-   The OAuth Request for Comments (RFC) uses the term "client" to refer to the cloud service.
+-   There might be changes to this procedure when the OAuth draft is finalized.
+-   The access token can be reused for multiple notification requests. This allows the cloud service to authenticate just once to send many notifications. However, when the access token expires, the cloud service must authenticate again to receive a new access token.
 
-## <span id="Sending_a_notification">
-            </span>
-            <span id="sending_a_notification">
-            </span>
-            <span id="SENDING_A_NOTIFICATION">
-            </span>Xxxxxxx x xxxxxxxxxxxx
+## <span id="Sending_a_notification"></span><span id="sending_a_notification"></span><span id="SENDING_A_NOTIFICATION"></span>Sending a notification
 
 
-Xxxxx xxx xxxxxxx XXX, xxx xxxxx xxxxxxx xxx xxxx x xxxxxxxxxxxx xxxxxxxx xx xxx xx xxxxxx xxx xxx xxxx.
+Using the channel URI, the cloud service can send a notification whenever it has an update for the user.
 
-Xxx xxxxxx xxxxx xxxxxxxxx xxxxx xxx xx xxxxxx xxx xxxxxxxx xxxxxxxxxxxx xxxxxxxx; xxx xxxxx xxxxxx xx xxx xxxxxxxx xx xxxxxxx x xxx xxxxxx xxxxx xxx xxxxx xxxxxxxxxxxx. Xx xxx xxxxxx xxxxx xxx xxxxxxx, xxx xxxxxxxxxxxx xxxxxxx xxxx xxxxxx xx xxxxx. Xx xxxxxxxxxxx xxxx xxx xx xxx xxx xx xx-xxxx xxxx xxxxxxxxxxxx xxxx xxxx xxxx xx xxx xxxxxx xxxxx xx xxxxxxxx. Xx xxx xxxxxxxxx xxxx xxxxx, xxx xxxx xxxx xx xxxxxxx x xxx xxxxxx xxxxx xxx xxxxxx xxx xxxxxxxxxxxx. Xxx xxx xxxxx xxxxx xxxx, xxx [Xxxx xxxxxxxxxxxx xxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/hh465435).
+The access token described above can be reused for multiple notification requests; the cloud server is not required to request a new access token for every notification. If the access token has expired, the notification request will return an error. We recommended that you do not try to re-send your notification more than once if the access token is rejected. If you encounter this error, you will need to request a new access token and resend the notification. For the exact error code, see [Push notification response codes](https://msdn.microsoft.com/library/windows/apps/hh465435).
 
-1.  Xxx xxxxx xxxxxxx xxxxx xx XXXX XXXX xx xxx xxxxxxx XXX. Xxxx xxxxxxx xxxx xx xxxx xxxx XXX xxx xxxxxxxx xxx xxxxxxxxx xxxxxxx xxx xxx xxxxxxxxxxxx xxxxxxx. Xxx xxxxxxxxxxxxx xxxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxx xxxxx xxx xxxxxxxxxxxxx.
+1.  The cloud service makes an HTTP POST to the channel URI. This request must be made over SSL and contains the necessary headers and the notification payload. The authorization header must include the acquired access token for authorization.
 
-    Xx xxxxxxx xxxxxxx xx xxxxx xxxx. Xxx xxxxxx xxxxxxx, xxx [Xxxx xxxxxxxxxxxx xxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/hh465435).
+    An example request is shown here. For syntax details, see [Push notification response codes](https://msdn.microsoft.com/library/windows/apps/hh465435).
 
-    Xxx xxxxxxx xx xxxxxxxxx xxx xxxxxxxxxxxx xxxxxxx, xxx [Xxxxxxxxxx: Xxxxxxx x xxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252). Xxx xxxxxxx xx x xxxx, xxxxx, xx xxxxx xxxx xxxxxxxxxxxx xx xxxxxxxx xx XXX xxxxxxx xxxx xxxxxxx xx xxxxx xxxxxxxxxx xxxxxxx [Xxxxxxxx xxxxx xxxxxx](tiles-and-notifications-adaptive-tiles-schema.md) xx [Xxxxxx xxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/br212853). Xxx xxxxxxx xx x xxx xxxxxxxxxxxx xxxx xxx xxxx x xxxxxxxxx xxxxxxxxx. Xx xx xxxxxxxx xxx-xxxxxxx.
+    For details on composing the notification payload, see [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252). The payload of a tile, toast, or badge push notification is supplied as XML content that adheres to their respective defined [Adaptive tiles schema](tiles-and-notifications-adaptive-tiles-schema.md) or [Legacy tiles schema](https://msdn.microsoft.com/library/windows/apps/br212853). The payload of a raw notification does not have a specified structure. It is strictly app-defined.
 
     ``` syntax
      POST https://cloud.notify.windows.com/?token=AQE%bU%2fSjZOCvRjjpILow%3d%3d HTTP/1.1
@@ -157,58 +128,47 @@ Xxx xxxxxx xxxxx xxxxxxxxx xxxxx xxx xx xxxxxx xxx xxxxxxxx xxxxxxxxxxxx xxxxxxx
      ....
     ```
 
-2.  XXX xxxxxxxx xx xxxxxxxx xxxx xxx xxxxxxxxxxxx xxx xxxx xxxxxxxx xxx xxxx xx xxxxxxxxx xx xxx xxxx xxxxxxxxx xxxxxxxxxxx. Xxxxxxx, XXX xxxx xxx xxxxxxx xxx-xx-xxx xxxxxxxxxxxx xxxx xxxx xxxxxxxxxxxx xxx xxxx xxxxxxxx xx xxx xxxxxx xx xxxxxxxxxxx.
+2.  WNS responds to indicate that the notification has been received and will be delivered at the next available opportunity. However, WNS does not provide end-to-end confirmation that your notification has been received by the device or application.
 
-Xxxx xxxxxxx xxxxxxxxxxx xxx xxxx xxxx:
+This diagram illustrates the data flow:
 
-![xxx xxxxxxx xxx xxxxxxx x xxxxxxxxxxxx](images/wns-diagram-03.png)
+![wns diagram for sending a notification](images/wns-diagram-03.png)
 
-### <span id="important_notes3">
-            </span>
-            <span id="IMPORTANT_NOTES3">
-            </span>Xxxxxxxxx xxxxx
+### <span id="important_notes3"></span><span id="IMPORTANT_NOTES3"></span>Important notes
 
--   XXX xxxx xxx xxxxxxxxx xxx xxxxxxxxxxx xx xxxxxxx xx x xxxxxxxxxxxx.
--   Xxxxxxxxxxxxx xxxxxx xxxxx xxxxxxx xxxxxxxxxxxx xx xxxxxxxxx xxxx.
--   Xx xxxx x xxxxxxxxxxxx, xxx xxxxx xxxxxxx xxxx xxxxx xxxxxxxxxxxx xxxx XXX xxx xxxxxxx xx xxxxxx xxxxx.
--   Xx xxxxxx xxxxx xxxx xxxxxx x xxxxx xxxxxxx xx xxxx xxxxxxxxxxxxx xx xxx xxxxxx xxx xxx xxxxx xxx xxxxx xxx xxxxxxx. Xxx xxxxxx xxxxx xxxxxx xx xxxx xx xxxx xxxxxxxxxxxxx xxxxxx xxxxxxxx xxxx. Xxxxxxxxx, xx xxxx xxxxx xxxxxxx xxxxxxxx xxxxxxxx xxxx, xx xxxx xxxxxxx xxx xxxxxxx xxxxxx xxxxx xxx xxx xxx xxxx xxxxxxx x xxxxxxxxxxxx xx xxxx xxxxxxx XXX.
--   Xxxx xxx xxxxxx xx xxxxxxx, xx xxxxxxx XXX xxxx xxxxx xx xx xxxx xxxx xxxxxxxxxxxxx (xx xxxxxxx xx xxxxxxx; xxxxxxxxx, xxx xxxx xxxxxxxxxxxx) xxx xxx xxxxx xxxxxxxxxxxx xxx xxxx xxxxxxx XXX, xxx xx xxx xxxxxxxxxxxxx. Xxxx xxxxxxx xxxxxxx xxxxxxxx xxx xx xxxxxxx xxxxxxx xxx [X-XXX-Xxxxx-Xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache). Xxxx xxxx xxxxx xxxxxxxxxxxxx xxx xxxxx xxxxxx xxxx xxx xxxxxx xx xxxxxxx.
--   Xx xxxxxxxxx xxxxx xxx xxxxxxxxxxxx xxxxxxx xx xxxxxxxxxxxx xx xxx xxxx, XXX xxxxxxxxxx xxxx xxx xxxxx xxxxxxx xxxxxxxxxxx xxxx xxxxx xxxxxxx xxxx xxxxx xxx xxxxxxxx. Xxxxxxxx xx xxxx xxxxxxxx xxxxxxx xxxxxx xxxxx xxxx xxxxxxx, xxxxxxx xxxxxxxxxxxxx xxxxxxxxxxx, xxx xxxxxxx xxxxxxxxxxxxx, xx xxxxxx. Xx xx xxxxxxxxxxx, xxx xxx xxxx xxxxxxxxx xx xxxxx xxx xxxx xxxxxxx xxxxxx xx xxxxxxxxxx xxxxxxxxx xx x xxxxx xxxxxx xx xxxx xxxxx; xxx xxxxxxx, xxxxxxx, xxxxx, xxx xxxx xxxxxxx. XXX xxxxxxxxxx xxxxxxx xxxx xxx xxxxxxxxx xx xxxxx xxxxxxx xxxxxx xx xx xxxx xxx xxxxx YY xxxxxxx. Xxx xxx xxxx xx XXX xxx xxxxxxxxx xxxx xxxxxxxx xxxxxxx xxxxxxx xx xx xxxxxxx.
+-   WNS does not guarantee the reliability or latency of a notification.
+-   Notifications should never include confidential or sensitive data.
+-   To send a notification, the cloud service must first authenticate with WNS and receive an access token.
+-   An access token only allows a cloud service to send notifications to the single app for which the token was created. One access token cannot be used to send notifications across multiple apps. Therefore, if your cloud service supports multiple apps, it must provide the correct access token for the app when pushing a notification to each channel URI.
+-   When the device is offline, by default WNS will store up to five tile notifications (if queuing is enabled; otherwise, one tile notification) and one badge notification for each channel URI, and no raw notifications. This default caching behavior can be changed through the [X-WNS-Cache-Policy header](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_cache). Note that toast notifications are never stored when the device is offline.
+-   In scenarios where the notification content is personalized to the user, WNS recommends that the cloud service immediately send those updates when those are received. Examples of this scenario include social media feed updates, instant communication invitations, new message notifications, or alerts. As an alternative, you can have scenarios in which the same generic update is frequently delivered to a large subset of your users; for example, weather, stock, and news updates. WNS guidelines specify that the frequency of these updates should be at most one every 30 minutes. The end user or WNS may determine more frequent routine updates to be abusive.
 
-## <span id="expiry">
-            </span>
-            <span id="EXPIRY">
-            </span>Xxxxxxxxxx xx xxxx xxx xxxxx xxxxxxxxxxxxx
+## <span id="expiry"></span><span id="EXPIRY"></span>Expiration of tile and badge notifications
 
 
-Xx xxxxxxx, xxxx xxx xxxxx xxxxxxxxxxxxx xxxxxx xxxxx xxxx xxxxx xxxxx xxxxxxxxxx. Xxxx x xxxxxxxxxxxx xxxxxxx, xxx xxxxxxx xx xxxxxxx xxxx xxx xxxx xx xxxxx xxx xx xx xxxxxx xxxxx xx xxx xxxx. Xx'x x xxxx xxxxxxxx xx xxx xx xxxxxxxxxx (xxxxx x xxxx xxxx xxxxx xxxxx xxx xxxx xxx) xx xxx xxxx xxx xxxxx xxxxxxxxxxxxx xx xxxx xxxx xxxx'x xxxxxxx xxxxx'x xxxxxxx xxxxxx xxxx xx xx xxxxxxxx. Xx xxxxxxxx xxxxxxxxxx xxxx xx xxxxxxxxx xxx xxxxxxx xxxx x xxxxxxx xxxxxxxx. Xxxx xxxx xxxxxxx xxx xxxxxxx xx xxxxx xxxxxxx xx xxxx xxxxx xxxxxxx xxxxx xxxxxxx xxxxxxxxxxxxx, xx xx xxx xxxx xxxxxxxxxxx xxxx xxx xxxxxxx xxx xx xxxxxxxx xxxxxx.
+By default, tile and badge notifications expire three days after being downloaded. When a notification expires, the content is removed from the tile or queue and is no longer shown to the user. It's a best practice to set an expiration (using a time that makes sense for your app) on all tile and badge notifications so that your tile's content doesn't persist longer than it is relevant. An explicit expiration time is essential for content with a defined lifespan. This also assures the removal of stale content if your cloud service stops sending notifications, or if the user disconnects from the network for an extended period.
 
-Xxxx xxxxx xxxxxxx xxx xxx xx xxxxxxxxxx xxx xxxx xxxxxxxxxxxx xx xxxxxxx xxx X-XXX-Xxxxxxx XXXX xxxxxx xx xxxxxxx xxx xxxx (xx xxxxxxx) xxxx xxxx xxxxxxxxxxxx xxxx xxxxxx xxxxx xxxxx xx xx xxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxx xxxxxxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl).
+Your cloud service can set an expiration for each notification by setting the X-WNS-Expires HTTP header to specify the time (in seconds) that your notification will remain valid after it is sent. For more information, see [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_ttl).
 
-Xxx xxxxxxx, xxxxxx x xxxxx xxxxxx'x xxxxxx xxxxxxx xxx, xxx xxx xxx xxx xxxxxxxxxx xxx x xxxxx xxxxx xxxxxx xx xxxxx xxxx xx xxxx xxxxxxx xxxxxxxx (xxxx xx xxx xxxx xxxxx xxxxxxx xx xxx xxx xxxxxxx xxxxxxxxxxxxx xxxxx xxxx-xxxx). Xx xxxxxxx xxxxxxx, x xxxx xxx xxxxx xxxxxxxxx xxxx xxx xxx xx xx xxxxxxxxxxx xxxxxxxxxx xxxx xxx x xxxxx xxxx xxxx xxxxxx.
+For example, during a stock market's active trading day, you can set the expiration for a stock price update to twice that of your sending interval (such as one hour after receipt if you are sending notifications every half-hour). As another example, a news app might determine that one day is an appropriate expiration time for a daily news tile update.
 
-## <span id="Push_notifications_and_battery_saver">
-            </span>
-            <span id="push_notifications_and_battery_saver">
-            </span>
-            <span id="PUSH_NOTIFICATIONS_AND_BATTERY_SAVER">
-            </span>Xxxx xxxxxxxxxxxxx xxx xxxxxxx xxxxx
+## <span id="Push_notifications_and_battery_saver"></span><span id="push_notifications_and_battery_saver"></span><span id="PUSH_NOTIFICATIONS_AND_BATTERY_SAVER"></span>Push notifications and battery saver
 
 
-Xxxxxxx xxxxx xxxxxxx xxxxxxx xxxx xx xxxxxxxx xxxxxxxxxx xxxxxxxx xx xxx xxxxxx. Xxxxxxx YY xxxx xxx xxxx xxx xxxxxxx xxxxx xx xxxx xx xxxxxxxxxxxxx xxxx xxx xxxxxxx xxxxx xxxxx x xxxxxxxxx xxxxxxxxx. Xxxx xxxxxxx xxxxx xx xx, xxx xxxxxxx xx xxxx xxxxxxxxxxxxx xx xxxxxxxx xx xxxx xxxxxx. Xxx xxxxx xxx x xxxxxx xxxxxxxxxx xx xxxx. Xxx xxxxxxxxx Xxxxxxx YY xxxxxxx xxxxx xxxxxxxx (xxxxx xx xxx **Xxxxxxxx** xxx) xxxxx xxxx xxx xx xxxxxxx xxxx xxxxxxxxxxxxx xxxx xxxx xxxxxxx xxxxx xx xx.
+Battery saver extends battery life by limiting background activity on the device. Windows 10 lets the user set battery saver to turn on automatically when the battery drops below a specified threshold. When battery saver is on, the receipt of push notifications is disabled to save energy. But there are a couple exceptions to this. The following Windows 10 battery saver settings (found in the **Settings** app) allow your app to receive push notifications even when battery saver is on.
 
--   **Xxxxx xxxx xxxxxxxxxxxxx xxxx xxx xxx xxxxx xx xxxxxxx xxxxx**: Xxxx xxxxxxx xxxx xxx xxxx xxxxxxx xxxx xxxxxxxxxxxxx xxxxx xxxxxxx xxxxx xx xx. Xxxx xxxx xxxx xxxxxxx xxxxxxx xxxx xx Xxxxxxx YY xxx xxxxxxx xxxxxxxx (Xxxx, Xxx, Xxxxxxxxxx, xxx Xxxxxxxxx).
--   **Xxxxxx xxxxxxx**: Xxxx xxxxxxx xxxx xxxxxxxx xxxx xxx xx xxx xxxxxxxxxx xxxxx xxxxxxx xxxxx xx xx - xxxxxxxxx xxxxxxxxx xxxx xxxxxxxxxxxxx. Xxxx xxxx xx xxxxxxxxxx xxxxxxxx xx xxx xxxx.
+-   **Allow push notifications from any app while in battery saver**: This setting lets all apps receive push notifications while battery saver is on. Note that this setting applies only to Windows 10 for desktop editions (Home, Pro, Enterprise, and Education).
+-   **Always allowed**: This setting lets specific apps run in the background while battery saver is on - including receiving push notifications. This list is maintained manually by the user.
 
-Xxxxx xx xx xxx xx xxxxx xxx xxxxx xx xxxxx xxx xxxxxxxx, xxx xxx xxx xxxxx xxx xxxxx xx xxxxxxx xxxxx. Xx Xxxxxxx YY, xxx xxx [**XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn966190) xxxxxxxx xx xxxxx xxxxxxx xxxxx xxxxx. Xxxx xxx xxx xxxx xxx xxx [**XxxxxxXxxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn966191) xxxxx xx xxxxxx xxx xxxxxxx xx xxxxxxx xxxxx.
+There is no way to check the state of these two settings, but you can check the state of battery saver. In Windows 10, use the [**EnergySaverStatus**](https://msdn.microsoft.com/library/windows/apps/dn966190) property to check battery saver state. Your app can also use the [**EnergySaverStatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn966191) event to listen for changes to battery saver.
 
-Xx xxxx xxx xxxxxxx xxxxxxx xx xxxx xxxxxxxxxxxxx, xx xxxxxxxxx xxxxxxxxx xxxxx xxxx xxxx xxx xxx xxxxxxx xxxxxxxxxxxxx xxxxx xxxxxxx xxxxx xx xx xxx xx xxxx xx xxxx xxx xxxx xx xxxxxx **xxxxxxx xxxxx xxxxxxxx**. Xxxxx xxx xxxxxxx xxxxx xxxxxxxx XXX xxxxxx xx Xxxxxxx YY, `ms-settings:batterysaver-settings`, xxx xxx xxxxxxx x xxxxxxxxxx xxxx xx xxx Xxxxxxxx xxx.
+If your app depends heavily on push notifications, we recommend notifying users that they may not receive notifications while battery saver is on and to make it easy for them to adjust **battery saver settings**. Using the battery saver settings URI scheme in Windows 10, `ms-settings:batterysaver-settings`, you can provide a convenient link to the Settings app.
 
-**Xxx**   Xxxx xxxxxxxxx xxx xxxx xxxxx xxxxxxx xxxxx xxxxxxxx, xx xxxxxxxxx xxxxxxxxx x xxx xx xxxxxxxx xxx xxxxxxx xx xxx xxxxxx. Xxx xxxxxxx, xxx `dontAskMeAgainBox` xxxxxxxx xx xxx xxxxxxxxx xxxxxxx xxxxxxxx xxx xxxx'x xxxxxxxxxx xx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241622).
+**Tip**   When notifying the user about battery saver settings, we recommend providing a way to suppress the message in the future. For example, the `dontAskMeAgainBox` checkbox in the following example persists the user's preference in [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622).
 
  
 
-Xxxx'x xx xxxxxxx xx xxx xx xxxxx xx xxxxxxx xxxxx xx xxxxxx xx xx Xxxxxxx YY. Xxxx xxxxxxx xxxxxxxx xxx xxxx xxx xxxxxxxx xxx Xxxxxxxx xxx xx **xxxxxxx xxxxx xxxxxxxx**. Xxx `dontAskAgainSetting` xxxx xxx xxxx xxxxxxxx xxx xxxxxxx xx xxxx xxx'x xxxx xx xx xxxxxxxx xxxxx.
+Here's an example of how to check if battery saver is turned on in Windows 10. This example notifies the user and launches the Settings app to **battery saver settings**. The `dontAskAgainSetting` lets the user suppress the message if they don't want to be notified again.
 
 ```CSharp
 using System;
@@ -255,7 +215,7 @@ async public void CheckForEnergySaving()
 }
 ```
 
-Xxxx xx xxx XXXX xxx xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn633972) xxxxxxxx xx xxxx xxxxxxx.
+This is the XAML for the [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972) featured in this example.
 
 ```XAML
 <ContentDialog x:Name="saveEnergyDialog"
@@ -275,29 +235,32 @@ Xxxx xx xxx XXXX xxx xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/
 </ContentDialog>
 ```
 
-**Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxx
+## <span id="related_topics"></span>Related topics
 
 
-* [Xxxx x xxxxx xxxx xxxxxxxxxxxx](tiles-and-notifications-sending-a-local-tile-notification.md)
-* [Xxxxxxxxxx: Xxxxxxx x xxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
-* [Xxx xx xxxxxx x xxxxx xxxxxxx xxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [Xxx xx xxxxxxx, xxxxxx, xxx xxxx x xxxxxxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465412)
-* [Xxx xx xxxxxxxxx xxxxxxxxxxxxx xxx xxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465450)
-* [Xxx xx xxxxxxxxxxxx xxxx xxx Xxxxxxx Xxxx Xxxxxxxxxxxx Xxxxxxx (XXX)](https://msdn.microsoft.com/library/windows/apps/hh465407)
-* [Xxxx xxxxxxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465435)
-* [Xxxxxxxxxx xxx xxxxxxxxx xxx xxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [Xxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh761488)
+* [Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)
+* [Quickstart: Sending a push notification](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252)
+* [How to update a badge through push notifications](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [How to request, create, and save a notification channel](https://msdn.microsoft.com/library/windows/apps/hh465412)
+* [How to intercept notifications for running applications](https://msdn.microsoft.com/library/windows/apps/hh465450)
+* [How to authenticate with the Windows Push Notification Service (WNS)](https://msdn.microsoft.com/library/windows/apps/hh465407)
+* [Push notification service request and response headers](https://msdn.microsoft.com/library/windows/apps/hh465435)
+* [Guidelines and checklist for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [Raw notifications](https://msdn.microsoft.com/library/windows/apps/hh761488)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

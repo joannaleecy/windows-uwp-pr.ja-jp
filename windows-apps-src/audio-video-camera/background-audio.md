@@ -1,135 +1,143 @@
 ---
-xx.xxxxxxx: YYYXYYYY-YYXY-YXYX-YXYY-XXYYYXYYYXXX
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxx xxxxx xx xxx xxxxxxxxxx.
-xxxxx: Xxxxxxxxxx Xxxxx
+ms.assetid: 923D8156-81D3-4A1E-9D02-DB219F600FDB
+description: この記事では、バックグラウンドでオーディオを再生するユニバーサル Windows プラットフォーム (UWP) アプリを作成する方法について説明します。
+title: バックグラウンド オーディオ
 ---
 
-# Xxxxxxxxxx Xxxxx
+# バックグラウンド オーディオ
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxx xxxxx xx xxx xxxxxxxxxx. Xxxx xxxxx xxxx xxxx xxxxx xxx xxxx xxx xxxxxxxxx xxxx xxx, xxxxxxxx xx xxx xxxx xxxxxx, xx xxx xxxxxxxxx xxxx xxxx xxxx xxx xx xxxx xxxxx xxx, xxxx xxx xxx xxxxxxxx xx xxxx xxxxx. Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxxxxx xx x xxxxxxxxxx xxxxx xxx xxx xxx xxxx xxxx xxxxxxxx.
+この記事では、バックグラウンドでオーディオを再生するユニバーサル Windows プラットフォーム (UWP) アプリを作成する方法について説明します。 バックグラウンドでの再生とは、ユーザーがアプリを最小化してホーム画面に戻った後や、それ以外の方法でアプリから離れた後も、アプリでオーディオの再生を続行できることを意味します。 この記事では、バックグラウンド オーディオ アプリの構成要素と、それらの連携のしくみについて説明します。
 
-Xxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxx xxxxxxx:
+バックグラウンド オーディオ再生のシナリオには次のものがあります。
 
--   **Xxxx-xxxxxxx xxxxxxxxx:** Xxx xxxx xxxxxxx xxxxxx xx x xxxxxxxxxx xxx xx xxxxxx xxx xxxxx x xxxxxxxx, xxxxx xxxxx xxx xxxx xxxxxxx xxx xxxxxxxx xx xxxxxxxx xxxxxxx xx xxx xxxxxxxxxx.
+-   **長時間にわたって実行されるプレイリスト:** ユーザーは、フォアグラウンド アプリを一時的に表示し、プレイリストを選んで再生を開始します。その後、プレイリストはバックグラウンドで再生を続行します。
 
--   **Xxxxx xxxx xxxxxxxx:** Xxx xxxx xxxxxxx xxxxxx xx x xxxxxxxxxx xxx xx xxxxx xxxxxxx xxxxx, xxxx xxxxxxxx xx xxxxxxx xxxx xxx xxxxx xxx xxxx xxxxxxxx. Xxx xxxx xxxxxxx xxx xxxxx xx xxxxxxxx xxxxxxx xx xxx xxxxxxxxxx.
+-   **タスク スイッチャーの使用:** ユーザーは、オーディオの再生を開始するためにフォアグラウンド アプリを一時的に表示した後、タスク スイッチャーを使って別の開いているアプリに切り替えます。 ユーザーは、バックグラウンドでオーディオの再生が継続することを期待します。
 
-Xxx xxxxxxxxxx xxxxx xxxxxxxxxxxxxx xxxxxxxxx xx xxxx xxxxxxx xxxx xxxxx xxxx xxx xx xxx xxxxxxxxxxx xx xxx Xxxxxxx xxxxxxx xxxxxxxxx Xxxxxx, Xxxxxxx, xxx Xxxx.
+この記事で説明されているバックグラウンド オーディオの実装を使うと、モバイル、デスクトップ、Xbox を含むすべての Windows デバイスで、アプリをユニバーサルに実行できます。
 
-**Xxxx**  
-Xxx [Xxxxxxxxxx xxxxx XXX xxxxxx](http://go.microsoft.com/fwlink/?LinkId=619485) xxxxxxxxxx xxx xxxx xxxxxxxxx xx xxxx xxxxxxxx. Xxx xxx xxxxxxxx xxx xxxxxx xx xxx xxx xxxx xx xxxxxxx xx xx xxx xx x xxxxxxxx xxxxx xxx xxxx xxx xxx.
+**注**  
+[バックグラウンド オーディオ UWP サンプル](http://go.microsoft.com/fwlink/?LinkId=619485) は、この概要で説明するコードを実装します。 サンプルをダウンロードすると、コンテキスト内のコードを確認できます。独自のアプリの出発点として使うこともできます。
 
  
 
-## Xxxxxxxxxx xxxxx xxxxxxxxxxxx
+## バックグラウンド オーディオのアーキテクチャ
 
-Xx xxx xxxxxxxxxx xxxxxxxxxx xxxxxxxx xxxxxxxx xx xxx xxxxxxxxx. Xxx xxxxx xxxxxxx xx xxx xxxx xxx, xxxxx xxxxxxxx xxx xxx XX xxx xxxxxx xxxxx, xxxxxxx xx xxx xxxxxxxxxx. Xxx xxxxxx xxxxxxx xx xxx xxxxxxxxxx xxxxxxxx xxxx, xxxxx xxxxxxxxxx [**XXxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224794) xxxx xxx XXX xxx xxxxxxxxxx xxxxx. Xxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxx xxxxxxxx xxxxx xxx xxxxxxxxxx xxxxxxxx. Xxx xxxxxxxxxx xxxx xxxxxxxxxxxx xxxx xxx xxxxxx xxxxxxx xxx Xxxxxx Xxxxx Xxxxxxxxx Xxxxxxxx.
+バックグラウンド再生を実行するアプリは、2 つのプロセスで構成されています。 最初のプロセスはメイン アプリです。アプリ UI とクライアント ロジックを含んでおり、フォアグラウンドで実行されます。 2 番目のプロセスはバックグラウンド再生タスクです。すべての UWP アプリのバックグラウンド タスクと同様、[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) を実装しています。 バックグラウンド タスクには、オーディオ再生のロジックとバックグラウンド サービスが含まれています。 バックグラウンド タスクは、システム メディア トランスポート コントロールを通じてシステムと通信します。
 
-Xxx xxxxxxxxx xxxxxxx xx xx xxxxxxxx xx xxx xxx xxxxxx xx xxxxxxxx.
+次の図は、システムの設計概要を簡単に示しています。
 
-![xxxxxxx YY xxxxxxxxxx xxxxx xxxxxxxxxxxx](images/backround-audio-architecture-win10.png)
-## XxxxxXxxxxx
+![Windows 10 のバックグラウンド オーディオのアーキテクチャ](images/backround-audio-architecture-win10.png)
+## MediaPlayer
 
-Xxx [**Xxxxxxx.Xxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn640562) xxxxxxxxx xxxxxxxx XXXx xxxx xx xxxx xxxxx xx xxx xxxxxxxxxx. Xxxxx xx x xxxxxx xxxxxxxx xx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652535) xxx xxx xxxxxxx xxxxx xxxxxxxx xxxxxx. Xxxx xxxxxxxxxx xxxxx xxx xxxxx xxxxxxx xxx xxxx xxxxxxxxxx xx xxx **XxxxxXxxxxx** xxxxx xx xxx xxx xxxxxxx xxxxx, xxxxx xxxxxxxx, xxxxx, xxxx xxxxxxx, xxxxxx, xxx xx xx. Xxx xxxxx xxxxxx xxxxxx xxxxxxxx xx xxxxxx xxxxxxxx xxxxxxx xxx [**XxxxxxxxxxXxxxxXxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652528) xxxxxxxx.
+[
+            **Windows.Media.Playback**](https://msdn.microsoft.com/library/windows/apps/dn640562) 名前空間には、バックグラウンドでオーディオを再生するために使用する API が含まれています。 再生が発生するアプリごとに、単一の [**MediaPlayer**](https://msdn.microsoft.com/library/windows/apps/dn652535) インスタンスが存在します。 バックグラウンド オーディオ アプリは、**MediaPlayer** クラスのメソッドを呼び出し、プロパティを設定することで、現在のトラックの設定、再生の開始、一時停止、早送り、巻き戻しなどのコマンドを行います。 MediaPlayer オブジェクトのインスタンスには、常に [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) プロパティを通じてアクセスします。
 
-## XxxxxXxxxxx Xxxxx xxx Xxxx
+## MediaPlayer プロキシとスタブ
 
-Xxxx **XxxxxxxxxxXxxxxXxxxxx.Xxxxxxx** xx xxxxxxxx xxxx xxxx xxx'x xxxxxxxxxx xxxxxxx, xxx **XxxxxXxxxxx** xxxxxxxx xx xxxxxxxxx xx xxx xxxxxxxxxx xxxx xxxx xxx xxx xx xxxxxxxxxxx xxxxxxxx.
+アプリのバックグラウンド プロセスから **BackgroundMediaPlayer.Current** にアクセスすると、**MediaPlayer** インスタンスがバックグラウンド タスク ホストでアクティブ化され、直接操作できるようになります。
 
-Xxxx **XxxxxxxxxxXxxxxXxxxxx.Xxxxxxx** xx xxxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxxxxx, xxx **XxxxxXxxxxx** xxxxxxxx xxxx xx xxxxxxxx xx xxxxxxxx x xxxxx xxxx xxxxxxxxxxxx xxxx x xxxx xx xxx xxxxxxxxxx xxxxxxx. Xxxx xxxx xxxxxxxxxxxx xxxx xxx xxxxxx **XxxxxXxxxxx** xxxxxxxx, xxxxx xx xxxx xxxxxx xx xxx xxxxxxxxxx xxxxxxx.
+フォアグラウンド アプリケーションから **BackgroundMediaPlayer.Current** にアクセスした場合に返される **MediaPlayer** インスタンスは、実際には、バックグラウンド プロセスでスタブと通信するプロキシです。 このスタブは、実際の **MediaPlayer** インスタンスとやり取りしますが、このインスタンスもバックグラウンド プロセスでホストされています。
 
-Xxxx xxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxx xxx xxxxxx xxxx xx xxx xxxxxxxxxx xx xxx **XxxxxXxxxxx** xxxxxxxx, xxxx xxx xxxxxxxxx xx [**XxxxxXxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn987010) xxx [**XxxxxXxxxxx.XxxxxxXxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926635) xxxxx xxx xxxx xx xxxxxxxx xxxx xxx xxxxxxxxxx xxxxxxx. Xxx xxxxxxxxxx xxx xxx xxx xxxxxxxxxx xxxxxxx xxx xxxx xxxxxxx xxxxxxxxxxxxx xx xxxxx-xxxxxxxx xxxxxx xxxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652609), [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652603), xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652606).
+フォアグラウンドとバックグラウンドの両方のプロセスで、**MediaPlayer** インスタンスのほとんどのプロパティにアクセスできます。ただし、[**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) と [**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) は例外で、これらはバックグラウンド プロセスからのみアクセスできます。 フォアグラウンド アプリとバックグラウンド プロセスはいずれも、[**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/dn652609)、[**MediaEnded**](https://msdn.microsoft.com/library/windows/apps/dn652603)、[**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/dn652606) など、メディア固有のイベントに関する通知を受け取ることができます。
 
-## Xxxxxxxx Xxxxx
+## プレイリスト
 
-X xxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxxxx xx xx xxxx xxxxxxxx xxxxx xx x xxx. Xxxx xx xxxx xxxxxx xxxxxxxxxxxx xx xxxx xxxxxxxxxx xxxxxxx xx xxxxx x [**XxxxxXxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn930955) xxxxxx, xxxxx xxx xx xxx xx x xxxxxx xx xxx **XxxxxXxxxxx** xx xxxxxxxxx xx xx xxx [**XxxxxXxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn987010) xxxxxxxx.
+バックグラウンド オーディオ アプリケーションの一般的なシナリオでは、複数の項目が連続して再生されます。 これをバックグラウンド プロセスで最も簡単に実行するには、[**MediaPlaybackList**](https://msdn.microsoft.com/library/windows/apps/dn930955) オブジェクトを使います。このオブジェクトは、[**MediaPlayer.Source**](https://msdn.microsoft.com/library/windows/apps/dn987010) プロパティに割り当てることで、**MediaPlayer** のソースとして設定できます。
 
-Xx xx xxx xxxxxxxx xx xxxxxx x **XxxxxXxxxxxxxXxxx** xxxx xxx xxxxxxxxxx xxxxxxx xxxx xxx xxx xx xxx xxxxxxxxxx xxxxxxx.
+バックグラウンド プロセスに設定された **MediaPlaybackList** にフォアグラウンド プロセスからアクセスすることはできません。
 
-## Xxxxxx Xxxxx Xxxxxxxxx Xxxxxxxx
+## システム メディア トランスポート コントロール
 
-X xxxx xxx xxxxxxx xxxxx xxxxxxxx xxxxxxx xxxxxxxx xxxxx xxxx xxx'x XX xxxxxxx xxxxx xxxx xx Xxxxxxxxx xxxxxxx, XxxxxXxxxx, xxx xxx Xxxxxx Xxxxx Xxxxxxxxx Xxxxxxxx. Xxxx xxxxxxxxxx xxxx xxxx xxx [**XxxxxxXxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn278677) xxxxx xx xxxxxxxxx xx xxxxx xxxx-xxxxxxxxx xxxxxx xxxxxx.
+ユーザーは、アプリの UI を直接使用しなくても、Bluetooth デバイス、SmartGlass、システム メディア トランスポート コントロールなどの手段で、オーディオの再生を制御できます。 バックグラウンド タスクでは、[**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) クラスを使って、ユーザーが開始するこれらのシステム イベントの受信登録を行います。
 
-Xx xxx x **XxxxxxXxxxxXxxxxxxxxXxxxxxxx** xxxxxxxx xxxx xxxxxx xxx xxxxxxxxxx xxxxxxx, xxx xxx [**XxxxxXxxxxx.XxxxxxXxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926635) xxxxxxxx. Xxxxxxxxxx xxxx xxx xx xxxxxxxx xx xxx xxxxx xx xxxxxxx [**XxxxxxXxxxxXxxxxxxxxXxxxxxxx.XxxXxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn278708), xxx xxx xxxxxxxx xxxxxxxx xx x xxxxxxxxxx-xxxx xxxxxxxx xxxx xxxx xxx xxxxxx xx xxx xxxxxxxxxx xxxx.
+バックグラウンド プロセスから **SystemMediaTransportControls** インスタンスを取得するには、[**MediaPlayer.SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn926635) プロパティを使います。 フォアグラウンド アプリは、[**SystemMediaTransportControls.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/dn278708) を呼び出すことでクラスのインスタンスを取得しますが、返されるインスタンスはフォアグラウンドのみのインスタンスであり、バックグラウンド タスクとは関係ありません。
 
-## Xxxxxxx Xxxxxxxx Xxxxxxx Xxxxx
+## タスク間のメッセージ送信
 
-Xxxxx xxx xxxxx xxxx xxx xxxx xxxx xx xxxxxxxxxxx xxxxxxx xxx xxx xxxxxxxxx xx x xxxxxxxxxx xxxxx xxx. Xxx xxxxxxx, xxx xxxxx xxxx xxx xxxxxxxxxx xxxx xx xxxxxx xxx xxxxxxxxxx xxxx xxxx x xxx xxxxx xxxxxx xxxxxxx, xxx xxxx xxxx xxx xxx xxxx xxxxx xx xxx xxxxxxxxxx xxxx xx xxxxxxx xx xxx xxxxxx.
+バックグラウンド オーディオ アプリの 2 つのプロセス間で通信することが必要になる場合があります。 たとえば、新しいトラックの再生が始まるときにバックグラウンド タスクからフォアグラウンド タスクに通知し、新しい曲のタイトルをフォアグラウンド タスクに送って画面に表示させることがあります。
 
-X xxxxxx xxxxxxxxxxxxx xxxxxxxxx xxxxxx xxxxxx xx xxxx xxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxx. Xxx [**XxxxXxxxxxxXxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652533) xxx [**XxxxXxxxxxxXxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652532) xxxxxxx xxxx xxxxxx xxxxxx xx xxx xxxxxxxxxxxxx xxxxxxx. Xxxxxxxx xxx xx xxxxxxxx xx xxxxxxxxxxx xx xxx [**XxxxxxxXxxxxxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652530) xxx [**XxxxxxxXxxxxxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652531) xxxxxx.
+単純な通信メカニズムにより、フォアグラウンド プロセスとバックグラウンド プロセスの両方でイベントを発生させることができます。 [
+            **SendMessageToForeground**](https://msdn.microsoft.com/library/windows/apps/dn652533) メソッドと [**SendMessageToBackground**](https://msdn.microsoft.com/library/windows/apps/dn652532) メソッドは、それぞれ対応するプロセスでイベントを呼び出します。 [
+            **MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) イベントと [**MessageReceivedFromForeground**](https://msdn.microsoft.com/library/windows/apps/dn652531) イベントの受信登録を行うことで、メッセージを受信することができます。
 
-Xxxx xxx xx xxxxxx xx xx xxxxxxxx xx xxx xxxx xxxxxxx xxxxxxx xxxx xxx xxxx xxxxxx xxxx xxx xxxxxxx xxxxxxxx xxxxx xxxxxxxx. Xxxx xxxx xxxxx xxx [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn636131) xxxxx. Xxxx xxxxx xx x xxxxxxxxxx xxxx xxxxxxxx x xxxxxx xx x xxx xxx xxxxx xxxxx xxxxx xx xxxxxx. Xxx xxx xxxx xxxxxx xxxxx xxxxx xxxx xx xxxxxxxx, xxxxxxx, xxx xxxxxxxx.
+データは引数としてメッセージ送信メソッドに渡され、次にメッセージ受信イベント ハンドラーに渡されます。 データを渡すには、[**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) クラスを使います。 このクラスは、文字列をキーとして格納し、その他の値の型を値として格納するディクショナリです。 渡すことができるのは、整数型、文字列型、ブール型など、単純型の値です。
 
-## Xxxxxxxxxx Xxxx Xxxx Xxxxx
+## バックグラウンド タスクの有効期間
 
-Xxx xxxxxxxx xx x xxxxxxxxxx xxxx xx xxxxxxx xxxx xx xxxx xxx'x xxxxxxx xxxxxxxx xxxxxx. Xxx xxxxxxx, xxxx xxx xxxx xxxxxx xxxxx xxxxxxxx, xxx xxxxxx xxx xxxxxxxxx xx xxxxxx xxxx xxx xxxxxxxxx xx xxx xxxxxxxxxxxxx. Xxxxx x xxxxxx xx xxxx xxxxxxx xxxxx xxxxxxxx, xxx xxxxxx xxx xxxxxxxxxxxxx xxxx xxxx xxx xxxxxxxxxx xxxx.
+バックグラウンド タスクの有効期間は、アプリの現在の再生状態に密接に関係します。 たとえば、ユーザーがオーディオ再生を一時停止すると、システムは状況に応じてアプリを終了させたり、取り消したりします。 オーディオが再生されることなく一定の時間が経過すると、システムが自動的にバックグラウンド タスクをシャットダウンします。
 
-Xxx [**XXxxxxxxxxxXxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/br224811) xxxxxx xx xxxxxx xxx xxxxx xxxx xxxx xxx xxxxxxxx xxxxxx [**XxxxxxxxxxXxxxxXxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652528) xxxx xxxx xxxxxxx xx xxx xxxxxxxxxx xxx xx xxxx xxx xxxxxxxx x xxxxxxx xxx xxx [**XxxxxxxXxxxxxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652530) xxxxx, xxxxxxxxx xxxxxx xxxxx. Xx xx xxxxxxxxxxx xxxx xxx xxxxxxxx xxx xxx xxxxxxx xxxxxxxx xxxxxxx xxxxxx xxxxxxx **XxxxxxxxxxXxxxxXxxxxx.Xxxxxxx** xxx xxx xxxxx xxxx xx xxxx xxx xxxxxxxxxx xxx xxxxx'x xxxx xxx xxxxxxxx xxxx xxxx xxx xxxxxxxxxx xxxxxxx.
+[
+            **IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドが呼び出されるのは、初めてアプリがフォアグラウンド アプリで実行中のコードから [**BackgroundMediaPlayer.Current**](https://msdn.microsoft.com/library/windows/apps/dn652528) にアクセスしたときと、[**MessageReceivedFromBackground**](https://msdn.microsoft.com/library/windows/apps/dn652530) イベントに対するハンドラーを登録したときのうち、早い方です。 バックグラウンド プロセスから送信されたメッセージをフォアグラウンド アプリで逃すことのないよう、初めて **BackgroundMediaPlayer.Current** を呼び出す前にメッセージ受信ハンドラーに登録しておくことをお勧めします。
 
-Xx xxxx xxx xxxxxxxxxx xxxx xxxxx, xxxx xxx xxxx xxxxxxx x [**XxxxxxxxxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700499) xxxx xxxxxx xxx **Xxx** xxxxxx xxx xxxx [**XxxxxxxxxxXxxxXxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700504) xxxx xxx xxxx xxxxxxxx xxxxxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224798) xx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224788) xxxxxx. Xx xxx xxxx xx xxxx xx xxx **Xxx** xxxxxx xxxxxxx xxxx xxxxxxxx xxxxxxxxx xxx xxx xxxxx xxxx xxx'x xxxxxxxxxx xxxx xx xx xxxxxxxxxx xx xxx xxxxxx.
+バックグラウンド タスクを有効な状態に維持するために、アプリでは **Run** メソッドから [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) を要求し、タスク インスタンスが [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) イベントまたは [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) イベントを受け取るときに [**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) を呼び出す必要があります。 **Run** メソッドではループ処理または待機を行わないでください。リソースが消費され、アプリのバックグラウンド タスクがシステムによって終了される原因になることがあります。
 
-Xxxx xxxxxxxxxx xxxx xxxx xxx **Xxxxxxxxx** xxxxx xxxx xxx **Xxx** xxxxxx xx xxxxxxxxx xxx xxxxxxxx xx xxx xxxxxxxxx. Xx xxxx xxxxx, xxxx xxxx xxx xxxx xxx **Xxxxxxxx** xxxxx, xx xxx xx xxxx xxxxxxxx xx xxx **Xxxxxxxxx** xxxxx. Xxxx xxxx xxx xxxxxxx x **Xxxxxxxx** xxxxx xxxxx **Xxx** xx xxxxxxxxx, xx xx xxxx xx xxxxxx xxxx xxxxxxxxx xxxxxxxxxxx.
+**Run** メソッドが完了し、遅延が要求されない場合、バックグラウンド タスクは **Completed** イベントを取得します。 場合によっては、アプリで **Canceled** イベントを取得したときに、その後に **Completed** イベントが続くことがあります。 タスクでは、**Run** の実行中に **Canceled** イベントを受け取ることがあるため、このような同時実行の可能性に必ず対処してください。
 
-Xxxxxxxxxx xx xxxxx xxx xxxxxxxxxx xxxx xxx xx xxxxxxxxx xxxxxxx:
+バックグラウンド タスクが取り消される状況には、次のような場合があります。
 
--   X xxx xxx xxxx xxxxx xxxxxxxx xxxxxxxxxxxx xxxxxx xx xxxxxxx xxxx xxxxxxx xxx xxxxxxxxxxx xxx-xxxxxx. Xxx xxx [Xxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxx xxxx xxxxxxxx](#system-policies-for-background-audio-task-lifetime) xxxxxxx xxxxx.
+-   専用サブポリシーが適用されるシステムで、オーディオ再生機能を備えた新しいアプリが起動した場合。 後の「[バックグラウンド オーディオ タスクの有効期間に関するシステム ポリシー](#system-policies-for-background-audio-task-lifetime)」をご覧ください。
 
--   X xxxxxxxxxx xxxx xxx xxxx xxxxxxxx xxx xxxxx xx xxx xxx xxxxxxx, xxx xxxx xxx xxxxxxxxxx xxx xx xxxxxxxxx.
+-   バックグラウンド タスクが起動したが、音楽はまだ再生されず、フォアグラウンド アプリが中断された場合。
 
--   Xxxxx xxxxx xxxxxxxxxxxxx, xxxx xx xxxxxxxx xxxxx xxxxx xx XxXX xxxxx.
+-   他のメディアの割り込み (着信通話や VoIP 通話など)。
 
-Xxxxxxxxxx xx xxxxx xxx xxxxxxxxxx xxxx xxx xx xxxxxxxxxx xxxxxxx xxxxxx xxxxxxx:
+バックグラウンド タスクが予告なしに終了される状況には、次のような場合があります。
 
--   X XxXX xxxx xxxxx xx xxx xxxxx xx xxx xxxxxx xxxxxxxxx xxxxxx xx xxx xxxxxx xx xxxx xxx xxxxxxxxxx xxxx xxxxx.
+-   VoIP 通話の着信があるが、バックグラウンド タスクを存続させるための十分なメモリがシステムにない場合。
 
--   X xxxxxxxx xxxxxx xx xxxxxxxx.
+-   リソース ポリシーの違反が発生した場合。
 
--   Xxxx xxxxxxxxxxxx xx xxxxxxxxxx xxxx xxx xxx xxxxxxxxxx.
+-   タスクの取り消しまたは完了が適切に終わらない場合。
 
-## Xxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxx xxxx xxxxxxxx
+## バックグラウンド オーディオ タスクの有効期間に関するシステム ポリシー
 
-Xxx xxxxxxxxx xxxxxxxx xxxx xxxxxxxxx xxx xxx xxxxxx xxxxxxx xxx xxxxxxxx xx xxxxxxxxxx xxxxx xxxxx.
+バックグラウンド オーディオ タスクの有効期間をシステムでどのように管理するかを決定するには、次のポリシーが役立ちます。
 
-### Xxxxxxxxxxx
+### Exclusivity (排他)
 
-Xx xxxxxxx, xxxx xxx-xxxxxx xxxxxx xxx xxxxxx xx xxxxxxxxxx xxxxx xxxxx xx xx xx xxxx Y xx xxx xxxxx xxxx. Xx xx xxxxxxx xx Xxxxxx xxx xxxxx xxx-Xxxxxxx XXXx.
+このサブポリシーが有効であれば、バックグラウンド オーディオ タスクの数が常に 1 件以内に制限されます。 モバイルやその他の非デスクトップ SKU で有効に設定されます。
 
-### Xxxxxxxxxx Xxxxxxx
+### 無通信タイムアウト
 
-Xxx xx xxxxxxxx xxxxxxxxxxx, xxx xxxxxx xxx xxxxxxxxx xxxx xxxxxxxxxx xxxx xxxxx x xxxxxx xx xxxxxxxxxx.
+リソースの制約により、システムは、非アクティブな状態が一定期間続いた後にバックグラウンド タスクを終了する可能性があります。
 
-X xxxxxxxxxx xxxx xx xxxxxxxxxx “xxxxxxxx” xx xxxx xx xxx xxxxxxxxx xxxxxxxxxx xxx xxx:
+バックグラウンド タスクは、以下の条件が満たされた場合に "非アクティブ" と見なされます。
 
--   Xxx xxxxxxxxxx xxx xx xxx xxxxxxx (xx xx xxxxxxxxx xx xxxxxxxxxx).
+-   フォアグラウンド アプリが表示されていない (中断または終了済み)。
 
--   Xxx xxxxxxxxxx xxxxx xxxxxx xx xxx xx xxx xxxxxxx xxxxx.
+-   バックグラウンドのメディア プレーヤーが再生中の状態ではない。
 
-Xx xxxx xx xxxxx xxxxxxxxxx xxx xxxxxxxxx, xxx xxxxxxxxxx xxxxx xxxxxx xxxxxx xxxx xxxxx x xxxxx. Xx xxxxxxx xxxxxxxxx xxx xxxxxxx xxxx xxx xxxxx xxxxxxx, xxx xxxxxxxxxx xxxxx xxxxxx xxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxx xxxx.
+両方の条件が満たされている場合、バックグラウンド メディアのシステム ポリシーは、タイマーを開始します。 タイマーの有効期限が切れたときにどちらの条件にも変化がない場合、バックグラウンド メディアのシステム ポリシーによってバックグラウンド タスクが終了されます。
 
-### Xxxxxx Xxxxxxxx
+### Shared Lifetime (共有の有効期間)
 
-Xx xxxxxxx, xxxx xxx-xxxxxx xxxxxx xxx xxxxxxxxxx xxxx xx xx xxxxxxxxx xx xxx xxxxxxxx xx xxx xxxxxxxxxx xxxx. Xx xxx xxxxxxxxxx xxxx xx xxxx xxxx, xxxxxx xx xxx xxxx xx xxx xxxxxx, xxx xxxxxxxxxx xxxx xxxx xxxx xxxx xxxx.
+このサブポリシーが有効であれば、バックグラウンド タスクがフォアグラウンド タスクの有効期間に依存するように強制されます。 ユーザーまたはシステムによってフォアグラウンド タスクがシャットダウンされると、バックグラウンド タスクもシャットダウンされます。
 
-Xxxxxxx, xxxx xxxx xxxx xxxx xxx xxxx xxxx xxx xxxxxxxxxx xx xxxxxxxxx xx xxx xxxxxxxxxx. Xx xxx xxxxxxxxxx xxxx xx xxxx xxxx, xxxx xxxx xxx xxxxx xxx xxxxxxxxxx xxxx xx xxxx xxxx.
+ただし、フォアグラウンドはバックグラウンドに依存しません。 バックグラウンド タスクがシャットダウンしても、これによってフォアグラウンド タスクがシャットダウンされるわけではありません。
 
-Xxx xxxxxxxxx xxxxx xxxxx xxx xxxxx xxxxxxxx xxx xxxxxxxx xx xxxxx xxxxxx xxxxx.
+次の表は、デバイスの種類によって適用されるポリシーを示します。
 
-| Xxx-xxxxxx             | Xxxxxxx  | Xxxxxx   | Xxxxx    |
+| サブポリシー             | デスクトップ  | モバイル   | その他    |
 |------------------------|----------|----------|----------|
-| **Xxxxxxxxxxx**        | Xxxxxxxx | Xxxxxxx  | Xxxxxxx  |
-| **Xxxxxxxxxx Xxxxxxx** | Xxxxxxxx | Xxxxxxx  | Xxxxxxxx |
-| **Xxxxxx Xxxxxxxx**    | Xxxxxxx  | Xxxxxxxx | Xxxxxxxx |
+| **Exclusivity (排他)**        | 無効 | 有効  | 有効  |
+| **無通信タイムアウト** | 無効 | 有効  | 無効 |
+| **Shared Lifetime (共有の有効期間)**    | 有効  | 無効 | 無効 |
 
  
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

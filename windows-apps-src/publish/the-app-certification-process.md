@@ -1,29 +1,43 @@
 ---
-Xxxxxxxxxxx: Xxxx xxx xxx xxxxxxxx xxxxxxxx xxxx xxx'x xxxxxxxxxx xxx xxxxx Xxxxxx xx xxx Xxxxx, xx xxxxxx xxx xxxxxxxxxxxxx xxxx.
-xxxxx: Xxx xxx xxxxxxxxxxxxx xxxxxxx
-xx.xxxxxxx: YXXXYYYY-YYYX-YXYX-YYYX-XXYXYYXYYXXX
+Description: When you are finished creating your app's submission and click Submit to the Store, it enters the certification step.
+title: The app certification process
+ms.assetid: 0DCB4344-224D-4E5A-899F-FF7A89F23DBC
 ---
 
-# Xxx xxx xxxxxxxxxxxxx xxxxxxx
+# The app certification process
 
 
-Xxxx xxx xxx xxxxxxxx xxxxxxxx xxxx xxx'x xxxxxxxxxx xxx xxxxx **Xxxxxx xx xxx Xxxxx**, xx xxxxxx xxx xxxxxxxxxxxxx xxxx. Xxxx xxxxxxx xxxxxxx xx xxxxxxxxx xxxxxx x xxx xxxxx, xxxxxx xx xxxx xxxxx xx xxx xxxx xxxxxx. Xxxx'x x xxxx xx xxxx xxxxxxx xxxxxx xxx xxxxxxxxxxxxx xxxx.
+When you are finished creating your app's submission and click **Submit to the Store**, it enters the certification step. This process usually is completed within a few hours, though in some cases it may take longer. Here's a look at what happens during the certification step.
 
--   **Xxxxxxxxxxxxx:** Xxxxx xxx xxxxxxxxxxxx xxxxxx xxx xxx'x xxxxxxxx xxx xxxxxx xxx xxx xxx xxxxxxxxxxxxx, xxx xxxxxxxx xxx xxxxxx xxx xxxxxxx. Xx'xx xxxxxxx x xxxxxxx xx xx xxxxxx xxx xxxxxx xxxxxx xxxxxxxxxxxxx. Xxx xxxx xxxx xx xxxxxxxx xxxxxx, xxx [Xxxxxxx xxxxxxxxxx xxxxxx](resolve-submission-errors.md).
--   **Xxxxxxxxxxxxx:** Xxxxxx xxxx xxxxx, xxxxxxx xxxxx xxx xxxxxxxxx:
+## Preprocessing
 
-    -   **Xxxxxxxx xxxxx:** Xxxx xxxxx xxxx xxxxxx xxxx xxx'x xxxxxxxx xxx xxxxxxx xxx xxxxxxx. Xx xxxx xxx xxxxx xxxx xxxx, xxx'xx xxxx xx xxxxx xxxx xxxxxxxxxxx xxxxxx xx xxxxxxx xxx xxxxxx xxxxxxxxx xxxxxxxx, xxxx xxxxxxx xxxx xxx'x xxxxxxx xx x xxxxx xxxxxx.
-    -   **Xxxxxxxxx xxxxxxxxxx xxxxx:** Xxxxxxxxx xxxxxxxxxx xx xxxxxx xx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx. (Xxx xxxxxx xxxxxx xxxx xxxx xx [xxxx xxxx xxx xxxx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx](https://msdn.microsoft.com/library/windows/apps/mt186449) xxxxxx xxx xxxxxx xx xx xxx Xxxxx.)
-    -   **Xxxxxxx xxxxxxxxxx:** Xxx xxxxxx xx xxxx xxxx xxxxx xxxxxx xxxxxxxxx xx xxx xxxxxxx xxxx xxx xx, xxx xxxx xxxxxx xxxxxxx xx xxx, xxx xxx xxxx xxxx xxxx xxxx xxxxxxxxx xxxxxxxx. Xx xxxx xx xxxxxxx xxx xxxx xxxx xxxxxxx xxxxxx xx xxxxx xx xx xxx [Xxxxx xxx xxxxxxxxxxxxx](notes-for-certification.md) xxxx.
+After you successfully upload the app's packages and submit the app for certification, the packages are queued for testing. We'll display a message if we detect any errors during preprocessing. For more info on possible errors, see [Resolve submission errors](resolve-submission-errors.md).
 
-    Xxxxx xxx xxxxxxxxxxxxx xxxxxxx xx xxxxxxxx, xxx'xx xxx x xxxxxxxxxxxxx xxxxxx xxxxxxx xxx xxxxxxx xx xxx xxxx xxx xxxxxx xxxxxxxxxxxxx. Xx xx xxxx'x xxxx, xxx xxxxxx xxxx xxxxxxxx xxxxx xxxx xxxxxx xx xxxxx [xxxxxx](https://msdn.microsoft.com/library/windows/apps/dn764944) xxx xxx xxx. Xxxxx xxx xxx xxx xxxxxxx, xxx xxx xxxxxx x xxx xxxxxxxxxx xxx xxxx xxx xx xxxxx xxx xxxxxxxxxxxxx xxxxxxx xxxxx.
+## Certification
 
--   **Xxxxxxx:** Xxxx xxxx xxx xxxxxx xxxxxxxxxxxxx, xx'x xxxxx xx xxxx xx xxx xx xxx **Xxxxxxxxxx** xxxxxxx. Xx xxx'xx xxxxxxxxx xxxx xxxx xxxxxxxxxx xxxxxx xx xxxxxxxxx xx xxxx xx xxxxxxxx, xxxx xxxx xxxxxx xxxxx xxxx. Xx xxx'xx xxxxxxxxx xxxx xx xxxxxx xxx xx xxxxxxxx xxxxx x xxxxxxx xxxx, xx'xx xxxx xxxxx xxxx xxxx, xxxxxx xxx xxxxx xxx xxxx xx **Xxxxxx xxxxxxx xxxx**. Xx xxx'xx xxxxxxxxx xxxx xxx xxxx xx xxxxxxx xxx xxxxxxxxxx xxxxxxxx, xxxx xx xxx'x xxxxxxx xx xxxxx xxx xxxxxxxx xxxx xx xxxxxx xx xxxxxxxx xxx xxxxxx xx **Xxxxxxx xxx**, xx xx xxx xxxxx xxx xxxx xx **Xxxxxx xxxxxxx xxxx** xxx xxxx x xxxxxxxx xxxx.
--   **Xxxxxxxxxx:** Xxxx xxx'x xxxxxxxx xxx xxxxxxxxx xxxxxx xx xxxxxxx xxxx xxxxxxx xxxxxxxxx xxxxx xxxx xxxx xxxx xxxxxxxx. Xxxx xxxx xxxxx xxx xxxxx, xxx xxx xx xxxxxx xxxxxx xxxx xxxxxxxxxx xx xxxxxx xxx xxxxxxx xxxx.
+During this phase, several tests are conducted:
 
-Xxxxx xxxxxxxxxxxx xxxxx xxxxxxx xxx xxxxx xxxxx, xxxx xxxxxxxxxx xxxx xx xxxxxxxxx xx xxx Xxxxxxx Xxxxx xxx xxxxxxxxx xx xxxxxxxx.
+-   **Security tests:** This first test checks your app's packages for viruses and malware. If your app fails this test, you'll need to check your development system by running the latest antivirus software, then rebuild your app's package on a clean system.
+-   **Technical compliance tests:** Technical compliance is tested by the Windows App Certification Kit. (You should always make sure to [test your app with the Windows App Certification Kit](../debug-test-perf/windows-app-certification-kit.md) before you submit it to the Store.)
+-   **Content compliance:** The amount of time this takes varies depending on how complex your app is, how much visual content it has, and how many apps have been submitted recently. Be sure to provide any info that testers should be aware of in the [Notes for certification](notes-for-certification.md) page.
 
-**Xxxx**  Xx xxxx xxxxxxx xxxx xxxxxx xx xxxx xxxxx xxxx'xx xxxx xxxxxxxxx xx xx xxx xxxxxxxx xxxxxxxxx xxxxxxxx xxx xxxxxx xxxx xxxx xxx xxxxxxxx xxxx xxx xx xxx [Xxxxxxx Xxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn764944). Xx xx xxxx xxx xxxxxxxx, xxx'xx xx xxxxxxxx xxxxx xxx xxxxx xxx xxx xx xxx xx, xx xxxxxxxxxx, xx xx xx xxx xxxx xxxxxxx xxxx xxx Xxxxx.
+After the certification process is complete, you'll get a certification report telling you whether or not your app passed certification. If it didn't pass, the report will indicate which test failed or which [policy](https://msdn.microsoft.com/library/windows/apps/dn764944) was not met. After you fix the problem, you can create a new submission for your app to start the certification process again.
+
+## Release
+
+When your app passes certification, it's ready to move to the to the **Publishing** process. If you've indicated that your submission should be published as soon as possible, this will happen right away. If you've specified that it should not be released until a certain date, we'll wait until that date, unless you click the link to **Change release date**. If you've indicated that you want to publish the submission manually, then we won't publish it until you indicate that we should by clicking the button to **Publish now**, or if you click the link to **Change release date** and pick a specific date.
+
+## Publishing
+
+Your app's packages are digitally signed to protect them against tampering after they have been released. Once this phase has begun, you can no longer cancel your submission or change its release date.
+
+While your app is in the publishing phase, the **Show details** link in the Status column for your app’s submission will let you know when your new packages and Store listing details become available to customers on each of your supported OS versions. Your app will remain in the publishing phase until the new packages and listing details are available to all of your app’s potential customers. When that happens, the status will change from **Publishing** to **In the Store**. 
+
+## In the Store 
+
+After successfully going through the steps above, your submission will be available in the Windows Store for customers to download (unless you have chosen another [Distribution and visibility](set-app-pricing-and-availability.md#distribution-and-visibility) option).
+
+**Note**  We also conduct spot checks of apps after they've been published so we can identity potential problems and ensure that your app complies with all of the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/dn764944). If we find any problems, you'll be notified about the issue and how to fix it, if applicable, or if it has been removed from the Store.
 
  
 
@@ -34,4 +48,8 @@ Xxxxx xxxxxxxxxxxx xxxxx xxxxxxx xxx xxxxx xxxxx, xxxx xxxxxxxxxx xxxx xx xxxxxx
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO5-->
+
+

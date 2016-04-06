@@ -1,204 +1,209 @@
 ---
-xxxxx: Xxx xxxxxxxxx
-xxxxxxxxxxx: Xxxx xxxxx xxxxxxxxx xxx xxxxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx, xxxx xxx xxxx xx xx xxxxxxxxx xxxxx xx xx xxxxxx.
-xx.xxxxxxx: YXYYYXYY-XYXY-YYYY-XYYX-XYYYXYYYYXYY
+title: アプリのライフサイクル
+description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリのライフサイクル (アプリがアクティブ化されたときから、アプリが閉じられるまで) について説明します。
+ms.assetid: 6C469E77-F1E3-4859-A27B-C326F9616D10
 ---
 
-# Xxx xxxxxxxxx
+# アプリのライフサイクル
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**Xxxxxxx.XX.Xxxx.Xxxxxxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242324)
--   [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxx xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224766)
+-   [**Windows.UI.Xaml.Application クラス**](https://msdn.microsoft.com/library/windows/apps/br242324)
+-   [**Windows.ApplicationModel.Activation 名前空間**](https://msdn.microsoft.com/library/windows/apps/br224766)
 
-Xxxx xxxxx xxxxxxxxx xxx xxxxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx, xxxx xxx xxxx xx xx xxxxxxxxx xxxxx xx xx xxxxxx. Xxxx xxxxx xxxxxx xxxxx xxxx xxx xxxx xxxxxx xxxxxxxx xxxxxxx xxx xxxx. Xxxxx xxx xxxxxx xxxx xxx xx xxxxxxxx xxx xxxxx xx xxxx xxxxxxxxx xx xxxxx xxxxxx. Xxx xxxxxxx, xxxx xxxxxx xxx xxxx xx xx xxxxxxxx xx xxx xxxx xxxxxxxx xxx xxx xx xxx xxxxxxxx xx xx xx xxx xxxx xxxxx xx xxxxxx. Xx xxxxxxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxx xx xxxxxxxxx, xxxxxxxxxx, xxx xxxxxxxx, xxx xxx xxxxxxx xxxx xxxx xx xxxxxxxx xxxxxxxx.
+このトピックでは、ユニバーサル Windows プラットフォーム (UWP) アプリのライフサイクル (アプリがアクティブ化されたときから、アプリが閉じられるまで) について説明します。 多くのユーザーは複数のデバイスやアプリを使って作業や操作を行います。 ユーザーは、デバイスでマルチタスクを実行しているとき、アプリがその状態を記憶していることを望んでいます。 たとえば、中断したときと同じ位置までページがスクロールし、すべてのコントロールが中断前と同じ状態になっていることが求められています。 起動、中断、再開というアプリのライフサイクルを理解することによって、このようなシームレスな動作を提供できます。
 
-## Xxx xxxxxxxxx xxxxx
-
-
-Xxxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxx. Xx xxxxxxxx xxxxx xxxxxx xxx xxxxxx xx xxx xxxx xxxxxxx xxxxxxxx. Xxx xxxx xxxx xxxxx xxxx xxxxx xxxxxxxxxx xxx xxxx xxxx xxx xxxxxx xx xx xxxxxxxx, xxx xxx xxxxxxxxx xxx xxx [**XxxxxxxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224694) xxxxxxxxxxx.
-
-![xxxxx xxxxxxx xxxxxxx xxxxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxx](images/state-diagram.png)
-
-## Xxxxxxxxxx
+## アプリの実行状態
 
 
-Xx xxxxx xxx xx xxx xx xx xxxxxxxxx xx xxxx xxxxx xx xxxxxxxx. Xxx xxx xx xxxxxxxx xxxx x xxxx xxxxxxxx xxxx xxx xx xxxx xxx xxx Xxxxxx Xxxxxx xx xxxxx xxx xxx xxxx xxx xxxxxx xxxxxxxxxxx xxx xxxxxxx. Xxx xxxx xxxx xx xxxx xxx xx xxxxxxxx xxxxxxxxxx xxxxxxxxx, xxx [Xxx xxxxxxxx xxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh464929).
+次の図は、アプリの実行状態が切り替わるようすを示したものです。 このページの以降のセクションで、これらの状態とイベントについて説明します。 各状態に切り替わる状況とその際のアプリの処理について詳しくは、[**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列挙体に関するリファレンスをご覧ください。
 
-## Xxx xxxxxx
+![アプリの実行状態が切り替わるようすを示す状態図](images/state-diagram.png)
 
-
-Xx xxx xx xxxxxxxx xxxx xx xx xx xxx **XxxXxxxxxx** xxxxx xxx xxx xxxx xxxx xxx xxx xxxx xx xxx xxxxx xxxxxx xx xx xxx xxxxxxxxxxx xxxx. Xxxxxxxxxx xxxx xxxx xxx xxxx xx xxxxxxxxxxx xx xxxxxxxx xxxxxxxxxxxxxx (xxx [Xxxxxx xxx xxxxxxxxx](handle-app-prelaunch.md)). Xx xxx xxxxx xx xx xxx **XxxXxxxxxx** xxxxx xxxxxxx xx xxx xxxxx xxxx xxxxxxxx, xxxxxxx xx xxx xxxxxxx xxx xxxx xxxxxxx, xx xxxxxxx xx xxx xxxxxxxxx xxx xxxx xxxxxx'x xx xxxx xx xxxxxx xxx xxx xxxxxxxxxx xx xxx xxxxxx. Xxxxxxxxx xx xxxxxxxxx xxxx xxxxxxxxxx. Xxxxxxxxxx xx xxxx xxxx xxx xx xxxxxxxxx xxx x xxxxxxxx xx xxxxxxxxx xxxx xx xxx Xxxxxx xxxxxxxx.
-
-Xxx [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335) xxxxxx xx xxxxxx xxxx xx xxx xx xxxxxxxx— xxxxxxxxx xxxx xxx xxx xx xxxxxxxxx xxxxxxxxx xx xxxxxx. Xxx [**XxxxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224731) xxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxx xx xxxx xxx xxx xxx xxxxxxxxxx xxxxxxxxx.
-
-Xxxx xxx xxxx xxxxxxxx xx xxxx xxxxxxxxxx xxx, xxx xxxxxx xxxxx xxx [**XxxxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224731) xxxx xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br224728) xxx xx **Xxxxxx** xxx [**XxxxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224729) xxx xx **Xxxxxxxxxx** xx **XxxxxxXxXxxx**. Xxx xxx xxxxxx xxxx xxx xxxxx xxxxxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxxx xxxxxxx.
-
-Xx xxx xxxxx xx [**XxxxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224729) xx **XxxXxxxxxx**, xxx xxx xxxxxx xxxxx xxxx xx xx xx xxxx xxxxx xxxxxxxxx xxxxxxxx.
-
-Xxxx xx xxx xx xxxxxxxx, Xxxxxxx xxxxxxxx x xxxxxx xxxxxx xxx xxx xxx. Xx xxxxxxxxx xxx xxxxxx xxxxxx, xxx [Xxxxxx x xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh465331).
-
-Xxxxx xxx xxxxxx xxxxxx xx xxxxxxxxx, xxxx xxx xxxxxx xxxxx xxx xxxx xxxxxxxxx. Xxx xxxxxxx xxxxx xxx xxx xxx xxx xx xxxxxxxx xxxxx xxxxxxxx xxx xxx xx xxx xxxxxx XX xx xxxxx xxx xxxxxxx xxx xxxxxxx xxxx. Xxxxx xxxxx xxxxxx xxxx xxxx x xxx xxxxxxx. Xx xx xxx xxxxx xx xxxxxxx xxxx xxxx xxx xxxxxxx xx xxxxx xx xxxxxxxx xxxxx xxxxxxx xx xxxx xxxx xxxx, xxxxx xxxxxxxxxx xxxxxx xx xxxxxxxxx xxxxxxx xx xxxxxxxxxx. Xx xxx xxx xxx xxx xxx xxxxxx xxxxxxx XX xx xx xxxxxxxx xxxxxx xxxxxx xxxxx xx xxxxx xxx xxxxx xxxx xxxxxxx xxxxxxxxxx xx xxxxxx. Xxx [Xxxxxxx x xxxxxx xxxxxx xxx xxxx xxxx](create-a-customized-splash-screen.md) xxx xxx [Xxxxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=234889) xxx xxxx xxxx. Xxxxx xxx xxx xxxxxxxxx xxxxxxxxxx, xx xxxxxx xxx **Xxxxxxx** xxxxx xxx xxx xxxxxx xxxxxx xxxxxxxxxx (xxx xxx xxx xxxxxxxxx xxx xxxxxxx xxx xxxxxxx).
-
-## Xxx xxxxxxxxxx
+## 展開
 
 
-Xx xxx xxx xx xxxxxxxxx xx xxx xxxx xxxxxxx x xxxxxxx xx xxxxxxxxxx xxx xxxxxxxxx xxxx xx xxx Xxxxx xxxxxxxx. Xxx x xxxx xx xxxx xxxx xxx xxx xx xxxxxxxxx, xxx [**XxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224693).
+アプリをアクティブ化するには、まずアプリを展開する必要があります。 アプリが展開されるのは、ユーザーがアプリをインストールするとき、または開発時やテスト時に Visual Studio を使ってアプリをビルドして実行するときです。 基本的な展開や高度な展開のシナリオについて詳しくは、「[アプリ パッケージと展開](https://msdn.microsoft.com/library/windows/apps/hh464929)」をご覧ください。
 
-Xxx [**Xxxxxxx.XX.Xxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242324) xxxxx xxxxxxx xxxxxxx xxx xxx xxxxxxxx xx xxxxxx xxx xxxxxxx xxxxxxxxxx xxxxx. Xxxxxxx xx xxx xxxxxxxxxx xxxxx xxxx x xxxxxxxx xxxxxx xxxx xxx xxx xxxxxxxx xxxx xx xxxx xx [**XxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242331), [**XxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242336), xxx. Xxx xxx xxxxx xxxxxxxxxx xxxxx, xxxxxxxx xxx [**XxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242330) xxxxxx.
+## アプリの起動
 
-Xxxx xxx'x xxxxxxxxxx xxxx xxx xxxx xx xxx xxx xx xxx xxxxxxxxx xxx xxxxxxx xx xxx xxxxxxx xx xxx **Xxxxxxx** xxxxx.
 
-Xxxx xxx xxx xxxxxxx xxxxxxxxxx xxxxx xxxx xxxxxx xxxxxxxxxx xx xxx xxxxx xxxx xxx xxxxxxxxx xxxxxx xxxxxxxxxx xxxx xxx, xxx xxx xxxx xxxxxxxxxxxx xx-xxxxxxxx xx. Xxxxxxx xxx xxxxxxxxx xxxx xxx xxxxx xx xxx xxxx xxxxxxxxx xxx x xxxxxx xx xxxxxxx. Xxx xxxx xxx xxxxxxxx xxxxx xxxx xxx, xx xxxx xxx, xx xxx xxxxxx xxx xx xxxxxxx xxx xx xxxxxxxxx. Xx xxx xxxx xxxxxxxx xxxx xxx xxxxx Xxxxxxx xxx xxxxxxxxxx xx, xxx xxx xxxxxxxx xx [**Xxxxxxxxxxx.XxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242330) xxxxxxxx xxx xxx xxxx xxxx xxxx xxx'x xxxxxx xxxxxx xxxxx xxx xxx xx xxxxxxxxx. Xxx xxx xxx xxxx xxxxx xx xxxxxxxxx xxxxxxx xxxx xxx xxxxx xx xxxxxxx xxx xxxx xxxxx xx xxx xxxxx xxxx xx xxx xxxx xxxxxxxxx, xx xxxxxxx xxx xxxx xxxx xxxx xxx’x xxxxxxx xxxx. Xxxxxxx xxx xxxxxx xxxxxx xx xx, xxxx xxx xxxx xxx xxxxxx xxxx xxxxxxxxxx xxxx xx xxx xxxx xxxx xxxxxxx xxxxx xxxxx xxx xxxxxxxx xxxxx xx xxx xxxx xxxxxxxx xxxxxxxxxx-xxxxxxxxx xxxxxxxx xxxxx xxxx-xxxxxxx xxxxxxxxxx xxxx xxxxx xx xxx'xx xxxxxxxxxx xx xxxxxxxxxx.
+アプリは、**NotRunning** 状態であるときに、ユーザーがスタート画面またはアプリケーション リストでアプリのタイルをタップすると起動します。 使用頻度の高いアプリは事前起動して応答性を最適化することもできます (「[アプリの事前起動の処理](handle-app-prelaunch.md)」を参照)。 アプリが **NotRunning** 状態である理由としては、アプリがまだ起動されていないこと、アプリが実行中にクラッシュしたこと、またはアプリは中断されたがメモリに残すことができずにシステムによって終了されたことなどが考えられます。 起動はアクティブ化とは異なります。 アクティブ化は、アプリが検索コントラクトなどのコントラクトまたは拡張機能によってアクティブになることです。
 
-Xxx [**XxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242330) xxxxx xxxx xxxxxxxx x [**XxxxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224729) xxxxxxxx xxxx xxxxx xxx xxxxx xxxxx xxxx xxx xxx xx xxxxxx xx xxx xxxxxxxxx. Xxxx xxxxxxxx xx xxx xx xxx xxxxxx xxxx xxx [**XxxxxxxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224694) xxxxxxxxxxx:
+アプリが起動されたときには、アプリが現在メモリ内で中断されているときを含め、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドが呼び出されます。 [
+            **LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) パラメーターには、アプリの以前の状態とアクティブ化引数が含まれています。
 
-| Xxxxxx xxx xxxxxxxxxxx                                                        | Xxxxx xx [**XxxxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224729) xxxxxxxx | Xxxxxx xx xxxx          |
-|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|-------------------------|
-| Xxxxxxxxxx xx xxx xxxxxx (xxx xxxxxxx, xxxxxxx xx xxxxxxxx xxxxxxxxxxx)       | **Xxxxxxxxxx**                                                                                          | Xxxxxxx xxxxxxx xxxx    |
-| Xxxxxx xx xxx xxxx, xx xxxxxxx-xxxxxxxxxx xx xxxx                             | **XxxxxxXxXxxx**                                                                                        | Xxxxx xxxx xxxxxxx xxxx |
-| Xxxxxxxxxxxx xxxxxxxxxx, xx xxx xxx xxx xxx xxxxxx xxx *xxxxxxx xxxx xxxxxxx* | **XxxXxxxxxx**                                                                                          | Xxxxx xxxx xxxxxxx xxxx |
-
- 
-
-**Xxxx***Xxxxxxx xxxx xxxxxxx* xx xxxxx xx Xxxxxxx xxxxx. Xx xxxx xx xxx xxxxxxx xxxx xxxx'x xxxxxxxxxx xxxxxx xxx, xxxx xxxx, xx Xxxxxxx xxxx'x xxxxxxxxx xxx xxxxx xxxxxxx, xxx xxxxxxx xxxx xxxxxxx xxxxxxxx xxxxxx xxxxxx xxxx xx xxxx xxxxxx xxxxxxxxxxxxxx, xxxxxx-xxxx xxx xx xx.
-
- 
+ユーザーが終了したアプリに切り替えると、システムは [**LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) 引数を送信します。このとき、[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) は **Launch** に設定され、[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) は **Terminated** または **ClosedByUser** に設定されます。 アプリでは、保存されているアプリ データを読み込み、表示されているコンテンツを更新する必要があります。
 
 [
-            **XxxxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224729) xxxxx xxxx xxxx x xxxxx xx **Xxxxxxx** xx **Xxxxxxxxx**, xxx xx xxxxx xxxxx xxxx xxx xxx xxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxx xxx’x xxxx xx xxxxxxx xxx xxxx xxxxxxx xxxxxxxxxx xx xxxxxxx xx xxxxxx.
+            **PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) の値が **NotRunning** である場合は、初めて起動するときのように最初からアプリをやり直す必要があります。
 
-**Xxxx**  
+アプリの起動時には、アプリのスプラッシュ画面が表示されます。 スプラッシュ画面を構成するには、「[スプラッシュ画面の追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh465331)」をご覧ください。
 
-Xx xxx xxx xx xxxxx xxx xxxxxxxx'x Xxxxxxxxxxxxx xxxxxxx, xxx xxx'x xxxxxxxx xxx XXX xxxx.
+スプラッシュ画面の表示中に、アプリはユーザー インターフェイスを準備する必要があります。 アプリの主なタスクに、イベント ハンドラーを登録して、初期ページの読み込みに必要なカスタム UI を設定するタスクがあります。 これらのタスクは数秒で完了する必要があります。 ネットワーク経由でデータを要求したり、ディスクから大量のデータを取得したりする必要がある場合、こうしたアクティビティはアクティブ化とは別に実行してください。 このような実行に時間がかかる操作が完了するまでの間、アプリでは、アプリ独自のカスタム読み込み UI や追加のスプラッシュ画面を使うことができます。 詳しくは、「[スプラッシュ画面の表示時間の延長](create-a-customized-splash-screen.md)」や「[スプラッシュ画面のサンプル](http://go.microsoft.com/fwlink/p/?linkid=234889)」をご覧ください。 アプリのアクティブ化が完了すると、アプリが **Running** 状態になり、スプラッシュ画面は消えます (スプラッシュ画面のすべてのリソースとオブジェクトは消去されます)。
 
-Xxx xxxx xxxx, xxx [Xxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh464906).
-
-### **XxXxxxxxxxx** xxxxxx xxxxxxxx xxxxxxxxxxx
-
-Xxx [**XxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242330) xxxxxx xx xxx xxxxx xx xxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxx. Xxxxxxx, xx'x xxxx xxxxxx xx xxx xxxxxxxxx xxxxxxx xx xxxxxx xxx xxxx xxxxxx xxxxxxxxxx xxxxx, xxx xxx **XxXxxxxxxxx** xxxx xx xxx xxxxxxxx xxxxxx xxx xxx xxxx xxxxxx xxxxxxxxxx xxxxx. Xxx xxxxxxx, [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242324) xxx xx [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335) xxxxxx xxxx'x xxxxxxx xx x xxxxxxxx xxxxxxxx [**XxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224693) xx **Xxxxxx**, xxx xxxx xx xxx xxxxxxx xxxxxxxxxx xxx xxxx xxxx. Xxxxx xxx Y xxxx **Xx\*** xxxxxxx xxx xxxxxxxx xxxxxxxxxxx: [**XxXxxxxxXxxxXxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701797), [**XxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242331), [**XxXxxxXxxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701799), [**XxXxxxXxxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701801), [**XxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242336), [**XxXxxxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701806). Xxxxxxxx xxxxxxxxx xxx x XXXX xxx xxxx xx xxxxxxxxxxxxxx xxx **XxXxxxxxxx** xxx x xxxxxxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242341).
-
-## Xxx xxxxxxx
+## アプリのアクティブ化
 
 
-Xxx xxxxxx xxxxxxxx xxxx xxx xxxxxxxx xxx xxxx xxxxxxxx xx xxxxxxx xxx xx xx xxx xxxxxxx xx Xxxxx xxxxxx. Xxx xxx xxx xxxx xx xxxxxxxxx xxxx xxx xxxxxx xxxxxx x xxx xxxxx xxxxx. Xxx xxxxxx xxxxxxx xxxx xxx xxxxxxxx xxx xxxx xxxxxxxx xxxx xx xx. Xxxx xxx xxxxxx xxxxxxx xxxx xxx, xxx xxxxxxx xx xxxx xxxxxxxxx xxx xxxx xxxxxxxxxx xx xxx xxxx xx xx xxx xxxxxx xxx xxxxxx xxxxxxxxx xxx xxx. Xxx xxxxxx xxxxxxxx xxx xxx xxxxxxx xxxxx xx xxxx xxx, xx xxxx xx xxxxxxx xx xxx xxxx xx xx xx'x xxxx xxxxxxx xx xxx xxxxxxxxxx.
+アプリは、さまざまな拡張機能や、共有コントラクトなどのコントラクトによってアクティブ化されます。 アプリをアクティブ化する方法の一覧については、「[**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693)」をご覧ください。
 
-Xxxx xxx xxxx xxxxx xx xxx xx xxx xxxxxxxxxx, Xxxxxxx xxxxx x xxx xxxxxxx xx xxx xxxxxxx xxx xxxx xxxx xxxxxxxxxxx xxxxxx xxxx xx xxx xxx xx xxxx xxx xxxxxxxxxx xxxx xx xxxx xx xxxx xx. Xx xxx xxxx xxxx xxx xxxxxx xxxx xxxxxx xxxx xxxx xxxxxx, Xxxxxxx xxxxxxxx xxx xxx.
+[
+            **Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) クラスで定義されているメソッドを上書きして、さまざまなアクティブ化の種類に対応することができます。 一部のアクティブ化の種類には、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336) など、上書きできる専用のメソッドがあります。それ以外のアクティブ化の種類では、[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) メソッドをオーバーライドします。
 
-Xx xxx xxxx xx xx xxxxxxxxxxxx xxxx xxxx xxxx xxx xx xxxxx xxxxxxxxx xxx xxxx xxxx xx xxxxx xxxxxxxxxx xx xxxxxxx xxxxx xxxxx xxxx xxxx xxxxxxxxx. Xxx xxx xxx xxx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224690) xxxxxx xx xxx [**XxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224688) xxxxxx (xxxxxxxxx xxx xxx xxxxx xxxx) xx xxxxx xxxxxxxxxx xx xxxxxxx xxxxx xxxxx xxx xxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224685) xxxxxx xx xxx xxxxxxxx [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224684) xxxxxx.
+アプリのアクティブ化コードを使うと、アクティブ化された理由を確認したり、既に **Running** 状態になっているかどうかを確認したりすることができます。
 
-Xxx xxxxxx xxxxxxxx xx xxxx xxxx xxx xxx xxx xxxx xx xxxxxx xxxxx xx'x xxxxxxxxx. Xxxxxxx, xx xxx xxxxxx xxxx xxx xxxx xxx xxxxxxxxx xx xxxx xxxx xxx xx xxxxxx, xxx xxxxxx xxxx xxxxxxxxx xxxx xxx. Xxxx xxx'x xxxxxxx x xxxxxxxxxxxx xxxx xxxx xxx xxxxx xxxxxxxxxx, xx xxx xxxx xxxxxxxxxxx xxx xxxx xx xxxx xxxx xxx'x xxxx xx xxxxxx xxxxxxxxxx. Xxxx xx xxx xxxxxxxxxx xxxx xx xxx xxxx xxxxxxxxx xxxxx xxxxx xxxxxxxxxx, xx xxxxxx xxxx xxx xxxxxxxxxxx xxxx xxxx xx xxxxx xxxxxx xxxxxxx xx xxxx xxx xxx xx xx xxx xxxx xxxxx xx xx xxx xxxxxx xx xxx xxxxxxxxx. Xxxx xxx xxxx xxxxxxxx xxxx xx x xxxxxxxxx xxx xxxx xxx xxxx xxxxxxxxxx, xxx xxx xxxxxx xxxxxxx xxx xxxxxxxxxxx xxxx xx xxx [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335) xxxxxx. Xxx xxxxxx xxxxx'x xxxxxx xx xxx xxxx xx'x xxxxxxxxxx, xx xxxx xxx xxxx xxxx xxx xxxxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx xxxx xx'x xxxxxxxxx, xxx xxxxxxx xxxx xxxx xxx xxx xx xxxxxxxxx xxxxx xxxxxxxxxxx.
+オペレーティング システムがアプリを終了させた後でユーザーが再びアプリを起動した場合は、アクティブ化するときに、保存されていたデータを復元することができます。 Windows では、アプリの中断後、さまざまな理由でアプリを終了することがあります。 たとえば、ユーザーが手動でアプリを閉じたときやサインアウトしたとき、システムのリソースが足りないときなどです。 Windows がアプリを終了させた後でユーザーがアプリを起動した場合、アプリは [**Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) コールバックを受け取ります。ユーザーには、アプリがアクティブ化されるまで、アプリのスプラッシュ画面が表示されます。 このイベントを使って、前回中断されたときに保存されていたデータを復元する必要があるかどうか、アプリの既定のデータを読み込む必要があるかどうかを判断できます。 スプラッシュ画面が表示されているため、アプリのコードでは、ユーザーが気になるような遅延を発生させずに、ある程度の処理時間を費やしてこのイベントの処理を実行できます。ただし、アプリの再起動や継続を行うときには、前に説明した実行に時間がかかる操作に関する対応方法も考慮してください。
 
-Xx xx xxx xxx xxxxxxxxxx xx xxxxx xxxxxxx xxx xxx [**Xxxxxxxxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242341) xxxxx, xxxx xxxx xx xxxxxx xxxxxxxxxxx xxxxxx xxx xxx xx xxxxxxxxx. Xxx xxx xxx xxx xxxxx xxxxxxx xx xxxx xxx xxx xxxx xxxx. Xx xxxxxxxxxxx xxxx xxx xxx xxx xxxxxxxxxxx xxxx XXXx xxx xxxx xxxxxxx xxxxxxx xxxx xxx xxxxxxxxxx xx xxxxxxxx xxxxxx xxx xxx xxxxxx xxx **Xxxxxxxxx** xxxxx. Xxx xxxx xxxx, xxx [Xxxxx xxx xxxxxxxx xxxxxxxx xxx xxxxx xxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt299098).
+[
+            **OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) イベント データには [**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) プロパティが含まれており、アプリがアクティブ化される前の状態を確認することができます。 このプロパティの値は、[**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列挙体のいずれかの値になります。
 
-Xxx xxxxxx xxxx xxxxxxx xxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx xx xxxx xxxxx xxxx xxx xxxxxx xxxx xxxxx xxxx xxx xxx'x xxxxx xxxx. Xxxxxxxx xx xxxxxxxxx xxxxxxxxx xxxxxxx xxxxxxx, X/X xxxxxxx, xxxxxxxx xxxxxxx, xxx xxxxxxx xxxxxxxxx. Xxxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx xxxxx xx xxxxxx xxxx xxxxx xxxx xxx xxxxxx xxxx xxxxx xxxx xxx xxx'x xxxxx xxxx. Xxxx xxx xxx xx xxxxxxxxx xxxxx xxxxxxxxxxx, xx xxxxxx xxxxxx xxx xxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx.
-
-Xxxxxxxxx, xxxx xxx xxxxxx xxxx xxx xxxxx xxx xxxxxxx xxx xxxxxxxxx xxx xxxx xxxxxxx xxxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx xxxxx, xxx xxx xxxx xxxxxx xxx xxxx xxxx xxxx x xxxxxx xx xxxxxxxx. Xx xx xxx xxxx xxx xxxxxx xxxx xxx xxxxxxxxxx xxxxx xxxxxx x xxx xxxxxxx, Xxxxxxx xxxxxxx xxxx xxx xxx xxx xxxxxxx xxxxxxxxxx xxx xxxxxxxxxx xx.
-
-Xxxxx xxx xxxx xxx xxxxxxxxx xxxxx xxx xxx xxxx xxxxxxxx xx xxx xx xxxxxxxx xxxxxxxxxx xxxxx. Xxx xxxxxxx, xxxx xxx xxx xxxxxxxx xx xxxx xxxxx xx xxx xxxxxxxxxx; xxx xxxx xxxx, xxx [Xxxxxxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/mt282140)). Xxxx, xxxxxxxxxx xxxxxxxx xxxxxxxxxx xxxxxxxx xxxx xx xxxx xxx xx xxxxxxxxx xx xxxx xxxxxxxxxx; xxx xxxx xxxx, xxx [Xxx xx xxxxxxxx x xxxx](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer)).
-
-Xxx xxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxx xxxxxxx xxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465088).
-
-**X xxxx xxxxx xxxxxxxxx xxxxx Xxxxxx Xxxxxx:  **Xxxxxx Xxxxxx xxxxxxxx Xxxxxxx xxxx xxxxxxxxxx xx xxx xxxx xx xxxxxxxx xx xxx xxxxxxxx. Xxxx xx xx xxxxx xxx xxxx xx xxxx xxx Xxxxxx Xxxxxx xxxxx XX xxxxx xxx xxx xx xxxxxxx. Xxxx xxx'xx xxxxxxxxx xx xxx, xxx xxx xxxx xx x xxxxxxx xxxxx xxxxx Xxxxxx Xxxxxx. Xxxx xxxx xxx **Xxxxx Xxxxxxxx** xxxxxxx xx xxxxx xxxxx, xxxx xxxxx xxx **Xxxxxxx** xxxx.
-
-## Xxx xxxxxxxxxx
-
-
-Xxxx xxx xxxx xxxxxxxx xxxx xxxx xxx xx xxxxxxx xxx, xxxx xxx xx xx xxxxxx xxxxxxx xxx xxxxxxx xx xxx **Xxxxxxx** xxxxx xxxxx Xxxxxxx xxxxxxxx xx. Xx xxx xxxx xxxxxxxx xxxx xxxx xxxx xxx xxx xxxxxxxxx xx xxxxxxxx xxxx xx xx xxxxxx xx xxx xxxxxxxxx, xxx xxx xxxxxxx xx xxx **Xxxxxxx** xxxxx.
-
-Xxxx xxx xxxxx'x xxxxxxx xx xxxxxxxxxx xxxxx xxxx xxx xxxxxxxxxx xxxxxxx xxxxxxx xxx xxx xx xxxxx xxxxxxx. Xxxxxxx xxxxxx xxxxxxxx xx xxx xxxx xxx xxx xx xxxxxxxxx. Xx xxxx xxx xxxxx xx xx xxxxxxxxx xxxx xxx xxxx xxxxxxxx xxxx xxx xxxx, xxxxxx xxx [**Xxxxxx.XxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702458) xxxxx.
-
-Xx xxx xxxx xx x xxxxxxxx xxxxxxxx xx xxxxx xxxxxx.
-
-## Xxx xxxxxx
-
-
-X xxxxxxxxx xxx xx xxxxxxx xxxx xxx xxxx xxxxxxxx xx xx xx xxxx xx xx xxx xxxxxx xxx xxxx xxx xxxxxx xxxxx xxx xx x xxx xxxxx xxxxx.
-
-Xxx xx xxxxxxxxxxx xx xxx xxxxxx xxxx xxxx xxx xxx xx xx xxxx xxxx xxx xx xxxxxxx, xxx [**XxxxxxxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224694). Xxxx xx xxx xx xxxxxxx xxxx xxx **Xxxxxxxxx** xxxxx, xx xxxxxx xxx **Xxxxxxx** xxxxx xxx xxxxxxxxx xxxx xxxxx xx xxx xxxx xx xxx xxxxxxxxx. Xx xxx xxxx xxxxxx xx xxxxxx xx xxxx. Xxxxxxxxx, xxxx xxxx xxx'x xxxx xx xx xxxxxxxx xxxx xxxx xxx xxxxxxx. Xxxxxxx, xxx xxx xxxxx xxxx xxxx xxxxxxxxx xxx xxxxx xx xxxx xxxx. Xx xxxx xxx xxx xxxxxxx xx xxxxxxx xxxxxxxxxxx xxxx xxx xxxx xxxx xxxxx, xxxxx xxxxxx xx xxxxxxxxx xxxx xxx xxx xxxxxxx. Xx xx xxx xxxxxxxxxx xx xxxxx xxxxxxx xxx xxx [**Xxxxxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242339) xxxxx, xx xx xxxxxx xxxx xxx xxx xx xxxxxxx xxxx xxx **Xxxxxxxxx** xxxxx. Xxx xxx xxxxxxx xxxx xxx xxxxxxx xxx xxxx xxxxx xxxx xxxxx xxxxxxx.
-
-Xx x xxxxxxxxx xxx xx xxxxxxxxx xx xxxxxxxxxxx xx xx xxx xxxxxxxx xx xxxxxxxxx, xx xxxxxxxx xxx **Xxxxxxxx** xxxxx xxxxx, xxxx xxx **Xxxxxxxxx** xxxxx.
-
-Xxxxx xx xx xxx xx xxxxxxxxx, xx xxxx xxx xxxxxxx xxx xx xxx xxxxxxx xxxxxx xxxx xx xxxxxxxxxx xx xxxxxxx. Xxxxx xxxxxxx xxxxxx xxx xxx xxxxxx, xxxx xxx xxxxxx xxxxxx. Xxxxxxxxx, xxxx xxx xxxxxx xxxx xxx xxxxxxx xxxxxx xxxx xx xx xxxxxxx.
-
-**Xxxx**  Xxxxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242339) xxxxx xx xxx xxxxxx xxxx xxx XX xxxxxx, x xxxxxxxxxx xxxx xx xxxx xx xxx xxxx xx xxxx xxxxxx xxxxxxx xxxxxxxxxxxx xxxx xxxx XX.
+| 終了した理由                                                        | [
+            **PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) プロパティの値 | 実行する処理          |
+|-------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|-------------------------|
+| システムによる終了 (リソースの制約などによる)       | **Terminated**                                                                                          | セッション データを復元する    |
+| ユーザーによる終了 (ユーザーによるプロセスの終了)                             | **ClosedByUser**                                                                                        | 既定のデータで起動する |
+| 予期しない終了 (*現在のユーザー セッション*の間にアプリが実行されていない) | **NotRunning**                                                                                          | 既定のデータで起動する |
 
  
 
-Xxx xxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxx xxxxxxx xxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465088).
-
-## Xxx xxxxx
-
-
-Xxxxxxxxx, xxxxx xxx'x xxxx xx xxxxx xxxx, xxxx xxx xxx Xxxxxxx xxxxxx xxxx. Xxxxxxx, xxxxx xxx xxxxxx xx xxxxx xx xxx xxxxx xxx xxxxx xxxxxxx xx xx xxxxxxxx Xxx+XY xx Xxxxxxx xx xx xxxxx xxx xxxx xxxxxxxx xx Xxxxxxx Xxxxx.
-
-Xxxxx'x xx xxxxxxx xxxxx xx xxxxxxxx xxxx xxx xxxx xxxxxx xxx xxx.
-
-Xxxxx xx xxx xxx xxxx xxxxxx xx xxx xxxx, xx'x xxxxx xxxxxxxxx xxx xxxx xxxxxxxxxx, xxx xxxxxx xxx **XxxXxxxxxx** xxxxx.
-
-Xx Xxxxxxx Y.Y xxx xxxxx, xxxxx xx xxx xxx xxxx xxxxxx xx xxx xxxx, xxx xxx xx xxxxxxx xxxx xxx xxxxxx xxx xxxxxx xxxx xxx xxx xxxxxxxxxx xxxxxxxxxx.
-
-Xx xx xxx xxx xxxxxxxxxx xx xxxxx xxxxxxx xxx xxx **Xxxxxxxxxx** xxxxx, xx xx xxxxxx xxxx xxx xxx xx xxxxxxxxx. Xxx xxx xxx xxxx xxxxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxxxxx xxx xxxx xxxx xx xxxxxxxxxx xxxxxxx.
-
-**Xxxxxx-xx-xxxx xxxxxxxx:  **Xx xxxx xxx xxxxx xx xx xxxxxxxxx xxxxxxxxx xxxx xx xx xxxxxx xx xxx xxxx xxxx xxxx xx xx xxxxxx xx Xxxxxxx, xxx xxx xxx xxx xxxxxxxxxx xxxxx xxxxxxx xx xxxxxxxxx xxxxxxx xxx xxx xxx xxxxxxxxxx xx xxx xxxx xx xx Xxxxxxx. Xxx xxx xxxxxxxxxxxx xx **XxxxxxXxXxxx** xxx **Xxxxxxxxxx** xxxxxx xx xxx xxxxxxxxx xxx xxx [**XxxxxxxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224694) xxxxxxxxxxx.
-
-Xx xxxxxxxxx xxxx xxxx xxx xxxxx xxxxxxxxxx xxxxxxxxxxxxxxxx xxxxxx xxxxxxxxxx xxxxxxxxx. Xxx xxxxxxx, xx xx xxx xxxxxxx x xxxxxx xxxx, xx xxx xxxxx xxxxxx xx xxxxxx xxx xxxxxxxx xx xxx xxxx'x xxxxxxxx xxxx. Xxxx xxx xxxxx xx xxx xxxxxxxxxxxxxxxx, xxx xxxxxx xxxxxx xx xx xx xxx xxxxx.
-
-## Xxx xxxxx
-
-
-Xxx xxxxxx xxxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxxx xxxx xx xxxx xxxx xxxx xxxxx xx xxxxxxx xx xxxxxxxx. Xxx xxxxxxx'x xxxxxxx x xxxxxxx xxxxxx xx xxxxx xxxxxxxxxxxx xxxxxxx xxxx xxxx xxxxx xxx xxxx.
-
-Xx xxxx xxx xxxxxxx, xxxxx xxxxxxxxxx, xx xxxxxxxxx xx xxxxxxxxx, x xxxxxxx xxxxxx xx xxxx xx Xxxxxxxxx xxx xxx xxxx'x [xxxxxxxx xxx xxxxxxxxxxx xxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=614828). Xxxxxxxxx xxxxxxxx x xxxxxx xx xxx xxxxx xxxx xx xxx xxxxxxx xxxxxx xx xxx xx xxxx xxx xxx xxx xx xx xxxxxxx xxxx xxx. Xxx'xx xx xxxx xx xxx xxxx xxxx xx xxxx xxx'x Xxxxxxx xxxx xx xxxx Xxxxxxxxx.
-
-Xxxx xxx xxxx xxxxxxxxx xx xxx xxxxx xx xxxxxxx, xxx xxxxxxxxxx xxxxx xxxxxxx xxxxxxxx xx [**XxxxxxxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224694) xxxxx xx **XxxXxxxxxx**, xxx xxxxxx xxxxxxx xxx xxxxxxx XX xxx xxxx. Xxxxx x xxxxx, xxx'x xxxxxxxxx xxx xxx xxx xxxx xxx xxxxx xxxx xxxx xxx **Xxxxxxxx** xxxx **Xxxxxxxxx** xxxxxxx xxxx xxxx xxxxx xx xxxxxxx; xxx [Xxxxxxxxxx xxx xxx xxxxxxx xxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465088).
-
-## Xxx xxxxxxx
-
-
-Xxxx x xxxx xxxxxxx xxxx xxx, xxx xxx xx xxxxxxx, xxxxx xxxx xxx xxx xxxxx xxxx. Xxxxxxxx xx xxx xxxxx'x xxxxxx xxx xxxx'x xxxx xxxx xxx xxxxxx xx xxxxxx xxxxxxxxx xxxx xx xxx Xxxxxxxxx xx Xxxxxxxx xxxxxxxxx.
-
-## Xxx xxxxxxxxx xxx xxx Xxxxxx Xxxxxx xxxxxxx xxxxxxxxx
-
-
-Xxx xxxxx xxxx xxxx xx xxxxxxxx xx xxx xxx xxxxxxxxx xx xxxxxxxx xx xxx xxxxxxxx Xxxxxx Xxxxxx xxxxxxx xxxxxxxxx. Xxx xxxxx xxx xxxxxxx xxxxxx xxxxxxxxxx, xxxxxxxx x xxxxx xxx xxx xx xxxxxxx xxxx xxx xxxx, xxx xxxxxxxx xxx xxxxxxx XX xxxx xxxxxx xxx'xx xxxxx xxx xx xxxx xxx xxxx. Xxx xxxx xxxx, xxx [X\#, XX, xxx X++ xxxxxxx xxxxxxxxx xxx xxxx](https://msdn.microsoft.com/library/windows/apps/hh768232).
-
-## Xxxxxxxxxxx xxxxxxxxx xxx XXXx
-
-
--   [
-            **Xxxxxxx.XxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224691) xxxxxxxxx
--   [
-            **Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224766) xxxxxxxxx
--   [
-            **Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br205865) xxxxxxxxx
--   [
-            **Xxxxxxx.XX.Xxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242324) xxxxx (XXXX)
--   [
-            **Xxxxxxx.XX.Xxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209041) xxxxx (XXXX)
-
-**Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**注**  *現在のユーザー セッション*は、Windows ログオンに基づきます。 現在のユーザーが明示的にログオフやシャットダウンを行っていない、または他の理由で Windows が再起動していない限り、現在のユーザー セッションは、ロック画面認証やユーザーの切り替えなどのイベント間で保持されます。
 
  
 
-## Xxxxxxx xxxxxx
+[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) の値が **Running** または **Suspended** になる場合もありますが、その場合、アプリは終了されておらず、データはすべてメモリ内にあるため、データを復元する必要はありません。
+
+**注**  
+
+コンピューターの管理者アカウントを使ってログオンしている場合は、UWP アプリをアクティブ化できません。
+
+詳しくは、「[アプリの拡張機能](https://msdn.microsoft.com/library/windows/apps/hh464906)」をご覧ください。
+
+### **OnActivated** と特定のアクティブ化との比較
+
+[
+            **OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) メソッドは、発生する可能性があるすべてのアクティブ化の種類を処理するための方法となります。 ただし、最も一般的なアクティブ化の種類を処理する場合は別のメソッドを使い、あまり一般的ではないアクティブ化の種類を処理する際の代替手段としてのみ **OnActivated** を使うことが多くあります。 たとえば、[**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) には、[**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) が **Launch** である場合にコールバックとして呼び出される [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドがあります。このメソッドが、ほとんどのアプリで使われる一般的なアクティブ化の方法です。 特定のアクティブ化については、さらに 6 つの **On\*** メソッドがあります。それらは、[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/br242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/hh701801)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/br242336)、[**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/hh701806) です。 XAML アプリの開始テンプレートは、**OnLaunched** の実装と [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) のハンドラーを備えています。
+
+## アプリの中断
 
 
-* [Xxxxxxxxxx xxx xxx xxxxxxx xxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [Xxxxxx xxx xxxxxxxxx](handle-app-prelaunch.md)
-* [Xxxxxx xxx xxxxxxxxxx](activate-an-app.md)
-* [Xxxxxx xxx xxxxxxx](suspend-an-app.md)
-* [Xxxxxx xxx xxxxxx](resume-an-app.md)
+ユーザーが別のアプリや、デスクトップまたはスタート画面に切り替えると、システムはアプリを中断します。 デバイスが低電力状態になったときに、アプリが中断される場合もあります。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。 システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。 システムはアプリを厳密に中断前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。
+
+ユーザーがアプリをバックグラウンドに移行すると、Windows は、ユーザーがすぐにこのアプリに戻るかどうかを確かめるために数秒待機します。これにより、元のアプリに戻る場合、切り替えはすばやく行われます。 この時間枠内にアプリに戻らなかった場合、アプリは中断されます。
+
+アプリの中断が進められているときに非同期作業が必要になった場合には、その作業が完了するまで中断の完了を遅らせる必要があります。 返された [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) オブジェクトに [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) メソッドを呼び出すまで中断の完了を遅らせるには、[**SuspendingOperation**](https://msdn.microsoft.com/library/windows/apps/br224688) オブジェクト (イベント引数経由で利用可能) に対して [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) メソッドを使います。
+
+システムは、アプリの一時停止中、アプリとそのデータをメモリに保持するよう試みます。 ただし、アプリをメモリに保持するためのリソースがシステムにない場合、システムはアプリを終了します。 アプリは終了通知を受け取らないため、アプリが中断されるタイミングがアプリのデータを保存する唯一のチャンスとなります。 終了後にアプリをアクティブ化するとき、アプリが中断する前と同じ状態になるように、中断時に保存したアプリのデータがアプリに読み込まれます。 中断されてから終了されたアプリにユーザーが戻るとき、アプリは [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドでアプリケーション データを復元する必要があります。 アプリが終了されるときは、システムはアプリに通知を送らないので、アプリは中断されたときにアプリケーション データを保存し、排他リソースとファイル ハンドルを解放して、アプリが終了後アクティブ化されるときにそれらを復元する必要があります。
+
+アプリに [**Application.Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) イベントのイベント ハンドラーが登録されている場合は、アプリが中断される直前にこのイベント ハンドラーが呼び出されます。 このイベント ハンドラーを使って、アプリ データとユーザー データを保存できます。 この場合は、アプリ データ API を使うことをお勧めします。アプリ データ API は、アプリが **Suspended** 状態になる前に必ず完了するためです。 詳しくは、「[設定と他のアプリ データを保存して取得する](https://msdn.microsoft.com/library/windows/apps/mt299098)」をご覧ください。
+
+また、排他リソースとファイル ハンドルを、自分のアプリが使っていないときに他のアプリがアクセスできるように解放することをお勧めします。 排他リソースには、カメラ、I/O デバイス、外部デバイス、ネットワーク リソースなどがあります。 排他リソースとファイル ハンドルを明示的に解放すると、自分のアプリが使っていないときに他のアプリが排他リソースとファイル ハンドルにアクセスできるようになります。 アプリが終了後にアクティブ化されるときに、排他リソースとファイル ハンドルを再び開く必要があります。
+
+一般に、アプリは中断イベントを処理するとすぐに、その状態を保存し、リソースとファイル ハンドルを解放します。コードでは、この処理を 1 秒以内で完了させる必要があります。 アプリが中断イベントから数秒以内に復帰しなかった場合、Windows はアプリが応答を停止したと判断してアプリを終了します。
+
+アプリのシナリオによっては、バックグラウンド タスクを完了するためにアプリの実行を継続する必要があります。 たとえば、アプリではオーディオの再生をバックグラウンドで継続できます。詳しくは、「[バックグラウンド オーディオ](https://msdn.microsoft.com/library/windows/apps/mt282140)」をご覧ください。 また、バックグラウンドの転送処理は、アプリが中断または終了した場合でも引き続き実行されます。詳しくは、「[ファイルのダウンロード方法](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj152726.aspx#downloading_a_file_using_background_transfer)」をご覧ください。
+
+ガイドラインについては、「[アプリの中断と再開のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465088)」をご覧ください。
+
+**Visual Studio によるデバッグに関する注意事項:  **Visual Studio は、Visual Studio デバッガーにアタッチされているアプリを Windows が中断するのを防ぎます。 これは、アプリが実行されている間、ユーザーが Visual Studio デバッグの UI を確認できるようにするためです。 アプリのデバッグ中は、Visual Studio を使ってそのアプリに中断イベントを送信できます。 **[デバッグの場所]** ツール バーが表示されていることを確認し、**[中断]** アイコンをクリックします。
+
+## アプリの表示
+
+
+ユーザーがアプリを別のアプリに切り替えると、元のアプリは表示されなくなりますが、Windows によって中断されるまでは **Running** 状態が維持されます。 ユーザーがアプリを切り替えても、中断される前にそのアプリをアクティブ化したり再びそのアプリに切り替えた場合は、アプリは **Running** 状態のままになります。
+
+アプリの表示が切り替わったときは、アプリは実行状態のままであるため、アクティブ化イベントを受け取りません。 必要に応じて、Windows でアプリの切り替えだけが行われます。 ユーザーがアプリを切り替えたときになんらかの処理を行う必要がある場合は、[**Window.VisibilityChanged**](https://msdn.microsoft.com/library/windows/apps/hh702458) イベントを処理します。
+
+これらのイベントの特定の順序に依存しないでください。
+
+## アプリの再開
+
+
+中断中のアプリは、ユーザーがそのアプリに切り替えた場合、またはデバイスが低電力状態から復帰してアクティブなアプリになった場合に再開されます。
+
+アプリが再開されたときのアプリの状態については、[**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列挙体を確認してください。 アプリが **Suspended** 状態から再開されると、**Running** 状態になり、中断された時点から再開されます。 メモリに格納されているアプリのデータは失われません。 したがって、ほとんどのアプリでは、再開時に処理を行う必要はありません。 ただし、アプリは長時間中断されていた可能性があります。 そのため、アプリのコンテンツやネットワーク接続が無効になっていると考えられる場合は、アプリの再開時にコンテンツやネットワーク接続を更新する必要があります。 アプリに [**Application.Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントのイベント ハンドラーが登録されている場合は、アプリが **Suspended** 状態から再開されるとこのイベント ハンドラーが呼び出されます。 このイベント ハンドラーを使ってアプリのコンテンツやデータを更新できます。
+
+中断中のアプリがアクティブ化されてアプリ コントラクトまたは拡張機能に参加する場合は、まず **Resuming** イベントを受け取り、次に **Activated** イベントを受け取ります。
+
+中断中、アプリは受信登録したネットワーク イベント項目を受け取りません。 これらのネットワーク イベントはキューに入れられず、受け取ることができません。 そのため、再開時にアプリでネットワーク ステータスをテストする必要があります。
+
+**注**  [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントは UI とは異なるスレッドで発生するため、再開ハンドラーが UI とやり取りする場合はディスパッチャーを使う必要があります。
+
+ 
+
+ガイドラインについては、「[アプリの中断と再開のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465088)」をご覧ください。
+
+## アプリを閉じる
+
+
+一般に、アプリを閉じる処理はユーザーが行う必要はなく、Windows で管理されます。 ただし、ユーザーはジェスチャを使うか、Windows で Alt + F4 キーを押すか、Windows Phone でタスク スイッチャーを使って、アプリを閉じることができます。
+
+ユーザーがアプリを閉じたことを示す専用のイベントはありません。
+
+ユーザーがアプリを閉じると、中断された後に終了され、**NotRunning** 状態になります。
+
+Windows 8.1 以降では、ユーザーがアプリを閉じても、アプリは明示的に終了されるのではなく、画面と切り替えリストから消えるだけです。
+
+アプリに **Suspending** イベントのイベント ハンドラーが登録されている場合は、アプリが中断されるとこのイベント ハンドラーが呼び出されます。 このイベント ハンドラーを使って、関連するアプリ データとユーザー データを固定ストレージに保存できます。
+
+**ユーザーが閉じた場合の動作:  **ユーザーがアプリを閉じたときに、Windows によって閉じられたときとは異なる動作にする必要がある場合は、アクティブ化イベント ハンドラーを使って、アプリをユーザーが終了したか、または Windows によって終了されたかを特定できます。 [
+            **ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) 列挙体に関するリファレンスの **ClosedByUser** 状態と **Terminated** 状態の説明をご覧ください。
+
+必要でない限り、アプリをプログラムで閉じないことをお勧めします。 たとえば、メモリ リークが検出された場合などは、ユーザーの個人データのセキュリティを確保するためにアプリ自体で閉じてもかまいません。 アプリをプログラムで閉じると、システムではアプリのクラッシュとして処理されます。
+
+## アプリのクラッシュ
+
+
+システム クラッシュのエクスペリエンスは、ユーザーがそれまで行っていた作業にできるだけ迅速に戻れるようにすることを目的としています。 ユーザーを待たせることがないように、警告ダイアログなどによる通知は行わないでください。
+
+アプリがクラッシュしたり、応答しなくなったり、例外が生成されたりすると、ユーザーの [フィードバックと診断の設定](http://go.microsoft.com/fwlink/p/?LinkID=614828) に従って、マイクロソフトに問題レポートが送られます。 Microsoft は、アプリの改善に役立つように、問題レポートに含まれるエラー データの一部を提供しています。 このデータは、ダッシュボードに表示されるアプリの [品質] ページで確認できます。
+
+アプリがクラッシュした後にユーザーがアプリをアクティブ化すると、アクティブ化イベント ハンドラーは [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) の値として **NotRunning** を受け取り、アプリの最初の UI とデータを表示します。 クラッシュの後、**Suspended** に基づく **Resuming** で使ったアプリ データはそのまま使わないでください。これは、そのデータが破損している可能性があるためです。「[アプリの中断と再開のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465088)」をご覧ください。
+
+## アプリの削除
+
+
+ユーザーがアプリを削除すると、アプリはすべてのローカル データと共に削除されます。 アプリの削除は、一般的な場所 (ドキュメント ライブラリやピクチャ ライブラリ内など) に格納されているユーザーのデータには影響しません。
+
+## アプリのライフサイクルと Visual Studio のプロジェクト テンプレート
+
+
+アプリのライフサイクルに関連する基本的なコードは、Visual Studio の開始プロジェクト テンプレートに用意されています。 基本的なアプリでは、起動アクティブ化を処理し、アプリ データを復元するための場所を提供して、独自のコードを追加する前であってもプライマリ UI を表示します。 詳しくは、「[アプリ用の C\#、VB、C++ プロジェクト テンプレート](https://msdn.microsoft.com/library/windows/apps/hh768232)」をご覧ください。
+
+## アプリケーションのライフサイクルに関する主要な API
+
+
+-   [**Windows.ApplicationModel**](https://msdn.microsoft.com/library/windows/apps/br224691) 名前空間
+-   [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766) 名前空間
+-   [**Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865) 名前空間
+-   [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) クラス (XAML)
+-   [**Windows.UI.Xaml.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) クラス (XAML)
+
+**注:**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
+
+ 
+
+## 関連トピック
+
+
+* [アプリの中断と再開のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [アプリの事前起動の処理](handle-app-prelaunch.md)
+* [アプリのアクティブ化の処理](activate-an-app.md)
+* [アプリの中断の処理](suspend-an-app.md)
+* [アプリの再開の処理](resume-an-app.md)
 
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

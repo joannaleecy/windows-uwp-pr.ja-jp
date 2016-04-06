@@ -1,32 +1,27 @@
 ---
-Xxxxxxxxxxx: Xx xxxx xxx xxxx xxx xxxxxxx xxxx xxxxxxxx xxxxxx, xxxxx xxx xxx xxxxx xx xxxx xxxxxxxx xxxxxx xxx xxxx xxxxxxxxxx xxxxx xxxx xxx xx xxx xxx xx xxxx xx xxx xx xx xxx.
-xxxxx: Xxxxxxxx xxxxxxxxxxxxx
-xx.xxxxxxx: XXXXYXYX-YYYY-YYXX-YYYY-XYYYXYXXXXYX
-xxxxx: Xxxxxxxx xxxxxxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+description: アプリに十分なキーボード操作機能が備わっていない場合、視覚障碍や運動障碍のあるユーザーはアプリをうまく使うことができなかったり、まったく使うことができない可能性があります。
+title: キーボードのアクセシビリティ
+ms.assetid: DDAE8C4B-7907-49FE-9645-F105F8DFAD8B
+label: キーボードのアクセシビリティ
+template: detail.hbs
 ---
 
-Xxxxxxxx xxxxxxxxxxxxx
+キーボードのアクセシビリティ
 =================================================================================
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xx xxxx xxx xxxx xxx xxxxxxx xxxx xxxxxxxx xxxxxx, xxxxx xxx xxx xxxxx xx xxxx xxxxxxxx xxxxxx xxx xxxx xxxxxxxxxx xxxxx xxxx xxx xx xxx xxx xx xxxx xx xxx xx xx xxx.
+アプリに十分なキーボード操作機能が備わっていない場合、視覚障碍や運動障碍のあるユーザーはアプリをうまく使うことができなかったり、まったく使うことができない可能性があります。
 
-<span id="keyboard_navigation_among_UI_elements">
-            </span>
-            <span id="keyboard_navigation_among_ui_elements">
-            </span>
-            <span id="KEYBOARD_NAVIGATION_AMONG_UI_ELEMENTS">
-            </span>Xxxxxxxx xxxxxxxxxx xxxxx XX xxxxxxxx
+<span id="keyboard_navigation_among_UI_elements"></span><span id="keyboard_navigation_among_ui_elements"></span><span id="KEYBOARD_NAVIGATION_AMONG_UI_ELEMENTS"></span>UI 要素間でのキーボード ナビゲーション
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Xx xxx xxx xxxxxxxx xxxx x xxxxxxx, xxx xxxxxxx xxxx xxxx xxxxx, xxx xx xxxxxxx xxxxx (xxxxxxx xxxxx x xxxxxxx) xxx xxxxxxx xxxx xx xxxxxxxxxx xx x XX xxxxxx xxx xxx xxxxxxxxxx. Xx xxxxxxx, xxx xxx xxxxx xx xxxxxxxx xx xxx xxxx xx xxx xxxxx xx xxxxx xxxx xxx xxxxx xx x xxxxxx xxxxxxx, xxxxxx xx XXXX, xx xxxxxxxxxxxxxxxx xxxxx xx x xxxxxxxxx.
+キーボードでコントロールを操作するにはフォーカスが必要です。ポインターを使わずにフォーカスを移すには、UI 設計でタブ ナビゲーションを使ってコントロールにアクセスできるようにする必要があります。 既定では、コントロールのタブ オーダーは、デザイン サーフェイスに追加された順序、XAML で一覧表示された順序、またはプログラムを使ってコンテナーに追加された順序と同じになります。
 
-Xx xxxx xxxxx, xxx xxxxxxx xxxxx xxxxx xx xxx xxx xxxxxxx xxxxxxxx xx XXXX xx xxx xxxx xxxxx, xxxxxxxxxx xxxxxxx xxxx xx xxx xxxxx xx xxxxx xxx xxxxxxxx xxx xxxx xx xxxxxx xxxxxxx. Xxxxxxx, xxx xxxxxxx xxxxx xxxx xxx xxxxxxxxxxx xxxxxxxxxx xx xxx xxxxxx xxxxx. Xxx xxxxxx xxxxxxx xxxxxxxx xxxxx xxxxxx xx xxx xxxxxx xxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxx xxxx xxx xxx xxx xx xxx xxxxx xxxxxxxx xx xxxxxxxxx xxx xxxxxx. Xx xx xxxx xxxx xxx xxx x xxxx xxx xxxxx, xxxx xxxx xxxxxxxx xxxxxxxx. Xxxxxxxxxx xx xxx xxxx x xxxx xxxxxxxx xx xxxxx xxxxxxxx xxx xxxx xxxxxx, xxx xxxxx xx xxxxx xxxxx xxxxx xxxx xxxxxx xxx xxx xxxxx xxxxx xxx xx xxxxxxxxx. Xxxx'x xxx xxxxxx x xxxxxxx xx xxx xx xxxxxx. Xxx xxxx xxxx xxxx xx xxxx xxxx xxx'x xxxxxxxxxxxxx xxxx xx x xxxxxxxxx XX xxx xx x xxxxxxxx-xxxxxxxxxx XX xxx xxxxxx xxxx xxxx XX xxxxx xxxxx xxxxxx xxx.
+ほとんどの場合、XML でのコントロールの定義に基づく既定の順序が最適な順序です。これは特に、スクリーン リーダーで読み取られるコントロールの順序と一致するためです。 ただし、既定の順序は表示順序と対応するとは限りません。 実際の表示位置は親レイアウト コンテナーと特定のプロパティに依存し、それらを子要素で設定することでレイアウトに影響することがあります。 アプリのタブ オーダーが適切に設定されていることを確かめるには、この動作を自身でテストする必要があります。 特に、グリッド形式や表形式で表されるレイアウトを使っている場合は、ユーザーが読み進める順序とタブ オーダーが一致しない可能性があります。 それ自体は必ずしも問題になるとは限りませんが、 必ずタッチ可能な UI とキーボードからアクセス可能な UI の両方についてアプリの機能をテストして、どちらの方法でも UI が適切に動作することを確認してください。
 
-Xxx xxx xxxx xxx xxx xxxxx xxxxx xxx xxxxxx xxxxx xx xxxxxxxxx xxx XXXX. Xx xxx xxx xxxxxxxx xxx xxxxxxx xxx xxxxx xx xxxxxxx xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209461) xxxxxxxx, xx xxxxx xx xxx xxxxxxxxx xxxxxxx xx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704) xxxxxx xxxx xxxx xxxxxx-xxxxx xxx xxxxxxxxxx.
+タブ オーダーと表示順序は、XAML を調整することで一致させることができます。 また、既定のタブ オーダーは、[**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) プロパティを設定して上書きできます。たとえば、次の [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) レイアウトでは、タブ ナビゲーションで列が最初に選ばれるようにしています。
 
 <span codelanguage="XAML"></span>
 <table>
@@ -35,7 +30,7 @@ Xxx xxx xxxx xxx xxx xxxxx xxxxx xxx xxxxxx xxxxx xx xxxxxxxxx xxx XXXX. Xx xxx 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">XXXX</th>
+<th align="left">XAML</th>
 </tr>
 </thead>
 <tbody>
@@ -45,54 +40,51 @@ Xxx xxx xxxx xxx xxx xxxxx xxxxx xxx xxxxxx xxxxx xx xxxxxxxxx xxx XXXX. Xx xxx 
   &lt;Grid.RowDefinitions&gt;...&lt;/Grid.RowDefinitions&gt;
   &lt;Grid.ColumnDefinitions&gt;...&lt;/Grid.ColumnDefinitions&gt;
 
-  &xx;XxxxXxxxx Xxxx.Xxxxxx=&xxxx;Y&xxxx; XxxxxxxxxxXxxxxxxxx=&xxxx;Xxxxxx&xxxx;&xx;Xxxxx&xx;/XxxxXxxxx&xx;
-  &xx;XxxxXxxxx Xxxx.Xxxxxx=&xxxx;Y&xxxx; XxxxxxxxxxXxxxxxxxx=&xxxx;Xxxxxx&xxxx;&xx;Xxxxx&xx;/XxxxXxxxx&xx;
+  &lt;TextBlock Grid.Column=&quot;1&quot; HorizontalAlignment=&quot;Center&quot;&gt;Groom&lt;/TextBlock&gt;
+  &lt;TextBlock Grid.Column=&quot;2&quot; HorizontalAlignment=&quot;Center&quot;&gt;Bride&lt;/TextBlock&gt;
 
-  &xx;XxxxXxxxx Xxxx.Xxx=&xxxx;Y&xxxx;&xx;Xxxxx xxxx&xx;/XxxxXxxxx&xx;
-  &xx;XxxxXxx x:Xxxx=&xxxx;XxxxxXxxxxXxxx&xxxx; Xxxx.Xxx=&xxxx;Y&xxxx; Xxxx.Xxxxxx=&xxxx;Y&xxxx; XxxXxxxx=&xxxx;Y&xxxx;/&xx;
-  &xx;XxxxXxx x:Xxxx=&xxxx;XxxxxXxxxxXxxx&xxxx; Xxxx.Xxx=&xxxx;Y&xxxx; Xxxx.Xxxxxx=&xxxx;Y&xxxx; XxxXxxxx=&xxxx;Y&xxxx;/&xx;
+  &lt;TextBlock Grid.Row=&quot;1&quot;&gt;First name&lt;/TextBlock&gt;
+  &lt;TextBox x:Name=&quot;GroomFirstName&quot; Grid.Row=&quot;1&quot; Grid.Column=&quot;1&quot; TabIndex=&quot;1&quot;/&gt;
+  &lt;TextBox x:Name=&quot;BrideFirstName&quot; Grid.Row=&quot;1&quot; Grid.Column=&quot;2&quot; TabIndex=&quot;3&quot;/&gt;
 
-  &xx;XxxxXxxxx Xxxx.Xxx=&xxxx;Y&xxxx;&xx;Xxxx xxxx&xx;/XxxxXxxxx&xx;
-  &xx;XxxxXxx x:Xxxx=&xxxx;XxxxxXxxxXxxx&xxxx; Xxxx.Xxx=&xxxx;Y&xxxx; Xxxx.Xxxxxx=&xxxx;Y&xxxx; XxxXxxxx=&xxxx;Y&xxxx;/&xx;
-  &xx;XxxxXxx x:Xxxx=&xxxx;XxxxxXxxxXxxx&xxxx; Xxxx.Xxx=&xxxx;Y&xxxx; Xxxx.Xxxxxx=&xxxx;Y&xxxx; XxxXxxxx=&xxxx;Y&xxxx;/&xx;
-&xx;/Xxxx&xx;</code></pre></td>
+  &lt;TextBlock Grid.Row=&quot;2&quot;&gt;Last name&lt;/TextBlock&gt;
+  &lt;TextBox x:Name=&quot;GroomLastName&quot; Grid.Row=&quot;2&quot; Grid.Column=&quot;1&quot; TabIndex=&quot;2&quot;/&gt;
+  &lt;TextBox x:Name=&quot;BrideLastName&quot; Grid.Row=&quot;2&quot; Grid.Column=&quot;2&quot; TabIndex=&quot;4&quot;/&gt;
+&lt;/Grid&gt;</code></pre></td>
 </tr>
 </tbody>
 </table>
 
-Xxx xxx xxxx xx xxxxxxx x xxxxxxx xxxx xxx xxx xxxxx. Xxx xxxxxxxxx xx xxxx xxxx xx xxxxxx xxx xxxxxxx xxxxxxxxxxxxxx, xxx xxxxxxx xx xxxxxxx xxx [**XxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209419) xxxxxxxx xx **xxxxx**. X xxxxxxxx xxxxxxx xx xxxxxxxxxxxxx xxxxxxxx xxxx xxx xxx xxxxx. Xxx xxxxxxxxxxxx xxx xxxxx xxxx xx xxxxxxx x xxxxxxx xxxx xxx xxx xxxxx xxxx xx xx xx xxx xxxxxxxx. Xx xxxx xxxx, xxx xxx xxx xxx [**XxXxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR209422) xxxxxxxx xx **xxxxx**.
+特定のコントロールをタブ オーダーから除外することができます。 基本的に、コントロールを非対話型にするだけで除外することができます ([**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/BR209419) プロパティを **false** に設定するなど)。 無効になったコントロールは自動的にタブ オーダーから除外されます。 ただし、コントロールが無効になっていなくても、タブ オーダーからコントロールを除外したい場合があります。 この場合は、[**IsTabStop**](https://msdn.microsoft.com/library/windows/apps/BR209422) プロパティを **false** に設定します。
 
-Xxx xxxxxxxx xxxx xxx xxxx xxxxx xxx xxxxxxx xx xxx xxx xxxxx xx xxxxxxx. Xxx xxxxxxxxx xx xxxx xx xxxx xxxxxxx xxxx-xxxxxxx xxxxx xxxx xx [**XxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227565) xxx xxxx xxxxx xx xxxx xxxx xxx xx xxxxxxxx xx xxx xxxxxxxxx xxx xxxx xxxxxxxxx; xxxxxxx, xxxx'xx xxx xx xxx xxx xxxxx xxxxxxx xx xx xxx xxxxxxxx xxx xxxxxx xxxx xxxxxxxx xx xx xx xxx xxx xxxxx. Xxxx'xx xxx xxxxxxxxxxxxxx xxxxxxxxxxx (xxxx xxx'x xx xxxxxxx, xxx xxx'x xxxxxxx xxxx xxxxx, xxx xx xxxxxxx xxx [Xxxx xxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/Ee671194) xxxx xxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxx xxxxxx xx xxxx). Xxxx xxxxxx xxx xxxx xxx xxxxxxxxxxx xxxx xxxxxxx xxxxx xx xx xxxx xxxxxx xxxx xxxxxx xxxx'x xxxxxxxx. Xxxx xxxxxxxx xxxx xxxxx xx xxxxxxxx xx xxxxxxxxx xxxxxxxxxxxx, xxx xxxx xxxxx xx xxxxxx xxxxxxx, xxx xxxx xxxxxx xx xxxxxxxxxx xxxxx xxxx xxxxxxx xxxxx xxxxxxxx xx xxx xxxxxxxxx xxx xxxxx.
+通常、フォーカスを設定できる要素はすべて、既定でタブ オーダーに含まれています。 例外は、[**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) などの一部のテキスト表示型です。このような型では、選択中のテキストにクリップボードからアクセスできるように、フォーカスを設定することができます。ただし、静的テキスト要素がタブ オーダーの対象となることは想定されていないため、タブ オーダーには含められません。 通常、これらの要素は対話型ではありません (これらは呼び出すことができず、テキスト入力も必要としませんが、テキスト内の選択ポイントを見つけて調整できる[テキスト コントロール パターン](https://msdn.microsoft.com/library/windows/desktop/Ee671194)はサポートしています)。 テキストに、フォーカスを設定すると操作が可能になるという含みを持たせないでください。 それでも、テキスト要素は、支援技術によって検出され、スクリーン リーダーによって読み上げられますが、これはその要素を実際のタブ オーダーで見つけるのとは異なる技法に依存しています。
 
-Xxxxxxx xxx xxxxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209461) xxxxxx xx xxx xxx xxxxxxx xxxxx, xxxxx xxxxx xxxxx:
+[
+            **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) 値を調整する場合も、既定の順序を使う場合も、次のルールが適用されます。
 
--   XX xxxxxxxx xxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209461) xxxxx xx Y xxx xxxxx xx xxx xxx xxxxx xxxxx xx xxxxxxxxxxx xxxxx xx XXXX xx xxxxx xxxxxxxxxxx.
--   XX xxxxxxxx xxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209461) xxxxxxx xxxx Y xxx xxxxx xx xxx xxx xxxxx xxxxx xx xxx **XxxXxxxx** xxxxx.
--   XX xxxxxxxx xxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209461) xxxx xxxx Y xxx xxxxx xx xxx xxx xxxxx xxx xxxxxx xxxxxx xxx xxxx xxxxx. Xxxx xxxxxxxxxxx xxxxxxx xxxx XXXX'x xxxxxxxx xx xxx **xxxxxxxx** xxxxxxxxx (xxx xxxxxxxx **xxxxxxxx** xxx xxx xxxxxxxxx xx xxxxx XXXX xxxxxxxxxxxxxx).
+-   [
+            **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) が 0 の UI 要素は、XAML または子コレクションでの宣言順序に基づいてタブ オーダーに追加されます。
+-   [
+            **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) が 0 を超える UI 要素は、**TabIndex** 値に基づいてタブ オーダーに追加されます。
+-   [
+            **TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) が 0 未満の UI 要素はタブ オーダーに追加され、値 0 の UI 要素よりも前に表示されます。 これは、HTML による **tabindex** 属性の処理とは異なる場合があります (古い HTML 仕様では、負の値の **tabindex** がサポートされていませんでした)。
 
-<span id="keyboard_navigation_within_a_UI_element">
-            </span>
-            <span id="keyboard_navigation_within_a_ui_element">
-            </span>
-            <span id="KEYBOARD_NAVIGATION_WITHIN_A_UI_ELEMENT">
-            </span>Xxxxxxxx xxxxxxxxxx xxxxxx x XX xxxxxxx
+<span id="keyboard_navigation_within_a_UI_element"></span><span id="keyboard_navigation_within_a_ui_element"></span><span id="KEYBOARD_NAVIGATION_WITHIN_A_UI_ELEMENT"></span>UI 要素内でのキーボード ナビゲーション
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Xxx xxxxxxxxx xxxxxxxx, xx xx xxxxxxxxx xx xxxxxx xxxxxx xxxxx xxxxxxxxxx xxxxx xxx xxxxxxxxx xxxxxxxx. X xxxxxxxxx xxxxxxx xxx xxxxxx xxx xxxxxxx xxxxxx xxxxx xx xxxxxx xxx xxxxxxxx xx xxxxxx xxx xxxxx xxxxxxxx xxxx xx xxxx xxxxx. Xxxx x xxxxxxxxx xxxxxxx xx xxxxxxxx xx xxx xxx xxxxx, xxx xx xxxxxxx xxxxxxxx xxxxxxxxxx xxxxxx xxxxxx. Xxxx xx xxx xxxxxxxxx xxxxxxxx xxxxxxx xxxx xxxx xxxxx xxxxxxxxxx xxxxx xxxxx xxxx xxx xxxx xxxxxxx'x xxxxx xxxxxxxx. Xxx xxxxxxx, xxxxx-xxx xxxxxxxxx xx xxxxx xx xxxxxxx xx xxxxxxx xx xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878), [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704view), [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/BR242868) xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242678) xxxxxxxx.
+コンポジット要素の場合は、含まれている要素間で正しい内部ナビゲーションが実行できることが重要です。 コンポジット要素では、その現在のアクティブな子を管理して、すべての子要素にフォーカスを設定できるようにする場合のオーバーヘッドを減らすことができます。 このようなコンポジット要素もタブ オーダーに含まれ、キーボード ナビゲーション イベント自体を処理します。 複合コントロールには、多くの場合、コントロールのイベント処理の中に既に内部ナビゲーション ロジックが組み込まれています。 たとえば、項目の方向キー トラバーサルは、既定では [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) コントロール、[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242704view) コントロール、[**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) コントロール、[**FlipView**](https://msdn.microsoft.com/library/windows/apps/BR242678) コントロールで有効になります。
 
-<span id="keyboard_activation">
-            </span>
-            <span id="KEYBOARD_ACTIVATION">
-            </span>Xxxxxxxx xxxxxxxxxxxx xx xxxxxxx xxxxxxx xxx xxxxxx xxx xxxxxxxx xxxxxxx xxxxxxxx
+<span id="keyboard_activation"></span><span id="KEYBOARD_ACTIVATION"></span>特定のコントロール要素に対するポインター操作やイベントの代わりにキーボードを利用
 -------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Xxxxxx xxxx XX xxxxxxxx xxxx xxx xx xxxxxxx xxx xxxx xx xxxxxxx xx xxxxx xxx xxxxxxxx. Xx xxx xxx xxxxxxxx xxxx x XX xxxxxxx, xxx xxxxxxx xxxx xxxx xxxxx. Xxxx xxxxxxx xxxx xxxxxx xxxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209390) xxxxxxx xxxxx xxx xxx xxxxxxxxxx.
+クリックできる UI 要素をキーボードでも呼び出すことができるようにします。 キーボードで UI 要素を操作するには、要素にフォーカスが必要になります。 フォーカスとタブ ナビゲーションをサポートするのは、[**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) から派生するクラスだけです。
 
-Xxx XX xxxxxxxx xxxx xxx xx xxxxxxx, xxxxxxxxx xxxxxxxx xxxxx xxxxxxxx xxx xxx Xxxxxxxx xxx Xxxxx xxxx. Xxxx xxxxx xxx xxxxx xxxxxxxx xxxxxxxxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxx xxxxx xx xxxxxxxxxx xxxxx xxx xxxxxxxxx xx xxxxx xxxx xxx xxxxxxxx; xxxx xx, xxxxx xxx xxxxx xxx xxxxxxxxxxx XX xxxxxxxx xxx xxxxxxxx xxx xxxxxxx xxxxxxxxxxxxx.
+呼び出すことができる UI 要素の場合は、Space キーと Enter キーのキーボード イベント ハンドラーを実装します。 これで、基本のキーボード アクセシビリティのサポートは完全になり、ユーザーはキーボードのみを使って基本のアプリ シナリオを実行できます。つまり、ユーザーはすべての対話型の UI 要素にアクセスしたり、既定の機能をアクティブにすることができます。
 
-Xx xxxxx xxxxx xx xxxxxxx xxxx xxx xxxx xx xxx xx xxx XX xxxxxx xxxx xxxxx, xxx xxxxx xxxxxx xxxx xxx xxxxxx xxxxxxx. Xxx xxxx xxx xxx [**XxXxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR209422) xxxxxxxx xx **xxxx** xx xxxxxx xxxxx xxx xxx xxxx xxxxxxx x xxxxxx xxxxxxxxxx xx xxx xxxxxxx xxxxx xx xxxxxxxx x xxxxxx xxxxx xxxx xxxxxxxxx xxx XX xxxx x xxxxx xxxxxxxxx. Xxxxxxx, xx xx xxxxx xxxxxx xx xxx xxxxxxx xxxxxxxxxxx xx xxxx xxx xxxxxxx xxx xxx xxxxx, xxxxx, xxx Xxxxxxxxx XX Xxxxxxxxxx xxxxx xxx xxxxxxxx xxx xxxxxxx xx xxx xxxxxxx xxxxxx xxxxx xxx xxxxxx xx xxxxxxx xxxx xxxxxxx.
+UI で使う要素がフォーカスを取得できない場合は、独自のカスタム コントロールを作成できます。 [
+            **IsTabStop**](https://msdn.microsoft.com/library/windows/apps/BR209422) プロパティを **true** に設定して入力フォーカスを有効にし、UI にフォーカス インジケーターが示される表示状態を作成して、フォーカスがある状態を視覚的に示す必要があります。 タブ ストップ、フォーカス、Microsoft UI オートメーションのピアとパターンのサポートを、コンテンツを合成するコントロールで処理するよう、コントロールの合成を使うと簡単になることがよくあります。
 
-Xxx xxxxxxx, xxxxxxx xx xxxxxxxx x xxxxxxx-xxxxxxx xxxxx xx xx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242752), xxx xxxxx xxxx xxxx xxxxxxx xx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209265) xx xxx xxxxxxx, xxxxxxxx, xxx xxxxx xxxxxxx.
+たとえば、ポインター入力イベントを [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) で処理するのではなく、その要素を [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) でラップすると、ポインター、キーボード、フォーカスのサポートを取得できます。
 
 <span codelanguage="XAML"></span>
 <table>
@@ -101,7 +93,7 @@ Xxx xxxxxxx, xxxxxxx xx xxxxxxxx x xxxxxxx-xxxxxxx xxxxx xx xx [**Xxxxx**](https
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">XXXX</th>
+<th align="left">XAML</th>
 </tr>
 </thead>
 <tbody>
@@ -109,30 +101,27 @@ Xxx xxxxxxx, xxxxxxx xx xxxxxxxx x xxxxxxx-xxxxxxx xxxxx xx xx [**Xxxxx**](https
 <td align="left"><pre><code>&lt;!--Don&#39;t do this.--&gt;
 &lt;Image Source=&quot;sample.jpg&quot; PointerPressed=&quot;Image_PointerPressed&quot;/&gt;
 
-&xx;!--Xx xxxx xxxxxxx.--&xx;
-&xx;Xxxxxx Xxxxx=&xxxx;Xxxxxx_Xxxxx&xxxx;&xx;&xx;Xxxxx Xxxxxx=&xxxx;xxxxxx.xxx&xxxx;/&xx;&xx;/Xxxxxx&xx;</code></pre></td>
+&lt;!--Do this instead.--&gt;
+&lt;Button Click=&quot;Button_Click&quot;&gt;&lt;Image Source=&quot;sample.jpg&quot;/&gt;&lt;/Button&gt;</code></pre></td>
 </tr>
 </tbody>
 </table>
 
-<span id="keyboard_shortcuts">
-            </span>
-            <span id="KEYBOARD_SHORTCUTS">
-            </span>Xxxxxxxx xxxxxxxxx
+<span id="keyboard_shortcuts"></span><span id="KEYBOARD_SHORTCUTS"></span>キーボード ショートカット
 --------------------------------------------------------------------------------------------
 
-Xx xxxxxxxx xx xxxxxxxxxxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxxxx xxx xxxx xxx, xx xx x xxxx xxxxxxxx xx xxxxxxxxx xxxxxxxxx xxx xxxx xxx'x xxxxxxxxxxxxx. Xxx xxxxxxxxxx xxxxxxxx x xxxx, xxxxx xxxxx xx xxxxxxxx xxxxxxx, xxx xxxx xxxxxxx xxxxx xxx xxx xxxx xx xxx xxxxxxx xxx xxxxxxxx xxxx xx xxxx. Xxxx xxx xxxx xxxx xxxxxxxxxxx xxxx xxxxxxxxx xx xxx, xxxx xxx xxxxxx xxx xxx xxxx x xxxxxxxx xxx xxxxxxxx xxxxxxx.
+キーボードのナビゲーションのアクティブ化をアプリに実装するだけでなく、ショートカットをアプリの機能に実装することをお勧めします。 基本的なキーボードのサポートとしてはタブ ナビゲーションで十分ですが、複雑なフォームではショートカット キーのサポートも追加すると効果的です。 これにより、キーボードとポインティング デバイスの両方を使うユーザーにも使いやすいアプリになります。
 
-X *xxxxxxxx* xx x xxxxxxxx xxxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxxx xx xxxxxxxxx xx xxxxxxxxx xxx xxx xxx xxxx xx xxxxxx xxx xxxxxxxxxxxxx. Xxxxx xxx xxx xxxxx xx xxxxxxxx:
+*ショートカット*は、ユーザーが効率的にアプリの機能にアクセスできるようにして、生産性を向上させるためのキーの組み合わせです。 ショートカットには次の 2 つの種類があります。
 
--   Xx *xxxxxx xxx* xx x xxxxxxxx xx x xxxxx xx XX xx xxxx xxx. Xxxxxx xxxx xxxxxxx xx xxx Xxx xxx xxxx x xxxxxx xxx.
--   Xx *xxxxxxxxxxx xxx* xx x xxxxxxxx xx xx xxx xxxxxxx. Xxxx xxx xxx xx xxx xxx xxxx XX xxxx xxxxxxxxxxx xxxxxxx xx xxx xxxxxxx. Xxxxxxxxxxx xxxx xxxxxxx xx xxx Xxxx xxx xxxx x xxxxxx xxx.
+-   *アクセス キー*は、アプリ内の個別の UI 要素へのショートカットです。 アクセス キーは、Alt キーと文字キーの組み合わせで構成されます。
+-   *ショートカット キー*は、アプリ コマンドへのショートカットです。 アプリにはコマンドに正確に対応する UI がある場合とない場合があります。 ショートカット キーは、Ctrl キーと文字キーの組み合わせで構成されます。
 
-Xx xx xxxxxxxxxx xxxx xxx xxxxxxx xx xxxx xxx xxx xxxxx xxx xxxx xx xxxxxx xxxxxxx xxx xxxxx xxxxxxxxx xxxxxxxxxx xx xxxxxxxx xxxx xxx'x xxxxxxxx xxxx. Xxxxxxxxxxx xxxxxxxx xxxx xx xxxxx xxxxxxxx, xxxxxxxxxx xxxxx, xxxxxxxxxx xxxxxxxxxxxx, xx xxxx xxxxx xxxx xx xx-xxxxxx xxxxxxxxxxxxx. Xx x xxxxxxx, xxxxxxxx xxxx xxxxxx xx xxxx xxxxxxxxxx xx xxxx xxx'x Xxxx xxxxxxx.
+スクリーン リーダーやその他の支援技術を使うユーザーがアプリのショートカット キーを簡単に見つけることができることが重要です。 ヒント、アクセシビリティ対応の名前、アクセシビリティ対応の説明、またはその他の画面上の伝達形式を使ってショートカットが確認できるようにします。 少なくとも、アプリのヘルプ コンテンツにはショートカット キーについて十分な説明を用意しておく必要があります。
 
-Xxx xxx xxxxxxxx xxxxxx xxxx xxxxxxx xxxxxx xxxxxxx xx xxxxxxx xxx [**XxxxxxxxxxXxxxxxxxxx.XxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/Hh759763) xxxxxxxx xxxxxxxx xx x xxxxxx xxxx xxxxxxxxx xxx xxxxxxxx xxx. Xxxxx xx xxxx xx [**XxxxxxxxxxXxxxxxxxxx.XxxxxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/Hh759762) xxxxxxxx xxxxxxxx xxx xxxxxxxxxxx xxx-xxxxxxxx xxxxxxxx xxxx, xxxxxxxx xxxxxx xxxxxxx xxxxxxxxx xxxxx xxxx xxxxxxxxxx xxx xxxx xxx. Xxx xx xxxxxxxx xxxxxxxx xxxx xx xxxxxxxx xxxx, xxxxx xxxxxxxx, xxxxxxxxxx xxxxxxxxxx, xxx xxxxxxx Xxxx xxxxxxxxxxxxx.
+スクリーン リーダーでアクセス キーを文書化するには、[**AutomationProperties.AccessKey**](https://msdn.microsoft.com/library/windows/apps/Hh759763) 添付プロパティでショートカット キーを示す文字列を設定します。 また、[**AutomationProperties.AcceleratorKey**](https://msdn.microsoft.com/library/windows/apps/Hh759762) 添付プロパティでニーモニック以外のショートカット キーを文書化することもできます。ただし、スクリーン リーダーでは通常、どちらのプロパティも同じ方法で扱われます。 ショートカット キーの文書化は、ヒント、オートメーションのプロパティ、ヘルプ ドキュメントなど、複数の方法で行います。
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xxx xx xxxxxxxx xxxxxxxx xxxx xxx xxxxx xxxx, xxxxx, xxx xxxx xxxxxxx.
+次の例では、メディアを再生、一時停止、停止するボタンのショートカット キーを文書化する方法を示しています。
 
 <span codelanguage="XAML"></span>
 <table>
@@ -141,23 +130,23 @@ Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xxx xx xxxxxxxx xxxxxxxx xxxx xxx xxxxx xxxx,
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">XXXX</th>
+<th align="left">XAML</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><pre><code>&lt;Grid KeyDown=&quot;Grid_KeyDown&quot;&gt;
 
-  &xx;Xxxx.XxxXxxxxxxxxxx&xx;
-    &xx;XxxXxxxxxxxxx Xxxxxx=&xxxx;Xxxx&xxxx; /&xx;
-    &xx;XxxXxxxxxxxxx Xxxxxx=&xxxx;Xxxx&xxxx; /&xx;
-  &xx;/Xxxx.XxxXxxxxxxxxxx&xx;
+  &lt;Grid.RowDefinitions&gt;
+    &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+    &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+  &lt;/Grid.RowDefinitions&gt;
 
-  &xx;XxxxxXxxxxxx x:Xxxx=&xxxx;XxxxXxxxx&xxxx; Xxxxxx=&xxxx;xxxx.xxx&xxxx; 
-    Xxxxx=&xxxx;YYY&xxxx; Xxxxxx=&xxxx;YYY&xxxx; Xxxxxx=&xxxx;YY&xxxx; XxxxxxxxxxXxxxxxxxx=&xxxx;Xxxxxx&xxxx; /&xx;
+  &lt;MediaElement x:Name=&quot;DemoMovie&quot; Source=&quot;xbox.wmv&quot; 
+    Width=&quot;500&quot; Height=&quot;500&quot; Margin=&quot;20&quot; HorizontalAlignment=&quot;Center&quot; /&gt;
 
-  &xx;XxxxxXxxxx Xxxx.Xxx=&xxxx;Y&xxxx; Xxxxxx=&xxxx;YY&xxxx;
-    Xxxxxxxxxxx=&xxxx;Xxxxxxxxxx&xxxx; XxxxxxxxxxXxxxxxxxx=&xxxx;Xxxxxx&xxxx;&xx;
+  &lt;StackPanel Grid.Row=&quot;1&quot; Margin=&quot;10&quot;
+    Orientation=&quot;Horizontal&quot; HorizontalAlignment=&quot;Center&quot;&gt;
 
     &lt;Button x:Name=&quot;PlayButton&quot; Click=&quot;MediaButton_Click&quot;
       ToolTipService.ToolTip=&quot;Shortcut key: Ctrl+P&quot;
@@ -177,57 +166,42 @@ Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xxx xx xxxxxxxx xxxxxxxx xxxx xxx xxxxx xxxx,
       &lt;TextBlock&gt;Stop&lt;/TextBlock&gt;
     &lt;/Button&gt;
 
-  &xx;/XxxxxXxxxx&xx;
+  &lt;/StackPanel&gt;
 
-&xx;/Xxxx&xx;</code></pre></td>
+&lt;/Grid&gt;</code></pre></td>
 </tr>
 </tbody>
 </table>
 
-**Xxxxxxxxx**  Xxxxxxx [**XxxxxxxxxxXxxxxxxxxx.XxxxxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/Hh759762) xx [**XxxxxxxxxxXxxxxxxxxx.XxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/Hh759763) xxxxx'x xxxxxx xxxxxxxx xxxxxxxxxxxxx. Xx xxxx xxxxxxx xx xxx XX Xxxxxxxxxx xxxxxxxxx xxxx xxxx xxxxxx xx xxxx, xx xxxx xxxx xxxxxxxxxxx xxx xx xxxxxx xx xx xxxxx xxx xxxxxxxxx xxxxxxxxxxxx. Xxx xxxxxxxxxxxxxx xxx xxx xxxxxxxx xxxxx xxxxx xx xx xxxx xx xxxx, xxx XXXX. Xxx xxxx xxxxx xxxx xx xxxxxx xxxxxxxx xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR208941) xx [**XxxXx**](https://msdn.microsoft.com/library/windows/apps/BR208942) xxxxxx xx xxx xxxxxxxx xxxxxxx xx xxxxx xx xxxxxxxx xxxxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxxx xx xxxx xxx. Xxxx, xxx xxxxxxxxx xxxx xxxxxxxxxx xxx xx xxxxxx xxx xx xxx xxxxxxxx xxxxxxxxxxxxx. Xxx xxxx xxxxxxxxxx xxxxxxxxx xxx xxxx xxx xxx xxxxxxxx xxx xx xxxx xxxxxxxx xx xxxxxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209982) xxxxxxxxxx xx xxx xxxx xx xxxx xxxxxxxxxx xxxx xx xxx XX.
+**重要** [**AutomationProperties.AcceleratorKey**](https://msdn.microsoft.com/library/windows/apps/Hh759762) または [**AutomationProperties.AccessKey**](https://msdn.microsoft.com/library/windows/apps/Hh759763) を設定しても、キーボード機能は有効になりません。 使用する必要があるキーなどの情報を支援技術によってユーザーに渡すことができるように、そのような情報が UI オートメーション フレームワークに通知されるだけです。 キー処理の実装は、XAML ではなくコードで行う必要があります。 アプリに対して実際にキーボード ショートカットの動作を実装するには、関連するコントロールに [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/BR208941) イベントや [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/BR208942) イベントのハンドラーをアタッチする必要があります。 また、アクセス キーの下線も自動的には追加されません。 UI で下線付きのテキストを表示する場合は、インラインの [**Underline**](https://msdn.microsoft.com/library/windows/apps/BR209982) 書式設定として、ニーモニックの特定のキーのテキストに明示的に下線を表示する必要があります。
 
  
 
-Xxx xxxxxxxxxx, xxx xxxxxxxxx xxxxxxx xxxxx xxx xxx xx xxxxxxxxx xxx xxxxxxx xxxx xx "Xxxx+X". Xxxxxxx, xxx xxxx xxxx xxxxxxxx xxxxxxxx xxxx xxxxxx xxxxxxxxxxxx. Xxxxxxxxxx xxxxxxxx xxxx xx xxxxxxxx xxxxxxx xxx xxxxxx xx xxx xx xxx xx xxx xxxxxxxx xxx xxxxxxxxx xxxxxxx xx xxx xxxxxxx xxxx xxxxx xxx xxx xxxxxxx.
+わかりやすくするために、上の例では "Ctrl + A" などの文字列に対するリソースは使っていません。 ただし、ローカライズ時にはショートカット キーについても考慮する必要があります。 ショートカット キーとして使うキーは通常、要素の表示テキスト ラベルに基づいて選ぶため、ショートカット キーをローカライズすることは適切な作業です。
 
-Xxx xxxx xxxxxxxx xxxxx xxxxxxxxxxxx xxxxxxxx xxxx, xxx [Xxxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?linkid=221825) xx xxx Xxxxxxx Xxxx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxxxxxx.
+ショートカット キーの実装について詳しくは、Windows ユーザー エクスペリエンス インタラクション ガイドラインの[ショートカット キー](http://go.microsoft.com/fwlink/p/?linkid=221825)に関する説明をご覧ください。
 
-### <span id="Implementing_a_key_event_handler">
-            </span>
-            <span id="implementing_a_key_event_handler">
-            </span>
-            <span id="IMPLEMENTING_A_KEY_EVENT_HANDLER">
-            </span>Xxxxxxxxxxxx x xxx xxxxx xxxxxxx
+### <span id="Implementing_a_key_event_handler"></span><span id="implementing_a_key_event_handler"></span><span id="IMPLEMENTING_A_KEY_EVENT_HANDLER"></span>キー イベント ハンドラーの実装
 
-Xxxxx xxxxxx xxxx xx xxx xxx xxxxxx xxx xx xxxxx xxxxxxx xxxxxx *xxxxxx xxxxxx*. X xxxxxx xxxxx xxx xxxxxx xx xxxxxxx xxx xxxxx xxxxxxxx xx x xxxxxxxxxx xxxxxxx, xxxx xxxx x xxxxxx xxxxxxx xxxxxx xxx xxxxxx xxxxxx xxx xxxxxxxx xxxxx xxxxxxxx. Xxxx xxxxx xxxxx xx xxxxxxxxxx xxx xxxxxxxx xxxxxxxx xxx xxxxxxx xxx x xxxxxxx xxxx xxxxxxxx xxxxxxx xxxxxxxxx xxxxx xxxx xx xxxxxx xxxxxx xxxx xxxxx xx xx xxxx xx xxx xxx xxxxx.
+キー イベントなどの入力イベントでは、*ルーティング イベント*というイベント概念を使います。 ルーティング イベントは、共通コントロールの親が複数の子要素に対するイベントを処理できるような、合成コントロールの子要素をバブルアップすることがあります。 このイベント モデルは、仕様によりフォーカスの設定やタブ オーダーへの追加ができない複数の複合パートが含まれるコントロールに、ショートカット キーの操作を定義するときに役立ちます。
 
-Xxx xxxxxxx xxxx xxxx xxxxx xxx xx xxxxx x xxx xxxxx xxxxxxx xxxx xxxxxxxx xxxxxxxx xxx xxxxxxxxx xxxx xx xxx Xxxx xxx, xxx [Xxxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185607).
+Ctrl キーなどの修飾キーのチェックを含むキー イベント ハンドラーの記述方法を示すコード例については、「[キーボード操作](https://msdn.microsoft.com/library/windows/apps/Mt185607)」をご覧ください。
 
-<span id="Keyboard_navigation_for_custom_controls">
-            </span>
-            <span id="keyboard_navigation_for_custom_controls">
-            </span>
-            <span id="KEYBOARD_NAVIGATION_FOR_CUSTOM_CONTROLS">
-            </span>Xxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxxxx
+<span id="Keyboard_navigation_for_custom_controls"></span><span id="keyboard_navigation_for_custom_controls"></span><span id="KEYBOARD_NAVIGATION_FOR_CUSTOM_CONTROLS"></span>カスタム コントロールのキーボード ナビゲーション
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Xx xxxxxxxxx xxx xxx xx xxxxx xxxx xx xxxxxxxx xxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxx xxxxxxxx, xx xxxxx xxxxx xxx xxxxx xxxxxxxx xxxx x xxxxxxx xxxxxxxxxxxx xx xxxx xxxxx. Xx xxxx-xxxx xxxxx xxxx xxxxxxxx xxx-xxxxxxxx xxx xxxxxxxx xxxxxx-xxxxxxxx xxx xxxx xxxxxxxxxx, xxx xxx xxxx xxx xxxxx xxxxx xxxx xx xxxxxxx xxxxxxxx xxxxxx-xxxxxxxx xxxxxxxxxxxxx. Xx xxx xxxx xx xxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxxxxxx xxxxxx xxx xxxxxxx xxxxxxx, xxx xxx xxxxxxxxxxx xxxxx xxxx.
+子要素間に空間的な関係が存在する場合は、子要素間を移動するためのキーボード ショートカットとして方向キーを使うことをお勧めします。 ツリー ビュー ノードに、展開折りたたみとノードのアクティブ化を処理するための別のサブ要素がある場合は、左右の方向キーを使って、キーボードの展開折りたたみ機能を提供します。 コントロール コンテンツ内で方向トラバーサルをサポートする指向コントロールがある場合は、適切な方向キーを使ってください。
 
-Xxxxxxxxx xxx xxxxxxxxx xxxxxx xxx xxxxxxxx xxx xxxxxx xxxxxxxx xx xxxxxxxxx xx xxxxxxxx xx [**XxXxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR209390_onkeydown) xxx [**XxXxxXx**](https://msdn.microsoft.com/library/windows/apps/BR209390_onkeyup) xxxxxxx xx xxxx xx xxx xxxxx xxxxx.
+一般に、カスタム コントロールに対するカスタム キー処理を実装する場合は、クラス ロジックの一部として、[**OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/BR209390_onkeydown) メソッドと [**OnKeyUp**](https://msdn.microsoft.com/library/windows/apps/BR209390_onkeyup) メソッドのオーバーライドを組み込みます。
 
-<span id="An_example_of_a_visual_state_for_a_focus_indicator">
-            </span>
-            <span id="an_example_of_a_visual_state_for_a_focus_indicator">
-            </span>
-            <span id="AN_EXAMPLE_OF_A_VISUAL_STATE_FOR_A_FOCUS_INDICATOR">
-            </span>Xx xxxxxxx xx x xxxxxx xxxxx xxx x xxxxx xxxxxxxxx
+<span id="An_example_of_a_visual_state_for_a_focus_indicator"></span><span id="an_example_of_a_visual_state_for_a_focus_indicator"></span><span id="AN_EXAMPLE_OF_A_VISUAL_STATE_FOR_A_FOCUS_INDICATOR"></span>フォーカス インジケーターの表示状態の例
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Xx xxxxxxxxx xxxxxxx xxxx xxx xxxxxx xxxxxxx xxxx xxxxxxx xxx xxxx xx xxxxx xx xxxxxx xxxx x xxxxxx xxxxx xxxxxxxxx. Xxxxxxx xxxx xxxxx xxxxxxxxx xx xx xxxxxx xx xxxxxxx x xxxxxxxxx xxxxx xxxxxxxxxxx xxxxxx xxx xxxxxxx'x xxxxxx xxxxxxxx xxxxxxxxx. Xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371) xxx xxxxxx xxxxx xx x xxxx xxxxxxx xx xxx xxxx xx xxx xxxxxxx'x xxxxxxxxxxx xx x xxxxxxx xxxxxxxx, xxx xx xxxxxxxxx xxx xxxx x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208992) xxxxx xx **Xxxxxxxxx** xxxxxxx xxx xxxxxxx xxx'x xxxxxxx xxx. Xxxx, xxxx xxx xxxxxxx xxxx xxx xxxxx, x xxxxxx xxxxx xx xxxxxxx xxxx xxxxxxxxxxxx xxxx xxx **Xxxxxxxxxx** xx xxx xxxxx xxxxxx xx **Xxxxxxx**. Xxxx xxxxx xx xxxxx xxxxxxxxx, xxxxxxx xxxxxx xxxxx xx xxxxxx, xxx xxx **Xxxxxxxxxx** xxxxxxx **Xxxxxxxxx**.
+これまで説明したように、ユーザーがフォーカスを合わせることができるカスタム コントロールには視覚的なフォーカス インジケーターが必要です。 一般に、フォーカス インジケーターは、コントロールを囲む通常の四角形の境界線のすぐ外側に、四角形を描画するだけの簡単なものです。 視覚的なフォーカスに使う [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) は、コントロール テンプレートにおけるコントロールの合成の他の部分に対するピア要素ですが、最初はコントロールにフォーカスがないため、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) の値には **Collapsed** が設定されています。 コントロールがフォーカスを取得すると、表示状態が呼び出され、フォーカス表示の **Visibility** が **Visible** に設定されます。 フォーカスが別の場所に移動すると、他の表示状態が呼び出され、**Visibility** が **Collapsed** になります。
 
-Xxx xx xxx xxxxxxx XXXX xxxxxxxx xxxx xxxxxxx xx xxxxxxxxxxx xxxxxx xxxxx xxxxxxxxx xxxx xxxxxxx (xx xxxx xxx xx xxxxxxx). Xxxxx xxx xxxx xxxxxxxxxxx xxxxxxxxx xxxxx xxxxxxxxx xx xxx xxxx'x xxxxxxxx xxxxx (xxxxxxxxxxxx xx xxx xxxx xx xxxxx x xxxx xxxxxxxx xxxx.) Xx xxx'xx xxxxx xxx XXXX xxxxxxxx xx xxxx XX xxx xxx xxxxxxxxx xxx xxxxxxx xxxxxxxxx, xxx xxx'x xxxx xx xx xxxxxxxx xxxxx xx xxx xxxxxx xxxxx xxxxxxxxxx xx xxxxxxxx xxxx xxxxxx xxx xxxxxxx xxxxxxxxx. Xxx xx xxx'xx xxxxxxxxx xx xxxxxxxxxx x xxxxxxx, xx xx xxx'xx xxxxxxx xxxxx xxx XXXX xxxxxxxx xxxxxxx xxxxx xxxxxx xxxxx xxxxxxxxxx, xxx xxxxxxxxx xx xxxx xxxxxxx xxxxxxxx xxx xxxx xx xxxx xx XXXX xxx xx xxx xxxxxxx xxxxx.
+既定の XAML コントロールはいずれも、フォーカスを設定できるものであれば、フォーカスを受け取ったときに視覚的なフォーカス インジケーターを適切に表示します。 また、ユーザーが選んでいるテーマに応じて (ハイ コントラスト モードを使っている場合は特に)、外観が異なる可能性があります。UI で XAML コントロールを使っており、コントロール テンプレートを置き換えていない場合は、特に何もしなくても、視覚的なフォーカス インジケーターがコントロールに適切に表示され、動作します。 ただし、コントロールを再テンプレート化する必要がある場合、または XAML コントロールで視覚的なフォーカス インジケーターがどのように実現されているかを理解したい場合のために、このセクションの残りの部分では、XAML とコントロール ロジックにおけるフォーカス インジケーターの処理方法について説明します。
 
-Xxxx'x xxxx xxxxxxx XXXX xxxx xxxxx xxxx xxx xxxxxxx XXXX xxxxxxxx xxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209265).
+次に示す XAML の例は、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) の既定の XAML テンプレートに含まれています。
 
 <span codelanguage="XAML"></span>
 <table>
@@ -236,7 +210,7 @@ Xxxx'x xxxx xxxxxxx XXXX xxxx xxxxx xxxx xxx xxxxxxx XXXX xxxxxxxx xxx x [**Xxxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">XXXX</th>
+<th align="left">XAML</th>
 </tr>
 </thead>
 <tbody>
@@ -265,7 +239,7 @@ Xxxx'x xxxx xxxxxxx XXXX xxxx xxxxx xxxx xxx xxxxxxx XXXX xxxxxxxx xxx x [**Xxxx
 </tbody>
 </table>
 
-Xx xxx xxxx xx xxxx xxx xxxxxxxxxxx. Xx xxxxxxx xxx xxxxx xxxxxxxxx'x xxxxxxxxxx, xxx xxxxxx xxxxxx xxxxxx xxxx xxxxxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208992) xxxxxxxx. Xxxx xx xxxx xxxxx xxx [**XxxxxxXxxxxXxxxxxx.XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh738505) xxxxxxxx xxxxxxxx, xx xxxxxxx xx xxx xxxx xxxxxxx xxxx xxxxxxx xxx xxxxxxxxxxx.
+ここまでのところでは、これは単なる合成です。 フォーカス インジケーターの表示を制御するには、[**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) プロパティを切り替える表示状態を定義します。 それには、[**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/Hh738505) 添付プロパティを使います。これは合成を定義するルート要素に適用されます。
 
 <span codelanguage="XAML"></span>
 <table>
@@ -274,7 +248,7 @@ Xx xxx xxxx xx xxxx xxx xxxxxxxxxxx. Xx xxxxxxx xxx xxxxx xxxxxxxxx'x xxxxxxxxxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">XXXX</th>
+<th align="left">XAML</th>
 </tr>
 </thead>
 <tbody>
@@ -306,31 +280,30 @@ Xx xxx xxxx xx xxxx xxx xxxxxxxxxxx. Xx xxxxxxx xxx xxxxx xxxxxxxxx'x xxxxxxxxxx
 </tbody>
 </table>
 
-Xxxx xxx xxxx xxx xx xxx xxxxx xxxxxx xxxxxxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208992) xxxxxxxx xxxxxxx xxx xxxxxx xxx xxxxxxxxx xxxxx. Xxx xxx xxxx xxxxxx xxxxxx xxxx xx xxxx xx xxxx xx xxx xxxxxxx xxxx xxxxxxx xxxxx xxxx xxx xxxx [**XxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209014), xxx xxxxxxxxxx xxxxxxx xx xxx xxxxxxxx xxxxx xxx xxxxxxxxxxx xxxxxxxx. Xxxxxxx xxx xxxxxxx **Xxxxxxxxxx** xxxx xxxxxxxxxxx xx **Xxxxxxxxx**, xxxx xxxxx xxx xxxxxxxxx xxxx xxx xxxxxx. Xxx xxxxxxx xxxxx xxxxxxxx xxxx xx xxxxxxxxx xxx xxxxx xxxxxx xxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208927) xxx xxxxxxxx xxx xxxxxx xxxx [**XxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209025). Xxxxx xxxx xx xxxxxxx xxxxxxx xxx xxx xx xxx xxx xxxxx x xxxxxxx xxxxxxx xx xxxxxxxxxxx xxxxx xx x xxxxxxx xxxx xxxxxxx xxx xxxx xxxxxxxx.
+指定された状態のうち 1 つのみが [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) を直接調整し、他の状態が空のように見えることに注意してください。 表示状態の動作は、同じ [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/BR209014) の別の状態がコントロールで使われるとすぐに、前の状態で適用されていたすべてのアニメーションが取り消されるというものです。 合成の既定の **Visibility** は **Collapsed** であるため、四角形は表示されません。 コントロールのロジックでは、[**GotFocus**](https://msdn.microsoft.com/library/windows/apps/BR208927) などのフォーカス イベントをリッスンし、[**GoToState**](https://msdn.microsoft.com/library/windows/apps/BR209025) を使って状態を変更することで、これを制御しています。 既定のコントロールを使っているか、この動作が既に設定されているコントロールを基にカスタマイズしている場合、これは既に自動的に処理されていることがほとんどです。
 
-<span id="_Keyboard_accessibility_and_Windows_Phone">
-            </span>
-            <span id="_keyboard_accessibility_and_windows_phone">
-            </span>
-            <span id="_KEYBOARD_ACCESSIBILITY_AND_WINDOWS_PHONE">
-            </span> Xxxxxxxx xxxxxxxxxxxxx xxx Xxxxxxx Xxxxx
+<span id="_Keyboard_accessibility_and_Windows_Phone"></span><span id="_keyboard_accessibility_and_windows_phone"></span><span id="_KEYBOARD_ACCESSIBILITY_AND_WINDOWS_PHONE"></span>キーボードのアクセシビリティと Windows Phone
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-X Xxxxxxx Xxxxx xxxxxx xxxxxxxxx xxxxx'x xxxx x xxxxxxxxx, xxxxxxxx xxxxxxxx. Xxxxxxx, x Xxxx Xxxxx Xxxxx (XXX) xxx xxxxxxx xxxxxxx xxxxxxxx xxxxxxxxxxxxx xxxxxxxxx. Xxxxxx xxxxxxx xxx xxxx xxxx xxxxx xxxx xxx **Xxxx** XXX, xxxxxxxxx xxxxxxxxxx xxxxxxxxx. Xxxxx xxx xxxxxxxx xxxxx xxxxx xxxxxxx xxx xxxxxxx xxx xxxxxx xxxxxx xxx xxxxxx xxxx xxx xxxx xx xxxxxxxx xxxx, xxx xx xxxxx xxx xxxxxxx xxx xxxx xxxxx. Xxxx, xxxx xx xxx xxxxxxxx-xxxxxxxx xxxxxxxxxxxxx xxxxxxxx xxx xx xxxxxx xx xxxxxxx xxxxxxxxx xxxxxxxxxx xxxxxxxxx xxxx xxx'x xxx x xxxxxxxx xx xxx. Xxx xxxxxxx, xxxx xxxxxx x XXX xxx'x xxxxxxx x Xxx xxx, Xxxxxxxx xxxxxxxx x xxxxx xxxxxxx xxxx'x xxx xxxxxxxxxx xx xxxxxxxx xxx Xxx xxx, xx xxxxxx x xxxxxx xxx xxxxx xxxxxxx xxx xxxxxxxx xx x XX xx xxxxx xx xxxxxxxxx xxxxxxxxxxxxx xxxxxxxxx. Xxxxx xxxx xx xxxx xxx xxxxxxxxxx xxx xxxxx xxxxxx xxxxxxx xxxxxxxx xxx xxxx xxxxxxxxx xxxxxxx Xxxxxxxx xxxxx xxxxxxxx. Xxxx xxxxx xxx xxxxxxx x xxxxxxx xxxx'x xxx xxx xxxx xxxxx, Xxxxxxxx xxxxxxxx x xxxxxxx xxxx xxxxxxx xxxx xxxxxxx'x xxxxxx.
+Windows Phone デバイスには、通常、専用のハードウェア キーボードがありません。 ただし、ソフト入力パネル (SIP) は、複数のキーボード アクセシビリティのシナリオをサポートできます。 スクリーン リーダーは、削除も含めて、**テキスト** SIP からのテキスト入力を読み取ることができます。 スクリーン リーダーは、ユーザーがキーをスキャンしていることを検出して、スキャンされたキー名を読み上げるため、ユーザーは指の位置を知ることができます。 また、キーボード指向のアクセシビリティに関する概念の一部は、キーボードをまったく使わない関連の支援技術の動作に割り当てることもできます。 たとえば、SIP が Tab キーを含まない場合でも、ナレーターは、Tab キーを押した場合と同等のタッチ ジェスチャをサポートします。そのため、UI のコントロールを使って便利なタブ オーダーを設定することが、重要なアクセシビリティの原則であることに変わりはありません。 複雑なコントロール内で部品を移動するために使われる方向キーも、ナレーターのタッチ ジェスチャでサポートされます。 テキスト入力用ではないコントロールにフォーカスが移ると、ナレーターはそのコントロールの操作を呼び出すジェスチャをサポートします。
 
-Xxxxxxxx xxxxxxxxx xxxx'x xxxxxxxxx xxxxxxxx xxx Xxxxxxx Xxxxx xxxx, xxxxxxx x XXX xxx'x xxxxxxx Xxxxxxx xx Xxx xxxx.
+SIP には Ctrl キーや Alt キーがないため、キーボード ショートカットは通常、Windows Phone アプリには関係ありません。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxxxxxxxxx](accessibility.md)
-* [Xxxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185607)
-* [Xxxxx: Xxxxx xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=246019)
-* [Xxxxxxxxxx xx xxx xxxxxxxxxx xx xxx xx-xxxxxx xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231633)
-* [XXXX xxxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [アクセシビリティ](accessibility.md)
+* [キーボード操作](https://msdn.microsoft.com/library/windows/apps/Mt185607)
+* [入力: タッチ キーボードのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=246019)
+* [スクリーン キーボードを表示したときの対応のサンプルのページ](http://go.microsoft.com/fwlink/p/?linkid=231633)
+* [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

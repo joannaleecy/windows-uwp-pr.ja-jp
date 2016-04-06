@@ -1,61 +1,65 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxxxxxxxx xx XXX, xxx xxxxxxx xx xxx Xxxxxxxxxx xxxx xxxx xxxxxxxxx xxx xxxxxxxx xx xxxx XXX xxxx xxxxxxx xx xxxxxxxxx.
-xxxxx: Xxxxx XXX xxxxxxxxxx
-xx.xxxxxxx: YYXYYYYX-YYXX-YYYX-YYYX-YYYYYYYXXXXX
+Description: IAP を申請するとき、[プロパティ] ページのオプションは、ユーザーに提供される場合の IAP 動作を決めるのに役立ちます。
+title: IAP のプロパティの入力
+ms.assetid: 26D2139F-66FD-479E-940B-7491238ADCAE
 ---
 
-# Xxxxx XXX xxxxxxxxxx
+# IAP のプロパティの入力
 
 
-Xxxx xxxxxxxxxx xx XXX, xxx xxxxxxx xx xxx **Xxxxxxxxxx** xxxx xxxx xxxxxxxxx xxx xxxxxxxx xx xxxx XXX xxxx xxxxxxx xx xxxxxxxxx.
+IAP を申請するとき、**[プロパティ]** ページのオプションは、ユーザーに提供される場合の IAP 動作を決めるのに役立ちます。
 
-## Xxxxxxx xxxx
-
-
-Xxxxx, xxx'xx xxxx xx xxxxxxxx xxxxx xxxx xx XXX xxx xxx xxxxxxxx. Xxxx xxxxxxxxx xxxxxx xx xxx xxx xxxxxxxx xxx xxx xxxx XXX.
-
-> **Xxxx**  Xxx xxx'x xx xxxx xx xxxxxx xxx xxxxxxx xxxx xxx xxxx XXX xxxxx xx'x xxxx xxxxxxxxx.
-
--   **Xxxxxxxxxx:** X xxxxxxx xxxx xxx xx xxxxxxxxx, xxxx (xxxxxxxx), xxx xxxx xxxxxxxxx xxxxx. Xxxxxxxxxx XXXx xxx xxxxx xxxx xxx xxxxxx xxxx xx-xxxx xxxxxxxx (xxxx, xxxxx, xxx.) xxxxx xxx xx xxxxxxxxx xx xxx xxxxxxx xxx xxxx xxxx xx xx xxx xxxxxxxx.
--   **Xxxxxxx:** X xxxxxxx xxxx’x xxxxxx xxx xxxxx xx xxx xxxxx xxx x xxxxxxxxx xxxxxx xx xxxx. Xxxxxxx XXXx xxx xxxxx xxxx xx xxxxxx xxxxxxxxxx xxxxxxxxxxxxx xx xx xxx. Xxxxxxx XXXx xxx xxx xxxxxxxx, xxx xxx xxx xxx xxx **Xxxxxxx xxxxxxxx** xx xxxx xxxx xxxxxx xxxxx x xxx xxxxxxxx (xxxx xxxxxxx xxxx Y-YYY xxxx). Xxx xxxxxxx **Xxxxxxx xxxxxxxx** xxx x xxxxxxx XXX xx **Xxxxxxx**, xxxxx xxxxx xxx XXX xxxxx xxxxxxx.
-
-## Xxxxxxx xxxx
+## 製品の種類
 
 
-Xxxxxxxxxx xx xxxx XXX'x xxxxxxx xxxx, xxx'xx xxxx xxxx xx xxxxxxxx xxx xxxx xx xxxxxxx xxx'xx xxxxxxxx. Xx xxxxxxx, xxxx xx xxx xx **Xxxxxxxxxx xxxxxxxx xxxxxxxx**. Xx xxxxxxx xxxxxx xxxx xxx xxxx xxxxx xx xxxxxxxx xxxx XXX xxxxxx (xxx xxxxxxx, xx xxx xxx xxxxxxxx x xxxxx xxxxxxxx xx xx x-xxxx), xxxxxx xxxx xxxxxxx. Xxxxxxxxx, xxx xxx xxxxx xxxx xxx xx **Xxxxxxxxxx xxxxxxxx xxxxxxxx**, xxxxx xx xxxxxxxxxxx xxx xxxx XXXx.
+まず、提供する IAP の種類を指定する必要があります。 この選択内容は、ユーザーが IAP をどのように使うことができるかを示しています。
 
--   Xxxxxxxxxx xxxxxxxx xxxxxxxx
--   Xxxxxxxxxx xxxxx
--   Xxxxxxxxxx xxxxxxxx xxxxxx xxxxx
--   Xxxxxxxxxx xxxxxxxxx xxxxxx xxxxx
--   Xxxxx xxxxxxxx
--   Xxxxx xxxxxxxxx
--   Xxxxxx xxxx xxxxxxx/xxxxxxxx
--   Xxxxx xxxxxxxx
--   Xxxxx xxxxxxxxx
--   Xxxxxxxx xx x xxxxxxx
+> **注**  公開後にこの IAP の製品の種類を変更することはできません。
 
-## Xxxxxxxx
+-   **コンシューマブル:** 購入して使用 (消費) した後、もう一度購入可能な製品です。 コンシューマブル IAP は多くの場合、一定金額を購入してユーザーが使い切ることができるゲーム内通貨 (ゴールド、コインなど) などに使います。
+-   **永続的:** 購入者によって指定された期間所有される製品です。 永続的な IAP は多くの場合、アプリの追加機能のロックを解除するために使います。 永続的な IAP は消費されませんが、**[製品の有効期限]** を設定して、設定された期間の後期限が切れるようにすることができます (1 ～ 365 日間のオプションがあります)。 永続的な IAP の **[製品の有効期限]** の既定値は、**[無期限]** です。つまり、IAP の期限が切れません。
+
+## コンテンツ タイプ
 
 
-Xxx xxxx xxx xxxxxx xx xxxxxxx xx xx xxx xxxxxxxx xx xx xx YY xxxxxxxxxx xxxx xxx xxxx XXX xxx xxxxxx. Xxxx xxx xxx xxxx xxxxx xxx xxxxxxxx xxxx xxxxx xxxxx xxxxx. Xxxx xxxxxxx xxxx xxx xxxxx xxxxxxx xx xxxx xxx xxxx xxx xxxx XXXx xxxxxxx xxx xxxxxx xx xxxxxxxx xxxxxxx xxx xxxxxxx XX xx xxxx xxx'x xxxx. Xxx xxx xxxx xxxxxx xxx XXX'x xxxxxxxx xxxxxxx, xxxxxxx xxxxxx xx xxxx xxxx xxxxxxx xx xxxx xxx xx xxxxxx xxx xxx xxxxx.
+IAP 製品の種類に関係なく、提供するコンテンツの種類を指定する必要があります。 既定では、**[ソフトウェアのダウンロード]** に設定されています。 一覧の別のオプションが IAP の説明として適している場合 (たとえば、音楽のダウンロードや電子書籍を提供している場合) は、代わりにそのオプションを選びます。 それ以外の場合は、これを **[ソフトウェアのダウンロード]** に設定したままにしておくことができます。これはほとんどの IAP で適切です。
 
-> **Xxxx**  Xxxxxxxx xxx xxx xxxxxxxxx xxx xxx xx xxxxxxxx xxxxxxxxx Xxxxxxx Y xxx Xxxxxxx Y.Y.
+-   ソフトウェアのダウンロード
+-   電子書籍
+-   電子雑誌 1 冊
+-   電子新聞 1 部
+-   ミュージックのダウンロード
+-   ミュージックのストリーミング
+-   オンライン データ ストレージ/サービス
+-   ビデオのダウンロード
+-   ビデオのストリーミング
+-   SaaS
 
-## Xxx
+## キーワード
 
 
-Xxx xxxx xxxx xxx xxxxxx xx xxxxx xx xx YYYY xxxxxxxxxx xxxx xxx **Xxx** xxxxx. Xxxx xx x xxx xx xxxxxxx xxxxx xxxxxxx xxx xxxx xx-xxx xxxxxxx. Xxx’x xxx xxx xxxx x xxxx, xxx xxx’xx xxxxxxx x xxx xx xxxx xxxxx xx xx XXX. Xxxxx xxx Xxxx xxxxx, xxx xxx xxx xxxxx xxx xxxx xxx xx xxxx. Xxx xxx xxxxxx xxx xxxxx xx xxx xxxx (xx xxxx xxxx, xxx xxxxxx xx xxxxx xx xxxx xxx) xx xxxxxxxx xxx xxxx xx xxx XXX'x **Xxx** xxxxx, xxxxxxx xxxxxx xx xxxx xxxx xxxxxxx xx xxxx xxx xx xxxxxx xxx xxx xxxxx.
+申請する IAP ごとに、それぞれ 30 文字以内のキーワードを最大 10 個指定するオプションがあります。 そうすると、アプリはキーワードと一致する製品を照会できます。 この機能によって、アプリのコードで製品 ID を直接しなくても IAP をロードできる画面をアプリで構築できるようになります。 その場合、アプリでコードを変更したり、アプリをもう一度申請しなくても、いつでも IAP のキーワードを変更することができます。
 
-> **Xxxx**  Xxx **Xxx** xxxxx xx xxx xxxxxxxxx xxx xxx xx xxxxxxxx xxxxxxxxx Xxxxxxx Y xxx Xxxxxxx Y.Y.
+> **注**  キーワードは、Windows 8 と Windows 8.1 を対象とするパッケージでは使うことができません。
 
- 
+## タグ
+
+
+**タグ** フィールドに最大 3000 文字を入力するオプションもあります。 アプリ内製品には、このようにして追加のコンテキストを指定します。 たとえば、ゲームの IAP として金貨入りの袋を販売するとします。 タグ フィールドを使用し、アプリはこの金貨入りの袋を照会できます。 値 (ここでは、袋に入っている金貨の数) は、アプリのコードを変更したり、アプリをもう一度申請したりしなくても、IAP の**タグ** フィールドで情報を更新していつでも調整できます。
+
+> **注**  **タグ** フィールドは、Windows 8 と Windows 8.1 を対象とするパッケージでは使うことができません。
 
  
 
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

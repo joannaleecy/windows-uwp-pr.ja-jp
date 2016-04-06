@@ -1,224 +1,228 @@
 ---
-xx.xxxxxxx: YYYYYXYY-YYYY-YYYY-YYYX-YYYYXXYYYYXX
-xxxxx: Xxxxxx xxxx xxxxxx xxx xxxxxxxxxxx
-xxxxxxxxxxx: Xxxxx xx x xxxxxxxxx xxxxxxxx xxx xxxxxxxxxxx xxx Xxxxxxx YY xxxxxxx.
-xxxxxxxx: Xxx xxxxxxx
-xxxxxxxx: Xxxxxxxxx xxxxxxx
-xxxxxxxx: Xxxxxx Xxxxxx, xxxxxxxxx xxxxxxx
-xxxxxxxx: xxxxxx xxxxxx
+ms.assetid: 54973C62-9669-4988-934E-9273FB0425FD
+title: デバイスを開発用に有効にする
+description: Windows 10 デバイス用の開発には、さまざまな方法があります。
+keywords: 準備を始める
+keywords: 開発者用ライセンス
+keywords: Visual Studio, 開発者用ライセンス
+keywords: デバイスを利用可能にする
 ---
-# Xxxxxx xxxx xxxxxx xxx xxxxxxxxxxx
+# デバイスを開発用に有効にする
 
-Xxxxx xx x xxxxxxxxx xxxxxxxx xxx xxxxxxxxxxx xxx Xxxxxxx YY xxxxxxx. X xxxxxxxxx xxxxxxx xx xx xxxxxx xxxxxxxx xxx xxxx xxxxxx xxxx xxx xxxx xx xxx xx xxxxxxx, xxxxxxx xx xxxx xxxx xxx. Xxx xxxx xxxxxx x xxxxxx xxxx xxx xxxxx xxxxx xxxx xxx xxxxxxxx xxx xxx xxxxxx. Xxxx'x xx. Xx xxxx xxxxxxxx xxxx xxxxxxxxx xxxxxxxx xxxxx YY xx YY xxxx!
+Windows 10 デバイス用の開発には、さまざまな方法があります。 アプリの開発、インストール、テストに使うそれぞれのデバイスに対して、開発者用ライセンスを所有する必要はなくなりました。 デバイスの設定から、これらのタスク用にデバイスを 1 回だけ有効にします。 この操作だけで十分です。 30 日ごとや 90 日ごとに開発者用ライセンスを更新する必要はありません。
 
-Xx xxx xxx xxxxx xxxxx x Xxxxxxx Y.Y xxxxxx xx xxxxxxx xx xxxx xxxx xxxx xxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY xx Xxxxxxxxx Xxxxxx Xxxxxx YYYY, xxx xxxxx xxxx xx [xxx x xxxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/Hh974578) xx [xxxxxxxx xxxx Xxxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/Dn614128).
+Microsoft Visual Studio 2013 または Microsoft Visual Studio 2015 を利用したアプリの開発やテストで Windows 8.1 デバイスを引き続き使う場合は、[開発者用ライセンスを取得する](https://msdn.microsoft.com/library/windows/apps/Hh974578)か、[Windows Phone を登録する](https://msdn.microsoft.com/library/windows/apps/Dn614128)必要があります。
 
-## Xxx xxxxxxxxx xxxxxxxx
+## 開発者向け機能を使用する
 
-### Xxxxxxx xxxx xxx xxxx Xxxxxxxxx Xxxxxx Xxxxxx
+### Microsoft Visual Studio を使ってアプリを開発する
 
-Xx xxx xxx Xxxxxxxxx Xxxxxx Xxxxxx xx x Xxxxxxx YY xxxxxx xxx xxx xxxx x xxxxxxxx xxx x Xxxxxxx Y.Y xx Xxxxxxx YY xxx, xxx xxx xxxxxxxx xx xxxxxx xxxx xxxxxx xxxx xxxx xxxxxx. Xxx xxxx xxxx xxxxxx xx xx xxxxxxx xx xxx xxx xxxxxxxxx xxx xxxxx xxxx xxx.
+Windows 10 デバイスで Microsoft Visual Studio を使い、Windows 8.1 アプリまたは Windows 10 アプリ用のソリューションを開く場合は、次のダイアログが表示され、デバイスを有効にするように求められます。 デバイスを有効にし、デザイナーを使ってアプリをデバッグする必要があります。
 
-![Xxxxxx xxxxxxxxx xxxx xxxxxx xxxx xx xxxxxxxxx xx Xxxxxx Xxxxxx](images/latestenabledialog.png)
-Xxxx xxx xxx xxxx xxxxxx, xxxxx **xxxxxxxx xxx xxxxxxxxxx** xx xx xxxxxxxx xx xxx **Xxxxxx & xxxxxxxx** xxxx xx xxxxx xxxxx. Xx xxxxx **XX** xxx xxxx xxxxxx xxx xxxxx xxxxx xx xxxxxx xxxx Xxxxxxx YY xxxxxx xxx xxxxxxxxxxx.
+![Visual Studio で表示される、開発者モードを有効にするためのダイアログ](images/latestenabledialog.png)
+このダイアログが表示されたら、**開発者向け設定**をクリックして **[更新とセキュリティ]** ページ (下記参照) に直接移動します。 または、**[OK]** をクリックし、以下の手順に従って、Windows 10 デバイスを開発用に有効にします。
 
-### Xxxxxx xxxx Xxxxxxx YY xxxxxxx
+### Windows 10 デバイスを有効にする
 
-Xxx Xxxxxxx YY, xxx xxxxxx xxx xxxxxxxxx xxxxxxxx xxx xxxx xx xxxxxx xx xxx xxxxxx. Xxxx xxxxxxxx xxx xxxxxxx: Xxxxxxx YY xxxxxxxx, xxxxxxx xxx xxxxxx. Xxx xxx xxxxxx x xxxxxx xxx xxxxxxxxxxx, xx xxxx xxx xxxxxxxxxxx.
+Windows 10 の場合、デバイスで有効にする開発者向け機能を選びます。 対象となるデバイスは、Windows 10 が動作するデスクトップ、タブレット、電話です。 デバイスを開発用に有効にしたり、サイドローディングのみを目的として有効にしたりできます。
 
--   *Xxxxxxxxxxx* xx xxxxxxxxxx xxx xxxx xxxxxxx xx xxxxxxx xx xxx xxxx xxx xxx xxxx xxxxxxxxx xx xxx Xxxxxxx Xxxxx. Xxx xxxxxxx, xx xxx xxxx xx xxxxxxxx xx xxxx xxxxxxx xxxx.
--   *Xxxxxxxxx xxxx* xxxx xxx xxxxxxxx xxxx, xxx xxxx xxx xxxx xxxx Xxxxxx Xxxxxx xx xxxxx xxxx.
+-   *サイドローディング*では、Windows ストアの認証を受けていないアプリをインストールし、実行やテストを行うことができます。 たとえば、社内のみで使うアプリなどがあります。
+-   *開発者モード*を使用すると、アプリをサイドロードし、Visual Studio からデバッグ モードでアプリを実行することもできます。
 
-**Xxxx**  Xx xxx xxxxxxxx xxxx, xxx xxxxxx xxxxx xxxx xxxxxxx xxxx xxxx xxxxxxx xxxxxxx. Xxxx xxx xxxxxxx x xxxxxxxxxx xxx xxxx xxx xxx xxxx xxxxxxxxx xx xxx Xxxxxxx Xxxxx, xxx xxx xxxxxxxx xxxx xxx xxxx xxxxxxxx xxx xxxxxx xxxxxxxxx xx xxxxxxxx xxx xxx xxx xxxx xxx xxx xxxxxx xxxxxxxxxxx xxx xxx xxxx xxxx xxxxxxx xxxx xxxxxxxxxx xxx xxxxxxx xxx xxx. Xxx xxx Xxxxxxx &xx; Xxxxxxx Xxxxx xxxxxxx xx xxxx [xxxxxxx xxxxxxxxx](http://go.microsoft.com/fwlink/?LinkId=521839).
+**注**  アプリをサイドローディングする場合は、信頼できるソースからのみアプリをインストールしてください。 サイドローディングしたアプリ (Windows ストアの認証を受けていないアプリ) をインストールする場合は、そのアプリをサイドローディングする際に必要なすべての権利をお客様が保持していること、およびそのアプリのインストールや実行の結果生じるすべての問題についてお客様が一切の責任を負うことに同意したものと見なされます。 この[プライバシーに関する声明](http://go.microsoft.com/fwlink/?LinkId=521839)の「Windows」の「Windows ストア」セクションをご覧ください。
 
-**Xx xxx xxxxxxxxx xxxxxxxx**
+**開発者向け機能を使用するには**
 
-1.  Xx xxxx xxxxxx xxxx xxx xxxx xx xxxxxx, xx xx **Xxxxxxxx**. Xxxxxx **Xxxxxx & xxxxxxxx**, xxxx xxxxxx **Xxx xxxxxxxxxx**.
-2.  Xxxxxx xxx xxxxx xx xxxxxx xxxx xxx xxxx. Xxx xxxx xxxxxxxx xxxx xxxxx xxx xxxxxxx, xxx [Xxxxx xxxxxxxx xxxxxx X xxxxxx: xxxxxxxx xxxx xx xxxxxxxxx xxxx?](#WhichSettings)
-3.  Xxxx xxx xxxxxxxxxx xxx xxx xxxxxxx xxx xxxxx, xxxx xxxxx **Xxx** xx xxxxxx xxx xxxxxx.
+1.  有効にするデバイスで、**[設定]** に移動します。 **[更新とセキュリティ]**、**[開発者向け]** の順にクリックします。
+2.  必要なアクセス レベルを選びます。 オプションについて詳しくは、「[選ぶ必要がある設定: アプリのサイドローディングか開発者モードか](#WhichSettings)」をご覧ください。
+3.  選択した設定の免責事項を読み、**[はい]** をクリックして変更を受け入れます。
 
-Xxxx'x xxx xxxxxxxx xxxx xx xxx xxxxxxx xxxxxx xxxxxx.
+デスクトップ デバイス ファミリの設定ページを以下に示します。
 
-![Xx xx Xxxxxxxx, xxxxxx Xxxxxx xxx xxxxxxxx xxx xxxx xxxxxx Xxx xxxxxxxxxx xx xxxx xxxx xxxxxxx](images/devmode-pc-options.png)
+![[設定] に移動し、[更新とセキュリティ] を選び、[開発者用] を選んでオプションを表示する](images/devmode-pc-options.png)
 
-Xxxx'x xxx xxxxxxxx xxxx xx xxx xxxxxx xxxxxx xxxxxx.
+モバイル デバイス ファミリの設定ページを以下に示します。
 
-![Xxxx Xxxxxxxx xx xxxx xxxxx, xxxxxx Xxxxxx xxx xxxxxxxx](images/devmode-mob.png)
+![電話の [設定] から [更新とセキュリティ] を選ぶ](images/devmode-mob.png)
 
-### Xxxxx xxxxxxxx xxxxxx X xxxxxx: xxxxxxxx xxxx xx xxxxxxxxx xxxx?
+### 選ぶ必要がある設定: アプリのサイドローディングか開発者モードか
 
-Xx xxxxxxx, xxx xxx xxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxx Xxxxxxx Xxxxx. Xxxxxxxx xxxxx xxxxxxxx xx xxx xxxxxxxxx xxxxxxxx xxx xxxxxx xxx xxxxx xx xxxxxxxx xx xxxx xxxxxx. Xxx xxxxxx xxx xxxxxxx xxxx xxxx xxxxxxxxxx xxxxxxx.
+既定では、Windows ストアからのみユニバーサル Windows プラットフォーム (UWP) アプリをインストールできます。 開発者向け機能を使用するように設定を変更すると、デバイスのセキュリティ レベルが変わる場合があります。 未検証のソースからはアプリをインストールしないでください。
 
-**Xxxxxxxx xxxx**
+**アプリのサイドローディング**
 
-Xxx Xxxxxxxx xxxx xxxxxxx xx xxxxxxxxx xxxx xx xxxxxxxxx xx xxxxxxx xxxx xxxx xx xxxxxxx xxxxxx xxxx xx xxxxxxx xxxxxxx xxxxxxx xxxxx xxxxxxx xxx Xxxxxxx Xxxxx. Xx xxxx xxxx, xx'x xxxxxx xxx xxx xxxxxxxxxxxx xx xxxxxxx x xxxxxx xxxx xxxxxxxx xxx *Xxxxxxx Xxxxx xxxx* xxxxxxx, xx xxxxx xxxxxxxxxx xx xxx xxxxx xx xxx xxxxx xxxxxxxx xxxx. Xxx xxxxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxx xxx xxxxxxx xxxxxxxx xx xxxxxxxx xxxx. Xxx xxxx xxxx, xxx xxx XxxxXxx xxxxxxxx [Xxxxxxxx xxxx xx Xxxxxxx YY](https://technet.microsoft.com/library/mt269549.aspx) xxx [Xxx xxxxxxx xxxx xxx xxxxxxxxxx xx Xxxxxxxxx Xxxxxx](https://technet.microsoft.com/library/dn646955.aspx).
+アプリのサイドローディング設定は、通常、Windows ストアを使わずにカスタム アプリを管理対象デバイスにインストールする必要がある会社や学校によって使用されます。 この場合、電話の設定ページのイメージで以前に示したように、*Windows ストア アプリ*設定を無効にするポリシーを組織が適用していることはよくあります。 また、組織は、必要な証明書と、アプリをサイドローディングするインストール場所を提供します。 詳しくは、TechNet の記事「[Windows 10 でのアプリのサイド ローディング](https://technet.microsoft.com/library/mt269549.aspx)」と「[Microsoft Intune でのアプリ展開の開始](https://technet.microsoft.com/library/dn646955.aspx)」をご覧ください。
 
-Xxxxxx xxxxxx xxxxxxxx xxxx
+デバイス ファミリ固有の情報
 
--   Xx xxx xxxxxxx xxxxxx xxxxxx: Xxx xxx xxxxxxx xx xxx xxxxxxx (.xxxx) xxx xxx xxxxxxxxxxx xxxx xx xxxxxx xx xxx xxx xxx xx xxxxxxx xxx Xxxxxxx XxxxxXxxxx xxxxxx xxxx xx xxxxxxx xxxx xxx xxxxxxx ("Xxx-XxxXxxXxxxxxx.xxY").
+-   デスクトップ デバイス ファミリの場合: パッケージと共に作成される Windows PowerShell スクリプトを実行して、アプリの実行に必要なアプリ パッケージ (.appx) と証明書をインストールできます ("Add-AppDevPackage.ps1")。
 
--   Xx xxx xxxxxx xxxxxx xxxxxx: Xx xxx xxxxxxxx xxxxxxxxxxx xx xxxxxxx xxxxxxxxx, xxx xxx xxx xxx xxxx xx xxxxxxx xxx .xxxx xxxx xx xxx xxx xxxxx xx xx xx XX xxxx.
+-   モバイル デバイス ファミリの場合: 必要な証明書が既にインストールされている場合は、電子メールまたは SD カードで受け取ったファイルをタップして、.appx をインストールできます。
 
-**Xxxxxxxx xxxx** xx x xxxx xxxxxx xxxxxx xxxx Xxxxxxxxx xxxx xxxxxxx xxx xxxxxx xxxxxxx xxxx xx xxx xxxxxx xxxxxxx x xxxxxxx xxxxxxxxxxx.
+信頼できる証明書がないデバイスにアプリをインストールすることはできないため、**アプリのサイドローディング**は開発者モードよりも安全です。
 
-**Xxxxxxxxx xxxx**
+**開発者モード**
 
-Xx xxxxxxxx xx xxxxxxxxxxx, xxx Xxxxxxxxx xxxx xxxxxxx xxxxxxx xxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxxxx. Xx xxxxxxxx xxx Xxxxxxx Y.Y xxxxxxxxxxx xxx x xxxxxxxxx xxxxxxx.
+サイドローディングだけでなく、開発者モードの設定でデバッグおよび追加の展開オプションを有効にできます。 これは、開発者用ライセンスに対する Windows 8.1 の要件に置き換わるものです。
 
-Xxxxxx xxxxxx xxxxxxxx xxxx
+デバイス ファミリ固有の情報
 
--   Xx xxx xxxxxxx xxxxxx xxxxxx:
+-   デスクトップ デバイス ファミリの場合:
 
-    Xxxxxx Xxxxxxxxx xxxx xx xxxxxxx xxx xxxxx xxxx xx Xxxxxx Xxxxxx. Xx xxxxxx xxxxxxxxxx, xxx xxxx xx xxxxxxxx xx Xxxxxx Xxxxxx xx Xxxxxxxxx xxxx xx xxx xxxxxxx.
+    開発者モードを有効にして、Visual Studio でアプリを開発およびデバッグします。 既に説明したように、開発者モードが有効になっていない場合は、Visual Studio で有効にするように求められます。
 
--   Xx xxx xxxxxx xxxxxx xxxxxx:
+-   モバイル デバイス ファミリの場合:
 
-    Xxxxxx xxxxxxxxx xxxx xx xxxxxx xxxx xxxx Xxxxxx Xxxxxx xxx xxxxx xxxx xx xxx xxxxxx.
+    開発者モードを有効にして、Visual Studio からアプリを展開し、デバイスでそのアプリをデバッグします。
 
-    Xxx xxx xxx xxx xxxx xx xxxxxxx xxx .xxxx xxxx xx xxx xxx xxxxx xx xx xx XX xxxx. Xx xxx xxxxxxx xxxx xxxx xxxxxxxxxx xxxxxxx.
+    電子メールまたは SD カードで受け取ったファイルをタップして、.appx をインストールできます。 未検証のソースからはアプリをインストールしないでください。
 
-**Xxx**  
-Xxxxx xxx xxxxxxx xxxxx xxx xxx xxx xx xxxxxx xx xxx xxxx x Xxxxxxx YY XX xx x Xxxxxxx YY xxxxxx xxxxxx. Xxxx xxxxxxx xxxx xx xxxxxxxxx xx xxx xxxx xxxxxx xx xxx xxxxxxx xx x xxxxx xx xxxxxxxx xxxxxxxxxx, xx xxxx xxxx xx xxxxxxxxx xx XXX. Xxxxxx xx xxx xxxx xxxxxx xxxxxxxx xxxx xxx xxx xxxxxxx (.xxxx); xxxx xx xxx xxxxxxx xxxxxxxxxxxx.
+**ヒント**  
+Windows 10 PC から Windows 10 モバイル デバイスへのアプリの展開に使用できるツールはいくつかあります。 デバイスは両方ともワイヤード (有線) またはワイヤレスでネットワークの同じサブネットに接続されているか、または 2 台のデバイスが USB で接続されている必要があります。 どちらの方法を使用しても、アプリ パッケージ (.appx) のみがインストールされます。証明書はインストールされません。
 
--   Xxx xxx Xxxxxxx YY Xxxxxxxxxxx Xxxxxxxxxx (XxxXxxXxxxxxXxx) xxxx. Xxxxx xxxx xxxxx [xxx XxxXxxXxxxxxXxx xxxx](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx).
--   Xxxxxxxx xx Xxxxxxx YY, Xxxxxxx YYYY, xxx xxx xxx [Xxxxxx Xxxxxx](#device_portal) xx xxxxxx xxxx xxxx xxxxxxx xx x xxxxxx xxxxxx xxxxxxx Xxxxxxx YY, Xxxxxxx YYYY xx xxxxx. Xxx xxx **Xxxx** xxxx xx Xxxxxx Xxxxxx (&xx;XX&xx;/xxxxxxxxxx.xx) xx xxxxxx xx xxx xxxxxxx (.xxxx) xxx xxxxxxx xx xx xxx xxxxxx.
+-   Windows 10 アプリケーション展開 (WinAppDeployCmd) ツールを使います。 詳しくは、[WinAppDeployCmd ツール](http://msdn.microsoft.com/library/windows/apps/mt203806.aspx)に関するページをご覧ください。
+-   Windows 10 バージョン 1511 以降では、[デバイス ポータル](#device_portal)を使用して、ブラウザーから、Windows 10 バージョン 1511 以降を実行しているモバイル デバイスに展開できます。 デバイス ポータル (&lt;IP&gt;/appmanager.md) の **Apps** ページを使用してアプリ パッケージ (.appx) をアップロードし、デバイスにインストールします。
 
  
 
-### Xxx xxxxx xxxxxxxx xx xxxxxxxx xxxx
+### グループ ポリシーやレジストリ キーを設定する
 
-Xxx xxx xxxx xxx xxxxx xxxxxxxx xx xxxxxxxx xxxx xx xx xxxxxxxxxxx xxx xx xxxxxx xxxx Xxxxxxx YY xxxxxxx xxxxxx xxx xxxxxxxxxxx.
+Windows 10 デスクトップ デバイスを開発用に有効にする別の方法として、グループ ポリシーまたはレジストリ キーを使うこともできます。
 
-**Xx xxx xxxxxxx xxxxxx xxxxxx**
+**デスクトップ デバイス ファミリの場合**
 
-Xxx xxxxxx.xxx xx xxx xxx xxxxx xxxxxxxx xx xxxxxx xxxx xxxxxx, xxxxxx xxx xxxx Xxxxxxx YY Xxxx. Xx xxx xx xxxx Xxxxxxx YY Xxxx, xxx xxxx xx xxx xxxxxxx xx XxxxxXxxxx xxxxxxxx xx xxx xxx xxxxxxxx xxxx xxxxxxxx xx xxxxxx xxxx xxxxxx.
+Windows 10 Home をお持ちでない場合は、gpedit.msc を使って、グループ ポリシーを設定してデバイスを有効にします。 Windows 10 Home をお持ちの場合は、regedit または PowerShell コマンドを使ってレジストリ キーを直接設定し、デバイスを有効にしてください。
 
-**Xxx xxxxxx xx xxxxxx xxxx xxxxxx**
+**gpedit を使ってデバイスを有効にする**
 
-1.  Xxx **Xxxxxx.xxx**.
-2.  Xx xx Xxxxx Xxxxxxxx Xxxxxx &xx; Xxxxxxxx Xxxxxxxxxxxxx &xx; Xxxxxxxxxxxxxx Xxxxxxxxx &xx; Xxxxxxx Xxxxxxxxxx &xx; Xxx Xxxxxxx Xxxxxxxxxx
-3.  Xx xxxxxx xxxxxxxxxxx, xxxx xxx xxxxxxxx xx xxxxxx:
+1.  **Gpedit.msc** を実行します。
+2.  [ローカル コンピューター ポリシー]、[コンピューターの構成]、[管理用テンプレート]、[Windows コンポーネント]、[アプリ パッケージの展開] の順に移動します。
+3.  サイドローディングを有効にするには、ポリシーを編集して次を有効にします。
 
-    -   **Xxxxx xxx xxxxxxx xxxx xx xxxxxxx**
+    -   **信頼できるすべてのアプリのインストールを許可する**
 
-    - XX -
+    - または -
 
-    Xx xxxxxx xxxxxxxxx xxxx, xxxx xxx xxxxxxxx xx xxxxxx xxxx:
+    開発者モードを有効にするには、ポリシーを編集して次の両方を有効にします。
 
-    -   **Xxxxx xxx xxxxxxx xxxx xx xxxxxxx**
-    -   **Xxxxxx xxxxxxxxxxx xx Xxxxxxx Xxxxx xxxx xxx xxxxxxxxxx xxxx xxxx xx xxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx (XXX)**
+    -   **信頼できるすべてのアプリのインストールを許可する**
+    -   **Windows ストア アプリの開発と統合開発環境 (IDE) からのインストールを許可する**
 
-4.  Xxxxxx xxxx xxxxxxx.
+4.  コンピューターを再起動します。
 
-**Xxx xxxxxxx xx xxxxxx xxxx xxxxxx**
+**regedit を使ってデバイスを有効にする**
 
-1.  Xxx **xxxxxxx**.
-2.  Xx xxxxxx xxxxxxxxxxx, xxx xxx xxxxx xx xxxx XXXXX xx Y:
+1.  **regedit** を実行します。
+2.  サイドローディングを有効にするには、この DWORD の値を 1 に設定します。
 
-    -   **XXXX\\XXXXXXXX\\Xxxxxxxxx\\Xxxxxxx\\XxxxxxxXxxxxxx\\XxxXxxxxXxxxxx\\XxxxxXxxXxxxxxxXxxx**
+    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowAllTrustedApps**
 
-    - XX -
+    - または -
 
-    Xx xxxxxx xxxxxxxxx xxxx, xxx xxx xxxxxx xx xxxx XXXXX xx Y:
+    開発者モードを有効にするには、この DWORD の値を 1 に設定します。
 
-    -   **XXXX\\XXXXXXXX\\Xxxxxxxxx\\Xxxxxxx\\XxxxxxxXxxxxxx\\XxxXxxxxXxxxxx\\XxxxxXxxxxxxxxxxXxxxxxxXxxXxxxxxx**
+    -   **HKLM\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock\\AllowDevelopmentWithoutDevLicense**
 
-**Xxx XxxxxXxxxx xx xxxxxx xxxx xxxxxx**
+**PowerShell を使ってデバイスを有効にする**
 
-1.  Xxx XxxxxXxxxx xxxx xxxxxxxxxxxxx xxxxxxxxxx.
-2.  Xx xxxxxx xxxxxxxxxxx, xxx xxxx xxxxxxx:
+1.  管理者特権で PowerShell を実行します。
+2.  サイドローディングを有効にするには、このコマンドを実行します。
 
-    -   **XX X:\\XXXXXXX\\xxxxxxYY&xx; xxx xxx "XXXX\_XXXXX\_XXXXXXX\\XXXXXXXX\\Xxxxxxxxx\\Xxxxxxx\\XxxxxxxXxxxxxx\\XxxXxxxxXxxxxx" /x XXX\_XXXXX /x /x "XxxxxXxxXxxxxxxXxxx" /x "Y"**
+    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowAllTrustedApps" /d "1"**
 
-    - XX -
+    - または -
 
-    Xx xxxxxx xxxxxxxxx xxxx, xxx xxxx xxxxxxx:
+    開発者モードを有効にするには、このコマンドを実行します。
 
-    -   **XX X:\\XXXXXXX\\xxxxxxYY&xx; xxx xxx "XXXX\_XXXXX\_XXXXXXX\\XXXXXXXX\\Xxxxxxxxx\\Xxxxxxx\\XxxxxxxXxxxxxx\\XxxXxxxxXxxxxx" /x XXX\_XXXXX /x /x "XxxxxXxxxxxxxxxxXxxxxxxXxxXxxxxxx" /x "Y"**
+    -   **PS C:\\WINDOWS\\system32&gt; reg add "HKEY\_LOCAL\_MACHINE\\SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\AppModelUnlock" /t REG\_DWORD /f /v "AllowDevelopmentWithoutDevLicense" /d "1"**
 
-## Xxxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxx
+## モバイル デバイス用の開発者向け機能
 
 
-Xxxxxxxx xx Xxxxxxx YY, Xxxxxxx YYYY, xxxxxxxxxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxx xxx xxx xxxxxx xxxxxx xxxxxx. Xxxxx xxxxxxxx xxx xxxxxxxxx xxxx xxxx **Xxxxxxxxx xxxx** xx xxxxxxx xx xxx xxxxxx.
+Windows 10 バージョン 1511 以降、モバイル デバイス ファミリで追加の開発者向け機能を利用できます。 これらの機能は、デバイスで**開発者モード**が有効になっている場合にのみ利用可能です。
 
-![Xxxxxxxxx xxxx xxxxxxx xxx xxxxxx xxxxxxx](images/devmode-mob-options.png)
+![モバイル デバイスの開発者モード オプション](images/devmode-mob-options.png)
 
-### Xxxxxx xxxxxxxxx xxx xxxxxxx
+### デバイスの検出とペアリング
 
-(Xxxxxxx YY, Xxxxxxx YYYY xx xxxxx, xxxxxx xxxxxx xxxxxx xxxx)
+(Windows 10 Version 1511 以降、モバイル デバイス ファミリのみ)
 
-Xx xxxxxxx xx Xxxxxx Xxxxxx, xxx xxxx xxxxxx Xxxxxx xxxxxxxxx. Xxxx xxxx xxx xxxx xxxx xxxxx xxxx x XX xx xxxxx Xxxxxxx YY xxxxxx. Xxxx xxxxxxx xxxx xx xxxxxxxxx xx xxx xxxx xxxxxx xx xxx xxxxxxx xx x xxxxx xx xxxxxxxx xxxxxxxxxx, xx xxxx xxxx xx xxxxxxxxx xx XXX.
+デバイス ポータルに接続するには、デバイスの検出を有効にする必要があります。 これにより、使用している電話と、PC または他の Windows 10 デバイスをペアリングできます。 デバイスは両方ともワイヤード (有線) またはワイヤレスでネットワークの同じサブネットに接続されているか、または 2 台のデバイスが USB で接続されている必要があります。
 
-Xxx xxxxx xxxx xxx xxxxxxx xx Xxxxxx Xxxxxx, xxx xxx xxxxx xxx x xxxx-xxxxxxxxx, Y xxxxxxxxx xxxxxxxx xxxx. Xxxx xxxxxxx xxxx xxx xxxx xxxxxx xx xxx xxxxx, xxx xxxxx xxx xxxx xxxx xxxxxxxxx. Xxxxx xxx **Xxxx** xxxxxx xx xxxx xxxxx xx xxxxxxxx xxx xxxxxxx xxx xxxx, xxxx xxxxx xxx Y xxxxxxxxxx xxxx xxx xxxx xxx xx xxx xxxxxxx.
+初めてデバイス ポータルに接続すると、大文字と小文字が区別される 6 文字のセキュリティ コードを入力するように求められます。 これにより電話に確実にアクセスでき、攻撃を受ける心配もなくなります。 電話の **[ペアリング]** ボタンを押してコードを生成および表示し、その 6 文字をブラウザー内のテキスト ボックスに入力します。
 
-![Xxxxxxxxx xxxx xxxxxx xxxxxxxxx xxxxxxxx](images/devmode-mob-pairing.png)
+![開発者モードのデバイス検出設定](images/devmode-mob-pairing.png)
 
-### Xxxxxx Xxxxxx
+### デバイス ポータル
 
-(Xxxxxxx YY, Xxxxxxx YYYY xx xxxxx, xxxxxx xxxxxx xxxxxx xxxx)
+(Windows 10 Version 1511 以降、モバイル デバイス ファミリのみ)
 
-Xxxxxx Xxxxxx xxxx xxx xxxx xxxxxxxxxx xxxx xxx xxxxxxxx xxxx xxxx xxxxx xxxx XXXX xxxx xxxx xxxxxxx. Xxx xxx xxx Xxxxxx Xxxxxx xx xx xxx xxxxxxxxx:
+デバイス ポータルでは、診断情報を表示し、使用しているブラウザーから HTTP 経由で電話を操作できます。 デバイス ポータルを使用すると、次の操作を実行できます。
 
--   Xxx x xxxx xx xxxxxxxxx xxxxxxx xx xxx xxxxx
--   Xxxxxxx, xxxxxx, xxxxxx, xxx xxxxxxxxx xxxx xx xxxx xxxxx
--   Xxxxxx Xx-Xx xxxxxxxx xxx xxxx xxxxxx xxxxxxxx (xxxxxxxx)
--   Xxxx xxxx xxxxxx xx XXX, xxxxxx, X/X, xxxxxxx, xxx XXX xxxxx
--   Xxxxxxxx xxxx xxxxx
+-   電話で実行されているプロセスの一覧を確認する
+-   電話でアプリをインストール、削除、起動、および終了する
+-   Wi-Fi プロファイルを変更し、シグナルの強さを確認する (ipconfig)
+-   CPU、メモリ、I/O、ネットワーク、および GPU の使用率のライブ グラフを表示する
+-   電話をシャットダウンする
 
-Xxxx xxxxx xxxxx xxx **Xxxxxxxxxxx** xxxx xx Xxxxxx Xxxxxx xxxxxxx xxxxxxx xx xxx xxxxx'x xxxxxxx.
+このイメージは、電話のブラウザーでローカルに実行されているデバイス ポータルの **[パフォーマンス]** ページです。
 
-![Xxxxxx Xxxxxx xxxxxxx xx xxx xxxxx](images/devportal-phone.png)
+![電話で実行されているデバイス ポータル](images/devportal-phone.png)
 
-Xxx xxx xxxxxx xxxx Y xxxx xx xxxxxxx xx Xxxxxx Xxxxxx: XXX, xxxxx xxxx, xxx xxxx xxx xxxxx xxxxxxx (xxxxxxxxx XXX xxx xxxxxxxxx).
+デバイス ポータルには、USB、ローカル ホスト、ローカル ネットワーク (VPN、テザリングを含む) のいずれかを使用してアクセスできます。
 
-**Xx xxxxxxx xx Xxxxxx Xxxxxx**
+**デバイス ポータルに接続するには**
 
-1.  Xx xxxx xxxxxxx, xxxxx xxx xxxxxxx xxxxx xxxx xxx xxx xxxxxxxxxx xxxx xxx'xx xxxxx.
+1.  ブラウザーで、使っている接続の種類に応じて次のアドレスを入力します。
 
-    -   XXX: xxxx://YYY.Y.Y.Y:YYYYY
+    -   USB: http://127.0.0.1:10080
 
-        Xxx xxxx xxxxxxx xxxx xxx xxxxx xx xxxxxxxxx xx x XX xxx x XXX xxxxxxxxxx. Xxxx xxxxxxx xxxx xxxx Xxxxxxx YY, Xxxxxxx YYYY xx xxxxx.
+        電話が USB で PC に接続されている場合は、このアドレスを使用します。 両方のデバイスに、Windows 10 バージョン 1511 以降が必要です。
 
-    -   Xxxxxxxxx: xxxx://YYY.Y.Y.Y
+    -   Localhost: http://127.0.0.1
 
-        Xxx xxxx xxxxxxx xx xxxx Xxxxxx Xxxxxx xxxxxxx xx xxx xxxxx xx Xxxxxxxxx Xxxx xxx Xxxxxxx YY Xxxxxx.
+        このアドレスは、Windows 10 Mobile の Microsoft Edge の電話からローカルでデバイス ポータルを表示するときに使用します。
 
-    -   Xxxxx Xxxxxxx: xxxxx://*&xx;Xxx XX xxxxxxx xx xxx xxxxx&xx;*
+    -   ローカル ネットワーク: https://*&lt;電話の IP アドレス&gt;*
 
-        Xxx xxxx xxxxxxx xx xxxxxxx xxxx x xxxxx xxxxxxx.
+        このアドレスは、ローカル ネットワーク経由で接続するときに使用します。
 
-        Xxx XX xxxxxxx xx xxx xxxxx xx xxxxx xx xxx Xxxxxx Xxxxxx xxxxxxxx xx xxx xxxxx. XXXXX xx xxxxxxxx xxx xxxxxxxxxxxxxx xxx xxxxxx xxxxxxxxxxxxx.
+        電話の IP アドレスは、電話のデバイス ポータル設定に表示されます。 認証とセキュリティで保護された通信には HTTPS が必要です。
 
-2.  Xxxxx xxx **Xxxx** xxxxxx xx xxxx xxxxx xx xxxxxxxx xxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxx
-3.  Xxxxx xxx Y xxxxxxxxx xxxxxxxx xxxx xxxx xxx Xxxxxx Xxxxxx xxxxxxxx xxx xx xxxx xxxxxxx.
-4.  (Xxxxxxxx) Xxxxx xxx **Xxxxxxxx xx xxxxxxxx** xxx xx xxxx xxxxxxx xx xxxxxxxx xxxx xxxxxxx xx xxx xxxxxx.
+2.  電話の **[ペアリング]** ボタンを押して、必要なセキュリティ コードを生成して表示します。
+3.  ブラウザーのデバイス ポータルのパスワード ボックスに、6 文字のセキュリティ コードを入力します。
+4.  (省略可能) ブラウザーで **[Remember my computer] (このコンピューターを記憶する)** ボックスをオンにして、今後も使用できるようにこのペアリングを記憶します。
 
-Xxxx'x xxx Xxxxxx Xxxxxx xxxxxxx xx xxx xxxxxxxxx xxxxxxxx xxxx xx Xxxxxxx Xxxxx.
+Windows Phone の開発者設定ページの [デバイス ポータル] セクションを次に示します。
 
-![Xxxxxx Xxxxxx xxxxxxxx](images/devmode-mob-portal.png)
+![デバイス ポータルの設定](images/devmode-mob-portal.png)
 
-Xx xxx xxx xxxxx Xxxxxx Xxxxxx xx x xxxxxxxxx xxxxxxxxxxx, xxxx x xxxx xxx, xxxxx xxx xxxxx xxxxxxxx xx xxxx xxxxx xxxxxxx, xxxx xx xxxxxxxx xxxxxxxxxxx xx xxx xxxxxx, xxx xxxx xxxxxx xxxxxxxxxxxx, xxx xxx xxxxxxx xxxxxxxxxxxxxx. Xxxx xxxxxxx xxxxxxxxxxx xxxxxxxxxxxxx, xxx xxxxxx xxxxxx xxxx xxx XX xxxxxxx xx xxxx xxxxx xx xxxxxxx xx.
+テスト ラボなど、保護された環境でデバイス ポータルを使っている場合、そのデバイス上に個人情報が保存されておらず、固有の要件もない場合は、認証を無効にできます。 これにより暗号化されていない通信が有効化され、電話の IP アドレスを持つすべてのユーザーが、その通信を制御できるようになります。
 
-### Xxxxx xxxxxxxxx
+### エラー報告
 
-(Xxxxxxx YY, Xxxxxxx YYYY xx xxxxx, xxxxxx xxxxxx xxxxxx xxxx)
+(Windows 10 Version 1511 以降、モバイル デバイス ファミリのみ)
 
-Xxx xxxx xxxxx xx xxxxxxx xxx xxxx xxxxx xxxxx xxx xxxxx xx xxxx xxxxx.
+この値を設定して、電話に保存されるクラッシュ ダンプの数を指定します。
 
-Xxxxxxxxxx xxxxx xxxxx xx xxxx xxxxx xxxxx xxx xxxxxxx xxxxxx xx xxxxxxxxx xxxxx xxxxxxxxxxx xxxxxxxx xxxxx xxx xxxxx xxxxxx. Xxxxx xxx xxxxxxxxx xxx xxxxxxxxx-xxxxxx xxxx xxxx. Xxx xxx xxxx xxx xxxxx xx xxxx xxxxx'x xxxxxxx xx xxx Xxxxxxxxx\\Xxxxx xxxxxx. Xxx xxxx xxxx xxxxx xxxx xxxxx, xxx [Xxxxx xxxx xxxxx](https://msdn.microsoft.com/library/d5zhxt22.aspx).
+電話でクラッシュ ダンプを収集することで、クラッシュの発生直後に重要なクラッシュ情報にすばやくアクセスできます。 開発者が署名したアプリに対してのみ、ダンプが収集されます。 ダンプは、電話の記憶域の Documents\\Debug フォルダーにあります。 ダンプ ファイルについて詳しくは、[ダンプ ファイルの使用](https://msdn.microsoft.com/library/d5zhxt22.aspx)に関するページをご覧ください。
 
-## Xxxxxxxxx xxxx xxxxxx xxxx Xxxxxxx Y.Y xx Xxxxxxx YY
+## Windows 8.1 から Windows 10 へのデバイスのアップグレード
 
-Xxxx xxx xxxxxx xx xxxxxxxx xxxx xx xxxx Xxxxxxx Y.Y xxxxxx, xxx xxxx xx xxxxxxx x xxxxxxxxx xxxxxxx. Xx xxx xxxxxxx xxxx xxxxxx xxxx Xxxxxxx Y.Y xx Xxxxxxx YY, xxxx xxxxxxxxxxx xxxxxxx. Xxx xxx xxxxxxxxx xxxxxxx xx xxxxxx xxxx xxxxxxxxxxx xxxx xxxx xxxxxxxx Xxxxxxx YY xxxxxx. Xxxx xxxx xx xxx xxxxxxxx xx xxx xxxxxxx xxxxxxxx xxxx Xxxxxxx Y.Y xx Xxxxxxx YY, Xxxxxxx YYYY xx xxxxx.
+Windows 8.1 デバイスでアプリを作成またはサイドローディングするときに、開発者用ライセンスをインストールする必要があります。 Windows 8.1 から Windows 10 にデバイスをアップグレードする場合は、この情報が維持されます。 アップグレードした Windows 10 デバイスからこの情報を削除するには、次のコマンドを実行します。 Windows 8.1 から Windows 10 バージョン 1511 以降に直接アップグレードする場合、この手順は必要ありません。
 
-**Xx xxxxxxxxxx x xxxxxxxxx xxxxxxx**
+**開発者用ライセンスを登録解除するには**
 
-1.  Xxx XxxxxXxxxx xxxx xxxxxxxxxxxxx xxxxxxxxxx.
-2.  Xxx xxxx xxxxxxx: **xxxxxxxxxx-xxxxxxxxxxxxxxxxxxxxxxx**.
+1.  管理者特権で PowerShell を実行します。
+2.  **unregister-windowsdeveloperlicense** コマンドを実行します。
 
-Xxxxx xxxx xxx xxxx xx xxxxxx xxxx xxxxxx xxx xxxxxxxxxxx xx xxxxxxxxx xx xxxx xxxxx xx xxxx xxx xxx xxxxxxxx xx xxxxxxx xx xxxx xxxxxx. Xx xxx xxx'x xx xxxx, xxx xxxxx xxx xx xxxxx xxxx xxx xxxxx xxxx xxx, xx xxx xxx xx xxxxxx x xxxxxxx xxx xx. Xxxx xx xx xxxxxxx xx xxxx xxxxx:
+その後、このトピックで説明されているように、開発用のデバイスを有効にする必要があります。これにより、このデバイスで開発を継続できます。 有効にしない場合、アプリをデバッグしたり、パッケージを作成しようとしたりすると、エラーが発生する可能性があります。 このエラーの例を次に示します。
 
-Xxxxx : XXXYYYY : Xxxxxxxxxxxx xx xxx xxx xxxxxx.
+エラー: DEP0700: アプリケーションの登録に失敗しました。
+
+
 
 
 <!--HONumber=Mar16_HO1-->
+
+

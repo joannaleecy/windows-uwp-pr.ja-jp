@@ -1,38 +1,38 @@
 ---
-xx.xxxxxxx: YYYXYYYY-YYXY-YXYY-XXXX-YYYYYXXXYXYX
-xxxxx: Xxxx xxxx xxxx xxx
-xxxxxxxxxxx: Xxxxx xxxx xxx xx xxxx xxxxxxx xxxx xxxx xxx xx xxxxx x xxxxxxx, xxxxxx, xx xxxx-xxxxxxxxxx xxxx xxxxxx.
+ms.assetid: 374D1983-60E0-4E18-ABBB-04775BAA0F0D
+title: Scan from your app
+description: Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.
 ---
-# Xxxx xxxx xxxx xxx
+# Scan from your app
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Xxxxxxxxx XXXx **
+** Important APIs **
 
--   [**Xxxxxxx.Xxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn264250)
--   [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225393)
--   [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225381)
+-   [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250)
+-   [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393)
+-   [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381)
 
-Xxxxx xxxx xxx xx xxxx xxxxxxx xxxx xxxx xxx xx xxxxx x xxxxxxx, xxxxxx, xx xxxx-xxxxxxxxxx xxxx xxxxxx.
+Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.
 
-**Xxxxxxxxx**  Xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn264250) XXXx xxx xxxx xx xxx xxxxxxx [xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/Dn894631). Xxxx xxx xxx xxxxx XXXx xxxx xx xxx xxxxxxx xxxxxxx xx Xxxxxxx YY.
+**Important**  The [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) APIs are part of the desktop [device family](https://msdn.microsoft.com/library/windows/apps/Dn894631). Apps can use these APIs only on the desktop version of Windows 10.
 
-Xx xxxx xxxx xxxx xxx, xxx xxxx xxxxx xxxx xxx xxxxxxxxx xxxxxxxx xx xxxxxxxxx x xxx [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225393) xxxxxx xxx xxxxxxx xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225381) xxxx. Xxxx xxxxxxxx xxxx xxx xxxxxxxxx xxxxxxx xxxx XXX xxxxxxx xxx xxxxxx xxx xxxxxxxxx xx xxxx xxx.
+To scan from your app, you must first list the available scanners by declaring a new [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object and getting the [**DeviceClass**](https://msdn.microsoft.com/library/windows/apps/BR225381) type. Only scanners that are installed locally with WIA drivers are listed and available to your app.
 
-Xxxxx xxxx xxx xxx xxxxxx xxxxxxxxx xxxxxxxx, xx xxx xxx xxx xxxx-xxxxxxxxxx xxxx xxxxxxxx xxxxx xx xxx xxxxxxx xxxx, xx xxxx xxxx xxxxx xxx xxxxxxxxx xxxxxxx xx xxxxxx xxxx xxxxxx. Xx xxx xxxx-xxxxxxxxxx xxxxxxxx, xxx xxxxxxx xxxx xx xxxxxxx xxx xxxx-xxxxxxxxxxxxx xxxx xxx xx xxxxxxxx xxxx xxxx x xxxxxxx xxx x xxxxxx xxxxxxx. Xxx xxxx xxxx, xxx [Xxxx-Xxxxxxxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/hardware/Ff539393).
+After your app has listed available scanners, it can use the auto-configured scan settings based on the scanner type, or just scan using the available flatbed or feeder scan source. To use auto-configured settings, the scanner must be enabled for auto-configuration must not be equipped with both a flatbed and a feeder scanner. For more info, see [Auto-Configured Scanning](https://msdn.microsoft.com/library/windows/hardware/Ff539393).
 
-## Xxxxxxxxx xxxxxxxxx xxxxxxxx
+## Enumerate available scanners
 
-Xxxxxxx xxxx xxx xxxxxx xxxxxxxx xxxxxxxxxxxxx. Xxx xxxx xxxxxxx xxxx xxxx xx xxxxx xxx xxxx xxx xx xxxxxxxxxxx xxxx xxx xxxxxxx. Xx xxxx xxxxxxx, xxx xxxxxxx xxxxxx xxxxxxxxxxx xx xxxx xxxxx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225459) xxxxxxxxx.
+Windows does not detect scanners automatically. You must perform this step in order for your app to communicate with the scanner. In this example, the scanner device enumeration is done using the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) namespace.
 
-1.  Xxxxx, xxx xxxxx xxxxx xxxxxxxxxx xx xxxx xxxxx xxxxxxxxxx xxxx.
+1.  First, add these using statements to your class definition file.
 
 ``` csharp
     using Windows.Devices.Enumeration;
     using Windows.Devices.Scanners;
 ```
 
-2.  Xxxx, xxxxxxxxx x xxxxxx xxxxxxx xx xxxxx xxxxxxxxxxx xxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxx xxxxxxx](enumerate-devices.md).
+2.  Next, implement a device watcher to start enumerating scanners. For more info, see [Enumerate devices](enumerate-devices.md).
 
 ```csharp
     void InitDeviceWatcher()
@@ -46,7 +46,7 @@ Xxxxxxx xxxx xxx xxxxxx xxxxxxxx xxxxxxxxxxxxx. Xxx xxxx xxxxxxx xxxx xxxx xx xx
     }
 ```
 
-3.  Xxxxxx xx xxxxx xxxxxxx xxx xxxx x xxxxxxx xx xxxxx.
+3.  Create an event handler for when a scanner is added.
 
 ```csharp
     private async void OnScannerAdded(DeviceWatcher sender,  DeviceInformation deviceInfo)
@@ -75,34 +75,34 @@ Xxxxxxx xxxx xxx xxxxxx xxxxxxxx xxxxxxxxxxxxx. Xxx xxxx xxxxxxx xxxx xxxx xx xx
     }
 ```
 
-## Xxxx
+## Scan
 
-1.  **Xxx xx XxxxxXxxxxxx xxxxxx**
+1.  **Get an ImageScanner object**
 
-Xxx xxxx [**XxxxxXxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn264238) xxxxxxxxxxx xxxx, xxxxxxx xx'x **Xxxxxxx**, **XxxxXxxxxxxxxx**, **Xxxxxxx**, xx **Xxxxxx**, xxx xxxx xxxxx xxxxxx xx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn263806) xxxxxx xx xxxxxxx xxx [**XxxxxXxxxxxx.XxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.devices.scanners.imagescanner.fromidasync) xxxxxx, xxxx xxxx.
+For each [**ImageScannerScanSource**](https://msdn.microsoft.com/library/windows/apps/Dn264238) enumeration type, whether it's **Default**, **AutoConfigured**, **Flatbed**, or **Feeder**, you must first create an [**ImageScanner**](https://msdn.microsoft.com/library/windows/apps/Dn263806) object by calling the [**ImageScanner.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.scanners.imagescanner.fromidasync) method, like this.
 
  ```csharp
     ImageScanner myScanner = await ImageScanner.FromIdAsync(deviceId);
  ```
 
-2.  **Xxxx xxxx**
+2.  **Just scan**
 
-Xx xxxx xxxx xxx xxxxxxx xxxxxxxx, xxxx xxx xxxxxx xx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn264250) xxxxxxxxx xx xxxxxx x xxxxxxx xxx xxxxx xxxx xxxx xxxxxx. Xx xxxx xxxxxxxx xxx xxxxxxx. Xxx xxxxxxxx xxxxxxxx xxx xxxx-xxxxxxxxx, xxxxxxx, xx xxxxxx. Xxxx xxxx xx xxxx xxxx xxxx xxxxxx xxxxxxx x xxxxxxxxxx xxxx xxxxxxxxx, xxxx xx xx xxxxx xxxx xxx xxxxx xxxxxx, xxxx xxxxxxx xxxxxxx xx xxxxxx.
+To scan with the default settings, your app relies on the [**Windows.Devices.Scanners**](https://msdn.microsoft.com/library/windows/apps/Dn264250) namespace to select a scanner and scans from that source. No scan settings are changed. The possible scanners are auto-configure, flatbed, or feeder. This type of scan will most likely produce a successful scan operation, even if it scans from the wrong source, like flatbed instead of feeder.
 
-**Xxxx**  Xx xxx xxxx xxxxxx xxx xxxxxxxx xx xxxx xx xxx xxxxxx, xxx xxxxxxx xxxx xxxx xxxx xxx xxxxxxx xxxxxxx. Xx xxx xxxx xxxxx xx xxxx xxxx xx xxxxx xxxxxx, xxx xxxx xxx xxx'x xxxxxxx xxx xxxxxxx xxxxx.
+**Note**  If the user places the document to scan in the feeder, the scanner will scan from the flatbed instead. If the user tries to scan from an empty feeder, the scan job won't produce any scanned files.
  
 ```csharp
     var result = await myScanner.ScanFilesToFolderAsync(ImageScannerScanSource.Default, 
         folder).AsTask(cancellationToken.Token, progress);
 ```
 
-3.  **Xxxx xxxx Xxxx-xxxxxxxxxx, Xxxxxxx, xx Xxxxxx xxxxxx**
+3.  **Scan from Auto-configured, Flatbed, or Feeder source**
 
-Xxxx xxx xxx xxx xxx xxxxxx'x [Xxxx-Xxxxxxxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/hardware/Ff539393) xx xxxx xxxx xxx xxxx xxxxxxx xxxx xxxxxxxx. Xxxx xxxx xxxxxx, xxx xxxxxx xxxxxx xxx xxxxxxxxx xxx xxxx xxxx xxxxxxxx, xxxx xxxxx xxxx xxx xxxx xxxxxxxxxx, xxxxx xx xxx xxxxxxx xxxxx xxxxxxx. Xxx xxxxxx xxxxxxx xxx xxxx xxxxxxxx xx xxx xxxx xxx xxxx xxx xxxx xxx.
+Your app can use the device's [Auto-Configured Scanning](https://msdn.microsoft.com/library/windows/hardware/Ff539393) to scan with the most optimal scan settings. With this option, the device itself can determine the best scan settings, like color mode and scan resolution, based on the content being scanned. The device selects the scan settings at run time for each new scan job.
 
-**Xxxx**  Xxx xxx xxxxxxxx xxxxxxx xxxx xxxxxxx, xx xxx xxx xxxx xxxxx xx xxx xxxxxxx xxxxxxxx xxxx xxxxxxx xxxxxx xxxxx xxxx xxxxxxx.
+**Note**  Not all scanners support this feature, so the app must check if the scanner supports this feature before using this setting.
 
-Xx xxxx xxxxxxx, xxx xxx xxxxx xxxxxx xx xxx xxxxxxx xx xxxxxxx xx xxxx-xxxxxxxxxxxxx xxx xxxx xxxxx. Xx xxxxxxx xxxxxx xxxxxxx xx xxxxxx xxxxxxx, xxxxxx xxxxxxx **XxxxXxxxxxxxxx** xxxx **Xxxxxxx** xx **Xxxxxx**.
+In this example, the app first checks if the scanner is capable of auto-configuration and then scans. To specify either flatbed or feeder scanner, simply replace **AutoConfigured** with **Flatbed** or **Feeder**.
 
 ```csharp
     if (myScanner.IsScanSourceSupported(ImageScannerScanSource.AutoConfigured))
@@ -115,9 +115,9 @@ Xx xxxx xxxxxxx, xxx xxx xxxxx xxxxxx xx xxx xxxxxxx xx xxxxxxx xx xxxx-xxxxxxxx
     }
 ```
 
-## Xxxxxxx xxx xxxx
+## Preview the scan
 
-Xxx xxx xxx xxxx xx xxxxxxx xxx xxxx xxxxxx xxxxxxxx xx x xxxxxx. Xx xxx xxxxxxx xxxxx, xxx xxx xxxxxx xx xxx **Xxxxxxx** xxxxxxx xxxxxxxx xxxxxxx, xxxx xxxxxxxx xxx xxxx.
+You can add code to preview the scan before scanning to a folder. In the example below, the app checks if the **Flatbed** scanner supports preview, then previews the scan.
 
 ```csharp
 if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
@@ -128,9 +128,9 @@ if (myScanner.IsPreviewSupported(ImageScannerScanSource.Flatbed))
                     ImageScannerScanSource.Flatbed, stream);
 ```
 
-## Xxxxxx xxx xxxx
+## Cancel the scan
 
-Xxx xxx xxx xxxxx xxxxxx xxx xxxx xxx xxxxxx xxxxxxx x xxxx, xxxx xxxx.
+You can let users cancel the scan job midway through a scan, like this.
 
 ```csharp
 void CancelScanning()
@@ -148,23 +148,27 @@ void CancelScanning()
 }
 ```
 
-## Xxxx xxxx xxxxxxxx
+## Scan with progress
 
-1.  Xxxxxx x **Xxxxxx.Xxxxxxxxx.XxxxxxxxxxxxXxxxxXxxxxx** xxxxxx.
+1.  Create a **System.Threading.CancellationTokenSource** object.
 
 ```csharp
 cancellationToken = new CancellationTokenSource();
 ```
 
-2.  Xxx xx xxx xxxxxxxx xxxxx xxxxxxx xxx xxx xxx xxxxxxxx xx xxx xxxx.
+2.  Set up the progress event handler and get the progress of the scan.
 
 ```csharp
     rootPage.NotifyUser(&quot;Scanning&quot;, NotifyType.StatusMessage);
     var progress = new Progress&lt;UInt32&gt;(ScanProgress);
 ```
 
-## Xxxxxxxx xx xxx xxxxxxxx xxxxxxx
+## Scanning to the pictures library
 
-Xxxxx xxx xxxx xx xxx xxxxxx xxxxxxxxxxx xxxxx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR207881) xxxxx, xxx xxx xxxx xxxxxxx xxx *Xxxxxxxx Xxxxxxx* xxxxxxxxxx xx xxx xxxxxxxx xx xxxxx xxxxx xx xxxx xx xxxx xxxxxx. Xxx xxxx xxxx xx xxx xxxxxxxxxxxx, xxx [Xxx xxxxxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt270968).
+Users can scan to any folder dynamically using the [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/BR207881) class, but you must declare the *Pictures Library* capability in the manifest to allow users to scan to that folder. For more info on app capabilities, see [App capability declarations](https://msdn.microsoft.com/library/windows/apps/Mt270968).
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

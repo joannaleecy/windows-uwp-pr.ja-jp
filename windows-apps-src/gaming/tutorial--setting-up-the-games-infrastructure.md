@@ -1,40 +1,40 @@
 ---
-xxxxx: Xxx xx xxx xxxx xxxxxxx
-xxxxxxxxxxx: Xxx xxxxx xxxx xx xxxxxxxxxx xxxx xxxx xx xx xxx xx x xxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx xx xxxx x xxx xxxx xxx xxxxxxxx xxx xxxxxx xx xxxx xxxxxxxxxxxxxx xxxx xxx xxxx xx xx.
-xx.xxxxxxx: YxxxYYxY-xxYY-xxxY-YYxY-xYYxxYYYYYxY
+title: Set up the game project
+description: The first step in assembling your game is to set up a project in Microsoft Visual Studio in such a way that you minimize the amount of code infrastructure work you need to do.
+ms.assetid: 9fde90b3-bf79-bcb3-03b6-d38ab85803f2
 ---
 
-# Xxx xx xxx xxxx xxxxxxx
+# Set up the game project
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxx xxxxx xxxx xx xxxxxxxxxx xxxx xxxx xx xx xxx xx x xxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx xx xxxx x xxx xxxx xxx xxxxxxxx xxx xxxxxx xx xxxx xxxxxxxxxxxxxx xxxx xxx xxxx xx xx. Xxx xxx xxxx xxxxxxxx x xxx xx xxxx xxx xxxxxx xx xxxxx xxx xxxxx xxxxxxxx xxx xxxxxxxxxxx xxx xxxxxxx xxxxxxxxxxxx xxx xxxx xxxxxxxxxxx. Xx xxxx xxx xxxxxxx xxx xxxxx xxx xxxxxxxxxxxxx xx x xxxxxx xxxx xxxxxxx.
+The first step in assembling your game is to set up a project in Microsoft Visual Studio in such a way that you minimize the amount of code infrastructure work you need to do. You can save yourself a lot of time and hassle by using the right template and configuring the project specifically for game development. We step you through the setup and configuration of a simple game project.
 
-## Xxxxxxxxx
-
-
--   Xx xxxxx xxx xx xxx xx x XxxxxxYX xxxx xxxxxxx xx Xxxxxx Xxxxxx.
-
-## Xxxxxxx xx xxx xxxx xxxxxxx
+## Objective
 
 
-Xxx xxx xxxxx x xxxx xxxx xxxxxxx, xxxx xxxx x xxxxx xxxx xxxxxx, x xxx xxxxxxx, xxx x xxx xxxx xx xxx xxxxxxxxxx. Xxx xxxx xxxxxxxx xxx'x xxx xxxx xxxxxxxxx xxx xx xxxx xxxx. Xx xxx'xx xxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxxxxx, xxx xxx xxx Xxxxxx Xxxxxx xxxxxxxx xxxx xx xxx xxxxxx? Xxxx'x xxxx xx xx xx xxx xxxx xxxxxxx xxx xx x xxxxxxx xxxxx.
+-   To learn how to set up a Direct3D game project in Visual Studio.
 
-## Y. Xxxx xxx xxxxx xxxxxxxx
+## Setting up the game project
 
 
-X Xxxxxx Xxxxxx xxxxxxxx xx x xxxxxxxxxx xx xxxxxxxx xxx xxxx xxxxx xxxx xxxxxx x xxxxxxxx xxxx xx xxx xxxxx xx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx. Xx Xxxxxxxxx Xxxxxx Xxxxxx YYYY, xxx'xx xxxx x xxxxxx xx xxxxxxxxx xxxx xxx xxxxxxxxxxxx xxxx xxxx xxx xxxxxxxx xxx xxxxxxxxxxx. Xx xxx xxx'x xxx x xxxxxxxx, xxx xxxx xxxxxxx xxxx xx xxx xxxxx xxxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxx xxxxxxxx, xxxxx xxx xx x xxx xx x xxxxx xx x xxx xxxx xxxxxxxxx.
+You can write a game from scratch, with just a handy text editor, a few samples, and a hat full of raw brainpower. But that probably isn't the most effective use of your time. If you're new to Universal Windows Platform (UWP) development, why not let Visual Studio shoulder some of the burden? Here's what to do to get your project off to a roaring start.
 
-Xxx xxxxx xxxxxxxx xxx xxxx xxxxxxxx, xx xxx xxx xxxxxx XxxxxxX YY Xxx (Xxxxxxxxx Xxxxxxx). Xx Xxxxxx Xxxxxx YYYY, xxxxx **Xxxx...** &xx; **Xxx Xxxxxxx**, xxx xxxx:
+## 1. Pick the right template
 
-1.  Xxxx **Xxxxxxxxx**, xxxxxx **Xxxxxx X++**, **Xxxxxxx**, **Xxxxxxxxx**.
-2.  Xx xxx xxxxxx xxxx, xxxxxx **XxxxxxX YY Xxx (Xxxxxxxxx Xxxxxxx)**.
-3.  Xxxx xxxx xxxx xxxxxxx x xxxx, xxx xxxxx **XX**.
 
-![xxxxxxxxx xxx xxxxxxYx xxxxxxxxxxx xxxxxxxx](images/simple-dx-game-vs-new-proj.png)
+A Visual Studio template is a collection of settings and code files that target a specific type of app based on the preferred language and technology. In Microsoft Visual Studio 2015, you'll find a number of templates that can dramatically ease game and graphics app development. If you don't use a template, you must develop much of the basic graphics rendering and display framework yourself, which can be a bit of a chore to a new game developer.
 
-Xxxx xxxxxxxx xxxxxxxx xxx xxxx xxx xxxxx xxxxxxxxx xxx x XXX xxx xxxxx XxxxxxX xxxx X++. Xx xx, xxxxx xxx xxx xx xxxx XY! Xxxxx xxx xxxx xxxxxx xxxx xxxxxx. Xxxx x xxxxxx xxx xxxxxx xxx xxxx xxxx xxx xxxxxxxx xxxxxxxx. Xxxx xxxxxxxx xxxxxxx xxxxxxxx xxxx xxxxx xxxxxxxxxx xxx xxxxx xxxxxxxxxxxxx xxx x XXX xxx xxxxx XxxxxxX xxxx X++. Xx xxxx xxxx xxxxx xxx xxxxx xxxx xxxxx xx [xxxx Y](#3-review-the-included-libraries-and-headers). Xxxxx xxx, xxx'x xxxxxxx xxxxxxx **Xxx.x**.
+The right template for this tutorial, is the one titled DirectX 11 App (Universal Windows). In Visual Studio 2015, click **File...** &gt; **New Project**, and then:
+
+1.  From **Templates**, select **Visual C++**, **Windows**, **Universal**.
+2.  In the center pane, select **DirectX 11 App (Universal Windows)**.
+3.  Give your game project a name, and click **OK**.
+
+![selecting the direct3d application template](images/simple-dx-game-vs-new-proj.png)
+
+This template provides you with the basic framework for a UWP app using DirectX with C++. Go on, build and run it with F5! Check out that powder blue screen. Take a moment and review the code that the template provides. Tthe template creates multiple code files containing the basic functionality for a UWP app using DirectX with C++. We talk more about the other code files in [step 3](#3-review-the-included-libraries-and-headers). Right now, let's quickly inspect **App.h**.
 
 ```cpp
     ref class App sealed : public Windows::ApplicationModel::Core::IFrameworkView
@@ -73,9 +73,9 @@ Xxxx xxxxxxxx xxxxxxxx xxx xxxx xxx xxxxx xxxxxxxxx xxx x XXX xxx xxxxx XxxxxxX 
     };
 ```
 
-Xxx xxxxxx xxxxx Y xxxxxxx, [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Xxx**](https://msdn.microsoft.com/library/windows/apps/hh700505), xxx [**Xxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700523), xxxx xxxxxxxxxxxx xxx [**XXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700469) xxxxxxxxx xxxx xxxxxxx x xxxx xxxxxxxx. Xxxxx xxxxxxx xxx xxx xx xxx xxx xxxxxxxxx xxxx xx xxxxxxx xxxx xxxx xxxx xx xxxxxxxx, xxx xxxx xxx xxxx xxx'x xxxxxxxxx xx xxxx xx xxxxxxx xxx xxxxxxxxxxx xxxxx xxxxxxxx.
+You create these 5 methods, [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505), and [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523), when implementing the [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700469) interface that defines a view provider. These methods are run by the app singleton that is created when your game is launched, and load all your app's resources as well as connect the appropriate event handlers.
 
-Xxxx **xxxx** xxxxxx xx xx xxx **Xxx.xxx** xxxxxx xxxx. Xx xxxxx xxxx xxxx:
+Your **main** method is in the **App.cpp** source file. It looks like this:
 
 ```cpp
 [Platform::MTAThread]
@@ -87,7 +87,7 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-Xxxxx xxx, xx xxxxxxx xx xxxxxxxx xx xxx XxxxxxYX xxxx xxxxxxxx xxxx xxx xxxx xxxxxxxx xxxxxxx (**XxxxxxYXXxxxxxxxxxxXxxxxx**, xxxxxxx xx **Xxx.x**), xxx xxxxxx xx xx xxx xxx xxxxxxxxx xx xxx ([**XxxxXxxxxxxxxxx::Xxx**](https://msdn.microsoft.com/library/windows/apps/hh700469)). Xxxx xxxxx xxxx xxx xxxxxxxx xxxxx xxx xxxx xxxx xxxxx xx xxx xxxx xx xxx xxxxxxxxxxxxxx xx xxx [**XXxxxxxxxxXxxx::Xxx**](https://msdn.microsoft.com/library/windows/apps/hh700505) xxxxxx, xx xxxx xxxx, **Xxx::Xxx**. Xxxx'x xxx xxxx:
+Right now, it creates an instance of the Direct3D view provider from the view provider factory (**Direct3DApplicationSource**, defined in **App.h**), and passes it to the app singleton to run ([**CoreApplication::Run**](https://msdn.microsoft.com/library/windows/apps/hh700469)). This means that the starting point for your game lives in the body of the implementation of the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method, in this case, **App::Run**. Here's the code:
 
 ```cpp
 void App::Run()
@@ -113,52 +113,56 @@ void App::Run()
 }
 ```
 
-Xx xxx xxxxxx xxx xxxx xxxx xxx'x xxxxxx, xxxx xxxxxxxxxx xxx xxxxxx, xxxxxxx xxx xxxxx, xxx xxxxxxx xxx xxxxxxxx xxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxx. Xx xxxx xxxxx xxxx xx xxxxxxx xxxxxx xx [Xxxxxxxx xxx xxxx'x XXX xxxxxxxxx](tutorial--building-the-games-metro-style-app-framework.md) xxx [Xxxxxxxxxx xxx xxxxxxxxx xxxxxxxx](tutorial--assembling-the-rendering-pipeline.md). Xx xxxx xxxxx, xxx xxxxxx xxxx x xxxxx xx xxx xxxxx xxxx xxxxxxxxx xx x XXX XxxxxxX xxxx.
+If the window for your game isn't closed, this dispatches all events, updates the timer, and renders and presents the results of your graphics pipeline. We talk about this in greater detail in [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md) and [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md). At this point, you should have a sense of the basic code structure of a UWP DirectX game.
 
-## Y. Xxxxxx xxx xxxxxx xxx xxxxxxx.xxxxxxxxxxxx xxxx
-
-
-Xxx xxxx xxxxx xxxx'x xxx xxxxx xx xx xxx xxxxxxxx. Xxx **xxxxxxx.xxxxxxxxxxxx** xxxx xxxxxxxx xxxxxxxx xxxxx xxxx xxxxxxx xxxx xxx xxxx xxx xxxxxxxxx xxx xxxxxxxxx xxxx xxxx xxx xxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxx. Xx xxxx xxxxxxxx xxxxxxxxx xxxx xxx xxxxxx'x xxxxxx xxxx xx xxxxxxx xxxxxx xx xxx xxxxxx xxxxxxxxx xxx xxxx xxxxx xx xxx.
-
-Xxxxxx xxx **Xxxxxxxx Xxxxxxxx** xx xxxxxx-xxxxxxxx xxx **xxxxxxx.xxxxxxxxxxxx** xxxx xx **Xxxxxxxx Xxxxxxxx**. Xxx xxx xxxx xxxx:
-
-![xxx xxxxxxx.xxxx xxxxxxxx xxxxxx.](images/simple-dx-game-vs-app-manifest.png)
-
-Xxx xxxx xxxx xxxxx xxx **xxxxxxx.xxxxxxxxxxxx** xxxx xxx xxxxxxxxx, xxx [Xxxxxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/br230259.aspx). Xxx xxx, xxxx x xxxx xx xxx **Xxxxxxxxxxxx** xxx xxx xxxx xx xxx xxxxxxx xxxxxxxx.
-
-![xxx xxxxxxx xxxxxxxxxxxx xx x xxxxxxYx xxx.](images/simple-dx-game-vs-capabilities.png)
-
-Xx xxx xxx'x xxxxxx xxx xxxxxxxxxxxx xxxx xxxx xxxx xxxx, xxxx xx xxxxxx xx xxx **Xxxxxxxx** xxx xxxxxx xxxx xxxxx xxxxx, xxx xxx'x xx xxxx xx xxxxxx xxx xxxxxxxxxxxxx xxxxxxxxx xx xxxxxxxx. Xxxx xxx xxxxxx x xxx xxxx, xxxx xxxx xxxx xxx xxxxxx xxx xxxxxxxxxxxx xxxx xxxx xxxx xxxxx xx xxx!
-
-Xxx, xxx'x xxxx xx xxx xxxx xx xxx xxxxx xxxx xxxx xxxx xxx **XxxxxxX YY Xxx (Xxxxxxxxx Xxxxxxx)** xxxxxxxx.
-
-## Y. Xxxxxx xxx xxxxxxxx xxxxxxxxx xxx xxxxxxx
+## 2. Review and update the package.appxmanifest file
 
 
-Xxxxx xxx x xxx xxxxx xx xxxxx'x xxxxxx xx xxx. Xxxxx xxxxx xxxxxxx xxxxxxxxxx xxxxx xxx xxxxxxx xxxxxx xx XxxxxxYX xxxx xxxxxxxxxxx xxxxxxxxx.
+The code files aren't all there is to the template. The **package.appxmanifest** file contains metadata about your project that are used for packaging and launching your game and for submission to the Windows Store. It also contains important info the player's system uses to provide access to the system resources the game needs to run.
 
-| Xxxxxxxx Xxxxxx Xxxx         | Xxxxxxxxxxx                                                                                                                                                                                                            |
+Launch the **Manifest Designer** by double-clicking the **package.appxmanifest** file in **Solution Explorer**. You see this view:
+
+![the package.appx manifest editor.](images/simple-dx-game-vs-app-manifest.png)
+
+For more info about the **package.appxmanifest** file and packaging, see [Manifest Designer](https://msdn.microsoft.com/library/windows/apps/br230259.aspx). For now, take a look at the **Capabilities** tab and look at the options provided.
+
+![the default capabilities of a direct3d app.](images/simple-dx-game-vs-capabilities.png)
+
+If you don't select the capabilities that your game uses, such as access to the **Internet** for global high score board, you won't be able to access the corresponding resources or features. When you create a new game, make sure that you select the capabilities that your game needs to run!
+
+Now, let's look at the rest of the files that come with the **DirectX 11 App (Universal Windows)** template.
+
+## 3. Review the included libraries and headers
+
+
+There are a few files we haven't looked at yet. These files provide additional tools and support common to Direct3D game development scenarios.
+
+| Template Source File         | Description                                                                                                                                                                                                            |
 |------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XxxxXxxxx.x                  | Xxxxxxx x xxxx-xxxxxxxxxx xxxxx xxxxxx xxx xxxxxx xx xxxxxxxxxxx xxxxxxxxx xxxx.                                                                                                                                       |
-| XxxxxxYXXxxxxXxxxxxxx.x/.xxx | Xxxxxxx x xxxxx xxxxxxxx xxxxxxxxxxxxxx xxxx xxxxxxxx x XxxxxxYX xxxx xxxxx xxx xxxxxxxx xxxxxxx xx xxxx XXX xxxxx XxxxxxX.                                                                                            |
-| XxxxxxXXxxxxx.x              | Xxxxxxxxxx x xxxxxx xxxxxx, **XX::XxxxxXxXxxxxx**, xxxx xxxxxxxx xxx xxxxx XXXXXXX xxxxxx xxxxxxxx xx XxxxxxX XXXx xxxx Xxxxxxx Xxxxxxx xxxxxxxxxx. Xxx xxxx xxxxxx xx xxx x xxxxx xxxxx xxx xxxxxxxxx XxxxxxX xxxxxx. |
-| xxx.x/.xxx                   | Xxxxxxxx xxx xxx Xxxxxxx xxxxxx xxxxxxxx xxx xxx XXXx xxxx xx x XxxxxxYX xxx, xxxxxxxxx xxx XxxxxxX YY XXXx.                                                                                                           |
-| XxxxxxXxxxxXxxxxx.xxxx       | Xxxxxxxx xxx xxxx-xxxxx xxxxxx xxxxxxxx (XXXX) xxxx xxx x xxxx xxxxx xxxxx xxxxxx.                                                                                                                                     |
-| XxxxxxXxxxxxXxxxxx.xxxx      | Xxxxxxxx xxx xxxx-xxxxx xxxxxx xxxxxxxx (XXXX) xxxx xxx x xxxx xxxxx xxxxxx xxxxxx.                                                                                                                                    |
+| StepTimer.h                  | Defines a high-resolution timer useful for gaming or interactive rendering apps.                                                                                                                                       |
+| Sample3DSceneRenderer.h/.cpp | Defines a basic renderer implementation that connects a Direct3D swap chain and graphics adapter to your UWP using DirectX.                                                                                            |
+| DirectXHelper.h              | Implements a single method, **DX::ThrowIfFailed**, that converts the error HRESULT values returned by DirectX APIs into Windows Runtime exceptions. Use this method to put a break point for debugging DirectX errors. |
+| pch.h/.cpp                   | Contains all the Windows system includes for the APIs used by a Direct3D app, including the DirectX 11 APIs.                                                                                                           |
+| SamplePixelShader.hlsl       | Contains the high-level shader language (HLSL) code for a very basic pixel shader.                                                                                                                                     |
+| SampleVertexShader.hlsl      | Contains the high-level shader language (HLSL) code for a very basic vertex shader.                                                                                                                                    |
 
  
 
-### Xxxx xxxxx
+### Next steps
 
-Xx xxxx xxxxx, xxx xxx xxxxxx x XXX xxxx XxxxxxX xxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxxxx xxx xxxxx xxxxxxxx xx xxx XxxxxxX YY Xxx (Xxxxxxxxx Xxxxxxx) xxxxxxxx.
+At this point, you can create a UWP with DirectX game project and identify the components and files provided by the DirectX 11 App (Universal Windows) template.
 
-Xx xxx xxxx xxxxxxxx, [Xxxxxxxx xxx xxxx'x XXX xxxxxxxxx](tutorial--building-the-games-metro-style-app-framework.md), xx xxxx xxxx x xxxxxxxxx xxxx xxx xxxxxxx xxx xx xxxx xxx xxxxxxx xxxx xx xxx xxxxxxxx xxx xxxxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx.
+In the next tutorial, [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md), we work with a completed game and examine how it uses and extends many of the concepts and components that the template provides.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,41 +1,36 @@
 ---
-Xxxxxxxxxxx: Xxxxxxxx xxx xxxxx xxxxxxx xxxxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxx xxx xxxxxxxx xxxxx xxxxxxxxxxxx xxx xxxxxxxxxx.
-xxxxx: Xxxxxxxx xxxxx xxxxxxx
-xx.xxxxxxx: XYXYYXXX-XYYY-YYXY-XXYY-XXXXXXYYYYXY
-xxxxx: Xxxxxxxx xxxxx xxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: ユニバーサル Windows プラットフォーム (UWP) デバイスに接続されている入力デバイスを識別し、その機能と属性を識別します。
+title: 入力デバイスの識別
+ms.assetid: B2E93FBF-C508-44D9-BA46-ECFDAA8746F4
+label: 入力デバイスの識別
+template: detail.hbs
 ---
 
-# Xxxxxxxx xxxxx xxxxxxx
+# 入力デバイスの識別
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**Xxxxxxx.Xxxxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Xxxxxxx.XX.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Xxxxxxx.XX.Xxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242084)
+-   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
+-   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br208383)
+-   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
-Xxxxxxxx xxx xxxxx xxxxxxx xxxxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxx xxx xxxxxxxx xxxxx xxxxxxxxxxxx xxx xxxxxxxxxx.
-
-
-## <span id="Retrieve_mouse_properties">
-            </span>
-            <span id="retrieve_mouse_properties">
-            </span>
-            <span id="RETRIEVE_MOUSE_PROPERTIES">
-            </span>Xxxxxxxx xxxxx xxxxxxxxxx
+ユニバーサル Windows プラットフォーム (UWP) デバイスに接続されている入力デバイスを識別し、その機能と属性を識別します。
 
 
-Xxx [**Xxxxxxx.Xxxxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225648) xxxxxxxxx xxxxxxxx xxx [**XxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225626) xxxxx xxxx xx xxxxxxxx xxx xxxxxxxxxx xxxxxxx xx xxx xx xxxx xxxxxxxxx xxxx. Xxxx xxxxxx x xxx **XxxxxXxxxxxxxxxxx** xxxxxx xxx xxx xxx xxxxxxxxxx xxx'xx xxxxxxxxxx xx.
+## <span id="Retrieve_mouse_properties"></span><span id="retrieve_mouse_properties"></span><span id="RETRIEVE_MOUSE_PROPERTIES"></span>マウスのプロパティを取得する
 
-**Xxxx**  Xxx xxxxxx xxxxxxxx xx xxx xxxxxxxxxx xxxxxxxxx xxxx xxx xxxxx xx xxx xxxxxxxx xxxx: Xxxxxxx xxxxxxxxxx xxxxxx xxx-xxxx xx xx xxxxx xxx xxxxx xxxxxxxx x xxxxxxxx xxxxxxxxxx, xxx xxxxxxx xxxxxxxxxx xxxxxx xxx xxxxxxx xxxxx xxxxxxx xx xxx xxx xxxxx.
+
+接続されているマウスによって公開されているプロパティを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626) クラスを使います。 新しい **MouseCapabilities** オブジェクトを作成し、目的のプロパティを取得するだけです。
+
+**注**  ここで説明するプロパティによって返される値は、検出されたすべてのマウスに基づきます。ブール型プロパティは、少なくとも 1 つのマウスが特定の機能をサポートする場合は 0 以外の値を返し、数値プロパティは、いずれか 1 つのマウスで公開されている最大値を返します。
 
  
 
-Xxx xxxxxxxxx xxxx xxxx x xxxxxx xx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652) xxxxxxxx xx xxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxx xxx xxxxxx.
+次のコードでは、一連の [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を使って、個別のマウスのプロパティと値を表示しています。
 
 ```CSharp
 private void GetMouseProperties()
@@ -49,17 +44,12 @@ private void GetMouseProperties()
 }
 ```
 
-## <span id="Retrieve_keyboard_properties">
-            </span>
-            <span id="retrieve_keyboard_properties">
-            </span>
-            <span id="RETRIEVE_KEYBOARD_PROPERTIES">
-            </span>Xxxxxxxx xxxxxxxx xxxxxxxxxx
+## <span id="Retrieve_keyboard_properties"></span><span id="retrieve_keyboard_properties"></span><span id="RETRIEVE_KEYBOARD_PROPERTIES"></span>キーボードのプロパティを取得する
 
 
-Xxx [**Xxxxxxx.Xxxxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225648) xxxxxxxxx xxxxxxxx xxx [**XxxxxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225623) xxxxx xxxx xx xxxxxxxx xxxxxxx x xxxxxxxx xx xxxxxxxxx. Xxxx xxxxxx x xxx **XxxxxxxxXxxxxxxxxxxx** xxxxxx xxx xxx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225625) xxxxxxxx.
+キーボードが接続されているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**KeyboardCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225623) クラスを使います。 新しい **KeyboardCapabilities** オブジェクトを作成し、[**KeyboardPresent**](https://msdn.microsoft.com/library/windows/apps/br225625) プロパティを取得するだけです。
 
-Xxx xxxxxxxxx xxxx xxxx x [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652) xxxxxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxx xxx xxxxx.
+次のコードでは、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を使って、キーボードのプロパティと値を表示しています。
 
 ```CSharp
 private void GetKeyboardProperties()
@@ -69,21 +59,16 @@ private void GetKeyboardProperties()
 }
 ```
 
-## <span id="Retrieve_touch_properties">
-            </span>
-            <span id="retrieve_touch_properties">
-            </span>
-            <span id="RETRIEVE_TOUCH_PROPERTIES">
-            </span>Xxxxxxxx xxxxx xxxxxxxxxx
+## <span id="Retrieve_touch_properties"></span><span id="retrieve_touch_properties"></span><span id="RETRIEVE_TOUCH_PROPERTIES"></span>タッチのプロパティを取得する
 
 
-Xxx [**Xxxxxxx.Xxxxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225648) xxxxxxxxx xxxxxxxx xxx [**XxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225644) xxxxx xxxx xx xxxxxxxx xxxxxxx xxx xxxxx xxxxxxxxxx xxx xxxxxxxxx. Xxxx xxxxxx x xxx **XxxxxXxxxxxxxxxxx** xxxxxx xxx xxx xxx xxxxxxxxxx xxx'xx xxxxxxxxxx xx.
+タッチ デジタイザーが接続されているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**TouchCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225644) クラスを使います。 新しい **TouchCapabilities** オブジェクトを作成し、目的のプロパティを取得するだけです。
 
-**Xxxx**  Xxx xxxxxx xxxxxxxx xx xxx xxxxxxxxxx xxxxxxxxx xxxx xxx xxxxx xx xxx xxxxxxxx xxxxx xxxxxxxxxx: Xxxxxxx xxxxxxxxxx xxxxxx xxx-xxxx xx xx xxxxx xxx xxxxxxxxx xxxxxxxx x xxxxxxxx xxxxxxxxxx, xxx xxxxxxx xxxxxxxxxx xxxxxx xxx xxxxxxx xxxxx xxxxxxx xx xxx xxx xxxxxxxxx.
+**注**  ここで説明するプロパティによって返される値は、検出されたすべてのタッチ デジタイザーに基づきます。ブール型プロパティは、少なくとも 1 つのデジタイザーが特定の機能をサポートする場合は 0 以外の値を返し、数値プロパティは、いずれか 1 つのデジタイザーで公開されている最大値を返します。
 
  
 
-Xxx xxxxxxxxx xxxx xxxx x xxxxxx xx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652) xxxxxxxx xx xxxxxxx xxx xxxxx xxxxxxxxxx xxx xxxxxx.
+次のコードでは、一連の [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) 要素を使って、タッチのプロパティと値を表示しています。
 
 ```CSharp
 private void GetTouchProperties()
@@ -94,21 +79,16 @@ private void GetTouchProperties()
 }
 ```
 
-## <span id="Retrieve_pointer_properties">
-            </span>
-            <span id="retrieve_pointer_properties">
-            </span>
-            <span id="RETRIEVE_POINTER_PROPERTIES">
-            </span>Xxxxxxxx xxxxxxx xxxxxxxxxx
+## <span id="Retrieve_pointer_properties"></span><span id="retrieve_pointer_properties"></span><span id="RETRIEVE_POINTER_PROPERTIES"></span>ポインターのプロパティを取得する
 
 
-Xxx [**Xxxxxxx.Xxxxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225648) xxxxxxxxx xxxxxxxx xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225633) xxxxx xxxx xx xxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxx xxxxxxx xxxxxxx xxxxx (xxxxx, xxxxxxxx, xxxxx, xx xxx). Xxxx xxxxxx x xxx **XxxxxxxXxxxxx** xxxxxx xxx xxx xxx xxxxxxxxxx xxx'xx xxxxxxxxxx xx.
+検出されたデバイスがポインター入力 (タッチ、タッチパッド、マウス、ペン) をサポートしているかどうかを取得するには、[**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648) 名前空間の [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) クラスを使います。 新しい **PointerDevice** オブジェクトを作成し、目的のプロパティを取得するだけです。
 
-**Xxxx**  Xxx xxxxxx xxxxxxxx xx xxx xxxxxxxxxx xxxxxxxxx xxxx xxx xxxxx xx xxx xxxxxxxx xxxxxxx xxxxxxx: Xxxxxxx xxxxxxxxxx xxxxxx xxx-xxxx xx xx xxxxx xxx xxxxxx xxxxxxxx x xxxxxxxx xxxxxxxxxx, xxx xxxxxxx xxxxxxxxxx xxxxxx xxx xxxxxxx xxxxx xxxxxxx xx xxx xxx xxxxxxx xxxxxx.
+**注**  ここで説明するプロパティによって返される値は、検出されたすべてのポインター デバイスに基づきます。ブール型プロパティは、少なくとも 1 つのデバイスが特定の機能をサポートする場合は 0 以外の値を返し、数値プロパティは、いずれか 1 つのポインター デバイスで公開されている最大値を返します。
 
  
 
-Xxx xxxxxxxxx xxxx xxxx x xxxxx xx xxxxxxx xxx xxxxxxxxxx xxx xxxxxx xxx xxxx xxxxxxx xxxxxx.
+次のコードでは、テーブルを使って、各ポインター デバイスのプロパティと値を表示しています。
 
 ```CSharp
 private void GetPointerDevices()
@@ -195,21 +175,24 @@ private void GetPointerDevices()
     }
 ```
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>関連記事
 
 
-**Xxxxxxx**
-* [Xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Xxx xxxxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Xxxx xxxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-**Xxxxxxx xxxxxxx**
-* [Xxxxx: Xxxxxx xxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231530)
+**サンプル**
+* [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+**サンプルのアーカイブ**
+* [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

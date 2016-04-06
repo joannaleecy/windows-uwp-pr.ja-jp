@@ -1,134 +1,138 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxxxxx xxxx xx xxx Xxxxxxx Xxxxx xx xxxx YYY xxxxxxxxx.
-xxxxx: Xxxxxxxxx xxxxxxxxx
-xx.xxxxxxx: XXXYYYYY-YYYY-YYXX-YXYY-YXYYYXYYYYYY
+Description: You can submit apps to the Windows Store in over 100 languages.
+title: Supported languages
+ms.assetid: FCA66311-4145-46AC-8B20-1E736F940976
 ---
 
-# Xxxxxxxxx xxxxxxxxx
+# Supported languages
 
 
-Xxx xxx xxxxxx xxxx xx xxx Xxxxxxx Xxxxx xx xxxx YYY xxxxxxxxx.
+You can submit apps to the Windows Store in over 100 languages.
 
-Xx xxxxx xxxx xxxxx xxxxxxxxxxx xxxxxxxxx xx xxxx xxxx, xxx [Xxxxxxxxxxxxx xxx xxxxxxxxxxxx](../globalizing/globalizing-portal.md) xxx [Xxxxxx xxxxxxxx xxx xxxxxx](../globalizing/manage-language-and-region.md). Xx xxxx xxxx x [Xxxxxxxxxxxx Xxx Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370) xx xxxx xxx xxxxx xxxx xxxx xxxxxxx xxxxxxxx xxxxxxxxx.
+To learn more about configuring languages in your apps, see [Globalization and localization](../globalizing/globalizing-portal.md) and [Manage language and region](../globalizing/manage-language-and-region.md). We also have a [Multilingual App Toolkit](https://msdn.microsoft.com/library/windows/apps/xaml/jj572370) to help you write apps that support multiple languages.
 
-## Xxxxxxxxx xxxxxxxxx
+## Supported languages
 
 
-Xxxxx xxx xxx xxxxxxxxx xxxx xxx Xxxxxxx Xxxxx xxxxxxxx. Xxxx xxx xxxx xxxxxxx xx xxxxx xxx xx xxxxx xxxxxxxxx, xxx xx xxxx xxx xxxxxxx xxx xxxxxxxx xxxxx xxxx xxx xxx xxxxxxxx xxxx.
+These are the languages that the Windows Store supports. Your app must support at least one of these languages, and it must not specify any language codes that are not included here.
 
-| Xxxxxxxx xxxx         | Xxxxxxxxx xxxxxxxx xxxxx                                                                                                                                                                              |
+| Language name         | Supported language codes                                                                                                                                                                              |
 |-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxx                | xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx                                                                                    |
-| Xxxxxxxxx             | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxx              | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxx               | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxx              | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxx              | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxxxxx           | xx, xx-xxxx, xx-xxxx-xx, xx-xxxx, xx-xxxx-xx, xx-xxxx, xx-xxxx-xx                                                                                                                                     |
-| Xxxxxx (Xxxxxx)       | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxxxx            | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxx                | xx, xx-xx, xx-xx                                                                                                                                                                                      |
-| Xxxxxxx               | xx, xx-xxxx, xx-xxxx-xx, xx-xxxx, xx-xxxx-xx                                                                                                                                                          |
-| Xxxxxxxxx             | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxx               | xx, xx-xx, xx-xx-xxxxxxxx                                                                                                                                                                             |
-| Xxxxxxxx              | xxx-xxxx, xxx-xxxx-xx, xxx-xxxx                                                                                                                                                                       |
-| Xxxxxxx (Xxxxxxxxxx)  | xx, xx-Xxxx, xx-xx, xx-xxxx-xx, xx-xx, xx-xxxx-xx                                                                                                                                                     |
-| Xxxxxxx (Xxxxxxxxxxx) | xx-Xxxx, xx-xx, xx-xx, xx-xx, xx-xxxx-xx, xx-xxxx-xx, xx-xxxx-xx                                                                                                                                      |
-| Xxxxxxxx              | xx, xx-xx, xx-xx                                                                                                                                                                                      |
-| Xxxxx                 | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxx                | xx, xx-xx                                                                                                                                                                                             |
-| Xxxx                  | xxx, xxx-xx, xxx-xxxx                                                                                                                                                                                 |
-| Xxxxx                 | xx, xx-xx, xx-xx                                                                                                                                                                                      |
-| Xxxxxxx               | xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-YYY, xx-YYY, xx-YYY, xx-YYY, xx-YYY, xx-YYY |
-| Xxxxxxxx              | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxx              | xxx, xxx-xxxx, xxx-xx                                                                                                                                                                                 |
-| Xxxxxxx               | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxx                | xx, xx-xx , xx-xx , xx-xx , xx-xx , xx-xx, xx-YYY, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xxx-xxxx, xxx-xxxx, xx-YYY, xx-YYY, xx-YYY, xx-YYY                                         |
-| Xxxxxxxx              | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxx              | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxx                | xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx                                                                                                                                                                 |
-| Xxxxx                 | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxx              | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxx                 | xx, xx-xxxx, xx-xxxx-xx                                                                                                                                                                               |
-| Xxxxxx                | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxx                 | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxxx             | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxxx             | xx, xx-xx                                                                                                                                                                                             |
-| Xxxx                  | xx-xxxx, xx-xx                                                                                                                                                                                        |
-| Xxxxxxxxxx            | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxxx (Xxxxx)     | xx-xxxx, xx-xxxx, xx-xxxx-xx                                                                                                                                                                          |
-| Xxxxx                 | xx, xx-xx                                                                                                                                                                                             |
-| xxxXxxxx              | xx, xx-xx                                                                                                                                                                                             |
-| xxxXxxx               | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxx               | xx, xx-xx, xx-xx                                                                                                                                                                                      |
-| Xxxxxxxx              | xx , xx-xx                                                                                                                                                                                            |
-| Xxxxxxx               | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxx                | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxx                 | xx, xx-xx                                                                                                                                                                                             |
-| X'xxxx'               | xxx-xxxx, xxx-xx, xxx-xxxx                                                                                                                                                                            |
-| Xxxxxxxxxxx           | xx, xx-xx                                                                                                                                                                                             |
-| XxXxxxxxx             | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxx               | xxx, xxx-xx                                                                                                                                                                                           |
-| Xxxxxx                | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxx               | xx-xxxx, xx-xxxx-xx                                                                                                                                                                                   |
-| Xxxxxx                | xx-xx, xx-xxxx                                                                                                                                                                                        |
-| Xxx                   | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxx               | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxxxx            | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxxxxxxx         | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxxxx            | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxx                 | xx, xx-xx, xx-xx                                                                                                                                                                                      |
-| Xxxxxxxxx             | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxx               | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxx                 | xx, xx-xxxx, xx-xx                                                                                                                                                                                    |
-| Xxxxxxx               | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxxx (Xxxxxxxx)  | xx-xxxx, xx-xxxx, xx-xx, xx-xxxx                                                                                                                                                                      |
-| Xxxxxx                | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxxx             | xx, xx-xx, xx, xx-xx, xx, xx-xx,                                                                                                                                                                      |
-| Xxxx                  | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxx               | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxx                | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxxxx (Xxxxxx)   | xx-xx                                                                                                                                                                                                 |
-| Xxxxxxxxxx (Xxxxxxxx) | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxx               | xx, xx-xxxx, xx-xxxx-xx, xx-xxxx, xx-xx                                                                                                                                                               |
-| Xxxxxxx               | xxx, xxx-xx, xxx-xx, xxx-xx                                                                                                                                                                           |
-| Xxxxxxxx              | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxx               | xx , xx-xx                                                                                                                                                                                            |
-| Xxxxxxxx Xxxxxx       | xx-xx, xx-xxxx                                                                                                                                                                                        |
-| Xxxxxxx (Xxxxx)       | xx-Xxxx, xx-xxxx-xx, xx, xx-xxxx-xx, xx-xxxx-xx, xx-xxxx-xx                                                                                                                                           |
-| Xxxxxxx (Xxxxxxxx)    | xx-xxxx, xx-xxxx-xx, xx-xxxx-xx, xx-xxxx-xx, xx-xxxx-xx                                                                                                                                               |
-| Xxxxxxx xx Xxxxx      | xxx, xxx-xx                                                                                                                                                                                           |
-| Xxxxxxxx              | xx, xx-xx, xx-xx                                                                                                                                                                                      |
-| Xxxxxx                | xx-xxxx, xx-xxxx-xx, xx-xxxx                                                                                                                                                                          |
-| Xxxxxxx               | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxx                | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxxx             | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxx               | xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-xx, xx-YYY, xx-YYY                                        |
-| Xxxxxxx               | xx, xx-xx, xx-xx                                                                                                                                                                                      |
-| Xxxxx (Xxxxxxxx)      | xx-xxxx, xx-xxxx, xx-xxxx-xx, xx-xxxx                                                                                                                                                                 |
-| Xxxxx                 | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxx                 | xx-xxxx, xx-xxxx, xx-xxxx, xx-xx                                                                                                                                                                      |
-| Xxxxxx                | xx, xx-xx                                                                                                                                                                                             |
-| Xxxx                  | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxxx              | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxx               | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxxx               | xx-xxxx, xx-xxxx, xx-xx, xx-xxxx-xx, xx-xxxx-xx                                                                                                                                                       |
-| Xxxxxxxxx             | xx, xx-xx                                                                                                                                                                                             |
-| Xxxx                  | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxx                | xx-xxxx, xx-xx, xx-xxxx, xx-xxxx                                                                                                                                                                      |
-| Xxxxx (Xxxxx)         | xx, xx-xxxx, xx-xxxx, xx-xxxx-xx                                                                                                                                                                      |
-| Xxxxxxxxxx            | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxx                 | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxx                 | xx, xx-xx                                                                                                                                                                                             |
-| Xxxxxx                | xx-xxxx, xx-xx                                                                                                                                                                                        |
+| Arabic                | ar, ar-sa, ar-ae, ar-bh, ar-dz, ar-eg, ar-iq, ar-jo, ar-kw, ar-lb, ar-ly, ar-ma, ar-om, ar-qa, ar-sy, ar-tn, ar-ye                                                                                    |
+| Afrikaans             | af, af-za                                                                                                                                                                                             |
+| Albanian              | sq, sq-al                                                                                                                                                                                             |
+| Amharic               | am, am-et                                                                                                                                                                                             |
+| Armenian              | hy, hy-am                                                                                                                                                                                             |
+| Assamese              | as, as-in                                                                                                                                                                                             |
+| Azerbaijani           | az, az-arab, az-arab-az, az-cyrl, az-cyrl-az, az-latn, az-latn-az                                                                                                                                     |
+| Basque (Basque)       | eu, eu-es                                                                                                                                                                                             |
+| Belarusian            | be, be-by                                                                                                                                                                                             |
+| Bangla                | bn, bn-bd, bn-in                                                                                                                                                                                      |
+| Bosnian               | bs, bs-cyrl, bs-cyrl-ba, bs-latn, bs-latn-ba                                                                                                                                                          |
+| Bulgarian             | bg, bg-bg                                                                                                                                                                                             |
+| Catalan               | ca, ca-es, ca-es-valencia                                                                                                                                                                             |
+| Cherokee              | chr-cher, chr-cher-us, chr-latn                                                                                                                                                                       |
+| Chinese (Simplified)  | zh, zh-Hans, zh-cn, zh-hans-cn, zh-sg, zh-hans-sg                                                                                                                                                     |
+| Chinese (Traditional) | zh-Hant, zh-hk, zh-mo, zh-tw, zh-hant-hk, zh-hant-mo, zh-hant-tw                                                                                                                                      |
+| Croatian              | hr, hr-hr, hr-ba                                                                                                                                                                                      |
+| Czech                 | cs, cs-cz                                                                                                                                                                                             |
+| Danish                | da, da-dk                                                                                                                                                                                             |
+| Dari                  | prs, prs-af, prs-arab                                                                                                                                                                                 |
+| Dutch                 | nl, nl-nl, nl-be                                                                                                                                                                                      |
+| English               | en, en-au, en-ca, en-gb, en-ie, en-in, en-nz, en-sg, en-us, en-za, en-bz, en-hk, en-id, en-jm, en-kz, en-mt, en-my, en-ph, en-pk, en-tt, en-vn, en-zw, en-053, en-021, en-029, en-011, en-018, en-014 |
+| Estonian              | et, et-ee                                                                                                                                                                                             |
+| Filipino              | fil, fil-latn, fil-ph                                                                                                                                                                                 |
+| Finnish               | fi, fi-fi                                                                                                                                                                                             |
+| French                | fr, fr-be , fr-ca , fr-ch , fr-fr , fr-lu, fr-015, fr-cd, fr-ci, fr-cm, fr-ht, fr-ma, fr-mc, fr-ml, fr-re, frc-latn, frp-latn, fr-155, fr-029, fr-021, fr-011                                         |
+| Galician              | gl, gl-es                                                                                                                                                                                             |
+| Georgian              | ka, ka-ge                                                                                                                                                                                             |
+| German                | de, de-at, de-ch, de-de, de-lu, de-li                                                                                                                                                                 |
+| Greek                 | el, el-gr                                                                                                                                                                                             |
+| Gujarati              | gu, gu-in                                                                                                                                                                                             |
+| Hausa                 | ha, ha-latn, ha-latn-ng                                                                                                                                                                               |
+| Hebrew                | he, he-il                                                                                                                                                                                             |
+| Hindi                 | hi, hi-in                                                                                                                                                                                             |
+| Hungarian             | hu, hu-hu                                                                                                                                                                                             |
+| Icelandic             | is, is-is                                                                                                                                                                                             |
+| Igbo                  | ig-latn, ig-ng                                                                                                                                                                                        |
+| Indonesian            | id, id-id                                                                                                                                                                                             |
+| Inuktitut (Latin)     | iu-cans, iu-latn, iu-latn-ca                                                                                                                                                                          |
+| Irish                 | ga, ga-ie                                                                                                                                                                                             |
+| isiXhosa              | xh, xh-za                                                                                                                                                                                             |
+| isiZulu               | zu, zu-za                                                                                                                                                                                             |
+| Italian               | it, it-it, it-ch                                                                                                                                                                                      |
+| Japanese              | ja , ja-jp                                                                                                                                                                                            |
+| Kannada               | kn, kn-in                                                                                                                                                                                             |
+| Kazakh                | kk, kk-kz                                                                                                                                                                                             |
+| Khmer                 | km, km-kh                                                                                                                                                                                             |
+| K'iche'               | quc-latn, qut-gt, qut-latn                                                                                                                                                                            |
+| Kinyarwanda           | rw, rw-rw                                                                                                                                                                                             |
+| KiSwahili             | sw, sw-ke                                                                                                                                                                                             |
+| Konkani               | kok, kok-in                                                                                                                                                                                           |
+| Korean                | ko, ko-kr                                                                                                                                                                                             |
+| Kurdish               | ku-arab, ku-arab-iq                                                                                                                                                                                   |
+| Kyrgyz                | ky-kg, ky-cyrl                                                                                                                                                                                        |
+| Lao                   | lo, lo-la                                                                                                                                                                                             |
+| Latvian               | lv, lv-lv                                                                                                                                                                                             |
+| Lithuanian            | lt, lt-lt                                                                                                                                                                                             |
+| Luxembourgish         | lb, lb-lu                                                                                                                                                                                             |
+| Macedonian            | mk, mk-mk                                                                                                                                                                                             |
+| Malay                 | ms, ms-bn, ms-my                                                                                                                                                                                      |
+| Malayalam             | ml, ml-in                                                                                                                                                                                             |
+| Maltese               | mt, mt-mt                                                                                                                                                                                             |
+| Maori                 | mi, mi-latn, mi-nz                                                                                                                                                                                    |
+| Marathi               | mr, mr-in                                                                                                                                                                                             |
+| Mongolian (Cyrillic)  | mn-cyrl, mn-mong, mn-mn, mn-phag                                                                                                                                                                      |
+| Nepali                | ne, ne-np                                                                                                                                                                                             |
+| Norwegian             | nb, nb-no, nn, nn-no, no, no-no,                                                                                                                                                                      |
+| Odia                  | or, or-in                                                                                                                                                                                             |
+| Persian               | fa, fa-ir                                                                                                                                                                                             |
+| Polish                | pl, pl-pl                                                                                                                                                                                             |
+| Portuguese (Brazil)   | pt-br                                                                                                                                                                                                 |
+| Portuguese (Portugal) | pt, pt-pt                                                                                                                                                                                             |
+| Punjabi               | pa, pa-arab, pa-arab-pk, pa-deva, pa-in                                                                                                                                                               |
+| Quechua               | quz, quz-bo, quz-ec, quz-pe                                                                                                                                                                           |
+| Romanian              | ro, ro-ro                                                                                                                                                                                             |
+| Russian               | ru , ru-ru                                                                                                                                                                                            |
+| Scottish Gaelic       | gd-gb, gd-latn                                                                                                                                                                                        |
+| Serbian (Latin)       | sr-Latn, sr-latn-cs, sr, sr-latn-ba, sr-latn-me, sr-latn-rs                                                                                                                                           |
+| Serbian (Cyrillic)    | sr-cyrl, sr-cyrl-ba, sr-cyrl-cs, sr-cyrl-me, sr-cyrl-rs                                                                                                                                               |
+| Sesotho sa Leboa      | nso, nso-za                                                                                                                                                                                           |
+| Setswana              | tn, tn-bw, tn-za                                                                                                                                                                                      |
+| Sindhi                | sd-arab, sd-arab-pk, sd-deva                                                                                                                                                                          |
+| Sinhala               | si, si-lk                                                                                                                                                                                             |
+| Slovak                | sk, sk-sk                                                                                                                                                                                             |
+| Slovenian             | sl, sl-si                                                                                                                                                                                             |
+| Spanish               | es, es-cl, es-co, es-es, es-mx, es-ar, es-bo, es-cr, es-do, es-ec, es-gt, es-hn, es-ni, es-pa, es-pe, es-pr, es-py, es-sv, es-us, es-uy, es-ve, es-019, es-419                                        |
+| Swedish               | sv, sv-se, sv-fi                                                                                                                                                                                      |
+| Tajik (Cyrillic)      | tg-arab, tg-cyrl, tg-cyrl-tj, tg-latn                                                                                                                                                                 |
+| Tamil                 | ta, ta-in                                                                                                                                                                                             |
+| Tatar                 | tt-arab, tt-cyrl, tt-latn, tt-ru                                                                                                                                                                      |
+| Telugu                | te, te-in                                                                                                                                                                                             |
+| Thai                  | th, th-th                                                                                                                                                                                             |
+| Tigrinya              | ti, ti-et                                                                                                                                                                                             |
+| Turkish               | tr, tr-tr                                                                                                                                                                                             |
+| Turkmen               | tk-cyrl, tk-latn, tk-tm, tk-latn-tr, tk-cyrl-tr                                                                                                                                                       |
+| Ukrainian             | uk, uk-ua                                                                                                                                                                                             |
+| Urdu                  | ur, ur-pk                                                                                                                                                                                             |
+| Uyghur                | ug-arab, ug-cn, ug-cyrl, ug-latn                                                                                                                                                                      |
+| Uzbek (Latin)         | uz, uz-cyrl, uz-latn, uz-latn-uz                                                                                                                                                                      |
+| Vietnamese            | vi, vi-vn                                                                                                                                                                                             |
+| Welsh                 | cy, cy-gb                                                                                                                                                                                             |
+| Wolof                 | wo, wo-sn                                                                                                                                                                                             |
+| Yoruba                | yo-latn, yo-ng                                                                                                                                                                                        |
 
  
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

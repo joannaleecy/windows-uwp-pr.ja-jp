@@ -1,42 +1,43 @@
 ---
-xxxxx: 'Xxxxxxx xxxxxx xx xxxxxxxx (XXX) xx x xxx'
-xxxxxxxxxxx: Xxx xxxxxx xx xxxxxxxx (XXX) xx x xxx xxxxx xxxxxxxx, xxxxxx, xxxxxx, xxx XXXX XX xxxxxxxx.
-xx.xxxxxxx: XXYYXYXX-YXYX-YYYY-YYYY-YXXXXYXYYXXX
+title: '関心のあるポイント (POI) の地図への表示'
+description: プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。
+ms.assetid: CA00D8EB-6C1B-4536-8921-5EAEB9B04FCA
 ---
 
-# Xxxxxxx xxxxxx xx xxxxxxxx (XXX) xx x xxx
+# 関心のあるポイント (POI) の地図への表示
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xxx xxxxxx xx xxxxxxxx (XXX) xx x xxx xxxxx xxxxxxxx, xxxxxx, xxxxxx, xxx XXXX XX xxxxxxxx. X XXX xx x xxxxxxxx xxxxx xx xxx xxx xxxx xxxxxxxxxx xxxxxxxxx xx xxxxxxxx. Xxx xxxxxxx, xxx xxxxxxxx xx x xxxxxxxx, xxxx, xx xxxxxx.
+プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。 POI は、地図上の特定のポイントであり、関心のあるものを表します。 たとえば、企業、市区町村、友人の所在地を示すことができます。
 
-**Xxx** Xx xxxxx xxxx xxxxx xxxxxxxxxx XXX xx xxxx xxx, xxxxxxxx xxx xxxxxxxxx xxxxxx xxxx xxx [Xxxxxxx-xxxxxxxxx-xxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=619979) xx XxxXxx.
+**ヒント** アプリで POI を表示する方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979) から次のサンプルをダウンロードしてください。
 
--   [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-Xxxxxxx xxxxxxxx, xxxxxx, xxx xxxxxx xx xxx xxx xx xxxxxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn637077), [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637103), xxx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637114) xxxxxxx xx xxx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637033) xxxxxxxxxx xx xxx xxx xxxxxxx. Xxx xxxx xxxxxxx xx xxx xxxxx xxxxxxxxxxxxxxxx; xxx xxx'x xxxx xx xxx **XxxXxxxxxxx** xxxxxxxxxx xxxxxxxxxxxxx xx xxxx XXXX xxxxxx.
+地図にプッシュピン、画像、図形を表示するには、[**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) オブジェクト、[**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) オブジェクト、[**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) オブジェクトをマップ コントロールの [**MapElements**](https://msdn.microsoft.com/library/windows/apps/dn637033) コレクションに追加します。 プログラムでデータ バインディングを使うか、項目を追加します。XAML マークアップで宣言を使って **MapElements** コレクションにバインドすることはできません。
 
-Xxxxxxx XXXX xxxx xxxxxxxxx xxxxxxxx xxxx xx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265), x [**XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242739), xx x [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652) xx xxx xxx xx xxxxxx xxxx xx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637008) xx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637004). Xxx xxx xxxx xxx xxxx xx xxx [**XxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637094), xx xxxx xxx **XxxXxxxxXxxxxxx** xx x xxxxxxxxxx xx xxxxx.
+XAML ユーザー インターフェイス要素 ([**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)、[**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739)、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) など) を地図に表示するには、それらの要素を [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) の [**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) として追加します。 また、それらの要素を [**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094) に追加したり、**MapItemsControl** を項目や項目のコレクションにバインドしたりすることもできます。
 
-Xx xxxxxxx:
+以上の説明をまとめると次のようになります。
 
--   [Xxx x XxxXxxx xx xxx xxx](#mapicon) xx xxxxxxx xx xxxxx xxxx xx x xxxxxxx xxxx xxxxxxxx xxxx.
--   [Xxx x XxxXxxxxxx xx xxx xxx](#mappolygon) xx xxxxxxx x xxxxx-xxxxx xxxxx.
--   [Xxx x XxxXxxxxxxx xx xxx xxx](#mappolyline) xx xxxxxxx xxxxx xx xxx xxx.
--   [Xxx XXXX xx xxx xxx](#mapxaml) xx xxxxxxx xxxxxx XX xxxxxxxx.
+-   プッシュピンなどの画像をオプションのテキストと共に表示するには、[MapIcon を地図に追加](#mapicon)します。
+-   マルチポイント図形を表示するには、[MapPolygon を地図に追加](#mappolygon)します。
+-   地図に線を表示するには、[MapPolyline を地図に追加](#mappolyline)します。
+-   カスタム UI 要素を表示するには、[XAML を地図に追加](#mapxaml)します。
 
-Xx xxx xxxx x xxxxx xxxxxx xx xxxxxxxx xx xxxxx xx xxx xxx, xxxxxxxx [xxxxxxxxxx xxxxx xxxxxx xx xxx xxx](overlay-tiled-images.md). Xx xxxxxxx xxxxx xx xxx xxx, xxx [Xxxxxxx xxxxxx xxx xxxxxxxxxx](routes-and-directions.md).
+地図に配置する要素の数が多い場合、[地図にタイル画像をオーバーレイする](overlay-tiled-images.md)ことを検討します。 地図に道路情報を表示するには、「[ルートとルート案内の表示](routes-and-directions.md)」をご覧ください。
 
-## Xxx x XxxXxxx
+## MapIcon の追加
 
 
-Xxxxxxx xx xxxxx xxxx x xxxxxxx, xxxx xxxxxxxx xxxx, xx xxx xxx xx xxxxx xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn637077) xxxxx. Xxx xxx xxxxxx xxx xxxxxxx xxxxx xx xxxxxxx x xxxxxx xxxxx xx xxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637078) xxxxxxxx. Xxx xxxxxxxxx xxxxx xxxxxxxx xxx xxxxxxx xxxxx xxx x **XxxXxxx** xxxx xx xxxxx xxxxxxxxx xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637088) xxxxxxxx, xxxx x xxxxx xxxxx, xxxx x xxxx xxxxx, xxx xxxx x xxxx xxxx xxxxx.
+[
+            **MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) クラスを使って、プッシュピンなどの画像をオプションのテキストと共に地図に表示します。 既定の画像をそのまま使うか、[**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) プロパティを使ってカスタム画像を指定できます。 次の画像はそれぞれ、[**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) プロパティに値を指定しない、短いタイトル、長いタイトル、非常に長いタイトルを指定した場合の **MapIcon** の既定の画像です。
 
-![xxxxxx xxxxxxx xxxx xxxxxx xx xxxxxxxxx xxxxxxx.](images/mapctrl-mapicons.png)
+![さまざまな長さのタイトルを含むサンプルの MapIcon。](images/mapctrl-mapicons.png)
 
-Xxx xxxxxxxxx xxxxxxx xxxxx x xxx xx xxx xxxx xx Xxxxxxx xxx xxxx x [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn637077) xxxx xxx xxxxxxx xxxxx xxx xx xxxxxxxx xxxxx xx xxxxxxxx xxx xxxxxxxx xx xxx Xxxxx Xxxxxx. Xx xxxx xxxxxxx xxx xxx xxxx xxx xxxx xxx xxxxx xx. Xxx xxxxxxx xxxx xxxxx xxxxx xxx xxx xxxxxxx, xxx [Xxxxxxx xxxx xxxx YX, YX, xxx Xxxxxxxxxx xxxxx](display-maps.md).
+次の例では、シアトル市の地図を表示して、既定の画像とオプションのタイトルを使って [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) を追加し、スペース ニードルの場所を示しています。 また、アイコンを地図の中央に配置し、拡大しています。 マップ コントロールを使用する方法に関する一般的な情報については、「[2D、3D、Streetside ビューでの地図の表示](display-maps.md)」をご覧ください。
 
 ```csharp
       private void displayPOIButton_Click(object sender, RoutedEventArgs e)
@@ -61,30 +62,34 @@ Xxx xxxxxxxxx xxxxxxx xxxxx x xxx xx xxx xxxx xx Xxxxxxx xxx xxxx x [**XxxXxxx**
       }
 ```
 
-Xxxx xxxxxxx xxxxxxxx xxx xxxxxxxxx XXX xx xxx xxx (xxx xxxxxxx xxxxx xx xxx xxxxxx).
+この例では、次の POI (中央の既定の画像) が地図に表示されます。
 
-![xxx xxxx xxxxxxx](images/displaypoidefault.png)
+![MapIcon を使った地図](images/displaypoidefault.png)
 
-Xxx xxxxxxxxx xxxx xx xxxx xxxxxxxx xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn637077) xxxx x xxxxxx xxxxx xxxxx xx xxx Xxxxxx xxxxxx xx xxx xxxxxxx. Xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637078) xxxxxxxx xx xxx **XxxXxxx** xxxxxxx x xxxxx xx xxxx [**XxxxxxXxxxxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701813). Xxxx xxxx xxxxxxxx x **xxxxx** xxxxxxxxx xxx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241791) xxxxxxxxx.
+次のコード行では、プロジェクトの Assets フォルダーに保存されているカスタム イメージを使って [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) が表示されます。 **MapIcon** の [**Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) プロパティでは、[**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) 型の値が想定されています。 この型では、[**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/br241791) 名前空間用に **using** ステートメントが必要になります。
 
-**Xxx** Xx xxx xxx xxx xxxx xxxxx xxx xxxxxxxx xxx xxxxx, xxxxxxx xxx [**XxxxxxXxxxxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701813) xx xxx xxxx xx xxx xxxxx xxx xxx xxxx xxxxxxxxxxx.
+**ヒント** 複数の地図アイコンに同じ画像を使う場合は、パフォーマンスが最大限に高まるように、ページ レベルまたはアプリ レベルで [**RandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701813) を宣言します。
 
 ```csharp
     MapIcon1.Image =
         RandomAccessStreamReference.CreateFromUri(new Uri("ms-appx:///Assets/customicon.png"));
 ```
 
-Xxxx xxxxx xxxxxxxxxxxxxx xx xxxx xxxx xxxxxxx xxxx xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn637077) xxxxx:
+[
+            **MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) クラスを使うときは、次の考慮事項を念頭に置いてください。
 
--   Xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637078) xxxxxxxx xxxxxxxx x xxxxxxx xxxxx xxxx xx YYYY×YYYY xxxxxx.
--   Xx xxxxxxx, xxx xxx xxxx'x xxxxx xx xxx xxxxxxxxxx xx xx xxxxx. Xx xxx xx xxxxxx xxxx xx xxxxxxxx xxxxx xxxxxxxx xx xxxxxx xx xxx xxx. Xx xxxx xx xxxxxxx, xxx xxx xxx xxxx'x [**XxxxxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974327) xxxxxxxx xx [**XxxXxxxxxxXxxxxxxxxXxxxxxxx.XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974314).
--   Xxx xxxxxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637088) xx xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn637077) xx xxx xxxxxxxxxx xx xx xxxxx. Xx xxx xxx'x xxx xxx xxxx, xxxx xxx xx xxxxxxxxxx xxx xxxxx xx xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637068) xxxxxxxx xx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637004).
--   Xxxx xxx xxxxxxx x [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn637077) xxxxx xxxx xxxxxx xx x xxxxxxxx xxxxxxxx xx xxx xxx - xxx xxxxxxx, x xxxxxxx xx xx xxxxx - xxxxxxxx xxxxxxx xxx xxxxx xx xxx [**XxxxxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637082) xxxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xx xxx xxxxxxx xx xxx xxxxx. Xx xxx xxxxx xxx xxxxx xx **XxxxxxxxxxXxxxxxXxxxx** xx xxx xxxxxxx xxxxx xx (Y, Y), xxxxx xxxxxxxxxx xxx xxxxx xxxx xxxxxx xx xxx xxxxx, xxxxxxx xx xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637068) xx xxx xxx xxx xxxxx xxx xxxxx xxxxxxxx xx x xxxxxxxxx xxxxxxxx.
+-   [
+            **Image**](https://msdn.microsoft.com/library/windows/apps/dn637078) プロパティがサポートしている最大画像サイズは 2048 × 2048 ピクセルです。
+-   既定では、地図アイコンの画像は必ず表示されるとは限りません。 このクラスが地図上の他の要素やラベルを覆い隠す場合には、このクラスは非表示になることがあります。 地図アイコンを表示したままにするには、このアイコンの [**CollisionBehaviorDesired**](https://msdn.microsoft.com/library/windows/apps/dn974327) プロパティを [**MapElementCollisionBehavior.RemainVisible**](https://msdn.microsoft.com/library/windows/apps/dn974314) に設定します。
+-   [
+            **MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) のオプションの [**Title**](https://msdn.microsoft.com/library/windows/apps/dn637088) は、必ず表示されるとは限りません。 テキストが表示されない場合は、[**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) の [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) プロパティの値を減らして、地図を縮小してください。
+-   地図上の特定の場所を指す [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077) 画像 (たとえば、プッシュピンや矢印など) を表示する場合は、[**NormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637082) プロパティの値を画像上にあるポインターのおおよその位置に設定することを検討してください。 **NormalizedAnchorPoint** の値を、画像の左上隅を示す既定値 (0, 0) のままにした場合、地図の [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637068) を変更すると、画像が別の場所を示した状態になる可能性があります。
 
-## Xxx x XxxXxxxxxx
+## MapPolygon の追加
 
 
-Xxxxxxx x xxxxx-xxxxx xxxxx xx xxx xxx xx xxxxx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637103) xxxxx. Xxx xxxxxxxxx xxxxxxx, xxxx xxx [XXX xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977), xxxxxxxx x xxx xxx xxxx xxxx xxxxxx xx xxx xxx.
+[
+            **MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103) クラスを使って、マルチポイント図形を地図に表示します。 次の例は、[UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)から抜粋したもので、地図に赤色のボックス (境界線は青色) を表示します。
 
 ```csharp
 private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
@@ -109,10 +114,11 @@ private void mapPolygonAddButton_Click(object sender, Windows.UI.Xaml.RoutedEven
 }
 ```
 
-## Xxx x XxxXxxxxxxx
+## MapPolyline の追加
 
 
-Xxxxxxx x xxxx xx xxx xxx xx xxxxx xxx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637114) xxxxx. Xxx xxxxxxxxx xxxxxxx, xxxx xxx [XXX xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977), xxxxxxxx x xxxxxx xxxx xx xxx xxx.
+[
+            **MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114) クラスを使って、線を地図に表示します。 次の例は、[UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)から抜粋したもので、地図に破線を表示します。
 
 ```csharp
 private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEventArgs e)
@@ -132,15 +138,17 @@ private void mapPolylineAddButton_Click(object sender, Windows.UI.Xaml.RoutedEve
 }
 ```
 
-## Xxx XXXX
+## XAML の追加
 
 
-Xxxxxxx xxxxxx XX xxxxxxxx xx xxx xxx xxxxx XXXX. Xxxxxxxx XXXX xx xxx xxx xx xxxxxxxxxx xxx xxxxxxxx xxx xxxxxxxxxx xxxxxx xxxxx xx xxx XXXX.
+XAML を使って、カスタム UI 要素を地図に表示します。 XAML を地図に配置するには、XAML の位置と正規化されたアンカー ポイントを指定します。
 
--   Xxx xxx xxxxxxxx xx xxx xxx xxxxx xxx XXXX xx xxxxxx xx xxxxxxx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ms704369).
--   Xxx xxx xxxxxxxx xxxxxxxx xx xxx XXXX xxxx xxxxxxxxxxx xx xxx xxxxxxxxx xxxxxxxx xx xxxxxxx [**XxxXxxxxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637050).
+-   [
+            **SetLocation**](https://msdn.microsoft.com/library/windows/desktop/ms704369) を呼び出して、XAML を地図に配置する位置を設定します。
+-   [
+            **SetNormalizedAnchorPoint**](https://msdn.microsoft.com/library/windows/apps/dn637050) を呼び出して、指定した位置に対応する XAML 上の相対位置を設定します。
 
-Xxx xxxxxxxxx xxxxxxx xxxxx x xxx xx xxx xxxx xx Xxxxxxx xxx xxxx x XXXX [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209250) xxxxxxx xx xxxxxxxx xxx xxxxxxxx xx xxx Xxxxx Xxxxxx. Xx xxxx xxxxxxx xxx xxx xxxx xxx xxxx xxx xxxxx xx. Xxx xxxxxxx xxxx xxxxx xxxxx xxx xxx xxxxxxx, xxx [Xxxxxxx xxxx xxxx YX, YX, xxx Xxxxxxxxxx xxxxx](display-maps.md).
+次の例では、シアトル市の地図を表示して、XAML の [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) コントロールを追加し、スペース ニードルの場所を示しています。 また、そのエリアを地図の中央に配置し、拡大しています。 マップ コントロールを使用する方法に関する一般的な情報については、「[2D、3D、Streetside ビューでの地図の表示](display-maps.md)」をご覧ください。
 
 ```csharp
 private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
@@ -169,13 +177,13 @@ private void displayXAMLButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Xxxx xxxxxxx xxxxxxxx x xxxx xxxxxx xx xxx xxx.
+この例では、地図に青色の境界線が表示されます。
 
 ![](images/displaypoixaml.png)
 
-Xxx xxxx xxxxxxxx xxxx xxx xx xxx XXXX XX xxxxxxxx xxxxxxxx xx xxx XXXX xxxxxx xx xxx xxxx xxxxx xxxx xxxxxxx. Xx xxxx xxxxx XXXX xxxxxxxx xxxx xxxxxxx xxxxxxx, [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637008) xx xxx xxxxxxx xxxxxxx xxxxxxxx xx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637004) xxx xxxx xxx xxxx xx xx xxxxxxxxx xxxxxxxxxx xx XXXX xxxxxx.
+次の例では、データ バインディングを使って、ページの XAML マークアップで XAML UI 要素を直接追加する方法を示しています。 コンテンツを表示する他の XAML 要素と同様に、[**Children**](https://msdn.microsoft.com/library/windows/apps/dn637008) は [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) の既定のコンテンツ プロパティであり、XAML マークアップで明示的に指定する必要はありません。
 
-Xxxx xxxxxxx xxxxx xxx xx xxxxxxx xxx XXXX xxxxxxxx xx xxxxxxxx xxxxxxxx xx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+次の例では、2 つの XAML コントロールを [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) の暗黙的な子として表示する方法を示しています。
 
 ```xaml
 <maps:MapControl>
@@ -184,7 +192,7 @@ Xxxx xxxxxxx xxxxx xxx xx xxxxxxx xxx XXXX xxxxxxxx xx xxxxxxxx xxxxxxxx xx xxx 
 </maps:MapControl>
 ```
 
-Xxxx xxxxxxx xxxxx xxx xx xxxxxxx xxx XXXX xxxxxxxx xxxxxxxxx xxxxxx x [**XxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637094).
+次の例では、[**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094) に含まれている 2 つの XAML コントロールを表示する方法を示しています。
 
 ```xaml
 <maps:MapControl>
@@ -195,7 +203,7 @@ Xxxx xxxxxxx xxxxx xxx xx xxxxxxx xxx XXXX xxxxxxxx xxxxxxxxx xxxxxx x [**XxxXxx
 </maps:MapControl>
 ```
 
-Xxxx xxxxxxx xxxxxxxx x xxxxxxxxxx xx XXXX xxxxxxxx xxxxx xx x [**XxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637094).
+次の例では、[**MapItemsControl**](https://msdn.microsoft.com/library/windows/apps/dn637094) にバインドされている XAML 要素のコレクションが表示されます。
 
 ```xaml
 <maps:MapControl x:Name="MapControl" MapTapped="MapTapped" MapDoubleTapped="MapTapped" MapHolding="MapTapped">
@@ -211,16 +219,20 @@ Xxxx xxxxxxx xxxxxxxx x xxxxxxxxxx xx XXXX xxxxxxxx xxxxx xx x [**XxxXxxxxXxxxxx
 </maps:MapControl>
 ```
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxx Xxxx Xxxxxxxxx Xxxxxx](https://www.bingmapsportal.com/)
-* [XXX xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Xxxxxx xxxxxxxxxx xxx xxxx](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Xxxxx YYYY xxxxx: Xxxxxxxxxx Xxxx xxx Xxxxxxxx Xxxxxx Xxxxx, Xxxxxx, xxx XX xx Xxxx Xxxxxxx Xxxx](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [XXX xxxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-* [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn637077)
-* [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637103)
-* [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637114)
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [地図の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 のビデオ: Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP の交通情報アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [**MapIcon**](https://msdn.microsoft.com/library/windows/apps/dn637077)
+* [**MapPolygon**](https://msdn.microsoft.com/library/windows/apps/dn637103)
+* [**MapPolyline**](https://msdn.microsoft.com/library/windows/apps/dn637114)
+
+
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,27 +1,26 @@
 ---
-xxxxx: 'Xxxxxx xxxxx xxx xxxxx xxxxxx xxx xxxxxxxxxx xxxxxx'
-xxxxxxxxxxx: .
-xx.xxxxxxx: XXYYXYYY-XXXY-YYXY-YXYY-XXXYYXXXXYXX
-xxxxx: Xxxxxx xxxxx xxx xxxxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+title: 'Screen sizes and break points for responsive design'
+description: .
+ms.assetid: BF42E810-CDC8-47D2-9C30-BAA19DCBE2DA
+label: Screen sizes and break points
+template: detail.hbs
 ---
 
-#  Xxxxxx xxxxx xxx xxxxx xxxxxx xxx xxxxxxxxxx xxxxxx
+#  Screen sizes and break points for responsive design
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
 
-Xxx xxxxxx xx xxxxxx xxxxxxx xxx xxxxxx xxxxx xxxxxx xxx Xxxxxxx YY xxxxxxxxx xx xxx xxxxx xx xxxxx xxxxx xxxxxxxxxx xxxx XX xxx xxxx xxx. Xxxxxxx, xx xxxxxxxxxxx xxxxxxxxx xxx x xxx xxx xxxxxx (xxxx xxxxxx "xxxxxxxxxxx"): YYY, YYY, xxx YYYY xxx.
+The number of device targets and screen sizes across the Windows 10 ecosystem is too great to worry about optimizing your UI for each one. Instead, we recommended designing for a few key widths (also called "breakpoints"): 360, 640, 1024 and 1366 epx.
 
-**Xxx**  Xxxx xxxxxxxxx xxx xxxxxxxx xxxxxxxxxxx, xxxxxx xxx xxx xxxxxx xx xxxxxx xxxxx xxxxxxxxx xx xxxx xxx (xxx xxx'x xxxxxx). Xxxx xxx xxx xx xxxxxxx xxxx-xxxxxx, xxx xxx xxxxxx xx xxx xxxx xxxx xx xxx xxxxxx, xxx xx xxxxx xxxxx, xx'x xxxxxxx.
-
+**Tip**  When designing for specific breakpoints, design for the amount of screen space available to your app (the app's window). When the app is running full-screen, the app window is the same size as the screen, but in other cases, it's smaller.
  
 
-Xxxx xxxxx xxxxxxxxx xxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxx xxxxxxxxxxxxxxx xxx xxxxxxxxx xxx xxxxx xxxx xxxxxxx.
+This table describes the different size classes and provides general recommendations for tailoring for those size classes.
 
-![xxxxxxxxxx xxxxxx xxxxxxxxxxx](images/rsp-design/rspd-breakpoints.png)
+![responsive design breakpoints](images/rsp-design/rspd-breakpoints.png)
 
 <table>
 <colgroup>
@@ -32,68 +31,73 @@ Xxxx xxxxx xxxxxxxxx xxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxx xxxxxxxxxxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxx xxxxx</th>
-<th align="left">xxxxx</th>
-<th align="left">xxxxxx</th>
-<th align="left">xxxxx</th>
+<th align="left">Size class</th>
+<th align="left">small</th>
+<th align="left">medium</th>
+<th align="left">large</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Xxxxx xx xxxxxxxxx xxxxxx</td>
-<td align="left">YYY</td>
-<td align="left">YYY</td>
-<td align="left">YYYY</td>
+<td align="left">Typical screen size (diagonal)</td>
+<td align="left">4&quot; to 6&quot;</td>
+<td align="left">7&quot; to 12&quot;, or TVs</td>
+<td align="left">13&quot; and larger</td>
 </tr>
 <tr class="even">
-<td align="left">Xxxxxxx xxxxxx xxxx (xxxxxxxx)</td>
-<td align="left">Y' xx Y'</td>
-<td align="left">Y+&xxxx; xx YY&xxxx;</td>
-<td align="left">YY' xxx xxxxx</td>
+<td align="left">Typical devices</td>
+<td align="left">Phones</td>
+<td align="left">Phablets, tablets, TVs</td>
+<td align="left">PCs, laptops, Surface Hubs</td>
 </tr>
 <tr class="odd">
-<td align="left">Xxxxxxx xxxxxxx</td>
-<td align="left">Xxxxxx</td>
-<td align="left">Xxxxxx, xxxxxx xxxx xxxxx xxxxxx</td>
-<td align="left">XXx, xxxxxxx, Xxxxxxx Xxxx</td>
+<td align="left">Common window sizes in effective pixels</td>
+<td align="left">320x569, 360x640, 480x854</td>
+<td align="left">960x540, 1024x640</td>
+<td align="left">1366x768, 1920x1080</td>
 </tr>
 <tr class="even">
-<td align="left">Xxxxxxx xxxxxxxxxxxxxxx</td>
-<td align="left"><ul>
-<li>Xxx xxx xxxx xxxxxxxxxx xxx xxxxxxxxxxxx xxxxxx xx xxxx-xxxx xxxxxxx xx xxxxxxx xxxxxxxxxx xxx xxxxxxx xxxxxxxx xx xxx xxxxxx xx xxx xxxxxx xx xxxx xxxxx xxx xxxxxx xxxxx xxxx xxxx xxxxx xxxxxx.</li>
-<li>Xxxxxx xxx xxxxxxxx.</li>
-<li>Xxx xxxx xxx xxxxx xxxxxx xxxxxxx xx YY xx xx xxxxxx x xxxxxx xxxxxxxxxx xxxxxxx xxx xxxx xxx xxxxx xxxxx xx xxx xxx xxxxxx.</li>
-<li>Xxx Y xxxxxx/xxxxxx xx x xxxx</li>
-<li>Xxx xx xxxx xx xxxxxxxxx xxxxxx (xxx'x xxxx x xxxxxx xxx).</li>
-<li>Xxx xxx xxxxxxxxxx xxxx xx xxxxxxx xxxx xx xxxxxxxx xxxxxx xxxxx.</li>
-<li>Xx xxx'xx xxxxx xxx xxxxxx xxxxxx xxxxxxx, xxx xxx xxxxxxx xxxxxxxxxxxx xxxx xx xxxx xxxxxx xxxxx.</li>
-<li><p>Xxxx Xxxxxxxxx xxx Xxxxxx, x xxx xxxxxxxxxx xxx xxxxxxxxxx Xxxxxxx YY xxxxxx xxxxxxx, xxxxx xxx xxxxxxx xxxxx xxxxxx xx x xxxxxxx xxx xxxx xxx x xxxxx xxx xxxxxxxx xx xxxx xxxxx xxxxxx xxxx xxxx x xxxxxx. (Xxx xxxx xxxx, xxx xxx [Continuum for Phone article](http://go.microsoft.com/fwlink/p/?LinkID=699431).)</p></li>
+<td align="left">Window width breakpoints in effective pixels</td>
+<td align="left">640px or less</td>
+<td align="left">641px to 1007px</td>
+<td align="left">1008px or greater</td>
+</tr>
+<tr class="odd">
+<td align="left" valign="top">General recommendations</td>
+<td align="left" valign="top"><ul>
+<li>Center tab elements.</li>
+<li>Set left and right window margins to 12px to create a visual separation between the left and right edges of the app window.</li>
+<li>Dock [app bars](../controls-and-patterns/app-bars.md) to the bottom of the window for improved reachability</li>
+<li>Use one column/region at a time</li>
+<li>Use an icon to represent search (don't show a search box).</li>
+<li>Put the [navigation pane](../controls-and-patterns/nav-pane.md) in overlay mode to conserve screen space.</li>
+<li>If you're using the [master details pattern](../controls-and-patterns/master-details.md), use the stacked presentation mode to save screen space.</li>
 </ul></td>
-<td align="left"><ul>
-<li>Xxxx xxx xxxxxxxx xxxx-xxxxxxx.</li>
-<li><p>Xxx xxxx xxx xxxxx xxxxxx xxxxxxx xx YY xx.</p>
-<p>Xx xxxxxxxxx xxxxxxxx x xxxxxx xxxxxxxxxx xxxxxxx xxx xxxx xxx xxxxx xxxxx xx xxx xxx xxxxxx.</p></li>
-<li>Xx xx xxx xxxxxxx/xxxxxxx</li>
-<li>Xxxx xxx xxxxxx xxx.</li>
-<li>Xxx xxx xxxxxxxxxx xxxx xxxx xxxxxx xxxx xx xxxx xx xxxxxx xxxxx.</li>
+<td align="left" valign="top"><ul>
+<li>Make tab elements left-aligned.</li>
+<li>Set left and right window margins to 24px to create a visual separation between the left and right edges of the app window.</li>
+<li>Put command elements like [app bars](../controls-and-patterns/app-bars.md) at the top of the app window.</li>
+<li>Up to two columns/regions</li>
+<li>Show the search box.</li>
+<li>Put the [navigation pane](../controls-and-patterns/nav-pane.md) into sliver mode so a narrow strip of icons always shows.</li>
+
 </ul></td>
-<td align="left"><ul>
-<li>Xxx xxxxxxxxxx xxx xxxxxxx xxxxxxxx xx xxx xxx xx xxx xxx xxxxxx.</li>
-<li>Xxxx xxx xxxxxxxx xxxx-xxxxxxx.</li>
-<li><p>Xxx xxxx xxx xxxxx xxxxxx xxxxxxx xx YY xx.</p>
-<p>Xx xxxxxxxxx xxxxxxxx x xxxxxx xxxxxxxxxx xxxxxxx xxx xxxx xxx xxxxx xxxxx xx xxx xxx xxxxxx.</p></li>
-<li>Xx xx xxxxx xxxxxxx/xxxxxxx</li>
-<li>Xxxx xxx xxxxxx xxx.</li>
-<li>Xxx xxx xxxxxxxxxx xxxx xxxx xxxxxx xxxx xx xxxx xx xxxxxx xxxxx.</li>
+<td align="left" valign="top"><ul>
+<li>Make tab elements left-aligned.</li>
+<li>Set left and right window margins to 24px to create a visual separation between the left and right edges of the app window.</li>
+<li>Put command elements like [app bars](../controls-and-patterns/app-bars.md) at the top of the app window.</li>
+<li>Up to three columns/regions</li>
+<li>Show the search box.</li>
+<li>Put the [navigation pane](../controls-and-patterns/nav-pane.md) into docked mode so that it always shows.</li>
 </ul></td>
 </tr>
 </tbody>
 </table>
 
-
+With [**Continuum for Phones**](http://go.microsoft.com/fwlink/p/?LinkID=699431), a new experience for compatible Windows 10 mobile devices, users can connect their phones to a monitor, mouse and keyboard to make their phones work like laptops. Keep this new capability in mind when designing for specific breakpoints - a mobile phone will not always stay in the small size class.
  
 
 
+<!--HONumber=Mar16_HO4-->
 
 
-<!--HONumber=Mar16_HO1-->

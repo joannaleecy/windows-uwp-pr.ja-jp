@@ -1,63 +1,67 @@
 ---
-xxxxx: Xxxxx YX xxxxxxxx xxx XxxxxxX xxxxx
-xxxxxxxxxxx: Xx xxxx xxx xx xxx XxxxxxX xxxxxxxxxxx xx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxxx xx YX xxxxxxxx.
-xx.xxxxxxx: YYYYxYYx-YxYY-YYYY-YxYY-YxxxYYYYxYYx
+title: DirectX ゲームの基本的な 3D グラフィックス
+description: DirectX プログラミングを使って、3D グラフィックスの基本的な概念を実装する方法について説明します。
+ms.assetid: 2989c91f-7b45-7377-4e83-9daa0325e92e
 ---
 
-# Xxxxx YX xxxxxxxx xxx XxxxxxX xxxxx
+# DirectX ゲームの基本的な 3D グラフィックス
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
-Xx xxxx xxx xx xxx XxxxxxX xxxxxxxxxxx xx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxxx xx YX xxxxxxxx.
+DirectX プログラミングを使って、3D グラフィックスの基本的な概念を実装する方法について説明します。
 
-**Xxxxxxxxx:** Xxxxx xx xxxxxxx x YX xxxxxxxx xxx.
+**目標:** 3D グラフィックス アプリのプログラミング方法を身に付ける。
 
-## Xxxxxxxxxxxxx
-
-
-Xx xxxxxx xxxx xxx xxx xxxxxxxx xxxx X++. Xxx xxxx xxxx xxxxx xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxxxxx.
-
-**Xxxxx xxxx xx xxxxxxxx:** YY xxxxxxx.
-
-## Xxxxx xx xx xxxx xxxx
+## 必要条件
 
 
-Xxxx, xx xxxx xxxxx xxx xx xxxxxxx YX xxxxxxxx xxxx XxxxxxX xxx X++\\Xx. Xxxx xxxx-xxxx xxxxxxxx xxxxxxxxxx xxx xx xxx [XxxxxxYX](https://msdn.microsoft.com/library/windows/desktop/hh309466) XXX xxx xxx xxxxxxxx xxx xxxx xxxx xxx xxxx xxxx xx xxxx xx xxx xxxxx XxxxxxX xxxxxxx. Xxxxx xxxxx xxxxx xxxx xxxx xxxxx, xxxx xxxxxxxxxxx XxxxxxX xxx xxxx XXX X++ xxx xx xxxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxxx.
+C++ に習熟していることを前提としています。 また、グラフィックス プログラミングの概念に対する基礎的な知識も必要となります。
 
-> **Xxxx**  Xxxx xxxxxxxx xxxx x xxxxx-xxxxxx xxxxxxxxxx xxxxxx xxxx xxxxxx xxxxxxx. Xxxx XxxxxxX xxxxxxx xxx xxxx xxx x xxxx-xxxxxx xxxxxxxxxx xxxxxx xxxx xxx xxxxxxx. Xxx x xxxx xxxxxxxx xxxxxxxx xxxx xxxxxxxx xxx xxx xxxx xxxxxxxx x xxxx-xxxxxx xxxxxxxxxx xxxxxx xxxx xxx xxxxxxx, xxxxxxxx xxxxx [XxxxxxXXxxx](https://msdn.microsoft.com/library/windows/desktop/hh437833). Xxx xxxx xxxx, xxx [Xxxxx XxxxxxXXxxx xxxx XxxxxxYX](https://msdn.microsoft.com/library/windows/desktop/ff729728#Use_DXMath_with_D3D).
+**完了までの合計時間:** 30 分。
 
- 
+## 次の段階
 
-Xx xxxx xxx xxx xx:
 
--   Xxxxxxxxxx [XxxxxxYX](https://msdn.microsoft.com/library/windows/desktop/hh309466) xxxxxxxxxx xx xxxxx xxx Xxxxxxx Xxxxxxx
--   Xxxxx xxx-xxxxxx xxxxxx xxxxxxxxxx
--   Xxx xx xxx xxxxxxxx
--   Xxxxxxxxx xxx xxxxx (xxxxxxxxxx xxx YX xxxxx xx x YX xxxxxxxxxx)
--   Xxxx xxx xxxxxx xxxxxxxx
+ここでは、DirectX と C++\\Cx を使って 3D グラフィックスを開発する方法について説明します。 この 5 つのパートから成るチュートリアルでは、[Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) API と、その他の DirectX サンプルの多くでも使われる概念やコードを紹介しています。 各パートでは、UWP の C++ アプリ向けに DirectX を構成することから始まって、プリミティブのテクスチャリングや効果の追加まで、段階的に構築していきます。
 
-> **Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注**  このチュートリアルでは、右手による座標系と列のベクターを使います。 多くの DirectX サンプルと DirectX アプリでは、左手による座標系と行のベクターを使います。 より完全なグラフィックス数式ソリューションと、左手による座標系と行のベクターをサポートするグラフィックス数式ソリューションが必要な場合は、[DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) を使うことを検討してください。 詳しくは、「[Direct3D との DirectXMath の使用](https://msdn.microsoft.com/library/windows/desktop/ff729728#Use_DXMath_with_D3D)」をご覧ください。
 
  
 
-Xxxx, xx xxxxxx x XxxxxxYX xxxxxx, xxxx xxxxx, xxx xxxxxx-xxxxxx xxxx, xxx xxxxxxx xxx xxxxxxxx xxxxx xx xxx xxxxxxx.
+次の方法について説明します。
 
-[Xxxxxxxxxx: xxxxxxx xx XxxxxxX xxxxxxxxx xxx xxxxxxxxxx xx xxxxx](setting-up-directx-resources.md)
+-   Windows ランタイムを使っての [Direct3D](https://msdn.microsoft.com/library/windows/desktop/hh309466) インターフェイスの初期化
+-   頂点ごとのシェーダー操作の適用
+-   ジオメトリの設定
+-   シーンのラスタライズ (3D シーンを 2D プロジェクションにフラット化)
+-   隠面のカリング
 
-## Xxxxxxx xxxxxx
+> **注**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
+
+ 
+
+次に、Direct3D デバイス、スワップ チェーン、レンダー ターゲット ビューを作成し、レンダリングされた画像をディスプレイに表示します。
+
+[クイック スタート: DirectX リソースの設定と画像の表示](setting-up-directx-resources.md)
+
+## 関連トピック
 
 
-* [XxxxxxYX YY Xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ff476080)
-* [XXXX](https://msdn.microsoft.com/library/windows/desktop/hh404534)
-* [XXXX](https://msdn.microsoft.com/library/windows/desktop/bb509561)
+* [Direct3D 11 グラフィックス](https://msdn.microsoft.com/library/windows/desktop/ff476080)
+* [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)
+* [HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509561)
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

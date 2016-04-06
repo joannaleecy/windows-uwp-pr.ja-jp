@@ -1,98 +1,93 @@
 ---
-xxxxxxxxxxx: Xxxxxx xxx xxxx xx xxx xxx xxxxxxx-xxxxxxx xxx.
-xxxxx: Xxxxxxxxxx xxxxxx
-xx.xxxxxxx: YXYYXYYX-YXYY-YXYY-XYYX-YYYYYYXXYYXX
+description: Things you must do for any network-enabled app.
+title: Networking basics
+ms.assetid: 1F47D33B-6F00-4F74-A52D-538851FD38BE
 ---
 
-# Xxxxxxxxxx xxxxxx
+# Networking basics
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxx xxx xxxx xx xxx xxx xxxxxxx-xxxxxxx xxx.
+Things you must do for any network-enabled app.
 
-## Xxxxxxxxxxxx
+## Capabilities
 
-Xx xxxxx xx xxx xxxxxxxxxx, xxx xxxx xxx xxxxxxxxxxx xxxxxxxxxx xxxxxxxx xx xxxx xxx xxxxxxxx. Xx xx xxxxxxx xxxxxxxxxx xx xxxxxxxxx xx xxxx xxx'x xxxxxxxx, xxxx xxx xxxx xxxx xx xxxxxxxxxx xxxxxxxxxx, xxx xxx xxxxxxx xx xxxxxxx xx xxx xxxxxxx xxxx xxxx.
+In order to use networking, you must add appropriate capability elements to your app manifest. If no network capability is specified in your app's manifest, your app will have no networking capability, and any attempt to connect to the network will fail.
 
-Xxx xxxxxxxxx xxx xxx xxxx-xxxx xxxxxxxxxx xxxxxxxxxxxx.
+The following are the most-used networking capabilities.
 
-| Xxxxxxxxxx | Xxxxxxxxxxx |
+| Capability | Description |
 |------------|-------------|
-| **xxxxxxxxXxxxxx** | Xxxxxxxx xxxxxxxx xxxxxx xx xxx Xxxxxxxx xxx xxxxxxxx xx xxxxxx xxxxxx, xxxx xxxxxxxx xxx xxxxxx xxxx. Xxxx xxxx xxxx xxxxxxx Xxxxxxxx xxxxxx xxxxxx xxx xxxx xxxxxxxxxx. |
-| **xxxxxxxxXxxxxxXxxxxx** | Xxxxx xxx xxx xxxxxxx xxx xxxxxxxx xxxxxxx xxxxxx xxxx xxx Xxxxxxxx xxx xxxxxxxx xx xxxxxx xxxxxx xxxx xxxxxxxx xxx xxxxxx xxxxx. |
-| **xxxxxxxXxxxxxxXxxxxxXxxxxx** | Xxxxx xxx xxx xxxxxxx xxx xxxxxxxx xxxxxxx xxxxxx xx xxx xxxx'x xxxxxxx xxxxxx, xxxx xxxx xxx xxxx. |
+| **internetClient** | Provides outbound access to the Internet and networks in public places, like airports and coffee shop. Most apps that require Internet access should use this capability. |
+| **internetClientServer** | Gives the app inbound and outbound network access from the Internet and networks in public places like airports and coffee shops. |
+| **privateNetworkClientServer** | Gives the app inbound and outbound network access at the user's trusted places, like home and work. |
 
-Xxxxx xxx xxxxx xxxxxxxxxxxx xxxx xxxxx xx xxxxxxxxx xxx xxxx xxx, xx xxxxxxx xxxxxxxxxxxxx.
+There are other capabilities that might be necessary for your app, in certain circumstances.
 
-| Xxxxxxxxxx | Xxxxxxxxxxx |
+| Capability | Description |
 |------------|-------------|
-| **xxxxXxxxxxxxxxxxx** | Xx xxxx xxx xxxx xxxxxx xxxxxxxx xxxxxxxx, xxx xxxx xxxxxxx xxxx xxxxxxxxxx xx xxx xxx xxxxxxxx. |
-| **xxxxxxxxxxXxxxxxxxxxxxxx** | Xxxxxx xx xxx xx xxxxxxx xx xxxxxxx xxxxxxxxx xxxx xxxxxxx xxxxxx xxxxxxxxxxx. Xxxx xxxxxxxxxx xxxx xxxxxxx x xxxxxx xxxxxxxxxxxxx xx xxxxxx xxx xxxxxxxxxxxxx xxx xxx xxxx. Xx xxxxxxx xxxxx xx xx xxx xxxx xxxxxxxxx xxxx xxxx XxxxxXxxxx xxxxxxx xx x xxxxxxx Xxxxxxxx. <br/> Xxxx xxxx xxxxxxxxxx xxxx xxxxxxxxxxx xxx xx xxxx xx xxxxxx xxxxxxx xxxxxxxxx xx x xxxxxxx xxxx xxxxxxxx xxxxxxxxxxx. Xx xxx xxxx xxxx xxxxxxxxxx xxx xxxxxxxxxxx xxx xx xxx xxxxxxx. <br/> Xxxx xxxxxxxxxx xx xxx xxxxxxxx xx xxxxx xx xxx xx xxxxxx xxx Xxxxxxxx xxx xx xxxxxxxxxxxxxx xxxxx. |
-| **xxxxxxxxx** | Xxxxxxxx xxx xxxx-xxxxx xxxxxxxxx xxxxxxxxxxxxx xxxx xxxxxxx xx xxxxx xxxxxxxxx xx xxx xxxxxxxx. Xxxx-xxxxx xxxxxxxxx xxx xx xxxx xx xxxx xx xxxxxxx xxxx xx xxxxxxxxxxx xx x xxxxxx xxxxxx. <br/> Xxxx xxxxxxxxxx xxxxxx xx xxx xx xxxxxx xxx xxxxxxx xx xxxxxxx xx x xxxxxx xx xxxxx xxxxxxxxx, xxxx xxxx xxxxxxx xx xxxx xx xxxxxx xx xxxxxx xx xxxxxx. |
-| **xxxxxxXxxxXxxxxxxxxxxx** | Xxxx xxxxxxxxxx xxxxxx xx xxx xx xxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxxx, xxxx xx xxxxx xxxx xxxxxxxxxxxx. Xxxx xxxx xxxxxxxxxx xx xxxxxxx xx xxxxxxx, xxx xxxx xxxx xxxx xxxxxx, xxxx xx xxxxxxxxx x xxxx xx xxxxxxxxx x xxxxxxxxxxx. <br/> Xxxx xxxx xxxxxxxxxx, xxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxxx xx x xxxxx xxxx xxx xxxx xxx xxxxxxxxxxxxxx xx xxx xxx. Xxxx xxxxxxxxxx xxx xx xxxx xx xxxx xxxxxxxx, xxxx, xx xxxxxxxxxx xxxxxxxx xxx xxxxxxxxxxxxxx. |
+| **pushNotifications** | If your app uses socket activity triggers, you must specify this capability in the app manifest. |
+| **enterpriseAuthentication** | Allows an app to connect to network resources that require domain credentials. This capability will require a domain administrator to enable the functionality for all apps. An example would be an app that retrieves data from SharePoint servers on a private Intranet. <br/> With this capability your credentials can be used to access network resources on a network that requires credentials. An app with this capability can impersonate you on the network. <br/> This capability is not required to allow an app to access the Internet via an authenticating proxy. |
+| **proximity** | Required for near-field proximity communication with devices in close proximity to the computer. Near-field proximity may be used to send or connect with an application on a nearby device. <br/> This capability allows an app to access the network to connect to a device in close proximity, with user consent to send an invite or accept an invite. |
+| **sharedUserCertificates** | This capability allows an app to access software and hardware certificates, such as smart card certificates. When this capability is invoked at runtime, the user must take action, such as inserting a card or selecting a certificate. <br/> With this capability, your software and hardware certificates or a smart card are used for identification in the app. This capability may be used by your employer, bank, or government services for identification. |
 
-## Xxxxxxxxxxxxx xxxx xxxx xxx xx xxx xx xxx xxxxxxxxxx
+## Communicating when your app is not in the foreground
 
-[Xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt299103) xxxxxxxx xxxxxxx xxxxxxxxxxx xxxxx xxxxx xxxxxxxxxx xxxxx xx xx xxxx xxxx xxxx xxx xx xxx xx xxx xxxxxxxxxx. Xxxx xxxxxxxxxxxx, xxxx xxxx xxxx xxxx xxxxxxx xxxxx xx xx xxxxxxxx xxxx xx xx xxx xxx xxxxxxx xxxxxxxxxx xxx xxx xxxx xxxxxxx xxxx xxx xxxxxxx xxx xx. Xxx xxxx Xxxxxxx Xxxxxxx Xxxxxxxx xxx xxxx xxxxxxx xx Xxxxxxx Y, xxx xxxx xxx xxxxx xxxxxxxxx xx Xxxxxxx YY. Xxxx xxxxxxxxxxx xxxxx xxxxx Xxxxxxx Xxxxxxx Xxxxxxxx xx xxxxxxxxx [**xxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032). X xxx xxxxxxxxxx xx Xxxxxxx YY xxxxxxxx xxxxxx xxxxxxxxxxxxx xxxx xxxxx xxxxxxxx xxx xxxx xxxxxxxxx, xxxx xx xxxx-xxxxxxx xxxxxx xxxxxxx: xxx xxxxxx xxxxxx xxx xxxxxx xxxxxxxx xxxxxxxx.
+[Support your app with background tasks](https://msdn.microsoft.com/library/windows/apps/mt299103) contains general information about using background tasks to do work when your app is not in the foreground. More specifically, your code must take special steps to be notified when it is not the current foreground app and data arrives over the network for it. You used Control Channel Triggers for this purpose in Windows 8, and they are still supported in Windows 10. Full information about using Control Channel Triggers is available [**here**](https://msdn.microsoft.com/library/windows/apps/hh701032). A new technology in Windows 10 provides better functionality with lower overhead for some scenarios, such as push-enabled stream sockets: the socket broker and socket activity triggers.
 
-Xx xxxx xxx xxxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241319), [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882), xx [**XxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226906), xxxx xxxx xxx xxx xxxxxxxx xxxxxxxxx xx xx xxxx xxxxxx xx x xxxxxx xxxxxx xxxxxxxx xx xxx xxxxxx, xxx xxxx xxxxx xxx xxxxxxxxxx, xx xxxx xxxxxxxxx. Xxxx x xxxxxxxxxx xx xxxx xx xxx xxxxxxxxxxx xxxxxx, xx xxxxxxx xxxxxxx xx xxxx xxxxxx, xxxx xxxx xxx xx xxx xxxxxxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxx. Xx xxxx xxx xx xxx xxxxxxx, xx xx xxxxxxx. Xxx xxxxxx xxxxxx xxxx xxxxxxxx xxxx xxx xxxxx x [**XxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn806009) xxxx xxx xxxxxxx xxx xxxxxxx. Xxxx xxx xxxxxxxx xxx xxxxxx xxxx xxx xxxxxx xxxxxx xxx xxxxxxx xxx xxxxxxx xx xxx xxxxxx. Xxxx xxxxx xxxx xxxx xxx xxxxxxxx xxx xxxx xxxxxx xxxxxxxxx xxxx xx xx xxx xxxxxxxx xxxxxxxxxx xxxxxxx xxxxxxx.
+If your app uses [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906), then your app can transfer ownership of an open socket to a socket broker provided by the system, and then leave the foreground, or even terminate. When a connection is made on the transferred socket, or traffic arrives on that socket, then your app or its designated background task are activated. If your app is not running, it is started. The socket broker then notifies your app using a [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) that new traffic has arrived. Your app reclaims the socket from the socket broker and process the traffic on the socket. This means that your app consumes far less system resources when it is not actively processing network traffic.
 
-Xxx xxxxxx xxxxxx xx xxxxxxxx xx xxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxx xxxxx xx xx xxxxxxxxxx, xxxxxxx xx xxxxxxxx xxx xxxx xxxxxxxxxxxxx, xxx xxxx xxxxx xxxxxxxxxxxx xxx x xxxxxxx xxxxxx xxxxxxxxx. Xxxxxx xxxxxx xxx xx xxxx xx xxxx xxxx xxx xxx xxxx xxxxxx xxxx, xxx xx xx xxxx xxx xxxx xxx xx xxxxxx xx xx xxxxx xxxxxxx. Xxxx xxxx xxx xx xxxxxxx xxxx xxxxxxx xxxxxxx xx xxxxx xx xx xxxxxxxxx xx xxx xxxxxx xxxxxx. Xxx xxx xxxxxx xxxxxx xxxxxxxx xxxxxxxxx xx XXX xxxxxxx, xxxxx Xxxxxxx Xxxxxxx Xxxxxxxx xx xxx xxxxxxx.
+The socket broker is intended to replace Control Channel Triggers where it is applicable, because it provides the same functionality, but with fewer restrictions and a smaller memory footprint. Socket broker can be used by apps that are not lock screen apps, and it is used the same way on phones as on other devices. Apps need not be running when traffic arrives in order to be activated by the socket broker. And the socket broker supports listening on TCP sockets, which Control Channel Triggers do not support.
 
-Xx xxxx xxx xxxx xxxxxx xxxxxxxx xxxxxxxx, xxx xxxx xxxxxxx xxx **xxxxXxxxxxxxxxxxx** xxxxxxxxxx xx xxx xxx xxxxxxxx.
+If your app uses socket activity triggers, you must specify the **pushNotifications** capability in the app manifest.
 
-### Xxxxxxxx x xxxxxxx xxxxxxx
+### Choosing a network trigger
 
-Xxxxx xxx xxxx xxxxxxxxx xxxxx xxxxxx xxxx xx xxxxxxx xxxxx xx xxxxxxxx. Xxxx xxx xxx xxxxxxxx xxxxx xxxx xx xxxxxxx xx xxx xx xxxx xxx, xxxxxxxx xxx xxxxxxxxx xxxxxx.
+There are some scenarios where either kind of trigger would be suitable. When you are choosing which kind of trigger to use in your app, consider the following advice.
 
--   Xx xxx xxx xxxxx [**XXXXXXXXXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**Xxxxxx.Xxx.Xxxx.XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639) xx [Xxxxxx.Xxx.Xxxx.XxxxXxxxxxXxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241638), xxx xxxx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032).
--   Xx xxx xxx xxxxx xxxx-xxxxxxx **XxxxxxXxxxxxx**, xxx xxx xxx xxxxxxx xxxxxxx xxxxxxxx, xxx xxxxxx xxxxxx [**XxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn806009). Xxx xxxxxx xxxxxx xxxxxx xxx xxxxxx xx xxxx xx xxxxxx xxx xxxxxx xxxxx xxxxxxxxxxxx xxxx xxx xxxxxxxxxx xx xxx xxxxx xxxxxxxx xxxx.
--   Xx xxx xxxx xx xxxxxxxx xxx xxxxxx xxxxxxxxx xx xxxx xxx xxxx xx xx xxx xxxxxxxx xxxxxxxxx xxxxxxx xxxxxxxx, xxxxxx [**XxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn806009) xxxx xxxxxxxx.
--   Xx xxx xxxx xxxx xxx xx xx xxxx xx xxxxxxx xxxx xxxxx xxx xxxxxx xx xx Xxxxxxxxx Xxxxxxx xxxx, xxx [**XxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn806009).
+-   If you are using [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) or [System.Net.Http.HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638), you must use [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+-   If you are using push-enabled **StreamSockets**, you can use control channel triggers, but should prefer [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). The latter choice allows the system to free up memory and reduce power requirements when the connection is not being actively used.
+-   If you want to minimize the memory footprint of your app when it is not actively servicing network requests, prefer [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) when possible.
+-   If you want your app to be able to receive data while the system is in Connected Standby mode, use [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009).
 
-Xxx xxxxxxx xxx xxxxxxxx xx xxx xx xxx xxx xxxxxx xxxxxx, xxx [Xxxxxxx xxxxxxxxxxxxxx xx xxx xxxxxxxxxx](network-communications-in-the-background.md).
+For details and examples of how to use the socket broker, see [Network communications in the background](network-communications-in-the-background.md).
 
-## Xxxxxxx xxxxxxxxxxx
+## Secured connections
 
-Xxxxxx Xxxxxxx Xxxxx (XXX) xxx xxx xxxx xxxxxx Xxxxxxxxx Xxxxx Xxxxxxxx (XXX) xxx xxxxxxxxxxxxx xxxxxxxxx xxxxxxxx xx xxxxxxx xxxxxxxxxxxxxx xxx xxxxxxxxxx xxx xxxxxxx xxxxxxxxxxxxx. Xxxxx xxxxxxxxx xxx xxxxxxxx xx xxxxxxx xxxxxxxxxxxxx xxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxx xxxxxxx xxxx. Xxxxx xxxxxxxxx xxx x xxxxxx-xxxxxx xxxxx xxx xxx xxxxxxxx xxxxxxxxx. Xxxxx xxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxx xx xxxxxx xxxx xxx xxxxxx xx xxx xx xxxxxx xx xx.
+Secure Sockets Layer (SSL) and the more recent Transport Layer Security (TLS) are cryptographic protocols designed to provide authentication and encryption for network communication. These protocols are designed to prevent eavesdropping and tampering when sending and receiving network data. These protocols use a client-server model for the protocol exchanges. These protocols also use digital certificates and certificate authorities to verify that the server is who it claims to be.
 
-### Xxxxxxxx xxxxxx xxxxxx xxxxxxxxxxx
+### Creating secure socket connections
 
-X [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxxxxx xxx xx xxxxxxxxxx xx xxx XXX/XXX xxx xxxxxxxxxxxxxx xxxxxxx xxx xxxxxx xxx xxx xxxxxx. Xxxx xxxxxxx xxx XXX/XXX xx xxxxxxx xx xxxxx xxx **XxxxxxXxxxxx** xxxxxx xx xxx xxxxxx xx xxx XXX/XXX xxxxxxxxxxx. Xxx xxxxxx xxx XXX/XXX xxxx xxx **XxxxxxXxxxxx** xxxxxxx xx x [**XxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226906) xxxx xxxxxxxx xxxxxxxxxxxxxx xxx xxxxxxxx, xxxxxxx XXX/XXX xxxxxxxxxxx xx x xxxxxx xx xxx xxxxxxxxxxx xx xxx **XxxxxxXxxxxx** xxxxx.
+A [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object can be configured to use SSL/TLS for communications between the client and the server. This support for SSL/TLS is limited to using the **StreamSocket** object as the client in the SSL/TLS negotiation. You cannot use SSL/TLS with the **StreamSocket** created by a [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) when incoming communications are received, because SSL/TLS negotiation as a server is not implemented by the **StreamSocket** class.
 
-Xxxxx xxx xxx xxxx xx xxxxxx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxxxxxxxxx xxxx XXX/XXX:
+There are two ways to secure a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) connection with SSL/TLS:
 
--   [
-            **XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701504) - Xxxx xxx xxxxxxx xxxxxxxxxx xx x xxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxxx xx xxx XXX/XXX xxx xxx xxxxxxxxxxxxxx.
--   [
-            **XxxxxxxXxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226922) - Xxxxxxx xxxxxxxxx xx x xxxxxxx xxxxxxx xxxxxxx xxxxxxxxxx. Xxx xxx xxx xxxx xx xxxxxxx xxxx. Xxxx, xxxxxxx xxx xxxxxxxxxx xx xxx XXX/XXX xxx xxx xxxxxxx xxxxxxxxxxxxxx.
+-   [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) - Make the initial connection to a network service and negotiate immediately to use SSL/TLS for all communications.
+-   [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) - Connect initially to a network service without encryption. The app may send or receive data. Then, upgrade the connection to use SSL/TLS for all further communications.
 
-Xxx XxxxxxXxxxxxxxxxXxxxx xxxxx xxxx xxx xxxxxxx xxxx xxx xxxxxxx xxxxxxxxxx xxxxx xxx xxx xxxxxxx xx xxxxx. Xxxxxxx, xxx xxxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxxxx xx xxxxxxxxxx xx x xxxxxxxxxxx xxxxxxx xxxxxxx xxxx xxxxxxxxx xx xxx xxxxxxxxxx. Xxx xxxxxx xxx xx x xxxx-xxxxxx xxxxxxxxxx xxxxx xxxx xxx xxx xxx xxxxxxxxx, xx xxx xxxxx xxxxxxxx xxxxxxxx x xxxxxx xxxxx. Xxx XXX xxxxxxxx xxxxxxxx xxxxxxxxxx xxxxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701504) xx [**XxxxxxxXxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226922) xxx xx xxxxxxxxxx xx xxxxxxx xxx [**XxxxxxXxxxxxxxxxxxxxxxx.XxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh967868) xxxxxxxx xxxxx xxx xxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxxxxxx.
+The SocketProtectionLevel value that you provide sets the minimum protection level you are willing to allow. However, the eventual protection level of the established connection is determined in a negotiation process between both endpoints of the connection. The result can be a more-secure protection level than the one you specified, if the other endpoint requires a higher level. The SSL strength actually negotiated using [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) or [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) can be determined by getting the [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) property after the async operation has completed successfully.
 
-> **Xxxx**  Xxxx xxxx xxxxxx xxxxx xxxxxxxxxx xxxxxx xx xxxxx x xxxxxxxxxx xxxxxxxxxx xxxxx, xx xx xxx xxxxxxxxxx xxxx x xxxxx xxxxxxxx xxxxx xx xxxx xx xxxxxxx. Xxx xxxxxxxx xxxxxxxxx xxxxxxx xxxxxxxxxx, xxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxx xxxx xxxx xx xxxxx xx xxxxx xxx xxx xx xxxxxxxxx xxxx xxxxx xxxxxxxxxx. Xxxxxxxx xxx xxxx xxxxxxxxx xx xxxxxxxxxx xxxxxxx xxxxxxxxxxxxx, xx xx xxxxx xxxxxxxx xx xxxxxxxxx xxx xxxxx xxxxxxx xxxx xxxx xxxxxxx. Xx xxxx xxx xxxxxxx xx xxx xxx xx x xxxxxxxxxx xxxxxxxx xxxxx, xxx xxxx xxxxxxxxxx xxxxxxx xxxx xxxxx xxx xxxx xxxxx xx xx xxxx xxxx xx xx xxxxxxxx xx xxx xx xxx xxxxxxxxxxx xxxxxxxxxx.
+> **Note**  Your code should never implicitly depend on using a particular protection level, or on the assumption that a given security level is used by default. The security landscape changes constantly, and protocols and default protection levels will be changed over time in order to avoid the use of protocols with known weaknesses. Defaults can vary depending on individual machine configuration, or on which software is installed and which patches have been applied. If your app depends on the use of a particular security level, you must explicitly specify that level and then check to be sure that it is actually in use on the established connection.
 
-### Xxx XxxxxxxXxxxx
+### Use ConnectAsync
 
-[
-            **XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701504) xxx xx xxxx xx xxxxxxxxx xxx xxxxxxx xxxxxxxxxx xxxx x xxxxxxx xxxxxxx xxx xxxx xxxxxxxxx xxxxxxxxxxx xx xxx XXX/XXX xxx xxx xxxxxxxxxxxxxx. Xxxxx xxx xxx **XxxxxxxXxxxx** xxxxxxx xxxx xxxxxxx xxxxxxx x *xxxxxxxxxxXxxxx* xxxxxxxxx:
+[**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) can be used to establish the initial connection with a network service and then negotiate immediately to use SSL/TLS for all communications. There are two **ConnectAsync** methods that support passing a *protectionLevel* parameter:
 
--   [
-            **XxxxxxxXxxxx(XxxxxxxxXxxx, XxxxxxXxxxxxxxxxXxxxx)**](https://msdn.microsoft.com/library/windows/apps/hh701511) - Xxxxxx xx xxxxxxxxxxxx xxxxxxxxx xx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxxxxx xx xxxxxxx xx x xxxxxx xxxxxxx xxxxxxxxxxx xxxxxxxxx xx xx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700953) xxxxxx xxx x [**XxxxxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226880).
--   [
-            **XxxxxxxXxxxx(XxxxXxxx, Xxxxxx, XxxxxxXxxxxxxxxxXxxxx)**](https://msdn.microsoft.com/library/windows/apps/br226916) - Xxxxxx xx xxxxxxxxxxxx xxxxxxxxx xx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxxxxx xx xxxxxxx xx x xxxxxx xxxxxxxxxxx xxxxxxxxx xx x xxxxxx xxxxxxxx, x xxxxxx xxxxxxx xxxx, xxx x [**XxxxxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226880).
+-   [**ConnectAsync(EndpointPair, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/hh701511) - Starts an asynchronous operation on a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object to connect to a remote network destination specified as an [**EndpointPair**](https://msdn.microsoft.com/library/windows/apps/hh700953) object and a [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880).
+-   [**ConnectAsync(HostName, String, SocketProtectionLevel)**](https://msdn.microsoft.com/library/windows/apps/br226916) - Starts an asynchronous operation on a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object to connect to a remote destination specified by a remote hostname, a remote service name, and a [**SocketProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/br226880).
 
-Xx xxx *xxxxxxxxxxXxxxx* xxxxxxxxx xx xxx xx **Xxxxxxx.Xxxxxxxxxx.Xxxxxxx.XxxxxxXxxxxxxxxxXxxxx.Xxx** xxxx xxxxxxx xxxxxx xx xxx xxxxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701504) xxxxxxx, xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxxx xxxx xx xxxxxxxxxxx xx xxx XXX/XXX xxx xxxxxxxxxx. Xxxx xxxxx xxxxxxxx xxxxxxxxxx xxx xxxxx xxxxxx x XXXX xxxxxx xx xx xxxx.
+If the *protectionLevel* parameter is set to **Windows.Networking.Sockets.SocketProtectionLevel.Ssl** when calling either of the above [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) methods, the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) must will be established to use SSL/TLS for encryption. This value requires encryption and never allows a NULL cipher to be used.
 
-Xxx xxxxxx xxxxxxxx xx xxx xxxx xxx xx xxxxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701504) xxxxxxx xx xxx xxxx.
+The normal sequence to use with one of these [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) methods is the same.
 
--   Xxxxxx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882).
--   Xx xx xxxxxxxx xxxxxx xx xxx xxxxxx xx xxxxxx, xxx xxx [**XxxxxxXxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226917) xxxxxxxx xx xxx xxx [**XxxxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226893) xxxxxxxx xxxxxxxxxx xxxx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxxxxx. Xxx x xxxxxxxx xx xxx **XxxxxxXxxxxxXxxxxxx**.
--   Xxxx xxx xx xxx xxxxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701504) xxxxxxx xx xxxxx xx xxxxxxxxx xx xxxxxxx xx x xxxxxx xxxxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxx xxx xxx xx XXX/XXX.
--   Xxx XXX xxxxxxxx xxxxxxxx xxxxxxxxxx xxxxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701504) xxx xx xxxxxxxxxx xx xxxxxxx xxx [**XxxxxxXxxxxxxxxxxxxxxxx.XxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh967868) xxxxxxxx xxxxx xxx xxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxxxxxx.
+-   Create a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
+-   If an advanced option on the socket is needed, use the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) property to get the [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) instance associated with a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object. Set a property on the **StreamSocketControl**.
+-   Call one of the above [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) methods to start an operation to connect to a remote destination and immediately negotiate the use of SSL/TLS.
+-   The SSL strength actually negotiated using [**ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/hh701504) can be determined by getting the [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) property after the async operation has completed successfully.
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxx xxxxx xx xxxxxxxxx x xxxxxxxxxx xx xxx xxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxxx xx xxx XXX/XXX. Xx xxx xxxxxxxxxxx xx xxxxxxxxxx, xxx xxxxxxx xxxxxxxxxxxxx xxxxx xxx **XxxxxxXxxxxx** xxxxxxx xxx xxxxxx xxx xxxxxxx xxxxxx xxxx xx xxxxxxxxx.
+The following example creates a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and tries to establish a connection to the network service and negotiate immediately to use SSL/TLS. If the negotiation is successful, all network communication using the **StreamSocket** between the client the network server will be encrypted.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 using Windows.Networking;
 using Windows.Networking.Sockets;
@@ -164,23 +159,23 @@ using Windows::Networking::Sockets;
     // Then close the clientSocket when done
 ```
 
-### Xxx XxxxxxxXxXxxXxxxx
+### Use UpgradeToSslAsync
 
-Xxxx xxxx xxxx xxxx [**XxxxxxxXxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226922), xx xxxxx xxxxxxxxxxx x xxxxxxxxxx xx x xxxxxxx xxxxxxx xxxxxxx xxxxxxxxxx. Xxx xxx xxx xxxx xx xxxxxxx xxxx xxxx, xxxx xxxxxxx xxx xxxxxxxxxx xx xxx XXX/XXX xxx xxx xxxxxxx xxxxxxxxxxxxxx.
+When your code uses [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922), it first establishes a connection to a network service without encryption. The app may send or receive some data, then upgrade the connection to use SSL/TLS for all further communications.
 
-Xxx [**XxxxxxxXxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226922) xxxxxx xxxxx xxx xxxxxxxxxx. Xxx *xxxxxxxxxxXxxxx* xxxxxxxxx xxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxx. Xxx *xxxxxxxxxxXxxxXxxx* xxxxxxxxx xx xxx xxxxxxxx xx xxx xxxxxx xxxxxxx xxxxxxxxxxx xxxx xx xxxx xxx xxxxxxxxxx xxxx xxxxxxxxx xx XXX. Xxxxxxxx xxx *xxxxxxxxxxXxxxXxxx* xxxxx xx xxx xxxx xxxxxxxx xxxx xxx xxx xxxx xx xxxxxxxxx xxxxxxxxx xxx xxxxxxxxxx. Xx xxx *xxxxxxxxxxXxxxx* xxxxxxxxx xx xxx xx **Xxxxxxx.Xxxxxx.Xxxxxx.XxxxxxXxxxxxxxxxXxxxx.Xxx** xxxx xxxxxxx **XxxxxxxXxXxxXxxxx**, xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxxx xxx xxx XXX/XXX xxx xxxxxxxxxx xx xxxxxxx xxxxxxxxxxxxxx xxxx xxx xxxxxx. Xxxx xxxxx xxxxxxxx xxxxxxxxxx xxx xxxxx xxxxxx x XXXX xxxxxx xx xx xxxx.
+The [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) method takes two parameters. The *protectionLevel* parameter indicates the protection level desired. The *validationHostName* parameter is the hostname of the remote network destination that is used for validation when upgrading to SSL. Normally the *validationHostName* would be the same hostname that the app used to initially establish the connection. If the *protectionLevel* parameter is set to **Windows.System.Socket.SocketProtectionLevel.Ssl** when calling **UpgradeToSslAsync**, the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) must use the SSL/TLS for encryption on further communications over the socket. This value requires encryption and never allows a NULL cipher to be used.
 
-Xxx xxxxxx xxxxxxxx xx xxx xxxx xxx [**XxxxxxxXxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226922) xxxxxx xx xx xxxxxxx:
+The normal sequence to use with the [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) method is as follows:
 
--   Xxxxxx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882).
--   Xx xx xxxxxxxx xxxxxx xx xxx xxxxxx xx xxxxxx, xxx xxx [**XxxxxxXxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226917) xxxxxxxx xx xxx xxx [**XxxxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226893) xxxxxxxx xxxxxxxxxx xxxx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxxxxx. Xxx x xxxxxxxx xx xxx **XxxxxxXxxxxxXxxxxxx**.
--   Xx xxx xxxx xxxxx xx xx xxxx xxx xxxxxxxx xxxxxxxxxxx, xxxx xx xxx.
--   Xxxx xxx [**XxxxxxxXxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226922) xxxxxx xx xxxxx xx xxxxxxxxx xx xxxxxxx xxx xxxxxxxxxx xx xxx XXX/XXX.
--   Xxx XXX xxxxxxxx xxxxxxxx xxxxxxxxxx xxxxx [**XxxxxxxXxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226922) xxx xx xxxxxxxxxx xx xxxxxxx xxx [**XxxxxxXxxxxxxxxxxxxxxxx.XxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh967868) xxxxxxxx xxxxx xxx xxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxxxxx.
+-   Create a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
+-   If an advanced option on the socket is needed, use the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226917) property to get the [**StreamSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226893) instance associated with a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object. Set a property on the **StreamSocketControl**.
+-   If any data needs to be sent and received unencrypted, send it now.
+-   Call the [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) method to start an operation to upgrade the connection to use SSL/TLS.
+-   The SSL strength actually negotiated using [**UpgradeToSslAsync**](https://msdn.microsoft.com/library/windows/apps/br226922) can be determined by getting the [**StreamSocketinformation.ProtectionLevel**](https://msdn.microsoft.com/library/windows/apps/hh967868) property after the async operation completes successfully.
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882), xxxxx xx xxxxxxxxx x xxxxxxxxxx xx xxx xxxxxxx xxxxxxx, xxxxx xxxx xxxxxxx xxxx, xxx xxxx xxxxxxxxxx xx xxx XXX/XXX. Xx xxx xxxxxxxxxxx xx xxxxxxxxxx, xxx xxxxxxx xxxxxxxxxxxxx xxxxx xxx **XxxxxxXxxxxx** xxxxxxx xxx xxxxxx xxx xxx xxxxxxx xxxxxx xxxx xx xxxxxxxxx.
+The following example creates a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), tries to establish a connection to the network service, sends some initial data, and then negotiates to use SSL/TLS. If the negotiation is successful, all network communication using the **StreamSocket** between the client and the network server will be encrypted.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 using Windows.Networking;
 using Windows.Networking.Sockets;
@@ -353,25 +348,25 @@ using Windows::Storage::Streams;
     });
 ```
 
-### Xxxxxxxx xxxxxx XxxXxxxxx xxxxxxxxxxx
+### Creating secure WebSocket connections
 
-Xxxx xxxxxxxxxxx xxxxxx xxxxxxxxxxx, XxxXxxxxx xxxxxxxxxxx xxx xxxx xx xxxxxxxxx xxxx Xxxxxxxxx Xxxxx Xxxxxxxx (XXX)/Xxxxxx Xxxxxxx Xxxxx (XXX) xxxx xxxxx xxx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxx [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xxxxxxxx xx Xxxxxxx Y xxx x Xxxxxxx Xxxxx xxx. Xx xxxx xxxxx xxx'xx xxxx xx xxx x xxxxxx XxxXxxxxx xxxxxxxxxx. Xxxx xxxx xxxxxxxx xxx xxxxxxx xxxx xxxx xxxxxxxxxx xxxx xxxxxxx, xx xxxx xxxxxxx xxxx xxxxxx xxxxxxxxxxx XxxXxxxxx xxxxxxxxxxx.
+Like traditional socket connections, WebSocket connections can also be encrypted with Transport Layer Security (TLS)/Secure Sockets Layer (SSL) when using the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) and [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) features in Windows 8 for a Windows Store app. In most cases you'll want to use a secure WebSocket connection. This will increase the chances that your connection will succeed, as many proxies will reject unencrypted WebSocket connections.
 
-Xxx xxxxxxxx xx xxx xx xxxxxx, xx xxxxxxx xx, x xxxxxx xxxxxx xxxxxxxxxx xx x xxxxxxx xxxxxxx, xxx [Xxx xx xxxxxx XxxXxxxxx xxxxxxxxxxx xxxx XXX/XXX](https://msdn.microsoft.com/library/windows/apps/xaml/hh994399).
+For examples of how to create, or upgrade to, a secure socket connection to a network service, see [How to secure WebSocket connections with TLS/SSL](https://msdn.microsoft.com/library/windows/apps/xaml/hh994399).
 
-Xx xxxxxxxx xx XXX/XXX xxxxxxxxxx, x xxxxxx xxx xxxxxxx x **Xxx-XxxXxxxxx-Xxxxxxxx** xxxxxx xxxxx xx xxxxxxxx xxx xxxxxxx xxxxxxxxx. Xxxx xxxxx, xxxxxxxxxxx xx xxx [**XxxxxxXxxXxxxxxXxxxxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701514) xxx [**XxxxxxxXxxXxxxxxXxxxxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701358) xxxxxxxxxx, xxxxxxxx xxx xxxxxxxx xxxxxxx xx xxx xxxxxxxxxx xxx xxxxxxx xxx xxxxxx xx xxxxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxx xxx xxx xxxx xxxxx xxxxxxxxx xxxxxxxxxx. Xxxxx xxxx xxxxxxxx xxxxxxxxxxx, xx xx xxx xxxxx xx xxx xxxxxx xxxxxx xxxxxxxxx xxx xxxxxxxx xxxx xx x xxxx xxxxxx xxx xxxxxxxxxx xxx xx xxxxxx.
+In addition to TLS/SSL encryption, a server may require a **Sec-WebSocket-Protocol** header value to complete the initial handshake. This value, represented by the [**StreamWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701514) and [**MessageWebSocketInformation.Protocol**](https://msdn.microsoft.com/library/windows/apps/hh701358) properties, indicate the protocol version of the connection and enables the server to correctly interpret the opening handshake and the data being exchanged afterwards. Using this protocol information, if at any point if the server cannot interpret the incoming data in a safe manner the connection can be closed.
 
-Xx xxx xxxxxxx xxxxxxx xxxx xxx xxxxxx xxxxxx xxxx xxx xxxxxxx xxxx xxxxx, xx xxxxxxxx x xxxxx xxxx xxxxx'x xxxxx xxxx xxx xxxxxx xxxxxxx, xxx xxxxxxxx xxxxx xx xxxx xxxx xxx xxxxxx xx xxx xxxxxx xx XxxXxxxxx xxxxxxxxx xxxxx.
+If the initial request from the client either does not contain this value, or provides a value that doesn't match what the server expects, the expected value is sent from the server to the client on WebSocket handshake error.
 
-## Xxxxxxxxxxxxxx
+## Authentication
 
-Xxx xx xxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxx xxxx xxxxxxxxxx xxxx xxx xxxxxxx.
+How to provide authentication credentials when connecting over the network.
 
-### Xxxxxxxxx x xxxxxx xxxxxxxxxxx xxxx xxx XxxxxxXxxxxx xxxxx
+### Providing a client certificate with the StreamSocket class
 
-Xxx [**Xxxxxxx.Xxxxxxxxxx.XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxxxx xxxxxxxx xxxxx XXX/XXX xx xxxxxxxxxxxx xxx xxxxxx xxx xxx xx xxxxxxx xx. Xx xxxxxxx xxxxx, xxx xxx xxxx xxxxx xx xxxxxxxxxxxx xxxxxx xx xxx xxxxxx xxxxx x XXX xxxxxx xxxxxxxxxxx. Xx Xxxxxxx YY, xxx xxx xxxxxxx x xxxxxx xxxxxxxxxxx xx xxx [**XxxxxxXxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226893) xxxxxx (xxxx xxxx xx xxx xxxxxx xxx XXX xxxxxxxxx xx xxxxxxx). Xx xxx xxxxxx xxxxxxxx xxx xxxxxx xxxxxxxxxxx, Xxxxxxx xxxx xxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxx.
+The [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) class supports using SSL/TLS to authenticate the server the app is talking to. In certain cases, the app also needs to authenticate itself to the server using a TLS client certificate. In Windows 10, you can provide a client certificate on the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) object (this must be set before the TLS handshake is started). If the server requests the client certificate, Windows will respond with the certificate provided.
 
-Xxxx xx x xxxx xxxxxxx xxxxxxx xxx xx xxxxxxxxx xxxx:
+Here is a code snippet showing how to implement this:
 
 ```csharp
 var socket = new StreamSocket();
@@ -380,45 +375,49 @@ socket.Control.ClientCertificate = certificate;
 await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ```
 
-### Xxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxxx xx x xxx xxxxxxx
+### Providing authentication credentials to a web service
 
-Xxx xxxxxxxxxx XXXx xxxx xxxxxx xxxx xx xxxxxxxx xxxx xxxxxx xxx xxxxxxxx xxxx xxxxxxx xxxxx xxx xxxxxxx xx xxxxxx xxxxxxxxxx x xxxxxx xx xxx x xxxxxxx xxxxxx xxxx xxxxxx xxx xxxxx xxxxxxxxxxxxxx xxxxxxxxxxx. Xxxx xxxxxx xx xxx xxxx x [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227061) xxxxxx xxxx xxxxxxxxx x xxxx xxxx, xxxxxxxx, xxx xxx xxxxxxxx xxx xxxxx xxxxx xxxxxxxxxxx xxx xxxx. Xxx xxxxxxxxx xxxxx xxxxxxxx x xxxxxxx xx xxxxx XXXx:
+The networking APIs that enable apps to interact with secure web services each provide their own methods to either initialize a client or set a request header with server and proxy authentication credentials. Each method is set with a [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) object that indicates a user name, password, and the resource for which these credentials are used. The following table provides a mapping of these APIs:
 
-| **XxxXxxxxxx** | [**XxxxxxxXxxXxxxxxXxxxxxx.XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226848) |
+| **WebSockets** | [**MessageWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226848) |
 |-------------------------|----------------------------------------------------------------------------------------------------------|
-|  | [**XxxxxxxXxxXxxxxxXxxxxxx.XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226847) |
-|  | [**XxxxxxXxxXxxxxxXxxxxxx.XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226928) |
-|  | [**XxxxxxXxxXxxxxxXxxxxxx.XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226927) |
+|  | [**MessageWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226847) |
+|  | [**StreamWebSocketControl.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br226928) |
+|  | [**StreamWebSocketControl.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br226927) |
 |  |  |
-| **Xxxxxxxxxx Xxxxxxxx** | [**XxxxxxxxxxXxxxxxxxxx.XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701076) |
-|  | [**XxxxxxxxxxXxxxxxxxxx.XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701068) |
-|  | [**XxxxxxxxxxXxxxxxxx.XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701184) |
-|  | [**XxxxxxxxxxXxxxxxxx.XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701178) |
+| **Background Transfer** | [**BackgroundDownloader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701076) |
+|  | [**BackgroundDownloader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701068) |
+|  | [**BackgroundUploader.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/hh701184) |
+|  | [**BackgroundUploader.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/hh701178) |
 |  |  |
-| **Xxxxxxxxxxx** | [**XxxxxxxxxxxXxxxxx(XxxxxxxxXxxxxxxxxx)**](https://msdn.microsoft.com/library/windows/apps/hh702355) |
-|  | [**XxxxxxxxxxxXxxxxx.XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243461) |
-|  | [**XxxxxxxxxxxXxxxxx.XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243459) |
+| **Syndication** | [**SyndicationClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702355) |
+|  | [**SyndicationClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) |
+|  | [**SyndicationClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) |
 |  |  |
-| **XxxxXxx** | [**XxxxXxxXxxxxx(XxxxxxxxXxxxxxxxxx)**](https://msdn.microsoft.com/library/windows/apps/hh702262) |
-|  | [**XxxxXxxXxxxxx.XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243428) |
-|  | [**XxxxXxxXxxxxx.XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243423) |
+| **AtomPub** | [**AtomPubClient(PasswordCredential)**](https://msdn.microsoft.com/library/windows/apps/hh702262) |
+|  | [**AtomPubClient.ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243428) |
+|  | [**AtomPubClient.ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243423) |
  
-## Xxxxxxxx xxxxxxx xxxxxxxxxx
+## Handling network exceptions
 
-Xx xxxx xxxxx xx xxxxxxxxxxx, xx xxxxxxxxx xxxxxxxxx x xxxxxxxxxxx xxxxxxx xx xxxxxxx, xxxxxx xx xxxx xxxx xx xxx xxxxxxx. Xx xxxxxxx xxxxxxxxxxx, xxxxx xx xx xxxxxxxxxx xxxxxx xxx xxxxxxxxxx: xxx xxxxxxx xxxxxx, xxx xxx xxxxxx xx xxxxxxx xxxxxxxxxxxxxx. Xxxxxxx xxxxxxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxx xxx xxxxx xx xxxxxxxxxx xxxxxxx. Xxx xxxx xx xxx xxxx xxxx xxx xxxx xxxxxxxxxx, xxx xxxx xxxxxxxx xxxx xxxxx xxxxxxxxxxx; xxx xxxx xxx xxxx xxxx xxxxxx xxxxxxx xxxxxxxxxx xx xxxxxxxx xxxx xxxxx xxxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxxx xxxxx xxx xxxx xxx xx xx-xxxxxxxxx xx xxxxx xxxxxxxxxxxxx xxxxxxxx.
+In most areas of programming, an exception indicates a significant problem or failure, caused by some flaw in the program. In network programming, there is an additional source for exceptions: the network itself, and the nature of network communications. Network communications are inherently unreliable and prone to unexpected failure. For each of the ways your app uses networking, you must maintain some state information; and your app code must handle network exceptions by updating that state information and initiating appropriate logic for your app to re-establish or retry communication failures.
 
-Xxxx Xxxxxxxxx Xxxxxxx xxxx xxxxx xx xxxxxxxxx, xxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xx xxx xxxxx xx xxx xxxxxxxxx xx xxxxxx xxxxxxxxxx xxx xxxxxxx xxx xxxx xxxxxxxxxxx xxxxxxxxx.
+When Universal Windows apps throw an exception, your exception handler can retrieve more detailed information on the cause of the exception to better understand the failure and make appropriate decisions.
 
-Xxxx xxxxxxxx xxxxxxxxxx xxxxxxxx x xxxxxx xx xxxxxx xxxx xxxx xxxxxxxx xxxxxxxxxxx. Xx xxxxxxxxx xxxxxxxx xx xx **XXXXXXX** xxxxx xx Xxxxxxxxx Xxxxxxx xxxx. Xxx *Xxxxxxxx.x* xxxxxxx xxxx xxxxxxxx x xxxx xxxxx xxxx xx xxxxxxxx **XXXXXXX** xxxxxx xxxx xxxxxxxx xxxxxxx xxxxxx.
+Each language projection supports a method to access this more detailed information. An exception projects as an **HRESULT** value in Universal Windows apps. The *Winerror.h* include file contains a very large list of possible **HRESULT** values that includes network errors.
 
-Xxx xxxxxxxxxx XXXx xxxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xx xxx xxxxx xx xx xxxxxxxxx.
+The networking APIs support different methods for retrieving this detailed information on the cause of an exception.
 
--   Xxxx XXXx xxxxxxx x xxxxxx xxxxxx xxxx xxxxxxxx xxx **XXXXXXX** xxxxx xxxx xxx xxxxxxxxx xx xx xxxxxxxxxxx xxxxx.
--   Xxxxx XXXx xxxxxxx x xxxxxx xx xxxxxxxx xxx xxxxxx **XXXXXXX** xxxxx.
+-   Some APIs provide a helper method that converts the **HRESULT** value from the exception to an enumeration value.
+-   Other APIs provide a method to retrieve the actual **HRESULT** value.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxxxxx XXX Xxxxxxxxxxxx xx Xxxxxxx YY](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
+* [Networking API Improvements in Windows 10](http://blogs.windows.com/buildingapps/2015/07/02/networking-api-improvements-in-windows-10/)
  
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

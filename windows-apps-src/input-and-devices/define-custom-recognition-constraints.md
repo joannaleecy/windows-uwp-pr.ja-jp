@@ -1,65 +1,52 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxx xx xxxxxx xxx xxx xxxxxx xxxxxxxxxxx xxx xxxxxx xxxxxxxxxxx.
-xxxxx: Xxxxxx xxxxxx xxxxxxxxxxx xxxxxxxxxxx
-xx.xxxxxxx: YYYYYXXY-YXXY-YYXY-XYYY-XYYYXXYYXYXX
-xxxxx: Xxxxxx xxxxxx xxxxxxxxxxx xxxxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Learn how to define and use custom constraints for speech recognition.
+title: Define custom recognition constraints
+ms.assetid: 26289DE5-6AC9-42C3-A160-E522AE62D2FC
+label: Define custom recognition constraints
+template: detail.hbs
 ---
 
-# Xxxxxx xxxxxx xxxxxxxxxxx xxxxxxxxxxx
+# Define custom recognition constraints
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxx xxx xx xxxxxx xxx xxx xxxxxx xxxxxxxxxxx xxx xxxxxx xxxxxxxxxxx.
+Learn how to define and use custom constraints for speech recognition.
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxxxXxxxxxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631446)
--   [**XxxxxxXxxxxxxxxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631421)
--   [**XxxxxxXxxxxxxxxxxXxxxxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631412)
-
-
-Xxxxxx xxxxxxxxxxx xxxxxxxx xx xxxxx xxx xxxxxxxxxx xx xxxxxx x xxxxxxxxxxxx xxxxxxxxxx. Xx xx xxxxxxxxxx xx xxxxxxxxx, xxx xxxxxxxxxx xxxxxxxxx xxxxxxx xx Xxxxxxxxx Xxxxxxx xxxx xx xxxx. Xxx [Xxxxxx xxxxxxxxxxx](speech-recognition.md).
+-   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)
+-   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)
+-   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)
 
 
-## <span id="Add_constraints">
-            </span>
-            <span id="add_constraints">
-            </span>
-            <span id="ADD_CONSTRAINTS">
-            </span>Xxx xxxxxxxxxxx
+Speech recognition requires at least one constraint to define a recognizable vocabulary. If no constraint is specified, the predefined dictation grammar of Universal Windows apps is used. See [Speech recognition](speech-recognition.md).
 
 
-Xxx xxx [**XxxxxxXxxxxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653241) xxxxxxxx xx xxx xxxxxxxxxxx xx x xxxxxx xxxxxxxxxx.
-
-Xxxx, xx xxxxx xxx xxxxx xxxxx xx xxxxxx xxxxxxxxxxx xxxxxxxxxxx xxxx xxxx xxxxxx xx xxx. (Xxx xxxxx xxxxxxx xxxxxxxxxxx, xxx [Xxxxxx x xxxxxxxxxx xxx xxxx xxxxx xxxxxxxx xx Xxxxxxx](launch-a-foreground-app-with-voice-commands-in-cortana.md).)
-
--   [
-            **XxxxxxXxxxxxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631446)—X xxxxxxxxxx xxxxx xx x xxxxxxxxxx xxxxxxx (xxxxxxxxx xx xxx xxxxxx).
--   [
-            **XxxxxxXxxxxxxxxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631421)—X xxxxxxxxxx xxxxx xx x xxxx xx xxxxx xx xxxxxxx.
--   [
-            **XxxxxxXxxxxxxxxxxXxxxxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631412)—X xxxxxxxxxx xxxxxxx xx x Xxxxxx Xxxxxxxxxxx Xxxxxxx Xxxxxxxxxxxxx (XXXX) xxxx.
-
-Xxxx xxxxxx xxxxxxxxxx xxx xxxx xxx xxxxxxxxxx xxxxxxxxxx. Xxxx xxxxx xxxxxxxxxxxx xx xxxxxxxxxxx xxx xxxxx:
-
--   X xxxxxx-xxxxx xxxxxxxxxx, xx xxxxxxxxxx xxxxxxx (xxxxxxxxx xx xxx xxxxxx). Xx xxxxx xxxxxxxxxxx xxx xxxxxxx.
--   X xxxxxxxxxxx xx xxxx xxxxxxxxxxx xxx/xx xxxxxxx-xxxx xxxxxxxxxxx.
-
-**Xxxxxxxx:  **Xxxx xxx [**XxxxxxXxxxxxxxxx.XxxxxxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653240) xxxxxx xx xxxxxxx xxx xxxxxxxxxxx xxxxxx xxxxxxxx xxx xxxxxxxxxxx xxxxxxx.
-
-## <span id="Specify_a_web-search_grammar__SpeechRecognitionTopicConstraint_">
-            </span>
-            <span id="specify_a_web-search_grammar__speechrecognitiontopicconstraint_">
-            </span>
-            <span id="SPECIFY_A_WEB-SEARCH_GRAMMAR__SPEECHRECOGNITIONTOPICCONSTRAINT_">
-            </span>Xxxxxxx x xxx-xxxxxx xxxxxxx (XxxxxxXxxxxxxxxxxXxxxxXxxxxxxxxx)
+## <span id="Add_constraints"></span><span id="add_constraints"></span><span id="ADD_CONSTRAINTS"></span>Add constraints
 
 
-Xxxxx xxxxxxxxxxx (xxxxxxxxx xx xxx-xxxxxx xxxxxxx) xxxx xx xxxxx xx xxx xxxxxxxxxxx xxxxxxxxxx xx x xxxxxx xxxxxxxxxx.
+Use the [**SpeechRecognizer.Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) property to add constraints to a speech recognizer.
 
-Xxxx, xx xxx x xxx-xxxxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxxxx.
+Here, we cover the three kinds of speech recognition constraints used from within an app. (For voice command constraints, see [Launch a foreground app with voice commands in Cortana](launch-a-foreground-app-with-voice-commands-in-cortana.md).)
+
+-   [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)—A constraint based on a predefined grammar (dictation or web search).
+-   [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)—A constraint based on a list of words or phrases.
+-   [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)—A constraint defined in a Speech Recognition Grammar Specification (SRGS) file.
+
+Each speech recognizer can have one constraint collection. Only these combinations of constraints are valid:
+
+-   A single-topic constraint, or predefined grammar (dictation or web search). No other constraints are allowed.
+-   A combination of list constraints and/or grammar-file constraints.
+
+**Remember:  **Call the [**SpeechRecognizer.CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) method to compile the constraints before starting the recognition process.
+
+## <span id="Specify_a_web-search_grammar__SpeechRecognitionTopicConstraint_"></span><span id="specify_a_web-search_grammar__speechrecognitiontopicconstraint_"></span><span id="SPECIFY_A_WEB-SEARCH_GRAMMAR__SPEECHRECOGNITIONTOPICCONSTRAINT_"></span>Specify a web-search grammar (SpeechRecognitionTopicConstraint)
+
+
+Topic constraints (dictation or web-search grammar) must be added to the constraints collection of a speech recognizer.
+
+Here, we add a web-search grammar to the constraints collection.
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -91,22 +78,17 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Specify_a_programmatic_list_constraint__SpeechRecognitionListConstraint_">
-            </span>
-            <span id="specify_a_programmatic_list_constraint__speechrecognitionlistconstraint_">
-            </span>
-            <span id="SPECIFY_A_PROGRAMMATIC_LIST_CONSTRAINT__SPEECHRECOGNITIONLISTCONSTRAINT_">
-            </span>Xxxxxxx x xxxxxxxxxxxx xxxx xxxxxxxxxx (XxxxxxXxxxxxxxxxxXxxxXxxxxxxxxx)
+## <span id="Specify_a_programmatic_list_constraint__SpeechRecognitionListConstraint_"></span><span id="specify_a_programmatic_list_constraint__speechrecognitionlistconstraint_"></span><span id="SPECIFY_A_PROGRAMMATIC_LIST_CONSTRAINT__SPEECHRECOGNITIONLISTCONSTRAINT_"></span>Specify a programmatic list constraint (SpeechRecognitionListConstraint)
 
 
-Xxxx xxxxxxxxxxx xxxx xx xxxxx xx xxx xxxxxxxxxxx xxxxxxxxxx xx x xxxxxx xxxxxxxxxx.
+List constraints must be added to the constraints collection of a speech recognizer.
 
-Xxxx xxx xxxxxxxxx xxxxxx xx xxxx:
+Keep the following points in mind:
 
--   Xxx xxx xxx xxxxxxxx xxxx xxxxxxxxxxx xx x xxxxxxxxxxx xxxxxxxxxx.
--   Xxx xxx xxx xxx xxxxxxxxxx xxxx xxxxxxxxxx **XXxxxxxxx&xx;Xxxxxx&xx;** xxx xxx xxxxxx xxxxxx.
+-   You can add multiple list constraints to a constraints collection.
+-   You can use any collection that implements **IIterable&lt;String&gt;** for the string values.
 
-Xxxx, xx xxxxxxxxxxxxxxxx xxxxxxx xx xxxxx xx xxxxx xx x xxxx xxxxxxxxxx xxx xxx xx xx xxx xxxxxxxxxxx xxxxxxxxxx xx x xxxxxx xxxxxxxxxx.
+Here, we programmatically specify an array of words as a list constraint and add it to the constraints collection of a speech recognizer.
 
 ```CSharp
 private async void YesOrNo_Click(object sender, RoutedEventArgs e)
@@ -136,37 +118,32 @@ private async void YesOrNo_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Specify_an_SRGS_grammar_constraint__SpeechRecognitionGrammarFileConstraint_">
-            </span>
-            <span id="specify_an_srgs_grammar_constraint__speechrecognitiongrammarfileconstraint_">
-            </span>
-            <span id="SPECIFY_AN_SRGS_GRAMMAR_CONSTRAINT__SPEECHRECOGNITIONGRAMMARFILECONSTRAINT_">
-            </span>Xxxxxxx xx XXXX xxxxxxx xxxxxxxxxx (XxxxxxXxxxxxxxxxxXxxxxxxXxxxXxxxxxxxxx)
+## <span id="Specify_an_SRGS_grammar_constraint__SpeechRecognitionGrammarFileConstraint_"></span><span id="specify_an_srgs_grammar_constraint__speechrecognitiongrammarfileconstraint_"></span><span id="SPECIFY_AN_SRGS_GRAMMAR_CONSTRAINT__SPEECHRECOGNITIONGRAMMARFILECONSTRAINT_"></span>Specify an SRGS grammar constraint (SpeechRecognitionGrammarFileConstraint)
 
 
-XXXX xxxxxxx xxxxx xxxx xx xxxxx xx xxx xxxxxxxxxxx xxxxxxxxxx xx x xxxxxx xxxxxxxxxx.
+SRGS grammar files must be added to the constraints collection of a speech recognizer.
 
-Xxx XXXX Xxxxxxx Y.Y xx xxx xxxxxxxx-xxxxxxxx xxxxxx xxxxxxxx xxx xxxxxxxx XXX-xxxxxx xxxxxxxx xxx xxxxxx xxxxxxxxxxx. Xxxxxxxx Xxxxxxxxx Xxxxxxx xxxx xxxxxxx xxxxxxxxxxxx xx xxxxx XXXX xxx xxxxxxxx xxxxxx-xxxxxxxxxxx xxxxxxxx, xxx xxxxx xxxx xxxx xxxxx XXXX xx xxxxxx xxxxxxxx xxxxxxxx xxx xxxx xxxxxxx, xxxxxxxxxxxx xxx xxxx xxxxxxxx xxxxxx xxxxxxxxxxx xxxxxxxxx.
+The SRGS Version 1.0 is the industry-standard markup language for creating XML-format grammars for speech recognition. Although Universal Windows apps provide alternatives to using SRGS for creating speech-recognition grammars, you might find that using SRGS to create grammars produces the best results, particularly for more involved speech recognition scenarios.
 
-XXXX xxxxxxxx xxxxxxx x xxxx xxx xx xxxxxxxx xx xxxx xxx xxxxxxxxx xxxxxxx xxxxx xxxxxxxxxxx xxx xxxx xxxx. Xxx xxxxxxx, xxxx XXXX xxxxxxxx xxx xxx:
+SRGS grammars provide a full set of features to help you architect complex voice interaction for your apps. For example, with SRGS grammars you can:
 
--   Xxxxxxx xxx xxxxx xx xxxxx xxxxx xxx xxxxxxx xxxx xx xxxxxx xx xx xxxxxxxxxx.
--   Xxxxxxx xxxxx xxxx xxxxxxxx xxxxx xxx xxxxxxx xx xx xxxxxxxxxx.
--   Xxxx xx xxxxx xxxxxxxx.
--   Xxxxxx x xxxxxx xx xx xxxxxxxxxxx xxxx xx xxxxxx xx xxxxxxxx xx xxxxxxxx xxx xxxxxxxxxx xxxx xx xxxx xx xxxx xx xxxxx xxxxxx xxxxx.
--   Xxxxxxx xxxxxxxx xxxxx xx xxxxxxx.
--   Xxx xxxxxxx xxxxx xxxx xxxx xxxxxx xxx xxxxxxxxxxx xx xxxxxxxxxxxxx xxxxx, xxxx xx xxxxxx xxxxxx xxxx xxxxx'x xxxxx xxx xxxxxxx, xx xxxxxxxxxx xxxxx.
--   Xxx xxxxxxxxx xx xxxxxx xxxx xxxxxx xxxxxxxxxxx xxxxx xx xxxx xxx.
--   Xxxxxxx xxxxxxxxxxxxxx, xxxxxx xxxxxx xx x xxxxxxx xx xxx x xxxx xx x xxxxxxx.
+-   Specify the order in which words and phrases must be spoken to be recognized.
+-   Combine words from multiple lists and phrases to be recognized.
+-   Link to other grammars.
+-   Assign a weight to an alternative word or phrase to increase or decrease the likelihood that it will be used to match speech input.
+-   Include optional words or phrases.
+-   Use special rules that help filter out unspecified or unanticipated input, such as random speech that doesn't match the grammar, or background noise.
+-   Use semantics to define what speech recognition means to your app.
+-   Specify pronunciations, either inline in a grammar or via a link to a lexicon.
 
-Xxx xxxx xxxx xxxxx XXXX xxxxxxxx xxx xxxxxxxxxx, xxx xxx [XXXX Xxxxxxx XXX Xxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=269886) . Xx xxx xxxxxxx xxxxxxxx xx XXXX xxxxxxx, xxx [Xxx xx Xxxxxx x Xxxxx XXX Xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=269887).
+For more info about SRGS elements and attributes, see the [SRGS Grammar XML Reference](http://go.microsoft.com/fwlink/p/?LinkID=269886) . To get started creating an SRGS grammar, see [How to Create a Basic XML Grammar](http://go.microsoft.com/fwlink/p/?LinkID=269887).
 
-Xxxx xxx xxxxxxxxx xxxxxx xx xxxx:
+Keep the following points in mind:
 
--   Xxx xxx xxx xxxxxxxx xxxxxxx-xxxx xxxxxxxxxxx xx x xxxxxxxxxxx xxxxxxxxxx.
--   Xxx xxx .xxxxx xxxx xxxxxxxxx xxx XXX-xxxxx xxxxxxx xxxxxxxxx xxxx xxxxxxx xx XXXX xxxxx.
+-   You can add multiple grammar-file constraints to a constraints collection.
+-   Use the .grxml file extension for XML-based grammar documents that conform to SRGS rules.
 
-Xxxx xxxxxxx xxxx xx XXXX xxxxxxx xxxxxxx xx x xxxx xxxxx xxxx.xxxxx (xxxxxxxxx xxxxx). Xx xxx xxxx xxxxxxxxxx, xxx **Xxxxxxx Xxxxxx** xx xxx xx **Xxxxxxx** xxxx **Xxxx xx Xxxxxx Xxxxxxxxx** xxx xx **Xxxx xxxxxx**:
+This example uses an SRGS grammar defined in a file named srgs.grxml (described later). In the file properties, the **Package Action** is set to **Content** with **Copy to Output Directory** set to **Copy always**:
 
 ```CSharp
 private async void Colors_Click(object sender, RoutedEventArgs e)
@@ -193,9 +170,9 @@ private async void Colors_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Xxxx XXXX xxxx (xxxx.xxxxx) xxxxxxxx xxxxxxxx xxxxxxxxxxxxxx xxxx. Xxxxx xxxx xxxxxxx x xxxxxxxxx xxx xxxxxxxxx xxxxxxx xxxxx xxxx xx xxxx xxx. Xxxxxxxx xxxx xxxxxxx xx xxx Xxxxx Xxxx Xxx Xxxxxxxxxx (XYX) [Xxxxxxxx Xxxxxxxxxxxxxx xxx Xxxxxx Xxxxxxxxxxx (XXXX) Y.Y](http://go.microsoft.com/fwlink/p/?LinkID=201765) xxxxxxxxxxxxx.
+This SRGS file (srgs.grxml) includes semantic interpretation tags. These tags provide a mechanism for returning grammar match data to your app. Grammars must conform to the World Wide Web Consortium (W3C) [Semantic Interpretation for Speech Recognition (SISR) 1.0](http://go.microsoft.com/fwlink/p/?LinkID=201765) specification.
 
-Xxxx, xx xxxxxx xxx xxxxxxxx xx "xxx" xxx "xx".
+Here, we listen for variants of "yes" and "no".
 
 ```CSharp
 <grammar xml:lang="en-US" 
@@ -232,37 +209,35 @@ Xxxx, xx xxxxxx xxx xxxxxxxx xx "xxx" xxx "xx".
 </grammar>
 ```
 
-## <span id="Manage_constraints">
-            </span>
-            <span id="manage_constraints">
-            </span>
-            <span id="MANAGE_CONSTRAINTS">
-            </span>Xxxxxx xxxxxxxxxxx
+## <span id="Manage_constraints"></span><span id="manage_constraints"></span><span id="MANAGE_CONSTRAINTS"></span>Manage constraints
 
 
-Xxxxx x xxxxxxxxxx xxxxxxxxxx xx xxxxxx xxx xxxxxxxxxxx, xxxx xxx xxx xxxxxx xxxxx xxxxxxxxxxx xxx xxxxxxx xxx xxxxxxxxxxx xxxxxxxxxx xx xxxxxxx xxx [**XxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631402) xxxxxxxx xx x xxxxxxxxxx xx **xxxx** xx **xxxxx**. Xxx xxxxxxx xxxxxxx xx **xxxx**.
+After a constraint collection is loaded for recognition, your app can manage which constraints are enabled for recognition operations by setting the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) property of a constraint to **true** or **false**. The default setting is **true**.
 
-Xx'x xxxxxxx xxxx xxxxxxxxx xx xxxx xxxxxxxxxxx xxxx, xxxxxxxx xxx xxxxxxxxx xxxx xx xxxxxx, xxxxxx xxxx xx xxxx, xxxxxx, xxx xxxxxxx xxxxxxxxxxx xxx xxxx xxxxxxxxxxx xxxxxxxxx. Xxx xxx [**XxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631402) xxxxxxxx, xx xxxxxxxx.
+It's usually more efficient to load constraints once, enabling and disabling them as needed, rather than to load, unload, and compile constraints for each recognition operation. Use the [**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn631402) property, as required.
 
-Xxxxxxxxxxx xxx xxxxxx xx xxxxxxxxxxx xxxxxx xx xxxxx xxx xxxxxx xx xxxx xxxx xxx xxxxxx xxxxxxxxxx xxxxx xx xxxxxx xxx xxxxx xxxxxxx xxx xxxxxx xxxxx. Xxxx xxx xxxxxxx xxxx xxx xxxxxxxxxxx xxx xxx xxxxxxxx xx xxxxxx xxxxxxxxxxx.
+Restricting the number of constraints serves to limit the amount of data that the speech recognizer needs to search and match against the speech input. This can improve both the performance and the accuracy of speech recognition.
 
-Xxxxxx xxxxx xxxxxxxxxxx xxx xxxxxxx xxxxx xx xxx xxxxxxx xxxx xxxx xxx xxx xxxxxx xx xxx xxxxxxx xx xxx xxxxxxx xxxxxxxxxxx xxxxxxxxx. Xxx xxxxxxx, xx xxx xxxxxxx xxx xxxxxxx xx xx xxxxxxx x xxxxx, xxx xxxxxxxx xxx'x xxxx xx xxxxxx x xxxxxxxxxx xxxx xxxxxxxxxx xxx xxxxx xx xxxxxxx.
+Decide which constraints are enabled based on the phrases that your app can expect in the context of the current recognition operation. For example, if the current app context is to display a color, you probably don't need to enable a constraint that recognizes the names of animals.
 
-Xx xxxxxx xxx xxxx xxx xxxx xxx xx xxxxxx, xxx xxx [**XxxxxxXxxxxxxxxxXXXxxxxxx.XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653235) xxx [**XxxxxxXxxxxxxxxxXXXxxxxxx.XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn653236) xxxxxxxxxx, xxxxx xxx xxx xx xxxxx xx xxx [**XxxxxxXxxxxxxxxx.XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653254) xxxxxxxx. Xxxxxxxxx xxxxx xxx xxxx xxxx xxx xxx xxxxxx xxx xxxxxxxxxxx xxxxxxxxx xxxxxxxxx xxx xxxxxxxxxx xxxx xxxx xxxx xxxxx x xxxxxx xxxx xxx xx xxxxxxx xx xx xxxxxx xxxxxxxxxx.
+To prompt the user for what can be spoken, use the [**SpeechRecognizerUIOptions.AudiblePrompt**](https://msdn.microsoft.com/library/windows/apps/dn653235) and [**SpeechRecognizerUIOptions.ExampleText**](https://msdn.microsoft.com/library/windows/apps/dn653236) properties, which are set by means of the [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) property. Preparing users for what they can say during the recognition operation increases the likelihood that they will speak a phrase that can be matched to an active constraint.
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>Related articles
 
 
-* [Xxxxxx xxxxxxxxxxxx](speech-interactions.md)
+* [Speech interactions](speech-interactions.md)
 
-**Xxxxxxx**
-* [Xxxxxx xxxxxxxxxxx xxx xxxxxx xxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+**Samples**
+* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,53 +1,53 @@
 ---
-xx.xxxxxxx: YYYYYXYX-XXYY-YXYY-XXYY-YYYYYYYYYYYY
-xxxxx: Xxxxxxxxx xxx xxxxx xxxxxxx XX
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxxxxxx xxx xxxxx xxxxxxx xxx xxxxxxxx xx xxx xxxxx xxxxxxx XX.
+ms.assetid: 88132B6F-FB50-4B03-BC21-233988746230
+title: Customize the print preview UI
+description: This section describes how to customize the print options and settings in the print preview UI.
 ---
-# Xxxxxxxxx xxx xxxxx xxxxxxx XX
+# Customize the print preview UI
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Xxxxxxxxx XXXx **
+** Important APIs **
 
--   [**Xxxxxxx.Xxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226489)
--   [**Xxxxxxx.XX.Xxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243325)
--   [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226426)
+-   [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489)
+-   [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325)
+-   [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426)
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxxxxxx xxx xxxxx xxxxxxx xxx xxxxxxxx xx xxx xxxxx xxxxxxx XX. Xxx xxxx xxxx xxxxx xxxxxxxx, xxx [Xxxxx xxxx xxxx xxx](print-from-your-app.md).
+This section describes how to customize the print options and settings in the print preview UI. For more info about printing, see [Print from your app](print-from-your-app.md).
 
-**Xxx**  Xxxx xx xxx xxxxxxxx xx xxxx xxxxx xxx xxxxx xx xxx xxxxx xxxxxx. Xx xxx xxx xxxx xxxx, xxxxxxxx xxx [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619984) xxxx xxx [Xxxxxxx-xxxxxxxxx-xxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=619979) xx XxxXxx.
-
- 
-
-## Xxxxxxxxx xxxxx xxxxxxx
-
-Xx xxxxxxx, xxx xxxxx xxxxxxx XX xxxxx xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR226478), [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226479), xxx [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226486) xxxxx xxxxxxx. Xx xxxxxxxx xx xxxxx, xxxxx xxx xxxxxxx xxxxx xxxxxx xxxxxxx xxxxxxx xxxx xxx xxx xxx xx xxx xxxxx xxxxxxx XX:
-
--   [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226476)
--   [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226477)
--   [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226480)
--   [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226481)
--   [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/BR226482)
--   [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR226483)
--   [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR226484)
--   [**XXx**](https://msdn.microsoft.com/library/windows/apps/BR226485)
--   [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226487)
--   [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226488)
-
-Xxxxx xxxxxxx xxx xxxxxxx xx xxx [**XxxxxxxxXxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226475) xxxxx. Xxx xxx xxx xx xx xxxxxx xxxxxxx xxxx xxx xxxx xx xxxxxxx xxxxxxxxx xx xxx xxxxx xxxxxxx XX. Xxx xxx xxxx xxxxxx xxx xxxxx xx xxxxx xxxx xxxxxx, xxx xxx xxx xxxxxxx xxxxxxxx xxxx xxx xxxxx xx xxx xxxx.
-
-Xxxxxxx, xxx xxxxxxxxxxxxx xxxx xxx xxxx xx xxxxx xxxx xxxxxx xxxxxx xxxx xxx xxxxx xxxxxxx XX. Xxx xxxx xxx xxxxxx xxxxxx xxx xx xxx xxxxxxx xxxx xxx xxxxxxx xxxxxxxx xx xxxxxxx **Xxxx xxxxxxxx** xx xxx xxxxx xxxxxxx XX.
-
-**Xxxx**  Xxxxxxxx xxxx xxx xxx xxxxxxx xxx xxxxx xxxxxxx xx xx xxxxxxxxx, xxxx xxxxx xxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxx xxxxx xx xxx xxxxx xxxxxxx XX. Xxx xxxxx XX xxx'x xxxx xxxxxxx xxxx xxx xxxxxxxx xxxxxxx xxxxx'x xxxxxxx.
+**Tip**  Most of the examples in this topic are based on the print sample. To see the full code, download the [Universal Windows Platform (UWP) print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984) from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
  
 
-### Xxxxxx xxx xxxxxxx xx xxxxxxx
+## Customize print options
 
-Xxxx xxx xxx'x xxxxxx xx xxxxxx, xx xxxxxxxxx xxx xxx Xxxxx xxxxxxxx. Xxxx xx xxxx xxxxxxxxxxxx xxxxxxxx xxxxxxxx xxx [**XxxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206597) xxxxx xxxxxxx. Xxx xxxx xx xxxxxxxxx xxx xxxxxxx xxxxxxxxx xx xxx xxxxx xxxxxxx XX xx xxxxx xx xxx **XxxxxXxxxXxxxxxxxx** xxxxx xxxxxxx.
+By default, the print preview UI shows the [**ColorMode**](https://msdn.microsoft.com/library/windows/apps/BR226478), [**Copies**](https://msdn.microsoft.com/library/windows/apps/BR226479), and [**Orientation**](https://msdn.microsoft.com/library/windows/apps/BR226486) print options. In addition to those, there are several other common printer options that you can add to the print preview UI:
 
-Xxxxxx xxx [**XxxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206597) xxxxx xxxxxxx xx xxxxxxx xxx [**xxxxxXxxx.xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226469) xxxxxxxxxxxx xxxx xxxxxxxxx xxx xxxxx xxxxxxxx xxxx xxx xxxx xx xxxxxxx xx xxx xxxxx xxxxxxx XX.Xxx xxx xxxxxx xx xxxx xxx xxx xxxxx xxx xxxx xx xxxx x xxxxxxxxxx xxxx xx xxxxx xxxxxxx, xxxxxxxx xxx **XxxxxXxxxXxxxxxxxx** xxxxx xxxxxxx xx xxx xxxxxx xxxxx xx xxxxxxx xxxx xxxx xxxxxxxxx xxx xxxxxxx xx xxxxxxx xxxx xxx xxxxxx xx xxxxxxx.
+-   [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR226476)
+-   [**Collation**](https://msdn.microsoft.com/library/windows/apps/BR226477)
+-   [**Duplex**](https://msdn.microsoft.com/library/windows/apps/BR226480)
+-   [**HolePunch**](https://msdn.microsoft.com/library/windows/apps/BR226481)
+-   [**InputBin**](https://msdn.microsoft.com/library/windows/apps/BR226482)
+-   [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483)
+-   [**MediaType**](https://msdn.microsoft.com/library/windows/apps/BR226484)
+-   [**NUp**](https://msdn.microsoft.com/library/windows/apps/BR226485)
+-   [**PrintQuality**](https://msdn.microsoft.com/library/windows/apps/BR226487)
+-   [**Staple**](https://msdn.microsoft.com/library/windows/apps/BR226488)
+
+These options are defined in the [**StandardPrintTaskOptions**](https://msdn.microsoft.com/library/windows/apps/BR226475) class. You can add to or remove options from the list of options displayed in the print preview UI. You can also change the order in which they appear, and set the default settings that are shown to the user.
+
+However, the modifications that you make by using this method affect only the print preview UI. The user can always access all of the options that the printer supports by tapping **More settings** in the print preview UI.
+
+**Note**  Although your app can specify any print options to be displayed, only those that are supported by the selected printer are shown in the print preview UI. The print UI won't show options that the selected printer doesn't support.
+
+ 
+
+### Define the options to display
+
+When the app's screen is loaded, it registers for the Print contract. Part of that registration includes defining the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event handler. The code to customize the options displayed in the print preview UI is added to the **PrintTaskRequested** event handler.
+
+Modify the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event handler to include the [**printTask.options**](https://msdn.microsoft.com/library/windows/apps/BR226469) instructions that configure the print settings that you want to display in the print preview UI.For the screen in your app for which you want to show a customized list of print options, override the **PrintTaskRequested** event handler in the helper class to include code that specifies the options to display when the screen is printed.
 
 ``` csharp
 protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs e)
@@ -87,22 +87,22 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-**Xxxxxxxxx**  Xxxxxxx [**xxxxxxxxxXxxxxxx.xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226453)() xxxxxxx xxx xx xxx xxxxx xxxxxxx xxxx xxx xxxxx xxxxxxx XX, xxxxxxxxx xxx **Xxxx xxxxxxxx** xxxx. Xx xxxx xx xxxxxx xxx xxxxxxx xxxx xxx xxxx xx xxxx xx xxx xxxxx xxxxxxx XX.
+**Important**  Calling [**displayedOptions.clear**](https://msdn.microsoft.com/library/windows/apps/BR226453)() removes all of the print options from the print preview UI, including the **More settings** link. Be sure to append the options that you want to show on the print preview UI.
 
-### Xxxxxxx xxxxxxx xxxxxxx
+### Specify default options
 
-Xxx xxx xxxx xxx xxx xxxxxxx xxxxxx xx xxx xxxxxxx xx xxx xxxxx xxxxxxx XX. Xxx xxxxxxxxx xxxx xx xxxx, xxxx xxx xxxx xxxxxxx, xxxx xxx xxxxxxx xxxxx xx xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR226483) xxxxxx.
+You can also set the default values of the options in the print preview UI. The following line of code, from the last example, sets the default value of the [**MediaSize**](https://msdn.microsoft.com/library/windows/apps/BR226483) option.
 
 ``` csharp
          // Preset the default value of the printer option
          printTask.Options.MediaSize = PrintMediaSize.NorthAmericaLegal;
 ```         
 
-## Xxx xxx xxxxx xxxxxxx
+## Add new print options
 
-Xxxx xxxxxxx xxxxx xxx xx xxxxxx x xxx xxxxx xxxxxx, xxxxxx x xxxx xx xxxxxx xxxx xxx xxxxxx xxxxxxxx, xxx xxxx xxx xxx xxxxxx xx xxx xxxxx xxxxxxx. Xx xx xxx xxxxxxxx xxxxxxx, xxx xxx xxx xxxxx xxxxxx xx xxx [**XxxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206597) xxxxx xxxxxxx.
+This section shows how to create a new print option, define a list of values that the option supports, and then add the option to the print preview. As in the previous section, add the new print option in the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event handler.
 
-Xxxxx, xxx x [**XxxxxXxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701256) xxxxxx. Xxxx xx xxxx xx xxx xxx xxx xxxxx xxxxxx xx xxx xxxxx xxxxxxx XX. Xxxx xxxxx xxx xxxx xx xxxxxxx xxxx xxx xxxxx xx xxx xxxxx xxxxxxx XX xxx xxx xxx xxxxxxx xxxx xxx xxxx xx xxxxxxx xxxx xxx xxxx xxxxx xx xxxxx xxxx xxx xxx. Xxxxx xxxx, xxxxxx xxx xxx xxxxx xxxxxx xxx xxxxxxxxxx xxx xxxx xx xxxxxx xxxxxx. Xxxxxxx, xxx xxx xxx xxxxxx xxx xxxxxx x xxxxxxx xxx xxx **XxxxxxXxxxxxx** xxxxx.
+First, get a [**PrintTaskOptionDetails**](https://msdn.microsoft.com/library/windows/apps/Hh701256) object. This is used to add the new print option to the print preview UI. Then clear the list of options that are shown in the print preview UI and add the options that you want to display when the user wants to print from the app. After that, create the new print option and initialize the list of option values. Finally, add the new option and assign a handler for the **OptionChanged** event.
 
 ``` csharp
 protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs e)
@@ -150,9 +150,9 @@ protected override void PrintTaskRequested(PrintManager sender, PrintTaskRequest
 }
 ```
 
-Xxx xxxxxxx xxxxxx xx xxx xxxxx xxxxxxx XX xx xxx xxxx xxxxx xxxx xxx xxxxxxxx, xxxx xxx xxxxx xxxxxx xxxxx xx xxx xxx xx xxx xxxxxx. Xx xxxx xxxxxxx, xxx xxxxxx xxxxxx xx xxxxxxxx xxxx xx xxxx xx xxxxxxx xx xxx xxxxxx xx xxx xxxx xx xxxxxxx. Xxxxxxx, xxx xxxxx xxx xx xxxxxxxx xx xxx xxxx; xxxxxx xxxxx xxxxxxx xxx'x xxxx xx xx xxxxx xxxx.
+The options appear in the print preview UI in the same order they are appended, with the first option shown at the top of the window. In this example, the custom option is appended last so that it appears at the bottom of the list of options. However, you could put it anywhere in the list; custom print options don't need to be added last.
 
-Xxxx xxx xxxx xxxxxxx xxx xxxxxxxx xxxxxx xx xxxx xxxxxx xxxxxx, xxxxxx xxx xxxxx xxxxxxx xxxxx. Xxxx xxx [**XxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh702146) xxxxxx xx xxxxxx xxx xxxxx xx xxx xxxxx xxxxxxx XX, xx xxxxx xxxxx.
+When the user changes the selected option in your custom option, update the print preview image. Call the [**InvalidatePreview**](https://msdn.microsoft.com/library/windows/apps/Hh702146) method to redraw the image in the print preview UI, as shown below.
 
 ``` csharp
 async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, PrintTaskOptionChangedEventArgs args)
@@ -174,10 +174,14 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 }
 ```
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxx xxxxxxxxxx xxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Xxxxx YYYY xxxxx: Xxxxxxxxxx xxxx xxxx xxxxx xx Xxxxxxx YY](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [XXX xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [Design guidelines for printing](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

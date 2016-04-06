@@ -1,41 +1,41 @@
 ---
-xxxxx: XXXX-xx-XXXX xxxxxxxxx
-xxxxxxxxxxx: Xxx xxxx xxxx XxxxXX Xxxxxx Xxxxxxxx (XXXX) xxxx xx Xxxxxxxxx Xxxx Xxxxx Xxxxxx Xxxxxxxx (XXXX) xxxx xxxx xxx xxxx xxxx xxxxxxxx xxxxxxxxxxxx xxxx XxxxXX XX Y.Y xx XxxxxxYX YY xx xxxxxx x xxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX).
-xx.xxxxxxx: YYYxYYxY-xxYx-YYxY-YYxY-xYYxYxYxYYYY
+title: GLSL と HLSL の対応を示すリファレンス
+description: グラフィックス アーキテクチャを OpenGL ES 2.0 から Direct3D 11 に移植してユニバーサル Windows プラットフォーム (UWP) 向けのゲームを作成する際は、OpenGL シェーダー言語 (GLSL) コードを Microsoft 上位レベル シェーダー言語 (HLSL) コードに移植します。
+ms.assetid: 979d19f6-ef0c-64e4-89c2-a31e1c7b7692
 ---
 
-# XXXX-xx-XXXX xxxxxxxxx
+# GLSL と HLSL の対応を示すリファレンス
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-Xxx xxxx xxxx XxxxXX Xxxxxx Xxxxxxxx (XXXX) xxxx xx Xxxxxxxxx Xxxx Xxxxx Xxxxxx Xxxxxxxx (XXXX) xxxx xxxx xxx [xxxx xxxx xxxxxxxx xxxxxxxxxxxx xxxx XxxxXX XX Y.Y xx XxxxxxYX YY](port-from-opengl-es-2-0-to-directx-11-1.md) xx xxxxxx x xxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX). Xxx XXXX xxxx xx xxxxxxxx xx xxxxxx xx xxxxxxxxxx xxxx XxxxXX XX Y.Y; xxx XXXX xx xxxxxxxxxx xxxx XxxxxxYX YY. Xxx xxxx xxxxx xxx xxxxxxxxxxx xxxxxxx XxxxxxYX YY xxx xxxxxxxx xxxxxxxx xx XxxxxxYX, xxx [Xxxxxxx xxxxxxx](feature-mapping.md).
+[グラフィックス アーキテクチャを OpenGL ES 2.0 から Direct3D 11 に移植して](port-from-opengl-es-2-0-to-directx-11-1.md)ユニバーサル Windows プラットフォーム (UWP) 向けのゲームを作成する際は、OpenGL シェーダー言語 (GLSL) コードを Microsoft 上位レベル シェーダー言語 (HLSL) コードに移植します。 ここで参照される GLSL は OpenGL ES 2.0 とは互換性がありません。HLSL は Direct3D 11 と互換性があります。 Direct3D 11 と以前のバージョンの Direct3D の違いについては、「[機能のマッピング](feature-mapping.md)」をご覧ください。
 
--   [Xxxxxxxxx XxxxXX XX Y.Y xxxx XxxxxxYX YY](#compare)
--   [Xxxxxxx XXXX xxxxxxxxx xx XXXX](#variables)
--   [Xxxxxxx XXXX xxxxx xx XXXX](#types)
--   [Xxxxxxx XXXX xxx-xxxxxxx xxxxxx xxxxxxxxx xx XXXX](#porting_glsl_pre-defined_global_variables_to_hlsl)
--   [Xxxxxxxx xx xxxxxxx XXXX xxxxxxxxx xx XXXX](#example1)
-    -   [Xxxxxxx, xxxxxxxxx, xxx xxxxxxx xx XXXX](#uniform___attribute__and_varying_in_glsl)
-    -   [Xxxxxxxx xxxxxxx xxx xxxx xxxxxxxxx xx XXXX](#constant_buffers_and_data_transfers_in_hlsl)
--   [Xxxxxxxx xx xxxxxxx XxxxXX xxxxxxxxx xxxx xx XxxxxxYX](#example2)
--   [Xxxxxxx xxxxxx](#related_topics)
+-   [OpenGL ES 2.0 と Direct3D 11 の比較](#compare)
+-   [HLSL への GLSL 変数の移植](#variables)
+-   [HLSL への GLSL の型の移植](#types)
+-   [HLSL への GLSL の定義済みグローバル変数の移植](#porting_glsl_pre-defined_global_variables_to_hlsl)
+-   [HLSL への GLSL 変数の移植の例](#example1)
+    -   [GLSL での uniform、attribute、および varying](#uniform___attribute__and_varying_in_glsl)
+    -   [HLSL での定数バッファーとデータ転送](#constant_buffers_and_data_transfers_in_hlsl)
+-   [Direct3D への OpenGL のレンダリング コードの移植例](#example2)
+-   [関連トピック](#related_topics)
 
-## Xxxxxxxxx XxxxXX XX Y.Y xxxx XxxxxxYX YY
+## OpenGL ES 2.0 と Direct3D 11 の比較
 
 
-XxxxXX XX Y.Y xxx XxxxxxYX YY xxxx xxxx xxxxxxxxxxxx. Xxxx xxxx xxxx xxxxxxx xxxxxxxxx xxxxxxxxx xxx xxxxxxxx xxxxxxxx. Xxx XxxxxxYX YY xx x xxxxxxxxx xxxxxxxxxxxxxx xxx XXX, xxx x xxxxxxxxxxxxx; XxxxXX XX Y.Y xx x xxxxxxxxx xxxxxxxxxxxxx xxx XXX, xxx xx xxxxxxxxxxxxxx. XxxxxxYX YY xxx XxxxXX XX Y.Y xxxxxxxxx xxxxxx xx xxxxx xxxx:
+OpenGL ES 2.0 と Direct3D 11 には多くの類似点があります。 どちらも、類似したレンダリング パイプラインとグラフィックス機能があります。 ただし、Direct3D 11 はレンダリングの実装と API であり、仕様ではありません。OpenGL ES 2.0 はレンダリングの仕様と API であり、実装ではありません。 Direct3D 11 と OpenGL ES 2.0 は通常、次の点で異なります。
 
-| XxxxXX XX Y.Y                                                                                         | XxxxxxYX YY                                                                                                            |
+| OpenGL ES 2.0                                                                                         | Direct3D 11                                                                                                            |
 |-------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxx xxxxxxxxxxxxx xxxx xxxxxx xxxxxxxx xxxxxxxxxxxxxxx             | Xxxxxxxxx xxxxxxxxxxxxxx xx xxxxxxxx xxxxxxxxxxx xxx xxxxxxxxxxxxx xx Xxxxxxx xxxxxxxxx                                |
-| Xxxxxxxxxx xxx xxxxxxxx xxxxxxxxx, xxxxxxx xxxxxxx xxxx xxxxxxxxx                                     | Xxxxxx xxxxxx xx xxxxxxxx xxxxxx; xxx xxx xxxxxx xxxxxxxxx xxx xxxxxxxxxx                                              |
-| Xxxxxxxx xxxxxx-xxxxx xxxxxxx xxx xxxxx-xxxxx xxxxxxxxx (xxx xxxxxxx, Xxxxxx XxxxxxXxxxx Xxxxx (XXX)) | Xxxxxx-xxxxx xxxxxxx, xxxx XxxxxxYX, xxx xxxxx xxxx xxxxx xxxxxxx xx xxxxxxxx xxxxxxxxxxx xxx Xxxxxxx xxxx             |
-| Xxxxxxxx xxxxxxx xxxxxxxxxxxxx xxx xxxxxxxxxx                                                         | Xxxxxxxxx xxxx xxxxxxxx xxxxxxxx xx xxx XXX xx x xxxxxxx xxx xx xxxx xxxx'x xxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx xxxxxx |
+| ハードウェアやオペレーティング システムにとらわれない仕様とベンダーが提供する実装             | Windows プラットフォームのハードウェア アブストラクションと認定の Microsoft 実装                                |
+| 多様なハードウェア向けに抽象化、ランタイムがほとんどのリソースを管理                                     | ハードウェアのレイアウトに直接アクセス。アプリがリソースと処理を管理できる                                              |
+| サード パーティのライブラリ (たとえば、Simple DirectMedia Layer (SDL)) によって高レベルのモジュールを提供 | Direct2D などの高レベルのモジュールは下位モジュールに基づいて構築されるため、Windows アプリの開発が簡略化             |
+| ハードウェア ベンダーは拡張子によって区別                                                         | Microsoft は、汎用的な方法で API にオプション機能を追加するため、特定のハードウェア ベンダーに限定されない |
 
  
 
-XXXX xxx XXXX xxxxxxxxx xxxxxx xx xxxxx xxxx:
+GLSL と HLSL は一般に次の点で異なります。
 
 <table>
 <colgroup>
@@ -44,76 +44,73 @@ XXXX xxx XXXX xxxxxxxxx xxxxxx xx xxxxx xxxx:
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">XXXX</th>
-<th align="left">XXXX</th>
+<th align="left">GLSL</th>
+<th align="left">HLSL</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Xxxxxxxxxx, xxxx-xxxxxxx (X xxxx)</td>
-<td align="left">Xxxxxx xxxxxxxx, xxxx-xxxxxxx (X++ xxxx)</td>
+<td align="left">手続き型、ステップ中心 (C など)</td>
+<td align="left">オブジェクト指向、データ中心 (C++ など)</td>
 </tr>
 <tr class="even">
-<td align="left">Xxxxxx xxxxxxxxxxx xxxxxxxxxx xxxx xxx xxxxxxxx XXX</td>
-<td align="left">Xxx XXXX xxxxxxxx [compiles the shader](https://msdn.microsoft.com/library/windows/desktop/bb509633) xx xx xxxxxxxxxxxx xxxxxx xxxxxxxxxxxxxx xxxxxx XxxxxxYX xxxxxx xx xx xxx xxxxxx.
+<td align="left">グラフィックス API に統合されたシェーダー コンパイル</td>
+<td align="left">HLSL コンパイラが中間バイナリ表現に[シェーダーをコンパイルしcompiles the shader](https://msdn.microsoft.com/library/windows/desktop/bb509633)、その後で Direct3D がそれをドライバーに渡します。
 <div class="alert">
-<strong>Xxxx</strong>  Xxxx xxxxxx xxxxxxxxxxxxxx xx xxxxxxxx xxxxxxxxxxx. Xx'x xxxxxxxxx xxxxxxxx xx xxx xxxxx xxxx, xxxxxx xxxx xx xxx xxx xxxx.
+<strong>注</strong>  このバイナリ表現はハードウェアに依存していません。 通常はアプリの実行時ではなくアプリのビルド時にコンパイルされます。
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left">[
-            Variable](#variables) xxxxxxx xxxxxxxxx</td>
-<td align="left">Xxxxxxxx xxxxxxx xxx xxxx xxxxxxxxx xxx xxxxx xxxxxx xxxxxxxxxxxx</td>
+<td align="left">[Variable](#variables) ストレージ修飾子</td>
+<td align="left">入力レイアウトの宣言による定数バッファーとデータ転送</td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Types](#types)</p>
-<p>Xxxxxxx xxxxxx xxxx: xxxY/Y/Y</p>
-<p>xxxx, xxxxxxx, xxxxx</p></td>
-<td align="left"><p>Xxxxxxx xxxxxx xxxx: xxxxxY/Y/Y</p>
-<p>xxxYYxxxxx, xxxYYxxxxx</p></td>
+<p>一般的なベクター型: vec2/3/4</p>
+<p>lowp、mediump、highp</p></td>
+<td align="left"><p>一般的なベクター型: float2/3/4</p>
+<p>min10float、min16float</p></td>
 </tr>
 <tr class="odd">
-<td align="left">xxxxxxxYX [Xxxxxxxx]</td>
-<td align="left">[
-            texture.Sample](https://msdn.microsoft.com/library/windows/desktop/bb509695) [xxxxxxxx.Xxxxxxxx]</td>
+<td align="left">texture2D [Function]</td>
+<td align="left">[texture.Sample](https://msdn.microsoft.com/library/windows/desktop/bb509695) [datatype.Function]</td>
 </tr>
 <tr class="even">
-<td align="left">xxxxxxxYX [xxxxxxxx]</td>
-<td align="left">[
-            Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) [xxxxxxxx]</td>
+<td align="left">sampler2D [datatype]</td>
+<td align="left">[Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525) [datatype]</td>
 </tr>
 <tr class="odd">
-<td align="left">Xxx-xxxxx xxxxxxxx (xxxxxxx)</td>
-<td align="left">Xxxxxx-xxxxx xxxxxxxx (xxxxxxx)
+<td align="left">行優先マトリックス (既定)</td>
+<td align="left">列優先マトリックス (既定)
 <div class="alert">
-<strong>Xxxx</strong>   Xxx xxx <strong>xxx_xxxxx</strong> xxxx-xxxxxxxx xx xxxxxx xxx xxxxxx xxx xxx xxxxxxxx. Xxx xxxx xxxx, xxx [Variable Syntax](https://msdn.microsoft.com/library/windows/desktop/bb509706). Xxx xxx xxxx xxxxxxx x xxxxxxxx xxxx xx x xxxxxx xx xxxxxx xxx xxxxxx xxxxxxx.
+<strong>注</strong>   1 つの変数のレイアウトを変更するには、<strong>row_major</strong> 型修飾子を使います。 詳しくは、「[Variable Syntax](https://msdn.microsoft.com/library/windows/desktop/bb509706)」をご覧ください。 コンパイラ フラグまたはプラグマを指定してグローバルな既定値を変更することもできます。
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="even">
-<td align="left">Xxxxxxxx xxxxxx</td>
-<td align="left">Xxxxx xxxxxx</td>
+<td align="left">フラグメント シェーダー</td>
+<td align="left">ピクセル シェーダー</td>
 </tr>
 </tbody>
 </table>
 
  
 
-> **Xxxx**  XXXX xxx xxxxxxxx xxx xxxxxxxx xx xxx xxxxxxxx xxxxxxx. Xx XXXX, xxxx XxxxxxYX Y, xxx xxxxxxx xxxxxxx xx xxxx xx xxx xxxxxxx xxxxx.
+> **注**  HLSL には、2 つの個別のオブジェクトとしてテクスチャとサンプラーがあります。 GLSL では、Direct3D 9 と同様に、テクスチャのバインドはサンプラーの状態の一部です。
 
  
 
-Xx XXXX, xxx xxxxxxx xxxx xx xxx XxxxXX xxxxx xx xxx-xxxxxxx xxxxxx xxxxxxxxx. Xxx xxxxxxx, xxxx XXXX, xxx xxx xxx **xx\_Xxxxxxxx** xxxxxxxx xx xxxxxxx xxxxxx xxxxxxxx xxx xxx **xx\_XxxxXxxxx** xxxxxxxx xx xxxxxxx xxxxxxxx xxxxx. Xx XXXX, xxx xxxx XxxxxxYX xxxxx xxxxxxxxxx xxxx xxx xxx xxxx xx xxx xxxxxx. Xxx xxxxxxx, xxxx XxxxxxYX xxx XXXX, xxx xxxxx xx xxx xxxxxx xxxxxx xxxx xxxxx xxx xxxx xxxxxx xx xxx xxxxxx xxxxxx, xxx xxx xxxxxxxxx xx x xxxxxxxx xxxxxx xx xxx xxx xxxx xxxx xxxxx xxx xxxxxxxxx xx x xxxxxxxx xxxxxx ([xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/bb509581)) xx xxxxxx xxxx.
+GLSL では、事前定義されたグローバル変数として OpenGL の状態の多くを示します。 たとえば、GLSL では、**gl\_Position** 変数を使って頂点の位置を指定し、**gl\_FragColor** 変数を使ってフラグメントの色を指定します。 HLSL では、アプリ コードからシェーダーに Direct3D の状態を明示的に渡します。 たとえば、Direct3D と HLSL を使う場合は、頂点シェーダーへの入力が頂点バッファーのデータ形式に一致し、アプリ コードの定数バッファーの構造がシェーダー コードの定数バッファー ([cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581)) の構造と一致する必要があります。
 
-## Xxxxxxx XXXX xxxxxxxxx xx XXXX
+## HLSL への GLSL 変数の移植
 
 
-Xx XXXX, xxx xxxxx xxxxxxxxx (xxxxxxxxxx) xx x xxxxxx xxxxxx xxxxxxxx xxxxxxxxxxx xx xxxx xxxx xxxxxxxx x xxxxxxxx xxxxxxxx xx xxxx xxxxxxx. Xx XXXX, xxx xxx’x xxxx xxxxx xxxxxxxxx xxxxxxx xxx xxxxxx xxx xxxx xx xxx xxxxxx xxxx xxx xxxxxxxxx xxxx xxx xxxx xx xxxx xxxxxx xxx xxxx xxx xxxxxx xxxx xxxx xxxxxx.
+GLSL では、グローバル シェーダーの変数の宣言に修飾子を適用し、その変数にシェーダーの特定の動作を割り当てます。 HLSL では、シェーダーとやり取りする引数を使ってシェーダーのフローを定義するため、これらの修飾子は必要ではありません。
 
 <table>
 <colgroup>
@@ -122,47 +119,47 @@ Xx XXXX, xxx xxxxx xxxxxxxxx (xxxxxxxxxx) xx x xxxxxx xxxxxx xxxxxxxx xxxxxxxxxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">XXXX xxxxxxxx xxxxxxxx</th>
-<th align="left">XXXX xxxxxxxxxx</th>
+<th align="left">GLSL の変数の動作</th>
+<th align="left">相当する HLSL の要素</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>xxxxxxx</strong></p>
-<p>Xxx xxxx x xxxxxxx xxxxxxxx xxxx xxx xxx xxxx xxxx xxxxxx xx xxxx xxxxxx xxx xxxxxxxx xxxxxxx. Xxx xxxx xxx xxx xxxxxx xx xxx xxxxxxxx xxxxxx xxx xxxx xxx xxxxxxxxx xxxx xxxxx xxxxxxx xx xxxxx xxxxxx xxxx xxx xxxx xxxxxxxxxx xxx xxxxxxx xx x xxxxxxxx xxxx. Xxxxx xxxxxx xxx xxxxxxx. Xxxx xxxxxxxx xxx xxx xxx xxx xxxxxx xxxxx xxx xxxxxx xxxxxxxx xx xxx xxxxxxxxxx xxxxxx-xxxxx xxxxxx xxxx.</p>
-<p>Xxxxxxx xxxxxxxxx xxx xxx-xxxxxxx xxxxxxxxx.</p></td>
-<td align="left"><p>Xxx xxxxxxxx xxxxxx.</p>
-<p>Xxx [How to: Create a Constant Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476896) xxx [Shader Constants](https://msdn.microsoft.com/library/windows/desktop/bb509581).</p></td>
+<td align="left"><p><strong>uniform</strong></p>
+<p>アプリ コードから uniform 変数を頂点シェーダーとフラグメント シェーダーのどちらか一方または両方に渡します。 これらのシェーダーを使って三角形を描画する前にすべての uniform の値を設定する必要があります。三角形のメッシュの描画中に値が変わらないようにするためです。 これらの値は変化しません。 フレーム全体に対して設定される uniform もあれば、特定の頂点ピクセル シェーダーのペアに対してのみ設定される uniform もあります。</p>
+<p>uniform 変数はポリゴン単位の変数です。</p></td>
+<td align="left"><p>定数バッファーを使います。</p>
+<p>「[How to: Create a Constant Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476896)」と「[Shader Constants](https://msdn.microsoft.com/library/windows/desktop/bb509581)」をご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>xxxxxxx</strong></p>
-<p>Xxx xxxxxxxxxx x xxxxxxx xxxxxxxx xxxxxx xxx xxxxxx xxxxxx xxx xxxx xx xxxxxxx xx xx xxxxxxxxxxx xxxxx xxxxxxx xxxxxxxx xx xxx xxxxxxxx xxxxxx. Xxxxxxx xxx xxxxxx xxxxxx xxxx xxxx xxx xxxxx xx xxx xxxxxxx xxxxxxxxx xx xxxx xxxxxx, xxx xxxxxxxxxx xxxxxxxxxxxx xxxxx xxxxxx (xx x xxxxxxxxxxx-xxxxxxx xxxxxx) xx xxxxxxxx xxx xxxxxxxx xxxxxx xx xxxx xxxx xxx xxxxxxxx xxxxxx. Xxxxx xxxxxxxxx xxxx xxxxxx xxxx xxxxxxxx.</p></td>
-<td align="left">Xxx xxx xxxxxxxxx xxxx xxx xxxxxx xxxx xxxx xxxxxx xxxxxx xx xxx xxxxx xx xxxx xxxxx xxxxxx. Xxxx xxxx xxx xxxxxxxx xxxxxx xxxxx.</td>
+<td align="left"><p><strong>可変</strong></p>
+<p>頂点シェーダー内で可変変数を初期化し、フラグメント シェーダーの同じ名前の可変変数に渡します。 頂点シェーダーは各頂点でのみさまざまな変数の値を設定するため、ラスタライザーはその値を (透視補正の方法で) 補間し、フラグメント単位の値を生成してフラグメント シェーダーに渡します。 これらの変数は各三角形で異なります。</p></td>
+<td align="left">頂点シェーダーから取得した構造をピクセル シェーダーへの入力として使います。 セマンティック値が一致することを確かめてください。</td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>xxxxxxxxx</strong></p>
-<p>Xx xxxxxxxxx xx x xxxx xx xxx xxxxxxxxxxx xx x xxxxxx xxxx xxx xxxx xxxx xxx xxx xxxx xx xxx xxxxxx xxxxxx xxxxx. Xxxxxx x xxxxxxx, xxx xxx xxxx xxxxxxxxx’x xxxxx xxx xxxx xxxxxx, xxxxx, xx xxxx, xxxxxx xxxx xxxxxx xx xxxx x xxxxxxxxx xxxxx. Xxxxxxxxx xxxxxxxxx xxx xxx-xxxxxx xxxxxxxxx.</p></td>
-<td align="left"><p>Xxxxxx x xxxxxx xxxxxx xx xxxx XxxxxxYX xxx xxxx xxx xxxxx xx xx xxx xxxxxx xxxxx xxxxxxx xx xxx xxxxxx xxxxxx. Xxxxxxxxxx, xxxxxx xx xxxxx xxxxxx. Xxx [How to: Create a Vertex Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476899) xxx [How to: Create an Index Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476897).</p>
-<p>Xxxxxx xx xxxxx xxxxxx xx xxxx XxxxxxYX xxx xxxx xxx xxxxx xxxxxxxx xxxxxx xxxx xxxxx xx xxx xxxxxx xxxxx. Xxx [Create the input layout](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout).</p></td>
+<td align="left"><p><strong>属性</strong></p>
+<p>属性は、アプリ コードから頂点シェーダーだけに渡す頂点の記述の一部です。 uniform とは異なり、頂点ごとに各属性の値を設定します。それにより、各頂点が異なる値を持つことができるようになります。 属性変数は頂点単位の変数です。</p></td>
+<td align="left"><p>Direct3D アプリ コードで頂点バッファーを定義し、頂点シェーダーで定義されている頂点の入力と一致させます。 必要に応じてインデックス バッファーを定義します。 「[How to: Create a Vertex Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476899)」と「[How to: Create an Index Buffer](https://msdn.microsoft.com/library/windows/desktop/ff476897)」をご覧ください。</p>
+<p>Direct3D アプリ コードで入力レイアウトを作成し、セマンティック値を頂点の入力の値と一致させます。 「[Create the input layout](https://msdn.microsoft.com/library/windows/desktop/bb205117#Create_the_Input_Layout)」をご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>xxxxx</strong></p>
-<p>Xxxxxxxxx xxxx xxx xxxxxxxx xxxx xxx xxxxxx xxx xxxxx xxxxxx.</p></td>
-<td align="left">Xxx x <strong>xxxxxx xxxxx</strong>. <strong>xxxxxx</strong> xxxxx xxx xxxxx xxx'x xxxxxxx xx xxxxxxxx xxxxxxx, <strong>xxxxx</strong> xxxxx xxx xxxxxx xxx'x xxxxxx xxx xxxxx. Xx, xxx xxxxx xx xxxxx xx xxxxxxx xxxx xxxxx xx xxx xxxxxxxxxxx.</td>
+<td align="left"><p><strong>const</strong></p>
+<p>シェーダーにコンパイルされ、変更されない定数。</p></td>
+<td align="left"><strong>static const</strong> を使用します。 <strong>static</strong> は、値が定数バッファーに公開されないことを表し、<strong>const</strong> は、シェーダーが値を変更できないことを表します。 そのため、値は初期化子に基づいてコンパイル時に把握されます。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-Xx XXXX, xxxxxxxxx xxxxxxx xxxxxxxxx xxx xxxx xxxxxxxx xxxxxx xxxxxxxxx xxxx xxx xxxxxxx xx xxxx xxxxxx.
+GLSL では、修飾子のない変数は、各シェーダーに対してプライベートな通常のグローバル変数に過ぎません。
 
-Xxxx xxx xxxx xxxx xx xxxxxxxx ([XxxxxxxYX](https://msdn.microsoft.com/library/windows/desktop/ff471525) xx XXXX) xxx xxxxx xxxxxxxxxx xxxxxxxx ([XxxxxxxXxxxx](https://msdn.microsoft.com/library/windows/desktop/bb509644) xx XXXX), xxx xxxxxxxxx xxxxxxx xxxx xx xxxxxx xxxxxxxxx xx xxx xxxxx xxxxxx.
+テクスチャ (HLSL での [Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525)) と関連のサンプラー (HLSL での [SamplerState](https://msdn.microsoft.com/library/windows/desktop/bb509644)) にデータを渡すときに、通常は、ピクセル シェーダーのグローバル変数としてこれらを宣言します。
 
-## Xxxxxxx XXXX xxxxx xx XXXX
+## HLSL への GLSL の型の移植
 
 
-Xxx xxxx xxxxx xx xxxx xxxx XXXX xxxxx xx XXXX.
+HLSL に GLSL の型を移植する場合は、次の表を参考にしてください。
 
 <table>
 <colgroup>
@@ -171,95 +168,95 @@ Xxx xxxx xxxxx xx xxxx xxxx XXXX xxxxx xx XXXX.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">XXXX xxxx</th>
-<th align="left">XXXX xxxx</th>
+<th align="left">GLSL の型</th>
+<th align="left">HLSL の型</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">xxxxxx xxxxx: xxxxx, xxx, xxxx</td>
-<td align="left"><p>xxxxxx xxxxx: xxxxx, xxx, xxxx</p>
-<p>xxxx, xxxx, xxxxxx</p>
-<p>Xxx xxxx xxxx, xxx [Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646).</p></td>
+<td align="left">スカラー型: float、int、bool</td>
+<td align="left"><p>スカラー型: float、int、bool</p>
+<p>また、uint、double</p>
+<p>詳しくは、「[Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646)」をご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>xxxxxx xxxx</p>
+<td align="left"><p>ベクター型</p>
 <ul>
-<li>xxxxxxxx-xxxxx xxxxxx: xxxY, xxxY, xxxY</li>
-<li>Xxxxxxx xxxxxx: xxxxY, xxxxY, xxxxY</li>
-<li>xxxxxx xxxxxxx xxxxxx: xxxxY, xxxxY, xxxxY</li>
+<li>浮動小数点ベクター: vec2、vec3、vec4</li>
+<li>ブール ベクター: bvec2、bvec3、bvec4</li>
+<li>符号付き整数ベクター: ivec2、ivec3、ivec4</li>
 </ul></td>
-<td align="left"><p>xxxxxx xxxx</p>
+<td align="left"><p>ベクター型</p>
 <ul>
-<li>xxxxxY, xxxxxY, xxxxxY, xxx xxxxxY</li>
-<li>xxxxY, xxxxY, xxxxY, xxx xxxxY</li>
-<li>xxxY, xxxY, xxxY, xxx xxxY</li>
-<li><p>Xxxxx xxxxx xxxx xxxx xxxxxx xxxxxxxxxx xxxxxxx xx xxxxx, xxxx, xxx xxx:</p>
+<li>float2、float3、float4、float1</li>
+<li>bool2、bool3、bool4、bool1</li>
+<li>int2、int3、int4、int1</li>
+<li><p>これらの型には、float、bool、int に似たベクター拡張もあります。</p>
 <ul>
-<li>xxxx</li>
-<li>xxxYYxxxxx, xxxYYxxxxx</li>
-<li>xxxYYxxx, xxxYYxxx</li>
-<li>xxxYYxxxx</li>
+<li>uint</li>
+<li>min10float、min16float</li>
+<li>min12int、min16int</li>
+<li>min16uint</li>
 </ul></li>
 </ul>
-<p>Xxx xxxx xxxx, xxx [Vector Type](https://msdn.microsoft.com/library/windows/desktop/bb509707) xxx [Keywords](https://msdn.microsoft.com/library/windows/desktop/bb509568).</p>
-<p>xxxxxx xx xxxx xxxx xxxxxxx xx xxxxxY (xxxxxxx xxxxxx &xx;xxxxx, Y&xx; xxxxxx;). Xxx xxxx xxxx, xxx [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
+<p>詳しくは、「[Vector Type](https://msdn.microsoft.com/library/windows/desktop/bb509707)」と「[Keywords](https://msdn.microsoft.com/library/windows/desktop/bb509568)」をご覧ください。</p>
+<p>vector は、float4 として定義される型でもあります (typedef vector &lt;float, 4&gt; vector;)。 詳しくは、「[User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702)」をご覧ください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>xxxxxx xxxx</p>
+<td align="left"><p>マトリックス型</p>
 <ul>
-<li>xxxY: YxY xxxxx xxxxxx</li>
-<li>xxxY: YxY xxxxx xxxxxx</li>
-<li>xxxY: YxY xxxxx xxxxxx</li>
+<li>mat2: 2x2 浮動小数点マトリックス</li>
+<li>mat3: 3x3 浮動小数点マトリックス</li>
+<li>mat4: 4x4 浮動小数点マトリックス</li>
 </ul></td>
-<td align="left"><p>xxxxxx xxxx</p>
+<td align="left"><p>マトリックス型</p>
 <ul>
-<li>xxxxxYxY</li>
-<li>xxxxxYxY</li>
-<li>xxxxxYxY</li>
-<li>xxxx, xxxxxYxY, xxxxxYxY, xxxxxYxY, xxxxxYxY, xxxxxYxY, xxxxxYxY, xxxxxYxY, xxxxxYxY, xxxxxYxY, xxxxxYxY, xxxxxYxY, xxxxxYxY, xxxxxYxY</li>
-<li><p>Xxxxx xxxxx xxxx xxxx xxxxxx xxxxxxxxxx xxxxxxx xx xxxxx:</p>
+<li>float2x2</li>
+<li>float3x3</li>
+<li>float4x4</li>
+<li>また、float1x1、float1x2、float1x3、float1x4、float2x1、float2x3、float2x4、float3x1、float3x2、float3x4、float4x1、float4x2、float4x3</li>
+<li><p>これらの型には、float に似たマトリックス拡張もあります。</p>
 <ul>
-<li>xxx, xxxx, xxxx</li>
-<li>xxxYYxxxxx, xxxYYxxxxx</li>
-<li>xxxYYxxx, xxxYYxxx</li>
-<li>xxxYYxxxx</li>
+<li>int、uint、bool</li>
+<li>min10float、min16float</li>
+<li>min12int、min16int</li>
+<li>min16uint</li>
 </ul></li>
 </ul>
-<p>Xxx xxx xxxx xxx xxx [matrix type](https://msdn.microsoft.com/library/windows/desktop/bb509623) xx xxxxxx x xxxxxx.</p>
-<p>Xxx xxxxxxx: xxxxxx &xx;xxxxx, Y, Y&xx; xXxxxxx = {Y.Yx, Y.Y, Y.Yx, Y.Yx};</p>
-<p>xxxxxx xx xxxx xxxx xxxxxxx xx xxxxxYxY (xxxxxxx xxxxxx &xx;xxxxx, Y, Y&xx; xxxxxx;). Xxx xxxx xxxx, xxx [User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702).</p></td>
+<p>また、マトリックスの定義に[matrix type](https://msdn.microsoft.com/library/windows/desktop/bb509623)を使うこともできます。</p>
+<p>例: matrix &lt;float, 2, 2&gt; fMatrix = {0.0f, 0.1, 2.1f, 2.2f};</p>
+<p>matrix は、float4x4 として定義される型でもあります (typedef matrix &lt;float, 4, 4&gt; matrix;)。 詳しくは、「[User-Defined Type](https://msdn.microsoft.com/library/windows/desktop/bb509702)」をご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>xxxxxxxxx xxxxxxxxxx xxx xxxxx, xxx, xxxxxxx</p>
+<td align="left"><p>float、int、sampler の有効桁数修飾子</p>
 <ul>
-<li><p>xxxxx</p>
-<p>Xxxx xxxxxxxxx xxxxxxxx xxxxxxx xxxxxxxxx xxxxxxxxxxxx xxxx xxx xxxxxxx xxxx xxxx xxxxxxxx xx xxxYYxxxxx xxx xxxx xxxx x xxxx YY-xxx xxxxx. Xxxxxxxxxx xx XXXX xx:</p>
-<p>xxxxx xxxxx -&xx; xxxxx</p>
-<p>xxxxx xxx -&xx; xxx</p></li>
-<li><p>xxxxxxx</p>
-<p>Xxxx xxxxxxxxx xxxxxxx xx xxxxx xxx xxx xx xxxxxxxxxx xx xxxYYxxxxx xxx xxxYYxxx xx XXXX. Xxxxxxx YY xxxx xx xxxxxxxx, xxx xxxx xxxYYxxxxx.</p></li>
-<li><p>xxxx</p>
-<p>Xxxx xxxxxxxxx xxxxxxx xx xxxxx xxxxxxxx x xxxxxxxx xxxxx xxxxx xx -Y xx Y. Xxxxxxxxxx xx xxxYYxxxxx xx XXXX.</p></li>
+<li><p>highp</p>
+<p>この修飾子は min16float によって指定されるものより大きく、完全な 32 ビット float より小さい最小有効桁数要件を指定します。 相当する HLSL の要素:</p>
+<p>highp float -&gt; float</p>
+<p>highp int -&gt; int</p></li>
+<li><p>mediump</p>
+<p>float と int に適用されるこの修飾子は、HLSL の min16float と min12int に相当します。 mantissa の最小 10 ビット。min10float とは異なります。</p></li>
+<li><p>lowp</p>
+<p>float に適用されるこの修飾子は、-2 ～ 2 の浮動小数点の範囲を指定します。 HLSL での min10float に相当します。</p></li>
 </ul></td>
-<td align="left"><p>xxxxxxxxx xxxxx</p>
+<td align="left"><p>有効桁数の型</p>
 <ul>
-<li>xxxYYxxxxx: xxxxxxx YY-xxx xxxxxxxx xxxxx xxxxx</li>
-<li><p>xxxYYxxxxx</p>
-<p>Xxxxxxx xxxxx-xxxxx xxxxxx Y.Y xxx xxxxx (Y xxxx xx xxxxx xxxxxx xxx Y xxxx xxxxxxxxxx xxxxxxxxx). Xxx Y-xxx xxxxxxxxxx xxxxxxxxx xxx xx xxxxxxxxx xx Y xxxxxxx xx xxxxxxxxx xx xxxx xx xxx xxxx xxxxxxxxx xxxxx xx -Y xx Y.</p></li>
-<li>xxxYYxxx: xxxxxxx YY-xxx xxxxxx xxxxxxx</li>
-<li><p>xxxYYxxx: xxxxxxx YY-xxx xxxxxx xxxxxxx</p>
-<p>Xxxx xxxx xx xxx YYXxxxxY ([9_x feature levels](https://msdn.microsoft.com/library/windows/desktop/ff476876)) xx xxxxx xxxxxxxx xxx xxxxxxxxxxx xx xxxxxxxx xxxxx xxxxxxx. Xxxx xx xxx xxxxxxxxx xxx xxx xxx xxxx xxx xxxxxxx xx xxxxxxx xxxx x YY-xxx xxxxxxxx xxxxx xxxxxx.</p></li>
-<li>xxxYYxxxx: xxxxxxx YY-xxx xxxxxxxx xxxxxxx</li>
+<li>min16float: 16 ビットの最小浮動小数点値</li>
+<li><p>min10float</p>
+<p>最小の符号付き固定小数点 2.8 ビット値 (整数部は 2 ビット、小数部は 8 ビット)。 8 ビットの小数部には 1 を含めることができます。また、-2 ～ 2 の範囲の両端を含めることができます。</p></li>
+<li>min16int: 16 ビットの最小符号付き整数</li>
+<li><p>min12int: 12 ビットの最小符号付き整数</p>
+<p>この型は 10Level9 ([9_x feature levels](https://msdn.microsoft.com/library/windows/desktop/ff476876)) 向けであり、整数は浮動小数点数で表されます。 これは、16 ビットの浮動小数点数で整数をエミュレートするときに取得できる有効桁数です。</p></li>
+<li>min16uint: 16 ビットの最小符号なし整数</li>
 </ul>
-<p>Xxx xxxx xxxx, xxx [Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646) xxx [Using HLSL minimum precision](https://msdn.microsoft.com/library/windows/desktop/hh968108).</p></td>
+<p>詳しくは、「[Scalar Types](https://msdn.microsoft.com/library/windows/desktop/bb509646)」と「[Using HLSL minimum precision](https://msdn.microsoft.com/library/windows/desktop/hh968108)」をご覧ください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">xxxxxxxYX</td>
+<td align="left">sampler2D</td>
 <td align="left">[Texture2D](https://msdn.microsoft.com/library/windows/desktop/ff471525)</td>
 </tr>
 <tr class="even">
-<td align="left">xxxxxxxXxxx</td>
+<td align="left">samplerCube</td>
 <td align="left">[TextureCube](https://msdn.microsoft.com/library/windows/desktop/bb509700)</td>
 </tr>
 </tbody>
@@ -267,10 +264,10 @@ Xxx xxxx xxxxx xx xxxx xxxx XXXX xxxxx xx XXXX.
 
  
 
-## Xxxxxxx XXXX xxx-xxxxxxx xxxxxx xxxxxxxxx xx XXXX
+## HLSL への GLSL の定義済みグローバル変数の移植
 
 
-Xxx xxxx xxxxx xx xxxx XXXX xxx-xxxxxxx xxxxxx xxxxxxxxx xx XXXX.
+GLSL の定義済みグローバル変数を HLSL に移植する場合は、次の表を参考にしてください。
 
 <table>
 <colgroup>
@@ -279,112 +276,112 @@ Xxx xxxx xxxxx xx xxxx XXXX xxx-xxxxxxx xxxxxx xxxxxxxxx xx XXXX.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">XXXX xxx-xxxxxxx xxxxxx xxxxxxxx</th>
-<th align="left">XXXX xxxxxxxxx</th>
+<th align="left">GLSL の定義済みグローバル変数</th>
+<th align="left">HLSL セマンティクス</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>xx_Xxxxxxxx</strong></p>
-<p>Xxxx xxxxxxxx xx xxxx <strong>xxxY</strong>.</p>
-<p>Xxxxxx xxxxxxxx</p>
-<p>xxx xxxxxxx - xx_Xxxxxxxx = xxxxxxxx;</p></td>
-<td align="left"><p>XX_Xxxxxxxx</p>
-<p>XXXXXXXX xx XxxxxxYX Y</p>
-<p>Xxxx xxxxxxxx xx xxxx <strong>xxxxxY</strong>.</p>
-<p>Xxxxxx xxxxxx xxxxxx</p>
-<p>Xxxxxx xxxxxxxx</p>
-<p>xxx xxxxxxx - xxxxxY xXxxxxxxx : XX_Xxxxxxxx;</p></td>
+<td align="left"><p><strong>gl_Position</strong></p>
+<p>この変数は <strong>vec4</strong> 型です。</p>
+<p>頂点の位置</p>
+<p>例: gl_Position = position;</p></td>
+<td align="left"><p>SV_Position</p>
+<p>Direct3D 9 の POSITION</p>
+<p>このセマンティックは <strong>float4</strong> 型です。</p>
+<p>頂点シェーダーの出力</p>
+<p>頂点の位置</p>
+<p>例: float4 vPosition : SV_Position;</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>xx_XxxxxXxxx</strong></p>
-<p>Xxxx xxxxxxxx xx xxxx <strong>xxxxx</strong>.</p>
-<p>Xxxxx xxxx</p></td>
-<td align="left"><p>XXXXX</p>
-<p>Xx xxxxxxx xxxxxx xxx xxxxxx XxxxxxYX Y</p>
-<p>Xxxx xxxxxxxx xx xxxx <strong>xxxxx</strong>.</p>
-<p>Xxxxxx xxxxxx xxxxxx</p>
-<p>Xxxxx xxxx</p></td>
+<td align="left"><p><strong>gl_PointSize</strong></p>
+<p>この変数は <strong>float</strong> 型です。</p>
+<p>ポイントのサイズ</p></td>
+<td align="left"><p>PSIZE</p>
+<p>Direct3D 9 を対象としない場合、意味はありません</p>
+<p>このセマンティックは <strong>float</strong> 型です。</p>
+<p>頂点シェーダーの出力</p>
+<p>ポイントのサイズ</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>xx_XxxxXxxxx</strong></p>
-<p>Xxxx xxxxxxxx xx xxxx <strong>xxxY</strong>.</p>
-<p>Xxxxxxxx xxxxx</p>
-<p>xxx xxxxxxx - xx_XxxxXxxxx = xxxY(xxxxxXxxxxxx, Y.Y);</p></td>
-<td align="left"><p>XX_Xxxxxx</p>
-<p>XXXXX xx XxxxxxYX Y</p>
-<p>Xxxx xxxxxxxx xx xxxx <strong>xxxxxY</strong>.</p>
-<p>Xxxxx xxxxxx xxxxxx</p>
-<p>Xxxxx xxxxx</p>
-<p>xxx xxxxxxx - xxxxxY Xxxxx[Y] : XX_Xxxxxx;</p></td>
+<td align="left"><p><strong>gl_FragColor</strong></p>
+<p>この変数は <strong>vec4</strong> 型です。</p>
+<p>フラグメント色</p>
+<p>例: gl_FragColor = vec4(colorVarying, 1.0);</p></td>
+<td align="left"><p>SV_Target</p>
+<p>Direct3D 9 の COLOR</p>
+<p>このセマンティックは <strong>float4</strong> 型です。</p>
+<p>ピクセル シェーダーの出力</p>
+<p>ピクセルの色</p>
+<p>例: float4 Color[4] : SV_Target;</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>xx_XxxxXxxx[x]</strong></p>
-<p>Xxxx xxxxxxxx xx xxxx <strong>xxxY</strong>.</p>
-<p>Xxxxxxxx xxxxx xxx xxxxx xxxxxxxxxx x</p></td>
-<td align="left"><p>XX_Xxxxxx[x]</p>
-<p>Xxxx xxxxxxxx xx xxxx <strong>xxxxxY</strong>.</p>
-<p>Xxxxx xxxxxx xxxxxx xxxxx xxxx xx xxxxxx xx x xxxxxx xxxxxx, xxxxx Y &xx;= x &xx;= Y.</p></td>
+<td align="left"><p><strong>gl_FragData[n]</strong></p>
+<p>この変数は <strong>vec4</strong> 型です。</p>
+<p>カラー アタッチメント n のフラグメント色</p></td>
+<td align="left"><p>SV_Target[n]</p>
+<p>このセマンティックは <strong>float4</strong> 型です。</p>
+<p>n レンダー ターゲットに格納されるピクセル シェーダーの出力値 (0 &lt;= n &lt;= 7)。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>xx_XxxxXxxxx</strong></p>
-<p>Xxxx xxxxxxxx xx xxxx <strong>xxxY</strong>.</p>
-<p>Xxxxxxxx xxxxxxxx xxxxxx xxxxx xxxxxx</p></td>
-<td align="left"><p>XX_Xxxxxxxx</p>
-<p>Xxx xxxxxxxxx xx XxxxxxYX Y</p>
-<p>Xxxx xxxxxxxx xx xxxx <strong>xxxxxY</strong>.</p>
-<p>Xxxxx xxxxxx xxxxx</p>
-<p>Xxxxxx xxxxx xxxxxxxxxxx</p>
-<p>xxx xxxxxxx - xxxxxY xxxxxxXxxxx : XX_Xxxxxxxx</p></td>
+<td align="left"><p><strong>gl_FragCoord</strong></p>
+<p>この変数は <strong>vec4</strong> 型です。</p>
+<p>フレーム バッファー内のフラグメントの位置</p></td>
+<td align="left"><p>SV_Position</p>
+<p>Direct3D 9 では使用できません</p>
+<p>このセマンティックは <strong>float4</strong> 型です。</p>
+<p>ピクセル シェーダーの入力</p>
+<p>画面領域の座標</p>
+<p>例: float4 screenSpace : SV_Position</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>xx_XxxxxXxxxxx</strong></p>
-<p>Xxxx xxxxxxxx xx xxxx <strong>xxxx</strong>.</p>
-<p>Xxxxxxxxxx xxxxxxx xxxxxxxx xxxxxxx xx x xxxxx-xxxxxx xxxxxxxxx.</p></td>
-<td align="left"><p>XX_XxXxxxxXxxx</p>
-<p>XXXXX xx XxxxxxYX Y</p>
-<p>XX_XxXxxxxXxxx xx xxxx <strong>xxxx</strong>.</p>
-<p>XXXXX xx xxxx <strong>xxxxx</strong>.</p>
-<p>Xxxxx xxxxxx xxxxx</p>
-<p>Xxxxxxxxx xxxxxx</p></td>
+<td align="left"><p><strong>gl_FrontFacing</strong></p>
+<p>この変数は <strong>bool</strong> 型です。</p>
+<p>フラグメントが前向きのプリミティブに属しているかどうかを決定します。</p></td>
+<td align="left"><p>SV_IsFrontFace</p>
+<p>Direct3D 9 の VFACE</p>
+<p>SV_IsFrontFace は <strong>bool</strong> 型です。</p>
+<p>VFACE は <strong>float</strong> 型です。</p>
+<p>ピクセル シェーダーの入力</p>
+<p>プリミティブの向き</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>xx_XxxxxXxxxx</strong></p>
-<p>Xxxx xxxxxxxx xx xxxx <strong>xxxY</strong>.</p>
-<p>Xxxxxxxx xxxxxxxx xxxxxx x xxxxx (xxxxx xxxxxxxxxxxxx xxxx)</p></td>
-<td align="left"><p>XX_Xxxxxxxx</p>
-<p>XXXX xx XxxxxxYX Y</p>
-<p>XX_Xxxxxxxx xx xxxx <strong>xxxxxY</strong>.</p>
-<p>XXXX xx xxxx <strong>xxxxxY</strong>.</p>
-<p>Xxxxx xxxxxx xxxxx</p>
-<p>Xxx xxxxx xx xxxxxx xxxxxxxx xx xxxxxx xxxxx</p>
-<p>xxx xxxxxxx - xxxxxY xxx : XX_Xxxxxxxx</p></td>
+<td align="left"><p><strong>gl_PointCoord</strong></p>
+<p>この変数は <strong>vec2</strong> 型です。</p>
+<p>ポイント内のフラグメントの位置 (ポイントのラスター化のみ)</p></td>
+<td align="left"><p>SV_Position</p>
+<p>Direct3D 9 の VPOS</p>
+<p>SV_Position は <strong>float4</strong> 型です。</p>
+<p>VPOS は <strong>float2</strong> 型です。</p>
+<p>ピクセル シェーダーの入力</p>
+<p>画面領域のピクセルまたはサンプルの位置</p>
+<p>例: float4 pos : SV_Position</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>xx_XxxxXxxxx</strong></p>
-<p>Xxxx xxxxxxxx xx xxxx <strong>xxxxx</strong>.</p>
-<p>Xxxxx xxxxxx xxxx</p></td>
-<td align="left"><p>XX_Xxxxx</p>
-<p>XXXXX xx XxxxxxYX Y</p>
-<p>XX_Xxxxx xx xxxx <strong>xxxxx</strong>.</p>
-<p>Xxxxx xxxxxx xxxxxx</p>
-<p>Xxxxx xxxxxx xxxx</p></td>
+<td align="left"><p><strong>gl_FragDepth</strong></p>
+<p>この変数は <strong>float</strong> 型です。</p>
+<p>深度バッファーのデータ</p></td>
+<td align="left"><p>SV_Depth</p>
+<p>Direct3D 9 の DEPTH</p>
+<p>SV_Depth は <strong>float</strong> 型です。</p>
+<p>ピクセル シェーダーの出力</p>
+<p>深度バッファーのデータ</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Xxx xxx xxxxxxxxx xx xxxxxxx xxxxxxxx, xxxxx, xxx xx xx xxx xxxxxx xxxxxx xxxxx xxx xxxxx xxxxxx xxxxx. Xxx xxxx xxxxx xxx xxxxxxxxx xxxxxx xx xxx xxxxx xxxxxx xxxx xxx xxxxxx xxxxxx xxxxx. Xxx xxxxxxxx, xxx [Xxxxxxxx xx xxxxxxx XXXX xxxxxxxxx xx XXXX](#example1). Xxx xxxx xxxx xxxxx xxx XXXX xxxxxxxxx, xxx [Xxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/bb509647).
+頂点シェーダーの入力とピクセル シェーダーの入力に位置や色などを指定するには、セマンティクスを使います。 入力レイアウトのセマンティクス値と頂点シェーダーの入力を一致させる必要があります。 例については、「[HLSL への GLSL 変数の移植の例](#example1)」をご覧ください。 HLSL セマンティクスについて詳しくは、「[セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb509647)」をご覧ください。
 
-## Xxxxxxxx xx xxxxxxx XXXX xxxxxxxxx xx XXXX
+## HLSL への GLSL 変数の移植の例
 
 
-Xxxx xx xxxx xxxxxxxx xx xxxxx XXXX xxxxxxxxx xx XxxxXX/XXXX xxxx xxx xxxx xxx xxxxxxxxxx xxxxxxx xx XxxxxxYX/XXXX xxxx.
+ここでは、OpenGL/GLSL コードの GLSL 変数の使用例と、Direct3D/HLSL コードでの相当する例を紹介します。
 
-### Xxxxxxx, xxxxxxxxx, xxx xxxxxxx xx XXXX
+### GLSL での uniform、attribute、および varying
 
-XxxxXX xxx xxxx
+OpenGL のアプリ コード
 
 ``` syntax
 // Uniform values can be set in app code and then processed in the shader code.
@@ -403,7 +400,7 @@ attribute vec3 color;
 varying vec3 colorVarying;
 ```
 
-XXXX xxxxxx xxxxxx xxxx
+GLSL の頂点シェーダー コード
 
 ``` syntax
 //The shader entry point is the main method.
@@ -414,7 +411,7 @@ gl_Position = position; //Copy the position to the gl_Position pre-defined globa
 }
 ```
 
-XXXX xxxxxxxx xxxxxx xxxx
+GLSL のフラグメント シェーダー コード
 
 ``` syntax
 void main()
@@ -426,11 +423,11 @@ gl_FragColor = vec4(colorVarying, 1.0);
 }
 ```
 
-### Xxxxxxxx xxxxxxx xxx xxxx xxxxxxxxx xx XXXX
+### HLSL での定数バッファーとデータ転送
 
-Xxxx xx xx xxxxxxx xx xxx xxx xxxx xxxx xx xxx XXXX xxxxxx xxxxxx xxxx xxxx xxxxx xxxxxxx xx xxx xxxxx xxxxxx. Xx xxxx xxx xxxx, xxxxxx x xxxxxx xxx x xxxxxxxx xxxxxx. Xxxx, xx xxxx xxxxxx xxxxxx xxxx, xxxxxx xxx xxxxxxxx xxxxxx xx x [xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/bb509581) xxx xxxxx xxx xxx-xxxxxx xxxx xxx xxx xxxxx xxxxxx xxxxx xxxx. Xxxx xx xxx xxxxxxxxxx xxxxxx **XxxxxxXxxxxxXxxxx** xxx **XxxxxXxxxxxXxxxx**.
+データを HLSL の頂点シェーダーに渡し、それがピクセル シェーダーに渡されるしくみの例を示します。 アプリ コードでは、頂点と定数バッファーを定義します。 次に、頂点シェーダー コードで、定数バッファーを [cbuffer](https://msdn.microsoft.com/library/windows/desktop/bb509581) として定義し、頂点単位のデータとピクセル シェーダーの入力データを格納します。 ここでは、**VertexShaderInput** および **PixelShaderInput** と呼ばれる構造を使います。
 
-XxxxxxYX xxx xxxx
+Direct3D のアプリ コード
 
 ```cpp
 struct ConstantBuffer
@@ -455,7 +452,7 @@ struct SimpleCubeVertex
 // Create vertex and index buffers that define a geometry.
 ```
 
-XXXX xxxxxx xxxxxx xxxx
+HLSL の頂点シェーダー コード
 
 ``` syntax
 cbuffer ModelViewProjectionCB : register( b0 )
@@ -487,7 +484,7 @@ PixelShaderInput main(VertexShaderInput input)
 }
 ```
 
-XXXX xxxxx xxxxxx xxxx
+HLSL のピクセル シェーダー コード
 
 ``` syntax
 // Collect input from the vertex shader. 
@@ -505,12 +502,12 @@ float4 main(PixelShaderInput input) : SV_Target
 }
 ```
 
-## Xxxxxxxx xx xxxxxxx XxxxXX xxxxxxxxx xxxx xx XxxxxxYX
+## Direct3D への OpenGL のレンダリング コードの移植例
 
 
-Xxxx xx xxxx xx xxxxxxx xx xxxxxxxxx xx XxxxXX XX Y.Y xxxx xxx xxxx xxx xxxxxxxxxx xxxxxxx xx XxxxxxYX YY xxxx.
+ここでは、OpenGL ES 2.0 コードのレンダリングの例と、Direct3D 11 コードでの相当する例を紹介します。
 
-XxxxXX xxxxxxxxx xxxx
+OpenGL のレンダリング コード
 
 ``` syntax
 // Bind shaders to the pipeline. 
@@ -536,7 +533,7 @@ glVertexAttribPointer(m_colorLocation, 3, GL_FLOAT, GL_FALSE, 0, NULL);
 glDrawArray(GL_TRIANGLES, 0, 3);
 ```
 
-XxxxxxYX xxxxxxxxx xxxx
+Direct3D のレンダリング コード
 
 ```cpp
 // Bind the vertex shader and pixel shader to the pipeline.
@@ -554,16 +551,20 @@ m_d3dDeviceContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST
 m_d3dDeviceContext->Draw(ARRAYSIZE(triangleVertices),0);
 ```
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
 
-* [Xxxx xxxx XxxxXX XX Y.Y xx XxxxxxYX YY](port-from-opengl-es-2-0-to-directx-11-1.md)
+* [OpenGL ES 2.0 から Direct3D 11 への移植](port-from-opengl-es-2-0-to-directx-11-1.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

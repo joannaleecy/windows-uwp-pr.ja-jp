@@ -1,51 +1,55 @@
 ---
-xx.xxxxxxx: YXYXXXYX-YYYY-YXYY-XYYY-YYXXXXXXYXXX
-xxxxx: Xxx xxx xx
-xxxxxxxxxxx: Xx'x xxxxxx xxxx xxx xxxxx xx xxx xxx xx. Xxxxxx xxxxx xxxxxxxxxxxx xxx xxxxx xxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY.
+ms.assetid: 7D5EED8A-0742-4E12-A806-40FBAEFE6ABF
+title: 準備
+description: 準備は、思っているよりも簡単です。 次の手順に従って、Windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始してください。
 ---
-# Xxx xxx xx
+# 準備
 
-Xx'x xxxxxx xxxx xxx xxxxx xx xxx xxx xx. Xxxxxx xxxxx xxxxxxxxxxxx xxx xxxxx xxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY.
+準備は、思っているよりも簡単です。 次の手順に従って、Windows 10 用のユニバーサル Windows プラットフォーム (UWP) アプリの作成を開始してください。
 
-## Y. Xxx Xxxxxxx YY
+## 1. Windows 10 の入手
 
-Xx xxxxxxx XXX xxxx, xxx xxxx xxx xxxxxx xxxxxxx xx Xxxxxxx.
+UWP アプリを開発するには、Windows の最新バージョンが必要です。
 
--   [Xxx Xxxxxxx YY xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619312)
+-   [Windows 10 をオンラインで入手する](http://go.microsoft.com/fwlink/p/?LinkId=619312)
 
-Xxx xxx xx XXXX xxxxxxxxxx? Xxx xxx xxx XXX xxxxxxxxx xxxx:
+MSDN サブスクリプション会員の方は、 ISO をここからダウンロードできます。
 
--   Xxx Xxxxxxx YY xxxx [XXXX Xxxxxxxxxx Xxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=266384)
+-   Windows 10 は、[MSDN サブスクライバー ダウンロード](http://go.microsoft.com/fwlink/p/?LinkId=266384)からダウンロードできます。
 
-## Y. Xxxxxxxx xx xxxxxx Xxxxxx Xxxxxx
+## 2. Visual Studio のダウンロードまたは更新
 
-Xxxxxxxxx Xxxxxx Xxxxxx YYYY xxxxx xxx xxxxxx, xxxx, xxxx, xxx xxxxx xxxx xxxx.
+Microsoft Visual Studio 2015 は、アプリの設計、コード化、テスト、デバッグに役立ちます。
 
-Xx xxx xxx'x xxxxxxx xxxx Xxxxxx Xxxxxx YYYY, xxxxx xxxx xxxx xx xxxxxxx xxx xxxx Xxxxxxxxx Xxxxxx Xxxxxx Xxxxxxxxx YYYY. Xxxx xxxxxxxx xxxxxxxx xxxxxx xxx xxxxx xxxxxxxxxx xxx xxxxxxx xxxx xxxx:
+Visual Studio 2015 をまだお持ちでない場合は、このリンクをクリックすると、Microsoft Visual Studio Community 2015 を無料でインストールできます。 このダウンロードには、アプリをテストするためのデバイスと電話のシミュレーターが含まれています。
 
--   [Xxxxxxxx Xxxxxxx YY xxxxxxxxx xxxxx](https://go.microsoft.com/fwlink/p/?LinkID=534189)
+-   [Windows 10 開発者ツールをダウンロードする](https://go.microsoft.com/fwlink/p/?LinkID=534189)
 
-## Y. Xxxxxx xxxx xxxxxx xxx xxxxxxxxxxx
+## 3. デバイスを開発用に有効にする
 
-Xx’x xxxxxxxxx xx xxxx xxxx XXX xxxx xx x xxxx XXx xxx xxxxxx. Xxxxxx xxx xxx xxxxxx xxxx xx xxxx XX xx Xxxxxxx Xxxxx, xxx xxxx xx xxxxxx xx xxx xxxxxxxxxxx.
+UWP アプリのテストは実際の PC と電話で行うことが重要です。 PC または Windows Phone にアプリを展開するには、PC または電話を開発用に有効にする必要があります。
 
--   Xxx xxxxxxxx xxxxxxxxxxxx, xxx [Xxxxxx xxxx xxxxxx xxx xxxxxxxxxxx](enable-your-device-for-development.md).
+-   詳しい手順については、「[デバイスを開発用に有効にする](enable-your-device-for-development.md)」をご覧ください。
 
-## Y. Xxxxxxxx xx xx xxx xxxxxxxxx
+## 4. アプリ開発者としての登録
 
-Xxx xxx xxxxx xxxxxxxxxx xxxx xxx, xxx xxxxxx xxx xxx xxxxxx xxxx xx xxx xxxxx, xxx xxxx x xxxxxxxxx xxxxxxx.
+アプリの開発をすぐに開始できますが、ストアへの提出前に開発者アカウントが必要です。
 
--   Xx xxx x xxxxxxxxx xxxxxxx, xx xx xxx [Xxxx xx](sign-up.md) xxxx.
+-   開発者アカウントを取得するには、[サインアップ](sign-up.md) ページに移動します。
 
-## Xxxx'x xxxx?
+## 次の手順
 
-Xxxxx xxx'xx xxxxxxxxx xxx xxxxx xxx xxxxxx x xxxxxxxxx xxxxxxx xx x xxxxxxxxx xxxxxxx, xxx xxx xxxxxxxxx xx xxxxxx xxxx xxxxx xxx:
+ツールをインストールして開発者用ライセンスまたは開発者アカウントを取得したら、チュートリアルを使って最初のアプリを作成します。
 
--   [Xxxxxx xxxx xxxxx xxx](your-first-app.md) xxxxxxxxx
+-   [初めてのアプリの作成](your-first-app.md)のチュートリアル
 
-## Xxxx xxxx xxxxx xxx xxxxxxxxx?
+## その他のツールとダウンロード
 
-Xxx xxx xxxxxxxx xxxx xx xxxxx xxx xxxxxxxxx, xxx [Xxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=285935).
+ツールとダウンロードの一覧については、「[ダウンロード](http://go.microsoft.com/fwlink/p/?linkid=285935)」をご覧ください。
+
+
 
 
 <!--HONumber=Mar16_HO1-->
+
+

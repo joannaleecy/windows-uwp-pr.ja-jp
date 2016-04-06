@@ -1,27 +1,31 @@
 ---
-Xxxxxxxxxxx: 
-xxxxx: Xxxxxxx Xxx
-xx.xxxxxxx: xYYYxxYY-YYxY-YYYx-xYYY-xYYYxxYYxYYx
-xxxxx: Xxxxxxx Xxx
-xxxxxxxx: xxxxxx.xxx
+Description: 
+title: Surface Hub
+ms.assetid: d970bd76-06b3-474a-b325-e616fe03a36e
+label: Surface Hub
+template: detail.hbs
 ---
 
-#  Xxxxxxx Xxx
+#  Surface Hub
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxxx xxxx xxxx
+Content goes here
 
 
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx XXX xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[This article contains information that is specific to UWP apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

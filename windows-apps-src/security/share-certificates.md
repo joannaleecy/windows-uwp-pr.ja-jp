@@ -1,34 +1,35 @@
 ---
-xxxxx: Xxxxx xxxxxxxxxxxx xxxxxxx xxxx
-xxxxxxxxxxx: Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxxx xxxxxx xxxxxxxxxxxxxx xxxxxx x xxxx Xx xxx xxxxxxxx xxxxxxxxxxx xxx xxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxx.
-xx.xxxxxxx: YYYXXYYY-YXXY-YYYX-XXYY-XYYXYYXYYYXY
+title: Share certificates between apps
+description: Universal Windows Platform (UWP) apps that require secure authentication beyond a user Id and password combination can use certificates for authentication.
+ms.assetid: 159BA284-9FD4-441A-BB45-A00E36A386F9
+author: awkoren
 ---
 
-# Xxxxx xxxxxxxxxxxx xxxxxxx xxxx
+# Share certificates between apps
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxxx xxxxxx xxxxxxxxxxxxxx xxxxxx x xxxx Xx xxx xxxxxxxx xxxxxxxxxxx xxx xxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxx. Xxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxx x xxxx xxxxx xx xxxxx xxxx xxxxxxxxxxxxxx x xxxx. Xx xxxx xxxxx, x xxxxx xx xxxxxxxx xxxx xxxx xx xxxxxxxxxxxx x xxxx xxx xxxxxxxx xxxx. Xxxx xxxxxxx xxxxx xxx xxx xxx xxxxxxxxxxxx xxxxxxxx xxxx xxxxx xxx xxxx xxxxxxxxxxx, xxx xxx xxx xxx xxxxxxx xxxxxxxxxx xxxx xxx x xxxx xx xxxxxx x xxxxxxxxxxx xxxx xxx xxxxxxxx xx xxxxxx xxxxxxx xxx xxxxxxxx.
+Universal Windows Platform (UWP) apps that require secure authentication beyond a user Id and password combination can use certificates for authentication. Certificate authentication provides a high level of trust when authenticating a user. In some cases, a group of services will want to authenticate a user for multiple apps. This article shows how you can authenticate multiple apps using the same certificate, and how you can provide convenient code for a user to import a certificate that was provided to access secured web services.
 
-Xxxx xxx xxxxxxxxxxxx xx x xxx xxxxxxx xxxxx x xxxxxxxxxxx, xxx xxxxxxxx xxxx xxx xxx x xxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxxxx xxxxx xx xxxxxxxxxxxx xxx xxxx xxxx. Xx x xxxxxxxxxxx xxxx xxx xxxxx xx xxx xxxxx, xxx xxx xxx xxxx xx xxxx xxx xx xxxxxx x xxxxxxxxxxx xxxx x XXX xxxx.
+Apps can authenticate to a web service using a certificate, and multiple apps can use a single certificate from the certificate store to authenticate the same user. If a certificate does not exist in the store, you can add code to your app to import a certificate from a PFX file.
 
-## Xxxxxx Xxxxxxxxx Xxxxxxxx Xxxxxxxxxxx Xxxxxxxx (XXX) xxx xxxxxx xxxxxxxxxxx xxxxxxx
-
-
-Xxxx xxxxxxx xxxx Xxxxxxxxx Xxxxxxxx Xxxxxxxxxxx Xxxxxxxx (XXX) xxx xxxxxxx xxxxxxxx. XXX xx xxx xxxxxxx xx xxxxxxx. Xxx xxx xxxxxx XXX xx xxxxx xxx Xxxxxxx Xxxxx.
-
-1.  Xxxx xxx Xxxxxxx Xxxxx xxx xxxxxx **Xxxxxxxx**.
-2.  Xxxxxx **Xxxx Xxxxxxx xxxxxxxx xx xx xxx**.
-3.  Xxxxxx **Xxxxxxxx Xxxxxxxxxxx Xxxxxxxx** xxx xxxx xxxxxx **Xxxxx Xxxx Xxx Xxxxxxxx**. Xxxxxx **Xxxxxxxxxxx Xxxxxxxxxxx Xxxxxxxx** xxx xxxxxx **XXX.XXX Y.Y** xxx **XXX.XXX Y.Y**. Xxxxxx xxxxx xxxxxxxxxx xxxx xxxxxxxxxxxxx xxxxxx **Xxxxxxxx Xxxxxxxxxxx Xxxxxxxx**.
-4.  Xxxxx **XX** xx xxxxx xxx xxxxxxx.
-
-## Xxxxxx xxx xxxxxxx x xxxxxxx xxx xxxxxxx
+## Enable Microsoft Internet Information Services (IIS) and client certificate mapping
 
 
-1.  Xxx Xxxxxxxxx Xxxxxx Xxxxxx xx xxxxxxxxxxxxx xxx xxxxxx **Xxx Xxxxxxx** xxxx xxx xxxxx xxxx. Xxxxxxxxxxxxx xxxxxx xx xxxxxxxx xx xxxxxxx x xxx xxxxxxx xx xx XXX xxxxxx. Xx xxx Xxx Xxxxxxx xxxxxx, xxxxxx xxx xxxxxxxxx xx **.XXX Xxxxxxxxx Y.Y**. Xxxxxx **Xxxxxx X#** -&xx; **Xxx** -&xx; **Xxxxxx Xxxxxx** -&xx; **XXX.XXX Xxx Xxxxxxx Xxxxxxxxxxx**. Xxxx xxx xxxxxxxxxxx "XxxxxXxxxxxxXxxx". Xxxxx **XX** xx xxxxxx xxx xxxxxxx.
-2.  Xx xxx **XxxxxxxY.xxxx.xx** xxxx, xxxxxxx xxx xxxxxxx **XxxxxXxxxx** xxx xxxxxx xxxx xxx xxxxxxxxx "Xxxxx" xxxxxx.
+This article uses Microsoft Internet Information Services (IIS) for example purposes. IIS is not enabled by default. You can enable IIS by using the Control Panel.
+
+1.  Open the Control Panel and select **Programs**.
+2.  Select **Turn Windows features on or off**.
+3.  Expand **Internet Information Services** and then expand **World Wide Web Services**. Expand **Application Development Features** and select **ASP.NET 3.5** and **ASP.NET 4.5**. Making these selections will automatically enable **Internet Information Services**.
+4.  Click **OK** to apply the changes.
+
+## Create and publish a secured web service
+
+
+1.  Run Microsoft Visual Studio as administrator and select **New Project** from the start page. Administrator access is required to publish a web service to an IIS server. In the New Project dialog, change the framework to **.NET Framework 3.5**. Select **Visual C#** -&gt; **Web** -&gt; **Visual Studio** -&gt; **ASP.NET Web Service Application**. Name the application "FirstContosoBank". Click **OK** to create the project.
+2.  In the **Service1.asmx.cs** file, replace the default **HelloWorld** web method with the following "Login" method.
     ```cs
             [WebMethod]
             public string Login()
@@ -41,37 +42,37 @@ Xxxx xxxxxxx xxxx Xxxxxxxxx Xxxxxxxx Xxxxxxxxxxx Xxxxxxxx (XXX) xxx xxxxxxx xxxx
             }
     ```
 
-3.  Xxxx xxx **XxxxxxxY.xxxx.xx** xxxx.
-4.  Xx xxx **Xxxxxxxx Xxxxxxxx**, xxxxx-xxxxx xxx "XxxxxXxxxxxxXxxx" xxx xxx xxxxxx **Xxxxxxx**.
-5.  Xx xxx **Xxxxxxx Xxx** xxxxxx, xxxxxx x xxx xxxxxxx xxx xxxx xx "XxxxxxxXxxxxxx". Xxxxx **Xxxx.**
-6.  Xx xxx xxxx xxxx, xxxxx xxx xxxxxx xxxx xxx xxxx XXX xxxxxx, xxx xxxxxxx x xxxx xxxx xx "Xxxxxxx Xxx Xxxx/XxxxxXxxxxxxXxxx". Xxxxx **Xxxxxxx** xx xxxxxxx xxxx xxx xxxxxxx.
+3.  Save the **Service1.asmx.cs** file.
+4.  In the **Solution Explorer**, right-click the "FirstContosoBank" app and select **Publish**.
+5.  In the **Publish Web** dialog, create a new profile and name it "ContosoProfile". Click **Next.**
+6.  On the next page, enter the server name for your IIS server, and specify a site name of "Default Web Site/FirstContosoBank". Click **Publish** to publish your web service.
 
-## Xxxxxxxxx xxxx xxx xxxxxxx xx xxx xxxxxx xxxxxxxxxxx xxxxxxxxxxxxxx
-
-
-1.  Xxx xxx **Xxxxxxxx Xxxxxxxxxxx Xxxxxxxx (XXX) Xxxxxxx**.
-2.  Xxxxxx xxx xxxxx xxx xxxx XXX xxxxxx. Xxxxx xxx **Xxxxxxx Xxx Xxxx**, xxxxxx xxx xxx "XxxxxXxxxxxxXxxx" xxx xxxxxxx. Xx xxx **Xxxxxxx** xxxxxxx, xxxxxx **Xxxxxxxx Xxxxxxxx...**.
-3.  Xxx xxx **Xxxxxxxxxxx Xxxx** xx **.XXX xY.Y** xxx xxxxx **XX**.
-4.  Xx xxx **Xxxxxxxx Xxxxxxxxxxx Xxxxxxxx (XXX) Xxxxxxx**, xxxxxx xxxx XXX xxxxxx xxx xxxx xxxxxx-xxxxx **Xxxxxx Xxxxxxxxxxxx**. Xx xxx **Xxxxxxx** xxxxxxx, xxxxxx **Xxxxxx Xxxx-Xxxxxx Xxxxxxxxxxx...**. Xxxxx "XxxxxxxXxxx" xx xxx xxxxxxxx xxxx xxx xxx xxxxxxxxxxx xxx xxxxx **XX**. Xxxx xxxx xxxxxx x xxx xxxxxxxxxxx xxx xxx xx xxx XXX xxxxxx xx xxx xxxx xx "&xx;xxxxxx-xxxx&xx;.&xx;xxxxxx-xxxx&xx;".
-5.  Xx xxx **Xxxxxxxx Xxxxxxxxxxx Xxxxxxxx (XXX) Xxxxxxx**, xxxxxx xxx xxxxxxx xxx xxxx. Xx xxx **Xxxxxxx** xxxxxxx, xxxxxx **Xxxxxxx** xxx xxxx xxxxx **Xxx...**. Xxxxxx "xxxxx" xx xxx xxxx, xxx xxx xxxx xx "YYY", xxx xxxxx xxx xxxx xxxx xxxx xxx xxxx XXX xxxxxx ("&xx;xxxxxx-xxxx&xx;.&xx;xxxxxx-xxxx&xx;"). Xxx xxx XXX xxxxxxxxxxx xx "XxxxxxxXxxx". Xxxxx **XX**. Xxxxx **Xxxxx** xx xxx **Xxxx Xxxxxxxx** xxxxxx.
-6.  Xx xxx **Xxxxxxxx Xxxxxxxxxxx Xxxxxxxx (XXX) Xxxxxxx**, xxxxxx xxx "XxxxxXxxxxxxXxxx" xxx xxxxxxx. Xxxxxx-xxxxx **XXX Xxxxxxxx**. Xxxxx **Xxxxxxx XXX**. Xxxxx **Xxxxxx xxxxxxxxxxxx**, xxxxxx **Xxxxxxx**. Xx xxx **Xxxxxxx** xxxxxxx, xxxxx **Xxxxx**.
-7.  Xxx xxx xxxxxx xxxx xxx xxx xxxxxxx xx xxxxxxxxxx xxxxxxxxx xx xxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxxx xxx xxxxxxx: "xxxxx://&xx;xxxxxx-xxxx&xx;.&xx;xxxxxx-xxxx&xx;/XxxxxXxxxxxxXxxx/XxxxxxxY.xxxx". Xxx xxxxxxx, "xxxxx://xxxxxxxx.xxxxxxx.xxx/XxxxxXxxxxxxXxxx/XxxxxxxY.xxxx". Xx xxxx xxx xxxxxxx xx xxxxxxxxxx xxxxxxxxx, xxx xxxx xx xxxxxxxx xx xxxxxx x xxxxxx xxxxxxxxxxx xx xxxxx xx xxxxxx xxx xxx xxxxxxx.
-
-Xxx xxx xxxxxx xxx xxxxxxxx xxxxx xx xxxxxx xxxxxxxx xxx xxxxxxxx xxxx xxx xx xxxxxxxx xxxxx xxx xxxx xxxxxx xxxxxxxxxxx.
-
-## Xxxxxx x Xxxxxxx Xxxxx xxx xxxx xxxx xxxxxxxxxxx xxxxxxxxxxxxxx
+## Configure your web service to use client certificate authentication
 
 
-Xxx xxxx xxx xxxx xxx xx xxxx xxxxxxx xxx xxxxxxxx, xxxx xxxx xxx xxx xxxxxxxxxxxx xx xxxxxxxxxxxx xx xxxxx xxx xxxxxxxx. Xxxx xxx xxxx x xxxxxxx xx xx xxxxxxxxxxxxx xxx xxxxxxx xxxxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639) xxxxxx, xxx xxxxxxx xxxxxxx xxxx xxx xxxxxxx x xxxxxx xxxxxxxxxxx. Xxx xxxxxxxxxxxxx xxx xxxxxxx xxxx xxxxxxx xxxx x xxxxxxx xxx xxxxxx xxxxxxxxxxxxxx. Xxxx xxxx xxxxxx, xxx Xxxxxxx xxxxxx xxxx xxxxxxxxxxxxx xxxxx xxx xxxxxxxxxxx xxxxx xxx xxxxxxxxx xxxxxx xxxxxxxxxxxx. Xxxx xxxx xxx xxxxxx xxxx xxxxx xxxxxxxxxxxx xx xxxxxxxxxxxx xx xxx xxx xxxxxxx. Xxxx xxxxxxxxxxxx xxx xxxxxxxx xxxxxxxxx, xx xxx xxxx xxxx xx xxxxxxx xxx xxxx xxxx x xxx xx xxxxx xxx xxxxxxxx xxx x xxxxxxxxxxx.
+1.  Run the **Internet Information Services (IIS) Manager**.
+2.  Expand the sites for your IIS server. Under the **Default Web Site**, select the new "FirstContosoBank" web service. In the **Actions** section, select **Advanced Settings...**.
+3.  Set the **Application Pool** to **.NET v2.0** and click **OK**.
+4.  In the **Internet Information Services (IIS) Manager**, select your IIS server and then double-click **Server Certificates**. In the **Actions** section, select **Create Self-Signed Certificate...**. Enter "ContosoBank" as the friendly name for the certificate and click **OK**. This will create a new certificate for use by the IIS server in the form of "&lt;server-name&gt;.&lt;domain-name&gt;".
+5.  In the **Internet Information Services (IIS) Manager**, select the default web site. In the **Actions** section, select **Binding** and then click **Add...**. Select "https" as the type, set the port to "443", and enter the full host name for your IIS server ("&lt;server-name&gt;.&lt;domain-name&gt;"). Set the SSL certificate to "ContosoBank". Click **OK**. Click **Close** in the **Site Bindings** window.
+6.  In the **Internet Information Services (IIS) Manager**, select the "FirstContosoBank" web service. Double-click **SSL Settings**. Check **Require SSL**. Under **Client certificates**, select **Require**. In the **Actions** section, click **Apply**.
+7.  You can verify that the web service is configured correctly by opening your web browser and entering the following web address: "https://&lt;server-name&gt;.&lt;domain-name&gt;/FirstContosoBank/Service1.asmx". For example, "https://myserver.example.com/FirstContosoBank/Service1.asmx". If your web service is configured correctly, you will be prompted to select a client certificate in order to access the web service.
 
-Xx xxxxx xxx xx xxxxxx xxxxxxxxxxxx xxxxxxxxx, xxxx xxx xxxx xxxx xxxx xx xxx x xxxxxxxxxxx xx xxx xxxxxxxxxxx xxxxx. Xxx xxx xxxxxxx xxxx xx xxxx xxx xxxx xxxxxxx x xxxx xx xxxxxx x XXX xxxx xxxx xxxxxxxx x xxxxxx xxxxxxxxxxx xxx xxxx xxxxxx xxxx xxxxxxxxxxx xxxx xxx xxxxxx xxxxxxxxxxx xxxxx.
+You can repeat the previous steps to create multiple web services that can be accessed using the same client certificate.
 
-**Xxx**  Xxx xxx xxx xxxxxxxx.xxx xx xxxxxx x XXX xxxx xx xxx xxxx xxxx xxxxxxxxxx. Xxx xxxxxxxxxxx xx xxxxx xxxxxxxx.xxx, xxx [XxxxXxxx.](https://msdn.microsoft.com/library/windows/desktop/aa386968)
+## Create a Windows Store app that uses certificate authentication
+
+
+Now that you have one or more secured web services, your apps can use certificates to authenticate to those web services. When you make a request to an authenticated web service using the [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) object, the initial request will not contain a client certificate. The authenticated web service will respond with a request for client authentication. When this occurs, the Windows client will automatically query the certificate store for available client certificates. Your user can select from these certificates to authenticate to the web service. Some certificates are password protected, so you will need to provide the user with a way to input the password for a certificate.
+
+If there are no client certificates available, then the user will need to add a certificate to the certificate store. You can include code in your app that enables a user to select a PFX file that contains a client certificate and then import that certificate into the client certificate store.
+
+**Tip**  You can use makecert.exe to create a PFX file to use with this quickstart. For information on using makecert.exe, see [MakeCert.](https://msdn.microsoft.com/library/windows/desktop/aa386968)
 
  
 
-1.  Xxxx Xxxxxx Xxxxxx xxx xxxxxx x xxx xxxxxxx xxxx xxx xxxxx xxxx. Xxxx xxx xxx xxxxxxx "XxxxxXxxxxxxXxxxXxx". Xxxxx **XX** xx xxxxxx xxx xxx xxxxxxx.
-2.  Xx xxx XxxxXxxx.xxxx xxxx, xxx xxx xxxxxxxxx XXXX xx xxx xxxxxxx **Xxxx** xxxxxxx. Xxxx XXXX xxxxxxxx x xxxxxx xx xxxxxx xxx x XXX xxxx xx xxxxxx, x xxxx xxx xx xxxxx x xxxxxxxx xxx x xxxxxxxx-xxxxxxxxx XXX xxxx, x xxxxxx xx xxxxxx x xxxxxxxx XXX xxxx, x xxxxxx xx xxx xx xx xxx xxxxxxx xxx xxxxxxx, xxx x xxxx xxxxx xx xxxxxxx xxx xxxxxx xx xxx xxxxxxx xxxxxx.
+1.  Open Visual Studio and create a new project from the start page. Name the new project "FirstContosoBankApp". Click **OK** to create the new project.
+2.  In the MainPage.xaml file, add the following XAML to the default **Grid** element. This XAML includes a button to browse for a PFX file to import, a text box to enter a password for a password-protected PFX file, a button to import a selected PFX file, a button to log in to the secured web service, and a text block to display the status of the current action.
     ```xaml
     <Button x:Name="Import" Content="Import Certificate (PFX file)" HorizontalAlignment="Left" Margin="352,305,0,0" VerticalAlignment="Top" Height="77" Width="260" Click="Import_Click" FontSize="16"/>
     <Button x:Name="Login" Content="Login" HorizontalAlignment="Left" Margin="611,305,0,0" VerticalAlignment="Top" Height="75" Width="240" Click="Login_Click" FontSize="16"/>
@@ -82,8 +83,8 @@ Xx xxxxx xxx xx xxxxxx xxxxxxxxxxxx xxxxxxxxx, xxxx xxx xxxx xxxx xxxx xx xxx x 
     <TextBlock HorizontalAlignment="Left" Margin="717,271,0,0" TextWrapping="Wrap" Text="(Optional)" VerticalAlignment="Top" Height="32" Width="83" FontSize="16"/>
     ```
     
-3.  Xxxx xxx XxxxXxxx.xxxx xxxx.
-4.  Xx xxx XxxxXxxx.xxxx.xx xxxx, xxx xxx xxxxxxxxx xxxxx xxxxxxxxxx.
+3.  Save the MainPage.xaml file.
+4.  In the MainPage.xaml.cs file, add the following using statements.
     ```cs
     using Windows.Web.Http;
     using System.Text;
@@ -93,13 +94,13 @@ Xx xxxxx xxx xx xxxxxx xxxxxxxxxxxx xxxxxxxxx, xxxx xxx xxxx xxxx xxxx xx xxx x 
     using Windows.Storage.Streams;
     ```
 
-5.  Xx xxx XxxxXxxx.xxxx.xx xxxx, xxx xxx xxxxxxxxx xxxxxxxxx xx xxx **XxxxXxxx** xxxxx. Xxxx xxxxxxx xxx xxxxxxx xxx xxx xxxxxxx "Xxxxx" xxxxxx xx xxxx "XxxxxXxxxxxxXxxx" xxx xxxxxxx, xxx x xxxxxx xxxxxxxx xxxx xxxxx x XXX xxxxxxxxxxx xx xxxxxx xxxx xxx xxxxxxxxxxx xxxxx. Xxxxxx xxx &xx;xxxxxx-xxxx&xx; xx xxx xxxxx-xxxxxxxxx xxxxxx xxxx xxx xxxx Xxxxxxxxx Xxxxxxxx Xxxxxxxxxxx Xxxxxx (XXX) xxxxxx.
+5.  In the MainPage.xaml.cs file, add the following variables to the **MainPage** class. They specify the address for the secured "Login" method of your "FirstContosoBank" web service, and a global variable that holds a PFX certificate to import into the certificate store. Update the &lt;server-name&gt; to the fully-qualified server name for your Microsoft Internet Information Server (IIS) server.
     ```cs
     private Uri requestUri = new Uri("https://&lt;server-name&gt;/FirstContosoBank/Service1.asmx?op=Login");
     private string pfxCert = null;
     ```
 
-6.  Xx xxx XxxxXxxx.xxxx.xx xxxx, xxx xxx xxxxxxxxx xxxxx xxxxxxx xxx xxx xxxxx xxxxxx xxx xxxxxx xx xxxxxx xxx xxxxxxx xxx xxxxxxx.
+6.  In the MainPage.xaml.cs file, add the following click handler for the login button and method to access the secured web service.
     ```cs
     private void Login_Click(object sender, RoutedEventArgs e)
     {
@@ -135,7 +136,7 @@ Xx xxxxx xxx xx xxxxxx xxxxxxxxxxxx xxxxxxxxx, xxxx xxx xxxx xxxx xxxx xx xxx x 
     }
     ```
 
-7.  Xx xxx XxxxXxxx.xxxx.xx xxxx, xxx xxx xxxxxxxxx xxxxx xxxxxxxx xxx xxx xxxxxx xx xxxxxx xxx x XXX xxxx xxx xxx xxxxxx xx xxxxxx x xxxxxxxx XXX xxxx xxxx xxx xxxxxxxxxxx xxxxx.
+7.  In the MainPage.xaml.cs file, add the following click handlers for the button to browse for a PFX file and the button to import a selected PFX file into the certificate store.
     ```cs
     private async void Import_Click(object sender, RoutedEventArgs e)
     {
@@ -195,15 +196,10 @@ Xx xxxxx xxx xx xxxxxx xxxxxxxxxxxx xxxxxxxxx, xxxx xxx xxxx xxxx xxxx xx xxx x 
     }
     ```
 
-8.  Xxx xxxx xxx xxx xxx xx xx xxxx xxxxxxx xxx xxxxxxx xx xxxx xx xxxxxx x XXX xxxx xxxx xxx xxxxx xxxxxxxxxxx xxxxx.
+8.  Run your app and log in to your secured web service as well as import a PFX file into the local certificate store.
 
-Xxx xxx xxx xxxxx xxxxx xx xxxxxx xxxxxxxx xxxx xxxx xxx xxx xxxx xxxx xxxxxxxxxxx xx xxxxxx xxx xxxx xx xxxxxxxxx xxxxxxx xxx xxxxxxxx.
+You can use these steps to create multiple apps that use the same user certificate to access the same or different secured web services.
 
- 
-
- 
+<!--HONumber=Mar16_HO5-->
 
 
-
-
-<!--HONumber=Mar16_HO1-->

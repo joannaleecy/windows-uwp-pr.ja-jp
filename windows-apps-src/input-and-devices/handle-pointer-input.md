@@ -1,59 +1,49 @@
 ---
-Description: Xxxxxxxxxxx: Xxxxxxx, xxxxxxx, xxx xxxxxx xxxxx xxxx xxxx xxxxxxxx xxxxxxx, xxxx xx xxxxx, xxxxx, xxx/xxxxxx, xxx xxxxxxxx, xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
-title: xxxxx: Xxxxxx xxxxxxx xxxxx
+Description: Description: ユニバーサル Windows プラットフォーム (UWP) アプリで、タッチ、マウス、ペン/スタイラス、タッチパッドなどのポインティング デバイスからの入力データを受信、処理、管理します。
+title: title: ポインター入力の処理
 ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 label: Handle pointer input
 template: detail.hbs
 ---
 
-# xx.xxxxxxx: XXXXYXYY-YYYY-YYYY-YYYY-YYYXXXYYYXYY
+# ms.assetid: BDBC9E33-4037-4671-9596-471DCF855C82
 
 
-xxxxx: Xxxxxx xxxxxxx xxxxx xxxxxxxx: xxxxxx.xxx
+label: ポインター入力の処理 template: detail.hbs
 
 
-Xxxxxx xxxxxxx xxxxx
+ポインター入力の処理
 
-**\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY.**
+**\[Windows 10 の UWP アプリ向けに更新。**
 
--   [**Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Xxxxxxx, xxxxxxx, xxx xxxxxx xxxxx xxxx xxxx xxxxxxxx xxxxxxx, xxxx xx xxxxx, xxxxx, xxx/xxxxxx, xxx xxxxxxxx, xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Xxxxxxxxx XXXx**](https://msdn.microsoft.com/library/windows/apps/br242084)
-
-
-**Xxxxxxx.Xxxxxxx.Xxxxx**  
-Xxxxxxx.XX.Xxxxx Xxxxxxx.XX.Xxxx.Xxxxx **Xxxxxxxxx** Xx xxx xxxxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxx, xxxx xx xxxx xxxx xxxxx xxxxxx xx xxxxxxxxx xxxxxxxxxx xxxxxxxxx xxxxxx xxxxxxxxxxx xxxx xxx XX xxxxxxxx xx xxxx xxx.
+-   [**Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]**](https://msdn.microsoft.com/library/windows/apps/br225648)
+-   [**ユニバーサル Windows プラットフォーム (UWP) アプリで、タッチ、マウス、ペン/スタイラス、タッチパッドなどのポインティング デバイスからの入力データを受信、処理、管理します。**](https://msdn.microsoft.com/library/windows/apps/br208383)
+-   [**重要な API**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
 
-## Xx xxxxxxxxx xxxx xxx xxxxx xxxx xxxxxx xxxxxxxxxxxx xx xxx [Xxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt185406) xx xxxx xxxxxx xxxxxxxxxx xxx xxxxxxxxxxxx.
+**Windows.Devices.Input**  
+Windows.UI.Input Windows.UI.Xaml.Input **重要** 独自の対話式操作サポートを実装する場合は、ユーザーはアプリの UI 要素を直接操作できる直感的なエクスペリエンスを期待しているということを心に留めておいてください。
 
 
-Xxx xxxxxxxx xxxxxxxx xxxxxxx xxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxxxxxxxxx xxxxxxxxxx, xxxxxxxxx xxxxxxxx xxxxxxxxxxxx, xxxxxxxx xxxxxxx xxxxxxx, xxxxxx xxxxxxxx, xxx xxxxxxxxxxxxx. Xxxxxx xxxxxx xxxxxxxxxxxx xxxx xx xxxxx xx x xxxxx, xxxx-xxxxxxx xxxxxxxxxxx xxx xxxxx xxxxxxxxxxxx xxx'x xxxxxxx xxxx xxxxxxxx. <span id="Pointers">
-            </span>
-            <span id="pointers">
-            </span>
-            <span id="POINTERS">
-            </span>Xxxxxxxx
+## カスタムの対話式操作では、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/mt185406)」を手本にして、一貫性と見つけやすさを維持することをお勧めします。
 
-Xxxx xxxxxxxxxxx xxxxxxxxxxx xxxxxxx xxx xxxx xxxxxxxxxxx xxx xxxxxx xxxx xxxx xx xxxxxxxx xxxx xx xxxxxxxx xx xx xxxxx xxxxx xxxxxxx xxxx xx xxxxx, xxxxx, xxx/xxxxxx, xxx xxxxxxxx.
+
+これらのプラットフォーム コントロールでは、標準的な対話式操作、アニメーション化された物理的効果、視覚的フィードバック、アクセシビリティなど、ユニバーサル Windows プラットフォーム (UWP) の完全なユーザー操作エクスペリエンスが提供されます。 はっきりとした明確に定義されている要件があり、基本的な対話式操作ではシナリオがサポートされない場合のみ、カスタムの対話式操作を作ってください。 <span id="Pointers"></span><span id="pointers"></span><span id="POINTERS"></span>ポインター
+
+多くの操作のエクスペリエンスでは、ユーザーがタッチ、マウス、ペン/スタイラス、タッチパッドなどの入力デバイスを使ってポイントすることによって、操作の対象となるオブジェクトを識別します。
 
  
 
-Xxxxxxx xxx xxx Xxxxx Xxxxxxxxx Xxxxxx (XXX) xxxx xxxxxxxx xx xxxxx xxxxx xxxxxxx xxxxxxxx xxxx xxxxxx xxxxxxxxxx, xxx xxxx xx xxxxxxxx xxxx x xxxxxxx xxxxx xxxxx xxx xxxxxxx xx xxxxxxxxxxxx, xxxxxx-xxxxxxxx xxxxxxx xxxx. Xxxx XXX xxxx xxx xxxx xxxxxxx xxxx xxxx xxxxxxx xxxxxxxx xxxxx xxx xxxxx xxxxxx xxxxx xxxx.
+これらの入力デバイスによって提供される生のヒューマン インターフェイス デバイス (HID) のデータには、多くの共通するプロパティが含まれているため、情報は統合入力スタックに昇格され、デバイスにとらわれない、統合されたポインター データとして公開されます。 UWP アプリでは、使われている入力デバイスについて意識することなくこのデータを利用できます。
 
-## **Xxxx**  Xxxxxx-xxxxxxxx xxxx xx xxxx xxxxxxxx xxxx xxx xxx XXX xxxx xxxxxx xxxx xxx xxxxxxx xx.
+## **注**  アプリで必要な場合は、デバイス固有の情報も HID の生データから昇格されます。
 
 
-Xxxx xxxxx xxxxx (xx xxxxxxx) xx xxx xxxxx xxxxx xx xxxxxxxxxxx xx x [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227968) xxxxxx xxxxxxx xxxxxxx xxx [**XxxxxxxXxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh943076) xxxxxxxxx xxxxxxxx xx xxxxxxx xxxxxxx xxxxxx. Xx xxx xxxx xx xxxxx-xxx xx xxxxx-xxxxx xxxxx, xxxx xxxxxxx xx xxxxxxx xx x xxxxxx xxxxx xxxxx. <span id="Pointer_events">
-            </span>
-            <span id="pointer_events">
-            </span>
-            <span id="POINTER_EVENTS">
-            </span>Xxxxxxx xxxxxx
+入力スタックの各入力ポイント (または接触) は、さまざまなポインター イベントで提供される [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) パラメーターによって公開される [**Pointer**](https://msdn.microsoft.com/library/windows/apps/br227968) オブジェクトで表されます。 マルチペンまたはマルチタッチ入力の場合、各接触は固有の入力ポイントとして扱われます。 <span id="Pointer_events"></span><span id="pointer_events"></span><span id="POINTER_EVENTS"></span>ポインター イベント
 
-Xxxxxxx xxxxxx xxxxxx xxxxx xxxx xxxx xx xxxxxxxxx xxxxx (xx xxxxx xx xx xxxxxxx) xxx xxxxxx xxxx, xxx xxxxxxxx xxxx xxxx xx xxxxxxxx, xxxxxxxx, xxx xxxxxxx xxxxxxxx.
+ポインター イベントは、検出状態 (範囲または接触) やデバイスの種類などの基本情報と、位置、圧力、接触形状などの拡張情報を公開します。
 
-Xx xxxxxxxx, xxxxxxxx xxxxxx xxxxxxxxxx xxxx xx xxxxx xxxxx xxxxxx x xxxx xxxxxxx xx xxxxxxx xxx xxx xxxxxx xxx xx xxxxx xxxx xxx xxxx xxxxxxxxx. Xx xxxx xxx xxxxx xx xxxxxxxxxxxxx xxxxxxx xxxxx xxxxxxx xxx xxxxx xxxxxxxxxxxx, xxx [Xxxxxxxx xxxxx xxxxxxx](identify-input-devices.md). XXX xxxx xxx xxxxxx xxx xxx xxxxxxxxx xxxxxxx xxxxxx:
+さらに、ユーザーが押したマウス ボタンは何か、ペンの消しゴム ボタンは使われているかなど、特定のデバイスのプロパティも使うことができます。 アプリで入力デバイスとその機能を区別する必要がある場合は、「[入力デバイスの識別](identify-input-devices.md)」をご覧ください。 UWP アプリでは、次のポインター イベントをリッスンすることができます。
 
  
 
@@ -64,100 +54,90 @@ Xx xxxxxxxx, xxxxxxxx xxxxxx xxxxxxxxxx xxxx xx xxxxx xxxxx xxxxxx x xxxx xxxxxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">**Xxxx**  Xxxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208918) xx xxxxxxxxx xxxxxxx xxxxx xx x xxxxxxxx XX xxxxxxx.</th>
-<th align="left">Xxxx x xxxxxxx xx xxxxxxxx xx xx xxxxxxx, xxxx xxxx xxxxxx xxxxxxxx xxx xxxxxxx xxxxx xxxxxx, xxxx xxxx xxx xxxxxxx xxxxx xxxxxxx xxx xxxxxxxx xxxx xx xxx xxxxxx.</th>
+<th align="left">**注**  ポインターの入力を特定の UI 要素に制限するには、[**CapturePointer**](https://msdn.microsoft.com/library/windows/apps/br208918) を呼び出します。</th>
+<th align="left">要素でポインターがキャプチャされると、ポインターがオブジェクトの境界領域の外部に移動しても、そのオブジェクトだけがポインター入力イベントを受け取ります。</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="PointerCanceled"></span><span id="pointercanceled"></span><span id="POINTERCANCELED"></span>Xxx xxxxxxxxx xxxxxxx xxx xxxxxxx xxxxxx x [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208971) xxxxx xxxxxxx xx [**XxXxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227976) (xxxxx xxxxxx xxxxxxx, xxxxx xx xxxxxx xx xxxxxxx) xxxx xx xxxx xxx **XxxxxxxXxxxxxx** xx xx xxxxxxxxxx.</p></td>
-<td align="left"><p>Xxxxx</p>
+<td align="left"><p><span id="PointerCanceled"></span><span id="pointercanceled"></span><span id="POINTERCANCELED"></span>通常、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) イベント ハンドラー内でポインターをキャプチャします。これは、**CapturePointer** が成功するには、[**IsInContact**](https://msdn.microsoft.com/library/windows/apps/br227976) (マウスのボタンが押されること、タッチやスタイラスの接触) が true である必要があるためです。</p></td>
+<td align="left"><p>イベント</p>
 <ul>
-<li>Xxxxxxxxxxx</li>
-<li>[<strong>XxxxxxxXxxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY)</li>
-<li>Xxxxxx xxxx x xxxxxxx xx xxxxxxxx xx xxx xxxxxxxx.</li>
-<li>Xxxxx xxxxxxxx xxx xxxxxxxx xxxx x xxx xx xxxxxxxx xxxxxx xxxxx xx xxx xxxxx xxxxxxx.</li>
-<li>Xx xxxxxx xxxxxxx xx xxx xxxxxxxx xxx xxxx xxxx YYY xx.</li>
+<li>説明</li>
+<li>[<strong>PointerCanceled</strong>](https://msdn.microsoft.com/library/windows/apps/br208964)</li>
+<li>プラットフォームでポインターが取り消されると発生します。</li>
+<li>入力サーフェスの範囲内でペンが検出されると、タッチ ポインターは取り消されます。</li>
+<li>100 ミリ秒を超えてもアクティブな接触が検出されません。</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerCaptureLost"></span><span id="pointercapturelost"></span><span id="POINTERCAPTURELOST"></span>Xxxxxxx/xxxxxxx xx xxxxxxx (xxxxxxxxxx, xxxxxxxx, xxxxx-xxx xxxxxxxxxxxxx).</p></td>
-<td align="left"><p>Xxx xxxxxxx xx xxxxxx xx xxx xxxx xxx xxxxxx xxx.</p>
-<div class="alert">Xxx xxxxxx xx xxxxxxxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxxx xx xxx xxxxxx.
+<td align="left"><p><span id="PointerCaptureLost"></span><span id="pointercapturelost"></span><span id="POINTERCAPTURELOST"></span>モニター/ディスプレイが変更されました (解像度、設定、マルチモニター構成)。</p></td>
+<td align="left"><p>デスクトップがロックされているか、ユーザーがログオフしました。</p>
+<div class="alert">同時に接触した数がデバイスでサポートされる数を超えています。
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="PointerEntered"></span><span id="pointerentered"></span><span id="POINTERENTERED"></span>[<strong>XxxxxxxXxxxxxxXxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY)</p></td>
-<td align="left"><p>Xxxxxx xxxx xxxxxxx XX xxxxxxx xxxxxxxx xxx xxxxxxx, xxx xxxxxxx xxx xxxxxxxx, xx xxxxxxx xxxxxxx xxx xxxxxxxxxxxxxxxx xxxxxxxx. 
-<strong>Xxxx</strong>  Xxxxx xx xx xxxxxxxxxxxxx xxxxxxx xxxxxxx xxxxx.</p>
+<td align="left"><p><span id="PointerEntered"></span><span id="pointerentered"></span><span id="POINTERENTERED"></span>[<strong>PointerCaptureLost</strong>](https://msdn.microsoft.com/library/windows/apps/br208965)</p></td>
+<td align="left"><p>別の UI 要素がポインターをキャプチャしたか、ポインターが離されたか、別のポインターがプログラムでキャプチャされたときに発生します。 
+<strong>注</strong>  対応するポインター キャプチャ イベントはありません。</p>
 <ul>
-<li>[<strong>XxxxxxxXxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY)</li>
-<li>Xxxxxx xxxx x xxxxxxx xxxxxx xxx xxxxxxxx xxxx xx xx xxxxxxx.</li>
-<li>Xxxx xxx xxxxxx xx xxxxxxxx xxxxxxxxx xxxx xxx xxxxx, xxxxxxxx, xxxxx, xxx xxx xxxxx. Xxxxx xxxxxxxx x xxxxxx xxxxxxx xx xxxx xxxx xxxxx, xxxxxx xxxx x xxxxxx xxxxx xxxx xx xxx xxxxxxx xx xxxx xxxxxx xxxx xxx xxxxxxxx xxxx xx xxx xxxxxxx.</li>
+<li>[<strong>PointerEntered</strong>](https://msdn.microsoft.com/library/windows/apps/br208968)</li>
+<li>ポインターが要素の境界領域内に入ったときに発生します。</li>
+<li>これは、タッチ、タッチパッド、マウス、ペン入力で発生方法が少し異なります。 タッチでは、このイベントが発生するには、直接タッチするか、要素の境界領域内に移動することによって、指が接触する必要があります。</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerExited"></span><span id="pointerexited"></span><span id="POINTEREXITED"></span>Xxxxx xxx xxxxxxxx xxxx xxxx xx xx-xxxxxx xxxxxx xxxx xx xxxxxx xxxxxxx xxx xxxxx xxxx xxxxx xxxx xx xx xxxxx xx xxxxxxxx xxxxxx xx xxxxxxx.</p></td>
-<td align="left"><p>Xxxx xxxxx, xxx xxxxx xxxx xxxxx xxxx x xxxxxx xxx xxxx xx xxx xxxxxxx xx xxxx xxxxxx xxxx xxx xxxxxxxx xxxx xx xxx xxxxxxx. Xxxxxxx, xxx xxxx xxx x xxxxx xxxxx ([<strong>XxXxXxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY)) xxxx, xxxx xxxx, xxxxx xxxx xxxxx.</p>
+<td align="left"><p><span id="PointerExited"></span><span id="pointerexited"></span><span id="POINTEREXITED"></span>マウスとタッチパッドでは、常に表示される画面上のカーソルがあり、マウスやタッチパッドのボタンが押されなくてもこのイベントが発生します。</p></td>
+<td align="left"><p>タッチと同様に、直接ペンでタッチするか、要素の境界領域内に移動することによって、このイベントが起動されます。 ただし、ペンにはホバー状態 ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977)) もあり、true の場合、このイベントが発生します。</p>
 <ul>
-<li>[<strong>XxxxxxxXxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY)</li>
-<li>Xxxxxx xxxx x xxxxxxx xxxxxx xxx xxxxxxxx xxxx xx xx xxxxxxx.</li>
-<li>Xxxx xxx xxxxxx xx xxxxxxxx xxxxxxxxx xxxx xxx xxxxx, xxxxxxxx, xxxxx, xxx xxx xxxxx. Xxxxx xxxxxxxx x xxxxxx xxxxxxx xxx xxxxx xxxx xxxxx xxxx xxx xxxxxxx xxxxx xxx xx xxx xxxxxxxx xxxx xx xxx xxxxxxx.</li>
+<li>[<strong>PointerExited</strong>](https://msdn.microsoft.com/library/windows/apps/br208969)</li>
+<li>ポインターが要素の境界領域から出たときに発生します。</li>
+<li>これは、タッチ、タッチパッド、マウス、ペン入力で発生方法が少し異なります。 タッチでは、指が接触している必要があり、ポインターが要素の境界領域から外へ移動したときにこのイベントが発生します。</li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="PointerMoved"></span><span id="pointermoved"></span><span id="POINTERMOVED"></span>Xxxxx xxx xxxxxxxx xxxx xxxx xx xx-xxxxxx xxxxxx xxxx xx xxxxxx xxxxxxx xxx xxxxx xxxx xxxxx xxxx xx xx xxxxx xx xxxxxxxx xxxxxx xx xxxxxxx.</p></td>
-<td align="left"><p>Xxxx xxxxx, xxx xxxxx xxxx xxxxx xxxx xxxxxx xxx xx xxx xxxxxxxx xxxx xx xxx xxxxxxx. Xxxxxxx, xxx xxxx xxx x xxxxx xxxxx ([<strong>XxXxXxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY)) xxxx xxxxx xxxx xxxxx xxxx xxx xxxxx xxxxxxx xxxx xxxx xx xxxxx.</p>
+<td align="left"><p><span id="PointerMoved"></span><span id="pointermoved"></span><span id="POINTERMOVED"></span>マウスとタッチパッドでは、常に表示される画面上のカーソルがあり、マウスやタッチパッドのボタンが押されなくてもこのイベントが発生します。</p></td>
+<td align="left"><p>タッチと同様に、ペンでは、要素の境界領域の外へ移動したときにこのイベントが発生します。 ただし、ペンにはホバー状態 ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977)) もあり、状態が true から false に変化したときに、このイベントが発生します。</p>
 <ul>
-<li>[<strong>XxxxxxxXxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY)</li>
-<li>Xxxxxx xxxx x xxxxxxx xxxxxxx xxxxxxxxxxx, xxxxxx xxxxx, xxxxxxxx, xxxx, xx xxxxxxx xxxxxxxx (xxx xxxxxxx, xxxxx xxx xxxxxx) xxxxxx xxx xxxxxxxx xxxx xx xx xxxxxxx.</li>
-<li>Xxxx xxx xxxxxx xx xxxxxxxx xxxxxxxxx xxxx xxx xxxxx, xxxxxxxx, xxxxx, xxx xxx xxxxx. Xxxxx xxxxxxxx x xxxxxx xxxxxxx xxx xxxxx xxxx xxxxx xxxx xxxx xx xxxxxxx xxxxxx xxx xxxxxxxx xxxx xx xxx xxxxxxx.</li>
+<li>[<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970)</li>
+<li>要素の境界領域内で、ポインターの座標、ボタンの状態、圧力、傾き、または接触形状 (たとえば、幅と高さ) が変化したときに発生します。</li>
+<li>これは、タッチ、タッチパッド、マウス、ペン入力で発生方法が少し異なります。 タッチでは、指が接触している必要があり、要素の境界領域内に接触した場合にのみ、このイベントが発生します。</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerPressed"></span><span id="pointerpressed"></span><span id="POINTERPRESSED"></span>Xxxxx xxx xxxxxxxx xxxx xxxx xx xx-xxxxxx xxxxxx xxxx xx xxxxxx xxxxxxx xxx xxxxx xxxx xxxxx xxxx xx xx xxxxx xx xxxxxxxx xxxxxx xx xxxxxxx.</p></td>
-<td align="left"><p>Xxxx xxxxx, xxx xxxxx xxxx xxxxx xxxx xx xxxxxxx xxxxxx xxx xxxxxxxx xxxx xx xxx xxxxxxx.</p>
-<p>Xxxxxxx, xxx xxxx xxx x xxxxx xxxxx ([<strong>XxXxXxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY)) xxxx, xxxx xxxx xxx xxxxxx xxx xxxxxxxx xxxx xx xxx xxxxxxx, xxxxx xxxx xxxxx.</p></td>
+<td align="left"><p><span id="PointerPressed"></span><span id="pointerpressed"></span><span id="POINTERPRESSED"></span>マウスとタッチパッドでは、常に表示される画面上のカーソルがあり、マウスやタッチパッドのボタンが押されなくてもこのイベントが発生します。</p></td>
+<td align="left"><p>タッチと同様に、ペンでは、要素の境界領域内に接触したときにこのイベントが発生します。</p>
+<p>ただし、ペンにはホバー状態 ([<strong>IsInRange</strong>](https://msdn.microsoft.com/library/windows/apps/br227977)) もあり、状態が true で、要素の境界領域内にあるときに、このイベントが発生します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="PointerReleased"></span><span id="pointerreleased"></span><span id="POINTERRELEASED"></span>[<strong>XxxxxxxXxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY)</p></td>
-<td align="left"><p>Xxxxxx xxxx xxx xxxxxxx xxxxxxxxx x xxxxx xxxxxx (xxxx xx x xxxxx xxxx, xxxxx xxxxxx xxxx, xxx xxxx, xx xxxxxxxx xxxxxx xxxx) xxxxxx xxx xxxxxxxx xxxx xx xx xxxxxxx.</p></td>
+<td align="left"><p><span id="PointerReleased"></span><span id="pointerreleased"></span><span id="POINTERRELEASED"></span>[<strong>PointerPressed</strong>](https://msdn.microsoft.com/library/windows/apps/br208971)</p></td>
+<td align="left"><p>要素の境界領域内でポインターを押すアクション (タッチして押す、マウス ボタンを押す、ペンで押す、タッチパッドのボタンを押すなど) を行うと発生します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="PointerWheelChanged"></span><span id="pointerwheelchanged"></span><span id="POINTERWHEELCHANGED"></span>[<strong>XxxxxxxXxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY) xxxx xx xxxxxx xxxx xxx xxxxxxx xxx xxxx xxxxx.</p></td>
-<td align="left"><p>[<strong>XxxxxxxXxxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY)</p>
-<p>Xxxxxx xxxx xxx xxxxxxx xxxxxxxxx x xxxxxxx xxxxxx (xxxx xx x xxxxx xx, xxxxx xxxxxx xx, xxx xx, xx xxxxxxxx xxxxxx xx) xxxxxx xxx xxxxxxxx xxxx xx xx xxxxxxx xx, xx xxx xxxxxxx xx xxxxxxxx, xxxxxxx xxx xxxxxxxx xxxx. [<strong>XxxxxxxXxxxxXxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY)</p></td>
+<td align="left"><p><span id="PointerWheelChanged"></span><span id="pointerwheelchanged"></span><span id="POINTERWHEELCHANGED"></span>このイベントのハンドラーから [<strong>CapturePointer</strong>](https://msdn.microsoft.com/library/windows/apps/br208918) を呼び出す必要があります。</p></td>
+<td align="left"><p>[<strong>PointerReleased</strong>](https://msdn.microsoft.com/library/windows/apps/br208972)</p>
+<p>要素の境界領域内でポインターを離すアクション (タッチを離す、マウス ボタンを離す、ペンを離す、タッチパッドのボタンを離すなど) を行ったとき、またはポインターが境界領域の外部でキャプチャされた場合に発生します。 [<strong>PointerWheelChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208973)</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## Xxxxxx xxxx xxx xxxxx xxxxx xx xxxxxxx.
+## マウス ホイールが回転したときに発生します。
 
 
-Xxxxx xxxxx xx xxxxxxxxxx xxxx x xxxxxx xxxxxxx xxxxxxxx xxxx xxxxx xxxxx xx xxxxx xxxxxxxx.
+マウス入力が最初に検出されると、割り当てられている単一ポインターと関連付けられます。
 
-### Xxxxxxxx x xxxxx xxxxxx (xxxx, xxxxx, xx xxxxx) xxxxxxx x xxxxxxxxx xxxxxxxxxxx xxxxxxx xxx xxxxxxx xxx xxxx xxxxxx xxxxxxx xxx [<strong>XxxxxxxXxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY) xxxxx.
+### (左ボタン、ホイール、右ボタンのいずれかの) マウス ボタンをクリックすると、[<strong>PointerMoved</strong>](https://msdn.microsoft.com/library/windows/apps/br208970) イベントによってポインターとそのボタンが副次的に関連付けられます。
 
-<span id="Example">
-            </span>
-            <span id="example">
-            </span>
-            <span id="EXAMPLE">
-            </span>Xxxxxxx Xxxx'x xxxx xxxx xxxxxxxx xxxx x xxxxx xxxxxxx xxxxxxxx xxx xxxx xxxx xxx xx xxxxxx xxx xxx xxxxxx xxxxxxx xxxxxx xxx xxx xxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxxxx.
+<span id="Example"></span><span id="example"></span><span id="EXAMPLE"></span>例 ここでは、基本的なポインター追跡アプリのコード例を示すことによって、ポインター イベントをリッスンして処理し、アクティブなポインターのさまざまなプロパティを取得する方法について説明します。
 
-<span id="Create_the_UI">
-            </span>
-            <span id="create_the_ui">
-            </span>
-            <span id="CREATE_THE_UI">
-            </span>Xxxxxx xxx XX Xxx xxxx xxxxxxx, xx xxx x xxxxxxxxx (`targetContainer`) xx xxx xxxxxx xxxxxx xxx xxxxxxx xxxxx.
+<span id="Create_the_UI"></span><span id="create_the_ui"></span><span id="CREATE_THE_UI"></span>UI を作る この例では、ポインター入力のターゲット オブジェクトとして四角形 (`targetContainer`) を使います。
 
-Xxx xxxxx xx xxx xxxxxx xxxxxxx xxxx xxx xxxxxxx xxxxxx xxxxxxx.
+ポインターの状態が変わると、ターゲットの色が変わります。
 
 ```XAML
 <Page
@@ -214,20 +194,15 @@ Xxx xxxxx xx xxx xxxxxx xxxxxxx xxxx xxx xxxxxxx xxxxxx xxxxxxx.
 </Page>
 ```
 
-### Xxxxxxx xxx xxxx xxxxxxx xxx xxxxxxxxx xx x xxxxxxxx xxxx xxxxx xxxx xxxxx xxxx xxx xxxxxxx.
+### ポインターと共に移動する浮動テキスト ブロックに、各ポインターの詳細が表示されます。
 
-Xxx xxxxxxx xxxxxx xxxxxxxxxx xxx xxxxxxxxx xx xxx xxxx xx xxx xxxxxxxxx (xxx xxxxxxxxx xxxxx xxxxxxxx).
+ポインター イベント自体は四角形の左側に表示されます (イベントのシーケンスを示すため)。
 
-Xxxx xx xxx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX) xxx xxxx xxxxxxx.
+この例の Extensible Application Markup Language (XAML) を次に示します。
 
-<span id="Listen_for_pointer_events">
-            </span>
-            <span id="listen_for_pointer_events">
-            </span>
-            <span id="LISTEN_FOR_POINTER_EVENTS">
-            </span>Xxxxxx xxx xxxxxxx xxxxxx Xx xxxx xxxxx, xx xxxxxxxxx xxxx xxx xxx xxxxxxx xxxx xxxxxxx xxx [**XxxxxxxXxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh943076) xx xxx xxxxx xxxxxxx.
+<span id="Listen_for_pointer_events"></span><span id="listen_for_pointer_events"></span><span id="LISTEN_FOR_POINTER_EVENTS"></span>ポインター イベントをリッスンする ほとんどの場合は、イベント ハンドラーの [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) を介してポインター情報を取得することをお勧めします。
 
-Xx xxx xxxxx xxxxxxxx xxxxx'x xxxxxx xxx xxxxxxx xxxxxxx xxxxxxxx, xxx xxx xxx xxxxxx xx xxxxxxxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242038) xxxx xxxxxxx xxxxxxx xxx [**XxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh943077) xxx [**XxxXxxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh943078) xxxxxxx xx [**XxxxxxxXxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh943076).
+必要なポインターの詳細をイベント引数が公開していない場合は、[**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) の [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) メソッドと [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) メソッドによって公開される拡張 [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) 情報にアクセスできます。
 
 ```CSharp
         // For this example, we track simultaneous contacts in case the 
@@ -268,18 +243,13 @@ Xx xxx xxxxx xxxxxxxx xxxxx'x xxxxxx xxx xxxxxxx xxxxxxx xxxxxxxx, xxx xxx xxx x
 
 ```
 
-### Xxx xxxx xxxxxxx, xx xxx x xxxxxxxxx (`targetContainer`) xx xxx xxxxxx xxxxxx xxx xxxxxxx xxxxx.
+### この例では、ポインター入力のターゲット オブジェクトとして四角形 (`targetContainer`) を使います。
 
-Xxx xxxxx xx xxx xxxxxx xxxxxxx xxxx xxx xxxxxxx xxxxxx xxxxxxx.
+ポインターの状態が変わると、ターゲットの色が変わります。
 
--   Xxx xxxxxxxxx xxxx xxxx xx xxx xxxxxx xxxxxx, xxxxxxxx xxxxxx xxxxxxxxx, xxx xxxxxxxxxx xxx xxxxxxx xxxxxxx xxxxx xxxxxxxxx xxx xxx xxxxxx. <span id="Handle_pointer_events">
-            </span>
-            <span id="handle_pointer_events">
-            </span>
-            <span id="HANDLE_POINTER_EVENTS">
-            </span>Xxxxxx xxxxxxx xxxxxx
+-   次のコードでは、ターゲット オブジェクトを設定し、グローバル変数を宣言し、ターゲットのさまざまなポインター イベント リスナーを識別しています。 <span id="Handle_pointer_events"></span><span id="handle_pointer_events"></span><span id="HANDLE_POINTER_EVENTS"></span>ポインター イベントを処理する
 
-    Xxxx, xx xxx XX xxxxxxxx xx xxxxxxxxxxx xxxxx xxxxxxx xxxxx xxxxxxxx. Xxxx xxxxxxx xxxxxxx x [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208971) xxxxx.
+    次に、UI フィードバックを使って基本的なポインター イベント ハンドラーを示します。 このハンドラーは、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) イベントを管理します。
 
      
 
@@ -324,7 +294,7 @@ Xxx xxxxx xx xxx xxxxxx xxxxxxx xxxx xxx xxxxxxx xxxxxx xxxxxxx.
             }
 ```
 
--   Xx xxx xxx xxxxx xx xxx xxxxx xxx, xxx xxx xxxxxxx xx xxx xxxxxxx xxxxx xxxx xxx xxxxxxxx xxx xxxxxxxx xx xxxxxxxx, xxx xxxxxxx xxx xxxxxxx xxxxxxx. **Xxxx**[**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208971) xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208972) xxxxxx xx xxx xxxxxx xxxxx xx xxxxx.
+-   イベント ログにイベントを追加し、関心のあるポインターを追跡するために使われるポインター配列にポインターを追加し、ポインターの詳細を表示します。 **注**  [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) イベントと [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) イベントは常に対で発生するわけではありません。
 
 ```    CSharp
         private void Target_PointerEntered(object sender, PointerRoutedEventArgs e)
@@ -358,9 +328,9 @@ Xxx xxxxx xx xxx xxxxxx xxxxxxx xxxx xxx xxxxxxx xxxxxx xxxxxxx.
             }
 ```
 
--   Xxxx xxx xxxxxx xxxxxx xxx xxx xxxxxx xxx xxxxx xxxx xxxxx xxxxxxxx x xxxxxxx xxxx xxxxxx (xxxx xx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208969), [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208964), xxx [**XxxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208965)). Xxxx xxxxxxx xxxxxxx x [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208968) xxxxx.
+-   アプリでは、ポインター ダウン アクションを終了させる可能性のあるすべてのイベント ([**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)、[**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)、[**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) など) をリッスンして処理する必要があります。 このハンドラーは、[**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) イベントを管理します。
 
-    Xx xxx xxx xxxxx xx xxx xxxxx xxx, xxx xxx xxxxxxx xx xxx xxxxxxx xxxxxxxxxx, xxx xxxxxxx xxx xxxxxxx xxxxxxx. Xxxx xxxxxxx xxxxxxx x [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208970) xxxxx. Xx xxx xxx xxxxx xx xxx xxxxx xxx xxx xxxxxx xxx xxxxxxx xxxxxxx. **Xxxxxxxxx**  Xxxxx xxxxx xx xxxxxxxxxx xxxx x xxxxxx xxxxxxx xxxxxxxx xxxx xxxxx xxxxx xx xxxxx xxxxxxxx.
+    イベント ログにイベントを追加し、ポインター コレクションにポインターを追加して、ポインターの詳細を表示します。 このハンドラーは、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) イベントを管理します。 イベント ログにイベントを追加し、ポインターの詳細を更新します。 **重要**  マウス入力が最初に検出されると、割り当てられている単一ポインターと関連付けられます。
 
      
 
@@ -408,7 +378,8 @@ private void Target_PointerMoved(object sender, PointerRoutedEventArgs e)
     }
 ```
 
--   Xxxxxxxx x xxxxx xxxxxx (xxxx, xxxxx, xx xxxxx) xxxxxxx x xxxxxxxxx xxxxxxxxxxx xxxxxxx xxx xxxxxxx xxx xxxx xxxxxx xxxxxxx xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208971) xxxxx. Xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208972) xxxxx xx xxxxx xxxx xxxx xxxx xxxx xxxxx xxxxxx xx xxxxxxxx (xx xxxxx xxxxxx xxx xx xxxxxxxxxx xxxx xxx xxxxxxx xxxxx xxxx xxxxx xx xxxxxxxx).
+-   (左ボタン、ホイール、右ボタンのいずれかの) マウス ボタンをクリックすると、[**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) イベントによってポインターとそのボタンが副次的に関連付けられます。 [
+            **PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) イベントは、同じマウス ボタンを離したときにだけ発生します (イベントが完了するまではそのポインターに他のボタンが関連付けられることはありません)。
 
 ```    CSharp
 private void Target_PointerWheelChanged(object sender, PointerRoutedEventArgs e)
@@ -436,7 +407,7 @@ private void Target_PointerWheelChanged(object sender, PointerRoutedEventArgs e)
     }
 ```
 
--   Xxxxxxx xx xxxx xxxxxxxxx xxxxxxxxxxx, xxxxx xxxxx xxxxxx xxxxxx xxx xxxxxx xxxxxxx xxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208970) xxxxx. Xxxx xxxxxxx xxxxxxx x [**XxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208973) xxxxx.
+-   この排他的な関連付けのために、他のマウス ボタンをクリックした場合は、[**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) イベントによってルーティングされます。 このハンドラーは、[**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973) イベントを管理します。
 
 ```    CSharp
 void Target_PointerReleased(object sender, PointerRoutedEventArgs e)
@@ -482,7 +453,7 @@ void Target_PointerReleased(object sender, PointerRoutedEventArgs e)
     }
 ```
 
--   Xx xxx xxx xxxxx xx xxx xxxxx xxx, xxx xxx xxxxxxx xx xxx xxxxxxx xxxxx (xx xxxxxxxxx), xxx xxxxxxx xxx xxxxxxx xxxxxxx. Xxxx xxxxxxx xxxxxxx x [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208972) xxxxx xxxxx xxxxxxx xxxx xxx xxxxxxxxx xx xxxxxxxxxx.
+-   イベント ログにイベントを追加し、ポインター配列にポインターを追加して (必要な場合)、ポインターの詳細を表示します。 このハンドラーは、デジタイザーとの接触が終了する [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) イベントを管理します。
 
 ```    CSharp
 private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
@@ -513,7 +484,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
     }
 ```
 
--   Xx xxx xxx xxxxx xx xxx xxxxx xxx, xxxxxx xxx xxxxxxx xxxx xxx xxxxxxx xxxxxxxxxx, xxx xxxxxx xxx xxxxxxx xxxxxxx. Xxxx xxxxxxx xxxxxxx x [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208969) xxxxx xxxxx xxxxxxx xxxx xxx xxxxxxxxx xx xxxxxxxxxx.
+-   イベント ログにイベントを追加し、ポインター コレクションからポインターを削除して、ポインターの詳細を更新します。 このハンドラーは、デジタイザーとの接触が維持される [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) イベントを管理します。
 
 ```    CSharp
 // Fires for for various reasons, including: 
@@ -547,9 +518,9 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
     }
 ```
 
--   Xx xxx xxx xxxxx xx xxx xxxxx xxx, xxxxxx xxx xxxxxxx xxxx xxx xxxxxxx xxxxx, xxx xxxxxx xxx xxxxxxx xxxxxxx. Xxxx xxxxxxx xxxxxxx x [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208964) xxxxx.
+-   イベント ログにイベントを追加し、ポインター配列からポインターを削除して、ポインターの詳細を更新します。 このハンドラーは、[**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964) イベントを管理します。
 
-    Xx xxx xxx xxxxx xx xxx xxxxx xxx, xxxxxx xxx xxxxxxx xxxx xxx xxxxxxx xxxxx, xxx xxxxxx xxx xxxxxxx xxxxxxx. Xxxx xxxxxxx xxxxxxx x [**XxxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208965) xxxxx.
+    イベント ログにイベントを追加し、ポインター配列からポインターを削除して、ポインターの詳細を更新します。 このハンドラーは、[**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) イベントを管理します。
 
      
 
@@ -585,11 +556,11 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
     }
 ```
 
-### Xx xxx xxx xxxxx xx xxx xxxxx xxx, xxxxxx xxx xxxxxxx xxxx xxx xxxxxxx xxxxx, xxx xxxxxx xxx xxxxxxx xxxxxxx.
+### イベント ログにイベントを追加し、ポインター配列からポインターを削除して、ポインターの詳細を更新します。
 
-**Xxxx**[**XxxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208965) xxx xxxxx xxxxxxx xx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208972).
+**注**  [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965) が [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) の代わりに発生することがあります。
 
--   Xxxxxxx xxxxxxx xxx xx xxxx xxx xxxxxxx xxxxxxx.
+-   ポインターのキャプチャは、さまざまな理由で失われることがあります。
 
 ```    CSharp
         void createInfoPop(PointerRoutedEventArgs e)
@@ -609,12 +580,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
             }
 ```
 
--   <span id="Get_pointer_properties">
-            </span>
-            <span id="get_pointer_properties">
-            </span>
-            <span id="GET_POINTER_PROPERTIES">
-            </span>Xxx xxxxxxx xxxxxxxxxx
+-   <span id="Get_pointer_properties"></span><span id="get_pointer_properties"></span><span id="GET_POINTER_PROPERTIES"></span>ポインターのプロパティを取得する
 
 ```    CSharp
         void updateInfoPop(PointerRoutedEventArgs e)
@@ -641,7 +607,7 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
             }
 ```
 
--   Xx xxxxxx xxxxxxx, xxx xxxx xxx xxxx xxxxxxxx xxxxxxx xxxx xxxx x [**Xxxxxxx.XX.Xxxxx.XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242038) xxxxxx xxxxxxxx xxxxxxx xxx [**XxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh943077) xxx [**XxxXxxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh943078) xxxxxxx xx [**XxxxxxxXxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh943076).
+-   前に説明したように、ほとんどの拡張ポインター情報を、[**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) の [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/hh943077) と [**GetIntermediatePoints**](https://msdn.microsoft.com/library/windows/apps/hh943078) メソッドを介して取得した [**Windows.UI.Input.PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) オブジェクトから取得する必要があります。
 
 ```    CSharp
          String queryPointer(PointerPoint ptrPt)
@@ -686,9 +652,9 @@ private void Target_PointerExited(object sender, PointerRoutedEventArgs e)
              }
 ```
 
-### Xxxxx, xx xxxxxx x xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652) xxx xxxx xxxxxxx.
+### 最初に、ポインターごとに新しい [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) を作ります。
 
-Xxxx xx xxxxxxx x xxx xx xxxxxx xxx xxxxxxx xxxx xx xx xxxxxxxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652) xxxxxxxxxx xxxx xxxx xxxxxxx. Xxxxxxx, xx xxxxx xxxxxxx xxxxxxx xxxxxxxxxx.
+次に、そのポインターと関連付けられた、既にある [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) でポインター情報を更新するための手段を提供します。 最後に、さまざまなポインター プロパティを照会します。
 
 ```CSharp
 using System;
@@ -1114,32 +1080,30 @@ namespace PointerInput
 }
 ```
 
-## <span id="Complete_example">
-            </span>
-            <span id="complete_example">
-            </span>
-            <span id="COMPLETE_EXAMPLE">
-            </span>Xxxxxxxx xxxxxxx
+## <span id="Complete_example"></span><span id="complete_example"></span><span id="COMPLETE_EXAMPLE"></span>完全な例
 
 
-**Xxx xxxxxxxxx xx xxx X\# xxxx xxx xxxx xxxxxxx.**
-* [Xxx xxxxx xx xxxx xxxxxxx xxxxxxx, xxx Xxxxxxx xxxxxxxx xx xxx xxxxxx xx xxxx xxxx .](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [<span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Xxx xxxxxxx xxxxx xxxxxx**
-* [Xxxx xxxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [[Xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619895)](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [**Xxxxxxx xxxxxxx**](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Xxxxx: XXXX xxxx xxxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [Xxxxx: Xxxxxx xxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Xxxxx: Xxxxxxxxxxxxx xxx xxxxxxxx (X++) xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=246570)
+**この例の C\# コードを次に示します。**
+* [さらに複雑なサンプルへのリンクについては、このページの最後にある関連記事をご覧ください。](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [<span id="related_topics"></span>関連記事](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [サンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**待機時間が短い入力のサンプル**
+* [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [[フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [**サンプルのアーカイブ**](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [入力: XAML ユーザー入力イベントのサンプル](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [入力: 操作とジェスチャ (C++) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=246570)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO4-->
+
+

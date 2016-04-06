@@ -1,40 +1,44 @@
 ---
-xxxxxxxxxxx: Xxxxx xxxxxxxx-xxxxx xxxxxxx xx XXXX xxx xxx Xxxxxxx Xxxxxxx xxx xxxxxxx xxxx xxxxx xx xxx xxxxxx xxxxxxxx xxxxxxx (XXX) xxx xx xxxxx xxxxxxxxxxx xxxxxxxxx xxxx xx X++.
-xxxxx: XXXX xxxxxxxxx xxxx xxxxx
-xx.xxxxxxx: XYYXYYYY-YYYX-YXYY-XXXY-YXXYYYXYXYYY
+description: Lists language-level support in XAML for the Windows Runtime for certain data types in the common language runtime (CLR) and in other programming languages such as C++.
+title: XAML intrinsic data types
+ms.assetid: D50E6127-395D-4E27-BAA2-2FE627F4B711
 ---
 
-# XXXX xxxxxxxxx xxxx xxxxx
+# XAML intrinsic data types
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-XXXX xxx xxx Xxxxxxx Xxxxxxx xxxxxxxx xxxxxxxx-xxxxx xxxxxxx xxx xxxxxxx xxxx xxxxx xxxx xxx xxxxxxxxxx xxxx xxxxxxxxxx xx xxx xxxxxx xxxxxxxx xxxxxxx (XXX) xxx xx xxxxx xxxxxxxxxxx xxxxxxxxx xxxx xx X++.
+XAML for the Windows Runtime provides language-level support for several data types that are frequently used primitives in the common language runtime (CLR) and in other programming languages such as C++.
 
-Xxx xxxx xxxxxx xxxxx xxx'xx xxx XXXX xxxxxxxxx xxxx xxxx xxxxxx xx xxxx xxxxxxxxx xxx xxxxxxx xx x XXXX xxxxxxxx xxxxxxxxxx. Xxx xxxxx xxxxxx xxxxxxxxx xxxxx, xxx xxxxxxx xxxxxxx xxxx xxx xxx xxx xxxxxxxx xxxxxx. Xx xxx xxxxx xxx x xxxxxxxxxxxx xxxxxxxxx xxxx xxxxxxxx xxxxx x xxxxxx xx Xxxxxxx xxxxx, xxx xxx'xx xxxx xxxx x XXXX xxxxxx xxxxxxx xxxxxxxxxxxx xxx xxxxxx xx Xxxxxxx xx xxxx xxx xxxxxxxx xx xxxx [**XxxxxxXxxxxxxxxXxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210320) xxxxxxxxxx. Xxx Xxxxxxx Xxxxxxx xxxxxxx XXXX xxxxxxxxx xxx xxxx xxxxx xxxxxxxxxx.
+The most common place you'll see XAML intrinsic data type usages is when resources are defined in a XAML resource dictionary. You might define constants there, for example numbers that you use for multiple values. Or you might use a storyboarded animation that animates using a string or Boolean value, and you'll then need a XAML object element representing the string or Boolean to fill the keyframe of your [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) definition. The Windows Runtime default XAML templates use both these techniques.
 
-XXXX xxx xxx Xxxxxxx Xxxxxxx xxxxxxxx xxxxxxxx-xxxxx xxxxxxx xxx xxxxx xxxxx.
+XAML for the Windows Runtime provides language-level support for these types.
 
-| XXXX xxxxxxxxx | Xxxxxxxxxxx |
-| **x:Xxxxxxx**  | Xxx XXX xxxxxxx, xxxxxxxxxxx xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx). XXXX xxxxxx xxxxxx xxx **x:Xxxxxxx** xx xxxx xxxxxxxxxxx. Xxxx xxxx "x:Xxxx" xx xxx xx xxxxxxxx xxxxxxxxxxx. |
-| **x:Xxxxxx**   | Xxx XXX xxxxxxx, xxxxxxxxxxx xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx). Xxxxxxxx xxx xxx xxxxxx xxxxxxxx xx xxx xxxxxxxxxxx XXX xxxxxxxx. |
-| **x:Xxxxxx**   | Xxx XXX xxxxxxx, xxxxxxxxxxx xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Xx xxxxxxxx xx xxx xxxxxxx xxxxxx, xxxx xxxxxx xxx **x:Xxxxxx** xxxxxxx xxx xxxxx "XxX", xxxxx xx xxx "Xxxx" xxx xxxxxx xxxxxxxx xxx xx xxxxxx xx x xxxxxxxx xxxxx. Xxx xxxxxx xxx xxxxxxx xx xxxx xxxxxxxxx. Xxx xxx xxx xxxxxxxxxx xxxxxxxx, xxx xxxxxxx "Y+XYY" xxx `1,000,000`. |
-| **x:XxxYY**    | Xxx XXX xxxxxxx, xxxxxxxxxxx xx [**XxxYY**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx). **x:XxxYY** xx xxxxxxx xx xxxxxx, xxx xxx xxx xxxxxxx xxx xxxxx ("-") xxxxxx xxx x xxxxxxxx xxxxxxx. Xx XXXX, xxx xxxxxxx xx x xxxx xx xxxx xxxxxx xxxxxxx x xxxxxxxx xxxxxx xxxxx. |
+| XAML primitive | Description |
+| **x:Boolean**  | For CLR support, corresponds to [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx). XAML parses values for **x:Boolean** as case insensitive. Note that "x:Bool" is not an accepted alternative. |
+| **x:String**   | For CLR support, corresponds to [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx). Encoding for the string defaults to the surrounding XML encoding. |
+| **x:Double**   | For CLR support, corresponds to [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). In addition to the numeric values, text syntax for **x:Double** permits the token "NaN", which is how "Auto" for layout behavior can be stored as a resource value. The tokens are treated as case sensitive. You can use scientific notation, for example "1+E06" for `1,000,000`. |
+| **x:Int32**    | For CLR support, corresponds to [**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx). **x:Int32** is treated as signed, and you can include the minus ("-") symbol for a negative integer. In XAML, the absence of a sign in text syntax implies a positive signed value. |
 
-Xxxxx XXXX xxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxx xxxx xxxxx xx xxxxx xxx xxxxxx xx xxxxxx xxxxxxx xxxx xxxx xxx **x:** xxxxxx xx xxxx XXXX. Xxx xxxxx XXXX xxxxxxxx xxxxxxxx xxx xxxxxxxxx xxxx xx xxxxxxxxx xxxx, xx xx x xxxxxx xxxxxxxxx.
+These XAML language primitives are generally the only cases in which you define an object element that uses the **x:** prefix in your XAML. All other XAML language features are typically used in attribute form, or as a markup extension.
 
-**Xxxx**  Xx xxxxxxxxxx, xxx xxxxxxxx xxxxxxxxxx xxx XXXX xxx xxx xxxxx XXXX xxxxxxxx xxxxxxxx xxx xxxxx xxxx xxx "x:" xxxxxx. Xxxx xx xxx XXXX xxxxxxxx xxxxxxxx xxx xxxxxxxxx xxxx xx xxxx-xxxxx xxxxxx. Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxxxxxxxxxxx xxx XXXX xxx xxxx xx xxx XXXX xxxxxxxxxxxxx.
+**Note**  By convention, the language primitives for XAML and all other XAML language elements are shown with the "x:" prefix. This is how XAML language elements are typically used in real-world markup. This convention is followed in the documentation for XAML and also in the XAML specification.
 
-## Xxxxx XXXX xxxxxxxxxx
+## Other XAML primitives
 
-Xxx XXXX YYYY xxxxxxxxxxxxx xxxxx xxxxx XXXX xxxxxxxx-xxxxx xxxxxxxxxx xxxx xx **x:Xxx** xxx **x:Xxxxxx**. Xxxxxx xxxxxx xx xxx xxxxx xx xxxx xxxxx, xxxxx XXXX xxxxxxxx xxxxxxxxxx xx xxxxxxx xx xxxxx XXXX xxxxxxxxxxxx xx xx xxx XXXX YYYY xxxxxxxxxxxxx xxx xxx xxxxxxxxx xxxxxxxxx xx XXXX xxx xxx Xxxxxxx Xxxxxxx.
+The XAML 2009 specification notes other XAML language-level primitives such as **x:Uri** and **x:Single**. Unless listed in the table in this topic, other XAML language primitives as defined by other XAML vocabularies or by the XAML 2009 specification are not currently supported in XAML for the Windows Runtime.
 
-**Xxxx**  Xxxxx xxx xxxxx (xxxxxxxxxx xxxx xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br206576) xx [**XxxxXxxxXxxxxx**](T:System.DateTimeOffset), [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br225996) xx [**Xxxxxx.XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx)) xxxx'x xxxxxxxx xxxx x XXXX xxxxxxxxx. Xxxxx xxxxxxxxxx xxxxxxxxx xxxx'x xxxxxxxx xx XXXX xx xxx, xxxxxxx xxxxx'x xx xxxxxxx xxxx-xxxxxx xxxxxxxxxx xxxxxxxx xx xxx Xxxxxxx Xxxxxxx XXXX xxxxxx xxx xxxxx xxx xxxxx. Xxx xxxxxxxxxxxxxx xxxxxx xx xxx xxxx xxx xxxx xxxxxxxxxx, xxx'xx xxxx xx xxx xxxx-xxxxxx xxxx xxxx xxxx x xxxx xx xxxxxxx xxxxx.
+**Note**  Dates and times (properties that use [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) or [**DateTimeOffset**](T:System.DateTimeOffset), [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996) or [**System.TimeSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/system.timespan.aspx)) aren't settable with a XAML primitive. These properties generally aren't settable in XAML at all, because there's no default from-string conversion behavior in the Windows Runtime XAML parser for dates and times. For initialization values of any date and time properties, you'll have to use code-behind that runs when a page or element loads.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [XXXX xxxxxxxx](xaml-overview.md)
-* [XXXX xxxxxx xxxxx](xaml-syntax-guide.md)
-* [Xxxxxxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [XAML overview](xaml-overview.md)
+* [XAML syntax guide](xaml-syntax-guide.md)
+* [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

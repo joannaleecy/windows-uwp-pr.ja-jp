@@ -1,113 +1,113 @@
 ---
-xx.xxxxxxx: XXYYYXYY-YXXX-YYYY-YYYY-YYYYXYYXYXXY
-xxxxx: Xxxxxx x Xxxxx Xxxxx xxx xx X++ (Xxxxxxx YY)
-xxxxxxxxxxx: Xxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY, xxx xxx xxx X++ xx xxxxxxx xx xxx xxxx xxxx xx Xxxxxxx YY, xxxxxxxxx xx xxxxxx xxxxxxx Xxxxxxx YY. Xxxxx xxxx xxxx x XX xxxx'x xxxxxxx xx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX).
+ms.assetid: DC235C16-8DAF-4078-9365-6612A10F3EC3
+title: Create a Hello World app in C++ (Windows 10)
+description: With Microsoft Visual Studio 2015, you can use C++ to develop an app that runs on Windows 10, including on phones running Windows 10. These apps have a UI that's defined in Extensible Application Markup Language (XAML).
 ---
 
-# Xxxxxx x "xxxxx xxxxx" xxx xx X++ (Xxxxxxx YY)
+# Create a "hello world" app in C++ (Windows 10)
 
-Xxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY, xxx xxx xxx X++ xx xxxxxxx xx xxx xxxx xxxx xx Xxxxxxx YY, xxxxxxxxx xx xxxxxx xxxxxxx Xxxxxxx YY. Xxxxx xxxx xxxx x XX xxxx'x xxxxxxx xx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX).
+With Microsoft Visual Studio 2015, you can use C++ to develop an app that runs on Windows 10, including on phones running Windows 10. These apps have a UI that's defined in Extensible Application Markup Language (XAML).
 
-Xx xxxxxxx xx xxx xxxx xxxx xx Xxxxxxx Y.Y xxx Xxxxxxx Xxxxx Y.Y, xxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY Xxxxxx Y xx xxxxx xxx xxxxxx xxx xxxxx [xxxx](https://msdn.microsoft.com/library/windows/apps/Dn263168). Xxx xxxx xxxxxxxxxxx xxxxxxxxxx xx xxxx xxx Xxxxxxx Y.Y xxx Xxxxxxx Xxxxx Y.Y, xxx xxx x xxxxxxxx xxxx xxxxx xxxxxxxx, xxx xxx xxx xxxxxxx (xx xxxxxx xxxxxx), xxx xxx xxx xxxxx, xxx xxx xxx xxxxxx xxxx. Xxx Xxxxxxx YY xxxxxxxxxxx, xxx xxxx xxxxxx xxx xxxx xxxxxxx.
+To develop an app that runs on Windows 8.1 and Windows Phone 8.1, use Microsoft Visual Studio 2013 Update 3 or later and follow the steps [here](https://msdn.microsoft.com/library/windows/apps/Dn263168). The most significant difference is that for Windows 8.1 and Windows Phone 8.1, you use a solution with three projects, one for the desktop (or tablet device), one for the phone, and one for shared code. For Windows 10 development, all code shares the same project.
 
-Xxx xxxxxxxxx xx xxxxx xxxxxxxxxxx xxxxxxxxx, xxx:
+For tutorials in other programming languages, see:
 
--   [Xxxxxx xxxx xxxxx Xxxxxxx Xxxxx xxx xxxxx XxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/BR211385)
+-   [Create your first Windows Store app using JavaScript](https://msdn.microsoft.com/library/windows/apps/BR211385)
 
--   [Xxxxxx xxxx xxxxx Xxxxxxx Xxxxx xxx xxxxx X# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/Hh974581)
+-   [Create your first Windows Store app using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/Hh974581)
 
-## Xxxxxx xxx xxxxx...
+## Before you start...
 
--   Xx xxxxxxxx xxxx xxxxxxxx, xxx xxxx xxx Xxxxxx Xxxxxx YYYY Xxxxxxxxx xx xxxxx, xx xxx xx xxx xxx-Xxxxxxxxx xxxxxxxx xx Xxxxxx Xxxxxx YYYY, xx x xxxxxxxx xxxx'x xxxxxxx Xxxxxxx YY xx Xxxxxxx Y.Y. Xx xxxxxxxx, xxx [Xxx xxx xxxxx](http://go.microsoft.com/fwlink/p/?LinkId=532666).
--   Xxxxxxx xxx xxxxxxxxxxx [XXX](http://go.microsoft.com/fwlink/?LinkId=533049) xxx Xxxxxxx Xxxxxxxxx Xxxxxxxx xxxxxxxxxxx.
--   Xxx xxxx xxxx xxxx x xxxxxxxxx xxxxxxx. Xxx xxxxxxxxxxxx, xxx [Xxx x xxxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/Hh974578).
--   Xx xxxxxx xxx xxxx x xxxxx xxxxxxxxxxxxx xx xxxxxxxx X++, XXXX, xxx xxx xxxxxxxx xx xxx [XXXX xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185595).
--   Xx xxxxxx xxx'xx xxxxx xxx xxxxxxx xxxxxx xxxxxx xx Xxxxxx Xxxxxx. Xx xxxxx xx xxx xxxxxxx xxxxxx, xx xxx xxxx xxx, xxxxxx **Xxxxxx** > **Xxxxx Xxxxxx Xxxxxx**.
--   Xxxx xxxx xxxxx xx x xxxxx xxxxx xxxx Xxxxxx Xxxxxx YYYY xxxx xxx xxxxxx xx x XxxxXxxxxxxxxXxxxxxxxx xxxx xxxxxxx xxx XXXX xxxxxxxx. Xxxx xxxxx xxxxxx xxxx xx xxx xxxxx xx xxxx xxxxxxxx, xxxxxx xxx xxxxx xxx xxxxxxxxxx. Xxx xxxxxxx xxxxx xxxx xxxxx xxx xxx xxxxxxxxxx, xxx [xxxx XXXX xxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=624036) .
+-   To complete this tutorial, you must use Visual Studio 2015 Community or later, or one of the non-Community versions of Visual Studio 2015, on a computer that's running Windows 10 or Windows 8.1. To download, see [Get the tools](http://go.microsoft.com/fwlink/p/?LinkId=532666).
+-   Install the appropriate [SDK](http://go.microsoft.com/fwlink/?LinkId=533049) for Windows Universal Platform development.
+-   You also must have a developer license. For instructions, see [Get a developer license](https://msdn.microsoft.com/library/windows/apps/Hh974578).
+-   We assume you have a basic understanding of standard C++, XAML, and the concepts in the [XAML overview](https://msdn.microsoft.com/library/windows/apps/Mt185595).
+-   We assume you're using the default window layout in Visual Studio. To reset to the default layout, on the menu bar, choose **Window** > **Reset Window Layout**.
+-   Note that there is a known issue with Visual Studio 2015 that can result in a NullReferenceException when loading the XAML designer. This issue blocks some of the steps of this tutorial, unless you apply the workaround. For details about this issue and the workaround, see [this MSDN forum post](http://go.microsoft.com/fwlink/p/?LinkId=624036) .
 
-## Xxxxxxxxx X++ xxxxxxx xxxx xx Xxxxxxx xxxx
+## Comparing C++ desktop apps to Windows apps
 
-Xx xxx'xx xxxxxx xxxx x xxxxxxxxxx xx Xxxxxxx xxxxxxx xxxxxxxxxxx xx X++, xxx'xx xxxxxxxx xxxx xxxx xxxx xxxxxxx xx Xxxxxxx Xxxxx xxx xxx Xxxxxxx Xxxxx xxx xxxxxxxxxxx xxx xxxxxxxx, xxx xxxxx xxxxxxx xxxxxxx xxxx xxxxxxxx.
+If you're coming from a background in Windows desktop programming in C++, you'll probably find that some aspects of Windows Store app and Windows Phone app programming are familiar, but other aspects require some learning.
 
-### Xxxx'x xxx xxxx?
+### What's the same?
 
--   Xxx xxx xxx xxx XXX, xxx XXX (xxxx xxxx xxxxxxxxxx), xxx xxx xxxxx X++ xxxxxxx xx xxxx xx xxx xxxx xxxx xxx xxxxxxx xx xxxx Xxxxxxx xxxxxxxxx xxxx xxx xxx xxxxxxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxxxxxxxx.
+-   You can use the STL, the CRT (with some exceptions), and any other C++ library as long as the code does not attempt to call Windows functions that are not accessible from the Windows Runtime environment.
 
--   Xx xxx'xx xxxxxxxxxx xx xxxxxx xxxxxxxxx, xxx xxx xxxxx xxx xxx xxxxxxxx xxxxx xxxx Xxxxxxxxx Xxxxxx Xxxxxx, xx xxx xxx xxx xxx xxxx xxxx-xxxxxxxx Xxxxx xxx Xxxxxx Xxxxxx. Xx xxx'xx xxxxxxxxxx xx xxxxxx XX xx xxxx, xxx xxx xxxx-xxxx xxxx XXXX.
+-   If you're accustomed to visual designers, you can still use the designer built into Microsoft Visual Studio, or you can use the more full-featured Blend for Visual Studio. If you're accustomed to coding UI by hand, you can hand-code your XAML.
 
--   Xxx'xx xxxxx xxxxxxxx xxxx xxxx xxx Xxxxxxx xxxxxxxxx xxxxxx xxxxx xxx xxxx xxx xxxxxx xxxxx.
+-   You're still creating apps that use Windows operating system types and your own custom types.
 
--   Xxx'xx xxxxx xxxxx xxx Xxxxxx Xxxxxx xxxxxxxx, xxxxxxxx, xxx xxxxx xxxxxxxxxxx xxxxx.
+-   You're still using the Visual Studio debugger, profiler, and other development tools.
 
--   Xxx'xx xxxxx xxxxxxxx xxxx xxxx xxx xxxxxxxx xx xxxxxx xxxxxxx xxxx xx xxx Xxxxxx X++ xxxxxxxx. Xxxxxxx Xxxxx xxxx xx X++ xxx'x xxxxxxx xx x xxxxxxx xxxxxxx xxxxxxxxxxx.
+-   You're still creating apps that are compiled to native machine code by the Visual C++ compiler. Windows Store apps in C++ don't execute in a managed runtime environment.
 
-### Xxxx'x xxx?
+### What's new?
 
--   Xxx xxxxxx xxxxxxxxxx xxx Xxxxxxx Xxxxx xxxx xxx Xxxxxxxxx Xxxxxxx xxxx xxx xxxx xxxxxxxxx xxxx xxxxx xxx xxxxxxx xxxx. Xxxxxx xxxxxxx, xxxxxx, xxxxxx xxxxx, xxx xx xx, xxx xx-xxxxxxxxxx. Xxxxxxx xx xxxxxxxx. Xxxxx Xxxxxxxxx Xxxxxxx xxxx xxxxxxxxxxx xxxxx xxxxxxxxxx xxxx xxx xxxx xxxxxxxxx xx xxx xxxxxxxx xxxxx.
+-   The design principles for Windows Store apps and Universal Windows apps are very different from those for desktop apps. Window borders, labels, dialog boxes, and so on, are de-emphasized. Content is foremost. Great Universal Windows apps incorporate these principles from the very beginning of the planning stage.
 
--   Xxx'xx xxxxx XXXX xx xxxxxx xxx xxxxxx XX. Xxx xxxxxxxxxx xxxxxxx XX xxx xxxx xxxxxxx xxxxx xx xxxx xxxxxxx xx x Xxxxxxx Xxxxxxxxx xxx xxxx xx xx XXX xx XxxYY xxx. Xxxxx xxxxxx xxx xxxx xx xxx xxxxxxxxxx xx xxx XX xx xxx XXXX xxxx xxxxx xxx'xx xxxxxxx xx xxx xxxxxxxx xx xxx xxxx xxxx.
+-   You're using XAML to define the entire UI. The separation between UI and core program logic is much clearer in a Windows Universal app than in an MFC or Win32 app. Other people can work on the appearance of the UI in the XAML file while you're working on the behavior in the code file.
 
--   Xxx'xx xxxxxxxxx xxxxxxxxxxx xxxxxxx x xxx, xxxx-xx-xxxxxxxx, xxxxxx-xxxxxxxx XXX, xxx Xxxxxxx Xxxxxxx, xxxxxxxx xx Xxxxxxx xxxxxxx XxxYY xx xxxxx xxxxxxxxx xxx xxxx xxxxxxxxxxxxx.
+-   You're primarily programming against a new, easy-to-navigate, object-oriented API, the Windows Runtime, although on Windows devices Win32 is still available for some functionality.
 
--   Xxx xxx X++/XX xx xxxxxxx xxx xxxxxx Xxxxxxx Xxxxxxx xxxxxxx. X++/XX xxxxxxx X++ xxxxxxxxx xxxxxxxx, xxxxxxxxx, xxxxxx, xxx xxxxxxxxx xxxxxxxxx xxxxxxxx xx xxxxxxxxxxx xxxxxxx xxxxxxx. Xxxx xxx xxx X++/XX, xxx xxxxxxx xx xxx xxxxxxxxxx XXX xxx Xxxxxxx xxxxxxxxxxxx xxx xxxxxx xxxx xxxx xxx xxxx. Xxx xxxx xxxxxxxxxxx, xxx [X++/XX Xxxxxxxx Xxxxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/hh699871.aspx).
+-   You use C++/CX to consume and create Windows Runtime objects. C++/CX enables C++ exception handling, delegates, events, and automatic reference counting of dynamically created objects. When you use C++/CX, the details of the underlying COM and Windows architecture are hidden from your app code. For more information, see [C++/CX Language Reference](https://msdn.microsoft.com/en-us/library/windows/apps/hh699871.aspx).
 
--   Xxxx xxx xx xxxxxxxx xxxx x xxxxxxx xxxx xxxx xxxxxxxx xxxxxxxx xxxxx xxx xxxxx xxxx xxxx xxx xxxxxxxx, xxx xxxxxxxxx xxxx xx xxxx, xxx xxx xxxxxxxxxxxx xxxx xx xxxxxxxx (xxxx xxxxxx, xxxxxxxx xxxxxx, xxxxxx xxxxxx, xxx xx xxxxx).
+-   Your app is compiled into a package that also contains metadata about the types that your app contains, the resources that it uses, and the capabilities that it requires (file access, internet access, camera access, and so forth).
 
--   Xx xxx Xxxxxxx Xxxxx xxx Xxxxxxx Xxxxx Xxxxx xxxx xxx xx xxxxxxxx xx xxxx xx x xxxxxxxxxxxxx xxxxxxx xxx xxxx xxxxxxxxxxxx xx xxxxxxxx xx xxxxxxxxx xxxxxxxxx.
+-   In the Windows Store and Windows Phone Store your app is verified as safe by a certification process and made discoverable to millions of potential customers.
 
-## Xxxxx Xxxxx Xxxxx xxx xx X++
+## Hello World Store app in C++
 
-Xxx xxxxx xxx xx x "Xxxxx Xxxxx" xxxx xxxxxxxxxxxx xxxx xxxxx xxxxxxxx xx xxxxxxxxxxxxx, xxxxxx, xxx xxxxxx. Xx'xx xxxxxx xx xxx xxxx xxx Xxxxxxx Xxxxxxxxx xxx xxxxxxx xxxxxxxx. Xx xxx'xx xxxxxxxxx xxxx xxx Xxxxxxx Y.Y xxx Xxxxxxx Xxxxx Y.Y xxxxxx, xxx xxxxx xxxxxxxx xxxx xxx xxx xx xxxx xxxxx xxxxxxxx xx Xxxxxx Xxxxxx, xxx xxx xxx Xxxxxxx xxx, xxx xxx xxx xxxxx xxx, xxx xxxxxxx xxxx xxxxxx xxxx. Xxx Xxxxxxx YY Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxx xx xxxxxxxx xx xxxx xxxx xxx xxxxxxx, xxxxx xxxx xx xxx xxxxxxx, xxxxxxxxx xxxxxxx xxx xxxxxx xxxxxxxxx xxxxxxx Xxxxxxx YY, xxxxxxx xxxx xx xxxxxxx, xxxxxx xxxxxx, xxx xx xx.
+Our first app is a "Hello World" that demonstrates some basic features of interactivity, layout, and styles. We'll create an app from the Windows Universal app project template. If you've developed apps for Windows 8.1 and Windows Phone 8.1 before, you might remember that you had to have three projects in Visual Studio, one for the Windows app, one for the phone app, and another with shared code. The Windows 10 Universal Windows Platform (UWP) makes it possible to have just one project, which runs on all devices, including desktop and laptop computers running Windows 10, devices such as tablets, mobile phones, and so on.
 
-Xx'xx xxxxx xxxx xxx xxxxxx:
+We'll start with the basics:
 
--   Xxx xx xxxxxx x Xxxxxxxxx Xxxxxxx xxxxxxx xx Xxxxxx Xxxxxx YYYY xx xxxxx.
+-   How to create a Universal Windows project in Visual Studio 2015 or later.
 
--   Xxx xx xxxxxxxxxx xxx xxxxxxxx xxx xxxxx xxxx xxx xxxxxxx.
+-   How to understand the projects and files that are created.
 
--   Xxx xx xxxxxxxxxx xxx xxxxxxxxxx xx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX), xxx xxxx xx xxx xxxx.
+-   How to understand the extensions in Visual C++ component extensions (C++/CX), and when to use them.
 
-**Xxxxx, xxxxxx x xxxxxxxx xx Xxxxxx Xxxxxx**
+**First, create a solution in Visual Studio**
 
-1.  Xx Xxxxxx Xxxxxx, xx xxx xxxx xxx, xxxxxx **Xxxx** > **Xxx** > **Xxxxxxx**.
+1.  In Visual Studio, on the menu bar, choose **File** > **New** > **Project**.
 
-2.  Xx xxx **Xxx Xxxxxxx** xxxxxx xxx, xx xxx xxxx xxxx, xxxxxx **Xxxxxxxxx** > **Xxxxxx X++** > **Xxxxxxx** > **Xxxxxxxxx**.
+2.  In the **New Project** dialog box, in the left pane, expand **Installed** > **Visual C++** > **Windows** > **Universal**.
 
-3.  Xx xxx xxxxxx xxxx, xxxxxx **Xxxxx Xxx (Xxxxxxxxx Xxxxxxx)**.
+3.  In the center pane, select **Blank App (Universal Windows)**.
 
-4.  Xxxxx x xxxx xxx xxx xxxxxxx. Xx'xx xxxx xx XxxxxXxxxx.
+4.  Enter a name for the project. We'll name it HelloWorld.
 
- ![X++ xxxxxxx xxxxxxxxx xx xxx Xxx Xxxxxxx xxxxxx xxx ](images/vs2015-newuniversalproject-cpp.png)
+ ![C++ project templates in the New Project dialog box ](images/vs2015-newuniversalproject-cpp.png)
 
-5.  Xxxxxx xxx **XX** xxxxxx.
+5.  Choose the **OK** button.
 
-   Xx xxxx xx xxx xxxxx XXX xxxxxxx xxx'xx xxxxxxx, xxx xxx xxxxx'x xxxxxxx Xxxxxxxxx Xxxx xx xxxx xxxxxxxx, xxx Xxxxxx Xxxxxxxxx xxxx xxxxxx xxx xxxxxxx. Xxxxx xx xxx xxxx xx xxxxx xx xxx Xxxxxxxx xxxx xxxx xxxx xxx xxx Xxxxxxxxx Xxxx. Xxxxxxxxx Xxxx xxxxxx xxxx xxxx xx xx xxxxxxxx xxx xxx xxxxxxx.
+   If this is the first UWP project you've created, and you haven't enabled Developer Mode on your computer, the Enable Developer mode dialog box appears. Click on the link to bring up the Settings page that lets you set Developer Mode. Developer Mode allows your apps to be deployed and run locally.
 
-   Xxxx xxxxxxx xxxxx xxx xxxxxxx.
+   Your project files are created.
 
-Xxxxxx xx xx xx, xxx’x xxxx xx xxxx'x xx xxx xxxxxxxx.
+Before we go on, let’s look at what's in the solution.
 
-![Xxxxxxxx xxx xxxxxxxx xxxx xxxxx xxxxxxxxx](images/vs2015-solutionexploreruniversal-0-cpp.png)
+![Univeral app solution with nodes collapsed](images/vs2015-solutionexploreruniversal-0-cpp.png)
 
-### Xxxxx xxx xxxxxxx xxxxx
+### About the project files
 
-Xxxxx .xxxx xxxx xx x xxxxxxx xxxxxx xxx x xxxxxxxxxxxxx .xxxx.x xxxx xxx .xxxx.xxx xxxx xx xxx xxxx xxxxxx xxx x .x xxxx xxx x .x.xxx xxxx xx xxx Xxxxxxxxx Xxxxx xxxxxx, xxxxx xx xx xxxx xxx xxx xxxx xx xxx xxxxxxx. Xxx xxxxxx xxx XXXX xxxxx xx xxxxxx XX xxxxxxxx xxx xxxxxxx xxxx xx xxxx xxxxxxx (XxxxXxxxxxx). Xxx xxxxxx xxx .x xxx .xxx xxxxx xx xxx xxxxxx xxxxx xxx xxxxx xxxxxxxx. Xxx xxxx-xxxxxxxxx xxxxx xxxxxxxxx xxx xxxxxxxxxxxxxx xx xxx XXXX xxxxxx xxxx X++. Xxx'x xxxxxx xxxxx xxxxx, xxx xxx xxx xxxxx xxxx xx xxxxxx xxxxxxxxxx xxx xxx xxxx-xxxxxx xxxxx. Xxxxxxxxx, xxx xxxxxxxxx xxxx xxxxxxxx x xxxxxxx xxxxx xxxxxxxxxx xxx x XXXX xxxx xxxxxxx; xxxx xxxxx xx xxx xxxx xxxxx xxxx xxx xxxxxx xx xxx \*.xxxx.x xxx .xxx xxxxx. Xxx xxxxxxxxx xxxxx xxxxxxx xxx XXXX XX xxxxx xxxxxxxx xx xxxxx xxxxxxx xx xxxx xxx xxx xxxxxxxxx xxxx xx xxx xxxx xxx xxxxx. Xx xxxxx xxxx, xxx xxxxxxxxx xxxx xxx xxxx xxxx xxx xxxxxx xxxx x xxxxxxxx xxxxx xxxxxxxxxx xxx xxxx xxxxxxxx.
+Every .xaml file in a project folder has a corresponding .xaml.h file and .xaml.cpp file in the same folder and a .g file and a .g.hpp file in the Generated Files folder, which is on disk but not part of the project. You modify the XAML files to create UI elements and connect them to data sources (DataBinding). You modify the .h and .cpp files to add custom logic for event handlers. The auto-generated files represent the transformation of the XAML markup into C++. Don't modify these files, but you can study them to better understand how the code-behind works. Basically, the generated file contains a partial class definition for a XAML root element; this class is the same class that you modify in the \*.xaml.h and .cpp files. The generated files declare the XAML UI child elements as class members so that you can reference them in the code you write. At build time, the generated code and your code are merged into a complete class definition and then compiled.
 
-Xxx'x xxxx xxxxx xx xxx xxxxxxx xxxxx.
+Let's look first at the project files.
 
--   **Xxx.xxxx, Xxx.xxxx.x, Xxx.xxxx.xxx:** Xxxxxxxxx xxx Xxxxxxxxxxx xxxxxx, xxxxx xx xx xxx'x xxxxx xxxxx. Xxx.xxxx xxxxxxxx xx xxxx-xxxxxxxx XX xxxxxx, xxx xxx xxx xxx XX xxxxxx xxx xxxxx xxxxxxxx xxxx xxx xxxx xx xx xxxxxxxxxx xxxx xxx xxxx. Xxx xxxx-xxxxxx xxxxx xxxxxxx xxxxxxxx xxx xxx **XxXxxxxxxx** xxx **XxXxxxxxxxxx** xxxxxx. Xxxxxxxxx, xxx xxx xxxxxx xxxx xxxx xx xxxxxxxxxx xxxx xxx xxxx xx xxxxxx xxx xxxxxxx xxxxxxx xxxx xx'x xxxxxxxxx xx xxxxxxxxxx.
--   **XxxxXxxx.xxxx, XxxxXxxx.xxxx.x, XxxxXxxx.xxxx.xxx:**Xxxxxxx xxx XXXX xxxxxx xxx xxxx-xxxxxx xxx xxx xxxxxxx "xxxxx" xxxx xx xx xxx. Xx xxx xx xxxxxxxxxx xxxxxxx xx xxxxx-xx xxxxxxxx.
--   **xxx.x, xxx.xxx:** X xxxxxxxxxxx xxxxxx xxxx xxx xxx xxxx xxxx xxxxxxxx xx xx xxxx xxxxxxx. Xx xxx.x, xxx xxx xxxxxxx xxx xxxxxxx xxxx xx xxx xxxxxx xxxxx xxx xxx xxxxxxxx xx xxxxx xxxxx xx xxx xxxxxxxx.
--   **Xxxxxxx.xxxxxxxxxxxx:** Xx XXX xxxx xxxx xxxxxxxxx xxx xxxxxx xxxxxxxxxxxx xxxx xxxx xxx xxxxxxxx, xxx xxx xxx xxxxxxx xxxx xxx xxxxx xxxxxxxx. Xx xxxx xxxx xxxx xx xxx **Xxxxxxxx Xxxxxxxx**, xxxx xxxxxx-xxxxx xx.
--   **XxxxxXxxxx\_XxxxxxxxxXxx.xxx:**X xxx xxxx xxxxxxx xxxxxxxxxx xx xxx xxx xx xxxx xxxxxxx, xxxx Xxxxxx Xxxxxx.
+-   **App.xaml, App.xaml.h, App.xaml.cpp:** Represent the Application object, which is an app's entry point. App.xaml contains no page-specific UI markup, but you can add UI styles and other elements that you want to be accessible from any page. The code-behind files contain handlers for the **OnLaunched** and **OnSuspending** events. Typically, you add custom code here to initialize your app when it starts and perform cleanup when it's suspended or terminated.
+-   **MainPage.xaml, MainPage.xaml.h, MainPage.xaml.cpp:**Contain the XAML markup and code-behind for the default "start" page in an app. It has no navigation support or built-in controls.
+-   **pch.h, pch.cpp:** A precompiled header file and the file that includes it in your project. In pch.h, you can include any headers that do not change often and are included in other files in the solution.
+-   **Package.appxmanifest:** An XML file that describes the device capabilities that your app requires, and the app version info and other metadata. To open this file in the **Manifest Designer**, just double-click it.
+-   **HelloWorld\_TemporaryKey.pfx:**A key that enables deployment of the app on this machine, from Visual Studio.
 
-## X xxxxx xxxx xx xxx xxxx
+## A first look at the code
 
-Xx xxx xxxxxxx xxx xxxx xx Xxx.xxxx.x, Xxx.xxxx.xxx xx xxx xxxxxx xxxxxxx, xxx'xx xxxxxx xxxx xx'x xxxxxx X++ xxxx xxxx xxxxx xxxxxxxx. Xxxxxxx, xxxx xxxxxx xxxxxxxx xxxxx xxx xx xx xxxxxxxx xx xxx xxx xxx xx Xxxxxxx Xxxxxxx xxxx, xx xxx'xx xxxxxx xxxx X++/XXX. Xxxx xxx xxx xxxx xxxxxx xxx-xxxxxxxx xxxxxx xxxxxxxx xxx'xx xxx xx X++/XX:
+If you examine the code in App.xaml.h, App.xaml.cpp in the shared project, you'll notice that it's mostly C++ code that looks familiar. However, some syntax elements might not be as familiar if you are new to Windows Runtime apps, or you've worked with C++/CLI. Here are the most common non-standard syntax elements you'll see in C++/CX:
 
--   **Xxx xxxxxxx**
+-   **Ref classes**
 
-Xxxxxx xxx Xxxxxxx Xxxxxxx xxxxxxx, xxxxx xxxxxxxx xxx xxx xxxxx xx xxx Xxxxxxx XXX--XXXX xxxxxxxx, xxx xxxxx xx xxxx xxx, xxx Xxx xxxxx xxxxxx, xxx xxxxxx xxx xxxxxxx xxxxxxx, xxx xxxxxxxxx xxxxx--xxx xxxxxxxx xx x **xxx xxxxx**. (X xxx Xxxxxxx xxxxx xxx **xxxxx xxxxx** xx **xxxxx xxxxxx**). X xxx xxxxx xx xxxxxxxxxx xxxx xxx xxxxxxxx. Xx X++, xxx xxxxxxxx xx xxxxx xxxxx xx xxxxxxxx xx xxxxxxxxx xxxxxxxxx xxxxxxxx (xxx xxxxxxx xxxxxxxxxx) xx xxxx xxx xxxxx xxxxxxxxxx xxxxxx xxxxx xxxxxxx. Xxx xxx xxxxxx xxxx xxx xxx xxxxxxx xx xxxx.
+Almost all Windows Runtime classes, which includes all the types in the Windows API--XAML controls, the pages in your app, the App class itself, all device and network objects, all container types--are declared as a **ref class**. (A few Windows types are **value class** or **value struct**). A ref class is consumable from any language. In C++, the lifetime of these types is governed by automatic reference counting (not garbage collection) so that you never explicitly delete these objects. You can create your own ref classes as well.
 
 ```cpp
     namespace HelloWorld
@@ -124,13 +124,13 @@ Xxxxxx xxx Xxxxxxx Xxxxxxx xxxxxxx, xxxxx xxxxxxxx xxx xxx xxxxx xx xxx Xxxxxxx 
     }
 ```    
 
-Xxx Xxxxxxx Xxxxxxx xxxxx xxxx xx xxxxxxxx xxxxxx x xxxxxxxxx xxx xxxxxx xx XXX X++ xxx xxxxx xxxxxxxxxx xxxx xx xxxxxxxxxxxxx xxxxxxxx. Xxx **xxxxxx** xxxxxxxx xxxxx xxx xxxxx xxxxxxx xx Xxxxxxx Xxxxxxx xxxxxxxxxx xxxxxxx xxx xxxxxxxxx. Xxx **xxxxxx** xxxxxxx xxxxx xxx xxxxx xxxxxx xxxxx xx x xxxx xxxxx. Xxxxxx xxx xxx xxxxxxx xxx xxxxxx; xxxxx xxxxxxxxxxx xx xxx xxxxxxx xxxx xxxxxxx Xxxxxxxxxx xxxx xxx xxxxxxxxxx xx.
+All Windows Runtime types must be declared within a namespace and unlike in ISO C++ the types themselves have an accessibility modifier. The **public** modifier makes the class visible to Windows Runtime components outside the namespace. The **sealed** keyword means the class cannot serve as a base class. Almost all ref classes are sealed; class inheritance is not broadly used because Javascript does not understand it.
 
--   **xxx xxx** xxx **^ (xxxx)**
+-   **ref new** and **^ (hats)**
 
- Xxx xxxxxxx x xxxxxxxx xx x xxx xxxxx xx xxxxx xxx ^ (xxx) xxxxxxxx, xxx xxx xxxxxxxxxxx xxx xxxxxx xxxx xxx xxx xxx xxxxxxx. Xxxxxxxxxx xxx xxxxxx xxx xxxxxx'x xxxxxxxx xxxxxxx xxxx xxx -> xxxxxxxx xxxx xxxx x X++ xxxxxxx. Xxxxxx xxxxxxx xxx xxxxxxxx xxxx xxx :: xxxxxxxx xxxx xx xx XXX X++.
+ You declare a variable of a ref class by using the ^ (hat) operator, and you instantiate the object with the ref new keyword. Thereafter you access the object's instance methods with the -> operator just like a C++ pointer. Static methods are accessed with the :: operator just as in ISO C++.
 
- Xx xxx xxxxxxxxx xxxx, xx xxx xxx xxxxx xxxxxxxxx xxxx xx xxxxxxxxxxx xx xxxxxx, xxx xxx xxx -> xxxxxxxx xx xxxx xx xxxxxxxx xxxxxx.
+ In the following code, we use the fully qualified name to instantiate an object, and use the -> operator to call an instance method.
 
  ```cpp
     Windows::UI::Xaml::Media::Imaging::BitmapImage^ bitmapImage =
@@ -146,9 +146,9 @@ Xxx Xxxxxxx Xxxxxxx xxxxx xxxx xx xxxxxxxx xxxxxx x xxxxxxxxx xxx xxxxxx xx XXX 
     bitmapImage->SetSource(fileStream);
 ```
 
--   **Xxxxxxxxxx**
+-   **Properties**
 
-   X xxx xxxxx xxx xxxx xxxxxxxxxx, xxxxx, xxxx xx xx xxxxxxx xxxxxxxxx, xxx xxxxxxx xxxxxx xxxxxxxxx xxxx xxxxxx xx xxxxxx xx xxxxxxxxx xxxx.
+   A ref class can have properties, which, just as in managed languages, are special member functions that appear as fields to consuming code.
 
 ```cpp
     public ref class SaveStateEventArgs sealed
@@ -174,9 +174,9 @@ Xxx Xxxxxxx Xxxxxxx xxxxx xxxx xx xxxxxxxx xxxxxx x xxxxxxxxx xxx xxxxxx xx XXX 
     }
 ```
 
--   **Xxxxxxxxx**
+-   **Delegates**
 
-   Xxxx xx xx xxxxxxx xxxxxxxxx, x xxxxxxxx xx x xxxxxxxxx xxxx xxxx xxxxxxxxxxxx x xxxxxxxx xxxx x xxxxxxxx xxxxxxxxx. Xxxx xxx xxxx xxxxx xxxx xxxx xxxxxx xxx xxxxx xxxxxxxx
+   Just as in managed languages, a delegate is a reference type that encapsulates a function with a specific signature. They are most often used with events and event handlers
 
 ```cpp
     // Delegate declaration (within namespace scope)
@@ -197,14 +197,14 @@ Xxx Xxxxxxx Xxxxxxx xxxxx xxxx xx xxxxxxxx xxxxxx x xxxxxxxxx xxx xxxxxx xx XXX 
     }
 ```
 
-## Xxxxxx xxxxxxx xx xxx xxx
+## Adding content to the app
 
-Xxx'x xxx xxxx xxxxxxx xx xxx xxx.
+Let's add some content to the app.
 
-**Xxxx Y: Xxxxxx xxxx xxxxx xxxx**
+**Step 1: Modify your start page**
 
-1.  Xx **Xxxxxxxx Xxxxxxxx**, xxxx XxxxXxxx.xxxx.
-2.  Xxxxxx xxxxxxxx xxx xxx XX xx xxxxxx xxx xxxxxxxxx XXXX xx xxx xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704), xxxxxxxxxxx xxxxxx xxx xxxxxxx xxx. Xx xxxxxxxx x [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209635) xxxx xxx x [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209652) xxxx xxxx xxx xxxx'x xxxx, x [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/BR209683) xxxxxxx xxxx xxxxxxx xxx xxxx'x xxxx, x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209265), xxx xxxxxxx **XxxxXxxxx** xxxxxxx.
+1.  In **Solution Explorer**, open MainPage.xaml.
+2.  Create controls for the UI by adding the following XAML to the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), immediately before its closing tag. It contains a [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) that has a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) that asks the user's name, a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) element that accepts the user's name, a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265), and another **TextBlock** element.
 
 ```xml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
@@ -218,84 +218,84 @@ Xxx'x xxx xxxx xxxxxxx xx xxx xxx.
     </StackPanel>
 ```
 
-Xx xxxx xxxx xxxxx XXXX xxxxxx xx xxx [Xxxxxxxxxx, xxxxxx, xxx xxxxx](https://msdn.microsoft.com/library/windows/apps/Dn263172) xxxxxxx.
+We talk more about XAML layout in the [Navigation, layout, and views](https://msdn.microsoft.com/library/windows/apps/Dn263172) article.
 
-3.  Xx xxxx xxxxx, xxx xxxx xxxxxxx x xxxx xxxxx Xxxxxxxxx Xxxxxxx xxx. Xx xxx xxxx xxx XXX xxx xxxxx xxxx, xxxxx XY xx xxxxx, xxxxxx, xxx xxx xxx xxx xx xxxxxxxxx xxxx.
+3.  At this point, you have created a very basic Universal Windows app. To see what the UWP app looks like, press F5 to build, deploy, and run the app in debugging mode.
 
-Xxx xxxxxxx xxxxxx xxxxxx xxxxxxx xxxxx. Xx xxx xx xxxxx—Xxxxxx\\XxxxxxXxxxxx.xxxxx-YYY.xxx—xxx x xxxxxxxxxx xxxxx xxxx xxx xxxxxxxxx xx xxx xxx'x xxxxxxxx xxxx. Xx xxxxx xxx xx xxxxxxxxx xxx xxxxxx xxxxxx, xxx [Xxxxxx x xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/Hh465332).
+The default splash screen appears first. It has an image—Assets\\SplashScreen.scale-100.png—and a background color that are specified in the app's manifest file. To learn how to customize the splash screen, see [Adding a splash screen](https://msdn.microsoft.com/library/windows/apps/Hh465332).
 
-Xxxx xxx xxxxxx xxxxxx xxxxxxxxxx, xxxx xxx xxxxxxx. Xx xxxxxxxx xxx xxxx xxxx xx xxx Xxx.
+When the splash screen disappears, your app appears. It displays the main page of the App.
 
-Xxxxx xxx Xxxxxxx xxx xx xxxxx xxx Xxxxx xxxxxx xx xx xx xxx Xxxxx xxxx, xxx xxxxxx xxxx xxxxxxxxx xxx xxx xxxx xx xx xxx Xxxxx xxxx'x xxxx xx xxxxxxxxx xxxx. Xx xxxx xxxxxxx xxxx xxx xxxxx xx xxx xxx Xxx xxxx xxxx xx xxx Xxx Xxxx xxxxxx. Xx xxx xxx xxx xxxxx, xxxx xxx xx xxxxx xxx xxxx, xxxxx XY xx Xxxx+XY xx Xxxxxx Xxxxxx xx xxxxx.
+Press the Windows key or click the Start button to go to the Start menu, and notice that deploying the app adds it to the Start menu's list of installed apps. It also appears when you click on the the New link next to the All Apps button. To run the app again, just tap or click its tile, press F5 or Ctrl+F5 in Visual Studio as usual.
 
- ![Xxxxxxx Xxxxx xxx xxxxxx, xxxx xxxxxxxx](images/xaml-hw-app2.png)
+ ![Windows Store app screen, with controls](images/xaml-hw-app2.png)
 
-   Xx xxxxx'x xx xxxx—xxx—xxx xxxxxxxxxxxxxxx, xxx'xx xxxxx xxxx xxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx xxx!
+   It doesn't do much—yet—but congratulations, you've built your first Universal Windows Platform app!
 
-   Xx xxxx xxxxxxxxx xxx xxxxx xxx xxx, xxxxxx xx Xxxxxx Xxxxxx xxx xxxxx Xxxxx+XY.
+   To stop debugging and close the app, return to Visual Studio and press Shift+F5.
 
-   Xxx xxxx xxxxxxxxxxx, xxx [Xxx x Xxxxx xxx xxxx Xxxxxx Xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619619).
+   For more information, see [Run a Store app from Visual Studio](http://go.microsoft.com/fwlink/p/?LinkId=619619).
 
-   Xx xxx xxx, xxx xxx xxxx xx xxx [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/BR209683), xxx xxxxxxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209265) xxxxx'x xx xxxxxxxx. Xx xxxxx xxxxx, xxx xxxxxx xx xxxxx xxxxxxx xxx xxx xxxxxx'x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227737) xxxxx, xxxxx xxxxxxxx x xxxxxxxxxxxx xxxxxxxx.
+   In the app, you can type in the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), but clicking the [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) doesn't do anything. In later steps, you create an event handler for the button's [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event, which displays a personalized greeting.
 
-## Xxxxx xxx xxx xx x xxxxxx xxxxxx xxxxxxxx
+## Start the app on a mobile device emulator
 
 
-Xxxx xxx xxxx xx xxx Xxxxxxx YY xxxxxx, xx xxx’x xxx xxx xx xxxxx xx x Xxxxxxx Xxxxx. Xxxx xxxxxxx xxxxxxxx x Xxxxxxx Xxxxx xxxxxxx Xxxxxxx YY, xx xxxxxx xx x Xxxxxxx Xxxxx xxxxxxxx xxx xx xxxxxxxx xxxx Xxxxxx Xxxxxx xx xxxxxxx xx x xxxxxxxx xxxxxxxx (xxx x xxxxxxx xxxxxxx) xxxx XxxxxX xxxxxxxxx xxx xxxxxxx.
+Your app runs on any Windows 10 device, so let’s see how it looks on a Windows Phone. This section requires a Windows Phone running Windows 10, or access to a Windows Phone emulator and it requires that Visual Studio be running on a physical computer (not a virtual machine) with HyperV supported and enabled.
 
-Xx xxxxxxxx xx xxx xxxxxxx xx xxxxx xx x xxxxxxx xxxxxx, Xxxxxx Xxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxx xxx xxxxxxxxx xxxx xxx xx x xxxxxxxx xxxxxx xxxxxx xxxxxxxxx xx xxx xxxxxxxx, xx xx x xxxxxx xxxxxx xxxxxxxx. Xxx xxx xxxxxx xxxxx xxxxxxxxx xxx xxxxxxx xxxx xxxxxxxxx xxxxxx xxx xxxxxxx xxxxxxxxxxxxxx.
+In addition to the options to debug on a desktop device, Visual Studio provides options for deploying and debugging your app on a physical mobile device connected to the computer, or on a mobile device emulator. You can choose among emulators for devices with different memory and display configurations.
 
--   **Xxxxxx**
--   **Xxxxxxxx YY.Y.Y.Y XXXX Y xxxx YYYXX**
--   Xxxxxxx xxxxxxxxx xx xxxxx xxxxxxxxxxxxxx
+-   **Device**
+-   **Emulator 10.0.0.0 WVGA 4 inch 512MB**
+-   Various emulators in other configurations
 
-Xx'x x xxxx xxxx xx xxxx xxxx xxx xx x xxxxxx xxxx x xxxxx xxxxxx xxx xxxxxxx xxxxxx, xx xxx xxx **Xxxxxxxx YY.Y.Y.Y XXXX Y xxxx YYYXX** xxxxxx.
-**Xxx**  Xxx xxxx xxxx xxxxx xxxxx xxx xxxxx xxxxxxxx, xxx [Xxx Xxxxxxx Xxxxx xxxx xx xxx xxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=394233).
+It's a good idea to test your app on a device with a small screen and limited memory, so use the **Emulator 10.0.0.0 WVGA 4 inch 512MB** option.
+**Tip**  For more info about using the phone emulator, see [Run Windows Phone apps in the emulator](http://go.microsoft.com/fwlink/p/?LinkId=394233).
 
  
 
-Xx xxxxx xxxx xxx xx x xxxxxxxx xxxxxx, xxx xxxx xxxx x xxxxxx xxxx’x xxxxxxxxxx xxx xxxxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxx xxxx Xxxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/Dn614128).
+To debug your app on a physical device, you must have a device that’s registered for development. For more info, see [Register your Windows Phone](https://msdn.microsoft.com/library/windows/apps/Dn614128).
 
-**Xx xxxxx xxxxxxxxx xx x xxxxxx xxxxxx xxxxxxxx**
+**To start debugging on a mobile device emulator**
 
-1.  Xx xxx xxxxxx xxxxxx xxxx (![Xxxxx xxxxxxxxx xxxx](images/startdebug-full.png)) xx xxx **Xxxxxxxx** xxxxxxx, xxxx **Xxxxxxxx YY.Y.Y.Y XXXX Y xxxx YYYXX**.
-2.  Xxxxx xxx **Xxxxx Xxxxxxxxx** xxxxxx (![Xxxxx xxxxxxxxx xxxxxx](images/startdebug-sm.png)) xx xxx xxxxxxx.
+1.  In the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, pick **Emulator 10.0.0.0 WVGA 4 inch 512MB**.
+2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) in the toolbar.
 
-   –xx–
+   –or–
 
-   Xxxx xxx **Xxxxx** xxxx, xxxxx **Xxxxx Xxxxxxxxx**.
+   From the **Debug** menu, click **Start Debugging**.
 
-   –xx–
+   –or–
 
-   Xxxxx XY.
+   Press F5.
 
-Xx xxx xxxxxx xxxxxx xxxxxxxx, xxx xxx xxxxx xxxx xxxx.
+On the mobile device emulator, the app looks like this.
 
-![Xxxxxxx xxx xxxxxx xx xxxxxx xxxxxx](images/hw10-screen1-mob.png)
+![Initial app screen on mobile device](images/hw10-screen1-mob.png)
 
-Xxxxxx Xxxxxx xxxxxx xxx xxxxxxxx xxxxxxxx xxx xxxx xxxxxxx xxx xxxxxx xxxx xxx. Xxx xxxxx xxxxx xxx'xx xxxxxx xx xxxx xxx YYY-xxxxx xxxx xxxxxx xxxx xxxxx xxxx xx xxx xxxxx xxxxxxx xxxxxx xxxx xxxxxxx xxx xxx xxxxxxx xxxxxx xx x xxxxxx xxxxxx. Xxxxx xx xxxx xxxxxxxx, xxx'xx xxxxx xxx xx xxxxx xxx XX xx xxxxxxxxx xxxxxx xxxxx xx xxxx xxx xxxxxx xxxxx xxxx.
+Visual Studio starts the selected emulator and then deploys and starts your app. The first thing you'll notice is that the 120-pixel left margin that looks good on the local machine pushes your content off the smaller screen of a mobile device. Later in this tutorial, you'll learn how to adapt the UI to different screen sizes so your app always looks good.
 
-## Xxxx Y: Xxxxxx xx xxxxx xxxxxxx
+## Step 2: Create an event handler
 
-1.  Xx XxxxXxxx.xxxx, xx xxxxxx XXXX xx xxxxxx xxxx, xxxxxx xxx "Xxx Xxxxx" [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209265) xx xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209635) xxx xxxxx xxxxxxx.
-2.  Xxxx xxx **Xxxxxxxxxx Xxxxxx** xx xxxxxxxx Xxx+Xxxxx, xxx xxxx xxxxxx xxx Xxxxxx xxxxxx (![Xxxxxx xxxxxx](IMAGES/EVENTSBUTTON.png)).
-3.  Xxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227737) xxxxx. Xx xxx xxxx xxx, xxxx xxx xxxx xx xxx xxxxxxxx xxxx xxxxxxx xxx **Xxxxx** xxxxx. Xxx xxxx xxxxxxx, xxxx "Xxxxxx\_Xxxxx".
+1.  In MainPage.xaml, in either XAML or design view, select the "Say Hello" [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) in the [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) you added earlier.
+2.  Open the **Properties Window** by pressing Alt+Enter, and then choose the Events button (![Events button](IMAGES/EVENTSBUTTON.png)).
+3.  Find the [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event. In its text box, type the name of the function that handles the **Click** event. For this example, type "Button\_Click".
 
-![Xxxxxxxxxx xxxxxx, Xxxxxx xxxx](images/xaml-hw-event.png)
+![Properties window, Events view](images/xaml-hw-event.png)
 
-4.  Xxxxx Xxxxx. Xxx xxxxx xxxxxxx xxxxxx xx xxxxxxx xx XxxxXxxx.xxxx.xxx xxx xxxxxx xx xxxx xxx xxx xxx xxx xxxx xxxx'x xxxxxxxx xxxx xxx xxxxx xxxxxx.
+4.  Press Enter. The event handler method is created in MainPage.xaml.cpp and opened so that you can add the code that's executed when the event occurs.
 
-   Xx xxx xxxx xxxx, xx XxxxXxxx.xxxx, xxx XXXX xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209265) xx xxxxxxx xx xxxxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227737) xxxxx xxxxxxx, xxxx xxxx:
+   At the same time, in MainPage.xaml, the XAML for the [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) is updated to declare the [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event handler, like this:
 
 ```xml
     <Button Content="Say \"Hello\"" Click="Button_Click"/>
 ```
 
-Xxx xxxxx xxxx xxxx xxxxxx xxxxx xxxx xx xxx xxxx xxxx xxxxxxxx, xxxxx xxx xx xxxxxxx xx xxx xxxxxxxx xxxxx'x xxxx. Xx xxx xxxxx xxxx xxxxxxxx, xxxx "Xxxxx" xxx xxxx xxx XxxxxxxXxxxx xxx xx xxx xxxxxx xx xxx x xxx xxxxx xxxxxxx. Xxxx xxx, Xxxxxx Xxxxxx xxxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxxxxx xxx xxxx.
+You could also have simply added this to the xaml code manually, which can be helpful if the designer doesn't load. If you enter this manually, type "Click" and then let IntelliSense pop up the option to add a new event handler. That way, Visual Studio creates the necessary method declaration and stub.
 
-Xxx xxxxxxxx xxxxx xx xxxx xx xx xxxxxxxxx xxxxxxxxx xxxxxx xxxxxx xxxxxxxxx. Xxxxxxxxx xx xxx xxxxxxxx xxxxxxxx xxxxxxx x xxxxxx-xxxx xxxxxxx xx xxx xxxx. Xx xxx xx xxxxxxx xx xxxxxxx xxxxxxx xxxx xxxx. Xxx xxx xx xxxx xx xxxxxxxx xxx xxxxxxx xx xxx **Xxxxx, Xxxxxxx** xxxxxx xxx. Xxxxx **XXXX Xxxxxxxx**, xxxxxxx **Xxx xxxxxxx xxxx xx XXXX xxxxxxxx (xx xxxxxxxxx)**.
+The designer fails to load if an unhandled exception occurs during rendering. Rendering in the designer involves running a design-time version of the page. It can be helpful to disable running user code. You can do this by changing the setting in the **Tools, Options** dialog box. Under **XAML Designer**, uncheck **Run project code in XAML designer (if supported)**.
 
-5.  Xx XxxxXxxx.xxxx.xxx, xxx xxx xxxxxxxxx xxxx xx xxx **Xxxxxx\_Xxxxx** xxxxx xxxxxxx xxxx xxx xxxx xxxxxxx. Xxxx xxxx xxxxxxxxx xxx xxxx'x xxxx xxxx xxx `nameInput`[**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/BR209683) xxxxxxx xxx xxxx xx xx xxxxxx x xxxxxxxx. Xxx `greetingOutput`[**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209652) xxxxxxxx xxx xxxxxx.
+5.  In MainPage.xaml.cpp, add the following code to the **Button\_Click** event handler that you just created. This code retrieves the user's name from the `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) control and uses it to create a greeting. The `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) displays the result.
 
 ```cpp
     void HelloWorld::MainPage::Button_Click(Platform::Object^ sender, Windows::UI::Xaml::RoutedEventArgs^ e)
@@ -304,26 +304,26 @@ Xxx xxxxxxxx xxxxx xx xxxx xx xx xxxxxxxxx xxxxxxxxx xxxxxx xxxxxx xxxxxxxxx. Xx
     }
 ```
 
-6.  Xxx xxx xxxxxxx xx xxx xxxxxxx, xxx xxxx xxxxx XY xx xxxxx xxx xxx xxx xxx. Xxxx xxx xxxx x xxxx xx xxx xxxx xxx xxx xxxxx xxx xxxxxx, xxx xxx xxxxxxxx x xxxxxxxxxxxx xxxxxxxx.
+6.  Set the project as the startup, and then press F5 to build and run the app. When you type a name in the text box and click the button, the app displays a personalized greeting.
 
-![Xxx xxxxxx xxxx xxxxxxx xxxxxxx](images/xaml-hw-app4.png)
+![App screen with message display](images/xaml-hw-app4.png)
 
-## Xxxx Y: Xxxxx xxx xxxxx xxxx
+## Step 3: Style the start page
 
-### Xxxxxxxx x xxxxx
+### Choosing a theme
 
-Xx'x xxxx xx xxxxxxxxx xxx xxxx xxx xxxx xx xxxx xxx. Xx xxxxxxx, xxxx xxx xxxx xxxxxxxxx xxxx xxxx x xxxxx xxxxx. Xxx xxxxxx xxxxxxxxx xxxx xxxxxxx x xxxxx xxxxx. Xxx'x xxx xx xxx xxx xxx xxxx xx xxxxx xxxx.
+It's easy to customize the look and feel of your app. By default, your app uses resources that have a light style. The system resources also include a light theme. Let's try it out and see what it looks like.
 
-**Xx xxxxxx xx xxx xxxx xxxxx**
+**To switch to the dark theme**
 
-1.  Xxxx Xxx.xxxx.
-2.  Xx xxx xxxxxxx [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242324) xxx, xxxx xxx [**XxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme) xxxxxxxx xxx xxx xxx xxxxx xx **Xxxx**:
+1.  Open App.xaml.
+2.  In the opening [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) tag, edit the [**RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.application.requestedtheme) property and set its value to **Dark**:
 
 ```xml
    RequestedTheme="Light"
 ```
 
-Xxxx'x xxx xxxx [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242324) xxx xxxx xxx xxxx xxxxx :
+Here's the full [**Application**](https://msdn.microsoft.com/library/windows/apps/BR242324) tag with the dark theme :
 
 ```xml 
         <Application
@@ -334,42 +334,42 @@ Xxxx'x xxx xxxx [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/app
         RequestedTheme="Dark">
 ```
 
-3.  Xxxxx XY xx xxxxx xxx xxx xx. Xxxxxx xxxx xx xxxx xxx xxxx xxxxx.
+3.  Press F5 to build and run it. Notice that it uses the dark theme.
 
-![Xxx xxxxxx xxxx xxxx xxxxx](images/xaml-hw-app3.png)
+![App screen with dark theme](images/xaml-hw-app3.png)
 
-Xxxxx xxxxx xxxxxx xxx xxx? Xxxxxxxxx xxx xxx xxxx. Xxxx'x xxx xxxx: xxx xxxx xxxx xxxxxx xxxxxxx xxxxxx xx xxxxx, xx xxxxxxxxx xxx xxxx xxxxx; xxx xxxx xxxx xxxxxxx x xxx xx xxxx, xx xxxxxxxxx xxx xxxxx xxxxx. Xx xxx'xx xxxxx x xxxxxx xxxxx xxxxxx, xxx xxx xxxxx xxxx xxxx xxxx xxxx xxxx xxx'x xxxx xxx xxxx. Xx xxx xxxx xx xxxx xxxxxxxx, xx xxx xxx Xxxxx xxxxx xx xxxxxxxxxxx.
+Which theme should you use? Whichever one you want. Here's our take: for apps that mostly display images or video, we recommend the dark theme; for apps that contain a lot of text, we recommend the light theme. If you're using a custom color scheme, use the theme that goes best with your app's look and feel. In the rest of this tutorial, we use the Light theme in screenshots.
 
-**Xxxx**  Xxx xxxxx xx xxxxxxx xxxx xxx xxx xx xxxxxxx xxx xxx'x xx xxxxxxx xxxxx xxx xxx xx xxxxxxx.
+**Note**  The theme is applied when the app is started and can't be changed while the app is running.
 
-### Xxxxx xxxxxx xxxxxx
+### Using system styles
 
-Xxxxx xxx, xx xxx Xxxxxxx xxx xxx xxxx xx xxxx xxxxx xxx xxxxxxxxx xx xxxx. Xxx'x xxx xxxx xx xxxxxxxx x xxxxxx xxxxx.
+Right now, in the Windows app the text is very small and difficult to read. Let's fix that by applying a system style.
 
-**Xx xxxxxx xxx xxxxx xx xx xxxxxxx**
+**To change the style of an element**
 
-1.  Xx xxx Xxxxxxx xxxxxxx, xxxx XxxxXxxx.xxxx.
-2.  Xx xxxxxx XXXX xx xxxxxx xxxx, xxxxxx xxx "Xxxx'x xxxx xxxx?"[**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209652) xxxx xxx xxxxx xxxxxxx.
-3.  Xx xxx **Xxxxxxxxxx** xxxxxx (**XY**), xxxxxx xxx Xxxxxxxxxx xxxxxx (![Xxxxxxxxxx xxxxxx](IMAGES/PROPERTIESBUTTON.png)) xx xxx xxxxx xxxxx.
-4.  Xxxxxx xxx **Xxxx** xxxxx xxx xxx xxx xxxx xxxx xx YY xx.
-5.  Xxxxxx xxx **Xxxxxxxxxxxxx** xxxxx xxx xxxx xxx **Xxxxx** xxxxxxxx.
-6.  Xxxxx xxx xxxxxxxx xxxxxx (xxx xxxxx xxx xx xxx xxxxx xx xxx **Xxxxx** xxxxxxxx), xxx xxxx, xx xxx xxxx, xxxxxx **Xxxxxx Xxxxxxxx** > **XxxxXxxxXxxxxXxxxx**.
+1.  In the Windows project, open MainPage.xaml.
+2.  In either XAML or design view, select the "What's your name?"[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) that you added earlier.
+3.  In the **Properties** window (**F4**), choose the Properties button (![Properties button](IMAGES/PROPERTIESBUTTON.png)) in the upper right.
+4.  Expand the **Text** group and set the font size to 18 px.
+5.  Expand the **Miscellaneous** group and find the **Style** property.
+6.  Click the property marker (the green box to the right of the **Style** property), and then, on the menu, choose **System Resource** > **BaseTextBlockStyle**.
 
- **XxxxXxxxXxxxxXxxxx** xx x xxxxxxxx xxxx'x xxxxxxx xx xxx [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208794) xx <root>\\Xxxxxxx Xxxxx\\Xxxxxxx Xxxx\\YY\\Xxxxxxx\\xxxxx\\xxxx\\xxxxxx\\xxxxxxx.xxxx.
+ **BaseTextBlockStyle** is a resource that's defined in the [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) in <root>\\Program Files\\Windows Kits\\10\\Include\\winrt\\xaml\\design\\generic.xaml.
 
-![Xxxxxxxxxx xxxxxx, Xxxxxxxxxx xxxx](images/xaml-hw-style-cpp.png)
+![Properties window, Properties view](images/xaml-hw-style-cpp.png)
 
- Xx xxx XXXX xxxxxx xxxxxxx, xxx xxxxxxxxxx xx xxx xxxx xxxxxxx. Xx xxx XXXX xxxxxx, xxx XXXX xxx xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209652) xx xxxxxxx:
+ On the XAML design surface, the appearance of the text changes. In the XAML editor, the XAML for the [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) is updated:
 
 ```xml
    <TextBlock Text="What's your name?" Style="{StaticResource BasicTextStyle}"/><
 ```
 
-7.  Xxxxxx xxx xxxxxxx xx xxx xxx xxxx xxxx xxx xxxxxx xxx **XxxxXxxxXxxxxXxxxx** xx xxx `greetingOutput`[**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209652) xxxxxxx.
+7.  Repeat the process to set the font size and assign the **BaseTextBlockStyle** to the `greetingOutput`[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) element.
 
-  **Xxx**  Xxxxxxxx xxxxx'x xx xxxx xx xxxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209652), xxxx xxx xxxx xxx xxxxxxx xxxx xxx XXXX xxxxxx xxxxxxx, x xxxx xxxxxxx xxxxx xxxxx xx xx xx xxxx xxx xxx xxxxxx xx.  
+  **Tip**  Although there's no text in this [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), when you move the pointer over the XAML design surface, a blue outline shows where it is so that you can select it.  
 
-  Xxxx XXXX xxx xxxxx xxxx xxxx:
+  Your XAML now looks like this:
 
 ```xml
     <StackPanel x:Name="contentPanel" Margin="120,30,0,0">
@@ -382,17 +382,17 @@ Xxxxx xxx, xx xxx Xxxxxxx xxx xxx xxxx xx xxxx xxxxx xxx xxxxxxxxx xx xxxx. Xxx'
     </StackPanel>
 ```
 
-8.  Xxxxx XY xx xxxxx xxx xxx xxx xxx. Xx xxx xxxxx xxxx xxxx:
+8.  Press F5 to build and run the app. It now looks like this:
 
- ![Xxx xxxxxx xxxx xxxxxx xxxx](images/xaml-hw-app5.png)
+ ![App screen with larger text](images/xaml-hw-app5.png)
 
-### Xxxx Y: Xxxxx xxx XX xx xxxxxxxxx xxxxxx xxxxx
+### Step 4: Adapt the UI to different window sizes
 
-Xxx xx'xx xxxx xxx XX xxxxx xx xxxxxxxxx xxxxxx xxxxx xx xx xxxxx xxxx xx xxxxxx xxxxxxx. Xx xx xxxx, xxx xxx x [**XxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209021) xxx xxx xxxxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxxx xxxxxx xxxxxx.
+Now we'll make the UI adapt to different screen sizes so it looks good on mobile devices. To do this, you add a [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) and set properties that are applied for different visual states.
 
-**Xx xxxxxx xxx XX xxxxxx**
+**To adjust the UI layout**
 
-1.  Xx xxx XXXX xxxxxx, xxx xxxx xxxxx xx XXXX xxxxx xxx xxxxxxx xxx xx xxx xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704) xxxxxxx.
+1.  In the XAML editor, add this block of XAML after the opening tag of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) element.
 
 ```xml
     <VisualStateManager.VisualStateGroups>
@@ -416,29 +416,33 @@ Xxx xx'xx xxxx xxx XX xxxxx xx xxxxxxxxx xxxxxx xxxxx xx xx xxxxx xxxx xx xxxxxx
     </VisualStateManager.VisualStateGroups>
 ```
 
-2.  Xxxxx xxx xxx xx xxx xxxxx xxxxxxx. Xxxxxx xxxx xxx XX xxxxx xxx xxxx xx xxxxxx xxxxxx xxx xxxxxx xxxx xxxxxxxx xxxx YYY xxxxxx-xxxxxxxxxxx xxxxxx (XXXx).
-3.  Xxxxx xxx xxx xx xxx xxxxxx xxxxxx xxxxxxxx. Xxxxxx xxxx xxx XX xxxx xxx xxxxxxxxxx xxx xxxxxxx xx xxx `narrowState` xxx xxxxxxx xxxxxxxxx xx xxx xxxxx xxxxxx.
+2.  Debug the app on the local machine. Notice that the UI looks the same as before unless the window gets narrower than 641 device-independent pixels (DIPs).
+3.  Debug the app on the mobile device emulator. Notice that the UI uses the properties you defined in the `narrowState` and appears correctly on the small screen.
 
-![Xxxxxx xxx xxxxxx xxxx xxxxxx xxxx](images/hw10-screen2-mob.png)
+![Mobile app screen with styled text](images/hw10-screen2-mob.png)
 
-Xx xxx'xx xxxx x [**XxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209021) xx xxxxxxxx xxxxxxxx xx XXXX, xxx xxxxx xxxxxx xxxx xxx XXXX xxxx xxxx x xxxxxxxxxx xxxxxx.
+If you've used a [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) in previous versions of XAML, you might notice that the XAML here uses a simplified syntax.
 
-Xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209007) xxxxx `wideState` xxx xx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn890382) xxxx xxx [**XxxXxxxxxXxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) xxxxxxxx xxx xx YYY. Xxxx xxxxx xxxx xxx xxxxx xx xx xx xxxxxxx xxxx xxxx xxx xxxxxx xxxxx xx xxx xxxx xxxx xxx xxxxxxx xx YYY XXXx. Xxx xxx'x xxxxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208817) xxxxxxx xxx xxxx xxxxx, xx xx xxxx xxx xxxxxx xxxxxxxxxx xxx xxxxxxx xx xxx XXXX xxx xxx xxxx xxxxxxx.
+The [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) named `wideState` has an [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) with its [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) property set to 641. This means that the state is to be applied only when the window width is not less than the minimum of 641 DIPs. You don't define any [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) objects for this state, so it uses the layout properties you defined in the XAML for the page content.
 
-Xxx xxxxxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209007), `narrowState`, xxx xx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn890382) xxxx xxx [**XxxXxxxxxXxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) xxxxxxxx xxx xx Y. Xxxx xxxxx xx xxxxxxx xxxx xxx xxxxxx xxxxx xx xxxxxxx xxxx Y, xxx xxxx xxxx YYY XXXx. (Xx YYY XXXx, xxx `wideState` xx xxxxxxx.) Xx xxxx xxxxx, xxx xx xxxxxx xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208817) xxxxxxx xx xxxxxx xxx xxxxxx xxxxxxxxxx xx xxxxxxxx xx xxx XX:
+The second [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), `narrowState`, has an [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) with its [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) property set to 0. This state is applied when the window width is greater than 0, but less than 641 DIPs. (At 641 DIPs, the `wideState` is applied.) In this state, you do define some [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) objects to change the layout properties of controls in the UI:
 
--   Xxx xxxxxx xxx xxxx xxxxxx xx xxx `contentPanel` xxxxxxx xxxx YYY xx YY.
--   Xxx xxxxxx xxx [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) xx xxx `inputPanel` xxxxxxx xxxx **Xxxxxxxxxx** xx **Xxxxxxxx**.
--   Xxx xxx x xxx xxxxxx xx Y XXXx xx xxx `inputButton` xxxxxxx.
+-   You reduce the left margin of the `contentPanel` element from 120 to 20.
+-   You change the [**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) of the `inputPanel` element from **Horizontal** to **Vertical**.
+-   You add a top margin of 4 DIPs to the `inputButton` element.
 
-### Xxxxxxx
+### Summary
 
-Xxxxxxxxxxxxxxx, xxx'xx xxxxxxxxx xxx xxxxx xxxxxxxx! Xx xxxxxx xxx xx xxx xxxxxxx xx Xxxxxxx Xxxxxxxxx xxxx, xxx xx xxx xxxxxxxxxxxxx xx xxxx, xxx xxx xx xxxxxx xxxxx xxxxxxxxxx.
+Congratulations, you've completed the first tutorial! It taught how to add content to Windows Universal apps, how to add interactivity to them, and how to change their appearance.
 
-## Xxxx xxxxx
+## Next steps
 
-Xx xxx xxxx x Xxxxxxx Xxxxxxxxx xxx xxxxxxx xxxx xxxxxxx Xxxxxxx Y.Y xxx/xx Xxxxxxx Xxxxx Y.Y, xxx xxx xxxx xx xx Xxxxxxx YY. Xxxxx xx xx xxxxxxxxx xxxxxxx xxx xxxx, xxx xxx xxx xx xx xxxxxxxx xxxx x xxxxxx xxxxxx. Xxxxx xxxx x xxx Xxxxxxx Xxxxxxxxx xxxxxxx xx xxx xxx xxxxxx xxxxxxx xxxxxx xxxxxxxxx xxx xxxxxxxx xxxxx, xxxx xxxx xxxx xxxxx xxxx xxx xxxxxxx'x xxxxxxxxx xxxxxxxxx, xxx xxx xxxxx xx xxxx xxxxxxx, xxx xxxxxxx xxxx XXXX xxxxx xxx [**XxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209021) xxxxxxxxx xx xxx xxxxxxxx xx xxxx xxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxx x Xxxxxxx Xxxxxxx Y xxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt188203) xxx [Xxxxxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (X++)](http://go.microsoft.com/fwlink/p/?LinkId=619525).
+If you have a Windows Universal app project that targets Windows 8.1 and/or Windows Phone 8.1, you can port it to Windows 10. There is no automatic process for this, but you can do it manually with a little effort. Start with a new Windows Universal project to get the latest project system structure and manifest files, copy your code files into the project's directory structure, add the items to your project, and rewrite your XAML using the [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) according to the guidance in this topic. For more information, see [Porting a Windows Runtime 8 project to a Universal Windows Platform (UWP) project](https://msdn.microsoft.com/library/windows/apps/Mt188203) and [Porting to the Universal Windows Platform (C++)](http://go.microsoft.com/fwlink/p/?LinkId=619525).
 
-Xx xxx xxxx xxxxxxxx X++ xxxx xxxx xxx xxxx xx xxxxxxxxx xxxx x XXX xxx, xxxx xx xx xxxxxx x xxx XXX XX xxx xx xxxxxxxx xxxxxxxxxxx, xxx [Xxx xx: Xxx xxxxxxxx X++ xxxx xx x Xxxxxxxxx Xxxxxxx xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619623).
+If you have existing C++ code that you want to integrate with a UWP app, such as to create a new UWP UI for an existing application, see [How to: Use existing C++ code in a Universal Windows project](http://go.microsoft.com/fwlink/p/?LinkId=619623).
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

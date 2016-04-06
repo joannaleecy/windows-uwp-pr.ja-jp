@@ -1,79 +1,76 @@
 ---
-xxxxx: Xxxxxxxxxxxxx xxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxx xxx xx xxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxxx xx xxxxxx xxxx xxx xxx xx xxxxxxx xxxxxxx xxxxx xxxxxxxxx xxx xxxxxxxxxx xxxx.
-xx.xxxxxxx: XYYXXXXX-YYXY-YXYY-XYYX-XYXYYYXYXXYY
+title: Cryptographic keys
+description: This article shows how to use standard key derivation functions to derive keys and how to encrypt content using symmetric and asymmetric keys.
+ms.assetid: F35BEBDF-28C5-4F91-A94E-F7D862B6ED59
+author: awkoren
 ---
 
-# Xxxxxxxxxxxxx xxxx
+# Cryptographic keys
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxxxx xxxxx xxx xx xxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxxx xx xxxxxx xxxx xxx xxx xx xxxxxxx xxxxxxx xxxxx xxxxxxxxx xxx xxxxxxxxxx xxxx.
+This article shows how to use standard key derivation functions to derive keys and how to encrypt content using symmetric and asymmetric keys.
 
-## Xxxxxxxxx xxxx
-
-
-Xxxxxxxxx xxx xxxxxxxxxx, xxxx xxxxxx xxxxxx xxx xxxxxxxxxx, xxxxxxxx xxxx xxx xxx xxxx xxx xxxxxxxxxx xxxx xx xxxx xxx xxxxxxxxxx. Xxx xxx xxx x [**XxxxxxxxxXxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241537) xxxxx xx xxxxxxx x xxxxxxxxx xxxxxxxxx xxx xxxxxx xx xxxxxx x xxx. Xxx xxx xxx xxxxxx xxxxxxx xx xxx [**XxxxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241490) xxxxx xx xxxxxxx xxx xxxxxxx xxxx xx xxxxx xxx xxxxxxxxx xxx xxx.
-
-Xxxxxxxxx xxx xxxxxxxxxx xxxxxxxxx xxxx xxxxx xxxxxxx xxx xxxxx xxxxxx xxxxx. X xxxxx xxxxxx xx x xxxxxxxxx xxxxxxxxxx xxxxxxxx xxxx xxxxxxxx xx xxxxx xxxx xxxxxx. Xx xxx xxxxxxx xxx xxxx xx xxxxxxx xx xxxxxx xxxx xxx xxxxx xxxxxx, xxx xxxx xxx x xxxxx xxxxxx xxxx. X xxxxx xxxxxx xxxx xx x xxxxxxxxx xxxxxxxxxx xxxxxxxx xxxxx xx xxxxx x xxxxx xxxxxx. Xx xxxxxxxx xxxxxxxxx xx x xxxxxx xx xxxxx xxxx xxxxxx. Xxx xxxxxxxxx xxxxx xxx xxxxxxxxx xxx xxxx:
-
--   Xxx XXX (xxxxxxxxxx xxxxxxxx) xxxx xxxxxxxx xxxx xxxxx xx xxx xxxxxxx xxxxxxxxxx. Xxxx xx xxx xxxxxxxxxx x xxxxxx xxxxxxxxxx xxxx.
--   Xxx XXX (xxxxxx xxxxx xxxxxxxx) xxxx xxxx xxx xxxxxxxx xxxxxxxxxx xxxxx xx xxxxxxxxx xxx xxxxxxx xxxxx. Xxx xxxx xxxxxxxxx xxxx xxxxx xx xxx xxx xxx xxxxx xxxxx. Xxxx xxxxx xx xxxxxx xxx xxxxxxxxxxxxxx xxxxxx (XX).
--   Xxx XXX (xxxxxxx xxxx XXX-XXX) xxxx xxxxxxxx xxx XXX xxxxx xxxxxx xxxx xxxx x xxxxxxx xxxxxxxxxxxxxx xxxx (XXX).
--   Xxx XXX (Xxxxxx xxxxxxx xxxx) xxxx xxxxxxxx xxx xxxxxxx xxxxxxxxxx xxxx xxxx xxx Xxxxxx xxxxxxxxxxxxxx xxxx.
-
-Xxxx xxxxx xxxx xx XXX xxxxxxx xxxx xxx xxx xx xxxxxxxxxxxxxx xxxxxx (XX) xxx xxx xxxxx xxxxxxxxxx xxxxx. Xxx xxxxxxxxx xxx xxxxxx xxxxxxxxxxxxxx xxxxxxx. Xxx xxxxxxx xxx XX xxxx xxxxxxx [**XxxxxxxxxxxxxXxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241494). Xxx xxxx xxxxx xx xx xxxxxxxxx xxxx xxx XX xxxxx xx xxxxxx xxxx xxx xxxx xxx.
-
--   Xxxxx xxxx xxx xxxx XX xxx xxx xxxxxxxx xx xx xxxxxxxxx. Xxxx xxxxx xxxxxxxxxxx xxx xxx xxx xx xxx xxxxxxxxxxx.
--   Xxxxxxx xxxxxxxxxx xxx XX xxx xxxx xxxxx.
--   Xxxxxx xxxxxxx x xxxxxxxxxxxx XX. Xxx xxx xxx [**XxxxxxxxxxxxxXxxxxx.XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241392) xx xxxxxx xxx XX.
--   Xxxxx-Xxxxxxxxx xxxx x xxxxxx xxxxxx xxx xxxx xxxxxxx xx xx xxxxxxxxx. Xxxxxxxxx, xxx xxxxx xx x xxxxxxxx xxxxxxx xx xxxxxxxxxxx xxxxxxxxxx. Xxx xxxxx xxxx xxx xxxx xx xx xxxx xxxxxx, xxx xx xxxxxx xxxxx xx xxxxxx xxxxx xxx xxxx xxx.
-
-Xxxx xxxxx xxxxxxx xxxx xxx xxxxxx xx xxx xxxxxxxxx xx xx xxxxx xxxxxxxx xx xxx xxxxx xxxx. Xxxx xxxxxxx xxxxxxxx xxxx xxx xxx xxx xxxxxxxxx xx xxxxxx xxx xxxxxxxxxxx xxxxxx.
-
-Xxxxx xxxxx xxxxxxx xxxxxxx xxxxx xxxx xxxxxx xx xxxx, xxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxx xxxx xxxx x xxxxxxxxxxxx xxx xxxxxx (xxxxxx x xxx xxxxxx) xx xxxxxxxx xxx xxxxxxxxxx. Xxxx xxxxx xxxxxx xxxxx xxxx xx xxxxxx xxxxxxxx xxxx (XXX) xxx xxxxxxx xxxx (XXX) xxxxxxxxxxx xxxx x xxxxx xxxxxx xxxx x xxxxxx xxxxxx. Xxxxxx xxxxxx xxxxxxx xxxx xx XXY, xxxxxxx, xxxxxxxxx xxxxxxx xx xxxxxx xxxxxx xxxx xxxxx xxxxxx xxxxx xxx xxxxxxx xx xxxxxxxxx.
-
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xx xxx xxx [**XxxxxxxxxXxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241537) xxxxx xx xxxxxx x xxxxxxxxx xxx xxx xxx xx xx xxxxxxx xxx xxxxxxx xxxx.
-
-## Xxxxxxxxxx xxxx
+## Symmetric keys
 
 
-Xxxxxxxxxx xxx xxxxxxxxxxxx, xxxx xxxxxx xxxxxx xxx xxxxxxxxxxxx, xxxx x xxxxxx xxx xxx x xxxxxxx xxx xx xxxxxxx xxxxxxxxxx xxx xxxxxxxxxx. Xxx xxxx xxx xxxxxxxxx xxx xxxxxxxxxxxxxx xxxxxxx. Xxxxxxxxx xxx xxxxxxx xxx xx xxxx xxxxxx xxx xx xxxx xx xxxxxxx xxxx xxxxx xxx xxxxxx xxx xx xxxxxxxxxxx xx xxxxxxxxxx xxxxxxx xxx xx xxxx xx xxxxxxx xxxx. Xxxxxxxxxx xxxxxxxxxxxx xx xxxx xxxxxx xxx xxxxxxx xxxx.
+Symmetric key encryption, also called secret key encryption, requires that the key used for encryption also be used for decryption. You can use a [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) class to specify a symmetric algorithm and create or import a key. You can use static methods on the [**CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) class to encrypt and decrypt data by using the algorithm and key.
 
-Xxxxxxx xxxxxxxxxx xxxxxxxxxxxx xx xxxx xxxxxx xxxx xxxxxxxxx xxxxxxxxxxxx, xx xx xxxxxx xxxx xx xxxxxxx xxxxx xxxxxxx xx xxxx xxxxxxxx. Xxxxxxx, xx xx xxxxxxxxx xxxx xx xxx xxxxxxxxx xxxxxx xx xxxxxxx xxxx.
+Symmetric key encryption typically uses block ciphers and block cipher modes. A block cipher is a symmetric encryption function that operates on fixed size blocks. If the message you want to encrypt is longer than the block length, you must use a block cipher mode. A block cipher mode is a symmetric encryption function built by using a block cipher. It encrypts plaintext as a series of fixed size blocks. The following modes are supported for apps:
 
--   Xxxxx xxxxxxxx xxxx Xxx xxxx xxx xxxx xxxxxxxxx xxxxxxxx.
--   Xxxxx xxxxxxx x xxxxxxx/xxxxxx xxx xxxx, xxxxx xxx xxxxxxx xxx xxxxxx xxx xxxxxxxxx xxx xxxxxx xxx.
--   Xxx xxx x xxxxxxx xx xxxxx xx xxxx xx Xxxxx.
--   Xxx xxxxxxx x xxxxxxxxx xxx.
--   Xxx xxxx xxx xxx xxxxxxxxx xxx xx xxxxxxx xxx xxxxxxx xx Xxxxx.
--   Xxx xxxx Xxxxx’x xxxxxx xxx xx xxxxxxx xxx xxxxxxxxx xxx.
--   Xxx xxxxx xxx xxxxxxxxx xxxxxxx xxx xxx xxxxxxxxx xxxxxxxxx xxx xx Xxxxx (xxxxxxxxx).
--   Xxxxx xxxx xxx xxxxxxx xxx (xxxx xxx xxxxxxx/xxxxxx xxxx) xx xxxxxxx Xxx’x xxxxxxxxx xxx.
--   Xxxxx xxxx Xxx’x xxxxxxxxx xxx xx xxxxxxx xxx xxxxxxx.
+-   The ECB (electronic codebook) mode encrypts each block of the message separately. This is not considered a secure encryption mode.
+-   The CBC (cipher block chaining) mode uses the previous ciphertext block to obfuscate the current block. You must determine what value to use for the first block. This value is called the initialization vector (IV).
+-   The CCM (counter with CBC-MAC) mode combines the CBC block cipher mode with a message authentication code (MAC).
+-   The GCM (Galois counter mode) mode combines the counter encryption mode with the Galois authentication mode.
 
-Xxx xxx xxx xx [**XxxxxxxxxxXxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241478) xxxxxx xx xxxxxxx xx xxxxxxxxxx xxxxxxxxx xx x xxxxxxx xxxxxxxxx, xx xxxxxx xx xxxxxx xx xxxxxxxxx xxx xxxx, xx xx xxxxxx xxx xxxxxx xxx xxxxxxx xx x xxx xxxx.
+Some modes such as CBC require that you use an initialization vector (IV) for the first ciphertext block. The following are common initialization vectors. You specify the IV when calling [**CryptographicEngine.Encrypt**](https://msdn.microsoft.com/library/windows/apps/br241494). For most cases it is important that the IV never be reused with the same key.
 
-## Xxxxxxxx xxxx
+-   Fixed uses the same IV for all messages to be encrypted. This leaks information and its use is not recommended.
+-   Counter increments the IV for each block.
+-   Random creates a pseudorandom IV. You can use [**CryptographicBuffer.GenerateRandom**](https://msdn.microsoft.com/library/windows/apps/br241392) to create the IV.
+-   Nonce-Generated uses a unique number for each message to be encrypted. Typically, the nonce is a modified message or transaction identifier. The nonce does not have to be kept secret, but it should never be reused under the same key.
+
+Most modes require that the length of the plaintext be an exact multiple of the block size. This usually requires that you pad the plaintext to obtain the appropriate length.
+
+While block ciphers encrypt fixed size blocks of data, stream ciphers are symmetric encryption functions that combine plaintext bits with a pseudorandom bit stream (called a key stream) to generate the ciphertext. Some block cipher modes such as output feedback mode (OTF) and counter mode (CTR) effectively turn a block cipher into a stream cipher. Actual stream ciphers such as RC4, however, typically operate at higher speeds than block cipher modes are capable of achieving.
+
+The following example shows how to use the [**SymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241537) class to create a symmetric key and use it to encrypt and decrypt data.
+
+## Asymmetric keys
 
 
-Xx xx xxxxx xxxxxxxxx xx xxxxxx xxxxxxxxxx xxxx xxxx x xxxxxx xxxxxx. Xxx xxx xxx xxx [**XxxXxxxxxxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241518) xxxxx xxx xxx xx xxx xxxxxxxxx xxxxxxxxxxx xxxxxxx xx xxx [**XxxXxxxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241524) xxxxx xx xxxxxx xxxx.
+Asymmetric key cryptography, also called public key cryptography, uses a public key and a private key to perform encryption and decryption. The keys are different but mathematically related. Typically the private key is kept secret and is used to encrypt data while the public key is distributed to interested parties and is used to decrypt data. Asymmetric cryptography is also useful for signing data.
 
-| Xxxxxx                                                                            | Xxxxxxxxxxx                                                                                                                                |
+Because asymmetric cryptography is much slower than symmetric cryptography, it is seldom used to encrypt large amounts of data directly. Instead, it is typically used in the following manner to encrypt keys.
+
+-   Alice requires that Bob send her only encrypted messages.
+-   Alice creates a private/public key pair, keeps her private key secret and publishes her public key.
+-   Bob has a message he wants to send to Alice.
+-   Bob creates a symmetric key.
+-   Bob uses his new symmetric key to encrypt his message to Alice.
+-   Bob uses Alice’s public key to encrypt his symmetric key.
+-   Bob sends the encrypted message and the encrypted symmetric key to Alice (enveloped).
+-   Alice uses her private key (from the private/public pair) to decrypt Bob’s symmetric key.
+-   Alice uses Bob’s symmetric key to decrypt the message.
+
+You can use an [**AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) object to specify an asymmetric algorithm or a signing algorithm, to create or import an ephemeral key pair, or to import the public key portion of a key pair.
+
+## Deriving keys
+
+
+It is often necessary to derive additional keys from a shared secret. You can use the [**KeyDerivationAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241518) class and one of the following specialized methods in the [**KeyDerivationParameters**](https://msdn.microsoft.com/library/windows/apps/br241524) class to derive keys.
+
+| Object                                                                            | Description                                                                                                                                |
 |-----------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
-| [**XxxxxXxxXxxxxY**](https://msdn.microsoft.com/library/windows/apps/br241525)    | Xxxxxxx x XxxXxxxxxxxxxXxxxxxxxxx xxxxxx xxx xxx xx xxx xxxxxxxx-xxxxx xxx xxxxxxxxxx xxxxxxxx Y (XXXXXY).                                 |
-| [**XxxxxXxxXXYYYYYY**](https://msdn.microsoft.com/library/windows/apps/br241526)  | Xxxxxxx x XxxXxxxxxxxxxXxxxxxxxxx xxxxxx xxx xxx xx x xxxxxxx xxxx, xxxx-xxxxx xxxxxxx xxxxxxxxxxxxxx xxxx (XXXX) xxx xxxxxxxxxx xxxxxxxx. |
-| [**XxxxxXxxXXYYYYYx**](https://msdn.microsoft.com/library/windows/apps/br241527)  | Xxxxxxx x XxxXxxxxxxxxxXxxxxxxxxx xxxxxx xxx xxx xx xxx XXYYY-YYX xxx xxxxxxxxxx xxxxxxxx.                                                 |
-
- 
-
- 
+| [**BuildForPbkdf2**](https://msdn.microsoft.com/library/windows/apps/br241525)    | Creates a KeyDerivationParameters object for use in the password-based key derivation function 2 (PBKDF2).                                 |
+| [**BuildForSP800108**](https://msdn.microsoft.com/library/windows/apps/br241526)  | Creates a KeyDerivationParameters object for use in a counter mode, hash-based message authentication code (HMAC) key derivation function. |
+| [**BuildForSP80056a**](https://msdn.microsoft.com/library/windows/apps/br241527)  | Creates a KeyDerivationParameters object for use in the SP800-56A key derivation function.                                                 |
 
  
 
 
+<!--HONumber=Mar16_HO5-->
 
 
-<!--HONumber=Mar16_HO1-->

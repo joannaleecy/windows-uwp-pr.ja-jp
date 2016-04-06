@@ -1,161 +1,154 @@
 ---
-Xxxxxxxxxxx: Xxx xxxxx-xxxxx xx xxxxxxx xxxxxxxxx xxxx xxx xxxxx xxxxxxx xxx xxxx (xxxx) xxxxxxxxxxxx xxxx xxx xxxxx xxxxxxx.
-xxxxx: Xxxxxxxxxx xxx xxxxx-xxxxx
-xx.xxxxxxx: YYYYYYxY-xYYY-Yxxx-xYYY-YYYxxxxYYYxY
-xxxxx: Xxxxx-xxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: クロススライドは、スワイプ ジェスチャによる選択や、スライド ジェスチャによるドラッグ (移動) 操作をサポートするために使います。
+title: クロススライドのガイドライン
+ms.assetid: 897555e2-c567-4bbe-b600-553daeb223d5
+label: クロス スライド
+template: detail.hbs
 ---
 
-# Xxxxxxxxxx xxx xxxxx-xxxxx
+# クロススライドのガイドライン
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241942)
--   [**XxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241941)
--   [**Xxxxxxx.XX.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242084)
+-   [**CrossSliding**](https://msdn.microsoft.com/library/windows/apps/br241942)
+-   [**CrossSlideThresholds**](https://msdn.microsoft.com/library/windows/apps/br241941)
+-   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
 
-Xxx xxxxx-xxxxx xx xxxxxxx xxxxxxxxx xxxx xxx xxxxx xxxxxxx xxx xxxx (xxxx) xxxxxxxxxxxx xxxx xxx xxxxx xxxxxxx.
+クロススライドは、スワイプ ジェスチャによる選択や、スライド ジェスチャによるドラッグ (移動) 操作をサポートするために使います。
 
-## <span id="Dos_and_don_ts">
-            </span>
-            <span id="dos_and_don_ts">
-            </span>
-            <span id="DOS_AND_DON_TS">
-            </span>Xxx xxx xxx'xx
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>推奨と非推奨
 
 
--   Xxx xxxxx-xxxxx xxx xxxxx xx xxxxxxxxxxx xxxx xxxxxx xx x xxxxxx xxxxxxxxx.
--   Xxx xxxxx-xxxxx xxx xxxx xxxxxxxxx xxxx xxx xxx xxxxxxxxxxx xx xxxx xxx xxxxxxx xxxxxxx.
--   Xxx'x xxx xxxxx-xxxxx xxx xxxxxx xxxxx xx x xxxxx.
+-   クロススライドは、単一の方向にスクロールするリストやコレクションに使います。
+-   クロススライドは、タップ操作が別の目的で使われる場合に、項目を選ぶために使います。
+-   キューに項目を追加するためにクロススライドを使わないでください。
 
-## <span id="Additional_usage_guidance">
-            </span>
-            <span id="additional_usage_guidance">
-            </span>
-            <span id="ADDITIONAL_USAGE_GUIDANCE">
-            </span>Xxxxxxxxxx xxxxx xxxxxxxx
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>その他の使い方のガイダンス
 
 
-Xxxxxxxxx xxx xxxx xxx xxxxxxxx xxxx xxxxxx x xxxxxxx xxxx xxxx xx xxxxxxxx xx xxx xxxxxxxxx (xxxxxxxx xx xxxxxxxxxx). Xxx xxxxxx xxxxxxxxxxx xx xxxx, xxx xxxxxxx xxxxxxxxx xxxx xx xxxxxx xxx xxx xxxxxxx xxxx xx xxxxxxxxx xx xxx xxxxxxxxx xxxxxxxxxxxxx xx xxx xxxxxxx xxxxxxxxx.
+選択とドラッグは、1 方向 (垂直または水平) にパンできるコンテンツ領域内でだけ行うことができます。 これらの操作が機能するには、1 つのパン方向がロックされていて、ジェスチャがパン方向に対して垂直な方向に行われる必要があります。
 
-Xxxx xx xxxxxxxxxxx xxxxxxxxx xxx xxxxxxxx xx xxxxxx xxxxx x xxxxx-xxxxx. Xxx xxxxx xx xxx xxxx xxxxx xxx xx xxxx xx xxxxxxxx xx x xxxxx xxxxxxx xxxxx'x xxxxx x xxxxxxxx xxxxxxxxx xxxxxx xxx xxxxxxx xx xxxxxx xxx xxx xxxxxx xxxxxxxx. Xxx xxxxx xx xxx xxxxx xxxxx x xxxxxxx xxxxxxx xxxx xxxxxxx x xxxxxxxx xxxxxxxxx xxx xxxxxxx xx xxx xxxxxx xxxxx xxxxxxx.
+ここでは、クロススライドを使ってオブジェクトを選び、ドラッグする方法を示します。 左の図は、スワイプ ジェスチャで距離のしきい値を超える前に指を離してオブジェクトを解放することで、項目が選択された状態を示しています。 右の図は、距離のしきい値を超えてスライド ジェスチャを行うことで、オブジェクトがドラッグされた状態を示しています。
 
-![xxxxxxx xxxxxxx xxx xxxxxx xxx xxxx xxx xxxx xxxxxxxxx.](images/crossslide-mechanism.png)
+![選択とドラッグ アンド ドロップのプロセスを示す図。](images/crossslide-mechanism.png)
 
-Xxx xxxxxxxxx xxxxxxxxx xxxx xx xxx xxxxx-xxxxx xxxxxxxxxxx xxx xxxxx xx xxx xxxxxxxxx xxxxxxx.
+クロススライド操作で使われるしきい値の距離を次の図に示します。
 
-![xxxxxx xxxx xxxxxxx xxx xxxxxx xxx xxxx xxx xxxx xxxxxxxxx.](images/crossslide-threshold.png)
+![選択とドラッグ アンド ドロップのプロセスを示すスクリーン ショット。](images/crossslide-threshold.png)
 
-Xx xxxxxxxx xxxxxxx xxxxxxxxxxxxx, x xxxxx xxxxxxxxx xx Y.Yxx (xxxxxxxxxxxxx YY xxxxxx xx xxxxxx xxxxxxxxxx) xxxx xx xxxxxxx xxxxxx xxxxxx x xxxxxx xx xxxx xxxxxxxxxxx xx xxxxxxxxx. Xxxx xxxxx xxxxxxxxx xxxxx xxx xxxxxx xx xxxxxxxxxxxxx xxxxx-xxxxxxx xxxx xxxxxxx, xxx xxxx xxxxx xxxxxx xxxx x xxx xxxxxxx xx xxxxxxxxxxxxx xxxx xxxx xxxxx-xxxxxxx xxx xxxxxxx.
+パンの機能を維持するために、選択操作とドラッグ操作は、2.7 mm (ターゲット解像度で約 10 ピクセル) という小さいしきい値を超えないと有効にならないしくみになっています。 この小さいしきい値は、クロススライドとパンの区別に使われるほか、タップ ジェスチャをクロススライドやパンと区別する目的でも使われます。
 
-Xxxx xxxxx xxxxx xxx x xxxx xxxxxxx xx xxxxxxx xx xxx XX, xxx xxxxx xxxxx xxxxxx xxxx xxxxxxxx xx xxxxxxx. Xxxx xx xxxxxxxxx, xxx xxxxxxxxxxx xxxxx xx xxxxxxxxxxx xx x xxxxx-xxxxx xxxxxxx xx xxx xxxxxxx xxxxxxxx xxxxxxxx. Xxxx xxx xxxxxxxxx, xxx xxxxxxxx xx xxxxxxxxxxx xxxxxxxxx xx xxxxxxxxxx xxxxxxx.
+この図は、ユーザーが UI の要素にタッチしたときに、指の位置がわずかに下に動いてしまった状態を示しています。 しきい値がなければ、最初に垂直方向に移動しているため、この操作はクロススライドと解釈されてしまいます。 このしきい値があるおかげで、水平方向のパンと正しく解釈されます。
 
-![xxxxxx xxxx xxxxxxx xxx xxxxxx xx xxxx xxx xxxx xxxxxxxxxxxxxx xxxxxxxxx.](images/crossslide-threshold2.png)
+![選択かドラッグ アンド ドロップかを明確に区別するためのしきい値を示すスクリーン ショット。](images/crossslide-threshold2.png)
 
-Xxxx xxx xxxx xxxxxxxxxx xx xxxxxxxx xxxx xxxxxxxxx xxxxx-xxxxx xxxxxxxxxxxxx xx xxxx xxx.
+次に、クロススライド機能をアプリに含める際に考慮する必要がある、いくつかのガイドラインを示します。
 
-Xxx xxxxx-xxxxx xxx xxxxx xx xxxxxxxxxxx xxxx xxxxxx xx x xxxxxx xxxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxx XxxxXxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465382).
+クロススライドは、単一の方向にスクロールするリストやコレクションに使います。 詳しくは、「[ListView コントロールの追加](https://msdn.microsoft.com/library/windows/apps/hh465382)」をご覧ください。
 
-**Xxxx**  Xx xxxxx xxxxx xxx xxxxxxx xxxx xxx xx xxxxxx xx xxx xxxxxxxxxx, xxxx xx xxx xxxxxxxx xx x-xxxxxxx, xxx xxxxx-xxx-xxxx xxxxx xxxxxxxxxxx xxxxxx xx xxxx xx xxxxxx xxx xxxxxxx xxxx xxx xxxxxxx xxxx xx xxxxxx xxx xxxxxxxxxx.
+**注:**  Web ブラウザーや電子ブック リーダーのように、コンテンツ領域を 2 方向にパンできる場合は、時間制限のある長押し操作を使って、画像やハイパーリンクなどのオブジェクトのコンテキスト メニューを呼び出すようにしてください。
 
  
 
 |                                                                                         |                                                                                         |
 |-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
-| ![xxxxxxxxxx-xxxxxxx, xxx-xxxxxxxxxxx xxxx](images/groupedlistview1.png)                | ![xxxxxxxx-xxxxxxx, xxx-xxxxxxxxxxx xxxx](images/listviewlistlayout.png)                |
-| X xxxxxxxxxxxx xxxxxxx xxx-xxxxxxxxxxx xxxx. Xxxx xxxxxxxxxx xx xxxxxx xx xxxx xx xxxx. | X xxxxxxxxxx xxxxxxx xxx-xxxxxxxxxxx xxxx. Xxxx xxxxxxxxxxxx xx xxxxxx xx xxxx xx xxxx. |
+| ![水平方向にパンする 2 次元のリスト](images/groupedlistview1.png)                | ![垂直方向にパンする 1 次元のリスト](images/listviewlistlayout.png)                |
+| 水平方向にパンする 2 次元のリスト。 項目を選択または移動するには垂直方向にドラッグします。 | 垂直方向にパンする 1 次元のリスト。 項目を選択または移動するには水平方向にドラッグします。 |
 
  
 
 ### <span id="selection"></span><span id="SELECTION"></span>
 
-**Xxxxxxxxx**
+**選択**
 
-Xxxxxxxxx xx xxx xxxxxxx, xxxxxxx xxxxxxxxx xx xxxxxxxxxx, xx xxx xx xxxx xxxxxxx. Xxxx xxxxxx xx xxxxxxxxx xx x xxxxxx xxxxx xxxxx, xx Xxxxx xxx xxx xxxxx xxxxx, xx xxx xx xxxx xxxxxxx.
+選択は、1 つ以上のオブジェクトを起動またはアクティブ化せずにマークする操作です。 これは、マウスを 1 回クリックする操作、または Shift キーを押しながらクリックする操作 (オブジェクトが複数の場合) に相当します。
 
-Xxxxx-xxxxx xxxxxxxxx xx xxxxxxxx xx xxxxxxxx xx xxxxxxx xxx xxxxxxxxx xx xxxxx x xxxxx xxxxxxxx xxxxxxxxxxx. Xxxx xxxxxx xx xxxxxxxxx xxxxxxxxx xxxx xxxx xxx xxxxxxxxx xxxxxxxxx xxxx xxx xxx xxxxx-xxx-xxxx xxxxx xxxxxxxxxxx xxxxxxxx xx xxxxx xxxxx xxxxxxxxxx xxx xxxx xxx xxxxxxxx xxxx xxx xxx xxxxxxxxxxx xxx xxxxxxxxxx.
+クロススライド選択を行うには、要素をタッチし、少しドラッグして放します。 この選択方法を使えば、他のタッチ インターフェイスで必要になるような、専用の選択モードや時間制限のある長押し操作は必要ありません。また、アクティブ化のためのタップ操作と競合することもありません。
 
-Xx xxxxxxxx xx xxx xxxxxxxx xxxxxxxxx, xxxxx-xxxxx xxxxxxxxx xx xxxxxxxxxxx xx x YY° xxxxxxxxx xxxx, xx xxxxx xx xxx xxxxxxxxx xxxxxxx. Xx xxx xxxxxx xx xxxxxxx xxxxxxx xx xxxx xxxx, xx xx xxx xxxxxxxx.
+クロススライド選択には、距離のしきい値のほかにも領域のしきい値があり、次の図に示すように範囲が 90° に制限されます。 この領域の外にドラッグすると、オブジェクトは選択されません。
 
-![xxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxx xxxx.](images/crossslide-selection.png)
+![選択のしきい値の領域を示す図。](images/crossslide-selection.png)
 
-Xxx xxxxx-xxxxx xxxxxxxxxxx xx xxxxxxxxxxxx xx x xxxxx-xxx-xxxx xxxxx xxxxxxxxxxx, xxxx xxxxxxxx xx xx x "xxxx-xxxxxxxxx" xxxxxxxxxxx. Xxxx xxxxxxxxxxxx xxxxxxxxxxx xxxxxxxxx xx xxxxxxxxx xxxx xxxxxxxxx xxxx xxxxxx xxx xx xxxxxxxxx xx xxx xxxxxx. Xxx xxxx xxxxxxxxxxx xx xxxxxxxxxxxxxx XX, xxx [Xxxxxxxxxx xxx xxxxxx xxxxxxxx](guidelines-for-visualfeedback.md).
+クロススライド操作を補完する操作に、"自己説明" 操作とも呼ばれる時間制限のある長押し操作があります。 この補助操作でアクティブ化されるアニメーションによって、オブジェクトに対して実行できる操作が示されます。 不明瞭解消 UI について詳しくは、「[視覚的なフィードバックのガイドライン](guidelines-for-visualfeedback.md)」をご覧ください。
 
-Xxx xxxxxxxxx xxxxxx xxxxx xxxxxxxxxxx xxx xxx xxxx-xxxxxxxxx xxxxxxxxx xxxxx.
+次のスクリーン ショットは、自己説明のアニメーションの動作を示しています。
 
-1.  Xxxxx xxx xxxx xx xxxxxxxx xxx xxxxxxxxx xxx xxx xxxx-xxxxxxxxx xxxxxxxxxxx. Xxx xxxxxxxx xxxxx xx xxx xxxx xxxxxxx xxxx xx xxxxxxxx xx xxx xxxxxxxxx: x xxxxx xxxx xx xxxxxxxxxx xxx xx xxxxx xxxx xx xxxxxxxx.
+1.  長押しして、自己説明操作のアニメーションを開始します。 項目が選ばれているかどうかによって、アニメーションで説明される内容が変わります。選ばれていない場合はチェック マークが付き、選ばれている場合はチェック マークが付きません。
 
-    ![xxxxxx xxxx xxxxxxx xx xxxxxxxxxx xxxxx.](images/crossslide-selfreveal1.png)
+    ![選択されていない状態を示すスクリーン ショット。](images/crossslide-selfreveal1.png)
 
-2.  Xxxxxx xxx xxxx xxxxx xxx xxxxx xxxxxxx (xx xx xxxx).
+2.  スワイプ ジェスチャ (上または下) を使って項目を選びます。
 
-    ![xxxxxx xxxx xxxxxxx xxx xxxxxxxxx xxx xxxxxxxxx.](images/crossslide-selfreveal2.png)
+    ![選択のアニメーションを示すスクリーン ショット。](images/crossslide-selfreveal2.png)
 
-3.  Xxx xxxx xx xxx xxxxxxxx. Xxxxxxxx xxx xxxxxxxxx xxxxxxxx xxxxx xxx xxxxx xxxxxxx xx xxxx xxx xxxx.
+3.  この時点で、項目が選ばれています。 スライド ジェスチャを使って選択動作を上書きし、項目を移動します。
 
-    ![xxxxxx xxxx xxxxxxx xxx xxxxxxxxx xxx xxxx xxx xxxx.](images/crossslide-selfreveal3.png)
+    ![ドラッグ アンド ドロップのアニメーションを示すスクリーン ショット。](images/crossslide-selfreveal3.png)
 
-Xxx x xxxxxx xxx xxx xxxxxxxxx xx xxxxxxxxxxxx xxxxx xx xx xxx xxxx xxxxxxx xxxxxx. Xxx xxxxx-xxxxx xxxx-xxxxxxxxx xxxxxxxxx xx xxxxxxxxx xx xxxxxxxxxxxx xxxx xxxxxxxxxxxxx xxxx xxx xxxxxxxx xxx xxxxxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxxxx.
+主な操作が選択だけであるアプリケーションでは、選択にシングル タップを使います。 この場合、アクティブ化やナビゲーションのための標準のタップ操作と区別するために、クロススライドの自己説明のアニメーションが表示されます。
 
-**Xxxxxxxxx xxxxxx**
+**選択バスケット**
 
-Xxx xxxxxxxxx xxxxxx xx x xxxxxxxx xxxxxxxx xxx xxxxxxx xxxxxxxxxxxxxx xx xxxxx xxxx xxxx xxxx xxxxxxxx xxxx xxx xxxxxxx xxxx xx xxxxxxxxxx xx xxx xxxxxxxxxxx. Xxxx xxxxxxx xx xxxxxx xxx xxxxxxxx xxxxxxxx xxxxx xxx xxxxxx xx xxxx xx xxxxxxxxxxxx xxxxx:
+選択バスケットは、アプリの主要なリストやコレクションから選択された項目を視覚的に区別して動的に表す機能です。 これは選択された項目の追跡に役立つ機能で、次のようなアプリで使うと便利です。
 
--   Xxxxx xxx xx xxxxxxxx xxxx xxxxxxxx xxxxxxxxx.
--   Xxxx xxxxx xxx xx xxxxxxxx.
--   Xx xxxxxx xx xxxxxxx xxxxxx xxxx xxx xxxxxxxxx xxxx.
+-   項目を複数の場所から選択できる。
+-   複数の項目を選択できる。
+-   選択リストによって操作やコマンドが異なる。
 
-Xxx xxxxxxx xx xxx xxxxxxxxx xxxxxx xxxxxxxx xxxxxx xxxxxxx xxx xxxxxxxx. Xxx xxxxxxx, xx xxx xxxxxx x xxxxxx xx xxxxxxxxxxx xxxx x xxxxxxx, xxxxx x xxxxx xxxxxxxxxx xx xxxx xxxxxxxxxx, xxx xxxxx xxx xxxxxxxxxxx xx xxxx xxxxxxx, xxx xxxxx xxxxxx xxxxxxxx.
+選択バスケットの内容は、操作やコマンドの実行後も保持されます。 たとえば、ギャラリーから一連の写真を選択して各写真に色補正を適用し、それらの写真を何らかの方法で共有した場合、それらの項目は選択されたままになります。
 
-Xx xx xxxxxxxxx xxxxxx xx xxxx xx xx xxxxxxxxxxx, xxx xxxxxxx xxxxxxxxx xxxxxx xx xxxxxxx xxxxx xx xxxxxx xx xxxxxxx. Xxx xxxxxxx, xx xxx xxxxxx x xxxx xxxx x xxxx xxxx xxx xxxx xx, xxx xxxxxxxxx xxxxxx xx xxxxxxx.
+アプリで選択バスケットを使わない場合は、操作やコマンドの実行後に現在の選択がクリアされます。 たとえば、再生リストから曲を選択して評価した後、その選択はクリアされます。
 
-Xxx xxxxxxx xxxxxxxxx xxxxxx xxxx xx xxxxxxx xxxx xx xxxxxxxxx xxxxxx xx xxxx xxx xxxxxxx xxxx xx xxx xxxx xx xxxxxxxxxx xx xxxxxxxxx. Xxx xxxxxxx, xx xxx xxxxxx xx xxxxx xxxxxxx, xxx xxxxxxx xxxx xx xxxxxxx. Xxxx, xx xxx xxxxxx x xxxxxx xxxxx xxxxxxx, xxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx xx xxxxxxxx xxx xxx xxxxxxx xxxx xx xxxxxxx.
+また、選択バスケットを使わない場合は、リストやコレクションで別の項目がアクティブ化されたときにも現在の選択がクリアされます。 たとえば、受信トレイのメッセージを選択すると、プレビュー ウィンドウが更新されます。 その後、受信トレイで別のメッセージを選択すると、前のメッセージの選択が取り消され、プレビュー ウィンドウが更新されます。
 
-**Xxxxxx**
+**キュー**
 
-X xxxxx xx xxx xxxxxxxxxx xx xxx xxxxxxxxx xxxxxx xxxx xxx xxxxxx xxx xx xxxxxxx xx xxxx. Xxx xxxxxxx xxxxxxxxxxxx xxxxxxx:
+キューと選択バスケットのリストは異なるものであるため、混同しないように注意してください。 主な違いは次のとおりです。
 
--   Xxx xxxx xx xxxxx xx xxx xxxxxxxxx xxxxxx xx xxxx x xxxxxx xxxxxxxxxxxxxx; xxx xxxxx xx x xxxxx xxx xxxxxxxxx xxxx x xxxxxxxx xxxxxx xx xxxx.
--   Xxxxx xxx xx xxxxxxxxxxx xxxx xxxx xx xxx xxxxxxxxx xxxxxx xxx xxxxxxxx xxxxx xx x xxxxx.
--   Xxx xxxxx xx xxxxx xx xxx xxxxxxxxx xxxxxx xxxxxxxxxx xxx xxxxx xx xxxxxxxxx. Xxx xxxxx xx xxxxx xx x xxxxx xx xxxxxxxx xxxxxxx xx xxxxxxxxxxxxx.
+-   選択バスケットの項目のリストは、視覚的に表すことだけを目的としたものです。キューの項目は、特定の操作を想定してまとめられたものです。
+-   選択バスケットでは同じ項目は 1 回しか表示できませんが、キューでは複数回表示できます。
+-   選択バスケットの項目の順序は、選択の順序を表します。 キューの項目の順序は、機能に直接関連します。
 
-Xxx xxxxx xxxxxxx, xxx xxxxx-xxxxx xxxxxxxxx xxxxxxxxxxx xxxxxx xxx xx xxxx xx xxx xxxxx xx x xxxxx. Xxxxxxx, xxxxx xxxxxx xx xxxxx xx x xxxxx xxxxxxx x xxxx xxxxxx.
+これらの理由から、キューに項目を追加する目的でクロススライド選択操作を使わないでください。 キューに項目を追加するときは、代わりにドラッグ操作を使います。
 
 ### <span id="draganddrop"></span><span id="DRAGANDDROP"></span>
 
-**Xxxx**
+**ドラッグ**
 
-Xxx xxxx xx xxxx xxx xx xxxx xxxxxxx xxxx xxx xxxxxxxx xx xxxxxxx.
+1 つまたは複数のオブジェクトを別の場所に移動するには、ドラッグを使います。
 
-Xx xxxx xxxx xxx xxxxxx xxxxx xx xx xxxxx, xxx xxxxx xxxxxx xxxxxxxx xxxxx xxx xxxx xxxx xxx xx xxx xxxx.
+複数のオブジェクトを移動する必要がある場合は、ユーザーが複数の項目を選択してから、すべてを同時にドラッグできるようにします。
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>関連記事
 
 
-**Xxxxxxx**
-* [Xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Xxx xxxxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Xxxx xxxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Xxxxxxx xxxxxxx**
-* [Xxxxx: XXXX xxxx xxxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Xxxxx: Xxxxxx xxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Xxxxx: Xxxxx xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XXXX xxxxxxxxx, xxxxxxx, xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Xxxxx: Xxxxxxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Xxxxx: Xxxxxxx Y xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Xxxxx: Xxxxxxxxxxxxx xxx xxxxxxxx (X++) xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [XxxxxxX xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+**サンプル**
+* [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**サンプルのアーカイブ**
+* [入力: XAML ユーザー入力イベントのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [入力: タッチのヒット テストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML のスクロール、パン、ズームのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [入力: 簡略化されたインクのサンプル](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [入力: Windows 8 のジェスチャのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [入力: 操作とジェスチャ (C++) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX タッチ入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

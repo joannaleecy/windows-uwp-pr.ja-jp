@@ -1,113 +1,112 @@
 ---
-xxxxx: Xxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx
-xxxxxxxxxxx: Xx xxxx xxxxx, xxxxx xxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxx xxx xxxxxx x xxxx xxxxxxx xx xxxxxxx.
-xx.xxxxxxx: YYYYYYYY-XYXY-YYYX-YYYY-XXXYXYXYYYYX
+title: Guide to Universal Windows Platform (UWP) apps
+description: In this guide, learn about Universal Windows Platform (UWP) apps that can run across a wide variety of devices.
+ms.assetid: 59849197-B5C7-493C-8581-ADD6F5F8800B
 ---
 
-# Xxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx
+# Guide to Universal Windows Platform (UWP) apps
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xx xxxx xxxxx, xxx'xx xxxxx xxxxx:
+In this guide, you'll learn about:
 
--   Xxxx x *xxxxxx xxxxxx* xx, xxx xxx xx xxxxxx xxxxx xxx xx xxxxxx.
--   Xxx XX xxxxxxxx xxx xxxxxx xxxx xxxxx xxx xx xxxxx xxxx XX xx xxxxxxxxx xxxxxx xxxx xxxxxxx.
--   Xxx xx xxxxxxxxxx xxx xxxxxxx xxx XXX xxxxxxx xxxx xx xxxxxxxxx xx xxxx xxx.
+-   What a *device family* is, and how to decide which one to target.
+-   New UI controls and panels that allow you to adapt your UI to different device form factors.
+-   How to understand and control the API surface that is available to your app.
 
-Xxxxxxx Y xxxxxxxxxx xxx Xxxxxxx Xxxxxxx (XxxXX), xxxxx xxx xx xxxxxxxxx xx xxx Xxxxxxx xxx xxxxx. Xx xxx xxxxxxxx xx xx x xxxxxx xxxxxxxxxxx xxxxxxxxxxxx.
+Windows 8 introduced the Windows Runtime (WinRT), which was an evolution of the Windows app model. It was intended to be a common application architecture.
 
-Xxxx Xxxxxxx Xxxxx Y.Y xxxxxx xxxxxxxxx, xxx Xxxxxxx Xxxxxxx xxx xxxxxxx xxxxxxx Xxxxxxx Xxxxx Y.Y xxx Xxxxxxx. Xxxx xxxxxxx xxxxxxxxxx xx xxxxxx *Xxxxxxxxx Xxxxxxx Y xxxx* xxxx xxxxxx xxxx Xxxxxxx xxx Xxxxxxx Xxxxx xxxxx x xxxxxx xxxxxxxx.
+When Windows Phone 8.1 became available, the Windows Runtime was aligned between Windows Phone 8.1 and Windows. This enabled developers to create *Universal Windows 8 apps* that target both Windows and Windows Phone using a shared codebase.
 
-Xxxxxxx YY xxxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX), xxxxx xxxxxxx xxxxxxx xxx Xxxxxxx Xxxxxxx xxxxx xxx xxxxxx xx xxxx xxx Xxxxxxx YY xxxxxxx xxxx. Xx xxxx xx xxx xxxx, xxx XXX xxx xxxxxxxx x xxxxxx xxx xxxxxxxx xxxxxxxxx xx xxxxx xxxxxx xxxx xxxx Xxxxxxx YY. Xxxx xxxx xxxxxxxxx, xxxx xxxx xxxxxx xxx XXX xxx xxxx xxx xxxx xxx XxxXX XXXx xxxx xxx xxxxxx xx xxx xxxxxxx, xxx xxxx XXXx (xxxxxxxxx XxxYY xxx .XXX XXXx) xxxx xxx xxxxxxxx xx xxx xxxxxx xxxxxx xxx xxx xx xxxxxxx xx. Xxx XXX xxxxxxxx x xxxxxxxxxx xxxx XXX xxxxx xxxxxx xxxxxxx. Xxxx xxxxx xxx xxx xxxxxx x xxxxxx xxx xxxxxxx xxxx xxx xx xxxxxxxxx xxxx x xxxx xxxxx xx xxxxxxx. Xxx, xxxx xxxx xxxxxx xxx xxxxxxx, xxx Xxxxxxx Xxxxx xxxxxxxx x xxxxxxx xxxxxxxxxxxx xxxxxxx xx xxxxx xxx xxx xxxxxx xxxxx xxxx xxx xxx xxx xx.
+Windows 10 introduces the Universal Windows Platform (UWP), which further evolves the Windows Runtime model and brings it into the Windows 10 unified core. As part of the core, the UWP now provides a common app platform available on every device that runs Windows 10. With this evolution, apps that target the UWP can call not only the WinRT APIs that are common to all devices, but also APIs (including Win32 and .NET APIs) that are specific to the device family the app is running on. The UWP provides a guaranteed core API layer across devices. This means you can create a single app package that can be installed onto a wide range of devices. And, with that single app package, the Windows Store provides a unified distribution channel to reach all the device types your app can run on.
 
-![xxxxxxx xxxxxxxxx xxxx xxx xx x xxxxxxx xx xxxxxxx, xxxxxxx xxxxxxxx xxxx xxxxxxxxx, xxxxxxx xxxx xxxxx, xxx xxxxx, xxx xxx xxxxxx, xxx xxxxx xxxxxxxx ](images/universalapps-overview.png)
+![windows universal apps run on a variety of devices, support adaptive user interface, natural user input, one store, one dev center, and cloud services ](images/universalapps-overview.png)
 
-Xxxxxxx xxxx XXX xxx xxxx xx x xxxx xxxxxxx xx xxxxxxx xxxx xxxxxxxxx xxxx xxxxxxx xxx xxxxx xxxxxxxxxx, xxx xxxx xx xx xx xxxxxxxx xx xxxx xxxxxx xxx xx xxxx xx xxxxxx xxx xxxxxx xxxxxxxxxxxx xx xxxx xxxxxx. Xxxxxxx xxx xxxxx xxx xxxxxx XXXx xx xxx xxxxxxxxxx XXX xxxxx. Xxx xxx xxxxx xxxx xx xxxxxx xxxxx xxxxxx XXXx xxxxxxxxxxxxx xx xxxx xxxx xxx xxxxxx xx xxxxxxxx xxxxxxxx xx xxx xxxx xx xxxxxx xxxxx xxxxxxxxxx x xxxxxxxxx xxxxxxxxxx xx xxxxx xxxxxxx. Xxxxxxxx XX xxxxxxxx xxx xxx xxxxxx xxxxxx xxxx xxx xx xxxxxx xxxx XX xxxxxx x xxxxx xxxxx xx xxxxxx xxxxxxxxxxx.
+Because your UWP app runs on a wide variety of devices with different form factors and input modalities, you want it to be tailored to each device and be able to unlock the unique capabilities of each device. Devices add their own unique APIs to the guaranteed API layer. You can write code to access those unique APIs conditionally so that your app lights up features specific to one type of device while presenting a different experience on other devices. Adaptive UI controls and new layout panels help you to tailor your UI across a broad range of screen resolutions.
 
-## Xxxxxx xxxxxxxx
-
-
-Xxxxxxx Y.Y xxx Xxxxxxx Xxxxx Y.Y xxxx xxxxxx xx xxxxxxxxx xxxxxx (XX): xxxxxx Xxxxxxx, xx Xxxxxxx Xxxxx. Xxxx Xxxxxxx YY xxx xx xxxxxx xxxxxx xx xxxxxxxxx xxxxxx xxx xxx xxxxxxx xxxxxx xxxx xxx xx xxx xx xxxx xxxxxx xxxxxxxx. X xxxxxx xxxxxx xxxxxxxxxx xxx XXXx, xxxxxx xxxxxxxxxxxxxxx, xxx xxxxxxxxx xxxx xxx xxx xxxxxx xxxxxx xxxxxxx xxxxxx xxx xxxxxx xxxxxx. Xx xxxx xxxxxxxxxx xxx xxx xx xxxxxxx xx xxxxx xxxx xxx xxx xx xxxxxxxxx xxxx xxx Xxxxx. Xxxx xx xxx xxxxxx xxxxxx xxxxxxxxx.
-
-![xxxxxx xxxxxxxx](images/devicefamilytree.png)
-
-X xxxxxx xxxxxx xx x xxx xx XXXx xxxxxxxxx xxxxxxxx xxx xxxxx x xxxx xxx x xxxxxxx xxxxxx. X xxxxxx xxxxxx xx xxx xxxxxxxxxx xx xx XX. XXx xxx xxx xxxxxxx XX, xxxxx xx xxxxx xx xxx xxxxxxx xxxxxx xxxxxx. Xxxxxx xxx xxxxxxx, xxx., xxx xxx xxxxxx XX, xxxxx xx xxxxx xx xxx xxxxxx xxxxxx xxxxxx. Xxx xx xx.
-
-Xxx xxxxxxxxx xxxxxx xxxxxx xx xxxxxxx. Xx xx xxx, xxxxxxxx, xxx xxxxxxxxxx xx xxx XX. Xxxxxxx, xxx xxx xx XXXx xx xxx xxxxxxxxx xxxxxx xxxxxx xx xxxxxxxxx xx xxxxx xxxxxx xxxxxxxx. Xxx xxxxxxxxx xxxxxx xxxxxx XXXx xxx xxxx xxxxxxxxxx xx xx xxxxxxx xx xxxxx XX xxx xxxxxxxxxxxx xx xxxxx xxxxxx.
-
-Xxxx xxxxx xxxxxx xxxxxx xxxx xxx xxx XXXx xx xxx xxxx xx xxxxxxxx. Xxx xxxxxxxxx xxxxx xx XXXx xx x xxxxx xxxxxx xxxxxx xx xxxxxxxxxx xx xx xxxxxxx xx xxx XX xxxxx xx xxxx xxxxxx xxxxxx, xxx xxxxxxxxxxxx xx xxxxx xxxxxx xxxxxxx xxxx XX.
-
-Xxx xxxxxxx xx xxxxxx xxxxxxxx xx xxxx xxxx xxx xxx xxx xx xxx, xx xxxx xxx, xx x xxxxxxx xx xxxxxxx xxxx xxxxxx, xxxxxxx, xxx xxxxxxx xxxxxxxxx xx xx Xxxxxxx Xxxx xxx Xxxx xxxxxxxx. Xxxx xxx xxx xxxx xxx xxxxxxxx xxxx xx xxxxxxxxxxx xxxxxx xxx xxx xxxxxxxx xx x xxxxxx xxxx xxx xxxxxxx xx xxx xxxxxxxxx xxxxxx xxxxxx.
-
-Xxx xxxxxxxx xxxxx xxxxx xxxxxx xxxxxx (xx xxxxxxxx) xxxx xxx xxxx xxxxxx xx xxxxx xx xxxx. Xxx xxxx xxxxxxxx xxxxxxx xxxx xxx xx xxxxx xxxxxxxxx xxxx. Xx xxxxxxxxxx:
-
--   Xxx xxx xx XXXx xxxx xxxx xxx xxx xxxxxx xx xx xxxxxxx xxxx xx xxxx (xxx xxx xxxxxxxxx xxxx xxxxxx).
--   Xxx xxx xx XXX xxxxx xxxx xxx xxxx xxxx xxxxxx xxxxxxxxxxx xxxxxxxxxx.
--   Xxx xxx xx xxxxxxx xx xxxxx xxxx xxx xxx xx xxxxxxxxx xxxx xxx Xxxxx (xxx xxxxxxxxxxxx xxx xxxx xxxxxxx xxxx xxx xxxx xx xxxxxxxx).
-
-Xxxxx xxx xxx xxxx xxxxxxxxxxxx xx xxxxxx x xxxxxx xxxxxx xxxxxx: xxx XXX xxxxxxx xxxx xxx xx xxxxxx xxxxxxxxxxxxxxx xx xxx xxx, xxx xxx xxxxxx xx xxxxxxx xxx xxx xxx xxxxx. Xxxxx xxx xxxxxxx xxxxxxx xxxxxxxxx xxx xxx xxxxxxxxx xxxxxxx. Xxx xxxxxxx, x XXX xxx xx xx xxx xxxx xxxxxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxx xxxxxx, xxx xxxxxxxxxxxx xx xxxxxxxxx xx xxx xxxxxxx. Xx xxx xxxx xxxxxxx xxx xxxxxxxxx xxxxxx xxxxxx xxx xxxxxx xxx xxxxxxxx xx xxxx xxx XXXx xx xxx xxxxxxxxx xxxxxx xxxxxx (xxxxxxx xxxx'x xxxx xx xxxxxxx). Xxxxx XXXx xxxx xx xxxxxx xxxxxxxxxxxxx. Xxxx, xxxx xx xxx xxxx xxxx x xxxxxx xxxxxxxx XX xxx xxxxxxxxxxxxx xxxxx xxxxxxxxxxxx xxxxxxx xx xxx xxx xx x xxxx xxxxxxx xx xxxxxxx. X Xxxxxxx xxxxxx xxx xx xx xxx xxxx xxxxxxxxxxxx xxxxxxx xxx xxxxxx xxxxxx xxxxxx, xxx xx xxxxxxxxx xx xxxxxxx xxxxx XX xx xxxxx xx xxx xxxxxx xxxxxx xxxxxx (xxxxx xxxxxxxx xxxxxx, xxxxxxx, xxx xxxxxxx xxxxxxx). X xxxxxx xxxxxx xxxxxx xxx xxx xxxxxx xxx xxxxxxxx xx xxx XXXx xx xxx xxxxxx xxxxxx xxxxxx, xxx xxx XX xxx xx xx xxxxxxxxxx xxxxxxxx. Xx xxx xxxx xxxxxxx xxx XxX xxxxxx xxxxxx xxx xx xxxxxxxxx xxxx xx XxX xxxxxxx xxx xxx xxxxxx xxx xxxxxxxx xx xxx XXXx xx xxx XxX xxxxxx xxxxxx. Xxxx xxx xxx xx xxxx xxxxxxxxxxx xx xxx XX xxx xxxxx xxxxxxxxxxxx xxxxxxx xxx xxxx xxxx xx xxxx xxx xxxx xx x xxxxxxxx xxxx xx xxxxxx.
-
-Xxxx xxx xxxx xxxxxxxxxxxxxx xx xxxx xxx xxxxxx xxxxx xxxxxx xxxxxx xx xxxxxx:
-
-**Xxxxxxxxxx xxxx xxx'x xxxxx**
-
-Xx xxxxx xxx xxxxxxx xxxxx xx xxxxxxx xxxx xxxx xxx, xxx xx xxxx xx xxx xx xx xxxx xxxxx xx xxxxxxx xx xxxxxxxx, xxxx xxx xxxx xxxxxx xxx xxxxxxxxx xxxxxx xxxxxx. Xx xxxxx xx, xxx xxx xxxxxxxxxxxxx xxxxxxx xxxxx xxxxxx xxxxxx xxxx'x xxxxx xx xxxxxxxxx (xx xxx xxxxxxx, xxx xxx xxxxxxxx xx xxxxxxxxx). Xxxx xxxxx xxxx xxx xxx xxxx xx xxxxx XX xxxxx xx xxxxx xxxxxx xxxxxxxx, xxx xx xxx xxx xxxxxxx xxxx xxx xxxxx xxxxxxxxx xxxxxxx. Xxx xxxx XXXx xxxx xxx xxxxxxxxxx xx xx xxxxxxxxx xx xxx xxxxx xxxxxxx xx xxx xxx xxxxxxx xx xxx xxxxxxxxxx xxxxxxx xx xxx xxxxxxxxx xxxxxx xxxxxx xxxx xxx xxxxxx. (Xxxx xxxx xxxxxxx, xxxx xxxxxxx xx xxxxxx YY.Y.x.Y.) Xx xxxx xxx xxx xx xxx xxx xxxx XXXx xxxxxxx xx xxx xxxxxx xxxxxx xxxxxx xxxxxxx, xxx Xxxxxxx xxxx xxxxx xx xxxx xxxxx.
-
-**Xxxxxxxx xxxx xxx xx xxx xxxx xx xxxxxx**
-
-Xxx xxx xxx xxxx xxxx xxx xx xxx xx x xxxx xxxxx xx xxxxxxx; xxxxxxx xx'x xxxxxxxxxxx xxx, xxx, x xxxxxxx XX xx xxx xx Xxxx xxxxxxx. Xx xxxx xxxx xxx xxx xxxxxx xx xxxxxx xxxx xxx xx xxx xx xxx xxxxx xxxxxx xxxxxxxx. Xxx xxxxxxx, xx xxx xxxxxx xxx xxxxxxx xxxxxx xxxxxx, xxx XXXx xxxxxxxxxx xx xx xxxxxxxxx xx xxxx xxx xxxxxxx xxx XXXx xxxxxxxxx xxxx xxx xxxxxxxxx xxxxxx xxxxxx xxxx xxx XXXx xxxx xxx xxxxxxxxxx xx xxx xxxxxxx xxxxxx xxxxxx.
-
-**Xxxxxxxx xxxx xxx xx x xxxxxx xx xxx xxxxxxxx xxxxxxx**
-
-Xxxxxxx xx xxxxxxxxx xxx xxxxxxxxx xxxxxx xxxxxx, xx xxxxxxxxx xxx xx xxx xxxxx xxxxxx xxxxxxxx, xxx xxx xxxxxxx xxxxxx xxx (xx xxxx) xxxxx xxxxxx xxxxxxxx. Xxxxxxxxx xxxxxxx xxx xxxxxx xxxxx xxxx xxxxx xxx xxxx xxx. Xx xxxxxxx xxx Xxxx. Xx xxxxxxx, Xxxx xxx Xxxxxxx Xxx.
-
-**Xxxxxxxxx xxxxxxx xxx x xxxxxxxxxx xxxxxxx xx x xxxxxx xxxxxx**
-
-Xx xxxx xxxxx xxx xxx xxxx xxxx xxx xx xxx xxxxxxxxxx xxxxxx xx xxxxxxx xxxx x xxxxxxxxxx xxxxxxx xx x xxxxxxxxxx xxxxxx xxxxxx. Xxx xxxxxxx, xxx'x xxx xxxx xxx xxxxxxx xxxxxxx YY.Y.x.Y xx xxx xxxxxxxxx xxxxxx xxxxxx. Xxxx xxx xxxxxxxxx xxxxxx xxxxxxx xxxxxxx xx xxx xxxxxx, xxx xx YY.Y.x.Y, xx xxxx xxxxx xxx xxx xxxxxxx xxxx xxxx xxx xxxx xxxxxxxxxx xxxxxx xxxxxxx YY.Y.x.Y xx Xxxx xx xxxxxxxxx xxxx xxx xx YY.Y.x.Y xx xxxxxxxxx xxx YY.Y.x.Y xx Xxxx. Xxxx xxx xxxx xxxx xx xxxxxxxxxxx xx xxx xxx xx xxxxxx xxxxxx xxxxxxxx xxxxxx Xxxx YY.Y.x.Y (xxxxxxxxx) xxx xxxxxxx.
-
-Xx xxxxxxx, Xxxxxxxxx Xxxxxx Xxxxxx xxxxxxxxx **Xxxxxxx.Xxxxxxxxx** xx xxx xxxxxx xxxxxx xxxxxx xx xxx xxx xxxxxxx xxxxxxxx xxxx. Xx xxxxxxx xxx xxxxxx xxxxxx xx xxxxxx xxxxxxxx xxxx xxxx xxx xx xxxxxxx xx xxxx xxxxxx xxx Xxxxx, xxxxxxxx xxxxxxxxx xxx [**XxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986903) xxxxxxx xx xxxx Xxxxxxx.xxxxxxxxxxxx xxxx.
-
-## XX xxx xxxxxxxxx xxxxx
+## Device families
 
 
-X XXX xxx xxx xxx xx xxxx xxxxxxxxx xxxxx xx xxxxxxx xxxx xxxx xxxxxxxxx xxxxx xx xxxxx, xxxxxx xxxxxxxxxxx, XXX xxxxxxx, xxx xxxxx xxxxxx xxxxxxxxxxxxxxx. Xxxxxxx YY xxxxxxxx xxx xxxxxxxxx xxxxxxxx, xxxxxx xxxxxx, xxx xxxxxxx xx xxxx xxx xxxxx xxxx XX xx xxx xxxxxxx xxxx xxx xxx xxx xx. Xxx xxxxxxx, xxx xxx xxxxxx xxx XX xx xxxx xxxxxxxxx xx xxx xxxxxxxxxx xx xxxxxx xxxxxxxxxx xxxx xxxx xxx xx xxxxxxx xx x xxxxxxx xxxxxxxx xxxxxx xx x xxxxxx xxxxxx.
+Windows 8.1 and Windows Phone 8.1 apps target an operating system (OS): either Windows, or Windows Phone. With Windows 10 you no longer target an operating system but you instead target your app to one or more device families. A device family identifies the APIs, system characteristics, and behaviors that you can expect across devices within the device family. It also determines the set of devices on which your app can be installed from the Store. Here is the device family hierarchy.
 
-Xxxx xxxxxxx xx xxxx xxx'x XX xxxx xxxxxxxxxxxxx xxxxx xxxxxx xxxxxxx. Xxxxxxxx xxxx xx xxxxxxx xxx xxxxxxx xxxxxxxxxxxxx xxxxx xxxxxx xxxxxx xxxxxxxx xxx xxxxx xxxxx. Xxxx xxx'x xxxx-xxxxxxxxxx xxxxxx, xxxxxxx, xxx xxxx xx xxxxx xxxxxxxxx xx xxx xxxxxx xxx xxx xx xxxxxxx xx. Xxx xxxxxxx, x xxxxxx xxx xxxxxx xxxxx xxx XX xxxx xxxxxxx xx x xxxxx, xxxx-xxxx xxxxxx xx xxxxxx xxxx xxxxx xx xxxxx xxx xxxxxx-xxxx xxx. Xxxx xxx xxxxxx xxx xx xxxxxxx xx x xxxxxxx xxxxxxxx, xxx XX xxxxxx xxxxx xx xxxx xxxxxxxxx xx xxx xxxxxxxxxx xxxxxx xxxxx.
+![device families](images/devicefamilytree.png)
 
-Xxxxxxx xxxxx xxx xxxxxx xxxx XX xx xxxxxxxx xxxxxxx xxxx xxx xxxxxxxxx xxxxxxxx:
+A device family is a set of APIs collected together and given a name and a version number. A device family is the foundation of an OS. PCs run the desktop OS, which is based on the desktop device family. Phones and tablets, etc., run the mobile OS, which is based on the mobile device family. And so on.
 
--   Xxxxxxxxx xxxxxxxx xxx xxxxxx xxxxxx xxxx xxx xx xxxxxxxx xxxx XX xxx xxx xxxxxx xxxxxxxxxx xx xxx xxxxxx
--   Xxxxxx xxxxx xxxxxxxx xxxxxx xxx xx xxxxxxx xxxxx xxxxxxx xxxxx, x xxx, x xxxxx, xx x xxxxxxxx, xx x xxxxxxxxxx xxxx xx x Xxxxxxxxx Xxxx xxxxxxxxxx
--   Xxxxxxx xxxxx xxx xx xxxxxx XX xxxx xxx xxxxx xx xxxxxxxxx xxxxxx xxxxxxxxxxx
--   Xxxxxxxx xxxxxxx xxxxxxx xx xxxxxxxxxx xxx XXX xxxxxxxxxxx xxxxxx xxxxxxx
+The universal device family is special. It is not, directly, the foundation of any OS. Instead, the set of APIs in the universal device family is inherited by child device families. The universal device family APIs are thus guaranteed to be present in every OS and consequently on every device.
 
-### Xxxxxxxxx xxxxxxxx xxx xxxxxx xxxxxx
+Each child device family adds its own APIs to the ones it inherits. The resulting union of APIs in a child device family is guaranteed to be present in the OS based on that device family, and consequently on every device running that OS.
 
-Xxxxxxx YY xxxxxxxx xxx xxxxxxxx xxxx xx xxx xxxxxxxx xxx xxxxx xxxx. Xxx xxxxx xxxxxxx, xxxxx xxx xxxxxxxxxx xxxxxxxxx xxxx xxx Xxxxxxx Xxxxx, xx xxxx xxx xxxxxxxxx xxx xxx xxxxxxxxx xxxxxx xxxxxx.
+One benefit of device families is that your app can run on any, or even all, of a variety of devices from phones, tablets, and desktop computers up to Surface Hubs and Xbox consoles. Your app can also use adaptive code to dynamically detect and use features of a device that are outside of the universal device family.
 
-Xxxxxxxx xxxx xxxx xxxxxxx xx xxxx xxxx xx xxxxxx xxxxxxx, xxxxx xxxxxxxxxx xxxxx xx xxx xxxxxx xx xxxxxx xxxxxx xxxxxxxxx xx xxx xxxxxx, xxx xxxx xxxx xxxx xxxxxxxx xxxxx xx xxxxx xxxx xx xxxxxxxx, xxxxx, xxxxx, xxx, xxx xxxxxxxxxxx xxxx xx xxx Xxxx xxxxxxxxxx.
+The decision about which device family (or families) your app will target is yours to make. And that decision impacts your app in these important ways. It determines:
 
-Xxx xxx xxxx xxxx xxx xxxx xx xxxxx xxxx xxxxxxx XX xxxxxx xxxxx xx xxx xxxxxx xxxxxxxxxx xx xxx xxxxxx xxxx xxx xxxx xx xxxxxxx xx. Xxx xxxxxxx, x xxxxxxxxxxxxx xxx xxxxxxx xx xxx xxxxxxx xxx xxxxxxx x xxxxxxx-xx-xxxxxxx xx xxx xxxxxx xxx xxxxxxxx xxxx xxxxxx xx xxxxx xxxxx:
+-   The set of APIs that your app can assume to be present when it runs (and can therefore call freely).
+-   The set of API calls that are safe only inside conditional statements.
+-   The set of devices on which your app can be installed from the Store (and consequently the form factors that you need to consider).
 
-![xxxxxxx xxxxxxxxxxxxx xxx xx](images/adaptiveux-desktop.png)
+There are two main consequences of making a device family choice: the API surface that can be called unconditionally by the app, and the number of devices the app can reach. These two factors involve tradeoffs and are inversely related. For example, a UWP app is an app that specifically targets the universal device family, and consequently is available to all devices. An app that targets the universal device family can assume the presence of only the APIs in the universal device family (because that's what it targets). Other APIs must be called conditionally. Also, such an app must have a highly adaptive UI and comprehensive input capabilities because it can run on a wide variety of devices. A Windows mobile app is an app that specifically targets the mobile device family, and is available to devices whose OS is based on the mobile device family (which includes phones, tablets, and similar devices). A mobile device family app can assume the presence of all APIs in the mobile device family, and its UI has to be moderately adaptive. An app that targets the IoT device family can be installed only on IoT devices and can assume the presence of all APIs in the IoT device family. That app can be very specialized in its UI and input capabilities because you know that it will run only on a specific type of device.
 
-Xxxxxxx, xxxx xxx xxx xxxx xx x xxxxx, xxxxxxx xxxxx xx xxxx xxxxxx xxxx-xxxxxx xx xxxx xxxx, xxxx xxx xxx xxxxxxxxx xxx xxxxxxx-xx-xxxxxxx xxxx xxx xxxx xxx xxxx xxxxxx xxxxxx xx xxxxxxxxxx xxx-xxxxxx xxxxxxxxx:
+Here are some considerations to help you decide which device family to target:
 
-![xxxxx xxxxxxxxxxxxx xxx xx](images/adaptiveux-phone.png)
+**Maximizing your app's reach**
 
-Xx xxxx xxx xxxxx xxxx xxxxxxx XX xxxxxx xxxxx xx xxx xxxxxx xx xxxxxxxxx xxxxxx xxxxx,Xxxxxxx YY xxxxxxxxxx xxxxxxxx xxxxxx xxx xxxxxx xxxxxx.
+To reach the maximum range of devices with your app, and to have it run on as many kinds of devices as possible, your app will target the universal device family. By doing so, the app automatically targets every device family that's based on universal (in the diagram, all the children of universal). That means that the app runs on every OS based on those device families, and on all the devices that run those operating systems. The only APIs that are guaranteed to be available on all those devices is the set defined by the particular version of the universal device family that you target. (With this release, that version is always 10.0.x.0.) To find out how an app can call APIs outside of its target device family version, see Writing code later in this topic.
 
-### Xxxxxx xxxxxxxx XX xxxx xxxxxxxx xxxxxx
+**Limiting your app to one kind of device**
 
-Xxxxxx xxxxxx xxxx xxxxx xxx xxxxxxxxx xx xxxxx xxxxxxxx, xxxxxxxxx xx xxxxxxxxx xxxxx. Xxx xxxxxxx, [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209635) xxxxxx xxx xxxxxxxx xxxxxxxxxxxx (xxxxxxxxxxxx xx xxxxxxxxxx). [
-            **Xxxx**](https://msdn.microsoft.com/library/windows/apps/br242704) xx xxxx x XXX xxxx xxxx xxxxxx xxx xxxxxxxx xxxx xxxxx.
+You may not want your app to run on a wide range of devices; perhaps it's specialized for, say, a desktop PC or for an Xbox console. In that case you can choose to target your app at one of the child device families. For example, if you target the desktop device family, the APIs guaranteed to be available to your app include the APIs inherited from the universal device family plus the APIs that are particular to the desktop device family.
 
-Xxx xxx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn879546) xxxxxxxxxx x xxxxx xx xxxxxx xxxx xx xxxxxxx xx xxx xxxxxxxxxxxxx xxxxxxx xxx xxxxx xxxxxxxx. Xx'x xxxxxxxx xxx xxx xx xxxxxxxx xxx xxxxxxx xxxx xxx xxxxx xx xxxxxxx xx xxxxxx xxxxxxxxxx. Xxx **XxxxxxxxXxxxx** xxxxx xxx xxxxxxx xx xxxxxxxxxxx xxxxxxxx xx xxxxxxxx xxxxxxxxxxxxx xxxxxxx xxxxxxxx, xxxxx xxxxxx xxx xx xxxxx xxxx xxxxxxx XX xxxxxxx xxxxx xxxxxx xxxxxxx.
+**Limiting your app to a subset of all possible devices**
 
-Xx xxx xxxxxxxxx xxxxxxx, **xxxxXxxxxx** xxxx xxxxxx xx xxx xxxxx xx **xxxxXxxY** xxxxxxxxxx xx xxxxxxx xx xxxxxxxxxxx xx xxxxxx, xxx **xxxxxxXxxxxx** xxxx xxxxxx xxxxxxxxxxx xxxxx, xxx xxxxxxx xxxx, **xxxxXxxxxx**—xxxx xx xxx xxxxx xx **xxxxXxxY** xxxxxxx xx xxxx xx xxxxx xxxx xx. Xx xxxxx xxxxxxxxxx xxxx xxxxxxxx xxxx xxx xxxxxxx xx x **Xxxx** xx xxxxxxx xxxx xxxxxx, xxx xxx xx xxx xx xxxx xxxxx xxx xxxx xxxxxx.
+Instead of targeting the universal device family, or targeting one of the child device families, you can instead target two (or more) child device families. Targeting desktop and mobile might make sense for your app. Or desktop and Xbox. Or desktop, Xbox and Surface Hub.
 
-![xxxxxxxxxxxxx xxxxxxx](images/relativepane-standalone.png)
+**Excluding support for a particular version of a device family**
+
+In rare cases you may want your app to run everywhere except on devices with a particular version of a particular device family. For example, let's say your app targets version 10.0.x.0 of the universal device family. When the operating system version changes in the future, say to 10.0.x.2, at that point you can specify that your app runs everywhere except version 10.0.x.1 of Xbox by targeting your app to 10.0.x.0 of universal and 10.0.x.1 of Xbox. Your app will then be unavailable to the set of device family versions within Xbox 10.0.x.1 (inclusive) and earlier.
+
+By default, Microsoft Visual Studio specifies **Windows.Universal** as the target device family in the app package manifest file. To specify the device family or device families that your app is offered to from within the Store, manually configure the [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) element in your Package.appxmanifest file.
+
+## UI and universal input
+
+
+A UWP app can run on many different kinds of devices that have different forms of input, screen resolutions, DPI density, and other unique characteristics. Windows 10 provides new universal controls, layout panels, and tooling to help you adapt your UI to the devices your app may run on. For example, you can tailor the UI to take advantage of the difference in screen resolution when your app is running on a desktop computer versus on a mobile device.
+
+Some aspects of your app's UI will automatically adapt across devices. Controls such as buttons and sliders automatically adapt across device families and input modes. Your app's user-experience design, however, may need to adapt depending on the device the app is running on. For example, a photos app should adapt the UI when running on a small, hand-held device to ensure that usage is ideal for single-hand use. When the photos app is running on a desktop computer, the UI should adapt to take advantage of the additional screen space.
+
+Windows helps you target your UI to multiple devices with the following features:
+
+-   Universal controls and layout panels help you to optimize your UI for the screen resolution of the device
+-   Common input handling allows you to receive input through touch, a pen, a mouse, or a keyboard, or a controller such as a Microsoft Xbox controller
+-   Tooling helps you to design UI that can adapt to different screen resolutions
+-   Adaptive scaling adjusts to resolution and DPI differences across devices
+
+### Universal controls and layout panels
+
+Windows 10 includes new controls such as the calendar and split view. The pivot control, which was previously available only for Windows Phone, is also now available for the universal device family.
+
+Controls have been updated to work well on larger screens, adapt themselves based on the number of screen pixels available on the device, and work well with multiple types of input such as keyboard, mouse, touch, pen, and controllers such as the Xbox controller.
+
+You may find that you need to adapt your overall UI layout based on the screen resolution of the device your app will be running on. For example, a communication app running on the desktop may include a picture-in-picture of the caller and controls well suited to mouse input:
+
+![desktop communication app ui](images/adaptiveux-desktop.png)
+
+However, when the app runs on a phone, because there is less screen real-estate to work with, your app may eliminate the picture-in-picture view and make the call button larger to facilitate one-handed operation:
+
+![phone communication app ui](images/adaptiveux-phone.png)
+
+To help you adapt your overall UI layout based on the amount of available screen space,Windows 10 introduces adaptive panels and design states.
+
+### Design adaptive UI with adaptive panels
+
+Layout panels give sizes and positions to their children, depending on available space. For example, [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) orders its children sequentially (horizontally or vertically). [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) is like a CSS grid that places its children into cells.
+
+The new [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/dn879546) implements a style of layout that is defined by the relationships between its child elements. It's intended for use in creating app layouts that can adapt to changes in screen resolution. The **RelativePanel** eases the process of rearranging elements by defining relationships between elements, which allows you to build more dynamic UI without using nested layouts.
+
+In the following example, **blueButton** will appear to the right of **textBox1** regardless of changes in orientation or layout, and **orangeButton** will appear immediately below, and aligned with, **blueButton**—even as the width of **textBox1** changes as text is typed into it. It would previously have required rows and columns in a **Grid** to achieve this effect, but now it can be done using far less markup.
+
+![relativepanel example](images/relativepane-standalone.png)
 
 ```XAML
 <RelativePanel>
@@ -117,21 +116,21 @@ Xx xxx xxxxxxxxx xxxxxxx, **xxxxXxxxxx** xxxx xxxxxx xx xxx xxxxx xx **xxxxXxxY*
 </RelativePanel>
 ```
 
-### Xxx xxxxxx xxxxx xxxxxxxx xx xxxxx XX xxxx xxx xxxxx xx xxxxxxxxx xxxxxx xxxxx
+### Use visual state triggers to build UI that can adapt to available screen space
 
-Xxxx XX xxx xxxx xx xxxxx xx xxxxxxx xx xxxxxx xxxx. Xxxxxxxx xxxxxx xxxxxx xxxxxx xxx xx xxxxxx xxx xxxxxx xxxxx xx xxxxxxxx xx xxxxxxx xx xxx xxxx xx xxx xxxxxx.
+Your UI may need to adapt to changes in window size. Adaptive visual states allows you to change the visual state in response to changes in the size of the window.
 
-XxxxxXxxxxxxx xxxxxx x xxxxxxxxx xx xxxxx x xxxxxx xxxxx xx xxxxxxxxx, xxxxx xxxx xxxx xxxxxx xxxxxxxxxx xx xxxxxxxxxxx xxx xxx xxxxxx xxxx xxxx xxxxxxxxx xxx xxxxx xxxxxx.
+StateTriggers define a threshold at which a visual state is activated, which then sets layout properties as appropriate for the window size that triggered the state change.
 
-Xx xxx xxxxxxxxx xxxxxxx, xxxx xxx xxxxxx xxxx xx YYY xxxxxx xx xxxx xx xxxxx, xxx xxxxxx xxxxx xxxxx **xxxxXxxx** xx xxxxxxxxx, xxxxx xxxx xxxxxxxx xxx **Xxxx-xxxxx xxxxx** xxxxx xx xxxxxx xx xxx xxxxx xx, xxx xxxxxxx xxxx xxx xxx xx, xxx **Xxx xxxx xxxxx** xxxxx.
+In the following example, when the window size is 720 pixels or more in width, the visual state named **wideView** is triggered, which then arranges the **Best-rated games** panel to appear to the right of, and aligned with the top of, the **Top free games** panel.
 
-![xxxxxx xxxxx xxxxxxx xxxxxxx. xxxx xxxx](images/relativepanel-wideview.png)
+![visual state trigger example. wide view](images/relativepanel-wideview.png)
 
-Xxxx xxx xxxxxx xx xxxx xxxx YYY xxxxxx, xxx **xxxxxxXxxx** xxxxxx xxxxx xx xxxxxxxxx xxxxxxx xxx **xxxxXxxx** xxxxxxx xx xx xxxxxx xxxxxxxxx xxx xx xx xxxxxx xx xxxxxx. Xxx **xxxxxxXxxx** xxxxxx xxxxx xxxxxxxxx xxx **Xxxx-xxxxx xxxxx** xxxxx xxxxx, xxx xxxxxxx xxxx xxx xxxx xx, xxx **Xxx xxxx xxxxx** xxxxx:
+When the window is less than 720 pixels, the **narrowView** visual state is triggered because the **wideView** trigger is no longer satisfied and so no longer in effect. The **narrowView** visual state positions the **Best-rated games** panel below, and aligned with the left of, the **Top paid games** panel:
 
-![xxxxxx xxxxx xxxxxxx xxxxxxx. xxxxxx xxxx](images/relativepanel-narrowview.png)
+![visual state trigger example. narrow view](images/relativepanel-narrowview.png)
 
-Xxxx xx xxx XXXX xxx xxx xxxxxx xxxxx xxxxxxxx xxxxxxxxx xxxxx. Xxx xxxxxxxxxx xx xxx xxxxxx, xxxxxxx xx xx "`...`" xxxxx, xxx xxxx xxxxxxx xxx xxxxxxx.
+Here is the XAML for the visual state triggers described above. The definition of the panels, alluded to by "`...`" below, has been removed for brevity.
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -161,62 +160,59 @@ Xxxx xx xxx XXXX xxx xxx xxxxxx xxxxx xxxxxxxx xxxxxxxxx xxxxx. Xxx xxxxxxxxxx x
 </Grid>
 ```
 
-### Xxxxxxx
+### Tooling
 
-Xx xxxxxxx, xxx'xx xxxxxxxx xxxx xx xxxxxx xxx xxxxxxxx xxxxxxxx xxxxxx xxxxxx. Xxxx xxx'xx xxxxx xx xxx xxx xxxx xxx xxxxx xxx xxxx xxx xx x xxxxxxxxxx xxxxxx, xxx xxx xxxxxx xxxxxxx xxxxxxx xx Xxxxxx Xxxxxx xx xxxxxxx xxxx XX xx x xxxxx xx xxxxxx xxxxxx xxxxxx, xx x XX, xx xx x xxxxx XX xxxxxx. Xxxx xxx xxx xxx xxxxxx xxx xxxx xxxx xxxxxxxx xxxxxx xxxxxx:
+By default, you'll probably want to target the broadest possible device family. When you're ready to see how your app looks and lays out on a particular device, use the device preview toolbar in Visual Studio to preview your UI on a small or medium mobile device, on a PC, or on a large TV screen. That way you can tailor and test your adaptive visual states:
 
-![xxxxxx xxxxxx YYYY xxxxxx xxxxxxx xxxxxxx](images/vs2015-device-preview-toolbar.png)
+![visual studio 2015 device preview toolbar](images/vs2015-device-preview-toolbar.png)
 
-Xxx xxx’x xxxx xx xxxx x xxxxxxxx xx xxxxx xxxxx xxxxx xxxxxx xxxx xxxx xxx'xx xxxxxxx. Xxx xxx xxx xx xxxxxxxxxx xxxxxx xxxx xx xxxx xxxxxxx xxxxx.
+You don’t have to make a decision up front about every device type that you'll support. You can add an additional device size to your project later.
 
-### Xxxxxxxx xxxxxxx
+### Adaptive scaling
 
-Xxxxxxx YY xxxxxxxxxx xx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxxxx. Xx xxxxxxxx xx xxxxxxx xxxxxx xxxxxxx, xxxxx xx x xxxxxxx xxx xx xxxxx xxxxxxx xxxx xxxxxxxx x xxxxxxxxxx xxxx xxx XX xxxxxxxx xxxxxx x xxxxxxx xx xxxxxx xxxxx xxx xxxxxxx xxxxxxxxxxx. Xxx xxxxx xxxxxxx xxx xxxx xxxxxxxxxx xxxx xxx xxxxx xxxxxxx xx xxxxx xxxxxxxxx xxxxxxx xxxx xx xXX xxx Xxxxxxx. Xxxx xxxxx xx xxxxxx xx xxxxx xxxxxx xxxxxxx xxxxx xxxxxxxxx.
+Windows 10 introduces an evolution of the existing scaling model. In addition to scaling vector content, there is a unified set of scale factors that provides a consistent size for UI elements across a variety of screen sizes and display resolutions. The scale factors are also compatible with the scale factors of other operating systems such as iOS and Android. This makes it easier to share assets between these platforms.
 
-Xxx Xxxxx xxxxx xxx xxxxxx xx xxxxxxxx xxxxx xx xxxx xx xxx XXX xx xxx xxxxxx. Xxxx xxx xxxxxx xxxx xxxx xxxxx xxx xxxxxx xxx xxxxxxxxxx.
+The Store picks the assets to download based in part of the DPI of the device. Only the assets that best match the device are downloaded.
 
-### Xxxxxx xxxxx xxxxxxxx
+### Common input handling
 
-Xxx xxx xxxxx x Xxxxxxxxx Xxxxxxx xxx xxxxx xxxxxxxxx xxxxxxxx xxxx xxxxxx xxxxxxx xxxxxx xxxx xx xxxxx, xxxxxxxx, xxxxx, xxx, xxx xxxxxxxxxx (xxxx xx xxx Xxxx xxxxxxxxxx). Xxxxxxxxxxxxx, xxxxxx xxx xxxx xxxxxxxxxx xxxx xxxx xxx xxxxx, xxx xxxx Xxxxxxx YY, xxx xxx xxx xxxx xxxxx xx xxxx xxxxxxx, xxx xxxx xxx xxxxxxx xxxxx. Xxxxxx xx xxxxxxxxx xx xxxx xxxxxxx (xxxxxxxxx xxxxxx xxxxxxx) xxx xxx xxxxxx xx xxxxxxxxxxxx xxxx x xxxx xxx xxxxx xx xxxx.
+You can build a Universal Windows app using universal controls that handle various inputs such as mouse, keyboard, touch, pen, and controller (such as the Xbox controller). Traditionally, inking has been associated only with pen input, but with Windows 10, you can ink with touch on some devices, and with any pointer input. Inking is supported on many devices (including mobile devices) and can easily be incorporated with a just few lines of code.
 
-Xxx xxxxxxxxx XXXx xxxxxxx xxxxxx xx xxxxx:
+The following APIs provide access to input:
 
--   [
-            **XxxxXxxxxxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298460) xx x xxx XXX xxxx xxxxxx xxx xx xxxxxxx xxx xxxxx xx xxx xxxx xxxxxx xx x xxxxxxxxxx xxxxxx.
--   [
-            **XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242038) xxxxxxx xxx xxxxx, xxxxx, xxx xxx xxxx xxxx x xxxxxx, xxxxxxxxxx xxx xx xxxxxxxxxx xxx xxxxxx xxxx xxx xx xxxxxxxx xx xxx xxxx xxxxxx xx xxxxxxxxxx xxxxxx xx xxxxx **XxxxXxxxx.**
--   [
-            **XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225633) xx x xxxxxx XXX xxxx xxxxxxxx xxxxxxxx xxxxxx xxxxxxxxxxxx xx xxxx xxx xxx xxxxxxxxx xxxx xxxxx xxxxxxxxxx xxx xxxxxxxxx xx xxx xxxxxx.
--   Xxx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) XXXX xxxxxxx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922011) Xxxxxxx Xxxxxxx XXXx xxxxx xxx xx xxxxxx xxx xxxxxx xxxx.
+-   [**CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) is a new API that allows you to consume raw input on the main thread or a background thread.
+-   [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/br242038) unifies raw touch, mouse, and pen data into a single, consistent set of interfaces and events that can be consumed on the main thread or background thread by using **CoreInput.**
+-   [**PointerDevice**](https://msdn.microsoft.com/library/windows/apps/br225633) is a device API that supports querying device capabilities so that you can determine what input modalities are available on the device.
+-   The new [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) XAML control and [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) Windows Runtime APIs allow you to access ink stroke data.
 
-## Xxxxxxx xxxx
+## Writing code
 
 
-Xxxx xxxxxxxxxxx xxxxxxxx xxxxxxx xxx xxxx [Xxxxxxx YY xxxxxxx xx Xxxxxx Xxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/dn609832.aspx#target_win10) xxxxxxx Xxxxxx X++, X#, Xxxxxx Xxxxx, xxx XxxxXxxxxx. Xxx Xxxxxx X++, X#, xxx Xxxxxx Xxxxx, xxx xxx xxx XXXX xxx x xxxx-xxxxxxxx, xxxxxx XX xxxxxxxxxx. Xxx Xxxxxx X++ xxx xxx xxxxxx xx xxxx xxxx XxxxxxX xxxxxx xxxxxxx xx xx xx xxxx xx xxxxx XXXX. Xxx XxxxXxxxxx, xxxx xxxxxxxxxxxx xxxxx xxxx xx XXXX, xxx XXXX xx xx xxxxxx x xxxxx-xxxxxxxx xxx xxxxxxxx. Xxxx xx xxxx xxxx xxx XX xxxx xx xxxxxxxxx xxx xx xxxx xxx xxx xxxx xxx xxxxxxxxxx. Xxx xxx xxxx xxxxxxxx xx xxxxxxxxxx xxxxxx xxxxxxxx, xxx xxx XX xxxxxxxx xx xxxxxxxxxx xxxx xxxxxxx, xxx'xx xxxx xxx xxxxxx xx xxx xxxxxxxx xxxx xxx xxxxxxxx XX. Xxx'x xxxx xx xxxxx xxxxxxxxx xxxxx.
+Your programming language options for your [Windows 10 project in Visual Studio](https://msdn.microsoft.com/en-us/library/windows/apps/dn609832.aspx#target_win10) include Visual C++, C#, Visual Basic, and JavaScript. For Visual C++, C#, and Visual Basic, you can use XAML for a full-fidelity, native UI experience. For Visual C++ you can choose to draw with DirectX either instead of or as well as using XAML. For JavaScript, your presentation layer will be HTML, and HTML is of course a cross-platform web standard. Much of your code and UI will be universal and it will run the same way everywhere. But for code tailored to particular device families, and for UI tailored to particular form factors, you'll have the option to use adaptive code and adaptive UI. Let's look at these different cases.
 
-**Xxxxxxx xx XXX xxxx'x xxxxxxxxxxx xx xxxx xxxxxx xxxxxx xxxxxx**
+**Calling an API that's implemented by your target device family**
 
-Xxxxxxxx xxx xxxx xx xxxx xx XXX, xxx'xx xxxx xx xxxx xxxxxxx xxx XXX xx xxxxxxxxxxx xx xxx xxxxxx xxxxxx xxxx xxxx xxx xx xxxxxxxxx. Xx xx xxxxx, xxx xxx xxxx xx xx xx xxx XXX xxxxxxxxx xxxxxxxxxxxxx. Xx xxx xxxx xxx xxxxxxxx xxxxx xxx xxxx xx xxx Xxxxxxxxxxxx xxxxxxx, xxx'xx xxx xxxx xxx xxxxxxxxxxxx xxxxxx xxxxxx xx. Xxx'x xxx xxxx xxxx xxx xx xxxxxxxxx xxxxxxx YY.Y.x.Y xx xxx xxxxxxxxx xxxxxx xxxxxx xxx xxx xxxx xx xxxx xxxxxxx xx xxx [**Xxxxxxx.XX.Xxxx.XxxxxxXxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn893595) xxxxx. Xx xxxx xxxxxxx, xxx xxxxxx xxxxxx xx "Xxxxxxxxx". Xx'x x xxxx xxxx xx xxxxxxx xxxxxxx xxxx xxx xxxxx xxxxxxx xxxx xxx xxxx xx xxxx xxx xxxx xxxxxx xxxx xxxxxx, xxx xx xxxx xxxx xxxx xxx. Xx xx xxxx xxxxxxx, xxx xxx xxxx xxxx xxx XXXx xxx xxxxxxxxxx xx xx xxxxxxx xx xxxxx xxxxxx xxxx xxxx xxx xxx xx xxxxxxxxx xx, xxx xxx xxx xxxx xxx XXXx xx xxxx xxxx xxxx xxxx xxx xxxxxxxx xxxxx.
+Whenever you want to call an API, you'll need to know whether the API is implemented by the device family that your app is targeting. If in doubt, you can look it up in the API reference documentation. If you open the relevant topic and look at the Requirements section, you'll see what the implementing device family is. Let's say that your app is targeting version 10.0.x.0 of the universal device family and you want to call members of the [**Windows.UI.Core.SystemNavigationManager**](https://msdn.microsoft.com/library/windows/apps/dn893595) class. In this example, the device family is "Universal". It's a good idea to further confirm that the class members that you want to call are also within your target, and in this case they are. So in this example, you now know that the APIs are guaranteed to be present on every device that your app can be installed on, and you can call the APIs in your code just like you normally would.
 
 ```csharp
     Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested += TestView_BackRequested;
 ```
 
-Xx xxxxxxx xxxxxxx, xxxxxxx xxxx xxxx xxx xx xxxxxxxxx xxxxxxx YY.Y.x.Y xx xxx Xxxx xxxxxx xxxxxx, xxx xxx xxxxxxxxx xxxxx xxx xx XXX xxxx xxx xxxx xx xxxx xxxx xxxx xxx XXX xxx xxxxxxxxxx xx xxxxxxx YY.Y.x.Y xx xxx Xxxx xxxxxx xxxxxx. Xx xxxx xxxx, xxxxx, xxx XXX xx xxxxxxxxxx xx xx xxxxxxx xx xxxxx xxxxxx xxxx xxxx xxx xxx xx xxxxxxxxx xx. Xx xxx xxxxx xx xxxx xx xxxx xxxx XXX xx xxxx xxxx xx xxx xxxxxx xxx.
+As another example, imagine that your app is targeting version 10.0.x.0 of the Xbox device family, and the reference topic for an API that you want to call says that the API was introduced in version 10.0.x.0 of the Xbox device family. In that case, again, the API is guaranteed to be present on every device that your app can be installed on. So you would be able to call that API in your code in the normal way.
 
-Xxxx xxxx Xxxxxx Xxxxxx'x XxxxxxxXxxxx xxxx xxx xxxxxxxxx XXXx xxxxxx xxxx xxx xxxxxxxxxxx xx xxxx xxx'x xxxxxx xxxxxx xxxxxx xx xxx xxxxxxxxx XXXx xxxx xxx xxxx xxxxxxxxxx. Xxxxxxxxxxxx, xx xxx xxxxx'x xxxxxxxxxx xxx xxxxxxxxx XXXx, xxx xxx xx xxxx xxxx xxx XXXx xxxx xxxxxx xx XxxxxxxXxxxx xxxx xxxxxxxxx xx xx xxxx xxxxxx xxxxxx xxxxxx xxx xxx xxx xxxx xxxx xxxxxx.
+Note that Visual Studio's IntelliSense will not recognize APIs unless they are implemented by your app's target device family or any extension SDKs that you have referenced. Consequently, if you haven't referenced any extension SDKs, you can be sure that any APIs that appear in IntelliSense must therefore be in your target device family and you can call them freely.
 
-**Xxxxxxx xx XXX xxxx'x XXX xxxxxxxxxxx xx xxxx xxxxxx xxxxxx xxxxxx**
+**Calling an API that's NOT implemented by your target device family**
 
-Xxxxx xxxx xx xxxxx xxxx xxx xxxx xx xxxx xx XXX, xxx xxxx xxxxxx xxxxxx xxxxxx xx xxx xxxxxx xx xxx xxxxxxxxxxxxx. Xx xxxx xxxx xxx xxx xxx xx xxxxx xxxxxxxx xxxx xx xxxxx xx xxxx xxxx XXX.
+There will be cases when you want to call an API, but your target device family is not listed in the documentation. In that case you can opt to write adaptive code in order to call that API.
 
-**Xxxxxxx xxxxxxxx xxxx xxxx xxx XxxXxxxxxxxxxx xxxxx**
+**Writing adaptive code with the ApiInformation class**
 
-Xxxxx xxx xxx xxxxx xx xxxxx xxxxxxxx xxxx. Xxx xxxxx xxxx xx xx xxxx xxx XXXx xxxx xxx xxxx xx xxxxxx xxxxxxxxx xx xxxx xxxxxxx. Xx xx xxxx, xxx x xxxxxxxxx xx xxx xxxxxxxxx XXX xxxx xxxxxxxxxx xxx xxxxxx xxxxxx xxxx xxxx xxx XXXx xxxx xxx xxxx xx xxxxxxxxxxxxx xxxx. Xxx [Xxxxxxxxx XXXx](../porting/w8x-to-uwp-porting-to-a-uwp-project.md#extension-sdks).
+There are two steps to write adaptive code. The first step is to make the APIs that you want to access available to your project. To do that, add a reference to the extension SDK that represents the device family that owns the APIs that you want to conditionally call. See [Extension SDKs](../porting/w8x-to-uwp-porting-to-a-uwp-project.md#extension-sdks).
 
-Xxx xxxxxx xxxx xx xx xxx xxx [**Xxxxxxx.Xxxxxxxxxx.Xxxxxxxx.XxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn949001) xxxxx xx x xxxxxxxxx xx xxxx xxxx xx xxxx xxx xxx xxxxxxxx xx xxx XXX xxx xxxx xx xxxx. Xxxx xxxxxxxxx xx xxxxxxxxx xxxxxxxx xxxx xxx xxxx, xxx xx xxxxxxxxx xx xxxx xxxx xx xxxxxxx xxxxx xxx XXX xx xxxxxxx xxx xxxxxxxxx xxxxxxxxx xx xxxx.
+The second step is to use the [**Windows.Foundation.Metadata.ApiInformation**](https://msdn.microsoft.com/library/windows/apps/dn949001) class in a condition in your code to test for the presence of the API you want to call. This condition is evaluated wherever your app runs, but it evaluates to true only on devices where the API is present and therefore available to call.
 
-Xx xxx xxxx xx xxxx xxxx x xxxxx xxxxxx xx XXXx, xxx xxxxx xxx xxx [**XxxXxxxxxxxxxx.XxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn949016) xxxxxx xxxx xxxx.
+If you want to call just a small number of APIs, you could use the [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) method like this.
 
 ```csharp
     // Note: Cache the value instead of querying it more than once.
@@ -230,7 +226,7 @@ Xx xxx xxxx xx xxxx xxxx x xxxxx xxxxxx xx XXXx, xxx xxxxx xxx xxx [**XxxXxxxxxx
     }
 ```
 
-Xx xxxx xxxx xx xxx xx xxxxxxxxx xxxx xxx xxxxxxxx xx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/jj207557) xxxxx xxxxxxx xxx xxxxxxxx xx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653805) xxxxx, xxxxxxx xxx xxxxx xxx xxx xxxxxx xxxx xxx xxxx xxxxxxxxxxxx xxxx. Xxx xx xxxx, xxx xxxxxxx xxxx xx xxxxx xx xxxxxxx-xxxxxxxxxx xxxxxxx, xxx xxxxx xxxxxxx xxxx xxxx xxxxx "xxxxxxxxxx xx" xxxxxxx xxxxxxx. Xx xxxx xxxxx, xxxxxxx xx xxxxx **XxXxxxXxxxxxx**, xxx xxx xxxx xxx xxx xxxxxxxx xx xxxxxxxxxx xxxxxxx xx xxxxx **XxXxxxxXxxxxxx**, **XxXxxxxxXxxxxxx**, **XxXxxxxxxxXxxxxxx**, xxx xxxxxxx xxxxxxx. Xxxx'x xx xxxxxxx.
+In this case we can be confident that the presence of the [**HardwareButtons**](https://msdn.microsoft.com/library/windows/apps/jj207557) class implies the presence of the [**CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805) event, because the class and the member have the same requirements info. But in time, new members will be added to already-introduced classes, and those members will have later "introduced in" version numbers. In such cases, instead of using **IsTypePresent**, you can test for the presence of individual members by using **IsEventPresent**, **IsMethodPresent**, **IsPropertyPresent**, and similar methods. Here's an example.
 
 ```csharp
     bool isHardwareButtons_CameraPressedAPIPresent =
@@ -238,7 +234,7 @@ Xx xxxx xxxx xx xxx xx xxxxxxxxx xxxx xxx xxxxxxxx xx xxx [**XxxxxxxxXxxxxxx**](
             ("Windows.Phone.UI.Input.HardwareButtons", "CameraPressed");
 ```
 
-Xxx xxx xx XXXx xxxxxx x xxxxxx xxxxxx xx xxxxxxx xxxxxx xxxx xxxx xxxxxxxxxxxx xxxxx xx XXX xxxxxxxxx. Xxx xxx xxx xxx **XxxXxxxxxxxxxx.XxXxxXxxxxxxxXxxxxxx** xxxxxx xx xxxx xxx xxx xxxxxxxx xx xx XXX xxxxxxxx. Xxxx xx xxxxxx xx xxx xxxx xx xxxx xxx xxx xxxxxxxx xx x xxxxx xxxxxx xx XXXx xxxx xxx xxxxx xx xxx xxxx xxxxxxx xx xx XXX xxxxxxxx.
+The set of APIs within a device family is further broken down into subdivisions known as API contracts. You can use the **ApiInformation.IsApiContractPresent** method to test for the presence of an API contract. This is useful if you want to test for the presence of a large number of APIs that all exist in the same version of an API contract.
 
 ```csharp
     bool isWindows_Devices_Scanners_ScannerDeviceContract_1_0Present =
@@ -246,47 +242,51 @@ Xxx xxx xx XXXx xxxxxx x xxxxxx xxxxxx xx xxxxxxx xxxxxx xxxx xxxx xxxxxxxxxxxx 
             ("Windows.Devices.Scanners.ScannerDeviceContract", 1, 0);
 ```
 
-**XxxYY XXXx xx xxx XXX**
+**Win32 APIs in the UWP**
 
-X XXX xxx xx Xxxxxxx Xxxxxxx Xxxxxxxxx xxxxxxx xx X++/XX xxx xxxxxx xx xxx XxxYY XXXx xxxx xxx xxxx xx xxx XXX. Xxxxx XxxYY XXXx xxx xxxxxxxxxxx xx xxx Xxxxxxx YY xxxxxx xxxxxxxx. Xxxx xxxx xxx xxxx Xxxxxxxxxx.xxx. Xxxxxxxxxx.xxx xx xx "xxxxxxxx" xxx xxxx xxxxxxxx xxx xxxxxxx xxx xxx XXX XXXx. Xxxxxxx xx Xxxxxxxxxx.xxx xxxx xxx xx xxxx xxx xxxxxxxxxxxx xx xxxx xxxx xxx xxxxxxx xx xxx Xxxxxxx YY xxxxxx xxxxxxxx.
+A UWP app or Windows Runtime Component written in C++/CX has access to the Win32 APIs that are part of the UWP. These Win32 APIs are implemented by all Windows 10 device families. Link your app with Windowsapp.lib. Windowsapp.lib is an "umbrella" lib that provides the exports for the UWP APIs. Linking to Windowsapp.lib will add to your app dependencies on dlls that are present on all Windows 10 device families.
 
-Xxx xxx xxxx xxxx xx XxxYY XXXx xxxxxxxxx xx XXX xxxx, xxx [XXX Xxxx xxx XXX xxxx](https://msdn.microsoft.com/library/windows/desktop/mt186421) xxx [Xxxx xxx XXX xxxx](https://msdn.microsoft.com/library/windows/desktop/mt186422).
+For the full list of Win32 APIs available to UWP apps, see [API Sets for UWP apps](https://msdn.microsoft.com/library/windows/desktop/mt186421) and [Dlls for UWP apps](https://msdn.microsoft.com/library/windows/desktop/mt186422).
 
-## Xxxx xxxxxxxxxx
-
-
-X Xxxxxxxxx Xxxxxxx xxx xxxxxx xxx xx xxxx xxxxxxxxx xx xxx xxxxxx xxxxxxxxxxxx xx xxx xxxxxx xx xxxxx xx xx xxxxxxx. Xxxx xxx xxx xxxx xxx xx xxx xx xxx xxxxx xx x xxxxxxx xxxxxx, xxx xxxxxxx xxxxxxxxxxx xx xxxxxx xxxxxxxxxxxx xx x xxxxxx (xxxxxxxxx xxxxx xxx xxx xxxxx), xxx xxxxxxxxxxx xxx xxxxxxxxxxx xx xxxxxx xxxxxxx, xxx xxx xxxxxxxxxxxxx xxxxx xx [Xxxxxxx Xxx](http://go.microsoft.com/fwlink/?LinkId=526365).
-
-Xxxx [xxxxxx](http://go.microsoft.com/fwlink/?LinkId=258848) xx xxx xxxxxxx xx xxxxxxxx xxx xxxxx xxxx xxxxxxxx xxxx xxxx xxx, xx xxxx xx xxx xx xxxx xxxx xxx xxxxxxxx. Xxxx xxxxxxxxxx xxxxx x xxxx xxxx xx xxxxxxxxxxx xxx xxxxx xxxxxx xxxx xx xxxx xxxx xxx, xx xxx'x xxxxx xx xxxx xxxx. [Xxxxxx xxxxxx](https://dev.windows.com/en-us/design) xxxxxxxxx xxx xx xxxxxxxxx x Xxxxxxxxx Xxxxxxx xxx. Xxx xxx [Xxxxxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn958439) xxx xxxxxxxxxxx xx xxxxxxxxx XXX xxxx xxxx xxxxxxx xxxx xxxxx. Xxxxxx xxx xxxxx xxxxxx, xxx xxx [xxxxxx xxxxxx](../input-and-devices/device-primer.md) xx xxxx xxx xxxxx xxxxxxx xxx xxxxxxxxxxx xxxxxxxxxx xx xxxxx xxxx xxx xx xxx xxx xxxxxxxxx xxxx xxxxxxx xxx xxxx xx xxxxxx.
-
-![xxxxxxx-xxxxxxx xxxxxxx](images/1894834-hig-device-primer-01-500.png)
-
-Xx xxxxxxxx xx xxxxxxxxxxx xx xxxxxxxxx xxxxxxx, [xxxx xxxx xxx](https://msdn.microsoft.com/library/windows/apps/hh465427) xx xxxxxxx xxx xxxxxxxx xx xxxxxxx xxxxxx xxxxxxxx xxxxxxx. Xxx xxxxxxx:
-
--   Xxx [xxxxx xxxxxxxx](http://go.microsoft.com/fwlink/?LinkId=526377) xx xxxx xxxxxx xxxxxxx. Xxxxx xxx xx [xxxxxxx xx xxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504) xx xxxxxxx xx xxxx xxx xxxxxxxxxx.
-
--   Xxxxxxxx xxx xxx xxx xxxxxxx xxxxx xxxxxx xxxx xxx xxxxxx xx xxxxxxx, xxxxxxx xx xxxxx xxxx xxxx xxx. Xxxxxxx [xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187203) xxx [xx-xxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt219684) xx xxxx xxxxxxxx. Xxxxx xxxxxxxx xxxxxx xxxx xxxxxx xxxxxxx.
-
--   Xxxxxx xxxx xxxxxxxx xxxxx [Xxxxxxxxxx xxxxxx xxxxxx xxx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/dn958438) xx xxxxxxxxxxx xxxxxx, xxxxx-xxxxxx, xxx xxxxx-xxxxxx xxxxxxx. [Xxx xxx xxxx xxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn958435) xx xxxxxxx xx xxxxxxxxx xxxxxx xxxxx xxx xxxxxxxxxxx.
-
--   Xxxxxxxx xxxxxxx xxxxx xxx xxxxxxxx xx xxxx xxx xxxx xxx’x xxxx xxxxx xx x xxxxx xxxxxx xxxxxx. Xxxxx xxx xxxx xx xxxxx xxxx xxx’x xxxx xxxxx xx x xxxxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxx x xxxxxx xxxxxx xx xxxxx xx. Xxx xxxxxxx, xxxx xxxxxxxxx xxxxxx [xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt219698) xxxxx x xxxxxx xxxxxx.
-
--   Xxxxxxxx xxx xxx'xx xxxxxxxxxxx xxxxxxxx xxxxx xxxxxxxxxx. Xxx xxx [Xxxxxxxxxx xxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn611861) xx xxxxx xxx xxxxx xxx xxxxxxxx xxxx xxxx xxx xx xxxxx [Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233), [Xxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121), [Xxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465370), xxx [Xxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh972345) xxx xxxx.
-
-    Xxx xxx [Xxxxxxxxxx xxx xxxx xxx xxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/dn611864) xxx xxxx xxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx.
-
-## Xxxxxx x Xxxxxxxxx Xxxxxxx xxx xxxxxxx xxxx Xxxxxxxxx
+## User experience
 
 
-Xxx xxx xxxxxxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxx xxx xxxxxx xxx xxxxxx xxx xx xxxx xxxx xxx Xxxxxxx xxxxxxx xx xxx xxxxx. Xxx xxxxxxxx xxxxxxxx xxxxxxxxx xxxxx xxxxxx xxx xxxx xxxxxxx. Xxx'xx xxxx xxxx xxxxxxxx [xxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt148522) xxxxxxxx [xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn986925), xxxx xx [xxxxxxx xxxx xxx xxx xxxxxx xxxx xxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt148526), xxx xxxx xxxx.
+A Universal Windows app allows you to take advantage of the unique capabilities of the device on which it is running. Your app can make use of all of the power of a desktop device, the natural interaction of direct manipulation on a tablet (including touch and pen input), the portability and convenience of mobile devices, and the collaborative power of [Surface Hub](http://go.microsoft.com/fwlink/?LinkId=526365).
 
-Xxx [Xxxxx xxx xxxxxxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx](../publish/using-the-windows-dev-center-dashboard.md) xx xxxxx xxx xx xxxxxx xxxx xxxx xxx xxxxxxxxxxx xx xxx Xxxxxxx Xxxxx.
+Good [design](http://go.microsoft.com/fwlink/?LinkId=258848) is the process of deciding how users will interact with your app, as well as how it will look and function. User experience plays a huge part in determining how happy people will be with your app, so don't skimp on this step. [Design basics](https://dev.windows.com/en-us/design) introduce you to designing a Universal Windows app. See the [Introduction to Universal Windows Platform (UWP) apps for designers](https://msdn.microsoft.com/library/windows/apps/dn958439) for information on designing UWP apps that delight your users. Before you start coding, see the [device primer](../input-and-devices/device-primer.md) to help you think through the interaction experience of using your app on all the different form factors you want to target.
+
+![windows-powered devices](images/1894834-hig-device-primer-01-500.png)
+
+In addition to interaction on different devices, [plan your app](https://msdn.microsoft.com/library/windows/apps/hh465427) to embrace the benefits of working across multiple devices. For example:
+
+-   Use [cloud services](http://go.microsoft.com/fwlink/?LinkId=526377) to sync across devices. Learn how to [connect to web services](https://msdn.microsoft.com/library/windows/apps/xaml/hh761504) in support of your app experience.
+
+-   Consider how you can support users moving from one device to another, picking up where they left off. Include [notifications](https://msdn.microsoft.com/library/windows/apps/mt187203) and [in-app purchases](https://msdn.microsoft.com/library/windows/apps/mt219684) in your planning. These features should work across devices.
+
+-   Design your workflow using [Navigation design basics for UWP apps](https://msdn.microsoft.com/library/windows/apps/dn958438) to accommodate mobile, small-screen, and large-screen devices. [Lay out your user interface](https://msdn.microsoft.com/library/windows/apps/dn958435) to respond to different screen sizes and resolutions.
+
+-   Consider whether there are features of your app that don’t make sense on a small mobile screen. There may also be areas that don’t make sense on a stationary desktop machine and require a mobile device to light up. For example, most scenarios around [location](https://msdn.microsoft.com/library/windows/apps/mt219698) imply a mobile device.
+
+-   Consider how you'll accommodate multiple input modalities. See the [Guidelines for interactions](https://msdn.microsoft.com/library/windows/apps/dn611861) to learn how users can interact with your app by using [Cortana](https://msdn.microsoft.com/library/windows/apps/dn974233), [Speech](https://msdn.microsoft.com/library/windows/apps/dn596121), [Touch interactions](https://msdn.microsoft.com/library/windows/apps/hh465370), the [Touch keyboard](https://msdn.microsoft.com/library/windows/apps/hh972345) and more.
+
+    See the [Guidelines for text and text input](https://msdn.microsoft.com/library/windows/apps/dn611864) for more tradition interaction experiences.
+
+## Submit a Universal Windows app through your Dashboard
+
+
+The new unified Windows Dev Center dashboard lets you manage and submit all of your apps for Windows devices in one place. New features simplify processes while giving you more control. You'll also find detailed [analytic reports](https://msdn.microsoft.com/library/windows/apps/mt148522) combined [payout details](https://msdn.microsoft.com/library/windows/apps/dn986925), ways to [promote your app and engage with your customers](https://msdn.microsoft.com/library/windows/apps/mt148526), and much more.
+
+See [Using the unified Windows Dev Center dashboard](../publish/using-the-windows-dev-center-dashboard.md) to learn how to submit your apps for publication in the Windows Store.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

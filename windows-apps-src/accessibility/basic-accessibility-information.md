@@ -1,89 +1,73 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxxxxxxxxxxxx xxxx xx xxxxx xxxxxxxxxxx xxxx xxxx, xxxx, xxx xxxxx. Xxxx xxxxx xxxxxxxxx xxxx xx xxxx xxxx xxx xxxxxx xxx xxxxx xxxxxxxxxxx xxxx xxxxxxxxx xxxxxxxxxxxx xxxx.
-xxxxx: Xxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxx
-xx.xxxxxxx: YYYYXYYY-YYXY-YYYY-YXYY-XYYXYYXYXYXY
-xxxxx: Xxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: 基本的なアクセシビリティ情報は、多くの場合、名前、役割、値に分類されます。 このトピックでは、支援技術が必要とする基本情報をアプリで公開するのに役立つコードについて説明します。
+title: 基本的なアクセシビリティ情報の開示
+ms.assetid: 9641C926-68C9-4842-8B55-C38C39A9E5C5
+label: 基本的なアクセシビリティ情報の開示
+template: detail.hbs
 ---
 
-Xxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxx
+基本的なアクセシビリティ情報の開示
 ==========================================================================================================
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-Xxxxx xxxxxxxxxxxxx xxxx xx xxxxx xxxxxxxxxxx xxxx xxxx, xxxx, xxx xxxxx. Xxxx xxxxx xxxxxxxxx xxxx xx xxxx xxxx xxx xxxxxx xxx xxxxx xxxxxxxxxxx xxxx xxxxxxxxx xxxxxxxxxxxx xxxx.
+基本的なアクセシビリティ情報は、多くの場合、名前、役割、値に分類されます。 このトピックでは、支援技術が必要とする基本情報をアプリで公開するのに役立つコードについて説明します。
 
-<span id="accessible_name">
-            </span>
-            <span id="ACCESSIBLE_NAME">
-            </span>Xxxxxxxxxx xxxx
+<span id="accessible_name"></span><span id="ACCESSIBLE_NAME"></span>アクセシビリティ対応の名前
 -----------------------------------------------------------------------------------
 
-Xx xxxxxxxxxx xxxx xx x xxxxx, xxxxxxxxxxx xxxx xxxxxx xxxx x xxxxxx xxxxxx xxxx xx xxxxxxxx x XX xxxxxxx. Xxx xxx xxxxxxxxxx xxxx xxx XX xxxxxxxx xx xxxx xxxx x xxxxxxx xxxx xx xxxxxxxxx xxx xxxxxxxxxxxxx xxx xxxxxxx xx xxxxxxxxxxx xxxx xxx XX. Xxxx xxxxxxxx xxxxxxxxx xxxxxxx xxxxxx, xxxxx xxxxxx, xxxxxxx, xxxxxxxx, xxx xxxxxxx.
+アクセシビリティ対応の名前とは、スクリーン リーダーが UI 要素を読み上げるときに使う短い説明の文字列です。 コンテンツを理解したり UI を操作したりするときに重要な意味を持つ UI 要素に対して設定します。 そのような要素には、通常、イメージ、入力フィールド、ボタン、コントロール、領域が含まれます。
 
-Xxxx xxxxx xxxxxxxxx xxx xx xxxxxx xx xxxxxx xx xxxxxxxxxx xxxx xxx xxxxxxx xxxxx xx xxxxxxxx xx x XXXX XX.
+次の表に、さまざまな XAML UI 要素のアクセシビリティ対応の名前を定義または取得する方法を示します。
 
-| Xxxxxxx xxxx      | Xxxxxxxxxxx                                                                                                                                                                                                                                                                                                                                                            |
+| 要素型      | 説明                                                                                                                                                                                                                                                                                                                                                            |
 |-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxx xxxx       | Xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209652) xxx [**XxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227565) xxxxxxxx, xx xxxxxxxxxx xxxx xx xxxxxxxxxxxxx xxxxxxxxxx xxxx xxx xxxxxxx (xxxxx) xxxx. Xxx xx xxx xxxx xx xxxx xxxxxxx xx xxxx xx xxx xxxx. Xxx [Xxxx xxxx xxxxx xxxx](#name_from_inner_text).                                                                    |
-| Xxxxxx            | Xxx XXXX [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242752) xxxxxxx xxxx xxx xxxx x xxxxxx xxxxxx xx xxx XXXX **xxx** xxxxxxxxx xx **xxx** xxx xxxxxxx xxxxxxxx. Xxxxxx xxx [**XxxxxxxxxxXxxxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759770) xx xxxxxxx x xxxx, xx xxx xxx xxxxxxxxxx xxxxxxxxx. Xxx [Xxxxxxxxxx xxxxx xxx xxxxxx](#images).                                   |
-| Xxxx xxxxxxxx     | Xxx xxxxxxxxxx xxxx xxx x xxxx xxxxxxx xxxxxx xx xxx xxxx xx xxx xxxxx xxxx xx xxxxxxxxx xxx xxxx xxxxxxx. Xxx [Xxxxxx xxx XxxxxxxXx](#labels).                                                                                                                                                                                                                        |
-| Xxxxxxx xxx xxxxx | Xx xxxxxxx, xxx xxxxxxxxxx xxxx xx x xxxxxx xx xxxx xx xxxxx xx xxx xxxxxxx xxxx, xxxxx xxx xxxx xxxxx xx xxxxxxxxx xx [Xxxx xxxx xxxxx xxxx](#name_from_inner_text). Xx xxxxx xxxxx x xxxxxx xxxxxxxx xxxx xx xxxxx, xxx [**XxxxxxxxxxXxxxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759770) xx xxxxxxx x xxxx-xxxx xxxxxxxxxx xx xxx xxxxxx'x xxxxxxxx xxxxxx. |
+| 静的テキスト       | [
+            **TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) 要素と [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565) 要素については、アクセシビリティ対応の名前が表示 (内部) テキストから自動的に決定されます。 この要素のテキストはすべて名前として使われます。 「[内部テキストに基づく名前](#name_from_inner_text)」をご覧ください。                                                                    |
+| 画像            | XAML の [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) 要素は、HTML の **img** の **alt** 属性やこれに類似する要素に、直接相当するものではありません。 [
+            **AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) を使って名前を指定するか、キャプション手法を使います。 「[画像のアクセシビリティ対応の名前](#images)」をご覧ください。                                   |
+| フォーム要素     | フォーム要素のアクセシビリティ対応の名前は、その要素に表示されるラベルと同じにする必要があります。 「[ラベルと LabeledBy](#labels)」をご覧ください。                                                                                                                                                                                                                        |
+| ボタンとリンク | ボタンやリンクでは、「[内部テキストに基づく名前](#name_from_inner_text)」に記載されているのと同じ規則を使って、表示テキストに基づく名前が既定でアクセシビリティ対応の名前として使われます。 画像のみが含まれるボタンの場合は、[**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) を使って、そのボタンで想定する操作にテキストのみのボタンを指定します。 |
 
  
 
-Xxxx xxxxxxxxx xxxxxxxx xxxx xx xxxxxx xx xxx xxxxxxx xxxxx xxxxxxx xx xxxxxxxxxx xxxx. Xxxx xx xxxxxxx xx xx xxx xxxx xxxxxxx xxxx xxxxxx xxxxxx x xxxx xxx xxxxxxxxxxxxx xxxx, xxx xxx xxxxxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxx xxxxxx xxxx xx xx xx xxxxxxx xxxx xxx xxxxxxxx xx x Xxxxxxxxx XX Xxxxxxxxxx xxxxxxxxxxxxxx, xxxx xxxx xxx xxxxxxxxx xxxxxxxxxx xxxxx xxx xxxxxxxx xx. Xxx xxxxx xx xxxxxxxxx xxxxxxxxxxxx xxx'x xxxxxxxxx xxxx xx xxxx xxxxx xxx xxxxxxxxxx xxx xxxx xxxx xxxxxxxxxx xxxx'x xxxxx.
+パネルなどのコンテナー要素では通常、アクセシビリティ対応の名前としてコンテンツが昇格されることはありません。 これは、名前とそれに対応する役割を報告する必要があるのは項目のコンテンツであり、コンテナーではないからです。 コンテナー要素では、Microsoft UI オートメーションの表示で子が含まれるのは、支援技術のロジックが走査できる要素であると報告される場合があります。 ただし、支援技術を利用するユーザーは通常、コンテナーについて意識する必要はないため、ほとんどのコンテナーには名前が付けられません。
 
-<span id="role_value">
-            </span>
-            <span id="ROLE_VALUE">
-            </span>Xxxx xxx xxxxx
+<span id="role_value"></span><span id="ROLE_VALUE"></span>役割と値
 ------------------------------------------------------------------------
 
-Xxx xxxxxxxx xxx xxxxx XX xxxxxxxx xxxx xxx xxxx xx xxx XXXX xxxxxxxxxx xxxxxxxxx XX Xxxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxx xxx xxxxx xx xxxx xx xxxxx xxxxxxxxxxx. Xxx xxx xxx XX Xxxxxxxxxx xxxxx xx xxxxxxx xxx xxxx xxx xxxxx xxxxxxxxxxx xxx xxx xxxxxxxx, xx xxx xxx xxxx xxx xxxxxxxxxxxxx xxx xxx [**XxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR209185) xxxxxxxxxxxxxxx xx xxxx xxxxxxx. Xxx xxxxxxxxx xxxxx xx x XX Xxxxxxxxxx xxxxxxxxx xxx xxxxxxx xx xxx [**XxxxxxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR209182) xxxxxxxxxxx. XX Xxxxxxxxxx xxxxxxx xxxx xx xxxxxxxxx xxxxxxxxxxxx xxx xxxxxx xxxx xxxxxxxxxxx xx xxxxxxx xxxxxxx xxxx xxx XX Xxxxxxxxxx xxxxxxxxx xxxxxxx xx xxxxx xxx xxxxxxx'x **XxxxxxxxxxXxxx**.
+XAML ボキャブラリに含まれるコントロールやその他の UI 要素は、その定義の一部として役割と値を報告するために UI オートメーション サポートを実装しています。 UI オートメーション ツールを使ってコントロールの役割と値の情報を検証できます。また、各コントロールの [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) 実装に関する説明書を参照することもできます。 UI オートメーション フレームワークで使うことができる役割は、[**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/BR209182) 列挙体で定義されています。 支援技術などの UI オートメーション クライアントでは、コントロールの **AutomationPeer** を使用することで UI オートメーション フレームワークが公開するメソッドを呼び出すことにより、役割の情報を取得することができます。
 
-Xxx xxx xxxxxxxx xxxx x xxxxx. Xxxxxxxx xxxx xx xxxx x xxxxx xxxxxx xxxx xxxxxxxxxxx xx XX Xxxxxxxxxx xxxxxxx xxx xxxxx xxx xxxxxxxx xxxx xxx xxxxxxxxx xx xxxx xxxxxxx. Xxx xxxxxxx, x [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/BR209683) xxxx xxxxxxx xxxx xxxx x xxxxx. Xx xxxxxxxxx xxxxxxxxxx xxx xx x XX Xxxxxxxxxx xxxxxx xxx xxx xxxxxxxx xxxx xxxx x xxxxx xxxxxx xxx xxxx xxx xxxxx xx. Xx xxxx xxxxxxxx xxxx xxx **XxxxXxx** xxxxxxxx xxx [**XXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242663) xxxxxxx xxxxxxx xxx [**XxxxXxxXxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242550) xxxxxxxxxxx.
+すべてのコントロールに値があるわけではありません。 値のあるコントロールは、このコントロールでサポートされるピアとパターンを介して UI オートメーションにこの情報を報告します。 たとえば、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) フォーム要素には値があります。 支援技術は UI オートメーション クライアントである可能性もあり、値が存在することと、値が何であるかを確認することができます。 この場合、**TextBox** は [**TextBoxAutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR242550) を定義することで [**IValueProvider**](https://msdn.microsoft.com/library/windows/apps/BR242663) パターンをサポートします。
 
-**Xxxx**  Xxx xxxxx xxxxx xxx xxx [**XxxxxxxxxxXxxxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759770) xx xxxxx xxxxxxxxxx xx xxxxxx xxx xxxxxxxxxx xxxx xxxxxxxxxx, xx xxx xxxxxxx xxx xxxx xxxx xx xx xxxx xx xxx xxxxxxx xxxx xx xxxx xxxxxxxxxxx xx xxx xxxxxxxxxx xxxx. Xxx xxxxxxx xx xxx xxxxxxx xxxxxxx xxxx xx "xxxxxx" xx "xxxx" xx xxx xxxx. Xxx xxxx xxx xxxx xxxxxxxxxxx xxxxx xxxx x xxxxxxxxx XX Xxxxxxxxxx xxxxxxxx (**XxxxxxxxxXxxxxxxXxxx**) xxxx xx xxxxxxxx xx xxx xxxxxxx xxxxxxx xxxxxxx xxx XX Xxxxxxxxxx. Xxxx xxxxxxxxx xxxxxxxxxxxx xxxxxx xxx **XxxxxxxxxXxxxxxxXxxx** xx xxx xxxxxxxxxx xxxx, xx xxxxxxxxxxx xxx xxxx xx xxx xxxxxxxxxx xxxx xxx xxxxxx xx xxxxxxxxxxxxx xxxxxxxx xxxxx. Xxx xxxxxxx, xx xxx xxxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209265) xxxxxxx xx xxxxxxxxxx xxxx xx "xxxxxx" xx xxxxxxx "xxxxxx" xx xxx xxxx xxxx xx xxx xxxx, xxxx xxxxx xx xxxx xx xxxxxx xxxxxxx xx "xxxxxx xxxxxx". Xxx xxxxxx xxxx xxxx xxxxxx xx xxxx xxxxxxxxxxxxx xxxx xxxxx Xxxxxxxx.
+**注:** [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) またはその他の手法を使ってアクセシビリティ対応の名前を明示的に指定する場合は、アクセシビリティ対応の名前にコントロールの役割や種類の情報で使うものと同じテキストを含めないでください。 たとえば、名前に "ボタン" や "リスト" などの文字列は含めないでください。 役割と種類の情報は、UI オートメーション用の既定のコントロール サポートから提供される別の UI オートメーションのプロパティ (**LocalizedControlType**) から取得します。 多くの支援技術では、アクセシビリティ対応の名前に **LocalizedControlType** が付加されるため、アクセシビリティ対応の名前の中で役割が重複していると、語句が不必要に繰り返されることになります。 たとえば、[**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) コントロールに「ボタン」というアクセシビリティ対応の名前を付けるか、名前の最後の部分として「ボタン」を含めた場合、スクリーン リーダーはこの名前を "ボタン ボタン" と読み取る可能性があります。 ナレーターを使って、アクセシビリティ情報のこの側面をテストする必要があります。
 
  
 
-<span id="Influencing_the_UI_Automation_tree_views">
-            </span>
-            <span id="influencing_the_ui_automation_tree_views">
-            </span>
-            <span id="INFLUENCING_THE_UI_AUTOMATION_TREE_VIEWS">
-            </span>Xxxxxxxxxxx xxx XX Xxxxxxxxxx xxxx xxxxx
+<span id="Influencing_the_UI_Automation_tree_views"></span><span id="influencing_the_ui_automation_tree_views"></span><span id="INFLUENCING_THE_UI_AUTOMATION_TREE_VIEWS"></span>UI オートメーション ツリー ビューへの影響
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Xxx XX Xxxxxxxxxx xxxxxxxxx xxx x xxxxxxx xx xxxx xxxxx, xxxxx XX Xxxxxxxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxxxxxxx xxxxxxx xxxxxxxx xx x XX xxxxx xxxxx xxxxxxxx xxxxx: xxx, xxxxxxx, xxx xxxxxxx. Xxx xxxxxxx xxxx xx xxx xxxx xxxx'x xxxxx xxxx xx XX Xxxxxxxxxx xxxxxxx xxxxxxx xx xxxxxxxx x xxxx xxxxxxxxxxxxxx xxx xxxxxxxxxxxx xx xxx xxxxxxxx xx x XX xxxx xxx xxxxxxxxxxx. Xxxxxxx xxxxx xxxxxxx xxxxxx xxx xx xxxxxx xxxxx xxxx xxxx xx xxx xxxx xxx xxxx xxxxxxxx xxx xxxxxxxxxxxx xx xxxxxxxx.
+UI オートメーション フレームワークには、3 つの有効なビュー (未処理、コントロール、コンテンツ) を使って、UI オートメーション クライアントが UI 内の要素の関係を取得できるツリー ビューの概念があります。 コントロール ビューは UI オートメーション クライアントによって一般的に使われるビューであり、対話型である UI 内の要素を適切に表現し、組織化します。 一般的にテスト ツールによって、ツールが要素の組織を表す場合に使うツリー ビューを決定できます。
 
-Xx xxxxxxx, xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209390) xxxxxxx xxxxx xxx x xxx xxxxx xxxxxxxx xxxx xxxxxx xx xxx xxxxxxx xxxx xxxx xxx XX Xxxxxxxxxx xxxxxxxxx xxxxxxxxxx xxx XX xxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx. Xxx xxxxxxxxx xxx xxx'x xxxx xx xxxxxxx xx xxxxxx xx xxx xxxxxxx xxxx xxxxxxx xx XX xxxxxxxxxxx, xxxxx xxxx xxxxxxx xx xxxxxxxxxxx xxxxxxxxxxx xx xxxxxxxxxx xxxxxxxxxxx xxxx'x xxxxxxxxxxx xxx xxxxxxxxxxxxx xxxxxxxxx. Xxx xxx xxxxxxxx xxxxxxxx [**XxxxxxxxxxXxxxxxxxxx.XxxxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn251788) xx xxxxxx xxx xxxxxxxx xxx xxxxxxx xx xxx xxxx xxxxx. Xx xxx xxx xx xxxxxxx xx xxx **Xxx** xxxx, xxxx xxxxxxxxx xxxxxxxxxxxx xxx'x xxxxxx xxxx xxxxxxx xx xxxx xx xxxxx xxxxx. Xx xxx xxxx xxxxxxxx xx xxx xxxx xxxxx xx xxxxxxxx xxxxxxxx, xxxx xxx xxxxxxx.xxxx xxxxxx xxxxxxxxx XXXX xxxx xx x xxxx xxxxxx, xxx xxxxxx xxx **XxxxxxxxxxXxxxxxxxxx.XxxxxxxxxxxxxXxxx** xx xxx xxxxxxxxx.
+既定では、UI オートメーション フレームワークによってユニバーサル Windows プラットフォーム (UWP) アプリのユーザー インターフェイスを表す場合に、[**Control**](https://msdn.microsoft.com/library/windows/apps/BR209390) 派生クラスとその他のいくつかの要素がコントロール ビューに表示されます。 ただし、要素の情報が重複しているか、アクセシビリティのシナリオで重要でない情報を提示している場合に、UI 合成のためにコントロール ビューに要素を表示したくない場合があります。 ツリー ビューに要素を公開する方法を変更するには、添付プロパティ [**AutomationProperties.AccessibilityView**](https://msdn.microsoft.com/library/windows/apps/Dn251788) を使います。 **Raw** ツリーに要素を配置した場合、ほとんどの支援技術は、その要素をビューの一部として報告しません。 お使いのコントロールでこの動作の例を確認するには、テキスト エディターで generic.xaml 設計参照 XAML ファイルを開いて、テンプレートで **AutomationProperties.AccessibilityView** を検索します。
 
-<span id="name_from_inner_text">
-            </span>
-            <span id="NAME_FROM_INNER_TEXT">
-            </span>Xxxx xxxx xxxxx xxxx
+<span id="name_from_inner_text"></span><span id="NAME_FROM_INNER_TEXT"></span>内部テキストに基づく名前
 --------------------------------------------------------------------------------------------------
 
-Xx xxxx xx xxxxxx xx xxx xxxxxxx xxxx xxxxxxx xxxxx xx xxx xxxxxxx XX xxx xxxxxxxxxx xxxx xxxxxx, xxxx xx xxx xxxxxxxx xxx xxxxx XX xxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxxxxxxxx xxxxxxxxxxx x xxxxxxx xxxxxxxxxx xxxx xxxxx xx xxxxx xxxx xxxxxx xxx xxxxxxx, xx xxxx xxxxxx xxxxxx xx xxxxxxx xxxxxxxxxx.
+表示される UI に既に存在する文字列を、アクセシビリティ対応の名前の値に簡単に使うことができるように、コントロールやその他の UI 要素には通常、要素内の内部テキストに基づいて、またはコンテンツ プロパティの文字列値から、既定のアクセシビリティ対応の名前を自動的に決定するためのサポートが用意されています。
 
--   [
-            **XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209652), [**XxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227565), [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/BR209683) xxx **XxxxXxxxXxxxx** xxxx xxxxxxx xxx xxxxx xx xxx **Xxxx** xxxxxxxx xx xxx xxxxxxx xxxxxxxxxx xxxx.
--   Xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209365) xxxxxxxx xxxx xx xxxxxxxxx "XxXxxxxx" xxxxxxxxx xx xxxx xxxxxxx xx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209365_content) xxxxx, xxx xxxxxxxx xxxxx xxxxxxx xx xxx xxxxxxx xxxxxxxxxx xxxx.
+-   [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652)、[**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/BR227565)、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683)、**RichTextBlock** それぞれでは、既定のアクセシビリティ対応の名前として **Text** プロパティの値を昇格させます。
+-   いずれの [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) サブクラスも、反復的な "ToString" を使って、[**Content**](https://msdn.microsoft.com/library/windows/apps/BR209365_content) 値に含まれる文字列を検索し、その文字列を既定のアクセシビリティ対応の名前として昇格させます。
 
-**Xxxx**   Xx xxxxxxxx xx XX Xxxxxxxxxx, xxx xxxxxxxxxx xxxx xxxxxx xxxxxx xx xxxxxxx xxxx YYYY xxxxxxxxxx. Xx x xxxxxx xxxx xxx xxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxxxxx xxxxxxx xxxx xxxxx, xxx xxxxxxxxxx xxxx xx xxxxxxxxx xx xxxx xxxxx.
+**注:** UI オートメーションで規定されているため、アクセシビリティ対応の名前の長さは 2048 文字以下でなければなりません。 アクセシビリティ対応の名前を自動的に決定するために使う文字列がこの制限を超えている場合、アクセシビリティ対応の名前は制限に収まるように切り捨てられます。
 
  
 
-<span id="images">
-            </span>
-            <span id="IMAGES">
-            </span>Xxxxxxxxxx xxxxx xxx xxxxxx
+<span id="images"></span><span id="IMAGES"></span>画像のアクセシビリティ対応の名前
 -----------------------------------------------------------------------------
 
-Xx xxxxxxx xxxxxx xxxxxxx xxx xx xxxxxxx xxx xxxxx xxxxxxxxxxx xxxxxxxxxxx xxx xxxx xxxxxxx xx xxx XX, xxx xxxxxxxxx xxxx xxxxxxx xxxx xxxxxxxxxxxx xx xxx-xxxxxxx xxxxxxxxxxx xxxx xx xxxxxx xxx xxxxxx (xxxxxxxxx xxx xxxxxx xxxxxxxxxx xx xxxxxxxxxx xxxxxxxx). Xxxxx xxxxxxxx xxx'x xxxx xxxxx xxxx xx xxx xxxxxxxxxx xxxx xxx'x xxxx x xxxxxxxxxx xxxxx. Xxx xxx xxx xxx xxxxxxxxxx xxxx xxxxxxxx xx xxxxxxx xxx [**XxxxxxxxxxXxxxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759770) xxxxxxxx xxxxxxxx xx xxxxx xx xxxx xxxxxxx.
+スクリーン リーダーのサポートや、UI 中の各要素を識別するための基本情報の提供を行う際、テキスト以外の情報に対して、代替テキストを指定しなければならないことがあります。対象となるのは、装飾だけを目的とした要素や構造上の要素を除く、画像やグラフなどです。 これらの要素には内部テキストがないため、アクセシビリティ対応の名前も計算で求められた値を持ちません。 アクセシビリティ対応の名前を直接設定するには、[**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 添付プロパティを次の例に示すように設定します。
 
 <span codelanguage="XAML"></span>
 <table>
@@ -92,7 +76,7 @@ Xx xxxxxxx xxxxxx xxxxxxx xxx xx xxxxxxx xxx xxxxx xxxxxxxxxxx xxxxxxxxxxx xxx x
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">XXXX</th>
+<th align="left">XAML</th>
 </tr>
 </thead>
 <tbody>
@@ -103,7 +87,7 @@ Xx xxxxxxx xxxxxx xxxxxxx xxx xx xxxxxxx xxx xxxxx xxxxxxxxxxx xxxxxxxxxxx xxx x
 </tbody>
 </table>
 
-Xxxxxxxxxxxxx, xxxxxxxx xxxxxxxxx x xxxx xxxxxxx xxxx xxxxxxx xx xxx xxxxxxx XX xxx xxxx xxxx xxxxxx xx xxx xxxxx-xxxxxxxxxx xxxxxxxxxxxxx xxxxxxxxxxx xxx xxx xxxxx xxxxxxx. Xxxx'x xx xxxxxxx:
+また別の方法として、表示される UI 内に存在し、ラベルに関連する画像コンテンツのアクセシビリティ情報としても機能するテキスト字幕を取り入れることもできます。 次に例を示します。
 
 <span codelanguage="XAML"></span>
 <table>
@@ -112,7 +96,7 @@ Xxxxxxxxxxxxx, xxxxxxxx xxxxxxxxx x xxxx xxxxxxx xxxx xxxxxxx xx xxx xxxxxxx XX 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">XXXX</th>
+<th align="left">XAML</th>
 </tr>
 </thead>
 <tbody>
@@ -127,13 +111,10 @@ Mount Snoqualmie Skiing
 </tbody>
 </table>
 
-<span id="labels">
-            </span>
-            <span id="LABELS">
-            </span>Xxxxxx xxx XxxxxxxXx
+<span id="labels"></span><span id="LABELS"></span>ラベルと LabeledBy
 ----------------------------------------------------------------------
 
-Xxx xxxxxxxxx xxx xx xxxxxxxxx x xxxxx xxxx x xxxx xxxxxxx xx xx xxx x [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209652) xxxx xx **x:Xxxx** xxx xxxxx xxxx, xxx xxxx xx xxx xxx [**XxxxxxxxxxXxxxxxxxxx.XxxxxxxXx**](https://msdn.microsoft.com/library/windows/apps/Hh759769) xxxxxxxx xxxxxxxx xx xxx xxxx xxxxxxx xx xxxxxxxxx xxx xxxxxxxx **XxxxXxxxx** xx xxx XXXX xxxx. Xx xxx xxx xxxx xxxxxxx, xxxx xxx xxxx xxxxxx xxx xxxxx, xxx xxxxx xxxxx xx xxx xxxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxxxx xxx xxx xxx xxxxx xxxx xx xxx xxxxxxxxxx xxxx xxx xxx xxxx xxxxx. Xxxx'x xx xxxxxxx xxxx xxxxx xxxx xxxxxxxxx.
+ラベルとフォーム要素を関連付けるときによく使われるのは、まずラベルのテキストに対して **x:Name** を指定した [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) を使い、フォーム要素上で [**AutomationProperties.LabeledBy**](https://msdn.microsoft.com/library/windows/apps/Hh759769) 添付プロパティを設定することにより、XAML 名によってラベル付けの **TextBlock** を参照するという方法です。 このパターンを使う場合は、ユーザーがラベルをクリックしたときに関連付けられているコントロールにフォーカスが移動し、支援技術でフォーム フィールドのアクセシビリティ対応の名前としてラベルのテキストを使うことができるようにする必要があります。 次の例は、この手法を示しています。
 
 <span codelanguage="XAML"></span>
 <table>
@@ -142,7 +123,7 @@ Xxx xxxxxxxxx xxx xx xxxxxxxxx x xxxxx xxxx x xxxx xxxxxxx xx xx xxx x [**XxxxXx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">XXXX</th>
+<th align="left">XAML</th>
 </tr>
 </thead>
 <tbody>
@@ -165,63 +146,50 @@ Xxx xxxxxxxxx xxx xx xxxxxxxxx x xxxxx xxxx x xxxx xxxxxxx xx xx xxx x [**XxxxXx
 </tbody>
 </table>
 
-<span id="accessible_description">
-            </span>
-            <span id="ACCESSIBLE_DESCRIPTION">
-            </span>Xxxxxxxxxx xxxxxxxxxxx (xxxxxxxx)
+<span id="accessible_description"></span><span id="ACCESSIBLE_DESCRIPTION"></span>アクセシビリティ対応の説明 (省略可能)
 -------------------------------------------------------------------------------------------------------------------
 
-Xx xxxxxxxxxx xxxxxxxxxxx xxxxxxxx xxxxxxxxxx xxxxxxxxxxxxx xxxxxxxxxxx xxxxx x xxxxxxxxxx XX xxxxxxx. Xxx xxxxxxxxx xxxxxxx xx xxxxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxxxx xxxx xxxxx xxxx xxx xxxxxxxxxx xxxxxx xx xxxxxxx'x xxxxxxx.
+アクセシビリティ対応の説明は、特定の UI 要素に関する追加のアクセシビリティ情報を提供します。 アクセシビリティ対応の名前だけでは要素の目的を十分に伝えられない場合に使用されるのが一般的です。
 
-Xxx Xxxxxxxx xxxxxx xxxxxx xxxxx xx xxxxxxx'x xxxxxxxxxx xxxxxxxxxxx xxxx xxxx xxx xxxx xxxxxxxx xxxx xxxxxxxxxxx xxxxx xxx xxxxxxx xx xxxxxxxx Xxxx Xxxx+X.
+ナレーター スクリーン リーダーは、ユーザーが CapsLock キーを押しながら F キーを押して要素に関する追加情報を要求した場合にのみ、要素のアクセシビリティ対応の説明を読み上げます。
 
-Xxx xxxxxxxxxx xxxx xx xxxxx xx xxxxxxxx xxx xxxxxxx xxxxxx xxxx xx xxxxx xxxxxxxx xxx xxxxxxxx. Xx x xxxxx xxxxxxxxxxx xx xxx xxxxxx xx xxxxxxx xxx xxxxxxx, xxx xxx xxx xxx [**XxxxxxxxxxXxxxxxxxxx.XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759765) xxxxxxxx xxxxxxxx xx xxxxxxxx xx [**XxxxxxxxxxXxxxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759770).
+このアクセシビリティ対応の名前は、動作を完全に表すためのものではなく、コントロールを識別するためのものです。 簡単な説明だけではコントロールの説明が不十分な場合は、[**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759765) に加え、[**AutomationProperties.HelpText**](https://msdn.microsoft.com/library/windows/apps/Hh759770) 添付プロパティを設定できます。
 
-<span id="Testing_accessibility_early_and_often">
-            </span>
-            <span id="testing_accessibility_early_and_often">
-            </span>
-            <span id="TESTING_ACCESSIBILITY_EARLY_AND_OFTEN">
-            </span>Xxxxxxx xxxxxxxxxxxxx xxxxx xxx xxxxx
+<span id="Testing_accessibility_early_and_often"></span><span id="testing_accessibility_early_and_often"></span><span id="TESTING_ACCESSIBILITY_EARLY_AND_OFTEN"></span>アクセシビリティを初期段階から何度もテストする
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Xxxxxxxxxx, xxx xxxx xxxxxxxx xxx xxxxxxxxxx xxxxxx xxxxxxx xx xx xxxx xxxx xxx xxxxx x xxxxxx xxxxxx xxxxxxxx. Xxxx xxxx xxxx xxx xxx xxx xxxxxx xxxxxx xxxxxxx xxx xxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxx xxxxx xx xxxxxxx xxxx xxx xxx. Xxxx xxx xxx xxxxxx xxx XX xx XX Xxxxxxxxxx xxxxxxxx xxxxxx xxxxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxxxxxx xxxxxxx](accessibility-testing.md).
+スクリーン リーダーをサポートする最善の方法は、最終的に、スクリーン リーダーをアプリでテストして判断することです。 テストすることで、スクリーン リーダーの動作や、アプリから取得できないアクセシビリティの基本情報を確認することができます。 その後、その情報に基づいて、UI や UI オートメーションのプロパティの値を調整できます。 詳しくは、「[アクセシビリティ テスト](accessibility-testing.md)」をご覧ください。
 
-Xxx xx xxx xxxxx xxx xxx xxx xxx xxxxxxx xxxxxxxxxxxxx xx xxxxxx **XxxXxxxx**. Xxx **XxxXxxxx** xxxx xx xxxxxxxxxxxx xxxxxx xxxxxxx xxx xxx xxx xxxxxx xxxxxxxxxxxxxxx xx xxxx XX xxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxxxxxx xxxxx xxxx xxxx xxx xx xx xxxxxxxxxx xxxx. Xx xxxxxxxxxx, xxxxx'x x Xxxxxxxx xxxx xxxx xxxxx x xxxx xx xxx Xxxxxxxx xxxx xxxx xxxx xxxx xxx xxx xxx xx xxxxxxxxx xxx xxxxxxxx xx xxx XX. XxxXxxxx xx xxxxxxxx xx xxxx xx xxx xx xxxx xxx xx xxxxxx xxxxxxxxxx x xxxxxxxxxxx xxxxx xxx xx xxx, xxxx xxxxxx xxx xxxxxxxxxxx xxxxxx xxxxx. Xxx xxxx xxxx xxx [XxxXxxxx](https://msdn.microsoft.com/library/windows/desktop/Dn433239).
+アクセシビリティのテストに使用できるツールの 1 つに、**AccScope** があります。 **AccScope** ツールは特に、支援技術によりアプリがオートメーション ツリーとしてどのように表示されるかを示す UI の視覚的な表現を確認するために役立ちます。 特に、ナレーターがアプリでテキストを表示する方法、および UI での要素の整理方法を確認するナレーター モードが用意されています。 AccScope は、予備設計フェーズであってもアプリの開発サイクル全体で使用でき、有用であるように設計されています。 詳しくは、「[AccScope](https://msdn.microsoft.com/library/windows/desktop/Dn433239)」をご覧ください。
 
-<span id="Accessible_names_from_dynamic_data">
-            </span>
-            <span id="accessible_names_from_dynamic_data">
-            </span>
-            <span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA">
-            </span>Xxxxxxxxxx xxxxx xxxx xxxxxxx xxxx
+<span id="Accessible_names_from_dynamic_data"></span><span id="accessible_names_from_dynamic_data"></span><span id="ACCESSIBLE_NAMES_FROM_DYNAMIC_DATA"></span>動的データからのアクセシビリティ対応の名前
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Xxxxxxx xxxxxxxx xxxx xxxxxxxx xxxx xxx xx xxxx xx xxxxxxx xxxxxx xxxx xxxx xxxx xx xxxxxxxxxx xxxx xxxxxx, xxxxxxx x xxxxxxx xxxxx xx *xxxx xxxxxxx*. Xxxx xxx xxxxxxxx xxxxx xxxx xxxx xxxxx, xxx xxx xxxx xx xxx x xxxxxxxxx xxxx xxxx xxxxxxxxxx xxxxx xxx xxxx-xxxxx xxxx xxxxx xxxxx xxx xxxxxxx xxxx xx xxxxxxxxx. Xxx xxxx xxxx, xxx "Xxxxxxxx Y" xx xxx [XXXX xxxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=238570).
+Windows では、*データ バインディング*という機能によって、関連付けられたデータ ソースから取得される値を表示するのに使うことができる、多くのコントロールがサポートされています。 一覧にデータ項目を設定するときに、最初の一覧に入力した後で、データがバインドされた一覧項目にアクセシビリティ対応の名前を設定する必要がある場合があります。 詳しくは、[XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570) のシナリオ 4 をご覧ください。
 
-<span id="Accessible_names_and_localization">
-            </span>
-            <span id="accessible_names_and_localization">
-            </span>
-            <span id="ACCESSIBLE_NAMES_AND_LOCALIZATION">
-            </span>Xxxxxxxxxx xxxxx xxx xxxxxxxxxxxx
+<span id="Accessible_names_and_localization"></span><span id="accessible_names_and_localization"></span><span id="ACCESSIBLE_NAMES_AND_LOCALIZATION"></span>アクセシビリティ対応の名前とローカライズ
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Xx xxxx xxxx xxxx xxx xxxxxxxxxx xxxx xx xxxx xx xxxxxxx xxxx xx xxxxxxxxx, xxx xxxxxx xxx xxxxxxx xxxxxxxxxx xxx xxxxxxx xxxxxxxxxxx xxxxxxx xx xxxxxxxxx xxx xxxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxxxxx xxxx [x:Xxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204791) xxxxxx. Xx xxx xxxxxxxxxx xxxx xx xxxxxx xxxx xx xxxxxxxxxx xxx [**XxxxxxxxxxXxxxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759770) xxxxx, xxxx xxxx xxxx xxx xxxxxx xxxxx xx xxxx xxxxxxxxxxx.
+アクセシビリティ対応の名前をローカライズ対象の要素としても設定する場合は、適切な方法によってローカライズ可能な文字列をリソースとして保存し、[x:Uid ディレクティブ](https://msdn.microsoft.com/library/windows/apps/Mt204791) 値を使ってリソース接続を参照する必要があります。 アクセシビリティ対応の名前を、明示的に設定された [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) の使用から取得する場合は、必ずそこに含まれる文字列もローカライズ可能であることを確認します。
 
-Xxxx xxxx xxxxxxxx xxxxxxxxxx xxxx xx xxx [**XxxxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209081) xxxxxxxxxx xxx x xxxxxxx xxxxxxxxxx xxxxxx xxx xxx xxxxxxxx xxxx, xx xxxx xxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxx xxxxxxxx xx xxxxxxx xx x xxxxxxxx xxxxxxx. Xxx xxxxxxx, xxx xxxxxxxx xxxx xxx [**XxxxxxxxxxXxxxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759770) xx xxxxxxx xx x XX xxxxxxx xxxxx `MediumButton` xx: `MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name`.
+[
+            **AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) プロパティなどの添付プロパティは、リソース名で特殊な修飾構文を使うので、リソースでは特定の要素に適用される添付プロパティを参照することに注意してください。 たとえば、`MediumButton` という名前の UI 要素に適用される [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770) のリソース名は、`MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name` です。
 
-Xxxxxxx xxxxxx
+関連トピック
 -----------------------------------------------
 
-* [Xxxxxxxxxxxxx](accessibility.md)
-* [**XxxxxxxxxxXxxxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759770)
-* [XXXX xxxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=238570)
-* [Xxxxxxxxxxxxx xxxxxxx](accessibility-testing.md)
+* [アクセシビリティ](accessibility.md)
+* [**AutomationProperties.Name**](https://msdn.microsoft.com/library/windows/apps/Hh759770)
+* [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [アクセシビリティ テスト](accessibility-testing.md)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

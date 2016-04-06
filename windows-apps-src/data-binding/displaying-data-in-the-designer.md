@@ -1,22 +1,22 @@
 ---
-xx.xxxxxxx: YYYYYYXY-YXXX-YYYY-YYYY-XYYYXYXYYYYY
-xxxxx: Xxxxxx xxxx xx xxx xxxxxx xxxxxxx, xxx xxx xxxxxxxxxxx
-xxxxxxxxxxx: Xx xxx xx xxxxxxxxxx xx xxxxxxxxxxx (xxxxxxx xxx xxxxxxx xx xxxxxxx xx xxxxxxxxxxx) xxx xxxx xxx xx xxxxxxx xxxx xxxx xx xxx xxxxxx xxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx xx Xxxxx xxx Xxxxxx Xxxxxx.
+ms.assetid: 089660A2-7CAE-4911-9994-F619C5D22287
+title: デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ
+description: アプリで Microsoft Visual Studio や Blend for Visual Studio のデザイン サーフェイスにライブ データを表示できない場合や、プライバシーやパフォーマンスなどの理由で表示するのが望ましくない場合があります。
 ---
-Xxxxxx xxxx xx xxx xxxxxx xxxxxxx, xxx xxx xxxxxxxxxxx
+デザイン サーフェイス上のサンプル データとプロトタイプを作るためのサンプル データ
 =============================================================================================
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-**Xxxx**  Xxx xxxxxx xx xxxxx xxx xxxx xxxxxx xxxx—xxx xxx xxxx xx xxxx xxxx xxx—xxxxxxx xx xxxxxxx xxxx xxxxxxxx xxx xxx [{Xxxxxxx} xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204782) xx xxx [{x:Xxxx} xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204783). Xxx xxxxxxxxxx xxxxxxxxx xx xxxx xxxxx xxx xxxxx xx xxx xxx xx x [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208713), xx xxxx'xx xxxx xxxxxxxxxxx xxx **{Xxxxxxx}**. Xxx xx xxx'xx xxxxx **{x:Xxxx}** xxxx xxxx xxxxxxxx xx xxxxx xxxx xxxxxxxxxxx xxxxxx xx xxx xxxxxx xxxxxxx (xxxx xxx xxxxx xxxxxxxx), xx xxx xxx'x xxxx xxxxx xxx xxxx xxxx xxx xxxxxx xxxx.
+**注**  サンプル データの必要性 (および有用性) は、バインドで [{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)と [{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)のどちらを使うかによって決まります。 ここで説明する手法は [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) の使用に基づいているため、この手法が適しているのは **{Binding}** のみですが、 **{x:Bind}** を使う場合は、バインドで少なくともプレースホルダー値がデザイン サーフェイスに表示されるため (項目コントロールの場合でも)、サンプル データの必要性は比較的低くなります。
 
-Xx xxx xx xxxxxxxxxx xx xxxxxxxxxxx (xxxxxxx xxx xxxxxxx xx xxxxxxx xx xxxxxxxxxxx) xxx xxxx xxx xx xxxxxxx xxxx xxxx xx xxx xxxxxx xxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx xx Xxxxx xxx Xxxxxx Xxxxxx. Xx xxxxx xx xxxx xxxx xxxxxxxx xxxxxxxxx xxxx xxxx (xx xxxx xxx xxx xxxx xx xxxx xxx'x xxxxxx, xxxxxxxxx, xxx xxxxx xxxxxx xxxxxxxxxx), xxxxx xxx xxxxxxx xxxx xx xxxxx xxx xxx xxx xxxxxx-xxxx xxxxxx xxxx. Xxxxxx xxxx xxx xxxx xx xxxxxx xxxxxx xxx xxxx-xxxxxx xx xxx'xx xxxxxxxx x xxxxxx (xx xxxxxxxxx) xxx. Xxx xxx xxx xxxxxx xxxx xx xxxx xxxxxx xx xxxxxxxxx xx xxx-xxxx xx xxxxxxxxxx xxxx xxxxx xxxxxxx xxxxx xx xxx xx xxxxxxxxxx xx xxxx, xxxx xxxx.
+アプリで Microsoft Visual Studio や Blend for Visual Studio のデザイン サーフェイスにライブ データを表示できない場合や、プライバシーやパフォーマンスなどの理由で表示するのが望ましくない場合に、 アプリのレイアウト、テンプレート、その他の視覚的なプロパティを操作するためにコントロールにデータを設定するには、さまざまな方法で設計時のサンプル データを使うことができます。 サンプル データは、スケッチ (プロトタイプ) アプリを開発する場合にも便利で、時間の節約になります。 スケッチやプロトタイプで実行時にサンプル データを使うと、実際のライブ データに接続しなくてもアイデアを実証できます。
 
-Xxxxxxx XxxxXxxxxxx xx xxxxxx
+マークアップでの DataContext の設定
 -----------------------------
 
-Xx'x x xxxxxx xxxxxx xxxxxxxxx xxxxxxxx xx xxx xxxxxxxxxx xxxx (xx xxxx-xxxxxx) xx xxx x xxxx xx xxxx xxxxxxx'x [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208713) xx x xxxx xxxxx xxxxxxxx.
+命令型コードを (分離コードで) 使ってページやユーザー コントロールの [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) をビュー モデル インスタンスに設定するのはごく一般的な開発手法です。
 
 ``` csharp
 public MainPage()
@@ -26,15 +26,15 @@ public MainPage()
 }
 ```
 
-Xxx xx xxx xx xxxx xxxx xxxx xxxx xxx'x xx "xxxxxxxxxx" xx xx xxxxx xx. Xxx xxxxxx xx xxxx xxxx xxxx XXXX xxxx xx xxxxxx xx Xxxxxx Xxxxxx xx Xxxxx xxx Xxxxxx Xxxxxx, xxx xxxxxxxxxx xxxx xxxx xxxxxxx xxx **XxxxXxxxxxx** xxxxx xx xxxxx xxx (xx xxxx, xxxx xx xxxx xxxx-xxxxxx xx xxxxxxxx). Xxx XXXX xxxxx xx xx xxxxxx xxxxx xxxx xxxxxx xxx xxxxxxxxxxx xxx xxxxxxx xxxxxxxx xx xx, xxx xxxx xxx'x xxxxxxxx xxxxxxxxxxx xxxx xxxx'x xxxx xxxxxx. Xxx xxxxxx xx xxxx xxx xxx'x xxx xxx xxxx xx xxxx xxxxxxxx xx xx xxx **Xxxxxx Xxxx Xxxxxxx** xxxxxx, xxx xxxx xxxx xxxx xx xxxx xxxxxxxxxxx xx xxxxx xxx xx xxx xxx.
+しかし、この方法を使うとページの "デザイン性" が低下します。 これは、XAML ページを Visual Studio や Blend for Visual Studio で開いても、**DataContext** の値を割り当てる命令型コードは実行されないからです (分離コードは一切実行されません)。 もちろん、XAML ツールによってマークアップが解析され、宣言されているオブジェクトがインスタンス化されますが、ページの型そのものはインスタンス化されません。 その結果、コントロールや **[データ バインディングの作成]** ダイアログにデータが表示されず、ページのスタイルやレイアウトの設定が困難になります。
 
-![Xxxxxx xxxxxx XX.](images/displaying-data-in-the-designer-01.png)
+![デザイン性の乏しい UI。](images/displaying-data-in-the-designer-01.png)
 
-Xxx xxxxx xxxxxx xx xxx xx xx xxxxxxx xxx xxxx **XxxxXxxxxxx** xxxxxxxxxx xxx xxx xxx **XxxxXxxxxxx** xx xxxx xxxx xxxxxx xxxxxxx. Xxxx xxx, xxxx xxxx xxxx xxxxx xx xx xxxxxx-xxxx xx xxxx xx xx xxx-xxxx. Xx xx xxxx, xxxxx xxxx xxxx XXXX xxxx. Xxxx, xx xxx **Xxxxxxxx Xxxxxxx** xxxxxx, xxxxx xxx xxxx xxxxxxxxxx xxxxxxx (xxxxxxx xxxx xxx xxxxx **\[Xxxx\]**) xx xxxxxx xx. Xx xxx **Xxxxxxxxxx** xxxxxx, xxxx xxx **XxxxXxxxxxx** xxxxxxxx (xxxxxx xxx Xxxxxx xxxxxxxx), xxx xxxx xxxxx **Xxx**. Xxxxx xxxx xxxx xxxxx xxxx xxxx xxx **Xxxxxx Xxxxxx** xxxxxx xxx, xxx xxxx xxxxx **XX**.
+この問題を解決するための最初の方法では、その **DataContext** の割り当てをコメント アウトして、代わりにページのマークアップで **DataContext** を設定します。 これにより、実行時だけでなく設計時にもライブ データが表示されるようになります。 これを行うには、まず、XAML ページを開きます。 次に、**[ドキュメント アウトライン]** ウィンドウでルート デザイン要素 (通常は **\[Page\]** というラベルが付いています) をクリックして選択します。 **[プロパティ]** ウィンドウで **[DataContext]** プロパティを見つけて ([共通] カテゴリにあります)、**[新規]** をクリックします。 **[オブジェクトの選択]** ダイアログ ボックスで目的のビュー モデルの種類をクリックし、**[OK]** をクリックします。
 
-![XX xxx xxxxxxx XxxxXxxxxxx.](images/displaying-data-in-the-designer-02.png)
+![DataContext を設定するための UI。](images/displaying-data-in-the-designer-02.png)
 
-Xxxx'x xxxx xxx xxxxxxxxx xxxxxx xxxxx xxxx.
+結果のマークアップは次のようになります。
 
 ``` xml
 <Page ... >
@@ -43,11 +43,11 @@ Xxxx'x xxxx xxx xxxxxxxxx xxxxxx xxxxx xxxx.
     </Page.DataContext>
 ```
 
-Xxx xxxx’x xxxx xxx xxxxxx xxxxxxx xxxxx xxxx xxx xxxx xxxx xxxxxxxx xxx xxxxxxx. Xxxxxx xxxx xxx **Xxxx** xxxxxx xx xxx **Xxxxxx Xxxx Xxxxxxx** xxxxxx xx xxx xxxxxxxxx, xxxxx xx xxx **XxxxXxxxxxx** xxxx xxx xxx xxxxxxxxxx xxxx xxx xxx xxxx xx.
+これでバインドが解決されるようになったため、デザイン サーフェイスが次のようになります。 **[データ バインディングの作成]** ダイアログの **[パス]** ボックスに値が設定されています。これらは、**DataContext** 型と、バインドできるプロパティに基づいています。
 
-![Xxxxxxxxxx XX.](images/displaying-data-in-the-designer-03.png)
+![デザイン性の高い UI。](images/displaying-data-in-the-designer-03.png)
 
-Xxx **Xxxxxx Xxxx Xxxxxxx** xxxxxx xxxx xxxxx x xxxx xx xxxx xxxx, xxx xxx xxxxxxxx xxxx xxx xxxxxxxxxx xx xx xxxxxxxxxxx xxxx xxxxxx. Xx xxx xxx'x xxxx xx xxxxx xxx xx xxxx xxxxx xxxxxxx xx xxxxxx-xxxx (xxx xx xxxxxxxxxxx, xxxxxx xxx xxxx xxxxxxxx, xxxxxxx xxxxxx, xxxx xxxx xx xxxxx) xxxx xxxx xxxxxxxxxxxxxx xxxx xxx xxxxx xx xxx xxxxxxx xxxx xxx xx xxxxxxx xx x xxxxxx xxxx (xxxx xx Xxxxxx Xxxxxx xx Xxxxx xxx Xxxxxx Xxxxxx) xxx xx xxxx xxxx xxxx xxxxxx xxxx xxx xxx xx xxxxxx-xxxx xxxx.
+**[データ バインディングの作成]** ダイアログに必要なのは基になる型だけですが、バインドではプロパティの値を初期化する必要があります。 パフォーマンス、データ転送費用、プライバシーなどの問題で設計時にクラウド サービスにアクセスしたくない場合は、アプリがデザイン ツール (Visual Studio、Blend for Visual Studio など) で実行されているかを初期化コードでチェックして、実行されている場合は設計時専用のサンプル データを読み込みます。
 
 ``` csharp
 if (Windows.ApplicationModel.DesignMode.DesignModeEnabled)
@@ -60,14 +60,14 @@ else
 }
 ```
 
-Xxx xxxxx xxx x xxxx xxxxx xxxxxxx xx xxx xxxx xx xxxx xxxxxxxxxx xx xxxx xxxxxxxxxxxxxx xxxx. X xxxx xxxxx xxxxxxx xx x xxxxx xxxx xxx xxx xxx xxxx xxx xxxxxxxxx. Xx xxx x xxxxxxxx xxxx xxxxxxx xxx xxxx xxxxx, xxx xxxx xxxx'x **XxxxXxxxxxx** xxxxx xx xxxx xxxxxxxx. Xxxxxxx xxxxxxx xxxx xxx xxxxxxx xx xxx xxxx xxxxx xxx xxx xx xxxxxxxxxx xxxxxxxxx, xxxxx xxx xxxxxxxxx x xxxxxx-xxxx xx x xxx-xxxx xxxx xxxxxxxx (xxxx xx xxxxx xxxxxxxxxx x xxxxxx xxxxxxxxx), xx xxxxxxxxxx.
+初期化コードにパラメーターを渡す必要がある場合は、ビュー モデル ロケーターを使うことができます。 ビュー モデル ロケーターとは、アプリ リソースに配置することができるクラスです。 このクラスにはビュー モデルを公開するプロパティがあるので、そのプロパティにページの **DataContext** をバインドします。 ロケーターやビュー モデルで使うことができるもう 1 つのパターンは依存関係挿入です。依存関係挿入では、設計時または実行時のデータ プロバイダーを必要に応じて作成できます (それぞれ共通のインターフェイスを実装します)。
 
-"Xxxxxx xxxx xxxx xxxxx", xxx xxxxxx-xxxx xxxxxxxxxx
+"クラスからのサンプル データ" と設計時属性
 ---------------------------------------------------------------------------------------
 
-Xx xxx xxxxxxxx xxxxxx xxxx xx xxx xxxxxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx xxx xxxx xxx xxxxx xxxx xxxxxx xx xxxxxx-xxxx xxxx xxxxxxx xxxxxxxxx xxx XXXX xxxxx xxxxxxxx xxx xxxxxx-xxxx xxxxxxxxxx. Xxx xxxx xxxxxx xx xxx **Xxxxxx Xxxxxx Xxxx xxxx Xxxxx** xxxxxxx xx Xxxxx xxx Xxxxxx Xxxxxx. Xxx xxx xxxx xxxx xxxxxxx xx xxx xx xxx xxxxxxx xx xxx xxx xx xxx **Xxxx** xxxxx.
+なんらかの理由で前のセクションのいずれの方法でも問題を解決できない場合でも、XAML ツールの機能と設計時属性を使ってさまざまな方法で設計時のデータを利用できます。 その 1 つが、Blend for Visual Studio の **[クラスからのサンプル データの作成]** 機能です。 このコマンドのボタンは **[データ]** パネルの上部にあります。
 
-Xxx xxx xxxx xx xx xx xx xxxxxxx x xxxxx xxx xxx xxxxxxx xx xxx. Xxx xxxxxxx xxxx xxxx xxx xxxxxxxxx xxxxxx xxx xxx. Xxxxx, xx xxxxxxxxx x XXXX xxxx xxxx xxxxxxxx xxxxxx xxxx xxxxxxxx xxx xxxxxxxxx xx xxxxxxxx xx xxxx xxxxxx xxxxx xxx xxx xx xxx xxxxxxx, xxxxxxxxxxx (xx xxxx, xxx xxxxxxx xxxxx xxxxxxx xxxx xxxx XXXX xx XXXX xxxxx). Xxxxxx, xx xxxxxxxxx xxx **Xxxx** xxxxx xxxx xxx xxxxxx xx xxxx xxxxxx xxxxx. Xxx xxx xxxx xxxx xxxxxxx xxxx xxx **Xxxx** xxxxx xxxx xxx xxxxxx xxxxxxx xx xxxxxxx xxxxxxx xxxxx. Xxxxxxxxx xx xxxx xxx xxxx xxx xxxxx xxx xxxx xx, xxx xxx xxx xxxxxxxx xx xxxxxxxx xxxxxxxx (xxxxx **{Xxxxxxx}**), xx xxxxxx xxx xxxxxxxx xxx xxxx xxxx xx xxx xxxx xxxx. Xx xxxxxx xxxx, xxx xxxxxxxxx xxxx xxxx x xxxxxx-xxxx xxxx xxxxxxx (**x:XxxxXxxxxxx**) xxx xxx (xx xxx xx xxx xxxxxxx xxx) xx xxx xxxxxx xxxx xx xxxx xxxx. Xxxx xxxxxx-xxxx xxxx xxxxxxx xxxx xxx **x:XxxxxxXxxx** xxxxxxxxx xx xxx xxx xxxxxx xxxx xxxx xxx XXXX xxxx xxxx xxx xxxxxxxxx (xxxxx, xx xxx xxx, xxx xxx xxxx xx xxxx xx xxxx xxxxxxx xxx xxxx xx xxxx xx xxxxxxxx xxx xxxxxx xxxx xxx xxxx).
+必要な作業は、このコマンドで使うクラスを指定することだけです。 クラスを指定すると、重要なことが 2 つ行われます。 まず、選んだクラスのインスタンスとそのすべてのメンバーを再帰的にハイドレートするために適したサンプル データを含む XAML ファイルが生成されます (このツールは、XAML ファイルでも JSON ファイルでも適切に機能します)。 次に、選んだクラスのスキーマが **[データ]** パネルに設定されます。 これにより、**[データ]** パネルからデザイン サーフェイスにメンバーをドラッグしてさまざまなタスクを実行できるようになります。 何をどこにドラッグするかによって、既にあるコントロールにバインドを追加することも (**{Binding}** を使用)、新しいコントロールの作成とバインドを同時に行うこともできます。 どちらの場合も、ページのレイアウト ルートに設計時のデータ コンテキスト (**d:DataContext**) も設定されます (まだ設定されていない場合)。 その設計時のデータ コンテキストが、**d:DesignData** 属性を使って、生成された XAML ファイルからサンプル データを取得します (なお、その XAML ファイルをプロジェクト内で見つけて、必要なサンプル データを含むように編集することもできます)。
 
 ``` xml
 <Page ...
@@ -81,12 +81,11 @@ Xxx xxx xxxx xx xx xx xx xxxxxxx x xxxxx xxx xxx xxxxxxx xx xxx. Xxx xxxxxxx xxx
 </Page>
 ```
 
-Xxx xxxxxxx xxxxx xxxxxxxxxxxx xxxx xxxx xxxxxxxxxx xxxx xxx **x:** xxxxxx xxx xxxxxxxxxxx xxxx xx xxxxxx-xxxx xxx xxx xxxxxxx xx xxx-xxxx. Xx xxx **x:XxxxXxxxxxx** xxxxxxxxx xxxx xxxxxxx xxx xxxxx xx xxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208713) xxxxxxxx xx xxxxxx-xxxx; xx xxx xx xxxxxx xx xxx-xxxx. Xxx xxx xxxx xxx xxxx **x:XxxxXxxxxxx** xxx **XxxxXxxxxxx** xx xxxxxx xx xxx xxxx. **x:XxxxXxxxxxx** xxxx xxxxxxxx xx xxxxxx-xxxx, xxx **XxxxXxxxxxx** xxxx xxxxxxxx xx xxx-xxxx. Xxxxx xxxx xxxxxxxx xxxxx xxxxx xx xxx xxxxxx-xxxx xxx xxx-xxxx xxxxxxxxxx.
+さまざまな xmlns 宣言がありますが、これらは、**d:** プレフィックスの付いた属性は設計時にのみ解釈され、実行時には無視されることを表しています。 したがって、**d:DataContext** 属性が [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) プロパティの値に影響するのは設計時のみで、実行時には影響しません。 必要であれば、**d:DataContext** と **DataContext** の両方をマークアップで設定することもできます。 その場合、設計時には **d:DataContext** が優先され、実行時には **DataContext** が優先されます。 この規則は、すべての設計時属性と実行時属性に適用されます。
 
-Xxx **x:XxxxXxxxxxx** xxxxxxxxx, xxx xxx xxxxx xxxxxx-xxxx xxxxxxxxxx, xxx xxxxxxxxxx xx xxx [Xxxxxx-Xxxx Xxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=272504) xxxxx, xxxxx xx xxxxx xxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
+**d:DataContext** 属性およびその他のすべての設計時属性について詳しくは、[設計時の属性に関するページ](http://go.microsoft.com/fwlink/p/?LinkId=272504)をご覧ください。このページは、ユニバーサル Windows プラットフォーム (UWP) アプリに対しても有効です。
 
-[
-            **XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209833) xxxxx'x xxxx x **XxxxXxxxxxx** xxxxxxxx, xxx xx xxxx xxxx x **Xxxxxx** xxxxxxxx. Xxxxxxxxxxxx, xxxxx'x x **x:Xxxxxx** xxxxxxxx xxxx xxx xxx xxx xx xxx xxxxxx-xxxx-xxxx xxxxxx xxxx xx x **XxxxxxxxxxXxxxXxxxxx**.
+[**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) には **DataContext** プロパティはありませんが、**Source** プロパティがあります。 そのため、**CollectionViewSource** に設計時専用のサンプル データを設定するために使うことができる **d:Source** プロパティがあります。
 
 ``` xml
     <Page.Resources>
@@ -100,7 +99,7 @@ Xxx **x:XxxxXxxxxxx** xxxxxxxxx, xxx xxx xxxxx xxxxxx-xxxx xxxxxxxxxx, xxx xxxxx
     ...
 ```
 
-Xxx xxxx xx xxxx, xxx xxxxx xxxx x xxxxx xxxxx `Recordings : ObservableCollection<Recording>`, xxx xxx xxxxx xxxx xxx xxxxxx xxxx XXXX xxxx xx xxxx xx xxxxxxxx xxxx x **Xxxxxxxxxx** xxxxxx (xxxx **Xxxxxxxxx** xxxxxxx xxxxxx xxxx), xx xxxxx xxxx.
+このコードが機能するためには、`Recordings : ObservableCollection<Recording>` というクラスが必要です。また、サンプル データの XAML ファイルを編集して、**Recordings** オブジェクト (**Recording** オブジェクトを含む) のみが含まれるようにする必要があります。次に例を示します。
 
 ``` xml
 <Quickstart:Recordings xmlns:Quickstart="using:Quickstart">
@@ -113,13 +112,13 @@ Xxx xxxx xx xxxx, xxx xxxxx xxxx x xxxxx xxxxx `Recordings : ObservableCollectio
 </Quickstart:Recordings>
 ```
 
-Xx xxx xxx x XXXX xxxxxx xxxx xxxx xxxxxxx xx XXXX, xxx xxxx xxx xxx **Xxxx** xxxxxxxx.
+XAML ではなく JSON のサンプル データ ファイルを使う場合は、**Type** プロパティを設定する必要があります。
 
 ``` xml
     d:Source="{d:DesignData /SampleData/RecordingsSampleData.json, Type=local:Recordings}"
 ```
 
-Xx xxx, xx'xx xxxx xxxxx **x:XxxxxxXxxx** xx xxxx xxxxxx-xxxx xxxxxx xxxx xxxx x XXXX xx XXXX xxxx. Xx xxxxxxxxxxx xx xxxx xx xxx **x:XxxxxxXxxxxxxx** xxxxxx xxxxxxxxx, xxxxx xxxxxxxxx xxxx xxx xxxxxx-xxxx xxxxxx xx xxxxx xx xxx xxxxx xxxxxxxxx xx xxx **Xxxx** xxxxxxxx. Xxxx'x xx xxxxxxx.
+これまでは、**d:DesignData** を使って設計時のサンプル データを XAML ファイルや JSON ファイルから読み込む方法を説明しました。 そのほかに、**d:DesignInstance** マークアップ拡張を使う方法もあります。このマークアップ拡張は、設計時ソースが **Type** プロパティによって指定されるクラスに基づくことを示します。 次に例を示します。
 
 ``` xml
     <CollectionViewSource x:Name="RecordingsCollection" Source="{Binding Recordings}"
@@ -146,4 +145,8 @@ The **New Sample Data** feature uses [**DataContext**](https://msdn.microsoft.co
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,317 +1,333 @@
 ---
-xx.xxxxxxx: YYYYXYYX-YYYX-YYXY-YYYY-YYXYYXXXXYYX
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xxxxx xxx xxxxxxxxx xxxxxx xxx xxxxx xxxxx xxx XxxxxXxxxxxx XXX, xxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxx xxxx xxx XxxxxXxxxxxx xxx xxxxxxxx xxxxxxx xx xxxxxx xxxxxxxxxxx.
-xxxxx: Xxxxxxx xxxxxx xxx xxxxx xxxx XxxxxXxxxxxx
+ms.assetid: 1361E82A-202F-40F7-9239-56F00DFCA54B
+description: この記事では、MediaCapture API を使用して写真とビデオをキャプチャする手順について説明します。これには、MediaCapture の初期化とシャットダウン、デバイスの向きに変化が生じた場合の処理などが含まれます。
+title: MediaCapture を使った写真とビデオのキャプチャ
 ---
 
-# Xxxxxxx xxxxxx xxx xxxxx xxxx XxxxxXxxxxxx
+# MediaCapture を使った写真とビデオのキャプチャ
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-Xxxx xxxxxxx xxxxxxxxx xxx xxxxx xxx xxxxxxxxx xxxxxx xxx xxxxx xxxxx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241124) XXX, xxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxx xxxx xxx **XxxxxXxxxxxx** xxx xxxxxxxx xxxxxxx xx xxxxxx xxxxxxxxxxx.
+この記事では、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) API を使用して写真とビデオをキャプチャする手順について説明します。これには、**MediaCapture** の初期化とシャットダウン、デバイスの向きに変化が生じた場合の処理などが含まれます。
 
-**XxxxxXxxxxxx** xx xxxxxxxx xx xxxxxxx xxxx xxxx xxxxxxx xxx-xxxxx xxxxxxx xx xxx xxxxx xxxxxxx xxxxxxx xxx xxxx xxxxxxxxx xxxxxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxx xxxxxxxxxxxx. Xxxxx **XxxxxXxxxxxx** xxxx xxxxxxxx xxx xx xxxxxxx xxxx xxx xxxxxxx XX. Xx xxxx xxx xxxx xxxxx xx xxxxxxx x xxxxx xx xxxxx xxx xx xxxxxxxxxxx xxxx xxxxxxxx xxxxxxx xxxxxxxxxx, xxx [**XxxxxxXxxxxxxXX**](https://msdn.microsoft.com/library/windows/apps/br241030) xxxxx xx xxxx xx xxxxxxx x xxxxx xx xxxxx xxxx xxxx x xxx xxxxx xx xxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxx xxxxxx xxx xxxxx xxxx XxxxxxXxxxxxxXX](capture-photos-and-video-with-cameracaptureui.md).
+**MediaCapture** は、メディア キャプチャ プロセスに対する低レベルの制御を必要とするアプリや、高度なキャプチャ機能を要するシナリオを実装するアプリのサポートを目的としています。 **MediaCapture** を使用するには、独自のキャプチャ UI を用意する必要があります。 アプリで写真またはビデオをキャプチャできれば良く、高度なキャプチャ技術を必要としない場合は、[**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) を使用すると、わずか数行のコードで写真やビデオを簡単にキャプチャできるようになります。 詳しくは、「[CameraCaptureUI を使った写真とビデオのキャプチャ](capture-photos-and-video-with-cameracaptureui.md)」をご覧ください。
 
-Xxx xxxx xx xxxx xxxxxxx xxx xxxxxxx xxxx xxx [XxxxxxXxxxxxxXxx xxxxxx](http://go.microsoft.com/fwlink/?LinkId=619479). Xxx xxx xxxxxxxx xxx xxxxxx xx xxx xxx xxxx xxxx xx xxxxxxx xx xx xxx xxx xxxxxx xx x xxxxxxxx xxxxx xxx xxxx xxx xxx.
+この記事のコードは、[CameraStarterKit サンプル](http://go.microsoft.com/fwlink/?LinkId=619479) を基にしています。 このサンプルをダウンロードし、該当するコンテキストで使用されているコードを確認することも、サンプルを独自のアプリの開始点として使用することもできます。
 
-## Xxxxxxxxx xxxx xxxxxxx
+## プロジェクトを構成する
 
-### Xxx xxxxxxxxxx xxxxxxxxxxxx xx xxx xxx xxxxxxxx
+### アプリ マニフェストに機能宣言を追加する
 
-Xx xxxxx xxx xxxx xxx xx xxxxxx x xxxxxx'x xxxxxx, xxx xxxx xxxxxxx xxxx xxxx xxx xxxx xxx *xxxxxx* xxx *xxxxxxxxxx* xxxxxx xxxxxxxxxxxx. Xx xxx xxxx xx xxxx xxxxxxxx xxxxxx xxx xxxxxx xx xxx xxxxx'x Xxxxxxxx xx Xxxxxx xxxxxxx, xxx xxxx xxxx xxxxxxx xxx *xxxxxxxxXxxxxxx* xxx *xxxxxxXxxxxxx* xxxxxxxxxx.
+アプリからデバイスのカメラにアクセスするには、アプリでデバイス機能 (*webcam* と *microphone*) の使用を宣言する必要があります。 キャプチャした写真とビデオをユーザーの画像ライブラリまたはビデオ ライブラリに保存する場合は、*picturesLibrary* 機能と *videosLibrary* 機能も宣言する必要があります。
 
-**Xxx xxxxxxxxxxxx xx xxx xxx xxxxxxxx**
+**アプリ マニフェストに機能を追加する**
 
-1.  Xx Xxxxxxxxx Xxxxxx Xxxxxx, xx **Xxxxxxxx Xxxxxxxx**, xxxx xxx xxxxxxxx xxx xxx xxxxxxxxxxx xxxxxxxx xx xxxxxx-xxxxxxxx xxx **xxxxxxx.xxxxxxxxxxxx** xxxx.
-2.  Xxxxxx xxx **Xxxxxxxxxxxx** xxx.
-3.  Xxxxx xxx xxx xxx **Xxxxxx** xxx xxx xxx xxx **Xxxxxxxxxx**.
-4.  Xxx xxxxxx xx xxx Xxxxxxxx xxx Xxxxxx xxxxxxx xxxxx xxx xxxxx xxx **Xxxxxxxx Xxxxxxx** xxx xxx xxx xxx **Xxxxxx Xxxxxxx**.
+1.  Microsoft Visual Studio では、**ソリューション エクスプローラー**で **package.appxmanifest** 項目をダブルクリックし、アプリケーション マニフェストのデザイナーを開きます。
+2.  **[機能]** タブをクリックします。
+3.  **[Web カメラ]** のボックスと **[マイク]** のボックスをオンにします。
+4.  画像ライブラリとビデオ ライブラリにアクセスするには、**画像ライブラリ**のボックスと**ビデオ ライブラリ**のボックスをオンにします。
 
-### Xxx xxxxx xxxxxxxxxx xxx xxxxx xxxxxxx-xxxxxxx XXXx
+### メディア キャプチャ関連の API について using ディレクティブを追加する
 
-Xxx xxxxxxxxx xxxx xxxxxxx xxxxx xxx xxxxxxxxxx xxxx xxx xxxxxxxxxx xx xxx xxxxxx xxxx xx xxxx xxxxxxx xxx xxxxxxxxx xxxx xxxxxxxxxxxxx xxxx xxxxxxxxx xxxxxxxx.
+次のコードでは、この記事のサンプル コードで参照されている名前空間を示し、各名前空間の機能を説明しています。
 
-[!xxxx-xx[Xxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUsing)]
+[!code-cs[Using](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUsing)]
 
-## Xxxxxxxxxx xxx XxxxxXxxxxxx xxxxxx
+## MediaCapture オブジェクトを初期化する
 
-Xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241124) xxxxx xx xxx [**Xxxxxxx.Xxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226738) xxxxxxxxx xx xxx xxxxxxxxxxx xxxxxxxxx xxx xxx xxxxx xxxxxxx xxxxxxxxxx. Xxxx xxxxxxxxx xxxxxxx x xxxxxxxx xx xxxx xxxx xxxxxx xx x xxxxxx xxxx. Xxxx xxx xxxxx xx xxxxx xxx xxxxxxx xxxxx xx xxx **XxxxxXxxxxxx**, xx xxx xxxxxx xxxxxxx xxxxxxx xxxxxxxxx xxx xxx xxxxxxxxxxxxxx, xxxxxxxxxx, xxx xxxxxxxxx xxxxx xx xxx xxxxxx.
+[
+            **Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) 名前空間の [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) クラスは、すべてのメディア キャプチャ操作で使用される基本的なインターフェイスです。 アプリでは一般的に、単一ページでの使用を対象としてこの型の変数を宣言します。 アプリでは、**MediaCapture** の現在の状態を追跡する必要があるため、このオブジェクトの初期化状態、プレビュー状態、録画状態用にブール変数を宣言します。
 
-[!xxxx-xx[XxxxxXxxxxxxXxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMediaCaptureVariables)]
+[!code-cs[MediaCaptureVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMediaCaptureVariables)]
 
-Xx xxxx xxxxxx xxx xxxxxxx xxxxx xxxxxxxxx, xxxxxx xxxxxx xxxxxxxxx xx xxxxx xxxxxxx xxx xxxxxx xx xxxxxxxx xxx xxxxxxx xxx xxx xx xxxxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxx. Xxxx xxx xxxxxx xxxxxx xxx xxxxxxx xxxxxx xxxx xxx xxxxx xxx xxxxx xxxx xx xxxxxxxxx xxx xxxx xxxxxxx xxxx xx x xxxx xxxxxxx xxxx xxxxxxxxxx.
+プレビュー ビデオを正しい向きで表示するには、外付けカメラかどうか、アプリでプレビュー ストリームを左右反転処理中かどうかを追跡するメンバー変数を作成します。 ビデオ フィードがユーザーをキャプチャしていると判断した場合は、ユーザーから見て自然に感じられるように、アプリでプレビュー ストリームを左右反転処理する必要があります。
 
-[!xxxx-xx[XxxxxxxXxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewVariables)]
+[!code-cs[PreviewVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewVariables)]
 
-Xxx xxxxxxxxx xxxxxxx xxxxxx xxxxxxxxxxx xxx xxxxx xxxxxxx xxxxxx. Xxxxx, xxx xxxx xxxxxxxx xxx x xxxxx xxxxxxx xxxxxx xxxx xxx xx xxxx xxx xxxxx xxxxxxx. Xxxx xxxxx, xxx **XxxxxXxxxxxx** xxxxxx xx xxxxxxxxxxx xxx xxxxxxxx xxx xxx xxxxxx xxx xxxxxxxxxx. Xxxx x [**XxxxxXxxxxxxXxxxxxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh802710) xxxxxx xx xxxxxxx xxxxx xxx XX xx xxx xxxxx xxxxxxx xxxxxx. Xxx **XxxxxXxxxxxx** xx xxxx xxxxxxxxxxx xxxx x xxxx xx [**XxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226598).
+次の例のメソッドでは、メディア キャプチャ オブジェクトを初期化しています。 最初に、メディア キャプチャに使用できるビデオ キャプチャ デバイスを検索します。 見つかったら、**MediaCapture** オブジェクトを初期化し、イベントのハンドラーを登録します。 次に、ビデオ キャプチャ デバイスの ID を使用して [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/desktop/hh802710) オブジェクトを作成します。 さらに、[**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) を呼び出すことで、**MediaCapture** を初期化します。
 
-[!xxxx-xx[XxxxxxxxxxXxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitializeCameraAsync)]
+[!code-cs[InitializeCameraAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitializeCameraAsync)]
 
--   Xxx [**XxxxxxXxxxxxxxxxx.XxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br225432) xxxxxx xxx xx xxxx xx xxxx xxx xxxxxxx xx x xxxxxxxxx xxxx. Xx xxxx xxxxxxx, xxx **XxxxxxXxxxx.XxxxxXxxxxxx** xxxxxxxxxxx xxxxx xx xxxxxx xx xx xxxxxxxx xxxx xxxx xxxxx xxxxxxx xxxxxxx xxxxxx xx xxxxxxxx. Xxxx xxxx x xxxxx xxxxxxx xxxxxx xx xxxx xxx xxxxxxxxx xxxx xxxxxx xxx xxxxxx.
+-   指定された種類のすべてのデバイスを検索するには、[**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) メソッドを使用できます。 この例では、ビデオ キャプチャ デバイスのみを返すことを示すために、**DeviceClass.VideoCapture** 列挙値が渡されています。 ビデオ キャプチャ デバイスは、写真とビデオの両方のキャプチャに使用されます。
 
--   **XxxxXxxXxxxx** xxxxxxx x [**XxxxxxXxxxxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225395) xxxxxx xxxx xxxxxxxx x [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225393) xxxxxx xxx xxxx xxxxx xxxxxx xx xxx xxxxxxxxx xxxx. Xxx **XxxxxXxXxxxxxx** xxxxxxxxx xxxxxx xxxx xxx **Xxxxxx.Xxxx** xxxxxxxxx xxxxxxxx xx xxxx xxxxxx xxx xxxxxxxxx xx xxxx xxxx x xxxx xxxxx xx xxxxxxxxx xxxxxxxxxx. Xxx xxxxx xxxx xxxxxxxx xx xxxxxx xxx xxxxx **XxxxxxXxxxxxxxxxx** xx xxx xxxx xxxx xxx xx [**XxxxxxxxxXxxxxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br229906) xxxxx xx **Xxxxx.Xxxx**, xxxxxxxxxx xxxx xxx xxxxxx xx xx xxx xxxx xxxxx xx xxx xxxxxx'x xxxxxxxxx. Xx xxx xxxxxx xxxx xxx xxxx x xxxxxx xx xxx xxxx xxxxx, xxx xxxxx xxxxxxxxx xxxxxx xx xxxx.
+-   **FindAllAsync** は、[**DeviceInformationCollection**](https://msdn.microsoft.com/library/windows/apps/br225395) オブジェクトを返します。このオブジェクトには、要求された種類の各デバイスに対応する [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) オブジェクトが含まれます。 **System.Linq** 名前空間の **FirstOrDefault** 拡張メソッドは、指定された条件に基づいて一覧から項目を選択するための簡単な構文を提供します。 最初の呼び出しでは、[**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) の値が **Panel.Back** である (カメラがデバイス エンクロージャの背面にあることを示す) 最初の **DeviceInformation** を一覧から選択しようとしています。 デバイスの背面にカメラがない場合は、最初の利用可能なカメラが使用されます。
 
--   Xx xxx xx xxx xxxxxxx x xxxxxx XX xxxx xxx xxxxxxxxxx xxx [**XxxxxXxxxxxxXxxxxxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226573), xxx xxxxxx xxxx xxxxxx xxx xxxxx xxxxxx xx xxx xxxxxxxx xxxx xx xxxxxxx.
+-   [
+            **MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) の初期化時にデバイス ID を指定しなかった場合、デバイスの内部リストから最初のデバイスがシステムによって選択されます。
 
--   Xxx xxxx xx [**XxxxxXxxxxxx.XxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226598) xxxxxxxxxxx xxx xxxxxx xx xxx xxx xxxxxxxxx xxxxxxx xxxxxx. Xxxx xxxx xx xxxx xxxxxx x **xxx** xxxxx xxxxxxx xx xxxx xxxxx xx **XxxxxxxxxxxxXxxxxxXxxxxxxxx** xx xxx xxxx xxx xxxxxx xxx xxxxxxx xxx xxxxxx xx xxx xxxxxx. Xx xxx xxxx xxxxxxxx, xxx **\_xxXxxxxxxxxxx** xxxxxxxx xx xxx xx xxxx xx xxxx xxxxxxxxxx xxxxxx xxxxx xxx xxxxxxxxx xx xxx xxxxxxx xxxxxx xxx xxxx xxxxxxxxxxx.
+-   [
+            **MediaCapture.InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) を呼び出すと、指定されたキャプチャ デバイスを使用できるようにオブジェクトが初期化されます。 この呼び出しは、**try** ブロックの内部で行われ、呼び出し元アプリからカメラへのアクセスをユーザーが拒否した場合は、**UnauthorizedAccessException** がスローされます。 呼び出しに成功した場合は、**\_isInitialized** 変数が true に設定されます。これにより、キャプチャ デバイスが初期化されているかどうかを以降のメソッド呼び出しで判断できるようになります。
 
--   Xx xxx xxxxxxxxxxxxxx xx xxx xxxxxxx xxxxxx xx xxxxxxxxxx, xxxxxxxxx xxx xxx xx xxxxxxx xxxxxxx xxx xxxxxxx xxxxxx xx xxxxxxxx, xx xx xx xx xx xxx xxxxx xxxxx xx xxx xxxxxx. Xxxxx xxxxxx xxxx xx xxxx xx xxxxxx xxx xxxxxxx xxxxxxx xxxxxxxxx xxx xxx xxxx. Xxxxxxx, xxx XX xx xxxxxxx xx xxxxxxx xxxx xxxxxxx xx xxxxxxxxx xxx xxx xxxxxxx xxxxxx xxxx xxx xxxxxxx xxxxxx xx xxxxxxx. Xxx xx xxxxx xxxxx xxx xxxxxxxxx xx xxxxxx xxxxxxx xxxx xxxx xx xxxxxxxxx xxxxx xx xxxx xxxxxxx.
+-   キャプチャ デバイスの初期化に成功した場合は、キャプチャ デバイスが外付けかどうか、デバイスのフロント パネルにあるかどうかを反映して、各変数が設定されます。 これらの値は、キャプチャ プレビューがユーザーから見て正しい向きで表示されるように使用されます。 最後に、キャプチャが利用可能であり、プレビュー ストリームがキャプチャ デバイスから開始されたことを反映して、UI が更新されます。 これらのタスクはすべて、この記事で説明するヘルパー メソッドで実行されます。
 
-## Xxxxx xxx xxxxxxx xxxxxxx
+## キャプチャ プレビューを開始する
 
-Xxx xxx xxxx xx xx xxxx xx xxx xxxx xxxx xxx xxxxxxxxx, xxx xxxx xx xxxxxxx x xxxxxxx xx xxxx xxx xxxxx xxxxxxx xxxxxx xx xxxxxxxxx xxxxxx xx xxxx XX.
+キャプチャ結果がどうなるかをユーザーが確認できるようにするには、ビデオ キャプチャ デバイスによる現在のプレビューを UI に渡す必要があります。
 
-**Xxxxxxxxx** Xxx xxxx xxxxx xxx xxxxxxx xxxxxxx xx xxxxx xxx xxx xxxxxxx xxxxxx xx xxxxxx xxxx xxxxx, xxxx xxxxxxxx, xxx xxxx xxxxx xxxxxxx.
+**重要:** キャプチャ デバイスでオート フォーカス、自動露出、オート ホワイト バランスを有効にするには、キャプチャ プレビューを開始する必要があります。
 
-Xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209278) xxxxxxx xx xxxxxxxx xx xxxxxx xxxxxxx xxxxxxx. Xxx xxxxxxxxx xxxxx xxxxxxx XXXX xxxx xxxx xxxxxxx xxx xxxxxxx xxxxxxx.
+キャプチャ プレビューを有効にするには、[**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) コントロールを使います。 次の例では、キャプチャ要素を定義する XAML コードを示します。
 
-[!xxxx-xxx[XxxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetCaptureElement)]
+[!code-xml[CaptureElement](./code/BasicMediaCaptureWin10/cs/MainPage.xaml#SnippetCaptureElement)]
 
-Xxxxx xxxxxx xxxx xxx xxxxxx xxxx xxxx xx xxxxx xxxx xxx xxxxxxxxxx xxx xxxxx xxxxxxx xxxxxx xxx xxx xxxx xxx xxx xx xxxxxxxxxx. Xx xxxxxx xxxx, xxx xxxx xxxxxx x [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241816) xxxxxx. Xxxxxxx xxxx xxxxxxxx xxxx xxxx xxxxx xx xxxx xx xxxxxxxx xxxxxxxxxx xxx xxxxxxx xxxxxxx.
+ユーザーは、ビデオ キャプチャ画面のプレビュー中は、非アクティブな状態になっても画面がオフにならずオンのままであると考えます。 これを可能にするには、[**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) オブジェクトを作成する必要があります。 キャプチャ セッションの間ずっと保持されるように、ページ スコープでこの変数を宣言します。
 
-[!xxxx-xx[XxxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDisplayRequest)]
+[!code-cs[DisplayRequest](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDisplayRequest)]
 
-Xxx xxxxxxxxx xxxxxx xxxxxx xx xxx xxxxx xxxxxxx xxxxxxx. Xxxxx, xx xxxxxxxx xxxx xxx xxxxxxx xxxxxx xxxxxx xx xxxxxxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241818) xx xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241816). Xxxx, xxx xxxxxxx xx xxxxxxx xx xxxxxxx [**XxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226613).
+次のメソッドは、メディア キャプチャ プレビューを開始しています。 まず、[**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) の [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) を呼び出すことによって、画面がアクティブな状態で維持されるよう求めます。 次に、[**StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) を呼び出してプレビューを開始します。
 
-[!xxxx-xx[XxxxxXxxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
+[!code-cs[StartPreviewAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartPreviewAsync)]
 
--   Xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241818) xxxxxx xx xxxxxx xx xxx **XxxxxxxXxxxxxx** xxxxxx xx xxxxxxx xxxx xxx xxxxxx xxxxx xxx xxxxxx xx.
+-   **DisplayRequest** オブジェクトの [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) メソッドが呼び出され、画面をオンにしておくようにシステムに求めています。
 
--   Xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227419) xxxxxxxx xx xxx **XxxxxxxXxxxxxx** xx xxx xx xxx xxx'x **XxxxxXxxxxxx** xxxxxx xx xxxxxx xxx xxxxxx xx xxx xxxxxxx.
+-   プレビューのソースを定義するために、**CaptureElement** の [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) プロパティがアプリの **MediaCapture** オブジェクトに設定されています。
 
--   Xxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208716) xxxxxxxx xx xxxxxxxx xx xxx XXXX xxxxxxxxx xx xxxxxxx xx-xxxxxxxxxxx xxxx xxxxxxxxxx. Xxxxxxx xxx xxxx xxxxxxxxx xx xxx **XxxxxxxXxxxxxx** xx [**XxxxXxxxxxxxx.XxxxxXxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242397) xxxxxx xxx xxxxxxx xxxxx xx xx xxxxxxx xxxxxxxxxxxx. Xxxx xx xxxx xxxx xxx xxxxxxx xxxxxx xx xx xxx xxxxx xxxxx xx xxx xxxxxx xx xxxx xxx xxxxxxx xx xxx xxxxxxx xxxxxxxxx xxxx xxx xxxx'x xxxxxxxxxxx.
+-   双方向対応のユーザー インターフェイスをサポートするために、XAML フレームワークによって [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) プロパティが提供されています。 **CaptureElement** のテキストの方向を [**FlowDirection.RightToLeft**](https://msdn.microsoft.com/library/windows/apps/br242397) に設定すると、プレビュー ビデオが水平方向に反転されます。 この処理は、キャプチャ デバイスがデバイスのフロント パネルにある場合に、プレビューがユーザーの視点から適切な向きになるように使用します。
 
--   Xxx [**XxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226613) xxxxxx xxxxxx xxx xxxxxxx xx xxx xxxxxxx xxxxxx xxxxxx xxx **XxxxxxxXxxxxxx**. Xx xxx xxxxxxx xx xxxxxxx xxxxxxxxxxxx, xxx **\_xxXxxxxxxxxx** xxxxxxxx xx xxx xx xxxxx xxxxx xxxxx xx xxx xxx xx xxxx xxxx xxx xxx xx xxxxxxxxx xxxxxxxxxx, xxx xxx xxxxxx xxxxxx xxx xxxxxxx xxx xxxxxxx xxxxxxxx xx xxxxxx. Xxxx xxxxxx xx xxxxxxx xx xxx xxxx xxxxxxx.
+-   [
+            **StartPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226613) メソッドは、**CaptureElement** 内でプレビュー ストリームの表示を開始します。 プレビューが正常に開始されると、アプリが現在プレビュー中であることがアプリの他の部分にわかるように、**\_isPreviewing** 変数が設定され、プレビューの回転を設定するためのヘルパー メソッドが呼び出されます。 このメソッドについては、次のセクションで説明します。
 
-## Xxxxxx xxxxxx xxx xxxxxx xxxxxxxxxxx
+## 画面とデバイスの向きを検出する
 
-Xxxxx xxx xxxxxxx xxxxx xx x xxxxx xxxxxxx xxx xxxx, xxxx xxxxxxx xx x xxxxxx xxxxxx xxxx x xxxxx xx x xxxxxx, xxx xxxxxxxx xx xxx xxxxxxx xxxxxxxxxxx xx xxx xxxxxx. Xxxxx xxxxx xxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxx xxxxxx xxxx xxx xxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxxx xxxxxx xxx xxxxxx xx xxxx, xxxx xxxxxx xx xxx xxxx, xxxx xxx xxxxxxxxx xxxxxxxx.
+メディア キャプチャ アプリが電話やタブレットなどのモバイル デバイスで実行されている場合、デバイスの現在の向きがアプリの複数の分野に影響します。 このような分野としては、カメラからのプレビュー ストリームを正しい向きにする処理や、ユーザーから見て適切な向きになるように、キャプチャした画像やビデオを正しくエンコードする処理などがあります。
 
-Xxx xxxx "xxxxxxx xxxxxxxxxxx" xxxxxx xx xxx xxx xxx xxxxxx xxxxxxx xxx XXXX xxxx xx xxx xxxxxx xx xxxx xx xxxxxxx xxx xxx xxxx. "Xxxxxx xxxxxxxxxxx" xxxxxx xx xxx xxxxxxxxxxx xx xxx xxxxxx xx xxxxx xxxxx xxx, xxxxxxxxx, xxx xxxxxxxxxxx xx xxx xxxxxxxx xxxxxx xxxxxx xx xxxxx xxxxx. Xxxx xxxxx xx xxxxxxxxxxx x xxxxxxxx xx x xxxxx xxxxxxx xxx. Xx xxxxxx xxxxxxx xxxxxxxxxxx, xxxxxxx xxx xxxxxxxxxx x xxxx-xxxxxx xxxxxxxx xxx xxx [**XxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn264258) xxxxx. Xxxxxxx xxxxxxx xxxxxxxx xx xxxx [**XxxxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226142) xx xxxxx xxx xxxxxxx xxxxxxxxxxx xx xxx xxxxxxx. Xxxxxxx x [**XxxxxxXxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206400) xxxxxxxx xxx x [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206399) xxxxxxxx xx xxxxx xxxxxx xxxxxxxxxxx.
+"表示の向き" という用語は、ユーザーに対して正しい向きになるように、デバイス上でシステムが XAML ページをどのように回転するかを指します。 "デバイスの向き" は、物理空間におけるデバイスの向きを表しているため、物理空間におけるカメラ デバイスの向きを指します。 メディア キャプチャ アプリでは、どちらの種類の向きも使用します。 表示の向きを処理するには、[**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/dn264258) クラス用にページ スコープの変数を宣言し、初期化します。 ディスプレイの現在の向きを追跡するには、[**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/br226142) 型の変数をもう 1 つ宣言します。 デバイスの向きを追跡するには、[**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/br206400) 変数と [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/br206399) 変数を宣言します。
 
-[!xxxx-xx[XxxxxxxXxxxxxxxxxxXxxXxxxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDisplayInformationAndOrientation)]
+[!code-cs[DisplayInformationAndOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDisplayInformationAndOrientation)]
 
-Xxx xxxxxxxxx xxxxxx xxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxx xxx xxx [**XxxxxxxXxxxxxxxxxx.XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn264268) xxx [**XxxxxxXxxxxxxxxxxXxxxxx.XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206407) xxxxxx xxx xxxxxxxxxx xxx xxxxxxxx xxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxx. Xxxx xxxx xxx xxx xxxxxxx xxxx x [**XxxxxxXxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206400), xx xxx xxxxxx xxxxx xxxxxx xxxxxxxxxxx xxx xxxxxxx xx xxxxxxxxxx xx xxx xxx xxxxxxx xxxxxxxxxxx.
+次に示す各ヘルパー メソッドでは、[**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) イベントと [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407) イベントのイベント ハンドラーを登録または登録解除し、追跡用の変数を現在の向きで初期化しています。 [
+            **SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/br206400) がないデバイスもあるため、ハンドラーの登録や現在の向きの取得を行う前に、チェックが必要です。
 
-[!xxxx-xx[XxxxxxxxXxxxxxxxxxxXxxxxXxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterOrientationEventHandlers)]
+[!code-cs[RegisterOrientationEventHandlers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterOrientationEventHandlers)]
 
-[!xxxx-xx[XxxxxxxxxxXxxxxxxxxxxXxxxxXxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterOrientationEventHandlers)]
+[!code-cs[UnregisterOrientationEventHandlers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterOrientationEventHandlers)]
 
-Xx xxx xxxxx xxxxxxx xxx xxx **XxxxxxXxxxxxxxxxxXxxxxx.XxxxxxxxxxxXxxxxxx** xxxxx, xxxxxx xxx xxxxxx xxxxxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxx. Xxx xxxxxx xxx xxxxxx xxx xxxxxxxxxxx xx xxx xxxxxx xx xxxxxx xx xx xxxx.
+**SimpleOrientationSensor.OrientationChanged** イベントのイベント ハンドラーでは、デバイスの向きを示す変数を現在の向きで更新しています。 デバイスの面が上向きまたは下向きであれば、向きを更新しないようにします。
 
-[!xxxx-xx[XxxxxxXxxxxxxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSimpleOrientationChanged)]
+[!code-cs[SimpleOrientationChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSimpleOrientationChanged)]
 
-Xx xxx xxxxx xxxxxxx xxx xxx **XxxxxxxXxxxxxxxxxx.XxxxxxxxxxxXxxxxxx** xxxxx, xxxxxx xxx xxxxxxx xxxxxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxx. Xx xxx xxxxx xxxxxxx xx xxx xxxxxxx xxxxxx xx xxxxxxxxx xxxxx xxxxxxxxx, xxxxxx xxx xxxxxxxx xx xxx xxxxxxx xxxxx xxxxxx. Xxx **XxxXxxxxxxXxxxxxxxXxxxx** xxxxxx xxxxxx xx xxxxxxxxx xx xxx xxxxxxxxx xxxxxxx.
+**DisplayInformation.OrientationChanged** イベントのイベント ハンドラーでは、表示の向きの変数を現在の向きで更新しています。 キャプチャ デバイスのビデオ プレビューが表示中であれば、プレビュー ビデオ ストリームの回転状態を更新します。 **SetPreviewRotationAsync** ヘルパー メソッドについては、次のセクションで説明します。
 
-[!xxxx-xx[XxxxxxxXxxxxxxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDisplayOrientationChanged)]
+[!code-cs[DisplayOrientationChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDisplayOrientationChanged)]
 
-## Xxx xxx xxxxx xxxxxxx xxxxxxx xxxxxxxx
+## メディア キャプチャ プレビューの回転を設定する
 
-Xxxxx xxxxxx xxx XX xxxxxxxx xx xxxxxx xxxx xxx xxxxxxxxxxx xx xxxxx xxxxxx xxxxxx xxxxxxx, xx xxxx xxx xxxx xx xxx XX xx xxxxxxxxxx xxxxxxx xxx xxxxxxxx. Xxx xxx **XxxxxxxXxxxxxx** xxxxxxx, xxxxxxx, xxxxx xxxxxxxxx xx xxx xxxx xxx xxxxxxxxxxx xx xxx xxxxx xxxxxxx xx xxxxxx xxxx xxx xxxxxx xxxx. Xx xxxxx xx xxxxxxx xxx xxxxxxxx xxxx xxxxxxxxxx, xxx xxxxxx xxxxxx xxx xxxxxxx xxxxxx xx xxxxx xxx xxxxxxxxxxx xx xxx xxxxxx.
+ユーザーは、モバイル デバイスの向きが変わると UI コントロールが回転し、UI のテキストが垂直方向に読みやすく揃うと考えます。 ただし **CaptureElement** コントロールについては、デバイスが回転しても、ビデオ プレビューの向きが回転してほしいとは考えないのが普通です。 期待どおりのユーザー エクスペリエンスを提供するには、デバイスの向きに合わせて、プレビュー ストリームを回転する必要があります。
 
-Xxx xxxxxxx xxxxxx xxxxxxxxxxx xxxx xx xxxxxxxxx xx xxxxxxx. Xxx xxxxxxxxx xxxxxx xxxxxx xx xxxxxxxx xxx [**XxxxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226142) xxxxxxxxxxx xxxxxx xxxx xxxxxxx.
+プレビュー ストリームの向きは、角度で表す必要があります。 次に示すヘルパー メソッドは、[**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/br226142) 列挙値を角度に変換します。
 
-[!xxxx-xx[XxxxxxxXxxxxxxXxxxxxxxxxxXxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConvertDisplayOrientationToDegrees)]
+[!code-cs[ConvertDisplayOrientationToDegrees](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConvertDisplayOrientationToDegrees)]
 
-Xxx xxxx xxxxxx xxxxxx xxxxxxxx x [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206399) xxxxxxxxxxx xxxxx, xxxxx xx xxxx xx xxx [**XxxxxxXxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206400) xx xxxxxxx xxx xxxxxxxx xx xxx xxxxxx, xxxx xxxxxxx.
+このヘルパー メソッドは、デバイスの回転を表すために [**SimpleOrientationSensor**](https://msdn.microsoft.com/library/windows/apps/br206400) によって使用される [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/br206399) 列挙値を角度に変換します。
 
-[!xxxx-xx[XxxxxxxXxxxxxXxxxxxxxxxxXxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConvertDeviceOrientationToDegrees)]
+[!code-cs[ConvertDeviceOrientationToDegrees](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConvertDeviceOrientationToDegrees)]
 
-Xx x xxx-xxxxx, xxx xxxxxxxx xx x xxxxxx xx xxxxxxxx xxxxxxxxx xx xxx Xxxxxxxxx Xxxxx Xxxxxxxxxx xxxxxxxxx. Xxx xxxxxxxx xx xxxxxxxxx xxxxx xxx [XX\_XX\_XXXXX\_XXXXXXXX](https://msdn.microsoft.com/library/windows/desktop/hh162880) xxxxxxxxx. Xxxxx xxxx xx x Xxxxxxx Xxxxxxx xxx, xxx xxxxxxxx xx xxxxxxxxx xxxxx xxx XXXX xxx xxx xxxxxxxxx, xxxxxx xxxx xxx xxxxxxxxx xxxx. Xxxxxx xxx xxxxxxxxx XXXX xx xxxxxxxx xxx xxxxx xxxxxxxx xxxxxxxxx.
+低レベルでは、ストリームの回転を実際に行っているのは Microsoft メディア ファンデーション フレームワークです。 回転は、[MF\_MT\_VIDEO\_ROTATION](https://msdn.microsoft.com/library/windows/desktop/hh162880) 属性を使用して指定されます。 これは、Windows ランタイム アプリであるため、回転は属性名ではなく、属性の GUID を使用して指定されます。 ビデオの回転属性を識別するために、次の GUID を定義します。
 
-[!xxxx-xx[XxxxxxxxXxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRotationKey)]
+[!code-cs[RotationKey](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRotationKey)]
 
-Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxxxxx xx xxx xxxxxxx xxxxxx. Xxx [**XxxXxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211995) xxxxxx xx xxx xxxxx xxxxxxx'x [**XxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226825) xxxxxxx x xxxxxxxx xxx xxxx xx xx xxx/xxxxx xxxxx. [
-            **XxxxxXxxxxxXxxx.XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226640) xx xxxxxxxxx xx xxxxxxxx xxxx xx xxxx xxx xxxxxxxxxx xxx xxx xxxxx xxxxxxx xxxxxx, xx xxxxxxx xx xxx xxxxx xxxxxxxxx xxxxxx xx xxx xxxxx xxxxxx. Xxx xxxxxxxx xxx xx x xxxxxxx xxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxx xxxxxxxxxx, xxx xxx xxxx xxxx xxx xxxxx xxxxxxxx XXXX xxxxxxx xxxxx xx xxxxx xx xxx xxxxxxxx xxx xxx xxx xxxxxxx xxxxxxxxxxx xx xxx xxxxx xxxxxx, xx xxxxxxx, xx xxxxxxxxx xx xxx xxxxx. [
-            **XxxXxxxxxxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297781) xxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxx xxx xxx xxxxxx. Xxxx xxxxx, **XxxxxXxxxxxXxxx.XxxxxXxxxxxx** xx xxxxxxxxx xx xxxxxxxx xxxx xxx xxxxxxxxx xxxxx xxx xxx xxx xxx xxxxx xxxxxxx xxxxxx.
+次に示すメソッドは、プレビュー ストリームの回転を設定します。 メディア キャプチャの [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) の [**GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) メソッドは、キー/値のペアから成るプロパティ セットを返します。 [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) を指定して、ビデオ録音ストリームやオーディオ ストリームではなく、ビデオ プレビュー ストリームのプロパティが必要であることを示します。 プロパティ セットは、ストリームのプロパティを設定するための汎用目的のインターフェイスですが、このタスクでは、上で定義したビデオ回転の GUID をプロパティ キーとして追加し、ビデオ ストリームの必要な向き (角度) を値として指定します。 [**SetEncodingPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/dn297781) は、エンコード プロパティを新しい値で更新します。 設定しているプロパティがビデオ プレビュー ストリーム用であることを示す **MediaStreamType.VideoPreview** が指定されています。
 
-[!xxxx-xx[XxxXxxxxxxXxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetPreviewRotation)]
+[!code-cs[SetPreviewRotation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetPreviewRotation)]
 
--   Xxx xxxxxxx xxxx xxxxxxxx xxxxxxx, xxx xxxx xxxx xxx xxxxxx xxx xxx xxxxxx xxxxxx xx xx xxxxxxx xxxx xxx xxxxxx xxxxxxx.
+-   外付けカメラを搭載したデバイスの場合、ユーザーは、デバイスが回転してもカメラ ストリームが回転するとは考えていません。
 
--   Xx xxx xxxxxxx xx xxxxx xxxxxxxx xxx x xxxxxx xx xxx xxxxx xxxxx, xxx xxxxxxxx xxxxxxxxx xxxx xx xxxxxxxx xx xxxxx xxx xxxxxxxx xx xxx xxxxxx.
+-   フロント パネルのカメラ用にプレビューを左右反転する場合、デバイスの回転に一致するように回転方向を反転させる必要があります。
 
--   Xxxx xxxxxxx, xxxxxxxxx xxxxxx, xxxxxxx xxxxxxx [**XxxxxxxXxxxxxxxxxx.XxxxXxxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn264259) xx xx xxxxxxxxxxx xxxxx xxxx xx [**XxxxxxxXxxxxxxxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226142) xx xxxxx xxx xxxxxxx xx xxxxxx xxxx xxx xxxxxx. Xxx xxxxxx xxx xxxx xxxxx xxxxxxx xx xxxxxxxx x xxxx xxxxxxxxxx xx xxxxxxx xxxx xxxxxxx xx, xxx xxx xxxxxx xxxxx xxxxxxxxx xxx xxxxx xxxxxxx xx xxxx xxx xx xxxxxxx xxxxxxx xxxx xxx'x xxxxxxx xxxx-xxxxxxxx xxxxxxxxxxx.
+-   電話など一部のデバイスでは、[**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259) を向きの値 ([**DisplayOrientations.Landscape**](https://msdn.microsoft.com/library/windows/apps/br226142) など) に設定し、ディスプレイをデバイスと共に回転させることができます。 サポートされているデバイスでは快適なエクスペリエンスを提供するため、この値を設定する必要がありますが、自動回転の基本設定がサポートされていないデバイスをサポートするアプリでは、上に示したパターンの実装が必要になります。
 
--   Xx xxxxxxxx xxxxxxxx, xxx [**XxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226611) xxxxxx xxx xxx xxxx xxx xx xxxxxx xxx xxxxxxx xxxxxx. Xxxx xxxxxx xx xxxxx xxxxxxx xx xxx XXX xxxxxxx xx xxxxxxx xxxxxxxx xxxx, xxx xxxx xxxxxx xxxxxxxxxxx xxx xxxxxx xxx xx xxxx xxx xxx xxxx.
+-   以前のリリースでは、プレビュー ストリームを回転させるための唯一の方法は [**SetPreviewRotation**](https://msdn.microsoft.com/library/windows/apps/br226611) メソッドでした。 このメソッドは、既存のアプリをサポートするために API サーフェスに存在していますが、このメソッドは非効率的であるため、新しいアプリでは使用しないでください。
 
-## Xxxxxxx x xxxxx
+## 写真をキャプチャする
 
-Xxx xxxxxxxxx xxxxxx xxxxxxxx x xxxxx xxxxx xxx [**XxxxxxxXxxxxXxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700840) xxxxxx xxx xxxxxxx xx xxx xxxxxxxxx xxxxxxxx xxxxxxxxxx xxx xx [**XxXxxxxxXxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241720) xxxxxx xxxx xxxx xxxxxxx xxx xxxxxx xx xxx xxxxxxx xxxxxxxxx. Xxx [**XxxxxXxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700993) xxxxx xxxxxxxx xxxxxx xxxxxxx, xxxx [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700994), xx xxxxxxxx xxxxxxxx xxxxxxxxxx xxx xxx xxxx xxxxx xxxxxxxxx xx xxxxx xxxxxxx.
+次に示すメソッドでは、写真をキャプチャします。[**CapturePhotoToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/hh700840) メソッドを使い、要求されたエンコード プロパティと、キャプチャ操作の結果を格納するための [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) オブジェクトを渡します。 [
+            **ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) クラスは、メディア キャプチャでサポートされているファイルの種類に応じてエンコード プロパティを生成するために、[**CreateJpeg**](https://msdn.microsoft.com/library/windows/apps/hh700994) などのヘルパー メソッドを提供します。
 
-[!xxxx-xx[XxxxXxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetTakePhotoAsync)]
+[!code-cs[TakePhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetTakePhotoAsync)]
 
-Xxxxxx xxxxxx xxx xxxxx xx x xxxx, xxx xxxx xx xxxxxxxxx xxx xxxxxxx xxxxxxxxxxx xx xxx xxxxx. Xxx **XxxxxXxxxxxx** xxxxxx xxxxx'x xxxx xxxxx xxx xxxxxx'x xxxxxxxxxxx xxx xx xx xxxxxxx xxx xxxxxxxx xxxxx xxxx xx xx xxx xxxxxxx xxxxxx xx xx xxx xxxxxxx xxxxxxxxxxx. Xxxx xxx xxxxxx xx x xxxxxxxx xxxx xxxxxxxxxx xxxx xxx xxxx xx xxxxxxx xxx xxxxxxxx xxxxx, xx xxx xxxxx xxxx xx xxxxxxxx xxxxxxxxxxx. Xxx xxxxxxxxx xxxxxx xxxxxxx xxxxxxxxx xxx xxxxxxx xxxxx xxxxxxxxxxx xxx xxxx xxxx xxx xxxx xxxx xxx xxxxxxx xxxxxxxxxxx.
+写真をファイルを保存する前に、写真の正しい向きを判断する必要があります。 **MediaCapture** オブジェクトはデバイスの向きを認識できないため、キャプチャ デバイスが既定の向きであると想定して、キャプチャした写真データをエンコードします。 この場合は、キャプチャした写真をユーザーが確認する際に表示される写真の向きが必ずしも正しくないため、結果として否定的なユーザー エクスペリエンスにつながります。 次に示すヘルパー メソッドは写真の向きを正しく判断し、正しい向きでファイルを保存します。
 
-Xxx **XxxXxxxxxXxxxxxxxxxx** xxxxxx xxxxxx xxxxxx xxxx xxx xxxxxxx xxxxxx xxxxxxxxxxx xxx xxxx xxxxxxx xxxx xxxxx xxxxxxxxx xx xxx xxxxxx xxxxxxxxxxx xx xxx xxxxxx xxx xxx xxxxxxxx xx xxx xxxxxx xx xxx xxxxxx. Xx xxx xxxxxx xx xxxxxxx xx xxx xxxxx xxxxx xx xxx xxxxxx, xx xxxxxxxxx xx xxxx xxxxxxx xx xxx **\_xxxxxxxxxXxxxxxx** xxxxxxxx, xxxx xxx xxxxxx xxxxxxxxxxx xxxxxx xx xxxxxxxx.
+**GetCameraOrientation** ヘルパー メソッドは現在のデバイスの向きから開始し、デバイスのネイティブの向きとデバイスのカメラの位置によって、値を回転させます。 この例の **\_mirroringPreview** 変数で示されているように、カメラがデバイスのフロント パネルに取り付けられている場合は、カメラの向きが反転されます。
 
-[!xxxx-xx[XxxXxxxxxXxxxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetCameraOrientation)]
+[!code-cs[GetCameraOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetCameraOrientation)]
 
-Xxx xxxxxxxxx xxxxxx xxxxxx xxxxxx xxxxxxxx xxxxxx xxxx xxx [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206399) xxxxxxxxxxx xxxxxx xxxx xx xxx xxxxxxxxxxx xxxxxx xx xxx xxxxxxxxxx [**XxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh965476) xxxxx xxxx xx xxx xxxxxx xxxxxxx xxxx xxxx xx xxxx xx xxxx xxx xxxx.
+次に示すヘルパー メソッドでは、方位センサーで使用される [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/br206399) 列挙値からの値を、ビットマップ エンコーダーで使用される等価の [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/hh965476) 値に、単純に変換します。この値は、ファイルを保存する際に使用されます。
 
-[!xxxx-xx[XxxxxxxXxxxxxxxxxxXxXxxxxXxxxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConvertOrientationToPhotoOrientation)]
+[!code-cs[ConvertOrientationToPhotoOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConvertOrientationToPhotoOrientation)]
 
-Xxxxxxx, xxx xxxxxxxx xxxxx xxx xx xxxxxxx xxx xxxxx. Xxxxxx x [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226176) xxxxxx xxxx xxx xxxxx xxxxxx xxxxxxxxxx xxx xxxxxxxx xxxxx xxxx. Xxxxxx x xxx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxx xxxx xx xxx xxxxxxx xxx xxxxxxx. Xxxxxx x [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226206) xxxxxx, xxxxxxx xx xxx xxxxxx xxxx xxx xxx xxxxxxx xxxxxxxxxx xxx xxxxx xxxx. Xxxxxx x xxx [**XxxxxxXxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh974338) xxx xxx x xxx xxxxxxxx. Xxx xxx xxx xxx xxxxxxxx, "Xxxxxx.Xxxxx.Xxxxxxxxxxx" xxxxxxxxx xxxx xxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxx xx xxx xxxxx. Xxx xxxxx xx xxx [**XxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh965476) xxxxx xxxx xxx xxxxxxxxxx xxxxxxxxxx. Xxxx [**XxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226252) xx xxxxxx xxx xxxxxxxxxx xx xxx xxxxxxx xxx xxxx xxxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/dn237883) xx xxxxx xxx xxxxx xx xxx xxxxxxx xxxx.
+最後に、キャプチャした写真をエンコードして保存できます。 キャプチャされた写真データが含まれる入力ストリームから、[**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) オブジェクトを作成します。 新しい [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) を作成し、読み取り/書き込み用に開きます。 出力ファイルと、画像データを格納するデコーダーを渡して、[**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) オブジェクトを作成します。 新しい [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) を作成して、新しいプロパティを追加します。 プロパティのキーである "System.Photo.Orientation" は、写真の向きを表すプロパティを指定します。 値は、あらかじめ計算済みの [**PhotoOrientation**](https://msdn.microsoft.com/library/windows/apps/hh965476) 値です。 [
+            **SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) を呼び出してエンコーダーのプロパティを更新し、[**FlushAsync**](https://msdn.microsoft.com/library/dn237883) を呼び出して写真をストレージ ファイルに書き込みます。
 
-[!xxxx-xx[XxxxxxxxXxxXxxxXxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetReencodeAndSavePhotoAsync)]
+[!code-cs[ReencodeAndSavePhotoAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetReencodeAndSavePhotoAsync)]
 
--   Xxxxxxx xxx "Xxxxxx.Xxxxx.Xxxxxxxxxxx" xxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxxxx xx xxx xxxxx xxxx xxx xxxxxxxx xx xxx xxxx. Xx xxxx xxx xxxxx xxx xxxxxx xxxxx xxxx xx xx xxxxxxx xxxxxxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxxxx xxxxxxxx xxxx xxxxx xxxxx, xxx [Xxxxx xxxxxxxx](image-metadata.md).
+-   "System.Photo.Orientation" ビットマップ プロパティを設定すると、写真の向きがファイルのメタデータにエンコードされます。 実際の画像データが別途エンコードされることはありません。 メタデータを画像ファイルに埋め込む方法について詳しくは、「[画像のメタデータ](image-metadata.md)」をご覧ください。
 
--   Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxx xxxx xxxxxx, xxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxx, xxx [Xxxxxxx](imaging.md).
+-   画像のエンコードやデコードど、画像の操作について詳しくは、「[イメージング](imaging.md)」をご覧ください。
 
-## Xxxxxxx x xxxxx
+## ビデオをキャプチャする
 
-Xx xxxxx xxxxxxxxx xxxxx, xxxxx xxxxxx x xxxxxxx xxxx xx xxxxx xxx xxxxx xxxx xx xxxxxxxx. Xxxx xxxxxx xxx [**XxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701026) xxxx xxx **XxxxxXxxxxxx** xxxx xxx xx xxxxxx xxx xxxxx xx xxx xxxx. Xxx **XxxxxXxxxxxxxXxxxxxx** xxxxx xxxxxxxx xxxxxxx, xxxx [**XxxxxxXxY**](https://msdn.microsoft.com/library/windows/apps/hh701078), xxxx xxxxxx xxxxxxxx xxxxxxxx xxx xxx xxxxxxxxx xxxxx xxxxxxx. Xxx xxx xxxxxx xxxxxxx xxxxxxxxx xxxxxxxxxx xx xxx xxx xxxxxxx xxxxxxxx xxx xxx xxxxx, xx xxxxxxx. Xxxxxx xxx xxxxx xxxxxxxx, xxx xxxxx xxxxxxxx xxxxxxxxxxx xx xxxxxxx xxxx xxx xxxxxx xx xxx **XxxxxXxxxxxx**. Xxx xxx xxxxxxxx xxxxxxxxxxx xx xxx xxxxxxxx xxxxxxx xx xxxxxx xx xx xxx [**XxxxxXxxxxxxxXxxxxxxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701254) xxxxxxxxxx. Xxx xxxxxxxxxx xxxxxxx XXXX xxx xxxxx xxxxxxxx xx xxxx xx xxx xxx xxx xxx xxxxxxxx, xx xxxxxxx, xx xxx xxxxx. Xxxxxxx, xxxx [**XxxxxXxxxxxx.XxxxxXxxxxxXxXxxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700863), xxxxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxx xxx xxxxxx xxxx xx xxxxx xxxxxxxxx.
+ビデオのキャプチャを開始するには、まず、ビデオを録画するためのストレージ ファイルを作成します。 次に、ビデオをファイルにエンコードするために **MediaCapture** で使用される [**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) を作成します。 **MediaEncodingProfile** クラスには、[**CreateMp4**](https://msdn.microsoft.com/library/windows/apps/hh701078) などのメソッドが用意されています。このメソッドでは、サポートされているビデオ形式に対応するエンコード プロファイルを作成します。 前に説明したヘルパー メソッドを使用して、ビデオの正しい回転 (角度) を取得します。 写真の場合とは異なり、ビデオの回転情報は、**MediaCapture** によってストリームにエンコードされます。 回転情報を [**VideoEncodingProperties.Properties**](https://msdn.microsoft.com/library/windows/apps/hh701254) コレクションに追加することにより、エンコード プロファイルに追加します。 ビデオの回転の定義済み GUID がキーとして使用され、回転 (角度) が値になります。 最後に、エンコードのプロパティと出力ファイルを指定して [**MediaCapture.StartRecordToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700863) を呼び出し、録画を開始します。
 
-[!xxxx-xx[XxxxxXxxxxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartRecordingAsync)]
+[!code-cs[StartRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartRecordingAsync)]
 
-Xx xxxx xxxxxxxxx, xxxxxx xxxx [**XxxxxXxxxxxx.XxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226623).
+録画を停止するには、[**MediaCapture.StopRecordAsync**](https://msdn.microsoft.com/library/windows/apps/br226623) を呼び出します。
 
-[!xxxx-xx[XxxxXxxxxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStopRecordingAsync)]
+[!code-cs[StopRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStopRecordingAsync)]
 
-X xxxxxxx xxx xxx [**XxxxxXxxxxxx.XxxxxxXxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh973312) xxxxx xxx xxxxxxxxxx xxxx xxx **XxxxxXxxxxxx** xxx xxxxxxxxxxx. Xx xxx xxxxxxx, xxxx xxx **XxxxXxxxxxxxxXxxxx** xxxxxx xx xxxx xxxxx xxxxxxxxx.
+[
+            **MediaCapture.RecordLimitationExceeded**](https://msdn.microsoft.com/library/windows/apps/hh973312) イベントのハンドラーは、**MediaCapture** を初期化するときに登録されています。 ビデオの録画を停止するには、このイベント ハンドラーで **StopRecordingAsync** メソッドを呼び出します。
 
-[!xxxx-xx[XxxxxxXxxxxxxxxxXxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceeded)]
+[!code-cs[RecordLimitationExceeded](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRecordLimitationExceeded)]
 
-## Xxxxx xxx xxxxxx xxxxx xxxxxxx
+## ビデオ キャプチャを一時停止して再開する
 
-Xxx xxxx xxxxxxxxx xxx xxx xxxx xx xxxxx xxx xxxxxx xx xxxxxxx xxxxx xxxxxxx xxxxxx xxxx xxxxxxxx xxx xxxxxxx xxx xxxxxxxx x xxx xxx. Xx xxxxx xxxxxxxxx xxxx [**XxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858102). Xx xxx xxxxxxx [**XxxxxXxxxxxxXxxxxXxxxxxxx.XxxxxxXxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926686), xxxx xx xxxxxxx xxxx xxx'x xxxxxxx xxxxxxxxxxxx xxxxx xxx xxxxx xxxxxxx, xxx xxx xxxx xx xxxxxx xx xxxxxxx xxxxxx xxxxx xxx xxxxx xx xxxxxx. Xxx xxxxxxxxxxx xx xxxxxxxxxxx xx x xxxxxx xxxxxxxx xxxxxxxxxxxx xxxxx xxx xxxxx xxxxxxx, xxx [Xxxxxx xxxxxxxx](camera-profiles.md).
+シナリオによっては、進行中のビデオ キャプチャを停止して新しいキャプチャを開始するのではなく、一時停止と再開が必要になることがあります。 録画を一時停止するには、[**PauseRecordAsync**](https://msdn.microsoft.com/library/windows/apps/dn858102) を呼び出します。 [
+            **MediaCapturePauseBehavior.RetainHardwareResources**](https://msdn.microsoft.com/library/windows/apps/dn926686) を指定した場合、ビデオと写真の同時キャプチャをサポートしていないデバイスでは、ビデオの一時停止中にアプリが写真をキャプチャすることはできません。 デバイスで写真とビデオの同時キャプチャがサポートされているかどうかを確認する方法については、「[カメラ プロファイル](camera-profiles.md)」をご覧ください。
 
-[!xxxx-xx[XxxxxXxxxxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPauseRecordingAsync)]
+[!code-cs[PauseRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPauseRecordingAsync)]
 
-Xx xxxxxx x xxxxxxxxxx xxxxxx xxxxx xxxxxxx, xxxx [**XxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858103).
+一時停止したビデオ キャプチャを再開するには、[**ResumeRecordAsync**](https://msdn.microsoft.com/library/windows/apps/dn858103) を呼び出します。
 
-[!xxxx-xx[XxxxxxXxxxxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResumeRecordingAsync)]
+[!code-cs[ResumeRecordingAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResumeRecordingAsync)]
 
-## Xxxxx xx xxxxxxx xxxxxxxxx
+## キャプチャ リソースをクリーンアップする
 
-Xx xx xxxx xxxxxxxxx xxxx xxx xxxx xxxx xxx xxxxxxx xxx xxxxx xxxxxxx xxxxxxxxx xxxxxxxx. Xxxxxxx xx xx xx xxx xxxxx xxxxxxxxxx xxxxxx xxxxxxxx xxxxx xxxx xxx xxxxxx, xxxxx xxxxxxx xx x xxxxxxxx xxxx xxxxxxxxxx xxx xxxx xxx. Xxx xxxxxxxxx xxxxxxxx xxxx xxxxxxx xxx xxxxxxxxx xxxxx xxx xxxxxx xxxx xx xxxx xxxx xxx xxxxxx.
+メディア キャプチャを適切にシャットダウンしてリソースを解放することは、非常に重要です。 これを怠ると、アプリを閉じた後にカメラで予期しない動作が生じ、その結果アプリのユーザー エクスペリエンスに悪影響を及ぼす可能性があります。 以下のセクションでは、カメラをシャットダウンするために必要な各種の手順について説明します。
 
-### Xxxx xxxx xxx xxxxxxx xxxxxxx
+### キャプチャ プレビューをシャットダウンする
 
-Xx xxxx xxxx xxx xxxxxxx xxxxxxx, xxxxx xxxx [**XxxxxXxxxxxx.XxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226622). Xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227419) xxxxxxxx xx xxxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xx xxxx. Xxxx, xxxx xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241819) xx xxxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241816) xxxxxxxx xx xxxxx xxx xxxxxx xx xxxx xxx xxx xxxxxxx xxxx xxxxxx.
+キャプチャ プレビューをシャットダウンするには、まず [**MediaCapture.StopPreviewAsync**](https://msdn.microsoft.com/library/windows/apps/br226622) を呼び出します。 [
+            **MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) の [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) プロパティを null にします。 次に、必要に応じてシステムがディスプレイをオフにできるように、[**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) 変数に対して [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) を呼び出します。
 
-[!xxxx-xx[XxxxXxxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStopPreviewAsync)]
+[!code-cs[StopPreviewAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStopPreviewAsync)]
 
--   Xxx xxx'x xxxxxx xxx XX xxxx x xxx-XX xxxxxx, xx xxx xxxxxxx xxx **XxxxxXxxxxxx.Xxxxxx** xxxxxxxx xxx xxxxxxx **XxxxxxxXxxxxxx** xxxx xx xxxx xxxxx xxx [**XxxxXxxxxxxxxx.XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh750317) xxxxxx xx xxxx xxx xxxxx xxxxxxx xx xxx XX xxxxxx.
+-   非 UI スレッドから UI にアクセスすることはできないため、**MediaElement.Source** プロパティの設定と **RequestRelease** の呼び出しには、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) メソッドを使用する必要があります。これにより、UI スレッドに対して呼び出しが行われます。
 
-### Xxxx xxxx xxx xxxxxxx xx xxx XxxxxXxxxxxx xxxxxx
+### MediaCapture オブジェクトをシャットダウンして破棄する
 
-Xxxxxx xxxxxxxxx xx xxx **XxxxxXxxxxxx** xxxxxx, xxxx xxx xxxxxxxxx xxxx xx xxxxxxx xxx xxxx xxx xxxxxxx xxxxxx xx xxxxxxx xxx xxxxxx xxxxxxx xxxxxxx xxxxxxxxxx. Xxxx xxxx xxx xxxx xxxx, xxxxxx xxx xxxxx xxxxxxxx xxxxxxxxxx xxxx xxx **XxxxxXxxxxxx**, xxxx xxxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn278858) xx xxxx xxx xxxxxxxxx xxxxxxxxxx xxxx xxx xxxxxx xxx xxx xxx **XxxxxXxxxxxx** xxxxxxxx xx xxxx
+**MediaCapture** オブジェクトを破棄する前に、定義済みのヘルパー メソッドを呼び出すことによって、進行中の録画をすべて停止し、プレビュー ストリームを停止する必要があります。 この処理が完了したら、**MediaCapture** に登録されているイベント ハンドラーをすべて削除します。次に、[**Dispose**](https://msdn.microsoft.com/library/windows/apps/dn278858) を呼び出して、このオブジェクトに関連するリソースをすべて解放し、**MediaCapture** 変数を null に設定します。
 
-[!xxxx-xx[XxxxxxxXxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanupCameraAsync)]
+[!code-cs[CleanupCameraAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanupCameraAsync)]
 
-Xxx xxxxxx xxxx xxxx xxxxxx xx xxxx xxxx xxx xxxxxxx xx xxx **XxxxxXxxxxxx** xxxxxx xxxx xxxxxx xxx xxxxxxx xxx xxx [**XxxxxXxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226593) xxxxx.
+[
+            **MediaCapture.Failed**](https://msdn.microsoft.com/library/windows/apps/br226593) イベントのハンドラーの内部で **MediaCapture** オブジェクトをシャットダウンし、破棄するには、このメソッドを呼び出す必要があります。
 
-[!xxxx-xx[XxxxxxxXxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCaptureFailed)]
+[!code-cs[CaptureFailed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCaptureFailed)]
 
-### Xxxxxx xxx xxxxxxxx xxx xxxx xxxxxxxxxx xxxxxx
+### アプリの有効期間とページ ナビゲーション イベントを処理する
 
-Xxx xxx xxxxxxxx xxxxxx xxxx xxxx xxx xx xxxxxxxxxxx xx xxxxxxxxxx xxx xxxxxxx xxxxxxxxx. Xxxx xx xxxxxxxxxx xxxxxxxxx xxxx xxx **Xxxxxxxxxxx.Xxxxxxxxxx** xxxxx, xxxxx xx xx xxxxxxxxx xxxx xxxx xxx xxxxxxxx xxxxxxxx xx xxxxx xxxxxxx xxxxxxxxx.
+アプリの有効期間イベントは、アプリでリソースの初期化と解放を行う機会を作ります。 **Application.Suspending** イベントでは特に、アプリでメディア キャプチャ リソースを正しく破棄することが不可欠であるため、この処理が重要になります。
 
-Xxx xxx xxxxxxxx xxxxxxxx xxx xxx xxxxxxxxxxx xxxxxxxx xxxxxx xx xxxx xxxx'x xxxxxxxxxxx.
+アプリケーションの有効期間イベントのハンドラーは、ページのコンストラクターで登録できます。
 
-[!xxxx-xx[XxxxxxxxXxxXxxxxxxxXxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterAppLifetimeEvents)]
+[!code-cs[RegisterAppLifetimeEvents](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterAppLifetimeEvents)]
 
-Xx xxx xxxxxxx xxx xxx **Xxxxxxxxxxx.Xxxxxxxxxx** xxxxx, xxx xxxxxx xxxxxxxxxx xxx xxxxxxxx xxx xxx xxxxxxx xxx xxxxxx xxxxxxxxxxx xxxxxx xxx xxxx xxxx xxx **XxxxxXxxxxxx** xxxxxx. Xxx [**XxxxxxXxxxxXxxxxxxxxXxxxxxxx.XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn278720) xxxxx xxxxxxxxxxxx xxxx xx xxxxxx xxx xxxxxxx xxxxxxxxxxx xxxxxxxxx-xxxxxxx xxxx xxxx xx xxxxxxxxx xxxxx xx xxxx xxxxxxx.
+**Application.Suspending** イベントのハンドラーでは、ディスプレイとデバイスの向きに関するイベントのハンドラーを登録解除し、**MediaCapture** オブジェクトをシャットダウンする必要があります。 ここで登録を解除した [**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) イベントは、他のアプリケーション有効期間関連タスクに必要になります。これについては、後で説明します。
 
-**Xxxxxxx** 
-Xxx xxxx xxxxxxx x xxxxxxxxxx xxxxxxxx xx xxxxxxx [**XxxxxxxxxxXxxxxxxxx.XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224690) xx xxx xxxxxxxxx xx xxxx xxxxxxxxxx xxxxx xxxxxxx. Xxxx xxxxxxxx xxxx xxx xxxxxx xxxx xxx xxx xx xxxxxx xxxx xxx xxxxxxxxx xx xxxxxxxx xxxxxx xxxxxxx xxxx xxxx xxx. Xxxx xx xxxxxxxxx xxxxxxx xxx **XxxxxXxxxxxx** xxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxx, xx xxx **Xxxxxxxxxxx.Xxxxxxxxxx** xxxxx xxxxxxx xxx xxxxxxxx xxxxxx xxx xxxxxx xx xxxxxxxx xxxx xxxx. Xxxxx xxxx xxxxxxx xxxxxxxxxxxx xxxxx xxxxxxxx, xxx xxxxxx xxxxxxx xxx xxxxxxxx xx xxxxxxx [**XxxxxxxxxxXxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224685).
+**注意** 
+中断イベント ハンドラーの先頭で [**SuspendingOperation.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) を呼び出すことにより、中断の遅延を要求する必要があります。 これにより、アプリを停止する前に、操作が完了したことを伝えるユーザーからの通知を待機するようシステムに要求されます。 **MediaCapture** のシャットダウン処理は非同期であり、カメラが正しくシャットダウンされる前に **Application.Suspending** イベント ハンドラーが完了する可能性があるため、この動作が必要になります。 非同期呼び出しの完了を待機した後、[**SuspendingDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) を呼び出すことによって遅延状態を解放する必要があります。
 
-[!xxxx-xx[Xxxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSuspending)]
+[!code-cs[Suspending](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSuspending)]
 
-Xx xxx xxxxxxx xxx xxx **Xxxxxxxxxxx.Xxxxxxxx** xxxxx, xxx xxxxxx xxxxxxxx xxxxxxxx xxx xxx xxxxxxx xxx xxxxxx xxxxxxxxxxx xxxxxx, xxxxxxxx xxx **XxxxxxXxxxxXxxxxxxxxXxxxxxxx.XxxxxxxxXxxxxxx** xxxxx, xxx xxxxxxxxxx xxx **XxxxxXxxxxxx** xxxxxx.
+**Application.Resuming** イベントのハンドラーでは、ディスプレイとデバイスの向きに関するイベントのハンドラーを登録し、**SystemMediaTransportControls.PropertyChanged** イベントを登録して、**MediaCapture** オブジェクトを初期化する必要があります。
 
-[!xxxx-xx[Xxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResuming)]
+[!code-cs[Resuming](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetResuming)]
 
-Xxx [**XxXxxxxxxxxXx**](https://msdn.microsoft.com/library/windows/apps/br227508) xxxxx xxxxx xx xxxxxxxxxxx xx xxxxxxxxx xxxxxxxx xxxxxxxx xxx xxx xxxxxxx xxx xxxxxx xxxxxxxxxxx xxxxxx xxx xxxxxxxxxx xxx **XxxxxXxxxxxx** xxxxxx.
+[
+            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) イベントは、ディスプレイとデバイスの向きに関するイベントのハンドラーを最初に登録し、**MediaCapture** オブジェクトを初期化する機会を作ります。
 
-[!xxxx-xx[XxXxxxxxxxxXx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatedTo)]
+[!code-cs[OnNavigatedTo](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatedTo)]
 
-Xx xxxx xxx xxx xxxxxxxx xxxxx, xxx xxxxxx xxxxx xx xxxx xxxxx xxxxxxx xxxxxxx xx xxx [**XxXxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227509) xxxxx xxxxxxx.
+アプリに複数のページがある場合は、[**OnNavigatingFrom**](https://msdn.microsoft.com/library/windows/apps/br227509) イベント ハンドラーでメディア キャプチャ オブジェクトをクリーンアップする必要があります。
 
-[!xxxx-xx[XxXxxxxxxxxxXxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatingFrom)]
+[!code-cs[OnNavigatingFrom](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnNavigatingFrom)]
 
-Xxx xxxx xxx xx xxxxxx xxxxxxxx xx xxxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxxxxxx xxxxxxx, xxx xxxx xxxxxxx xxxx xxxx xxx xx xxxxxxxxx xx xxxxxxxx. Xx xx xxxx, xxx xxxx xxxxxx xxx [**XxxxxxXxxxxXxxxxxxxxXxxxxxxx.XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn278720) xxxxx. Xxxxxxxxxx x xxxxxx xxxxxxxx xx xxxxx x xxxxxxxxx xx xxx [**XxxxxxXxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn278677) xxxxxx xxx xxxx xxx.
+同時に複数のウィンドウをサポートするデバイスでアプリを正しく動作させるには、アプリの最小化や復元が発生したときに応答する必要があります。 これには、[**SystemMediaTransportControls.PropertyChanged**](https://msdn.microsoft.com/library/windows/apps/dn278720) イベントを処理する必要があります。 アプリの [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677) オブジェクトへの参照を格納するためのメンバー変数を初期化します。
 
-[!xxxx-xx[XxxxxxxXxxxxxXxxxxXxxxxxxxxXxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSystemMediaTransportControls)]
+[!code-cs[DeclareSystemMediaTransportControls](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSystemMediaTransportControls)]
 
-Xxx xxxx xx xxxxxxxx xxx xxxxxxxxxx xxx **XxxxxxxxXxxxxxx** xxxxx xxxxxx xx xxxxx xx xxx xxx xxxx xxxxx xxxxxx xx xxxxx xx xxx xxxxxxxx xxxxx. Xx xxx xxxxxxx xxx xxx xxxxx, xxxxx xx xxx xx xxx xxxxxxxx xxxxxx xxxx xxxxxxxxx xxx xxxxx xxx xxx [**XxxxxxXxxxxXxxxxxxxxXxxxxxxxXxxxxxxx.XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn278721) xxxxxxxx. Xx xxxx xxx xxx xxxxxxxx xxxx xxxxxxx, xxxxx xxx xxxxx xx xxx xxxxxxxx. Xx xxx xxxxx xx [**XxxxxXxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700852), xxxx xxxx xxx xxx xxxxxxxxx xxx xxx xxxxxx xxxxx xx xxxx xxxxx xxxxxxx xxxxxxxxx xxxxxxxxxxxxx. Xxxxxxxxx, xxx xxxxx xxxxxxx xxxx xxxx xxx xxxxxx xxx xxxxxxxx xxx xxx xxxxxx xxxxxxxxxxxx xxx xxxxx xxxxxxx xxxxxxxxx. Xxx **XxxxxXxxxx** xxxxxxxx xxxx xx xxxxxxxx xx xxx XX xxxxxx, xx xxx xxxx xx xxxx xxxxxx xx xxxxxxx xx x xxxx xx [**Xxxxxxxxxx.XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh750317).
+**PropertyChanged** イベントの登録と登録解除を行うコードは、上の例で示されているように、アプリの有効期間イベントに追加する必要があります。 このイベントのハンドラーでは、イベントをトリガーしたプロパティの変化が [**SystemMediaTransportControlsProperty.SoundLevel**](https://msdn.microsoft.com/library/windows/apps/dn278721) プロパティで生じたものかどうかを確認します。 変更を生じたのがこのプロパティであれば、プロパティの値を確認します。 値が [**SoundLevel.Muted**](https://msdn.microsoft.com/library/windows/apps/hh700852) であれば、アプリが最小化されているため、メディア キャプチャ リソースを正しくクリーンアップする必要があります。 それ以外の場合は、アプリ ウィンドウの復元がイベントによって通知されるので、メディア キャプチャ リソースを初期化する必要があります。 **SoundLevel** プロパティには UI スレッドでアクセスする必要があるため、このメソッドのコードは [**Dispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) への呼び出しでラップされています。
 
-[!xxxx-xx[XxxxxxXxxxxXxxxxxxxXxxxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSystemMediaControlsPropertyChanged)]
+[!code-cs[SystemMediaControlsPropertyChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSystemMediaControlsPropertyChanged)]
 
-## Xxxxxxxxxx XX xxxxxxxxxxxxxx xxx xxxxx xxxxxxx
+## メディア キャプチャに関するその他の考慮事項
 
-### Xxx xxxx-xxxxxxxx xxxxxxxxxxx
+### 自動回転の基本設定
 
-Xx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx xx xxxxxxxx xxx xxxxxxx xxxxxx, xxxx xxxxxxx xxxxxxx xxxxxxx [**XxxxxxxXxxxxxxxxxx.XxxxXxxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn264259) xx xxxxxxx xxx xxxx, xxxxxxxxx xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209278) xxxx xxxxxxxx xxx xxxxxxx, xxxx xxxxxxxx xx xxx xxxxxx xx xxxxxxxx. Xxxx xxxxxxxx x xxxx xxxx xxxxxxxxxx xx xxxxxxx xxxx xxxxxxx xx. Xxx xxxx xxxxx xxxx xxxx xxx xxxxxxxx xx xxxx xxx xxxxx xxxxxxxxxx xxx xxxxxxx. Xxxx xxxx xxx xxxxxx xxxxx xxxxxxxxx xxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxx xxxx xxx'x xxxxxxx xxxx-xxxxxxxx xxxxxxxxxxx.
+プレビュー ストリームの回転に関する前のセクションで説明したように、一部のデバイスでは、[**DisplayInformation.AutoRotationPreferences**](https://msdn.microsoft.com/library/windows/apps/dn264259) を設定することによって、デバイスの回転に伴うページ (プレビューを表示する [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) を含む) の回転を回避できます。 この動作がサポートされているデバイスでは、このように設定すると優れたユーザー エクスペリエンスを確保できます。 この値は、アプリの起動時や、プレビュー表示の開始時に設定します。 自動回転の基本設定がサポートされていないデバイスについては、プレビューの回転処理を実装する必要があります。
 
-[!xxxx-xx[XxxXxxxXxxxxxxxXxxxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetAutoRotationPreferences)]
+[!code-cs[SetAutoRotationPreferences](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetAutoRotationPreferences)]
 
-### Xxxxxx XX xxxxxxx xxxxxxxxxxx
+### UI 要素の向きを処理する
 
-Xxxxx xxxxxxxxx xxxxxx xxx xxx XX xxxxxxxx xx x xxxxxx xxx, xxxx xx xxx xxxxxxx xxx xxxxxxxxxx xxxxx xx xxxxx xxxxxxx, xx xxxxxx xxxxx xxxx xxx xxxxx xxxxxxx. Xxx xxxxxxxxx xxxxxx xxxxxxxxxxx xxx xxx xx xxx xxxxxxxxxx xxxxxxx xxxxxxxxxxx xxxxxx xxxxxxx xx xxxxxxxx xxxxxx xxx xxxxxxx xx xxx xxxxxx XX. Xxx xxxxxx xxxx xxxx xxxxxx xxxx xxx [**XxxxxxxXxxxxxxxxxx.XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn264268) xxx [**XxxxxxXxxxxxxxxxxXxxxxx.XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206407) xxxxx xxxxxxxx xxx xxxx xxxx xxx xxxxx xxxxxxxx. Xxxx xxxxxxxxxxxxxx xx xxxx xxxxxxxxx xx xxxx xxx'x XX.
+ユーザーは通常、カメラ アプリの UI 要素 (写真やビデオのキャプチャを開始するボタンなど) が、ビデオ プレビューと共に回転すると考えます。 次のメソッドは、向きに関する定義済みのヘルパー メソッドを使用して、カメラ UI のボタンを正しい向きにする方法を示しています。 このメソッドは、アプリが初めて起動する際に、[**DisplayInformation.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) イベント ハンドラーと [**SimpleOrientationSensor.OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/br206407) イベント ハンドラーから呼び出す必要があります。 実装内容は、アプリの UI によって異なる場合があります。
 
-[!xxxx-xx[XxxxxxXxxxxxXxxxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateButtonOrientation)]
+[!code-cs[UpdateButtonOrientation](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateButtonOrientation)]
 
-Xxxx xxxx xxx xx xxxxxxxx xxxx xx xx xxx xxxxxxxx xx x xxxx xxxx xx xxxxxxxxx xx xxxxx xxxxxxx, xxx xxx xxxx-xxxxxxxx xxxxxxxxxx xx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br226142) xx xxxxx xxx XX xx xxxxxx xxxxxxxx.
+アプリをシャットダウンするときや、メディア キャプチャに関係のないページに移動するときは、UI が通常どおりに回転されるように、自動回転設定を [**None**](https://msdn.microsoft.com/library/windows/apps/br226142) に設定します。
 
-[!xxxx-xx[XxxxxxXxxxXxxxxxxxXxxxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRevertAutoRotationPreferences)]
+[!code-cs[RevertAutoRotationPreferences](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRevertAutoRotationPreferences)]
 
-### Xxxxxxx xxxxxxxxxxxx xxxxx xxx xxxxx xxxxxxx
+### 写真とビデオの同時キャプチャをサポートする
 
-Xxx [**Xxxxxxx.Xxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226738) XXX xxxxxx xxx xx xxxxxxx xxxxxx xxx xxxxxx xxxxxxxxxxxxxx xx xxxxxxx xxxx xxxxxxx xx. Xxx xxxxxxx, xxxx xxxxxxx xxxx xxx [**XxxxxxxxxxXxxxxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn278843) xxxxxxxx xx xxxxxxxxx xx xxxxxxxxxxxx xxxxx xxx xxxxx xxxxxxx xx xxxxxxxxx, xxx x xxxx xxxxxx xxx xxxxxxxxxxx xxx xx xx xxxx xx xx xxx xxxxxx xxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxx xxxxxxxx](camera-profiles.md).
+[
+            **Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) API を使用すると、写真とビデオを同時にキャプチャできます (デバイスで、この機能がサポートされている必要があります)。 簡潔にするため、この例では [**ConcurrentRecordAndPhotoSupported**](https://msdn.microsoft.com/library/windows/apps/dn278843) プロパティを使ってビデオと写真の同時キャプチャがサポートされているかどうかを調べますが、カメラ プロファイルを使ってこれを行う方が堅牢なため、推奨されます。 詳しくは、「[カメラ プロファイル](camera-profiles.md)」をご覧ください。
 
-Xxx xxxxxxxxx xxxxxx xxxxxx xxxxxxx xxx xxx'x xxxxxxxx xx xxxxx xxx xxxxxxx xxxxxxx xxxxx xx xxx xxx. Xxxx xxxx xxxxxx xxxxxxxx xxx xxxxxxx xxxxx xx xxxx xxx xxxxxxx, xxxx xx xxxx xxxxx xxxxxxx xx xxxxxxx xx xxxxxxx.
+次に示すヘルパー メソッドは、アプリの現在のキャプチャ状態に一致するように、アプリのコントロールを更新します。 このメソッドは、ビデオ キャプチャが開始または停止したときなど、アプリのキャプチャ状態が変化するたびに呼び出します。
 
-[!xxxx-xx[XxxxxxXxxxxxxXxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateCaptureControls)]
+[!code-cs[UpdateCaptureControls](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateCaptureControls)]
 
-### Xxxxxxx xxxxxx-xxxxxxxx XX xxxxxxxx
+### モバイル固有の UI 機能をサポートする
 
-Xxx xx xxx xxxx xxxxx xx xxxx xxxxxxx xxxx xxxx xx x Xxxxxxxxx Xxxxxxx xxx. Xxxx x xxx xxxxxxxxxx xxxxx xx xxxx, xxx xxx xxxx xxxxxxxxx xx xxxxxxx XX xxxxxxxx xxxx xxx xxxx xxxxxxx xx xxxxxx xxxxxxx. Xx xxx xxxxx xxxxxxxx, xxx xxxx xxx x xxxxxxxxx xx xxx Xxxxxxxxx Xxxxxx Xxxxxxxxx XXX xxx Xxxxxxxxx Xxx Xxxxxxxx xx xxxx xxxxxxx.
+この記事で示すコードはすべて、ユニバーサル Windows アプリで動作します。 わずか数行のコードを追加するだけで、モバイル デバイスだけに存在する特別な UI 機能を活用できます。 これらの機能を使用するには、ユニバーサル アプリ プラットフォーム用 Microsoft Mobile Extension SDK への参照をプロジェクトに追加する必要があります。
 
-**Xx xxx x xxxxxxxxx xx xxx xxxxxx xxxxxxxxx XXX xxx xxxxxxxx xxxxxx xxxxxx xxxxxxx**
+**ハードウェア カメラ ボタンのサポート用にモバイル拡張 SDK への参照を追加するには**
 
-1.  Xx **Xxxxxxxx Xxxxxxxx**, xxxxx-xxxxx **Xxxxxxxxxx** xxx xxxxxx **Xxx Xxxxxxxxx...**
+1.  **ソリューション エクスプローラー**で、**[参照設定]** を右クリックし、**[参照の追加]** を選択します。
 
-2.  Xxxxxx xxx **Xxxxxxx Xxxxxxxxx** xxxx xxx xxxxxx **Xxxxxxxxxx**.
+2.  **[Windows ユニバーサル]** ノードを展開し、**[拡張機能]** を選択します。
 
-3.  Xxxxx xxx xxxxxxxx xxxx xx **Xxxxxxxxx Xxxxxx Xxxxxxxxx XXX xxx Xxxxxxxxx Xxx Xxxxxxxx**.
+3.  **[Microsoft Mobile Extension SDK for Universal App Platform]** の横にあるチェック ボックスをオンにします。
 
-Xxxxxx xxxxxxx xxxx x [**XxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn633864) xxxxxxx xxxx xxxxxxxx xxx xxxx xxxx xxxxxx xxxxxxxxxxx xxxxx xxx xxxxxx. Xxxx xxxxxxx xxxxx xx xxxxx xx xxx xxxxxx xxxx xxx xxxxxxxxx xxxx xxx xxxxx xxxxxxx XX. Xxx xxx xxxx xxx xxxxxx xxx xx xxxxxxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn610339), xxx xxx xxxx xxxx xxxx xxxx xxxx xxxxxx x xxxxxxxxxxx xxxxx xxxxx xxx xxx xxx [**XxxXxxxxxxxxxx.XxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn949016) xxxxxx xx xxxxxxxxx xx xxx XXX xx xxxxxxxxx. Xxxx xxxxxx xxxx xxxx xxxxxx xxxx xx xxxxxx xxxxxxx xxxx xxxxxxx xxx xxxxxx xxx. Xxx xxxxxx xxxx xxx xxxxxx xxx xxxx xxxx xxx xxxxxxxx xx xxxx xxx xxxxx xxxxxxxxxx xxxx xxx xxxxxx.
+モバイル デバイスには、デバイスに関する状態情報をユーザーに通知する [**StatusBar**](https://msdn.microsoft.com/library/windows/apps/dn633864) コントロールがあります。 このコントロールが表示される領域は、画面上でメディア キャプチャ UI の表示に干渉する可能性があります。 [
+            **HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) を呼び出すことでステータス バーを非表示にできますが、呼び出しは、この API が利用可能かどうかを [**ApiInformation.IsTypePresent**](https://msdn.microsoft.com/library/windows/apps/dn949016) メソッドで確認する条件ブロック内で行う必要があります。 このメソッドは、ステータス バーをサポートするモバイル デバイスでのみ true を返します。 アプリの起動時や、またはカメラからプレビューを開始するときには、ステータス バーを非表示にする必要があります。
 
-[!xxxx-xx[XxxxXxxxxxXxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHideStatusBar)]
+[!code-cs[HideStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetHideStatusBar)]
 
-Xxxx xxxx xxx xx xxxxxxxx xxxx xx xxxx xxx xxxx xxxxxxxxx xxxx xxxx xxx xxxxx xxxxxxx xxxx xx xxxx xxx, xxx xxxx xxx xxxxxxx xxxxxxx xxxxx.
+アプリをシャットダウンするときや、ユーザーがアプリのメディア キャプチャ ページから移動するときは、コントロールを再び表示します。
 
-[!xxxx-xx[XxxxXxxxxxXxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
+[!code-cs[ShowStatusBar](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetShowStatusBar)]
 
-Xxxx xxxxxx xxxxxxx xxxx x xxxxxxxxx xxxxxxxx xxxxxx xxxxxx xxxx xxxx xxxxx xxxxxx xxxx xx xx-xxxxxx xxxxxxx. Xx xx xxxxxxxx xxxx xxx xxxxxxxx xxxxxx xxxxxx xx xxxxxxx, xxxxxxxx x xxxxxxx xxx xxx [**XxxxxxxxXxxxxxx.XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653805) xxxxx. Xxxxxxx xxxx XXX xx xxxxxxxxx xx xxxxxx xxxxxxx xxxx, xxx xxxx xxxxx xxx xxx **XxXxxxXxxxxxx** xx xxxx xxxx xxx XXX xx xxxxxxxxx xx xxx xxxxxxx xxxxxx xxxxxx xxxxxxxxxx xx xxxxxx xx.
+一部のモバイル デバイスには、専用のハードウェア カメラ ボタンが用意されていることがあります。この仕様は、ユーザーによっては画面上のコントロールより好まれます。 このハードウェア カメラ ボタンが押されたときに通知を受け取るには、[**HardwareButtons.CameraPressed**](https://msdn.microsoft.com/library/windows/apps/dn653805) イベントのハンドラーを登録します。 この API を利用できるのはモバイル デバイスのみであるため、この場合も **IsTypePresent** を使用して、この API が現在のデバイスでサポートされているかどうかをアクセス前に確認する必要があります。
 
-[!xxxx-xx[XxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhoneUsing)]
+[!code-cs[PhoneUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhoneUsing)]
 
-[!xxxx-xx[XxxxxxxxXxxxxxXxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterCameraButtonHandler)]
+[!code-cs[RegisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterCameraButtonHandler)]
 
-Xx xxx xxxxxxx xxx xxx **XxxxxxXxxxxxx** xxxxx, xxx xxx xxxxxxxx x xxxxx xxxxxxx.
+**CameraPressed** イベントのハンドラーで、写真のキャプチャを開始できます。
 
-[!xxxx-xx[XxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCameraPressed)]
+[!code-cs[CameraPressed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCameraPressed)]
 
-Xxxx xxxx xxx xx xxxxxxxx xxxx xx xxx xxxx xxxxx xxxx xxxx xxx xxxxx xxxxxxx xxxx xx xxxx xxx, xxxxxxxxxx xxx xxxxxxxx xxxxxx xxxxxxx.
+アプリをシャットダウンするときや、ユーザーがアプリのメディア キャプチャ ページから移動するときは、ハードウェア ボタンのハンドラーを登録解除します。
 
-[!xxxx-xx[XxxxxxxxxxXxxxxxXxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
+[!code-cs[UnregisterCameraButtonHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUnregisterCameraButtonHandler)]
 
-**Xxxx** Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx'xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**注:** この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxx xxxxxxxx](camera-profiles.md)
-* [Xxxx Xxxxxxx Xxxxx (XXX) xxxxx xxxxxxx](high-dynamic-range-hdr-photo-capture.md)
-* [Xxxxxxx xxxxxx xxxxxxxx xxx xxxxx xxx xxxxx xxxxxxx](capture-device-controls-for-photo-and-video-capture.md)
-* [Xxxxxxx xxxxxx xxxxxxxx xxx xxxxx xxxxxxx](capture-device-controls-for-video-capture.md)
-* [Xxxxxxx xxx xxxxx xxxxxxx](effects-for-video-capture.md)
-* [Xxxxx xxxxxxxx xxx xxxxx xxxxxxx](scene-analysis-for-media-capture.md)
-* [Xxxxxxxx xxxxx xxxxxxxx](variable-photo-sequence.md)
-* [Xxx x xxxxxxx xxxxx](get-a-preview-frame.md)
-* [XxxxxxXxxxxxxXxx xxxxxx](http://go.microsoft.com/fwlink/?LinkId=619479)
+* [カメラ プロファイル](camera-profiles.md)
+* [ハイ ダイナミック レンジ (HDR) 写真のキャプチャ](high-dynamic-range-hdr-photo-capture.md)
+* [写真とビデオのキャプチャのためのキャプチャ デバイス コントロール](capture-device-controls-for-photo-and-video-capture.md)
+* [ビデオ キャプチャのためのキャプチャ デバイス コントロール](capture-device-controls-for-video-capture.md)
+* [ビデオ キャプチャの効果](effects-for-video-capture.md)
+* [メディア キャプチャのシーン分析](scene-analysis-for-media-capture.md)
+* [可変の写真シーケンス](variable-photo-sequence.md)
+* [プレビュー フレームの取得](get-a-preview-frame.md)
+* [CameraStarterKit サンプル](http://go.microsoft.com/fwlink/?LinkId=619479)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

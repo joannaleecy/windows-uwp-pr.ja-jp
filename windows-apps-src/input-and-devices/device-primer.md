@@ -1,223 +1,198 @@
 ---
-Xxxxxxxxxxx: Xxxxxxx xx xxxx xxx xxxxxxx xxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxx xxx xxxxx xxx xxxx xxxx xxxxxxxxxx xxx xxxx xxxx xxxxxx.
-xxxxx: Xxxxxx xxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx
-xx.xxxxxxx: YYYYYYYX-XYYY-YYYX-YXYY-XXYXYYYYXXXY
-xxxxx: Xxxxxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor.
+title: Device primer for Universal Windows Platform (UWP) apps
+ms.assetid: 7665044E-F007-495D-8D56-CE7C2361CDC4
+label: Device primer
+template: detail.hbs
 ---
 
-#  Xxxxxx xxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx
+#  Device primer for Universal Windows Platform (UWP) apps
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-![xxxxxxx-xxxxxxx xxxxxxx](images/device-primer/1894834-hig-device-primer-01-500.png)
+![windows-powered devices](images/device-primer/1894834-hig-device-primer-01-500.png)
 
-Xxxxxxx xx xxxx xxx xxxxxxx xxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxx xxx xxxxx xxx xxxx xxxx xxxxxxxxxx xxx xxxx xxxx xxxxxx. Xxxx xxxxxxxxx xxx x xxxxxxxxxx xxxxxx, xxx xxxx xxxxxxxxxxxxxx xxxxxxx xxx xxx xxx xxxx xxxxxx xx xxxx xxxxxx, xxxxx, xxxx, xxx xxx xxx xxx xxxx xx xxxx xx xxxx xxxxxx, xxx xxx xxx xxxx xxxx xxxxxxxx xxxx xxxx xxxxxx.
+Getting to know the devices that support Universal Windows Platform (UWP) apps will help you offer the best user experience for each form factor. When designing for a particular device, the main considerations include how the app will appear on that device, where, when, and how the app will be used on that device, and how the user will interact with that device.
 
-## <span id="Phones_and_phablets">
-            </span>
-            <span id="phones_and_phablets">
-            </span>
-            <span id="PHONES_AND_PHABLETS">
-            </span>Xxxxxx xxx xxxxxxxx
+## <span id="Phones_and_phablets"></span><span id="phones_and_phablets"></span><span id="PHONES_AND_PHABLETS"></span>Phones and phablets
 
 
-Xxx xxxx xxxxxx-xxxx xx xxx xxxxxxxxx xxxxxxx, xxxxxx xxx xx x xxx xxxx xxxxxxx xxxxxx xxxx xxxxxx xxx xxxxx xxxxxx. Xxxxxx xxx xxxxxxxxx xx x xxxxxxx xx xxxxx; xxxxxx xxxxxx xxx xxxxxx xxxxxxxx. Xxx xxxxxxxxxxx xx xxxxxxxx xxx xxxxxxx xx xxxxx xx xxxxxx, xxx xxx xxxxxxxxx xxxxxx xxxx xxxxxx xx xxxxxxxx xxxxxx xxxx xxx xxxxxxx xx xxxxxxx xxxxxxxxxxx.
+The most widely-used of all computing devices, phones can do a lot with limited screen real estate and basic inputs. Phones are available in a variety of sizes; larger phones are called phablets. App experiences on phablets are similar to those on phones, but the increased screen real estate of phablets enable some key changes in content consumption.
 
-Xxxx Xxxxxxxxx xxx Xxxxxx, x xxx xxxxxxxxxx xxx xxxxxxxxxx Xxxxxxx YY xxxxxx xxxxxxx, xxxxx xxx xxxxxxx xxxxx xxxxxx xx x xxxxxxx xxx xxxx xxx x xxxxx xxx xxxxxxxx xx xxxx xxxxx xxxxxx xxxx xxxx x xxxxxx. (Xxx xxxx xxxx, xxx xxx [Xxxxxxxxx xxx Xxxxx xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=699431).)
+With Continuum for Phones, a new experience for compatible Windows 10 mobile devices, users can connect their phones to a monitor and even use a mouse and keyboard to make their phones work like a laptop. (For more info, see the [Continuum for Phone article](http://go.microsoft.com/fwlink/p/?LinkID=699431).)
 
-Xxxxxx xxxxx
--   Y'' xx Y'' xxx xxxxx
--   Y.Y'' xx Y'' xxx xxxxxxx
+Screen sizes
+-   4'' to 5'' for phone
+-   5.5'' to 7'' for phablet
 
-![xxxxxxx xxxxx](images/device-primer/1894834-hig-device-primer-03.png)
+![windows phone](images/device-primer/1894834-hig-device-primer-03.png)
 
-Xxxxxxx xxxxx
--   Xxxxxxxxx xxxx xx xxxxxxxx xxxxxxxxxxx, xxxxxx xxx xx xxx xxxx xx xxxxxxx xxx xxxxx xxxx xxx xxxx xxx xxxxx xxxx xx xxxxx xxxxxxxx xxxx xx xxxx xxx, xxx xxxxx xxx xxxx xxxxxxxxxxx xxxx xxxx xxxx xx xxxxxxxxx, xxxx xx xxxxxxx xxxxxx xxx xxxxx, xxxxxxx x xxxx, xxx xxxxxxxxx xxxx.
--   Xxxxxx xxxx xx xxxx xxx xxxxxx, xxx xxxxx xx xxx xxxxxx.
--   Xxxxxx xxxxxx xxxxx, xxxxxxx xxxxxxx xx x xxxxxx xx x xxx.
--   Xxxx xxx xxxxx xxxxxxx xx xxxx.
--   Xxxxx xxx xxxxx xxxxxxxxxxxx xxxx xxxxx xxx xxxxx.
--   Xxxx xx xxxxxxx xx xxxxx xxxxxx.
+Typical usage
+-   Primarily used in portrait orientation, mostly due to the ease of holding the phone with one hand and being able to fully interact with it that way, but there are some experiences that work well in landscape, such as viewing photos and video, reading a book, and composing text.
+-   Mostly used by just one person, the owner of the device.
+-   Always within reach, usually stashed in a pocket or a bag.
+-   Used for brief periods of time.
+-   Users are often multitasking when using the phone.
+-   Text is entered in short bursts.
 
-XX xxxxxxxxxxxxxx
--   Xxx xxxxx xxxx xx x xxxxx'x xxxxxx xxxxxx xxxx xxx xxxxx xx x xxxx xx xx xxxxxx xx xxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxxxx. Xxx xxxxxxxxxxxx xxxxxxxxxx xxxxxxxx xx x xxxxx xxx xxx "xxxxx" xxxxx, xxxx xxx xxxx xxxxxxxxxx xxxxxxx xxxxxx-xxxxx XX xxxxxx.
+UI considerations
+-   The small size of a phone's screen allows only one frame at a time to be viewed in both portrait and landscape orientations. All hierarchical navigation patterns on a phone use the "drill" model, with the user navigating through single-frame UI layers.
 
--   Xxxxxxx xx xxxxxx, xxxxxxxx xx xxxxxxxx xxxx xxx xxxx xxxx xxx xxxxx xx x xxxx. Xxx xxxx xxx xxxxxxx xxxxxx xxxx xxxxxx xxxxxxxxx xx x xxxxxxx, xxxxx xxxx xxx xxxxxxx xx xxxxxx xx xxxxxxxxx xxxxxxxxxxx xxx xxxx xxxxx, xx xxx xxx xxxxxx xxx xx xxxxxxx xx x xxxx.
+-   Similar to phones, phablets in portrait mode can view only one frame at a time. But with the greater screen real estate available on a phablet, users have the ability to rotate to landscape orientation and stay there, so two app frames can be visible at a time.
 
--   Xx xxxx xxxxxxxxx xxx xxxxxxxx xxxxxxxxxxxx, xx xxxx xxxx xxxxx'x xxxxxx xxxxxx xxxx xxxxxx xxx xxx xxx xxx xxxx xxx xx-xxxxxx xxxxxxxx xx xx.
+-   In both landscape and portrait orientations, be sure that there's enough screen real estate for the app bar when the on-screen keyboard is up.
 
-Xxxxxx
--   Xxxxx
--   Xxxxx
+Inputs
+-   Touch
+-   Voice
 
-Xxxxxxx xxxxxx xxxxxxxxxxxx
--   Xxxxxxxxxx
--   Xxxxxx
--   Xxxxxxxx xxxxxxx
--   Xxxxxxxx xxxxxxx
+Typical device capabilities
+-   Microphone
+-   Camera
+-   Movement sensors
+-   Location sensors
 
  
 
-## <span id="Tablets">
-            </span>
-            <span id="tablets">
-            </span>
-            <span id="TABLETS">
-            </span>Xxxxxxx
+## <span id="Tablets"></span><span id="tablets"></span><span id="TABLETS"></span>Tablets
 
 
-Xxxxx-xxxxxxxx xxxxxx xxxxxxxxx xxx xxxxxxxx xxxx xxxxxxxxxxxx, xxxxxxx, xxxxxxxxxxx, xxx xxxxxxxxxxxxxx. Xxxxxx xxxxxx xxxxx xxxxxxx xxxxx xxxx Y” xx YY.Y”.
+Ultra-portable tablet computers are equipped with touchscreens, cameras, microphones, and accelerometers. Tablet screen sizes usually range from 7” to 13.3”.
 
-Xxxxxx xxxxx
--   Y” xx YY.Y”
+Screen sizes
+-   7” to 13.3”
 
-![x xxxxxx xxxxxx](images/device-primer/1894834-hig-device-primer-05.png)
+![a tablet device](images/device-primer/1894834-hig-device-primer-05.png)
 
-Xxxxxxx xxxxx
--   Xxxxx YY% xx xxxxxx xxx xx xx xxx xxxxx, xxxx xxx xxxxx YY% xxxxx xxxxxx xxx.
--   Xx’x xxxx xxxxxxxx xxxx xx xxxx xx x xxxxxxxxx xxxxxx xxxxx xxxxxxxx XX.
--   Xx’x xxxx xxx xxxxxx xxxxxxx xxxx xxxxxx xxx xxxxxxxx.
--   Xxxx xx xxxxxxx xx xxxxx xxxxxx.
+Typical usage
+-   About 80% of tablet use is by the owner, with the other 20% being shared use.
+-   It’s most commonly used at home as a companion device while watching TV.
+-   It’s used for longer periods than phones and phablets.
+-   Text is entered in short bursts.
 
-XX xxxxxxxxxxxxxx
--   Xx xxxx xxxxxxxxx xxx xxxxxxxx xxxxxxxxxxxx, xxxxxxx xxxxx xxx xxxxxx xx x xxxx.
--   Xxxxxx xxxx xx xxxxxxx xx xxx xxxxxxxxxx xxx.
+UI considerations
+-   In both landscape and portrait orientations, tablets allow two frames at a time.
+-   System back is located on the navigation bar.
 
-Xxxxxx
--   Xxxxx
--   Xxxxxx
--   Xxxxxxxx xxxxxxxx (xxxxxxxxxxxx)
--   Xxxxx (xxxxxxxxxxxx)
--   Xxxxx (xxxxxxxxxxxx)
+Inputs
+-   Touch
+-   Stylus
+-   External keyboard (occasionally)
+-   Mouse (occasionally)
+-   Voice (occasionally)
 
-Xxxxxxx xxxxxx xxxxxxxxxxxx
--   Xxxxxx
--   Xxxxxxxxxx
--   Xxxxxxxx xxxxxxx
--   Xxxxxxxx xxxxxxx
+Typical device capabilities
+-   Camera
+-   Microphone
+-   Movement sensors
+-   Location sensors
 
  
 
-## <span id="PCs_and_laptops">
-            </span>
-            <span id="pcs_and_laptops">
-            </span>
-            <span id="PCS_AND_LAPTOPS">
-            </span>XXx xxx xxxxxxx
+## <span id="PCs_and_laptops"></span><span id="pcs_and_laptops"></span><span id="PCS_AND_LAPTOPS"></span>PCs and laptops
 
 
-Xxxxxxx XXx xxx xxxxxxx xxxxxxx x xxxx xxxxx xx xxxxxxx xxx xxxxxx xxxxx. Xx xxxxxxx, XXx xxx xxxxxxx xxx xxxxxxx xxxx xxxx xxxx xxxxx xx xxxxxxx.
+Windows PCs and laptops include a wide array of devices and screen sizes. In general, PCs and laptops can display more info than phone or tablets.
 
-Xxxxxx xxxxx
--   YY” xxx xxxxxxx
+Screen sizes
+-   13” and greater
 
-![x xx](images/device-primer/1894834-hig-device-primer-06-349.png)
+![a pc](images/device-primer/1894834-hig-device-primer-06-349.png)
 
-Xxxxxxx xxxxx
--   Xxxx xx xxxxxxxx xxx xxxxxxx xxx xxxxxx xxx, xxx xx xxx xxxx xx x xxxx, xxx xxxxxxx xxx xxxxxx xxxxxxx.
+Typical usage
+-   Apps on desktops and laptops see shared use, but by one user at a time, and usually for longer periods.
 
-XX xxxxxxxxxxxxxx
--   Xxxx xxx xxxx x xxxxxxxx xxxx, xxx xxxx xx xxxxx xx xxxxxxxxxx xx xxx xxxx. Xxxxxxxxx xx xxxxxx xxxx, xxxxx xxx xx xxxxxxx xxx xxx xxxxx xxxxxx. Xx xxxxxx xxxxxxxx, xxx xxx xxx xxxx xxxx xxxx xxxxx xxxxxx.
+UI considerations
+-   Apps can have a windowed view, the size of which is determined by the user. Depending on window size, there can be between one and three frames. On larger monitors, the app can have more than three frames.
 
--   Xxxx xxxxx xx xxx xx x xxxxxxx xx xxxxxx, xxx xxxx xxx xxxxxxx xxxx xxx xxxxx. Xx xx xxx xxxxxxxx, xx xxxx xx xxxxxxx xxx xxxxxxxxxx xx xxxxxx xxxx xxx’x xxxxxxx. Xxxxxxxx xxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxx xx "Xxxx Xx", "Xxxxxx xxxxx", xxx xx xx.
+-   When using an app on a desktop or laptop, the user has control over app files. As an app designer, be sure to provide the mechanisms to manage your app’s content. Consider including commands and features such as "Save As", "Recent files", and so on.
 
--   Xxxxxx xxxx xx xxxxxxxx. Xxxx xx xxx xxxxxxxxx xxxxxxx xx xxxx xx, xx xxxxxxx xx xxx xxx xxxxx xxx.
+-   System back is optional. When an app developer chooses to show it, it appears in the app title bar.
 
-Xxxxxx
--   Xxxxx
--   Xxxxxxxx
--   Xxxxx xx xxxxxxx xxx xxx-xx-xxx xxxxxxxx.
--   Xxxxxxxx, xxxx xx xxx Xxxx xxxxxxxxxx, xxx xxxxxxxxx xxxx.
+Inputs
+-   Mouse
+-   Keyboard
+-   Touch on laptops and all-in-one desktops.
+-   Gamepads, such as the Xbox controller, are sometimes used.
 
-Xxxxxxx xxxxxx xxxxxxxxxxxx
--   Xxxxxx
--   Xxxxxxxxxx
+Typical device capabilities
+-   Camera
+-   Microphone
 
  
 
-## <span id="Surface_Hub_devices">
-            </span>
-            <span id="surface_hub_devices">
-            </span>
-            <span id="SURFACE_HUB_DEVICES">
-            </span>Xxxxxxx Xxx xxxxxxx
+## <span id="Surface_Hub_devices"></span><span id="surface_hub_devices"></span><span id="SURFACE_HUB_DEVICES"></span>Surface Hub devices
 
 
-Xxxxxxxxx Xxxxxxx Xxx xx xxxxx-xxxxxx xxxx xxxxxxxxxxxxx xxxxxx xxxxxxxx xxx xxxxxxxxxxxx xxx xx xxxxxxxx xxxxx.
+Microsoft Surface Hub is a large-screen team collaboration device designed for simultaneous use by multiple users.
 
-Xxxxxx xxxxx
--   YY” xxx YY''
+Screen sizes
+-   55” and 84''
 
-![x xxxxxxx xxx](images/device-primer/1894834-hig-device-primer-07-349.png)
+![a surface hub](images/device-primer/1894834-hig-device-primer-07-349.png)
 
-Xxxxxxx xxxxx
--   Xxxx xx Xxxxxxx Xxx xxx xxxxxx xxx xxx xxxxx xxxxxxx xx xxxx, xxxx xx xx xxxxxxxx.
+Typical usage
+-   Apps on Surface Hub see shared use for short periods of time, such as in meetings.
 
--   Xxxxxxx Xxx xxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxxxxx xxxxx.
+-   Surface Hub devices are mostly stationary and rarely moved.
 
-XX xxxxxxxxxxxxxx
--   Xxxx xx Xxxxxxx Xxx xxx xxxxxx xx xxx xx xxxx xxxxxx - xxxx (x xxxxx xxxx xxxx xxxxxxxx xxx xxxxxxxxx xxxxx xxxx, xxxx (xxxxxxxx xxxx-xxxxxx xxxx), xxxxxxx (xxxxxxxx xxxx xxxx xxxxxxxx xxx xxxxx xx xxxx xxxxx xx xxx xxxxx) xxx xxxxxxxxxx (xxxxxx xxxx xxxx xxxxx xxx xxx xx xxxxx xxxxxxx, xxxxxxxxx xx xxxx xxxxxxxx).
--   Xx xxxxxxx xxxx xx xxxx xxxxx, xxx xxxxxx xxxxxxxx xxx Xxxxx xxxxxxx xxx xxxxxxx xxx xxx xxxxxxxxxxxx.
--   Xxxxxx xxxx xx xxxxxxxx. Xxxx xx xxx xxxxxxxxx xxxxxxx xx xxxx xx, xx xxxxxxx xx xxx xxx xxxxx xxx.
+UI considerations
+-   Apps on Surface Hub can appear in one of four states - full (standard full-screen view), background (hidden from view while the app is still running, available in task switcher), fill (a fixed view that occupies the available stage area), and snapped (variable view that occupies the right or left sides of the stage).
+-   In snapped mode or fill modes, the system displays the Skype sidebar and shrinks the app horizontally.
+-   System back is optional. When an app developer chooses to show it, it appears in the app title bar.
 
-Xxxxxx
--   Xxxxx
--   Xxx
--   Xxxxx
--   Xxxxxxxx
--   Xxxxxxxx (xxxxxx)
+Inputs
+-   Touch
+-   Pen
+-   Voice
+-   Keyboard (on-screen/remote)
+-   Touchpad (remote)
 
-Xxxxxxx xxxxxx xxxxxxxxxxxx
--   Xxxxxx
--   Xxxxxxxxxx
+Typical device capabilities
+-   Camera
+-   Microphone
 
  
 
-## <span id="Windows_IoT_devices">
-            </span>
-            <span id="windows_iot_devices">
-            </span>
-            <span id="WINDOWS_IOT_DEVICES">
-            </span>Xxxxxxx XxX xxxxxxx
+## <span id="Windows_IoT_devices"></span><span id="windows_iot_devices"></span><span id="WINDOWS_IOT_DEVICES"></span>Windows IoT devices
 
 
-Xxxxxxx XxX xxxxxxx xxx xx xxxxxxxx xxxxx xx xxxxxxx xxxxxxxx xxxxxx xxxxxxxxx xxxxx xxxxxxxxxxx, xxxxxxx, xxx xxxxxxxxxxxx xxxxxx xxxxxxxx xxxxxxx. Xxxxx xxxxxxx xxx xxxxxxx xxxxxxxxx xxxxxxx x xxxxxxx xx xxx Xxxxxxxx xx xxxxxx xx xxx xxxx-xxxxx xxxx xxxx xxxxx, xxx xx xxxx xxxxx xxx xx xx. Xxxxxxx xxx xxxxxx xxxx xx xxxxxx (xxxx xxxxx xx “xxxxxxxx” xxxxxxx) xx xxx xxxxxxxxx xx x xxxxx xxxxxx (xxxxx xx “xxxxxx” xxxxxxx) xxxx x xxxxxx xxxx xxxxxxx Y.Y” xx xxxxxxx.
+Windows IoT devices are an emerging class of devices centered around embedding small electronics, sensors, and connectivity within physical objects. These devices are usually connected through a network or the Internet to report on the real-world data they sense, and in some cases act on it. Devices can either have no screen (also known as “headless” devices) or are connected to a small screen (known as “headed” devices) with a screen size usually 3.5” or smaller.
 
-Xxxxxx xxxxx
--   Y.Y'' xx xxxxxxx
--   Xxxx xxxxxxx xxxx xx xxxxxx
+Screen sizes
+-   3.5'' or smaller
+-   Some devices have no screen
 
-![xx xxx xxxxxx](images/device-primer/1894834-hig-device-primer-02.png)
+![an iot device](images/device-primer/1894834-hig-device-primer-02.png)
 
-Xxxxxxx xxxxx
--   Xxxxxxx xxxxxxxxx xxxxxxx x xxxxxxx xx xxx Xxxxxxxx xx xxxxxx xx xxx xxxx-xxxxx xxxx xxxx xxxxx, xxx xx xxxx xxxxx xxx xx xx.
--   Xxxxx xxxxxxx xxx xxxx xxx xxx xxxxxxxxxxx xx x xxxx xxxxxx xxxxxx xx xxxxx xxxxxx xxxxxxx.
--   Xx xxx’x xxxxxxxxx xxxx xx xxxxxxxxxx xxxx xxx xxx xxxx, xxx xxxxxxx xx xxxxxxxxx xxxx xxx xxxx xx, xxx xx xxx xxx xxxx xxx xxx’x.
--   Xxx xxxxx’x xxxx x xxxxxxxxx xxxx xxxxxxxxxx, xxxx xx xxx xxxxxxxxxx xxxxxxxxxxxxxx.
+Typical usage
+-   Usually connected through a network or the Internet to report on the real-world data they sense, and in some cases act on it.
+-   These devices can only run one application at a time unlike phones or other larger devices.
+-   It isn’t something that is interacted with all the time, but instead is available when you need it, out of the way when you don’t.
+-   App doesn’t have a dedicated back affordance, that is the developers responsibility.
 
-XX xxxxxxxxxxxxxx
--   "xxxxxxxx" xxxxxxx xxxx xx xxxxxx.
--   Xxxxxxx xxx “xxxxxx” xxxxxxx xx xxxxxxx, xxxx xxxxxxx xxxx xx xxxxxxxxx xxx xx xxxxxxx xxxxxx xxxx xxxxxx xxx xxxxxxxxxxxxx.
--   Xxxxxxxxxxx xx xxxx xxxxx xxxxxx, xx xxxx xxx xxxx xxxxx xx xxxxxxxx xxx xxxxxxx xxxxxxxxx.
+UI considerations
+-   "headless" devices have no screen.
+-   Display for “headed” devices is minimal, only showing what is necessary due to limited screen real estate and functionality.
+-   Orientation is most times locked, so your app only needs to consider one display direction.
 
-Xxxxxx
--   Xxxxxxxx, xxxxxxxxx xx xxx xxxxxx
+Inputs
+-   Variable, depending on the device
 
-Xxxxxxx xxxxxx xxxxxxxxxxxx
--   Xxxxxxxx, xxxxxxxxx xx xxx xxxxxx
+Typical device capabilities
+-   Variable, depending on the device
 
  
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx XXX xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[This article contains information that is specific to UWP apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
  
 
  
 
 
+<!--HONumber=Mar16_HO4-->
 
 
-<!--HONumber=Mar16_HO1-->

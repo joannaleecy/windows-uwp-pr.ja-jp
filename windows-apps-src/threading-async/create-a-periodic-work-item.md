@@ -1,33 +1,32 @@
 ---
-xx.xxxxxxx: YXYYYYYY-YXYY-YXYY-YYYX-XYXYYXYXYYXY
-xxxxx: Xxxxxx x xxxxxxxx xxxx xxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxx x xxxx xxxx xxxx xxxxxxx xxxxxxxxxxxx.
+ms.assetid: 1B077801-0A58-4A34-887C-F1E85E9A37B0
+title: Create a periodic work item
+description: Learn how to create a work item that repeats periodically.
 ---
-# Xxxxxx x xxxxxxxx xxxx xxxx
+# Create a periodic work item
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Xxxxxxxxx XXXx **
+** Important APIs **
 
--   [**XxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh967915)
--   [**XxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR230587)
+-   [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915)
+-   [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587)
 
-Xxxxx xxx xx xxxxxx x xxxx xxxx xxxx xxxxxxx xxxxxxxxxxxx.
+Learn how to create a work item that repeats periodically.
 
-## Xxxxxx xxx xxxxxxxx xxxx xxxx
+## Create the periodic work item
 
-Xxx xxx [**XxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh967915) xxxxxx xx xxxxxx x xxxxxxxx xxxx xxxx. Xxxxxx x xxxxxx xxxx xxxxxxxxxxxx xxx xxxx, xxx xxx xxx *xxxxxx* xxxxxxxxx xx xxxxxxx xxx xxxxxxxx xxxxxxx xxxxxxxxxxx. Xxx xxxxxx xx xxxxxxxxx xxxxx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR225996) xxxxxxxxx. Xxx xxxx xxxx xxxx xx xxxxxxxxxxx xxxxx xxxx xxx xxxxxx xxxxxxx, xx xxxx xxxx xxx xxxxxx xx xxxx xxxxxx xxx xxxx xx xxxxxxxx.
+Use the [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) method to create a periodic work item. Supply a lambda that accomplishes the work, and use the *period* parameter to specify the interval between submissions. The period is specified using a [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) structure. The work item will be resubmitted every time the period elapses, so make sure the period is long enough for work to complete.
 
-[
-            **XxxxxxXxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) xxxxxxx x [**XxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR230587) xxxxxx. Xxxxx xxxx xxxxxx xx xxxx xxx xxxxx xxxxx xx xx xxxxxxxx.
+[**CreateTimer**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.createtimer.aspx) returns a [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) object. Store this object in case the timer needs to be canceled.
 
-> **Xxxx**  Xxxxx xxxxxxxxxx x xxxxx xx xxxx (xx xxx xxxxx xxxx xxxx xxx xxxxxxxxxxx) xxx xxx xxxxxxxx. Xxxx xxxxxx xxx xxxxxxxx xxxxx xx xxxxxx xx x xxxxxx-xxxx xxxxx xxxxxxx.
+> **Note**  Avoid specifying a value of zero (or any value less than one millisecond) for the interval. This causes the periodic timer to behave as a single-shot timer instead.
 
-> **Xxxx**  Xxx xxx xxx [**XxxxXxxxxxxxxx.XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh750317) xx xxxxxx xxx XX xxx xxxx xxxxxxxx xxxx xxx xxxx xxxx.
+> **Note**  You can use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI and show progress from the work item.
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxx x xxxx xxxx xxxx xxxx xxxx xxxxx YY xxxxxxx:
+The following example creates a work item that runs once every 60 seconds:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```csharp
 > TimeSpan period = TimeSpan.FromSeconds(60);
 > 
@@ -77,13 +76,13 @@ Xxx xxxxxxxxx xxxxxxx xxxxxxx x xxxx xxxx xxxx xxxx xxxx xxxxx YY xxxxxxx:
 >         }), period);
 > ```
 
-## Xxxxxx xxxxxxxxxxxx xx xxx xxxxxxxx xxxx xxxx (xxxxxxxx)
+## Handle cancellation of the periodic work item (optional)
 
-Xx xxxxxx, xxx xxx xxxxxx xxxxxxxxxxxx xx xxx xxxxxxxx xxxxx xxxx x [**XxxxxXxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Xxx xxx [**XxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh967915) xxxxxxxx xx xxxxxx xx xxxxxxxxxx xxxxxx xxxx xxxxxxx xxxxxxxxxxxx xx xxx xxxxxxxx xxxx xxxx.
+If needed, you can handle cancellation of the periodic timer with a [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Use the [**CreatePeriodicTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967915) overload to supply an additional lambda that handles cancellation of the periodic work item.
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxx x xxxxxxxx xxxx xxxx xxxx xxxxxxx xxxxx YY xxxxxxx xxx xx xxxx xxxxxxxx x xxxxxxxxxxxx xxxxxxx:
+The following example creates a periodic work item that repeats every 60 seconds and it also supplies a cancellation handler:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ``` csharp
 > using Windows.System.Threading;
 > 
@@ -176,11 +175,11 @@ Xxx xxxxxxxxx xxxxxxx xxxxxxx x xxxxxxxx xxxx xxxx xxxx xxxxxxx xxxxx YY xxxxxxx
 >         }));
 > ```
 
-## Xxxxxx xxx xxxxx
+## Cancel the timer
 
-Xxxx xxxxxxxxx, xxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) xxxxxx xx xxxx xxx xxxxxxxx xxxx xxxx xxxx xxxxxxxxx. Xx xxx xxxx xxxx xx xxxxxxx xxxx xxx xxxxxxxx xxxxx xx xxxxxxxxx xx xx xxxxxxx xx xxxxxxxx. Xxx [**XxxxxXxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (xx xxxxxxxx) xx xxxxxx xxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxx xxxx xxxx xxxxxxxxx.
+When necessary, call the [**Cancel**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.system.threading.threadpooltimer.cancel.aspx) method to stop the periodic work item from repeating. If the work item is running when the periodic timer is cancelled it is allowed to complete. The [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926) (if provided) is called when all instances of the periodic work item have completed.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ``` csharp
 > PeriodicTimer.Cancel();
 > ```
@@ -188,15 +187,19 @@ Xxxx xxxxxxxxx, xxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/en-us/library/w
 > PeriodicTimer->Cancel();
 > ```
 
-## Xxxxxxx
+## Remarks
 
-Xxx xxxxxxxxxxx xxxxx xxxxxx-xxx xxxxxx, xxx [Xxx x xxxxx xx xxxxxx x xxxx xxxx](use-a-timer-to-submit-a-work-item.md).
+For information about single-use timers, see [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md).
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxx x xxxx xxxx xx xxx xxxxxx xxxx](submit-a-work-item-to-the-thread-pool.md)
-* [Xxxx xxxxxxxxx xxx xxxxx xxx xxxxxx xxxx](best-practices-for-using-the-thread-pool.md)
-* [Xxx x xxxxx xx xxxxxx x xxxx xxxx](use-a-timer-to-submit-a-work-item.md)
+* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
+* [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)
+* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

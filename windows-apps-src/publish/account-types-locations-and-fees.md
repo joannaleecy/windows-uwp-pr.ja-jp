@@ -1,255 +1,259 @@
 ---
-xx.xxxxxxx: XYYYYYYY-XXYY-YYYX-XYXX-YXXYXXYYXXXY
-xxxxx: Xxxxxxx xxxxx, xxxxxxxxx, xxx xxxx
-xxxxxxxxxxx: Xx xxxxx xxxxxxxxxx xxxxxxxxx xxxxxxxx xxx xxxxxxx xxxxxxxxx xxxxxxxx xx xxxx xxxxxxxxx xxx xxxxxxx.
+ms.assetid: C2415466-EC59-416E-B6AE-7DA5ED82DCE6
+title: アカウントの種類、場所、料金
+description: 個人用、会社用の開発者アカウントを多数の国と地域に提供しています。
 ---
 
-# Xxxxxxx xxxxx, xxxxxxxxx, xxx xxxx
+# アカウントの種類、場所、料金
 
-Xx xxxxx xxx xxxxx xx xxxxxxxxx xxxxxxxx: xxxxxxxxxx xxxxxxxx, xxx xxxxxxx xxxxxxxx. Xxxxxxxxx xxxxxxxx xxx xxxxxxx xx xxxx [xxxxxxxxx xxx xxxxxxx](#developer-account-and-app-submission-markets). Xxxxxx xxxx xx xxxxxxx xxxxx xxx xxxxxx xx xxxxxxx xxxx xx xxx Xxxxx xxx xx xxxxxxxxxxx xx xxxxxxxxxx Xxxxxxxxx xxxxxxxxx xxxxxxxx.
+開発者アカウントには、個人のアカウントと会社のアカウントの 2 種類が用意されています。 開発者アカウントは、多数の [国と地域](#developer-account-and-app-submission-markets) に提供されています。 どちらの種類のアカウントでも、アプリをストアに公開し、追加の Microsoft 開発者プログラムに参加できます。
 
-> **Xxxx**  Xxxxxxx xxx xxxxxx xx xxxxxxx xxx x xxxxxxx xx xx xxxxxxxxxx, xxx xxx xxxxxxxxx xxxx xxx Xxxxxxxxx xxxxxxx xxxx xxx xxxxxxxxx xxxxxxx. Xxxx xxxxxxx xx xxx xx xxxxxxx, xxxx xxxx xx xxxx xx xxxx xxx Xxxxxxxxx xxxxxxx xxxx xxx xxxx xx xxx xxx xxxx xxxxxxxxx xxxxxxx.
+> **注**  会社用、個人用のどちらのアカウントを作るかに関係なく、開発者アカウントに関連付けることができる Microsoft アカウントは 1 つだけです。 アカウントにサインアップするときは必ず、開発者アカウントとして使う Microsoft アカウントでサインインしてください。
 
-Xxxx xxx [xxxxx xxx xxxxxx xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=615100) xxx'xx xxxx xx xxxxxx xxxxxxx xx xxxxxx xx xxxxxxxxxx xxxxxxx xx x xxxxxxx xxxxxxx.
+[サインアップ プロセスを開始](http://go.microsoft.com/fwlink/p/?LinkId=615100) するときは、個人のアカウントを作成するのか、会社のアカウントを作成するのかを選択する必要があります。
 
-> **Xxxxxxxxx**  Xxx xxxxxx xxxxxx xxx xxxxxxx xxxx xxxx xxx xxxx xxxx xxxxxxxxx, xx xx xxxx xx xxxxxx xxx xxxxx xxxx.
+> **重要**  アカウントの種類は選んだ後で変更することができません。適切な種類を選択してください。
 
-Xxxx xxx xxx xxxxxxxxx xxxxxxxxxxx xxxxxxx xxx xxx xxxxxxx xxxxx.
+この 2 つのアカウントの種類には、次のような重要な違いがあります。
 
-| Xxxxxxxxxx xxxxxxx | Xxxxxxx xxxxxxx |
+| 個人のアカウント | 会社のアカウント |
 |--------------------|-----------------|
-| <ul><li>Xxxxxxxxxx xxxx xxxxx xxxxxxx xxx xxxxxxxxxxxx</li><li>Xxxxx xxxxxxxxxxxxx $YY XXX (xxx-xxxx xxxxxxxxxxxx xxx; xxx xxxxx xxxxxx xxxxxx xxxxxxxxx xx xxxx xxxxxxx xx xxxxxx)</li></ul> | <ul><li>Xxxxxxxx xxxxxxxxxxxx xxxxxxx Xxxxxxxx xx Xxx & Xxxxxxxxxx</li><li>Xxxxxxx xxxxxx xx xxx xxxxxxxxxxxx</li><li>Xxxxxxxx xxxx xxxx xxxxxxx xx xxxxxxxxxx xx xxxx xx xxx xxxxxxx xx xxxxxx xx xxxxx xx xx xxxxxxx</li><li>Xxxxx xxxxxxxxxxxxx $YY XXX (xxx-xxxx xxxxxxxxxxxx xxx; xxx xxxxx xxxxxx xxxxxx xxxxxxxxx xx xxxx xxxxxxx xx xxxxxx)</li></ul> |
+| <ul><li>特定のアプリ機能の使用が制限される</li><li>約 19 米ドルの費用がかかる (1 回限りの登録料。正確な金額は、国または地域によって異なる)</li></ul> | <ul><li>Symantec または Dun & Bradstreet による検証が必要</li><li>利用できるアプリの機能が増加</li><li>所在地の国または地域で、その会社が会社として認識されている必要がある</li><li>約 99 米ドルの費用がかかる (1 回限りの登録料。正確な金額は、国または地域によって異なる)</li></ul> |
 
-> **Xxxxxxxxx**   Xx xxx xxxxxx xx xxxxxx x xxxxxxx xxxxxxx, xx xxxx xx xxxxxx xxx [xxxxxxxxxx xxx xxxxxxx xxxxxxxx](opening-a-developer-account.md#additional-guidelines-for-company-accounts).
+> **重要**   会社のアカウントを作成する場合は、「[会社アカウントのガイドライン](opening-a-developer-account.md#additional-guidelines-for-company-accounts)」を必ず確認してください。
 
-Xxxxxxx xxxxxxxx xxx x xxxxxx xxxx xxxxxxxxx, xxxxxx xxxxxxx xx xxxx xxxx xxxxxxxxxx xxxxx xx xxxxxx xxxx xxx xxx xxxxxxxxxx xx xxxxxxxxx xxxx xxxxxxx xxx xxx xx xxx xxxxxxx. Xxx xx xxx xxxx xxxxxxxx xx xxxxxx x xxxxxxx xxxxxxx xx xxx xxxxxxx xx xxxxxx xxxx xxxx xxxxxxx xxxxxxxxxx [Xxx xxxxxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt270968).
+会社のアカウントの方が費用が少し高くなる主な原因は、会社を代表してアカウントをセットアップする権限がユーザーにあることを確かめるために追加の手続きが必要になることにあります。 会社のアカウントを保有する利点の 1 つは、追加の [アプリ機能を宣言](https://msdn.microsoft.com/library/windows/apps/Mt270968) するアプリを発行できることです。
 
-Xxxxxxxxxxxx, xxx xxxx xxxx x xxxxxxx xxxxxxx xx xxxxx xx xxxxxxx xxxx xxxx xxx xxx xxxxxxxxx xxxxx xxxxxxxxxxxx:
+具体的には、以下に挙げる 3 つの機能を使うアプリを発行するには、会社のアカウントが必要です。
 
--   **xxxxxxxxxxXxxxxxxxxxxxxx**—Xxxx Xxxxxxx xxxxxxxxxxx xxx xxxxxx xx x xxxxxxxxx xxxxxxxx. Xxxx xx xxxxxxxxx xxxx xx xxxx-xx-xxxxxxxx xxxx xxxx xxxxxxx xx xxxxxxx xxxxxx xx xxxxxxxxxx. (Xxx xxx'x xxxx xxxx xxxxxxxxxx xxx xxxxxxx xxxxxxxxxxxxx xxxxxx xxx xxxxxxxx.)
--   **xxxxxxXxxxXxxxxxxxxxxx**—Xxxxxxx xx xxx xx xxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxxx, xxxx xx xxxxxxxxxxxx xxxxxx xx x xxxxx xxxx. Xxxx xx xxxxxxxxx xxxx xxx xxxxxxxxx xx xxxxxxxxxx xxxx xxxx xxxxxxx x xxxxx xxxx xxx xxxxxxxxxxxxxx.
--   **xxxxxxxxxXxxxxxx**—Xxxxxx xxxxxxxxxxxx xxxxxx xx xxx xxxx'x Xxxxxxxxx, xxxxxxxx xx xxx xxxx xxxx xxxxxxxxxxxx xxxxxxxx xx xxx xxxxxxx xxxxxxxx. (Xxx xxx'x xxxx xx xxxxxxx xxxx xxxxxxxxxx xx xxxxx xx xxxxxx x xxxx'x Xxxxxxxxx xxxx xxx [xxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/Hh465174)). Xxxx xxxx xxxx xxxxxxxxx Xxxxxxx Xxxxx Y.Y xx xxxxxxx xxxxxx xxx xxx xxxxxxxxxXxxxxxx xxxxxxxxxx.
+-   **enterpriseAuthentication**: 社内イントラネットにアクセスするために Windows 資格情報を使います。 この機能は通常、企業内のサーバーに接続する基幹業務アプリで使われます (インターネット上での汎用通信にはこの機能は不要です)。
+-   **sharedUserCertificates**: アプリがスマート カードに格納されている証明書などのソフトウェア証明書とハードウェア証明書にアクセスできるようになります。 この機能は通常、認証にスマート カードを必要とする財務アプリまたはエンタープライズ アプリで使われます。
+-   **documentsLibrary**: パッケージ マニフェストで宣言されたファイルの種類の関連付けに限定された、ユーザーのドキュメントへのプログラムによるアクセスを提供します ([ファイル ピッカー](https://msdn.microsoft.com/library/windows/apps/Hh465174) を使ってユーザーのドキュメントにアクセスするために、この機能を宣言する必要はありません)。 Windows Phone 8.1 以前をターゲットとするアプリでは、documentsLibrary 機能を使うことはできません。
 
-> **Xxxx**  Xx xxxxxxxx, xxx xxxx xxxxxxx xxxxxxx xxx xxx xxxxxxxx xxxxxx xxx xxx xxxxxx xxxx xxxx xxxxxxx xxx **xxxxxxxxxXxxxxxx** xxxxxxxxxx.
+> **注**  また、**documentsLibrary** 機能を宣言するアプリを提出する前に、サポートに連絡して、承認を受ける必要があります。
 
-Xxxxxx x xxxxxxx xxxxxxx xxxx xxx xxxxxxxxx xxxx xxxx xxxxx xxxxx xxxxxxxxxxxx xxxx xxxx xxxxxxxxxxxxx. Xxxxx xxxxxxxxxxxx xxx xxxxxxxx xxx xxxx xxxxxxxx xxxxxxxxx, xxx xxxx xxxx xxxxxxx'x xxxxxxx xxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxx xxxxxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt270968).
+会社のアカウントを保有しているからといって、ここに挙げた機能を使ったアプリが必ず認定テストに合格するわけではありません。 ここに挙げた機能は、特殊なシナリオで使うことを想定しており、ほとんどのアプリでは宣言しない方が好ましいものであるからです。 詳しくは、「[アプリ機能の宣言](https://msdn.microsoft.com/library/windows/apps/Mt270968)」をご覧ください。
 
-Xxx xxxxxxx xxxxxxxx, xx xxx Xxxxxxxx xx Xxx & Xxxxxxxxxx xx xxxxxx xxxx xxx’xx xxxxxxxxxx xx xxxxxx xx xxxxxxx xxx xxx xxxxxxx xxxx xxx’xx xxxxxxxxxxxx. Xxxx xxxxxxx xxx xxxx xxxx x xxx xxxx xx x xxxxxx xx xxxxx, xxx xxxxx xxxxxxxx x xxxxx xxxx xx xxxx xxxxxxx (xx xxxx xxxx xxxx xxxxxxx xxxxxxxxxxx xx xx xx xxxx xxxx xxx xxxx xxx xxx xxxxxxxxxxxx xxxxx). Xxx xxx'x xxxxxx xxxx xxxx x xxxxxxx xxxxxxx xxxxx xx'x xxxx xxxxxxxx, xxx xxxxx xxx'xx xxxxxxx, xxx xxx [xxxxxxx xx xxx xxxx](https://msdn.microsoft.com/library/windows/apps/JJ657967), xxxxxx xxxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxx xxxxxxxx xxxxxxxx xxx xxxxxxx xxxx xxx.
+会社のアカウントについては、Symantec または Dun & Bradstreet を使って、ユーザーが会社の代理としてアカウントを作る権限を持っていることを確認します。 この処理には、数日から数週間かかることがあり、多くの場合は会社への電話連絡が行われます (そのため、登録フォームに入力するときには最新の連絡先を指定してください)。 検証が終わるまで会社のアカウントからアプリを送ることはできませんが、検証を待つ間にも、[アプリ名の予約](https://msdn.microsoft.com/library/windows/apps/JJ657967)、Windows デベロッパー センター ダッシュボードへのアクセス、アプリの構築とテストを行うことができます。
 
-## Xxxxxxxxx xxxxxxx xxx xxx-xxxxxxxxxx xxxxxxx
+## 開発者アカウントとアプリ提出の市場
 
-Xxx xxx xxxxxxxx xxx xxxx xxxxxxxxx xxxxxxx xxx xxxxxx xxxx xx xxx xxxx xx xxxxxxx x xxxxxxxx xx x xxxxxxx xx xxxxxx xxxxxx xxxxx.
+次の表にある国や地域にお住まいの方、またはその国や地域で事業を経営している方は、開発者アカウントに登録してアプリを提出することができます。
 
-Xx xxx xxxxxxxxx xxxxx, xxx **Xxxxxxxxxxxx xxx** xx xxx xxxxxxx xxxx xx xxxxxxxx xxx xxxx xxxxxxxxx xxxxxxx. Xxxxxx xxx xxxxxxx xx xxxxxx.
+次の表内の**登録料**とは、開発者アカウントに登録する場合にかかる現在の料金です。 料金は変更されることがあります。
 
-> **Xxxx**  Xx'xx xxx xxx xxxxxxxxxx xxxxx xxx xxxx xx xxx xxxxxxxxxxxx xxx xxxx xxx xxxx xx. Xxxx, xxxx xx xxx xxx, xxxx xxxx xxxxx xxxxxx x xxx xx xxxxxxx xxx xxxxxxx.
+> **注**  新規登録時には、適用される税金と手数料が登録料に加算されます。 また、銀行でのお受け取りには、手数料がかかる場合があります。
 
-Xxx **Xxxxxx** xxxxxx xxxxxxxxx xxx xx'xx xxx xxx xxx xxxxx xxx xxxx xxxx xxxx xxxx. Xxx'xx xx xxxx xx xxxxxx xxx [xxxxxx xxxxxxx](setting-up-your-payout-account-and-tax-forms.md) xxxx xxxxx xx'xx xxxxxxx xxxx xxxxx.
+**[お支払い方法]** 列では、アプリの収益のお支払い方法を示しています。 収益の振り込み先となる [受取りアカウント](setting-up-your-payout-account-and-tax-forms.md) を選ぶことができます。
 
-> **Xxxx**  Xxxx xxxxxxx xx xxx xxxxxxx xxxx xxxx (**xxxxxx**). Xx xxxxx xxxxxxx, xxxx xxxx xxxx xxx xx xxxxxxxxx.
+> **注**  一部の市場では有料アプリ (**支払の受け取り**) がサポートされません。 そのような市場では、無料のアプリのみを提出できます。
 
-Xxx **XxxXxx** xxxxxx xxxxxxxxx xxxxxxx XxxXxx xx x xxxxxxxxx xxxxxxx xxxxxx xxxx xxx xx xxxx xxx xxxx [xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/Bg124529) (xxx, xxxxxx xxxxx xxxxx, xxx xxxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xxx).
+**[PayPal]** 列には、PayPal が、[受取りアカウント](https://msdn.microsoft.com/library/windows/apps/Bg124529) (および、注記されていない限り、開発者アカウントの登録料) に使用できる、サポートされている支払い方法かどうかが表示されます。
 
-| Xxxxxxx/xxxxxx | Xxxxxxxxxx Xxx. xxx | Xxxxxxx Xxx. xxx | Xxxxxx | XxxXxx |
+| 国/地域 | 個人登録 料金 | 会社登録 料金 | 支払い | PayPal |
 |----------------|---------------------|------------------|--------|--------|
-| Xxxxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx |
-| Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx |
-| Xxxxxxx | YYYY XXX | YYYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx xxx Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxx | YYY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxx | YY XXX | YYY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxx Xxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxx | Y XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxxx | YYYY XXX | YYYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx xxx Xxxxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | YY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxxx | YY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx Xxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxx Xxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxx Xxxxxxx Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx | YYYY XXX | YYYYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx | YYY XXX | YYY XXX | XXX xxxx xx xxxx | Xxx* | 
-|  Xxxxxxxx | YYYYY XXX | YYYYYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx (XXX) | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx Xxxx | YYYY XXX | YYYYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xôxx x'Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YYY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxx Xxxxxxxx | YYY XXX | YYYY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxx | YYY XXX | YYY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxx Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx | YYY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xx Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxxx Xxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx Xxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxx Xxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx-Xxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxx Xxxx XXX | YYY XXX | YYY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxx | YYYY XXX | YYYYY XXX | XXX xxxx xx xxxx | Xxx* | 
-|  Xxxxxxx | YYYY XXX | YYYYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx | YYYY XXX | YYYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxx | YYYYYY XXX | YYYYYYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxx | YYYYY XXX | YYYYYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxx | YY XXX | YYY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx | YYYY XXX | YYYY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxxx | YYYY XXX | YYYYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxx | YYYYY XXX | YYYYYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | Y XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YYYYY XXX | YYYYYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxx XXX | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxxxx (XXXXX) | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxx | YY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxxx Xxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxxxxx | YYYY XXX | YYYYY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | YYY XXX | YYYY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YYY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxx Xxxxxxx | YY XXX | YYY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | YYY XXX | YYY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxx | Y XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxx | YYYY XXX | YYYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx Xxx Xxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxx | YY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxxxx | YYY XXX | YYYY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxx | YY XXX | YYY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxx | YY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | YYY XXX | YYYY XXX | XXX xxxx xx xxxx | Xxx* | 
-|  Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx Xxxxx xxx Xxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxx Xxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxx Xxxxxxx xxx xxx Xxxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxx Xxxxxx |  YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xãx Xxxé xxx Xxíxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxx Xxxxxx | YY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | YYYY XXX | YYYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxx Xxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxx | YY XXX | YYY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxx Xxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx Xxxxxx | YYY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxx Xxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxx | YYY XXX | YYY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxx | YYY XXX | YYYY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxx | YYY XXX | YYYY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxx-Xxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxx xxx Xxxxxx | YYY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | YY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YYY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxx Xxxx Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxx Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxx Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xxx | 
-|  Xxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YY XXX | YY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxxxxx | YYY XXX | YYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxx | YYYYYY XXX | YYYYYYY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxx | YYYY XXX | YYYYY XXX | Xx xxxxxx | Xx | 
-|  Xxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx | 
-|  Xxxxxxxx | YY XXX | YY XXX | XXX xxxx xx xxxx | Xx |
+| アフガニスタン | 19 USD | 99 USD | 銀行 (USD) | × |
+| アルバニア | 19 USD | 99 USD | 銀行 (USD) | × |
+| アルジェリア | 1,535 DZD | 7,000 DZD | 銀行 (USD) | × | 
+|  アンドラ | 14 EUR | 75 EUR | 支払の受け取りなし | × | 
+|  アンゴラ | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  アンティグア・バーブーダ | 19 USD | 99 USD | 銀行 (XCD) | × | 
+|  アルゼンチン | 106 ARS | 420 ARS | 銀行 (USD) | × | 
+|  アルメニア | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  オーストラリア | 21 AUD | 110 AUD | 銀行 (AUD) | ○ | 
+|  オーストリア | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  アゼルバイジャン | 19 USD | 99 USD | 銀行 (AZN) | × | 
+|  バハマ | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  バーレーン | 7 BHD | 38 BHD | 銀行 (BHD) | × | 
+|  バングラデシュ | 1,468 BDT | 7,600 BDT | 銀行 (BDT) | × | 
+|  バルバドス | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ベラルーシ | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  ベルギー | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  ベリーズ | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ベナン | 19 USD | 99 USD | 銀行 (XOF) | × | 
+|  ブータン | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ボリビア | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  ボスニア・ヘルツェゴビナ | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  ボツワナ | 19 USD | 99 USD | 銀行 (BWP) | × | 
+|  ブラジル | 46 BRL | 160 BRL | 銀行 (USD) | × | 
+|  ブルネイ | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ブルガリア | 28 BGN | 160 BGN | 銀行 (BGN) | × | 
+|  ブルキナファソ | 19 USD | 99 USD | 銀行 (XOF) | × | 
+|  ブルンジ | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  カーボベルデ | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  カンボジア | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  カメルーン | 19 USD | 99 USD | 銀行 (XAF) | × | 
+|  カナダ | 20 CAD | 99 CAD | 銀行 (CAD) | ○ | 
+|  中央アフリカ共和国 | 19 USD | 99 USD | 銀行 (XAF) | × | 
+|  チャド | 19 USD | 99 USD | 銀行 (XAF) | × | 
+|  チリ | 9,776 CLP | 46,000 CLP | 銀行 (USD) | × | 
+|  中国 | 116 CNY | 600 CNY | 銀行 (USD) | ○* | 
+|  コロンビア | 36,543 COP | 180,000 COP | 銀行 (USD) | × | 
+|  コモロ | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  コンゴ共和国 | 19 USD | 99 USD | 銀行 (XAF) | × | 
+|  コンゴ民主共和国 | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  コスタリカ | 9,578 CRC | 49725 CRC | 銀行 (CRC) | × | 
+|  コートジボワール | 19 USD | 99 USD | 銀行 (XOF) | × | 
+|  クロアチア | 107 HRK | 500 HRK | 銀行 (HRK) | × | 
+|  キプロス | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  チェコ共和国 | 365 CZK | 1,720 CZK | 銀行 (CZK) | ○ | 
+|  デンマーク | 106 DKK | 530 DKK | 銀行 (DKK) | ○ | 
+|  ジブチ | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ドミニカ国 | 19 USD | 99 USD | 銀行 (XCD) | × | 
+|  ドミニカ共和国 | 19 USD | 99 USD | 銀行 (DOP) | × | 
+|  エクアドル | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  エジプト | 133 EGP | 600 EGP | 銀行 (EGP) | × | 
+|  エルサルバドル | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  赤道ギニア | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  エリトリア | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  エストニア | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  エチオピア | 19 USD | 99 USD | 銀行 (ETB) | × | 
+|  フェロー諸島 | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  フィジー | 19 USD | 99 USD | 銀行 (FJD) | × | 
+|  フィンランド | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  フランス | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  ガボン | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ガンビア | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ジョージア | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  ドイツ | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  ガーナ | 19 USD | 99 USD | 銀行 (GHS) | × | 
+|  ギリシャ | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  グリーンランド | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  グレナダ | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  グアテマラ | 19 USD | 99 USD | 銀行 (GTQ) | × | 
+|  ギニア | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  ギニアビサウ | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ガイアナ | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ハイチ | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  ホンジュラス | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  香港特別行政区 | 147 HKD | 760 HKD | 銀行 (HKD) | ○ | 
+|  ハンガリー | 4,237 HUF | 18,800 HUF | 銀行 (HUF) | ○* | 
+|  アイスランド | 2,319 ISK | 11,929 ISK | 銀行 (USD) | × | 
+|  インド | 1,201 INR | 4,500 INR | 銀行 (INR) | × | 
+|  インドネシア | 203,015 IDR | 1,000,000 IDR | 銀行 (IDR) | × | 
+|  イラク | 22,078 IQD | 120,000 IQD | 銀行 (USD) | × | 
+|  アイルランド | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  イスラエル | 67 ILS | 350 ILS | 銀行 (ILS) | ○ | 
+|  イタリア | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  ジャマイカ | 19 USD | 99 USD | 銀行 (JMD) | × | 
+|  日本 | 1,847 JPY | 9,800 JPY | 銀行 (JPY) | ○ | 
+|  ヨルダン | 13 JOD | 70 JOD | 銀行 (JOD) | × | 
+|  カザフスタン | 2,897 KZT | 15038 KZT | 銀行 (KZT) | × | 
+|  ケニア | 19 USD | 99 USD | 銀行 (KES) | × | 
+|  キリバス | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  韓国 | 21,216 KRW | 108,000 KRW | 銀行 (USD) | × | 
+|  クウェート | 5 KWD | 28 KWD | 銀行 (KWD) | × | 
+|  キルギス | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ラオス | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  ラトビア | 14 EUR | 75 EUR | 銀行 (EUR) | × | 
+|  レバノン | 28,690 LBP | 149686 LBP | 銀行 (LBP) | × | 
+|  レソト | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  リベリア | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  リビア | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  リヒテンシュタイン | 17 CHF | 93 CHF | 銀行 (CHF) | ○ | 
+|  リトアニア | 14 EUR | 75 EUR | 銀行 (EUR) | × | 
+|  ルクセンブルク | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  マカオ | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  マケドニア (FYROM) | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  マダガスカル | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  マラウイ | 19 USD | 99 USD | 銀行 (MWK) | × | 
+|  マレーシア | 62 MYR | 300 MYR | 銀行 (USD) | × | 
+|  モルディブ | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  マリ | 19 USD | 99 USD | 銀行 (XOF) | × | 
+|  マルタ | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  マーシャル諸島 | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  モーリタニア | 5,681 MRO | 30,046 MRO | 支払の受け取りなし | × | 
+|  モーリシャス | 19 USD | 99 USD | 銀行 (MUR) | × | 
+|  メキシコ | 247 MXN | 1,140 MXN | 銀行 (MXN) | ○ | 
+|  ミクロネシア | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  モナコ | 14 EUR | 75 EUR | 銀行 (EUR) | × | 
+|  モンゴル | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  モンテネグロ | 14 EUR | 75 EUR | 銀行 (EUR) | × | 
+|  モロッコ | 158 MAD | 800 MAD | 銀行 (MAD) | × | 
+|  モザンビーク | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  ミャンマー | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ナミビア | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ナウル | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ネパール | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  オランダ | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  ニュージーランド | 24 NZD | 140 NZD | 銀行 (NZD) | ○ | 
+|  ニカラグア | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  ニジェール | 19 USD | 99 USD | 銀行 (XOF) | × | 
+|  ナイジェリア | 19 USD | 99 USD | 銀行 (NGN) | × | 
+|  ノルウェー | 113 NOK | 580 NOK | 銀行 (NOK) | ○ | 
+|  オマーン | 7 OMR | 40 OMR | 銀行 (OMR) | × | 
+|  パキスタン | 1,959 PKR | 9,000 PKR | 銀行 (PKR) | × | 
+|  パラオ | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  パナマ | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  パプアニューギニア | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  パラグアイ | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  ペルー | 54 PEN | 280 PEN | 銀行 (PEN) | × | 
+|  フィリピン | 832 PHP | 4,400 PHP | 銀行 (PHP) | ○ | 
+|  ポーランド | 59 PLN | 280 PLN | 銀行 (PLN) | ○ | 
+|  ポルトガル | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  カタール | 69 QAR | 360 QAR | 銀行 (QAR) | × | 
+|  ルーマニア | 63 RON | 360 RON | 銀行 (USD) | × | 
+|  ロシア | 626 RUB | 3,000 RUB | 銀行 (RUB) | ○* | 
+|  ルワンダ | 19 USD | 99 USD | 銀行 (RWF) | × | 
+|  セントクリストファー・ネイビス | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  セントルシア | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  セントビンセントおよびグレナディーン諸島 | 19 USD | 99 USD | 銀行 (XCD) | × | 
+|  サモア独立国 | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  サンマリノ |  14 EUR | 75 EUR | 支払の受け取りなし | × | 
+|  サントメ・プリンシペ | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  サウジアラビア | 71 SAR | 380 SAR | 銀行 (SAR) | × | 
+|  セネガル | 19 USD | 99 USD | 銀行 (XOF) | × | 
+|  セルビア | 1,619 RSD | 7,000 RSD | 銀行 (USD) | × | 
+|  セーシェル | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  シエラレオネ | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  シンガポール | 24 SGD | 120 SGD | 銀行 (SGD) | ○ | 
+|  スロバキア | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  スロベニア | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  ソロモン諸島 | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ソマリア | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  南アフリカ | 193 ZAR | 700 ZAR | 銀行 (ZAR) | × | 
+|  スペイン | 14 EUR | 75 EUR | 銀行 (EUR) | ○ | 
+|  スリランカ | 19 USD | 99 USD | 銀行 (LKR) | × | 
+|  スリナム | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  スワジランド | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  スウェーデン | 123 SEK | 700 SEK | 銀行 (SEK) | ○ | 
+|  スイス | 17 CHF | 90 CHF | 銀行 (CHF) | ○ | 
+|  台湾 | 568 TWD | 2,840 TWD | 銀行 (USD) | ○ | 
+|  タジキスタン | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  タンザニア | 19 USD | 99 USD | 銀行 (TZS) | × | 
+|  タイ | 601 THB | 3,000 THB | 銀行 (THB) | ○ | 
+|  ティモール・レステ | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  トーゴ | 19 USD | 99 USD | 銀行 (XOF) | × | 
+|  トンガ | 19 USD | 99 USD | 銀行 (TOP) | × | 
+|  トリニダード・トバゴ | 122 TTD | 636 TTD | 銀行 (TTD) | × | 
+|  チュニジア | 31 TND | 140 TND | 銀行 (TND) | × | 
+|  トルコ | 37 TRY | 160 TRY | 銀行 (TRY) | × | 
+|  トルクメニスタン | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  ツバル | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ウガンダ | 19 USD | 99 USD | 銀行 (UGX) | × | 
+|  ウクライナ | 156 UAH | 800 UAH | 銀行 (USD) | × | 
+|  アラブ首長国連邦 | 19 USD | 99 USD | 銀行 (EUR) | ○ | 
+|  英国 | 12 GBP | 65 GBP | 銀行 (GBP) | ○ | 
+|  米国 | 19 USD | 99 USD | 銀行 (USD) | ○ | 
+|  ウルグアイ | 19 USD | 99 USD | 銀行 (UYU) | × | 
+|  ウズベキスタン | 19 USD | 99 USD | 銀行 (USD) | × | 
+|  バヌアツ | 19 USD | 99 USD | 支払の受け取りなし | × | 
+|  ベネズエラ | 119 VEF | 420 VEF | 銀行 (USD) | × | 
+|  ベトナム | 400,425 VND | 2,000,000 VND | 銀行 (VND) | × | 
+|  イエメン | 4,080 YER | 21,245 YER | 支払の受け取りなし | × | 
+|  ザンビア | 19 USD | 99 USD | 銀行 (ZMK) | × | 
+|  ジンバブエ | 19 USD | 99 USD | 銀行 (USD) | × |
 
-\* XxxXxx xxx xx xxxx xx x xxxxxxx xxxxxx xxx xxxxxx xxxxxxxx xx xxxx xxxxxx, xxx xxx'x xx xxxx xx xxx xxx xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xxx.
+\* この市場では、PayPal を使用して、受取りアカウントを支払うことはできますが、開発者アカウントの登録料を支払うことはできません。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxxx x xxxxxxxxx xxxxxxx](opening-a-developer-account.md)
-* [Xxxxxxx xx xxxx xxxxxx xxxxxxx xxx xxx xxxxx](setting-up-your-payout-account-and-tax-forms.md)
-* [Xxxxxxx xxxx](getting-paid-apps.md)
+* [開発者アカウントを開く](opening-a-developer-account.md)
+* [受取りアカウントの設定と税関連の書類](setting-up-your-payout-account-and-tax-forms.md)
+* [支払いの受け取り](getting-paid-apps.md)
  
+
+
 <!--HONumber=Mar16_HO1-->
+
+

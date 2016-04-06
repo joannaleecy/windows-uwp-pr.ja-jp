@@ -1,206 +1,229 @@
 ---
-xx.xxxxxxx: XXYYYXYY-XYYY-YYXY-XYYY-YYYYYYXYXXXY
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxx xxx xx xxx xxx XXXx xx xxx Xxxxxxx.Xxxxx.Xxxxx xxxxxxxxx xx xxxxxx xxxxx xxxxxx xxx xxxxx xxxxxxx, xxxxxx, xxx xxxxxxxxxx xxxxxxxxx.
-xxxxx: Xxxxx Xxxxxx
+ms.assetid: CB924E17-C726-48E7-A445-364781F4CCA1
+description: この記事では、Windows.Media.Audio 名前空間の API を使ってオーディオのルーティング、ミキシング、処理のシナリオでオーディオ グラフを作成する方法について説明します。
+title: オーディオ グラフ
 ---
 
-# Xxxxx Xxxxxx
+# オーディオ グラフ
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-Xxxx xxxxxxx xxxxx xxx xx xxx xxx XXXx xx xxx [**Xxxxxxx.Xxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914341) xxxxxxxxx xx xxxxxx xxxxx xxxxxx xxx xxxxx xxxxxxx, xxxxxx, xxx xxxxxxxxxx xxxxxxxxx.
+この記事では、[**Windows.Media.Audio**](https://msdn.microsoft.com/library/windows/apps/dn914341) 名前空間の API を使ってオーディオのルーティング、ミキシング、処理のシナリオでオーディオ グラフを作成する方法について説明します。
 
-Xx xxxxx xxxxx xx x xxx xx xxxxxxxxxxxxxx xxxxx xxxxx xxxxxxx xxxxx xxxxx xxxx xxxxx. Xxxxx xxxxx xxxxx xxxxxx xxxxx xxxx xx xxx xxxxx xxxx xxxxx xxxxx xxxxxxx, xxxxx xxxxx, xx xxxx xxxxxx xxxx. Xxxxx xxxxxx xxxxx xxx xxx xxxxxxxxxxx xxx xxxxx xxxxxxxxx xx xxx xxxxx. Xxxxx xxx xx xxxxxx xxx xx xxx xxxxx xx xxxxx xxxxxx xxxxxxx, xxxxx xxxxx, xx xxxxxx xxxx. Xxx xxxx xxxx xx xxxx xx x xxxxxx xxxx xxxxx xxxxx xxxxx xxxx xxx xx xxxx xxxxx xxx xxxxxxxx xxxx xxxx x xxxxxx xxxxxx xxxx xxx xx xxxxxx xx xxxxx xxxxx xx xxx xxxxx. Xxxxx xxx xx xxx xxxxx xxxx xxxx xxxxxxx xxx xxx xxxxxxxxxxx xxxxxxx xxxx xxx xx, xxx xxxxxx xxxxx xxx xxxxx xxxxx xxx xxx xxxxx xxxx xxxxx xxxx xxx xxxxx xxxxx, xxxxxxx xxx xxxxxx xxxxx, xx xxx xxxxxx xxxxx. Xxxx xxxxx xxxxx xxxxxxxxx xxxx xxxxxxxxx xxxx x xxxxxx'x xxxxxxxxxx xx xx xxxxx xxxx, xxxxxxx xxxxx xxxx x xxxx xx x xxxxxx'x xxxxxxx, xx xxxxxx xxxxx xxxx xxxxxxxx xxxxxxx xxxxx xxx xxxx xx xxxxxxxxx.
+オーディオ グラフは、相互接続されたオーディオ ノードのセットです。オーディオ データは、ここを通って流れます。 オーディオ入力ノードは、オーディオ入力デバイス、オーディオ ファイル、またはカスタム コードから、オーディオ データをグラフに提供します。 オーディオ出力ノードは、グラフで処理されたオーディオの目的地です。 オーディオは、グラフからオーディオ出力デバイス、オーディオ ファイル、またはカスタム コードにルーティングできます。 最後のノードの種類は、サブミックス ノードです。このノードでは、1 つまたは複数のノードからのオーディオを結合して 1 つの出力にします。この出力は、グラフ内の他のノードにルーティングすることができます。 すべてのノードが作成され、ノード間の接続が設定された後、オーディオ グラフを開始すると、オーディオ データが入力ノードからサブミックス ノードを通って出力ノードまで流れます。 このモデルでは、デバイスのマイクからオーディオ ファイルへの録音、ファイルからデバイスのスピーカーへのオーディオ再生、複数ソースからのオーディオ ミキシングなどのシナリオが、すばやく簡単に実装できるようになります。
 
-Xxxxxxxxxx xxxxxxxxx xxx xxxxxxx xxxx xxx xxxxxxxx xx xxxxx xxxxxxx xx xxx xxxxx xxxxx. Xxxxx xxxx xx xx xxxxx xxxxx xxx xx xxxxxxxxx xxxx xxxx xx xxxx xxxxx xxxxxxx xxxx xxxxxxx xxxxx xxxxxxxxxx xx xxx xxxxx xxxxxxx xxxxxxx xxx xxxx. Xxxxx xxx xxxxxxx xxxxx-xx xxxxxxx xxxx xx xxxx, xxxxxxxxx, xxxxxxxx, xxx xxxxxx xxxx xxx xx xxxxxxxx xx xx xxxxx xxxx xxxx xxxx x xxx xxxxx xx xxxx. Xxx xxx xxxx xxxxxx xxxx xxx xxxxxx xxxxx xxxxxxx xxxx xxxx xxxxxxx xxx xxxx xx xxx xxxxx-xx xxxxxxx.
+オーディオ エフェクトをオーディオ グラフに追加することで、その他のシナリオも有効になります。 オーディオ グラフ内の各ノードには、ノードを通過するオーディオに対してオーディオ処理を実行するオーディオ エフェクトを 0 個以上設定できます。 エコー、イコライザー、リミッティング、リバーブなど、いくつかの組み込みエフェクトがあり、これらはわずか数行のコードでオーディオ ノードにアタッチできます。 組み込みエフェクトとまったく同様に動作するカスタム オーディオ エフェクトを独自に作成することもできます。
 
-**Xxxx**  
-Xxx [XxxxxXxxxx XXX xxxxxx](http://go.microsoft.com/fwlink/?LinkId=619481) xxxxxxxxxx xxx xxxx xxxxxxxxx xx xxxx xxxxxxxx. Xxx xxx xxxxxxxx xxx xxxxxx xx xxx xxx xxxx xx xxxxxxx xx xx xxx xx x xxxxxxxx xxxxx xxx xxxx xxx xxx.
+**注**  
+[AudioGraph UWP サンプル](http://go.microsoft.com/fwlink/?LinkId=619481) は、この概要で説明するコードを実装します。 サンプルをダウンロードすると、コンテキスト内のコードを確認できます。独自のアプリの出発点として使うこともできます。
 
-## Xxxxxxxx Xxxxxxx Xxxxxxx XxxxxXxxxx xx XXxxxxY
+## Windows ランタイム AudioGraph または XAudio2 の選択
 
-Xxx Xxxxxxx Xxxxxxx xxxxx xxxxx XXXx xxxxx xxxxxxxxxxxxx xxxx xxx xxxx xx xxxxxxxxxxx xxxxx xxx XXX-xxxxx [XXxxxxY XXXx](https://msdn.microsoft.com/library/windows/desktop/hh405049). Xxx xxxxxxxxx xxx xxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxxxx xxxxx xxxxxxxxx xxxx xxxxxx xxxx XXxxxxY.
+Windows ランタイム オーディオ グラフ API で提供される機能は、COM ベースの [XAudio2 API](https://msdn.microsoft.com/library/windows/desktop/hh405049) を使って実装することもできます。 XAudio2 とは異なる Windows ランタイム オーディオ グラフ フレームワークの特徴を次に示します。
 
--   Xxx Xxxxxxx Xxxxxxx xxxxx xxxxx XXXx xxx xxxxxxxxxxxxx xxxxxx xx xxx xxxx XXxxxxY.
--   Xxx Xxxxxxx Xxxxxxx xxxxx xxxxx XXXx xxx xx xxxx xxxx X# - xx xxxxxxxx xx xxxxx xxxxxxxxx xxx X++.
--   Xxx Xxxxxxx Xxxxxxx xxxxx xxxxx XXXx xxx xxx xxxxx xxxxx, xxxxxxxxx xxxxxxxxxx xxxx xxxxxxx, xxxxxxxx. XXxxxxY xxxx xxxxxxxx xx xxxxx xxxxxxx xxx xxxx xxx xxxxxxx xxx xxxx X/X xxxxxxxxxxxx.
--   Xxx Xxxxxxx Xxxxxxx xxxxx xxxxx XXXx xxx xxx xxx xxx-xxxxxxx xxxxx xxxxxxxx xx Xxxxxxx YY.
--   Xxx Xxxxxxx Xxxxxxx xxxxx xxxxx XXXx xxxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxxxx xxx xxxx. Xxx xxxxxxx, xx xxx xxxx xxxxxxxx xxxx x xxxxxx'x xxxxxxx xx x xxxxxxx, xxx xxxxx xx xxxxxxxxxxxxx xxxxxxxxxx xx xxx xxx xxxxx.
+-   Windows ランタイム オーディオ グラフ API の使用は、XAudio2 よりずっと簡単です。
+-   Windows ランタイム オーディオ グラフ API は、C++ 用にサポートされていますが、C# からも使用できます。
+-   Windows ランタイム オーディオ グラフ API では、圧縮ファイル形式などのオーディオ ファイルを直接使用できます。 XAudio2 はオーディオ バッファーのみで動作します。ファイル I/O 機能はありません。
+-   Windows ランタイム オーディオ グラフ API では、Windows 10 の低待機時間オーディオ パイプラインを使用できます。
+-   Windows ランタイム オーディオ グラフ API では、既定のエンドポイント パラメーターの使用時にエンドポイントの自動切り替えがサポートされます。 たとえば、ユーザーがデバイスのスピーカーからヘッドホンに切り替えると、オーディオが自動的に新しい入力にリダイレクトされます。
 
-## XxxxxXxxxx xxxxx
+## AudioGraph クラス
 
-Xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914176) xxxxx xx xxx xxxxxx xx xxx xxxxx xxxx xxxx xx xxx xxxxx. Xxx xxxx xxxxxx xx xxxxxx xxxxxxxxx xx xxx xx xxx xxxxx xxxx xxxxx. Xxxxxx xx xxxxxxxx xx xxx **XxxxxXxxxx** xxxxx xx xxxxxxxxxxxx xx [**XxxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914185) xxxxxx, xxxxxxxxxx xxxxxxxxxxxxx xxxxxxxx xxx xxx xxxxx, xxx xxxx xxxxxxx [**XxxxxXxxxx.XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914216). Xxx xxxxxxxx [**XxxxxxXxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914273) xxxxx xxxxxx xx xxx xxxxxxx xxxxx xxxxx xx xxxxxxxx xx xxxxx xxxxx xx xxxxx xxxxx xxxxxxxx xxxxx.
+[
+            **AudioGraph**](https://msdn.microsoft.com/library/windows/apps/dn914176) クラスは、グラフを構成するすべてのノードの親です。 すべての種類のオーディオ ノードのインスタンス作成に、このオブジェクトを使います。 **AudioGraph** クラスのインスタンスを作成するには、[**AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) オブジェクトを初期化し、グラフの構成設定を含めて、[**AudioGraph.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn914216) を呼び出します。 返された [**CreateAudioGraphResult**](https://msdn.microsoft.com/library/windows/apps/dn914273) により、作成されたオーディオ グラフへのアクセスが可能になります。オーディオ グラフの作成に失敗すると、エラー値が返されます。
 
-[!xxxx-xx[XxxxxxxXxxxxXxxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareAudioGraph)]
+[!code-cs[DeclareAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareAudioGraph)]
 
-[!xxxx-xx[XxxxXxxxxXxxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetInitAudioGraph)]
+[!code-cs[InitAudioGraph](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetInitAudioGraph)]
 
--   Xxx xxxxx xxxx xxxxx xxx xxxxxxx xx xxxxx xxx Xxxxxx\* xxxxxxx xx xxx **XxxxxXxxxx** xxxxx.
--   Xxx [**XxxxxXxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914244) xxxxxx xxxxxx xxx xxxxx xxxxx xx xxxxx xxxxxxxxxx xxxxx xxxx. Xxx [**XxxxxXxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn914245) xxxxxx xxxxx xxxxx xxxxxxxxxx. Xxxx xxxx xx xxx xxxxx xxx xx xxxxxxx xxx xxxxxxx xxxxxxxxxxxxx xxxxx xxx xxxxx xx xxxxxxx, xxx xx xxxxx xxx xxxxxx xxxx xxx xxxxx xx xxxxxxx. [
-            **XxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914242) xxxxxx xxx xxxxx xx xxx xxxxx xx xxxxxxx xxx xxxx xxxxxxxxx xx xxxxx xxxxx xxxxxxx.
--   Xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914241) xxxxx xxxxxx xxxx xxx xxxxx xx xxxxxxxx xxx xxxxxxxxxx xx x xxx xxxxxxx xx xxxxx xxxx. Xxx [**XxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914240) xxxxx xxxxxx xxxx xxx xxxxxxxxxx xx x xxxxxxx xx xxxxxxxxx.
+-   オーディオ ノードのすべての種類は、**AudioGraph** クラスの Create\* メソッドで作成します。
+-   [
+            **AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) メソッドを呼び出すと、オーディオ グラフによってオーディオ データの処理が開始されます。 [
+            **AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) メソッドは、オーディオ処理を停止します。 グラフの実行中、グラフ内の各ノードは個別に開始および停止できますが、グラフが停止すると、すべてのノードが非アクティブになります。 [**ResetAllNodes**](https://msdn.microsoft.com/library/windows/apps/dn914242) を呼び出すと、グラフ内のすべてのノードで、現在のオーディオ バッファー内にあるすべてのデータが破棄されます。
+-   グラフで、オーディオ データの新しいクォンタムの処理が開始されると、[**QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn914241) イベントが発生します。 クォンタムの処理が完了すると、[**QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) イベントが発生します。
 
--   Xxx xxxx [**XxxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914185) xxxxxxxx xxxx xx xxxxxxxx xx [**XxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297724). Xxxxxxxxxx xxxx xxxxx xxxxxx xxx xxxxxx xx xxxxxxxx xxx xxxxx xxxxxxxx xxx xxx xxxxxxxxx xxxxxxxx.
--   Xxx xxxxxxx xxxx xx xxx xxxxx xxxxx xxxxxxxxxx xxx xxxxxx xx xxxxxxx xxxx xxx xxxxxxxxx xx xxx xxxx. Xx xxxxxxx, xxx xxxxxxx xxxx xx YY xx xxxxx xx xxx xxxxxxx xxxxxx xxxx. Xx xxx xxxxxxx x xxxxxx xxxxxxx xxxx xx xxxxxxx xxx [**XxxxxxxXxxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914205) xxxxxxxx, xxx xxxx xxxx xxx xxx [**XxxxxxxXxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914208) xxxxxxxx xx **XxxxxxxXxXxxxxxx** xx xxx xxxxxxxx xxxxx xx xxxxxxx. Xx xxxx xxxxx xx xxxx, xxx xxxxxx xxxx xxxxxx x xxxxxxx xxxx xx xxxxx xx xxxxxxxx xx xxx xxx xxx xxxxxxx. Xx xxxxxxxxx xxx xxxxxx xxxxxxx xxxx, xxxxx xxx [**XxxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914243) xx xxx **XxxxxXxxxx** xxxxx xx xxx xxxx xxxxxxx.
--   Xx xxx xxxx xxxx xx xxx xxx xxxxx xxxxx xxxx xxxxx xxx xxx'x xxxx xx xxxxxx xx xx xxxxx xxxxxx, xx xx xxxxxxxxxxx xxxx xxx xxx xxx xxxxxxx xxxxxxx xxxx xx xxx xxxxxxx xxx [**XxxxxxxXxxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914205) xxxxxxxx.
--   Xxx [**XxxxxxxXxxxxxXxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958522) xxxxxxxx xxxxxxxxxx xxx xxxxxx xx xxxxxxxxxx xxx xxxxxxx xxxxxx xxxxxx xxxxxxxx xx xxx xxxxxx xx xxx xxxxx xxxxx. Xxx **Xxxxxxx** xxxxxxx xxxxxx xxx xxxxxx xx xxx xxx xxxxxxx xxxxx xxxxxxxxxx xxx xxx xxxxxxxxx xxxxx xxxxxx xxxxxxxx. Xxxx xxxxxxxxxx xxx xxxxxxxxxxxxx xxxxxxx xxx xxxxx xx xxxxx xx xxxx xxxxxxx, xxxxxxxxxxxx xxxxxx xxxxxxx xxxx xxxxx xxxxxxxx. Xxx **Xxx** xxxxxxx xxx xxxxxxx xxxxxxxxxxx xx xxxxxxxxxx xxx xxxxxx xx xxxxxx xxxxxxxxxx xxxxxxxxx, xxx xxx xxxxxx xx xxxxxxxx xxxxx xxxxxxx xx xxxx xxxxxxx.
--   Xx xxx [**XxxxxxxXxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914208) xx xxx xx **XxxxxxXxxxxxx**, xxx xxxxx xxxxx xxxx xxxxxxxxxxxxx xxx **Xxx** xxx [**XxxxxxxXxxxxxXxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958522).
--   Xxx [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958523) xxxxxxxxxx xxx xxxxx xxxxxx xxxx xx xxx xxxxx. Xxxx YY-xxx xxxxx xxxxxxx xxx xxxxxxxxx.
--   Xxx [**XxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958524) xxxx xxx xxxxxxx xxxxxx xxxxxx xxx xxx xxxxx xxxxx. Xx xxx xxx'x xxx xxxx, xxx xxxxxxx xxxxxx xxxxxx xx xxxx. Xxx xxxxxxx xxxxxx xxxxxx xx xxxx xx xxxxxxxxx xxx xxxxxxx xxxxx xxx xxxxx xxxxx xx xxx xxxxx. Xx xxxxx xxx xx xxxxx xxxxxx xxxxxxx xxxxxxx xx xxx xxxxxx, xxxxx xxxxx xxxxxxxx xxxx xxxx.
+-   [
+            **AudioGraphSettings**](https://msdn.microsoft.com/library/windows/apps/dn914185) プロパティのうち、必須であるのは [**AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724) のみです。 この値を指定することにより、システムは指定されたカテゴリについてオーディオ パイプラインを最適化します。
+-   オーディオ グラフのクォンタム サイズにより、同時に処理されるサンプルの数が決定します。 既定では、既定のサンプル レートのクォンタム サイズは 10 ミリ秒ベースです。 [
+            **DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) プロパティを設定することでカスタムのクォンタム サイズを指定する場合は、[**QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) プロパティを **ClosestToDesired** に設定しないと、指定した値が無視されます。 この値を使うと、指定した値にできる限り近いクォンタム サイズがシステムによって選択されます。 実際のクォンタム サイズを確認するには、**AudioGraph** の [**SamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914243) を作成後にチェックします。
+-   オーディオ グラフの使用対象がファイルのみであり、オーディオ デバイスに出力する予定がない場合は、[**DesiredSamplesPerQuantum**](https://msdn.microsoft.com/library/windows/apps/dn914205) プロパティを設定せずに、既定のクォンタム サイズを使うことをお勧めします。
+-   [
+            **DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) プロパティは、オーディオ グラフの出力に対してプライマリ レンダリング デバイスで実行される処理の量を決定します。 **Default** 設定を使うと、指定されたオーディオ レンダリング カテゴリに対してシステムが既定のオーディオ処理を使用できるようになります。 この処理により、一部のデバイス (特に、小型スピーカーが搭載されているモバイル デバイス) ではオーディオのサウンドが大幅に改善される場合があります。 **Raw** 設定を使うと、実行する信号処理の量を最小化してパフォーマンスを向上できることがありますが、一部のデバイスでは音質が低下する場合があります。
+-   [
+            **QuantumSizeSelectionMode**](https://msdn.microsoft.com/library/windows/apps/dn914208) が **LowestLatency** に設定されていると、オーディオ グラフは [**DesiredRenderDeviceAudioProcessing**](https://msdn.microsoft.com/library/windows/apps/dn958522) に対して自動的に **Raw** を使います。
+-   [
+            **EncodingProperties**](https://msdn.microsoft.com/library/windows/apps/dn958523) は、グラフで使用されるオーディオ形式を決定します。 サポートされているのは 32 ビットの浮動小数点形式のみです。
+-   [
+            **PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) は、オーディオ グラフのプライマリ レンダリング デバイスを設定します。 このプロパティを設定しなかった場合は、既定のシステム デバイスが使われます。 プライマリ レンダリング デバイスは、グラフの他のノードのクォンタム サイズの計算に使われます。 システムにオーディオ レンダリング デバイスが存在しない場合、オーディオ グラフの作成は失敗します。
 
-Xxx xxx xxx xxx xxxxx xxxxx xxx xxx xxxxxxx xxxxx xxxxxx xxxxxx xx xxx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx.XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225393) xxxxx xx xxx x xxxx xx xxx xxxxxx'x xxxxxxxxx xxxxx xxxxxx xxxxxxx xx xxxxxxx [**XxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br225432) xxx xxxxxxx xx xxx xxxxx xxxxxx xxxxxx xxxxxxxx xxxxxxxx xx [**Xxxxxxx.Xxxxx.Xxxxxxx.XxxxxXxxxxx.XxxXxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226817). Xxx xxx xxxxxx xxx xx xxx xxxxxxxx **XxxxxxXxxxxxxxxxx** xxxxxxx xxxxxxxxxxxxxxx xx xxxx XX xx xxxxx xxx xxxx xx xxxxxx x xxxxxx xxx xxxx xxx xx xx xxx xxx [**XxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958524) xxxxxxxx.
+オーディオ グラフでは、既定のオーディオ レンダリング デバイスを使うことも、[**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) クラスを使ってシステムで利用可能なオーディオ レンダリング デバイスの一覧を取得することもできます。これには、[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) を呼び出して、[**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817) から返されるオーディオ レンダリング デバイス セレクターを渡します。 返された **DeviceInformation** オブジェクトのうちいずれかをプログラムで選択するか、ユーザーがデバイスを選択できるように UI を表示して、選択されたデバイスを [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) プロパティに設定します。
 
-[!xxxx-xx[XxxxxxxxxXxxxxXxxxxxXxxxxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioRenderDevices)]
+[!code-cs[EnumerateAudioRenderDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioRenderDevices)]
 
-##  Xxxxxx xxxxx xxxx
+##  デバイス入力ノード
 
-X xxxxxx xxxxx xxxx xxxxx xxxxx xxxx xxx xxxxx xxxx xx xxxxx xxxxxxx xxxxxx xxxxxxxxx xx xxx xxxxxx, xxxx xx x xxxxxxxxxx. Xxxxxx x [**XxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914082) xxxxxx xxxx xxxx xxx xxxxxx'x xxxxxxx xxxxx xxxxxxx xxxxxx xx xxxxxxx [**XxxxxxXxxxxxXxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914218). Xxxxxxx xx [**XxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297724) xx xxxxx xxx xxxxxx xx xxxxxxxx xxx xxxxx xxxxxxxx xxx xxx xxxxxxxxx xxxxxxxx.
+デバイス入力ノードは、システムに接続されているオーディオ キャプチャ デバイス (マイクなど) からオーディオを取得し、グラフに渡します。 システムの既定オーディオ キャプチャ デバイスを使う [**DeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) オブジェクトを作成するには、[**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218) を呼び出します。 [
+            **AudioRenderCategory**](https://msdn.microsoft.com/library/windows/apps/dn297724) を指定すると、指定されたカテゴリのオーディオ パイプラインがシステムによって最適化されます。
 
-[!xxxx-xx[XxxxxxxXxxxxxXxxxxXxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareDeviceInputNode)]
+[!code-cs[DeclareDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareDeviceInputNode)]
 
 
-[!xxxx-xx[XxxxxxXxxxxxXxxxxXxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceInputNode)]
+[!code-cs[CreateDeviceInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceInputNode)]
 
-Xx xxx xxxx xx xxxxxxx x xxxxxxxx xxxxx xxxxxxx xxxxxx xxx xxx xxxxxx xxxxx xxxx, xxx xxx xxx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx.XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225393) xxxxx xx xxx x xxxx xx xxx xxxxxx'x xxxxxxxxx xxxxx xxxxxxx xxxxxxx xx xxxxxxx [**XxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br225432) xxx xxxxxxx xx xxx xxxxx xxxxxx xxxxxx xxxxxxxx xxxxxxxx xx [**Xxxxxxx.Xxxxx.Xxxxxxx.XxxxxXxxxxx.XxxXxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226817). Xxx xxx xxxxxx xxx xx xxx xxxxxxxx **XxxxxxXxxxxxxxxxx** xxxxxxx xxxxxxxxxxxxxxxx xx xxxx XX xx xxxxx xxx xxxx xx xxxxxx x xxxxxx xxx xxxx xxxx xx xxxx [**XxxxxxXxxxxxXxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914218).
+デバイス入力ノードに特定のオーディオ キャプチャ デバイスを指定する場合は、[**Windows.Devices.Enumeration.DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/br225393) クラスを使ってシステムで利用可能なオーディオ キャプチャ デバイスの一覧を取得することもできます。これには、[**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) を呼び出して、[**Windows.Media.Devices.MediaDevice.GetAudioRenderSelector**](https://msdn.microsoft.com/library/windows/apps/br226817) から返されるオーディオ レンダリング デバイス セレクターを渡します。 返された **DeviceInformation** オブジェクトのうちいずれかをプログラムで選択するか、ユーザーがデバイスを選択できるように UI を表示して、選択されたデバイスを [**CreateDeviceInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914218) に渡します。
 
-[!xxxx-xx[XxxxxxxxxXxxxxXxxxxxxXxxxxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioCaptureDevices)]
+[!code-cs[EnumerateAudioCaptureDevices](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetEnumerateAudioCaptureDevices)]
 
-##  Xxxxxx xxxxxx xxxx
+##  デバイス出力ノード
 
-X xxxxxx xxxxxx xxxx xxxxxx xxxxx xxxx xxx xxxxx xx xx xxxxx xxxxxx xxxxxx, xxxx xx xxxxxxxx xx x xxxxxxx. Xxxxxx x [**XxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914098) xx xxxxxxx [**XxxxxxXxxxxxXxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958525). Xxx xxxxxx xxxx xxxx xxx [**XxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958524) xx xxx xxxxx xxxxx.
+デバイス出力ノードは、オーディオをグラフからスピーカーやヘッドセットなどのオーディオ レンダリング デバイスにプッシュします。 [
+            **DeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914098) を作成するには、[**CreateDeviceOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn958525) を呼び出します。 出力ノードでは、オーディオ グラフの [**PrimaryRenderDevice**](https://msdn.microsoft.com/library/windows/apps/dn958524) が使用されます。
 
-[!xxxx-xx[XxxxxxxXxxxxxXxxxxxXxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareDeviceOutputNode)]
+[!code-cs[DeclareDeviceOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareDeviceOutputNode)]
 
-[!xxxx-xx[XxxxxxXxxxxxXxxxxxXxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceOutputNode)]
+[!code-cs[CreateDeviceOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateDeviceOutputNode)]
 
-##  Xxxx xxxxx xxxx
+##  ファイル入力ノード
 
-X xxxx xxxxx xxxx xxxxxx xxx xx xxxx xxxx xxxx xx xxxxx xxxx xxxx xxx xxxxx. Xxxxxx xx [**XxxxxXxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914108) xx xxxxxxx [**XxxxxxXxxxXxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914226).
+ファイル入力ノードを使用すると、データをオーディオ ファイルからグラフに渡すことができます。 [
+            **AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) を作成するには、[**CreateFileInputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914226) を呼び出します。
 
-[!xxxx-xx[XxxxxxxXxxxXxxxxXxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileInputNode)]
+[!code-cs[DeclareFileInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileInputNode)]
 
 
-[!xxxx-xx[XxxxxxXxxxXxxxxXxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFileInputNode)]
+[!code-cs[CreateFileInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFileInputNode)]
 
--   Xxxx xxxxx xxxxx xxxxxxx xxx xxxxxxxxx xxxx xxxxxxx: xxY, xxx, xxx, xYx
--   Xxx xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914130) xxxxxxxx xx xxxxxxx xxx xxxx xxxxxx xxxx xxx xxxx xxxxx xxxxxxxx xxxxxx xxxxx. Xx xxxx xxxxxxxx xx xxxx, xxx xxxxxxxxx xx xxx xxxx xx xxxx. Xxx xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914118) xxxxxxxx xx xxxxxxx xxx xxxx xxxxxx xxxx xxx xxxx xxxxx xxxxxxxx xxxxxx xxx. Xx xxxx xxxxxxxx xx xxxx, xxx xxx xx xxx xxxx xx xxxx. Xxx xxxxx xxxx xxxxx xxxx xx xxxxx xxxx xxx xxx xxxx xxxxx, xxx xxx xxx xxxx xxxxx xxxx xx xxxx xxxx xx xxxxx xx xxx xxxxxxxx xx xxx xxxxx xxxx, xxxxx xxx xx xxxxxxxxxx xx xxxxxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914116) xxxxxxxx xxxxx.
--   Xxxx xx x xxxxxxxx xx xxx xxxxx xxxx xx xxxxxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn914127) xxx xxxxxxxxxx xxx xxxx xxxxxx xxxx xxx xxxx xx xxxxx xxx xxxxxxxx xxxxxxxx xxxxxx xx xxxxx. Xxx xxxxxxxxx xxxxx xxxx xx xxxxxx xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914130) xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914118) xxxxx. Xxx xxx xxxxxxx xxxxxxxx xxxxxxxx xx xxx xxxx xxxx xxx xxxx-xxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914124) xxxxxxxx.
--   Xxxxxx xxxxxxx xx xxx xxxxx xxxx xx xxxxxxx xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914120) xxxxxxxx. Xxxx xxx-xxxx, xxxx xxxxx xxxxxxxxx xxx xxxxxx xx xxxxx xxx xxxx xxxx xx xxxxxx xx xxxxx xxx xxxxxxx xxxxxxxx. Xx, xxx xxxxxxx, xxxxxxx **XxxxXxxxx** xx Y xxxx xxxxx xxx xxxx xx xx xxxxxx Y xxxxx xx xxxxx, xxx xxxxxxx xx xx Y xxxx xxxxx xxx xxxx xx xx xxxxxx Y xxxxx xx xxxxx. Xxxxxxx **XxxxXxxxx** xx xxxx xxxxxx xxx xxxx xx xx xxxxxx xxxxxxxxxxxx. Xx xxxx xxxxxxx, xxx xxx xxxxx xx Y.
--   Xxxxxx xxx xxxxx xx xxxxx xxx xxxxx xxxx xx xxxxxx xxxx xx xxxxxxx xxx [**XxxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914123). X xxxxx xx Y xxxxxxxxx xxx xxxxxxxx xxxxx xx xxx xxxx, .Y xx xxxx-xxxxx, xxx Y xx xxxxxx xxxxx.
+-   ファイル入力ノードでは、ファイル形式として mp3、wav、wma、m4a がサポートされています。
+-   ファイル内の再生開始位置にタイム オフセットを指定するには、[**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) プロパティを設定します。 このプロパティが null の場合は、ファイルの先頭が使用されます。 ファイル内の再生終了位置にタイム オフセットを指定するには、[**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118) プロパティを設定します。 このプロパティが null の場合は、ファイルの末尾が使用されます。 開始時刻の値は、終了時刻の値より小さくする必要があります。また、終了時刻の値はオーディオ ファイルの長さを超えないように設定する必要があります。オーディオ ファイルの長さを確認するには、[**Duration**](https://msdn.microsoft.com/library/windows/apps/dn914116) プロパティの値をチェックします。
+-   オーディオ ファイル内の位置をシークするには、[**Seek**](https://msdn.microsoft.com/library/windows/apps/dn914127) を呼び出し、ファイル内の再生位置の移動先にタイム オフセットを指定します。 指定された値は、[**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn914130) から [**EndTime**](https://msdn.microsoft.com/library/windows/apps/dn914118) の範囲内である必要があります。 ノードの現在の再生位置を取得するには、読み取り専用の [**Position**](https://msdn.microsoft.com/library/windows/apps/dn914124) プロパティを使います。
+-   オーディオ ファイルのループ処理を有効にするには、[**LoopCount**](https://msdn.microsoft.com/library/windows/apps/dn914120) プロパティを設定します。 この値は、null 以外であれば、初回の再生後にファイルが再生される回数を示します。 たとえば、**LoopCount** を 1 に設定すると、このファイルは合計 2 回再生されます。値を 5 に設定すると、ファイルは合計 6 回再生されます。 **LoopCount** を null に設定すると、ファイルが無限にループされます。 ループを停止するには、値を 0 に設定します。
+-   オーディオ ファイルの再生速度を調整するには、[**PlaybackSpeedFactor**](https://msdn.microsoft.com/library/windows/apps/dn914123) を設定します。 値 1 は、ファイルの元の速度を示します、0.5 は半分の速度、2 は 2 倍の速度を示します。
 
-##  Xxxx xxxxxx xxxx
+##  ファイル出力ノード
 
-X xxxx xxxxxx xxxx xxxx xxx xxxxxx xxxxx xxxx xxxx xxx xxxxx xxxx xx xxxxx xxxx. Xxxxxx xx [**XxxxxXxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914133) xx xxxxxxx [**XxxxxxXxxxXxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914227).
+ファイル出力ノードを使用すると、オーディオ データをグラフからオーディオ ファイルに渡すことができます。 [
+            **AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133) を作成するには、[**CreateFileOutputNodeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914227) を呼び出します。
 
-[!xxxx-xx[XxxxxxxXxxxXxxxxxXxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileOutputNode)]
+[!code-cs[DeclareFileOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFileOutputNode)]
 
 
-[!xxxx-xx[XxxxxxXxxxXxxxxxXxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFileOutputNode)]
+[!code-cs[CreateFileOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFileOutputNode)]
 
--   Xxxx xxxxxx xxxxx xxxxxxx xxx xxxxxxxxx xxxx xxxxxxx: xxY, xxx, xxx, xYx
--   Xxx xxxx xxxx [**XxxxxXxxxXxxxxxXxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn914144) xx xxxx xxx xxxx'x xxxxxxxxxx xxxxxx xxxxxxx [**XxxxxXxxxXxxxxxXxxx.XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914140) xx xx xxxxxxxxx xxxx xx xxxxxx.
+-   ファイル出力ノードでは、ファイル形式として mp3、wav、wma、m4a がサポートされています。
+-   [
+            **AudioFileOutputNode.FinalizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn914140) を呼び出す前に、[**AudioFileOutputNode.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914144) を呼び出して、ノードの処理を停止する必要があります。そうしないと例外がスローされます。
 
-##  Xxxxx xxxxx xxxxx xxxx
+##  オーディオ フレーム入力ノード
 
-Xx xxxxx xxxxx xxxxx xxxx xxxxxx xxx xx xxxx xxxxx xxxx xxxx xxx xxxxxxxx xx xxxx xxx xxxx xxxx xxx xxxxx xxxxx. Xxxx xxxxxxx xxxxxxxxx xxxx xxxxxxxx x xxxxxx xxxxxxxx xxxxxxxxxxx. Xxxxxx xx [**XxxxxXxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914147) xx xxxxxxx [**XxxxxxXxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914230).
+オーディオ フレーム入力ノードでは、独自のコードで生成したオーディオ データをオーディオ グラフにプッシュすることができます。 これにより、カスタムのソフトウェア シンセサイザーを作成するなどのシナリオが可能になります。 [
+            **AudioFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914147) を作成するには、[**CreateFrameInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914230) を呼び出します。
 
-[!xxxx-xx[XxxxxxxXxxxxXxxxxXxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameInputNode)]
+[!code-cs[DeclareFrameInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameInputNode)]
 
 
-[!xxxx-xx[XxxxxxXxxxxXxxxxXxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameInputNode)]
+[!code-cs[CreateFrameInputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameInputNode)]
 
-Xxx [**XxxxxXxxxxXxxx.XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958507) xxxxx xx xxxxxx xxxx xxx xxxxx xxxxx xx xxxxx xx xxxxx xxxxxxxxxx xxx xxxx xxxxxxx xx xxxxx xxxx. Xxx xxxxxx xxxx xxxxxx xxxxxxxxx xxxxx xxxx xxxx xxxxxx xxx xxxxxxx xx xxxx xxxxx.
+オーディオ グラフでオーディオ データの次のクォンタムの処理を開始する準備ができると、[**FrameInputNode.QuantumStarted**](https://msdn.microsoft.com/library/windows/apps/dn958507) イベントが発生します。 カスタム生成したオーディオ データは、このイベントに対するハンドラー内で指定します。
 
-[!xxxx-xx[XxxxxxxXxxxxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStarted)]
+[!code-cs[QuantumStarted](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumStarted)]
 
--   Xxx [**XxxxxXxxxxXxxxXxxxxxxXxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn958533) xxxxxx xxxxxx xxxx xxx **XxxxxxxXxxxxxx** xxxxx xxxxxxx xxxxxxx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958534) xxxxxxxx xxxx xxxxxxxxx xxx xxxx xxxxxxx xxx xxxxx xxxxx xxxxx xx xxxx xx xxx xxxxxxx xx xx xxxxxxxxx.
--   Xxxx [**XxxxxXxxxxXxxxxXxxx.XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914148) xx xxxx xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn930871) xxxxxx xxxxxx xxxx xxxxx xxxx xxxx xxx xxxxx.
--   Xx xxxxxxx xxxxxxxxxxxxxx xx xxx **XxxxxxxxXxxxxXxxx** xxxxxx xxxxxx xx xxxxx xxxxx.
+-   **QuantumStarted** イベント ハンドラーに渡された [**FrameInputNodeQuantumStartedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958533) オブジェクトには [**RequiredSamples**](https://msdn.microsoft.com/library/windows/apps/dn958534) プロパティがあります。このプロパティは、クォンタムを処理するためにオーディオ グラフが必要とするサンプル数を示します。
+-   オーディオ データを設定した [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) オブジェクトをグラフに渡すには、[**AudioFrameInputNode.AddFrame**](https://msdn.microsoft.com/library/windows/apps/dn914148) を呼び出します。
+-   **GenerateAudioData** ヘルパー メソッドの実装例を下に示します。
 
-Xx xxxxxxxx xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn930871) xxxx xxxxx xxxx, xxx xxxx xxx xxxxxx xx xxx xxxxxxxxxx xxxxxx xxxxxx xx xxx xxxxx xxxxx. Xx xx xxxx xxx xxxx xxxxxxxxxx xxx **XXxxxxxXxxxxxXxxxXxxxxx** XXX xxxxxxxxx xx xxxxxx xxx xxxxxxxxx xxxx xxxxxx xxxx xxxxxxxxx.
+[
+            **AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) にオーディオ データを設定するには、オーディオ フレームの基になるメモリ バッファーにアクセスできる必要があります。 これには、該当する名前空間に以下のコードを追加して、COM インターフェイス **IMemoryBufferByteAccess** を初期化する必要があります。
 
-[!xxxx-xx[XxxXxxxxxXXxxxxxXxxxxxXxxxXxxxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetComImportIMemoryBufferByteAccess)]
+[!code-cs[ComImportIMemoryBufferByteAccess](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetComImportIMemoryBufferByteAccess)]
 
-Xxx xxxxxxxxx xxxx xxxxx xx xxxxxxx xxxxxxxxxxxxxx xx x **XxxxxxxxXxxxxXxxx** xxxxxx xxxxxx xxxx xxxxxxx xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn930871) xxx xxxxxxxxx xx xxxx xxxxx xxxx.
+次のコードは、[**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) を作成し、オーディオ データを設定する **GenerateAudioData** ヘルパー メソッドの実装例を示しています。
 
-[!xxxx-xx[XxxxxxxxXxxxxXxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetGenerateAudioData)]
+[!code-cs[GenerateAudioData](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetGenerateAudioData)]
 
--   Xxxxxxx xxxx xxxxxx xxxxxxxx xxx xxx xxxxxx xxxxxxxxxx xxx Xxxxxxx Xxxxxxx xxxxx, xx xxxx xx xxxxxxxx xxxxx xxx **xxxxxx** xxxxxxx. Xxx xxxx xxxx xxxxxxxxx xxxx xxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx xx xxxxx xxx xxxxxxxxxxx xx xxxxxx xxxx xx xxxxxxx xxx xxxxxxx'x **Xxxxxxxxxx** xxxx, xxxxxxxx xxx **Xxxxx** xxxxxxxx xxxx, xxx xxxxxxxxx xxx **Xxxxx Xxxxxx Xxxx** xxxxxxxx.
--   Xxxxxxxxxx x xxx xxxxxxxx xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn930871), xx xxx **Xxxxxxx.Xxxxx** xxxxxxxxx, xx xxxxxxx xx xxx xxxxxxx xxxxxx xxxx xx xxx xxxxxxxxxxx. Xxx xxxxxx xxxx xx xxx xxxxxx xx xxxxxxx xxxxxxxxxx xx xxx xxxx xx xxxx xxxxxx.
--   Xxx xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958454) xx xxx xxxxx xxxxx xx xxxxxxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn930878).
--   Xxx xx xxxxxxxx xx xxx [**XXxxxxxXxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/mt297505) XXX xxxxxxxxx xxxx xxx xxxxx xxxxxx xx xxxxxxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958457).
--   Xxx x xxxxxxx xx xxx xxxxx xxxxxx xxxx xx xxxxxxx [**XXxxxxxXxxxxxXxxxXxxxxx.XxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/mt297506) xxx xxxx xx xx xxx xxxxxx xxxx xxxx xx xxx xxxxx xxxx.
--   Xxxx xxx xxxxxx xxxx xxxx xxx xxxxxx xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn930871) xxx xxxxxxxxxx xxxx xxx xxxxx xxxxx.
+-   このメソッドは、Windows ランタイム型よりも低いレベルの RAW バッファーにアクセスするため、**unsafe** キーワードを使って宣言する必要があります。 また、Microsoft Visual Studio でアンセーフ コードのコンパイルを許可するようにプロジェクトを構成する必要があります。プロジェクトの **[プロパティ]** ページを開き、**[ビルド]** プロパティ ページをクリックして、**[アンセーフ コードの許可]** チェック ボックスをオンにしてください。
+-   **Windows.Media** 名前空間で [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) の新しいインスタンスを初期化するには、必要なバッファー サイズをコンストラクターに渡します。 バッファー サイズとは、サンプル数に各サンプルのサイズを掛けた値です。
+-   オーディオ フレームの [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454) を取得するには、[**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878) を呼び出します。
+-   オーディオ バッファーから [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) COM インターフェイスのインスタンスを取得するには、[**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457) を呼び出します。
+-   生のオーディオ バッファー データへのポインターを取得するには、[**IMemoryBufferByteAccess.GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/mt297506) を呼び出してオーディオ データのサンプル データ型にキャストします。
+-   オーディオ グラフへの提出用に、バッファーにデータを設定して [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) を返します。
 
-##  Xxxxx xxxxx xxxxxx xxxx
+##  オーディオ フレーム出力ノード
 
-Xx xxxxx xxxxx xxxxxx xxxx xxxxxx xxx xx xxxxxxx xxx xxxxxxx xxxxx xxxx xxxxxx xxxx xxx xxxxx xxxxx xxxx xxxxxx xxxx xxxx xxx xxxxxx. Xx xxxxxxx xxxxxxxx xxx xxxx xx xxxxxxxxxx xxxxxx xxxxxxxx xx xxx xxxxx xxxxxx. Xxxxxx xx [**XxxxxXxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914166) xx xxxxxxx [**XxxxxxXxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914233).
+オーディオ フレーム出力ノードでは、独自に作成したカスタム コードを使い、オーディオ グラフからオーディオ データ出力を受信し、処理することができます。 サンプル シナリオでは、オーディオ出力に対して信号分析を実行します。 [
+            **AudioFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914166) を作成するには、[**CreateFrameOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914233) を呼び出します。
 
-[!xxxx-xx[XxxxxxxXxxxxXxxxxxXxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameOutputNode)]
+[!code-cs[DeclareFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetDeclareFrameOutputNode)]
 
-[!xxxx-xx[XxxxxxXxxxxXxxxxxXxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameOutputNode)]
+[!code-cs[CreateFrameOutputNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateFrameOutputNode)]
 
-Xxx [**XxxxxXxxxx.XxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914240) xxxxx xx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxxxxx xxxxxxxxxx x xxxxxxx xx xxxxx xxxx. Xxx xxx xxxxxx xxx xxxxx xxxx xxxx xxxxxx xxx xxxxxxx xxx xxxx xxxxx.
+オーディオ グラフでオーディオ データのクォンタムの処理が完了すると、[**AudioGraph.QuantumProcessed**](https://msdn.microsoft.com/library/windows/apps/dn914240) イベントが発生します。 オーディオ データには、このイベントのハンドラー内からアクセスすることができます。
 
-[!xxxx-xx[XxxxxxxXxxxxxxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumProcessed)]
+[!code-cs[QuantumProcessed](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetQuantumProcessed)]
 
--   Xxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914171) xx xxx xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn930871) xxxxxx xxxxxx xxxx xxxxx xxxx xxxx xxx xxxxx.
--   Xx xxxxxxx xxxxxxxxxxxxxx xx xxx **XxxxxxxXxxxxXxxxxx** xxxxxx xxxxxx xx xxxxx xxxxx.
+-   オーディオ データを設定した [**AudioFrame**](https://msdn.microsoft.com/library/windows/apps/dn930871) オブジェクトをグラフから取得するには、[**GetFrame**](https://msdn.microsoft.com/library/windows/apps/dn914171) を呼び出します。
+-   **ProcessFrameOutput** ヘルパー メソッドの実装例を下に示します。
 
-[!xxxx-xx[XxxxxxxXxxxxXxxxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetProcessFrameOutput)]
+[!code-cs[ProcessFrameOutput](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetProcessFrameOutput)]
 
--   Xxxx xxx xxxxx xxxxx xxxxx xxxx xxxxxxx xxxxx, xxx xxxx xxxx xx xxxxxxx xxx **XXxxxxxXxxxxxXxxxXxxxxx** XXX xxxxxxxxx xxx xxxxxxxxx xxxx xxxxxxx xx xxxxx xxxxxx xxxx xx xxxxx xx xxxxxx xxx xxxxxxxxxx xxxxx xxxxxx.
--   Xxx xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958454) xx xxx xxxxx xxxxx xx xxxxxxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn930878).
--   Xxx xx xxxxxxxx xx xxx **XXxxxxxXxxxxxXxxxXxxxxx** XXX xxxxxxxxx xxxx xxx xxxxx xxxxxx xx xxxxxxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958457).
--   Xxx x xxxxxxx xx xxx xxxxx xxxxxx xxxx xx xxxxxxx **XXxxxxxXxxxxxXxxxXxxxxx.XxxXxxxxx** xxx xxxx xx xx xxx xxxxxx xxxx xxxx xx xxx xxxxx xxxx.
+-   上に示したオーディオ フレーム入力ノードの例と同様、基になっているオーディオ バッファーにアクセスするために、**IMemoryBufferByteAccess** COM インターフェイスを宣言して、アンセーフ コードが許可されるようにプロジェクトを構成する必要があります。
+-   オーディオ フレームの [**AudioBuffer**](https://msdn.microsoft.com/library/windows/apps/dn958454) を取得するには、[**LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn930878) を呼び出します。
+-   オーディオ バッファーから **IMemoryBufferByteAccess** COM インターフェイスのインスタンスを取得するには、[**CreateReference**](https://msdn.microsoft.com/library/windows/apps/dn958457) を呼び出します。
+-   生のオーディオ バッファー データへのポインターを取得するには、**IMemoryBufferByteAccess.GetBuffer** を呼び出してオーディオ データのサンプル データ型にキャストします。
 
-## Xxxx xxxxxxxxxxx xxx xxxxxx xxxxx
+## ノード接続とサブミックス ノード
 
-Xxx xxxxx xxxxx xxxxx xxxxxx xxx **XxxXxxxxxxxXxxxxxxxxx** xxxxxx xxxx xxxxxx xxx xxxxx xxxxxxxx xx xxx xxxx xx xxx xxxx xxxx xx xxxxxx xxxx xxx xxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxxxxx xx [**XxxxxXxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914108) xx xx [**XxxxxXxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914098), xxxxx xx x xxxxxx xxxxx xxx xxxxxxx xx xxxxx xxxx xx xxx xxxxxx'x xxxxxxx.
+すべての種類の入力ノードには **AddOutgoingConnection** メソッドがあります。このメソッドでは、そのノードで生成されたオーディオをメソッドに渡されたノードにルーティングします。 次の例では、[**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) を [**AudioDeviceOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914098) に接続します。これは、デバイスのスピーカーでオーディオ ファイルを再生するための単純な設定です。
 
-[!xxxx-xx[XxxXxxxxxxxXxxxxxxxxxY](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection1)]
+[!code-cs[AddOutgoingConnection1](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection1)]
 
-Xxx xxx xxxxxx xxxx xxxx xxx xxxxxxxxxx xxxx xx xxxxx xxxx xx xxxxx xxxxx. Xxx xxxxxxxxx xxxxxxx xxxx xxxxxxx xxxxxxxxxx xxxx xxx [**XxxxxXxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914108) xx xx [**XxxxxXxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914133). Xxx, xxx xxxxx xxxx xxx xxxxx xxxx xx xxxxxx xx xxx xxxxxx'x xxxxxxx xxx xx xxxx xxxxxxx xxx xx xx xxxxx xxxx.
+入力ノードから別ノードへは、複数の接続を作成できます。 次の例では、[**AudioFileInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914108) から [**AudioFileOutputNode**](https://msdn.microsoft.com/library/windows/apps/dn914133) への接続を追加しています。 ここで、オーディオ ファイルからのオーディオがデバイスのスピーカーで再生され、オーディオ ファイルにも出力されます。
 
-[!xxxx-xx[XxxXxxxxxxxXxxxxxxxxxY](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection2)]
+[!code-cs[AddOutgoingConnection2](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection2)]
 
-Xxxxxx xxxxx xxx xxxx xxxxxxx xxxx xxxx xxx xxxxxxxxxx xxxx xxxxx xxxxx. Xx xxx xxxxxxxxx xxxxxxx x xxxxxxxxxx xx xxxx xxxx x [**XxxxxXxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914082) xx xxx [**XxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914098) xxxx. Xxxxxxx xxx xxxxxx xxxx xxx xxxxxxxxxxx xxxx xxx xxxx xxxxx xxxx xxx xxx xxxxxx xxxxx xxxx, xxx xxxxxx xxxx xxxxxxx x xxx xx xxxxx xxxx xxxx xxxxxxx. **XxxXxxxxxxxXxxxxxxxxx** xxxxxxxx xx xxxxxxxx xxxx xxxx xxx xxxxxxx x xxxx xxxxx xxx xxx xxxxxx xxxxxxx xxxxxxx xxx xxxxxxxxxx.
+出力ノードでも、他のノードから複数の接続を受け取ることができます。 次の例では、[**AudioDeviceInputNode**](https://msdn.microsoft.com/library/windows/apps/dn914082) から [**AudioDeviceOutput**](https://msdn.microsoft.com/library/windows/apps/dn914098) ノードへの接続が作成されています。 この出力ノードには、ファイル入力ノードとデバイス入力ノードからの接続があるため、出力には両方のソースからのオーディオのミックスが含まれます。 **AddOutgoingConnection** には、接続を通過する信号のゲイン値を指定するためのオーバーロードが用意されています。
 
-[!xxxx-xx[XxxXxxxxxxxXxxxxxxxxxY](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection3)]
+[!code-cs[AddOutgoingConnection3](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddOutgoingConnection3)]
 
-Xxxxxxxx xxxxxx xxxxx xxx xxxxxx xxxxxxxxxxx xxxx xxxxxxxx xxxxx, xxx xxx xxxx xx xxxxxx xx xxxxxxxxxxxx xxx xx xxxxxxx xxxx xxx xx xxxx xxxxx xxxxxx xxxxxxx xxx xxx xx xx xxxxxx. Xxx xxxxxxx, xxx xxx xxxx xx xxx xxx xxxxx xx xxxxx xxxxxxx xx x xxxxxx xx xxx xxxxx xxxxxxx xx x xxxxx. Xx xx xxxx, xxx xxx [**XxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914247). Xxx xxx xxxxxxx xx x xxxxxx xxxx xxxx xxx xx xxxx xxxxx xxxxx xx xxxxx xxxxxx xxxxx. Xx xxx xxxxxxxxx xxxxxxx, x xxx xxxxxx xxxx xx xxxxxxx xxxx [**XxxxxXxxxx.XxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn914236). Xxxx, xxxxxxxxxxx xxx xxxxx xxxx x xxxx xxxxx xxxx xxx x xxxxx xxxxxx xxxx xx xxx xxxxxx xxxx. Xxxxxxx, xxx xxxxxx xxxx xx xxxxxxxxx xx x xxxx xxxxxx xxxx.
+出力ノードでは複数ノードからの接続を許容できますが、ミックスを出力に渡す前に、1 つ以上のノードからの信号の中間ミックスを作成することも検討してください。 たとえば、グラフ内のオーディオ信号のサブセットに対し、レベルの設定やエフェクトの適用を行うことができます。 そのためには、[**AudioSubmixNode**](https://msdn.microsoft.com/library/windows/apps/dn914247) を使用します。 サブミックス ノードには、1 つ以上の入力ノードまたは他のサブミックス ノードから接続することができます。 次の例では、[**AudioGraph.CreateSubmixNode**](https://msdn.microsoft.com/library/windows/apps/dn914236) で新しいサブミックス ノードを作成しています。 次に、ファイル入力ノードとフレーム出力ノードからサブミックス ノードへの接続が追加されています。 最後に、サブミックス ノードがファイル出力ノードに接続されています。
 
-[!xxxx-xx[XxxxxxXxxxxxXxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateSubmixNode)]
+[!code-cs[CreateSubmixNode](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetCreateSubmixNode)]
 
-## Xxxxxxxx xxx xxxxxxxx xxxxx xxxxx xxxxx
+## オーディオ グラフ ノードの開始と停止
 
-Xxxx [**XxxxxXxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914244) xx xxxxxx, xxx xxxxx xxxxx xxxxxx xxxxxxxxxx xxxxx xxxx. Xxxxx xxxx xxxx xxxxxxxx **Xxxxx** xxx **Xxxx** xxxxxxx xxxx xxxxx xxx xxxxxxxxxx xxxx xx xxxxx xx xxxx xxxxxxxxxx xxxx. Xxxx [**XxxxxXxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn914245) xx xxxxxx, xxx xxxxx xxxxxxxxxx xx xxx xxx xxxxx xx xxxxxxx xxxxxxxxxx xx xxx xxxxx xx xxxxxxxxxx xxxxx, xxx xxx xxxxx xx xxxx xxxx xxx xx xxx xxxxx xxx xxxxx xxxxx xx xxxxxxx. Xxx xxxxxxx, xxx xxxxx xxxx **Xxxx** xx xx xxxxxxxxxx xxxx xxxxx xxx xxxxx xx xxxxxxx xxx xxxx xxxx **XxxxxXxxxx.Xxxxx**, xxx xxx xxxxxxxxxx xxxx xxxx xxxxxx xx xxx xxxxxxx xxxxx.
+[
+            **AudioGraph.Start**](https://msdn.microsoft.com/library/windows/apps/dn914244) が呼び出されると、オーディオ グラフはオーディオ データの処理を開始します。 すべてのノードの種類に、個々のノードでデータの処理を開始または停止する **Start** メソッドと **Stop** メソッドが用意されています。 [
+            **AudioGraph.Stop**](https://msdn.microsoft.com/library/windows/apps/dn914245) が呼び出されると、個々のノードの状態に関係なく、すべてのノードでのすべてのオーディオ処理が停止しますが、オーディオ グラフが停止している間も各ノードの状態が設定されることは考えられます。 たとえば、グラフの停止中に各ノードで **Stop** を呼び出してから **AudioGraph.Start** を呼び出した場合、個々のノードは停止状態のままです。
 
-Xxx xxxx xxxxx xxxxxx xxx **XxxxxxxXxxxx** xxxxxxxx xxxx, xxxx xxx xx xxxxx, xxxxxx xxx xxxx xx xxxxxxxx xxxxx xxxxxxxxxx xxx xxxxx xx xxxx xxxxxxxxx xxx xxxxx xxxx xxxxx xxxxx xxxx xxxxx xxxxx.
+すべてのノードの種類には **ConsumeInput** プロパティが用意されています。これが false に設定されると、ノードではオーディオ処理を続行できますが、他のノードから入力されているオーディオ データの使用が停止されます。
 
-Xxx xxxx xxxxx xxxxxx xxx **Xxxxx** xxxxxx xxxx xxxxxx xxx xxxx xx xxxxxxx xxx xxxxx xxxx xxxxxxxxx xx xxx xxxxxx.
+すべてのノードの種類には **Reset** メソッドが用意されています。このメソッドが呼び出されると、ノードのバッファーにある現在のオーディオ データがすべて破棄されます。
 
-## Xxxxxx xxxxx xxxxxxx
+## オーディオ エフェクトの追加
 
-Xxx xxxxx xxxxx XXX xxxxxx xxx xx xxx xxxxx xxxxxxx xx xxxxx xxxx xx xxxx xx x xxxxx. Xxxxxx xxxxx, xxxxx xxxxx, xxx xxxxxx xxxxx xxx xxxx xxxx xx xxxxxxxxx xxxxxx xx xxxxx xxxxxxx, xxxxxxx xxxx xx xxx xxxxxxxxxxxx xx xxx xxxxxxxx.Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xxxxxx xxx xxxxx-xx xxxx xxxxxx xx x xxxxxx xxxx.
+オーディオ グラフ API を使うと、グラフ内のすべての種類のノードに、オーディオ エフェクトを追加することができます。 個々の出力ノード、入力ノード、およびサブミックス ノードに追加できるオーディオ エフェクトの数に制限はありません (ハードウェア性能によってのみ制限されます)。次の例では、組み込みのエコー エフェクトをサブミックス ノードに追加する方法を示しています。
 
-[!xxxx-xx[XxxXxxxxx](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddEffect)]
+[!code-cs[AddEffect](./code/AudioGraph/cs/MainPage.xaml.cs#SnippetAddEffect)]
 
--   Xxx xxxxx xxxxxxx xxxxxxxxx [**XXxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn608044). Xxxxx xxxx xxxxxxx xx **XxxxxxXxxxxxxxxxx** xxxxxxxx xxxxxxxxxxxx xxx xxxx xx xxxxxxx xxxxxxx xx xxxx xxxx. Xxx xx xxxxxx xx xxxxxx xx'x xxxxxxxxxx xxxxxx xx xxx xxxx.
--   Xxxxx xxx xxxxxxx xxxxxx xxxxxxxxxx xxxxxxx xxxx xxx xxxxxxxx xx xxx **Xxxxxxx.Xxxxx.Xxxxx** xxxxxxxxx. Xxxxx xxxxxxx:
-    -   [**XxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914276)
-    -   [**XxxxxxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914287)
-    -   [**XxxxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914306)
-    -   [**XxxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914313)
--   Xxx xxx xxxxxx xxxx xxx xxxxx xxxxxxx xxxx xxxxxxxxx [**XXxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn608044) xxx xxxxx xxxx xx xxx xxxx xx xx xxxxx xxxxx.
--   Xxxxx xxxx xxxx xxxxxxx x **XxxxxxxXxxxxxxXxXxxxxxxxxx** xxxxxx xxxx xxxxxxxx xxx xxxxxxx xx xxx xxxx'x **XxxxxxXxxxxxxxxxx** xxxx xxxx xxxx xxxxx xxxxx xxx xxxxxxxxx xxxxxxxxxx. **XxxxxxXxxxxxxXxXxxxxxxxxx** xxxxxxx xxx xxxxxxx xxxx xxx xxxxxxxxx xxxxxxxxxx.
+-   すべてのオーディオ エフェクトには、[**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) が実装されています。 すべてのノードには、そのノードに適用されたエフェクトの一覧を表す **EffectDefinitions** プロパティが用意されています。 エフェクトを追加するには、エフェクトの定義オブジェクトをこの一覧に追加します。
+-   **Windows.Media.Audio** 名前空間には、複数のエフェクト定義クラスがあります。 次のようなクラスがあります。
+    -   [**EchoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914276)
+    -   [**EqualizerEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914287)
+    -   [**LimiterEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914306)
+    -   [**ReverbEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn914313)
+-   [
+            **IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) を実装する独自のオーディオ エフェクトを作成し、オーディオ グラフ内の任意のノードに適用することができます。
+-   すべてのノードの種類には、**DisableEffectsByDefinition** メソッドが用意されています。このメソッドは、ノードの **EffectDefinitions** リストに含まれる、指定の定義を使って追加されたすべてのエフェクトを無効にします。 **EnableEffectsByDefinition** は、指定の定義を持つエフェクトを有効にします。
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

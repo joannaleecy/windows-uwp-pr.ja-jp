@@ -1,30 +1,30 @@
 ---
-xxxxxxxxxxx: Xxx xxxxxxxx xx xxxxxxxx XX xx xxx xxxx xx xxxxxxxxxxx XXXX xxxxxx xxxxxxxxxx xxxxxxxxx xxxx xxxx Xxxxxxxxx Y.Y xxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
-xxxxx: Xxxxxxx Xxxxxxx Xxxxxxx Y.x XXXX xxx XX xx XXX'
-xx.xxxxxxx: YYxYYYYY-YYYY-YYYx-xYxY-xYxYxxYxxYYY
+description: The practice of defining UI in the form of declarative XAML markup translates extremely well from Universal 8.1 apps to Universal Windows Platform (UWP) apps.
+title: Porting Windows Runtime 8.x XAML and UI to UWP'
+ms.assetid: 78b86762-7359-474f-b1e3-c2d7cf9aa907
 ---
 
-# Xxxxxxx Xxxxxxx Xxxxxxx Y.x XXXX xxx XX xx XXX
+# Porting Windows Runtime 8.x XAML and UI to UWP
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxx xxxxxxxx xxxxx xxx [Xxxxxxxxxxxxxxx](w8x-to-uwp-troubleshooting.md).
+The previous topic was [Troubleshooting](w8x-to-uwp-troubleshooting.md).
 
-Xxx xxxxxxxx xx xxxxxxxx XX xx xxx xxxx xx xxxxxxxxxxx XXXX xxxxxx xxxxxxxxxx xxxxxxxxx xxxx xxxx Xxxxxxxxx Y.Y xxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xxx'xx xxxx xxxx xxxx xx xxxx xxxxxx xx xxxxxxxxxx, xxxxxxxx xxx xxx xxxx xx xxxx xxxx xxxxxxxxxxx xx xxx xxxxxx Xxxxxxxx xxxx xx xxxxxx xxxxxxxxx xxxx xxx'xx xxxxx. Xxx xxxxxxxxxx xxxx xx xxxx xxxx xxxxxx xxxx xxxxxxx xxxxxx xx xx xxxxxx. Xxxx xxxx, xx xxxx, xx xxx xxxx xx xxxx xxxxxxxxxxxx xxxxx xxxx xxxxxxxxxxx XX xxxxxxxx xxxxxx xxxx xx xxxxxxxxxxxxxxx xx xxxx.
+The practice of defining UI in the form of declarative XAML markup translates extremely well from Universal 8.1 apps to Universal Windows Platform (UWP) apps. You'll find that most of your markup is compatible, although you may need to make some adjustments to the system Resource keys or custom templates that you're using. The imperative code in your view models will require little or no change. Even much, or most, of the code in your presentation layer that manipulates UI elements should also be straightforward to port.
 
-## Xxxxxxxxxx xxxx
+## Imperative code
 
-Xx xxx xxxx xxxx xx xxx xx xxx xxxxx xxxxx xxxx xxxxxxx xxxxxx, xxx xxx xxxxxxx xx xxxx xxx xxx xxx-xxxxxxxxx xxxx. Xxxx xxxxxxx, xxx xxxxx xx x xxxx, xxx xxxxx xx xxx xxxxxxxxx xxxxxx xx xxxx xxxxxxx (xxx xxx xxxxxxxx xxxxx: [Xxxxxxxxxxxxxxx](w8x-to-uwp-troubleshooting.md)), xxxxx xxx xxxxx xxx xxxxxxx xxxxxx xxx xxxxxx-xxx xxx xxxx xxxx xx xxxxxxxx.
+If you just want to get to the stage where your project builds, you can comment or stub out any non-essential code. Then iterate, one issue at a time, and refer to the following topics in this section (and the previous topic: [Troubleshooting](w8x-to-uwp-troubleshooting.md)), until any build and runtime issues are ironed-out and your port is complete.
 
-## Xxxxxxxx/xxxxxxxxxx XX
+## Adaptive/responsive UI
 
-Xxxxxxx xxxx xxx xxx xxx xx x xxxxxxxxxxx xxxx xxxxx xx xxxxxxx—xxxx xxxx xxx xxx xxxxxx xxxx xxx xxxxxxxxxx—xxx'xx xxxx xx xx xxxxxx xxx xxxxxxx xxxxx xx xxxx xxxx xxx xxx xxx'xx xxxx xx xxxxxx xxxx XX xx xxxx xxx xxxx xx xxxxx xxxxxxx. Xxx xxx xxx xxx xxxxxxxx Xxxxxx Xxxxx Xxxxxxx xxxxxxx xx xxxxxxxxxxx xxxxxx xxxxxx xxxx xxx xx xxxxxx xxxxxx xx xxxxxxxx, xxx xx xxxxxxx xx xxx xx xx xxxx xx xxxxx xx xxx xxxxxxx [Xxxxxxxx XX](w8x-to-uwp-case-study-bookstore2.md#adaptive-ui) xx xxx XxxxxxxxxY xxxx xxxxx xxxxx.
+Because your app can run on a potentially wide range of devices—each with its own screen size and resolution—you'll want to go beyond the minimal steps to port your app and you'll want to tailor your UI to look its best on those devices. You can use the adaptive Visual State Manager feature to dynamically detect window size and to change layout in response, and an example of how to do that is shown in the section [Adaptive UI](w8x-to-uwp-case-study-bookstore2.md#adaptive-ui) in the Bookstore2 case study topic.
 
-## Xxxx xxxxxx xxxxxxxx
+## Back button handling
 
-Xxx Xxxxxxxxx Y.Y xxxx, Xxxxxxx Xxxxx xxxx xxx Xxxxxxx Xxxxx Xxxxx xxxx xxxx xxxxxxxxx xxxxxxxxxx xx xxx XX xxx xxxx xxx xxx xxxxxx xxx xxxxxx xxx xxx xxxx xxxxxx. Xxx, xxx Xxxxxxx YY xxxx, xxx xxx xxx x xxxxxx xxxxxxxx xx xxxx xxx. Xx xxxxxx xxxxxxx, xxx xxxxxx xx xxxxxxxx xxx xxx xx x xxxxxxxxxx xxxxxx xx xxx xxxxxx, xx xx x xxxxxx xx xxx xxxxx. Xx x xxxxxxx xxxxxx, xxx xxx x xxxxxx xx xxxx xxx'x xxxxxx xxxxxxxx xxxx-xxxxxxxxxx xx xxxxxxxx xxxxxx xxx xxx, xxx xxxx xxxxxxx xx xxx xxxxx xxx xxx xxxxxxxx xxxx xx xx xxx xxxx xxx xxx Xxxxxx xxxx. Xxx xxxx xxxxxx xxxxx xx x xxxxxxxxx xxxxxxx xxxxxx xxx xxxxxx xxxxxxxx, xxx xxxxxxx xxxxxxxxxxx xx xxxxxxxx xx xx xxxxxxxx xxxxx xxx xxxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn893596) xxxxx.
+For Universal 8.1 apps, Windows Store apps and Windows Phone Store apps have different approaches to the UI you show and the events you handle for the back button. But, for Windows 10 apps, you can use a single approach in your app. On mobile devices, the button is provided for you as a capacitive button on the device, or as a button in the shell. On a desktop device, you add a button to your app's chrome whenever back-navigation is possible within the app, and this appears in the title bar for windowed apps or in the task bar for Tablet mode. The back button event is a universal concept across all device families, and buttons implemented in hardware or in software raise the same [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event.
 
-Xxx xxxxxxx xxxxx xxxxx xxx xxx xxxxxx xxxxxxxx xxx xx xx xxxx xxx xxxxx xxxxx xxx xxxx xxxxxxxxxx xxxxxxx xx xxx xxxxx, xxx xxxxx xxx xx xxx xxxx xx xxxxxxx xxxxxxxxxx (xxx xxxxxxx, xx xxxx xxxxx xxxxxxx xxxxxxx).
+The example below works for all device families and it is good for cases where the same processing applies to all pages, and where you do not need to confirm navigation (for example, to warn about unsaved changes).
 
 ```csharp
    // app.xaml.cs
@@ -66,7 +66,7 @@ Xxx xxxxxxx xxxxx xxxxx xxx xxx xxxxxx xxxxxxxx xxx xx xx xxxx xxx xxxxx xxxxx x
     }
 ```
 
-Xxxxx'x xxxx x xxxxxx xxxxxxxx xxx xxx xxxxxx xxxxxxxx xxx xxxxxxxxxxxxxxxx xxxxxxx xxx xxx.
+There's also a single approach for all device families for programmatically exiting the app.
 
 ```csharp
    Windows.UI.Xaml.Application.Current.Exit();</code></pre></td>
@@ -75,90 +75,87 @@ Xxxxx'x xxxx x xxxxxx xxxxxxxx xxx xxx xxxxxx xxxxxxxx xxx xxxxxxxxxxxxxxxx xxxx
 </table>
 ```
 
-## Xxxxxx
+## Charms
 
-Xxx xxx'x xxxx xx xxxxxx xxx xx xxxx xxxx xxxx xxxxxxxxxx xxxx xxxxxx, xxx xxx xx xxxx xx xxx xxxx XX xx xxxx xxx xx xxxx xxx xxxxx xx xxx Xxxxxx xxx, xxxxx xx xxx x xxxx xx xxx Xxxxxxx YY xxxxx. X Xxxxxxxxx Y.Y xxx xxxxxxx xx Xxxxxxx YY xxx xxx xxx xxxxxxxxxxx XX xxxxxxxx xx xxxxxx-xxxxxxxx xxxxxx xx xxx xxx'x xxxxx xxx.
+You don't need to change any of your code that integrates with charms, but you do need to add some UI to your app to take the place of the Charms bar, which is not a part of the Windows 10 shell. A Universal 8.1 app running on Windows 10 has its own replacement UI provided by system-rendered chrome in the app's title bar.
 
-## Xxxxxxxx, xxx xxxxxxx xxxxxx/xxxxxxxxx
+## Controls, and control styles/templates
 
-X Xxxxxxxxx Y.Y xxx xxxxxxx xx Xxxxxxx YY xxxx xxxxxx xxx Y.Y xxxxxxxxxx xxx xxxxxxxx xxxx xxxxxxx xx xxxxxxxx. Xxx, xxxx xxx xxxx xxxx xxx xx x Xxxxxxx YY xxx, xxxxx xxx xxxx xxxxxxxxxxx xx xxxxxxxxxx xxx xxxxxxxx xx xx xxxxx xx. Xxx xxxxxxxxxxxx xxx xxxxxx xx xxxxxxxx xx xxxxxxxxxxx xxxxxxxxx xxx Xxxxxxx YY xxxx, xx xxx xxxxxxx xxx xxxxxx xxxxxx [xxxxxx xxxxxxxx](#design-language), xxxxxxxxxxxxxx, xxx xxxxxxxxx xxxxxxxxxxxx.
+A Universal 8.1 app running on Windows 10 will retain the 8.1 appearance and behavior with respect to controls. But, when you port that app to a Windows 10 app, there are some differences in appearance and behavior to be aware of. The architecture and design of controls is essentially unchanged for Windows 10 apps, so the changes are mostly around [design language](#design-language), simplification, and usability improvements.
 
-**Xxxx**   Xxx XxxxxxxXxxx xxxxxx xxxxx xx xxxxxxxx xx xxxxxx xxxxxx/xxxxxxxxx xx Xxxxxxx YY xxxx xxx xx Xxxxxxx Xxxxx xxxx, xxx xxx xx Xxxxxxx Xxxxx Xxxxx xxxx. Xxx xxxx xxxxxx (xxx xxxxxxx xx xxx xxxxxx xxxxxxxx xxxx xxxx xxx xxxxxxxxx xxx Xxxxxxx YY xxxx), xx xxxxxxxxx xxxx xxx xx-xxx xxx xxxxxx xxxxxx/xxxxxxxxx xxxx xxxx Xxxxxxx Xxxxx xxxx xxxx xxx'xx xxxxxxx xxxx xxx xx Xxxxxxx YY.
-Xx xxx xxxx xx xx xxxxxxx xxxx xxxx xxxxxx xxxxxx/xxxxxxxxx xxx xxxxx xxx xxxxxx xxx xx xxxxxx xxxxxx, xxx xxx xxxxxxxxxxx xxxx xxxxxxxxxxx xxxxxxxxxxxx xxxx xx xxx xxxxxxx xxxxxx/xxxxxxxxx, xxxx xxxx x xxxx xx xxx xxx Xxxxxxx YY xxxxxxx xxxxxxxx xxx xx-xxxxx xxxx xxxxxxxxxxxxx xx xxxx. Xxx xxxxxxx xx x xxxxxxxxxxx xxxxxxxxxxx xx xxxx xxx **Xxxxxx** xxxx xxxxxxxx xxxxxxxx x **XxxxxxxXxxxxxxxx** xx x Xxxxx xxx xxxx xxxxxxx xxx x xxxxx xxxxxxx xxx xxxxxxx xxx xxxxxx.
+**Note**   The PointerOver visual state is relevant in custom styles/templates in Windows 10 apps and in Windows Store apps, but not in Windows Phone Store apps. For this reason (and because of the system resource keys that are supported for Windows 10 apps), we recommend that you re-use the custom styles/templates from your Windows Store apps when you're porting your app to Windows 10.
+If you want to be certain that your custom styles/templates are using the latest set of visual states, and are benefitting from performance improvements made to the default styles/templates, then edit a copy of the new Windows 10 default template and re-apply your customization to that. One example of a performance improvement is that any **Border** that formerly enclosed a **ContentPresenter** or a Panel has been removed and a child element now renders the border.
 
-Xxxx xxx xxxx xxxx xxxxxxxx xxxxxxxx xx xxxxxxx xx xxxxxxxx.
+Here are some more specific examples of changes to controls.
 
-| Xxxxxxx xxxx | Xxxxxx |
+| Control name | Change |
 |--------------|--------|
-| **XxxXxx**   | Xx xxx xxx xxxxx xxx **XxxXxx** xxxxxxx ([**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh701927) xx xxxxxxxxxxx xxxxxxx), xxxx xx xx xxx xxxxxx xx xxxxxxx xx x Xxxxxxx YY xxx. Xxx xxx xxxxxxx xxxx xxxx xxx [**XxxXxx.XxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn633872) xxxxxxxx. |
-| **XxxXxx**, [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh701927) | Xx x Xxxxxxx YY xxx, **XxxXxx** xxx [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh701927) xxxx x **Xxx xxxx** xxxxxx (xxx xxxxxxxx). |
-| [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh701927) | Xx x Xxxxxxx Xxxxx xxx, xxx xxxxxxxxx xxxxxxxx xx x [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh701927) xxx xxxxxx xxxxxxx. Xx x Xxxxxxx Xxxxx Xxxxx xxx, xxx xx x Xxxxxxx YY xxx, xxx xxx'x xxxxxx xxxxx xxx xxxxxxx xxx xxxxx. |
-| [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh701927) | Xxx x Xxxxxxx Xxxxx Xxxxx xxx, xxx xxxxx xx [**XxxxxxxXxx.XxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701944) xxxx xxx xxxxxx xxxxxxx xx xxx xxx xxx xx xxxxx-xxxxxxxxxxx. Xxx x Xxxxxxx YY xxx, xx **XxXxxxxx** xx xxx xx xxxx, xxxx xxx **XxxxxxxXxx** xxxxxxxxxx x xxxxx xxxxxxx xxxxxxx. |
-| [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh701927) | Xx x Xxxxxxx YY xxx, [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh701927) xxxx xxx xxxxxx xxx [**XxxxXxxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701622) xxx [**XXXxxxxxx.XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208984) xxxxxx. Xxx xxxx xx xxxxxxx xx x xxx xxx x xxxxx xx. Xxx xxxxx xxxx xxx xxxxxx xx xxxxxx xxxxx xxxxxx xxx xxx [**XxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh701939). |
-| [
-            **XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298584), [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn299280) | Xxxxxx xxx xxxx xxx xxxxx xxxx xxx xxxxxx xxxxxxx xx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298584) xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn299280). Xxx x Xxxxxxx YY xxx xxxxxxx xx x xxxxxx xxxxxx, xxxxx xxxxxxxx xx xxxxxx xxxxxxxx xx x xxxxxxxxx xxxx xxx xxxxxxx xxx x xxxxx-xxxxxxxxxxx xxxxx. |
-| [
-            **XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298584), [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn299280) | Xx x Xxxxxxx YY xxx, xxx xxx'x xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298584) xx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn299280) xxxxxx x xxx-xxx. Xx xxx xxxx xxxxx xxxxxxxx xx xx xxxxxxxxx xx x xxxxx-xxxx xxxxxxx, xxxx xxx xxx xxx [**XxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn625013) xxx [**XxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn608313). |
-| **XxxxXxxx**, **XxxxXxxx** | Xxx **XxxxXxxx**/**XxxxXxxx**, xxx [XxxxXxxx/XxxxXxxx xxxxxxx](#gridview). |
-| [**Xxx**](https://msdn.microsoft.com/library/windows/apps/dn251843) | Xx x Xxxxxxx Xxxxx Xxxxx xxx, x [**Xxx**](https://msdn.microsoft.com/library/windows/apps/dn251843) xxxxxxx xxxxx xxxxxx xxxx xxx xxxx xxxxxxx xx xxx xxxxx. Xx x Xxxxxxx Xxxxx xxx, xxx xx x Xxxxxxx YY xxx, xxx xxxxxxxx xx xxx xxxx xxxxxx. |
-| [**Xxx**](https://msdn.microsoft.com/library/windows/apps/dn251843) | Xx x Xxxxxxx Xxxxx Xxxxx xxx, x [**Xxx**](https://msdn.microsoft.com/library/windows/apps/dn251843) xxxxxxx'x xxxxxxxxxx xxxxx xxxxx xx xxxxxxxx xxxxxxxx xx xxx xxx xxxxxxxx. Xx x Xxxxxxx Xxxxx xxx, xxx xx x Xxxxxxx YY xxx, xxxxxxxx xx xxx xxxx. |
-| [**Xxx**](https://msdn.microsoft.com/library/windows/apps/dn251843)  | Xx x Xxxxxxxxx Y.Y xxx, xxx [**XxxXxxxxxx.XxXxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn251917) xxxxxxxx xxxxxx xxx xxxxxxx xxxxxx—xxx x xxxxxxx xxxxx xxxxxxxx xxxx xx xx—xx xxxxxx xxxxxxxxxxx. Xx x Xxxxxxx YY xxx, xxxxx xx xx xxxxxxxxxxx "Xxx xxxx" xxxxxxxxxx xxxxxx xxx xxxxxx, xxx xxx xxxxxx xxxxxx xx xxx xxxxxxxxxxx. **XxXxxxxxXxxxxxxxxxx** xxxxx xxxxxxxxxx xxxxxxx xxxxxxxxxxx xxxxxx xxx [**Xxx.XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn251953) xxxxx. |
-| **XxxxxxxXxxxxx** | Xx xxx'xx xxxxx **XxxxxxxXxxxxx**, xxxx xxxxxxxx xxxxxxx xxxxx xxx xxxx xxxxxxxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn633972). Xxxx, xxx xxx [XXXX XX Xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619992) xxxxxx. |
-| **XxxxXxxxxxXxxxxx**, **XxxxxxXxxxxx**  | **XxxxXxxxxxXxxxxx** xxx **XxxxxxXxxxxx** xxx xxxxxxxxxx xxx x Xxxxxxx YY xxx. Xxx x xxxxxx xxxxxxxxx xxx-xxx, xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn299030); xxx xxxx xxxxxxx xxxxxxxxxxx, xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279496). |
-| [**XxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br227519) | Xxx [**XxxxxxxxXxx.XxXxxxxxxxXxxxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702579) xxxxxxxx xx xxxxxxxxxx xx x Xxxxxxx YY xxx, xxx xxxxxxx xx xxx xx xxxxxx. Xxx [**XxxxxxxxXxx.XxxxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn890867) xxxxxxx, xxxxx xxxxxxxx xx **Xxxx** (xx xxxxx xx xxx xxxxx xx xxxxxxxxx, xxxx xx x Xxxxxxx Xxxxx xxx). Xxxx, xxx [Xxxxxxxxxx xxx xxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/dn596103). |
-| [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn608241) | Xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn608241) xxxxxxx xx xxx xxxxxxxxx, xx xx xx xxxxxx xxxxxxx xx xxx xx xxxxxx xxxxxxx. |
-| [**XxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn252771) | Xxxxxxxx [**XxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn252803) xx xxxxxxxxxxx xx xxx Xxxxxxxxx xxxxxx xxxxxx, xx xx xxx xxxxx xxxxxxxxxx xx xxxxxx xxxxxxx. Xxx [XxxxxxXxx xxxxxxxxxx xx xxxxx xx XxxxXxxxxxxXxx](#searchbox). |
-| **XxxxxxxxXxxx** | Xxx **XxxxxxxxXxxx**, xxx [XxxxxxxxXxxx xxxxxxx](#semantic-zoom). |
-| [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209527)  | Xxxx xxxxxxx xxxxxxxxxx xx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209527) xxxx xxxxxxx. [
-            **XxxxxxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br209549) xx **Xxxx**, [**XxxxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br209589) xx **Xxxx**, xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br209601) xx **Xxxxxxxx**. Xx xxx xxx xxxxxxx xxxxxx xxx xxx xxxxxxxxxxx xxx xxxx xxx, xxxx xxx xxx xxxxxx xxxx xxxxxx xx x xxxxx xx xx xxxxx xxxxxx xx xxx xxxxxxx xxxxxx.  |
-| [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209683) | Xx x Xxxxxxx Xxxxx xxx, xxxxx-xxxxxxxx xx xxx xx xxxxxxx xxx x [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209683). Xx x Xxxxxxx Xxxxx Xxxxx xxx, xxx xx x Xxxxxxx YY xxx, xx xx xx xx xxxxxxx. |
-| [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209683) | Xxx xxxxxxx xxxx xxxx xxx x [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209683) xxx xxxxxxx xxxx YY xx YY. |
-| [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209683) | Xxx xxxxxxx xxxxx xx [**XxxxXxx.XxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252859) xxx xxxxxxx xxxx **Xxxxxxx** xx **XxxxxxXxxxXxxxxxx**. Xx xxxx'x xxxxxxxxxxx, xxxx xxx **XxxXxxxXxxxxxxxx**. **Xxxxxxx** xx xxxxxxxxxx. |
-| Xxxxxxx | Xxxxxx xxxxx xxxxxxx xx x Xxxxxxx Xxxxx Xxxxx xxxx, xxx xx Xxxxxxx YY xxxx, xxx xxx xx Xxxxxxx Xxxxx xxxx.  |
+| **AppBar**   | If you are using the **AppBar** control ([**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) is recommended instead), then it is not hidden by default in a Windows 10 app. You can control this with the [**AppBar.ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/dn633872) property. |
+| **AppBar**, [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | In a Windows 10 app, **AppBar** and [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) have a **See more** button (the ellipsis). |
+| [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | In a Windows Store app, the secondary commands of a [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) are always visible. In a Windows Phone Store app, and in a Windows 10 app, the don't appear until the command bar opens. |
+| [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | For a Windows Phone Store app, the value of [**CommandBar.IsSticky**](https://msdn.microsoft.com/library/windows/apps/hh701944) does not affect whether or not the bar is light-dismissible. For a Windows 10 app, if **IsSticky** is set to true, then the **CommandBar** disregards a light dismiss gesture. |
+| [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) | In a Windows 10 app, [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) does not handle the [**EdgeGesture.Completed**](https://msdn.microsoft.com/library/windows/apps/hh701622) nor [**UIElement.RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984) events. Nor does it respond to a tap nor a swipe up. You still have the option to handle these events and set [**IsOpen**](https://msdn.microsoft.com/library/windows/apps/hh701939). |
+| [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584), [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | Review how your app looks with the visual changes to [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) and [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280). For a Windows 10 app running on a mobile device, these controls no longer navigate to a selection page but instead use a light-dismissible popup. |
+| [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584), [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) | In a Windows 10 app, you can't put [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/dn298584) or [**TimePicker**](https://msdn.microsoft.com/library/windows/apps/dn299280) inside a fly-out. If you want those controls to be displayed in a popup-type control, then you can use [**DatePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn625013) and [**TimePickerFlyout**](https://msdn.microsoft.com/library/windows/apps/dn608313). |
+| **GridView**, **ListView** | For **GridView**/**ListView**, see [GridView/ListView changes](#gridview). |
+| [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | In a Windows Phone Store app, a [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) control wraps around from the last section to the first. In a Windows Store app, and in a Windows 10 app, hub sections do not wrap around. |
+| [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) | In a Windows Phone Store app, a [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) control's background image moves in parallax relative to the hub sections. In a Windows Store app, and in a Windows 10 app, parallax is not used. |
+| [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843)  | In a Universal 8.1 app, the [**HubSection.IsHeaderInteractive**](https://msdn.microsoft.com/library/windows/apps/dn251917) property causes the section header—and a chevron glyph rendered next to it—to become interactive. In a Windows 10 app, there is an interactive "See more" affordance beside the header, but the header itself is not interactive. **IsHeaderInteractive** still determines whether interaction raises the [**Hub.SectionHeaderClick**](https://msdn.microsoft.com/library/windows/apps/dn251953) event. |
+| **MessageDialog** | If you're using **MessageDialog**, then consider instead using the more flexible [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/dn633972). Also, see the [XAML UI Basics](http://go.microsoft.com/fwlink/p/?linkid=619992) sample. |
+| **ListPickerFlyout**, **PickerFlyout**  | **ListPickerFlyout** and **PickerFlyout** are deprecated for a Windows 10 app. For a single selection fly-out, use [**MenuFlyout**](https://msdn.microsoft.com/library/windows/apps/dn299030); for more complex experiences, use [**Flyout**](https://msdn.microsoft.com/library/windows/apps/dn279496). |
+| [**PasswordBox**](https://msdn.microsoft.com/library/windows/apps/br227519) | The [**PasswordBox.IsPasswordRevealButtonEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702579) property is deprecated in a Windows 10 app, and setting it has no effect. Use [**PasswordBox.PasswordRevealMode**](https://msdn.microsoft.com/library/windows/apps/dn890867) instead, which defaults to **Peek** (in which an eye glyph is displayed, like in a Windows Store app). Also, see [Guidelines for password boxes](https://msdn.microsoft.com/library/windows/apps/dn596103). |
+| [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) | The [**Pivot**](https://msdn.microsoft.com/library/windows/apps/dn608241) control is now universal, it is no longer limited to use on mobile devices. |
+| [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252771) | Although [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) is implemented in the Universal device family, it is not fully functional on mobile devices. See [SearchBox deprecated in favor of AutoSuggestBox](#searchbox). |
+| **SemanticZoom** | For **SemanticZoom**, see [SemanticZoom changes](#semantic-zoom). |
+| [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527)  | Some default properties of [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) have changed. [**HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) is **Auto**, [**VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) is **Auto**, and [**ZoomMode**](https://msdn.microsoft.com/library/windows/apps/br209601) is **Disabled**. If the new default values are not appropriate for your app, then you can change them either in a style or as local values on the control itself.  |
+| [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | In a Windows Store app, spell-checking is off by default for a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683). In a Windows Phone Store app, and in a Windows 10 app, it is on by default. |
+| [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | The default font size for a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) has changed from 11 to 15. |
+| [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) | The default value of [**TextBox.TextReadingOrder**](https://msdn.microsoft.com/library/windows/apps/dn252859) has changed from **Default** to **DetectFromContent**. If that's undesirable, then use **UseFlowDirection**. **Default** is deprecated. |
+| Various | Accent color applies to a Windows Phone Store apps, and to Windows 10 apps, but not to Windows Store apps.  |
 
-Xxx xxxx xxxx xx XXX xxx xxxxxxxx, xxx [Xxxxxxxx xx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185405), [Xxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt185406), xxx [Xxxxxxxxxx xxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn611856).
+For more info on UWP app controls, see [Controls by function](https://msdn.microsoft.com/library/windows/apps/mt185405), [Controls list](https://msdn.microsoft.com/library/windows/apps/mt185406), and [Guidelines for controls](https://msdn.microsoft.com/library/windows/apps/dn611856).
 
-##  Xxxxxx xxxxxxxx xx Xxxxxxx YY
+##  Design language in Windows 10
 
-Xxxxx xxx xxxx xxxxx xxx xxxxxxxxx xxxxxxxxxxx xx xxxxxx xxxxxxxx xxxxxxx Xxxxxxxxx Y.Y xxxx xxx Xxxxxxx YY xxxx. Xxx xxx xxx xxxxxxx, xxx [Xxxxxx](http://dev.windows.com/design). Xxxxxxx xxx xxxxxx xxxxxxxx xxxxxxx, xxx xxxxxx xxxxxxxxxx xxxxxx xxxxxxxxxx: xx xxxxxxxxx xx xxxxxx xxx xxxxxx xxxxxx xxx xxxxxxxxxx xxxxxxx xxxxxxxx xx xxxxxxx xxx xxxxxx, xxxxxxxx xxxxxxxx xxxxxx xxxxxxxx, xxx xxxxxxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxx; xxx xxxxxx xxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxx; xxxxxx xx x xxxx; xxx xxxxx xxxx xxxxxxxxxxx xx xxxx xxxx xxxxx xxxxxxxxxx.
+There are some small but important differences in design language between Universal 8.1 apps and Windows 10 apps. For all the details, see [Design](http://dev.windows.com/design). Despite the design language changes, our design principles remain consistent: be attentive to detail but always strive for simplicity through focusing on content not chrome, fiercely reducing visual elements, and remaining authentic to the digital domain; use visual hierarchy especially with typography; design on a grid; and bring your experiences to life with fluid animations.
 
-## Xxxxxxxxx xxxxxx, xxxxxxx xxxxxxxx, xxx xxxxx xxxxxxx
+## Effective pixels, viewing distance, and scale factors
 
-Xxxxxxxxxx, xxxx xxxxxx xxxx xxx xxx xx xxxxxxxx xxx xxxx xxx xxxxxx xx XX xxxxxxxx xxxx xxxx xxx xxxxxx xxxxxxxx xxxx xxx xxxxxxxxxx xx xxxxxxx. Xxxx xxxxxx xxxx xxx xxxxxxx xxxx xxxxxxxxx xxxxxx, xxx xxxx'x xx xxxxxxxxxxx xx xxxx xxxx, xxxx xx xxxxx, xxx xxx xxxxx xxxxx xx xxxxxx.
+Previously, view pixels were the way to abstract the size and layout of UI elements away from the actual physical size and resolution of devices. View pixels have now evolved into effective pixels, and here's an explanation of that term, what it means, and the extra value it offers.
 
-Xxx xxxx "xxxxxxxxxx" xxxxxx xx x xxxxxxx xx xxxxx xxxxxxx xxx xxx, xx xx xxxxxxxx xxxxxxx, xxxxx xxxxx. "Xxxxxxxxx xxxxxxxxxx" xx xxx xxx xxx xxxxxxxx xxxxxx xxxx xxxxxxx xx xxxxx xx xxxxx xxxxxxx xx xxx xxx xxxxx xxxxxxxxxxx xx xxxxxxx xxxxxxxx xxx xxx xxxxxxxx xxxxx xxxx xx xxx xxxxxx (xxxxx xxxxxxx xxxxx xxx xxxxxxxxxx xx xxxxxxxx xxxxx xxxx). Xxxxxxxxx xxxxxxxxxx xx x xxxx xxxxxx xx xxxxx xx xxxxxxxxxx xxxxxx xxxxxxx xx xx xxxx-xxxxxxx. Xx xxxxxxxxxxxxx xxx xxx xxxxxxx, xxx xxxxxxxxxxx xxx xxxx xx XX xxxxxxxx, xxx xxx xxxx xxx xxxx'x xxxxxxxxxx x xxxx xxx.
+The term "resolution" refers to a measure of pixel density and not, as is commonly thought, pixel count. "Effective resolution" is the way the physical pixels that compose an image or glyph resolve to the eye given differences in viewing distance and the physical pixel size of the device (pixel density being the reciprocal of physical pixel size). Effective resolution is a good metric to build an experience around because it is user-centric. By understanding all the factors, and controlling the size of UI elements, you can make the user's experience a good one.
 
-Xxxxxxxxx xxxxxxx xxx x xxxxxxxxx xxxxxx xx xxxxxxxxx xxxxxx xxxx, xxxxxxx xxxx YYY xxx xxx xxx xxxxxxxx xxxxxxx, xx YYYY xxx xxx x xxxxxx-xxxxx xxxxxxx, xxx xxx xxxxxx xx xxxx xxxxxx xxxxxx. Xxx xxx xxxx xx xx xx xxxxxxxx xx xxx xxxx-xxxxx xxxxxxxx xxx xxxxxxx xxxxxx xxxxxx xx xxx xxxxxx xxxx. Xxxxx xxxx xxxx xx xxxx xxxxx xxxxx xxx'xx xxx xxx xxxxxxxxxx xx xxxx XX xxxxxxxx xx x xxxxx xxxx xx XXXX xxxxxx. X xxxxx xxxxxx xx xxxxxxxxxxxxx xxxxxxx xx xxxx xxx xxxxxxxxx xx xxxx xxxxxx xx xxxx xx xxx xxx xxxxxxx xxxxxxxx xxxx xx xxx xxxx. Xxx xxxx xxxxx xxxxxx xxxxxx xx xxxx xxx XX xxxxxxx xxxx x xxxxx xxxx xxxxxxxxxx x xxxx-xx-xxxx xxxxxxxx-xxxxx xxxxx (xxx xxxxxxx) xxxxxx xx xxx xxxx xxxxxx x xxxx xxxxxxx xx xxxxxx xxxxx. Xxx xxxxxxxx xxxx xxxxxxx xxxxxx, xxxx XX xxx'x xxxxxx xxxxxxxxx xxxxx xx xxxxxxxxx xxxxxxx. Xx xxxx xxxxxxx xx xxxx'x xxxxxxxxx xx xxx xxx xxxxxxxxxxx xxxxxx xx xxxxxxx xxxx xxx xxxxxxxxx xxxxx.
+Different devices are a different number of effective pixels wide, ranging from 320 epx for the smallest devices, to 1024 epx for a modest-sized monitor, and far beyond to much higher widths. All you have to do is continue to use auto-sized elements and dynamic layout panels as you always have. There will also be some cases where you'll set the properties of your UI elements to a fixed size in XAML markup. A scale factor is automatically applied to your app depending on what device it runs on and the display settings made by the user. And that scale factor serves to keep any UI element with a fixed size presenting a more-or-less constant-sized touch (and reading) target to the user across a wide variety of screen sizes. And together with dynamic layout, your UI won't merely optically scale on different devices. It will instead do what's necessary to fit the appropriate amount of content into the available space.
 
-Xx xxxx xxxx xxx xxx xxx xxxx xxxxxxxxxx xxxxxx xxx xxxxxxxx, xx xxxxxxxxx xxxx xxx xxxxxx xxxx xxxxxx xxxxx xx x xxxxx xx xxxxx, xxxx xxxxxxxx xxx x xxxxxxxxxx xxxxx xxxxxx. Xxxxxxxxx xxxxxx xx YYY%-xxxxx, YYY%-xxxxx, xxx YYY%-xxxxx (xx xxxx xxxxxxxx xxxxx) xxxx xxxx xxx xxxxxxxxx xxxxxxx xx xxxx xxxxx xx xxx xxx xxxxxxxxxxxx xxxxx xxxxxxx.
+So that your app has the best experience across all displays, we recommend that you create each bitmap asset in a range of sizes, each suitable for a particular scale factor. Providing assets at 100%-scale, 200%-scale, and 400%-scale (in that priority order) will give you excellent results in most cases at all the intermediate scale factors.
 
-**Xxxx**  Xx, xxx xxxxxxxx xxxxxx, xxx xxxxxx xxxxxx xxxxxx xx xxxx xxxx xxx xxxx, xxxx xxxxxx YYY%-xxxxx xxxxxx. Xx Xxxxxxxxx Xxxxxx Xxxxxx, xxx xxxxxxx xxxxxxx xxxxxxxx xxx XXX xxxx xxxxxxxx xxxxxxxx xxxxxx (xxxx xxxxxx xxx xxxxx) xx xxxx xxx xxxx, xxx xxxx xxx xxx YYY%-xxxxx. Xxxx xxxxxxxxx xxxxxx xxx xxxx xxx xxx, xxxxxx xxx xxxxxxxx xx xxxx xxxxxxx xxx xxxxxxx YYY%, YYY%, xxx YYY% xxxxx, xxx xxx xxxxx xxxxx.
+**Note**  If, for whatever reason, you cannot create assets in more than one size, then create 100%-scale assets. In Microsoft Visual Studio, the default project template for UWP apps provides branding assets (tile images and logos) in only one size, but they are not 100%-scale. When authoring assets for your own app, follow the guidance in this section and provide 100%, 200%, and 400% sizes, and use asset packs.
 
-Xx xxx xxxx xxxxxxxxx xxxxxxx, xxxx xxx xxx xxxx xx xxxxxxx xxxx xxxxxx xx xxxx xxxx xxxxx. Xx xxx'xx xxxxxxxx xxxx xxxxxx xxx, xxxx xx'x xxxxxxxxxx xxxx xx xxxxxxxx xxxx-xxxxxxx xxxxxx xx xxx xxxxx xxxxxx.
+If you have intricate artwork, then you may want to provide your assets in even more sizes. If you're starting with vector art, then it's relatively easy to generate high-quality assets at any scale factor.
 
-Xx xxx'x xxxxxxxxx xxxx xxx xxx xx xxxxxxx xxx xx xxx xxxxx xxxxxxx, xxx xxx xxxx xxxx xx xxxxx xxxxxxx xxx Xxxxxxx YY xxxx xx YYY%, YYY%, YYY%, YYY%, YYY%, YYY%, xxx YYY%. Xx xxx xxxxxxx xxxx, xxx Xxxxx xxxx xxxx xxx xxxxxxx-xxxxx xxxxx(x) xxx xxxx xxxxxx, xxx xxxx xxxxx xxxxxx xxxx xx xxxxxxxxxx. Xxx Xxxxx xxxxxxx xxx xxxxxx xx xxxxxxxx xxxxx xx xxx XXX xx xxx xxxxxx. Xxx xxx xx-xxx xxxxxx xxxx xxxx Xxxxxxx Xxxxx xxx xx xxxxx xxxxxxx xxxx xx YYY% xxx YYY%, xxx xxxx xxx xxxx xxx xx xxx xx xxx xxx xxxxx xxxxxxx xxx xx xxxx xxxxxx xxxxxxx xxxx xx xxxxxxxxxxx. Xxxx xxxx xxx xx x xxxxx xx xxxxxxx xx xxx xxxxxxx xxx'xx xxxxx xxxx xxx xxxxxxx xx xxxx xxxx.
+We don't recommend that you try to support all of the scale factors, but the full list of scale factors for Windows 10 apps is 100%, 125%, 150%, 200%, 250%, 300%, and 400%. If you provide them, the Store will pick the correct-sized asset(s) for each device, and only those assets will be downloaded. The Store selects the assets to download based on the DPI of the device. You can re-use assets from your Windows Store app at scale factors such as 140% and 220%, but your app will run at one of the new scale factors and so some bitmap scaling will be unavoidable. Test your app on a range of devices to see whether you're happy with the results in your case.
 
-Xxx xxx xx xx-xxxxx XXXX xxxxxx xxxx x Xxxxxxx Xxxxx xxx xxxxx xxxxxxx xxxxxxxxx xxxxxx xxx xxxx xx xxx xxxxxx (xxxxxxx xx xxxx xxxxxx xx xxxxx xxxxxxxx, xxxxxxx xxx xxxxxxxxxx). Xxx, xx xxxx xxxxx, x xxxxxx xxxxx xxxxxx xx xxxx xx x xxxxxx xxx x Xxxxxxx YY xxx xxxx xxx x Xxxxxxxxx Y.Y xxx (xxx xxxxxxx, YYY% xx xxxx xxxxx YYY% xxx xxxxxx, xxx YYY% xx xxxx xxxxx YYY% xxx). Xx, xx xxx xxxx xxxx xxxxx xxxxxxx xxxxxx xxx xxx xxx xxx xx Xxxxxxx YY, xxxx xxx xxxxxxxxxxx xxxx xx Y.Y. Xxx xxxx xxxx, xxx [Xxxxxxxxxx xxxxxx YYY xxx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/dn958435).
+You may be re-using XAML markup from a Windows Store app where literal dimension values are used in the markup (perhaps to size shapes or other elements, perhaps for typography). But, in some cases, a larger scale factor is used on a device for a Windows 10 app than for a Universal 8.1 app (for example, 150% is used where 140% was before, and 200% is used where 180% was). So, if you find that these literal values are now too big on Windows 10, then try multiplying them by 0.8. For more info, see [Responsive design 101 for UWP apps](https://msdn.microsoft.com/library/windows/apps/dn958435).
 
-## XxxxXxxx/XxxxXxxx xxxxxxx
+## GridView/ListView changes
 
-Xxxxxxx xxxxxxx xxxx xxxx xxxx xx xxx xxxxxxx xxxxx xxxxxxx xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242705) xx xxxx xxx xxxxxxx xxxxxx xxxxxxxxxx (xxxxxxx xx xxxxxxxxxxxx, xx xx xxx xxxxxxxxxx xx xxxxxxx). Xx xxx xxxxxx x xxxx xx xxx xxxxxxx xxxxx xx xxxx xxxxxxx, xxxx xxxx xxxx xxx'x xxxx xxxxx xxxxxxx, xx xxx'xx xxxx xx xxxx xxxx xxxxxxxx. Xxxx xx x xxxx xx xxx xxxxxxx.
+Several changes have been made to the default style setters for [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) to make the control scroll vertically (instead of horizontally, as it did previously by default). If you edited a copy of the default style in your project, then your copy won't have these changes, so you'll need to make them manually. Here is a list of the changes.
 
--   Xxx xxxxxx xxx [**XxxxxxXxxxxx.XxxxxxxxxxXxxxxxXxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209547) xxx xxxxxxx xxxx **Xxxx** xx **Xxxxxxxx**.
--   Xxx xxxxxx xxx [**XxxxxxXxxxxx.XxxxxxxxXxxxxxXxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209587) xxx xxxxxxx xxxx **Xxxxxxxx** xx **Xxxx**.
--   Xxx xxxxxx xxx [**XxxxxxXxxxxx.XxxxxxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br209549) xxx xxxxxxx xxxx **Xxxxxxx** xx **Xxxxxxxx**.
--   Xxx xxxxxx xxx [**XxxxxxXxxxxx.XxxxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br209589) xxx xxxxxxx xxxx **Xxxxxxxx** xx **Xxxxxxx**.
--   Xx xxx xxxxxx xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242826), xxx xxxxx xx [**XxxxxXxxxXxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298907) xxx xxxxxxx xxxx **Xxxxxxxx** xx **Xxxxxxxxxx**.
+-   The setter for [**ScrollViewer.HorizontalScrollBarVisibility**](https://msdn.microsoft.com/library/windows/apps/br209547) has changed from **Auto** to **Disabled**.
+-   The setter for [**ScrollViewer.VerticalScrollBarVisibility**](https://msdn.microsoft.com/library/windows/apps/br209587) has changed from **Disabled** to **Auto**.
+-   The setter for [**ScrollViewer.HorizontalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209549) has changed from **Enabled** to **Disabled**.
+-   The setter for [**ScrollViewer.VerticalScrollMode**](https://msdn.microsoft.com/library/windows/apps/br209589) has changed from **Disabled** to **Enabled**.
+-   In the setter for [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/br242826), the value of [**ItemsWrapGrid.Orientation**](https://msdn.microsoft.com/library/windows/apps/dn298907) has changed from **Vertical** to **Horizontal**.
 
-Xx xxxx xxxx xxxxxx (xxx xxxxxx xx **Xxxxxxxxxxx**) xxxxx xxxxxxxxxxxxx, xxxx xxxxxxxx xxxx xx'xx xxxxxxx xxxxx x xxxx xxxx. X xxxxxxxxxxxx-xxxxxxxx xxxx xxxx (xxx xxx xxxxx) xx xxxxxxx xx x xxxxxxx xxxxxx xxxxx xxxx xxxxx xxxxxxxxxxxx xxx xxxxxx xx xxx xxxx xxxx xxxx xx xxx xxx xx x xxxx. X xxxx xx xxxx xxxx xxxx xxxxxxx xxxxxxxxxx. Xxxxxxxxxx, x xxxxxxxxxx-xxxxxxxx xxxx xxxx (xxx xxxxxxxx xxxxx) xx xxxxxxx xx x xxxxxxx xxxxxx xxxxx xxxx xxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx.
+If that last change (the change to **Orientation**) seems contradictory, then remember that we're talking about a wrap grid. A horizontally-oriented wrap grid (the new value) is similar to a writing system where text flows horizontally and breaks to the next line down at the end of a page. A page of text like that scrolls vertically. Conversely, a vertically-oriented wrap grid (the previous value) is similar to a writing system where text flows vertically and therefore scrolls horizontally.
 
-Xxxx xxx xxx xxxxxxx xx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242705) xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242878) xxxx xxxx xxxxxx xx xxx xxx xxxxxxxxx xx Xxxxxxx YY.
+Here are the aspects of [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) and [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) that have change or are not supported in Windows 10.
 
--   Xxx [**XxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702518) xxxxxxxx (Xxxxxxx Xxxxx xxxx xxxx) xx xxx xxxxxxxxx xxx Xxxxxxx YY xxxx. Xxx XXX xx xxxxx xxxxxxx, xxx xxxxxxx xx xxx xx xxxxxx. Xxx xxxxxxxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxx xxxxx (xxxxx xx xxxxxxxxxxx xxxxxxx xxxx xxxxx xxxx xx xx xxx xxxxxxxxxxxx) xxx xxxxx-xxxxx (xxxxx xx xxxxxxxx xxx xxxxxxx x xxxxxxx xxxx).
--   Xxx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn625099) xxxxxxxx (Xxxxxxx Xxxxx Xxxxx xxxx xxxx) xx xxx xxxxxxxxx xxx Xxxxxxx YY xxxx. Xxx XXX xx xxxxx xxxxxxx, xxx xxxxxxx xx xxx xx xxxxxx. Xxxxxxx, xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208912) xxx [**XxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242882) xx xxxx xx xxxx **XxxxXxxx** xx **XxxxXxxx** xxx xxxx xxx xxxx xxxx xx xxxx xx xxxxxxx xxxxx x xxxxx-xxx-xxxx (xx xxxxx-xxx-xxxx) xxxxxxx.
--   Xxxx xxxxxxxxxx xxx Xxxxxxx YY, xxx [**XxxxXxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298500) xxxxxxx xx [**XxxxXxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279298) xx xxxx xxxx xxxxxxxxx xxxxx, xxxx xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242878) xxx xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242705). Xx xxx xxxx x xxxx xx xxx xxxxxxx xxxx xxxxxxxxx xxxxxx, xxxx xxx xxxx xxx xxx xxxxxxx xxxx.
--   Xxx xxxxxxxxx xxxxxxx xxxx xxxxxxx xxx x Xxxxxxx YY xxx. Xx xxx xxx [**XxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242915) xx **Xxxxxxxx**, xxxx xx xxxxxxx, x xxxxx xxx xx xxxxxxxx xxx xxxx xxxx. Xxx xxxxxxx xxxxxxx xxx **XxxxXxxx** xxxxx xxxxx xxxx xxx xxxxx xxx xx xxxx xxx xxxxxx xxxxxx xxx xxxx, xxx xx x xxxxxx, xxx xxxxx xxxxxxxx xx xxx xxxx xx xxx xxxx xxxx xx xxxxxxxx xxxxxxx xxx xxxxxxx. Xxx **XxxxXxxx** xxxxx, xxx xxxxx xxx xx xxxxxxxx xx xxx xx xxx xxxx xx xxxxxxx. Xxx, xx xxxxxx xxxx, xxx xxx xxxxxxx xxx xxxxxx (Xxxxxx xx Xxxxxxx) xx xxx xxxxx xxxxx (xxxx xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn913923) xxxxxxxx) xxx xxxxxxx xxxx xxx xxxxx xx xxx (xxxx xxx [**XxxxxxxxxXxxxxXxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298541) xxxxxxxx) xx xxx [**XxxxXxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx) xxxxxxx xxxxxx xxxx xxxx xxxxxxxxx xxxxx xx xx xxx xxxxxxx xxxxx.
--   Xx Xxxxxxx YY, xxx [**XxxxxxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298914) xxxxx xx xxxxxx xxxxx xxx xxxx xxxxxx XX xxxxxxxxxxxxxx: xxxx xxx xxx xxxxxxx, xxx xxxx xxx xxx xx-xxx. Xx xxx xxxxx xx [**XxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279443) xx **xxxx** xxx xxx xxxx xx xxxxxxx xxxxxxx xxxx xx xx, xxxx xxx xxx xxxx xxxx xxxxx xxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxx xxxx xx xxxx xx xx-xxxxxxx xxxx xxxx xxxx xxxx xx xx-xxxx (xx xxxxx xxxx **XxXxxxxxxXxxxx** xxxx xx **xxxxx**).
+-   The [**IsSwipeEnabled**](https://msdn.microsoft.com/library/windows/apps/hh702518) property (Windows Store apps only) is not supported for Windows 10 apps. The API is still present, but setting it has no effect. All previous selection gestures are supported except downward swipe (which is unsupported because data shows that it is not discoverable) and right-click (which is reserved for showing a context menu).
+-   The [**ReorderMode**](https://msdn.microsoft.com/library/windows/apps/dn625099) property (Windows Phone Store apps only) is not supported for Windows 10 apps. The API is still present, but setting it has no effect. Instead, set [**AllowDrop**](https://msdn.microsoft.com/library/windows/apps/br208912) and [**CanReorderItems**](https://msdn.microsoft.com/library/windows/apps/br242882) to true on your **GridView** or **ListView** and then the user will be able to reorder using a press-and-hold (or click-and-drag) gesture.
+-   When developing for Windows 10, use [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/dn298500) instead of [**GridViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/dn279298) in your item container style, both for [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) and for [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). If you edit a copy of the default item container styles, then you will get the correct type.
+-   The selection visuals have changed for a Windows 10 app. If you set [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/br242915) to **Multiple**, then by default, a check box is rendered for each item. The default setting for **ListView** items means that the check box is laid out inline beside the item, and as a result, the space occupied by the rest of the item will be slightly reduced and shifted. For **GridView** items, the check box is overlaid on top of the item by default. But, in either case, you can control the layout (Inline or Overlay) of the check boxes (with the [**CheckMode**](https://msdn.microsoft.com/library/windows/apps/dn913923) property) and whether they are shown at all (with the [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/dn298541) property) on the [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx) element inside your item container style as in the example below.
+-   In Windows 10, the [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) event is raised twice per item during UI virtualization: once for the reclaim, and once for the re-use. If the value of [**InRecycleQueue**](https://msdn.microsoft.com/library/windows/apps/dn279443) is **true** and you have no special reclaim work to do, then you can exit your event handler immediately with the assurance that it will be re-entered when that same item is re-used (at which time **InRecycleQueue** will be **false**).
 
 ```xaml
 <Style x:Key="CustomItemContainerStyle" TargetType="ListViewItem|GridViewItem">
@@ -172,248 +169,247 @@ Xxxx xxx xxx xxxxxxx xx [**XxxxXxxx**](https://msdn.microsoft.com/library/window
 </Style>
 ```
 
-![x xxxxxxxxxxxxxxxxxxxxx xxxx xxxxxx xxxxx xxx](images/w8x-to-uwp-case-studies/ui-listviewbase-cb-inline.jpg)
+![a listviewitempresenter with inline check box](images/w8x-to-uwp-case-studies/ui-listviewbase-cb-inline.jpg)
 
-X XxxxXxxxXxxxXxxxxxxxx xxxx xxxxxx xxxxx xxx
+A ListViewItemPresenter with inline check box
 
-![x xxxxxxxxxxxxxxxxxxxxx xxxx xxxxxxxx xxxxx xxx](images/w8x-to-uwp-case-studies/ui-listviewbase-cb-overlay.jpg)
+![a listviewitempresenter with overlaid check box](images/w8x-to-uwp-case-studies/ui-listviewbase-cb-overlay.jpg)
 
-X XxxxXxxxXxxxXxxxxxxxx xxxx xx xxxxxxxx xxxxx xxx
+A ListViewItemPresenter with an overlaid check box
 
--   Xxxx xxx xxxxxxx xx xxxxxxxx xxxxx xxx xxxxx-xxxxx xxxxxxxx xxx xxxxxxxxx (xxx xxx xxxxxxx xxxxx xxxxx), xxx xxxxxxxxxxx xxxxx xxx xxxxxxx, xxx xxxxxxxxxxx xx xxxxx xx xxxx xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242904) xxx [**XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209776) xxxxxx xxx xx xxxxxx xxxxxxxx xxxxxxxxx. Xxx xxxx Xxxxxxx YY xxx, xxxxxx xxxx xxxxxxxxx xxx xxxxxx xxxxxxx xx xxxxx xxx "xxxxxxxxx" xx xxx "xxxxxx" xxxxxxxxxxx xxxxx. Xxx xxxxxxx, xxx [Xxx xx xxxxxx xxx xxxxxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh780625).
--   Xxxxx xxx xxxx xxxxxxx xx xxx xxxxxxxxxx xxxx xxx xxx xx xxxxx [**XxxxXxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx). Xxxxxxxxxx xxxx xxx xxx xxx [**XxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913905), [**XxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913931), [**XxxxxxxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913937), xxx [**XxxxxXxxxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn898370). Xxxxxxxxxx xxxx xxx xxxxxxx xxx x Xxxxxxx YY xxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn424775) (xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn424773) xxxxxxx), [**XxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298504), [**XxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298506), [**XxxxxxxXxxxXxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn424778), [**XxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298528), [**XxxxxxxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298533), xxx [**XxxxxxxxXxxxxxxXxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298539).
+-   With the removal of downward swipe and right-click gestures for selection (for the reasons given above), the interaction model has changed, one consequence of which is that the [**ItemClick**](https://msdn.microsoft.com/library/windows/apps/br242904) and [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) events are no longer mutually exclusive. For your Windows 10 app, review your scenarios and decide whether to adopt the "selection" or the "invoke" interaction model. For details, see [How to change the interaction mode](https://msdn.microsoft.com/library/windows/apps/xaml/hh780625).
+-   There are some changes to the properties that you use to style [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.listviewitempresenter.aspx). Properties that are new are [**CheckBoxBrush**](https://msdn.microsoft.com/library/windows/apps/dn913905), [**PressedBackground**](https://msdn.microsoft.com/library/windows/apps/dn913931), [**SelectedPressedBackground**](https://msdn.microsoft.com/library/windows/apps/dn913937), and [**FocusSecondaryBorderBrush**](https://msdn.microsoft.com/library/windows/apps/dn898370). Properties that are ignored for a Windows 10 app are [**Padding**](https://msdn.microsoft.com/library/windows/apps/dn424775) (use [**ContentMargin**](https://msdn.microsoft.com/library/windows/apps/dn424773) instead), [**CheckHintBrush**](https://msdn.microsoft.com/library/windows/apps/dn298504), [**CheckSelectingBrush**](https://msdn.microsoft.com/library/windows/apps/dn298506), [**PointerOverBackgroundMargin**](https://msdn.microsoft.com/library/windows/apps/dn424778), [**ReorderHintOffset**](https://msdn.microsoft.com/library/windows/apps/dn298528), [**SelectedBorderThickness**](https://msdn.microsoft.com/library/windows/apps/dn298533), and [**SelectedPointerOverBorderBrush**](https://msdn.microsoft.com/library/windows/apps/dn298539).
 
-Xxxx xxxxx xxxxxxxxx xxx xxxxxxx xx xxx xxxxxx xxxxxx xxx xxxxxx xxxxx xxxxxx xx xxx [**XxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242919) xxx [**XxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh738501) xxxxxxx xxxxxxxxx.
+This table describes the changes to the visual states and visual state groups in the [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/br242919) and [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/hh738501) control templates.
 
-| Y.Y                 |                         | Xxxxxxx YY        |                     |
+| 8.1                 |                         | Windows 10        |                     |
 |---------------------|-------------------------|-------------------|---------------------|
-| XxxxxxXxxxxx        |                         | XxxxxxXxxxxx      |                     |
-|                     | Xxxxxx                  |                   | Xxxxxx              |
-|                     | XxxxxxxXxxx             |                   | XxxxxxxXxxx         |
-|                     | Xxxxxxx                 |                   | Xxxxxxx             |
-|                     | XxxxxxxXxxxXxxxxxx      |                   | [xxxxxxxxxxx]       |
-|                     | Xxxxxxxx                |                   | [xxxxxxxxxxx]       |
-|                     | [xxxxxxxxxxx]           |                   | XxxxxxxXxxxXxxxxxxx |
-|                     | [xxxxxxxxxxx]           |                   | Xxxxxxxx            |
-|                     | [xxxxxxxxxxx]           |                   | XxxxxxxXxxxxxxx     |
-| [xxxxxxxxxxx]       |                         | XxxxxxxxXxxxxx    |                     |
-|                     | [xxxxxxxxxxx]           |                   | Xxxxxxxx            |
-|                     | [xxxxxxxxxxx]           |                   | Xxxxxxx             |
-| XxxxxxxxxXxxxXxxxxx |                         | [xxxxxxxxxxx]     |                     |
-|                     | XxxxxxxxXxxxxxxxxXxxx   |                   | [xxxxxxxxxxx]       |
-|                     | XxxxxxxxxxXxxxxxxxxXxxx |                   | [xxxxxxxxxxx]       |
-|                     | XxXxxxxxxxxXxxx         |                   | [xxxxxxxxxxx]       |
-| [xxxxxxxxxxx]       |                         | XxxxxXxxxxxXxxxxx |                     |
-|                     | [xxxxxxxxxxx]           |                   | XxxxxXxxxxxXxxxxxxx |
-|                     | [xxxxxxxxxxx]           |                   | XxxxxXxxxxxXxxxxxx  |
-| XxxxxxxxxXxxxxx     |                         | [xxxxxxxxxxx]     |                     |
-|                     | Xxxxxxxxxxx             |                   | [xxxxxxxxxxx]       |
-|                     | Xxxxxxxxxx              |                   | [xxxxxxxxxxx]       |
-|                     | XxxxxxxxxxXxxxxxxXxxx   |                   | [xxxxxxxxxxx]       |
-|                     | XxxxxxxxxxXxxxxxx       |                   | [xxxxxxxxxxx]       |
-|                     | Xxxxxxxxx               |                   | [xxxxxxxxxxx]       |
-|                     | Xxxxxxxx                |                   | [xxxxxxxxxxx]       |
-|                     | XxxxxxxxXxxxxxx         |                   | [xxxxxxxxxxx]       |
-|                     | XxxxxxxxXxxxxxxxx       |                   | [xxxxxxxxxxx]       |
+| CommonStates        |                         | CommonStates      |                     |
+|                     | Normal                  |                   | Normal              |
+|                     | PointerOver             |                   | PointerOver         |
+|                     | Pressed                 |                   | Pressed             |
+|                     | PointerOverPressed      |                   | [unavailable]       |
+|                     | Disabled                |                   | [unavailable]       |
+|                     | [unavailable]           |                   | PointerOverSelected |
+|                     | [unavailable]           |                   | Selected            |
+|                     | [unavailable]           |                   | PressedSelected     |
+| [unavailable]       |                         | DisabledStates    |                     |
+|                     | [unavailable]           |                   | Disabled            |
+|                     | [unavailable]           |                   | Enabled             |
+| SelectionHintStates |                         | [unavailable]     |                     |
+|                     | VerticalSelectionHint   |                   | [unavailable]       |
+|                     | HorizontalSelectionHint |                   | [unavailable]       |
+|                     | NoSelectionHint         |                   | [unavailable]       |
+| [unavailable]       |                         | MultiSelectStates |                     |
+|                     | [unavailable]           |                   | MultiSelectDisabled |
+|                     | [unavailable]           |                   | MultiSelectEnabled  |
+| SelectionStates     |                         | [unavailable]     |                     |
+|                     | Unselecting             |                   | [unavailable]       |
+|                     | Unselected              |                   | [unavailable]       |
+|                     | UnselectedPointerOver   |                   | [unavailable]       |
+|                     | UnselectedSwiping       |                   | [unavailable]       |
+|                     | Selecting               |                   | [unavailable]       |
+|                     | Selected                |                   | [unavailable]       |
+|                     | SelectedSwiping         |                   | [unavailable]       |
+|                     | SelectedUnfocused       |                   | [unavailable]       |
 
-Xx xxx xxxx x xxxxxx [**XxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242919) xx [**XxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh738501) xxxxxxx xxxxxxxx, xxxx xxxxxx xx xx xxxxx xx xxx xxxxx xxxxxxx. Xx xxxxxxxxx xxxx xxx xxxxx xxxx xx xxxxxxx x xxxx xx xxx xxx xxxxxxx xxxxxxxx xxx xx-xxxxxxxx xxxx xxxxxxxxxxxxx xx xxxx. Xx, xxx xxxxxxxx xxxxxx, xxx xxx'x xx xxxx xxx xxx xxxx xx xxxx xxxx xxxxxxxx xxxxxxxx, xxxx xxxx xx xxxx xxxxxxx xxxxxxxx xxxxxx xxx xxx xxxxx xx xxxxx xxxxx xxxx.
+If you have a custom [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/br242919) or [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/hh738501) control template, then review it in light of the above changes. We recommend that you start over by editing a copy of the new default template and re-applying your customization to that. If, for whatever reason, you can't do that and you need to edit your existing template, then here is some general guidance around how you might go about doing that.
 
--   Xxx xxx xxx XxxxxXxxxxxXxxxxx xxxxxx xxxxx xxxxx.
--   Xxx xxx xxx XxxxxXxxxxxXxxxxxxx xxxxxx xxxxx.
--   Xxx xxx xxx XxxxxXxxxxxXxxxxxx xxxxxx xxxxx.
--   Xxx xxx xxx XxxxxxxxXxxxxx xxxxxx xxxxx xxxxx.
--   Xxx xxx xxx Xxxxxxx xxxxxx xxxxx.
--   Xx xxx XxxxxxXxxxxx xxxxxx xxxxx xxxxx, xxxxxx xxx XxxxxxxXxxxXxxxxxx xxxxxx xxxxx.
--   Xxxx xxx Xxxxxxxx xxxxxx xxxxx xx xxx XxxxxxxxXxxxxx xxxxxx xxxxx xxxxx.
--   Xxx xxx xxx XxxxxxxXxxxXxxxxxxx xxxxxx xxxxx.
--   Xxx xxx xxx XxxxxxxXxxxxxxx xxxxxx xxxxx.
--   Xxxxxx xxx XxxxxxxxXxxxXxxxxx xxxxxx xxxxx xxxxx.
--   Xx xxx XxxxxxxxxXxxxxx xxxxxx xxxxx xxxxx, xxxx xxx Xxxxxxxx xxxxxx xxxxx xx xxx XxxxxxXxxxxx xxxxxx xxxxx xxxxx.
--   Xxxxxx xxx xxxxxx XxxxxxxxxXxxxxx xxxxxx xxxxx xxxxx.
+-   Add the new MultiSelectStates visual state group.
+-   Add the new MultiSelectDisabled visual state.
+-   Add the new MultiSelectEnabled visual state.
+-   Add the new DisabledStates visual state group.
+-   Add the new Enabled visual state.
+-   In the CommonStates visual state group, remove the PointerOverPressed visual state.
+-   Move the Disabled visual state to the DisabledStates visual state group.
+-   Add the new PointerOverSelected visual state.
+-   Add the new PressedSelected visual state.
+-   Remove the SelectedHintStates visual state group.
+-   In the SelectionStates visual state group, move the Selected visual state to the CommonStates visual state group.
+-   Remove the entire SelectionStates visual state group.
 
-## Xxxxxxxxxxxx xxx xxxxxxxxxxxxx
+## Localization and globalization
 
-Xxx xxx xx-xxx xxx Xxxxxxxxx.xxxx xxxxx xxxx xxxx Xxxxxxxxx Y.Y xxxxxxx xx xxxx XXX xxx xxxxxxx. Xxxxx xxxxxxx xxx xxxx xxxx, xxx xx xx xxx xxxxxxx xxx xxx **Xxxxx Xxxxxx** xx **XXXXxxxxxxx** xxx **Xxxx xx Xxxxxx Xxxxxxxxx** xx **Xx xxx xxxx**. Xxx [**XxxxxxxxXxxxxxx.XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206071) xxxxx xxxxxxxxx xxx xx xxxx xxxxxx xxxxxx-xxxxxxxx xxxxxxxxx xxxxx xx xxx xxxxxx xxxxxx xxxxxxxx xxxxxxxxx xxxxxx.
+You can re-use the Resources.resw files from your Universal 8.1 project in your UWP app project. After copying the file over, add it to the project and set **Build Action** to **PRIResource** and **Copy to Output Directory** to **Do not copy**. The [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) topic describes how to load device family-specific resources based on the device family resource selection factor.
 
-## Xxxx Xx
+## Play To
 
-Xxx XXXx xx xxx [**Xxxxxxx.Xxxxx.XxxxXx**](https://msdn.microsoft.com/library/windows/apps/br207025) xxxxxxxxx xxx xxxxxxxxxx xxx Xxxxxxx YY xxxx xx xxxxx xx xxx [**Xxxxxxx.Xxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972568) XXXx.
+The APIs in the [**Windows.Media.PlayTo**](https://msdn.microsoft.com/library/windows/apps/br207025) namespace are deprecated for Windows 10 apps in favor of the [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) APIs.
 
-## Xxxxxxxx xxxx, xxx XxxxXxxxx xxxxx xxxxx
+## Resource keys, and TextBlock style sizes
 
-Xxx xxxxxx xxxxxxxx xxx xxxxxxx xxx Xxxxxxx YY xxx xxxxxxxxxxxx xxxxxxx xxxxxx xxxxxx xxxx xxxxxxx. Xx xxxx xxxxx, xxx xxxx xxxx xx xxxxxxx xxx xxxxxx xxxxxxx xx xxxx xxxxx xx xxxx xxxx xxx xx xxxxxxx xxxx xxx xxxxx xxxxxxxxxx xxxx xxxx xxxxxxx.
+The design language has evolved for Windows 10 and consequently certain system styles have changed. In some cases, you will want to revisit the visual designs of your views so that they are in harmony with the style properties that have changed.
 
-Xx xxxxx xxxxx, xxxxxxxx xxxx xxx xx xxxxxx xxxxxxxxx. Xxx XXXX xxxxxx xxxxxx xx Xxxxxx Xxxxxx xxxxxxxxxx xxxxxxxxxx xx xxxxxxxx xxxx xxxx xxx'x xx xxxxxxxx. Xxx xxxxxxx, xxx XXXX xxxxxx xxxxxx xxxx xxxxxxxxx x xxxxxxxxx xx xxx xxxxx xxx `ListViewItemTextBlockStyle` xxxx x xxx xxxxxxxx. Xx xxxx xxx'x xxxxxxxxx, xxxx xxx xxx xxxx xxxxxxxxxxx xxxxxxxxx xxxx xxx xxx xx xxxxxx xx xx xxx xxxxxxxx xx xxxxxx. Xx, xx'x xxxxxxxxx xx xxxxxx xx XXXX xxxxxx xxxxxxxxxxx. Xxx xxx xxxx xxxx Xxxxxx Xxxxxx xx xx x xxxxx xxxx xxx xxxxxxxx xxxx xxxxxx.
+In other cases, resource keys are no longer supported. The XAML markup editor in Visual Studio highlights references to resource keys that can't be resolved. For example, the XAML markup editor will underline a reference to the style key `ListViewItemTextBlockStyle` with a red squiggle. If that isn't corrected, then the app will immediately terminate when you try to deploy it to the emulator or device. So, it's important to attend to XAML markup correctness. And you will find Visual Studio to be a great tool for catching such issues.
 
-Xxx xxxx xxxx xxx xxxxx xxxxxxxxx, xxxxxxx xx xxxxxx xxxxxxxx xxxx xxxx xxxxxxxxxx xxx xx xxxx xxxxxx xxxx xxxxxxx. Xxx xxxxxxx, `TitleTextBlockStyle` xxxx **XxxxXxxx** xx YY.YYYxx xx x Xxxxxxx Xxxxx xxx xxx YY.YYxx xx x Xxxxxxx Xxxxx Xxxxx xxx. Xxx, xxx xxxx xxxxx xxxx **XxxxXxxx** xx x xxxx xxxxxx YYxx xx x Xxxxxxx YY xxx. Xxxxxx xxxx xxxxxxx xxx xxxxxxx xxx xxx xxx xxxxxxxxxxx xxxxxx xx xxx xxxxx xxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxxx xxx xxxxx](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) xxx [Xxxxxx XXX xxxx](http://dev.windows.com/design).
+For keys that are still supported, changes in design language mean that properties set by some styles have changed. For example, `TitleTextBlockStyle` sets **FontSize** to 14.667px in a Windows Store app and 18.14px in a Windows Phone Store app. But, the same style sets **FontSize** to a much larger 24px in a Windows 10 app. Review your designs and layouts and use the appropriate styles in the right places. For more info, see [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) and [Design UWP apps](http://dev.windows.com/design).
 
-Xxxx xx x xxxx xxxx xx xxx xxxx xxxx xxx xx xxxxxx xxxxxxxxx.
+This is a full list of the keys that are no longer supported.
 
--   XxxxxXxxXxxXxxxxXxxxxxXxxXxxxxXxxx
--   XxxxxXxxXxxXxxxxXxxxxxXxxxXxxxxxxXxxxxxxxx
--   XxxxxXxxXxxxxxXxxxXxxxxxxxxxxXxxxXxxxxxx
--   XxxxxXxxXxxxxxXxxxXxxxxxxxxxxXxxxXxxxxXxxxxx
--   XxxxxXxxXxxxxxxxxxxXxxxxxxxxxXxxxxXxxxx
--   XxxxxXxxXxxxxxxxxxxXxxxxxXxxxxXxxxx
--   XxxxxXxxXxxxxxxxxxxXxxxxxxxxxXxxxxXxxxx
--   XxxxxXxxXxxxxxXxxxxxxxxxxXxxxXxxxxxxxxxXxxxxXxxxx
--   XxxxxXxxXxxxxxXxxxxxxxxxxXxxxXxxxxXxxxXxxxxx
--   XxxxxXxxXxxxXxxxxxxxXxxxxXxxxxxx
--   XxxxxXxxXxxxXxxxXxxxxxxxXxxxxxxxxxXxxxxXxxxxx
--   XxxxxXxxXxxxXxxXxxxxxXxxxxXxxx
--   XxxxxXxxXxxxxxxxxxxXxxxXxxxxXxxxx
--   XxxxxXxxXxxxxxxxxxxXxxxXxxxxXxxxxx
--   XxxxxxxXxxXxxxxxxxxxXxxxxXxxxx
--   XxxxxxxXxxXxxxxxxxxxXxxxxXxxxx
--   XxxxxxxXxxxxxXxxxxxYXxxxXxxxxxx
--   XxxxxxxXxxxxxXxxxxxYXxxxXxxxxxx
--   XxxxxxxXxxxxxXxxxxxxXxxXxxxxx
--   XxxxxxxXxxxxxXxxxxxxXxxxxxxxxXxxxx
--   XxxxxxxXxxxxxXxxxxxxXxxXxxxxx
--   XxxxxxxXxxxxxXxxxxxxXxxxx
--   XxxxxxxXxxxxxXxxxxXxxXxxxxx
--   XxxxxxxXxxxxxxxxxXxxxXxxxXxxxxXxxxx
--   XxxxxxxXxxxxxXxxxxxxXxxxxxxxxXxxxx
--   XxxxxxxXxxxxxXxxxXxxxxXxxxx
--   XxxxxxXxxxxxxXxxxxXxxxxxxxxXxxxxXxxxxx
--   XxxxxxXxxxxxxXxxxxXxxxxxxxXxxxxXxxxxx
--   XxxxxxxXxxxxx
--   XxxxXxxxXxxxXxxxxx
--   XxxxXxxxXxxxXxxxxxxxxxxXxxxxxxxxxXxxxxXxxxx
--   XxxxxXxxxxxXxxxXxxxxXxxxx
--   XxxxxxXxxxxxxXxxxxxxxxXxxxx
--   XxxxXxxxxxxxXxxxx
--   XxxxXxxxxxxxXxxxx
--   XxxXxxxxxXxxxxxxxxXxxxxxx
--   XxxXxxxxxXxxxXxxx
--   XxxXxxxxxXxxxxxXxxxxxxxx
--   XxxXxxxxxxXxxxxxXxxxxxxxxXxxxxxx
--   XxxXxxxxxxXxxxxxXxxxXxxx
--   XxxXxxxxxxXxxxxxXxxxxxXxxxxxxxx
--   XxxXxxxxxxXxxxxxXxxxxxxxx
--   XxxxxxXxxxxxXxxxXxxxxXxxxxx
--   XxxxXxxxxxxx
--   XxxxXxxxXxxxxxXxxxxx
--   XxxxXxxxxx
--   XxxxXxxxXxxxxXxxxxxXxxxXxxxxXxxxx
--   XxxxXxxxXxxxXxxxxxxXxxxXxxxxXxxxx
--   XxxxXxxxXxxxXxxxxxxXxxxxxxxxX
--   XxxxXxxxXxxxXxxxxx
--   XxxxXxxxXxxxXxxxxxxxxxxXxxxxXxxXxxxxx
--   XxxxXxxxXxxxXxxxxxxxxXxxxXxxxxXxxxx
--   XxxxXxxxXxxxXxxxXxxxxXxxxx
--   XxxxxXxxxxxxXxxxxXxxxxXxxxxXxxxx
--   XxxxxXxxxxxxXxxxxXxxxxXxxxxXxxxxXxxxx
--   XxxxxXxxxxxxXxxxxXxxxxXxxxxXxxxx
--   XxxxxXxxxxxxXxxxxXxxxxXxxxxXxxxx
--   XxxxxXxxxxxxXxxxXxxxxXxxxxXxxxx
--   XxxxxXxxxxxxXxxxXxxXxxxxXxxxx
--   XxxxxXxxxxxxXxxxXxxXxxxxXxxxx
--   XxxxxXxxxxxxxXxxxxxxxXxxxxxxxxXxxxxXxxxx
--   XxxxxXxxxxXxxxxxxxxxXxxxxXxxxx
--   XxxxxXxxxXxxxxXxxxx
--   XxxxXxxxxxXxxxxxxxxxXxxxxXxxxx
--   XxxxXxxxxxXxxxxxXxxxxXxxxx
--   XxxxXxxxxxXxxxxxxxxXxxxxXxxxxxx
--   XxxxXxxxxxXxxxXxxxxxxxxXxxxxxXxxxxXxxxxxxxx
--   XxxxXxxxxxXxxxxxxxXxxxxxXxxxxXxxxxxxxx
--   XxxxXxxxxxXxxxxxxxXxxxxXxxxxxx
--   XxxxXxxxxxXxxxxXxxxxxxxxXxxxxxXxxxxXxxxxxxxx
--   XxxxxxxXxxxxxXxxxxxxXxxxx
--   XxxxxxxXxxxxxXxxxxXxxxx
--   XxxxxxxXxxxxxXxxxxx
--   XxxxxxxxXxxXxxxxXxxXxxxxXxxxxx
--   XxxxxXxxxxxXxxxx
--   XxxxxXxxxxxxxxxXxxxx
--   XxxxxXxxxxxxxxxXxxxx
--   XxxxxXxxxXxxxxXxxxx
--   XxxxxXxxxXxxxXxxxx
--   XxxxxXxxxXxxXxxxx
--   XxxxxXxxxXxxXxxxxXxxxx
--   XxxxxXxxxXxxxxxXxxxXxxxx
--   XxxxxXxxxXxxxxxXxxXxxxx
--   XxxxxXxxxXxxxxxXxxXxxxxXxxxx
--   XxxxxXxxxXxxXxxxx
--   XxxxxXxxxXxxxxXxxxx
--   XxxxxXxxxxxXxxxxxxxx
--   XxxxxXxxxxxXxxxXxxxxxxXxxxxxxxxxXxxxx
--   XxxxxXxxxxxXxxxxxxXxxxxxx
--   XxxxxXxxxxxXxxxXxxxxx
--   XxxxxXxxxxxXxxXxxxxx
--   XxxxxXxxxxxXxxXxxxx
--   XxxxxXxxxxxXxxxx
--   XxxxxXxxxxxXxxxx
--   XxxxxXxxxxxxXxxxxxxxxxXxxxx
--   XxxxxXxxxxxxXxxxxxxxXxxxx
--   XxxxxXxxxxxxXxxxxxxxxxXxxxx
--   XxxxxXxxxxxxxXxxxx
--   XxxxxXxxxxxxxXxxxx
--   XxxxxXxxxXxxxxxXxxxx
--   XxxxxXxxxXxxxxxXxxxXxxx
--   XxxxxXxxxxxxxxxXxxxx
--   XxxxxXxxxxxxxxxXxxxx
--   XxxxxXxxxXxxxxxxxXxxxxxxxXxxxxxxxxxXxxxxXxxxx
--   XxxxxXxxxXxxxxxxxXxxxxxxxXxxxxxxxxxXxxxxXxxxx
--   XxxxxXxxxxXxxxxxxxxxxXxxxx
--   XxxxxXxxXxxxx
--   XxxxxXxxXxxxx
--   XxxxxXxxxXxxxxxxxxxXxxxx
--   XxxxxXxxxxXxxxxxXxxxxxxxxxx
--   XxxxxXxxxxXxxxxxxxxxXxxxXxxxxxx
--   XxxxxXxxxxXxxxxXxxXxxxxxXxxxx
--   XxxxxXxxxxXxxxxXxxXxxxx
--   XxxxxXxxxxXxxxxXxxXxxxxXxxxx
--   XxxxxXxxxxXxxxxXxxXxxxxxxXxxxx
--   XxxxxXxxxxxXxxxxxxxx
--   XxxxxXxxxXxxxXxxxx
--   XxxxxXxxxXxxXxxxx
--   XxxxxXxxxXxxXxxxx
--   XxxxxXxxxXxxxXxxxxxXxxxx
--   XxxxxXxxxxXxxxxxXxxxxXxxxxxxx
--   XxxxxXxxxxXxxxxxXxxxxxxx
--   XxxxxXxxxxxXxxxXxxxxxx
--   XxxxxxxxxxxXxxxxxxXxxxxxxxxXxxxx
--   XxxxxxxxXxxXxxxXxxxxxxxXxxxxxXxxXxxxxXxxxx
--   XxxxxxxxXxxXxxxxxxxxxxxxXxxxxxxxXxxxxXxxx
--   XxxxxxxxXxxXxxxxxxxxXxxxx
--   XxxxxxxxXxxxXxxxxxXxxxxxxxxxXxxxxxx
--   XxxxxxxxXxxxXxxxxxXxxxxXxxxxx
--   XxxxxxxxXxxxXxxxxxXxxxxXxxx
--   XxxxxxxxXxxxXxxxXxxxxxxxxxXxxxxXxxxx
--   XxxxxxxxXxxxXxxxXxxxxXxxxxx
--   XxxxxxxxXxxxXxxxxXxxx
--   XxxxXxxxXxxXxxxXxxxxXxxxxx
--   XxxxxXxxxXxxxxxXxxxxx
--   XxxxxXxxxxx
--   XxxxxxXxxXxxXxxxxXxxxxx
--   XxxxxxXxxXxxXxxxxXxxxx
--   XxxxxxXxxXxxxxxxXxxxxXxxxxXxxxxx
--   XxxxxxXxxXxxxxxxXxxxxXxxxxXxxxx
--   XxxxxxXxxxxXxxxxxxxXxxxxxXxxxxXxxxx
--   XxxxxxXxxxxXxxxxxXxxxxXxxxx
--   XxxxxxXxxxxXxxxxxxxXxxxxxXxxxxXxxxx
--   XxxxXxxXxxxxxxxxxXxxxx
--   XxxxXxxXxxxxxXxxxx
--   XxxxXxxXxxxxxxxXxxxxxXxxxxxxxxxXxxxxXxxxx
--   XxxxXxxXxxxxxxXxxxxxxxxxXxxxxXxxxx
--   XxxxXxxXxxxxxxxxxXxxxx
--   XxxxXxxXxxxxxxxxxxXxxxx
--   XxxxXxxxxxxXxxxxxXxxxxxXxxxxXxxxxxxxx
--   XxxxXxxxxxxXxxxxxXxxXxxxxxXxxx
--   XxxxXxxxxXxxxxXxxxxXxxxxXxxxXxxx
--   XxxxXxxxxXxxxxXxxxxXxxxXxxxXxxx
--   XxxxXxxxxXxxxxxXxxxXxxx
--   XxxxXxxxxXxxxxXxxxXxxx
--   XxxxXxxxxxxxxXxxxxxxXxxxxx
+-   CheckBoxAndRadioButtonMinWidthSize
+-   CheckBoxAndRadioButtonTextPaddingThickness
+-   ComboBoxFlyoutListPlaceholderTextOpacity
+-   ComboBoxFlyoutListPlaceholderTextThemeMargin
+-   ComboBoxHighlightedBackgroundThemeBrush
+-   ComboBoxHighlightedBorderThemeBrush
+-   ComboBoxHighlightedForegroundThemeBrush
+-   ComboBoxInlinePlaceholderTextForegroundThemeBrush
+-   ComboBoxInlinePlaceholderTextThemeFontWeight
+-   ComboBoxItemDisabledThemeOpacity
+-   ComboBoxItemHighContrastBackgroundThemeMargin
+-   ComboBoxItemMinHeightThemeSize
+-   ComboBoxPlaceholderTextBlockStyle
+-   ComboBoxPlaceholderTextThemeMargin
+-   CommandBarBackgroundThemeBrush
+-   CommandBarForegroundThemeBrush
+-   ContentDialogButton1HostPadding
+-   ContentDialogButton2HostPadding
+-   ContentDialogButtonsMinHeight
+-   ContentDialogContentLandscapeWidth
+-   ContentDialogContentMinHeight
+-   ContentDialogDimmingColor
+-   ContentDialogTitleMinHeight
+-   ControlContextualInfoTextBlockStyle
+-   ControlHeaderContentPresenterStyle
+-   ControlHeaderTextBlockStyle
+-   FlyoutContentPanelLandscapeThemeMargin
+-   FlyoutContentPanelPortraitThemeMargin
+-   GrabberMargin
+-   GridViewItemMargin
+-   GridViewItemPlaceholderBackgroundThemeBrush
+-   GroupHeaderTextBlockStyle
+-   HeaderContentPresenterStyle
+-   HighContrastBlack
+-   HighContrastWhite
+-   HubHeaderCharacterSpacing
+-   HubHeaderFontSize
+-   HubHeaderMarginThickness
+-   HubSectionHeaderCharacterSpacing
+-   HubSectionHeaderFontSize
+-   HubSectionHeaderMarginThickness
+-   HubSectionMarginThickness
+-   InlineWindowPlayPauseMargin
+-   ItemTemplate
+-   LeftFullWindowMargin
+-   LeftMargin
+-   ListViewEmptyStaticTextBlockStyle
+-   ListViewItemContentTextBlockStyle
+-   ListViewItemContentTranslateX
+-   ListViewItemMargin
+-   ListViewItemMultiselectCheckBoxMargin
+-   ListViewItemSubheaderTextBlockStyle
+-   ListViewItemTextBlockStyle
+-   MediaControlPanelAudioThemeBrush
+-   MediaControlPanelPhoneVideoThemeBrush
+-   MediaControlPanelVideoThemeBrush
+-   MediaControlPanelVideoThemeColor
+-   MediaControlPlayPauseThemeBrush
+-   MediaControlTimeRowThemeBrush
+-   MediaControlTimeRowThemeColor
+-   MediaDownloadProgressIndicatorThemeBrush
+-   MediaErrorBackgroundThemeBrush
+-   MediaTextThemeBrush
+-   MenuFlyoutBackgroundThemeBrush
+-   MenuFlyoutBorderThemeBrush
+-   MenuFlyoutLandscapeThemePadding
+-   MenuFlyoutLeftLandscapeBorderThemeThickness
+-   MenuFlyoutPortraitBorderThemeThickness
+-   MenuFlyoutPortraitThemePadding
+-   MenuFlyoutRightLandscapeBorderThemeThickness
+-   MessageDialogContentStyle
+-   MessageDialogTitleStyle
+-   MinimalWindowMargin
+-   PasswordBoxCheckBoxThemeMargin
+-   PhoneAccentBrush
+-   PhoneBackgroundBrush
+-   PhoneBackgroundColor
+-   PhoneBaseBlackColor
+-   PhoneBaseHighColor
+-   PhoneBaseLowColor
+-   PhoneBaseLowSolidColor
+-   PhoneBaseMediumHighColor
+-   PhoneBaseMediumMidColor
+-   PhoneBaseMediumMidSolidColor
+-   PhoneBaseMidColor
+-   PhoneBaseWhiteColor
+-   PhoneBorderThickness
+-   PhoneButtonBasePressedForegroundBrush
+-   PhoneButtonContentPadding
+-   PhoneButtonFontWeight
+-   PhoneButtonMinHeight
+-   PhoneButtonMinWidth
+-   PhoneChromeBrush
+-   PhoneChromeColor
+-   PhoneControlBackgroundColor
+-   PhoneControlDisabledColor
+-   PhoneControlForegroundColor
+-   PhoneDisabledBrush
+-   PhoneDisabledColor
+-   PhoneFontFamilyLight
+-   PhoneFontFamilySemiBold
+-   PhoneForegroundBrush
+-   PhoneForegroundColor
+-   PhoneHighContrastSelectedBackgroundThemeBrush
+-   PhoneHighContrastSelectedForegroundThemeBrush
+-   PhoneImagePlaceholderColor
+-   PhoneLowBrush
+-   PhoneMidBrush
+-   PhonePageBackgroundColor
+-   PhonePivotLockedTranslation
+-   PhonePivotUnselectedItemOpacity
+-   PhoneRadioCheckBoxBorderBrush
+-   PhoneRadioCheckBoxBrush
+-   PhoneRadioCheckBoxCheckBrush
+-   PhoneRadioCheckBoxPressedBrush
+-   PhoneStrokeThickness
+-   PhoneTextHighColor
+-   PhoneTextLowColor
+-   PhoneTextMidColor
+-   PhoneTextOverAccentColor
+-   PhoneTouchTargetLargeOverhang
+-   PhoneTouchTargetOverhang
+-   PivotHeaderItemPadding
+-   PlaceholderContentPresenterStyle
+-   ProgressBarHighContrastAccentBarThemeBrush
+-   ProgressBarIndeterminateRectagleThemeSize
+-   ProgressBarRectangleStyle
+-   ProgressRingActiveBackgroundOpacity
+-   ProgressRingElipseThemeMargin
+-   ProgressRingElipseThemeSize
+-   ProgressRingTextForegroundThemeBrush
+-   ProgressRingTextThemeMargin
+-   ProgressRingThemeSize
+-   RichEditBoxTextThemeMargin
+-   RightFullWindowMargin
+-   RightMargin
+-   ScrollBarMinThemeHeight
+-   ScrollBarMinThemeWidth
+-   ScrollBarPanningThumbThemeHeight
+-   ScrollBarPanningThumbThemeWidth
+-   SliderThumbDisabledBorderThemeBrush
+-   SliderTrackBorderThemeBrush
+-   SliderTrackDisabledBorderThemeBrush
+-   TextBoxBackgroundColor
+-   TextBoxBorderColor
+-   TextBoxDisabledHeaderForegroundThemeBrush
+-   TextBoxFocusedBackgroundThemeBrush
+-   TextBoxForegroundColor
+-   TextBoxPlaceholderColor
+-   TextControlHeaderMarginThemeThickness
+-   TextControlHeaderMinHeightSize
+-   TextStyleExtraExtraLargeFontSize
+-   TextStyleExtraLargePlusFontSize
+-   TextStyleMediumFontSize
+-   TextStyleSmallFontSize
+-   TimeRemainingElementMargin
 
-## XxxxxxXxx xxxxxxxxxx xx xxxxx xx XxxxXxxxxxxXxx
+## SearchBox deprecated in favor of AutoSuggestBox
 
-Xxxxxxxx [**XxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn252803) xx xxxxxxxxxxx xx xxx Xxxxxxxxx xxxxxx xxxxxx, xx xx xxx xxxxx xxxxxxxxxx xx xxxxxx xxxxxxx. Xxx [**XxxxXxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn633874) xxx xxxx xxxxxxxxx xxxxxx xxxxxxxxxx. Xxxx'x xxx xxx xxxxxxxxx xxxxxxxxx x xxxxxx xxxxxxxxxx xxxx **XxxxXxxxxxxXxx**.
+Although [**SearchBox**](https://msdn.microsoft.com/library/windows/apps/dn252803) is implemented in the Universal device family, it is not fully functional on mobile devices. Use [**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874) for your universal search experience. Here's how you typically implement a search experience with **AutoSuggestBox**.
 
-Xxxx xxx xxxx xxxxxx xxxxxx, xxx **XxxxXxxxxxx** xxxxx xx xxxxxx, xxxx x xxxxxx xx **XxxxXxxxx**. Xxx xxxx xxxxxxxx xxx xxxx xx xxxxxxxxxxx xxx xxx xxx **XxxxxXxxxxx** xx xxx [**XxxxXxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn633874). Xx xxx xxxx xxxxxxxxx xxx xxxx, xxx **XxxxxxxxxxXxxxxx** xxxxx xx xxxxxx (xxx xx xxx xxxx xxx **XxxxXxxxxxXxxxxxxXxxx**, xxx xxxx xxx xx xxxx-xxxxxx xxxx xxx xxxxxxxx xxxxxxxxx). Xxxx xxx xxxx xxxxxxx x xxxxxx xxxx xxx Xxxxx xxx, xxx **XxxxxXxxxxxxxx** xxxxx xx xxxxxx, xx xxxxx xxxxx xxx xxx xxxx xxxxxx xx xxxx xxxxxxxxxx (xx xxxx xxxx, xxxx xxxxxx xxxxxxxxxx xx xxxxxxx xxxx xxxx xxxx xxxxxxx xx xxx xxxxxxxxx xxxxxxx). Xxxx xxxx xxx **XxxxxxxxxxXxxxxxx** xxx **Xxxxxxxx** xxxxxxxxxx xx **XxxxxxXxxXxxxxXxxxxxxxxXxxxxXxxx** xxx xx xxxxxx xxxxxxxxx (xxxxx xxx xxxxxxxxxx XXXx xx xxxxxxx xxxx xxxxxxxxxxxxx). Xxx **XxxXxxxxxxxx** xx xx xxxxxx xxxxxxxxx.
+Once the user starts typing, the **TextChanged** event is raised, with a reason of **UserInput**. You then populate the list of suggestions and set the **ItemsSource** of the [**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874). As the user navigates the list, the **SuggestionChosen** event is raised (and if you have set **TextMemberDisplayPath**, the text box is auto-filled with the property specified). When the user submits a choice with the Enter key, the **QuerySubmitted** event is raised, at which point you can take action on that suggestion (in this case, most likely navigating to another page with more details on the specified content). Note that the **LinguisticDetails** and **Language** properties of **SearchBoxQuerySubmittedEventArgs** are no longer supported (there are equivalent APIs to support that functionality). And **KeyModifiers** is no longer supported.
 
-[
-            **XxxxXxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn633874) xxxx xxx xxxxxxx xxx xxxxx xxxxxx xxxxxxx (XXXx). Xxx, xx xxx xxxx xx xxxx x "xxxx" xxxx, xxxx xxx xxx xx xxxx xxx (xxxxxxxxxxx xxxx xxx xxxx xxxx xxxxx xxx **XxxxxXxxxxxxxx** xxxxx xx xx xxxxxx).
+[**AutoSuggestBox**](https://msdn.microsoft.com/library/windows/apps/dn633874) also has support for input method editors (IMEs). And, if you want to show a "find" icon, then you can do that too (interacting with the icon will cause the **QuerySubmitted** event to be raised).
 
 ```xaml
    <AutoSuggestBox ... >
@@ -423,65 +419,69 @@ Xxxx xxx xxxx xxxxxx xxxxxx, xxx **XxxxXxxxxxx** xxxxx xx xxxxxx, xxxx x xxxxxx 
     </AutoSuggestBox>
 ```
 
-Xxxx, xxx [XxxxXxxxxxxXxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619996).
+Also, see [AutoSuggestBox porting sample](http://go.microsoft.com/fwlink/p/?linkid=619996).
 
-## XxxxxxxxXxxx xxxxxxx
+## SemanticZoom changes
 
-Xxx xxxxxxx-xxx xxxxxxx xxx x [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh702601) xxx xxxxxxxxx xx xxx Xxxxxxx Xxxxx xxxxx, xxxxx xx xx xxx xx xxxxx x xxxxx xxxxxx (xx, xx xxxxxxx xxxxxxxxx, xxx xxxxx xxxxxx xxxxxxxxxx xx xxxx xxx xx xx xxxxxx xxxxxxxxx). Xxx, xx xxx xxx xxxx, xxxxxxxxxx, xxxxxxxx xxx xxxx xx xxx xxxxxxx. Xxx xxxxxxxx xxxxxxxxxx xxxx xxx Xxxxxxx Xxxxx xxxxx xx xxxx xxx xxxxxx-xxx xxxx (xxx xxxx xxxx) xxxxxxxx xxx xxxxxx-xx xxxx xxxxxx xxxx xxxxxxxxxx xx. Xxx xxxx xxxxxx, xxx xxx xxxxxx xxx xxxx-xxxxxx xxxxxxxxxxx xxxx xxxxxx-xxx xxxxx.
+The zooming-out gesture for a [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) has converged on the Windows Phone model, which is to tap or click a group header (so, on desktop computers, the minus button affordance to zoom out is no longer displayed). Now, we get the same, consistent, behavior for free on all devices. One cosmetic difference from the Windows Phone model is that the zoomed-out view (the jump list) replaces the zoomed-in view rather than overlaying it. For this reason, you can remove any semi-opaque backgrounds from zoomed-out views.
 
-Xx x Xxxxxxx Xxxxx Xxxxx xxx, xxx xxxxxx-xxx xxxx xxxxxxx xx xxx xxxx xx xxx xxxxxx. Xx x Xxxxxxx Xxxxx xxx, xxx xx x Xxxxxxx YY xxx, xxx xxxx xx xxx xxxxxx-xxx xxxx xx xxxxxxxxxxx xx xxx xxxxxx xx xxx **XxxxxxxxXxxx** xxxxxxx.
+In a Windows Phone Store app, the zoomed-out view expands to the size of the screen. In a Windows Store app, and in a Windows 10 app, the size of the zoomed-out view is constrained to the bounds of the **SemanticZoom** control.
 
-Xx x Xxxxxxx Xxxxx Xxxxx xxx, xxxxxxx xxxxxx xxx xxxxxx-xxx xxxx (xx x-xxxxx) xxxxx xxxxxxx xx xxx xxxxxx-xxx xxxx xxx xxx xxxxxxxxxxxx xx xxx xxxxxxxxxx. Xx x Xxxxxxx Xxxxx xxx, xxx xx x Xxxxxxx YY xxx, xxxxxxx xx xxxxxxx xxxxxx xxx xxxxxx xxx xxxx.
+In a Windows Phone Store app, content behind the zoomed-out view (in z-order) shows through if the zoomed-out view has any transparency in its background. In a Windows Store app, and in a Windows 10 app, nothing is visible behind the zoomed out view.
 
-Xx x Xxxxxxx Xxxxx xxx, xxxx xxx xxx xx xxxxxxxxxxx xxx xxxxxxxxxxx, xxx xxxxxx-xxx xxxx xx xxxxxxxxx (xx xx xxx xxxxx xxxxx) xxx xxx xxxxxx-xx xxxx xx xxxxx xxxxxxx. Xx x Xxxxxxx Xxxxx Xxxxx xxx, xxx xx x Xxxxxxx YY xxx, xxx xxxxxx-xxx xxxx xxxx xxxxxx xxxxxxx xx xx xxx xxxxx xxxxx.
+In a Windows Store app, when the app is deactivated and reactivated, the zoomed-out view is dismissed (if it was being shown) and the zoomed-in view is shown instead. In a Windows Phone Store app, and in a Windows 10 app, the zoomed-out view will remain showing if it was being shown.
 
-Xx x Xxxxxxx Xxxxx Xxxxx xxx, xxx xx x Xxxxxxx YY xxx, xxx xxxxxx-xxx xxxx xx xxxxxxxxx xxxx xxx xxxx xxxxxx xx xxxxxxx. Xxx x Xxxxxxx Xxxxx xxx, xxxxx xx xx xxxxx-xx xxxx xxxxxx xxxxxxxxxx, xx xxx xxxxxxxx xxxxx'x xxxxx.
+In a Windows Phone Store app, and in a Windows 10 app, the zoomed-out view is dismissed when the back button is pressed. For a Windows Store app, there is no built-in back button processing, so the question doesn't apply.
 
-## Xxxxxxxx
+## Settings
 
-Xxx Xxxxxxx Xxxxxxx Y.x **XxxxxxxxXxxx** xxxxx xx xxx xxxxxxxxxxx xxx Xxxxxxx YY. Xxxxxxx, xx xxxxxxxx xx xxxxxxxx x Xxxxxxxx xxxx, xxx xxxxxx xxxx xxxx xxxxx x xxx xx xxxxxx xx xxxx xxxxxx xxxx xxx. Xx xxxxxxxxx xxxx xxx xxxxxx xxxx xxx Xxxxxxxx xxxx xx xxx xxx xxxxx, xx xxx xxxx xxxxxx xxxx xx xxxx xxxxxxxxxx xxxx, xxx xxxx xxx xxx xxxx xxx xx xxxx xxxxxxx.
+The Windows Runtime 8.x **SettingsPane** class is not appropriate for Windows 10. Instead, in addition to building a Settings page, you should give your users a way to access it from within your app. We recommend that you expose this app Settings page at the top level, as the last pinned item on your navigation pane, but here are the full set of your options.
 
--   Xxxxxxxxxx xxxx. Xxxxxxxx xxxxxx xx xxx xxxx xxxx xx xxx xxxxxxxxxxxx xxxx xx xxxxxxx, xxx xxxxxx xx xxx xxxxxx.
--   Xxxxxx/xxxxxxx (xxxxxx x xxxx xxxx xx xxxxx xxxxxx). Xxxxxxxx xxxxxx xx xxx xxxx xxxx xx xxx xxxxxx xx xxxxxxx xxxx xxxxxx. Xx xx xxx xxxxxxxxxxx xxx Xxxxxxxx xx xx xxx xx xxx xxx-xxxxx xxxxx xxxxxx xxx xxxxxxxxxx.
--   Xxx. Xxxxxxxx xxxxxx xx xxxxxxx xxxxxx xx xxx xxxx xxxxxx (xxxxx xx xxxx xxx xxx xxx xxxx xx xxx xxxxxxx xxxx xxxxxx xxx Xxx xxxxxx).
+-   Navigation pane. Settings should be the last item in the navigational list of choices, and pinned to the bottom.
+-   Appbar/toolbar (within a tabs view or pivot layout). Settings should be the last item in the appbar or toolbar menu flyout. It is not recommended for Settings to be one of the top-level items within the navigation.
+-   Hub. Settings should be located inside of the menu flyout (could be from the app bar menu or the toolbar menu within the Hub layout).
 
-Xx'x xxxx xxx xxxxxxxxxxx xx xxxx Xxxxxxxx xxxxxx x xxxxxx-xxxxxx xxxx.
+It's also not recommended to bury Settings within a master-detail pane.
 
-Xxxx Xxxxxxxx xxxx xxxxxx xxxx xxx xxxxx xx xxxx xxx'x xxxxxx, xxx xxxx Xxxxxxxx xxxx xx xxxx xxxxx Xxxxx xxx Xxxxxxxx xxxxxx xx. Xxx xxxxxxxx xx xxx xxxxxx xx xxxx Xxxxxxxx xxxx, xxx [Xxxxxxxxxx xxx xxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh770544).
+Your Settings page should fill the whole of your app's window, and your Settings page is also where About and Feedback should be. For guidance on the design of your Settings page, see [Guidelines for app settings](https://msdn.microsoft.com/library/windows/apps/hh770544).
 
-## Xxxx
+## Text
 
-Xxxx (xx xxxxxxxxxx) xx xx xxxxxxxxx xxxxxx xx x XXX xxx xxx, xxxxx xxxxxxx, xxx xxx xxxx xx xxxxxxx xxx xxxxxx xxxxxxx xx xxxx xxxxx xx xxxx xxxx xxx xx xxxxxxx xxxx xxx xxx xxxxxx xxxxxxxx. Xxx xxxxx xxxxxxxxxxxxx xx xxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) **XxxxXxxxx** xxxxxx xxxxxx xxxx xxx xxxxxxxxx. Xxxx xxx xxxx xxxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxx xxx xxxx. Xxxxxxxxxxxxx, xxx xxx xxxxxx xxxx xxx xxxxxxxxx xxxxxx xxx xxxx xxx xxxxxxxxxx xxxx xxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxx xxxxxx xxxx xxxxx.
+Text (or typography) is an important aspect of a UWP app and, while porting, you may want to revisit the visual designs of your views so that they are in harmony with the new design language. Use these illustrations to find the Universal Windows Platform (UWP) **TextBlock** system styles that are available. Find the ones that correspond to the Windows Phone Silverlight styles you used. Alternatively, you can create your own universal styles and copy the properties from the Windows Phone Silverlight system styles into those.
 
-![xxxxxx xxxxxxxxx xxxxxx xxx xxxxxxx YY xxxx](images/label-uwp10stylegallery.png) <br/>Xxxxxx XxxxXxxxx xxxxxx xxx Xxxxxxx YY xxxx
+![system textblock styles for windows 10 apps](images/label-uwp10stylegallery.png) <br/>System TextBlock styles for Windows 10 apps
 
-Xx Xxxxxxx Xxxxx xxxx xxx Xxxxxxx Xxxxx Xxxxx xxxx, xxx xxxxxxx xxxx xxxxxx xx Xxxxxx Xxxx Xxxxxxxxx. Xx x Xxxxxxx YY xxx, xxx xxxxxxx xxxx xxxxxx xx Xxxxx XX. Xx x xxxxxx, xxxx xxxxxxx xx xxxx xxx xxx xxxx xxxxxxxxx. Xx xxx xxxx xx xxxxxxxxx xxx xxxx xx xxxx Y.Y xxxx, xxx xxx xxx xxxx xxx xxxxxxx xxxxx xxxxxxxxxx xxxx xx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209671) xxx [**XxxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br244362).
+In Windows Store apps and Windows Phone Store apps, the default font family is Global User Interface. In a Windows 10 app, the default font family is Segoe UI. As a result, font metrics in your app may look different. If you want to reproduce the look of your 8.1 text, you can set your own metrics using properties such as [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) and [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362).
 
-Xx Xxxxxxx Xxxxx xxxx xxx Xxxxxxx Xxxxx Xxxxx xxxx, xxx xxxxxxx xxxxxxxx xxx xxxx xx xxx xx xxx xxxxxxxx xx xxx xxxxx, xx xx xx-xx. Xx x Xxxxxxx YY xxx, xxx xxxxxxx xxxxxxxx xx xxx xx xxx xxx xxx xxxxxxxx (xxxx xxxxxxxx). Xxx xxx xxx [**XxxxxxxxxXxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702066) xxxxxxxxxx, xxx xxx xxxx xxxxx xxxxxx xxxx xxxxxxxx xxxxxxxx xx xxx xx xxx xxx x xxxxx xxx xxxx xxxxxxxx.
+In Windows Store apps and Windows Phone Store apps, the default language for text is set to the language of the build, or to en-us. In a Windows 10 app, the default language is set to the top app language (font fallback). You can set [**FrameworkElement.Language**](https://msdn.microsoft.com/library/windows/apps/hh702066) explicitly, but you will enjoy better font fallback behavior if you do not set a value for that property.
 
-Xxx xxxx xxxx, xxx [Xxxxxxxxxx xxx xxxxx](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) xxx [Xxxxxx XXX xxxx](http://go.microsoft.com/fwlink/p/?LinkID=533896). Xxxx, xxx xxx [Xxxxxxxx](#controls) xxxxxxx xxxxx xxx xxxxxxx xx xxxx xxxxxxxx.
+For more info, see [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) and [Design UWP apps](http://go.microsoft.com/fwlink/p/?LinkID=533896). Also, see the [Controls](#controls) section above for changes to text controls.
 
-## Xxxxx xxxxxxx
+## Theme changes
 
-Xxx x Xxxxxxxxx Y.Y xxx, xxx xxxxxxx xxxxx xx xxxx xx xxxxxxx. Xxx Xxxxxxx YY xxxxxxx, xxx xxxxxxx xxxxx xxx xxxxxxx, xxx xxx xxx xxxxxxx xxx xxxxx xxxx xx xxxxxxxxx x xxxxxxxxx xxxxx xx Xxx.xxxx. Xxx xxxxxxx, xx xxx x xxxx xxxxx xx xxx xxxxxxx, xxx `RequestedTheme="Dark"` xx xxx xxxx Xxxxxxxxxxx xxxxxxx.
+For a Universal 8.1 app, the default theme is dark by default. For Windows 10 devices, the default theme has changed, but you can control the theme used by declaring a requested theme in App.xaml. For example, to use a dark theme on all devices, add `RequestedTheme="Dark"` to the root Application element.
 
-## Xxxxx xxx xxxxxx
+## Tiles and toasts
 
-Xxx xxxxx xxx xxxxxx, xxx xxxxxxxxx xxx'xx xxxxxxxxx xxxxx xxxx xxxxxxxx xx xxxx xx xxxx Xxxxxxx YY xxx. Xxx, xxxxx xxx xxx, xxxxxxxx xxxxxxxxx xxxxxxxxx xxx xxx xx xxx, xxx xxxxx xxx xxxxxxxxx xx [Xxxxxxxxxxxxx, xxxxx, xxxxxx, xxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185606).
+For tiles and toasts, the templates you're currently using will continue to work in your Windows 10 app. But, there are new, adaptive templates available for you to use, and these are described in [Notifications, tiles, toasts, and badges](https://msdn.microsoft.com/library/windows/apps/mt185606).
 
-Xxxxxxxxxx, xx xxxxxxx xxxxxxxxx, x xxxxx xxxxxxxxxxxx xxx x xxxxxxxxxx xxxxxxx. Xx xxxxx xxxxxxxxx, xxx xx xxxxxx xx xxxxxxxxxxx, xxxx xx xxx xxxxxx xx xxxxxxx. Xx Xxxxxxx Xxxxx, xx x xxxxx xxxxxxxxxxxx xx xxxxxxx xx xxxxxxxxxxx xxxxxxxxx, xx xxxxx xx xxxx xxx Xxxxxx Xxxxxx. Xxx, Xxxxxx Xxxxxx xx xx xxxxxx xxxxxxx xx xxx Xxxxxx xxxxxx xxxxxx.
+Previously, on desktop computers, a toast notification was a transitory message. It would disappear, and no longer be retrievable, once it was missed or ignored. On Windows Phone, if a toast notification is ignored or temporarily dismissed, it would go into the Action Center. Now, Action Center is no longer limited to the Mobile device family.
 
-Xx xxxx x xxxxx xxxxxxxxxxxx, xxxxx xx xx xxxxxx xxx xxxx xx xxxxxxx x xxxxxxxxxx.
+To send a toast notification, there is no longer any need to declare a capability.
 
-## Xxxxxx xxxx
+## Window size
 
-Xxx x Xxxxxxxxx Y.Y xxx, xxx [**XxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn391667) xxx xxxxxxxx xxxxxxx xx xxxx xx xxxxxxx x xxxxxxx xxxxxx xxxxx. Xx xxxx XXX xxx, xxx xxx xxxxxxx x xxxxxxx xxxx (xxxx xxxxx xxx xxxxxx) xxxx xxxxxxxxxx xxxx. Xxx xxxxxxx xxxxxxx xxxx xx YYYxYYYxxx, xxx xxxx'x xxxx xxx xxxxxxxx xxxxxxx xxxx xxxxxxxx. Xxx xxxxxxx xxxxxxx xxxx xxxxxxxx xx YYYxYYYxxx.
+For a Universal 8.1 app, the [**ApplicationView**](https://msdn.microsoft.com/library/windows/apps/dn391667) app manifest element is used to declare a minimum window width. In your UWP app, you can specify a minimum size (both width and height) with imperative code. The default minimum size is 500x320epx, and that's also the smallest minimum size accepted. The largest minimum size accepted is 500x500epx.
 
 ```csharp
    Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize
         (new Size { Width = 500, Height = 500 });
 ```
 
-Xxx xxxx xxxxx xx [Xxxxxxx xxx X/X, xxxxxx, xxx xxx xxxxx](w8x-to-uwp-input-and-sensors.md).
+The next topic is [Porting for I/O, device, and app model](w8x-to-uwp-input-and-sensors.md).
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

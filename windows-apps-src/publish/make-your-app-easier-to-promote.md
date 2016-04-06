@@ -1,44 +1,48 @@
 ---
-Xxxxxxxxxxx: Xxx xxxx xxx xxxxxxx! Xxxxx xxxx xxxxxx xxxx xxx xxx xxxx xx xxx xx, xxxxx xxx xxxxxx xxx xxx xx xxxx xxxx xx xxxx xxx xxx Xxxxxxx Xxxxx xxx xxxxx xxxxx xx xxxxxxxx xxxx xxx xxx xxxx xx xxx xxxx xxxxxxxxx.
-xxxxx: Xxxx xxxx xxx xxxxxx xx xxxxxxx
-xx.xxxxxxx: YYYXYYXX-XYYY-YYYY-XXXX-YXXYXYYYYYYY
+Description: アプリが人の目に留まるようにしましょう。 アプリの品質を高めることのほかにも、Windows ストアやその他のサイトで注目を集めるためにできることがあります。
+title: アプリの販売促進を容易にする
+ms.assetid: 375A73EB-A010-4319-AEFF-3DC3E3691220
 ---
 
-# Xxxx xxxx xxx xxxxxx xx xxxxxxx
+# アプリの販売促進を容易にする
 
 
-Xxx xxxx xxx xxxxxxx! Xxxxx xxxx xxxxxx xxxx xxx xxx xxxx xx xxx xx, xxxxx xxx xxxxxx xxx xxx xx xxxx xxxx xx xxxx xxx xxx Xxxxxxx Xxxxx xxx xxxxx xxxxx xx xxxxxxxx xxxx xxx xxx xxxx xx xxx xxxx xxxxxxxxx.
+アプリが人の目に留まるようにしましょう。 アプリの品質を高めることのほかにも、Windows ストアやその他のサイトで注目を集めるためにできることがあります。
 
-## Xxxxxxx Xxxxx xxxxxxxxxxxx xxx xxxxxxxx xxxx
+## Windows ストアのおすすめアプリ要件
 
 
-Xxx Xxxxxxx Xxxxx xxxxxxxxx xxxxxxxxx xxxx xxxxxxx xx xxxxxxxx xx xxxxx. Xxxxx xxx xxx xxxx xxxxx xxxx xx xxxxxxx xxxx xxx, xxx xxxxx xx xx xxx xx xxxxxxxxx xxxx xxx xxxx xxx xxxxxxxx. Xxxxxxx, xxxxx xxx xxxx xxxxxx xxx xxx xx xx xxxx xxxx xxxx xxx xx xxxxxxxx xx xx xxxxxxxxxx xxx xxxxxxxxx xx xxx Xxxxx.
+Windows ストアでは、さまざまなアプリをカテゴリ別またはテーマ別にまとめて表示しています。 優れたアプリが多すぎて、すべてをおすすめアプリにすることはできません。おすすめアプリに選ばれることを保証することもできません。 ただし、アプリがストア内でプロモーション用としての検討対象になるように、できることがいくつかあります。
 
--   **Xxxxxxx xxxxx xxxxxxxxxxx xxx xxxxx xxxxxx**
+-   **スクリーン ショットやプロモーション用の画像を含める**
 
-    Xxxx xxxxxxxxx xxxx, xxx Xxxxxxx Xxxxx xxx xxx xxxx [xxx xxxxxxxxxxx xxx xxxxxx](app-screenshots-and-images.md) xx xxxxxxx xxxxxxx. Xx xxxx xx xxxxxx xxxxx xxxxxxxxxxx xxxx xxxxxxxxx xxxx xxx, xxx xxxx xxxx xxx xxxxx xxxxxxxxxx xx xxxxxxxxxx xxxxxxxxxxxxxx xxx xxxxxxxxx.
+    Windows ストアでアプリを取り上げる際に、[アプリのスクリーン ショットや画像](app-screenshots-and-images.md)がさまざまなレイアウトで使われる場合があります。 アプリを表す優れたスクリーン ショットを設計する必要があり、最初のスクリーン ショットは特に代表的で魅力のあるものを選びます。
 
-    Xx xxxxxxxx xxxx xxx'x xxxxxx xx xxxxxxx xxxxxxxx xx xxx Xxxxx, xxx'xx xxxx xxxx xx xxxxxxx xx xxxxx xxx xxxxxxxxxxx xxxxx xx xxxx xxx'x xxxxxxxxxx. Xxxxxxxxx xxx YYYY x YYYY xxxxx xxxx xx xxxx xxxxxxxxx, xx xx xxx xxx xxxx xxxxx xx x xxxxxx xx xxxx xx xxx Xxxxx xxx Xxxxxxx YY xxxxxxxxx. Xxxx xx xxxx xxxx xx xxx xxxx xxxx xxxxx xx xxxx xxxxxxx, xx xxx xxxxxx xx xxx xxxxxxx xxxxxx xxxxxxx xxxx xxx'x xxx xxxxxx xxxxxxxx xxx xxxxxxxx/xxxx. Xxx xxx xxxx xxxx xx xxxxxxx xxxxxxxxxx xxxxx xxxxx xx xxxx xxx xxxx xx xxxxxxx XX xxxxxxxx. Xxx xxxx xxxxxxx xxx xxxxxxxxxx, xxx [Xxxxxxxxxxx xxxxxxx](app-screenshots-and-images.md#promotional-artwork).
+    アプリがストアでおすすめとして取り上げられる可能性を最大化するには、アプリの申請時に 1 つ以上のプロモーション用の画像も提供する必要があります。 2400 x 1200 ピクセルのサイズの画像はストア内で Windows 10 ユーザー向けにさまざまな方法で使うことができるため、このサイズの画像を提供することは最も重要です。 この画像は一部のレイアウトでトリミングされる可能性があるため、画像の中央にアプリの主な視覚要素とブランドやロゴを含める必要があることに注意してください。 アプリが以前の OS バージョンで実行される場合は、別のサイズの画像を追加して提供することもできます。 詳細とガイドラインについては、「[プロモーション用のアートワーク](app-screenshots-and-images.md#promotional-artwork)」をご覧ください。
 
--   **Xxxxx xxx xxxxxxx xx xxxx xxx, xxx xxx xxxx xxxxxxx xxx x xxxxxxxx xxxx xxxxxxx**
+-   **無料バージョンと有料バージョンを別々に作るのではなく、1 つのバージョンとしてアプリを作る**
 
-    Xxxxxx xxxx xxxxxxxxxx xxxxxxxx xxxx xxx xxxx xxxxxxxx xx xxx xxxx xxx, xxxxx x xxxx xxxxx xxxxxxx xxx xxxx xxxx xxx, xx xxxx xx x xxxx xxx xxxx xx-xxx xxxxxxxxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxxxxxxxx. Xxxx xxx xxxx xxx xxxx xxxx xxx xxxxxxx xxxx xxxxx xxx xxx xxxxx: xxxxx xxxx xxxxxxxxxx xx xxxx xxxxxxxxx, xxx xxxxx xxx xxxxx xx xxxxx xx xxxx x xxxxxxxx.
+    同じアプリの無料バージョンと有料バージョンを別々に公開するのではなく、有料アプリの無料試用版を提供します。つまり、無料アプリとして公開し、アプリ内購入によって追加機能を利用できるようにします。 こうすることによってアプリの内容ページは 1 つになり、フリー ダウンロードだけに興味を示すユーザーも、購入を考えているユーザーも含め、すべてのユーザーを対象とすることができます。
 
--   **Xxxxxx xxxxxxx xxx xxxx xxxxxxxxxx YY+ xxx YY+ xxxxxxx**
+-   **16+ および 18+ コンテンツが含まれるアプリではフィルターを使えるようにする**
 
-    Xx xxxx xxxxx xxx Xxxxxxx Xxxxx xxxxx'x xxxxxxxx xxxxxxxxx xxxx xxxx YY+ xxxxxxx, xxxxxx xxx xxx xxxx xxxxxxx xxxxxxxxx xx xxxx xxx xxxxxxx xxxx xx xxxx xxxxxxxxxxx xxx xxx YY+ xx xxxxxx xxxx xxxxx xxxxx xxxx xxxxxxxxxx xxxxxx xx xxxx xx. Xxx xxxxxxx xxxxxx xxxxxx xx xxxxxx xx xx xxxxxxx, xx xxxxxx xx xxxxxxxx xxxxxxxxx, xxx xx xxxxxx xx xxxxxxxxx xx xxx xxx xxxxxx (xxx xx x xxxxxxxx xxxxxxx).
+    Windows ストアではほとんどの場合、16+ コンテンツが含まれるアプリは、お勧めアプリの候補から除外されます。ただし、16 歳以上のみを対象としたコンテンツは閲覧することをユーザーが明示的に選ばない限り表示されないように、コンテンツ フィルターがアプリに採用されている場合は除きます。 このコンテンツ フィルターは (別の Web サイトではなく) アプリ自体に含まれているもので、パスワードで保護し、既定でオンにしておく必要があります。
 
--   **Xxxx xxxx xxx xx xxx xxxxxxxx xxxxxxx xxx xxxxxxxxx**
+-   **該当するすべての市場と言語を使ってアプリを掲載する**
 
-    Xxxxxxxxxx xxxx xxx xx xxx xxxxxxxx [xxxxxxx](define-pricing-and-market-selection.md) xxx xxxx xxx xxx xxxxxxx xxxxxxxx xxx xxxx xxx. Xx xxxxxx, xxx'xx xxxx xx xxxx xxxx xxxx xxxx xxx xx xxxxxxxxxxx xxx xxxxx xxx xxxxx xxxxxxxxxx xxx xxx xxxxxxx xxx xxxxxx. Xxxxxxxxxx xxxx xxx'x xxxxxxx xxxx xx xxxx [xxxxxxxxx](supported-languages.md) xx xxxxxxxx xxx xxxx xxxx.
+    該当するすべての[市場](define-pricing-and-market-selection.md)にアプリを提出すると、アプリの対象地域が広がります。 もちろん、アプリが適切であり、選んだ市場のすべてのローカルなガイドラインを満たす必要があります。 アプリのコンテンツをできるだけ多くの[言語](supported-languages.md)にローカライズすることも販売促進に役立ちます。
 
-Xxxxxxxxx xxxxx xxxxxxxxxx xxxx xxxx xxxx xx xxxxxx xxx xxxxxx xx xxxxxxx xxxx xxx xx xxxxxxx, xxxxxx xxxxx, xx xxxxx xxxxxx.
+これらのガイドラインに従うことは、レビュー、ソーシャル メディア、またはその他の場所で、アプリが高い評価を得ることにもつながります。
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

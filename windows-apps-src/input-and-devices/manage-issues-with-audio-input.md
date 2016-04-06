@@ -1,39 +1,34 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxx xx xxxxxx xxxxxx xxxx xxxxxx-xxxxxxxxxxx xxxxxxxx xxxxxx xx xxxxx-xxxxx xxxxxxx.
-xxxxx: Xxxxxx xxxxxx xxxx xxxxx xxxxx
-xx.xxxxxxx: YXYYXYYY-XYYX-YXXX-XXYY-XXXYYXYXXYYY
-xxxxx: Xxxxxx xxxxx xxxxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: オーディオ入力の品質が原因で発生する音声認識の精度の問題を管理する方法について説明します。
+title: 音声入力の問題の管理
+ms.assetid: 3E36C683-C96A-4FEE-AD52-FDB87E0CC299
+label: 音声入力の問題の管理
+template: detail.hbs
 ---
 
-# Xxxxxx xxxxxx xxxx xxxxx xxxxx
+# 音声入力の問題の管理
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653226)
--   [**XxxxxxxxxxxXxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653243)
--   [**XxxxxxXxxxxxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631406)
+-   [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226)
+-   [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243)
+-   [**SpeechRecognitionAudioProblem**](https://msdn.microsoft.com/library/windows/apps/dn631406)
 
-Xxxxx xxx xx xxxxxx xxxxxx xxxx xxxxxx-xxxxxxxxxxx xxxxxxxx xxxxxx xx xxxxx-xxxxx xxxxxxx.
-
-
-## <span id="Assess_audio-input_quality">
-            </span>
-            <span id="assess_audio-input_quality">
-            </span>
-            <span id="ASSESS_AUDIO-INPUT_QUALITY">
-            </span>Xxxxxx xxxxx-xxxxx xxxxxxx
+オーディオ入力の品質が原因で発生する音声認識の精度の問題を管理する方法について説明します。
 
 
-Xxxx xxxxxx xxxxxxxxxxx xx xxxxxx, xxx xxx [**XxxxxxxxxxxXxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653243) xxxxx xx xxxx xxxxxx xxxxxxxxxx xx xxxxxxxxx xxxxxxx xxx xx xxxx xxxxx xxxxxx xxxxx xx xxxxxxxxxxx xxxx xxxxxx xxxxx. Xxx xxxxx xxxxxxxx ([**XxxxxxXxxxxxxxxxxXxxxxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn631430)) xxxxxxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631431) xxxxxxxx, xxxxx xxxxxxxxx xxx xxxxxx xxxxxxxx xxxx xxx xxxxx xxxxx.
+## <span id="Assess_audio-input_quality"></span><span id="assess_audio-input_quality"></span><span id="ASSESS_AUDIO-INPUT_QUALITY"></span>オーディオ入力の品質を評価する
 
-Xxxxxxxxxxx xxx xx xxxxxxxx xx xxx xxxx xxxxxxxxxx xxxxx, x xxxxx xxxxxxxxxx, xxx xxx xxxxxx xx xxxxx xx xxx xxxxxxx.
 
-Xxxx, xx xxxxxxxxx x xxxxxx xxxxxxxxxx xxx xxxxx xxxxxxxxx xxx xxx [**XxxxxxxxxxxXxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653243) xxxxx.
+音声認識がアクティブな場合は、音声認識エンジンの [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) イベントを使用して、1 つ以上のオーディオの問題によって音声入力が妨げられている可能性があるかどうかを判断します。 イベント引数 ([**SpeechRecognitionQualityDegradingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn631430)) には、[**Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) プロパティがあり、音声入力で検出された問題の説明が含まれています。
+
+認識は、多すぎる背景の雑音、ミュートされたマイク、およびスピーカーのボリュームや速度の影響を受ける場合があります。
+
+ここでは、音声認識エンジンを構成し、[**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) イベントのリッスンを開始します。
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -65,17 +60,13 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## <span id="Manage_the_speech-recognition_experience">
-            </span>
-            <span id="manage_the_speech-recognition_experience">
-            </span>
-            <span id="MANAGE_THE_SPEECH-RECOGNITION_EXPERIENCE">
-            </span>Xxxxxx xxx xxxxxx-xxxxxxxxxxx xxxxxxxxxx
+## <span id="Manage_the_speech-recognition_experience"></span><span id="manage_the_speech-recognition_experience"></span><span id="MANAGE_THE_SPEECH-RECOGNITION_EXPERIENCE"></span>音声認識エクスペリエンスを管理する
 
 
-Xxx xxx xxxxxxxxxxx xxxxxxxx xx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631431) xxxxxxxx xx xxxx xxx xxxx xxxxxxx xxxxxxxxxx xxx xxxxxxxxxxx.
+[
+            **Problem**](https://msdn.microsoft.com/library/windows/apps/dn631431) プロパティにある説明を使用して、ユーザーが認識の状態を改善できるようにします。
 
-Xxxx, xx xxxxxx x xxxxxxx xxx xxx [**XxxxxxxxxxxXxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653243) xxxxx xxxx xxxxxx xxx x xxx xxxxxx xxxxx. Xx xxxx xxx x [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298152) xxxxxx xx xxxxxxx xxxx xxx xxxx xxx xxxxxxxx xxxxxx.
+ここでは、低い音量レベルをチェックする [**RecognitionQualityDegrading**](https://msdn.microsoft.com/library/windows/apps/dn653243) イベント用のハンドラーを作成します。 次に、[**SpeechSynthesizer**](https://msdn.microsoft.com/library/windows/apps/dn298152) オブジェクトを使って、より大きな声で話すことをユーザーに提示します。
 
 ```CSharp
 private async void speechRecognizer_RecognitionQualityDegrading(
@@ -110,19 +101,22 @@ private async void speechRecognizer_RecognitionQualityDegrading(
 }
 ```
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>関連記事
 
 
-* [Xxxxxx xxxxxxxxxxxx](speech-interactions.md)
+* [音声操作](speech-interactions.md)
 
-**Xxxxxxx**
-* [Xxxxxx xxxxxxxxxxx xxx xxxxxx xxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+**サンプル**
+* [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

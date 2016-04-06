@@ -1,21 +1,21 @@
 ---
-Xxxxxxxxxxx: Xxxxxxxxxx xxxxxxxxxxxxx xxxxxxxx xxxx xxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
-xxxxx: Xxxxxxxxxxxxx
-xx.xxxxxxx: XYYXYYXY-XYYY-YYYX-XYYY-XYXXYXXYXXXX
-xxxxx: Xxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: ユニバーサル Windows プラットフォーム (UWP) アプリに関連するアクセシビリティの概念について紹介します。
+title: アクセシビリティ
+ms.assetid: C89D79C2-B830-493D-B020-F3FF8EB5FFDD
+label: 概要
+template: detail.hbs
 ---
 
-Xxxxxxxxxxxxx
+アクセシビリティ
 ===============================================================
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
-Xxxxxxxxxx xxxxxxxxxxxxx xxxxxxxx xxxx xxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
+ユニバーサル Windows プラットフォーム (UWP) アプリに関連するアクセシビリティの概念について紹介します。
 
-Xxxxxxxxxxxxx xx xxxxx xxxxxx xxxx xxx xxxxxx xx xxxxxx xxx xxxx xxxxxxxxxxx xxxx xxxxxxx xx xxxxxx xxx xxx xx xxxxxxxxxxxx xxxx xxxxxxxxxx. Xxx xxxx xxxxxxxxxx, xxxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxx xx xxx. Xxxxxxx, xx'x x xxxx xxxx xx xxxxxxx xxxxxxxxxxxxx xxxxxx xxxxxxxxxx xx xxxxx xxxxxxxxxxxx xx xxxx xxxx xxxx xxxx xxx xxxxxxx xxxxxxxx xxxxxxxx. Xxxxx'x xxxx x Xxxxxxx Xxxxx xxxxxxxxxxx xxxxxxxxx xxxxxxxxxxxxx xxx xxxx xxx.
+アクセシビリティの目的は、従来のユーザー インターフェイスの使用に支障があるユーザーにとってアプリを使いやすいものにすることです。 状況によってはアクセシビリティの要件が法律で定められているものもありますが、 アプリをできるだけ多くの人が利用するために、法的要件に関係なくアクセシビリティの問題に対処することをお勧めします。 また、アプリのアクセシビリティに関する Windows ストアの宣言も含まれます。
 
-**Xxxx**  Xxxxxxxxx xxx xxx xx xxxxxxxxxx xx xxxx xxxxxxxx xx xxx Xxxxxxx Xxxxx.
+**注**  アプリをアクセシビリティ対応として宣言する方法は、Windows ストアのみに関係します。
 
 <table>
 <colgroup>
@@ -24,67 +24,70 @@ Xxxxxxxxxxxxx xx xxxxx xxxxxx xxxx xxx xxxxxx xx xxxxxx xxx xxxx xxxxxxxxxxx xxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">記事</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">[Accessibility overview](accessibility-overview.md)</td>
-<td align="left"><p>Xxxx xxxxxxx xx xx xxxxxxxx xx xxx xxxxxxxx xxx xxxxxxxxxxxx xxxxxxx xx xxxxxxxxxxxxx xxxxxxxxx xxx XXX xxxx.</p></td>
+<td align="left"><p>この記事では、UWP アプリのアクセシビリティ シナリオに関連する概念とテクノロジの概要を示します。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[Expose basic accessibility information](basic-accessibility-information.md)</td>
-<td align="left"><p>Xxxxx xxxxxxxxxxxxx xxxx xx xxxxx xxxxxxxxxxx xxxx xxxx, xxxx, xxx xxxxx. Xxxx xxxxx xxxxxxxxx xxxx xx xxxx xxxx xxx xxxxxx xxx xxxxx xxxxxxxxxxx xxxx xxxxxxxxx xxxxxxxxxxxx xxxx.</p></td>
+<td align="left"><p>基本的なアクセシビリティ情報は、多くの場合、名前、役割、値に分類されます。 このトピックでは、支援技術が必要とする基本情報をアプリで公開するのに役立つコードについて説明します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">[Keyboard accessibility](keyboard-accessibility.md)</td>
-<td align="left"><p>Xx xxxx xxx xxxx xxx xxxxxxx xxxx xxxxxxxx xxxxxx, xxxxx xxx xxx xxxxx xx xxxx xxxxxxxx xxxxxx xxx xxxx xxxxxxxxxx xxxxx xxxx xxx xx xxx xxx xx xxxx xx xxx xx xx xxx.</p></td>
+<td align="left"><p>アプリに十分なキーボード操作機能が備わっていない場合、視覚障碍または運動障碍のあるユーザーはアプリをうまく使用できなかったり、まったく使用できない可能性があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[Accessible text requirements](accessible-text-requirements.md)</td>
-<td align="left"><p>Xxxx xxxxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxxxxx xx xxxx xx xx xxx, xx xxxxxxxx xxxx xxxxxx xxx xxxxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxx xxxxx. Xxxx xxxxx xxxx xxxxxxxxx xxx Xxxxxxxxx XX Xxxxxxxxxx xxxxx xxxx xxxx xxxxxxxx xx x XXX xxx xxx xxxx, xxx xxxx xxxxxxxxx xxx xxxx xx xxxxxxxx.</p></td>
+<td align="left"><p>このトピックでは、色と背景のコントラスト比を適切な値にすることで、アプリのテキストをアクセシビリティ対応にするためのベスト プラクティスについて説明します。 また、UWP アプリ内のテキスト要素に設定できる Microsoft UI オートメーションの役割と、グラフィックス内のテキストに関するベスト プラクティスについても説明します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">[High-contrast themes](high-contrast-themes.md)</td>
-<td align="left"><p>Xxxxxxxxx xxx xxxxx xxxxxx xx xxxxxx xxxx XXX xxx xx xxxxxx xxxx x xxxx-xxxxxxxx xxxxx xx xxxxxx.</p></td>
+<td align="left"><p>ハイ コントラスト テーマがアクティブになっているときに UWP アプリを使えることを確かめるために必要な手順について説明します。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[Accessibility practices to avoid](practices-to-avoid.md)</td>
-<td align="left"><p>Xxxxx xxx xxxxxxxxx xx xxxxx xx xxx xxxx xx xxxxxx xx xxxxxxxxxx XXX xxx.</p></td>
+<td align="left"><p>アクセシビリティ対応の UWP アプリを作成するために避ける事項の一覧を表示します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">[Accessibility testing](accessibility-testing.md)</td>
-<td align="left"><p>Xxxxxxx xxxxxxxxxx xx xxxxxx xx xxxxxx xxxx xxxx XXX xxx xx xxxxxxxxxx.</p></td>
+<td align="left"><p>UWP アプリをアクセシビリティ対応にするためのテスト手順です。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[Accessibility in the Store](accessibility-in-the-store.md)</td>
-<td align="left"><p>Xxxxxxxxx xxx xxxxxxxxxxxx xxx xxxxxxxxx xxxx XXX xxx xx xxxxxxxxxx xx xxx Xxxxxxx Xxxxx.</p></td>
+<td align="left"><p>UWP アプリがアクセシビリティ対応であることを Windows ストアで宣言するために必要なことを説明します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">[Accessibility checklist](accessibility-checklist.md)</td>
-<td align="left"><p>Xxxxxxxx x xxxxxxxxx xx xxxx xxx xxxxxx xxxx xxxx XXX xxx xx xxxxxxxxxx.</p></td>
+<td align="left"><p>UWP アプリをアクセシビリティ対応にするために役立つチェック リストを示します。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[Custom automation peers](custom-automation-peers.md)</td>
-<td align="left"><p>Xxxxxxxxx xxx xxxxxxx xx xxxxxxxxxx xxxxx xxx XX Xxxxxxxxxx, xxx xxx xxx xxx xxxxxxx xxxxxxxxxx xxxxxxx xxx xxxx xxx xxxxxx XX xxxxx.</p></td>
+<td align="left"><p>UI オートメーションに対するオートメーション ピアの概念について説明します。また、独自のカスタム UI クラスに対してオートメーションのサポートを提供する方法についても説明します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-<span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+<span id="related_topics"></span>関連記事
 -----------------------------------------------
 
-* [**Xxxxxxx.XX.Xxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209179)
-* [Xxxxxx xxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Hh700407)
-* [XXXX xxxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=238570)
+* [**Windows.UI.Xaml.Automation**](https://msdn.microsoft.com/library/windows/apps/BR209179)
+* [アクセシビリティのための設計](https://msdn.microsoft.com/library/windows/apps/Hh700407)
+* [XAML アクセシビリティ サンプル](http://go.microsoft.com/fwlink/p/?linkid=238570)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

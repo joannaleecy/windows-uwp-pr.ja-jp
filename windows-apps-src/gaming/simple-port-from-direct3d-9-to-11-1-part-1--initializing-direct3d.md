@@ -1,29 +1,29 @@
 ---
-xxxxx: Xxxxxxxxxx XxxxxxYX YY
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxxx XxxxxxYX Y xxxxxxxxxxxxxx xxxx xx XxxxxxYX YY, xxxxxxxxx xxx xx xxx xxxxxxx xx xxx XxxxxxYX xxxxxx xxx xxx xxxxxx xxxxxxx xxx xxx xx xxx XXXX xx xxx xx x xxxx xxxxx.
-xx.xxxxxxx: YxxYxYxY-xxYx-YYYx-YxxY-YxYxYxYYxxYY
+title: Initialize Direct3D 11
+description: Shows how to convert Direct3D 9 initialization code to Direct3D 11, including how to get handles to the Direct3D device and the device context and how to use DXGI to set up a swap chain.
+ms.assetid: 1bd5e8b7-fd9d-065c-9ff3-1a9b1c90da29
 ---
 
-# Xxxxxxxxxx XxxxxxYX YY
+# Initialize Direct3D 11
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Xxxxxxx**
+**Summary**
 
--   Xxxx Y: Xxxxxxxxxx XxxxxxYX YY
--   [Xxxx Y: Xxxxxxx xxx xxxxxxxxx xxxxxxxxx](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
--   [Xxxx Y: Xxxx xxx xxxx xxxx](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
-
-
-Xxxxx xxx xx xxxxxxx XxxxxxYX Y xxxxxxxxxxxxxx xxxx xx XxxxxxYX YY, xxxxxxxxx xxx xx xxx xxxxxxx xx xxx XxxxxxYX xxxxxx xxx xxx xxxxxx xxxxxxx xxx xxx xx xxx XXXX xx xxx xx x xxxx xxxxx. Xxxx Y xx xxx [Xxxx x xxxxxx XxxxxxYX Y xxx xx XxxxxxX YY xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) xxxxxxxxxxx.
-
-## Xxxxxxxxxx xxx XxxxxxYX xxxxxx
+-   Part 1: Initialize Direct3D 11
+-   [Part 2: Convert the rendering framework](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
+-   [Part 3: Port the game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)
 
 
-Xx XxxxxxYX Y, xx xxxxxxx x xxxxxx xx xxx XxxxxxYX xxxxxx xx xxxxxxx [**XXxxxxxYXY::XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb174313). Xx xxxxxxx xx xxxxxxx x xxxxxxx xx [**XXxxxxxYXY xxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb174300) xxx xx xxxxxxxxx x xxxxxx xx xxxxxxxxxx xx xxxxxxx xxx xxxxxxxxxxxxx xx xxx XxxxxxYX xxxxxx xxx xxx xxxx xxxxx. Xxxxxx xxxxx xxxx xx xxxxxx [**XxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/dd144877) xx xxxx xxxx xx xxxxx'x xxxxxx xxx xxxxxx xx xx xxxxxxxxx xx xxxxxx'x xx.
+Shows how to convert Direct3D 9 initialization code to Direct3D 11, including how to get handles to the Direct3D device and the device context and how to use DXGI to set up a swap chain. Part 1 of the [Port a simple Direct3D 9 app to DirectX 11 and Universal Windows Platform (UWP)](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough.
 
-XxxxxxYX Y
+## Initialize the Direct3D device
+
+
+In Direct3D 9, we created a handle to the Direct3D device by calling [**IDirect3D9::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174313). We started by getting a pointer to [**IDirect3D9 interface**](https://msdn.microsoft.com/library/windows/desktop/bb174300) and we specified a number of parameters to control the configuration of the Direct3D device and the swap chain. Before doing this we called [**GetDeviceCaps**](https://msdn.microsoft.com/library/windows/desktop/dd144877) to make sure we weren't asking the device to do something it couldn't do.
+
+Direct3D 9
 
 ```cpp
 UINT32 AdapterOrdinal = 0;
@@ -59,17 +59,17 @@ m_pD3D->CreateDevice(
     );
 ```
 
-Xx XxxxxxYX YY, xxx xxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxxxxxx xx xxxxxxxxxx xxxxxxxx xxxx xxx xxxxxx xxxxxx. Xxxxxxxxxxxxxx xx xxxxxxx xxxx xxxxxxxx xxxxx.
+In Direct3D 11, the device context and graphics infrastructure is considered separate from the device itself. Initialization is divided into multiple steps.
 
-Xxxxx xx xxxxxx xxx xxxxxx. Xx xxx x xxxx xx xxx xxxxxxx xxxxxx xxx xxxxxx xxxxxxxx - xxxx xxxxxxx xxxx xx xxxx xx xxxx xx xxxx xxxxx xxx XXX. Xxxx, xx xxx'x xxxx xx xxxxxx xx xxxxxxxxx xxxx xx xxxxxx XxxxxxYX. Xxxxxxx xx xxx xxx [**XYXYYXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476082) xxxx XXX. Xxxx xxxxx xx x xxxxxx xx xxx xxxxxx xxx xxx xxxxxx'x xxxxxxxxx xxxxxxx. Xxx xxxxxx xxxxxxx xx xxxx xx xxx xxxxxxxx xxxxx xxx xxxxxxxx xxxxxxxxx xxxxxxxx.
+First we create the device. We get a list of the feature levels the device supports - this informs most of what we need to know about the GPU. Also, we don't need to create an interface just to access Direct3D. Instead we use the [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) core API. This gives us a handle to the device and the device's immediate context. The device context is used to set pipeline state and generate rendering commands.
 
-Xxxxx xxxxxxxx xxx XxxxxxYX YY xxxxxx xxx xxxxxxx, xx xxx xxxx xxxxxxxxx xx XXX xxxxxxx xxxxxxxxxxxxx xx xxx xxx xxxx xxxxxx xxxxxxx xx xxx xxxxxxxxxx, xxxxx xxxxxxx xxxxxxxxxx xxxxxxxxxx xxx xxx xxxxxx xxxxxxxxxxx.
+After creating the Direct3D 11 device and context, we can take advantage of COM pointer functionality to get the most recent version of the interfaces, which include additional capability and are always recommended.
 
-> **Xxxx**   XYX\_XXXXXXX\_XXXXX\_Y\_Y (xxxxx xxxxxxxxxxx xx xxxxxx xxxxx Y.Y) xx xxx xxxxxxx xxxxx xxxx Xxxxxxx Xxxxx xxxx xx xxxxxxxx xx xxxxxxx. (Xxxx xxxx'x XXX xxxxxxxx xxxx xxxx xxxxxxxxxxxxx xx xxx xxx'x xxxxxxx Y\_Y.) Xx xxxx xxxx xxxx xxxxxxxx x xxxxxxxxx xxxx xxx xxxxxx xxxxx Y xxxxxxxx, xxxx xxx xxxxxx xxxxxxx XYX\_XXXXXXX\_XXXXX\_Y\_Y xx xxx xxxxx.
+> **Note**   D3D\_FEATURE\_LEVEL\_9\_1 (which corresponds to shader model 2.0) is the minimum level your Windows Store game is required to support. (Your game's ARM packages will fail certification if you don't support 9\_1.) If your game also includes a rendering path for shader model 3 features, then you should include D3D\_FEATURE\_LEVEL\_9\_3 in the array.
 
  
 
-XxxxxxYX YY
+Direct3D 11
 
 ```cpp
 // This flag adds support for surfaces with a different color channel 
@@ -110,18 +110,18 @@ device.As(&m_d3dDevice);
 context.As(&m_d3dContext);
 ```
 
-## Xxxxxx x xxxx xxxxx
+## Create a swap chain
 
 
-XxxxxxYX YY xxxxxxxx x xxxxxx XXX xxxxxx XxxxxxX xxxxxxxx xxxxxxxxxxxxxx (XXXX). Xxx XXXX xxxxxxxxx xxxxxx xx xx (xxx xxxxxxx) xxxxxxx xxx xxx xxxx xxxxx xx xxxxxxxxxx xxx xxx xx xxxxxx xxxxxxx. Xx xxxx xxxx xx xxxxxxxxxxxx XxxxxxYX, xx'xx xxxxx xx xxx XXXX xx xxxxxx x xxxx xxxxx. Xxxxx xx xxxxxxx xxx xxxxxx, xx xxx xxxxxx xx xxxxxxxxx xxxxx xxxx xx xxx XXXX xxxxxxx.
+Direct3D 11 includes a device API called DirectX graphics infrastructure (DXGI). The DXGI interface allows us to (for example) control how the swap chain is configured and set up shared devices. At this step in initializing Direct3D, we're going to use DXGI to create a swap chain. Since we created the device, we can follow an interface chain back to the DXGI adapter.
 
-Xxx XxxxxxYX xxxxxx xxxxxxxxxx x XXX xxxxxxxxx xxx XXXX. Xxxxx xx xxxx xx xxx xxxx xxxxxxxxx xxx xxx xx xx xxxxxxx xxx XXXX xxxxxxx xxxxxxx xxx xxxxxx. Xxxx xx xxx xxx XXXX xxxxxxx xx xxxxxx x XXXX xxxxxxx.
+The Direct3D device implements a COM interface for DXGI. First we need to get that interface and use it to request the DXGI adapter hosting the device. Then we use the DXGI adapter to create a DXGI factory.
 
-> **Xxxx**   Xxxxx xxx XXX xxxxxxxxxx xx xxxx xxxxx xxxxxxxx xxxxx xx xx xxx [**XxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ms682521). Xxx xxxxxx xxx [**Xxxxxxxxx::XXX::XxxXxx**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) xxxxx xxxxxxxx xxxxxxx. Xxxx xxxx xxxx xxx [**Xx()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) xxxxxx, xxxxxxxxx xx xxxxx XXX xxxxxxx xx xxx xxxxxxx xxxxxxxxx xxxx.
+> **Note**   These are COM interfaces so your first response might be to use [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521). You should use [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) smart pointers instead. Then just call the [**As()**](https://msdn.microsoft.com/library/windows/apps/br230426.aspx) method, supplying an empty COM pointer of the correct interface type.
 
  
 
-**XxxxxxYX YY**
+**Direct3D 11**
 
 ```cpp
 ComPtr<IDXGIDevice2> dxgiDevice;
@@ -139,13 +139,13 @@ dxgiAdapter->GetParent(
     );
 ```
 
-Xxx xxxx xx xxxx xxx XXXX xxxxxxx, xx xxx xxx xx xx xxxxxx xxx xxxx xxxxx. Xxx'x xxxxxx xxx xxxx xxxxx xxxxxxxxxx. Xx xxxx xx xxxxxxx xxx xxxxxxx xxxxxx; xx'xx xxxxxx [**XXXX\_XXXXXX\_XYXYXYXY\_XXXXX**](https://msdn.microsoft.com/library/windows/desktop/bb173059) xxxxxxx xx'x xxxxxxxxxx xxxx XxxxxxYX. Xx'xx xxxx xxx xxxxxxx xxxxxxx, xxxxxxxxxxxxx, xxx xxxxxx xxxxxxxxx xxxxxxx xxxx xxxx'x xxxx xx xxxx xxxxxxx. Xxxxx xx xxx xxxxxxx xxxxxxxx xx x XxxxXxxxxx xx xxx xxxxx xxx xxxxx xxx xxxxxx xxx xx Y xxx xxx xxxx-xxxxxx xxxxxx xxxxxxxxxxxxx.
+Now that we have the DXGI factory, we can use it to create the swap chain. Let's define the swap chain parameters. We need to specify the surface format; we'll choose [**DXGI\_FORMAT\_B8G8R8A8\_UNORM**](https://msdn.microsoft.com/library/windows/desktop/bb173059) because it's compatible with Direct2D. We'll turn off display scaling, multisampling, and stereo rendering because they aren't used in this example. Since we are running directly in a CoreWindow we can leave the width and height set to 0 and get full-screen values automatically.
 
-> **Xxxx**   Xxxxxx xxx xxx *XXXXxxxxxx* xxxxxxxxx xx XYXYY\_XXX\_XXXXXXX xxx XXX xxxx.
+> **Note**   Always set the *SDKVersion* parameter to D3D11\_SDK\_VERSION for UWP apps.
 
  
 
-**XxxxxxYX YY**
+**Direct3D 11**
 
 ```cpp
 ComPtr<IDXGISwapChain1> swapChain;
@@ -159,26 +159,26 @@ dxgiFactory->CreateSwapChainForCoreWindow(
 swapChain.As(&m_swapChain);
 ```
 
-Xx xxxxxx xx xxxx'x xxxxxxxxx xxxx xxxxx xxxx xxx xxxxxx xxx xxxxxxxx xxxxxxx, xx xxx xxxxx xxxxxxx xx Y xxx xxx [**XXXX\_XXXX\_XXXXXX\_XXXX\_XXXXXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/bb173077). Xxxx xxxxx xxxxx xxx xx x xxxxx xxxxxxxxxxxxx xxxxxxxxxxx; xx'xx xxxxx xxxx xxxxx xxxxxxxxxx xx xxx xxxxxx xx xxxx Y xx xxxx xxxxxxxxxxx.
+To ensure we aren't rendering more often than the screen can actually display, we set frame latency to 1 and use [**DXGI\_SWAP\_EFFECT\_FLIP\_SEQUENTIAL**](https://msdn.microsoft.com/library/windows/desktop/bb173077). This saves power and is a store certification requirement; we'll learn more about presenting to the screen in part 2 of this walkthrough.
 
-> **Xxxx**   Xxx xxx xxx xxxxxxxxxxxxxx (xxx xxxxxxx, [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br229642) xxxx xxxxx) xx xxxxxxxx xxxxx xxxx xxxxx xxx xxxxxxxxx xxxxxx xx xxxxxxx.
+> **Note**   You can use multithreading (for example, [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/br229642) work items) to continue other work while the rendering thread is blocked.
 
  
 
-**XxxxxxYX YY**
+**Direct3D 11**
 
 ```cpp
 dxgiDevice->SetMaximumFrameLatency(1);
 ```
 
-Xxx xx xxx xxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
+Now we can set up the back buffer for rendering.
 
-## Xxxxxxxxx xxx xxxx xxxxxx xx x xxxxxx xxxxxx
+## Configure the back buffer as a render target
 
 
-Xxxxx xx xxxx xx xxx x xxxxxx xx xxx xxxx xxxxxx. (Xxxx xxxx xxx xxxx xxxxxx xx xxxxx xx xxx XXXX xxxx xxxxx, xxxxxxx xx XxxxxxX Y xx xxx xxxxx xx xxx XxxxxxYX xxxxxx.) Xxxx xx xxxx xxx XxxxxxYX xxxxxx xx xxx xx xx xxx xxxxxx xxxxxx xx xxxxxxxx x xxxxxx xxxxxx *xxxx* xxxxx xxx xxxx xxxxxx.
+First we have to get a handle to the back buffer. (Note that the back buffer is owned by the DXGI swap chain, whereas in DirectX 9 it was owned by the Direct3D device.) Then we tell the Direct3D device to use it as the render target by creating a render target *view* using the back buffer.
 
-**XxxxxxYX YY**
+**Direct3D 11**
 
 ```cpp
 ComPtr<ID3D11Texture2D> backBuffer;
@@ -196,9 +196,9 @@ m_d3dDevice->CreateRenderTargetView(
     );
 ```
 
-Xxx xxx xxxxxx xxxxxxx xxxxx xxxx xxxx. Xx xxxx XxxxxxYX xx xxx xxx xxxxx-xxxxxxx xxxxxx xxxxxx xxxx xx xxxxx xxx xxxxxx xxxxxxx xxxxxxxxx. Xx'xx xxxxxxxx xxx xxxxx xxx xxxxxx xx xxx xxxx xxxxxx xx xxxx xx xxx xxxxxx xxx xxxxx xxxxxx xx xxx xxxxxxxx. Xxxx xxxx xxx xxxx xxxxxx xx xxxxxxxx xx xxx xxxx xxxxx, xx xx xxx xxxxxx xxxx xxxxxxx (xxx xxxxxxx, xxx xxxx xxxxx xxx xxxx xxxxxx xx xxxxxxx xxxxxxx) xxx xxxx xxxxxx xxxx xxxx xx xx xxxxxxx xxx xxxx xxxxx xxxx xxxx xx xx xxxxxx.
+Now the device context comes into play. We tell Direct3D to use our newly-created render target view by using the device context interface. We'll retrieve the width and height of the back buffer so that we can target the whole window as our viewport. Note that the back buffer is attached to the swap chain, so if the window size changes (for example, the user drags the game window to another monitor) the back buffer will need to be resized and some setup will need to be redone.
 
-**XxxxxxYX YY**
+**Direct3D 11**
 
 ```cpp
 D3D11_TEXTURE2D_DESC backBufferDesc = {0};
@@ -214,13 +214,17 @@ CD3D11_VIEWPORT viewport(
 m_d3dContext->RSSetViewports(1, &viewport);
 ```
 
-Xxx xxxx xx xxxx x xxxxxx xxxxxx xxx x xxxx-xxxxxx xxxxxx xxxxxx, xx xxx xxxxx xx xxxx xxx xxxx xxxxxxxx. Xxxxxxxx xx [Xxxx Y: Xxxxxxxxx](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md).
+Now that we have a device handle and a full-screen render target, we are ready to load and draw geometry. Continue to [Part 2: Rendering](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md).
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,39 +1,40 @@
 ---
-xxxxx: Xxxxxx xxx xxxxxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxx xxx xxxxxxxxx xx xxxxxxxxxx xxx XxXxxxxxxx xxxxxx.
-xx.xxxxxxx: XYYYYXXY-YYXY-YYXX-YXXY-XYXYYYXYYXYY
+title: アプリの事前起動の処理
+description: OnLaunched メソッドをオーバーライドすることで、アプリの事前起動を処理する方法について説明します。
+ms.assetid: A4838AC2-22D7-46BA-9EB2-F3C248E22F52
 ---
 
-# Xxxxxx xxx xxxxxxxxx
+# アプリの事前起動の処理
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください\]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335)
+-   [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)
 
-Xxxxx xxx xx xxxxxx xxx xxxxxxxxx xx xxxxxxxxxx xxx [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335) xxxxxx.
+[
+            **OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドをオーバーライドすることで、アプリの事前起動を処理する方法について説明します。
 
-## Xxxxxxxxxxxx
-
-
-Xxxx xxxxxxxxx xxxxxx xxxxxxxxx xxxxx, xxx xxxxxxx xxxxxxxxxxx xx Xxxxxxx Xxxxx xxxx xx xxxxxxxx xx xxxxxxxxxxx xxxxxxxxx xxx xxxx’x xxxx xxxxxxxxxx xxxx xxxx xx xxx xxxxxxxxxx. X xxxxxxxxxxx xxx xx xxx xxxx xxx xxxxxxxxx xxxxx xxxxxxx xxxxx xx xx xxxxxxxx. Xxxx xxx xxxx xxxxxxx xxx xxx, xxx xxx xx xxxxxxx xx xxxxxxxx xx xxxx xxx xxxxxxxxx xxxxx xx xxx xxxxxxx xxxxx--xxxxx xx xxxxxx xxxx xxxxxxxxx xxx xxx xxxx.
-
-Xxxxx xx Xxxxxxx YY, xxxx xxx xxx xxxxxxxxxxxxx xxxx xxxxxxxxx xx xxxxxxxxx. Xxxxxxxx xx Xxxxxxx YY, xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxxxxxxxxxxx xxxx xxxxxxxxx xx xxxxxxxxx.
-
-Xxxx xxxx xxxxxx xxxx xxxx xxxxxxxxx xxxxxxx xxx xxxxxx. Xxxxxxx, xxxx xxxxx xx xxxx xxx xxxx xx xxxxxx xxxxx xxxxxxx xxxxxxxx xx xxxx xxxx xxxx xxxxxxxxx. Xxx xxxxxxx, x xxxxxxxxx xxx xxxx xxxxxxx xxx xxxxx'x xxxxxx xxxxxxxxxx xxxxxx xxxxxxx, xx x xxxx xxxxx xxxxxxx xxx xxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxxx xxxxxxx xxxx xxx xxx xxxxxx xx.
-
-## Xxxxxxxxx xxx xxx xxxxxxxxx
+## はじめに
 
 
-Xxxx xx xxx xx xxxxxxxxxxx, xx xxxx xxxxxx xxx xxxxxxxxx xxxxx. (xxx [Xxxxxx xxx xxxxxxx](suspend-an-app.md)).
+システム リソースが許す限り、ユーザーの最も頻繁に使うアプリを事前にバックグラウンドで起動することで、Windows ストア アプリの起動時のパフォーマンスが向上します。 事前起動されたアプリは起動直後に中断状態になります。 ユーザーがアプリを呼び出すと、アプリは中断状態から実行状態に移って再開されます。これは、アプリのコールド スタートよりも高速です。
 
-## Xxxxxx xxx xxxxxx xxxxxxxxx
+Windows 10 より前では、アプリは自動的には事前起動を利用しませんでした。 Windows 10 以降、すべてのユニバーサル Windows プラットフォーム (UWP) アプリは自動的に事前起動を利用します。
+
+ほとんどのアプリでは、事前起動を利用するための変更は不要です。 ただしアプリの種類によっては、事前起動を利用するために、起動動作の変更が必要になる場合があります。 たとえば、起動時にユーザーのオンライン状態を変更するメッセージング アプリや、ユーザーがオンラインであることを想定してアプリの起動時に凝ったビジュアルを表示するゲームです。
+
+## 事前起動とアプリのライフ サイクル
 
 
-Xxxx xxxxxxx xxx [**XxxxxxXxxxxxxxxXxxxxXxxx.XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263740) xxxx xxxxxx xxxxxxxxxx. Xxx xxxx xxxx xx xxxxxxxxx xxxxxxx xx xxxxxxx xxxxxxxxxx xxxx xxxxxx xxxx xx xxxxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxxxxx xxx xxx xx xxxxx xx xxx xxxxxxxxx xxxxxxx xxxx[**Xxxxxxxxxxx.XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335).
+アプリは事前起動されると、すぐに中断状態になります ([アプリの中断の処理](suspend-an-app.md)」をご覧ください。)
+
+## 事前起動の検出と処理
+
+
+アプリはアクティブ化中に [**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) フラグを受け取ります。 このフラグを使って、ユーザーによって明示的にアプリが起動されたときにのみ行う操作を実行するかどうかを調べます (次の [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) からの抜粋をご覧ください。
 
 ```cs
 protected override void OnLaunched(LaunchActivatedEventArgs e)
@@ -76,14 +77,14 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-**Xxx**  Xx xxx xxxx xx xxx-xxx xx xxxxxxxxx, xxxxx xxx [**XxxxxxXxxxxxxxxXxxxxXxxx.XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263740) xxxx. Xx xx xx xxx, xxxxxx xxxx XxXxxxxxxx() xxxxxx xxxxx xxx xxxx xx xxxxxx x xxxxx xx xxxxxxxx xxx xxxxxx.
+**ヒント**  事前起動を除外する場合は、[**LaunchActivatedEventArgs.PrelaunchActivated**](https://msdn.microsoft.com/library/windows/apps/dn263740) フラグを確認します。 設定されていれば、フレームの作成やウィンドウのアクティブ化を行うための操作を実行する前に、OnLaunched() から復帰します。
 
  
 
-## Xxx xxx XxxxxxxxxxXxxxxxx xxxxx
+## VisibilityChanged イベントの使用
 
 
-Xxxx xxxxxxxxx xx xxxxxxxxx xxx xxx xxxxxxx xx xxx xxxx. Xxxx xxxxxx xxxxxxx xxxx xxx xxxx xxxxxxxx xx xxxx. Xxx xxx xxxx xx xxxxx xxxxxxx xxxxxxxxxx xxxxx xxxx xxx'x xxxx xxxxxx xxxxxxx xxxxxxx. Xxx xxxxxxx, xx xxxx xxx xxxxxxxx x xxxx xx xxxx'x xxx xxxxx xxxx x xxxx, xxx xxxxx xxxxxx xxx xxxx xxxxxx xxx [**XxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702458) xxxxx xxxxxx xxxx xxxx xx x xxxx xxxx xxx xxxxx xxxx xxx xxx xxx xxxxxxxxxxx xxxx xxx xx xxxxx xx xxx xxxx xxx xxxx xxxxxxxxx xxx xxx. Xxx xxxxxxxxx xxxx xxxxxxx xxx **XxxxxxxxxxXxxxxxx** xxxxx xxx **XxxxXxxx**:
+事前起動によってアクティブ化されたアプリはユーザーに対して表示されません。 ユーザーがそれらのアプリに切り替えると表示されます。 アプリのメイン ウィンドウが表示されるまで、特定の操作を遅らせることが必要になる場合があります。 たとえば、アプリによってフィードからの新着アイテムの一覧が表示される場合は、[**VisibilityChanged**](https://msdn.microsoft.com/library/windows/apps/hh702458) イベントの発生時に一覧を更新できます。アプリの事前起動時に生成された一覧は使いません。ユーザーがアプリをアクティブ化するまでに、その一覧が古くなっている可能性があるためです。 次のコードは、**MainPage** の **VisibilityChanged** イベントを処理します。
 
 ```cs
 public sealed partial class MainPage : Page
@@ -103,27 +104,31 @@ public sealed partial class MainPage : Page
 }
 ```
 
-## Xxxxxxxx
+## ガイダンス
 
 
--   Xxxx xxxxxx xxx xxxxxxx xxxx xxxxxxx xxxxxxxxxx xxxxxx xxxxxxxxx xxxxxxx xxx xxx xxxx xxxxxxxxx xx xx xxx'x xx xxxxxxxxx xxxxxxx.
--   Xxxx xxxxxx xxx xxxxxxxx xxxxx xxxxxxxx xxxx [**Xxxxxxxxxxx.XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335) xxxx xxx xxx xx xxxxxxxxxxx xxxxxxx xxx xxx xxx'x xx xxxxxxx xxx xx xxx'x xx xxxxxxxx xxx xxxxx xx xxxxx xxxxxxx.
--   Xxxx xxxxxx xxx xxxxxxx xxx xxxxxxxxxx xxxxxx xxxxxx xxxxx xxxxxx xxxx xxx xxx xx xxxxxxx xx xxx xxxx, xx xxxxxx xxxx xxx xxx xxx xxxxxxxxxx xxxxxxxx xx xxx xxxx. Xxxxxxx xx xxx xxx xxx xx xxxxxxxx xx xxx xxxxxxxxxx xxxxxxx xxxxxxxx xxxx xxxxxx, xxxxxxxxxx xxxxxx xxxxxxxx xxx xxxxxxx, xxxx xxxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxxx.
-    -   Xx xxxxxxx xxxxxxx xxxxxxxxxxxxx xx xxxx x xxxxxx xxx xxxxxx xxxxxx xxx xxxx xxxxx xx xxxxxx. Xx xxxxxx xxxx xxxxx xxx xxxx xxxxxxxx xx xxx xxx xxxxxxx xx xxxxxxxx xxx xxxxxx xxxx xxx xxx xx xxxxxxxxxxx.
-    -   Xx xxxxxxx xxxx xxxxxxxxxx xxxxxxxxxxxxx xx xxxx xx xxx xxxx xx xxx, xxxx xx x xxxx, xxxx xxxxxxxx xx xxxxxxxxxxxx xxxxxxxx xxxx xx xx xxxxxxxx, xxx xxxxx xxxxx xxx xxxxxxxxxxxx xxxxxxxx xxxxx xxx xxxx xxxxxxxx xx xxx xxx.
-    -   Xx xxxxxxx xxxxxxxxxxx xxxxxxxxxxx xx xxxx xxx xxxxx xxxx xxxxx xxx xxxx xxxxxxxx xx xxx xxx xx xxxxxxxx xxx xxxxxxx xxxxxxx xxxxxxxxxxx xxxxxxx xx xxxxxxx xx xxxx xxx xxx xx xxxxxxxxxxx xxx xxxx xxxx xx xxxx xx xxxxx xxxx xxx xxx xxxxxxx xxxxxxx xx xxxxxx xxxx xxx xxxxxxxxxxx xx xxxxxxx.
--   Xx xxxx xxx xxxxxx xxx Xxxx Xxxx xxxx xxxxxxxx, xxxxx xxxx xxxxx xxx xxxxxxxxxx xxxxxxx xxxxx.
--   Xxxxxxxxx xxx xxxx xxx xxxxxx xxxxxxxxxxx xxxxxxx xxxxxx xxxx xxxxxxxxxxx xxx xxxxxxxxx xxxxxxxxxxx xx xxxx xxx xxx xxxxxxxx xxx xxxxxxxx xxxxx xxxxxxxx xxxxx.
--   Xx xxx xxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY Xxxxxx Y xxx Xxxxxxx YY, Xxxxxxx YYYY, xxx xxx xxxxxxxx xxxxxxxxx xxx Xxx xxxx xxx xx Xxxxxx Xxxxxx YYYY xx xxxxxxxx **Xxxxx** &xx; **Xxxxx Xxxxx Xxxxxxx** &xx; **Xxxxx Xxxxxxx Xxxxxxxxx Xxx XxxXxxxxx**.
+-   長時間かかる操作を、アプリが事前起動時に実行しないようにしてください。アプリはすぐに中断状態に移れない場合に終了するためです。
+-   アプリが事前起動された場合、アプリは [**Application.OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) からオーディオの再生を開始しません。アプリは表示されず、オーディオ再生が行われる理由がはっきりしないためです。
+-   アプリがユーザーに表示されていることを前提とした操作やユーザーによって明示的に起動されたことを前提とした操作を、アプリが事前起動時に実行しないようにしてください。 アプリはユーザーによる明示的な操作なしにバックグラウンドで起動できるようになったため、開発者はプライバシー、ユーザー エクスペリエンス、パフォーマンスへの影響を配慮する必要があります。
+    -   プライバシーの配慮の一例は、ソーシャル アプリがユーザーの状態をオンラインに変更する場合です。 アプリの事前起動時に状態を変更せずに、ユーザーがそのアプリに切り替えるまで待機する必要があります。
+    -   ユーザー エクスペリエンスの配慮の一例は、ゲームなどのアプリが起動時に導入シーケンスを表示する場合です。ユーザーがアプリに切り替えるまでそのシーケンスを遅らせる必要があります。
+    -   パフォーマンスの配慮の一例は、アプリの事前起動時に最新の気象情報を読み込む場合です。ユーザーがアプリに切り替えるまでその読み込みを遅らせて、アプリが表示されたら最新の情報を読み込む必要があります。
+-   アプリが事前起動時にライブ タイルをクリアする場合、表示の変更イベントが発生するまでこの操作を遅らせてください。
+-   アプリの利用統計情報をタイルの通常のアクティブ化と起動前のアクティブ化で区別して、問題が発生するシナリオを特定できるようにしてください。
+-   Microsoft Visual Studio 2015 Update 1 および Windows 10, Version 1511 がインストールされている場合、**[デバッグ]** &gt; **[その他のデバッグ ターゲット]** &gt; **[Debug Windows Universal App PreLaunch](Windows ユニバーサル アプリの事前起動のデバッグ)** の順に選ぶことで、Visual Studio 2015 でアプリの事前起動をシミュレートできます。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxx xxxxxxxxx](app-lifecycle.md)
+* [アプリのライフサイクル](app-lifecycle.md)
+
+ 
 
  
 
- 
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

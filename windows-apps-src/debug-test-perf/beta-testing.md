@@ -1,45 +1,49 @@
 ---
-xx.xxxxxxx: YXYYXYYX-YXXY-YYYY-YYYY-YXXXXYYYYYXY
-xxxxx: Xxxx xxxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxx xxx xxx xxxxxx xx xxxxxxx xxxx xxx xxxxx xx xxxxxxxx xxxx xxxxxxxxxxx xxxxxxx xx xxxx xxx-xxxxxxxxxxx xxxx xxx xxx xxxx xxxxxxxxxx xxx xx xxxxx xxx xxxxxxx.
+ms.assetid: 1C77C50C-5DA4-4414-9316-6EEDD78629E2
+title: ベータ テスト
+description: ベータ テストを行うと、まだリリースされていないアプリをアプリ開発チームの外部の人に自分のデバイスで試してもらい、その人たちからのフィードバックに基づいてアプリを改善することができます。
 ---
-# Xxxx xxxxxxx
+# ベータ テスト
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-*Xxxx xxxxxxx* xxxxx xxx xxx xxxxxx xx xxxxxxx xxxx xxx xxxxx xx xxxxxxxx xxxx xxxxxxxxxxx xxxxxxx xx xxxx xxx-xxxxxxxxxxx xxxx xxx xxx xxxx xxxxxxxxxx xxx xx xxxxx xxx xxxxxxx.
+*ベータ テスト*を行うと、まだリリースされていないアプリをアプリ開発チームの外部の人に自分のデバイスで試してもらい、その人たちからのフィードバックに基づいてアプリを改善することができます。
 
-Xxxx xxxxxxx xxxxxxxxx xxxx xxxxxxx xxx xxxx xxxxxxx Xxxxxxxxx Xxxxxxx xxxx.
+ここでは、ユニバーサル Windows アプリのベータ テストのオプションについて説明します。
 
-## Xxx xxxx xxxx?
+## ベータ テストを行う理由
 
-Xx xxxxxxxxxx xxxx xx xxx, xxx xxxx xx xxx xx xxxxxxx xx xxxx xxxxxx xxxxxxxxxxxxxx xxx xxxx xxxxxxxxxxxx xx xxxxxxxx. Xxxxx xxx xx xxxx xxxxxxx xx-xxxxx xx xxxxxxxxx xx xxx xxxxxxxxxx.
+アプリを徹底的にテストするには、できるだけ多くのデバイス構成とユーザー操作に対して試してみる必要があります。 そのテストのすべてを社内で行うのは、不可能ではないにしても容易なことではありません。
 
-Xxxx xxxx xxxxxxx, xxxxx xxx xxxx xxx xx xxxxx xxx xxxxxxx. Xxx xx'x xxxxxxxxxxx: xxxxxxx xx xxxxxxxxxx xxxxxxxxx xxxxx, xxxxx xxxx xxxxxxxx xxxxxxx xx xxx xxxx xxx xx xxx, xx xxxx xxx xxxx xxxxxx xxxx xxx xxxxx xxxxx xxxx xxxxxxxx.
+ベータ テストを行うと、ユーザーはそれぞれのデバイスでアプリを試します。 そして、テストの内容は決められていません。ユーザーは指定されたタスクを実行するのではなく、それぞれのアプリの使い方で自由に操作するため、開発者が予期していなかった問題を見つけることができます。
 
-Xxxx xxxx xxxxxxx, xxx xxx:
+ベータ テストを行うと、次のことができます。
 
--   Xxxx xxxx xxx xx x xxxxxxx xx xxxxxxx.
--   Xxxxxxxx xxxxxxxxxxx xxxxxx xxx xxxxx xxxx xxxx xxx xxxxx xxx xxxx xxxxx xxxxxxxxx.
--   Xxx xxxx-xxxxx xxxxx xxxx xxxx xxx xx xxxx xxxxxxx xxx xxxx xxxxxxxxxx.
--   Xxxxxxx xxxxxxxx xxxxxxx xxxxxxxxx xxxxxx xxxxxxx xx xxx Xxxxxxx Xxxxx.
+-   さまざまなデバイスでアプリをテストできます。
+-   他の方法では見つからないパフォーマンスの問題やその他のバグを特定できます。
+-   ユーザー エクスペリエンスの向上につながる実際の使用状況の情報が得られます。
+-   Windows ストアで公開される評価に影響を与えずにフィードバックを受け取れます。
 
-## Xxxx xx xxxx xxxx
+## ベータ テストを行う時期
 
-Xx'x xxxx xx xxxxxxx xxxx xxxxxxx xx xxx xxxxx xxxxx xx xxxxxxx xxxxxx xxx xxxxxxx xxxx xxx. Xx xxxx xxxxx, xxx xxxx xxxxxx xxx xxx xx xxxxxxxxxx xx xxx xxx xxxxxxxx, xxx xxx'xx xxxxxxx xxx xxxxxxxx xxx xxxxx. Xxxx xxxxxxx xx xxx x xxxxxxxxxx xxx xxxxx xxxxxxx xxxxxxx. Xxxxx xxxx xxxxxxx xx xxxxxxxxxxx, xxxxxxxxxxxx xxx xxx xxxxx xxx xxxx xx xxxx xxxx xxxxxxx xxxxx xxxxxx'x xxxxxxxxxx xx xxxx-xxxxxxxx xxx xx'x xxxxxxxx xxxx xxxx'xx xxxxxxx xxx xxxxxxxx xx xxx xxx. Xxx xxxx-xxxxxxx xxxxxxxx xxx xxxx xxx x xxxxx xxxx xx xxxx-xxxxx xxxxxxxx xxxx xxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxxx xxxxxxxx xxxxxx xxx xx xxxx.
+ベータ テストは、アプリをリリースする前のテストの最終段階として実施するのが最適です。 その時点では、自分たちでできるだけ徹底的にアプリをテストしていて、すべての明示的なユース ケースについてテストが終了しています。 ベータ テストは、その他のテスト方法の代わりにはなりません。 ベータ テストの内容は決められていないため、参加者がコード内のすべてのバグを発見できないこともあります。ベータ テスターは操作内容を自分で決めており、彼らがアプリのすべての機能を調べる可能性は高くないからです。 しかし、ベータ テストのフィードバックによって、実際の使用による最後のフィードバックが得られ、公開前に予測していなかった問題が明らかになります。
 
-## Xxxx xxxxx
+## 次の手順
 
-Xx xxx xxxxxxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxx xxx xxxxx xxxxxxxxxxxx xx xxxx xxxx xx xxxx xxxx xxxxxxx, xxxxxxxxxx xx xxxxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxxx. Xxxxx’x xx xxxx xx xxxxxx x xxxxxxxx xxxxxxx xx xxxx xxx xxxx x xxxxxxxx xxxx xxx xxxxxxx xxxxxxxx; xxx xxx xx xxxx xxxxxxx, xxxx xxxxxx x xxx xxxxxxxxxx xxxx xxx’xx xxxxx xx xxxx xxx xxx xxxxxxxxx xx xxxxxxxx. (Xx xxxxxx, xxx xxx xxxxxx x xxxxxxxx xxx xxx xxxxxxx xxxx xx xxx xxxxxx. Xx xxx xx, xxxx xxxx xx xxxx xx x xxxxxxxxx xxxx xxxx xxxx xxx xxxxxx xx xxx xxxxx, xxxxxx xxx xxxx.)
+アプリがどのオペレーティング システムを対象とするかにかかわらず、Windows デベロッパー センター統合ダッシュボードで、アプリをテスターのみに限定して配布できます。 別の名前やパッケージ ID を使って別バージョンのアプリを作る必要はありません。自身でテストを行い、アプリを公開する準備が整ったら新しい提出を作成することもできます。 (もちろん、必要であれば、テスト用に別のアプリを作ることもできます。 作る場合、そのアプリには、最終的なパブリック アプリの名前とは違う名前を付ける必要があります。)
 
-Xxx [Xxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185377) xx xxxxx xxx xx xxxxxx xxxx xxx xx xxx Xxxxx xxx xxxx xxxxxxx.
+ベータ テスト用にアプリをストアに提出する方法については、「[ベータ テストとターゲット配布](https://msdn.microsoft.com/library/windows/apps/Mt185377)」を参照してください。
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,104 +1,105 @@
 ---
-Xxxxxxxxxxx: Xxx Xxxxxxx Xxxxx xxxxxx Xxxxxx Xxxxxxxx Xxxxxxx xx x xxxxxxx xxxxxx xxx xxxxxx xxxxxxxxx xxx xxxxxxx xxxx xxxxxxxxxx.
-xxxxx: Xxxxxx xxxxxxxx xxxxxxx
-xx.xxxxxxx: XYXYXYXX-YXYY-YYXX-XYXY-XXYXYXYYYXXY
+Description: The Windows Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability.
+title: Mobile operator billing
+ms.assetid: C8A5A4BA-6B39-42FC-B8C4-ED1B7F774CC1
 ---
 
-# Xxxxxx xxxxxxxx xxxxxxx
+# Mobile operator billing
 
 
-Xxx Xxxxxxx Xxxxx xxxxxx Xxxxxx Xxxxxxxx Xxxxxxx xx x xxxxxxx xxxxxx xxx xxxxxx xxxxxxxxx xxx xxxxxxx xxxx xxxxxxxxxx. Xx x xxxxxxxx’x xxxxxx xxxxxxxx xxxxxxxx xxxx xxxxxxxxxx, xxx xxxxxxxx xxx xxxx Xxxxx xxxxxxxxx xxxxx xxxxx xxxxxx xxxxxxx.
+The Windows Store offers Mobile Operator Billing as a payment method for mobile operators who support this capability. If a customer’s mobile operator supports this capability, the customer can make Store purchases using their mobile account.
 
-> **Xxxx**  Xx x xxxxxxxx’x xxxxxx xxxxxxxx xxxxxx Xxxxxx Xxxxxxxx Xxxxxxx, xxx xxx xxxxxxxx xxxx xxx xxxx xxxx xxxxxx xx xxxxx xxxxxx, xxx xxxxx [xxxxxxxxxxxxxxx xxxxx](http://go.microsoft.com/fwlink/p/?LinkId=523993).
+> **Note**  If a customer’s mobile operator offers Mobile Operator Billing, but the customer does not have this option on their device, see these [troubleshooting steps](http://go.microsoft.com/fwlink/p/?LinkId=523993).
 
  
 
-Xx xxx xxxxxxxxx xxxxxxx xxxx xxxxxx xxxxxxxxx xx xxxxxx xxx xxxxxxxxxxxx xx xxxx xxxxxxx xxxxxx. Xx xxx’x xxxx xx xxxxxxx xxxx xx xxxxxxx x xxxxxx xxxxxxxx xxxx xxx xxx’x xxx xx xxx xxxxx xxxxx, xxxxxxx xxx xxxxxx xxxxxxxx.
+We are regularly working with mobile operators to expand the availability of this payment method. If you’d like to suggest that we support a mobile operator that you don’t see in the lists below, contact the mobile operator.
 
-## Xxxxxx Xxxxxxxx Xxxxxxx xxx Xxxxxxx YY xxxxxxx
+## Mobile Operator Billing for Windows 10 devices
 
 
-Xxxxxxx YY xxxxxxxxxx x xxx xxxxxxxxxxxxxx xx Xxxxxx Xxxxxxxx Xxxxxxx. Xx xxxxxxx xxxx xxxxxxx xxxx xxxxxxxxxxxxxx, xxxxxxxxx xxx xxx Xxxxxx Xxxxxxxx Xxxxxxx xx x xxxxxxx xxxxxx xx xxx xxxxxx. Xxxx xxxxxxxxxxxxxx xx xxxxxxxxx xxx XXx xxx xxxxxxx xxxxxxx Xxxxxxx YY xxx xxxxxx xxxxxxx Xxxxxxx YY Xxxxxx.
+Windows 10 introduces a new implementation of Mobile Operator Billing. On devices that include this implementation, customers can add Mobile Operator Billing as a payment method to the device. This implementation is available for PCs and tablets running Windows 10 and phones running Windows 10 Mobile.
 
-Xxx Xxxxxxx YY xxxxxxxxxxxxxx xx Xxxxxx Xxxxxxxx Xxxxxxx xx xxxxxxxxx xxxxxxxxx xx xxxxx xxxxxx xxxxxxxxx.
+The Windows 10 implementation of Mobile Operator Billing is currently supported by these mobile operators.
 
-| Xxxxxxx/xxxxxx | Xxxxxx xxxxxxxxx |
+| Country/region | Mobile operators |
 |----------------|------------------|
-| Xxxxxxx        | XY               |
-| Xxxxxxxxxxx    | Xxxxxxxx         |
-| Xxxxxx Xxxxxx  | Xxxxxx           |
+| Finland        | DNA, Elisa       |
+| Germany        | O2               |
+| Switzerland    | Swisscom         |
+| United States  | Sprint           |
 
  
 
-## Xxxxxx Xxxxxxxx Xxxxxxx xxx Xxxxxxx Xxxxx Y.x xxx Xxxxxxx YY Xxxxxx xxxxxxx
+## Mobile Operator Billing for Windows Phone 8.x and Windows 10 Mobile devices
 
 
-X xxxxxx xxxxxxxxxxxxxx xx Xxxxxx Xxxxxxxx Xxxxxxx xx xxxxxxxxx xx Xxxxxxx Xxxxx Y.x xxxxxxx. Xxxx xxxxxx xxxxxxxxx xxx xxxxxx xx xxxxxxx xxxx xxxxxxxxxxxxxx xx xxxxxx xxxxxxxx xxx Xxxxxxx YY Xxxxxx. Xx xxxxxxx xxxx xxxxxxx xxxx xxxxxxxxxxxxxx, Xxxxxx Xxxxxxxx Xxxxxxx xx xxxxxxx xxxxxxxxxxxxx xx x xxxxxxx xx xxxxx.
+A legacy implementation of Mobile Operator Billing is available to Windows Phone 8.x devices. Some mobile operators may choose to include this implementation on phones designed for Windows 10 Mobile. On devices that include this implementation, Mobile Operator Billing is offered automatically as a payment to users.
 
-Xxx xxxxxx xxxxxxxxxxxxxx xx Xxxxxx Xxxxxxxx Xxxxxxx xx xxxxxxxxx xx xxxxx xxxxxx xxxxxxxxx.
+The legacy implementation of Mobile Operator Billing is supported by these mobile operators.
 
-| Xxxxxxx/xxxxxx       | Xxxxxx xxxxxxxxx                                                   |
+| Country/region       | Mobile operators                                                   |
 |----------------------|--------------------------------------------------------------------|
-| Xxxxxxxxx            | Xxxxxxx                                                            |
-| Xxxxxxx              | XY Xxxxxxx, X-Xxxxxx                                               |
-| Xxxxxxx              | Xxxx, XXXX                                                         |
-| Xxxxxxx              | XXXX, Xxxxxxxx                                                     |
-| Xxxxxx               | Xxxxx                                                              |
-| Xxxxxxxx             | Xxxxxxx                                                            |
-| Xxxxxx               | Xxxx, Xxxxxx, Xxxxx                                                |
-| Xxxxx                | Xxxxx                                                              |
-| Xxxxx                | Xxxxx Xxxxxx                                                       |
-| Xxxxxxxx             | Xxxxx, Xxxxxxxx                                                    |
-| Xxxxx Xxxx           | Xxxxx                                                              |
-| Xxxxxxx              | Xxxxxx, XXXxxx, XxxxY                                              |
-| Xxxxx Xxxxxxxx       | X-Xxxxxx, Xxxxxxxx, XY                                             |
-| Xxxxxxx              | Xxxxx                                                              |
-| Xxxxx                | Xxxxxxx                                                            |
-| Xxxxxxx              | XXX, XxxxY                                                         |
-| Xxxxxxx              | Xxxxx, XxxxxXxxxxx, XXX                                            |
-| Xxxxxx               | Xxxxxx, Xxxxxx Xéxxxxx (Xx Xéxxxxx), XXX, Xxxxxxxx                 |
-| Xxxxxxx              | Xxxxxxxxxx, Xxxxxxx Xxxxxxxxxxx, Xxxxxxxx                          |
-| Xxxxxx               | Xxxxxxxx                                                           |
-| Xxxxxxxxx            | Xxxxx                                                              |
-| Xxxxxxx              | Xxxxxxx, X-Xxxxxx                                                  |
-| Xxxxx                | Xxxx                                                               |
-| Xxxxxxxxx            | Xxxxxxx, Xxxxxxxxx, XX Xxxxxx, XXXX                                |
-| Xxxxxxx              | XY, Xxxxxxxx                                                       |
-| Xxxxx                | Xxxxxxx Xxxxxx, Xxxxxxxx, Xxxx, Y Xxxxxx                           |
-| Xxxxxx               | Xxxx, Xxxxxx                                                       |
-| Xxxxx                | Xxxxxxxxx                                                          |
-| Xxxxxx               | Xxxx, Xxxx                                                         |
-| Xxxxxx               | XxxxY                                                              |
-| Xxxxxxxxx            | XxxxY                                                              |
-| Xxxxxxxx             | XxXx                                                               |
-| Xxxxxx               | Xxxxxxxx, Xxxxxx, Xxxxxx, Xxxxxxxx                                 |
-| Xxxxxxxxxxx          | X-Xxxxxx, Xxxxxxxx                                                 |
-| Xxxxxx               | Xxxxxxx                                                            |
-| Xxxx                 | Xxxxxxx                                                            |
-| Xxxxxxxx             | Xxxxxxx                                                            |
-| Xxxx                 | Xxxxx                                                              |
-| Xxxxxxxxxxx          | Xxxxx, Xxx                                                         |
-| Xxxxxx               | X-Xxxxxx, Xxxxxx, Xxxxxxxxx (Xxxx)                                 |
-| Xxxxxx Xxxx          | Xxxxx                                                              |
-| Xxxxxxx              | Xxxxxx, Xxxxxxxx                                                   |
-| Xxxxxx               | Xxxxxxx                                                            |
-| Xxxxx Xxxxxx         | Xxxx                                                               |
-| Xxxxxxxxx            | XY, XxxxXxx, XxxxXxx                                               |
-| Xxxxxxxx             | X-Xxxxxx                                                           |
-| Xxxxxxxx             | Xx.xxxxx                                                           |
-| Xxxxx Xxxxxx         | Xxxxxxx                                                            |
-| Xxxxx                | Xxxxxxxx, Xxxxxxxx, Xxxxxx                                         |
-| Xxxxxx               | Xxxxxxx, XxxxY                                                     |
-| Xxxxxxxxxxx          | Xxxxxxxx                                                           |
-| Xxxxxxxx             | XXXX                                                               |
-| Xxxxxx Xxxx Xxxxxxxx | Xxxxxxxx, Xx                                                       |
-| Xxxxxx Xxxxxxx       | Xxxxxxxxxx Xxxxxxxxxx (X-Xxxxxx), Xxxxxxxxxx (XY), Xxxxx, Xxxxxxxx |
-| Xxxxxx Xxxxxx        | XX&X, Xxxxxx, X-Xxxxxx, Xxxxxxx                                    |
-| Xxxxxxx              | Xxxxxxx, Xxxxxxxxxxxx                                              |
+| Australia            | Telstra                                                            |
+| Austria              | A1 Telekom, T-Mobile                                               |
+| Bahrain              | Zain, VIVA                                                         |
+| Belgium              | BASE, Mobistar                                                     |
+| Brazil               | Claro                                                              |
+| Bulgaria             | Telenor                                                            |
+| Canada               | Fido, Rogers, Telus                                                |
+| Chile                | Claro                                                              |
+| China                | China Mobile                                                       |
+| Colombia             | Claro, Movistar                                                    |
+| Costa Rica           | Claro                                                              |
+| Croatia              | Tomato, VIPnet, Tele2                                              |
+| Czech Republic       | T-Mobile, Vodafone, O2                                             |
+| Ecuador              | Claro                                                              |
+| Egypt                | Mobinil                                                            |
+| Estonia              | EMT, Tele2                                                         |
+| Finland              | Elisa, TeliaSonera, DNA                                            |
+| France               | Orange, Orange Réunion (La Réunion), SFR, Bouygues                 |
+| Germany              | Telefonica, Telekom Deutschland, Vodafone                          |
+| Greece               | Vodafone                                                           |
+| Guatemala            | Claro                                                              |
+| Hungary              | Telenor, T-Mobile                                                  |
+| India                | Idea                                                               |
+| Indonesia            | Indosat, Telkomsel, XL Axiata, AXIS                                |
+| Ireland              | O2, Vodafone                                                       |
+| Italy                | Telecom Italia, Vodafone, Wind, 3 Italia                           |
+| Jordan               | Zain, Umniah                                                       |
+| Kenya                | Safaricom                                                          |
+| Kuwait               | Zain, Viva                                                         |
+| Latvia               | Tele2                                                              |
+| Lithuania            | Tele2                                                              |
+| Malaysia             | DiGi                                                               |
+| Mexico               | Iusacell, Telcel, Unefon, Movistar                                 |
+| Netherlands          | T-Mobile, Vodafone                                                 |
+| Norway               | Telenor                                                            |
+| Oman                 | Ooredoo                                                            |
+| Pakistan             | Telenor                                                            |
+| Peru                 | Claro                                                              |
+| Philippines          | Globe, Sun                                                         |
+| Poland               | T-Mobile, Orange, Polkomtel (Plus)                                 |
+| Puerto Rico          | Claro                                                              |
+| Romania              | Orange, Vodafone                                                   |
+| Russia               | Beeline                                                            |
+| Saudi Arabia         | Zain                                                               |
+| Singapore            | M1, SingTel, StarHub                                               |
+| Slovakia             | T-Mobile                                                           |
+| Slovenia             | Si.mobil                                                           |
+| South Africa         | Vodacom                                                            |
+| Spain                | Movistar, Vodafone, Orange                                         |
+| Sweden               | Telenor, Tele2                                                     |
+| Switzerland          | Swisscom                                                           |
+| Thailand             | DTAC                                                               |
+| United Arab Emirates | Etisalat, Du                                                       |
+| United Kingdom       | Everything Everywhere (T-Mobile), Telefonica (O2), Three, Vodafone |
+| United States        | AT&T, Sprint, T-Mobile, Verizon                                    |
+| Vietnam              | Viettel, Vietnamobile, Vinaphone, Mobifone                         |
 
  
 
-Xxxx xxxx xxxx xx xxxxxxxxx xxxxxxx xx xx xxxxxx xxxxxxx xxx Xxxxxx Xxxxxxxx Xxxxxxx.
+This list will be regularly updated as we expand support for Mobile Operator Billing.
 
  
 
@@ -107,4 +108,8 @@ Xxxx xxxx xxxx xx xxxxxxxxx xxxxxxx xx xx xxxxxx xxxxxxx xxx Xxxxxx Xxxxxxxx Xxx
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+

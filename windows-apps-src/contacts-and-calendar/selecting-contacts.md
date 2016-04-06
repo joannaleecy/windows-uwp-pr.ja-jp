@@ -1,65 +1,65 @@
 ---
-xxxxxxxxxxx: Xxxxxxx xxx Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxx xxxxxxxxx, xxx xxxx xxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxx.
-xxxxx: Xxxxxx xxxxxxxx
-xx.xxxxxxx: YYXXXXXY-YXYX-YYYY-YYXX-YXYYYYXYXYYY
-xxxxxxxx: xxxxxxxx, xxxxxxxxx
-xxxxxxxx: xxxxxx xxxxxx xxxxxxx
-xxxxxxxx: xxxxxx xxxxxxxx xxxxxxxx
-xxxxxxxx: xxxxxxxx, xxxxxx xxxxxxxx
-xxxxxxxx: xxxxxx xxxxxxxx xxxxxxx xxxx
-xxxxxxxx: xxxxxxx, xxxxxxxxx xxxxxxxx xxxx
-xxxxxxxx: xxxxxxx, xxxxxxxxx xxxxxxxx xxxxxx
+description: Through the Windows.ApplicationModel.Contacts namespace, you have several options for selecting contacts.
+title: Select contacts
+ms.assetid: 35FEDEE6-2B0E-4391-84BA-5E9191D4E442
+keywords: contacts, selecting
+keywords: select single contact
+keywords: select multiple contacts
+keywords: contacts, select multiple
+keywords: select specific contact data
+keywords: contact, selecting specific data
+keywords: contact, selecting specific fields
 ---
 
-# Xxxxxx xxxxxxxx
+# Select contacts
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxxx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225002) xxxxxxxxx, xxx xxxx xxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxx. Xxxx, xx'xx xxxx xxx xxx xx xxxxxx x xxxxxx xxxxxxx xx xxxxxxxx xxxxxxxx, xxx xx'xx xxxx xxx xxx xx xxxxxxxxx xxx xxxxxxx xxxxxx xx xxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxx xxxx xxxx xxx xxxxx.
+Through the [**Windows.ApplicationModel.Contacts**](https://msdn.microsoft.com/library/windows/apps/BR225002) namespace, you have several options for selecting contacts. Here, we'll show you how to select a single contact or multiple contacts, and we'll show you how to configure the contact picker to retrieve only the contact information that your app needs.
 
-## Xxx xx xxx xxxxxxx xxxxxx
+## Set up the contact picker
 
-Xxxxxx xx xxxxxxxx xx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxx.XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR224913) xxx xxxxxx xx xx x xxxxxxxx.
+Create an instance of [**Windows.ApplicationModel.Contacts.ContactPicker**](https://msdn.microsoft.com/library/windows/apps/BR224913) and assign it to a variable.
 
 ```cs
 var contactPicker = new Windows.ApplicationModel.Contacts.ContactPicker();
 ```
 
-## Xxx xxx xxxxxxxxx xxxx (xxxxxxxx)
+## Set the selection mode (optional)
 
-Xx xxxxxxx, xxx xxxxxxx xxxxxx xxxxxxxxx xxx xx xxx xxxxxxxxx xxxx xxx xxx xxxxxxxx xxxx xxx xxxx xxxxxxx. Xxx [**XxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) xxxxxxxx xxxx xxx xxxxxxxxx xxx xxxxxxx xxxxxx xx xxxxxxxx xxxx xxx xxxx xxxxxx xxxx xxxx xxx xxxxx. Xxxx xx x xxxx xxxxxxxxx xxx xx xxx xxx xxxxxxx xxxxxx xx xxx xxxx xxxx x xxxxxx xx xxx xxxxxxxxx xxxxxxx xxxx.
+By default, the contact picker retrieves all of the available data for the contacts that the user selects. The [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) property lets you configure the contact picker to retrieve only the data fields that your app needs. This is a more efficient way to use the contact picker if you only need a subset of the available contact data.
 
-Xxxxx, xxx xxx [**XxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) xxxxxxxx xx **Xxxxxx**:
+First, set the [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/BR224913-selectionmode) property to **Fields**:
 
 ```cs
 contactPicker.SelectionMode = Windows.ApplicationModel.Contacts.ContactSelectionMode.Fields;
 ```
 
-Xxxx, xxx xxx [**xxxxxxxXxxxxxXxxxXxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR224913-desiredfieldswithcontactfieldtype) xxxxxxxx xx xxxxxxx xxx xxxxxx xxxx xxx xxxx xxx xxxxxxx xxxxxx xx xxxxxxxx. Xxxx xxxxxxx xxxxxxxxxx xxx xxxxxxx xxxxxx xx xxxxxxxx xxxxx xxxxxxxxx:
+Then, use the [**desiredFieldsWithContactFieldType**](https://msdn.microsoft.com/library/windows/apps/BR224913-desiredfieldswithcontactfieldtype) property to specify the fields that you want the contact picker to retrieve. This example configures the contact picker to retrieve email addresses:
 
 ``` cs
 contactPicker.DesiredFieldsWithContactFieldType.Add(Windows.ApplicationModel.Contacts.ContactFieldType.Email);
 ```
 
-## Xxxxxx xxx xxxxxx
+## Launch the picker
 
 ```cs
 Contact contact = await contactPicker.PickContactAsync();
 ```
 
-Xxx [**xxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR224913-pickcontactsasync) xx xxx xxxx xxx xxxx xx xxxxxx xxx xx xxxx xxxxxxxx.
+Use [**pickContactsAsync**](https://msdn.microsoft.com/library/windows/apps/BR224913-pickcontactsasync) if you want the user to select one or more contacts.
 
 ```cs
 public IList&lt;Contact&gt; contacts;
 contacts = await contactPicker.PickContactsAsync();
 ```
 
-## Xxxxxxx xxx xxxxxxxx
+## Process the contacts
 
-Xxxx xxx xxxxxx xxxxxxx, xxxxx xxxxxxx xxx xxxx xxx xxxxxxxx xxx xxxxxxxx. Xx xx, xxxxxxx xxx xxxxxxx xxxxxxxxxxx.
+When the picker returns, check whether the user has selected any contacts. If so, process the contact information.
 
-Xxxx xxxxxxx xxxxx xxx xx xxxxxxxxx x xxxxxx xxxxxxx. Xxxx xx xxxxxxxx xxx xxxxxxx'x xxxx xxx xxxx xx xxxx x [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209652) xxxxxxx xxxxxx *XxxxxxXxxx*.
+This example shows how to processes a single contact. Here we retrieve the contact's name and copy it into a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) control called *OutputName*.
 
 ```cs
 if (contact != null)
@@ -72,7 +72,7 @@ else
 }
 ```
 
-Xxxx xxxxxxx xxxxx xxx xx xxxxxxx xxxxxxxx xxxxxxxx.
+This example shows how to process multiple contacts.
 
 ```cs
 if (contacts != null &amp;&amp; contacts.Count &gt; 0)
@@ -84,9 +84,9 @@ if (contacts != null &amp;&amp; contacts.Count &gt; 0)
 }
 ```
 
-## Xxxxxxxx xxxxxxx (xxxxxx xxxxxxx)
+## Complete example (single contact)
 
-Xxxx xxxxxxx xxxx xxx xxxxxxx xxxxxx xx xxxxxxxx x xxxxxx xxxxxxx'x xxxx xxxxx xxxx xx xxxxx xxxxxxx, xxxxxxxx xx xxxxx xxxxxx.
+This example uses the contact picker to retrieve a single contact's name along with an email address, location or phone number.
 
 ```cs
 // ...
@@ -164,9 +164,9 @@ private void AppendContactFieldValues&lt;T&gt;(TextBlock content, IList&lt;T&gt;
 }
 ```
 
-## Xxxxxxxx xxxxxxx (xxxxxxxx xxxxxxxx)
+## Complete example (multiple contacts)
 
-Xxxx xxxxxxx xxxx xxx xxxxxxx xxxxxx xx xxxxxxxx xxxxxxxx xxxxxxxx xxx xxxx xxxx xxx xxxxxxxx xx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) xxxxxxx xxxxxx `OutputContacts`.
+This example uses the contact picker to retrieve multiple contacts and then adds the contacts to a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) control called `OutputContacts`.
 
 ```cs
 MainPage rootPage = MainPage.Current;
@@ -227,8 +227,12 @@ public class ContactItemAdapter
 }
 ```
 
-## Xxxxxxx xxx xxxx xxxxx
+## Summary and next steps
 
-Xxx xxx xxxx x xxxxx xxxxxxxxxxxxx xx xxx xx xxx xxx xxxxxxx xxxxxx xx xxxxxxxx xxxxxxx xxxxxxxxxxx. Xxxxxxxx xxx [Xxxxxxxxx Xxxxxxx xxx xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619979) xxxx XxxXxx xx xxx xxxx xxxxxxxx xx xxx xx xxx xxxxxxxx xxx xxx xxxxxxx xxxxxx.
+Now you have a basic understanding of how to use the contact picker to retrieve contact information. Download the [Universal Windows app samples](http://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to use contacts and the contact picker.
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

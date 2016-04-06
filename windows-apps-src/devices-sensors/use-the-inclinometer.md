@@ -1,36 +1,36 @@
 ---
-xx.xxxxxxx: YYXXYYXX-YYYY-YYYX-YYYY-YYYYXYXXYYXY
-xxxxx: Xxx xxx xxxxxxxxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxx xxx xxxxxxxxxxxx xx xxxxxxxxx xxxxx, xxxx, xxx xxx.
+ms.assetid: 16AD53CA-1252-456C-8567-2263D3EC95F3
+title: Use the inclinometer
+description: Learn how to use the inclinometer to determine pitch, roll, and yaw.
 ---
-# Xxx xxx xxxxxxxxxxxx
+# Use the inclinometer
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Xxxxxxxxx XXXx **
+** Important APIs **
 
--   [**Xxxxxxx.Xxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Xxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225766)
+-   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
+-   [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766)
 
-Xxxxx xxx xx xxx xxx xxxxxxxxxxxx xx xxxxxxxxx xxxxx, xxxx, xxx xxx.
+Learn how to use the inclinometer to determine pitch, roll, and yaw.
 
-Xxxx Y-X xxxxx xxxxxxx xx xxxxxxxxxxxx xx xx xxxxx xxxxxx. Xxx xxxxxx xxxxxxx xx xxx xxxxxx xxxxxxxxx, xxxxx xxxx xxx xxxxx xxxx xx xxx xxxxxxxxxxxx (X, X, xxx X) xx xxx xxxxxxxx, xxxxxxx, xxx xxxxxx xxxxxx xx xxx xxxxxxxx.
+Some 3-D games require an inclinometer as an input device. One common example is the flight simulator, which maps the three axes of the inclinometer (X, Y, and Z) to the elevator, aileron, and rudder inputs of the aircraft.
 
- ## Xxxxxxxxxxxxx
+ ## Prerequisites
 
-Xxx xxxxxx xx xxxxxxxx xxxx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX), Xxxxxxxxx Xxxxxx X#, xxx xxxxxx.
+You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
 
-Xxx xxxxxx xx xxxxxxxx xxxx xxx'xx xxxxx xxxx xxxxxxx x xxxxxxxxxxxx.
+The device or emulator that you're using must support a inclinometer.
 
- ## Xxxxxx x xxxxxx xxxxxxxxxxxx xxx
+ ## Create a simple inclinometer app
 
-Xxxx xxxxxxx xx xxxxxxx xxxx xxx xxxxxxxxxxx. Xxx xxxxx xxxxxxxxxx xxxx xxxx xxx xxxxxxx xxx xxxxx xxxxxxxxx xx xxxxxx x xxxxxx xxxxxxxxxxxx xxxxxxxxxxx xxxx xxxxxxx. Xxx xxxxxxxxx xxxxxxxxxx xxxxxxxx xxx xxx xxx xxxx xxxx xxxxxxx.
+This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple inclinometer application from scratch. The following subsection explains the app you have just created.
 
-###  Xxxxxxxxxxxx
+###  Instructions
 
--   Xxxxxx x xxx xxxxxxx, xxxxxxxx x **Xxxxx Xxx (Xxxxxxxxx Xxxxxxx)** xxxx xxx **Xxxxxx X#** xxxxxxx xxxxxxxxx.
+-   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
 
--   Xxxx xxxx xxxxxxx'x XxxxXxxx.xxxx.xx xxxx xxx xxxxxxx xxx xxxxxxxx xxxx xxxx xxx xxxxxxxxx.
+-   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -95,9 +95,9 @@ Xxxx xxxxxxx xx xxxxxxx xxxx xxx xxxxxxxxxxx. Xxx xxxxx xxxxxxxxxx xxxx xxxx xxx
     }
 ```
 
-Xxx'xx xxxx xx xxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx xxxx xxx xxxx xxxx xxxxxxx. Xxx xxxxxxx, xx xxx xxxxxxx x xxxxxxx xxxxx **XxxxxxxxxxxxXX**, xxx'x xxxxxxx `namespace App1` xxxx `namespace InclinometerCS`.
+You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **InclinometerCS**, you'd replace `namespace App1` with `namespace InclinometerCS`.
 
--   Xxxx xxx xxxx XxxxXxxx.xxxx xxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxxxxx XXX.
+-   Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
         <Page
@@ -121,25 +121,25 @@ Xxx'xx xxxx xx xxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx xxxx xxx xx
     </Page>
 ```
 
-Xxx'xx xxxx xx xxxxxxx xxx xxxxx xxxx xx xxx xxxxx xxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx xxxxxxxxx xx xxxx xxx. Xxx xxxxxxx, xx xxx xxxxxxx x xxxxxxx xxxxx **XxxxxxxxxxxxXX**, xxx'x xxxxxxx `x:Class="App1.MainPage"` xxxx `x:Class="InclinometerCS.MainPage"`. Xxx xxxxxx xxxx xxxxxxx `xmlns:local="using:App1"` xxxx `xmlns:local="using:InclinometerCS"`.
+You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **InclinometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="InclinometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:InclinometerCS"`.
 
--   Xxxxx XY xx xxxxxx **Xxxxx** > **Xxxxx Xxxxxxxxx** xx xxxxx, xxxxxx, xxx xxx xxx xxx.
+-   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
 
-Xxxx xxx xxx xx xxxxxxx, xxx xxx xxxxxx xxx xxxxxxxxxxxx xxxxxx xx xxxxxx xxx xxxxxx xx xxxxx xxx xxxxxxxx xxxxx.
+Once the app is running, you can change the inclinometer values by moving the device or using the emulator tools.
 
--   Xxxx xxx xxx xx xxxxxxxxx xx Xxxxxx Xxxxxx xxx xxxxxxxx Xxxxx+XY xx xxxxxx **Xxxxx** > **Xxxx Xxxxxxxxx** xx xxxx xxx xxx.
+-   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
 
-###  Xxxxxxxxxxx
+###  Explanation
 
-Xxx xxxxxxxx xxxxxxx xxxxxxxxxxxx xxx xxxxxx xxxx xxx'xx xxxx xx xxxxx xx xxxxx xx xxxxxxxxx xxxxxxxxxxxx xxxxx xx xxxx xxx.
+The previous example demonstrates how little code you'll need to write in order to integrate inclinometer input in your app.
 
-Xxx xxx xxxxxxxxxxx x xxxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxxx xx xxx **XxxxXxxx** xxxxxx.
+The app establishes a connection with the default inclinometer in the **MainPage** method.
 
 ```csharp
 _inclinometer = Inclinometer.GetDefault();
 ```
 
-Xxx xxx xxxxxxxxxxx xxx xxxxxx xxxxxxxx xxxxxx xxx **XxxxXxxx** xxxxxx. Xxxx xxxx xxxxxxxxx xxx xxxxxxx xxxxxxxx xxxxxxxxx xx xxx xxxxxx xxx xxxxxxxx xx xx x xxxxxxxxx xxxxxxxx xx YY xxxxxxxxxxxx (xxxxx xxxxxxxxxxxx x YY-Xx xxxxxxx xxxx). Xx xxx xxxxxxx xxxxxxxxx xxxxxxxx xx xxxxxxx xxxx xxx xxxxxxxxx xxxxxxxx, xxx xxxx xxxx xxx xxxxx xx xxx xxxxxxx. Xxxxxxxxx, xx xxxx xxx xxxxx xx xxx xxxxxxxxx xxxxxxxx.
+The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
 
 ```csharp
 uint minReportInterval = _inclinometer.MinimumReportInterval;
@@ -147,14 +147,14 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _inclinometer.ReportInterval = reportInterval;
 ```
 
-Xxx xxx xxxxxxxxxxxx xxxx xx xxxxxxxx xx xxx **XxxxxxxXxxxxxx** xxxxxx. Xxxx xxxx xxx xxxxxx xxxxxx xxxxxxxx xxx xxxx xxxx xxx xxxxxx, xx xxxxxx xxx xxxxxx xx xxxx xxx xxxxx xxxx xxxxx xxxxxxx. Xxx xxx xxxxxxxxx xxxx xxxxx xxxxxxx xx xxx xxxxxxxxx xxxx.
+The new inclinometer data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
 
 ```
 _inclinometer.ReadingChanged += new TypedEventHandler<Inclinometer, 
 InclinometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-Xxxxx xxx xxxxxx xxx xxxxxxx xx xxx XxxxXxxxxx xxxxx xx xxx xxxxxxx'x XXXX.
+These new values are written to the TextBlocks found in the project's XAML.
 
 ```xml
 <TextBlock HorizontalAlignment="Left" Height="21" Margin="0,8,0,0" TextWrapping="Wrap" Text="Pitch: " VerticalAlignment="Top" Width="45" Foreground="#FFF9F4F4"/>
@@ -165,8 +165,12 @@ Xxxxx xxx xxxxxx xxx xxxxxxx xx xxx XxxxXxxxxx xxxxx xx xxx xxxxxxx'x XXXX.
  <TextBlock x:Name="txtYaw" HorizontalAlignment="Left" Height="19" Margin="55,56,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="54" Foreground="#FFF6F2F2"/>
 ```
 
- ## Xxxxxxx xxxxxx
+ ## Related topics
 
-* [Xxxxxxxxxxxx Xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241380)
+* [Inclinometer Sample](http://go.microsoft.com/fwlink/p/?linkid=241380)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

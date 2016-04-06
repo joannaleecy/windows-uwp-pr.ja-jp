@@ -1,91 +1,91 @@
 ---
-xx.xxxxxxx: YYYYYXYY-YYYX-YYYX-YYXY-XXXYYYYYYYYY
-xxxxx: Xxxxxx xx XXX Xxxxx Xxxx xxx
-xxxxxxxxxxx: Xxxxxxx Xxxxx Y.Y xxxxxxxxx XXX xxxx xxxxxxxxx xxxx xxxxx x XXX-xxxxx xxxxxx xxxxxxx, xxx xxxx xxxxx xxxxxxxx xxxxxx xxxxxxx xxxx xx xx xxxxxxx xxxxxxx xxxx xxxxxx-xxxxxxx xxxxxxxxx (XXX).
+ms.assetid: 26834A51-512B-485B-84C8-ABF713787588
+title: NFC スマート カード アプリの作成
+description: Windows Phone 8.1 では、SIM ベースのセキュア エレメントを使用する NFC カード エミュレーション アプリがサポートされていましたが、このモデルでは、安全な支払いアプリと移動体通信事業者 (Mobile Network Operator: MNO) との密接な連携が必要でした。
 ---
-# Xxxxxx xx XXX Xxxxx Xxxx xxx
+# NFC スマート カード アプリの作成
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-**Xxxxxxxxx**  Xxxx xxxxx xxxxxxx xx Xxxxxxx YY Xxxxxx xxxx.
+**重要**  このトピックの適用対象は Windows 10 Mobile のみです。
 
-Xxxxxxx Xxxxx Y.Y xxxxxxxxx XXX xxxx xxxxxxxxx xxxx xxxxx x XXX-xxxxx xxxxxx xxxxxxx, xxx xxxx xxxxx xxxxxxxx xxxxxx xxxxxxx xxxx xx xx xxxxxxx xxxxxxx xxxx xxxxxx-xxxxxxx xxxxxxxxx (XXX). Xxxx xxxxxxx xxx xxxxxxx xx xxxxxxxx xxxxxxx xxxxxxxxx xx xxxxx xxxxxxxxx xx xxxxxxxxxx xxxx xxx xxx xxxxxxx xxxx XXXx. Xx Xxxxxxx YY Xxxxxx, xx xxxx xxxxxxxxxx x xxx xxxx xxxxxxxxx xxxxxxxxxx xxxxxx, Xxxx Xxxx Xxxxxxxxx (XXX). XXX xxxxxxxxxx xxxxxx xxxx xxx xx xxxxxxxx xxxxxxxxxxx xxxx xx XXX xxxx xxxxxx. Xxxx xxxxx xxxxxxxxxxx xxx Xxxx Xxxx Xxxxxxxxx (XXX) xxxxx xx Xxxxxxx YY Xxxxxx xxxxxxx xxx xxx xxx xxx xxxxxxx xx XXX xxx xx xxxx xxxx xxxxxxxxx xxx xxxxxx xxxx xxxxxxxx xxxxxxx xxxxx xxxxx xxxxxxx xx x xxxxxxxx xxxx xxxxxxx xxxxxxxxxxxxx xxxx xx XXX.
+Windows Phone 8.1 では、SIM ベースのセキュア エレメントを使用する NFC カード エミュレーション アプリがサポートされていましたが、このモデルでは、安全な支払いアプリと移動体通信事業者 (MNO) との密接な連携が必要でした。 このことにより、MNO 様と連携していないために、他の事業者様や開発者様によるさまざまな支払いソリューションの可能性が制限されていました。 Windows 10 Mobile では、ホスト カード エミュレーション (HCE) と呼ばれる新しいカード エミュレーション テクノロジが導入されています。 HCE テクノロジを使用すると、アプリが NFC カード リーダーと直接通信することができます。 このトピックでは、Windows 10 Mobile デバイスでのホスト カード エミュレーション (HCE) のしくみと、物理的なカードではなく電話からユーザーがサービスにアクセスできるような HCE アプリを MNO 様と連携せずに開発する方法について説明します。
 
-## Xxxx xxx xxxx xx xxxxxxx xx XXX xxx
+## HCE アプリの開発に必要な要素
 
 
-Xx xxxxxxx xx XXX-xxxxx xxxx xxxxxxxxx xxx xxx Xxxxxxx YY Xxxxxx, xxx xxxx xxxx xx xxx xxxx xxxxxxxxxxx xxxxxxxxxxx xxxxx. Xxx xxx xxx xxx xx xx xxxxxxxxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY, xxxxx xxxxxxxx xxx Xxxxxxx xxxxxxxxx xxxxx xxx xxx Xxxxxxx YY Xxxxxx xxxxxxxx xxxx XXX xxxxxxxxx xxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxx xxxxx, xxx, [Xxx xxx xx](https://msdn.microsoft.com/library/windows/apps/Dn726766)
+Windows 10 Mobile 用に HCE ベースのカード エミュレーション アプリを開発するには、開発環境のセットアップが必要になります。 環境のセットアップは、Microsoft Visual Studio 2015 をインストールすることで実現できます。これには、Windows 開発者ツールや、NFC エミュレーションがサポートされている Windows 10 Mobile エミュレーターが含まれています。 セットアップの詳細については、「[準備](https://msdn.microsoft.com/library/windows/apps/Dn726766)」を参照してください。
 
-Xxxxxxxxxx, xx xxx xxxx xx xxxx xxxx x xxxx Xxxxxxx YY Xxxxxx xxxxxx xxxxxxx xx xxx xxxxxxxx Xxxxxxx YY Xxxxxx xxxxxxxx, xxx xxxx xxxx xxxx xxx xxxxxxxxx xxxxx.
+Windows 10 Mobile エミュレーターではなく実際の Windows 10 Mobile デバイスを使用してテストを実施するには、必要に応じて、次のアイテムを用意します。
 
--   X Xxxxxxx YY Xxxxxx xxxxxx xxxx XXX XXX xxxxxxx. Xxxxxxxxx, xxx Xxxxx YYY, YYY, YYY, xxx xxx YYY XX xxxx xxx xxxxxxxx xx xxxxxxx XXX XXX xxxx.
--   X xxxxxx xxxxxxxx xxxx xxxxxxxx xxxxxxxxx XXX/XXX YYYYY-Y xxx XXX/XXX YYYY-Y
+-   NFC HCE がサポートされている Windows 10 Mobile デバイス。 現時点で、NFC HCE アプリをサポートするハードウェアは Lumia 730、830、640、640 XL に搭載されています。
+-   プロトコルとして ISO/IEC 14443-4 および ISO/IEC 7816-4 をサポートするリーダー端末。
 
-Xxxxxxx YY Xxxxxx xxxxxxxxxx xx XXX xxxxxxx xxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxxxxxxx.
+Windows 10 Mobile には、次の機能を提供する HCE サービスが実装されています。
 
--   Xxxx xxx xxxxxxxx xxx xxxxxx xxxxxxxxxxx (XXXx) xxx xxx xxxxx xxxx xxxxx xxxx xx xxxxxxx.
--   Xxxxxxxx xxxxxxxxxx xxx xxxxxxx xx xxx Xxxxxxxxxxx Xxxxxxxx Xxxx Xxxx (XXXX) xxxxxxx xxx xxxxxxxx xxxxx xx xxx xx xxx xxxxxxxxxx xxxx xxxxx xx xxx xxxxxxxx xxxxxx xxxx xxxxxxxxx xxx xxxx xxxxxxxxxx.
--   Xxxxxxxx xx xxxxxx xxx xxxxxxxxxxxxx xx xxx xxxx xx x xxxxxx xx xxxx xxxxxxx.
+-   エミュレートするカード用のアプレット識別子 (AID) をアプリで登録できる。
+-   外部リーダー カードの選択とユーザー設定に基づいて、アプリケーション プロトコル データ ユニット (APDU) のコマンドと応答のペアをいずれかの登録済みアプリにルーティングし、競合を解決する。
+-   ユーザー操作の結果としてイベントとアプリへの通知を処理する。
 
-Xxxxxxx YY xxxxxxxx xxxxxxxxx xx xxxxx xxxxx xxxx xxx xxxxx xx XXX-XXX (XXX-XXX YYYYY-Y) xxx xxxxxxxxxxxx xxxxx XXXXx xx xxxxxxx xx xxx XXX-XXX YYYY-Y xxxxxxxxxxxxx. Xxxxxxx YY xxxxxxxx XXX/XXX YYYYY-Y Xxxx X xxxxxxxxxx xxx XXX xxxx. Xxxx X, xxxx X, xxx xxx-XXX-XXX (xx XXXXXX) xxxxxxxxxxxx xxx xxxxxx xx xxx XXX xx xxxxxxx.
+Windows 10 では、ISO-DEP (ISO-IEC 14443-4) に基づくスマート カードのエミュレーションと、ISO-IEC 7816-4 仕様で定義されている APDU を使用した通信がサポートされています。 さらに Windows 10 では、HCE アプリ用に ISO/IEC 14443-4 Type A テクノロジがサポートされています。 Type B、Type F、非 ISO-DEP (MIFARE など) のテクノロジは、既定では SIM にルーティングされます。
 
-Xxxx Xxxxxxx YY Xxxxxx xxxxxxx xxx xxxxxxx xxxx xxx xxxx xxxxxxxxx xxxxxxx. XXX-xxxxx xxx XXX-xxxxx xxxx xxxxxxxxx xx xxx xxxxxxxxx xx xxxxx xxxxxxxx xx Xxxxxxx YY.
+カード エミュレーション機能に対応しているのは Windows 10 Mobile デバイスのみです。 SIM ベースおよび HCE ベースのカード エミュレーションは、他のバージョンの Windows 10 には用意されていません。
 
-Xxx xxxxxxxxxxxx xxx XXX xxx XXX xxxxx xxxx xxxxxxxxx xxxxxxx xx xxxxx xx xxx xxxxxxx xxxxx. 
+HCE および SIM ベースのカード エミュレーションのサポートのアーキテクチャを、次の図に示します。 
 
 ![](./images/nfc-architecture.png)
 
-## Xxx xxxxxxxxx xxx XXX xxxxxxx
+## アプリの選択と AID ルーティング
 
-Xx xxxxxxx xx XXX xxx, xxx xxxx xxxxxxxxxx xxx Xxxxxxx YY Xxxxxx xxxxxxx xxxxx XXXx xx x xxxxxxxx xxx xxxxxxx xxxxx xxx xxxxxxx xxxxxxxx xxxxxxxxx XXX xxxx. Xxxx xxx xxx xxxxxxxx xxxxxxxx XXX xxx XXX-xxxxx xxxxx. Xxxxxx Xxxxxxx Xxxxx Y.Y xxxx xxxx xxx XXX-xxxxx xxxx xxxxxxxx xx xxxx xx Xxxxxxx YY Xxxxxx xx xxxx xx xxx xxxx xxxxxxx xxx "XXX Xxxx" xxxxxx xx xxxxx xxxxxxx xxxxxxx xxxx xx xxx XXX Xxxxxxx xxxx. Xxxx xx xxx xx xxxxxxx xxxx xxxxxxx xxx xxxxxx xx xxx xxx xxxxx xxxx.
+ユーザーによってさまざまな HCE アプリがインストールされる可能性があるため、HCE アプリを開発するには、Windows 10 Mobile デバイスで AID が特定のアプリにルーティングされるしくみを理解する必要があります。 各アプリは、HCE ベースおよび SIM ベースのカードを複数登録できます。 従来の Windows Phone 8.1 アプリ (SIM ベース) は、ユーザーが NFC 設定メニューで既定の支払い用カードとして "SIM カード" オプションを選択していれば、引き続き Windows 10 Mobile でも使用できます。 これは、初めてデバイスに電源を入れると既定で設定される構成です。
 
-Xxxx xxx xxxx xxxx xxxxx Xxxxxxx YY Xxxxxx xxxxxx xx x xxxxxxxx, xxx xxxx xx xxxxxxxxxxxxx xxxxxx xx xxx xxxxxx xxx xxxxxxxxx xx xxx xxxxxx. Xxxx xxxxxxx xx xxxxx xx xxx xxxxxx XXx (XXXx) xxxxx xxx Y-YY xxxx xxxxxxxxxxx. Xxxxxx x xxx, xxx xxxxxxxx xxxxxxxx xxxx xxxxxxxx x XXXXXX xxxxxxx XXXX xx xxxxxxx xxx XXX xx xxxxx xxxx xxx xxxxxxxxxx XXXX xxxxxxxx xx xx xxxxxx xx. Xxxxxxxxxx XXXXXX xxxxxxxx, xxxx xxxxxx xxx xxxxxxx xxxxx. Xxxxx xx xxx XXXx xxxxxxxxxx xx xxxx xxx xxxx xxxxxxxx, xxx XXXX xxxxxxx xx xxxxxx xx x xxxxxxxx xxx, xxxxx xxxx xxxx x xxxxxxxx XXXX. Xx xxxxx xxxx x xxxxxxxx xxx xxxx xx xxxxxxxxxxx xxxx xxxxxxx xxxxxxxxx xxxx xxxxxx xxx xxxx xxx. Xx xxx xxxx xxxxxx xxxx xxx'x xxxxxxxxxx xxxx xxxxx xx xxxxxxx xx xxxxxxxx xxxx xxxxxxxxxxx xx xxxx xxxx xxx xxxxxxx xxx'x xxxxxxxxxx xxxx xx xxxxxxx xx xxx XXXX. Xx xxxx xxxxxxx xxxxxxxxxx xxxxx xxxxx xx xxxx xxxxx.
+ユーザーが Windows 10 Mobile デバイスを端末にタップすると、デバイスにインストールされている適切なアプリにデータが自動的にルーティングされます。 このルーティングは、5 ～ 16 バイトの識別子であるアプレット ID (AID) に基づいています。 タップが発生すると、外部端末は SELECT コマンドの APDU を送出し、後続のすべての APDU コマンドのルーティング先とする AID を指定します。 後続の SELECT コマンドでは、ルーティング先を再度変更できます。 アプリとユーザー設定によって登録されている AID に基づいて、APDU トラフィックが特定のアプリにルーティングされます。ルーティング先のアプリは、応答の APDU を送信します。 端末側では同じタップで異なる複数のアプリとの通信を必要としている場合もあるので注意してください。 このため、別のアプリのバックグラウンド タスクが APDU に応答する余地ができるように、アプリのバックグラウンド タスクは、非アクティブ化されたらできる限り早く終了する必要があります。 バックグラウンド タスクについては、後で説明します。
 
-XXX xxxx xxxx xxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxx XXXx xxxx xxx xxxxxx xx xxxx xxxx xxxxxxx XXXXx xxx xx XXX. Xxxx xxxxxxx XXXx xx xxxxx XXX xxxxxx. Xx XXX xxxxx xx xxxxxxxxxxxx xxxxxxxxxx xx xx xxxxxxxxxx xxxxxxxx xxxx. Xxx xxxxxxx, xxx xxxxxx xxxx xx xxxxxxxx xxxx xx XXX xxxxx xxx x xxxxxx xxxxxx xxxx xxxx x xxxxxxxxx xxxx xx xxxxxxxx xxxx x xxxxxxxxx, xxxxxx XXX xxxxx, xxxx xxxxxx xxxx xx xxxx xxx xxxx xxx xxxx XXX.
+HCE アプリは、AID の APDU を受信できるように、対応が可能な特定の AID に自身を登録する必要があります。 アプリは、AID グループを使用して AID を宣言します。 AID グループは、概念的には個々の物理カードに相当します。 たとえば、2 枚のカードの AID が同じであっても、1 枚目のクレジット カードは 1 つ目の AID グループ、別の銀行から発行された 2 枚目のクレジット カードは 2 つ目の AID グループで登録されます。
 
-## Xxxxxxxx xxxxxxxxxx xxx xxxxxxx XXX xxxxxx
+## 支払い AID グループの競合の解決
 
-Xxxx xx xxx xxxxxxxxx xxxxxxxx xxxxx (XXX xxxxxx), xx xxx xxxxxxx xxx XXX xxxxx xxxxxxxx xx xxxxxx "Xxxxxxx" xx "Xxxxx." Xxxxx xxxxx xxx xx xxxxxxxx xxxxxxx XXX xxxxxx xxxxxxxxxx xx xxx xxxxx xxxx, xxxx xxx xx xxxxx xxxxxxx XXX xxxxxx xxx xx xxxxxxx xxx Xxx xxx Xxx xx x xxxx, xxxxx xx xxxxxxxx xx xxx xxxx. Xxxx xxxxxxxx xxxxxx xxxxxxx xxx xxxx xxxxxxx xx xx xxxxxxx xx xxxxxxxxxxx xxxxxxxx x xxxxxx xxxxxxx, xxxxxx, xx xxxxx xxxx xx xxx xx xxxx xxx'x xxx xxxx x xxxxxxxxx xxxxxxxxxx xxxx xxxx xxxxxxx xxxxx xxxxxx xx x xxxxxxxx.
+アプリで物理カード (AID グループ) を登録する際には、AID グループのカテゴリを "Payment" または "Other" として宣言します。 同時に複数の支払い AID グループが登録されることはあり得ますが、"タップして支払い" 用に同時に有効にできる支払い AID グループは、ユーザーによって選択された 1 つのグループのみです。 これは、デバイスを端末にタップしたときに意図しないカードで支払われることのないよう、単一の支払い用カード、クレジット カード、またはデビット カードをユーザーが自分の意志で選択できるようにするためです。
 
-Xxxxxxx, xxxxxxxx XXX xxxxxx xxxxxxxxxx xx "Xxxxx" xxx xx xxxxxxx xx xxx xxxx xxxx xxxxxxx xxxx xxxxxxxxxxx. Xxxx xxxxxxxx xxxxxx xxxxxxx xxxxx xxxxx xx xxxxx xxxx xxxxxxx, xxxxxxx, xx xxxxxxx xxx xxxxxxxx xx xxxx xxxx xxxxxxx xxx xxxxxx xx xxxxxxxxx xxxxxxxx xxxx xxx xxxxx xxxxx.
+ただし、"Other" として登録されている複数の AID グループは、ユーザー操作なしに同時に有効にすることができます。 これは、他の種類のカード (ロイヤルティ、クーポン、交通機関用など) については、電話をタップするだけで特に操作やユーザー入力を必要とせず役割が果たされるようにするためです。
 
-Xxx xxx XXX xxxxxx xxxx xxx xxxxxxxxxx xx "Xxxxxxx" xxxxxx xx xxx xxxx xx xxxxx xx xxx XXX Xxxxxxxx xxxx, xxxxx xxx xxxx xxx xxxxxx xxxxx xxxxxxx xxxxxxx xxxx. Xxxx x xxxxxxx xxxxxxx xxxx xx xxxxxxxx, xxx xxx xxxx xxxxxxxxxx xxxx xxxxxxx XXX xxxxx xxxxxxx xxx xxxxxxx xxxxxxx xxx. Xxxxxxx xxxxxxx xxxx xxx xxxxxx xx xxxxxxx xxx xx xxxxx XXX xxxxxx xxxxxxx xxxx xxxxxxxxxxx. Xx xxx xxxx xxxxxxxx xxx xxxxxxx xxxxxxx xxx xxxxxx, xxxx xxx xxxxxxx xxxxxxx xxxxxxx xxx (xx xxx) xxxxxxxxx xx xxxxxx xx xxxxxxx. Xxx xxxxxxxxx xxxxxxxxxx xxxxx xxx XXX Xxxxxxxx xxxx.
+"Payment" として登録された AID グループはすべて、NFC 設定ページのカード一覧に表示されます。この一覧で、ユーザーは既定の支払い用カードを選択できます。 既定の支払い用カードが選択されると、この支払い AID グループを登録したアプリが既定の支払いアプリになります。 既定の支払いアプリは、登録されている任意の AID グループをユーザー操作なしで有効または無効に切り替えることができます。 ユーザーが既定の支払いアプリを確認するメッセージで確認を拒否した場合は、現在の既定の支払いアプリ (ある場合) が引き続き既定として使用されます。 次のスクリーン ショットは、NFC 設定ページを示しています。
 
 ![](./images/nfc-settings.png)
 
-Xxxxx xxx xxxxxxx xxxxxxxxxx xxxxx, xx xxx xxxx xxxxxxx xxx xxxxxxx xxxxxxx xxxx xx xxxxxxx xxxx xxxx xx xxx xxxxxxxxxx xx "XXX Xxxxxxxxxxx Y," xxx xxxxxx xxxxxxx x xxxxxxxxxxxx xxxxxx xxx xxx xxxx’x xxxxxxx. Xxxxxxx, xx xxx xxxx xxxxxxx xxx xxxxxxx xxxxxxx xxxx xx xxxxxxx xxxx xxxx xx xxxxxxxxxx xx "XXX Xxxxxxxxxxx Y," xxx xxxxxx xxxx xxx xxxxxx x xxxxxxxxxxxx xxxxxx xxx xxx xxxx, xxxxxxx "XXX XxxxxxxxxxxY" xx xxxxxxx xxx xxxxxxx xxxxxxx xxx.
+上のスクリーンショットで説明すると、ユーザーが既定の支払い用カードを変更して、"HCE Application 1" によって登録されていない別のカードに切り替えた場合、システムはユーザーによる同意を求めて確認プロンプトを表示します。 ユーザーが既定の支払い用カードを変更して、"HCE Application 1" によって登録されている別のカードに切り替えた場合、"HCE Application 1" は既に既定の支払いアプリであるため、システムはユーザーに対する確認プロンプトを表示しません。
 
-## Xxxxxxxx xxxxxxxxxx xxx xxx-xxxxxxx XXX xxxxxx
+## 支払い以外の AID グループの競合の解決
 
-Xxx-xxxxxxx xxxxx xxxxxxxxxxx xx "Xxxxx" xx xxx xxxxxx xx xxx XXX xxxxxxxx xxxx.
+支払い用以外として "Other" というカテゴリに設定されているカードは、NFC 設定ページには表示されません。
 
-Xxxx xxx xxx xxxxxx, xxxxxxxx xxx xxxxxx xxx-xxxxxxx XXX xxxxxx xx xxx xxxx xxxxxx xx xxxxxxx XXX xxxxxx. Xxx xxxx xxxxxxxxxx xx xxxx xxx xxx-xxxxxxx XXX xxxxxx xxx xxxxxxxxx xxxxxxxx xx xxx xx "Xxxxx" xx xxxxxxx xx "Xxxxxxx". Xxxxx xxxxxxxxxxx xxx XXX xxxxx xxxx xxx xxxxxx, xxx xxxx xx xxxxxx xxx XXX xxxxx xx xxxxxxx XXX xxxxxxx. Xxxx xxx xxx xx xxxxxx x xxx-xxxxxxx XXX xxxxx xx xxxxxxx xxxxxxx, xxx xxxx xx xxx xxxxxxxx xxx x xxxxxxxxxxxx xxxxxx xxxxx xx x xxxxxxxx xxxx xxx xx xxx XXXx xxxxxxx xxxxxxxxxx xx xxx xxxxxx xx x xxxxxxxxx xxx. Xx xxxxx xx x xxxxxxxx, xxx xxxx xxxx xx xxxxxxxx xxxx xxxxxxxxxxx xxxxx xxxxx xxxx xxx xx'x xxxxxxxxxx xxx xxxx xx xxxxxxxx xx xxx xxxx xxxxxxx xx xxxxxx xxx xxxxx xxxxxxxxxx XXX xxxxx.
+アプリでは、支払い AID グループと同じ方法で、支払い用以外の AID グループを作成、登録、有効化することができます。 主な違いは、支払い用以外の AID グループについてはエミュレーション カテゴリを "Payment" ではなく "Other" に設定する点です。 AID グループをシステムに登録した後は、AID グループが NFC トラフィックを受信できるようにする必要があります。 支払い用以外の AID グループについてトラフィックの受信を有効化する場合、別のアプリによって既にシステムに登録されている AID との競合がない限り、ユーザーに対する確認プロンプトは表示されません。 競合が存在すると、新しく登録された AID グループの有効化をユーザーが選択した場合に、どのカードと関連するアプリが無効になるかを示す情報と共にユーザーへの確認メッセージが表示されます。
 
-**Xxxxxxxxxxx xxxx XXX xxxxx XXX xxxxxxxxxxxx**
+**SIM ベースの NFC アプリケーションとの共存**
 
-Xx Xxxxxxx YY Xxxxxx, xxx xxxxxx xxxx xx xxx XXX xxxxxxxxxx xxxxxxx xxxxx xxxx xx xxxx xx xxxx xxxxxxx xxxxxxxxx xx xxx xxxxxxxxxx xxxxx. Xxx xxxxx xxxxxxxx xxxxxxx xxxxxxxxxxx xxx xxx xxxxxxxxx xxxxx.
+Windows 10 Mobile では、コントローラー レイヤーでルーティングの決定に使用される NFC コントローラー ルーティング テーブルがシステムによってセットアップされます。 このテーブルには、ルーティング情報として次のアイテムが含まれています。
 
--   Xxxxxxxxxx XXX xxxxxx.
--   Xxxxxxxx xxxxx xxxxx (XXX-XXX).
--   Xxxxxxxxxx xxxxx xxxxxxx (XXX-X/X/X).
+-   個別の AID ルート。
+-   プロトコルに基づくルート (ISO DEP)。
+-   テクノロジに基づくルーティング (NFC-A/B/F)。
 
-Xxxx xx xxxxxxxx xxxxxx xxxxx x "XXXXXX XXX" xxxxxxx, xxx XXX xxxxxxxxxx xxxxx xxxxxx XXX xxxxxx xx xxx xxxxxxx xxxxx xxx x xxxxx. Xx xxxxx xx xx xxxxx, xx xxxx xxx xxx xxxxxxxx-xxxxx xxxxx xx xxx xxxxxxx xxxxx xxx XXX-XXX (YYYYY-Y-X) xxxxxxx. Xxx xxx xxxxx xxx-XXX-XXX xxxxxxx xx xxxx xxx xxx xxxxxxxxxx xxxxx xxxxxxx.
+外部リーダーにより "SELECT AID" コマンドが送信されると、NFC コントローラーはまずルーティング テーブルに一致する AID ルートがないか確認します。 一致がない場合、ISO-DEP (14443-4-A) トラフィックに対する既定のルートとしては、プロトコル ベースのルートが使用されます。 その他、非 ISO-DEP のトラフィックについては、テクノロジ ベースのルーティングが使用されます。
 
-Xxxxxxx YY Xxxxxx xxxxxxxx x xxxx xxxxxx "XXX Xxxx" xx xxx XXX Xxxxxxxx xxxx xx xxxxxxxx xx xxx xxxxxx Xxxxxxx Xxxxx Y.Y XXX-xxxxx xxxx, xxxxx xx xxx xxxxxxxx xxxxx XXXx xxxx xxx xxxxxx. Xx xxx xxxx xxxxxxx "XXX xxxx" xx xxxxx xxxxxxx xxxxxxx xxxx, xxxx xxx XXX-XXX xxxxx xx xxx xx XXXX, xxx xxx xxxxx xxxxxxxxxx xx xxx xxxx-xxxx xxxx xxx XXX-XXX xxxxx xx xx xxx xxxx.
+Windows Phone 8.1 の従来の SIM ベース アプリでは AID がシステムに登録されませんが、このようなアプリを引き続き使用できるよう、Windows 10 Mobile の NFC 設定ページには "SIM カード" というメニュー オプションが用意されています。 ユーザーが既定の支払い用カードとして "SIM カード" を選択すると、ISO-DEP ルートが UICC に設定されます (ドロップダウン メニュー内の他の選択肢ではすべて、ISO-DEP ルート先はホスト)。
 
-Xxx XXX-XXX xxxxx xx xxx xx "XXX Xxxx" xxx xxxxxxx xxxx xxxx xx XX xxxxxxx XXX xxxx xxxx xxx xxxxxx xx xxxxxx xxx xxx xxxxx xxxx xxxx Xxxxxxx YY Xxxxxx. Xxxx xxx xxxx xxxxxxxx xx XXX xxxxxxx xxx xxx xxxx xxx xxxxxxx xxx XXX XXX xxxxx xxxxxxxxxxxxx, xxx XXX-XXX xxxxx xxxx xx xxxxxxx xx xxx xxxx. Xxx XXX-xxxxx xxxxxxxxxxxx xxxx xx xxxxxxxx xxx XXXx xx xxx XXX xx xxxxx xxx xxx xxxxxxxx XXX xxxxxx xx xx xxxxxxxxx xx xxx xxxxxxxxxx xxxxxxx xxxxx.
+デバイスが Windows 10 Mobile で初めて起動されると、SE 対応の SIM カードが搭載されているデバイスについては、ISO-DEP ルートが "SIM カード" に設定されます。 ユーザーが HCE 対応のアプリをインストールし、そのアプリでなんらかの HCE AID グループ登録が有効になった場合は、ISO-DEP ルート先がホストになります。 新しい SIM ベースのアプリケーションでは、特定の AID ルートがコントローラーのルーティング テーブルに設定されるように、AID を SIM に登録する必要があります。
 
-## Xxxxxxxx xx XXX xxxxx xxx
+## HCE ベース アプリの作成
 
-Xxxx XXX xxx xxx xxx xxxxx.
+HCE アプリには、2 つの部分があります。
 
--   Xxx xxxx xxxxxxxxxx xxx xxx xxx xxxx xxxxxxxxxxx.
--   X xxxxxxxxxx xxxx xxxx xx xxxxxxxxx xx xxx xxxxxx xx xxxxxxx XXXXx xxx x xxxxx XXX.
+-   メインのフォアグラウンド アプリ (ユーザー操作用)。
+-   指定された AID について APDU を処理するためにシステムによってトリガーされるバックグラウンド タスク。
 
-Xxxxxxx xx xxx xxxxxxxxx xxxxx xxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxx xxxx xxxxxxxxxx xxxx xx xxxxxxxx xx xx XXX xxx, xx xxxxxxxxx xxxx xxxx xxxxxx xxxxxxxxxx xxxx xx xxxxxxxxxxxx xx X++/XX xxxxxx xxxx (xxxxxxxxx xxx xxxxxxxxxxxx, xxxxxxxxxx, xx xxxxxxxxx xxx xxxxxx xx) xxxxxx xxxx X# xx xxxxxxx xxxx. Xxxxx X# xxx xxxxxxx xxxx xxxxxxxx xxxxxxxx xxxx, xxxxx xx xxxxxxxx, xxxx xxxxxxx xxx .XXX XXX, xxxx xxx xx xxxxxxx xx xxxxxxx xx xx X++/XX.
-## Xxxxxx xxx xxxxxxxx xxxx xxxxxxxxxx xxxx
+NFC タップへの応答としてバックグラウンド タスクを読み込む際にはきわめて高いパフォーマンスが求められるため、バックグラウンド タスク全体 (必要な依存関係、参照、ライブラリなどをすべて含めて) を C# やマネージ コードではなく、C++/CX のネイティブ コードで実装することをお勧めします。 C# およびマネージ コードは、通常はパフォーマンスに優れていますが、.NET CLR の読み込みなどによるオーバーヘッドが発生します。C++/CX では、これを回避することができます。
+## バックグラウンド タスクの作成と登録
 
-Xxx xxxx xx xxxxxx x xxxxxxxxxx xxxx xx xxxx XXX xxx xxx xxxxxxxxxx xxx xxxxxxxxxx xx XXXXx xxxxxx xx xx xx xxx xxxxxx. Xxxxxx xxx xxxxx xxxx xxxx xxx xx xxxxxxxx, xxx xxxxxxxxxx xxxxxxxxx xx XXX xxxxxxxxxx xxxx xxxx xxxxxxxxxx xxx [**XXxxxxxxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR224803) xxxxxxxxx xx xxxxx xx xxx xxxxxxxxx xxxx.
+システムによってルーティングされた APDU を処理し、これに応答するために、バックグラウンド タスクを HCE アプリに作成する必要があります。 アプリが初めて起動される際には、次のコードに示すように [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/BR224803) インターフェイスを実装する HCE バックグラウンド タスクがフォアグラウンドによって登録されます。
 
 ```csharp
 var taskBuilder = new BackgroundTaskBuilder();
@@ -95,16 +95,16 @@ taskBuilder.SetTrigger(new SmartCardTrigger(SmartCardTriggerType.EmulatorHostApp
 bgTask = taskBuilder.Register();
 ```
 
-Xxxxxx xxxx xxx xxxx xxxxxxx xx xxx xx [**XxxxxXxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn608017). **XxxxxxxxXxxxXxxxxxxxxxxXxxxxxxxx**. Xxxx xxxxx xxxx xxxxxxxx x XXXXXX XXX xxxxxxx XXXX xx xxxxxxxx xx xxx XX xxxxxxxxx xx xxxx xxx, xxxx xxxxxxxxxx xxxx xxxx xx xxxxxxxx.
+タスクのトリガーが [**SmartCardTriggerType**](https://msdn.microsoft.com/library/windows/apps/Dn608017). **EmulatorHostApplicationActivated** に設定されていることに注意してください。 これは、OS で受信した SELECT AID コマンドの APDU がアプリに解決されるたびに、バックグラウンド タスクが起動されることを意味します。
 
-## Xxxxxxx xxx xxxxxxx xx XXXXx
+## APDU の受信と応答
 
-Xxxx xxxxx xx xx XXXX xxxxxxxx xxx xxxx xxx, xxx xxxxxx xxxx xxxxxx xxxx xxxxxxxxxx xxxx. Xxxx xxxxxxxxxx xxxx xxxxxxxx xxx XXXX xxxxxx xxxxxxx xxx [**XxxxxXxxxXxxxxxxxXxxxXxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn894640) xxxxxx’x [**XxxxxxxXxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu.aspx) xxxxxxxx xxx xxxxxxxx xx xxx XXXX xxxxx xxx [**XxxXxxxxxxXxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/mt634299.aspx) xxxxxx xx xxx xxxx xxxxxx. Xxxxxxxx xxxxxxx xxxx xxxxxxxxxx xxxx xxx xxxxx xxxxxxxxxx xxx xxxxxxxxxxx xxxxxxx. Xxx xxxxxxx, xxxxxxx xx xxx XXXXx xxxxxxxxxxx xxx xxxx xxxx xxxxxxxxxx xxxx xxxx xxx xxxxxxxxxx xx xxxxxxxx. Xxx xx xxx xxxxxx xx XXX xxxxxxxxxxxx, xxxxx xxxx xx xxxx xxxxx xxxxxx xxxxxxx xxx xxxxxx xxx xxxx x xxxx xxxxx xxxxxx xx xxxx. Xxxx xxxxxxxxxx xxxx xxxx xxxxxxxx xx xxxxxxx xxxxxxx xxxx xxx xxxxxx xxxxx xxxx xxxxxxxxxx xx xxxxxxxxxxx, xx xxxxx xxxx xxx xxxx xxxxxxx x [**XxxxxXxxxXxxxxxxxXxxxxxxxxxXxxxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn894644) xxxxxx. Xxxx xxxxxxxxxx xxx xx xxxxxxxxxxx xxxxxxx xx xxx xxxxxxxxx xxxxxxx xx xxxxxxxxx xx xxx [**XxxxxXxxxXxxxxxxxXxxxxxxxxxXxxxxxxxxxxXxxxxXxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason) xxxxxxxx.
+アプリをターゲットとする APDU があると、システムは、このアプリのバックグラウンド タスクを起動します。 バックグラウンド タスクは、[**SmartCardEmulatorApduReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894640) オブジェクトの [**CommandApdu**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.smartcards.smartcardemulatorapdureceivedeventargs.commandapdu.aspx) プロパティを通じて渡された APDU を受信し、同じオブジェクトの [**TryRespondAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/mt634299.aspx) メソッドを使用して APDU に応答します。 パフォーマンスを考慮して、バックグラウンド タスクは軽量な操作に留めるよう検討してください。 たとえば、すべての処理が完了したら、直ちに APDU に応答し、バックグラウンド タスクを終了してください。 NFC トランザクションの性質から、ユーザーがリーダーに対してデバイスをかざす時間はきわめて短時間に限られています。 バックグラウンド タスクは、接続が無効になるまで継続的にリーダーからトラフィックを受信し、接続が無効になると [**SmartCardEmulatorConnectionDeactivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/Dn894644) オブジェクトを受信します。 接続は、[**SmartCardEmulatorConnectionDeactivatedEventArgs.Reason**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardemulatorconnectiondeactivatedeventargs.reason) プロパティで示されるように次の理由で無効になります。
 
--   Xx xxx xxxxxxxxxx xx xxxxxxxxxxx xxxx xxx **XxxxxxxxxxXxxx** xxxxx, xx xxxxx xxxx xxx xxxx xxxxxx xxxxx xxxxxx xxxx xxxx xxx xxxxxx. Xx xxxx xxx xxxxx xxx xxxx xx xxx xx xxx xxxxxxxx xxxxxx, xxx xxxxx xxxx xx xxxxxxxx xxxxxxxxx xxxx xxxx xxxxxxxx. Xxx xxxxxx xxxxxxxxx xxxx xxxxxxxxxx xxxx xxxxxxx (xx xxxxxxxxxx xxxx xxxxxxxx) xx xxxxxx xx xxxx xxx xxxxx xx xxx’x xx xxxxxxx xxxxxxx xxx xxx xxxxxxxx xxxxxxxxxx xxxx xx xxxx.
--   Xx xxx xxxxxxxxxx xx xxxxxxxxxxx xxxx xxx **XxxxxxxxxxXxxxxxxxxx**, xx xxxxx xxxx xxx xxxxxxxx xxxx x xxx XXXXXX XXX xxxxxxx XXXX xxxxxxxx xx x xxxxxxxxx XXX. Xx xxxx xxxx, xxxx xxx xxxxxx xxxx xxx xxxxxxxxxx xxxx xxxxxxxxxxx (xx xxxxxxxxxx xxxx xxxxxxxx) xx xxxxx xxxxxxx xxxxxxxxxx xxxx xx xxx.
+-   **ConnectionLost** 値で接続が無効になった場合は、ユーザーがリーダーからデバイスを離したことを意味します。 アプリでユーザーが端末にタップする時間を長くする必要がある場合は、フィードバックと共にプロンプトを表示することを検討してください。 ユーザーが再度タップしたときに、直前のバックグラウンド タスクが終了するまで待機したために遅延が生じることのないよう、バックグラウンド タスクは (保留を終了することで) 直ちに終了する必要があります。
+-   **ConnectionRedirected** で接続が無効になった場合は、端末によって新しい SELECT AID コマンドの APDU が送信され、別の AID に転送されたことを意味します。 この場合、別のバックグラウンド タスクが実行できるように、アプリは直ちに (保留を終了することで) バックグラウンド タスクを終了する必要があります。
 
-Xxx xxxxxxxxxx xxxx xxxxxx xxxx xxxxxxxx xxx xxx [**Xxxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR224798) xx [**XXxxxxxxxxxXxxxXxxxxxxx xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR224797), xxx xxxxxxxx xxxxxxx xxxx xxx xxxxxxxxxx xxxx (xx xxxxxxxxxx xxxx xxxxxxxx) xxxxxxx xxxx xxxxx xx xxxxx xx xxx xxxxxx xxxx xx xx xxxxxxxx xxxx xxxx xxxxxxxxxx xxxx. Xxxxx xx xxxx xxxx xxxxxxxxxxxx xx XXX xxx xxxxxxxxxx xxxx.
+バックグラウンド タスクは、[**IBackgroundTaskInstance インターフェイス**](https://msdn.microsoft.com/library/windows/apps/BR224797)の [**Canceled イベント**](https://msdn.microsoft.com/library/windows/apps/BR224798)にも登録し、同様に (保留を終了することで) バックグラウンド タスクを直ちに終了する必要があります。このイベントは、バックグラウンド タスクの終了時にシステムによって発生するためです。 次のコードでは、HCE アプリのバックグラウンド タスクのデモを示しています。
 
 ```csharp
 void BgTask::Run(
@@ -197,13 +197,13 @@ void BgTask::HandleHceActivation()
  }
 }
 ```
-## Xxxxxx xxx xxxxxxxx XXX xxxxxx
+## AID グループの作成と登録
 
-Xxxxxx xxx xxxxx xxxxxx xx xxxx xxxxxxxxxxx xxxx xxx xxxx xx xxxxx xxxxxxxxxxx, xxx xxxx xxxxxx xxx xxxxxxxx XXX xxxxxx xxxx xxx xxxxxx. Xxx xxxxxx xxxxxxxxxx xxx xxx xxxx xx xxxxxxxx xxxxxx xxxxx xxxx xx xxxx xx xxx xxxxx XXXXx xxxxxxxxxxx xxxxx xx xxx xxxxxxxxxx XXXx xxx xxxx xxxxxxxx.
+カードのプロビジョニング時にアプリケーションを初めて起動すると、AID グループが作成され、システムに登録されます。 システムは、外部リーダーが対話する必要のあるアプリを判断し、登録されている AID とユーザー設定に基づいて APDU をルーティングします。
 
-Xxxx xx xxx xxxxxxx xxxxx xxxxxxxx xxx xxx xxxx XXX (xxxxx xx XXXX XXX) xxxxx xxxx xxxxxxxxxx xxxxxxx xxxxxxx xxxx xxxxxxxx XXXx. Xxxx XXX xxxxx xxxxxxxxxx x xxxx xxx xxxx xxx xxxx xxxxxxx xxx xxxx, xxx XXXx xx xxx xxxxx xxx xxxxxxx. Xxxxxxxxx, xxxx xxx xxxx xxxxxxxxxxx xxx xxxx, xxx XXXx xx xxx xxxxx xxx xxxxxxxx.
+ほとんどの支払い用カードは、追加の支払い用ネットワーク カード固有の AID と共に同じ AID (PPSE AID) に登録されます。 各 AID グループはカードを表し、ユーザーがそのカードを有効にすると、グループ内のすべての AID が有効になります。 同様に、ユーザーがカードを無効にすると、そのグループ内のすべての AID が無効になります。
 
-Xx xxxxxxxx xx XXX xxxxx, xxx xxxx xx xxxxxx x [**XxxxxXxxxXxxxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn910955) xxxxxx xxx xxx xxx xxxxxxxxxx xx xxxxxxx xxxx xxxx xx xx XXX-xxxxx xxxxxxx xxxx. Xxxx xxxxxxx xxxx xxxxxx xx xxxxxxxxxxx xx xxx xxxx xxxxxxx xx xxxx xxxx xx xx xxx XXX xxxxxxxx xxxx xx xxxx xx xxxx xxxxxxx. Xxx XXX xxxxxxx xxxxx, xxx [**XxxxxXxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) xxxxxxxx xxxxxx xx xxx xx **Xxxxxxx** xxx xxx [**XxxxxXxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) xxxxxxxx xxxxxx xx xxx xx **Xxxx**.
+AID グループを登録するには、[**SmartCardAppletIdGroup**](https://msdn.microsoft.com/library/windows/apps/Dn910955) オブジェクトを作成し、HCE ベースの支払い用カードであることが反映されるようにプロパティを設定する必要があります。 表示名は、NFC 設定メニューにもユーザー プロンプトにも使用されるため、ユーザーにわかりやすい名前にする必要があります。 HCE 支払い用カードの場合、[**SmartCardEmulationCategory**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) プロパティは **Payment** に、[**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) プロパティは **Host** に設定する必要があります。
 
 ```csharp
 public static byte[] AID_PPSE =
@@ -221,7 +221,7 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Host);
 ```
 
-Xxx xxx-xxxxxxx XXX xxxxx, xxx [**XxxxxXxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) xxxxxxxx xxxxxx xx xxx xx **Xxxxx** xxx xxx [**XxxxxXxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) xxxxxxxx xxxxxx xx xxx xx **Xxxx**.
+支払い用以外の HCE カードの場合、[**SmartCardEmulationCategory**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationcategory.aspx) プロパティは **Other** に、[**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/windows.devices.smartcards.smartcardappletidgroup.smartcardemulationtype) プロパティは **Host** に設定する必要があります。
 
 ```csharp
 public static byte[] AID_OTHER =
@@ -238,23 +238,24 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Host);
 ```
 
-Xxx xxx xxxxxxx xx xx Y XXXx (xx xxxxxx Y-YY xxxxx xxxx) xxx XXX xxxxx.
+各 AID グループには、最大 9 個の AID (それぞれの長さは 5 ～ 16 バイト) を含めることができます。
 
-Xxx xxx [**XxxxxxxxXxxxxxXxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn894656) xxxxxx xx xxxxxxxx xxxx XXX xxxxx xxxx xxx xxxxxx, xxxxx xxxx xxxxxx x [**XxxxxXxxxXxxxxxXxXxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration) xxxxxx. Xx xxxxxxx, xxx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) xxxxxxxx xx xxx xxxxxxxxxxxx xxxxxx xx xxx xx **Xxxxxxxx**. Xxxx xxxxx xxxx xxxxxx xxxx XXXx xxx xxxxxxxxxx xxxx xxx xxxxxx, xxxx xxx xxx xxxxxxx xxx xxx xxx’x xxxxxxx xxxxxxx.
+AID グループをシステムに登録するには、[**RegisterAppletIdGroupAsync**](https://msdn.microsoft.com/library/windows/apps/Dn894656) メソッドを使用します。このメソッドからは [**SmartCardAppletIdGroupRegistration**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration) オブジェクトが返されます。 既定では、登録オブジェクトの [**ActivationPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) プロパティは **Disabled** に設定されます。 つまり、AID がシステムに登録されていても、この時点では有効になっておらず、トラフィックを受信しません。
 
 ```csharp
 reg = await SmartCardEmulator.RegisterAppletIdGroupAsync(appletIdGroup);
 ```
 
-Xxx xxx xxxxxx xxxx xxxxxxxxxx xxxxx (XXX xxxxxx) xx xxxxx xxx [**XxxxxxxXxxxxxxxxxXxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_requestactivationpolicychangeasync) xxxxxx xx xxx[**XxxxxXxxxXxxxxxXxXxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration) xxxxx xx xxxxx xxxxx. Xxxxxxx xxxx x xxxxxx xxxxxxx xxxx xxx xx xxxxxxx xx x xxxx xx xxx xxxxxx, xxxxxxx xxx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) xx x xxxxxxx XXX xxxxx xx **Xxxxxxx** xx xxx xxxx xx xxxxxxx xxx xxxxxxx xxxxxxx xxxx. Xxx xxxx xxxx xx xxxxxxxx xx xxxxx xxxx xxxx xx x xxxxxxx xxxxxxx xxxx, xxxxxxxxxx xx xxxxxxx xxxxx xx x xxxxxxx xxxxxxx xxxx xxxxxxx xxxxxxxx xx xxx. Xxxx xxxxxxxxx xx xxx xxxx xx xxxx xxx xx xxxxxxx xxx xxxxxxx xxxxxxx xxxxxxxxxxx, xxx xx xxxxxx xxxxxxxx xxxxxxx xx’x xxx XXX xxxxxx. Xxx xxx xxxxxxxx xx xx YY XXX xxxxxx xxx xxx.
+登録済みのカード (AID グループ) は、次に示されているように [**SmartCardAppletIdGroupRegistration**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration) クラスの [**RequestActivationPolicyChangeAsync**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_requestactivationpolicychangeasync) メソッドを使用して有効にすることができます。 システムで一度に有効にできる支払い用カードは 1 枚だけであるため、支払い AID グループの [**ActivationPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) を **Enabled** に設定することは、既定の支払い用カードを設定することと同じ意味になります。 既定の支払い用カードが既に選択されているかどうかに関係なく、このカードを既定の支払い用カードとして設定するかどうかをユーザーに確認するメッセージが表示されます。 アプリが既に既定の支払いアプリケーションであり、単に AID グループ間で変更する場合、この記述は該当しません。 アプリごとに最大で 10 の AID グループを登録することができます。
 
 ```csharp
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.Enabled);
 ```
 
-Xxx xxx xxxxx xxxx xxx’x xxxxxxxxxx XXX xxxxxx xxxx xxx XX xxx xxxxx xxxxx xxxxxxxxxx xxxxxx xxxxx xxx [**XxxXxxxxxXxXxxxxXxxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn894654) xxxxxx.
+[
+            **GetAppletIdGroupRegistrationsAsync**](https://msdn.microsoft.com/library/windows/apps/Dn894654) メソッドを使用すると、OS に対してアプリの登録済み AID グループを照会し、アクティブ化ポリシーを確認できます。
 
-Xxxxx xxxx xx xxxxxxxx xxxx xxx xxxxxx xxx xxxxxxxxxx xxxxxx xx x xxxxxxx xxxx xxxx **Xxxxxxxx** xx **Xxxxxxx**, xxxx xx xxxx xxx xx xxx xxxxxxx xxx xxxxxxx xxxxxxx xxx. Xxxxx xxxx xxxx xx xxxxxxxx xxxx xxx xxxxxx xxx xxxxxxxxxx xxxxxx xx x xxx-xxxxxxx xxxx xxxx **Xxxxxxxx** xx **Xxxxxxx** xx xxxxx xx xx XXX xxxxxxxx.
+支払い用カードのアクティブ化ポリシーを **Disabled** から **Enabled** に変更する場合にユーザーに確認が求められるのは、アプリがまだ既定の支払いアプリになっていない場合のみです。 支払い用以外のカードのアクティブ化ポリシーを **Disabled** から **Enabled** に変更する場合にユーザーに確認が求められるのは、AID の競合が存在する場合のみです。
 
 ```csharp
 var registrations = await SmartCardEmulator.GetAppletIdGroupRegistrationsAsync();
@@ -264,9 +265,9 @@ registration.RequestActivationPolicyChangeAsync (AppletIdGroupActivationPolicy.E
     }
 ```
 
-**Xxxxx xxxxxxxxxxxx xxxx xxxxxxxxxx xxxxxx xxxxxx**
+**アクティブ化ポリシー変更時のイベント通知**
 
-Xx xxxx xxxxxxxxxx xxxx, xxx xxx xxxxxxxx xx xxxxxxx xxxxxx xxx xxxx xxx xxxxxxxxxx xxxxxx xx xxx xx xxxx XXX xxxxx xxxxxxxxxxxxx xxxxxxx xxxxxxx xx xxxx xxx. Xxx xxxxxxx, xxx xxxx xxx xxxxxx xxx xxxxxxx xxxxxxx xxx xxxxxxx xxx XXX xxxxxxxx xxxx xxxx xxx xx xxxx xxxxx xx xxxxxxx xxxx xxxxxx xx xxxxxxx xxx. Xx xxxx xxx xxxxx xx xxxx xxxxx xxxx xxxxxx xxx xxxxxxxx xxxxx xxxx xx xxxxxxxx xxxx xxxxx, xxx xxx xxxxxxx xxxxx xxxxxxxxxxxxx xxx xxxx xxxxxx xxx xxxx xxxxxx xx xxxx xxx xxxxxxxxxxx.
+バックグラウンド タスクでは、アプリの外でいずれかの AID グループ登録のアクティブ化ポリシーが変更された場合に備えてイベントを受信できるように登録できます。 たとえばユーザーは、NFC 設定メニューで既定の支払いアプリを元のカードから、別のアプリでホストされている別のカードに変更することができます。 ライブ タイルの更新など、内部セットアップ用にこの変更をアプリで認識する必要がある場合は、この変更のイベント通知を受信し、その通知に応じてアプリ内で対処することができます。
 
 ```csharp
 var taskBuilder = new BackgroundTaskBuilder();
@@ -276,15 +277,16 @@ taskBuilder.SetTrigger(new SmartCardTrigger(SmartCardTriggerType.EmulatorAppletI
 bgTask = taskBuilder.Register();
 ```
 
-## Xxxxxxxxxx xxxxxxxx xxxxxxxx
+## フォアグラウンドのオーバーライド動作
 
-Xxx xxx xxxxxx xxx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) xx xxx xx xxxx XXX xxxxx xxxxxxxxxxxxx xx **XxxxxxxxxxXxxxxxxx** xxxxx xxxx xxx xx xx xxx xxxxxxxxxx xxxxxxx xxxxxxxxx xxx xxxx. Xxxx xxx xxxx xxxx xxxxx xxxxxx xx x xxxxxxxx xxxxx xxxx xxx xx xx xxx xxxxxxxxxx, xxx xxxxxxx xx xxxxxx xx xxxx xxx xxxx xx xxxx xx xxxx xxxxxxx xxxxx xxxx xxxxxx xx xxx xxxx xx xxxxx xxxxxxx xxxxxxx xxxx. Xxxx xxx xxxxxx x xxxx’x xxxxxxxxxx xxxxxx xx **XxxxxxxxxxXxxxxxxx**, xxxx xxxxxx xx xxxx xxxxxxxxx xxxxx xxxx xxx xxxxxx xxx xxxxxxxxxx xxx xx xxxx xxx xxxxxx xxx xxxxxxx xxxxxxx xxxxxxx xxxx xxx xx xxx xxxx. Xxx xxx xxxxxx xxx **XxxxxxxxxxXxxxxx** xx xxxx xxxxxxx xx xxx-xxxxxxx xxxxx xxxx xxxx xxxxxxxxxx xxx xx xxxxxxx. Xxxx xxxx xxx [**XxxxxxxXxxxxxxxxxXxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_requestactivationpolicychangeasync) xxxxxx xxx xxxx xx xxxxxx xxxx x xxxxxxxxxx xxx xxx xxxxxx xx xxxxxx xxxx x xxxxxxxxxx xxxx.
+アプリがフォアグラウンドになっている間は、ユーザーに確認することなく AID グループ登録の [**ActivationPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_activationpolicy) を **ForegroundOverride** に変更することができます。 アプリがフォアグラウンドになっている間にユーザーがデバイスで端末をタップすると、ユーザーがいずれの支払い用カードも既定の支払い用カードとして選択していなくても、トラフィックはアプリにルーティングされます。 カードのアクティブ化ポリシーを **ForegroundOverride** に変更した場合、この変更はアプリがフォアグラウンドから移行するまでの一時的なものであり、ユーザーによって設定された現在の既定支払い用カードは変更されません。 支払い用カードまたは支払い用以外のカードの **ActivationPolicy** は、フォアグラウンド アプリから次のように変更できます。 [
+            **RequestActivationPolicyChangeAsync**](https://msdn.microsoft.com/library/windows/apps/Dn910955registration_requestactivationpolicychangeasync) メソッドを呼び出すことができるのはフォアグラウンド アプリからのみであり、バックグラウンド タスクから呼び出すことはできない点に注意してください。
 
 ```csharp
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundOverride);
 ```
 
-Xxxx, xxx xxx xxxxxxxx xx XXX xxxxx xxxxxxxxxx xx x xxxxxx Y-xxxxxx XXX xxxxx xxxx xxxxx xxx xxxxxx xx xxxxx xxx XXXXx xxxxxxxxxx xx xxx XXX xxx xxxxxxxxx xxx xxxxxxx XXXXx xxxx xxxxxx x XXXXXX XXX xxxxxxx xx xxxxxxxx. Xxxxxxx, xxxx xx XXX xxxxx xxxx xxxxx xxxxx xxxx xxx xx xx xxx xxxxxxxxxx xxxxxxx xx xxx xxxx xx xxx xx **XxxxxxxxxxXxxxxxxx** xxx xxxxxx xx xxxxxxxxxxx xxxxxxx. Xxxx, xxxx xxxxxxxxx xxxxx xxxx xxx **Xxxx** xxx **XXXX** xxxxxx xx xxx [**XxxxxXxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn894639) xxxxxxxxxxx xx xxxxxx xxxxx xxx xxxxxxx xx xxxx XXX xxxxxxxxxx xxxx, xx xx xxx XXX xxxx.
+また、長さ 0 の単一 AID から成る AID グループを登録することもできます。その場合は、SELECT AID コマンドの受信前に送信されたコマンドの APDU もすべて含めて、AID に関係なくすべての APDU がルーティングされます。 ただし、このような AID グループは **ForegroundOverride** にしか設定できず、常に有効にしておくことはできないため、機能するのはアプリがフォアグラウンドになっている間のみです。 また、すべてのトラフィックを HCE バックグラウンド タスクまたは SIM カードにルーティングするために、このメカニズムは [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/Dn894639) 列挙の値が **Host** の場合と **UICC** の場合の両方に使用できます。
 
 ```csharp
 public static byte[] AID_Foreground =
@@ -299,33 +301,33 @@ reg = await SmartCardEmulator.RegisterAppletIdGroupAsync(appletIdGroup);
 reg.RequestActivationPolicyChangeAsync(AppletIdGroupActivationPolicy.ForegroundOverride);
 ```
 
-## Xxxxx xxx XXX xxx XXX xxxxxxx
+## NFC および HCE サポートの確認
 
-Xxxx xxx xxxxxx xxxxx xxxxxxx x xxxxxx xxx XXX xxxxxxxx, xxxxxxxx xxx xxxx xxxxxxxxx xxxxxxx, xxx xxxxxxxx xxxx xxxx xxxxxxxxx xxxxx xx xxxxxxxx xxxx xxxxxxxx xx xxx xxxx.
+アプリでは、デバイスに NFC ハードウェアがあるかどうか、カード エミュレーション機能がサポートされているかどうか、これらの機能をユーザーに提供する前にホスト カード エミュレーションがサポートされるかどうかを確認する必要があります。
 
-Xxx XXX xxxxx xxxx xxxxxxxxx xxxxxxx xx xxxx xxxxxxx xx Xxxxxxx YY Xxxxxx, xx xxxxxx xx xxx xxx xxxxx xxxx xxxxxxxx XXXx xx xxx xxxxx xxxxxxxx xx Xxxxxxx YY, xxxx xxxxx xxxxxx. Xxx xxx xxxxx xxx xxxxx xxxx XXX xxxxxxx xx xxx xxxxxxxxx xxxx xxxxxxx.
+NFC スマート カード エミュレーション機能は、Windows 10 Mobile のみで有効になるため、Windows 10 の他のバージョンでスマート カード エミュレーター API を使用しようとすると、エラーが発生します。 次のコード スニペットでは、スマート カード API のサポートを確認することができます。
 
 ```csharp
 Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.Devices.SmartCards.SmartCardEmulator");
 ```
 
-Xxx xxx xxxxxxxxxxxx xxxxx xx xxx xx xxx xxxxxx xxx XXX xxxxxxxx xxxxxxx xx xxxx xxxx xx xxxx xxxxxxxxx xx xxxxxxxx xx xxx [**XxxxxXxxxXxxxxxxx.XxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn608008) xxxxxx xxxxxxx xxxx. Xx xx xxxx, xxxx xx XXX xxxx xxxxxxxxx xx xxxxxxxxx xx xxx xxxxxx.
+さらに、[**SmartCardEmulator.GetDefaultAsync**](https://msdn.microsoft.com/library/windows/apps/Dn608008) メソッドから null が返されるかどうかを確認することによって、なんらかの形でカード エミュレーションが可能な NFC ハードウェアがデバイスに存在するかどうかを確認することもできます。 null が返される場合、そのデバイスでは NFC カード エミュレーションがサポートされません。
 
 ```csharp
 var smartcardemulator = await SmartCardEmulator.GetDefaultAsync();<
 ```
 
-Xxxxxxx xxx XXX xxx XXX-xxxxx XXXX xxxxxxx xx xxxx xxxxxxxxx xx xxxxxxxx xxxxxxxx xxxxxxx xxxx xx xxx Xxxxx YYY, YYY, YYY, xxx YYY XX. Xxx xxx XXX xxxxxxx xxxxxxx xxxxxxx Xxxxxxx YY Xxxxxx xxx xxxxx xxxxxx xxxxxxx XXX. Xxxx xxx xxx xxxxx xxx XXX xxxxxxx xx xxxxxxx.
+HCE ベースおよび AID ベースの UICC ルーティングは、Lumia 730、830、640、640 XL など最近発売されたデバイスでのみサポートされます。 Windows 10 Mobile 以降を実行する新しい NFC 対応デバイスでは、HCE がサポートされていると考えることができます。 アプリでは、次のようにして HCE サポートを確認できます。
 
 ```csharp
 Smartcardemulator.IsHostCardEmulationSupported();
 ```
 
-## Xxxx xxxxxx xxx xxxxxx xxx xxxxxxxx
+## ロック画面と画面オフの動作
 
-Xxxxxxx YY Xxxxxx xxx xxxxxx-xxxxx xxxx xxxxxxxxx xxxxxxxx, xxxxx xxx xx xxx xx xxx xxxxxx xxxxxxxx xx xxx xxxxxxxxxxxx xx xxx xxxxxx. Xx xxxxxxx, "xxx xx xxx" xxxxxx xx xxxxxxxx xxx xxx "xxxxxxxxxx xxxxxx xx xxxxxx xxxxx" xx xxx xx "Xxxxxx", xxxxxx xxx XX xx XXX xxxxxxxxxx xxxxx xxxxxx.
+Windows 10 Mobile にはデバイス レベルでのカード エミュレーション設定が用意されており、通信事業者またはデバイスの製造元での設定が可能です。 既定では、"タップして支払い" のトグルがオフになっており "デバイス レベルでの有効化ポリシー" が "常時" に設定されています (通信事業者または OEM パートナーによってこれらの値が上書きされていない場合)。
 
-Xxxx xxxxxxxxxxx xxx xxxxx xxx xxxxx xx xxx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn608006) xx xxxxxx xxxxx xxx xxxx xxxxxx xxx xxxx xxxx xxxxxxxxx xx xxx xxxxxxx xxxxxxxx xx xxxx xxx xx xxxx xxxxx.
+アプリケーションでは、デバイス レベルで [**EnablementPolicy**](https://msdn.microsoft.com/library/windows/apps/Dn608006) の値を照会し、それぞれの状態で望ましいアプリの動作に基づいて、各ケースに対処することができます。
 
 ```csharp
 SmartCardEmulator emulator = await SmartCardEmulator.GetDefaultAsync();
@@ -348,10 +350,10 @@ return "Card emulation always on";
 }
 ```
 
-Xxxx xxx'x xxxxxxxxxx xxxx xxxx xx xxxxxxxx xxxx xx xxx xxxxx xx xxxxxx xxx/xx xxx xxxxxx xx xxx xxxx xx xxx xxxxxxxx xxxxxx xxxxxxx xx XXX xxxx xxxxxxxx xx xxxx xxx. Xxx xxx xxxxxxx xx xxx xxxxxxxx xxxx xxx xxxxxx xx xxxx xxxxxxxxxx xxxx, xxx xx xxx xxxx xxx xxxxx xxxx xxx xxxx xx xx xxx xxxx xx xxxx x xxxxxxx xx xxx xxxx, xxx xxx xxxxxx xxxx xxxxxxxxxx xxx xxxx xxxx xxxxxxxxx. Xxxx xxxxxxxxxx xxxx xxx xxxxxx xxxx xxxxxxxxxx xxx xxxx xxx xxxxxxxxx xxxxxxxx.
+電話がロックされている場合または画面がオフの場合、あるいはその両方に該当する場合も、アプリのバックグラウンド タスクが起動されます (そのアプリに解決される AID が外部リーダーによって選択された場合のみ)。 リーダーからのコマンドにはバックグラウンドで応答できますが、ユーザーによる操作が必要である場合や、ユーザーにメッセージを表示する必要がある場合は、いくつかの引数を指定してフォアグラウンド アプリを起動することができます。 バックグラウンド タスクでは、次の動作でフォアグラウンド アプリを起動できます。
 
--   Xxxxx xxx xxxxxx xxxx xxxxxx (xxx xxxx xxxx xxx xxxx xxxxxxxxxx xxx xxxx xxxxx xxx xxxxxxx xxx xxxxxx)
--   Xxxxx xxx xxxxxx xxxx xxxxxx (xxxxx xxx xxxx xxxxxxxxx xxxx xxx, xxx xxxxxx xx xxxxx xx xxxxxx xxxxx)
+-   デバイスのロック画面下で起動 (ユーザーがフォアグラウンド アプリを目にするのはデバイスのロックを解除した後)
+-   デバイスのロック画面上で起動 (ユーザーがアプリを終了した後も、デバイスはロックされた状態)
 
 ```csharp
         if (Windows::Phone::System::SystemProtection::ScreenLocked)
@@ -361,9 +363,9 @@ Xxxx xxx'x xxxxxxxxxx xxxx xxxx xx xxxxxxxx xxxx xx xxx xxxxx xx xxxxxx xxx/xx x
         } 
 ```
 
-## XXX xxxxxxxxxxxx xxx xxxxx xxxxxxx xxx XXX xxxxx xxxx
+## SIM ベース アプリに関する AID 登録およびその他の更新
 
-Xxxx xxxxxxxxx xxxx xxxx xxx xxx XXX xx xxx xxxxxx xxxxxxx xxx xxxxxxxx xxxx xxx Xxxxxxx xxxxxxx xx xxxxxxx xxx XXXx xxxxxxxxx xx xxx XXX. Xxxx xxxxxxxxxxxx xx xxxx xxxxxxx xx xx XXX-xxxxx xxx xxxxxxxxxxxx. Xxx xxxx xxxxxxxxxx xx xxx [**XxxxxXxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn894639), xxxxx xxxxxx xx xxx xx Xxxx xxx XXX-xxxxx xxxx. Xx xxx xxxxxx xx xxx xxxxxxx xxxx xxxxxxxxxxxx, xxx xxxxxxx xxxx xx xxx xxxx xxxx xxxx xx xxxxxxxxx xx xxx XXX xxxxxxx xxxx.
+セキュア エレメントとして SIM を使用するカード エミュレーション アプリは Windows サービスに登録して、SIM でサポートされている AID を宣言できます。 この登録は、HCE ベースのアプリ登録とよく似ています。 唯一の違いは [**SmartCardEmulationType**](https://msdn.microsoft.com/library/windows/apps/Dn894639) です。SIM ベースのアプリの場合は、これを Uicc に設定する必要があります。 支払い用カードを登録した結果、カードの表示名が NFC 設定メニューに表示されます。
 
 ```csharp
 var appletIdGroup = new SmartCardAppletIdGroup(
@@ -373,9 +375,13 @@ var appletIdGroup = new SmartCardAppletIdGroup(
                                 SmartCardEmulationType.Uicc);
 ```
 
-** Xxxxxxxxx **  
-Xxx xxxxxx xxxxxx XXX xxxxxxxxx xxxxxxx xx Xxxxxxx Xxxxx Y.Y xxx xxxx xxxxxxx xxx xxxxxxxx xxxx xxx xxxxxxx XXX xxxxxxx xx Xxxxxxx YY Xxxxxx, xxx xxx xxxxxx Xxxxxxx Xxxxx Y.Y xxxx xxxxxxx xx xxxx xxxx xxxxxx xx xxx xxx xxx Xxxxxxx YY Xxxxxx XXX XXXx.
+** 重要 **  
+Windows Phone 8.1 での従来のバイナリ SMS インターセプト サポートは廃止され、Windows 10 Mobile ではより広範な新しい SMS サポートに置き換わっていますが、旧サポートに依存していた従来の Windows Phone 8.1 アプリは、新しい Windows 10 Mobile SMS API を使用できるように更新する必要があります。
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

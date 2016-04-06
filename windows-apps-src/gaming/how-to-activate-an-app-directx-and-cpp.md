@@ -1,22 +1,22 @@
 ---
-xxxxx: Xxx xx xxxxxxxx xx xxx (XxxxxxX xxx X++)
-xxxxxxxxxxx: Xxxx xxxxx xxxxx xxx xx xxxxxx xxx xxxxxxxxxx xxxxxxxxxx xxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX xxx.
-xx.xxxxxxx: xYYxYxxY-YxYx-YxYY-YxYY-YYYYxxYYYxYY
+title: アプリをアクティブ化する方法 (DirectX と C++)
+description: ここでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリのアクティブ化エクスペリエンスを定義する方法について説明します。
+ms.assetid: b07c7da1-8a5e-5b57-6f77-6439bf653a53
 ---
 
-# Xxx xx xxxxxxxx xx xxx (XxxxxxX xxx X++)
+# アプリをアクティブ化する方法 (DirectX と C++)
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxx xxxxx xxxxx xxx xx xxxxxx xxx xxxxxxxxxx xxxxxxxxxx xxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX xxx.
+ここでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリのアクティブ化エクスペリエンスを定義する方法について説明します。
 
-## Xxxxxxxx xxx xxx xxxxxxxxxx xxxxx xxxxxxx
+## アプリのアクティブ化イベント ハンドラーを登録する
 
 
-Xxxxx, xxxxxxxx xx xxxxxx xxx [**XxxxXxxxxxxxxxxXxxx::Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225018) xxxxx, xxxxx xx xxxxxx xxxx xxxx xxx xx xxxxxxx xxx xxxxxxxxxxx xx xxx xxxxxxxxx xxxxxx.
+まず、[**CoreApplicationView::Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを処理するための登録を行います。このイベントは、アプリが開始され、オペレーティング システムによって初期化されるときに発生します。
 
-Xxx xxxx xxxx xx xxxx xxxxxxxxxxxxxx xx xxx [**XXxxxxxxxxXxxx::Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700495) xxxxxx xx xxxx xxxx xxxxxxxx (xxxxx **XxXxxxXxxxxxxx** xx xxx xxxxxxx):
+次のコードをビュー プロバイダー (この例では **MyViewProvider** という名前) の [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) メソッドの実装に追加します。
 
 ```cpp
 void App::Initialize(CoreApplicationView^ applicationView)
@@ -31,10 +31,10 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## Xxxxxxxx xxx XxxxXxxxxx xxxxxxxx xxx xxx xxx
+## アプリの CoreWindow インスタンスをアクティブ化する
 
 
-Xxxx xxxx xxx xxxxxx, xxx xxxx xxxxxx x xxxxxxxxx xx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxx xxxx xxx. **XxxxXxxxxx** xxxxxxxx xxx xxxxxx xxxxx xxxxxxx xxxxxxxxxx xxxx xxxx xxx xxxx xx xxxxxxx xxxxxx xxxxxx. Xxxxxx xxxx xxxxxxxxx xx xxxx xxxxxxxx xxx xxx xxx xxxxxxxxxx xxxxx xx xxxxxxx [**XxxxXxxxxx::XxxXxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701589). Xxxx xxx xxxx xxxxxxxx xxxx xxxxxxxxx, xxxxxxxx xxx xxxx xxx xxxxxx xx xxxxxxx [**XxxxXxxxxx::Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208254).
+アプリの起動時に、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) への参照を取得する必要があります。 **CoreWindow** には、アプリがウィンドウ イベントの処理に使うウィンドウ イベント メッセージ ディスパッチャーが含まれています。 アプリのアクティブ化イベントのコールバックで、[**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) を呼び出して、この参照を取得します。 この参照を取得したら、[**CoreWindow::Activate**](https://msdn.microsoft.com/library/windows/apps/br208254) を呼び出して、メイン アプリ ウィンドウをアクティブ化します。
 
 ```cpp
 void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^ args)
@@ -44,10 +44,10 @@ void App::OnActivated(CoreApplicationView^ applicationView, IActivatedEventArgs^
 }
 ```
 
-## Xxxxx xxxxxxxxxx xxxxx xxxxxxx xxx xxx xxxx xxx xxxxxx
+## メイン アプリ ウィンドウのイベント メッセージの処理の開始
 
 
-Xxxx xxxxxxxxx xxxxx xx xxxxx xxxxxxxx xxx xxxxxxxxx xx xxx [**XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208211) xxx xxx xxx'x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225). Xxxx xxxxxxxx xxxx xxx xx xxxxxxx xx xxx xx xxx xxxx [**XxxxXxxxxxxxxx::XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208215) xxxx xxxx xxx'x xxxx xxxx (xxxxxxxxxxx xx xxx [**XXxxxxxxxxXxxx::Xxx**](https://msdn.microsoft.com/library/windows/apps/hh700505) xxxxxx xx xxxx xxxx xxxxxxxx).
+作成したコールバックは、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) の [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) によって処理されるイベント メッセージとして発生します。 このコールバックは、アプリのメイン ループ (ビュー プロバイダーの [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) メソッドで実装) から [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) を呼び出さない場合は呼び出されません。
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -74,17 +74,21 @@ void App::Run()
 }
 ```
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
 
-* [Xxx xx xxxxxxx xx xxx (XxxxxxX xxx X++)](how-to-suspend-an-app-directx-and-cpp.md)
-* [Xxx xx xxxxxx xx xxx (XxxxxxX xxx X++)](how-to-resume-an-app-directx-and-cpp.md)
+* [アプリを一時停止する方法 (DirectX と C++)](how-to-suspend-an-app-directx-and-cpp.md)
+* [アプリを再開する方法 (DirectX と C++)](how-to-resume-an-app-directx-and-cpp.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

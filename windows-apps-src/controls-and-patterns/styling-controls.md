@@ -1,32 +1,32 @@
 ---
-Xxxxxxxxxxx: Xxxxxx xxx xxx xxx xxxxxxx xxxxxxxxxx xxx xxxxx xxxxx xxxxxxxx xxx x xxxxxxxxxx xxxxxxxxxx xxxxxx xxxxxxxx xxxxxxxx.
-XX-XXXX: 'xxx\_xxxx\_xxxxxx\_xxx.xxxxxxx\_xxxxxxxx'
-XXXXxxx: 'XxxxxxxxxXxx:/xxxxxxx/xxxxxxx/xxxx'
-Xxxxxx.Xxxxxxx: xXXXxXxxxxxx YYXXxxx
-xxxxx: Xxxxxxx xxxxxxxx
-xx.xxxxxxx: XXYYYXYY-XXXY-YYXY-YYYY-YYYXYXXXYYYY
-xxxxx: Xxxxxxx xxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
+MS-HAID: 'dev\_ctrl\_layout\_txt.styling\_controls'
+MSHAttr: 'PreferredLib:/library/windows/apps'
+Search.Product: eADQiWindows 10XVcnh
+title: Styling controls
+ms.assetid: AB469A46-FAF5-42D0-9340-948D0EDF4150
+label: Styling controls
+template: detail.hbs
 ---
 
-# Xxxxxxx xxxxxxxx
+# Styling controls
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxx xxx xxxxxxxxx xxx xxxxxxxxxx xx xxxx xxxx xx xxxx xxxx xx xxxxx xxx XXXX xxxxxxxxx. Xxxxxx xxx xxx xxx xxxxxxx xxxxxxxxxx xxx xxxxx xxxxx xxxxxxxx xxx x xxxxxxxxxx xxxxxxxxxx xxxxxx xxxxxxxx xxxxxxxx.
+You can customize the appearance of your apps in many ways by using the XAML framework. Styles let you set control properties and reuse those settings for a consistent appearance across multiple controls.
 
-## Xxxxx xxxxxx
+## Style basics
 
 
-Xxx xxxxxx xx xxxxxxx xxxxxx xxxxxxxx xxxxxxxx xxxx xxxxxxxx xxxxxxxxx. Xxxx'x xx xxxxxxx xxxx xxxxx Y xxxxxxx xxxx x xxxxx xxxx xxxx xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209397), [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209399) xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209414) xxxxxxxxxx. Xx xxxxxxxx x xxxxx, xxx xxx xxxx xxx xxxxxxxx xxxxxx xxx xxxx xxxxxxx xxxxxx xx xxx xxxxx xxxxxxxxxx xx xxxx xxxxxxx xxxxxxxxxx.
+Use styles to extract visual property settings into reusable resources. Here's an example that shows 3 buttons with a style that sets the [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397), [**BorderThickness**](https://msdn.microsoft.com/library/windows/apps/br209399) and [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) properties. By applying a style, you can make the controls appear the same without having to set these properties on each control separately.
 
-![xxxxxx xxxxxxx](images/styles-rainbow-buttons.png)
+![styled buttons](images/styles-rainbow-buttons.png)
 
-Xxx xxx xxxxxx x xxxxx xxxxxx xx xxx XXXX xxx x xxxxxxx, xx xx x xxxxxxxx xxxxxxxx. Xxxxxx xxxxxxxxx xx xx xxxxxxxxxx xxxx'x XXXX xxxx, xx xxx Xxx.xxxx xxxx, xx xx x xxxxxxxx xxxxxxxx xxxxxxxxxx XXXX xxxx. X xxxxxxxx xxxxxxxxxx XXXX xxxx xxx xx xxxxxx xxxxxx xxxx, xxx xxxx xxxx xxx xxxxxxxx xxxxxxxxxx xxx xx xxxxxx xx x xxxxxx xxx. Xxxxx xxx xxxxxxxx xx xxxxxxx xxxxxxxxxx xxx xxxxx xx xxxxx xx xxx xx xxxx. Xxxx-xxxxx xxxxxxxxx xxx xxxxxxxxx xxxx xx xxx xxxx xxxxx xxxx xxx xxxxxxx. Xx xxxxxxxxx xxxx xxx xxxx xxx xxx xxxxxxx xx xxxx Xxx.xxxx xxx xx x xxxx, xxx xxxxxxxx xx xxx xxxx xxxxxxxxx xxx xxxxxxxx xx Xxx.xxxx. Xx x xxxxxxxx xx xxxxxxx xx x xxxxxxxx xxxxxxxx xxxxxxxxxx xxxx, xx'x xxxxx xx xxxxxxxxxx xx xxxxx xxx xxxxxxxx xxxxxxxxxx xx xxxxxxxxxx.
+You can define a style inline in the XAML for a control, or as a reusable resource. Define resources in an individual page's XAML file, in the App.xaml file, or in a separate resource dictionary XAML file. A resource dictionary XAML file can be shared across apps, and more than one resource dictionary can be merged in a single app. Where the resource is defined determines the scope in which it can be used. Page-level resources are available only in the page where they are defined. If resources with the same key are defined in both App.xaml and in a page, the resource in the page overrides the resource in App.xaml. If a resource is defined in a separate resource dictionary file, it's scope is determined by where the resource dictionary is referenced.
 
-Xx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208849) xxxxxxxxxx, xxx xxxx x [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208857) xxxxxxxxx xxx x xxxxxxxxxx xx xxx xx xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208817) xxxxxxxx. Xxx **XxxxxxXxxx** xxxxxxxxx xx x xxxxxx xxxx xxxxxxxxx x [**XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208706) xxxx xx xxxxx xxx xxxxx xx. Xxx **XxxxxxXxxx** xxxxx xxxx xxxxxxx x **XxxxxxxxxXxxxxxx**-xxxxxxx xxxx xxxx'x xxxxxxx xx xxx Xxxxxxx Xxxxxxx xx x xxxxxx xxxx xxxx'x xxxxxxxxx xx x xxxxxxxxxx xxxxxxxx. Xx xxx xxx xx xxxxx x xxxxx xx x xxxxxxx xxx xxx xxxxxxx'x xxxx xxxxx'x xxxxx xxx **XxxxxxXxxx** xxxxxxxxx xx xxx xxxxx xxx'xx xxxxxx xx xxxxx, xx xxxxxxxxx xxxxxx.
+In the [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) definition, you need a [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) attribute and a collection of one or more [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) elements. The **TargetType** attribute is a string that specifies a [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) type to apply the style to. The **TargetType** value must specify a **FrameworkElement**-derived type that's defined by the Windows Runtime or a custom type that's available in a referenced assembly. If you try to apply a style to a control and the control's type doesn't match the **TargetType** attribute of the style you're trying to apply, an exception occurs.
 
-Xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208817) xxxxxxx xxxxxxxx x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208836) xxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208838). Xxxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxx xxxxxxx xxxxxxxx xxx xxxxxxx xxxxxxx xx, xxx xxx xxxxx xx xxx xxx xxxx xxxxxxxx. Xxx xxx xxx xxx **Xxxxxx.Xxxxx** xxxx xxxxxx xxxxxxxxx xx xxxxxxxx xxxxxxx xxxxxx. Xxx XXXX xxxx xxxxx xxx xxxxx xxxxxxx xx xxx xxxxxxx xxxxx xxxxxxxxxx. Xx xxxx XXXX, xxx xxxxx xxx **Xxxxxx** xxxxxxxx xxx xxxxxxxxx xxxxxx, xxx xxx xxxx **Xxxxxx**, xxx xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209397) xxxxxxxx, xxxx xxxxxxxx xxxxxxx xxxxxx. Xxx xxxxxxx xxxxx'x xxx xxx [x:Xxx xxxxxxxxx](../xaml-platform/x-key-attribute.md) xxxxxxxxx, xx xxx xxxxx xx xxxxxxxxxx xxxxxxx xx xxx xxxxxxx. Xxxxxxxx xxxxxx xxxxxxxxxx xx xxxxxxxxxx xx xxxxxxxxx xx xxx xxxx xxxxxxx.
+Each [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) element requires a [**Property**](https://msdn.microsoft.com/library/windows/apps/br208836) and a [**Value**](https://msdn.microsoft.com/library/windows/apps/br208838). These property settings indicate what control property the setting applies to, and the value to set for that property. You can set the **Setter.Value** with either attribute or property element syntax. The XAML here shows the style applied to the buttons shown previously. In this XAML, the first two **Setter** elements use attribute syntax, but the last **Setter**, for the [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397) property, uses property element syntax. The example doesn't use the [x:Key attribute](../xaml-platform/x-key-attribute.md) attribute, so the style is implicitly applied to the buttons. Applying styles implicitly or explicitly is explained in the next section.
 
 ```XAML
 <Page.Resources>
@@ -53,20 +53,20 @@ Xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208817) xxxx
 </StackPanel>
 ```
 
-## Xxxxx xx xxxxxxxx xx xxxxxxxx xxxxx
+## Apply an implicit or explicit style
 
-Xx xxx xxxxxx x xxxxx xx x xxxxxxxx, xxxxx xxx xxx xxxx xx xxxxx xx xx xxxx xxxxxxxx:
+If you define a style as a resource, there are two ways to apply it to your controls:
 
--   Xxxxxxxxxx, xx xxxxxxxxxx xxxx x [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208857) xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208849).
--   Xxxxxxxxxx, xx xxxxxxxxxx x [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208857) xxx xx [x:Xxx xxxxxxxxx](../xaml-platform/x-key-attribute.md) xxxxxxxxx xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208849) xxx xxxx xx xxxxxxx xxx xxxxxx xxxxxxx'x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208743) xxxxxxxx xxxx x [{XxxxxxXxxxxxxx} xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185588) xxxxxxxxx xxxx xxxx xxx xxxxxxxx xxx.
+-   Implicitly, by specifying only a [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) for the [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849).
+-   Explicitly, by specifying a [**TargetType**](https://msdn.microsoft.com/library/windows/apps/br208857) and an [x:Key attribute](../xaml-platform/x-key-attribute.md) attribute for the [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) and then by setting the target control's [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) property with a [{StaticResource} markup extension](https://msdn.microsoft.com/library/windows/apps/mt185588) reference that uses the explicit key.
 
-Xx x xxxxx xxxxxxxx xxx [x:Xxx xxxxxxxxx](../xaml-platform/x-key-attribute.md), xxx xxx xxxx xxxxx xx xx x xxxxxxx xx xxxxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208743) xxxxxxxx xx xxx xxxxxxx xx xxx xxxxx xxxxx. Xx xxxxxxxx, x xxxxx xxxxxxx xx x:Xxx xxxxxxxxx xx xxxxxxxxxxxxx xxxxxxx xx xxxxx xxxxxxx xx xxx xxxxxx xxxx, xxxx xxxxx'x xxxxxxxxx xxxx xx xxxxxxxx xxxxx xxxxxxx.
+If a style contains the [x:Key attribute](../xaml-platform/x-key-attribute.md), you can only apply it to a control by setting the [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) property of the control to the keyed style. In contrast, a style without an x:Key attribute is automatically applied to every control of its target type, that doesn't otherwise have an explicit style setting.
 
-Xxxx xxx xxx xxxxxxx xxxx xxxxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxx.
+Here are two buttons that demonstrate implicit and explicit styles.
 
-![xxxxxxxxxx xxx xxxxxxxxxx xxxxxx xxxxxxx.](images/styles-buttons-implicit-explicit.png)
+![implicitly and explicitly styled buttons.](images/styles-buttons-implicit-explicit.png)
 
-Xx xxxx xxxxxxx, xxx xxxxx xxxxx xxx xx [x:Xxx xxxxxxxxx](../xaml-platform/x-key-attribute.md) xxx xxx xxxxxx xxxx xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265). Xxx xxxxx xxxxxx'x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208743) xxxxxxxx xx xxx xx xxxx xxx, xx xxxx xxxxx xx xxxxxxx xxxxxxxxxx. Xxx xxxxxx xxxxx xx xxxxxxx xxxxxxxxxx xx xxx xxxxxx xxxxxx xxxxxxx xxx xxxxxx xxxx xx **Xxxxxx** xxx xxx xxxxx xxxxx'x xxxx xx x:Xxx xxxxxxxxx.
+In this example, the first style has an [x:Key attribute](../xaml-platform/x-key-attribute.md) and its target type is [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265). The first button's [**Style**](https://msdn.microsoft.com/library/windows/apps/br208743) property is set to this key, so this style is applied explicitly. The second style is applied implicitly to the second button because its target type is **Button** and the style doesn't have an x:Key attribute.
 
 ```XAML
 <Page.Resources>
@@ -98,13 +98,13 @@ Xx xxxx xxxxxxx, xxx xxxxx xxxxx xxx xx [x:Xxx xxxxxxxxx](../xaml-platform/x-key
 </Grid>
 ```
 
-## Xxx xxxxx-xx xxxxxx
+## Use based-on styles
 
-Xx xxxx xxxxxx xxxxxx xx xxxxxxxx xxx xx xxxxxxxx xxxxx xxxxx, xxx xxx xxxxxx xxxxxx xxxx xxxxxxx xxxx xxxxx xxxxxx. Xxx xxx xxx [**XxxxxXx**](https://msdn.microsoft.com/library/windows/apps/br208852) xxxxxxxx xx xxxxxx xxxxxxxxx xxxxxx. Xxxxxx xxxx xxxxxxx xxxx xxxxx xxxxxx xxxx xxxxxx xxx xxxx xxxx xx xxxxxxx xx x xxxxxxx xxxx xxxxxxx xxxx xxx xxxx xxxxxxxx xx xxx xxxx xxxxx. Xxx xxxxxxx, xx x xxxx xxxxx xxxxxxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209365), xxxxxx xxxx xxx xxxxx xx xxxx xxxxx xxx xxxxxx **XxxxxxxXxxxxxx** xx xxxxx xxxx xxxxxx xxxx **XxxxxxxXxxxxxx** xxxx xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265) xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209527). Xx x xxxxx xx xxx xxx xx xxx xxxxx-xx xxxxx, xx'x xxxxxxxxx xxxx xxx xxxx xxxxx. Xx xxxxxx x xxxxx xxxx xxx xxxx xxxxx, xxx xxxxx-xx xxxxx xxxxxxxxx xxxx xxxxx. Xxx xxxx xxxxxxx xxxxx x **Xxxxxx** xxx x [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209316) xxxx xxxxxx xxxx xxxxxxx xxxx xxx xxxx xxxx xxxxx.
+To make styles easier to maintain and to optimize style reuse, you can create styles that inherit from other styles. You use the [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852) property to create inherited styles. Styles that inherit from other styles must target the same type of control or a control that derives from the type targeted by the base style. For example, if a base style targets [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/br209365), styles that are based on this style can target **ContentControl** or types that derive from **ContentControl** such as [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) and [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527). If a value is not set in the based-on style, it's inherited from the base style. To change a value from the base style, the based-on style overrides that value. The next example shows a **Button** and a [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) with styles that inherit from the same base style.
 
-![xxxxxx xxxxxxx xxxxx xxxxx-xx xxxxxx.](images/styles-buttons-based-on.png)
+![styled buttons usign based-on styles.](images/styles-buttons-based-on.png)
 
-Xxx xxxx xxxxx xxxxxxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209365), xxx xxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208718), xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208751) xxxxxxxxxx. Xxx xxxxxx xxxxx xx xxxx xxxxx xxxxxx [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209316) xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265), xxxxx xxxxxx xxxx **XxxxxxxXxxxxxx**. Xxx xxxxx-xx xxxxxx xxx xxxxxxxxx xxxxxx xxx xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209397) xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209414) xxxxxxxxxx. (Xxx xxx'x xxxxxxxxx xxx x xxxxxx xxxxxx x **XxxxxXxx**. Xx xx xx xxxx xx xxxx xxx xxxxxxx xx xxx xxxxx.)
+The base style targets [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/br209365), and sets the [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) properties. The styles based on this style target [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) and [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265), which derive from **ContentControl**. The based-on styles set different colors for the [**BorderBrush**](https://msdn.microsoft.com/library/windows/apps/br209397) and [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414) properties. (You don't typically put a border around a **CheckBox**. We do it here to show the effects of the style.)
 
 ```XAML
 <Page.Resources>
@@ -134,18 +134,22 @@ Xxx xxxx xxxxx xxxxxxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/w
 </StackPanel>
 ```
 
-## Xxx xxxxx xx xxxx xxxx xxxxxx xxxxxx
+## Use tools to work with styles easily
 
-X xxxx xxx xx xxxxx xxxxxx xx xxxx xxxxxxxx xx xx xxxxx-xxxxx xx x xxxxxxx xx xxx Xxxxxxxxx Xxxxxx Xxxxxx XXXX xxxxxx xxxxxxx xxx xxxxxx **Xxxx Xxxxx** xx **Xxxx Xxxxxxxx** (xxxxxxxxx xx xxx xxxxxxx xxx xxx xxxxx-xxxxxxxx xx). Xxx xxx xxxx xxxxx xx xxxxxxxx xxxxx xx xxxxxxxxx **Xxxxx Xxxxxxxx** xx xxxxxx x xxx xxxxx xx xxxxxxxxx **Xxxxxx Xxxxx**. Xx xxx xxxxxx xx xxxxx xxxxx, xxx xxx xxxxx xxx xxxxxx xx xxxxxx xx xx xxx xxxx, xx xxx Xxx.xxxx xxxx, xx xx x xxxxxxxx xxxxxxxx xxxxxxxxxx.
+A fast way to apply styles to your controls is to right-click on a control on the Microsoft Visual Studio XAML design surface and select **Edit Style** or **Edit Template** (depending on the control you are right-clicking on). You can then apply an existing style by selecting **Apply Resource** or define a new style by selecting **Create Empty**. If you create an empty style, you are given the option to define it in the page, in the App.xaml file, or in a separate resource dictionary.
 
-## Xxxxxx xxx xxxxxxx xxxxxx xxxxxx
+## Modify the default system styles
 
-Xxx xxxxxx xxx xxx xxxxxx xxxx xxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxxxx XXXX xxxxxxxxx xxxx xxx xxx. Xxxx xxx xxxx xx xxxxxx xxxx xxx xxxxxx, xxx xx xxxx xxxx xxxxxx xx xxx xxxxxxx xxxx xxxx xxxxxxxx (xxxxx xxxxx-xx xxxxxx xx xxxxxxxxx xxxxxxx, xx xxxxx xx xxxxxxx x xxxx xx xxx xxxxxxxx xxxxxxx xxxxx).
+You should use the styles that come from the Windows Runtime default XAML resources when you can. When you have to define your own styles, try to base your styles on the default ones when possible (using based-on styles as explained earlier, or start by editing a copy of the original default style).
 
-## Xxx Xxxxxxxx xxxxxxxx
+## The Template property
 
-X xxxxx xxxxxx xxx xx xxxx xxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209465) xxxxxxxx xx x [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209390), xxx xx xxxx xxxx xxxxx xx xxx xxxxxxxx xx x xxxxxxx XXXX xxxxx xxx xx xxx'x XXXX xxxxxxxxx. Xxxx xx xxxxxxxxx xx xxxx xxxxxx xx xxx xxxxx [Xxxxxxx xxxxxxxxx](control-templates.md).
+A style setter can be used for the [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) property of a [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390), and in fact this makes up the majority of a typical XAML style and an app's XAML resources. This is discussed in more detail in the topic [Control templates](control-templates.md).
 
-**Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+
+
 <!--HONumber=Mar16_HO1-->
+
+

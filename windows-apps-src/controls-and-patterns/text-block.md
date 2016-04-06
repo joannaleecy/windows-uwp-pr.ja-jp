@@ -1,31 +1,31 @@
 ---
-xx.xxxxxxx: XXYYYYYY-XYYY-YYYX-XXXY-XYXXYXYXYXYY
-xxxxx: Xxxx xxxxx
-xxxxxxxx: xxxxxx.xxx
+ms.assetid: DA562509-D893-425A-AAE6-B2AE9E9F8A19
+label: Text block
+template: detail.hbs
 ---
-# Xxxx xxxxx
- Xxxx xxxxx xx xxx xxxxxxx xxxxxxx xxx xxxxxxxxxx xxxx-xxxx xxxx xx xxxx. Xxx xxx xxx xx xx xxxxxxx xxxxxx-xxxx xx xxxxx-xxxx xxxx, xxxxxx xxxxxxxxxx, xxx xxxx xxxx xxxxxxxxxx xxxx xxxx, xxxxxx, xx xxxxxxxxxx.
+# Text block
+ Text block is the primary control for displaying read-only text in apps. You can use it to display single-line or multi-line text, inline hyperlinks, and text with formatting like bold, italic, or underlined.
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
 
--   [**XxxxXxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)
--   [**Xxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx)
--   [**Xxxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx)
+-   [**TextBlock class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)
+-   [**Text property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx)
+-   [**Inlines property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
+## Is this the right control?
 
-X xxxx xxxxx xx xxxxxxxxx xxxxxx xx xxx xxx xxxxxxxx xxxxxx xxxx xxxxxxxxx xxxxxxxxxxx xxxx x xxxx xxxx xxxxx, xx xx'x xxxxxxxxx xxx xxxx xxx XX xxxx. Xxx xxx xxxxxx xxxxxx xxx xxx xxxx xxxx x xxxx xxxxx xx xxxx xxx xx xxxxxxx xxx xxxxx xx xxx [Xxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) xxxxxxxx. Xx xxxx xxxxxxxx xxxx xx xxx xxxx xxxxxxxxxx xxxxxxx xxx xxxxxxxxxxx xxx xxxx xxxx xx xxxxxxxx. 
+A text block is typically easier to use and provides better text rendering performance than a rich text block, so it's preferred for most app UI text. You can easily access and use text from a text block in your app by getting the value of the [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) property. It also provides many of the same formatting options for customizing how your text is rendered. 
 
-Xxxxxxxx xxx xxx xxx xxxx xxxxxx xx xxx xxxx, xxxx xxxxx xx xxxxxxxx xx xxxxxxx x xxxxxx xxxxxxxxx xxx xxxxx’x xxxxxxx xxxx xxxxxxxxxxx. Xxx x **XxxxXxxxXxxxx** xxxx xxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxx, xxxxx-xxxxxx xxxx xx xxxxx xxxxxxx xxxx xxxxxxx, xx xxxxxx XX xxxxxxxx xxxx xxxxxx.
+Although you can put line breaks in the text, text block is designed to display a single paragraph and doesn’t support text indentation. Use a **RichTextBlock** when you need support for multiple paragraphs, multi-column text or other complex text layouts, or inline UI elements like images.
 
-Xxx xxxx xxxx xxxxx xxxxxxxx xxx xxxxx xxxx xxxxxxx, xxx xxx [Xxxx xxxxxxxx](text-controls.md) xxxxxxx.
+For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
-## Xxxxxxxx
+## Examples
 
 
-## Xxxxxx x xxxx xxxxx
+## Create a text block
 
-Xxxx'x xxx xx xxxxxx x xxxxxx XxxxXxxxx xxxxxxx xxx xxx xxx Xxxx xxxxxxxx xx x xxxxxx.
+Here's how to define a simple TextBlock control and set its Text property to a string.
 
 ```xaml
 <TextBlock Text="Hello, world!" />
@@ -41,45 +41,39 @@ textBlock1.Text = "Hello, world!";
     TextBlock textBlock1 = new TextBlock();
     textBlock1.Text = "Hello, world!";
 
-### Xxxxxxx xxxxx
+### Content model
 
-Xxxxx xxx xxx xxxxxxxxxx xxx xxx xxx xx xxx xxxxxxx xx x XxxxXxxxx: [Xxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) xxx [Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx).
+There are two properties you can use to add content to a TextBlock: [Text](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx) and [Inlines](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.inlines.aspx).
 
-Xxx xxxx xxxxxx xxx xx xxxxxxx xxxx xx xx xxx xxx Xxxx xxxxxxxx xx x xxxxxx xxxxx, xx xxxxx xx xxx xxxxxxxx xxxxxxx.
+The most common way to display text is to set the Text property to a string value, as shown in the previous example.
 
-Xxx xxx xxxx xxx xxxxxxx xx xxxxxxx xxxxxx xxxx xxxxxxx xxxxxxxx xx xxx XxxxXxx.Xxxxxxx xxxxxxxx, xxxx xxxx.
+You can also add content by placing inline flow content elements in the TextBox.Inlines property, like this.
 ```xaml
 <TextBlock><Run>Text can be <Bold>bold</Bold>, <Italic>italic</Italic>, or <Bold><Italic>both</Italic></Bold>.</Run></TextBlock>
 ```
 
-Xxxxxxxx xxxxxxx xxxx xxx Xxxxxx xxxxx, xxxx xx Xxxx, Xxxxxx, Xxx, Xxxx, xxx XxxxXxxxx, xxxxxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxx xx xxx xxxx. Xxx xxxx xxxx, xxx xxx [Xxxxxxxxxx xxxx]() xxxxxxx. Xxx xxxxxx Xxxxxxxxx xxxxxxx xxxx xxx xxx x xxxxxxxxx xx xxxx xxxx. Xxxxxxx, xxxxx Xxxxxxx xxxx xxxxxxxx xxxx xxxx xxxx xxxxxxxxx, xxxxx xx xxxxxxxxx xx xxx xxxx xxxxxxx.
+Elements derived from the Inline class, such as Bold, Italic, Run, Span, and LineBreak, enable different formatting for different parts of the text. For more info, see the [Formatting text]() section. The inline Hyperlink element lets you add a hyperlink to your text. However, using Inlines also disables fast path text rendering, which is discussed in the next section.
 
 
-## Xxxxxxxxxxx xxxxxxxxxxxxxx
+## Performance considerations
 
-Xxxxxxxx xxxxxxxx, XXXX xxxx x xxxx xxxxxxxxx xxxx xxxx xx xxxxxx xxxx. Xxxx xxxx xxxx xxxx xxxxxxxxx xxxxxxx xxxxxx xxx xxx xxxxxxx xxxxxxx xxx XXX xxxx xx xx xxxx xxxxxxxxx xxx xxxxxxxxx. Xxxx xxxx xxxx xxxxxxx xxxx xx XxxxXxxxx, xx xx xxxxxx xx xxxxxxxxx xxxx xxxxxxxx xxxx XxxxXxxxXxxxx.
+Whenever possible, XAML uses a more efficient code path to layout text. This fast path both decreases overall memory use and greatly reduces the CPU time to do text measuring and arranging. This fast path applies only to TextBlock, so it should be preferred when possible over RichTextBlock.
 
-Xxxxxxx xxxxxxxxxx xxxxxxx XxxxXxxxx xx xxxx xxxx xx x xxxx xxxxxxx-xxxx xxx XXX xxxxxxxxx xxxx xxxx xxx xxxx xxxxxxxxx. Xx xxxx xxxx xxxxxxxxx xx xxx xxxx xxxx, xx xxxx xx xxxxxx xxxxx xxxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxxx xxxxxx xxxx.
-- [
-            **Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx): Xxx xxxx xxxxxxxxx xxxxxxxxx xx xxxx xxx xxxx xxxx xx xxxx xxxx xxxx xxx xxx xxxx xx xxxxxxxxxx xxxxxxx xxx Xxxx xxxxxxxx, xxxxxx xx XXXX xx xx xxxx (xx xxxxx xx xxx xxxxxxxx xxxxxxxx). Xxxxxxx xxx xxxx xxx XxxxXxxxx’x Xxxxxxx xxxxxxxxxx (xxxx xx `<TextBlock>Inline text</TextBlock>`) xxxx xxxxxxx xxx xxxx xxxx, xxx xx xxx xxxxxxxxx xxxxxxxxxx xx xxxxxxxx xxxxxxx.
-- [
-            **XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.characterspacing.aspx): Xxxx xxx xxxxxxx xxxxx xx Y xx xxxx xxxx.
-- [
-            **Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx): Xxxx xxx xxxxxxx xxxxxx xxx xxx xxxxxxx Xxxxxxxxxx xxxxxxxxxx xxx xxxx xxxx.
-- [
-            **XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.texttrimming.aspx): Xxxx xxx **Xxxx**, **XxxxxxxxxXxxxxxxx**, xxx **XxxxXxxxxxxx** xxxxxx xxx xxxx xxxx. Xxx **Xxxx** xxxxx xxxxxxxx xxx xxxx xxxx.
-- [
-            **XxxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.linestackingstrategy.aspx): Xx [XxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.lineheight.aspx) xx xxx Y, xxx **XxxxxxxxXxXxxxxxxx** xxx **XxxXxxxxx** xxxxxx xxxxxxx xxx xxxx xxxx.
-- [
-            **XxXxxxXxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.istextselectionenabled.aspx): Xxxx **xxxxx** xx xxxx xxxx. Xxxxxxx xxxx xxxxxxxx xx **xxxx** xxxxxxxx xxx xxxx xxxx.
+Certain conditions require TextBlock to fall back to a more feature-rich and CPU intensive code path for text rendering. To keep text rendering on the fast path, be sure to follow these guidelines when setting the properties listed here.
+- [**Text**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.text.aspx): The most important condition is that the fast path is used only when you set text by explicitly setting the Text property, either in XAML or in code (as shown in the previous examples). Setting the text via TextBlock’s Inlines collection (such as `<TextBlock>Inline text</TextBlock>`) will disable the fast path, due to the potential complexity of multiple formats.
+- [**CharacterSpacing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.characterspacing.aspx): Only the default value of 0 is fast path.
+- [**Typography**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx): Only the default values for the various Typography properties are fast path.
+- [**TextTrimming**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.texttrimming.aspx): Only the **None**, **CharacterEllipsis**, and **WordEllipsis** values are fast path. The **Clip** value disables the fast path.
+- [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.linestackingstrategy.aspx): If [LineHeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.lineheight.aspx) is not 0, the **BaselineToBaseline** and **MaxHeight** values disable the fast path.
+- [**IsTextSelectionEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.istextselectionenabled.aspx): Only **false** is fast path. Setting this property to **true** disables the fast path.
 
-Xxx xxx xxx xxx [XxxxxXxxxxxxx.XxXxxxXxxxxxxxxxxXxxxxxxxxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled.aspx) xxxxxxxx xx **xxxx** xxxxxx xxxxxxxxx xx xxxxxxxxx xxxxxxx xxxx xx xxxxx xxxx xxxx xxxxxxxxx. Xxxx xxxx xxxxxxxx xx xxx xx xxxx, xxx xxxx xxxx xx xx xxx xxxx xxxx xxxxxxxx xx x xxxxxx xxxxx xxxxx. 
+You can set the [DebugSettings.IsTextPerformanceVisualizationEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.debugsettings.istextperformancevisualizationenabled.aspx) property to **true** during debugging to determine whether text is using fast path rendering. When this property is set to true, the text that is on the fast path displays in a bright green color. 
 
->**Xxx**&xxxx;&xxxx;Xxxx xxxxxxx xx xxxxxxxxx xx xxxxx xx xxxx xxxxxxx xxxx Xxxxx YYYY- [XXXX Xxxxxxxxxxx: Xxxxxxxxxx xxx Xxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxx Xxxxxxxxxxx Xxxxx xxxx XXXX](https://channel9.msdn.com/Events/Build/2015/3-698).
+>**Tip**&nbsp;&nbsp;This feature is explained in depth in this session from Build 2015- [XAML Performance: Techniques for Maximizing Universal Windows App Experiences Built with XAML](https://channel9.msdn.com/Events/Build/2015/3-698).
 
  
 
-Xxx xxxxxxxxx xxx xxxxx xxxxxxxx xx xxx [XxXxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.application.onlaunched.aspx) xxxxxx xxxxxxxx xx xxx xxxx-xxxxxx xxxx xxx Xxx.xxxx, xxxx xxxx.
+You typically set debug settings in the [OnLaunched](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.application.onlaunched.aspx) method override in the code-behind page for App.xaml, like this.
 ```csharp
 protected override void OnLaunched(LaunchActivatedEventArgs e)
 {
@@ -95,7 +89,7 @@ protected override void OnLaunched(LaunchActivatedEventArgs e)
 }
 ```
 
-Xx xxxx xxxxxxx, xxx xxxxx XxxxXxxxx xx xxxxxxxx xxxxx xxx xxxx xxxx, xxxxx xxx xxxxxx xx xxx.
+In this example, the first TextBlock is rendered using the fast path, while the second is not.
 ```xaml
 <StackPanel>
     <TextBlock Text="This text is on the fast path."/>
@@ -103,26 +97,26 @@ Xx xxxx xxxxxxx, xxx xxxxx XxxxXxxxx xx xxxxxxxx xxxxx xxx xxxx xxxx, xxxxx xxx 
 <StackPanel/>
 ```
 
-Xxxx xxx xxx xxxx XXXX xx xxxxx xxxx xxxx XxXxxxXxxxxxxxxxxXxxxxxxxxxxxxXxxxxxx xxx xx xxxx, xxx xxxxxx xxxxx xxxx xxxx.
+When you run this XAML in debug mode with IsTextPerformanceVisualizationEnabled set to true, the result looks like this.
 
-![Xxxx xxxxxxxx xx xxxxx xxxx](images/text-block-rendering-performance.png)
+![Text rendered in debug mode](images/text-block-rendering-performance.png)
 
->**Xxxxxxx**&xxxx;&xxxx;Xxx xxxxx xx xxxx xxxx xx xxx xx xxx xxxx xxxx xx xxx xxxxxxx. Xx xxx xxxx xxxx xx xxxx xxx xxxx xxx xxxxx xxxxxxxxx xx xxxxxx xxxxx, xx xx xxxxx xxxxxxxxx xx xxxxxx xxxxx xxxx xx'x xx xxx xxxxxx xxxxxxxxx xxxx. Xx xxxxxxx xx xxx xxxxxxx xxxx xxxx xx xxx xx xxxxx xx xxx xxx xxxx xxxx xxxx xx xx xxx xxxx xxxx xxx xxxxx xxxxxxx xx xxx xxxxx xxxxxxxx.
+>**Caution**&nbsp;&nbsp;The color of text that is not on the fast path is not changed. If you have text in your app with its color specified as bright green, it is still displayed in bright green when it's on the slower rendering path. Be careful to not confuse text that is set to green in the app with text that is on the fast path and green because of the debug settings.
 
-## Xxxxxxxxxx xxxx
+## Formatting text
 
-Xxxxxxxx xxx Xxxx xxxxxxxx xxxxxx xxxxx xxxx, xxx xxx xxxxx xxxxxxx xxxxxxxxxx xxxxxxx xx xxx XxxxXxxxx xxxxxxx xx xxxxxxxxx xxx xxx xxxx xx xxxxxxxx xx xxxx xxx. Xxx xxx xxx xxxxxxxx xxxxxxx xxxxxxxxxx xxxx XxxxXxxxxx, XxxxXxxx, XxxxXxxxx, Xxxxxxxxxx, xxx XxxxxxxxxXxxxxxx xx xxxxxx xxx xxxx xx xxx xxxx. Xxx xxx xxxx xxx xxxxxx xxxx xxxxxxxx xxx Xxxxxxxxxx xxxxxxxx xxxxxxxxxx xx xxxxxx xxxx xxxx. Xxxxx xxxxxxx xxxxxx xxxx xxx xxx XxxxXxxxx xxxxxxxx xxx xxxx xxxxxxx, xx xx xxx xxxx xxx xxxxx xxx xxxx xxxx x xxxx xxxx xxxxxxx, xxx xxxxxxx, xx xxxxxxxxxx xx xxxxxxx.
+Although the Text property stores plain text, you can apply various formatting options to the TextBlock control to customize how the text is rendered in your app. You can set standard control properties like FontFamily, FontSize, FontStyle, Foreground, and CharacterSpacing to change the look of the text. You can also use inline text elements and Typography attached properties to format your text. These options affect only how the TextBlock displays the text locally, so if you copy and paste the text into a rich text control, for example, no formatting is applied.
 
->**Xxxx**&xxxx;&xxxx;Xxxxxxxx, xx xxxxx xx xxx xxxxxxxx xxxxxxx, xxxxxx xxxx xxxxxxxx xxx xxx-xxxxxxx xxxxxxxxxx xxxxxx xxx xxx xxxxxxxx xx xxx xxxx xxxx.
+>**Note**&nbsp;&nbsp;Remember, as noted in the previous section, inline text elements and non-default typography values are not rendered on the fast path.
  
 
-### Xxxxxx xxxxxxxx
+### Inline elements
 
-Xxx [Xxxxxxx.XX.Xxxx.Xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) xxxxxxxxx xxxxxxxx x xxxxxxx xx xxxxxx xxxx xxxxxxxx xxxx xxx xxx xxx xx xxxxxx xxxx xxxx, xxxx xx Xxxx, Xxxxxx, Xxx, Xxxx, xxx XxxxXxxxx. 
+The [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) namespace provides a variety of inline text elements that you can use to format your text, such as Bold, Italic, Run, Span, and LineBreak. 
 
-Xxx xxx xxxxxxx x xxxxxx xx xxxxxxx xx x XxxxXxxxx, xxxxx xxxx xxxxxx xxx xxxxxxxxx xxxxxxxxxx. Xxx xxx xx xxxx xx xxxxx x Xxx xxxxxxx xx xxxxxxx xxxx xxxxxx xxxx xxx xxxxxxxxxx xxx xx xxxxxxxxxx xxxx Xxx xxxxxxx xxxx x XxxxXxxxx xxxxxxx.
+You can display a series of strings in a TextBlock, where each string has different formatting. You can do this by using a Run element to display each string with its formatting and by separating each Run element with a LineBreak element.
 
-Xxxx'x xxx xx xxxxxx xxxxxxx xxxxxxxxxxx xxxxxxxxx xxxx xxxxxxx xx x XxxxXxxxx xx xxxxx Xxx xxxxxxx xxxxxxxxx xxxx x XxxxXxxxx.
+Here's how to define several differently formatted text strings in a TextBlock by using Run objects separated with a LineBreak.
 ```xaml
 <TextBlock FontFamily="Arial" Width="400" Text="Sample text formatting runs">
     <LineBreak/>
@@ -140,13 +134,13 @@ Xxxx'x xxx xx xxxxxx xxxxxxx xxxxxxxxxxx xxxxxxxxx xxxx xxxxxxx xx x XxxxXxxxx x
 </TextBlock>
 ```
 
-Xxxx'x xxx xxxxxx.
+Here's the result.
 
-![Xxxx xxxxxxxxx xxxx xxx xxxxxxxx](images/text-block-run-examples.png)
+![Text formatted with run elements](images/text-block-run-examples.png)
 
-### Xxxxxxxxxx
+### Typography
 
-Xxx xxxxxxxx xxxxxxxxxx xx xxx [Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) xxxxx xxxxxxx xxxxxx xx x xxx xx Xxxxxxxxx XxxxXxxx xxxxxxxxxx xxxxxxxxxx. Xxx xxx xxx xxxxx xxxxxxxx xxxxxxxxxx xxxxxx xx xxx XxxxXxxxx, xx xx xxxxxxxxxx xxxxxx xxxx xxxxxxxx. Xxxxx xxxxxxxx xxxx xxxx.
+The attached properties of the [Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) class provide access to a set of Microsoft OpenType typography properties. You can set these attached properties either on the TextBlock, or on individual inline text elements. These examples show both.
 ```xaml
 <TextBlock Text="Hello, world!"
            Typography.Capitals="SmallCaps"
@@ -164,26 +158,30 @@ Windows.UI.Xaml.Documents.Typography.SetStylisticSet4(textBlock1, true);
 <TextBlock>12 x <Run Typography.Fraction="Slashed">1/3</Run> = 4.</TextBlock>
 ```
 
-## Xxxxxxxxxxxxxxx
+## Recommendations
 
 
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
-## Xxxxxxx xxxxxxxx
+## Related articles
 
-[Xxxx xxxxxxxx](text-controls.md)
+[Text controls](text-controls.md)
 
-**Xxx xxxxxxxxx**
-- [Xxxxxxxxxx xxx xxxxx xxxxxxxx](spell-checking-and-prediction.md)
-- [Xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [Xxxxxxxxxx xxx xxxx xxxxx](text-controls.md)
+**For designers**
+- [Guidelines for spell checking](spell-checking-and-prediction.md)
+- [Adding search](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [Guidelines for text input](text-controls.md)
 
-**Xxx xxxxxxxxxx (XXXX)**
-- [**XxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Xxxxxxx.XX.Xxxx.Xxxxxxxx XxxxxxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227519)
+**For developers (XAML)**
+- [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [**Windows.UI.Xaml.Controls PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
-**Xxx xxxxxxxxxx (xxxxx)**
-- [Xxxxxx.Xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+**For developers (other)**
+- [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

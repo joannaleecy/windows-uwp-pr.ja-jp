@@ -1,60 +1,60 @@
 ---
-xxxxx: Xxxxxxx x xxxxxx xxxxxx xxx xxxx xxxx
-xxxxxxxxxxx: Xxxxxxx x xxxxxx xxxxxx xxx xxxx xxxx xx xxxxxxxx xx xxxxxxxx xxxxxx xxxxxx xxx xxxx xxx. Xxxx xxxxxxxx xxxxxx xxxxxxxx xxx xxxxxx xxxxxx xxxxx xxxx xxxx xxx xx xxxxxxxx, xxx xxx xx xxxxxxxxxx.
-xx.xxxxxxx: XXYYYYXX-YXYY-YXYY-YXYX-YYYYYYYYYXXY
+title: Display a splash screen for more time
+description: Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, but can be customized.
+ms.assetid: CD3053EB-7F86-4D74-9C5A-950303791AE3
 ---
 
-# Xxxxxxx x xxxxxx xxxxxx xxx xxxx xxxx
+# Display a splash screen for more time
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br224763)
--   [**Xxxxxx.XxxxXxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209055)
--   [**Xxxxxxxxxxx.XxXxxxxxxx xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335)
+-   [**SplashScreen class**](https://msdn.microsoft.com/library/windows/apps/br224763)
+-   [**Window.SizeChanged event**](https://msdn.microsoft.com/library/windows/apps/br209055)
+-   [**Application.OnLaunched method**](https://msdn.microsoft.com/library/windows/apps/br242335)
 
-Xxxxxxx x xxxxxx xxxxxx xxx xxxx xxxx xx xxxxxxxx xx xxxxxxxx xxxxxx xxxxxx xxx xxxx xxx. Xxxx xxxxxxxx xxxxxx xxxxxxxx xxx xxxxxx xxxxxx xxxxx xxxx xxxx xxx xx xxxxxxxx, xxx xxx xx xxxxxxxxxx. Xxxxxxx xxx xxxx xx xxxx xxxx-xxxx xxxxxxx xxxxxxxxxxx xx xxxxxx xxxx xxxx xxx xxxxx xxxx xx xxxxxxx xxx xxxxxxx XX, xx xxxxxxxx xxxxxx xxxxxx xxxx xxx xxxxxx xxx xxxxxx xxxxxxxxxx.
+Display a splash screen for more time by creating an extended splash screen for your app. This extended screen imitates the splash screen shown when your app is launched, but can be customized. Whether you want to show real-time loading information or simply give your app extra time to prepare its initial UI, an extended splash screen lets you define the launch experience.
 
-> **Xxxx**  Xxx xxxxxx "xxxxxxxx xxxxxx xxxxxx" xx xxxx xxxxx xxxxxx xx x xxxxxx xxxxxx xxxx xxxxx xx xxx xxxxxx xxx xx xxxxxxxx xxxxxx xx xxxx. Xx xxxx xxx xxxx x xxxxxxxx xxxx xxxxxxx xxxx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224763) xxxxx.
+> **Note**  The phrase "extended splash screen" in this topic refers to a splash screen that stays on the screen for an extended period of time. It does not mean a subclass that derives from the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class.
 
  
 
-Xxxx xxxx xxxx xxxxxxxx xxxxxx xxxxxx xxxxxxxxxx xxxxxxxx xxx xxxxxxx xxxxxx xxxxxx xx xxxxxxxxx xxxxx xxxxxxxxxxxxxxx:
+Make sure your extended splash screen accurately imitates the default splash screen by following these recommendations:
 
--   Xxxx xxxxxxxx xxxxxx xxxxxx xxxx xxxxxx xxx x YYY x YYY xxxxx xxxxx xxxx xx xxxxxxxxxx xxxx xxx xxxxx xxxxxxxxx xxx xxxx xxxxxx xxxxxx xx xxxx xxx xxxxxxxx (xxxx xxx'x xxxxxx xxxxxx xxxxx). Xx Xxxxxxxxx Xxxxxx Xxxxxx YYYY, xxxxxx xxxxxx xxxxxxxx xxx xxxxxx xx xxx **Xxxxxx Xxxxxx** xxxxxxx xx xxx **Xxxxxx Xxxxxx** xxx xx xxxx xxx xxxxxxxx (Xxxxxxx.xxxxxxxxxxxx xxxx).
--   Xxxx xxxxxxxx xxxxxx xxxxxx xxxxxx xxx x xxxxxxxxxx xxxxx xxxx xx xxxxxxxxxx xxxx xxx xxxxxxxxxx xxxxx xxxxxxxxx xxx xxxx xxxxxx xxxxxx xx xxxx xxx xxxxxxxx (xxxx xxx'x xxxxxx xxxxxx xxxxxxxxxx).
--   Xxxx xxxx xxxxxx xxx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224763) xxxxx xx xxxxxxxx xxxx xxx'x xxxxxx xxxxxx xxxxx xx xxx xxxx xxxxxx xxxxxxxxxxx xx xxx xxxxxxx xxxxxx xxxxxx.
--   Xxxx xxxx xxxxxx xxxxxxx xx xxxxxx xxxxxx xxxxxx (xxxx xx xxxx xxx xxxxxx xx xxxxxxx xx xxxx xxx xx xxxxx xxxx xx xxxxxxx xxx xxxxxxxx) xx xxxxx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224763) xxxxx xx xxxxxxxxxx xxxxx xx xxxx xxxxxxxx xxxxxx xxxxxx.
+-   Your extended splash screen page should use a 620 x 300 pixel image that is consistent with the image specified for your splash screen in your app manifest (your app's splash screen image). In Microsoft Visual Studio 2015, splash screen settings are stored in the **Splash Screen** section of the **Visual Assets** tab in your app manifest (Package.appxmanifest file).
+-   Your extended splash screen should use a background color that is consistent with the background color specified for your splash screen in your app manifest (your app's splash screen background).
+-   Your code should use the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class to position your app's splash screen image at the same screen coordinates as the default splash screen.
+-   Your code should respond to window resize events (such as when the screen is rotated or your app is moved next to another app onscreen) by using the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class to reposition items on your extended splash screen.
 
-Xxx xxx xxxxxxxxx xxxxx xx xxxxxx xx xxxxxxxx xxxxxx xxxxxx xxxx xxxxxxxxxxx xxxxxxxx xxx xxxxxxx xxxxxx xxxxxx.
+Use the following steps to create an extended splash screen that effectively imitates the default splash screen.
 
-## Xxx x **Xxxxx Xxxx** xxxx xx xxxx xxxxxxxx xxx
-
-
-Xxxx xxxxx xxxxxxx xxx xxxx xx xxx xx xxxxxxxx xxxxxx xxxxxx xx xx xxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxxx xxxxx X\#, Xxxxxx Xxxxx, xx X++.
-
--   Xxxx xxxx xxx xx Xxxxxx Xxxxxx YYYY.
--   Xxxxx xx xxxx **Xxxxxxx** xxxx xxx xxxx xxx xxx xxxxx **Xxx Xxx Xxxx**. Xx **Xxx Xxx Xxxx** xxxxxx xxx xxxx xxxxxx.
--   Xxxx xxxx xxxxxx xxx, xxx x xxx **Xxxxx Xxxx** xx xxxx xxx. Xxxx xxxxx xxxxx xxx xxxxxxxx xxxxxx xxxxxx xxxx "XxxxxxxxXxxxxx".
-
-Xxxxxx x **Xxxxx Xxxx** xxxx xxxxxxxxx xxx xxxxx, xxx xxx xxxxxx (XxxxxxxxXxxxxx.xxxx) xxx xxxxxxx xxx xxxx (XxxxxxxxXxxxxx.xxxx.xx).
-
-## Xxxxxxxxx XXXX xxx xx xxxxxxxx xxxxxx xxxxxx
+## Add a **Blank Page** item to your existing app
 
 
-Xxxxxx xxxxx xxxxx xx xxx xx xxxxx xxx xxxxxxxx xxxxxxx xx xxxx xxxxxxxx xxxxxx xxxxxx.
+This topic assumes you want to add an extended splash screen to an existing Universal Windows Platform (UWP) app project using C#, Visual Basic, or C++.
 
-Xx xxxx XxxxxxxxXxxxxx.xxxx xxxx:
+-   Open your app in Visual Studio 2015.
+-   Press or open **Project** from the menu bar and click **Add New Item**. An **Add New Item** dialog box will appear.
+-   From this dialog box, add a new **Blank Page** to your app. This topic names the extended splash screen page "ExtendedSplash".
 
--   Xxxxxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209396) xxxxxxxx xx xxx xxxxxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br242704) xxxxxxx xx xxxxx xxx xxxxxxxxxx xxxxx xxx xxx xxx xxxx xxx'x xxxxxx xxxxxx xx xxxx xxx xxxxxxxx (xx xxx **Xxxxxx Xxxxxx** xxxxxxx xx xxxx Xxxxxxx.xxxxxxxxxxxx xxxx). Xxx xxxxxxx xxxxxx xxxxxx xxxxx xx x xxxxx xxxx (xxx xxxxx \#YYYYYY). Xxxx xxxx xxxx **Xxxx** xxxxxxx xx xxxxxxxx xx xxxxxxx xxxx xxx xxxxxx x xxx **Xxxxx Xxxx**. Xxx xxx'x xxxx xx xxx x **Xxxx**; xx'x xxxx x xxxxxxxxxx xxxx xxx xxxxxxxx xx xxxxxxxx xxxxxx xxxxxx.
--   Xxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209267) xxxxxxx xx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br242704). Xxx'xx xxx xxxx **Xxxxxx** xx xxxxxxxx xxxx xxxxxxxx xxxxxx xxxxxx xxxxx.
--   Xxx xx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242752) xxxxxxx xx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209267). Xxx xxx xxxx YYY x YYY xxxxx xxxxx xxx xxxx xxxxxxxx xxxxxx xxxxxx xxxx xxx xxxxx xxx xxx xxxxxxx xxxxxx xxxxxx.
--   (Xxxxxxxx) Xxx x xxxxxxxx xxxxxxx xx xxxx xxxxx xxxx xxxx xxx xx xxxxxxx. Xxxx xxxxx xxxx x [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227538), xxxxxxx xx x xxxxxxxxxxx xx xxxxxxxxxxxxx [**XxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br227529).
+Adding a **Blank Page** item generates two files, one for markup (ExtendedSplash.xaml) and another for code (ExtendedSplash.xaml.cs).
 
-Xxx xxx xxxxxxxxx xxxx xx xxxxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209267) xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242752) xxxxxxxx, xx xxxx xx x [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227538) xxxxxxx, xx XxxxxxxxXxxxxx.xxxx:
+## Essential XAML for an extended splash screen
+
+
+Follow these steps to add an image and progress control to your extended splash screen.
+
+In your ExtendedSplash.xaml file:
+
+-   Change the [**Background**](https://msdn.microsoft.com/library/windows/apps/br209396) property of the default [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) element to match the background color you set for your app's splash screen in your app manifest (in the **Visual Assets** section of your Package.appxmanifest file). The default splash screen color is a light gray (hex value \#464646). Note that this **Grid** element is provided by default when you create a new **Blank Page**. You don't have to use a **Grid**; it's just a convenient base for building an extended splash screen.
+-   Add a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) element to the [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704). You'll use this **Canvas** to position your extended splash screen image.
+-   Add an [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) element to the [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267). Use the same 600 x 320 pixel image for your extended splash screen that you chose for the default splash screen.
+-   (Optional) Add a progress control to show users that your app is loading. This topic adds a [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538), instead of a determinate or indeterminate [**ProgressBar**](https://msdn.microsoft.com/library/windows/apps/br227529).
+
+Add the following code to define [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) and [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) elements, as well as a [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) control, in ExtendedSplash.xaml:
 
 ```xaml
     <Grid Background="#464646">
@@ -65,29 +65,29 @@ Xxx xxx xxxxxxxxx xxxx xx xxxxxx [**Xxxxxx**](https://msdn.microsoft.com/library
     </Grid>
 ```
 
-**Xxxx**  Xxxx xxxx xxxx xxx xxxxx xx xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227538) xx YY xxxxxx. Xxx xxx xxxxxxxx xxx xxx xxxxx xx x xxxxx xxxx xxxxx xxx xxxx xxx, xxxxxxx, xxx xxxxxxx xxxx xxx xxxxxx xx xxxxxx xx xxxx xxxx YY xxxxxx.
+**Note**  This code sets the width of the [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) to 20 pixels. You can manually set its width to a value that works for your app, however, the control will not render at widths of less than 20 pixels.
 
  
 
-## Xxxxxxxxx xxxx xxx xx xxxxxxxx xxxxxx xxxxxx xxxxx
+## Essential code for an extended splash screen class
 
 
-Xxxx xxxxxxxx xxxxxx xxxxxx xxxxx xx xxxxxxx xxxxxxxx xxx xxxxxx xxxx (Xxxxxxx xxxx) xx xxxxxxxxxxx xxxxxxx. Xxx xxxxxxxx xx xxx xxxxx xxx xxx xxxx xx xxxxxxx xx xxxx xxxx xxxxxxxx xxxxxx xxxxxx xxxxx xxxx xx xxxxxx xxx xxx xxxxxx xxxxxxx.
+Your extended splash screen needs to respond whenever the window size (Windows only) or orientation changes. The position of the image you use must be updated so that your extended splash screen looks good no matter how the window changes.
 
-Xxx xxxxx xxxxx xx xxxxxx xxxxxxx xx xxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxx xxxxxx.
+Use these steps to define methods to correctly display your extended splash screen.
 
-1.  **Xxx xxxxxxxx xxxxxxxxxx**
+1.  **Add required namespaces**
 
-    Xxx'xx xxxx xx xxx xxx xxxxxxxxx xxxxxxxxxx xx XxxxxxxxXxxxxx.xxxx.xx xx xxxxxx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224763) xxxxx, [**Xxxxxx.XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209055) xxxxxx.
+    You'll need to add the following namespaces to ExtendedSplash.xaml.cs to access the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) class, [**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) events.
 
     ```cs
     using Windows.ApplicationModel.Activation;
     using Windows.UI.Core;
     ```
 
-2.  **Xxxxxx x xxxxxxx xxxxx xxx xxxxxxx xxxxx xxxxxxxxx**
+2.  **Create a partial class and declare class variables**
 
-    Xxxxxxx xxx xxxxxxxxx xxxx xx XxxxxxxxXxxxxx.xxxx.xx xx xxxxxx x xxxxxxx xxxxx xx xxxxxxxxx xx xxxxxxxx xxxxxx xxxxxx.
+    Include the following code in ExtendedSplash.xaml.cs to create a partial class to represent an extended splash screen.
 
     ```cs
     partial class ExtendedSplash : Page
@@ -101,11 +101,11 @@ Xxx xxxxx xxxxx xx xxxxxx xxxxxxx xx xxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxx xxxx
     }
     ```
 
-    Xxxxx xxxxx xxxxxxxxx xxx xxxx xx xxxxxxx xxxxxxx. Xxx `splashImageRect` xxxxxxxx xxxxxx xxx xxxxxxxxxxx xxxxx xxx xxxxxx xxxxxxxxx xxx xxxxxx xxxxxx xxxxx xxx xxx xxx. Xxx `splash` xxxxxxxx xxxxxx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224763) xxxxxx, xxx xxx `dismissed` xxxxxxxx xxxxxx xxxxxxx xx xxx xxx xxxxxx xxxxxx xxxx xx xxxxxxxxx xx xxx xxxxxx xxx xxxx xxxxxxxxx.
+    These class variables are used by several methods. The `splashImageRect` variable stores the coordinates where the system displayed the splash screen image for the app. The `splash` variable stores a [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) object, and the `dismissed` variable tracks whether or not the splash screen that is displayed by the system has been dismissed.
 
-3.  **Xxxxxx x xxxxxxxxxxx xxx xxxx xxxxx xxxx xxxxxxxxx xxxxxxxxx xxx xxxxx**
+3.  **Define a constructor for your class that correctly positions the image**
 
-    Xxx xxxxxxxxx xxxx xxxxxxx x xxxxxxxxxxx xxx xxx xxxxxxxx xxxxxx xxxxxx xxxxx xxxx xxxxxxx xxx xxxxxx xxxxxxxx xxxxxx, xxxxxxxxx xxx xxxxx xxx (xxxxxxxx) xxxxxxxx xxxxxxx xx xxx xxxxxxxx xxxxxx xxxxxx, xxxxxxx x xxxxx xxx xxxxxxxxxx, xxx xxxxx xx xxxxxxxxxxxx xxxxxx xx xxxxxxx x xxxxx xxxxxxx xxxxx.
+    The following code defines a constructor for the extended splash screen class that listens for window resizing events, positions the image and (optional) progress control on the extended splash screen, creates a frame for navigation, and calls an asynchronous method to restore a saved session state.
 
     ```cs
     public ExtendedSplash(SplashScreen splashscreen, bool loadState)
@@ -135,11 +135,11 @@ Xxx xxxxx xxxxx xx xxxxxx xxxxxxx xx xxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxx xxxx
     }
     ```
 
-    Xxxx xxxx xx xxxxxxxx xxxx [**Xxxxxx.XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209055) xxxxxxx (`ExtendedSplash_OnResize` xx xxx xxxxxxx) xx xxxx xxxxx xxxxxxxxxxx xx xxxx xxxx xxx xxxxxxxxx xxx xxxxx xxxxxxxxx xx xxxx xxxxxxxx xxxxxx xxxxxx.
+    Make sure to register your [**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) handler (`ExtendedSplash_OnResize` in the example) in your class constructor so that your app positions the image correctly in your extended splash screen.
 
-4.  **Xxxxxx x xxxxx xxxxxx xx xxxxxxxx xxx xxxxx xx xxxx xxxxxxxx xxxxxx xxxxxx**
+4.  **Define a class method to position the image in your extended splash screen**
 
-    Xxxx xxxx xxxxxxxxxxxx xxx xx xxxxxxxx xxx xxxxx xx xxx xxxxxxxx xxxxxx xxxxxx xxxx xxxx xxx `splashImageRect` xxxxx xxxxxxxx.
+    This code demonstrates how to position the image on the extended splash screen page with the `splashImageRect` class variable.
 
     ```cs
     void PositionImage()
@@ -151,9 +151,9 @@ Xxx xxxxx xxxxx xx xxxxxx xxxxxxx xx xxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxx xxxx
     }
     ```
 
-5.  **(Xxxxxxxx) Xxxxxx x xxxxx xxxxxx xx xxxxxxxx x xxxxxxxx xxxxxxx xx xxxx xxxxxxxx xxxxxx xxxxxx**
+5.  **(Optional) Define a class method to position a progress control in your extended splash screen**
 
-    Xx xxx xxxxx xx xxx x [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227538) xx xxxx xxxxxxxx xxxxxx xxxxxx, xxxxxxxx xx xxxxxxxx xx xxx xxxxxx xxxxxx xxxxx. Xxx xxx xxxxxxxxx xxxx xx XxxxxxxxXxxxxx.xxxx.xx xx xxxxxx xxx **XxxxxxxxXxxx** YY xxxxxx xxxxx xxx xxxxx.
+    If you chose to add a [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) to your extended splash screen, position it relative to the splash screen image. Add the following code to ExtendedSplash.xaml.cs to center the **ProgressRing** 32 pixels below the image.
 
     ```cs
     void PositionRing()
@@ -163,9 +163,9 @@ Xxx xxxxx xxxxx xx xxxxxx xxxxxxx xx xxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxx xxxx
     }
     ```
 
-6.  **Xxxxxx xxx xxxxx, xxxxxx x xxxxxxx xxx xxx Xxxxxxxxx xxxxx**
+6.  **Inside the class, define a handler for the Dismissed event**
 
-    Xx XxxxxxxxXxxxxx.xxxx.xx, xxxxxxx xxxx xxx [**XxxxxxXxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224764) xxxxx xxxxxx xx xxxxxxx xxx `dismissed` xxxxx xxxxxxxx xx xxxx. Xx xxxx xxx xxx xxxxx xxxxxxxxxx, xxx xxxx xx xxxx xxxxx xxxxxxx.
+    In ExtendedSplash.xaml.cs, respond when the [**SplashScreen.Dismissed**](https://msdn.microsoft.com/library/windows/apps/br224764) event occurs by setting the `dismissed` class variable to true. If your app has setup operations, add them to this event handler.
 
     ```cs
     // Include code to be executed when the system has transitioned from the splash screen to the extended splash screen (application&#39;s first view).
@@ -177,7 +177,7 @@ Xxx xxxxx xxxxx xx xxxxxx xxxxxxx xx xxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxx xxxx
     }
     ```
 
-    Xxxxx xxx xxxxx xx xxxxxxxx, xxxxxxxx xxxx xxxx xxxx xxxxxxxx xxxxxx xxxxxx. Xxx xxxxxxxxx xxxx xxxxxxx x xxxxxx xxxxxx `DismissExtendedSplash` xxxx xxxxxxxxx xx xxx `MainPage` xxxxxxx xx xxxx xxx'x XxxxXxxx.xxxx xxxx.
+    After app setup is complete, navigate away from your extended splash screen. The following code defines a method called `DismissExtendedSplash` that navigates to the `MainPage` defined in your app's MainPage.xaml file.
 
     ```cs
     void DismissExtendedSplash()
@@ -189,9 +189,9 @@ Xxx xxxxx xxxxx xx xxxxxx xxxxxxx xx xxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxx xxxx
     }
     ```
 
-7.  **Xxxxxx xxx xxxxx, xxxxxx x xxxxxxx xxx Xxxxxx.XxxxXxxxxxx xxxxxx**
+7.  **Inside the class, define a handler for Window.SizeChanged events**
 
-    Xxxxxxx xxxx xxxxxxxx xxxxxx xxxxxx xx xxxxxxxxxx xxx xxxxxxxx xx x xxxx xxxxxxx xxx xxxxxx. Xxxx xxxx xxxxxxxx xxxx x [**Xxxxxx.XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209055) xxxxx xxxxxx xx xxxxxxxxx xxx xxx xxxxxxxxxxx xxx xxxxxxxxxxxxx xxx xxxxx. Xx xxx xxxxx x xxxxxxxx xxxxxxx xx xxxx xxxxxxxx xxxxxx xxxxxx, xxxxxxxxxx xx xxxxxx xxxx xxxxx xxxxxxx xx xxxx.
+    Prepare your extended splash screen to reposition its elements if a user resizes the window. This code responds when a [**Window.SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br209055) event occurs by capturing the new coordinates and repositioning the image. If you added a progress control to your extended splash screen, reposition it inside this event handler as well.
 
     ```cs
     void ExtendedSplash_OnResize(Object sender, WindowSizeChangedEventArgs e)
@@ -209,13 +209,13 @@ Xxx xxxxx xxxxx xx xxxxxx xxxxxxx xx xxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxx xxxx
     }
     ```
 
-    **Xxxx**  Xxxxxx xxx xxx xx xxx xxx xxxxx xxxxxxxx xxxx xxxx xxx xxxxx xxxxxxxx (`splash`) xxxxxxxx x xxxxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224763) xxxxxx, xx xxxxx xx xxx xxxxxxx.
+    **Note**  Before you try to get the image location make sure the class variable (`splash`) contains a valid [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) object, as shown in the example.
 
      
 
-8.  **(Xxxxxxxx) Xxx x xxxxx xxxxxx xx xxxxxxx x xxxxx xxxxxxx xxxxx**
+8.  **(Optional) Add a class method to restore a saved session state**
 
-    Xxx xxxx xxx xxxxx xx xxx [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335) xxxxxx xx Xxxx Y: [Xxxxxx xxx xxxxxx xxxxxxxxxx xxxxxxx](#modify-the-launch-activation-handler) xxxxxx xxxx xxx xx xxxxxxx xx xxxxxxxx xxxxxx xxxxxx xxxx xx xxxxxxxx. Xx xxxxxxxxxxx xxx xxxxxxx xxxxxxx xx xxx xxxxxx xx xxxx xxxxxxxx xxxxxx xxxxxx xxxxx, xxx xxxxx xxxxxxxx xxxxxx xx xxxxxxxxxxxx xxxxxx xx xxxx XxxxxxxxXxxxxx.xxxx.xx xxxx xx xxxxxxx xxx xxx'x xxxxx.
+    The code you added to the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method in Step 4: [Modify the launch activation handler](#modify-the-launch-activation-handler) causes your app to display an extended splash screen when it launches. To consolidate all methods related to app launch in your extended splash screen class, you could consider adding an asynchronous method to your ExtendedSplash.xaml.cs file to restore the app's state.
 
     ```cs
     async void RestoreStateAsync(bool loadState)
@@ -227,16 +227,16 @@ Xxx xxxxx xxxxx xx xxxxxx xxxxxxx xx xxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxx xxxx
     }
     ```
     
-    Xxxx xxx xxxxxx xxx xxxxxx xxxxxxxxxx xxxxxxx xx Xxx.xxxx.xx, xxx'xx xxxx xxx `loadstate` xx xxxx xx xxx xxxxxxxx [**XxxxxxxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224694) xx xxxx xxx xxx **Xxxxxxxxxx**. Xx xx, xxx `RestoreStateAsync` xxxxxx xxxxxxxx xxx xxx xx xxx xxxxxxxx xxxxx. Xxx xx xxxxxxxx xx xxx xxxxxx, xxxxxxxxxx, xxx xxxxxxxxxxx, xxx [Xxx xxxxxxxxx](app-lifecycle.md).
+    When you modify the launch activation handler in App.xaml.cs, you'll also set `loadstate` to true if the previous [**ApplicationExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224694) of your app was **Terminated**. If so, the `RestoreStateAsync` method restores the app to its previous state. For an overview of app launch, suspension, and termination, see [App lifecycle](app-lifecycle.md).
 
-## Xxxxxx xxx xxxxxx xxxxxxxxxx xxxxxxx
+## Modify the launch activation handler
 
 
-Xxxx xxxx xxx xx xxxxxxxx, xxx xxxxxx xxxxxx xxxxxx xxxxxx xxxxxxxxxxx xx xxx xxx'x xxxxxx xxxxxxxxxx xxxxx xxxxxxx. Xxx xxx xxx xxxx xxxxxxxxxxx xx xxxxxxxxx xxxxxxxx xxx xxxxx xx xxxx xxxxxxxx xxxxxx xxxxxx xxxx. Xxx xxx xxx xxxx xxxxxx xxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxxx xxxxx xxxxxxxxx xxxx xxx xxxxxx xx xxxx xxx'x [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335) xxxxxxx (xxx xxx `args` xxxxxxxx xx xxx xxxxxxxxx xxxx).
+When your app is launched, the system passes splash screen information to the app's launch activation event handler. You can use this information to correctly position the image on your extended splash screen page. You can get this splash screen information from the activation event arguments that are passed to your app's [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) handler (see the `args` variable in the following code).
 
-Xx xxx xxxx xxx xxxxxxx xxxxxxxxxx xxx [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335) xxxxxxx xxx xxxx xxx, xxx [Xxx xxxxxxxxx](app-lifecycle.md) xx xxxxx xxx xx xxxxxx xxxxxxxxxx xxxxxx.
+If you have not already overridden the [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) handler for your app, see [App lifecycle](app-lifecycle.md) to learn how to handle activation events.
 
-Xx Xxx.xxxx.xx, xxx xxx xxxxxxxxx xxxx xx xxxxxx xxx xxxxxxx xx xxxxxxxx xxxxxx xxxxxx.
+In App.xaml.cs, add the following code to create and display an extended splash screen.
 
 ```cs
 protected override void OnLaunched(LaunchActivatedEventArgs args)
@@ -252,14 +252,14 @@ protected override void OnLaunched(LaunchActivatedEventArgs args)
 }
 ```
 
-## Xxxxxxxx xxxx
+## Complete code
 
 
-> **Xxxx**  Xxx xxxxxxxxx xxxx xxxxxxxx xxxxxxx xxxx xxx xxxxxxxx xxxxx xx xxx xxxxxxxx xxxxx.
--   XxxxxxxxXxxxxx.xxxx xxxxxxxx x `DismissSplash` xxxxxx. Xxxx xxxx xxxxxx xx xxxxxxx, xx xxxxx xxxxxxx, `DismissSplashButton_Click`, xxxxx xxx `DismissExtendedSplash` xxxxxx. Xx xxxx xxx, xxxx `DismissExtendedSplash` xxxx xxxx xxx xx xxxx xxxxxxx xxxxxxxxx xx xxxxxxxxxxxx xxx XX.
--   Xxxx xxx xxxx xxxx x XXX xxx xxxxxxx xxxxxxxx, xxxxx xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242682) xxxxxxxxxx. Xx x xxxxxx, xx Xxx.xxxx.xx, xxx xxxxxx xxxxxxxxxx xxxxxxx ([**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335)) xxxxxxx x `rootFrame` xxx xxxx xx xx xxx xxx xxxxxxx xx xxx xxx xxxxxx.
+> **Note**  The following code slightly differs from the snippets shown in the previous steps.
+-   ExtendedSplash.xaml includes a `DismissSplash` button. When this button is clicked, an event handler, `DismissSplashButton_Click`, calls the `DismissExtendedSplash` method. In your app, call `DismissExtendedSplash` when your app is done loading resources or initializing its UI.
+-   This app also uses a UWP app project template, which uses [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) navigation. As a result, in App.xaml.cs, the launch activation handler ([**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)) defines a `rootFrame` and uses it to set the content of the app window.
 
-XxxxxxxxXxxxxx.xxxx: Xxxx xxxxxxx xxxxxxxx x `DismissSplash` xxxxxx xxxxxxx xx xxxxx'x xxxx xxx xxxxxxxxx xx xxxx. Xx xxxx xxx, xxxxxxx xxx xxxxxxxx xxxxxx xxxxxx xxxxxxxxxxxxx xxxx xxxx xxx xx xxxx xxxxxxx xxxxxxxxx xx xxxxxxxxx xxx xxxxxxx XX.
+ExtendedSplash.xaml: This example includes a `DismissSplash` button because it doesn't have app resources to load. In your app, dismiss the extended splash screen automatically when your app is done loading resources or preparing its initial UI.
 
 ```xaml
 <Page
@@ -283,7 +283,7 @@ XxxxxxxxXxxxxx.xxxx: Xxxx xxxxxxx xxxxxxxx x `DismissSplash` xxxxxx xxxxxxx xx x
 </Page>
 ```
 
-XxxxxxxxXxxxxx.xxxx.xx: Xxxx xxxx xxx `DismissExtendedSplash` xxxxxx xx xxxxxx xxxx xxx xxxxx xxxxx xxxxxxx xxx xxx `DismissSplash` xxxxxx. Xx xxxx xxx, xxx xxx'x xxxx x `DismissSplash` xxxxxx. Xxxxxxx, xxxx `DismissExtendedSplash` xxxx xxxx xxx xx xxxx xxxxxxx xxxxxxxxx xxx xxx xxxx xx xxxxxxxx xx xxx xxxx xxxx.
+ExtendedSplash.xaml.cs: Note that the `DismissExtendedSplash` method is called from the click event handler for the `DismissSplash` button. In your app, you won't need a `DismissSplash` button. Instead, call `DismissExtendedSplash` when your app is done loading resources and you want to navigate to its main page.
 
 ```cs
 using System;
@@ -409,9 +409,9 @@ namespace SplashScreenExample
 }
 ```
 
-Xxx.xxxx.xx: Xxxx xxxxxxx xxx xxxxxxx xxxxx xxx XXX xxx **Xxxxx Xxx (XXXX)** xxxxxxx xxxxxxxx xx Xxxxxx Xxxxxx YYYY. Xxxx xxx `OnNavigationFailed` xxx `OnSuspending` xxxxx xxxxxxxx xxx xxxxxxxxxxxxx xxxxxxxxx xxx xxx'x xxxx xx xx xxxxxxx xx xxxxxxxxx xx xxxxxxxx xxxxxx xxxxxx. Xxxx xxxxx xxxx xxxxxxxx `OnLaunched`.
+App.xaml.cs: This project was created using the UWP app **Blank App (XAML)** project template in Visual Studio 2015. Both the `OnNavigationFailed` and `OnSuspending` event handlers are automatically generated and don't need to be changed to implement an extended splash screen. This topic only modifies `OnLaunched`.
 
-Xx xxx xxxx'x xxx x xxxxxxx xxxxxxxx xxx xxxx xxx, xxx Xxxx Y: [Xxxxxx xxx xxxxxx xxxxxxxxxx xxxxxxx](#modify_the_launch_activation_handler) xxx xx xxxxxxx xx x xxxxxxxx `OnLaunched` xxxx xxxxx'x xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242682) xxxxxxxxxx.
+If you didn't use a project template for your app, see Step 4: [Modify the launch activation handler](#modify_the_launch_activation_handler) for an example of a modified `OnLaunched` that doesn't use [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) navigation.
 
 ```cs
 using System;
@@ -528,22 +528,26 @@ namespace SplashScreenExample
 }
 ```
 
-## Xxxxxxx xxxxxx
+## Related topics
 
 
-* [Xxx xxxxxxxxx](app-lifecycle.md)
+* [App lifecycle](app-lifecycle.md)
 
-**Xxxxxxxxx**
+**Reference**
 
-* [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxx xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224766)
-* [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxx.XxxxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br224763)
-* [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxx.XxxxxxXxxxxx.XxxxxXxxxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224765)
-* [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxx.XxxxXxxxxxxxxxxXxxx.Xxxxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225018)
+* [**Windows.ApplicationModel.Activation namespace**](https://msdn.microsoft.com/library/windows/apps/br224766)
+* [**Windows.ApplicationModel.Activation.SplashScreen class**](https://msdn.microsoft.com/library/windows/apps/br224763)
+* [**Windows.ApplicationModel.Activation.SplashScreen.ImageLocation property**](https://msdn.microsoft.com/library/windows/apps/br224765)
+* [**Windows.ApplicationModel.Core.CoreApplicationView.Activated event**](https://msdn.microsoft.com/library/windows/apps/br225018)
+
+ 
 
  
 
- 
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

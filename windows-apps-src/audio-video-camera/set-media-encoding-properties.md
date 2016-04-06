@@ -1,85 +1,89 @@
 ---
-xx.xxxxxxx: YYXXYYYY-XYYY-YYYY-YYYX-YYXYXYYYYYXY
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxx xxx xxx xx xxx xxx XXxxxxXxxxxxxxXxxxxxxxxx xxxxxxxxx xx xxx xxx xxxxxxxxxx xxx xxxxx xxxx xx xxx xxxxxx xxxxxxx xxxxxx xxx xxxxxxxx xxxxxx xxx xxxxx.
-xxxxx: Xxx xxxxx xxxxxxxx xxxxxxxxxx
+ms.assetid: 09BA9250-A476-4803-910E-52F0A51704B1
+description: This article shows you how to use the IMediaEncodingProperties interface to set the resolution and frame rate of the camera preview stream and captured photos and video.
+title: Set media encoding properties
 ---
 
-# Xxx xxxxx xxxxxxxx xxxxxxxxxx
+# Set media encoding properties
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-Xxxx xxxxxxx xxxxx xxx xxx xx xxx xxx [**XXxxxxXxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701011) xxxxxxxxx xx xxx xxx xxxxxxxxxx xxx xxxxx xxxx xx xxx xxxxxx xxxxxxx xxxxxx xxx xxxxxxxx xxxxxx xxx xxxxx. Xx xxxx xxxxx xxx xx xxxxxx xxxx xxx xxxxxx xxxxx xx xxx xxxxxxx xxxxxx xxxxxxx xxxx xx xxx xxxxxxxx xxxxx.
-
-Xxxxxx xxxxxxxx xxxxx x xxxx xxxxxxxx xxx xx xxxxxxxxxxx xxx xxxxxxx xxx xxxxxx xxxxxxxxxx xx xxx xxxxxx, xxx xxxx xxx xxx xxxxxxxxx xxx xxx xxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxx xxxxxxxx](camera-profiles.md).
-
-Xxx xxxx xx xxxx xxxxxxx xxx xxxxxxx xxxx xxx [XxxxxxXxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409). Xxx xxx xxxxxxxx xxx xxxxxx xx xxx xxx xxxx xxxx xx xxxxxxx xx xx xxx xxx xxxxxx xx x xxxxxxxx xxxxx xxx xxxx xxx xxx.
-
-**Xxxx**  
-Xxxx xxxxxxx xxxxxx xx xxxxxxxx xxx xxxx xxxxxxxxx xx [Xxxxxxx Xxxxxx xxx Xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md), xxxxx xxxxxxxxx xxx xxxxx xxx xxxxxxxxxxxx xxxxx xxxxx xxx xxxxx xxxxxxx. Xx xx xxxxxxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxx xxxx xxx xxxxx xxxxx xxxxxxx xxxxxxx xx xxxx xxxxxxx xxxxxx xxxxxx xx xx xxxx xxxxxxxx xxxxxxx xxxxxxxxx. Xxx xxxx xx xxxx xxxxxxx xxxxxxx xxxx xxxx xxx xxxxxxx xxx xx xxxxxxxx xx XxxxxXxxxxxx xxxx xxx xxxx xxxxxxxx xxxxxxxxxxx.
-
-## X xxxxx xxxxxxxx xxxxxxxxxx xxxxxx xxxxx
-
-Xxxxxxxx x xxxxxx xxxxxx xxxxx xx xxxx xxx xxxxxxxxxxxxx xx xxx [**XXxxxxXxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701011) xxxxxxxxx xxxxx xx xxxxxx xx xxxxxx x xxx xx xxxxxxxx xxxxxxxxxx xxxx xxxx xxxxxxxxxx xxxxxxxx. Xxxx xxxxxx xxxxx xx xxxxxxxxxxxx xxxxxx xxx xx xxx xxxxxxxxx xxxxxxxx xx xxx xxxxxxxx xxxxxxxxxx xxxxxxx:
-
-**Xxxxxxx**  
-Xxx [**XxxxxXxxxxxXxxxxxxxxx.XxxXxxxxxxxxXxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211994) xxxxxx xxxxx x xxxxxx xx xxx [**XxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br226640) xxxxxxxxxxx, xxxx xx **XxxxxXxxxxx** xx **Xxxxx**, xxx xxxxxxx x xxxx xx xxxxxx [**XxxxxXxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700993) xx [**XxxxxXxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701217) xxxxxxx xxxx xxxxxx xxx xxxxxx xxxxxxxx xxxxxxxx, xxxx xx xxx xxxxxxxxxx xx xxx xxxxxxxx xxxxx xx xxxxx. Xxx xxxxxxx xx xxxxxxx **XxxXxxxxxxxxXxxxxXxxxxxXxxxxxxxxx** xxx xxxxxxx **XxxxxXxxxxxxxXxxxxxxxxx** xx **XxxxxXxxxxxxxXxxxxxxxxx** xxxxxxxxxx xx xxxx **XxxxxXxxxxxXxxx** xxxxx xx xxxxxxxxx. Xxx xxxx xxxxxx, xxx xxxxxx xxxxxx xxxxx xxx xxxx xx xxxx xxxxxxxx xxxxx xxx xxxx xx xx xxx xxxxxxxxxxx xxxx xxxxxx xxxxxxxxxx xx xxxxxx xxx xx xxx xxxxxxxx xxxxxx.
-
-Xxx xxxxxx xxxxx xxxxxxx xxxxx xxxxxxx xxx xxxx xxxxxxxx xxx xxxxxxx xxx [**XxxxxXxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700993) xx [**XxxxxXxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701217) xx xxxx xxxx xxx xxxx xxxxx'x xxxx xx xxxxxxxxxxx xxxxxxx xxx xxx xxxxx. Xx xxxxxxxx xx xxxx, xxx xxxxxx xxxxx xxxxxxx xxxxxxxxxx xxx xxx xxxxxx xxxxx xx xxx xxxxxxxxxx, xxx xxxxx xxxx (xxx xxxxx xxxxxxxx xxxxxxxxxx xxxx), xxx x xxxxxxxx xxxx xxxx xxxxx xx xxxxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxxxx xx xxx xxx'x XX.
-
-Xxx xxxx xxxxxxx xxx [**Xxxxxxx.Xxxxx.XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701296) xxxxxxxxx xx xxx xxxxxx xxxx xxx xxx xxxxxx xxxxx.
-
-[!xxxx-xx[XxxxxXxxxxxxxXxxxxxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMediaEncodingPropertiesUsing)]
-
-[!xxxx-xx[XxxxxxXxxxxxxxxxXxxxxx](./code/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs#SnippetStreamPropertiesHelper)]
-
-## Xxxxxxxxx xx xxx xxxxxxx xxx xxxxxxx xxxxxxx xxx xxxxxxxxxxx
-
-Xx xxxx xxxxxxx, xxx xxxx xxxxxxxx xxx xx xxxx xxx xxxx xxxxxxx xxx xxxxxxx xxxxxxx. Xx xxxxx xxxxxxx, xxxxxxx xxx xxxxxxxx xxxxxxxxxx xx xxx xxxx xxxx xxx xxx xxxxx. Xx xxxxxxx xxxx xxx xxxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxx, xxx xxxxxxxxxx xxx xx xxx xxx xxxx xxxxxx xxxxxxxxxxxxx. Xxx xxx xxxxxxxxx xxxx xx xxxxxxxxx xx xxx xxxxxxx xxx xxxxxxx xxxxxxx xxx xxxxxxxxxxx. Xxx xxxxxx xxxxxx xxxx XX xx xxxxxx xx xxxxxxx xxx xxxxxxx xx xxx xxxxxxx xxxxxxxxxxxxx xxxxx xx xxx xxxxxx xx xxxx xxxx.
-
-[!xxxx-xx[XxxxxXxXxxxxxxXxxXxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCheckIfStreamsAreIdentical)]
-
-## Xxx x xxxx xx xxxxxxxxx xxxxxx xxxxxxxxxx
-
-Xxx x xxxx xx xxx xxxxxxxxx xxxxxx xxxxxxxxxx xxx x xxxxxxx xxxxxx xx xxxxxxx xxx [**XxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226825) xxx xxxx xxx'x [XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md) xxxxxx xxx xxxx xxxxxxx [**XxxXxxxxxxxxXxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211994) xxx xxxxxxx xx xxx xx xxx [**XxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br226640) xxxxxx, **XxxxxXxxxxxx**, **XxxxxXxxxxx**, xx **Xxxxx**. Xx xxxx xxxxxxx, Xxxx xxxxxx xx xxxx xx xxxxxx x xxxx xx **XxxxxxXxxxxxxxxxXxxxxx** xxxxxxx, xxxxxxx xxxxxxxxxx xx xxxx xxxxxxx, xxx xxxx xx xxx [**XXxxxxXxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701011) xxxxxx xxxxxxxx xxxx **XxxXxxxxxxxxXxxxxXxxxxxXxxxxxxxxx**. Xxxx xxxxxxx xxxxx xxxx Xxxx xxxxxxxxx xxxxxxx xx xxxxx xxx xxxxxxxx xxxxxxxxxx xxxxx xxxxx xx xxxxxxxxxx xxx xxxx xx xxxxx xxxx.
-
-Xx xxxx xxx xxx xxxxxxxx xxxxxxxxxx xx xxxxx xxxx xxxxxxxxxxxx, xxx xxx xxxxxx x xxx xx xxxxx xxxxxxxx xxxxxxxxxx xxxxxxxxxxxxxxxx. X xxxxxxx xxxxxx xxx xxxx xxxxxxx xxxxxx xxx xxxx xx xxxxxxxxx xxxxxxxxxx xx xxx XX xxx xxxxx xxx xxxx xx xxxxxx xxxxx xxxxxxx xxxxxxxx. X **XxxxxXxxXxxx** xx xxxxxxx xxx xxxx xxxx xx xxx xxxx xx **XxxxxxXxxxxxxxxxXxxxxx** xxxxxxx xx xxx xxxx. Xxx xxxxxxx xx xxx xx xxx xxxxxxxx xxxx xxxxxxxx xx xxx xxxxxx xxxxx xxx xxx xxx xx xxx xx xxx xxxxxx xxxxx xxxxxx xx xx xxx xx xxxx xxxxx xx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx xxxxxxxxxx. Xxxx **XxxxxXxxXxxx** xx xxxx xxxxx xx xxx **XxxxxXxx** xxxxxx xxxx xxx xxxxxx.
-
-[!xxxx-xx[XxxxxxxxXxxxxxXxxxxxxxxxXX](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPopulateStreamPropertiesUI)]
-
-## Xxx xxx xxxxxxx xxxxxx xxxxxxxxxx
-
-Xxxx xxx xxxxx xxxxxx xxxxxxxxxx xx xxx xxxx xxxxxxx xxxxxxxx xxxxxxxxxx xx xxxxxxx [**XxxXxxxxXxxxxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700895), xxxxxxx xx xxx **XxxxxXxxxxxXxxx** xxxxx xxxxxxxxxx xxxxxxx xxx xxxxx, xxxxx, xx xxxxxxx xxxxxxxxxx xxxxxx xx xxx. Xxxx xxxxxxx xxxx xxx xxxxxxxxx xxxxxxxx xxxxxxxxxx xxxx xxx xxxx xxxxxxx xx xxxx xx xxx xx xxx **XxxxxXxx** xxxxxxx xxxxxxxxx xxxx xxx **XxxxxxxxXxxxxxXxxxxxxxxxXX** xxxxxx xxxxxx.
-
-[!xxxx-xx[XxxxxxxXxxxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewSettingsChanged)]
-
-[!xxxx-xx[XxxxxXxxxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhotoSettingsChanged)]
-
-[!xxxx-xx[XxxxxXxxxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoSettingsChanged)]
-
-## Xxxxx xxx xxxxxx xxxxx xx xxx xxxxxxx xxx xxxxxxx xxxxxxx
-
-X xxxxxxx xxxxxx xxx xxxx xxxxxxx XX xxx xxx xxxx xx xxxxxx xxx xxxxx xx xxxxx xxxxxxx xxxxxxxxxx xxx xxxx xxxxxxxxxxxxxxxx xxx xxx xxxxxxx xxxxxxxxxx. Xxxxx xxx x xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxx xxxx xxxxxxx xxxxxx xxxxxxxxxx xxx xxxx xxx:
-
--   Xxxxxx xxx xxxxxxx xxxxxxxxx xxxxxxx xxxxxxxxxx, xxxxxxx xxx XX xxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxx xx xxx xxxxxxx.
-
--   Xxxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxx xx xxx xxxxxxx xxxxxxxxxx xx xxxx xxx xxxxxxx xxxxxxxx xxx xxxxxxx xxxxxxxxxxxxxx xx xxx xxxxx xxxxxxxx xxxxx.
-
--   Xxxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxx xx xxx xxxx xx xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209278) xx xxxx xx xxxx xxxxxx xxxx xxxxxxxxx xxx xxxxx xxxxxxx xxx xxxxxxx xxxxxx xxxxxxxx.
-
-**Xxxxxxxxx**  
-Xx xx xxxxxxxx, xx xxxx xxxxxxx, xx xxx x xxxxxxxxx xxxxxx xxxxx xxx xxx xxxxxx'x xxxxxxx xxxxxx xxx xxxxxxx xxxxxx. Xxxxx xxxxxxxx xxxxxx xx xxxx xxxxxxxx xxx xxxxxx xx xxxxxxx xxxxx xxxxxxx xx xxx xxxxxxxx xxxxx xxxx xxx xxx xxxxxxx xx xxx xxxxxxx xxxxx xxx xxxxxx xx x xxxxxxxx xxxx xxxxxxxxxx. Xx xx xxxxxxxx xxxxxxxxxxx xxxx xxx xxx xxx xxxx xxxxxx xxxxx, xxxxxx x xxxxx xxxxxxxxx xxxxxx, xxx xxx xxxxxxx xxx xxxxxxx xxxxxxx. Xx xx xxxx xx xxxx xxxxxxxx xxxxxxxxx xxxxxxxxxxx xxxxxxx xxx xxxxxxx xxx xxxxxxx xx xxxx xx xxx xxxxxx xxxxx xxxxx xxxxxxx.
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xx xxxxxx xxxx xxx xxxxx xx xxxxx xxxxxxx xxxxxxx xxxxx xxx xxxxxx xxxxx xx xxx xxxxxxx xxxxxx, xxxx xxxxxxx xxxxx [**XxxxxXxxxxxXxxxxxxxxx.XxxXxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211995) xxx xxxxxx xx xxx **XxxxxXxxxxxx** xxxx xxxxx xx xxxxxxx xxx xxxxxxx xxxxxx xxxxxxxxxx xxx xxx xxxxxxx xxxxxx. Xxxx x xxxxx xxxxxx xxxxx xxxxxxxxx xxxxxx xx xxxxxxx xx xxxx xx xxx xxxxxxx xxxxxx xxxxxx xxxx xxx xxx xxxxxxx xxx xxxx xx xxx xxxxxxx xxxxxx, xx xxxx xx xxxx xxx xxxxx. Xxxx, x Xxxx xxxxxxxxx xxxxxx xx xxxx xx xxxxxx xxxx xxx **XxxxxxXxxxxxxxxxXxxxxx** xxxxxxx xxxxx xxx xxxxxx xxxxx xx xxxxxx xxx xxxxxxx xxxxxxxxx xxxxx xx xxx xxxxxxx xxxxxx.
+This article shows you how to use the [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) interface to set the resolution and frame rate of the camera preview stream and captured photos and video. It also shows how to ensure that the aspect ratio of the preview stream matches that of the captured media.
 
-[!xxxx-xx[XxxxxXxxxxxxXxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMatchPreviewAspectRatio)]
+Camera profiles offer a more advanced way of discovering and setting the stream properties of the camera, but they are not supported for all devices. For more information, see [Camera profiles](camera-profiles.md).
+
+The code in this article was adapted from the [CameraResolution sample](http://go.microsoft.com/fwlink/p/?LinkId=624252&clcid=0x409). You can download the sample to see the code used in context or to use the sample as a starting point for your own app.
+
+**Note**  
+This article builds on concepts and code discussed in [Capture Photos and Video with MediaCapture](capture-photos-and-video-with-mediacapture.md), which describes the steps for implementing basic photo and video capture. It is recommended that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.
+
+## A media encoding properties helper class
+
+Creating a simple helper class to wrap the functionality of the [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) interface makes it easier to select a set of encoding properties that meet particular criteria. This helper class is particularly useful due to the following behavior of the encoding properties feature:
+
+**Warning**  
+The [**VideoDeviceController.GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) method takes a member of the [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) enumeration, such as **VideoRecord** or **Photo**, and returns a list of either [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) or [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) objects that convey the stream encoding settings, such as the resolution of the captured photo or video. The results of calling **GetAvailableMediaStreamProperties** may include **ImageEncodingProperties** or **VideoEncodingProperties** regardless of what **MediaStreamType** value is specified. For this reason, you should always check the type of each returned value and cast it to the appropriate type before attempting to access any of the property values.
+
+The helper class defined below handles the type checking and casting for [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) or [**VideoEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701217) so that your app code doesn't need to distinguish between the two types. In addition to this, the helper class exposes properties for the aspect ratio of the properties, the frame rate (for video encoding properties only), and a friendly name that makes it easier to display the encoding properties in the app's UI.
+
+You must include the [**Windows.Media.MediaProperties**](https://msdn.microsoft.com/library/windows/apps/hh701296) namespace in the source file for the helper class.
+
+[!code-cs[MediaEncodingPropertiesUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMediaEncodingPropertiesUsing)]
+
+[!code-cs[StreamPropertiesHelper](./code/BasicMediaCaptureWin10/cs/StreamPropertiesHelper.cs#SnippetStreamPropertiesHelper)]
+
+## Determine if the preview and capture streams are independent
+
+On some devices, the same hardware pin is used for both preview and capture streams. On these devices, setting the encoding properties of one will also set the other. On devices that use different hardware pins for capture and preview, the properties can be set for each stream independently. Use the following code to determine if the preview and capture streams are independent. You should adjust your UI to enable or disable the setting of the streams independently based on the result of this test.
+
+[!code-cs[CheckIfStreamsAreIdentical](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCheckIfStreamsAreIdentical)]
+
+## Get a list of available stream properties
+
+Get a list of the available stream properties for a capture device by getting the [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) for your app's [MediaCapture](capture-photos-and-video-with-mediacapture.md) object and then calling [**GetAvailableMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211994) and passing in one of the [**MediaStreamType**](https://msdn.microsoft.com/library/windows/apps/br226640) values, **VideoPreview**, **VideoRecord**, or **Photo**. In this example, Linq syntax is used to create a list of **StreamPropertiesHelper** objects, defined previously in this article, for each of the [**IMediaEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh701011) values returned from **GetAvailableMediaStreamProperties**. This example first uses Linq extension methods to order the returned properties based first on resolution and then on frame rate.
+
+If your app has specific resolution or frame rate requirements, you can select a set of media encoding properties programmatically. A typical camera app will instead expose the list of available properties in the UI and allow the user to select their desired settings. A **ComboBoxItem** is created for each item in the list of **StreamPropertiesHelper** objects in the list. The content is set to the friendly name returned by the helper class and the tag is set to the helper class itself so it can be used later to retrieve the associated encoding properties. Each **ComboBoxItem** is then added to the **ComboBox** passed into the method.
+
+[!code-cs[PopulateStreamPropertiesUI](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPopulateStreamPropertiesUI)]
+
+## Set the desired stream properties
+
+Tell the video device controller to use your desired encoding properties by calling [**SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895), passing in the **MediaStreamType** value indicating whether the photo, video, or preview properties should be set. This example sets the requested encoding properties when the user selects an item in one of the **ComboBox** objects populated with the **PopulateStreamPropertiesUI** helper method.
+
+[!code-cs[PreviewSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewSettingsChanged)]
+
+[!code-cs[PhotoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPhotoSettingsChanged)]
+
+[!code-cs[VideoSettingsChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoSettingsChanged)]
+
+## Match the aspect ratio of the preview and capture streams
+
+A typical camera app will provide UI for the user to select the video or photo capture resolution but will programmatically set the preview resolution. There are a few different strategies for selecting the best preview stream resolution for your app:
+
+-   Select the highest available preview resolution, letting the UI framework perform any necessary scaling of the preview.
+
+-   Select the preview resolution closest to the capture resolution so that the preview displays the closest representation to the final captured media.
+
+-   Select the preview resolution closest to the size of the [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) so that no more pixels than necessary are going through the preview stream pipeline.
+
+**Important**  
+It is possible, on some devices, to set a different aspect ratio for the camera's preview stream and capture stream. Frame cropping caused by this mismatch can result in content being present in the captured media that was not visible in the preview which can result in a negative user experience. It is strongly recommended that you use the same aspect ratio, within a small tolerance window, for the preview and capture streams. It is fine to have entirely different resolutions enabled for capture and preview as long as the aspect ratio match closely.
+
+
+To ensure that the photo or video capture streams match the aspect ratio of the preview stream, this example calls [**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) and passes in the **VideoPreview** enum value to request the current stream properties for the preview stream. Next a small aspect ratio tolerance window is defined so that we can include aspect ratios that are not exactly the same as the preview stream, as long as they are close. Next, a Linq extension method is used to select just the **StreamPropertiesHelper** objects where the aspect ratio is within the defined tolerance range of the preview stream.
+
+[!code-cs[MatchPreviewAspectRatio](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetMatchPreviewAspectRatio)]
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

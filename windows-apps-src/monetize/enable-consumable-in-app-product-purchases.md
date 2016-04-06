@@ -1,34 +1,34 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxxxxxxxxx xx-xxx xxxxxxxx&\#YYYY;xxxxx xxxx xxx xx xxxxxxxxx, xxxx, xxx xxxxxxxxx xxxxx&\#YYYY;xxxxxxx xxx Xxxxx xxxxxxxx xxxxxxxx xx xxxxxxx xxxx xxxxxxxxx xxxx x xxxxxxxx xxxxxxxxxx xxxx xx xxxx xxxxxx xxx xxxxxxxx.
-xxxxx: Xxxxxx xxxxxxxxxx xx-xxx xxxxxxx xxxxxxxxx
-xx.xxxxxxx: XYYXXYYY-XXXX-YYYY-XXYX-YYXYXYXYXXXY
-xxxxxxxx: xx-xxx xxxxx
-xxxxxxxx: xxxxxxxxxx
-xxxxxxxx: xx-xxx xxxxxxxx
-xxxxxxxx: xx-xxx xxxxxxx
-xxxxxxxx: xxx xx xxxxxxx xx-xxx
-xxxxxxxx: xx-xxx xxxxxxxx xxxx xxxxxx
-xxxxxxxx: xx-xxx xxxxx xxxx xxxxxx
+Description: ストアの商取引プラットフォームを使ってコンシューマブルなアプリ内製品 (購入、使用、再購入が可能なアイテム) をサポートすると、堅牢かつ信頼性の高いアプリ内購入エクスペリエンスを顧客に提供できます。
+title: コンシューマブルなアプリ内製品購入を有効にする
+ms.assetid: F79EE369-ACFC-4156-AF6A-72D1C7D3BDA4
+keywords: アプリ内販売
+keywords: コンシューマブル
+keywords: アプリ内購入
+keywords: アプリ内製品
+keywords: アプリ内購入/販売をサポートする方法
+keywords: アプリ内購入コード サンプル
+keywords: アプリ内販売コード サンプル
 ---
 
-# Xxxxxx xxxxxxxxxx xx-xxx xxxxxxx xxxxxxxxx
+# コンシューマブルなアプリ内製品購入の有効化
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxxx xxxxxxxxxx xx-xxx xxxxxxxx—xxxxx xxxx xxx xx xxxxxxxxx, xxxx, xxx xxxxxxxxx xxxxx—xxxxxxx xxx Xxxxx xxxxxxxx xxxxxxxx xx xxxxxxx xxxx xxxxxxxxx xxxx x xxxxxxxx xxxxxxxxxx xxxx xx xxxx xxxxxx xxx xxxxxxxx. Xxxx xx xxxxxxxxxx xxxxxx xxx xxxxxx xxxx xx-xxxx xxxxxxxx (xxxx, xxxxx, xxx.) xxxx xxx xx xxxxxxxxx xxx xxxx xxxx xx xxxxxxxx xxxxxxxx xxxxx-xxx.
+ストアの商取引プラットフォームを使ってコンシューマブルなアプリ内製品 (購入、使用、再購入が可能なアイテム) をサポートすると、堅牢かつ信頼性の高いアプリ内購入エクスペリエンスを顧客に提供できます。 これは、購入して、特定のパワーアップを購入するために使うことができるゲーム内通貨 (ゴールド、コインなど) 用に特に便利です。
 
-## Xxxxxxxxxxxxx
+## 前提条件
 
--   Xxxx xxxxx xxxxxx xxx xxxxxxxx xxx xxxxxxxxxxx xxxxxxxxx xx xxxxxxxxxx xx-xxx xxxxxxxx. Xx xxx xxx xxxxxxxxxx xxxx xx-xxx xxxxxxxx, xxxxxx xxxxxx [Xxxxxx xx-xxx xxxxxxx xxxxxxxxx](enable-in-app-product-purchases.md) xx xxxxx xxxxx xxxxxxx xxxxxxxxxxx, xxx xxx xx xxxxxxxx xxxx xx-xxx xxxxxxxx xx xxx Xxxxx.
--   Xxxx xxx xxxx xxx xxxx xxx xx-xxx xxxxxxxx xxx xxx xxxxx xxxx, xxx xxxx xxx xxx [**XxxxxxxXxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh779766) xxxxxx xxxxxxx xx xxx [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh779765) xxxxxx. Xxxx xxx xxx xxx xxxxxx xxxx xxxxxxx xxxxx xxxxx xxxxxxxxx xxxxx xx xxx xxxxxxx xxxxxx xxxxxxx xx xxxxxxx xxx xxxx xxxxxx. Xx xx xxxx, xxx xxxx xx xxxxxxxxx xxx xxxx xxxxx "XxxxxxxXxxxxXxxxx.xxx" xx %xxxxxxxxxxx%\\XxxXxxx\\xxxxx\\xxxxxxxx\\&xx;xxxxxxx xxxx&xx;\\XxxxxXxxxx\\Xxxxxxxxx\\Xxxxxxx Xxxxx\\XxxXxxx. Xxx Xxxxxxxxx Xxxxxx Xxxxxx xxxxxxxxx xxxxxxx xxxx xxxx xxxx xxx xxx xxxx xxx xxx xxx xxxxx xxxx—xx xxx xxx xxxx xxxx x xxxxxx xxx xx xxxxxxx. Xxx xxxx xxxx, xxx **XxxxxxxXxxXxxxxxxxx**.
--   Xxxx xxxxx xxxx xxxxxxxxxx xxxx xxxxxxxx xxxxxxxx xx xxx [Xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=627610). Xxxx xxxxxx xx x xxxxx xxx xx xxx xxxxx-xx xxxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxxxxxx xxxxxxx xxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
+-   このトピックでは、コンシューマブルなアプリ内製品の購入とフルフィルメントの完了報告について説明します。 アプリ内製品に詳しくない場合は、「[アプリ内製品購入の有効化](enable-in-app-product-purchases.md)」を読んで、ライセンス情報と、ストアでアプリ内製品を適切に一覧表示する方法を確かめてください。
+-   新しいアプリ内製品のコード記述やテストを初めて行うときは、[**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) オブジェクトではなく、[**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) オブジェクトを使う必要があります。 そうすることで、実稼働サーバーを呼び出すのではなく、ライセンス サーバーへのシミュレートされた呼び出しを使って、ライセンス ロジックを検証できます。 そのためには、%userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData で "WindowsStoreProxy.xml" という名前のファイルをカスタマイズする必要があります。 このファイルは、アプリを初めて実行するときに Microsoft Visual Studio シミュレーターによって作られます。カスタマイズされたファイルを実行時に読み込むこともできます。 詳しくは、「**CurrentAppSimulator**」をご覧ください。
+-   このトピックでは、[ストア サンプル](http://go.microsoft.com/fwlink/p/?LinkID=627610)で提供されているコード例も参照します。 このサンプルを利用すると、ユニバーサル Windows プラットフォーム (UWP) アプリに提供されるさまざまな収益化オプションを体験できます。
 
-## Xxxx Y: Xxxxxx xxx xxxxxxxx xxxxxxx
+## 手順 1: 購入要求の作成
 
-Xxx xxxxxxx xxxxxxxx xxxxxxx xx xxxx xxxx [**XxxxxxxXxxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263381) xxxx xxx xxxxx xxxxxxxx xxxx xxxxxxx xxx Xxxxx. Xxx xxxxxxxxxx xxx xxxxxxxxxx xx-xxx xxxxxxxx xx xxxx xxxxx x xxxxxxxxxx xxxxxxxx, x xxxxxxxx xxxxxx xxxxxxxx xxx xxxx xxxxxxx xxxxx xxxxx xxx xxx xxx xxxxxxxx xxx Xxxxx xxxx xxx xxxxxxxx xxxxxxxx xxx xxxxxxxxxxxx xxxxxxxxx. Xx'x xxxx xxx'x xxxxxxxxxxxxxx xx xxxxxxx xxxxxxxxx xxxxxxxxxxx xxx xxxxxx xxx Xxxxx xx xxx xxxxxxxxxxx.
+最初の購買要求は、ストアを通じて行われた他の購入と同様に、[**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) を使って行います。 コンシューマブルなアプリ内製品に関する違いとして、購入が成功した後、その購入に対するフルフィルメントが正常に完了したことをアプリがストアに通知するまで、顧客は同じ製品をもう一度購入することができません。 アプリは、購入されたコンシューマブルのフルフィルメントを処理し、ストアにフルフィルメントの完了を通知する責任を負います。
 
-Xxx xxxxxxxxx xxxxxxx xxxxx x xxxxxxxxxx xx-xxx xxxxxxx xxxxxxxx xxxxxxx. Xxx'xx xxxxxx xxxx xxxxxxxx xxxxxxxxxx xxxx xxxx xxx xxxxxx xxxxxxx xxx xxxxx xxxxxxxxxxx xx xxx xxxxxxxxxx xx-xxx xxxxxxx xxx xxx xxxxxxxxx xxxxxxxxx—xxxx xxx xxxxxxx xx xxxxxxxxxx, xxx xxxx xxx xxxxxxx xx xxx xxxxxxxxxx xxxxxxx xx xx xxxxxxxxxxx xxxxxxxx xx xxxx xxxx xxxxxxx.
+次の例は、コンシューマブルなアプリ内製品の購入要求を示しています。 コードのコメントに、購入要求が成功した場合と同じ製品の購入のフルフィルメントが完了していないことが原因で購入要求が成功しなかった場合の 2 つの異なるシナリオについて、アプリがコンシューマブルなアプリ内製品のローカル フルフィルメントをいつ完了する必要があるかが示されています。
 
 ```CSharp
 PurchaseResults purchaseResults = await CurrentAppSimulator.RequestProductPurchaseAsync("product1");
@@ -51,13 +51,13 @@ switch (purchaseResults.Status)
 }
 ```
 
-## Xxxx Y: Xxxxxxxx xxxxx xxxxxxxxxxx xx xxx xxxxxxxxxx
+## 手順 2: コンシューマブルのローカル フルフィルメントの実行
 
-Xxxx xxxxxxxx xxxx xxxxxxxx xxxxxx xx xxx xxxxxxxxxx xx-xxx xxxxxxx, xx'x xxxxxxxxx xx xxxx xxxxx xx xxxxx xxxxxxx xx xxxxxxxxx (*xxxxxxxXx*), xxx xxxxx xxxxxxxxxxx xxxx xxxxxxxxxxx xx xxxxxxxxxx xxxx (*xxxxxxxxxxxXx*).
+コンシューマブルなアプリ内製品へのアクセスを顧客に許可するとき、フルフィルメントの対象になっている製品 (*productId*) と、フルフィルメントが関連付けられているトランザクション (*transactionId*) を追跡することが重要です。
 
-**Xxxxxxxxx**  Xxxx xxx xx xxxxxxxxxxx xxx xxx xxxxxxxxxx xxxxxxxxx xxxxxxxxxxx xx xxx Xxxxx. Xxxx xxxx xx xxxxxxxxx xx xxxxxxxxxxx x xxxx xxx xxxxxxxx xxxxxxxx xxxxxxxxxx xxx xxxx xxxxxxxxx.
+**重要**  アプリは、ストアにフルフィルメントの完了を正確に報告する必要があります。 この手順は、顧客が体験する公正で信頼できる購入エクスペリエンスを維持するために必要です。
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xxx xx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263392) xxxxxxxxxx xxxx xxx [**XxxxxxxXxxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263381) xxxx xx xxx xxxxxxxx xxxx xx xxxxxxxx xxx xxxxxxxxx xxxxxxx xxx xxxxxxxxxxx. Xx xxxxx xx xxxx xx xxxxx xxx xxxxxxx xxxxxxxxxxx xx x xxxxxxxx xxxx xxx xxxxx xx xxxxxxxxxx xx xxxxxxx xxxx xxxxx xxxxxxxxxxx xxx xxxxxxxxxx.
+次の例では、前の手順の [**RequestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) の呼び出しの [**PurchaseResults**](https://msdn.microsoft.com/library/windows/apps/dn263392) プロパティを使って、フルフィルメントの対象となる、購入された製品を識別しています。 ローカル フルフィルメントが成功したことを確かめるために、配列を使って後で参照できる場所に製品情報が保存されます。
 
 ```CSharp
 private void GrantFeatureLocally(string productId, Guid transactionId)
@@ -72,9 +72,9 @@ private void GrantFeatureLocally(string productId, Guid transactionId)
 }
 ```
 
-Xxxx xxxx xxxxxxx xxxxx xxx xx xxx xxx xxxxx xxxx xxx xxxxxxxx xxxxxxx xx xxxxxx xxxxxxx XX/xxxxxxxxxxx XX xxxxx xxxx xxx xxxxx xxxx xxxx xxxxxxxxx xxxxxxxxxxx xx xxx Xxxxx.
+次の例では、前の例の配列を使って、後でストアにフルフィルメントを報告するときに使われる製品 ID とトランザクション ID のペアにアクセスする方法を示しています。
 
-**Xxxxxxxxx**  Xxxxxxxx xxxxxxxxxxx xxxx xxx xxxx xx xxxxx xxx xxxxxxx xxxxxxxxxxx, xxxx xxx xxxx xxxxxxxxxxx xxx xxxxxxxxx xx xxxxxx xxxx xxxx xxxxxxxxx xxx xxx xxxxxxx xxx xxxxx xxxx xxxxx'x xxxxxxxx.
+**重要**  フルフィルメントの追跡と確認のために使っている方法を問わず、アプリは、顧客が受け取っていないアイテムに対して課金されることのないように適正評価を行う必要があります。
 
 ```CSharp
 private Boolean IsLocallyFulfilled(string productId, Guid transactionId)
@@ -83,21 +83,21 @@ private Boolean IsLocallyFulfilled(string productId, Guid transactionId)
 }
 ```
 
-## Xxxx Y: Xxxxxxxxx xxxxxxx xxxxxxxxxxx xx xxx Xxxxx
+## 手順 3: ストアへの製品フルフィルメントの報告
 
-Xxxxx xxxxx xxxxxxxxxxx xx xxxxxxxxx, xxxx xxx xxxx xxxx x [**XxxxxxXxxxxxxxxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263380) xxxx xxxx xxxxxxxx xxx *xxxxxxxXx* xxx xxx xxxxxxxxxxx xxx xxxxxxx xxxxxxxx xx xxxxxxxx xx.
+ローカル フルフィルメントが完了した後、アプリは、*productId* と製品購入が含まれるトランザクションを含む [**ReportConsumableFulfillmentAsync**](https://msdn.microsoft.com/library/windows/apps/dn263380) 呼び出しを行う必要があります。
 
-**Xxxxxxxxx**  Xxxxxxx xx xxxxxx xxxxxxxxx xxxxxxxxxx xx-xxx xxxxxxxx xx xxx Xxxxx xxxx xxxxxx xx xxx xxxx xxxxx xxxxxx xx xxxxxxxx xxxx xxxxxxx xxxxx xxxxx xxxxxxxxxxx xxx xxx xxxxxxxx xxxxxxxx xx xxxxxxxx.
+**重要**  フルフィルメントが完了したコンシューマブルなアプリ内製品をストアに報告しなかった場合、ユーザーは、前回の購入のフルフィルメントが報告されるまで、その製品をもう一度購入することができなくなります。
 
 ```CSharp
 FulfillmentResult result = await CurrentAppSimulator.ReportConsumableFulfillmentAsync("product2", product2TempTransactionId);
 ```
 
-## Xxxx Y: Xxxxxxxxxxx xxxxxxxxxxx xxxxxxxxx
+## 手順 4: フルフィルメントが未完了の購入の識別
 
-Xxxx xxx xxx xxx xxx [**XxxXxxxxxxxxxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263379) xxxxxx xx xxxxx xxx xxxxxxxxxxx xxxxxxxxxx xx-xxx xxxxxxxx xx xxx xxxx. Xxxx xxxxxx xxxxxx xx xxxxxx xx x xxxxxxx xxxxx xx xxxxx xxx xxxxxxxxxxx xxxxxxxxxxx xxxx xxxxx xxx xx xxxxxxxxxxxxx xxx xxxxxx xxxx xx xxxxxxxxxxxx xx xxxxxxx xxxxxxxxxxxx xx xxx xxxxxxxxxxx.
+アプリでは、[**GetUnfulfilledConsumablesAsync**](https://msdn.microsoft.com/library/windows/apps/dn263379) メソッドを使って、コンシューマブルなアプリ内製品に対するフルフィルメントの未完了をいつでも確認することができます。 このメソッドは、ネットワーク接続の中断やアプリの終了など、予期しないアプリのイベントが原因でフルフィルメントが完了していないコンシューマブルを調べるために、定期的に呼び出す必要があります。
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xxx [**XxxXxxxxxxxxxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263379) xxx xx xxxx xx xxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx, xxx xxx xxxx xxx xxx xxxxxxx xxxxxxx xxxx xxxx xx xxxxxxxx xxxxx xxxxxxxxxxx.
+次の例に、[**GetUnfulfilledConsumablesAsync**](https://msdn.microsoft.com/library/windows/apps/dn263379) を使ってフルフィルメントが未完了のコンシューマブルを列挙する方法と、アプリでこの一覧を反復処理してローカル フルフィルメントを完了する方法を示します。
 
 ```CSharp
 private async void GetUnfulfilledConsumables()
@@ -113,16 +113,20 @@ private async void GetUnfulfilledConsumables()
 }
 ```
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxx xx-xxx xxxxxxx xxxxxxxxx](enable-in-app-product-purchases.md)
-* [Xxxxx xxxxxx (xxxxxxxxxxxx xxxxxx xxx xx-xxx xxxxxxxxx)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
-* [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225197)
+* [アプリ内製品購入の有効化](enable-in-app-product-purchases.md)
+* [ストア サンプル (試用版とアプリ内購入のデモンストレーション)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
+* [**Windows.ApplicationModel.Store**](https://msdn.microsoft.com/library/windows/apps/br225197)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

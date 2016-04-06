@@ -1,80 +1,70 @@
 ---
-Description: Xxxxxxxxxxx: Xxx xxxxxx xxxxxxxx xx xxxx xxxxx xxxx xxxxx xxxxxxxxxxxx xxxx x Xxxxxxx Xxxxx xxx xxx xxxxxxxx, xxxxxxxxxxx, xxx xxxxxxx.
-title: xxxxx: Xxxxxx xxxxxxxx
+Description: Description: 視覚的なフィードバックは、Windows ストア アプリの対話式操作が検出、解釈、処理されていることをユーザーに示すために使います。
+title: title: 視覚的なフィードバック
 ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 label: Visual feedback
 template: detail.hbs
 ---
 
-# xx.xxxxxxx: xxYxYYYY-YYxY-YxYx-YxYY-YYYYxYxYxYYY
+# ms.assetid: bf2f3672-95f0-4c8c-9a72-0934f2d3b767
 
 
-xxxxx: Xxxxxx xxxxxxxx xxxxxxxx: xxxxxx.xxx
+label: 視覚的なフィードバック template: detail.hbs
 
 
-Xxxxxxxxxx xxx xxxxxx xxxxxxxx \[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \] Xxx xxxxxx xxxxxxxx xx xxxx xxxxx xxxx xxxxx xxxxxxxxxxxx xxx xxxxxxxx, xxxxxxxxxxx, xxx xxxxxxx.
+視覚的なフィードバックのガイドライン \[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \] 視覚的なフィードバックは、対話式操作が検出、解釈、処理されていることをユーザーに示すために使います。
 
-**Xxxxxx xxxxxxxx xxx xxxx xxxxx xx xxxxxxxxxxx xxxxxxxxxxx.**
+**視覚的なフィードバックは、対話式操作を促進することによってユーザーを支援します。**
 
--   [**Xx xxxxxxxxx xxx xxxxxxx xx xx xxxxxxxxxxx, xxxxx xxxxxxxx xxx xxxx'x xxxxx xx xxxxxxx.**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Xx xxxx xxxxxx xxxxxx xxxxxx xxx xxxxxxx xxxxxx.**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Xxxxxxxxx XXXx**](https://msdn.microsoft.com/library/windows/apps/br208383)
-
-
-## Xxxxxxx.Xxxxxxx.Xxxxx
+-   [**対話式操作の成功を示すことによって、ユーザーのコントロール感を向上させます。**](https://msdn.microsoft.com/library/windows/apps/br225648)
+-   [**また、システム状態の中継やエラーの削減も可能になります。**](https://msdn.microsoft.com/library/windows/apps/br242084)
+-   [**重要な API**](https://msdn.microsoft.com/library/windows/apps/br208383)
 
 
--   Xxxxxxx.XX.Xxxxx Xxxxxxx.XX.Xxxx
-    -   <span id="Dos_and_don_ts">
-            </span>
-            <span id="dos_and_don_ts">
-            </span>
-            <span id="DOS_AND_DON_TS">
-            </span>Xxx xxx xxx'xx
-    -   Xxxxxxx xxxxxx xxxxxxxx xx xxxxxx xxx xxxxx xxx xxxxxxx.
-    -   Xxxx xxxxx xxx xxxx xx:
--   Xxxxxxx xxxx xxx xxxxx xxxxxx xx xxxxxxx.
--   Xxxxxxxx xxxxxxx xxx xxxxxx xx xxxxx-xxxxxxx xx xxxxxxxxxx.
--   Xxxxxxxx xxxxxxx xxx xxxx xxxxxx xxxxx xxxxxxxx xxxxxx.
--   Xxxxxxx xxxxxxxx xxxxxxxxxxx xxx xxx xxxxxxxxxxx xxxxxx.
--   Xxxxxxx xxxxxxxx xxxx xxxxxxxx xx xxxxxx, xxxxxxxxx xxxx xxxx xxx'x xxxxxxxx xxxxx. Xxxxxx xxxxx xxxxxxx xxxxx xx xxx xxxxxxxxx xxxxxx xxx xxxxxxxxxxxxx.
--   Xxxxxx xxxxxxxxx xx xxxxx xxxx xxx xxxxx xxxxxxx xxxx xxxxxxx xx xxxxxxxxxxx xx xxx xxxxxxxxx. Xxx'x xxx xxxxx xxxxxxxxxxxxxx xx xxxxxxxxxx xxxxx xxxx xxxxx xxxxxxxxx xxxx xxx xxx xx xxx xxx. Xxx xxxx xxxx, xxx [**XxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241969). Xxx'x xxxxxxx xxxxxxxx xxxxxx xx xx xxxxxxxxxx xxxxxxxxx.
--   Xxxx xxx XX xxxxx xxx xxxxxxxxxxx xx xxx xxxxxxx xxxxxx xxxxxxxx xxxxxx xxx xxx xxxxxx xxxxx xxxx xx xxx xxxxxxxxx xxxxxxxxx.
-    Xxxxx xxxxxxx xxxxxxxx xx xxxx xxxxxx xxxx xxxx xx xxxxxxx xxxxxxx.
+## Windows.Devices.Input
+
+
+-   Windows.UI.Input Windows.UI.Core
+    -   <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>推奨と非推奨
+    -   たとえ接触時間が短くても、視覚的なフィードバックを返す必要があります。
+    -   理由は次のとおりです。
+-   タッチ スクリーンが機能していることを示すため。
+-   ターゲットがタッチに対応しているか、応答できるかを示すため。
+-   タッチしたところが目的のターゲットから外れているかどうかを示すため。
+-   すべての操作イベントに対してフィードバックをすぐに表示します。
+-   ユーザーの注意をそらさない、繊細かつ直感的な合図でフィードバックを提供します。 すべての操作において、タッチ ターゲットが指先から離れないようにします。
+-   パンの方向が 1 方向に制限されている場合は、スワイプ ジェスチャを使った項目の選択を有効にします。 タッチの視覚エフェクトがアプリの使用を妨げる可能性がある場合は、使わないでください。 詳しくは、「[**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969)」をご覧ください。 どうしても必要な場合以外は、フィードバックを表示しないでください。
+-   その場所でしか意味がない場合を除き、視覚的なフィードバックを表示せず UI をすっきりさせてください。
+    既に表示されているテキストをさらに表示することになる場合は、ヒントを表示しないでください。
 
      
 
--   Xxxxxxxx xxxxxx xx xxxxxxxx xxx xxxxxxxx xxxxxxxxx, xxxx xx xxxxxxxxx xxxx (xxxx xxxx xxxxxxxx) xxxx xx xxx xxxxxxxxx xxxx xxx xxxx xx xxxxxxxx, xx xxxxx xxxxxxxxxx xxxxxxxxxxx xx xxxxxxxx xx xxxxxxxxxx xx xxx xxxx xxx.
--   Xxx'x xxx xxx xxxxx xxx xxxx xxxxxxx xxx xxxxxxxx xxxxx xxxx xxxxxxxxxxxxx XX. **Xxxxxxxxx**  Xxxxx xxx xxxx xxx xx xxxx xxx xxxxxxxxx xx xxxxx xxxxx xxxx xxxxxxxxxx xxx xxxxxxxx xxxxxxx xx xxxxxxx. Xxx'x xxxxxxxxx xxx xxxxxx xxxxxxxx xxxxxxxxx xx xxx xxxxx-xx Xxxxxxx Y xxxxxxxx, xx xxxx xxx xxxxxx xx xxxxxxxxxxxx xxx xxxxxxxxx xxxx xxxxxxxxxx.
--   Xxx'x xxxx xxxxxx xxxxxxxx xxxxxx xxxxxxx xx xxxxxxxx; xxx xxxxxx xxxxxxxx xx xxx xxxxxx xx xxx xxxxxx xx xxxxxxxxxx. Xxx xx xxx xxxxxxx xxxx xxxxx'x xxx xx xxxxxx, xxxx xxx xxxxxxxxxxxxxx xx xxxxxxxx xxx xxxxxxxx xxxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxxx xxx xxxxxxx](guidelines-for-panning.md).
--   Xxx'x xxxxxxx xxxxxxxx xxx x xxxxxxx xxxx xxx'x xxxxxxxxxx xx xxx xxxxxx. Xxxxxx xxxxxxxx xx xxxxxxxx xxxx xxxxxxx xx xxxxx xxxxx xxx xxxxxxxxxx xxxx xxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxx xx xxxxxxxx.
+-   ヒントは、項目を選択するときにテキストが途中までしか表示されていない (テキストに省略記号が付いている) 場合や、アプリの理解や使用に追加情報が必要な場合など、特定の場面でのみ使います。
+-   情報 UI 以外には長押しジェスチャを使わないでください。 **重要**  水平方向と垂直方向のパンが有効である場合は、長押しを選択に使うことができます。 Windows 8 の組み込みジェスチャの視覚的なフィードバックの動作はカスタマイズしないでください。この動作をカスタマイズすると、ユーザー エクスペリエンスに一貫性がなくなり、混乱する可能性があります。
+-   パンやドラッグの操作中は視覚的なフィードバックを返さないでください。画面上のオブジェクトの動きだけで十分です。 ただし、コンテンツ領域がパンまたはスクロールしない場合は、視覚エフェクトで境界条件を示します。 詳しくは、「[パンのガイドライン](guidelines-for-panning.md)」をご覧ください。
+-   ターゲットとして識別されないコントロールにはフィードバックを表示しないでください。 位置に基づく正確性が求められる操作をタッチ入力で行う場合は、視覚的なフィードバックが重要です。
 
-## Xxxxxxxxxx xxxxxxxx xxxxx xxxx xxx xxxxxx xxxxx xxxxx xxxxx xxx xxxx xxxxxxxxxx xxx xxxxxx xxxxxxxxx xxxxxxxxxx xxxxxxx xx xxxx xxx xxx xxx xxxxxxxx.
+## タッチ入力が検出されるたびにフィードバックが表示されるようにすると、ユーザーは、アプリとそのコントロールで定義されたカスタム ターゲット設定ヒューリスティックを把握できます。
 
 
-Xxx'x xxx xxxxxxxx xxxxxxxx xxxxxxxx xxx xxx xxxxx xxxx xxxx xxxxxxx. Xxx xxxxxxx, x xxxxxxxx xxxxx xxxxxxxxx xxxxxx xx xxxx xxxx xxxx xxxxxxxx xxxxx, xxx xxxxx.
+特定の種類の入力に対するフィードバック動作を、別の種類の入力に使わないでください。 たとえば、キーボード フォーカスの四角形はキーボード入力のみに使い、タッチ操作には使わないでください。
 
-<span id="Additional_usage_guidance">
-            </span>
-            <span id="additional_usage_guidance">
-            </span>
-            <span id="ADDITIONAL_USAGE_GUIDANCE">
-            </span>Xxxxxxxxxx xxxxx xxxxxxxx Xxxxxxx xxxxxxxxxxxxxx xxx xxxxxxxxxx xxxxxxxx xxx xxxxx xxxxxxxxxxxx xxxx xxxxxxx xxxxxxxx xxx xxxxxxxxx. Xxx xxxxxxx, xxxx xxx xxxxxx xxxxxxx xxxxxxxx xxx xxxxxxxx xx x xxx xx xxx x xxxx xxxx xx xxxx xxxxxx xxxxx xxxxxx, xxx xxxx xxxx xxxxxx xx xx, xxx xxxx xxxxxxxxxxx xxxx xxxx xxxx.
+<span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>その他の使い方のガイダンス 正確性が求められるタッチ操作では、接触の視覚エフェクトが特に重要です。 たとえば、アプリでタップの位置を正確に示し、対象から外れていたかどうか、どの程度外れていたか、合わせるにはどうすればよいかをユーザーが把握できるようにしなければなりません。
 
-**Xxx xxx xxxxxxxx xxxxxxxx xxxxxxx xxxxxxx xxx Xxxxxxx Xxxxx xxxx xxxxxxxx xxxxxxxxxx (Xxxxxxx Xxxxx xxxx xxxxx XxxxXxxxxx xxx Xxxxxxx Xxxxx xxxx xxxxx X++, X\#, xx Xxxxxx Xxxxx) xx xxx Xxxxxxx Y xxxxxxxxxxxxxx xxx xxxx.**  
-Xx xxxx xxx xxxxxxxx xxxxxx xxxxxxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxxxxxxx, xxx xxxxxx xxxxxx xxx xxxxxxxx xx xxxxxxxxxxx, xxxxx xxxxx xxxxxxx, xxx xxxxx'x xxxxxxxx x xxxx xxxx xxxxx xxxx.
+**Windows ストア アプリの言語フレームワーク (JavaScript を使った Windows ストア アプリ、C++、C\#、Visual Basic を使った Windows ストア アプリ) を通じて公開されるプラットフォーム コントロールを利用すると、Windows 8 の視覚エフェクトを無料で実装できます。**  
+カスタマイズされたフィードバックが必要なカスタム操作をアプリに実装する場合は、適切なフィードバックを実装し、入力デバイス間の連絡を取り、ユーザーがタスクに集中できるようにする必要があります。
 
  
 
-**Xxxx xxx xx x xxxxxxxxxx xxxxx xx xxxx xx xxxxxxx xxxx, xxxxx xxx xxxxxx xxxxxxxx xxxxx xxxxxxxx xxxx xx xxxxxxx xxxxxxxx XX.**
+**このことは、視覚的なフィードバックが重要な UI と競合したり、重要な UI を隠したりする可能性があるゲームや描画アプリでは特に重要です。**
 
-**Xxxxxxxxx** Xx xxx'x xxxxxxxxx xxxxxxxx xxx xxxxxxxxxxx xxxxxxxx xx xxx xxxxx-xx xxxxxxxx.
+**重要** 組み込みジェスチャの操作の動作を変更することはお勧めしません。
 
-Xxxxxxxx XX
+フィードバック UI
 
-Xxxxxxxx XX xx xxxxxxxxx xxxxxxxxx xx xxx xxxxx xxxxxx (xxxxx, xxxxxxxx, xxxxx, xxx/xxxxxx, xxxxxxxx, xxx xx xx).
+フィードバック UI は、一般に入力デバイス (タッチ、タッチバッド、マウス、ペン/スタイラス、キーボードなど) に依存します。
 
-Xxx xxxxxxx, xxx xxxxx-xx xxxxxxxx xxx x xxxxx xxxxxxx xxxxxxxx xxxxxx xxx xxxxxxxx xxx xxxxxx, xxxxx xxxxx xxx xxx xxxxxxx xxxxxxx xxxxxxxxxxxxxx, xxx xxxxxxxx xxxxx xxx xxxxxxxxxx xxxx xxxxx xxxxxxxxxx xxx xxxxxxxxxxxx.
+たとえば、マウスの組み込みフィードバックには、通常はカーソルの移動と変化が伴います。一方、タッチとペンの場合は接触の視覚エフェクトが必要です。キーボードによる入力とナビゲーションの場合は、フォーカス用の四角形と強調表示を使います。
 
 <table>
 <colgroup>
@@ -87,13 +77,13 @@ Xxx xxxxxxx, xxx xxxxx-xx xxxxxxxx xxx x xxxxx xxxxxxx xxxxxxxx xxxxxx xxx xxxxx
 <tr class="odd">
 <td align="left">
 <img src="images/feedback-touch-cursor.png" alt="Screenshot showing a touch visualization." />
-<p>Xxx [**XxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241969) xx xxx xxxxxxxx xxxxxxxx xxx xxx xxxxxxxx xxxxxxxx.</p></td>
+<p>プラットフォーム ジェスチャのフィードバック動作を設定するには、[**ShowGestureFeedback**](https://msdn.microsoft.com/library/windows/apps/br241969) を使います。</p></td>
 <td align="left"><img src="images/feedback-mouse-cursor2.png" alt="Screenshot showing a mouse visualization." />
-<p>Xx xxxxxxxxxxx xxxxxxxx XX, xxxxxx xxx xxxxxxx xxxxxxxx xxxx xxxxxxxx, xxx xx xxxxxxxx xxx, xxx xxxxx xxxxx.</p></td>
+<p>フィードバック UI をカスタマイズする場合は、すべての入力モードをサポートした適切なフィードバックを提供してください。</p></td>
 <td align="left"><img src="images/feedback-pen-cursor3.png" alt="Screenshot showing a pen visualization." />
-<p>Xxxx xxx xxxx xxxxxxxx xx xxxxx-xx xxxxxxx xxxxxxxxxxxxxx xx Xxxxxxx Y.</p></td>
+<p>Windows 8 には、次のような接触の視覚エフェクトが組み込まれています。</p></td>
 <td align="left"><img src="images/feedback-keyboard-cursor.png" alt="Screenshot showing a keyboard visualization." />
-<p>Xxxxx xxxxxxxxxxxxx</p></td>
+<p>タッチの視覚エフェクト</p></td>
 </tr>
 </tbody>
 </table>
@@ -102,165 +92,168 @@ Xxx xxxxxxx, xxx xxxxx-xx xxxxxxxx xxx x xxxxx xxxxxxx xxxxxxxx xxxxxx xxx xxxxx
 
 ### <span id="informationalui"></span><span id="INFORMATIONALUI"></span>
 
-**Xxxxx/xxxxxxxx xxxxxxxxxxxxx**
+**マウス/タッチパッドの視覚エフェクト**
 
-Xxx xxxxxxxxxxxxx Xxxxxxxx xxxxxxxxxxxxx
+ペンの視覚エフェクト キーボードの視覚エフェクト
 
-Xxxxxxxxxxxxx XX (xxxxxx)
+情報 UI (ポップアップ)
 
--   Xxx xx xxx xxxxxxx xxxxx xx xxxxxx xxxxxxxx xx xxxxxxxxxxxxx XX (xx xxxxxxxxxxxxxx XX).
--   Xxxxxxxxxxxxx XX xxxxxxxxxx xxx xxxxxxxx xxxx xxxxx xx xxxxxx, xxxxxxxxx xxxxxxxxxxxxx xxx xxx xx xxxxxx xx, xxx xxxxxxxx xxxxxxxx xxxxx xxxxxxxxx.
--   Xxxx xxx xxx xxxxxxxxx xxxxx xx xxxxxxxxxxxxx XX xxxxxxxxx xx Xxxxxxx Xxxxx xxxx.
--   Xxxxxxxx
--   Xxxx xxxxxxxx
+-   視覚的なフィードバックの主な形態の 1 つに、情報 UI (不明瞭解消 UI) があります。
+-   情報 UI は、オブジェクトに関する情報を識別および表示し、その機能の説明と使用方法を示します。さらに、必要に応じてガイダンスも提供します。
+-   次に、Windows ストア アプリでサポートされているさまざまな情報 UI の種類を示します。
+-   ヒント
+-   リッチ ヒント
 
-Xxxxx Xxxxxxx xxxxxxx
+メニュー メッセージ ダイアログ
 
-Xxxxxxx Xxxxxxxxxxxxx XX xx xxxxxxxxxxxx xxxxxx xxx xxxxxxxxxx xxxxxxxxx xxxxxxxxx (xxxxxxxxxxx) xxx xxxxxxxxx xxxxx xxxxxxxxxxxx xxxx xxxx xxx. Xx xxxx xxx x xxxxx-xx xxxxxxx xxxxxxxxx xx xx: xxxxx xxx xxxx. Xxxxx xxx xxxx xx x xxxxx xxxxxxxxxxx, xxxxx xxx xxxxxxxxx xxxxxxxxxxx xx Xxxxxxx Y.
+ポップアップ 情報 UI は、指先によるオクルージョン (干渉) を克服し、アプリのタッチ操作を向上させるうえで特に有用です。 長押しというこの UI 専用の組み込みジェスチャも用意されています。 長押しは時間制限のある操作であり、一般に Windows 8 では推奨されていません。
 
-X xxxxx xxxxxxxxxxx xx xxxxxxxxxx xx xxxx xxxx xx xx xx xxxx xx x xxxx xxx xxxxxxxx xxx xxxxxxxxxxx.
-Xxx xxxxxxxxxxx xxxxxx xx xxxx xxxxxxx xx xxx xxxx xx xxxxxxxxxxxxx XX.
-Xxxx xxx xxx xxxxxxxxxxx xxxx xxxxxxxxxx.
-Xxxxxxxxxxxxx XX xxxx
-Xxxxxx
-Xxxxxxxxxx
-Xxxxx
-Xxxxxxxxx xxxxxxx (xxx xxxxxxxxx xxx xxxxx xxxxxxx) Y xx
-Xxx
-Xxx xxxxx xxxxxxxxxxxxx xx xxxxxxx.
-Xxxxxxxxx xxxx xxx xxxxxxxx.
-Xxxxxxxxx xxxxxxx (xxx xxxxxxx)
-YYY xx
-Xxx
-Xxxx xxxxxxx ~YYYY xx
-Xx
-Xxx xxxxxx, xxxx xxxxxxxxxx xxxxxxxxxxx xxx xxxxxxxx.
-Xxxxxxxxx xxxx xxxx xxxxxxxxxx xxxxx.
-Xxxx-xxxxxxxxx xxxxxxxxxxx
-~YYYY xx
-Xx
-Xxxxxxx xxxx
-~YYYY xx
-Xx
-Xxxxxxx x xxxxxxx xxx xx xxxxxxxx xxxxxxx xx xxx xxxxxxxx xxxxxx.
-Xxxxxxx
+学習や調査に役立つため、この場合は時間制限のある操作を使ってもかまいません。
+推奨される時間は情報 UI の種類によって変わります。
+推奨される時間のしきい値を次に示します。
+情報 UI の種類
+タイミング
+アクティブ化
+用途
+オクルージョン ヒント (スクラブ操作と小さなターゲット用) 0 ミリ秒
+あり
+操作についてすばやく説明するために使います。
+通常はコマンドに使います。
+オクルージョン ヒント (操作用)
+200 ミリ秒
+あり
+リッチ ヒント 2000 ミリ秒以下
+なし
+比較的低速で意図的な調査や学習に使います。
+通常はコレクション項目に使います。
+自己説明操作
+2000 ミリ秒以下
+なし
+ショートカット メニュー
+2000 ミリ秒以下
+なし
+選択したオブジェクトに関連する限られたコマンドのセットを表示します。
+ポップアップ
  
 
-~YYYY xx
+2000 ミリ秒以下
 
-**Xx**
+**なし**
 
-Xxxxxxx x xxxxxxx xxx xx xxxxxxxx xxxxxxx xx xxx xxxxxxxx xxxxxx.
+選択したオブジェクトに関連する限られたコマンドのセットを表示します。
 
-Xxx xxxx xxxx xx xxxxxxxxx xxxxxxxxxxxxx XX, xxx [Xxxxxx xxx xxxx XX](https://msdn.microsoft.com/library/windows/apps/hh465304) xxx [Xxxxxxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh738362). Xxxxxxxx Xxx xxxxxxxx xx xxxxxx xxxx xxxxxxxxxxx xxxxx x xxxxxxx xxxxxx xxxxxx xxx xxxx xx xxxxxxx xx xxxxxx.
+情報 UI の提供について詳しくは、「[UI のレイアウト](https://msdn.microsoft.com/library/windows/apps/hh465304)」と「[ポップアップの表示](https://msdn.microsoft.com/library/windows/apps/hh738362)」をご覧ください。 ヒント ヒントを使ってコントロールに関する詳しい情報を表示してから、ユーザーに操作を実行するように求めます。
 
-**Xxxxxxxx ([**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br229763)) xxxxxx xxxxxxxxxxxxx xxxx x xxxx xxxxxxxx x xxxxx xxx xxxx xxxxxxx (xx x xxxxx xxxxx xx xxxxxxxx) xx x xxxxxxx xx xxxxxx.**
+**ヒント ([**Tooltip**](https://msdn.microsoft.com/library/windows/apps/br229763)) は、ユーザーがコントロールまたはオブジェクト上で長押しジェスチャを行った (またはホバー イベントが検出された) ときに自動的に表示されます。**
 
-Xxx xxxxxxx xxxxxxxxxx xxxx xxx xxxxxxx xx xxxxxx xxxxx xxx xxx xxxxxxx xx xxxxxx. X xxxxxxx xxx xxxxxxx xxxx xxx xxxxxx, xxx xx xxx xxxxxxxxxxx.
+接触またはカーソルがコントロールやオブジェクトの外に移動すると消えます。 ヒントにはテキストや画像を含めることができますが、対話的な操作はできません。
 
-Xxxxxxxxx xxxxxxxx xxx xxxxx xxxxxxx Xxxxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxx.
+小さなターゲット用のオクルージョン ヒント オクルージョン ヒントは、隠れたターゲットについて説明するために使います。
 
-**Xxxxx xxxxxxxx xxx xxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxx xxxx x xxxxxxxx xxxxx xxxxxx xxxx, xxxx xx xxxxxxxxxx xx x xxxxxxx.**
+**Web ページ上のハイパーリンクなど、標準のタッチ ターゲット サイズよりも小さな項目をターゲット設定してアクティブ化するときに、これらのヒントが役立ちます。**
 
-Xxx xxx xxxxxxx xxxxx xxxxxxxx xxxx xx xxxxxxxxxxxxx xxx-xx xxxxx x xxxxxxx xxxx xxxxxxxxx xxx xxxxxx. Xxx xxxxxxx, xxx xx xxxxxxxxx xxxxxxx xx xxxx xxx xxxxxxxx xxxx xx xxx xxxxxxxxx xxx xxxx xxxxxxx xxx xxxxxxx xxxx x xxx-xx xxxxxxxxxx xxx XXX.
+これらのヒントは、一定の時間しきい値の経過後に情報ポップアップに変えることができます。 たとえば、オクルージョン ヒントを使って、隠れたハイパーリンク テキストを示した後で、このヒントを URL を含むポップアップに変えることができます。
 
-Xxxxxxxxx xxxxxxxx xxx xxxxxxx xxx xxxxxxxx Xxxxx xxxxxxxx xxxxxxxx xxx xxxxxx xx xxxxxxx xxxx xxxxxx xxxx x xxxx xxxxx xxxxx xxxxxx xxxx xx xxxxxxx.
+操作とコマンド用のオクルージョン ヒント これらのヒントは、ユーザーが要素から指を離したときに発生するアクションまたはコマンドについて説明するために使います。
 
-**Xxxxx xxxxxxxx xxx xxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxx x xxxxxx xx xxxxxxx xxxxxxx.**
+**ボタンやそれに似たコントロールをターゲット設定してアクティブ化するときに、これらのヒントが役立ちます。**
 
-X xxxxx-xxxxxx xxxxxxx xxx xx xxxxxxxx xx xx xxxxxx xxxxxxx xxxxx x xxxxxxx xxxx xxxxxxxxx xxx xxxxxx. Xx xxxx xxxx, xxx xxxxx-xxxxxx xxxxxxx xxxxxx xxxxxx xx xxxxxxx xxx xxxxxxxxxx xxxx xx xxx xxxxxx xxxxxxx.
+小さなターゲットのヒントは、一定の時間しきい値の経過後にアクションのヒントに変えることができます。 この場合、小さなターゲットのヒントに情報を追加してアクションのヒントにします。
 
-Xxxx xxxxxxx Xxxxx xxxxxxxx xxxxxx xxxxxxxxx xxxx xxxxx xx xxxxxxx.
+リッチ ヒント これらのヒントでは、要素に関する補助的な情報を提供します。
 
-Xxx xxxxxxx, x xxxx xxxxxxx xxxxx xx x xxxx xxxxxxxxxxx xx xx xxxxx, xxx xxxx xxxx xx x xxxxxxxxx xxxxx, xx xxxxx xxxx xxxxxxxx xx xxx xxxxxx. Xxxx xxxxxxxx xxxxxxxxx xxxxxxx xxxx xxxx xxxxx'x xxxx xx xx xxxx xxxxxxxxx xxxxxxxxxxx xxx, xx xxxx xxxxx, xxxxx xx xxxxxxxxxxx xx xxxxx xxx xxxxxxx.
+たとえば、画像の説明、途中で切れているタイトルの完全なテキストなどの、ターゲットに関する情報です。 一般的に、リッチ ヒントには、すぐには必要でない情報や表示のタイミングが早すぎると煩わしいような情報を含めます。
 
-X xxxxxx xxxx xxxxxxxxx xxxx xxxxx xx xxxx xxxxxxxxxx xxxxx xxxxxxxxx xxx xxxx.
+時間のしきい値を長くすると、情報を得ようとするユーザーの意図が強まります。
 
-**Xxxxx x xxxx xxxxxxx xx xxxxxxxxx, xxx xxxxxx xx xx xxxxxx xxxxxxxxx xxxx xxx xxxx xxxxx xxxxx xxxxxx.**
+**リッチ ヒントが表示された後にユーザーが指を離すと、オブジェクトはアクティブでなくなります。**
 
-Xxx xxxxxx xxx xxxx xx xxxx xxxx xxxxxxx xxxx xxx xxxxxxx xxxxx xxxxxxxxx xxx xxxx xx xxx xx xxxxxxxx xxx xxxx.
+ヒントから情報を得たユーザーが、その項目をアクティブ化しようと思わない場合もあるためです。
 
-Xx xxxxxxxxx xxxx xxx xxxxxx xxxxxx xxx xxxx xx xxx xxxx xxxxxxx xx xxxxxxxx xxx xxxx xxxxxxxxxxx xxxx xxxx xx x xxxxxxxx xxxxxxx. Xxxxxxx xxxx Xxx xxxxxxx xxxx ([**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208693)) xx x xxxxxxxxxxx xxxx xxxx xxxxx xxxxx xxxxxxxxx xxxxxx xx xxxxxxx (xxxx xxxxxxxxx xxxxxxxx) xx xxxx xx XX xxxxxxx xx Xxxxxxx Xxxxx xxxx.
+リッチ ヒントの視覚デザインと情報は、標準のヒントと区別しやすく、充実した内容にすることをお勧めします。 ショートカット メニュー ショートカット メニュー ([**PopupMenu**](https://msdn.microsoft.com/library/windows/apps/br208693)) は、ユーザーが Windows ストア アプリ内のテキストまたは UI オブジェクトに対する操作 (クリップボード コマンドなど) をすばやく実行できるようにするための簡易メニューです。
 
-Xxx xxxxx-xxxxxxxxx xxxxxxx xxxx xxxxxxxx xx xxx xxxxx.
+タッチ操作のメリットを活かしたショートカット メニューは、2 つの部分で構成されます。
 
-![X xxxxxx xxx, xxx xxxx, xx xxxxxxxxx xx x xxxxxx xx x xxxx xxxxxxxxxxx.](images/textselection-show-context.png)
+![長押しによって視覚的な合図 (ヒント) が表示されます。](images/textselection-show-context.png)
 
-Xxxx, xxx xxxxxxx xxxx xxxxxx xx xxxxxxxxx xxxxx xxx xxxx xxxxxxxxxx xxx xxx xxxx xxxxx xxxxx xxxxxx.
+その後、ヒントが消えてユーザーが指を離すと、ショートカット メニュー自体が表示されます。
 
-**Xxx xxxxxxxxx xxxxxx xxxxxxxxxxx xxx xx xxxxxx xxx xxxxxxx xxxxxxx xxxx xxx xxxx xx xxxxxxx xxxxxx x xxxxxxxxx xx xx x xxxxxxx (xxxxx xxx xxxx xxx xxxx xx xxxx).**
+**次の図は、選択範囲内またはグリッパー上でタップしてテキストの既定のショートカット メニューを呼び出す方法を示しています (長押しを使うこともできます)。**
 
-xxx (xx xxxxx xxx xxxx) xxxxxx xxx xxxxxxxxx xx xx x xxxxxxx xx xxxxxx xxx xxxxxxx xxxx. Xxx [Xxxxxx xxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/hh465300).
+選択範囲内またはグリッパー上でタップ (または長押し) してコンテキスト メニューを呼び出します。 「[ショートカット メニューの追加](https://msdn.microsoft.com/library/windows/apps/hh465300)」をご覧ください。
 
-![Xxxxxxx xxxxxx](images/messagedialog.png)
+![メッセージ ダイアログ](images/messagedialog.png)
 
-Xxx xxxxxxx xxxxxxx ([**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208674)) xx xxxxxx xxxxx xxx x xxxxxxxx, xxxxx xx xxxx xxxxxx xx xxx xxxxx, xxxxxx xxxxxxxxxx.
+処理を続行する前に、ユーザーの操作やアプリの状態に基づいてユーザーに応答を求めるには、メッセージ ダイアログ ([**MessageDialog**](https://msdn.microsoft.com/library/windows/apps/br208674)) を使います。
 
--   Xxxxxxxx xxxx xxxxxxxxxxx xx xxxxxxxx xxx xxxxx xx xxx xxx xx xxxxxxx xxxxx xxx xxxx xxxxxxxx.
--   xxxxxxx xxxxxx xxx xx xxxxx xxxxxxx
--   Xxxx xxx xxxx xxxxxxx xxxxxxx xx xxxxxxx x xxxxxxx xxxxxx.
+-   明示的なユーザー操作が必須であり、ユーザーが応答するまで、アプリへの入力はブロックされます。
+-   エラー メッセージのメッセージ ダイアログ
+-   次に、メッセージ ダイアログを表示する一般的な理由をいくつか示します。
 
-Xxxxxxx xxxxxx xxxxxxxxxxx
+緊急の情報を提示する
 
-**Xxx x xxxxxxxx xxxxxx xxxxxxxxxx xxxxxxxxx**
+**実行を継続する前に質問する**
 
-Xxxxxxx xxxxx xxxxxxxx Xxx [Xxxxxx xxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh738361). Xxxxxx
+エラー メッセージを表示する 「[メッセージ ダイアログの追加](https://msdn.microsoft.com/library/windows/apps/hh738361)」をご覧ください。 ポップアップ
 
-X xxxxxx ([**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211726)) xx x xxxxxxxxxxx XX xxxxx xxxxxxxxx xx x xxx, xxxxx, xx xxxxx xxxxxxxxxx xxxx xx xxxx xx xxxxxxx xxx xxxx xxxx xxxxxxxxxxx, xxxxxxxxx, xx x xxxx xx xxxxxxx xxxxxxx xx xxx xxxxxxx xxxxxxxx. Xx xxx xx xxxxx xxxxxxxxx (xx xxxxxxxxxx xxxx xxx xxxx xxxxxxx xx xxxxxx xxxxxxx xxx xxxxxx xxxxx xx xxxxxxx XXX).
+ポップアップ ([**Flyout**](https://msdn.microsoft.com/library/windows/apps/br211726)) は、タップ、クリック、またはその他のアクティブ化によって表示される軽量の UI パネルです。現在のアクティビティに関連する情報、質問、またはオプションのメニューをユーザーに表示するために使われます。 簡易非表示にすることができます (ユーザーがポップアップ パネルの外部をタッチまたはクリックするか、Esc キーを押すと消えます)。
 
-![Xx xxxxx xxxxx, x xxxxxx xxx xx xxxxxxx.](images/flyout.png)
+![つまり、ポップアップは無視できます。](images/flyout.png)
 
-Xxxxxx xxxxxxxx, xxxxxxx xxx xxxxxx xxxxx.
+ヒントとは異なり、ポップアップは入力を受け取ることができます。
 
 ### <span id="selfreveal"></span><span id="SELFREVEAL"></span>
 
-**Xxxxxx xxxxxxx xxxxxxx, xxx xxx xx xxxxx xxxxxx xxx xxxxxxxxx xxxxx.**
+**メッセージ ダイアログとは異なり、アプリはアクティブなままで、入力を受け取ります。**
 
-xxxxxx xxxx xxxxxxxxxxxx
+確認付きのポップアップ
 
-Xxx [Xxxxxx Xxxxxxx xxx xxxxx](https://msdn.microsoft.com/library/windows/apps/hh465325). Xxxx-xxxxxxxxx XX
+「[ポップアップとメニューの追加](https://msdn.microsoft.com/library/windows/apps/hh465325)」をご覧ください。 自己説明 UI
 
-![X xxxx-xxxxxxxxx xxxxxxxxxxx xx xx xxxxxxxxxxx xxxxxx xxx xx xxxxxxxxx xxxx xxxxxxxxxxxx xxx xx xxxxxxx xx xxxxxx xxxx x xxxxxx xxxxxx xxx xxxxxxxx x xxxxxxx xx xxx xxxxxx xx xxxx xxxxxx.](images/crossslide-selfreveal1.png)
+![自己説明操作とは、ターゲット オブジェクトの操作方法を説明し、操作結果のプレビューを提供する、情報量の多い視覚的な合図またはアニメーションです。](images/crossslide-selfreveal1.png)
 
-*Xxxxx xxxx xxx xxxxxx xxxx xxx xxxx-xxxxxxxxx xxxxxxxxxxx xxx x xxxxx-xxxxx xxxxxxxxx xx xxx Xxxxx xxxxxx. Xxxx x xxxx xxxxxxx xx xxx xxxx (xxxxxxx xxxxxxxx xxx xxxx) xxx xxxx xxxxxx xxxx (xx xx xxxxx xxxxxxx) xx xxxxxx xxx xxxxxxxxx xxxxx xxxx xxxx xxxxx xxxxxx xx xxx xxx xxxx xxxxxxxx xxxxxxxx.*
+*次のいくつかの画像は、スタート画面でのクロススライド選択の自己説明操作を示しています。 ユーザーがアプリのタイルに (ドラッグしないで) タッチすると、タイルが (ドラッグされたかのように) 下方向へスライドし、アプリを実際に選んだ場合に表示される選択チェック マークが現れます。*
 
-![xxxxxx xxxx xxxxxxx xx xxxxxxxxxx xxxxx.](images/crossslide-selfreveal2.png)
+![選択されていない状態を示すスクリーン ショット。](images/crossslide-selfreveal2.png)
 
-*Xxxxx xxxxxx xxxx xx xx xxxx xx xxxxx xxx xxxx-xxxxxxxxx xxxxxxxxxxx xxx xxxxxxxxx.*
+*指で項目を押すと、選択内容に対する自己説明操作が始まります。*
 
-![Xxx xxxx-xxxxxxxxx xxxxxxxxxxx xxxxxxxxxxxx xxxx xxxxxx xxxx xx xxxxxxxxx xx xxx xxxx.](images/crossslide-selfreveal3.png)
+![自己説明操作により、項目に対して実行される操作が示されます。](images/crossslide-selfreveal3.png)
 
-*xxxxxx xxxx xxxxxxx xxx xxxxxxxxx xxx xxxxxxxxx.*
+*選択のアニメーションを示すスクリーン ショット。*
 
-Xxxxxxx xxxxxxx xxx xxxxxx, xxxxx xx xxxxxxxx xxxxxx xxx xxxx.
+指を離さずに、スワイプして実際に項目を選択します。
 
-## xxxxxx xxxx xxxxxxx xxx xxxxxxxxx xxx xxxx xxx xxxx.
+## ドラッグ アンド ドロップのアニメーションを示すスクリーン ショット。
 
 
-**Xx xxx xxxx xxxxxxxxx xx xxxxx xxxxx xxxxxx, xxx xxxx-xxxxxxxxx xxxxxxxxxxxxx xxxxxxx xx xxxx xxxx xxx xxxxxx xxx xxx xx xxxxx.**
-* [Xxxxx x xxxx-xxxxxxxxx xxxxxxxxxxx xx xxxxxxxxx, xxx xxxxxx xx xx xxxxxx xxxxxxxxx xxxx xxx xxxx xxxxx xxxxx xxxxxx.](guidelines-for-panning.md)
-**<span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx**
-* [Xxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185599)
-**[Xxxxxxxxxx xxx xxxxxxx](guidelines-for-panning.md)**
-* [**Xxx xxxxxxxxxx**](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [[Xxxxxx xxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185599)](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [**Xxxxxxx**](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Xxx xxxxxxx xxxxx xxxxxx**
-* [Xxxx xxxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [[Xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619895)](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [**Xxxxxxx xxxxxxx**](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [Xxxxx: XXXX xxxx xxxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Xxxxx: Xxxxxx xxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Xxxxx: Xxxxx xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [XXXX xxxxxxxxx, xxxxxxx, xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [Xxxxx: Xxxxxxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+**ユーザーがそのまま指をスライドすると、自己説明の視覚エフェクトが変わり、オブジェクトを移動できるようになったことが示されます。**
+* [自己説明操作が表示された後にユーザーが指を離すと、オブジェクトはアクティブでなくなります。](guidelines-for-panning.md)
+**<span id="related_topics"></span>関連記事**
+* [デザイナー向け](https://msdn.microsoft.com/library/windows/apps/mt185599)
+**[パンのガイドライン](guidelines-for-panning.md)**
+* [**開発者向け**](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [[カスタム ユーザー操作](https://msdn.microsoft.com/library/windows/apps/mt185599)](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [**サンプル**](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**待機時間が短い入力のサンプル**
+* [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [[フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [**サンプルのアーカイブ**](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [入力: XAML ユーザー入力イベントのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [入力: タッチのヒット テストのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [XAML のスクロール、パン、ズームのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [入力: 簡略化されたインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO4-->
+
+

@@ -1,50 +1,50 @@
 ---
-xx.xxxxxxx: YYXXXXYY-YYXY-YXXX-XYYX-YXYXXYYYXYXY
-xxxxx: Xxxxxxxxx XxxxXxxxx xxxxxxx
-xxxxxxxxxxx: Xxxxxx xxxxxxx xxxxxx xx xxx xxxx'x XxxxXxxxx xxxxxx, xxxxxxxxx xxxxxxxx, xxxxx, xxx xxxxxx.
+ms.assetid: 12ECEA89-59D2-4BCE-B24C-5A4DD525E0C7
+title: Accessing HomeGroup content
+description: Access content stored in the user's HomeGroup folder, including pictures, music, and videos.
 ---
-# Xxxxxxxxx XxxxXxxxx xxxxxxx
+# Accessing HomeGroup content
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Xxxxxxxxx XXXx **
+** Important APIs **
 
--   [**Xxxxxxx.Xxxxxxx.XxxxxXxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227151)
+-   [**Windows.Storage.KnownFolders class**](https://msdn.microsoft.com/library/windows/apps/br227151)
 
-Xxxxxx xxxxxxx xxxxxx xx xxx xxxx'x XxxxXxxxx xxxxxx, xxxxxxxxx xxxxxxxx, xxxxx, xxx xxxxxx.
+Access content stored in the user's HomeGroup folder, including pictures, music, and videos.
 
-## Xxxxxxxxxxxxx
+## Prerequisites
 
--   **Xxxxxxxxxx xxxxx xxxxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx**
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    Xxx xxx xxxxx xxx xx xxxxx xxxxxxxxxxxx xxxx xx X# xx Xxxxxx Xxxxx, xxx [Xxxx xxxxxxxxxxxx XXXx xx X# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/mt187337). Xx xxxxx xxx xx xxxxx xxxxxxxxxxxx xxxx xx X++, xxx [Xxxxxxxxxxxx xxxxxxxxxxx xx X++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   **Xxx xxxxxxxxx xxxxxxxxxxxx**
+-   **App capabilty declarations**
 
-    Xx xxxxxx XxxxXxxxx xxxxxxx, xxx xxxx'x xxxxxxx xxxx xxxx x XxxxXxxxx xxx xx xxx xxxx xxx xxxx xxxx xx xxxxx xxx xx xxx xxxxxxxxx xxxxxxxxxxxx: **xxxxxxxxXxxxxxx**, **xxxxxXxxxxxx**, xx **xxxxxxXxxxxxx**. Xxxx xxxx xxx xxxxxxxx xxx XxxxXxxxx xxxxxx, xx xxxx xxx xxxx xxx xxxxxxxxx xxxx xxxxxxxxxx xx xxx xxxxxxxxxxxx xxxxxxxx xx xxxx xxx'x xxxxxxxx. Xx xxxxx xxxx, xxx [Xxxx xxxxxx xxxxxxxxxxx](file-access-permissions.md).
+    To access HomeGroup content, the user's machine must have a HomeGroup set up and your app must have at least one of the following capabilities: **picturesLibrary**, **musicLibrary**, or **videosLibrary**. When your app accesses the HomeGroup folder, it will see only the libraries that correspond to the capabilities declared in your app's manifest. To learn more, see [File access permissions](file-access-permissions.md).
 
-    **Xxxx**  Xxxxxxx xx xxx Xxxxxxxxx xxxxxxx xx x XxxxXxxxx xxx'x xxxxxxx xx xxxx xxx xxxxxxxxxx xx xxx xxxxxxxxxxxx xxxxxxxx xx xxxx xxx'x xxxxxxxx xxx xxxxxxxxxx xx xxx xxxx'x xxxxxxx xxxxxxxx.
+    **Note**  Content in the Documents library of a HomeGroup isn't visible to your app regardless of the capabilities declared in your app's manifest and regardless of the user's sharing settings.
 
      
 
--   **Xxxxxxxxxx xxx xx xxx xxxx xxxxxxx**
+-   **Understand how to use file pickers**
 
-    Xxx xxxxxxxxx xxx xxx xxxx xxxxxx xx xxxxxx xxxxx xxx xxxxxxx xx xxx XxxxXxxxx. Xx xxxxx xxx xx xxx xxx xxxx xxxxxx, xxx [Xxxx xxxxx xxx xxxxxxx xxxx x xxxxxx](quickstart-using-file-and-folder-pickers.md).
+    You typically use the file picker to access files and folders in the HomeGroup. To learn how to use the file picker, see [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).
 
--   **Xxxxxxxxxx xxxx xxx xxxxxx xxxxxxx**
+-   **Understand file and folder queries**
 
-    Xxx xxx xxx xxxxxxx xx xxxxxxxxx xxxxx xxx xxxxxxx xx xxx XxxxXxxxx. Xx xxxxx xxxxx xxxx xxx xxxxxx xxxxxxx, xxx [Xxxxxxxxxxx xxx xxxxxxxx xxxxx xxx xxxxxxx](quickstart-listing-files-and-folders.md).
+    You can use queries to enumerate files and folders in the HomeGroup. To learn about file and folder queries, see [Enumerating and querying files and folders](quickstart-listing-files-and-folders.md).
 
-## Xxxx xxx xxxx xxxxxx xx xxx XxxxXxxxx
+## Open the file picker at the HomeGroup
 
-Xxxxxx xxxxx xxxxx xx xxxx xx xxxxxxxx xx xxx xxxx xxxxxx xxxx xxxx xxx xxxx xxxx xxxxx xxx xxxxxxx xxxx xxx XxxxXxxxx:
+Follow these steps to open an instance of the file picker that lets the user pick files and folders from the HomeGroup:
 
-1.  **Xxxxxx xxx xxxxxxxxx xxx xxxx xxxxxx**
+1.  **Create and customize the file picker**
 
-    Xxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847) xx xxxxxx xxx xxxx xxxxxx, xxx xxxx xxx xxx xxxxxx'x [**XxxxxxxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207854) xx [**XxxxxxXxxxxxxxXx.XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br207890). Xx, xxx xxxxx xxxxxxxxxx xxxx xxx xxxxxxxx xx xxxx xxxxx xxx xxxx xxx. Xxx xxxxxxxxxx xx xxxx xxx xxxxxx xxx xx xxxxxxxxx xxx xxxx xxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxxxx xxx xxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465182)
+    Use [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) to create the file picker, and then set the picker's [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) to [**PickerLocationId.HomeGroup**](https://msdn.microsoft.com/library/windows/apps/br207890). Or, set other properties that are relevant to your users and your app. For guidelines to help you decide how to customize the file picker, see [Guidelines and checklist for file pickers](https://msdn.microsoft.com/library/windows/apps/hh465182)
 
-    Xxxx xxxxxxx xxxxxxx x xxxx xxxxxx xxxx xxxxx xx xxx XxxxXxxxx, xxxxxxxx xxxxx xx xxx xxxx, xxx xxxxxxxx xxx xxxxx xx xxxxxxxxx xxxxxx:
+    This example creates a file picker that opens at the HomeGroup, includes files of any type, and displays the files as thumbnail images:
     ```csharp
     Windows.Storage.Pickers.FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
@@ -53,11 +53,11 @@ Xxxxxx xxxxx xxxxx xx xxxx xx xxxxxxxx xx xxx xxxx xxxxxx xxxx xxxx xxx xxxx xxx
     picker.FileTypeFilter.Add("*");
     ```
   
-2.  **Xxxx xxx xxxx xxxxxx xxx xxxxxxx xxx xxxxxx xxxx.**
+2.  **Show the file picker and process the picked file.**
 
-    Xxxxx xxx xxxxxx xxx xxxxxxxxx xxx xxxx xxxxxx, xxx xxx xxxx xxxx xxx xxxx xx xxxxxxx [**XxxxXxxxXxxxxx.XxxxXxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/jj635275), xx xxxxxxxx xxxxx xx xxxxxxx [**XxxxXxxxXxxxxx.XxxxXxxxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br207851).
+    After you create and customize the file picker, let the user pick one file by calling [**FileOpenPicker.PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275), or multiple files by calling [**FileOpenPicker.PickMultipleFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br207851).
 
-    Xxxx xxxxxxx xxxxxxxx xxx xxxx xxxxxx xx xxx xxx xxxx xxxx xxx xxxx:
+    This example displays the file picker to let the user pick one file:
     ```csharp
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
 
@@ -71,22 +71,22 @@ Xxxxxx xxxxx xxxxx xx xxxx xx xxxxxxxx xx xxx xxxx xxxxxx xxxx xxxx xxx xxxx xxx
     }   
     ```
 
-## Xxxxxx xxx XxxxXxxxx xxx xxxxx
+## Search the HomeGroup for files
 
-Xxxx xxxxxxx xxxxx xxx xx xxxx XxxxXxxxx xxxxx xxxx xxxxx x xxxxx xxxx xxxxxxxx xx xxx xxxx.
+This section shows how to find HomeGroup items that match a query term provided by the user.
 
-1.  **Xxx xxx xxxxx xxxx xxxx xxx xxxx.**
+1.  **Get the query term from the user.**
 
-    Xxxx xx xxx x xxxxx xxxx xxxx xxx xxxx xxx xxxxxxx xxxx x [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209683) xxxxxxx xxxxxx `searchQueryTextBox`:
+    Here we get a query term that the user has entered into a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) control called `searchQueryTextBox`:
     ```csharp
     string queryTerm = this.searchQueryTextBox.Text;    
     ```
 
-2.  **Xxx xxx xxxxx xxxxxxx xxx xxxxxx xxxxxx.**
+2.  **Set the query options and search filter.**
 
-    Xxxxx xxxxxxx xxxxxxxxx xxx xxx xxxxxx xxxxxxx xxx xxxxxx, xxxxx xxx xxxxxx xxxxxx xxxxxxxxxx xxxxx xxxxx xxx xxxxxxxx xx xxx xxxxxx xxxxxxx.
+    Query options determine how the search results are sorted, while the search filter determines which items are included in the search results.
 
-    Xxxx xxxxxxx xxxx xxxxx xxxxxxx xxxx xxxx xxx xxxxxx xxxxxxx xx xxxxxxxxx xxx xxxx xxx xxxx xxxxxxxx. Xxx xxxxxx xxxxxx xx xxx xxxxx xxxx xxxx xxx xxxx xxxxxxx xx xxx xxxxxxxx xxxx:
+    This example sets query options that sort the search results by relevance and then the date modified. The search filter is the query term that the user entered in the previous step:
     ```csharp
     Windows.Storage.Search.QueryOptions queryOptions = 
             new Windows.Storage.Search.QueryOptions
@@ -96,9 +96,9 @@ Xxxx xxxxxxx xxxxx xxx xx xxxx XxxxXxxxx xxxxx xxxx xxxxx x xxxxx xxxx xxxxxxxx 
             Windows.Storage.KnownFolders.HomeGroup.CreateFileQueryWithOptions(queryOptions);    
     ```
 
-3.  **Xxx xxx xxxxx xxx xxxxxxx xxx xxxxxxx.**
+3.  **Run the query and process the results.**
 
-    Xxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxx xxxxx xx xxx XxxxXxxxx xxx xxxxx xxx xxxxx xx xxx xxxxxxxx xxxxx xx x xxxx xx xxxxxxx.
+    The following example runs the search query in the HomeGroup and saves the names of any matching files as a list of strings.
     ```csharp
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFile> files = 
         await queryResults.GetFilesAsync();
@@ -114,21 +114,21 @@ Xxxx xxxxxxx xxxxx xxx xx xxxx XxxxXxxxx xxxxx xxxx xxxxx x xxxxx xxxx xxxxxxxx 
     ```
 
 
-## Xxxxxx xxx XxxxXxxxx xxx x xxxxxxxxxx xxxx'x xxxxxx xxxxx
+## Search the HomeGroup for a particular user's shared files
 
-Xxxx xxxxxxx xxxxx xxx xxx xx xxxx XxxxXxxxx xxxxx xxxx xxx xxxxxx xx x xxxxxxxxxx xxxx.
+This section shows you how to find HomeGroup files that are shared by a particular user.
 
-1.  **Xxx x xxxxxxxxxx xx XxxxXxxxx xxxxx.**
+1.  **Get a collection of HomeGroup users.**
 
-    Xxxx xx xxx xxxxx-xxxxx xxxxxxx xx xxx XxxxXxxxx xxxxxxxxxx xx xxxxxxxxxx XxxxXxxxx xxxx. Xx, xx xxx xxx xxxxxxxxxx xx XxxxXxxxx xxxxx, xxxx [**XxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227279) xxxxxxxx xxx xxx-xxxxx XxxxXxxxx xxxxxxx.
+    Each of the first-level folders in the HomeGroup represents an individual HomeGroup user. So, to get the collection of HomeGroup users, call [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227279) retrieve the top-level HomeGroup folders.
     ```csharp
     System.Collections.Generic.IReadOnlyList<Windows.Storage.StorageFolder> hgFolders = 
         await Windows.Storage.KnownFolders.HomeGroup.GetFoldersAsync();    
     ```
 
-2.  **Xxxx xxx xxxxxx xxxx'x xxxxxx, xxx xxxx xxxxxx x xxxx xxxxx xxxxxx xx xxxx xxxx'x xxxxxx.**
+2.  **Find the target user's folder, and then create a file query scoped to that user's folder.**
 
-    Xxx xxxxxxxxx xxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxx xx xxxx xxx xxxxxx xxxx'x xxxxxx. Xxxx, xx xxxx xxxxx xxxxxxx xx xxxx xxx xxxxx xx xxx xxxxxx, xxxxxx xxxxx xx xxxxxxxxx xxx xxxx xx xxx xxxx xxxxxxxx. Xxx xxxxxxx xxxxxx x xxxxxx xxxx xxxxxxx xxx xxxxxx xx xxxxx xxxxx, xxxxx xxxx xxx xxxxx xx xxx xxxxx.
+    The following example iterates through the retrieved folders to find the target user's folder. Then, it sets query options to find all files in the folder, sorted first by relevance and then by the date modified. The example builds a string that reports the number of files found, along with the names of the files.
     ```csharp
     bool userFound = false;
     foreach (Windows.Storage.StorageFolder folder in hgFolders)
@@ -159,22 +159,22 @@ Xxxx xxxxxxx xxxxx xxx xxx xx xxxx XxxxXxxxx xxxxx xxxx xxx xxxxxx xx x xxxxxxxx
     }    
     ```
 
-## Xxxxxx xxxxx xxxx xxx XxxxXxxxx
+## Stream video from the HomeGroup
 
-Xxxxxx xxxxx xxxxx xx xxxxxx xxxxx xxxxxxx xxxx xxx XxxxXxxxx:
+Follow these steps to stream video content from the HomeGroup:
 
-1.  **Xxxxxxx x XxxxxXxxxxxx xx xxxx xxx.**
+1.  **Include a MediaElement in your app.**
 
-    X [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxxx xxx xxxx xxxx xxxxx xxx xxxxx xxxxxxx xx xxxx xxx. Xxx xxxx xxxxxxxxxxx xx xxxxx xxx xxxxx xxxxxxxx, xxx [Xxxxxx xxxxxx xxxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187271) xxx [Xxxxx, xxxxx, xxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/mt203788).
+    A [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) lets you play back audio and video content in your app. For more information on audio and video playback, see [Create custom transport controls](https://msdn.microsoft.com/library/windows/apps/mt187271) and [Audio, video, and camera](https://msdn.microsoft.com/library/windows/apps/mt203788).
     ```HTML
     <Grid x:Name="Output" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1">
         <MediaElement x:Name="VideoBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0" Width="400" Height="300"/>
     </Grid>    
     ```
 
-2.  **Xxxx x xxxx xxxxxx xx xxx XxxxXxxxx xxx xxxxx x xxxxxx xxxx xxxxxxxx xxxxx xxxxx xx xxx xxxxxxx xxxx xxxx xxx xxxxxxxx.**
+2.  **Open a file picker at the HomeGroup and apply a filter that includes video files in the formats that your app supports.**
 
-    Xxxx xxxxxxx xxxxxxxx .xxY xxx .xxx xxxxx xx xxx xxxx xxxx xxxxxx.
+    This example includes .mp4 and .wmv files in the file open picker.
     ```csharp
     Windows.Storage.Pickers.FileOpenPicker picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.ViewMode = Windows.Storage.Pickers.PickerViewMode.Thumbnail;
@@ -185,7 +185,7 @@ Xxxxxx xxxxx xxxxx xx xxxxxx xxxxx xxxxxxx xxxx xxx XxxxXxxxx:
     Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();   
     ```
 
-3.  **Xxxx xxx xxx xxxx'x xxxx xxxxxxxxx xxx xxxx xxxxxx, xxx xxx xxx xxxx xxxxxx xx xxx xxxxxx xxx xxx**[**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926), xxx xxxx xxxx xxx xxxx.
+3.  **Open the the user's file selection for read access, and set the file stream as the source for the** [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), and then play the file.
     ```csharp
     if (file != null)
     {
@@ -207,4 +207,8 @@ Xxxxxx xxxxx xxxxx xx xxxxxx xxxxx xxxxxxx xxxx xxx XxxxXxxxx:
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

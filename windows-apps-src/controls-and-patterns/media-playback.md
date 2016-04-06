@@ -1,38 +1,37 @@
 ---
-Xxxxxxxxxxx: Xxx xxxxx xxxxxx xx xxxx xx xxxx xxx xxxxxx xx xxxxx, xxxxx, xxx xxxxxx.
-xxxxx: Xxxxx xxxxxx
-xx.xxxxxxx: YXXXXYXX-YXYY-YYYY-XXYY-YXYYYXYYXYYY
-xxx.xxxxxxx: XXYXYYYY-YXYY-YYYX-XXXY-YYYYXYYYXYXY
-xxxxx: Xxxxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: The media player is used to view and listen to video, audio, and images.
+title: Media player
+ms.assetid: 9AABB5DE-1D81-4791-AB47-7F058F64C491
+dev.assetid: AF2F2008-9B53-430C-BBC3-8888F631B0B0
+label: Media player
+template: detail.hbs
+author: mijacobs
 ---
-# Xxxxx xxxxxx
+# Media player
 
-Xxx xxxxx xxxxxx xx xxxx xx xxxx xxx xxxxxx xx xxxxx, xxxxx, xxx xxxxxx. Xxxxx xxxxxxxx xxx xx xxxxxx (xxxxxxxx xx x xxxx xx xxxx x xxxxx xx xxxxx xxxxxxxx) xx xx x xxxxxxxxx xxxx-xxxxxx xxxx. Xxx xxx xxxxxx xxx xxxxxx'x xxxxxx xxx, xxxxxx xxx xxxxxxxxxx xx xxx xxxxxxx xxx, xxx xxxxxxx xxxxxxx xx xxx xxx xxx. Xxxx xxxx xx xxxx xxxx xxxxx xxxxxx x xxxxx xxxxxxx xxx (xxxx/xxxxx, xxxx xxxx, xxxx xxxxxxx).
+The media player is used to view and listen to video, audio, and images. Media playback can be inline (embedded in a page or with a group of other controls) or in a dedicated full-screen view. You can modify the player's button set, change the background of the control bar, and arrange layouts as you see fit. Just keep in mind that users expect a basic control set (play/pause, skip back, skip forward).
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+![Media element with transport controls](images/controls/media-transport-controls.png)
 
--   [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926)
--   [**XxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn278677)
+<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
 
-## Xx xxxx xxx xxxxx xxxxxxx?
+-   [**MediaElement class**](https://msdn.microsoft.com/library/windows/apps/br242926)
+-   [**MediaTransportControls class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.mediatransportcontrols)
 
-Xxx x xxxxx xxxxxx xxxx xxx xxxx xx xxxx xxxxx xx xxxxx xx xxxx xxx. Xx xxxxxxx x xxxxxxxxxx xx xxxxxx, xxx x [Xxxx xxxx](flipview.md).
+## Is this the right control?
 
-## Xxxxxxxx
+Use a media player when you want to play audio or video in your app. To display a collection of images, use a [Flip view](flipview.md).
 
-Xxx xxxxx xxxxxx xxxxxxxx xxxxxx- xxx xxxxxx-xxx xxxxxxxx xxxxxxx. Xxx xxxxx xxxxxxx xxxx xx x xxxxxx-xxx xxxxxx, xxxx xxx xxxx/xxxxx xxxxxx xxxxxxx xx xxx xxxx xx xxx xxxxx xxxxxxxx. Xxxx xxxxxx xx xxxx xxxxxxxx xxx xxxxxxx xxxxxxx.
+## Examples
 
-![Xxxxxxx xx XXX xxxxxxxx xx xxxxx, xxxxxx xxx](images/controls_mtc_singlerow_phone.png)
+A media element in the Windows 10 Get Started app.
 
-Xxx xxxxxx-xxx xxxxxxxx xxxxxx (xxxxx) xx xxxxxxxxxxx xxx xxxx xxxxx xxxxxxxxx, xxxxxxxxxx xx xxxxxx xxxxxxx. Xxxx xxxxxx xxxxxxxx xxxx xxxxx xxx xxxxxxxx xxx xxxxx xxx xxxxxxxx xxxxxx xxx xxx xxxx xx xxxxxxx.
+![A media elementin the Windows 10 Get Started app](images/control-examples/media-element-getstarted.png)
 
-![Xxxxxxx xx XXX xxxxxxxx xx xxxxx, xxxxxx xxx](images/controls_mtc_doublerow_phone.png)
+## Create a media player
+Add media to your app by creating a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) object in XAML and set the [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) to a Uniform Resource Identifier (URI) that points to an audio or video file.
 
-## Xxx x xxxxx xxxxxx
-Xxx xxxxx xx xxxx xxx xx xxxxxxxx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxxxxx xx XXXX xxx xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227419) xx x Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX) xxxx xxxxxx xx xx xxxxx xx xxxxx xxxx.
-
-Xxxx XXXX xxxxxxx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxx xxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227419) xxxxxxxx xx xxx XXX xx x xxxxx xxxx xxxx'x xxxxx xx xxx xxx. Xxx **XxxxxXxxxxxx** xxxxxx xxxxxxx xxxx xxx xxxx xxxxx. Xx xxxxxxxx xxxxx xxxx xxxxxxxx xxxxx xxxx, xxx xxx xxx xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227360) xxxxxxxx xx **xxxxx**.
+This XAML creates a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) and sets its [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) property to the URI of a video file that's local to the app. The **MediaElement** begins playing when the page loads. To suppress media from starting right away, you can set the [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/br227360) property to **false**.
 
 ```xaml
 <MediaElement x:Name="mediaSimple" 
@@ -40,7 +39,7 @@ Xxxx XXXX xxxxxxx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/window
               Width="400" AutoPlay="False"/>
 ```
 
-Xxxx XXXX xxxxxxx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxxx xxx xxxxx xx xxxxxxxxx xxxxxxxx xxxxxxx xxx xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227360) xxxxxxxx xxx xx **xxxxx.**
+This XAML creates a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) with the built in transport controls enabled and the [**AutoPlay**](https://msdn.microsoft.com/library/windows/apps/br227360) property set to **false.**
 
 
 ```csharp
@@ -51,21 +50,31 @@ Xxxx XXXX xxxxxxx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/window
               AreTransportControlsEnabled="True"/>
 ```
 
-## Xxxxx xxxxxxxxx xxxxxxxx
-XxxxxXxxxxxx xxx xxxxx xx xxxxxxxxx xxxxxxxx xxxx xxxxxx xxxx, xxxx, xxxxx, xxxxxx, xxxx, xxxxxxx/xxxxxxxx, xxx xxxxx xxxxx xxxxxxxxx. Xx xxxxxx xxxxx xxxxxxxx, xxx [**XxxXxxxxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298977) xx **xxxx**. Xx xxxxxxx xxxx, xxx **XxxXxxxxxxxxXxxxxxxxXxxxxxx** xx **xxxxx**. Xxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxxx xx xxx [**XxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn831962) xxxxx. Xxx xxx xxx xxx xxxxxxxxx xxxxxxxx xx-xx, xx xxxxxxxxx xxxx xx xxxxxxx xxxx. Xxx xxxx xxxx, xxx xxx [**XxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn831962) xxxxx xxxxxxxxx xxx [Xxxxxx xxxxxx xxxxxxxxx xxxxxxxx](custom-transport-controls.md).
+### Media transport controls
+MediaElement has built in transport controls that handle play, stop, pause, volume, mute, seeking/progress, and audio track selection. To enable these controls, set [**AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn298977) to **true**. To disable them, set **AreTransportControlsEnabled** to **false**. The transport controls are represented by the [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn831962) class. You can use the transport controls as-is, or customize them in various ways. For more info, see the [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn831962) class reference and [Create custom transport controls](custom-transport-controls.md).
 
-Xxx xxxxxxxxx xxxxxxxx xxx xxx xxxx xxxxxxx xxxx xxxxxxx xx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926), xxx xxx **XxxxxXxxxxxx** xxxx xxxxxxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxx xxxx xxx xxx xxx xx xxxxxxx xxxxx xxx xxxxx xxxxxxxx. Xxx xxxx xxxx, xxx xxx [Xxxxxxx XxxxxXxxxxxx xxxxxxxxxxxxxxxx](#control_mediaelement_programmatically) xxxxxxx xxxxx xx xxxx xxxxxxx.
+The transport controls let the user control most aspects of the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926), but the **MediaElement** also provides numerous properties and methods that you can use to control audio and video playback. For more info, see the [Control MediaElement programmatically](#control_mediaelement_programmatically) section later in this article.
 
-Xxx xxx xxxx xxxxxxxxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxxx xxx xxxxxx xxxxx xxxxxxxxx xxxxxxxx. Xxx xxxxxx xxxxxxxxx xxxxxxxx xxx xxx xxxxxxxx xxxx xxx xx xxxx xxxxxxxx xxxxx xxxx xxx xxxxxxx, xxxx xx xxx xxxxx xxxxxxx xx xxxxxxxxx. Xx xxx xxxx xxxxxxx xxx xxxxx xxx xx x xxxxxxxx xxx xxxx xxx xxxxxxxx xxx [**XxxxxxXxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn278677), xxxx xxx xx xxxxxxxx xxx xxx xxx xxxx xxx xxxxxxxxxxx xxxxxx. Xxx xxxx xxxx, xxx [Xxxxxx Xxxxx Xxxxxxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt228338).
+The transport controls support single- and double-row layouts. The first example here is a single-row layout, with the play/pause button located to the left of the media timeline. This layout is best reserved for compact screens. 
 
-## Xxx xxx xxxxx xxxxxx
-Xx xxxx xxxxx xx xxx xxxxxxx xx xxxxx xxxxxxxx xxxx xxx xxx, xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227419) xxxxxxxx xx xxx xxxx xx xxx xxxx.
+![Example of MTC controls on phone, single row](images/controls_mtc_singlerow_phone.png)
 
-**Xxx**  Xx xxxx xxxxx xxxx xxx xxxxxxxx, xxx xxxx xx xxxxxxx xxx **Xxxxxxxx (Xxxxxx)** xxxxxxxxxx xx xxxx xxx'x xxxxxxxx (Xxxxxxx.xxxxxxxxxxxx). Xxx xxxx xxxx xxxxx xxxxxxxxx xxxxxxxxxxxx, xxx [Xxx xxxxxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt270968).
+The double-row controls layout (below) is recommended for most usage scenarios, especially on larger screens. This layout provides more space for controls and makes the timeline easier for the user to operate.
+
+![Example of MTC controls on phone, double row](images/controls_mtc_doublerow_phone.png)
+
+**System media transport controls**
+
+You can also integrate [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) with the system media transport controls. The system transport controls are the controls that pop up when hardware media keys are pressed, such as the media buttons on keyboards. If the user presses the pause key on a keyboard and your app supports the [**SystemMediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677), your app is notified and you can take the appropriate action. For more info, see [System Media Transport Controls](https://msdn.microsoft.com/library/windows/apps/mt228338).
+
+### Set the media source
+To play files on the network or files embedded with the app, set the [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) property to the path of the file.
+
+**Tip**  To open files from the internet, you need to declare the **Internet (Client)** capability in your app's manifest (Package.appxmanifest). For more info about declaring capabilities, see [App capability declarations](https://msdn.microsoft.com/library/windows/apps/mt270968).
 
  
 
-Xxxx xxxx xxxxxxxx xx xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227419) xxxxxxxx xx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxxxxxx xx XXXX xx xxx xxxx xx x xxxx xxxxxxx xxxx x [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209683).
+This code attempts to set the [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) property of the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) defined in XAML to the path of a file entered into a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683).
 
 ```xaml
 <TextBox x:Name="txtFilePath" Width="400" 
@@ -107,9 +116,9 @@ private void LoadMediaFromString(string path)
 }
 ```
 
-Xx xxx xxx xxxxx xxxxxx xx x xxxxx xxxx xxxxxxxx xx xxx xxx, xxxxxx x [**Xxx**](https://msdn.microsoft.com/library/windows/apps/br226017) xxxx xxx xxxx xxxxxxxx xxxx **xx-xxxx:///** xxx xxxx xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227419) xx xx. Xxx xxxxxxx, xxx x xxxx xxxxxx **xxxxxY.xxY** xxxx xx xx x **Xxxxxx** xxxxxxxxx, xxx xxxx xxxxx xxxx xxxx: **xx-xxxx:///Xxxxxx/xxxxxY.xxY**
+To set the media source to a media file embedded in the app, create a [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) with the path prefixed with **ms-appx:///** and then set the [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) to it. For example, for a file called **video1.mp4** that is in a **Videos** subfolder, the path would look like: **ms-appx:///Videos/video1.mp4**
 
-Xxxx xxxx xxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227419) xxxxxxxx xx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxxxxxx xxxxxxxxxx xx XXXX xx **xx-xxxx:///Xxxxxx/xxxxxY.xxY**.
+This code sets the [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) property of the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) defined previously in XAML to **ms-appx:///Videos/video1.mp4**.
 
 ```csharp
 private void LoadEmbeddedAppFile()
@@ -130,24 +139,24 @@ private void LoadEmbeddedAppFile()
 }
 ```
 
-### Xxxx xxxxx xxxxx xxxxx
-Xx xxxx xxxxx xx xxx xxxxx xxxxxx xx xxxx XxxXxxxx, xxx xxx xxx xxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847) xx xxx xxx xxxx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br244338) xx xxx xxx xxxxx xxxxxx, xx xxx xxx xxxxxxxxxxxxxxxx xxxxxx xxx xxxx xxxxx xxxxxxx.
+### Open local media files
+To open files on the local system or from OneDrive, you can use the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) to get the file and [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) to set the media source, or you can programmatically access the user media folders.
 
-Xx xxxx xxx xxxxx xxxxxx xxxxxxx xxxx xxxxxxxxxxx xx xxx **Xxxxx** xx **Xxxxx** xxxxxxx, xxx xxxxxxx, xx xxx xxx xxxxxxxxxxx xxx xxx xxxxx xx xxxxx xxxxx xx xxx xxxx'x xxxxxxxxxx xxx xxxxxxxxxx xxxx xx xxxx xxx, xxxx xxx xxxx xx xxxxxxx xxx **Xxxxx Xxxxxxx** xxx **Xxxxx Xxxxxxx** xxxxxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxx xxx xxxxxxx xx xxx Xxxxx, Xxxxxxxx, xxx Xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt188703).
+If your app needs access without user interaction to the **Music** or **Video** folders, for example, if you are enumerating all the music or video files in the user's collection and displaying them in your app, then you need to declare the **Music Library** and **Video Library** capabilities. For more info, see [Files and folders in the Music, Pictures, and Videos libraries](https://msdn.microsoft.com/library/windows/apps/mt188703).
 
-Xxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847) xxxx xxx xxxxxxx xxxxxxx xxxxxxxxxxxx xx xxxxxx xxxxx xx xxx xxxxx xxxx xxxxxx, xxxx xx xxx xxxx'x **Xxxxx** xx **Xxxxx** xxxxxxx, xxxxx xxx xxxx xxx xxxxxxxx xxxxxxx xxxx xxxxx xxxx xx xxxxx xxxxxxxx. Xxxx x xxxxxxxx xxx xxxxxxx xxxxxxxxxx, xx xx xxxx xx xxxxxxxx xxx xxxxxx xx xxxxxxxxxxxx xxxx xxx xxxx.
+The [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) does not require special capabilities to access files on the local file system, such as the user's **Music** or **Video** folders, since the user has complete control over which file is being accessed. From a security and privacy standpoint, it is best to minimize the number of capabilities your app uses.
 
-**Xx xxxx xxxxx xxxxx xxxxx XxxxXxxxXxxxxx**
+**To open local media using FileOpenPicker**
 
-1.  Xxxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847) xx xxx xxx xxxx xxxx x xxxxx xxxx.
+1.  Call [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) to let the user pick a media file.
 
-    Xxx xxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847) xxxxx xx xxxxxx x xxxxx xxxx. Xxx xxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207850) xx xxxxxxx xxxxx xxxx xxxxx xxx **XxxxXxxxXxxxxx** xxxxxxxx. Xxxx [**XxxxXxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/jj635275) xx xxxxxx xxx xxxx xxxxxx xxx xxx xxx xxxx.
+    Use the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) class to select a media file. Set the [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) to specify which file types the **FileOpenPicker** displays. Call [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) to launch the file picker and get the file.
 
-2.  Xxxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br244338) xx xxx xxx xxxxxx xxxxx xxxx xx xxx [**XxxxxXxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227419).
+2.  Call [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) to set the chosen media file as the [**MediaElement.Source**](https://msdn.microsoft.com/library/windows/apps/br227419).
 
-    Xx xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227419) xx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xx xxx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxxxx xxxx xxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847), xxx xxxx xx xxxx x xxxxxx. Xxxx xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn889851) xxxxxx xx xxx **XxxxxxxXxxx**, xxxxx xxxxxxx x xxxxxx xxxx xxx xxx xxxx xxxx xxx [**XxxxxXxxxxxx.XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br244338) xxxxxx. Xxxx xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br227402) xx xxx **XxxxxXxxxxxx** xx xxxxx xxx xxxxx.
+    To set the [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) of the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) to the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) returned from the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), you need to open a stream. Call the [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) method on the **StorageFile**, which returns a stream that you can pass into the [**MediaElement.SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) method. Then call [**Play**](https://msdn.microsoft.com/library/windows/apps/br227402) on the **MediaElement** to start the media.
 
-Xxxx xxxxxxx xxxxx xxx xx xxx xxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847) xx xxxxxx x xxxx xxx xxx xxx xxxx xx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227419) xx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926).
+This example shows how to use the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) to choose a file and set the file as the [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) of a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926).
 
 ```xaml
 <MediaElement x:Name="mediaPlayer"/>
@@ -183,44 +192,44 @@ async private System.Threading.Tasks.Task SetLocalMedia()
 }
 ```
 
-## Xxx xxx xxxxxx xxxxxx
-Xxx xxx xxx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227409) xxxxxxxx xx xxxxxxx xxxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxxx x xxxxxx xxxxxxxxxxxxxx xxxxxx xxx xxxxx xx xxxxxx. X **XxxxxxXxxxxx** xx xx xxxxx, xxxx xx x xxxxxx xxxx xx xxxxx xxxxxx, xxxx xx xxxxxxxxx xx xxxxx xx xxx xxxxx. Xxx **XxxxxxXxxxxx** xx xxxxxxxxx xx xxx xxxxxxxxx xxxxxxxxxx:
+### Set the poster source
+You can use the [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/br227409) property to provide your [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) with a visual representation before the media is loaded. A **PosterSource** is an image, such as a screen shot or movie poster, that is displayed in place of the media. The **PosterSource** is displayed in the following situations:
 
--   Xxxx x xxxxx xxxxxx xx xxx xxx. Xxx xxxxxxx, [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227419) xx xxx xxx, **Xxxxxx** xxx xxx xx **Xxxx**, xx xxx xxxxxx xx xxxxxxx (xx xx xxx xxxx xxxx x [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227393) xxxxx xxxxxx).
--   Xxxxx xxxxx xx xxxxxxx. Xxx xxxxxxx, x xxxxx xxxxxx xx xxx, xxx xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227394) xxxxx xxx xxx xxxxxxxx xxx.
--   Xxxx xxxxx xx xxxxxxxxx xx xxxxxxx xxxxxx.
--   Xxxx xxx xxxxx xx xxxxx xxxx.
+-   When a valid source is not set. For example, [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) is not set, **Source** was set to **Null**, or the source is invalid (as is the case when a [**MediaFailed**](https://msdn.microsoft.com/library/windows/apps/br227393) event occurs).
+-   While media is loading. For example, a valid source is set, but the [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/br227394) event has not occurred yet.
+-   When media is streaming to another device.
+-   When the media is audio only.
 
-Xxxx'x x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227419) xxx xx xx xxxxx xxxxx, xxx xx'x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227409) xxx xx xx xxxxx xx xxx xxxxx xxxxx.
+Here's a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) with its [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) set to an album track, and it's [**PosterSource**](https://msdn.microsoft.com/library/windows/apps/br227409) set to an image of the album cover.
 
 ```xaml
 <MediaElement Source="Media/Track1.mp4" PosterSource="Media/AlbumCover.png"/> 
 ```
 
-## Xxxx xxx xxxxxx'x xxxxxx xxxxxx
-Xxxxxxxxx, x xxxxxx xxxx xxx xxxxxxx (xxx xxxxxxxxxx xxxxx xx xxx) xx xxxx xxxxxxx xxxx xxxx xxx xxxx xx xxxx, xxx xxxxx xxxx xxxx xx xxxx xxx xxxxxx xx xx xxx xxxx xxx xxx xxx xxxxx. Xx xxxxxxx xxx xxxxxxx xxxx xxxxx xxxxxxxxxxx xxxx xxxx xxxxxx xx xx xxxxxx xxxxxxxx, xxxx xx xxxx xx xxx xx xxxxxxx xxxx-xxxxxx xxxxx, xxx xxx xxxx [**XxxxxxxXxxxxxx.XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241818). Xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241816) xxxxx xxxx xxx xxxx Xxxxxxx xx xxxx xxx xxxxxxx xxxxxx xx xx xxx xxxx xxx xxx xxx xxxxx.
+### Keep the device's screen active
+Typically, a device dims the display (and eventually turns it off) to save battery life when the user is away, but video apps need to keep the screen on so the user can see the video. To prevent the display from being deactivated when user action is no longer detected, such as when an app is playing full-screen video, you can call [**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818). The [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) class lets you tell Windows to keep the display turned on so the user can see the video.
 
-Xx xxxxxxxx xxxxx xxx xxxxxxx xxxx, xxx xxxxxx xxxx [**XxxxxxxXxxxxxx.XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241819) xx xxxxxxx xxx xxxxxxx xxxxxxx xxxx xx xx xx xxxxxx xxxxxxxx. Xxxxxxx xxxxxxxxxxxxx xxxxxxxxxxx xxxx xxx'x xxxxxx xxxxxxx xxxxxxxx xxxx xxxx xxx xxxxx xxx xxxxxx, xxx xx-xxxxxxxxx xxxx xxxx xxxx xxx xxxxx xxxx xx xxx xxxxxxxxxx.
+To conserve power and battery life, you should call [**DisplayRequest.RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) to release the display request when it is no longer required. Windows automatically deactivates your app's active display requests when your app moves off screen, and re-activates them when your app comes back to the foreground.
 
-Xxxx xxx xxxx xxxxxxxxxx xxxx xxx xxxxxx xxxxxxx xxx xxxxxxx xxxxxxx:
+Here are some situations when you should release the display request:
 
--   Xxxxx xxxxxxxx xx xxxxxx, xxx xxxxxxx, xx xxxx xxxxxx, xxxxxxxxx, xx xxxxxxxxxx xxx xx xxxxxxx xxxxxxxxx.
--   Xxxxxxxx xxxxx. Xxx xxxxxxx, xxx xxxxx xx xxxx xxxxxxx xx xxx xxxxxxxxxxxx xx xxxx.
--   X xxxxxxxx xxxxx xxx xxxxxxxx. Xxx xxxxxxx, xxxxxxx xxxxxxxxxxxx xxxxxx xx x xxxxxxxxx xxxx.
+-   Video playback is paused, for example, by user action, buffering, or adjustment due to limited bandwidth.
+-   Playback stops. For example, the video is done playing or the presentation is over.
+-   A playback error has occurred. For example, network connectivity issues or a corrupted file.
 
-**Xx xxxx xxx xxxxxx xxxxxx**
+**To keep the screen active**
 
-1.  Xxxxxx x xxxxxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241816) xxxxxxxx. Xxxxxxxxxx xx xx xxxx.
+1.  Create a global [**DisplayRequest**](https://msdn.microsoft.com/library/windows/apps/br241816) variable. Initialize it to null.
 ```csharp
 // Create this variable at a global scope. Set it to null.
 private DisplayRequest appDisplayRequest = null;
 ```
 
-2.  Xxxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241818) xx xxxxxx Xxxxxxx xxxx xxx xxx xxxxxxxx xxx xxxxxxx xx xxxxxx xx.
+2.  Call [**RequestActive**](https://msdn.microsoft.com/library/windows/apps/br241818) to notify Windows that the app requires the display to remain on.
 
-3.  Xxxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241819) xx xxxxxxx xxx xxxxxxx xxxxxxx xxxxxxxx xxxxx xxxxxxxx xx xxxxxxx, xxxxxx, xx xxxxxxxxxxx xx x xxxxxxxx xxxxx. Xxxx xxxx xxx xx xxxxxx xxx xxx xxxxxx xxxxxxx xxxxxxxx, Xxxxxxx xxxxx xxxxxxx xxxx xx xxxxxxx xxx xxxxxxx (xxx xxxxxxxxxx xxxxxxx xx xxx) xxxx xxx xxxxxx xx xxx xxxxx xxxx.
+3.  Call [**RequestRelease**](https://msdn.microsoft.com/library/windows/apps/br241819) to release the display request whenever video playback is stopped, paused, or interrupted by a playback error. When your app no longer has any active display requests, Windows saves battery life by dimming the display (and eventually turning it off) when the device is not being used.
 
-    Xxxx, xxx xxx xxx [**XxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227375) xxxxx xx xxxxxx xxxxx xxxxxxxxxx. Xxxx, xxx xxx [**XxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh965334) xxxxxxxx xx xxxxxxxxx xxxxxxx xx xxxxx xx xxxxx xxxx xx xxxxxxx, xxx xxxx xxx xxxxxx xxxxxx xxxx xx xxxxx xx xxxxxxx.
+    Here, you use the [**CurrentStateChanged**](https://msdn.microsoft.com/library/windows/apps/br227375) event to detect these situations. Then, use the [**IsAudioOnly**](https://msdn.microsoft.com/library/windows/apps/hh965334) property to determine whether an audio or video file is playing, and keep the screen active only if video is playing.
     ```xaml
 <MediaElement Source="Media/video1.mp4"
               CurrentStateChanged="MediaElement_CurrentStateChanged"/>
@@ -254,30 +263,29 @@ private void MediaElement_CurrentStateChanged(object sender, RoutedEventArgs e)
 } 
     ```
 
-## Xxxxxxx xxx xxxxx xxxxxx xxxxxxxxxxxxxxxx
-[
-            **XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxxxxxxx xxxxxxxx xxxxxxxxxx, xxxxxxx, xxx xxxxxx xxx xxxxxxxxxxx xxxxx xxx xxxxx xxxxxxxx. Xxx x xxxx xxxxxxx xx xxxxxxxxxx, xxxxxxx, xxx xxxxxx, xxx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxxxxxxxx xxxx.
+### Control the media player programmatically
+[**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) provides numerous properties, methods, and events for controlling audio and video playback. For a full listing of properties, methods, and events, see the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) reference page.
     
 
-## Xxxxxx xxxxx xxxxxx xx xxxxxxxxx xxxxxxxxx
+### Select audio tracks in different languages
 
-Xxx xxx [**XxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227358) xxxxxxxx xxx xxx [**XxxXxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227384) xxxxxx xx xxxxxx xxx xxxxx xx x xxxxxxxxx xxxxxxxx xxxxx xx x xxxxx. Xxxxxx xxx xxxx xxxxxxx xxxxxxxx xxxxx xxxxxx xx xxx xxxx xxxxxxxx, xxxx xx xxxxxxxx xxxxxxxxxxxx xx xxxxx. Xxxx xxxxxxx xxxxxxxxxxxx xxxxx xxx xx xxxxxx xxxxxxx xxxxxxxxx xxxxxxxxx, xxx xxx xxx xxxxxx xxxx xxxx xx xxxxxx xxxxxxx xxx xxxxx xxxxxx.
+Use the [**AudioStreamIndex**](https://msdn.microsoft.com/library/windows/apps/br227358) property and the [**GetAudioStreamLanguage**](https://msdn.microsoft.com/library/windows/apps/br227384) method to change the audio to a different language track on a video. Videos can also contain multiple audio tracks in the same language, such as director commentaries on films. This example specifically shows how to switch between different languages, but you can modify this code to switch between any audio tracks.
 
-**Xx xxxxxx xxxxx xxxxxx xx xxxxxxxxx xxxxxxxxx**
+**To select audio tracks in different languages**
 
-1.  Xxx xxx xxxxx xxxxxx.
+1.  Get the audio tracks.
 
-    Xx xxxxxx xxx x xxxxx xx x xxxxxxxx xxxxxxxx, xxxxx xx xxxxxxxxx xxxxxxx xxxx xxxxx xxxxx xx xxx xxxxx. Xxx [**XxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227356) xx xxx xxx xxxxx xxx x **xxx** xxxx.
+    To search for a track in a specific language, start by iterating through each audio track on the video. Use [**AudioStreamCount**](https://msdn.microsoft.com/library/windows/apps/br227356) as the max value for a **for** loop.
 
-2.  Xxx xxx xxxxxxxx xx xxx xxxxx xxxxx.
+2.  Get the language of the audio track.
 
-    Xxx xxx [**XxxXxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227384) xxxxxx xx xxx xxx xxxxxxxx xx xxx xxxxx. Xxx xxxxxxxx xx xxx xxxxx xx xxxxxxxxxx xx x [xxxxxxxx xxxx](http://msdn.microsoft.com/library/ms533052(vs.85).aspx), xxxx xx **"xx"** xxx Xxxxxxx xx **"xx"** xxx Xxxxxxxx.
+    Use the [**GetAudioStreamLanguage**](https://msdn.microsoft.com/library/windows/apps/br227384) method to get the language of the track. The language of the track is identified by a [language code](http://msdn.microsoft.com/library/ms533052(vs.85).aspx), such as **"en"** for English or **"ja"** for Japanese.
 
-3.  Xxx xxx xxxxxx xxxxx xxxxx.
+3.  Set the active audio track.
 
-    Xxxx xxx xxxx xxx xxxxx xxxx xxx xxxxxxx xxxxxxxx, xxx xxx [**XxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227358) xx xxx xxxxx xx xxx xxxxx. Xxxxxxx **XxxxxXxxxxxXxxxx** xx **xxxx** xxxxxxx xxx xxxxxxx xxxxx xxxxx, xxxxx xx xxxxxxx xx xxx xxxxxxx.
+    When you find the track with the desired language, set the [**AudioStreamIndex**](https://msdn.microsoft.com/library/windows/apps/br227358) to the index of the track. Setting **AudioStreamIndex** to **null** selects the default audio track, which is defined by the content.
 
-Xxxx'x xxxx xxxx xxxx xxxxxxxx xx xxx xxx xxxxx xxxxx xx xxx xxxxxxxxx xxxxxxxx. Xx xxxxxxxx xxxxxxx xxx xxxxx xxxxxx xx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxxxxx xxx xxxx [**XxxXxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227384) xx xxx xxx xxxxxxxx xx xxxx xxxxx. Xx xxx xxxxxxx xxxxxxxx xxxxx xxxxxx, xxx [**XxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227358) xx xxx xx xxx xxxxx xx xxxx xxxxx.
+Here's some code that attempts to set the audio track to the specified language. It iterates through the audio tracks on a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) object and uses [**GetAudioStreamLanguage**](https://msdn.microsoft.com/library/windows/apps/br227384) to get the language of each track. If the desired language track exists, the [**AudioStreamIndex**](https://msdn.microsoft.com/library/windows/apps/br227358) is set to the index of that track.
 
 ```csharp
 /// <summary>
@@ -302,11 +310,11 @@ private bool SetAudioLanguage(string lcid, MediaElement media)
 }
 ```
 
-## Xxxxxx xxxx xxxxxx xxxxx xxxxxxxxx
+### Enable full window video rendering
 
-Xxx xxx [**XxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298980) xxxxxxxx xx xxxxxx xxx xxxxxxx xxxx xxxxxx xxxxxxxxx. Xxxx xxx xxxxxxxxxxxxxxxx xxx xxxx xxxxxx xxxxxxxxx xx xxxx xxx, xxx xxxxxx xxxxxx xxx **XxXxxxXxxxxx** xxxxxxx xx xxxxx xx xxxxxxxx. **XxXxxxXxxxxx** xxxxxxx xxxx xxxxxx xxxxx xxxxxxxxxxxxx xxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxxxx xxx xxxxxxx xxxx. Xx xxxx xxxxxx xxxxxxxxx xx xxx xxx xx xxxxxxxxx, xxxxx xxxxxxxxxxxxx xxx xxx xx xxxxxxx.
+Set the [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/dn298980) property to enable and disable full window rendering. When you programmatically set full window rendering in your app, you should always use **IsFullWindow** instead of doing it manually. **IsFullWindow** insures that system level optimizations are performed that improve performance and battery life. If full window rendering is not set up correctly, these optimizations may not be enabled.
 
-Xxxx xx xxxx xxxx xxxx xxxxxxx xx [**XxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279244) xxxx xxxxxxx xxxx xxxxxx xxxxxxxxx.
+Here is some code that creates an [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) that toggles full window rendering.
 
 ```xaml
 <AppBarButton Icon="FullScreen" 
@@ -321,21 +329,17 @@ private void FullWindow_Click(object sender, object e)
 }
 ```
 
-## Xxxxxx xxx xxxxxxx xxxxx
+### Resize and stretch video
 
-Xxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227422) xxxxxxxx xx xxxxxx xxx xxx xxxxx xxxxxxx xxxxx xxx xxxxxxxxx xx'x xx. Xxxx xxxxxxx xxx xxxxxxxxx xxx xxxxx xxxxxxxxx xx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242968) xxxxx. Xxx **Xxxxxxx** xxxxxx xxx xxxxxxx xx xxxxxxx xxxx xxxxxxxx xx xxxx XX xxxx. Xxx xxx xxxx xxxx xx xx x xxxxxx xxx xxxxx xxx xxxx xx xxxxxx xxxxx xxxxxxx xxxx xxxxxx.
+Use the [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) property to change how the video content fills the container it's in. This resizes and stretches the video depending on the [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) value. The **Stretch** states are similar to picture size settings on many TV sets. You can hook this up to a button and allow the user to choose which setting they prefer.
 
--   [
-            **Xxxx**](https://msdn.microsoft.com/library/windows/apps/br242968) xxxxxxxx xxx xxxxxx xxxxxxxxxx xx xxx xxxxxxx xx xxx xxxxxxxx xxxx.
--   [
-            **Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242968) xxxxx xx xx xxxx xx xxx xxxxx xx xxxxxxxx xxxxx xxxxxxxxxx xxx xxxxxx xxxxx xxx xxx xxxxx xxxxxxx. Xxxx xxx xxxxxx xx xxxxxxxxxx xx xxxxxxxx xxxxx xxxx xx xxx xxxxx xx xxx xxxxx. Xxxx xx xxxxxxx xx xxxx-xxxxxx xxxxx.
--   [
-            **XxxxxxxXxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242968) xxxxx xx xxx xxxxxx xxxxx xxxxx xxxxxxxxxx xxx xxxxxx xxxxx. Xxxx xxx xxxxxx xx xxxx xx xxx xxxxx xxxxx xxxxxxx. Xxxx xx xxxxxxx xx xxxx-xxxxxx xxxxx.
--   [
-            **Xxxx**](https://msdn.microsoft.com/library/windows/apps/br242968) xxxxx xx xxx xxxxxx xxxxx, xxx xxxx xxx xxxxxxxx xxx xxxxxx xxxxx. Xxxx xx xxxxx xx xxxxxxx, xxx xxxxxxxxxx xxx xxxxx. Xxxx xx xxxxxxx xx xxxxxxx xxxxx.
+-   [**None**](https://msdn.microsoft.com/library/windows/apps/br242968) displays the native resolution of the content in its original size.
+-   [**Uniform**](https://msdn.microsoft.com/library/windows/apps/br242968) fills up as much of the space as possible while preserving the aspect ratio and the image content. This can result in horizontal or vertical black bars at the edges of the video. This is similar to wide-screen modes.
+-   [**UniformToFill**](https://msdn.microsoft.com/library/windows/apps/br242968) fills up the entire space while preserving the aspect ratio. This can result in some of the image being cropped. This is similar to full-screen modes.
+-   [**Fill**](https://msdn.microsoft.com/library/windows/apps/br242968) fills up the entire space, but does not preserve the aspect ratio. None of image is cropped, but stretching may occur. This is similar to stretch modes.
 
-![Xxxxxxx xxxxxxxxxxx xxxxxx](images/Image_Stretch.jpg)
-Xxxx, xx [**XxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279244) xx xxxx xx xxxxx xxxxxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242968) xxxxxxx. X **xxxxxx** xxxxxxxxx xxxxxx xxx xxxxxxx xxxxx xx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227422) xxxxxxxx xxx xxxx xx xx xxx xxxx xxxxx xx xxx **Xxxxxxx** xxxxxxxxxxx. Xxxx xxxx xxx xxxx xxxxx xxxxxxx xxx xxxxxxxxx xxxxxxx xxxxxx.
+![Stretch enumeration values](images/Image_Stretch.jpg)
+Here, an [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244) is used to cycle through the [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br242968) options. A **switch** statement checks the current state of the [**Stretch**](https://msdn.microsoft.com/library/windows/apps/br227422) property and sets it to the next value in the **Stretch** enumeration. This lets the user cycle through the different stretch states.
 
 ```xaml
 <AppBarButton Icon="Switch" 
@@ -366,11 +370,11 @@ private void PictureSize_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Xxxxxx xxx-xxxxxxx xxxxxxxx
+### Enable low-latency playback
 
-Xxx xxx [**XxxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227414) xxxxxxxx xx **xxxx** xx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xx xxxxxx xxx xxxxx xxxxxxx xx xxxxxx xxx xxxxxxx xxxxxxx xxx xxxxxxxx. Xxxx xx xxxxxxxx xxx xxx-xxx xxxxxxxxxxxxxx xxxx, xxx xxx xx xxxxxxxxxx xx xxxx xxxxxx xxxxxxxxx. Xx xxxxx xxxx xxxx xxxx xx xxxx xxxxxxxx xxxxxxxxx xxx xxxx xxxxx-xxxxxxxxx.
+Set the [**RealTimePlayback**](https://msdn.microsoft.com/library/windows/apps/br227414) property to **true** on a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) to enable the media element to reduce the initial latency for playback. This is critical for two-way communications apps, and can be applicable to some gaming scenarios. Be aware that this mode is more resource intensive and less power-efficient.
 
-Xxxx xxxxxxx xxxxxxx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxx xxxx [**XxxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227414) xx **xxxx**.
+This example creates a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) and sets [**RealTimePlayback**](https://msdn.microsoft.com/library/windows/apps/br227414) to **true**.
 
 ```xaml
 <MediaElement x:Name="mediaPlayer" RealTimePlayback="True"/>
@@ -381,25 +385,29 @@ MediaElement mediaPlayer = new MediaElement();
 mediaPlayer.RealTimePlayback = true;
 ```
     
-## Xx'x xxx xxx'xx 
+## Recommendations 
 
-Xxx xxxxx xxxxxx xxxxx xx x xxxx xxxxx xxx x xxxxx xxxxx, xxx xxx xxx xxx xxxx xxxxx xx xxxx xxxxxxxxxx. Xxx xxxx xxxxxxxxxx xxxxxxxx xxxxxx xxxxxxxx, xx xxxxxxxxxx xxx xxx-xxxxx xxxxxxxxxx, xxx xxxxxx xxx xxxxxxx xxx xxxx xxxxxxxxxxx xx xxx xxxxxxx xxxxxxxxxx.
+The media player comes in a dark theme and a light theme, but opt for the dark theme in most situations. The dark background provides better contrast, in particular for low-light conditions, and limits the control bar from interfering in the viewing experience.
 
-Xxxxxxxxx x xxxxxxxxx xxxxxxx xxxxxxxxxx xx xxxxxxxxx xxxx-xxxxxx xxxx xxxx xxxxxx xxxx. Xxx xxxx-xxxxxx xxxxxxx xxxxxxxxxx xx xxxxxxx, xxx xxxxxxx xxx xxxxxxxxxx xx xxx xxxxxx xxxx.
+Encourage a dedicated viewing experience by promoting full-screen mode over inline mode. The full-screen viewing experience is optimal, and options are restricted in the inline mode.
 
-Xx xxx xxxx xxx xxxxxx xxxx xxxxxx, xx xxxx xxx xxxxxx-xxx xxxxxx. Xx xxxxxxxx xxxx xxxxx xxx xxxxxxxx xxxx xxx xxxxxxx xxxxxx-xxx xxxxxx.
+If you have the screen real estate, go with the double-row layout. It provides more space for controls than the compact single-row layout.
 
-Xxx xxxxxxxx xxxxxx xxxxxxx xxx xxxx xx xxx xxxxx xxxxxx xx xxxxxxx xxx xxxx xxxxxxxxxx xxx xxxx xxx, xxx xxxx xx xxxx xxx xxxxxxxxx:
+Add whatever custom options you need to the media player to provide the best experience for your app, but keep in mind the following:
 
--   Xxxxx xxx xxxxxxxxxxxxx xx xxx xxxxxxx xxxxxxxx, xxxxx xxxx xxxx xxxxxxxxx xxx xxx xxxxx xxxxxxxx xxxxxxxxxx.
--   Xx xxxxxx xxx xxxxx xxxxxx xxxxxxx, xxx xxxxxx xxxxxx xxxxxxx xxxxx, xxx xx xxxxxxx xxx xxxxxxxx, xxx xxxxxx xxxxxx xxxxxxxx xxx xxxx'x xxxxx xxxxx.
--   Xxx xxx xx xxxxxxxx xxx xxxxxxx xxx xxxx xxx xxxx xxxxxxx.
--   Xxx'x xxxxxx xxx xxxxx xxxxxxxx xxxxx xxx xxxxxxx xxxxxxx xxxx, xxxxx xxxx xxxxxxxx xxxxx xxx xxxxxxxxxxxxx.
+-   Limit the customization of the default controls, which have been optimized for the media playback experience.
+-   On phones and other mobile devices, the device chrome remains black, but on laptops and desktops, the device chrome inherits the user's theme color.
+-   Try not to overload the control bar with too many options.
+-   Don't shrink the media timeline below its default minimum size, which will severely limit its effectiveness.
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
-## Xxxxxxx xxxxxxxx
+## Related articles
 
-- [Xxxxxxx xxxxxx xxxxxx xxx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/dn958433)
-- [Xxxxxxx xxxxxx xxxxxx xxx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/dn958434)
-<!--HONumber=Mar16_HO1-->
+- [Command design basics for UWP apps](https://msdn.microsoft.com/library/windows/apps/dn958433)
+- [Content design basics for UWP apps](https://msdn.microsoft.com/library/windows/apps/dn958434)
+
+
+<!--HONumber=Mar16_HO4-->
+
+

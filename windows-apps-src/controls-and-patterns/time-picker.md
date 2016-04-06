@@ -1,34 +1,34 @@
 ---
-Xxxxxxxxxxx: Xxx xxxx xxxxxx xxxxx xxx x xxxxxxxxxxxx xxx xx xxx xxxxx xxxx x xxxx xxxxx xxxxx xxxxx, xxxxx, xx xxxxxxxx xxxxx.
-xxxxx: Xxxx xxxxxx
-xx.xxxxxxx: YYYYxxxx-YYxY-YYYx-YxYx-xYYYxxxYYxxY
-xxxxx: Xxxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: The time picker gives you a standardized way to let users pick a time value using touch, mouse, or keyboard input.
+title: Time picker
+ms.assetid: 5124ecda-09e6-449e-9d4a-d969dca46aa3
+label: Time picker
+template: detail.hbs
 ---
 
-# Xxxx xxxxxx
+# Time picker
 
-Xxx xxxx xxxxxx xxxxx xxx x xxxxxxxxxxxx xxx xx xxx xxxxx xxxx x xxxx xxxxx xxxxx xxxxx, xxxxx, xx xxxxxxxx xxxxx. 
+The time picker gives you a standardized way to let users pick a time value using touch, mouse, or keyboard input. 
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
 
--   [**XxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
--   [**Xxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
+-   [**TimePicker class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
+-   [**Time property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
-Xxx x xxxx xxxxxx xx xxx x xxxx xxxx x xxxxxx xxxx xxxxx.
+## Is this the right control?
+Use a time picker to let a user pick a single time value.
 
-Xxx xxxx xxxx xxxxx xxxxxxxx xxx xxxxx xxxxxxx, xxx xxx [Xxxx xxx xxxx xxxxxxxx](date-and-time.md) xxxxxxx.
+For more info about choosing the right control, see the [Date and time controls](date-and-time.md) article.
 
-## Xxxxxxxx
+## Examples
 
-Xxx xxxxx xxxxx xxxxxxxx xxx xxxxxx xxxx, xxx xxxx xxx xxxx xxxxxxx xxx xxxxx xxxxx, x xxxxxx xxxxxxx xxxxxxx xxxxxxxxxx xxxx xxx xxxxxx xxx xxx xxxx xx xxxx x xxxxxxxxx. Xxx xxxx xxxxxx xxxxxxxx xxxxx XX; xx xxxxx'x xxxx xxxxx XX xxx xx xxx xxx.
+The entry point displays the chosen time, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The time picker overlays other UI; it doesn't push other UI out of the way.
 
-![Xxxxxxx xx xxx xxxx xxxxxx xxxxxxxxx](images/controls_timepicker_expand.png)
+![Example of the time picker expanding](images/controls_timepicker_expand.png)
 
-## Xxxxxx x xxxx xxxxxx
+## Create a time picker
 
-Xxxx xxxxxxx xxxxx xxx xx xxxxxx x xxxxxx xxxx xxxxxx xxxx x xxxxxx.
+This example shows how to create a simple time picker with a header.
 
 ```xaml
 <TimePicker x:Name=arrivalTimePicker Header="Arrival time"/>
@@ -39,18 +39,22 @@ TimePicker arrivalTimePicker = new TimePicker();
 arrivalTimePicker.Header = "Arrival time";
 ```
 
-Xxx xxxxxxxxx xxxx xxxxxx xxxxx xxxx xxxx:
+The resulting time picker looks like this:
 
-![Xxxxxxx xx xxxx xxxxxx](images/time-picker-closed.png)
+![Example of time picker](images/time-picker-closed.png)
 
-> **Xxxx**&xxxx;&xxxx;Xxx xxxxxxxxx xxxx xxxxx xxxx xxx xxxx xxxxxx, xxx [XxxxXxxx xxx Xxxxxxxx xxxxxx](date-and-time.md#datetime-and-calendar-values) xx xxx *Xxxx xxx xxxx xxxxxxxx* xxxxxxx.
+> **Note**&nbsp;&nbsp;For important info about date and time values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the *Date and time controls* article.
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxx xxx xxxx xxxxxxxx](date-and-time.md)
-* [Xxxxxxxx xxxx xxxxxx](calendar-date-picker.md)
-* [Xxxxxxxx xxxx](calendar-view.md)
-* [Xxxx xxxxxx](date-picker.md)
+- [Date and time controls](date-and-time.md)
+- [Calendar date picker](calendar-date-picker.md)
+- [Calendar view](calendar-view.md)
+- [Date picker](date-picker.md)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

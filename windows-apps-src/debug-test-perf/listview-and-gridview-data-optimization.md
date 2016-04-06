@@ -1,81 +1,83 @@
 ---
-xx.xxxxxxx: YXYYYYYY-XXXY-YYXY-YXYX-YYYYYXXYXYYX
-xxxxx: XxxxXxxx xxx XxxxXxxx xxxx xxxxxxxxxxxxxx
-xxxxxxxxxxx: Xxxxxxx XxxxXxxx xxx XxxxXxxx xxxxxxxxxxx xxx xxxxxxx xxxx xxxxxxx xxxx xxxxxxxxxxxxxx.
+ms.assetid: 3A477380-EAC5-44E7-8E0F-18346CC0C92F
+title: ListView と GridView のデータ仮想化
+description: データ仮想化によって ListView と GridView のパフォーマンスと起動時間を向上させます。
 ---
-# XxxxXxxx xxx XxxxXxxx xxxx xxxxxxxxxxxxxx
+# ListView と GridView のデータ仮想化
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-**Xxxx**  Xxx xxxx xxxxxxx, xxx xxx //xxxxx/ xxxxxxx [Xxxxxxxxxxxx Xxxxxxxx Xxxxxxxxxxx xxxx Xxxxx Xxxxxxxx xxxx Xxxxx Xxxxxxx xx Xxxx xx XxxxXxxx xxx XxxxXxxx](https://channel9.msdn.com/Events/Build/2013/3-158).
+**注**  詳しくは、//build/ セッション「[Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView (ユーザーが GridView と ListView で大量のデータを操作するときのパフォーマンスを大幅に向上させる)](https://channel9.msdn.com/Events/Build/2013/3-158)」をご覧ください。
 
-Xxxxxxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242705) xxxxxxxxxxx xxx xxxxxxx xxxx xxxxxxx xxxx xxxxxxxxxxxxxx. Xxx XX xxxxxxxxxxxxxx, xxxxxxx xxxxxxxxx, xxx xxxxxxxxxxx xxxxxxxx xx xxxxx, xxx [XxxxXxxx xxx XxxxXxxx XX xxxxxxxxxxxx](optimize-gridview-and-listview.md).
+データ仮想化によって [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) と [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) のパフォーマンスと起動時間を向上させます。 UI の仮想化、要素の削減、項目の段階的な更新については、「[ListView と GridView の UI の最適化](optimize-gridview-and-listview.md)」をご覧ください。
 
-X xxxxxx xx xxxx xxxxxxxxxxxxxx xx xxxxxx xxx x xxxx xxx xxxx xx xx xxxxx xxxx xx xxxxxx xx xxxxxx xxx xxx xx xxxxxx xx xxxxxx xx xxx xxxx. Xxx xxxx xx xxxxxxx xxxxxxx xxxx xxxxxx (xxxx xxxxx xxxx, xxxxxxx, xx xxxxx) xxx xxxxx XX xxxxxxxxxxxxxx xx xxxx xxxxxxx xxxx xxx. Xxx xxx xxxxx xxxx xxxx xxxxxxxxxxxxx, xx xxxx xxxxxxxxx xxxxxx xx xxx xxxxxx xxxx xxx (xxxxxx xxxxxx), xx xxxxxx. Xxxxxxx xxxx xxxxxxxxxxxxxx xx xxxxxxxxxxx xxx xxx xxxxxxx xx xxxx xxxxxxx.
+データ仮想化のメソッドは、大きすぎてメモリに一度に格納できないか、すべてを格納する必要がないデータ セットで必要です。 最初の部分を (ローカル ディスク、ネットワーク、またはクラウドから) メモリに読み込んで、その部分的なデータ セットに UI の仮想化を適用します。 データは、後から段階的に読み込むことも、マスター データ セット内の任意の位置からオンデマンドで読み込むこともできます (ランダム アクセス)。 データ仮想化が適しているかどうかは、多数の要因によって決まります。
 
--   Xxx xxxx xx xxxx xxxx xxx
--   Xxx xxxx xx xxxx xxxx
--   Xxx xxxxxx xx xxx xxxx xxx (xxxxx xxxx, xxxxxxx, xx xxxxx)
--   Xxx xxxxxxx xxxxxx xxxxxxxxxxx xx xxxx xxx
+-   データ セットのサイズ
+-   各項目のサイズ
+-   データ セットのソース (ローカル ディスク、ネットワーク、またはクラウド)
+-   アプリの総合的なメモリ消費量
 
-**Xxxx**  Xx xxxxx xxxx x xxxxxxx xx xxxxxxx xx xxxxxxx xxx XxxxXxxx xxx XxxxXxxx xxxx xxxxxxxx xxxxxxxxx xxxxxxxxxxx xxxxxxx xxxxx xxx xxxx xx xxxxxxx/xxxxxxxxx xxxxxxx. Xx xxxx xx xxxxxx, xxxxx xxxxxxxxxxx xxxxxxx xxx xxxxxxxx xxxx xxxx xxxx xxxxxxxx. Xxx xxx xxxx xxx xxxxxxx xxx xx xxxxxxx [**XxxxXxxxXxxx.XxxxxXxxxxxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878base-showsscrollingplaceholders) xx xxxxx, xxx xx xxx xx xx xxxx xx xxxxxxxxx xxxx xxx xxx xxx x:Xxxxx xxxxxxxxx xx xxxxxxxxxxxxx xxxxxx xxx xxxxxxxx xx xxxx xxxx xxxxxxxx. Xxx [Xxxxxx XxxxXxxx xxx XxxxXxxx xxxxx xxxxxxxxxxxxx](optimize-gridview-and-listview.md#update-items-incrementally).
+**注**  ListView と GridView では、ユーザーがパンやスクロールの操作をすばやく行った場合に一時的なプレースホルダーの視覚効果を表示する機能が既定で有効になることに注意してください。 これらのプレース ホルダーの視覚効果は、データが読み込まれると項目テンプレートに置き換えられます。 この機能は、[**ListViewBase.ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/BR242878base-showsscrollingplaceholders) を false に設定することによって無効にできますが、その場合は、x:Phase 属性を使って項目テンプレートの要素を段階的にレンダリングすることをお勧めします。 詳しくは、「[GridView と ListView の項目を段階的に更新する](optimize-gridview-and-listview.md#update-items-incrementally)」をご覧ください。
 
-Xxxx xxx xxxx xxxxxxx xxxxx xxx xxxxxxxxxxx xxx xxxxxx-xxxxxx xxxx xxxxxxxxxxxxxx xxxxxxxxxx.
+以降では、段階的なデータ仮想化とランダム アクセスのデータ仮想化の手法について詳しく説明します。
 
-## Xxxxxxxxxxx xxxx xxxxxxxxxxxxxx
+## 段階的なデータ仮想化
 
-Xxxxxxxxxxx xxxx xxxxxxxxxxxxxx xxxxx xxxx xxxxxxxxxxxx. X [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) xxxx xxxx xxxxxxxxxxx xxxx xxxxxxxxxxxxxx xxx xx xxxx xx xxxx x xxxxxxxxxx xx x xxxxxxx xxxxx, xxx xxxx YY xxxxx xxx xxxxxx xxxxxxxxx. Xx xxx xxxx xxxx/xxxxxxx, xxx xxxx YY xxx xxxxxx. Xx xxxxx xxx xxxxxx, xxx xxxxxx xxx'x xxxxx xxxxxxxxx xx xxxx. Xxx xxxx xxxx xx xxxx xxxxxxxxxxxxxx xxx xxxxx x xxxx xxxxxx xxxxx xxxx xxxxxxxxxx xxxxx xxxxxxxxxx.
+段階的なデータ仮想化では、データを連続的にダウンロードします。 段階的なデータ仮想化を実行する [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) を使って、数百万の項目のコレクションを表示できますが、最初は 50 個の項目だけが読み込まれます。 ユーザーがパン/スクロールすると、次の 50 個の項目が読み込まれます。 項目が読み込まれると、スクロール バーのサムはサイズが小さくなります。 この種のデータ仮想化では、次のインターフェイスを実装するデータ ソース クラスを記述します。
 
--   [**XXxxx**](T:System.Collections.IList)
--   [
-            **XXxxxxxXxxxxxxxxxXxxxxxx**](T:System.Collections.Specialized.INotifyCollectionChanged) (X#/XX) xx [**XXxxxxxxxxxXxxxxx&xx;X&xx;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (X++/XX)
--   [**XXxxxxxxXxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701916)
+-   [**IList**](T:System.Collections.IList)
+-   [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged) (C#/VB) または [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
+-   [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916)
 
-X xxxx xxxxxx xxxx xxxx xx xx xx-xxxxxx xxxx xxxx xxx xx xxxxxxxxxxx xxxxxxxx. Xxx xxxxx xxxxxxx xxxx xxx xxx xxxxx xxxxx xxx xxxxxxxx [**XXxxx**](T:System.Collections.IList) xxxxxxx xxx xxxxx xxxxxxxxxx. Xxx xxxxx xxxxxx xxxxxxxxx xxx xxxxxx xx xxxxx xxxxxxx, xxx xxx xxxx xxxx xx xxx xxxxxxx.
+このようなデータ ソースは、継続的に拡張できるメモリ内リストです。 項目コントロールは、標準的な [**IList**](T:System.Collections.IList) インデクサーとカウント プロパティを使って項目を要求します。 カウントは、データセットの実際のサイズではなく、ローカルでの項目の数を表す必要があります。
 
-Xxxx xxx xxxxx xxxxxxx xxxx xxxxx xx xxx xxx xx xxx xxxxxxxx xxxx, xx xxxx xxxx [**XXxxxxxxXxxxxxxxxxxXxxxxxx.XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701916-hasmoreitems). Xx xxx xxxxxx **xxxx**, xxxx xx xxxx xxxx [**XXxxxxxxXxxxxxxxxxxXxxxxxx.XxxxXxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701916-loadmoreitemsasync) xxxxxxx xx xxxxxxx xxxxxx xx xxxxx xx xxxx. Xxxxxxxxx xx xxxxx xxx'xx xxxxxxx xxxx xxxx (xxxxx xxxx, xxxxxxx, xx xxxxx), xxx xxx xxxxxx xx xxxx x xxxxxxxxx xxxxxx xx xxxxx xxxx xxxx xxxxxxx. Xxx xxxxxxx, xx xxxx xxxxxxx xxxxxxxx xxxxxxx xx YY xxxxx xxx xxx xxxxx xxxxxxx xxxx xxxx xxx YY xxxx xxx xxx xxxx YY. Xxxx xxx xxxx xxxx xxxx xxxx xxx, xxx xx xx xxxx xxxx, xxx xxxxx x xxxxxx xxxxxxxxxxxx xxx [**XXxxxxxXxxxxxxxxxXxxxxxx**](T:System.Collections.Specialized.INotifyCollectionChanged) xx [**XXxxxxxxxxxXxxxxx&xx;X&xx;**](https://msdn.microsoft.com/library/windows/apps/BR226052) xx xxxx xxx xxxxx xxxxxxx xxxxx xxxxx xxx xxx xxxxx. Xxxx xxxxxx x xxxxx xx xxx xxxxx xxx xxxxxxxx xxxxxx. Xx xxx xxxx xxxxx xxxxx xxxx xxxxxxx, xx xxx xxxxx xxxxxxx xxx xxxx xxxxxx/xxxxxxxx xxxx xxxxxxx xx xxx xxxxxxx, xxxx xxxx xxxx xxxxxx xxxx xx xxxxxx xxxxx xxx xxxx xxxxx xxx xxx xxxxx xxxx xxxxxxxx. Xxx xxx xxxxx xxxx xx xxxxxxxxxxx xxx [XXXX xxxx xxxxxxx xxxxxx](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5) xxx Xxxxxxx Y.Y xxx xx-xxxxx xxx xxxxxx xxxx xx xxxx Xxxxxxx YY xxx.
+項目コントロールは、既存のデータの終わりに近づいたときに [**ISupportIncrementalLoading.HasMoreItems**](https://msdn.microsoft.com/library/windows/apps/Hh701916-hasmoreitems) を呼び出します。 **true** が返された場合は、アドバタイズされた読み込む項目数を渡す [**ISupportIncrementalLoading.LoadMoreItemsAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701916-loadmoreitemsasync) を呼び出します。 データの読み込み元 (ローカル ディスク、ネットワーク、またはクラウド) に応じて、アドバタイズされた項目数とは異なる数の項目を読み込むことができます。 たとえば、サービスは 50 項目のバッチをサポートしているが、項目コントロールは 10 項目のみを要求している場合、50 項目を読み込むことができます。 バックエンドからデータを読み込んでリストに追加した後、[**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged) または [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 経由で変更通知を発行して、項目コントロールが新しい項目を認識できるようにします。 さらに、実際に読み込んだ項目の数を返します。 アドバタイズされた数よりも少ない項目を読み込むか、項目コントロールが途中でさらにパン/スクロールされた場合は、データ ソースをもう一度呼び出して、さらに項目を読み込むサイクルが続けられます。 詳しくは、Windows 8.1 の [XAML データ バインディングのサンプル](https://code.msdn.microsoft.com/windowsapps/Data-Binding-7b1d67b5)をダウンロードしてご覧ください。また、Windows 10 アプリでソース コードを再利用することもできます。
 
-## Xxxxxx xxxxxx xxxx xxxxxxxxxxxxxx
+## ランダム アクセスのデータ仮想化
 
-Xxxxxx xxxxxx xxxx xxxxxxxxxxxxxx xxxxxx xxxxxxx xxxx xx xxxxxxxxx xxxxx xx xxx xxxx xxx. X [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) xxxx xxxx xxxxxx xxxxxx xxxx xxxxxxxxxxxxxx, xxxx xx xxxx x xxxxxxxxxx xx x xxxxxxx xxxxx, xxx xxxx xxx xxxxx YYY,YYY – YYY,YYY. Xx xxx xxxx xxxx xxxxx xx xxx xxxxxxxxx xx xxx xxxx, xxx xxxxxxx xxxxx xxxxx Y – YY. Xx xxx xxxxx, xxx xxxxxx xxx'x xxxxx xxxxxxxxx xxxx xxx **XxxxXxxx** xxxxxxxx x xxxxxxx xxxxx. Xxx xxxxxxxx xx xxx xxxxxx xxx'x xxxxx xx xxxxxxxx xx xxxxx xxx xxxxxxx xxxxx xxx xxxxxxx xx xxx xxxxxxxxxx'x xxxxxx xxxx xxx. Xxxx xxxx xx xxxx xxxxxxxxxxxxxx xxx xxxxxxxxxxxxx xxxxxx xxx xxxxxx xxxxxxxxxxxx xxx xxxx xxxxx xxx xxx xxxxxxxxxx. Xx xxxxxx xx xxx xxxx xx xxxxx x xxxx xxxxxx xxxxx xxxx xxxxxxx xxxx xx xxxxxx xxx xxxxxxx x xxxxx xxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxx.
+ランダム アクセスのデータ仮想化を使うと、データ セット内の任意の位置からデータを読み込むことができます。 ランダム アクセスのデータ仮想化を実行する [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) を、100 万の項目があるコレクションを表示するために使うと、100,000 番目から 100,050 番目の項目を読み込むことができます。 ユーザーが一覧の先頭に移動すると、コントロールは 1 番目から 50 番目の項目を読み込みます。 スクロール バーのサムは、常に **ListView** に 100 万の項目が含まれていることを示します。 スクロール バーのサムの位置は、表示されている項目がコレクションのデータ セット全体で相対的にどこに位置しているかを示します。 この種のデータ仮想化は、必要なメモリを大幅に減らし、コレクションの読み込み時間を大きく短縮します。 これを有効にするには、データをオンデマンドで取得し、ローカル キャッシュを管理し、次のインターフェイスを実装するデータ ソース クラスを記述する必要があります。
 
--   [**XXxxx**](T:System.Collections.IList)
--   [
-            **XXxxxxxXxxxxxxxxxXxxxxxx**](T:System.Collections.Specialized.INotifyCollectionChanged) (X#/XX) xx [**XXxxxxxxxxxXxxxxx&xx;X&xx;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (X++/XX)
--   (Xxxxxxxxxx) [**XXxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn877070)
--   (Xxxxxxxxxx) [**XXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn877074)
+-   [**IList**](T:System.Collections.IList)
+-   [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged) (C#/VB) または [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) (C++/CX)
+-   (必要に応じて) [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070)
+-   (必要に応じて) [**ISelectionInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877074)
+
+[**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) は、コントロールが実際に使っている項目の情報を提供します。 項目コントロールはビューが変更されるたびにこのメソッドを呼び出し、その中には 次の 2 つの範囲のセットが含まれます。
+
+-   ビューポート内の項目のセット。
+-   項目コントロールが使う項目で、ビューポートに表示されない可能性がある、仮想化されていない項目のセット。
+    -   タッチ パンをスムーズに行えるようにするために項目コントロールが保持している、ビューポートの周囲の項目のバッファー。
+    -   フォーカスが置かれている項目。
+    -   先頭の項目。
 
 [
-            **XXxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn877070) xxxxxxxx xxxxxxxxxxx xx xxxxx xxxxx xxx xxxxxxx xx xxxxxxxx xxxxx. Xxx xxxxx xxxxxxx xxxx xxxx xxxx xxxxxx xxxxxxxx xxx xxxx xx xxxxxxxx, xxx xxxx xxxxxxx xxxxx xxx xxxx xx xxxxxx.
+            **IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) を実装することで、データ ソースは、どの項目をフェッチしてキャッシュする必要があり、不要になったキャッシュ データをいつ除去するかがわかります。 **IItemsRangeInfo** は、[**ItemIndexRange**](https://msdn.microsoft.com/library/windows/apps/Dn877081) オブジェクトを使って、コレクション内のインデックスに基づいてオブジェクトのセットを記述します。 これは、正しくないか安定していない可能性がある項目ポインターを使わないようにするためです。 **IItemsRangeInfo** は、項目コントロールの状態情報に頼っているため、項目コントロールの 1 つのインスタンスでのみ使われるように設計されています。 複数の項目コントロールが同じデータにアクセスする必要がある場合は、それぞれに対してデータ ソースの個別のインスタンスが必要です。 それらは共通のキャッシュを共有できますが、キャッシュから消去するためのロジックはもっと複雑です。
 
--   Xxx xxx xx xxxxx xxxx xxx xx xxx xxxxxxxx.
--   X xxx xx xxx-xxxxxxxxxxx xxxxx xxxx xxx xxxxxxx xx xxxxx xxxx xxx xxx xx xx xxx xxxxxxxx.
-    -   X xxxxxx xx xxxxx xxxxxx xxx xxxxxxxx xxxx xxx xxxxx xxxxxxx xxxxx xx xxxx xxxxx xxxxxxx xx xxxxxx.
-    -   Xxx xxxxxxx xxxx.
-    -   Xxx xxxxx xxxx.
+ランダム アクセスのデータ仮想化データ ソースのための基本的な戦略を次に示します。
 
-Xx xxxxxxxxxxxx [**XXxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn877070) xxxx xxxx xxxxxx xxxxx xxxx xxxxx xxxx xx xx xxxxxxx xxx xxxxxx, xxx xxxx xx xxxxx xxxx xxx xxxxx xxxx xxxx xx xx xxxxxx xxxxxx. **XXxxxxXxxxxXxxx** xxxx [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn877081) xxxxxxx xx xxxxxxxx x xxx xx xxxxx xxxxx xx xxxxx xxxxx xx xxx xxxxxxxxxx. Xxxx xx xx xxxx xx xxxxx'x xxx xxxx xxxxxxxx, xxxxx xxx xxx xx xxxxxxx xx xxxxxx. **XXxxxxXxxxxXxxx** xx xxxxxxxx xx xx xxxx xx xxxx x xxxxxx xxxxxxxx xx xx xxxxx xxxxxxx xxxxxxx xx xxxxxx xx xxxxx xxxxxxxxxxx xxx xxxx xxxxx xxxxxxx. Xx xxxxxxxx xxxxx xxxxxxxx xxxx xxxxxx xx xxx xxxx xxxx xxxx xxx xxxx xxxx x xxxxxxxx xxxxxxxx xx xxx xxxx xxxxxx xxx xxxx. Xxxx xxx xxxxx x xxxxxx xxxxx, xxx xxx xxxxx xx xxxxx xxxx xxx xxxxx xxxx xx xxxx xxxxxxxxxxx.
+-   項目を要求されたとき
+    -   メモリ内の項目を利用できる場合はその項目を返します。
+    -   利用できない場合は、null またはプレースホルダー項目を返します。
+    -   項目に対する要求 (または [**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) からの範囲要求) を使って、どの項目が必要であるかを調べ、バックエンドから項目のデータを非同期的に取得します。 データを取得した後、[**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged) または [**IObservableVector&lt;T&gt;**](https://msdn.microsoft.com/library/windows/apps/BR226052) 経由で変更通知を発行して、項目コントロールが新しい項目を認識できるようにします。
+-   (必要に応じて) 項目コントロールのビューポートが変更されるときに、[**IItemsRangeInfo**](https://msdn.microsoft.com/library/windows/apps/Dn877070) の実装を通してどの項目がデータ ソースから必要であるかを識別します。
 
-Xxxx'x xxx xxxxx xxxxxxxx xxx xxxx xxxxxx xxxxxx xxxx xxxxxxxxxxxxxx xxxx xxxxxx.
+その他のいつデータ項目を読み込むか、いくつ読み込むか、そしてどの項目をメモリに保持するかは、アプリケーションにまかされます。 いくつかの一般的な考慮事項を次に示します。
 
--   Xxxx xxxxx xxx xx xxxx
-    -   Xx xxx xxxx xx xxxxxxxxx xx xxxxxx, xxxx xxxxxx xx.
-    -   Xx xxx xxx’x xxxx xx, xxxx xxxxxx xxxxxx xxxx xx x xxxxxxxxxxx xxxx.
-    -   Xxx xxx xxxxxxx xxx xx xxxx (xx xxx xxxxx xxxxxxxxxxx xxxx [**XXxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn877070)) xx xxxx xxxxx xxxxx xxx xxxxxx, xxx xx xxxxx xxxx xxx xxxxx xxxx xxxx xxxx xxx xxxxxxxxxxxxxx. Xxxxx xxxxxxxxxx xxx xxxx, xxxxx x xxxxxx xxxxxxxxxxxx xxx [**XXxxxxxXxxxxxxxxxXxxxxxx**](T:System.Collections.Specialized.INotifyCollectionChanged) xx [**XXxxxxxxxxxXxxxxx&xx;X&xx;**](https://msdn.microsoft.com/library/windows/apps/BR226052) xx xxxx xxx xxxxx xxxxxxx xxxxx xxxxx xxx xxx xxxx.
--   (Xxxxxxxxxx) xx xxx xxxxx xxxxxxx'x xxxxxxxx xxxxxxx, xxxxxxxx xxxx xxxxx xxx xxxxxx xxxx xxxx xxxx xxxxxx xxx xxxx xxxxxxxxxxxxxx xx [**XXxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn877070).
+-   データは非同期に要求します。UI スレッドをブロックしないでください。
+-   項目を取得するバッチのサイズのスイート スポットを探します。 ブロックで処理するようにします。 小さな要求を何度も繰り返すほど小さくなく、取得するまで時間がかかりすぎるほど大きくないサイズにします。
+-   同時に保留中にする要求の数を検討します。 簡単なのは一度に 1 つずつ実行することですが、完了までの時間がかかる場合は遅くなりすぎる可能性があります。
+-   データの要求を取り消すことができるかどうか。
+-   ホストされるサービスを使っている場合は、トランザクションごとにコストが発生するかどうか。
+-   クエリの結果が変更されるときにサービスによって提供される通知の種類は何か。 項目がンデックス 33 に挿入されたことがわかるか。 サービスがキーとオフセットに基づくクエリをサポートする場合は、インデックスだけを使うよりも適している可能性があります。
+-   項目のプリフェッチをいかにスマートに実行するか。 必要な項目を予測するためにスクロールの方向と速度を追跡する予定ですか。
+-   キャッシュの消去をどの程度積極的に行うか。 これはメモリとエクスペリエンスのトレードオフです。
 
-Xxxxxx xxxx, xxx xxxxxxxx xxx xxxx xx xxxx xxxx xxxxx, xxx xxxx xx xxxx, xxx xxxxx xxxxx xx xxxx xx xxxxxx xx xx xx xxxx xxxxxxxxxxx. Xxxx xxxxxxx xxxxxxxxxxxxxx xx xxxx xx xxxx:
 
--   Xxxx xxxxxxxxxxxx xxxxxxxx xxx xxxx; xxx'x xxxxx xxx XX xxxxxx.
--   Xxxx xxx xxxxx xxxx xx xxx xxxx xx xxx xxxxxxx xxx xxxxx xxxxx xx. Xxxxxx xxxxxx xx xxxxxx. Xxx xx xxxxx xxxx xxx xxxx xxx xxxx xxxxx xxxxxxxx; xxx xxx xxxxx xxxx xxxx xxxx xxx xxxx xx xxxxxxxx.
--   Xxxxxxxx xxx xxxx xxxxxxxx xxx xxxx xx xxxx xxxxxxx xx xxx xxxx xxxx. Xxxxxxxxxx xxx xx x xxxx xx xxxxxx, xxx xx xxx xx xxx xxxx xx xxxxxxxxxx xxxx xx xxxx.
--   Xxx xxx xxxxxx xxxxxxxx xxx xxxx?
--   Xx xxxxx x xxxxxx xxxxxxx, xx xxxxx x xxxx xxx xxxxxxxxxxx?
--   Xxxx xxxx xx xxxxxxxxxxxxx xxx xxxxxxxx xx xxx xxxxxxx xxxx xxx xxxxxxx xx x xxxxx xxx xxxxxxx? Xxxx xxx xxxx xx xx xxxx xx xxxxxxxx xx xxxxx YY? Xx xxxx xxxxxxx xxxxxxxx xxxxxxx xxxxx xx x xxx-xxxx-xxxxxx, xxxx xxx xx xxxxxx xxxx xxxx xxxxx xx xxxxx.
--   Xxx xxxxx xx xxx xxxx xx xx xx xxx-xxxxxxxx xxxxx? Xxx xxx xxxxx xx xxx xxx xxxxx xxx xxxxxxxxx xxx xxxxxxxx xx xxxxxxxxx xx xxxxxxx xxxxx xxxxx xxx xxxxxx?
--   Xxx xxxxxxxxxx xx xxx xxxx xx xx xx xxxxxxx xxx xxxxx? Xxxx xx x xxxxxxxx xx xxxxxx xxxxxx xxxxxxxxxx.
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

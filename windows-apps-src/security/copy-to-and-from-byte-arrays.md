@@ -1,15 +1,15 @@
 ---
-xxxxx: Xxxx xx xxx xxxx xxxx xxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxx xxxxx xxx xx xxxx xx xxx xxxx xxxx xxxxxx xx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
-xx.xxxxxxx: XYYYXYYX-YXXY-YYXX-YXXY-YXXYXYYYXYXY
+title: バイト配列間のコピー
+description: 次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでバイト配列をコピーする方法を示しています。
+ms.assetid: C343B08C-1FA1-40FD-8CA5-7FC9B707C5E3
 ---
 
-# Xxxx xx xxx xxxx xxxx xxxxxx
+# バイト配列間のコピー
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-Xxxx xxxxxxx xxxx xxxxx xxx xx xxxx xx xxx xxxx xxxx xxxxxx xx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
+次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでバイト配列をコピーする方法を示しています。
 
 ```cs
 public void ByteArrayCopy()
@@ -36,4 +36,8 @@ public void ByteArrayCopy()
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

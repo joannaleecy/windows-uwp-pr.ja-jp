@@ -1,69 +1,64 @@
 ---
-xxxxxxxxxxx: Xxxxxxxx xxx xx xxxxxxxxx x XXXX xxxxxxxx xxxxxxxx xx x xxxxxxxxxx xxxxxxxx xxx xxx xx xxxxxx xxx xxxxxxxx xxxxxxxxxx xxxx xx xxxxxxxxx xxx xxxx xxxxxxxx xxxxxxxx xx xx xxxxxx xx XXXX.
-xxxxx: Xxxxxx xxxxxxxx xxxxxxxxxx
-xx.xxxxxxx: XYXYXYYX-YYYY-YYYY-XXYX-YXYXYYXYYYXY
+description: Explains how to implement a XAML attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML.
+title: Custom attached properties
+ms.assetid: E9C0C57E-6098-4875-AA3E-9D7B36E160E0
 ---
 
-# Xxxxxx xxxxxxxx xxxxxxxxxx
+# Custom attached properties
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xx *xxxxxxxx xxxxxxxx* xx x XXXX xxxxxxx. Xxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxx xx x xxxxxxxxxxx xxxx xx xxxxxxxxxx xxxxxxxx. Xxxx xxxxx xxxxxxxx xxx xx xxxxxxxxx xx xxxxxxxx xxxxxxxx xx x xxxxxxxxxx xxxxxxxx xxx xxx xx xxxxxx xxx xxxxxxxx xxxxxxxxxx xxxx xx xxxxxxxxx xxx xxxx xxxxxxxx xxxxxxxx xx xx xxxxxx xx XXXX.
+An *attached property* is a XAML concept. Attached properties are typically defined as a specialized form of dependency property. This topic explains how to implement an attached property as a dependency property and how to define the accessor convention that is necessary for your attached property to be usable in XAML.
 
-## Xxxxxxxxxxxxx
+## Prerequisites
 
-Xx xxxxxx xxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxxxx xx x xxxxxxxx xx xxxxxxxx xxxxxxxxxx xxxxxxxxxx, xxx xxxx xxx xxxx xxxx xxx [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](dependency-properties-overview.md). Xxx xxxxxx xxxx xxxx xxxx [Xxxxxxxx xxxxxxxxxx xxxxxxxx](attached-properties-overview.md). Xx xxxxxx xxx xxxxxxxx xx xxxx xxxxx, xxx xxxxxx xxxx xxxxxxxxxx XXXX xxx xxxx xxx xx xxxxx x xxxxx Xxxxxxx Xxxxxxx xxx xxxxx X++, X#, xx Xxxxxx Xxxxx.
+We assume that you understand dependency properties from the perspective of a consumer of existing dependency properties, and that you have read the [Dependency properties overview](dependency-properties-overview.md). You should also have read [Attached properties overview](attached-properties-overview.md). To follow the examples in this topic, you should also understand XAML and know how to write a basic Windows Runtime app using C++, C#, or Visual Basic.
 
-## Xxxxxxxxx xxx xxxxxxxx xxxxxxxxxx
+## Scenarios for attached properties
 
-Xxx xxxxx xxxxxx xx xxxxxxxx xxxxxxxx xxxx xxxxx xx x xxxxxx xx xxxx x xxxxxxxx-xxxxxxx xxxxxxxxx xxxxxxxxx xxx xxxxxxx xxxxx xxxx xxx xxxxxxxx xxxxx. Xxx xxxx xxxxxx xxxxxxxxx xxx xxxx xxx xxxxxx xxx xxxxxxxx xxxxxxx. Xxxxxxxx xx xxxxxxxx xxxxxx xxxxxxxxxx xxx [**Xxxxxx.XXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh759773) xxx [**Xxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/hh759772). Xx x xxxxxx xxxxxxxx, xxxxxxxx xxxx xxxxx xx xxxxx xxxxxxxx xx xxxxxx-xxxxxxxxxxx xxxxxxxx xxx xxxxxxx xxxxxx xxxxxxxxxxxx xx xxxxx xxxxxx xxxxxxxx xxxxxxxxxxxx, xxxx xxxxxxx x xxxxxxxx xxxxx xxxx xxx xxxxxx xxxxxxx xx xx xxxxxxxx xxxxxxxx. Xx xxxxxxx xx xxx xxxxxxxx-xxxxxxx xxxxxxxx xx xxx Xxxxxxx Xxxxxxx XXX xx xxx xx xxx xxxxxxxx xxxxxxxxxx xx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209527), xxxx xx [**XxxxxxXxxxxx.XxXxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209561).
+You might create an attached property when there is a reason to have a property-setting mechanism available for classes other than the defining class. The most common scenarios for this are layout and services support. Examples of existing layout properties are [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) and [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772). In a layout scenario, elements that exist as child elements to layout-controlling elements can express layout requirements to their parent elements individually, each setting a property value that the parent defines as an attached property. An example of the services-support scenario in the Windows Runtime API is set of the attached properties of [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527), such as [**ScrollViewer.IsZoomChainingEnabled**](https://msdn.microsoft.com/library/windows/apps/br209561).
 
-**Xxxxxxx**  Xx xxxxxxxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx XXXX xxxxxxxxxxxxxx xx xxxx xxx xxxxxx xxxxxxx xxxx xxxxxx xxxxxxxx xxxxxxxx.
+**Caution**  An existing limitation of the Windows Runtime XAML implementation is that you cannot animate your custom attached property.
 
-## Xxxxxxxxxxx x xxxxxx xxxxxxxx xxxxxxxx
+## Registering a custom attached property
 
-Xx xxx xxx xxxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxxx xxx xxx xx xxxxx xxxxx, xxx xxxxx xxxxx xxx xxxxxxxx xx xxxxxxxxxx xxxx xxx xxxx xx xxxxxx xxxx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242356). Xxx xxx xx xxxx xx xxxx xxx xxxxxx xxxxxxxxx xxx xxxxxxxxx xxx **XxxxxxxxxxXxxxxx** xx xxx xxxxxx xxx xxxxxxx xxxxx xx xxxxxx xxxx xxxxxxxx xxxxxxxx xxxx xx x xxxxxxxxxx xxxxxxxx, xx xxxx xxx xxx xxx xxx xxxxxxx xxxxxxxx xxxxx.
+If you are defining the attached property strictly for use on other types, the class where the property is registered does not have to derive from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). But you do need to have the target parameter for accessors use **DependencyObject** if you follow the typical model of having your attached property also be a dependency property, so that you can use the backing property store.
 
-Xxxxxx xxxx xxxxxxxx xxxxxxxx xx x xxxxxxxxxx xxxxxxxx xx xxxxxxxxx x **xxxxxx****xxxxxx****xxxxxxxx** xxxxxxxx xx xxxx [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242362). Xxx xxxxxx xxxx xxxxxxxx xx xxxxx xxx xxxxxx xxxxx xx xxx [**XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701833) xxxxxx. Xxx xxxxxxxx xxxx xxxx xxxxx xxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xx xxx **XxxxxxxxXxxxxxxx***xxxx* xxxxxxxxx, xxxx xxx xxxxxx "Xxxxxxxx" xxxxx xx xxx xxx. Xxxx xx xxx xxxxxxxxxxx xxxxxxxxxx xxx xxxxxx xxx xxxxxxxxxxx xx xxxxxxxxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxxxxxxxx xxxx xxxx xxxxxxxxx.
+Define your attached property as a dependency property by declaring a **public** **static** **readonly** property of type [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362). You define this property by using the return value of the [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) method. The property name must match the attached property name you specify as the **RegisterAttached** *name* parameter, with the string "Property" added to the end. This is the established convention for naming the identifiers of dependency properties in relation to the properties that they represent.
 
-Xxx xxxx xxxx xxxxx xxxxxxxx x xxxxxx xxxxxxxx xxxxxxxx xxxxxxx xxxx x xxxxxx xxxxxxxxxx xxxxxxxx xx xx xxx xxx xxxxxx xxx xxxxxxxxx xx xxxxxxxx. Xxxxxxx xx xxx xxxxx xxx xxxxxxx xxxxxxxxx xxxxxxxxx xx [Xxxxxx xxxxxxxxxx xxxxxxxxxx](custom-dependency-properties.md), xxx xxxx xxxx xxxxxxx xxxxxx **Xxx***XxxxxxxxXxxx* xxx **Xxx***XxxxxxxxXxxx* xxxxxxx xx xxxxxxxxx xxx xxx xxxxxxxx xxxxxxxx. Xxx xxxxxxxxx xxx xxxx xxxxxx xx xxx XXXX xxxxxx, xxxxxxxx xxx xxxxx xxxxxx xxx xxxx xxx xxxx xx xxx xxxxxx xx xxx-XXXX xxxxxxxxx.
+The main area where defining a custom attached property differs from a custom dependency property is in how you define the accessors or wrappers. Instead of the using the wrapper technique described in [Custom dependency properties](custom-dependency-properties.md), you must also provide static **Get***PropertyName* and **Set***PropertyName* methods as accessors for the attached property. The accessors are used mostly by the XAML parser, although any other caller can also use them to set values in non-XAML scenarios.
 
-**Xxxxxxxxx**  Xx xxx xxx'x xxxxxx xxx xxxxxxxxx xxxxxxxxx, xxx XXXX xxxxxxxxx xxx'x xxxxxx xxxx xxxxxxxx xxxxxxxx xxx xxxxxx xxx xxxxx xx xxx xx xxxx xxxxxxxx xxx x XXXX xxxxxx xxxxx. Xxxx, xxxxxx xxx xxxxxx xxxxx xxxxx xxxx xx xxx "\*Xxxxxxxx" xxxxxxxxxxx xxx xxxxxx xxxxxxxxxxx xxxx xxxx xxxxxxxxx x xxxxxx xxxxxxxxxx xxxxxxxx xx x xxxxxxxxxx xxxxxxxx.
+**Important**  If you don't define the accessors correctly, the XAML processor can't access your attached property and anyone who tries to use it will probably get a XAML parser error. Also, design and coding tools often rely on the "\*Property" conventions for naming identifiers when they encounter a custom dependency property in a referenced assembly.
 
-## Xxxxxxxxx
+## Accessors
 
-Xxx xxxxxxxxx xxx xxx **Xxx**_XxxxxxxxXxxx_ xxxxxxxx xxxx xx xxxx.
+The signature for the **Get**_PropertyName_ accessor must be this.
 
-`public static`
-            _xxxxxXxxx_**Xxx**_XxxxxxxxXxxx_`(DependencyObject target)`
+`public static` _valueType_ **Get**_PropertyName_ `(DependencyObject target)`
 
-Xxx Xxxxxxxxx Xxxxxx Xxxxx, xx xx xxxx.
+For Microsoft Visual Basic, it is this.
 
-` Public Shared Function Get`
-            _XxxxxxxxXxxx_`(ByVal target As DependencyObject) As `_xxxxxXxxx_`)`
+` Public Shared Function Get`_PropertyName_`(ByVal target As DependencyObject) As `_valueType_`)`
 
-Xxx *xxxxxx* xxxxxx xxx xx xx x xxxx xxxxxxxx xxxx xx xxxx xxxxxxxxxxxxxx, xxx xxxx xxxxxx xxxx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242356). Xxx *xxxxxXxxx* xxxxxx xxxxx xxx xxxx xx xx x xxxx xxxxxxxx xxxx xx xxxx xxxxxxxxxxxxxx. Xxx xxxxx **Xxxxxx** xxxx xx xxxxxxxxxx, xxx xxxxx xxx'xx xxxx xxxx xxxxxxxx xxxxxxxx xx xxxxxxx xxxx xxxxxx. Xxx xxx xx xxxxxx xx xxx xxxxxx xxx xxxxxx xxxxxxxxxx xx x xxxxxxxxxxx xxxx-xxxxxx xxxxxxxxx.
+The *target* object can be of a more specific type in your implementation, but must derive from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). The *valueType* return value can also be of a more specific type in your implementation. The basic **Object** type is acceptable, but often you'll want your attached property to enforce type safety. The use of typing in the getter and setter signatures is a recommended type-safety technique.
 
-Xxx xxxxxxxxx xxx xxx **Xxx***XxxxxxxxXxxx* xxxxxxxx xxxx xx xxxx.
+The signature for the **Set***PropertyName* accessor must be this.
 
-`  public static void Set`
-            _XxxxxxxxXxxx_` (DependencyObject target , `_xxxxxXxxx_` value)`
+`  public static void Set`_PropertyName_` (DependencyObject target , `_valueType_` value)`
 
-Xxx Xxxxxx Xxxxx, xx xx xxxx.
+For Visual Basic, it is this.
 
-`Public Shared Sub Set`
-            _XxxxxxxxXxxx_` (ByVal target As DependencyObject, ByVal value As `_xxxxxXxxx_`)`
+`Public Shared Sub Set`_PropertyName_` (ByVal target As DependencyObject, ByVal value As `_valueType_`)`
 
-Xxx *xxxxxx* xxxxxx xxx xx xx x xxxx xxxxxxxx xxxx xx xxxx xxxxxxxxxxxxxx, xxx xxxx xxxxxx xxxx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242356). Xxx *xxxxx* xxxxxx xxx xxx *xxxxxXxxx* xxx xx xx x xxxx xxxxxxxx xxxx xx xxxx xxxxxxxxxxxxxx. Xxxxxxxx xxxx xxx xxxxx xxx xxxx xxxxxx xx xxx xxxxx xxxx xxxxx xxxx xxx XXXX xxxxxxxxx xxxx xx xxxxxxxxxx xxxx xxxxxxxx xxxxxxxx xx xxxxxx. Xxxxx xxxx xx xxxx xxxxxxxxxx xx xxxxxxxx xxxxxx xxxxxxxxx xxxxxxx xxx xxx xxxx xxx xxx, xx xxxx xxx xxxxxxxxxxx xxxx xxx xx xxxxxxx xxxx xx xxxxxxxxx xxxxx (xxxxx xx xxxxxxxxxx xxxx x xxxxxx). Xxx xxxxx **Xxxxxx** xxxx xx xxxxxxxxxx, xxx xxxxx xxx'xx xxxx xxxxxxx xxxx xxxxxx. Xx xxxxxxxxxx xxxx, xxx xxxx xxxxxxxxxxx xx xxx xxxxxxxxx.
+The *target* object can be of a more specific type in your implementation, but must derive from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). The *value* object and its *valueType* can be of a more specific type in your implementation. Remember that the value for this method is the input that comes from the XAML processor when it encounters your attached property in markup. There must be type conversion or existing markup extension support for the type you use, so that the appropriate type can be created from an attribute value (which is ultimately just a string). The basic **Object** type is acceptable, but often you'll want further type safety. To accomplish that, put type enforcement in the accessors.
 
-**Xxxx**  Xx'x xxxx xxxxxxxx xx xxxxxx xx xxxxxxxx xxxxxxxx xxxxx xxx xxxxxxxx xxxxx xx xxxxxxx xxxxxxxx xxxxxxx xxxxxx. Xx xxxx xxxx xxx xxx'x xxxx xxxx xxxxxxxxxx xxx xxx xxxxxx, xxx xxx xx xxxx xx xxxxxx xxxx xxx xxxxxx xxx xxxxxx xxx xx xxxxxxxxxxx xx XXXX. [
-            **XxxxxxXxxxxXxxxxxx.XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh738505) xx xx xxxxxxx xx xx xxxxxxxx xxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxx xxxxxxxx xxxxxxx xxxxx.
+**Note**  It's also possible to define an attached property where the intended usage is through property element syntax. In that case you don't need type conversion for the values, but you do need to assure that the values you intend can be constructed in XAML. [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) is an example of an existing attached property that only supports property element usage.
 
-## Xxxx xxxxxxx
+## Code example
 
-Xxxx xxxxxxx xxxxx xxx xxxxxxxxxx xxxxxxxx xxxxxxxxxxxx (xxxxx xxx [**XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701833) xxxxxx), xx xxxx xx xxx **Xxx** xxx **Xxx** xxxxxxxxx, xxx x xxxxxx xxxxxxxx xxxxxxxx. Xx xxx xxxxxxx, xxx xxxxxxxx xxxxxxxx xxxx xx `IsMovable`. Xxxxxxxxx, xxx xxxxxxxxx xxxx xx xxxxx `GetIsMovable` xxx `SetIsMovable`. Xxx xxxxx xx xxx xxxxxxxx xxxxxxxx xx x xxxxxxx xxxxx xxxxx `GameService` xxxx xxxxx'x xxxx x XX xx xxx xxx; xxx xxxxxxx xx xxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxxx xxxx xxx **XxxxXxxxxxx.XxXxxxxxx** xxxxxxxx xxxxxxxx xx xxxx.
+This example shows the dependency property registration (using the [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) method), as well as the **Get** and **Set** accessors, for a custom attached property. In the example, the attached property name is `IsMovable`. Therefore, the accessors must be named `GetIsMovable` and `SetIsMovable`. The owner of the attached property is a service class named `GameService` that doesn't have a UI of its own; its purpose is only to provide the attached property services when the **GameService.IsMovable** attached property is used.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
     public class GameService : DependencyObject
     {
@@ -104,7 +99,7 @@ Public Class GameService
 End Class
 ```
 
-Xxxxxxxx xxx xxxxxxxx xxxxxxxx xx X++ xx x xxx xxxx xxxxxxx. Xxx xxxx xx xxxxxx xxx xx xxxxxx xxxxxxx xxx xxxxxx xxx xxxx xxxx. Xxxx, xxx xxxxxx xxxxxx xxx xxxxxxxxxx xx x xxxxxxxx xxxx xxxx x **xxx** xxxxxxxx, xxx xxxxxxx xxxxxxxxx xx [Xxxxxx xxxxxxxxxx xxxxxxxxxx](custom-dependency-properties.md). Xx X++ xxx xxxx xxxxxx xxxx xxxxxxxx-xxxxx xxxxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xxxxxxx xx .XXX **xxxxxxxx** xxxxxxxxxx xxx xxxxxxxx xxxxxxx xx xxxxxx xxxxxxxxxx. Xxx xxxx xxxx xx xxxxxxx xxx xxxxxxxxxxxx xx xxx xxxxxxxx xxxxxxxx xxxxxx x xxxxxx xxxxxxxx xxxx xxxx xxxx xxx xxxx, xxxx xxx xxx xxxxx xxxxxx xxx xxxxxx xxx XXXX xxxxx xxxx xxxx xxx xxxxxxxx xxxxxxxx xxx xxxxxx. Xxx xxxxxxx xxxxx xx xxxx xxxx xxxxxxxx xxxxxxxxxxxx xxxxxx xxxxxxxxx xxx xxx xxx xxx xxxxxxxxxx xx xxxxxxxx xxxxxxxxxx xx xxxx xxxxxx xxx **Xxx** / [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242325) xxxxxxxxxxx xx xxx xxxx xxx xxxx xxx.xxxx xxxx.
+Defining the attached property in C++ is a bit more complex. You have to decide how to factor between the header and code file. Also, you should expose the identifier as a property with only a **get** accessor, for reasons discussed in [Custom dependency properties](custom-dependency-properties.md). In C++ you must define this property-field relationship explicitly rather than relying on .NET **readonly** keywording and implicit backing of simple properties. You also need to perform the registration of the attached property within a helper function that only gets run once, when the app first starts but before any XAML pages that need the attached property are loaded. The typical place to call your property registration helper functions for any and all dependency or attached properties is from within the **App** / [**Application**](https://msdn.microsoft.com/library/windows/apps/br242325) constructor in the code for your app.xaml file.
 
 ```cpp
 //
@@ -173,11 +168,11 @@ GameService::RegisterDependencyProperties() {
 }
 ```
 
-## Xxxxx xxxx xxxxxx xxxxxxxx xxxxxxxx xx XXXX
+## Using your custom attached property in XAML
 
-Xxxxx xxx xxxx xxxxxxx xxxx xxxxxxxx xxxxxxxx xxx xxxxxxxx xxx xxxxxxx xxxxxxx xx xxxx xx x xxxxxx xxxx, xxx xxxx xxxx xxxx xxx xxxxxxxxxxx xxxxxxxxx xxx XXXX xxxxx. Xx xx xxxx, xxx xxxx xxx x XXXX xxxxxxxxx xxxx xxxx xxxxxxxxx xxx xxxx xxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxx xxxxx. Xx xxxxx xxxxx xxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xx xxxx xx x xxxxxxx, xxx xxxx xxxxxxx xxxx xxxxxxx xx xxxx xx xxx xxx xxxxxxx xxx xxx xxx.
+After you have defined your attached property and included its support members as part of a custom type, you must then make the definitions available for XAML usage. To do this, you must map a XAML namespace that will reference the code namespace that contains the relevant class. In cases where you have defined the attached property as part of a library, you must include that library as part of the app package for the app.
 
-Xx XXX xxxxxxxxx xxxxxxx xxx XXXX xx xxxxxxxxx xxxxxx xx xxx xxxx xxxxxxx xx x XXXX xxxx. Xxx xxxxxxx, xxx xxx xxxxx xxxxx `GameService` xx xxx xxxxxxxxx `UserAndCustomControls` xxxx xxxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxx xx xxxxxxxxx xxxxxxxx, xxx xxxxxxx xxxxx xxxx xxxx xxxx.
+An XML namespace mapping for XAML is typically placed in the root element of a XAML page. For example, for the class named `GameService` in the namespace `UserAndCustomControls` that contains the attached property definitions shown in preceding snippets, the mapping might look like this.
 
 ```XAML
 <UserControl
@@ -187,7 +182,7 @@ Xx XXX xxxxxxxxx xxxxxxx xxx XXXX xx xxxxxxxxx xxxxxx xx xxx xxxx xxxxxxx xx x X
 >
 ```
 
-Xxxxx xxx xxxxxxx, xxx xxx xxx xxxx `GameService.IsMovable` xxxxxxxx xxxxxxxx xx xxx xxxxxxx xxxx xxxxxxx xxxx xxxxxx xxxxxxxxxx, xxxxxxxxx xx xxxxxxxx xxxx xxxx Xxxxxxx Xxxxxxx xxxxxxx.
+Using the mapping, you can set your `GameService.IsMovable` attached property on any element that matches your target definition, including an existing type that Windows Runtime defines.
 
 ```XAML
 <Image uc:GameService.IsMovable="true" .../></code></pre></td>
@@ -196,7 +191,7 @@ Xxxxx xxx xxxxxxx, xxx xxx xxx xxxx `GameService.IsMovable` xxxxxxxx xxxxxxxx xx
 </table>
 ```
 
-Xx xxx xxx xxxxxxx xxx xxxxxxxx xx xx xxxxxxx xxxx xx xxxx xxxxxx xxx xxxx xxxxxx XXX xxxxxxxxx, xxx xxxxx xxxx xxxxxxx xxx xxxxxx xx xxx xxxxxxxx xxxxxxxx xxxx. Xxxx xx xxxxxxx xxx xxxxxx xxxxxxxxx xxx xxxxx xxxx. Xxx xxxxxxxx xxxxxxxx'x xxxxxxxxx xxxxxx xx xxxxxxx xx xx xxxxxx xxx xxxx XXX xxxxxxxxx xx xxx xxxxxxx xxxxx xxx xxxxxxxxx xx xxxxxxxx, xxxx xxxxxx, xx xxxxxx XXX xxxxx, xxxxxxxxxx xxx xxxxxxx xxxxxxxxx xxxx xxxxxxxx. Xxx xxxxxxx, xx xxx xxx xxxxxxx `GameService.IsMovable` xx x xxxxxx xxxx xx `ImageWithLabelControl` (xxxxxxxxxx xxx xxxxx), xxx xxxx xx xxxx xxxx xxxxxxx xx xxx xxxx xxxx xxxxxxxxx xxxxxx xx xxxx xxxxxx, xxx XXXX xxxxx xxxxx xx xxxx.
+If you are setting the property on an element that is also within the same mapped XML namespace, you still must include the prefix on the attached property name. This is because the prefix qualifies the owner type. The attached property's attribute cannot be assumed to be within the same XML namespace as the element where the attribute is included, even though, by normal XML rules, attributes can inherit namespace from elements. For example, if you are setting `GameService.IsMovable` on a custom type of `ImageWithLabelControl` (definition not shown), and even if both were defined in the same code namespace mapped to same prefix, the XAML would still be this.
 
 ```XAML
 <colgroup>
@@ -215,26 +210,26 @@ Xx xxx xxx xxxxxxx xxx xxxxxxxx xx xx xxxxxxx xxxx xx xxxx xxxxxx xxx xxxx xxxxx
 </table>
 ```
 
-**Xxxx**  Xx xxx xxx xxxxxxx x XXXX XX xxxx X++, xxx xxxx xxxxxxx xxx xxxxxx xxx xxx xxxxxx xxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxx, xxx xxxx xxxx x XXXX xxxx xxxx xxxx xxxx. Xxxx XXXX xxxx xxx xx xxxxxxxxxx .xxxx.x xxxx-xxxxxx xxxxxx. Xxxx xx xxxxx xxx xxxxxx xxxxxxx (xxxxx **\#xxxxxxx**) xxx xxxxxx xxx xxx xxxxxxxxxx xx xxx xxxxxxxx xxxxxxxx'x xxxxx xxxx.
+**Note**  If you are writing a XAML UI with C++, you must include the header for the custom type that defines the attached property, any time that a XAML page uses that type. Each XAML page has an associated .xaml.h code-behind header. This is where you should include (using **\#include**) the header for the definition of the attached property's owner type.
 
-## Xxxxx xxxx xx x xxxxxx xxxxxxxx xxxxxxxx
+## Value type of a custom attached property
 
-Xxx xxxx xxxx xx xxxx xx xxx xxxxx xxxx xx x xxxxxx xxxxxxxx xxxxxxxx xxxxxxx xxx xxxxx, xxx xxxxxxxxxx, xx xxxx xxx xxxxx xxx xxxxxxxxxx. Xxx xxxxxxxx xxxxxxxx'x xxxxx xxxx xx xxxxxxxx xx xxxxxxx xxxxxx: xx xxx xxxxxxxxxx xx xxxx xxx **Xxx** xxx **Xxx** xxxxxxxx xxxxxxx, xxx xxxx xx xxx *xxxxxxxxXxxx* xxxxxxxxx xx xxx [**XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701833) xxxx.
+The type that is used as the value type of a custom attached property affects the usage, the definition, or both the usage and definition. The attached property's value type is declared in several places: in the signatures of both the **Get** and **Set** accessor methods, and also as the *propertyType* parameter of the [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833) call.
 
-Xxx xxxx xxxxxx xxxxx xxxx xxx xxxxxxxx xxxxxxxxxx (xxxxxx xx xxxxxxxxx) xx x xxxxxx xxxxxx. Xxxx xx xxxxxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxxx xxx XXXX xxxxxxxxx xxxxx, xxx xxxxx x xxxxxx xx xxx xxxxx xxxx xxxxx xxx xxxxxxxxxx xxxxxxxxxxx. Xxxxx xxxxxxxxxx xxxx xxxx xxxxxx xxxxxxxxxx xx xxxxxx xxxxxxx, xxxx xx xxxxxxx, xxxxxx, xx xx xxxxxxxxxxx xxxxx, xxx xxxx xxxxxx xx xxxxx xxxxx xxx xxxxxxxx xxxxxxxxxx. Xxx xxx xxx xxxxx xxxxx xxxxx—xxxx xxxx xxx'x xxxxxxx xxxxxx xxxxxx xxxxxxxxxx—xx xxx xxxxxxxx xxxxxxxx xxxxx. Xxxxxxx, xxxx xxxxxxx xxxxxx x xxxxxx xxxxx xxxxxx xxx xxxxx xx xxx xxxxxxxxxxxxxx:
+The most common value type for attached properties (custom or otherwise) is a simple string. This is because attached properties are generally intended for XAML attribute usage, and using a string as the value type keeps the properties lightweight. Other primitives that have native conversion to string methods, such as integer, double, or an enumeration value, are also common as value types for attached properties. You can use other value types—ones that don't support native string conversion—as the attached property value. However, this entails making a choice about either the usage or the implementation:
 
-- Xxx xxx xxxxx xxx xxxxxxxx xxxxxxxx xx xx xx, xxx xxx xxxxxxxx xxxxxxxx xxx xxxxxxx xxxxx xxxx xxxxx xxx xxxxxxxx xxxxxxxx xx x xxxxxxxx xxxxxxx, xxx xxx xxxxx xx xxxxxxxx xx xx xxxxxx xxxxxxx. Xx xxxx xxxx, xxx xxxxxxxx xxxx xxxx xxxx xx xxxxxxx XXXX xxxxx xx xx xxxxxx xxxxxxx. Xxx xxxxxxxx Xxxxxxx Xxxxxxx xxxxxxxxx xxxxxxx, xxxxx xxx XXXX xxxxxx xx xxxx xxxx xxxx xxx xxxx xxxxxxxx XXXX xxxxxx xxxxxxx xxxxx.
-- Xxx xxx xxxxx xxx xxxxxxxx xxxxxxxx xx xx xx, xxx xxx xx xxxx xx xx xxxxxxxxx xxxxx xxxxxxx x XXXX xxxxxxxxx xxxxxxxxx xxxx xx x **Xxxxxxx** xx **XxxxxxXxxxxxxx** xxxx xxx xx xxxxxxxxx xx x xxxxxx.
+- You can leave the attached property as it is, but the attached property can support usage only where the attached property is a property element, and the value is declared as an object element. In this case, the property type does have to support XAML usage as an object element. For existing Windows Runtime reference classes, check the XAML syntax to make sure that the type supports XAML object element usage.
+- You can leave the attached property as it is, but use it only in an attribute usage through a XAML reference technique such as a **Binding** or **StaticResource** that can be expressed as a string.
 
-## Xxxx xxxxx xxx **Xxxxxx.Xxxx** xxxxxxx
+## More about the **Canvas.Left** example
 
-Xx xxxxxxx xxxxxxxx xx xxxxxxxx xxxxxxxx xxxxxx xx xxxxxx xxxxxxxxx xxxx xx xxx xxx [**Xxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/hh759771) xxxxxxxx xxxxxxxx. Xxx xxxx xxxx xxxx xxxxxx xxxxx xxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209267) xxxxxxxxx xxxx xxxx xxxxxx, xxx xxxx xxxx xxxx xxxxxx? Xx'xx xxxxxxx xxxx xxxxxxxxxx xxxxxxx xxxxxxx, xxxxxxx xx xxx xxxxxxxxx xx xxxxxxxx xxxxxxxx, xx'x xxxxxxxxxxx xx xxx xxxx xxxx x xxxxxxx xxxxxxxx xxxxxxxx xxxxx xxxxx xxxxxxx xx xx xxxx xxx xxxxxxxx xxxxxxxx xxxxxx xx xx xxxxx xxxx xx xxxxx xxxxxxx.
+In earlier examples of attached property usages we showed different ways to set the [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) attached property. But what does that change about how a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) interacts with your object, and when does that happen? We'll examine this particular example further, because if you implement an attached property, it's interesting to see what else a typical attached property owner class intends to do with its attached property values if it finds them on other objects.
 
-Xxx xxxx xxxxxxxx xx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209267) xx xx xx xx xxxxxxxx-xxxxxxxxxx xxxxxx xxxxxxxxx xx XX. Xxx xxxxxxxx xx x **Xxxxxx** xxx xxxxxx xx x xxxx-xxxxx xxxxxxx xxxxxxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227514). Xx xxx xxx xxxxxx **Xxxxxx** xx xxx xxxx xxx xxxx xxxx xxxxxxxx xxxxxxxxxxx. Xx xxxxx'xx xxxxxxx xxx xxxxxx xxxxx xx xxx xxxxxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911) xxxx xx xxx xxxxxxxxxx xxxx xxxxx xxxx xx xx xxxxxxx xx **Xxxxxx** xxx xxxxx xxxxxxxxxx **XXXxxxxxx** xxxxx xxxxx xxxx xxx xxxxx xxxxxxxx xx x **XXXxxxxxx**. Xxxxxxxx xxx xxxxxx xxxxxxx xxxxxxxxxx xx x **Xxxxxx** xx xx xxxxxxxx xxxxxxxxxx xxxx xxx **XXXxxxxxx** xxx xxx xxxxx xxx xxxxxx xxxxx xxxxxxx.
+The main function of a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) is to be an absolute-positioned layout container in UI. The children of a **Canvas** are stored in a base-class defined property [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514). Of all the panels **Canvas** is the only one that uses absolute positioning. It would've bloated the object model of the common [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) type to add properties that might only be of concern to **Canvas** and those particular **UIElement** cases where they are child elements of a **UIElement**. Defining the layout control properties of a **Canvas** to be attached properties that any **UIElement** can use keeps the object model cleaner.
 
-Xx xxxxx xx xx x xxxxxxxxx xxxxx, [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209267) xxx xxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxx-xxxxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208952) xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208914) xxxxxxx. Xxxx xx xxxxx **Xxxxxx** xxxxxxxx xxxxxx xxx xxxxxxxx xxxxxxxx xxxxxx xx xxx xxxxxxxx. Xxxx xx xxxx xxx **Xxxxxxx** xxx **Xxxxxxx** xxxxxxxx xx x xxxx xxxx xxxxxxxx xxxx xxx xxxxxxx, xxx x xxxxx xxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227514) xxxxxxxx xxxx xxxxx xx xxxxxxxx xxxx'x xxxxxxxx xx xx xxxxxxxxxx xxx xxxxx xx x xxxxx. Xx xxx **Xxxxxx** xxxxxx xxxxxxxx xxxxxxxx xxxxxxx xxxxx xxxxxxxx, xxx xxxxx xxxxxx [**Xxxxxx.XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br209269) xxx [**Xxxxxx.XxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209270) xxxxx xx xxxx xxxxx xx xxx xxxxxxx xxxxx xxxxxxxx xxxxxxxxxx xxxxxxx x xxx-xxxxxxx xxxxx (xxxxxxx xx Y). Xxxxx xxxxxx xxx xxxx xxxx xx xxxxxxxxxx xxxxxxxx xxxx xxxxx xx xxx **Xxxxxx** xxxxxxxxx xxxxxx xxxxx xxxxxxxxx xx xxx xxxxxxxx xxxxxx xxxxxxxx xx xxxx xxxxx, xxx xxxxxxxxx xxxxx **Xxxxxxx**.
+In order to be a practical panel, [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) has behavior that overrides the framework-level [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) and [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) methods. This is where **Canvas** actually checks for attached property values on its children. Part of both the **Measure** and **Arrange** patterns is a loop that iterates over any content, and a panel has the [**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) property that makes it explicit what's supposed to be considered the child of a panel. So the **Canvas** layout behavior iterates through these children, and makes static [**Canvas.GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) and [**Canvas.GetTop**](https://msdn.microsoft.com/library/windows/apps/br209270) calls on each child to see whether those attached properties contain a non-default value (default is 0). These values are then used to absolutely position each child in the **Canvas** available layout space according to the specific values provided by each child, and committed using **Arrange**.
 
-Xxx xxxx xxxxx xxxxxxxxx xxxx xxxx xxxxxxxxxx:
+The code looks something like this pseudocode:
 
 ``` syntax
     protected override Size ArrangeOverride(Size finalSize)
@@ -250,13 +245,17 @@ Xxx xxxx xxxxx xxxxxxxxx xxxx xxxx xxxxxxxxxx:
     }
 ```
 
-**Xxxx**  Xxx xxxx xxxx xx xxx xxxxxx xxxx, xxx [XXXX xxxxxx xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt228351).
+**Note**  For more info on how panels work, see [XAML custom panels overview](https://msdn.microsoft.com/library/windows/apps/mt228351).
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [**XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701833)
-* [Xxxxxxxx xxxxxxxxxx xxxxxxxx](attached-properties-overview.md)
-* [Xxxxxx xxxxxxxxxx xxxxxxxxxx](custom-dependency-properties.md)
-* [XXXX xxxxxxxx](xaml-overview.md)
+* [**RegisterAttached**](https://msdn.microsoft.com/library/windows/apps/hh701833)
+* [Attached properties overview](attached-properties-overview.md)
+* [Custom dependency properties](custom-dependency-properties.md)
+* [XAML overview](xaml-overview.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

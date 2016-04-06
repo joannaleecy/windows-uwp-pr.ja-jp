@@ -1,47 +1,51 @@
 ---
-xxxxxxxxxxx: Xxxxxxxx x xxxxx xxx xxx XXXX xxxxxxxxx xx xxxxxxxxxx x xxxxxxxxx xx x xxxxxxxx xxxx xxxxx xxxx x xxxxxx xxxxxxxx-xxxxxx xxxxxxxxxxxxxx. Xxxxxxxx xxxxxx xx xxxxxxxxx xx x XxxxxxXxxxXxxxxxxxXxxxxx xxxxx xxxxxxxxxxxxxx.
-xxxxx: XxxxxxXxxxxxxx xxxxxx xxxxxxxxx
-xx.xxxxxxx: YXYYXYXX-XYYY-YXYY-XYXY-XYYXYYYXYYYY
+description: Provides a value for any XAML attribute by evaluating a reference to a resource that comes from a custom resource-lookup implementation. Resource lookup is performed by a CustomXamlResourceLoader class implementation.
+title: CustomResource markup extension
+ms.assetid: 3A59A8DE-E805-4F04-B9D9-A91E053F3642
 ---
 
-# {XxxxxxXxxxxxxx} xxxxxx xxxxxxxxx
+# {CustomResource} markup extension
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxxxx x xxxxx xxx xxx XXXX xxxxxxxxx xx xxxxxxxxxx x xxxxxxxxx xx x xxxxxxxx xxxx xxxxx xxxx x xxxxxx xxxxxxxx-xxxxxx xxxxxxxxxxxxxx. Xxxxxxxx xxxxxx xx xxxxxxxxx xx x [**XxxxxxXxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243327) xxxxx xxxxxxxxxxxxxx.
+Provides a value for any XAML attribute by evaluating a reference to a resource that comes from a custom resource-lookup implementation. Resource lookup is performed by a [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) class implementation.
 
-## XXXX xxxxxxxxx xxxxx
+## XAML attribute usage
 
 ``` syntax
 <object property="{CustomResource key}" .../>
 ```
 
-## XXXX xxxxxx
+## XAML values
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| xxx | Xxx xxx xxx xxx xxxxxxxxx xxxxxxxx. Xxx xxx xxx xx xxxxxxxxx xxxxxxxx xx xxxxxxxx xx xxx xxxxxxxxxxxxxx xx xxx [**XxxxxxXxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243327) xxxxx xxxx xx xxxxxxxxx xxxxxxxxxx xxx xxx. |
+| key | The key for the requested resource. How the key is initially assigned is specific to the implementation of the [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) class that is currently registered for use. |
 
-## Xxxxxxx
+## Remarks
 
-**XxxxxxXxxxxxxx** xx x xxxxxxxxx xxx xxxxxxxxx xxxxxx xxxx xxx xxxxxxx xxxxxxxxx xx x xxxxxx xxxxxxxx xxxxxxxxxx. Xxxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxx xxx xxx'x xxxx xx xxxx Xxxxxxx Xxxxxxx xxx xxxxxxxxx.
+**CustomResource** is a technique for obtaining values that are defined elsewhere in a custom resource repository. This technique is relatively advanced and isn't used by most Windows Runtime app scenarios.
 
-Xxx x **XxxxxxXxxxxxxx** xxxxxxxx xx x xxxxxxxx xxxxxxxxxx xx xxx xxxxxxxxx xx xxxx xxxxx, xxxxxxx xxxx xxx xxxx xxxxxx xxxxxxxxx xx xxx [**XxxxxxXxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243327) xx xxxxxxxxxxx.
+How a **CustomResource** resolves to a resource dictionary is not described in this topic, because that can vary widely depending on how [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) is implemented.
 
-Xxx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243340) xxxxxx xx xxx [**XxxxxxXxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243327) xxxxxxxxxxxxxx xx xxxxxx xx xxx Xxxxxxx Xxxxxxx XXXX xxxxxx xxxxxxxx xx xxxxxxxxxx x `{CustomResource}` xxxxx xx xxxxxx. Xxx *xxxxxxxxXx* xxxx xx xxxxxx xx **XxxXxxxxxxx** xxxxx xxxx xxx *xxx* xxxxxxxx, xxx xxx xxxxx xxxxx xxxxxxxxxx xxxx xxxx xxxxxxx, xxxx xx xxxxx xxxxxxxx xxx xxxxx xx xxxxxxx xx.
+The [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) method of the [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) implementation is called by the Windows Runtime XAML parser whenever it encounters a `{CustomResource}` usage in markup. The *resourceId* that is passed to **GetResource** comes from the *key* argument, and the other input parameters come from context, such as which property the usage is applied to.
 
-X `{CustomResource}` xxxxx xxxxx'x xxxx xx xxxxxxx (xxx xxxx xxxxxxxxxxxxxx xx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243340) xx xxxxxxxxxx). Xx xxxx x xxxxx `{CustomResource}` xxxxxxxxx, xxx xxxx xxxxxxx xxxx xx xxxxx xxxxx:
+A `{CustomResource}` usage doesn't work by default (the base implementation of [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) is incomplete). To make a valid `{CustomResource}` reference, you must perform each of these steps:
 
-1.  Xxxxxx x xxxxxx xxxxx xxxx [**XxxxxxXxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243327) xxx xxxxxxxx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243340) xxxxxx. Xx xxx xxxx xxxx xx xxx xxxxxxxxxxxxxx.
-2.  Xxx [**XxxxxxXxxxXxxxxxxxXxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243328) xx xxxxxxxxx xxxx xxxxx xx xxxxxxxxxxxxxx xxxxx. Xxxx xxxx xxxxxx xxxxxx xxx xxxx-xxxxx XXXX xxxx xxxxxxxx xxx `{CustomResource}` xxxxxxxxx xxxxx xx xxxxxx. Xxx xxxxx xx xxx **XxxxxxXxxxXxxxxxxxXxxxxx.Xxxxxxx** xx xx xxx [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242324) xxxxxxxx xxxxxxxxxxx xxxx'x xxxxxxxxx xxx xxx xx xxx Xxx.xxxx xxxx-xxxxxx xxxxxxxxx.
-3.  Xxx xxx xxx xxx `{CustomResource}` xxxxxxxxxx xx xxx XXXX xxxx xxxx xxx xxxxx xx xxxxx, xx xxxx xxxxxx XXXX xxxxxxxx xxxxxxxxxxxx.
+1.  Derive a custom class from [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327) and override [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340) method. Do not call base in the implementation.
+2.  Set [**CustomXamlResourceLoader.Current**](https://msdn.microsoft.com/library/windows/apps/br243328) to reference your class in initialization logic. This must happen before any page-level XAML that includes the `{CustomResource}` extension usage is loaded. One place to set **CustomXamlResourceLoader.Current** is in the [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) subclass constructor that's generated for you in the App.xaml code-behind templates.
+3.  Now you can use `{CustomResource}` extensions in the XAML that your app loads as pages, or from within XAML resource dictionaries.
 
-**XxxxxxXxxxxxxx** xx x xxxxxx xxxxxxxxx. Xxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxxxx xxxx xxxxx xx x xxxxxxxxxxx xx xxxxxx xxxxxxxxx xxxxxx xx xx xxxxx xxxx xxxxxxx xxxxxx xx xxxxxxx xxxxx, xxx xxx xxxxxxxxxxx xx xxxx xxxxxx xxxx xxxx xxxxxxx xxxx xxxxxxxxxx xx xxxxxxx xxxxx xx xxxxxxxxxx. Xxx xxxxxx xxxxxxxxxx xx XXXX xxx xxx "\{" xxx "\}" xxxxxxxxxx xx xxxxx xxxxxxxxx xxxxxx, xxxxx xx xxx xxxxxxxxxx xx xxxxx x XXXX xxxxxxxxx xxxxxxxxxx xxxx x xxxxxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxx.
+**CustomResource** is a markup extension. Markup extensions are typically implemented when there is a requirement to escape attribute values to be other than literal values or handler names, and the requirement is more global than just putting type converters on certain types or properties. All markup extensions in XAML use the "\{" and "\}" characters in their attribute syntax, which is the convention by which a XAML processor recognizes that a markup extension must process the attribute.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [XxxxxxxxXxxxxxxxxx xxx XXXX xxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187273)
-* [**XxxxxxXxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243327)
-* [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243340)
+* [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273)
+* [**CustomXamlResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br243327)
+* [**GetResource**](https://msdn.microsoft.com/library/windows/apps/br243340)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

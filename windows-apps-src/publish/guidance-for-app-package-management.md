@@ -1,134 +1,138 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxx xxxx xxx'x xxxxxxxx xxx xxxx xxxxxxxxx xx xxxx xxxxxxxxx, xxx xxx xx xxxxxx xxxxxxxx xxxxxxx xxxxxxxxx.
-xxxxx: Xxxxxxxx xxx xxx xxxxxxx xxxxxxxxxx
-xx.xxxxxxx: YYYYYXYX-YXYX-YYXY-YYXY-YXXXXYYYXYXX
+Description: アプリのパッケージをユーザーが使用できるようになるしくみと、特定のパッケージ シナリオを管理する方法について説明します。
+title: アプリ パッケージ管理のガイダンス
+ms.assetid: 55405D0B-5C1E-43C8-91A1-4BFDD336E6AB
 ---
 
-# Xxxxxxxx xxx xxx xxxxxxx xxxxxxxxxx
+# アプリ パッケージ管理のガイダンス
 
 
-Xxxxx xxx xxxx xxx'x xxxxxxxx xxx xxxx xxxxxxxxx xx xxxx xxxxxxxxx, xxx xxx xx xxxxxx xxxxxxxx xxxxxxx xxxxxxxxx.
+アプリのパッケージをユーザーが使用できるようになるしくみと、特定のパッケージ シナリオを管理する方法について説明します。
 
--   [XX xxxxxxxx xxx xxxxxxx xxxxxxxxxxxx](#os-versions-and-package-distribution)
--   [Xxxxxx xxxxxxxx xxx Xxxxxxx YY xx x xxxxxxxxxx-xxxxxxxxx xxx](#adding-packages-for-windows-10-to-a-previously-published-app)
--   [Xxxxxxxxxxx xxxxxxx xxxxxxxxxxxxx xxx Xxxxxxx Xxxxx Y.Y](#maintaining-package-compatibility-for-windows-phone-8-1)
--   [Xxxxxxxx xx xxx xxxx xxx Xxxxx](#removing-an-app-from-the-store)
--   [Xxxxxxxx xxxxxxxx xxx x xxxxxxxxxx-xxxxxxxxx xxxxxx xxxxxx](#removing-packages-for-a-previously-supported-device-family)
+-   [OS のバージョンとパッケージの配布](#os-versions-and-package-distribution)
+-   [以前に公開したアプリに Windows 10 用のパッケージを追加する](#adding-packages-for-windows-10-to-a-previously-published-app)
+-   [Windows Phone 8.1 に対するパッケージの互換性を維持する](#maintaining-package-compatibility-for-windows-phone-8-1)
+-   [アプリをストアから削除する](#removing-an-app-from-the-store)
+-   [これまでサポートされていたデバイス ファミリ用のパッケージを削除する](#removing-packages-for-a-previously-supported-device-family)
 
-## XX xxxxxxxx xxx xxxxxxx xxxxxxxxxxxx
+## OS のバージョンとパッケージの配布
 
 
-Xxxxxxxxx xxxxxxxxx xxxxxxx xxx xxx xxxxxxxxx xxxxx xx xxxxxxxx. Xx xxxx xxxx xxx xx xxxx xxxxxxxx xxx xxx xx x xxxxxxxx'x xxxxxx, xxx Xxxxxxx Xxxxx xxxx xxxxxxx xxx xxxx xxxxxxxxx xxxxx.
+さまざまなオペレーティング システムで異なる種類のパッケージを実行できます。 ユーザーのデバイスで複数のパッケージを実行できる場合、Windows ストアは使用可能な最適のパッケージを提供します。
 
-Xxxxxxxxx xxxxxxxx, xxxxx XX xxxxxxxx xxx xxx xxxxxxxx xxxx xxxxxx xxxxxxxx XX xxxxxxxx xxx xxx xxxx xxxxxx xxxxxx. Xxxxxxx, xxxxxxxxx xxxx xxxx xxx xxxxx xxxxxxxx xx xxx xxx xxxxx'x xxxxxxx x xxxxxxx xxxx xxxxxxx xxx xxxxxxx XX xxxxxxx.
+一般に、新しい OS バージョンでは、同じデバイス ファミリの以前の OS バージョンを対象にしたパッケージを実行できます。 ただし、それらのパッケージが取得されるのは、現在の OS バージョンを対象にしたパッケージがアプリに含まれない場合に限られます。
 
-Xxx xxxxxxx, Xxxxxxx YY xxxxxxx xxx xxx xxx xxxxxxxx xxxxxxxxx XX xxxxxxxx (xxx xxxxxx xxxxxx). Xxxxxxx YY xxxxxxx xxxxxxx xxx xxx xxxx xxxx xxxx xxxxx xxx Xxxxxxx Y.Y xx Xxxxxxx Y; Xxxxxxx YY xxxxxx xxxxxxx xxx xxx xxxx xxxx xxxx xxxxx xxx Xxxxxxx Xxxxx Y.Y, Xxxxxxx Xxxxx Y, xxx xxxx Xxxxxxx Xxxxx Y.x.
+たとえば、Windows 10 デバイスでは、(デバイス ファミリごとに) サポートされている以前の OS のバージョンをすべて実行できます。 Windows 10 のデスクトップ デバイスでは Windows 8.1 または Windows 8 用に構築されたアプリを実行でき、Windows 10 のモバイル デバイスでは Windows Phone 8.1、Windows Phone 8、さらには Windows Phone 7.x 用に構築されたアプリまで実行できます。
 
-Xxx xxxxxxxxx xxxxxxxx xxxxxxxxxx xxxxxxx xxxxxxxxx xxx xx xxx xxxx xxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxxxx XX xxxxxxxx. Xx xxxx xxxxx, xxxxxxxx xxxxxxxxxxx xx xxxx xxxxxxxx xxx xxx xxxxx xxxx xx xxx xx xxxxx XX xxxxxxxx xxx xxxxxx xxxxx xxxxxx xxxx (xxx xxxxxxx, xxx xxxxxxxxxxxx xxxx xx xxxxxxxxxxx), xxx xxxxx xxxxxxxx xxxxxx xxxx xxx xx xxxxxxxxxx xxxxx XX xxxxxxxx xxx xxx xxxx xxxxxxxx xxxxxxxx.
+次の例では、さまざまな OS のバージョンを対象にしたパッケージを含むアプリについてさまざまなシナリオを説明します。 場合によっては、パッケージ特有の制約によって、ここに示したすべての OS バージョンとデバイスの種類で実行できないことがありますが (アーキテクチャが特定のものである必要がある場合など)、これらの例は特定のパッケージを実行できるのはどの OS バージョンかを理解するために役立ちます。
 
-### Xxxxxxx xxx Y
+### アプリ例 1
 
-| Xxxxxxx'x xxxxxxxx xxxxxxxxx xxxxxx | Xxxxxxxxx xxxxxxx xxxx xxxx xxx xxxx xxxxxxx |
+| パッケージの対象オペレーティング システム | このパッケージを取得するオペレーティング システム |
 |-------------------------------------|----------------------------------------------|
-| Xxxxxxx Y.Y                         | Xxxxxxx YY xxxxxxx xxxxxxx, Xxxxxxx Y.Y      |
-| Xxxxxxx Xxxxx Y.Y                   | Xxxxxxx YY xxxxxx xxxxxxx, Xxxxxxx Xxxxx Y.Y |
-| Xxxxxxx Xxxxx Y                     | Xxxxxxx Xxxxx Y                              |
-| Xxxxxxx Xxxxx Y.Y                   | Xxxxxxx Xxxxx Y.x                            |
+| Windows 8.1                         | Windows 10 デスクトップ デバイス、Windows 8.1      |
+| Windows Phone 8.1                   | Windows 10 モバイル デバイス、Windows Phone 8.1 |
+| Windows Phone 8                     | Windows Phone 8                              |
+| Windows Phone 7.1                   | Windows Phone 7.x                            |
 
-Xx xxxxxxx xxx Y, xxx xxx xxxx xxx xxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxx xxxx xxx xxxxxxxxxxxx xxxxx xxx Xxxxxxx YY xxxxxxx, xxx xxxxxxxxx xx Xxxxxxx YY xxx xxxxx xxx xxx xxx. Xxxxx xxxxxxxxx xxxx xxx xxx xxxx xxxxxxxx xxxxxxxxx, xxxxxxxxx xx xxxxx xxxxxx xxxx.
+アプリ例 1 のアプリには Windows 10 デバイス用に特別に構築されたユニバーサル Windows プラットフォーム (UWP) パッケージがまだありませんが、Windows 10 のユーザーはこのアプリを入手できます。 ユーザーはデバイスの種類に応じて使用できる最適なパッケージを取得します。
 
-### Xxxxxxx xxx Y
+### アプリ例 2
 
-| Xxxxxxx'x xxxxxxxx xxxxxxxxx xxxxxx  | Xxxxxxxxx xxxxxxx xxxx xxxx xxx xxxx xxxxxxx |
+| パッケージの対象オペレーティング システム  | このパッケージを取得するオペレーティング システム |
 |--------------------------------------|----------------------------------------------|
-| Xxxxxxx YY (xxxxxxxxx xxxxxx xxxxxx) | Xxxxxxx YY (xxx xxxxxx xxxxxxxx)             |
-| Xxxxxxx Y.Y                          | Xxxxxxx Y.Y                                  |
-| Xxxxxxx Xxxxx Y.Y                    | Xxxxxxx Xxxxx Y.Y                            |
-| Xxxxxxx Xxxxx Y.Y                    | Xxxxxxx Xxxxx Y.x, Xxxxxxx Xxxxx Y           |
+| Windows 10 (ユニバーサル デバイス ファミリ) | Windows 10 (すべてのデバイス ファミリ)             |
+| Windows 8.1                          | Windows 8.1                                  |
+| Windows Phone 8.1                    | Windows Phone 8.1                            |
+| Windows Phone 7.1                    | Windows Phone 7.x、Windows Phone 8           |
 
-Xx xxxxxxx xxx Y, xxxxx xx xx xxxxxxx xxxx xxx xxx xx Xxxxxxx Y. Xxxxxxxxx xxx xxx xxxxxxx xxx xxxxx XX xxxxxxxx xxx xxx xxx xxx.
+アプリ例 2 では、Windows 8 で実行可能なパッケージはありません。 他のすべての OS バージョンを実行しているユーザーは、アプリを入手できます。
 
-### Xxxxxxx xxx Y
+### アプリ例 3
 
-| Xxxxxxx'x xxxxxxxx xxxxxxxxx xxxxxx | Xxxxxxxxx xxxxxxx xxxx xxxx xxx xxxx xxxxxxx                  |
+| パッケージの対象オペレーティング システム | このパッケージを取得するオペレーティング システム                  |
 |-------------------------------------|---------------------------------------------------------------|
-| Xxxxxxx YY (xxxxxxx xxxxxx xxxxxx)  | Xxxxxxx YY xxxxxxx xxxxxxx                                    |
-| Xxxxxxx Xxxxx Y                     | Xxxxxxx YY xxxxxx xxxxxxx, Xxxxxxx Xxxxx Y, Xxxxxxx Xxxxx Y.Y |
+| Windows 10 (デスクトップ デバイス ファミリ)  | Windows 10 デスクトップ デバイス                                    |
+| Windows Phone 8                     | Windows 10 モバイル デバイス、Windows Phone 8、Windows Phone 8.1 |
 
-Xx xxxxxxx xxx Y, xxxxx xxxxx xx xx XXX xxxxxxx xxxx xxxxxxx xxx xxxxxx xxxxxx xxxxxx, xxxxxxxxx xx Xxxxxxx YY xxxxxx xxxxxxx xxxx xxx xxx Xxxxxxx Xxxxx Y xxxxxxx. Xx xxxx xxx xxxxx xxxx x xxxxxxx xxxx xxxxxxx xxx xxxxxx xxxxxx xxxxxx (xx xxx xxxxxxxxx xxxxxx xxxxxx), xxxx xxxxxxxx xxxx xxxx xx xxxxxxxxx xx xxxxxxxxx xx Xxxxxxx YY xxxxxx xxxxxxx xxxxxxx xx xxx Xxxxxxx Xxxxx Y xxxxxxx.
+アプリ例 3 では、モバイル デバイス ファミリを対象にした UWP パッケージがないため、Windows 10 モバイル デバイスのユーザーは Windows Phone 8 パッケージを取得することになります。 モバイル デバイス ファミリ (またはユニバーサル デバイス ファミリ) を対象とするパッケージがこのアプリに後で追加される場合、Windows Phone 8 パッケージの代わりにそのパッケージが Windows 10 モバイル デバイスのユーザーに提供されます。
 
-Xxxx xxxx xxxx xxxx xxxxxxx xxx xxxx xxx xxxxxxx xxx xxxxxxx xxxx xxx xxx xx Xxxxxxx Y.x.
+また、このアプリ例には Windows 7.x で実行可能なパッケージが含まれていない点にも注目してください。
 
-### Xxxxxxx xxx Y
+### アプリ例 4
 
-| Xxxxxxx'x xxxxxxxx xxxxxxxxx xxxxxx  | Xxxxxxxxx xxxxxxx xxxx xxxx xxx xxxx xxxxxxx |
+| パッケージの対象オペレーティング システム  | このパッケージを取得するオペレーティング システム |
 |--------------------------------------|----------------------------------------------|
-| Xxxxxxx YY (xxxxxxxxx xxxxxx xxxxxx) | Xxxxxxx YY (xxx xxxxxx xxxxxxxx)             |
+| Windows 10 (ユニバーサル デバイス ファミリ) | Windows 10 (すべてのデバイス ファミリ)             |
 
-Xx xxxxxxx xxx Y, xxx xxxxxx xxxx xx xxxxxxx Xxxxxxx YY xxx xxx xxx xxx, xxx xx xxxx xxx xx xxxxxxxxx xx xxxxxxxxx xx xxx xxxxxxxx XX xxxxxxx. Xxxxxxx xxx XXX xxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxx xxxxxx, xx xxxx xx xxxxxxxxx xx xxxx xxxxxxx xxx xxxxxx Xxxxxxx YY xxxxxxx.
+アプリ例 4 では、Windows 10 を実行しているデバイスではアプリを入手することができますが、以前の OS バージョンのユーザーは利用できません。 UWP パッケージはユニバーサル デバイス ファミリを対象にしているため、デスクトップとモバイルの両方の Windows 10 デバイスで使用できます。
 
-## Xxxxxx xxxxxxxx xxx Xxxxxxx YY xx x xxxxxxxxxx-xxxxxxxxx xxx
+## 以前に公開したアプリに Windows 10 用のパッケージを追加する
 
 
-Xx xxx xxxx xx xxx xx xxx Xxxxx xxx xxx xxxx xx xxxxxx xxxx xxx xxx Xxxxxxx YY, xxxxxx x xxx xxxxxxxxxx xxx xxx xxxx XXX .xxxxxxxxxx xxxxxxx(x) xxxxxx xxx [Xxxxxxxx](upload-app-packages.md) xxxx. Xxxxx xxxx xxx xxxx xxxxxxx xxx xxxxxxxxxxxxx xxxxxxx, xxxxxxxxx xxx xxxxxxx xxx xxxx xxx xxxxxx xxxxxxxxx xx Xxxxxxx YY xxxx xx xxxx xx xxx xxxx XXX xxxxxxx xx xx xxxxxx xxxx xxx Xxxxx. Xxx XXX xxxxxxx xxxx xxxx xx xxxxxxxxx xxx xxx xxxxxxxxxxxx xx xxxxxxxxx xx Xxxxxxx YY.
+ストアにアプリがあり、Windows 10 用にアプリを更新する場合、「[パッケージ](upload-app-packages.md)」の手順で、新しい申請を作成し、UWP の .appxupload パッケージを追加します。 アプリが認定プロセスに合格すると、Windows 10 にアップグレードする前に既にアプリを所有していたユーザーは、ストアから更新プログラムとして UWP パッケージを取得できます。 この UWP パッケージは、Windows 10 のユーザーが新規の取得として利用することもできます。
 
-> **Xxxxxxxxx**  Xxxx x xxxxxxxx xx Xxxxxxx YY xxxx xxxx XXX xxxxxxx, xxx xxx'x xx xxxx xx xxxx xxxx xxxxxxxx xxxx xx xxxxx x xxxxxxx xxx xxx xxxxxxxx XX xxxxxxx. Xxxx xxxx xxx xxxx xxxxxxxxxx xxxxxx xxxx XXX xxxxxxxx xx Xxxxxxx YY xxxxxx xxxxxx xxxx xx xxxx xxxxxxxxxx.
+> **重要**  Windows 10 のユーザーが UWP パッケージを取得した後に、以前の OS バージョン用のパッケージを使用してそのユーザーをロールバックすることはできません。 申請に追加する前に、Windows 10 で UWP パッケージを十分にテストしたことを確認します。
 
-Xxx xxx xxxxxx xxx xx xxxx xxxxx xxxxxxxx xx xxx xxxx xxxx xx xxxx xxxxx xxxxxxx xx xxx xxxxxxxxxx (xxx xxxxxxx, xxx xxx xxxx xx [xxxxxx xxxxxxxx-xxxxxxxx xxxxxxxxxxxx](create-platform-specific-descriptions.md) xx xx xxxxx xx xxxxxxxxx xx xxx xxxxxxx XX xxxxxxxx). Xxx xxx xxxx xxxxx xxxxxxxxxx xxxx xxxxxxx xxx xxxx, xx xxx xxxxxx.
+その他のパッケージを同時に更新したり、申請にその他の変更を加えたりすることもできます (たとえば、以前の OS バージョンのユーザーに表示するために、[プラットフォーム固有の説明を作成](create-platform-specific-descriptions.md)することができます)。 必要に応じて、その他すべてをまったく同じにすることもできます。
 
-> **Xxxx**  Xxx xxxxxxx xxxxxx xx xxxx Xxxxxxx YY xxxxxxxx xxxx xx xxxxxx xxxx xxxxx xxx xxx Xxxxxxx Y, Xxxxxxx Y.Y, xxx/xx Xxxxxxx Xxxxx Y.Y xxxxxxxx xxx xxx xxxxxxxxxx (xx xxxxxxxx xxx xxxxx XX xxxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxxxxxx) xxx xxx xxxx xxx. Xxx xxxx xxxx xxxxx xxxxxxx xxxxxxxxx xx Xxxxxxx YY, xxx [Xxxxxxx xxxxxxx xxxxxxxxx](package-version-numbering.md).
+> **注**  Windows 10 パッケージのバージョン番号は、同じアプリについて公開中の Windows 8、Windows 8.1、Windows Phone 8.1 のパッケージ (または前に公開したこれらの OS バージョンのパッケージ) のバージョン番号より大きい必要があります。 Windows 10 のバージョンの番号付けについて詳しくは、「[パッケージ バージョンの番号付け](package-version-numbering.md)」をご覧ください。
 
-Xxxx xxx xxx xxxxxxxxxx xxxxxxxxx xxx xxxxxxxxxxxxx xxxxxxx, xxx XXX xxxxxxxx xxxx xx xxxxxxxxx, xxxxx xxxx xxx xxxxx xxxxxxxx xxx'xx xxxx xxxxxxxxx xxx xxxxx xxxxxxxxx xxx xxxx'x xx Xxxxxxx YY xxx.
+新しい申請が認定プロセスを完了すると、Windows 10 を利用していないユーザーが使用できるようにしたその他のパッケージと共に、UWP パッケージが使用できるようになります。
 
-Xxx xxxx xxxx xxxxx xxxxxxxxx XXX xxxx xxx xxx Xxxxx, xxx [Xxxxxxxxx Xxxxxxxxx Xxxxxxx xxxx xxx Xxxxxxx YY](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
+ストア用の UWP アプリのパッケージ化について詳しくは、「[Windows 10 用ユニバーサル Windows アプリのパッケージ化](http://go.microsoft.com/fwlink/p/?LinkId=620193 )」をご覧ください。
 
-> **Xxxxxxxxx**  Xxxx xx xxxx xxxx xx xxx xxxxxxx xxxxxxxx xxxx xxxxxx xxx xxxxxxxxx xxxxxx xxxxxx, xxxxx xxxxxxxx xxx xxxxxxx xxx xxxx xxx xx xxx xxxxxxx xxxxxxxxx xxxxxx (Xxxxxxx Xxxxx Y, Xxxxxxx Y.Y, xxx.) xxx xxxx xxxxxxxx xx Xxxxxxx YY xxxx xx xxxxxxx xx xxxx Xxxxxxx YY xxxxxxxxx xxxxxxx.
+> **重要**  ユニバーサル デバイス ファミリを対象にしたパッケージを提供している場合、以前のオペレーティング システム (Windows Phone 8、Windows 8.1 など) で既にアプリを持っていて Windows 10 にアップグレードするユーザーは、Windows 10 ユニバーサル パッケージに更新されることに注意してください。
 > 
-> Xxxx xxxxxxx xxxx xx xxx xxxx xxxxxxxx x xxxxxxxx xxxxxx xxxxxx xx xxx [Xxxxxxx xxx xxxxxxxxxxxx](set-app-pricing-and-availability.md#windows-10-device-families) xxxx xx xxxx xxxxxxxxxx, xxxxx xxx **Xxxxxx xxxxxxxx** xxxxxxxxx xxxx xxxxxxx xx xxx xxxxxxxxxxxx. Xx xxx xxx'x xxxx xxxxx xxxxxxxx xxxxxxxx xx xxx xxxx xxx Xxxxxxx YY xxxxxxx, xx xxxx xx xxxxxx xxx [**XxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986903) xxxxxxx xx xxxx xxxx xxxxxxxx xx xxxxxxx xxxx xxx xxxxxxxxxx xxxxxx xxxxxx xxx xxxx xx xxxxxxx.
+> これは、申請の「[価格と使用可能状況](set-app-pricing-and-availability.md#windows-10-device-families)」の手順で特定のデバイス ファミリを除外していた場合にも当てはまります。**[デバイス ファミリ]** の選択は新規の利用者にしか適用されないためです。 以前のすべてのユーザーに新しい Windows 10 パッケージを取得させることを避けたい場合は、サポート対象の特定のデバイス ファミリのみを含めるように appx マニフェストの [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) 要素を更新する必要があります。
 > 
-> Xxx xxxxxxx, xxx xxx xxxx xxxx xxxx Xxxxxxx Y xxx Xxxxxxx Y.Y xxxxxxxxx xxx xxxx xxxxxxxx xx Xxxxxxx YY xx xxx xxxx XXX xxx, xxx xxx xxxx xxxxxxxxx xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx xx xxxx xxx xxxxxxxx xxx'x xxxxxxxxxx xxxx xxxxxxxxx (xxxxxxxxx Xxxxxxx Xxxxx Y xx Xxxxxxx Xxxxx Y.Y). Xx xx xxxx, xxx'xx xxxx xx xxxx xxxx xx xxxxxx xxx [**XxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986903) xx xxxx xxxx xxxxxxxx xx xxxxxxx xxxx **Xxxxxxx.Xxxxxxx** (xxx xxx xxxxxxx xxxxxx xxxxxx), xxxxxx xxxx xxxxxxx xx xx xxx **Xxxxxxx.Xxxxxxxxx** xxxxx (xxx xxx xxxxxxxxx xxxxxx xxxxxx) xxxx Xxxxxxxxx Xxxxxx Xxxxxx xxxxxxxx xx xxx xxxx xxxxxxxx xx xxxxxxx. Xx xxx xxxxxx xxx XXX xxxxxxxx xxxx xxxxxx xxxxxx xxx xxxxxxxxx xx xxxxxx xxxxxx xxxxxxxx (**Xxxxxxx.Xxxxxxxxx** xx **Xxxxxxx.Xxxxxxxxx**). Xxxx xxx, xxxx Xxxxxxx YY xxxxxx xxxxxxxxx xxxx xxx xxx xxx xx xxxx XXX xxxxxxxx.
+> たとえば、Windows 10 にアップグレードした Windows 8 と Windows 8.1 のユーザーだけが UWP アプリを取得し、Windows Phone 8.1 以前のユーザーには以前の (Windows Phone 8 または Windows Phone 8.1 を対象にした) パッケージのままにするとします。 これを行うには、appx マニフェストの [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) を、Microsoft Visual Studio の既定の appx マニフェストに含まれる **Windows.Universal** 値 (ユニバーサル デバイス ファミリ用) のままにするのではなく、**Windows.Desktop** (デスクトップ デバイス ファミリ用) のみを含むように更新する必要があります。 ユニバーサル デバイス ファミリまたはモバイル デバイス ファミリ (**Windows.Universal** または **Windows.Universal**) のどちらかを対象にした UWP パッケージは申請しないでください。 この場合、Windows 10 モバイルのユーザーが UWP パッケージを取得することはなくなります。
 > 
-> Xxx xxxx xxxx xxxxx xxxxxx xxxxxxxx, xxx [Xxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx](https://msdn.microsoft.com/library/windows/apps/dn894631).
+> デバイス ファミリについて詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](https://msdn.microsoft.com/library/windows/apps/dn894631)」をご覧ください。
 
-## Xxxxxxxxxxx xxxxxxx xxxxxxxxxxxxx xxx Xxxxxxx Xxxxx Y.Y
-
-
-Xxxxxxx xxxxxxxxxxxx xxx xxxxxxx xxxxx xxxxx xxxx xxxxxxxx xxxx xxxx xxxx xxxxxxxxxx xxxxxxxxx xxx Xxxxxxx Xxxxx Y.Y:
-
--   Xxxxx xx xxx xxx x xxxxxxxxx Xxxxxxx Xxxxx Y.Y xxxxxxx, xxx xxxxxxxxxx xxxxxxx xxxx xxxx xxxxxxx x Xxxxxxx Xxxxx Y.Y xxxxxxx.
--   Xxxxx xx xxx xxx x xxxxxxxxx Xxxxxxx Xxxxx Y.Y XXX, xxxxxxxxxx xxxxxxx xxxx xxxxxx xxxx x Xxxxxxx Xxxxx Y.Y XXX, Xxxxxxx Xxxxx Y.Y xxxx, xx Xxxxxxx Xxxxx Y.Y xxxxxxxxxx.
--   Xxxx xx xxx xxx x xxxxxxxxx Xxxxxxx Xxxxx Y.Y .xxxx, xxxxxxxxxx xxxxxxx xxxx xxxxxx xxxx x Xxxxxxx Xxxxx Y.Y .xxxx xx Xxxxxxx Xxxxx Y.Y .xxxxxxxxxx. Xx xxxxx xxxxx, x Xxxxxxx Xxxxx Y.Y XXX xx xxx xxxxxxx. Xxxx xxxxxxx xx xx .xxxxxxxxxx xxxx xxxxxxxx x Xxxxxxx Xxxxx Y.Y .xxxx xx xxxx.
--   Xxxxx xx xxx xxx x xxxxxxxxx Xxxxxxx Xxxxx Y.Y .xxxxxxxxxx, xxxxxxxxxx xxxxxxx xxxx xxxx x Xxxxxxx Xxxxx Y.Y .xxxxxxxxxx. Xx xxxxx xxxxx, x Xxxxxxx Xxxxx Y.Y XXX xx Xxxxxxx Xxxxx Y.Y .xxxx xx xxx xxxxxxx. Xxxx xxxxxxx xx xx .xxxxxxxxxx xxxx xxxxxxxx x Xxxxxxx Xxxxx Y.Y .xxxxxxxxxx xx xxxx.
-
-Xxxxxxx xx xxxxxx xxxxx xxxxx xxxx xxxxxx xx xxxxxxx xxxxxx xxxxxx xxxx xxxx xxxxxxx xxx xxxx xxxxxxxxxx xxxx xxxxxxxxxx.
-
-## Xxxxxxxx xx xxx xxxx xxx Xxxxx
+## Windows Phone 8.1 に対するパッケージの互換性を維持する
 
 
-Xx xxxxx, xxx xxx xxxx xx xxxxxxxxxx xxxx xxxxxxxx xx xxx xx xxxxxxxxx, xxxxxxxxxxx "xxxxxxxxxxxx" xx. Xx xx xx, xxxxx **Xxxx xxx xxxxxxxxxxx** xxxx xxx Xxx xxxxxxxx xxxx. Xxxxx xxx xxxxxxx xxxx xxx xxxx xx xxxx xxx xxx xxxxxxxxxxx, xxxxxx x xxx xxxxx xx xxxx xx xxxxxx xx xxxxxxx xx xxx Xxxxx, xxx xx xxx xxxxxxxxx xxxx xx xxxx xx xxx xx xxx xxx xxxxxx, xxxxxxxxx xxxxxxxxxxx xxxxx.
+Windows Phone 8.1 用に以前公開されていたアプリを更新する場合、パッケージの種類に関する特定の要件が適用されます。
 
-> **Xxxxxxxxx**  Xxxx xxxx xxxxxxxx xxx [xxxxxxxxxxxx xxx xxxxxxxxxx](set-app-pricing-and-availability.md#distribution-and-visibility) xxxxxxxx xxxx xxx xxxx xxxxxxxx xx xxxx xxxxxxxxxxx.
+-   アプリに公開済みの Windows Phone 8.1 パッケージがある場合、それ以降のすべての更新にも Windows Phone 8.1 パッケージを含める必要があります。
+-   アプリに公開済みの Windows Phone 8.1 XAP がある場合、それ以降の更新には Windows Phone 8.1 XAP、Windows Phone 8.1 appx、Windows Phone 8.1 appxbundle のいずれかが含まれている必要があります。
+-   アプリに公開済みの Windows Phone 8.1 .appx がある場合、それ以降の更新には Windows Phone 8.1 .appx または Windows Phone 8.1 .appxbundle が含まれている必要があります。 つまり、Windows Phone 8.1 XAP は認められません。 これは、Windows Phone 8.1 .appx を含む .appxupload にも適用されます。
+-   アプリに公開済みの Windows Phone 8.1 .appxbundle がある場合、それ以降の更新にも Windows Phone 8.1 .appxbundle を含める必要があります。 つまり、Windows Phone 8.1 XAP または Windows Phone 8.1 .appx は認められません。 これは、Windows Phone 8.1 .appxbundle を含む .appxupload にも適用されます。
 
-Xxxx xxxx xxx xxxxxxxxx xxx xxxxxxx xxxx xxx xxx xxxx xxxxx xx xxxx xx xxx xx (xxx xxxxx xxxx xxx xxxxxxx xx xxx xxxxxx xxx xxxxxxxx xxxxx).
+これらの規則に従わない場合、パッケージのアップロード エラーとなり申請を完了できません。
 
-Xxxxx xxxxxx xxx xxx xxxxxxxxxxx, xxx'xx xxxxx xxx xx xx xxxx xxxxxxxxx. Xx xxx xxxxxx xx xxxxx xxx xxx xx xxxxxxxxx xxxxx, xxx xxx xxxxx **Xxxx xxx xxxxxxxxx** xxxx xxx Xxx xxxxxxxx xxxx. Xxxxx xxx xxxxxxx, xxx xxx xxxx xx xxxxxxxxx xx xxx xxxxxxxxx (xxxxxx xxxxxxxxxx xx xxx xxxxxxxx xx xxxx xxxx xxxxxxxxxx) xxxxxx x xxx xxxxx.
-
-> **Xxxx**  Xx xxx xxxx xx xxxx xxxx xxx xxxxxxxxx, xxx xxx'x xxxx xx xxxxxxxxxx xxxxxxxx xx xx xxxxxxxxx xx x xxxxxxxxxx XX xxxxxxx, xxx xxx xxxxxx x xxx xxxxxxxxxx xxx xxxxxx xxx xxxxxxxx xxx xxx XX xxxxxxx xx xxxxx xxx xxxx xx xxxxxxx xxx xxxxxxxxxxxx. Xxx xxxxxxx, xx xxx xxxxxxxxxx xxx xxxxxxxx xxx Xxxxxxx Xxxxx Y, Xxxxxxx Xxxxx Y.Y, xxx Xxxxxxx YY, xxx xxx xxx'x xxxx xx xxxx xxxxxxxx xxx xxx xx xxx xxxxxxxxx xx Xxxxxxx Xxxxx Y, xxxxxx xxxx Xxxxxxx Xxxxx Y xxxxxxxx xxxx xxx xxxxxxxxxx. Xxxxx xxx xxxxxx xx xxxxxxxxx, xx xxx xxxxxxxxx xx Xxxxxxx Xxxxx Y xxxx xx xxxx xx xxxxxxx xxx xxx (xxxxxx xxxxxxxxx xxx xxxxxxx xxxx xx xxx xxxxxxxx xx xxx xx). Xxx xxx xxxx xxxxx xx xxxxxxxxx xxx xxx xxxxxxxxx xx Xxxxxxx Xxxxx Y.Y xxx Xxxxxxx YY.
-
-## Xxxxxxxx xxxxxxxx xxx x xxxxxxxxxx-xxxxxxxxx xxxxxx xxxxxx
+## アプリをストアから削除する
 
 
-Xx xxx xxxxxx xxx xxxxxxxx xxx x xxxxxxx xxxxxx xxxxxx xxxx xxxx xxx xxxxxxxxxx xxxxxxxxx, xxx'xx xx xxxxxxxx xx xxxxxxx xxxx xxxx xx xxxx xxxxxxxxx xxxxxx xxx xxx xxxx xxxx xxxxxxx xx xxx **Xxxxxxxx** xxxx.
+ユーザーへのアプリの提供を完全に停止し、事実上 "非公開" にする必要が生じることがあります。 これを行うには、[アプリの概要] ページで **[アプリの提供を停止する]** をクリックします。 アプリを入手不可にすることを確認した後、数時間以内にストアに表示されなくなり、プロモーション コードを含むどのような方法を使っても新しいユーザーが入手することができなくなります。
 
-Xxxx xxx xxxxxxx x xxxxxxxxxx xxxx xxxxxxx xxxxxxxx xxx x xxxxxx xxxxxx xxxx xxxx xxx xxxxxxxxxx xxxxxxxxx, xxx xxxxxxxxx xxxx xxx xx xxxx xx xxxxxxx xxx xxx xx xxxx xxxxxx xxxxxx. Xxx xxx xxxxxx xxxxxxx xxxxxxx xxxxxx xxxxx xx xxxxxxx xxxxxxxx xxx xxxx xxxxxx xxxxxx xxxxx.
+> **重要**  これは、申請時に選んだ[配布と表示](set-app-pricing-and-availability.md#distribution-and-visibility)の設定よりも優先されます。
 
-Xx xxxxx xxxx xxxx xx xxx xxxxxx xxx xx xxx xxxxxxxx xxxx xxxxxxx x xxxxxxx xxxxxx xxxxxx, xxx xxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx xxxxxxxxx xxx xxx xx xxxx xxxx xx xxxxxx xxx xxxxx xxx xx, xxx xxxx xxxx xxx xxx xxxxxxx xxx xxxxxxx xxxxx.
+アプリを既に持っているユーザーは使用し続けることができることに注意してください (後で新しいパッケージを申請した場合には更新プログラムを入手することもできます)。
+
+アプリを入手不可にした後も、ダッシュボードには引き続き表示されます。 アプリをもう一度ユーザーに提供する場合は、[アプリの概要] ページで **[アプリを提供する]** をクリックします。 確認後、数時間以内に新しいユーザーがアプリを入手できるようになります (前回の申請時の設定により制限されている場合を除く)。
+
+> **注**  アプリの提供は継続するが、特定の OS バージョンのユーザーには提供を継続しない場合は、新しい申請を作成して、新しい取得を許可しない OS バージョン用のパッケージをすべて削除できます。 たとえば、以前に Windows Phone 8、Windows Phone 8.1、Windows 10 用のパッケージを提供しており、Windows Phone 8 の新しいユーザーにはアプリの提供を継続しない場合は、申請から Windows Phone 8 用のパッケージを削除します。 更新プログラムの公開後、Windows Phone 8 で新しいユーザーはアプリを入手できなくなります (ただし、ユーザーが既に取得している場合は使い続けることができます)。 Windows Phone 8.1 および Windows 10 では、新しいユーザーはこのアプリを取得できます。
+
+## これまでサポートされていたデバイス ファミリ用のパッケージを削除する
+
+
+これまでアプリでサポートされていた特定のデバイス ファミリ用のパッケージをすべて削除する場合、**[パッケージ]** ページでの変更を保存する前に、この削除を実行してもよいかどうかを確認するメッセージが表示されます。
+
+これまでアプリでサポートされていたデバイス ファミリ用のパッケージを削除する申請を発行すると、新しいユーザーは、そのデバイス ファミリでアプリを入手することができなくなります。 そのデバイス ファミリ向けのパッケージを提供するための別の更新プログラムは、後でいつでも公開することができます。
+
+特定のデバイス ファミリをサポートするパッケージをすべて削除した場合でも、該当する種類のデバイスにアプリを既にインストールしているユーザーは、そのアプリを使うことができますが、後で提供される更新プログラムを入手することになります。
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,18 +1,18 @@
 ---
-Xxxxxxxxxxx: Xxxxxxx xxxx xx xxxxxxxxxxxxxxx xxxx xx xxxx xxxxx, xxx xxxxx xxxx xx xxxxxxxxxxx xxxxxxxx xxxx xxxx xxx. Xxxx xxxxxxx xxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxxx xxxxx xxxxx xxx xxx xx xxxx xxx xxxx xxx.
-xxxxx: XX xxxxxxxxxx xxx xxxx xxx xxxxxxxxxxxx
-xx.xxxxxxx: YYYYYXXX-YYXY-YYYX-XYXY-YXXXXYXYXXYY
-xxxxx: Xx-xxx xxxx xxx xxxxxxxxxxxxx XX
-xxxxxxxx: xxxxxx.xxx
+Description: ユーザーにヘルプやトラブルシューティングのヒントを提供して、効果的にアプリの操作法を示す必要があります。 このセクションでは、アプリを使うユーザー向けの操作説明に関するベスト プラクティスを提供します。
+title: ヘルプと説明の UX ガイドライン
+ms.assetid: 87867BFE-35D1-466E-B1F6-9EDCA3E5EA92
+label: アプリ内ヘルプと説明 UI
+template: detail.hbs
 ---
 
-# Xx-xxx xxxx xxx xxxxxxxxxxxxxxxx XX 
+# アプリ内ヘルプと説明 UI 
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxxxxx xxxx xx xxxxxxxxxxxxxxx xxxx xx xxxx xxxxx, xxx xxxxx xxxx xx xxxxxxxxxxx xxxxxxxx xxxx xxxx xxx. Xxxx xxxxxxx xxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxxx xxxxx xxxxx xxx xxx xx xxxx xxx xxxx xxx.
-## Xx xxxx xxxxxxx
+ユーザーにヘルプやトラブルシューティングのヒントを提供して、効果的にアプリの操作法を示す必要があります。 このセクションでは、アプリを使うユーザー向けの操作説明に関するベスト プラクティスを提供します。
+## このセクションの内容
 <table>
 <colgroup>
 <col width="50%" />
@@ -20,18 +20,18 @@ Xxxxxxx xxxx xx xxxxxxxxxxxxxxx xxxx xx xxxx xxxxx, xxx xxxxx xxxx xx xxxxxxxxxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">記事</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[App help](guidelines-for-app-help.md)</p></td>
-<td align="left"><p>Xxxxx xxxxxxxxxx xxxxxxxx xxx xx xxxxxx xxxxxxxxx Xxxx xxxxxxx xxx xxxx xxx.</p></td>
+<td align="left"><p>このガイドラインは、アプリの効果的なヘルプ コンテンツの設計方法を説明しています。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Instructional UI](instructional-ui.md)</p></td>
-<td align="left"><p>Xxxxxx xx xxxxxxxxxxxxx xxxx xxxxxxxxx (XX) xxxx xxxxxxx xxxxx xxx xx xxxx xxxx xxxx Xxxxxxx Xxxxx xxx.</p></td>
+<td align="left"><p>Windows ストア アプリを使う方法をユーザーに説明するユーザー インターフェイス (UI) をデザインします。</p></td>
 </tr>
 </tbody>
 </table>
@@ -39,4 +39,8 @@ Xxxxxxx xxxx xx xxxxxxxxxxxxxxx xxxx xx xxxx xxxxx, xxx xxxxx xxxx xx xxxxxxxxxx
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

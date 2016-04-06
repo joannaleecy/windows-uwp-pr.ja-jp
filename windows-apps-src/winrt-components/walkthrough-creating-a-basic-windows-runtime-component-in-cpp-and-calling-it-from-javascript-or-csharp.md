@@ -1,38 +1,38 @@
 ---
-xxxxx: Xxxxxxxx x xxxxx Xxxxxxx Xxxxxxx xxxxxxxxx xx X++ xxx xxxxxxx xx xxxx XxxxXxxxxx xx X#
-xxxxxxxxxxx: Xxxx xxxxxxxxxxx xxxxx xxx xx xxxxxx x xxxxx Xxxxxxx Xxxxxxx Xxxxxxxxx XXX xxxx'x xxxxxxxx xxxx XxxxXxxxxx, X#, xx Xxxxxx Xxxxx.
-xx.xxxxxxx: YYYXXYXY-YYYY-YXXX-YYXY-XYYYYYXYXYYY
+title: Creating a basic Windows Runtime component in C++ and calling it from JavaScript or C#
+description: This walkthrough shows how to create a basic Windows Runtime Component DLL that's callable from JavaScript, C#, or Visual Basic.
+ms.assetid: 764CD9C6-3565-4DFF-88D7-D92185C7E452
 ---
 
-# Xxxxxxxxxxx: Xxxxxxxx x xxxxx Xxxxxxx Xxxxxxx xxxxxxxxx xx X++ xxx xxxxxxx xx xxxx XxxxXxxxxx xx X\#
+# Walkthrough: Creating a basic Windows Runtime component in C++ and calling it from JavaScript or C#
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[Xxxx xxxxxxxxxxx xxxxxxx xx xxx-xxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxx xx'x xxxxxxxxxxxx xxxxxxxx. Xxxxxxxxx xxxxx xx xxxxxxxxxx, xxxxxxx xx xxxxxxx, xxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxx.\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-Xxxx xxxxxxxxxxx xxxxx xxx xx xxxxxx x xxxxx Xxxxxxx Xxxxxxx Xxxxxxxxx XXX xxxx'x xxxxxxxx xxxx XxxxXxxxxx, X\#, xx Xxxxxx Xxxxx. Xxxxxx xxx xxxxx xxxx xxxxxxxxxxx, xxxx xxxx xxxx xxx xxxxxxxxxx xxxxxxxx xxxx xx xxx Xxxxxxxx Xxxxxx Xxxxxxxxx (XXX), xxx xxxxxxx, xxx xxx Xxxxxx X++ Xxxxxxxxx Xxxxxxxxxx xxxx xxxx xxxxxxx xxxx xxx xxxxxxx xxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X++](creating-windows-runtime-components-in-cpp.md) xxx [Xxxxxx X++ Xxxxxxxx Xxxxxxxxx (X++/XX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
+This walkthrough shows how to create a basic Windows Runtime Component DLL that's callable from JavaScript, C#, or Visual Basic. Before you begin this walkthrough, make sure that you understand concepts such as the Abstract Binary Interface (ABI), ref classes, and the Visual C++ Component Extensions that make working with ref classes easier. For more information, see [Creating Windows Runtime Components in C++](creating-windows-runtime-components-in-cpp.md) and [Visual C++ Language Reference (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
 
-## Xxxxxxxx xxx X++ xxxxxxxxx XXX
+## Creating the C++ component DLL
 
 
-Xx xxxx xxxxxxx, xx xxxxxx xxx xxxxxxxxx xxxxxxx xxxxx, xxx xxx xxxxx xxxxxx xxx XxxxXxxxxx xxxxxxx xxxxx. Xxx xxxxx xxxxx’x xxxxxx.
+In this example, we create the component project first, but you could create the JavaScript project first. The order doesn’t matter.
 
-Xxxxxx xxxx xxx xxxx xxxxx xx xxx xxxxxxxxx xxxxxxxx xxxxxxxx xx xxxxxxxx xxx xxxxxx xxxxxxxxxxx, xxx xx xxxxx xxxxxxxxxxx. Xxxxx xxx xxxxxxxx xxxx xx xxxx xxx xxx xx'x xxxx. Xxxx xxx xxx xxxxxxxx, xxx xx xxxx xxxxxxx, xx'xx xxxxxxx xxx xx xxx xxxxxxxxx xxxx xxxx xxx xxx xxxx.
+Notice that the main class of the component contains examples of property and method definitions, and an event declaration. These are provided just to show you how it's done. They are not required, and in this example, we'll replace all of the generated code with our own code.
 
-## **Xx xxxxxx xxx X++ xxxxxxxxx xxxxxxx**
+## **To create the C++ component project**
 
-1.  Xx xxx Xxxxxx Xxxxxx xxxx xxx, xxxxxx **Xxxx, Xxx, Xxxxxxx**.
-2.  Xx xxx **Xxx Xxxxxxx** xxxxxx xxx, xx xxx xxxx xxxx, xxxxxx **Xxxxxx X++** xxx xxxx xxxxxx xxx xxxx xxx Xxxxxxxxx Xxxxxxx xxxx.
-3.  Xx xxx xxxxxx xxxx, xxxxxx **Xxxxxxx Xxxxxxx Xxxxxxxxx** xxx xxxx xxxx xxx xxxxxxx XxxXX\_XXX.
-4.  Xxxxxx xxx **XX** xxxxxx.
+1.  On the Visual Studio menu bar, choose **File, New, Project**.
+2.  In the **New Project** dialog box, in the left pane, expand **Visual C++** and then select the node for Universal Windows apps.
+3.  In the center pane, select **Windows Runtime Component** and then name the project WinRT\_CPP.
+4.  Choose the **OK** button.
 
-## **Xx xxx xx xxxxxxxxxxx xxxxx xx xxx xxxxxxxxx**
+## **To add an activatable class to the component**
 
-1.  Xx xxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxxx xxx xxxxxx xx xxxxx x **xxx** xxxxxxxxxx (**Xxx** xx Xxxxxx Xxxxx, xx **xxx xxx** xx X++). Xx xxxx xxxxxxxxx, xxx xxxxxxx xx xx **xxxxxx xxx xxxxx xxxxxx**. Xx xxxx, xxx XxxxxY.x xxx .xxx xxxxx xxxxxxx xxxx x xxx xxxxx. Xxx xxx xxxxxx xxx xxxx, xxx xx xxxx xxxxxxx xx’xx xxx xxx xxxxxxx xxxx—XxxxxY. Xxx xxx xxxxxx xxxxxxxxxx xxx xxxxxxx xx xxxxxxx xxxxxxx xx xxxx xxxxxxxxx xx xxxx xxx xxxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxx xxxxxxx, xxx [Xxxx Xxxxxx (X++/XX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
+1.  An activatable class is one that client code can create by using a **new** expression (**New** in Visual Basic, or **ref new** in C++). In your component, you declare it as **public ref class sealed**. In fact, the Class1.h and .cpp files already have a ref class. You can change the name, but in this example we’ll use the default name—Class1. You can define additional ref classes or regular classes in your component if they are required. For more information about ref classes, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
 
-2.  Xxx xxxxx \#xxxxxxx xxxxxxxxxx xx XxxxxY.x:
+2.  Add these \#include directives to Class1.h:
 
     ```cpp
              private void PrimesUnOrderedButton_Click_1(object sender, RoutedEventArgs e)
@@ -73,44 +73,48 @@ Xxxxxx xxxx xxx xxxx xxxxx xx xxx xxxxxxxxx xxxxxxxx xxxxxxxx xx xxxxxxxx xxx xx
             }
     ```
 
-## Xxxxxxx xxx xxx
+## Running the app
 
 
-Xxxxxx xxxxxx xxx X\# xxxxxxx xx XxxxXxxxxx xxxxxxx xx xxx xxxxxxx xxxxxxx xx xxxxxxx xxx xxxxxxxx xxxx xxx xxx xxxxxxx xxxx xx Xxxxxxxx Xxxxxxxx xxx xxxxxxxx **Xxx Xx Xxxxxxx Xxxxxxx**. Xxxx xxxxx XY xx xxx xxxx xxxxxxxxx, xx Xxxx+XY xx xxx xxxxxxx xxxxxxxxx.
+Select either the C# project or JavaScript project as the startup project by opening the shortcut menu for the project node in Solution Explorer and choosing **Set As Startup Project**. Then press F5 to run with debugging, or Ctrl+F5 to run without debugging.
 
-## Xxxxxxxxxx xxxx xxxxxxxxx xx Xxxxxx Xxxxxxx (xxxxxxxx)
-
-
-Xx Xxxxxx Xxxxxxx, xxx xxx xxxxxxx xxx Xxxxxxx Xxxxxxx xxxxx xxxx xxx xxxxxxx xx .xxxxx xxxxx. Xxxx xxxxxxxx xxx xxxxx xx xxx Xxxxxxxx xxxxxxxxx xxx xxx xxxxxxx xxxxxxxxx. Xxxxxxx, xxxxxxx xxx xxxxx xx xxx Xxxxxxxx::Xxxxxxxxxxx xxxxxxxxx xxx xxxxxxx xx xxx xxxxxx xxxx xxxxxxxxxxx.x, xxx xx x xxxxx xxxx, xxxx xxx’x xxxxxx xx Xxxxxx Xxxxxxx.
-
-## **Xx xxxxxxx x xxxxxxxxx**
-
-1.  Xx xxx xxxx xxx, xxxxxx **Xxxx, Xxxxxx Xxxxxxx** (Xxxx+Xxx+X).
-2.  Xx xxx xxxx xxxx xx xxx Xxxxxx Xxxxxxx, xxxxxx xxx XxxXX\_XXX xxxx xx xxxx xxx xxxxx xxx xxxxxxx xxxx xxx xxxxxxx xx xxxx xxxxxxxxx.
-
-## Xxxxxxxxx xxxx
+## Inspecting your component in Object Browser (optional)
 
 
-Xxx x xxxxxx xxxxxxxxx xxxxxxxxxx, xxxxxxxx xxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxx Xxxxxxxxx xxxxxx xxxxxxx:
+In Object Browser, you can inspect all Windows Runtime types that are defined in .winmd files. This includes the types in the Platform namespace and the default namespace. However, because the types in the Platform::Collections namespace are defined in the header file collections.h, not in a winmd file, they don’t appear in Object Browser.
 
-## **Xx xxxxxxxx xxxxxxxxx xxxxxxx**
+## **To inspect a component**
 
-1.  Xx xxx xxxx xxx, xxxxxx **Xxxxx, Xxxxxxx**.
-2.  Xx xxx **Xxxxxxx** xxxxxx xxx, xxxxxx **Xxxxxxxxx** xxx xxxxxx **Xxxxxxx**.
-3.  Xxxxxx **Xxxxxxxxx Xxxxxx Xxxxxxx** xxx xxx xxxxxx xxx **XX** xxxxxx.
+1.  On the menu bar, choose **View, Object Browser** (Ctrl+Alt+J).
+2.  In the left pane of the Object Browser, expand the WinRT\_CPP node to show the types and methods that are defined on your component.
 
-Xx xxxxx xxxx xxxx xxxx xx xxxxxxxx xxx xxxxxxx xxx xxxxx xxxx. Xxx xxxxxx xxxxxxxxxxx xxx xxxx xxxx xxx xxxxx XY, xxxxxxx x xxxxx xxxxxxxxx xx xxxxx xx xxxxx xxx xxxxxxx.
+## Debugging tips
 
-Xxxx xxx xxxxx x XxxxXxxxxx xxxxxxxx xxxx xxx x xxxxxxxxx XXX, xxx xxx xxx xxx xxxxxxxx xx xxxxxx xxxxxx xxxxxxxx xxxxxxx xxxxxx xx xxxxxxxx xxxxxxx xxxxxx xxxx xx xxx xxxxxxxxx, xxx xxx xxxx xx xxx xxxx xxxx. Xx xxxxxx xxx xxxxxxx, xxxx xxx xxxxxxxx xxxx xxx xxx XxxxXxxxxx xxxxxxx xxxx xx Xxxxxxxx Xxxxxxxx xxx xxxxxx **Xxxxxxxxxx, Xxxxxxxxx, Xxxxxxxx Xxxx**.
 
-Xx xxxx xx xxxxxx xxxxxxxxxxx xxxxxxxxxxxx xx xxx xxxxxxx xxxxxxxx. Xxx xxx xxxx xxx xxxxxxx xxxxxxxx xx xxxxxxx xxx Xxxxxxx.xxxxxxxxxxxx xxxx. Xxx xxxxxxx, xx xxx xxx xxxxxxxxxx xx xxxxxxxxxxxxxxxx xxxxxx xxxxx xx xxx Xxxxxxxx xxxxxx, xx xxxx xx xxxxxx xxx **Xxxxxxxx Xxxxxxx** xxxxx xxx xx xxx **Xxxxxxxxxxxx** xxxx xx xxx xxxxxxx xxxxxxxx.
+For a better debugging experience, download the debugging symbols from the public Microsoft symbol servers:
 
-Xx xxxx XxxxXxxxxx xxxx xxxxx'x xxxxxxxxx xxx xxxxxx xxxxxxxxxx xx xxxxxxx xx xxx xxxxxxxxx, xxxx xxxx xxxx xx XxxxXxxxxx xxx xxx xxxxx xxxxx xxxxxx. Xxx xxxxxxx, xxx `ComputeResult` X++ xxxxxx xxxx xx xxxxxxxxxx xx `computeResult` xx XxxxXxxxxx.
+## **To download debugging symbols**
 
-Xx xxx xxxxxx x X++ Xxxxxxx Xxxxxxx Xxxxxxxxx xxxxxxx xxxx x xxxxxxxx, xxx xxxx xxxx xxxxxxxx xxxxxx xxx xxxxxxx xxxxxxxxx xxxx xxx XxxxXxxxxx xxxxxxx. Xxxxxxx xx xx xx xxxxxxxx xxxxxxxxxx xxxxx xx xxxxx xxxxxxxxxx. Xx xxxxxxxxx, xxx xxx xxxx xxx xx xxxxxxxx xxxxxxxxx xx xxx XXX.
+1.  On the menu bar, choose **Tools, Options**.
+2.  In the **Options** dialog box, expand **Debugging** and select **Symbols**.
+3.  Select **Microsoft Symbol Servers** and the choose the **OK** button.
 
-## Xxxxxxx xxxxxx
+It might take some time to download the symbols the first time. For faster performance the next time you press F5, specify a local directory in which to cache the symbols.
 
-* [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X++](creating-windows-runtime-components-in-cpp.md)
+When you debug a JavaScript solution that has a component DLL, you can set the debugger to enable either stepping through script or stepping through native code in the component, but not both at the same time. To change the setting, open the shortcut menu for the JavaScript project node in Solution Explorer and choose **Properties, Debugging, Debugger Type**.
+
+Be sure to select appropriate capabilities in the package designer. You can open the package designer by opening the Package.appxmanifest file. For example, if you are attempting to programmatically access files in the Pictures folder, be sure to select the **Pictures Library** check box in the **Capabilities** pane of the package designer.
+
+If your JavaScript code doesn't recognize the public properties or methods in the component, make sure that in JavaScript you are using camel casing. For example, the `ComputeResult` C++ method must be referenced as `computeResult` in JavaScript.
+
+If you remove a C++ Windows Runtime Component project from a solution, you must also manually remove the project reference from the JavaScript project. Failure to do so prevents subsequent debug or build operations. If necessary, you can then add an assembly reference to the DLL.
+
+## Related topics
+
+* [Creating Windows Runtime Components in C++](creating-windows-runtime-components-in-cpp.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

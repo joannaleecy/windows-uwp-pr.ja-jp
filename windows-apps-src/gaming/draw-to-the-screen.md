@@ -1,43 +1,39 @@
 ---
-xxxxx: Xxxx xx xxx xxxxxx
-xxxxxxxxxxx: Xxxxxxx, xx xxxx xxx xxxx xxxx xxxxx xxx xxxxxxxx xxxx xx xxx xxxxxx.
-xx.xxxxxxx: xxYYYYYY-xYYY-xYYY-xYYx-YYYYxYYYxYxx
+title: 画面への描画
+description: 最後に、回転する立方体を画面に描画するコードを移植します。
+ms.assetid: cc681548-f694-f613-a19d-1525a184d4ab
 ---
 
-# Xxxx xx xxx xxxxxx
+# 画面への描画
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**XXYXYYXxxxxxxYX**](https://msdn.microsoft.com/library/windows/desktop/ff476635)
--   [**XXYXYYXxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476582)
--   [**XXXXXXxxxXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404631)
+-   [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)
+-   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582)
+-   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)
 
-Xxxxxxx, xx xxxx xxx xxxx xxxx xxxxx xxx xxxxxxxx xxxx xx xxx xxxxxx.
+最後に、回転する立方体を画面に描画するコードを移植します。
 
-Xx XxxxXX XX Y.Y, xxxx xxxxxxx xxxxxxx xx xxxxxxx xx xx XXXXxxxxxx xxxx, xxxxx xxxxxxxx xxx xxxxxx xxx xxxxxxx xxxxxxxxxx xx xxxx xxx xxxxxxxxx xxxxxxxxx xxx xxxxxxx xx xxx xxxxxx xxxxxxx xxxx xxxx xx xxxx xx xxxxxxx xxx xxxxx xxxxx xxxxxxxxx xx xxx xxxxxx. Xxx xxx xxxx xxxxxxx xx xxxxxxxxx xxx xxxxxxxx xxxxxxxxx xx xxxxxxxxx xxxxxxx xxx xxxxxxx xx xxxx xxxxxx xxxxxxxx xx xxx xxxxxxx. Xxx xx xxx xxxxxxx xxxxxxxxx xx xxx "xxxx xxxxxx" (xx "xxxxx xxxxxx xxxxxx") xxxx xxxxxxxx xxx xxxxx, xxxxxxxxxx xxxxxx xxxxxxx, xxxxx xxx xxxxxxxxxxxx xx xxx xxxxxxx.
+OpenGL ES 2.0 では、描画コンテキストは EGLContext の型として定義されます。これには、ウィンドウとサーフェスのパラメーターのほか、ウィンドウに表示される最終的な画像の作成に使われるレンダー ターゲットへの描画に必要なリソースが含まれます。 このコンテキストを使ってグラフィックス リソースを構成し、シェーダー パイプラインの結果をディスプレイに正しく表示します。 主要なリソースの 1 つは "バック バッファー" (または "フレーム バッファー オブジェクト") と呼ばれ、ディスプレイに表示できる最終的な構成済みレンダー ターゲットが含まれます。
 
-Xxxx XxxxxxYX, xxx xxxxxxx xx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxxx xxx xxxxxxx xx xxx xxxxxxx xx xxxx xxxxxxxx, xxx xxxxxxxx xxxxx x xxx xxxx XXXx. (X Xxxxxxxxx Xxxxxx Xxxxxx XxxxxxYX xxxxxxxx xxx xxxxxxxxxxxxx xxxxxxxx xxxx xxxxxxx, xxxxxx!) Xx xxxxxx x xxxxxxx (xxxxxx x XxxxxxYX xxxxxx xxxxxxx), xxx xxxx xxxxx xxxxxx xx [**XXYXYYXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404575) xxxxxx, xxx xxx xx xx xxxxxx xxx xxxxxxxxx xx [**XXYXYYXxxxxxXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404598) xxxxxx. Xxxxx xxx xxxxxxx xxx xxxx xx xxxxxxxxxxx xx xxxxxxxxx xxx xxxxxxxx xxxxxxxxx xxx xxxx xxx xxxxxxx xx xxx xxxxxxx.
+Direct3D を使ってディスプレイに描画するためのグラフィックス リソースを構成するプロセスは、もう少し解説が必要なプロセスであり、かなりの数の API を必要とします (ただし、Microsoft Visual Studio Direct3D テンプレートを使うと、このプロセスを大幅に簡素化できます)。コンテキスト (Direct3D デバイス コンテキスト) を取得するには、最初に [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) オブジェクトを取得し、それを使って [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) オブジェクトを作成、構成する必要があります。 これら 2 つのオブジェクトは、ディスプレイへの描画に必要な特定のリソースを構成するために、組み合わせて使われます。
 
-Xx xxxxx, xxx XXXX XXXx xxxxxxx xxxxxxxxx XXXx xxx xxxxxxxx xxxxxxxxx xxxx xxxxxxxx xxxxxxx xx xxx xxxxxxxx xxxxxxx, xxx XxxxxxYX xxxxxxxx xxx XXXx xxxx xxxxx xxx xx xxxxxxxxx xxxxxxx xxx XXX xxx xxxx xxxx xxxxxxx xxxxxxx xx xxx XXX.
+つまり、DXGI API には、グラフィックス アダプターに直接関係するリソースを管理するための API が主として含まれ、Direct3D には、CPU で実行されるメイン プログラムと GPU の橋渡しをする API が含まれます。
 
-Xxx xxx xxxxxxxx xx xxxxxxxxxx xx xxxx xxxxxx, xxxx xxx xxx xxxxxxxx xxxxx xxxx xxxx XXX:
+このサンプルでの比較のために、各 API から該当する型を紹介します。
 
--   [
-            **XXYXYYXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404575): xxxxxxxx x xxxxxxx xxxxxxxxxxxxxx xx xxx xxxxxxxx xxxxxx xxx xxx xxxxxxxxx.
--   [
-            **XXYXYYXxxxxxXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404598): xxxxxxxx xxx xxxxxxxxx xx xxxxxxxxx xxxxxxx xxx xxxxx xxxxxxxxx xxxxxxxx.
--   [
-            **XXXXXXxxxXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404631): xxx xxxx xxxxx xx xxxxxxxxx xx xxx xxxx xxxxxx xx XxxxXX XX Y.Y. Xx xx xxx xxxxxx xx xxxxxx xx xxx xxxxxxxx xxxxxxx xxxx xxxxxxxx xxx xxxxx xxxxxxxx xxxxx(x) xxx xxxxxxx. Xx xx xxxxxx xxx "xxxx xxxxx" xxxxxxx xx xxx xxxxxxx xxxxxxx xxxx xxx xx xxxxxxx xx xxx "xxxxxxx" xx xxxxxxx xxx xxxxxx xxxxxx xx xxx xxxxxx.
--   [
-            **XXYXYYXxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476582): xxxx xxxxxxxx xxx YX xxxxxx xxxxxx xxxx xxx XxxxxxYX xxxxxx xxxxxxx xxxxx xxxx, xxx xxxxx xx xxxxxxxxx xx xxx xxxx xxxxx. Xx xxxx XxxxXX XX Y.Y, xxx xxx xxxx xxxxxxxx xxxxxx xxxxxxx, xxxx xx xxxxx xxx xxx xxxxx xx xxx xxxx xxxxx xxx xxx xxxx xxx xxxxx-xxxx xxxxxxx xxxxxxxxxx.
+-   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575): グラフィックス デバイスとそのリソースの仮想表現を提供します。
+-   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598): バッファーを構成し、レンダリング コマンドを発行するためのインターフェイスを提供します。
+-   [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631): スワップ チェーンは OpenGL ES 2.0 のバック バッファーに似ています。 これは、ディスプレイに表示する最終的なレンダリング画像を含むグラフィックス アダプターのメモリ領域です。 これは、最新のレンダリングを画面に表示するために、書き込みと "スワップ" を行うことのできるバッファーをいくつか持つため、"スワップ チェーン" と呼ばれます。
+-   [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582): Direct3D デバイス コンテキストの描画先の 2D ビットマップ バッファー (スワップ チェーンによって表示される) が含まれます。 OpenGL ES 2.0 の場合と同様に、レンダー ターゲットは複数作成できます。その一部はスワップ チェーンにバインドされませんが、マルチパス シェーディング手法で利用されます。
 
-Xx xxx xxxxxxxx, xxx xxxxxxxx xxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxx:
+テンプレートのレンダラー オブジェクトには次のフィールドがあります。
 
-XxxxxxYX YY: Xxxxxx xxx xxxxxx xxxxxxx xxxxxxxxxxxx
+Direct3D 11: デバイスとデバイス コンテキストの宣言
 
 ``` syntax
 Platform::Agile<Windows::UI::Core::CoreWindow>       m_window;
@@ -48,7 +44,7 @@ Microsoft::WRL::ComPtr<IDXGISwapChain1>                      m_swapChainCoreWind
 Microsoft::WRL::ComPtr<ID3D11RenderTargetView>          m_d3dRenderTargetViewWin;
 ```
 
-Xxxx'x xxx xxx xxxx xxxxxx xx xxxxxxxxxx xx x xxxxxx xxxxxx xxx xxxxxxxx xx xxx xxxx xxxxx.
+次に、バック バッファーをレンダー ターゲットとして構成し、スワップ チェーンに提供する方法を示します。
 
 ``` syntax
 ComPtr<ID3D11Texture2D> backBuffer;
@@ -59,19 +55,19 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-Xxx XxxxxxYX xxxxxxx xxxxxxxxxx xxxxxxx xx [**XXXXXXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/ff471343) xxx xxx [**XXYXYYXxxxxxxYX**](https://msdn.microsoft.com/library/windows/desktop/ff476635), xxxxx xxxxxxxxxx xxx xxxxxxx xx x "xxxx xxxxxx" xxxx xxx xxxx xxxxx xxx xxx xxx xxxxxxx.
+Direct3D ランタイムは [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) の [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343) を暗黙的に作成します。これは、スワップ チェーンで表示に使うことのできる "バック バッファー" としてのテクスチャを表します。
 
-Xxx xxxxxxxxxxxxxx xxx xxxxxxxxxxxxx xx xxx XxxxxxYX xxxxxx xxx xxxxxx xxxxxxx, xx xxxx xx xxx xxxxxx xxxxxxx, xxx xx xxxxx xx xxx xxxxxx **XxxxxxXxxxxxXxxxxxxxx** xxx **XxxxxxXxxxxxXxxxXxxxxxxxxXxxxxxxxx** xxxxxxx xx xxx XxxxxxYX xxxxxxxx.
+レンダー ターゲットのほか、Direct3D デバイスとデバイス コンテキストの初期化と構成は、Direct3D テンプレートのカスタムの **CreateDeviceResources** メソッドと **CreateWindowSizeDependentResources** メソッドで確かめることができます。
 
-Xxx xxxx xxxx xx XxxxxxYX xxxxxx xxxxxxx xx xx xxxxxxx xx XXX xxx xxx XXXXxxxxxx xxxx, xxxx [Xxxx XXX xxxx xx XXXX xxx XxxxxxYX](moving-from-egl-to-dxgi.md).
+EGL と EGLContext の型に関連する Direct3D デバイス コンテキストについて詳しくは、「[DXGI と Direct3D の EGL コードの比較](moving-from-egl-to-dxgi.md)」をご覧ください。
 
-## Xxxxxxxxxxxx
+## 手順
 
-### Xxxx Y: Xxxxxxxxx xxx xxxxx xxx xxxxxxxxxx xx
+### 手順 1: シーンのレンダリングと表示
 
-Xxxxx xxxxxxxx xxx xxxx xxxx (xx xxxx xxxx, xx xxxxxxxx xx xxxxxxxx xxxxxx xxx x xxxx), xxx Xxxxxx xxxxxx xxxx xxx xxxxxxxx xx xxx xxxxxxxxxx xx xx xxxxxxx xxxxxxx (xx XXXXxxxxxx). Xxxx xxxxxxx xxxxxxxx xxx xxxxx xxxxxx xxxx xxxx xx xxxxxxxxx xx xxx xxxxxx xxxxxxx (xx XXXXxxxxxx), xxxxx xxx xxxxxxxxxx xxxxxxx (XXXXxxxxxx). Xx xxxx xxxx, xxx xxxxxxx xxxxxxx xxx xxxxxx xxxx xxxxxxxxxx, xx-xxxxx xxx xxxxx xxxxxx, xxxxx xxx xxxx, xxx xxxxx xx xxxxx xxxxxx xxxxx xx xxx xxxxxxx xxxxxxxx xx xxx xxxxxxx xxxxxxx.
+立方体のデータを更新した後 (この例では y 軸を中心に少し回転させる) で、Render メソッドはビューポートを描画コンテキスト (EGLContext) のサイズに設定します。 このコンテキストには、構成済みのディスプレイ (EGLDisplay) を使ってウィンドウ サーフェス (EGLSurface) に表示される色のバッファーが含まれます。 この時点で、この例では、頂点データの属性を更新する、インデックス バッファーを再バインドする、立方体を描画する、表示サーフェスへのシェーディング パイプラインによって描画される色のバッファーでスワップするという一連の処理を行います。
 
-XxxxXX XX Y.Y: Xxxxxxxxx x xxxxx xxx xxxxxxx
+OpenGL ES 2.0: 表示するフレームのレンダリング
 
 ``` syntax
 void Render(GraphicsContext *drawContext)
@@ -117,19 +113,28 @@ void Render(GraphicsContext *drawContext)
 }
 ```
 
-Xx XxxxxxYX YY, xxx xxxxxxx xx xxxx xxxxxxx. (Xx'xx xxxxxxxx xxxx xxx'xx xxxxx xxx xxxxxxxx xxx xxxxxx xxxxxx xxxxxxxxxxxxx xxxx xxx XxxxxxYX xxxxxxxx.
+Direct3D 11 では、プロセスはよく似ています (Direct3D テンプレートのビューポートとレンダー ターゲットの構成を使っていることを前提とします)。
 
--   Xxxxxx xxx xxxxxxxx xxxxxxx (xxx xxxxx-xxxx-xxxxxxxxxx xxxxxx, xx xxxx xxxx) xxxx xxxxx xx [**XXYXYYXxxxxxXxxxxxxY::XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh446790).
--   Xxx xxx xxxxxx xxxxxx xxxx [**XXYXYYXxxxxxXxxxxxxY::XXXxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
--   Xxx xxx xxxxx xxxxxx xxxx [**XXYXYYXxxxxxXxxxxxxY::XXXxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476453).
--   Xxx xxx xxxxxxxx xxxxxxxx xxxxxxxx (x xxxxxxxx xxxx) xxxx [**XXYXYYXxxxxxXxxxxxxY::XXXxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476455).
--   Xxx xxx xxxxx xxxxxx xx xxx xxxxxx xxxxxx xxxx [**XXYXYYXxxxxxXxxxxxxY::XXXxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476454).
--   Xxxx xxx xxxxxx xxxxxx xxxx [**XXYXYYXxxxxxXxxxxxxY::XXXxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476493).
--   Xxxx xxx xxxxxxxx xxxxxx xxxx [**XXYXYYXxxxxxXxxxxxxY::XXXxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476472).
--   Xxxx xxx xxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxx xxx xxxxxx xxx xxxxx xxxxxxx xx xxx xxxxxx xxxxxx xxxxxx xxxx [**XXYXYYXxxxxxXxxxxxxY::XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476409).
--   Xxxxxxx xxx xxxxxx xxxxxx xxxxxx xxxx [**XXXXXXxxxXxxxxY::XxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
+-   [
+            **ID3D11DeviceContext1::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/hh446790) を呼び出して定数バッファー (この場合はモデル ビュー プロジェクション マトリックス) を更新します。
+-   [
+            **ID3D11DeviceContext1::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) で頂点バッファーを設定します。
+-   [
+            **ID3D11DeviceContext1::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) でインデックス バッファーを設定します。
+-   [
+            **ID3D11DeviceContext1::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) で特定の三角形のトポロジ (三角形のリスト) を設定します。
+-   [
+            **ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) で頂点バッファーの入力レイアウトを設定します。
+-   [
+            **ID3D11DeviceContext1::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) で頂点シェーダーをバインドします。
+-   [
+            **ID3D11DeviceContext1::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) でフラグメント シェーダーをバインドします。
+-   [
+            **ID3D11DeviceContext1::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) を使って、シェーダーを通じてインデックス付き頂点を送信し、レンダー ターゲット バッファーに色の結果を出力します。
+-   [
+            **IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) でレンダー ターゲット バッファーを表示します。
 
-XxxxxxYX YY: Xxxxxxxxx x xxxxx xxx xxxxxxx
+Direct3D 11: 表示するフレームのレンダリング
 
 ``` syntax
 void RenderObject::Render()
@@ -192,30 +197,35 @@ void RenderObject::Render()
 
 ```
 
-Xxxx [**XXXXXXxxxXxxxxY::XxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh446797) xx xxxxxx, xxxx xxxxx xx xxxxxx xx xxx xxxxxxxxxx xxxxxxx.
+[
+            **IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) が呼び出されると、フレームが構成済みのディスプレイに出力されます。
 
-## Xxxxxxxx xxxx
-
-
-[Xxxx xxx XXXX](port-the-glsl.md)
-
-## Xxxxxxx
-
-Xxxx xxxxxxx xxxxxxx xxxx xxxx xx xxx xxxxxxxxxx xxxx xxxx xxxx xxxxxxxxxxx xxxxxx xxxxxxxxx, xxxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX xxxx. Xx xxxxxxx xxx xxxxxx xxx xxxx xxxxxxxx xxxx, xxxxxxxxxx xxx xxxxx xxxx xxxxxxx xxx xxxxxx xxx xxxxxx xxxxxxxx xxxxx xxx xxxxxxxxxx. XXX xxxx xxxx xx xxxxxxx xxxxxxxx xxxxxx xx xxxx xx xxxxxxx/xxxxxx xxxxxx, xxx xxx xxxxxxxx xxxxxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxx xxx xxxx xx xx xxxxxxxxx xx x xxxxxx xx xxx xxxxxxx xxxxxxxxxx.
-
-## Xxxxxxx xxxxxx
+## 前のステップ
 
 
-* [Xxx xx: xxxx x xxxxxx XxxxXX XX Y.Y xxxxxxxx xx XxxxxxYX YY](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
-* [Xxxx xxx xxxxxx xxxxxxx](port-the-shader-config.md)
-* [Xxxx xxx XXXX](port-the-glsl.md)
-* [Xxxx xx xxx xxxxxx](draw-to-the-screen.md)
+[GLSL の移植](port-the-glsl.md)
+
+## 注釈
+
+この例では、デバイス リソース (特にユニバーサル Windows プラットフォーム (UWP) DirectX アプリのデバイス リソース) の構成に伴う複雑さが目立っていません。 テンプレート コード全体を調べることをお勧めします。その中でも、ウィンドウとデバイス リソースの設定と管理に関係する部分に注目してください。 UWP アプリは中断/再開イベントだけではなく回転イベントもサポートする必要がありますが、テンプレートを通じて、インターフェイスの喪失や表示パラメーターの変更を処理するうえでのベスト プラクティスを確かめることができます。
+
+## 関連トピック
+
+
+* [簡単な OpenGL ES 2.0 レンダラーを Direct3D 11 に移植する方法](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+* [シェーダー オブジェクトの移植](port-the-shader-config.md)
+* [GLSL の移植](port-the-glsl.md)
+* [画面への描画](draw-to-the-screen.md)
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,126 +1,130 @@
 ---
-xxxxx: Xxxxxxxx xxxx xxx XXX xxxxxx xxxxx
-xxxxxxxxxxx: Xxx xxx xxx XXX xxxxxxxxxxxx xx xxxxxxxxxxxxx xxxxxx xxxx xxx xxxx xxxxxxx xxx xxxxxxxx x xxxxxxxx XXX xxxxxx.
-xx.xxxxxxx: YYYYXYXY-YYYY-YXXX-YXYX-YXXYXYXYYYXX
+title: Reserved file and URI scheme names
+description: You can use URI associations to automatically launch your app when another app launches a specific URI scheme.
+ms.assetid: 7428C4A2-1380-4EBB-9C2A-7DF7B5C468AE
 ---
-# Xxxxxxxx xxxx xxx XXX xxxxxx xxxxx
+# Reserved file and URI scheme names
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxx xxx xxx XXX xxxxxxxxxxxx xx xxxxxxxxxxxxx xxxxxx xxxx xxx xxxx xxxxxxx xxx xxxxxxxx x xxxxxxxx XXX xxxxxx. Xxx xxxxx xxx xxxx XXX xxxxxxxxxxxx xxxx xxx xxx’x xxx, xxxxxxxxxxxx xxxx xxx xxxxxxxx. Xx xxxx xxx xxxxxxxxx xxx x xxxxxxxx xxxxxxxxxxx, xxxx xxxxxxxxxxxx xxxx xx xxxxxxx. Xxxx xxxxx xxxxx xxx xxxxxxxx xxxx xxx XXX xxxxxx xxxxx xxxx xxx xxx xxxxxxxxx xx xxxx xxx.
+You can use URI associations to automatically launch your app when another app launches a specific URI scheme. But there are some URI associations that you can’t use, associations that are reserved. If your app registers for a reserved association, that registration will be ignored. This topic lists the reserved file and URI scheme names that are not available to your app.
 
-## Xxxxxxxx xxxx xxxxx
+## Reserved file types
 
 
-Xxxxx xxx xxx xxxxx xx xxxxxxxx xxxx xxxxx: xxxx xxxxx xxxxxxxx xxx xxxxx-xx xxxx xxx xxxx xxxxx xxxxxxxx xxx xxx xxxxxxxxx xxxxxx. Xxxx x xxxx xxxx xxxxxxxx xxx x xxxxx-xx xxx xx xxxxxxxx, xxxx xxx xxxxx-xx xxx xxxx xxxxxx. Xxx xxxxxxx xx xxxxxxxx xxxx xxx xxxx xxxx xxxx xxxx xx xxxxxxx. Xxxxxxxxx, xxx xxxxxxx xx xxxxxxxx xxxx xxx xxxx x xxxx xxxx xxxxxxxx xxx xxx xxxxxxxxx xxxxxx xxxx xxxx xx xxxxxxx.
+There are two types of reserved file types: file types reserved for built-in apps and file types reserved for the operating system. When a file type reserved for a built-in app is launched, only the built-in app will launch. Any attempt to register your app with that file type is ignored. Similarly, any attempt to register your app with a file type reserved for the operating system also will be ignored.
 
-Xxxx xxxxx xxxxxxxx xxx xxxxx-xx xxxx
+File types reserved for built-in apps
 
-| .xxx  | .xxxx    | .xxx  | .xxx   |
+| .aac  | .icon    | .pem  | .wdp   |
 |-------|----------|-------|--------|
-| .xxxx | .xxxx    | .xxx  | .xxx   |
-| .xxx  | .xxx     | .xxxx | .xxx   |
-| .xxx  | .xYx     | .xxxx | .xxx   |
-| .xxx  | .xYx     | .xxx  | .xxxxx |
-| .xxxx | .xYx     | .xxx  | .xxxx  |
-| .xxxx | .xxx     | .xxx  | .xxxx  |
-| .xxx  | .xxY     | .xxxx | .xxx   |
-| .xxx  | .xxY     | .xxx  | .xxx   |
-| .xxx  | .xxx     | .xxx  | .xxx   |
-| .xxxx | .xxxxxxY | .xxx  |        |
-| .xxx  | .xYx     | .xxx  |        |
+| .aetx | .jpeg    | .png  | .wmv   |
+| .asf  | .jxr     | .pptm | .xap   |
+| .bmp  | .m4a     | .pptx | .xht   |
+| .cer  | .m4r     | .qcp  | .xhtml |
+| .dotm | .m4v     | .rtf  | .xltm  |
+| .dotx | .mov     | .tif  | .xltx  |
+| .gif  | .mp3     | .tiff | .xml   |
+| .hdp  | .mp4     | .txt  | .xsl   |
+| .htm  | .one     | .url  | .zip   |
+| .html | .onetoc2 | .vcf  |        |
+| .ico  | .p7b     | .wav  |        |
  
 
-## Xxxx xxxxx xxxxxxxx xxx xxx xxxxxxxxx xxxxxx
+## File types reserved for the operating system
 
 
-Xxx xxxxxxxxx xxxx xxxxx xxx xxxxxxxx xxx xxx xxxxxxxxx xxxxxx
+The following file types are reserved for the operating system
 
-| .xxxxxxxxxxxxxx-xx | xxx      | .xxx           | .xxx      |
+| .accountpicture-ms | its      | .ops           | .url      |
 |--------------------|----------|----------------|-----------|
-| .xxx               | .xxx     | .xxx           | .xx       |
-| .xxx               | .xx      | .xxx           | .xxx      |
-| .xxx               | .xxx     | .xx            | .xxx      |
-| .xxxx              | .xxx     | .xxx           | .xxx      |
-| .xxxxxxxxxxx       | .xxx     | .xxxx          | .xxx      |
-| .xxxxxx-xx         | .xxx     | .xxx           | .xxxx     |
-| .xxx               | .xxx     | .xxx           | .xxxxxxxx |
-| .xxx               | .xxx     | .xxxxxxxxxxxxx | .xxx      |
-| .xxx               | .xxx     | .xxxxxxx       | .xxxxxx   |
-| .xxx               | .xxx     | .xxY           | .xx       |
-| .xxx               | .xxx     | .xxYxxx        | .xxx      |
-| .xxx               | .xxx     | .xxY           | .xxx      |
-| .xxx               | .xxx     | .xxYxxx        | .xxx      |
-| .xxx               | .xxx     | .xxxY          | .xxxx     |
-| .xxx               | .xxx     | .xxxY          | .xxx      |
-| .xxx               | .xxx     | .xxxY          | .xxx      |
-| .xxx               | .xxx     | .xxx           | .xxx      |
-| .xxxx              | .xxx     | .xxx           |           |
-| .xxx               | .xxx     | .xx            |           |
-| .xxx               | .xxx     | .xxx           |           |
-| .xxx               | .xxx     | .xxx           |           |
-| .xxx               | .xxx     | .xx            |           |
-| .xxx               | .xxx     | .xxx           |           |
-| .xxx               | .xxx     | .xxx           |           |
-| .xxx               | .xxx     | .xxx           |           |
-| .xxx               | .xxxY    | .xxx           |           |
-| .xxxxxx            | .xxxYxxx | .xxx           |           |
-| .xxx               | .xxxY    | .xxx           |           |
-| .xxx               | .xxxYxxx | .xxx           |           |
-| .xxx               | .xxxxxx  | .xxx           |           |
-| .xxx               | .xxx     | .xxx           |           |
-| .xxx               | .xxx     | .xxxxx         |           |
-| .xxx               | .xxx     | .xxx           |           |
-| .xxx               | .xxx     | .xxx           |           |
-| .xxx               | .xxx     | .xxx           |           |
+| .ade               | .jar     | .pcd           | .vb       |
+| .adp               | .js      | .pif           | .vbe      |
+| .app               | .jse     | .pl            | .vbp      |
+| .appx              | .ksh     | .plg           | .vbs      |
+| .application       | .lnk     | .plsc          | .vhd      |
+| .appref-ms         | .mad     | .prf           | .vhdx     |
+| .asp               | .maf     | .prg           | .vsmacros |
+| .bas               | .mag     | .printerexport | .vsw      |
+| .bat               | .mam     | .provxml       | .webpnp   |
+| .cab               | .maq     | .ps1           | .ws       |
+| .chm               | .mar     | .ps1xml        | .wsc      |
+| .cmd               | .mas     | .ps2           | .wsf      |
+| .cnt               | .mat     | .ps2xml        | .wsh      |
+| .com               | .mau     | .psc1          | .xaml     |
+| .cpf               | .mav     | .psc2          | .xdp      |
+| .cpl               | .maw     | .psm1          | .xip      |
+| .crd               | .mcf     | .pst           | .xnk      |
+| .crds              | .mda     | .pvw           |           |
+| .crt               | .mdb     | .py            |           |
+| .csh               | .mde     | .pyc           |           |
+| .der               | .mdt     | .pyo           |           |
+| .dll               | .mdw     | .rb            |           |
+| .drv               | .mdz     | .rbw           |           |
+| .exe               | .msc     | .rdp           |           |
+| .fxp               | .msh     | .reg           |           |
+| .fon               | .msh1    | .rgu           |           |
+| .gadget            | .msh1xml | .scf           |           |
+| .grp               | .msh2    | .scr           |           |
+| .hlp               | .msh2xml | .shb           |           |
+| .hme               | .mshxml  | .shs           |           |
+| .hpj               | .msi     | .sys           |           |
+| .hta               | .msp     | .theme         |           |
+| .inf               | .mst     | .tmp           |           |
+| .ins               | .msu     | .tsk           |           |
+| .isp               | .ocx     | .ttf           |           |
  
 
-## Xxxxxxxx XXX xxxxxx xxxxx
+## Reserved URI scheme names
 
 
-| xxxxxxxxxxx.xxxxxxxx                        | xxxxxxxxxxxxxxxx                      | xx-xxxxxxxx:xxxxxxx-xxxxxxxxxxxxx | xxxxxxx                 |
+| application.manifest                        | internetshortcut                      | ms-settings:network-mobilehotspot | shbfile                 |
 |---------------------------------------------|---------------------------------------|-----------------------------------|-------------------------|
-| xxxxxxxxxxx.xxxxxxxxx                       | xxxxxxxxxx                            | xx-xxxxxxxx:xxxxxxx-xxxxx         | xxxxxxxxx               |
-| xxxxxxx                                     | xxxxxxx                               | xx-xxxxxxxx:xxxxxxx-xxxx          | xxxxxxx                 |
-| xxxx                                        | xxxxxxx                               | xx-xxxxxxxx:xxxxxxxxxxxxxxx       | xxx                     |
-| xxxx                                        | xxxx                                  | xx-xxxxxxxx:xxxxxxxxxxxxx         | xxxxxxxxxxx             |
-| xxxxxx                                      | xxxxxxx                               | xx-xxxxxxxx:xxxxxxxxxxxxxxx       | xxxxxxx                 |
-| xxxxxxx                                     | xxxxxx                                | xx-xxxxxxxx:xxxxxxx-xxxxxxxx      | xxx                     |
-| xxx.xxxxxxxxxxxxxxxxxx                      | xxxx                                  | xx-xxxxxxxx:xxxxxxx-xxxxxxxx      | xxxxxx                  |
-| xxxxxxx                                     | xxxxxxxxx.xxxxxxxxxxxxxxxx.Y          | xx-xxxxxxxx:xxxxxxx-xxxxxxxxxxxxx | xxYYYY                  |
-| xxxxxxx                                     | xx-xxxxxxxxxxxxxxxxxxxxxx             | xx-xxxxxxxx:xxxxxxx-xxxxxxxx      | xxxxxxx                 |
-| xxxxxxx                                     | xx-xxxxxxx                            | xx-xxxxxxxx:xxxxxxx-xxxxxxxx      | xxxxxxx                 |
-| xxxx                                        | xx-xxxx                               | xx-xxxxxxxx:xxxxxxx-xxxxxxxxx     | xxxxxxxxxxxxxxxx        |
-| xxxxxxx                                     | xx-xxxxxxxx                           | xx-xxxxxxxx:xxxxxxx-xxxxxxxxxx    | xxxxxxx                 |
-| xxxxxxxx.xxxxxxxxxxxxx.xxxxxxxxxxxxx        | xx-xxxxx                              | xx-xxxxxxxx:xxxxxxx-xxxxxxxxxxxx  | xxxxxxxx                |
-| xxxxxxxx.xxxxxxxxxxxxx.xxxxxxxxxxxx         | xxx.xxxxxxx                           | xx-xxxxxxxx:xxxxxxx-xxxxxx        | xxxxxxx                 |
-| xxxxxxxx.xxxxxxxxxxxxx.xxxxxxxxx            | xxx.xxxxx                             | xx-xxxxxxxx:xxxxxxxxx             | xxxxxx                  |
-| xxxxxxxx.xxxxxxxxxxxxx.xxxxxxxxxxxx         | xx-xxxxxxxxxx                         | xx-xxxxxxxx:xxxxxxxxxxxxxx        | xxxxxxx.xxxxxx          |
-| xxxxxxxx.xxxxxxxxxxxxx.xxxxxx-xx            | xx-xxxxxxxx                           | xx-xxxxxxxx:xxxxxxxxxxxxxx        | xxxxxxxxxxxxxxxxxxxxx   |
-| xxxxxxxx.xxxxxxxxxxxxx                      | xx-xxxxxxxx:xxxxxxxxxxxx              | xx-xxxxxxxx:xxxxxx                | xxxxxxxxxxxxxxxxxxxxx   |
-| xxxxxxxx.xxxxxxxxxxxxxxxxxxxxx.xxxxxxxxxxxx | xx-xxxxxxxx:xxxxxxxxxxxx-xxxxxxxx     | xx-xxxxxxxx:xxxxxxxxxxxx          | xxxxxxxxxxxxxxxxxxxxx   |
-| xxxxxxxx.xxxxxxxxxxxx                       | xx-xxxxxxxx:xxxxxxxxxxxx-xxxxxxxxxxxx | xx-xxxxxxxx:xxxxxxxxxxxxx         | xxxYY.xxxxxxxxxxxxx.xxx |
-| xxxxxxxx.xxxxxxxxx                          | xx-xxxxxxxx:xxxxxxxxx                 | xx-xxxxxxxx:xxxxxxxxx             | xxxxxxx                 |
-| xxxxxxxx.xxxxxxxxxxxx                       | xx-xxxxxxxx:xxxxxxxxxxxxxxxx          | xx-xxxxxxx-xxxxx                  | xxxxxx                  |
-| xxxx                                        | xx-xxxxxxxx:xxxxxxxxxxxxx             | xx-xxxx                           | xxxxxxx                 |
-| xxxxxxx                                     | xx-xxxxxxxx:xxxxxxxxx                 | xxxxxxx                           | xxxx                    |
-| xxxxxxx                                     | xx-xxxxxxxx:xxxxxxxxxxx               | xxxxxx                            | xxxx                    |
-| xxxxxxx                                     | xx-xxxxxxxx:xxxxxxx                   | xxxxxxx                           |                         |
-| xxxx                                        | xx-xxxxxxxx:xxxxxxxxxx                | xxxxxxx                           |                         |
-| xxxxx                                       | xx-xxxxxxxx:xxxx                      | xxxxxxx                           |                         |
-| xxxxxxxxx                                   | xx-xxxxxxxx:xxxxxxx-xxxxxxxxxxxx      | xxx                               |                         |
-| xxxxx                                       | xx-xxxxxxxx:xxxxxxx-xxxxxxxx          | xxxxxx                            |                         |
-| xxxxxxx                                     | xx-xxxxxxxx:xxxxxxx-xxxxxx            | xxxxxxx                           |                         |
-| xxxxxxx                                     | xx-xxxxxxxx:xxxxxxx-xxxxxxxx          | xxxxxxxxxxxxx                     |                         |
+| application.reference                       | javascript                            | ms-settings:network-proxy         | shcmdfile               |
+| batfile                                     | jscript                               | ms-settings:network-wifi          | shsfile                 |
+| bing                                        | jsefile                               | ms-settings:nfctransactions       | smb                     |
+| blob                                        | ldap                                  | ms-settings:notifications         | stickynotes             |
+| callto                                      | lnkfile                               | ms-settings:personalization       | sysfile                 |
+| cerfile                                     | mailto                                | ms-settings:privacy-calendar      | tel                     |
+| chm.filecmdfilecomfile                      | maps                                  | ms-settings:privacy-contacts      | telnet                  |
+| cplfile                                     | microsoft.powershellscript.1          | ms-settings:privacy-customdevices | tn3270                  |
+| dllfile                                     | ms-accountpictureprovider             | ms-settings:privacy-feedback      | ttffile                 |
+| drvfile                                     | ms-appdata                            | ms-settings:privacy-location      | unknown                 |
+| dtmf                                        | ms-appx                               | ms-settings:privacy-messaging     | usertileprovider        |
+| exefile                                     | ms-autoplay                           | ms-settings:privacy-microphone    | vbefile                 |
+| explorer.assocactionid.burnselection        | ms-excel                              | ms-settings:privacy-speechtyping  | vbscript                |
+| explorer.assocactionid.closesession         | msi.package                           | ms-settings:privacy-webcam        | vbsfile                 |
+| explorer.assocactionid.erasedisc            | msi.patch                             | ms-settings:proximity             | wallet                  |
+| explorer.assocactionid.zipselection         | ms-powerpoint                         | ms-settings:regionlanguage        | windows.gadget          |
+| explorer.assocprotocol.search-ms            | ms-settings                           | ms-settings:screenrotation        | windowsmediacenterapp   |
+| explorer.burnselection                      | ms-settings:batterysaver              | ms-settings:speech                | windowsmediacenterssl   |
+| explorer.burnselectionexplorer.closesession | ms-settings:batterysaver-settings     | ms-settings:storagesense          | windowsmediacenterweb   |
+| explorer.closesession                       | ms-settings:batterysaver-usagedetails | ms-settings:windowsupdate         | wmp11.assocprotocol.mms |
+| explorer.erasedisc                          | ms-settings:bluetooth                 | ms-settings:workplace             | wsffile                 |
+| explorer.zipselection                       | ms-settings:connecteddevices          | ms-windows-store                  | wsfile                  |
+| file                                        | ms-settings:cortanasearch             | ms-word                           | wshfile                 |
+| fonfile                                     | ms-settings:datasense                 | ocxfile                           | xbls                    |
+| hlpfile                                     | ms-settings:dateandtime               | office                            | zune                    |
+| htafile                                     | ms-settings:display                   | onenote                           |                         |
+| http                                        | ms-settings:lockscreen                | piffile                           |                         |
+| https                                       | ms-settings:maps                      | regfile                           |                         |
+| iehistory                                   | ms-settings:network-airplanemode      | res                               |                         |
+| ierss                                       | ms-settings:network-cellular          | rlogin                            |                         |
+| inffile                                     | ms-settings:network-dialup            | scrfile                           |                         |
+| insfile                                     | ms-settings:network-ethernet          | scriptletfile                     |                         |
 
  
 
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

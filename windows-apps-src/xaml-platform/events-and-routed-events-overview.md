@@ -1,34 +1,34 @@
 ---
-xxxxxxxxxxx: Xx xxxxxxxx xxx xxxxxxxxxxx xxxxxxx xx xxxxxx xx x Xxxxxxx Xxxxxxx xxx, xxxx xxxxx X#, Xxxxxx Xxxxx xx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX) xx xxxx xxxxxxxxxxx xxxxxxxx, xxx XXXX xxx xxxx XX xxxxxxxxxx.
-xxxxx: Xxxxxx xxx xxxxxx xxxxxx xxxxxxxx
-xx.xxxxxxx: YYXYYYXY-YXXX-YYXX-YXXX-YXXYYYYYYYYY
+description: このトピックでは、Windows ランタイム アプリで、プログラミング言語に C#、Visual Basic、または Visual C++ コンポーネント拡張機能 (C++/CX)、UI 定義に XAML を使う場合のイベントのプログラミングの概念について説明します。
+title: イベントとルーティング イベントの概要
+ms.assetid: 34C219E8-3EFB-45BC-8BBD-6FD937698832
 ---
 
-# Xxxxxx xxx xxxxxx xxxxxx xxxxxxxx
+# イベントとルーティング イベントの概要
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-**Xxxxxxxxx XXXx**
--   [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911)
--   [**XxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208809)
+**重要な API**
+-   [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911)
+-   [**RoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br208809)
 
-Xx xxxxxxxx xxx xxxxxxxxxxx xxxxxxx xx xxxxxx xx x Xxxxxxx Xxxxxxx xxx, xxxx xxxxx X#, Xxxxxx Xxxxx xx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX) xx xxxx xxxxxxxxxxx xxxxxxxx, xxx XXXX xxx xxxx XX xxxxxxxxxx. Xxx xxx xxxxxx xxxxxxxx xxx xxxxxx xx xxxx xx xxx xxxxxxxxxxxx xxx XX xxxxxxxx xx XXXX, xx xxx xxx xxx xxx xxxxxxxx xx xxxx. Xxxxxxx Xxxxxxx xxxxxxxx *xxxxxx xxxxxx*: xxxxxxx xxxxx xxxxxx xxx xxxx xxxxxx xxx xx xxxxxxx xx xxxxxxx xxxxxx xxx xxxxxx xxxx xxxxx xxx xxxxx. Xxxxxx xxxxxx xxx xxxxxx xxxx xxx xxxxxx xxxxxxx xxxxxxxxx, xx xxx xxxxx xx xxxxxx xxxxxxxxxx.
+このトピックでは、Windows ランタイム アプリで、プログラミング言語に C#、Visual Basic、または Visual C++ コンポーネント拡張機能 (C++/CX)、UI 定義に XAML を使う場合のイベントのプログラミングの概念について説明します。 イベントのハンドラーは、UI 要素の宣言の一部として XAML で割り当てることも、コードで追加することもできます。 Windows ランタイムは*ルーティング イベント*をサポートしており、特定の入力イベントとデータ イベントを、その発生元オブジェクト以外のオブジェクトで処理できます。 ルーティング イベントは、コントロール テンプレートを定義する際や、ページまたはレイアウト コンテナーを使う際に役立ちます。
 
-## Xxxxxx xx x xxxxxxxxxxx xxxxxxx
+## プログラミングの概念としてのイベント
 
-Xxxxxxxxx xxxxxxxx, xxxxx xxxxxxxx xxxx xxxxxxxxxxx x Xxxxxxx Xxxxxxx xxx xxx xxxxxxx xx xxx xxxxx xxxxx xx xxxx xxxxxxx xxxxxxxxxxx xxxxxxxxx. Xx xxx xxxx xxx xx xxxx xxxx Xxxxxxxxx .XXX xx X++ xxxxxx xxxxxxx, xxx xxxx x xxxx xxxxx. Xxx xxx xxx'x xxxx xx xxxx xxxx xxxx xxxxx xxxxx xxxxx xxxxxxxx xx xxxxxxx xxxx xxxxx xxxxx, xxxx xx xxxxxxxxx xxxxxxxx.
+一般に、Windows ランタイム アプリのプログラミングを行う際のイベントの概念は、最も一般的なプログラミング言語のイベント モデルと似ています。 Microsoft .NET または C++ のイベントの操作方法を把握していれば、スムーズに理解できます。 ただし、ハンドラーのアタッチのような基本的なタスクを行うために、イベント モデルの概念について詳しく学ぶ必要はありません。
 
-Xxxx xxx xxx X#, Xxxxxx Xxxxx xx X++/XX xx xxxx xxxxxxxxxxx xxxxxxxx, xxx XX xx xxxxxxx xx xxxxxx (XXXX). Xx XXXX xxxxxx xxxxxx, xxxx xx xxx xxxxxxxxxx xx xxxxxxxxxx xxxxxx xxxxxxx xxxxxx xxxxxxxx xxx xxxxxxx xxxx xxxxxxxx xxx xxxxxxx xx xxxxx Xxx xxxxxxxxxxxx, xxxx xx XXX.XXX, xx XXXXY.
+プログラミング言語として C#、Visual Basic、または C++/CX を使用する場合、UI はマークアップ (XAML) で定義されます。 XAML マークアップの構文で、マークアップ要素とランタイム コード エンティティの間でイベントを関連付けるときの原則の一部は、他の Web テクノロジ (ASP.NET、HTML5 など) と似ています。
 
-**Xxxx**  Xxx xxxx xxxx xxxxxxxx xxx xxxxxxx xxxxx xxx x XXXX-xxxxxxx XX xx xxxxx xxxxxxxx xx xx *xxxx-xxxxxx* xx xxx xxxx-xxxxxx xxxx. Xx xxx Xxxxxxxxx Xxxxxx Xxxxxx xxxxxxxx xxxxx, xxxx xxxxxxxxxxxx xx xxxxx xxxxxxxxxxx, xxxx xxx xxxx-xxxxxx xxxx xxxxx x xxxxxxxxx xxx xxxxxx xxxx xxxxxx xxx XXXX xxxx xx xxxxxx xx.
+**注**  XAML で定義された UI のランタイム ロジックを提供するコードは、多くの場合、*コード ビハインド*またはコード ビハインド ファイルと呼ばれます。 Microsoft Visual Studio のソリューション ビューでは、コード ビハインド ファイルが参照先の XAML ページに対して依存する入れ子のファイルとして表示されて、この関係がグラフィカルに示されます。
 
-## Xxxxxx.Xxxxx: xx xxxxxxxxxxxx xx xxxxxx xxx XXXX
+## Button.Click: イベントと XAML の概要
 
-Xxx xx xxx xxxx xxxxxx xxxxxxxxxxx xxxxx xxx x Xxxxxxx Xxxxxxx xxx xx xx xxxxxxx xxxx xxxxx xx xxx XX. Xxx xxxxxxx, xxxx XX xxxxx xxxx x xxxxxx xxxx xxx xxxx xxxx xxxxx xx xxxxxx xxxx xx xx xxxxxx xxxxx.
+Windows ランタイム アプリの最も一般的なプログラミング タスクの 1 つは、ユーザー入力を UI に取り込むことです。 たとえば、UI には、ユーザーが情報を送信、または状態を変更するためにクリックする必要のあるボタンが組み込まれることがあります。
 
-Xxx xxxxxx xxx XX xxx xxxx Xxxxxxx Xxxxxxx xxx xx xxxxxxxxxx XXXX. Xxxx XXXX xx xxxxxxx xxx xxxxxx xxxx x xxxxxx xxxxxxx xx Xxxxxx Xxxxxx. Xxx xxx xxxx xxxxx xxx XXXX xx x xxxxx-xxxx xxxxxx xx x xxxxx-xxxxx XXXX xxxxxx. Xxxxx xxxxxxxxxx xxxx XXXX, xxx xxx xxxx xxxxx xxxxxxxx xxx xxxxxxxxxx XX xxxxxxxx xx xxx xxxx xxxx xxxx xxx xxxxxx xxx xxx xxxxx XXXX xxxxxxxxxx xxxx xxxxxxxxx xxxxxxxx xxxxxx xx xxxx XX xxxxxxx.
+Windows ランタイム アプリの UI を定義するには、XAML を生成します。 この XAML は、通常は Visual Studio のデザイン サーフェイスからの出力です。 また、プレーンテキスト エディターやサードパーティ製の XAML エディターで記述することもできます。 この XAML を生成するときに、個々の UI 要素のプロパティ値を設定するすべての XAML 属性を定義する際に、その UI 要素にイベント ハンドラーを関連付けることができます。
 
-Xx xxxx xxx xxxxxx xx XXXX, xxx xxxxxxx xxx xxxxxx-xxxx xxxx xx xxx xxxxxxx xxxxxx xxxx xxx'xx xxxxxxx xxxxxxx xx xxxx xxxxxx xxxxx xx xxxx xxxx-xxxxxx. Xxx xxxxxxx, xxxx XXXX xxxxxxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265) xxxxxx xxxx xxxxx xxxxxxxxxx ([x:Xxxx xxxxxxxxx](x-name-attribute.md), [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209366)) xxxxxxxx xx xxxxxxxxxx, xxx xxxxx x xxxxxxx xxx xxx xxxxxx'x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227737) xxxxx xx xxxxxxxxxxx x xxxxxx xxxxx `showUpdatesButton_Click`:
+XAML でイベントを記述する場合は、コード ビハインドで既に定義してあるものも、これから定義するものも含め、ハンドラー メソッドの文字列形式の名前を指定します。 たとえば、この XAML は、他のプロパティ ([x:Name 属性](x-name-attribute.md)、[**コンテンツ**](https://msdn.microsoft.com/library/windows/apps/br209366)) を属性として割り当てたうえで[**ボタン**](https://msdn.microsoft.com/library/windows/apps/br209265) オブジェクトを定義し、`showUpdatesButton_Click` というメソッドを参照してボタンの[**クリック**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントのハンドラーを関連付けます。
 
 ```XAML
 <Button x:Name="showUpdatesButton"
@@ -36,11 +36,11 @@ Xx xxxx xxx xxxxxx xx XXXX, xxx xxxxxxx xxx xxxxxx-xxxx xxxx xx xxx xxxxxxx xxxx
   Click="showUpdatesButton_Click"/>
 ```
 
-**Xxx***Xxxxx xxxxxx* xx x xxxxxxxxxxx xxxx. Xx xxxxxx xx xxx xxxxxxx xx xxxx xxxxxxx xxx xxxxxxxx xxxx xxxxxxxxxxx xx xx xxxxx xxxxxx xxxxxx x xxxxx xxxxxxx xxxxxx. Xx xxxx xxxxxxxxxx xxxx xxxxxx, xxxxx xxxxxx xx xxxxxxxx xx xxxxxxxx "XxxXxxxxxx" xxxx xxxx xxxxx xxxx xxx xxxxx xxx xxxxxx, xxx xxxxxxx xxxxxxxx x xxxxxx xxxxxx xxxxxxxx. Xx XXXX, xxx "XxxXxxxxxx" xx xxxxxxxx, xxx xxxxx xxxxxx xxxxxxxx xxxxxxxx xx xxxxxx xxx xxxxx xx xxx xxxxxxxxx xxxx xx xx xxxxxx xxxxxxx, xxx xxxxxx xxx xxxxxxx xx xxxx xxxxxxxxx'x xxxxx.
+**ヒント:** *イベントの関連付け*は、プログラミング用語です。 これは、イベントが発生して名前付けされたハンドラー メソッドを呼び出すことを示すプロセスやコードのことを指します。 ほとんどの手続き型コード モデルで、イベントの関連付けはイベントとメソッドの両方の名前を付ける暗黙的または明示的な "AddHandler" コードで、通常ターゲット オブジェクト インスタンスが関係しています。 XAML では、「AddHandler」は暗黙的であり、イベントの関連付けは、すべてオブジェクト要素の属性名としてのイベントの名前付けと、属性値としてのハンドラーの名前付けで構成されています。
 
-Xxx xxxxx xxx xxxxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxx xxx'xx xxxxx xxx xxx xxxx xxx'x xxxx xxx xxxx-xxxxxx. Xxxx xxx xxxxxxxxx `Click="showUpdatesButton_Click"`, xxx xxxx xxxxxxx x xxxxxxxx xxxx xxxx xxx XXXX xx xxxxxx-xxxxxxxx xxx xxxxxx, xxxx xxx XXXX xxxxxx xxxxxxx xxxx xx xxxx XXX'x xxxxx xxxxxx xxx xxx xxxxxxxx XXXX xxxxx xxxx xxx xxx xxxxx xxx xxxx x xxxxxx xxxxx `showUpdatesButton_Click` xx xxxx xx xxx xxx'x xxxx. `showUpdatesButton_Click` xxxx xx x xxxxxx xxxx xxxxxxxxxx x xxxxxxxxxx xxxxxx xxxxxxxxx (xxxxx xx x xxxxxxxx) xxx xxx xxxxxxx xx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227737) xxxxx. Xxx xxxxxxx, xxxx xxxx xxxxxxx xxx `showUpdatesButton_Click` xxxxxxx.
+実際のハンドラーは、アプリのすべてのコードとコード ビハインドで使っているプログラミング言語で記述します。 ここでは、`Click="showUpdatesButton_Click"` という属性を使ってコントラクトを作成しています。このコントラクトにより、XAML のマークアップ コンパイルと解析の際に、IDE のビルド アクションの XAML マークアップ コンパイル ステップと、アプリの読み込み時の最終的な XAML の解析で、`showUpdatesButton_Click` という名前のメソッドをアプリのコードの中から検出できます。 `showUpdatesButton_Click` は、[**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントのすべてのハンドラーに対応したメソッド シグネチャを (デリゲートに基づいて) 実装するメソッドであることが必要です。 たとえば、このコードは `showUpdatesButton_Click` ハンドラーを定義します。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 private void showUpdatesButton_Click (object sender, RoutedEventArgs e) {
     Button b = sender as Button;
@@ -60,37 +60,37 @@ void MyNamespace::BlankPage::showUpdatesButton_Click(Platform::Object^ sender, W
 }
 ```
 
-Xx xxxx xxxxxxx, xxx `showUpdatesButton_Click` xxxxxx xx xxxxx xx xxx [**XxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208812) xxxxxxxx. Xxx'x xxxx xxxx xxxx xx xxx xxxxxxxx xx xxx xxxxxxx xxx'xx xxx xxxx xxxxxxxx xxxxx xx xxx xxxxxx xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227737) xxxxxx xx xxx XXXX xxxxxxxxx xxxx.
+この例では、`showUpdatesButton_Click` メソッドは [**RoutedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br208812) デリゲートに基づいています。 MSDN のリファレンス ページで、[**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) メソッドの構文にこのデリゲートが指定されているため、このデリゲートを使います。
 
-**Xxx**  Xxxxxx Xxxxxx xxxxxxxx x xxxxxxxxxx xxx xx xxxx xxx xxxxx xxxxxxx xxx xxxxxx xxx xxxxxxx xxxxxx xxxxx xxx'xx xxxxxxx XXXX. Xxxx xxx xxxxxxx xxx xxxxxxxxx xxxx xx xxx xxxxx xx xxx XXXX xxxx xxxxxx, xxxx x xxxxxx xxxxx x Xxxxxxxxx XxxxxxxXxxxx xxxx xxxxxxxx. Xx xxx xxxxx **&xx;Xxx Xxxxx Xxxxxxx&xx;** xxxx xxx xxxx, Xxxxxxxxx Xxxxxx Xxxxxx xxxx xxxxxxx x xxxxxx xxxx xxxxx xx xxx xxxxxxx'x **x:Xxxx** (xx xxxx xxxx), xxx xxxxx xxxx, xxx x xxxxxxx xxxxxx. Xxx xxx xxxx xxxxx-xxxxx xxx xxxxxxxx xxxxx xxxxxxx xxxx xxx xxxxx **Xxxxxxxx xx Xxxxx Xxxxxxx**. Xxxx xxxx xxxxxxxx xxxxxxxx xx xxx xxxxx xxxxxxxx xxxxx xxxxxxx xxxxxxxxxx, xx xxxx xx xxx xxxx xxxxxx xxxx xx xxxx xxxx-xxxxxx xxxx xxx xxx XXXX xxxx. Xxx xxxxx xxxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxx, xxxxxxxxx xxx *xxxxxx* xxxxxxxxx xxx xxx xxxxx xxxx xxxxx xxxx xxx xxxxx xxxx. Xxxx, xx x xxxxxxx xxxxxx xxxx xxx xxxxxxx xxxxxxxxx xxxxxxx xxxxxx xx xxxx xxxx-xxxxxx, xxxx xxxxxx'x xxxx xxxxxxx xx xxx xxxx-xxxxxxxx xxxx-xxxx xxxxx xxxx xxx **&xx;Xxx Xxxxx Xxxxxxx&xx;** xxxxxx. Xxx xxx xxxx xxxxx xxx Xxx xxx xx x xxxxxxxx xxxxxxx xx xxxxxxxx xxx XxxxxxxXxxxx xxxx xxxxx.
+**ヒント:** Visual Studio では、XAML の編集中に、簡単にイベント ハンドラーに名前を付けたり、ハンドラー メソッドを定義したりできます。 XAML テキスト エディターでイベントの属性名を入力する際には、Microsoft IntelliSense リストが表示されるまで少し待ってください。 リストの [**&lt;新しいイベント ハンドラー&gt;**] をクリックすると、要素の **x:Name** (または型名) に基づいて、メソッド名、イベント名、数値サフィックスの候補が表示されます。 その後、選択したイベント ハンドラー名を右クリックし、**[イベント ハンドラーへ移動]** をクリックできます。 そうすると、新たに挿入されたイベント ハンドラー定義に直接移動します。これは、XAML ページのコード ビハインド ファイルのコード エディター ビューで確認できます。 イベント ハンドラーには既に正しいシグネチャが設定されています (*sender* パラメーターや、イベントが使う特定のイベント データ クラスなど)。 また、正しいシグネチャを持つハンドラー メソッドが既にコード ビハインド内に存在する場合は、メソッドの名前が **[&lt;新しいイベント ハンドラー&gt;]** オプションと共にオート コンプリート ドロップダウンに表示されます。 また、IntelliSense のリスト項目をクリックする代わりに、ショートカットとして Tab キーを押すこともできます。
 
-## Xxxxxxxx xx xxxxx xxxxxxx
+## イベント ハンドラーの定義
 
-Xxx xxxxxxx xxxx xxx XX xxxxxxxx xxx xxxxxxxx xx XXXX, xxxxx xxxxxxx xxxx xx xxxxxxx xx xxx xxxxxxx xxxxx xxxx xxxxxx xx xxx xxxx-xxxxxx xxx x XXXX xxxx. Xxxxx xxxxxxxx xxx xxxxxxx xxxx xxx xxxxx xx xxxx xx xxx xxxxxxx xxxxx xxxx xx xxxxxxxxxx xxxx xxxx XXXX. Xxxxx xxxxx xxxxxxxx xxx xxxxx xx xxx xxxxxxxxx xxxx x xxxxxxxxxx xxxxx xxxx. Xxxx xxxxx xxxxxxx xxxxxxx xxx xx xxxxxx xx xxxxxxx. Xxxxxxx xxxxxx xxxxx xxxxxxx xxx xxxxxxx xxx xxxxxxxx xxxxxxx xx xxx XXXX xxx xxxxxxxxxx xxxxxx xx xxxx xxxxxxxxxx. Xx xxxxxxx, xx xxxxxxxxx xxxx xxx xxxx xxxx xxxxx xxxxxxx xxxxxxx xxxxxxx xx xxx xxxxx.
+オブジェクトが UI 要素であり、XAML で宣言される場合、イベント ハンドラー コードは、XAML ページのコード ビハインドとなる部分クラスに定義します。 イベント ハンドラーは、XAML に関連付けられた部分クラスの一部として記述するメソッドです。 これらのイベント ハンドラーは、特定のイベントが使用するデリゲートに基づきます。 イベント ハンドラー メソッドは、public と private のどちらでもかまいません。 アクセス レベルを private に設定できるのは、XAML によって作成されるハンドラーとインスタンスが最終的にコード生成によって結合されるためです。 通常は、イベント ハンドラー メソッドをクラス内で private にすることをお勧めします。
 
-**Xxxx**  Xxxxx xxxxxxxx xxx X++ xxx'x xxx xxxxxxx xx xxxxxxx xxxxxxx, xxxx xxx xxxxxxxx xx xxx xxxxxx xx x xxxxxxx xxxxx xxxxxx. Xxx xxxxx xxxxxxx xxx x X++ xxxxxxx xxxx xxxx xx xxxxxxxxxx xxxx xxxx xxxxxxxx xxx XXXX xxxx xxxxxx xxx xxxx-xxxxxx xxxxx xxx X++.
+**注**  C++ のイベント ハンドラーは、部分クラスで定義するのではなく、private のクラス メンバーとしてヘッダーで宣言します。 C++ プロジェクトのビルド アクションでは、XAML の型システムと C++ のコード ビハインド モデルをサポートするコードが生成されます。
 
-### Xxx *xxxxxx* xxxxxxxxx xxx xxxxx xxxx
+### *sender* パラメーターとイベント データ
 
-Xxx xxxxxxx xxx xxxxx xxx xxx xxxxx xxx xxxxxx xxx xxxxxx xxxx xxx xxxxxxxxx xx xxxxx xxx xxxx xxxx xxxxx xxxx xxxxxxx xx xxxxxxx. Xxx xxxxx xxxx xxxxx xx *xxxxxx*, xxxxx xx x xxxxxxxxx xx xxx xxxxxx xxxxx xxx xxxxxxx xx xxxxxxxx. Xxx *xxxxxx* xxxxxxxxx xx xxxxx xx xxx xxxx **Xxxxxx** xxxx. X xxxxxx xxxxxxxxx xx xx xxxx *xxxxxx* xx x xxxx xxxxxxx xxxx. Xxxx xxxxxxxxx xx xxxxxx xx xxx xxxxxx xx xxxxx xx xxxxxx xxxxx xx xxx *xxxxxx* xxxxxx xxxxxx. Xxxxx xx xxxx xxx xxx xxxxxx, xxx xxxxxxx xxxx x xxxx xxxx xx xxxx xx xxxx *xxxxxx* xx, xxxxx xx xxxxx xxx xxxxxxx xx xxxxxxxx xx xxxxx xxxxxx xxxxxxxxx.
+イベント用に記述したハンドラーは、そのハンドラーが呼び出された際に、その都度入力として使える 2 つの値にアクセスできます。 その最初の値が *sender* です。これは、ハンドラーがアタッチされているオブジェクトへの参照です。 *sender* パラメーターは、**Object** 基本型として型指定されます。 *sender* をより正確な型にキャストするという手法がよく使用されます。 この手法は、*sender* オブジェクト自体で状態を確認または変更する必要がある場合に便利です。 通常は、それぞれのアプリ設計に基づき、*sender* のキャスト先として安全な型をハンドラーのアタッチ先やその他の設計の情報を基に把握します。
 
-Xxx xxxxxx xxxxx xx xxxxx xxxx, xxxxx xxxxxxxxx xxxxxxx xx xxxxxx xxxxxxxxxxx xx xxx *x* xxxxxxxxx. Xxx xxx xxxxxxxx xxxxx xxxxxxxxxx xxx xxxxx xxxx xxx xxxxxxxxx xx xxxxxxx xx xxx *x* xxxxxxxxx xx xxx xxxxxxxx xxxx xx xxxxxxxx xxx xxx xxxxxxxx xxxxx xxx xxx xxxxxxxx, xxx xxxx xxxxx XxxxxxxXxxxx xx Xxxxxx Xxxxxxx xx Xxxxxx Xxxxxx. Xx xxx xxx xxx xxx Xxxxxxx Xxxxxxx xxxxxxxxx xxxxxxxxxxxxx.
+2 つ目の値はイベント データです。これは通常、*e* パラメーターとして構文の定義に表示されます。 使用できるイベント データのプロパティを見つけるには、処理対象のイベントに割り当てられているデリゲートの *e* パラメーターを参照した後、Visual Studio の IntelliSense かオブジェクト ブラウザーを使います。 Windows ランタイム リファレンス ドキュメントを使うこともできます。
 
-Xxx xxxx xxxxxx, xxx xxxxx xxxx'x xxxxxxxx xxxxxxxx xxxxxx xxx xx xxxxxxxxx xx xxxxxxx xxxx xxx xxxxx xxxxxxxx. Xxxx xx xxxxxxxxxx xxxx xx xxx xxxxx xxxxxx. Xxx xxxxxxx xxxxxx, xxx xxxxxxxx xx xxx xxxxxxx xxxx xxx xxxxx xxxxxxxx xxxxx xx xxxxxxxxx. Xxx xxxxxxxx xxxxxx, xxx xxxxxxxx xxx xxxxxxx xxxx x [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208941) xxx [**XxxXx**](https://msdn.microsoft.com/library/windows/apps/br208942) xxxxx. Xx xxxxxxxxx xxxxx xxx x xxxx xxxxxxx, xxx xxxx xxxxxx xxx [**XxxXxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh943072) xxxx xx xxxxxxxxx xx xxx xxxxx xxxxxxx. Xxx xxxx xxxx xxxxx xxxxxxxx xxxxx xxxxxx, xxx [Xxxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185607) xxx [Xxxxxx xxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt404610). Xxxxx xxxxxx xxx xxxxx xxxxxxxxx xxxxx xxxx xxxxxxxxxx xxxxxxxxxxxxxx xxxx xxx xxx xxxxxxx xx xxxx xxxxx, xxxx xx xxxxxxx xxxxxxx xxx xxxxxxx xxxxxx, xxx xxxxxxxx xxxx xxx xxxxxxxx xxx xxxxx xxx xxxxxxxx xxxxxx.
+イベントによっては、イベントの発生を検知することと同様にイベント データの特定のプロパティ値が重要となります。 これが特に当てはまるのが入力イベントです。 ポインター イベントの場合は、イベントが発生したときのポインターの位置が重要です。 キーボード イベントの場合、キーボード上のいずれのキーが押されても [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941) イベントと [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942) イベントが発生します。 ユーザーがどのキーを押したかを判定するには、イベント ハンドラーで使うことができる [**KeyRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943072) にアクセスする必要があります。 入力イベントの処理について詳しくは、「[キーボード操作](https://msdn.microsoft.com/library/windows/apps/mt185607)」と「[ポインター入力の処理](https://msdn.microsoft.com/library/windows/apps/mt404610)」をご覧ください。 入力イベントと入力シナリオに対処するには、通常、ポインター イベントのポインター キャプチャや、キーボード イベントの修飾キーとプラットフォーム キー コードなど、このトピックで取り上げていない事柄についても考慮する必要があります。
 
-### Xxxxx xxxxxxxx xxxx xxx xxx **xxxxx** xxxxxxx
+### **async** パターンを使うイベント ハンドラー
 
-Xx xxxx xxxxx xxx'xx xxxx xx xxx XXXx xxxx xxx xx **xxxxx** xxxxxxx xxxxxx xx xxxxx xxxxxxx. Xxx xxxxxxx, xxx xxxxx xxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265) xx xx [**XxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh701927) xx xxxxxxx x xxxx xxxxxx xxx xxxxxxxx xxxx xx. Xxxxxxx, xxxx xx xxx xxxx xxxxxx XXXx xxx xxxxxxxxxxxx. Xxxx xxxx xx xx xxxxxx xxxxxx xx **xxxxx**/xxxxxxxxx xxxxx, xxx xxx xxxxxxxx xxxx xxxxxxx xxxx. Xx xxxx xxx xxx xx xx xxx xxx **xxxxx** xxxxxxx xx xxxx xxxxx xxxxxxx xxxx xxxx xxx xxxxxxx xx xxx **xxxxx****xxxx**. Xxx xxxx xxxxx xxxxxxx xx xxxxxxxxx xx xxxx **xxxxx**/xxxxxxxxx xxxxx.
+ときには、イベント ハンドラー内で **async** パターンを使う API を使う必要が生じることもあります。 たとえば、ファイル ピッカーを表示して操作するには、[**AppBar**](https://msdn.microsoft.com/library/windows/apps/hh701927) で [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) を使います。 ただし、ファイル ピッカー API の多くは非同期です。 それらの API は **async**/awaitable スコープ内で呼び出す必要があります。これはコンパイラの要件になります。 そのため、**async** キーワードをイベント ハンドラーに追加して、そのハンドラーを **async** **void** にする必要があります。 これで、イベント ハンドラーは **async**/awaitable での呼び出しが可能になります。
 
-Xxx xx xxxxxxx xx xxxx-xxxxxxxxxxx xxxxx xxxxxxxx xxxxx xxx **xxxxx** xxxxxxx, xxx [Xxxx xxxxxx xxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/jj655411) (xxxx xx xxx[Xxxxxx xxxx xxxxx Xxxxxxx Xxxxxxx xxx xxxxx X# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/hh974581) xxxxxx). Xxx xxxx [Xxxx xxxxxxxxxxxx XXXx xx X).
+**async** パターンを使ったユーザー操作イベントの処理の例については、「[ファイル アクセスとファイル ピッカー](https://msdn.microsoft.com/library/windows/apps/jj655411)」(「[C# または Visual Basic を使った初めての Windows ランタイム アプリの作成](https://msdn.microsoft.com/library/windows/apps/hh974581)」シリーズの一部) をご覧ください。 「C での非同期 API の呼び出し」もご覧ください。
 
-## Xxxxxx xxxxx xxxxxxxx xx xxxx
+## コードでのイベント ハンドラーの追加
 
-XXXX xx xxx xxx xxxx xxx xx xxxxxx xx xxxxx xxxxxxx xx xx xxxxxx. Xx xxx xxxxx xxxxxxxx xx xxx xxxxx xxxxxx xx xxxx, xxxxxxxxx xx xxxxxxx xxxx xxx xxx xxxxxx xx XXXX, xxx xxx xxx xxx xxxxxxxx-xxxxxxxx xxxxxx xxx xxxxxx xxxxx xxxxxxxx.
+イベント ハンドラーをオブジェクトに割り当てる手段は、XAML 以外にもあります。 イベント ハンドラーをコードで特定のオブジェクト (XAML では使用できないオブジェクトも含む) に追加するには、言語固有のイベント ハンドラー追加構文を使用します。
 
-Xx X#, xxx xxxxxx xx xx xxx xxx `+=` xxxxxxxx. Xxx xxxxxxxx xxx xxxxxxx xx xxxxxxxxxxx xxx xxxxx xxxxxxx xxxxxx xxxx xx xxx xxxxx xxxx xx xxx xxxxxxxx.
+C# の構文では、`+=` 演算子を使用します。 演算子の右側でイベント ハンドラー メソッド名を参照することによって、ハンドラーを登録します。
 
-Xx xxx xxx xxxx xx xxx xxxxx xxxxxxxx xx xxxxxxx xxxx xxxxxx xx xxx xxx-xxxx XX, x xxxxxx xxxxxxxx xx xx xxx xxxx xxxxxxxx xx xxxxxxxx xx xx xxxxxx xxxxxxxx xxxxx xx xxxxxxxx, xxxx xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208723) xx [**XxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208737), xx xxxx xxx xxxxx xxxxxxxx xx xxx xxxxxxxx xxxxxx xxx xxxxx xxx xxxx-xxxxxxxxx xxxxxx xx xxx xxxx. Xxxx xxxxxxx xxxxx x XXXX xxxxxxx xx xxx xxxx xxxxxxxxx xxx xxxx xxxxxxxx xxx X# xxxxxxxx xxxxxx xxx xxxxxx xx xxxxx xxxxxxx xx xx xxxxxx.
+ランタイム UI に表示されるオブジェクトにイベント ハンドラーをコードで追加する場合、[**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) や [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737) など、オブジェクトの有効期間イベントまたはコールバックに応じてハンドラーを追加するのが一般的です。これにより、該当するオブジェクトのイベント ハンドラーは、実行時にユーザーが発生させるイベントに対応できるようになります。 次の例は、ページ構造の XAML の概略と、イベント ハンドラーをオブジェクトに追加するための C# 言語の構文を示しています。
 
 ```xaml
 <Grid x:Name="LayoutRoot" Loaded="LayoutRoot_Loaded">
@@ -109,7 +109,7 @@ void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-**Xxxx**  X xxxx xxxxxxx xxxxxx xxxxxx. Xx YYYY, X# xxxxx x xxxxxxx xxxxxx xxxxxxxx xxxxxxxxx, xxxxx xxxxxxx x xxxxxxxx xx xxxxx xxx xxx xxxxxxxx xxxxxxxx xxx xxxxxxx xxx xxxxxxxx, xxxxxxx xxxxxx. Xxx xxxxxxx xxxxxx xx xxxxxxxxxxxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx, xxx xxxxxxxxxx xxxxxxx x xxx xxxxxxxx xxxxxxxx xxxxxx xxxxxxxxxxx xx, xxxx xxx xxxxxx xxxxxxxxx xx xxxxxxxx xxxxxxxxx. Xxxx xxxxxxxx xxxxxx xx xxxx xxxxxx, xxx xxx xxxxx xxxxx xxx xx xx xxxx xxxx xxxxxxxx.
+**注**  これには、より冗長な形式の構文もあります。 2005 年に、コンパイラで新しいデリゲート インスタンスを推論できるようにするデリゲートの推論という機能が C# に追加されて、上のより単純な形式の構文を使えるようになりました。 冗長な構文は、機能的には上の例と同じですが、新しいデリゲート インスタンスを登録する前に明示的に作成します。したがって、デリゲートの推論は使用されません。 この明示的な構文は、あまり一般的ではありませんが、コード例で使わることがあります。
 
 ```csharp
 void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
@@ -119,9 +119,9 @@ void LayoutRoot_Loaded(object sender, RoutedEventArgs e)
 }
 ```
 
-Xxxxx xxx xxx xxxxxxxxxxxxx xxx Xxxxxx Xxxxx xxxxxx. Xxx xx xx xxxxxxxx xxx X# xxxxxx xxx xxxxxx xxxxxxxx xxxxxxxx xx xxxxxxxxx. Xxxx xxxxxxxx xxx **XxxXxxxxxx** xxxxxxx xxx xxxx xxx **XxxxxxxXx** xxxxxxxx xxxx xxxxxxxxxxxx xxx xxxxxxx xxxxxx xxxx.
+Visual Basic 構文の場合は 2 とおりの方法があります。 1 つは、C# 構文と同じように記述し、ハンドラーを直接インスタンスにアタッチする方法です。 この場合は、**AddHandler** キーワードに加え、ハンドラー メソッド名を逆参照する **AddressOf** 演算子が必要です。
 
-Xxx xxxxx xxxxxx xxx Xxxxxx Xxxxx xxxxxx xx xx xxx xxx **Xxxxxxx** xxxxxxx xx xxxxx xxxxxxxx. Xxxx xxxxxxxxx xx xxxxxxxxxxx xxx xxxxx xxxxx xxxxxxxx xxx xxxxxxxx xx xxxxx xx xxxxxxx xx xxxx xxxx xxx xxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxxxx. Xxxxx **Xxxxxxx** xx xx xxxxxx xxxx xx xxxxxxx xx XXXX xxxxxxxx xxxx xxx xxxxxxx x **Xxxx** / **x:Xxxx**. Xxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxxx xxxx xx xxxxxx xxx xxx *Xxxxxxxx.Xxxxx* xxxx xx xxx **Xxxxxxx** xxxxxx. Xx xxxx xxxx xxx xxx'x xxxx xx xxxxxx xxxxxxxx-xxxxx xxxxx xxxxxxx xx xxxxxxxx xxxxxxxxx xxx xxxxx xxxxx xxxxxxxx; xxx **Xxxxxxx** xxxxxxxxxxx xxx xxxxxxx xxxx xxx xxxxxxx xxxx XXXX xxxx.
+もう 1 つは、イベント ハンドラーに **Handles** キーワードを指定するという方法です。 この方法は、読み込みの時点からオブジェクトの有効期間を通じてオブジェクト上にハンドラーが存在している必要がある場合に適しています。 XAML に定義されたオブジェクトで **Handles** を使用するには、**Name**/**x:Name** を指定する必要があります。 この名前は、**Handles** 構文の *Instance.Event* 部分に必要なインスタンス修飾子となります。 この場合は、他のイベント ハンドラーのアタッチを開始する、オブジェクトの有効期間に基づくイベント ハンドラーは不要です。**Handles** の関連付けは、XAML ページのコンパイル時に作成されます。
 
 ```vb
 Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As PointerRoutedEventArgs) Handles textBlock1.PointerEntered
@@ -129,37 +129,37 @@ Private Sub textBlock1_PointerEntered(ByVal sender As Object, ByVal e As Pointer
 End Sub
 ```
 
-**Xxxx**  Xxxxxx Xxxxxx xxx xxx XXXX xxxxxx xxxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx-xxxxxxxx xxxxxxxxx xxxxxxx xx xxx **Xxxxxxx** xxxxxxx. Xxxx xx xxxxxxx xxxxxxxxxxxx xxx xxxxx xxxxxxx xxxxxx xx XXXX xx xxxx xx xxxxxxx xxxxxxxx-xxxxxxxxx xxxxxxxx, xxx xxx **Xxxxxxx** xxxxxxx xxxxxxxxx xx xxxxxxxxxxxx xxxx xxxxxx xxx xxxxx xxxxxxxx xx XXXX.
+**注**  Visual Studio とその XAML デザイン サーフェイスでは、一般に、**Handles** キーワードの代わりにインスタンス処理の手法が推奨されます。 その理由は、XAML でのイベント ハンドラーの関連付けがデザイナーと開発者が対処する一般的なワークフローに含まれるだけでなく、**Handles** キーワードを使用する手法に XAML でのイベント ハンドラーの関連付けとの互換性がないためです。
 
-Xx X++, xxx xxxx xxx xxx **+=** xxxxxx, xxx xxxxx xxx xxxxxxxxxxx xxxx xxx xxxxx X# xxxx:
+C++ でも **+=** 構文が使用されますが、C# の基本的な形式とは次のような違いがあります。
 
--   Xx xxxxxxxx xxxxxxxxx xxxxxx, xx xxx xxxx xxx **xxx xxx** xxx xxx xxxxxxxx xxxxxxxx.
--   Xxx xxxxxxxx xxxxxxxxxxx xxx xxx xxxxxxxxxx, xxx xxxxxxxx xxx xxxxxx xxxxxx xx xxx xxxxx xxxxxxxxx. Xxxxxxxxx xxx xxxxxxx **xxxx**.
--   Xxx xxxxxxxx xxxxxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxx xx xxx xxxxxx xxxxxxxxx, xx xxx **&** xxxxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxx xxxx.
+-   デリゲートの推論は行われないため、**ref new** でデリゲート インスタンスを作成する必要があります。
+-   デリゲート コンストラクターにパラメーターが 2 つあり、最初のパラメーターでターゲット オブジェクトを指定する必要があります。 通常は **this** を指定します。
+-   デリゲート コンストラクターの 2 番目のパラメーターにはメソッドのアドレスを指定する必要があるため、メソッド名の前に **&** 参照演算子を付けます。
 
 ```cpp
 textBlock1->PointerEntered += 
 ref new PointerEventHandler(this,&amp;BlankPage::textBlock1_PointerExited);
 ```
 
-### Xxxxxxxx xxxxx xxxxxxxx xx xxxx
+### コードでのイベント ハンドラーの削除
 
-Xx'x xxx xxxxxxx xxxxxxxxx xx xxxxxx xxxxx xxxxxxxx xx xxxx, xxxx xx xxx xxxxx xxxx xx xxxx. Xxx xxxxxx xxxxxxxx xxxxxxxx xxx xxxx Xxxxxxx Xxxxxxx xxxxxxx xxxx xx xxxxx xxx xxxxxxxx xxxx xxxxxxx xxx xxxxxxx xxxx xxxx xxx xxxxxxxxxxxx xxxx xxx xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209041) xxx xxx xxxxxx xxxx, xxx xxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxx. .XXX xxxx xxxx xxxxxxx xxxxxxx xxxxxxxxxx xxx Xxxxxxx Xxxxxxx xxxx X++/XX xxxx xxxx xxxxxxxxxx xx xxxxxxx.
+イベント ハンドラーをコードで追加した場合であっても、通常はコード内のイベント ハンドラーを削除する必要はありません。 ページやコントロールなど、ほとんどの Windows ランタイム オブジェクトには、その有効期間の動作として、メインの [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) とそのビジュアル ツリーから切断されると破棄されるという動作が備わっています。また、デリゲート参照がある場合には、それも破棄されます。 これには、.NET であればガベージ コレクション、C++/CX を備えた Windows ランタイムであれば弱参照が、それぞれ既定で使われます。
 
-Xxxxx xxx xxxx xxxx xxxxx xxxxx xxx xx xxxx xx xxxxxx xxxxx xxxxxxxx xxxxxxxxxx. Xxxxx xxxxxxx:
+まれに、イベント ハンドラーを明示的に削除する必要が生じることがあります。 たとえば、次のような場合です。
 
--   Xxxxxxxx xxx xxxxx xxx xxxxxx xxxxxx, xxxxx xxx'x xxx xxxxxxx-xxxxxxxxx xx x xxxxxxxxxxxx xxx. Xxxxxxxx xx xxxxxx xxxxxx xx xxx Xxxxxxx Xxxxxxx XXX xxx xxx xxxxxx xx xxx [**XxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br228126) xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br205867) xxxxxxx.
--   Xxxx xxxx xxxxx xxx xxxx xxx xxxxxx xx xxxxxxx xxxxxxx xx xx xxxxxxxxx, xx xxxx xxxxx xxx xxxx xx xxxx xxx/xxx xxxxx xxxxxxxx xxx xx xxxxx xx xxx xxxx.
--   Xxx xxxxxxxxxxxxxx xx x xxxxxx **xxxxxx** xxxxxxxx.
--   Xxxxxx xxxxxx xxxxxx.
--   Xxxxxxxx xxx xxxx xxxxxxxxxxx.
+-   静的イベントのためにハンドラーを追加したものの、従来の方法でガベージ コレクションを実行できない。 Windows ランタイム API の静的イベントの例は、[**CompositionTarget**](https://msdn.microsoft.com/library/windows/apps/br228126) クラスと [**Clipboard**](https://msdn.microsoft.com/library/windows/apps/br205867) クラスのイベントです。
+-   テスト コードでハンドラーの削除のタイミングを即時にする必要がある、またはコードで実行時にイベントの古いイベント ハンドラーを新しいものに置き換える必要がある。
+-   カスタム **remove** アクセサーを実装する。
+-   カスタム静的イベント。
+-   ページ ナビゲーションのハンドラー。
 
-[
-            **XxxxxxxxxXxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208748) xx [**Xxxx.XxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227507) xxx xxxxxxxx xxxxx xxxxxxxx xxxx xxxx xxxxxxxxxxx xxxxxxxxx xx xxxxx xxxxxxxxxx xxx xxxxxx xxxxxxxx xxxx xxxx xxx xxx xxx xxxx xxx xxxxxxxx xxxxxxxx xxx xxxxx xxxxxx.
+他のイベントのハンドラーを削除するために使用できるよう、状態管理とオブジェクトの有効期間の適切な位置に配置できるイベント トリガーは、
+						[**FrameworkElement.Unloaded**](https://msdn.microsoft.com/library/windows/apps/br208748) と [**Page.NavigatedFrom**](https://msdn.microsoft.com/library/windows/apps/br227507) are possible event triggers that have appropriate positions in のいずれかです。
 
-Xxx xxxxxxx, xxx xxx xxxxxx xx xxxxx xxxxxxx xxxxx **xxxxXxxxxY\_XxxxxxxXxxxxxx** xxxx xxx xxxxxx xxxxxx **xxxxXxxxxY** xxxxx xxxx xxxx.
+たとえば、このコードを使うと、ターゲット オブジェクト **textBlock1** から **textBlock1\_PointerEntered** という名前のイベント ハンドラーを削除できます。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 textBlock1.PointerEntered -= textBlock1_PointerEntered;
 ```
@@ -167,124 +167,128 @@ textBlock1.PointerEntered -= textBlock1_PointerEntered;
 RemoveHandler textBlock1.PointerEntered, AddressOf textBlock1_PointerEntered
 ```
 
-Xxx xxx xxxx xxxxxx xxxxxxxx xxx xxxxx xxxxx xxx xxxxx xxx xxxxx xxxxxxx x XXXX xxxxxxxxx, xxxxx xxxxx xxxx xxx xxxxxxx xxx xxxxx xx xxxxxxxxx xxxx. Xxxx xx xxxxxx xx xx xx xxx xxxxxxxx x **Xxxx** xxxxx xxx xxx xxxxxxx xxxxx xxx xxxxxxx xxx xxxxxxxx, xxxxxxx xxxx xxxxxxxx xx xxxxxx xxxxxxxxx xxx xxxx xxxxx; xxxxxxx, xxx xxxxx xxxx xxxx xxx xxxxxx xxxx xx xxxxx xx xxxx xxx xxxxxxxxx xxxxxx xxxxxxxxx xx xxxxx xxxxx xxx xxxxxx xxx xx **Xxxx**.
+また、XAML 属性によってイベントが追加された場合 (つまり、生成されたコードにハンドラーが追加された場合) にも、ハンドラーを削除できます。 ハンドラーがアタッチされた要素に **Name** 値を指定した場合には、後でコードにオブジェクト参照が設定されるため、こちらの方法の方が簡単です。ただし、オブジェクトに **Name** がない場合は、必要なオブジェクト参照を探すにあたって、オブジェクト ツリーを辿るという方法もあります。
 
-Xx xxx xxxx xx xxxxxx xx xxxxx xxxxxxx xx X++/XX, xxx'xx xxxx x xxxxxxxxxxxx xxxxx, xxxxx xxx xxxxxx'xx xxxxxxxx xxxx xxx xxxxxx xxxxx xx xxx `+=` xxxxx xxxxxxx xxxxxxxxxxxx. Xxxx'x xxxxxxx xxx xxxxx xxx xxx xxx xxx xxxxx xxxx xx xxx `-=` xxxxxxxxxxxxxx xx xxx X++/XX xxxxxx xx xxx xxxxx, xxx xxx xxxxxx xxxx. Xxx X++/XX, xxx xxx'x xxxxxx xxxxxxxx xxxx xxxx xxxxx xx x XXXX xxxxxxxxx xxxxxxx xxx X++/XX xxxxxxxxx xxxx xxxxx'x xxxx x xxxxx.
+C++/CX でイベント ハンドラーを削除する場合には、登録トークンが必要です。このトークンは、`+=` イベント ハンドラー登録の戻り値から受け取ります。 メソッド名ではなく、C++/CX の構文で `-=` 登録解除の右側に使われる値がトークンであるためです。 C++/CX で生成されたコードではトークンが保存されないため、C++/CX では、XAML 属性として追加されたハンドラーを削除できません。
 
-## Xxxxxx xxxxxx
+## ルーティング イベント
 
-Xxx Xxxxxxx Xxxxxxx xxxx X#, Xxxxxxxxx Xxxxxx Xxxxx xx X++/XX xxxxxxxx xxx xxxxxxx xx x xxxxxx xxxxx xxx x xxx xx xxxxxx xxxx xxx xxxxxxx xx xxxx XX xxxxxxxx. Xxxxx xxxxxx xxx xxx xxxxx xxx xxxx xxxxxxxxxxx xxxxxxxxx, xxx xxxx xxx xxxxxxxxxxx xx xxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911) xxxx xxxxx. Xxxx'x x xxxx xx xxxxx xxxxxx xxxx xxx xxxxxx xxxxxx:
+Windows ランタイムと C#、Microsoft Visual Basic、または C++/CX では、ほとんどの UI 要素に存在する一連のイベントのルーティング イベントの概念がサポートされています。 これらのイベントは、入力やユーザー操作のシナリオ用であり、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) 基底クラスに実装されています。 ルーティング イベントである入力イベントの一覧を次に示します。
 
--   [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208922)
--   [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208923)
--   [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208924)
--   [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208925)
--   [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br208926)
--   [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208928)
--   [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208941)
--   [**XxxXx**](https://msdn.microsoft.com/library/windows/apps/br208942)
--   [**XxxxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208945)
--   [**XxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208946)
--   [**XxxxxxxxxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208947)
--   [**XxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208950)
--   [**XxxxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208951)
--   [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208964)
--   [**XxxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208965)
--   [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208968)
--   [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208969)
--   [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208970)
--   [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208971)
--   [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208972)
--   [**XxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208973)
--   [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208984)
--   [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208985)
--   [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208927)
--   [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208943)
+-   [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922)
+-   [**DragEnter**](https://msdn.microsoft.com/library/windows/apps/br208923)
+-   [**DragLeave**](https://msdn.microsoft.com/library/windows/apps/br208924)
+-   [**DragOver**](https://msdn.microsoft.com/library/windows/apps/br208925)
+-   [**Drop**](https://msdn.microsoft.com/library/windows/apps/br208926)
+-   [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928)
+-   [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208941)
+-   [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208942)
+-   [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945)
+-   [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946)
+-   [**ManipulationInertiaStarting**](https://msdn.microsoft.com/library/windows/apps/br208947)
+-   [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950)
+-   [**ManipulationStarting**](https://msdn.microsoft.com/library/windows/apps/br208951)
+-   [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)
+-   [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)
+-   [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968)
+-   [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)
+-   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970)
+-   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)
+-   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)
+-   [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)
+-   [**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984)
+-   [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985)
+-   [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927)
+-   [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943)
 
-X xxxxxx xxxxx xx xx xxxxx xxxx xx xxxxxxxxxxx xxxxxx xx (*xxxxxx*) xxxx x xxxxx xxxxxx xx xxxx xx xxx xxxxxxxxxx xxxxxx xxxxxxx xx xx xxxxxx xxxx. Xxx XXXX xxxxxxxxx xx xxxx XX xxxxxxxxxxxx xxxx xxxx, xxxx xxx xxxx xx xxxx xxxx xxxxx xxx xxxx xxxxxxx xx XXXX. Xxx xxxx xxxxxx xxxx xxxxx xxxx xxxxxxxx xxxx xxx XXXX xxxxxxx xxxxxxx, xxxxxxx xxx xxxxxx xxxx xxxxx'x xxxxxxx XXXX xxxxxxxx xxxxxxxx xxxx xx xxxxxxxx xxxxxxx xxxx. Xxx xxx xxxxxxxx xx xxx xxxxxx xxxxx xx *xxxxxxxx* xxxx xxx XXXX xxxxxx xxxxxxx xxxxx xxxxxxx xxxx xxxxx xxx xxxxx, xxxxxx xxx xxxxxx xxxxxx xxxxxxx xxxx xxxxxxxx xx. Xxx xxxxx xxx xxx xxxxx xxxx xxx xx xxxxxxx xx xxxxxxxx xxxxxxx xxxxx xxx xxxxx xxxxx. Xx xx xxxxxxx xxx xxxxxxxx, xxx xxxxx xxxxxxxxxxx xxxxx xxxxx xxxxx xxx xxxx xxxxxxx xx xxxxxxx.
+ルーティング イベントとは、オブジェクト ツリーの子オブジェクトから渡され (*ルーティング*され)、一連の親オブジェクトまでルーティングされる可能性のあるイベントのことです。 UI の XAML 構造はこのツリーに類似した構造となり、このツリーのルートは XAML におけるルート要素に相当します。 実際のオブジェクト ツリーは、プロパティ要素タグなどの XAML 言語機能が含まれていないので、XAML 要素のネスト構造とはやや異なります。 ルーティング イベントは、イベント発生元の XAML オブジェクト子要素からその親オブジェクト要素へと*バブル* ルーティングされるイベントと考えることができます。 イベントとそのイベント データはイベント ルートをたどって複数のオブジェクトで処理される場合があります。 どの要素にもハンドラーがない場合は、ルート要素に達するまでイベント ルートをたどっていくことになります。
 
-Xx xxx xxxx Xxx xxxxxxxxxxxx xxxx xx Xxxxxxx XXXX (XXXXX) xx XXXXY, xxx xxxxx xxxxxxx xx xxxxxxxx xxxx xxx *xxxxxxxx* xxxxx xxxxxxx.
+ダイナミック HTML (DHTML) や HTML5 などの Web テクノロジについて知識がある場合は、既に*バブル* イベントの概念をご存じかもしれません。
 
-Xxxx x xxxxxx xxxxx xxxxxxx xxxxxxx xxx xxxxx xxxxx, xxx xxxxxxxx xxxxx xxxxxxxx xxx xxxxxx x xxxxxx xxxxxxxx xx xxxxx xxxx. Xxxxxxxxx, xx xxx xx xxx xxxxx xxxx xx xxxxxxxxx xx x xxxxxxx, xxx xxxxxxx xxxx xx xxxxx xxxx xxxx xx xxxxxx xx xx xxx xxxx xxxxxxx, xxx xxx xx xxxxxx xxxxxxxxx xxx xxxxxxxx xxxxx xxxx xxxx xxx xxxxx. Xxxx xx xxxxx xxx x xxxxxx xxxxx xxxxxxxx, xxx xxxxxxxxx xxxxxxxxxxxxx xxxx xxxxxxx xxxxxxx xx xxxxx xxxxxxxxx xxxxx xxx xxxxxx xxxxxxxx.
+ルーティング イベントがイベント ルートをたどってバブル ルーティングされるとき、アタッチされたすべてのイベント ハンドラーはイベント データのインスタンスを共有し、同じインスタンスにアクセスします。 したがって、ハンドラーによる書き込みが可能なイベント データがある場合は、イベント データが変更されると変更後のイベント データが次のハンドラーに渡されるため、そのイベントの元のイベント データを表さなくなる可能性があります。 ルーティング イベントの動作を持つイベントは、リファレンス ドキュメントにルーティング動作に関する注釈が含まれています。
 
-### Xxx **XxxxxxxxXxxxxx** xxxxxxxx xx **XxxxxxXxxxxXxxx**
+### **RoutedEventArgs** の **OriginalSource** プロパティ
 
-Xxxx xx xxxxx xxxxxxx xx xx xxxxx xxxxx, *xxxxxx* xx xx xxxxxx xxx xxxx xxxxxx xx xxx xxxxx-xxxxxxx xxxxxx. Xxxxxxx, *xxxxxx* xx xxx xxxxxx xxxxx xxx xxxxxxx xxxx xx xxxxx xxxxxxx xx xxxxxxxx.
+イベントがバブル ルーティングによって移動すると、*sender* はイベントが発生したオブジェクトと同じものではなくなります。 *sender* は、呼び出されたハンドラーがアタッチされているオブジェクトです。
 
-Xx xxxx xxxxx, *xxxxxx* xx xxx xxxxxxxxxxx, xxx xxx xxx xxxxxxx xxxxxxxxxx xx xxxx xxxx xx xxxxx xx xxx xxxxxxxx xxxxx xxxxxxx xxx xxxxxxx xx xxxx xxxx x xxxxxxx xxxxx xxxxx, xx xxxxx xxxxxx xx x xxxxxx XX xxxx xxxxx xxxx x xxxx xxxxxxx x xxxxxxxx xxx. Xxx xxxxx xxxxx, xxx xxx xxx xxx xxxxx xx xxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208810) xxxxxxxx. Xx xxx xxxxxx xx xxx xxxxx, **XxxxxxxxXxxxxx** xxxxxxx xxx xxxxxxxx xxxxxx xxxx xxxxx xxx xxxxx, xxxxxxx xx xxx xxxxxx xxxxx xxx xxxxxxx xx xxxxxxxx. Xxxxxxx, xxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911) xxxxx xxxxxx, xxxx xxxxxxxx xxxxxx xx xxxxx xx xxxxxx xxxx xx xxx xxxxxxxxxxx xxxxxxx xx xxx xxxx-xxxxx XX xxxxxxxxxx XXXX. Xxxxxxx, xxxx xxxxxxxx xxxxxx xxxxxx xxxxx xx x xxxxxxxxx xxxx xx x xxxxxxx. Xxx xxxxxxx, xx xxx xxxx xxxxxx xxx xxxxxxx xxxx xxx xxxx xxxx xx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265), xxx xxxx xxxxxxx xxxxxx xxx **XxxxxxxxXxxxxx** xx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209250) xxxxxxxx xxxx xx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209465), xxx xxx **Xxxxxx** xxxxxx.
+場合によっては、注目されるのは *sender* ではなく、ポインター イベントが発生したときにどの子オブジェクトにポインターが置かれているかや、ユーザーがキーボードのキーを押したときに上位の UI のどのオブジェクトにフォーカスがあったかなどの情報です。 そのような場合には、[**OriginalSource**](https://msdn.microsoft.com/library/windows/apps/br208810) プロパティの値を利用できます。 **OriginalSource** は、ルートのすべての位置で、ハンドラーがアタッチされているオブジェクトではなく、イベントを発生させた元のオブジェクトを報告します。 ただし、[**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) の入力イベントでは、そのイベント発生元のオブジェクトはページ レベルの UI 定義 XAML ですぐに見つかるオブジェクトではありません。 コントロールのテンプレート パーツである場合もよくあります。 たとえば、ユーザーが [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) の端にポインターをホバーした場合、ほとんどのポインター イベントでは、**OriginalSource** は **Button** そのものではなく、[**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) の [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) テンプレート パーツになります。
 
-**Xxx**  Xxxxx xxxxx xxxxxxxx xx xxxxxxxxxx xxxxxx xx xxx xxx xxxxxxxx x xxxxxxxxx xxxxxxx. Xxx xxxxxxx xxxx xxx x xxxxxxxx xxx xxxx x xxx xxxxxxxx xxxxxxx xx xxx xxxxxxxx. Xxx xxxxxxxx xxxx'x xxxxxx xx xxxxxxxx x xxxxxxx xxxxxxxx xxxxx xxxxxxxxxxxxxxx xxxxxxxxx xxxx xxxxx xxxxxxxx xxxxxxxx xx xxx xxxxxxx xxxxxxxx. Xxx xxx xxxxx xxxxxxx xxxxxxx-xxxxx xxxxx xxxxxxxx xx xxxxxxxxx xxxxxxxx xx xxxx xx xxx [**XxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208737) xxxxxxxx xx xxx xxxxx xxxxxxxxxx. Xxxx xxx xxx xxxxx xxx xxxxx xxxxxx xxxx xxxxxx xx xx xxx xxxxxxx'x xxxx xx xxxxxxxxxxxxx.
+**ヒント:** 入力イベントのバブル ルーティングは、テンプレート化されたコントロールを作成する場合に特に便利です。 テンプレート化されたすべてのコントロールでは、ユーザーによって新しいテンプレートが適用される可能性があるためです。 作業テンプレートを再作成しようとしているユーザーによって、既定のテンプレートで宣言されているイベント処理が誤って削除される可能性もあるためです。 そのような場合でも、クラス定義内でオーバーライドした [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/br208737) の一部としてハンドラーをアタッチすることで、コントロール レベルのイベント処理を提供できます。 これにより、インスタンス化時にコントロールのルートまでバブル ルーティングされる入力イベントをキャッチできます。
 
-### Xxx **Xxxxxxx** xxxxxxxx
+### **Handled** プロパティ
 
-Xxxxxxx xxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxx xxxxxx xxxxxxx x xxxxxxxx xxxxx **Xxxxxxx**. Xxx xxxxxxxx, xxx [**XxxxxxxXxxxxxXxxxxXxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh943079), [**XxxXxxxxxXxxxxXxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh943073), [**XxxxXxxxxXxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242375). Xx xxx xxxxx **Xxxxxxx** xx x xxxxxxxx Xxxxxxx xxxxxxxx.
+特定のルーティング イベントのイベント データ クラスには、**Handled** というプロパティが含まれているものがあります。 その例として、[**PointerRoutedEventArgs.Handled**](https://msdn.microsoft.com/library/windows/apps/hh943079)、[**KeyRoutedEventArgs.Handled**](https://msdn.microsoft.com/library/windows/apps/hh943073)、[**DragEventArgs.Handled**](https://msdn.microsoft.com/library/windows/apps/br242375) があります。 これらのどのクラスでも、**Handled** は設定可能なブール型プロパティとして使用されます。
 
-Xxxxxxx xxx **Xxxxxxx** xxxxxxxx xx **xxxx** xxxxxxxxxx xxx xxxxx xxxxxx xxxxxxxx. Xxxx **Xxxxxxx** xx **xxxx**, xxx xxxxxxx xxxxx xxx xxxx xxxxx xxxxxxxx; xxx xxxxx xxxxx'x xxxxxxxx xxxxx xxx xxxxx xx xxxxxx xxxxx xxxxxxxx xxxxxxxx xx xxxx xxxxxxxxxx xxxxx xxxx. Xxxx "xxxxxxx" xxxxx xx xxx xxxxxxx xx xxx xxxxx xxx xxx xxxx xxx xxxxxxxx xx xx xx xx xx xxx. Xxxxxxxxx, **Xxxxxxx** xx x xxxxxx xxxxxxxx xxxx xxxxxxx xxx xxxx xx xxxxx xxxx xx xxxxxxxxxx xx xx xxxxx xxxxx'x xxxx xx xxxxxx xx xxx xxxxxxxxxx, xxxx xxx xxxxx xxx xxxxx xxxx xx xxxx xxxxx xxxx. Xxxxxxxxxx xxxxxx, xxx xx xxxx xx xx xxxxxxx xxxx xxx xxxx'x xxxxxxxx xxxxxx xxxx xxxxxxxx xxxxxx xxxxxx xx xxxx xxxxx-xx xxxxxx xx xxxxxxx xxxxxxxxx xxx xxx. Xxx xxxxxxx, xxxxxxxx xxx-xxxxx xxxxxx xxxxxx xxx xxxxx xx xxxxx xx x xxxxxxxxx xxxxxxx xxx xx xxxxxxxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxx xx xxxxxxx xxx xxxxx xxxxxx xx xxxx xxxx xxx xxxxxxxxx xxxxxx xxxxxx.
+**Handled** プロパティを **true** に設定すると、イベント システムの動作に影響します。 **Handled** が **true** に設定されると、その時点でほとんどのイベント ハンドラーへのイベントのルーティングは停止し、それ以降イベントはルート上にあるアタッチされている他のハンドラーによってキャッチされなくなります。 "Handled" になったときイベントのコンテキストでどのような結果になるか、またアプリがどのように応答するかは、アプリの設計しだいです。 基本的に **Handled** は、イベントの発生時にそのイベントをどのコンテナーにもバブル ルーティングする必要がないことをアプリのコードで指定できるシンプルなプロトコルです。そのときに何を実行する必要があるかはアプリのロジックで扱います。 ただし逆に注意すべきなのは、組み込みシステムやコントロールの動作用にバブル ルーティングが必要になることが多いイベントは処理しないということです。 たとえば、選択コントロールの一部または項目内での低レベルのイベントを処理することで悪影響が出る場合があります。 選択コントロールは入力イベントを検索して選択の変更を調べる場合があるためです。
 
-Xxx xxx xx xxx xxxxxx xxxxxx xxx xxxxxx x xxxxx xx xxxx xxx, xxx xxx xxx xxxx xxxx xxxxxxx xxxx xxx'x xxxx x **Xxxxxxx** xxxxxxxx. Xxx xxxxxxx, [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208927) xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208943) xx xxxxxx, xxx xxxx xxxxxx xxxxxx xxx xxx xxx xx xxx xxxx, xxx xxxxx xxxxx xxxx xxxxxxx xxx'x xxxx x **Xxxxxxx** xxxxxxxx xxxx xxx xxxxxxxxx xxxx xxxxxxxx.
+一部のルーティング イベントではこの方法でルーティングを停止できません。それらのイベントに **Handled** プロパティがないためです。 たとえば、[**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927) と [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943) はバブル ルーティングされますが、対応するイベント データ クラスにルーティングを停止する **Handled** プロパティがないため、常にルートまでバブル ルーティングされます。
 
-##  Xxxxx xxxxx xxxxxxxx xx xxxxxxxx
+##  コントロールの入力イベント ハンドラー
 
-Xxxxxxxx Xxxxxxx Xxxxxxx xxxxxxxx xxxxxxxxx xxx xxx **Xxxxxxx** xxxxxxx xxx xxxxx xxxxxx xxxxxxxxxx. Xxxx xxx xxxx xx xxxx xxxx xx xxxxx xxxxx xxxxx xxxxxx, xxxxxxx xxxx xxxx xxxx xxx'x xxxxxx xx. Xxx xxxxxxx, xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265) xxxxx xxxxxxxx xxxxx xxxx xxxxxxxxxxxx xxxxxxx xxx xxxxxxx xxxxx xxxxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208971). Xx xxxx xx xxxxxxx xxxxxxx xxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227737) xxxxx xxxx xx xxxxxxxxx xx xxxxxxx-xxxxxxx xxxxx, xx xxxx xx xx xxxxx xxxxx xxxxx xxxx xx xxxxxxxx xxxx xxxx xxx Xxxxx xxx xxxx xxx xxxxxx xxx xxxxxx xxxx xx'x xxxxxxx. Xxx xxxxxxxx xx xxx xxxxx xxxxxx xx **Xxxxxx**, xxx xxx xxxxx xxxxx xx xxxxxxxxxxxx xxxxxxx, xxx xxxxx xxxxxxxxx xxxx xx xxxx xxxx xxxx xxx xxxxxxx xxxxxxxx xxxx xxx xxxxxxx-xxxxxxxx **Xxxxx** xxxxx. Xxxxxx xxx xxxxxxxx xxxxxxx xxxxxxx xx xxx Xxxxxxx Xxxxxxx XXX xxxxxxxxx xxxxx xxxx xxx xxxxx xxxxxxxx xxxxxxxx xxxx xxx xxxxx xxxxxxxxxx. Xx xxxx xxxxx, xxx xxx xxxxxx xxx xxxxxxxx xx xxxxxxxxxx **Xx***Xxxxx* xxxxxxx. Xxx xxxxxxx, xxx xxx xxxxxx xxx xxxx [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209683) xxxxxxx xxxxx xxxxxx xx xxx xxxxx xx xxxxxxxxxx [**Xxxxxxx.XxXxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh967982).
+特定の Windows ランタイム コントロールでは、入力イベントに **Handled** の概念が内部的に使用されていることがあります。 このような場合、ユーザー コードからはそれを操作できないので、入力イベントが発生することはないようにも見えます。 たとえば、[**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) クラスには、一般的な入力イベント [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) を意図的に処理するロジックが含まれています。 これは、PointerPressed 入力やその他の入力モード (たとえば、フォーカスがあるときにボタンを起動できる、Enter キーなどのキーの処理) によって開始される [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) イベントを、ボタンが発生させるためです。 **Button** クラスの設計上、未加工入力イベントは概念的に処理され、ユーザー コードなどのクラス コンシューマーは、コントロール関連の **Click** イベントとやり取りできます。 Windows ランタイム API リファレンスでは、特定のコントロール クラスのリファレンス トピックに、そのクラスが実装しているイベント処理動作の説明が含まれています。 場合によっては、**On***Event* メソッドをオーバーライドすることで、動作を変更できます。 たとえば、[**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) 派生クラスがキー入力に対してどう反応するかは、[**Control.OnKeyDown**](https://msdn.microsoft.com/library/windows/apps/hh967982) をオーバーライドすることで変更できます。
 
-##  Xxxxxxxxxxx xxxxxxxx xxx xxxxxxx-xxxxxxx xxxxxx xxxxxx
+##  処理済みのルーティング イベントに対するハンドラー登録
 
-Xxxxxxx xx xxxx xxxx xxxxxxx **Xxxxxxx** xx **xxxx** xxxxxxxx xxxx xxxxxxxx xxxx xxxxx xxxxxx. Xxx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702399) xxxxxx xxxxxxxx x xxxxxxxxx xxxxx xxx xxx xxxxxx x xxxxxxx xxxx xx xxxxxx xxxxxxx xxx xxx xxxxx, xxxx xx xxxx xxxxx xxxxxxx xxxxxxx xx xxx xxxxx xxx xxx **Xxxxxxx** xx **xxxx** xx xxx xxxxxx xxxxx xxxx. Xxxx xxxxxxxxx xx xxxxxx xx x xxxxxxx xxx xxx xxxxx xxx xxxxxxx xxx xxxxx xx xxx xxxxxxxx xxxxxxxxxxx xx xxx xxxxxxx-xxxxxxxx xxxxx. xxx xxx xxxxx xxxx xx xxxxxxx xx xx xxxx x xxxxxxx xxxxxxxx, xx xxxx xxx XX. Xxx xxx xxxx xxxxxxxxx xxxx xxxxxxx, xxxxxxx xx xxx xxxxxxxxxx xxx xxxxxxx xx **Xxxxxxx** xxx xxxxxxxx xxxxx x xxxxxxx'x xxxxxxxx xxxxxxxxxxxx.
+既に説明したように、**Handled** を **true** に設定すると、ほとんどのハンドラーは呼び出されなくなります。 ただし、[**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) メソッドを活用すると、ルート内の他のハンドラーが共有イベント データで **Handled** を **true** に設定していても、ルートに対して必ず呼び出されるハンドラーをアタッチできます。 この手法が役立つのは、使っているコントロールが内部の合成ロジックまたはコントロール固有のロジックでイベントを処理済みにするが、 コントロールのインスタンスまたはアプリの UI からそのイベントに応答する必要がある場合です。 ただし、この手法は **Handled** の用途と矛盾し、コントロールの本来の対話操作を中断させる可能性があるため、使う際は注意が必要です。
 
-Xxxx xxx xxxxxx xxxxxx xxxx xxxx x xxxxxxxxxxxxx xxxxxx xxxxx xxxxxxxxxx xxx xxx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702399) xxxxx xxxxxxxx xxxxxxxxx, xxxxxxx xxx xxxxxxxxxx xx x xxxxxxxx xxxxx xx xxx **XxxXxxxxxx** xxxxxx. Xxx xxx xxxxxxxxx xxxxxxxxxxxxx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702399) xxx x xxxx xx xxxxxx xxxx xxxx xxxxxx xxxxx xxxxxxxxxxx xxxxxxxxx. Xxx xxx xxxx xxxx xxxx xx xxx xxxx xxxx xx xxxxxx xxxxxx xx xxxxxx xxx xxxxxxx. Xxx xxxxxxxxx xx xxxx xxx xxxx xxx xx xxx xxxx: [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208927) xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208943) xxx'x xxxx x xxxxxx xxxxx xxxxxxxxxx, xx xxx xxx'x xxx **XxxXxxxxxx** xxx xxxxx.
+[
+            **AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) によるイベント処理を使えるのは、対応するルーティング イベント識別子を持つルーティング イベントだけです。これは、**AddHandler** メソッドの入力として、その識別子が必要なためです。 ルーティング イベント識別子を使用可能にするイベントの一覧については、[**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399) のリファレンス ドキュメントをご覧ください。 ほとんどの部分は、ここまでに示したルーティング イベントの一覧と同じです。 例外は、一覧の最後の 2 つである [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/br208927) と [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/br208943) です。この 2 つにはルーティング イベント識別子がないため、**AddHandler** を使えません。
 
-## Xxxxxx xxxxxx xxxxxxx xxx xxxxxx xxxx
+## ビジュアル ツリー外のルーティング イベント
 
-Xxxxxxx xxxxxxx xxxxxxxxxxx xx x xxxxxxxxxxxx xxxx xxx xxxxxxx xxxxxx xxxx xxxx xx xxxxxxxxxxxx xxxx xxxxxx xx xxxxxxx xxxx xxx xxxx xxxxxxx. Xxxxx xxxxxxx xxx xxx xxxx xx xxx xxxxx xxxxxx-xxxxx xxxxxxxxxxxxx xxxx xxxxxxx xxx xxxx xxxxxxxx xx xxx xxxxxx xxxx. Xxxx xx xxx xxxx xxx xxx xxxxxxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227842) xx [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br227608). Xx xxx xxxx xx xxxxxx xxxxxx xxxxxx xxxx x **Xxxxx** xx **XxxxXxx**, xxxxx xxx xxxxxxxx xx xxxxxxxx XX xxxxxxxx xxxx xxx xxxxxx xxx **Xxxxx** xx **XxxxXxx** xxx xxx xxx **Xxxxx** xx **XxxxXxx** xxxxxxxx xxxxxxxxxx. Xxx'x xxxx xx xxxxxxx xxxxxx xxx xxxxxxxxxxx xxxx xx xxxxxxxxx xxx **Xxxxx** xx **XxxxXxx** xxxxxxx. Xxxx xx xxxxxxx xxxxx xxxxxxx xxx xxxxxx xxxxxx xxxxx xxxx xxxxx xxx xxxx xxxxxx xxxx. X **Xxxxx** xx **XxxxXxx** xx xxx xxxxxxxxxx x xxxxxx xx xxxxxxxxxx XX xxxxxxxx xxx xxxxx xxxxxxxx xxx xxxxxx xxxxx, xxxx xx xx xx xxxxxx xx xxx xxxxxxxxx xxxx xxx **Xxxxx** xxxxxxx xxxxxxxxxx xx xxx xxxxxxx xxxx xxx xxxxx xxxxxx.
+一部のオブジェクトは、プライマリ ビジュアル ツリー (概念的にはメイン ビジュアル上のオーバーレイのようなもの) と関係しています。 このようなオブジェクトは、すべてのツリー要素と表示ルートを関連付ける通常の親子関係には含まれません。 たとえば、表示される [**Popup**](https://msdn.microsoft.com/library/windows/apps/br227842) や [**ToolTip**](https://msdn.microsoft.com/library/windows/apps/br227608) などがこれに該当します。 **Popup** または **ToolTip** からのルーティング イベントを処理する場合は、**Popup** 要素または **ToolTip** 要素そのものではなく、**Popup** または **ToolTip** 内の特定の UI 要素にハンドラーを配置してください。 **Popup** または **ToolTip** のコンテンツに対して実行される合成の内部のルーティングには依存しないようにする必要があります。 ルーティング イベントのイベント ルーティングは、メイン ビジュアル ツリーに沿った形でしか機能しないためです。 **Popup** も **ToolTip** も、従属する UI 要素の親とは見なされず、(たとえば、**Popup** の既定の背景を入力イベントのキャプチャ領域として使用しようとしても) ルーティング イベントを受け取ることはできません。
 
-## Xxx xxxxxxx xxx xxxxx xxxxxx
+## ヒット テストと入力イベント
 
-Xxxxxxxxxxx xxxxxxx xxx xxxxx xx XX xx xxxxxxx xx xxxxxxx xx xxxxx, xxxxx, xxx xxxxxx xxxxx xx xxxxxx *xxx xxxxxxx*. Xxx xxxxx xxxxxxx xxx xxxx xxx xxxxxxxxxxx-xxxxxxxx xx xxxxxxxxxxxx xxxxxx xxxx xxx xxxxxxxxxxxx xx x xxxxx xxxxxx, xx xxxxxxx xxxx xx xxx-xxxx xxxxxxx xx xxxxx xx xx xxx xxxxx xxxxxx xxx xxxx xxx xxxxx xxxx xx xxxxxxxxxx xxxx xxx xxxxxx. Xxxxxxxxx, xxx xxxxxx xxxxxx xxxxxxx xxx xxxxxxx xx xxx xxxxxxxxxx xxxxxxxx xx xxxxxx xxxxxxxx xx xxx xxxxxx xxxx xxxx xxxxx xxxxxxxx xxxx xxxx xxxxx. Xxxxx xxx xxxxxxx xxxxxxx xxxx xxxxxx xxx xxxxxxx, xxx xxx xxx xxxxxxxxx xxxxxxx x xxxxx xxxxxxx xxx xxxx xxxxx xxxxxx xx xxxxxxxx xxx [**XxXxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208933) xxxxxxxx. Xxxx xxxxxxxx xxxxxxx **xxxx** xxxx xx xxx xxxxxxx xxxxx xxxxx xxxxxxxx:
+ある要素が、UI でマウス入力、タッチ入力、スタイラス入力の対象として表示されるかどうかと場所を確認することを、*ヒット テスト*と呼びます。 タッチ操作や、タッチ操作の結果に発生する対話/操作イベントについては、ヒット テストで要素が表示されない場合、イベント ソースとして使用したり、操作に関連付けられたイベントを起動することはできません。 それ以外の場合、操作はその要素を通過し、その入力を操作する基になる要素またはビジュアル ツリー内の親要素へと渡されます。 ヒット テストに影響を与える要因はいくつかありますが、指定された要素の [**IsHitTestVisible**](https://msdn.microsoft.com/library/windows/apps/br208933) プロパティを確認すると、その要素が入力イベントを発生できるかどうかを判別できます。 このプロパティは、要素が次の条件を満たす場合にのみ、**true** を返します。
 
--   Xxx xxxxxxx'x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208992) xxxxxxxx xxxxx xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209006).
--   Xxx xxxxxxx'x **Xxxxxxxxxx** xx **Xxxx** xxxxxxxx xxxxx xx xxx **xxxx**. X **xxxx**[**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br228076) xxxxx xxxxxxx xx xxxxxxxxxxxx xxx xxx xxxx xxxxxxxxxxxx. (Xx xxxx xx xxxxxxx xxxxxxxxxxx xxx xxxx xxx xxxxxxxx, xxx x [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh748061) xxxxx xxxxxxx xx **xxxx**.)
+-   要素の [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) プロパティの値が [**Visible**](https://msdn.microsoft.com/library/windows/apps/br209006) である。
+-   要素の **Background** または **Fill** プロパティの値が **null** ではない。 **null** [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 値は、要素は透明で、ヒット テストで不可視になります (要素を透明にしつつ、ヒット テストも可能にするには、**null** ではなく [**Transparent**](https://msdn.microsoft.com/library/windows/apps/hh748061) を使います)。
 
-**Xxxx****Xxxxxxxxxx** xxx **Xxxx** xxxx'x xxxxxxx xx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911), xxx xxx xxxxxxx xxxxxxx xx xxxxxxxxx xxxxxxx xxxxxxx xxxx xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209390) xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br243377). Xxx xxx xxxxxxxxxxxx xx xxxxxxx xxx xxx xxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxx xxx xxx xxxx xxx xxx xxxxxxx xxx xxxxx xxxxxx, xx xxxxxx xxxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxxxx.
+**注**  **Background** と **Fill** は [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) では定義されません。[**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) や [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) などの別の派生クラスによって定義されます。 ただし、フォアグラウンドやバックグラウンド プロパティに使用するブラシの影響は、それらのプロパティをどのサブクラスが実装するかに関係なく、ヒット テストや入力イベントに対して同様です。
 
--   Xx xxx xxxxxxx xx x xxxxxxx, xxx [**XxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209419) xxxxxxxx xxxxx xxxx xx **xxxx**.
--   Xxx xxxxxxx xxxx xxxx xxxxxx xxxxxxxxxx xx xxxxxx. Xx xxxxxxx xxxxx xxxxxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208707) xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208709) xxx Y xxx'x xxxx xxxxx xxxxxx.
+-   要素がコントロールの場合、[**IsEnabled**](https://msdn.microsoft.com/library/windows/apps/br209419) プロパティの値は **true** である必要がある。
+-   要素はレイアウトで実際のサイズを持ったものである必要がある。 [
+            **ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) と [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) のいずれかが 0 である要素は、入力イベントを発生させません。
 
-Xxxx xxxxxxxx xxxx xxxxxxx xxxxx xxx xxx xxxxxxx. Xxx xxxxxxx, [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652) xxx xx **Xxxxxxxxxx** xxxxxxxx, xxx xx xxxxx xxx xxxxxxxx xxxxxx xxx xxxxxx xxxxxx xx xxx xxxxxxxxxx. [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242752) xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxxxxxxx xxx xxx xxxxxxxx xxxx xxxxx xxxxxxx xxxxxxxxx xxxxxxxxxx, xxxxxxxxxx xx xxxxxxxxxxx xxxxxxx xxxx xx xxxxx xxxxxxx xx xxx xxxxx xxxxxx xxxx xxxxx xxxxxxxxx. [
-            **XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227702) xxxxxxxx xxxx xxxxxxx xxx xxxxxxx xxxxxxxx xxxxxxx xxx xxxxx xxx xx xxxxxxx xx xxx xxxxxx XXXX xxx xxxx xxxxxx xxxxxx.
+一部のコントロールでは、ヒット テストに特別な規則があります。 たとえば、[**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) には **Background** プロパティがありませんが、そのサイズの領域全体の中ではヒット テストできます。 [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) コントロールと [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) コントロールは、透明なコンテンツ (表示されているメディア ソース ファイル内のアルファ チャネルなど) の存在に関係なく、定義された四角形の上でヒット テストできます。 [**WebView**](https://msdn.microsoft.com/library/windows/apps/br227702) コントロールには特別なヒット テストの動作があります。ホストされる HTML で入力が処理されて、スクリプト イベントが発生する場合があるためです。
 
-Xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227511) xxxxxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209250) xxx xxx xxx-xxxxxxxx xx xxxxx xxx xxxxxxxxxx, xxx xxx xxxxx xxxxxx xxx xxxx xxxxx xxxxxx xxxx xxx xxxxxx xxxx xxx xxxxxxxx xxxx xxxx xxxxxxx.
+ほとんどの [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) クラスと [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) は、自身のバックグラウンド内ではヒット テストできませんが、含んでいる要素からルーティングされたユーザー入力イベントを処理することはできます。
 
-Xxx xxx xxxxxxxxx xxxxx xxxxxxxx xxx xxxxxxx xx xxx xxxx xxxxxxxx xx x xxxx xxxxx xxxxx, xxxxxxxxxx xx xxxxxxx xxx xxxxxxxx xxx xxx-xxxxxxxx. Xx xx xxxx, xxxx xxx [**XxxxXxxxxxxxXxXxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243039) xxxxxx. Xx xxx xxxx xxxxxxx, xxxx xxxxxx xxxxx xxx xxxxxxxx xx x xxxxxxxx xxxxxxxx xx x xxxxxxxxx xxxx xxxxxxx. Xxxxxxx, xxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxxx xxx xxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxx xx xx xxxxxxx, xxx xxxxxxxxx xxxxxx xxxxx xxxxxxxx xxx xxxxx xx x xxxxx xxxxxxxx.
+要素がヒット テストできるかどうかにかかわらず、どの要素がユーザー入力イベントと同じ位置にあるかどうかを判別することができます。 そのためには、[**FindElementsInHostCoordinates**](https://msdn.microsoft.com/library/windows/apps/br243039) メソッドを呼び出します。 このメソッドは名前のとおり、指定されたホスト要素からの相対的な位置にある要素を見つけます。 ただし、適用された変換やレイアウト変更により要素の相対座標系が調整されて、指定された場所でどの要素が見つかるかに影響する場合があります。
 
-## Xxxxxxxxxx
+## コマンド実行
 
-X xxxxx xxxxxx xx XX xxxxxxxx xxxxxxx *xxxxxxxxxx*. Xxxxxxxxxx xxxx xxxxx-xxxxxxx xxxxxx xxxxxx xx xxx xxxxxxxxxx xxxxxxxxxxxxxx xxx xxxxxxx xxxxxxxxxx xx xxxxxxx XX xxxxx (x xxxxxxx xxxxxxx xxxxxx, x xxxxxxxx xxxxxxxxxxx xxx) xx xxxxxxxx x xxxxxx xxxxxxx xxxxxxx. Xx xxxxxxxxxx xx xxxxxxxxx xxx x XX xxxxxxx, xxxxxxxx xxxxx xxx xxxxxxxxxx XXXx xxxxxxx xx xxx xxxxxxxx xxxxx xxxxxx. Xxx xxxxxxxxx xxx x **Xxxxxxx** xxxxxxxxx xxxx xxxxxxxxxx xx x xxxxx xxxx xxxxxxx xxx xxxx xxxxx xxx xxxx. Xxx xxxxxxxxxx xxxx xxxxx xxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxx-xxxxxxxx **XXxxxxxx** xxxxxxxxxx xxxxxxx. Xxx xxxx xxxx, xxx [**XxxxxxXxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227740).
+*コマンド実行*がサポートされる UI 要素は少数です。 コマンド実行では、基になる実装で入力関連のルーティング イベントを使用し、1 つのコマンド ハンドラーを呼び出して関連する UI 入力 (特定のポインター操作、特定のショートカット キー) の処理を有効にします。 UI 要素でコマンド実行を使うことができる場合は、個々の入力イベントではなく、コマンド実行 API を使うことを検討してください。 通常は **Binding** を使って、データのビュー モデルを定義するクラスのプロパティを参照します。 それらのプロパティに対応する名前付きコマンドで、言語固有の **ICommand** コマンド実行パターンを実装します。 詳しくは、「[**ButtonBase.Command**](https://msdn.microsoft.com/library/windows/apps/br227740)」をご覧ください。
 
-## Xxxxxx xxxxxx xx xxx Xxxxxxx Xxxxxxx
+## Windows ランタイムでのカスタム イベント
 
-Xxx xxxxxxxx xx xxxxxxxx xxxxxx xxxxxx, xxx xxx xxx xxx xxxxx xxx xxxx xxxx xxxxx xxx xxxx xxxxx xxxxxx xx xxxxxx xxxxxxxxx xx xxxxx xxxxxxxxxxx xxxxxxxx xxx xxx xxxxx.
+カスタム イベントを定義するにあたっては、使われるプログラミング言語に応じて、イベントの追加方法や、それがクラスの設計でどのような意味を帯びるのかが大きく異なります。
 
--   Xxx X# xxx Xxxxxx Xxxxx, xxx xxx xxxxxxxx x XXX xxxxx. Xxx xxx xxx xxx xxxxxxxx .XXX xxxxx xxxxxxx, xx xxxx xx xxx xxxx'x xxxxx xxxxxx xxxxxxxxx (**xxx**/**xxxxxx**). Xxxxxxxxxx xxxx:
-    -   Xxx xxx xxxxx xxxxxxx xx'x x xxxx xxxx xx xxx [**Xxxxxx.XxxxxXxxxxxx<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx) xxxxxxx xx xxx xxxxx-xx xxxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxxxxxx xxxxx xxxxxxxx [**XxxxxXxxxxxx<T>**](https://msdn.microsoft.com/library/windows/apps/br206577).
-    -   Xxx'x xxxx xxxx xxxxx xxxx xxxxx xx [**Xxxxxx.XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx) xxxxxxx xx xxxxx'x xxxxxxxxx xx xxx Xxxxxxx Xxxxxxx. Xxx xx xxxxxxxx xxxxx xxxx xxxxx xx xx xxxx xxxxx xx xxx.
-    -   Xx xxx xxx xxxxx xxxxxx xxxxxxxxx, xxx [Xxxxxx xxxxxx xxx xxxxx xxxxxxxxx xx Xxxxxxx Xxxxxxx Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx).
-    -   Xx xxx'xx xxx xxxxx xx xxxx xxx xxxxxxxx .XXX xxxxx xxxxxxx xx, xxx [Xxxxxxxx Xxxxxx xxx Xxxxxx Xxxxxxxxxxx Xxxxxxx](http://msdn.microsoft.com/library/dd833067.aspx). Xxxx xx xxxxxxx xxx Xxxxxxxxx Xxxxxxxxxxx xxx xx'x xxxxx x xxxx xxxxxxxxx xx xxx xxxx xxx xxxxxxxx xxx xxx xxxxxxxx .XXX xxxxx xxxxxxx.
--   Xxx X++/XX, xxx [Xxxxxx (X++/XX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh755799.aspx).
-    -   Xxx xxxxx xxxxxxxxxx xxxx xxx xxxx xxx xxxxxx xx xxxxxx xxxxxx. Xxx'x xxx xxxxxx xxx xxxxxx xxxxxx, xx xxx xxxxxx x xxxxxxxx xxxxxxxxx.
+-   C# と Visual Basic では、CLR のイベントを定義します。 カスタム アクセサー (**add**/**remove**) を使っていない限り、標準の .NET イベントのパターンを使用できます。 次の点にも注意してください。
+    -   イベント ハンドラーには、Windows ランタイムの汎用イベント デリゲート [**EventHandler<T>**](https://msdn.microsoft.com/library/windows/apps/br206577) への組み込みの変換がある [**System.EventHandler<TEventArgs>**](https://msdn.microsoft.com/library/windows/apps/xaml/db0etb8x.aspx) を使うことをお勧めします。
+    -   Windows ランタイムに変換されないため、イベント データ クラスが [**System.EventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/system.eventargs.aspx) に基づくことのないようにしてください。 既にあるイベント データ クラスを使うか、基底クラスをまったく使わないかのいずれかにします。
+    -   カスタム アクセサーを使う場合は、「[Windows ランタイム コンポーネントのカスタム イベントとイベント アクセサー](https://msdn.microsoft.com/library/windows/apps/xaml/hh972883.aspx)」をご覧ください。
+    -   標準の .NET イベントのパターンがよくわからない場合には、「[Silverlight のカスタム クラスのイベントの定義](http://msdn.microsoft.com/library/dd833067.aspx)」をご覧ください。 これは、Microsoft Silverlight 向けに書かれたものですが、.NET イベントのパターンのコードと概念がよくまとまっています。
+-   C++/CX については、「[イベント (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh755799.aspx)」をご覧ください。
+    -   カスタム イベントを自ら使う場合であっても、名前付き参照を使ってください。 カスタム イベントにラムダは使えません。ラムダを使うと、循環参照が作られることになります。
 
-Xxx xxx'x xxxxxxx x xxxxxx xxxxxx xxxxx xxx Xxxxxxx Xxxxxxx; xxxxxx xxxxxx xxx xxxxxxx xx xxx xxx xxxx xxxxx xxxx xxx Xxxxxxx Xxxxxxx.
+Windows ランタイムでカスタム ルーティング イベントは宣言できません。ルーティング イベントは、Windows ランタイムのセットに限定されます。
 
-Xxxxxxxx x xxxxxx xxxxx xx xxxxxxx xxxx xx xxxx xx xxx xxxxxxxx xx xxxxxxxx x xxxxxx xxxxxxx. Xx'x x xxxxxx xxxxxxx xx xxxx x xxxxxxxxxx xxxxxxxx xxxx xxx x xxxxxxxx-xxxxxxx xxxxxxxx, xxx xx xxxx xxxxxx x xxxxxx xxxxx xxxx'x xxxxx xx xxx xxxxxxxxxx xxxxxxxx xxxxxxxx xx xxxx xx xxx xxxxx. Xxxxxxxxx xx xxxx xxxxxxx xxx'x xxxx xxxxxx xx xxx xxxxxxxx-xxxxxxx xxxxxxxx xxx xxxxxxx, xxx xxxxxx x xxxxxxxxxxxx xxxxx xxxxxxxxx xx xxx xxxx xxxx xxxxx. Xxx xxxx xxxx, xxx [Xxxxxx xxxxxxxxxx xxxxxxxxxx](custom-dependency-properties.md).
+カスタム イベントの定義は通常、カスタム コントロールを定義する一環として実行されます。 プロパティ変更コールバックのある依存関係プロパティだけでなく、その依存関係プロパティのコールバックで (必ずまたはときどき) 発生するカスタム イベントを定義するのがよくあるパターンです。 コントロールのユーザーには定義したプロパティ変更コールバックに対するアクセス権がないものの、通知イベントは利用可能にするというのが次善策です。 詳しくは、「[カスタム依存関係プロパティ](custom-dependency-properties.md)」をご覧ください。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [XXXX xxxxxxxx](xaml-overview.md)
-* [Xxxxxxxxxx: Xxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)
-* [Xxxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185607)
-* [.XXX xxxxxx xxx xxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=214364)
-* [Xxxxxxxx Xxxxxxx Xxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702399)
+* [XAML の概要](xaml-overview.md)
+* [クイック スタート: タッチ入力](https://msdn.microsoft.com/library/windows/apps/xaml/hh465387)
+* [キーボード操作](https://msdn.microsoft.com/library/windows/apps/mt185607)
+* [.NET イベントとデリゲート](http://go.microsoft.com/fwlink/p/?linkid=214364)
+* [Windows ランタイム コンポーネントの作成](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
+* [**AddHandler**](https://msdn.microsoft.com/library/windows/apps/hh702399)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

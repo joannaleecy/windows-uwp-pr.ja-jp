@@ -1,118 +1,111 @@
 ---
-xx.xxxxxxx: XXYXXXYX-XXXY-YYXY-YXYX-YYYXYXYYYXXY
-xxxxxxxxxxx: Xxxx xxxxx xxxxxxxxx xxx xx xxx XxxxXxxxx xxxxxxxxx xxxxx xxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
-xxxxx: XxxxXxxxx XXX
+ms.assetid: DD8FFA8C-DFF0-41E3-8F7A-345C5A248FC2
+description: This topic describes how to add PlayReady protected media content to your Universal Windows Platform (UWP) app.
+title: PlayReady DRM
 ---
 
-# XxxxXxxxx XXX
+# PlayReady DRM
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxx xxxxxxxxx xxx xx xxx XxxxXxxxx xxxxxxxxx xxxxx xxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
+This topic describes how to add PlayReady protected media content to your Universal Windows Platform (UWP) app.
 
-XxxxXxxxx XXX xxxxxxx xxxxxxxxxx xx xxxxxx XXX xxxx xxxxxxx xx xxxxxxxxx XxxxXxxxx xxxxxxx xx xxx xxxx xxxxx xxxxxxxxx xxx xxxxxx xxxxx xxxxxxx xx xxx xxxxxxx xxxxxxxx. Xxxx xxxxxxx xxxxxxxxx xxxxxxx xxxx xx Xxxxxxxxx XxxxXxxxx XXX xxx Xxxxxxx YY xxx xxx xx xxxxxx xxxx XxxxXxxxx XXX xxx xx xxxxxxx xxx xxxxxxx xxxx xxxx xxx xxxxxxxx Xxxxxxx Y.Y xxxxxxx xx xxx Xxxxxxx YY xxxxxxx.
+PlayReady DRM enables developers to create UWP apps capable of providing PlayReady content to the user while enforcing the access rules defined by the content provider. This section describes changes made to Microsoft PlayReady DRM for Windows 10 and how to modify your PlayReady UWP app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.
  
-| Xxxxx                                                                     | Xxxxxxxxxxx                                                                                                                                                                                                                                                                             |
+| Topic                                                                     | Description                                                                                                                                                                                                                                                                             |
 |---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Xxxxxxxx XXX](hardware-drm.md)                                           | Xxxx xxxxx xxxxxxxx xx xxxxxxxx xx xxx xx xxx XxxxXxxxx xxxxxxxx-xxxxx xxxxxxx xxxxxx xxxxxxxxxx (XXX) xx xxxx XXX xxx.                                                                                                                                                                 |
-| [Xxxxxxxx Xxxxxxxxx xxxx XxxxXxxxx](adaptive-streaming-with-playready.md) | Xxxx xxxxxxx xxxxxxxxx xxx xx xxx xxxxxxxx xxxxxxxxx xx xxxxxxxxxx xxxxxxx xxxx Xxxxxxxxx XxxxXxxxx xxxxxxx xxxxxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx. Xxxx xxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxx xx Xxxx Xxxx Xxxxxxxxx (XXX) xxx Xxxxxxx Xxxxxxxxx xxxx XXXX (XXXX) xxxxxxx. |
+| [Hardware DRM](hardware-drm.md)                                           | This topic provides an overview of how to add PlayReady hardware-based digital rights management (DRM) to your UWP app.                                                                                                                                                                 |
+| [Adaptive Streaming with PlayReady](adaptive-streaming-with-playready.md) | This article describes how to add adaptive streaming of multimedia content with Microsoft PlayReady content protection to a Universal Windows Platform (UWP) app. This feature currently supports playback of Http Live Streaming (HLS) and Dynamic Streaming over HTTP (DASH) content. |
 
-## Xxxx'x Xxx xx XxxxXxxxx XXX
+## What's New in PlayReady DRM
 
-Xxx xxxxxxxxx xxxx xxxxxxxxx xxx xxx xxxxxxxx xxx xxxxxxx xxxx xx XxxxXxxxx XXX xxx Xxxxxxx YY.
+The following list describes the new features and changes made to PlayReady DRM for Windows 10.
 
--   Xxxxx xxxxxxxx xxxxxxx xxxxxx xxxxxxxxxx (XXX).
+-   Added hardware digital rights management (DRM).
 
-    Xxxxxxxx-xxxxx xxxxxxx xxxxxxxxxx xxxxxxx xxxxxxx xxxxxx xxxxxxxx xx xxxx xxxxxxxxxx (XX) xxx xxxxx-xxxx xxxxxxxxxx (XXX) xxxxxxx xx xxxxxxxx xxxxxx xxxxxxxxx. Xxx xxxxxxxx (xxxxxxxxx xxxxxxx xxxx, xxxxxxx xxxx, xxx xxx xxxxx xxx xxxxxxxx xxxx xx xxxxxx xx xxxxxx xxxx xxxx), xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxx xxxxx xxxxxxx xxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxx xxxxxxxx. Xxxx Xxxxxxxx XXX xx xxxxx xxxx, xxxxxxx xxxxxxx xxxxxxx (xxxx xx xxxxxxx / xxxx xx xxxxxxx xxxx xxxxxxx) xxx xxxxxxx xx xxx XXXXX xxxxxxxx xxxxxx xxxxx xxx xxxxxx xxxxx xxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxx XXX](hardware-drm.md).
+    Hardware-based content protection support enables secure playback of high definition (HD) and ultra-high definition (UHD) content on multiple device platforms. Key material (including private keys, content keys, and any other key material used to derive or unlock said keys), and decrypted compressed and uncompressed video samples are protected by leveraging hardware security. When Hardware DRM is being used, neither unknown enabler (play to unknown / play to unknown with downres) has meaning as the HWDRM pipeline always knows the output being used. For more information, see [Hardware DRM](hardware-drm.md).
 
--   XxxxXxxxx xx xx xxxxxx xx xxxX xxxxxxxxx xxxxxxxxx, xxx xxxxxxx xx xx xx-xxx xxxxxxxxx xxxxxx xxxxxxxxx. Xxx xxxxxxxxx xxx xxxxxxx xxxx **Xxxxxxxxx.Xxxxx.XxxxXxxxxXxxxxx** xx [**Xxxxxxx.Xxxxx.Xxxxxxxxxx.XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986454).
--   Xxx xxxxxxxxx xxxxxxx xxxxxxxx xxx XxxxXxxxx xxxxx xxxxx xxx xxx xxxx xx xxx Xxxxxxx Xxxxxxxx Xxxxxxxxxxx Xxx (XXX): Xxxxxxx.Xxxxx.Xxxxxxxxxx.XxxxXxxxxXxxxxx.x xxx Xxxxxxx.Xxxxx.Xxxxxxxxxx.XxxxXxxxxXxxxxxx.x.
--   Xxxxxxxx xxxxxxxxx xxxxxxxxxxx xx xxx-xxxxxxxxxx xxxxxxxx.
+-   PlayReady is no longer an appX framework component, but instead is an in-box operating system component. The namespace was changed from **Microsoft.Media.PlayReadyClient** to [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454).
+-   The following headers defining the PlayReady error codes are now part of the Windows Software Development Kit (SDK): Windows.Media.Protection.PlayReadyErrors.h and Windows.Media.Protection.PlayReadyResults.h.
+-   Provides proactive acquisition of non-persistent licenses.
 
-    Xxxxxxxx xxxxxxxx xx XxxxXxxxx XXX xxx xxx xxxxxxx xxxxxxxxx xxxxxxxxxxx xx xxx-xxxxxxxxxx xxxxxxxx. Xxxx xxxxxxxxxx xxx xxxx xxxxx xx xxxx xxxxxxx. Xxxx xxx xxxxxxxx xxx xxxx xx xxxxx xxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxxx Xxxxxxx x Xxx-Xxxxxxxxxx Xxxxxxx Xxxxxx Xxxxxxxx](#proactively_acquire_a_non_persistent_license_before_playback).
+    Previous versions of PlayReady DRM did not support proactive acquisition of non-persistent licenses. This capability has been added to this version. This can decrease the time to first frame. For more information, see [Proactively Acquire a Non-Persistent License Before Playback](#proactively_acquire_a_non_persistent_license_before_playback).
 
--   Xxxxxxxx xxxxxxxxxxx xx xxxxxxxx xxxxxxxx xx xxx xxxxxxx.
+-   Provides acquisition of multiple licenses in one message.
 
-    Xxxxxx xxx xxxxxx xxx xx xxxxxxx xxxxxxxx xxx-xxxxxxxxxx xxxxxxxx xx xxx xxxxxxx xxxxxxxxxxx xxxxxxx. Xxxx xxx xxxxxxxx xxx xxxx xx xxxxx xxxxx xx xxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxx xx xxxxxxx xxxxx xxx xxxx xx xxxxx xxxxxxxx xxxx xxxxxxx xxxxxxx; xxxx xxxxxxxx x xxxxx xxx xxxxxxx xxxxxxxxxxx xxxx xxx xxxx xxxxxxx xxx xxxxxxx xx xxxx. Xx xxxxxxxx, xx xxxxxx xxxxx xxx xxxxx xxxxxxx xx xx xxxxxxxxx xx xxxxxxxx xxxx xx xxxxxxxx x xxxxxxx xxxxxx xxxx xxxxxxxx xxxxxxxx xxx xxxxxxxxxxx (XXXx); xxxx xxxxxxx x xxxxxx xxxxxxx xxxxxxxxxxx xx xxxxxxx xxx xxxxxxxx xxx xxx xxxxxxx xxxxxx x xxxxxxx xxxx xxxxxxx xx xxxxxx xx xxx xxxxxx xxxxx xxx xxxxxxxx xxxxxxx xxxxxxxxxxx xxxxxxxx xx xxxxxxx xxx xxxx xxxxxx.
+    Allows the client app to acquire multiple non-persistent licenses in one license acquisition message. This can decrease the time to first frame by acquiring licenses for multiple pieces of content while the user is still browsing your content library; this prevents a delay for license acquisition when the user selects the content to play. In addition, it allows audio and video streams to be encrypted to separate keys by enabling a content header that includes multiple key identifiers (KIDs); this enables a single license acquisition to acquire all licenses for all streams within a content file instead of having to use custom logic and multiple license acquisition requests to achieve the same result.
 
--   Xxxxx xxxx xxxx xxxxxxxxxx xxxxxxx, xx xxxxxxx xxxxxxxx xxxxxxx (XXX).
+-   Added real time expiration support, or limited duration license (LDL).
 
-    Xxxxxxxx xxx xxxxxxx xx xxx xxxx-xxxx xxxxxxxxxx xx xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxx xx xxxxxxxx xxxxxxx xx xxxxxxx (xxxxx) xxxxxxx xx xxx xxxxxx xx xxxxxxxx. Xxxx xxxxxxxx xxxx xxxxxxxxxxx xx xxxxxxxx xxxxxxxx xx xxx xxxxxxx, xxxx xxxxxx xx xxx xx xxxxxxx xxxxxxx XXXx xxxxxxxxxxxxxx xxxxx xxx xxxx xx xxxxx xxxxxxxx xxx xxxxxxx xxxxxxx xxx xxxx xxxxxxx x xxxxxx xxxxxxxx xxxxxxx xxxx xxx xxxx xxx xxxxxxxx xxxxxxx xx xxxxxxxx. Xxxxxxxx xxxx xxxx xxxxx xxxx xxxxxxx (xxxxxxx x xxxxxxx xx xxxxxxx xxxxxxxxx) xxx, xxxxx xxx xxx xxxx xxxx xxxxxxxx x xxxxxx xxxxxxxx xxxxxxx xx xxx xxxx xxx XXX xxxxxxx, xxxxxxxx xxxxxxxx xxxxxxxx xx xxx xxx xx xxx xxxxxxx xxxxxxx xxxxxxxxxxxx.
+    Provides the ability to set real-time expiration on licenses and smoothly transition from an expiring license to another (valid) license in the middle of playback. When combined with acquisition of multiple licenses in one message, this allows an app to acquire several LDLs asynchronously while the user is still browsing the content library and only acquire a longer duration license once the user has selected content to playback. Playback will then start more quickly (because a license is already available) and, since the app will have acquired a longer duration license by the time the LDL expires, smoothly continue playback to the end of the content without interruption.
 
--   Xxxxx xxx-xxxxxxxxxx xxxxxxx xxxxxx.
--   Xxxxx xxxxxxx xxx xxxx-xxxxx xxxxxxxxxxxx (xxxxxxxxx xxxxxxxxxx, xxxxxx xxxxx xxxxx xxxx, xxx xxxx xxxx xxxxxxxxxx) xx xxx-xxxxxxxxxx xxxxxxxx.
--   Xxxxx XXXX Xxxx Y (xxxxxxx Y.Y) xxxxxx xxxxxxx.
+-   Added non-persistent license chains.
+-   Added support for time-based restrictions (including expiration, expire after first play, and real time expiration) on non-persistent licenses.
+-   Added HDCP Type 1 (version 2.2) policy support.
 
-    Xxx [Xxxxxx xx Xxxxxxxx](#things_to_consider) xxx xxxx xxxxxxxxxxx.
+    See [Things to Consider](#things_to_consider) for more information.
 
--   Xxxxxxxx xx xxx xxxxxxxx xx xx xxxxxx.
--   Xxxxx xxxxxx xxxx.
+-   Miracast is now implicit as an output.
+-   Added secure stop.
 
-    Xxxxxx xxxx xxxxxxxx xxx xxxxx xxx x XxxxXxxxx xxxxxx xx xxxxxxxxxxx xxxxxx xx x xxxxx xxxxxxxxx xxxxxxx xxxx xxxxx xxxxxxxx xxx xxxxxxx xxx xxx xxxxx xxxxx xx xxxxxxx. Xxxx xxxxxxxxxx xxxxxxx xxxx xxxxx xxxxxxxxx xxxxxxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxx xxxxxxxxx xx xxxxx xxxxxxxxxxx xx xxxxxxxxx xxxxxxx xxx x xxxxx xxxxxxx.
+    Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content. This capability ensures your media streaming services provide accurate enforcement and reporting of usage limitations on different devices for a given account.
 
--   Xxxxx xxxxx xxx xxxxx xxxxxxx xxxxxxxxxx.
+-   Added audio and video license separation.
 
-    Xxxxxxxx xxxxxx xxxxxxx xxxxx xxxx xxxxx xxxxxxx xx xxxxx; xxxxxxxx xxxx xxxxxx xxxxxxx xxxxxxxxxx. Xxxxxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxx xxxx xxx xxxxx xxx xxxxxx xxxxxx.
+    Separate tracks prevent video from being decoded as audio; enabling more robust content protection. Emerging standards are requiring separate keys for audio and visual tracks.
 
--   Xxxxx XxxXxxXxxxxx.
+-   Added MaxResDecode.
 
-    Xxxx xxxxxxx xxx xxxxx xx xxxxx xxxxxxxx xx xxxxxxx xx x xxxxxxx xxxxxxxxxx xxxx xxxx xx xxxxxxxxxx xx x xxxx xxxxxxx xxx (xxx xxx x xxxxxxx). Xx xxxxxxxx xxxxx xxxxx xxxxxxxx xxxxxx xxxxx xxx xxxxxxx xxxx x xxxxxx xxx.
+    This feature was added to limit playback of content to a maximum resolution even when in possession of a more capable key (but not a license). It supports cases where multiple stream sizes are encoded with a single key.
 
-Xxx xxxxxxxxx xxx xxxxxxxxxx, xxxxxxx, xxx xxxxxxxxxxxx xxxx xxxxx xx XxxxXxxxx XXX:
+The following new interfaces, classes, and enumerations were added to PlayReady DRM:
 
--   [
-            **XXxxxXxxxxXxxxxxxXxxxxxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986077) xxxxxxxxx
--   [
-            **XXxxxXxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986080) xxxxxxxxx
--   [
-            **XXxxxXxxxxXxxxxxXxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986090) xxxxxxxxx
--   [
-            **XxxxXxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986309) xxxxx
--   [
-            **XxxxXxxxxXxxxxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986371) xxxxx
--   [
-            **XxxxXxxxxXxxxxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986375) xxxxx
--   [
-            **XxxxXxxxxXxxxxxxxXXXXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986265) xxxxxxxxxx
+-   [**IPlayReadyLicenseAcquisitionServiceRequest**](https://msdn.microsoft.com/library/windows/apps/dn986077) interface
+-   [**IPlayReadyLicenseSession**](https://msdn.microsoft.com/library/windows/apps/dn986080) interface
+-   [**IPlayReadySecureStopServiceRequest**](https://msdn.microsoft.com/library/windows/apps/dn986090) interface
+-   [**PlayReadyLicenseSession**](https://msdn.microsoft.com/library/windows/apps/dn986309) class
+-   [**PlayReadySecureStopIterable**](https://msdn.microsoft.com/library/windows/apps/dn986371) class
+-   [**PlayReadySecureStopIterator**](https://msdn.microsoft.com/library/windows/apps/dn986375) class
+-   [**PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) enumerator
 
-X xxx xxxxxx xxx xxxx xxxxxxx xx xxxxxxxxxxx xxx xx xxx xxx xxx xxxxxxxx xx XxxxXxxxx XXX. Xxx xxxxxx xxx xx xxxxxxxxxx xxxx [xxxx://xx.xxxxxxxxx.xxx/xxxxxx/x/?xxxxxx=YYYYYY&xxxxx=YxYYY](http://go.microsoft.com/fwlink/p/?linkid=331670).
+A new sample has been created to demonstrate how to use the new features of PlayReady DRM. The sample can be downloaded from [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670).
 
-## Xxxxxx xx Xxxxxxxx
+## Things to Consider
 
--   XxxxXxxxx XXX xxx xxxxxxxx XXXX Xxxx Y (xxxxxxx Y.Y xx xxxxx). XxxxXxxxx xxxxxxx xxx xxxxxx xx xxx xxxxxxx xxx xxx xxxxxx xx xxxxxxx. Xxxx xxxxxxx xxx xx xxxxxxx xx xxxx XxxxXxxxx Xxxxxx xY.Y XXX xxxxxxx (xxx xxxxxx xxxxxxxx xxxx xxxxxx xx xxx xxxxxxx xxxxx xxx xxxx xxxxxxx **XXXX**). Xxx xxxx xxxxxxxxxxx, xxx xxx [XxxxXxxxx Xxxxxxxxxx xxx Xxxxxxxxxx Xxxxx](http://www.microsoft.com/playready/licensing/compliance/).
--   Xxxxxxx Xxxxx Xxxxx (xxxx xxxxx xx XX-Y) xx xxx xxxxxxxxx xx xxxxxxxx XXX (xxx [Xxxxxxxx Xxxxxxxx XXX](hardware-drm.md#override-hardware-drm)).
--   XxxxXxxxx XXX xxx xxxxxxxx xxx Xxxx Xxxxxxxxxx Xxxxx Xxxxxx (XXXX /X.YYY) xxxxx xxxxxxxxxxx xxxxxxxx. Xx xxxxxxx XXXX, xxxx xxx xxxx xxx Xxxxxx Xxxxxxxxxx Xxxxxx (XXXX) xxxxxxx Y xxxxxxx xxxxx xxxxxxxx xxxxxxx xxx xxxxxxx'x xxxxx xxxxxxx xx xxx xxxxx. Xxxxx xx XXX/XXX YYYYY-Y Xxxxxxxxxxx xxxxxxxxxx -- XXXX xxxxxxx xxxxxxxxxxxx -- Xxxx Y: Xxxxxx xxxxxxxxxx xx XXX xxxx xxxxx xxxx xxxxxx xxxxx (Xxxx xxxxxxx XXX/XXX YYYYY-Y:YYYY xx xxxxxx xx xxxxxxxx.) xxx xxxx xxxxxxxxxxx. Xxxxxxxxx xxxx xxxxxxxxxx xxxxx XXXX xxxxxxx Y xxx xxx XXXXX xxxxxxx. Xx xxxxxxxx, xxxx xxxxxxxx XXX xxxx xxxxxxx XXXX xxx xxxx xxxx xxx (xxx [Xxxxxxxx Xxxxxxxx XXX](hardware-drm.md#override-hardware-drm)).
--   Xx xxxx xxxxxxxxx xx xxxxxxx xxx XxxxXxxxx Y.Y xxxxxxxx (xxxxxxxxx, xxx xxx xxxxxxx xx, XXYYYY xxx xxxxxxxx-xxxxx xxxxxxx, xxxxxxxxx xxxxxxxx xxx-xxxxxxxxxx xxxxxxxx xx xxx xxxxxxx xxxxxxxxxxx xxxxxxx, xxx xxxx-xxxxx xxxxxxxxxxxx xx xxx-xxxxxxxxxx xxxxxxxx), xxx XxxxXxxxx xxxxxx xx xxxxxxxx xx xx xxx Xxxxxxxxx XxxxXxxxx Xxxxxx Xxxxxxxx Xxxxxxxxxxx Xxx xY.Y.YYYY Xxxxxxx xxxxxxx xx xxxxx.
--   Xxxxxxxxx xx xxx Xxxxxx Xxxxxxxxxx Xxxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxxx, xxxxx xxxxxxxx xxx xxxx xxx xxx xxxxx xx xxxxx xxxxxxxxx xxxxxx xxxx xxx xxxxxxx xxxxx xxxxxxxxxxxx. Xxx xxxxxxxxx xxxxx xxxxx xxx xxx xx xxxxxx xxxxxx xxxx xxxxx xx x xxxxxx. Xxx xxxx xxxxxxxxxxx, xxx xxx [XxxxXxxxx Xxxxxxxxxx xxx Xxxxxxxxxx Xxxxx](http://www.microsoft.com/playready/licensing/compliance/).
+-   PlayReady DRM now supports HDCP Type 1 (version 2.2 or later). PlayReady carries the policy in the license for the device to enforce. This feature can be enabled in your PlayReady Server v3.0 SDK license (the server controls this policy in the license using the play enabler **GUID**). For more information, see the [PlayReady Compliance and Robustness Rules](http://www.microsoft.com/playready/licensing/compliance/).
+-   Windows Media Video (also known as VC-1) is not supported in hardware DRM (see [Override Hardware DRM](hardware-drm.md#override-hardware-drm)).
+-   PlayReady DRM now supports the High Efficiency Video Coding (HEVC /H.265) video compression standard. To support HEVC, your app must use Common Encryption Scheme (CENC) version 2 content which includes leaving the content's slice headers in the clear. Refer to ISO/IEC 23001-7 Information technology -- MPEG systems technologies -- Part 7: Common encryption in ISO base media file format files (Spec version ISO/IEC 23001-7:2015 or higher is required.) for more information. Microsoft also recommends using CENC version 2 for all HWDRM content. In addition, some hardware DRM will support HEVC and some will not (see [Override Hardware DRM](hardware-drm.md#override-hardware-drm)).
+-   To take advantage of certain new PlayReady 3.0 features (including, but not limited to, SL3000 for hardware-based clients, acquiring multiple non-persistent licenses in one license acquisition message, and time-based restrictions on non-persistent licenses), the PlayReady server is required to be the Microsoft PlayReady Server Software Development Kit v3.0.2769 Release version or later.
+-   Depending on the Output Protection Policy specified in the content license, media playback may fail for end users if their connected output does not support those requirements. The following table lists the set of common errors that occur as a result. For more information, see the [PlayReady Compliance and Robustness Rules](http://www.microsoft.com/playready/licensing/compliance/).
 
-| Xxxxx                                                   | Xxxxx      | Xxxxxxxxxxx                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Error                                                   | Value      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |---------------------------------------------------------|------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XXXXX\_XXXXXXXX\_XXX\_XXXXXX\_XXXX\_XXX\_XXXXXXX\_XXXX  | YxXYYYYYYY | Xxx xxxxxxx'x Xxxxxx Xxxxxxxxxx Xxxxxx xxxxxxxx xxx xxxxxxx xx xxxxxx XXXX, xxx XXXX xxx xxxxxx xx xx xxxxxxx.                                                                                                                                                                                                                                                                                                                                                                                              |
-| XX\_X\_XXXXXX\_XXXXXXXXXXX                              | YxXYYXYYYY | Xxx xxxxxxx'x Xxxxxx Xxxxxxxxxx Xxxxxx xxxxxxxx xxx xxxxxxx xx xxxxxx XXXX Xxxx Y, xxx XXXX Xxxx Y xxx xxxxxx xx xx xxxxxxx.                                                                                                                                                                                                                                                                                                                                                                                |
-| XXX\_X\_XXX\_XXXXXX\_XXXXXXXXXX\_XXXXXXXXXXXX\_XXX\_XXX | YxYYYYXXYY | Xxxx xxxxx xxxx xxxx xxxxxx xxxx xxxxxxx xxxxx xxxxxxxx XXX. Xxx xxxxxxx'x Xxxxxx Xxxxxxxxxx Xxxxxx xxxxxxxx xxx xxxxxxx xx xxxxxx XXXX xx xx xxxxxx xxx xxxxxxx'x xxxxxxxxx xxxxxxxxxx, xxx XXXX xxx xxxxxx xx xx xxxxxxx xxx xxx xxxxxxx'x xxxxxxxxx xxxxxxxxxx xxxxx xxx xx xxxxxxx xxxxxxx xxxxxxxx XXX xxxx xxx xxxxxxx xxxxxxxx xxx xxxxxxx'x xxxxxxxxxx. Xxxxx xxxxxxxx XXX, xxx xxxxxxx xxxxx. Xxx [Xxxxxxxxxxxxxx xxx Xxxxx Xxxxxxxx XXX](hardware-drm.md#considerations-for-using-hardware-drm). |
-| XXXXX\_XXXXXXXX\_XXX\_XXX\_XXXXXXXXX                    | YxxYYYYYYY | Xxx xxxxxxxx xxxxxx xxxx xxx xxxxxxx Xxxxxx Xxxxxxxxxx. Xxx xxxxxxx, xxx xxxxxxx xx xxxxxxxxx xxxxxxx XXX xx xx xxxxxxxxxxx xxxxxxxx xxxxxx xxx xxx xxxxxxx xxxxxx xx xxx xxxxxxxxx. Xx xxx xxxxxx xxxx, xxx xxxxxxx xxxxxx xxxx xx xxxxxxxxx xx xxx Xxxxxxxxx Xxxxx Xxxxxxx Xxxxxxx xxx xxxxxxxxxx xx xxxxxxxxxxx xxxxxxxx xxxxxx xxxx xxxxxxx xxx xxxxx.                                                                                                                                                  |
+| ERROR\_GRAPHICS\_OPM\_OUTPUT\_DOES\_NOT\_SUPPORT\_HDCP  | 0xC0262513 | The license's Output Protection Policy requires the monitor to engage HDCP, but HDCP was unable to be engaged.                                                                                                                                                                                                                                                                                                                                                                                              |
+| MF\_E\_POLICY\_UNSUPPORTED                              | 0xC00D7159 | The license's Output Protection Policy requires the monitor to engage HDCP Type 1, but HDCP Type 1 was unable to be engaged.                                                                                                                                                                                                                                                                                                                                                                                |
+| DRM\_E\_TEE\_OUTPUT\_PROTECTION\_REQUIREMENTS\_NOT\_MET | 0x8004CD22 | This error code only occurs when running under hardware DRM. The license's Output Protection Policy requires the monitor to engage HDCP or to reduce the content's effective resolution, but HDCP was unable to be engaged and the content's effective resolution could not be reduced because hardware DRM does not support reducing the content's resolution. Under software DRM, the content plays. See [Considerations for Using Hardware DRM](hardware-drm.md#considerations-for-using-hardware-drm). |
+| ERROR\_GRAPHICS\_OPM\_NOT\_SUPPORTED                    | 0xc0262500 | The graphics driver does not support Output Protection. For example, the monitor is connected through VGA or an appropriate graphics driver for the digital output is not installed. In the latter case, the typical driver that is installed is the Microsoft Basic Display Adapter and installing an appropriate graphics driver will resolve the issue.                                                                                                                                                  |
 
-## Xxxxxxxxxxxxx
+## Prerequisites
 
-Xxxxxx xxx xxxxx xxxxxxxx xxxx XxxxXxxxx-xxxxxxxxx XXX xxx, xxx xxxxxxxxx xxxxxxxx xxxxx xx xx xxxxxxxxx xx xxxx xxxxxx:
+Before you begin creating your PlayReady-protected UWP app, the following software needs to be installed on your system:
 
--   Xxxxxxx YY.
--   Xx xxx xxx xxxxxxxxx xxx xx xxx xxxxxxx xxx XxxxXxxxx XXX xxx XXX xxxx, xxx xxxx xxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY xx xxxxx xx xxxxxxx xxx xxxxxxx. Xxx xxx xxxxx xxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY xx xxxxxxx xxx xx xxx xxxxxxx xxxx XxxxXxxxx XXX xxx Xxxxxxx Y.Y Xxxxx Xxxx.
+-   Windows 10.
+-   If you are compiling any of the samples for PlayReady DRM for UWP apps, you must use Microsoft Visual Studio 2015 or later to compile the samples. You can still use Microsoft Visual Studio 2013 to compile any of the samples from PlayReady DRM for Windows 8.1 Store Apps.
 
-Xx xxx xxx xxxxxxxx xx xxxx xxxx XXXX-Y/X.YYY xxxxxxx xx xxxx xxx, xxx xxxx xxxx xxxxxxxx xxx xxxxxxx [Xxxxxxx Y.Y Xxxxx Xxxxxx Xxxx](http://go.microsoft.com/fwlink/p/?LinkId=626876).
+If you are planning to play back MPEG-2/H.262 content on your app, you must also download and install [Windows 8.1 Media Center Pack](http://go.microsoft.com/fwlink/p/?LinkId=626876).
 
-## XxxxXxxxx Xxxxxxx Xxxxx Xxx Xxxxxxxxx Xxxxx
+## PlayReady Windows Store App Migration Guide
 
-Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xx xxx xx xxxxxxx xxxx xxxxxxxx XxxxXxxxx Xxxxxxx Y.x Xxxxx xxxx xx Xxxxxxx YY.
+This section includes information on how to migrate your existing PlayReady Windows 8.x Store apps to Windows 10.
 
-Xxx xxxxxxxxx xxx XxxxXxxxx XXX xxxx xx Xxxxxxx YY xxx xxxxxxx xxxx **Xxxxxxxxx.Xxxxx.XxxxXxxxxXxxxxx** xx [**Xxxxxxx.Xxxxx.Xxxxxxxxxx.XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986454). Xxxx xxxxx xxxx xxx xxxx xxxx xx xxxxxx xxx xxxxxxx xxx xxx xxxxxxxxx xxxx xxx xxx xxx xx xxxx xxxx. Xxx xxxx xxxxx xx xxxxxxxxxxx x xxxxx xxxx. Xx xx xxxx xx xxxxxxx.xxxxx.xxxxx xx xxx Xxxxxxx YY xxxxxxxxx xxxxxx. Xx xx xx xxxxxxx.xxxxx xx xxxx xx xxx XX’x Xxxxxxx XXX. Xxx XXX, xx’x xxxxxxxxxx xx xxxxxxx.xxxxxxxxxx.xxxxxxxxxxxxxxxxxxx.xxxxx.
+The namespace for PlayReady UWP apps on Windows 10 was changed from **Microsoft.Media.PlayReadyClient** to [**Windows.Media.Protection.PlayReady**](https://msdn.microsoft.com/library/windows/apps/dn986454). This means that you will need to search and replace the old namespace with the new one in your code. You will still be referencing a winmd file. It is part of windows.media.winmd on the Windows 10 operating system. It is in windows.winmd as part of the TH’s Windows SDK. For UWP, it’s referenced in windows.foundation.univeralappcontract.winmd.
 
-Xx xxxx xxxx XxxxXxxxx-xxxxxxxxx xxxx xxxxxxxxxx (XX) xxxxxxx (YYYYx) xxx xxxxx-xxxx xxxxxxxxxx (XXX) xxxxxxx, xxx xxxx xxxx xx xxxxxxxxx XxxxXxxxx xxxxxxxx XXX. Xxx xxxxxxxxxxx xx xxx xx xxxxxxxxx XxxxXxxxx xxxxxxxx XXX, xxx [Xxxxxxxx XXX](hardware-drm.md).
+To play back PlayReady-protected high definition (HD) content (1080p) and ultra-high definition (UHD) content, you will need to implement PlayReady hardware DRM. For information on how to implement PlayReady hardware DRM, see [Hardware DRM](hardware-drm.md).
 
-Xxxx xxxxxxx xx xxx xxxxxxxxx xx xxxxxxxx XXX. Xxx xxxxxxxxxxx xx xxxxxxxxx xxxxxxxx XXX xxx xxxxxxxx xxxxxxxx XXX, xxx [Xxxxxxxx Xxxxxxxx XXX](hardware-drm.md#override-hardware-drm).
+Some content is not supported in hardware DRM. For information on disabling hardware DRM and enabling software DRM, see [Override Hardware DRM](hardware-drm.md#override-hardware-drm).
 
-Xxxxxxxxx xxx xxxxx xxxxxxxxxx xxxxxxx, xxxx xxxx xxxx xxxx xxx xxx xxxxxxxxx xxxxxxxx xx xx xxxxx’x xxxxxxx:
+Regarding the media protection manager, make sure your code has the following settings if it doesn’t already:
 
 ``` syntax
 var mediaProtectionManager = new Windows.Media.Protection.MediaProtectionManager();
@@ -128,13 +121,13 @@ mediaProtectionManager.properties["Windows.Media.Protection.MediaProtectionConta
                 "{9A04F079-9840-4286-AB92-E65BE0885F95}";
 ```
 
-## Xxxxxxxxxxx Xxxxxxx x Xxx-Xxxxxxxxxx Xxxxxxx Xxxxxx Xxxxxxxx
+## Proactively Acquire a Non-Persistent License Before Playback
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxxxx xxx-xxxxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxxx xxxxxxxx xxxxxx.
+This section describes how to acquire non-persistent licenses proactively before playback begins.
 
-Xx xxxxxxxx xxxxxxxx xx XxxxXxxxx XXX, xxx-xxxxxxxxxx xxxxxxxx xxxxx xxxx xx xxxxxxxx xxxxxxxxxx xxxxxx xxxxxxxx. Xx xxxx xxxxxxx, xxx xxx xxxxxxx xxx-xxxxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxxx xxxxxxxx xxxxxx.
+In previous versions of PlayReady DRM, non-persistent licenses could only be acquired reactively during playback. In this version, you can acquire non-persistent licenses proactively before playback begins.
 
-1.  Xxxxxxxxxxx xxxxxx x xxxxxxxx xxxxxxx xxxxx xxx xxx-xxxxxxxxxx xxxxxxx xxx xx xxxxxx. Xxx xxxxxxx:
+1.  Proactively create a playback session where the non-persistent license can be stored. For example:
 
     ``` syntax
     var cpsystems = new Windows.Foundation.Collections.PropertySet();       
@@ -146,7 +139,7 @@ Xx xxxxxxxx xxxxxxxx xx XxxxXxxxx XXX, xxx-xxxxxxxxxx xxxxxxxx xxxxx xxxx xx xxx
     var pmpServer = new Windows.Media.Protection.MediaProtectionPMPServer( pmpSystemInfo );
     ```
 
-2.  Xxx xxxx xxxxxxxx xxxxxxx xx xxx xxxxxxx xxxxxxxxxxx xxxxx. Xxx xxxxxxx:
+2.  Tie that playback session to the license acquisition class. For example:
 
     ``` syntax
     var licenseSessionProperties = new Windows.Foundation.Collections.PropertySet();
@@ -154,38 +147,42 @@ Xx xxxxxxxx xxxxxxxx xx XxxxXxxxx XXX, xxx-xxxxxxxxxx xxxxxxxx xxxxx xxxx xx xxx
     var licenseSession = new Windows.Media.Protection.PlayReady.PlayReadyLicenseSession( licenseSessionProperties );
     ```
 
-3.  Xxxxxx x xxxxxxx xxxxxxx xxxxxxx. Xxx xxxxxxx:
+3.  Create a license service request. For example:
 
     ``` syntax
     var laSR = licenseSession.CreateLAServiceRequest();
     ```
 
-4.  Xxxxxxx xxx xxxxxxx xxxxxxxxxxx xxxxx xxx xxxxxxx xxxxxxx xxxxxxx xxxx xxxx Y. Xxx xxxxxxx xxxx xx xxxxxx xx xxx xxxxxxxx xxxxxxx.
-5.  Xxx xxx xxxxxxxx xxxxxxx xx xxx xxxxx xxxxxx xxx xxxxxxxx. Xxx xxxxxxx:
+4.  Perform the license acquisition using the service request created from step 3. The license will be stored in the playback session.
+5.  Tie the playback session to the media source for playback. For example:
 
     ``` syntax
     licenseSession.configureMediaProtectionManager( mediaProtectionManager );
     videoPlayer.msSetMediaProtectionManager( mediaProtectionManager );
     ```
     
-## Xxx Xxxxxx Xxxx
+## Add Secure Stop
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxx xxxxxx xxxx xx xxxx XXX xxx.
+This section describes how to add secure stop to your UWP app.
 
-Xxxxxx xxxx xxxxxxxx xxx xxxxx xxx x XxxxXxxxx xxxxxx xx xxxxxxxxxxx xxxxxx xx x xxxxx xxxxxxxxx xxxxxxx xxxx xxxxx xxxxxxxx xxx xxxxxxx xxx xxx xxxxx xxxxx xx xxxxxxx. Xxxx xxxxxxxxxx xxxxxxx xxxx xxxxx xxxxxxxxx xxxxxxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxx xxxxxxxxx xx xxxxx xxxxxxxxxxx xx xxxxxxxxx xxxxxxx xxx x xxxxx xxxxxxx.
+Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content. This capability ensures your media streaming services provide accurate enforcement and reporting of usage limitations on different devices for a given account.
 
-Xxxxx xxx xxx xxxxxxx xxxxxxxxx xxx xxxxxxx x xxxxxx xxxx xxxxxxxxx:
+There are two primary scenarios for sending a secure stop challenge:
 
--   Xxxx xxx xxxxx xxxxxxxxxxxx xxxxx xxxxxxx xxx xx xxxxxxx xxx xxxxxxx xx xxxx xxx xxxx xxxxxxx xxx xxxxx xxxxxxxxxxxx xxxxxxxxx xx xxx xxxxxx.
--   Xxxx xxx xxxxxxxx xxxxxxx xxxx xxxxxxxxxxxx (xxx xxxxxxx, xxx xx x xxxxxx xx xxx xxxxx). Xxx xxx xxxx xxxx xx xxxxx, xxxxxx xx xxxxxxx xx xxxxxxxx, xxx xxx xxxxxxxxxxx xxxxxx xxxx xxxxxxxx xxx xxxx xxxxxxxxx(x) xxxxxxxx xxxx xxx xxxxx xxxxx xxxxxxxx.
+-   When the media presentation stops because end of content was reached or when the user stopped the media presentation somewhere in the middle.
+-   When the previous session ends unexpectedly (for example, due to a system or app crash). The app will need to query, either at startup or shutdown, for any outstanding secure stop sessions and send challenge(s) separate from any other media playback.
 
-Xxx x xxxxxx xxxxxxxxxxxxxx xx xxxxxx xxxx, xxx xxx xxxxxxxxxx.xx xxxx xx xxx XxxxXxxxx xxxxxx xxxxxxx xx [xxxx://xx.xxxxxxxxx.xxx/xxxxxx/x/?xxxxxx=YYYYYY&xxxxx=YxYYY](http://go.microsoft.com/fwlink/p/?linkid=331670).
+For a sample implementation of secure stop, see the securestop.cs file in the PlayReady sample located at [http://go.microsoft.com/fwlink/p/?linkid=331670&clcid=0x409](http://go.microsoft.com/fwlink/p/?linkid=331670).
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

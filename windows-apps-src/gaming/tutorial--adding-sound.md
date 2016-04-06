@@ -1,31 +1,31 @@
 ---
-xxxxx: Xxx xxxxx
-xxxxxxxxxxx: Xx xxxx xxxx, xx xxxxxxx xxx xxx xxxxxxxx xxxx xxxxxx xxxxxxx xx xxxxxx xxx xxxxx xxxxxxxx xxxxx xxx XXxxxxY XXXx.
-xx.xxxxxxx: xxYYxxxY-Yxxx-YxYx-YYYY-YYxYxYxxYYYY
+title: Add sound
+description: In this step, we examine how the shooting game sample creates an object for sound playback using the XAudio2 APIs.
+ms.assetid: aa05efe2-2baa-8b9f-7418-23f5b6cd2266
 ---
 
-# Xxx xxxxx
+# Add sound
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xx xxxx xxxx, xx xxxxxxx xxx xxx xxxxxxxx xxxx xxxxxx xxxxxxx xx xxxxxx xxx xxxxx xxxxxxxx xxxxx xxx [XXxxxxY](https://msdn.microsoft.com/library/windows/desktop/ee415813) XXXx.
+In this step, we examine how the shooting game sample creates an object for sound playback using the [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) APIs.
 
-## Xxxxxxxxx
-
-
--   Xx xxx xxxxx xxxxxx xxxxx [XXxxxxY](https://msdn.microsoft.com/library/windows/desktop/ee415813).
-
-Xx xxx xxxx xxxxxx, xxx xxxxx xxxxxxx xxx xxxxxxxxx xxx xxxxxxx xx xxxxx xxxxx:
-
--   **Xxxxx.x/.xxx**. Xxxx xxxx xxxx xxxxxxx xxx **Xxxxx** xxxxxx, xxxxx xxxxxxxx xxx XXxxxxY xxxxxxxxx xxx xxxxx xxxxxxxx. Xx xxxx xxxxxxx xxx xxxxxx xxx xxxxxxxxxx xxx xxxxxxxx xxxxx xxxxxxxx xx xxx xxxx xx xxxxxx xx xxxxxxxxxxx.
--   **XxxxxXxxxxx.x/.xxx**. Xxxx xxxx xxxxxxx xxx xxxxxxx xxx xxxxxxx xxxxx .xxx xxxxx xxxx xxxxx xxxxxxx.
--   **XxxxxXxxxxx.x/.xxx**. Xxxx xxxx xxxxxxx xx xxxxxx xxx xx-xxxx xxxxx xxxxxxxx.
-
-## Xxxxxxxx xxx xxxxx xxxxxx
+## Objective
 
 
-Xxxx xxx xxxx xxxxxx xxxxxx, xx xxxxxxx xx **Xxxxx** xxxxxx xxxx xxxxxxxxx xxx xxxxx xxxxxxxxx xxx xxx xxxx. Xxx xxxx xxxx xxxxxxxx xxxx xxxxxx xxxxx xxxx xxxx:
+-   To add sound output using [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813).
+
+In the game sample, the audio objects and behaviors are defined in three files:
+
+-   **Audio.h/.cpp**. This code file defines the **Audio** object, which contains the XAudio2 resources for sound playback. It also defines the method for suspending and resuming audio playback if the game is paused or deactivated.
+-   **MediaReader.h/.cpp**. This code defines the methods for reading audio .wav files from local storage.
+-   **SoundEffect.h/.cpp**. This code defines an object for in-game sound playback.
+
+## Defining the audio engine
+
+
+When the game sample starts, it creates an **Audio** object that allocates the audio resources for the game. The code that declares this object looks like this:
 
 ```cpp
 public:
@@ -47,12 +47,12 @@ protected:
 };
 ```
 
-Xxx **Xxxxx::XxxxxXxxxxx** xxx **Xxxxx::XxxxxXxxxxxXxxxxx** xxxxxxx xxxxxx xxxxxxxxxx xx [**XXXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/ee415908) xxxxxxx xxxx xxxxxx xxx xxxxxxxxx xxxxx xxx xxxx xxxxx xxxx. X xxxxxxxxx xxxxx xx xxx xxxxx xxxxxx xxxx xxx xxxxxxxx. Xxxxx xxxx xxxxxxx xxxxxx xx xxxxxxxxx xxxxxxxx xx xxxxxxxxx xxxxxx, xxx xxxx xxxxxxxxx xx xxxxx xxxxx xx xxxxxx xxxx xx xxxxxxxx xx x xxxxxxxxx xxxxx xx xx xxxxx.
+The **Audio::MusicEngine** and **Audio::SoundEffectEngine** methods return references to [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) objects that define the mastering voice for each audio type. A mastering voice is the audio device used for playback. Sound data buffers cannot be submitted directly to mastering voices, but data submitted to other types of voices must be directed to a mastering voice to be heard.
 
-## Xxxxxxxxxxxx xxx xxxxx xxxxxxxxx
+## Initializing the audio resources
 
 
-Xxx xxxxxx xxxxxxxxxxx xxx [**XXXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/ee415908) xxxxxxx xxx xxx xxxxx xxx xxxxx xxxxxx xxxxxxx xxxx xxxxx xx [**XXxxxxYXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee419212). Xxxxx xxx xxxxxxx xxxx xxxx xxxxxxxxxxxx, xx xxxxxxx x xxxxxxxxx xxxxx xxx xxxx xxxx xxxxx xx [**XXXxxxxY::XxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh405048), xx xxxx:
+The sample initializes the [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) objects for the music and sound effect engines with calls to [**XAudio2Create**](https://msdn.microsoft.com/library/windows/desktop/ee419212). After the engines have been instantiated, it creates a mastering voice for each with calls to [**IXAudio2::CreateMasteringVoice**](https://msdn.microsoft.com/library/windows/desktop/hh405048), as here:
 
 ```cpp
 
@@ -84,12 +84,12 @@ void Audio::CreateDeviceIndependentResources()
 }
 ```
 
-Xx x xxxxx xx xxxxx xxxxxx xxxxx xxxx xx xxxxxx, xxxx xxxxxx xxxxx [**XXXxxxxY::XxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418607) xx xxx xxxxxxxxx xxxxx, xxxxx xxxxxxx xx xxxxxxxx xx x xxxxxx xxxxx xxx xxxxxxxx. Xx xxxx xx xxx xxxx xxx xxxx xx xxxx xx xx xxxxxx xxxxxxxxx xxx xxx xxxx xxxxxx xxxxx xxxxx xxxxx.
+As a music or sound effect audio file is loaded, this method calls [**IXAudio2::CreateSourceVoice**](https://msdn.microsoft.com/library/windows/desktop/ee418607) on the mastering voice, which creates an instance of a source voice for playback. We look at the code for this as soon as we finish reviewing how the game sample loads audio files.
 
-## Xxxxxxx xx xxxxx xxxx
+## Reading an audio file
 
 
-Xx xxx xxxx xxxxxx, xxx xxxx xxx xxxxxxx xxxxx xxxxxx xxxxx xx xxxxxxx xx **XxxxxXxxxxx.xxx**. Xxx xxxxxxxx xxxxxx xxxx xxxxx xx xx xxxxxxx .xxx xxxxx xxxx, **XxxxxXxxxxx::XxxxXxxxx**, xxxxx xxxx xxxx:
+In the game sample, the code for reading audio format files is defined in **MediaReader.cpp**. The specific method that reads in an encoded .wav audio file, **MediaReader::LoadMedia**, looks like this:
 
 ```cpp
 Platform::Array<byte>^  MediaReader::LoadMedia(_In_ Platform::String^ filename)
@@ -200,19 +200,19 @@ Platform::Array<byte>^  MediaReader::LoadMedia(_In_ Platform::String^ filename)
 }
 ```
 
-Xxxx xxxxxx xxxx xxx [Xxxxx Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ms694197) XXXx xx xxxx xx xxx .xxx xxxxx xxxx xx x Xxxxx Xxxx Xxxxxxxxxx (XXX) xxxxxx.
+This method uses the [Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) APIs to read in the .wav audio file as a Pulse Code Modulation (PCM) buffer.
 
-1.  Xxxxxxx x xxxxx xxxxxx xxxxxx ([**XXXXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/dd374655)) xxxxxx xx xxxxxxx [**XXXxxxxxXxxxxxXxxxxxXxxxXXX**](https://msdn.microsoft.com/library/windows/desktop/dd388110).
-2.  Xxxxxxx x xxxxx xxxx ([**XXXXxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ms704850)) xxx xxx xxxxxxxx xx xxx xxxxx xxxx xx xxxxxxx [**XXXxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ms693861). Xxxx xxxxxx xxxxxxxxx xxxx xxx xxxxxxx xxxxxx xx XXX xxxxx, xxxxx xx xx xxxxx xxxx xxxx XXxxxxY xxx xxx.
-3.  Xxxx xxx xxxxxxx xxxxxx xxxxx xxxx xxx xxx xxxxxx xx xxxxxxx [**XXXXxxxxxXxxxxx::XxxXxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/bb970432).
-4.  Xxxxxxx x [**XXXXXXXXXXXX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) xxxxxx xxx xxxxxx xxx xxxxxxx xx x xxxx xx [**XXXXxxxxXxxx::XXXxxxxxXxxxXxxxxxXxXxxxXXXxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ms702177) xx xxx [**XXXXxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ms704850) xxxxxx. Xxxx xxxxxxx xxx xxxxxx xxxx xxxxx xxx xxxxx xxxx xxxxx xx xx xxxxxx.
-5.  Xxxx xxx xxxxxxxx, xx xxxxxxx, xx xxx xxxxx xxxxxx xx xxxxxxx [**XXXXxxxxxXxxxxx::XxxXxxxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/dd374662) xxx xxxx xxxxxxxx xxx xxxxxxxx xx xxxxx.
-6.  Xxxxx xxx xxxxx xxxx xx xx x xxxxxx xx xxxxxxx [**XXXXxxxxxXxxxxx::XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/dd374665).
-7.  Xxxxxx xxx xxxxxxxx xx xxx xxxxx xxxxxx xxxxxx xxxx xx xxxxx xxxxxxxx xx xxx xxxxxx.
+1.  Creates a media source reader ([**IMFSourceReader**](https://msdn.microsoft.com/library/windows/desktop/dd374655)) object by calling [**MFCreateSourceReaderFromURL**](https://msdn.microsoft.com/library/windows/desktop/dd388110).
+2.  Creates a media type ([**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850)) for the decoding of the audio file by calling [**MFCreateMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms693861). This method specifies that the decoded output is PCM audio, which is an audio type that XAudio2 can use.
+3.  Sets the decoded output media type for the reader by calling [**IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432).
+4.  Creates a [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) buffer and copies the results of a call to [**IMFMediaType::MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177) on the [**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850) object. This formats the buffer that holds the audio file after it is loaded.
+5.  Gets the duration, in seconds, of the audio stream by calling [**IMFSourceReader::GetPresentationAttribute**](https://msdn.microsoft.com/library/windows/desktop/dd374662) and then converts the duration to bytes.
+6.  Reads the audio file in as a stream by calling [**IMFSourceReader::ReadSample**](https://msdn.microsoft.com/library/windows/desktop/dd374665).
+7.  Copies the contents of the audio sample buffer into an array returned by the method.
 
-Xxx xxxx xxxxxxxxx xxxxx xx **XxxxxXxxxxx::Xxxxxxxxxx** xx xxx xxxxxxxx xx xxx xxxxxx xxxxx xxxxxx, **x\_xxxxxxXxxxx**, xxxx xxx xxxxxxxxx xxxxx. Xx xxx xxx xxxxxx xxxxx xxx xxx xxxxxx xxxx xxxx xx xxx xxxxx xxxx xxxxxx xxxxxxxx xxxx **XxxxxXxxxxx::XxxxXxxxx**.
+The most important thing in **SoundEffect::Initialize** is the creation of the source voice object, **m\_sourceVoice**, from the mastering voice. We use the source voice for the actual play back of the sound data buffer obtained from **MediaReader::LoadMedia**.
 
-Xxx xxxxxx xxxx xxxxx xxxx xxxxxx xxxx xx xxxxxxxxxxx xxx **XxxxxXxxxxx** xxxxxx, xxxx xxxx:
+The sample game calls this method when it initializes the **SoundEffect** object, like this:
 
 ```cpp
 void SoundEffect::Initialize(
@@ -240,7 +240,7 @@ void SoundEffect::Initialize(
 }
 ```
 
-Xxxx xxxxxx xx xxxxxx xxx xxxxxxx xx xxxxx xx **Xxxxx::XxxxxXxxxxxXxxxxx** (xx **Xxxxx::XxxxxXxxxxx**), **XxxxxXxxxxx::XxxXxxxxxXxxxXxxxxxXx**, xxx xxx xxxxxx xxxxxxxx xx x xxxx xx **XxxxxXxxxxx::XxxxXxxxx**, xx xxxx xxxx.
+This method is passed the results of calls to **Audio::SoundEffectEngine** (or **Audio::MusicEngine**), **MediaReader::GetOutputWaveFormatEx**, and the buffer returned by a call to **MediaReader::LoadMedia**, as seen here.
 
 ```cpp
 MediaReader^ mediaReader = ref new MediaReader;
@@ -255,11 +255,11 @@ myTarget->HitSound()->Initialize(
                 targetHitSound);
 ```
 
-**XxxxxXxxxxx::Xxxxxxxxxx** xx xxxxxx xxxx xxx **XxxxxxYXXxxx:Xxxxxxxxxx** xxxxxx xxxx xxxxxxxxxxx xxx xxxx xxxx xxxxxx.
+**SoundEffect::Initialize** is called from the **Simple3DGame:Initialize** method that initializes the main game object.
 
-Xxx xxxx xxx xxxxxx xxxx xxx xx xxxxx xxxx xx xxxxxx, xxx'x xxx xxx xx xxxxx xx xxxx xxxxxx xxxx xxxx!
+Now that the sample game has an audio file in memory, let's see how it plays it back during game play!
 
-## Xxxxxxx xxxx xx xxxxx xxxx
+## Playing back an audio file
 
 
 ```cpp
@@ -297,21 +297,21 @@ void SoundEffect::PlaySound(_In_ float volume)
 }
 ```
 
-Xx xxxx xxx xxxxx, xxxx xxxxxx xxxx xxx xxxxxx xxxxx xxxxxx **x\_xxxxxxXxxxx** xx xxxxx xxx xxxxxxxx xx xxx xxxxx xxxx xxxxxx **x\_xxxxxXxxx**. Xx xxxxxxx xx [**XXXXXXY\_XXXXXX**](https://msdn.microsoft.com/library/windows/desktop/ee419228), xx xxxxx xx xxxxxxxx x xxxxxxxxx xx xxx xxxxx xxxx xxxxxx, xxx xxxx xxxxxxx xx xxxx x xxxx xx [**XXXxxxxYXxxxxxXxxxx::XxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418473). Xxxx xxx xxxxx xxxx xxxxxx xx, **XxxxxXxxxxx::XxxxXxxxx** xxxxxx xxxx xxxx xx xxxxxxx [**XXXxxxxYXxxxxxXxxxx::Xxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418471).
+To play the sound, this method uses the source voice object **m\_sourceVoice** to start the playback of the sound data buffer **m\_soundData**. It creates an [**XAUDIO2\_BUFFER**](https://msdn.microsoft.com/library/windows/desktop/ee419228), to which it provides a reference to the sound data buffer, and then submits it with a call to [**IXAudio2SourceVoice::SubmitSourceBuffer**](https://msdn.microsoft.com/library/windows/desktop/ee418473). With the sound data queued up, **SoundEffect::PlaySound** starts play back by calling [**IXAudio2SourceVoice::Start**](https://msdn.microsoft.com/library/windows/desktop/ee418471).
 
-Xxx, xxxxxxxx x xxxxxxxxx xxxxxxx xxx xxxx xxx x xxxxxx xxxxxx, x xxxx xx **XxxxxXxxxxx::XxxxXxxxx** xxxxxx x xxxxx xx xxxx.
+Now, whenever a collision between the ammo and a target occurs, a call to **SoundEffect::PlaySound** causes a noise to play.
 
-## Xxxx xxxxx
-
-
-Xxxx xxx x xxxxxxxxx xxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX xxxx xxxxxxxxxxx! Xx xxxx xxxxx, xxx xxxx xx xxxx xx xxxx xxx xxxx xx xx xx xxxx xxxx xxx xxxx xxx Xxxxxxx Y x xxxxx xxxxxxxxxx. Xxxxxxxx, xxxx xxxx xxx xx xxxxxx xx x xxxx xxxxxxx xx Xxxxxxx Y xxxxxxx xxx xxxxxxxxx, xx xxxxxx xxxx xxxxxxxxxx: xxxx xxxxxxxx, xxxx xxxxxxxx, xxxx xxxx xxxxxxxxx, xxx xxxx xxxxx xxx xx xxxx x xxx xx xxxxxxxxxxxxxx xx xxx xxx!
-
-Xxx xxxx xxxx xxxxx xxxx xx xxxxxx xxx xxxx xxxxxx xxxxxxxx xx xxxxx xxxxxxxxx, xxx [Xxxxxxxxx xxx xxxx xxxxxx](tutorial-resources.md).
-
-## Xxxxxxxx xxxxxx xxxx xxx xxxx xxxxxxx
+## Next steps
 
 
-Xxxxx.x
+That was a whirlwind tour of Universal Windows Platform (UWP) DirectX game development! At this point, you have an idea of what you need to do to make your own game for Windows 8 a great experience. Remember, your game can be played on a wide variety of Windows 8 devices and platforms, so design your components: your graphics, your controls, your user interface, and your audio for as wide a set of configurations as you can!
+
+For more info about ways to modify the game sample provided in these documents, see [Extending the game sample](tutorial-resources.md).
+
+## Complete sample code for this section
+
+
+Audio.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -344,7 +344,7 @@ protected:
 };
 ```
 
-Xxxxx.xxx
+Audio.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -440,7 +440,7 @@ void Audio::ResumeAudio()
 }
 ```
 
-XxxxxXxxxxx.x
+SoundEffect.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -472,7 +472,7 @@ protected:
 };
 ```
 
-XxxxxXxxxxx.xxx
+SoundEffect.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -556,4 +556,8 @@ void SoundEffect::PlaySound(_In_ float volume)
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

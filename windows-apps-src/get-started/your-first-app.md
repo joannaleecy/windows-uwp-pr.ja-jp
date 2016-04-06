@@ -1,69 +1,73 @@
 ---
-xx.xxxxxxx: XYYXXYYY-XYXX-YXXX-YXYY-XXXYXYYYYXXX
-xxxxx: Xxxxxx xxxx xxxxx xxx
-xxxxxxxxxxx: Xx'x xxxxxx xxxx xxx xxxxx xx xxxxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxx Xxxxxxx YY.
+ms.assetid: A77DA371-C0FE-4FAE-9E77-ADC3C9314EDF
+title: Create your first app
+description: It's easier than you think to create a Universal Windows Platform (UWP) app for Windows 10.
 ---
-# Xxxxxx xxxx xxxxx xxx
+# Create your first app
 
-Xx'x xxxxxx xxxx xxx xxxxx xx xxxxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxx Xxxxxxx YY. Xxx xxx'x xxxx xx xxxxx x xxx xxxxxxxx xx xxxxx—xxx xxx xxxxxx xx xxxx xxxx xxx xxxxxxx xxxx:
+It's easier than you think to create a Universal Windows Platform (UWP) app for Windows 10. You don't need to learn a new language to start—you can create it with what you already know:
 
--   X# xx Xxxxxx Xxxxx xxxx XXXX
--   X++ xxxx XXXX
--   XxxxXxxxxx xxxx XXXX/XXX
+-   C# or Visual Basic with XAML
+-   C++ with XAML
+-   JavaScript with HTML/CSS
 
-Xxxxx xxxxxxxxx xxxx xxx xxxxxx xxxx xxxxx XXX xxx xx xxx xxxxxxxx xx xxxx xxxxxx. Xxxx, xxx'xx xxxxx xxx xx:
+These tutorials help you create your first UWP app in the language of your choice. Here, you'll learn how to:
 
--   Xxxxxx x XXX xxx xxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx.
--   Xxx XX xxxxxxxx xxx xxxx xx xxx xxxxxxx.
--   Xxxxx xxx xxxxx xxxx xxx xx xxx xxxxx xxxxxxx xxx xx x xxxxx xxxxxxxx.
+-   Create a UWP app project in Microsoft Visual Studio.
+-   Add UI elements and code to the project.
+-   Build and debug your app on the local machine and on a phone emulator.
 
-Xx xxx xxxxxxx, xxxxxx xxx xxxxxxxx xxx xxxxxx.
+To get started, choose the language you prefer.
 
-## X#/Xxxxxx Xxxxx xxx XXXX xxxxxxxxx
+## C#/Visual Basic and XAML tutorials
 
-Xxx xxxx .XXX, XXX, xx Xxxxxxxxxxx xxxxxx xx xxxxx xxxx xxxxx XXXX xxxx X# xx Xxxxxx Xxxxx.
+Use your .NET, WPF, or Silverlight skills to build apps using XAML with C# or Visual Basic.
 
-[Xxxxxx x "Xxxxx, xxxxx" xxx xxxxx XXXX xxxx X# xx XX](create-a-hello-world-app-xaml-universal.md)
+[Create a "Hello, world" app using XAML with C# or VB](create-a-hello-world-app-xaml-universal.md)
 
-Xx xxxxxx xxx'xx xxxxxxx xxxxxxxxxxx xxxx XXXX xxx xxxxxx X# xx Xxxxxx Xxxxx. Xx xxx xxxx xx xxxxx xxx xxxxxx, xx xxxx xxxxxxx xxxx xxxxxx, xxx xxxxx xxxxxxx xxxx xxx [Xxxxxxxxx Xxxxxxx Xxxxxxx](http://www.microsoftvirtualacademy.com/).
+We assume you're already comfortable with XAML and either C# or Visual Basic. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://www.microsoftvirtualacademy.com/).
 
--   [X# Xxxxxxxxxxxx xxx Xxxxxxxx Xxxxxxxxx](http://www.microsoftvirtualacademy.com/training-courses/c-fundamentals-for-absolute-beginners)
--   [XX Xxxxxxxxxxxx xxx Xxxxxxxx Xxxxxxxxx](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
--   [XXXX Xxxx Xxxx xxx Xxxxxxx & Xxxxxxx Xxxxx Xxxx Xxxx Xxxxx](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
+-   [C# Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/c-fundamentals-for-absolute-beginners)
+-   [VB Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/vb-fundamentals-for-absolute-beginners)
+-   [XAML Deep Dive for Windows & Windows Phone Apps Jump Start](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
 
-## Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX) xxx XXXX xxxxxxxxx
+## Visual C++ component extensions (C++/CX) and XAML tutorials
 
-Xxxx xxxxxxxxx xx xxxx X++ xxxxxxxxxxx xxxxxxxxx xx xxxxx xxxx xxxxx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX) xxxx XXXX .
+Take advantage of your C++ programming expertise to build apps using Visual C++ component extensions (C++/CX) with XAML .
 
-[Xxxxxx x "Xxxxx, xxxxx" xxx xxxxx XXXX xxxx X++/XX](create-a-basic-windows-10-app-in-cpp.md)
+[Create a "Hello, world" app using XAML with C++/CX](create-a-basic-windows-10-app-in-cpp.md)
 
-Xx xxxxxx xxx'xx xxxxxxx xxxxxxxxxxx xxxx XXXX xxx X++. Xx xxx xxxx xx xxxxx xxx xxxxxx, xx xxxx xxxxxxx xxxx xxxxxx, xxx xxxxx xxxxxxx xxxx xxx [Xxxxxxxxx Xxxxxxx Xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=389916).
+We assume you're already comfortable with XAML and C++. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
 
--   [X++: X Xxxxxxx Xxxxxxx Xxxxxxxx xxx Xxxxxxx Xxxx Xxxxx](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
--   [XXXX Xxxx Xxxx xxx Xxxxxxx & Xxxxxxx Xxxxx Xxxx Xxxx Xxxxx](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
+-   [C++: A General Purpose Language and Library Jump Start](http://www.microsoftvirtualacademy.com/training-courses/c-a-general-purpose-language-and-library-jump-start)
+-   [XAML Deep Dive for Windows & Windows Phone Apps Jump Start](http://www.microsoftvirtualacademy.com/training-courses/xaml-deep-dive-for-windows-windows-phone-apps-jump-start)
 
-## XxxxXxxxxx xxx XXXX xxxxxxxxx
+## JavaScript and HTML tutorials
 
-Xxxx xxxxxxxxx xx xxxx xxx xxxxxx xx xxxxx xxxx xxxxx XXXXY, Xxxxxxxxx Xxxxx Xxxxxx, Xxxxx Y (XXXY), xxx XxxxXxxxxx.
+Take advantage of your web skills to build apps using HTML5, Cascading Style Sheets, Level 3 (CSS3), and JavaScript.
 
-[Xxxxxx x "Xxxxx, xxxxx" xxx xxxxx XXXX xxx XxxxXxxxxx](create-a-hello-world-app-js-universal.md)
+[Create a "Hello, world" app using HTML and JavaScript](create-a-hello-world-app-js-universal.md)
 
-Xx xxxxxx xxx'xx xxxxxxx xxxxxxxxxxx xxxx XXXXY, XXXY, xxx XxxxXxxxxx. Xx xxx xxxx xx xxxxx xxx xxxxxx, xx xxxx xxxxxxx xxxx xxxxxx, xxx xxxxx xxxxxxx xxxx xxx [Xxxxxxxxx Xxxxxxx Xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=389916).
+We assume you're already comfortable with HTML5, CSS3, and JavaScript. If you want to learn the basics, or just refresh your memory, try these courses from the [Microsoft Virtual Academy](http://go.microsoft.com/fwlink/p/?LinkID=389916).
 
--   [XxxxXxxxxx Xxxxxxxxxxxx xxx Xxxxxxxx Xxxxxxxxx](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
--   [XXXXY & XXXY Xxxxxxxxxxxx xxx Xxxxxxxx Xxxxxxxxx](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
+-   [JavaScript Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/javascript-fundamentals-for-absolute-beginners)
+-   [HTML5 & CSS3 Fundamentals for Absolute Beginners](http://www.microsoftvirtualacademy.com/training-courses/html5-css3-fundamentals-development-for-absolute-beginners)
 
-## Xxxxx xxxxxxxxx
+## Other resources
 
-Xx xxx xxxx xx xxxxxxx xxxxx xxxxx X++ xxx Xxxxxxxxx XxxxxxX, xxx [Xxxxxxxxxx xxxxx xx Xxxxxxx YY](https://dev.windows.com/games).
+If you want to develop games using C++ and Microsoft DirectX, see [Developing games on Windows 10](https://dev.windows.com/games).
 
-Xxxxxxx xxxx xxxxxxxxxx xxxx xXX xx Xxxxxxx? Xxx [Xxxxxxx xxxx xx Xxxxxxx YY](https://msdn.microsoft.com/library/windows/apps/Mt238321) xxxxxxx xxx xxxxxxxxx xx xxxx xxx xxx xxxxxxx.
+Already have experience with iOS or Android? The [Porting apps to Windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321) section has resources to help you get started.
 
-# Xxxxxxx xxxxxx
+# Related topics
 
-* [Xxxx'x x Xxxxxxxxx Xxxxxxx xxx?](whats-a-uwp.md)
-* [Xxx xxx xx](get-set-up.md)
-* [Xxxx xx](sign-up.md)
+* [What's a Universal Windows app?](whats-a-uwp.md)
+* [Get set up](get-set-up.md)
+* [Sign up](sign-up.md)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

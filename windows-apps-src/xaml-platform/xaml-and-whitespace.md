@@ -1,49 +1,53 @@
 ---
-xxxxxxxxxxx: Xxxxx xxxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxx xx xxxx xx XXXX.
-xxxxx: XXXX xxx xxxxxxxxxx
-xx.xxxxxxx: YYYXYXYX-YYYY-YYYY-YXXX-XYYXYYYYXXYY
+description: Learn about the whitespace processing rules as used by XAML.
+title: XAML and whitespace
+ms.assetid: 025F4A8E-9479-4668-8AFD-E20E7262DC24
 ---
 
-# XXXX xxx xxxxxxxxxx
+# XAML and whitespace
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxx xxxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxx xx xxxx xx XXXX.
+Learn about the whitespace processing rules as used by XAML.
 
-## Xxxxxxxxxx xxxxxxxxxx
+## Whitespace processing
 
-Xxxxxxxxxx xxxx XXX, xxxxxxxxxx xxxxxxxxxx xx XXXX xxx xxxxx, xxxxxxxx, xxx xxx. Xxxxx xxxxxxxxxx xx xxx Xxxxxxx xxxxxx YYYY, YYYX, xxx YYYY xxxxxxxxxxxx. Xx xxxxxxx xxxx xxxxxxxxxx xxxxxxxxxxxxx xxxxxx xxxx x XXXX xxxxxxxxx xxxxxxxxxx xxx xxxxx xxxx xxxxx xxxxxxx xxxxxxxx xx x XXXX xxxx:
+Consistent with XML, whitespace characters in XAML are space, linefeed, and tab. These correspond to the Unicode values 0020, 000A, and 0009 respectively. By default this whitespace normalization occurs when a XAML processor encounters any inner text found between elements in a XAML file:
 
--   Xxxxxxxx xxxxxxxxxx xxxxxxx Xxxx Xxxxx xxxxxxxxxx xxx xxxxxxx.
--   Xxx xxxxxxxxxx xxxxxxxxxx (xxxxx, xxxxxxxx, xxx) xxx xxxxxxxxx xxxx xxxxxx.
--   Xxx xxxxxxxxxxx xxxxxx xxx xxxxxxx xxx xxxxxxxx xx xxx xxxxx.
--   X xxxxx xxxxxxxxxxx xxxxxxxxx xxx xxxxx xxx xx xxxxxxx.
--   X xxxxx xxxxxxxxxxx xxxxxx xxx xxx xxx xx xxxxxxx.
--   *Xxxx Xxxxx xxxxxxxxxx* xx xxxxxxx xx x xxx xx Xxxxxxx xxxxxxxxx xxxxxx X+YYYYY xx X+YXXXX xxx X+YYYYY xx X+YXXXX. Xxxx xxxxxx xx xxxx xxxxxxxxx xxxxxxxx xx xx *XXX xxxxxxxxxx*. Xxx xxxx xxxxxxxxxxx, xxx xxxx://xxx.xxxxxxx.xxx.
+-   Linefeed characters between East Asian characters are removed.
+-   All whitespace characters (space, linefeed, tab) are converted into spaces.
+-   All consecutive spaces are deleted and replaced by one space.
+-   A space immediately following the start tag is deleted.
+-   A space immediately before the end tag is deleted.
+-   *East Asian characters* is defined as a set of Unicode character ranges U+20000 to U+2FFFD and U+30000 to U+3FFFD. This subset is also sometimes referred to as *CJK ideographs*. For more information, see http://www.unicode.org.
 
-"Xxxxxxx" xxxxxxxxxxx xx xxx xxxxx xxxxxxx xx xxx xxxxxxx xxxxx xx xxx **xxx:xxxxx** xxxxxxxxx.
+"Default" corresponds to the state denoted by the default value of the **xml:space** attribute.
 
-### Xxxxxxxxxx xx xxxxx xxxx, xxx xxxxxx xxxxxxxxxx
+### Whitespace in inner text, and string primitives
 
-Xxx xxxxx xxxxxxxxxxxxx xxxxx xxxxx xx xxxxx xxxx xxxxxx XXXX xxxxxxxx. Xxxxx xxxxxxxxxxxxx, x XXXX xxxxxxxxx xxxxxxxx xxx xxxxx xxxx xxxx xx xxxxxxxxxxx xxxx xxxx xxxx:
+The above normalization rules apply to inner text within XAML elements. After normalization, a XAML processor converts any inner text into an appropriate type like this:
 
--   Xx xxx xxxx xx xxx xxxxxxxx xx xxx x xxxxxxxxxx, xxx xx xxx xxxxxxxx xx **Xxxxxx** xxxx, xxx XXXX xxxxxxxxx xxxxx xx xxxxxxx xx xxxx xxxx xxxxx xxx xxxx xxxxxxxxx. X xxxxxx xxxxxxxxxx xxxx xxxxxxx xx x XXXX xxxxx xxxxx.
--   Xx xxx xxxx xx xxx xxxxxxxx xx x xxxxxxxxxx, xxx xxx xxxxx xxxx xx xxxxxxxxxx (xx xxxxxxxxxxx xxxxxxx xxxx), xxx xxxxx xxxx xx xxxxxx xx x xxxxxx **Xxxxxx**. Xx xxx xxxxxxxxxx xxxx xxxxxx xxxxxx **Xxxxxx**, xxxx xxxx xxxxxxx xx x XXXX xxxxxx xxxxx.
--   Xx xxx xxxx xx xxx xxxxxxxx xx **Xxxxxx**, xxxx xxx xxxxx xxxx xx xxxxxx xx x xxxxxx **Xxxxxx**. Xx xxxxx xxx xxxxxxxxxxx xxxxxxx xxxx, xxxx xxxxxxx xx x XXXX xxxxxx xxxxx, xxxxxxx xxx **Xxxxxx** xxxx xxxxxxx x xxxxxx xxxxxx (**Xxxxxx** xx xxxxxxxxx).
--   Xx xxx xxxx xx xxx xxxxxxxx xx x xxxxxxxxxx, xxx xxx xxxxx xxxx xx xxx xxxxxxxxxx, xxxx xxx xxxxx xxxxxxxxx xx xxxxxxxxx xxxx x **Xxxxxx** xxx xxxxx xx x xxxxxxxxxx xxxx, xxx xxxxxxxxxxx xxxxxxx xx xxxxx xx x xxxxxxxxxx xxxx, xxx xxxxxxx xxx xxxxxxxx xxxxxxxxx (xx xxx) xx xxxxx xx xxx xxxxxxxxxx xx x xxxxx **Xxxxxx** xxxx.
+-   If the type of the property is not a collection, but is not directly an **Object** type, the XAML processor tries to convert to that type using its type converter. A failed conversion here results in a XAML parse error.
+-   If the type of the property is a collection, and the inner text is contiguous (no intervening element tags), the inner text is parsed as a single **String**. If the collection type cannot accept **String**, this also results in a XAML parser error.
+-   If the type of the property is **Object**, then the inner text is parsed as a single **String**. If there are intervening element tags, this results in a XAML parser error, because the **Object** type implies a single object (**String** or otherwise).
+-   If the type of the property is a collection, and the inner text is not contiguous, then the first substring is converted into a **String** and added as a collection item, the intervening element is added as a collection item, and finally the trailing substring (if any) is added to the collection as a third **String** item.
 
-### Xxxxxxxxxx xxx xxxx xxxxxxx xxxxxx
+### Whitespace and text content models
 
-Xx xxxxxxxx, xxxxxxxxxx xxxxxxxxxx xx xx xxxxxxx xxxx xxx x xxxxxx xx xxx xxxxxxxx xxxxxxx xxxxxx. Xxxx xxxxxx xx xxxxxxxx xx xxxxxxx xxxxxx xxxx xxx xxxx x xxxxxxxxx **Xxxxxx** xxxx xx xxxx xxxx, x xxxxxxxxx **Xxxxxx** xxxxxxxxxx, xx x xxxxxxx xx **Xxxxxx** xxx xxxxx xxxxx xx xxxxx, xxxxxxxxxxx, xx xxxxxxxxxxxx.
+In practice, preserving whitespace is of concern only for a subset of all possible content models. That subset is composed of content models that can take a singleton **String** type in some form, a dedicated **String** collection, or a mixture of **String** and other types in lists, collections, or dictionaries.
 
-Xxxx xxx xxxxxxx xxxxxx xxxx xxx xxxx xxxxxxx, xxx xxxxxxx xxxxxxxx xxxxxx xxxxx xxxxxxx xxxxxx xx xxxx xxx xxxxxxxxxx xxxx xxxxxxx xx xxx xxxxxxx xx xxxxxxxxxxx.
+Even for content models that can take strings, the default behavior within these content models is that any whitespace that remains is not treated as significant.
 
-### Xxxxxxxxxx xxxxxxxxxx
+### Preserving whitespace
 
-Xxxxxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxx xx xxx xxxxxx XXXX xxx xxxxxxxx xxxxxxxxxxxx xxx xxx xxxxxxxx xx XXXX xxxxxxxxx xxxxxxxxxx xxxxxxxxxxxxx.
+Several techniques for preserving whitespace in the source XAML for eventual presentation are not affected by XAML processor whitespace normalization.
 
-`xml:space="preserve"`: Xxxxxxx xxxx xxxxxxxxx xx xxx xxxxx xx xxx xxxxxxx xxxxx xxxxxxxxxx xxxxx xx xx xxxxxxxxx. Xxxx xxxx xxxx xxxxxxxxx xxx xxxxxxxxxx, xxxxxxxxx xxx xxxxxx xxxx xxxxx xx xxxxx xx xxxx xxxxxxx xx xxxxxx xxxxxxxx xx xxxxx xxxxxx xxxxxxxx xx x xxxxxxxx xxxxxxxxx xxxxxxx. Xxxxxxx xxxxx xxxxxx xxxxxx xx xxxxx x xxxxxx xx xxx xxxxxxx xxxxx xxx xxx xxxxxxxxxx xxxxxxx. Xx xxx'x xxxxxxxxx xxxx xxx xxxxxxx `xml:space="preserve"` xx xxx xxxx xxxxx, xxxxxxx xxx xxxxxxxx xx xxxxxx xxxxxx xxx'x xxxxxxxx xxxxxxxxxx xx xxxxxxxxxxx xxx xxx xx xxxxxxx. Xx xx x xxxxxx xxxxxxxx xx xxxx xxx xxx xxxxxxxxx xxxxxxxxxxxx xx xxx xxxxx xx xxxxxxxx xxxx xxxxxx xxxxxxxxxx xxxxxx xxxxxxx, xx xxx xxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx.
+`xml:space="preserve"`: Specify this attribute at the level of the element where whitespace needs to be preserved. Note that this preserves all whitespace, including the spaces that might be added by code editors or design surfaces to align markup elements as a visually intuitive nesting. Whether those spaces render is again a matter of the content model for the containing element. We don't recommend that you specify `xml:space="preserve"` at the root level, because the majority of object models don't consider whitespace as significant one way or another. It is a better practice to only set the attribute specifically at the level of elements that render whitespace within strings, or are whitespace significant collections.
 
-Xxxxxxxx xxx xxxxxxxxxxx xxxxxx: XXXX xxxxxxxx xxxxxxx xxx Xxxxxxx xxxxxx xxxxxx x xxxx xxxxxx xxxxx. Xxx xxx xxx xxxxxxxxx xxxxxxxx xxxx xx xxxxxxxxxxx xxxxx (xx XXX-Y xxxxxxxx). Xxx xxx xxxx xxx xxxx xxxx xxxxxxxx xxxx xxxxxxx xxxxxxxxxxx xxxxx xxxxxxxxxx. Xx xxxxxxxx xx xxx xxx xxxxx xxxxxxxx xx xxxxxxxx xxxxxx xxxxxxxxxxxxxxx xxxx xx xxxxxxx, xxxxxxx xxx xxx-xxxx xxxxxx xx xxx xxxxxxxx xxxx xxxxx xx x xxxxxxx xxxxxx xx xxxxxxx xxxx xxxxx xxx xxxxxxx xxxxxx xxxxxxxxxx, xxxx xx xxxxxx xxx xx xxxxxx xxx xxxxxxx.
+Entities and nonbreaking spaces: XAML supports placing any Unicode entity within a text object model. You can use dedicated entities such as nonbreaking space (in UTF-8 encoding). You can also use rich text controls that support nonbreaking space characters. Be cautious if you are using entities to simulate layout characteristics such as indents, because the run-time output of the entities vary based on a greater number of factors than would the general layout facilities, such as proper use of panels and margins.
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

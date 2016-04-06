@@ -1,26 +1,26 @@
 ---
-xxxxx: Xxxx xxx xxxxxx xxxxxxx xxx xxxx
-xxxxxxxxxxx: Xx xxxx xxxx, xxx'xx xxxxxx xxx xxxxxx xxxxxxx xxxx xxxx xxxxxxx xxxx xxxxxx xxx xxx xxxxx xxxxxxx xxxx xxxxx xxx xxxxxxx xx xxxxxxxx xxx xxxxxxxx xx x xxxxxxxxx xxxxx.
-xx.xxxxxxx: YxYYYYxY-YYYY-YYYY-YxYY-YYxYYYYYYxYY
+title: Port the vertex buffers and data
+description: In this step, you'll define the vertex buffers that will contain your meshes and the index buffers that allow the shaders to traverse the vertices in a specified order.
+ms.assetid: 9a8138a5-0797-8532-6c00-58b907197a25
 ---
 
-# Xxxx xxx xxxxxx xxxxxxx xxx xxxx
+# Port the vertex buffers and data
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XXYXXxxxxx::XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476501)
--   [**XXYXXxxxxxXxxxxxx::XXXxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476456)
--   [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb173588)
+-   [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501)
+-   [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456)
+-   [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588)
 
-Xx xxxx xxxx, xxx'xx xxxxxx xxx xxxxxx xxxxxxx xxxx xxxx xxxxxxx xxxx xxxxxx xxx xxx xxxxx xxxxxxx xxxx xxxxx xxx xxxxxxx xx xxxxxxxx xxx xxxxxxxx xx x xxxxxxxxx xxxxx.
+In this step, you'll define the vertex buffers that will contain your meshes and the index buffers that allow the shaders to traverse the vertices in a specified order.
 
-Xx xxxx xxxxx, xxx'x xxxxxxx xxx xxxxxxxxx xxxxx xxx xxx xxxx xxxx xx xxx xxxxx. Xxxx xxxxxxxxxxxxxxx xxxx xxx xxxxxxxx xxxxxxxxx xx x xxxxxxxx xxxx (xx xxxxxxx xx x xxxxx xx xxxxx xxxx xxxxxxxxx xxxxxxxx xxxxxx). Xxx xxxxxxxx xx xxxx xxxxxxxxxxxxxxx xxxx xxxx xxxxxxxxxx xxxxxxx xxx xxxxx xxxxxx. Xxxx xx xxx XxxxxxYX xxxx xx xxxx xxxxx xxxxxx xx xxxxxxxxx xxx xxxxxxx xxxxxxx xx xxx XxxxxxYX xxxxxxx.
+At this point, let's examine the hardcoded model for the cube mesh we are using. Both representations have the vertices organized as a triangle list (as opposed to a strip or other more efficient triangle layout). All vertices in both representations also have associated indices and color values. Much of the Direct3D code in this topic refers to variables and objects defined in the Direct3D project.
 
-Xxxx'x xxx xxxx xxx xxxxxxxxxx xx XxxxXX XX Y.Y. Xx xxx xxxxxx xxxxxxxxxxxxxx, xxxx xxxxxx xx Y xxxxx xxxxxx: Y xxxxxxxx xxxxxxxxxxx xxxxxxxx xx Y XXXX xxxxx xxxxxx.
+Here's the cube for processing by OpenGL ES 2.0. In the sample implementation, each vertex is 7 float values: 3 position coordinates followed by 4 RGBA color values.
 
 ```cpp
 #define CUBE_INDICES 36
@@ -60,7 +60,7 @@ GLuint cubeIndices[] =
 };
 ```
 
-Xxx xxxx'x xxx xxxx xxxx xxx xxxxxxxxxx xx XxxxxxYX YY.
+And here's the same cube for processing by Direct3D 11.
 
 ```cpp
 VertexPositionColor cubeVerticesAndColors[] = 
@@ -98,17 +98,17 @@ unsigned short cubeIndices[] =
 };
 ```
 
-Xxxxxxxxx xxxx xxxx, xxx xxxxxx xxxx xxx xxxx xx xxx XxxxXX XX Y.Y xxxx xx xxxxxxxxxxx xx x xxxxx-xxxx xxxxxxxxxx xxxxxx, xxxxxxx xxx xxxx xx xxx XxxxxxYX-xxxxxxxx xxxx xx xxxxxxxxxxx xx x xxxx-xxxx xxxxxxxxxx xxxxxx. Xxxx xxxxxxxxx xxxx xxx xxxx xxxx, xxx xxxx xxxxxxx xxx x-xxxx xxxxxxxxxxx xxx xxxx xxxxx xxx xxxxxx xxx xxxxxxx xxx xxxx xxxx xxxxxxxxxxx xx xxxxxxxx xxx xxxxxxxxx xxxxxxxxx xx xxx xxxxxx xx xxx xxxxxxxxxx xxxxxx.
+Reviewing this code, you notice that the cube in the OpenGL ES 2.0 code is represented in a right-hand coordinate system, whereas the cube in the Direct3D-specific code is represented in a left-hand coordinate system. When importing your own mesh data, you must reverse the z-axis coordinates for your model and change the indices for each mesh accordingly to traverse the triangles according to the change in the coordinate system.
 
-Xxxxxxxx xxxx xx xxxx xxxxxxxxxxxx xxxxx xxx xxxx xxxx xxxx xxx xxxxx-xxxxxx XxxxXX XX Y.Y xxxxxxxxxx xxxxxx xx xxx xxxx-xxxxxx XxxxxxYX xxx, xxx'x xxx xxx xx xxxx xxx xxxx xxxx xxx xxxxxxxxxx xx xxxx xxxxxx.
+Assuming that we have successfully moved the cube mesh from the right-handed OpenGL ES 2.0 coordinate system to the left-handed Direct3D one, let's see how to load the cube data for processing in both models.
 
-## Xxxxxxxxxxxx
+## Instructions
 
-### Xxxx Y: Xxxxxx xx xxxxx xxxxxx
+### Step 1: Create an input layout
 
-Xx XxxxXX XX Y.Y, xxxx xxxxxx xxxx xx xxxxxxxx xx xxxxxxxxxx xxxx xxxx xx xxxxxxxx xx xxx xxxx xx xxx xxxxxx xxxxxxx. Xxx xxxxxxxxx xxxxxxx x xxxxxx xxxx xxxxxxxx xxx xxxxxxxxx xxxx xxxx xx xxx xxxxxx'x XXXX xx xxx xxxxxx xxxxxxx xxxxxx, xxx xxx x xxxxxx xxxxxxxx xxxx xxxx xxx xxx xxxxxx xx xxx xxxxxx. Xx xxxx xxxxxxx, x xxxxxx xxxxxx xxxxxx xxxxxxxx x xxxx xx xxxxxx Xxxxxx xxxxxxxxxx, xxxxxxx xxx xxxxxxxxx xx xxxxxxx:
+In OpenGL ES 2.0, your vertex data is supplied as attributes that will be supplied to and read by the shader objects. You typically provide a string that contains the attribute name used in the shader's GLSL to the shader program object, and get a memory location back that you can supply to the shader. In this example, a vertex buffer object contains a list of custom Vertex structures, defined and formatted as follows:
 
-XxxxXX XX Y.Y: Xxxxxxxxx xxx xxxxxxxxxx xxxx xxxxxxx xxx xxx-xxxxxx xxxxxxxxxxx.
+OpenGL ES 2.0: Configure the attributes that contain the per-vertex information.
 
 ``` syntax
 typedef struct 
@@ -118,13 +118,13 @@ typedef struct
 } Vertex;
 ```
 
-Xx XxxxXX XX Y.Y, xxxxx xxxxxxx xxx xxxxxxxx; xxx xxxx x xxxxxxx xxxxxxx XX\_XXXXXXX\_XXXXX\_XXXXXX xxx xxxxxx xxx xxxxxx xxx xxxxxx xxxx xxxx xxx xxxxxx xxxxxx xxx xxxxxxxxx xxx xxxx xxxxx xxxxxxxxx xx. Xxx xxxxxx xxx xxxxxx xxxxxx xxxxxxxxx xxxxx xxxxxxxxxx xxx xx xxxxx xxxxxxxx xx xxxx xxxxx xx xxxxxx xxxx xxxx **xxXxxxxxXxxxxxXxxxxxx**.
+In OpenGL ES 2.0, input layouts are implicit; you take a general purpose GL\_ELEMENT\_ARRAY\_BUFFER and supply the stride and offset such that the vertex shader can interpret the data after uploading it. You inform the shader before rendering which attributes map to which portions of each block of vertex data with **glVertexAttribPointer**.
 
-Xx XxxxxxYX, xxx xxxx xxxxxxx xx xxxxx xxxxxx xx xxxxxxxx xxx xxxxxxxxx xx xxx xxxxxx xxxx xx xxx xxxxxx xxxxxx xxxx xxx xxxxxx xxx xxxxxx, xxxxxxx xx xxxxxx xxx xxxx xxx xxxxxxxx. Xx xx xxxx, xxx xxx xx xxxxx xxxxxx xxxxx xxxxxxxxxxx xx xxxxxx xx xxx xxxx xxx xxx xxxxxxxxxx xxxxxxxx xx xxxxxx. Xx xx xxxx xxxxxxxxx xx xxxxxxx xxxx xxxxxxxxxx!
+In Direct3D, you must provide an input layout to describe the structure of the vertex data in the vertex buffer when you create the buffer, instead of before you draw the geometry. To do this, you use an input layout which corresponds to layout of the data for our individual vertices in memory. It is very important to specify this accurately!
 
-Xxxx, xxx xxxxxx xx xxxxx xxxxxxxxxxx xx xx xxxxx xx [**XYXYY\_XXXXX\_XXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476180) xxxxxxxxxx.
+Here, you create an input description as an array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures.
 
-XxxxxxYX: Xxxxxx xx xxxxx xxxxxx xxxxxxxxxxx.
+Direct3D: Define an input layout description.
 
 ``` syntax
 struct VertexPositionColor
@@ -143,13 +143,13 @@ const D3D11_INPUT_ELEMENT_DESC vertexDesc[] =
 
 ```
 
-Xxxx xxxxx xxxxxxxxxxx xxxxxxx x xxxxxx xx x xxxx xx Y Y-xxxxxxxxxx xxxxxxx: xxx YX xxxxxx xx xxxxx xxx xxxxxxxx xx xxx xxxxxx xx xxxxx xxxxxxxxxxx, xxx xxxxxxx YX xxxxxx xx xxxxx xxx XXX xxxxx xxxxx xxxxxxxxxx xxxx xxx xxxxxx. Xx xxxx xxxx, xxx xxx YxYY xxx xxxxxxxx xxxxx xxxxxx, xxxxxxxx xx xxxxx xx xxxxxxxxx xx xxxx xx `XMFLOAT3(X.Xf, X.Xf, X.Xf)`. Xxx xxxxxx xxx xxxxx xxxx xxx [XxxxxxXXxxx](https://msdn.microsoft.com/library/windows/desktop/ee415574) xxxxxxx xxxxxxxx xxx xxx xxxxxxxx xxxx xxxx xxxx xx xxxx xx x xxxxxx, xx xx xxxxxx xxx xxxxxx xxxxxxx xxx xxxxxxxxx xx xxxx xxxx. (Xxx xxxxxxx, xxx [**XXXXXXXY**](https://msdn.microsoft.com/library/windows/desktop/ee419475) xx [**XXXXXXXY**](https://msdn.microsoft.com/library/windows/desktop/ee419608) xxx xxxxxx xxxx, xxx [**XXXXXXXYXY**](https://msdn.microsoft.com/library/windows/desktop/ee419621) xxx xxxxxxxx.)
+This input description defines a vertex as a pair of 2 3-coordinate vectors: one 3D vector to store the position of the vertex in model coordinates, and another 3D vector to store the RGB color value associated with the vertex. In this case, you use 3x32 bit floating point format, elements of which we represent in code as `XMFLOAT3(X.Xf, X.Xf, X.Xf)`. You should use types from the [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415574) library whenever you are handling data that will be used by a shader, as it ensure the proper packing and alignment of that data. (For example, use [**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475) or [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608) for vector data, and [**XMFLOAT4X4**](https://msdn.microsoft.com/library/windows/desktop/ee419621) for matrices.)
 
-Xxx x xxxx xx xxx xxx xxxxxxxx xxxxxx xxxxx, xxxxx xx [**XXXX\_XXXXXX**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
+For a list of all the possible format types, refer to [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
 
-Xxxx xxx xxx-xxxxxx xxxxx xxxxxx xxxxxxx, xxx xxxxxx xxx xxxxxx xxxxxx. Xx xxx xxxxxxxxx xxxx, xxx xxxxx xx xx **x\_xxxxxXxxxxx**, x xxxxxxxx xx xxxx **XxxXxx** (xxxxx xxxxxx xx xx xxxxxx xx xxxx [**XXYXYYXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476575)). **xxxxXxxx** xxxxxxxx xxx xxxxxxxx xxxxxx xxxxxx xxxxxx xxxx xxx xxxxxxxx xxxx, [Xxxx xxx xxxxxxx](port-the-shader-config.md).
+With the per-vertex input layout defined, you create the layout object. In the following code, you write it to **m\_inputLayout**, a variable of type **ComPtr** (which points to an object of type [**ID3D11InputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476575)). **fileData** contains the compiled vertex shader object from the previous step, [Port the shaders](port-the-shader-config.md).
 
-XxxxxxYX: Xxxxxx xxx xxxxx xxxxxx xxxx xx xxx xxxxxx xxxxxx.
+Direct3D: Create the input layout used by the vertex buffer.
 
 ``` syntax
 Microsoft::WRL::ComPtr<ID3D11InputLayout>      m_inputLayout;
@@ -165,13 +165,13 @@ m_d3dDevice->CreateInputLayout(
 );
 ```
 
-Xx'xx xxxxxxx xxx xxxxx xxxxxx. Xxx, xxx'x xxxxxx x xxxxxx xxxx xxxx xxxx xxxxxx xxx xxxx xx xxxx xxx xxxx xxxx xxxx.
+We've defined the input layout. Now, let's create a buffer that uses this layout and load it with the cube mesh data.
 
-### Xxxx Y: Xxxxxx xxx xxxx xxx xxxxxx xxxxxx(x)
+### Step 2: Create and load the vertex buffer(s)
 
-Xx XxxxXX XX Y.Y, xxx xxxxxx x xxxx xx xxxxxxx, xxx xxx xxx xxxxxxxx xxxx xxx xxx xxx xxx xxxxx xxxx. (Xxx xxxxx xxxx xxxxxx x xxxxxx xxxx xxxxxxxx xxxx xxx x xxxxxx xxxxxx.) Xxx xxxx xxxx xxxxxx xxx xxxxx xxxxxxxx xxx xxxxx xxxx xxxx xxxx. Xxxxx, xxxxxx xxxx xxxxxx xxxxxxxx, xxxx xxx xxxxxxx xxxxx xxx xxxxxxx xxx xxxxxx xxxx xxx xxxxxx xx xxx xxxx xx xxx xxxxxx xx xx xxx xxxxxxxxx xxxxxxxxx xx.
+In OpenGL ES 2.0, you create a pair of buffers, one for the position data and one for the color data. (You could also create a struct that contains both and a single buffer.) You bind each buffer and write position and color data into them. Later, during your render function, bind the buffers again and provide the shader with the format of the data in the buffer so it can correctly interpret it.
 
-XxxxXX XX Y.Y: Xxxx xxx xxxxxx xxxxxxx
+OpenGL ES 2.0: Bind the vertex buffers
 
 ``` syntax
 // upload the data for the vertex position buffer
@@ -180,13 +180,13 @@ glBindBuffer(GL_ARRAY_BUFFER, renderer->vertexBuffer);
 glBufferData(GL_ARRAY_BUFFER, sizeof(VERTEX) * CUBE_VERTICES, renderer->vertices, GL_STATIC_DRAW);   
 ```
 
-Xx XxxxxxYX, xxxxxx-xxxxxxxxxx xxxxxxx xxx xxxxxxxxxxx xx [**XYXYY\_XXXXXXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476220) xxxxxxxxxx. Xx xxxx xxx xxxxxxxx xx xxxx xxxxxx xx xxxxxx xxxxxx, xxx xxxx xx xxxxxx x XXYXYY\_XXXXXX\_XXXX xxxxxxxxx xxx xxxx xxxxxx xxxx [**XXYXXxxxxx::XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476501), xxx xxxx xxx xxx xxxxxx xx xxx XxxxxxYX xxxxxx xxxxxxx xx xxxxxxx x xxx xxxxxx xxxxxxxx xx xxx xxxxxx xxxx, xxxx xx [**XXYXXxxxxxXxxxxxx::XXXxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
+In Direct3D, shader-accessible buffers are represented as [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structures. To bind the location of this buffer to shader object, you need to create a CD3D11\_BUFFER\_DESC structure for each buffer with [**ID3DDevice::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501), and then set the buffer of the Direct3D device context by calling a set method specific to the buffer type, such as [**ID3DDeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456).
 
-Xxxx xxx xxx xxx xxxxxx, xxx xxxx xxx xxx xxxxxx (xxx xxxx xx xxx xxxx xxxxxxx xxx xx xxxxxxxxxx xxxxxx) xx xxxx xxx xxxxxx (xxxxx xxx xxxxxx xxxx xxxxx xxxxxxxx xxxxxx) xxxx xxx xxxxxxxxx xx xxx xxxxxx.
+When you set the buffer, you must set the stride (the size of the data element for an individual vertex) as well the offset (where the vertex data array actually starts) from the beginning of the buffer.
 
-Xxxxxx xxxx xx xxxxxx xxx xxxxxxx xx xxx **xxxxxxXxxxxxx** xxxxx xx xxx **xXxxXxx** xxxxx xx xxx [**XYXYY\_XXXXXXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476220) xxxxxxxxx. Xx xxxx xxx'x xxxxxxx, xxxx xxxx xxxx xx xxxxxxx xx xxxxx!
+Notice that we assign the pointer to the **vertexIndices** array to the **pSysMem** field of the [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure. If this isn't correct, your mesh will be corrupt or empty!
 
-XxxxxxYX: Xxxxxx xxx xxx xxx xxxxxx xxxxxx
+Direct3D: Create and set the vertex buffer
 
 ``` syntax
 D3D11_SUBRESOURCE_DATA vertexBufferData = {0};
@@ -212,13 +212,13 @@ m_d3dContext->IASetVertexBuffers(
   &offset);
 ```
 
-### Xxxx Y: Xxxxxx xxx xxxx xxx xxxxx xxxxxx
+### Step 3: Create and load the index buffer
 
-Xxxxx xxxxxxx xxx xx xxxxxxxxx xxx xx xxxxx xxx xxxxxx xxxxxx xx xxxx xx xxxxxxxxxx xxxxxxxx. Xxxxxxxx xxxx xxx xxx xxxxxxxx, xx xxx xxxx xx xxxx xxxxxx xxxxxxxx. Xx xxxx xxxxxx xxxxxxx xx XxxxXX XX Y.Y, xx xxxxx xxxxxx xx xxxxxxx xxx xxxxx xx x xxxxxxx xxxxxxx xxxxxx xxx xxx xxxxxx xxxxxxx xxx xxxxxxx xxxxxxx xxx xxxxxx xxxx xx.
+Index buffers are an efficient way to allow the vertex shader to look up individual vertices. Although they are not required, we use them in this sample renderer. As with vertex buffers in OpenGL ES 2.0, an index buffer is created and bound as a general purpose buffer and the vertex indices you created earlier are copied into it.
 
-Xxxx xxx'xx xxxxx xx xxxx, xxx xxxx xxxx xxx xxxxxx xxx xxx xxxxx xxxxxx xxxxx, xxx xxxx **xxXxxxXxxxxxxx**.
+When you're ready to draw, you bind both the vertex and the index buffer again, and call **glDrawElements**.
 
-XxxxXX XX Y.Y: Xxxx xxx xxxxx xxxxx xx xxx xxxx xxxx.
+OpenGL ES 2.0: Send the index order to the draw call.
 
 ``` syntax
 GLuint indexBuffer;
@@ -240,9 +240,9 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->indexBuffer);
 glDrawElements (GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
 ```
 
-Xxxx XxxxxxYX, xx'x x xxx xxxx xxxxxxx xxxxxxx, xxxxxx x xxx xxxx xxxxxxxx. Xxxxxx xxx xxxxx xxxxxx xx x XxxxxxYX xxxxxxxxxxx xx xxx [**XXYXYYXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476385) xxx xxxxxxx xxxx xxx xxxxxxxxxx XxxxxxYX. Xxx xx xxxx xx xxxxxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb173588) xxxx xxx xxxxxxxxxx xxxxxxxxxxx xxx xxx xxxxx xxxxx, xx xxxxxxx. (Xxxxx, xxxxxx xxxx xxx xxxxxx xxx xxxxxxx xx xxx **xxxxXxxxxxx** xxxxx xx xxx **xXxxXxx** xxxxx xx xxx [**XYXYY\_XXXXXXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476220) xxxxxxxxx.)
+With Direct3D, it's a bit very similar process, albeit a bit more didactic. Supply the index buffer as a Direct3D subresource to the [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) you created when you configured Direct3D. You do this by calling [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/bb173588) with the configured subresource for the index array, as follows. (Again, notice that you assign the pointer to the **cubeIndices** array to the **pSysMem** field of the [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure.)
 
-XxxxxxYX: Xxxxxx xxx xxxxx xxxxxx.
+Direct3D: Create the index buffer.
 
 ``` syntax
 m_indexCount = ARRAYSIZE(cubeIndices);
@@ -266,9 +266,9 @@ m_d3dContext->IASetIndexBuffer(
   0);
 ```
 
-Xxxxx, xxx xxxx xxxx xxx xxxxxxxxx xxxx x xxxx xx [**XXYXYYXxxxxxXxxxxxx::XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (xx [**XXYXYYXxxxxxXxxxxxx::Xxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476407) xxx xxxxxxxxx xxxxxxxx), xx xxxxxxx. (Xxx xxxx xxxxxxx, xxxx xxxxx xx [Xxxx xx xxx xxxxxx](draw-to-the-screen.md).)
+Later, you will draw the triangles with a call to [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) (or [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) for unindexed vertices), as follows. (For more details, jump ahead to [Draw to the screen](draw-to-the-screen.md).)
 
-XxxxxxYX: Xxxx xxx xxxxxxx xxxxxxxx.
+Direct3D: Draw the indexed vertices.
 
 ``` syntax
 m_d3dContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
@@ -282,32 +282,36 @@ m_d3dContext->DrawIndexed(
   0);
 ```
 
-## Xxxxxxxx xxxx
+## Previous step
 
 
-[Xxxx xxx xxxxxx xxxxxxx](port-the-shader-config.md)
+[Port the shader objects](port-the-shader-config.md)
 
-## Xxxx xxxx
+## Next step
 
-[Xxxx xxx XXXX](port-the-glsl.md)
+[Port the GLSL](port-the-glsl.md)
 
-## Xxxxxxx
+## Remarks
 
-Xxxx xxxxxxxxxxx xxxx XxxxxxYX, xxxxxxxx xxx xxxx xxxx xxxxx xxxxxxx xx [**XXYXYYXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476379) xxxx x xxxxxx xxxx xx xxxxxx xxxxxxxx xxx xxxxxx xxxxxxxxx xxxx xx xx xxxxxxxxx. (Xx xxx XxxxxxYX xxxxxxx xxxxxxxx, xxxx xxxx xx xx xxx xxxxxxxx xxxxxx'x **XxxxxxXxxxxxXxxxxxxx** xxxxxxx. Xxx xxxx xxxx xxxxxxx xxx xxxxxx xxxxxxx ([**XXYXYYXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476385)), xx xxx xxxxx xxxx, xx xxxxxx xx xxx **Xxxxxx** xxxxxx, xxxxx xxxx xx xxxxx xxx xxxxxxxx xxxxxxxxx xxx xxxxxx xxxxxx xxx xxxx xxx xxxx.
+When structuring your Direct3D, separate the code that calls methods on [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) into a method that is called whenever the device resources need to be recreated. (In the Direct3D project template, this code is in the renderer object's **CreateDeviceResource** methods. The code that updates the device context ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)), on the other hand, is placed in the **Render** method, since this is where you actually construct the shader stages and bind the data.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
 
-* [Xxx xx: xxxx x xxxxxx XxxxXX XX Y.Y xxxxxxxx xx XxxxxxYX YY](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
-* [Xxxx xxx xxxxxx xxxxxxx](port-the-shader-config.md)
-* [Xxxx xxx xxxxxx xxxxxxx xxx xxxx](port-the-vertex-buffers-and-data-config.md)
-* [Xxxx xxx XXXX](port-the-glsl.md)
+* [How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)
+* [Port the shader objects](port-the-shader-config.md)
+* [Port the vertex buffers and data](port-the-vertex-buffers-and-data-config.md)
+* [Port the GLSL](port-the-glsl.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

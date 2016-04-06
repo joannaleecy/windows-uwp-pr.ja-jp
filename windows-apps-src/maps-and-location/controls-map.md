@@ -1,69 +1,73 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxxxxxx xxx xxxxxxx xxxx xxxx xxx xxxxxx xxxxx, xxxxxxxxxx, xxxxxx xxxxxxx, xxx xxxxxxx.
-xxxxx: Xxxxxxxxxx xxx xxxx
-xx.xxxxxxx: YXYXYXXY-XYXX-YYYY-YYYY-YYXYYXXYYYYY
+Description: マップ コントロールでは、地図および上空からの写真、方向、検索結果、トラフィックを表示できます。
+title: マップのガイドライン
+ms.assetid: 7B5B6BC9-D1EC-4978-8876-20B78EF44797
 ---
 
-# Xxxxxxxxxx xxx xxxx
+# マップのガイドライン
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-Xxx xxx xxxxxxx xxx xxxxxxx xxxx xxxx, xxxxxx, YX, xxxxx, xxxxxxxxxx, xxxxxx xxxxxxx, xxx xxxxxxx. Xx x xxx, xxx xxx xxxxxxx xxx xxxx'x xxxxxxxx, xxxxxxxxxx, xxx xxxxxx xx xxxxxxxx. X xxx xxx xxxx xxxx xxxxxx YX xxxxx, Xxxxxxxxxx xxxxx, xxxxxxx, xxxxxxx, xxx xxxxx xxxxxxxxxx.
+マップ コントロールでは、地図、航空写真 3D ビュー、方向、検索結果、トラフィックを表示できます。 マップ上には、現在地、ルート、関心のあるポイントを表示できます。 また、航空写真 3D ビュー、Streetside ビュー、交通情報、乗り換え情報、周辺情報を表示することもできます。
 
-![xxxxxxx xx x xxx, xxxxx xxxx](./images/win10fa/controls-maps-basic.jpg)
+![マップの例 (基本ビュー)](./images/win10fa/controls-maps-basic.jpg)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
-
-
-Xxx x xxx xxxxxxx xxxx xxx xxxx x xxx xxxxxx xxxx xxx xxxx xxxxxx xxxxx xx xxxx xxx-xxxxxxxx xx xxxxxxx xxxxxxxxxx xxxxxxxxxxx. Xxxxxx x xxx xxxxxxx xx xxxx xxx xxxxx xxxx xxxxx xxx'x xxxx xx xx xxxxxxx xxxx xxx xx xxx xxxx xxxxxxxxxxx.
-
-**Xxxx**  Xx xxx xxx'x xxxx xxxxx xxxxx xxxxxxx xxxx xxx, xxxxxxxx xxxxx xxx Xxxxxxx Xxxx xxx xx xxxxxxx xxxx xxxxxxxxxxx. Xxxx xxx xxx xxxxxx xxx Xxxxxxx Xxxx xxx xx xxxxxxx xxxxxxxx xxxx, xxxxxxxxxx, xxx xxxxxx xxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxx xxx Xxxxxxx Xxxx xxx](https://msdn.microsoft.com/library/windows/apps/mt228341).
-
-## Xxxxxxxx
+## 適切なコントロールの選択
 
 
-Xxxx xxxxxxx xxxxx x xxx xxxx x Xxxxxxxxxx xxxx:
+アプリ固有の地理情報または一般的な地理情報を表示できるアプリ内でマップが必要な場合に、マップ コントロールを使います。 アプリにマップ コントロールを含めておくことで、ユーザーはアプリの外部に移動することなく情報を得ることができます。
 
-![xxxxxxx xx xxx xxxxxxx'x xxxxxxxxxx xxxx](./images/win10fa/controls-maps-streetside.jpg)
+**注:** その情報を得るためにユーザーがアプリの外部に移動してもかまわない場合は、Windows マップ アプリを利用することも検討してください。 アプリから Windows マップ アプリを起動し、特定の地図、ルート案内、検索結果を表示することができます。 詳しくは、「[Windows マップ アプリの起動](https://msdn.microsoft.com/library/windows/apps/mt228341)」をご覧ください。
 
- 
+## 例
 
-Xxxx xxxxxxx xxxxx x xxx xxxx xx xxxxxx YX xxxx:
 
-![xxxxxxx xx xxx xxxxxxx'x Y-x xxxx](./images/win10fa/controls-maps-3dview.jpg)
+次の例では、Streetside ビューを使用したマップを示しています。
+
+![マップ コントロールの Streetside ビューの例](./images/win10fa/controls-maps-streetside.jpg)
 
  
 
-Xxxx xxxxxxx xxxxx xx xxx xxxx xxxx xx xxxxxx YX xxxx xxx x Xxxxxxxxxx xxxx:
+次の例では、3D 航空写真を使用したマップを示しています。
 
-![xxxxxxx xx Y-x xxx xxxx xxxx xxxxxxxxxx xxxx](./images/win10fa/controls-maps-3dstreetview.png)
+![マップ コントロールの 3D ビューの例](./images/win10fa/controls-maps-3dview.jpg)
 
+ 
 
-## Xxxxxxxxxxxxxxx
+次の例では、3D 航空写真ビューと Streetside ビューの両方が含まれるアプリを示しています。
 
-
--   Xxx xxxxx xxxxxx xxxxx (xx xxx xxxxxx xxxxxx) xx xxxxxxx xxx xxx xx xxxx xxxxx xxx'x xxxx xx xxx xxx xxxx xxxxxxxxxxx xx xxxx xxxxxxxxxxxx xxxxxxxxxxx.
-
--   Xx xxx xxx xx xxxx xxxx xx xxxxxxx x xxxxxx, xxxxxxxxxxxxx xxxx, xxxx xxxxx x xxxxxxx xxx xxxxx xx xxxx xxxxxxxxxxx. Xx xxx xx xxxx x xxxxxxx, xxxxxx xxx, xxxx xxx xxxxxxxxxx xx xxxxxxxxx—xxxxx xxxxxx xx xxxxxxxx xxxxxx xxxxxx xxxx xxxxxx, xxx xxxxx xxxxxx xx xxxxxx xxxxxxx.
-
--   Xxxxx xxx xxxxxx xx xxxxxxxx xx xxx xxx xxxxx xxxxx [**xxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637034); xxx xxxxxxxxxx xxxxxxxxxxx xxx xx xxxxxxxxx xx xxxxxxxxx XX xxxx xxxxxxxx xxx xxx xxxxx.
-
-## Xxxxxxx xxxxxx
+![3D マップ ビューと Streetside ビューを組み合わせた例](./images/win10fa/controls-maps-3dstreetview.png)
 
 
-* [Xxxxxxx xxxx xxxx YX, YX, xxx Xxxxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt219695)
-* [Xxxxxxx xxxxxx xx xxxxxxxx (XXX) xx x xxx](https://msdn.microsoft.com/library/windows/apps/mt219696)
-* [Xxxx Xxxx Xxxxxxxxx Xxxxxx](https://www.bingmapsportal.com/)
-* [XXX xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [//Xxxxx YYYY xxxxx: Xxxxxxxxxx Xxxx xxx Xxxxxxxx Xxxxxx Xxxxx, Xxxxxx, xxx XX xx Xxxx Xxxxxxx Xxxx](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [Xxxxxx xxx Xxxxxxx Xxxx xxx](https://msdn.microsoft.com/library/windows/apps/mt228341)
+## 推奨事項
+
+
+-   ユーザーが地理情報を表示するためにパンとズームを過度に使用しなくて済むように、十分な画面領域 (または画面全体) を使用してマップを表示します。
+
+-   静的な情報ビューの提示をするためにのみマップを使う場合、小さなマップを使う方が適している場合があります。 小さく静的なマップを使う場合は、使いやすさを考えてサイズを決めます。画面上の領域を十分節約できる程度に小さく、判読しにくくならない程度に大きくします。
+
+-   マップ シーンに関心のあるポイントを埋め込むには、[**MapElements**](https://msdn.microsoft.com/library/windows/apps/dn637034) を使います。その他の情報も、マップ シーンのオーバーレイとして表示される一時的な UI に表示できます。
+
+## 関連トピック
+
+
+* [2D、3D、Streetside ビューでの地図の表示](https://msdn.microsoft.com/library/windows/apps/mt219695)
+* [関心のあるポイント (POI) の地図への表示](https://msdn.microsoft.com/library/windows/apps/mt219696)
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [//Build 2015 のビデオ: Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [Windows マップ アプリの起動](https://msdn.microsoft.com/library/windows/apps/mt228341)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

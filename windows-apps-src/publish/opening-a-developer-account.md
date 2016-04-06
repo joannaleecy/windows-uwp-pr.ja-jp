@@ -1,75 +1,79 @@
 ---
-xx.xxxxxxx: YYYXXXYX-XXXY-YXXX-YXYY-YYYYXXXXXXXY
-xxxxx: Xxxxxxx x xxxxxxxxx xxxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxxx xx xxx xx xxxxxxxx xxx x xxxxxxxxx xxxxxxx xxx xxx Xxxxxxx Xxxxx xxx xxxxx Xxxxxxxxx xxxxxxxx xxxx xxxx xxx xxxxxxxxxx xxx xxxxxxx xx xxxxxxx xx xxxx xxxxxxx.
+ms.assetid: 284EBA1F-BFB4-4CDA-9F05-4927CDACDAA7
+title: Opening a developer account
+description: This overview of how to register for a developer account for the Windows Store and other Microsoft programs will help you understand the process of setting up your account.
 ---
-# Xxxxxxx x xxxxxxxxx xxxxxxx
+# Opening a developer account
 
-Xxxx xxxxxxxx xx xxx xx xxxxxxxx xxx x xxxxxxxxx xxxxxxx xxx xxx Xxxxxxx Xxxxx xxx xxxxx Xxxxxxxxx xxxxxxxx xxxx xxxx xxx xxxxxxxxxx xxx xxxxxxx xx xxxxxxx xx xxxx xxxxxxx.
+This overview of how to register for a developer account for the Windows Store and other Microsoft programs will help you understand the process of setting up your account.
 
-> **Xxxx**  Xxxx xxx xxxx xx xxx x xxxxxxxxx xxxxxxx, xx'xx xxx xxx xxxxx xxxxxxx xxx xxxxxxx xx xxxx xxxxxxx xxxx xx xxxx xxxxx xxxxxxxxxxxxxx xxxxxxx xx xxxx xxxxxxx. Xx xxxxx, xxxxx xxx xxxxxxx xxxxxxxxxxxxx xxxxxx xxxxx xxx xxxxxxxx. Xx xxx xxxxxx xxx xx xxxxxxx xxxxx xxxxxxxxxxxxx xxxxxx xx [xxxxxx xxx](http://go.microsoft.com/fwlink/p/?LinkId=533280), xx xxxxx xxxx xx xxxx xxxxx xxxx xxx xxxxxxxxxxxxx xxxxxx (xxx xxxxxxx, xx xxx xxx xxxx xxxx xxxx xxx xxx xxxxxx xxxxxxxxxxxxx xx xxxx x xxxxxxx xx xx xxx xxx). Xxxxx xxxxxx xxx x xxxxxxxxx xxxx xx xxxx xxxxxxx, xxx xxxxxx xxx xxxxx xxxx xxxxxxx, xxx xxxx xxxxxxxx xx xxxxxxx xxxxx xxxxxxxxxxxxx xxxxxx.
+> **Note**  When you sign up for a developer account, we'll use the email address you provide in your contact info to send email communications related to your account. At times, these may include informational emails about our programs. If you choose not to receive these informational emails by [opting out](http://go.microsoft.com/fwlink/p/?LinkId=533280), be aware that we will still send you transactional emails (for example, to let you know that your app has passed certification or that a payment is on the way). These emails are a necessary part of your account, and unless you close your account, you will continue to receive these transactional emails.
 
-## Xxx xxxxxxx xxxxxx xxxxxxx
+## The account signup process
 
-> **Xxxx**  Xx xxxx xxxxx, xxx xxxxxxx xxx xxxxxx xxx xxx xxxx xxxxxxxxxxx xxx x xxxxxxxxx xxxxxxx xxx xxxx xxxxxxxx xxxx xxxx xx xxxxxxxx xxxxx, xxxxxx xxx xxxxx xxxxxxxxxxx xxx xxxxxxx xx xxx xxxx.
+> **Note**  In some cases, the screens and fields you see when registering for a developer account may vary slightly from what is outlined below, though the basic information and process is the same.
 
-1.  Xx xx xxx [xxxxxxxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=615100) xxx xxxxx **Xxxx xx**.
-2.  Xxxxxx xxx [xxxxxxx/xxxxxx](account-types-locations-and-fees.md#account-markets) xx xxxxx xxx xxxx, xx xxxxx xxxx xxxxxxxx xx xxxxxxx. Xxx xxx'x xx xxxx xx xxxxxx xxxx xxxxx.
-3.  Xxxxxx xxxx [xxxxxxxxx xxxxxxx xxxx](account-types-locations-and-fees.md) (xxxxxxxxxx xx xxxxxxx). Xxx xxx'x xx xxxx xx xxxxxx xxxx xxxxx, xx xx xxxx xx xxxxxx xxx xxxxx xxxx xx xxxxxxx. Xxx x xxxxxxx xxxxxxx, xx xxxx xx xxxxxx xxx [xxxxxxxxxx](#additional-guidelines-for-company-accounts) xxxxx.
-4.  Xxxxx xxx xxxxxxx xxxx xxx xxxx xx xxx xxx xxxx xxxxxxxxx xxxxxxx.
+1.  Go to the [registration page](http://go.microsoft.com/fwlink/p/?LinkId=615100) and click **Sign up**.
+2.  Select the [country/region](account-types-locations-and-fees.md#account-markets) in which you live, or where your business is located. You won't be able to change this later.
+3.  Select your [developer account type](account-types-locations-and-fees.md) (individual or company). You won't be able to change this later, so be sure to choose the right type of account. For a company account, be sure to review the [guidelines](#additional-guidelines-for-company-accounts) below.
+4.  Enter the contact info you want to use for your developer account.
 
-  > **Xxxx**  Xx'xx xxx xxxx xx xxxxxxx xxx xxxxx xxxxxxx-xxxxxxx xxxxxxx. Xxx xxxxxxx, xxx'xx xxxxxxx xx xxxxx xxxxxxxxxxxx xxxxxxx xxxxx xxx xxxxxxxx xxxx xxxxxxxxxxxx. Xxxxx xxxx, xx'xx xxxx xxxxxxxx xxxx xx xxx xxx, xx xx xxx xxxx xx xxx xxxxxxxxx xxxx xxxx xxxxxxx. Xx xxx xxxx xxxx xxxxxxxxxxxxx xxxxxx xx xxxxxxxxx xxxxx, xxxxxx xxx xxx xxx xx xxxxxxxxx xxx-xxxxxxxxxxxxx xxxxxx.
+  > **Note**  We'll use this to contact you about account-related matters. For example, you'll receive an email confirmation message after you complete your registration. After that, we'll send messages when we pay you, or if you need to fix something with your account. We may also send informational emails as described above, unless you opt out of receiving non-transactional emails.
 
-   Xx xxx xxx xxxxxxxxxxx xx x xxxxxxx, xxx'xx xxxx xxxx xx xxxxx xxx xxxx, xxxxx xxxxxxx, xxx xxxxx xxxxxx xx xxx xxxxxx xxx xxxx xxxxxxx xxxx xxxxxxx'x xxxxxxx.
+   If you are registering as a company, you'll also need to enter the name, email address, and phone number of the person who will approve your company's account.
 
-5.  Xxxxx xxx **xxxxxxxxx xxxxxxx xxxx** xxxx xxx xxxx xx xxx. Xxx xxxxxxx xxxxxxxx, xxx xxxxxxxxx xxxxxxx xxxx xxxx xx xxxx xxxxxxxxxxxx'x xxxxxxxxxx xxxxxxxx xxxx xx xxxxx xxxx. Xxxxxx xxxx xxxxxxxxx, xx xxxxxxxxx xxxx xxx xxxx xxxx xxxx xxxxxxxx xxx xxxx xxxx xx xxxx xxxx xxxx xx xxxx xxxx.
+5.  Enter the **publisher display name** that you wish to use. Note that if you enter a name that someone else has already selected, or if it appears that someone else has the rights to use that name, we will not allow you to select that name. For company accounts, the publisher display name must be your organization's registered business name or trade name. Select this carefully, as customers will see this name when browsing and will come to know your apps by this name.
 
-  >  **Xxxx**  Xxxx xxxx xxx xxxx xxx xxxxxx xx xxx xxxx xxxx. Xx xxxxxxx xxxx xxx xxxxxxxxxxx xx xxxxxxxxxxx xxx xxxx xxx xxxxxx, xxxx xxxxxxx xxxxx xx xxxxxx. Xxx xxxx [Xxx Xxxxxxxxx Xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Hh694058) xxx xxxx xxxx. Xx xxxxxxx xxxx xx xxxxx x xxxxxxxxx xxxxxxx xxxx xxx xxxxx xxx xxxx xxx xxxxxxxxx xx xxxxx xxxxx xxxxx, [xxxxxxx Xxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
+  >  **Note**  Make sure you have the rights to use this name. If someone else has trademarked or copyrighted the name you picked, your account could be closed. See your [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/Hh694058) for more info. If someone else is using a publisher display name for which you hold the trademark or other legal right, [contact Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).    
 
-6.  Xxxxx xxx xxxxxxx xxxx xxx xxx xxxxxxx. Xxx x xxxxxxx xxxxxxx, xxx'xx xxxx xxxx xx xxxxxxx xxxxxxx xxxx xxx xxx xxxxxx xxx xxx xxxxxx xxxx xxx xxx xxxxxxxxxx xx xxxxxx xxx xxxxxxx xx xxxxxx xx xxxx xxxxxxxxxxxx. Xxxx xxx xxx xxxxxxxx, xxxxx **Xxxx** xx xxxx xx xx xxx **Xxxxxxx** xxxxxxx.
+6.  Enter the contact info for the account. For a company account, you'll also need to provide contact info for the person who can verify that you are authorized to create the account on behalf of your organization. When you are finished, click **Next** to move on to the **Payment** section.
 
-7.  Xxxxx xxxx xxxxxxx xxxx xxx xxx xxx-xxxx xxxxxxxxxxxx xxx. Xx xxx xxxx x xxxxx xxxx xxxx xxxxxx xxx xxxx xx xxxxxxxxxxxx, xxx xxx xxxxx xxxx xxxx. Xxxxxxxxx, xxxxxxx xxxx xxxxxx xxxx xxxx (xx XxxXxx xx xxxxxxxxx xxxxxxx). Xxxx xxxx xxxxxxx xxxxxx xxxxx xxx'x xx xxxx xxx xxxx xxxxxxxx. Xxxx xxx xxx xxxxxxxx, xxxxx **Xxxx** xx xxxx xx xx xxx **Xxxxxx** xxxxxx.
+7.  Enter your payment info for the one-time registration fee. If you have a promo code that covers the cost of registration, you can enter that here. Otherwise, provide your credit card info (or PayPal in supported markets). Note that prepaid credit cards can't be used for this purchase. When you are finished, click **Next** to move on to the **Review** screen.
 
-8.  Xxxxxx xxxx xxxxxxx xxxx xxx xxxxxxx xxxx xxxxxxxxxx xx xxxxxxx. Xxxx, xxxx xxx xxxxxx xxx xxxxx xxx xxxxxxxxxx xx xxx [Xxx Xxxxxxxxx Xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Hh694058). Xxxxx xxx xxx xx xxxxxxxx xxx xxxx xxxx xxx xxxxxxxx xxxxx xxxxx.
+8.  Review your account info and confirm that everything is correct. Then, read and accept the terms and conditions of the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/Hh694058). Check the box to indicate you have read and accepted these terms.
 
-9.  Xxxxx **Xxxxxx** xx xxxxxxx xxxx xxxxxxxx. Xx'xx xxxx x xxxxxxxxxxxx xxxxxxx xx xxxx xxxxxxxxx xxxxx xxxxxxx.
+9.  Click **Finish** to confirm your purchase. We'll send a confirmation message to your developer email address.
 
-## Xxxxxxxxxx xxxxxxxxxx xxx xxxxxxx xxxxxxxx
+## Additional guidelines for company accounts
 
-Xxxx xxxxxxxx x xxxxxxx xxxxxxx, xxxxxx xxxxx xxxxxxxxxx, xxxxxxxxxxxx xx xxxx xxxx xxx xxxxxx xxxx xxxx xx xxxxxx xxx xxxxxxx.
+When creating a company account, follow these guidelines, particularly if more than one person will need to access the account.
 
--   Xxxxxx xxxx Xxxxxxxxx xxxxxxx xxxxx xx xxxxx xxxxxxx xxxx xxxxxxx xx xxxx xxxxxxx'x xxxxxx, xxx xxx xx x xxxxxx xxxxxxxxxx—xxx xxxxxxx, xxxxxxxxxxx@xxxxxxxx.xxx.
--   Xxxxx xxxxxx xx xxxx xxxxxxx xxxxxxx xx xxx xxxxxxxx xxxxxxxx xxxxxx xx xxxxxxxxxx.
--   Xxx xx x xxxxxxxxx xxxxx xxxxxxxxxxxx xxxx xxxx xxxxxxxx xxxxxxxx xxx xxxxx xx xxxxxx xxx xxxxxxxxx xxxxxxx, xxx xxx xxxx xxxxx xxxxxxx xx xxxx xxxxxxxx xxxx. Xxxx xxxxxx xxx xx xxx xxxxxxxxx xx xxx xxxx xx xxxxxxx xxxxxxxx xxxxx xxxx xxxxxx xxx xx xxxxxx xxxx Xxxxxxxxx xxxxxxx’x xxxxxxxx xxxx. Xx xxxxxxx xx x xxxxxxxxxxxx xxxx xx xxx xxxxxxxx, xxx xxxxx xx xxx xxxxxxxxxx xxxxx xxxxxxx xxxx xxxx xx xx xxxxxxxxx xx xxxxxx xxx xxxxx xxx xxxxxxxx xxxx xxxx xxxxxxxx (xxxx xx xxxx xxx xxxxxxxx xxxx xx xxxxx xx xxx xxxxxxx xx xxxx xx xxxx xx xxxxxxxx xxxx x xxx xxxxxx).
--   Xxx x xxxxxxx xxxxx xxxxxx xxxx xxxx xxx xxxxxxx xx xxxxxxxxx xxx xx xxxxxxxxxx xx xxx xxxx xxxxxxx.
--   Xx xxxxxxx, xxxx xxxxxxxxxx xxx xxxxxxx xxxxxxx xx xxx xx xx xxxx xxxxxxx'x xxxxxxxxx xxxxxxx. Xxx xxx xxxx xxxxxxx xxxxxx xxxx xxxxxx xx xxxxx xxxxxxx xxxxxxx. Xxxx xxxx xxxxxx xxx xxxx xxx xxxxxxxx xxxxx xx xx xxxx xxxx xxxxxxxxx xxx xxxxxxx.
--   Xx xxx xxxx xx xxxxx xxxxxx xx xxx xxxxxxx xxxx x xxx-xxxxxxx XX, xxxxx xxxx xxxxxx xx x xxxxxxx xx xxxx xxxxxxxxxx. Xxxxxxx, xxxxx xxxxxxxxxx xxxxxx xxxxxx xxx xxxxxxx xxxx xxxxxxxx xxxx xxxxx xxx xxxx xxxxxxxxxxxx xxx xxxxxxx xxxxxxxx.
--   Xxxxxxxxxx xxxxxx xxxx xxxxxxx’x xxxxxxxx xxxx xx [xxxxx://xxxxxxx.xxxx.xxx/xxxxxx/Xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=266648) xx xxxx xxxx xx'x xxx xxxxxxx.
+-   Create your Microsoft account using an email address that belongs to your company's domain, but not to a single individual—for example, windowsapps@fabrikam.com.
+-   Limit access to your company account to the smallest possible number of developers.
+-   Set up a corporate email distribution list that includes everyone who needs to access the developer account, and add this email address to your security info. This allows all of the employees on the list to receive security codes when needed and to manage your Microsoft account’s security info. If setting up a distribution list is not feasible, the owner of the individual email account will need to be available to access and share the security code when prompted (such as when new security info is added to the account or when it must be accessed from a new device).
+-   Add a company phone number that does not require an extension and is accessible to key team members.
+-   In general, have developers use trusted devices to log in to your company's developer account. All key team members should have access to these trusted devices. This will reduce the need for security codes to be sent when accessing the account.
+-   If you need to allow access to the account from a non-trusted PC, limit that access to a maximum of five developers. Ideally, these developers should access the account from machines that share the same geographical and network location.
+-   Frequently review your company’s security info at [https://account.live.com/proofs/Manage](http://go.microsoft.com/fwlink/p/?LinkID=266648) to make sure it's all current.
 
-Xxxx xxxxxxxxx xxxxxxx xxxxxx xx xxxxxxxx xxxxxxxxx xxxx xxxxxxx XXx. Xxxx xx xxxxxxxx xxxxxxx xxxxx xx x xxxxx xx xxx xxxxxx xx xxxxx xxxxxxxxx xxx xxxxxxx, xxx xxxx. Xx xxxx xxxxxxx xxx xxxx xxxxxxxx xxxx-xx xxxxxxxxxx.
+Your developer account should be accessed primarily from trusted PCs. This is critical because there is a limit to the number of codes generated per account, per week. It also enables the most seamless sign-in experience.
 
-## Xxxxxxxxx xxxxxxx xxxxxxxx
+## Developer account security
 
-Xx xxx xxxxxxxx xxxx xxxx xxx xxxxxxx xx xxxxx xxx xxxxxxxx xxxxx xx xxxx xxxxxxxxx xxxxxxx xx xxxxxxxxxxx xx xxxx xxxxxxxx xxxxx xx xxxxxxxxxxxxxx. Xxxx xxxxx xxxxxxxxxxxx xxxxxx xx xxxx Xxxxxxxxx xxxxxxx xxxxxxxxxxxxx xxxx xxxxxxxxx. Xxxx, xx xxx xxxx xxxxxx xxxx xxxxxxxx xx xxxxxxx xxxxx xx xxxxxx xxxx xxxxxxx, xx’xx xx xxxx xx xxxxx xxx xx xxxxxxxxxxx xxxxxxxxxxx xxxxxxx xx xxxx xxxxxxx.
+We use security info that you provide to raise the security level of your developer account by associating it with multiple forms of identification. This makes unauthorized access to your Microsoft account substantially more difficult. Also, if you ever forget your password or someone tries to access your account, we’ll be able to reach you to reestablish appropriate control of your account.
 
-Xxx xxxx xxxx xx xxxxx xxx xxxxx xxxxxxxxx xxx/xx xxxxx xxxxxxx xx xxxx xxxxxxx. Xx xxxxxxxxx xxxxxx xx xxxx xx xxxxxxxx. Xxxxxxxx xxxx xxxx xxxxxxxx xxxx xxxx xx xxxxxxxxx xxxxxx xx xxxx xx xxxxx. Xxxx, xxxx xxxx xx xxxxxx xxxx xxxxxxxx xxxx xxxxxxxxxx xxx xxxxxx xx'x xx xx xxxx.
+You must have at least two email addresses and/or phone numbers on your account. We recommend adding as many as possible. Remember that some security info must be confirmed before it will be valid. Also, make sure to review your security info frequently and ensure it's up to date.
 
-Xxx xxx xxxxxx xxxx xxxxxxxx xxxx xx xxxxx xx [xxxxx://xxxxxxx.xxxx.xxx/xxxxxx/Xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=266648) xxx xxxxxxx xx xxxx xxxx Xxxxxxxxx xxxxxxx. Xxx [Xxxxxxxxx xxxxxxx xxxxxxxx xxxx: XXX](http://go.microsoft.com/fwlink/p/?LinkID=272177) xxx xxxx xxxx.
+You can manage your security info by going to [https://account.live.com/proofs/Manage](http://go.microsoft.com/fwlink/p/?LinkID=266648) and signing in with your Microsoft account. See [Microsoft account security info: FAQ](http://go.microsoft.com/fwlink/p/?LinkID=272177) for more info.
 
-Xxxx xxx xxxx xx xx xxxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxx xxxxxx xxxxxxxx xxxx xxx xxxxxx xxxx xxxxxxxx. Xx xxx xxxx xx xx xxxxx xxxxxxx xx x xxxxx xxxxxx, xx xxxx x xxxxxxxx xxxx xxxx xxx xxxx xxxx xxxxxx xx xxxxxxxx xxx xxxx-xx xxxxxxx.
+When you sign in to your Windows Dev Center dashboard, the system requests that you verify your identity. In the case of an email address or a phone number, we send a security code that you must then supply to complete the sign-in process.
 
-Xx xxxxxxxxx xxxxxxxxxxx XXx xxxx xxx xxx xxxxxxxxxx xx xxxxxxx xxxxxxx. Xxxx xxx xxxx xx xxxx x xxxxxxx xxxxxx, xxx xxxxxxx xxx’x xx xxxxxxxx xxx x xxxx, xxxxxxxx xxx xxx xxxxxxxxxxxx xx xxxxxxxx xx xxxxxxx xxx xx xxxxxxxx xxxxxxxxxx, xx xx xxx xxxxx’x xxxxxx xx xx xxxx xxxxxx xx x xxxx xxxx. Xxx [Xxxxxxx xxxxxxx: XXX](http://go.microsoft.com/fwlink/p/?LinkID=331123) xxx xxxx xxxx.
+We recommend designating PCs that you use frequently as trusted devices. When you sign in from a trusted device, you usually won’t be prompted for a code, although you may occasionally be prompted to provide one in specific situations, or if you haven’t signed in on that device in a long time. See [Trusted devices: FAQ](http://go.microsoft.com/fwlink/p/?LinkID=331123) for more info.
 
-## Xxxxxxx xxxx xxxxxxx
+## Closing your account
 
-Xxxxxxxxx xxxxxxxx xxx'x xxxxxx, xx xxxxx xx xx xxxx xx xxxxx xxxx xxxxxxx xx xxxxx xx xxxx xx xxxx. Xx xxx xxxxxx xx xxxxx xxxx xxxxxxx xxxxxxxxxx, xxx xxx xx xx xx xxxxxxxxxx xxxxxxx.
+Developer accounts don't expire, so there is no need to renew your account in order to keep it open. If you decide to close your account completely, you can do so by contacting support.
 
-Xxxx xxx xxxxx xxxx xxxxxxx, xx'x xxxxxxxxx xx xxxxxxxxxx xxxx xxxxxxx xx xxx xxx xxxx xxx xxxx xxxxxxxxx xx xxx Xxxxxxx Xxxxx:
+When you close your account, it's important to understand what happens to any app that you have published in the Windows Store:
 
--   Xxxx xxx'x xxxxxxx xxxxxxxxx xxxx xxxxx xx xxxx xx xxx xxx xxx. Xxxxxxx, xxxx xxxx xxx xx xxxx xx xxxx xx-xxx xxxxxxxxx.
--   Xxxx xxxxxx xxx xxx xx xxxxx xxxxxxxxx xx xxxxxxxxx xxx xxxx xxxxxxxxxx xxxxxxxx xx, xxxx xxx xxxxxxx xxxx xx xxxxxxx xxxx xxx Xxxxx. Xx xxx xxxxxxxxx xxxx xx xxxx xx xxxxxxx xxxx xxx.
--   Xxxx xxx'x xxxx xxxx xx xxxxxxxx xxx xxxxxxxxx xxx xx xxxxxxx xxxxxxxxx.
--   Xx xxx xxxx x xxxxxxx xxx xxxx xxxxxxxx xxx xxxxx, xxx xxx xxxxxxx xxxxxxx xxx xxxx xxxxxxx xxxx xx xxx xxxxxx xxx xxxx xxx xxxx xxx xxxxx xxxxxxx xxxxxxxxx.
+-   Your app's current customers will still be able to use the app. However, they will not be able to make in-app purchases.
+-   Even though the app is still available to customers who have previously acquired it, your app listing will be removed from the Store. No new customers will be able to acquire your app.
+-   Your app's name will be released for potential use by another developer.
+-   If you have a balance due from previous app sales, you can request payment for that balance even if the amount due does not meet the usual payment threshold.
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+

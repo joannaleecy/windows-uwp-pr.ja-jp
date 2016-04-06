@@ -1,70 +1,74 @@
 ---
-xxxxx: Xxxxxx x xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx XxxxxxX
-xxxxxxxxxxx: Xx xxxx xxx xx xxxxxxxxx, xxx xxxxx xxx xx xxxxxx x xxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx XxxxxxX xxx X++.
-xx.xxxxxxx: YxxxYYYY-YYxx-YYxx-YxxY-YxxYYxYxxYxY
-xxxxxxxx: ["XxxxxxX xxxx xxxxxx", "xxxx xxxxxx, Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX)", "XxxxxxYX YY xxxx"]
+title: Create a simple Universal Windows Platform (UWP) game with DirectX
+description: In this set of tutorials, you learn how to create a basic Universal Windows Platform (UWP) game with DirectX and C++.
+ms.assetid: 9edc5868-38cf-58cc-1fb3-8fb85a7ab2c9
+keywords: ["DirectX game sample", "game sample, Universal Windows Platform (UWP)", "Direct3D 11 game"]
 ---
 
-# Xxxxxx x xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx XxxxxxX
+# Create a simple Universal Windows Platform (UWP) game with DirectX
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xx xxxx xxx xx xxxxxxxxx, xxx xxxxx xxx xx xxxxxx x xxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx XxxxxxX xxx X++. Xx xxxxx xxx xxx xxxxx xxxxx xx x xxxx, xxxxxxxxx xxx xxxxxxxxx xxx xxxxxxx xxxxxx xxxx xx xxxx xxx xxxxxx, xxxxxxxx x xxxx xxxx xxxx, xxxxxxxxxxxx x xxxxxx xxxxxxxxx xxxxxxxx, xxx xxxxxx xxxxx xxx xxxxxxxx.
+In this set of tutorials, you learn how to create a basic Universal Windows Platform (UWP) game with DirectX and C++. We cover all the major parts of a game, including the processes for loading assets such as arts and meshes, creating a main game loop, implementing a simple rendering pipeline, and adding sound and controls.
 
-Xx xxxx xxx xxx XXX xxxx xxxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxxxx. Xx xxx'x xxxxxxx x xxxxxxxx xxx-xx-xxx xxxx. Xxxxxx, xx xxxxx xx xxx XXX XxxxxxX xxxx xxxxxxxxxxx xxxxxxxx, xxx xxxx xxx Xxxxxxx Xxxxxxx xxxxxxxx xxxxxxxxxxxxxx xxxxxx xxxxx xxxxxxxx.
+We show you the UWP game development techniques and considerations. We don't provide a complete end-to-end game. Rather, we focus on key UWP DirectX game development concepts, and call out Windows Runtime specific considerations around those concepts.
 
-## Xxxxxxxxx
-
-
--   Xx xxx xxx xxxxx xxxxxxxx xxx xxxxxxxxxx xx x XXX XxxxxxX xxxx, xxx xx xxxxxx xxxx xxxxxxxxxxx xxxxxxxxx XXX xxxxx xxxx XxxxxxX.
-
-## Xxxx xxx xxxx xx xxxx xxxxxx xxxxxxxx
+## Objective
 
 
-Xxxxxx xx xxx xxxxxxx xxxx xxxx xxxxxxxx, xxx xxxx xx xx xxxxxxxx xxxx xxxxx xxxxxxxx.
+-   To use the basic concepts and components of a UWP DirectX game, and to become more comfortable designing UWP games with DirectX.
 
--   Xxxxxxxxx X++ xxxx Xxxxxxxxx Xxxxxxxxxx (X++/XX). Xxxx xx xx xxxxxx xx Xxxxxxxxx X++ xxxx xxxxxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxx, xxx xx xxx xxxxxxxx xxx xxxxxxxxxx x XXX xxxxx xxxx XxxxxxX YY.Y xx xxxxx xxxxxxxx.
--   Xxxxx xxxxxx xxxxxxx xxx Xxxxxxxxx xxxxxxx xxxxxxxx.
--   Xxxxx xxxxxxxx xxxxxxxxxxx xxxxxxxxxxx.
--   Xxxxx Xxxxxxx xxxxxxxxxxx xxxxxxxx.
--   Xxxxx xxxxxxxxxxx xxxx xxx [XxxxxxYX](https://msdn.microsoft.com/en-us/library/windows/apps/dd370990.aspx) xxx [XxxxxxYX YY](https://msdn.microsoft.com/library/windows/desktop/hh404569) XXXx.
-
-##  Xxx Xxxxxxx Xxxxx XxxxxxYX xxxxxxxx xxxx xxxxxx
+## What you need to know before starting
 
 
-Xxxx xxxxxx xxxxxxxxxx x xxxxxx xxxxx-xxxxxx xxxxxxxx xxxxxxx, xxxxx xxx xxxxxx xxxxx xxxxx xx xxxxxx xxxxxxx. Xxxxxxx xxxx xxxxxx xxxxxx x xxx xxxxxx xx xxxxxx, xxx xxx xxxxxx xxx xxxxxxxx xxxxxxx Y xxxxxx xx xxxxxxxxxx xxxxxxxxx. Xx xxx xxx xx xxx xxxxxx, xxx xxxxxx xxx xxxxxxx, xxx xxx xxxxxx xx xxxxxxx x xxxxx xxxxx.
+Before we get started with this tutorial, you need to be familiar with these subjects.
 
-Xxx xxxxxx xxxxxxxxxxxx xxx xxxx xxxxxxxx:
+-   Microsoft C++ with Component Extensions (C++/CX). This is an update to Microsoft C++ that incorporates automatic reference counting, and is the language for developing a UWP games with DirectX 11.1 or later versions.
+-   Basic linear algebra and Newtonian physics concepts.
+-   Basic graphics programming terminology.
+-   Basic Windows programming concepts.
+-   Basic familiarity with the [Direct2D](https://msdn.microsoft.com/en-us/library/windows/apps/dd370990.aspx) and [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/hh404569) APIs.
 
--   Xxxxxxxxxxxxxx xxxxxxx XxxxxxX YY.Y xxx xxx Xxxxxxx Xxxxxxx
--   X xxxxx-xxxxxx YX xxxxxxxxxxx xxx xxxxxx
--   Xxxxxxxxxxxx YX xxxxxxx
--   Xxxxxxxxx xxxxxxxxx xxxxxxx xxxxxxx xx YX
--   Xxxxxxxx xxxxxx xxxxx xxx xxxxx, xxxxx, xxx Xxxx YYY xxxxxxxxxx xxxxxxxx
--   Xxxxx xxxxxx xxx xxxxxxxx
--   X xxxxx xxxx xxxxx xxxxxxx
-
-![xxx xxxx xxxxxx xx xxxxxx](images/simple3dgame-display.png)
+##  The Windows Store Direct3D shooting game sample
 
 
-| Xxxxx | Xxxxxxxxxxx |
+This sample implements a simple first-person shooting gallery, where the player fires balls at moving targets. Hitting each target awards a set number of points, and the player can progress through 6 levels of increasing challenge. At the end of the levels, the points are tallied, and the player is awarded a final score.
+
+The sample demonstrates the game concepts:
+
+-   Interoperation between DirectX 11.1 and the Windows Runtime
+-   A first-person 3D perspective and camera
+-   Stereoscopic 3D effects
+-   Collision detection between objects in 3D
+-   Handling player input for mouse, touch, and Xbox 360 controller controls
+-   Audio mixing and playback
+-   A basic game state machine
+
+![the game sample in action](images/simple3dgame-display.png)
+
+
+| Topic | Description |
 |---------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Xxx xx xxx xxxx xxxxxxx](tutorial--setting-up-the-games-infrastructure.md) | Xxx xxxxx xxxx xx xxxxxxxxxx xxxx xxxx xx xx xxx xx x xxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx xx xxxx x xxx xxxx xxx xxxxxxxx xxx xxxxxx xx xxxx xxxxxxxxxxxxxx xxxx xxx xxxx xx xx. Xxx xxx xxxx xxxxxxxx x xxx xx xxxx xxx xxxxxx xx xxxxx xxx xxxxx xxxxxxxx xxx xxxxxxxxxxx xxx xxxxxxx xxxxxxxxxxxx xxx xxxx xxxxxxxxxxx. Xx xxxx xxx xxxxxxx xxx xxxxx xxx xxxxxxxxxxxxx xx x xxxxxx xxxx xxxxxxx. |
-| [Xxxxxx xxx xxxx'x XXX xxx xxxxxxxxx](tutorial--building-the-games-metro-style-app-framework.md) | Xxx xxxxx xxxx xx xxxxxx x XXX xxxx XxxxxxX xxxx xx xxxxxxxx xxx xxxxxxxxx xxxx xxxx xxx xxxx xxxxxx xxxxxxxx xxxx Xxxxxxx. Xxxx xxxxxxxx Xxxxxxx Xxxxxxx xxxxxxxxxx xxxx xxxxxxx/xxxxxx xxxxx xxxxxxxx, xxxxxx xxxxx, xxx xxxxxxxx, xxxx xx xxx xxxxxx, xxxxxxxxxxxx xxx xxxxxxxxxxx xxx xxx xxxx xxxxxxxxx. Xx xx xxxx xxx xxx xxxxxx xxxx xx xxxxxxxxxx, xxx xxx xx xxxxxxx xxx xxxx-xxxxx xxxxx xxxxxxx xxx xxx xxxxxx xxx xxxxxx xxxxxxxxxxx. |
-| [Xxxxxx xxx xxxx xxxx xxxxxx](tutorial--defining-the-main-game-loop.md) | Xxx, xx xxxx xx xxx xxxxxxx xx xxx xxxx xxxxxx'x xxxx xxxxxx xxx xxx xxx xxxxx xx xxxxxxxxxx xxxxxxxxx xxxx xxxxxxxxxxxx xxxx xxx xxxx xxxxx. |
-| [Xxxxxxxx xxx xxxxxxxxx xxxxxxxxx](tutorial--assembling-the-rendering-pipeline.md) | Xxx, xx'x xxxx xx xxxx xx xxx xxx xxxxxx xxxx xxxx xxxx xxxxxxxxx xxx xxxxx xx xxxxxxx xxx xxxxxxxx. Xxxx, xx xxxx xx xxx xx xxxxxxxxx x xxxxxxxxx xxxxxxxxx, xxxxxxxx xxxx xxx xxxxxxxxxxxxxx xx xxx xxxxxxxx xxxxxx xxxxxxx xxx xxxxxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxx xxxxxxx. |
-| [Xxx x xxxx xxxxxxxxx](tutorial--adding-a-user-interface.md) | Xxx'xx xxxx xxx xxx xxxxxx xxxx xxxxxxxxxx xxx xxxx xxxx xxxxxx xx xxxx xx xxx xxxxx xxxxxxxxx xxxxxxxxx. Xxx, xxx'x xxxx xx xxx xxx xxxxxx xxxx xxxxxxxx xxxxxxxx xxxxx xxxx xxxxx xx xxx xxxxxx. Xxxx, xxx xxxxx xxx xxx xxx xxx xxxxxx xxxx xxxxxxx xxx xxxxx-xx xxxxxxx xxxxxxxxxx xx xxx xx xxx Y-X xxxxxxxx xxxxxxxx xxxxxx. |
-| [Xxx xxxxxxxx](tutorial--adding-controls.md) | Xxx, xx xxxx x xxxx xx xxx xxx xxxx xxxxxx xxxxxxxxxx xxxx-xxxx xxxxxxxx xx x Y-X xxxx, xxx xxx xx xxxxxxx xxxxx xxxxx, xxxxx, xxx xxxx xxxxxxxxxx xxxxxxxx. |
-| [Xxx xxxxx](tutorial--adding-sound.md) | Xx xxxx xxxx, xx xxxxxxx xxx xxx xxxxxxxx xxxx xxxxxx xxxxxxx xx xxxxxx xxx xxxxx xxxxxxxx xxxxx xxx [XXxxxxY](https://msdn.microsoft.com/library/windows/desktop/ee415813) XXXx. |
-| [Xxxxxx xxx xxxx xxxxxx](tutorial-resources.md) | Xxxxxxxxxxxxxxx! Xx xxxx xxxxx, xxx xxxxxxxxxx xxx xxx xxxxxxxxxx xx x xxxxx XXX XxxxxxX YX xxxx. Xxx xxx xxx xx xxx xxxxxxxxx xxx x xxxx, xxxxxxxxx xxx xxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxx, xxx xxxxxxxxx x xxxxx xxxx xxxx. Xxx xxx xxxx xxxxxx x xxxxx xxxx xxxxxxxxx xxxxxxx, xxx xxxxxxxxxxx xxxxxx xxx xxxxxxxx. Xxx'xx xx xxxx xxx xx xxxxxxxx x xxxx xx xxxx xxx, xxx xxxx xxx xxxx xxxxxxxxx xx xxxxxxx xxxx xxxxxxxxx xx XxxxxxX xxxx xxxxxxxxxxx. |
+| [Set up the game project](tutorial--setting-up-the-games-infrastructure.md) | The first step in assembling your game is to set up a project in Microsoft Visual Studio in such a way that you minimize the amount of code infrastructure work you need to do. You can save yourself a lot of time and hassle by using the right template and configuring the project specifically for game development. We step you through the setup and configuration of a simple game project. |
+| [Define the game's UWP app framework](tutorial--building-the-games-metro-style-app-framework.md) | The first part of coding a UWP with DirectX game is building the framework that lets the game object interact with Windows. This includes Windows Runtime properties like suspend/resume event handling, window focus, and snapping, plus as the events, interactions and transitions for the user interface. We go over how the sample game is structured, and how it defines the high-level state machine for the player and system interaction. |
+| [Define the main game object](tutorial--defining-the-main-game-loop.md) | Now, we look at the details of the game sample's main object and how the rules it implements translate into interactions with the game world. |
+| [Assemble the rendering framework](tutorial--assembling-the-rendering-pipeline.md) | Now, it's time to look at how the sample game uses that structure and state to display its graphics. Here, we look at how to implement a rendering framework, starting from the initialization of the graphics device through the presentation of the graphics objects for display. |
+| [Add a user interface](tutorial--adding-a-user-interface.md) | You've seen how the sample game implements the main game object as well as the basic rendering framework. Now, let's look at how the sample game provides feedback about game state to the player. Here, you learn how you can add simple menu options and heads-up display components on top of the 3-D graphics pipeline output. |
+| [Add controls](tutorial--adding-controls.md) | Now, we take a look at how the game sample implements move-look controls in a 3-D game, and how to develop basic touch, mouse, and game controller controls. |
+| [Add sound](tutorial--adding-sound.md) | In this step, we examine how the shooting game sample creates an object for sound playback using the [XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813) APIs. |
+| [Extend the game sample](tutorial-resources.md) | Congratulations! At this point, you understand the key components of a basic UWP DirectX 3D game. You can set up the framework for a game, including the view provider and rendering pipeline, and implement a basic game loop. You can also create a basic user interface overlay, and incorporate sounds and controls. You're on your way to creating a game of your own, and here are some resources to further your knowledge of DirectX game development. |
  
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

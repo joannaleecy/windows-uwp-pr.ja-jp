@@ -1,52 +1,51 @@
 ---
-xxxxx: Xxxxxx xxx xxxxxxx xxx xxx x xxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxx xxx xxxxxxx xxx xxx x xxxx.
-xx.xxxxxxx: XXYYXXXX-XXYY-YXYY-XYXY-YYXYYYXYXXYY
+title: ファイルに応じた既定のアプリの起動
+description: ファイルに応じて既定のアプリを起動する方法について説明します。
+ms.assetid: BB45FCAF-DF93-4C99-A8B5-59B799C7BD98
 ---
 
-# Xxxxxx xxx xxxxxxx xxx xxx x xxxx
+# ファイルに応じた既定のアプリの起動
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**Xxxxxxx.Xxxxxx.Xxxxxxxx.XxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701461)
+-   [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
 
-Xxxxx xxx xx xxxxxx xxx xxxxxxx xxx xxx x xxxx. Xxxx xxxx xxxx xx xxxx xxxx xxxxx xxxx xxxx xxx'x xxxxxx xxxxxxxxxx. Xxx xxxxxxx, x-xxxx xxxx xxxxxxx x xxxxxxx xx xxxx xxxxx xxx xxxx x xxx xx xxxxxx xxxxx xxxxx xx xxxxx xxxxxxx xxxxxxxx. Xxxxx xxxxx xxxx xxx xx xxx xxx [**Xxxxxxx.Xxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241801) XXX xx xxxxxx xxx xxxxxxx xxxxxxx xxx x xxxx xxxx xxxx xxx xxx'x xxxxxx xxxxxx.
+ファイルに応じて既定のアプリを起動する方法について説明します。 多くのアプリでは、アプリ自体で処理できないファイルを操作する必要が生じる場合があります。 たとえば、さまざまな種類のファイルを受け取るメール アプリは、これらのファイルを既定のハンドラーで起動する手段を備えている必要があります。 以下の手順では、[**Windows.System.Launcher**](https://msdn.microsoft.com/library/windows/apps/br241801) API を使って、アプリがそれ自体で処理できないファイルの既定のハンドラーを起動する方法を示します。
 
-## Xxx xxx xxxx xxxxxx
-
-
-Xxxxx, xxx x [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxx xxx xxx xxxx.
-
-Xx xxx xxxx xx xxxxxxxx xx xxx xxxxxxx xxx xxxx xxx, xxx xxx xxx xxx [**Xxxxxxx.XxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224681) xxxxxxxx xx xxx x [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227230) xxxxxx xxx xxx [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxxxx.XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227272) xxxxxx xx xxx xxx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxx.
-
-Xx xxx xxxx xx xx x xxxxx xxxxxx, xxx xxx xxx xxx xxxxxxxxxx xx xxx [**Xxxxxxx.Xxxxxxx.XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227151) xxxxx xx xxx x [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227230) xxx xxx [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227272) xxxxxx xx xxx xxx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxx.
-
-## Xxxxxx xxx xxxx
+## ファイル オブジェクトを取得する
 
 
-Xxxxxxx xxxxxxxx xxxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxxx xxx xxxxxxx xxxxxxx xxx x xxxx. Xxxxx xxxxxxx xxx xxxxxxxxx xx xxxx xxxxx xxx xx xxx xxxxxxxx xxxx xxxxxx.
+最初にファイルの [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを取得します。
 
-| Xxxxxx | Xxxxxx | Xxxxxxxxxxx |
+ファイルがアプリのパッケージに含まれている場合は、[**Package.InstalledLocation**](https://msdn.microsoft.com/library/windows/apps/br224681) プロパティで [**Windows.Storage.StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) オブジェクトを取得し、[**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) メソッドで [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを取得します。
+
+ファイルが既知のフォルダー内にある場合には、[**Windows.Storage.KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) クラスのプロパティで [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) を取得し、[**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) メソッドで [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを取得します。
+
+## ファイルを起動する
+
+
+Windows には、ファイルの既定のハンドラーを起動するためのいくつかの異なるオプションが用意されています。 これらのオプションについて、次の表とセクションで説明します。
+
+| オプション | メソッド | 説明 |
 |----------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxx xxxxxx | [**XxxxxxXxxxXxxxx(XXxxxxxxXxxx)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | Xxxxxx xxx xxxxxxxxx xxxx xxxx xxx xxxxxxx xxxxxxx. |
-| Xxxx Xxxx xxxxxx | [**XxxxxxXxxxXxxxx(XXxxxxxxXxxx, XxxxxxxxXxxxxxx)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Xxxxxx xxx xxxxxxxxx xxxx xxxxxxx xxx xxxx xxxx xxx xxxxxxx xxxxxxx xxx Xxxx Xxxx xxxxxx. |
-| Xxxxxx xxxx x xxxxxxxxxxx xxx xxxxxxxx | [**XxxxxxXxxxXxxxx(XXxxxxxxXxxx, XxxxxxxxXxxxxxx)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | Xxxxxx xxx xxxxxxxxx xxxx xxxx xxx xxxxxxx xxxxxxx. Xx xx xxxxxxx xx xxxxxxxxx xx xxx xxxxxx, xxxxxxxxx xx xxx xx xxx xxxxx xx xxx xxxx. |
-| Xxxxxx xxxx x xxxxxxx xxxxxxxxx xxxx | [
-            **XxxxxxXxxxXxxxx(XXxxxxxxXxxx, XxxxxxxxXxxxxxx)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Xxxxxxx-xxxx) | Xxxxxx xxx xxxxxxxxx xxxx xxxx xxx xxxxxxx xxxxxxx. Xxxxxxx x xxxxxxxxxx xx xxxx xx xxxxxx xxxxx xxx xxxxxx xxx xxxxxxx x xxxxxxxx xxxxxx xxxx. |
+| 既定の起動 | [**LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) | 指定されたファイルを既定のハンドラーで起動します。 |
+| [プログラムから開く] を使った起動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 指定されたファイルを [プログラムから開く] ダイアログでユーザーによって選択されたハンドラーを使って起動します。 |
+| 推奨されるアプリ フォールバックを使った起動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) | 指定されたファイルを既定のハンドラーで起動します。 ハンドラーがシステムにインストールされていない場合は、ストアにあるアプリをユーザーに勧めます。 |
+| 画面上に留まった適切なビューを使った起動 | [**LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) (Windows のみ) | 指定されたファイルを既定のハンドラーで起動します。 起動後も画面上に留まるように指定し、特定のウィンドウ サイズを要求します。 |
 |  |  |  |
-|  |  | **Xxxxxx xxxxxx xxxxxx:  **[**XxxxxxxxXxxxxxx.XxxxxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn298314) xxx'x xxxxxxxxx xx xxx xxxxxx xxxxxx xxxxxx. |
+|  |  | **モバイル デバイス ファミリ:  **[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) はモバイル デバイス ファミリではサポートされていません。 |
 
  
-### Xxxxxxx xxxxxx
+### 既定の起動
 
-Xxxx xxx [**Xxxxxxx.Xxxxxx.Xxxxxxxx.XxxxxxXxxxXxxxx(XXxxxxxxXxxx)**](https://msdn.microsoft.com/library/windows/apps/hh701471) xxxxxx xx xxxxxx xxx xxxxxxx xxx. Xxxx xxxxxxx xxxx xxx [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxxxx.XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227272) xxxxxx xx xxxxxx xx xxxxx xxxx, xxxx.xxx, xxxx xx xxxxxxxx xx xxx xxx xxxxxxx.
+既定のアプリを起動するには、[**Windows.System.Launcher.LaunchFileAsync(IStorageFile)**](https://msdn.microsoft.com/library/windows/apps/hh701471) メソッドを呼び出します。 この例では [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) メソッドを使って、このアプリ パッケージに含まれる画像ファイル test.png を起動します。
 
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```vb
 > async Sub DefaultLaunch()
 >    ' Path to the file in the app package to launch
@@ -127,15 +126,16 @@ Xxxx xxx [**Xxxxxxx.Xxxxxx.Xxxxxxxx.XxxxxxXxxxXxxxx(XXxxxxxxXxxx)**](https://msd
 > }
 > ```
 
-### Xxxx Xxxx xxxxxx
+### [プログラムから開く] を使った起動
 
-Xxxx xxx [**Xxxxxxx.Xxxxxx.Xxxxxxxx.XxxxxxXxxxXxxxx(XXxxxxxxXxxx, XxxxxxxxXxxxxxx)**](https://msdn.microsoft.com/library/windows/apps/hh701465) xxxxxx xxxx [**XxxxxxxxXxxxxxx.XxxxxxxXxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701438) xxx xx **xxxx** xx xxxxxx xxx xxx xxxx xxx xxxx xxxxxxx xxxx xxx **Xxxx Xxxx** xxxxxx xxx.
+[
+            **LauncherOptions.DisplayApplicationPicker**](https://msdn.microsoft.com/library/windows/apps/hh701438) を **true** に設定して [**Windows.System.Launcher.LaunchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) メソッドを呼び出して、ユーザーが **[プログラムから開く]** ダイアログ ボックスで選んだアプリを起動します。
 
-Xx xxxxxxxxx xxxx xxx xxx xxx **Xxxx Xxxx** xxxxxx xxx xxxx xxx xxxx xxx xxxx xx xxxxxx xx xxx xxxxx xxxx xxx xxxxxxx xxx x xxxxxxxxxx xxxx. Xxx xxxxxxx, xx xxxx xxx xxxxxx xxx xxxx xx xxxxxx xx xxxxx xxxx, xxx xxxxxxx xxxxxxx xxxx xxxxxx xx x xxxxxx xxx. Xx xxxx xxxxx, xxx xxxx xxx xxxx xx xxxx xxx xxxxx xxxxxxx xx xxxxxxx xx. Xxx xxx **Xxxx Xxxx** xxxxxx xxxxx xxxx xx xxxxxxxxxxx xxxxxxx xx xxx **XxxXxx** xx xx x xxxxxxx xxxx xx xxx xxx xxxx xxxxx xx xxx **Xxxx Xxxx** xxxxxx xxx xxxxxx xxx xxxxxx xxx xx xxxxx xxxxx xx xxxxxxxxx.
+ユーザーが特定のファイルに既定以外のアプリを選ぶ場合は、**[プログラムから開く]** ダイアログ ボックスを使うことをお勧めします。 たとえば、アプリで画像ファイルを起動できる場合、既定のハンドラーは多くの場合ビューアー アプリです。 場合によっては、ユーザーが画像の表示ではなく編集を行うこともあります。 **[プログラムから開く]** オプションを **AppBar** またはコンテキスト メニューで代替コマンドと共に使って、ユーザーが **[プログラムから開く]** ダイアログを開き、このようなシナリオでエディター アプリを選択できるようにします。
 
-![xxx xxxx xxxx xxxxxx xxx x .xxx xxxx xxxxxx. xxx xxxxxx xxxxxxxx x xxxxxxxx xxxxx xxxxxxxxx xx xxx xxxx’x xxxxxx xxxxxx xx xxxx xxx xxx .xxx xxxxx xx xxxx xxxx xxx .xxx xxxx. xxx xxxxxx xxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxxx xxx xxxx xxx x ‘xxxx xxxxxxx’ xxxx.](images/checkboxopenwithdialog.png)
+![.png ファイルの起動のための [プログラムから開く] ダイアログ。 このダイアログには、ユーザーによって選択されたアプリをすべての .png ファイルに使用するかまたはこの 1 つの .png ファイルのみに使用するかを指定するチェック ボックスがあります。 また、このダイアログには、ファイルの起動に関する 4 つのアプリ オプションと、[その他のオプション] リンクがあります。](images/checkboxopenwithdialog.png)
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```vb
 > async Sub DefaultLaunch()
 > 
@@ -229,16 +229,16 @@ Xx xxxxxxxxx xxxx xxx xxx xxx **Xxxx Xxxx** xxxxxx xxx xxxx xxx xxxx xxx xxxx xx
 > }
 > ```
 
-**Xxxxxx xxxx x xxxxxxxxxxx xxx xxxxxxxx**
+**推奨されるアプリ フォールバックを使った起動**
 
-Xx xxxx xxxxx xxx xxxx xxx xxx xxxx xx xxx xxxxxxxxx xx xxxxxx xxx xxxx xxxx xxx xxx xxxxxxxxx. Xx xxxxxxx, Xxxxxxx xxxx xxxxxx xxxxx xxxxx xx xxxxxxxxx xxx xxxx xxxx x xxxx xx xxxxxx xxx xx xxxxxxxxxxx xxx xx xxx xxxxx. Xx xxx xxxxx xxxx xx xxxx xxx xxxx x xxxxxxxx xxxxxxxxxxxxxx xxx xxxxx xxx xx xxxxxxx xx xxxx xxxxxxxx, xxx xxx xx xx xx xxxxxxx xxxx xxxxxxxxxxxxxx xxxxx xxxx xxx xxxx xxxx xxx xxx xxxxxxxxx. Xx xx xxxx, xxxx xxx [**Xxxxxxx.Xxxxxx.Xxxxxxxx.xxxxxxXxxxXxxxx(XXxxxxxxXxxx, XxxxxxxxXxxxxxx)**](https://msdn.microsoft.com/library/windows/apps/hh701465) xxxxxx xxxx [**XxxxxxxxXxxxxxx.XxxxxxxxxXxxxxxxxxxxXxxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh965482) xxx xx xxx xxxxxxx xxxxxx xxxx xx xxx xxx xx xxx Xxxxx xxxx xxx xxxx xx xxxxxxxxx. Xxxx, xxx xxx [**XxxxxxxxXxxxxxx.XxxxxxxxxXxxxxxxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh965481) xx xxx xxxx xx xxxx xxx. Xxxxxxx xxxx xxx xxxx xxxxxxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxx xx xxxxxx xxx xx xxx xx xxx xxxxx xxxx x xxxxxxxx xxxxxx xx xxxxxxx xxx xxxxxxxxxxx xxx xxxx xxx Xxxxx.
+場合によっては、起動中のファイルを処理するためのアプリがインストールされていないこともあります。 既定では、Windows はストア上の適切なアプリを検索するリンクを表示して、これらのケースに対処します。 このシナリオで入手するアプリに関する特定の推奨事項を示す場合は、起動中のファイルと共に推奨事項を渡すことができます。 そのためには、[**LauncherOptions.PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) を推奨するストア内のアプリのパッケージのファミリ名に設定して、[**Windows.System.Launcher.launchFileAsync(IStorageFile, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701465) メソッドを呼び出します。 その後、[**LauncherOptions.PreferredApplicationDisplayName**](https://msdn.microsoft.com/library/windows/apps/hh965481) をそのアプリの名前に設定します。 Windows ではこの情報を使って、ストア内のアプリを検索する一般的なオプションを、ストアから推奨アプリを入手する固有のオプションに置き換えます。
 
-> **Xxxx**  Xxx xxxx xxx xxxx xx xxxxx xxxxxxx xx xxxxxxxxx xx xxx. Xxxxxxx xxx xxxxxxx xxx xxxxx xxxx xxxxxx xx x xxxxxxx.
+> **注**  アプリを推奨するには、これらの両方のオプションを設定する必要があります。 どちらか一方のみを設定した場合は、エラーになります。
 
-![xxx xxxx xxxx xxxxxx xxx x .xxxxxxx xxxx xxxxxx. xxxxx .xxxxxxx xxxx xxx xxxx x xxxxxxx xxxxxxxxx xx xxx xxxxxxx xxx xxxxxx xxxxxxxx xx xxxxxx xxxx xxx xxxxx xxxx xxx xxxx xxxxx xxxxxx xxx xxxx xx xxx xxxxxxx xxxxxxx xx xxx xxxxx. xxx xxxxxx xxxx xxxxxxxx x ‘xxxx xxxxxxx’ xxxx'.](images/howdoyouwanttoopen.png)
+![.contoso ファイルの起動のための [プログラムから開く] ダイアログ。 コンピューターには .contoso に対応するハンドラーがインストールされていないため、このダイアログには、ストア アイコンとストア上の適切なハンドラーをユーザーに通知するテキストを含むオプションが表示されます。 このダイアログには、[その他のオプション] リンクもあります。](images/howdoyouwanttoopen.png)
 
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```vb
 > async Sub DefaultLaunch()
 > 
@@ -341,15 +341,17 @@ Xx xxxx xxxxx xxx xxxx xxx xxx xxxx xx xxx xxxxxxxxx xx xxxxxx xxx xxxx xxxx xxx
 > }
 > ```
 
-### Xxxxxx xxxx x Xxxxxxx Xxxxxxxxx Xxxx (Xxxxxxx-xxxx)
+### 画面上に留まった適切なビューを使った起動 (Windows のみ)
 
-Xxxxxx xxxx xxxx xxxx [**XxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701461) xxx xxxxxxx xxxx xxxx xxxxxx xx xxxxxx xxxxx x xxxx xxxxxx. Xx xxxxxxx, Xxxxxxx xxxxxxxx xx xxxxx xxx xxxxxxxxx xxxxx xxxxxxx xxxxxxx xxx xxxxxx xxx xxx xxx xxxxxx xxx xxxx xxxxxxx xxx xxxx. Xxxxxx xxxx xxx xxx xxx [**XxxxxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn298314) xxxxxxxx xx xxxxxxxx xx xxx xxxxxxxxx xxxxxx xxxx xxxx xxxxxx xxxxx xxx xxxxxx xx xxxx xx xxxx xx xxxx xx xxx xxxxxxxxx xxxxx. **XxxxxxxXxxxxxxxxXxxx** xxx xxxx xx xxxx xx xxxxxxxx xxxx xxx xxxxxx xxx xxxx xxx xxxx xx xxxxxx xx xxxxxx xxxxx xxx xxxx xxxxxx xxx xxx xx xxxxxxxxxx xxxxxxxx xx xxx xxxxxx xxx. Xxxx xxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxx xxxxxx xxxx xx xxx xxxxxxx xxx. Xx xxxxx'x xxxxxxx xxx xxxxxxxx xx xxxxx xxxx xxxx xxx xxxxxx xx xxxx xx xx xxxxxx xx xxx xxxx xxxx.
+[
+            **LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461) を呼び出すソース アプリは、ファイルの起動後も画面上に留まることを要求できます。 既定では、利用可能なスペース全体がソース アプリとファイルを処理するターゲット アプリとで均等に共有されます。 ソース アプリでは、[**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) プロパティを使って、利用可能なスペースをソース アプリのウィンドウがどの程度占めるかをオペレーティング システムに指示できます。 この **DesiredRemainingView** では、ファイルの起動後にソース アプリが画面上に留まる必要がなく、ターゲット アプリに完全に置き換わっても良いことも示せます。 このプロパティは呼び出し元アプリの優先ウィンドウのサイズだけを指定します。 画面に同時に表示されている可能性のある他のアプリの動作は指定しません。
 
-> **Xxxx**  Xxxxxxx xxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxxx xxxxxxx xxxx xx xxxxxxxxxx xxx xxxxxx xxx'x xxxxx xxxxxx xxxx, xxx xxxxxxx, xxx xxxxxxxxxx xx xxx xxxxxx xxx, xxx xxxxxx xx xxxx xx xxxxxx, xxx xxxxxx xxxxxxxxxxx, xxx xx xx. Xx xxxxxxx [**XxxxxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn298314), xxx xxxx'x xxxxxxxxxx x xxxxxxxx xxxxxxxxx xxxxxxxx xxx xxx xxxxxx xxx.
+> **注**  ソース アプリの最終的なウィンドウ サイズは、複数の異なる要素が考慮されて決定されます。たとえば、ソース アプリの設定、画面上のアプリの数、画面の向きなどです。 [
+            **DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) を設定しても、ソース アプリの特定のウィンドウ動作が保証されるわけではありません。
 
-**Xxxxxx xxxxxx xxxxxx:  **[**XxxxxxxxXxxxxxx.XxxxxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn298314) xxx'x xxxxxxxxx xx xxx xxxxxx xxxxxx xxxxxx.
+**モバイル デバイス ファミリ:  **[**LauncherOptions.DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) はモバイル デバイス ファミリではサポートされていません。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cpp
 > void MainPage::DefaultLaunch()
 > {
@@ -417,40 +419,44 @@ Xxxxxx xxxx xxxx xxxx [**XxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/w
 > }
 > ```
 
-## Xxxxxxx
+## 注釈
 
-Xxxx xxx xxx'x xxxxxx xxx xxx xxxx xx xxxxxxxx. Xxx xxxx xxxxxxxxxx xxxxx xxx xx xxxxxxxx. Xxx xxxx xxx xxxxxx xxxxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xx x Xxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
+起動するアプリをアプリが選ぶことはできません。 どのアプリを起動するかはユーザーが決めます。 ユーザーは、ユニバーサル Windows プラットフォーム (UWP) アプリまたは従来の Windows プラットフォーム (CWP) アプリを選択できます。
 
-Xxxx xxxxxxxxx x xxxx, xxxx xxx xxxx xx xxx xxxxxxxxxx xxx, xxxx xx, xx xxxx xx xxxxxxx xx xxx xxxx. Xxxx xxxxxxxxxxx xxxxx xxxxxx xxxx xxx xxxx xxxxxxx xx xxxxxxx. Xx xxxx xxxx xxxxxxxxxxx, xxxx xxxx xxxx xxx xxx xxx xxxx xxxxxxxx xxxxxxxx xx xxx XX xx xxxx xxx. Xxxx xxxxxx, xxx xxxx xxxx xxxxxx xxxx xxxx xxxxxx xx xxxxxxxx x xxxx xxxxxx.
+ファイルの起動時、アプリはユーザーに表示されるフォアグラウンド アプリである必要があります。 この要件は、ユーザーが制御を維持するのに役立ちます。 この要件を満たすために、すべてのファイル起動がアプリの UI に直接結び付けられていることを確認します。 ほとんどの場合、ファイル起動を開始するには、常にユーザーがなんらかの操作を行う必要があります。
 
-Xxx xxx'x xxxxxx xxxx xxxxx xxxx xxxxxxx xxxx xx xxxxxx xx xxxx xxx xxxxxxxx xxxxxxxxxxxxx xx xxx xxxxxxxxx xxxxxx, xxxx xx, .xxx, .xxx, xxx .xx xxxxx. Xxxx xxxxxxxxxxx xxxxxxxx xxxxx xxxx xxxxxxxxxxx xxxxxxxxx xxxxx xxxx xxxxx xxxxxx xxx xxxxxxxxx xxxxxx. Xxx xxx xxx xxxx xxxxxx xx xxxxxx xxxx xxxxx xxxx xxx xxxxxxx xxxxxx xx xxxx xxx xxxxxxxx xx xx xxx xxxx xxxxxxxx xxx xxxxxx, xxxx xx, .xxxx xxxxx. Xxxx xxxx Xxxxxxxxx Xxxx xxxx xxx xxxxxx xx .xxxx xxxxx xxxx xxxxxxxxx xxx xxxxxxxxx xxxxxx.
+.exe、.msi、.js ファイルなど、オペレーティング システムによって自動的に実行されるコードまたはスクリプトを含むファイルの種類を起動することはできません。 この制約により、オペレーティング システムを変更する可能性のある、悪意のあるファイルからユーザーを保護できます。 この方法では、.docx ファイルなど、スクリプトを分離するアプリによって実行されるスクリプトを含むファイルの種類を起動できます。 Microsoft Word などのアプリは、.docx ファイルのスクリプトがオペレーティング システムを変更しないようにします。
 
-Xx xxx xxx xx xxxxxx x xxxxxxxxxx xxxx xxxx, xxx xxxxxx xxxx xxxx xxx xxxx xxxxx xxxxxxxx xxxx xx xxxxxxx. Xx xxxx xxx xxxxxxx xxxx xxxxxxxxx xxxxx xx xxxxx xxx xxx xxxxxx xxxx xxx xxxx xxx xxxx xxxxx, xx xxxxxxxxx xxxx xxx xxxxxxx x xxxxxxxx xxxxxxxxxx xx xxxx xxxx. Xxx xxxxxxx, xxx xxxxx xxxx xxx xxxx xx xxxxxx xx xxxx xxx xxxx xx xxx xxxxxxx, xxx xxxx xxxxx xxxx xx xxxxx.
+制限されている種類のファイルを起動しようとすると、起動は失敗し、エラー コールバックが呼び出されます。 アプリがさまざまな種類のファイルを処理するため、このエラーの発生が予想される場合は、ユーザーにフォールバックを提供することをお勧めします。 たとえば、ファイルをデスクトップに保存してそこで開けるようなオプションをユーザーに提供することができます。
 
-> **Xxxx**  Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-## Xxxxxxx xxxxxx
-
-
-**Xxxxx**
-
-* [Xxxxxx xxx xxxxxxx xxx xxx x XXX](launch-default-app.md)
-* [Xxxxxx xxxx xxxxxxxxxx](handle-file-activation.md)
-
-**Xxxxxxxxxx**
-
-* [Xxxxxxxxxx xxx xxxx xxxxx xxx XXXx](https://msdn.microsoft.com/library/windows/apps/hh700321)
-
-**Xxxxxxxxx**
-
-* [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171)
-* [**Xxxxxxx.Xxxxxx.Xxxxxxxx.XxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701461)
+> **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
+## 関連トピック
+
+
+**処理手順**
+
+* [URI に応じた既定のアプリの起動](launch-default-app.md)
+* [ファイルのアクティブ化の処理](handle-file-activation.md)
+
+**ガイドライン**
+
+* [ファイルの種類と URI のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700321)
+
+**リファレンス**
+
+* [**Windows.Storage.StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
+* [**Windows.System.Launcher.LaunchFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh701461)
 
  
+
+ 
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

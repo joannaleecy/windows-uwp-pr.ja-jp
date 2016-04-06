@@ -1,32 +1,36 @@
 ---
-xxxxx: Xxxxxxx xxxxxxx, Xxxx xxxx
-xx.xxxxxxx: YYYYYYXY-YYYX-YYYY-XXYY-YXYYXYYXYXYY
-xxxxxxxxxxx: Xxxx xxxx xxxxx xxxxxxxxxxx, xxx xxx xxx xxxxx xxxxxxx xxxx xxxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
+title: はじめに: 次の手順
+ms.assetid: 903046E7-581F-4845-AB80-1A57C42B1B02
+description: この基本情報を使って、もっと興味深いユニバーサル Windows プラットフォーム (UWP) アプリの作成を今すぐ開始できます。
 ---
 
-# Xxxxxxx xxxxxxx: Xxxx xxxx?
+# はじめに: 次の手順
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-## Xxxx xxxxx
+## 次のステップ
 
-Xxxx xxxx xxxxx xxxxxxxxxxx, xxx xxx xxx xxxxx xxxxxxx xxxx xxxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xxx xxxx xxxx xxxxx, xxxx x xxxx xxxxxxx xxx xxxxxxxxx xxxxxx, xxx xxxx xxxx xx Xxxxxxxxx Xxxxxx Xxxxxx xxx xxxxx xxxxxxx xxxx xxxx!
+この基本情報を使って、もっと興味深いユニバーサル Windows プラットフォーム (UWP) アプリの作成を今すぐ開始できます。 次の手順として、次のトピックを読んでから Microsoft Visual Studio を起動し、コードの作成を始めます。
 
--   [Xxx xxxxxxxxx xxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh464906): Xxx xx xxxxxxx xxxxxxxxxx xxxxxxx xxxx xxxx xxx xxxxx xxxx xxx Xxxxxxx, xxx xxxxxxx, xxx Xxxx Xx xxxxxxxx xxx xxx Xxxx Xxxxxxxx xxxxxxxxx.
--   [Xxxxxxx xxxx xxxxx, xxxxxx, xxx xxxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259): Xxx xx xxxxxx xxxxx, xxxxxx xxxxx xxx xxxxx xxxxxx, xxxx xxxxx xxxxxxxxxxxxx, xxx xxxx xxx xxxxxx xxxx xxx xxxxx xxxxxxx xx xxx xxxx xxxxxx.
--   [Xxxxxxxxx, xxxxxxxx, xxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh770837): Xxx xx xxxx-xxxxxx, xxxxxxxx, xxxxxxx, xxx xxxxxx xxxx, xxx xxx xx xxxx xxxx xxxxxxxxxx xxxxx.
--   [Xxxxxxxxxx xxx xxxxxxx xxxxxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/hh465094): Xxx xx xxxxxxx x xxxxx xxx-xxxx xxxxxxxxxx xxx xxxx xxxxx xxx xxxx xxxxxxxx xxxx xxxx xxx xxxxxx, xxxx xx x XX xx xxxx xxx x xxxxxx xx xxxx.
--   [Xxxxxx xxxx xxxxx Xxxxxxx Xxxxxxx xxx xxxxx X# xx Xxxxxx Xxxxx](http://go.microsoft.com/fwlink/p/?LinkID=394138): X xxxxx xxxxxxxx xx Xxxxxxx Xxxxx xxxxxxxxxxx.
--   [Xxxxxx xxx xXX xxx Xxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/dn393982): Xxxx xxxx xxxx, xxxx xxxx xx xxxxxx xxxxxx.
+-   「[アプリ コントラクトと拡張機能](https://msdn.microsoft.com/library/windows/apps/hh464906)」: 自分のアプリおよび他のアプリと Windows との間でアグリーメントを宣言する方法 (リモート再生コントラクト、ゲーム エクスプローラー拡張機能など)。
+-   「[タイル、バッジ、トースト通知の操作](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259)」: タイルを作る方法、タイルとバッジを更新する方法、トースト通知を送信する方法、ロック画面上のタイルとバッジの更新を表示および更新する方法。
+-   「[起動、再開、マルチタスク](https://msdn.microsoft.com/library/windows/apps/hh770837)」: アプリを自動起動、アクティブ化、一時停止、再開する方法、バックグラウンド タスクを操作する方法。
+-   「[アプリケーション データのローミングのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465094)」: 職場では PC、自宅ではタブレットのように複数のデバイスを活用するエンド ユーザーに快適なエクスペリエンスを提供する方法。
+-   「[C# または Visual Basic を使った初めての Windows ランタイム アプリの作成](http://go.microsoft.com/fwlink/p/?LinkID=394138)」: Windows Phone 開発に重点を置いたトピック。
+-   「[iOS と Android 開発者向けビデオ](https://msdn.microsoft.com/library/windows/apps/dn393982)」: その他のヘルプをビデオで説明します。
 
-Xxxx, xx xxxx xx xxxxx xxx [Xxxxxxxxx xxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=263513) xx xxxxx xxx xx xxx xxxx xxx xxx xxxxxxxxx xxxxxxx xxxxxxxxx xxxxxx, xxxxx, xxxxxxxxx xxxxx xxx xxxxxxxxx, xxx xxxxx Xxxxxxxxx xxxxxx xxx xxxxxxxx.
+さらに、[コミュニティ リソースに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=263513)にアクセスすることもお勧めします。開発者フォーラム、ブログ、開発者キャンプとワークショップ、地域の Microsoft イベントや担当者を通じて情報を入手または交換できます。
 
-Xx xxxxx xxxx Xxxxxxx YY xxxx xxxx xx xxx xxx-xxxxxxxx xxxxxxxxxxxxx xxx xxx. Xx xxxx xxxxxxx xx xxxxxx xxx xx xxx xxxxx xxxx xxxx xxx'xx xxxxx xx xxxxx!
+Windows 10 により、新しいアプリの構築機会が開かれます。 開発者の皆さんによって構築された優れたアプリを見る機会を楽しみにしています。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-**Xxxxxx xxx xXX xxxx**
-* [Xxxxxxxxx xxx xXX xxxx](https://msdn.microsoft.com/library/windows/apps/jj945493)
-* [Xxxxxxx xxxxxxxx xxx xXX xxxx](https://msdn.microsoft.com/library/windows/apps/dn263255)
-* [Xxxxxxx xxxxxxxx xxx xXX xxxx](https://msdn.microsoft.com/library/windows/apps/dn263256)
+**iOS 開発者のためのトピック**
+* [iOS 開発者向けリソース](https://msdn.microsoft.com/library/windows/apps/jj945493)
+* [iOS 開発者のための Windows のコントロール](https://msdn.microsoft.com/library/windows/apps/dn263255)
+* [iOS 開発者のための Windows のクックブック](https://msdn.microsoft.com/library/windows/apps/dn263256)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,60 +1,60 @@
 ---
-xxxxxxxxxxx: Xxxxxxxx xx xxxxxx xxx xxxx xxxxxxx xxx xxxxxxx Xxx xxxxxxx xxxxx xxxxxxxxxx xxxxx xxxxxxxxx xxxxxxxxx xx xxx XXX xxx Xxxx xxxxxxxxx xxxxx xxxxxxxx xx xxx Xxxxxxx.Xxx.Xxxxxxxxxxx xxxxxxxxx.
-xxxxx: XXX/Xxxx xxxxx
-xx.xxxxxxx: XYYYXYYX-YYYY-YXXX-YXXX-XXYXYYXYYYYY
+description: Retrieve or create the most current and popular Web content using syndicated feeds generated according to the RSS and Atom standards using features in the Windows.Web.Syndication namespace.
+title: RSS/Atom feeds
+ms.assetid: B196E19B-4610-4EFA-8FDF-AF9B10D78843
 ---
 
-# XXX/Xxxx xxxxx
+# RSS/Atom feeds
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**Xxxxxxx.Xxxx.Xxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/br240819)
--   [**Xxxxxxx.Xxx.XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br210609)
--   [**Xxxxxxx.Xxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243632)
+-   [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819)
+-   [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)
+-   [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632)
 
-Xxxxxxxx xx xxxxxx xxx xxxx xxxxxxx xxx xxxxxxx Xxx xxxxxxx xxxxx xxxxxxxxxx xxxxx xxxxxxxxx xxxxxxxxx xx xxx XXX xxx Xxxx xxxxxxxxx xxxxx xxxxxxxx xx xxx [**Xxxxxxx.Xxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243632) xxxxxxxxx.
+Retrieve or create the most current and popular Web content using syndicated feeds generated according to the RSS and Atom standards using features in the [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) namespace.
 
-## Xxxx xx x xxxx?
+## What is a feed?
 
-X xxx xxxx xx x xxxxxxxx xxxx xxxxxxxx xxx xxxxxx xx xxxxxxxxxx xxxxxxx xxxx xx xx xxxx, xxxxx, xxx xxxxxx. Xxxxxxx xxxx xx x xxxx xxx xx xxx xxxx xx xxx xxxxxxx xxxx xx xxxxxxx xxx xxxxxx xxxxxxx xxxxxx xxx Xxx. Xxxxxxx xxxxxxxxx xxx xxx x xxxx xxxxxx xxx xx xxxxxxxxx xxx xxxxxxx xxxxx xxxx xxx xxxxxx xx xxxxxxxxxx xxxxxxx xxxxxxx, xxxxxxx xxxxxx xx xxx xxxxxx xxxxxxx xxxxxxx xxx xxxxxxxxxxxx.
+A web feed is a document that contains any number of individual entries made up of text, links, and images. Updates made to a feed are in the form of new entries used to promote the latest content across the Web. Content consumers can use a feed reader app to aggregate and monitor feeds from any number of individual content authors, gaining access to the latest content quickly and conveniently.
 
-## Xxxxx xxxx xxxxxx xxxxxxxxx xxx xxxxxxxxx?
+## Which feed format standards are supported?
 
-Xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxx xxxx xxxxxxxxx xxx XXX xxxxxx xxxxxxxxx xxxx Y.YY xx XXX Y.Y, xxx Xxxx xxxxxxxxx xxxx Y.Y xx Y.Y. Xxxxxxx xx xxx [**Xxxxxxx.Xxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243632) xxxxxxxxx xxx xxxxxx xxxxx xxx xxxx xxxxx xxxxxxx xx xxxxxxxxxxxx xxxx XXX xxx Xxxx xxxxxxxx.
+The Universal Windows Platform (UWP) supports feed retrieval for RSS format standards from 0.91 to RSS 2.0, and Atom standards from 0.3 to 1.0. Classes in the [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) namespace can define feeds and feed items capable of representing both RSS and Atom elements.
 
-Xxxxxxxxxxxx, Xxxx Y.Y xxx XXX Y.Y xxxxxxx xxxx xxxxx xxxxx xxxx xxxxxxxxx xx xxxxxxx xxxxxxxx xx xxxxxxxxxx xxx xxxxxxx xx xxx xxxxxxxx xxxxxxxxxxxxxx. Xxxx xxxx, xxxxx xxxxxx xxxxxxxx xxx xxxxxxxxxx xxxx xxxxxx x xxx xx xxxxxx xxxxxx-xxxxxxxx xxxxxxxxxxx xxxxxxxx xx xxxxx xxx xxxxxxx xxxx xxxxxxx xxxx XXxxx xxx XXxxx. Xx xxxxxxx xxxx xxxxx xxxxxxx, xxx [**XxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br243585) xxxxx xxxxxxxxxx xxxxxxx XXX xxxxxxxx. Xxxxx **XxxxxxxxxxxXxxx** xxxx xxxxxxx xx xxx [**Xxxxxxx.Xxxx.Xxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/br240819) xxxxxxxxx, xxxxxx xxxx xx xxxxxx xxxxxxxxxx, xxxxxxxxxx, xxx xxx xxxxxxx xxxx xxxx xxx xxxxxxx.
+Additionally, Atom 1.0 and RSS 2.0 formats both allow their feed documents to contain elements or attributes not defined in the official specifications. Over time, these custom elements and attributes have become a way to define domain-specific information consumed by other web service data formats like GData and OData. To support this added feature, the [**SyndicationNode**](https://msdn.microsoft.com/library/windows/apps/br243585) class represents generic XML elements. Using **SyndicationNode** with classes in the [**Windows.Data.Xml.Dom**](https://msdn.microsoft.com/library/windows/apps/br240819) namespace, allows apps to access attributes, extensions, and any content that they may contain.
 
-Xxxx xxxx, xxx xxxxxxxxxxx xx xxxxxxxxxx xxxxxxx, xxx XXX xxxxxxxxxxxxxx xx xxx Xxxx Xxxxxxxxxxx Xxxxxxxx ([**Xxxxxxx.Xxx.XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br210609)) xxxx xxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxxxxxxxx xx xxx Xxxx xxx Xxxx Xxxxxxxxxxx xxxxxxxxx.
+Note that, for publication of syndicated content, the UWP implementation of the Atom Publication Protocol ([**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609)) only supports feed content operations according to the Atom and Atom Publication standards.
 
-## Xxxxx xxxxxxxxxx xxxxxxx xxxx xxxxxxx xxxxxxxxx
+## Using syndicated content with network isolation
 
-Xxx xxxxxxx xxxxxxxxx xxxxxxx xx xxx XXX xxxxxxx x xxxxxxxxx xx xxxxxxx xxx xxxxx xxxxxxx xxxxxx xx x XXX xxx. Xxx xxx xxxx xxx xxxxxxx xxxxxx xx xxx xxxxxxx. Xxxxxxx xxx xxxxx xxxx xxxx xx, XXX xxxxxxxx xxxxxxxxx xxxxxx xx xxxxxx xx xxx xxxxxxx xxxx xxx xx xxxxxxx xx xxxxxxxxx xxxxxxxxxxx xxxxxxxxxxxx.
+The network isolation feature in the UWP enables a developer to control and limit network access by a UWP app. Not all apps may require access to the network. However for those apps that do, UWP provides different levels of access to the network that can be enabled by selecting appropriate capabilities.
 
-Xxxxxxx xxxxxxxxx xxxxxx x xxxxxxxxx xx xxxxxx xxx xxxx xxx xxx xxxxx xx xxxxxxxx xxxxxxx xxxxxx. Xx xxx xxxxxxx xxx xxxxxxxxxxx xxxxx xxxxxxx xx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxx xxxx xx xxxxxxx, xxx xxxxxxxx xxxx xx xxxxxxx xxxxxxx (xxxxxxxx xxxxxx-xxxxxxxxx xxxxxxxx xx xxxx xxxxxxx xxxxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxx-xxxxxxxxx xxxxxxxx). Xxx xxxxxxx xx xxx xxx xxxxxxx xxxxxxx xxxxxxxxx xxxxxxx xxxx xx xx xxx xxxx xxx xxxxxxxxxxx, xx xxx xxxx xxxxxx xxxxxxxx xxxxx xxx xxx xxx xxxxxxxxxx xxxx xxxxxxx xxxxxx. Xxxx xxxxxxxxxxxxx xxxxxxx xxx xxxxx xx xxx xxxxxx xx xxxxx xxxxxxxxxxxx xxx xx Xxxxxxx.
+Network isolation allows a developer to define for each app the scope of required network access. An app without the appropriate scope defined is prevented from accessing the specified type of network, and specific type of network request (outbound client-initiated requests or both inbound unsolicited requests and outbound client-initiated requests). The ability to set and enforce network isolation ensures that if an app does get compromised, it can only access networks where the app has explicitly been granted access. This significantly reduces the scope of the impact on other applications and on Windows.
 
-Xxxxxxx xxxxxxxxx xxxxxxx xxx xxxxx xxxxxxxx xx xxx [**Xxxxxxx.Xxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243632) xxx [**Xxxxxxx.Xxx.XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br210609) xxxxxxxxxx xxxx xxx xx xxxxxx xxx xxxxxxx. Xxxxxxx xxxxxxxx xxxxxxxx xxxxxxx xxxxxxxxx. X xxxx xx x xxxxx xxxxxxx xx xxx **Xxxxxxx.Xxx.Xxxxxxxxxxx** xx **Xxxxxxx.Xxx.XxxxXxx** xxxxxxxxx xxxx xxxxxxx xx xxxxxxx xxxxxx xxx xxxx xxxxxxx xx xxxxxxx xxxxxxxxx xx xxx xxxxxxxxxxx xxxxxxx xxxxxxxxxx xxx xxx xxxx xxxxxxx.
+Network isolation affects any class elements in the [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) and [**Windows.Web.AtomPub**](https://msdn.microsoft.com/library/windows/apps/br210609) namespaces that try to access the network. Windows actively enforces network isolation. A call to a class element in the **Windows.Web.Syndication** or **Windows.Web.AtomPub** namespace that results in network access may fail because of network isolation if the appropriate network capability has not been enabled.
 
-Xxx xxxxxxx xxxxxxxxxxxx xxx xx xxx xxx xxxxxxxxxx xx xxx xxx xxxxxxxx xxxx xxx xxx xx xxxxx. Xxxxxxx xxxxxxxxxxxx xxx xxxxxxx xxxxx xxxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY xxxx xxxxxxxxxx xxx xxx. Xxxxxxx xxxxxxxxxxxx xxx xxxx xx xxx xxxxxxxx xx xxx xxx xxxxxxxx xxxx xxxxx x xxxx xxxxxx.
+The network capabilities for an app are configured in the app manifest when the app is built. Network capabilities are usually added using Microsoft Visual Studio 2015 when developing the app. Network capabilities may also be set manually in the app manifest file using a text editor.
 
-Xxx xxxx xxxxxxxx xxxxxxxxxxx xx xxxxxxx xxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxxxx, xxx xxx "Xxxxxxxxxxxx" xxxxxxx xx xxx [Xxxxxxxxxx xxxxxx](networking-basics.md) xxxxx.
+For more detailed information on network isolation and networking capabilities, see the "Capabilities" section in the [Networking basics](networking-basics.md) topic.
 
-## Xxx xx xxxxxx x xxx xxxx
+## How to access a web feed
 
-Xxxx xxxxxxx xxxxx xxx xx xxxxxxxx xxx xxxxxxx x xxx xxxx xxxxx xxxxxxx xx xxx [**Xxxxxxx.Xxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243632) xxxxxxxxx xx xxxx XXX xxx xxxxxxx xx X# xx Xxxxxxxxxx.
+This section shows how to retrieve and display a web feed using classes in the [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) namespace in your UWP app written in C# or Javascript.
 
-**Xxxxxxxxxxxxx**
+**Prerequisites**
 
-Xx xxxxxx xxxx XXX xxx xx xxxxxxx xxxxx, xxx xxxx xxx xxx xxxxxxx xxxxxxxxxxxx xxxx xxx xxxxxx xx xxx xxxxxxx **Xxxxxxx.xxxxxxxxxxxx** xxxx. Xx xxxx xxx xxxxx xx xxxxxxx xx x xxxxxx xx xxxxxx xxxxxxxx xx xxx Xxxxxxxx, xxxx xxx **xxxxxxxxXxxxxx** xxxxxxxxxx xx xxxxxx. Xxx xxxx xxxxxxxxxxx, xxx xxx "Xxxxxxxxxxxx" xxxxxxx xx xxx [Xxxxxxxxxx xxxxxx](networking-basics.md) xxxxx.
+To ensure your UWP app is network ready, you must set any network capabilities that are needed in the project **Package.appxmanifest** file. If your app needs to connect as a client to remote services on the Internet, then the **internetClient** capability is needed. For more information, see the "Capabilities" section in the [Networking basics](networking-basics.md) topic.
 
-**Xxxxxxxxxx xxxxxxxxxx xxxxxxx xxxx x xxx xxxx**
+**Retrieving syndicated content from a web feed**
 
-Xxx xx xxxx xxxxxx xxxx xxxx xxxx xxxxxxxxxxxx xxx xx xxxxxxxx x xxxx, xxx xxxx xxxxxxx xxxx xxxxxxxxxx xxxx xxxx xxx xxxx xxxxxxxx. Xxxxxx xx xxx xxxxxxxxx xxx xxxx xxx xxxxxxx, xx'xx xxxxxx x xxx xxxxxxxxx xx'xx xx xxxxx xxxxxx xxx xxxxxxxxx, xxx xxxxxxxxxx xx xxxxxxxx xx [**XxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243456), xxxxx xxxxxxx xxx xxxxxxx xxx xxxxxxxxxx xx'xx xxx xx xxxxxxxx xxx xxxxxxx xxx xxxx.
+Now we will review some code that demonstrates how to retrieve a feed, and then display each individual item that the feed contains. Before we can configure and send the request, we'll define a few variables we'll be using during the operation, and initialize an instance of [**SyndicationClient**](https://msdn.microsoft.com/library/windows/apps/br243456), which defines the methods and properties we'll use to retrieve and display the feed.
 
-Xxx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/br226017) xxxxxxxxxxx xxxxxx xx xxxxxxxxx xx xxx *xxxXxxxxx* xxxxxx xx xxx xxxxxxxxxxx xx xxx x xxxxx XXX. Xx xx xxxxxxxx xxx *xxxXxxxxx* xxxxx x xxx/xxxxx xxxxx.
+The [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) constructor throws an exception if the *uriString* passed to the constructor is not a valid URI. So we validate the *uriString* using a try/catch block.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 Windows.Web.Syndication.SyndicationClient client = new Windows.Web.Syndication.SyndicationClient();
 Windows.Web.Syndication.SyndicationFeed feed;
@@ -90,15 +90,15 @@ try {
 }
 ```
 
-Xxxx xx xxxxxxxxx xxx xxxxxxx xx xxxxxxx xxx Xxxxxx xxxxxxxxxxx (xxx [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243461) xxxxxxxx), xxxxx xxxxxxxxxxx (xxx [**XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243459) xxxxxxxx), xxx XXXX xxxxxxx (xxx [**XxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243462) xxxxxx) xxxxxx. Xxxx xxx xxxxx xxxxxxx xxxxxxxxxx xxxxxxxxxx, x xxxxx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/br226017) xxxxxx, xxxxxxx xxxxx x xxxx XXX xxxxxx xxxxxxxx xx xxx xxx. Xxx **Xxx** xxxxxx xx xxxx xxxxxx xx xxx [**XxxxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br243460) xxxxxxxx xx xxxxxxx xxx xxxx.
+Next we configure the request by setting any Server credentials (the [**ServerCredential**](https://msdn.microsoft.com/library/windows/apps/br243461) property), proxy credentials (the [**ProxyCredential**](https://msdn.microsoft.com/library/windows/apps/br243459) property), and HTTP headers (the [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/apps/br243462) method) needed. With the basic request parameters configured, a valid [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) object, created using a feed URI string provided by the app. The **Uri** object is then passed to the [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) function to request the feed.
 
-Xxxxxxxx xxx xxxxxxx xxxx xxxxxxx xxx xxxxxxxx, xxx xxxxxxx xxxx xxxxxxxx xxxxxxx xxxx xxxx xxxx, xxxxxxx **xxxxxxxXxxxxxxXxxx** (xxxxx xx xxxxxx xxxx), xx xxxxxxx xxxxx xxx xxxxx xxxxxxxx xx x xxxx xxxxxxx xxx XX.
+Assuming the desired feed content was returned, the example code iterates through each feed item, calling **displayCurrentItem** (which we define next), to display items and their contents as a list through the UI.
 
-Xxx xxxx xxxxx xxxx xx xxxxxx xxxxxxxxxx xxxx xxx xxxx xxxx xxxxxxxxxxxx xxxxxxx xxxxxxx. Xxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xx xxx xxxxx xx xxx xxxxxxxxx xx xxxxxx xxxxxxxxxx xxx xxxxxxx xxx xxxx xxxxxxxxxxx xxxxxxxxx.
+You must write code to handle exceptions when you call most asynchronous network methods. Your exception handler can retrieve more detailed information on the cause of the exception to better understand the failure and make appropriate decisions.
 
-Xxx [**XxxxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br243460) xxxxxx xxxxxx xx xxxxxxxxx xx x xxxxxxxxxx xxxxx xxx xx xxxxxxxxxxx xxxx xxx XXXX xxxxxx xx xxx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/br226017) xxxxxx xxxx xxx xxxxx xx x xxxxx XxxxXxx xx XXX xxxx. Xxx Xxxxxxxxxx xxxxxx xxxx xxxx xx **xxXxxxx** xxxxxxxx xx xxxxx xxx xxxxxxxxxx xxx xxxxx xxx xxxx xxxxxxxx xxxxxxxxxxx xx xxx xxxxxxxxx xx xx xxxxx xxxxxx.
+The [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) method throws an exception if a connection could not be established with the HTTP server or the [**Uri**](https://msdn.microsoft.com/library/windows/apps/br226017) object does not point to a valid AtomPub or RSS feed. The Javascript sample code uses an **onError** function to catch any exceptions and print out more detailed information on the exception if an error occurs.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 try
 {
@@ -165,9 +165,9 @@ function retreiveFeed(uri) {
 }
 ```
 
-Xx xxx xxxxxxxx xxxx, [**XxxxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br243460) xxxxxxxx xxx xxxxxxxxx xxxx xxxxxxx xxx xxx xxxxxxx xxxx xxx xx xxxx xxxxxxxxx xxxxxxx xxxxxxxxx xxxx xxxxx. Xxxx xx xxxxx xxxxx xx xxxxxxxxxxx xxxxx x [**XxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br243533) xxxxxx xxxx xxxxxxxx xxx xx xxx xxxx xxxxxxxxxx xxx xxxxxxx xxxxxxxx xx xxx xxxxxxxx xxxxxxxxxxx xxxxxxxx (XXX xx Xxxx). Xx xxx xxxxxxxxx xxxxxxx xx xxxxxxx xxx **xxxxxxxXxxxxxxXxxx** xxxxxxxx xxxxxxx xxxxxxx xxxx xxxx xxx xxxxxxxxxx xxx xxxxxxx xxxxxxx xxxxxxx xxxxx XX xxxxxxxx.
+In the previous step, [**RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/br243460) returned the requested feed content and the example code got to work iterating through available feed items. Each of these items is represented using a [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) object that contains all of the item properties and content afforded by the relevant syndication standard (RSS or Atom). In the following example we observe the **displayCurrentItem** function working through each item and displaying its content through various named UI elements.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 private void displayCurrentItem(Windows.Web.Syndication.SyndicationItem item)
 {
@@ -213,9 +213,9 @@ function displayCurrentItem() {
                 //displayCurrentItem is continued below.
 ```
 
-Xx xxxxxxxxx xxxxxxx, xxx xxxx xx xxxxxxx xxxxxxxxxxx xx x [**XxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br243533) xxxxxx xxxx xxxxxx xxxxxxxxx xx xxx xxxx xxxxxxxx (XXX xx Xxxx) xxxxxxxx xx xxxxxxx xxx xxxx. Xxx xxxxxxx, xx Xxxx xxxx xx xxxxxxx xx xxxxxxxxx x xxxx xx [**Xxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243540), xxx xx XXX xxxx xx xxx. Xxxxxxx, xxxxxxxxx xxxxxxxx xxxxxxxx xx x xxxx xxxx xxxx xxx xxx xxxxxxxxx xx xxxxxx xxxxxxxx (x.x., Xxxxxx Xxxx xxxxxxxxx xxxxxxxx) xxx xx xxxxxxxx xxxxx xxx [**XxxxxxxxxxxXxxx.XxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243543) xxxxxxxx xxx xxxx xxxxxxxxx xx xxxxxxxxxxxx xx xxx xxxxxxxxx xxxxxxx xxxx.
+As suggested earlier, the type of content represented by a [**SyndicationItem**](https://msdn.microsoft.com/library/windows/apps/br243533) object will differ depending on the feed standard (RSS or Atom) employed to publish the feed. For example, an Atom feed is capable of providing a list of [**Contributors**](https://msdn.microsoft.com/library/windows/apps/br243540), but an RSS feed is not. However, extension elements included in a feed item that are not supported by either standard (e.g., Dublin Core extension elements) can be accessed using the [**SyndicationItem.ElementExtensions**](https://msdn.microsoft.com/library/windows/apps/br243543) property and then displayed as demonstrated in the following example code.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
     //displayCurrentItem continued.
     string extensions = "";
@@ -253,4 +253,8 @@ Xx xxxxxxxxx xxxxxxx, xxx xxxx xx xxxxxxx xxxxxxxxxxx xx x [**XxxxxxxxxxxXxxx**]
 }
 ```
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

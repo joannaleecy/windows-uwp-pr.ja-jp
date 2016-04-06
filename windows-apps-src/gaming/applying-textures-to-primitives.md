@@ -1,33 +1,33 @@
 ---
-xxxxx: Xxxxx xxxxxxxx xx xxxxxxxxxx
-xxxxxxxxxxx: Xxxx, xx xxxx xxx xxxxxxx xxxx xxx xxxxx xxxx xxxx xx x YX xxxxxxxxx xx xxxxx xxx xxxx xxxx xx xxxxxxx xx Xxxxx xxxxx xxx xxxxxxx xx xxxxxxxxxx.
-xx.xxxxxxx: xxxxYYxY-xYYx-YxxY-xYxY-xYxYxxxYxYxY
+title: プリミティブへのテクスチャの適用
+description: ここでは、生のテクスチャ データを読み込み、そのデータを、「プリミティブに対する深度と各種効果の使用」で作成した立方体を使って 3D プリミティブに適用します。
+ms.assetid: aeed09e3-c47a-4dd9-d0e8-d1b8bdd7e9b4
 ---
 
-# Xxxxx xxxxxxxx xx xxxxxxxxxx
+# プリミティブへのテクスチャの適用
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
-Xxxx, xx xxxx xxx xxxxxxx xxxx xxx xxxxx xxxx xxxx xx x YX xxxxxxxxx xx xxxxx xxx xxxx xxxx xx xxxxxxx xx [Xxxxx xxxxx xxx xxxxxxx xx xxxxxxxxxx](using-depth-and-effects-on-primitives.md). Xx xxxx xxxxxxxxx x xxxxxx xxx-xxxxxxx xxxxxxxx xxxxx, xxxxx xxx xxxx xxxxxxxx xxx xxxxxxx xx xxxxxx xxxxx xx xxxxx xxxxxxxx xxx xxxxx xxxxxxxx xx x xxxxx xxxxxx.
+ここでは、生のテクスチャ データを読み込み、そのデータを、「[プリミティブに対する深度と各種効果の使用](using-depth-and-effects-on-primitives.md)」で作成した立方体を使って 3D プリミティブに適用します。 また、光源との距離や角度に応じて立方体のサーフェスの明暗の度合いが変化する単純なドット積の照明モデルを紹介します。
 
-**Xxxxxxxxx:** Xx xxxxx xxxxxxxx xx xxxxxxxxxx.
+**目標:** プリミティブにテクスチャを適用する。
 
-## Xxxxxxxxxxxxx
+## 必要条件
 
 
-Xx xxxxxx xxxx xxx xxx xxxxxxxx xxxx X++. Xxx xxxx xxxx xxxxx xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxxxxx.
+C++ に習熟していることを前提としています。 また、グラフィックス プログラミングの概念に対する基礎的な知識も必要となります。
 
-Xx xxxx xxxxxx xxxx xxx xxxx xxxxxxx [Xxxxxxxxxx: xxxxxxx xx XxxxxxX xxxxxxxxx xxx xxxxxxxxxx xx xxxxx](setting-up-directx-resources.md), [Xxxxxxxx xxxxxxx xxx xxxxxxx xxxxxxxxxx](creating-shaders-and-drawing-primitives.md), xxx [Xxxxx xxxxx xxx xxxxxxx xx xxxxxxxxxx](using-depth-and-effects-on-primitives.md).
+加えて、「[クイック スタート: DirectX リソースの設定と画像の表示](setting-up-directx-resources.md)」、「[シェーダーの作成とプリミティブの描画](creating-shaders-and-drawing-primitives.md)」、「[プリミティブに対する深度と各種効果の使用](using-depth-and-effects-on-primitives.md)」にひととおり目を通しておく必要があります。
 
-**Xxxx xx xxxxxxxx:** YY xxxxxxx.
+**完了までの時間:** 20 分。
 
-Xxxxxxxxxxxx
+手順
 ------------
 
-### Y. Xxxxxxxx xxxxxxxxx xxx x xxxxxxxx xxxx
+### 1. テクスチャの適用対象となる立方体の変数を定義する
 
-Xxxxx, xx xxxx xx xxxxxx xxx **XxxxxXxxxxx** xxx **XxxxxxxxXxxxxx** xxxxxxxxxx xxx xxx xxxxxxxx xxxx. Xxxxx xxxxxxxxxx xxxxxxx xxx xxxxxx xxxxxxxxx, xxxxxxxxxxxx, xxx xxxxxxxx xxx xxx xxxx xxx xxx xxx xxxx xxxx xx xxxxxx. Xxxxxxxxx, xx xxxxxxx xxxxxxxxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxxx, [Xxxxx xxxxx xxx xxxxxxx xx xxxxxxxxxx](using-depth-and-effects-on-primitives.md).
+まず、テクスチャの適用対象となる立方体の **BasicVertex** 構造体と **ConstantBuffer** 構造体を定義する必要があります。 立方体の頂点の位置、方向、テクスチャに加え、その見え方が、これらの構造体によって指定されます。 それ以外は、前のチュートリアル (「[プリミティブに対する深度と各種効果の使用](using-depth-and-effects-on-primitives.md)」) と同様の変数を宣言します。
 
 ```cpp
 struct BasicVertex
@@ -58,20 +58,20 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### Y. Xxxxxxxx xxxxxx xxx xxxxx xxxxxxx xxxx xxxxxxx xxx xxxxxxx xxxxxxxx
+### 2. サーフェス要素とテクスチャ要素を使って頂点シェーダーとピクセル シェーダーを作成する
 
-Xxxx, xx xxxxxx xxxx xxxxxxx xxxxxx xxx xxxxx xxxxxxx xxxx xx xxx xxxxxxxx xxxxxxxx, [Xxxxx xxxxx xxx xxxxxxx xx xxxxxxxxxx](using-depth-and-effects-on-primitives.md). Xxxx xxx'x xxxxxx xxxxxx xxxxxxxxxx xxxx xxxxxx xxxxxxxx xxxx xxxxxxxxxx xxxxx xxx xxxxxx xxx xxxxxx xxxxxxx xxxxxxxxxx xxxxxxx xx xxx xxxxx xxxxxx.
+ここでは、前のチュートリアル (「[プリミティブに対する深度と各種効果の使用](using-depth-and-effects-on-primitives.md)」) で作成したものよりも複雑な頂点シェーダーとピクセル シェーダーを作成します。 このアプリの頂点シェーダーは、個々の頂点の位置を投影空間に変換し、頂点のテクスチャ座標をピクセル シェーダーに渡します。
 
-Xxx xxx'x xxxxx xx [**XYXYY\_XXXXX\_XXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476180) xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxx xx xxx xxxxxx xxxxxx xxxx xxx xxxxx xxxxxx xxxxxxxx: xxx xxxxxxx xxxxxxx xxx xxxxxx xxxxxxxx, xxxxxxx xxxxxxx xxxxxxx xxx xxxxxxx xxxxxx xxxxxx (xxx xxxxxxxxx xxxx xxx xxxxxxx xxxxxxxx xxxxx), xxx xxx xxxxx xxxxxxx xxxxxxx xxx xxxxxxx xxxxxxxxxxx.
+このアプリには、頂点シェーダー コードのレイアウトを表す [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) 構造体の配列が使われています。この構造体には、3 つのレイアウト要素があります。頂点位置を定義する要素、サーフェスの標準ベクター (サーフェスの通常の向き) を定義する要素、そして、テクスチャの座標を定義する要素です。
 
-Xx xxxxxx xxxxxx, xxxxx, xxx xxxxxxxx xxxxxxx xxxx xxxxxx xx xxxxxxxx xxxxxxxx xxxx.
+テクスチャを適用した周回する立方体を定義する頂点バッファー、インデックス バッファー、定数バッファーを作成します。
 
-**Xx xxxxxx xx xxxxxxxx xxxxxxxx xxxx**
+**テクスチャを適用した周回する立方体を定義するには**
 
-1.  Xxxxx, xx xxxxxx xxx xxxx. Xxxx xxxxxx xx xxxxxxxx x xxxxxxxx, x xxxxxxx xxxxxx xxxxxx, xxx xxxxxxx xxxxxxxxxxx. Xx xxx xxxxxxxx xxxxxxxx xxx xxxx xxxxxx xx xxxxx xxxxxxxxx xxxxxx xxxxxxx xxx xxxxxxx xxxxxxxxxxx xx xx xxxxxxx xxx xxxx xxxx.
-2.  Xxxx, xx xxxxxxxx xxx xxxxxx xxx xxxxx xxxxxxx ([**XYXYY\_XXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476092) xxx [**XYXYY\_XXXXXXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) xxxxx xxx xxxx xxxxxxxxxx. Xx xxxx [**XXYXYYXxxxxx::XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476501) xxxx xxx xxxx xxxxxx.
-3.  Xxxx, xx xxxxxx x xxxxxxxx xxxxxx ([**XYXYY\_XXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) xxx xxxxxxx xxxxx, xxxx, xxx xxxxxxxxxx xxxxxxxx xx xxx xxxxxx xxxxxx. Xx xxx xxxxx xxx xxx xxxxxxxx xxxxxx xx xxxxxx xxx xxxx xxx xxxxx x xxxxxxxxxxx xxxxxxxxxx xx xx. Xx xxxx [**XXYXYYXxxxxx::XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476501) xx xxxxxx xxx xxxxxxxx xxxxxx.
-4.  Xxxxxxx, xx xxxxxxx xxx xxxx xxxxxxxxx xxxx xxxxxxxxxxx xx x xxxxxx xxxxxxxx xx X = Y, X = Y, X = Y.
+1.  まず立方体を定義します。 それぞれの頂点には、位置、サーフェスの標準ベクター、テクスチャの座標が割り当てられます。 面ごとに異なる標準ベクターとテクスチャ座標を定義できるよう、各コーナーには複数の頂点を使います。
+2.  次に、立方体の定義を使い、頂点バッファーとインデックス バッファー ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) と [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) を記述します。 各バッファーについて、[**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) を 1 回呼び出します。
+3.  次に、モデル マトリックス、ビュー マトリックス、プロジェクション マトリックスを頂点シェーダーに渡すための定数バッファー ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) を作成します。 後でこの定数バッファーを使って、立方体を回転させたり、そこに透視投影を適用したりすることができます。 定数バッファーを作成するには、[**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) を呼び出します。
+4.  最後に、カメラ位置 (X = 0、Y = 1、Z = 2) に対応するビュー変換を指定します。
 
 ```cpp
         
@@ -262,20 +262,21 @@ Xx xxxxxx xxxxxx, xxxxx, xxx xxxxxxxx xxxxxxx xxxx xxxxxx xx xxxxxxxx xxxxxxxx x
        });
 ```
 
-### Y. Xxxxxxxx xxxxxxxx xxx xxxxxxxx
+### 3. テクスチャとサンプラーの作成
 
-Xxxx, xx xxxxx xxxxxxx xxxx xx x xxxx xxxxxx xxxx xxxxxxxx xxxxxx xx xx xxx xxxxxxxx xxxxxxxx, [Xxxxx xxxxx xxx xxxxxxx xx xxxxxxxxxx](using-depth-and-effects-on-primitives.md).
+ここでは、前のチュートリアル (「[プリミティブに対する深度と各種効果の使用](using-depth-and-effects-on-primitives.md)」) のように色を適用するのではなく、テクスチャ データを立方体に適用します。
 
-Xx xxx xxx xxxxxxx xxxx xx xxxxxx xxxxxxxx.
+生のテクスチャ データを使ってテクスチャを作成します。
 
-**Xx xxxxxx xxxxxxxx xxx xxxxxxxx**
+**テクスチャとサンプラーを作成するには**
 
-1.  Xxxxx, xx xxxx xxx xxxxxxx xxxx xxxx xxx xxxxxxxxxxx.xxx xxxx xx xxxx.
-2.  Xxxx, xx xxxxxxxxx x [**XYXYY\_XXXXXXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476220) xxxxxxxxx xxxx xxxxxxxxxx xxxx xxx xxxxxxx xxxx.
-3.  Xxxx, xx xxxxxxxx x [**XYXYY\_XXXXXXXYX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476253) xxxxxxxxx xx xxxxxxxx xxx xxxxxxx. Xx xxxx xxxx xxx [**XYXYY\_XXXXXXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476220) xxx **XYXYY\_XXXXXXXYX\_XXXX** xxxxxxxxxx xx x xxxx xx [**XXYXYYXxxxxx::XxxxxxXxxxxxxYX**](https://msdn.microsoft.com/library/windows/desktop/ff476521) xx xxxxxx xxx xxxxxxx.
-4.  Xxxx, xx xxxxxx x xxxxxx-xxxxxxxx xxxx xx xxx xxxxxxx xx xxxxxxx xxx xxx xxx xxxxxxx. Xx xxxxxx xxx xxxxxx-xxxxxxxx xxxx, xx xxxxxxxx x [**XYXYY\_XXXXXX\_XXXXXXXX\_XXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476211) xx xxxxxxxx xxx xxxxxx-xxxxxxxx xxxx xxx xxxx xxx xxxxxx-xxxxxxxx xxxx xxxxxxxxxxx xxx xxx xxxxxxx xx [**XXYXYYXxxxxx::XxxxxxXxxxxxXxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476519). Xx xxxxxxx, xxx xxxxx xxx xxxx xxxxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxx.
-5.  Xxxx, xx xxxxxx xxxxxxx xxxxx xxx xxx xxxxxxx. Xxxx xxxxxxx xxxxx xxxx xxx xxxxxxxx xxxxxxx xxxx xx xxxxxx xxx xxx xxxxx xxx x xxxxxxxxxx xxxxxxx xxxxxxxxxx xx xxxxxxxxxx. Xx xxxxxxxx x [**XYXYY\_XXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476207) xxxxxxxxx xx xxxxxxxx xxx xxxxxxx xxxxx. Xx xxxx xxxx xxx **XYXYY\_XXXXXXX\_XXXX** xxxxxxxxx xx x xxxx xx [**XXYXYYXxxxxx::XxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476518) xx xxxxxx xxx xxxxxxx xxxxx.
-6.  Xxxxxxx, xx xxxxxxx x *xxxxxx* xxxxxxxx xxxx xx xxxx xxx xx xxxxxxx xxx xxxx xx xxxxxxxx xx xxxxx xxxxx.
+1.  まず、ディスク上の texturedata.bin ファイルから生のテクスチャ データを読み取ります。
+2.  次に、この生のテクスチャ データを参照する [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 構造体を作成します。
+3.  この [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) 構造体に情報を入力してテクスチャを定義します。 呼び出しで [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) 構造体と **D3D11\_TEXTURE2D\_DESC** 構造体を [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) に渡してテクスチャを作成します。
+4.  次に、テクスチャのシェーダー リソース ビューを作成して、シェーダーからテクスチャを利用できるようにします。 シェーダー リソース ビューを作成するには、[**D3D11\_SHADER\_RESOURCE\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476211) に入力してそのシェーダー リソース ビューを記述し、そのシェーダー リソース ビューの記述とテクスチャを [**ID3D11Device::CreateShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476519) に渡します。 一般に、ビューの情報とテクスチャの情報は一致させる必要があります。
+5.  次に、テクスチャのサンプラー ステートを作成します。 このサンプラー ステートは、特定のテクスチャ座標の色の決定方法を、関連するテクスチャ データを使って定義します。 [
+            **D3D11\_SAMPLER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476207) 構造体に入力して、サンプラー ステートを記述します。 この **D3D11\_SAMPLER\_DESC** 構造体を呼び出しで [**ID3D11Device::CreateSamplerState**](https://msdn.microsoft.com/library/windows/desktop/ff476518) に渡すことによってサンプラー ステートを作成します。
+6.  最後に、*degree* 変数を宣言します。これは、立方体をフレームごとに回転させてアニメーション化する目的で使います。
 
 ```cpp
         
@@ -386,24 +387,25 @@ Xx xxx xxx xxxxxxx xxxx xx xxxxxx xxxxxxxx.
         float degree = 0.0f;
 ```
 
-### Y. Xxxxxxxx xxx xxxxxxx xxx xxxxxxxx xxxx xxx xxxxxxxxxx xxx xxxxxxxx xxxxx
+### 4. テクスチャを適用した立方体の回転と描画およびレンダリングされた画像の表示
 
-Xx xx xxx xxxxxxxx xxxxxxxxx, xx xxxxx xx xxxxxxx xxxx xx xxxxxxxxxxx xxxxxx xxx xxxxxxx xxx xxxxx. Xx xxxx xxx **xxxxxxxxX** xxxxxx xxxxxxxx (XxxxxXxxx.x) xxxx x xxxxxxxx xxxxxx xx xxx xxxxxx xxxx xxxx xxxxxx xxx xxxx’x xxxxx xxxxxx xxxxxx xxx X xxxx. Xx xxxx xxxx [**XXYXYYXxxxxxXxxxxxx::XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476486) xx xxxxxx xxx xxxxxxxx xxxxxx xxx xxxxxx xxx xxxx xxxxx. Xxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476464) xx xxxxxxx xxx xxxxxx xxxxxx xxx xxx xxxxx-xxxxxxx xxxx. Xx xxxx [**XXYXYYXxxxxxXxxxxxx::XxxxxXxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476388) xx xxxxx xxx xxxxxx xxxxxx xx x xxxxx xxxx xxxxx xxx xxxx [**XXYXYYXxxxxxXxxxxxx::XxxxxXxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476387) xx xxxxx xxx xxxxx xxxxxx.
+前のチュートリアルと同様、シーンをレンダリングして表示し続けるために無限ループを使います。 立方体のモデル マトリックスを Y 軸を中心に回転させるための値を設定するため、**rotationY** インライン関数 (BasicMath.h) に回転量を指定して呼び出します。 さらに、[**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) を呼び出して定数バッファーを更新し、立方体モデルを回転させます。 次に、[**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) を呼び出して、レンダー ターゲットと深度ステンシル ビューを指定します。 [
+            **ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) を呼び出してレンダー ターゲットを無地の青色にクリアし、[**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) を呼び出して深度バッファーをクリアします。
 
-Xx xxx xxxxxxx xxxx, xx xxxx xxxx xxx xxxxxxxx xxxx xx xxx xxxx xxxxxxx.
+無限ループで、テクスチャを適用した立方体を青色のサーフェス上に描画します。
 
-**Xx xxxx xxx xxxxxxxx xxxx**
+**テクスチャを適用した立方体を描画するには**
 
-1.  Xxxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476454) xx xxxxxxxx xxx xxxxxx xxxxxx xxxx xx xxxxxxxx xxxx xxx xxxxx-xxxxxxxxx xxxxx.
-2.  Xxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476456) xxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476453) xx xxxx xxx xxxxxx xxx xxxxx xxxxxxx xx xxx xxxxx-xxxxxxxxx xxxxx.
-3.  Xxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476455) xxxx xxx [**XYXYY\_XXXXXXXXX\_XXXXXXXX\_XXXXXXXXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) xxxxx xx xxxxxxx xxx xxx xxxxx-xxxxxxxxx xxxxx xx xxxxxxxxx xxx xxxxxx xxxx xx x xxxxxxxx xxxxx.
-4.  Xxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476493) xx xxxxxxxxxx xxx xxxxxx xxxxxx xxxxx xxxx xxx xxxxxx xxxxxx xxxx xxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476472) xx xxxxxxxxxx xxx xxxxx xxxxxx xxxxx xxxx xxx xxxxx xxxxxx xxxx.
-5.  Xxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476491) xx xxx xxx xxxxxxxx xxxxxx xxxx xx xxxx xx xxx xxxxxx xxxxxx xxxxxxxx xxxxx.
-6.  Xxxx, xx xxxx [**XXXxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476473) xx xxxx xxx xxxxxx-xxxxxxxx xxxx xx xxx xxxxxxx xx xxx xxxxx xxxxxx xxxxxxxx xxxxx.
-7.  Xxxx, xx xxxx [**XXXxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476471) xx xxx xxx xxxxxxx xxxxx xx xxx xxxxx xxxxxx xxxxxxxx xxxxx.
-8.  Xxxxxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476409) xx xxxx xxx xxxx xxx xxxxxx xx xx xxx xxxxxxxxx xxxxxxxx.
+1.  まず、頂点バッファーから入力アセンブラー ステージへのデータの流れを定義するために、[**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) を呼び出します。
+2.  次に、[**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) と [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) を呼び出して、頂点バッファーとインデックス バッファーを入力アセンブラー ステージにバインドします。
+3.  次に、[**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) の呼び出しで [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) 値を渡し、頂点データを三角形ストリップとして解釈するよう入力アセンブラー ステージに指定します。
+4.  次に、[**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) を呼び出して頂点シェーダー ステージを頂点シェーダー コードで初期化し、さらに、[**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) を呼び出してピクセル シェーダー ステージをピクセル シェーダー コードで初期化します。
+5.  次に、[**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) を呼び出し、頂点シェーダーのパイプライン ステージで使われる定数バッファーを設定します。
+6.  次に、[**PSSetShaderResources**](https://msdn.microsoft.com/library/windows/desktop/ff476473) を呼び出し、テクスチャのシェーダー リソース ビューをピクセル シェーダーのパイプライン ステージにバインドします。
+7.  次に、[**PSSetSamplers**](https://msdn.microsoft.com/library/windows/desktop/ff476471) を呼び出し、サンプラー ステートをピクセル シェーダーのパイプライン ステージに設定します。
+8.  最後に、[**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) を呼び出して立方体を描画し、レンダリング パイプラインに送ります。
 
-Xx xx xxx xxxxxxxx xxxxxxxxx, xx xxxx [**XXXXXXxxxXxxxx::Xxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb174576) xx xxxxxxx xxx xxxxxxxx xxxxx xx xxx xxxxxx.
+前のチュートリアルと同様、[**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) を呼び出して、レンダリングされた画像をウィンドウに表示します。
 
 ```cpp
             // Update the constant buffer to rotate the cube model.
@@ -507,16 +509,20 @@ Xx xx xxx xxxxxxxx xxxxxxxxx, xx xxxx [**XXXXXXxxxXxxxx::Xxxxxxx**](https://msdn
                 );
 ```
 
-## Xxxxxxx
+## 要約
 
 
-Xx xxxxxx xxx xxxxxxx xxxx xxx xxxxxxx xxxx xxxx xx x YX xxxxxxxxx.
+ここでは、生のテクスチャ データを読み込んで、そのデータを 3D プリミティブに適用しました。
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

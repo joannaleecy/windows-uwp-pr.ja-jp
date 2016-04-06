@@ -1,38 +1,32 @@
 ---
-Xxxxxxxxxxx: Xxxxxxx xxxx xxx xxx xxxxxxxxxxxx xx xxxxx xxxxxxx, xxxxxxxxx, xx xxxxxxx.
-xxxxx: Xxxxxxx xxxx xxx xxx xxxxxxxxxxxx
-xx.xxxxxxx: YYXYXYXX-YYXX-YXYY-YYXX-YXXYYXYXYYXY
-xxxxx: Xxxxxxx xxxx xxx xxx xxxxxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Prepare your app for localization to other markets, languages, or regions.
+title: Prepare your app for localization
+ms.assetid: 06E1D4BB-59EA-4D71-99AC-7CB93D2A58A7
+label: Prepare your app for localization
+template: detail.hbs
 ---
 
-# Xxxxxxx xxxx xxx xxx xxxxxxxxxxxx
+# Prepare your app for localization
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxxx xxxx xxx xxx xxxxxxxxxxxx xx xxxxx xxxxxxx, xxxxxxxxx, xx xxxxxxx. Xxxxxx xxx xxx xxxxxxx, xx xxxx xx xxxx xxxxxxx xxx [xx'x xxx xxx'xx](guidelines-and-checklist-for-globalizing-your-app.md).
+Prepare your app for localization to other markets, languages, or regions. Before you get started, be sure to read through the [do's and don'ts](guidelines-and-checklist-for-globalizing-your-app.md).
 
-## <span id="use_resource_files_and_qualifiers.">
-            </span>
-            <span id="USE_RESOURCE_FILES_AND_QUALIFIERS.">
-            </span>Xxx xxxxxxxx xxxxx xxx xxxxxxxxxx.
+## <span id="use_resource_files_and_qualifiers."></span><span id="USE_RESOURCE_FILES_AND_QUALIFIERS."></span>Use resource files and qualifiers.
 
 
-Xx xxxx xx xxxxxxx xxx XX xxxxxxx xx xxxx xxx xx xxxxxxxx xxxxx, xxxxxxx xx xxxxxxx xxxx xx xxxx xxxx. Xxx xxxx xxxxxx, xxx [Xxx XX xxxxxxx xxxx xxxxxxxxx](put-ui-strings-into-resources.md).
+Be sure to specify the UI strings of your app in resource files, instead of placing them in your code. For more detail, see [Put UI strings into resources](put-ui-strings-into-resources.md).
 
-Xxxxxxx xxxxxx xx xxxxx xxxx xxxxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxx xxx xx xxxxx xxxx xx xxxxxx. Xx xxxxx xxxx xx xxxxx x xxxxxxxxxxx xxxxxx xx xxxxxx xxxxxxxxx xx xxxxxxxx xxxxxx, xxxxx, xxx xxxxx, xx xx’x xxxx xx xxx xxxxxxx xxxxx xxxxxx xxxxxxxx xxx xxx. Xx xxxxx xxxx, xxx [Xxx xx xxxx xxxxxxxxx xxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
+Specify images or other file resources with the appropriate language tag in their file or folder. Be aware that it takes a significant amount of system resources to localize images, audio, and video, so it’s best to use neutral media assets whenever you can. To learn more, see [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
 
-## <span id="add_contextual_comments.">
-            </span>
-            <span id="ADD_CONTEXTUAL_COMMENTS.">
-            </span>Xxx xxxxxxxxxx xxxxxxxx.
+## <span id="add_contextual_comments."></span><span id="ADD_CONTEXTUAL_COMMENTS."></span>Add contextual comments.
 
 
-Xxx xxxxxxxxxxxx xxxxxxxx xx xxxx xxx xxxxxxxx xxxxx. Xxx xxxxxxxx xxx xxxxxxx xx xxx xxxxxxxxx, xxx xxxxxx xxxxxxx xxxxxxxxxx xxxxxxxxxxx xxxx xxxxx xxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxxx xxx xxxxxxxxx. Xxx xxxxxxxx xxxxxx xxxx xxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxxx xx xxx xxxxxxxx, xx xxxx xxxxxxxxxxx xxxx xxx xxxxx xxx xxxxxxxx. Xxxxxxxxxx, xxx xxxxxxxx xxx xx xxxxxx xx xxx Xxxxxxx.xxx xxxx.
+Add localization comments to your app resource files. The comments are visible to the localizer, and should provide contextual information that helps the localizer to accurately translate the resources. The comments should also provide sufficient constraint information on the resource, so that translation does not break the software. Optionally, the comments can be logged by the Makepri.exe tool.
 
-**XXXX:** Xxxx xxxxx (xxxxxxxxx xxxxxxx xx Xxxxxx Xxxxxx xxx xxxx xxxxx XXXX) xxxx x xxxxxxx xxxxxxx. Xxx xxxxxxx:
+**XAML:** Resw files (resources created in Visual Studio for apps using XAML) have a comment element. For example:
 
 ```XAML
 <data name="String1">
@@ -41,7 +35,7 @@ Xxx xxxxxxxxxxxx xxxxxxxx xx xxxx xxx xxxxxxxx xxxxx. Xxx xxxxxxxx xxx xxxxxxx x
 </data>
 ```
 
-**XXXX:** Xxxxxxx xxxxx (xxxxxxxxx xxxxxxx xx Xxxxxx Xxxxxx xxx xxxx xxxxx XXXX) xxxxx xxxxxxxx xx xxxxxx xxxx xxxxx xxxx xx xxxxxxxxxx, xxxx xx xxxxxxxx:
+**HTML:** Resjson files (resources created in Visual Studio for apps using HTML) allow metadata in fields that begin with an underscore, such as comments:
 
 ```json
 {
@@ -50,135 +44,111 @@ Xxx xxxxxxxxxxxx xxxxxxxx xx xxxx xxx xxxxxxxx xxxxx. Xxx xxxxxxxx xxx xxxxxxx x
 }
 ```
 
-## <span id="localize_sentences_instead_of_words.">
-            </span>
-            <span id="LOCALIZE_SENTENCES_INSTEAD_OF_WORDS.">
-            </span>Xxxxxxxx xxxxxxxxx xxxxxxx xx xxxxx.
+## <span id="localize_sentences_instead_of_words."></span><span id="LOCALIZE_SENTENCES_INSTEAD_OF_WORDS."></span>Localize sentences instead of words.
 
 
-Xxxxxxxx xxx xxxxxxxxx xxxxxx: "Xxx {Y} xxxxx xxx xx xxxxxxxxxxxx."
+Consider the following string: "The {0} could not be synchronized."
 
-X xxxxxxx xx xxxxx xxxxx xxxxxxx {Y}, xxxx xx xxxxxxxxxxx, xxxx, xx xxxxxxxx. Xxxxx xxxx xxxxxxx xxxxx xxxxxx xx xxxx xxx xxx Xxxxxxx xxxxxxxx, xx xxxx xxx xxxx xx xxx xxxxx xxx xxx xxxxxxxxxxxxx xxxxxxxx xx Xxxxxx. Xxxxxx xxxx xx xxx xxxxxxxxx Xxxxxx xxxxxxxxx, xxxx xx xxx xxxxx xx xxx xxxxxxxx xxxxxx ("Xxx", "Xxx", "Xxx") xxxx xx xxxxx xxx xxxxxxxxxxxxx xxxx:
+A variety of words could replace {0}, such as appointment, task, or document. While this example would appear to work for the English language, it will not work in all cases for the corresponding sentence in German. Notice that in the following German sentences, some of the words in the template string ("Der", "Die", "Das") need to match the parameterized word:
 
-| Xxxxxxx                                    | Xxxxxx                                           |
+| English                                    | German                                           |
 |:------------------------------------------ |:------------------------------------------------ |
-| Xxx xxxxxxxxxxx xxxxx xxx xx xxxxxxxxxxxx. | Xxx Xxxxxx xxxxxx xxxxx xxxxxxxxxxxxxx xxxxxx.   |
-| Xxx xxxx xxxxx xxx xx xxxxxxxxxxxx.        | Xxx Xxxxxxx xxxxxx xxxxx xxxxxxxxxxxxxx xxxxxx.  |
-| Xxx xxxxxxxx xxxxx xxx xx xxxxxxxxxxxx.    | Xxx Xxxxxxxx xxxxxx xxxxx xxxxxxxxxxxxxx xxxxxx. |
+| The appointment could not be synchronized. | Der Termin konnte nicht synchronisiert werden.   |
+| The task could not be synchronized.        | Die Aufgabe konnte nicht synchronisiert werden.  |
+| The document could not be synchronized.    | Das Dokument konnte nicht synchronisiert werden. |
 
  
 
-Xx xxxxxxx xxxxxxx, xxxxxxxx xxx xxxxxxxx "Xxxxxx xx xx {Y} xxxxxx(x)." Xxxxx xxxxx "xxxxxx(x)" xxxxx xxx xxx Xxxxxxx xxxxxxxx, xxxxx xxxxxxxxx xxxxx xxx xxxxxxxxx xxxxx. Xxx xxxxxxx, xxx Xxxxxx xxxxxxxx xxxx "xxxxxx", "xxxxxx", xx "xxxxx" xxxxxxxxx xx xxx xxxxxxx.
+As another example, consider the sentence "Remind me in {0} minute(s)." While using "minute(s)" works for the English language, other languages might use different terms. For example, the Polish language uses "minuta", "minuty", or "minut" depending on the context.
 
-Xx xxxxx xxxx xxxxxxx, xxxxxxxx xxx xxxxxx xxxxxxxx, xxxxxx xxxx x xxxxxx xxxx. Xxxxx xxxx xxx xxxx xxxx xxxxx xxxx xxx xx xxxxxxxxx xxxxxxxx, xxx xx xx xxx xxxx xxxxxxxx xxxxxxx:
+To solve this problem, localize the entire sentence, rather than a single word. Doing this may seem like extra work and an inelegant solution, but it is the best solution because:
 
--   X xxxxx xxxxx xxxxxxx xxxx xx xxxxxxxxx xxx xxx xxxxxxxxx.
--   Xxxx xxxxxxxxx xxxx xxx xxxx xx xxx xxxxx xxxx xxx xxxxxxx xxxx xx xxxxxxxx xxxx.
--   Xxx xxxx xxx xxxx xx xxxxxxxxx x xxxxxx xxxx xxx xxxx x xxxxxxx xxxx xxxx xxxxxxxx xxxxx xxxx xxx xx xxxxxxxxx.
+-   A clean error message will be displayed for all languages.
+-   Your localizer will not need to ask about what the strings will be replaced with.
+-   You will not need to implement a costly code fix when a problem like this surfaces after your app is completed.
 
-## <span id="ensure_the_correct_parameter_order.">
-            </span>
-            <span id="ENSURE_THE_CORRECT_PARAMETER_ORDER.">
-            </span>Xxxxxx xxx xxxxxxx xxxxxxxxx xxxxx.
+## <span id="ensure_the_correct_parameter_order."></span><span id="ENSURE_THE_CORRECT_PARAMETER_ORDER."></span>Ensure the correct parameter order.
 
 
-Xxx'x xxxxxx xxxx xxx xxxxxxxxx xxx xxxxxxxxxx xx xxx xxxx xxxxx. Xxx xxxxxxx, xxxxxxxx xxx xxxxxx "Xxxxx %x %x", xxxxx xxx xxxxx %x xx xxxxxxxx xx xxx xxxx xx x xxxxx, xxx xxx xxxxxx %x xx xxxxxxxx xx xxx xxxx xx x xxxxx. Xxxx xxxxxxx xxxxx xxx xxx Xxxxxxx xxxxxxxx, xxx xxxx xxxx xxxx xxx xxx xx xxxxxxxxx xxxx xxx Xxxxxx xxxxxxxx, xxxxx xxx xxxx xxx xxxxx xxx xxxxxxxxx xx xxx xxxxxxx xxxxx.
+Don't assume that all languages use parameters in the same order. For example, consider the string "Every %s %s", where the first %s is replaced by the name of a month, and the second %s is replaced by the date of a month. This example works for the English language, but will fail when the app is localized into the German language, where the date and month are displayed in the reverse order.
 
-Xx xxxxx xxxx xxxxxxx, xxxxxx xxx xxxxxx xx "Xxxxx %Y %Y", xx xxxx xxx xxxxx xx xxxxxxxxxxxxxxx xxxxxxxxx xx xxx xxxxxxxx.
+To solve this problem, change the string to "Every %1 %2", so that the order is interchangeable depending on the language.
 
-## <span id="don_t_over_localize.">
-            </span>
-            <span id="DON_T_OVER_LOCALIZE.">
-            </span>Xxx’x xxxx xxxxxxxx.
+## <span id="don_t_over_localize."></span><span id="DON_T_OVER_LOCALIZE."></span>Don’t over localize.
 
 
-Xxxxxxxx xxxxxxxx xxxxxxx, xxx xxxx. Xxxxxxxx xxx xxxxxxxxx xxxxxxxx:
+Localize specific strings, not tags. Consider the following examples:
 
-| Xxxx-xxxxxxxxx xxxxxx                   | Xxxxxxxxx-xxxxxxxxx xxxxxx |
+| Over-localized string                   | Correctly-localized string |
 |:--------------------------------------- |:-------------------------- |
-| &xx;xxxx&xx;xxxxx xx xxx&xx;/xxxx&xx;   | xxxxx xx xxx               |
-| &xx;xxxx&xx;xxxxxxx xxxxxx&xx;/xxxx&xx; | xxxxxxx xxxxxx             |
+| &lt;link&gt;terms of use&lt;/link&gt;   | terms of use               |
+| &lt;link&gt;privacy policy&lt;/link&gt; | privacy policy             |
 
  
 
-Xxxxxxxxx xxx xxxxx &xx;xxxx&xx; xxx xx xxx xxxxxxxxx xxxxx xxxx xx xxx xxxx xx xxxxxxxxx. Xxxx xxxxxxx xxx xxx xxx xxxxx. Xxxx xxx xxxxxxx xxxxxxxxxx xxxxxx xx xxxxxxxxx. Xxxxxxxxx, xxx xxxxxx xxxxx xx xxxx xx xxxx xxxx xxxxxx xx xxxx xxxxxxxx xxxx xxxxxxxxxxx xxxxxxx. Xxxxxxx, xxxx xxxx xxxxxxx xxxxxx xxxxxxx xxxxxx xx xxxx xxxxxxx xxx xxxxxx xxxxxxxx.
+Including the above &lt;link&gt; tag in the resources means that it too will be localized. This renders the tag not valid. Only the strings themselves should be localized. Generally, you should think of tags as code that should be kept separate from localizable content. However, some long strings should include markup to keep context and ensure ordering.
 
-## <span id="do_not_use_the_same_strings_in_dissimilar_contexts.">
-            </span>
-            <span id="DO_NOT_USE_THE_SAME_STRINGS_IN_DISSIMILAR_CONTEXTS.">
-            </span>Xx xxx xxx xxx xxxx xxxxxxx xx xxxxxxxxxx xxxxxxxx.
+## <span id="do_not_use_the_same_strings_in_dissimilar_contexts."></span><span id="DO_NOT_USE_THE_SAME_STRINGS_IN_DISSIMILAR_CONTEXTS."></span>Do not use the same strings in dissimilar contexts.
 
 
-Xxxxxxx x xxxxxx xxx xxxx xxxx xxx xxxx xxxxxxxx, xxx xx xxx xxxxx xxxxxxxxxxxx xxxxxxxx xx xxx xxxx xxxx xx xxxxxx xxx xxxx xxxxxxxxx xxxxxxxx xx xxxxxxxx.
+Reusing a string may seem like the best solution, but it can cause localization problems if the same word or phrase can have different meanings or contexts.
 
-Xxx xxx xxxxx xxxxxxx xx xxx xxx xxxxxxxx xxx xxx xxxx. Xxx xxxxxxxx, xxx xxx xxxxx xxx xxxxxx "Xxxxxx" xxx xxxx xxxxx xxxxxx xxxxxx xxx xxxxx xxxxxx xxxxxxx xxxx xxxxx xx xxxxxxxxx xx xxxxx. Xxx xxxxxx xxx xxxxx xxxx xxxx xxxxxx xxxx xxxxxxxxx xx x xxxx xxxx xxxxxx xxxxxxx xxx xxxxxxx xxx xxxxxxx xxx xxxxxxxxx, xxx xxx xxxx xxxxx xx xxxxxxxxxx xxxxxxxxxxx.
+You can reuse strings if the two contexts are the same. For instance, you can reuse the string "Volume" for both sound effect volume and music volume because both refer to intensity of sound. You should not reuse that same string when referring to a hard disk volume because the context and meaning are different, and the word might be translated differently.
 
-Xxxxxxx xxxxxxx xx xxx xxx xx xxx xxxxxxx "xx" xxx "xxx". Xx xxx Xxxxxxx xxxxxxxx, "xx" xxx "xxx" xxx xx xxxx xxx x xxxxxx xxx Xxxxxx Xxxx, Xxxxxxxxx, xxx xxxxxxx. Xxx xx Xxxxxxx, xxx xxxxxxxxxxx xxxxxxx xx xxx xxxxxxx xx xxxx xx xxxxx xxxxxx xx xxx xxx. Xxx xxxxx xxxx xx xxxxxx x xxxx xx xxxxxxx xxx xxxx xxxxxxx.
+Another example is the use of the strings "on" and "off". In the English language, "on" and "off" can be used for a toggle for Flight Mode, Bluetooth, and devices. But in Italian, the translation depends on the context of what is being turned on and off. You would need to create a pair of strings for each context.
 
-Xxxxxxxxxxxx, x xxxxxx xxxx "xxxx" xx "xxx" xxxxx xx xxxx xx xxxx x xxxx xxx x xxxx xx xxx Xxxxxxx xxxxxxxx, xxxxx xxx xxxxxxx xxx xxxxxxxxxxx xxxxxxx. Xxxxxxx, xxxxxx x xxxxxxxx xxxxxx xxx xxxx xxx xxxx xxx xxxx xxxxxx. Xxxx xxx'xx xxx xxxx xxxxxxx xxx xxxxxxxx xxx xxx xxxx, xxx xx xxx xxxx xxxx xxx xxx x xxxxxxxx xxxxxx.
+Additionally, a string like "text" or "fax" could be used as both a verb and a noun in the English language, which can confuse the translation process. Instead, create a separate string for both the verb and noun format. When you're not sure whether the contexts are the same, err on the safe side and use a distinct string.
 
-## <span id="identify_resources_with_unique_attributes.">
-            </span>
-            <span id="IDENTIFY_RESOURCES_WITH_UNIQUE_ATTRIBUTES.">
-            </span>Xxxxxxxx xxxxxxxxx xxxx xxxxxx xxxxxxxxxx.
+## <span id="identify_resources_with_unique_attributes."></span><span id="IDENTIFY_RESOURCES_WITH_UNIQUE_ATTRIBUTES."></span>Identify resources with unique attributes.
 
 
-Xxxxxxxx xxxxxxxxxxx xxx xxxx xxxxxxxxxxx xxx xxxx xx xxxxxx xxx xxxxxxxx xxxx. Xxxx xxxxxxxxx x xxxxxxxx, xxx xxx xxxxxxxx xxxxxxxxxx, xxx xxx xxxxxx xxxxx xx xxx xxxxxxxx. Xxxxxxxx xxxxxxxxxxx xxx'x xxxxxx, xxx xxx xxxxxx xxxxxx xx xxx xxxxxxxxx xx xxxxxx xxxxxxxxx xx xxx xxxxxxxx.
+Resource identifiers are case insensitive and must be unique per resource file. When accessing a resource, use the resource identifier, not the actual value of the resource. Resource identifiers don't change, but the actual values of the resources do change depending on the language.
 
-Xx xxxx xx xxx xxxxxxxxxx xxxxxxxx xxxxxxxxxxx xx xxxxxxx xxxxxxxxxx xxxxxxx xxx xxxxxxxxxxx.
+Be sure to use meaningful resource identifiers to provide additional context for translation.
 
-Xxx'x xxxxxx xxx xxxxxxxx xxxxxxxxxxx xxxxx xxx xxxxxx xxxxxxxxx xxx xxxx xx xxxxxxxxxxx. Xxxxxxxxxxxx xxxxx xxx xxx xxxxxxxx xxxxxxxxxx xx xxxxx xxxxxxxxx, xxxxxxxxx, xxx xxxxxxx xx xxx xxxxxxxxx. Xxxxxxx xx xxxxxxxx xxxxxxxxxxx—xxxx xxxxx xx "xxxxxxxx xxxxxxxxxxx xxxxx"—xxxxxxx xxxxxxx xx xx xxxxxxxxxxxx, xxxxxxx xx xxxx xxxxxx xx xxxxxx xxxxxxx xxxx xxxxxxx xxx xxxxxx xxxxx.
+Don't change the resource identifiers after the string resources are sent to translation. Localization teams use the resource identifier to track additions, deletions, and updates in the resources. Changes in resource identifiers—also known as "resource identifiers shift"—require strings to be retranslated, because it will appear as though strings were deleted and others added.
 
-## <span id="choose_an_appropriate_translation_approach.">
-            </span>
-            <span id="CHOOSE_AN_APPROPRIATE_TRANSLATION_APPROACH.">
-            </span>Xxxxxx xx xxxxxxxxxxx xxxxxxxxxxx xxxxxxxx.
+## <span id="choose_an_appropriate_translation_approach."></span><span id="CHOOSE_AN_APPROPRIATE_TRANSLATION_APPROACH."></span>Choose an appropriate translation approach.
 
 
-Xxxxx xxxxxxx xxx xxxxxxxxx xxxx xxxxxxxx xxxxx, xxxx xxx xx xxxxxxxxxx. Xxx xxxxx xxxx xx xxxxxxxxx xxxxxxx xx xxxxx xxx xxxxxxx xx xxxx xxxxxxx xxx xxxxxxxxx, xxxxx xxxxxxx xxxxxxx xxxxxx xxx xxx xx x xxxxxxx. Xxx xxx xxxxxxxx xxx xxxxxxxxxxx xxxxxxx xx xxxxxx xx xxxx. Xxxx xxx xxxxxx xx xxx xxxxxx xx xxxxxxx xx xx xxxxxxxxxx, xxx xxxxxx xx xxxxxxxxx xx xx xxxxxxxxxx, xxx xxx xxx xxxxxxxxxxx xxxx xx xxxx (xxxx xx xx-xxxxx xxxxxx xxxxxx xx xxxxxxxx xxxxxx).
+After strings are separated into resource files, they can be translated. The ideal time to translate strings is after the strings in your project are finalized, which usually happens toward the end of a project. You can approach the translation process in number of ways. This may depend on the volume of strings to be translated, the number of languages to be translated, and how the translation will be done (such as in-house versus hiring an external vendor).
 
-Xxxxxxxx xxx xxxxxxxxx xxxxxxx:
+Consider the following options:
 
--   **Xxx xxxxxxxx xxxxx xxx xx xxxxxxxxxx xx xxxxxxx xxxx xxxxxxxx xx xxx xxxxxxx.** Xxxx xxxxxxxx xxxxx xxxx xxx x xxxxxxx xxxx xxx x xxxxx xxxxxx xx xxxxxxx xxx xxxx xxxxx xx xx xxxxxxxxxx xxxx xxx xx xxxxx xxxxxxxxx. Xx xxxxx xx xxxxxxxx xxx x xxxxxxxx xxxxx x xxxxxxxxx xxxxxx xxxx xxxx xxx xxxxxxxx xxx xx xxxxxxx xx xxxxxx xxx xxxxxxxxxxx xxxxxxx. Xxxx xxxxxxxx xxxxxxxx xx xxxxx xxxxx, xxxxxxxx xx xxxxx, xxx xxxxxxxxx xxx xxxx xx xxxxxxxxxxxxxxx, xxx xx xx xxx xxxxxxxx. Xx xxxxxxxxxx, xxx xxxxxxxxx xx xxxxxxxxx xxxxxxxxx xxx xxxxxx xxx xxx xx xxxx, xxxxxxx xxx xxxx xxxxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxx.
--   **Xxx xxxxxx xxxxxxxx xxxxx xxx xx XXX xx XxxXXXX xxxx xxxxxx, xx xxxxx xx xxxxxx xxx xxx xxxxxxxxxxx xxxxx xxx xxxx xxxxxx. Xxx xxxxxxxxxx xxxxx xxxxx xxxx xx xxxxxx xxxx xxxx xxx xxxxxxx.** Xxxx xxxxxxxx xxxxxxx x xxxx xx xxxxxxxxxxx xxxxxxxxxxxx xxxxxxx xxx XXX xxxx, xxx xx xxxx xxxxxxxxxxx xxxx xxxx xxxxx xxxxxxx xx xxx Xxxxxxxxx Xxxxxx Xxxxxx xxxxxxx. Xxxx xxxxxxxx xxxxx xxxx xxxx xxx xxxxxxxx xxxx xxxx xx xx xxxxxxxxxx xxxx x xxxxx xxxxxx xx xxxxxxxxx. Xxx XXXXX xxxxxx xx xx XXX xxxxxx xxxxxxxxxxxx xxxxxxxx xxx xxx xx xxxxxxxxxxxx, xxx xxxxxx xx xxxx xxxxxxxxx xx xxxx xxxxxxxxxxxx xxxxxxx xx xxxxxxxxxxxx xxxxx. Xxx xxx xxx xxx [Xxxxxxxxxxxx Xxx Xxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx) xx xxxxxxxx XXXXX xxxxx xxxx xxxxx xxxxxxxx xxxxx, xxxx xx .xxxx xx .xxxxxxx.
+-   **The resource files can be translated by opening them directly in the project.** This approach works well for a project that has a small volume of strings and that needs to be translated into two or three languages. It could be suitable for a scenario where a developer speaks more than one language and is willing to handle the translation process. This approach benefits by being quick, requires no tools, and minimizes the risk of mistranslations, but it is not scalable. In particular, the resources in different languages can easily get out of sync, causing bad user experiences and maintenance headaches.
+-   **The string resource files are in XML or ResJSON text format, so could be handed off for translation using any text editor. The translated files would then be copied back into the project.** This approach carries a risk of translators accidentally editing the XML tags, but it lets translation work take place outside of the Microsoft Visual Studio project. This approach could work well for projects that need to be translated into a small number of languages. The XLIFF format is an XML format specifically designed for use in localization, and should be well supported by some localization vendors or localization tools. You can use the [Multilingual App Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx) to generate XLIFF files from other resource files, such as .resw or .resjson.
 
-Xxxxxxxx xx xxxxxxxxxx xxx xxxx xx xxxxx xxx xxxxx xxxxx, xxxx xx xxxxxx xx xxxxx xxxxx. Xxxxxxxxx, xx xxx'x xxxxxxxxx xxxxxxxx xxxxxxxxxx xxxxxxxxx xxxxx xxxxxxx xxxx xxx xx xxxxxxxxx xx xxxxxxxx.
+Handoffs to localizers may need to occur for other files, such as images or audio files. Typically, we don't recommend creating culturally dependent files because they can be difficult to localize.
 
-Xxxxxxxxxxxx, xxxxxxxx xxx xxxxxxxxx xxxxxxxxxxx:
+Additionally, consider the following suggestions:
 
--   **Xxx x xxxxxxxxxxxx xxxx.** X xxxxxx xx xxxxxxxxxxxx xxxxx xxx xxxxxxxxx xxx xxxxxxx xxxxxxxx xxxxx xxx xxxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxx xx xx xxxxxx xx xxxxxxxxxxx. Xxxx xxxxxxxx xxxxxxx xxx xxxx xx x xxxxxxxxxx xxxxxxxxxxxx xxxxxxx xxx XXX xxxx. Xxx xx xxx xxx xxxxxxxx xx xxxxxxxxxxx x xxx xxxx xxx xxxxxxx xx xxx xxxxxxxxxxxx xxxxxxx. X xxxxxxxxxxxx xxxx xx xxxx xxx xxxxxxxx xxxx x xxxxx xxxxxx xx xxxxxxx, xxx x xxxxx xxxxxx xx xxxxxxxxx. Xx xxxxx xxxx, xxx [Xxx xx xxx xxx Xxxxxxxxxxxx Xxx Xxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx).
--   **Xxx x xxxxxxxxxxxx xxxxxx.** Xxxxxxxx xxxxx x xxxxxxxxxxxx xxxxxx xx xxxx xxxxxxx xxxxxxxx x xxxxx xxxxxx xx xxxxxxx xxx xxxxx xx xx xxxxxxxxxx xxx xxxx xxxxxxxxx. X xxxxxxxxxxxx xxxxxx xxx xxxx xxxxxx xxxxx xxxxx xxx xxxxxxxxx, xx xxxx xx xxxxxxxxxxx xxxx xxxxxxxx xxxxx. Xxxx xx xx xxxxx xxxxxxxx, xxx xx xxxx xxx xxxx xxxxxx xxxxxx, xxx xxx xxxxxxxx xxx xxxxxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxxxx.
--   **Xxxx xxxx xxxxxxxxxx xxxxxxxx.** Xxxxxx xxxxxxxxxx xx xxxxxxx xxxx xxx xx xxxxxxxxxx x xxxx xx x xxxx. Xxxxxxx xxxxxxxxxx xxxxx xx xxxx xxxxxxxxxx xx xxxxx xxxxxxxxxxx xxxxx. Xxxx xxxxxxx xxxxxxxxxxxxx xxxxxxx, xxxxxxxxxxx, xxx xx xxxxxxxxxxxx xx xxxxxxxx xx xxxxx xxxxxxxxx.
+-   **Use a localization tool.** A number of localization tools are available for parsing resource files and allowing only the translatable strings to be edited by translators. This approach reduces the risk of a translator accidentally editing the XML tags. But it has the drawback of introducing a new tool and process to the localization process. A localization tool is good for projects with a large volume of strings, but a small number of languages. To learn more, see [How to use the Multilingual App Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj572370.aspx).
+-   **Use a localization vendor.** Consider using a localization vendor if your project contains a large volume of strings and needs to be translated for many languages. A localization vendor can give advice about tools and processes, as well as translating your resource files. This is an ideal solution, but is also the most costly option, and may increase the turnaround time for your translated content.
+-   **Keep your localizers informed.** Inform localizers of strings that can be considered a noun or a verb. Explain fabricated words to your localizers by using terminology tools. Keep strings grammatically correct, unambiguous, and as nontechnical as possible to avoid confusion.
 
-## <span id="keep_access_keys_and_labels_consistent.">
-            </span>
-            <span id="KEEP_ACCESS_KEYS_AND_LABELS_CONSISTENT.">
-            </span>Xxxx xxxxxx xxxx xxx xxxxxx xxxxxxxxxx.
+## <span id="keep_access_keys_and_labels_consistent."></span><span id="KEEP_ACCESS_KEYS_AND_LABELS_CONSISTENT."></span>Keep access keys and labels consistent.
 
 
-Xx xx x xxxxxxxxx xx "xxxxxxxxxxx" xxx xxxxxx xxxx xxxx xx xxxxxxxxxxxxx xxxx xxx xxxxxxx xx xxx xxxxxxxxx xxxxxx xxxx, xxxxxxx xxx xxx xxxxxx xxxxxxxxx xxx xxxxxxxxxxx xx xxx xxxxxxxx xxxxxxxx. Xx xxxx xx xxxxxxx xxxxxxxx xxx xxx xxxxx xxxxxx xxxx xx: `Make sure that the emphasized shortcut key  is synchronized with the access key.`
+It is a challenge to "synchronize" the access keys used in accessibility with the display of the localized access keys, because the two string resources are categorized in two separate sections. Be sure to provide comments for the label string such as: `Make sure that the emphasized shortcut key  is synchronized with the access key.`
 
-**XXXX:**
+**HTML:**
 
-Xxx xxx xxxxxx xxx xxxxxxxxxxxxxx xxxxx xxxxx. Xxxxx, xx xxxx xx xxxxxxxx xxxxxxx xxx xxxxx xxxxxx xx xxxx xx xx xxx xxxxxx xxx xxxxxxxxxx.
+You can follow the implementation shown below. Again, be sure to properly comment the label string to link it to the access key definition.
 
 ```HTML
 <label id="theLabel" data-win-res="{accessKey: 'theLabelAccessKey'}" for="xPrinterRedirection" accessKey="L">The <u>L</u>abel</label>
 <input type="checkbox" value="OFF" id="xPrinterRedirection" name="xPrinterRedirection" />
 ```
 
-## <span id="support_furigana_for_japanese_strings_that_can_be_sorted.">
-            </span>
-            <span id="SUPPORT_FURIGANA_FOR_JAPANESE_STRINGS_THAT_CAN_BE_SORTED.">
-            </span>Xxxxxxx Xxxxxxxx xxx Xxxxxxxx xxxxxxx xxxx xxx xx xxxxxx.
+## <span id="support_furigana_for_japanese_strings_that_can_be_sorted."></span><span id="SUPPORT_FURIGANA_FOR_JAPANESE_STRINGS_THAT_CAN_BE_SORTED."></span>Support Furigana for Japanese strings that can be sorted.
 
 
-Xxxxxxxx Xxxxx xxxxxxxxxx xxxx xxx xxxxxx xxxxxxxx xx xxxxxx xxxx xxxx xxx xxxxxxxxxxxxx xxxxxxxxx xx xxx xxxx xxx xxxxxxx xxxx xxx xxxx xx. Xxxx xxxxx xx xxxxxxxx xxxx xxx xxx xx xxxx Xxxxxxxx xxxxx xxxxxxx, xxxx xx xxxxxxxxxxx xxxxx, xxxxx, xxxxx, xxx xx xx. Xxxxxxxx Xxxxx xxxx, xx xxx xxxx, xxxxxxx xxxx xxxxxx xx x xxxxxxx-xxxxxxxxxxxxxx xxxxx xxxxxx XXXX. Xxxxxxxxxxxxx, xxxxxxx xxxx xxxxxxx xxxxx xx xxx xxxxxxxx xx xx xxx xxxx xxxxxx xxx xxxxxx.
+Japanese Kanji characters have the unique property of having more than one pronunciation depending on the word and context they are used in. This leads to problems when you try to sort Japanese named objects, such as application names, files, songs, and so on. Japanese Kanji have, in the past, usually been sorted in a machine-understandable order called XJIS. Unfortunately, because this sorting order is not phonetic it is not very useful for humans.
 
-Xxxxxxxx xxxxx xxxxxx xxxx xxxxxxx xx xxxxxxxx xxx xxxx xx xxxxxxx xx xxxxxxx xxx xxxxxxxxx xxx xxx xxxxxxxxxx xxxx xxx xxxxx. Xx xxx xxx xxx xxxxxxxxx xxxxxxxxx xx xxx Xxxxxxxx xx xxxx xxx xxxx, xxx xxx xxxxxx xxxx xx xx xxxxxx xx xxx xxxxxx xxxxxxxx xx xxx xxx xxxx. Xx xxxx xxx xxxx xxxxxxxx Xxxxx xxxxxxxxxx xxx Xxxxxxxx xx xxx xxxxxxxx xxxx xxx xxxx’x XX xxxxxxxx xx xxx xxxx xxxxx xx xxx xx Xxxxxxxx, Xxxxxxx xxxxx xxx xxxx xxxxxx xx xxxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxxxx. Xxxxxxx, xxxxx xx x xxxxxxxxxxx xxx xxx xxxxx xxxxxxxxxx xxxx xx xxxxxx xxxxxxxx xx xx xxxxxx xxxxx x xxxx xxxxxx xxxxxxx xxxxxxx. Xxxxxxxxx, xxx xxxx xxxxxxxx xxx Xxxxxxxx xxxxxxxxxxxx (xxxxxxxxxx xxxxx xxxxxxxxxx Xxxxx xxxxxxxxxx xx xxxxx xxxxx) xx xx xxxxxxx x Xxxxxxxx xxxxxxx xx xxxxx xxx xxxx xx xxxx xx xxx Xxxxxxxx xxxxxxxxxxxx xxxxxxx.
+Furigana works around this problem by allowing the user or creator to specify the phonetics for the characters they are using. If you use the following procedure to add Furigana to your app name, you can ensure that it is sorted in the proper location in the app list. If your app name contains Kanji characters and Furigana is not provided when the user’s UI language or the sort order is set to Japanese, Windows makes its best effort to generate the appropriate pronunciation. However, there is a possibility for app names containing rare or unique readings to be sorted under a more common reading instead. Therefore, the best practice for Japanese applications (especially those containing Kanji characters in their names) is to provide a Furigana version of their app name as part of the Japanese localization process.
 
-1.  Xxx "xx-xxxxxxxx:Xxxxxxx" xx xxx Xxxxxxx Xxxxxxx Xxxx xxx xxx Xxxxxxxxxxx Xxxxxxx Xxxx.
-2.  Xxxxxx x xx-XX xxxxxx xxxxx xxxxxxx, xxx xxx xxx xxxxxxxx xxxxx xx xxxxxxx:
+1.  Add "ms-resource:Appname" as the Package Display Name and the Application Display Name.
+2.  Create a ja-JP folder under strings, and add two resource files as follows:
 
     ``` syntax
     strings\
@@ -188,26 +158,34 @@ Xxxxxxxx xxxxx xxxxxx xxxx xxxxxxx xx xxxxxxxx xxx xxxx xx xxxxxxx xx xxxxxxx xx
             Resources.resw
     ```
 
-3.  Xx Xxxxxxxxx.xxxx xxx xxxxxxx xx-XX: Xxx x xxxxxx xxxxxxxx xxx Xxxxxxx "希蒼"
-4.  Xx Xxxxxxxxx.xxxxxxx-xxxx-xxxxxxxx.xxxx xxx Xxxxxxxx xxxxxxxx xxxxxxxxx: Xxx Xxxxxxxx xxxxx xxx XxxXxxx "のあ"
+3.  In Resources.resw for general ja-JP: Add a string resource for Appname "希蒼"
+4.  In Resources.altform-msft-phonetic.resw for Japanese furigana resources: Add Furigana value for AppName "のあ"
 
-Xxx xxxx xxx xxxxxx xxx xxx xxx xxxx "希蒼" xxxxx xxxx xxx Xxxxxxxx xxxxx "のあ" (xxx),　xxx xxx xxxxxxxx xxxxx (xxxxx xxx **XxxXxxxxxxx** xxxxxxxx xxxx Xxxxx Xxxxxx Xxxxxx (XXX)) "まれあお" (xxxx-xx).
+The user can search for the app name "希蒼" using both the Furigana value "のあ" (noa),　and the phonetic value (using the **GetPhonetic** function from Input Method Editor (IME)) "まれあお" (mare-ao).
 
-Xxxxxxx xxxxxxx xxx **Xxxxxxxx Xxxxxxx Xxxxx** xxxxxx:
+Sorting follows the **Regional Control Panel** format:
 
--   Xxxxx Xxxxxxxx xxxx xxxxxx,
-    -   Xx Xxxxxxxx xx xxxxxxx, xxx "希蒼" xx xxxxxx xxxxx "の".
-    -   Xx Xxxxxxxx xx xxxxxxx, xxx "希蒼" xx xxxxxx xxxxx "ま".
--   Xxxxx xxx-Xxxxxxxx xxxx xxxxxx,
-    -   Xx Xxxxxxxx xx xxxxxxx, xxx "希蒼" xx xxxxxx xxxxx "の".
-    -   Xx Xxxxxxxx xx xxxxxxx, xxx "希蒼" xx xxxxxx xxxxx "漢字".
+-   Under Japanese user locale,
+    -   If Furigana is enabled, the "希蒼" is sorted under "の".
+    -   If Furigana is missing, the "希蒼" is sorted under "ま".
+-   Under non-Japanese user locale,
+    -   If Furigana is enabled, the "希蒼" is sorted under "の".
+    -   If Furigana is missing, the "希蒼" is sorted under "漢字".
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxx
+## <span id="related_topics"></span>Related topics
 
 
-* [Xxxxxxxxxxxxx xxx xxxxxxxxxxxx xx'x xxx xxx'xx](guidelines-and-checklist-for-globalizing-your-app.md)
-* [Xxx XX xxxxxxx xxxx xxxxxxxxx](put-ui-strings-into-resources.md)
-* [Xxx xx xxxx xxxxxxxxx xxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
+* [Globalization and localization do's and don'ts](guidelines-and-checklist-for-globalizing-your-app.md)
+* [Put UI strings into resources](put-ui-strings-into-resources.md)
+* [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
  
-<!--HONumber=Mar16_HO1-->
+
+ 
+
+
+
+
+
+<!--HONumber=Mar16_HO4-->
+
+

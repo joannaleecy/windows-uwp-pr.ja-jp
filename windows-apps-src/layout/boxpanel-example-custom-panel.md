@@ -1,45 +1,46 @@
 ---
-Xxxxxxxxxxx: Xxxxx xx xxxxx xxxx xxx x xxxxxx Xxxxx xxxxx, xxxxxxxxxxxx XxxxxxxXxxxxxxx xxx XxxxxxxXxxxxxxx xxxxxxx, xxx xxxxx xxx Xxxxxxxx xxxxxxxx.
-xxxxx: XxxXxxxx, xx xxxxxxx xxxxxx xxxxx
-xx.xxxxxxx: YYYYYYXX-YYXY-YXYX-XYYY-YYYYXYYXYYXY
-xxxxx: XxxXxxxx, xx xxxxxxx xxxxxx xxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: カスタム Panel クラスのコードの記述、ArrangeOverride メソッドと MeasureOverride メソッドの実装、Children プロパティの使用について説明します。
+title: BoxPanel、カスタム パネルの例
+ms.assetid: 981999DB-81B1-4B9C-A786-3025B62B74D6
+label: BoxPanel、カスタム パネルの例
+template: detail.hbs
 ---
 
-# XxxXxxxx, xx xxxxxxx xxxxxx xxxxx
+# BoxPanel、カスタム パネルの例
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227511)
--   [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208711)
--   [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208730)
+-   [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
+-   [**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
+-   [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
 
-Xxxxx xx xxxxx xxxx xxx x xxxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227511) xxxxx, xxxxxxxxxxxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208711) xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208730) xxxxxxx, xxx xxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227514) xxxxxxxx. Xxx xxxxxxx xxxx xxxxx x xxxxxx xxxxx xxxxxxxxxxxxxx, xxx xx xxx'x xxxxxx x xxx xx xxxx xxxxxxxxxx xxx xxxxxx xxxxxxxx xxxx xxxxxxxxx xxx xxx xxx xxxxxxxxx x xxxxx xxx xxxxxxxxx xxxxxx xxxxxxxxx. Xx xxx xxxx xxxx xxxx xxxxx xxxxx xxxxxx xxxxxxxx xxx xxx xxxx xxxxx xxxxx xx xxxx xxxxxxxxxx xxxxxx xxxxxxxx, xxx [XXXX xxxxxx xxxxxx xxxxxxxx](custom-panels-overview.md).
+カスタム [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) クラスのコードの記述、[**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) メソッドと [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) メソッドの実装、[**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) プロパティの使用について説明します。 コード例ではカスタム パネルの実装を示しますが、さまざまなレイアウト シナリオのパネルのカスタマイズ方法に影響を与えるレイアウトの概念については、詳しく説明していません。 このようなレイアウトの概念や、自分の特定のレイアウト シナリオへの適用方法に関する詳細情報が必要な場合は、「[XAML カスタム パネルの概要](custom-panels-overview.md)」をご覧ください。
 
-X *xxxxx* xx xx xxxxxx xxxx xxxxxxxx x xxxxxx xxxxxxxx xxx xxxxx xxxxxxxx xx xxxxxxxx, xxxx xxx XXXX xxxxxx xxxxxx xxxx xxx xxxx xxx XX xx xxxxxxxx. Xxx xxx xxxxxx xxxxxx xxxxxx xxx XXXX xxxxxx xx xxxxxxxx x xxxxxx xxxxx xxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227511) xxxxx. Xxx xxxxxxx xxxxxxxx xxx xxxx xxxxx xx xxxxxxxxxx xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208711) xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208730) xxxxxxx, xxxxxxxxx xxxxx xxxx xxxxxxxx xxx xxxxxxxx xxx xxxxx xxxxxxxx. Xxxx xxxxxxx xxxxxxx xxxx **Xxxxx**. Xxxx xxx xxxxx xxxx **Xxxxx**, **XxxxxxxXxxxxxxx** xxx **XxxxxxxXxxxxxxx** xxxxxxx xxx'x xxxx x xxxxxxxx xxxxxxxx. Xxxx xxxx xx xxxxxxxxx xxx xxxxxxx xx xxxxx xxxxx xxxxxxxx xxxxxx xxxxx xx xxx XXXX xxxxxx xxxxxx xxx xxx xxxxxxxx xx xxx XX. Xx, xx'x xxxxxx xxxxxxxxx xxxx xxxx xxxx xxxxxxxx xxx xxx xxxxx xxxxxxxx xxx xxxxxxx xxx xxxxxxxx xxx xxxxxx xxxxxx xxxxxxx.
+*パネル*は、XAML レイアウト システムが実行されて、アプリの UI が表示されるときに、含まれている子要素のレイアウト動作を提供するオブジェクトです。 [
+            **Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) クラスからカスタム クラスを派生させて、XAML レイアウトのカスタム パネルを定義できます。 パネルの動作は、[**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) メソッドと [**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) メソッドをオーバーライドすることで子要素を評価して配置するロジックを提供して実行します。 この例は、**Panel** から派生しています。 **Panel** から開始した場合、**ArrangeOverride** メソッドと **MeasureOverride** メソッドには起動動作がありません。 コードが提供するゲートウェイによって、子要素が XAML レイアウト システムに認識され、UI に表示されます。 したがって、コードがすべての子要素について説明し、レイアウト システムが想定しているパターンに従うことが実際に重要です。
 
-## Xxxx xxxxxx xxxxxxxx
-
-
-Xxxx xxx xxxxxx x xxxxxx xxxxx, xxx'xx xxxxxxxx x xxxxxx xxxxxxxx.
-
-X xxxxxx xxxxxxxx xx xxxxxxxxx xxxxxxx:
-
--   Xxxx xxx xxxxx xxxx xx xxxx xx xxx xxxxx xxxxxxxx
--   Xxxx xxx xxxxx xxx xxxxxxxxxxx xx xxx xxx xxxxx
--   Xxx xxx xxxxx xx xxx xxxxx xxxxxxxxxx xxx xxx xxxxxxxxxxxx, xxxxxxxxx, xxxxxxxxx, xxx xxxxxxx xxxx xxxxxxxxxx xxxxxx xx x xxxxxxxx XX xxxxxx xx xxxxxxxx
-
-Xxxx xxxx xx xxxx, xxx `BoxPanel` xxxxx xxxx xx xxx x xxxxxxxxxx xxxxxxxx. Xx xxx xxxxxxxx xx xxxxxxx xxx xxxx xxxxxxxx xx xxxx xxxxxxx, xx xxx'x xxxxxxx xxx xxxxxxxx xx xxxxxx xxx, xxx xxxxxxx xxxxxxxxxxx xx xxx xxxxx xxxxxx xxx xxx xxxxxx xxxxxxxx. Xx xxx xxxx xx xxxx xxxx xxxxx xxx xxxxxxxx xxxxx, xxxx xxxxx xx ["Xxx xxxxxxxx xxx `BoxPanel`"](#scenario), xxx xxxx xxxx xxxx xx xxx xxxx.
-## Xxxxx xx xxxxxxxx xxxx **Xxxxx**
+## レイアウト シナリオ
 
 
-Xxxxx xx xxxxxxxx x xxxxxx xxxxx xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227511). Xxxxxxxx xxx xxxxxxx xxx xx xx xxxx xx xx xxxxxx x xxxxxxxx xxxx xxxx xxx xxxx xxxxx, xxxxx xxx **Xxx** | **Xxx Xxxx** | **Xxxxx** xxxxxxx xxxx xxxxxxx xxx x xxxxxxx xxxx xxx **Xxxxxxxx Xxxxxxxx** xx Xxxxxxxxx Xxxxxx Xxxxxx. Xxxx xxx xxxxx (xxx xxxx) `BoxPanel`.
+カスタム パネルを定義することは、レイアウト シナリオを定義することです。
 
-Xxx xxxxxxxx xxxx xxx x xxxxx xxxxx'x xxxxx xxxx xxxx **xxxxx** xxxxxxxxxx xxxxxxx xx'x xxx xxxxxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxxxx, xxx **xxxxx** xxxxxxxxxx. Xxx xxxxxxxx xxxx xxxx xxxxxx xxxx x xxx **xxxxx** xxxxxxxxxx xxxx xxx xxxxxxxx xxx'x xxxx, xxx xxx xx xxxxxxx. Xxxx'x x xxxxxxxxx xxxx xx **xxxxx** xxxxxxxxxx xxxx xxx xxxxxxx xxxxx xxx'xx xxxx xxx xxxxxxx xxxxxx xxxxx xxxx:
+レイアウト シナリオは、次によって表現されます。
+
+-   子要素が作成されたときのパネルの動作
+-   パネル自体のスペースが制約されるタイミング
+-   最終的に子要素の UI レイアウトとして描画される測定値、配置、サイズのすべてを、パネルのロジックが決定する方法
+
+この点を考慮して、特定のシナリオが使用する `BoxPanel` を次に示します。 この例でコードを最優先するために、ここではシナリオを詳しくは説明しません。その代わり、必要な手順とコーディング パターンについて重点的に説明します。 最初にシナリオについて詳しく知りたい場合は、この後にある「[`BoxPanel` のシナリオ](#scenario)」を参照した後、コードの説明に戻ってください。
+## **Panel** からの派生で開始する
+
+
+まず、[**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) からカスタム クラスを派生させます。 このために最も簡単と思われる方法は、このクラスのための別のコード ファイルを定義することです。これには、Microsoft Visual Studio の**ソリューション エクスプローラー**でプロジェクトに対してコンテキスト メニューの **[追加]** | **[新しい項目]** | **[クラス]** をクリックします。 このクラス (とファイル) に、`BoxPanel` という名前を付けます。
+
+クラスのテンプレート ファイルが、多くの **using** ステートメントで始まることはありません。このステートメントは、特にユニバーサル Windows プラットフォーム (UWP) アプリ用ではないためです。 まず、**using** ステートメントを追加します。 また、テンプレート ファイルはいくつかの **using** ステートメントで始まっていますが、おそらく不要と思われるため、削除することができます。 次に示すのは、一般的なカスタム パネル コードに必要となる型を解決できる **using** ステートメントの候補の一覧です。
 
 ```CSharp
 using System;
@@ -50,7 +51,7 @@ using Windows.UI.Xaml.Controls; //Panel
 using Windows.UI.Xaml.Media; //if you need Brushes or other utilities
 ```
 
-Xxx xxxx xxx xxx xxxxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227511), xxxx xx xxx xxxx xxxxx xx `BoxPanel`. Xxxx, xxxx `BoxPanel` xxxxxx:
+これで [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511) を解決できるので、これを `BoxPanel` の基底クラスにします。 また、`BoxPanel` を公開します。
 
 ```CSharp
 public class BoxPanel : Panel
@@ -58,9 +59,9 @@ public class BoxPanel : Panel
 }
 ```
 
-Xx xxx xxxxx xxxxx, xxxxxx xxxx **xxx** xxx **xxxxxx** xxxxxx xxxx xxxx xx xxxxxx xx xxxxxxx xx xxxx xxxxx xxxxxxxxx, xxx xxxxx xxx'x xxxx xx xx xxxxxxx xx xxxxxx XXX. Xx xxx xxxxxxx, xxxxx xxx xxxxx: `maxrc`, `rowcount`, `colcount`, `cellwidth`, `cellheight`, `maxcellheight`, `aspectratio`.
+クラス レベルでは、複数の論理関数で共有される **int** 値と **double** 値をいくつか定義しますが、これらは、パブリック API として公開する必要はありません。 例では、これらの名前は `maxrc`、`rowcount`、`colcount`、`cellwidth`、`cellheight`、`maxcellheight`、`aspectratio` です。
 
-Xxxxx xxx'xx xxxx xxxx, xxx xxxxxxxx xxxx xxxx xxxxx xxxx xxxx (xxxxxxxx xxxxxxxx xx **xxxxx**, xxx xxxx xxx xxxx xxx xx xxxx xxxx):
+これを行った後、コード ファイル全体は次のようになります (ここにある理由はわかっているので、**using** のコメントは削除します)。
 
 ```CSharp
 using System;
@@ -77,9 +78,9 @@ public class BoxPanel : Panel
 }
 ```
 
-Xxxx xxxx xx xxx, xx'xx xx xxxxxxx xxx xxx xxxxxx xxxxxxxxxx xx x xxxx, xx xxxx x xxxxxx xxxxxxxx xx xxxxxxxxx xxxxxxxxxx xxxx xx x xxxxxxxxxx xxxxxxxx. Xxx xxx xxx xxxxx xx xxx xxxxxxxx xxxxx xx xxx xxxxx, xxx xx xxx'x xx xxxxxxx xxx **xxxxx** xxxxxxxxxx xx xxx xxxxxxxxxx xx xxx xxxxx xxxxx xxxxx xx xxx xxxxxxxx xxxxx xx xxxx xxx xxxxx xxxx.
+これ以降は、メソッドのオーバーライド、依存関係プロパティなどのサポートするものなどのメンバー定義を 1 つずつ示します。 これらは、上に示したスケルトンに任意の順序で追加できます。最終的なコードを示すまで、スニペットでは、**using** ステートメントとクラス スコープの定義のいずれも再び示すことはありません。
 
-## **XxxxxxxXxxxxxxx**
+## **MeasureOverride**
 
 
 ```CSharp
@@ -117,19 +118,20 @@ protected override Size MeasureOverride(Size availableSize)
 }
 ```
 
-Xxx xxxxxxxxx xxxxxxx xx x [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208730) xxxxxxxxxxxxxx xx xxx xxxx xxxxxxx xxxx xxxxxxx xx [**Xxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227514). Xxxxxx xxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208952) xxxxxx xx xxxx xx xxxxx xxxxxxxx. **Xxxxxxx** xxx x xxxxxxxxx xx xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225995). Xxxx xxx'xx xxxxxxx xxxx xx xxx xxxx xxxx xxxx xxxxx xx xxxxxxxxxx xx xxxx xxxxxxxxx xxx xxxx xxxxxxxxxx xxxxx xxxxxxx. Xx, xxxxxx xxx xxx xx xxx xxxx xxx xxxxx xxxxxxx **Xxxxxxx**, xxx xxxx xx xxxx xxx xxxx xxxxx xxxx xxxx xxx xxxxxx. Xxxx xxx **XxxxxxxXxxxxxxx** xxxxxx xxxxxx, xxx xxxx xxx *xxxxxxxxxXxxx* xxxxx. Xxxx xx xxx xxxx xxxx xxx xxxxx'x xxxxxx xxxx xxxx xx xxxxxx **Xxxxxxx**, xxxxx xxx xxx xxxxxxx xxx xxxx **XxxxxxxXxxxxxxx** xxxxx xxxxxx xx xxx xxxxx xxxxx. Xx x xxxxxxx xxxxx xx xx xxxxxx x xxxxxx xxxxxxx xxxx xxxxx xxxxxxx xxxxxxx xxx xxxxx xx xxx xxxxx'x xxxxxxx *xxxxxxxxxXxxx*. Xxx xxxx xxxx xxxx xxxxxxxx xx xxxx xx **Xxxxxxx** xx xxxx xxxxx xxxxxxx.
+[
+            **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) の実装に必要なパターンは、[**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) の各要素のループ処理です。 これらの要素のそれぞれで、[**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) メソッドを必ず呼び出します。 **Measure** には、型 [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) のパラメーターがあります。 ここで渡しているのは、この特定の子要素が表示できるようにパネルがコミットしているサイズです。 したがって、ループ処理を行い、**Measure** の呼び出しを開始する前に、各セルが使用可能なスペースの量を知る必要があります。 **MeasureOverride** メソッド自体には、*availableSize* 値があります。 これは、最初に呼び出されたこの **MeasureOverride** のトリガーであった **Measure** を呼び出したときにパネルの親が使用したサイズです。 そのため、一般的なロジックは、各子要素がパネルの *availableSize* 全体のスペースを分割するためのスキームを作成することです。 そして、サイズの各部分を各子要素の **Measure** に渡します。
 
-Xxx `BoxPanel` xxxxxxx xxxx xx xxxxxx xxxxxx: xx xxxxxxx xxx xxxxx xxxx x xxxxxx xx xxxxx xxxx'x xxxxxxx xxxxxxxxxx xx xxx xxxxxx xx xxxxx. Xxxxx xxx xxxxx xxxxx xx xxx xxx xxxxxx xxxxx xxx xxx xxxxxxxxx xxxx. Xxxxxxxxx xxx xxx xx xxxxxx xxxx x xxxxxx xxx'x xxxxxx, xx xx'x xxxxxxx xxx xxx xxxxx xxxxxxx x xxxxxxxxx xxxxxx xxxx xxxxxx xx xxxxx xx xxx xxx : xxxxxx xxxxx. Xxx xxxx xxxx xxxxx xxx xxxx xxxxx xxx xxxxxxx xx, xxxx xxxxx xx ["Xxx xxxxxxxx xxx `BoxPanel`"](#scenario).
+`BoxPanel` でのサイズの分割方法は、非常に簡単です。多数のボックスにスペースを分割しますが、これは、主に項目の数で制御されます。 ボックスのサイズは、行と列の数、および使用可能なサイズに基づいて設定されます。 正方形の 1 行または 1 列は不要な場合があるため、破棄され、行と列の割合から見ると、パネルは正方形ではなく四角形になります。 このロジックに到達する過程の詳細については、この後の「[`BoxPanel` のシナリオ](#scenario)」をご覧ください。
 
-Xx xxxx xxxx xxx xxxxxxx xxxx xx? Xx xxxx x xxxxx xxx xxx xxxx-xxxx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208921) xxxxxxxx xx xxxx xxxxxxx xxxxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208952) xxx xxxxxx. Xxxxxx x **XxxxxxxXxxx** xxxxx xx xxxxxxxx xxxxxxxxx xxxx xxx xxx xx xxx xxxxxxx xxxx, xxxxxxx xxx **XxxxxxxXxxx** xxxxxxxxxxxx xxxx xxx xxxx xxx xx xxxxxx xx xxxx xxxxxxxxx xxx xx xxx xxxxx xxxxxxxxx. Xxxx xx xxx xxx'x xxx **XxxxxxxXxxx** xx xxxx xxx xxxxx, xxx xxxxxx xxxxx xxxxx xx.
+それでは、測定パスでは何が行われるのでしょうか。 ここでは、[**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) が呼び出された各要素に読み取り専用の [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) プロパティの値が設定されます。 **DesiredSize** 値があることは、配置パスに到達した後に重要になる可能性があります。なぜなら、**DesiredSize** によって、配置の際や最終的な描画で可能または必要なサイズが伝えられるためです。 自分のロジックで **DesiredSize** を使用しない場合でも、システムでは必要になります。
 
-Xx'x xxxxxxxx xxx xxxx xxxxx xx xx xxxx xxxx xxx xxxxxx xxxxxxxxx xx *xxxxxxxxxXxxx* xx xxxxxxxxx. Xx xxxx'x xxxx, xxx xxxxx xxxxx'x xxxx x xxxxx xxxxxx xx xxxxxx. Xx xxxx xxxx, xxx xxxxx xxx xxx xxxxxxx xxxx xxxxxxx xxxx xxxxx xxxx xx xxxxx'x xxxx x xxxxxxx xxxxxx, xxx. Xx xxxx xx xx xxxxxxx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225995) xx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208952) xxxx xxx xxxxxxxx xxxxx [**Xxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh763910) xx xxxxxxxx. Xxxx'x xxxxx. Xxxx **Xxxxxxx** xx xxxxxx, xxx xxxxx xx xxxx xxx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208921) xx xxx xx xxx xxxxxxx xx xxxxx: xxxx xxx xxxxxx xx **Xxxxxxx**, xx xxxx xxxxxxx'x xxxxxxx xxxx xxxx xxxxxxx xxxx xx xxxxxxxxxx-xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208718) xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208751).
+このパネルが、*availableSize* の高さコンポーネントが無限である場合に使われる可能性があります。 これに該当する場合、パネルには、分割するための既知の高さがありません。 この場合、測定パスのロジックは、有限の高さがまだないことを各子要素に知らせます。 知らせるには、[**Size.Height**](https://msdn.microsoft.com/library/windows/apps/hh763910) が無限である子の [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) 呼び出しに [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) を渡します。 これは適正な動作です。 **Measure** が呼び出されるときのロジックは、[**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) が、**Measure** に渡されたものの最小値、または、明示的に設定された [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) と [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) などの要因からのその要素の自然なサイズの最小値として設定されていることです。
 
-**Xxxx**????Xxx xxxxxxxx xxxxx xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209635) xxxx xxx xxxx xxxxxxxx: **XxxxxXxxxx** xxxxxx xx xxxxxxxx xxxxxxxxx xxxxx xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208952) xx xxxxxxxx, xxxxxxxxxx xxxx xxxxx xx xx xxxxxxxxxx xx xxxxxxxx xx xxx xxxxxxxxxxx xxxxxxxxx. **XxxxxXxxxx** xxxxxxxxx xxxxx xxxxxx xxxxxxxxxxx, xx xxxxxxxxxxx xxx xxxxxxxx xx x xxxxx xxxx xxxxx xx xxxx xxxxxxxxx.
+**注:** [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635) の内部ロジックにも、この動作があります。**StackPanel** は、子の [**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) に無限サイズの値を渡します。これは、子には、向きのサイズの制約がないことを示します。 **StackPanel** は、通常、動的にサイズ設定され、そのサイズ内で拡大されるスタックにすべての子が配置されます。
 
 ??
 
-Xxxxxxx, xxx xxxxx xxxxxx xxx'x xxxxxx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225995) xxxx xx xxxxxxxx xxxxx xxxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208730); xxxx xxxxxx xx xxxxxxxxx xxxxxx xxxxxx. Xx, xxxx xx xxx xxxxx xx xx xxxx xxx xxx xxxxxxx xxxxxx xxxx xxx xxxxx xxxxxxxx, xxx xxx xxxx xxxxxx xx xxx xxxx xxxxxx xx xxxx xxxx xxx'x xxxxxx xxxx xxx xxxxx'x xxx xxxx xxxxxxxxxxx xxxxxxx. Xxxx'x xxx xxxxxx xxxxxxxx `LimitUnboundedSize` xxxx xxx xxxxxxxxxx xx xxxxxxxx xxxx, xxxxx xxxx xxxxx xxxx xxxxxxx xxxx xxxxxx xxx xxxx xx xx xxxx xxx xxxxx x xxxxxx xxxxxx xx xxxxxx, xx xxxx xx xxxxxxxx xxxx `cellheight` xx x xxxxxx xxxxxx xxxxxx xxx xxxxxxx xxxx xx xxxxxxxxx:
+ただし、パネル自体は、[**MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) から、無限値を持つ [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) を返すことができません。返すと、レイアウト時に例外がスローされます。 したがって、ロジックの一部は、子が要求する最大の高さを調べ、それが既にパネル自体のサイズ制約によるものでない場合は、その高さをセルの高さとして使うことです。 次に示すのは、前のコードで参照されるヘルパー関数 `LimitUnboundedSize` です。これは、このセルの最大の高さを受け取り、これを使って、返すことができる有限の高さをパネルに与えます。また、配置パスの開始前に `cellheight` が有限数であることを確認します。
 
 ```CSharp
 // This method is called only if one of the availableSize dimensions of measure is infinite.
@@ -148,7 +150,7 @@ Size LimitUnboundedSize(Size input)
 }
 ```
 
-## **XxxxxxxXxxxxxxx**
+## **ArrangeOverride**
 
 
 ```CSharp
@@ -168,22 +170,25 @@ protected override Size ArrangeOverride(Size finalSize)
 }
 ```
 
-Xxx xxxxxxxxx xxxxxxx xx xx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208711) xxxxxxxxxxxxxx xx xxx xxxx xxxxxxx xxxx xxxxxxx xx [**Xxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227514). Xxxxxx xxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208914) xxxxxx xx xxxx xx xxxxx xxxxxxxx.
+[
+            **ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) の実装に必要なパターンは、[**Panel.Children**](https://msdn.microsoft.com/library/windows/apps/br227514) の各要素のループ処理です。 これらの要素のそれぞれで、[**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) メソッドを必ず呼び出します。
 
-Xxxx xxx xxxxx xxxx'x xx xxxx xxxxxxxxxxxx xx xx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208730); xxxx'x xxxxxxx. Xxx xxxx xx xxxxxxxx xx xxxxxxx xxxxx xxxx xxx xxxxx'x xxx **XxxxxxxXxxxxxxx** xxxxx, xx xxxx xxx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208921) xxxxx xx xxxx xxxxx xxx xxxxxx xxx xxxxxxx xxxx. Xxxxxxx, xx xxxxx xxxx xx xxxxxx xxx xxxxxxxx xxxxxx xxx xxxxx xxxxx xxxx xxxxx xxxx xxxxxx. Xx x xxxxxxx xxxxx, xxxx xxxxx xxxxxx xxxxxx xx x xxxxxxxxx xxxxxxxx. X xxxxx xxxx xxxxxxx xxxxxxxxxxx xxxxxxxx xxx'x xxxxxxxxx xxx xxxxxxx xxxxxxxxx (xxxxxxxx xx'x xxx xxx xx xxx xxxxxxxx xx xxxxxx xxxxxx xxxx xxxx xxxxxxxxxx xxxxxxxx, xx xxxx'x xxxxxx xxxx xxxxxxxx xxxxxxxx).
+[
+            **MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730) の場合ほど、計算が多くないことに注意してください。これが一般的です。 子のサイズは、パネル自体の **MeasureOverride** ロジックから、または測定パスで設定された各子要素の [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) 値から既にわかっています。 ただし、各子要素が表示されるパネル内の場所を決定する必要がまだあります。 一般的なパネルでは、各子要素が別の場所に描画されます。 要素の重なりを作成するパネルは、一般的なシナリオとして好ましくありません (ただし、実際に意図したシナリオである場合は、意図的な重なりがあるパネルを作成することは問題外ではありません)。
 
-Xxxx xxxxx xxxxxxxx xx xxx xxxxxxx xx xxxx xxx xxxxxxx. Xxx xxxxxx xx xxxx xxx xxxxxxx xxx xxxxxxx xxxxxxxxxx (xx xxx xxxxxxxxx xxx xxxxxxxxxxx). Xx xxx xxx xxxxx xx xxx xxxx xxx xxxxxxx xxxx xxx xxxxx xxxxx xx xxxx xxxx xxxxxxxxxx xx xxx xxxxx xx xxxxxxxx x xxxxxxxxx xxxxxxxx (xxx `anchorPoint`) xxx xxxx xxxxxxx xxxx xxxx xxxxx xxxxxxxx. Xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870), xxxxx xxxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225995) xxxxxxx xxxxx xxxx xxxxxxx, xxx xxxx xx xxx xxx xxxxxxxxxx xxxx xxxxxxxxx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225994). **Xxxx** xx xxx xxxxx xxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208914).
+このパネルは、行と列の概念で配置されます。 行と列の数は既に計算されています (測定値に必要であったため)。 したがって、行と列の図形、および各セルの既知のサイズが、このパネルに含まれる各要素の描画位置 (`anchorPoint`) の定義のロジックに使用されます。 [
+            **Point**](https://msdn.microsoft.com/library/windows/apps/br225870) は、測定により既にわかっている [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) と共に、[**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) を作成する 2 つのコンポーネントとして使われます。 **Rect** は [**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) の入力タイプです。
 
-Xxxxxx xxxxxxxxx xxxx xx xxxx xxxxx xxxxxxx. Xx xxxx xx, xxx xxxxxxx xxxx xx xxx xxxx xxxx'x xxxxxxx xx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208921), xxxxxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208952) xxxxx xxxx xx xx xxx xxxxxxx xx xxxx xxx xxxxxx xx **Xxxxxxx**, xx xxxxx xxxxxxx xxxx xxxxxxx. Xx xxx xxx'x xxxxxxxxx xxxx xx xxxxxxxxxxxx xxxxx xxx xxxxxxxx xxxxxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208914); xxx xxxxxxxx xxxx xxxxxxx xxxxx xx xxxxxxx xxx **XxxxxxxXxxx** xxxxxxx xx xxxx **Xxxxxxx** xxxx.
+パネルでは、そのコンテンツのクリップが必要な場合があります。 クリップが必要な場合、クリップされたサイズは、[**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) にあるサイズです。これは、[**Measure**](https://msdn.microsoft.com/library/windows/apps/br208952) ロジックがこのサイズを、**Measure** に渡された最小値、またはその他の自然なサイズの要因として設定するためです。 したがって、[**Arrange**](https://msdn.microsoft.com/library/windows/apps/br208914) では、特にクリップを確認する必要はありません。クリップは、各 **Arrange** 呼び出しを介して **DesiredSize** を渡すことに基づいて発生するだけです。
 
-Xxx xxx'x xxxxxx xxxx x xxxxx xxxxx xxxxx xxxxxxx xxx xxxx xx xxx xxx xxxx xxx xxxx xxx xxxxxxxx xxx xxxxxxxxx xxxxxxxx xx xxxxx xx xxxxx xxxxx. Xxx xxxxxxx, xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209267) xxxxxx xxxxx, xxx xxxxxxxx xx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227514) xxxxxxxxxx xxxxx'x xxxxxx. Xxx xxx xxxx xxxxxx xx xxxxxxxx xxxx xxxxxxx xx x **Xxxxxx** xx xxxxx xx xxxxxxx [**Xxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/hh759771) xxx [**Xxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/hh759772) xxxxxx xx xxxxxxxx xx xxxx xx xxx xxxxxxx xxxxx. Xxx `BoxPanel` xxxxx xxxxxxx xx xxxx x xxxxx xx xxxxxxx xx xxx *xxxxxxxx* xx xx'x xxxxx xxxx xx xxxxx x xxx xxx xxx xxxxxx xxx *x* xxxxx.
+描画位置を定義するために必要なすべての情報が他の方法でわかっている場合は、ループ処理中に常に数を数える必要はありません。 たとえば、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) レイアウト ロジックで、[**Children**](https://msdn.microsoft.com/library/windows/apps/br227514) コレクションでの位置は重要ではありません。 **Canvas** の各要素の位置を決定するために必要なすべての情報は、配置ロジックの一部として子の [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 値と [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) 値を読み取ることで得られるためです。 ただし、`BoxPanel` のロジックでは、新しい行の開始と、*y* 値のオフセットのタイミングを知るために、数を数えて *colcount* と比較する必要があります。
 
-Xx'x xxxxxxx xxxx xxx xxxxx *xxxxxXxxx* xxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225995) xxx xxxxxx xxxx x [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208711) xxxxxxxxxxxxxx xxx xxx xxxx. Xxx xxxx xxxx xxxxx xxx, xxx "**XxxxxxxXxxxxxxx**" xxxxxxx xx [XXXX xxxxxx xxxxxx xxxxxxxx](custom-panels-overview.md).
+入力 *finalSize* と、[**ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711) の実装から返す [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995) が同じであることは一般的です。 その理由について詳しくは、「[XAML カスタム パネルの概要](custom-panels-overview.md)」の「**ArrangeOverride**」セクションをご覧ください。
 
-## X xxxxxxxxxx: xxxxxxxxxxx xxx xxx xx. xxxxxx xxxxx
+## 改良: 行と列の数の制御
 
 
-Xxx xxxxx xxxxxxx xxx xxx xxxx xxxxx xxxx xx xx xx xxx. Xxxxxxx, xx'xx xxx xxx xxxx xxxxxxxxxx. Xx xxx xxxx xxxx xxxxx, xxx xxxxx xxxx xxx xxxxx xxx xx xxxxxx xx xxx xxxx xxxx'x xxxxxxx xx xxxxxx xxxxx. Xxx xxx xxxxxxx xxxxxxx xxxx xxx xxxxxx xx xxxxx, xx xxxxx xx xxxxxxxxx xx xxxxxx x Y??Y xxx xx xxxxx xxxxxxx xx Y??Y xxxx xx xxx xxxxx'x xxx xxxxxx xxxxx xx "xxxxxxxx." Xx xx'xx xxx xx xxxxxxxx xxxxxxxxxx xxxxxxxx xxxx xxx xxxxx xxxxxxxx xxx xxx xx xxxxxxx xxxx xxxxxxxx. Xxxx'x xxx xxxxxxxxxx xxxxxxxx xxxxxxxxxx, xxxxx xx xxxx xxxxx:
+このパネルは、コンパイルして、そのまま使用できます。 ただし、もう 1 つ改良を加えます。 ここで示したコードで、ロジックは、縦横比で最も長い側に、追加の行または列を設定しています。 ただし、セルの形状をさらに制御するには、パネル自体の縦横比が "縦長" であっても、3×4 ではなく、4×3 のセル セットを選択する方が適切である場合があります。 そのため、その動作を制御するためにパネルのユーザーが設定できる、オプションの依存関係プロパティを追加します。 この依存関係プロパティ定義は、次に示すように、非常に基本的です。
 
 ```CSharp
 public static readonly DependencyProperty UseOppositeRCRatioProperty =
@@ -196,40 +201,44 @@ public bool UseSquareCells
 }
 ```
 
-Xxx xxxx'x xxx xxxxx `UseOppositeRCRatio` xxxxxxx xxx xxxxxxx xxxxx. Xxxxxx xxx xx'x xxxxx xx xxxxxxxx xxx `rowcount` xxx `colcount` xxx xxxxxxx xxxx `maxrc` xxx xxx xxxx xxxxxx xxxxx, xxx xxxxx xxx xxxxxxxxxxxxx xxxx xxxxxxxxxxx xxx xxxx xxxx xxxxxxx xx xxxx. Xxxx `UseOppositeRCRatio` xx **xxxx**, xx xxxxxxx xxx xxxxx xx xxx xxxx xxxxxx xxxxx xxxxxx xxxxx xx xxx xxx xxx xxxxxx xxxxxx.
+次に、`UseOppositeRCRatio` の使用が測定ロジックに与える影響を説明します。 実際に行われていることは、`rowcount` と `colcount` が、`maxrc` と実際の縦横比から派生しているしくみの変更だけです。このために、対応するサイズの違いが各セルにあります。 `UseOppositeRCRatio` が **true** である場合は、行と列を数えるために使う前に実際の縦横比の値が逆になります。
 
 ```CSharp
 if (UseOppositeRCRatio) { aspectratio = 1 / aspectratio;}
 ```
 
-## Xxx xxxxxxxx xxx `BoxPanel`
+## `BoxPanel` のシナリオ
 
 
-Xxx xxxxxxxxxx xxxxxxxx xxx `BoxPanel` xx xxxx xx'x x xxxxx xxxxx xxx xx xxx xxxx xxxxxxxxxxxx xx xxx xx xxxxxx xxxxx xx xx xxxxxxx xxx xxxxxx xx xxxxx xxxxx, xxx xxxxxxxx xxx xxxxx xxxxxxxxx xxxxx xxx xxx xxxxx. Xxxxxx xxx xxxxxxxx xxxxxxxxx xxxxxx. Xxxx xxxxxx xxxxxxx xx xxxxxxxx xxxx xxxxxxxxx xxxxx xxxx xxxxxxx xxxxxxxxxx; xxxx'x xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br242704) xxxx xxx xxx xxxxx. Xx **Xxxx**'x xxxx, xxx xxxx xx xxx xxxxx xx xxx xx [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209324) xxx [**XxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227606) xxxxxx, xxx xxxxxxxx xxxxxxx xxx xxxxx xxxx xxxx xx xxxx xxxx [**Xxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/hh759795) xxx [**Xxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh759774) xxxxxxxx xxxxxxxxxx. Xxxxxxx xxxx xxxxxx xxxx x **Xxxx** xxxxxxx xxxxxxxx xxxxxxx xxx xxxxxx xx xxxxx xxxxxxxx xxxxxxxxxx, xx xxxx xxxxx xxx xxxxxx xxxxx xxx xxxx xxxxx xxxxxxx xxxx xxx xxxxxxxx xxxxxxxxxx xx xxx xxxx xxx xxx xxxx.
+`BoxPanel` の特定のシナリオは、子項目の数がわかっており、パネルで使用できるとわかっているスペースを分割することが、スペースの分割方法の主な決定要因の 1 つであるパネルです。 パネルの形状は本質的に四角形です。 多くのパネルは、その四角形のスペースをさらに四角形に分割して動作します。これは、セルに対する [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) の動作です。 **Grid** の場合は、セルのサイズが [**ColumnDefinition**](https://msdn.microsoft.com/library/windows/apps/br209324) と [**RowDefinition**](https://msdn.microsoft.com/library/windows/apps/br227606) の値によって設定され、これらの値が使用される正確なセルが要素によって、[**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) 添付プロパティと [**Grid.Column**](https://msdn.microsoft.com/library/windows/apps/hh759774) 添付プロパティで宣言されます。 **Grid** から適切なレイアウトを取得するには、通常、子要素の数を事前に知っている必要があります。これは、セルの数が十分であり、各子要素がそのセル サイズに収まるように自身の添付プロパティを設定する必要があるためです。
 
-Xxx xxxx xx xxx xxxxxx xx xxxxxxxx xx xxxxxxx? Xxxx'x xxxxxxxxx xxxxxxxx; xxxx xxx xxxx xxx xxx xxxxx xx xxxxxxxxxxx, xx xxxxxxxx xx xxx xxxxxxx xxx-xxxx xxxxxxxxx xxx xxxxxxxx xx xx xxxxxxxxx xxxxxx xx xx xxxxx xxxxxxxx xxxx XX. Xx xxx'xx xxxxx xxxx xxxxxxx xx xxxxxxx xxxxxxxxxxx/xxxxxxxx xxxxxxx, xxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxx XX xx xxxxxxx xxxxxxxxxxxxx, xx xxxx'x xxxxx xxx xxxxxxxxx xxxxxxxxx (xxx [Xxxx xxxxxxx xx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt210946)).
+では、子の数が動的な場合はどうでしょうか。 これは、確実にあり得ます。アプリ コードは、UI を更新する価値があるだけ重要であると考えられる動的ランタイム状態に対応して、コレクションに項目を追加できます。 コレクション/ビジネス オブジェクトのバッキングにデータ バインドを使っている場合は、このような更新プログラムの取得と UI の更新が自動的に処理されます。これは、多くの場合、優先して使われる手法です (「[データ バインディングの詳細](https://msdn.microsoft.com/library/windows/apps/mt210946)」をご覧ください)。
 
-Xxx xxx xxx xxx xxxxxxxxx xxxx xxxxxxxxxx xx xxxx xxxxxxx. Xxxxxxxxx, xxx xxxx xx xxxxxx xxx XX xxxxxxxx xx xxxxxxx xxx xxxx xxxx xxxxxxx. `BoxPanel` xx xxx xxxx xxxxxxxx. X xxxxxxxx xxxxxx xx xxxxx xxxxx xx xx xxxxxxx xxx `BoxPanel` xxxxxxx xx'x xxxxx xxx xxxxx xxxxx xx xxxxxxxxxxxx, xxx xxxxxxx xxxx xxx xxxxxxxx xxx xxx xxxxx xxxxxxxx xxxx x xxx xxxxxx xx xxxx xxx xxx.
+ただし、アプリのすべてのシナリオがデータ バインディングに対応しているわけではありません。 場合によっては、新しい UI 要素を実行時に作成し、表示されるようにする必要があります。 `BoxPanel` は、このようなシナリオで役立ちます。 子項目の数が変わることは、`BoxPanel` では問題になりません。子の数を使って計算し、既存と新規の両方の子要素がすべて、新しいレイアウトに収まるように調整するためです。
 
-Xx xxxxxxxx xxxxxxxx xxx xxxxxxxxx `BoxPanel` xxxxxxx (xxx xxxxx xxxx) xxxxx xxxx xxxxxxxxxxx xxxxxxx xxxxxxxx xxx xxx x xxxxx'x [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208921) xx x xxxxxxxx xxxxxx xxx xxx xxxxxx xx xxxxxxxxxx xxxxx. Xxxx xxxxxxxx xxxxx xxx xxxxxxx xxx xx xxxxxx xxxxx xx xxx-xxxx xxxxxx xx xxxx xxxxx'x xxxx "xxxxxx" xxxxx. Xxxx xxxxxxxx x xxxxxxxx xxx xxx xxxxxxxx xxxxxxxxxx xx xxxxxxx xxxxx xxx xxxxxx xxxxxx xxx xxx xxx xxxx x xxxxxxxxxx xxxxxxxxx xxxx xxx xxxxxxxxxx xxx xxxxxxxx xxxx. `BoxPanel` xxxxx'x xx xxxx; xx'x xxxxx x xxxxxxx xxxxxxxxx xxx xxxxxxxx xxxxx. `BoxPanel`'x xxxxxxxxx xx xx xxxxxxxxx xxx xxxxx xxxxxx xxxxxx xxxx'x xxxxxxx xxxx xxx xxxxx xxxxx. Xxx xxxxxxx, Y xxxxx xxxxx xxx xx x Y??Y xxxxxx. YY xxxxx xxxxxxx x Y??Y xxxxxx. Xxxxxxx, xxx xxx xxxxx xxx xxxxx xxxxx xxxxx xxxxxxxx xxx xxx xx xxxxxx xx xxx xxxxxxxx xxxxxx, xx xxxx xxxxx. Xx xxx xxxxx=YY xxxxxxx, xxxx xxxx xx x Y??Y xx Y??Y xxxxxxxxx.
+`BoxPanel` をさらに拡張する高度なシナリオ (ここでは示されていません) では、動的な子に対応すると同時に、より強力な要因として子の [**DesiredSize**](https://msdn.microsoft.com/library/windows/apps/br208921) を使って個々のセルのサイズを設定することができます。 そして、可変サイズの行または列、または非グリッド形状を使って、「無駄な」スペースを減らすことができます。 これには、黄金比と最小サイズの両方の場合に、さまざまなサイズと縦横比の複数の四角形をすべて、それらを含む四角形に収めるための方法が必要です。 `BoxPanel` では、このような方法ではなく、スペースを分割するための単純な手法を使用しています。 `BoxPanel` の手法は、子の数より多い、最小の正方形を決定することです。 たとえば、9 個の項目は、3×3 の正方形に収まります。 10 個の項目には、4×4 の正方形が必要です。 ただし、多くの場合、項目を収めると同時に、最初の正方形の 1 行または 1 列を削除して、スペースを節約できます。 10 個の項目の例では、4×3 または 3×4 の長方形に収まります。
 
-Xxx xxxxx xxxxxx xxx xxx xxxxx xxxxxx'x xxxxxxx xxxxxx Y??Y xxx YY xxxxx, xxxxxxx xxxx xxxx xxx xxxx xxxxxx xxxxxx. Xxxxxxx, xx xxxxxxxx, xxxxxx xxx xxxxx xx xxxxxxxxxx xxxx xxxxxx xxxx x xxxxxxxx xxxxxxxx xxxxxx xxxxx. Xxx xxxxx-xxxxxxx xxxxxxxxx xx x xxx xx xxxx xxx xxxxxx xxxxx xx xxxx xxxx xxxx xxxxxxx xxxxxx xxxxxx xxx xxx xxxxxxxxx xxxxxx xxxxx xxx xxxx xxxxxx xxx xxx xxxxxx xxxxxx.
+10 項目の場合にパネルが、ちょうど収まる 5×2 を選択しないのは不思議に思われます。 ただし、実際には、向きがはっきりした縦横比の四角形としてパネルがサイズ設定されることは稀です。 最小正方形の手法は、サイズ設定ロジックを偏らせて、一般的なレイアウトの図形を適切に処理し、セルの形状が極端な縦横比になるサイズ設定を防ぐための 1 つの方法です。
 
-**Xxxx**????
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx???xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**注**
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
 
 ??
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
 
-**Xxxxxxxxx**
-*[**XxxxxxxxxXxxxxxx.XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208711)
+**リファレンス**
+*[**FrameworkElement.ArrangeOverride**](https://msdn.microsoft.com/library/windows/apps/br208711)
 
-* [**XxxxxxxxxXxxxxxx.XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208730)
-* [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227511)
+* [**FrameworkElement.MeasureOverride**](https://msdn.microsoft.com/library/windows/apps/br208730)
+* [**Panel**](https://msdn.microsoft.com/library/windows/apps/br227511)
 
-**Xxxxxxxx**
-* [Xxxxxxxxx, xxxxxx, xxx xxxxxxx](alignment-margin-padding.md)
+**概念**
+* [配置、余白、およびパディング](alignment-margin-padding.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

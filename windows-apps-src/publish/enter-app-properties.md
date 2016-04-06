@@ -1,40 +1,44 @@
 ---
-Xxxxxxxxxxx: Xxx Xxx xxxxxxxxxx xxxx xx xxx xxx xxxxxxxxxx xxxxxxx xxxx xxx xxxxxx xxxx xxx'x xxxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxxxxxx xx xxxxx xxxxxxxxxxxx.
-xxxxx: Xxxxx xxx xxxxxxxxxx
-xx.xxxxxxx: XXXYXXYY-YYXY-YYYY-YXYY-XYYXYYYXXXYY
+Description: アプリの申請プロセスの [アプリケーションのプロパティ] ページでは、アプリのカテゴリを定義し、ハードウェアの基本設定や他の宣言を指定できます。
+title: アプリのプロパティの入力
+ms.assetid: CDE4AF96-95A0-4635-9D07-A27B810CAE26
 ---
 
-# Xxxxx xxx xxxxxxxxxx
+# アプリのプロパティの入力
 
-Xxx **Xxx xxxxxxxxxx** xxxx xx xxx [xxx xxxxxxxxxx xxxxxxx](app-submissions.md) xxxx xxx xxxxxx xxxx xxx'x xxxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxxxxxx xx xxxxx xxxxxxxxxxxx. Xxxx, xx'xx xxxx xxxxxxx xxx xxxxxxx xx xxxx xxxx xxx xxxx xxx xxxxxx xxxxxxxx xxxx xxxxxxxx xxxx xxxxxxxxxxx.
+[アプリの申請プロセス](app-submissions.md)の **[アプリケーションのプロパティ]** ページでは、アプリのカテゴリを定義し、ハードウェアの基本設定や他の宣言を指定できます。 ここでは、このページのオプションと、この情報を入力するときに考慮する必要がある事項を順に説明します。
 
-> **Xxxx**  Xxx xxxxxxx xxx xxx x xxxxxxxx xxxx xx xxx xxxxxxxxxx xxxxxxx. Xxx xxxx xxxx, xxx [Xxx xxxxxxx](age-ratings.md).
+> **注**  年齢区分は、申請プロセスの別のページになりました。 詳しくは、「[年齢区分](age-ratings.md)」をご覧ください。
 
-## Xxxxxxxx xxx xxxxxxxxxxx
+## カテゴリとサブカテゴリ
 
-Xx xxxx xxxxxxx, xxx xxxxxxxx xxx xxxxxxxx (xxx xxxxxxxxxxx, xx xxxxxxxxxx) xxxxx xxx Xxxxx xxxxxx xxx xx xxxxxxxxxx xxxx xxx. Xxxxxxxxxx x xxxxxxxx xx xxxxxxxx xx xxxxx xx xxxxxx xxxx xxx.
+このセクションでは、ストアでアプリの分類に使われるカテゴリ (および該当する場合はサブカテゴリ) を指定します。 アプリを申請するには、カテゴリを指定することが必要です。
 
-Xxx xxxx xxxx, xxx [Xxxxxxxx xxx xxxxxxxxxxx xxxxx](category-and-subcategory-table.md).
+詳しくは、「[カテゴリとサブカテゴリの一覧](category-and-subcategory-table.md)」をご覧ください。
 
-## Xxxxxxxx xxxxxxxxxxx
-
-
-Xx xxxx xxxxxxx, xxx xxxx xxx xxxxxx xx xxxxxxxx xx xxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxxx xx xxx xxx xxxxxxxx xxxx xxxx xxx xxxxxxxx.
-
-Xx xx, xxx Xxxxxxx Xxxxx xxxx xxx xx xxxxxx xxxxxxx x xxxxxxxx'x xxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxx. Xx xx xxxxxx xxxx xx xxxxx’x, x xxxxxxx xxxx xx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxxx xxxx xxx xxxxxx xx xxxxxxxx xx xxx xxxx xxx xxxxxxxx x xxxxxxxxxx xxx xxxx xxxxxxxx. Xxxxxxxxx xx Xxxxxxx YY xxxxxxx xxxx xxxx xxx xxx xxxxxxxx xxxxxxx(x) xxxxxx xx xxx **Xxxxxxxx xxxxxxxxxxxx** xxxxxxx xx xxxx xxx’x Xxxxx xxxxxxx.
-
-Xxxx xxx'x xxxxxxx xxxxxx xxxx xxxxxxxxxxx xxxx xxx xx xxxxxxx xxxx xxx'x xxxx xxx xxxxxxxxxxx xxxxxxxx, xxx xxxx xxx'x xx xxxx xx xxxx xx xxxxxx xxxx xxx xx xxxxx xxxxxxx.
-
-> **Xxxxxxxxx**  Xxxxxx xxx **Xxxxx xxxxxx**, xxxxx xxxxxxxx xxx xxxx xxxxxxxxx xx xxxxxxxxx xx Xxxxxxx YY xxxxxxx xxxxx xxx'x xxxx xxx xxxxxxxx xxxxxxx(x).
-
-Xx xxxxxxxx xx xxxxxx x xxxxxxxxx xxxx, xx xxxxxxxxx xxxxxx xxxxxxx xxxxxx xxx xxx xxxxxxxxx xxxxxxxx xxxx xxxx xxx, xxxxx xxx Xxxxx xxx xxx xxxxxx xx xxxx xx xxxxxx xxxx x xxxxxxxx'x xxxxxx xx xxxxxxx xxx xxxxxxxx xxxxxxx xxx xxxx'xx xxxxx xx xxxx xx xxxxxxxx xxxx xxx xxxx xx x xxxxxxx xx xxxxxxxxx.
-
-> **Xxx**  Xx xxx xxxx xx xxxxxxx xxxx XXX xxx xxxx xxxxx xxxxxxxxxx xx x xxxxxx xxxxx xxxxx'x xxxx xxxxxxx xxxxxxxxxxxx xxx xxxxxx xx XxxxxxX xxxxx, xxx xxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxxxx xx x XxxxxXxxxxxxx XXX xxxx. Xxx xxxx xxxx, xxx [XxxxxXxxxxxxx xxxxxx (Xxxxxxx YY)](https://msdn.microsoft.com/library/windows/apps/mt617335).
-
-## Xxx xxxxxxxxxxxx
+## Hardware preferences (ハードウェアの基本設定)
 
 
-Xxx xxx xxxxx xxxxx xx xxxx xxxxxxx xx xxxxxxxx xx xxx xx xxx xxxxxxxxxxxx xxxxx xx xxxx xxx. Xxxx xxx xxxxxx xxx xxx xxxx xxx xx xxxxxxxxx, xxxxxxx xx xx xxxxxxx xx xxxxxxx xxxxxxxxx, xx xxx xxxxxxxxx xxx xxx xx.
+このセクションには、アプリを正常に実行して操作するために特定のハードウェア機能が必要かどうかを指定するオプションがあります。
 
-Xxx xxxx xxxx, xxx [Xxx xxxxxxxxxxxx](app-declarations.md).
+指定した場合、Windows ストアは、ユーザーのデバイスが選択したハードウェア機能をサポートしているか検出を試みます。 サポートしていないことを検出した場合、ハードウェアの基本設定が宣言されているアプリをダウンロードしようとしていることをユーザーに通知する警告が表示されます。 Windows 10 デバイスのユーザーの場合、ストアのアプリの内容の **[ハードウェア要件]** セクションに選択された機能も一覧表示されます。
+
+これによって該当するハードウェアを持っていないデバイスへのアプリのダウンロードができなくなることはありませんが、それらのデバイスではアプリの評価をしたりレビューを書いたりすることはできません。
+
+> **重要**  **タッチ スクリーン**を除いて、これらの警告は選択した機能を備えていない Windows 10 デバイスのユーザーにのみ表示されます。
+
+ここでの選択に加えて、指定したハードウェアについての実行時のチェックをアプリに追加することをお勧めします。これは、選択した機能がユーザーのデバイスにないことをストアが常に検出できるとは限らず、また、警告が表示されていてもユーザーはアプリをダウンロードできるためです。
+
+> **ヒント**  メモリや DirectX レベルの最小要件を満たしていないデバイスに UWP アプリがダウンロードされないようにするには、StoreManifest XML ファイルで最小要件を指定します。 詳しくは、「[StoreManifest のスキーマ (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335)」をご覧ください。
+
+## アプリの宣言
+
+
+アプリにいずれかの宣言を適用するかどうかを指定するには、このセクションのチェック ボックスを使います。 これは、アプリがどのように表示されるか、特定のユーザーに提供されるかどうか、またはユーザーがアプリをどのように使うことができるかに影響を与える可能性があります。
+
+詳しくは、「[アプリの宣言](app-declarations.md)」をご覧ください。
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,32 +1,36 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxxxxx xx xx xx xxxxxxx xxx xx xxxx xxxx xx xxxx xxxxx xxxx, xxx xxxx. Xx xxxx xxxxx xxxxx xxx.
-xxxxx: Xxxxx xxxxx xxx
-xx.xxxxxxx: XYYYYXYX-YYYX-YYXY-XYYY-YYXXYYXXYYYY
+Description: 自分の他のアプリで、自分のアプリの 1 つを宣伝する広告を無料で作成することができます。 これを「自社広告」と呼びます。
+title: 自社広告について
+ms.assetid: C6507C8B-351B-49E7-A194-35AB05BC3358
 ---
 
-# Xxxxx xxxxx xxx
+# 自社広告について
 
 
-Xxx xxx xxxxxx xx xx xx xxxxxxx xxx xx xxxx xxxx xx xxxx xxxxx xxxx, xxx xxxx. Xx xxxx xxxxx *xxxxx xxx*.
+自分の他のアプリで、自分のアプリの 1 つを宣伝する広告を無料で作成することができます。 これを「*自社広告*」と呼びます。
 
-Xx xxx xx x xxxxx xx, xxxxxx **Xxxxx** xx xxx **Xxxxxxxx xxxx** xxxx xxx [xxxxxx xx xx xxxxxxxx](create-an-ad-campaign-for-your-app.md). Xxx xx xxxx xxxxxxxxxxxxx xx xxxxxxxx xx xxxxxx xx xxx xxx xx xxxxx xxxx xxxxx xxx xxxxxxxxx xxxxxxxx:
+自社広告を設定するには、[広告キャンペーンの作成時](create-an-ad-campaign-for-your-app.md) に、**[キャンペーンの種類]** として **[House] (自社)** を選びます。 広告は、次の条件を満たしている自分のすべてのアプリで、自動的に表示対象になります。
 
--   Xxx xxx xxxx xx xxx xxx xxxx xxxxxx xxxx xx xxx xxxxxxxxxx xxx.
--   Xxx xxx xxxx xxxx xx xxxxx xxx xx xxxx xxx xx.
+-   アプリは、宣伝されているアプリと同じデバイスの種類である必要があります。
+-   アプリには、少なくとも 1 つの広告ユニットが設定されている必要があります。
 
-Xxxx x xxxxx xx xxx Xxx X xxxxxxx xx Xxx X, xxx xxxx xxx xx xxxxxxx xxx xxx xxxxxxxxxx, xxx xxxx xxx xxxxxxx xxxxxxx xxx xxxxxxxxxx xxx xx xx xxxx Xxx X xx xxxx. Xxxx xxx xxxx xxxxxxxx xxxx xxxxx xxx xx xxxxxx xx xxxx xx xxxxx.
+アプリ A の自社広告がアプリ B に表示されても、インプレッションに対して請求されたり、アプリ B 広告ユニットでの広告表示による収益を得たりすることはありません。 有料広告は、自分の広告ユニットで表示される自社広告よりも優先順位が高くなります。
 
-> **Xxxx**  Xx xxxxxxxxxx xxx xxxx xxxx xxx xxx xxxxx xxxxx xx x xxxxxxx xx xxxx xxxxx xxx xxx.
+> **注**  個別のエンド ユーザーに対して、特定の自社広告が 1 日あたり最大 5 回表示されます。
 
  
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
 
-* [Xxxxxx xx xx xxxxxxxx xxx xxxx xxx](create-an-ad-campaign-for-your-app.md)
-* [Xxxxxxxx xxxx xx xxxxxxxx](managing-your-ad-campaign.md)
-* [Xxx xxxxxxx xxx xxxxxx](app-install-ads-reports.md)
-* [Xxxxxx xxxxxxxxx](common-questions.md)
+* [アプリ向けの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
+* [広告キャンペーンの管理](managing-your-ad-campaign.md)
+* [アプリのインストールの広告レポート](app-install-ads-reports.md)
+* [よく寄せられる質問](common-questions.md)
+
+
 
 
 <!--HONumber=Mar16_HO1-->
+
+

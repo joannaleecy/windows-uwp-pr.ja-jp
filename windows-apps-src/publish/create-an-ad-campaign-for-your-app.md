@@ -1,82 +1,83 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxxxxx xx xx xxxxxxxx xxxxx xxx Xxx Xxxxxx xxxxxxxxx xx xxxx xxxxxxx xxxx xxx xxx xxxx xxxx xxx'x xxxx xxxx.
-xxxxx: Xxxxxx xx xx xxxxxxxx xxx xxxx xxx
-xx.xxxxxxx: YYXYYYYY-YYXY-YYYY-XXYX-YXXXYYYXYYYY
+Description: You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base.
+title: Create an ad campaign for your app
+ms.assetid: 10D94929-92C4-4379-AA5F-6FEF879F2463
 ---
 
-# Xxxxxx xx xx xxxxxxxx xxx xxxx xxx
+# Create an ad campaign for your app
 
 
-Xxx xxx xxxxxx xx xx xxxxxxxx xxxxx xxx Xxx Xxxxxx xxxxxxxxx xx xxxx xxxxxxx xxxx xxx xxx xxxx xxxx xxx'x xxxx xxxx. Xxxx xxx xxxxxx xx xx xxxxxxxx, xxxxx xxxx xx xxx Xxxxxxx Xxxxx xxxx xxx xxx xxx xxxx xxx. Xx xxxxxxx, xx xxxx xxxxxx xxx xxxxxx xxxxxxxx xxx xxxx xxx xxxxx xx xxx xxxxxxxx xxx xxxx xxx xx xxx Xxx Xxxxxx xxxxxxxxx, xxx xxx xxx xxxxxxxxxx xxxxxx xxxx xxx xxxxxxxx. Xxx xxx xxxx xxx x xxxxxxx xxx xx xx xxxxxxxxx xx xxxxxx xxxx xxx xx xxxxxxx. Xxx xxxx xxxxxxx xxxxx xx xxxxxxxxx, xxx [Xxxxxx xxxxxxxxx xxxxx xx xxxxxxxxx](common-questions.md).
+You can create an ad campaign using the Dev Center dashboard to help promote your app and grow your app's user base. By default, we will choose the target audience for your ads based on the settings for your app in the Dev Center dashboard, but you can optionally define your own audience. You can also use a default set of ad templates or upload your own ad designs. For more details about ad campaigns, see [Common questions about ad campaigns](common-questions.md).
 
-> **Xxxx**  Xxx xxx xxxxxx xx xxxxxxxxx xxxx xxx xxxx xxxx xxxx xxxxxx xxx xxxxx xxxxxxxxxx xxxxx xx xxx [xxx xxxxxxxxxxxxx xxxxxxx](the-app-certification-process.md).
+> **Note**  You can create ad campaigns only for apps that have passed the final publishing phase of the [app certification process](the-app-certification-process.md).
 
- 
+Here's how to create an ad campaign to promote your app.
 
-Xxxx'x xxx xx xxxxxx xx xx xxxxxxxx xx xxxxxxx xxxx xxx.
+1.  From the left navigation menu on your app's page in the Dev Center dashboard, click **Monetization** &gt; **Promote your app**.
+2.  Do one of the following:
 
-1.  Xxxx xxx xxxx xxxxxxxxxx xxxx xx xxxx xxx'x xxxx xx xxx Xxx Xxxxxx xxxxxxxxx, xxxxx **Xxxxxxxxxxxx** &xx; **Xxxxxxx xxxx xxx**.
-2.  Xx xxx xx xxx xxxxxxxxx:
+    -   If you have not yet created an ad campaign for this app, the **Promote your app** page displays information about the benefits of ad campaigns. Click **Get started** or **Create an ad campaign**.
+    -   If you have already created an ad campaign for this app, the **Promote your app** page lists your existing ad campaigns. Click **New campaign**.
 
-    -   Xx xxx xxxx xxx xxx xxxxxxx xx xx xxxxxxxx xxx xxxx xxx, xxx **Xxxxxxx xxxx xxx** xxxx xxxxxxxx xxxxxxxxxxx xxxxx xxx xxxxxxxx xx xx xxxxxxxxx. Xxxxx **Xxx xxxxxxx** xx **Xxxxxx xx xx xxxxxxxx**.
-    -   Xx xxx xxxx xxxxxxx xxxxxxx xx xx xxxxxxxx xxx xxxx xxx, xxx **Xxxxxxx xxxx xxx** xxxx xxxxx xxxx xxxxxxxx xx xxxxxxxxx. Xxxxx **Xxx xxxxxxxx**.
+3.  On the **New campaign** page, define the overall settings for this campaign in the **Campaign details** section.
+    -   Name your ad campaign in the **Campaign name** field.
+    -   Under **Campaign type**, choose one of these options:
+        -   **Paid ads**: These ads will run in any app that matches your app’s device and category.
+        -   **Free house ads**: These ads will only run in your apps (that match the advertised app’s device). House ads are free of charge. For more information, see [About house ads](about-house-ads.md).
+        -   **Free community ads**: These ads will run in apps published by other developers who also create community ad campaigns. Before you can select this option, you must first check the **Show community ads in my app** box in the **Monetize with ads** page of the dashboard. For more information, see [About community ads](about-community-ads.md).
+    - Under **Campaign start date** and **Campaign end date**, choose the start and end dates for the new campaign.
 
-3.  Xx xxx **Xxx xxxxxxxx** xxxx, xxxxxx xxx xxxxxxx xxxxxxxx xxx xxxx xxxxxxxx xx xxx **Xxxxxxxx xxxxxxx** xxxxxxx.
-    -   Xxxx xxxx xx xxxxxxxx xx xxx **Xxxxxxxx xxxx** xxxxx.
-    -   Xxxxx **Xxxxxxxx xxxx**, xxxxxx xxx xx xxxxx xxxxxxx:
-        -   **Xxxx**: Xxxxx xxx xxxx xxx xx xxx xxx xxxx xxxxxxx xxxx xxx’x xxxxxx xxx xxxxxxxx.
-        -   **Xxxxx**: Xxxxx xxx xxxx xxxx xxx xx xxxx xxxx (xxxx xxxxx xxx xxxxxxxxxx xxx’x xxxxxx). Xxxxx xxx xxx xxxx xx xxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxx xxxxx xxx](about-house-ads.md).
+    > **Note**  If your app is not yet published, you will receive an error message on the **New campaign** page. You must wait for your app to be published before you can create an ad campaign for it.
 
-    > **Xxxx**  Xx xxxx xxx xx xxx xxx xxxxxxxxx, xxx xxxx xxxxxxx xx xxxxx xxxxxxx xx xxx **Xxx xxxxxxxx** xxxx. Xxx xxxx xxxx xxx xxxx xxx xx xx xxxxxxxxx xxxxxx xxx xxx xxxxxx xx xx xxxxxxxx xxx xx.
-    
-4.  Xx xxxxxxx, xx xxxx xxxxxx xxx xxxxxxxx xxx xxxx xxx, xxxxx xx xxx xxxxxxxx xxx xxxxxxxx xxxx xxxxxxxx xxx xxx xx xxx Xxx Xxxxxx xxxxxxxxx. Xx xxx xxxxx xxxxxx xxxxxx xxx xxxxxxxx xxx xxxx xxx xxxxxxxx, xxxxxx **Xxxxxx xx xxxxxx xxxxxxxxx** xx xxxxxx xxx **Xxxxxxxx** xxxxxxx. Xx xxx xxxx xx xx xxxx xx xxxxxxx xxxxxxxxx, xxxxxx **Xxxxxx xx xxxx xxxxxxxxx**.
+4.  By default, we will choose the audience for your ads, based on the settings you selected when creating the app in the Dev Center dashboard. If you would rather choose the audience for your ads yourself, select **Switch to manual targeting** to expand the **Audience** section. If you want to go back to default targeting, select **Switch to auto targeting**.
 
-    Xx xxx xxxxxx **Xxxxxx xx xxxxxx xxxxxxxxx**, xxx xxx xxxx xxx xxxxxxxxx xxxxxxxxx xxxxxxxxxxx:
+    If you select **Switch to manual targeting**, you can edit the following targeting information:
 
-    -   Xxxxxx xxx xxxxxxxxx xx xxxxxxx xx xxxxx xxx xxxx xxxxx xxx xx xxxxxx. Xxx xxx xxxxxx xx xx Y. Xxx x xxxx xx xxx xxxxxxxxx xxxxxxxxx xx xxxxxxx, xxx [Xxxxxx xxxxxxxxx](common-questions.md).
-    -   Xxxxxx xxx xxxxxx xxxxx xx xxxxx xxx xxxx xxxxx xxx xx xxxxxx. Xxxx xxx xxxxxx xxxxx xxxxxxxxx xx xxxx xxx xxx xxxxx.
-    -   Xxxxxx xxx xxxxxxxxx xxxxxx. Xxxx xxx xxxxxxxxx xxxxxxx xxxxxxxxx xx xxxx xxx xxx xxxxx.
-    -   Xxxxxx xxx xxxxxx xxx xxx xxxxx xx xxxx xxxxxxx xxxxxxxx.
+    -   Choose the countries or regions in which you want these ads to appear. You can choose up to 5. For a list of the supported countries or regions, see [Common questions](common-questions.md).
+    -   Choose the device types on which you want these ads to appear. Only the device types supported by your app are shown.
+    -   Choose the operating system. Only the operating systems supported by your app are shown.
+    -   Select the gender and age range of your desired audience.
 
-    Xxxx xxxxxxx xxxx xxxxxxxx xx **Xxxxxxxxx Xxxxx** xxxxx. Xxxx xxxxx xxxxx xxx xxxxxxxx xxx xxx xxxxx xxxx xxxx xxxxxxx xxxxxxxxx xxxxxxxxxx xx x xxxxxxxxxx xx xxx Xxxxxxx xx-xxxxxxx xxx xxxxx xx xxx xxxxxxxx xxxxxxx.
+    This section also displays an **Estimated Reach** graph. This graph shows the audience you can reach with your current targeting selections as a percentage of all Windows ad-enabled app users in the selected markets.
 
-5.  Xx xxx **Xx xxxxxx** xxxxxxx, xxxxxx xxx xx xxxxx xxxxxxx:
-    -   **Xxxxxx xx xx**. Xxxxxx xxxx xxxxxx xx xxx xxxx xxx xx xxxxxxx. Xxx xxx xxxxxx xxxxxxxxx xxxxx xxx xxxx xx xxx xxxxxxxxx xx xxxxx. Xxx xxxxx xxxx xxxx xxx xxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx:
-        -   Xxxx xxxx xxxx xx x .xxx xx .xxx xxxx xx xxxx xxxx Y XX.
-        -   Xxxx xx xxxxxxx xxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx xx xxx [Xxxxxxxxx Xxxxxxxx Xxxxxxxxxx Xxxxxx](http://go.microsoft.com/fwlink?LinkId=532595).
-        -   Xxx xxxxxxx xx xxxx xx xxxxxxx xxxx xx xxxxxxxx xx xxx xxx xxx xxx xxxxxxxxx. Xx xxxxxxx xxxx xxx xxx xxxxxxx xx xxx xxx xxxx xxx xx xxxxxxxxxxx xx xxx xx xxxxx xxxx.
-        -   Xxx xxxxxxx xx xxxx xx xxxxxxx xxxxxx xx xxxxxxx xxxxxxx. Xxx xxxxxxx, xxxxxxx xxxxxx xxx xx xxxxxxx, xxxxxxxxx xx xxxxxxxxx.
-    -   **Xxxx xxxxxxxxx xx**. Xxxxxx xxxx xxxxxx xx xxx xxx xxxx x xxxx xx xxxxxxx xxxxxxxxx. Xxx xxxx xxx xxxxxxxxx xxxxxxx xx xxxxxxxxx xxx xxxxxxx xx xxx xxx. Xx xxx xxxx xxxxxxxxxx, xxx xxxxxxxx xx xxxx xxx xxxx xxxxxx xxxxxxxxxxxxx.
-        -   Xxxxxx xxx **Xxxx xx xxx xxxxxx** xxxxxxxx xx xxx xxxx xx xxxx xxx xxx'x xxxxxx. Xx xxxx xxx xx xxxx xx xxx xxx xxxxxxxx xxxxxxx, xxx xxxx xxxx xxxx xxx xxxxxx xx **Xxxx xxxx xx xxx xx xxxx**.
-        -   Xx xxx **Xxxxxxxx** xxxx-xxxx, xxxxxx xxx xxxxxxxx xx xxx xxx. Xxx xxxx xxx xxx Xxxxxxx Xxxxx xxxxx xxx xxxx xxxxxx xxx xxxx xxxx (xx xxxxxxxxx) xxxx xxxx xx xxx xxxxxxxx xxx xxxxxx.
-        -   Xx xxx xx xxxxx xxxx xx xxxx xx xxxx xx, xxxxx xxx xxxx xx xxx **Xxxxxx xxx xxxx** xxxxx.
-            > **Xxxx**  Xxx xxxx xxx xxxxx xxxx xx xxxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx. Xxx xxxxxx xxx xxxx xxxx xx xxxxxxxx xx xxx xxxx xxxx xxx xxxxx xxxx [Xxxx Xxx xxxxxxxx](http://go.microsoft.com/fwlink?LinkId=398341). Xxxxxxx xxxx xxxx xxx xxxxxxxx xx xxxxx xxx xxxxxxxxxx xxxxxxx.
+5.  In the **Ad design** section, choose one of these options:
+    -   **Upload my ad**. Choose this option to use your own ad designs. You can upload different files for each of the available ad sizes. The files must meet the following requirements and guidelines:
+        -   Each file must be a .png or .jpg that is less than 2 MB.
+        -   Your ad designs must meet the requirements specified in the [Microsoft Creative Acceptance Policy](http://go.microsoft.com/fwlink?LinkId=532595).
+        -   The content in your ad designs must be relevant to the app you are promoting. Ad designs that are not related to the app will not be distributed to ads in other apps.
+        -   All content in your ad designs should be clearly legible. For example, content should not be blurred, pixelated or stretched.
+    -   **Auto generated ad**. Choose this option to use ads from a list of default templates. You have the following options to customize the content in the ads. As you make selections, the previews of your ads will update automatically.
+        -   Select the **Show my app rating** checkbox if you want to show the app's rating. If your app is free in all the selected markets, you will also have the option to **Show that my app is free**.
+        -   In the **Language** drop-down, select the language of the ads. The text for the Windows Store badge and your custom tag line text (if specified) will show in the language you select.
+        -   To add an extra line of text to your ad, enter the text in the **Custom tag line** field.
+            > **Note**  The text you enter must be localized into the selected language. The custom tag line will be rejected if the text does not align with [Bing Ads policies](http://go.microsoft.com/fwlink?LinkId=398341). Consult this page for guidance on style and disallowed content.
 
-        -   Xx xxxxxx x xxxxxxxxxx xxxxx xxx xx xxxxx xxx xxxx xxx, xxxxxx **Xxxxxxxxx xx xxxxxx / Xxx xxx xx xxxxx**. Xxx xxxxxxxxx xxxxxx xxx xxx xxxxxx xxx xxxx xxxxxxxxxx xxxx xxxx xxx xx xxx Xxxxx.
+        -   To choose a background color and an image for your ads, expand **Customize ad design / See all ad sizes**. The available images are the images you have associated with your app in the Store.
 
-6.  Xxx xxxxxx xxxx xx xxxxxxxx'x xxxxxxxxx xxxxxxxx xx xxx **Xxxxxx xxx xxxxxxx** xxxxxxx.
-   > **Xxxx**  Xx xxx xxx xxxxxxxx x xxxxx xx xxxxxxxx, xxx **Xxxxxx xxx xxxxxxx** xxxxxxx xxxx xxx xxxxxx, xxxxx xxxxx xxx xxx xxxx xx xxxxxx.
-    
+6.  Now choose your ad campaign's financial settings in the **Budget and payment** section.
+   > **Note**  If you are creating a house campaign or community campaign, the **Budget and payment** section will not appear, since these campaigns are free of charge.
+
     -   Under **Budget**, use the slider to set the amount of money you want to spend each month to run this ad.
 
         The monthly budget is prorated for the month in which the ad campaign is created. In other words, if you create an ad campaign halfway through a calendar month, you will be charged for half of your monthly budget for that month.
 
     -   Set a payment instrument for your ad campaign by clicking **Add new payment instrument** and fill in your account details.
-        **Important**  The country/region of your payment instrument's billing address must match the country/region associated with your Dev Center account.
-        
-7.  Xxxxxxx, xxxxx **Xxxxxx** xx xxxxxxx xxxx xx xxxxxxxx'x xxxxxxxx xxx, xx xx'x x Xxxx xx xxxxxxxx, xxx xxxxxx xxx xxxxxxx xxxxxxxxxxx. Xxxxx **Xxxxxxx** xxx xxxx xxx xxxx xxxxxxxxx xxxxx xxxxxxxxx xx Xxxxxxx xx Xxxxxxx Xxxxx xxxxxxx xxxxxx x xxx xxxxx!
+        > **Important**  The country/region of your payment instrument's billing address must match the country/region associated with your Dev Center account.
+    -   If you have received a coupon from a Microsoft representative to pay for an ad campaign, click **Use a coupon**, enter the coupon code, and click **Apply** to apply the coupon to the campaign.
 
-## Xxxxxxx xxxxxx
+7.  Finally, click **Review** to confirm your ad campaign's settings and, if it's a Paid ad campaign, its budget and payment information. Click **Confirm** and your ads will typically start appearing on Windows or Windows Phone devices within a few hours!
 
-* [Xxxxxxxx xxxx xx xxxxxxxx](managing-your-ad-campaign.md)
-* [Xxxxx xxxxx xxx](about-house-ads.md)
-* [Xxx xxxxxxx xxx xxxxxx](app-install-ads-reports.md)
-* [Xxxxxx xxxxxxxxx xxxxx xx xxxxxxxxx](common-questions.md)
+## Related topics
+
+* [Managing your ad campaign](managing-your-ad-campaign.md)
+* [About house ads](about-house-ads.md)
+* [App install ads report](app-install-ads-reports.md)
+* [Common questions about ad campaigns](common-questions.md)
  
 
  
 
 
+<!--HONumber=Mar16_HO5-->
 
 
-<!--HONumber=Mar16_HO1-->

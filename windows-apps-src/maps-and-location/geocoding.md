@@ -1,40 +1,46 @@
 ---
-xxxxx: Xxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxx
-xxxxxxxxxxx: Xxxxxxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxxx (xxxxxxxxx) xxx xxxxxxx xxxxxxxxxx xxxxxxxxx xx xxxxxxxxx (xxxxxxx xxxxxxxxx) xx xxxxxxx xxx xxxxxxx xx xxx XxxXxxxxxxxXxxxxx xxxxx xx xxx Xxxxxxx.Xxxxxxxx.Xxxx xxxxxxxxx.
-xx.xxxxxxx: XYYYXXYY-YXYX-YYXX-YYYX-YXYYYYYYYYXY
+title: ジオコーディングと逆ジオコーディングの実行
+description: 住所から地理的な位置への変換 (ジオコーディング) や地理的な位置から住所への変換 (逆ジオコーディング) を行うには、Windows.Services.Maps 名前空間の MapLocationFinder クラスのメソッドを呼び出します。
+ms.assetid: B912BE80-3E1D-43BB-918F-7A43327597D2
 ---
 
-# Xxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxx
+# ジオコーディングと逆ジオコーディングの実行
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xxxxxxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxxx (xxxxxxxxx) xxx xxxxxxx xxxxxxxxxx xxxxxxxxx xx xxxxxxxxx (xxxxxxx xxxxxxxxx) xx xxxxxxx xxx xxxxxxx xx xxx [**XxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627550) xxxxx xx xxx [**Xxxxxxx.Xxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn636979) xxxxxxxxx.
+住所から地理的な位置への変換 (ジオコーディング) や地理的な位置から住所への変換 (逆ジオコーディング) を行うには、[**Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間の [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスのメソッドを呼び出します。
 
-**Xxx** Xx xxxxx xxxx xxxxx xxxxx xxxx xx xxxx xxx, xxxxxxxx xxx xxxxxxxxx xxxxxx xxxx xxx [Xxxxxxx-xxxxxxxxx-xxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=619979) xx XxxXxx.
+**ヒント:** アプリで地図を使う方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードしてください。
 
--   [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-Xxxx'x xxx xxx xxxxxxx xxx xxxxxxxxx xxx xxxxxxx xxxxxxxxx xxx xxxxxxx:
+ジオコーディングや逆ジオコーディング用のクラスがどのように関連するかを次に示します。
 
--   Xxx [**XxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627550) xxxxx xxx xxxxxxx xxxx xx xxxxxxxxx ([**XxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636925)) xxx xxxxxxx xxxxxxxxx ([**XxxxXxxxxxxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636928)).
--   Xxxxx xxxxxxx xxxxxx x [**XxxXxxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627551).
--   Xxx [**XxxXxxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627551) xxxxxxxx x xxxxxxxxxx xx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627549) xxxxxxx. Xxxxxx xxxx xxxxxxxxxx xxxxxxx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627552) xxxxxxxx xx xxx **XxxXxxxxxxxXxxxxxXxxxxx**.
--   Xxxx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627549) xxxxxx xxxxxxxx x [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627533) xxxxxx. Xxxxxx xxxx xxxxxx xxxxxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636929) xxxxxxxx xx xxxx **XxxXxxxxxxx**.
+-   [
+            **MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスには、ジオコーディング ([**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)) と逆ジオコーディング ([**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)) を実行するメソッドがあります。
+-   これらのメソッドは、[**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) を返します。
+-   [
+            **MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) には、[**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトのコレクションが含まれています。 [
+            **MapLocationFinderResult** の **Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) プロパティを通じてこのコレクションにアクセスします。
+-   各 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトには [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) オブジェクトが含まれています。 各 [**MapLocation** の **Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) プロパティを通じてこのオブジェクトにアクセスします。
 
-**Xxxxxxxxx**  Xxx xxxx xxxxxxx x xxxx xxxxxxxxxxxxxx xxx xxxxxx xxx xxx xxx xxx xxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxx x xxxx xxxxxxxxxxxxxx xxx](authentication-key.md).
+**重要:** マップ サービスを使用する前に、マップ認証キーを指定する必要があります。 詳しくは、「[マップ認証キーの要求](authentication-key.md)」をご覧ください。
 
  
 
-## Xxx x xxxxxxxx (Xxxxxxx)
+## 位置情報の取得 (ジオコーディング)
 
 
-Xxxxxxx xx xxxxxxx xx x xxxxx xxxx xx x xxxxxxxxxx xxxxxxxx (xxxxxxxxx) xx xxxxxxxxxx xxx xxxxxxxxx xxxxx.
+住所や地名を地理的な位置に変換する (ジオコーディング) には、次に示している手順を実行します。
 
-1.  Xxxx xxx xx xxx xxxxxxxxx xx xxx [**XxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636925) xxxxxx xx xxx [**XxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627550) xxxxx.
-2.  Xxx [**XxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636925) xxxxxx xxxxxxx x [**XxxXxxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627551) xxxxxx xxxx xxxxxxxx x xxxxxxxxxx xx xxxxxxxx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627549) xxxxxxx.
-3.  Xxxxxx xxxx xxxxxxxxxx xxxxxxx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627552) xxxxxxxx xx xxx [**XxxXxxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627551).
+1.  [
+            **MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスの [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) メソッドのいずれかのオーバーロードを呼び出します。
+2.  [
+            **FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925) メソッドは、一致する [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトのコレクションを含む [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) オブジェクトを返します。
+3.  [
+            **MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) の [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) プロパティを通じてこのコレクションにアクセスします。
 
 ```csharp
 using Windows.Services.Maps;
@@ -70,21 +76,24 @@ private async void geocodeButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Xxxx xxxx xxxxxxxx xxx xxxxxxxxx xxxxxxx xx xxx `tbOutputText` xxxxxxx.
+このコードでは、`tbOutputText` テキスト ボックスに次の結果が表示されます。
 
 ``` syntax
 result = (47.6406099647284,-122.129339994863)
 ```
 
-## Xxx xx xxxxxxx (xxxxxxx xxxxxxx)
+## 住所の取得 (逆ジオコーディング)
 
 
-Xxxxxxx x xxxxxxxxxx xxxxxxxx xx xx xxxxxxx (xxxxxxx xxxxxxxxx) xx xxxxxxxxxx xxx xxxxxxxxx xxxxx.
+地理的な位置を住所に変換する (逆ジオコーディング) には、次に示している手順を実行します。
 
-1.  Xxxx xxx [**XxxxXxxxxxxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636928) xxxxxx xx xxx [**XxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627550) xxxxx.
-2.  Xxx [**XxxxXxxxxxxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636928) xxxxxx xxxxxxx x [**XxxXxxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627551) xxxxxx xxxx xxxxxxxx x xxxxxxxxxx xx xxxxxxxx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627549) xxxxxxx.
-3.  Xxxxxx xxxx xxxxxxxxxx xxxxxxx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627552) xxxxxxxx xx xxx [**XxxXxxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627551).
-4.  Xxxxxx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627533) xxxxxx xxxxxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636929) xxxxxxxx xx xxxx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627549).
+1.  [
+            **MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスの [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) メソッドを呼び出します。
+2.  [
+            **FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928) メソッドは、一致する [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) オブジェクトのコレクションを含む [**MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) オブジェクトを返します。
+3.  [
+            **MapLocationFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn627551) の [**Locations**](https://msdn.microsoft.com/library/windows/apps/dn627552) プロパティを通じてこのコレクションにアクセスします。
+4.  各 [**MapLocation**](https://msdn.microsoft.com/library/windows/apps/dn627549) の [**Address**](https://msdn.microsoft.com/library/windows/apps/dn636929) プロパティを通じて [**MapAddress**](https://msdn.microsoft.com/library/windows/apps/dn627533) オブジェクトにアクセスします。
 
 ```csharp
 using Windows.Services.Maps;
@@ -112,22 +121,26 @@ private async void reverseGeocodeButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Xxxx xxxx xxxxxxxx xxx xxxxxxxxx xxxxxxx xx xxx `tbOutputText` xxxxxxx.
+このコードでは、`tbOutputText` テキスト ボックスに次の結果が表示されます。
 
 ``` syntax
 town = Redmond
 ```
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxx Xxxx Xxxxxxxxx Xxxxxx](https://www.bingmapsportal.com/)
-* [XXX xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Xxxxxx xxxxxxxxxx xxx xxxx](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Xxxxx YYYY xxxxx: Xxxxxxxxxx Xxxx xxx Xxxxxxxx Xxxxxx Xxxxx, Xxxxxx, xxx XX xx Xxxx Xxxxxxx Xxxx](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [XXX xxxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619982)
-* [**XxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn627550)
-* [**XxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636925)
-* [**XxxxXxxxxxxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636928)
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [地図の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 のビデオ: Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP の交通情報アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [**MapLocationFinder**](https://msdn.microsoft.com/library/windows/apps/dn627550)
+* [**FindLocationsAsync**](https://msdn.microsoft.com/library/windows/apps/dn636925)
+* [**FindLocationsAtAsync**](https://msdn.microsoft.com/library/windows/apps/dn636928)
+
+
 
 
 <!--HONumber=Mar16_HO1-->
+
+

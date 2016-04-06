@@ -1,50 +1,54 @@
 ---
-xx.xxxxxxx: YYXYXYYY-XYXY-YXYY-YXYX-YXYYYYXYXXYY
-xxxxxxxxxxx: Xxxxxxxxx Xxxxxx Xxxxxx xx xx Xxxxxxx xx Xxxxx xx xx xXX xxx Xxx XX. Xx xxxx xxxxxxxxxxx, xx xxxx xxx xxx xxxxxxxxxxx xxxxx Xxxxxx Xxxxxx.
-xxxxx: Xxxxxxxx x xxxxxxx xx Xxxxxx Xxxxxx
+ms.assetid: 08C8F359-E8B6-4A45-8F4B-8A1962F0CE38
+description: Windows にとっての Microsoft Visual Studio は、iOS や Mac OS にとっての Xcode に相当します。 このチュートリアルでは、Visual Studio の使い方に慣れる訓練を行います。
+title: Visual Studio でのプロジェクトの作成
 ---
 
-# Xxxxxxx xxxxxxx: Xxxxxxxx x xxxxxxx
+# はじめに: プロジェクトの作成
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-## Xxxxxxxx x xxxxxxx
+## プロジェクトの作成
 
-Xxxxxxxxx Xxxxxx Xxxxxx xx xx Xxxxxxx xx Xxxxx xx xx xXX xxx Xxx XX. Xx xxxx xxxxxxxxxxx, xx xxxx xxx xxx xxxxxxxxxxx xxxxx Xxxxxx Xxxxxx. Xx xxxxx xxx xxx xxxxxxxx xxxxxx xxx'xx xxxx xx xxxx xx xxx xxxxxxx. Xxxx xxxx xxx xxxxxx xx xxx, xxx'xx xxxxxx xxxxx xxxxxxx xx xxxxx.
+Windows にとっての Microsoft Visual Studio は、iOS や Mac OS にとっての Xcode に相当します。 このチュートリアルでは、Visual Studio の使い方に慣れる訓練を行います。 このチュートリアルを通して、開始にあたって知っておく必要がある最も基本的な事柄を確認できます。 アプリを作るたびに、この手順に従うことになります。
 
-Xxx xxxxxxxxx xxxxx xxxxxxxx Xxxxx xxx Xxxxxx Xxxxxx.
+次のビデオでは、Xcode と Visual Studio を比較しています。
 
-<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/5b7bd91f-6a2f-40b6-9b19-eb2994931d0a/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">Xxx xxx xxxxxx - Xxxxxxxxx Xxxxx xx Xxxxxx Xxxxxx</iframe>
+<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/5b7bd91f-6a2f-40b6-9b19-eb2994931d0a/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One Dev Minute - Xcode と Visual Studio の比較</iframe>
 
-Xxxxxxxx xx xxx xxx Xxxxxxx YY (xxxx xxxxxxxx xxxxxxxx xx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx) xx xxxxxx xxxx xxxxxxxx xx xXX xxx xxxxx Xxxxxxxxxx. Xxx Xxxxxxx YY xxx xx xxxxx xxxxxxxxxxx xxxx xxxxxxx xxxxx, xxxx xxxx xxxxxxxxxx x xxxxxxxxx xxxx xx xxx xxxx xxxxxxxxx, xxxx x xxx xxxx. Xxxx xxxx xxx xxx xxxxxxxxxx xxxxxx xxxxx: xxx xx xxxxx xxx xxxx xxxxxxxxx xxxxxxx xxxxxx xxxxxxxxxxxxxxxx xx xxxxxxxx, xxxxxx xx [XXXX xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185595) xxxxxx, xxx xxx xxxx xxxxxxxx xxx xxxxxx xxxx. Xx xxxx xxxx xxxxxxxxx xxxx xxxx xxx, xxxx xxxx xxxxxxxx xxxxxxx xxxxx xxxxx. Xx xxxx xxxxxxxxxxx, xxx xxxx xxxxxx xx xxx xxxx xxx xxxxx.
+Windows 10 用のアプリ (正式には、ユニバーサル Windows プラットフォーム (UWP) アプリと呼ばれます) の作成は、ストーリーボードを使った iOS アプリの作成に似ています。 Windows 10 アプリは、しばしば複数ページを使って作成され、Web サイトのように各ページにユーザー インターフェイスの異なる部分が含まれています。 各ページには 2 つのソース ファイルが関連付けられています。1 つは [XAML](https://msdn.microsoft.com/library/windows/apps/mt185595) 形式で、プログラムを使うか視覚的に定義されたユーザー インターフェイスを格納したファイル、もう 1 つはソース コードを記述したファイルです。 ユーザーは、アプリとやり取りするときに、これらのページの間を移動します。 このチュートリアルでは、ページを 2 つ持つアプリを作成します。
 
-**Xxxx**  Xx xxxxxxxxx xxxxxxx xx Xxxxxxx YY xxxx xx xxx xxxx xxxx xxx xxxx xxxxxx xxxx, xxx xxx xxxx XXX xxx, xx xxxxxxxxx xx xxx xx xxxxxx xxx xxxxxxxx. Xx xxx xxxx, xxxx xxx xxx xxxxxxx x xxxxxxxxx xXX xxx xxx xXxxxx xxx xXxx, xxx xxx xxxxxxxxx xx xxx-xxxx xxxxx xxxxxxxx xxxx xxx xx xxxxxxx xx, xxx xxxx xxx xxxxxxxxxxx xxxxxx. Xx x xxxxxxx xxx, Xxxxxxx YY xxxx xxx xxxx, xx xxx-xxxx, xxx xxxxxx xxxx xxx xxxxxxx xx. Xxxx x XXX xxx, xxxxx xx xx xxxx xx xxx \#xxxxx'x xx xxxx xxxxxx xxxx xx xxxxxx xxxxx xxxxxx xxxxxxx xxxxxx. Xxxxxxxxxxxx, Xxxxxxx YY xxxx xxxx xxxxxxxxxxxxx xxx xxxxx xxxx xxxxxxxxx xxxxxxxx xxxxxxxxx xx xxx xxxxxx: xxx xxxxxxx, xxxx xxx xxx xxxxxxxxx x xxxx xxxxxx xxxxxxx, xxx xxx xxxxxxx xxxx xxxxxxxxxxxxx xxxx xxx xxxxxxxx xxxxxxxxxxx xxxxxxxxx xx xxxxxxx xx'x xxxxxxx xx x xxxxxxx xx x xxxxx xxxxxx. Xxxx xxxxxx xxxx, xxxxxxx, xxxxxxx xxx xxxx.
+**注**  Windows 10 アプリの重要なポイントは、同じソース コードと同じ API セットがプラットフォームに関係なく利用できることです。 ご存知のように、iPhone や iPad 向けのユニバーサル iOS アプリを作っている場合、実行時にアプリを実行するプラットフォームを決定して、適切なアクションを実行できます。 同様に、Windows 10 アプリは実行されているデバイスを実行時に見分けることができます。 UWP アプリでは、電話とデスクトップのビルドを作成するためにソース コードで \#ifdef を使用する必要はありません。 また、便利なことに、Windows 10 アプリはデバイスの種類に応じてユーザー インターフェイス コントロールをインテリジェントに使用します。たとえば、アプリが日付選択コントロールを参照する場合、コントロールは自動的に表示され、デスクトップと電話のどちらの画面で実行されているかによって異なる動作を実行します。 ただし、ソース コードは変わりません。
 
-Xxx'x xxx xxx xx xxx xxxxxx x Xxxxxxx YY xxx. Xxxxx xx xxxxxxx Xxxxxx Xxxxxx. Xxx xxxxx xxxx xxx xxx xx, Xxxxxx Xxxxxx xxxx xxx xxx xx xxx x xxxxxxxxx xxxxxxx. X xxxxxxxxx xxxxxxx xxxx xxx xxxxxxx xxx xxxx Xxxxxxx Xxxxx xxxx xx xxxx xxxxx xxxxxxxx xxxxxx xxx xxxxxx xxxx xx xxx Xxxxxxx Xxxxx. Xx xxx x xxxxxxx, xxxxxx xxx xx-xxxxxx xxxxxxxxxx xx xxxx xx xxxx x Xxxxxxxxx xxxxxxx. Xx xxx xxx'x xxxx xxx, xxxxx xxx **Xxxx xx** xxxx xx xxx **Xxxxxxxxx Xxxxxxx** xxxxxx xxx, xxx xxxxxx xxx xx-xxxxxx xxxxxxxxxx.
+Windows 10 アプリを作成する方法を見てみましょう。 Visual Studio の実行から始めます。 Visual Studio を初めて起動すると、開発者用ライセンスを取得するように求められます。 開発者用ライセンスでは、Windows ストア アプリを Windows ストアに提出する前にローカル コンピューター上にインストールしてテストできます。 ライセンスを取得するには、画面の指示に従って、Microsoft アカウントを使ってサインインします。 Microsoft アカウントがない場合は、**[開発者用ライセンス]** ダイアログ ボックスの **[新規登録]** リンクをクリックし、画面の指示に従います。
 
-Xxx xxxxxxxxxx, xxxx xxx xxxxx Xxxxx, xxx xxxxx xxxxx xxx xxx xx xxx **Xxxxxxx xx Xxxxx** xxxxxx, xxxxxxx xx xxx xxxxxxxxx xxxxxx.
+Xcode では、初めて起動したときに次のような **[Welcome to Xcode]** (Xcode へようこそ) 画面が表示されます。比較してください。
 
-![xxxxx xxxxxxx xxxxxx](images/ios-to-uwp/ios-to-uwp-xcode-welcome.png)
+![Xcode のようこそ画面](images/ios-to-uwp/ios-to-uwp-xcode-welcome.png)
 
-Xxxxxx Xxxxxx xx xxxx xxxxxxx. Xxx'xx xxx xxx **Xxxxx Xxxx**, xx xxxxx xx xxx xxxxxxxxx xxxxxx.
+Visual Studio もこれに似ています。 次の図に示すように、**[スタート ページ]** が表示されます。
 
-![xxxxxx xxxxxx xxxxx xxxxxx](images/ios-to-uwp/ios-to-uwp-vs-welcome.png)
+![Visual Studio のスタート画面](images/ios-to-uwp/ios-to-uwp-vs-welcome.png)
 
-Xx xxxxxx x xxx xxx, xxxxx xx xxxxxx x xxxxxxx xx xxxxx xxx xx xxx xxxxxxxxx:
+新しいアプリを作るには、次のどちらかの操作を行って、プロジェクトの作成を開始します。
 
--   Xx xxx **Xxxxx** xxxx, xxx **Xxx Xxxxxxx**.
--   Xxx xxx **Xxxx** xxxx, xxx xxxx xxx **Xxx Xxxxxxx**.
+-   **[開始]** 領域で、**[新しいプロジェクト]** をタップします。
+-   **[ファイル]** メニュー、**[新しいプロジェクト]** の順にタップします。
 
-Xxx xxxxxxxxxx, xxxx xxx xxxxxx x xxx xxxxxxx xx Xxxxx, xxx xxx x xxxx xx xxxxxxx xxxxxxxxx xxxx xxxxx xxxxx xx xxx xxxxxxxxx xxxxxx.
+Xcode で新しいプロジェクトを作るときは、次の図に示すようなプロジェクト テンプレートの一覧が表示されます。比較してください。
 
-![xxxxx xxx xxxxxxx xxxxxx xxx](images/ios-to-uwp/ios-to-uwp-xcode-choose-template.png)
+![Xcode のプロジェクトの新規作成ダイアログ ボックス](images/ios-to-uwp/ios-to-uwp-xcode-choose-template.png)
 
-Xx Xxxxxx Xxxxxx, xxxxx xxx xxxx xxxxxxx xxxxxxx xxxxxxxxx xx xxxxxx xxxx, xx xxxxx xx xxx xxxxxxxxx xxxxxx.
+Visual Studio の場合も、次の図に示すように、いくつかのプロジェクト テンプレートから選択できるようになっています。
 
-![xxxxxx xxxxxx xxx xxxxxxx xxxxxx xxx](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png)
-Xxx xxxx xxxxxxxxxxx, xxx **Xxxxxx X#**, xxx xxxx xxx **Xxxxxxx**, **Xxxxxxx Xxxxxxxxx** xxx **Xxxxx Xxx (Xxxxxxx Xxxxxxxxx)**. Xx xxx **Xxxx** xxx, xxxx "XxXxx", xxx xxxx xxx **XX**. Xxxxxx Xxxxxx xxxxxxx xxx xxxx xxxxxxxx xxxx xxxxx xxxxxxx. Xxx, xxx xxx xxxxx xx xxxxxx xxxx xxx xxx xxx xxxx xx xx.
+![Visual Studio の [新しいプロジェクト] ダイアログ ボックス](images/ios-to-uwp/ios-to-uwp-vs-choose-template.png)
+このチュートリアルでは、**[Visual C#]**、**[Windows]**、**[Windows ユニバーサル]**、**[空のアプリケーション (Windows ユニバーサル)]** の順にタップします。 **[名前]** ボックスに「MyApp」と入力し、**[OK]** をタップします。 Visual Studio によって初めてのプロジェクトが作成され、表示されます。 これで、アプリの設計を開始して、コードを追加できるようになりました。
 
-## Xxxx xxxx
+## 次のステップ
 
-[Xxxxxxx xxxxxxx: Xxxxxxxx x xxxxxxxxxxx xxxxxxxx](getting-started-choosing-a-programming-language.md)
+[はじめに: プログラミング言語の選択](getting-started-choosing-a-programming-language.md)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

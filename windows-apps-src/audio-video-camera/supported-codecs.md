@@ -1,28 +1,28 @@
 ---
-xx.xxxxxxx: YYYYXXYX-YXYY-YYYY-XXXY-YXYYYYYYYYYY
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxx xxx xxxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx XXX xxxx.
-xxxxx: Xxxxxxxxx xxxxxx
+ms.assetid: 9347AD7C-3A90-4073-BFF4-9E8237398343
+description: This article lists the audio and video codec and format support for UWP apps.
+title: Supported codecs
 ---
 
-# Xxxxxxxxx xxxxxx
+# Supported codecs
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxxxx xxxxx xxx xxxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx XXX xxxx.
+This article lists the audio and video codec and format support for UWP apps.
 
-Xx xxx xxxxxx xxxxx "X" xxxxxxxxx xxxxxxx xxxxxxx xxx "X" xxxxxxxxx xxxxxxx xxxxxxx.
+In the tables below "D" indicates decoder support and "E" indicates encoder support.
 
-## Xxxxx xxxxx & xxxxxx xxxxxxx
+## Audio codec & format support
 
-Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxxxxx.
+The following tables show the audio codec and format support for each device family.
 
-**Xxxx**  
--   Xxxxx XXX-XX xxxxxxx xx xxxxxxxxx, xxxx xxxxx xx xxx xxxxxxxxx xx Xxxxxx XXXx.
+**Note**  
+-   Where AMR-NB support is indicated, this codec is not supported on Server SKUs.
 
  
 
-### Xxxxxxx
+### Desktop
 
 <table>
 <colgroup>
@@ -42,28 +42,28 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx/Xxxxxxxxx</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX</th>
-<th align="left">XXX</th>
-<th align="left">XXXX</th>
-<th align="left">XXX</th>
-<th align="left">XX-Y</th>
-<th align="left">XXX</th>
-<th align="left">YXX</th>
-<th align="left">XXXX</th>
-<th align="left">XXX</th>
+<th align="left">Codec/Container</th>
+<th align="left">MPEG-4</th>
+<th align="left">MPEG-3</th>
+<th align="left">MPEG-2</th>
+<th align="left">ADTS</th>
+<th align="left">ASF</th>
+<th align="left">RIFF</th>
+<th align="left">AVI</th>
+<th align="left">AC-3</th>
+<th align="left">AMR</th>
+<th align="left">3GP</th>
+<th align="left">FLAC</th>
+<th align="left">WAV</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">XX-XXX xY / XXX+</td>
-<td align="left">X/X</td>
+<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -74,11 +74,11 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XX-XXX xY / xXXX+</td>
-<td align="left">X/X</td>
+<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -89,11 +89,11 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXX-XX</td>
-<td align="left">X/X</td>
+<td align="left">AAC-LC</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -104,160 +104,40 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXY</td>
-<td align="left">X/X</td>
+<td align="left">AC3</td>
+<td align="left">D/E</td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXXY / XXY</td>
-<td align="left">X</td>
+<td align="left">EAC3 / EC3</td>
+<td align="left">D</td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXXX</td>
-<td align="left">X/X</td>
+<td align="left">ALAC</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">XXX-XX</td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">X.YYY (X-Xxx, µ-xxx)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="even">
-<td align="left">XXX Y.YY</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="odd">
-<td align="left">XXX XXXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="even">
-<td align="left">XXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-</tr>
-<tr class="odd">
-<td align="left">XXY</td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXXX-Y/Y</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -269,7 +149,8 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XX XXXXX</td>
+<td align="left">AMR-NB</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -277,19 +158,108 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
 </tr>
 <tr class="even">
-<td align="left">XXX Y/Y/Y</td>
+<td align="left">FLAC</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X/X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">G.711 (A-Law, µ-law)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">GSM 6.10</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="odd">
+<td align="left">IMA ADPCM</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">LPCM</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">MP3</td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">MPEG-1/2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -299,12 +269,42 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXX Xxx</td>
+<td align="left">MS ADPCM</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X/X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">WMA 1/2/3</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">WMA Pro</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -314,12 +314,12 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXX Xxxxx</td>
+<td align="left">WMA Voice</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X/X</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -333,7 +333,7 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 
  
 
-### Xxxxxx
+### Mobile
 
 <table>
 <colgroup>
@@ -353,28 +353,28 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx/Xxxxxxxxx</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX</th>
-<th align="left">XXX</th>
-<th align="left">XXXX</th>
-<th align="left">XXX</th>
-<th align="left">XX-Y</th>
-<th align="left">XXX</th>
-<th align="left">YXX</th>
-<th align="left">XXXX</th>
-<th align="left">XXX</th>
+<th align="left">Codec/Container</th>
+<th align="left">MPEG-4</th>
+<th align="left">MPEG-3</th>
+<th align="left">MPEG-2</th>
+<th align="left">ADTS</th>
+<th align="left">ASF</th>
+<th align="left">RIFF</th>
+<th align="left">AVI</th>
+<th align="left">AC-3</th>
+<th align="left">AMR</th>
+<th align="left">3GP</th>
+<th align="left">FLAC</th>
+<th align="left">WAV</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">XX-XXX xY / XXX+</td>
-<td align="left">X</td>
+<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -385,11 +385,11 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XX-XXX xY / xXXX+</td>
-<td align="left">X</td>
+<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -400,11 +400,11 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXX-XX</td>
-<td align="left">X/X</td>
+<td align="left">AAC-LC</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -415,22 +415,22 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXY</td>
-<td align="left">X, Xxxx xx Xxxxx Xxxx, YYY, YYY, YYYY</td>
+<td align="left">AC3</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
 <td align="left"></td>
-<td align="left">X, Xxxx xx Xxxxx Xxxx, YYY, YYY, YYYY</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
 <td align="left"></td>
-<td align="left">X, Xxxx xx Xxxxx Xxxx, YYY, YYY, YYYY</td>
-<td align="left">X, Xxxx xx Xxxxx Xxxx, YYY, YYY, YYYY</td>
-<td align="left">X, Xxxx xx Xxxxx Xxxx, YYY, YYY, YYYY</td>
-<td align="left">X, Xxxx xx Xxxxx Xxxx, YYY, YYY, YYYY</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
+<td align="left">D, Only on Lumia Icon, 830, 930, 1520</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXXY / XXY</td>
+<td align="left">EAC3 / EC3</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -445,128 +445,8 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXXX</td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">XXX-XX</td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">X.YYY (X-Xxx, µ-xxx)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="even">
-<td align="left">XXX Y.YY</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="odd">
-<td align="left">XXX XXXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="even">
-<td align="left">XXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-</tr>
-<tr class="odd">
-<td align="left">XXY</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXXX-Y/Y</td>
-<td align="left"></td>
+<td align="left">ALAC</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -580,7 +460,8 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XX XXXXX</td>
+<td align="left">AMR-NB</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -588,19 +469,108 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
 </tr>
 <tr class="even">
-<td align="left">XXX Y/Y/Y</td>
+<td align="left">FLAC</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">G.711 (A-Law, µ-law)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">GSM 6.10</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="odd">
+<td align="left">IMA ADPCM</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">LPCM</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">MP3</td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">MPEG-1/2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -610,12 +580,42 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXX Xxx</td>
+<td align="left">MS ADPCM</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">WMA 1/2/3</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">WMA Pro</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -625,7 +625,7 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXX Xxxxx</td>
+<td align="left">WMA Voice</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -644,7 +644,7 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 
  
 
-### XxX Xxxx (xYY)
+### IoT Core (x86)
 
 <table>
 <colgroup>
@@ -664,28 +664,28 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx/Xxxxxxxxx</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX</th>
-<th align="left">XXX</th>
-<th align="left">XXXX</th>
-<th align="left">XXX</th>
-<th align="left">XX-Y</th>
-<th align="left">XXX</th>
-<th align="left">YXX</th>
-<th align="left">XXXX</th>
-<th align="left">XXX</th>
+<th align="left">Codec/Container</th>
+<th align="left">MPEG-4</th>
+<th align="left">MPEG-3</th>
+<th align="left">MPEG-2</th>
+<th align="left">ADTS</th>
+<th align="left">ASF</th>
+<th align="left">RIFF</th>
+<th align="left">AVI</th>
+<th align="left">AC-3</th>
+<th align="left">AMR</th>
+<th align="left">3GP</th>
+<th align="left">FLAC</th>
+<th align="left">WAV</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">XX-XXX xY / XXX+</td>
-<td align="left">X/X</td>
+<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -696,11 +696,11 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XX-XXX xY / xXXX+</td>
-<td align="left">X/X</td>
+<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -711,11 +711,11 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXX-XX</td>
-<td align="left">X/X</td>
+<td align="left">AAC-LC</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -726,160 +726,40 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXY</td>
-<td align="left">X</td>
+<td align="left">AC3</td>
+<td align="left">D</td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXXY / XXY</td>
-<td align="left">X</td>
+<td align="left">EAC3 / EC3</td>
+<td align="left">D</td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXXX</td>
-<td align="left">X</td>
+<td align="left">ALAC</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">XXX-XX</td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">X.YYY (X-Xxx, µ-xxx)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="even">
-<td align="left">XXX Y.YY</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="odd">
-<td align="left">XXX XXXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="even">
-<td align="left">XXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-</tr>
-<tr class="odd">
-<td align="left">XXY</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXXX-Y/Y</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -891,7 +771,8 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XX XXXXX</td>
+<td align="left">AMR-NB</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -899,19 +780,108 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
 </tr>
 <tr class="even">
-<td align="left">XXX Y/Y/Y</td>
+<td align="left">FLAC</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">G.711 (A-Law, µ-law)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">GSM 6.10</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="odd">
+<td align="left">IMA ADPCM</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">LPCM</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">MP3</td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">MPEG-1/2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -921,12 +891,42 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXX Xxx</td>
+<td align="left">MS ADPCM</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">WMA 1/2/3</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">WMA Pro</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -936,12 +936,12 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXX Xxxxx</td>
+<td align="left">WMA Voice</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -955,7 +955,7 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 
  
 
-### XxX Xxxx (XXX)
+### IoT Core (ARM)
 
 <table>
 <colgroup>
@@ -975,28 +975,28 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx/Xxxxxxxxx</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX</th>
-<th align="left">XXX</th>
-<th align="left">XXXX</th>
-<th align="left">XXX</th>
-<th align="left">XX-Y</th>
-<th align="left">XXX</th>
-<th align="left">YXX</th>
-<th align="left">XXXX</th>
-<th align="left">XXX</th>
+<th align="left">Codec/Container</th>
+<th align="left">MPEG-4</th>
+<th align="left">MPEG-3</th>
+<th align="left">MPEG-2</th>
+<th align="left">ADTS</th>
+<th align="left">ASF</th>
+<th align="left">RIFF</th>
+<th align="left">AVI</th>
+<th align="left">AC-3</th>
+<th align="left">AMR</th>
+<th align="left">3GP</th>
+<th align="left">FLAC</th>
+<th align="left">WAV</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">XX-XXX xY / XXX+</td>
-<td align="left">X/X</td>
+<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1007,11 +1007,11 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XX-XXX xY / xXXX+</td>
-<td align="left">X/X</td>
+<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1022,41 +1022,11 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXX-XX</td>
-<td align="left">X/X</td>
+<td align="left">AAC-LC</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXY</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">XXXY / XXY</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1067,8 +1037,8 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXXX</td>
-<td align="left">X</td>
+<td align="left">AC3</td>
+<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1082,99 +1052,9 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXX-XX</td>
-<td align="left">X</td>
+<td align="left">EAC3 / EC3</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">X.YYY (X-Xxx, µ-xxx)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="even">
-<td align="left">XXX Y.YY</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="odd">
-<td align="left">XXX XXXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="even">
-<td align="left">XXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-</tr>
-<tr class="odd">
-<td align="left">XXY</td>
-<td align="left"></td>
-<td align="left">X</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1187,10 +1067,10 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXXX-Y/Y</td>
+<td align="left">ALAC</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1202,7 +1082,8 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XX XXXXX</td>
+<td align="left">AMR-NB</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1210,19 +1091,108 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
 </tr>
 <tr class="even">
-<td align="left">XXX Y/Y/Y</td>
+<td align="left">FLAC</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">G.711 (A-Law, µ-law)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">GSM 6.10</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="odd">
+<td align="left">IMA ADPCM</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">LPCM</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">MP3</td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">MPEG-1/2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1232,12 +1202,42 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXX Xxx</td>
+<td align="left">MS ADPCM</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">WMA 1/2/3</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">WMA Pro</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1247,12 +1247,12 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXX Xxxxx</td>
+<td align="left">WMA Voice</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1266,7 +1266,7 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 
  
 
-### XXxx
+### XBox
 
 <table>
 <colgroup>
@@ -1286,28 +1286,28 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx/Xxxxxxxxx</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX</th>
-<th align="left">XXX</th>
-<th align="left">XXXX</th>
-<th align="left">XXX</th>
-<th align="left">XX-Y</th>
-<th align="left">XXX</th>
-<th align="left">YXX</th>
-<th align="left">XXXX</th>
-<th align="left">XXX</th>
+<th align="left">Codec/Container</th>
+<th align="left">MPEG-4</th>
+<th align="left">MPEG-3</th>
+<th align="left">MPEG-2</th>
+<th align="left">ADTS</th>
+<th align="left">ASF</th>
+<th align="left">RIFF</th>
+<th align="left">AVI</th>
+<th align="left">AC-3</th>
+<th align="left">AMR</th>
+<th align="left">3GP</th>
+<th align="left">FLAC</th>
+<th align="left">WAV</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">XX-XXX xY / XXX+</td>
-<td align="left">X</td>
+<td align="left">HE-AAC v1 / AAC+</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1318,11 +1318,11 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XX-XXX xY / xXXX+</td>
-<td align="left">X</td>
+<td align="left">HE-AAC v2 / eAAC+</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1333,11 +1333,11 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXX-XX</td>
-<td align="left">X/X</td>
+<td align="left">AAC-LC</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1348,160 +1348,40 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXY</td>
-<td align="left">X</td>
+<td align="left">AC3</td>
+<td align="left">D</td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXXY / XXY</td>
-<td align="left">X</td>
+<td align="left">EAC3 / EC3</td>
+<td align="left">D</td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXXX</td>
-<td align="left">X</td>
+<td align="left">ALAC</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">XXX-XX</td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">X.YYY (X-Xxx, µ-xxx)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="even">
-<td align="left">XXX Y.YY</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="odd">
-<td align="left">XXX XXXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="even">
-<td align="left">XXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-</tr>
-<tr class="odd">
-<td align="left">XXY</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXXX-Y/Y</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1513,7 +1393,8 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XX XXXXX</td>
+<td align="left">AMR-NB</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1521,19 +1402,108 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
 </tr>
 <tr class="even">
-<td align="left">XXX Y/Y/Y</td>
+<td align="left">FLAC</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">G.711 (A-Law, µ-law)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">GSM 6.10</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="odd">
+<td align="left">IMA ADPCM</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">LPCM</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+</tr>
+<tr class="odd">
+<td align="left">MP3</td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">MPEG-1/2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1543,12 +1513,42 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXX Xxx</td>
+<td align="left">MS ADPCM</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+</tr>
+<tr class="even">
+<td align="left">WMA 1/2/3</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">WMA Pro</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1558,12 +1558,12 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXX Xxxxx</td>
+<td align="left">WMA Voice</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1577,236 +1577,17 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 
  
 
-## Xxxxx xxxxx & xxxxxx xxxxxxx
+## Video codec & format support
 
-Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxxxxx.
+The following tables show the video codec and format support for each device family.
 
-**Xxxx**  
--   Xxxxx X.YYY xxxxxxx xx xxxxxxxxx, xx xx xxx xxxxxxxxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxx xxx xxxxxx xxxxxx.
--   Xxxxx XXXX-Y/XXXX-Y xxxxxxx xx xxxxxxxxx, xx xx xxxx xxxxxxxxx xxxx xxx xxxxxxxxxxxx xx xxx xxxxxxxx Xxxxxxxxx XXX Xxxxxxxxx Xxxxxxx xxx.
-
- 
-
-### Xxxxxxx
-
-<table>
-<colgroup>
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-<col width="7%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th align="left">Xxxxx/Xxxxxxxxx</th>
-<th align="left">XXXXXX</th>
-<th align="left">xXXY</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX-Y XX</th>
-<th align="left">XXXX-Y XX</th>
-<th align="left">XXXX-Y</th>
-<th align="left">YXXX</th>
-<th align="left">YXXXY</th>
-<th align="left">XXXXX</th>
-<th align="left">XXX</th>
-<th align="left">XXX</th>
-<th align="left">XXX</th>
-<th align="left">XX</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">XXXX-Y</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXXX-Y</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">XXXX-Y (Xxxx Y)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">X.YYY</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">X.YYY</td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">X.YYY</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">XX-Y</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXXY/Y/Y</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">XXXY Xxxxxx</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left">X</td>
-</tr>
-<tr class="odd">
-<td align="left">Xxxxxx XXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-</tbody>
-</table>
+**Note**  
+-   Where H.265 support is indicated, it is not necessarily supported by all devices within the device family.
+-   Where MPEG-2/MPEG-1 support is indicated, it is only supported with the installation of the optional Microsoft DVD Universal Windows app.
 
  
 
-### Xxxxxx
+### Desktop
 
 <table>
 <colgroup>
@@ -1827,41 +1608,76 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx/Xxxxxxxxx</th>
-<th align="left">XXXXXX</th>
-<th align="left">xXXY</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX-Y XX</th>
-<th align="left">XXXX-Y XX</th>
-<th align="left">XXXX-Y</th>
-<th align="left">YXXX</th>
-<th align="left">YXXXY</th>
-<th align="left">XXXXX</th>
-<th align="left">XXX</th>
-<th align="left">XXX</th>
-<th align="left">XXX</th>
-<th align="left">XX</th>
+<th align="left">Codec/Container</th>
+<th align="left">FOURCC</th>
+<th align="left">fMP4</th>
+<th align="left">MPEG-4</th>
+<th align="left">MPEG-2 PS</th>
+<th align="left">MPEG-2 TS</th>
+<th align="left">MPEG-1</th>
+<th align="left">3GPP</th>
+<th align="left">3GPP2</th>
+<th align="left">AVCHD</th>
+<th align="left">ASF</th>
+<th align="left">AVI</th>
+<th align="left">MKV</th>
+<th align="left">DV</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">XXXX-Y</td>
+<td align="left">MPEG-1</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXXX-Y</td>
+<td align="left">MPEG-2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">MPEG-4 (Part 2)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">H.265</td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1870,126 +1686,94 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">H.264</td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">H.263</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXXX-Y (Xxxx Y)</td>
+<td align="left">VC-1</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">X.YYY</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X/X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">X.YYY</td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">X.YYY</td>
+<td align="left">WMV7/8/9</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XX-Y</td>
+<td align="left">WMV9 Screen</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXXY/Y/Y</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">XXXY Xxxxxx</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XX</td>
+<td align="left">DV</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -1997,26 +1781,23 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 </tr>
 <tr class="odd">
-<td align="left">Xxxxxx XXXX</td>
+<td align="left">Motion JPEG</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
@@ -2025,7 +1806,7 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 
  
 
-### XxX Xxxx (xYY)
+### Mobile
 
 <table>
 <colgroup>
@@ -2046,25 +1827,25 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx/Xxxxxxxxx</th>
-<th align="left">XXXXXX</th>
-<th align="left">xXXY</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX-Y XX</th>
-<th align="left">XXXX-Y XX</th>
-<th align="left">XXXX-Y</th>
-<th align="left">YXXX</th>
-<th align="left">YXXXY</th>
-<th align="left">XXXXX</th>
-<th align="left">XXX</th>
-<th align="left">XXX</th>
-<th align="left">XXX</th>
-<th align="left">XX</th>
+<th align="left">Codec/Container</th>
+<th align="left">FOURCC</th>
+<th align="left">fMP4</th>
+<th align="left">MPEG-4</th>
+<th align="left">MPEG-2 PS</th>
+<th align="left">MPEG-2 TS</th>
+<th align="left">MPEG-1</th>
+<th align="left">3GPP</th>
+<th align="left">3GPP2</th>
+<th align="left">AVCHD</th>
+<th align="left">ASF</th>
+<th align="left">AVI</th>
+<th align="left">MKV</th>
+<th align="left">DV</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">XXXX-Y</td>
+<td align="left">MPEG-1</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2080,7 +1861,7 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXXX-Y</td>
+<td align="left">MPEG-2</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2096,119 +1877,119 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXXX-Y (Xxxx Y)</td>
+<td align="left">MPEG-4 (Part 2)</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">X.YYY</td>
+<td align="left">H.265</td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">X.YYY</td>
+<td align="left">H.264</td>
 <td align="left"></td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
 <td align="left"></td>
-<td align="left">X/X</td>
+<td align="left">D/E</td>
 <td align="left"></td>
-<td align="left">X/X</td>
+<td align="left">D/E</td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
+<td align="left">D</td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">X.YYY</td>
+<td align="left">H.263</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XX-Y</td>
+<td align="left">VC-1</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXXY/Y/Y</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
+<td align="left">WMV7/8/9</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXXY Xxxxxx</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
+<td align="left">WMV9 Screen</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XX</td>
+<td align="left">DV</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2224,18 +2005,18 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">Xxxxxx XXXX</td>
+<td align="left">Motion JPEG</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
@@ -2244,7 +2025,7 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 
  
 
-### XxX (XXX)
+### IoT Core (x86)
 
 <table>
 <colgroup>
@@ -2265,25 +2046,25 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx/Xxxxxxxxx</th>
-<th align="left">XXXXXX</th>
-<th align="left">xXXY</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX-Y XX</th>
-<th align="left">XXXX-Y XX</th>
-<th align="left">XXXX-Y</th>
-<th align="left">YXXX</th>
-<th align="left">YXXXY</th>
-<th align="left">XXXXX</th>
-<th align="left">XXX</th>
-<th align="left">XXX</th>
-<th align="left">XXX</th>
-<th align="left">XX</th>
+<th align="left">Codec/Container</th>
+<th align="left">FOURCC</th>
+<th align="left">fMP4</th>
+<th align="left">MPEG-4</th>
+<th align="left">MPEG-2 PS</th>
+<th align="left">MPEG-2 TS</th>
+<th align="left">MPEG-1</th>
+<th align="left">3GPP</th>
+<th align="left">3GPP2</th>
+<th align="left">AVCHD</th>
+<th align="left">ASF</th>
+<th align="left">AVI</th>
+<th align="left">MKV</th>
+<th align="left">DV</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">XXXX-Y</td>
+<td align="left">MPEG-1</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2299,7 +2080,7 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XXXX-Y</td>
+<td align="left">MPEG-2</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2315,7 +2096,26 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XXXX-Y (Xxxx Y)</td>
+<td align="left">MPEG-4 (Part 2)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">H.265</td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2324,46 +2124,91 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">H.264</td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">H.263</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">VC-1</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">WMV7/8/9</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">WMV9 Screen</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">X.YYY</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">X.YYY</td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">X.YYY</td>
+<td align="left">DV</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2379,39 +2224,10 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">XX-Y</td>
+<td align="left">Motion JPEG</td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXXY/Y/Y</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">XXXY Xxxxxx</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2419,42 +2235,7 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">Xxxxxx XXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
@@ -2463,7 +2244,7 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 
  
 
-### XXxx
+### IoT (ARM)
 
 <table>
 <colgroup>
@@ -2484,153 +2265,25 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx/Xxxxxxxxx</th>
-<th align="left">XXXXXX</th>
-<th align="left">xXXY</th>
-<th align="left">XXXX-Y</th>
-<th align="left">XXXX-Y XX</th>
-<th align="left">XXXX-Y XX</th>
-<th align="left">XXXX-Y</th>
-<th align="left">YXXX</th>
-<th align="left">YXXXY</th>
-<th align="left">XXXXX</th>
-<th align="left">XXX</th>
-<th align="left">XXX</th>
-<th align="left">XXX</th>
-<th align="left">XX</th>
+<th align="left">Codec/Container</th>
+<th align="left">FOURCC</th>
+<th align="left">fMP4</th>
+<th align="left">MPEG-4</th>
+<th align="left">MPEG-2 PS</th>
+<th align="left">MPEG-2 TS</th>
+<th align="left">MPEG-1</th>
+<th align="left">3GPP</th>
+<th align="left">3GPP2</th>
+<th align="left">AVCHD</th>
+<th align="left">ASF</th>
+<th align="left">AVI</th>
+<th align="left">MKV</th>
+<th align="left">DV</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">XXXX-Y</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXXX-Y</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">XXXX-Y (Xxxx Y)</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">X.YYY</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">X.YYY</td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">X.YYY</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X/X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">XX-Y</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
-<td align="left">X</td>
-<td align="left"></td>
-</tr>
-<tr class="even">
-<td align="left">XXXY/Y/Y</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
-</tr>
-<tr class="odd">
-<td align="left">XXXY Xxxxxx</td>
+<td align="left">MPEG-1</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2646,7 +2299,7 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="even">
-<td align="left">XX</td>
+<td align="left">MPEG-2</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2662,10 +2315,7 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 </tr>
 <tr class="odd">
-<td align="left">Xxxxxx XXXX</td>
-<td align="left"></td>
-<td align="left"></td>
-<td align="left">X</td>
+<td align="left">MPEG-4 (Part 2)</td>
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
@@ -2673,7 +2323,357 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
 <td align="left"></td>
 <td align="left"></td>
 <td align="left"></td>
-<td align="left">X</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">H.265</td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">H.264</td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">H.263</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">VC-1</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">WMV7/8/9</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">WMV9 Screen</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">DV</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Motion JPEG</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+
+ 
+
+### XBox
+
+<table>
+<colgroup>
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Codec/Container</th>
+<th align="left">FOURCC</th>
+<th align="left">fMP4</th>
+<th align="left">MPEG-4</th>
+<th align="left">MPEG-2 PS</th>
+<th align="left">MPEG-2 TS</th>
+<th align="left">MPEG-1</th>
+<th align="left">3GPP</th>
+<th align="left">3GPP2</th>
+<th align="left">AVCHD</th>
+<th align="left">ASF</th>
+<th align="left">AVI</th>
+<th align="left">MKV</th>
+<th align="left">DV</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">MPEG-1</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">MPEG-2</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">MPEG-4 (Part 2)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">H.265</td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">H.264</td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">H.263</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D/E</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">VC-1</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left">D</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">WMV7/8/9</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">WMV9 Screen</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">DV</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">Motion JPEG</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">D</td>
 <td align="left"></td>
 <td align="left"></td>
 </tr>
@@ -2685,8 +2685,12 @@ Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxx
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

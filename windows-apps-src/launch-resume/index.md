@@ -1,102 +1,106 @@
 ---
-xxxxx: Xxxxxxxxx, xxxxxxxx, xxx xxxxxxxxxx xxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxxx xxxxxxx xxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xx xxxxxxx, xxxxxxxxx, xxxxxxx, xxx xxxxxxxxxx.
-xx.xxxxxxx: YYYYYXYY-YYYY-YXXX-YXXY-YYXXXXXYYXXY
+title: 起動、再開、バックグラウンド タスク
+description: このセクションでは、ユニバーサル Windows プラットフォーム (UWP) アプリが起動、中断、再開、および終了されたときの動作について説明します。
+ms.assetid: 75011D52-1511-4ECF-9DF6-52CBBDB15BD7
 ---
 
-# Xxxxxxxxx, xxxxxxxx, xxx xxxxxxxxxx xxxxx
+# 起動、再開、バックグラウンド タスク
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xxxx xxxxxxx xxxxxxxxx xxxx xxxxxxx xxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xx xxxxxxx, xxxxxxxxx, xxxxxxx, xxx xxxxxxxxxx. Xx xxxxxx xxx xx xxxxxxxx xxxx xx xxxxx x xxxxxxxx xx xxxxxxxxx, xxx xxx xx xxx xxxxxxxxxx xxxxx xxxxx xxxxx x XXX xxx xx xx xxxx xxxx xxxx xxx xxx xx xxx xx xxx xxxxxxxxxx. Xxxxxxx, xx xxxxxx xxx xx xxx x xxxxxx xxxxxx xx xxxx xxx.
+このセクションでは、ユニバーサル Windows プラットフォーム (UWP) アプリが起動、中断、再開、および終了されたときの動作について説明します。 また、コントラクトや拡張機能を使ってアプリをアクティブ化する方法、バックグラウンド タスクを使って UWP アプリがフォアグラウンドにない場合でも処理を実行できるようにする方法について説明します。 最後に、アプリにスプラッシュ画面を追加する方法について説明します。
 
-## Xxx xxx xxxxxxxxx
+## アプリのライフサイクル
 
-| Xxxxx                                            | Xxxxxxxxxxx                                                                                                     |
+| トピック                                            | 説明                                                                                                     |
 |--------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| [Xxx xxxxxxxxx](app-lifecycle.md)               | Xxxxx xxxxx xxx xxxx xxxxx xx x XXX xxx xxx xxxx xxxxxxx xxxx Xxxxxxx xxxxxxxx, xxxxxxxx, xxx xxxxxxx xxxx xxx. |
-| [Xxxxxx xxx xxxxxxxxx](handle-app-prelaunch.md) | Xxxxx xxx xx xxxxxx xxx xxxxxxxxx.                                                                              |
-| [Xxxxxx xxx xxxxxxxxxx](activate-an-app.md)     | Xxxxx xxx xx xxxxxx xxx xxxxxxxxxx.                                                                             |
-| [Xxxxxx xxx xxxxxxx](suspend-an-app.md)         | Xxxxx xxx xx xxxx xxxxxxxxx xxxxxxxxxxx xxxx xxxx xxx xxxxxx xxxxxxxx xxxx xxx.                                 |
-| [Xxxxxx xxx xxxxxx](resume-an-app.md)           | Xxxxx xxx xx xxxxxxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxx xxxxxxx xxxx xxx.                                        |
+| [アプリのライフサイクル](app-lifecycle.md)               | UWP アプリのライフ サイクルと、Windows がアプリを起動、中断、再開したときの動作について説明します。 |
+| [アプリの事前起動の処理](handle-app-prelaunch.md) | アプリの事前起動を処理する方法について説明します。                                                                              |
+| [アプリのアクティブ化の処理](activate-an-app.md)     | アプリのアクティブ化を処理する方法について説明します。                                                                             |
+| [アプリの中断の処理](suspend-an-app.md)         | システムがアプリを一時停止するときに重要なアプリケーション データを保存する方法を説明します。                                 |
+| [アプリの再開の処理](resume-an-app.md)           | システムがアプリを再開するときに表示されるコンテンツを更新する方法について説明します。                                        |
 
  
 
-## Xxxxxx xxxx
+## アプリの起動
 
 
-| XXX xxx Xxxx xxxxxxxxxx                                                                         | Xxxxxxxxxxx                                                                                                                                                                |
+| URI とファイルのアクティブ化                                                                         | 説明                                                                                                                                                                |
 |-------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Xxxxxx xx xxx xxx xxxxxxx](how-to-launch-an-app-for-results.md)                               | Xxxxx xxx xx xxxxxx xx xxx xxxx xxxxxxx xxx xxx xxxxxxxx xxxx xxxxxxx xxx xxx.                                                                                             |
-| [Xxxxxx xxx xxxxxxx xxx xxx x XXX](launch-default-app.md)                                      | Xxxxx xxx xx xxxxxx xxx xxxxxxx xxx xxx x Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX).                                                                                               |
-| [Xxxxxx XXX xxxxxxxxxx](handle-uri-activation.md)                                              | Xxxxx xxx xx xxxxxxxx xx xxx xx xxxxxx xxx xxxxxxx xxxxxxx xxx x XXX xxxxxx xxxx.                                                                                          |
-| [Xxxxxx xxx xxxxxxx xxx xxx x xxxx](launch-the-default-app-for-a-file.md)                      | Xxxxx xxx xx xxxxxx xxx xxxxxxx xxx xxx x xxxx xxxx.                                                                                                                       |
-| [Xxxxxx xxxx xxxxxxxxxx](handle-file-activation.md)                                            | Xxxxx xxx xx xxxxxxxx xxxx xxx xx xx xxx xxxxxxx xxxxxxx xxx x xxxx xxxx.                                                                                                  |
-| [Xxxxxxxxxx xxx xxxx xxxxx xxx XXXx](https://msdn.microsoft.com/library/windows/apps/hh700321) | Xx xxxxxxxxxxxxx xxx xxxxxxxxxxxx xxxxxxx XXX xxxx xxx xxx xxxx xxxxx xxx xxxxxxxxx xxxx xxxxxxx, xxx xxx xxxxxxx x xxxx xxxxxxxxxx xxx xxxxxxx xxxxxxxxxx xxx xxxx xxxxx. |
-| [Xxxxxxxx xxxx xxx XXX xxxxxx xxxxx](reserved-uri-scheme-names.md)                             | Xxxx xxxxx xxxxx xxx xxxxxxxx xxxx xxx XXX xxxxxx xxxxx xxxx xxx xxx xxxxxxxxx xx xxxx xxx.                                                                                |
-| Xxxxxxxx xxxxx-xx xxxx                                                                          | Xxxxxxxxxxx                                                                                                                                                                |
-| [Xxxxxx xxx Xxxxxxx Xxxxxxxx xxx](launch-settings-app.md)                                      | Xxxxx xxx xx xxxxxx xxx Xxxxxxx Xxxxxxxx xxx.                                                                                                                              |
-| [Xxxxxx xxx Xxxxxxx Xxxxx xxx](launch-store-app.md)                                            | Xxxxx xxx xx xxxxxx xxx Xxxxxxx Xxxxx xxx.                                                                                                                                 |
-| [Xxxxxx xxx Xxxxxxx Xxxx xxx](launch-maps-app.md)                                              | Xxxxx xxx xx xxxxxx xxx Xxxxxxx Xxxx xxx.                                                                                                                                  |
+| [結果を取得するためのアプリの起動](how-to-launch-an-app-for-results.md)                               | 別のアプリからアプリを起動し、2 つのアプリの間でデータを交換する方法について説明します。                                                                                             |
+| [URI に応じた既定のアプリの起動](launch-default-app.md)                                      | URI (Uniform Resource Identifier) に応じて既定のアプリを起動する方法について説明します。                                                                                               |
+| [URI のアクティブ化の処理](handle-uri-activation.md)                                              | アプリを登録して URI スキーム名の既定のハンドラーにする方法について説明します。                                                                                          |
+| [ファイルに応じた既定のアプリの起動](launch-the-default-app-for-a-file.md)                      | ファイルの種類に応じて既定のアプリを起動する方法について説明します。                                                                                                                       |
+| [ファイルのアクティブ化の処理](handle-file-activation.md)                                            | アプリを登録してファイルの種類の既定のハンドラーにする方法について説明します。                                                                                                  |
+| [ファイルの種類と URI のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700321) | UWP アプリと、アプリがサポートするファイルの種類やプロトコルの間の関係を理解すると、より一貫性があり、洗練されたエクスペリエンスをユーザーに提供できます。 |
+| [予約済みのファイルと URI スキーム名](reserved-uri-scheme-names.md)                             | ここでは、アプリで利用できない予約済みのファイルと予約済みの URI スキーム名の一覧を示します。                                                                                |
+| 組み込みのアプリのアクティブ化                                                                          | 説明                                                                                                                                                                |
+| [Windows 設定アプリの起動](launch-settings-app.md)                                      | Windows 設定アプリを起動する方法について説明します。                                                                                                                              |
+| [Windows ストア アプリの起動](launch-store-app.md)                                            | Windows ストア アプリを起動する方法について説明します。                                                                                                                                 |
+| [Windows マップ アプリの起動](launch-maps-app.md)                                              | Windows マップ アプリを起動する方法について説明します。                                                                                                                                  |
 
  
 
-## Xxxxxxxxxx xxxxx xxx xxxxxxxx
+## バックグラウンド タスクとサービス
 
 
 
-| Xxxxx                                                                                                            | Xxxxxxxxxxx                                                                                                                                                                                   |
+| トピック                                                                                                            | 説明                                                                                                                                                                                   |
 |------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxx](support-your-app-with-background-tasks.md)                             | Xxx xxxxxx xx xxxx xxxxxxx xxxx xxx xx xxx xxxx xxx xxxxxxxxxxx xxxx xx xxx xxxxxxxxxx xx xxxxxxxxxx xx xxxxxxxx xxxx xxxxxxxxxx xxxxx.                                                       |
-| [Xxxxxx xxxxxxx xxx xxxxxxx xxxx x xxxxxxxxxx xxxx](access-sensors-and-devices-from-a-background-task.md)       | [
-            **XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxx xxxx Xxxxxxxxx Xxxxxxx xxx xxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxxx xx xxx xxxxxxxxxx, xxxx xxxx xxxx xxxxxxxxxx xxx xx xxxxxxxxx. |
-| [Xxxxxxxxxx xxx xxxxxxxxxx xxxxx](guidelines-for-background-tasks.md)                                           | Xxxxxx xxxx xxx xxxxx xxx xxxxxxxxxxxx xxx xxxxxxx xxxxxxxxxx xxxxx.                                                                                                                          |
-| [Xxxxxx xxx xxxxxxx xx xxx xxxxxxx](how-to-create-and-consume-an-app-service.md)                                | Xxxxx xxx xx xxxxx x XXX xxx xxxx xxx xxxxxxx xxxxxxxx xx xxxxx XXX xxxx, xxx xxx xx xxxxxxx xxxxx xxxxxxxx.                                                                                  |
-| [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md)                               | Xxxxxx x xxxxxxxxxx xxxx xxxxx xxx xxxxxxxx xx xx xxx xxxx xxxx xxx xx xxx xx xxx xxxxxxxxxx.                                                                                                 |
-| [Xxxxx x xxxxxxxxxx xxxx](debug-a-background-task.md)                                                           | Xxxxx xxx xx xxxxx x xxxxxxxxxx xxxx, xxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxx xxx xxxxx xxxxxxx xx xxx Xxxxxxx xxxxx xxx.                                                                        |
-| [Xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx](declare-background-tasks-in-the-application-manifest.md) | Xxxxxx xxx xxx xx xxxxxxxxxx xxxxx xx xxxxxxxxx xxxx xx xxxxxxxxxx xx xxx xxx xxxxxxxx.                                                                                                       |
-| [Xxxxxx x xxxxxxxxx xxxxxxxxxx xxxx](handle-a-cancelled-background-task.md)                                     | Xxxxx xxx xx xxxx x xxxxxxxxxx xxxx xxxx xxxxxxxxxx xxxxxxxxxxxx xxxxxxxx xxx xxxxx xxxx, xxxxxxxxx xxx xxxxxxxxxxxx xx xxx xxx xxxxx xxxxxxxxxx xxxxxxx.                                     |
-| [Xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx](monitor-background-task-progress-and-completion.md)           | Xxxxx xxx xxxx xxx xxx xxxxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx.                                                                                                                     |
-| [Xxxxxxxx x xxxxxxxxxx xxxx](register-a-background-task.md)                                                     | Xxxxx xxx xx xxxxxx x xxxxxxxx xxxx xxx xx xx-xxxx xx xxxxxx xxxxxxxx xxxx xxxxxxxxxx xxxxx.                                                                                                  |
-| [Xxxxxxx xx xxxxxx xxxxxx xxxx xxxxxxxxxx xxxxx](respond-to-system-events-with-background-tasks.md)             | Xxxxx xxx xx xxxxxx x xxxxxxxxxx xxxx xxxx xxxxxxxx xx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224839) xxxxxx.                                                                         |
-| [Xxx x xxxxxxxxxx xxxx xx x xxxxx](run-a-background-task-on-a-timer-.md)                                        | Xxxxx xxx xx xxxxxxxx x xxx-xxxx xxxxxxxxxx xxxx, xx xxx x xxxxxxxx xxxxxxxxxx xxxx.                                                                                                          |
-| [Xxx xxxxxxxxxx xxx xxxxxxx x xxxxxxxxxx xxxx](set-conditions-for-running-a-background-task.md)                 | Xxxxx xxx xx xxx xxxxxxxxxx xxxx xxxxxxx xxxx xxxx xxxxxxxxxx xxxx xxxx xxx.                                                                                                                  |
-| [Xxxxxxxx xxxx xx xxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt280377)                                           | Xxx xxx xxxxxxxxxx xxxxxxxx XXX xx xxxx xxxxx xx xxx xxxxxxxxxx.                                                                                                                              |
-| [Xxxxxx x xxxx xxxx xxxx x xxxxxxxxxx xxxx](update-a-live-tile-from-a-background-task.md)                       | Xxx x xxxxxxxxxx xxxx xx xxxxxx xxxx xxx'x xxxx xxxx xxxx xxxxx xxxxxxx.                                                                                                                      |
-| [Xxx x xxxxxxxxxxx xxxxxxx](use-a-maintenance-trigger.md)                                                       | Xxxxx xxx xx xxx xxx [**XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700517) xxxxx xx xxx xxxxxxxxxxx xxxx xx xxx xxxxxxxxxx xxxxx xxx xxxxxx xx xxxxxxx xx.                             |
+| [バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)                             | このセクションのトピックでは、バックグラウンド タスクでトリガーに応答することによって、ユーザー独自の軽量コードをバックグラウンドで実行する方法について説明します。                                                       |
+| [バックグラウンド タスクからのセンサーやデバイスへのアクセス](access-sensors-and-devices-from-a-background-task.md)       | [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うと、フォアグラウンド アプリが中断しているときにも、バックグラウンドでユニバーサル Windows アプリからセンサーや周辺機器にアクセスできます。 |
+| [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)                                           | アプリがバック グラウンド タスクを実行するための要件を満たしていることを確認します。                                                                                                                          |
+| [アプリ サービスの作成と利用](how-to-create-and-consume-an-app-service.md)                                | 他の UWP アプリにサービスを提供できる UWP アプリを作成する方法と、それらのサービスを利用する方法について説明します。                                                                                  |
+| [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)                               | バックグラウンド タスク クラスを作り、アプリがフォアグラウンドにない場合にも実行されるように登録します。                                                                                                 |
+| [バックグラウンド タスクのデバッグ](debug-a-background-task.md)                                                           | バックグラウンド タスクをデバッグする方法について説明します。バックグラウンド タスクのアクティブ化のほか、Windows イベント ログでのデバッグ トレースなどについて取り上げます。                                                                        |
+| [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md) | アプリ マニフェストでバックグラウンド タスクを拡張機能として宣言し、バックグラウンド タスクを使うことができるようにします。                                                                                                       |
+| [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)                                     | 取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリの取り消しを報告するバックグラウンド タスクの作成方法について説明します。                                     |
+| [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)           | バックグラウンド タスクの進行状況と完了をアプリから認識する方法について説明します。                                                                                                                     |
+| [バックグラウンド タスクの登録](register-a-background-task.md)                                                     | ほとんどのバックグラウンド タスクを安全に登録できる再利用可能な関数の作成方法について説明します。                                                                                                  |
+| [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)             | [
+            **SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) イベントに応答するバックグラウンド タスクを作成する方法について説明します。                                                                         |
+| [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)                                        | 1 回限りのバックグラウンド タスクをスケジュールする方法、または定期的なバックグラウンド タスクを実行する方法について説明します。                                                                                                          |
+| [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)                 | バックグラウンド タスクをいつ実行するかを制御する条件の設定方法について説明します。                                                                                                                  |
+| [バックグラウンドでのデータの転送](https://msdn.microsoft.com/library/windows/apps/mt280377)                                           | バックグラウンド転送 API を使って、バックグラウンドでファイルをコピーします。                                                                                                                              |
+| [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)                       | アプリのライブ タイルを新しいコンテンツで更新するためにバックグラウンド タスクを使います。                                                                                                                      |
+| [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)                                                       | デバイスが接続されているときに、[**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) クラスを使って軽量のコードをバックグラウンドで実行する方法について説明します。                             |
 
  
 
-## Xxx x xxxxxx xxxxxx
+## スプラッシュ画面の追加
 
 
-Xxx XXX xxxx xxxx xxxx x xxxxxx xxxxxx, xxxxx xx x xxxxxxxxx xx x xxxxxx xxxxxx xxxxx xxx x xxxxxxxxxx xxxxx, xxxx xx xxxxx xxx xx xxxxxxxxxx.
+すべての UWP アプリにはスプラッシュ画面が必要です。スプラッシュ画面は、スプラッシュ画面画像と背景色を合成したもので、どちらもカスタマイズすることができます。
 
-Xxxx xxxxxx xxxxxx xx xxxxxxxxx xxxxxxxxxxx xxxx xxx xxxx xxxxxxxx xxxx xxx. Xxxx xxxxxxxx xxxxxxxxx xxxxxxxx xx xxxxx xxxxx xxx xxxxxxxxx xxx xxxxxxxxxxx. Xx xxxx xx xxxx xxx xx xxxxx xxx xxxxxxxxxxx, xxx xxxxxx xxxxxx xx xxxxxxxxx.
+スプラッシュ画面は、ユーザーがアプリを起動するとすぐに表示されます。 これによって、アプリ リソースの初期化中であることがユーザーに示されます。 アプリが操作できる状態になると、スプラッシュ画面が閉じます。
 
-X xxxx-xxxxxxxx xxxxxx xxxxxx xxx xxxx xxxx xxx xxxx xxxxxxxx. Xxxx'x x xxxxxx, xxxxxxxxxxx xxxxxx xxxxxx:
+スプラッシュ画面が適切にデザインされていると、アプリがより魅力的なものになります。 装飾の少ないシンプルなスプラッシュ画面の例を以下に示します。
 
-![x YY% xxxxxx xxxxxx xxxxxxx xx xxx xxxxxx xxxxxx xxxx xxx xxxxxx xxxxxx xxxxxx.](images/regularsplashscreen.png)
+![スプラッシュ画面のサンプルから取り込んだ 75% 縮小のスプラッシュ画面のスクリーン キャプチャ](images/regularsplashscreen.png)
 
-Xxxx xxxxxx xxxxxx xx xxxxxxx xx xxxxxxxxx x xxxxx xxxxxxxxxx xxxxx xxxx x xxxxxxxxxxx XXX.
+このスプラッシュ画面は、緑の背景色と透過的な PNG を組み合わせて作成されています。
 
-Xxxxxxx xx xxxxx xxx xxxxxxxxxx xxxxx xxxxxxxx xx xxxx xxx xxxxxx xxxxxx xxxxx xxx xxxxxx xxxxxx xxxx xxxx, xxxxxxxxxx xx xxx xxxxxx xxxx xxx xx xxxxxxxxx xx. Xxxx xxx xxxxxx xxxxxx xx xxxxxxxxx, xxxx xxx xxxx xx xxx xxxxxxxxxx xxxxxxx xx xxxxxxxxxx xxx x xxxxxxx xx xxxxxx xxxxx. Xxxx xxxxx xxxxxx xxxxxxx xxxxxx.
+画像と背景色を組み合わせてスプラッシュ画面を作ると、アプリがインストールされているデバイスに関係なく、スプラッシュ画面が適切に表示されます。 スプラッシュ画面が表示されるとき、背景のサイズだけがさまざまな画面サイズに合わせて変更されます。 画像のサイズは常に変わりません。
 
-Xxxxxxxxxxxx, xxx xxx xxx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224763) xxxxx xx xxxxxxxxx xxxx xxx'x xxxxxx xxxxxxxxxx. Xxx xxx xxxxxxxx xx xxxxxxxx xxxxxx xxxxxx, xxxxx xxx xxxxxx, xx xxxx xxxx xxx xxxx xxxx xx xxxxxxxx xxxxxxxxxx xxxxx xxxx xxxxxxxxx xxx XX xx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx. Xxx xxx xxxx xxx xxx **XxxxxxXxxxxx** xxxxx xx xxxxxx xxx xxxx xxx xxxxxx xxxxxx xx xxxxxxxxx, xx xxxx xxx xxx xxxxx xxxxxxxx xxxxxxxxxx.
+また、[**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br224763) クラスを使うと、アプリの起動エクスペリエンスをカスタマイズできます。 アプリ UI の準備やネットワーク操作の完了などの追加のタスクをアプリが実行する時間を作るために、追加のスプラッシュ画面を作成して配置できます。 さらに、**SplashScreen** クラスを使うと、スプラッシュ画面が消えるときに通知を受け取って、導入アニメーションを開始できます。
 
-| Xxxxx                                                                          | Xxxxxxxxxxx                                                                                                                                                                                       |
+| トピック                                                                          | 説明                                                                                                                                                                                       |
 |--------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Xxx x xxxxxx xxxxxx](add-a-splash-screen.md)                                 | Xxx xxxx xxx'x xxxxxx xxxxxx xxxxx xxx xxxxxxxxxx xxxxx.                                                                                                                                          |
-| [Xxxxxxx x xxxxxx xxxxxx xxx xxxx xxxx](create-a-customized-splash-screen.md) | Xxxxxxx x xxxxxx xxxxxx xxx xxxx xxxx xx xxxxxxxx xx xxxxxxxx xxxxxx xxxxxx xxx xxxx xxx. Xxxx xxxxxxxx xxxxxx xxxxxxxx xxx xxxxxx xxxxxx xxxxx xxxx xxxx xxx xx xxxxxxxx, xxx xxx xx xxxxxxxxxx. |
+| [スプラッシュ画面の追加](add-a-splash-screen.md)                                 | アプリのスプラッシュ画面の画像と背景色を設定します。                                                                                                                                          |
+| [スプラッシュ画面の表示時間の延長](create-a-customized-splash-screen.md) | アプリに追加スプラッシュ画面を作成すれば、より長い時間、スプラッシュ画面を表示することができます。 この追加画面は、アプリを起動したときに表示されるスプラッシュ画面に似ていますが、カスタマイズできます。 |
 
  
 
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

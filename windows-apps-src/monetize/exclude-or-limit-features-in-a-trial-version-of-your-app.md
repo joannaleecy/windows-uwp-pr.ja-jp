@@ -1,65 +1,66 @@
 ---
-Xxxxxxxxxxx: Xx xxx xxxxxx xxxxxxxxx xx xxx xxxx xxx xxx xxxx xxxxxx x xxxxx xxxxxx, xxx xxx xxxxxx xxxx xxxxxxxxx xx xxxxxxx xx xxx xxxx xxxxxxx xx xxxx xxx xx xxxxxxxxx xx xxxxxxxx xxxx xxxxxxxx xxxxxx xxx xxxxx xxxxxx.
-xxxxx: Xxxxxxx xx xxxxx xxxxxxxx xx x xxxxx xxxxxxx
-xx.xxxxxxx: YXYYYYYX-YXXY-YYYX-YYYY-XYXYYYXXYYYY
-xxxxxxxx: xxxx xxxxx
-xxxxxxxx: xxxx xxxxx xxxxxx
-xxxxxxxx: xxxx xxxxx xxxx xxxxxxx
-xxxxxxxx: xxxx xxxxx xxxx xxxxxx
+Description: ユーザーがアプリを無料で使うことができる試用期間を設け、その期間中は一部の機能を除外または制限することで、アプリを通常版にアップグレードするようユーザーに促すことができます。
+title: 試用版での機能の除外または制限
+ms.assetid: 1B62318F-9EF5-432A-8593-F3E095CA7056
+keywords: 無料試用版
+keywords: 無料のお試し期間
+keywords: 無料試用版のコード例
+keywords: 無料試用版のコード サンプル
 ---
 
-# Xxxxxxx xx xxxxx xxxxxxxx xx x xxxxx xxxxxxx
+# 試用版での機能の除外または制限
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xx xxx xxxxxx xxxxxxxxx xx xxx xxxx xxx xxx xxxx xxxxxx x xxxxx xxxxxx, xxx xxx xxxxxx xxxx xxxxxxxxx xx xxxxxxx xx xxx xxxx xxxxxxx xx xxxx xxx xx xxxxxxxxx xx xxxxxxxx xxxx xxxxxxxx xxxxxx xxx xxxxx xxxxxx. Xxxxxxxxx xxxxx xxxxxxxx xxxxxx xx xxxxxxx xxxxxx xxx xxxxx xxxxxx, xxxx xxxx xxxx xxxx xxxx xxx xxxx xxxxxx xxxx xx xxxx xxxx x xxxx xxxxxxx xxx xxxx xxxxxxxxx. Xxx xxx xxxx xxxxxx xxxxxxxx, xxxx xx xxxxxxx xx xxxxxxxxxx, xxxx xxx xxxxx xxxx xxxxxx xxx xxxxx, xxxxxx x xxxxxxxx xxxx xxxx xxx.
+ユーザーがアプリを無料で使うことができる試用期間を設け、その期間中は一部の機能を除外または制限することで、アプリを通常版にアップグレードするようユーザーに促すことができます。 どのような機能を制限するかをコーディング開始前に決め、完全なライセンスが購入されたときにだけその機能が正しく動作するようにアプリを設定します。 また、顧客がアプリを購入する前の試用期間中にだけバナーや透かしなどが表示されるようにもできます。
 
-Xxx'x xxxx xx xxx xx xxx xxxx xx xxxx xxx.
+ここでは、このような工夫をアプリに加える方法について説明します。
 
-## Xxxxxxxxxxxxx
+## 前提条件
 
-X Xxxxxxx xxx xx xxxxx xx xxx xxxxxxxx xxx xxxxxxxxx xx xxx.
+ユーザーが購入できる機能を追加する Windows アプリ。
 
-## Xxxx Y: Xxxx xxx xxxxxxxx xxx xxxx xx xxxxxx xx xxxxxxx xxxxxx xxx xxxxx xxxxxx
+## 手順 1: 試用期間中に有効または無効にする機能を選ぶ
 
-Xxx xxxxxxx xxxxxxx xxxxx xx xxxx xxx xx xxxxxx xx xxxxxxxxxx xx xxx [**XxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225157) xxxxx. Xxxxxxxxx, xxx xxx xxx xxxxxxxxx xxxx xxxxxx xx xxx xxxxxxx xxxxx xx x xxxxxxxxxxx xxxxx, xx xx xxxxxxxx xx xxx xxxx xxxx. Xxxx xxxxxxxxxxx xxxxx xxxxxxxx, xxxx xxxx xxx xxx xxxxxxxxx xxxx xx x xxx xxxx xxxx xxxx xx xxx xxxxxxx xxxxxx.
+アプリの現時点でのライセンスの状態は、[**LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/br225157) クラスのプロパティとして保存されています。 通常は、次の手順で説明するように、ライセンスの状態に依存する関数を条件ブロック内に記述します。 このような機能について検討するときには、ライセンスがどの状態であっても動作するように実装できることを確認してください。
 
-Xxxx, xxxxxx xxx xxx xxxx xx xxxxxx xxxxxxx xx xxx xxx'x xxxxxxx xxxxx xxx xxx xx xxxxxxx. Xxxx xxxxx xxx xxx xx xxxx-xxxxxxxx, xxx xxxx xx-xxx xx xxxxxxx xxxxx xxx xxxx-xxx xxxxxxx xxxxx'x. Xx, xxxx xxxxx xxx xxx xxxxxxx xxxxxxx xxxxxxxx, xx xxxxxxx xxxxxxx xxxxxxxx xxxxxx xxx xxxx xx xxx xx.
+また、アプリの実行中にライセンスが変更された場合の処理方法を決めておきます。 試用版のアプリでもすべての機能を使うことができるようにしながら、購入版では表示されない広告バナーを表示することができます。 また、試用版アプリでは一部の機能を無効にしたり、ユーザーに購入を勧めるメッセージを表示したりすることもできます。
 
-Xxxxx xxxxx xxx xxxx xx xxx xxx'xx xxxxxx xxx xxxx x xxxx xxxxx xx xxxxxxxxxx xxxxxxxx xx xxx xx. Xxx x xxxxx xxxxxxx xx x xxxx, x xxxx xxxxxxxx xx xx xxxxx xxx xxxxxx xx xxxx xxxxxxx xxxx x xxxx xxx xxxx. Xxx x xxxxx xxxxxxx xx x xxxxxxx, xxx xxxxx xxxxxxxx xxxxxxx xx xxxxxxxxxx xxxx, xx xxxxxxxx xxx xxxxxxxx xxxx x xxxxxxxxx xxxxx xxx xxx.
+アプリの性質を考慮して、それに適した試用や有効期限の戦略を立ててください。 ゲームの試用版の場合は、ユーザーが遊べるゲーム コンテンツの量を制限するのが良い戦略でしょう。 ユーティリティの試用版の場合は、有効期限日の設定や、ユーザーが使いたがるような機能の制限を検討するとよいでしょう。
 
-Xxx xxxx xxx-xxxxxx xxxx, xxxxxxx xx xxxxxxxxxx xxxx xxxxx xxxx, xxxxxxx xxxxx xxx xxxxxxx x xxxx xxxxxxxxxxxxx xx xxx xxxxxxxx xxx. Xxxx xxx x xxx xxxxxx xxxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx xxx xxxxxxxx xxxx.
+ゲーム以外の多くのアプリでは、ユーザーにアプリ全体を理解してもらうために、有効期限日を設定するのが適しています。 ここでは、有効期限に関するいくつかの一般的なシナリオと、その処理方法について説明します。
 
--   **Xxxxx xxxxxxx xxxxxxx xxxxx xxx xxx xx xxxxxxx**
+-   **アプリの実行中に試用ライセンスが期限切れになった**
 
-    Xx xxx xxxxx xxxxxxx xxxxx xxxx xxx xx xxxxxxx, xxxx xxx xxx:
+    アプリの実行中に試用ライセンスが期限切れになった場合は、次の対処方法があります。
 
-    -   Xx xxxxxxx.
-    -   Xxxxxxx x xxxxxxx xx xxxx xxxxxxxx.
-    -   Xxxxx.
-    -   Xxxxxx xxxx xxxxxxxx xx xxx xxx xxx.
+    -   何もしない。
+    -   ユーザーにメッセージを表示する。
+    -   閉じる。
+    -   ユーザーにアプリの購入を促す。
 
-    Xxx xxxx xxxxxxxx xx xx xxxxxxx x xxxxxxx xxxx x xxxxxx xxx xxxxxx xxx xxx, xxx xx xxx xxxxxxxx xxxx xx, xxxxxxxx xxxx xxx xxxxxxxx xxxxxxx. Xx xxx xxxx xxxxxxx xxx xx xxx xxx xxx, xxxxx xx xx xxxxxx xxxx xx xxx xxx xxx xx xxxxxxx xxxxxxxxx.
+    お勧めするのは、アプリの購入を促すメッセージを表示することです。ユーザーがアプリを購入したら、すべての機能を有効にして、そのまま使うことができるようにします。 購入しなかった場合は、アプリを閉じるか、アプリの購入が必要なことを一定の間隔で通知します。
 
--   **Xxxxx xxxxxxx xxxxxxx xxxxxx xxx xxx xx xxxxxxxx**
+-   **アプリの起動前に試用ライセンスが期限切れになった**
 
-    Xx xxx xxxxx xxxxxxx xxxxxx xxx xxxx xxxxxxxx xxx xxx, xxxx xxx xxx'x xxxxxx. Xxxxxxx, xxxxx xxx x xxxxxx xxx xxxx xxxxx xxxx xxx xxxxxx xx xxxxxxxx xxxx xxx xxxx xxx Xxxxx.
+    ユーザーがアプリを起動する前に試用ライセンスが期限切れになった場合、アプリは起動しません。 ユーザーには、ストアからそのアプリを購入できることを伝えるダイアログ ボックスが表示されます。
 
--   **Xxxxxxxx xxxx xxx xxx xxxxx xx xx xxxxxxx**
+-   **アプリの実行中にユーザーがアプリを購入した**
 
-    Xx xxx xxxxxxxx xxxx xxxx xxx xxxxx xx xx xxxxxxx, xxxx xxx xxxx xxxxxxx xxxx xxx xxx xxxx.
+    アプリの実行中にユーザーがアプリを購入した場合は、次の対処方法があります。
 
-    -   Xx xxxxxxx xxx xxx xxxx xxxxxxxx xx xxxxx xxxx xxxxx xxxx xxxxxxx xxx xxx.
-    -   Xxxxx xxxx xxx xxxxxx xx xxxxxxx x xxxxxxx.
-    -   Xxxxxxxx xxxxxx xxx xxxxxxxx xxxx xxx xxxxxxxxx xxxx x xxxx-xxxxxxx (xx xxxxxxx xxx xxxxx-xxxx xxxxxxx).
+    -   何もせず、アプリが再起動されるまでは試用モードを続ける。
+    -   購入に対するお礼をする、またはメッセージを表示する。
+    -   完全なライセンスがある場合に使うことができる機能を、通知なしで有効にする (または、試用版であることを示す表示を消す)。
 
-Xx xxx xxxx xx xxxxxx xxx xxxxxxx xxxxxx xxx xxxx xxxx xxxxxx xx xxxx xxx, xxx xxxx xxx xx xxxxx xxxxxxx xxx xxxx xx xxxxxxxxx xx xxx xxxx xxxx.
-## Xxxx Y: Xxxxxxxxxx xxx xxxxxxx xxxx
+ライセンスの変更を検出して、アプリで対応する場合は、次の手順で説明するように、そのためのイベント ハンドラーを追加する必要があります。
+## 手順 2: ライセンス情報を初期化する
 
-Xxxx xxxx xxx xx xxxxxxxxxxxx, xxx xxx [**XxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225157) xxxxxx xxx xxxx xxx xx xxxxx xx xxxx xxxxxxx. Xx xxxxxx xxxx **xxxxxxxXxxxxxxxxxx** xx x xxxxxx xxxxxxxx xx xxxxx xx xxxx **XxxxxxxXxxxxxxxxxx**.
+アプリを初期化するときに、この例で示されているように、アプリの [**LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/br225157) オブジェクトを取得してください。 **licenseInformation** は、**LicenseInformation** 型のグローバル変数またはフィールドであるとします。
 
-Xxxxxxxxxx xxx [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh779765) xx [**XxxxxxxXxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh779766) xx xxxxxx xxx xxx'x xxxxxxx xxxx.
+[
+            **CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) または [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) を初期化して、アプリのライセンス情報にアクセスします。
 
 ```CSharp
 void initializeLicense()
@@ -75,7 +76,7 @@ void initializeLicense()
 }
 ```
 
-Xxx xx xxxxx xxxxxxx xx xxxxxxx xxxxxxxxxxxxx xxxx xxx xxxxxxx xxxxxxx xxxxx xxx xxx xx xxxxxxx. Xxx xxx'x xxxxxxx xxxxx xxxxxx xx xxx xxxxx xxxxxx xxxxxxx xx xxx xxxxxxxx xxxx xxx xxx xxxxxxx x Xxxxx, xxx xxxxxxx.
+アプリの実行中にライセンスが変更されたときに通知を受け取るイベント ハンドラーを追加します。 アプリのライセンスが変更されるのは、たとえば、試用期間が終了したときや、ユーザーがストアを通じてアプリを購入したときです。
 
 ```CSharp
 void InitializeLicense()
@@ -101,11 +102,11 @@ void licenseChangedEventHandler()
 }
 ```
 
-## Xxxx Y: Xxxx xxx xxxxxxxx xx xxxxxxxxxxx xxxxxx
+## 手順 3: 条件ブロック内に機能のコードを記述する
 
-Xxxx xxx xxxxxxx xxxxxx xxxxx xx xxxxxx, xxxx xxx xxxx xxxx xxx Xxxxxxx XXX xx xxxxxxxxx xx xxx xxxxx xxxxxx xxx xxxxxxx. Xxx xxxx xx xxxx xxxx xxxxx xxx xx xxxxxxxxx xxxx xxxxxxx xxx xxxx xxxxx. Xx xxxx xxxxx, xx x xxxx xxxxxx xxx xxx, xx xx x xxxx xxxxxxxx xx xxxxxxx xxxxxxxx xx xxx xxxx xxxx xxx xxxxxxxxx xxxxxx xxx xxxxxxx. Xxx xxxxx xxxx xx xxx xxx xxxx xx xxxxxxx xxx xxx xx xxxx'x xxx xxx'xx xxxxx xx. Xxx xxxx xxxx xxxxxxxxxx xx xxxxxxxx xxx xxxxxxxx xx xxxxxxxx.
+ライセンスの変更のイベントが発生したときに、アプリはライセンス API を呼び出して試用の状態が変わったかどうかを判定する必要があります。 この手順のコードは、このイベントのハンドラーを構造化する方法を示しています。 この時点で、ユーザーがアプリを購入したら、ライセンスの状態が変わったことをユーザーに知らせることをお勧めします。 コーディングの方法上、必要であれば、ユーザーにアプリを再起動してもらわなければならないこともあります。 ただし、この移行は可能な限りスムーズで違和感のないようにする必要があります。
 
-Xxxx xxxxxxx xxxxx xxx xx xxxxxxxx xx xxx'x xxxxxxx xxxxxx xx xxxx xxx xxx xxxxxx xx xxxxxxx x xxxxxxx xx xxxx xxx xxxxxxxxxxx.
+この例は、アプリの機能を必要に応じて有効にしたり、無効にしたりできるように、アプリのライセンス状態を判断する方法を示したものです。
 
 ```CSharp
 void ReloadLicense()
@@ -128,11 +129,11 @@ void ReloadLicense()
 }
 ```
 
-## Xxxx Y: Xxx xx xxx'x xxxxx xxxxxxxxxx xxxx
+## 手順 4: アプリの試用有効期限日を取得する
 
-Xxxxxxx xxxx xx xxxxxxxxx xxx xxx'x xxxxx xxxxxxxxxx xxxx.
+アプリの試用有効期限日を取得するコードを含めます。
 
-Xxx xxxx xx xxxx xxxxxxx xxxxxxx x xxxxxxxx xx xxx xxx xxxxxxxxxx xxxx xx xxx xxx'x xxxxx xxxxxxx. Xx xxx xxxxxxx xx xxxxx xxxxx, xxxxxxx xxx xxxxxxxxxx xxxx xxxx xxx xxxxxx xx xxxx xxxx xxxxx xxx xxxxx xxxxxxx.
+この例のコードは、アプリの試用有効期限日を取得する関数を定義しています。 ライセンスがまだ有効であれば、試用期限が切れるまでの日数で有効期限を表示します。
 
 ```CSharp
 void DisplayTrialVersionExpirationTime()
@@ -162,14 +163,13 @@ void DisplayTrialVersionExpirationTime()
 }
 ```
 
-## Xxxx Y: Xxxx xxx xxxxxxxx xxxxx xxxxxxxxx xxxxx xx xxx Xxxxxxx XXX
+## 手順 5: シミュレートされたライセンス API 呼び出しで機能をテストする
 
-Xxx, xxxx xxxx xxx xxxxx xxxxxxxxx xxxxx xx xxx xxxxxxx xxxxxx. Xx XxxxXxxxxx, X#, Xxxxxx Xxxxx, xx Xxxxxx X++, xxxxxxx xxxxxxxxxx xx [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh779765) xxxx [**XxxxxxxXxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh779766) xx xxx xxx'x xxxxxxxxxxxxxx xxxx.
+シミュレートされたライセンス サーバー呼び出しを使って、アプリをテストしてみましょう。 JavaScript、C#、Visual Basic、または Visual C++ で、アプリの初期化コード内の [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) への参照を [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) への参照に置き換えます。
 
-[
-            **XxxxxxxXxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh779766) xxxx xxxx-xxxxxxxx xxxxxxxxx xxxx xxxx xx XXX xxxx xxxxxx "XxxxxxxXxxxxXxxxx.xxx", xxxxxxx xx %xxxxxxxxxxx%\\XxxXxxx\\xxxxx\\xxxxxxxx\\&xx;xxxxxxx xxxx&xx;\\XxxxxXxxxx\\Xxxxxxxxx\\Xxxxxxx Xxxxx\\XxxXxxx. Xx xxxx xxxx xxx xxxx xxx'x xxxxx, xxx xxxx xxxxxx xxxx, xxxxxx xxxxxx xxxxxxxxxxxx xx xx xxx-xxxx. Xx xxx xxx xx xxxxxx xxx [**XxxxxxxXxxXxxxxxxxx.XxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh779768) xxxxxxxx xxxxxxx XxxxxxxXxxxxXxxxx.xxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxx, xxx xxxx xxx xx xxxxx.
+[**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) は、%userprofile%\\AppData\\local\\packages\\&lt;package name&gt;\\LocalState\\Microsoft\\Windows Store\\ApiData にある "WindowsStoreProxy.xml" という XML ファイルから、テスト専用のライセンス情報を取得します。 このパスとファイルがない場合は、インストール時か実行時にそれらを作る必要があります。 WindowsStoreProxy.xml が所定の場所にない状態で [**CurrentAppSimulator.LicenseInformation**](https://msdn.microsoft.com/library/windows/apps/hh779768) プロパティにアクセスしようとすると、エラーになります。
 
-Xxxx xxxxxxx xxxxxxxxxxx xxx xxx xxx xxx xxxx xx xxxx xxx xx xxxx xx xxxxx xxxxxxxxx xxxxxxxxx xxxxxx.
+この例は、異なるライセンス状態のもとでアプリをテストするときのコードを追加する方法を示します。
 
 ```CSharp
 void appInit()
@@ -188,13 +188,13 @@ void appInit()
 }
 ```
 
-Xxx xxx xxxx XxxxxxxXxxxxXxxxx.xxx xx xxxxxx xxx xxxxxxxxx xxxxxxxxxx xxxxx xxx xxxx xxx xxx xxx xxx xxxxxxxx. Xxxx xxx xxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxxxxxxx xx xxxx xxxx xxxxxxxxxx xxxxx xx xxxxxxxx.
+WindowsStoreProxy.xml を編集して、アプリや機能のシミュレートされた有効期限日を変更できます。 すべてが意図したとおりに動作するように、想定されるすべての有効期限とライセンスの構成をテストします。
 
-## Xxxx Y: Xxxxxxx xxx xxxxxxxxx Xxxxxxx XXX xxxxxxx xxxx xxx xxxxxx XXX
+## 手順 6: シミュレートされたライセンス API メソッドを実際の API に置き換える
 
-Xxxxx xxx xxxx xxxx xxx xxxx xxx xxxxxxxxx xxxxxxx xxxxxx, xxx xxxxxx xxx xxxxxx xxxx xxx xx x Xxxxx xxx xxxxxxxxxxxxx, xxxxxxx [**XxxxxxxXxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh779766) xxxx [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh779765), xx xxxxx xx xxx xxxx xxxx xxxxxx.
+シミュレートされたライセンス サーバーでアプリをテストした後、認定用にストアにアプリを提出する前に、[**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) を [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) に置き換えます (次のコード例を参照)。
 
-**Xxxxxxxxx**  Xxxx xxx xxxx xxx xxx [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh779765) xxxxxx xxxx xxx xxxxxx xxxx xxx xx x Xxxxx xx xx xxxx xxxx xxxxxxxxxxxxx.
+**重要:** アプリはストアへの提出時に [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) オブジェクトを使っている必要があり、そうでない場合は認定が不合格になります。
 
 ```CSharp
 void appInit()
@@ -213,23 +213,27 @@ void appInit()
 }
 ```
 
-## Xxxx Y: Xxxxxxxx xxx xxx xxxx xxxxx xxxxx xx xxxx xxxxxxxxx
+## 手順 7: 無料の試用版についてユーザーに説明する
 
-Xx xxxx xx xxxxxxx xxx xxxx xxx xxxx xxxxxx xxxxxx xxx xxxxx xxx xxxx xxxxx xxxxxx xx xxxx xxxxxxxxx xxx'x xx xxxxxxxxx xx xxxx xxx'x xxxxxxxx.
+アプリの動作でユーザーが驚くことがないように、無料の試用期間中にアプリがどのように機能し、この期間が過ぎるとアプリがどのようになるかを必ず説明してください。
 
-Xxx xxxx xxxx xxxxx xxxxxxxxxx xxxx xxx, xxx [Xxxxxx xxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt148529).
+アプリの説明について詳しくは、「[アプリの説明の作成](https://msdn.microsoft.com/library/windows/apps/mt148529)」をご覧ください。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxx xxxxxx (xxxxxxxxxxxx xxxxxx xxx xx-xxx xxxxxxxxx)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
-* [Xxx xxx xxxxxxx xxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt148548)
-* [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh779765)
-* [**XxxxxxxXxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh779766)
+* [ストア サンプル (試用版とアプリ内購入のデモンストレーション)](http://go.microsoft.com/fwlink/p/?LinkID=627610)
+* [アプリの価格と使用可能状況の設定](https://msdn.microsoft.com/library/windows/apps/mt148548)
+* [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
+* [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

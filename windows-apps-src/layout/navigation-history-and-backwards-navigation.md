@@ -1,64 +1,64 @@
 ---
-Xxxxxxxxxxx: Xxxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xx xxxxx xx x xxxxxxxx xxxxx xx xxxxxxxxxx xxxxxxxxxx, xxxxxxxxxx xxxxxxxx, xxx xxxxxx-xxxxx xxxxxxxx.
-xxxxx: Xxxxxxxxxx xxxxxx xxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx
-xx.xxxxxxx: xYYYYxYx-YYYx-YYYx-xYxx-YYYYYYYxxYxY
-xxXxx: xxxx
-xxxxx: Xxxxxxx xxx xxxxxxxxx xxxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
+title: Navigation design basics for Universal Windows Platform (UWP) apps
+ms.assetid: e9876b4c-242d-402d-a8ef-3487398ed9b3
+isNew: true
+label: History and backwards navigation
+template: detail.hbs
 ---
 
-#  Xxxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxx
+#  Navigation history and backwards navigation
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xx xxx Xxx, xxxxxxxxxx xxx xxxxx xxxxxxx xxxxx xxx xxxxxxxxxx xxxxxxx, xxxx xx xxxxxx xx xxxxxxxx, xxxxxxx, xxxxx, xxxxxx xxxxx xx xxxxx, xxx xx xx. Xxx xxxxxxxxxx xxxxxxxxxx xxx xxxx xxxxxx xxxx xxxxxxx xx xxxxxxx. Xxxxxxx, xxxxx xx xxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx: xxxx. Xxxx xxxxxxxx xxxxxxx x xxxx xxxxxx xxxx xxxxxxx xxx xxxx xxx xxxxxxxxxx xx xxx xxxxxxx.
+On the Web, individual web sites provide their own navigation systems, such as tables of contents, buttons, menus, simple lists of links, and so on. The navigation experience can vary wildly from website to website. However, there is one consistent navigation experience: back. Most browsers provide a back button that behaves the same way regardless of the website.
 
-Xxx xxxxxxx xxxxxxx, xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxx x xxxxxxxxxx xxxx xxxxxxxxxx xxxxxx xxx xxxxxxxxxx xxx xxxx'x xxxxxxxxxx xxxxxxx xxxxxx xx xxx xxx, xxxxxxxxx xx xxx xxxxxx, xxxx xxx xx xxx.
+For similar reasons, the Universal Windows Platform (UWP) provides a consistent back navigation system for traversing the user's navigation history within an app and, depending on the device, from app to app.
 
-Xxx XX xxx xxx xxxxxx xxxx xxxxxx xx xxxxxxxxx xxx xxxx xxxx xxxxxx xxx xxxxx xxxxxx xxxx, xxx xxx xxxxxxxxxx xxxxxxxxxx xx xxxxxx xxx xxxxxxxxxx xxxxxx xxxxxxx xxx XXX xxxx.
+The UI for the system back button is optimized for each form factor and input device type, but the navigation experience is global and consistent across devices and UWP apps.
 
-Xxxx xxx xxx xxxxxxx xxxx xxxxxxx xxxx xxx xxxx xxxxxx XX:
+Here are the primary form factors with the back button UI:
 
 
 <table>
     <tr>
-        <td colspan="2">Xxxxxxx</td>
-        <td>Xxxx xxxxxx xxxxxxxx</td>
+        <td colspan="2">Devices</td>
+        <td>Back button behavior</td>
      </tr>
     <tr>
-        <td>Xxxxx</td>
+        <td>Phone</td>
         <td>![system back on a phone](images/back-systemback-phone.png)</td>
         <td>
         <ul>
-<li>Xxxxxx xxxxxxx.</li>
-<li>X xxxxxxxx xx xxxxxxxx xxxxxx xx xxx xxxxxx xx xxx xxxxxx.</li>
-<li>Xxxxxx xxxx xxxxxxxxxx xxxxxx xxx xxx xxx xxxxxxx xxxx.</li>
+<li>Always present.</li>
+<li>A software or hardware button at the bottom of the device.</li>
+<li>Global back navigation within the app and between apps.</li>
 </ul>
 </td>
      </tr>
      <tr>
-        <td>Xxxxxx</td>
+        <td>Tablet</td>
         <td>![system back on a tablet (in tablet mode)](images/back-systemback-tablet.png)</td>
         <td>
 <ul>
-<li>Xxxxxx xxxxxxx xx Xxxxxx xxxx.
+<li>Always present in Tablet mode.
 
     Not available in Desktop mode. Title bar back button can be enabled, instead. See [PC, Laptop, Tablet](#PC).
 
     Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.</li>
 
-<li> X xxxxxxxx xxxxxx xx xxx xxxxxxxxxx xxx xx xxx xxxxxx xx xxx xxxxxx.</li>
-<li>Xxxxxx xxxx xxxxxxxxxx xxxxxx xxx xxx xxx xxxxxxx xxxx.</li></ul>        
+<li> A software button in the navigation bar at the bottom of the device.</li>
+<li>Global back navigation within the app and between apps.</li></ul>        
         </td>
      </tr>
     <tr>
-        <td>XX, Xxxxxx, Xxxxxx</td>
+        <td>PC, Laptop, Tablet</td>
         <td>![system back on a pc or laptop](images/back-systemback-pc.png)</td>
         <td>
 <ul>
-<li>Xxxxxxxx xx Xxxxxxx xxxx.
+<li>Optional in Desktop mode.
 
     Not available in Tablet mode. See [Tablet](#Tablet).
 
@@ -66,48 +66,43 @@ Xxxx xxx xxx xxxxxxx xxxx xxxxxxx xxxx xxx xxxx xxxxxx XX:
 
     Users can switch between running in Tablet mode and Desktop mode by going to **Settings &gt; System &gt; Tablet mode** and setting **Make Windows more touch-friendly when using your device as a tablet**.</li>
 
-<li>X xxxxxxxx xxxxxx xx xxx xxxxx xxx xx xxx xxx.</li>
-<li>Xxxx xxxxxxxxxx xxxxxx xxx xxx xxxx. Xxxx xxx xxxxxxx xxx-xx-xxx xxxxxxxxxx.</li></ul>        
+<li>A software button in the title bar of the app.</li>
+<li>Back navigation within the app only. Does not support app-to-app navigation.</li></ul>        
         </td>
      </tr>
     <tr>
-        <td>Xxxxxxx Xxx</td>
+        <td>Surface Hub</td>
         <td>![system back on a surface hub](images/nav/nav-back-surfacehub.png)</td>
         <td>
 <ul>
-<li>Xxxxxxxx.</li>
-<li>Xxxxxxxx xx xxxxxxx. Xxxx xxx xx xx xxxxxx xx.</li>
-<li>X xxxxxxxx xxxxxx xx xxx xxxxx xxx xx xxx xxx.</li>
-<li>Xxxx xxxxxxxxxx xxxxxx xxx xxx xxxx. Xxxx xxx xxxxxxx xxx-xx-xxx xxxxxxxxxx.</li></ul>        
+<li>Optional.</li>
+<li>Disabled by default. Must opt in to enable it.</li>
+<li>A software button in the title bar of the app.</li>
+<li>Back navigation within the app only. Does not support app-to-app navigation.</li></ul>        
         </td>
      </tr>     
 <table>
 
 
-Xxxx xxx xxxx xxxxxxxxxxx xxxxx xxxxx xxxx xxx'x xxxx xx x xxxx xxxxxx XX, xxx xxxxx xxxxxxx xxx xxxxx xxxx xxxxxxxxxxxxx.
+Here are some alternative input types that don't rely on a back button UI, but still provide the exact same functionality.
 
 
 <table>
-<tr><td colspan="3">Xxxxx xxxxxxx</td></tr>
-<tr><td>Xxxxxxxx</td><td>![keyboard](images/keyboard-wireframe.png)</td><td>Xxxxxxx xxx + Xxxxxxxxx</td></tr>
-<tr><td>Xxxxxxx</td><td>![speech](images/speech-wireframe.png)</td><td>Xxx, "Xxx Xxxxxxx, xx xxxx"</td></tr>
+<tr><td colspan="3">Input devices</td></tr>
+<tr><td>Keyboard</td><td>![keyboard](images/keyboard-wireframe.png)</td><td>Windows key + Backspace</td></tr>
+<tr><td>Cortana</td><td>![speech](images/speech-wireframe.png)</td><td>Say, "Hey Cortana, go back"</td></tr>
 </table>
  
 
-Xxxx xxxx xxx xxxx xx x xxxxx, xxxxxx, xx xx x XX xx xxxxxx xxxx xxx xxxxxx xxxx xxxxxxx, xxx xxxxxx xxxxxxxx xxxx xxx xxxx xxx xxxx xxxxxx xx xxxxxxx. Xxx xxxx xxxxxxx xxx xxxx xxxxxx xx xxxxxxxx xx xxx xxxxxxxx xxxxxxxx xx xxx xxx'x xxxxxxxxxx xxxxxxx. Xx'x xx xx xxx xx xxxxxx xxxxx xxxxxxxxxx xxxxxxx xx xxx xx xxx xxxxxxxxxx xxxxxxx xxx xxx xx xxxxxxx xx xxx xxxx xxxxxx xxxxx.
+When your app runs on a phone, tablet, or on a PC or laptop that has system back enabled, the system notifies your app when the back button is pressed. The user expects the back button to navigate to the previous location in the app's navigation history. It's up to you to decide which navigation actions to add to the navigation history and how to respond to the back button press.
 
 
-## <span id="Enable_system_back_navigation_support">
-            </span>
-            <span id="enable_system_back_navigation_support">
-            </span>
-            <span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT">
-            </span>Xxx xx xxxxxx xxxxxx xxxx xxxxxxxxxx xxxxxxx
+## <span id="Enable_system_back_navigation_support"></span><span id="enable_system_back_navigation_support"></span><span id="ENABLE_SYSTEM_BACK_NAVIGATION_SUPPORT"></span>How to enable system back navigation support
 
 
-Xxxx xxxx xxxxxx xxxx xxxxxxxxxx xxx xxx xxxxxxxx xxx xxxxxxxx xxxxxx xxxx xxxxxxx. Xx xxxx xx xxxxxxxxxxx x xxxxxxxx xxx xxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn893596) xxxxx xxx xxxxxxxx x xxxxxxxxxxxxx xxxxxxx.
+Apps must enable back navigation for all hardware and software system back buttons. Do this by registering a listener for the [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event and defining a corresponding handler.
 
-Xxxx xx xxxxxxxx x xxxxxx xxxxxxxx xxx xxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn893596) xxxxx xx xxx Xxx.xxxx xxxx-xxxxxx xxxx. Xxx xxx xxxxxxxx xxx xxxx xxxxx xx xxxx xxxx xx xxx xxxx xx xxxxxxx xxxxxxxx xxxxx xxxx xxxx xxxxxxxxxx, xx xxx xxxx xx xxxxxxx xxxx-xxxxx xxxx xxxxxx xxxxxxxxxx xxx xxxx.
+Here we register a global listener for the [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event in the App.xaml code-behind file. You can register for this event in each page if you want to exclude specific pages from back navigation, or you want to execute page-level code before displaying the page.
 
 ```CSharp
 Windows::UI::Core::SystemNavigationManager::GetForCurrentView()->
@@ -121,9 +116,9 @@ Windows.UI.Core.SystemNavigationManager.GetForCurrentView().BackRequested +=
     App_BackRequested;
 ```
 
-Xxxx'x xxx xxxxxxxxxxxxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn893596) xxxxx xxxxxxx xxxx xxxxx [**XxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn996568) xx xxx xxxx xxxxx xx xxx xxx.
+Here's the corresponding [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event handler that calls [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) on the root frame of the app.
 
-Xxxx xxxxxxx xx xxxxxxx xx x xxxxxx xxxx xxxxx. Xx xxx xx-xxx xxxx xxxxx xx xxxxx, xxx xxxxxx xxxxx xxxxxxxx xx xxx xxxxxxxx xxx xx xxx xxx xxxxx xx xx xxx Xxxxx xxxxxx. Xxxxx xx xx xxx xxxx xxxxx xx Xxxxxxx xxxx xxx xxx xxxx xxxxx xx xxx xxx xxxx xxxx xxx xx-xxx xxxx xxxxx xx xxxxxxxx.
+This handler is invoked on a global back event. If the in-app back stack is empty, the system might navigate to the previous app in the app stack or to the Start screen. There is no app back stack in Desktop mode and the user stays in the app even when the in-app back stack is depleted.
 
 ```CSharp
 void App::App_BackRequested(
@@ -161,34 +156,29 @@ private void App_BackRequested(object sender,
     }
 }
 ```
-## <span id="Enable_the_title_bar_back_button">
-            </span>
-            <span id="enable_the_title_bar_back_button">
-            </span>
-            <span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON">
-            </span>Xxx xx xxxxxx xxx xxxxx xxx xxxx xxxxxx
+## <span id="Enable_the_title_bar_back_button"></span><span id="enable_the_title_bar_back_button"></span><span id="ENABLE_THE_TITLE_BAR_BACK_BUTTON"></span>How to enable the title bar back button
 
 
-Xxxxxxx xxxx xxxxxxx Xxxxxxx xxxx (xxxxxxxxx XXx xxx xxxxxxx, xxx xxxx xxxx xxxxxxx) xxx xxxx xxx xxxxxxx xxxxxxx (**Xxxxxxxx &xx; Xxxxxx &xx; Xxxxxx xxxx**), xx xxx xxxxxxx x xxxxxx xxxxxxxxxx xxx xxxx xxx xxxxxx xxxx xxxxxx.
+Devices that support Desktop mode (typically PCs and laptops, but also some tablets) and have the setting enabled (**Settings &gt; System &gt; Tablet mode**), do not provide a global navigation bar with the system back button.
 
-Xx Xxxxxxx xxxx, xxxxx xxx xxxx xx x xxxxxx xxxx x xxxxx xxx. Xxx xxx xxxxxxx xx xxxxxxxxxxx xxxx xxxxxx xxx xxxx xxx xxxx xx xxxxxxxxx xx xxxx xxxxx xxx.
+In Desktop mode, every app runs in a window with a title bar. You can provide an alternative back button for your app that is displayed in this title bar.
 
-Xxx xxxxx xxx xxxx xxxxxx xx xxxx xxxxxxxxx xx xxxx xxxxxxx xx xxxxxxx xx Xxxxxxx xxxx, xxx xxxx xxxxxxxx xx-xxx xxxxxxxxxx xxxxxxx—xx xxxx xxx xxxxxxx xxx-xx-xxx xxxxxxxxxx xxxxxxx.
+The title bar back button is only available in apps running on devices in Desktop mode, and only supports in-app navigation history—it does not support app-to-app navigation history.
 
-**Xxxxxxxxx**  Xxx xxxxx xxx xxxx xxxxxx xx xxx xxxxxxxxx xx xxxxxxx. Xxx xxxx xxx xx.
+**Important**  The title bar back button is not displayed by default. You must opt in.
 
  
 
 |                                                             |                                                        |
 |-------------------------------------------------------------|--------------------------------------------------------|
-| ![xx xxxxxx xxxx xx xxxxxxx xxxx](images/nav-noback-pc.png) | ![xxxxxx xxxx xx xxxxxxx xxxx](images/nav-back-pc.png) |
-| Xxxxxxx xxxx, xx xxxx xxxxxxxxxx.                           | Xxxxxxx xxxx, xxxx xxxxxxxxxx xxxxxxx.                 |
+| ![no system back in desktop mode](images/nav-noback-pc.png) | ![system back in desktop mode](images/nav-back-pc.png) |
+| Desktop mode, no back navigation.                           | Desktop mode, back navigation enabled.                 |
 
  
 
-Xxxxxxxx xxx [**XxXxxxxxxxxXx**](https://msdn.microsoft.com/library/windows/apps/br227508) xxxxx xxx xxx [**XxxXxxxXxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986448) xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986276) xx xxx xxxx-xxxxxx xxxx xxx xxxx xxxx xxxx xxx xxxx xx xxxxxx xxx xxxxx xxx xxxx xxxxxx.
+Override the [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) event and set [**AppViewBackButtonVisibility**](https://msdn.microsoft.com/library/windows/apps/dn986448) to [**Visible**](https://msdn.microsoft.com/library/windows/apps/dn986276) in the code-behind file for each page that you want to enable the title bar back button.
 
-Xxx xxxx xxxxxxx, xx xxxx xxxx xxxx xx xxx xxxx xxxxx xxx xxxxxx xxx xxxx xxxxxx xx xxx [**XxxXxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242685) xxxxxxxx xx xxx xxxxx xxx x xxxxx xx **xxxx**.
+For this example, we list each page in the back stack and enable the back button if the [**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/br242685) property of the frame has a value of **true**.
 
 ```ManagedCPlusPlus
 void StartPage::OnNavigatedTo(NavigationEventArgs^ e)
@@ -248,9 +238,9 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-### Xxxxxxxxxx xxx xxxxxx xxxx xxxxxxxxxx xxxxxxxx
+### Guidelines for custom back navigation behavior
 
-Xx xxx xxxxxx xx xxxxxxx xxxx xxx xxxx xxxxx xxxxxxxxxx, xxx xxxxxxxxxx xxxxxx xx xxxxxxxxxx xxxx xxxxx xxxx. Xx xxxxxxxxx xxxx xxx xxxxxx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxx:
+If you choose to provide your own back stack navigation, the experience should be consistent with other apps. We recommend that you follow the following patterns for navigation actions:
 
 <table>
 <colgroup>
@@ -259,55 +249,57 @@ Xx xxx xxxxxx xx xxxxxxx xxxx xxx xxxx xxxxx xxxxxxxxxx, xxx xxxxxxxxxx xxxxxx x
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxxxxx xxxxxx</th>
-<th align="left">Xxx xx xxxxxxxxxx xxxxxxx?</th>
+<th align="left">Navigation action</th>
+<th align="left">Add to navigation history?</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><strong>Xxxx xx xxxx, xxxxxxxxx xxxx xxxxxx</strong></p></td>
-<td align="left"><strong>Xxx</strong><p>Xx xxxx xxxxxxxxxxxx, xxx xxxx xxxxxxxxx xxxx xxxxx Y xx xxx xxx xx xxxxx Y, xxxxxxxx xxxx xxxxxx, xx xxx xxxxxxxxxx xx xxxxx xx xxx xxxxxxxxxx xxxxxxx.</p>
+<td align="left"><p><strong>Page to page, different peer groups</strong></p></td>
+<td align="left"><strong>Yes</strong>
+          <p>In this illustration, the user navigates from level 1 of the app to level 2, crossing peer groups, so the navigation is added to the navigation history.</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly1.png" alt="Navigation across peer groups" /></p>
-<p>Xx xxx xxxx xxxxxxxxxxxx, xxx xxxx xxxxxxxxx xxxxxxx xxx xxxx xxxxxx xx xxx xxxx xxxxx, xxxxx xxxxxxxx xxxx xxxxxx, xx xxx xxxxxxxxxx xx xxxxx xx xxx xxxxxxxxxx xxxxxxx.</p>
+<p>In the next illustration, the user navigates between two peer groups at the same level, again crossing peer groups, so the navigation is added to the navigation history.</p>
 <p><img src="images/nav/nav-pagetopage-diffpeers-imageonly2.png" alt="Navigation across peer groups" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><strong>Xxxx xx xxxx, xxxx xxxx xxxxx, xx xx-xxxxxx xxxxxxxxxx xxxxxxx</strong></p>
-<p>Xxx xxxx xxxxxxxxx xxxx xxx xxxx xx xxxxxxx xxxx xxx xxxx xxxx xxxxx. Xxxxx xx xx xxxxxxxxxx xxxxxxx xxxx xx xxxxxx xxxxxxx (xxxx xx xxxx/xxxxxx xx x xxxxxx xxxxxxxxxx xxxx) xxxx xxxxxxxx xxxxxx xxxxxxxxxx xx xxxx xxxxx.</p></td>
-<td align="left"><strong>Xxx</strong><p>Xx xxx xxxxxxxxx xxxxxxxxxxxx, xxx xxxx xxxxxxxxx xxxxxxx xxx xxxxx xx xxx xxxx xxxx xxxxx. Xxx xxxxx xxx'x xxx xxxx xx x xxxxxx xxxxxxxxxx xxxx, xx xxx xxxxxxxxxx xx xxxxx xx xxx xxxxxxxxxx xxxxxxx.</p>
+<td align="left"><p><strong>Page to page, same peer group, no on-screen navigation element</strong></p>
+<p>The user navigates from one page to another with the same peer group. There is no navigation element that is always present (such as tabs/pivots or a docked navigation pane) that provides direct navigation to both pages.</p></td>
+<td align="left"><strong>Yes</strong>
+          <p>In the following illustration, the user navigates between two pages in the same peer group. The pages don't use tabs or a docked navigation pane, so the navigation is added to the navigation history.</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-noosnavelement.png" alt="Navigation within a peer group" /></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><strong>Xxxx xx xxxx, xxxx xxxx xxxxx, xxxx xx xx-xxxxxx xxxxxxxxxx xxxxxxx</strong></p>
-<p>Xxx xxxx xxxxxxxxx xxxx xxx xxxx xx xxxxxxx xx xxx xxxx xxxx xxxxx. Xxxx xxxxx xxx xxxxx xx xxx xxxx xxxxxxxxxx xxxxxxx. Xxx xxxxxxx, xxxx xxxxx xxx xxx xxxx xxxx/xxxxxx xxxxxxx, xx xxxx xxxxx xxxxxx xx x xxxxxx xxxxxxxxxx xxxx.</p></td>
-<td align="left"><strong>Xx</strong><p>Xxxx xxx xxxx xxxxxxx xxxx, xx xxxx xx xxx xxxx xxxx xxxxxx xxx xxxx xxxxxxxxx xx xxx xxxxxxx xxxx xxxxx.</p>
+<td align="left"><p><strong>Page to page, same peer group, with an on-screen navigation element</strong></p>
+<p>The user navigates from one page to another in the same peer group. Both pages are shown in the same navigation element. For example, both pages use the same tabs/pivots element, or both pages appear in a docked navigation pane.</p></td>
+<td align="left"><strong>No</strong>
+          <p>When the user presses back, go back to the last page before the user navigated to the current peer group.</p>
 <p><img src="images/nav/nav-pagetopage-samepeer-yesosnavelement.png" alt="Navigation across peer groups when a navigation element is present" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><strong>Xxxx x xxxxxxxxx XX</strong><p>Xxx xxx xxxxxxxx x xxx-xx xx xxxxx xxxxxx, xxxx xx x xxxxxx, xxxxxx xxxxxx, xx xx-xxxxxx xxxxxxxx, xx xxx xxx xxxxxx x xxxxxxx xxxx, xxxx xx xxxxxxxx xxxxxxxxx xxxx.</p></td>
-<td align="left"><strong>Xx</strong><p>Xxxx xxx xxxx xxxxxxx xxx xxxx xxxxxx, xxxxxxx xxx xxxxxxxxx XX (xxxx xxx xx-xxxxxx xxxxxxxx, xxxxxx xxx xxxxxx, xxx) xxx xxxxxx xx xxx xxxx xxxx xxxxxxx xxx xxxxxxxxx XX.</p>
+<td align="left"><strong>Show a transient UI</strong>
+          <p>The app displays a pop-up or child window, such as a dialog, splash screen, or on-screen keyboard, or the app enters a special mode, such as multiple selection mode.</p></td>
+<td align="left"><strong>No</strong>
+          <p>When the user presses the back button, dismiss the transient UI (hide the on-screen keyboard, cancel the dialog, etc) and return to the page that spawned the transient UI.</p>
 <p><img src="images/back-transui.png" alt="Showing a transient UI" /></p></td>
 </tr>
 <tr class="odd">
-<td align="left"><strong>Xxxxxxxxx xxxxx</strong><p>Xxx xxx xxxxxxxx xxxxxxx xxx xx xx-xxxxxx xxxx, xxxx xx xxx xxxxxxx xxx xxx xxxxxxxx xxxx xx xxxxxx/xxxxxxx xxxx.</p></td>
-<td align="left"><strong>Xx.</strong><p>Xxxxxxxxxxx xxxxx xx xxxxxxx xx xxxxxxxxxx xxxxxx x xxxx xxxxx. Xxxx xxx xxxx xxxxxxx xxxx, xxxxxxxx xx xxx xxxx xxxx xxxxxxxx xxx xxxxxxx xxxx xxxx xxx xxx xxxx xxxxxxxxxxx.</p>
+<td align="left"><strong>Enumerate items</strong>
+          <p>The app displays content for an on-screen item, such as the details for the selected item in master/details list.</p></td>
+<td align="left"><strong>No.</strong>
+          <p>Enumerating items is similar to navigating within a peer group. When the user presses back, navigate to the page that preceded the current page that has the item enumeration.</p>
 <img src="images/nav/nav-enumerate.png" alt="Iterm enumeration" /></td>
 </tr>
 </tbody>
 </table>
 
 
-### <span id="Resuming">
-            </span>
-            <span id="resuming">
-            </span>
-            <span id="RESUMING">
-            </span>Xxxxxxxx
+### <span id="Resuming"></span><span id="resuming"></span><span id="RESUMING"></span>Resuming
 
-Xxxx xxx xxxx xxxxxxxx xx xxxxxxx xxx xxx xxxxxxx xx xxxx xxx, xx xxxxxxxxx xxxxxxxxx xx xxx xxxx xxxx xx xxx xxxxxxxxxx xxxxxxx.
+When the user switches to another app and returns to your app, we recommend returning to the last page in the navigation history.
 
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx XXX xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[This article contains information that is specific to UWP apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
 
 
@@ -316,4 +308,8 @@ Xxxx xxx xxxx xxxxxxxx xx xxxxxxx xxx xxx xxxxxxx xx xxxx xxx, xx xxxxxxxxx xxxx
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

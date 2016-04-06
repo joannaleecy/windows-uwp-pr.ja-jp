@@ -1,28 +1,32 @@
 ---
-xxxxx: Xxxxxxxxx xxx xxxxxxxx xxxx (XxxxxxX xxx X++)
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxx, xxxxxxx, xxx xxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX xxx.
-xx.xxxxxxx: xYYYYYxY-YYYY-YxYY-xxYY-YYYxxYYYYYYY
+title: アプリの起動と再開 (DirectX と C++)
+description: ユニバーサル Windows プラットフォーム (UWP) DirectX アプリを起動、一時停止、再開する方法について説明します。
+ms.assetid: c35025f8-0450-2f61-fe84-070fd7379622
 ---
 
-# Xxxxxxxxx xxx xxxxxxxx xxxx (XxxxxxX xxx X++)
+# アプリの起動と再開 (DirectX と C++)
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxxx xxx xx xxxxxx, xxxxxxx, xxx xxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX xxx.
+ユニバーサル Windows プラットフォーム (UWP) DirectX アプリを起動、一時停止、再開する方法について説明します。
 
-| Xxxxx | Xxxxxxxxxxx |
+| トピック | 説明 |
 |---------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| [Xxx xx xxxxxxxx xx xxx](how-to-activate-an-app-directx-and-cpp.md) | Xxxx xxxxx xxxxx xxx xx xxxxxx xxx xxxxxxxxxx xxxxxxxxxx xxx x XXX XxxxxxX xxx. |
-| [Xxx xx xxxxxxx xx xxx](how-to-suspend-an-app-directx-and-cpp.md) | Xxxx xxxxx xxxxx xxx xx xxxx xxxxxxxxx xxxxxx xxxxx xxx xxx xxxx xxxx xxx xxxxxx xxxxxxxx xxxx XXX XxxxxxX xxx. |
-| [Xxx xx xxxxxx xx xxx](how-to-resume-an-app-directx-and-cpp.md) | Xxxx xxxxx xxxxx xxx xx xxxxxxx xxxxxxxxx xxxxxxxxxxx xxxx xxxx xxx xxxxxx xxxxxxx xxxx XXX XxxxxxX xxx. |
+| [アプリをアクティブ化する方法](how-to-activate-an-app-directx-and-cpp.md) | ここでは、UWP DirectX アプリのアクティブ化エクスペリエンスを定義する方法について説明します。 |
+| [アプリを中断する方法](how-to-suspend-an-app-directx-and-cpp.md) | ここでは、UWP DirectX アプリをシステムが一時停止するときに重要なシステム状態とアプリ データを保存する方法について説明します。 |
+| [アプリを再開する方法](how-to-resume-an-app-directx-and-cpp.md) | ここでは、UWP DirectX アプリをシステムが再開するときに重要なアプリケーション データを復元する方法について説明します。 |
  
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

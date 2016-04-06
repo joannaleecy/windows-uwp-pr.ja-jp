@@ -1,19 +1,23 @@
 ---
-xx.xxxxxxx: YYYYYxYx-YYYY-YYxY-YYYx-YxYYYYYYYYYY
-xxxxx: Xxxx xxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxxxxxx xxxx xx xxx xxxxxx xx x xxxxxxx xxxxxxxx xxx xxxxx xxxxxx xxxxxxxxxx xxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
+ms.assetid: 76776b0f-3163-48c9-835b-3f4213968079
+title: データ アクセス
+description: このセクションでは、デバイス上のデータをプライベート データベースに保存する方法と、ユニバーサル Windows プラットフォーム (UWP) アプリでオブジェクト リレーショナル マッピングを使う方法について説明します。
 ---
-# Xxxx xxxxxx
+# データ アクセス
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxx xxxxxxx xxxxxxxxx xxxxxxx xxxx xx xxx xxxxxx xx x xxxxxxx xxxxxxxx xxx xxxxx xxxxxx xxxxxxxxxx xxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
+このセクションでは、デバイス上のデータをプライベート データベースに保存する方法と、ユニバーサル Windows プラットフォーム (UWP) アプリでオブジェクト リレーショナル マッピングを使う方法について説明します。
 
-XXXxxx xx xxxxxxxx xx xxx XXX XXX. Xxxxxx Xxxxxxxxx Y xxxxx xxxx XXXxxx xx XXX xxxx. Xxx xxxxx xxxxxxxxxxxx xx xxxxxxx xxx xxxxxxx / xxxxxxxxxxxx xxxxxxxxxxxx xxxxxxxxx, xxx xx xxxxxxx xxxx xxxxxx xxx xxxxxxxx.
+SQLite は UWP SDK に付属しています。 Entity Framework 7 は、UWP アプリで SQLite を操作します。 これらのテクノロジを使って、オフラインのシナリオや断続的な接続のシナリオ向けに開発を行い、アプリのセッション間でデータを保持します。
 
-| Xxxxx | Xxxxxxxxxxx|
+| トピック | 説明|
 |-------|------------|
-| [Xxxxxx xxxxxxxxx Y xxxx XXXxxx xxx X# xxxx](entity-framework-7-with-sqlite-for-csharp-apps.md) | Xxxxxx Xxxxxxxxx (XX) xx xx xxxxxx-xxxxxxxxxx xxxxxx xxxx xxxxxxx xxx xx xxxx xxxx xxxxxxxxxx xxxx xxxxx xxxxxx-xxxxxxxx xxxxxxx. Xxxx xxxxxxx xxxxxxxx xxx xxx xxx xxx Xxxxxx Xxxxxxxxx Y xxxx x XXXxxx xxxxxxxx xx x Xxxxxxxxx Xxxxxxx xxx. |
-| [XXXxxx xxxxxxxxx](sqlite-databases.md) | XXXxxx xx x xxxxxx-xxxx, xxxxxxxx xxxxxxxx xxxxxx. Xxxx xxxxxxx xxxxxxxx xxx xx xxx xxx XXXxxx xxxxxxx xxxxxxxx xx xxx XXX, xxxxxxx xxxx xxx XXXxxx xxxxxxx xx x Xxxxxxxxx Xxxxxxx xxx, xx xxxxx xx xxxx xxx xxxxxx. |
+| [C# アプリでの Entity framework 7 と SQLite](entity-framework-7-with-sqlite-for-csharp-apps.md) | Entity Framework (EF) は、ドメイン固有のオブジェクトを使ってリレーショナル データを操作できる、オブジェクト リレーショナル マッパーです。 この記事では、ユニバーサル Windows アプリで SQLite データベースと共に Entity Framework 7 を使う方法について説明します。 |
+| [SQLite データベース](sqlite-databases.md) | SQLite は、サーバーを使わない埋め込みデータベース エンジンです。 この記事では、SDK に付属している SQLite ライブラリを使って、独自の SQLite ライブラリをユニバーサル Windows アプリにパッケージ化する方法、およびソースから SQLite ライブラリを構築する方法について説明します。 |
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,65 +1,65 @@
 ---
-xx.xxxxxxx: YYYxYYxY-xYYY-YYYY-YYYx-xYxxYYYYYYxY
-xxxxxxxxxxx: Xxxx xxxx xxxxx, xxxxx xxxxxx xx xxx xxxx xxxxx xx Xxxxxxxxx, xxxxxx xxxx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxxx xxxxxxxx xxxxxxx xxxx xx x XxxxXxxxXxxxxxxx.
-xxxxx: Xxxxxxx Xxxxx Xxxxxxxxxxx xx XXX xxxx xxxxx, XxxxxxxxxY
+ms.assetid: 333f67f5-f012-4981-917f-c6fd271267c6
+description: This case study, which builds on the info given in Bookstore, begins with a Windows Phone Silverlight app that displays grouped data in a LongListSelector.
+title: Windows Phone Silverlight to UWP case study, Bookstore2
 ---
 
-# Xxxxxxx Xxxxx Xxxxxxxxxxx xx XXX xxxx xxxxx: XxxxxxxxxY
+# Windows Phone Silverlight to UWP case study: Bookstore2
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx xxxx xxxxx—xxxxx xxxxxx xx xxx xxxx xxxxx xx [XxxxxxxxxY](wpsl-to-uwp-case-study-bookstore1.md)—xxxxxx xxxx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxxx xxxxxxxx xxxxxxx xxxx xx x **XxxxXxxxXxxxxxxx**. Xx xxx xxxx xxxxx, xxxx xxxxxxxx xx xxx xxxxx **Xxxxxx** xxxxxxxxxx xxx xxxxx xx xxx xxxxx xxxxxxx xx xxxx xxxxxx, xxx xx xxx **XxxxXxxxXxxxxxxx**, xx xxx xxxxxx xxxx xxx xxxx xx xxxxx xxxxxxx xx xxxxxx xx xx xxx xxxx xxx xx xxx x xxxx xxxx xx xxxxxxx. Xxx xxxx xxxx xxxxxxx xxxx xxxxxxx xxxxxxxxxx xxxx xxxxxxxxx xxxxxxx xxx xxxx xx xxxxx. Xx xxxx xxxxxxx xxx xxxxx xx xxxxxxx xxx xxx xx x Xxxxxxx YY Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
+This case study—which builds on the info given in [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md)—begins with a Windows Phone Silverlight app that displays grouped data in a **LongListSelector**. In the view model, each instance of the class **Author** represents the group of the books written by that author, and in the **LongListSelector**, we can either view the list of books grouped by author or we can zoom out to see a jump list of authors. The jump list affords much quicker navigation than scrolling through the list of books. We walk through the steps of porting the app to a Windows 10 Universal Windows Platform (UWP) app.
 
-**Xxxx**   Xxxx xxxxxxx XxxxxxxxxYXxxxxxxxx\_YY xx Xxxxxx Xxxxxx, xx xxx xxx xxx xxxxxxx "Xxxxxx Xxxxxx xxxxxx xxxxxxxx", xxxx xxxxxx xxx xxxxx xx [XxxxxxXxxxxxxxXxxxxxx](w8x-to-uwp-troubleshooting.md#targetplatformversion).
+**Note**   When opening Bookstore2Universal\_10 in Visual Studio, if you see the message "Visual Studio update required", then follow the steps in [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
 
-## Xxxxxxxxx
+## Downloads
 
-[Xxxxxxxx xxx XxxxxxxxxYXXXXY Xxxxxxx Xxxxx Xxxxxxxxxxx xxx](http://go.microsoft.com/fwlink/p/?linkid=522601).
+[Download the Bookstore2WPSL8 Windows Phone Silverlight app](http://go.microsoft.com/fwlink/p/?linkid=522601).
 
-[Xxxxxxxx xxx XxxxxxxxxYXxxxxxxxx\_YY Xxxxxxx YY xxx](http://go.microsoft.com/fwlink/?linkid=532952).
+[Download the Bookstore2Universal\_10 Windows 10 app](http://go.microsoft.com/fwlink/?linkid=532952).
 
-##  Xxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxx
+##  The Windows Phone Silverlight app
 
-Xxx xxxxxxxxxxxx xxxxx xxxxx xxxx XxxxxxxxxYXXXXY—xxx xxx xxxx xx'xx xxxxx xx xxxx—xxxxx xxxx. Xx'x x xxxxxxxxxx-xxxxxxxxx **XxxxXxxxXxxxxxxx** xx xxxxx xxxxxxx xx xxxxxx. Xxx xxx xxxx xxx xx xxx xxxx xxxx, xxx xxxx xxxxx, xxx xxx xxxxxxxx xxxx xxxx xxx xxxxx. Xxxxx xxx xxx xxxx xxxxxx xx xxxx xxx: xxx xxxx xxxxx xxxx xxxxxxxx xxx xxxxxxx xxxx xxxxxx, xxx xxx xxxx xxxxxxxxx xxxx xxxxx xx xxxx xxxx xxxxx. Xx xx'xx xxx, xxxx xx xxxxx xxxxxx xxxx xxxxxx xxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX).
+The illustration below shows what Bookstore2WPSL8—the app that we're going to port—looks like. It's a vertically-scrolling **LongListSelector** of books grouped by author. You can zoom out to the jump list, and from there, you can navigate back into any group. There are two main pieces to this app: the view model that provides the grouped data source, and the user interface that binds to that view model. As we'll see, both of these pieces port easily from Windows Phone Silverlight technology to the Universal Windows Platform (UWP).
 
-![xxx xxxxxxxxxYxxxxY xxxxx](images/wpsl-to-uwp-case-studies/c02-01-wpsl-how-the-app-looks.png)
+![how bookstore2wpsl8 looks](images/wpsl-to-uwp-case-studies/c02-01-wpsl-how-the-app-looks.png)
 
-##  Xxxxxxx xx x Xxxxxxx YY xxxxxxx
+##  Porting to a Windows 10 project
 
-Xx'x x xxxxx xxxx xx xxxxxx x xxx xxxxxxx xx Xxxxxx Xxxxxx, xxxx xxxxx xxxx xx xx xxxx XxxxxxxxxYXXXXY, xxx xxxxxxx xxx xxxxxx xxxxx xx xxx xxx xxxxxxx. Xxxxx xx xxxxxxxx x xxx Xxxxx Xxxxxxxxxxx (Xxxxxxx Xxxxxxxxx) xxxxxxx. Xxxx xx XxxxxxxxxYXxxxxxxxx\_YY. Xxxxx xxx xxx xxxxx xx xxxx xxxx xxxx XxxxxxxxxYXXXXY xx XxxxxxxxxYXxxxxxxxx\_YY.
+It's a quick task to create a new project in Visual Studio, copy files over to it from Bookstore2WPSL8, and include the copied files in the new project. Start by creating a new Blank Application (Windows Universal) project. Name it Bookstore2Universal\_10. These are the files to copy over from Bookstore2WPSL8 to Bookstore2Universal\_10.
 
--   Xxxx xxx xxxxxx xxxxxxxxxx xxx xxxx xxxxx xxxxx XXX xxxxx (xxx xxxxxx xx \\Xxxxxx\\XxxxxXxxxxx). Xxxxx xxxxxxx xxx xxxxxx, xx **Xxxxxxxx Xxxxxxxx**, xxxx xxxx **Xxxx Xxx Xxxxx** xx xxxxxxx xx. Xxxxx-xxxxx xxx xxxxxx xxxx xxx xxxxxx xxx xxxxx **Xxxxxxx Xx Xxxxxxx**. Xxxx xxxxxxx xx xxxx xx xxxx xx "xxxxxxxxx" xxxxx xx xxxxxxx xx x xxxxxxx. Xxxx xxxx xxx xxxx x xxxx xx xxxxxx, xxxxx **Xxxxxxx** xx **Xxxxxxxx Xxxxxxxx** xxx xxxx xxxxxxx xxx xxxx xx xxxxxx xx xxx xxxxxxx. Xxxxx'x xx xxxx xx xx xxxx xxx xxxxx xxxx xxx'xx xxxxxxxxx xx xxx xxxxxxxxxxx.
--   Xxxx xxx xxxxxx xxxxxxxxxx xxx xxxx xxxxx xxxxxx xxxx (xxx xxxxxx xx \\XxxxXxxxx).
--   Xxxx XxxxXxxx.xxxx xxx xxxxxxx xxx xxxx xx xxx xxxxxxxxxxx.
+-   Copy the folder containing the book cover image PNG files (the folder is \\Assets\\CoverImages). After copying the folder, in **Solution Explorer**, make sure **Show All Files** is toggled on. Right-click the folder that you copied and click **Include In Project**. That command is what we mean by "including" files or folders in a project. Each time you copy a file or folder, click **Refresh** in **Solution Explorer** and then include the file or folder in the project. There's no need to do this for files that you're replacing in the destination.
+-   Copy the folder containing the view model source file (the folder is \\ViewModel).
+-   Copy MainPage.xaml and replace the file in the destination.
 
-Xx xxx xxxx xxx Xxx.xxxx, xxx Xxx.xxxx.xx xxxx Xxxxxx Xxxxxx xxxxxxxxx xxx xx xx xxx Xxxxxxx YY xxxxxxx.
+We can keep the App.xaml, and App.xaml.cs that Visual Studio generated for us in the Windows 10 project.
 
-Xxxx xxx xxxxxx xxxx xxx xxxxxx xxxxx xxxx xxx xxxx xxxxxx xxx xxxxxx xxx xxxxxxxxxx xx xxx XxxxxxxxxYXXXXY xxxxxxxxx xx XxxxxxxxxYXxxxxxxxx\_YY. X xxxxx xxx xx xx xxxx xx xx xxx xxx **Xxxxxxx Xx Xxxxx** xxxxxxx. Xx xxx xxxxxxxxxx xxxx xx xxx xxxx xxxxx xxxxxx xxxx, xxxxx xxxxxxx xxxxxxx xxx xxxxxx.
+Edit the source code and markup files that you just copied and change any references to the Bookstore2WPSL8 namespace to Bookstore2Universal\_10. A quick way to do that is to use the **Replace In Files** feature. In the imperative code in the view model source file, these porting changes are needed.
 
--   Xxxxxx `System.ComponentModel.DesignerProperties` xx `DesignMode` xxx xxxx xxx xxx **Xxxxxxx** xxxxxxx xx xx. Xxxxxx xxx `IsInDesignTool` xxxxxxxx xxx xxx XxxxxxxXxxxx xx xxx xxx xxxxxxx xxxxxxxx xxxx: `DesignModeEnabled`.
--   Xxx xxx **Xxxxxxx** xxxxxxx xx `ImageSource`.
--   Xxx xxx **Xxxxxxx** xxxxxxx xx `BitmapImage`.
--   Xxxxxx `using System.Windows.Media;` xxx `using System.Windows.Media.Imaging;`.
--   Xxxxxx xxx xxxxx xxxxxxxx xx xxx **XxxxxxxxxYXxxxxxxxx\_YY.XxxxxxxxxXxxxXxxxx.XxxXxxx** xxxxxxxx xxxx "XXXXXXXXXYXXXXY" xx "XXXXXXXXXYXXXXXXXXX".
--   Xxxx xx xx xxx xxx [XxxxxxxxxY](wpsl-to-uwp-case-study-bookstore1.md), xxxxxx xxx xxxxxxxxxxxxxx xx xxx **XxxxXxx.XxxxxXxxxx** xxxxxxxx (xxx [Xxxxxxx xx Xxxxx xx x xxxx xxxxx](wpsl-to-uwp-case-study-bookstore1.md#binding-an-image)).
+-   Change `System.ComponentModel.DesignerProperties` to `DesignMode` and then use the **Resolve** command on it. Delete the `IsInDesignTool` property and use IntelliSense to add the correct property name: `DesignModeEnabled`.
+-   Use the **Resolve** command on `ImageSource`.
+-   Use the **Resolve** command on `BitmapImage`.
+-   Delete `using System.Windows.Media;` and `using System.Windows.Media.Imaging;`.
+-   Change the value returned by the **Bookstore2Universal\_10.BookstoreViewModel.AppName** property from "BOOKSTORE2WPSL8" to "BOOKSTORE2UNIVERSAL".
+-   Just as we did for [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md), update the implementation of the **BookSku.CoverImage** property (see [Binding an Image to a view model](wpsl-to-uwp-case-study-bookstore1.md#binding-an-image)).
 
-Xx XxxxXxxx.xxxx, xxxxx xxxxxxx xxxxxxx xxxxxxx xxx xxxxxx.
+In MainPage.xaml, these initial porting changes are needed.
 
--   Xxxxxx `phone:PhoneApplicationPage` xx `Page` (xxxxxxxxx xxx xxxxxxxxxxx xx xxxxxxxx xxxxxxx xxxxxx).
--   Xxxxxx xxx `phone` xxx `shell` xxxxxxxxx xxxxxx xxxxxxxxxxxx.
--   Xxxxxx "xxx-xxxxxxxxx" xx "xxxxx" xx xxx xxxxxxxxx xxxxxxxxx xxxxxx xxxxxxxxxxx.
--   Xxxxxx `SupportedOrientations="Portrait"`, xxx `Orientation="Portrait"`, xxx xxxxxxxxx **Xxxxxxxx** xx xxx xxx xxxxxxx xxxxxxxx xx xxx xxx xxxxxxx.
--   Xxxxxx `shell:SystemTray.IsVisible="True"`.
--   Xxx xxxxx xx xxx xxxx xxxx xxxx xxxxxxxxxx (xxxxx xxx xxxxxxx xx xxx xxxxxx xx xxxxxxxxx) xxxx xxxxx xx xxx [**Xxxxxxx.XX.Xxxx.Xxxxxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209818) xxxxxxxxx. Xx, xxx xxx xxxxxxxxx xxxxxx xxxxxxxxxxx Xxxxxxx\_XX\_Xxxx\_Xxxxxxxx\_Xxxxxxxxxx xxx xxx xx xx **Xxxxxxx.XX.Xxxx.Xxxxxxxx.Xxxxxxxxxx**. Xx xxx xxxx xxxx xxxx xxxxxxxxx xxxxxxxxx, xxxxxx xxx xxxxxx xxxx `phone:` xx `Windows_UI_Xaml_Controls_Primitives:`.
--   Xxxx xx xx xxx xxx [XxxxxxxxxY](wpsl-to-uwp-case-study-bookstore1.md), xxxxxxx xxx xxxxxxxxxx xx xxx `PhoneTextExtraLargeStyle` **XxxxXxxxx** xxxxx xxxx x xxxxxxxxx xx `SubtitleTextBlockStyle`, xxxxxxx `PhoneTextSubtleStyle` xxxx `SubtitleTextBlockStyle`, xxxxxxx `PhoneTextNormalStyle` xxxx `CaptionTextBlockStyle`, xxx xxxxxxx `PhoneTextTitle1Style` xxxx `HeaderTextBlockStyle`.
--   Xxxxx xx xxx xxxxxxxxx xx `BookTemplate`. Xxx xxxxx xx xxx xxxxxx **XxxxXxxxx** xxxxxx xxxxxxxxx `CaptionTextBlockStyle`.
--   Xxxxxx xxx XxxxXxxxxx xxxxxxxxx xxxx xxx **XxxxXxxxx** xxxxxx `AuthorGroupHeaderTemplate` xxx xxx xxx Xxxxxxxxxx xx xxx **Xxxxxx** xx xxxxxxxxx `SystemControlBackgroundAccentBrush` xxxxxxx xx `PhoneAccentBrush`.
--   Xxxxxxx xx [xxxxxxx xxxxxxx xx xxxx xxxxxx](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels), xx xxxxxxx xxx xxxxxx xxx xxxxxxxx xxx xxxxx xxxx xxxxxxxxx (xxxxxxx, xxxxx, xxxxxx, xxx) xx Y.Y.
+-   Change `phone:PhoneApplicationPage` to `Page` (including the occurrences in property element syntax).
+-   Delete the `phone` and `shell` namespace prefix declarations.
+-   Change "clr-namespace" to "using" in the remaining namespace prefix declaration.
+-   Delete `SupportedOrientations="Portrait"`, and `Orientation="Portrait"`, and configure **Portrait** in the app package manifest in the new project.
+-   Delete `shell:SystemTray.IsVisible="True"`.
+-   The types of the jump list item converters (which are present in the markup as resources) have moved to the [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) namespace. So, add the namespace prefix declaration Windows\_UI\_Xaml\_Controls\_Primitives and map it to **Windows.UI.Xaml.Controls.Primitives**. On the jump list item converter resources, change the prefix from `phone:` to `Windows_UI_Xaml_Controls_Primitives:`.
+-   Just as we did for [Bookstore1](wpsl-to-uwp-case-study-bookstore1.md), replace all references to the `PhoneTextExtraLargeStyle` **TextBlock** style with a reference to `SubtitleTextBlockStyle`, replace `PhoneTextSubtleStyle` with `SubtitleTextBlockStyle`, replace `PhoneTextNormalStyle` with `CaptionTextBlockStyle`, and replace `PhoneTextTitle1Style` with `HeaderTextBlockStyle`.
+-   There is one exception in `BookTemplate`. The style of the second **TextBlock** should reference `CaptionTextBlockStyle`.
+-   Remove the FontFamily attribute from the **TextBlock** inside `AuthorGroupHeaderTemplate` and set the Background of the **Border** to reference `SystemControlBackgroundAccentBrush` instead of `PhoneAccentBrush`.
+-   Because of [changes related to view pixels](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels), go through the markup and multiply any fixed size dimension (margins, width, height, etc) by 0.8.
 
-## Xxxxxxxxx xxx XxxxXxxxXxxxxxxx
+## Replacing the LongListSelector
 
 
-Xxxxxxxxx xxx **XxxxXxxxXxxxxxxx** xxxx x [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh702601) xxxxxxx xxxx xxxx xxxxxxx xxxxx, xx xxx'x xxxx x xxxxx xx xxxx. X **XxxxXxxxXxxxxxxx** xxxxx xxxxxxxx xx xxx xxxxxxx xxxx xxxxxx, xxx x **XxxxxxxxXxxx** xxxxxxxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242878) xx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242705) xxxxxxxx, xxxxx xxxx xxxxxxxxxx xx xxx xxxx xxx x [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209833) xxxxxxx. Xxx **XxxxxxxxxxXxxxXxxxxx** xxxxx xx xx xxxxxxx xx xxx xxxxxx xx x xxxxxxxx, xx xxx'x xxxxx xx xxxxxx xxxx xx xxx xxxxxx xx XxxxXxxx.xxxx xxxxxx `<Page.Resources>`.
+Replacing the **LongListSelector** with a [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) control will take several steps, so let's make a start on that. A **LongListSelector** binds directly to the grouped data source, but a **SemanticZoom** contains [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) or [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) controls, which bind indirectly to the data via a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) adapter. The **CollectionViewSource** needs to be present in the markup as a resource, so let's begin by adding that to the markup in MainPage.xaml inside `<Page.Resources>`.
 
 ```xaml
     <CollectionViewSource
@@ -68,9 +68,9 @@ Xxxxxxxxx xxx **XxxxXxxxXxxxxxxx** xxxx x [**XxxxxxxxXxxx**](https://msdn.micros
         IsSourceGrouped="true"/>
 ```
 
-Xxxx xxxx xxx xxxxxxx xx **XxxxXxxxXxxxxxxx.XxxxxXxxxxx** xxxxxxx xxx xxxxx xx **XxxxxxxxxxXxxxXxxxxx.Xxxxxx**, xxx **XxxxXxxxXxxxxxxx.XxXxxxxxxxXxxxxxx** xxxxxxx **XxxxxxxxxxXxxxXxxxxx.XxXxxxxxXxxxxxx**. Xxx **XxxxxxxxxxXxxxXxxxxx** xxx x xxxx (xxxx: xxx x xxx, xx xxx xxxxx xxxxxx) xx xxxx xx xxx xxxx xx xx.
+Note that the binding on **LongListSelector.ItemsSource** becomes the value of **CollectionViewSource.Source**, and **LongListSelector.IsGroupingEnabled** becomes **CollectionViewSource.IsSourceGrouped**. The **CollectionViewSource** has a name (note: not a key, as you might expect) so that we can bind to it.
 
-Xxxx, xxxxxxx xxx `phone:LongListSelector` xxxx xxxx xxxxxx, xxxxx xxxx xxxx xx x xxxxxxxxxxx **XxxxxxxxXxxx** xx xxxx xxxx.
+Next, replace the `phone:LongListSelector` with this markup, which will give us a preliminary **SemanticZoom** to work with.
 
 ```xaml
     <SemanticZoom>
@@ -93,9 +93,9 @@ Xxxx, xxxxxxx xxx `phone:LongListSelector` xxxx xxxx xxxxxx, xxxxx xxxx xxxx xx 
     </SemanticZoom>
 ```
 
-Xxx **XxxxXxxxXxxxxxxx** xxxxxx xx xxxx xxxx xxx xxxx xxxx xxxxx xx xxxxxxxx xx xxx **XxxxxxxxXxxx** xxxxxx xx x xxxxxx-xx xxx x xxxxxx-xxx xxxx, xxxxxxxxxxxx. Xxx xxxxxx-xx xxxx xx x xxxxxxxx, xxx xxx xxx xxxx xxxxxxxx xx xx xxxxxxxx xx x **XxxxXxxx**. Xx xxxx xxxx, xxx xxxxxx-xxx xxxx xx xxxx xxx xx x **XxxxXxxx**, xxx xxxx **XxxxXxxx** xxxxxxxx xxx xxxxx xx xxx **XxxxxxxxxxXxxxXxxxxx**. Xxx xxxxxx-xx xxxx xxxx xxx xxxx xxxx xxxxxxxx, xxxxx xxxxxx xxxxxxxx, xxx **XxxxXxxxxXxxxxx** xxxxxxx (xxx xxxxx **XxxxxXxXxxxx**) xx xxx **XxxxXxxxXxxxxxxx**'x xxxx xxxx xxxx. Xxx xxx xxxxxx-xxx xxxx xxxx xx xxxx xxxxxxxx xxxx xxxx xxxx xxx xxx xxxxxx xxx **XxxxXxxxXxxxxxxx**'x xxxx xxxx xxxxx (`AuthorNameJumpListStyle`). Xxxx, xxxx xxxx xxx xxxxxx-xxx xxxx xxxxx xx x xxxxxxx xxxxxxxx xx xxx **XxxxxxxxxxXxxxXxxxxx** xxxxx **XxxxxxxxxxXxxxxx**, xxxxx xx x xxxxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxx xxxx xxx xxxxx.
+The **LongListSelector** notion of flat list and jump list modes is answered in the **SemanticZoom** notion of a zoomed-in and a zoomed-out view, respectively. The zoomed-in view is a property, and you set that property to an instance of a **ListView**. In this case, the zoomed-out view is also set to a **ListView**, and both **ListView** controls are bound to our **CollectionViewSource**. The zoomed-in view uses the same item template, group header template, and **HideEmptyGroups** setting (now named **HidesIfEmpty**) as the **LongListSelector**'s flat list does. And the zoomed-out view uses an item template very much like the one inside the **LongListSelector**'s jump list style (`AuthorNameJumpListStyle`). Also, note that the zoomed-out view binds to a special property of the **CollectionViewSource** named **CollectionGroups**, which is a collection containing the groups rather than the items.
 
-Xx xx xxxxxx xxxx `AuthorNameJumpListStyle`, xx xxxxx xxx xxx xx xx. Xx xxxx xxxx xxx xxxx xxxxxxxx xxx xxx xxxxxx (xxxxx xxx xxxxxxx xx xxxx xxx) xx xxx xxxxxx-xxx xxxx. Xx, xx xxxxxx xxx `AuthorNameJumpListStyle` xxxxx xxx xxxxxxx xx xxxx xxxx xxxx xxxxxxxx.
+We no longer need `AuthorNameJumpListStyle`, at least not all of it. We only need the data template for the groups (which are authors in this app) in the zoomed-out view. So, we delete the `AuthorNameJumpListStyle` style and replace it with this data template.
 
 ```xaml
    <DataTemplate x:Key="ZoomedOutAuthorTemplate">
@@ -106,39 +106,39 @@ Xx xx xxxxxx xxxx `AuthorNameJumpListStyle`, xx xxxxx xxx xxx xx xx. Xx xxxx xxx
     </DataTemplate>
 ```
 
-Xxxx xxxx, xxxxx xxx xxxx xxxxxxx xx xxxx xxxx xxxxxxxx xx x xxxxx xxxxxx xxxx xx xxxx, xx xxxx xx x xxxxxxx xxxxxxxx xxxxx **Xxxxx**.
+Note that, since the data context of this data template is a group rather than an item, we bind to a special property named **Group**.
 
-Xxx xxx xxxxx xxx xxx xxx xxx xxx. Xxxx'x xxx xx xxxxx xx xxx xxxxxx xxxxxxxx.
+You can build and run the app now. Here's how it looks on the mobile emulator.
 
-![xxx xxx xxx xx xxxxxx xxxx xxxxxxx xxxxxx xxxx xxxxxxx](images/wpsl-to-uwp-case-studies/c02-02-mob10-initial-source-code-changes.png)
+![the uwp app on mobile with initial source code changes](images/wpsl-to-uwp-case-studies/c02-02-mob10-initial-source-code-changes.png)
 
-Xxx xxxx xxxxx xxx xxx xxxxxx-xx xxx xxxxxx-xxx xxxxx xxx xxxxxxx xxxxxxxx xxxxxxxxx, xxxxxxxx xxx xxxxx xx xxxx xx xxxx xx xx x xxxxxx xxxx xxxxxxx xxx xxxxxxxxxx xxxx. Xxx xxxxxxx, xxx xxxxxxx xxxxxx xxx xxxxxxx xxx xxx xxx xxxxx xxxx, xx xxx xxxx xx xxxxxxxxx xx xxx xxxxx xxxxxxx xxxx xxx xxx xxxxx xx xxxx xxx. Xx xxx xxx xxx xxx xx x xxxxxxx xxxxxx, xxxx xxx'xx xxx x xxxxxx xxxxx, xxxxx xx xxxx xxx xxx xxxxx'x xxx xxxxx xxx xxxx-xxxxxxxxx xx xxxx xxx xxxx xxxxxxxxxx xxx xxx xx xxxxx xx xxxxxx xxxxxxx xxxxx xxxxxxx xxx xx xxxxxxxxxxx xxxx xxxxxx xxxx xxx xxxxxx xx x xxxxxx xxxxxx. Xx, xx xxx xxxx xxx xxxxxxxx ([Xxxxxxx xxxxxxx xxx xxxxxxxxxx](#initial-styling-and-templating), [Xxxxxxxx XX](#adaptive-ui), xxx [Xxxxx xxxxxxx](#final-styling)), xx'xx xxxxxx xxxxx xxxxxx.
+The view model and the zoomed-in and zoomed-out views are working together correctly, although one issue is that we need to do a little more styling and templating work. For example, the correct styles and brushes are not yet being used, so the text is invisible on the group headers that you can click to zoom out. If you run the app on a desktop device, then you'll see a second issue, which is that the app doesn't yet adapt its user-interface to give the best experience and use of space on larger devices where windows can be potentially much larger than the screen of a mobile device. So, in the next few sections ([Initial styling and templating](#initial-styling-and-templating), [Adaptive UI](#adaptive-ui), and [Final styling](#final-styling)), we'll remedy those issues.
 
-## Xxxxxxx xxxxxxx xxx xxxxxxxxxx
+## Initial styling and templating
 
-Xx xxxxx xxx xxx xxxxx xxxxxxx xxxxxx, xxxx `AuthorGroupHeaderTemplate` xxx xxx x **Xxxxxx** xx `"0,0,0,9.6"` xx xxx **Xxxxxx**.
+To space out the group headers nicely, edit `AuthorGroupHeaderTemplate` and set a **Margin** of `"0,0,0,9.6"` on the **Border**.
 
-Xx xxxxx xxx xxx xxxx xxxxx xxxxxx, Xxxx `BookTemplate` xxx xxx xxx **Xxxxxx** xx `"9.6,0"` xx xxxx **XxxxXxxxx**x.
+To space out the book items nicely, Edit `BookTemplate` and set the **Margin** to `"9.6,0"` on both **TextBlock**s.
 
-Xx xxx xxx xxx xxx xxxx xxx xxx xxxx xxxxx x xxxxxx xxxxxx, xxxxxx `TitlePanel`, xxxxxx xxx xxx **Xxxxxx** xx xxx xxxxxx **XxxxXxxxx** xx xxxxxxx xxx xxxxx xx `"7.2,0,0,0"`. Xxx xx `TitlePanel` xxxxxx, xxx xxx xxxxxx xx `0` (xx xxxxxxxx xxxxx xxxxx xxxx xx xxx)
+To lay out the app name and the page title a little better, inside `TitlePanel`, remove the top **Margin** on the second **TextBlock** by setting the value to `"7.2,0,0,0"`. And on `TitlePanel` itself, set the margin to `0` (or whatever value looks good to you)
 
-Xxxxxx `LayoutRoot`'x Xxxxxxxxxx xx `"{ThemeResource ApplicationPageBackgroundThemeBrush}"`.
+Change `LayoutRoot`'s Background to `"{ThemeResource ApplicationPageBackgroundThemeBrush}"`.
 
-## Xxxxxxxx XX
+## Adaptive UI
 
-Xxxxxxx xx xxxxxxx xxx xxxx x xxxxx xxx, xx'x xx xxxxxxxx xxxx xxx xxxxxx xxx'x XX xxxxxx xxxxxx xxxx xxxxx xxxxx xxx xxxxx xxxxxxx xxx xxxxxx xxxxxxx xx xxxx xxxxx xx xxx xxxxxxx. Xxx, xx'x xxxxxx xxxx xxx XX xxxxxx xx xxxxx xxxxxx xxx xxxx xxxxxx xxx xx xxxxx xxxx xxx xxx xx xxxxxxx xx x xxxx xxxxxx (xxxxx xx xxxx xxxxxxxx xx x xxxxxx xxxx x xxxxx xxxxxx), xxx xxx xx xxxx xx xxx xxx XX xxxx xx xxxx xxxxxxxxx xxxx xxx xxx'x xxxxxx xx xxxxxx (xxxxx xxxxxxx xx x xxxxx xxxxxx, xxx xxx xxxx xxxxxx xx x xxxxx xxxxxx).
+Because we started out with a phone app, it's no surprise that our ported app's UI layout really only makes sense for small devices and narrow windows at this stage in the process. But, we'd really like the UI layout to adapt itself and make better use of space when the app is running in a wide window (which is only possible on a device with a large screen), and for it only to use the UI that we have currently when the app's window is narrow (which happens on a small device, and can also happen on a large device).
 
-Xx xxx xxx xxx xxxxxxxx Xxxxxx Xxxxx Xxxxxxx xxxxxxx xx xxxxxxx xxxx. Xx'xx xxx xxxxxxxxxx xx xxxxxx xxxxxxxx xx xxxx, xx xxxxxxx, xxx XX xx xxxx xxx xx xxx xxxxxx xxxxx xxxxx xxx xxxxxxxxx xxxx xx'xx xxxxx xxxxx xxx. Xxxx, xx'xx xxxxxx xxxx xxx xxx'x xxxxxx xx xxxxx-xxxx-xx-xxxxx-xx x xxxxxxxx xxxx (xxxxxxxx xx xxxxx xx [xxxxxxxxx xxxxxx](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels)), xxx xx xxxxxxxx, xx'xx xxxxxx xxx xxxxxxxxxx xx xxxxxx xxxxxxxx xx xxxx xx xxx x xxxxxx, xxx xxxxx, xxxxxx. Xx'xx xxx xxxxx xxxxxxxx xxxxxxx xx x xxxxxx xxxxx, xxx xx'xx xxx xx xxxxxxxx xxxxxxx xx xxxxxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxx xx xxxxx xxxx xxxxxx xxxxx, xx xxx, xxxxxxxxx xx xxx xxxxx xx xxx xxxxxx xx xxxxxxxxx xxxxxx. Xx'xx xxxxxxxxxx xx xxxxxx xxxxx xx xxxx xxxx, xxx xx'x xxxxxxxx xx xxxxxxx xx xxxxxx xxxxxx, xxx.
+We can use the adaptive Visual State Manager feature to achieve this. We'll set properties on visual elements so that, by default, the UI is laid out in the narrow state using the templates that we're using right now. Then, we'll detect when the app's window is wider-than-or-equal-to a specific size (measured in units of [effective pixels](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels)), and in response, we'll change the properties of visual elements so that we get a larger, and wider, layout. We'll put those property changes in a visual state, and we'll use an adaptive trigger to continuously monitor and determine whether to apply that visual state, or not, depending on the width of the window in effective pixels. We're triggering on window width in this case, but it's possible to trigger on window height, too.
 
-X xxxxxxx xxxxxx xxxxx xx YYY xxx xx xxxxxxxxxxx xxx xxxx xxx xxxx xxxxxxx xxxx'x xxx xxxx xx xxx xxxxxxxx xxxxxx xx xxxxx xxxx xx xxxx xxx xxxx xxxxxx xx. Xxxxxx xxx xxxxxxxxx xxxxxxx xxxx YYY xxx, xx xx x xxxxx xxxxxx xxxx xxxx, xx'x xxxxxx xx xxx xxxxxxx xxxxxx xxxxxx. Xx x XX, xxx xxxxxx xxxx xxxxxx xx xxxxxxx xxxx xxxxxx xx xxxxxxx xxx xxxxxx xx xxx xxxx xxxxx, xxxxx xxxx xxxxxxx YYYxYYY-xxxxx xxxxx. Xxxx xxxxx, xxx'xx xx xxxx xx xxxx xxx xxxxxx xxxxxx xxxxxx xx xxxxxxx x xxxxxxx xx xxx xxxxxxx xx xxx YYYxYYY xxxxx. Xxx xxxxxxxx xxxx xxxx xxx xxx xxxxxxx xxxx xxxxxxxxxx, xxx xxxx xxxxxx xxxxx xxxx xx xxxxxxx, xxx xxx xxxxxxx xxxxxx xxxxxx xxxx xx xx xxxxxx.
+A minimum window width of 548 epx is appropriate for this use case because that's the size of the smallest device we would want to show the wide layout on. Phones are typically smaller than 548 epx, so on a small device like that, we'd remain in the default narrow layout. On a PC, the window will launch by default wide enough to trigger the switch to the wide state, which will display 250x250-sized items. From there, you'll be able to drag the window narrow enough to display a minimum of two columns of the 250x250 items. Any narrower than that and the trigger will deactivate, the wide visual state will be removed, and the default narrow layout will be in effect.
 
-Xxxxxx xxxxxxxx xxx xxxxxxxx Xxxxxx Xxxxx Xxxxxxx xxxxx, xx xxxxx xxxx xx xxxxxx xxx xxxx xxxxx xxx xxxx xxxxx xxxxxx xxxx xxx xxxxxx xxxxxxxx xxx xxxxxxxxx xx xxx xxxxxx. Xxxxx xxxxx xxxxxxxx xxx xx xx xxxx. Xx xxx xx xxxxxx xxxxxxxxxxx xxx xxxxxx xxxxxxxx xxx xxxxxxxxx, xx'xx xxxxxxx xxx xxxx "xxxx" xx xxx xxxx xx xxx xxxxxxx xx xxxxxxxx xxxx xx xxx xxx xxxx xxxxx. Xx xx xxxxxxx xx xxxxxxxx xxxx xxx xxxxxxx xxx xxxx "xxxx", xxxx xxx xxx xxxxxx xxxx xx xx xxx xxx xxxxxx xxxxx, xxxxx xx xxx xxxxxxx xxxxx xxx xxxxx xxxxxxxx xxxxxx xxx xxx xx xxxxx xxxxxx xx xxxxxx xxxxxxxx xx xxx xxxx. Xxxx xxx xxxxxxxx xxxxxx xxx xxx xxxx xxxxx xxx xxx xxx xx xxxxxx Xxxxxx Xxxxx xx xxx xxxxxx.
+Before tackling the adaptive Visual State Manager piece, we first need to design the wide state and that means adding some new visual elements and templates to our markup. These steps describe how to do that. By way of naming conventions for visual elements and templates, we'll include the word "wide" in the name of any element or template that is for the wide state. If an element or template does not contain the word "wide", then you can assume that it is for the narrow state, which is the default state and whose property values are set as local values on visual elements in the page. Only the property values for the wide state are set via an actual Visual State in the markup.
 
--   Xxxx x xxxx xx xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh702601) xxxxxxx xx xxx xxxxxx xxx xxx `x:Name="narrowSeZo"` xx xxx xxxx. Xx xxx xxxxxxxx, xxx `x:Name="wideSeZo"` xxx xxxx xxx `Visibility="Collapsed"` xx xxxx xxx xxxx xxx xx xxx xxxxxxx xx xxxxxxx.
--   Xx `wideSeZo`, xxxxxx xxx **XxxxXxxx**x xx **XxxxXxxx**x xx xxxx xxx xxxxxx-xx xxxx xxx xxx xxxxxx-xxx xxxx.
--   Xxxx x xxxx xx xxxxx xxxxx xxxxxxxxx `AuthorGroupHeaderTemplate`, `ZoomedOutAuthorTemplate`, xxx `BookTemplate` xxx xxxxxx xxx xxxx `Wide` xx xxx xxxx xx xxx xxxxxx. Xxxx, xxxxxx `wideSeZo` xx xxxx xx xxxxxxxxxx xxx xxxx xx xxxxx xxx xxxxxxxxx.
--   Xxxxxxx xxx xxxxxxxx xx `AuthorGroupHeaderTemplateWide` xxxx `<TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding Name}"/>`.
--   Xxxxxxx xxx xxxxxxxx xx `ZoomedOutAuthorTemplateWide` xxxx:
+-   Make a copy of the [**SemanticZoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) control in the markup and set `x:Name="narrowSeZo"` on the copy. On the original, set `x:Name="wideSeZo"` and also set `Visibility="Collapsed"` so that the wide one is not visible by default.
+-   In `wideSeZo`, change the **ListView**s to **GridView**s in both the zoomed-in view and the zoomed-out view.
+-   Make a copy of these three resources `AuthorGroupHeaderTemplate`, `ZoomedOutAuthorTemplate`, and `BookTemplate` and append the word `Wide` to the keys of the copies. Also, update `wideSeZo` so that it references the keys of these new resources.
+-   Replace the contents of `AuthorGroupHeaderTemplateWide` with `<TextBlock Style="{StaticResource SubheaderTextBlockStyle}" Text="{Binding Name}"/>`.
+-   Replace the contents of `ZoomedOutAuthorTemplateWide` with:
 
 ```xaml
     <Grid HorizontalAlignment="Left" Width="250" Height="250" >
@@ -151,7 +151,7 @@ Xxxxxx xxxxxxxx xxx xxxxxxxx Xxxxxx Xxxxx Xxxxxxx xxxxx, xx xxxxx xxxx xx xxxxxx
     </Grid>
 ```
 
--   Xxxxxxx xxx xxxxxxxx xx `BookTemplateWide` xxxx:
+-   Replace the contents of `BookTemplateWide` with:
 
 ```xaml
     <Grid HorizontalAlignment="Left" Width="250" Height="250">
@@ -169,7 +169,7 @@ Xxxxxx xxxxxxxx xxx xxxxxxxx Xxxxxx Xxxxx Xxxxxxx xxxxx, xx xxxxx xxxx xx xxxxxx
     </Grid>
 ```
 
--   Xxx xxx xxxx xxxxx, xxx xxxxxx xx xxx xxxxxx-xx xxxx xxxx xxxx xxxx xxxxxxxx xxxxxxxxx xxxxx xxxxxx xxxx. Xxxxxxxx xxx xxxxxxxxxxx xx xxxxx xxxxx xxxxxxxx xxxx xxxx xx xxx xxxxxxx xx xxxx. Xxxx'x xxx xxx xxxxxx xxxxx.
+-   For the wide state, the groups in the zoomed-in view will need more vertical breathing space around them. Creating and referencing an items panel template will give us the results we want. Here's how the markup looks.
 
 ```xaml
    <ItemsPanelTemplate x:Key="ZoomedInItemsPanelTemplate">
@@ -185,7 +185,7 @@ Xxxxxx xxxxxxxx xxx xxxxxxxx Xxxxxx Xxxxx Xxxxxxx xxxxx, xx xxxxx xxxx xx xxxxxx
             ...
 ```
 
--   Xxxxxxx, xxx xxx xxxxxxxxxxx Xxxxxx Xxxxx Xxxxxxx xxxxxx xx xxx xxxxx xxxxx xx `LayoutRoot`.
+-   Finally, add the appropriate Visual State Manager markup as the first child of `LayoutRoot`.
 
 ```xaml
     <Grid x:Name="LayoutRoot" ... >
@@ -206,13 +206,13 @@ Xxxxxx xxxxxxxx xxx xxxxxxxx Xxxxxx Xxxxx Xxxxxxx xxxxx, xx xxxxx xxxx xx xxxxxx
     ...
 ```
 
-## Xxxxx xxxxxxx
+## Final styling
 
-Xxx xxxx xxxxxxx xxx xxxx xxxxx xxxxxxx xxxxxx.
+All that remains are some final styling tweaks.
 
--   Xx `AuthorGroupHeaderTemplate`, xxx `Foreground="White"` xx xxx **XxxxXxxxx** xx xxxx xx xxxxx xxxxxxx xxxx xxxxxxx xx xxx xxxxxx xxxxxx xxxxxx.
--   Xxx `FontWeight="SemiBold"` xx xxx **XxxxXxxxx** xx xxxx `AuthorGroupHeaderTemplate` xxx `ZoomedOutAuthorTemplate`.
--   Xx `narrowSeZo`, xxx xxxxx xxxxxxx xxx xxx xxxxxxx xx xxx xxxxxx-xxx xxxx xxx xxxx-xxxxxxx xxxxxxx xx xxxxxxxxx, xx xxx'x xxxx xx xxxx. Xx'xx xxxxxx x [**XxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn251841) xxx xxx xxxxxx-xx xxxx xxxx [**XxxxxxxxxxXxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209417) xxx xx `Stretch`. Xxx xx'xx xxxxxx xx [**XxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242817) xxx xxx xxxxxx-xxx xxxx xxxxxxxxxx xxxx xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208817). Xxxx'x xxxx xxxx xxxxx xxxx.
+-   In `AuthorGroupHeaderTemplate`, set `Foreground="White"` on the **TextBlock** so that it looks correct when running on the mobile device family.
+-   Add `FontWeight="SemiBold"` to the **TextBlock** in both `AuthorGroupHeaderTemplate` and `ZoomedOutAuthorTemplate`.
+-   In `narrowSeZo`, the group headers and the authors in the zoomed-out view are left-aligned instead of stretched, so let's work on that. We'll create a [**HeaderContainerStyle**](https://msdn.microsoft.com/library/windows/apps/dn251841) for the zoomed-in view with [**HorizontalContentAlignment**](https://msdn.microsoft.com/library/windows/apps/br209417) set to `Stretch`. And we'll create an [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/br242817) for the zoomed-out view containing that same [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817). Here's what that looks like.
 
 ```xaml
    <Style x:Key="AuthorGroupHeaderContainerStyle" TargetType="ListViewHeaderItem">
@@ -241,38 +241,38 @@ Xxx xxxx xxxxxxx xxx xxxx xxxxx xxxxxxx xxxxxx.
                 ...
 ```
 
-Xxxx xxxx xxxxxxxx xx xxxxxxx xxxxxxxxxx xxxxxx xxx xxx xxxxxxx xxxx xxxx.
+That last sequence of styling operations leaves the app looking like this.
 
-![xxx xxxxxx xxxxxxx YY xxx xxxxxxx xx x xxxxxxx xxxxxx, xxxxxx-xx xxxx, xxx xxxxx xx xxxxxx](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
+![the ported windows 10 app running on a desktop device, zoomed-in view, two sizes of window](images/w8x-to-uwp-case-studies/c02-07-desk10-zi-ported.png)
 
-Xxx xxxxxx Xxxxxxx YY xxx xxxxxxx xx x Xxxxxxx xxxxxx, xxxxxx-xx xxxx, xxx xxxxx xx xxxxxx
+The ported Windows 10 app running on a Desktop device, zoomed-in view, two sizes of window
  
-![xxx xxxxxx xxxxxxx YY xxx xxxxxxx xx x xxxxxxx xxxxxx, xxxxxx-xxx xxxx, xxx xxxxx xx xxxxxx](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
+![the ported windows 10 app running on a desktop device, zoomed-out view, two sizes of window](images/w8x-to-uwp-case-studies/c02-08-desk10-zo-ported.png)
 
-Xxx xxxxxx Xxxxxxx YY xxx xxxxxxx xx x Xxxxxxx xxxxxx, xxxxxx-xxx xxxx, xxx xxxxx xx xxxxxx
+The ported Windows 10 app running on a Desktop device, zoomed-out view, two sizes of window
 
-![xxx xxxxxx xxxxxxx YY xxx xxxxxxx xx x xxxxxx xxxxxx, xxxxxx-xx xxxx](images/w8x-to-uwp-case-studies/c02-09-mob10-zi-ported.png)
+![the ported windows 10 app running on a mobile device, zoomed-in view](images/w8x-to-uwp-case-studies/c02-09-mob10-zi-ported.png)
 
-Xxx xxxxxx Xxxxxxx YY xxx xxxxxxx xx x Xxxxxx xxxxxx, xxxxxx-xx xxxx
+The ported Windows 10 app running on a Mobile device, zoomed-in view
 
-![xxx xxxxxx xxxxxxx YY xxx xxxxxxx xx x xxxxxx xxxxxx, xxxxxx-xxx xxxx](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
+![the ported windows 10 app running on a mobile device, zoomed-out view](images/w8x-to-uwp-case-studies/c02-10-mob10-zo-ported.png)
 
-Xxx xxxxxx Xxxxxxx YY xxx xxxxxxx xx x Xxxxxx xxxxxx, xxxxxx-xxx xxxx
+The ported Windows 10 app running on a Mobile device, zoomed-out view
 
-## Xxxxxx xxx xxxx xxxxx xxxx xxxxxxxx
+## Making the view model more flexible
 
-Xxxx xxxxxxx xxxxxxxx xx xxxxxxx xx xxxxxxxxxx xxxx xxxx xx xx xx xx xxxxxx xx xxxxxx xxxxx xxx xxx xx xxx xxx XXX. Xxxx, xx xxxxxxx xxxxxxxx xxxxx xxxx xxx xxx xxxxxx xx xxxx xxxx xxxx xxxxx xxxx xxxxxxxx xxxx xxxxxxxx xxx x **XxxxxxxxxxXxxxXxxxxx**. Xxx xxxx xxxxx (xxx xxxxxx xxxx xx xx XxxxXxxxx\\XxxxxxxxxXxxxXxxxx.xx) xxxx xx xxxxxx xxxx xxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxx XxxxxxxxxYXXXXY xxxxxxxx x xxxxx xxxxx Xxxxxx, xxxxx xxxxxxx xxxx **Xxxx&xx;X&xx;**, xxxxx **X** xx XxxxXxx. Xxxx xxxxx xxxx xxx Xxxxxx xxxxx *xx x* xxxxx xx XxxxXxx.
+This section contains an example of facilities that open up to us by virtue of having moved our app to use the UWP. Here, we explain optional steps that you can follow to make your view model more flexible when accessed via a **CollectionViewSource**. The view model (the source file is in ViewModel\\BookstoreViewModel.cs) that we ported from the Windows Phone Silverlight app Bookstore2WPSL8 contains a class named Author, which derives from **List&lt;T&gt;**, where **T** is BookSku. That means that the Author class *is a* group of BookSku.
 
-Xxxx xx xxxx **XxxxxxxxxxXxxxXxxxxx.Xxxxxx** xx Xxxxxxx, xxx xxxx xxxxx xx'xx xxxxxxxxxxxxx xx xxxx xxxx Xxxxxx xx Xxxxxxx xx x xxxxx xx *xxxxxxxxx*. Xx xxxxx xx xx xxx **XxxxxxxxxxXxxxXxxxxx** xx xxxxxxxxx xxxx Xxxxxx xx, xx xxxx xxxx, x xxxxx xx XxxxXxx. Xxxx xxxxx: xxx xx'x xxx xxxxxxxx. Xxxx xx xx xxxx Xxxxxx xx xx *xxxx* x xxxxx xx XxxxXxx *xxx* x xxxxx xx xxx xxxxxxxxx xxxxx xxx xxxxxx xxx xxxxx? Xxxxxx xxx'x *xx* xxxx xx xxxxx xxxxxx. Xxx, Xxxxxx xxx *xxxx* xxx xxxxxx xx xxxxxx. Xxx xxxx'x xxx xxxxxxxx: xxx xxx *xxx-x-xxxxx* xxxxxxx xxxxxxx xx, xx xx xxxxxxxx xx, xxx *xx-x-xxxxx* xxxxxxx xxxx xx'xx xxxxx xxxxxxxxx. Xxxx'x xxx:
+When we bind **CollectionViewSource.Source** to Authors, the only thing we're communicating is that each Author in Authors is a group of *something*. We leave it to the **CollectionViewSource** to determine that Author is, in this case, a group of BookSku. That works: but it's not flexible. What if we want Author to be *both* a group of BookSku *and* a group of the addresses where the author has lived? Author can't *be* both of those groups. But, Author can *have* any number of groups. And that's the solution: use the *has-a-group* pattern instead of, or in addition to, the *is-a-group* pattern that we're using currently. Here's how:
 
--   Xxxxxx Xxxxxx xx xxxx xx xx xxxxxx xxxxxxx xxxx **Xxxx&xx;X&xx;**.
--   Xxx xxxx xxxxx xx Xxxxxx: `private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`.
--   Xxx xxxx xxxxxxxx xx Xxxxxx: `public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`.
--   Xxx xx xxxxxx xx xxx xxxxxx xxx xxxxx xxx xxxxx xx xxx xx xxxx xxxxxx xx Xxxxxx xx xx xxxx.
--   Xxxxxx xxx xxxxxxxxxxxxxx xx xxx XxxXxxxXxx xxxxxx xx `this.BookSkus.Add(bookSku);`.
--   Xxx xxxx Xxxxxx *xxx* xx xxxxx xxx xxxxx, xx xxxx xx xxxxxxxxxxx xx xxx **XxxxxxxxxxXxxxXxxxxx** xxxxx xx xxxxx xxxxxx xx xxxxxx xxx. Xx xx xxxx, xxx xxxx xxxxxxxx xx xxx **XxxxxxxxxxXxxxXxxxxx**: `ItemsPath="BookSkus"`
+-   Change Author so that it no longer derives from **List&lt;T&gt;**.
+-   Add this field to Author: `private ObservableCollection<BookSku> bookSkus = new ObservableCollection<BookSku>();`.
+-   Add this property to Author: `public ObservableCollection<BookSku> BookSkus { get { return this.bookSkus; } }`.
+-   And of course we can repeat the above two steps to add as many groups to Author as we need.
+-   Change the implementation of the AddBookSku method to `this.BookSkus.Add(bookSku);`.
+-   Now that Author *has* at least one group, we need to communicate to the **CollectionViewSource** which of those groups it should use. To do that, add this property to the **CollectionViewSource**: `ItemsPath="BookSkus"`
 
-Xxxxx xxxxxxx xxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx, xxx xxx xxx xxxx xxx xxx xxxxx xxxxxx Xxxxxx, xxx xxx **XxxxxxxxxxXxxxXxxxxx**, xxxxxx xxx xxxx xx. Xxx'x xxxx xxx xxxx xxxxxx xx Xxxxxx xx xxxx, xx xx xxx xx *xxxxxxx* xxxxxxxxxx **XxxxxxxxxxXxxxXxxxxx.XxxxxXxxx**, x xxxxxxx xxxxx xx xxx xxxxxxxx xxxx xx xxxx:
+Those changes leave this app functionally unchanged, but you now know how you could extend Author, and the **CollectionViewSource**, should you need to. Let's make one last change to Author so that, if we use it *without* specifying **CollectionViewSource.ItemsPath**, a default group of our choosing will be used:
 
 ```csharp
     public class Author : IEnumerable<BookSku>
@@ -290,9 +290,13 @@ Xxxxx xxxxxxx xxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx, xxx xxx xxx xxxx xxx xxx xx
     }
 ```
 
-Xxx xxx xx xxx xxxxxx xx xxxxxx `ItemsPath="BookSkus"` xx xx xxxx xxx xxx xxx xxxx xxxxx xxxxxx xxx xxxx xxx.
+And now we can choose to remove `ItemsPath="BookSkus"` if we like and the app will still behave the same way.
 
-## Xxxxxxxxxx
+## Conclusion
 
-Xxxx xxxx xxxxx xxxxxxxx x xxxx xxxxxxxxx xxxx xxxxxxxxx xxxx xxx xxxxxxxx xxx. Xxx xx xxx xxxxxxxxxx xxx xxxxxxxx xx xxx Xxxxxxx Xxxxx Xxxxxxxxxxx **XxxxXxxxXxxxxxxx**—xxx xxxx—xxxx xxxxx xx xx xxxxxxxxx xx x XXX xxx xx xxx xxxx xx **XxxxxxxxXxxx**, **XxxxXxxx**, **XxxxXxxx**, xxx **XxxxxxxxxxXxxxXxxxxx**. Xx xxxxxx xxx xx xx-xxx, xx xxxx-xxx-xxxx, xxxx xxxxxxxxxx xxxx xxx xxxxxx xx x XXX xxx xx xxxxxxx xxxxxxxxxxxxx, XX, xxx xxxxxxxxxxxx xxxxxxxx xx xxxx xxx xxxxxxxxx xxx xxxxxx Xxxxxxx xxxxxx xxxx xxxxxxx xxx xxx xxxxx xx-xxxxxxx.
+This case study involved a more ambitious user interface than the previous one. All of the facilities and concepts of the Windows Phone Silverlight **LongListSelector**—and more—were found to be available to a UWP app in the form of **SemanticZoom**, **ListView**, **GridView**, and **CollectionViewSource**. We showed how to re-use, or copy-and-edit, both imperative code and markup in a UWP app to achieve functionality, UI, and interactions tailored to suit the narrowest and widest Windows device form factors and all sizes in-between.
+
+
 <!--HONumber=Mar16_HO1-->
+
+

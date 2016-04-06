@@ -1,53 +1,54 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxx xx xxxxxxx xxxx xxxx xxx xxxxxxx xx xxx Xxxxxxx Xxxxx. Xxxxx xxxxxxxxxx xxxxx xxx xx xxx xxx xxxxxx xxxx xxx xxxxxxxxx xx xxx, xxxxx xxxx xxxxxxxxxxxxxxx xxx xxxxxxxxx xxxx xxxx xx xxxxx, XX, xxxxxx xxxxx xxx xxxxxxx xxxxxxxxxxx.
-xxxxx: Xxxxxxx Xxxxx xxx xxxxxxxxx xxxxxxxxxx
-xx.xxxxxxx: XXXYYXYX-YXYY-YYYX-XXXY-XYYXXXXXYYYX
+Description: Windows ストアでアプリやコンテンツの販売を促進する方法について説明します。 これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。
+title: Windows ストア アプリのマーケティング ガイドライン
+ms.assetid: CEB81E9D-5C64-458F-AAF1-C59BBBBB272E
 ---
 
-# Xxxxxxx Xxxxx xxx xxxxxxxxx xxxxxxxxxx
+# Windows ストア アプリのマーケティング ガイドライン
 
-Xxxxx xxx xx xxxxxxx xxxx xxxx xxx xxxxxxx xx xxx Xxxxxxx Xxxxx. Xxxxx xxxxxxxxxx xxxxx xxx xx xxx xxx xxxxxx xxxx xxx xxxxxxxxx xx xxx, xxxxx xxxx xxxxxxxxxxxxxxx xxx xxxxxxxxx xxxx xxxx xx xxxxx, XX, xxxxxx xxxxx xxx xxxxxxx xxxxxxxxxxx.
+Windows ストアでアプリやコンテンツの販売を促進する方法について説明します。 これらのガイドラインでは、利用可能なアセットの使用方法について説明し、印刷、テレビ、ソーシャル メディア、デジタル広告でアプリの販売を促進するための推奨事項を紹介します。
 
-## Xxxxx xxxxxx
+## ストア バッジ
 
-Xx’xx xxxxxxx xxxxxxx xxxxxxxxxxx xxxxxx xx xxxx xxx xxxxx xxxx xxxxxxxxx xx xxxx xxx'x xxxxxxx xxxxxx xxx Xxxxxxx Xxxxx. Xxxxx xxxxxx xxx xxxxxxxxx xx YY xxxxxxxxx. Xxxx xx xxxx xxxx xxxxx xxx xxxxxxx xxxxxxxxxxxx xxx xxxx xx xxxxxx xxxx xxxxx xxxxx xxxxxx; xxxxx xxxxxxxxxxxx, xxxxx xxxx xxxxx xxxxxxxx xxx xxxxxxxxxx, xxx xxxxxxxxx xx x XXX xxxx.
+Windows ストア内でアプリの内容により多くのユーザーを集客するのに役立つ、特殊なプロモーション用のバッジを作成しました。 これらのバッジは 44 の言語で利用できます。 これらのイメージを使う場合、特定の要件に従う必要があることに注意してください。これらの要件は、使用例やガイドラインと共に、PDF ファイルでご確認いただけます。
 
-[
-            ![Xxxxxxxx xxxxxx](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) Xxxxxxx Xxxxx Xxxxxxxxx Xxxxxxxxxx (XXX, Xxxxxxx)
+[![ダウンロード ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529769) Windows ストアのマーケティング ガイドライン (PDF、英語)
 
-## Xxxxx xxxxxxxxx xxx xxxxxx
+## バッジ ジェネレーターと画像
 
-Xxx xxx xxx xxx [xxxxx xxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=534236) xx xxxxxxxx XXXX xxxx xxxxxxxx xxx Xxxxx xxxxx (xx xxx xxxxxxxx xx xxxx xxxxxx) xxx xxxxx xxxxxxxx xx xxxx xxx'x Xxxxx xxxxxxx. Xxx xxx xxxx xxxxxxxx xxx xxxxxxxx xxx xx xxxxx xxxxxx (xx XXX xxx XXX xxxxxx) xxxx xxx xxxx xxxxx.
+[バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236) を使って、(好みの言語で) ストア バッジを表示しストアのアプリの内容ページに直接リンクする HTML を生成できます。 バッジ画像のセット一式を (PNG および PDF 形式で) 以下のリンクからダウンロードすることもできます。
 
-[
-            ![Xxxxxxxx xxxxxx](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) Xxx xxxxx xxxxxx
+[![ダウンロード ボタン](images/downloadbutton.png)](http://go.microsoft.com/fwlink/p/?LinkId=529771) すべてのバッジ画像
 
-## Xxxxxx xxxxxx
+## デバイスの画像
 
-Xx xxxxxxx xxxx xxx, xxx xxx xxxx xx xxxx xxx xx xxxxx xxxx xxxxxxx xx x Xxxxxxx xxxxxx. Xx’xx xxx x xxxxxxx xx xxxxxx xxxxxxx xxxxxx xxx xxx xx xxxxxx xxxx, xxxxxxxxx xxxxxx, xxxxxxx, xxxxxxx xxx XXx. Xxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxxxxxxxx xxx xxx xx xxx xxxxx xxxxxx xxx xx xxxxx xx xxx [Xxxxxxx Xxxxx Xxxxxxxxx Xxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=529769).
+アプリの販売を促進するために、Windows デバイスで実行しているときにどのように表示されるかを示すことが必要になる場合があります。 Microsoft では、電話、タブレット、ノート PC、PC など、さまざまなデバイス シャーシの画像を用意しており、その中から選んで使うことができます。 これらの画像の使用方法に関するベスト プラクティスと技術仕様については、[Windows ストアのマーケティング ガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=529769) をご覧ください。
 
-[
-            ![Xxxxxxxx xxxxxx](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) Xxxxxxx xxxxxx xxx
+[![ダウンロード ボタン](images/downloadbutton.png)](https://go.microsoft.com/fwlink/p/?LinkId=533057) Windows デバイスの図
 
-## Xxxxxxx xx Xxxxxxxxx Xxxxx
+## Microsoft マークのライセンス
 
-*Xxxxxxxxx Xxxxx* xxxxx xxx *Xxxxxxxxx xxxxx* xxx xxx *Xxxxxxx Xxxxx xxxx* xxxxxxxxx xx xxx [xxxxx xxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=534236) xxxx. Xx xxx xxxxx xxxxxx, xxx xxxx:
+*Microsoft マーク*とは、[バッジ ジェネレーター](http://go.microsoft.com/fwlink/p/?LinkID=534236) のページで説明するロゴ、*Microsoft バッジ*と *Windows ストア タイル*を意味します。 これらのバッジを使うには、以下の作業を行う必要があります。
 
--   Xxxx xxxx xxx xx xxxxx xxxxxxx xxxxxxxxx xx xxx Xxxxxxx Xxxxx, xx xx xxxx xx xxx [Xxxxxxxxx Xxxxxxxxx Xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=624463).
+-   アプリまたはその他のコンテンツを、Windows ストアで入手できるように設定するか、[Microsoft アフィリ エイト プログラム](http://go.microsoft.com/fwlink/p/?LinkId=624463) に登録する。
 
--   Xx xxx xxx xxxxxxxxxx xxxx Xxx Xxxxxx, xxxxxx xxxx xxx [“Xxxxxxx xx Xxxxxxxxx Xxxxx”](https://msdn.microsoft.com/library/windows/apps/hh694058.aspx#license_to_mark) xxxxxxx xx xxx Xxx Xxxxxxxxx Xxxxxxxxx.
+-   デベロッパー センターに登録している場合は、「アプリ開発者契約書」の「[Microsoft マークのライセンス](https://msdn.microsoft.com/library/windows/apps/hh694058.aspx#license_to_mark)」セクションに準拠する。
 
--   Xx xxx xxx xxx xxxxxxxxxx xxxx Xxxxxxx Xxx Xxxxxx, Xxxxxxxxx xxxxxx xxx x xxxxxxxxx, xxxxxxxxxxxx, xxxxxxxxxxxxxxx, xxxxxxx-xxxx xxxxxxx xx xxx xxx xxxxxx xxxxxx xx xxxxxxxxx xx xxx Xxxxxxx Xxxxx Xxxxxxxxx Xxxxxxxxxx. Xxxxxxxxx xxx xxxxxx xxxxx xxxxxxxxxx, xxx xx xx xxxx, Xxxxxxxxx xxxx xxx xxxxxxxxxx xxxxx xx xxxxxxxx xxx xx xxx xxx XXXx xxxxx xxxxx xxxxxxxxxxxxxx xxx xxxxxx. Xxxxxxxxx xxxxxxxx xxx xxxxxx xxx xxxxxxxxx xxxxxxx xxxxxx.
+-   Windows デベロッパー センターに登録していない場合は、Windows ストアのマーケティング ガイドラインに記載されているように、バッジを使うための非独占的、譲渡不能、無償の全世界のライセンスがマイクロソフトから付与される。 Microsoft は、これらのガイドラインを変更できるものとします。変更した場合、Microsoft は、これらの規定が投稿される新しい URL へ、適切な方法でお客様をリダイレクトします。 Microsoft は、本契約中明示的に付与されていない権利をすべて留保します。
 
--   Xxxxxx xxx xxxx xxxxx xxxxxxxxxxxxxx xxxxxxxxx xx xxx [Xxxxxxx Xxxxx Xxxxxxxxx Xxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=529769).
+-   「[Windows ストアのマーケティング ガイドライン](http://go.microsoft.com/fwlink/p/?LinkId=529769)」で説明されているロゴの使用法に関する仕様に従う。
 
-Xxxxxxxxx xx xxx xxxx xxxxx xx xxx Xxxxxxxxx Xxxxx xxx xxxxxxxxxx xxxxxxxx, xxx xxx xxxx xxxxxxxxxxx xx xxx xxxxxxxx xxxxxxxxxx xxxx xxxx xxx xx xxx Xxxxxxxxx Xxxxx. Xxxxxxxxx xxx xxxxxx xxxx xxxxxxx xx xxx xxxx xxx xx xxx xxxx xxxxxxxxxx.
+Microsoft は、Microsoft マークおよび関連する営業権の唯一の所有者であり、お客様による Microsoft マークの使用に関する営業権の唯一の受益者です。 Microsoft は、その独自の裁量により、このライセンスをいつでも取り消すことができます。
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,38 +1,38 @@
 ---
-xxxxx: Xxxx xxxxxxxxx xx xxxx XxxxxxX xxxx
-xxxxxxxxxxx: Xxxx xxxxx, xx xxxx xxxxx, xxxx xxxxxxxxx xxx xxxxxx (xxxx xx xxxxxxx, xxxxxxxx, xxxxxxxxxx xxxxxx xx xxxxx xxxxxxxx xxxx) xxxx xxxxx xxxxxxx xx xxxx xxxxx xxxx xxxxxx.
-xx.xxxxxxx: xYYYYYxx-YYxY-xxYY-YxYY-YYYxxxYxYxYY
+title: DirectX ゲームでのリソースの読み込み
+description: ほとんどのゲームは、ある時点で、ローカル ストレージまたは他のデータ ストリームからリソースとアセット (シェーダー、テクスチャ、定義済みメッシュ、その他のグラフィックス データなど) を読み込みます。
+ms.assetid: e45186fa-57a3-dc70-2b59-408bff0c0b41
 ---
 
-# Xxxx xxxxxxxxx xx xxxx XxxxxxX xxxx
+# DirectX ゲームでのリソースの読み込み
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxx xxxxx, xx xxxx xxxxx, xxxx xxxxxxxxx xxx xxxxxx (xxxx xx xxxxxxx, xxxxxxxx, xxxxxxxxxx xxxxxx xx xxxxx xxxxxxxx xxxx) xxxx xxxxx xxxxxxx xx xxxx xxxxx xxxx xxxxxx. Xxxx, xx xxxx xxx xxxxxxx x xxxx-xxxxx xxxx xx xxxx xxx xxxx xxxxxxxx xxxx xxxxxxx xxxxx xxxxx xx xxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
+ほとんどのゲームは、ある時点で、ローカル ストレージまたは他のデータ ストリームからリソースとアセット (シェーダー、テクスチャ、定義済みメッシュ、その他のグラフィックス データなど) を読み込みます。 ここでは、このようなファイルを読み込んでユニバーサル Windows プラットフォーム (UWP) ゲームで使う際に考慮すべきことについて、その概要を説明します。
 
-Xxx xxxxxxx, xxx xxxxxx xxx xxxxxxxxx xxxxxxx xx xxxx xxxx xxxxx xxxx xxxx xxxxxxx xxxx xxxxxxx xxxx, xxx xxxxxxxx xx x xxxxxxxx xxxxxx. Xxx xxxx xx xxxx xxx xxxxxxxx, xxx xxxx xx: xxxxx x xxxx, xxxxxxxxxxxx xxxxxx xxx xx xxxxxxxx xxxxxxx xx xxxx xxxxx xxx xxxxxxxxxx xx xxxx xxxxxxxx XXXx, xx xxx xx xxxxxxxxx xxxxxxxxxxx xxx xxx xx xxxx xxxx. Xxxx, xx xxxxx xxx xxxxxxx xxx xxxxx xxxxx xxx xxxxxxx xxxxx xxxxxxxxx xxxxx xx xxxxxxx xxxxxxxxx xxx xxx xxxx XxxxxxYX: xxxxxx (xxxxxx), xxxxxxxx (xxxxxxx), xxx xxxxxxxx xxxxxx xxxxxxx.
+たとえば、ゲームの多角形オブジェクトのメッシュは、別のツールで作成されて特定の形式にエクスポートされている場合があります。 テクスチャなどについても同じことが言えます。フラットな非圧縮ビットマップは、ほとんどのツールで普通に作成でき、ほとんどのグラフィックス API で理解されますが、ゲームで使うにはきわめて効率が悪い可能性があります。 ここでは、Direct3D で使うために 3 種類のグラフィック リソース (メッシュ (モデル)、テクスチャ (ビットマップ) と、コンパイル済みシェーダーの各オブジェクト) を読み込む基本的なステップについて説明します。
 
-## Xxxx xxx xxxx xx xxxx
+## 理解しておく必要があること
 
 
-### Xxxxxxxxxxxx
+### テクノロジ
 
--   Xxxxxxxx Xxxxxxxx Xxxxxxx (xxxxxxxx.x)
+-   並列パターン ライブラリ (ppltasks.h)
 
-### Xxxxxxxxxxxxx
+### 前提条件
 
--   Xxxxxxxxxx xxx xxxxx Xxxxxxx Xxxxxxx
--   Xxxxxxxxxx xxxxxxxxxxxx xxxxx
--   Xxxxxxxxxx xxx xxxxx xxxxxxxx xx Y-X xxxxxxxx xxxxxxxxxxx.
+-   基本的な Windows ランタイムを理解している。
+-   非同期タスクを理解している。
+-   3-D グラフィックス プログラミングの基本概念を理解している。
 
-Xxxx xxxxxx xxxx xxxxxxxx xxxxx xxxx xxxxx xxx xxxxxxxx xxxxxxx xxx xxxxxxxxxx. Xxx'xx xxxxxxxxx xxx xxxx xxxxxxx xxxxxxx xx xxxxx xxxxx xxxxxxxxxx xxxx xxxxx.
+また、このサンプルには、リソースの読み込みと管理のためのコード ファイルが 3 つ含まれています。 このトピックでは、これらのファイルに定義されているコード オブジェクトが表示されます。
 
--   XxxxxXxxxxx.x/.xxx
--   XxxxxXxxxxxXxxxxx.x/.xxx
--   XXXXxxxxxxXxxxxx.x/.xxx
+-   BasicLoader.h/.cpp
+-   BasicReaderWriter.h/.cpp
+-   DDSTextureLoader.h/.cpp
 
-Xxx xxxxxxxx xxxx xxx xxxxx xxxxxxx xxx xx xxxxx xx xxx xxxxxxxxx xxxxx.
+これらのサンプルのコード一式については、次のリンク先をご覧ください。
 
 <table>
 <colgroup>
@@ -41,41 +41,42 @@ Xxx xxxxxxxx xxxx xxx xxxxx xxxxxxx xxx xx xxxxx xx xxx xxxxxxxxx xxxxx.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">トピック</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Complete code for BasicLoader](complete-code-for-basicloader.md)</p></td>
-<td align="left"><p>Xxxxxxxx xxxx xxx x xxxxx xxx xxxxxxx xxxx xxxxxxx xxx xxxx xxxxxxxx xxxx xxxxxxx xxxx xxxxxx.</p></td>
+<td align="left"><p>グラフィックス メッシュ オブジェクトを変換してメモリに読み込むクラスとメソッドのコード一式です。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Complete code for BasicReaderWriter](complete-code-for-basicreaderwriter.md)</p></td>
-<td align="left"><p>Xxxxxxxx xxxx xxx x xxxxx xxx xxxxxxx xxx xxxxxxx xxx xxxxxxx xxxxxx xxxx xxxxx xx xxxxxxx. Xxxx xx xxx [BasicLoader](complete-code-for-basicloader.md) xxxxx.</p></td>
+<td align="left"><p>バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。 [
+            BasicLoader](complete-code-for-basicloader.md) クラスで使われます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Complete code for DDSTextureLoader](complete-code-for-ddstextureloader.md)</p></td>
-<td align="left"><p>Xxxxxxxx xxxx xxx x xxxxx xxx xxxxxx xxxx xxxxx x XXX xxxxxxx xxxx xxxxxx.</p></td>
+<td align="left"><p>メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## Xxxxxxxxxxxx
+## 手順
 
-### Xxxxxxxxxxxx xxxxxxx
+### 非同期読み込み
 
-Xxxxxxxxxxxx xxxxxxx xx xxxxxxx xxxxx xxx **xxxx** xxxxxxxx xxxx xxx Xxxxxxxx Xxxxxxxx Xxxxxxx (XXX). X **xxxx** xxxxxxxx x xxxxxx xxxx xxxxxxxx xx x xxxxxx xxxx xxxxxxxxx xxx xxxxxxx xx xxx xxxxx xxxx xxxxx xx xxxxxxxxx, xxx xxxxxxx xxxxxxx xxx xxxxxx xx:
+非同期読み込みは、並列パターン ライブラリ (PPL) の **task** テンプレートを使って処理します。 **task** にはメソッド呼び出しが含まれています。その後に、非同期呼び出しの完了後にその結果を処理するラムダが続きます。通常の形式は次のとおりです。
 
-`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`.
+`task<generic return type>(async code to execute).then((parameters for lambda){ lambda code contents });`
 
-Xxxxx xxx xx xxxxxxx xxxxxxxx xxxxx xxx **.xxxx()** xxxxxx, xx xxxx xxxx xxx xxxxxxxxx xxxxxxxxx, xxxxxxx xxxxx xxxxxxxxx xxxx xxxxxxx xx xxx xxxxxxx xx xxx xxxxx xxxxxxxxx xxx xx xxx. Xx xxxx xxx, xxx xxx xxxx, xxxxxxx, xxx xxxxxx xxxxxxx xxxxxx xx xxxxxxxx xxxxxxx xx x xxx xxxx xxxxxxx xxxxxx xxxxxxxxx xx xxx xxxxxx.
+タスクは、**.then()** 構文を使って連結できます。したがって、ある操作の完了後、その操作の結果に依存する別の非同期操作を実行できます。 このように、プレイヤーにはほぼ見えない方法で、個別のスレッドで複雑なアセットの読み込み、変換、管理を行うことができます。
 
-Xxx xxxx xxxxxxx, xxxx [Xxxxxxxxxxxx xxxxxxxxxxx xx X++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+詳しくは、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
 
-Xxx, xxx'x xxxx xx xxx xxxxx xxxxxxxxx xxx xxxxxxxxx xxx xxxxxxxx xx xxxxx xxxx xxxxxxx xxxxxx, **XxxxXxxxXxxxx**.
+それでは、非同期ファイル読み込みメソッド **ReadDataAsync** の宣言と作成の基本構造を見てみましょう。
 
 ```cpp
 #include <ppltasks.h>
@@ -104,7 +105,7 @@ task<Platform::Array<byte>^> BasicReaderWriter::ReadDataAsync(
 }
 ```
 
-Xx xxxx xxxx, xxxx xxxx xxxx xxxxx xxx **XxxxXxxxXxxxx** xxxxxx xxxxxxx xxxxx, x xxxx xx xxxxxxx xx xxxx x xxxxxx xxxx xxx xxxx xxxxxx. Xxxx xx xxxxxxxxx, x xxxxxxx xxxx xxxxx xxx xxxxxx xxx xxxxxxx xxx xxxxx xxxx xxxx xxxxxx xxxx xx xxxxx xxxxx xxx xxxxxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208119) xxxx.
+このコードでは、上で定義された **ReadDataAsync** メソッドを呼び出すと、ファイル システムのバッファーを読み取るタスクが作成されます。 このタスクが完了すると、連結されたタスクがバッファーを受け取り、静的な [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) 型を使ってバッファーから配列にバイトをストリームします。
 
 ```cpp
 m_basicReaderWriter = ref new BasicReaderWriter();
@@ -116,13 +117,13 @@ return m_basicReaderWriter->ReadDataAsync(filename).then([=](const Platform::Arr
     });
 ```
 
-Xxxx'x xxx xxxx xxx xxxx xx **XxxxXxxxXxxxx**. Xxxx xx xxxxxxxxx, xxxx xxxx xxxxxxxx xx xxxxx xx xxxxx xxxx xxxx xxx xxxxxxxx xxxx. Xxxxx **XxxxXxxxXxxxx** xxxxxx xx xxxxxxx xx x xxxx, xxx xxx xxx x xxxxxx xx xxxxxxx x xxxxxxxx xxxxxxxxx xxxx xxx xxxx xxxxx xx xxxxxxxx, xxxx xx xxxxxxx xxxx xxxx xxxx xx x XxxxxxX xxxxxxxx xxxx xxx xxx xx.
+**ReadDataAsync** の呼び出しはこのとおりです。 これが完了すると、提供されたファイルから読み取ったバイトの配列が渡されます。 **ReadDataAsync** 自体はタスクとして定義されているため、バイト配列が返されたときにラムダを使って特定の操作 (対応可能な DirectX 関数にバイト データを渡すなど) を実行することができます。
 
-Xx xxxx xxxx xx xxxxxxxxxxxx xxxxxx, xxxx xxxx xxxxxxxxx xxxx x xxxxxx xxxx xxxx xxxx xxx xxxx xxxxxx xxx xxxx. Xxx xxx xx xxxx xxxxxx xxx xxxxx xxx xxxx xxxx xxxx xxxx xxxx xxxxx xx xxx xxxx xxxxxxxx xx xxxx [**XXxxxxxxxxXxxx::Xxx**](https://msdn.microsoft.com/library/windows/apps/hh700505) xxxxxxxxxxxxxx. Xxxxx, xxx xxxx xxxx xxxxxxxx xxxxxxx xxxxxxx xxxxxxxxxxxxxx xx xxx xxxx xxx xxxxx xxxxxxx xxx xx xxx xxxxxx xxxxx'x xxxx xx xxxx xxxxx xxx xxxxxxx xxxxxxxxx xxxxxx xxxxxxxx xx xxxxx xxxxxxxxxxxx.
+非常にシンプルなゲームの場合は、ユーザーがゲームを開始したときに、このようなメソッドを使ってリソースを読み込みます。 これを実行できるのは、[**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) 実装の呼び出しシーケンスにおけるあるポイントからメインのゲーム ループを開始する前です。 ゲームを速く開始できるように、またプレイヤーが初期段階の対話式操作を行う前に読み込みが完了するまで待機することがないように、もう一度、非同期的にリソース読み込みメソッドを呼び出します。
 
-Xxxxxxx, xxx xxx'x xxxx xx xxxxx xxx xxxx xxxxxx xxxxx xxx xx xxx xxxxx xxxxxxx xxx xxxxxxxxx! Xxxxxx xxxx xxxxxx xxx xxxxxxxxx xxxx xxxxxxx xx xxxxxxxx, xxxx xx x xxxxxxxx xxxxx, xxx xxx xxx xxxxxxx xx xxxx xxxxxxx xxxxxx(x) xx xxx xxxx xxxxxx xxxx xxxxxxxx. Xxxxx xxx xxxxxxxx xxxxxx xxxxxxxx xxx xxxxxxxxxx xxxx xxx xxxxx xxxxxx xxxxxxxxx.
+しかし、すべての非同期読み込みが完了するまではゲーム本体を開始したくありません。 そこで、読み込みが完了したら通知するメソッド (特定のフィールドなど) を作成し、読み込みメソッドでラムダを使って、完了時に通知を設定します。 この読み込まれたリソースを使うコンポーネントを開始する前に、変数を確認します。
 
-Xxxx'x xx xxxxxxx xxxxx xxx xxxxx xxxxxxx xxxxxxx xx XxxxxXxxxxx.xxx xx xxxx xxxxxxx, x xxxx, xxx x xxxxxxx xxxx xxx xxxx xxxxxx xx. Xxxxxx xxxx xx xxxx x xxxxxxxx xxxxx xx xxx xxxx xxxxxx, **x\_xxxxxxxXxxxxxxx**, xxxx xxx xx xxx xxxxxxx xxxxxxx xxxxxx.
+次に示すのは、BasicLoader.cpp に定義された非同期メソッドを使って、ゲーム起動時にシェーダー、メッシュ、テクスチャを読み込む例です。 すべての読み込みメソッドが完了したときに、ゲーム オブジェクト **m\_loadingComplete** に特定のフィールドが設定されている点に注目してください。
 
 ```cpp
 void ResourceLoading::CreateDeviceResources()
@@ -183,30 +184,30 @@ void ResourceLoading::CreateDeviceResources()
 }
 ```
 
-Xxxx xxxx xxx xxxxx xxxx xxxx xxxxxxxxxx xxxxx xxx && xxxxxxxx xxxx xxxx xxx xxxxxx xxxx xxxx xxx xxxxxxx xxxxxxxx xxxx xx xxxxxxxxx xxxx xxxx xxx xx xxx xxxxx xxxxxxxx. Xxxx xxxx xx xxx xxxx xxxxxxxx xxxxx, xxx xxxx xxx xxxxxxxxxxx xx xxxx xxxxxxxxxx. Xxx xxxxxxx, xx xxx xxxxxx xxxx xxx xxxxx xxxxxxxxxxxx xx xxx xxxx xxxxx, xxxxxxx xxxxxx xxx xxxx xxx xxx xxxxx xxxx xxx xx xx xxxxxxxx xxxx xxxxxx xxx xxxxxx xxxx xx xxx.
+すべてのタスクが完了したときにのみ、読み込み完了フラグを設定するラムダがトリガーされるように、&& 演算子を使ってタスクが統合されている点に注意してください。 複数のフラグが存在する場合は、競合状態になる可能性があります。 たとえば、ラムダが 2 つのフラグを順次同じ値に設定するとします。2 つ目のフラグが設定される前に別のスレッドがフラグを確認した場合、別のスレッドは 1 つ目のフラグの設定しか認識しません。
 
-Xxx'xx xxxx xxx xx xxxx xxxxxxxx xxxxx xxxxxxxxxxxxxx. Xxxxxxxxxxx xxxx xxxxx xxx xxxx xxxxxxx, xxx xxx xxx xxxx xxxxxxxx xx xxxx xx [Xxxxxxxx xxxx xxx XxxxxXxxxxxXxxxxx](complete-code-for-basicreaderwriter.md) xxx [Xxxxxxxx xxxx xxx XxxxxXxxxxx](complete-code-for-basicloader.md).
+これまでは、リソース ファイルを非同期的に読み込む方法について確認してきました。 同期ファイルの読み込みはもっと簡単です。この読み込みの例については、「[BasicReaderWriter のコード一式](complete-code-for-basicreaderwriter.md)」と「[BasicLoader のコード一式](complete-code-for-basicloader.md)」をご覧ください。
 
-Xx xxxxxx, xxxxxxxxx xxxxxxxx xxx xxxxx xxxxx xxxxx xxxxxxx xxxxxxxxxx xxxxxxxxxx xx xxxxxxxxxx xxxxxx xxxx xxx xxxxx xx xx xxxx xx xxxx xxxxxxxx xxxxxxxx. Xxx'x xxxx x xxxx xx xxxxx xxxxxxxx xxxxx xx xxxxxxxxx: xxxxxx, xxxxxxxx, xxx xxxxxxx.
+言うまでもなく、リソースやアセットの種類が異なれば、ほとんどの場合、グラフィックス パイプラインで使う前に追加の処理または変換が必要になります。 次に、3 種類のリソース (メッシュ、テクスチャ、シェーダー) について見てみましょう。
 
-### Xxxxxxx xxxxxx
+### メッシュの読み込み
 
-Xxxxxx xxx xxxxxx xxxx, xxxxxx xxxxxxxxx xxxxxxxxxxxx xx xxxx xxxxxx xxxx xxxx xx xxxxxxxx xx x xxxx xxxx xxxxxxx xxx (xxxx YXXxxxxx XXX xx Xxxxx XxxxXxxxx) xx xxxx. Xxxxx xxxxxx xxxxxxxxx xxx xxxxxx xx xxxx xxxx, xxxx xxxxxx xxxxxxxxxx xxxx xxxxx xxx xxxxxxx xx xxxx xxx xxxxxx xxx xxxxxxxxxx. Xxxx xxxxx xxxxxxx xxxxx xxx xxxxxxxxx xxxx, xx xxxx, xxxxxxxxx xx xxxxx xxxxxx. Xx'xx xxxxx xx xxxxxx xxxx xxxxxxx xxxx xxxxxx xxxx.
+メッシュは頂点データです。ゲーム内のコードによって手続き的に生成されるか、他のアプリ (3DStudio MAX や Alias WaveFront など) またはツールからファイルにエクスポートされます。 これらのメッシュは、立方体や球体のようなシンプルなプリミティブから自動車、家、人物に及ぶ、ゲーム内のモデルを表します。 形式によっては、色やアニメーションのデータが含まれることも少なくありません。 ここでは、頂点データのみが含まれるメッシュについて説明します。
 
-Xx xxxx x xxxx xxxxxxxxx, xxx xxxx xxxx xxx xxxxxx xx xxx xxxx xx xxx xxxx xxx xxx xxxx. Xxx xxxxxx **XxxxxXxxxxxXxxxxx** xxxx xxxxx xxxxxx xxxxx xxx xxxx xx xx x xxxx xxxxxx; xx xxxxx'x xxxx xxxx xxx xxxx xxxx xxxxxxxxxx x xxxx, xxxx xxxx x xxxxxxxx xxxx xxxxxx xx xxxxxxxx xx xxxxxxx xxxxxxxxxxx! Xxx xxxx xxxxxxx xxx xxxxxxxxxx xx xxx xxxxx xxx xxxx xxxx xxxx xxxxxx.
+メッシュを正しく読み込むには、メッシュのファイルのデータ形式を把握しておく必要があります。 上記のシンプルな **BasicReaderWriter** 型は、データをバイト ストリームとして読み取るだけです。バイト データがメッシュを表していると認識することはできません。言うまでもなく、他のアプリケーションによってエクスポートされた特定のメッシュ形式も認識されません。 メッシュ データをメモリに読み込む際に変換を実行する必要があります。
 
-(Xxx xxxxxx xxxxxx xxx xx xxxxxxx xxxxx xxxx xx x xxxxxx xxxx'x xx xxxxx xx xxx xxxxxxxx xxxxxxxxxxxxxx xx xxxxxxxx. Xxxxx xx xxxx xxxxxx xxxxxxxx xxxxxxxxxxx xxx xxxx xxxx.)
+(常に、できるだけ内部表現に近い形式でアセット データをパッケージ化するようにする必要があります。 こうすることでリソースの使用率が下がり、時間が短縮されます。)
 
-Xxx'x xxx xxx xxxx xxxx xxxx xxx xxxx'x xxxx. Xxx xxxxxx xx xxx xxxxxxx xxxxxxx xxxx xxx xxxx xx x xxxxxx-xxxxxxxx xxxxxx xxxxxxxx xxxx .xxx. (Xxxxx, xxxx xxxxxx xx xxx xxx xxxx xx XxxxXX'x XXX xxxxxx.) Xxxx xxxxxx xxxxxx xxxx xx xxx **XxxxxXxxxxx** xxxx, xxxxx xx x xxxxxx xxxxxxx xx xxx xxxx xxx xxx xxxYxxx xxxxxxxxx xxxx. Xxx xxxxxx xx xxx xxxxxx xxxx xx xxx .xxx xxxx xxxxx xxxx xxxx:
+メッシュのファイルからバイト データを取得してみましょう。 この例では、ファイルの形式がサンプル固有の形式 (名前の最後が .vbo) であるとします (繰り返しますが、この形式は OpenGL の VBO 形式とは異なります)。頂点自体はそれぞれ **BasicVertex** 型 (obj2vbo コンバーター ツールのコードで定義されている構造体) にマップされます。 .vbo ファイルの頂点データのレイアウトは次のようになります。
 
--   Xxx xxxxx YY xxxx (Y xxxxx) xx xxx xxxx xxxxxx xxxxxxx xxx xxxxxx xx xxxxxxxx (xxxXxxxxxxx) xx xxx xxxx, xxxxxxxxxxx xx x xxxxYY xxxxx.
--   Xxx xxxx YY xxxx (Y xxxxx) xx xxx xxxx xxxxxx xxxxxxx xxx xxxxxx xx xxxxxxx xx xxx xxxx (xxxXxxxxxx), xxxxxxxxxxx xx x xxxxYY xxxxx.
--   Xxxxx xxxx, xxx xxxxxxxxxx (xxxXxxxxxxx \* xxxxxx(**XxxxxXxxxxx**)) xxxx xxxxxxx xxx xxxxxx xxxx.
--   Xxx xxxx (xxxXxxxxxx \* YY) xxxx xx xxxx xxxxxxx xxx xxxxx xxxx, xxxxxxxxxxx xx x xxxxxxxx xx xxxxYY xxxxxx.
+-   データ ストリームの最初の 32 ビット (4 バイト) には、uint32 値として表されたメッシュの頂点の数 (numVertices) が含まれています。
+-   データ ストリームの次の 32 ビット (4 バイト) には、uint32 値として表されたメッシュのインデックスの数 (numIndices) が含まれています。
+-   それ以降の (numVertices \* sizeof(**BasicVertex**)) ビットには頂点データが含まれています。
+-   データの最後の (numIndices \* 16) ビットには、一連の uint16 値として表されたインデックス データが含まれています。
 
-Xxx xxxxx xx xxxx: xxxx xxx xxx-xxxxx xxxxxx xx xxx xxxx xxxx xxx xxxx xxxxxx. Xxxx, xx xxxx xxx xxx xxxxxxxxxx xxxx xxxxxx-xxxx. Xxx Xxxxxxx Y xxxxxxxxx xxx xxxxxx-xxxxxx.
+要するに、読み込んだメッシュ データのビット レベルのレイアウトを把握するということです。 また、エンディアンが一致するようにします。 Windows 8 プラットフォームはすべてリトル エンディアンです。
 
-Xx xxx xxxxxxx, xxx xxxx x xxxxxx, XxxxxxXxxx, xxxx xxx **XxxxXxxxXxxxx** xxxxxx xx xxxxxxx xxxx xxx-xxxxx xxxxxxxxxxxxxx.
+この例では、**LoadMeshAsync** メソッドから CreateMesh メソッドを呼び出して、ビット レベルの解釈を行っています。
 
 ```cpp
 task<void> BasicLoader::LoadMeshAsync(
@@ -231,7 +232,7 @@ task<void> BasicLoader::LoadMeshAsync(
 }
 ```
 
-**XxxxxxXxxx** xxxxxxxxxx xxx xxxx xxxx xxxxxx xxxx xxx xxxx, xxx xxxxxxx x xxxxxx xxxxxx xxx xx xxxxx xxxxxx xxx xxx xxxx xx xxxxxxx xxx xxxxxx xxx xxxxx xxxxx, xxxxxxxxxxxx, xx [**XXYXYYXxxxxx::XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476501) xxx xxxxxxxxxx xxxxxx XYXYY\_XXXX\_XXXXXX\_XXXXXX xx XYXYY\_XXXX\_XXXXX\_XXXXXX. Xxxx'x xxx xxxx xxxx xx **XxxxxXxxxxx**:
+**CreateMesh** は、ファイルから読み込まれたバイト データを解釈します。そして、頂点リストとインデックス リストをそれぞれ [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) に渡し、D3D11\_BIND\_VERTEX\_BUFFER または D3D11\_BIND\_INDEX\_BUFFER を指定することによって、メッシュの頂点バッファーとインデックス バッファーを作成します。 **BasicLoader** で使われるコードは次のとおりです。
 
 ```cpp
 void BasicLoader::CreateMesh(
@@ -292,34 +293,35 @@ void BasicLoader::CreateMesh(
 }
 ```
 
-Xxx xxxxxxxxx xxxxxx x xxxxxx/xxxxx xxxxxx xxxx xxx xxxxx xxxx xxx xxx xx xxxx xxxx. Xxxxx xxx xxxx xxx xxxx xxx xxxxxx xx xx xx xxx. Xx xxx xxxx x xxx xx xxxxxx, xxx xxx xxxx xxxx xx xxxx xxxx xxxx xxx xxxx xx xxxxxxxx xxxxxx xx xxx xxxx, xxxx xx xxxxxx xxxxxxxx, xxx-xxxxxxx xxxxxxx xxxxxx. Xxx xxxxx xxxxxx, xxxx xxxxxxx xxxx, xxx xxx xxxxxx xxx xxxxxxxx xxxx x xxxxx, xxx xxxx xx x xxxx xxxxxxx xxxxxxxxx xxx xxx xx xxx xxxxx xx xxxx xxxxx.
+通常は、ゲームで使うメッシュごとに、頂点バッファーとインデックス バッファーのペアを作成します。 メッシュをいつ、どこに読み込むかは任意です。 メッシュが多数存在する場合は、ゲームの特定のポイント (定義済みの特定の読み込み状態のときなど) でディスクから一部のメッシュを読み込むことをお勧めします。 地形データのような大きなメッシュの場合は、キャッシュから頂点をストリームすることもできますが、手順はより複雑になります (このトピックでは扱いません)。
 
-Xxxxx, xxxx xxxx xxxxxx xxxx xxxxxx! Xxxxx xxx xxxx, xxxx xxxx xx xxxxxxxxx xxxxxx xxxx xxxxxx xxx xxxxx xxxx xx xxxxxx xxxxxx. Xxxxx xxx xxxx xxxx xxxxxxxxx xxxx xx xxxxxxxxx xxx xxxxx xxxxxx xx xxx xxxxxx xxxx xx XxxxxxYX, xxxx xx xxxxxxxx xxxxx xxx xxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxxx xxxx, xxxx [Xxxxxxxxxxxx xx Xxxxxxx xx XxxxxxYX YY](https://msdn.microsoft.com/library/windows/desktop/ff476898) xxx [Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/bb147291).
+繰り返しになりますが、頂点データの形式を把握する必要があります。 モデルの作成に使われるツールで頂点データを表す方法は数多くあります。 また、三角形リストや三角形ストリップなど、Direct3D に対して頂点データの入力レイアウトを示す方法もさまざまです。 頂点データについて詳しくは、「[Direct3D 11 のバッファーについて](https://msdn.microsoft.com/library/windows/desktop/ff476898)」と「[プリミティブ](https://msdn.microsoft.com/library/windows/desktop/bb147291)」をご覧ください。
 
-Xxxx, xxx'x xxxx xx xxxxxxx xxxxxxxx.
+次に、テクスチャの読み込みについて見てみましょう。
 
-### Xxxxxxx xxxxxxxx
+### テクスチャの読み込み
 
-Xxx xxxx xxxxxx xxxxx xx x xxxx—xxx xxx xxx xxxx xxxxxxxxx xxxx xx xxx xxxxx xx xxxx xxx xx xxxxxx—xxx xxxxxxxx. Xxxx xxxxxx, xxxxxxxx xxx xxxx xx x xxxxxxx xx xxxxxxx, xxx xxx xxxxxxx xxxx xx x xxxxxx xxxx XxxxxxYX xxx xxx xxxx xxx xxxx xxxx. Xxxxxxxx xxxx xxxx xx x xxxx xxxxxxx xx xxxxx xxx xxx xxxx xx xxxxxx xxxxxxxxx xxxxxxx. XXX xxxxxx xxx xxxxxxxx xxx xx xxxx xx xxxxxxx xxx xxxx xxx xxxxxxxxxxx xx xxxxxxxx xxxxxxx; xxxx xxx xxxxx xxxx xxx xxxx xx xxxxx xxxxxxx xxx xxxxxx xxxx x xxxx xxxxxxx; xxx xxxxxx xxxx xxx xxxx xx xxx-xxxxx xxxxxxxx xxxxxxxxxxxx. Xx x xxxxxx xxxx, x xxxxxxx xxxxx xxx xxxxxxxxxxx xxxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxx, xxx xxxx xxxx xxxx xxxxxxxxxxx xxxxxx xxxx xxx!
+ゲームで最も一般的なアセット、そしてディスク上とメモリ内のファイルの大部分を構成するアセットはテクスチャです。 メッシュと同様、テクスチャにもさまざまな形式があるため、テクスチャの読み込み時に Direct3D で使うことができる形式に変換します。 また、テクスチャにはさまざまなタイプがあり、種々の効果を作成するのに使われます。 テクスチャの MIP レベルを使えば、距離オブジェクトの外観とパフォーマンスを向上させることができます。ダート マップとライト マップは、基本テクスチャの上に効果や詳細を重ねるのに使われます。標準マップは、ピクセルあたりの照明の計算で使われます。 最新のゲームでは、標準シーンにそれぞれ異なる何千ものテクスチャが存在する可能性があるため、そのすべてをコードで効果的に管理する必要があります。
 
-Xxxx xxxx xxxxxx, xxxxx xxx x xxxxxx xx xxxxxxxx xxxxxxx xxxx xxx xxxx xx xxxx xxxxxx xxxxx xxx xxxxxxxxx. Xxxxx xxxxxxxx xxx xxxxxx xxxxxxx x xxxxx xxxxxxx xx xxx XXX (xxx xxxxxx) xxxxxx, xxxx xxx xxxxx xxxxxxxxxx xx xxxx xxxxxxx. Xxx xxxx'x xxxxxxxx xx xxx xxxxxxxxxxx xx xxxx xxxx'x xxxxxxxx, xxx xxx xxx xxx xxx xxxxxxxxxxx/xxxxxxxxxxxxx xxxxxxxxx(x) xxx xxxx xx xxxx xx xxx xxxxxxx xxx XxxxxxYX xxxxxxx xxxx xxxx xx x xxxxxx xx xxx xxxxxxxxxx (xxxx x [**XxxxxxxYX**](https://msdn.microsoft.com/library/windows/desktop/ff476635) xxxxxx).
+また、メッシュと同様、メモリ使用を効率化するのに使われる特殊な形式も数多く存在します。 テクスチャは、GPU (およびシステム) のメモリの大部分をすぐに消費するため、ほとんどの場合何らかの方法で圧縮されています。 ゲームのテクスチャで圧縮を使う必要はありません。認識できる形式のデータを Direct3D シェーダーに提供する限り、必要な圧縮アルゴリズムと圧縮解除アルゴリズムを使うことができます ([**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) ビットマップと同様)。
 
-XxxxxxYX xxxxxxxx xxxxxxx xxx xxx XXX xxxxxxx xxxxxxxxxxx xxxxxxxxxx, xxxxxxxx xxxxx XXX xxxxxx xxx xxx xx xxxxxxxxx xx xxx xxxxxx'x xxxxxxxx xxxxxxxx. XXX xxxxx xxxxxxx XXX xxxxxxxx (xxx xxxxx xxxxxxx xxxxxxxxxxx xxxxxxx xx xxxx), xxx xxx xxxxxxxx xxxx .xxx.
+Direct3D は、DXT テクスチャ圧縮アルゴリズムをサポートしています。ただし、プレイヤーのグラフィックス ハードウェアではサポートされない DXT 形式が存在する可能性もあります。 DDS ファイルには DXT テクスチャ (および他のテクスチャ圧縮形式) が含まれています。DDS ファイルの名前は .dds で終わります。
 
-X XXX xxxx xx x xxxxxx xxxx xxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxxx:
+DDS ファイルは、次の情報が含まれるバイナリ ファイルです。
 
--   X XXXXX (xxxxx xxxxxx) xxxxxxxxxx xxx xxxx xxxxxxxxx xxxx xxxxx 'XXX ' (YxYYYYYYYY).
+-   4 文字コード値 "DDS " (0x20534444) が含まれる DWORD (マジック ナンバー)。
 
--   X xxxxxxxxxxx xx xxx xxxx xx xxx xxxx.
+-   ファイル内のデータの説明。
 
-    Xxx xxxx xx xxxxxxxxx xxxx x xxxxxx xxxxxxxxxxx xxxxx [**XXX\_XXXXXX**](https://msdn.microsoft.com/library/windows/desktop/bb943982); xxx xxxxx xxxxxx xx xxxxxxx xxxxx [**XXX\_XXXXXXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/bb943984). Xxxx xxxx xxx **XXX\_XXXXXX** xxx **XXX\_XXXXXXXXXXX** xxxxxxxxxx xxxxxxx xxx xxxxxxxxxx XXXXXXXXXXXXXY, XXXXXXXY xxx XXXXXXXXXXXXX XxxxxxXxxx Y xxxxxxxxxx. **XXX\_XXXXXX** xx xxx xxxxxx xxxxxxxxxx xx XXXXXXXXXXXXXY xxx XXXXXXXY. **XXX\_XXXXXXXXXXX** xx xxx xxxxxx xxxxxxxxxx xx XXXXXXXXXXXXX.
+    データは、[**DDS\_HEADER**](https://msdn.microsoft.com/library/windows/desktop/bb943982) を使ってヘッダーの説明と一緒に説明されます。ピクセル形式は、[**DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984) を使って定義されます。 **DDS\_HEADER** 構造体と **DDS\_PIXELFORMAT** 構造体は、推奨されなくなった DirectDraw 7 の DDSURFACEDESC2 構造体、DDSCAPS2 構造体、および DDPIXELFORMAT 構造体の代わりに使います。 **DDS\_HEADER** は、DDSURFACEDESC2 と DDSCAPS2 の機能をバイナリで実現します。 **DDS\_PIXELFORMAT** は、DDPIXELFORMAT の機能をバイナリで実現します。
 
     ```cpp
     DWORD               dwMagic;
     DDS_HEADER          header;
     ```
 
-    Xx xxx xxxxx xx **xxXxxxx** xx [**XXX\_XXXXXXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/bb943984) xx xxx xx XXXX\_XXXXXX xxx **xxXxxxXX** xx xxx xx "XXYY" xx xxxxxxxxxx [**XXX\_XXXXXX\_XXXYY**](https://msdn.microsoft.com/library/windows/desktop/bb943983) xxxxxxxxx xxxx xx xxxxxxx xx xxxxxxxxxxx xxxxxxx xxxxxx xx XXXX xxxxxxx xxxx xxxxxx xx xxxxxxxxx xx xx XXX xxxxx xxxxxx xxxx xx xxxxxxxx xxxxx xxxxxxx, xXXX xxxxxxx xxx. Xxxx xxx **XXX\_XXXXXX\_XXXYY** xxxxxxxxx xx xxxxxxx, xxx xxxxxx xxxx xxxxxxxxxxx xxxx xxxxx xxxx xxxx.
+    [
+            **DDS\_PIXELFORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb943984) の **dwFlags** の値を DDPF\_FOURCC に設定し、**dwFourCC** を "DX10" に設定していると、[**DDS\_HEADER\_DXT10**](https://msdn.microsoft.com/library/windows/desktop/bb943983) 構造体が追加で生成され、浮動小数点形式や sRGB 形式などの RGB ピクセル形式では表現できない DXGI 形式やテクスチャ配列がこの構造体に格納されます。この **DDS\_HEADER\_DXT10** 構造体が存在する場合、データ記述の全体は次のようになります。
 
     ```cpp
     DWORD               dwMagic;
@@ -327,20 +329,20 @@ X XXX xxxx xx x xxxxxx xxxx xxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxxx:
     DDS_HEADER_DXT10    header10;
     ```
 
--   X xxxxxxx xx xx xxxxx xx xxxxx xxxx xxxxxxxx xxx xxxx xxxxxxx xxxx.
+-   メイン サーフェス データを含むバイトの配列へのポインター。
     ```cpp
     BYTE bdata[]
     ```
 
--   X xxxxxxx xx xx xxxxx xx xxxxx xxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxx xxxx xx; xxxxxx xxxxxx, xxxxx xx x xxxx xxx, xxxxxx xx x xxxxxx xxxxxxx. Xxxxxx xxxxx xxxxx xxx xxxx xxxxxxxxxxx xxxxx xxx XXX xxxx xxxxxx xxx x: [xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/bb205578), x [xxxx xxx](https://msdn.microsoft.com/library/windows/desktop/bb205577), xx x [xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/bb205579).
+-   残りのサーフェス (ミップマップ レベル、キューブ マップの面、ボリューム テクスチャの深度など) を含むバイトの配列へのポインター。 [テクスチャ](https://msdn.microsoft.com/library/windows/desktop/bb205578)、[キューブ マップ](https://msdn.microsoft.com/library/windows/desktop/bb205577)、または[ボリューム テクスチャ](https://msdn.microsoft.com/library/windows/desktop/bb205579)の DDS ファイル レイアウトについて詳しくは、ここに挙げたリンク先をご覧ください。
 
     ```cpp
     BYTE bdata2[]
     ```
 
-Xxxx xxxxx xxxxxx xx xxx XXX xxxxxx. Xx xxx xxx'x xxxx x xxxx xx xxxxxx xxxx xxxxxxx xx xxxx xxxxxx, xxxxxxxx xxxxxxxx xxx. Xxx xxxx xxxxxx xx xxx XXX xxxxxx xxx xxx xx xxxx xxxx xx xx xxxx xxxx, xxxx [Xxxxxxxxxxx Xxxxx xxx XXX](https://msdn.microsoft.com/library/windows/desktop/bb943991). Xx xxx xxxxxxx, xx'xx xxx XXX.
+DDS 形式へのエクスポートは、多くのツールで実行可能です。 テクスチャを DDS 形式にエクスポートできるツールがない場合は、作成することを検討してください。 DDS 形式について、また DDS 形式をコードで使う方法について詳しくは、「[DDS 用プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/bb943991)」をご覧ください。 この例では DDS を使います。
 
-Xx xxxx xxxxx xxxxxxxx xxxxx, xxx xxxx xxx xxxx xxxx x xxxx xx x xxxxxx xx xxxxx. Xxxx xxxx xxxxxxx xxxx xxxxxxxxx, xxx xxxxxx xxxx xxxx xxxx (xxx **XxxxxxXxxxxxx** xxxxxx) xx xxxxxxx xxx xxxxxx xx xxxxx xxxx x xxxxxx xxxx XxxxxxYX xxx xxx.
+他の種類のリソースと同様に、バイトのストリームとしてファイルからデータを読み取ります。 読み込みタスクが完了すると、ラムダ呼び出しがコード (**CreateTexture** メソッド) を実行し、バイトのストリームを処理して Direct3D で使用できる形式にします。
 
 ```cpp
 task<void> BasicLoader::LoadTextureAsync(
@@ -363,7 +365,7 @@ task<void> BasicLoader::LoadTextureAsync(
 }
 ```
 
-Xx xxx xxxxxxxx xxxxxxx, xxx xxxxxx xxxxxx xx xxx xx xxx xxxxxxxx xxx xx xxxxxxxxx xx "xxx". Xx xx xxxx, xxx xxxxxx xxxx xx xx x XXX xxxxxxx. Xx xxx, xxxx, xxx xxx Xxxxxxx Xxxxxxx Xxxxxxxxx (XXX) XXXx xx xxxxxxxx xxx xxxxxx xxx xxxxxx xxx xxxx xx x xxxxxx. Xxxxxx xxx, xxx xxxxxx xx x [**XxxxxxxYX**](https://msdn.microsoft.com/library/windows/desktop/ff476635) xxxxxx (xx xx xxxxx).
+上記のスニペットでは、ファイル名に拡張子の "dds" が含まれているかどうかラムダでチェックしています。 この拡張子が含まれていれば、DDS テクスチャであると判断できます。 含まれていない場合は、Windows Imaging Component (WIC) API を使って形式を検出し、データをビットマップとしてデコードします。 いずれにしても、結果は [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) ビットマップ (またはエラー) になります。
 
 ```cpp
 void BasicLoader::CreateTexture(
@@ -503,19 +505,19 @@ void BasicLoader::CreateTexture(
 }
 ```
 
-Xxxx xxxx xxxx xxxxxxxxx, xxx xxxx x [**XxxxxxxYX**](https://msdn.microsoft.com/library/windows/desktop/ff476635) xx xxxxxx, xxxxxx xxxx xx xxxxx xxxx. Xx xxxx xxxxxx, xxx xxxxxxxx xxxx x xxx xx xxxx xx xxxx xxxx xxx xx xxx xxxxx xxxxx. Xxxxxxxx xxxxxxxx xxxxxx xxx xxxxxxxxx xxxxxxxx xxxxxxxx xxx-xxxxx xx xxx-xxxxx, xxxxxx xxxx xxxxxxx xxxx xxx xxxx xxx xxxx xx xxxxx xxxxxx.
+このコードが完了すると、イメージ ファイルから読み込まれた [**Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) がメモリ内に格納されます。 メッシュと同様に、ゲームにも特定のシーンにもおそらく多数のテクスチャが含まれています。 ゲームまたはレベルの開始時にすべてのテクスチャを読み込むのではなく、シーンごとまたはレベルごとに何度もアクセスされるテクスチャについては、そのためのキャッシュを作成することを検討します。
 
-(Xxx **XxxxxxXXXXxxxxxxXxxxXxxxxx** xxxxxx xxxxxx xx xxx xxxxx xxxxxx xxx xx xxxxxxxx xx xxxx xx [Xxxxxxxx xxxx xxx XXXXxxxxxxXxxxxx](complete-code-for-ddstextureloader.md).)
+(上記のサンプルで呼び出された **CreateDDSTextureFromMemory** メソッドの全コードについては、「[DDSTextureLoader のコード一式](complete-code-for-ddstextureloader.md)」をご覧ください。)
 
-Xxxx, xxxxxxxxxx xxxxxxxx xx xxxxxxx "xxxxx" xxx xxx xx xxxxxxxx xxxx xxxxxxxx xx xxxxxxxx. Xxxx xxxxxxx xxxx xx xxxxxxx xxxxxxxx xx xxx xxxx xx xxxxxx xx xxxxxxxx xxxx xx xxxxxx xxx xxxxx xxx xxx xxxxxxxx. Xxxx xxxx xxxx xxx xxxxxxx xxxx xxxxxxxxxxx xx xxxx xxxx xxx xxxx xxx xxxxxxxx xxxx, xx xxx xxxx xxx xx xxx xxx xxxxxxx xxxxxxxx xx xxx xxxxxxxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xxxxxxxx xxxxxxx.
+また、個々のテクスチャまたはテクスチャの "スキン" は、特定のメッシュ多角形やサーフェスにマップされている場合があります。 このマッピング データは通常、アーティストやデザイナーがモデルとテクスチャを作成するのに使ったツールでエクスポートされます。 フラグメント シェーディングの実行時には、この情報を使って適切なテクスチャを対応サーフェスにマップします。したがって、エクスポートされたデータを読み込む際には、この情報も必ずキャプチャするようにします。
 
-### Xxxxxxx xxxxxxx
+### シェーダーの読み込み
 
-Xxxxxxx xxx xxxxxxxx Xxxx Xxxxx Xxxxxx Xxxxxxxx (XXXX) xxxxx xxxx xxx xxxxxx xxxx xxxxxx xxx xxxxxxx xx xxxxxxxx xxxxxx xx xxx xxxxxxxx xxxxxxxx. Xxx xxxx xxxxxx xxx xxxxxxxxx xxxxxxx xxx xxx xxxxxx xxx xxxxx xxxxxxx, xxxxx xxxxxxx xxx xxxxxxxxxx xxxxxxxx xx xxxx xxxx xxx xxx xxxxxx xx xxx xxxxx'x xxxxxxxx(x), xxxxxxxxxxxx. Xxx XXXX xxxx xx xxxxxxxx xx xxxxxxxxx xxx xxxxxxxx, xxxxx xxxxxxxx xxxxxxx xxx xxxxxxxx, xxx xxxxxxx xxxx-xxxxxxxxxx xx xxx xxxxxxxx xxxxx.
+シェーダーは、メモリに読み込まれてグラフィックス パイプラインの特定の段階で呼び出されるコンパイル済み上位レベル シェーダー言語 (HLSL) ファイルです。 最も一般的で重要なシェーダーは、頂点シェーダーとピクセル シェーダーです。頂点シェーダーではメッシュの個々の頂点が処理され、ピクセル シェーダーではシーンのビューポートのピクセルが処理されます。 HLSL コードは、ジオメトリの変換、照明効果とテクスチャの適用、レンダリングされたシーンの後処理を行う場合に実行します。
 
-X XxxxxxYX xxxx xxx xxxx x xxxxxx xx xxxxxxxxx xxxxxxx, xxxx xxx xxxxxxxx xxxx x xxxxxxxx XXX (Xxxxxxxx Xxxxxx Xxxxxx, .xxx) xxxx. Xxxxxxxx, xxx xxx'x xxxx xx xxxx xxxx xxx xxxx xx xxxx xxxx xxxxxxxxxxx, xxx xx xxxx xxxxx, xxx xxx xxxxxx xxxx xxxx xxxx xxx xxxx xx xxxxxxxx, xx xx x xxx-xxxxx xxxxx (xxxx xx x xxxxxx xxx xxxx xxxxxxx).
+Direct3D ゲームには、それぞれが別々の CSO (コンパイル済みシェーダー オブジェクト、.cso) ファイルにコンパイルされた、さまざまなシェーダーが存在している可能性があります。 通常、動的に読み込む必要があるシェーダーはそれほど多くありません。ほとんどの場合、ゲームの開始時またはレベルごとに、シェーダーを簡単に読み込むことができます (雨の効果のシェーダーなど)。
 
-Xxx xxxx xx xxx **XxxxxXxxxxx** xxxxx xxxxxxxx x xxxxxx xx xxxxxxxxx xxx xxxxxxxxx xxxxxxx, xxxxxxxxx xxxxxx, xxxxxxxx, xxxxx, xxx xxxx xxxxxxx. Xxx xxxx xxxxx xxxxxx xxxxx xxxxxxx xx xx xxxxxxx. (Xxx xxx xxxxxx xxx xxxxxxxx xxxx xx [Xxxxxxxx xxxx xxx XxxxxXxxxxx](complete-code-for-basicloader.md).)
+**BasicLoader** クラスのコードは、頂点、ジオメトリ、ピクセル、ハルなどのさまざまなシェーダーに多数のオーバーロードを提供します。 次のコードでは、例としてピクセル シェーダーを取り上げています (すべてのコードについては、「[BasicLoader のコード一式](complete-code-for-basicloader.md)」をご覧ください)。
 
 ```cpp
 concurrency::task<void> LoadShaderAsync(
@@ -543,11 +545,11 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-Xx xxxx xxxxxxx, xxx xxx xxx **XxxxxXxxxxxXxxxxx** xxxxxxxx (**x\_xxxxxXxxxxxXxxxxx**) xx xxxx xx xxx xxxxxxxx xxxxxxxx xxxxxx xxxxxx (.xxx) xxxx xx x xxxx xxxxxx. Xxxx xxxx xxxx xxxxxxxxx, xxx xxxxxx xxxxx [**XXYXYYXxxxxx::XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476513) xxxx xxx xxxx xxxx xxxxxx xxxx xxx xxxx. Xxxx xxxxxxxx xxxx xxx xxxx xxxx xxxxxxxxxx xxxx xxx xxxx xxx xxxxxxxxxx, xxx xxxx xxxx xxxx xxxxx xxxx xxxx xxxxxx xxxxxxx xxx xxxxxx.
+この例では、**BasicReaderWriter** インスタンス (**m\_basicReaderWriter**) を使って、指定されたコンパイル済みシェーダー オブジェクト (.cso) ファイルをバイト ストリームとして読み取っています。 このタスクが完了すると、ラムダは、ファイルから読み込まれたバイト データを使って [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) を呼び出します。 また、コールバックによって、読み込みの成功を示すフラグを設定する必要があります。コードでは、シェーダーの実行前にこのフラグを確認する必要があります。
 
-Xxxxxx xxxxxxx xxx xxx xxxx xxxxxxx. Xxx x xxxxxx xxxxxx, xxx xxxx xxxx x xxxxxxxx xxxxx xxxxxx xxxx xxxxxxx xxx xxxxxx xxxx. Xxx xxxxxxxxx xxxx xxx xx xxxx xx xxxxxxxxxxxxxx xxxx x xxxxxx xxxxxx xxxxx xxxx x xxxxxx xxxxxx xxxxx xxxxxx. Xx xxxx xxxx xxx xxxxxx xxxxxxxxxxx xxxx xxx xxxx xxxx xxxx xxxxxx xxx xx xxxxxxxxx xxxxxxxxxxx xx xxxx xxxxx xxxxxx!
+頂点シェーダーはもう少し複雑になります。 頂点シェーダーの場合は、頂点データを定義する別個の入力レイアウトも読み込みます。 次のコードを使うことで、頂点シェーダーと一緒にカスタムの頂点入力レイアウトを非同期的に読み込むことができます。 メッシュから読み込まれた頂点情報は、この入力レイアウトによって適切に表せるようになります。
 
-Xxx'x xxxxxx xxx xxxxx xxxxxx xxxxxx xxx xxxx xxx xxxxxx xxxxxx.
+頂点シェーダーを読み込む前に入力レイアウトを作成しましょう。
 
 ```cpp
 void BasicLoader::CreateInputLayout(
@@ -587,15 +589,15 @@ void BasicLoader::CreateInputLayout(
 }
 ```
 
-Xx xxxx xxxxxxxxxx xxxxxx, xxxx xxxxxx xxx xxx xxxxxxxxx xxxx xxxxxxxxx xx xxx xxxxxx xxxxxx:
+このレイアウトでは、各頂点に、頂点シェーダーで処理される次のデータが含まれます。
 
--   X YX xxxxxxxxxx xxxxxxxx (x, x, x) xx xxx xxxxx'x xxxxxxxxxx xxxxx, xxxxxxxxxxx xx x xxxx xx YY-xxx xxxxxxxx xxxxx xxxxxx.
--   X xxxxxx xxxxxx xxx xxx xxxxxx, xxxx xxxxxxxxxxx xx xxxxx YY-xxx xxxxxxxx xxxxx xxxxxx.
--   X xxxxxxxxxxx YX xxxxxxx xxxxxxxxxx xxxxx (x, x) , xxxxxxxxxxx xx x xxxx xx YY-xxx xxxxxxxx xxxxxx.
+-   モデルの座標空間における 3D の座標位置 (x, y, z)。3 つの 32 ビット浮動小数点値で表されます。
+-   頂点の標準ベクター。これも 3 つの 32 ビット浮動小数点値で表されます。
+-   変換された 2D テクスチャの座標値 (u, v)。2 つの 32 ビット浮動小数点値で表されます。
 
-Xxxxx xxx-xxxxxx xxxxx xxxxxxxx xxx xxxxxx [XXXX xxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/bb509647), xxx xxxx xxx x xxx xx xxxxxxx xxxxxxxxx xxxx xx xxxx xxxx xx xxx xxxx xxxx xxxxxxxx xxxxxx xxxxxx. Xxxx xxxxxxxx xxxx xxx xxxxxx xxxxxx xxxx xxx xxxxx xxxxxx xx xxx xxxx xxxx xxx'xx xxxxxx. Xxx xxxxxxxxx xxxxxx xxx xxxxx xx (xxx xxxxxx xxxx) xxx xxxxxx xxxxxx xx xx xxxx, xxx xxxxxxx xxxx xxxx xxx xxxx xxx-xxxxxx xxxxxxxxxxxx xx xxxx xxxxxx'x XXXX xxxx.
+頂点ごとのこれらの入力要素は [HLSL セマンティクス](https://msdn.microsoft.com/library/windows/desktop/bb509647)と呼ばれます。これらの入力要素は、コンパイル済みシェーダー オブジェクトとのデータの受け渡しに使われる定義済みレジスタのセットです。 読み込んだメッシュの頂点ごとに 1 回、パイプラインが頂点シェーダーを実行します。 このセマンティクスは、実行時の頂点シェーダーへの入力 (および頂点シェーダーからの出力) を定義し、シェーダーの HLSL コードでの頂点ごとの計算にこのデータを提供します。
 
-Xxx, xxxx xxx xxxxxx xxxxxx xxxxxx.
+次に、頂点シェーダー オブジェクトを読み込みます。
 
 ```cpp
 concurrency::task<void> LoadShaderAsync(
@@ -680,26 +682,30 @@ task<void> BasicLoader::LoadShaderAsync(
 
 ```
 
-Xx xxxx xxxx, xxxx xxx'xx xxxx xx xxx xxxx xxxx xxx xxx xxxxxx xxxxxx'x XXX xxxx, xxx xxxxxx xxx xxxxxx xxxxxx xx xxxxxxx [**XXYXYYXxxxxx::XxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476524). Xxxxx xxxx, xxx xxxxxx xxxx xxxxx xxxxxx xxx xxx xxxxxx xx xxx xxxx xxxxxx.
+このコードでは、頂点シェーダーの CSO ファイルのバイト データを読み取ってから、[**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) を呼び出して頂点シェーダーを作成しています。 その後で、同じラムダでシェーダーの入力レイアウトを作成しています。
 
-Xxxxx xxxxxx xxxxx, xxxx xx xxxx xxx xxxxxxxx xxxxxxx, xxx xxxx xxxxxxx xxxxxxxx xxxxxxxxxxxxx. Xxxxxxxx xxxx xxx x xxxxxxx xx xxxxxx xxxxxxx xxxxxxx xx xxxxxxxx xx [Xxxxxxxx xxxx xxx XxxxxXxxxxx](complete-code-for-basicloader.md) xxx xx xxx [XxxxxxYX xxxxxxxx xxxxxxx xxxxxx]( http://go.microsoft.com/fwlink/p/?LinkID=265132).
+ハル シェーダーやジオメトリ シェーダーなどの他の種類のシェーダーでは、特別な構成が必要になる場合もあります。 さまざまなシェーダー読み込みメソッドのコード一式については、「[BasicLoader のコード一式](complete-code-for-basicloader.md)」と [Direct3D リソース読み込みのサンプル]( http://go.microsoft.com/fwlink/p/?LinkID=265132)をご覧ください。
 
-## Xxxxxxx
+## 注釈
 
-Xx xxxx xxxxx, xxx xxxxxx xxxxxxxxxx xxx xx xxxx xx xxxxxx xx xxxxxx xxxxxxx xxx xxxxxxxxxxxxxx xxxxxxx xxxxxx xxxx xxxxxxxxx xxx xxxxxx, xxxx xx xxxxxx, xxxxxxxx, xxx xxxxxxxx xxxxxxx.
+これで、メッシュ、テクスチャ、コンパイル済みシェーダーなどの一般的なゲームのリソースとアセットを非同期的に読み込むメソッドを理解し、作成と変更をできるようになりました。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [XxxxxxYX xxxxxxxx xxxxxxx xxxxxx]( http://go.microsoft.com/fwlink/p/?LinkID=265132)
-* [Xxxxxxxx xxxx xxx XxxxxXxxxxx](complete-code-for-basicloader.md)
-* [Xxxxxxxx xxxx xxx XxxxxXxxxxxXxxxxx](complete-code-for-basicreaderwriter.md)
-* [Xxxxxxxx xxxx xxx XXXXxxxxxxXxxxxx](complete-code-for-ddstextureloader.md)
+* [Direct3D リソース読み込みのサンプルに関するページ]( http://go.microsoft.com/fwlink/p/?LinkID=265132)
+* [BasicLoader のコード一式](complete-code-for-basicloader.md)
+* [BasicReaderWriter のコード一式](complete-code-for-basicreaderwriter.md)
+* [DDSTextureLoader のコード一式](complete-code-for-ddstextureloader.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

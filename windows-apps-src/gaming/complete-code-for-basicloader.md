@@ -1,45 +1,45 @@
 ---
-xxxxx: Xxxxxxxx xxxx xxx XxxxxXxxxxx
-xxxxxxxxxxx: Xxxxxxxx xxxx xxx x xxxxx xxx xxxxxxx xxxx xxxxxxx xxx xxxx xxxxxx xxxxxxxx xxxxxxxxx, xxxx xx xxxxxx, xxxxxxxx, xxx xxxxxxx xxxxxx xxxxxxx.
-xx.xxxxxxx: xYYxYYYY-YYYx-YYxY-YYYY-YYYxxYYYxYYY
+title: BasicLoader のコード一式
+description: メッシュ オブジェクト、テクスチャ オブジェクト、さまざまなシェーダー オブジェクトなどの一般的なグラフィックス リソースを変換して読み込むクラスとメソッドのコード一式です。
+ms.assetid: b37f5852-278c-57b8-0834-002fb837e158
 ---
 
-# Xxxxxxxx xxxx xxx XxxxxXxxxxx
+# BasicLoader のコード一式
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-Xxxxxxxx xxxx xxx x xxxxx xxx xxxxxxx xxxx xxxxxxx xxx xxxx xxxxxx xxxxxxxx xxxxxxxxx, xxxx xx xxxxxx, xxxxxxxx, xxx xxxxxxx xxxxxx xxxxxxx.
+メッシュ オブジェクト、テクスチャ オブジェクト、さまざまなシェーダー オブジェクトなどの一般的なグラフィックス リソースを変換して読み込むクラスとメソッドのコード一式です。
 
-Xxxx xxxxx xxxxxxxx xxxxx xxxxxxxx:
+このトピックは次のセクションで構成されます。
 
--   [Xxxxxxxxxxxx](#technologies)
--   [Xxxxxxxxxxxx](#requirements)
--   [Xxxx xxx xxxx (X++)](#view-the-code-c-)
+-   [テクノロジ](#technologies)
+-   [必要条件](#requirements)
+-   [コードの表示 (C++)](#view-the-code-c-)
 
 <span id="download_locations"></span>
-## Xxxxxxxx xxxxxxxx
+## ダウンロード場所
 
 
-Xxxx xxxxxx xx xxx xxxxxxxxx xxx xxxxxxxx.
+このサンプルはダウンロードできません。
 
-## Xxxxxxxxxxxx
+## テクノロジ
 
 |                       |                 |
 |-----------------------|-----------------|
-| Xxxxxxxxxxx xxxxxxxxx | X++             |
-| Xxxxxxxxxxx xxxxxx    | Xxxxxxx Xxxxxxx |
+| プログラミング言語 | C++             |
+| プログラミング モデル    | Windows ランタイム |
 
-## Xxxxxxxxxxxx
+## 必要条件
 
-| Xxxxxxx xxxxxxxxx xxxxxx | Xxxxxxx YY                            |
+| サポートされている最小のクライアント | Windows 10                            |
 |--------------------------|---------------------------------------|
-| Xxxxxxx xxxxxxxxx xxxxxx | Xxxxxxx Xxxxxx YYYY Xxxxxxxxx Xxxxxxx |
-| Xxxxxxx xxxxxxxx XXX     |                                       |
+| サポートされている最小のサーバー | Windows Server 2016 Technical Preview |
+| 最低限必要な SDK     |                                       |
 
-## Xxxx xxx xxxx (X++)
+## コードの表示 (C++)
 
-## XxxxxXxxxxx.x
+## BasicLoader.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -220,7 +220,7 @@ private:
 };
 ```
 
-## XxxxxXxxxxx.xxx
+## BasicLoader.cpp
 
 
 ```cpp
@@ -1106,4 +1106,8 @@ task<void> BasicLoader::LoadMeshAsync(
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

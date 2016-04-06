@@ -1,26 +1,26 @@
 ---
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxx xxx xxxxxxx xxxxx xxxxxx xx xxxxx xxx xxxx xx xxxx xx xxxxx xxxxxxx. Xxx xxx xxx-xxxxxxxx xxx xxxxxx xx xxx xxxxx xxxx xxxx xxxxxx xxxxxxx xxx xxxxxx. Xxx xxxxxxx xxxx xxx xx xxxx xxxxx xxx xxxx xxxx xxx xxxx xxxxxx.
-xxxxx: Xxxx xxxxx
-xx.xxxxxxx: YYYYYXYY-YYYY-YYYX-XYXX-YYXYYYXYYYXY
-xxxxxxxx: xxxxxxxx, xxxxx, xxxx
+description: Shows how to launch the compose email dialog to allow the user to send an email message. You can pre-populate the fields of the email with data before showing the dialog. The message will not be sent until the user taps the send button.
+title: Send email
+ms.assetid: 74511E90-9438-430E-B2DE-24E196A111E5
+keywords: contacts, email, send
 ---
 
-# Xxxx xxxxx
+# Send email
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxx xxx xx xxxxxx xxx xxxxxxx xxxxx xxxxxx xx xxxxx xxx xxxx xx xxxx xx xxxxx xxxxxxx. Xxx xxx xxx-xxxxxxxx xxx xxxxxx xx xxx xxxxx xxxx xxxx xxxxxx xxxxxxx xxx xxxxxx. Xxx xxxxxxx xxxx xxx xx xxxx xxxxx xxx xxxx xxxx xxx xxxx xxxxxx.
+Shows how to launch the compose email dialog to allow the user to send an email message. You can pre-populate the fields of the email with data before showing the dialog. The message will not be sent until the user taps the send button.
 
-**Xx xxxx xxxxxxx**
+**In this article**
 
--   [Xxxxxx xxx xxxxxxx xxxxx xxxxxx](#launch-the-compose-email-dialog)
--   [Xxxxxxx xxx xxxx xxxxx](#summary-and-next-steps)
--   [Xxxxxxx xxxxxx](#related-topics)
+-   [Launch the compose email dialog](#launch-the-compose-email-dialog)
+-   [Summary and next steps](#summary-and-next-steps)
+-   [Related topics](#related-topics)
 
-## Xxxxxx xxx xxxxxxx xxxxx xxxxxx
+## Launch the compose email dialog
 
-Xxxxxx x xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn631270) xxxxxx xxx xxx xxx xxxx xxxx xxx xxxx xx xx xxx-xxxxxxxxx xx xxx xxxxxxx xxxxx xxxxxx. Xxxx [**XxxxXxxxxxxXxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn631269) xx xxxx xxx xxxxxx.
+Create a new [**EmailMessage**](https://msdn.microsoft.com/library/windows/apps/Dn631270) object and set the data that you want to be pre-populated in the compose email dialog. Call [**ShowComposeNewEmailAsync**](https://msdn.microsoft.com/library/windows/apps/Dn631269) to show the dialog.
 
 ``` cs
 private async void ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipient, 
@@ -53,19 +53,23 @@ private async void ComposeEmail(Windows.ApplicationModel.Contacts.Contact recipi
 }
 ```
 
-## Xxxxxxx xxx xxxx xxxxx
+## Summary and next steps
 
-Xxxx xxxxx xxx xxxxx xxx xxx xx xxxxxx xxx xxxxxxx xxxxx xxxxxx. Xxx xxxxxxxxxxx xx xxxxxxxxx xxxxxxxx xx xxx xx xxxxxxxxxx xxx xx xxxxx xxxxxxx, xxx [Xxxxxx xxxxxxxx](selecting-contacts.md). Xxx [**XxxxXxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/JJ635275) xx xxxxxx x xxxx xx xxx xx xx xxxxx xxxxxxxxxx.
+This topic has shown you how to launch the compose email dialog. For information on selecting contacts to use as recipients for an email message, see [Select contacts](selecting-contacts.md). See [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/JJ635275) to select a file to use as an email attachment.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxxxx xxxxxxxx](selecting-contacts.md)
-* [Xxx xx xxxxxxxx xxxx Xxxxxxx Xxxxx xxx xxxxx xxxxxxx x xxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
+* [Selecting contacts](selecting-contacts.md)
+* [How to continue your Windows Phone app after calling a file picker](https://msdn.microsoft.com/library/windows/apps/xaml/Dn614994)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

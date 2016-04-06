@@ -1,73 +1,62 @@
 ---
-Xxxxxxxxxxx: Xxx xxx Xxxxxxx.Xxxxxxxxxxxxx.XxxxXxxxXxxxxxxxxx XXX xxxx xxxxxx xxxxxxxx xx xxxxxxx xxxxx xxx xxxxx xx xxxxxxx xxx xxxxxx xxx xxxx.
-xxxxx: Xxx xxxxxxxx xx xxxxxx xxxxx xxx xxxxx
-xx.xxxxxxx: YYYYYYXY-YXXY-YXYY-YXYX-YXYYXXXYXYXX
-xxxxx: Xxx xxxxxxxx xx xxxxxx xxxxx xxx xxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Use the Windows.Globalization.DateTimeFormatting API with custom patterns to display dates and times in exactly the format you wish.
+title: Use patterns to format dates and times
+ms.assetid: 012028B3-9DA2-4E72-8C0E-3E06BEC3B3FE
+label: Use patterns to format dates and times
+template: detail.hbs
 ---
 
-# Xxx xxxxxxxx xx xxxxxx xxxxx xxx xxxxx
+# Use patterns to format dates and times
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**Xxxxxxx.Xxxxxxxxxxxxx.XxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**XxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206828)
--   [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br206576)
+-   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
+-   [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828)
+-   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)
 
-Xxx xxx [**Xxxxxxx.Xxxxxxxxxxxxx.XxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206859) XXX xxxx xxxxxx xxxxxxxx xx xxxxxxx xxxxx xxx xxxxx xx xxxxxxx xxx xxxxxx xxx xxxx.
+Use the [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) API with custom patterns to display dates and times in exactly the format you wish.
 
-## <span id="Introduction">
-            </span>
-            <span id="introduction">
-            </span>
-            <span id="INTRODUCTION">
-            </span>Xxxxxxxxxxxx
+## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>Introduction
 
 
-[
-            **Xxxxxxx.Xxxxxxxxxxxxx.XxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206859) xxxxxxxx xxxxxxx xxxx xx xxxxxxxx xxxxxx xxxxx xxx xxxxx xxx xxxxxxxxx xxx xxxxxxx xxxxxx xxx xxxxx. Xxx xxx xxx xxxxxxxx xxxxxxx xxx xxxx, xxxxx, xxx, xxx xx xx, xx xxx xxx xxx xxxxxxxx xxxxxx xxxxxxxxx, xxxx xx "xxxxxxxx" xx "xxxxx xxx".
+[**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859) provides various ways to properly format dates and times for languages and regions around the world. You can use standard formats for year, month, day, and so on, or you can use standard string templates, such as "longdate" or "month day".
 
-Xxx xxxx xxx xxxx xxxx xxxxxxx xxxx xxx xxxxx xxx xxxxxx xx xxx xxxxxxxxxxxx xx xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br206576) xxxxxx xxx xxxx xx xxxxxxx, xxx xxx xxx x xxxxxxx xxxxxx xxx xxx xxxxxx xxxxxxxx xxxxxxxxx, xxxxxx x "xxxxxxx". Xxx xxxxxxx xxxxxx xxxxxx xxx xx xxxxxx xxxxxxxxxx xxxxxxxxxxxx xx x **XxxxXxxx** xxxxxx—xxxx xxx xxxxx xxxx, xx xxxx xxx xxxx xxxxx, xxx xxxxxxx—xx xxxxx xx xxxxxxx xxxx xx xxxxxxxx xxxxxx xxxxxx xxx xxxxxx. Xxxxxxxxxxx, xxx xxxxxxx xxx xx xxxxxxxxx xx xxxxx xx xxxxx xxxxxxxxx xxx xxxxxxx.
+But when you want more control over the order and format of the constituents of the [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) string you wish to display, you can use a special syntax for the string template parameter, called a "pattern". The pattern syntax allows you to obtain individual constituents of a **DateTime** object—just the month name, or just the year value, for example—in order to display them in whatever custom format you choose. Furthermore, the pattern can be localized to adapt to other languages and regions.
 
-**Xxxx**  Xxxx xx xx xxxxxxxx xx xxxxxx xxxxxxxx. Xxx x xxxx xxxxxxxx xxxxxxxxxx xx xxxxxx xxxxxxxxx xxx xxxxxx xxxxxxxx xxx xxx Xxxxxxx xxxxxxx xx xxx [**XxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206828) xxxxx.
+**Note**  This is an overview of format patterns. For a more complete discussion of format templates and format patterns see the Remarks section of the [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828) class.
 
  
 
-## <span id="What_you_need_to_know">
-            </span>
-            <span id="what_you_need_to_know">
-            </span>
-            <span id="WHAT_YOU_NEED_TO_KNOW">
-            </span>Xxxx xxx xxxx xx xxxx
+## <span id="What_you_need_to_know"></span><span id="what_you_need_to_know"></span><span id="WHAT_YOU_NEED_TO_KNOW"></span>What you need to know
 
 
-Xx'x xxxxxxxxx xx xxxx xxxx xxxx xxx xxx xxxxxxxx, xxx xxx xxxxxxxx x xxxxxx xxxxxx xxxx xx xxx xxxxxxxxxx xx xx xxxxx xxxxxx xxxxxxxx. Xxx xxxxxxx, xxxxxxxx xxx "xxxxx xxx" xxxxxxxx:
+It's important to note that when you use patterns, you are building a custom format that is not guaranteed to be valid across cultures. For example, consider the "month day" template:
 
-**X#**
+**C#**
 ```CSharp
 var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("month day");
 ```
-**XxxxXxxxxx**
+**JavaScript**
 ```JavaScript
 var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("month day");
 ```
 
-Xxxx xxxxxxx x xxxxxxxxx xxxxx xx xxx xxxxxxxx xxx xxxxxx xxxxx xx xxx xxxxxxx xxxxxxx. Xxxxxxxxx, xx xxxxxx xxxxxxxx xxx xxxxx xxx xxx xxxxxxxx xx xx xxxxxxxxxxx xxxxxx xxxxxx. Xxx xxxxxxx, xx xxxxxxxx "Xxxxxxx Y" xxx Xxxxxxx (XX), xxx "Y xxxxxxx" xxx Xxxxxx (Xxxxxx) xxx "Y月Y日" xxx Xxxxxxxx. Xxxx xx xxxxxxx xxx xxxxxxxx xx xxxxx xx x xxxxxxx-xxxxxxxx xxxxxxx xxxxxx, xxxxx xxx xx xxxxxxxx xxx xxx xxxxxxx xxxxxxxx:
+This creates a formatter based on the language and region value of the current context. Therefore, it always displays the month and day together in an appropriate global format. For example, it displays "January 1" for English (US), but "1 janvier" for French (France) and "1月1日" for Japanese. That is because the template is based on a culture-specific pattern string, which can be accessed via the pattern property:
 
-**X#**
+**C#**
 ```CSharp
 var monthdaypattern = datefmt.Patterns;
 ```
-**XxxxXxxxxx**
+**JavaScript**
 ```JavaScript
 var monthdaypattern = datefmt.patterns;
 ```
 
-Xxxx xxxxxx xxxxxxxxx xxxxxxx xxxxxxxxx xx xxx xxxxxxxx xxx xxxxxx xx xxx xxxxxxxxx. Xxxx xxxx xxxxxxxxx xxxxxxx xxx xxx xxxxxxxxx xxxxxxxxxxxx, xx xxxxxxxxx xxxxxx, xxxx xx xxxxxxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxx:
+This yields different results depending on the language and region of the formatter. Note that different regions may use different constituents, in different orders, with or without additional characters and spacing:
 
 ``` syntax
 En-US: "{month.full} {day.integer}"
@@ -75,18 +64,18 @@ Fr-FR: "{day.integer} {month.full}"
 Ja-JP: "{month.integer}月{day.integer}日"
 ```
 
-Xxx xxx xxx xxxxxxxx xx xxxxxxxxx x xxxxxx [**XxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206828), xxx xxxxxxxx xxxx xxx xxxxx xx xxx XX Xxxxxxx xxxxxxx:
+You can use patterns to construct a custom [**DateTimeFormatter**](https://msdn.microsoft.com/library/windows/apps/br206828), for instance this one based on the US English pattern:
 
-**X#**
+**C#**
 ```CSharp
 var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
 ```
-**XxxxXxxxxx**
+**JavaScript**
 ```JavaScript
 var datefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("{month.full} {day.integer}");
 ```
 
-Xxxxxxx xxxxxxx xxxxxxx-xxxxxxxx xxxxxx xxx xxx xxxxxxxxxx xxxxxxxxxxxx xxxxxx xxx xxxxxxxx {}. Xxx xxxx xxx xxxxxxx xxxxxx, xxx xxxxxxxxxxx xxxxx xx xxxxxxxxx. Xxx xxx xxxxxxxxx xxxx xxx xxx xxx, xxxxx xxx xxx xx xxxxxxxxxx xxxxxxxxxxx:
+Windows returns culture-specific values for the individual constituents inside the brackets {}. But with the pattern syntax, the constituent order is invariant. You get precisely what you ask for, which may not be culturally appropriate:
 
 ``` syntax
 En-US: January 1
@@ -94,48 +83,43 @@ Fr-FR: janvier 1 (inappropriate for France; non-standard order)
 Ja-JP: 1月1 (inappropriate for Japan; the day symbol is missing)
 ```
 
-Xxxxxxxxxxx, xxxxxxxx xxx xxx xxxxxxxxxx xx xxxxxx xxxxxxxxxx xxxx xxxx. Xxxxxxxxx xx xxxxxxx xxx xxxxxx xxxxx xxxxxxxx xxxxxxx, xxxxx xxxxxx x xxxxxx xxxxxxxx. Xxxxxxx xxxxxxx xxx xxxxxx xx xxx xxxxxxxxxx xx xxxxxxxxxxx xxxx xxxxxxx. Xxxxxxxxx, xxx xxxxxx xxxx xxx xxx xxxxxxx xxxxxx xxx xxxxxxxxxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br206576)x xxxx:
+Furthermore, patterns are not guaranteed to remain consistent over time. Countries or regions may change their calendar systems, which alters a format template. Windows updates the output of the formatters to accommodate such changes. Therefore, you should only use the pattern syntax for formatting [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)s when:
 
--   Xxx xxx xxx xxxxxxxxx xx x xxxxxxxxxx xxxxxx xxx x xxxxxx.
--   Xxx xx xxx xxxx xxx xxxxxx xx xxxxxx xxxx xxxxxxx-xxxxxxxx xxxxxxxx.
--   Xxx xxxxxxxxxxxx xxxxxx xxx xxxxxxx xx xx xxxxxxxxx xxxxxx xxxxxxxx.
--   Xxx xxxxxx xx xxxxxxxx xxx xxxxxxx.
+-   You are not dependent on a particular output for a format.
+-   You do not need the format to follow some culture-specific standard.
+-   You specifically intend the pattern to be invariant across cultures.
+-   You intend to localize the pattern.
 
-Xx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxx xxxxxxxxx xxx xxx-xxxxxxxx xxxxxx xxxxxxxx:
+To summarize the differences between the standard string templates and non-standard string patterns:
 
-**Xxxxxx xxxxxxxxx, xxxx xx "xxxxx xxx":**
+**String templates, such as "month day":**
 
--   Xxxxxxxxxx xxxxxxxxxxxxxx xx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br206576) xxxxxx xxxx xxxxxxxx xxxxxx xxx xxx xxxxx xxx xxx xxx, xx xxxx xxxxx.
--   Xxxxxxxxxx xx xxxxxx x xxxxx xxxxxxxx xxxxxx xxxxxx xxx xxxxxxxx-xxxxxx xxxxxx xxxxxxxxx xx Xxxxxxx.
--   Xxxxxxxxxx xx xxxx xxx x xxxxxxxxxx-xxxxxxxxxxx xxxxxxxxx xxxxxx xxx xxx xxxxx xxxxxxxx-xxxxxx.
--   Xxx xxx xxxxxxxxxxxx xx xxxxxxxxxxxx xxx xxxxx. Xxx xxxxxxx, xxxxx xx xx xxxxxx xxxxxxxx xxx "xxxxxxxxx xxx".
+-   Abstracted representation of a [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576) format that includes values for the month and the day, in some order.
+-   Guaranteed to return a valid standard format across all language-region values supported by Windows.
+-   Guaranteed to give you a culturally-appropriate formatted string for the given language-region.
+-   Not all combinations of constituents are valid. For example, there is no string template for "dayofweek day".
 
-**Xxxxxx xxxxxxxx, xxxx xx "{xxxxx.xxxx} {xxx.xxxxxxx}":**
+**String patterns, such as "{month.full} {day.integer}":**
 
--   Xxxxxxxxxx xxxxxxx xxxxxx xxxx xxxxxxxxx xxx xxxx xxxxx xxxx, xxxxxxxx xx x xxxxx, xxxxxxxx xx xxx xxx xxxxxxx, xx xxxx xxxxx.
--   Xxx xxx xxxxxxxxxx xx x xxxxx xxxxxxxx xxxxxx xxx xxx xxxxxxxx-xxxxxx xxxx.
--   Xxx xxxxxxxxxx xx xx xxxxxxxxxx xxxxxxxxxxx.
--   Xxx xxxxxxxxxxx xx xxxxxxxxxxxx xxx xx xxxxxxxxx, xx xxx xxxxx.
+-   Explicitly ordered string that expresses the full month name, followed by a space, followed by the day integer, in that order.
+-   May not correspond to a valid standard format for any language-region pair.
+-   Not guaranteed to be culturally appropriate.
+-   Any combination of constituents may be specified, in any order.
 
-## <span id="Tasks">
-            </span>
-            <span id="tasks">
-            </span>
-            <span id="TASKS">
-            </span>Xxxxx
+## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>Tasks
 
 
-Xxxxxxx xxx xxxx xx xxxxxxx xxx xxxxxxx xxxxx xxx xxx xxxxxxxx xxxx xxx xxxxxxx xxxx, xx x xxxxxxxx xxxxxx. Xxx xxxxxxx, xxx xxxxx xxxx XX Xxxxxxx xxxxx xx xxx xxxxxxxxx xxxx xxxx:
+Suppose you wish to display the current month and day together with the current time, in a specific format. For example, you would like US English users to see something like this:
 
 ``` syntax
 June 25 | 1:38 PM
 ```
 
-Xxx xxxx xxxx xxxxxxxxxxx xx xxx "xxxxx xxx" xxxxxxxx, xxx xxx xxxx xxxx xxxxxxxxxxx xx xxx "xxxx xxxxxx" xxxxxxxx. Xx, xxx xxx xxxxxx x xxxxxx xxxxxx xxxx xxxxxxxxxxxx xxx xxxxxxxx xxxxx xxxx xx xxxxx xxxxxxxxx.
+The date part corresponds to the "month day" template, and the time part corresponds to the "hour minute" template. So, you can create a custom format that concatenates the patterns which make up those templates.
 
-Xxxxx, xxx xxx xxxxxxxxxx xxx xxx xxxxxxxx xxxx xxx xxxx xxxxxxxxx, xxx xxxx xxx xxx xxxxxxxx xx xxxxx xxxxxxxxx:
+First, get the formatters for the relevant date and time templates, and then get the patterns of those templates:
 
-**X#**
+**C#**
 ```CSharp
 // Get formatters for the date part and the time part.
 var mydate = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("month day");
@@ -145,7 +129,7 @@ var mytime = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter("hou
 var mydatepattern = mydate.Patterns[0];
 var mytimepattern = mytime.Patterns[0];
 ```
-**XxxxXxxxxx**
+**JavaScript**
 ```JavaScript
 // Get formatters for the date part and the time part.
 var dtf = Windows.Globalization.DateTimeFormatting;
@@ -157,9 +141,9 @@ var mydatepattern = mydate.patterns[0];
 var mytimepattern = mytime.patterns[0];
 ```
 
-Xxx xxxxxx xxxxx xxxx xxxxxx xxxxxx xx x xxxxxxxxxxx xxxxxxxx xxxxxx. Xxx xxxxxxx, xxx xxxxxx xxx Xxxxxxx (Xxxxxx Xxxxxx) xxxxx xx "{xxxx} | {xxxx}". Xxxxxxxxxx xxx xxxxxx xxxx xxxxxx xx xxxxxx. Xxx xxxxxxx, xxxx xxx xxxxxx xxx xxxxx xx xxx xxxxxxxxxxxx, xx xx xxxxx xxxx xxxxxxx xx xxxx xxxxxxxx xx xxxxxx xx xxxx xxx xxxx xxxxxxx xxx xxxx. Xx, xxxx xxx xxxxxxx "|" xxxx xxxx xxxxx xxxxxxxxx xxxxxxxxx. Xx xxxxxxx xxx xxxxxxx xxx {xxxx} xxx {xxxx} xxxxxxxx xx xxx xxxxxx xxxx xxx xxxxxxxx xxxxxxx:
+You should store your custom format as a localizable resource string. For example, the string for English (United States) would be "{date} | {time}". Localizers can adjust this string as needed. For example, they can change the order of the constituents, if it seems more natural in some language or region to have the time precede the date. Or, they can replace "|" with some other separator character. At runtime you replace the {date} and {time} portions of the string with the relevant pattern:
 
-**X#**
+**C#**
 ```CSharp
 // Assemble the custom pattern. This string comes from a resource, and should be localizable. 
 var resourceLoader = new Windows.ApplicationModel.Resources.ResourceLoader();
@@ -167,7 +151,7 @@ var mydateplustime = resourceLoader.GetString("date_plus_time");
 mydateplustime = mydateplustime.replace("{date}", mydatepattern);
 mydateplustime = mydateplustime.replace("{time}", mytimepattern);
 ```
-**XxxxXxxxxx**
+**JavaScript**
 ```JavaScript
 // Assemble the custom pattern. This string comes from a resource, and should be localizable. 
 var mydateplustime = WinJS.Resources.getString("date_plus_time");
@@ -175,30 +159,33 @@ mydateplustime = mydateplustime.replace("{date}", mydatepattern);
 mydateplustime = mydateplustime.replace("{time}", mytimepattern);
 ```
 
-Xxxx xxx xxx xxxxxxxxx x xxx xxxxxxxxx xxxxx xx xxx xxxxxx xxxxxxx:
+Then you can construct a new formatter based on the custom pattern:
 
-**X#**
+**C#**
 ```CSharp
 // Get the custom formatter.
 var mydateplustimefmt = new Windows.Globalization.DateTimeFormatting.DateTimeFormatter(mydateplustime);
 ```
-**XxxxXxxxxx**
+**JavaScript**
 ```JavaScript
 // Get the custom formatter.
 var mydateplustimefmt = new dtf.DateTimeFormatter(mydateplustime);
 ```
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxx
+## <span id="related_topics"></span>Related topics
 
 
-* [Xxxx xxx xxxx xxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=231618)
-* [**Xxxxxxx.Xxxxxxxxxxxxx.XxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206859)
-* [**Xxxxxxx.Xxxxxxxxxx.XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br206576)
+* [Date and time formatting sample](http://go.microsoft.com/fwlink/p/?LinkId=231618)
+* [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
+* [**Windows.Foundation.DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,118 +1,122 @@
 ---
-xx.xxxxxxx: XYXYYYXY-YYYY-YYYX-XXYX-XYYYXYYYYYYX
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xx xxx xxx XxxxxXxxxxxxxXxxxxx xxx xxx XxxxXxxxxxxxxXxxxxx xx xxxxxxx xxx xxxxxxx xx xxx xxxxx xxxxxxx xxxxxxx xxxxxx.
-xxxxx: Xxxxx xxxxxxxx xxx xxxxx xxxxxxx
+ms.assetid: B5D915E4-4280-422C-BA0E-D574C534410B
+description: This article describes how to use the SceneAnalysisEffect and the FaceDetectionEffect to analyze the content of the media capture preview stream.
+title: Scene analysis for media capture
 ---
 
-# Xxxxx xxxxxxxx xxx xxxxx xxxxxxx
+# Scene analysis for media capture
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxx xxx [**XxxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948902) xxx xxx [**XxxxXxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948776) xx xxxxxxx xxx xxxxxxx xx xxx xxxxx xxxxxxx xxxxxxx xxxxxx.
+This article describes how to use the [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) and the [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) to analyze the content of the media capture preview stream.
 
-## Xxxxx xxxxxxxx xxxxxx
+## Scene analysis effect
 
-Xxx [**XxxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948902) xxxxxxxx xxx xxxxx xxxxxx xx xxx xxxxx xxxxxxx xxxxxxx xxxxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxx. Xxxxxxxxx, xxx xxxxxx xxxxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxx xxxxx xx xxxxxxxx xx xxxxx Xxxx Xxxxxxx Xxxxx (XXX) xxxxxxxxxx.
+The [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) analyzes the video frames in the media capture preview stream and recommends processing options to improve the capture result. Currently, the effect supports detecting whether the capture would be improved by using High Dynamic Range (HDR) processing.
 
-Xx xxx xxxxxx xxxxxxxxxx xxxxx XXX, xxx xxx xx xxxx xx xxx xxxxxxxxx xxxx:
+If the effect recommends using HDR, you can do this in the following ways:
 
--   Xxx xxx [**XxxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/mt181386) xxxxx xx xxxxxxx xxxxxx xxxxx xxx Xxxxxxx xxxxx-xx XXX xxxxxxxxxx xxxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxx Xxxxxxx Xxxxx (XXX) xxxxx xxxxxxx](high-dynamic-range-hdr-photo-capture.md).
+-   Use the [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) class to capture photos using the Windows built-in HDR processing algorithm. For more information, see [High Dynamic Range (HDR) photo capture](high-dynamic-range-hdr-photo-capture.md).
 
--   Xxx xxx [**XxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926680) xx xxxxxxx xxxxx xxxxx xxx Xxxxxxx xxxxx-xx XXX xxxxxxxxxx xxxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxx xxxxxx xxxxxxxx xxx xxxxx xxxxxxx](capture-device-controls-for-video-capture.md).
+-   Use the [**HdrVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926680) to capture video using the Windows built-in HDR processing algorithm. For more information, see [Capture device controls for video capture](capture-device-controls-for-video-capture.md).
 
--   Xxx xxx [**XxxxxxxxXxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn640573) xx xxxxxxx x xxxxxxxx xx xxxxxx xxxx xxx xxx xxxx xxxxxxxxx xxxxx x xxxxxx XXX xxxxxxxxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxx xxxxx xxxxxxxx](variable-photo-sequence.md).
+-   Use the [**VariablePhotoSequenceControl**](https://msdn.microsoft.com/library/windows/apps/dn640573) to capture a sequence of frames that you can then composite using a custom HDR implementation. For more information, see [Variable photo sequence](variable-photo-sequence.md).
 
-### Xxxxx xxxxxxxx xxxxxxxxxx
+### Scene analysis namespaces
 
-Xx xxx xxxxx xxxxxxxx, xxxx xxx xxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx xxx xxxxx xxxxx xxxxxxx.
+To use scene analysis, your app must include the following namespaces in addition to the namespaces required for basic media capture.
 
-[!xxxx-xx[XxxxxXxxxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSceneAnalysisUsing)]
+[!code-cs[SceneAnalysisUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSceneAnalysisUsing)]
 
-### Xxxxxxxxxx xxx xxxxx xxxxxxxx xxxxxx xxx xxx xx xx xxx xxxxxxx xxxxxx
+### Initialize the scene analysis effect and add it to the preview stream
 
-Xxxxx xxxxxxx xxx xxxxxxxxxxx xxxxx xxx XXXx, xx xxxxxx xxxxxxxxxx, xxxxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xxxxxx xxxxx xx xxxxxxxxxx xxx xxxxxx, xxx xx xxxxxx xxxxxxxx, xxxxx xxx xx xxxx xx xxxxxxx xxx xxxxxx. Xxxxx xxx xxx xxxx xx xxxxxx xxx xxxxxx xxxxxxxx xxxx xxxxxxxx xxxxxx xxxxxx xxxx xxxx, xxx xxxxxx xxxxxxxxx xxxxxxx x xxxxxx xxxxxxxx xx xxxx xxx xxxxxx.
+Video effects are implemented using two APIs, an effect definition, which provides settings that the capture device needs to initialize the effect, and an effect instance, which can be used to control the effect. Since you may want to access the effect instance from multiple places within your code, you should typically declare a member variable to hold the object.
 
-[!xxxx-xx[XxxxxxxXxxxxXxxxxxxxXxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSceneAnalysisEffect)]
+[!code-cs[DeclareSceneAnalysisEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareSceneAnalysisEffect)]
 
-Xx xxxx xxx, xxxxx xxx xxxx xxxxxxxxxxx xxx **XxxxxXxxxxxx** xxxxxx, xxxxxx x xxx xxxxxxxx xx [**XxxxxXxxxxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948903).
+In your app, after you have initialized the **MediaCapture** object, create a new instance of [**SceneAnalysisEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948903).
 
-Xxxxxxxx xxx xxxxxx xxxx xxx xxxxxxx xxxxxx xx xxxxxxx [**XxxXxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn878035) xx xxxx **XxxxxXxxxxxx** xxxxxx, xxxxxxxxx xxx **XxxxxXxxxxxxxXxxxxxXxxxxxxxxx** xxx xxxxxxxxxx [**XxxxxXxxxxxXxxx.XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226640) xx xxxxxxxx xxxx xxx xxxxxx xxxxxx xx xxxxxxx xx xxx xxxxx xxxxxxx xxxxxx, xx xxxxxxx xx xxx xxxxxxx xxxxxx. **XxxXxxxxXxxxxxXxxxx** xxxxxxx xx xxxxxxxx xx xxx xxxxx xxxxxx. Xxxxxxx xxxx xxxxxx xxx xx xxxx xxxx xxxxxxxx xxxxxx xxxxx, xxx xxxx xxxx xxx xxxxxxxx xxxxxxxx xx x [**XxxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948902) xxxxxx.
+Register the effect with the capture device by calling [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) on your **MediaCapture** object, providing the **SceneAnalysisEffectDefinition** and specifying [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) to indicate that the effect should be applied to the video preview stream, as opposed to the capture stream. **AddVideoEffectAsync** returns an instance of the added effect. Because this method can be used with multiple effect types, you must cast the returned instance to a [**SceneAnalysisEffect**](https://msdn.microsoft.com/library/windows/apps/dn948902) object.
 
-Xx xxxxxxx xxx xxxxxxx xx xxx xxxxx xxxxxxxx, xxx xxxx xxxxxxxx x xxxxxxx xxx xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948920) xxxxx.
+To receive the results of the scene analysis, you must register a handler for the [**SceneAnalyzed**](https://msdn.microsoft.com/library/windows/apps/dn948920) event.
 
-Xxxxxxxxx, xxx xxxxx xxxxxxxx xxxxxx xxxx xxxxxxxx xxx xxxx xxxxxxx xxxxx xxxxxxxx. Xxxxxx XXX xxxxxxxx xx xxxxxxx xxx xxxxxx'x [**XxxxXxxxxxxXxxxxXxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948827) xx xxxx.
+Currently, the scene analysis effect only includes the high dynamic range analyzer. Enable HDR analysis by setting the effect's [**HighDynamicRangeControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948827) to true.
 
-[!xxxx-xx[XxxxxxXxxxxXxxxxxxxXxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateSceneAnalysisEffectAsync)]
+[!code-cs[CreateSceneAnalysisEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateSceneAnalysisEffectAsync)]
 
-### Xxxxxxxxx xxx XxxxxXxxxxxxx xxxxx xxxxxxx
+### Implement the SceneAnalyzed event handler
 
-Xxx xxxxxxx xx xxx xxxxx xxxxxxxx xxx xxxxxxxx xx xxx **XxxxxXxxxxxxx** xxxxx xxxxxxx. Xxx [**XxxxxXxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn948922) xxxxxx xxxxxx xxxx xxx xxxxxxx xxx x [**XxxxxXxxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948907) xxxxxx xxxxx xxx x [**XxxxXxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948830) xxxxxx. Xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948833) xxxxxxxx xx xxx xxxx xxxxxxx xxxxx xxxxxx xxxxxxxx x xxxxx xxxxxxx Y xxx Y.Y xxxxx Y xxxxxxxxx xxxx XXX xxxxxxxxxx xxxxx xxx xxxx xxxxxxx xxx xxxxxxx xxxxxx xxx Y.Y xxxxxxxxx xxxx XXX xxxxxxxxxx xxxxx xxxx. Xxxx xxx xxxxxx xxx xxxxxxxxx xxxxx xx xxxxx xxx xxxx xx xxx XXX xx xxxx xxx xxxxxxx xx xxx xxxx xxx xxx xxx xxxx xxxxxx.
+The results of the scene analysis are returned in the **SceneAnalyzed** event handler. The [**SceneAnalyzedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948922) object passed into the handler has a [**SceneAnalysisEffectFrame**](https://msdn.microsoft.com/library/windows/apps/dn948907) object which has a [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) object. The [**Certainty**](https://msdn.microsoft.com/library/windows/apps/dn948833) property of the high dynamic range output provides a value between 0 and 1.0 where 0 indicates that HDR processing would not help improve the capture result and 1.0 indicates that HDR processing would help. Your can decide the threshold point at which you want to use HDR or show the results to the user and let the user decide.
 
-[!xxxx-xx[XxxxxXxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSceneAnalyzed)]
+[!code-cs[SceneAnalyzed](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSceneAnalyzed)]
 
-Xxx [**XxxxXxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948830) xxxxxx xxxxxx xxxx xxx xxxxxxx xxxx xxx x [**XxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948834) xxxxxxxx xxxxx xxxxxxxx xxxxxxxxx xxxxx xxxxxxxxxxx xxx xxxxxxxxx x xxxxxxxx xxxxx xxxxxxxx xxx XXX xxxxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxx xxxxx xxxxxxxx](variable-photo-sequence.md).
+The [**HighDynamicRangeOutput**](https://msdn.microsoft.com/library/windows/apps/dn948830) object passed into the handler also has a [**FrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn948834) property which contains suggested frame controllers for capturing a variable photo sequence for HDR processing. For more information, see [Variable photo sequence](variable-photo-sequence.md).
 
-### Xxxxx xx xxx xxxxx xxxxxxxx xxxxxx
+### Clean up the scene analysis effect
 
-Xxxx xxxx xxx xx xxxx xxxxxxxxx, xxxxxx xxxxxxxxx xx xxx **XxxxxXxxxxxx** xxxxxx, xxx xxxxxx xxxxxxx xxx xxxxx xxxxxxxx xxxxxx xx xxxxxxx xxx xxxxxx'x [**XxxxXxxxxxxXxxxxXxxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948827) xxxxxxxx xx xxxxx xxx xxxxxxxxxx xxxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948920) xxxxx xxxxxxx. Xxxx [**XxxxxXxxxxxx.XxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226592), xxxxxxxxxx xxx xxxxx xxxxxxx xxxxxx xxxxx xxxx xxx xxx xxxxxx xx xxxxx xxx xxxxxx xxx xxxxx. Xxxxxxx, xxx xxxx xxxxxx xxxxxxxx xx xxxx.
+When your app is done capturing, before disposing of the **MediaCapture** object, you should disable the scene analysis effect by setting the effect's [**HighDynamicRangeAnalyzer.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948827) property to false and unregister your [**SceneAnalyzed**](https://msdn.microsoft.com/library/windows/apps/dn948920) event handler. Call [**MediaCapture.ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592), specifying the video preview stream since that was the stream to which the effect was added. Finally, set your member variable to null.
 
-[!xxxx-xx[XxxxxXxXxxxxXxxxxxxxXxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpSceneAnalysisEffectAsync)]
+[!code-cs[CleanUpSceneAnalysisEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpSceneAnalysisEffectAsync)]
 
-## Xxxx xxxxxxxxx xxxxxx
+## Face detection effect
 
-Xxx [**XxxxXxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948776) xxxxxxxxxx xxx xxxxxxxx xx xxxxx xxxxxx xxx xxxxx xxxxxxx xxxxxxx xxxxxx. Xxx xxxxxx xxxxxx xxx xx xxxxxxx x xxxxxxxxxxxx xxxxxxxx x xxxx xx xxxxxxxx xx xxx xxxxxxx xxxxxx xxx xxxxxxxx xxx xxxxxxxx xxx xxx xxxx xxxxxxxx xxxx xxxxxx xxx xxxxxxx xxxxx. Xx xxxxxxxxx xxxxxxx, xxx xxxx xxxxxxxxx xxxxxx xxxx xxxxxxxx xxxxxxxx xxxxxxxx xxx xxxxx xx xxx xxxx xxxxxxxxx xxxx xx xxx xxxxx.
+The [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) identifies the location of faces within the media capture preview stream. The effect allows you to receive a notification whenever a face is detected in the preview stream and provides the bounding box for each detected face within the preview frame. On supported devices, the face detection effect also provides enhanced exposure and focus on the most important face in the scene.
 
-### Xxxx xxxxxxxxx xxxxxxxxxx
+### Face detection namespaces
 
-Xx xxx xxxx xxxxxxxxx, xxxx xxx xxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx xxx xxxxx xxxxx xxxxxxx.
+To use face detection, your app must include the following namespaces in addition to the namespaces required for basic media capture.
 
-[!xxxx-xx[XxxxXxxxxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetectionUsing)]
+[!code-cs[FaceDetectionUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetectionUsing)]
 
-### Xxxxxxxxxx xxx xxxx xxxxxxxxx xxxxxx xxx xxx xx xx xxx xxxxxxx xxxxxx
+### Initialize the face detection effect and add it to the preview stream
 
-Xxxxx xxxxxxx xxx xxxxxxxxxxx xxxxx xxx XXXx, xx xxxxxx xxxxxxxxxx, xxxxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xxxxxx xxxxx xx xxxxxxxxxx xxx xxxxxx, xxx xx xxxxxx xxxxxxxx, xxxxx xxx xx xxxx xx xxxxxxx xxx xxxxxx. Xxxxx xxx xxx xxxx xx xxxxxx xxx xxxxxx xxxxxxxx xxxx xxxxxxxx xxxxxx xxxxxx xxxx xxxx, xxx xxxxxx xxxxxxxxx xxxxxxx x xxxxxx xxxxxxxx xx xxxx xxx xxxxxx.
+Video effects are implemented using two APIs, an effect definition, which provides settings that the capture device needs to initialize the effect, and an effect instance, which can be used to control the effect. Since you may want to access the effect instance from multiple places within your code, you should typically declare a member variable to hold the object.
 
-[!xxxx-xx[XxxxxxxXxxxXxxxxxxxxXxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareFaceDetectionEffect)]
+[!code-cs[DeclareFaceDetectionEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareFaceDetectionEffect)]
 
-Xx xxxx xxx, xxxxx xxx xxxx xxxxxxxxxxx xxx **XxxxxXxxxxxx** xxxxxx, xxxxxx x xxx xxxxxxxx xx [**XxxxXxxxxxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948778). Xxx xxx [**XxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn948781) xxxxxxxx xx xxxxxxxxxx xxxxxx xxxx xxxxxxxxx xx xxxx xxxxxxxx xxxx xxxxxxxxx. Xxx [**XxxxxxxxxxxXxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948786) xx xxxxxxx xxxx xxxxxxxx xxxxxx xxx xxx xxxxxxx xxxxxxx xxx xxxx xxxxxxxxx xx xxxxxxxx xx xxxx xxx xxxxxx xx x xxxxxx xxxxxxx xxxxxxxxxx.
+In your app, after you have initialized the **MediaCapture** object, create a new instance of [**FaceDetectionEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn948778). Set the [**DetectionMode**](https://msdn.microsoft.com/library/windows/apps/dn948781) property to prioritize faster face detection or more accurate face detection. Set [**SynchronousDetectionEnabled**](https://msdn.microsoft.com/library/windows/apps/dn948786) to specify that incoming frames are not delayed waiting for face detection to complete as this can result in a choppy preview experience.
 
-Xxxxxxxx xxx xxxxxx xxxx xxx xxxxxxx xxxxxx xx xxxxxxx [**XxxXxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn878035) xx xxxx **XxxxxXxxxxxx** xxxxxx, xxxxxxxxx xxx **XxxxXxxxxxxxxXxxxxxXxxxxxxxxx** xxx xxxxxxxxxx [**XxxxxXxxxxxXxxx.XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226640) xx xxxxxxxx xxxx xxx xxxxxx xxxxxx xx xxxxxxx xx xxx xxxxx xxxxxxx xxxxxx, xx xxxxxxx xx xxx xxxxxxx xxxxxx. **XxxXxxxxXxxxxxXxxxx** xxxxxxx xx xxxxxxxx xx xxx xxxxx xxxxxx. Xxxxxxx xxxx xxxxxx xxx xx xxxx xxxx xxxxxxxx xxxxxx xxxxx, xxx xxxx xxxx xxx xxxxxxxx xxxxxxxx xx x [**XxxxXxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948776) xxxxxx.
+Register the effect with the capture device by calling [**AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) on your **MediaCapture** object, providing the **FaceDetectionEffectDefinition** and specifying [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) to indicate that the effect should be applied to the video preview stream, as opposed to the capture stream. **AddVideoEffectAsync** returns an instance of the added effect. Because this method can be used with multiple effect types, you must cast the returned instance to a [**FaceDetectionEffect**](https://msdn.microsoft.com/library/windows/apps/dn948776) object.
 
-Xxxxxx xx xxxxxxx xxx xxxxxx xx xxxxxxx xxx [**XxxxXxxxxxxxxXxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948818) xxxxxxxx. Xxxxxx xxx xxxxx xxx xxxxxx xxxxxxxx xxxxxx xx xxxxxxx xxx [**XxxxXxxxxxxxxXxxxxx.XxxxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948814) xxxxxxxx. Xxxx xx xxxxx xxxxxxxxxx xxx xx xxxxxxxx xxxxx xxxxx xxxxxxx xx xxxxxxx.
+Enable or disable the effect by setting the [**FaceDetectionEffect.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948818) property. Adjust how often the effect analyzes frames by setting the [**FaceDetectionEffect.DesiredDetectionInterval**](https://msdn.microsoft.com/library/windows/apps/dn948814) property. Both of these properties can be adjusted while media capture is ongoing.
 
-[!xxxx-xx[XxxxxxXxxxXxxxxxxxxXxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateFaceDetectionEffectAsync)]
+[!code-cs[CreateFaceDetectionEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateFaceDetectionEffectAsync)]
 
-### Xxxxxxx xxxxxxxxxxxxx xxxx xxxxx xxx xxxxxxxx
+### Receive notifications when faces are detected
 
-Xx xxx xxxx xx xxxxxxx xxxx xxxxxx xxxx xxxxx xxx xxxxxxxx, xxxx xx xxxxxxx x xxx xxxxxx xxxxxxxx xxxxx xx xxx xxxxx xxxxxxx, xxx xxx xxxxxxxx xxx xxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948820) xxxxx.
+If you want to perform some action when faces are detected, such as drawing a box around detected faces in the video preview, you can register for the [**FaceDetected**](https://msdn.microsoft.com/library/windows/apps/dn948820) event.
 
-[!xxxx-xx[XxxxxxxxXxxxXxxxxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterFaceDetectionHandler)]
+[!code-cs[RegisterFaceDetectionHandler](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetRegisterFaceDetectionHandler)]
 
-Xx xxx xxxxxxx xxx xxx xxxxx, xxx xxx xxx x xxxx xx xxx xxxxx xxxxxxxx xx x xxxxx xx xxxxxxxxx xxx [**XxxxXxxxxxxxxXxxxxxXxxxx.XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948792) xxxxxxxx xx xxx [**XxxxXxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn948774). Xxx [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn974126) xxxxxxxx xx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226169) xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxx xxxx xx xxxxx xxxxxxxx xx xxx xxxxxxx xxxxxx xxxxxxxxxx. Xx xxxx xxxxxx xxxx xxxx xxxxxxxxxx xxx xxxxxxx xxxxxx xxxxxxxxxxx xxxx xxxxxx xxxxxxxxxxx, xxx xxx [xxxx xxxxxxxxx XXX xxxxxx](http://go.microsoft.com/fwlink/?LinkId=619486).
+In the handler for the event, you can get a list of all faces detected in a frame by accessing the [**FaceDetectionEffectFrame.DetectedFaces**](https://msdn.microsoft.com/library/windows/apps/dn948792) property of the [**FaceDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948774). The [**FaceBox**](https://msdn.microsoft.com/library/windows/apps/dn974126) property is a [**BitmapBounds**](https://msdn.microsoft.com/library/windows/apps/br226169) structure that describes the rectangle containing the detected face in units relative to the preview stream dimensions. To view sample code that transforms the preview stream coordinates into screen coordinates, see the [face detection UWP sample](http://go.microsoft.com/fwlink/?LinkId=619486).
 
-[!xxxx-xx[XxxxXxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetected)]
+[!code-cs[FaceDetected](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFaceDetected)]
 
-### Xxxxx xx xxx xxxx xxxxxxxxx xxxxxx
+### Clean up the face detection effect
 
-Xxxx xxxx xxx xx xxxx xxxxxxxxx, xxxxxx xxxxxxxxx xx xxx **XxxxxXxxxxxx** xxxxxx, xxx xxxxxx xxxxxxx xxx xxxx xxxxxxxxx xxxxxx xxxx [**XxxxXxxxxxxxxXxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948818) xxx xxxxxxxxxx xxxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948820) xxxxx xxxxxxx xx xxx xxxxxxxxxx xxxxxxxxxx xxx. Xxxx [**XxxxxXxxxxxx.XxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226592), xxxxxxxxxx xxx xxxxx xxxxxxx xxxxxx xxxxx xxxx xxx xxx xxxxxx xx xxxxx xxx xxxxxx xxx xxxxx. Xxxxxxx, xxx xxxx xxxxxx xxxxxxxx xx xxxx.
+When your app is done capturing, before disposing of the **MediaCapture** object, you should disable the face detection effect with [**FaceDetectionEffect.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn948818) and unregister your [**FaceDetected**](https://msdn.microsoft.com/library/windows/apps/dn948820) event handler if you previously registered one. Call [**MediaCapture.ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592), specifying the video preview stream since that was the stream to which the effect was added. Finally, set your member variable to null.
 
-[!xxxx-xx[XxxxxXxXxxxXxxxxxxxxXxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpFaceDetectionEffectAsync)]
+[!code-cs[CleanUpFaceDetectionEffectAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpFaceDetectionEffectAsync)]
 
-### Xxxxx xxx xxxxx xxx xxxxxxxx xxxxxxx xxx xxxxxxxx xxxxx
+### Check for focus and exposure support for detected faces
 
-Xxx xxx xxxxxxx xxxx x xxxxxxx xxxxxx xxxx xxx xxxxxx xxx xxxxx xxx xxxxxxxx xxxxx xx xxxxxxxx xxxxx. Xxxxxxx xxxx xxxxxxxxx xxxxxxxx xxxxxx xxxxxxxxx, xxx xxx xxxx xxxx xx xxxxxx xxxx xxxxxxxxx xx xxxxxxx xxxx xxx xxx xxx xxxxxxx xx xxxxxxx xxxxxxx. Xx xxx xx xxxx-xxxxx xxxxxxx xxxxxxxxxxxx xx xxxxxxxxx, xxx xxx [**XxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226825) xxx xxxx xxxxxxxxxxx [XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md) xxx xxxx xxx xxx xxxxx xxxxxx xxxxxxxxxx'x [**XxxxxxxXxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279064). Xxxxx xx xxx xx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279069) xxxxxxxx xx xxxxx xxx xxxxxx. Xxxx xxxxx xx xxx xx xxxxxx [**XxxxXxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279065) xx [**XxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279066) xxx xxxx. Xx xxxxx xxxxxxxxxx xxx xxx, xxxx xxx xxxxxx xxx xxxx xxxxxxxxx xx xxxx xxxxxxxxx xx xxxxxxx xxxxxxx.
+Not all devices have a capture device that can adjust its focus and exposure based on detected faces. Because face detection consumes device resources, you may only want to enable face detection on devices that can use the feature to enhance capture. To see if face-based capture optimization is available, get the [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) for your initialized [MediaCapture](capture-photos-and-video-with-mediacapture.md) and then get the video device controller's [**RegionsOfInterestControl**](https://msdn.microsoft.com/library/windows/apps/dn279064). Check to see if the [**MaxRegions**](https://msdn.microsoft.com/library/windows/apps/dn279069) supports at least one region. Then check to see if either [**AutoExposureSupported**](https://msdn.microsoft.com/library/windows/apps/dn279065) or [**AutoFocusSupported**](https://msdn.microsoft.com/library/windows/apps/dn279066) are true. If these conditions are met, then the device can take advantage of face detection to enhance capture.
 
-[!xxxx-xx[XxxXxxxXxxxxXxxXxxxxxxxXxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetAreFaceFocusAndExposureSupported)]
+[!code-cs[AreFaceFocusAndExposureSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetAreFaceFocusAndExposureSupported)]
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxx xxxxxx xxx xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md)
+* [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

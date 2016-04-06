@@ -1,35 +1,39 @@
 ---
-xxxxx: Xxxxxxxx xxxxxxxxxxx xxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxx xxx xxx xxx xxxxxxxx xxxxxxxxxxx xxxxxxxx xxxxxxxxx Xxxxxxxx Xxxxxxxxx, Xxxxxxxx Xxxxx Xxxxxxxx, xxx XXX Xxxxx xx Xxxxxx Xxxxxx.
-xx.xxxxxxx: YYYxxYYY-YYxx-xYYY-YYxY-xxYYxxYxxxYY
+title: Graphics diagnostics tools
+description: Learn how to get and use the graphics diagnostics features including Graphics Debugging, Graphics Frame Analysis, and GPU Usage in Visual Studio.
+ms.assetid: 629ea462-18ed-a333-07e9-cc87ea2dcd93
 ---
 
-# Xxxxxxxx xxxxxxxxxxx xxxxx
+# Graphics diagnostics tools
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx Xxxxxxx YY, xxx xxxxxxxx xxxxxxxxxx xxxxx xxx xxx xxxxxxxxx xxxx xxxxxx Xxxxxxx xx xx xxxxxxxx xxxxxxx. Xx xxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxx xxxxxxxx xx xxx xxxxxxx xxx Xxxxxx Xxxxxx xx xxxxxxx XxxxxxX xxxx xx xxxxx, xxxxxxx xxx xxxxxxxx Xxxxxxxx Xxxxx xxxxxxx:
+With Windows 10, the graphics diagnostic tools are now available from within Windows as an optional feature. To use the graphics diagnostic features provided in the runtime and Visual Studio to develop DirectX apps or games, install the optional Graphics Tools feature:
 
-1.  Xx xx **Xxxxxxxx**, xxxxxx **Xxxxxx**, xxxxxx **Xxxxxxxx xxxxxxxx**, xxx xxxx xxxxx **Xxx x xxxxxxx**. Xx xx **Xxxxxxxx**, xxxxxx **Xxxxxx**, xxxxxx **Xxxx & xxxxxxxx**, xxxxxx **Xxxxxx xxxxxxxx xxxxxxxx**, xxx xxxx xxxxx **Xxx x xxxxxxx**.
-2.  Xx xxx **Xxx x Xxxxxxx** xxxx, xxxxx **Xxxxxxxx Xxxxx**.
+1.  Go to **Settings**, select **System**, select **Optional features**, and then click **Add a feature**. Go to **Settings**, select **System**, select **Apps & features**, select **Manage optional features**, and then click **Add a feature**.
+2.  In the **Add a Feature** list, click **Graphics Tools**.
 
-Xxxxxxxx xxxxxxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxx xx xxxxxx XxxxxxYX xxxxx xxxxxxx (xxx XxxxxxYX XXX Xxxxxx) xx xxx XxxxxxX xxxxxxx, xxxx Xxxxxxxx Xxxxxxxxx, Xxxxx Xxxxxxxx, xxx XXX Xxxxx.
+Graphics diagnostics features include the ability to create Direct3D debug devices (via Direct3D SDK Layers) in the DirectX runtime, plus Graphics Debugging, Frame Analysis, and GPU Usage.
 
--   Xxxxxxxx Xxxxxxxxx xxxx xxx xxxxx xxx XxxxxxYX xxxxx xxxxx xxxx xx xxxx xxx. Xxxx, xxx xxx xxxxxx xxxxx xxxxx, xxxxxxx xxxxxxxxxx, xxxxx xxx xxxxxxxxxx xxxx xxxxxxx, xxx xxxxxxxxx xxxxxxxx xxxxxx xx xxxxxxxx xxxxxxxxx xxxxxx. Xxxx xxx xx xxxxx xx Xxxxxxx XXx, xxxxxxxxxx, xx xxxxxxx, xxx xx xxxxxx xxxx xx xxxxxxxxx xxxxxxxx.
--   Xxxxxxxx Xxxxx Xxxxxxxx xx Xxxxxx Xxxxxx xxxx xx x xxxxxxxx xxxxxxxxx xxx xxx xxxxxxx xxxxxxxx xxxxxx xxx xxx XxxxxxYX xxxx xxxxx. Xx xxxx xxxxxxxx x xxx xx xxxxxxxxxxx xx xxxxxxxxx xxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxxx x xxxxx xx xxxxxx xxxxxxx. Xxx xxx xxx xxxx xxxx xx xxxxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxxx xx xxxx xxx, xxx xxx xxx xxxxxx xxxxxxx xx xxx xxxxxxx xxxxxxxxxxx xx xxxxxxxx xxxxxxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxxx.
--   XXX Xxxxx xx Xxxxxx Xxxxxx xxxxxx xxx xx xxxxxxx XXX xxx xx xxxx xxxx. Xx xxxxxxxx xxx xxxxxxxx xxx xxxxxx xxxx xx xxx xxxxxxxxx xxxxx xxxxxxx xx xxx XXX xxx XXX, xx xxx xxx xxxxxxxxx xxxxx xxx xxxxxxxxxxx xxx.
+-   Graphics Debugging lets you trace the Direct3D calls being made by your app. Then, you can replay those calls, inspect parameters, debug and experiment with shaders, and visualize graphics assets to diagnose rendering issues. Logs can be taken on Windows PCs, simulators, or devices, and be played back on different hardware.
+-   Graphics Frame Analysis in Visual Studio runs on a graphics debugging log and gathers baseline timing for the Direct3D draw calls. It then performs a set of experiments by modifying various graphics settings and produces a table of timing results. You can use this data to understand graphics performance issues in your app, and you can review results of the various experiments to identify opportunities for performance improvements.
+-   GPU Usage in Visual Studio allows you to monitor GPU use in real time. It collects and analyzes the timing data of the workloads being handled by the CPU and GPU, so you can determine where the bottlenecks are.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
 
-[Xxxxxxxx Xxxxxxxxxxx Xxxxxxxx xx Xxxxxx Xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=526382)
+[Graphics Diagnostics Overview in Visual Studio](http://go.microsoft.com/fwlink/p/?LinkID=526382)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

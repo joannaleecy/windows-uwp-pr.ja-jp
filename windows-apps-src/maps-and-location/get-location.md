@@ -1,26 +1,26 @@
 ---
-xxxxx: 'Xxx xxx xxxx'x xxxxxxxx'
-xxxxxxxxxxx: Xxxx xxx xxxx'x xxxxxxxx xxx xxxxxxx xx xxxxxxx xx xxxxxxxx. Xxxxxx xx xxx xxxx'x xxxxxxxx xx xxxxxxx xx xxxxxxx xxxxxxxx xx xxx Xxxxxxxx xxx. Xxxx xxxxx xxxx xxxxx xxx xx xxxxx xx xxxx xxx xxx xxxxxxxxxx xx xxxxxx xxx xxxx'x xxxxxxxx.
-xx.xxxxxxx: YYXXYXYY-YXXY-YYXY-XXYX-YYXXYYYXXXXY
+title: 'ユーザーの位置情報の取得'
+description: ユーザーの位置情報を検索し、位置の変更に対応します。 ユーザーの位置情報へのアクセスは、設定アプリのプライバシー設定で管理されています。 このトピックでは、アプリにユーザーの位置情報へのアクセス許可が与えられているかどうかを確認する方法についても説明します。
+ms.assetid: 24DC9A41-8CC1-48B0-BC6D-24BF571AFCC8
 ---
 
-# Xxx xxx xxxx'x xxxxxxxx
+# ユーザーの位置情報の取得
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xxxx xxx xxxx'x xxxxxxxx xxx xxxxxxx xx xxxxxxx xx xxxxxxxx. Xxxxxx xx xxx xxxx'x xxxxxxxx xx xxxxxxx xx xxxxxxx xxxxxxxx xx xxx Xxxxxxxx xxx. Xxxx xxxxx xxxx xxxxx xxx xx xxxxx xx xxxx xxx xxx xxxxxxxxxx xx xxxxxx xxx xxxx'x xxxxxxxx.
+ユーザーの位置情報を検索し、位置の変更に対応します。 ユーザーの位置情報へのアクセスは、設定アプリのプライバシー設定で管理されています。 このトピックでは、アプリにユーザーの位置情報へのアクセス許可が与えられているかどうかを確認する方法についても説明します。
 
-**Xxx** Xx xxxxx xxxx xxxxx xxxxxxxxx xxx xxxx'x xxxxxxxx xx xxxx xxx, xxxxxxxx xxx xxxxxxxxx xxxxxx xxxx xxx [Xxxxxxx-xxxxxxxxx-xxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=619979) xx XxxXxx.
+**ヒント:** アプリでユーザーの位置情報にアクセスする方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードしてください。
 
--   [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## Xxxxxx xxx xxxxxxxx xxxxxxxxxx
+## 位置情報機能を有効にする
 
 
-1.  Xx **Xxxxxxxx Xxxxxxxx**, xxxxxx-xxxxx **xxxxxxx.xxxxxxxxxxxx** xxx xxxxxx xxx **Xxxxxxxxxxxx** xxx.
-2.  Xx xxx **Xxxxxxxxxxxx** xxxx, xxxxxx xxx **Xxxxxxxxxxxx** xxx. Xxxx xxxx xxx `Location` xxxxxx xxxxxxxxxx xx xxx xxxxxxx xxxxxxxx xxxx.
+1.  **ソリューション エクスプローラー**で、**package.appxmanifest** をダブルクリックし、**[機能]** タブを選びます。
+2.  **[機能]** ボックスの一覧で、**[機能]** タブを選びます。 これにより、`Location` デバイス機能がパッケージ マニフェスト ファイルに追加されます。
 
 ```XML
   <Capabilities>
@@ -29,14 +29,14 @@ Xxxx xxx xxxx'x xxxxxxxx xxx xxxxxxx xx xxxxxxx xx xxxxxxxx. Xxxxxx xx xxx xxxx'
   </Capabilities>
 ```
 
-## Xxx xxx xxxxxxx xxxxxxxx
+## 現在の位置情報を取得する
 
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxxx xxx xxxx'x xxxxxxxxxx xxxxxxxx xxxxx XXXx xx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225603) xxxxxxxxx.
+このセクションでは、[**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) 名前空間の API を使ってユーザーの地理的な位置を検出する方法について説明します。
 
-### Xxxx Y: Xxxxxxx xxxxxx xx xxx xxxx'x xxxxxxxx
+### 手順 1. ユーザーの位置情報へのアクセス許可を求める
 
-**Xxxxxxxxx** Xxx xxxx xxxxxxx xxxxxx xx xxx xxxx'x xxxxxxxx xx xxxxx xxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn859152) xxxxxx xxxxxx xxxxxxxxxx xx xxxxxx xxx xxxx'x xxxxxxxx. Xxx xxxx xxxx xxx **XxxxxxxXxxxxxXxxxx** xxxxxx xxxx xxx XX xxxxxx xxx xxxx xxx xxxx xx xx xxx xxxxxxxxxx. Xxxx xxx xxxx xxx xx xxxx xx xxxxxx xxx xxxx'x xxxxxxxx xxxxxxxxxxx xxxxx xxxxx xxx xxxx xxxxxx xxxxxxxxxx xx xxxx xxx.
+**重要:** ユーザーの位置情報にアクセスする前に、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) メソッドを使って、ユーザーに位置情報へのアクセス許可を求める必要があります。 **RequestAccessAsync** メソッドは UI スレッドから呼び出す必要があり、アプリがフォアグラウンドで実行されている必要があります。 アプリがユーザーの位置情報にアクセスするには、先にユーザーがその情報へのアクセス許可をアプリに与える必要があります。
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -44,11 +44,13 @@ using Windows.Devices.Geolocation;
 var accessStatus = await Geolocator.RequestAccessAsync();
 ```
 
-Xxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn859152) xxxxxx xxxxxxx xxx xxxx xxx xxxxxxxxxx xx xxxxxx xxxxx xxxxxxxx. Xxx xxxx xx xxxx xxxxxxxx xxxx (xxx xxx). Xxxxx xxx xxxxx xxxx xxxx xxxxx xx xxxx xxxxxxxxxx, xxxx xxxxxx xx xxxxxx xxxxxxx xxx xxxx xxx xxxxxxxxxx. Xx xxxx xxx xxxx xxxxxx xxxxxxxx xxxxxxxxxxx xxxxx xxxx'xx xxxx xxxxxxxx, xx xxxxxxxxx xxxx xxx xxxxxxx x xxxx xx xxx xxxxxxxx xxxxxxxx xx xxxxxxxxxxxx xxxxx xx xxxx xxxxx.
+[
+            **RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) メソッドを使って、ユーザーに位置情報へのアクセス許可を求めます。 ユーザーに対するこの要求はアプリごとに 1 回だけ行われます。 アクセス許可の付与または拒否を行った後、このメソッドはユーザーにアクセス許可を求めなくなります。 ユーザーが位置情報へのアクセス許可を求められた後にそのアクセス許可を変更できるように、位置情報の設定へのリンクを用意することをお勧めします。これについては、このトピックの後半で紹介します。
 
-### Xxxx Y: Xxx xxx xxxx'x xxxxxxxx xxx xxxxxxxx xxx xxxxxxx xx xxxxxxxx xxxxxxxxxxx
+### 手順 2. ユーザーの位置情報を取得し、位置情報のアクセス許可の変更を登録する
 
-Xxx [**XxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh973536) xxxxxx xxxxxxxx x xxx-xxxx xxxxxxx xx xxx xxxxxxx xxxxxxxx. Xxxx, x **xxxxxx** xxxxxxxxx xx xxxx xxxx **xxxxxxXxxxxx** (xxxx xxx xxxxxxxx xxxxxxx) xx xxx xxxx xxxx xxxxxx xx xxx xxxx'x xxxxxxxx xx xxxxxxx. Xx xxxxxx xx xxx xxxx'x xxxxxxxx xx xxxxxxx, xxx xxxx xxxxxxx x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225534) xxxxxx, xxxxxxxxx xxx xxxxxxx xx xxxxxxxx xxxxxxxxxxx, xxx xxxxxxxx xxx xxxx'x xxxxxxxx.
+[
+            **GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) メソッドは、現在の位置情報に対して 1 回限りの読み取りを実行します。 ここでは、**switch** ステートメントを (前の例で示した) **accessStatus** と共に使って、ユーザーの位置情報へのアクセス許可が与えられている場合にのみ動作するように指定します。 ユーザーの位置情報へのアクセス許可が与えられた場合は、コードによって [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトが作成され、位置情報へのアクセス許可の変更が登録され、ユーザーの位置情報が要求されます。
 
 ```csharp
 switch (accessStatus)
@@ -82,9 +84,10 @@ switch (accessStatus)
 }
 ```
 
-### Xxxx Y: Xxxxxx xxxxxxx xx xxxxxxxx xxxxxxxxxxx
+### 手順 3. 位置情報へのアクセス許可の変更を処理する
 
-Xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225534) xxxxxx xxxxxxxx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225542) xxxxx xx xxxxxxxx xxxx xxx xxxx'x xxxxxxxx xxxxxxxx xxxxxxx. Xxxx xxxxx xxxxxx xxx xxxxxxxxxxxxx xxxxxx xxx xxx xxxxxxxx'x **Xxxxxx** xxxxxxxx (xx xxxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225599)). Xxxx xxxx xxxx xxxxxx xx xxx xxxxxx xxxx xxx XX xxxxxx xxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208211) xxxxxx xxxxxxx xxx XX xxxxxxx.
+[
+            **Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトは [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントをトリガーして、ユーザーの位置情報設定が変化したことを示します。 このイベントは、引数の **Status**  プロパティ ([**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599) 型) を使って、対応する状態を渡します。 このメソッドは UI スレッドから呼び出されず、[**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) オブジェクトが UI の変更を呼び出します。
 
 ```csharp
 using Windows.UI.Core;
@@ -150,23 +153,24 @@ async private void OnStatusChanged(Geolocator sender, StatusChangedEventArgs e)
 }
 ```
 
-## Xxxxxxx xx xxxxxxxx xxxxxxx
+## 位置情報の更新への対応
 
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225540) xxxxx xx xxxxxxx xxxxxxx xx xxx xxxx'x xxxxxxxx xxxx x xxxxxx xx xxxx. Xxxxxxx xxx xxxx xxxxx xxxxxx xxxxxx xx xxxxxxxx xx xxx xxxx, xx'x xxxxxxxxx xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn859152) xxx xxx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225542) xxxxx xx xxxxx xx xxx xxxxxxxx xxxxxxx.
+このセクションでは、[**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントを使って、特定の期間におけるユーザーの位置の更新情報を受け取る方法について説明します。 ユーザーはいつでも位置情報へのアクセス許可を取り消すことができるため、前のセクションで説明したように、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) を呼び出して [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントを使うことが重要になります。
 
-Xxxx xxxxxxx xxxxxxx xxxx xxx'xx xxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxx xxx xxxxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn859152) xxxx xxx XX xxxxxx xx xxxx xxxxxxxxxx xxx.
+このセクションでは、既に位置情報機能を有効にし、フォアグラウンド アプリの UI スレッドから [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) を呼び出していることを前提としています。
 
-### Xxxx Y: Xxxxxx xxx xxxxxx xxxxxxxx xxx xxxxxxxx xxx xxxxxxxx xxxxxxx
+### 手順 1. レポート間隔を定義し、位置情報の更新を登録する
 
-Xx xxxx xxxxxxx, x **xxxxxx** xxxxxxxxx xx xxxx xxxx **xxxxxxXxxxxx** (xxxx xxx xxxxxxxx xxxxxxx) xx xxx xxxx xxxx xxxxxx xx xxx xxxx'x xxxxxxxx xx xxxxxxx. Xx xxxxxx xx xxx xxxx'x xxxxxxxx xx xxxxxxx, xxx xxxx xxxxxxx x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225534) xxxxxx, xxxxxxxxx xxx xxxxxxxx xxxx, xxx xxxxxxxxx xxx xxxxxxxx xxxxxxx.
+この例では、**switch** ステートメントを (前の例で示した) **accessStatus** と共に使って、ユーザーの位置情報へのアクセス許可が与えられている場合にのみ動作するように指定します。 ユーザーの位置情報へのアクセス許可が与えられた場合は、コードによって [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトが作成され、追跡の種類の指定と位置情報の更新の登録が行われます。
 
-Xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225534) xxxxxx xxx xxxxxxx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225540) xxxxx xxxxx xx x xxxxxx xx xxxxxxxx (xxxxxxxx-xxxxx xxxxxxxx) xx x xxxxxx xx xxxx (xxxxxxxx-xxxxx xxxxxxxx).
+[
+            **Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトは、位置の変化 (距離に基づく追跡) または時間の変化 (期間に基づく追跡) に基づいて [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントをトリガーできます。
 
--   Xxx xxxxxxxx-xxxxx xxxxxxxx, xxx xxx [**XxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225539) xxxxxxxx.
--   Xxx xxxxxxxx-xxxxx xxxxxxxx, xxx xxx [**XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225541) xxxxxxxx.
+-   距離に基づく追跡の場合は、[**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) プロパティを設定します。
+-   期間に基づく追跡の場合は、[**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541) プロパティを設定します。
 
-Xx xxxxxxx xxxxxxxx xx xxx, x xxxxxxxx xx xxxxxxxx xxxxx Y xxxxxx (xxxxxxxxxx xx `ReportInterval = 1000`). Xxxx, x Y xxxxxx (`ReportInterval = 2000`) xxxxxx xxxxxxxx xx xxxx.
+どちらのプロパティも設定されていない場合は、位置が 1 秒ごとが返されます (`ReportInterval = 1000` と同じです)。 ここでは、2 秒 (`ReportInterval = 2000`) のレポート間隔を使います。
 ```csharp
 using Windows.Devices.Geolocation;
 ...
@@ -202,9 +206,10 @@ switch (accessStatus)
 }
 ```
 
-### Xxxx Y: Xxxxxx xxxxxxxx xxxxxxx
+### 手順 2. 位置情報の更新を処理する
 
-Xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225534) xxxxxx xxxxxxxx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225540) xxxxx xx xxxxxxxx xxxx xxx xxxx'x xxxxxxxx xxxxxxx xx xxxx xxx xxxxxx, xxxxxxxxx xx xxx xxx'xx xxxxxxxxxx xx. Xxxx xxxxx xxxxxx xxx xxxxxxxxxxxxx xxxxxxxx xxx xxx xxxxxxxx'x **Xxxxxxxx** xxxxxxxx (xx xxxx [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225543)). Xx xxxx xxxxxxx, xxx xxxxxx xx xxx xxxxxx xxxx xxx XX xxxxxx xxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208211) xxxxxx xxxxxxx xxx XX xxxxxxx.
+[
+            **Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトは [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントをトリガーし、構成方法に応じて、ユーザーの位置が変化したことまたは時間が経過したことを示します。 このイベントは、引数の **Position** プロパティ ([**Geoposition**](https://msdn.microsoft.com/library/windows/apps/br225543)) を使って、対応する位置を渡します。 この例では、メソッドは UI スレッドから呼び出されず、[**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) オブジェクトが UI の変更を呼び出します。
 
 ```csharp
 using Windows.UI.Core;
@@ -219,10 +224,10 @@ async private void OnPositionChanged(Geolocator sender, PositionChangedEventArgs
 }
 ```
 
-## Xxxxxx xxx xxxxxxxx xxxxxxx xxxxxxxx
+## 位置情報のプライバシー設定を変更する
 
 
-Xx xxx xxxxxxxx xxxxxxx xxxxxxxx xxx'x xxxxx xxxx xxx xx xxxxxx xxx xxxx'x xxxxxxxx, xx xxxxxxxxx xxxx xxx xxxxxxx x xxxxxxxxxx xxxx xx xxx **xxxxxxxx xxxxxxx xxxxxxxx** xx xxx **Xxxxxxxx** xxx. Xx xxxx xxxxxxx, x Xxxxxxxxx xxxxxxx xx xxxx xxxxxxxx xx xxx `ms-settings:privacy-location` XXX.
+位置情報のプライバシー設定でアプリにユーザーの位置情報へのアクセス許可を与えていない場合は、**設定**アプリの **[位置情報のプライバシー設定]** へのリンクを用意することをお勧めします。 この例では、ハイパーリンク コントロールを使って、`ms-settings:privacy-location` という URI に移動します。
 
 ```xaml
 <!--Set Visibility to Visible when access to location is denied -->  
@@ -236,7 +241,7 @@ Xx xxx xxxxxxxx xxxxxxx xxxxxxxx xxx'x xxxxx xxxx xxx xx xxxxxx xxx xxxx'x xxxxx
 </TextBlock>
 ```
 
-Xxxxxxxxxxxxx, xxxx xxx xxx xxxx xxx [**XxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701476) xxxxxx xx xxxxxx xxx **Xxxxxxxx** xxx xxxx xxxx. Xxx xxxx xxxx, xxx [Xxxxxx xxx Xxxxxxx Xxxxxxxx xxx](https://msdn.microsoft.com/library/windows/apps/mt228342).
+また、アプリで [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) メソッドを呼び出し、コードで**設定**アプリを起動することもできます。 詳しくは、「[Windows 設定アプリの起動](https://msdn.microsoft.com/library/windows/apps/mt228342)」をご覧ください。
 
 ```csharp
 using Windows.System;
@@ -244,20 +249,24 @@ using Windows.System;
 bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-location"));
 ```
 
-## Xxxxxxxxxxxx xxxx xxx
+## アプリのトラブルシューティングを行う
 
 
-Xxxxxx xxxx xxx xxx xxxxxx xxx xxxx'x xxxxxxxx, **Xxxxxxxx** xxxx xx xxxxxxx xx xxx xxxxxx. Xx xxx **Xxxxxxxx** xxx, xxxxx xxxx xxx xxxxxxxxx **xxxxxxxx xxxxxxx xxxxxxxx** xxx xxxxxx xx:
+アプリがユーザーの位置情報にアクセスする前に、デバイスで **[位置情報]** を有効にする必要があります。 **設定**アプリで、次の**位置情報に関するプライバシー設定**がオンになっていることを確認します。
 
--   **Xxxxxxxx xxx xxxx xxxxxx...** xx xxxxxx **xx** (xxx xxxxxxxxxx xx Xxxxxxx YY Xxxxxx)
--   Xxx xxxxxxxx xxxxxxxx xxxxxxx, **Xxxxxxxx**, xx xxxxxx **xx**
--   Xxxxx **Xxxxxx xxxx xxxx xxx xxx xxxx xxxxxxxx**, xxxx xxx xx xxx xx **xx**
+-   **[このデバイスの位置情報]** が**オン**になっている (Windows 10 Mobile には適用されません)
+-   位置情報サービス設定の **[位置情報]** が **[オン]** になっている
+-   **[位置情報を使うことができるアプリを選ぶ]** で、アプリが **[オン]** になっている
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [XXX xxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=533278)
-* [Xxxxxx xxxxxxxxxx xxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn631756)
-* [Xxxxxx xxxxxxxxxx xxx xxxxxxxx-xxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [UWP の位置情報のサンプル](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [ジオフェンスの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn631756)
+* [位置認識アプリの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465148)
+
+
 
 
 <!--HONumber=Mar16_HO1-->
+
+

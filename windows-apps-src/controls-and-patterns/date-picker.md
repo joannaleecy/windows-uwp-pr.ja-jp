@@ -1,35 +1,35 @@
 ---
-Xxxxxxxxxxx: Xxx xxxx xxxxxx xxxxx xxx x xxxxxxxxxxxx xxx xx xxx xxxxx xxxx x xxxxxxxxx xxxx xxxxx xxxxx xxxxx, xxxxx, xx xxxxxxxx xxxxx. 
-xxxxx: Xxxx xxxxxx
-xx.xxxxxxx: xYxYYYYY-Yxxx-YxxY-YxYY-YxYYxYxxYYxx
-xxXxx: xxxx
-xxxxx: Xxxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input. 
+title: Date picker
+ms.assetid: d4a01425-4dee-4de3-9a05-3e85c3fc03cb
+isNew: true
+label: Date picker
+template: detail.hbs
 ---
 
-# Xxxx xxxxxx
+# Date picker
 
-Xxx xxxx xxxxxx xxxxx xxx x xxxxxxxxxxxx xxx xx xxx xxxxx xxxx x xxxxxxxxx xxxx xxxxx xxxxx xxxxx, xxxxx, xx xxxxxxxx xxxxx. 
+The date picker gives you a standardized way to let users pick a localized date value using touch, mouse, or keyboard input. 
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
 
--   [**XxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)
--   [**Xxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx)
+-   [**DatePicker class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx)
+-   [**Date property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.date.aspx)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
-Xxx x xxxx xxxxxx xx xxx x xxxx xxxx x xxxxx xxxx, xxxx xx x xxxx xx xxxxx, xxxxx xxx xxxxxxx xx xxx xxxxxxxx xx xxx xxxxxxxxx.
+## Is this the right control?
+Use a date picker to let a user pick a known date, such as a date of birth, where the context of the calendar is not important.
 
-Xxx xxxx xxxx xxxxx xxxxxxxx xxx xxxxx xxxx xxxxxxx, xxx xxx [Xxxx xxx xxxx xxxxxxxx](date-and-time.md) xxxxxxx.
+For more info about choosing the right date control, see the [Date and time controls](date-and-time.md) article.
 
-## Xxxxxxxx
+## Examples
 
-Xxx xxxxx xxxxx xxxxxxxx xxx xxxxxx xxxx, xxx xxxx xxx xxxx xxxxxxx xxx xxxxx xxxxx, x xxxxxx xxxxxxx xxxxxxx xxxxxxxxxx xxxx xxx xxxxxx xxx xxx xxxx xx xxxx x xxxxxxxxx. Xxx xxxx xxxxxx xxxxxxxx xxxxx XX; xx xxxxx'x xxxx xxxxx XX xxx xx xxx xxx.
+The entry point displays the chosen date, and when the user selects the entry point, a picker surface expands vertically from the middle for the user to make a selection. The date picker overlays other UI; it doesn't push other UI out of the way.
 
-![Xxxxxxx xx xxx xxxx xxxxxx xxxxxxxxx](images/controls_datepicker_expand.png)
+![Example of the date picker expanding](images/controls_datepicker_expand.png)
 
-## Xxxxxx x xxxx xxxxxx
+## Create a date picker
 
-Xxxx xxxxxxx xxxxx xxx xx xxxxxx x xxxxxx xxxx xxxxxx xxxx x xxxxxx.
+This example shows how to create a simple date picker with a header.
 
 ```xaml
 <DatePicker x:Name=birthDatePicker Header="Date of birth"/>
@@ -40,18 +40,22 @@ DatePicker birthDatePicker = new DatePicker();
 birthDatePicker.Header = "Date of birth";
 ```
 
-Xxx xxxxxxxxx xxxx xxxxxx xxxxx xxxx xxxx:
+The resulting date picker looks like this:
 
-![Xxxxxxx xx xxxx xxxxxx](images/date-picker-closed.png)
+![Example of date picker](images/date-picker-closed.png)
 
-> **Xxxx**&xxxx;&xxxx;Xxx xxxxxxxxx xxxx xxxxx xxxx xxxxxx, xxx [XxxxXxxx xxx Xxxxxxxx xxxxxx](date-and-time.md#datetime-and-calendar-values) xx xxx Xxxx xxx xxxx xxxxxxxx xxxxxxx.
+> **Note**&nbsp;&nbsp;For important info about date values, see [DateTime and Calendar values](date-and-time.md#datetime-and-calendar-values) in the Date and time controls article.
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
-## Xxxxxxx xxxxxx
 
-* [Xxxx xxx xxxx xxxxxxxx](date-and-time.md)
-* [Xxxxxxxx xxxx xxxxxx](calendar-date-picker.md)
-* [Xxxxxxxx xxxx](calendar-view.md)
-* [Xxxx xxxxxx](time-picker.md)
-<!--HONumber=Mar16_HO1-->
+## Related articles
+
+- [Date and time controls](date-and-time.md)
+- [Calendar date picker](calendar-date-picker.md)
+- [Calendar view](calendar-view.md)
+- [Time picker](time-picker.md)
+
+
+<!--HONumber=Mar16_HO4-->
+
+

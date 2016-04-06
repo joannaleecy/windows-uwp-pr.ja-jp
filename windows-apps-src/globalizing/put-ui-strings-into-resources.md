@@ -1,62 +1,59 @@
 ---
-Xxxxxxxxxxx: Xxx xxxxxx xxxxxxxxx xxx xxxx XX xxxx xxxxxxxx xxxxx. Xxx xxx xxxx xxxxxxxxx xxxxx xxxxxxx xxxx xxxx xxxx xx xxxxxx.
-xxxxx: Xxx XX xxxxxxx xxxx xxxxxxxxx
-xx.xxxxxxx: XYYYXYXX-XYXY-YXXY-XXYX-XXYYYYXYYYYY
-xxxxx: Xxx XX xxxxxxx xxxx xxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Put string resources for your UI into resource files. You can then reference those strings from your code or markup.
+title: Put UI strings into resources
+ms.assetid: E420B9BB-C0F6-4EC0-BA3A-BA2875B69722
+label: Put UI strings into resources
+template: detail.hbs
 ---
 
-# Xxx XX xxxxxxx xxxx xxxxxxxxx
+# Put UI strings into resources
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxxxxxxxxXxxxx.Xxxxxxxxx.XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206014)
--   [**XxxXX.Xxxxxxxxx.xxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br211864)
+-   [**ApplicationModel.Resources.ResourceLoader**](https://msdn.microsoft.com/library/windows/apps/br206014)
+-   [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864)
 
-Xxx xxxxxx xxxxxxxxx xxx xxxx XX xxxx xxxxxxxx xxxxx. Xxx xxx xxxx xxxxxxxxx xxxxx xxxxxxx xxxx xxxx xxxx xx xxxxxx.
+Put string resources for your UI into resource files. You can then reference those strings from your code or markup.
 
-Xxxx xxxxx xxxxx xxx xxxxx xx xxx xxxxxxx xxxxxxxx xxxxxx xxxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx xxx, xxx xxx xx xxxxxxx xxxx xx.
+This topic shows the steps to add several language string resources to your Universal Windows app, and how to briefly test it.
 
-## <span id="put_strings_into_resource_files__instead_of_putting_them_directly_in_code_or_markup.">
-            </span>
-            <span id="PUT_STRINGS_INTO_RESOURCE_FILES__INSTEAD_OF_PUTTING_THEM_DIRECTLY_IN_CODE_OR_MARKUP.">
-            </span>Xxx xxxxxxx xxxx xxxxxxxx xxxxx, xxxxxxx xx xxxxxxx xxxx xxxxxxxx xx xxxx xx xxxxxx.
+## <span id="put_strings_into_resource_files__instead_of_putting_them_directly_in_code_or_markup."></span><span id="PUT_STRINGS_INTO_RESOURCE_FILES__INSTEAD_OF_PUTTING_THEM_DIRECTLY_IN_CODE_OR_MARKUP."></span>Put strings into resource files, instead of putting them directly in code or markup.
 
 
-1.  Xxxx xxxx xxxxxxxx (xx xxxxxx x xxx xxx) xx Xxxxxx Xxxxxx.
+1.  Open your solution (or create a new one) in Visual Studio.
 
-2.  Xxxx xxxxxxx.xxxxxxxxxxxx xx Xxxxxx Xxxxxx, xx xx xxx **Xxxxxxxxxxx** xxx, xxx (xxx xxxx xxxxxxx) xxx xxx Xxxxxxx xxxxxxxx xx "xx-XX". Xx xxxxx xxx xxxxxxxx xxxxxxx.xxxxxxxxxxxx xxxxx xx xxxx xxxxxxxx, xx xxxx xxx xxxx xxx.
-    <br>**Xxxx**  Xxxx xxxxxxxxx xxx xxxxxxx xxxxxxxx xxx xxx xxxxxxx. Xxx xxxxxxx xxxxxxxx xxxxxxxxx xxx xxxx xx xxx xxxx'x xxxxxxxxx xxxxxxxx xx xxxxxxx xxxxxxxxx xx xxx xxxxx xxx xxxxxxxx xxxxxxxxx xxxxxxxx xx xxx xxxxxxxxxxx.
-3.  Xxxxxx x xxxxxx xx xxxxxxx xxx xxxxxxxx xxxxx.
-    1.  Xx xxx Xxxxxxxx Xxxxxxxx, xxxxx-xxxxx xxx xxxxxxx (xxx Xxxxxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx) xxx xxxxxx **Xxx** &xx; **Xxx Xxxxxx**.
-    2.  Xxxx xxx xxx xxxxxx "Xxxxxxx".
-    3.  Xx xxx xxx xxxxxx xx xxx xxxxxxx xx Xxxxxxxx Xxxxxxxx, xxxxxx **Xxxxxxx** &xx; **Xxxx Xxx Xxxxx** xxxx xxx Xxxxxxxxx Xxxxxx Xxxxxx xxxx xxxxx xxx xxxxxxx xx xxxxx xxxxxxxx.
+2.  Open package.appxmanifest in Visual Studio, go to the **Application** tab, and (for this example) set the Default language to "en-US". If there are multiple package.appxmanifest files in your solution, do this for each one.
+    <br>**Note**  This specifies the default language for the project. The default language resources are used if the user's preferred language or display languages do not match the language resources provided in the application.
+3.  Create a folder to contain the resource files.
+    1.  In the Solution Explorer, right-click the project (the Shared project if your solution contains multiple projects) and select **Add** &gt; **New Folder**.
+    2.  Name the new folder "Strings".
+    3.  If the new folder is not visible in Solution Explorer, select **Project** &gt; **Show All Files** from the Microsoft Visual Studio menu while the project is still selected.
 
-4.  Xxxxxx x xxx-xxxxxx xxx x xxxxxxxx xxxx xxx Xxxxxxx (Xxxxxx Xxxxxx).
-    1.  Xxxxx-xxxxx xxx Xxxxxxx xxxxxx xxx xxx x xxx xxxxxx xxxxxxx xx. Xxxx xx "xx-XX". Xxx xxxxxxxx xxxx xx xx xx xxxxxx xx x xxxxxx xxxx xxx xxxx xxxxx xxx xxx [XXX-YY](http://go.microsoft.com/fwlink/p/?linkid=227302) xxxxxxxx xxx. Xxx [Xxx xx xxxx xxxxxxxxx xxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324) xxx xxxxxxx xx xxx xxxxxxxx xxxxxxxxx xxx x xxxx xx xxxxxx xxxxxxxx xxxx.
-    2.  Xxxxx-xxxxx xxx xx-XX xxxxxx xxx xxxxxx **Xxx** &xx; **Xxx Xxxx…**.
-    3.  **XXXX:** Xxxxxx "Xxxxxxxxx Xxxx (.xxxx)".
-        <br>**XXXX:** Xxxxxx "Xxxxxxxxx Xxxx (.xxxxxxx)".
+4.  Create a sub-folder and a resource file for English (United States).
+    1.  Right-click the Strings folder and add a new folder beneath it. Name it "en-US". The resource file is to be placed in a folder that has been named for the [BCP-47](http://go.microsoft.com/fwlink/p/?linkid=227302) language tag. See [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324) for details on the language qualifier and a list of common language tags.
+    2.  Right-click the en-US folder and select **Add** &gt; **New Item…**.
+    3.  **XAML:** Select "Resources File (.resw)".
+        <br>**HTML:** Select "Resources File (.resjson)".
 
-    4.  Xxxxx **Xxx**. Xxxx xxxx x xxxxxxxx xxxx xxxx xxx xxxxxxx xxxx "Xxxxxxxxx.xxxx" (xxx **XXXX**) xx "xxxxxxxxx.xxxxxx" (xxx **XXXX**). Xx xxxxxxxxx xxxx xxx xxx xxxx xxxxxxx xxxxxxxx. Xxxx xxx xxxxxxxxx xxxxx xxxxxxxxx xxxx xxxxx xxxxx, xxx xxx xxxx xx xxxxxxx xx xxxxx xx xxxx xxxxxxxxx (xxx [Xxx xx xxxx xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)).
-    5.  **XXXX xxxx:** Xx xxx xxxx .xxxx xxxxx xxxx xxxx xxxxxx xxxxxxxxx xxxx xxxxxxxx .XXX xxxxxxxx, xxxxxx **Xxx** &xx; **Xxxxxxxx Xxxx…**, xxx xxx .xxxx xxxx, xxx xxxxxx xx xx .xxxx.
-    6.  Xxxx xxx xxxx xxx xxx xxx xxxxxx xx xxx xxxxx xxxxxxxxx:
+    4.  Click **Add**. This adds a resource file with the default name "Resources.resw" (for **XAML**) or "resources.rejson" (for **HTML**). We recommend that you use this default filename. Apps can partition their resources into other files, but you must be careful to refer to them correctly (see [How to load string resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)).
+    5.  **XAML only:** If you have .resx files with only string resources from previous .NET projects, select **Add** &gt; **Existing Item…**, add the .resx file, and rename it to .resw.
+    6.  Open the file and use the editor to add these resources:
 
-        **XXXX:**
+        **XAML:**
 
-        Xxxxxxx/xx-XX/Xxxxxxxxx.xxxx
-        ![xxx xxxxxxxx, xxxxxxx](images/addresource-en-us.png)
-        Xx xxxx xxxxxxx, "Xxxxxxxx.Xxxx" xxx "Xxxxxxxx" xxxxxxxx xxx xxxxxxx xxxx xxx xx xx xxxxxxxxx. "Xxxxxxxx.Xxxxx" xxxxxxxxxx xxx Xxxxx xxxxxxxx xx xxx "Xxxxxxxx" xxxxxx. Xxx xxxxxxxx xxx x xxxx xxxxx xx xxxxxxx xxx xxxxxxx xxxxxxxxxxxx xx xxxxxxxxxxx xxx xxxxxxxx xxx xxxxxxx xx xxxxx xxxxxxxxx.
+        Strings/en-US/Resources.resw
+        ![add resource, english](images/addresource-en-us.png)
+        In this example, "Greeting.Text" and "Farewell" identify the strings that are to be displayed. "Greeting.Width" identifies the Width property of the "Greeting" string. The comments are a good place to provide any special instructions to translators who localize the strings to other languages.
 
-        **XXXX:**
+        **HTML:**
 
-        Xxx xxx xxxx xxxxxxxx xxxxxxx xxxxxxx. Xxxxxxx xxx xxxxxxx xxxx xxx xxxxxxxxx (xxxxx xxx xx xxxxxxx xx xxx xxxxxxx):
+        The new file contains default content. Replace the content with the following (which may be similar to the default):
 
-        Xxxxxxx/xx-XX/xxxxxxxxx.xxxxxxx
+        Strings/en-US/resources.resjson
 
         ```        json
         {
@@ -68,57 +65,51 @@ Xxxx xxxxx xxxxx xxx xxxxx xx xxx xxxxxxx xxxxxxxx xxxxxx xxxxxxxxx xx xxxx Xxxx
         }
         ```
 
-        Xxxx xx xxxxxx XxxxXxxxxx Xxxxxx Xxxxxxxx (XXXX) xxxxxx xxxxx x xxxxx xxxx xx xxxxxx xxxxx xxxx xxxx/xxxxx xxxx, xxxxxx xxx xxxx xxx. Xx xxxx xxxxxx, "xxxxxxxx" xxx "xxxxxxxx" xxxxxxxx xxx xxxxxxx xxxx xxx xx xx xxxxxxxxx. Xxx xxxxx xxxxx ("\_xxxxxxxx.xxxxxxx" xxx "\_xxxxxxxx.xxxxxxx") xxx xxxxxxxx xxxx xxxxxxxx xxx xxxxxxx. Xxx xxxxxxxx xxx x xxxx xxxxx xx xxxxxxx xxx xxxxxxx xxxxxxxxxxxx xx xxxxxxxxxxx xxx xxxxxxxx xxx xxxxxxx xx xxxxx xxxxxxxxx.
+        This is strict JavaScript Object Notation (JSON) syntax where a comma must be placed after each name/value pair, except the last one. In this sample, "greeting" and "farewell" identify the strings that are to be displayed. The other pairs ("\_greeting.comment" and "\_farewell.comment") are comments that describe the strings. The comments are a good place to provide any special instructions to translators who localize the strings to other languages.
 
-## <span id="associate_controls_to_resources.">
-            </span>
-            <span id="ASSOCIATE_CONTROLS_TO_RESOURCES.">
-            </span>Xxxxxxxxx xxxxxxxx xx xxxxxxxxx.
+## <span id="associate_controls_to_resources."></span><span id="ASSOCIATE_CONTROLS_TO_RESOURCES."></span>Associate controls to resources.
 
 
-**XXXX xxxx:**
+**XAML only:**
 
-Xxx xxxx xx xxxxxxxxx xxxxx xxxxxxx xxxx xxxxx xxxxxxxxx xxxx xxxx xxx .xxxx xxxx. Xxx xx xxxx xxxxx xxx **x:Xxx** xxxxxxxxx xx xxxx XXXX xxxxxxxx xxxx xxxx:
+You need to associate every control that needs localized text with the .resw file. You do this using the **x:Uid** attribute on your XAML elements like this:
 
 ```XAML
 <TextBlock x:Uid="Greeting" Text="" />
 ```
 
-Xxx xxx xxxxxxxx xxxx, xxx xxxx xxx **Xxx** xxxxxxxxx xxxxx, xxxx xxx xxxxxxx xxxx xxxxxxxx xx xx xxx xxx xxxxxxxxxx xxxxxx (xx xxxx xxxx xxx Xxxx xxxxxxxx). Xxx xxx xxxxxxx xxxxx xxxxxxxxxx/xxxxxx xxx xxxxxxxxx xxxxxxxxx xxxx xx Xxxxxxxx.Xxxxx, xxx xx xxxxxxx xxxx xxxx xxxxxx-xxxxxxx xxxxxxxxxx. Xxx xxxxxx xxxxxx xx xxxxx xxx xxxxxxxx xx xxx xxx xxxxxxxxxxx xxxxx xx xxx xxxxxx'x xxxxxx.
+For the resource name, you give the **Uid** attribute value, plus you specify what property is to get the translated string (in this case the Text property). You can specify other properties/values for different languages such as Greeting.Width, but be careful with such layout-related properties. You should strive to allow the controls to lay out dynamically based on the device's screen.
 
-Xxxx xxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxx xxxxxxxxxxx xx xxxx xxxxx xxxx xx XxxxxxxxxxXxxx.Xxxx. Xxx xxxx xx xxxxxxxxxx xxxxx xxx xxx xxxxxxxxx xxxx xxxx:
+Note that attached properties are handled differently in resw files such as AutomationPeer.Name. You need to explicitly write out the namespace like this:
 
 ```XAML
 MediumButton.[using:Windows.UI.Xaml.Automation]AutomationProperties.Name</code></pre></td>
 ```
 
-## <span id="add_string_resource_identifiers_to_code_and_markup.">
-            </span>
-            <span id="ADD_STRING_RESOURCE_IDENTIFIERS_TO_CODE_AND_MARKUP.">
-            </span>Xxx xxxxxx xxxxxxxx xxxxxxxxxxx xx xxxx xxx xxxxxx.
+## <span id="add_string_resource_identifiers_to_code_and_markup."></span><span id="ADD_STRING_RESOURCE_IDENTIFIERS_TO_CODE_AND_MARKUP."></span>Add string resource identifiers to code and markup.
 
 
-**XXXX:**
+**XAML:**
 
-Xx xxxx xxxx, xxx xxx xxxxxxxxxxx xxxxxxxxx xxxxxxx:
+In your code, you can dynamically reference strings:
 
-**X#**
+**C#**
 ```CSharp
 var loader = new Windows.ApplicationModel.Resources.ResourceLoader();
 var str = loader.GetString("Farewell");
 ```
 
-**X++**
+**C++**
 ```ManagedCPlusPlus
 auto loader = ref new Windows::ApplicationModel::Resources::ResourceLoader();
 auto str = loader->GetString("Farewell");
 ```
 
-**XXXX:**
+**HTML:**
 
-1.  Xxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxx XxxxXxxxxx xx xxxx XXXX xxxx, xx xxxx xxxx'x xxxxxxx xxxxx.
+1.  Add references to the Windows Library for JavaScript to your HTML file, if they aren't already there.
 
-    **Xxxx**  Xxx xxxxxxxxx xxxx xxxxx xxx XXXX xxx xxx xxxxxxx.xxxx xxxx xx xxx Xxxxxxx xxxxxxx xxxx xx xxxxxxxxx xxxx xxx xxxxxx x xxx **Xxxxx Xxx (Xxxxxxxxx Xxxxxxx)** XxxxXxxxxx xxxxxxx xx Xxxxxx Xxxxxx. Xxxx xxxx xxx xxxx xxxxxxx xxxxxxxx xxxxxxxxxx xx xxx XxxXX.
+    **Note**  The following code shows the HTML for the default.html file of the Windows project that is generated when you create a new **Blank App (Universal Windows)** JavaScript project in Visual Studio. Note that the file already contains references to the WinJS.
 
     ```    HTML
     <!-- WinJS references -->
@@ -127,7 +118,7 @@ auto str = loader->GetString("Farewell");
     <script src="WinJS/js/ui.js"></script>
     ```
 
-2.  Xx xxx XxxxXxxxxx xxxx xxxx xxxxxxxxxxx xxxx XXXX xxxx, xxxx xxx [**XxxXX.Xxxxxxxxx.xxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br211864) xxxxxxxx xxxx xxxx XXXX xx xxxxxx.
+2.  In the JavaScript code that accompanies your HTML file, call the [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864) function when your HTML is loaded.
 
     ```    JavaScript
     WinJS.Application.onloaded = function(){
@@ -135,7 +126,7 @@ auto str = loader->GetString("Farewell");
     }
     ```
     
-    Xx xxxxxxxxxx XXXX xx xxxxxx xxxx x [**XxxXX.XX.Xxxxx.XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/jj126158) xxxxxx, xxxx [**XxxXX.Xxxxxxxxx.xxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br211864)(*xxxxxxx*) xx xxx xxxx xxxxxxx'x [**XXxxxXxxxxxxXxxxxxx.xxxxx**](https://msdn.microsoft.com/library/windows/apps/hh770590) xxxxxx, xxxxx *xxxxxxx* xx xxx XXXX xxxxxxx (xxx xxx xxxxx xxxxxxxx) xxxxx xxxxxx. Xxxx xxxxxxx xx xxxxx xx xxxxxxxx Y xx xxx [Xxxxxxxxxxx xxxxxxxxx xxx xxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=227301):
+    If additional HTML is loaded into a [**WinJS.UI.Pages.PageControl**](https://msdn.microsoft.com/library/windows/apps/jj126158) object, call [**WinJS.Resources.processAll**](https://msdn.microsoft.com/library/windows/apps/br211864)(*element*) in the page control's [**IPageControlMembers.ready**](https://msdn.microsoft.com/library/windows/apps/hh770590) method, where *element* is the HTML element (and its child elements) being loaded. This example is based on scenario 6 of the [Application resources and localization sample](http://go.microsoft.com/fwlink/p/?linkid=227301):
 
     ```    JavaScript
     var output;
@@ -152,23 +143,23 @@ auto str = loader->GetString("Farewell");
     });
     ```
 
-3.  Xx xxx XXXX, xxxxx xx xxx xxxxxx xxxxxxxxx xxxxx xxx xxxxxxxx xxxxxxxxxxx ('xxxxxxxx' xxx 'xxxxxxxx') xxxx xxx xxxxxxxx xxxxx.
+3.  In the HTML, refer to the string resources using the resource identifiers ('greeting' and 'farewell') from the resource files.
     ```    HTML
     <h2><span data-win-res="{textContent: 'greeting';}"></span></h2>
     <h2><span data-win-res="{textContent: 'farewell'}"></span></h2>
     ```
 
-4.  Xxxxx xx xxxxxx xxxxxxxxx xxx xxxxxxxxxx.
+4.  Refer to string resources for attributes.
 
     ```    HTML
     <div data-win-res="{attributes: {'aria-label'; : 'String1'}}" >
     ```
 
-    Xxx xxxxxxx xxxxxxx xx xxx xxxx-xxx-xxx xxxxxxxxx xxx XXXX xxxxxxxxxxx xx xxxx-xxx-xxx="{*xxxxxxxxxxxxY*: '*xxxxxxxx XX*', *xxxxxxxxxxxxY*: '*xxxxxxxx XXY*'}".
+    The general pattern of the data-win-res attribute for HTML replacement is data-win-res="{*propertyname1*: '*resource ID*', *propertyname2*: '*resource ID2*'}".
 
-    **Xxxx**  Xx xxx xxxxxx xxxx xxx xxxxxxx xxx xxxxxx, xxxx xxxx xxx xxxxxxxx xxxxxxxx xxxxxxxx xx xxx xxxxXxxxxxx xxxxxxxx xxxxxxx xx xxxxxXXXX. Xxx xxxxXxxxxxx xxxxxxxx xx xxxx xxxxxx xx xxxxxxx xxxx xxxxxXXXX.
+    **Note**  If the string does not contain any markup, then bind the resource wherever possible to the textContent property instead of innerHTML. The textContent property is much faster to replace than innerHTML.
 
-5.  Xxxxx xx xxxxxx xxxxxxxxx xx XxxxXxxxxx.
+5.  Refer to string resources in JavaScript.
     <span codelanguage="JavaScript"></span>
     ```    JavaScript
     var el = element.querySelector('#header');
@@ -177,24 +168,21 @@ auto str = loader->GetString("Farewell");
     el.setAttribute('lang', res.lang);
     ```
 
-## <span id="add_folders_and_resource_files_for_two_additional_languages.">
-            </span>
-            <span id="ADD_FOLDERS_AND_RESOURCE_FILES_FOR_TWO_ADDITIONAL_LANGUAGES.">
-            </span>Xxx xxxxxxx xxx xxxxxxxx xxxxx xxx xxx xxxxxxxxxx xxxxxxxxx.
+## <span id="add_folders_and_resource_files_for_two_additional_languages."></span><span id="ADD_FOLDERS_AND_RESOURCE_FILES_FOR_TWO_ADDITIONAL_LANGUAGES."></span>Add folders and resource files for two additional languages.
 
 
-1.  Xxx xxxxxxx xxxxxx xxxxx xxx Xxxxxxx xxxxxx xxx Xxxxxx. Xxxx xxx xxxxxx "xx-XX" xxx Xxxxxxx (Xxxxxxxxxxx).
-2.  Xxxxxx xxxxxxx xxxxxxxxx xxxx xx xxx xx-XX xxxxxx, xxx xxx xxx xxxxxxxxx:
+1.  Add another folder under the Strings folder for German. Name the folder "de-DE" for Deutsch (Deutschland).
+2.  Create another resources file in the de-DE folder, and add the following:
 
-    **XXXX:**
+    **XAML:**
 
-    xxxxxxx/xx-XX/Xxxxxxxxx.xxxx
+    strings/de-DE/Resources.resw
 
-    ![xxx xxxxxxxx, xxxxxx](images/addresource-de-de.png)
+    ![add resource, german](images/addresource-de-de.png)
 
-    **XXXX:**
+    **HTML:**
 
-    xxxxxxx/xx-XX/xxxxxxxxx.xxxxxxx
+    strings/de-DE/resources.resjson
 
     ```    json
     {
@@ -206,15 +194,15 @@ auto str = loader->GetString("Farewell");
     }
     ```
 
-3.  Xxxxxx xxx xxxx xxxxxx xxxxx "xx-XX", xxx xxxxçxxx (Xxxxxx). Xxxxxx x xxx xxxxxxxxx xxxx xxx xxx xxx xxxxxxxxx:
+3.  Create one more folder named "fr-FR", for français (France). Create a new resources file and add the following:
 
-    **XXXX:**
+    **XAML:**
 
-    xxxxxxx/xx-XX/Xxxxxxxxx.xxxx
-    ![xxx xxxxxxxx, xxxxxx](images/addresource-fr-fr.png)
-    **XXXX:**
+    strings/fr-FR/Resources.resw
+    ![add resource, french](images/addresource-fr-fr.png)
+    **HTML:**
 
-    xxxxxxx/xx-XX/xxxxxxxxx.xxxxxxx
+    strings/fr-FR/resources.resjson
 
     ```    json
     {
@@ -226,38 +214,38 @@ auto str = loader->GetString("Farewell");
     }
     ```
 
-## <span id="build_and_run_the_app.">
-            </span>
-            <span id="BUILD_AND_RUN_THE_APP.">
-            </span>Xxxxx xxx xxx xxx xxx.
+## <span id="build_and_run_the_app."></span><span id="BUILD_AND_RUN_THE_APP."></span>Build and run the app.
 
 
-Xxxx xxx xxx xxx xxxx xxxxxxx xxxxxxx xxxxxxxx.
+Test the app for your default display language.
 
-1.  Xxxxx XY xx xxxxx xxx xxx xxx xxx.
-2.  Xxxx xxxx xxx xxxxxxxx xxx xxxxxxxx xxx xxxxxxxxx xx xxx xxxx'x xxxxxxxxx xxxxxxxx.
-3.  Xxxx xxx xxx.
+1.  Press F5 to build and run the app.
+2.  Note that the greeting and farewell are displayed in the user's preferred language.
+3.  Exit the app.
 
-Xxxx xxx xxx xxx xxx xxxxx xxxxxxxxx.
+Test the app for the other languages.
 
-1.  Xxxxx xx **Xxxxxxxx** xx xxxx xxxxxx.
-2.  Xxxxxx **Xxxx & xxxxxxxx**.
-3.  Xxxxxx **Xxxxxx & xxxxxxxx** (xx xx x xxxxx xx xxxxx xxxxxxxx, **Xxxxxxxx**).
-4.  Xxxx xxxx xxx xxxxxxxx xxxx xxx xxxxxxxxx xxxx xxx xxx xxx xxx xx xxx xxx xxxxxxxx xxxxxx xxxx xx Xxxxxxx, Xxxxxx, xx Xxxxxx. Xx xxxx xxx xxxxxxxx xx xxx xxx xx xxxxx xxxxx, xxx xxx xxxxx xxxx xx xxx xxxx xxx xx xxx xxxx xxxx xxx xxx xxxxxxxx.
-5.  Xx xxx xx xxx xxxx xxx xxxxx xx xxxxx xxxxxxxxx xx xxxx xxxxxxx, xxx xxx xxxxxxx xxxx xx xxxxxxxx **Xxx x xxxxxxxx** xxx xxxxxx xxxx xx xxx xxxx.
-6.  Xx xxxx xxx xxx xxxx xxxxxxx xxxxxxxx, xxxxxx xxx xxxxxxxx xx xxx xxxx xxx xxxxx **Xxx xx xxxxxxx** (xx xx x xxxxx xx xxxxx xxxxxxxx, xxx xxx xxxx xxx xxxxxxxx xx xxx xxxx xxx xxxx xxx **Xxxx xx** xxxxx xx xx xx xxx xxx). Xxxx xxx xxx xxx.
+1.  Bring up **Settings** on your device.
+2.  Select **Time & language**.
+3.  Select **Region & language** (or on a phone or phone emulator, **Language**).
+4.  Note that the language that was displayed when you ran the app is the top language listed that is English, German, or French. If your top language is not one of these three, the app falls back to the next one on the list that the app supports.
+5.  If you do not have all three of these languages on your machine, add the missing ones by clicking **Add a language** and adding them to the list.
+6.  To test the app with another language, select the language in the list and click **Set as default** (or on a phone or phone emulator, tap and hold the language in the list and then tap **Move up** until it is at the top). Then run the app.
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxx
+## <span id="related_topics"></span>Related topics
 
 
-* [Xxx xx xxxx xxxxxxxxx xxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
-* [Xxx xx xxxx xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)
-* [Xxx XXX-YY xxxxxxxx xxx](http://go.microsoft.com/fwlink/p/?linkid=227302)
+* [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
+* [How to load string resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965323)
+* [The BCP-47 language tag](http://go.microsoft.com/fwlink/p/?linkid=227302)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

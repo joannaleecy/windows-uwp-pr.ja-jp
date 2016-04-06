@@ -1,97 +1,65 @@
 ---
-xx.xxxxxxx: XYYXYXYY-YYXY-YXYX-XXYY-YYYYYXYYXYXX
-xxxxx: Xxxxxxxxxx xxxxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx&\#YYY;XXX, xx xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxx xx xxxxxxxx xx xxx XX.
+ms.assetid: F46D5E18-10A3-4F7B-AD67-76437C77E4BC
+title: Transforms overview
+description: Learn how to use transforms in the Windows Runtime&\#160;API, by changing the relative coordinate systems of elements in the UI.
 ---
 
-# Xxxxxxxxxx xxxxxxxx
+# Transforms overview
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxx xxx xx xxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx XXX, xx xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxx xx xxxxxxxx xx xxx XX. Xxxx xxx xx xxxx xx xxxxxx xxx xxxxxxxxxx xx xxxxxxxxxx XXXX xxxxxxxx, xxxx xx xxxxxxx, xxxxxxxx, xx xxxxxxxxxxxx xxx xxxxxxxx xx x-x xxxxx.
+Learn how to use transforms in the Windows Runtime API, by changing the relative coordinate systems of elements in the UI. This can be used to adjust the appearance of individual XAML elements, such as scaling, rotating, or transforming the position in x-y space.
 
-## <span id="What_is_a_transform_">
-            </span>
-            <span id="what_is_a_transform_">
-            </span>
-            <span id="WHAT_IS_A_TRANSFORM_">
-            </span>Xxxx xx x xxxxxxxxx?
+## <span id="What_is_a_transform_"></span><span id="what_is_a_transform_"></span><span id="WHAT_IS_A_TRANSFORM_"></span>What is a transform?
 
-X *xxxxxxxxx* xxxxxxx xxx xx xxx, xx xxxxxxxxx, xxxxxx xxxx xxx xxxxxxxxxx xxxxx xx xxxxxxx xxxxxxxxxx xxxxx. Xxxx x xxxxxxxxx xx xxxxxxx xx x XX xxxxxxx, xx xxxxxxx xxx xxxx XX xxxxxxx xx xxxxxxxx xx xxx xxxxxx xx xxxx xx xxx XX.
+A *transform* defines how to map, or transform, points from one coordinate space to another coordinate space. When a transform is applied to a UI element, it changes how that UI element is rendered to the screen as part of the UI.
 
-Xxxxx xx xxxxxxxxxx xx xxxx xxxxx xxxxxxxxxxxxxxx: xxxxxxxxxxx, xxxxxxxx, xxxxxxx xxx xxxx (xx xxxxx). Xxx xxx xxxxxxxx xx xxxxx xxxxxxxx XXXx xx xxxxxx xxx xxxxxxxxxx xx XX xxxxxxxx, xx'x xxxxxxx xxxxxxx xx xxxxxx xxxxxxxxxx xxxx xxxxxx xxxx xxx xxxxxxxxx xx x xxxx. Xx xxx Xxxxxxx Xxxxxxx xxxxxxx x xxxxxxxx xxxxx xxx xxxx xx xxxxx xxxxxxxxx xxxxxxxxxxxxxxx:
+Think of transforms in four broad classifications: translation, rotation, scaling and skew (or shear). For the purposes of using graphics APIs to change the appearance of UI elements, it's usually easiest to create transforms that define only one operation at a time. So the Windows Runtime defines a discrete class for each of these transform classifications:
 
--   [
-            **XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243027): xxxxxxxxxx xx xxxxxxx xx x-x xxxxx, xx xxxxxxx xxxxxx xxx [**X**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.translatetransform.x.aspx) xxx [**X**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.translatetransform.y).
--   [
-            **XxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242940): xxxxxx xxx xxxxxxxxx xxxxx xx x xxxxxx xxxxx, xx xxxxxxx xxxxxx xxx [**XxxxxxX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centerx.aspx), [**XxxxxxX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centery.aspx), [**XxxxxX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.scalex.aspx) xxx [**XxxxxX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scaleyproperty).
--   [
-            **XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242932): xxxxxxx xx x-x xxxxx, xx xxxxxxx xxxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.angle.aspx), [**XxxxxxX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.centerx.aspx) xxx [**XxxxxxX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centery).
--   [
-            **XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242950): xxxxx xx xxxxxx xx x-x xxxxx, xx xxxxxxx xxxxxx xxx [**XxxxxX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.anglex.aspx), [**XxxxxX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.angley.aspx), [**XxxxxxX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.centerx.aspx) xxx [**XxxxxxX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centeryproperty).
+-   [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027): translates an element in x-y space, by setting values for [**X**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.translatetransform.x.aspx) and [**Y**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.translatetransform.y).
+-   [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940): scales the transform based on a center point, by setting values for [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centerx.aspx), [**CenterY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.centery.aspx), [**ScaleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.scaletransform.scalex.aspx) and [**ScaleY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.scaleyproperty).
+-   [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932): rotates in x-y space, by setting values for [**Angle**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.angle.aspx), [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.rotatetransform.centerx.aspx) and [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.rotatetransform.centery).
+-   [**SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950): skews or shears in x-y space, by setting values for [**AngleX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.anglex.aspx), [**AngleY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.angley.aspx), [**CenterX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.skewtransform.centerx.aspx) and [**CenterY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.scaletransform.centeryproperty).
 
-Xx xxxxx, xxx'xx xxxxxx xx xxx [**XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243027) xxx [**XxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242940) xxxx xxxxx xxx XX xxxxxxxxx.
+Of these, you're likely to use [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) and [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940) most often for UI scenarios.
 
-Xxx xxx xxxxxxx xxxxxxxxxx, xxx xxxxx xxx xxx Xxxxxxx Xxxxxxx xxxxxxx xxxx xxxxxxx xxxx: [**XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228105) xxx [**XxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243022). Xx x **XxxxxxxxxXxxxxxxxx**, xxxxxxxxxx xxx xxxxxxx xx xxxx xxxxx: xxxxx, xxxx, xxxxxx, xxxxxxxxx. Xxx **XxxxxxxxxXxxxx** xxxxxxx xx **XxxxxxxxxXxxxxxxxx** xx xxx xxxx xxx xxxxxxxxxx xxxxxxx xx x xxxxxxxxx xxxxx. Xxx xxxx xxxx, xxx [**XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228105).
+You can combine transforms, and there are two Windows Runtime classes that support this: [**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105) and [**TransformGroup**](https://msdn.microsoft.com/library/windows/apps/BR243022). In a **CompositeTransform**, transforms are applied in this order: scale, skew, rotate, translate. Use **TransformGroup** instead of **CompositeTransform** if you want the transforms applied in a different order. For more info, see [**CompositeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228105).
 
-## <span id="Transforms_and_layout">
-            </span>
-            <span id="transforms_and_layout">
-            </span>
-            <span id="TRANSFORMS_AND_LAYOUT">
-            </span>Xxxxxxxxxx xxx xxxxxx
+## <span id="Transforms_and_layout"></span><span id="transforms_and_layout"></span><span id="TRANSFORMS_AND_LAYOUT"></span>Transforms and layout
 
-Xx XXXX xxxxxx, xxxxxxxxxx xxx xxxxxxx xxxxx xxx xxxxxx xxxx xx xxxxxxxx, xx xxxxxxxxx xxxxx xxxxxxxxxxxx xxx xxxxx xxxxxx xxxxxxxxx xxxx xxxx xxxx xxxxxx xxx xxxxxxxxxx xxx xxxxxxx. Xxxxxxx xxxxxx xxxxx xxxxx, xxx'xx xxxxxxxxx xxx xxxxxxxxxx xxxxxxx xx xxx xxxxxxxxx xxxxxxxx xxxx xxx xx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704) xxxx xx xxxxxxx xxxxxx xxxxxxxxx xxxx xxxxxxxxx xxxxx xxxxxx xxxxxx. Xxx xxxxxxxxxxx xxxxxxx xxx xxxxxx xxxxxxxxx xx xxxxxxxx xxxxxxx xx'x xxxxxx xx xxxx xxxx xx xxxx xxxx xxxx'x xxxxxxxxx xxx xxxx-xxxxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxxxx xxxxxx xxx xxxxxx xxxxxxxxx. Xxx xxx xxxx xx xxxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxx xxx xxxxxx xxxx xxxxxxxx. Xxx xxxxxxx, xxxxxxx xx xxxxxxx xx xxxxxxxx xxxxxx xxx xxxx xxxxxx, xxx xxx xxxx xx xxxxxx xxx **Xxxxxx** xxxxxxxxxx xx xxxxxxx xxxxx xxxxx xxxxxxxxxxxx xxx xxxxxx xxxxx xx xxxx xxxx xxx xxxxxx xxxxxx xxxxxx xxxxx.
+In XAML layout, transforms are applied after the layout pass is complete, so available space calculations and other layout decisions have been made before the transforms are applied. Because layout comes first, you'll sometimes get unexpected results if you transform elements that are in a [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) cell or similar layout container that allocates space during layout. The transformed element may appear truncated or obscured because it's trying to draw into an area that didn't calculate the post-transform dimensions when dividing space within its parent container. You may need to experiment with the transform results and adjust some settings. For example, instead of relying on adaptive layout and star sizing, you may need to change the **Center** properties or declare fixed pixel measurements for layout space to make sure the parent allots enough space.
 
-**Xxxxxxxxx xxxx:  **Xxxxxxx Xxxxxxxxxxxx Xxxxxxxxxx (XXX) xxx x **XxxxxxXxxxxxxxx** xxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxx xxxx. Xxx Xxxxxxx Xxxxxxx XXXX xxxxx'x xxxxxxx x **XxxxxxXxxxxxxxx** xxxxxxxx. (Xxxxxxxxx Xxxxxxxxxxx xxxx'x xxxx xxxx xxxxxxxx xxxxxx.)
+**Migration note:  **Windows Presentation Foundation (WPF) had a **LayoutTransform** property that applied transforms prior to the layout pass. But Windows Runtime XAML doesn't support a **LayoutTransform** property. (Microsoft Silverlight didn't have this property either.)
 
-## <span id="Applying_a_transform_to_a_UI_element">
-            </span>
-            <span id="applying_a_transform_to_a_ui_element">
-            </span>
-            <span id="APPLYING_A_TRANSFORM_TO_A_UI_ELEMENT">
-            </span>Xxxxxxxx x xxxxxxxxx xx x XX xxxxxxx
+## <span id="Applying_a_transform_to_a_UI_element"></span><span id="applying_a_transform_to_a_ui_element"></span><span id="APPLYING_A_TRANSFORM_TO_A_UI_ELEMENT"></span>Applying a transform to a UI element
 
-Xxxx xxx xxxxx x xxxxxxxxx xx xx xxxxxx, xxx xxxxxxxxx xx xx xx xxx xxx xxxxxxxx [**XXXxxxxxx.XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208980). Xxxxxxx xxxx xxxxxxxx xxxx xxx xxxxxxxxx xxxxxx xxx xxxxxx xxxxx xx xxxxx. Xxxx xxx xxxxxxxx xxxxxx xxxx xx xxxxx xxx xxxxxxxxx xxxxxx xxx xxxxx xxxxxxxxxx xxxxx xx xxxxx xxxx xxxxxx xxxxxx. Xxxx xxx xxxxxxxxx xxxxx xxx xxxxxxxxx (xxxx-xxxxxx) xxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxx, xxxxxx xx xxxx xxxx xxx xxxxxx xxx xxxxxxx xxxxxxxxxx xxx xxxx xxxxxxxxxxx xxx xxxxxx xxxxxxxx (xx [**XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243027) xxx xxxxxxx).
+When you apply a transform to an object, you typically do so to set the property [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980). Setting this property does not literally change the object pixel by pixel. What the property really does is apply the transform within the local coordinate space in which that object exists. Then the rendering logic and operation (post-layout) renders the combined coordinate spaces, making it look like the object has changed appearance and also potentially its layout position (if [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) was applied).
 
-Xx xxxxxxx, xxxx xxxxxx xxxxxxxxx xx xxxxxxxx xx xxx xxxxxx xx xxx xxxxxx xxxxxx'x xxxxx xxxxxxxxxx xxxxxx—xxx (Y,Y). Xxx xxxx xxxxxxxxx xx x [**XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243027), xxxxx xxx xx xxxxxx xxxxxxxxxx xx xxx xxxxxxx xxx xxxxxxxxxxx xxxxxx xx xxx xxxx xxxxxxxxxx xx xxxxx xx xx xxxxxxxx. Xxx xxx xxxxx xxxxxxxxxx xxxx xxxx xxxxxxxxxx xxxx xxx **XxxxxxX** xxx **XxxxxxX** xxxxxx.
+By default, each render transform is centered at the origin of the target object's local coordinate system—its (0,0). The only exception is a [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), which has no center properties to set because the translation effect is the same regardless of where it is centered. But the other transforms each have properties that set **CenterX** and **CenterY** values.
 
-Xxxxxxxx xxx xxx xxxxxxxxxx xxxx [**XXXxxxxxx.XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208980), xxxxxxxx xxxx xxxxx'x xxxxxxx xxxxxxxx xx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911) xxxx xxxxxxx xxx xxx xxxxxxxxx xxxxxxx: [**XxxxxxXxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.rendertransformorigin.aspx). Xxxx **XxxxxxXxxxxxxxxXxxxxx** xxxxxxxx xx xxxxxxx xxx xxxxx xxxxxxxxx xxxxxx xxxxx xx xxx xxxxxxx (Y,Y) xxxxx xx xx xxxxxxx xx xx xxxx xxxxx xxxxxx xxxxx xxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxx xx xxxx xxxxxxx. Xxx xxxxxxx xxxxxxxx, (Y,Y) xxxxxx xxx xxxxxxxxx xx xxx xxx xxxx xxxxxx. Xxxxxxxxx xx xxxx xxxxxx xxx xxxx, xxx xxxxx xxxxxx xx xxxxxx **XxxxxxXxxxxxxxxXxxxxx** xxxxxx xxxx xxxxxxxxx xxx **XxxxxxX** xxx **XxxxxxX** xxxxxx xx xxxxxxxxxx. Xxxx xxxx xx xxx xxxxx xxxx **XxxxxxXxxxxxxxxXxxxxx** xxx **XxxxxxX** / **XxxxxxX** xxxxxx, xxx xxxxxxx xxx xx xxxxxx xxxxxxxxx, xxxxxxxxxx xx xxx'xx xxxxxxxxx xxx xx xxx xxxxxx.
+Whenever you use transforms with [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980), remember that there's another property on [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) that affects how the transform behaves: [**RenderTransformOrigin**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.rendertransformorigin.aspx). What **RenderTransformOrigin** declares is whether the whole transform should apply to the default (0,0) point of an element or to some other origin point within the relative coordinate space of that element. For typical elements, (0,0) places the transform to the top left corner. Depending on what effect you want, you might choose to change **RenderTransformOrigin** rather than adjusting the **CenterX** and **CenterY** values on transforms. Note that if you apply both **RenderTransformOrigin** and **CenterX** / **CenterY** values, the results can be pretty confusing, especially if you're animating any of the values.
 
-Xxx xxx-xxxxxxx xxxxxxxx, xx xxxxxx xx xxxxx x xxxxxxxxx xx xxxxxxx xxxxxxxxx xx xxxxxxx xx xxxxx xx xx xxxxxxxx xxx xxxx'x xxxxxxxxxx xx xxx xxxxxx xxxxxxxxxx xx x-x xxxxx. Xxx xxxxxxx, xx xxx'xx xxxx x [**XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243027) xx xxxx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371) YYY xxxxxx xxxxxxxxx xx xxx XX, xxxx **Xxxxxxxxx** xxxxxxxx xx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx) xxxxxx xxxx xxx xxxx xxxxxxx xxx xxxxx xxxxx xxx **Xxxxxxxxx** xxxxxxx xxxxxxxx. Xxx xxx'x xxx xxxxx xxxxxx xx xxx xxxx xxxxxxx xxx xxxx xxxxx xxx **Xxxxxxxxx** xxx xxxxxx xxxxx xxxxxxxxxx. Xxx xxx x-xxxxx xxxxxxxxxxxxxx xxxx xxxxxx xxx xxxxxxx, xxxxxxxx x xxxxxxxxx xxxxx xx xxxxxxxxxx; xxx x-xxxxx xxxx xxxxxxx xxxxx xxxxxxx xxxxxxx xxxxx xxxxxx xxx x xxxxx xx x-x xxxxx xx xxxxx xxxxxxxxx xxxxx xxx xxxxx xxxxx xx xxxxxxxx xx x xxxxxxxxx. Xxxx xxxxx xx xxxxxxx xxx xxxx xx xxx xxxxx xx xxxxx xxx xxxxxxx xxx xxxxxxxx xx XXXX, xxxxxxxx xxx xxxxx xxxxxxxx xx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209267) xxxxxx xxx xxx xxxxxx xxx xxxxx xx xxxxxxxx xxx [**Xxxxxx.XXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx) xxxxxxxx xxxxxxxx xx xxxxx xxxxxxxx.
+For hit-testing purposes, an object to which a transform is applied continues to respond to input in an expected way that's consistent to its visual appearance in x-y space. For example, if you've used a [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) to move a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) 400 pixels laterally in the UI, that **Rectangle** responds to [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx) events when the user presses the point where the **Rectangle** appears visually. You won't get false events if the user presses the area where the **Rectangle** was before being translated. For any z-index considerations that affect hit testing, applying a transform makes no difference; the z-index that governs which element handles input events for a point in x-y space is still evaluated using the child order as declared in a container. That order is usually the same as the order in which you declare the elements in XAML, although for child elements of a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267) object you can adjust the order by applying the [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx) attached property to child elements.
 
-## <span id="Other_transform_properties">
-            </span>
-            <span id="other_transform_properties">
-            </span>
-            <span id="OTHER_TRANSFORM_PROPERTIES">
-            </span>Xxxxx xxxxxxxxx xxxxxxxxxx
+## <span id="Other_transform_properties"></span><span id="other_transform_properties"></span><span id="OTHER_TRANSFORM_PROPERTIES"></span>Other transform properties
 
--   [
-            **Xxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228082), [**Xxxxx.XxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228080): Xxxxx xxxxxxxxx xxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228076) xxxx xxxxxxxxxx xxxxx xxxxxx xxx xxxx xxxx xxx **Xxxxx** xx xxxxxxx xx xxx xxxxxx xxxxxxxxxx xxxx xx xxxxxxxxxxx xxx xxxxxxxxxxx. Xxxxx xxxxxxxxxx xxxx'x xxxxxxxx xxx xxx xxxx xxxxxx xxxxxxx (xxxxx xxx xxxxxxxxx xxxxxxx xxxxx xxxxxx xxxx [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962)) xxx xxxxx xx xxxxxxxxxxxx xxxxxx xxxx xxxxxxxx xxxxx xxxx xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210101) xx [**XxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210108).
--   [
-            **Xxxxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210066): Xxx xxxxx xxx xxxx xxxxxxxx xx xxxxx x xxxxxxxxx xx x xxxxxxxx xxxxx xx xxxxx xxxx xxxxxxxx xxx x [**Xxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR243356) xxxxxxxx xxxxx.
+-   [**Brush.Transform**](https://msdn.microsoft.com/library/windows/apps/BR228082), [**Brush.RelativeTransform**](https://msdn.microsoft.com/library/windows/apps/BR228080): These influence how a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) uses coordinate space within the area that the **Brush** is applied to set visual properties such as foregrounds and backgrounds. These transforms aren't relevant for the most common brushes (which are typically setting solid colors with [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962)) but might be occasionally useful when painting areas with an [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/BR210101) or [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108).
+-   [**Geometry.Transform**](https://msdn.microsoft.com/library/windows/apps/BR210066): You might use this property to apply a transform to a geometry prior to using that geometry for a [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/BR243356) property value.
 
-## <span id="Animating_a_transform">
-            </span>
-            <span id="animating_a_transform">
-            </span>
-            <span id="ANIMATING_A_TRANSFORM">
-            </span>Xxxxxxxxx x xxxxxxxxx
+## <span id="Animating_a_transform"></span><span id="animating_a_transform"></span><span id="ANIMATING_A_TRANSFORM"></span>Animating a transform
 
-[
-            **Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243006) xxxxxxx xxx xx xxxxxxxx. Xx xxxxxxx x **Xxxxxxxxx**, xxxxx xx xxxxxxxxx xx x xxxxxxxxxx xxxx xx xxx xxxxxxxx xxx xxxx xx xxxxxxx. Xxxx xxxxxxxxx xxxxx xxx'xx xxxxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243136) xx [**XxxxxxXxxxxxxxxXxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243136usingkeyframes) xxxxxxx xx xxxxxx xxx xxxxxxxxx, xxxxxxx xxx xx xxx xxxxxxxxx xxxxxxxxxx xxx xx xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Xxxxxxxxxx xxxx xxxxxx x xxxxxxxxx xxxx'x xxxx xxx x [**XXXxxxxxx.XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208980) xxxxx xxx xxx xxxxxxxxxx xx xx xxxxxxxxx xxxxxxxxxx, xxxx xx xxxx xxxx x xxxxxxx xxxxxxxx. Xxx xxxx xxxx xxxxx xxxxxxxxx xxxxxxxxxx, xxx [Xxxxxxxxxxxx xxxxxxxxxx](storyboarded-animations.md).
+[**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) objects can be animated. To animate a **Transform**, apply an animation of a compatible type to the property you want to animate. This typically means you're using [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) or [**DoubleAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR243136usingkeyframes) objects to define the animation, because all of the transform properties are of type [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Animations that affect a transform that's used for a [**UIElement.RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) value are not considered to be dependent animations, even if they have a nonzero duration. For more info about dependent animations, see [Storyboarded animations](storyboarded-animations.md).
 
-Xx xxx xxxxxxx xxxxxxxxxx xx xxxxxxx xx xxxxxx xxxxxxx xx x xxxxxxxxx xx xxxxx xx xxx xxx xxxxxx xxxxxxxxxx—xxx xxxxxxx, xxxxxxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208751) xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208718) xx x [**XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208706) xxxxxx xxxx xxxxxxxx x [**XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243027)—xxxx xxxxxxxxxx xxx xxxxxx xxxxxx xxxxxxx xx xxxxxxxxx xxxxxxxxxx. Xxx'x xxxx xx xxxxxx xxx xxxxxxxxxx xxx xxxxx xxxxx xx xxxxxxxxxxx xxxxxxxxxxx xxxxxx xxxx xxx xxxxxxxxx, xxxxxxxxxx xx xxx'xx xxxxxx xx xxxxxxx xxxx xxxxxxxxxxx xxxxx xxxx xxxxxx xx xxxxx xxxxxxxx. Xxx xxxx xxxxxx xx'x xxxxxxxxxx xx xxx x xxxxxxxxx xxx xxxxxxx xx xxxxxx xxxx xxxxxxxxx xxx xxxxx xxxxxxxx xxxxx xxx xxxxxxxxx xxxxx xx xxxxxxx xx x xxxxxxxxx xxxxxxxxx.
+If you animate properties to produce an effect similar to a transform in terms of the net visual appearance—for example, animating the [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) and [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) of a [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) rather than applying a [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027)—such animations are almost always treated as dependent animations. You'd have to enable the animations and there could be significant performance issues with the animation, especially if you're trying to support user interaction while that object is being animated. For that reason it's preferable to use a transform and animate it rather than animating any other property where the animation would be treated as a dependent animation.
 
-Xx xxxxxx xxx xxxxxxxxx, xxxxx xxxx xx xx xxxxxxxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243006) xx xxx xxxxx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208980). Xxx xxxxxxxxx xxx xx xxxxxxx xxx xxx xxxxxxxxxxx xxxxxxxxx xxxx xx xxx xxxxxxx XXXX, xxxxxxxxx xxxx xx xxxxxxxxxx xxx xx xxxx xxxxxxxxx.
+To target the transform, there must be an existing [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) as the value for [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980). You typically put an element for the appropriate transform type in the initial XAML, sometimes with no properties set on that transform.
 
-Xxx xxxxxxxxx xxx xx xxxxxxxx xxxxxxxxx xxxxxxxxx xx xxxxx xxxxxxxxxx xx xxx xxxxxxxxxx xx x xxxxxxxxx. Xxx xxxx xxxx xxxxx xxxxxxxx xxxxxxxxx xxxxxx, xxx [Xxxxxxxxxxxx xxxxxxxxxx](storyboarded-animations.md) xxx [Xxxxxxxx-xxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185586).
+You typically use an indirect targeting technique to apply animations to the properties of a transform. For more info about indirect targeting syntax, see [Storyboarded animations](storyboarded-animations.md) and [Property-path syntax](https://msdn.microsoft.com/library/windows/apps/Mt185586).
 
-Xxxxxxx xxxxxx xxx xxxxxxxx xxxxxxxxx xxxxxx xxxxxxxxxx xx xxxxxxxxxx xx xxxx xx xxxxx xxxxxx-xxxxx xxxxxxxx. Xxx xxxxxxx, xxx xxxxxx xxxxxx xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR227538) xxx xxxxxxxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242932) xxxxxx xx "xxxx" xxx xxxx xx xxx xxxx.
+Default styles for controls sometimes define animations of transforms as part of their visual-state behavior. For example, the visual states for [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/BR227538) use animated [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) values to "spin" the dots in the ring.
 
-Xxxx'x x xxxxxx xxxxxxx xx xxx xx xxxxxxx x xxxxxxxxx. Xx xxxx xxxx, xx'x xxxxxxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rotatetransform.angle.aspx) xx x [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242932) xx xxxx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371) xx xxxxx xxxxxx xxx xxxxxx xxxxxx. Xxxx xxxxxxx xxxxx xxx **XxxxxxXxxxxxxxx** xx xxxxx'x xxxx xxxxxxxx xxxxxxxxx xxxxxxxxx, xxx xxx xxxxx xxxxxxxxxxxxx xxxxx xxx xxxxxxxxx xxxxxxx, xxxx xxx xxxxxxx xxxx xxx xxxxxxxxx'x xxxxxxx xx, xxx xxx xxxxxxxx xxxxxxxxx xxxx xx `(UIElement.RenderTransform).(RotateTransform.Angle)`.
+Here's a simple example of how to animate a transform. In this case, it's animating the [**Angle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rotatetransform.angle.aspx) of a [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) to spin a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) in place around its visual center. This example names the **RotateTransform** so doesn't need indirect animation targeting, but you could alternatively leave the transform unnamed, name the element that the transform's applied to, and use indirect targeting such as `(UIElement.RenderTransform).(RotateTransform.Angle)`.
 
 ```xml
 <StackPanel Margin="15">
@@ -119,65 +87,52 @@ void StartAnimation (object sender, RoutedEventArgs e) {
 }
 ```
 
-## <span id="Accounting_for_coordinate_frames_of_reference_at_run_time">
-            </span>
-            <span id="accounting_for_coordinate_frames_of_reference_at_run_time">
-            </span>
-            <span id="ACCOUNTING_FOR_COORDINATE_FRAMES_OF_REFERENCE_AT_RUN_TIME">
-            </span>Xxxxxxxxxx xxx xxxxxxxxxx xxxxxx xx xxxxxxxxx xx xxx xxxx
+## <span id="Accounting_for_coordinate_frames_of_reference_at_run_time"></span><span id="accounting_for_coordinate_frames_of_reference_at_run_time"></span><span id="ACCOUNTING_FOR_COORDINATE_FRAMES_OF_REFERENCE_AT_RUN_TIME"></span>Accounting for coordinate frames of reference at run time
 
-[
-            **XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911) xxx x xxxxxx xxxxx [**XxxxxxxxxXxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.transformtovisual.aspx), xxxxx xxx xxxxxxxx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243006) xxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxx xx xxxxxxxxx xxx xxx XX xxxxxxxx. Xxx xxx xxx xxxx xx xxxxxxx xx xxxxxxx xx xxx xxx'x xxxxxxx xxxxxxxxxx xxxxx xx xxxxxxxxx xx xxx xxxx xxx xxxx xxxxxx xx xxx xxxxx xxxxxxxxx. Xxxx xxx xx xxxxxx xx xxx'xx xxxxxxxx xx xxxxx xxxxx xxxx x xxxxxxxxx xxxxxxx, xx xx xxx xxx xxxxxx xx xxxxxxx xxxxxx xxxxxxxx xxxxxxx xxxxxxxx xxxxxxxxxx x xxxxxx xxxx.
+[**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) has a method named [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.transformtovisual.aspx), which can generate a [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) that correlates the coordinate frames of reference for two UI elements. You can use this to compare an element to the app's default coordinate frame of reference if you pass the root visual as the first parameter. This can be useful if you've captured an input event from a different element, or if you are trying to predict layout behavior without actually requesting a layout pass.
 
-Xxxxx xxxx xxxxxxxx xxxx xxxxxxx xxxxxx xxxxxxxx xxxxxx xx x [**XxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR212141) xxxxxx, xxxxx xxx xxx xxxxxxx x *xxxxxxxxXx* xxxxxxxxx xx xxxxxx xxx xxxxxxxxxx xxxxx xx xxxxxxxxx xx x xxxxxxxx xxxxxxx xxxxxx xxxx xxx xxx xxxxxxx. Xxxx xxxxxxxx xxxxxx xxxxxxx x xxxxxxxxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxx xxx x-x xxxxxxxxxx xxxx xxx xxx xxxx xx xxxxxxx xxx xxxxxxxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242038) xxxxxx.
+Event data obtained from pointer events provides access to a [**GetCurrentPoint**](https://msdn.microsoft.com/library/windows/apps/BR212141) method, where you can specify a *relativeTo* parameter to change the coordinate frame of reference to a specific element rather than the app default. This approach simply applies a translate transform internally and transforms the x-y coordinate data for you when it creates the returned [**PointerPoint**](https://msdn.microsoft.com/library/windows/apps/BR242038) object.
 
-## <span id="Describing_a_transform_mathematically">
-            </span>
-            <span id="describing_a_transform_mathematically">
-            </span>
-            <span id="DESCRIBING_A_TRANSFORM_MATHEMATICALLY">
-            </span>Xxxxxxxxxx x xxxxxxxxx xxxxxxxxxxxxxx
+## <span id="Describing_a_transform_mathematically"></span><span id="describing_a_transform_mathematically"></span><span id="DESCRIBING_A_TRANSFORM_MATHEMATICALLY"></span>Describing a transform mathematically
 
-X xxxxxxxxx xxx xx xxxxxxxxx xx xxxxx xx x xxxxxxxxxxxxxx xxxxxx. X Y×Y xxxxxx xx xxxx xx xxxxxxxx xxx xxxxxxxxxxxxxxx xx x xxx-xxxxxxxxxxx, x-x xxxxx. Xxxxxx xxxxxxxxxxxxxx xxxxxxxx xxx xx xxxxxxxxxx xx xxxx xxx xxxxxx xx xxxxxx xxxxxxxxxxxxxxx, xxxx xx xxxxxxxx xxx xxxx (xxxxx), xxxxxxxx xx xxxxxxxxxxx. Xxx xxxxx xxxxxx xx xx xxxxxx xxxxxxxxxxxxxx xxxxxx xx xxxxx xx (Y, Y, Y), xx xxx xxxx xx xxxxxxx xxxx xxx xxxxxxx xx xxx xxxxx xxx xxxxxxx xx xxx xxxxxxxxxxxx xxxxxxxxxxx.
+A transform can be described in terms of a transformation matrix. A 3×3 matrix is used to describe the transformations in a two-dimensional, x-y plane. Affine transformation matrices can be multiplied to form any number of linear transformations, such as rotation and skew (shear), followed by translation. The final column of an affine transformation matrix is equal to (0, 0, 1), so you need to specify only the members of the first two columns in the mathematical description.
 
-Xxx xxxxxxxxxxxx xxxxxxxxxxx xx x xxxxxxxxx xxxxx xx xxxxxx xx xxx xx xxx xxxx x xxxxxxxxxxxx xxxxxxxxxx xx x xxxxxxxxxxx xxxx xxxxxxxx-xxxxxxxxxxx xxxxxxxxxx xxxx xxxx xxx xxxxxxxx xx xxxxxxxx xxxxxxxxxxxxxxx xx xxxxxxxxxx xxxxx. Xxxxx'x x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243006)-xxxxxxx xxxxx xxxx xxxxxxx xxx xx xxxxxxx x xxxxxxxxxxxxxx xxxxxxxx xx xxxxx xx xxx Y×Y xxxxxx: [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210137). **XxxxxxXxxxxxxxx** xxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.matrixtransform.matrix.aspx) xxxxxxxx, xxxxx xxxxx x xxxxxxxxx xxxx xxx xxx xxxxxxxxxx: [**XYY**](https://msdn.microsoft.com/library/windows/apps/Hh673847), [**XYY**](https://msdn.microsoft.com/library/windows/apps/Hh673853), [**XYY**](https://msdn.microsoft.com/library/windows/apps/Hh673851), [**XYY**](https://msdn.microsoft.com/library/windows/apps/Hh673849), [**XxxxxxX**](https://msdn.microsoft.com/library/windows/apps/Hh673810) xxx [**XxxxxxX**](https://msdn.microsoft.com/library/windows/apps/Hh673816). Xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210127) xxxxxxxx xxxx x **Xxxxxx** xxxxx xxx xxxxxxxxxxx xx xxx xxx xxxxxxxx xxxxxx (xxxxxxx Y xxx Y) xx xx xxxxxx xxxxxxxxxxxxxx xxxxxx.
+The mathematical description of a transform might be useful to you if you have a mathematical background or a familiarity with graphics-programming techniques that also use matrices to describe transformations of coordinate space. There's a [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006)-derived class that enables you to express a transformation directly in terms of its 3×3 matrix: [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137). **MatrixTransform** has a [**Matrix**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.matrixtransform.matrix.aspx) property, which holds a structure that has six properties: [**M11**](https://msdn.microsoft.com/library/windows/apps/Hh673847), [**M12**](https://msdn.microsoft.com/library/windows/apps/Hh673853), [**M21**](https://msdn.microsoft.com/library/windows/apps/Hh673851), [**M22**](https://msdn.microsoft.com/library/windows/apps/Hh673849), [**OffsetX**](https://msdn.microsoft.com/library/windows/apps/Hh673810) and [**OffsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673816). Each [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) property uses a **Double** value and corresponds to the six relevant values (columns 1 and 2) of an affine transformation matrix.
 
 |                                             |                                             |     |
 |---------------------------------------------|---------------------------------------------|-----|
-| [**XYY**](https://msdn.microsoft.com/library/windows/apps/Hh673847)         | [**XYY**](https://msdn.microsoft.com/library/windows/apps/Hh673851)         | Y   |
-| [**XYY**](https://msdn.microsoft.com/library/windows/apps/Hh673853)         | [**XYY**](https://msdn.microsoft.com/library/windows/apps/Hh673849)         | Y   |
-| [**XxxxxxX**](https://msdn.microsoft.com/library/windows/apps/Hh673810) | [**XxxxxxX**](https://msdn.microsoft.com/library/windows/apps/Hh673816) | Y   |
+| [**M11**](https://msdn.microsoft.com/library/windows/apps/Hh673847)         | [**M21**](https://msdn.microsoft.com/library/windows/apps/Hh673851)         | 0   |
+| [**M12**](https://msdn.microsoft.com/library/windows/apps/Hh673853)         | [**M22**](https://msdn.microsoft.com/library/windows/apps/Hh673849)         | 0   |
+| [**OffsetX**](https://msdn.microsoft.com/library/windows/apps/Hh673810) | [**OffsetY**](https://msdn.microsoft.com/library/windows/apps/Hh673816) | 1   |
 
  
 
-Xxx xxxxxxxxx xxxx xxx xxxxx xxxxxxxx xxxx x [**XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243027), [**XxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242940), [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242932), xx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242950) xxxxxx xxxxx xx xxxxxxxxx xxxxxxx xx x [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210137) xxxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210127) xxxxx. Xxx xxx xxxxxxxxx xxxx xxx **XxxxxxxxxXxxxxxxxx** xxx xxx xxxxxx xxxxxxx xxx xxxxxxxxxx xx xxxxx xxxxxxxxx xxxxxxx xxx xxxxxx xx xxxxxxxxxxxxx xxxx xxxxxxx xxx xxxxxx xxxxxxxxxx xx x **Xxxxxx**. Xx'x xxxx xxxxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxxxx xx xxxxxxxxxx; x **Xxxxxx** xx xxxxxxxx x xxxxxxxxx xxx xxx x [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242356), xx xx xxx'x xxxxxxx xxxxxxxx xxxxxxxxxx xxxxxx.
+Any transform that you could describe with a [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940), [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932), or [**SkewTransform**](https://msdn.microsoft.com/library/windows/apps/BR242950) object could be described equally by a [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137) with a [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) value. But you typically just use **TranslateTransform** and the others because the properties on those transform classes are easier to conceptualize than setting the vector components in a **Matrix**. It's also easier to animate the discrete properties of transforms; a **Matrix** is actually a structure and not a [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/BR242356), so it can't support animated individual values.
 
-Xxxx XXXX xxxxxx xxxxx xxxx xxxxxx xxx xx xxxxx xxxxxxxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxx xx x [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210137). Xx xxxx xxxx xx xxx xx xxxx xx xxx xxx xxxx xxxxxx xxxx xxxxx xx xxxxxx xxx xxxxxxxxxxxxxx xxxxxx xxx xxxxxxxxx xxx XXXX xxxxx, xxxxxx xxxx xxxxxx xx xxxxxxxxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210127) xxxxxx xxxxxxxx xxxxxxxx xx xxx XXXX.
+Some XAML design tools that enable you to apply transformation operations will serialize the results as a [**MatrixTransform**](https://msdn.microsoft.com/library/windows/apps/BR210137). In this case it may be best to use the same design tool again to change the transformation effect and serialize the XAML again, rather than trying to manipulate the [**Matrix**](https://msdn.microsoft.com/library/windows/apps/BR210127) values yourself directly in the XAML.
 
-## <span id="3-D_transforms">
-            </span>
-            <span id="3-d_transforms">
-            </span>
-            <span id="3-D_TRANSFORMS">
-            </span>Y-X xxxxxxxxxx
+## <span id="3-D_transforms"></span><span id="3-d_transforms"></span><span id="3-D_TRANSFORMS"></span>3-D transforms
 
-Xxx xxx xxxxx Y-X xxxxxxx xx xxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911) xx xxxxx *xxxxxxxxxxx xxxxxxxxxx*. Xxx xxxxxxx, xxx xxx xxxxxx xxx xxxxxxxx xxxx xx xxxxxx xx xxxxxxx xxxxxx xx xxxx xxxx xxx xx x xxxxxxxxxxx xxxxx. Xx xx xxxx, xxx xxx**XXXxxxxxx** xxxxxx'x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.projection.aspx) xxxxxxxx xx x [**XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210192) xxxxx. Xxx **XxxxxXxxxxxxxxx** xxxxx xxxxxxx xxx xxx xxxxxxxxx xx xxxxxxxx xx x xxxxxxxxx Y-X xxxxx. Xxxx xxxx xx xxxxxxxxx xx xxxxxxxxx xx xxxx xxxxxx xx [Y-X xxxxxxxxxxx xxxxxxx xxx XXXX XX](3-d-perspective-effects.md).
+You can apply 3-D effects to any [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) by using *perspective transforms*. For example, you can create the illusion that an object is rotated toward or away from you in a perspective plane. To do this, set the**UIElement** object's [**Projection**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.projection.aspx) property as a [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) value. The **PlaneProjection** class defines how the transform is rendered in a simulated 3-D space. This type of transform is described in more detail in [3-D perspective effects for XAML UI](3-d-perspective-effects.md).
 
-**Xxxx**   Xx'x xxxxxxxxxxx xxxxxxxx xx xxx xxxxxxx xxxxxxx xx xxxxx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243006) xxxxxxx xx xxxxxxxxxxx, xxx xxx [**XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210192) xxxxxxxxx xxxxxxx xxxxx xxxxxx xxxx xxxxxx xx xxxxxxx xxx xx'x xxxx xxxxxx xx xxx xxx xxxxxxxx xxxxxx xxxxx.
+**Note**   It's technically possible to get similar results by using the [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006) classes in combination, but the [**PlaneProjection**](https://msdn.microsoft.com/library/windows/apps/BR210192) technique usually looks better with images as brushes and it's much easier to get the property values right.
 
  
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxx
+## <span id="related_topics"></span>Related topics
 
-* [Xxxxxxx xxxxxx](drawing-shapes.md)
-* [Y-X xxxxxxxxxxx xxxxxxx xxx XXXX XX](3-d-perspective-effects.md)
-* [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243006)
+* [Drawing shapes](drawing-shapes.md)
+* [3-D perspective effects for XAML UI](3-d-perspective-effects.md)
+* [**Transform**](https://msdn.microsoft.com/library/windows/apps/BR243006)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

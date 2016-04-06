@@ -1,53 +1,57 @@
 ---
-Xxxxxxxxxxx: Xxxx’x xxxx xxxxxxxxx xxxx xxx’xx xxxx xx xxxxxx xxxx xxx xxxxxxx xxxxxxx xxx xxxx xxxx, xx-xxx xxxxxxxx (XXXx), xxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxx.
-xxxxx: Xxxxxxx xxxx
-xx.xxxxxxx: YYXYXXYY-XYXY-YYYY-YYYY-YXYXYYYYYYYX
+Description: アプリ、アプリ内製品 (IAP)、および Microsoft Advertising による売り上げの支払いを受けるために、以下の重要な情報を確認する必要があります。
+title: 支払いの受取り
+ms.assetid: 37D1EF45-C4A8-4849-8819-3D4A4898215C
 ---
 
-# Xxxxxxx xxxx
+# 支払いの受け取り
 
 
-Xxxx’x xxxx xxxxxxxxx xxxx xxx’xx xxxx xx xxxxxx xxxx xxx xxxxxxx xxxxxxx xxx xxxx xxxx, xx-xxx xxxxxxxx (XXXx), xxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxx.
+アプリ、アプリ内製品 (IAP)、および Microsoft Advertising による売り上げの支払いを受け取るために、以下の重要な情報を確認する必要があります。
 
-> **Xxxxxxxxx**  Xxxxxx xxx xxx xxxxxxx xxxxx xxxx xxx xxxxx xx xxx Xxxxxxx Xxxxx, xxx xxxx xx [xxx xx xxxx xxxxxx xxxxxxx xxx xxx xxxx xxx xxx xxxxxxxxx xxx xxxxx](setting-up-your-payout-account-and-tax-forms.md).
+> **重要:** Windows ストアでのアプリ販売に対して支払いを受けるには、事前に[受取りアカウントを設定して税関連の書類に入力する](setting-up-your-payout-account-and-tax-forms.md)必要があります。
 
-## Xxxxx xxx
-
-
-Xxxx xxx [xxxx xx xxx x xxxxxxxxx xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=615100), xxx xxxxxx xxx [Xxx Xxxxxxxxx Xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh694058). Xxxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxxxx xxxxxxx xxx xxx Xxxxxxxxx xx xx xxxxxxxx xx xxxxxxx xxxx xx xxx Xxxxxxx Xxxxx, xxxxxxxxx xxx Xxxxx xxx xxxx Xxxxxxxxx xxxxxxx xxx xxxxx xxxx xxxx.
-
-Xx xxxx xxxxx, xxx Xxxxx xxx xx YY%. Xxxx xxx xxxxxxxxxx xxxxxxx xx xxx [Xxx Xxxxxxxxx Xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh694058). Xxxxxx xxxxxx xxxx xxxxxxxx xx xxx xxxx xxx xxxxxxxxx.
-
-Xxx Xxxxxxx Xxxxx xxx xx xxxxxxx xx xxx xxx xxxxx xxxxxxxxx xx xxx Xxxxxxx Xxxxx, xxxxxxxxx XXXx.
-
-## Xxxxx xxxxx
+## Windows ストアの手数料
 
 
-Xxx xxxxx xxxx xxxx xxx xxxxx xxxxx xx xxx xxx xxxxxxxxx xxxxx xxx xxxxxx xx xxxxxxxxxx xxxx xxx. Xxx xxx xxxxx xxxx xxx xxx xxxx, xx xxx xxx xxxx x xxxxx xxxx xxxxxxxxx xxxx xxx xx xxxxxxx xxxx xxx. Xxxxx xxxxx xxxxx xx .YY XXX, xxxx xxxxxxxxxx xxxxxxxxxx (Y.YY XXX, Y.YY XXX, Y.YY XXX, xxx xx xx). Xxx xxxxxxxxxx xxxxxxx xxxxx xxxxx xxxxxxxx xx xxx xxxxx xxxx xxxxxx.
+[開発者アカウントを登録する](http://go.microsoft.com/fwlink/p/?LinkID=615100)際に、開発者は[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)に同意します。 この契約には、Windows ストアでのアプリ販売に関する、開発者と Microsoft との関係が説明されています。これには、Microsoft がすべての販売に対して課金する Windows ストアの手数料に関する規定も含まれています。
 
-> **Xxxx**  Xxxxx xxxxx xxxxx xxxx xxxxx xx xxx XXXx xxxx xxx xxxxx xxxx xxxxxx xxxx xxx.
+ほとんどの場合、Windows ストアの手数料は 30% です。 これらの手数料は、[アプリ開発者契約](https://msdn.microsoft.com/library/windows/apps/hh694058)で正式に定められています。 疑問がある場合は、常にこの契約を確認してください。
 
- 
+Windows ストアの手数料は、IAP も含めて、Windows ストアで生じたすべてのアプリ販売に適用されます。
 
-Xxxx xxxxx xxxx xxx x xxxxxxxxxxxxx xxxxx xx xxxx xx xxx xxxx xxxx YY xxxxxxxxxx xxxxxxx xx xxx Xxxxx. Xx xxx xxxxx xxxxxx xx xxxx xxx xxxx xxxx xxxx xx x xxxxxxxxxx xxxxx xxxxx xxxxxxxxx. Xxxxxxx, xxx xx xxxxxxx xx xxxxxxx xxxxxxxx xxxxx, xxx xxxxx xxxxx xxxxxx xxx xxxx xxxxxxxx xxxx xxx xxxxxxxx xx xxxxxxx.
-
-Xxxx xx xxxx xxxx xxx xxxxx xxxx xxx xxxxxx xxx xxxxxxx xxxxx xx xxxxx-xxxxx xxx xxxx xxxx xxxxxxxxx xxxx xxx. Xxx [Xxx xxxxxxx xxx xxxx xxxx](tax-details-for-paid-apps.md) xxx xxxx xxxx.
-
-## Xxxxxx xxxxxxxxx
+## 価格帯
 
 
-Xxx xxx xxxxxx xxxxxxx xxxxx xxxx xxxxxxx xxxx xxx xxxxxxxx xxxxxxx xx xxx **Xxxxxx xxxxxxx** xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx. Xxx xxxx xxxxx xxx xxxx xxxxx xxxx, xxx xxx xx xxxxxxxxxx xxx xxxxx xxx xxxx, xxx [Xxxxxx xxxxxxx](payout-summary.md).
+価格帯では、アプリを配布するすべての国における販売価格を設定します。 アプリを無料で提供することも、ユーザーがアプリを購入する際に支払う価格を選ぶこともできます。 価格帯は、0.99 米ドルから、段階的に設定されています (1.29 米ドル、1.49 米ドル、1.99 米ドルなど)。 価格が高くなるにつれ、価格の増分も大きくなります。
 
-## Xxxxxx xxxxxxxxx
-
-
-Xxxxxxxx xxx xxxx xx x xxxxxxx xxxxx (xxxxxxxx xxx xxxxxxxxxx xxxxxxx xxxxxxxxx xxx xxxx xxx). Xx'xx xxxxxxxxx xxxx xxx xxxxxxx xxx xx x xxxxx xxxxx xx xxx YYxx xxx xx xxxx xxxxx. Xxxx xxxx xxxxxxxx xxxxxxxxx xxxx xxxxxxx Y xx YY xxxxxxxxxx xxxxxxxx xxxx xx xxxxx xxxx xxxxxx xxxxxxx.
+> **注**  これらの価格帯は、アプリ内で提供するすべての IAP にも適用されます。
 
  
 
+各価格帯には、ストアで提供されている 60 を超える通貨それぞれに対応する値があります。 これらの値を使うと、世界中で同等の小売価格でアプリを販売できます。 ただし、外国為替相場の変動により、正確な売上高は通貨ごとに若干異なる場合があります。
+
+選んだ価格帯には、ユーザーが支払う必要のある売上税や付加価値税が含まれている場合があることに注意してください。 詳しくは、「[有料アプリの税の詳細](tax-details-for-paid-apps.md)」をご覧ください。
+
+## 支払いレポート
+
+
+Windows デベロッパー センター ダッシュ ボードの **[支払の概要]** で、支払い情報に関する詳細を表示し、レポートをダウンロードできます。 ここに表示される情報について詳しくは、「[支払いの要約](payout-summary.md)」をご覧ください。
+
+## 支払いの時期
+
+
+支払いは毎月行われます (支払いのしきい値に達している場合)。 通常、支払いは、該当する月の 15 日に行われます。 支払いが受取りアカウントに到着するまで、通常は 3 ～ 10 営業日かかることに注意してください。
+
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

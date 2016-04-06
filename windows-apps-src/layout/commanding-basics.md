@@ -1,71 +1,56 @@
 ---
-Xxxxxxxxxxx: Xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx, xxxxxxx xxxxxxxx xxx xxx xxxxxxxxxxx XX xxxxxxxx xxxx xxxxxx xxx xxxx xx xxxxxxx xxxxxxx, xxxx xx xxxxxxx xx xxxxx, xxxxxxxx xx xxxx, xx xxxxxxxxxx x xxxx.
-xxxxx: Xxxxxxx xxxxxx xxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx
-xx.xxxxxxx: YXXYYYYY-YYXY-YYYY-YYXX-YYXYYXYYYYXY
-xxxxx: Xxxxxxx xxxxxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: ユニバーサル Windows プラットフォーム (UWP) アプリでは、コマンド要素は、ユーザーがメール送信、項目の削除、フォームの送信などのアクションを実行できる対話型の UI 要素です。
+title: ユニバーサル Windows プラットフォーム (UWP) アプリのコマンド設計の基本
+ms.assetid: 1DB48285-07B7-4952-80EF-02B57D4469F2
+label: コマンド設計の基本
+template: detail.hbs
 ---
 
-#  Xxxxxxx xxxxxx xxxxxx xxx XXX xxxx
+#  UWP アプリのコマンド設計の基本
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-Xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx, *xxxxxxx xxxxxxxx* xxx xxx xxxxxxxxxxx XX xxxxxxxx xxxx xxxxxx xxx xxxx xx xxxxxxx xxxxxxx, xxxx xx xxxxxxx xx xxxxx, xxxxxxxx xx xxxx, xx xxxxxxxxxx x xxxx. Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxx, xxxx xx xxxxxxx xxx xxxxx xxxxx, xxx xxxxxxxxxxxx xxxx xxxxxxx, xxx xxx xxxxxxx xxxxxxxx (xxxx xx xxxxxxx xxxx xxx xxxxxxx xxxxx) xxx xxxxxxx xxxx.
+ユニバーサル Windows プラットフォーム (UWP) アプリでは、*コマンド要素*は、ユーザーがメール送信、項目の削除、フォームの送信などのアクションを実行できる対話型の UI 要素です。 この記事では、ボタンやチェック ボックスなどのコマンド要素、それらの要素でサポートされる操作、それらの要素をホストするコマンド サーフェス (コマンド バーやショートカット メニューなど) について説明します。
 
-## <span id="Provide_the_right_type_of_interactions">
-            </span>
-            <span id="provide_the_right_type_of_interactions">
-            </span>
-            <span id="PROVIDE_THE_RIGHT_TYPE_OF_INTERACTIONS">
-            </span>Xxxxxxx xxx xxxxx xxxx xx xxxxxxxxxxxx
+## <span id="Provide_the_right_type_of_interactions"></span><span id="provide_the_right_type_of_interactions"></span><span id="PROVIDE_THE_RIGHT_TYPE_OF_INTERACTIONS"></span>適切な種類の操作の提供
 
 
-Xxxx xxxxxxxxx x xxxxxxx xxxxxxxxx, xxx xxxx xxxxxxxxx xxxxxxxx xx xxxxxxxx xxxx xxxxx xxxxxx xx xxxx xx xx. Xxx xxxxxxx, xx xxx'xx xxxxxxxx x xxxxx xxx, xxx xxxx xxxx xxxx xxxxx xx xxxx xxxxx xxxxxx. Xxxxxxx, xx xxx'xx xxxxxxxx x xxxxxx xxxxx xxx xxxx xxxxxxx xx xxxxxxx xxxxxx, xxxxx xxxxxxx xxxxx xxx xx x xxxxxxxx xxx xx xxxxxxx xxxxx xxx xx xxxxxxx xx xxxx xxxxx. Xxxxxx xxxx xxx xxxx xxxxx xx xxxxxxxxxx xxx xxxxxxx xxx xxxxx xx xxxx xxxx xx xx.
+コマンド インターフェイスを設計する際、最も重要な決定はユーザーが何を実行できる必要があるかという点です。 たとえば、フォト アプリを作成している場合、ユーザーには写真を編集するツールが必要です。 ただし、写真を表示できるソーシャル メディア アプリを作成している場合は、イメージ編集の優先度は高く可能性があるので、スペース節約のために編集ツールを省略できます。 ユーザーが達成する目的を決定して、それに役立つツールを提供します。
 
-Xxx xxxxxxxxxxxxxxx xxxxx xxx xx xxxx xxx xxxxx xxxxxxxxxxxx xxx xxxx xxx, xxx [Xxxx xxxx xxx](https://msdn.microsoft.com/library/windows/apps/hh465427.aspx).
+アプリの適切なインターフェイスを計画する際の推奨事項については、「[アプリの計画](https://msdn.microsoft.com/library/windows/apps/hh465427.aspx)」をご覧ください。
 
-## <span id="Use_the_right_command_element_for_the_interaction">
-            </span>
-            <span id="use_the_right_command_element_for_the_interaction">
-            </span>
-            <span id="USE_THE_RIGHT_COMMAND_ELEMENT_FOR_THE_INTERACTION">
-            </span>Xxx xxx xxxxx xxxxxxx xxxxxxx xxx xxx xxxxxxxxxxx
+## <span id="Use_the_right_command_element_for_the_interaction"></span><span id="use_the_right_command_element_for_the_interaction"></span><span id="USE_THE_RIGHT_COMMAND_ELEMENT_FOR_THE_INTERACTION"></span>操作に適切なコマンド要素を使用
 
 
-Xxxxx xxx xxxxx xxxxxxxx xxx xxx xxxxx xxxxxxxxxxxx xxx xxxx xxx xxxxxxxxxx xxxxxxx xx xxx xxxx xxxxx xxxxxxxxx xx xxx xxx xxx xxxx xxxxx xxxxxxxxx xx xxxxxxxxx. Xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxx x xxxxx xxx xx xxxxxxx xxxxxxxx, xx xxx xxxx xx xxxxxxxx, xxxx xxx xxx xxx xx xxxx xxx. Xxxx'x x xxxx xx xxxx xx xxx xxxx xxxxxx xxxxxxxx xxx x xxxxxxx xx xxx xxxxxxxxxxxx xxxx xxxxxx.
+適切な操作に適切な要素を使うことは、直感的に使うことができるアプリとなるか、使いにくくてややこしいアプリとなるかの分かれ目になります。 ユニバーサル Windows プラットフォーム (UWP) には、アプリで使うことができる多くのコマンド要素セットがコントロールの形で用意されています。 最も一般的ないくつかのコントロールの一覧と、それによって可能になる操作の概要を以下に示します。
 
-| Xxxxxxxx              | Xxxxxxxx                                                                                                                                                                                                            | Xxxxxxxxxxx                                                                                                                                        |
+| カテゴリ              | 要素                                                                                                                                                                                                            | 操作                                                                                                                                        |
 |-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxx               | [Xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465470)                                                                                                                                                     | Xxxxxxxx xx xxxxxxxxx xxxxxx, xxxx xx xxxxxxx xx xxxxx, xxxxxxxxxx xx xxxxxx xx x xxxxxx, xxxxxxxxxx xxxx xxxx.                                    |
-| Xxxx xxx xxxx xxxxxxx | [xxxxxxxx xxxx xxxxxx, xxxxxxxx xxxx, xxxx xxxxxx, xxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465466)                                                                                                                 | Xxxxxxx xxx xxxx xx xxxx xxx xxxxxx xxxx xxx xxxx xxxx, xxxx xx xxxx xxxxxxxx x xxxxxx xxxx xxxxxxxxxx xxxx xx xxxxxxx xx xxxxx.                   |
-| Xxxxx                 | [xxxx-xxxx xxxx, xxxx xxx, xxxx xxxx xxx xxxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt186889)                                                                                                                                              | Xxxxxxxx xxxxx xx x xxxxxxxxxxx xxxx xx x xxxx. Xxx xxxxx xxxxxxxx xx xxx xxxxx xxxxxx x xxxxx xxxx x xxxx xx xxx xxxxxxxx xx xxxxxx xx xxxxxxxxx. |
-| Xxxxxxxxxx xxxx xxxxx | [Xxxx-xxxxxxx xxx](https://msdn.microsoft.com/library/windows/apps/dn997762)                                                                                                                                                                    | Xxxxx xxxxx xxxx xxxx xxxxxxxx xxxx xx xxxxxxxxxx xxxxxxx xx xxxxxxxxx xxxxxxxxxxx xx xxxx xxxx.                                                   |
-| Xxxxxxxxx xxxxxxxx    | [xxxxx xxx](https://msdn.microsoft.com/library/windows/apps/hh700393), [xxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh700395), [xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465475) | Xxxx xxx xxxx xxxxxx xxxxxxx xxxxxxxxx xxxxxxx, xxxx xx xxxx xxxxxxxxxx x xxxxxx xx xxxxxxxxxxx xxx xxxxxxxx.                                      |
+| ボタン               | [ボタン](https://msdn.microsoft.com/library/windows/apps/hh465470)                                                                                                                                                     | メール送信、ダイアログでのアクションの確認、フォーム データの送信など、即座にアクションをトリガーします。                                    |
+| 日付/時刻選択ツール | [カレンダーの日付選択ツール、カレンダー ビュー、日付の選択、時刻の選択](https://msdn.microsoft.com/library/windows/apps/hh465466)                                                                                                                 | クレジット カードの有効期限を入力したり、アラームを設定したりするときなどに、ユーザーが日時情報を表示して変更できるようにします。                   |
+| リスト                 | [ドロップダウン リスト、リスト ボックス、リスト ビューとグリッド ビュー](https://msdn.microsoft.com/library/windows/apps/mt186889)                                                                                                                                              | 対話型のリストまたはグリッド内に項目を表示します。 これらの要素を使うと、ユーザーは新着の一覧からムービーを選んだり、在庫を管理したりすることができます。 |
+| テキスト予測入力 | [自動提案ボックス](https://msdn.microsoft.com/library/windows/apps/dn997762)                                                                                                                                                                    | 入力候補を表示して、ユーザーがデータを入力したりクエリを実行したりする時間を節約できるようにします。                                                   |
+| 選択コントロール    | [チェック ボックス](https://msdn.microsoft.com/library/windows/apps/hh700393)、[ラジオ ボタン](https://msdn.microsoft.com/library/windows/apps/hh700395)、[トグル スイッチ](https://msdn.microsoft.com/library/windows/apps/hh465475) | アンケートに入力するときや、アプリ設定を構成するときなど、ユーザーがさまざまなオプションを選ぶことができるようにします。                                      |
 
  
 
-(Xxx x xxxxxxxx xxxx, xxx [Xxxxxxxx xxx XX xxxxxxxx](https://dev.windows.com/design/controls-patterns)
+(全一覧については、「[コントロールと UI 要素](https://dev.windows.com/design/controls-patterns)」をご覧ください)。
 
-## <span id="_________Place_commands_on_the_right_surface_______">
-            </span>
-            <span id="_________place_commands_on_the_right_surface_______">
-            </span>
-            <span id="_________PLACE_COMMANDS_ON_THE_RIGHT_SURFACE_______">
-            </span> Xxxxx xxxxxxxx xx xxx xxxxx xxxxxxx
+## <span id="_________Place_commands_on_the_right_surface_______"></span><span id="_________place_commands_on_the_right_surface_______"></span><span id="_________PLACE_COMMANDS_ON_THE_RIGHT_SURFACE_______"></span>適切なサーフェスへのコマンドの配置
 
 
-Xxx xxx xxxxx xxxxxxx xxxxxxxx xx x xxxxxx xx xxxxxxxx xx xxxx xxx, xxxxxxxxx xxx xxx xxxxxx (xxx xxxxxxx xxxx xx xxxx xxx) xx xxxxxxx xxxxxxx xxxxxxxx xxxx xxx xxx xx xxxxxxx xxxxxxxxxx, xxxx xx xxxxxxx xxxx, xxxxx, xxxxxxx, xxx xxxxxxx. Xxxx xxx xxxx xxxxxxx xxxxxxxxxxxxxxx xxx xxxxxxx xxxxxxxx:
+アプリのキャンバス (アプリのコンテンツ領域) や、コマンド バー、メニュー、ダイアログ、ポップアップなどコマンド コンテナーとして機能する特殊なコマンド要素を含む、アプリの多くのサーフェスにコマンド要素を配置できます。 コマンドを配置する際の一般的な推奨事項は次のとおりです。
 
--   Xxxxxxxx xxxxxxxx, xxx xxxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxx xx xxx xxx'x xxxxxx, xxxxxx xxxx xxxxxx xxxxxxxx xxxx xxx xx xxx xxxxxxx. Xxx xxxxxxx, xx xxx xxxxxx xxx, xxx xxxxx xxxxxxxxx xxxxx xxxxxxxxx xx xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xx x xxxx xx xxx xxxxxx, xxxxxx xxxx xx xxxxxxxxx xxx xxxxxxxx xxx xxxxx Xx xx Xxxx xxxxxxx xxxxxxx.
--   Xxxxxxxxx, xxxxx xxxxxxxx xx xxx xx xxxxx XX xxxxxxxx xx xxxxx xxx'x xxxxxxxxxx xxxxxxx xxxxxxxx:
+-   できる限り、コンテンツを操作するコマンドを用意せず、アプリのキャンバス上でユーザーがコンテンツを直接操作できるようにします。 たとえば、旅行アプリで旅行計画を編集するときに、リスト内のアクティビティを上下に移動するコマンド ボタンを使うのではなく、キャンバスのリスト上でアクティビティをドラッグ アンド ドロップできるようにします。
+-   ユーザーが直接コンテンツを操作できない場合は、コマンドを次の UI サーフェスのいずれかに配置します。
 
-    -   Xx xxx [xxxxxxx xxx](https://msdn.microsoft.com/library/windows/apps/hh465302): Xxx xxxxxx xxx xxxx xxxxxxxx xx xxx xxxxxxx xxx, xxxxx xxxxx xx xxxxxxxx xxxxxxxx xxx xxxxx xxxx xxxx xx xxxxxx.
-    -   Xx xxx xxx'x xxxxxx: Xx xxx xxxx xx xx x xxxx xx xxxx xxxx xxx x xxxxxx xxxxxxx, xxx xxx xxxxxxx xxxxxxxx xxx xxxx xxxxxxx xxxxxxxx xx xxx xxxxxx. Xxxxx xxxxxx xx xxxx xxx xx xxxxx xxxxxxxx.
-    -   Xx x [xxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/hh465308): Xxx xxx xxx xxxxxxx xxxxx xxx xxxxxxxxx xxxxxxx (xxxx xx xxx, xxxx, xxx xxxxx), xx xxx xxxxxxxx xxxx xxxxx xx xxxxxxx xxxx xxxxxx xx xxxxxxxx (xxxx xxxxxx x xxxx xxx xx x xxxxxxxx xx x xxx).
+    -   [コマンド バー](https://msdn.microsoft.com/library/windows/apps/hh465302): ほとんどのコマンドはコマンド バーに配置してください。コマンドを整理しやすくなり、アクセスしやすくなります。
+    -   アプリのキャンバス上: 目的が 1 つに限られているページまたはビューは、その目的用のコマンドをキャンバス上に直接配置できます。 しかし、このようなコマンドはなるべく作らないでください。
+    -   [ショートカット メニュー](https://msdn.microsoft.com/library/windows/apps/hh465308): クリップボードの操作 (切り取り、コピー、貼り付けなど) や、選択できないコンテンツに実行するコマンド (地図の目的の位置にピンを追加するなど) に使うことができます。
 
-Xxxx'x x xxxx xx xxx xxxxxxx xxxxxxxx xxxx Xxxxxxx xxxxxxxx xxx xxxxxxxxxxxxxxx xxx xxxx xx xxx xxxx.
+Windows に用意されたコマンド サーフェスの一覧と、それらを使用する際の推奨事項を以下に示します。
 
 <table>
 <colgroup>
@@ -74,106 +59,102 @@ Xxxx'x x xxxx xx xxx xxxxxxx xxxxxxxx xxxx Xxxxxxx xxxxxxxx xxx xxxxxxxxxxxxxxx 
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">サーフェス</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Xxx xxxxxx (xxxxxxx xxxx)
+<td align="left">アプリのキャンバス (コンテンツ領域)
 <p><img src="images/content-area.png" alt="The content area of an app" /></p></td>
-<td align="left"><p>Xx x xxxxxxx xx xxxxxxxx xxx xx xxxxxxxxxx xxxxxx xxx xxx xxxx xx xxxxxxxx xxx xxxx xxxxxxxxx, xxx xx xx xxx xxxxxx (xxx xxxxxxx xxxx xx xxxx xxx). Xxxxxxx xxx xxx xxx xxxxxxxx xxxx (xx xx) xxx xxxxxxx xxxx xxxxxx, xxxxxxx xxxxxxxx xx xxx xxxxxx xxxxx xxxx xxxx xxx xxxxxxx xx xxx.</p>
-<p>Xxxxxxx, xxxxxx xxx xxxxxxxx xxx xxx xx xxx xxxxxx xxxxxxxxx. Xxx xxxx xxxxxxxx xx xxx xxx xxxxxx xxxxx xx xxxxxxxx xxxxxx xxxxx xxx xxx xxxxxxxxx xxx xxxx. Xx xxx xxxxxxx xxx'x xx xxxxxxxxxx xxxx, xxxxxxxx xxxxxxx xx xx xxxxxxx xxxxxxx xxxxxxx, xxxx xx xxxx xx xxx xxxxxxx xxx'x &xxxx;Xxxx&xxxx; xxxx.</p></td>
+<td align="left"><p>あるコマンドが重要で、ユーザーが中心的なシナリオを完了するうえで常に必要な場合は、そのコマンドをキャンバス (アプリのコンテンツ領域) に配置できます。 コマンドは影響を与えるオブジェクトの近く (またはその上) に配置できるため、キャンバスにコマンドを配置すると使い方がわかりやすくなります。</p>
+<p>ただし、キャンバスに配置するコマンドは慎重に選んでください。 アプリのキャンバスにコマンドが多すぎると、貴重な画面のスペースがなくなり、ユーザーを困惑させる可能性があります。 それほど頻繁に使わないコマンドの場合、メニューやコマンド バーの [その他] 領域など、別のコマンド サーフェスに配置することを検討してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[Command bar](https://msdn.microsoft.com/library/windows/apps/hh465302)
 <p><img src="images/controls-appbar-icons-200.png" alt="Example of a command bar with icons" /></p></td>
-<td align="left"><p>Xxxxxxx xxxx xxxxxxx xxxxx xxxx xxxx xxxxxx xx xxxxxxx. Xxx xxx xxx x xxxxxxx xxx xx xxxx xxxxxxxx xx xxxxxxx xxxx xxx xxxxxxxx xx xxx xxxx'x xxxxxxx, xxxx xx x xxxxx xxxxxxxxx xx xxxxxxx xxxx.</p>
-<p>Xxxxxxx xxxx xxx xx xxxxxx xx xxx xxx xx xxx xxxxxx, xx xxx xxxxxx xx xxx xxxxxx, xx xx xxxx xxx xxx xxx xxxxxx xx xxx xxxxxx. Xxxx xxxxxx xx x xxxxx xxxxxxx xxx xxxxx xxx xxxxxxx xxxx xxx xxx xxxxxxx xxx:</p>
+<td align="left"><p>コマンド バーを使うと、ユーザーはアクションに簡単にアクセスできます。 コマンド バーは、ユーザーのコンテキストに固有のコマンドまたはオプション (写真の選択や描画モードなど) を表示するためにも使うことができます。</p>
+<p>コマンド バーは画面の上部または画面の下部、あるいは画面の上部と下部の両方に配置できます。 写真編集アプリのこの設計は、コンテンツ領域とコマンド バーを示しています。</p>
 <p><img src="images/commands-appcanvas-example.png" alt="A photo app" /></p>
-<p>Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxx xxxx, xxx xxx [Guidelines for command bar](https://msdn.microsoft.com/library/windows/apps/hh465302) xxxxxxx.</p></td>
+<p>コマンド バーについて詳しくは、「[ Guidelines for command bar](https://msdn.microsoft.com/library/windows/apps/hh465302)」をご覧ください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">[Menus and context menus](../controls-and-patterns/dialogs-popups-menus.md)
 <p><img src="images/controls-contextmenu-singlepane.png" alt="Example of a single-pane context menu" /></p></td>
-<td align="left"><p>Xxxxxxxxx xx xx xxxx xxxxxxxxx xx xxxxx xxxxxxxx xxxxxxxx xxxx x xxxxxxx xxxx. Xxxxx xxx xxx xxxxxxx xxxx xxxxxxx xxxx xxxx xxxxx. Xxxxx xxx xxxxxxx xxxxxxxxxxx xxxxxxxx.</p>
-<p>Xxxxxxx xxxxx xxx xxxxxxx xxxxxxxxx xx xxxxxxxx-xxxx xxxxxxx xxx xxxxxxx xxxxxx xx xxxxxxxxx xxxxxxxx xxxx xxx xxxx xxxxxxxx xx xxxxxxx xxxxxxxx.</p>
-<p>Xxxxxxx xxxxx xxx xxx xxx xxxxxxxxx xxxxx xx xxxxxxxx xxx xxxxxxx xxxxxxxxx:</p>
+<td align="left"><p>複数のコマンドをコマンド メニューにグループ化することで効率性が高まる場合があります。 メニューを使うと、より狭い場所により多くのオプションを表示できます。 メニューには対話的なコントロールを含めることができます。</p>
+<p>ショートカット メニューは、よく使うアクションへのショートカットを提供し、特定のコンテキストにのみ関連するセカンダリ コマンドにアクセスできるようにします。</p>
+<p>ショートカット メニューは、次の種類のコマンドとコマンド シナリオを対象としています。</p>
 <ul>
-<li>Xxxxxxxxxx xxxxxxx xx xxxx xxxxxxxxxx, xxxx xx Xxxx, Xxx, Xxxxx, Xxxxx Xxxxxxxx, xxx xx xx.</li>
-<li>Xxxxxxxx xxx xx xxxxxx xxxx xxxxx xx xx xxxxx xxxx xxx xxxx xxx'x xx xxxxxxxx xx xxxxxxxxx xxxxxxxxx.</li>
-<li>Xxxxxxx xxxxxxxxx xxxxxxxx.</li>
-<li>Xxxxxx xxxxxxxx.</li>
+<li>選んだテキストに対する状況依存の操作 (コピー、切り取り、貼り付け、スペル チェックなど)。</li>
+<li>操作する必要があるものの、選択することも、他の方法で指定することもできないオブジェクトのためのコマンド。</li>
+<li>クリップボード コマンドの表示。</li>
+<li>カスタム コマンド。</li>
 </ul>
-<p>Xxxx xxxxxxx xxxxx xxx xxxxxx xxx x xxxxxx xxx xxxx xxxx x xxxxxxx xxxx xx xxxxxx xxx xxxxx, xxxxxxxx x xxxxx, xx xxxxxx xxxxxxx xxxxx.</p>
+<p>この例は、ショートカット メニューを使って経路の変更、経路のブックマーク登録、別の電車の選択を行う地下鉄アプリのデザインを示しています。</p>
 <p><img src="images/subway/uap-subway-ak-8in-dashboard-200.png" alt="A context menu in an subway app" /></p>
-<p>Xxx xxxx xxxx xxxxx xxxxxxx xxxxx, xxx xxx [Guidelines for context menu](https://msdn.microsoft.com/library/windows/apps/hh465308) xxxxxxx.</p></td>
+<p>ショートカット メニューについて詳しくは、「[ Guidelines for context menu](https://msdn.microsoft.com/library/windows/apps/hh465308)」をご覧ください。</p></td>
 </tr>
 <tr class="even">
 <td align="left">[Dialog controls](../controls-and-patterns/dialogs-popups-menus.md)
 <p><img src="images/controls-dialog-twobutton-200.png" alt="Example of a simple two-button dialog" /></p></td>
-<td align="left"><p>Xxxxxxx xxx xxxxx XX xxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxx xxxxxxxxxxx. Xx xxxx xxxxx, xxxxxxx xxxxx xxxxxxxxxxxx xxxx xxx xxx xxxxxx xxxxx xxxxx xxxxxxxxxx xxxxxxxxx, xxx xxxxx xxxxxxx xxxx xxxx xx xxxxxx xxxx xxx xxxx.</p>
-<p>Xxxxxxx xxx xx xxxxxxxxxx xxx xxxxxx xxxx xx xxxx xx xxxxxxx xxxxxxxxxx. Xxx xxxx xxxx, xxx xxx [When to confirm or undo actions](#whentoconfirm) xxxxxxx.</p></td>
+<td align="left"><p>ダイアログは、状況依存のアプリ情報を表示するモーダル UI オーバーレイです。 ほとんどの場合、ダイアログは明示的に閉じられまでアプリ ウィンドウの操作を妨げます。また、多くの場合、ユーザーに操作を要求します。</p>
+<p>ダイアログは、煩わしく感じることがあるため、特定の状況でのみ使用してください。 詳しくは、「[When to confirm or undo actions](#whentoconfirm)」セクションをご覧ください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left">[Flyout](../controls-and-patterns/dialogs-popups-menus.md)
 <p><img src="images/controls-flyout-default-200.png" alt="Image of default flyout" /></p></td>
-<td align="left"><p>X xxxxxxxxxxx xxxxxxxxxx xxxxx xxxx xxxxxxxx XX xxxxxxx xx xxxx xxx xxxx xx xxxxx. Xxx x xxxxxx xx:</p>
+<td align="left"><p>ユーザーが現在操作している内容に関係する UI を表示する軽量な状況依存のポップアップです。 ポップアップは、次の目的で使います。</p>
 <p></p>
 <ul>
-<li>Xxxx x xxxx.</li>
-<li>Xxxx xxxx xxxxxx xxxxx xx xxxx.</li>
-<li>Xxx xxx xxxx xx xxxxxxx xx xxxxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xxx xxx.</li>
+<li>メニューを表示する。</li>
+<li>項目の詳細を表示する。</li>
+<li>アプリの操作をブロックしないでユーザーにアクションの確認を求める。</li>
 </ul>
-<p>Xxxxxxx xxx xx xxxxxxxxx xx xxxxxxx xx xxxxxxxx xxxxxxxxx xxxxxxx xxx xxxxxx. Xxx xxxx xxxx xxxxx xxxxxx xxxxxxxx, xxx xxx [Dialogs, menus, and popups](../controls-and-patterns/dialogs-popups-menus.md) xxxxxxx.</p></td>
+<p>ポップアップは、その外側をタップするかクリックすることで閉じることができます。 ポップアップ コントロールについて詳しくは、「[ Dialogs, menus, and popups](../controls-and-patterns/dialogs-popups-menus.md)」をご覧ください。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="whentoconfirm">
-            </span>
-            <span id="WHENTOCONFIRM">
-            </span>Xxxx xx xxxxxxx xx xxxx xxxxxxx
+## <span id="whentoconfirm"></span><span id="WHENTOCONFIRM"></span>アクションを確認または元に戻すタイミング
 
 
-Xx xxxxxx xxx xxxx-xxxxxxxx xxx xxxx xxxxxxxxx xx xxx xx xxxxxx xxx xxxxxxx xxx xxxx xx, xx xxxx xxxxx, xxx xxxxx xxxx xxxxxxx xx xxxxxx xxxx xxxx xxxx xxxx'x. Xxxx xxx xxx xxxx xx xxxxx xxxxxxxxxx xx xxxxxxxxx xxx xxxx xx xxxxxxx xx xxxxxx, xx xx xxxxxxxxx x xxx xx xxxxxxx xxxxxx xxxxxxx.
+適切に設計されたユーザー インターフェイスであっても、ユーザーがどれほど慎重に作業したとしても、すべてのユーザーは必ず意図しないアクションを実行します。 ユーザーにアクションの確認を求めたり、最近のアクションを元に戻す方法を用意したりして、アプリでこのような状況に対処することができます。
 
--   Xxx xxxxxxx xxxx xxx'x xx xxxxxx xxx xxxx xxxxx xxxxxxxxxxxx, xx xxxxxxxxx xxxxx x xxxxxxxxxxxx xxxxxx. Xxxxxxxx xx xxxx xxxxxxx xxxxxxx:
-    -   Xxxxxxxxxxx x xxxx
-    -   Xxx xxxxxx x xxxx xxxxxx xxxxxxx
-    -   Xxxxxxxxxx xxxxxxxxx xxxxxxxx xx x xxxx xx xxxx
-    -   Xxxxxx x xxxxxxxx (xxxxxx xxx xxxx xxxx xxx xx xxxxxxxxx x xxxxxxxxxxxx)
-    -   Xxxxxxxxxx x xxxx, xxxx xx xxxxxxx xx xxx xxxxxxxxx
--   Xxx xxxxxxx xxxx xxx xx xxxxxx, xxxxxxxx x xxxxxx xxxx xxxxxxx xx xxxxxxx xxxxxx. Xxxxxxxx xx xxxx xxxxxxx xxxxxxx:
-    -   Xxxxxxxx x xxxx
-    -   Xxxxxxxx xx xxxxx (xxx xxxxxxxxxxx)
-    -   Xxxxxxxxx xxxxxxx xx xxxxxxx xxxx
-    -   Xxxxxxxx x xxxx
+-   元に戻すことができず、実行結果が重大な操作の場合は、確認ダイアログ ボックスの使用をお勧めします。 このような操作の例は、次のとおりです。
+    -   ファイルを上書きする
+    -   ファイルを保存せずに終了する
+    -   ファイルやデータを完全に削除することを確認する
+    -   購入する (確認メッセージを表示しないことをユーザーが選択した場合を除く)
+    -   何かへのサインアップなどのフォームを送信する
+-   元に戻すことができる操作の場合は、通常、単純な "元に戻す" コマンドを提供すれば十分です。 このような操作の例は、次のとおりです。
+    -   ファイルを削除する
+    -   メールを削除する (完全には削除しない)
+    -   コンテンツを変更する、またはテキストを編集する
+    -   ファイル名を変更する
 
-**Xxx**  Xx xxxxxxx xx xxx xxxx xxxx xxx xxxx xxxxxxxxxxxx xxxxxxx; xxxx xxx xx xxxx xxxxxxx xxxx xxx xxxx xxxxx x xxxxxxx, xxx xxxx xxx x xxxxxxxxx xxxxxxxx xxx xxxx xx xxxxxx xx xxxxxxx xx xxxxxx xxxxxxxxxxxxx.
+**ヒント:** アプリで使う確認ダイアログの量に注意してください。ユーザーが間違えたときはとても役に立ちますが、ユーザーが意図的にアクションを実行しようとしているときは邪魔になります。
 
  
 
-## <span id="_________Optimize_for_specific_input_types_______">
-            </span>
-            <span id="_________optimize_for_specific_input_types_______">
-            </span>
-            <span id="_________OPTIMIZE_FOR_SPECIFIC_INPUT_TYPES_______">
-            </span> Xxxxxxxx xxx xxxxxxxx xxxxx xxxxx
+## <span id="_________Optimize_for_specific_input_types_______"></span><span id="_________optimize_for_specific_input_types_______"></span><span id="_________OPTIMIZE_FOR_SPECIFIC_INPUT_TYPES_______"></span>特定の入力タイプの最適化
 
 
-Xxx xxx [Xxxxxxxxxxx xxxxxx](../input-and-devices/input-primer.md) xxx xxxx xxxxxx xx xxxxxxxxxx xxxx xxxxxxxxxxx xxxxxx x xxxxxxxx xxxxx xxxx xx xxxxxx.
+特定の入力の種類やデバイスを中心としたユーザー エクスペリエンスの最適化について詳しくは、「[操作の基本情報](../input-and-devices/input-primer.md)」をご覧ください。
 
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx XXX xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、UWP アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

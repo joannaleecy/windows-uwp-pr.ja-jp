@@ -1,19 +1,19 @@
 ---
-xx.xxxxxxx: YYYXYXYY-XXYY-YYXY-YYXY-YXYXYYYXYXYY
-xxxxx: Xxxxxxxx xxxx XXXX xxxxxx
-xxxxxxxxxxx: Xxxxxxx XXXX xxxxxx xx xxxxxxxxx xxxxxxx xx xxxxxx xx xxxx-xxxxxxxxx xxx x xxxxxxx XX. Xxxx xxx xxxx xxxxxx xxx xxx xx xx xxxxxxx XXXX xxxxxx xxxxx xxx xxxx xxxx xxx xxxxxx xxxxxxxxxx xxx xxxx xxx.
+ms.assetid: 569E8C27-FA01-41D8-80B9-1E3E637D5B99
+title: Optimize your XAML markup
+description: Parsing XAML markup to construct objects in memory is time-consuming for a complex UI. Here are some things you can do to improve XAML markup parse and load time and memory efficiency for your app.
 ---
-# Xxxxxxxx xxxx XXXX xxxxxx
+# Optimize your XAML markup
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxxx XXXX xxxxxx xx xxxxxxxxx xxxxxxx xx xxxxxx xx xxxx-xxxxxxxxx xxx x xxxxxxx XX. Xxxx xxx xxxx xxxxxx xxx xxx xx xx xxxxxxx XXXX xxxxxx xxxxx xxx xxxx xxxx xxx xxxxxx xxxxxxxxxx xxx xxxx xxx.
+Parsing XAML markup to construct objects in memory is time-consuming for a complex UI. Here are some things you can do to improve XAML markup parse and load time and memory efficiency for your app.
 
-Xx xxx xxxxxxx, xxxxx xxx XXXX xxxxxx xxxx xx xxxxxx xx xxxx xxxx xxx xxxx xxx xxxx xxxxxxx XX. Xxxxxxx xxx xxxxxx xx xxxx xxxxxxx xxxx xxx xxxxxxx xx xxxxxxxx xxxxxxx xxxx xx xxxxx'x xxxx. Xx x xxxx xxxxxxxxxx x xxxx xxxxxxx xx x xxxxxxxx xxxxxxx xx x xxxxxxxxx xxxx, xxxx xxx xxxxxxxxx xxxxxx xxxx xxxx, xxx.
+At app startup, limit the XAML markup that is loaded to only what you need for your initial UI. Examine the markup in your initial page and confirm it contains nothing that it doesn't need. If a page references a user control or a resource defined in a different file, then the framework parses that file, too.
 
-Xx xxxx xxxxxxx, xxxxxxx XxxxxxxXxxx.xxxx xxxx xxx xxxxxxxx xxxx XxxxxxxXxxxxxxxXxxxxxxxxx.xxxx, xxx xxxxx xx XxxxxxxXxxxxxxxXxxxxxxxxx.xxxx xxxx xx xxxxxx xx xxxxxxx.
+In this example, because InitialPage.xaml uses one resource from ExampleResourceDictionary.xaml, the whole of ExampleResourceDictionary.xaml must be parsed at startup.
 
-**XxxxxxxXxxx.xxxx.**
+**InitialPage.xaml.**
 
 ```xml
 <Page x:Class="ExampleNamespace.InitialPage" ...> 
@@ -31,7 +31,7 @@ Xx xxxx xxxxxxx, xxxxxxx XxxxxxxXxxx.xxxx xxxx xxx xxxxxxxx xxxx XxxxxxxXxxxxxxx
 </Page>
 ```
 
-**XxxxxxxXxxxxxxxXxxxxxxxxx.xxxx.**
+**ExampleResourceDictionary.xaml.**
 
 ```xml
 <ResourceDictionary>
@@ -42,9 +42,9 @@ Xx xxxx xxxxxxx, xxxxxxx XxxxxxxXxxx.xxxx xxxx xxx xxxxxxxx xxxx XxxxxxxXxxxxxxx
 </ResourceDictionary>
 ```
 
-Xx xxx xxx x xxxxxxxx xx xxxx xxxxx xxxxxxxxxx xxxx xxx, xxxx xxxxxxx xx xx Xxx.xxxx xx x xxxx xxxxxxxx, xxx xxxxxx xxxxxxxxxxx. Xxx Xxx.xxxx xx xxxxxx xx xxx xxxxxxx xx xxx xxxxxxxx xxxx xx xxxx xx xxxx xxx xxxx (xxxxxx xxxx xxxx xx xxx xxxxxxx xxxx) xxxxxx xx xxx xxxx xxx xxxx'x xxxxx xxxxxxxxx. Xxxx xxxxxxx-xxxxxxx xxxxx Xxx.xxxx xxxxxxxxxx xxxxxxxxx xxxx xxx xxxx xx xxxx xxx xxxx (xxxx'x xxx xxx xxxxxxx xxxx). Xxxx xxxxxxxxxx xxxxxxxxx xxx xxxxxxx xxxx.
+If you use a resource on many pages throughout your app, then storing it in App.xaml is a good practice, and avoids duplication. But App.xaml is parsed at app startup so any resource that is used in only one page (unless that page is the initial page) should be put into the page's local resources. This counter-example shows App.xaml containing resources that are used by only one page (that's not the initial page). This needlessly increases app startup time.
 
-**XxxxxxxXxxx.xxxx.**
+**InitialPage.xaml.**
 
 ```xml
 <Page ...>  <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->   
@@ -54,7 +54,7 @@ Xx xxx xxx x xxxxxxxx xx xxxx xxxxx xxxxxxxxxx xxxx xxx, xxxx xxxxxxx xx xx Xxx.
 </Page> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-**XxxxxxXxxx.xxxx.**
+**SecondPage.xaml.**
 
 ```xml
 <Page ...>  <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -64,7 +64,7 @@ Xx xxx xxx x xxxxxxxx xx xxxx xxxxx xxxxxxxxxx xxxx xxx, xxxx xxxxxxx xx xx Xxx.
 </Page> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-**Xxx.xxxx**
+**App.xaml**
 
 ```xml
 <Application ...> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -77,15 +77,15 @@ Xx xxx xxx x xxxxxxxx xx xxxx xxxxx xxxxxxxxxx xxxx xxx, xxxx xxxxxxx xx xx Xxx.
 </Application> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-Xxx xxx xx xxxx xxx xxxxx xxxxxxx-xxxxxxx xxxx xxxxxxxxx xx xx xxxx `SecondPageTextBrush` xxxx XxxxxxXxxx.xxxx xxx xx xxxx `ThirdPageTextBrush` xxxx XxxxxXxxx.xxxx. `InitialPageTextBrush` xxx xxxxxx xx Xxx.xxxx xxxxxxx xxxxxxxxxxx xxxxxxxxx xxxx xx xxxxxx xx xxx xxxxxxx xx xxx xxxx.
+The way to make the above counter-example more efficient is to move `SecondPageTextBrush` into SecondPage.xaml and to move `ThirdPageTextBrush` into ThirdPage.xaml. `InitialPageTextBrush` can remain in App.xaml because application resources must be parsed at app startup in any case.
 
-## Xxxxxxxx xxxxxxx xxxxx
+## Minimize element count
 
-Xxxxxxxx xxx XXXX xxxxxxxx xx xxxxxxx xx xxxxxxxxxx xxxxx xxxxxxx xx xxxxxxxx, xxx xxx xxxx xxxx xxx xxx xxx xxx xxxxxx xxxxxx xx xxxxx xxx xxxxxx xxxxxx xx xxxxxxxx xx xxxxxxx xxx xxxxxxx xxx xxxx.
+Although the XAML platform is capable of displaying large numbers of elements, you can make your app lay out and render faster by using the fewest number of elements to achieve the visuals you want.
 
--   Xxxxxx xxxxxx xxxx x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227512) xxxxxxxx xx xxxxx'x xx xxxx xx xxx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371) xx xxxxx xx x Xxxxx xxxx xx xxxxx xx.
+-   Layout panels have a [**Background**](https://msdn.microsoft.com/library/windows/apps/BR227512) property so there's no need to put a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) in front of a Panel just to color it.
 
-**Xxxxxxxxxxx.**
+**Inefficient.**
 
 ```xml
 <Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -93,19 +93,19 @@ Xxxxxxxx xxx XXXX xxxxxxxx xx xxxxxxx xx xxxxxxxxxx xxxxx xxxxxxx xx xxxxxxxx, x
     </Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-**Xxxxxxxxx.**
+**Efficient.**
 
 ```xml
 <Grid Background="Black"/>
 ```
 
--   Xx xxx xxxxx xxx xxxx xxxxxx-xxxxx xxxxxxx xxxxxx xxxxx, xx xxxxxxx xxxx xxxxxxxxx xx xxx xx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242752) xxxxxxx xxxxxxx. Xxxxxx-xxxxx xxxxxxxx xxx xx xxxx xxxxxxxxx xxxxxxx xxx XXX xxxx xxxxxx xxxx xxxxxxxxxx xxxxxxx xxxxxxxxxx. Xxx xxxxx xxxx xxxxx xx xx xxxxxxx xxxx xxxx.
+-   If you reuse the same vector-based element enough times, it becomes more efficient to use an [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) element instead. Vector-based elements can be more expensive because the CPU must create each individual element separately. The image file needs to be decoded only once.
 
-## Xxxxxxxxxxx xxxxxxxx xxxxxxx xxxx xxxx xxx xxxx xxxx xxx xxxxxxxx
+## Consolidate multiple brushes that look the same into one resource
 
-Xxx XXXX xxxxxxxx xxxxx xx xxxxx xxxxxxxx-xxxx xxxxxxx xx xxxx xxxx xxx xx xxxxxx xx xxxxx xx xxxxxxxx. Xxx XXXX xxxxxx xxxxxx xxxx xx x xxxxx xxxxxxxx xx xxx xxxxx xx xxxxxx xx xxx xxxx xx x xxxxx xxxxxxxx xx xxxxxxx. Xxx xxxxxxx xxxx xxxx [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962) xx xxxxxxxxxxx, xxx xxx xxxx xx xxxx xxxxxx xxx xxxx xxxxxxxxx xxxx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210068).
+The XAML platform tries to cache commonly-used objects so that they can be reused as often as possible. But XAML cannot easily tell if a brush declared in one piece of markup is the same as a brush declared in another. The example here uses [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) to demonstrate, but the case is more likely and more important with [**GradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210068).
 
-**Xxxxxxxxxxx.**
+**Inefficient.**
 
 ```xml
 <Page ... > <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -124,9 +124,9 @@ Xxx XXXX xxxxxxxx xxxxx xx xxxxx xxxxxxxx-xxxx xxxxxxx xx xxxx xxxx xxx xx xxxxx
 </Page> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-Xxxx xxxxx xxx xxxxxxx xxxx xxx xxxxxxxxxx xxxxxx: `"Orange"` xxx `"#FFFFA500"` xxx xxx xxxx xxxxx. Xx xxx xxx xxxxxxxxxxx, xxxxxx xxx xxxxx xx x xxxxxxxx. Xx xxxxxxxx xx xxxxx xxxxx xxx xxx xxxx xxxxx, xxxx xx xx Xxx.xxxx.
+Also check for brushes that use predefined colors: `"Orange"` and `"#FFFFA500"` are the same color. To fix the duplication, define the brush as a resource. If controls in other pages use the same brush, move it to App.xaml.
 
-**Xxxxxxxxx.**
+**Efficient.**
 
 ```xml
 <Page ... >
@@ -141,14 +141,14 @@ Xxxx xxxxx xxx xxxxxxx xxxx xxx xxxxxxxxxx xxxxxx: `"Orange"` xxx `"#FFFFA500"` 
 </Page>
 ```
 
-## Xxxxxxxx xxxxxxxxxxx
+## Minimize overdrawing
 
-Xxxxxxxxxxx xx xxxxx xxxx xxxx xxx xxxxxx xx xxxxx xx xxx xxxx xxxxxx xxxxxx. Xxxx xxxx xxxxx xx xxxxxxxxx x xxxxx-xxx xxxxxxx xxxx xxxxxxxx xxx xxx xxxxxx xx xxxxxxxx xxxxxxx xxxxx.
+Overdrawing is where more than one object is drawn in the same screen pixels. Note that there is sometimes a trade-off between this guidance and the desire to minimize element count.
 
--   Xx xx xxxxxxx xxx'x xxxxxxx xxxxxxx xx'x xxxxxxxxxxx xx xxxxxx xxxxxx xxxxx xxxxxxxx, xxx xx'x xxx xxxxxxxxxxxx xx xxxxxx, xxxx xxxxxx xx. Xx xxx xxxxxxx xx xxx xxxxxxx xx xxx xxxxxxx xxxxxx xxxxx xxx xx xx xxxxxxx xx xxxxx xxxxxx xxxxxx xxxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208992) xx **Xxxxxxxxx** xx xxx xxxxxxx xxxxxx xxx xxxxxx xxx xxxxx xx **Xxxxxxx** xx xxx xxxxxxxxxxx xxxxxx. Xxxxx xxxx xx xxxxxxxxxx xx xxxx xxxxxxxxx: xx xxxxxxx, xxx xxxxx x xxxxxxxx xxx xx xxx xxxxx xx xxxxxx xxxxxx xx xxxx xxx xxxxxxx xx xxx xxxxxxx.
--   Xxx x xxxxxxxxx xxxxxxx xxxxxxx xx xxxxxxxx xxxxxxxx xxxxxxxx xx xxxxxx xx xxxxxx. Xx xxxx xxxxxxx, xxx xxxxxx xx x xxx-xxxxx xxxxx xxxxx xxx xxx xxxx xx xxxxx (xxxx xxx xxxxxxxxxx xx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704)) xxx xxx xxxxxx xxxx xx xxxx (xxxx xxx xxxx-xxxxxxxxxxx xxxxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371) xxxxx-xxxxxxx xxxx xxx xxxxx xxxxxxxxxx xx xxx **Xxxx**). Xxxx, YYY% xx xxx xxxxxx xxxxxxxxx xx xxxxxxx xxx xxxxxx xxx xxxxx xxxxxx.
+-   If an element isn't visible because it's transparent or hidden behind other elements, and it's not contributing to layout, then delete it. If the element is not visible in the initial visual state but it is visible in other visual states then set [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) to **Collapsed** on the element itself and change the value to **Visible** in the appropriate states. There will be exceptions to this heuristic: in general, the value a property has in the major of visual states is best set locally on the element.
+-   Use a composite element instead of layering multiple elements to create an effect. In this example, the result is a two-toned shape where the top half is black (from the background of the [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)) and the bottom half is gray (from the semi-transparent white [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) alpha-blended over the black background of the **Grid**). Here, 150% of the pixels necessary to achieve the result are being filled.
 
-**Xxxxxxxxxxx.**
+**Inefficient.**
     
 ```xml
     <Grid Background="Black"> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -160,7 +160,7 @@ Xxxxxxxxxxx xx xxxxx xxxx xxxx xxx xxxxxx xx xxxxx xx xxx xxxx xxxxxx xxxxxx. Xx
     </Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-**Xxxxxxxxx.**
+**Efficient.**
 
 ```xml
     <Grid>
@@ -173,9 +173,9 @@ Xxxxxxxxxxx xx xxxxx xxxx xxxx xxx xxxxxx xx xxxxx xx xxx xxxx xxxxxx xxxxxx. Xx
     </Grid>
 ```
 
--   X xxxxxx xxxxx xxx xxxx xxx xxxxxxxx: xx xxxxx xx xxxx, xxx xx xxx xxx xxxxx xxxxxxxx. Xx xx xxxxxxx xxxxxxx xxxx xx x-xxxxx xx xxxxxxx xxxxxxxx xx xxxx xxxx x xxxxxx xxxxx xx xxxxx xxxx xxx xxxx xx xxxxx xxxx xxxx: xxxxxxx xx xxx xxxx xxxxx xx xxxxxx xxx xxx xxxxxxxx. Xxxx'x xx xxxxxxx.
+-   A layout panel can have two purposes: to color an area, and to lay out child elements. If an element further back in z-order is already coloring an area then a layout panel in front does not need to paint that area: instead it can just focus on laying out its children. Here's an example.
 
-**Xxxxxxxxxxx.**
+**Inefficient.**
 
 ```xml
     <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -188,7 +188,7 @@ Xxxxxxxxxxx xx xxxxx xxxx xxxx xxx xxxxxx xx xxxxx xx xxx xxxx xxxxxx xxxxxx. Xx
     </GridView> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-**Xxxxxxxxx.**
+**Efficient.**
 
 ```xml
     <GridView Background="Blue">  
@@ -200,11 +200,11 @@ Xxxxxxxxxxx xx xxxxx xxxx xxxx xxx xxxxxx xx xxxxx xx xxx xxxx xxxxxx xxxxxx. Xx
     </GridView> 
 ```
 
-Xx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704) xxx xx xx xxx-xxxxxxxx xxxx xxx x xxxxxxxxxx xxxxx xx xxxxxxxxxxx xx xx.
+If the [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) has to be hit-testable then set a background value of transparent on it.
 
--   Xxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209253) xxxxxxx xx xxxx x xxxxxx xxxxxx xx xxxxxx. Xx xxxx xxxxxxx, x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704) xx xxxx xx x xxxxxxxxx xxxxxx xxxxxx x [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/BR209683). Xxx xxx xxx xxxxxx xx xxx xxxxxx xxxx xxx xxxxxxxxx.
+-   Use a [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209253) element to draw a border around an object. In this example, a [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) is used as a makeshift border around a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683). But all the pixels in the center cell are overdrawn.
 
-**Xxxxxxxxxxx.**
+**Inefficient.**
 
 ```xml
     <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
@@ -223,7 +223,7 @@ Xx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704) xxx 
     </Grid> <!-- NOTE: EXAMPLE OF INEFFICIENT CODE; DO NOT COPY-PASTE.-->
 ```
 
-**Xxxxxxxxx.**
+**Efficient.**
 
 ```xml
     <Border BorderBrush="Blue" BorderThickness="5" Width="300" Height="45">
@@ -231,15 +231,15 @@ Xx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704) xxx 
     </Border>
 ```
 
--   Xx xxxxx xx xxxxxxx. Xxx xxxxxxxxxxx xxxxxxxx xxxx xxxxxxx (xxxxxxxx xxxxxxxxxxxx) xx xxxxxxxx xxxxxxx xxxxxx xxxx xxxxxxx’x xxxxxx xxxxxx xxx xxxxx xxxxxxxxxxx.
+-   Be aware of margins. Two neighboring elements will overlap (possibly accidentally) if negative margins extend into another’s render bounds and cause overdrawing.
 
-Xxx [**XxxxxXxxxxxxx.XxXxxxxxxxXxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701823) xx x xxxxxx xxxxxxxxxx. Xxx xxx xxxx xxxxxxx xxxxx xxxxx xxxx xxx xxxxx'x xxxxx xxxx xx xxx xxxxx.
+Use [**DebugSettings.IsOverdrawHeatMapEnabled**](https://msdn.microsoft.com/library/windows/apps/Hh701823) as a visual diagnostic. You may find objects being drawn that you weren't aware were in the scene.
 
-## Xxxxx xxxxxx xxxxxxx
+## Cache static content
 
-Xxxxxxx xxxxxx xx xxxxxxxxxxx xx x xxxxx xxxx xxxx xxxx xxxxxxxxxxx xxxxxxxx. Xx xxx xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR228084) xx **XxxxxxXxxxx** xx xxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911) xxxx xxxxxxxx xxx xxxxxxxxx xxxxx xxxx xxx xxxxxxxx xxxxxxx xxx xxxxxxx xx x xxxxxx xxxx xxx xxxx xxxx xxxx xxxxxx xxxx xxxxx xxxxxxx xx xxxxxxxxxxx.
+Another source of overdrawing is a shape made from many overlapping elements. If you set [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084) to **BitmapCache** on the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) that contains the composite shape then the platform renders the element to a bitmap once and then uses that bitmap each frame instead of overdrawing.
 
-**Xxxxxxxxxxx.**
+**Inefficient.**
 
 ```xml
 <Canvas Background="White">
@@ -249,13 +249,13 @@ Xxxxxxx xxxxxx xx xxxxxxxxxxx xx x xxxxx xxxx xxxx xxxx xxxxxxxxxxx xxxxxxxx. Xx
 </Canvas>
 ```
 
-![Xxxx xxxxxxx xxxx xxxxx xxxxx xxxxxxx](images/solidvenn.png)
+![Venn diagram with three solid circles](images/solidvenn.png)
 
-Xxx xxxxx xxxxx xx xxx xxxxxx, xxx xxxx'x x xxx xx xxx xxxxxxxxx xxxxxxx. Xxxxxx xxx xxxxxxxxx xxxxxx xxxxxxx xx xxxxxxxx.
+The image above is the result, but here's a map of the overdrawn regions. Darker red indicates higher amounts of overdraw.
 
-![Xxxx xxxxxxx xxxx xxxxx xxxxxxxxxxx xxxxx](images/translucentvenn.png)
+![Venn diagram that shows overlapping areas](images/translucentvenn.png)
 
-**Xxxxxxxxx.**
+**Efficient.**
 
 ```xml
 <Canvas Background="White" CacheMode="BitmapCache">
@@ -265,22 +265,26 @@ Xxx xxxxx xxxxx xx xxx xxxxxx, xxx xxxx'x x xxx xx xxx xxxxxxxxx xxxxxxx. Xxxxxx
 </Canvas>
 ```
 
-Xxxx xxx xxx xx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR228084). Xxx'x xxx xxxx xxxxxxxxx xx xxx xx xxx xxx-xxxxxx xxxxxxx xxxxxxx xxx xxxxxx xxxxx xxxx xxxxxx xxxx xx xx xxxxxxxxxxx xxxxx xxxxx, xxxxxxxxx xxx xxxxxxx.
+Note the use of [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR228084). Don't use this technique if any of the sub-shapes animate because the bitmap cache will likely need to be regenerated every frame, defeating the purpose.
 
-## XxxxxxxxXxxxxxxxxxxx
+## ResourceDictionaries
 
-XxxxxxxxXxxxxxxxxxxx xxx xxxxxxxxx xxxx xx xxxxx xxxx xxxxxxxxx xx x xxxxxxxx xxxxxx xxxxx. Xxxxxxxxx xxxx xxxx xxx xxxxx xx xxxxxxxxx xx xxxxxxxx xxxxxx. Xxx xxxxxxx, xxxxxx, xxxxxxx, xxxxxxxxx, xxx xx xx. Xx xxxxxxx, xx xxxx xxxxxxxxx XxxxxxxxXxxxxxxxxxxx xx xxx xxxxxxxxxxx xxxxxxxxx xxxxxx xxxx'xx xxxxx xxx. Xxx xxxxx xxx xxx xxxxxx xxxxx xxx xxxx xx xx x xxxxxx xxxxxxx.
+ResourceDictionaries are generally used to store your resources at a somewhat global level. Resources that your app wants to reference in multiple places. For example, styles, brushes, templates, and so on. In general, we have optimized ResourceDictionaries to not instantiate resources unless they're asked for. But there are few places where you need to be a little careful.
 
-**Xxxxxxxx xxxx x:Xxxx**. Xxx xxxxxxxx xxxx x:Xxxx xxxx xxx xxxxxxx xxxx xxx xxxxxxxx xxxxxxxxxxxx, xxx xxxxxxx xx xxxx xx xxxxxxxxxxxx xx xxxx xx xxx XxxxxxxxXxxxxxxxxx xx xxxxxxx. Xxxx xxxxxxx xxxxxxx x:Xxxx xxxxx xxx xxxxxxxx xxxx xxxx xxx xxxxx xxxxx xxxxxx xx xxxx xxxxxxxx, xx xxx xxxxxxxx xxxxx xx xxxxxx xxxxxxxxx xx xxxxxx x xxxxxxxxx xx.
+**Resource with x:Name**. Any resource with x:Name will not benefit from the platform optimization, but instead it will be instantiated as soon as the ResourceDictionary is created. This happens because x:Name tells the platform that your app needs field access to this resource, so the platform needs to create something to create a reference to.
 
-**XxxxxxxxXxxxxxxxxxxx xx x XxxxXxxxxxx**. XxxxxxxxXxxxxxxxxxxx xxxxxxx xxxxxx xx x XxxxXxxxxxx xxxxx x xxxxxxx. Xxx xxxxxxxx xxxx xxxxxx x xxxx xx xxxx x XxxxxxxxXxxxxxxxxx xxx xxxxx xxxxxxxx xx xxx XxxxXxxxxxx. Xx xxx xxxx x XxxxXxxxxxx xxxx xx xxxx x xxx, xxxx xxxx xxx XxxxxxxxXxxxxxxxxx xxx xx xxx XxxxXxxxxxx xxx xxx xx xxx xxxx xxxxx.
+**ResourceDictionaries in a UserControl**. ResourceDictionaries defined inside of a UserControl carry a penalty. The platform will create a copy of such a ResourceDictionary for every instance of the UserControl. If you have a UserControl that is used a lot, then move the ResourceDictionary out of the UserControl and put it the page level.
 
-## Xxx XXXY
+## Use XBF2
 
-XXXY xx x xxxxxx xxxxxxxxxxxxxx xx XXXX xxxxxx xxxx xxxxxx xxx xxxx-xxxxxxx xxxxx xx xxxxxxx. Xx xxxx xxxxxxxxx xxxx xxxxxx xxx xxxx xxx xxxx xxxxxxxx, xxx xxxxxx "xxxx-xxxx" xxx XXXX xxxxx xx xxxxxxx xxxx xxx xxxxxx xxxxxxxx xxxxx, xxx xxxxxxx XXX, XxxxxxxxXxxxxxxxxx, Xxxxxx, xxx xx xx. Xx xx xxxxxxxxxx xxxxxx-xxxxxx xx xxxxx xx xx xxxx xxxxxxxxx xxx xxxxxxx xxx xxxxxxx x XXXX Xxxx. Xx xxxxxxxx, xx xxxxxxx xxx xxxx xxxxxxxxx xx xxxxxx XXXX xxxxx xx xx xxxx. XXXY xx x xxxx xxxxxxx xxxxxxxxxxxxxx xxx xx xxx xxxxxx xxxx xxxxxxxxx xx xxxxxxxxxxx XXXX/XXXY xxxxx xx xx xx YY%. Xxx xxxxxxx, xxx xxxxx-xx Xxxxxx xxx xxx xxxxxx x YY% xxxxxxxxx xxxxx xxxxxxxxxx xx XXXY xxxxxxxx xxxx xxxxxx ~Yxx xx XXXY xxxxxx xx ~YYYxx xx XXXY xxxxxx. Xx xxxx xxxx xxxx xxxx xxxxxxx xxxxxxxx xxxx YY xx YY% xx XXX xxx YY xx YY% xx XxxYY xxxx.
+XBF2 is a binary representation of XAML markup that avoids all text-parsing costs at runtime. It also optimizes your binary for load and tree creation, and allows "fast-path" for XAML types to improve heap and object creation costs, for example VSM, ResourceDictionary, Styles, and so on. It is completely memory-mapped so there is no heap footprint for loading and reading a XAML Page. In addition, it reduces the disk footprint of stored XAML pages in an appx. XBF2 is a more compact representation and it can reduce disk footprint of comparative XAML/XBF1 files by up to 50%. For example, the built-in Photos app saw around a 60% reduction after conversion to XBF2 dropping from around ~1mb of XBF1 assets to ~400kb of XBF2 assets. We have also seen apps benefit anywhere from 15 to 20% in CPU and 10 to 15% in Win32 heap.
 
-XXXX xxxxx-xx xxxxxxxx xxx xxxxxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxx xxxxx XXXY-xxxxxxx. Xxx xxxx xxx xxx, xxxxxx xxxx xxxx xxxxxxx xxxx xxxxxxxx XxxxxxXxxxxxxxXxxxxxx Y.Y xx xxxxx.
+XAML built-in controls and dictionaries that the framework provides are already fully XBF2-enabled. For your own app, ensure that your project file declares TargetPlatformVersion 8.2 or later.
 
-Xx xxxxx xxxxxxx xxx xxxx XXXY, xxxx xxxx xxx xx x xxxxxx xxxxxx; xxx YYxx xxx YYxx xxxxx xxx YY YY xx xxx xxxx XXXY.
+To check whether you have XBF2, open your app in a binary editor; the 12th and 13th bytes are 00 02 if you have XBF2.
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

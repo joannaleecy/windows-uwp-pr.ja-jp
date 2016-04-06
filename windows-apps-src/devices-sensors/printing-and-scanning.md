@@ -1,26 +1,30 @@
 ---
-xx.xxxxxxx: YYYYYXYX-XYYY-YYYY-YYYX-YYXYYYYYYXYX
-xxxxx: Xxxxxxxx xxx xxxxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxx xxx xxxx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx.
+ms.assetid: 95481C7E-E905-4477-955B-90D292634E2E
+title: Printing and scanning
+description: This section describes how to print and scan from your Universal Windows app.
 ---
-# Xxxxxxxx xxx xxxxxxxx
+# Printing and scanning
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxx xxx xxxx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx.
+This section describes how to print and scan from your Universal Windows app.
 
-| Xxxxx | Xxxxxxxxxxx | 
+| Topic | Description | 
 |-------|-------------|
-| [Xxxxx XXX/XXX xxxx xxxxxxxxxx](epson-esc-pos-with-formatting.md) | Xxxxx xxx xx xxx xxx XXX/XXX xxxxxxx xxxxxxxx xx xxxxxx xxxx, xxxx xx xxxx xxx xxxxxx xxxx xxxxxxxxxx, xxx xxxx Xxxxx xx Xxxxxxx xxxxxxx. |
-| [Xxxxx xxxx xxxx xxx](print-from-your-app.md) | Xxxxx xxx xx xxxxx xxxxxxxxx xxxx x Xxxxxxxxx Xxxxxxx xxx. Xxxx xxxxx xxxx xxxxx xxx xx xxxxx xxxxxxxx xxxxx. |
-| [Xxxxxxxxx xxx xxxxx xxxxxxx XX](customize-the-print-preview-ui.md) | Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxxxxxx xxx xxxxx xxxxxxx xxx xxxxxxxx xx xxx xxxxx xxxxxxx XX. |
-| [Xxxx xxxx xxxx xxx](scan-from-your-app.md) | Xxxxx xxxx xxx xx xxxx xxxxxxx xxxx xxxx xxx xx xxxxx x xxxxxxx, xxxxxx, xx xxxx-xxxxxxxxxx xxxx xxxxxx.|
+| [Epson ESC/POS with formatting](epson-esc-pos-with-formatting.md) | Learn how to use the ESC/POS command language to format text, such as bold and double size characters, for your Point of Service printer. |
+| [Print from your app](print-from-your-app.md) | Learn how to print documents from a Universal Windows app. This topic also shows how to print specific pages. |
+| [Customize the print preview UI](customize-the-print-preview-ui.md) | This section describes how to customize the print options and settings in the print preview UI. |
+| [Scan from your app](scan-from-your-app.md) | Learn here how to scan content from your app by using a flatbed, feeder, or auto-configured scan source.|
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxx xxxxxxxxxx xxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Xxxxx YYYY xxxxx: Xxxxxxxxxx xxxx xxxx xxxxx xx Xxxxxxx YY](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [XXX xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [Design guidelines for printing](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

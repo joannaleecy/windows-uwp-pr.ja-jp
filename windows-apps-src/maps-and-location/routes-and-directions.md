@@ -1,50 +1,50 @@
 ---
-xxxxx: Xxxxxxx xxxxxx xxx xxxxxxxxxx xx x xxx
-xxxxxxxxxxx: Xxxxxxx xxxxxx xxx xxxxxxxxxx, xxx xxxxxxx xxxx xx xxxx xxx.
-xx.xxxxxxx: XXXYXYYX-YXYY-YYXY-YYXX-YYYXXYYXXXYY
+title: Display routes and directions on a map
+description: Request routes and directions, and display them in your app.
+ms.assetid: BBB4C23A-8F10-41D1-81EA-271BE01AED81
 ---
 
-# Xxxxxxx xxxxxx xxx xxxxxxxxxx xx x xxx
+# Display routes and directions on a map
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxxx xxxxxx xxx xxxxxxxxxx, xxx xxxxxxx xxxx xx xxxx xxx.
+Request routes and directions, and display them in your app.
 
-**Xxx** Xx xxxxx xxxx xxxxx xxxxx xxxx xx xxxx xxx, xxxxxxxx xxx xxxxxxxxx xxxxxx xxxx xxx [Xxxxxxx-xxxxxxxxx-xxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=619979) xx XxxXxx.
+**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
--   [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-**Xxx**  Xx xxxxxxx xxx'x x xxxx xxxxxxx xx xxxx xxx, xxxxxxxx xxxxxxxxx xxx Xxxxxxx Xxxx xxx xxxxxxx. Xxx xxx xxx xxx `bingmaps:`, `ms-drive-to:`, xxx `ms-walk-to:` XXX xxxxxxx xx xxxxxx xxx Xxxxxxx Xxxx xxx xx xxxxxxxx xxxx xxx xxxx-xx-xxxx xxxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxx xxx Xxxxxxx Xxxx xxx](https://msdn.microsoft.com/library/windows/apps/mt228341).
+**Tip**  If mapping isn't a core feature of your app, consider launching the Windows Maps app instead. You can use the `bingmaps:`, `ms-drive-to:`, and `ms-walk-to:` URI schemes to launch the Windows Maps app to specific maps and turn-by-turn directions. For more info, see [Launch the Windows Maps app](https://msdn.microsoft.com/library/windows/apps/mt228341).
 
  
 
-## Xx xxxxx xx XxxXxxxxXxxxxx xxxxxxx
+## An intro to MapRouteFinder results
 
 
-Xxxx'x xxx xxx xxxxxxx xxx xxxxxx xxx xxxxxxxxxx xxx xxxxxxx:
+Here's how the classes for routes and directions are related:
 
--   Xxx [**XxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636938) xxxxx xxx xxxxxxx xxxx xxx xxxxxx xxx xxxxxxxxxx.
--   Xxxxx xxxxxxx xxxxxx x [**XxxXxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636939).
--   Xxx [**XxxXxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636939) xxxxxxxx x [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636937) xxxxxx. Xxxxxx xxxx xxxxxx xxxxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636940) xxxxxxxx xx xxx **XxxXxxxxXxxxxxXxxxxx**.
--   Xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636937) xxxxxxxx x xxxxxxxxxx xx [**XxxXxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn636955) xxxxxxx. Xxxxxx xxxx xxxxxxxxxx xxxxxxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn636973) xxxxxxxx xx xxx **XxxXxxxx**.
--   Xxxx [**XxxXxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn636955) xxxxxxxx x xxxxxxxxxx xx [**XxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636961) xxxxxxx. Xxxxxx xxxx xxxxxxxxxx xxxxxxx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636959) xxxxxxxx xx xxx **XxxXxxxxXxx**.
+-   The [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) class has methods that get routes and directions.
+-   These methods return a [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939).
+-   The [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) contains a [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) object. Access this object through the [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) property of the **MapRouteFinderResult**.
+-   The [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) contains a collection of [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) objects. Access this collection through the [**Legs**](https://msdn.microsoft.com/library/windows/apps/dn636973) property of the **MapRoute**.
+-   Each [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) contains a collection of [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) objects. Access this collection through the [**Maneuvers**](https://msdn.microsoft.com/library/windows/apps/dn636959) property of the **MapRouteLeg**.
 
-## Xxxxxxx xxxxxxxxxx
+## Display directions
 
 
-Xxx x xxxxxxx xx xxxxxxx xxxxx xxx xxxxxxxxxx xx xxxxxxx xxx xxxxxxx xx xxx [**XxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636938) xxxxx—xxx xxxxxxx, [**XxxXxxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636943) xx [**XxxXxxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636953). Xxx [**XxxXxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636939) xxxxxx xxxxxxxx x [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636937) xxxxxx xxxx xxx xxx xxxxxx xxxxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636940) xxxxxxxx.
+Get a driving or walking route and directions by calling the methods of the [**MapRouteFinder**](https://msdn.microsoft.com/library/windows/apps/dn636938) class—for example, [**GetDrivingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636943) or [**GetWalkingRouteAsync**](https://msdn.microsoft.com/library/windows/apps/dn636953). The [**MapRouteFinderResult**](https://msdn.microsoft.com/library/windows/apps/dn636939) object contains a [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) object that you can access through its [**Route**](https://msdn.microsoft.com/library/windows/apps/dn636940) property.
 
-Xxxx xxx xxxxxxx x xxxxx, xxx xxx xxxxxxx xxx xxxxxxxxx xxxxxx:
+When you request a route, you can specify the following things:
 
--   Xxx xxx xxxxxxx x xxxxx xxxxx xxx xxx xxxxx xxxx, xx xxx xxx xxxxxxx x xxxxxx xx xxxxxxxxx xx xxxxxxx xxx xxxxx.
--   Xxx xxx xxxxxxx xxxxxxxxxxxxx - xxx xxxxxxx, xxxxxxxx xxx xxxxxxxx.
--   Xxx xxx xxxxxxx xxxxxxxxxxxx - xxx xxxxxxx, xxxxx xxxxxxxx.
+-   You can provide a start point and end point only, or you can provide a series of waypoints to compute the route.
+-   You can specify optimizations - for example, minimize the distance.
+-   You can specify restrictions - for example, avoid highways.
 
-Xxx xxxxxxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636937) xxx xxxxxxxxxx xxxx xxxxxxx xxx xxxx xx xxxxxxxx xxx xxxxx, xxx xxxxxx xx xxx xxxxx, xxx xxx xxxxxxxxxx xx [**XxxXxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn636955) xxxxxxx xxxx xxxxxxx xxx xxxx xx xxx xxxxx. Xxxx **XxxXxxxxXxx** xxxxxx xxxxxxxx x xxxxxxxxxx xx [**XxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636961) xxxxxxx. Xxx **XxxXxxxxXxxxxxxx** xxxxxx xxxxxxxx xxxxxxxxxx xxxx xxx xxx xxxxxx xxxxxxx xxx [**XxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn636964) xxxxxxxx.
+The computed [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) has properties that provide the time to traverse the route, the length of the route, and the collection of [**MapRouteLeg**](https://msdn.microsoft.com/library/windows/apps/dn636955) objects that contain the legs of the route. Each **MapRouteLeg** object contains a collection of [**MapRouteManeuver**](https://msdn.microsoft.com/library/windows/apps/dn636961) objects. The **MapRouteManeuver** object contains directions that you can access through its [**InstructionText**](https://msdn.microsoft.com/library/windows/apps/dn636964) property.
 
-**Xxxxxxxxx**  Xxx xxxx xxxxxxx x xxxx xxxxxxxxxxxxxx xxx xxxxxx xxx xxx xxx xxx xxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxx x xxxx xxxxxxxxxxxxxx xxx](authentication-key.md).
+**Important**  You must specify a maps authentication key before you can use map services. For more info, see [Request a maps authentication key](authentication-key.md).
 
  
 
@@ -103,7 +103,7 @@ private async void button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Xxxx xxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxx xx xxx `tbOutputText` xxxx xxx.
+This example displays the following results to the `tbOutputText` text box.
 
 ``` syntax
 Total estimated time (minutes) = 18.4833333333333
@@ -121,12 +121,12 @@ Turn right onto James St.
 You have reached your destination.
 ```
 
-## Xxxxxxx xxxxxx
+## Display routes
 
 
-Xx xxxxxxx x [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636937) xx x [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637004), xxxxxxxxx x [**XxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn637122) xxxx xxx **XxxXxxxx**. Xxxx, xxx xxx **XxxXxxxxXxxx** xx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637047) xxxxxxxxxx xx xxx **XxxXxxxxxx**.
+To display a [**MapRoute**](https://msdn.microsoft.com/library/windows/apps/dn636937) on a [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004), construct a [**MapRouteView**](https://msdn.microsoft.com/library/windows/apps/dn637122) with the **MapRoute**. Then, add the **MapRouteView** to the [**Routes**](https://msdn.microsoft.com/library/windows/apps/dn637047) collection of the **MapControl**.
 
-**Xxxxxxxxx**  Xxx xxxx xxxxxxx x xxxx xxxxxxxxxxxxxx xxx xxxxxx xxx xxx xxx xxx xxxxxxxx xx xxx xxx xxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxx x xxxx xxxxxxxxxxxxxx xxx](authentication-key.md).
+**Important**  You must specify a maps authentication key before you can use map services or the map control. For more info, see [Request a maps authentication key](authentication-key.md).
 
  
 
@@ -175,16 +175,20 @@ private async void ShowRouteOnMap()
 }
 ```
 
-Xxxx xxxxxxx xxxxxxxx xxx xxxxxxxxx xx x [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637004) xxxxx **XxxXxxxXxxxx**.
+This example displays the following on a [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) named **MapWithRoute**.
 
-![xxx xxxxxxx xxxx xxxxx xxxxxxxxx.](images/routeonmap.png)
+![map control with route displayed.](images/routeonmap.png)
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxx Xxxx Xxxxxxxxx Xxxxxx](https://www.bingmapsportal.com/)
-* [XXX xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Xxxxxx xxxxxxxxxx xxx xxxx](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Xxxxx YYYY xxxxx: Xxxxxxxxxx Xxxx xxx Xxxxxxxx Xxxxxx Xxxxx, Xxxxxx, xxx XX xx Xxxx Xxxxxxx Xxxx](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [XXX xxxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,59 +1,61 @@
 ---
-Xxxxxxxxxxx: Xxxxxx xxxxx xxxx xxxxxxxxx xxx xxxxxxxxxx xx xxxx xxx.
-xxxxx: Xxxxxxxxxx xxx xxxxxxxxxx xxxx
-xx.xxxxxxx: XYYYXXYY-YYYX-YYYY-YYXX-YYXYXYXXXYYY
+Description: アプリのジオフェンスについては、次のベスト プラクティスに従ってください。
+title: ジオフェンス アプリのガイドライン
+ms.assetid: F817FA55-325F-4302-81BE-37E6C7ADC281
 ---
 
-# Xxxxxxxxxx xxx xxxxxxxxxx xxxx
+# ジオフェンス アプリのガイドライン
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**Xxxxxxxx xxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/dn263587)
--   [**Xxxxxxxxxx xxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/br225534)
+-   [**Geofence クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn263587)
+-   [**Geolocator クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/br225534)
 
-Xxxxxx xxxxx xxxx xxxxxxxxx xxx [**xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263744) xx xxxx xxx.
+アプリの [** ジオフェンス **](https://msdn.microsoft.com/library/windows/apps/dn263744) については、次のベスト プラクティスに従ってください。
 
-## Xxxxxxxxxxxxxxx
+## 推奨事項
 
 
--   Xx xxxx xxx xxxx xxxx xxxxxxxx xxxxxx xxxx x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263587) xxxxx xxxxxx, xxxxx xxx xxxxxxxx xxxxxx xxxxxx xxxxxxxx xxx xxxxxxxx.
-    -   Xx xxx xxx xxxxx'x xxxxxxxxx xxxx xxxxxxxx xxxxxx, xxx xxx xxxxxx xxx xxxx xx xxxxxxx xx xxx xxxxxxxx xxxxxx xxx xxx xx xxx xxxxxxxx.
-    -   Xx xxxxxxxx xxxxxx xxx'x xxxxxxxx, xxxxx xxxxxxxxx xxx xxxxx xxxxxxxx xxx xxx xxxxxxxxxx xxxxxxxx xxxxxx.
--   Xxxxxx xxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxxxxxxx xx xxxxxxxx xxx xxxx xxxxx xxx xxxxxxx xxxxxxxx xxxx x xxxxxxxx xxxxx xxxxxxxxx xxxxxxx xx xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263660) xx **Xxxxxx** xxxxx. Xxx [Xxxxxxxx xxx xxxx xxxxx xxx xxxxxxx xxxxxxxx](#timestamp) xxxxx xxx xxxx xxxxxxxxxxx.
--   Xxxxxx xxxxxxxxxx xx xxxxxx xxxxx xxxx x xxxxxx xxx'x xxxxxx xxxxxxxx xxxx, xxx xxxxxx xxx xxxx xx xxxxxxxxx. Xxxxxxxx xxxx xxx xx xxxxxxxxxxx xxxxxxx xxxxxxxxxxx xxx xxxxxx xxx, xxx xxxxxx xxxxx'x xxxxxxx x XXX xxxxx, xxx XXX xxxxxx xx xxxxxxx, xx xxx Xx-Xx xxxxxx xxx'x xxxxxx xxxxxx.
--   Xx xxxxxxx, xx xxx'x xxxxxxxxx xx xxxxxx xxx xxxxxxxx xxxxxx xx xxx xxxxxxxxxx xxx xxxxxxxxxx xx xxx xxxx xxxx. Xxxxxxx, xx xxxx xxx xxxxx xx xxxxxx xxx xxxxxxxx xxxxxx xx xxxx xxx xxxxxxxxxx xxx xxxxxxxxxx:
+-   [
+            **Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) イベントが発生したときにインターネット アクセスが必要な場合は、ジオフェンスを作成する前にインターネット アクセスを確認します。
+    -   アプリで現在インターネットにアクセスできない場合、ジオフェンスをセットアップする前にユーザーに対してインターネットに接続するようメッセージを表示することができます。
+    -   インターネット アクセスが不可能である場合は、ジオフェンスの位置確認に必要な電力を消費しないようにしてください。
+-   ジオフェンス イベントが [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) 状態または **Exited** 状態に対する変更を示す場合、タイム スタンプと現在の位置をチェックしてジオフェンス通知の関連性を確認します。 詳しくは、次の「[タイム スタンプと現在位置の確認](#timestamp)」をご覧ください。
+-   デバイスで位置情報にアクセスできない場合は、ケースを管理する例外を作成し、必要に応じてユーザーに通知します。 アクセス許可がオフになっている、デバイスに GPS 機能が付いていない、GPS 信号がブロックされている、Wi-Fi 信号が弱いなどの理由で、位置情報が利用できない場合があります。
+-   一般に、フォアグラウンドとバックグラウンドの両方で同時にジオフェンス イベントをリッスンする必要はありません。 ただし、アプリがフォアグラウンドとバックグラウンドの両方で同時にジオフェンス イベントをリッスンする必要がある場合は、次の手順を行います。
 
-    -   Xxxx xxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263633) xxxxxx xx xxxx xxx xx xx xxxxx xxx xxxxxxxx.
-    -   Xxxxxxxxxx xxxx xxxxxxxxxx xxxxx xxxxxxxx xxxx xxxx xxx xxx'x xxxxxxx xx xxx xxxx xxx xx-xxxxxxxx xxxx xx xxxxxxx xxxxxxx xxxxx.
+    -   [
+            **ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) メソッドを呼び出して、イベントが発生したかどうかを確認します。
+    -   ユーザーからアプリが見えなくなったときはフォアグラウンド イベント リスナーの登録を解除し、再び見えるようになったときにもう一度登録します。
 
-    Xxx [Xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxx](#background-and-foreground-listeners) xxx xxxx xxxxxxxx xxx xxxx xxxxxxxxxxx.
+    コード例と詳しい情報については、「[バックグラウンドとフォアグラウンドのリスナー](#background-and-foreground-listeners)」をご覧ください。
 
--   Xxx'x xxx xxxx xxxx YYYY xxxxxxxxx xxx xxx. Xxx xxxxxx xxxxxxxx xxxxxxxx xxxxxxxxx xx xxxxxxxxx xxx xxx, xxx xxx xxxxxxxx xxxx xxx xxxxxxxxxxx xx xxxx xxxxxx xxx xxx'x xxxxxx xxxxx xx xxxxx xx xxxx xxxx YYYY.
--   Xxx'x xxxxxx x xxxxxxxx xxxx x xxxxxx xxxxxxx xxxx YY xxxxxx. Xx xxxx xxx xxxxx xx xxx x xxxxxxxx xxxx x xxxxx xxxxxx, xxxxxx xxxxx xx xxx xxxx xxx xx x xxxxxx xxxx x XXX xxxxx xx xxxxxx xxx xxxx xxxxxxxxxxx.
+-   1 つのアプリに 1000 以上のジオフェンスを使わないでください。 システムは実際にはアプリごとに数千のジオフェンスをサポートしますが、1000 以下のジオフェンスを使用することによってアプリのメモリ使用量を減らしてアプリの高パフォーマンスを維持できます。
+-   半径が 50 m 未満のジオフェンスを作成しないでください。 アプリで小さなジオフェンスを使う必要がある場合は、最高のパフォーマンスを実現するために GPS 機能付きのデバイスでアプリを使うようユーザーに勧めてください。
 
-## Xxxxxxxxxx xxxxx xxxxxxxx
+## その他の使い方のガイダンス
 
-### Xxxxxxxx xxx xxxx xxxxx xxx xxxxxxx xxxxxxxx
+### タイム スタンプと現在位置の確認
 
-Xxxx xx xxxxx xxxxxxxxx x xxxxxx xx xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263660) xx **Xxxxxx** xxxxx, xxxxx xxxx xxx xxxx xxxxx xx xxx xxxxx xxx xxxx xxxxxxx xxxxxxxx. Xxxxxxx xxxxxxx, xxxx xx xxx xxxxxx xxx xxxxxx xxxxxx xxxxxxxxx xx xxxxxx x xxxxxxxxxx xxxx, xxx xxxx xxx xxxxxxxx xxx xxxxxxxxxxxx, xx xxx xxxxxx xxxxx xx xxxxxxx (xx Xxxxxxx), xxx xxxxxx xxxx xxx xxxxx xx xxxxxxxx xxxxxxxxx xx xxx xxxx. Xxx xxxxxxx, xxx xxxxxxxxx xxxxxxxx xxx xxxxx:
+イベントにより [**Entered**](https://msdn.microsoft.com/library/windows/apps/dn263660) または **Exited** 状態に変化したときは、イベントのタイム スタンプと現在位置の両方を確認します。 イベントが実際にユーザーによって処理される時期は、システムでバックグラウンド タスクを起動するリソースが不足していたり、ユーザーが通知に気付かなかったり、デバイスがスタンバイ中であったり (Windows の場合) など、さまざまな要因によって影響を受けます。 たとえば、次のような順序で事態が進む可能性があります。
 
--   Xxxx xxx xxxxxxx x xxxxxxxx xxx xxxxxxxx xxx xxxxxxxx xxx xxxxx xxx xxxx xxxxxx.
--   Xxx xxxx xxxxx xxx xxxxxx xxxxxx xx xxx xxxxxxxx, xxxxxxx xx xxxxx xxxxx xx xx xxxxxxxxx.
--   Xxxx xxx xxxxx x xxxxxxxxxxxx xx xxx xxxx xxxx xxxx xxx xxx xxxxxx xxx xxxxxxxx.
--   Xxx xxxx xxx xxxx xxx xxxx xxx xxxxxx xxx xxxxxxxxxxxx xxxxx YY xxxxxxx xxxxx.
--   Xxxxxx xxxx YY xxxxxx xxxxx, xxx xxxx xxx xxxxx xxxx xxxxxxx xx xxx xxxxxxxx.
+-   アプリがジオフェンスを作成して、ジオフェンスの進入イベントと退出イベントを監視します。
+-   ユーザーがデバイスをジオフェンスの内側に移動して、進入イベントをトリガーします。
+-   ジオフェンスの内側に入ったという通知をアプリがユーザーに送信します。
+-   ユーザーが忙しく、通知に気付いたのは 10 分後でした。
+-   その 10 分間の間に、ユーザーはジオフェンスの外側に移動していました。
 
-Xxxx xxx xxxxxxxxx, xxx xxx xxxx xxxx xxx xxxxxx xxxxxxxx xx xxx xxxx. Xxxx xxx xxxxxxx xxxxxxxx, xxx xxx xxx xxxx xxx xxxx xx xxx xxxx xxxxxxx xx xxx xxxxxxxx. Xxxxxxxxx xx xxx xxxxxxxxxxxxx xx xxxx xxx, xxx xxx xxxx xx xxxxxx xxx xxxx xxxxx.
+タイム スタンプをみれば、アクションが過去に起こったことを判断できます。 現在位置をみれば、ユーザーがジオフェンスの外側に戻ったことが確認できます。 アプリの機能によっては、このイベントを無視することもできます。
 
-### Xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxx
+### バックグラウンドとフォアグラウンドのリスナー
 
-Xx xxxxxxx, xxxx xxx xxxxx'x xxxx xx xxxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263587) xxxxxx xxxx xx xxx xxxxxxxxxx xxx xx x xxxxxxxxxx xxxx xx xxx xxxx xxxx. Xxx xxxxxxxx xxxxxx xxx xxxxxxxx x xxxx xxxxx xxx xxxxx xxxx xxxx xx xx xxx xxx xxxxxxxxxx xxxx xxxxxx xxx xxxxxxxxxxxxx. Xx xxx xx xxx xx xxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxx xxxxxxxxx, xxxxx xx xx xxxxxxxxx xxxxx xxxx xx xxxxxxxxx xxxxx xxx xx xxx xxxx xxxxxx xxxx xxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263633) xxxxxx xx xxxx xxx xx xx xxxxx xxx xxxxxxxx.
+一般に、アプリは、フォアグラウンド タスクとバックグラウンド タスクの両方で同時に [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) イベントをリッスンする必要はありません。 両方が必要になる場合に最も明確な処理方法は、バックグラウンド タスクに通知処理を任せることです。 実際にフォアグラウンドとバックグラウンドの両方でジオフェンス リスナーをセットアップした場合、どちらが最初にトリガーされるか不明であるため、常に [**ReadReports**](https://msdn.microsoft.com/library/windows/apps/dn263633) メソッドを呼び出してイベントが発生したか確認する必要があります。
 
-Xx xxx xxxx xxx xx xxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxx xxxxxxxxx, xxx xxxxxx xxxxxxxxxx xxxx xxxxxxxxxx xxxxx xxxxxxxx xxxxxxxx xxxx xxx xx xxx xxxxxxx xx xxx xxxx xxx xx-xxxxxxxx xxxx xxx xxxx xx xxxxxxx xxxxxxx xxxxx. Xxxx'x xxxx xxxxxxx xxxx xxxx xxxxxxxxx xxx xxx xxxxxxxxxx xxxxx.
+また、フォアグラウンドとバックグラウンドの両方でジオフェンス リスナーをセットアップした場合、ユーザーからアプリが見えなくなるたびにフォアグラウンド イベント リスナーの登録を解除し、再び見えるようになったときにアプリを再登録する必要があります。 表示イベントに登録するコード例を次に示します。
 
 ```csharp
     Windows.UI.Core.CoreWindow coreWindow;    
@@ -67,7 +69,7 @@ Xx xxx xxxx xxx xx xxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxx xxxxxxxxx, xxx xxxxxx
  document.addEventListener("visibilitychange", onVisibilityChanged, false);
 ```
 
-Xxxx xxx xxxxxxxxxx xxxxxxx, xxx xxx xxxx xxxxxx xx xxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxx xx xxxxx xxxx.
+表示が変わると、ここで示したようにフォアグラウンド イベント ハンドラーの有効または無効を切り替えることができます。
 
 ```csharp
 private void OnVisibilityChanged(CoreWindow sender, VisibilityChangedEventArgs args)
@@ -109,17 +111,17 @@ function onVisibilityChanged() {
 }
 ```
 
-### Xxxxxx xxxx xxxxxxxxx
+### ジオフェンスのサイズ変更
 
-Xxxxx XXX xxx xxxxxxx xxx xxxx xxxxxxxx xxxxxxxx xxxx, xxxxxxxxxx xxx xxxx xxx Xx-Xx xx xxxxx xxxxxxxx xxxxxxx xx xxxxxxxxx xxx xxxx'x xxxxxxx xxxxxxxx. Xxx xxxxx xxxxx xxxxx xxxxxxx xxx xxxxxx xxx xxxx xx xxx xxxxxxxxx xxx xxx xxxxxx. Xx xxx xxxxxxxx xxxxx xx xxx, xxxxxxxx xxxxx xxxxxxxxx xxx'x xx xxxxxx. Xx xxxxxxx, xx xx xxxxxxxxxxx xxxx xxx xx xxx xxxxxx x xxxxxxxx xxxx x xxxxxx xxxxxxx xxxx YY xxxxxx. Xxxx, xxxxxxxx xxxxxxxxxx xxxxx xxxx xxx xxxxxxxxxxxx xx Xxxxxxx; xx xxx xxx x xxxxx xxxxxxxx, xxxxx'x x xxxxxxxxxxx xxxx xxx xxxxx xxxx xx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263660) xx **Xxxx** xxxxx xxxxxxxx.
+GPS を使うと最も正確な位置情報が得られますが、ジオフェンスでは Wi-Fi などの位置センサーを使ってユーザーの現在位置を判断することもできます。 しかし、GPS とは別のこういった方法を使うと、作成できるジオフェンスのサイズが影響を受けます。 精度が低い場合、小さなジオフェンスを作成しても役に立ちません。 通常、50 m より半径が小さいジオフェンスを作らないことをお勧めします。 また、Windows ではジオフェンスのバックグラウンド タスクが周期的にしか実行されないため、小さなジオフェンスを使った場合、[**Enter**](https://msdn.microsoft.com/library/windows/apps/dn263660) イベントや **Exit** イベントをまったく認識できない可能性があります。
 
-Xx xxxx xxx xxxxx xx xxx x xxxxxxxx xxxx x xxxxx xxxxxx, xxxxxx xxxxx xx xxx xxxx xxx xx x xxxxxx xxxx x XXX xxxxx xx xxxxxx xxx xxxx xxxxxxxxxxx.
+アプリで小さなジオフェンスを使う必要がある場合は、最高のパフォーマンスを実現するために GPS 機能付きのデバイスでアプリを使うようユーザーに勧めてください。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
 
-* [Xxx xx x xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt219702)
-* [Xxx xxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt219698)
+* [ジオフェンスのセットアップ](https://msdn.microsoft.com/library/windows/apps/mt219702)
+* [現在の位置情報の取得](https://msdn.microsoft.com/library/windows/apps/mt219698)
 <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
 * [UWP location sample (geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
  
@@ -129,4 +131,8 @@ Xx xxxx xxx xxxxx xx xxx x xxxxxxxx xxxx x xxxxx xxxxxx, xxxxxx xxxxx xx xxx xxx
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,272 +1,239 @@
 ---
-xxxxxxxxxxx: Xxxxx xxxxx xxx xxxx xxx xxxx xxxxxxxx (x xxxx-xxxxxxxx) xxxx xxx xxx xxx xx xxxxxxx xxxx xxxxxxxxxx xx x XXXX xxxxxxxxx xxxxx.
-xxxxx: Xxxx xxx xxxx xxxxxxxx xxxxxx
-xx.xxxxxxx: YYYYXXYX-XYYY-YYXX-YYYY-YXXYXYXYXYXY
+description: Learn about the move and draw commands (a mini-language) that you can use to specify path geometries as a XAML attribute value.
+title: Move and draw commands syntax
+ms.assetid: 7772BC3E-A631-46FF-9940-3DD5B9D0E0D9
 ---
 
-# Xxxx xxx xxxx xxxxxxxx xxxxxx
+# Move and draw commands syntax
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxx xxxxx xxx xxxx xxx xxxx xxxxxxxx (x xxxx-xxxxxxxx) xxxx xxx xxx xxx xx xxxxxxx xxxx xxxxxxxxxx xx x XXXX xxxxxxxxx xxxxx. Xxxx xxx xxxx xxxxxxxx xxx xxxx xx xxxx xxxxxx xxx xxxxxxxx xxxxx xxxx xxx xxxxxx x xxxxxx xxxxxxx xx xxxxx, xx x xxxxxxxxxxxxx xxx xxxxxxxxxxx xxxxxx.
+Learn about the move and draw commands (a mini-language) that you can use to specify path geometries as a XAML attribute value. Move and draw commands are used by many design and graphics tools that can output a vector graphic or shape, as a serialization and interchange format.
 
-## Xxxxxxxxxx xxxx xxx xxxx xxx xxxx xxxxxxx xxxxxxx
+## Properties that use move and draw command strings
 
-Xxx xxxx xxx xxxx xxxxxxx xxxxxx xx xxxxxxxxx xx xx xxxxxxxx xxxx xxxxxxxxx xxx XXXX, xxxxx xxxxxx xxx xxxxxxxx xxx xxxxxxxx x xxx-xxxx xxxxxxxx xxxxxxxxxxxxxx. Xxxx xxxxxxxxxxxxxx xx xxxxxxxxx x xxxxxxxx xxx xx xxxxxxx xxxx xx xxxxx xxx xxxxxxxxxxxx. Xxx xxxxxxx xxxxxxxxxx xxx'x xxxxxxxx xxx xxxxxxxxxxxx xxxxxxx; xxx'xx xxxxx xxxx xx xxx xxxxx xxxxxx xx xxx xxxxxxxx. Xxx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br243355) xxxxxx xxx xxxx xxxx xxxxxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br243378), [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243383), xxx xxxxx xxxxxxxxxx, xxx xxxx xxxx **Xxxx** xxxx xx xxxxxxxxx xx xxx xxxxxx xxxx xxxxxxx. Xxx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn252722) xxxxxx, xxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn251974) xxxxxxxx.
+The move and draw command syntax is supported by an internal type converter for XAML, which parses the commands and produces a run-time graphics representation. This representation is basically a finished set of vectors that is ready for presentation. The vectors themselves don't complete the presentation details; you'll still need to set other values on the elements. For a [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) object you also need values for [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378), [**Stroke**](https://msdn.microsoft.com/library/windows/apps/br243383), and other properties, and then that **Path** must be connected to the visual tree somehow. For a [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) object, set the [**Foreground**](https://msdn.microsoft.com/library/windows/apps/dn251974) property.
 
-Xxxxx xxx xxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxxx xxx xxx x xxxxxx xxxxxxxxxxxx xxxx xxx xxxx xxxxxxxx: [**Xxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br243356) xxx [**XxxxXxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn252723). Xx xxx xxx xxx xx xxxxx xxxxxxxxxx xx xxxxxxxxxx xxxx xxx xxxx xxxxxxxx, xxx xxxxxxxxx xxx xx xx x XXXX xxxxxxxxx xxxxx xxxxx xxxx xxxxx xxxxxxxx xxxxxxxxxx xx xxxx xxxxxxx. Xxxxxxx xxxxxxx xxxx xxx xxxxxxxxx, xxxx'x xxxx xxxx xxxxx xxxx:
+There are two properties in the Windows Runtime that can use a string representing move and draw commands: [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356) and [**PathIcon.Data**](https://msdn.microsoft.com/library/windows/apps/dn252723). If you set one of these properties by specifying move and draw commands, you typically set it as a XAML attribute value along with other required attributes of that element. Without getting into the specifics, here's what that looks like:
 
 ```xaml
 <Path x:Name="Arrow" Fill="White" Height="11" Width="9.67"
   Data="M4.12,0 L9.67,5.47 L4.12,10.94 L0,10.88 L5.56,5.47 L0,0.06" />
 ```
 
-[
-            **XxxxXxxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210169) xxx xxxx xxx xxxx xxx xxxx xxxxxxxx. Xxx xxxxx xxxxxxx x [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210168) xxxxxx xxxx xxxx xxxx xxx xxxx xxxxxxxx xxxx xxxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210041) xxxxx xx x [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br210057) xxxxxx, xxxxx xxx'x xxxx xxx xx xxx xxxxx xxx [**Xxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br243356). Xxx xxxx xxx'x xxxxxx xx xxxxxx xx xxxxx xxxx xxx xxxx xxxxxxxx xxx xxxxxxxxx-xxxxxxx xxxx.
+[**PathGeometry.Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) can also use move and draw commands. You might combine a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) object that uses move and draw commands with other [**Geometry**](https://msdn.microsoft.com/library/windows/apps/br210041) types in a [**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/br210057) object, which you'd then use as the value for [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). But that isn't nearly as common as using move and draw commands for attribute-defined data.
 
-## Xxxxx xxxx xxx xxxx xxxxxxxx xxxxxx xxxxx x **XxxxXxxxxxxx**
+## Using move and draw commands versus using a **PathGeometry**
 
-Xxx Xxxxxxx Xxxxxxx XXXX, xxx xxxx xxx xxxx xxxxxxxx xxxxxxx x [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210168) xxxx x xxxxxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210143) xxxxxx xxxx x [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210169) xxxxxxxx xxxxx. Xxxx xxxx xxxxxxx xxxxxxxx x [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210174) xxxxxxx xxxxx xx xxxx xxxxxx **XxxxXxxxxx**'x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210164) xxxxxxxxxx, xxx xxxx xxxxxxx xxxxxxx xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br210166), xxx xxxxxxxxx xx x xxxxx xxxxxxx xxxx [**XxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210159) xx **xxxx**. Xxx xxx xxxxxxxx xxxx xxxxxxxxx xx xx xxxxxx xxxxx xx xxx xxxxxxx xxx **Xxxx** xxxxxx xx xxx xxxx.
+For Windows Runtime XAML, the move and draw commands produce a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a single [**PathFigure**](https://msdn.microsoft.com/library/windows/apps/br210143) object with a [**Figures**](https://msdn.microsoft.com/library/windows/apps/br210169) property value. Each draw command produces a [**PathSegment**](https://msdn.microsoft.com/library/windows/apps/br210174) derived class in that single **PathFigure**'s [**Segments**](https://msdn.microsoft.com/library/windows/apps/br210164) collection, the move command changes the [**StartPoint**](https://msdn.microsoft.com/library/windows/apps/br210166), and existence of a close command sets [**IsClosed**](https://msdn.microsoft.com/library/windows/apps/br210159) to **true**. You can navigate this structure as an object model if you examine the **Data** values at run time.
 
-## Xxx xxxxx xxxxxx
+## The basic syntax
 
-Xxx xxxxxx xxx xxxx xxx xxxx xxxxxxxx xxx xx xxxxxxxxxx xxxx xxxx:
+The syntax for move and draw commands can be summarized like this:
 
-1.  Xxxxx xxxx xx xxxxxxxx xxxx xxxx. Xxxxxxxxx xxx xxxxxxx xxxx xxxx xx xxx xxx'x xxxx xxx **XxxxXxx** xxxxxxx. (Xxxx xxxxx **XxxxXxx** xxxxx.)
-2.  Xxxxxxx xxxxxxx xxx xxxx xxxxxxx.
-3.  Xxxxxxx xxx xx xxxx xxxx xxxxxxxx.
-4.  Xxxxxxx x xxxxx xxxxxxx. Xxx xxx xxxx x xxxxx xxxxxxx , xxx xxxx xxxxx xxxxx xxxx xxxxxx xxxx (xxxx'x xxxxxxxx).
+1.  Start with an optional fill rule. Typically you specify this only if you don't want the **EvenOdd** default. (More about **EvenOdd** later.)
+2.  Specify exactly one move command.
+3.  Specify one or more draw commands.
+4.  Specify a close command. You can omit a close command , but that would leave your figure open (that's uncommon).
 
-Xxxxxxx xxxxx xx xxxx xxxxxx xxx:
+General rules of this syntax are:
 
--   Xxxx xxxxxxx xx xxxxxxxxxxx xx xxxxxxx xxx xxxxxx.
--   Xxxx xxxxxx xxx xx xxxxx-xxxx xx xxxxx-xxxx. Xxxx xxxxxxx, xx xx'xx xxxxxxxx.
--   Xxxx xxxxxxx xxxxxx xxx xxxxx xxxxxxx xx xxxxxxxxx xxxxxxxx xx xxx xx xxxx xxxxxxx.
--   Xx xxxx xxxx xxx xxxxxx xxx x xxxxxxx, xxxxxxxx xxxx x xxxxx xx xxxxx.
+-   Each command is represented by exactly one letter.
+-   That letter can be upper-case or lower-case. Case matters, as we'll describe.
+-   Each command except the close command is typically followed by one or more numbers.
+-   If more than one number for a command, separate with a comma or space.
 
-**\[**_xxxxXxxx_**\]**_xxxxXxxxxxx__xxxxXxxxxxx_**\[**_xxxxXxxxxxx_**\*\]****\[**_xxxxxXxxxxxx_**\]**
+**\[**_fillRule_**\]** _moveCommand_ _drawCommand_ **\[**_drawCommand_**\*\]** **\[**_closeCommand_**\]**
 
-Xxxx xx xxx xxxx xxxxxxxx xxx xxxxxx, xxxxx xxx xxxxxxx xx _x,x_ xxxxx. Xxxxxxxx xxx xxx x \*_xxxxxx_ xxxxxxxxxxx xxx xxx xxxxxx xxx'xx xxxxxx xxx xxxxxxx xxxxxx xxx xxx _x,x_ xxxxx xx x xxxxx.
+Many of the draw commands use points, where you provide an _x,y_ value. Whenever you see a \*_points_ placeholder you can assume you're giving two decimal values for the _x,y_ value of a point.
 
-Xxxxx xxxxx xxx xxxxx xx xxxxxxx xxxx xxx xxxxxx xx xxx xxxxxxxxx. Xxx xxx xx xxxx xxxx xxx xxxxx xxxxx xx xxx xxx xxxxxx xx xxxx xxxxxxxxx xxx xxx xxxxxx xxxx (xxxxxx xxx xxxx). Xxx xxxxxxx, xxxx xxxxx xx xxxxx: `F1M0,58L2,56L6,60L13,51L15,53L6,64z`. Xxx xx'x xxxx xxxxxxx xx xxxxxxx xxxxx xxxxx xxxxxxx xxxxxxxx xxx xxxxxxx.
+White space can often be omitted when the result is not ambiguous. You can in fact omit all white space if you use commas as your separator for all number sets (points and size). For example, this usage is legal: `F1M0,58L2,56L6,60L13,51L15,53L6,64z`. But it's more typical to include white space between commands for clarity.
 
-Xxx'x xxx xxxxxx xx xxx xxxxxxx xxxxx xxx xxxxxxx xxxxxxx; xxx xxxxxxx xxxxxx xx xxxxxxxxxxx xx XXXX xxx xxxxx'x xxxxxxx xxx xxxxxxx-xxxxxxxx xxxxxx-xxxxxxxxxx xxxxxxxxxxx xxxx xxxxxx xxxx xxxxx xxxx xx xxx **xx-xx** xxxxxx.
+Don't use commas as the decimal point for decimal numbers; the command string is interpreted by XAML and doesn't account for culture-specific number-formatting conventions that differ from those used in the **en-us** locale.
 
-## Xxxxxx xxxxxxxxx
+## Syntax specifics
 
-**Xxxx xxxx**
+**Fill rule**
 
-Xxxxx xxx xxx xxxxxxxx xxxxxx xxx xxx xxxxxxxx xxxx xxxx: **XY** xx **XY**. (Xxx **X** xx xxxxxx xxxxxxxxx.) **XY** xx xxx xxxxxxx xxxxx; xx xxxxxxxx **XxxxXxx** xxxx xxxxxxxx, xx xxx xxx'x xxxxxxxxx xxxxxxx xx. Xxx **XY** xx xxx xxx **Xxxxxxx** xxxx xxxxxxxx. Xxxxx xxxx xxxxxx xxxxx xxxx xxx xxxxxx xx xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br210030) xxxxxxxxxxx.
+There are two possible values for the optional fill rule: **F0** or **F1**. (The **F** is always uppercase.) **F0** is the default value; it produces **EvenOdd** fill behavior, so you don't typically specify it. Use **F1** to get the **Nonzero** fill behavior. These fill values align with the values of the [**FillRule**](https://msdn.microsoft.com/library/windows/apps/br210030) enumeration.
 
-**Xxxx xxxxxxx**
+**Move command**
 
-Xxxxxxxxx xxx xxxxx xxxxx xx x xxx xxxxxx.
+Specifies the start point of a new figure.
 
-| Xxxxxx |
+| Syntax |
 |--------|
-| `M `
-            _xxxxxXxxxx_ <br/>- xx -<br/>`m`
-            _xxxxxXxxxx_|
+| `M ` _startPoint_ <br/>- or -<br/>`m` _startPoint_|
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| _xxxxxXxxxx_ | [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>Xxx xxxxx xxxxx xx x xxx xxxxxx.|
+| _startPoint_ | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/>The start point of a new figure.|
 
-Xx xxxxxxxxx **X** xxxxxxxxx xxxx *xxxxxXxxxx* xx xx xxxxxxxx xxxxxxxxxx; x xxxxxxxxx **x** xxxxxxxxx xxxx *xxxxxXxxxx* xx xx xxxxxx xx xxx xxxxxxxx xxxxx, xx (Y,Y) xx xxxxx xxx xx xxxxxxxx xxxxx.
+An uppercase **M** indicates that *startPoint* is an absolute coordinate; a lowercase **m** indicates that *startPoint* is an offset to the previous point, or (0,0) if there was no previous point.
 
-**Xxxx**  Xx'x xxxxx xx xxxxxxx xxxxxxxx xxxxxx xxxxx xxx xxxx xxxxxxx. X xxxx xx xxxxx xx xxxxx xxxxxx xx xx xxx xxxxxxxxx xxx xxxx xxxxxxx. Xxxxxxx xxxx'x xxx x xxxxxxxxxxx xxxxx; xxx xxx xxxxxxxxx xxxx xxxxxxx xxxxxxx.
+**Note**  It's legal to specify multiple points after the move command. A line is drawn to those points as if you specified the line command. However that's not a recommended style; use the dedicated line command instead.
 
-**Xxxx xxxxxxxx**
+**Draw commands**
 
-X xxxx xxxxxxx xxx xxxxxxx xx xxxxxxx xxxxx xxxxxxxx: xxxx, xxxxxxxxxx xxxx, xxxxxxxx xxxx, xxxxx Xxxxxx xxxxx, xxxxxxxxx Xxxxxx xxxxx, xxxxxx xxxxx Xxxxxx xxxxx, xxxxxx xxxxxxxxx Xxxxxx xxxxx, xxx xxxxxxxxxx xxx.
+A draw command can consist of several shape commands: line, horizontal line, vertical line, cubic Bezier curve, quadratic Bezier curve, smooth cubic Bezier curve, smooth quadratic Bezier curve, and elliptical arc.
 
-Xxx xxx xxxx xxxxxxxx, xxxx xxxxxxx. Xxxxxxxxx xxxxxxx xxxxxx xxxxxxxx xxxxxxxxxxx xxx xxxxxxxxx xxxxxxx xxxxxx xxxxxxxxxxx xxxxxxxx xx xxx xxxxxxxx xxxxxxx.
+For all draw commands, case matters. Uppercase letters denote absolute coordinates and lowercase letters denote coordinates relative to the previous command.
 
-Xxx xxxxxxx xxxxxx xxx x xxxxxxx xxx xxxxxxxx xx xxx xxx xxxxx xx xxx xxxxxxxxx xxxxxxx. Xxxx xxxxxxxxxxxx xxxxxxxx xxxx xxxx xxx xxxxxxx xx xxx xxxx xxxx, xxx xxx xxxx xxx xxxxxxxxx xxxxxxx xxxxx. Xxx xxxxxxx, `L 100,200 300,400` xx xxxxxxxxxx xx `L 100,200 L 300,400`.
+The control points for a segment are relative to the end point of the preceding segment. When sequentially entering more than one command of the same type, you can omit the duplicate command entry. For example, `L 100,200 300,400` is equivalent to `L 100,200 L 300,400`.
 
-**Xxxx xxxxxxx**
+**Line command**
 
-Xxxxxxx x xxxxxxxx xxxx xxxxxxx xxx xxxxxxx xxxxx xxx xxx xxxxxxxxx xxx xxxxx. `l 20 30` xxx `L 20,30` xxx xxxxxxxx xx xxxxx xxxx xxxxxxxx. Xxxxxxx xxx xxxxxxxxxx xx x [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210117) xxxxxx.
+Creates a straight line between the current point and the specified end point. `l 20 30` and `L 20,30` are examples of valid line commands. Defines the equivalent of a [**LineGeometry**](https://msdn.microsoft.com/library/windows/apps/br210117) object.
 
-| Xxxxxx |
+| Syntax |
 |--------|
-| `L`
-            _xxxXxxxx_ <br/>- xx -<br/>`l`
-            _xxxXxxxx_ |
+| `L` _endPoint_ <br/>- or -<br/>`l` _endPoint_ |
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| xxxXxxxx | [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>Xxx xxx xxxxx xx xxx xxxx.|
+| endPoint | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/>The end point of the line.|
 
-**Xxxxxxxxxx xxxx xxxxxxx**
+**Horizontal line command**
 
-Xxxxxxx x xxxxxxxxxx xxxx xxxxxxx xxx xxxxxxx xxxxx xxx xxx xxxxxxxxx x-xxxxxxxxxx. `H 90` xx xx xxxxxxx xx x xxxxx xxxxxxxxxx xxxx xxxxxxx.
+Creates a horizontal line between the current point and the specified x-coordinate. `H 90` is an example of a valid horizontal line command.
 
-| Xxxxxx |
+| Syntax |
 |--------|
-| `H `
-            _x_ <br/> - xx - <br/>`h `
-            _x_ |
+| `H ` _x_ <br/> - or - <br/>`h ` _x_ |
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| x | [
-            **Xxxxxx**](T:System.Double) <br/> Xxx x-xxxxxxxxxx xx xxx xxx xxxxx xx xxx xxxx. |
+| x | [**Double**](T:System.Double) <br/> The x-coordinate of the end point of the line. |
 
-**Xxxxxxxx xxxx xxxxxxx**
+**Vertical line command**
 
-Xxxxxxx x xxxxxxxx xxxx xxxxxxx xxx xxxxxxx xxxxx xxx xxx xxxxxxxxx x-xxxxxxxxxx. `v 90` xx xx xxxxxxx xx x xxxxx xxxxxxxx xxxx xxxxxxx.
+Creates a vertical line between the current point and the specified y-coordinate. `v 90` is an example of a valid vertical line command.
 
-| Xxxxxx |
+| Syntax |
 |--------|
-| `V `
-            _x_ <br/> - xx - <br/> `v `
-            _x_ |
+| `V ` _y_ <br/> - or - <br/> `v ` _y_ |
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| *x* | [
-            **Xxxxxx**](T:System.Double) <br/> Xxx x-xxxxxxxxxx xx xxx xxx xxxxx xx xxx xxxx. |
+| *y* | [**Double**](T:System.Double) <br/> The y-coordinate of the end point of the line. |
 
-**Xxxxx Xéxxxx xxxxx xxxxxxx**
+**Cubic Bézier curve command**
 
-Xxxxxxx x xxxxx Xéxxxx xxxxx xxxxxxx xxx xxxxxxx xxxxx xxx xxx xxxxxxxxx xxx xxxxx xx xxxxx xxx xxx xxxxxxxxx xxxxxxx xxxxxx (*xxxxxxxXxxxxY* xxx *xxxxxxxXxxxxY*). `C 100,200 200,400 300,200` xx xx xxxxxxx xx x xxxxx xxxxx xxxxxxx. Xxxxxxx xxx xxxxxxxxxx xx x [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210168) xxxxxx xxxx x [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br228068) xxxxxx.
+Creates a cubic Bézier curve between the current point and the specified end point by using the two specified control points (*controlPoint1* and *controlPoint2*). `C 100,200 200,400 300,200` is an example of a valid curve command. Defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) object with a [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) object.
 
-| Xxxxxx |
+| Syntax |
 |--------|
-| `C `
-            *xxxxxxxXxxxxY**xxxxxxxXxxxxY**xxxXxxxx* <br/> - xx - <br/> `c `
-            *xxxxxxxXxxxxY**xxxxxxxXxxxxY**xxxXxxxx* |
+| `C ` *controlPoint1* *controlPoint2* *endPoint* <br/> - or - <br/> `c ` *controlPoint1* *controlPoint2* *endPoint* |
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| *xxxxxxxXxxxxY* | [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Xxx xxxxx xxxxxxx xxxxx xx xxx xxxxx, xxxxx xxxxxxxxxx xxx xxxxxxxx xxxxxxx xx xxx xxxxx. |
-| *xxxxxxxXxxxxY* | [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Xxx xxxxxx xxxxxxx xxxxx xx xxx xxxxx, xxxxx xxxxxxxxxx xxx xxxxxx xxxxxxx xx xxx xxxxx. |
-| *xxxXxxxx* | [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Xxx xxxxx xx xxxxx xxx xxxxx xx xxxxx. | 
+| *controlPoint1* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The first control point of the curve, which determines the starting tangent of the curve. |
+| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The second control point of the curve, which determines the ending tangent of the curve. |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The point to which the curve is drawn. | 
 
-**Xxxxxxxxx Xéxxxx xxxxx xxxxxxx**
+**Quadratic Bézier curve command**
 
-Xxxxxxx x xxxxxxxxx Xéxxxx xxxxx xxxxxxx xxx xxxxxxx xxxxx xxx xxx xxxxxxxxx xxx xxxxx xx xxxxx xxx xxxxxxxxx xxxxxxx xxxxx (*xxxxxxxXxxxx*). `q 100,200 300,200` xx xx xxxxxxx xx x xxxxx xxxxxxxxx Xéxxxx xxxxx xxxxxxx. Xxxxxxx xxx xxxxxxxxxx xx x [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210168) xxxx x [**XxxxxxxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210249).
+Creates a quadratic Bézier curve between the current point and the specified end point by using the specified control point (*controlPoint*). `q 100,200 300,200` is an example of a valid quadratic Bézier curve command. Defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249).
 
-| Xxxxxx |
+| Syntax |
 |--------|
-| `Q `
-            *xxxxxxxXxxxx xxxXxxxx* <br/> - xx - <br/> `q `
-            *xxxxxxxXxxxx xxxXxxxx* |
+| `Q ` *controlPoint endPoint* <br/> - or - <br/> `q ` *controlPoint endPoint* |
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| *xxxxxxxXxxxx* | [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Xxx xxxxxxx xxxxx xx xxx xxxxx, xxxxx xxxxxxxxxx xxx xxxxxxxx xxx xxxxxx xxxxxxxx xx xxx xxxxx. |
-| *xxxXxxxx* | [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Xxx xxxxx xx xxxxx xxx xxxxx xx xxxxx. |
+| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The control point of the curve, which determines the starting and ending tangents of the curve. |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> The point to which the curve is drawn. |
 
-**Xxxxxx xxxxx Xéxxxx xxxxx xxxxxxx**
+**Smooth cubic Bézier curve command**
 
-Xxxxxxx x xxxxx Xéxxxx xxxxx xxxxxxx xxx xxxxxxx xxxxx xxx xxx xxxxxxxxx xxx xxxxx. Xxx xxxxx xxxxxxx xxxxx xx xxxxxxx xx xx xxx xxxxxxxxxx xx xxx xxxxxx xxxxxxx xxxxx xx xxx xxxxxxxx xxxxxxx xxxxxxxx xx xxx xxxxxxx xxxxx. Xx xxxxx xx xx xxxxxxxx xxxxxxx xx xx xxx xxxxxxxx xxxxxxx xxx xxx x xxxxx Xéxxxx xxxxx xxxxxxx xx x xxxxxx xxxxx Xéxxxx xxxxx xxxxxxx, xxxxxx xxx xxxxx xxxxxxx xxxxx xx xxxxxxxxxx xxxx xxx xxxxxxx xxxxx. Xxx xxxxxx xxxxxxx xxxxx—xxx xxxxxxx xxxxx xxx xxx xxx xx xxx xxxxx—xx xxxxxxxxx xx *xxxxxxxXxxxxY*. Xxx xxxxxxx, `S 100,200 200,300` xx x xxxxx xxxxxx xxxxx Xéxxxx xxxxx xxxxxxx. Xxxx xxxxxxx xxxxxxx xxx xxxxxxxxxx xx x [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210168) xxxx x [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br228068) xxxxx xxxxx xxx xxxxxxxxx xxxxx xxxxxxx.
+Creates a cubic Bézier curve between the current point and the specified end point. The first control point is assumed to be the reflection of the second control point of the previous command relative to the current point. If there is no previous command or if the previous command was not a cubic Bézier curve command or a smooth cubic Bézier curve command, assume the first control point is coincident with the current point. The second control point—the control point for the end of the curve—is specified by *controlPoint2*. For example, `S 100,200 200,300` is a valid smooth cubic Bézier curve command. This command defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a [**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/br228068) where there was preceding curve segment.
 
-| Xxxxxx |
+| Syntax |
 |--------|
-| `S`
-            *xxxxxxxXxxxxY**xxxXxxxx* <br/> - xx - <br/>`s`
-            *xxxxxxxXxxxxY xxxXxxxx* |
+| `S` *controlPoint2* *endPoint* <br/> - or - <br/>`s` *controlPoint2 endPoint* |
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| *xxxxxxxXxxxxY* | [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Xxx xxxxxxx xxxxx xx xxx xxxxx, xxxxx xxxxxxxxxx xxx xxxxxx xxxxxxx xx xxx xxxxx. |
-| *xxxXxxxx* | [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Xxx xxxxx xx xxxxx xxx xxxxx xx xxxxx. |
+| *controlPoint2* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The control point of the curve, which determines the ending tangent of the curve. |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> The point to which the curve is drawn. |
 
-**Xxxxxx xxxxxxxxx Xéxxxx xxxxx xxxxxxx**
+**Smooth quadratic Bézier curve command**
 
-Xxxxxxx x xxxxxxxxx Xéxxxx xxxxx xxxxxxx xxx xxxxxxx xxxxx xxx xxx xxxxxxxxx xxx xxxxx. Xxx xxxxxxx xxxxx xx xxxxxxx xx xx xxx xxxxxxxxxx xx xxx xxxxxxx xxxxx xx xxx xxxxxxxx xxxxxxx xxxxxxxx xx xxx xxxxxxx xxxxx. Xx xxxxx xx xx xxxxxxxx xxxxxxx xx xx xxx xxxxxxxx xxxxxxx xxx xxx x xxxxxxxxx Xéxxxx xxxxx xxxxxxx xx x xxxxxx xxxxxxxxx Xéxxxx xxxxx xxxxxxx, xxx xxxxxxx xxxxx xx xxxxxxxxxx xxxx xxx xxxxxxx xxxxx. Xxxx xxxxxxx xxxxxxx xxx xxxxxxxxxx xx x [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210168) xxxx x [**XxxxxxxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210249) xxxxx xxxxx xxx xxxxxxxxx xxxxx xxxxxxx.
+Creates a quadratic Bézier curve between the current point and the specified end point. The control point is assumed to be the reflection of the control point of the previous command relative to the current point. If there is no previous command or if the previous command was not a quadratic Bézier curve command or a smooth quadratic Bézier curve command, the control point is coincident with the current point. This command defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with a [**QuadraticBezierSegment**](https://msdn.microsoft.com/library/windows/apps/br210249) where there was preceding curve segment.
 
-| Xxxxxx |
+| Syntax |
 |--------|
-| `T`
-            *xxxxxxxXxxxx**xxxXxxxx* <br/> - xx - <br/> `t`
-            *xxxxxxxXxxxx**xxxXxxxx* |
+| `T` *controlPoint* *endPoint* <br/> - or - <br/> `t` *controlPoint* *endPoint* |
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| *xxxxxxxXxxxx* | [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Xxx xxxxxxx xxxxx xx xxx xxxxx, xxxxx xxxxxxxxxx xxx xxxxxxxx xxx xxxxxxx xx xxx xxxxx. |
-| *xxxXxxxx* | [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> Xxx xxxxx xx xxxxx xxx xxxxx xx xxxxx. |
+| *controlPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> The control point of the curve, which determines the starting and tangent of the curve. |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870)<br/> The point to which the curve is drawn. |
 
-**Xxxxxxxxxx xxx xxxxxxx**
+**Elliptical arc command**
 
-Xxxxxxx xx xxxxxxxxxx xxx xxxxxxx xxx xxxxxxx xxxxx xxx xxx xxxxxxxxx xxx xxxxx. Xxxxxxx xxx xxxxxxxxxx xx x [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210168) xxxx xx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br228054).
+Creates an elliptical arc between the current point and the specified end point. Defines the equivalent of a [**PathGeometry**](https://msdn.microsoft.com/library/windows/apps/br210168) with an [**ArcSegment**](https://msdn.microsoft.com/library/windows/apps/br228054).
 
-| Xxxxxx |
+| Syntax |
 |--------|
-| `A `
-            *xxxx**xxxxxxxxXxxxx**xxXxxxxXxxXxxx**xxxxxXxxxxxxxxXxxx**xxxXxxxx* <br/> - xx - <br/>`a `
-            *xxxxxxxxxxxxXxxxxxxXxxxxXxxXxxxxxxxxXxxxxxxxxXxxxxxxXxxxx* |
+| `A ` *size* *rotationAngle* *isLargeArcFlag* *sweepDirectionFlag* *endPoint* <br/> - or - <br/>`a ` *sizerotationAngleisLargeArcFlagsweepDirectionFlagendPoint* |
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| *xxxx* | [
-            **Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>Xxx x-xxxxxx xxx x-xxxxxx xx xxx xxx. |
-| *xxxxxxxxXxxxx* | [
-            **Xxxxxx**](T:System.Double) <br/> Xxx xxxxxxxx xx xxx xxxxxxx, xx xxxxxxx. |
-| *xxXxxxxXxxXxxx* | Xxx xx Y xx xxx xxxxx xx xxx xxx xxxxxx xx YYY xxxxxxx xx xxxxxxx; xxxxxxxxx, xxx xx Y. |
-| *xxxxxXxxxxxxxxXxxx* | Xxx xx Y xx xxx xxx xx xxxxx xx x xxxxxxxx-xxxxx xxxxxxxxx; xxxxxxxxx, xxx xx Y. |
-| *xxxXxxxx* | [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> Xxx xxxxx xx xxxxx xxx xxx xx xxxxx.|
+| *size* | [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995)<br/>The x-radius and y-radius of the arc. |
+| *rotationAngle* | [**Double**](T:System.Double) <br/> The rotation of the ellipse, in degrees. |
+| *isLargeArcFlag* | Set to 1 if the angle of the arc should be 180 degrees or greater; otherwise, set to 0. |
+| *sweepDirectionFlag* | Set to 1 if the arc is drawn in a positive-angle direction; otherwise, set to 0. |
+| *endPoint* | [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) <br/> The point to which the arc is drawn.|
  
-**Xxxxx xxxxxxx**
+**Close command**
 
-Xxxx xxx xxxxxxx xxxxxx xxx xxxxxxx x xxxx xxxx xxxxxxxx xxx xxxxxxx xxxxx xx xxx xxxxxxxx xxxxx xx xxx xxxxxx. Xxxx xxxxxxx xxxxxxx x xxxx-xxxx (xxxxxx) xxxxxxx xxx xxxx xxxxxxx xxx xxx xxxxx xxxxxxx xx xxx xxxxxx.
+Ends the current figure and creates a line that connects the current point to the starting point of the figure. This command creates a line-join (corner) between the last segment and the first segment of the figure.
 
-| Xxxxxx |
+| Syntax |
 |--------|
-| `Z` <br/> - xx - <br/> `z ` |
+| `Z` <br/> - or - <br/> `z ` |
 
-**Xxxxx xxxxxx**
+**Point syntax**
 
-Xxxxxxxxx xxx x-xxxxxxxxxx xxx x-xxxxxxxxxx xx x xxxxx. Xxx xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870).
+Describes the x-coordinate and y-coordinate of a point. See also [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870).
 
-| Xxxxxx |
+| Syntax |
 |--------|
-| *x*,*x*<br/> - xx - <br/>*x**x* |
+| *x*,*y*<br/> - or - <br/>*x* *y* |
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| *x* | [
-            **Xxxxxx**](T:System.Double) <br/> Xxx x-xxxxxxxxxx xx xxx xxxxx. |
-| *x* | [
-            **Xxxxxx**](T:System.Double) <br/> Xxx x-xxxxxxxxxx xx xxx xxxxx. |
+| *x* | [**Double**](T:System.Double) <br/> The x-coordinate of the point. |
+| *y* | [**Double**](T:System.Double) <br/> The y-coordinate of the point. |
 
-**Xxxxxxxxxx xxxxx**
+**Additional notes**
 
-Xxxxxxx xx x xxxxxxxx xxxxxxxxx xxxxx, xxx xxx xxxx xxx xxx xxxxxxxxx xxxxxxx xxxxxx. Xxxxx xxxxxx xxx xxxx xxxxxxxxx.
+Instead of a standard numerical value, you can also use the following special values. These values are case sensitive.
 
--   **Xxxxxxxx**: Xxxxxxxxxx **XxxxxxxxXxxxxxxx**.
--   **\-Xxxxxxxx**: Xxxxxxxxxx **XxxxxxxxXxxxxxxx**.
--   **XxX**: Xxxxxxxxxx **XxX**.
+-   **Infinity**: Represents **PositiveInfinity**.
+-   **\-Infinity**: Represents **NegativeInfinity**.
+-   **NaN**: Represents **NaN**.
 
-Xxxxxxx xx xxxxx xxxxxxxx xx xxxxxxxx, xxx xxx xxx xxxxxxxxxx xxxxxxxx. Xxx xxxxxxx, `+1.e17` xx x xxxxx xxxxx.
+Instead of using decimals or integers, you can use scientific notation. For example, `+1.e17` is a valid value.
 
-## Xxxxxx xxxxx xxxx xxxxxxx xxxx xxx xxxx xxxxxxxx
+## Design tools that produce move and draw commands
 
-Xxxxx xxx **Xxx** xxxx xxx xxxxx xxxxxxx xxxxx xx Xxxxx xxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY xxxx xxxxxxx xxxxxxx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br243355) xxxxxx, xxxx xxxx xxx xxxx xxxxxxxx.
+Using the **Pen** tool and other drawing tools in Blend for Microsoft Visual Studio 2013 will usually produce a [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) object, with move and draw commands.
 
-Xxx xxxxx xxx xxxxxxxx xxxx xxx xxxx xxxxxxx xxxx xx xxxx xx xxx xxxxxxx xxxxx xxxxxxx xx xxx Xxxxxxx Xxxxxxx XXXX xxxxxxx xxxxxxxxx xxx xxxxxxxx. Xxx xxxxxxx, xxxx xxxxxxxx xxx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn252722) xxxx xxx xxx xxxx xxxxxxx xx xxxx xxx xxxx xxxxxxxx.
+You might see existing move and draw command data in some of the control parts defined in the Windows Runtime XAML default templates for controls. For example, some controls use a [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722) that has the data defined as move and draw commands.
 
-Xxxxx xxx xxxxxxxxx xx xxxx-xxx xxxxxxxxx xxx xxxxx xxxxxxxx xxxx xxxxxx-xxxxxxxx xxxxxx xxxxx xxxx xxx xxxxxx xxx xxxxxx xx XXXX xxxx. Xxxxx xxxxxxx xxxxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br243355) xxxxxxx xx x xxxxxx xxxxxxxxx, xxxx xxxx xxx xxxx xxxxxxxx xxx [**Xxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br243356). Xxxxx xxx xx xxxxxxxx **Xxxx** xxxxxxxx xx xxx XXXX xx xxxx xxxxxxxxx xxxxxxx xxx xx xxxxxxx. Xxxxx xxxxxxxxx xx xxxx-xxx xxxx xxxxxxxxxx xxxxxxx xxx Xxxxxxx Xxxxxxxxxxxx Xxxxxxxxxx (XXX)  XXXX, xxx xxxx xxxxxx xx XXXX xxxxxx xx xxxxxxxxx xxxx Xxxxxxx Xxxxxxx XXXX. Xxx xxx xxxxxxxx xxx xxxxxx xx XXXX xxxx xx xxxxxxxx xxx xxxxx xxxx xxxxx xxxx x Xxxxxxx Xxxxxxx XXXX xxxx. (Xxxxxxx, xxx xxx'x xx xxxx xx xxx x **XxxxxxXxxxxxxxXxxxx**, xx xxxx xxx xxxx xx xxx xxxxxxxxx XXXX, xxxxxxx Xxxxxxx Xxxxxxx XXXX xxxxx'x xxxxxxx xxxx xxxxx.)
+There are exporters or plug-ins available for other commonly used vector-graphics design tools that can output the vector in XAML form. These usually create [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) objects in a layout container, with move and draw commands for [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356). There may be multiple **Path** elements in the XAML so that different brushes can be applied. These exporters or plug-ins were originally written for Windows Presentation Foundation (WPF)  XAML, but that aspect of XAML syntax is identical with Windows Runtime XAML. You can probably use chunks of XAML from an exporter and paste them right into a Windows Runtime XAML page. (However, you won't be able to use a **RadialGradientBrush**, if that was part of the converted XAML, because Windows Runtime XAML doesn't support that brush.)
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/mt280380)
-* [Xxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt280383)
-* [**Xxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br243356)
-* [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn252722)
+* [Draw shapes](https://msdn.microsoft.com/library/windows/apps/mt280380)
+* [Use brushes](https://msdn.microsoft.com/library/windows/apps/mt280383)
+* [**Path.Data**](https://msdn.microsoft.com/library/windows/apps/br243356)
+* [**PathIcon**](https://msdn.microsoft.com/library/windows/apps/dn252722)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

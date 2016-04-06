@@ -1,82 +1,82 @@
 ---
-xx.xxxxxxx: YXXYXXYY-XYXY-YYXX-YYXY-YYYXYXYYXYXY
-xxxxxxxxxxx: Xxx xxx Xxxxxxx Xxxxx xxxxxxxxx XXX xx xxxxxxxxxxxxxxxx xxxxxxxx xxxxxxxxx xxxx xxx xxxx xxxx xxx xxxxxxxxxx xx xxxx xx xxxx xxxxxxxxxxxx''x Xxxxxxx Xxx Xxxxxx xxxxxxx.
-xxxxx: Xxxxxx xxxxxxxxx xxxx xxxxx Xxxxxxx Xxxxx xxxxxxxx
+ms.assetid: 4BF9EF21-E9F0-49DB-81E4-062D6E68C8B1
+description: Windows ストア分析 API を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。
+title: Windows ストア サービスを使った分析データへのアクセス
 ---
 
-# Xxxxxx xxxxxxxxx xxxx xxxxx Xxxxxxx Xxxxx xxxxxxxx
+# Windows ストア サービスを使った分析データへのアクセス
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
-Xxx xxx *Xxxxxxx Xxxxx xxxxxxxxx XXX* xx xxxxxxxxxxxxxxxx xxxxxxxx xxxxxxxxx xxxx xxx xxxx xxxx xxx xxxxxxxxxx xx xxxx xx xxxx xxxxxxxxxxxx'x Xxxxxxx Xxx Xxxxxx xxxxxxx. Xxxx XXX xxxxxxx xxx xx xxxxxxxx xxxx xxx xxx xxx XXX xxxxxxxxxxxx, xxxxxx, xxx xxxxxxx xxx xxxxxxx. Xxxx XXX xxxx Xxxxx Xxxxxx Xxxxxxxxx (Xxxxx XX) xx xxxxxxxxxxxx xxx xxxxx xxxx xxxx xxx xx xxxxxxx.
+*Windows ストア分析 API* を使って、自分または自分の組織の Windows デベロッパー センター アカウントに登録されたアプリの分析データをプログラムで取得することができます。 この API では、アプリおよび IAP の入手数、エラー、アプリの評価とレビューに関するデータを取得できます。 この API は、Azure Active Directory (Azure AD) を使って、アプリまたはサービスからの呼び出しを認証します。
 
-## Xxxxxxxxxxxxx xxx xxxxx xxx Xxxxxxx Xxxxx xxxxxxxxx XXX
-
-
--   Xxx (xx xxxx xxxxxxxxxxxx) xxxx xxxx xx Xxxxx XX xxxxxxxxx. Xx xxx xxxxxxx xxx Xxxxxx YYY xx xxxxx xxxxxxxx xxxxxxxx xxxx Xxxxxxxxx, xxx xxxxxxx xxxx Xxxxx XX xxxxxxxxx. Xxxxxxxxx, xxx xxx [xxx xxx xxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=703757).
--   Xxx xxxx xxxx x [xxxx xxxxxxx](https://azure.microsoft.com/documentation/articles/active-directory-create-users/) xx xxx Xxxxx XX xxxxxxxxx xxxx xxx xxxx xx xxxxxxxxx xxxx xxxx Xxxxxxx Xxx Xxxxxx xxxxxxx.
-
-## Xxxxx xxx Xxxxxxx Xxxxx xxxxxxxxx XXX
+## Windows ストア分析 API を使うための前提条件
 
 
-Xxxxxx xxx xxx xxx xxx Xxxxxxx Xxxxx xxxxxxxxx XXX, xxx xxxx xxxxxxxxx xx Xxxxx XX xxxxxxxxxxx xxxx xxxx Xxx Xxxxxx xxxxxxx xxx xxxxxx xx Xxxxx XX xxxxxx xxxxx. Xxx Xxxxx XX xxxxxxxxxxx xxxxxxxxxx xxx xxx xx xxxxxxx xxxx xxxxx xxx xxxx xx xxxx xxx Xxxxxxx Xxxxx xxxxxxxxx XXX. Xxxxx xxx xxxx xx xxxxxx xxxxx, xxx xxx xxxx xxx Xxxxxxx Xxxxx xxxxxxxxx XXX xxxx xxxx xxx xx xxxxxxx.
+-   ユーザー (またはユーザーの組織) が Azure AD ディレクトリを持っている必要があります。 Office 365 または Microsoft の他のビジネス サービスを既に使っている場合は、既に Azure AD ディレクトリをお持ちです。 それ以外の場合は、[こちらから無料で入手](http://go.microsoft.com/fwlink/p/?LinkId=703757) できます。
+-   Windows デベロッパー センター アカウントに関連付ける Azure AD ディレクトリに [ユーザー アカウント](https://azure.microsoft.com/documentation/articles/active-directory-create-users/) を持っている必要があります。
 
-Xxx xxxxxxxxx xxxxx xxxxxxxx xxx xxx-xx-xxx xxxxxxx:
-
-1.  [Xxxxxxxxx xx Xxxxx XX xxxxxxxxxxx xxxx xxxx Xxxxxxx Xxx Xxxxxx xxxxxxx](#associate-an-azure-ad-application-with-your-windows-dev-center-account).
-2.  [Xxxxxx xx Xxxxx XX xxxxxx xxxxx](#obtain-an-azure-ad-access-token).
-3.  [Xxxx xxx Xxxxxxx Xxxxx xxxxxxxxx XXX](#call-the-windows-store-analytics-api).
+## Windows ストア分析 API の使用
 
 
-### Xxxxxxxxx xx Xxxxx XX xxxxxxxxxxx xxxx xxxx Xxxxxxx Xxx Xxxxxx xxxxxxx
+Windows ストア分析 API を使う前に、Azure AD アプリケーションをデベロッパー センター アカウントに関連付けて、Azure AD アクセス トークンを取得する必要があります。 Azure AD アプリケーションは、Windows ストア分析 API の呼び出し元のアプリまたはサービスを表します。 アクセス トークンがある場合、アプリまたはサービスから Windows ストア分析 API を呼び出すことができます。
 
-1.  Xx Xxx Xxxxxx, xx xx xxxx **Xxxxxxx xxxxxxxx**, xxxxx **Xxxxxx xxxxx**, xxx xxxxxxxxx xxxx xxxxxxxxxxxx'x Xxx Xxxxxx xxxxxxx xxxx xxxx xxxxxxxxxxxx'x Xxxxx XX xxxxxxxxx. Xxx xxxxxxxx xxxxxxxxxxxx, xxx [Xxxxxx xxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt489008). Xxx xxx xxxxxxxxxx xxx xxxxx xxxxx xxxx xxxx xxxxxxxxxxxx'x Xxxxx XX xxxxxxxxx xx xxxx xxx xxxx xxxxxx xxx Xxx Xxxxxx xxxxxxx.
+次の手順で、このプロセスについて詳しく説明しています。
 
-    **Xxxx**  Xxxx xxx Xxx Xxxxxx xxxxxxx xxx xx xxxxxxxxxx xxxx xx Xxxxx Xxxxxx Xxxxxxxxx. Xxxxxxxxx, xxxx xxx Xxxxx Xxxxxx Xxxxxxxxx xxx xx xxxxxxxxxx xxxx x Xxx Xxxxxx xxxxxxx. Xxxxx xxx xxxxxxxxx xxxx xxxxxxxxxxx, xxx xxx'x xx xxxx xx xxxxxx xx xxxxxxx xxxxxxxxxx xxxxxxx.
+1.  [Azure AD アプリケーションを Windows デベロッパー センター アカウントに関連付けます](#associate-an-azure-ad-application-with-your-windows-dev-center-account)。
+2.  [Azure AD のアクセス トークンを取得します](#obtain-an-azure-ad-access-token)。
+3.  [Windows ストア分析 API を呼び出します](#call-the-windows-store-analytics-api)。
+
+
+### Azure AD アプリケーションと Windows デベロッパー センター アカウントの関連付け
+
+1.  デベロッパー センターで、**[アカウント設定]** に移動して **[ユーザーの管理]** をクリックし、組織のデベロッパー センター アカウントを組織の Azure AD ディレクトリに関連付けます。 詳しい手順については、「[アカウント ユーザーの管理](https://msdn.microsoft.com/library/windows/apps/mt489008)」をご覧ください。 必要に応じて、組織の Azure AD ディレクトリから他のユーザーを追加して、デベロッパー センター アカウントにもアクセスできるようにすることができます。
+
+    **注**  Azure Active Directory に関連付けることができるデベロッパー センター アカウントは 1 つのみです。 同様に、デベロッパー センター アカウントに関連付けることができる Azure Active Directory は 1 つのみです。 一度関連付けを確立すると、その関連付けを削除するには、必ずサポートへの問い合わせが必要になります。
 
      
 
-2.  Xx xxx **Xxxxxx xxxxx** xxxx, xxxxx **Xxx Xxxxx XX xxxxxxxxxxxx**, xxx xxx Xxxxx XX xxxxxxxxxxx xxxx xxx xxxx xxx xx xxxxxx xxxxxxxxx xxxx xxx xxxx Xxx Xxxxxx xxxxxxx, xxx xxxxxx xx xxx **Xxxxxxx** xxxx. Xx xxxx xxxxxxxxxxx xxxxxxx xxxxxx xx xxxx Xxxxx XX xxxxxxxxx, xxx xxx xxxxxx xx xx xxx **Xxx Xxxxx XX xxxxxxxxxxxx** xx xxx xx xx xxxx Xxx Xxxxxx xxxxxxx. Xxxxxxxxx, xxx xxx xxxxxx x xxx Xxxxx XX xxxxxxxxxxx xx xxx **Xxx Xxxxx XX xxxxxxxxxxxx** xxxx. Xxx xxxx xxxxxxxxxxx, xxx xxx xxxxxxx xxxxx xxxxxxxx Xxxxx XX xxxxxxxxxxxx xx [Xxxxxx xxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt489008).
+2.  **[ユーザーの管理]** ページで、**[Azure AD アプリケーションの追加]** をクリックして、デベロッパー センター アカウントの分析データへのアクセスに使う Azure AD アプリケーションを追加し、**マネージャー** ロールを割り当てます。 このアプリケーションが既に Azure AD ディレクトリに存在する場合、**[Azure AD アプリケーションの追加]** で選んでデベロッパー センター アカウントに追加できます。 それ以外の場合、**[Azure AD アプリケーションの追加]** ページで新しい Azure AD アプリケーションを作成できます。 詳しくは、「[アカウント ユーザーの管理](https://msdn.microsoft.com/library/windows/apps/mt489008)」の Azure AD アプリケーションの管理に関するセクションをご覧ください。
 
-3.  Xxxxxx xx xxx **Xxxxxx xxxxx** xxxx, xxxxx xxx xxxx xx xxxx Xxxxx XX xxxxxxxxxxx xx xx xx xxx xxxxxxxxxxx xxxxxxxx, xxx xxxxx **Xxx xxx xxx**. Xx xxx xxxxxxxxx xxxxxx, xxxx xxxx xxx **Xxxxxx XX** xxx **Xxx** xxxxxx. Xxx xxxx xxxxxxxxxxx, xxx xxx xxxxxxx xxxxx xxxxxxxx Xxxxx XX xxxxxxxxxxxx xx [Xxxxxx xxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt489008). Xxx xxxx xxxxx xxx xxxxxx XX xxx xxx xx xxxxxx xx Xxxxx XX xxxxxx xxxxx xx xxx xxxx xxxxxxx xxx Xxxxxxx Xxxxx xxxxxxxxx XXX. Xxx xxx'x xx xxxx xx xxxxxx xxxx xxxx xxxxx xxxxx xxx xxxxx xxxx xxxx.
+3.  **[ユーザーの管理]** ページに戻り、Azure AD アプリケーションの名前をクリックしてアプリケーション設定に移動し、**[新しいキーの追加]** をクリックします。 次の画面で、**[クライアント ID]** と **[キー]** の値を書き留めます。 詳しくは、「[アカウント ユーザーの管理](https://msdn.microsoft.com/library/windows/apps/mt489008)」の Azure AD アプリケーションの管理に関するセクションをご覧ください。 これらのクライアント ID とキーは、Windows ストア分析 API を呼び出すときに使う Azure AD アクセス トークンを取得するために必要です。 このページから離れると、この情報に再度アクセスすることはできません。
 
 
-### Xxxxxx xx Xxxxx XX xxxxxx xxxxx
+### Azure AD アクセス トークンの取得
 
-Xxxxx xxx xxxxxxxxx xx Xxxxx XX xxxxxxxxxxx xxxx xxxx Xxx Xxxxxx xxxxxxx xxx xxx xxxxxxxx xxx xxxxxx XX xxx xxx xxx xxx xxxxxxxxxxx, xxx xxx xxx xxxx xxxx xx xxxxxx xx Xxxxx XX xxxxxx xxxxx. Xxx xxxx xx xxxxxx xxxxx xxxxxx xxx xxx xxxx xxx xx xxx xxxxxxx xx xxx Xxxxxxx Xxxxx xxxxxxxxx XXX.
+Azure AD アプリケーションをデベロッパー センター アカウントに関連付け、アプリケーションのクライアント ID とキーを取得すると、この情報を使って Azure AD アクセス トークンを取得できます。 Windows ストア分析 API で任意のメソッドを呼び出すには、アクセス トークンが必要です。
 
-Xx xxxxxx xxx xxxxxx xxxxx, xxxxxx xxx xxxxxxxxxxxx xx [Xxxxxxx xx Xxxxxxx Xxxxx Xxxxx Xxxxxx Xxxxxxxxxxx](https://msdn.microsoft.com/library/azure/dn645543.aspx) xx xxxx xx XXXX XXXX xx xxx xxxxxxxxx Xxxxx XX xxxxxxxx.
+アクセス トークンを取得するには、「[クライアント資格情報を使用したサービス間の呼び出し](https://msdn.microsoft.com/library/azure/dn645543.aspx)」の手順に従って、HTTP POST を次の Azure AD エンドポイントに送信します。
 
 ```
 https://login.microsoftonline.com/<tenant id>/oauth2/token
 ```
 
--   Xx xxx xxxx xxxxxx XX, xxx xx xx xxx [Xxxxx Xxxxxxxxxx Xxxxxx](http://manage.windowsazure.com/), xxxxxxxx xx **Xxxxxx Xxxxxxxxx**, xxx xxxxx xxx xxxxxxxxx xxxx xxx xxxxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xxx xxxxxx XX xxx xxxx xxxxxxxxx xx xxxxxxxx xx xxx XXX xxx xxxx xxxx, xx xxxxx xx xxx *xxxx\_xxxxxx\_XX* xxxxxx xx xxx xxxxxxx xxxxx.
+-   テナント ID を取得するには、[Azure 管理ポータル](http://manage.windowsazure.com/) にログインし、**Active Directory** に移動し、デベロッパー センター アカウントにリンクされているディレクトリをクリックします。 以下の例にある *your\_tenant\_ID* 文字列からわかるように、このディレクトリのテナント ID がこのページの URL に埋め込まれます。
 
   ```
   https://manage.windowsazure.com/@&lt;your_tenant_name&gt;#Workspaces/ActiveDirectoryExtension/Directory/&lt;your_tenant_ID&gt;/directoryQuickStart
   ```
 
--   Xxx xxx *xxxxxx\_xx* xxx *xxxxxx\_xxxxxx* xxxxxxxxxx, xxxxxxx xxx xxxxxx XX xxx xxx xxx xxx xxxx xxxxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxx xxxx Xxx Xxxxxx.
--   Xxx xxx *xxxxxxxx* xxxxxxxxx, xxxxxxx xxx xxxxxxxxx XXX: **xxxxx://xxxxxx.xxxxxxxxx.xxxxxxxxx.xxx**.
+-   *client\_id* および *client\_secret* パラメーターには、前の手順でデベロッパー センターから取得したアプリケーションのクライアント ID とキーを指定します。
+-   *resource* パラメーターには、**https://manage.devcenter.microsoft.com** という URI を指定します。
 
 
-### Xxxx xxx Xxxxxxx Xxxxx xxxxxxxxx XXX
+### Windows ストア分析 API の呼び出し
 
-Xxxxx xxx xxxx xx Xxxxx XX xxxxxx xxxxx, xxx xxx xxxxx xx xxxx xxx Xxxxxxx Xxxxx xxxxxxxxx XXX. Xxx xxxxxxxxxxx xxxxx xxx xxxxxx xx xxxx xxxxxx, xxx xxx xxxxxxxxx xxxxxxxx. Xxx xxxx xxxx xxx xxxxxx xxxxx xx xxx **Xxxxxxxxxxxxx** xxxxxx xx xxxx xxxxxx.
+Azure AD アクセス トークンを取得したら、Windows ストア分析 API を呼び出すことができます。 各メソッドの構文については、次の記事をご覧ください。 各メソッドの **Authorization** ヘッダーにアクセス トークンを渡す必要があります。
 
--   [Xxx xxx xxxxxxxxxxxx](get-app-acquisitions.md)
--   [Xxx XXX xxxxxxxxxxxx](get-in-app-acquisitions.md)
--   [Xxx xxxxx xxxxxxxxx xxxx](get-error-reporting-data.md)
--   [Xxx xxx xxxxxxx](get-app-ratings.md)
--   [Xxx xxx xxxxxxx](get-app-reviews.md)
+-   [アプリの入手数の取得](get-app-acquisitions.md)
+-   [IAP の入手数の取得](get-in-app-acquisitions.md)
+-   [エラー報告データの取得](get-error-reporting-data.md)
+-   [アプリの評価の取得](get-app-ratings.md)
+-   [アプリのレビューの取得](get-app-reviews.md)
 
-## Xxxx xxxxxxx
+## コードの例
 
 
-Xxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxxxxx xxx xx xxxxxx xx Xxxxx XX xxxxxx xxxxx xxx xxxx xxx Xxxxxxx Xxxxx xxxxxxxxx XXX xxxx x X\# xxxxxxx xxx. Xx xxx xxxx xxxx xxxxxxx, xxxxxx xxx *xxxxxxXx*, *xxxxxxXx*, *xxxxxxXxxxxx*, xxx *xxxXX* xxxxxxxxx xx xxx xxxxxxxxxxx xxxxxx xxx xxxx xxxxxxxx. Xxxx xxxxxxx xxxxxxxx xxx [Xxxx.XXX xxxxxxx](http://www.newtonsoft.com/json) xxxx Xxxxxxxxxx xx xxxxxxxxxxx xxx XXXX xxxx xxxxxxxx xx xxx Xxxxxxx Xxxxx xxxxxxxxx XXX.
+次のコード例は、Azure AD アクセス トークンを取得し、C\# コンソール アプリから Windows ストア分析 API を呼び出す方法を示しています。 このコード例を使う場合は、変数 *tenantId*、*clientId*、*clientSecret*、および *appID* を自分のシナリオに合った適切な値に割り当ててください。 この例では、Windows ストア分析 API から返される JSON データを逆シリアル化するときに、Newtonsoft から提供されている [Json.NET パッケージ](http://www.newtonsoft.com/json) が必要になります。
 
 ```CSharp
 using Newtonsoft.Json;
@@ -202,10 +202,10 @@ namespace TestAnalyticsAPI
 }
 ```
 
-## Xxxxx xxxxxxxxx
+## エラー応答
 
 
-Xxx Xxxxxxx Xxxxx xxxxxxxxx XXX xxxxxxx xxxxx xxxxxxxxx xx x XXXX xxxxxx xxxx xxxxxxxx xxxxx xxxxx xxx xxxxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xx xxxxx xxxxxxxx xxxxxx xx xx xxxxxxx xxxxxxxxx.
+Windows ストア分析 API は、エラー コードとメッセージが含まれた JSON オブジェクトにエラー応答を返します。 次の例は、無効なパラメーターに対するエラー応答を示しています。
 
 ```json
 {
@@ -226,12 +226,16 @@ Xxx Xxxxxxx Xxxxx xxxxxxxxx XXX xxxxxxx xxxxx xxxxxxxxx xx x XXXX xxxxxx xxxx xx
 }
 ```
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxx xxx xxxxxxxxxxxx](get-app-acquisitions.md)
-* [Xxx XXX xxxxxxxxxxxx](get-in-app-acquisitions.md)
-* [Xxx xxxxx xxxxxxxxx xxxx](get-error-reporting-data.md)
-* [Xxx xxx xxxxxxx](get-app-ratings.md)
-* [Xxx xxx xxxxxxx](get-app-reviews.md)
+* [アプリの入手数の取得](get-app-acquisitions.md)
+* [IAP の入手数の取得](get-in-app-acquisitions.md)
+* [エラー報告データの取得](get-error-reporting-data.md)
+* [アプリの評価の取得](get-app-ratings.md)
+* [アプリのレビューの取得](get-app-reviews.md)
  
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,56 +1,57 @@
 ---
-xxxxx: Xxxxxx x Xxxxxxxxx Xxxxxxxx xxxxx xxx
-xxxxxxxxxxx: Xxxx xx Xxxx Y xx x xxxxxxxx xxxxxxxxxxx xx xxx xx xxxxxx x Xxxxxxx YY XXX (Xxxxxxxxx Xxxxxxx Xxxxxxxx) xxx xxxx xxxx Xxxxxxxxx Xxxxxxxx xx xx xxxxxxxxxxx xx xxxxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxxxxx xxxxxxx.
-xx.xxxxxxx: XYXYYYYY-XYXY-YXYY-YYXX-YYYYYYXYXYXX
+title: Create a Microsoft Passport login app
+description: This is Part 1 of a complete walkthrough on how to create a Windows 10 UWP (Universal Windows Platform) app that uses Microsoft Passport as an alternative to traditional username and password authentication systems.
+ms.assetid: A9E11694-A7F5-4E27-95EC-889307E0C0EF
+author: awkoren
 ---
 
-# Xxxxxx x Xxxxxxxxx Xxxxxxxx xxxxx xxx
+# Create a Microsoft Passport login app
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[Xxxx xxxxxxxxxxx xxxxxxx xx xxx-xxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxx xx'x xxxxxxxxxxxx xxxxxxxx. Xxxxxxxxx xxxxx xx xxxxxxxxxx, xxxxxxx xx xxxxxxx, xxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxx.\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-Xxxx xx Xxxx Y xx x xxxxxxxx xxxxxxxxxxx xx xxx xx xxxxxx x Xxxxxxx YY XXX (Xxxxxxxxx Xxxxxxx Xxxxxxxx) xxx xxxx xxxx Xxxxxxxxx Xxxxxxxx xx xx xxxxxxxxxxx xx xxxxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxxxxx xxxxxxx. Xxx xxx xxxx x xxxxxxxx xxx xxxx-xx xxx xxxxxx x Xxxxxxxx Xxx xxx xxxx xxxxxxx. Xxxxx xxxxxxxx xxxx xx xxxxxxxxx xx xxx XXX xxxx xx xxxxx xx Xxxxxxx Xxxxxxxx xx xxxxxxxxxxxxx xx Xxxxxxxxx Xxxxxxxx.
+This is Part 1 of a complete walkthrough on how to create a Windows 10 UWP (Universal Windows Platform) app that uses Microsoft Passport as an alternative to traditional username and password authentication systems. The app uses a username for sign-in and create a Passport Key for each account. These accounts will be protected by the PIN that is setup in Windows Settings on configuration of Microsoft Passport.
 
-Xxxx xxxxxxxxxxx xx xxxxx xxxx xxx xxxxx: xxxxxxxx xxx xxx xxx xxxxxxxxxx xxx xxxxxxx xxxxxxx. Xxxx xxx'xx xxxxxxxx xxxx xxxx xxxxxxx, xxxxxxxx xx xx Xxxx Y: [Xxxxxxxxx Xxxxxxxx xxxxx xxxxxxx](microsoft-passport-login-auth-service.md).
+This walkthrough is split into two parts: building the app and connecting the backend service. When you're finished with this article, continue on to Part 2: [Microsoft Passport login service](microsoft-passport-login-auth-service.md).
 
-Xxxxxx xxx xxxxx, xxx xxxxxx xxxx xxx [Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx Xxxxx](microsoft-passport.md) xxxxxxxx xxx x xxxxxxx xxxxxxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxxx xxxxx.
+Before you begin, you should read the [Microsoft Passport and Windows Hello](microsoft-passport.md) overview for a general understanding of how Microsoft Passport works.
 
-## Xxx xxxxxxx
+## Get started
 
 
-Xx xxxxx xx xxxxx xxxx xxxxxxx, xxx'xx xxxx xxxx xxxxxxxxxx xxxx X#, xxx XXXX. Xxx'xx xxxx xxxx xx xx xxxxx Xxxxxx Xxxxxx YYYY (Xxxxxxxxx Xxxxxxx xx xxxxxxx) xx x Xxxxxxx YY xxxxxxx.
+In order to build this project, you'll need some experience with C#, and XAML. You'll also need to be using Visual Studio 2015 (Community Edition or greater) on a Windows 10 machine.
 
--   Xxxx Xxxxxx Xxxxxx YYYY xxx xxxxxx Xxxx > Xxx > Xxxxxxx.
--   Xxxx xxxx xxxx x “Xxx Xxxxxxx” xxxxxx. Xxxxxxxxxx xx Xxxxxxxxx > Xxxxxx X#.
--   Xxxxxx Xxxxx Xxx (Xxxxxxxxx Xxxxxxx) xxx xxxx xxxx xxxxxxxxxxx "XxxxxxxxXxxxx".
--   Xxxxx xxx Xxx xxx xxx xxxxxxxxxxx (XY), xxx xxxxxx xxx x xxxxx xxxxxx xxxxx xx xxx xxxxxx. Xxxxx xxx xxxxxxxxxxx.
+-   Open Visual Studio 2015 and select File > New > Project.
+-   This will open a “New Project” window. Navigation to Templates > Visual C#.
+-   Choose Blank App (Universal Windows) and name your application "PassportLogin".
+-   Build and Run the new application (F5), you should see a blank window shown on the screen. Close the application.
 
 ![](images/passport-login-1.png)
 
-## Xxxxxxxx Y: Xxxxx xxxx Xxxxxxxxx Xxxxxxxx
+## Exercise 1: Login with Microsoft Passport
 
 
-Xx xxxx xxxxxxxx xxx xxxx xxxxx xxx xx xxxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxx xx xxx xxxxxxx, xxx xxx xx xxxx xxxx xx xxxxxxx xxxxx Xxxxxxxxx Xxxxxxxx.
+In this exercise you will learn how to check if Microsoft Passport is setup on the machine, and how to sign into an account using Microsoft Passport.
 
--   Xx xxx xxx xxxxxxx xxxxxx x xxx xxxxxx xx xxx xxxxxxxx xxxxxx "Xxxxx". Xxxx xxxxxx xxxx xxxxxxx xxx xxxxx xxxx xxxx xx xxxxxxxxx xx xx xxxx xxxxxx. Xxxxx xxxxx xx xxx xxxxxxx xx xxxxxxxx xxxxxxxx, xxxxxx Xxx > Xxx Xxxxxx, xxxx xxxxxx xxx xxxxxx xx Xxxxx.
+-   In the new project create a new folder in the solution called "Views". This folder will contain the pages that will be navigated to in this sample. Right click on the project in solution explorer, select Add > New Folder, then rename the folder to Views.
 
     ![](images/passport-login-2.png)
 
--   Xxxxx xxxxx xx xxx xxx Xxxxx xxxxxx, xxxxxx Xxx > Xxx Xxxx xxx xxxxxx Xxxxx Xxxx. Xxxx xxxx xxxx "Xxxxx.xxxx".
+-   Right click on the new Views folder, select Add > New Item and select Blank Page. Name this page "Login.xaml".
 
     ![](images/passport-login-3.png)
 
--   Xx xxxxxx xxx xxxx xxxxxxxxx xxx xxx xxx xxxxx xxxx, xxx xxx xxxxxxxxx XXXX. Xxxx XXXX xxxxxxx x XxxxxXxxxx xx xxxxx xxx xxxxxxxxx xxxxxxxx:
+-   To define the user interface for the new login page, add the following XAML. This XAML defines a StackPanel to align the following children:
 
-    -   XxxxXxxxx xxxx xxxx xxxxxxx x xxxxx.
-    -   XxxxXxxxx xxx xxxxx xxxxxxxx.
-    -   XxxxXxx xxx xxx xxxxxxxx xx xxxxx.
-    -   Xxxxxx xx xxxxxxxx xx x xxxxxxxx xxxx.
-    -   XxxxXxxxx xx xxxxxxx xxx xxxxxx xx Xxxxxxxxx Xxxxxxxx.
-    -   XxxxXxxxx xx xxxxxxx xxx Xxxxx xxxx xx xxxxx xx xx xxxxxxx xx xxxxxxxxxx xxxxx.
+    -   TextBlock that will contain a title.
+    -   TextBlock for error messages.
+    -   TextBox for the username to input.
+    -   Button to navigate to a register page.
+    -   TextBlock to contain the status of Microsoft Passport.
+    -   TextBlock to explain the Login page as there is no backend or configured users.
 
     ```xaml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -80,7 +81,7 @@ Xx xxxx xxxxxxxx xxx xxxx xxxxx xxx xx xxxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxx xx x
     </Grid>
     ```
 
--   X xxx xxxxxxx xxxx xx xx xxxxx xx xxx xxxx xxxxxx xx xxx xxx xxxxxxxx xxxxxxxx. Xxxxxx xxxxx XY xx xxx xxx Xxxxxxxx Xxxxxxxx xx xxx xx xxx Xxxxx.xxxx.xx. Xxx xx xxx xxxxxxxxx xxx xxxxx xxxxxxx xx xxxxxx xxx Xxxxx xxx Xxxxxxxx xxxxxx. Xxx xxx xxxxx xxxxxxx xxxx xxx xxx XxxxxXxxxxxx.Xxxx xx xx xxxxx xxxxxx.
+-   A few methods need to be added to the code behind to get the solution building. Either press F7 or use the Solution Explorer to get to the Login.xaml.cs. Add in the following two event methods to handle the Login and Register events. For now these methods will set the ErrorMessage.Text to an empty string.
 
     ```cs
     namespace PassportLogin.Views
@@ -104,7 +105,7 @@ Xx xxxx xxxxxxxx xxx xxxx xxxxx xxx xx xxxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxx xx x
     }
     ```
 
--   Xx xxxxx xx xxxxxx xxx Xxxxx xxxx, xxxx xxx XxxxXxxx xxxx xx xxxxxxxx xx xxx Xxxxx xxxx xxxx xxx XxxxXxxx xx xxxxxx. Xxxx xxx XxxxXxxx.xxxx.xx xxxx. Xx xxx xxxxxxxx xxxxxxxx xxxxxx xxxxx xx XxxxXxxx.xxxx.xx. Xx xxx xxx’x xxxx xxxx xxxxx xxx xxxxxx xxxxx xxxx xx XxxxXxxx.xxxx xx xxxx xxx xxxx xxxxxx. Xxxxxx x xxxxxx xxxxx xxxxxxx xxxxxx xxxx xxxx xxxxxxxx xx xxx xxxxx xxxx. Xxx xxxx xxxx xx xxx x xxxxxxxxx xx xxx Xxxxx xxxxxxxxx.
+-   In order to render the Login page, edit the MainPage code to navigate to the Login page when the MainPage is loaded. Open the MainPage.xaml.cs file. In the solution explorer double click on MainPage.xaml.cs. If you can’t find this click the little arrow next to MainPage.xaml to show the code behind. Create a loaded event handler method that will navigate to the login page. You will need to add a reference to the Views namespace.
 
     ```cs
     using PassportLogin.Views;
@@ -127,7 +128,7 @@ Xx xxxx xxxxxxxx xxx xxxx xxxxx xxx xx xxxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxx xx x
     }
     ```
 
--   Xx xxx Xxxxx xxxx xxx xxxx xx xxxxxx xxx XxXxxxxxxxxXx xxxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxxxxxx xx xxxx xxxxxxx. Xx Xxxxx.xxxx.xx xxxxxxxxx xxx xxxxxxxxx. Xxx xxxx xxxxxx xxxx xxx XxxxxxxxxXxxxxxxxXxxxxx xxxxxx xxxxx xx xxxxx. Xxxx xx xxxxxxx xx xxxx xxx xxxxxxxxx xx xxx.
+-   In the Login page you need to handle the OnNavigatedTo event to validate if Microsoft Passport is available on this machine. In Login.xaml.cs implement the following. You will notice that the MicrosoftPassportHelper object flags an error. This is because we have not implement it yet.
 
     ```cs
     public sealed partial class Login : Page
@@ -155,12 +156,12 @@ Xx xxxx xxxxxxxx xxx xxxx xxxxx xxx xx xxxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxx xx x
     }
     ```
 
--   Xx xxxxxx xxx XxxxxxxxxXxxxxxxxXxxxxx xxxxx, xxxxx xxxxx xx xxx xxxxxxxx XxxxxxxxXxxxx (Xxxxxxxxx Xxxxxxx) xxx xxxxx Xxx > Xxx Xxxxxx. Xxxx xxxx xxxxxx Xxxxx.
+-   To create the MicrosoftPassportHelper class, right click on the solution PassportLogin (Universal Windows) and click Add > New Folder. Name this folder Utils.
 
     ![](images/passport-login-5.png)
 
--   Xxxxx xxxxx xx xxx Xxxxx xxxxxx xxx xxxxx Xxx > Xxxxx. Xxxx xxxx xxxxx "XxxxxxxxxXxxxxxxxXxxxxx.xx".
--   Xxxxxx xxx xxxxx xxxxxxxxxx xx XxxxxxxxxXxxxxxxxXxxxxx xx xxxxxx xxxxxx, xxxx xxx xxx xxxxxxxxx xxxxxx xxxx xx xxxxxx xxx xxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxx xx xx xxxx xx xxx. Xxx xxxx xxxx xx xxx xxx xxxxxxxx xxxxxxxxxx.
+-   Right click on the Utils folder and click Add > Class. Name this class "MicrosoftPassportHelper.cs".
+-   Change the class definition of MicrosoftPassportHelper to public static, then add the following method that to inform the user if Microsoft Passport is ready to be used or not. You will need to add the required namespaces.
 
     ```cs
     using System;
@@ -196,20 +197,20 @@ Xx xxxx xxxxxxxx xxx xxxx xxxxx xxx xx xxxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxx xx x
     }
     ```
 
--   Xx Xxxxx.xxxx.xx xxx x xxxxxxxxx xx xxx Xxxxx xxxxxxxxx. Xxxx xxxx xxxxxxx xxx xxxxx xx xxx XxXxxxxxxxxXx xxxxxx.
+-   In Login.xaml.cs add a reference to the Utils namespace. This will resolve the error in the OnNavigatedTo method.
 
     ```cs
     using PassportLogin.Utils;
     ```
 
--   Xxxxx xxx xxx xxx xxxxxxxxxxx (XY). Xxx xxxx xx xxxxxxxxx xx xxx xxxxx xxxx xxx xxx Xxxxxxxxx Xxxxxxxx xxxxxx xxxx xxxxxxxx xx xxx xx Xxxxxxxx xx xxxxx xx xx xxxx. Xxx xxxxxx xxx xxxxxx xxx xxxxx xx xxxx xxxxxx xxxxxxxxxx xxx Xxxxxxxxx Xxxxxxxx xxxxxx xx xxxx xxxxxxx.
+-   Build and run the application (F5). You will be navigated to the login page and the Microsoft Passport banner will indicate to you if Passport is ready to be used. You should see either the green or blue banner indicating the Microsoft Passport status on your machine.
 
     ![](images/passport-login-6.png)
 
     ![](images/passport-login-7.png)
 
--   Xxx xxxx xxxxx xxx xxxx xx xx xx xxxxx xxx xxxxx xxx xxxxxxx xx. Xxxxxx x xxx xxxxxx xxxxxx "Xxxxxx".
--   Xx xxx Xxxxxx xxxxxx xxxxxx x xxx xxxxx xxxxxx "Xxxxxxx.xx". Xxxx xxxxx xxxx xxx xx xxxx xxxxxxx xxxxx. Xx xxxx xx x xxxxxx xx xxxx xxxx xxxxxxx x xxxxxxxx. Xxxxxx xxx xxxxx xxxxxxxxxx xx xxxxxx xxx xxx xxx Xxxxxxxx xxxxxxxx.
+-   The next thing you need to do is build the logic for signing in. Create a new folder called "Models".
+-   In the Models folder create a new class called "Account.cs". This class will act as your account model. As this is a sample it will only contain a username. Change the class definition to public and add the Username property.
     
     ```cs
     namespace PassportLogin.Models
@@ -221,7 +222,7 @@ Xx xxxx xxxxxxxx xxx xxxx xxxxx xxx xx xxxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxx xx x
     }
     ```
 
--   Xxx xxxx xxxx x xxx xx xxxxxx xxxxxxxx. Xxx xxxx xxxxx xx xxx xx xxxxx xx xx xxxxxx, xx x xxxxxxxx, x xxxx xx xxxxx xxxx xx xxxxx xxx xxxxxx xxxxxxx. Xxxxx xxxxx xx xxx Xxxxx xxxxxx xxx xxx x xxx xxxxx xxxxxx "XxxxxxxXxxxxx.xx". Xxxxxx xxx xxxxx xxxxxxxxxx xx xx xxxxxx xxxxxx. Xxx XxxxxxxXxxxxx xx x xxxxxx xxxxx xxxx xxxx xxxxxxx xxx xxx xxxxxxxxx xxxxxxx xx xxxx xxx xxxx xxx xxxx xx xxxxxxxx xxxxxxx. Xxxxxx xxx xxxxxxx xxxx xxxx xx xxxxx xx XxxXxxxxxxxxx. Xxx xxxx xxxx xxxx xx xxxxxxxx xxx xxxx xxx xxxxx xxx xxxxx xxx xxxxx xx. Xxxxxxxxxx xxxxxxxxxx xxxx xx xxxx xx xx xxxxxxxxxx.
+-   You will need a way to handle accounts. For this hands on lab as there is no server, or a database, a list of users will be saved and loaded locally. Right click on the Utils folder and add a new class called "AccountHelper.cs". Change the class definition to be public static. The AccountHelper is a static class that will contain all the necessary methods to save and load the list of accounts locally. Saving and loading will work by using an XmlSerializer. You will also need to remember the file you saved and where you saved it. Additional namespaces will be need to be referenced.
     
     ```cs
     using System.IO;
@@ -304,7 +305,7 @@ Xx xxxx xxxxxxxx xxx xxxx xxxxx xxx xx xxxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxx xx x
     }
     ```
 
--   Xxxx, xxxxxxxxx x xxx xx xxx xxx xxxxxx xx xxxxxxx xxxx xxx xxxxx xxxx xx xxxxxxxx. Xxxxx xxxxxxx xxxx xxxx xxxx xxx xxxx. Xxx xxxxx xxxxxx xxxx xxx xxxx xxxx xxx xxxx xxxxx xx xxx xx x xxxxxxxxxx xxxxxx. Xx xxxxx xx xx xxxx xxxxxx xx xxxxxxxx xx xxxxx, xxxx xxxx xxxxxxxx xxxxxxx x xxxxxx xxxx xxxxx xx xxxx xxxxx. Xxxxx xxxxxxx xxxxxx xx xxxxx xx xxx XxxxxxxXxxxxx xxxxx.
+-   Next, implement a way to add and remove an account from the local list of accounts. These actions will each save the list. The final method that you will need for this hands on lab is a validation method. As there is no auth server or database of users, this will validate against a single user which is hard coded. These methods should be added to the AccountHelper class.
     
     ```cs
     public static Account AddAccount(string username)
@@ -346,7 +347,7 @@ Xx xxxx xxxxxxxx xxx xxxx xxxxx xxx xx xxxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxx xx x
             }<
     ```
 
--   Xxx xxxx xxxxx xxx xxxx xx xx xx xxxxxx x xxxx xx xxxxxxx xxxx xxx xxxx. Xx Xxxxx.xxxx.xx xxxxxx x xxx xxxxxxx xxxxxxxx xxxx xxxx xxxx xxx xxxxxxx xxxxxxx xxxxxxx xx. Xxxx xxx x xxx xxxxxx xxxx XxxxXxXxxxxxxx. Xxxx xxxx xxxxxxxx xxx xxxxxxx xxxxxxxxxxx xxxxx xxx XxxxxxxXxxxxx.XxxxxxxxXxxxxxxXxxxxxxxxxx xxxxxx. Xxxx xxxxxx xxxx xxxxxx x Xxxxxxx xxxxx xx xxx xxxxxxx xxxx xxxx xx xxx xxxx xx xxx xxxx xxxxx xxxxxx xxxxx xxx xxx xx xxx xxxxxxxx xxxx. Xxx xxxx xxxxx xxxxx xxx xxxx xxxxxx xx "xxxxxxXxxxxxxx".
+-   The next thing you need to do is handle a sign in request from the user. In Login.xaml.cs create a new private variable that will hold the current account logging in. Then add a new method call SignInPassport. This will validate the account credentials using the AccountHelper.ValidateAccountCredentials method. This method will return a Boolean value if the entered user name is the same as the hard coded string value you set in the previous step. The hard coded value for this sample is "sampleUsername".
 
     ```cs
     using PassportLogin.Models;
@@ -412,7 +413,7 @@ Xx xxxx xxxxxxxx xxx xxxx xxxxx xxx xx xxxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxx xx x
     }
     ```
 
--   Xxx xxx xxxx xxxxxxx xxx xxxxxxxxx xxxx xxxx xxx xxxxxxxxxxx x xxxxxx xx XxxxxxxxxXxxxxxxxXxxxxx. Xx XxxxxxxxxXxxxxxxxXxxxxx.xx xxx xx x xxx xxxxxx xxxxxx XxxxxxXxxxxxxxXxxXxxxx. Xxxx xxxxxx xxxx xxx Xxxxxxxxx Xxxxxxxx XXX xx xxx [**XxxXxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn973043). Xxxxxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn973048) xxxx xxxxxx x Xxxxxxxx xxx xxxx xx xxxxxxxx xx xxx *xxxxxxxXx* xxx xxx xxxxx xxxxxxx. Xxxxxx xxxx xxx xxxxxxxx xx xxx xxxxxx xxxxxxxxx xx xxx xxx xxxxxxxxxx xx xxxxxxxxxxxx xxxx xx x xxxx xxxxx xxxxxxxx.
+-   You may have noticed the commented code that was referencing a method in MicrosoftPassportHelper. In MicrosoftPassportHelper.cs add in a new method called CreatePassportKeyAsync. This method uses the Microsoft Passport API in the [**KeyCredentialManager**](https://msdn.microsoft.com/library/windows/apps/dn973043). Calling [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) will create a Passport key that is specific to the *accountId* and the local machine. Please note the comments in the switch statement if you are interested in implementing this in a real world scenario.
 
     ```cs
     /// <summary>
@@ -456,7 +457,7 @@ Xx xxxx xxxxxxxx xxx xxxx xxxxx xxx xx xxxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxx xx x
     }
     ```
 
--   Xxx xxx xxxx xxxxxxx xxx XxxxxxXxxxxxxxXxxXxxxx xxxxxx, xxxxxx xx xxx Xxxxx.xxxx.xx xxxx xxx xxxxxxxxx xxx xxxx xxxxxx xxx XxxxXxXxxxxxxx xxxxxx.
+-   Now you have created the CreatePassportKeyAsync method, return to the Login.xaml.cs file and uncomment the code inside the SignInPassport method.
 
     ```cs
     private async void SignInPassport()
@@ -479,16 +480,16 @@ Xx xxxx xxxxxxxx xxx xxxx xxxxx xxx xx xxxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxx xx x
     }
     ```
 
--   Xxxxx xxx xxx xxx xxxxxxxxxxx. Xxx xxxx xx xxxxx xx xxx Xxxxx xxxx. Xxxx xx "xxxxxxXxxxxxxx" xxx xxxxx xxxxx. Xxx xxxx xx xxxxxxxx xxxx x Xxxxxxxxx Xxxxxxxx xxxxxx xxxxxx xxx xx xxxxx xxxx XXX. Xxxx xxxxxxxx xxxx XXX xxxxxxxxx xxx XxxxxxXxxxxxxxXxxXxxxx xxxxxx xxxx xx xxxx xx xxxxxx x Xxxxxxxx xxx. Xxxxxxx xxx xxxxxx xxxxxxx xx xxx xx xxx xxxxxxxx xxxxxx xxxxxxxxxx xxx xxxxx.
+-   Build and run the application. You will be taken to the Login page. Type in "sampleUsername" and click login. You will be prompted with a Microsoft Passport prompt asking you to enter your PIN. Upon entering your PIN correctly the CreatePassportKeyAsync method will be able to create a Passport key. Monitor the output windows to see if the messages saying successful are shown.
 
     ![](images/passport-login-8.png)
 
-## Xxxxxxxx Y: Xxxxxxx xxx Xxxx Xxxxxxxxx Xxxxx
+## Exercise 2: Welcome and User Selection Pages
 
 
-Xx xxxx xxxxxxxx, xxx xxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx. Xxxx x xxxxxx xxxxxxxxxxxx xxxx xx xxxx xxxxxx xx xxxxx xx x xxxxxxx xxxx xxxxx xxxx xxx xxxx xxx xx xxxxxx xxxxx xxxxxxx. Xx Xxxxxxxx xxxxxxx x xxx xxx xxxxx xxxxxxx, x xxxx xxxxxxxxx xxxxxx xxx xx xxxxxxx, xxxxx xxxxxxxx xxx xxxxx xxxx xxxx xxxx xxxxxx xx xx xxxx xxxxxxx. X xxxx xxx xxxx xxxxxx xxx xx xxxxx xxxxxxxx xxx xx xxxxxxxx xx xxx xxxxxxx xxxxxx xxxxxxx xxxxxx xx xx-xxxxx x xxxxxxxx xx xxxx xxxx xxxxxxx xxxxxxxxxxxxx xx xxxxxx xxx xxxxxxx.
+In this exercise, you will continue from the previous exercise. When a person successfully logs in they should be taken to a welcome page where they can sign out or delete their account. As Passport creates a key for every machine, a user selection screen can be created, which displays all users that have been signed in on that machine. A user can then select one of these accounts and go directly to the welcome screen without needed to re-enter a password as they have already authenticated to access the machine.
 
--   1. Xx xxx Xxxxx xxxxxx xxx x xxx xxxxx xxxx xxxxxx "Xxxxxxx.xxxx". Xxx xxx xxxxxxxxx XXXX xx xxxxxxxx xxx xxxx xxxxxxxxx. Xxxx xxxx xxxxxxx x xxxxx, xxx xxxxxx xx xxxxxxxx, xxx xxx xxxxxxx. Xxx xx xxx xxxxxxx xxxx xxxxxxxx xxxx xx x xxxx xxxx (xxxx xxx xxxx xxxxxx xxxxx), xxx xxx xxxxx xxxxxx xxxx xxxxxx xxxxxxxxxx xxxx xxxx.
+-   1. In the Views folder add a new blank page called "Welcome.xaml". Add the following XAML to complete the user interface. This will display a title, the logged in username, and two buttons. One of the buttons will navigate back to a user list (that you will create later), and the other button will handle forgetting this user.
 
     ```xaml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -507,7 +508,7 @@ Xx xxxx xxxxxxxx, xxx xxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx. Xxxx x xxxxxx xx
     </Grid>
     ```
 
--   Xx xxx Xxxxxxx.xxxx.xx xxxx xxxxxx xxxx, xxx x xxx xxxxxxx xxxxxxxx xxxx xxxx xxxx xxx xxxxxxx xxxx xx xxxxxx xx. Xxx xxxx xxxx xx xxxxxxxxx x xxxxxx xx xxxxxxxx xxx XxXxxxxxxxXx xxxxx, xxxx xxxx xxxxx xxx xxxxxxx xxxxxx xx xxx xxxxxxx xxxx. Xxx xxxx xxxx xxxx xx xxxxxxxxx xxx xxxxx xxxxx xxx xxx xxx xxxxxxx xxxxxxx xx xxx XXXX. Xxx xxxx xxxx x xxxxxxxxx xx xxx Xxxxxx xxx Xxxxx xxxxxxx.
+-   In the Welcome.xaml.cs code behind file, add a new private variable that will hold the account that is logged in. You will need to implement a method to override the OnNavigateTo event, this will store the account passed to the welcome page. You will also need to implement the click event for the two buttons defined in the XAML. You will need a reference to the Models and Utils folders.
 
     ```cs
     using PassportLogin.Models;
@@ -552,7 +553,7 @@ Xx xxxx xxxxxxxx, xxx xxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx. Xxxx x xxxxxx xx
     }
     ```
 
--   Xxx xxx xxxx xxxxxxx x xxxx xxxxxxxxx xxx xx xxx xxxxxx xxxx xxxxx xxxxx. Xxx xxxxxxx xx xxxxx xxxxxxx xxxx xxxx xxxxx xxxx xxx xxxxxxxxx xxxxx xx xx xxx xx xx xxxxxxx xxxx Xxxxxxxx. Xxx xxxx xx xxxxxxxxx x xxx xxxxxx xx XxxxxxxxxXxxxxxxxXxxxxx.xx xxxx xxxx xxxxxx xxxxxxxx x Xxxxxxxx xxxx. Xxxx xxxxxx xxxx xxx xxxxx Xxxxxxxxx Xxxxxxxx XXX’x xx xxxx xxx xxxxxx xxx xxxxxxx. Xx xxx xxxx xxxxx xxxx xxx xxxxxx xx xxxxxxx xxx xxxxxx xx xxxxxxxx xxxxxx xx xxxxxxxx xx xxx xxxx xxxxxxxx xxxxxxx xxxxx. Xxx xxxx xxxx x xxxxxxxxx xx xxx Xxxxxx xxxxxx.
+-   You may have noticed a line commented out in the forget user click event. The account is being removed from your local list but currently there is no way to be removed from Passport. You need to implement a new method in MicrosoftPassportHelper.cs that will handle removing a Passport user. This method will use other Microsoft Passport API’s to open and delete the account. In the real world when you delete an account the server or database should be notified so the user database remains valid. You will need a reference to the Models folder.
 
     ```cs
     using PassportLogin.Models;
@@ -578,7 +579,7 @@ Xx xxxx xxxxxxxx, xxx xxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx. Xxxx x xxxxxx xx
     }
     ```
 
--   Xxxx xx Xxxxxxx.xxxx.xx, xxxxxxxxx xxx xxxx xxxx xxxxx XxxxxxXxxxxxxxXxxxxxxXxxxx.
+-   Back in Welcome.xaml.cs, uncomment the line that calls RemovePassportAccountAsync.
 
     ```cs
     private void Button_Forget_User_Click(object sender, RoutedEventArgs e)
@@ -593,7 +594,7 @@ Xx xxxx xxxxxxxx, xxx xxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx. Xxxx x xxxxxx xx
     }
     ```
 
--   Xx xxx XxxxXxXxxxxxxx xxxxxx (xx Xxxxx.xxxx.xx), xxxx xxx XxxxxxXxxxxxxxXxxXxxxx xx xxxxxxxxxx xx xxxxxx xxxxxxxx xx xxx Xxxxxxx xxxxxx xxx xxxx xxx Xxxxxxx.
+-   In the SignInPassport method (of Login.xaml.cs), once the CreatePassportKeyAsync is successful it should navigate to the Welcome screen and pass the Account.
 
     ```cs
     private async void SignInPassport()
@@ -617,11 +618,11 @@ Xx xxxx xxxxxxxx, xxx xxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx. Xxxx x xxxxxx xx
     }
     ```
 
--   Xxxxx xxx xxx xxx xxxxxxxxxxx. Xxxxx xxxx "xxxxxxXxxxxxxx" xxx xxxxx xxxxx. Xxxxx xxxx XXX xxx xx xxxxxxxxxx xxx xxxxxx xx xxxxxxxxx xx xxx xxxxxxx xxxxxx. Xxx xxxxxxxx xxxxxx xxxx xxx xxxxxxx xxx xxxxxx xxxxxx xx xxx xx xxx xxxx xxx xxxxxxx. Xxxxxx xxxx xxxx xxx xxxx xx xxxxxxx xxx xxxxxx xx xxx xxxxxxx xxxx. Xxx xxxx xxxx xx xxxxxx x xxxx xxxxxxxxx xxxx xxxx xxx xxx xxx xxxxxxxx xx.
+-   Build and run the application. Login with "sampleUsername" and click login. Enter your PIN and if successful you should be navigated to the welcome screen. Try clicking forget user and monitor the output window to see if the user was deleted. Notice that when the user is deleted you remain on the welcome page. You will need to create a user selection page that the app can navigate to.
 
     ![](images/passport-login-9.png)
 
--   Xx xxx Xxxxx xxxxxx xxxxxx x xxx xxxxx xxxx xxxxxx "XxxxXxxxxxxxx.xxxx" xxx xxx xxx xxxxxxxxx XXXX xx xxxxxx xxx xxxx xxxxxxxxx. Xxxx xxxx xxxx xxxxxxx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242878) xxxx xxxxxxxx xxx xxx xxxxx xx xxx xxxxx xxxxxxxx xxxx, xxx x Xxxxxx xxxx xxxx xxxxxxxx xx xxx xxxxx xxxx xx xxxxx xxx xxxx xx xxx xxxxxxx xxxxxxx.
+-   In the Views folder create a new blank page called "UserSelection.xaml" and add the following XAML to define the user interface. This page will contain a [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) that displays all the users in the local accounts list, and a Button that will navigate to the login page to allow the user to add another account.
 
     ```xaml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -643,7 +644,7 @@ Xx xxxx xxxxxxxx, xxx xxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx. Xxxx x xxxxxx xx
     </Grid><
     ```
 
--   Xx XxxxXxxxxxxxx.xxxx.xx xxxxxxxxx xxx xxxxxx xxxxxx xxxx xxxx xxxxxxxx xx xxx xxxxx xxxx xx xxxxx xxx xx xxxxxxxx xx xxx xxxxx xxxx. Xxxx xxxxxxxxx xxx XxxxxxxxxXxxxxxx xxxxx xxx xxx XxxxXxxx xxx x xxxxx xxxxx xxx xxx Xxxxxx.
+-   In UserSelection.xaml.cs implement the loaded method that will navigate to the login page if there are no accounts in the local list. Also implement the SelectionChanged event for the ListView and a click event for the Button.
 
     ```cs
     using System.Diagnostics;
@@ -704,43 +705,43 @@ Xx xxxx xxxxxxxx, xxx xxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx. Xxxx x xxxxxx xx
 
 <!-- -->
 
--   Xxxxx xxx x xxx xxxxxx xx xxx xxx xxxxx xxx xxxx xx xxxxxxxxx xx xxx XxxxXxxxxxxxx xxxx. Xx XxxxXxxx.xxxx.xx xxx xxxxxx xxxxxxxx xx xxx XxxxXxxxxxxxx xxxx xxxxxxx xx xxx Xxxxx xxxx. Xxxxx xxx xxx xx xxx xxxxxx xxxxx xx XxxxXxxx xxx xxxx xxxx xx xxxx xxx xxxxxxxx xxxx xx xxxx xxx XxxxXxxxxxxxx xxxx xxx xxxxx xx xxxxx xxx xxx xxxxxxxx. Xxxx xxxx xxxxxxx xxxxxxxx xxx xxxxxx xxxxxx xx xx xxxxx xxx xxxx xxxxxx x xxxxxxxxx xx xxx Xxxxx xxxxxx.
+-   There are a few places in the app where you want to navigated to the UserSelection page. In MainPage.xaml.cs you should navigate to the UserSelection page instead of the Login page. While you are in the loaded event in MainPage you will need to load the accounts list so that the UserSelection page can check if there are any accounts. This will require changing the loaded method to be async and also adding a reference to the Utils folder.
 
-    ```xx
-    xxxxx XxxxxxxxXxxxx.Xxxxx;
+    ```cs
+    using PassportLogin.Utils;
 
-    xxxxxxx xxxxx xxxx XxxxXxxx_Xxxxxx(xxxxxx xxxxxx, XxxxxxXxxxxXxxx x)
+    private async void MainPage_Loaded(object sender, RoutedEventArgs e)
     {
-        // Xxxx xxx xxxxx Xxxxxxxx Xxxx xxxxxx xxxxxxxxxx xx xxx XxxxXxxxxxxxx xxxx
-        xxxxx XxxxxxxXxxxxx.XxxxXxxxxxxXxxxXxxxx();
-        Xxxxx.Xxxxxxxx(xxxxxx(XxxxXxxxxxxxx));
+        // Load the local Accounts List before navigating to the UserSelection page
+        await AccountHelper.LoadAccountListAsync();
+        Frame.Navigate(typeof(UserSelection));
     }
     ```
 
--   Xxxx xxx xxxx xxxx xx xxxxxxxx xx xxx XxxxXxxxxxxxx xxxx xxxx xxx Xxxxxxx xxxx. Xx xxxx xxxxx xxxxxx xxx xxxxxx xxxxxxxx xxxx xx xxx XxxxXxxxxxxxx xxxx.
+-   Next you will want to navigate to the UserSelection page from the Welcome page. In both click events you should navigate back to the UserSelection page.
 
-    ```xx
-    xxxxxxx xxxx Xxxxxx_Xxxxxxx_Xxxxx(xxxxxx xxxxxx, XxxxxxXxxxxXxxx x)
+    ```cs
+    private void Button_Restart_Click(object sender, RoutedEventArgs e)
     {
-        Xxxxx.Xxxxxxxx(xxxxxx(XxxxXxxxxxxxx));
+        Frame.Navigate(typeof(UserSelection));
     }
 
-    xxxxxxx xxxx Xxxxxx_Xxxxxx_Xxxx_Xxxxx(xxxxxx xxxxxx, XxxxxxXxxxxXxxx x)
+    private void Button_Forget_User_Click(object sender, RoutedEventArgs e)
     {
-        // Xxxxxx xx xxxx Xxxxxxxxx Xxxxxxxx
-        XxxxxxxxxXxxxxxxxXxxxxx.XxxxxxXxxxxxxxXxxxxxxXxxxx(_xxxxxxXxxxxxx);
+        // Remove it from Microsoft Passport
+        MicrosoftPassportHelper.RemovePassportAccountAsync(_activeAccount);
 
-        // Xxxxxx xx xxxx xxx xxxxx xxxxxxxx xxxx xxx xxxxxx xxx xxxxxxx xxxx
-        XxxxxxxXxxxxx.XxxxxxXxxxxxx(_xxxxxxXxxxxxx);
+        // Remove it from the local accounts list and resave the updated list
+        AccountHelper.RemoveAccount(_activeAccount);
 
-        Xxxxx.XxxxxXxxx("Xxxx " + _xxxxxxXxxxxxx.Xxxxxxxx + " xxxxxxx.");
+        Debug.WriteLine("User " + _activeAccount.Username + " deleted.");
 
-        // Xxxxxxxx xxxx xx XxxxXxxxxxxxx xxxx.
-        Xxxxx.Xxxxxxxx(xxxxxx(XxxxXxxxxxxxx));
+        // Navigate back to UserSelection page.
+        Frame.Navigate(typeof(UserSelection));
     }
     ```
 
--   Xx xxx Xxxxx xxxx xxx xxxx xxxx xx xxx xx xx xxx xxxxxxx xxxxxxxx xxxx xxx xxxx xx xxx XxxxXxxxxxxxx xxxx. Xx XxXxxxxxxxxXx xxxxx xxxxx xxx xxxxxxx xxxxxx xx xxx xxxxxxxxxx. Xxxxx xx xxxxxx x xxx xxxxxxx xxxxxxxx xxxx xxxx xxxxxxxx xx xxx xxxxxxx xx xx xxxxxxxx xxxxxxx. Xxxx xxxxxx xxx XxXxxxxxxxxXx xxxxx.
+-   In the Login page you need code to log in to the account selected from the list in the UserSelection page. In OnNavigatedTo event store the account passed to the navigation. Start by adding a new private variable that will identify if the account is an existing account. Then handle the OnNavigatedTo event.
 
     ```cs
     namespace PassportLogin.Views
@@ -787,94 +788,94 @@ Xx xxxx xxxxxxxx, xxx xxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx. Xxxx x xxxxxx xx
     }
     ```
 
--   Xxx XxxxXxXxxxxxxx xxxxxx xxxx xxxx xx xx xxxxxxx xx xxxx xx xx xxx xxxxxxxx xxxxxxx. Xxx XxxxxxxxxXxxxxxxxXxxxxx xxxx xxxx xxxxxxx xxxxxx xx xxxx xxx xxxxxxx xxxx Xxxxxxxx, xx xxx xxxxxxx xxxxxxx xxx x Xxxxxxxx xxx xxxxxxx xxx xx. Xxxxxxxxx xxx xxx xxxxxx xx XxxxxxxxxXxxxxxxxXxxxxx.xx xx xxxx xx xx xxxxxxxx xxxx xxxx xxxxxxxx. Xxx xxxxxxxxxxx xx xxxx xxxx xx xxx xxxx xxxxxx xxxx xxxxxxx xxx xxxx xxxxxxxx.
+-   The SignInPassport method will need to be updated to sign in to the selected account. The MicrosoftPassportHelper will need another method to open the account with Passport, as the account already has a Passport key created for it. Implement the new method in MicrosoftPassportHelper.cs to sign in an existing user with passport. For information on each part of the code please read through the code comments.
 
     ```cs
     /// <summary>
     /// Attempts to sign a message using the Passport key on the system for the accountId passed.
     /// </summary>
-    /// <returns>Xxxxxxx xxxxxxxxxxxx xx xxxxxxxx xxx Xxxxxxxx xxxxxxxxxxxxxx xxxxxxx xxxxxxxxx</returns>
-    public static async Task<bool> XxxXxxxxxxxXxxxxxxxxxxxxxXxxxxxxXxxxx(Xxxxxxx xxxxxxx)
+    /// <returns>Boolean representing if creating the Passport authentication message succeeded</returns>
+    public static async Task<bool> GetPassportAuthenticationMessageAsync(Account account)
     {
-        XxxXxxxxxxxxxXxxxxxxxxXxxxxx xxxxXxxXxxxxx = xxxxx XxxXxxxxxxxxxXxxxxxx.XxxxXxxxx(xxxxxxx.Xxxxxxxx);
-        // Xxxxxxx XxxxXxxxx xxxx xxxxx xxx xxxx xxxxxx xx xxxx xx xxxxxxxxx xx xxx xxx xxx xxxx xxx xxxxxxx xxxx xxxxxxxxxxx xxxxx.
-        // Xx xxx xxxxxx xx xxxxx xxx xxxx xx xxxx xx xxxxx xxx xxx xxx xxx xxxxxxxxx:
-        // xxx xxxxxxxXxxxxx = xxxxx Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxx.XX.XxxxXxxxxxxXxxxxxxx.XxxxxxxXxxxxxxxxxxxXxxxx(xxxxxxx.Xxxxxxxx);
-        // Xxxx xxxx xxx xxx xxx xxxxxx xxx xxxxxxxx xx xxx xxxxxxxxx xxxxxx xx Xxxxxxxxx Xxxxxxx xx xxx XXX xxxx xxx Xxxxxxxxx Xxxxxxxx.
+        KeyCredentialRetrievalResult openKeyResult = await KeyCredentialManager.OpenAsync(account.Username);
+        // Calling OpenAsync will allow the user access to what is available in the app and will not require user credentials again.
+        // If you wanted to force the user to sign in again you can use the following:
+        // var consentResult = await Windows.Security.Credentials.UI.UserConsentVerifier.RequestVerificationAsync(account.Username);
+        // This will ask for the either the password of the currently signed in Microsoft Account or the PIN used for Microsoft Passport.
 
-        xx (xxxxXxxXxxxxx.Xxxxxx == XxxXxxxxxxxxxXxxxxx.Xxxxxxx)
+        if (openKeyResult.Status == KeyCredentialStatus.Success)
         {
-            // Xx XxxxXxxxx xxx xxxxxxxxx, xxx xxxx xxxxx xx xxxxx xxxxx xx xxxxxxx xxx xxxxxx xxxxxxxxxxx xxxxxxxx xxxxxx xx xxxxxxx xxxxxxxx.
-            // Xx xx xxxx xxxx xxx xxxxx Xxxxxxx x xxxxxxxxx xxxx xxx Xxxxxx. Xxx xxxxxx xxxxx xxxx xxxx xxxxxxxxx xxx xxx xxxxxx
-            // xxxxx xxxxx xxx xxxxxx xxxxxxxxx. Xx xx xx xxxxxxx xx xxxxx xxxxx xxx xxxx xxxxxx xx xxx xxxxxxx.
-            // Xxx xxxxx xxxxxx xxxx x xxx xxxxxx xxxxxx XxxxxxxXxxxXxxxx xx xxxxxx xxx xxxx
-            // x.x. XxxxxxxXxxxXxxxx(xxxxXxxXxxxxx);
-            // Xxxxx xx xxx xxxxxx Xxxxxxxxx Xxxxxxxx xxxxxx xxx xxxxxxxxxxx xx xxx xx xx xxxx.
+            // If OpenAsync has succeeded, the next thing to think about is whether the client application requires access to backend services.
+            // If it does here you would Request a challenge from the Server. The client would sign this challenge and the server
+            // would check the signed challenge. If it is correct it would allow the user access to the backend.
+            // You would likely make a new method called RequestSignAsync to handle all this
+            // e.g. RequestSignAsync(openKeyResult);
+            // Refer to the second Microsoft Passport sample for information on how to do this.
 
-            // Xxx xxxx xxxxxx xxxxx xx xxx xxxxxxx xx x xxxxxx xxxxxxxxxxx xx xxxx xxxxxx xxxx.
-            xxxxxx xxxx;
+            // For this sample there is not concept of a server implemented so just return true.
+            return true;
         }
-        xxxx xx (xxxxXxxXxxxxx.Xxxxxx == XxxXxxxxxxxxxXxxxxx.XxxXxxxx)
+        else if (openKeyResult.Status == KeyCredentialStatus.NotFound)
         {
-            // Xx xxx _xxxxxxx xx xxx xxxxx xx xxxx xxxxx. Xx xxxxx xx xxx xx xxx xxxxxx. 
-            // Y. Xxxxxxxxx Xxxxxxxx xxx xxxx xxxxxxxx
-            // Y. Xxxxxxxxx Xxxxxxxx xxx xxxx xxxxxxxx xxx xx-xxxxxxx xxxxx xxx Xxxxxxxxx Xxxxxxxx Xxx xx xxxxxx.
-            // Xxxxxxx XxxxxxXxxxxxxxXxx xxx xxxxxxx xxxxxxx xxx xxxxxxx xxxx xxxxxxx xx xxxxxxx xxx xxxxxxxx Xxxxxxxxx Xxxxxxxx Xxx xxx xxxx xxxxxxx.
-            // Xx xxx xxxxx xxxxxx xx xxxx Xxxxxxxxx Xxxxxxxx xx xxxxxxxx xxxx xxx XxxxxxXxxxxxxxXxx xxxxxx xxxx xxxxxx xxxx xxxxx.
-            xx (xxxxx XxxxxxXxxxxxxxXxxXxxxx(xxxxxxx.Xxxxxxxx))
+            // If the _account is not found at this stage. It could be one of two errors. 
+            // 1. Microsoft Passport has been disabled
+            // 2. Microsoft Passport has been disabled and re-enabled cause the Microsoft Passport Key to change.
+            // Calling CreatePassportKey and passing through the account will attempt to replace the existing Microsoft Passport Key for that account.
+            // If the error really is that Microsoft Passport is disabled then the CreatePassportKey method will output that error.
+            if (await CreatePassportKeyAsync(account.Username))
             {
-                // Xx xxx Xxxxxxxx Xxx xxx xxxxx xxxxxxxxxxxx xxxxxxx, Xxxxxxxxx Xxxxxxxx xxx xxxx xxxx xxxxx.
-                // Xxx xxxx xxx Xxxxxxxx Xxx xxx xxxx xxxxx xxx xxx _xxxxxxx xxxxx xxxx xx.
-                xxxxxx xxxxx XxxXxxxxxxxXxxxxxxxxxxxxxXxxxxxxXxxxx(xxxxxxx);
+                // If the Passport Key was again successfully created, Microsoft Passport has just been reset.
+                // Now that the Passport Key has been reset for the _account retry sign in.
+                return await GetPassportAuthenticationMessageAsync(account);
             }
         }
 
-        // Xxx&#YY;x xxx Xxxxxxxx xxxxx xxx, xxx xxxxx xxxxx
-        xxxxxx xxxxx;
+        // Can&#39;t use Passport right now, try again later
+        return false;
     }
     ```
 
--   Xxxxxx xxx XxxxXxXxxxxxxx xxxxxx xx Xxxxx.xxxx.xx xx xxxxxx xxx xxxxxxxx xxxxxxx. Xxxx xxxx xxx xxx xxx xxxxxx xx xxx XxxxxxxxxXxxxxxxxXxxxxx.xx. Xx xxxxxxxxxx xxx xxxxxxx xxxx xx xxxxxx xx xxx xxx xxxx xxxxxxxxx xx xxx xxxxxxx xxxxxx.
+-   Update the SignInPassport method in Login.xaml.cs to handle the existing account. This will use the new method in the MicrosoftPassportHelper.cs. If successful the account will be signed in and the user navigated to the welcome screen.
 
-    ```xx
-    xxxxxxx xxxxx xxxx XxxxXxXxxxxxxx()
+    ```cs
+    private async void SignInPassport()
     {
-        xx (_xxXxxxxxxxXxxxxxx)
+        if (_isExistingAccount)
         {
-            xx (xxxxx XxxxxxxxxXxxxxxxxXxxxxx.XxxXxxxxxxxXxxxxxxxxxxxxxXxxxxxxXxxxx(_xxxxxxx))
+            if (await MicrosoftPassportHelper.GetPassportAuthenticationMessageAsync(_account))
             {
-                Xxxxx.Xxxxxxxx(xxxxxx(Xxxxxxx), _xxxxxxx);
+                Frame.Navigate(typeof(Welcome), _account);
             }
         }
-        xxxx xx (XxxxxxxXxxxxx.XxxxxxxxXxxxxxxXxxxxxxxxxx(XxxxxxxxXxxxXxx.Xxxx))
+        else if (AccountHelper.ValidateAccountCredentials(UsernameTextBox.Text))
         {
-            //Xxxxxx xxx xxx x xxx xxxxx xxxxxxx
-            _xxxxxxx = XxxxxxxXxxxxx.XxxXxxxxxx(XxxxxxxxXxxxXxx.Xxxx);
-            Xxxxx.XxxxxXxxx("Xxxxxxxxxxxx xxxxxx xx xxxx xxxxxxxxxxx xxxxxxxxxxx xxx xxxxxxx xxxxx xxxxxxx xxxxxxxx!");
+            //Create and add a new local account
+            _account = AccountHelper.AddAccount(UsernameTextBox.Text);
+            Debug.WriteLine("Successfully signed in with traditional credentials and created local account instance!");
 
-            xx (xxxxx XxxxxxxxxXxxxxxxxXxxxxx.XxxxxxXxxxxxxxXxxXxxxx(XxxxxxxxXxxxXxx.Xxxx))
+            if (await MicrosoftPassportHelper.CreatePassportKeyAsync(UsernameTextBox.Text))
             {
-                Xxxxx.XxxxxXxxx("Xxxxxxxxxxxx xxxxxx xx xxxx Xxxxxxxxx Xxxxxxxx!");
-                Xxxxx.Xxxxxxxx(xxxxxx(Xxxxxxx), _xxxxxxx);
+                Debug.WriteLine("Successfully signed in with Microsoft Passport!");
+                Frame.Navigate(typeof(Welcome), _account);
             }
         }
-        xxxx
+        else
         {
-            XxxxxXxxxxxx.Xxxx = "Xxxxxxx Xxxxxxxxxxx";
+            ErrorMessage.Text = "Invalid Credentials";
         }
     }
     ```
 
--   Xxxxx xxx xxx xxx xxxxxxxxxxx. Xxxxx xxxx "xxxxxxXxxxxxxx". Xxxx xx xxxx XXX xxx xx xxxxxxxxxx xxx xxxx xx xxxxxxxxx xx xxx Xxxxxxx xxxxxx. Xxxxx xxxx xx xxxx xxxx. Xxx xxxxxx xxx xxx x xxxx xx xxx xxxx. Xx xxx xxxxx xx xxxx Xxxxxxxx xxxxxxx xxx xx xxxx xxxx xx xxxxxxx xxxxxx xx xx-xxxxx xxx xxxxxxxxx xxx.
+-   Build and run the application. Login with "sampleUsername". Type in your PIN and if successful you will be navigated to the Welcome screen. Click back to user list. You should now see a user in the list. If you click on this Passport enables you to sign back in without having to re-enter any passwords etc.
 
     ![](images/passport-login-10.png)
 
-## Xxxxxxxx Y: Xxxxxxxxxxx x xxx Xxxxxxxx xxxx
+## Exercise 3: Registering a new Passport user
 
 
-Xx xxxx xxxxxxxx xxx xxxx xx xxxxxxxx x xxx xxxx xxxx xxxx xxxxxx x xxx xxxxxxx xxxx Xxxxxxxx. Xxxx xxxx xxxx xxxxxxxxx xx xxx xxx Xxxxx xxxx xxxxx. Xxx Xxxxx xxxx xx xxxxxxxxxxx xxx xx xxxxxxxx xxxx xxxx xx xxxxxxxxx xx xxx Xxxxxxxx. X XxxxxxxxXxxxxxxx xxxx xxxx xxxxxx Xxxxxxxx xxxxxxxxxxxx xxx x xxx xxxx.
+In this exercise you will be creating a new page that will create a new account with Passport. This will work similarly to how the Login page works. The Login page is implemented for an existing user that is migrating to use Passport. A PassportRegister page will create Passport registration for a new user.
 
--   Xx xxx xxxxx xxxxxx xxxxxx x xxx xxxxx xxxx xxxxxx "XxxxxxxxXxxxxxxx.xxxx". Xx xxx XXXX xxx xx xxx xxxxxxxxx xx xxxxx xxx xxxx xxxxxxxxx. Xxx xxxxxxxxx xxxx xx xxxxxxx xx xxx Xxxxx xxxx.
+-   In the views folder create a new blank page called "PassportRegister.xaml". In the XAML add in the following to setup the user interface. The interface here is similar to the Login page.
 
     ```xaml
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -901,71 +902,72 @@ Xx xxxx xxxxxxxx xxx xxxx xx xxxxxxxx x xxx xxxx xxxx xxxx xxxxxx x xxx xxxxxxx 
     </Grid>
     ```
 
--   Xx xxx XxxxxxxxXxxxxxxx.xxxx.xx xxxx xxxxxx xxxx xxxxxxxxx x xxxxxxx Xxxxxxx xxxxxxxx xxx x xxxxx xxxxx xxx xxx xxxxxxxx Xxxxxx. Xxxx xxxx xxx x xxx xxxxx xxxxxxx xxx xxxxxx x Xxxxxxxx xxx.
+-   In the PassportRegister.xaml.cs code behind file implement a private Account variable and a click event for the register Button. This will add a new local account and create a Passport key.
 
-    ```xx
-    xxxxx XxxxxxxxXxxxx.Xxxxxx;
-    xxxxx XxxxxxxxXxxxx.Xxxxx;
+    ```cs
+    using PassportLogin.Models;
+    using PassportLogin.Utils;
 
-    xxxxxxxxx XxxxxxxxXxxxx.Xxxxx
+    namespace PassportLogin.Views
     {
-        xxxxxx xxxxxx xxxxxxx xxxxx XxxxxxxxXxxxxxxx : Xxxx
+        public sealed partial class PassportRegister : Page
         {
-            xxxxxxx Xxxxxxx _xxxxxxx;
+            private Account _account;
 
-            xxxxxx XxxxxxxxXxxxxxxx()
+            public PassportRegister()
             {
-                XxxxxxxxxxXxxxxxxxx();
+                InitializeComponent();
             }
 
-            xxxxxxx xxxxx xxxx XxxxxxxxXxxxxx_Xxxxx_Xxxxx(xxxxxx xxxxxx, XxxxxxXxxxxXxxx x)
+            private async void RegisterButton_Click_Async(object sender, RoutedEventArgs e)
             {
-                XxxxxXxxxxxx.Xxxx = "";
+                ErrorMessage.Text = "";
 
-                //Xx xxx xxxx xxxxx xxx xxxxx xxxxxxxx xxxxxxxx xxx xxxxxxx xxxxxxxxxxx xxx xxxxxxxxxxx xxxxxx 
-                //xxxxxxxx x xxxx xx xxxxxxxx x xxx xxxxxxx. 
-                //Xxx xxxx xxxxxx xxxxxx xx xxxx xxxx xxxx xxxx xxx xxxx xxxxxxxx xx xxxxxxx xx xxxxxxxx xx xxx xxxx.
+                //In the real world you would normally validate the entered credentials and information before 
+                //allowing a user to register a new account. 
+                //For this sample though we will skip that step and just register an account if username is not null.
 
-                xx (!xxxxxx.XxXxxxXxXxxxx(XxxxxxxxXxxxXxx.Xxxx))
+                if (!string.IsNullOrEmpty(UsernameTextBox.Text))
                 {
-                    //Xxxxxxxx x xxx xxxxxxx
-                    _xxxxxxx = XxxxxxxXxxxxx.XxxXxxxxxx(XxxxxxxxXxxxXxx.Xxxx);
-                    //Xxxxxxxx xxx xxxxxxx xxxx Xxxxxxxxx Xxxxxxxx
-                    xxxxx XxxxxxxxxXxxxxxxxXxxxxx.XxxxxxXxxxxxxxXxxXxxxx(_xxxxxxx.Xxxxxxxx);
-                    //Xxxxxxxx xx xxx Xxxxxxx Xxxxxx. 
-                    Xxxxx.Xxxxxxxx(xxxxxx(Xxxxxxx), _xxxxxxx);
+                    //Register a new account
+                    _account = AccountHelper.AddAccount(UsernameTextBox.Text);
+                    //Register new account with Microsoft Passport
+                    await MicrosoftPassportHelper.CreatePassportKeyAsync(_account.Username);
+                    //Navigate to the Welcome Screen. 
+                    Frame.Navigate(typeof(Welcome), _account);
                 }
-                xxxx
+                else
                 {
-                    XxxxxXxxxxxx.Xxxx = "Xxxxxx xxxxx x xxxxxxxx";
+                    ErrorMessage.Text = "Please enter a username";
                 }
             }
         }
     }
     ```
 
--   Xxx xxxx xx xxxxxxxx xx xxxx xxxx xxxx xxx Xxxxx xxxx xxxx xxxxxxxx xx xxxxxxx.
+-   You need to navigate to this page from the Login page when register is clicked.
 
-    ```xx
-    xxxxxxx xxxx XxxxxxxxXxxxxxXxxxXxxxx_XxXxxxxxxXxxxxxx(xxxxxx xxxxxx, XxxxxxxXxxxxxXxxxxXxxx x)
+    ```cs
+    private void RegisterButtonTextBlock_OnPointerPressed(object sender, PointerRoutedEventArgs e)
     {
-        XxxxxXxxxxxx.Xxxx = "";
-        Xxxxx.Xxxxxxxx(xxxxxx(XxxxxxxxXxxxxxxx));
+        ErrorMessage.Text = "";
+        Frame.Navigate(typeof(PassportRegister));
     }
     ```
 
--   Xxxxx xxx xxx xxx xxxxxxxxxxx. Xxx xx xxxxxxxx x xxx xxxx. Xxxx xxxxxx xx xxx xxxx xxxx xxx xxxxxxxx xxxx xxx xxx xxxxxx xxxx xxxx xxx xxxxx.
+-   Build and run the application. Try to register a new user. Then return to the user list and validate that you can select that user and login.
 
     ![](images/passport-login-11.png)
 
-Xx xxxx xxx xxx xxxx xxxxxxx xxx xxxxxxxxx xxxxxx xxx xxxx xx xxx xxx xxx Xxxxxxxxx Xxxxxxxx XXX xx xxxxxxxxxxxx xxxxxxxx xxxxx xxx xxxxxx xxxxxxxx xxx xxx xxxxx. Xxxx xxxx xxx xxxxxxxxx xxx xxx xxxxx xxxxxxxx xxx xxxx xxx xxxxx xx xxxxxxxx xxxxxxxxx xxx xxxx xxxxxxxxxxx, xxx xxxxxx xxxxxxxxx xxxx xxxx xxxxxxxxxxxx xxxxxx xxxxxxxxx xx xxxx xxxxxxxxxxxxxx. Xxxxxxx YY xxxx xxx Xxxxxxxx xxxxxxxxxx xx xxxxxxx xxx xxxxxxxxxx xxxxx xx Xxxxxxx Xxxxx. Xx xxx xxxx xxxx xxxxx x xxxxxxx xxxx xxxxxxxx Xxxxxxx Xxxxx xxx xxxx xxxx xxxx xxxx xxxx xxx xx xxxxxxxxx xxxxxxx xxxxxxxx Xxxxxxx Xxxxx.
+In this lab you have learned the essential skills you need to use the new Microsoft Passport API to authenticate existing users and create accounts for new users. With this new knowledge you can start removing the need for users to remember passwords for your application, yet remain confident that your applications remain protected by user authentication. Windows 10 uses the Passport technology to support the biometrics login of Windows Hello. If you have been using a machine that supports Windows Hello you will have seen that this set of exercises already supports Windows Hello.
 
-Xxxxx xx xx xxxxx xxxx xxx xx x xxxxxxxxx xxxx xx xx xx xxxxx xx xxxxxxx Xxxxxxx Xxxxx xxxx xxx xxxx xxxxxxxxxxx xxxxxxx xxx Xxxxxxxxx Xxxxxxxx.
+There is no extra work you as a developer need to do in order to support Windows Hello once you have implemented support for Microsoft Passport.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
 * [Microsoft Passport and Windows Hello](microsoft-passport.md)
 * [Microsoft Passport login service](microsoft-passport-login-auth-service.md)
 
+<!--HONumber=Mar16_HO5-->
 
-<!--HONumber=Mar16_HO1-->
+

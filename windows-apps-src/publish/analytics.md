@@ -1,45 +1,49 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxxx xxxxxxxx xxxxxxxxx xxx xxxx xxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx.
-xxxxx: Xxxxxxxxx
-xx.xxxxxxx: YXYXYXYY-YXXY-YYYX-XYYY-XXYYYXXYYYYY
+Description: 詳細な分析は、Windows デベロッパー センター ダッシュボードで表示できます。
+title: 分析
+ms.assetid: 3A3C6F10-0DB1-416D-B632-CD388EA66759
 ---
 
-# Xxxxxxxxx
+# 分析
 
-Xxx xxx xxxx xxxxxxxx xxxxxxxxx xxx xxxx xxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx. Xxxxxxxxxx xxx xxxxxx xxx xxx xxxx xxx xxxx xxxx xxx xxxxx—xxxx xxx xxxx xxxxxxxxx xxx'xx xxxxxxx xx xxx xxxx'xx xxxxx xxxx xxx xxx xxxx xxxx xxxx xx xxx xxxxx xx. Xxx xxx xxxx xxxx xxxx xx xxx xxxxxx, xx xxxxx, xxx xxxx. Xxxx xxx xxxxxxx xx xxx xxxxxxxxx, xx [xxxxxxxx xxx xxxxxxx xxx xxxx](download-analytic-reports.md) xx xxxxxxx xxxx xxxx xxxxxxx.
+詳細な分析は、Windows デベロッパー センター ダッシュボードで表示できます。 統計情報とチャートでは、アプリの状況 (獲得したユーザーから、ユーザーによるアプリの使い方、ユーザーによるアプリの評判まで) を知ることができます。 アプリの正常性、広告の使用状況などに関する情報も確認できます。 データをオフラインで分析するには、ダッシュボードでレポートを表示するか、[必要なレポートをダウンロード](download-analytic-reports.md) します。
 
-> **Xxxx**  Xx xxxxxxxx xx xxx xxxxxxxxx xxxxxxx, xxx xxx xxxxxxxxxxxxxxxx xxxxxx xxxx xxxxxxxxx xxxx xx xxxxx xxx [Xxxxxxx Xxxxx xxxxxxxxx XXXX XXX](../monetize/access-analytics-data-using-windows-store-services.md).
+> **注**  ダッシュボードのレポートに加えて、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) を使ってプログラムでいくつかの分析データにアクセスできます。
 
-## Xxxxxxxxx xxx xxx xxxx xxxx
-
-
-Xxxx xxxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxx x xxxx-xx xxxx xx xxxxxx xxxxxxx xxxxx xxx xxxx xxxx. Xxx xxxxx xxxxx xx xxx xxxxxxxx xxxx xxxx xxxx, xxxxxxxxx xx xxxx xxxx.
-
-Xxxx xxx [xxxxxxxx xxxxxxxx xxxxxxx](download-analytic-reports.md), xxx xxxx xxxx xxx xxxxxx xx xxxxxxxx xxxxxxx xxxxx xxx xx xxxx xxxx. Xxxx xxxx xxx xxxx xxxx xx xxxxxx xxx **Xxxxxxxx xxxxxxx** xxxx xx xxx **Xxxxxxxxx** xxxxxxx xxx xxx xx xxxx xxxx, xxx xxx xxx xxx xxxxxxx xx xxxxxxxxxxx xxxx xxxx xxx xxxx xxxxxxxxxx xxx.
-
-## Xxxxxxxxx xxxxxxx xxx xxxx xxx
+## すべてのアプリの分析
 
 
-Xx xxxx xxxxxxx xxx'xx xxxx xxxxxxx xxxxx xxx xxxx xxxxxxxxx xx xxxx xx xxx xxxxxxxxx xxxxxxx:
+ダッシュボードの概要ページには、すべてのアプリに関する詳細情報を集めたロールアップ ビューも含まれています。 概要ページに表示される統計情報は、アプリによって異なります。
 
--   [Xxxxxxxxxxxx xxxxxx](acquisitions-report.md)
--   [Xxxxxx xxxxxx](health-report.md)
--   [Xxxxxxx xxxxxx](ratings-report.md)
--   [Xxxxxxx xxxxxx](reviews-report.md)
--   [Xxxxx xxxxxx](usage-report.md)
--   [XXX xxxxxxxxxxxx xxxxxx](iap-acquisitions-report.md)
--   [Xx xxxxxxxxx xxxxxx](ad-mediation-report.md)
--   [Xxxxxxxxxxx xxxxxxxxxxx xxxxxx](advertising-performance-report.md)
--   [Xxx xxxxxxx xxx xxxxxx](app-install-ads-reports.md)
--   [Xxxxxxxx xxx xxxxxxxxxxx xxxxxx](channels-and-conversions-report.md)
+[分析レポートをダウンロードする](download-analytic-reports.md) 場合、すべてのアプリについてのレポートをダウンロードすることもできます。 いずれかのアプリについて、**[分析]** セクションで **[レポートのダウンロード]** ページにアクセスする必要がありますが、選んだアプリ以外のレポートもダウンロードできます。
 
-> **Xxxx**  Xxx xxx xxx xxx xxxx xx xxx xx xxxxx xxxxxxx, xxxxxxxxx xx xxxx xxx'x xxxxxxxx xxxxxxxx xxx xxxxxxxxxxxxxx.
+## 各アプリで利用可能なレポート
 
-## Xxxx xxx xxxxxxx xxxxxxx
 
-Xxxx xxxxxx xxxxxxxx xxxxxxx xxxx xxx xxx xxx xx xxxxx xxxx xxxx xxxx xxxx. Xxxx xxx xxx xx xxx xxxx xxx'xx xxx **Xxxxx xxxxxxx**. Xxx xxx xxx xxxxx xxxxxxx xx xxxxx xx xxxxxx xxx xxxxx xx xxx xx xxx xxxxxx xxx xxxx xx xxx xxxx.
+ここでは、次の各レポートに表示される情報の詳細情報を示します。
 
-Xxxxxx xxxx xxxxxxxxxx xxxxx, xxx xxx xxxx xxx xxxxxxxxxx xxxxxxx xxxxxxx. Xxxxx xxxx xxxxx xxx xxxx xxxxx xxxx xxx xxxx xxxxxxxxxx xxxxx.
+-   [取得レポート](acquisitions-report.md)
+-   [状態レポート](health-report.md)
+-   [レーティング レポート](ratings-report.md)
+-   [レビュー レポート](reviews-report.md)
+-   [利用状況レポート](usage-report.md)
+-   [IAP 取得レポート](iap-acquisitions-report.md)
+-   [広告仲介レポート](ad-mediation-report.md)
+-   [広告パフォーマンス レポート](advertising-performance-report.md)
+-   [アプリのインストールの広告レポート](app-install-ads-reports.md)
+-   [チャネルとコンバージョン レポート](channels-and-conversions-report.md)
 
-Xxx xxxxxxxx xxxxxxx xxxx xx xxxxxx. Xxx xxxxxx xx xxxx xxxxxxx xxxx xxxxxxx xxxxx xxxxxxx xxx xxxxxxxxx xxx xxxx xxxxxxxx xxx xxxxx xxxx xx xxx xxxx xxx xxxx xxxxxx.
+> **注**  アプリの実際の機能や実装によっては、これらのレポートの一部にデータが含まれていないことがあります。
+
+## ページ フィルターとセクション フィルター
+
+各レポートには、データのドリルダウンに使うことができるフィルターが含まれています。 ページの上部付近には、**[フィルターの適用]** が表示されます。 これらフィルターを使うと、ページ上のすべてのチャートと情報の範囲を縮小または拡大することができます。
+
+各チャート内には、個別のセクション フィルターも表示されることがあります。 このフィルターは、その特定のチャートについて表示されるデータを縮小できます。
+
+実際のフィルターはレポートごとに異なります。 このセクションのトピックでは、利用可能なフィルターと、各レポートのページにあるその他のデータについて説明します。
+
+
 <!--HONumber=Mar16_HO1-->
+
+

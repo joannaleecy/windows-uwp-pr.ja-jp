@@ -1,19 +1,19 @@
 ---
-xx.xxxxxxx: YYYYYYYY-YXXY-YYYY-XXXX-YXYXXYXXYXYX
-xxxxx: Xxxxxxxx xxxx xxxxxx
-xxxxxxxxxxx: Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxx xxx xxxx xxxxxx xxxxxxxxxxx, xxxxxxxx xxxxxxxxxxx xxxxxx xxx xx xxxx xxxxxxx xxx xxxxxx/XXX xxxxxx.
+ms.assetid: 40122343-1FE3-4160-BABE-6A2DD9AF1E8E
+title: Optimize file access
+description: Create Universal Windows Platform (UWP) apps that access the file system efficiently, avoiding performance issues due to disk latency and memory/CPU cycles.
 ---
-# Xxxxxxxx xxxx xxxxxx
+# Optimize file access
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxx xxx xxxx xxxxxx xxxxxxxxxxx, xxxxxxxx xxxxxxxxxxx xxxxxx xxx xx xxxx xxxxxxx xxx xxxxxx/XXX xxxxxx.
+Create Universal Windows Platform (UWP) apps that access the file system efficiently, avoiding performance issues due to disk latency and memory/CPU cycles.
 
-Xxxx xxx xxxx xx xxxxxx x xxxxx xxxxxxxxxx xx xxxxx xxx xxx xxxx xx xxxxxx xxxxxxxx xxxxxx xxxxx xxxx xxx xxxxxxx Xxxx, XxxxXxxx, xxx Xxxx xxxxxxxxxx, xxxxxx xxxx xx xxxxxxxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR207995) xxx xxxxxxx [**XxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR207995-setpropertyprefetch). Xxx **XxxXxxxxxxxXxxxxxxx** xxxxxx xxx xxxxxxxxxxxx xxxxxxx xxx xxxxxxxxxxx xx xxxx xxxx xxxxxxx x xxxxxxxxxx xx xxxxx xxxxxxxx xxxx xxx xxxx xxxxxx, xxxx xx x xxxxxxxxxx xx xxxxxx. Xxx xxxx xxx xx xxxxxxxx xxxxx x xxx xxxx xx xxxxxx xxxxxxxx xxxxx.
+When you want to access a large collection of files and you want to access property values other than the typical Name, FileType, and Path properties, access them by creating [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) and calling [**SetPropertyPrefetch**](https://msdn.microsoft.com/library/windows/apps/BR207995-setpropertyprefetch). The **SetPropertyPrefetch** method can dramatically improve the performance of apps that display a collection of items obtained from the file system, such as a collection of images. The next set of examples shows a few ways to access multiple files.
 
-Xxx xxxxx xxxxxxx xxxx [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxxxx.XxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227273) xx xxxxxxxx xxx xxxx xxxx xxx x xxx xx xxxxx. Xxxx xxxxxxxx xxxxxxxx xxxx xxxxxxxxxxx, xxxxxxx xxx xxxxxxx xxxxxxxx xxxx xxx xxxx xxxxxxxx.
+The first example uses [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273) to retrieve the name info for a set of files. This approach provides good performance, because the example accesses only the name property.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 StorageFolder library = Windows.Storage.KnownFolders.PicturesLibrary;
 IReadOnlyList<StorageFile> files = await library.GetFilesAsync(Windows.Storage.Search.CommonFileQuery.OrderByDate);
@@ -35,9 +35,9 @@ For i As Integer = 0 To files.Count - 1
 Next i
 ```
 
-Xxx xxxxxx xxxxxxx xxxx [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxxxx.XxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227273) xxx xxxx xxxxxxxxx xxx xxxxx xxxxxxxxxx xxx xxxx xxxx. Xxxx xxxxxxxx xxxxxxxx xxxx xxxxxxxxxxx.
+The second example uses [**Windows.Storage.StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/BR227273) and then retrieves the image properties for each file. This approach provides poor performance.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 StorageFolder library = Windows.Storage.KnownFolders.PicturesLibrary;
 IReadOnlyList<StorageFile> files = await library.GetFilesAsync(Windows.Storage.Search.CommonFileQuery.OrderByDate);
@@ -61,9 +61,9 @@ For i As Integer = 0 To files.Count - 1
 Next i
 ```
 
-Xxx xxxxx xxxxxxx xxxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR207995) xx xxx xxxx xxxxx x xxx xx xxxxx. Xxxx xxxxxxxx xxxxxxxx xxxx xxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxx xxxxxxx.
+The third example uses [**QueryOptions**](https://msdn.microsoft.com/library/windows/apps/BR207995) to get info about a set of files. This approach provides much better performance than the previous example.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 // Set QueryOptions to prefetch our specific properties
 var queryOptions = new Windows.Storage.Search.QueryOptions(CommonFileQuery.OrderByDate, null);
@@ -119,19 +119,19 @@ For Each file In files
 
 Next file
 ```
-Xx xxx'xx xxxxxxxxxx xxxxxxxx xxxxxxxxxx xx Xxxxxxx.Xxxxxxx xxxxxxx xxxx xx `Windows.Storage.ApplicationData.Current.LocalFolder`, xxxxxx x xxxxx xxxxxxxx xx xxxxxxxxx xxxx xxxxxxx xxxxxx xx xxxx xxx xxx'x xxxxxxxx xxxxxxxxxxxx xxxxxxx xxxx xxxx xxx xxxxxx xx.
+If you're performing multiple operations on Windows.Storage objects such as `Windows.Storage.ApplicationData.Current.LocalFolder`, create a local variable to reference that storage source so that you don't recreate intermediate objects each time you access it.
 
-## Xxxxxx xxxxxxxxxxx xx X# xxx Xxxxxx Xxxxx
+## Stream performance in C# and Visual Basic
 
-### Xxxxxxxxx xxxxxxx XXX xxx .XXX xxxxxxx
+### Buffering between UWP and .NET streams
 
-Xxxxx xxx xxxx xxxxxxxxx xxxx xxx xxxxx xxxx xx xxxxxxx x XXX xxxxxx (xxxx xx x [**Xxxxxxx.Xxxxxxx.Xxxxxxx.XXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR241718) xx [**XXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR241728)) xx x .XXX xxxxxx ([**Xxxxxx.XX.Xxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.stream.aspx)). Xxx xxxxxxx, xxxx xx xxxxxx xxxx xxx xxx xxxxxxx x XXX xxx xxx xxxx xx xxx xxxxxxxx .XXX xxxx xxxx xxxxx xx xxxxxxx xxxx xxx XXX xxxx xxxxxx. Xx xxxxx xx xxxxxx xxxx, .XXX XXXx xxx Xxxxxxx Xxxxx xxxx xxxxxxxx xxxxxxxxx xxxxxxx xxxx xxxxx xxx xx xxxxxxx xxxxxxx .XXX xxx XXX xxxxxx xxxxx. Xxx xxxx xxxx, xxx [**XxxxxxxXxxxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
+There are many scenarios when you might want to convert a UWP stream (such as a [**Windows.Storage.Streams.IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) or [**IOutputStream**](https://msdn.microsoft.com/library/windows/apps/BR241728)) to a .NET stream ([**System.IO.Stream**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.stream.aspx)). For example, this is useful when you are writing a UWP app and want to use existing .NET code that works on streams with the UWP file system. In order to enable this, .NET APIs for Windows Store apps provides extension methods that allow you to convert between .NET and UWP stream types. For more info, see [**WindowsRuntimeStreamExtensions**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.aspx).
 
-Xxxx xxx xxxxxxx x XXX xxxxxx xx x .XXX xxxxxx, xxx xxxxxxxxxxx xxxxxx xx xxxxxxx xxx xxx xxxxxxxxxx XXX xxxxxx. Xxxxx xxxx xxxxxxxxxxxxx, xxxxx xx x xxxxxxx xxxx xxxxxxxxxx xxxx xxxxxxxx xxxxxxx xx XXX xxxxxxx. Xxxx xxx xxxxxx xxx xxxxx xx xxxx xxx, xxxxxxxxxx xx xxxxxxxxx xxxxx xxx xxxxxxx xxxx xxxxx, xxxxxxxx xxxx xx xxxxx xxxxxxxxxx.
+When you convert a UWP stream to a .NET stream, you effectively create an adapter for the underlying UWP stream. Under some circumstances, there is a runtime cost associated with invoking methods on UWP streams. This may affect the speed of your app, especially in scenarios where you perform many small, frequent read or write operations.
 
-Xx xxxxx xx xxxxx xx xxxx, xxx XXX xxxxxx xxxxxxxx xxxxxxx x xxxx xxxxxx. Xxx xxxxxxxxx xxxx xxxxxx xxxxxxxxxxxx xxxxx xxxxxxxxxxx xxxxx xxxxx x XXX xxxxxx xxxxxxx xxxx x xxxxxxx xxxxxx xxxx.
+In order to speed up apps, the UWP stream adapters contain a data buffer. The following code sample demonstrates small consecutive reads using a UWP stream adapter with a default buffer size.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 StorageFile file = await Windows.Storage.ApplicationData.Current
     .LocalFolder.GetFileAsync("example.txt");
@@ -182,15 +182,15 @@ Using (managedStream)
 End Using
 ```
 
-Xxxx xxxxxxx xxxxxxxxx xxxxxxxx xx xxxxxxxxx xx xxxx xxxxxxxxx xxxxx xxx xxxxxxx x XXX xxxxxx xx x .XXX xxxxxx. Xxxxxxx, xx xxxx xxxxxxxxx xxx xxx xxxx xx xxxxx xxx xxxxxxxxx xxxxxxxx xx xxxxx xx xxxxxxxx xxxxxxxxxxx.
+This default buffering behavior is desirable in most scenarios where you convert a UWP stream to a .NET stream. However, in some scenarios you may want to tweak the buffering behavior in order to increase performance.
 
-### Xxxxxxx xxxx xxxxx xxxx xxxx
+### Working with large data sets
 
-Xxxx xxxxxxx xx xxxxxxx xxxxxx xxxx xx xxxx xxx xxx xx xxxx xx xxxxxxxx xxxx xxxx xx xxxxx xxxxxxxxxx xx xxxxxxxxx x xxxxx xxxxxx xxxx xx xxx [**XxXxxxxxXxxXxxx**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead), [**XxXxxxxxXxxXxxxx**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite), xxx [**XxXxxxxx**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStream) xxxxxxxxx xxxxxxx. Xxxx xxxxx xxx xxxxxx xxxxxxx x xxxxxx xxxxxxxx xxxxxx xxxx. Xxx xxxxxxxx, xxxx xxxxxxx x xxxxxx xxxx xxxxx xxxx x xxxxx xxxx xx xx XXX xxxxxx, xxx xxxxxx xxx xxxx xxxx xxxxxxxxxx xxxxx xxxxx xxxx xxx xxxxxx. X xxxxx xxxxxx xxx xxxxxx xxx xxxxxx xx xxxxx xx xxx xxxxxxxxxx XXX xxxxxx xxx xxxxx xxxxxxxxxxx.
+When reading or writing larger sets of data you may be able to increase your read or write throughput by providing a large buffer size to the [**AsStreamForRead**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead), [**AsStreamForWrite**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite), and [**AsStream**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStream) extension methods. This gives the stream adapter a larger internal buffer size. For instance, when passing a stream that comes from a large file to an XML parser, the parser can make many sequential small reads from the stream. A large buffer can reduce the number of calls to the underlying UWP stream and boost performance.
 
-> **Xxxx**   Xxx xxxxxx xx xxxxxxx xxxx xxxxxxx x xxxxxx xxxx xxxx xx xxxxxx xxxx xxxxxxxxxxxxx YY XX, xx xxxx xxx xxxxx xxxxxxxxxxxxx xx xxx xxxxxxx xxxxxxxxx xxxx (xxx [Xxxxxxx xxxxxxx xxxxxxxxxx xxxxxxxxxxx](improve-garbage-collection-performance.md)). Xxx xxxxxxxxx xxxx xxxxxxx xxxxxxx x xxxxxxx xxxxxx xxxxxxx xxxx xx YY,YYY xxxx xxxxxx.
+> **Note**   You should be careful when setting a buffer size that is larger than approximately 80 KB, as this may cause fragmentation on the garbage collector heap (see [Improve garbage collection performance](improve-garbage-collection-performance.md)). The following code example creates a managed stream adapter with an 81,920 byte buffer.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 // Create a stream adapter with an 80 KB buffer.
 Stream managedStream = nativeStream.AsStreamForRead(bufferSize: 81920);
@@ -200,9 +200,9 @@ Stream managedStream = nativeStream.AsStreamForRead(bufferSize: 81920);
 Dim managedStream As Stream = nativeStream.AsStreamForRead(bufferSize:=81920)
 ```
 
-Xxx [**Xxxxxx.XxxxXx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.stream.copyto.aspx) xxx [**XxxxXxXxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.stream.copytoasync.aspx) xxxxxxx xxxx xxxxxxxx x xxxxx xxxxxx xxx xxxxxxx xxxxxxx xxxxxxx. Xx xxxx xxx [**XxXxxxxxXxxXxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx) xxxxxxxxx xxxxxx, xxx xxx xx xxxx xx xxx xxxxxx xxxxxxxxxxx xxx xxxxx xxxxxx xxxxxx xx xxxxxxxxxx xxx xxxxxxx xxxxxx xxxx. Xxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxxxxx xxxxxxxx xxx xxxxxxx xxxxxx xxxx xx x **XxxxXxXxxxx** xxxx.
+The [**Stream.CopyTo**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.stream.copyto.aspx) and [**CopyToAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.stream.copytoasync.aspx) methods also allocate a local buffer for copying between streams. As with the [**AsStreamForRead**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.windowsruntimestreamextensions.asstreamforread.aspx) extension method, you may be able to get better performance for large stream copies by overriding the default buffer size. The following code example demonstrates changing the default buffer size of a **CopyToAsync** call.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 MemoryStream destination = new MemoryStream();
 // copies the buffer into memory using the default copy buffer
@@ -220,15 +220,19 @@ Await managedStream.CopyToAsync(destination)
 Await managedStream.CopyToAsync(destination, bufferSize:=1024 * 1024)
 ```
 
-Xxxx xxxxxxx xxxx x xxxxxx xxxx xx Y XX, xxxxx xx xxxxxxx xxxx xxx YY XX xxxxxxxxxx xxxxxxxxxxx. Xxxxx xxxx x xxxxx xxxxxx xxx xxxxxxx xxxxxxxxxx xx xxx xxxx xxxxxxxxx xxx xxxx xxxxx xxxx xxxx (xxxx xx, xxxxxxx xxxxxxx xxxxxxxxx). Xxxxxxx, xxxx xxxxxx xx xxxxxxxxx xx xxx xxxxx xxxxxx xxxx xxx xxxxx xxxxxxxxxxx xxxxxxx xxxxxxx xxxxxxxxxx xxxxxxxxxxx. Xxx xxxxxx xxxx xxx xxxxx xxxxxx xxxxx xx xx xxxx xxxxxxxxxx xxxxxxx xxx xxxxxxxxxxx xx xxxx xxx.
+This example uses a buffer size of 1 MB, which is greater than the 80 KB previously recommended. Using such a large buffer can improve throughput of the copy operation for very large data sets (that is, several hundred megabytes). However, this buffer is allocated on the large object heap and could potentially degrade garbage collection performance. You should only use large buffer sizes if it will noticeably improve the performance of your app.
 
-Xxxx xxx xxx xxxxxxx xxxx x xxxxx xxxxxx xx xxxxxxx xxxxxxxxxxxxxx, xxx xxxxx xxxx xx xxxxxx xx xxxxxxxxx xxx xxxxxx xxxxxxxx xx xxx xxxxxx. Xxx xxx xxxxxxx x xxxxxxx xxxxxx, xx xxx xxx *xxxxxxXxxx* xxxxxxxxx xx Y xx xxxx xxx xxxxxxxxx xxxxxxxx xxx xxxx xxxxxx xxxxxxx. Xxx xxx xxxxx xxxxxxx xxxx xxxxxxxxxx xxxxxxxxxxx xxxxxxx xxxxxxxxx xx xxx xxxxxxx xxxxx xxxxx xxx xxxxxx xx xxx xxxxxxx xxxxxx.
+When you are working with a large number of streams simultaneously, you might want to reduce or eliminate the memory overhead of the buffer. You can specify a smaller buffer, or set the *bufferSize* parameter to 0 to turn off buffering entirely for that stream adapter. You can still achieve good throughput performance without buffering if you perform large reads and writes to the managed stream.
 
-### Xxxxxxxxxx xxxxxxx-xxxxxxxxx xxxxxxxxxx
+### Performing latency-sensitive operations
 
-Xxx xxxxx xxxx xxxx xx xxxxx xxxxxxxxx xx xxx xxxx xxx-xxxxxxx xxxxx xxx xxxxxx xxx xx xxx xxxx xx xxxx xx xxxxx xxxxxx xxx xx xxx xxxxxxxxxx XXX xxxxxx. Xxx xxxxxxx, xxx xxxxx xxxx xxx-xxxxxxx xxxxx xxx xxxxxx xx xxx xxx xxxxx xxx xxxxxx xxx xxxxxxx xxxxxxxxxxxxxx.
+You might also want to avoid buffering if you want low-latency reads and writes and do not want to read in large blocks out of the underlying UWP stream. For example, you might want low-latency reads and writes if you are using the stream for network communications.
 
-Xx x xxxx xxx xxx xxxxx xxx x xxxxxx xxxx x xxxxxxx xxxxxxxxx xx xxxx xxxxxxxx xxxx xx xxxxx. Xx xxxx xxxx xxx xxxx xx xxxx xxxxxxxx xx xxxx xx xxxx xxx xxxxx xxx xxx xxxx xxx xxx xxxxxx xx xxxx xx. Xx xxx xxx xxx xxxxxx xxxx xx Y xxxx xxxxxxx xxx [**XxXxxxxxXxxXxxx**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead), [**XxXxxxxxXxxXxxxx**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite), xxx [**XxXxxxxx**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStream) xxxxxxxxx xxxxxxx, xxxx xxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxxxx x xxxxxx, xxx xxx xxxxx xxxx xxxxxxxxxx xxx xxxxxxxxxx XXX xxxxxx xxxxxxxx.
+In a chat app you might use a stream over a network interface to send messages back in forth. In this case you want to send messages as soon as they are ready and not wait for the buffer to fill up. If you set the buffer size to 0 when calling the [**AsStreamForRead**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForRead), [**AsStreamForWrite**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStreamForWrite), and [**AsStream**](Overload:System.IO.WindowsRuntimeStreamExtensions.AsStream) extension methods, then the resulting adapter will not allocate a buffer, and all calls will manipulate the underlying UWP stream directly.
+
+
 
 
 <!--HONumber=Mar16_HO1-->
+
+

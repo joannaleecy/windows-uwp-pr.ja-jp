@@ -1,57 +1,57 @@
 ---
-xx.xxxxxxx: YXXYYYYY-YXYX-YYYY-XXXX-XYYYYYXXYXYY
-xxxxx: Xxxxx xxx xxxxxxx xx xxx Xxxxx, Xxxxxxxx, xxx Xxxxxx xxxxxxxxx
-xxxxxxxxxxx: Xxx xxxxxxxx xxxxxxx xx xxxxx, xxxxxxxx, xx xxxxxx xx xxx xxxxxxxxxxxxx xxxxxxxxx. Xxx xxx xxxx xxxxxx xxxxxxx xxxx xxxxxxxxx, xxx xxx xxxx xx xxxxxxx xx x xxxxxxx, xxx xxxxxxxx xxxxxx xxxxxx, xxxxx, xxx xxxxxx.
+ms.assetid: 1AE29512-7A7D-4179-ADAC-F02819AC2C39
+title: Files and folders in the Music, Pictures, and Videos libraries
+description: Add existing folders of music, pictures, or videos to the corresponding libraries. You can also remove folders from libraries, get the list of folders in a library, and discover stored photos, music, and videos.
 ---
 
-# Xxxxx xxx xxxxxxx xx xxx Xxxxx, Xxxxxxxx, xxx Xxxxxx xxxxxxxxx
+# Files and folders in the Music, Pictures, and Videos libraries
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxx xxxxxxxx xxxxxxx xx xxxxx, xxxxxxxx, xx xxxxxx xx xxx xxxxxxxxxxxxx xxxxxxxxx. Xxx xxx xxxx xxxxxx xxxxxxx xxxx xxxxxxxxx, xxx xxx xxxx xx xxxxxxx xx x xxxxxxx, xxx xxxxxxxx xxxxxx xxxxxx, xxxxx, xxx xxxxxx.
+Add existing folders of music, pictures, or videos to the corresponding libraries. You can also remove folders from libraries, get the list of folders in a library, and discover stored photos, music, and videos.
 
-X xxxxxxx xx x xxxxxxx xxxxxxxxxx xx xxxxxxx, xxxxx xxxxxxxx x xxxxx xxxxxx xx xxxxxxx xxxx xxx xxxxx xxxxxxx xxx xxxx xxx xxxxx xx xxx xxxxxxx xx xxxxx xxxx xxx xx xxx xx xxx xxxxx-xx xxxx. Xxx xxxxxxx, xxx Xxxxxxxx xxxxxxx xxxxxxxx xxx Xxxxxxxx xxxxx xxxxxx xx xxxxxxx. Xxx xxxx xxx xxx xxxxxxx xx, xx xxxxxx xxxx xxxx, xxx Xxxxxxxx xxxxxxx xx xxxxx xxxx xxx xx xxx xxxxx-xx Xxxxxx xxx.
+A library is a virtual collection of folders, which includes a known folder by default plus any other folders the user has added to the library by using your app or one of the built-in apps. For example, the Pictures library includes the Pictures known folder by default. The user can add folders to, or remove them from, the Pictures library by using your app or the built-in Photos app.
 
-## Xxxxxxxxxxxxx
-
-
--   **Xxxxxxxxxx xxxxx xxxxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx**
-
-    Xxx xxx xxxxx xxx xx xxxxx xxxxxxxxxxxx xxxx xx X# xx Xxxxxx Xxxxx, xxx [Xxxx xxxxxxxxxxxx XXXx xx X# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/mt187337). Xx xxxxx xxx xx xxxxx xxxxxxxxxxxx xxxx xx X++, xxx [Xxxxxxxxxxxx xxxxxxxxxxx xx X++](https://msdn.microsoft.com/library/windows/apps/mt187334).
-
--   **Xxxxxx xxxxxxxxxxx xx xxx xxxxxxxx**
-
-    Xx Xxxxxx Xxxxxx, xxxx xxx xxx xxxxxxxx xxxx xx Xxxxxxxx Xxxxxxxx. Xx xxx **Xxxxxxxxxxxx** xxxx, xxxxxx xxx xxxxxxxxx xxxx xxxx xxx xxxxxxx.
-
-    -   **Xxxxx Xxxxxxx**
-    -   **Xxxxxxxx Xxxxxxx**
-    -   **Xxxxxx Xxxxxxx**
-
-    Xx xxxxx xxxx, xxx [Xxxx xxxxxx xxxxxxxxxxx](file-access-permissions.md).
-
-## Xxx x xxxxxxxxx xx x xxxxxxx
+## Prerequisites
 
 
-**Xxxx**  Xxxxxxxx xx xxxxxxx xxx xxxxxxxxxxx xxxxxxxxxx.
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
+
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+
+-   **Access permissions to the location**
+
+    In Visual Studio, open the app manifest file in Manifest Designer. On the **Capabilities** page, select the libraries that your app manages.
+
+    -   **Music Library**
+    -   **Pictures Library**
+    -   **Videos Library**
+
+    To learn more, see [File access permissions](file-access-permissions.md).
+
+## Get a reference to a library
+
+
+**Note**  Remember to declare the appropriate capability.
  
 
-Xx xxx x xxxxxxxxx xx xxx xxxx'x Xxxxx, Xxxxxxxx, xx Xxxxx xxxxxxx, xxxx xxx [**XxxxxxxXxxxxxx.XxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn251725) xxxxxx. Xxxxxxx xxx xxxxxxxxxxxxx xxxxx xxxx xxx [**XxxxxXxxxxxxXx**](https://msdn.microsoft.com/library/windows/apps/dn298399) xxxxxxxxxxx.
+To get a reference to the user's Music, Pictures, or Video library, call the [**StorageLibrary.GetLibraryAsync**](https://msdn.microsoft.com/library/windows/apps/dn251725) method. Provide the corresponding value from the [**KnownLibraryId**](https://msdn.microsoft.com/library/windows/apps/dn298399) enumeration.
 
--   [**XxxxxXxxxxxxXx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227155)
--   [**XxxxxXxxxxxxXx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227156)
--   [**XxxxxXxxxxxxXx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227159)
+-   [**KnownLibraryId.Music**](https://msdn.microsoft.com/library/windows/apps/br227155)
+-   [**KnownLibraryId.Pictures**](https://msdn.microsoft.com/library/windows/apps/br227156)
+-   [**KnownLibraryId.Videos**](https://msdn.microsoft.com/library/windows/apps/br227159)
 
 ```CSharp
     var myPictures = await Windows.Storage.StorageLibrary.GetLibraryAsync
         (Windows.Storage.KnownLibraryId.Pictures);
 ```
 
-## Xxx xxx xxxx xx xxxxxxx xx x xxxxxxx
+## Get the list of folders in a library
 
 
-Xx xxx xxx xxxx xx xxxxxxx xx x xxxxxxx, xxx xxx xxxxx xx xxx [**XxxxxxxXxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn251724) xxxxxxxx.
+To get the list of folders in a library, get the value of the [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) property.
 
 ```CSharp
     using Windows.Foundation.Collections;
@@ -61,43 +61,43 @@ Xx xxx xxx xxxx xx xxxxxxx xx x xxxxxxx, xxx xxx xxxxx xx xxx [**XxxxxxxXxxxxxx.
     IObservableVector<Windows.Storage.StorageFolder> myPictureFolders = myPictures.Folders;
 ```
 
-## Xxx xxx xxxxxx xx x xxxxxxx xxxxx xxx xxxxx xxx xxxxx xx xxxxxxx
+## Get the folder in a library where new files are saved by default
 
 
-Xx xxx xxx xxxxxx xx x xxxxxxx xxxxx xxx xxxxx xxx xxxxx xx xxxxxxx, xxx xxx xxxxx xx xxx [**XxxxxxxXxxxxxx.XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn251728) xxxxxxxx.
+To get the folder in a library where new files are saved by default, get the value of the [**StorageLibrary.SaveFolder**](https://msdn.microsoft.com/library/windows/apps/dn251728) property.
 
 ```CSharp
     Windows.Storage.StorageFolder savePicturesFolder = myPictures.SaveFolder;
 ```
 
-## Xxx xx xxxxxxxx xxxxxx xx x xxxxxxx
+## Add an existing folder to a library
 
 
-Xx xxx x xxxxxx xx x xxxxxxx, xxx xxxx xxx [**XxxxxxxXxxxxxx.XxxxxxxXxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn251726). Xxxxxx xxx Xxxxxxxx Xxxxxxx xx xx xxxxxxx, xxxxxxx xxxx xxxxxx xxxxxx x xxxxxx xxxxxx xx xx xxxxx xx xxx xxxx xxxx xx **Xxx xxxx xxxxxx xx Xxxxxxxx** xxxxxx. Xx xxx xxxx xxxxx x xxxxxx xxxx xxx xxxxxx xxxxxxx xx xxx xxxxxxxx xxxxxxxx xx xxxx xxx xx xxxxxxx xx xxxx xx xxx [**XxxxxxxXxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn251724) xxxxxxxx (xxx xx xxx xxxxx-xx Xxxxxx xxx), xxx xxx xxxxxx xxxx xxx xxxxxx xx x xxxxx xx xxx Xxxxxxxx xxxxxx xx Xxxx Xxxxxxxx.
+To add a folder to a library, you call the [**StorageLibrary.RequestAddFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251726). Taking the Pictures Library as an example, calling this method causes a folder picker to be shown to the user with an **Add this folder to Pictures** button. If the user picks a folder then the folder remains in its original location on disk and it becomes an item in the [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) property (and in the built-in Photos app), but the folder does not appear as a child of the Pictures folder in File Explorer.
 
 
 ```CSharp
     Windows.Storage.StorageFolder newFolder = await myPictures.RequestAddFolderAsync();
 ```
 
-## Xxxxxx x xxxxxx xxxx x xxxxxxx
+## Remove a folder from a library
 
 
-Xx xxxxxx x xxxxxx xxxx x xxxxxxx, xxxx xxx [**XxxxxxxXxxxxxx.XxxxxxxXxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn251727) xxxxxx xxx xxxxxxx xxx xxxxxx xx xx xxxxxxx. Xxx xxxxx xxx [**XxxxxxxXxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn251724) xxx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242878) xxxxxxx (xx xxxxxxx) xxx xxx xxxx xx xxxxxx x xxxxxx xx xxxxxx.
+To remove a folder from a library, call the [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727) method and specify the folder to be removed. You could use [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) and a [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) control (or similar) for the user to select a folder to remove.
 
-Xxxx xxx xxxx [**XxxxxxxXxxxxxx.XxxxxxxXxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn251727), xxx xxxx xxxx x xxxxxxxxxxxx xxxxxx xxxxxx xxxx xxx xxxxxx "xxx'x xxxxxx xx Xxxxxxxx xxxxxxx, xxx xxx'x xx xxxxxxx." Xxxx xxxx xxxxx xx xxxx xxx xxxxxx xxxxxxx xx xxx xxxxxxxx xxxxxxxx xx xxxx, xx xxxxxxx xxxx xxx [**XxxxxxxXxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn251724) xxxxxxxx, xxx xxxx xx xxxxxx xxxxxxxx xx xxx xxxxx-xx Xxxxxx xxx.
+When you call [**StorageLibrary.RequestRemoveFolderAsync**](https://msdn.microsoft.com/library/windows/apps/dn251727), the user sees a confirmation dialog saying that the folder "won't appear in Pictures anymore, but won't be deleted." What this means is that the folder remains in its original location on disk, is removed from the [**StorageLibrary.Folders**](https://msdn.microsoft.com/library/windows/apps/dn251724) property, and will no longer included in the built-in Photos app.
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxx xxxx xxx xxxx xxx xxxxxxxx xxx xxxxxx xx xxxxxx xxxx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242878) xxxxxxx xxxxx **xxXxxxxxxXxxxxxx**.
+The following example assumes that the user has selected the folder to remove from a [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) control named **lvPictureFolders**.
 
 
 ```CSharp
     bool result = await myPictures.RequestRemoveFolderAsync(folder);
 ```
 
-## Xxx xxxxxxxx xx xxxxxxx xx xxx xxxx xx xxxxxxx xx x xxxxxxx
+## Get notified of changes to the list of folders in a library
 
 
-Xx xxx xxxxxxxx xxxxx xxxxxxx xx xxx xxxx xx xxxxxxx xx x xxxxxxx, xxxxxxxx x xxxxxxx xxx xxx [**XxxxxxxXxxxxxx.XxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn251723) xxxxx xx xxx xxxxxxx.
+To get notified about changes to the list of folders in a library, register a handler for the [**StorageLibrary.DefinitionChanged**](https://msdn.microsoft.com/library/windows/apps/dn251723) event of the library.
 
 
 ```CSharp
@@ -110,57 +110,57 @@ void HandleDefinitionChanged(Windows.Storage.StorageLibrary sender, object args)
 }
 ```
 
-## Xxxxx xxxxxxx xxxxxxx
+## Media library folders
 
 
-X xxxxxx xxxxxxxx xxxx xxxxxxxxxx xxxxxxxxx xxx xxxxx xxx xxxx xx xxxxx xxxxx xxxxx. Xxxxx-xx xxxx xxxxx xxxx xxxx-xxxxxxx xxxxx xxx xxxxxxxxxx xxxxx xx xxxxx xxxxxxxxx.
+A device provides five predefined locations for users and apps to store media files. Built-in apps store both user-created media and downloaded media in these locations.
 
-Xxx xxxxxxxxx xxx:
+The locations are:
 
--   **Xxxxxxxx** xxxxxx. Xxxxxxxx xxxxxxxx.
+-   **Pictures** folder. Contains pictures.
 
-    -   **Xxxxxx Xxxx** xxxxxx. Xxxxxxxx xxxxxx xxx xxxxx xxxx xxx xxxxx-xx xxxxxx.
+    -   **Camera Roll** folder. Contains photos and video from the built-in camera.
 
-    -   **Xxxxx Xxxxxxxx** xxxxxx. Xxxxxxxx xxxxxxxx xxxx xxx xxxx xxx xxxxx xxxx xxxxx xxxx.
+    -   **Saved Pictures** folder. Contains pictures that the user has saved from other apps.
 
--   **Xxxxx** xxxxxx. Xxxxxxxx xxxxx, xxxxxxxx, xxx xxxxx xxxxx.
+-   **Music** folder. Contains songs, podcasts, and audio books.
 
--   **Xxxxx** xxxxxx. Xxxxxxxx xxxxxx.
+-   **Video** folder. Contains videos.
 
-Xxxxx xx xxxx xxx xxxx xxxxx xxxxx xxxxx xxxxxxx xxx xxxxx xxxxxxx xxxxxxx xx xxx XX xxxx. Xx xxxx x xxxxx xxxx xxxxxxxx xx xxx XX xxxx, xxxx xxx xxxxxxxx xx xxx XX xxxx, xx xxx xxx xxxx xx xxxxxx xxx xxxx xx xxxxx x xxxx xxxxxx. Xxx xxxx xxxx, xxx [Xxxxxx xxx XX xxxx](access-the-sd-card.md).
+Users or apps may also store media files outside the media library folders on the SD card. To find a media file reliably on the SD card, scan the contents of the SD card, or ask the user to locate the file by using a file picker. For more info, see [Access the SD card](access-the-sd-card.md).
 
-## Xxxxxxxx xxx xxxxx xxxxxxxxx
+## Querying the media libraries
 
 
-### Xxxxx xxxxxxx xxxxxxx xxxx xxxxxxxx xxx xxxxxxxxx xxxxxxx
+### Query results include both internal and removable storage
 
-Xxxxx xxx xxxxxx xx xxxxx xxxxx xx xxxxxxx xx xxx xxxxxxxx XX xxxx. Xxxx, xxxxxxx, xxx xxx xxx xx xxxxxxxx xxxxx xx xx xxxxxx xx xxx XX xxxx. Xx x xxxxxx, xxx xxxxx xxxxxxxxx xxx xx xxxxx xxxxxx xxx xxxxxx'x xxxxxxxx xxxxxxx xxx xxx XX xxxx.
+Users can choose to store files by default on the optional SD card. Apps, however, can opt out of allowing files to be stored on the SD card. As a result, the media libraries can be split across the device's internal storage and the SD card.
 
-Xxx xxx'x xxxx xx xxxxx xxxxxxxxxx xxxx xx xxxxxx xxxx xxxxxxxxxxx. Xxx xxxxxxx xx xxx [**Xxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227346) xxxxxxxxx xxxx xxxxx xxxxx xxxxxxx xxxxxxxxxxxxx xxxxxxx xxx xxxxx xxxxxxx xxxx xxxx xxxxxxxxx. Xxx xxx'x xxxx xx xxxxxxx xxx **xxxxxxxxxXxxxxxx** xxxxxxxxxx xx xxx xxx xxxxxxxx xxxx xx xxx xxxxx xxxxxxxx xxxxxxx, xxxxxx.
+You don't have to write additional code to handle this possibility. The methods in the [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) namespace that query known folders transparently combine the query results from both locations. You don't have to specify the **removableStorage** capability in the app manifest file to get these combined results, either.
 
-Xxxxxxxx xxx xxxxx xx xxx xxxxxx'x xxxxxxx xxxxx xx xxx xxxxxxxxx xxxxx:
+Consider the state of the device's storage shown in the following image:
 
-![xxxxxx xx xxx xxxxx xxx xx xxxx](images/phone-media-locations.png)
+![images on the phone and sd card](images/phone-media-locations.png)
 
-Xx xxx xxxxx xxx xxxxxxxx xx xxx Xxxxxxxx Xxxxxxx xx xxxxxxx `await KnownFolders.PicturesLibrary.GetFilesAsync()`, xxx xxxxxxx xxxxxxx xxxx xxxxxxxxXxx.xxx xxx XXXxx.xxx.
+If you query the contents of the Pictures Library by calling `await KnownFolders.PicturesLibrary.GetFilesAsync()`, the results include both internalPic.jpg and SDPic.jpg.
 
-### Xxxx xxxxxxx
+### Deep queries
 
-Xxx xxx xxxx xxxxxxx xx xxxxxxxxx xxx xxxxxx xxxxxxxx xx x xxxxx xxxxxxx xxxxxxx.
+Use the deep queries to enumerate the entire contents of a media library quickly.
 
-Xxx xxxx xxxxxxx xxxxxx xxxx xxxxx xx xxx xxxxxxxxx xxxxx xxxx. Xxx xxxxxxx, xx xxx xxxxx xxx Xxxxx Xxxxxxx xxxx x xxxx xxxxx, xxx xxxxx xxxxxxx xx xxx xxxxxxx xxx xxxxxxx xxxxx xxxxx xx xxx Xxxxx xxxxxx.
+The deep queries return only files of the specified media type. For example, if you query the Music Library with a deep query, the query results do not include any picture files found in the Music folder.
 
-Xx xxxxxxx xxxxx xxx xxxxxx xxxxx xxxx x xxx-xxxxxxxxxx xxxxx xxx x xxxx-xxxxxxxxxx xxxxx xx xxxxx xxxxxxx, xxx xxxx xxxxxxx xxxxxx xxxx xxx xxx-xxxxxxxxxx xxxxx.
+On devices where the camera saves both a low-resolution image and a high-resolution image of every picture, the deep queries return only the low-resolution image.
 
-Xxx Xxxxxx Xxxx xxx xxx Xxxxx Xxxxxxxx xxxxxx xx xxx xxxxxxx xxx xxxx xxxxxxx.
+The Camera Roll and the Saved Pictures folder do not support the deep queries.
 
-Xxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxx:
+The following deep queries are available:
 
-**Xxxxxxxx xxxxxxx**
+**Pictures library**
 
 -   `GetFilesAsync(CommonFileQuery.OrderByDate)`
 
-**Xxxxx xxxxxxx**
+**Music library**
 
 -   `GetFilesAsync(CommonFileQuery.OrderByName)`
 -   `GetFoldersAsync(CommonFolderQuery.GroupByArtist)`
@@ -168,97 +168,97 @@ Xxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxx:
 -   `GetFoldersAysnc(CommonFolderQuery.GroupByAlbumArtist)`
 -   `GetFoldersAsync(CommonFolderQuery.GroupByGenre)`
 
-**Xxxxx xxxxxxx**
+**Video library**
 
 -   `GetFilesAsync(CommonFileQuery.OrderByDate)`
 
-### Xxxx xxxxxxx
+### Flat queries
 
-Xx xxx x xxxxxxxx xxxxxxx xx xxx xxx xxxxx xxx xxxxxxx xx x xxxxxxx, xxxx `GetFilesAsync(CommonFileQuery.DefaultQuery)`. Xxxx xxxxxx xxxxxxx xxx xxxxx xx xxx xxxxxxx, xxxxxxxxxx xx xxxxx xxxx. Xxxx xx x xxxxxxx xxxxx, xx xxx xxxx xx xxxxxxxxx xxx xxxxxxxx xx xxxxxxxxxx xxxxxxxxxxx xx xxx xxxx xxx xxxxxxx xxxxxxxxxx xx xxx xxxxxxx.
+To get a complete listing of all the files and folders in a library, call `GetFilesAsync(CommonFileQuery.DefaultQuery)`. This method returns all files in the library, regardless of their type. This is a shallow query, so you have to enumerate the contents of subfolders recursively if the user has created subfolders in the library.
 
-Xxx xxxx xxxxxxx xx xxxxxx xxxxx xxxxx xx xxxxx xxxx xxx xxx xxxxxxxxxx xx xxx xxxxx-xx xxxxxxx, xx xx xxxxxx xxx xxx xxxxx xx x xxxxxxx, xxxxxxxxx xxxxx xxxx xxx xxx xx xxx xxxxxxxxx xxxx. Xxx xxxxxxx, xx xxx xxxxx xxx Xxxxx Xxxxxxx xxxx x xxxx xxxxx, xxx xxxxx xxxxxxx xxxxxxx xxx xxxxxxx xxxxx xxxxx xx xxx xxxxx xx xxx Xxxxx xxxxxx.
+Use flat queries to return media files of types that are not recognized by the built-in queries, or to return all the files in a library, including files that are not of the specified type. For example, if you query the Music Library with a flat query, the query results include any picture files found by the query in the Music folder.
 
-### Xxxxxx xxxxxxx
+### Sample queries
 
-Xxxxxx xxxx xxx xxxxxx xxx xxx xxxxxxxx XX xxxx xxxxxxx xxx xxxxxxx xxx xxxxx xxxxx xx xxx xxxxxxxxx xxxxx:
+Assume that the device and its optional SD card contain the folders and files shown in the following image:
 
-![xxxxx xx ](images/phone-media-queries.png)
+![files on ](images/phone-media-queries.png)
 
-Xxxx xxx x xxx xxxxxxxx xx xxxxxxx xxx xxx xxxxxxx xxxx xxxx xxxxxx.
+Here are a few examples of queries and the results that they return.
 
-| Xxxxx | Xxxxxxx |
+| Query | Results |
 |--------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------|
-| XxxxxXxxxxxx.XxxxxxxxXxxxxxx.XxxXxxxxXxxxx();  | - Xxxxxx Xxxx xxxxxx xxxx xxxxxxxx xxxxxxx <br>- Xxxxxx Xxxx xxxxxx xxxx xxx XX xxxx <br>- Xxxxx Xxxxxxxx xxxxxx xxxx xxxxxxxx xxxxxxx <br>- Xxxxx Xxxxxxxx xxxxxx xxxx xxx XX xxxx <br><br>Xxxx xx x xxxx xxxxx, xx xxxx xxxxxxxxx xxxxxxxx xx xxx Xxxxxxxx xxxxxx   xxx xxxxxxxx. |
-| XxxxxXxxxxxx.XxxxxxxxXxxxxxx.XxxXxxxxXxxxx();  | Xx xxxxxxx. <br><br>Xxxx xx xxxx xxxxx, xxx xxx Xxxxxxxx xxxxxx xxxx xxx xxxxxxx xxx xxxxx xx xxx xxxxxxxxx xxxxxxxx. |
-| XxxxxXxxxxxx.XxxxxxxxXxxxxxx.XxxXxxxxXxxxx(XxxxxxXxxxXxxxx.XxxxxXxXxxx); | - Y-Y-YYYY.xxx xxxx xxxx xxx XX xxxx <br>- Y-Y-YYYY.xxx xxxx xxxx xxxxxxxx xxxxxxx <br>- Y-Y-YYYY.xxx xxxx xxxx xxxxxxxx xxxxxxx <br>- Y-Y-YYYY.xxx xxxx xxxx xxx XX xxxx <br><br>Xxxx xx x xxxx xxxxx, xx xxx xxxxxxxx xx xxx Xxxxxxxx xxxxxx xxx xx xxx   xxxxx xxxxxxx xxx xxxxxxxx. |
-| XxxxxXxxxxxx.XxxxxxXxxx.XxxXxxxxXxxxx(); | - Y-Y-YYYY.xxx xxxx xxxx xxxxxxxx xxxxxxx <br>- Y-Y-YYYY.xxx xxxx xxxx xxx XX xxxx <br><br>Xxxx xx x xxxx xxxxx. Xxx xxxxxxxx xx xxx xxxxxxx xx xxx xxxxxxxxxx. |
+| KnownFolders.PicturesLibrary.GetItemsAsync();  | - Camera Roll folder from internal storage <br>- Camera Roll folder from the SD card <br>- Saved Pictures folder from internal storage <br>- Saved Pictures folder from the SD card <br><br>This is a flat query, so only immediate children of the Pictures folder   are returned. |
+| KnownFolders.PicturesLibrary.GetFilesAsync();  | No results. <br><br>This is flat query, and the Pictures folder does not contain any files as its immediate children. |
+| KnownFolders.PicturesLibrary.GetFilesAsync(CommonFileQuery.OrderByDate); | - 4-3-2012.jpg file from the SD card <br>- 1-1-2014.jpg file from internal storage <br>- 1-2-2014.jpg file from internal storage <br>- 1-6-2014.jpg file from the SD card <br><br>This is a deep query, so the contents of the Pictures folder and of its   child folders are returned. |
+| KnownFolders.CameraRoll.GetFilesAsync(); | - 1-1-2014.jpg file from internal storage <br>- 4-3-2012.jpg file from the SD card <br><br>This is a flat query. The ordering of the results is not guaranteed. |
 
  
-## Xxxxx xxxxxxx xxxxxxxxxxxx xxx xxxx xxxxx
+## Media library capabilities and file types
 
 
-Xxxx xxx xxx xxxxxxxxxxxx xxxx xxx xxx xxxxxxx xx xxx xxx xxxxxxxx xxxx xx xxxxxx xxxxx xxxxx xx xxxx xxx.
+Here are the capabilities that you can specify in the app manifest file to access media files in your app.
 
--   **Xxxxx**. Xxxxxxx xxx **Xxxxx Xxxxxxx** xxxxxxxxxx xx xxx xxx xxxxxxxx xxxx xx xxx xxxx xxx xxx xxx xxxxxx xxxxx xx xxx xxxxxxxxx xxxx xxxxx:
+-   **Music**. Specify the **Music Library** capability in the app manifest file to let your app see and access files of the following file types:
 
-    -   .xxx
-    -   .xxx
-    -   .xxY
-    -   .xYx
-    -   .xYx
-    -   .xxx
-    -   .xxx
-    -   .xxx
-    -   .YxY
-    -   .Yxx
-    -   .xxY
-    -   .xx
-    -   .xxx
-    -   .Yxxx
-    -   .YxxY
-    -   .xxx
-    -   .xxx
-    -   .xxxx
-    -   .xxx
--   **Xxxxxx**. Xxxxxxx xxx **Xxxxxxxx Xxxxxxx** xxxxxxxxxx xx xxx xxx xxxxxxxx xxxx xx xxx xxxx xxx xxx xxx xxxxxx xxxxx xx xxx xxxxxxxxx xxxx xxxxx:
+    -   .qcp
+    -   .wav
+    -   .mp3
+    -   .m4r
+    -   .m4a
+    -   .aac
+    -   .amr
+    -   .wma
+    -   .3g2
+    -   .3gp
+    -   .mp4
+    -   .wm
+    -   .asf
+    -   .3gpp
+    -   .3gp2
+    -   .mpa
+    -   .adt
+    -   .adts
+    -   .pya
+-   **Photos**. Specify the **Pictures Library** capability in the app manifest file to let your app see and access files of the following file types:
 
-    -   .xxxx
-    -   .xxx
-    -   .xxx
-    -   .xxx
-    -   .xxxx
-    -   .xxx
-    -   .xxx
-    -   .xxx
-    -   .xxx
-    -   .xxx
-    -   .xxx
--   **Xxxxxx**. Xxxxxxx xxx **Xxxxx Xxxxxxx** xxxxxxxxxx xx xxx xxx xxxxxxxx xxxx xx xxx xxxx xxx xxx xxx xxxxxx xxxxx xx xxx xxxxxxxxx xxxx xxxxx:
+    -   .jpeg
+    -   .jpe
+    -   .jpg
+    -   .gif
+    -   .tiff
+    -   .tif
+    -   .png
+    -   .bmp
+    -   .wdp
+    -   .jxr
+    -   .hdp
+-   **Videos**. Specify the **Video Library** capability in the app manifest file to let your app see and access files of the following file types:
 
-    -   .xx
-    -   .xYx
-    -   .xxx
-    -   .xxx
-    -   .xxx
-    -   .xxY
-    -   .YxY
-    -   .Yxx
-    -   .xxYx
-    -   .xxx
-    -   .xxx
-    -   .Yxxx
-    -   .YxxY
+    -   .wm
+    -   .m4v
+    -   .wmv
+    -   .asf
+    -   .mov
+    -   .mp4
+    -   .3g2
+    -   .3gp
+    -   .mp4v
+    -   .avi
+    -   .pyv
+    -   .3gpp
+    -   .3gp2
 
-## Xxxxxxx xxxx xxxxxx
+## Working with photos
 
 
-Xx xxxxxxx xxxxx xxx xxxxxx xxxxx xxxx x xxx-xxxxxxxxxx xxxxx xxx x xxxx-xxxxxxxxxx xxxxx xx xxxxx xxxxxxx, xxx xxxx xxxxxxx xxxxxx xxxx xxx xxx-xxxxxxxxxx xxxxx.
+On devices where the camera saves both a low-resolution image and a high-resolution image of every picture, the deep queries return only the low-resolution image.
 
-Xxx Xxxxxx Xxxx xxx xxx Xxxxx Xxxxxxxx xxxxxx xx xxx xxxxxxx xxx xxxx xxxxxxx.
+The Camera Roll and the Saved Pictures folder do not support the deep queries.
 
-**Xxxxxxx x xxxxx xx xxx xxx xxxx xxxxxxxx xx**
+**Opening a photo in the app that captured it**
 
-Xx xxx xxxx xx xxx xxx xxxx xxxx x xxxxx xxxxx xxxxx xx xxx xxx xxxx xxxxxxxx xx, xxx xxx xxxx xxx **XxxxxxxXxxXx** xxxx xxx xxxxx'x xxxxxxxx xx xxxxx xxxx xxxxxxx xx xxx xxxxxxxxx xxxxxxx. Xx xxxx xxxxxxx, **xxxxXxxxx** xx x [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171).
+If you want to let the user open a photo again later in the app that captured it, you can save the **CreatorAppId** with the photo's metadata by using code similar to the following example. In this example, **testPhoto** is a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171).
 
 ```CSharp
   IDictionary<string, object> propertiesToSave = new Dictionary<string, object>();
@@ -269,12 +269,12 @@ Xx xxx xxxx xx xxx xxx xxxx xxxx x xxxxx xxxxx xxxxx xx xxx xxx xxxx xxxxxxxx xx
   testPhoto.Properties.SavePropertiesAsync(propertiesToSave).AsyncWait();   
 ```
 
-## Xxxxx xxxxxx xxxxxxx xx xxx x xxxx xx x xxxxx xxxxxxx
+## Using stream methods to add a file to a media library
 
 
-Xxxx xxx xxxxxx x xxxxx xxxxxxx xx xxxxx x xxxxx xxxxxx xxxx xx **XxxxxXxxxxxx.XxxxxxxXxxxxxx**, xxx xxx xxx xxxxxx xxxxxxx xx xxx x xxxx xx xxx xxxxx xxxxxxx, xxx xxxx xx xxxx xxxx xx xxxxx xxx xxx xxxxxxx xxxx xxxx xxxx xxxxx. Xxxxxxxxx xxxxx xxxxxxx xxxx xx xxx xxx xxxx xx xxx xxxxx xxxxxxx xx xxxxxxxx xxxxxxx xx xxxxx xxx xxxxxx xxxxx xxx x xxxxxx xx xxx xxxx.
+When you access a media library by using a known folder such as **KnownFolders.PictureLibrary**, and you use stream methods to add a file to the media library, you have to make sure to close all the streams that your code opens. Otherwise these methods fail to add the file to the media library as expected because at least one stream still has a handle to the file.
 
-Xxx xxxxxxx, xxxx xxx xxx xxx xxxxxxxxx xxxx, xxx xxxx xx xxx xxxxx xx xxx xxxxx xxxxxxx. Xx xxx xxxx xx xxxx, `using (var destinationStream = (await destinationFile.OpenAsync(FileAccessMode.ReadWrite)).GetOutputStreamAt(0))`, xxxx xxx **XxxxXxxxx** xxxxxx xxx xxx **XxxXxxxxxXxxxxxXx** xxxxxx xxxx x xxxxxx. Xxxxxxx xxxx xxx xxxxxx xxxxxx xx xxx **XxxXxxxxxXxxxxxXx** xxxxxx xx xxxxxxxx xx x xxxxxx xx xxx **xxxxx** xxxxxxxxx. Xxx xxxxx xxxxxx xxxxxxx xxxx xxx xxxxxxxx xxxxxx xxx xxxx.
+For example, when you run the following code, the file is not added to the media library. In the line of code, `using (var destinationStream = (await destinationFile.OpenAsync(FileAccessMode.ReadWrite)).GetOutputStreamAt(0))`, both the **OpenAsync** method and the **GetOutputStreamAt** method open a stream. However only the stream opened by the **GetOutputStreamAt** method is disposed as a result of the **using** statement. The other stream remains open and prevents saving the file.
 
 ```CSharp
 StorageFolder testFolder = await StorageFolder.GetFolderFromPathAsync(@"C:\test");
@@ -290,7 +290,7 @@ using (var sourceStream = (await sourceFile.OpenReadAsync()).GetInputStreamAt(0)
 
 ```
 
-Xx xxx xxxxxx xxxxxxx xxxxxxxxxxxx xx xxx x xxxx xx xxx xxxxx xxxxxxx, xxxx xxxx xx xxxxx xxx xxx xxxxxxx xxxx xxxx xxxx xxxxx, xx xxxxx xx xxx xxxxxxxxx xxxxxxx.
+To use stream methods successfully to add a file to the media library, make sure to close all the streams that your code opens, as shown in the following example.
 
 ```CSharp
 StorageFolder testFolder = await StorageFolder.GetFolderFromPathAsync(@"C:\test");
@@ -319,4 +319,8 @@ using (var sourceStream = await sourceFile.OpenReadAsync())
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

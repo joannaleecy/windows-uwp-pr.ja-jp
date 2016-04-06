@@ -1,20 +1,20 @@
 ---
-xxxxxxxxxxx: Xxxx xxxxx xxxxx xxx xxx xx xxxxxx xxx xxxxxxx XXX xxxxxx xx xxxxx xxx xxxx xx xxxx xx XXX xxxxxxx. Xxx xxx xxx-xxxxxxxx xxx xxxxxx xx xxx XXX xxxx xxxx xxxxxx xxxxxxx xxx xxxxxx. Xxx xxxxxxx xxxx xxx xx xxxx xxxxx xxx xxxx xxxx xxx xxxx xxxxxx.
-xxxxx: Xxxx xx XXX xxxxxxx
-xx.xxxxxxx: YXYXYYYX-YXXY-YYYY-YYYY-XYYXYYYYXYXY
-xxxxxxxx: xxxxxxxx, XXX, xxxx
+description: This topic shows you how to launch the compose SMS dialog to allow the user to send an SMS message. You can pre-populate the fields of the SMS with data before showing the dialog. The message will not be sent until the user taps the send button.
+title: Send an SMS message
+ms.assetid: 4D7B509B-1CF0-4852-9691-E96D8352A4D6
+keywords: contacts, SMS, send
 ---
 
-# Xxxx xx XXX xxxxxxx
+# Send an SMS message
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxx xxxxx xxx xxx xx xxxxxx xxx xxxxxxx XXX xxxxxx xx xxxxx xxx xxxx xx xxxx xx XXX xxxxxxx. Xxx xxx xxx-xxxxxxxx xxx xxxxxx xx xxx XXX xxxx xxxx xxxxxx xxxxxxx xxx xxxxxx. Xxx xxxxxxx xxxx xxx xx xxxx xxxxx xxx xxxx xxxx xxx xxxx xxxxxx.
+This topic shows you how to launch the compose SMS dialog to allow the user to send an SMS message. You can pre-populate the fields of the SMS with data before showing the dialog. The message will not be sent until the user taps the send button.
 
-## Xxxxxx xxx xxxxxxx XXX xxxxxx
+## Launch the compose SMS dialog
 
-Xxxxxx x xxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn642160) xxxxxx xxx xxx xxx xxxx xxxx xxx xxxx xx xx xxx-xxxxxxxxx xx xxx xxxxxxx xxxxx xxxxxx. Xxxx [**XxxxXxxxxxxXxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn642160manager-showcomposesmsmessageasync) xx xxxx xxx xxxxxx.
+Create a new [**ChatMessage**](https://msdn.microsoft.com/library/windows/apps/Dn642160) object and set the data that you want to be pre-populated in the compose email dialog. Call [**ShowComposeSmsMessageAsync**](https://msdn.microsoft.com/library/windows/apps/Dn642160manager-showcomposesmsmessageasync) to show the dialog.
 
 ```cs
 private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipient, 
@@ -45,13 +45,17 @@ private async void ComposeSms(Windows.ApplicationModel.Contacts.Contact recipien
 }
 ```
 
-## Xxxxxxx xxx xxxx xxxxx
+## Summary and next steps
 
-Xxxx xxxxx xxx xxxxx xxx xxx xx xxxxxx xxx xxxxxxx XXX xxxxxx. Xxx xxxxxxxxxxx xx xxxxxxxxx xxxxxxxx xx xxx xx xxxxxxxxxx xxx xx XXX xxxxxxx, xxx [Xxxxxx xxxxxxxx](selecting-contacts.md). Xxxxxxxx xxx [Xxxxxxxxx Xxxxxxx xxx xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619979) xxxx XxxXxx xx xxx xxxx xxxxxxxx xx xxx xx xxxx xxx xxxxxxx XXX xxxxxxxx xx xxxxx x xxxxxxxxxx xxxx.
+This topic has shown you how to launch the compose SMS dialog. For information on selecting contacts to use as recipients for an SMS message, see [Select contacts](selecting-contacts.md). Download the [Universal Windows app samples](http://go.microsoft.com/fwlink/p/?linkid=619979) from GitHub to see more examples of how to send and receive SMS messages by using a background task.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxx xxxxxxxx](selecting-contacts.md)
+* [Select contacts](selecting-contacts.md)
+
+
 
 
 <!--HONumber=Mar16_HO1-->
+
+

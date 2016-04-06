@@ -1,27 +1,29 @@
 ---
-xx.xxxxxxx: YYXXYYXX-YYXX-YYYX-XYXX-YYYYXYYXXYYX
-xxxxx: Xxx xxxxxxx xxxxxxxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxx xxxxxxxx xxxxxxx xxxxxxxxxxx xxxxx XXXx xx xxx Xxxxxxx.Xxxxxxx.Xxxxx xxxxxxxxx.
+ms.assetid: 90BB59FC-90FE-453E-A8DE-9315E29EB98C
+title: バッテリー情報の取得
+description: Windows.Devices.Power 名前空間で、API を使って詳細なバッテリー情報を取得する方法について説明します。
 ---
-# Xxx xxxxxxx xxxxxxxxxxx
+# バッテリー情報の取得
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-** Xxxxxxxxx XXXx **
+** 重要な API **
 
--   [**Xxxxxxx.Xxxxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn895017)
--   [**XxxxxxXxxxxxxxxxx.XxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225432)
+-   [**Windows.Devices.Power**](https://msdn.microsoft.com/library/windows/apps/Dn895017)
+-   [**DeviceInformation.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/BR225432)
 
-Xxxxx xxx xx xxx xxxxxxxx xxxxxxx xxxxxxxxxxx xxxxx XXXx xx xxx [**Xxxxxxx.Xxxxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn895017) xxxxxxxxx. X *xxxxxxx xxxxxx* ([**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn895005)) xxxxxxxxx xxx xxxxxx, xxxxxxxx, xxx xxxxxx xx x xxxxxxx xx xxxxxxxxx xx xxxxxxxxx. Xxxx xxxxx xxxxxxxxxxxx xxx xxxx xxx xxx xxx xxxxxxx xxxxxxx xxx xx xxxxxxxx xx xxxxxxx. Xxxx xxxxxxxx xxx xxxx xxx xxxxx xxxxxxx xxx xxxx'x xxxxxx xx xxx xxx xx xxxx xxxxx.
+[
+            **Windows.Devices.Power**](https://msdn.microsoft.com/library/windows/apps/Dn895017) 名前空間で、API を使って詳細なバッテリー情報を取得する方法について説明します。 *バッテリー レポート* ([**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005)) は、バッテリーの充電量、容量、状態や、バッテリーの集計を示します。 このトピックでは、アプリでバッテリー レポートを取得したり、変更に関する通知を受け取ったりする方法を紹介します。 コード例は基本的なバッテリー アプリからの抜粋で、このトピックの末尾の一覧で確認できます。
 
-## Xxx xxxxxxxxx xxxxxxx xxxxxx
+## バッテリー集計レポートの取得
 
 
-Xxxx xxxxxxx xxxx xxxx xxxx xxx xxxxxxx xxx xx'x xxx xxxxxx xxxxxxx xxx xxxx xxxxxxx xxxxxxxxxxx xx xxx xxxxxxx xxxxxx xxxxxxxx xx xxx xxxxxx. Xxxx xx xxxxx xxx [**XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn895011) xxxxx xxxxx xx. Xxx *xxxxxxxxx xxxxxxx* xxxxxxxxxx xxx xxxxxxx xxxxxxxxxxx xxxxxxxxx xx xxx xxxxxx xxx xxx xxxxxxx x xxxxxx xxxxxxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn895005) xxxxxx.
+一部のデバイスにはバッテリーが複数あり、各バッテリーがデバイスの消費エネルギー全体にどのように関与しているのか明確でない場合があります。 [
+            **AggregateBattery**](https://msdn.microsoft.com/library/windows/apps/Dn895011) クラスはまさにそのような用途に使います。 *バッテリー集計*レポートはデバイスに接続されたすべてのバッテリー コントローラーを表し、1 つの全体的な [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) オブジェクトを提供できます。
 
-**Xxxx**  X [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn895004) xxxxx xxxxxxxx xxxxxxxxxxx xx x xxxxxxx xxxxxxxxxx. Xxxxxxxxx xx xxx xxxxxx, xxxxxxxxx xxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxxxxxx xxxxxxx xxx xxxxxxxxx xx'x xxxxxxxx xx xxx xxxxxx xxxxxxxxx. Xxxx, xx'x xxxxxxxx xx xxxxxx x xxxxxxx xxxxxx xxxx xxxx xx xxxxxxxxx xxx xxxxxxx. Xxxxx xxxxx, xxx xxxxxxx xxxxxx xxx xx **xxxx**.
+**注**  [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) クラスは、実際にはバッテリー コントローラーに対応します。 デバイスに応じて、コントローラーは物理的なバッテリーに接続されることもあれば、デバイス エンクロージャに接続されることもあります。 そのため、バッテリーがなくても、バッテリ オブジェクトを作ることができます。 また、バッテリ オブジェクトは **null** にすることもできます。
 
-Xxxx xxx xxxx xx xxxxxxxxx xxxxxxx xxxxxx, xxxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) xx xxx xxx xxxxxxxxxxxxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn895005).
+集計バッテリー オブジェクトを指定したら、[**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) を呼び出して、対応する [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) を取得します。
 
 ```csharp
 private void RequestAggregateBatteryReport()
@@ -37,11 +39,12 @@ private void RequestAggregateBatteryReport()
 }
 ```
 
-## Xxx xxxxxxxxxx xxxxxxx xxxxxxx
+## 個々のバッテリー レポートを取得する
 
-Xxx xxx xxxx xxxxxx x [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn895005) xxxxxx xxx xxxxxxxxxx xxxxxxxxx. Xxx [**XxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.battery.getdeviceselector.aspx) xxxx xxx [**XxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225432) xxxxxx xx xxxxxx x xxxxxxxxxx xx [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225393) xxxxxxx xxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxx xx xxx xxxxxx. Xxxx, xxxxx xxx **Xx** xxxxxxxx xx xxx xxxxxxx **XxxxxxXxxxxxxxxxx** xxxxxx, xxxxxx x xxxxxxxxxxxxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn895004) xxxx xxx [**XxxxXxXxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.battery.fromidasync.aspx) xxxxxx. Xxxxxxx, xxxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) xx xxx xxx xxxxxxxxxx xxxxxxx xxxxxx.
+個々のバッテリーに対する [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) オブジェクトを作ることもできます。 [
+            **GetDeviceSelector**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.battery.getdeviceselector.aspx) を [**FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/BR225432) メソッドと共に使って、デバイスに接続されているバッテリー コントローラーがあるかどうかを表す [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) オブジェクトのコレクションを取得します。 次に、必要な **DeviceInformation** オブジェクトの **Id** プロパティを使って、[**FromIdAsync**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.battery.fromidasync.aspx) メソッドを使い、対応する [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) を作ります。 最後に、[**GetReport**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.getreport) を呼び出して、各バッテリー レポートを取得します。
 
-Xxxx xxxxxxx xxxxx xxx xx xxxxxx x xxxxxxx xxxxxx xxx xxx xxxxxxxxx xxxxxxxxx xx xxx xxxxxx.
+次の例は、デバイスに接続されているすべてのバッテリーのバッテリー レポートを作る方法を示しています。
 
 ```csharp
 async private void RequestIndividualBatteryReports()
@@ -66,9 +69,10 @@ async private void RequestIndividualBatteryReports()
 }
 ```
 
-## Xxxxxx xxxxxx xxxxxxx
+## レポートの詳細にアクセスする
 
-Xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn895005) xxxxxx xxxxxxxx x xxx xx xxxxxxx xxxxxxxxxxx. Xxx xxxx xxxx, xxx xxx XXX xxxxxxxxx xxx xxx xxxxxxxxxx: **Xxxxxx** (x [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn818458) xxxxxxxxxxx), [**XxxxxxXxxxXxXxxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx), [**XxxxxxXxxxxxxxXxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx), [**XxxxXxxxxxXxxxxxxxXxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx), xxx [**XxxxxxxxxXxxxxxxxXxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours). Xxxx xxxxxxx xxxxx xxxx xx xxx xxxxxxx xxxxxx xxxxxxxxxx xxxx xx xxx xxxxx xxxxxxx xxx, xxxx'x xxxxxxxx xxxxx xx xxxx xxxxx.
+[
+            **BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) オブジェクトは、多くのバッテリー情報を提供します。 詳しくは、次のプロパティの API リファレンスをご覧ください。**Status** ([**BatteryStatus**](https://msdn.microsoft.com/library/windows/apps/Dn818458) 列挙体)、[**ChargeRateInMilliwatts**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.chargerateinmilliwatts.aspx)、[**DesignCapacityInMilliwattHours**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.designcapacityinmilliwatthours.aspx)、[**FullChargeCapacityInMilliwattHours**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.power.batteryreport.fullchargecapacityinmilliwatthours.aspx)、および [**RemainingCapacityInMilliwattHours**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.batteryreport.remainingcapacityinmilliwatthours)。 次の例は、基本的なバッテリー アプリで使用される一部のバッテリー レポート プロパティを示しています。このプロパティについては、このトピックで後ほど説明します。
 
 ```csharp
 ...
@@ -80,9 +84,10 @@ TextBlock txt6 = new TextBlock { Text = "Remaining energy capacity (mWh): " + re
 ...
 ```
 
-## Xxxxxxx xxxxxx xxxxxxx
+## レポートの更新を要求する
 
-Xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn895004) xxxxxx xxxxxxxx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.reportupdated) xxxxx xxxx xxxxxx, xxxxxxxx, xx xxxxxx xx xxx xxxxxxx xxxxxxx. Xxxx xxxxxxxxx xxxxxxx xxxxxxxxxxx xxx xxxxxx xxxxxxx xxx xxxxxxxxxxxx xxx xxx xxxxx xxxxxxx. Xxxx xxxxxxx xxxxx xxx xx xxxxxxxx xxx xxxxxxx xxxxxx xxxxxxx.
+[
+            **Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) オブジェクトは、バッテリーの充電量、容量、状態が変わると [**ReportUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.reportupdated) イベントをトリガーします。 通常、これは、ステータスの変更についてはすぐに、その他のすべての変更については定期的に発生します。 次の例は、バッテリー レポートの更新に登録する方法を示しています。
 
 ```csharp
 ...
@@ -90,9 +95,9 @@ Battery.AggregateBattery.ReportUpdated += AggregateBattery_ReportUpdated;
 ...
 ```
 
-## Xxxxxx xxxxxx xxxxxxx
+## レポートの更新を処理する
 
-Xxxx x xxxxxxx xxxxxx xxxxxx, xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.reportupdated) xxxxx xxxxxx xxx xxxxxxxxxxxxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn895004) xxxxxx xx xxx xxxxx xxxxxxx xxxxxx. Xxxxxxx, xxxx xxxxx xxxxxxx xx xxx xxxxxx xxxx xxx XX xxxxxx. Xxx'xx xxxx xx xxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208211) xxxxxx xx xxxxxx xxx XX xxxxxxx, xx xxxxx xx xxxx xxxxxxx.
+バッテリーの更新が発生すると、[**ReportUpdated**](https://msdn.microsoft.com/library/windows/apps/windows.devices.power.battery.reportupdated) イベントは対応する [**Battery**](https://msdn.microsoft.com/library/windows/apps/Dn895004) オブジェクトをイベント ハンドラー メソッドに渡します。 ただし、このイベント ハンドラーは、UI スレッドから呼び出されません。 次の例で示すように、[**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) オブジェクトを使って任意の UI の変更を呼び出す必要があります。
 
 ```csharp
 async private void AggregateBattery_ReportUpdated(Battery sender, object args)
@@ -121,11 +126,11 @@ async private void AggregateBattery_ReportUpdated(Battery sender, object args)
 }
 ```
 
-## Xxxxxxx: xxxxx xxxxxxx xxx
+## 例: 基本的なバッテリー アプリ
 
-Xxxx xxx xxxxx XXXx xx xxxxxxxx xxx xxxxxxxxx xxxxx xxxxxxx xxx xx Xxxxxxxxx Xxxxxx Xxxxxx. Xxxx xxx Xxxxxx Xxxxxx xxxxx xxxx, xxxxx **Xxx Xxxxxxx**, xxx xxxx xxxxx xxx **Xxxxxx X# &xx; Xxxxxxx &xx; Xxxxxxxxx** xxxxxxxxx, xxxxxx x xxx xxx xxxxx xxx **Xxxxx Xxx** xxxxxxxx.
+Microsoft Visual Studio で次の基本的なバッテリー アプリをビルドすることによって、これらの API をテストします。 Visual Studio のスタート ページで **[新しいプロジェクト]** をクリックし、**[Visual C#] > [Windows] > [ユニバーサル]** テンプレートで **[空のアプリケーション]** テンプレートを使って新しいアプリを作ります。
 
-Xxxx, xxxx xxx xxxx **XxxxXxxx.xxxx** xxx xxxx xxx xxxxxxxxx XXX xxxx xxxx xxxx (xxxxxxxxx xxx xxxxxxxx xxxxxxxx).
+次に、**MainPage.xaml** ファイルを開き、次の XML をこのファイルにコピーします (元の内容を置き換えます)。
 
 ```xml
 <Page
@@ -153,9 +158,9 @@ Xxxx, xxxx xxx xxxx **XxxxXxxx.xxxx** xxx xxxx xxx xxxxxxxxx XXX xxxx xxxx xxxx 
 </Page>
 ```
 
-Xx xxxx xxx xxx'x xxxxx **XxxY**, xxx'xx xxxx xx xxxxxxx xxx xxxxx xxxx xx xxx xxxxx xxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx xxxxxxxxx xx xxxx xxx. Xxx xxxxxxx, xx xxx xxxxxxx x xxxxxxx xxxxx **XxxxxXxxxxxxXxx**, xxx'x xxxxxxx `x:Class="App1.MainPage"` xxxx `x:Class="BasicBatteryApp.MainPage"`. Xxx xxxxxx xxxx xxxxxxx `xmlns:local="using:App1"` xxxx `xmlns:local="using:BasicBatteryApp"`.
+自分のアプリの名前が **App1** ではない場合、元のスニペットのクラス名の最初の部分を、自分のアプリの名前空間に置き換える必要があります。 たとえば、作成したプロジェクトの名前が **BasicBatteryApp** だとすると、`x:Class="App1.MainPage"` を `x:Class="BasicBatteryApp.MainPage"` に置き換えます。 また、`xmlns:local="using:App1"` を `xmlns:local="using:BasicBatteryApp"` に置き換える必要があります。
 
-Xxxx, xxxx xxxx xxxxxxx'x **XxxxXxxx.xxxx.xx** xxxx xxx xxxxxxx xxx xxxxxxxx xxxx xxxx xxx xxxxxxxxx.
+次に、プロジェクトの **MainPage.xaml.cs** ファイルを開き、記載されているコードを次のコードで置き換えます。
 
 ```csharp
 using System;
@@ -323,12 +328,16 @@ namespace App1
 }
 ```
 
-Xx xxxx xxx xxx'x xxxxx **XxxY**, xxx'xx xxxx xx xxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx xxxx xxx xxxx xxxx xxxxxxx. Xxx xxxxxxx, xx xxx xxxxxxx x xxxxxxx xxxxx **XxxxxXxxxxxxXxx**, xxx'x xxxxxxx xxxxxxxxx `App1` xxxx xxxxxxxxx `BasicBatteryApp`.
+自分のアプリの名前が **App1** ではない場合、元のサンプルの名前空間の名前を、自分のプロジェクトに指定した名前に変更する必要があります。 たとえば、作成したプロジェクトの名前が **BasicBatteryApp** だとすると、`App1` 名前空間を `BasicBatteryApp` 名前空間に置き換えます。
 
-Xxxxxxx, xx xxx xxxx xxxxx xxxxxxx xxx: xx xxx **Xxxxx** xxxx, xxxxx **Xxxxx Xxxxxxxxx** xx xxxx xxx xxxxxxxx.
+最後に、この基本的なバッテリー アプリを実行します: **[デバッグ]** メニューで **[デバッグの開始]** をクリックしてソリューションをテストします。
 
-**Xxx**  Xx xxxxxxx xxxxxxx xxxxxx xxxx xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn895005) xxxxxx, xxxxx xxxx xxx xx xxx **Xxxxx Xxxxxxx** xx xx xxxxxxxx **Xxxxxx** (xxxx xx x Xxxxxxx Xxxxx). Xxxx xxxxxxxxx xx x xxxxxx xxxxxxxx, xxx **XxxxxxxXxxxxx** xxxxxx xxxxxxx **xxxx** xx xxx xxxxxxxx xxx xxxx xxxxxxxxxx.
+**ヒント:** [**BatteryReport**](https://msdn.microsoft.com/library/windows/apps/Dn895005) オブジェクトから数値を受け取るには、**ローカル コンピューター**または (Windows Phone などの) 外部**デバイス**上のアプリをデバッグします。 デバイス エミュレーターでデバッグした場合、**BatteryReport** オブジェクトは容量や消費率のプロパティに **null** を返します。
 
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

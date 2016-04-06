@@ -1,205 +1,198 @@
 ---
-Xxxxxxxxxxx: Xxxxxxx xx xxxxxxxxx xxxx xxxxx xxxxxxxx xxxxxx x xxxxxx xxxx, xx xxxxxxx xxx xxxxxxx xx xxx xxxx xxxx xxxx xxx xxx xxxxxx xxx xxxxxxxx. Xxxxxxxx xx xxxxx xxxxxxx xxx xxxxxx xxxxxxxxx xx x xxxxxxxx, x xxxxxxx xx xxxxxxxxx, xx x xxxxx xxxxx.
-xxxxx: Xxxxxxx
-xx.xxxxxxx: xYYYxYYY-xYxx-YxYx-YYYY-YxxYYYYxYxYY
-xxxxx: Xxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: パンとスクロールにより、ユーザーは単一ビュー内で移動し、ビューポートに収まらないビューのコンテンツを表示できます。 ビューの例として、コンピューターのフォルダー構造、ドキュメントのライブラリ、フォト アルバムなどがあります。
+title: パン
+ms.assetid: b419f538-c7fb-4e7c-9547-5fb2494c0b71
+label: パン
+template: detail.hbs
 ---
 
-# Xxxxxxxxxx xxx xxxxxxx
+# パンのガイドライン
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**Xxxxxxx.XX.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Xxxxxxx.XX.Xxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227994)
+-   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+-   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
-Xxxxxxx xx xxxxxxxxx xxxx xxxxx xxxxxxxx xxxxxx x xxxxxx xxxx, xx xxxxxxx xxx xxxxxxx xx xxx xxxx xxxx xxxx xxx xxx xxxxxx xxx xxxxxxxx. Xxxxxxxx xx xxxxx xxxxxxx xxx xxxxxx xxxxxxxxx xx x xxxxxxxx, x xxxxxxx xx xxxxxxxxx, xx x xxxxx xxxxx.
+パンとスクロールにより、ユーザーは単一ビュー内で移動し、ビューポートに収まらないビューのコンテンツを表示できます。 ビューの例として、コンピューターのフォルダー構造、ドキュメントのライブラリ、フォト アルバムなどがあります。
 
-## <span id="Dos_and_don_ts">
-            </span>
-            <span id="dos_and_don_ts">
-            </span>
-            <span id="DOS_AND_DON_TS">
-            </span>Xxx xxx xxx'xx
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>推奨と非推奨
 
 
-**Xxxxxxx xxxxxxxxxx xxx xxxxxx xxxx**
+**パン インジケーターとスクロール バー**
 
--   Xxxxxx xxxxxxx/xxxxxxxxx xx xxxxxxxx xxxxxx xxxxxxx xxxxxxx xxxx xxxx xxx.
+-   アプリにコンテンツを読み込む前に、パン/スクロールが可能であることを確認します。
 
--   Xxxxxxx xxxxxxx xxxxxxxxxx xxx xxxxxx xxxx xx xxxxxxx xxxxxxxx xxx xxxx xxxx. Xxxx xxxx xx xxx xxxxxxx x xxxxxx xxxxxxxxxx xxxxxxx.
+-   パン インジケーターとスクロール バーを表示して、位置とサイズがわかるようにします。 これらのコントロールは、カスタム ナビゲーション機能がある場合には非表示にします。
 
-    **Xxxx**  Xxxxxx xxxxxxxx xxxxxx xxxx, xxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxxxxxxx. Xxxx xxx xxx xxxxxxx xx xxxxx xxxxxxx xxx xxxxxx xx xxxxxxxxxxx xx xxx xxx.
+    **注:**  標準のスクロール バーとは異なり、パン インジケーターは情報提供のみを目的としています。 入力デバイスには公開されず、一切操作できません。
 
      
 
-**Xxxxxx-xxxx xxxxxxx (xxx-xxxxxxxxxxx xxxxxxxx)**
+**単一軸パン (1 次元のオーバーフロー)**
 
--   Xxx xxx-xxxx xxxxxxx xxx xxxxxxx xxxxxxx xxxx xxxxxx xxxxxx xxx xxxxxxxx xxxxxxxx (xxxxxxxx xx xxxxxxxxxx).
+-   コンテンツ領域が 1 つのビューポート境界 (垂直方向または水平方向) を超えている場合は、単一軸のパンを使います。
 
-    -   Xxxxxxxx xxxxxxx xxx x xxx-xxxxxxxxxxx xxxx xx xxxxx.
-    -   Xxxxxxxxxx xxxxxxx xxx x xxxx xx xxxxx.
--   Xxx’x xxx xxxxxxxxx xxxx-xxxxxx xxxx xxxxxx-xxxx xxxxxxx xx x xxxx xxxx xx xxxx xx xxx xxx xxxx xxxxxxx xxxx-xxxxxx. Xxxxxxxxx xxxx-xxxxxx xxxxxxxxx xxxx xxx xxxx xxxx xxxx xx x xxxx-xxxxx. Xxx xxxxxxxxx xxxx-xxxxxx xxxxxxx.
+    -   1 次元の項目の一覧の場合は、垂直方向のパンを使います。
+    -   項目のグリッドの場合は、水平方向のパンを使います。
+-   ユーザーのパン操作をスナップ位置以外の位置で停止できるようにする必要がある場合は、単一軸パンで強制スナップ位置を使わないでください。 強制スナップ位置を使うと、スナップ位置で必ず停止します。 代わりに、近接スナップ位置を使ってください。
 
-**Xxxxxxxx xxxxxxx (xxx-xxxxxxxxxxx xxxxxxxx)**
+**フリーフォーム パン (2 次元のオーバーフロー)**
 
--   Xxx xxx-xxxx xxxxxxx xxx xxxxxxx xxxxxxx xxxx xxxxxx xxxxxx xxxx xxxxxxxx xxxxxxxxxx (xxxxxxxx xxx xxxxxxxxxx).
+-   コンテンツ領域が両方のビューポート境界 (垂直方向と水平方向) を超えている場合は、2 軸のパンを使います。
 
-    -   Xxxxxxxx xxx xxxxxxx xxxxx xxxxxxxx xxx xxx xxxxxxxx xxxxxxx xxx xxxxxxxxxxxx xxxxxxx xxxxx xxx xxxx xx xxxxxx xx xxxx xx xxxxxxxx xxxxxxxxxx.
--   Xxxxxxxx xxxxxxx xx xxxxxxxxx xxxxxx xx xxxxxxxxxx xxxxxx xxxxxx xx xxxx.
+    -   複数の方向へ動かされる可能性がある、構造化されていないコンテンツの場合は、既定のレール動作を上書きしてフリーフォーム パンを使います。
+-   フリーフォーム パンは通常、画像や地図内の移動に適しています。
 
-**Xxxxx xxxx**
+**ページ ビュー**
 
--   Xxx xxxxxxxxx xxxx-xxxxxx xxxx xxx xxxxxxx xx xxxxxxxx xx xxxxxxxx xxxxxxxx xx xxx xxxx xx xxxxxxx xx xxxxxx xxxxxxx. Xxxx xxx xxxxxxx xxxxx xx x xxxx xx xxxxxxxx, x xxxxxx xx xxxxx, xx xxxxxxxxxx xxxxxx.
+-   コンテンツが個別の要素で構成されている場合、または 1 つの要素全体を表示する必要がある場合は、強制スナップ位置を使います。 書籍や雑誌のページ、項目の列、個々の画像がその例です。
 
-    -   X xxxx-xxxxx xxxxxx xx xxxxxx xx xxxx xxxxxxx xxxxxxxx.
-    -   Xxxx xxxxxxx xxxxxx xx xxxxx xx xxxxxx xx xxx xxx xxxx.
+    -   スナップ位置はそれぞれの論理的な境界に置く必要があります。
+    -   各要素のサイズや倍率を、ビューに収まるように調整する必要があります。
 
-**Xxxxxxx xxx xxx xxxxxx**
+**論理的な位置と主要位置**
 
--   Xxx xxxxxxxxx xxxx-xxxxxx xx xxxxx xxx xxx xxxxxx xx xxxxxxx xxxxxx xx xxx xxxxxxx xxxx x xxxx xxxx xxxxxx xxxx. Xxx xxxxxxx, x xxxxxxx xxxxxx.
+-   コンテンツ内にユーザーが停止する可能性が高い主要位置または論理的な位置がある場合は、近接スナップ位置を使います。 たとえば、セクション ヘッダーなどです。
 
--   Xx xxxxxxx xxx xxxxxxx xxxx xxxxxxxxxxx xx xxxxxxxxxx xxx xxxxxxx, xxx xxxxxx xxxxxxxx xx xxxxxxxxxxx xxxx xxx xxxx xxxxxxx xx xxxxxxx xxxxx xxxxxxxxxx.
+-   最大サイズと最小サイズの制限または範囲が定義されている場合には、視覚的なフィードバックを使って、ユーザーがこの制限に達したことや超過したことを示します。
 
-**Xxxxxxxx xxxxxxxx xx xxxxxx xxxxxxx**
+**埋め込まれたコンテンツまたは入れ子になったコンテンツの連結**
 
--   Xxx xxxxxx-xxxx xxxxxxx (xxxxxxxxx xxxxxxxxxx) xxx xxxxxx xxxxxxx xxx xxxx xxx xxxx-xxxxx xxxxxxx. Xx xxxxx xxxxx, xxxxxxx xxxxxxxxx xxxxx xxx xxxxx xxxxxxxxx xxxx xxxxxx xx xxxxxx xxx xxxxx xxx xxxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxx xxxxxx Xxxxxxx Xxxxx xxxx.
+-   テキストとグリッド ベースのコンテンツに対して単一軸パン (通常は水平方向) と列レイアウトを使います。 このような場合は、コンテンツは通常列から列へと自然に折り返し、遷移するので、Windows ストア アプリ全体で一貫性があり見つけやすいユーザー エクスペリエンスを維持できます。
 
--   Xxx'x xxx xxxxxxxx xxxxxxxx xxxxxxx xx xxxxxxx xxxx xx xxxx xxxxx. Xxxxxxx xxx xxxxxxx xxxxxxxxxx xxx xxxxxx xxxx xxx xxxxxxxxx xxxx xxxx xxx xxxxx xxxxxxx xx xxxxxxxx xxxxxx xxx xxxxxx, xx xx xxx xx xxxxxxxxx xx xxxxxxxxxxxx xxxx xxxxxxxxxx.
+-   テキストまたは項目の一覧を表示する目的で、埋め込まれたパン対応領域を使わないでください。 領域内で入力の接触が検出されたときしかパン インジケーターとスクロール バーが表示されず、直感的で見つけやすいユーザー エクスペリエンスが得られません。
 
--   Xxx'x xxxxx xx xxxxx xxx xxxxxxxx xxxxxx xxxxxx xxxxxxx xxxxxxxx xxxxxx xx xxxx xxxx xxx xx xxx xxxx xxxxxxxxx, xx xxxxx xxxx. Xxxx xxx xxxxxx xx xxx xxxxxx xxxx xxxxx xxxxxx xxxxxxxxxxxxxxx xxxx x xxxxxxxx xxx xxx xxxxx xxxx xx xxxxxxx. Xxxxxxxx xxxxxx xxx xxxxxxx xxxx xxxxxxxxxxxxx.
+-   ここで示すように、2 つのパン対応領域がどちらも同じ方向にパンする場合は、パン対応領域を別のパン対応領域内に連結 (配置) しないでください。 この場合に連結すると、子領域の境界に到達したときに親領域が意図せずパンされる可能性があります。 パンの軸は相互に対して垂直になるようにしてください。
 
-    ![xxxxx xxxxxxxxxxxxx xx xxxxxxxx xxxxxxxx xxxx xxxx xxxxxxx xx xxx xxxx xxxxxxxxx xx xxx xxxxxxxxx.](images/scrolling-embedded3.png)
+    ![コンテナーと同じ方向にスクロールする埋め込まれたパン対応領域を示す図](images/scrolling-embedded3.png)
 
-## <span id="Additional_usage_guidance">
-            </span>
-            <span id="additional_usage_guidance">
-            </span>
-            <span id="ADDITIONAL_USAGE_GUIDANCE">
-            </span>Xxxxxxxxxx xxxxx xxxxxxxx
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>その他の使い方のガイダンス
 
 
-Xxxxxxx xxxx xxxxx, xx xxxxx x xxxxx xx xxxxx xxxxxxx xxxx xxx xx xxxx xxxxxxx, xx xxxx xxxxxxxxx xxxx xxx xxxxx. Xxx xxxxxxx xxxxxxxxxxx xx xxxx xxxxxxx xx xxxxxxxx xxx xxxxx xxxxx xx xxxxxxx xxx xxxxxx xxx, xxxxxx xxxx xxxxxxxx xxx xxxxxx xxx. Xxxxxx x xxxxxxxxxxx xx xxxx xx xx XXX xx xxxxxxxx xx xxxx xxxxxx-xxxxxxxx Xxxxxxx XX, xx xxxxxx xxxxx xx xxxx xxxxxxxxxxxx xx xxxxxxx.
+タッチでのパン (1 本または複数の指でのスワイプまたはスライド ジェスチャ) は、マウスでのスクロールと似ています。 パンはスクロール バーのクリックよりも、マウス ホイールの回転やスクロール ボックスのスライドに最も近い操作です。 API で区別されているか、一部のデバイス固有の Windows UI によって区別が必要とされていない限り、両方の操作を単にパンと呼びます。
 
-Xxxxxxxxx xx xxx xxxxx xxxxxx, xxx xxxx xxxx xxxxxx x xxxxxxxx xxxxxx xx xxxxx xxx xx xxxxx:
+入力デバイスに応じて、ユーザーは次のいずれかを使って、パン対応領域内でパンを実行します。
 
--   X xxxxx, xxxxxxxx, xx xxxxxx xxx/xxxxxx xx xxxxx xxx xxxxxx xxxxxx, xxxx xxx xxxxxx xxx, xx xxxxx xxxxxx xxx xxxxxx xxx.
--   Xxx xxxxx xxxxxx xx xxx xxxxx xx xxxxxxx xxxxxxxx xxx xxxxxx xxx.
--   Xxx xxxxxxxx xxxxxxx (XXXXXXXY xxx XXXXXXXY), xx xxxxxxxxx xx xxx xxxxx.
--   Xxx xxxxxxxx xxxxx xxxx xx xxxxxxx xxxxxxxx xxx xxxxxx xxx xx xxx xxxx xxxx xx xxxxxxx xxxxxxxx xxxxxx xxx xxxxxx xxx.
--   Xxxxx, xxxxxxxx, xx xxxxxxx xxx/xxxxxx xx xxxxx xx xxxxx xxx xxxxxxx xx xxx xxxxxxx xxxxxxxxx.
+-   マウス、タッチパッド、またはアクティブなペン/スタイラスを使って、スクロール矢印をクリックするか、スクロール ボックスをドラッグするか、スクロール バー内をクリックする。
+-   マウスのホイール ボタンを使って、スクロール ボックスのドラッグと同じ動作を実現する。
+-   マウスでサポートされている場合は、拡張ボタン (XBUTTON1 と XBUTTON2)。
+-   キーボードの方向キーを使ってスクロール ボックスのドラッグと同じ動作を実現するか、ページ キーを使ってスクロール バー内のクリックと同じ動作を実現する。
+-   タッチ、タッチパッド、またはパッシブなペン/スタイラスを使って、任意の方向に指をスライドまたはスワイプする。
 
-Xxxxxxx xxxxxxxx xxxxxx xxx xxxxxxx xxxxxx xx xxx xxxxxxx xxxxxxxxx. Xxxx xxxxxxx xx x xxx-xx-xxx xxxxxxxxxxxx, xxxxx xxx xxxxxxx xxxx xx xxx xxxx xxxxx xxx xxxxxxxx xx xxx xxxxxxx. Xxxxxxx, xxxxx xxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxx xxx xxxxxxx, xxxxxxx xx xxx xxxxxxxxx xxxxxxx xxxxx xxxxxxx xx xxx xxxxxxx xxxxxxxxx:
+スライドでは、指をパン方向にゆっくり移動します。 これにより、コンテンツが指と同じ速度で同じ距離だけパンする 1 対 1 の関係ができます。 スワイプ (指をすばやくスライドして離す) では、パンのアニメーションに次の物理的効果が適用されます。
 
--   Xxxxxxxxxxxx (xxxxxxx): Xxxxxxx xxx xxxxxxx xxxxxx xxxxxxx xx xxxxx xxxxxxxxxxxx. Xxxx xx xxxxxxx xx xxxxxxx xx x xxxx xx x xxxxxxxx xxxxxxx.
--   Xxxxxxxxxx: Xxxxxxx xxxxxxxx xxxxxx xxxxxxxxxxxx xxxxxx x xxxxxx xxxxxx-xxxx xxxxxx xx xxxxxx x xxxx xxxxx xx x xxxxxxx xxxx xxxxxxxx xx xxxxxxx.
+-   減速 (慣性): 指を離すとパンが減速し始めます。 これは滑りやすい表面で滑っている状態から止まるまでの動きに似ています。
+-   吸収: 減速時に、パン操作の勢いがスナップ位置またはコンテンツ領域の境界まで保たれた場合、反対方向に少し押し戻される効果があります。
 
-**Xxxxx xx xxxxxxx**
+**パンの種類**
 
-Xxxxxxx Y xxxxxxxx xxxxx xxxxx xx xxxxxxx:
+Windows 8 では 3 種類のパンがサポートされます。
 
--   Xxxxxx xxxx - xxxxxxx xx xxxxxxxxx xx xxx xxxxxxxxx xxxx (xxxxxxxxxx xx xxxxxxxx).
--   Xxxxx - xxxxxxx xx xxxxxxxxx xx xxx xxxxxxxxxx. Xxxxxxx, xxxx xxx xxxx xxxxxxx x xxxxxxxx xxxxxxxxx xx x xxxxxxxx xxxxxxxxx, xxxx xxxxxxx xx xxxxxxxxxx xx xxxx xxxx.
--   Xxxxxxxx - xxxxxxx xx xxxxxxxxx xx xxx xxxxxxxxxx.
+-   単一軸: 一方向 (水平または垂直) へのパンのみがサポートされます。
+-   レール: 全方向へのパンがサポートされます。 ただし、特定の方向への距離のしきい値を超えると、パンはその軸に制限されます。
+-   フリーフォーム: 全方向へのパンがサポートされます。
 
-**Xxxxxxx XX**
+**パンの UI**
 
-Xxx xxxxxxxxxxx xxxxxxxxxx xxx xxxxxxx xx xxxxxx xx xxx xxxxx xxxxxx xxxxx xxxxx xxxxxxxxx xxxxxxx xxxxxxxxxxxxx.
+パンの操作エクスペリエンスは、機能的には類似していても、入力デバイスごとに異なります。
 
-**Xxxxxxxx xxxxxxx**
-Xxxxxxxx xxxxxx xxxxxxxxx xxx xxxxxxx xx Xxxxxxx Xxxxx xxx xxxxx XxxxXxxxxx xxxxxxxxxx xx xxxxxx xxxx xxxxxxx Xxxxxxxxx Xxxxx Xxxxxx (XXX).
+**パン対応領域**
+パン対応領域の動作は、JavaScript を使った Windows ストア アプリの開発者に対して、設計時にカスケード スタイル シート (CSS) を通じて公開されます。
 
-Xxxxx xxx xxx xxxxxxx xxxxxxx xxxxx xxxxx xx xxx xxxxx xxxxxx xxxxxxxx:
+検出された入力デバイスに基づいて、次の 2 種類のパン表示モードが使われます。
 
--   Xxxxxxx xxxxxxxxxx xxx xxxxx.
--   Xxxxxx xxxx xxx xxxxx xxxxx xxxxxxx, xxxxxxxxx xxxxx, xxxxxxxx, xxxxxxxx, xxx xxxxxx.
+-   パン インジケーター (タッチを使う場合)。
+-   スクロール バー (マウス、タッチパッド、キーボード、スタイラスなど、その他の入力デバイスを使う場合)。
 
-**Xxxx**  Xxxxxxx xxxxxxxxxx xxx xxxx xxxxxxx xxxx xxx xxxxx xxxxxxx xx xxxxxx xxx xxxxxxxx xxxxxx. Xxxxxxxxx, xxx xxxxxx xxx xx xxxx xxxxxxx xxxx xxx xxxxx xxxxxx, xxx/xxxxxx xxxxxx, xx xxxxxxxx xxxxx xx xxxxxx xxx xxxxxxxxxx xxxxxx.
+**注:**  パン インジケーターは、タッチによる接触がパン対応領域内であるときにだけ表示されます。 同様に、スクロール バーは、スクロール対応領域内にマウス カーソル、ペン/スタイラス カーソル、またはキーボード フォーカスがあるときにのみ表示されます。
 
  
 
-**Xxxxxxx xxxxxxxxxx**
-Xxxxxxx xxxxxxxxxx xxx xxxxxxx xx xxx xxxxxx xxx xx x xxxxxx xxx. Xxxx xxxxxxxx xxx xxxxxxxxxx xx xxxxxxxxx xxxxxxx xx xxxxx xxxxxxxx xxxx xxx xxx xxxxxxxx xxxxxxxx xx xxx xxxxxxxxx xxxxxxx xx xxx xxxxxxxx xxxx.
+**パン インジケーター**
+パン インジケーターは、スクロール バーのスクロール ボックスに似ています。 パン対応領域全体に対する表示されているコンテンツの比率と、パン対応領域内の表示されているコンテンツの相対的な位置を示します。
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xxxxxxxx xxxxx xx xxxxxxxxx xxxxxxx xxx xxxxx xxxxxxx xxxxxxxxxx.
+次の図は、長さが異なる 2 つのパン対応領域とそれらのパン インジケーターを示しています。
 
-![xxxxx xxxxxxx xxx xxxxxxxx xxxxx xx xxxxxxxxx xxxxxxx xxx xxxxx xxxxxxx xxxxxxxxxx.](images/scrolling-indicators.png)
+![長さが異なる 2 つのパン対応領域とそれらのパン インジケーターを示す図](images/scrolling-indicators.png)
 
-**Xxxxxxx xxxxxxxxx**
-**Xxxx xxxxxx**
-Xxxxxxx xxxx xxx xxxxx xxxxxxx xxxxxxxxxx xxxxxxx xxxxxxxx xxxx xxx xxxxxxxxxxx xxxx xxx xxxxx xxxxxxx xx xxxxxx. Xxxx xxxxxxx, xxx xxxxxxx xxxxxxxxx xx xxx xxxxx xxxx xxxxxxxx xxxxxxxxx xx xxxxxxx xxxxxxx xxxxxx xxxxx xxxx xxx xxxx. Xxx xxxx xxxxxx xx xxxxxx xxxx xxxxxxx xxxxxxxx.
+**パンの動作**
+**スナップ位置**
+パンとスワイプ ジェスチャを使うと、タッチによる接触が離れたときの操作に慣性の動作が生じます。 慣性によって、コンテンツのパンは、ユーザーによる直接入力がなければ距離のしきい値に到達するまで継続されます。 この慣性の動作を変更するには、スナップ位置を使います。
 
-Xxxx xxxxxx xxxxxxx xxxxxxx xxxxx xx xxxx xxx xxxxxxx. Xxxxxxxxxxx, xxxx xxxxxx xxx xx x xxxxxx xxxxxxxxx xxx xxx xxxx xxx xxxxxxxx xxxxxxx xxxx xxxxxxxxx xxxxxxx xx xxxxxxx xx xxxxx xxxxxxxx xxxxxxx. Xxxx xxxx, xxx xxx xxxxxx xxxxxxxxx xxxx xxxxx xxx xxxxxx x xxxxxxxx xxxxxx xx xxxxxxx xx xxx xxxxxxxxxxx xx xxxxxxxxx xx xxx xxxxxxxx.
+スナップ位置は、アプリのコンテンツの論理的な停止を指定します。 スナップ位置は、認識に基づくユーザー用のページング メカニズムとして機能し、ユーザーが大きなパン対応領域でスライドまたはスワイプしすぎて疲れるのを防ぎます。 これらを使用すると、不正確なユーザー入力を処理し、コンテンツの特定の部分や主要な情報がビューポートに確実に表示されるようにすることができます。
 
-Xxxxx xxx xxx xxxxx xx xxxx-xxxxxx:
+スナップ位置には次の 2 種類があります。
 
--   Xxxxxxxxx - Xxxxx xxx xxxxxxx xx xxxxxx, x xxxx xxxxx xx xxxxxxxx xx xxxxxxx xxxxx xxxxxx x xxxxxxxx xxxxxxxxx xx xxx xxxx xxxxx. Xxxxxxx xxx xxxxx xxxx xxxxxxx xxxxxxxxx xxxx xxxxxx.
--   Xxxxxxxxx - Xxx xxxx xxxxx xxxxxxxx xx xxx xxx xxxx xxxxxxxxxxx xxxxxxxx xx xxxxxxxx xxx xxxx xxxx xxxxx xxxxxxx xxxxxx xxx xxxxxxx xxx xxxxxx (xxxxxxxxx xx xxx xxxxxxxxx xxx xxxxxxxx xx xxx xxxxxxx). Xxxxxxx xxxx xxxx xx x xxxxxxxxx xxxx xxxxx.
+-   近接: 指を離した後、スナップ位置の距離のしきい値の範囲内で慣性に従った動きが止まると、スナップ位置が選ばれます。 パンは近接スナップ位置の中間で停止することもできます。
+-   強制: 指を離す前に通過した最後のスナップ位置の直前または直後のスナップ位置が選ばれます (ジェスチャの方向と速度によって異なります)。 パンは強制スナップ位置で停止する必要があります。
 
-Xxxxxxx xxxx-xxxxxx xxx xxxxxx xxx xxxxxxxxxxxx xxxx xx xxx xxxxxxxx xxx xxxxx xxxxxx xxxx xxxxxxx xxxxxxxxx xxxxxxx xx xxxx xxxxxxx xxxxxxxxx xx xxxxx xxxx xxx xx xxxxxxxxxxx xxxxxxxxx xx xxx xxxxxx x xxxxxxxx xx xxxxxxx.
+パンのスナップ位置は、ページ付けされたコンテンツと同じ動作を実現したり、項目を論理的にグループ化して、ビューポートまたはディスプレイに収まるように動的に再グループ化できるようにしたりする、Web ブラウザーやフォト アルバムのようなアプリで便利です。
 
-Xxx xxxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xx x xxxxxxx xxxxx xxx xxxxxxxxx xxxxxx xxx xxxxxxx xx xxxxxxxxxxxxx xxx xx x xxxxxxx xxxxxxxx.
+次の図は、特定の位置にパンして離すことでコンテンツを論理的な位置に自動的にパンする方法を示しています。
 
 |                                                                |                                                                                         |                                                                                                                 |
 |----------------------------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| ![xxxxx xxxxxxx x xxxxxxxx xxxx.](images/ux-panning-snap1.png) | ![xxxxx xxxxxxx x xxxxxxxx xxxx xxxxx xxxxxx xx xxx xxxx.](images/ux-panning-snap2.png) | ![xxxxx xxxxxxx x xxxxxxxx xxxx xxxx xxx xxxxxxx xxxxxxx xx x xxxxxxx xxxx-xxxxx.](images/ux-panning-snap3.png) |
-| Xxxxx xx xxx.                                                  | Xxxx xxxxx xxxxxxx.                                                                     | Xxxxxxxx xxxxxx xxxxx xx xxx xxxx xxxxx, xxx xxxxx xxx xxxxx xxxxxxx xxx xxxxxx.                                |
+| ![パン対応領域を示す図](images/ux-panning-snap1.png) | ![左にパンされているパン対応領域を示す図](images/ux-panning-snap2.png) | ![論理的なスナップ位置でパンを停止したパン対応領域を示す図](images/ux-panning-snap3.png) |
+| スワイプしてパンします。                                                  | タッチによる接触を離します。                                                                     | パン対応領域は、タッチによる接触が離れた場所ではなく、スナップ位置で停止します。                                |
 
  
 
-**Xxxxx**
-Xxxxxxx xxx xx xxxxx xxx xxxxxx xxxx xxx xxxxxxxxxx xxx xxxxxxxxxx xx x xxxxxxx xxxxxx. Xxx xxxx xxxxxx, xxx-xxxxxxxxxxx xxxxxxx (xxxxxxxxxx xxx xxxxxxxx) xx xxxxx xxxxxxxxx. Xxxxx xxxxxxx xxx xxxx xxxxxxxxxx xx xxxxx xxxxx xx xxxxxxxxxxx xxxxxxx xxxxx xxx xxxx xx xxxxxx (xxxxxxxx xx xxxxxxxxxx).
+**レール**
+コンテンツは、ディスプレイ デバイスのサイズと解像度より広かったり高かったりする場合があります。 このため、2 次元のパン (水平方向と垂直方向) が必要になることがよくあります。 レールは、このような場合に動作の主軸 (垂直方向または水平方向) に沿ってパンを強調表示することで、ユーザー エクスペリエンスを向上させます。
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xxx xxxxxxx xx xxxxx.
+次の図は、レールの概念を示しています。
 
-![xxxxxxx xx x xxxxxx xxxx xxxxx xxxx xxxxxxxxx xxxxxxx](images/ux-panning-rails.png)
+![パンを制約するレールの画面の図](images/ux-panning-rails.png)
 
-**Xxxxxxxx xxxxxxxx xx xxxxxx xxxxxxx**
+**埋め込まれたコンテンツまたは入れ子になったコンテンツの連結**
 
-Xxxxx x xxxx xxxx x xxxx xx xxxxxx xxxxx xx xx xxxxxxx xxxx xxx xxxx xxxxxx xxxxxx xxxxxxx xxxxxxxx xx xxxxxxxxxx xxxxxxx, xxx xxx xxxxxxx xxxxxxx xxxx xxxxxx xxxxxxx xxxxxx xxxxxxxx xxx xxxxxxx xx xxxxxxxxx xxxxxxxxx xxxxx xx xxx xxxxx xxxxxxx. Xxxx xx xxxxxx xxxx xx xxxxxx xxxxxxxx.
+他のズーム可能またはスクロール可能な要素の入れ子になっている要素のズームまたはスクロールが限界に達した後で、親要素が子要素のズーム操作またはスクロール操作を継続して開始するかどうかを指定します。 これはズームまたはスクロールのチェーンと呼ばれます。
 
-Xxxxxxxx xx xxxx xxx xxxxxxx xxxxxx x xxxxxx-xxxx xxxxxxx xxxx xxxx xxxxxxxx xxx xx xxxx xxxxxx-xxxx xx xxxxxxxx xxxxxxx xxxxxxx (xxxx xxx xxxxx xxxxxxx xx xxxxxx xxx xx xxxxx xxxxx xxxxxxx). Xxxx xxx xxxxxxx xxxxxxxx xx xxx xxxxx xxxxxx xx xxxxxxx xx x xxxxxxxx xxxxxxxxx, xxxxxxx xx xxxx xxxxxxxxx xx xxx xxxxxx xxxxxx xx xxx xxxx xxxxxxxxx.
+1 つ以上の単一軸パン領域またはフリーフォーム パン領域が含まれる単一軸のコンテンツ領域内で (これらの子領域のいずれかでタッチによる接触があったときに) パンを行う場合は、連結を使います。 子領域の特定の方向のパン境界に到達すると、親領域の同じ方向にパンがアクティブ化されます。
 
-Xxxx x xxxxxxxx xxxxxx xx xxxxxx xxxxxx xxxxxxx xxxxxxxx xxxxxx xx'x xxxxxxxxx xx xxxxxxx xxxxxx xxxxx xxxxxxx xxx xxxxxxxxx xxx xxx xxxxxxxx xxxxxxx. Xx xxx xxxxxxxxx xxxxxxxx, xxx xxxxxxxx xxxxxx xx xxxxxx xxxxxx xxxxxxx xxxxxxxx xxxxxx, xxxx xxxxx xx xxxxxxxxxxxxx xxxxxxxxxx. Xxxxx xx xxxxxx xx xxxxx xxx xxxxx xx xxx xx xxxx xxxxxx.
+パン対応領域を別のパン対応領域内に入れ子にするときは、コンテナーと埋め込まれたコンテンツ間に十分な領域を指定することが重要です。 次の図では、パン対応領域が別のパン対応領域内に置かれており、それぞれが相互に対して垂直方向に移動します。 各領域にユーザーがパンできる十分な領域があります。
 
-![xxxxx xxxxxxxxxxxxx xx xxxxxxxx xxxxxxxx xxxx.](images/scrolling-embedded.png)
+![埋め込まれたパン対応領域を示す図](images/scrolling-embedded.png)
 
-Xxxxxxx xxxxxx xxxxx, xx xxxxx xx xxx xxxxxxxxx xxxxxxx, xxx xxxxxxxx xxxxxxxx xxxxxx xxx xxxxxxxxx xxxx xxxxxxx xx xxx xxxxxxxxx xxx xxxxxx xx xxxxxxxxxxxxx xxxxxxx xx xxx xx xxxx xx xxx xxxxxxxx xxxxxxx.
+十分な領域がないと、次の図に示すように、埋め込まれたパン対応領域によってコンテナーでのパンが妨げられ、1 つ以上のパン対応領域で意図しないパンが発生する可能性があります。
 
-![xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxxxxxx xxx xx xxxxxxxx xxxxxxxx xxxx.](images/ux-panning-embedded-wrong.png)
+![埋め込まれたパン対応領域の余白不足を示す図](images/ux-panning-embedded-wrong.png)
 
-Xxxx xxxxxxxx xx xxxx xxxxxx xxx xxxx xxxx xx xxxxx xxxxxx xx xxxxxxx xxxx xxxx xxxxxxx xxxxxxxxxxxxx xxxxxxx xxxxxx xx xxxxxxxxxx xxxxx xx xxx xxxxx xxxx xxxxxxxxxx xxxxxx-xxxx xxxxxxx xxxxxx xxx xxxxx (xx xxx xxxxxxxx xx xxxx xxxxxx) xx xxxxxxx xxxx. Xx xxxx xxxx xxxxxxx x xxxxxx xx xxxxxxx xxxx xxxxxxxxxxxxx xx x xxxxxxxx xxxxxxx xxxxx xx xxx, xx xxxxxxxxx xxxx xxx xxxx xxxxxx xxxxx xxxx xxx xxxxxxx xxx xxxxxxx xxxx xx xxx xxxxxxxxxxxxx xxxxxxx xxxx xx xxx xxxxx xx xxx xxxxx xxxxxxxxx xxxx xxxxxxx xx xxx xxxxxxx xxxx.
+このガイダンスは、たとえば、フォト アルバムや地図のようなアプリでも役に立ちます。各画像または地図内の制約のないパンをサポートしながら、アルバム内の前の画像または次の画像や詳細な領域への単一軸パンもサポートできます。 フリーフォーム パンの画像や地図に対応する詳細領域またはオプション領域を提供するアプリでは、ページ レイアウトを詳細領域やオプション領域で始めることをお勧めします。画像や地図の制約のないパン領域が、詳細領域へのパンを妨げる可能性があるためです。
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>関連記事
 
 
-* [Xxxxxx xxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185599)
-* [Xxxxxxxx XxxxXxxx xxx XxxxXxxx](https://msdn.microsoft.com/library/windows/apps/mt204776)
-* [Xxxxxxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt244347)
-**Xxxxxxx**
-* [Xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Xxx xxxxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Xxxx xxxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Xxxxxxx xxxxxxx**
-* [Xxxxx: XXXX xxxx xxxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Xxxxx: Xxxxxx xxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Xxxxx: Xxxxx xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XXXX xxxxxxxxx, xxxxxxx, xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Xxxxx: Xxxxxxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Xxxxx: Xxxxxxx Y xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Xxxxx: Xxxxxxxxxxxxx xxx xxxxxxxx (X++) xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [XxxxxxX xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+* [カスタム ユーザー操作](https://msdn.microsoft.com/library/windows/apps/mt185599)
+* [ListView と GridView の最適化](https://msdn.microsoft.com/library/windows/apps/mt204776)
+* [キーボードのアクセシビリティ](https://msdn.microsoft.com/library/windows/apps/mt244347)
+**サンプル**
+* [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**サンプルのアーカイブ**
+* [入力: XAML ユーザー入力イベントのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [入力: タッチのヒット テストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML のスクロール、パン、ズームのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [入力: 簡略化されたインクのサンプル](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [入力: Windows 8 のジェスチャのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [入力: 操作とジェスチャ (C++) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX タッチ入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

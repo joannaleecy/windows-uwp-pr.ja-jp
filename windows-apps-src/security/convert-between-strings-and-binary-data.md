@@ -1,15 +1,15 @@
 ---
-xxxxx: Xxxxxxx xxxxxxx xxxxxxx xxx xxxxxx xxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxx xxxxx xxx xx xxxxxxx xxxxxxx xxxxxxx xxx xxxxxx xxxx xx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
-xx.xxxxxxx: XXXYXYYX-XYYX-YYYY-XXYX-YYXXXXYXXYYX
+title: 文字列とバイナリ データの間の変換
+description: 次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでの文字列とバイナリ データ間での変換方法を示しています。
+ms.assetid: AED4C74F-E63B-4980-BB4D-28ACCC1AB58B
 ---
 
-# Xxxxxxx xxxxxxx xxxxxxx xxx xxxxxx xxxx
+# 文字列とバイナリ データの間の変換
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-Xxxx xxxxxxx xxxx xxxxx xxx xx xxxxxxx xxxxxxx xxxxxxx xxx xxxxxx xxxx xx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
+次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでの文字列とバイナリ データ間での変換方法を示しています。
 
 ```cs
 public void ConvertData()
@@ -35,4 +35,8 @@ public void ConvertData()
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

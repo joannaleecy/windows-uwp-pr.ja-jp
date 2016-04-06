@@ -1,102 +1,100 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxxx xxxxxxxxx Xxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxx xxxxxxxx xxxx xxxxxxxxxx xxxxxxxxxx xxx xxxxx xxxxx xxxxxxxxxxx xxxxxxxxxx xx xxxx xxxx.
-xxxxx: Xxxxxxxxxx xxx xxxxxxx xxxx xxx xxxxxxxx
-xx.xxxxxxx: YYxYYYYx-YxYx-YxYY-xxYx-xxxxYYYxYxYY
-xxxxx: Xxxxxxx xxxx xxx xxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: このトピックでは、Windows のズームと要素のサイズ変更について説明し、アプリでこのような新しい操作のメカニズムを使うときのユーザー エクスペリエンスのガイドラインを示します。
+title: 光学式ズームとサイズ変更のガイドライン
+ms.assetid: 51a0007c-8a5d-4c44-ac9f-bbbf092b8a00
+label: 光学式ズームとサイズ変更
+template: detail.hbs
 ---
 
-# Xxxxxxx xxxx xxx xxxxxxxx
+# 光学式ズームとサイズ変更
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**Xxxxxxx.XX.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Xxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/br227994)
+-   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+-   [**入力 (XAML)**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
-Xxxx xxxxxxx xxxxxxxxx Xxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxx xxxxxxxx xxxx xxxxxxxxxx xxxxxxxxxx xxx xxxxx xxxxx xxxxxxxxxxx xxxxxxxxxx xx xxxx xxxx.
+この記事では、Windows のズームと要素のサイズ変更について説明し、アプリでこのような新しい操作のメカニズムを使うときのユーザー エクスペリエンスのガイドラインを示します。
 
 
 
-Xxxxxxx xxxx xxxx xxxxx xxxxxxx xxxxx xxxx xx xxx xxxxxxx xxxxxx x xxxxxxx xxxx (xx xx xxxxxxxxx xx xxx xxxxxxx xxxx xxxxxx), xxxxxxx xxxxxxxx xxxxxxx xxxxx xx xxxxxx xxx xxxxxxxx xxxx xx xxx xx xxxx xxxxxxx xxxxxxx xxxxxxxx xxx xxxx xx xxx xxxxxxx xxxx (xx xx xxxxxxxxx xx xxx xxxxxxx xxxxxx xxx xxxxxxx xxxx).
+光学式ズームを使うと、ユーザーはコンテンツの表示を拡大できます (コンテンツ領域自体に対して実行されます)。一方、サイズ変更を使うと、コンテンツ領域の表示は変更せずに、1 つまたは複数のオブジェクトの相対的なサイズをユーザーが変更できます (コンテンツ領域内のオブジェクトに対して実行されます)。
 
-Xxxx xxxxxxx xxxx xxx xxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxx xxxxxxx xxx xxxxx xxx xxxxxxx xxxxxxxx (xxxxxx xxxxxxx xxxxxxx xxxxx xxxxx xx xxx xxxxxx xxxx xxxxxx xxxxxxxx xxxxx xxx), xx xx xxxxxxx xxx Xxxx xxx xxxx xxxxx xxxxxxxxx xxx xxxxx xxxxxx xxxxx, xx xx xxxxxxx xxx Xxxx xxx xxxx (xxxx xxx Xxxxx xxx, xx xx xxxxxxx xxxxxx xx xxxxxxxxx) xxx xxxxxxxx xxx xxxx (+) xx xxxxx (-) xxx.
+光学式ズーム操作とセマンティック ズーム操作は両方とも、ピンチ ジェスチャとストレッチ ジェスチャ (指を広げて拡大、互いに近づけて縮小)、Ctrl キーを押しながらマウスのスクロール ホイールをスクロール、または Ctrl キーを (テンキーがない場合は Shift キーも同時に) 押しながらプラス (+) キーまたはマイナス (-) キーを押して実行します。
 
-Xxx xxxxxxxxx xxxxxxxx xxxxxxxxxxx xxx xxxxxxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxx xxxxxxx.
+次の図にサイズ変更と光学式ズームの違いを示します。
 
-**Xxxxxxx xxxx**: Xxxx xxxxxxx xx xxxx, xxx xxxx xxxxx xxxx xxx xxxxxx xxxx.
+**光学式ズーム**: ユーザーは領域を選び、領域全体を拡大します。
 
-![xxxxxx xxx xxxxxxx xxxxxx xxxxxxxx xxxxx xx xx xxx xxxxxxx xxxx xxx xxxxxx xxxx xxxxx xxxxx xxx](images/areazoom.png)
+![コンテンツ領域上で指を互いに近づけて拡大し、広げて縮小する](images/areazoom.png)
 
-**Xxxxxx**: Xxxx xxxxxxx xx xxxxxx xxxxxx xx xxxx, xxx xxxxxxx xxxx xxxxxx.
+**サイズ変更**: ユーザーは領域内のオブジェクトを選び、そのオブジェクトのサイズを変更します。
 
-![xxxxxx xxx xxxxxxx xxxxxx xxxxxxxx xxxxxxx xx xxxxxx xxx xxxxxx xxxx xxxxx xxxxxxxx xx](images/objectresize.png)
+![指を互いに近づけてオブジェクトを縮小し、広げて拡大する](images/objectresize.png)
 
-**Xxxx**  
-Xxxxxxx xxxx xxxxxxx'x xx xxxxxxxx xxxx [Xxxxxxxx Xxxx](../controls-and-patterns/semantic-zoom.md). Xxxxxxxx xxx xxxx xxxxxxxx xxx xxxx xxx xxxx xxxxxxxxxxxx, xxxxxxxx xxxx xxxxxx xx xxx xxxxxxxxxxxx xxx xxxxxxxxxx xx xxxxxxx xxxxxxxxx xxxxxx x xxxxxx xxxx (xxxx xx xxx xxxxxx xxxxxxxxx xx x xxxxxxxx, x xxxxxxx xx xxxxxxxxx, xx x xxxxx xxxxx).
+**注:**  
+光学式ズームと[セマンティック ズーム](../controls-and-patterns/semantic-zoom.md)を混同しないように気を付けてください。 どちらの操作でも同じジェスチャが使われますが、セマンティック ズームは、単一のビュー内で整理されたコンテンツを表示したりナビゲーションしたりする場合に使われます (コンピューターのフォルダー構造、ドキュメント ライブラリ、フォト アルバムなど)。
 
  
 
-## <span id="Dos_and_don_ts">
-            </span>
-            <span id="dos_and_don_ts">
-            </span>
-            <span id="DOS_AND_DON_TS">
-            </span>Xxx xxx xxx'xx
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>推奨と非推奨
 
 
-Xxx xxx xxxxxxxxx xxxxxxxxxx xxx xxxx xxxx xxxxxxx xxxxxx xxxxxxxx xx xxxxxxx xxxxxxx:
+サイズ変更または光学式ズームをサポートするアプリでは、次のガイドラインに従ってください。
 
--   Xx xxxxxxx xxx xxxxxxx xxxx xxxxxxxxxxx xx xxxxxxxxxx xxx xxxxxxx, xxx xxxxxx xxxxxxxx xx xxxxxxxxxxx xxxx xxx xxxx xxxxxxx xx xxxxxxx xxxxx xxxxxxxxxx.
--   Xxx xxxx xxxxxx xx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xx xxxxxxxxx xxxxxxx xxxxxx xx xxxxx xx xxxx xxx xxxxxxxxxxxx xxx xxxxxx x xxxxxxxx xxxxxx xx xxxxxxx xx xxxxxxxxx xx xxx xxxxxxxx. Xxxxxxx xxxx xxxxxx xxx xxxxxx xxxx xxxxxx xx xxxxxxx xxxxx xx xxxx xx xxxxxx xxx x xxxx xx xxxxxx xxxxx xxxxxx. Xxx xxxxxxx, xxxxx xxxx xxxxx xxxxxxx x xxxxxxxx xxxx xxxxx xx YYY% xx, xx xxx xxxx xx xxxxxxx xxxx, xxxx xxxxxx xxxxx xx xxxxxx xx xxxx, xxxxx, xxx xxxxxxx xxxxx.
+-   最大サイズと最小サイズの制限または範囲が定義されている場合には、視覚的なフィードバックを使って、ユーザーがこの制限に達したことや超過したことを示します。
+-   スナップ位置を使うと、論理的な操作停止位置を指定してズームとサイズ変更の動作を変更し、コンテンツの特定の部分がビューポートに表示されるようにできます。 一般的なズーム レベルまたは論理ビューに対してスナップ位置を設定して、ユーザーがこれらのレベルを簡単に選べるようにします。 たとえば、写真のアプリでは 100% の位置にサイズ変更用のスナップ位置を設定します。また、地図のアプリでスナップ位置を設定すると、市、県、国を表示する場合に便利です。
 
-    Xxxx xxxxxx xxxxxx xxxxx xx xx xxxxxxxxx xxx xxxxx xxxxxxx xxxxx xxxxx. Xx xxx'xx xxxxx XXXX, xxx xxx xxxx xxxxxx xxxxxxxxxx xx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209527). Xxx XxxxXxxxxx xxx XXXX, xxx [**-xx-xxxxxxx-xxxx-xxxx-xxxxxx**](https://msdn.microsoft.com/library/hh771895).
+    スナップ位置があると、ユーザーの操作が正確でなくても意図された操作を実行できます。 XAML を使う場合は、[**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) のスナップ位置のプロパティをご覧ください。 JavaScript と HTML の場合は、[**-ms-content-zoom-snap-points**](https://msdn.microsoft.com/library/hh771895) を使います。
 
-    Xxxxx xxx xxx xxxxx xx xxxx-xxxxxx:
+    スナップ位置には次の 2 種類があります。
 
-    -   Xxxxxxxxx - Xxxxx xxx xxxxxxx xx xxxxxx, x xxxx xxxxx xx xxxxxxxx xx xxxxxxx xxxxx xxxxxx x xxxxxxxx xxxxxxxxx xx xxx xxxx xxxxx. Xxxxxxxxx xxxx xxxxxx xxxxx xxxxx x xxxx xx xxxxxx xx xxx xxxxxxx xxxx xxxxxx.
-    -   Xxxxxxxxx - Xxx xxxx xxxxx xxxxxxxx xx xxx xxx xxxx xxxxxxxxxxx xxxxxxxx xx xxxxxxxx xxx xxxx xxxx xxxxx xxxxxxx xxxxxx xxx xxxxxxx xxx xxxxxx (xxxxxxxxx xx xxx xxxxxxxxx xxx xxxxxxxx xx xxx xxxxxxx). X xxxxxxxxxxxx xxxx xxx xx x xxxxxxxxx xxxx xxxxx.
--   Xxx xxxxxxx xxxxxxx. Xxxxx xxxxxxx xxx xxxxxxxxx:
-    -   Xxxxxxxxxxxx: Xxxxxx xxxx xxx xxxx xxxxx xxxxxxxx xx xxxxxxxxxx. Xxxx xx xxxxxxx xx xxxxxxx xx x xxxx xx x xxxxxxxx xxxxxxx.
-    -   Xxxxxx: X xxxxxx xxxxxx-xxxx xxxxxx xxxxxx xxxx x xxxx xxxxxxxxxx xx xxxxxxxx xx xxxxxx.
--   Xxxxx xxxxxxxx xxxxxxxxx xx xxx [Xxxxxxxxxx xxx xxxxxxxxx](guidelines-for-targeting.md).
--   Xxxxxxx xxxxxxx xxxxxxx xxx xxxxxxxxxxx xxxxxxxx. Xxxxxxxxx, xx xxxxxxxxxxxx, xxxxxxxx xx xxx xxxxxxx xx xxx xxxxxxx xxx xxx xxxxxxxxx.
--   Xxx'x xxx xxxxxxx xx xxxxxxxx xxx XX xx xxxxxx xxxxxxxxxx xxxxxxxx xxxxxx xxxx xxx, xxx x xxxxxxx xxxxxx xxxxxxx. Xxx xxxx xxxx xx xxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxx](guidelines-for-panning.md).
--   Xxx'x xxx xxxxxxxxx xxxxxxx xxxxxx x xxxxxxxxx xxxxxxx xxxx. Xxxxxxxxxx xx xxxx xxxxxxx:
-    -   Xxxxxxx xxxxxxxxxxxx xxxxx xxxxxxxxx xxxxx xxx xxxxxx xx x xxxxxxxxx xxxxxx xx xxx xxxxx.
-    -   Xxxxxxxx xxxx xx xxxxxxxx xxxxxx xxxx xx x xxx.
+    -   近接: 指を離した後、スナップ位置の距離のしきい値の範囲内で慣性に従った動きが止まると、スナップ位置が選ばれます。 近接スナップ位置の場合は、ズームとサイズ変更をスナップ位置とスナップ位置の間で止めることができます。
+    -   強制: 指を離す前に通過した最後のスナップ位置の直前または直後のスナップ位置が選ばれます (ジェスチャの方向と速度によって異なります)。 操作が必ず強制スナップ位置で止まるようにする必要があります。
+-   慣性の物理法則を使います。 これには次のものがあります。
+    -   減速: ユーザーが 2 本の指を互いに近づけたり、遠ざけたりしたときに発生します。 これは滑りやすい表面で滑っている状態から止まるまでの動きに似ています。
+    -   バウンド: サイズの制限または範囲を超えると、わずかな跳ね返りの効果が発生します。
+-   「[ターゲットの設定のガイドライン](guidelines-for-targeting.md)」に従った領域制御。
+-   制限付きのサイズ変更のためにスケーリング ハンドルを提供します。 ハンドルが指定されない場合は、等角投影、つまり比が一定のサイズ変更が既定値です。
+-   UI の操作またはアプリ内の追加コントロールの公開用にはズームを使わず、パン領域を使います。 パンについて詳しくは、「[パンのガイドライン](guidelines-for-panning.md)」をご覧ください。
+-   サイズ変更できるコンテンツ領域内にサイズ変更できるオブジェクトを置かないようにします。 ただし、次のような例外があります。
+    -   サイズ変更できるアイテムがサイズ変更できるキャンバスまたはアート ボードに表示される描画アプリケーション。
+    -   地図などの埋め込みオブジェクトがある Web ページ。
 
-    **Xxxx**  
-    Xx xxx xxxxx, xxx xxxxxxx xxxx xx xxxxxxx xxxxxx xxx xxxxx xxxxxx xxx xxxxxx xxx xxxxxxxxx xxxxxx.
+    **注:**  
+    どのような場合でも、すべてのタッチ ポイントがサイズ変更できるオブジェクト内にある場合以外は、コンテンツ領域のサイズが変更されます。
 
      
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>関連記事
 
 
-**Xxxxxxx**
-* [Xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Xxx xxxxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Xxxx xxxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Xxxxxxx xxxxxxx**
-* [Xxxxx: XXXX xxxx xxxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Xxxxx: Xxxxxx xxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Xxxxx: Xxxxx xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XXXX xxxxxxxxx, xxxxxxx, xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Xxxxx: Xxxxxxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Xxxxx: Xxxxxxx Y xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Xxxxx: Xxxxxxxxxxxxx xxx xxxxxxxx (X++) xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [XxxxxxX xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+**サンプル**
+* [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**サンプルのアーカイブ**
+* [入力: XAML ユーザー入力イベントのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [入力: タッチのヒット テストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML のスクロール、パン、ズームのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [入力: 簡略化されたインクのサンプル](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [入力: Windows 8 のジェスチャのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [入力: 操作とジェスチャ (C++) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX タッチ入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

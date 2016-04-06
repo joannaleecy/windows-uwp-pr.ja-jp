@@ -1,170 +1,142 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxx.
-xxxxx: Xxxxxxxxxx xxx xxx xxxxxxxx
-xx.xxxxxxx: YXYYYXYY-YXXY-YYXY-XYXX-XXXXYYXYXYYX
-xxxxx: Xxxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: この記事では、アプリ設定を作成し表示する際のベスト プラクティスについて説明します。
+title: アプリ設定のガイドライン
+ms.assetid: 2D765E90-3FA0-42F5-A5CB-BEDC14C3F60A
+label: ガイドライン
+template: detail.hbs
 ---
 
 
-# Xxxxxxxxxx xxx xxx xxxxxxxx
+# アプリ設定のガイドライン
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください。\]
 
 
-Xxx xxxxxxxx xxx xxx xxxx-xxxxxxxxxxxx xxxxxxxx xx xxxx xxx xxx xxxx xxxxxx xx xxx xxxxxxxx xxxx. Xxx xxxxxxx, xxx xxxxxxxx xx x xxxx xxxxxx xxx xxxxx xxx xxx xxxx xxxxxxx xxxxx xxxx xxxxxxx xx xxxxxxx xx xxx xxxx xxxxxxx xx xxxxxxx xx xxx xxxxxx, xxxxx x xxxxxxx xxx'x xxxxxxxx xxxxx xxx xxx xxxx xxxxxx xxxxxxx Xxxxxxx xxx Xxxxxxxxxx xx xxx xxxxxxx xxxx xx xxxxxxxxxxx. Xxxx xxxxxxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxx.
+アプリ設定は、アプリの中でユーザーによるカスタマイズが可能な部分です。この設定は、アプリ設定のページに含まれています。 たとえば、ニュース リーダー アプリのアプリ設定では、表示するニュース ソースや画面に表示する記事の数を指定できる場合があります。また、天気予報アプリのアプリ設定では、温度の既定の計測単位として摂氏または華氏を選ぶことができます。 この記事では、アプリ設定を作成し表示する際のベスト プラクティスについて説明します。
 
-![xxxxxxx xx x xxxxxxxx xxxx](images/app-settings.png)
+![設定ウィンドウの例](images/app-settings.png)
 
-## <span id="Should_I_include_a_settings_page_in_my_app_">
-            </span>
-            <span id="should_i_include_a_settings_page_in_my_app_">
-            </span>
-            <span id="SHOULD_I_INCLUDE_A_SETTINGS_PAGE_IN_MY_APP_">
-            </span>Xxxxxx X xxxxxxx x xxxxxxxx xxxx xx xx xxx?
+## <span id="Should_I_include_a_settings_page_in_my_app_"></span><span id="should_i_include_a_settings_page_in_my_app_"></span><span id="SHOULD_I_INCLUDE_A_SETTINGS_PAGE_IN_MY_APP_"></span>アプリに設定ページを含めるかどうか
 
-Xxxx xxx xxxxxxxx xx xxx xxxxxxx xxxx xxxxxx xx xx xxx xxxxxxxx xxxx: 
+アプリ設定のページに含めるアプリのオプションには、次のようなものがあります。 
 
--   Xxxxxxxxxxxxx xxxxxxx xxxx xxxxxx xxx xxxxxxxx xx xxx xxx xxx xxx'x xxxxxxx xxxxxxxx xxxxxxxxxxxx, xxxx xxxxxxxx xxxxxxx Xxxxxxx xx Xxxxxxxxxx xx xxxxxxx xxxxx xxx xxxxxxxxxxx xx x xxxxxxx xxx, xxxxxxxx xxxxxxx xxxxxxxx xxx x xxxx xxx, xxxxxxxx xxx xxxxxxxxxxxxx, xx xxxxxxxxxxxxx xxxxxxx.
--   Xxxxxxx xxxx xxxxxx xx xxx xxxx'x xxxxxxxxxxx, xxxx xxxxx, xxxxx xxxxxxx, xx xxxxx xxxxxx.
--   Xxx xxxxxxxxxxx xxxx xxx'x xxxxxxxx xxxx xxxxx, xxxx xx xxxxxxx xxxxxx, xxxx, xxx xxxxxxx, xx xxxxxxxxx xxxx.
+-   アプリの動作に影響するが、頻繁な再調整を必要としない構成オプション。たとえば、天気予報アプリで温度の既定の単位として摂氏または華氏を選ぶ機能、メール アプリでアカウント設定を変更する機能、通知に関する設定、アクセシビリティ オプションなどです。
+-   音楽、効果音、配色テーマなど、ユーザーの設定に基づくオプション。
+-   プライバシー ポリシー、ヘルプ、アプリのバージョン、著作権情報など、頻繁にはアクセスされないアプリ情報。
 
-Xxxxxxxx xxxx xxx xxxx xx xxx xxxxxxx xxx xxxxxxxx (xxx xxxxxxx, xxxxxxxx xxx xxxxx xxxx xx xx xxx xxx) xxxxxxx'x xx xx x xxxxxxxx xxxx. Xx xxxxx xxxx xxxxx xxxxxxx xxxxxxxxx, xxx [Xxxxxxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/dn958433).
+アプリの通常のワークフローに含まれるコマンド (お絵かきアプリでのブラシ色の変更など) は設定ページに含めません。 コマンド配置について詳しくは、「[コマンド設計の基本](https://msdn.microsoft.com/library/windows/apps/dn958433)」をご覧ください。
 
-## <span id="general_principles">
-            </span>
-            <span id="GENERAL_PRINCIPLES">
-            </span>Xxxxxxx xxxxxxxxxxxxxxx
+## <span id="general_principles"></span><span id="GENERAL_PRINCIPLES"></span>一般的な推奨事項
 
 
--   Xxxx xxxxxxxx xxxxx xxxxxx xxx xxxx xxx xx xxxxxx (xx/xxx) xxxxxxxx. X [xxxxxx xxxxxx](../controls-and-patterns/toggles.md) xx xxxxxxx xxx xxxx xxxxxxx xxx x xxxxxx xxxxxxx.
--   Xxx xxxxxxxx xxxx xxx xxxxx xxxxxx xxx xxxx xxxx x xxx xx xx xx Y xxxxxxxx xxxxxxxxx, xxxxxxx xxxxxxx, xxx [xxxxx xxxxxxx](../controls-and-patterns/radio-button.md).
--   Xxxxxx xx xxxxx xxxxx xxx xxx xxx xxxxxxxx xx xxxx xxx xxxxxxx'x xxxx.
--   Xxxx xxxx xxxxxxxx xxxxxx. Xxxxxx xxxxx xxxxxxxx xxx xxxx xxx xxxxxx xx xxxxxxxx xx x xxxxxxx.
--   Xxxx x xxxx xxxxxxx x xxxxxxx, xxx xxx xxxxxx xxxxxxxxxxx xxxxxxx xxx xxxxxx.
--   Xxx'x xxxxxxx xxxxxxxx xxxx xxx xxxx xx xxx xxxxxx xxx xxxxxxxx.
+-   設定ページは簡潔にし、バイナリ (オン/オフ) コントロールを利用します。 [トグル スイッチ](../controls-and-patterns/toggles.md)は、一般に、二者択一の設定に最適とされているコントロールです。
+-   ユーザーが相互排他的な関連するオプション (5 個まで) の中から 1 つの項目を選ぶことができるようにする場合は、[ラジオ ボタン](../controls-and-patterns/radio-button.md)を使います。
+-   アプリ設定のページに、すべてのアプリ設定のエントリ ポイントを作成します。
+-   設定はシンプルにします。 適切な既定値を定義し、設定の数は最小限にします。
+-   ユーザーが設定を変更したときは、変更がすぐにアプリに反映されるようにします。
+-   アプリの一般的なワークフローに関連するコマンドは追加しないでください。
 
-## <span id="Entry_point">
-            </span>
-            <span id="entry_point">
-            </span>
-            <span id="ENTRY_POINT">
-            </span>Xxxxx xxxxx
+## <span id="Entry_point"></span><span id="entry_point"></span><span id="ENTRY_POINT"></span>エントリ ポイント
 
 
-Xxx xxx xxxx xxxxx xxx xx xxxx xxx xxxxxxxx xxxx xxxxxx xx xxxxx xx xxxx xxx'x xxxxxx.
+ユーザーがアプリ設定のページにアクセスする方法は、アプリのレイアウトに基づいている必要があります。
 
-**Xxxxxxxxxx xxxx**
+**ナビゲーション ウィンドウ**
 
-Xxx x xxx xxxx xxxxxx, xxx xxxxxxxx xxxxxx xx xxx xxxx xxxx xx xxx xxxx xx xxxxxxxxxxxx xxxxxxx xxx xx xxxxxx xx xxx xxxxxx:
+ナビゲーション ウィンドウ レイアウトの場合、アプリ設定は、選択肢が示されるナビゲーション リストの最後の項目として配置し、下部にピン留めすることをお勧めします。
 
-![xxx xxxxxxxx xxxxx xxxxx xxx xxx xxxx](images/appsettings-entrypoint-navpane.png)
+![ナビゲーション ウィンドウでのアプリ設定のエントリ ポイント](images/appsettings-entrypoint-navpane.png)
 
-**Xxx xxx**
+**アプリ バー**
 
-Xx xxx'xx xxxxx xx xxx xxx xx xxxx xxx, xxxxx xx xxxxxxx xxxx xx x xxx xx xxxx/xxxxxx xxxxxxxxxxxx xxxxxx, xxxxx xxx xxxxx xxxxx xxxx xxxx xx xxx "Xxxx" xxxxxx xxxx. Xx xxxxxxx xxxxxxxxxxxxxxx xxx xxx xxxxxxxx xxxxx xxxxx xx xxxxxxxxx xxx xxxx xxx, xxxxx xxx xxxxx xxxxx xxxxxxxx xx xxx xxx xxx xxx xxx xxxxxx xxx "Xxxx" xxxxxx xxxx.
+アプリ バーやツール バー (通常は、ハブやタブ/ピボットのナビゲーション レイアウトに含まれる) を使っている場合、エントリ ポイントを [その他] ポップアップ メニューの最後の項目として配置します。 設定のエントリ ポイントを簡単に検索できることがアプリで重要となる場合は、[その他] ポップアップ メニューではなく、アプリ バーに直接エントリ ポイントを配置します。
 
-![xxx xxxxxxxx xxxxx xxxxx xxx xxx xxx](images/appsettings-entrypoint-tabs.png)
+![アプリ バーでのアプリ設定のエントリ ポイント](images/appsettings-entrypoint-tabs.png)
 
-**Xxx**
+**Hub**
 
-Xx xxx'xx xxxxx x xxx xxxxxx, xxx xxxxx xxxxx xxx xxx xxxxxxxx xxxxxx xx xxxxxx xxxxxx xxx "Xxxx" xxxxxx xxxx xx xx xxx xxx.
+ハブ レイアウトを使っている場合は、アプリ設定のエントリ ポイントをアプリ バーの [その他] ポップアップ メニュー内に配置することをお勧めします。
 
-**Xxxx/xxxxxx**
+**タブ/ピボット**
 
-Xxx x xxxx xx xxxxxx xxxxxx, xx xxx'x xxxxxxxxxxx xxxxxxx xxx xxx xxxxxxxx xxxxx xxxxx xx xxx xx xxx xxx xxxxx xxxxxx xxx xxxxxxxxxx. Xxxxxxx, xxx xxxxx xxxxx xxx xxx xxxxxxxx xxxxxx xx xxxxxx xxxxxx xxx "Xxxx" xxxxxx xxxx xx xx xxx xxx.
+タブやピボットのレイアウトでは、アプリ設定のエントリ ポイントをナビゲーション内のトップレベルのいずれかの項目として配置することはお勧めしません。 代わりに、アプリ設定のエントリ ポイントをアプリ バーの [その他] ポップアップ メニュー内に配置することをお勧めします。
 
-**Xxxxxx-xxxxxxx**
+**マスター/詳細**
 
-Xxxxxxx xx xxxxxxx xxx xxx xxxxxxxx xxxxx xxxxx xxxxxx xxxxxx x xxxxxx-xxxxxxx xxxx, xxxx xx xxx xxxx xxxxxx xxxx xx xxx xxx xxxxx xx xxx xxxxxx xxxx.
+アプリ設定のエントリをマスター/詳細ウィンドウ内の深い位置に配置するのではなく、マスター ウィンドウのトップ レベルに、最後のピン留めされた項目として配置してください。
 
-## <span id="Layout">
-            </span>
-            <span id="layout">
-            </span>
-            <span id="LAYOUT">
-            </span>Xxxxxx
+## <span id="Layout"></span><span id="layout"></span><span id="LAYOUT"></span>レイアウト
 
 
-Xx xxxx xxxxxxx xxx xxxxxx, xxx xxx xxxxxxxx xxxxxx xxxxxx xxxx xxxx-xxxxxx xxx xxxx xxx xxxxx xxxxxx. Xx xxxx xxx xxxxxxxx xxxx xxx xxxxxxx xx xx xxxx xxx-xxxxx xxxxxx, xxxxx xxxxxx xxxxxx xxxxxxx xxxx xxx xxxxxx.
+デスクトップの場合でも、モバイルの場合でも、アプリ設定のウィンドウは全画面で開き、ウィンドウ全体に表示されるようにします。 アプリ設定のメニューに 4 つまでの最上位グループが含まれる場合は、それらのグループが 1 列分右下がりで表示されるようにします。
 
-Xxxxxxx:
+デスクトップ:
 
-![xxxxxx xxx xxx xxxxxxxx xxxx xx xxxxxxx](images/appsettings-layout-navpane-desktop.png)
+![デスクトップにおけるアプリ設定のページのレイアウト](images/appsettings-layout-navpane-desktop.png)
 
-Xxxxxx:
+モバイル:
 
-![xxxxxx xxx xxx xxxxxxxx xxxx xx xxxxx](images/appsettings-layout-navpane-mobile.png)
+![電話におけるアプリ設定のページのレイアウト](images/appsettings-layout-navpane-mobile.png)
 
-## <span id="_About__section_and__Give_feedback__button">
-            </span>
-            <span id="_about__section_and__give_feedback__button">
-            </span>
-            <span id="_ABOUT__SECTION_AND__GIVE_FEEDBACK__BUTTON">
-            </span>"Xxxxx" xxxxxxx xxx "Xxxx xxxxxxxx" xxxxxx
+## <span id="_About__section_and__Give_feedback__button"></span><span id="_about__section_and__give_feedback__button"></span><span id="_ABOUT__SECTION_AND__GIVE_FEEDBACK__BUTTON"></span>"バージョン情報” のセクションと "フィードバックを送信する" ためのボタン
 
 
-Xx xxx xxxx xx "Xxxxx xxxx xxx" xxxxxxx xx xxxx xxx, xxxxxx x xxxxxxxxx xxx xxxxxxxx xxxx xxx xxxx. Xx xxx xxxx x "Xxxx Xxxxxxxx" xxxxxx, xxxxx xxxx xxxxxx xxx xxxxxx xx xxx "Xxxxx xxxx xxx" xxxx.
+"バージョン情報" のセクションがアプリで必要となる場合は、そのセクション専用のアプリ設定のページを作成します。 "フィードバックを送信する" ためのボタンが必要な場合は、そのボタンを "バージョン情報" を表示するページの下部に配置します。
 
-"Xxxxx xx Xxx" xxx "Xxxxxxx Xxxxxxxxx" xxxxxx xx [xxxxxxxxx xxxxxxx](../controls-and-patterns/hyperlinks.md) xxxx xxxxxxxx xxxx.
+"使用条件" や "プライバシーに関する声明" は、テキストの折り返しを使い、[ハイパーリンク ボタン](../controls-and-patterns/hyperlinks.md)として設定します。
 
-!["xxxxx xxxx xxx" xxxxxxx xxxx "xxxx xxxxxxxx" xxxxxx](images/appsettings-about.png)
+!["バージョン情報” のセクションと "フィードバックを送信する" ためのボタン](images/appsettings-about.png)
 
-## <span id="dos_and_donts">
-            </span>
-            <span id="DOS_AND_DONTS">
-            </span>Xxxxxxxxxxxxxxx
+## <span id="dos_and_donts"></span><span id="DOS_AND_DONTS"></span>推奨事項
 
 
-## <span id="add_entry_points">
-            </span>
-            <span id="ADD_ENTRY_POINTS">
-            </span>Xxx xxxxxxxx xxxx xxxxxxx
+## <span id="add_entry_points"></span><span id="ADD_ENTRY_POINTS"></span>アプリ設定のページの内容
 
 
-Xxxx xxx xxxx x xxxx xx xxxxx xxxx xxx xxxx xx xxxxxxx xx xxxx xxx xxxxxxxx xxxx, xxxxxxxx xxxxx xxxxxxxxxx:
+アプリ設定のページに含める項目の一覧を作成したら、次のガイドラインを考慮してください。
 
--   Xxxxx xxxxxxx xx xxxxxxx xxxxxxxx xxxxx xxx xxxxxxxx xxxxx.
--   Xxx xx xxxx xxx xxxxx xxxxxx xx xxxxxxxx xx x xxxxxxx xx xxxx xx xxxx.
--   Xxxxxxx xxx xxxx xxxxxxxx xxxxxxxxxx xx xxx xxx xxxxxxx. Xx xxxx xxxxxxxx xxxx'x xxxxxxxx xx x xxxxxxx xxxxxxx, xxxxxxx xxxxx xx xxx xxx xxxxxxxx xxxxxx.
--   Xxx xxxxxxxxxxx, xxx-xxxx xxxxxx xxx xxxxxxxx. Xxx xxxxxxx, xxxx xxx xxxxxxx "Xxxxxxxx" xxxxxxx xx "Xxxxxxx xxxxxxxx" xxx xxxxxxx-xxxxxxx xxxxxxxx. Xx xxx xxxx xxxx xxx xxxxxx xxx xxxx xxxxxxxx xxx xxx xxxxxxxx xxx'x xxxx xxxxxxxxxx xx x xxxxxxxxxxx xxxxx, xxx "Xxxxxxx" xx "Xxxxxxxx."
--   Xx x xxxxxxx xxxxxxxx xxxxx xx xxx xxx xxxxxxx xx xx x xxxxxx, xxx xxx xxxx xxxx xxxx xxxx x xxxxxx xxxx, xxxx xx "Xxxx (xxxxxx)" xx "Xxx xxxxxx" xxxxxx xx x [xxxxxxxxx](../controls-and-patterns/hyperlinks.md). Xxxxxxxx xxxxxxxx xxxxxxxx xxxxx xx xxx xxx xxxx x xxxxxx xxxx x xxxxxx xxxxxxx. Xxx xxxxxxx, xx "Xxxxx" xxxxxxx xxxxx xxxx x xxxxxx xxxx xxxxx xx xxxx xxxxx xx xxx, xxxxxxx xxxxxx, xxx xxx xxxxxxx.
--   Xxxxxxx xxxx-xxxx xxxxxxxx xxxx x xxxxxx xxxxx xx xxxx xxxx xxxxxx xxxxxxxx xxx xxxx xxxx xxxxx xxx xxxxx. Xxx xxxxxxx xx xxxxx xxxx xxxx xxxxxxx xxxxxxxxxxx xx xx "Xxxxx" xxxxxxx.
--   Xxx'x xxxxxxxxx xxx xxxxxxxxxxxxx xx xxx "Xxxxxxxxxxx" xxxx. Xxxxxxx xxxxxxxx xxxx xxxx xx xxxxxxx xxx xxx xxx'x xxxxxx xx.
+-   類似した設定や関連する設定は、1 つの設定ラベルにまとめます。
+-   設定の合計数は、4 つまたは 5 つ以下に制限してください。
+-   アプリのコンテキストに関係なく、同じ設定を表示します。 いくつかの設定が特定のコンテキストに適合しない場合は、アプリ設定のポップアップでそれらの設定を無効にします。
+-   設定のラベルは、わかりやすい 1 単語にします。 たとえば、アカウント関連の設定の場合は、設定の名前を "アカウント設定" ではなく "アカウント" にします。 必要な設定のオプションが 1 つだけで、設定のわかりやすいラベルが思い付かない場合は、"オプション" または "既定" を使います。
+-   設定がポップアップではなく直接 Web にリンクされている場合は、[ハイパーリンク](../controls-and-patterns/hyperlinks.md)としてスタイルを設定した "ヘルプ (オンライン)" や "Web フォーラム" など、ユーザーに視覚的なヒントを与えます。 Web への複数のリンクは、1 つの設定を使ってポップアップにまとめることを検討してください。 たとえば、"バージョン情報" の設定では、使用条件、プライバシー ポリシー、アプリのサポートへのリンクを含むポップアップが開くようにします。
+-   使用頻度の高い設定にそれぞれ独自のエントリを割り当てられるように、使用頻度の低い設定は 1 つのエントリにまとめます。 情報のみを含むコンテンツやリンクは、"バージョン情報" の設定に配置します。
+-   [アクセス許可] ウィンドウの機能と重複しないようにします。 このウィンドウは既定で用意されており、その内容を変更することはできません。
 
-## <span id="add_settings_to_flyouts">
-            </span>
-            <span id="ADD_SETTINGS_TO_FLYOUTS">
-            </span> Xxx xxxxxxxx xxxxxxx xx Xxxxxxxx xxxxxxx
+## <span id="add_settings_to_flyouts"></span><span id="ADD_SETTINGS_TO_FLYOUTS"></span> 設定ポップアップへの設定コンテンツの追加
 
 
--   Xxxxxxx xxxxxxx xxxx xxx xx xxxxxx xx x xxxxxx xxxxxx, xxxxxxxxxx xx xxxxxxxxx. Xxxxx xxxxxxxxx xx x xxxxxxx xx xxxxx xxx xxxxxx xxxxxx.
--   Xxx xxx xxxxxxxxx xxxxxxxx xxx xxx xxxxxxxx:
+-   コンテンツは 1 列で上から下に表示し、必要に応じてスクロールできるようにします。 スクロールの長さは画面の高さの 2 倍までに抑えます。
+-   アプリ設定では次のコントロールを使います。
 
-    -   [Xxxxxx xxxxxxxx](../controls-and-patterns/toggles.md): Xx xxx xxxxx xxx xxxxxx xx xx xxx.
-    -   [Xxxxx xxxxxxx](../controls-and-patterns/radio-button.md): Xx xxx xxxxx xxxxxx xxx xxxx xxxx x xxx xx xx xx Y xxxxxxxx xxxxxxxxx, xxxxxxx xxxxxxx.
-    -   [Xxxx xxxxx xxx](../controls-and-patterns/text-block.md): Xx xxx xxxxx xxxxx xxxx. Xxx xxx xxxx xx xxxx xxxxx xxx xxxx xxxxxxxxxxx xx xxx xxxx xx xxxx xxx'xx xxxxxxx xxxx xxx xxxx, xxxx xx xx xxxxx xx xxxxxxxx.
-    -   [Xxxxxxxxxx](../controls-and-patterns/hyperlinks.md): Xx xxxx xxx xxxx xx xxxxxxx xxxx xxxxxx xxx xxx xx xx xx xxxxxxxx xxxxxxx. Xxxx x xxxx xxxxxx x xxxxxxxxx, xxx Xxxxxxxx xxxxxx xxxx xx xxxxxxxxx.
-    -   [Xxxxxxx](../controls-and-patterns/buttons.md): Xx xxx xxxxx xxxxxxxx xx xxxxxxxxx xxxxxx xxxxxxx xxxxxxxxxx xxx xxxxxxx Xxxxxxxx xxxxxx.
--   Xxx x xxxxxxxxxxx xxxxxxx xx xxx xx xxx xxxxxxxx xx xxxxxxxx. Xxxxx xxxx xxxxxxx xxxxx xxx xxxxxxxx xxxxxxx.
--   Xxxxxxx xxxxxxx xxx xxxxxxxx xx x xxxxxx xxxxx xxxxx xxx Xxxxxxxx xxxxxx xxx xxxxxx xxxx xxxxxxxx. Xxxxxxx xxxxxxx xxxxx xxx [**xxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br212672) xx [**XxxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210288) xxxxxxxxxx xxxx x YYYxx xxxx xxxxxx.
--   Xxx xxxxxxx xxxxxxx, xxxxxxxxxx, xxx xxxxxx xx xxx xxxxxxxx xxx xxxxxxx xxxxxxx, xx xxxxxxxxx.
--   Xx xxx xxxx xx xxxxxx xxxxxxxx, xxx xx xxxxxxxxxx xxxxx xx XX xx xx xxxxxx/xxxxxxxx xxxxx, xxx xxxxx xxxxxxxxxxx xxxxxx xxxx xxx xxxxxx. Xxx xxxxxxx, x xxxxxxx xxx xxxx xxxxxxxx xxx-xxxx xxxxxxxx xxxxx xxxx xxx xxxxxx xxx xxx xxx xxxx xxx xx xxx xxxx xx xxxxxx xxxx x xxx xxxxxx xx xxxxxx xx xxxx xxx xxxxxxxx xxxxxxx.
--   Xx xxxxxxx xxxxxxxx xx xxx xxxxxxx xxxxx xxxx, xxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxxx xx xxxxxxxx xx xxxxx xxxx xxxx xx xxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxxx xxx xxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465469).
--   Xxx'x xxx xxxxxxx xxx xxxxxxxxxx xx xx xxxxxx xxxxxxx. Xxx xxxxxxxxxx xx xxxxxxxx xx xxxxx xxxxx, xxx xxxxxxx xx xxxxx x xxxxxx xx xxxxxx xxxxxxx, xxxxxxxxxxxxx xxxx xxxxxxx xx xxx xxxxxxxx xxxx x xxxx xxxxxxxxx xxx Xxxxxxxx xxxxxx.
+    -   [トグル スイッチ](../controls-and-patterns/toggles.md): ユーザーが値をオンまたはオフに設定できるようにする場合。
+    -   [ラジオ ボタン](../controls-and-patterns/radio-button.md): ユーザーが相互排他的な関連するオプション (5 個まで) の中から 1 つの項目を選択できるようにする場合。
+    -   [テキスト入力ボックス](../controls-and-patterns/text-block.md): ユーザーがテキストを入力できるようにする場合。 ユーザーから取得するテキストの種類 (メール、パスワードなど) に応じた種類のテキスト入力ボックスを使います。
+    -   [ハイパーリンク](../controls-and-patterns/hyperlinks.md): アプリ内の別のページや外部 Web サイトに移動する場合。 ユーザーがハイパーリンクをクリックすると、設定ポップアップは閉じられます。
+    -   [ボタン](../controls-and-patterns/buttons.md): ユーザーが現在の設定ポップアップを閉じることなく即座に操作を開始できるようにする場合。
+-   使用できないコントロールがある場合は、説明用のメッセージを追加します。 使用できないコントロールの上に、このメッセージを配置します。
+-   設定ポップアップとヘッダーがアニメーション化された後で、コンテンツとコントロールを単一のブロックとしてアニメーション化します。 [
+            **enterPage**](https://msdn.microsoft.com/library/windows/apps/br212672)  または [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288) アニメーションを使って、100 ピクセル左のオフセットでコンテンツをアニメーション化します。
+-   必要に応じて、コンテンツの整理と明確化の助けになるように、セクション ヘッダー、段落、ラベルを使います。
+-   設定を繰り返し表示する必要がある場合は、UI の階層を追加するか、展開/折りたたみモデルを使います。階層の深さは 2 階層までに抑えます。 たとえば、天気予報アプリの都市別の設定では、都市の一覧を表示し、ユーザーが都市をタップしたときに、新しいポップアップを開くか、展開して設定オプションを表示できるようにします。
+-   コントロールや Web コンテンツの読み込みに時間がかかる場合は、進行状況不定コントロールを使ってユーザーに読み込み中であることを示します。 詳しくは、「[プログレス コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465469)」をご覧ください。
+-   移動や変更をコミットするためのボタンは使いません。 別のページに移動するにはハイパーリンクを使います。また、ボタンを使って変更をコミットする代わりに、ユーザーが設定ポップアップを閉じたときにアプリ設定の変更を自動的に保存します。
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx�YY. Xxx Xxxxxxx�Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx�Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows�10 に固有の情報が含まれています。 Windows�8.1 のガイダンスについては、[Windows�8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/dn958433)
-* [Xxxxxxxxxx xxx xxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465469)
-**Xxx xxxxxxxxxx (XXXX)**
-* [Xxxxx xxx xxxxxxxx xxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt299098)
-* [
-            **XxxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210288)
+* [コマンド設計の基本](https://msdn.microsoft.com/library/windows/apps/dn958433)
+* [プログレス コントロールのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465469)
+**開発者向け (XAML)**
+* [アプリ データの保存と取得](https://msdn.microsoft.com/library/windows/apps/mt299098)
+* [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/br210288)
 �
 
 �
+
+
 <!--HONumber=Mar16_HO1-->
+
+

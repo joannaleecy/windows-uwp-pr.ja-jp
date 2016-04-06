@@ -1,85 +1,89 @@
 ---
-xx.xxxxxxx: YYYYXYXY-YXXX-YYYY-XYYX-YYXYXYXYYYYY
-xxxxx: Xxxxxxxxx Xxxxxxx Xxxxxxxx Xxxxxxxxxx xxx xxxxxxxxxx xxxxxxx
-xxxxxxxxxxx: Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxx XXX Xxxxxxxxxx xxx xxxxxxx xxxxxxx xxxxxx xxx xxxxxxx xxxxx xxxxx xxxxxxxx xxxxxxx xxxxxxxxxxx xxxxxx.
+ms.assetid: 9899F6A0-7EDD-4988-A76E-79D7C0C58126
+title: Universal Windows Platform Components and optimizing interop
+description: Create Universal Windows Platform (UWP) apps that use UWP Components and interop between native and managed types while avoiding interop performance issues.
 ---
-# Xxxxxxxxx Xxxxxxx Xxxxxxxx Xxxxxxxxxx xxx xxxxxxxxxx xxxxxxx
+# Universal Windows Platform Components and optimizing interop
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxx XXX Xxxxxxxxxx xxx xxxxxxx xxxxxxx xxxxxx xxx xxxxxxx xxxxx xxxxx xxxxxxxx xxxxxxx xxxxxxxxxxx xxxxxx.
+Create Universal Windows Platform (UWP) apps that use UWP Components and interop between native and managed types while avoiding interop performance issues.
 
-## Xxxx xxxxxxxxx xxx xxxxxxxxxxxxxxxx xxxx XXX Xxxxxxxxxx
+## Best practices for interoperability with UWP Components
 
-Xx xxx xxx xxx xxxxxxx, xxxxx XXX Xxxxxxxxxx xxx xxxx x xxxxx xxxxxx xx xxxx xxx xxxxxxxxxxx. Xxxx xxxxxxx xxxxxxxxx xxx xx xxx xxxx xxxxxxxxxxx xxxx xxxx xxx xxxx XXX Xxxxxxxxxx.
+If you are not careful, using UWP Components can have a large impact on your app performance. This section discusses how to get good performance when your app uses UWP Components.
 
-### Xxxxxxxxxxxx
+### Introduction
 
-Xxxxxxxxxxxxxxxx xxx xxxx x xxx xxxxxx xx xxxxxxxxxxx xxx xxx xxxxx xx xxxxx xx xxxxxxx xxxx xxxxxxxxx xxxx xxx xxx. Xxx XXX xxxxxxx x xxx xx xxx xxxxxxxxxxxxxxxx xxx xxx xx xxxx xxx xxx xx xxxx xxxxxxxxxx xxx xxxxx xxxx xxxx xxx xxxxxxx xx xxxxx xxxxxxxxx. Xx xxxxxxxxx xxx xx xxxx xxxxxxxxx xx xxxx xxx XXX xxxx xxx xxx, xxx xx xxxxx xxxx xx xxx xxxxxx xxxxxxxxxxx. Xxxx xxxxxxx xxxxxxxxx xxxxxx xxx xxx xx xx xxxxxx xxx xxxxxx xxxx xxxxxxxxxxxxxxxx xxx xx xxxx xxx'x xxxxxxxxxxx.
+Interoperability can have a big impact on performance and you might be using it without even realizing that you are. The UWP handles a lot of the interoperability for you so that you can be more productive and reuse code that was written in other languages. We encourage you to take advantage of what the UWP does for you, but be aware that it can impact performance. This section discusses things you can do to lessen the impact that interoperability has on your app's performance.
 
-Xxx XXX xxx x xxxxxxx xx xxxxx xxxx xxx xxxxxxxxxx xxxx xxx xxxxxxxx xxxx xxx xxxxx x XXX xxx. Xxx xxx xxx XXX xxxxx xx X# xx Xxxxxxxxx Xxxxxx Xxxxx xxx xxxx xxx xxx xxx .XXX xxxxxxx. Xxx xxx'x xxxx xx xxxx xxxxxxxx xxxxxx xxxxxx xxxxx xx xxxxxx xxx XXX xxxxxxxxxx. Xxxx xxxxx xxxxxxx xxxx xxxx xxxx xxxx xxxxxxx, xxx xx xx xxxxxxxxx xx xxxxxxx xxxx xxxxx xxxxx xx xxxx xxxxxxxxxxxxxxxx xxxxxxxxx xxxx xxx xxxxxx. Xx x XXX xxxxxxxxx xx xxxxxxx xx x xxxxxxxx xxxxx xxxx X# xx Xxxxxx Xxxxx, xxx xxxxx xxxxxxxxxxxxxxxx xxxxxxxxxx xxxx xxx xxx xxxx xxxxxxxxx. Xxxxxxxx xxxxxxxxxxxxxxxx xxxxxxxxxx xxx xxxxxx xxx xxxxxxxxxxx xx xx xxx.
+The UWP has a library of types that are accessible from any language that can write a UWP app. You use the UWP types in C# or Microsoft Visual Basic the same way you use .NET objects. You don't need to make platform invoke method calls to access the UWP components. This makes writing your apps much less complex, but it is important to realize that there might be more interoperability occurring than you expect. If a UWP component is written in a language other than C# or Visual Basic, you cross interoperability boundaries when you use that component. Crossing interoperability boundaries can impact the performance of an app.
 
-Xxxx xxx xxxxxxx x XXX xxx xx X# xx Xxxxxx Xxxxx, xxx xxx xxxx xxxxxx xxx xx XXXx xxxx xxx xxx xxx xxx XXX XXXx xxx xxx .XXX XXXx xxx XXX xxxx. Xx xxxxxxx, xxxxx xxxx xxx xxxxxxx xx xxx XXX xxx xx xxxxxxxxxx xxxx xxxxx xxxx "Xxxxxxx." xxx .XXX xxxxx xxx xx xxxxxxxxxx xxxx xxxxx xxxx "Xxxxxx." Xxxxx xxx xxxxxxxxxx, xxxxxx. Xxx xxxxx xx .XXX xxx XXX xxxx xx xxx xxxxxxx xxxxxxxxxxxxxxxx xxxx xxxx xxx xxxx. Xx xxx xxxx xxxx xxx xxxx xxx xxxxxxxxxxx xx xx xxxx xxxx xxxx XXX, xxx xxxxx xx xxxx xx xxx .XXX xxx XXX xxxx xxxxxxx xx xxx xxxxxx xxxxxxxxxxx.
+When you develop a UWP app in C# or Visual Basic, the two most common set of APIs that you use are the UWP APIs and the .NET APIs for UWP apps. In general, types that are defined in the UWP are in namespaces that begin with "Windows." and .NET types are in namespaces that begin with "System." There are exceptions, though. The types in .NET for UWP apps do not require interoperability when they are used. If you find that you have bad performance in an area that uses UWP, you might be able to use .NET for UWP apps instead to get better performance.
 
-**Xxxx**  
-Xxxx xx xxx XXX xxxxxxxxxx xxxx xxxx xxxx Xxxxxxx YY xxx xxxxxxxxxxx xx X++ xx xxx xxxxx xxxxxxxxxxxxxxxx xxxxxxxxxx xxxx xxx xxx xxxx xxxx X# xx Xxxxxx Xxxxx. Xx xxxxxx, xxxx xxxx xx xxxxxxx xxxx xxx xx xxx xx xxxxx XXX xxxxxxxxxx xxxxxxx xxxx xxx'x xxxxxxxxxxx xxxxxx xxx xxxxxx xx xxxxxx xxxxxxx xx xxxx xxxx.
+**Note**  
+Most of the UWP components that ship with Windows 10 are implemented in C++ so you cross interoperability boundaries when you use them from C# or Visual Basic. As always, make sure to measure your app to see if using UWP components affects your app's performance before you invest in making changes to your code.
 
-Xx xxxx xxxxx, xxxx xx xxx "XXX xxxxxxxxxx", xx xxxx xxxxxxxxxx xxxx xxx xxxxxxx xx x xxxxxxxx xxxxx xxxx X# xx Xxxxxx Xxxxx.
+In this topic, when we say "UWP components", we mean components that are written in a language other than C# or Visual Basic.
+
+ 
+
+Each time you access a property or call a method on a UWP component, an interoperability cost is incurred. In fact, creating a UWP component is more costly than creating a .NET object. The reasons for this are that the UWP must execute code that transitions from your app's language to the component's language. Also, if you pass data to the component, the data must be converted between managed and unmanaged types.
+
+### Using UWP Components efficiently
+
+If you find that you need to get better performance, you can ensure that your code uses UWP components as efficiently as possible. This section discusses some tips for improving performance when you use UWP components.
+
+It takes a significant number of calls in a short period of time for the performance impact to be noticeable. A well-designed application that encapsulates calls to UWP components from business logic and other managed code should not incur huge interoperability costs. But if your tests indicate that using UWP components is affecting your app's performance, the tips discussed in this section help you improve performance.
+
+### Consider using .NET for UWP apps
+
+There are certain cases where you can accomplish a task by using either UWP or .NET for UWP apps. It is a good idea to try to not mix .NET types and UWP types. Try to stay in one or the other. For example, you can parse a stream of xml by using either the [**Windows.Data.Xml.Dom.XmlDocument**](https://msdn.microsoft.com/library/windows/apps/BR206173) type (a UWP type) or the [**System.Xml.XmlReader**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.xmlreader.aspx) type (a .NET type). Use the API that is from the same technology as the stream. For example, if you read xml from a [**MemoryStream**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.memorystream.aspx), use the **System.Xml.XmlReader** type, because both types are .NET types. If you read from a file, use the **Windows.Data.Xml.Dom.XmlDocument** type because the file APIs and **XmlDocument** are UWP components.
+
+### Copy Window Runtime objects to .NET types
+
+When a UWP component returns a UWP object, it might be beneficial to copy the returned object into a .NET object. Two places where this is especially important is when you're working with collections and streams.
+
+If you call a UWP API that returns a collection and then you save and access that collection many times, it might be beneficial to copy the collection into a .NET collection and use the .NET version from then on.
+
+### Cache the results of calls to UWP components for later use
+
+You might be able to get better performance by saving values into local variables instead of accessing a UWP type multiple times. This can be especially beneficial if you use a value inside of a loop. Measure your app to see if using local variables improves your app's performance. Using cached values can increase your app's speed because it will spend less time on interoperability.
+
+### Combine calls to UWP components
+
+Try to complete tasks with the fewest number of calls to UWP objects as possible. For example, it is usually better to read a large amount of data from a stream than to read small amounts at a time.
+
+Use APIs that bundle work in as few calls as possible instead of APIs that do less work and require more calls. For example, prefer to create an object by calling constructors that initialize multiple properties instead of calling the default constructor and assigning properties one at a time.
+
+### Building a UWP components
+
+If you write a UWP Component that can be used by apps written in C++ or JavaScript, make sure that your component is designed for good performance. All the suggestions for getting good performance in apps apply to getting good performance in components. Measure your component to find out which APIs have high traffic patterns and for those areas, consider providing APIs that enable your users to do work with few calls.
+
+## Keep your app fast when you use interop in managed code
+
+The UWP makes it easy to interoperate between native and managed code, but if you're not careful it can incur performance costs. Here we show you how to get good performance when you use interop in your managed UWP apps.
+
+The UWP allows developers to write apps using XAML with their language of choice thanks to the projections of the UWP APIs available in each language. When writing an app in C# or Visual Basic, this convenience comes at an interop cost because the UWP APIs are usually implemented in native code, and any UWP invocation from C# or Visual Basic requires that the CLR transition from a managed to a native stack frame and marshal function parameters to representations accessible by native code. This overhead is negligible for most apps. But when you make many calls (hundreds of thousands, to millions) to UWP APIs in the critical path of an app, this cost can become noticeable. In general you want to ensure that the time spent in transition between languages is small relative to the execution of the rest of your code. This is illustrated by the following diagram.
+
+![Interop transitions should not dominate the program execution time.](images/interop-transitions.png)
+
+The types listed at [**.NET for Windows apps**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx) don't incur this interop cost when used from C# or Visual Basic. As a rule of thumb, you can assume that types in namespaces which begin with “Windows.” are part of the UWP, and types in namespaces which begin with “System.” are .NET types. Keep in mind that even simple usage of UWP types such as allocation or property access incurs an interop cost.
+
+You should measure your app and determine if interop is taking up a large portion of your apps execution time before optimizing your interop costs. When analyzing your app’s performance with Visual Studio, you can easily get an upper bound on your interop costs by using the **Functions** view and looking at inclusive time spent in methods which call into the UWP.
+
+If your app is slow because of interop overhead, you can improve its performance by reducing calls to UWP APIs on hot code paths. For example, a game engine that is doing tons of physics calculations by constantly querying the position and dimensions of [**UIElements**](https://msdn.microsoft.com/library/windows/apps/BR208911) can save a lot of time by storing the necessary info from **UIElements** to local variables, doing calculations on these cached values, and assigning the end result back to the **UIElements** after the calculations are done. Another example: if a collection is heavily accessed by C# or Visual Basic code, then it is more efficient to use a collection from the [**System.Collections**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.collections.aspx) namespace, rather than a collection from the [**Windows.Foundation.Collections**](https://msdn.microsoft.com/library/windows/apps/BR206657) namespace. You may also consider combining calls to UWP components; one example where this is possible is by using the [**Windows.Storage.BulkAccess**](https://msdn.microsoft.com/library/windows/apps/BR207676) APIs.
+
+### Building a UWP component
+
+If you write a UWP component for use in apps written in C++ or JavaScript, make sure that your component is designed for good performance. Your API surface defines your interop boundary and defines the degree to which your users will have to think about the guidance in this topic. If you are distributing your components to other parties then this becomes especially important.
+
+All of the suggestions for getting good performance in apps apply to getting good performance in components. Measure your component to find out which APIs have high traffic patterns, and for those areas, consider providing APIs that enable your users to do work with few calls. Significant effort was put into designing the UWP to allow apps to use it without requiring frequent crossing of the interop boundary.
 
  
 
-Xxxx xxxx xxx xxxxxx x xxxxxxxx xx xxxx x xxxxxx xx x XXX xxxxxxxxx, xx xxxxxxxxxxxxxxxx xxxx xx xxxxxxxx. Xx xxxx, xxxxxxxx x XXX xxxxxxxxx xx xxxx xxxxxx xxxx xxxxxxxx x .XXX xxxxxx. Xxx xxxxxxx xxx xxxx xxx xxxx xxx XXX xxxx xxxxxxx xxxx xxxx xxxxxxxxxxx xxxx xxxx xxx'x xxxxxxxx xx xxx xxxxxxxxx'x xxxxxxxx. Xxxx, xx xxx xxxx xxxx xx xxx xxxxxxxxx, xxx xxxx xxxx xx xxxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxxxx xxxxx.
 
-### Xxxxx XXX Xxxxxxxxxx xxxxxxxxxxx
-
-Xx xxx xxxx xxxx xxx xxxx xx xxx xxxxxx xxxxxxxxxxx, xxx xxx xxxxxx xxxx xxxx xxxx xxxx XXX xxxxxxxxxx xx xxxxxxxxxxx xx xxxxxxxx. Xxxx xxxxxxx xxxxxxxxx xxxx xxxx xxx xxxxxxxxx xxxxxxxxxxx xxxx xxx xxx XXX xxxxxxxxxx.
-
-Xx xxxxx x xxxxxxxxxxx xxxxxx xx xxxxx xx x xxxxx xxxxxx xx xxxx xxx xxx xxxxxxxxxxx xxxxxx xx xx xxxxxxxxxx. X xxxx-xxxxxxxx xxxxxxxxxxx xxxx xxxxxxxxxxxx xxxxx xx XXX xxxxxxxxxx xxxx xxxxxxxx xxxxx xxx xxxxx xxxxxxx xxxx xxxxxx xxx xxxxx xxxx xxxxxxxxxxxxxxxx xxxxx. Xxx xx xxxx xxxxx xxxxxxxx xxxx xxxxx XXX xxxxxxxxxx xx xxxxxxxxx xxxx xxx'x xxxxxxxxxxx, xxx xxxx xxxxxxxxx xx xxxx xxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxx.
-
-### Xxxxxxxx xxxxx .XXX xxx XXX xxxx
-
-Xxxxx xxx xxxxxxx xxxxx xxxxx xxx xxx xxxxxxxxxx x xxxx xx xxxxx xxxxxx XXX xx .XXX xxx XXX xxxx. Xx xx x xxxx xxxx xx xxx xx xxx xxx .XXX xxxxx xxx XXX xxxxx. Xxx xx xxxx xx xxx xx xxx xxxxx. Xxx xxxxxxx, xxx xxx xxxxx x xxxxxx xx xxx xx xxxxx xxxxxx xxx [**Xxxxxxx.Xxxx.Xxx.Xxx.XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206173) xxxx (x XXX xxxx) xx xxx [**Xxxxxx.Xxx.XxxXxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.xmlreader.aspx) xxxx (x .XXX xxxx). Xxx xxx XXX xxxx xx xxxx xxx xxxx xxxxxxxxxx xx xxx xxxxxx. Xxx xxxxxxx, xx xxx xxxx xxx xxxx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.io.memorystream.aspx), xxx xxx **Xxxxxx.Xxx.XxxXxxxxx** xxxx, xxxxxxx xxxx xxxxx xxx .XXX xxxxx. Xx xxx xxxx xxxx x xxxx, xxx xxx **Xxxxxxx.Xxxx.Xxx.Xxx.XxxXxxxxxxx** xxxx xxxxxxx xxx xxxx XXXx xxx **XxxXxxxxxxx** xxx XXX xxxxxxxxxx.
-
-### Xxxx Xxxxxx Xxxxxxx xxxxxxx xx .XXX xxxxx
-
-Xxxx x XXX xxxxxxxxx xxxxxxx x XXX xxxxxx, xx xxxxx xx xxxxxxxxxx xx xxxx xxx xxxxxxxx xxxxxx xxxx x .XXX xxxxxx. Xxx xxxxxx xxxxx xxxx xx xxxxxxxxxx xxxxxxxxx xx xxxx xxx'xx xxxxxxx xxxx xxxxxxxxxxx xxx xxxxxxx.
-
-Xx xxx xxxx x XXX XXX xxxx xxxxxxx x xxxxxxxxxx xxx xxxx xxx xxxx xxx xxxxxx xxxx xxxxxxxxxx xxxx xxxxx, xx xxxxx xx xxxxxxxxxx xx xxxx xxx xxxxxxxxxx xxxx x .XXX xxxxxxxxxx xxx xxx xxx .XXX xxxxxxx xxxx xxxx xx.
-
-### Xxxxx xxx xxxxxxx xx xxxxx xx XXX xxxxxxxxxx xxx xxxxx xxx
-
-Xxx xxxxx xx xxxx xx xxx xxxxxx xxxxxxxxxxx xx xxxxxx xxxxxx xxxx xxxxx xxxxxxxxx xxxxxxx xx xxxxxxxxx x XXX xxxx xxxxxxxx xxxxx. Xxxx xxx xx xxxxxxxxxx xxxxxxxxxx xx xxx xxx x xxxxx xxxxxx xx x xxxx. Xxxxxxx xxxx xxx xx xxx xx xxxxx xxxxx xxxxxxxxx xxxxxxxx xxxx xxx'x xxxxxxxxxxx. Xxxxx xxxxxx xxxxxx xxx xxxxxxxx xxxx xxx'x xxxxx xxxxxxx xx xxxx xxxxx xxxx xxxx xx xxxxxxxxxxxxxxxx.
-
-### Xxxxxxx xxxxx xx XXX xxxxxxxxxx
-
-Xxx xx xxxxxxxx xxxxx xxxx xxx xxxxxx xxxxxx xx xxxxx xx XXX xxxxxxx xx xxxxxxxx. Xxx xxxxxxx, xx xx xxxxxxx xxxxxx xx xxxx x xxxxx xxxxxx xx xxxx xxxx x xxxxxx xxxx xx xxxx xxxxx xxxxxxx xx x xxxx.
-
-Xxx XXXx xxxx xxxxxx xxxx xx xx xxx xxxxx xx xxxxxxxx xxxxxxx xx XXXx xxxx xx xxxx xxxx xxx xxxxxxx xxxx xxxxx. Xxx xxxxxxx, xxxxxx xx xxxxxx xx xxxxxx xx xxxxxxx xxxxxxxxxxxx xxxx xxxxxxxxxx xxxxxxxx xxxxxxxxxx xxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxxxxxxx xxx xxxxxxxxx xxxxxxxxxx xxx xx x xxxx.
-
-### Xxxxxxxx x XXX xxxxxxxxxx
-
-Xx xxx xxxxx x XXX Xxxxxxxxx xxxx xxx xx xxxx xx xxxx xxxxxxx xx X++ xx XxxxXxxxxx, xxxx xxxx xxxx xxxx xxxxxxxxx xx xxxxxxxx xxx xxxx xxxxxxxxxxx. Xxx xxx xxxxxxxxxxx xxx xxxxxxx xxxx xxxxxxxxxxx xx xxxx xxxxx xx xxxxxxx xxxx xxxxxxxxxxx xx xxxxxxxxxx. Xxxxxxx xxxx xxxxxxxxx xx xxxx xxx xxxxx XXXx xxxx xxxx xxxxxxx xxxxxxxx xxx xxx xxxxx xxxxx, xxxxxxxx xxxxxxxxx XXXx xxxx xxxxxx xxxx xxxxx xx xx xxxx xxxx xxx xxxxx.
-
-## Xxxx xxxx xxx xxxx xxxx xxx xxx xxxxxxx xx xxxxxxx xxxx
-
-Xxx XXX xxxxx xx xxxx xx xxxxxxxxxxxx xxxxxxx xxxxxx xxx xxxxxxx xxxx, xxx xx xxx'xx xxx xxxxxxx xx xxx xxxxx xxxxxxxxxxx xxxxx. Xxxx xx xxxx xxx xxx xx xxx xxxx xxxxxxxxxxx xxxx xxx xxx xxxxxxx xx xxxx xxxxxxx XXX xxxx.
-
-Xxx XXX xxxxxx xxxxxxxxxx xx xxxxx xxxx xxxxx XXXX xxxx xxxxx xxxxxxxx xx xxxxxx xxxxxx xx xxx xxxxxxxxxxx xx xxx XXX XXXx xxxxxxxxx xx xxxx xxxxxxxx. Xxxx xxxxxxx xx xxx xx X# xx Xxxxxx Xxxxx, xxxx xxxxxxxxxxx xxxxx xx xx xxxxxxx xxxx xxxxxxx xxx XXX XXXx xxx xxxxxxx xxxxxxxxxxx xx xxxxxx xxxx, xxx xxx XXX xxxxxxxxxx xxxx X# xx Xxxxxx Xxxxx xxxxxxxx xxxx xxx XXX xxxxxxxxxx xxxx x xxxxxxx xx x xxxxxx xxxxx xxxxx xxx xxxxxxx xxxxxxxx xxxxxxxxxx xx xxxxxxxxxxxxxxx xxxxxxxxxx xx xxxxxx xxxx. Xxxx xxxxxxxx xx xxxxxxxxxx xxx xxxx xxxx. Xxx xxxx xxx xxxx xxxx xxxxx (xxxxxxxx xx xxxxxxxxx, xx xxxxxxxx) xx XXX XXXx xx xxx xxxxxxxx xxxx xx xx xxx, xxxx xxxx xxx xxxxxx xxxxxxxxxx. Xx xxxxxxx xxx xxxx xx xxxxxx xxxx xxx xxxx xxxxx xx xxxxxxxxxx xxxxxxx xxxxxxxxx xx xxxxx xxxxxxxx xx xxx xxxxxxxxx xx xxx xxxx xx xxxx xxxx. Xxxx xx xxxxxxxxxxx xx xxx xxxxxxxxx xxxxxxx.
-
-![Xxxxxxx xxxxxxxxxxx xxxxxx xxx xxxxxxxx xxx xxxxxxx xxxxxxxxx xxxx.](images/interop-transitions.png)
-
-Xxx xxxxx xxxxxx xx [**.XXX xxx Xxxxxxx xxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230232.aspx) xxx'x xxxxx xxxx xxxxxxx xxxx xxxx xxxx xxxx X# xx Xxxxxx Xxxxx. Xx x xxxx xx xxxxx, xxx xxx xxxxxx xxxx xxxxx xx xxxxxxxxxx xxxxx xxxxx xxxx “Xxxxxxx.” xxx xxxx xx xxx XXX, xxx xxxxx xx xxxxxxxxxx xxxxx xxxxx xxxx “Xxxxxx.” xxx .XXX xxxxx. Xxxx xx xxxx xxxx xxxx xxxxxx xxxxx xx XXX xxxxx xxxx xx xxxxxxxxxx xx xxxxxxxx xxxxxx xxxxxx xx xxxxxxx xxxx.
-
-Xxx xxxxxx xxxxxxx xxxx xxx xxx xxxxxxxxx xx xxxxxxx xx xxxxxx xx x xxxxx xxxxxxx xx xxxx xxxx xxxxxxxxx xxxx xxxxxx xxxxxxxxxx xxxx xxxxxxx xxxxx. Xxxx xxxxxxxxx xxxx xxx’x xxxxxxxxxxx xxxx Xxxxxx Xxxxxx, xxx xxx xxxxxx xxx xx xxxxx xxxxx xx xxxx xxxxxxx xxxxx xx xxxxx xxx **Xxxxxxxxx** xxxx xxx xxxxxxx xx xxxxxxxxx xxxx xxxxx xx xxxxxxx xxxxx xxxx xxxx xxx XXX.
-
-Xx xxxx xxx xx xxxx xxxxxxx xx xxxxxxx xxxxxxxx, xxx xxx xxxxxxx xxx xxxxxxxxxxx xx xxxxxxxx xxxxx xx XXX XXXx xx xxx xxxx xxxxx. Xxx xxxxxxx, x xxxx xxxxxx xxxx xx xxxxx xxxx xx xxxxxxx xxxxxxxxxxxx xx xxxxxxxxxx xxxxxxxx xxx xxxxxxxx xxx xxxxxxxxxx xx [**XXXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911) xxx xxxx x xxx xx xxxx xx xxxxxxx xxx xxxxxxxxx xxxx xxxx **XXXxxxxxxx** xx xxxxx xxxxxxxxx, xxxxx xxxxxxxxxxxx xx xxxxx xxxxxx xxxxxx, xxx xxxxxxxxx xxx xxx xxxxxx xxxx xx xxx **XXXxxxxxxx** xxxxx xxx xxxxxxxxxxxx xxx xxxx. Xxxxxxx xxxxxxx: xx x xxxxxxxxxx xx xxxxxxx xxxxxxxx xx X# xx Xxxxxx Xxxxx xxxx, xxxx xx xx xxxx xxxxxxxxx xx xxx x xxxxxxxxxx xxxx xxx [**Xxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.collections.aspx) xxxxxxxxx, xxxxxx xxxx x xxxxxxxxxx xxxx xxx [**Xxxxxxx.Xxxxxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206657) xxxxxxxxx. Xxx xxx xxxx xxxxxxxx xxxxxxxxx xxxxx xx XXX xxxxxxxxxx; xxx xxxxxxx xxxxx xxxx xx xxxxxxxx xx xx xxxxx xxx [**Xxxxxxx.Xxxxxxx.XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR207676) XXXx.
-
-### Xxxxxxxx x XXX xxxxxxxxx
-
-Xx xxx xxxxx x XXX xxxxxxxxx xxx xxx xx xxxx xxxxxxx xx X++ xx XxxxXxxxxx, xxxx xxxx xxxx xxxx xxxxxxxxx xx xxxxxxxx xxx xxxx xxxxxxxxxxx. Xxxx XXX xxxxxxx xxxxxxx xxxx xxxxxxx xxxxxxxx xxx xxxxxxx xxx xxxxxx xx xxxxx xxxx xxxxx xxxx xxxx xx xxxxx xxxxx xxx xxxxxxxx xx xxxx xxxxx. Xx xxx xxx xxxxxxxxxxxx xxxx xxxxxxxxxx xx xxxxx xxxxxxx xxxx xxxx xxxxxxx xxxxxxxxxx xxxxxxxxx.
-
-Xxx xx xxx xxxxxxxxxxx xxx xxxxxxx xxxx xxxxxxxxxxx xx xxxx xxxxx xx xxxxxxx xxxx xxxxxxxxxxx xx xxxxxxxxxx. Xxxxxxx xxxx xxxxxxxxx xx xxxx xxx xxxxx XXXx xxxx xxxx xxxxxxx xxxxxxxx, xxx xxx xxxxx xxxxx, xxxxxxxx xxxxxxxxx XXXx xxxx xxxxxx xxxx xxxxx xx xx xxxx xxxx xxx xxxxx. Xxxxxxxxxxx xxxxxx xxx xxx xxxx xxxxxxxxx xxx XXX xx xxxxx xxxx xx xxx xx xxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxx xx xxx xxxxxxx xxxxxxxx.
-
- 
 
 <!--HONumber=Mar16_HO1-->
+
+

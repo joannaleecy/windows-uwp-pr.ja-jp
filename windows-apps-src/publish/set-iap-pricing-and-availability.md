@@ -1,43 +1,43 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxxxxxxxx xx XXX, xxx xxxxxxx xx xxx Xxxxxxx xxx xxxxxxxxxxxx xxxx xxxxxxxxx xxxx xx xxxxxx xxx xxxx XXX xxx xxx xx xxxxxx xx xxxxxxx xx xxxxxxxxx.
-xxxxx: Xxx XXX xxxxxxx xxx xxxxxxxxxxxx
-xx.xxxxxxx: XYXYXYYY-YYYX-YYYX-XYXY-XXYYYYXXXYYY
+Description: When submitting an IAP, the options on the Pricing and availability page determine what to charge for your IAP and how it should be offered to customers.
+title: Set IAP pricing and availability
+ms.assetid: B3D4B753-716B-460B-A3B1-ED5712ECD694
 ---
 
-# Xxx XXX xxxxxxx xxx xxxxxxxxxxxx
+# Set IAP pricing and availability
 
 
-Xxxx xxxxxxxxxx xx XXX, xxx xxxxxxx xx xxx **Xxxxxxx xxx xxxxxxxxxxxx** xxxx xxxxxxxxx xxxx xx xxxxxx xxx xxxx XXX xxx xxx xx xxxxxx xx xxxxxxx xx xxxxxxxxx.
+When submitting an IAP, the options on the **Pricing and availability** page determine what to charge for your IAP and how it should be offered to customers.
 
-## Xxxx xxxxx
-
-
-Xxx xxxx xxxxxx x xxxx xxxxx xxx xxxx XXX. Xxxxx xxxxx xxxxx xxx xxx xxxx xx xxx xxxxx xxxxx xxx xxxx, xxxxxxxx xx .YY XXX. Xxx xxxx xxxx xxx xxxxxx xx xxxxx xxxx XXX xxx xxxx.
-
-## Xxxxxxx xxx xxxxxx xxxxxx
+## Base price
 
 
-Xx xxxxxxx, xxxx XXX xxxx xx xxxxxx xx xxx xxxxxxxx xxxxxxx, xxxxxxxxx xxx xxxxxx xxxxxxx xxxx xx xxx xxx xxxxx, xx xxx xxxx xxxxx.
+You must select a base price for your IAP. These price tiers are the same as the price tiers for apps, starting at .99 USD. You also have the option to offer your IAP for free.
 
-Xxxxxxx, xxxx xx xxxx xx xxx, xxx xxxx xxx xxxxxx xx xxxxxx xxx xxxxxxx xx xxxxx xxx'x xxxx xx xxxxx xxxx XXX. Xx xxxx xxxxx xxx'xx xxxx xx xxxx xxx xxxx xxx xx xxxxxxx xx xxx xxx, xxx xxx xxxx xxx xxxxxxxxxxx xx xxxx xxxxxxx xx xxxxxx. Xxx xxx xxxx xxx xxxxxx xxxxxx xx xxxx xxx xxx xxxxxx xxxxxxxxx xxxxxx xxx xxx XXX xx xxxxxxxxx xxxxxxx.
-
-Xxx xxxx xxxx xxx x xxxx xxxx xx xxx xxxxxxxxx xxxxxxx, xxx [Xxxxxx xxxxxxx xxx xxxxxx xxxxxxxxx](define-pricing-and-market-selection.md).
-
-## Xxxx xxxxxxx
+## Markets and custom prices
 
 
-Xx xxx xxxx xx xxxxx xxxx XXX xx x xxxxxxx xxxxx xxx x xxxxxxx xxxxxx xx xxxx, xxx xxx xxxxxx xxx xxxxxxxx x xxxx. Xxx xxxx xxxx, xxx [Xxx xxxx xxx XXXx xx xxxx](put-apps-and-iaps-on-sale.md).
+By default, your IAP will be listed in all possible markets, including any future markets that we may add later, at its base price.
 
-## Xxxxxxxxxxxx xxx xxxxxxxxxx
+However, just as with an app, you have the option to choose the markets in which you'd like to offer your IAP. In most cases you'll want to pick the same set of markets as the app, but you have the flexibility to make changes as needed. You can also set custom prices so that you can charge different prices for the IAP in different markets.
+
+For more info and a full list of the available markets, see [Define pricing and market selection](define-pricing-and-market-selection.md).
+
+## Sale pricing
 
 
-Xxx xxx xxxxxxxxx xxxxxxx xxxx XXX xxxxxx xx xxxxxxx xxx xxxxxxxx xx xxxxxxxxx. Xxxxxx xxxx xxx xx xxx xxxxxxxxx xxxxxxx:
+If you want to offer your IAP at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and IAPs on sale](put-apps-and-iaps-on-sale.md).
 
--   **Xxxxxxxxx xxx xxxxxxxx. Xxx xx xxxxxxxxx xx xxxx xxx'x xxxxxxx:** Xxxx xx xxx xxxxxxx xxxxxxx xxx xx xxxxxxxxxxx xxxxxx xxx xxxx xx xxxxxxxx xxxxxx xx xxxx XXX. Xxxxx xxxx xxxxxx xxxxxxx xxx XXXx xxxx xxxx xx xxxx xxxxxxxxx xx xxx xxxxxxxx.
--   **Xxxxxxxxx xxx xxxxxxxx. Xxx xxxxxxxxx xx xxxx xxx'x xxxxxxx:** Xxxxxxxx xxxx xxxxxx xxxxxx xxxxxxxxx xx xxxxxxxx xxx XXX xxxx xxxxxx xxxx xxx, xxx xxx XXX xxxx xxx xx xxxxxxxxx xx xxxx xxx'x Xxxxx xxxxxxx. Xxx xxxx xxxx xxxx xxx xxxxx xx xxx xxxxxxx xxxxxxxxx, xxx xxxxxxx xxxxxx xxxxxxx xxxxxxx xx xxxxxxxx xxxxxxx.
--   **Xx xxxxxx xxxxxxxxx xxx xxxxxxxx. Xxx xxxxxxxxx xx xxxx xxx'x xxxxxxx.** Xxxxxxxx xxxx xxxxxx xxxxx xxxx xxx XXX xxx'x xx xxxxxxxxx xx xxxx xxx'x xxxxxxx, xxx xx xxx xxxxxxxxx xxx xxxxxxxx xxx XXX. Xxxxxxx, **xxxx xxxxxx xx xxx xxxxxxxxx xxx xxxxxxxxx xx Xxxxxxx Y.Y xx xxxxxxx**. Xx xxxx xxx xx xxxxxxxxx xx Xxxxxxx Y.Y xx xxxxxxx, xxx XXX xxxx xxxxx xx xxxxxxxxx xxx xxxxxxxx xx xxxxx xxxxxxxxx. Xx xxxx xxxxxxxx xxxx XXX xx xxxxxxxxx xx Xxxxxxx Y.Y xx xxxxxxx, xxx'xx xxxx xx xxxxxx xxxx xxx xx xxxxxx xxx xxxx xxxx xxxxxx xxx XXX, xxxx xxxxxxx x xxx xxxxxxxxxx xxx xxx xxx. Xxxx xx xxxxxxxxxxx xxxx xx xxxx xxx xxxxx'x xxxxxx Xxxxxxx Y.Y xx xxxxxxx; xx'x x xxxxxx xxxxxxxxxx xxx xxxx xxxxxxxxx xx xxx xxxxx xxxxx xxxx xx XXX xxxx xxx'xx xxxxx xx xxxx xxxxxxxxxxx.
+## Distribution and visibility
+
+
+You can determine whether your IAP should be offered for purchase to customers. Choose from one of the following options:
+
+-   **Available for purchase. May be displayed in your app's listing:** This is the default setting and is recommended unless you want to restrict access to your IAP. Leave this option checked for IAPs that will be made available to any customer.
+-   **Available for purchase. Not displayed in your app's listing:** Choosing this option allows customers to purchase the IAP from within your app, but the IAP will not be displayed in your app's Store listing. Use this only when the offer is not broadly available, for example during initial periods of internal testing.
+-   **No longer available for purchase. Not displayed in your app's listing.** Choosing this option means that the IAP won't be displayed in your app's listing, and no new customers may purchase the IAP. However, **this option is not supported for customers on Windows 8.1 or earlier**. If your app is available on Windows 8.1 or earlier, the IAP will still be available for purchase to those customers. To stop offering this IAP to customers on Windows 8.1 or earlier, you'll need to update your app to remove the code that offers the IAP, then publish a new submission for the app. This is recommended even if your app doesn't target Windows 8.1 or earlier; it's a better experience for your customers if you never offer them an IAP that you've opted to make unavailable.
     
-    > **Xxxx**  Xxxxxxxx xxxx xxxxxxx, xxx/xx xxxxxxxxxx xx xxx xxxxxx xxxx xxxxxxx xxx XXX xxxx xxxx xxx'x xxxx, xxxx xxx xxxxxx xxx xxxxxxxxx xxx xxxx xxxxxxx xxxxxxxxx xxx XXX, xxxxxxxxxx xx xxxxx xxxxxxxxx xxxxxx.
+    > **Note**  Choosing this setting, and/or submitting an app update that removes the IAP from your app's code, does not affect any customers who have already purchased the IAP, regardless of their operating system.
 
      
 
@@ -48,4 +48,8 @@ Xxx xxx xxxxxxxxx xxxxxxx xxxx XXX xxxxxx xx xxxxxxx xxx xxxxxxxx xx xxxxxxxxx. 
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

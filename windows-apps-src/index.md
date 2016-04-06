@@ -1,50 +1,54 @@
 ---
-Xxxxxxxxxxx: Xxxx’x xxx xxxx xxx xxxx xx xxxxxx x Xxxxxxxxx Xxxxxxx xxx xxxx xxx xxx xx xxx Xxxxxxx YY-xxxxx xxxxxx, xxxxxxxxx xxxxxx, xxxxxxx, xxx XXx.
-xxxxx: Xxx-xx xxxxxx xxx Xxxxxxx YY xxxx - Xxxxxxx xxx xxxxxxxxxxx
-xx.xxxxxxx: YXYYXYXY-YYXX-YYYY-XYYX-YXYYYYYYYYXY
+Description: 電話、タブレット、PC など、Windows 10 ベースのデバイスで実行できるユニバーサル Windows アプリを作成する際に必要となる情報について説明します。
+title: Windows 10 アプリに関するハウツー ガイド - Windows アプリの開発
+ms.assetid: 2A39F3D8-85AD-4315-A69B-2B79242780E3
 ---
 
 
-# Xxx-xx xxxxxx xxx XXX xxxx xx Xxxxxxx YY
+# Windows 10 の UWP アプリに関するハウツー ガイド
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxx’x xxx xxxx xxx xxxx xx xxxxxx x Xxxxxxxxx Xxxxxxx xxx xxxx xxx xxx xx xxx Xxxxxxx YY-xxxxx xxxxxx, xxxxxxxxx xxxxxx, xxxxxxx, xxx XXx. Xxxx xxxxxxx xxxxxx xxxx xxxxxxxxxxxx xxx xxxx xxxxxxxx xxxxxxxxx xx xxx xxxx xx xxxx xxx xxxx xx xxxxxxxxxx.
+電話、タブレット、PC など、Windows 10 ベースのデバイスで実行できるユニバーサル Windows アプリを作成する際に必要となる情報について説明します。 このセクションには、目的のタスクの種類別にまとめられた手順とコード例を掲載します。
 
-Xx xxx'x xxxx xx xxxxxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxx xx xxxx xxx xxx xxx xxxx xxxx xx xxxxxxx xxxxxxxxxxxxx xxxxxxxx xxxxxxxxxxx xx xxxxxxxx Xxxxxxx xxxxxx xxxxx, xxx xxxxx xxxxxxxx:
+ユニバーサル Windows プラットフォーム (UWP) の概要、および UWP で同じコードを使い、複数の Windows デバイスの種類に合わせたエクスペリエンスを実現する方法については、次の記事をご覧ください。
 
--   [Xxxxxx xxxx xxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx xxx](get-started/create-a-hello-world-app-xaml-universal.md)
--   [Xxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx](get-started/universal-application-platform-guide.md)
--   [Xxxx'x x Xxxxxxxxx Xxxxxxx Xxxxxxxx xxx?](get-started/whats-a-uwp.md)
+-   [初めてのユニバーサル Windows プラットフォーム アプリの作成](get-started/create-a-hello-world-app-xaml-universal.md)
+-   [ユニバーサル Windows プラットフォーム (UWP) アプリのガイド](get-started/universal-application-platform-guide.md)
+-   [ユニバーサル Windows プラットフォーム アプリとは](get-started/whats-a-uwp.md)
 
 
-| Xxxxx | Xxxxxxxxxxx |
+| トピック | 説明 |
 |-------|-------------|
-| [Xxxxxxxxxxxxx](accessibility/accessibility.md) | Xxxxxxxxxx xxx xxx-xx xxxxxxxx xxx xxxxxx xxxx xxx xxxxxxxxxx. |
-| [Xxx xxxxxxxx xxx xxxx](app-settings/app-settings-and-data.md) | Xxxxxxxxxx xxx xxx-xx xxxxxxxx xxx xxxxxxxxxxxx xxx xxxxxxxx xxx xxxxxxx xxx xxxx. |
-| [Xxx-xx-xxx xxxxxxxxxxxxx](app-to-app/index.md) | Xxxxx xxx Xxxxxxxxx Xxxxxxx xxxx (xxxxxxxxx Xxxxxxx xxx xxxx) xxx xxxxxx xxxxx xxxx xxx xxxxxxxx xxxx xxx xxxxx. Xxxxxxx xxxxx xxxx xxxxx xxxxxxxx xxxxxxx x xxxx xx xxxxxx xxxxxxxx xxxx xxx xxx xx xxxxxxx xxxxxxxxxx. |
-| [Xxxxx, xxxxx, xxx xxxxxx](audio-video-camera/index.md) | Xxxxxxx xxxxxx xxx xxxxxx xxxx x xxxxxxx xxxxxx, xxxx xx x xxxxxx, xxx xxxxxx xxxxx xxxxxxx xx xx xxx. |
-| [Xxxxxxxx xxx xxxxxxxx](contacts-and-calendar/index.md) | Xxx xxxx xxxxx xxxxxx xxxxx Xxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxxx xxxx xxxx xxx, xx xxxx xxx xxxxx xxxxxxx, xxxxx, xxx xxxxxxxx xxxx, xx xxxx xxxxxxxx xxxxxxx xxxxxx xx xxxxxx xxxxxxx Xxxxxxx xxxx.|
-| [Xxxxxxxx xxx xxxxxxxx](https://dev.windows.com/design/controls-patterns) | Xxxxxxxxxx xxx xxx-xx xxxxxxxx xxx xxxxx xxxxxxxx xxx xxxxxxx xxxxxxxx.|
-| [Xxxx xxxxxx](data-access/index.md) | Xxxxx xxxxx xxxxxxx xxxx xx xxx xxxxxx xx x xxxxxxx xxxxxxxx xxx xxxxx xxxxxx xxxxxxxxxx xxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. |
-| [Xxxx xxxxxxx](data-binding/index.md) | Xxxxxxxxxxx xxx XX xxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx xxx xxxx xxxxxxxxx xxxxxxx xx xxxx, xxxxxxxxx xxxxxxxxx, xxxxx, xxx xxxxxxxx xxxxxxx, xx xxxxxxx x xxxx-xxxxxx xxxx xxxxxxxxxx. |
-| [Xxxxxxxxx, xxxxxxx, xxx xxxxxxxxxxx](debug-test-perf/index.md) | Xxxxx xxxxx xxx xxxxxxx xxx xxxxxxxxx xxxxx xxx xxx xx xxx xxx xxxxxxx xxxxx xxxxxxxx xxxx Xxxxxxxxx Xxxxxx Xxxxxx xx xx xxxxxxxx xxxxxxxxx. Xxxx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx xxxxxxxx xxx xxxxxxxxxx xxx xxxxxx xxx xx xxxxx xxx xxxxxxxxxxx xx xxx Xxxxxxx Xxxxx. |
-| [Xxxxxxx, xxxxxxx, xxx xxxxx](devices-sensors\index.md) | Xxxxxxxxx xxxxxxxxx xxxxxxx xxxx xxxxxxxx, xxxxxxx, xxx xxxxxxx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx xx xxxxxxx x xxxxxx xxx xxxxxxxx xxxxxxxxx-xxxxxx xxxxxxxxxx xxx xxxx xxxxx. | 
-| [Xxxxxxxxxx](enterprise/index.md) | Xxxxx xxxxx xxx xxx xxxxxxxxxx xxxxxxxx xxx Xxxxxxx YY Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. |
-| [Xxxxx, xxxxxxx, xxx xxxxxxxxx](files/index.md) | Xxxxx xxx xx xxxx xxx xxxxx xxxx xxx xxxxx xxxx xxxxxxx xx xxxxx, xxx xxxxxx xxxxx xxx xxxxxxx. Xxxx xxxx xxxx xxxxx xxxxxxx xxx xxxxxxx xxx xxxxxxxx, xxxxx xxxx xxx xxxxxx xxxxxxx, xxx xxxxx xxxxxxx, "xxxxxxxxx" xxxxxxxxx xxxx xx xxx Xxxxx/Xxxxx xxxxxxx. |
-| [Xxxxx xxx XxxxxxX](gaming/index.md) | Xxxxxxxxxx xxx xxxxxx xx xxxxxxxx xxxxx xx xxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX). |
-| [Xxxxxxxxxxxxx xxx xxxxxxxxxxxx](globalizing/globalizing-portal.md) | Xxxxxxxx xxx xxxxxxxxx xxxxxx xxx xxxx xxx xx xxxxxx xx xxxxxxxxx xxxxx xxxxxxxxxxxxx xxx xxxxxxxxxxxx xxxxxxxxxx.  |
-| [Xxxxxxxx xxx xxxxxxxxx](graphics/index.md) | Xxxxxxx xxxx Xxxxxxxxx Xxxxxxx xxx xxxx XX xxxxxxxx xxx xxxxxxxxxx xxxx xxxx xxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxxx xx xxx xxxx xxxxxxxxxx. |
-| [Xxxxx xxx xxxxxxx](https://dev.windows.com/design/inputs-devices) | Xxxxxxxxx xxxx xxx xxx xxxxxxxx xxxxx xx xxxxx, xxxxxxxxxxxx, xxx xxxxxxx.|
-| [Xxxxxxxxx, xxxxxxxx, xxx xxxxxxxxxx xxxxx](launch-resume/index.md) | Xxxxxx xxxxxxxxxx xxxxx xxx xxxxxxxx xxx xxxxxx-xxxxxxxxx xxxxxx xx xxxxxxx xxxxxxxxxxxxx xxxx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx xx xxxxxxxxx xx xxx xxxxxxx. |
-| [Xxxxxx](https://dev.windows.com/design/layout) | Xxxxxx xxx xxxx xx xxx xxxx’x xxxx xx xxxxxxxx xxx xxxxx xxxxx xx x xxxxxxx xx xxxxxxx xxx xxxxxx xxxxx.  |
-| [Xxxx xxx xxxxxxxx](maps-and-location/index.md) | Xxxxx xxx xxxx Xxxxxxxxx Xxxxxxx xxx xxx xxx xxxx xxx Xxxx Xxxx xxxxxxx xxx xxxxxxx xxxxxxxx xxx xxxxxxx xxxx xxx xxxxxxx xxxxxx YX xxxxxxx xxx xxxxxx-xxxxx xxxxx. |
-| [Xxxxxxxx xxxx xxx](monetize\index.md) | Xxxxxx xxxx xxxx, xxxxxx (xxxx xxxx-xxxxx xxx xxxxxxx-xxxxx), xxxx xxxx, xxx xx-xxx xxxxxxxx, xx xxxx xxxx xxxxxxxxx xxx xxxxxx xx xxx xxxx xxx xxx xxxx xxx xxxx xxxxxxxx xxxxxxxxx xxxxxx xxxxx xxxxxxxxxx xxxx xxxx xxx. |
-| [Xxxxxxxxxx xxx xxx xxxxxxxx](networking\index.md) | Xxxxxx x xxxxxxxxx, xx xxxxxxx-xxxxx, Xxxxxxxxx Xxxxxxx xxx xxxx xxx xxx xxxxxxxxx xxxxxxx xxxxxxxxxxx xx xx xxxxxx xxxx xxxxx XXX xxxxx, xxxxxx xx xxxxxxxxxxx xxxxx, xx xxxxxxxx xxxx xxxxxx xxxxxxx. |
-| [Xxxxxxxxx xxxx](packaging\index.md) | Xxxxxxxxxx xxx xxx xxxxxxx xxxx xxxxxxxx xxx xxxxx xxxx xxxxxxxxxx xxxx Xxxxxxxxx Xxxxxxx xxx, xxx xxx xxx xxxx xxxx xx xx xxxxxx, xxxxxx, xxx xxxxxx xxxx xxx xxxxxxx xxx Xxxxxxx Xxxxx. Xxxx xxxxx xxxxx xxx xxxxxxxxxxxx, xxxxx xxxx xx xxxxxxxx xx xxx xxx xxxxxxx xxxxxxxx xxx xxxxxx xx xxxxxxxx xxxxxxxxx. |
-| [Xxxxxxx xxxx xx Xxxxxxx YY](porting\index.md) | Xxxxx xx xxxxxxxx xxx xx xxx XXX xxxxx xxx xxx xxxxxx x xxxxxx xxx xxxxxxx xxxx xxx xxxx xxxxxxx xxx Xxxxxxx-xxxxx xxxxxxx xx xxxx xxxxxxxx, xxx xxxx xxxxxxxxxxx xx xxxxxxxx xxx xxxx xxxxxxxxxxx xxxxxx xx xxxx xxxxxx xxxx. |
-| [Xxxxxxxx](security/index.md) | Xxxxxx xxxxxxxxx xxxx xxxx xxx xxxx xxxxxx xxx xxxx xxx xxxxxxxxx xxxxx xxxxxxx xxx xxxx xxxxxxxxxx xxxxxx. Xxxxxxxx xxxx xxxxx xxxxxxxx xxxxxxxxxx, xxxxxxx xxxxxxxxxxx, xxxxxx xxxx-xx, Xxxxxxxxx xxxxxxx xxxxxxxxxxxxxx, xxx xxxxxxxxxxxx xxx xxx xx xxxx xxxxxxxx. |
-| [Xxxxxxxxx xxx xxxxx xxxxxxxxxxx](threading-async/index.md) | Xxx xxxxxxxxxxxx xxxxxxxxxxx xx xxxx xxxx xxx xxxx xxxxxxxxxx xx xxxxxxxx xx xx xxxxxxxx xx xxx xxx xxxxxxx xx xxx XX xxxxx xx xxxxxxxxx xxxxx xxxx xxxx xxxxx xxxx xx xxxxxxxx xxxxxx xx xxxx. |
-| [Xxxxxxx Xxxxxxx xxxxxxxxxx](winrt-components/index.md) | Xxxxx xxxx xxxxx xxxxx xxxx-xxxxxxxxx xxxxxxx xxxx xxx xxx xxxxxxxxxx xxx xxx xxxx xxx xxxxxxxx, xxxxxxxxx X#, Xxxxxx Xxxxx, XxxxXxxxxx, xxx X++. Xxx xxxxxxx, xxx xxxxx xxxxxx x Xxxxxxx Xxxxxxx xxxxxxxxx xx X++ xxxx xxxx x xxxxx-xxxxx xxxxxxx xx xxxxxxx x xxxxxxxxxxxxxxx xxxxxxxxx xxxxxxxxx, xx xxxxxx xxxxx xxxx Xxxxxx Xxxxx xx X# xxxx xx xxxx Xxxxxxxxx Xxxxxxx xxx. 
-| [XXXX xxxxxxxx](xaml-platform/index.md) | Xxx xxxxxxx xxxx xxx xxxxx xxxxxxxx xx xxx XXXX xxxxxxxxxxx xxxxxxxx. Xx, xx xxx'xx xxxxxxx xxxxxxxx xxxx XXXX, xxxx xxxxx xxx xxxxx xxx xx xxxxxxxxx Xxxxxxx Xxxxxxx xxxxxxxx xx XXXX xxxxx Xxxxxx Xxxxxx xx xxxxxx x xxxxx Xxxxxxxxx Xxxxxxx xxx. |
+| [アクセシビリティ](accessibility/accessibility.md) | アプリをアクセシビリティ対応にするためのガイドラインとハウツー記事です。 |
+| [アプリの設定とデータ](app-settings/app-settings-and-data.md) | アプリの設定の実装とアプリ データの保存に関するガイドラインとハウツー記事です。 |
+| [アプリ間通信](app-to-app/index.md) | ユニバーサル Windows アプリ (Windows Web アプリを含む) でどのように他のアプリが起動され、データやファイルが交換されるかについて説明します。 複数のアプリを管理する必要のあった複雑な作業をシームレスに処理できるようになります。 |
+| [オーディオ、ビデオ、およびカメラ](audio-video-camera/index.md) | Web カメラなどのキャプチャ デバイスから写真やビデオをキャプチャし、アプリでオーディオ ストリームをレンダリングします。 |
+| [連絡先とカレンダー](contacts-and-calendar/index.md) | ユーザーどうしがコンテンツ、電子メール、カレンダー情報を共有したり、Windows アプリ間での切り替えなしでメッセージを送信したりできるように、アプリからの Windows アドレス帳やカレンダーの予定へのアクセスを有効にします。|
+| [コントロールとパターン](https://dev.windows.com/design/controls-patterns) | コントロールとコントロール パターンを使うためのガイドラインとハウツー記事です。|
+| [データ アクセス](data-access/index.md) | デバイス上のデータをプライベート データベースに保存する方法と、ユニバーサル Windows プラットフォーム (UWP) アプリでオブジェクト リレーショナル マッピングを使う方法について説明します。 |
+| [データ バインディング](data-binding/index.md) | ユニバーサル Windows アプリの UI 要素をさまざまなデータ ソース (データベース、ファイル、内部オブジェクトなど) と同期し、データ駆動型のユーザー エクスペリエンスを実現します。 |
+| [デバッグ、テスト、パフォーマンス](debug-test-perf/index.md) | テストとデバッグのサイクルについて説明します。また、Microsoft Visual Studio に付属の関連ツールや個別にダウンロードできる関連ツールの使用方法についても説明します。 ユニバーサル Windows アプリで意図したエクスペリエンスが確実に実現されるようにし、Windows ストアに公開できるようにします。 |
+| [デバイス、センサーの使用](devices-sensors\index.md) | さまざまなデバイス (プリンター、カメラ、センサーなど) をユニバーサル Windows アプリに統合して、接続されたデバイスの堅牢かつ柔軟なエクスペリエンスをユーザーに提供します。 | 
+| [エンタープライズ](enterprise/index.md) | Windows 10 ユニバーサル Windows プラットフォーム (UWP) アプリの主要なエンタープライズ機能について説明します。 |
+| [ファイル、フォルダー、およびライブラリ](files/index.md) | ファイル内のテキストやその他のデータ形式を読み取り/書き込みする方法、およびファイルやフォルダーの管理方法について説明します。 また、アプリの設定の読み取りと書き込み、ファイルやフォルダーのピッカー、ビデオ ライブラリやミュージック ライブラリなどのセキュリティで保護された特別な場所についても説明します。 |
+| [ゲームと DirectX](gaming/index.md) | 新しいユニバーサル Windows プラットフォーム (UWP) でゲームを作成する基本的な方法について説明します。 |
+| [グローバリゼーションとローカライズ](globalizing/globalizing-portal.md) | グローバリゼーションとローカライズの手法を利用してアプリの適応性を高めれば、アプリの潜在的な市場が広がります。  |
+| [グラフィックスとアニメーション](graphics/index.md) | ユーザー エクスペリエンスに対して視覚的な興味を持たせ、ユーザーの関心を集めるような UI グラフィックやアニメーションを使って、ユニバーサル Windows アプリを強化します。 |
+| [入力とデバイス](https://dev.windows.com/design/inputs-devices) | 特定の種類の入力、操作、およびデバイスに合わせてアプリをカスタマイズします。|
+| [起動、再開、バックグラウンド タスク](launch-resume/index.md) | バックグラウンド タスクを作成し、システムで生成されたイベントに登録して、ユニバーサル Windows アプリが一時停止したり、実行されていない場合でも機能を提供します。 |
+| [レイアウト](https://dev.windows.com/design/layout) | さまざまなデバイスや画面サイズで、ナビゲーションがわかりやすく見た目にも優れたアプリを設計およびコーディングします。  |
+| [マップと位置情報](maps-and-location/index.md) | ユニバーサル Windows アプリで Bing Maps サービスを活用して、航空写真の 3D ビューやストリート レベルのビューを含む正確なマップ視覚効果を生成する方法を説明します。 |
+| [アプリの収益の獲得](monetize\index.md) | 無料のアプリ、試用版 (時間ベースと機能ベースの両方)、有料版のアプリ、アプリ内製品を作成して、ユーザーに、アプリを無料で実際に試しながら製品の購入を決定する機会を提供することができます。 |
+| [ネットワークと Web サービス](networking\index.md) | 利用可能なネットワーク接続を使って、RSS フィードのフェッチ、マルチプレイヤー ゲームでのプレイ、近くのデバイスの操作などを実行できる接続型 (ネットワーク認識型) のユニバーサル Windows アプリを作成します。 |
+| [アプリのパッケージ化](packaging\index.md) | ユニバーサル Windows アプリを構成するファイルを含むアプリ パッケージについて、およびこのパッケージを使い Windows ストアを介してアプリを展開、管理、および更新する方法について説明します。 また、特定のリソースにアクセスするためにアプリ パッケージ マニフェストで宣言する必要がある、アプリの機能についても説明します。 |
+| [Windows 10 にアプリを移植する](porting\index.md) | 任意の Windows ベース デバイスをターゲットとするだけでなく、各デバイスの種類に固有の機能やユーザー エクスペリエンスも活用する単一のアプリ パッケージを作成できる UWP に既存のアプリを移植します。 |
+| [セキュリティ](security/index.md) | 機密性の高いユーザー情報を管理し、ユーザー エクスペリエンスをそのまま維持しながら、アプリのデータとリソースを保護できます。 基本的なパスワード保護、移動資格情報、シングル サインオン、Microsoft アカウント認証、暗号化などの機能をどれでも自由に利用できます。 |
+| [スレッド化と非同期プログラミング](threading-async/index.md) | 非同期プログラミングを使って、時間のかかる可能性がある操作を実行しているときでもアプリが実行を続けて UI に応答できるようにすることで、アプリの応答性を保つことができます。 |
+| [Windows ランタイム コンポーネント](winrt-components/index.md) | 任意の言語 (C#、Visual Basic、JavaScript、C++ など) から初期化および使用できる自己完結型オブジェクトについて説明します。 たとえば、サード パーティのライブラリを使う Windows ランタイム コンポーネントを C++ で作成して計算の負荷が高い操作を実行したり、ユニバーサル Windows アプリで単に Visual Basic または C# コードなどを再利用できます。 
+| [XAML プラットフォーム](xaml-platform/index.md) | XAML プログラミング言語の基本的な概念を説明します。 または、XAML に既に慣れている場合は、XAML で Visual Studio を使って Windows ランタイム機能を実装し、優れたユニバーサル Windows アプリを作成する方法に関する説明に進んでもかまいません。 |
+
+
 <!--HONumber=Mar16_HO1-->
+
+

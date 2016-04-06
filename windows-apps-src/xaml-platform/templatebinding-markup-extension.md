@@ -1,59 +1,63 @@
 ---
-xxxxxxxxxxx: Xxxxx xxx xxxxx xx x xxxxxxxx xx x xxxxxxx xxxxxxxx xx xxx xxxxx xx xxxx xxxxx xxxxxxx xxxxxxxx xx xxx xxxxxxxxx xxxxxxx. XxxxxxxxXxxxxxx xxx xxxx xx xxxx xxxxxx x XxxxxxxXxxxxxxx xxxxxxxxxx xx XXXX.
-xxxxx: XxxxxxxxXxxxxxx xxxxxx xxxxxxxxx
-xx.xxxxxxx: XXXYYYYY-YXYY-YYYY-YYXX-YXXXXXXYYYXX
+description: Links the value of a property in a control template to the value of some other exposed property on the templated control. TemplateBinding can only be used within a ControlTemplate definition in XAML.
+title: TemplateBinding markup extension
+ms.assetid: FDE71086-9D42-4287-89ED-8FBFCDF169DC
 ---
 
-# {XxxxxxxxXxxxxxx} xxxxxx xxxxxxxxx
+# {TemplateBinding} markup extension
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxx xxx xxxxx xx x xxxxxxxx xx x xxxxxxx xxxxxxxx xx xxx xxxxx xx xxxx xxxxx xxxxxxx xxxxxxxx xx xxx xxxxxxxxx xxxxxxx. **XxxxxxxxXxxxxxx** xxx xxxx xx xxxx xxxxxx x [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209391) xxxxxxxxxx xx XXXX.
+Links the value of a property in a control template to the value of some other exposed property on the templated control. **TemplateBinding** can only be used within a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) definition in XAML.
 
-## XXXX xxxxxxxxx xxxxx
+## XAML attribute usage
 
 ``` syntax
 <object propertyName="{TemplateBinding sourceProperty}" .../>
 ```
 
-## XXXX xxxxxxxxx xxxxx (xxx Xxxxxx xxxxxxxx xx xxxxxxxx xx xxxxx)
+## XAML attribute usage (for Setter property in template or style)
 
 ``` syntax
 <Setter Property="propertyName" Value="{TemplateBinding sourceProperty}" .../>
 ```
 
-## XXXX xxxxxx
+## XAML values
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| xxxxxxxxXxxx | Xxx xxxx xx xxx xxxxxxxx xxxxx xxx xx xxx xxxxxx xxxxxx. Xxxx xxxx xx x xxxxxxxxxx xxxxxxxx. |
-| xxxxxxXxxxxxxx | Xxx xxxx xx xxxxxxx xxxxxxxxxx xxxxxxxx xxxx xxxxxx xx xxx xxxx xxxxx xxxxxxxxx. |
+| propertyName | The name of the property being set in the setter syntax. This must be a dependency property. |
+| sourceProperty | The name of another dependency property that exists on the type being templated. |
 
-## Xxxxxxx
+## Remarks
 
-Xxxxx **XxxxxxxxXxxxxxx** xx x xxxxxxxxxxx xxxx xx xxx xxx xxxxxx x xxxxxxx xxxxxxxx, xxxxxx xx xxx xxx x xxxxxx xxxxxxx xxxxxx xx xx xxx xxx xxxxxxxxx x xxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxxx: Xxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
+Using **TemplateBinding** is a fundamental part of how you define a control template, either if you are a custom control author or if you are replacing a control template for existing controls. For more info, see [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
 
-Xx'x xxxxxx xxxxxx xxx *xxxxxxxxXxxx* xxx *xxxxxxXxxxxxxx* xx xxx xxx xxxx xxxxxxxx xxxx. Xx xxxx xxxx, x xxxxxxx xxxxx xxxxxx x xxxxxxxx xx xxxxxx xxx xxxxxxx xxx xxxxxxxx xx xx xxxxxxxx xxx xxxxxxxxxxx xxxxx xxxxxxxx xx xxx xx xxx xxxxxxxxx xxxxx. Xxx xxxxxxx, x xxxxxxx xxxx xxxxxxxxxxxx x [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652) xx xxx xxxxxxxxxxx, xxxxx xx xxxx xx xxxxxxx xxx xxxxxxx'x xxx **Xxxx** xxxxxxxx, xxxxx xxxxxxx xxxx XXXX xx x xxxx xx xxx xxxxxxx xxxxxxxx: `<TextBlock Text="{TemplateBinding Text}" .... />`
+It's fairly common for *propertyName* and *targetProperty* to use the same property name. In this case, a control might define a property on itself and forward the property to an existing and intuitively named property of one of its component parts. For example, a control that incorporates a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) in its compositing, which is used to display the control's own **Text** property, might include this XAML as a part in the control template: `<TextBlock Text="{TemplateBinding Text}" .... />`
 
-Xxx xxxxx xxxx xx xxx xxxxx xxx xxx xxxxxx xxxxxxxx xxx xxx xxxxxx xxxxxxxx xxxx xxxxx. Xxxxx'x xx xxxxxxxxxxx xx xxxxxxxxx x xxxxxxxxx xxxx xxx'xx xxxxx **XxxxxxxxXxxxxxx**. Xxxxxxx xx xxxxx xxxxxx xxxxxxx xx xx xxxxx xxxx xxxxxxx xxx XXXX. Xx xxx xxxx x xxxxxxxxx xxx xxx xxx xxx xxxxxxx xxxxxx xxx x xxxxxxxx xxxxxxx xxxx xx: `{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
+The types used as the value for the source property and the target property must match. There's no opportunity to introduce a converter when you're using **TemplateBinding**. Failing to match values results in an error when parsing the XAML. If you need a converter you can use the verbose syntax for a template binding such as: `{Binding RelativeSource={RelativeSource TemplatedParent}, Converter="..." ...}`
 
-Xxxxxxxxxx xx xxx x **XxxxxxxxXxxxxxx** xxxxxxx xx x [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209391) xxxxxxxxxx xx XXXX xxxx xxxxxx xx x xxxxxx xxxxx.
+Attempting to use a **TemplateBinding** outside of a [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) definition in XAML will result in a parser error.
 
-Xxx xxx xxx **XxxxxxxxXxxxxxx** xxx xxxxx xxxxx xxx xxxxxxxxx xxxxxx xxxxx xx xxxx xxxxxxxx xx xxxxxxx xxxxxxx. Xxx xxxxxxxxxx xxx **XxxxxxxxXxxxxxx** xxx xxxx xxxxx xxx xxxxxxxx xxxxxxx xxxxxxxx xxxx xxxxxx.
+You can use **TemplateBinding** for cases where the templated parent value is also deferred as another binding. The evaluation for **TemplateBinding** can wait until any required runtime bindings have values.
 
-X **XxxxxxxxXxxxxxx** xx xxxxxx x xxx-xxx xxxxxxx. Xxxx xxxxxxxxxx xxxxxxxx xxxx xx xxxxxxxxxx xxxxxxxxxx.
+A **TemplateBinding** is always a one-way binding. Both properties involved must be dependency properties.
 
-**XxxxxxxxXxxxxxx** xx x xxxxxx xxxxxxxxx. Xxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxxxx xxxx xxxxx xx x xxxxxxxxxxx xx xxxxxx xxxxxxxxx xxxxxx xx xx xxxxx xxxx xxxxxxx xxxxxx xx xxxxxxx xxxxx, xxx xxx xxxxxxxxxxx xx xxxx xxxxxx xxxx xxxx xxxxxxx xxxx xxxxxxxxxx xx xxxxxxx xxxxx xx xxxxxxxxxx. Xxx xxxxxx xxxxxxxxxx xx XXXX xxx xxx "{" xxx "}" xxxxxxxxxx xx xxxxx xxxxxxxxx xxxxxx, xxxxx xx xxx xxxxxxxxxx xx xxxxx x XXXX xxxxxxxxx xxxxxxxxxx xxxx x xxxxxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxx.
+**TemplateBinding** is a markup extension. Markup extensions are typically implemented when there is a requirement to escape attribute values to be other than literal values or handler names, and the requirement is more global than just putting type converters on certain types or properties. All markup extensions in XAML use the "{" and "}" characters in their attribute syntax, which is the convention by which a XAML processor recognizes that a markup extension must process the attribute.
 
-**Xxxx**  Xx xxx Xxxxxxx Xxxxxxx XXXX xxxxxxxxx xxxxxxxxxxxxxx, xxxxx xx xx xxxxxxx xxxxx xxxxxxxxxxxxxx xxx **XxxxxxxxXxxxxxx**. **XxxxxxxxXxxxxxx** xx xxxxxxxxxxx xxx xxx xx XXXX xxxxxx. Xxxxx xxx'x x xxxxxxxxxxxxxxx xxx xx xxxxxxxxx xxx xxxxxxxx xx xxxx.
+**Note**  In the Windows Runtime XAML processor implementation, there is no backing class representation for **TemplateBinding**. **TemplateBinding** is exclusively for use in XAML markup. There isn't a straightforward way to reproduce the behavior in code.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxxxxx: Xxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
-* [Xxxx xxxxxxx xx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209391)
-* [XXXX xxxxxxxx](xaml-overview.md)
-* [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](dependency-properties-overview.md)
+* [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+* [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391)
+* [XAML overview](xaml-overview.md)
+* [Dependency properties overview](dependency-properties-overview.md)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

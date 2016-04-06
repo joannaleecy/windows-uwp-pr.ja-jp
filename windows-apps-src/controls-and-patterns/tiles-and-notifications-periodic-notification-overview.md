@@ -1,156 +1,110 @@
 ---
-Xxxxxxxxxxx: Xxxxxxxx xxxxxxxxxxxxx, xxxxx xxx xxxx xxxxxx xxxxxx xxxxxxxxxxxxx, xxxxxx xxxxx xxx xxxxxx xx x xxxxx xxxxxxxx xx xxxxxxxxxxx xxxxxxx xxxx x xxxxx xxxxxxx.
-xxxxx: Xxxxxxxx xxxxxxxxxxxx xxxxxxxx
-xx.xxxxxxx: YXXYYXXY-YXYY-YYYX-YXXX-YXYXYYXYXYYX
-xxxxx: XXX
-xxxxxxxx: xxxxxx.xxx
+Description: Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service.
+title: Periodic notification overview
+ms.assetid: 1EB79BF6-4B94-451F-9FAB-0A1B45B4D01C
+label: TBD
+template: detail.hbs
 ---
 
-# Xxxxxxxx xxxxxxxxxxxx xxxxxxxx
+# Periodic notification overview
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxxxx xxxxxxxxxxxxx, xxxxx xxx xxxx xxxxxx xxxxxx xxxxxxxxxxxxx, xxxxxx xxxxx xxx xxxxxx xx x xxxxx xxxxxxxx xx xxxxxxxxxxx xxxxxxx xxxx x xxxxx xxxxxxx. Xx xxx xxxxxxxx xxxxxxxxxxxxx, xxxx xxxxxx xxx xxxx xxxxx xx xxxxxxx xxx xxxxxx xx xxxxxxxxxxx:
+Periodic notifications, which are also called polled notifications, update tiles and badges at a fixed interval by downloading content from a cloud service. To use periodic notifications, your client app code needs to provide two pieces of information:
 
--   Xxx Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX) xx x xxx xxxxxxxx xxx Xxxxxxx xx xxxx xxx xxxx xx xxxxx xxxxxxx xxx xxxx xxx
--   Xxx xxxxx xxxx XXX xxxxxx xx xxxxxx
+-   The Uniform Resource Identifier (URI) of a web location for Windows to poll for tile or badge updates for your app
+-   How often that URI should be polled
 
-Xxxxxxxx xxxxxxxxxxxxx xxxxxx xxxx xxx xx xxx xxxx xxxx xxxxxxx xxxx xxxxxxx xxxxx xxxxxxx xxx xxxxxx xxxxxxxxxx. Xxxxxxxx xxxxxxxxxxxxx xxx x xxxx xxxxxxxx xxxxxx xxx xxxxxxxxxxxx xxx xxxx xxxxxxx xx x xxxx xxxxxxxx.
+Periodic notifications enable your app to get live tile updates with minimal cloud service and client investment. Periodic notifications are a good delivery method for distributing the same content to a wide audience.
 
-**Xxxx**   Xxx xxx xxxxx xxxx xx xxxxxxxxxxx xxx [Xxxx xxx xxxxxxxx xxxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231476) xxx Xxxxxxx Y.Y xxx xx-xxxxx xxx xxxxxx xxxx xx xxxx Xxxxxxx YY xxx.
+**Note**   You can learn more by downloading the [Push and periodic notifications sample](http://go.microsoft.com/fwlink/p/?linkid=231476) for Windows 8.1 and re-using its source code in your Windows 10 app.
 
  
 
-## <span id="How_it_works">
-            </span>
-            <span id="how_it_works">
-            </span>
-            <span id="HOW_IT_WORKS">
-            </span>Xxx xx xxxxx
+## <span id="How_it_works"></span><span id="how_it_works"></span><span id="HOW_IT_WORKS"></span>How it works
 
 
-Xxxxxxxx xxxxxxxxxxxxx xxxxxxx xxxx xxxx xxx xxxxx x xxxxx xxxxxxx. Xxx xxxxxxx xxxx xx xxxxxx xxxxxxxxxxxx xx xxx xxxxx xxx xxxx xxx xxx xxxxxxxxx. Xx xxxx xxxxxxx xxxxxxxx, xxxx xx xxxx xx xxxx, Xxxxxxx xxxxx xx XXXX XXX xxxxxxx xx xxx XXX, xxxxxxxxx xxx xxxxxxxxx xxxx xx xxxxx xxxxxxx (xx XXX) xxxx xx xxxxxxxx xx xxxxxxxx xx xxx xxxxxxx, xxx xxxxxxxx xxx xxxxxxx xx xxx xxx'x xxxx.
+Periodic notifications require that your app hosts a cloud service. The service will be polled periodically by all users who have the app installed. At each polling interval, such as once an hour, Windows sends an HTTP GET request to the URI, downloads the requested tile or badge content (as XML) that is supplied in response to the request, and displays the content on the app's tile.
 
-Xxxx xxxx xxxxxxxx xxxxxxx xxxxxx xx xxxx xxxx xxxxx xxxxxxxxxxxxx. Xxxxx xx xxxx xxxxxxxxx xxxxxxx [xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465417) xx [xxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252) xxxxxxxxxxxxx.
+Note that periodic updates cannot be used with toast notifications. Toast is best delivered through [scheduled](https://msdn.microsoft.com/library/windows/apps/hh465417) or [push](https://msdn.microsoft.com/library/windows/apps/xaml/hh868252) notifications.
 
-## <span id="URI_location_and_XML_content">
-            </span>
-            <span id="uri_location_and_xml_content">
-            </span>
-            <span id="URI_LOCATION_AND_XML_CONTENT">
-            </span>XXX xxxxxxxx xxx XXX xxxxxxx
+## <span id="URI_location_and_XML_content"></span><span id="uri_location_and_xml_content"></span><span id="URI_LOCATION_AND_XML_CONTENT"></span>URI location and XML content
 
 
-Xxx xxxxx XXXX xx XXXXX xxx xxxxxxx xxx xx xxxx xx xxx XXX xx xx xxxxxx.
+Any valid HTTP or HTTPS web address can be used as the URI to be polled.
 
-Xxx xxxxx xxxxxx'x xxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxx. Xxx xxxxxxx xxxxxxxx xxxx xxx XXX xxxx xxxxxxx xx xxx [Xxxx](tiles-and-notifications-adaptive-tiles-schema.md) xx [Xxxxx](https://msdn.microsoft.com/library/windows/apps/br212851) XXX xxxxxx xxxxxxxxxxxxx, xxx xxxx xx XXX-Y xxxxxxx. Xxx xxx xxx xxxxxxx XXXX xxxxxxx xx xxxxxxx xxx [xxxxxxxxxx xxxx](#expiry) xx [xxx](#taggo) xxx xxx xxxxxxxxxxxx.
+The cloud server's response includes the downloaded content. The content returned from the URI must conform to the [Tile](tiles-and-notifications-adaptive-tiles-schema.md) or [Badge](https://msdn.microsoft.com/library/windows/apps/br212851) XML schema specification, and must be UTF-8 encoded. You can use defined HTTP headers to specify the [expiration time](#expiry) or [tag](#taggo) for the notification.
 
-## <span id="Polling_Behavior">
-            </span>
-            <span id="polling_behavior">
-            </span>
-            <span id="POLLING_BEHAVIOR">
-            </span>Xxxxxxx Xxxxxxxx
+## <span id="Polling_Behavior"></span><span id="polling_behavior"></span><span id="POLLING_BEHAVIOR"></span>Polling Behavior
 
 
-Xxxx xxx xx xxxxx xxxxxxx xx xxxxx xxxxxxx:
+Call one of these methods to begin polling:
 
--   [
-            **XxxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701684) (Xxxx)
--   [
-            **XxxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701611) (Xxxxx)
--   [
-            **XxxxxXxxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh967945) (Xxxx)
+-   [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) (Tile)
+-   [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701611) (Badge)
+-   [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) (Tile)
 
-Xxxx xxx xxxx xxx xx xxxxx xxxxxxx, xxx XXX xx xxxxxxxxxxx xxxxxx xxx xxx xxxx xx xxxxx xx xxxxxxx xxxx xxx xxxxxxxx xxxxxxxx. Xxxxx xxxx xxxxxxx xxxx, Xxxxxxx xxxxxxxxx xx xxxxxxx xxxxxxx xx xxx xxxxxxxxx xxxxxxxx. Xxxxxxx xxxxxxxxx xxxxx xxx xxxxxxxxxx xxxx xx (xxxx [**XxxxXxxxxxx.XxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701697)), xxxx xxx xx xxxxxxxxxxx, xx, xx xxx xxxx xx x xxxxxxxxx xxxx, xxx xxxx xx xxxxxxx. Xxxxxxxxx, Xxxxxxx xxxxxxxxx xx xxxx xxx xxxxxxx xx xxxx xxxx xx xxxxx xxxx xx xxxx xxx xx xxxxx xxxxxxxx xxxxx.
+When you call one of these methods, the URI is immediately polled and the tile or badge is updated with the received contents. After this initial poll, Windows continues to provide updates at the requested interval. Polling continues until you explicitly stop it (with [**TileUpdater.StopPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701697)), your app is uninstalled, or, in the case of a secondary tile, the tile is removed. Otherwise, Windows continues to poll for updates to your tile or badge even if your app is never launched again.
 
-### <span id="The_recurrence_interval">
-            </span>
-            <span id="the_recurrence_interval">
-            </span>
-            <span id="THE_RECURRENCE_INTERVAL">
-            </span>Xxx xxxxxxxxxx xxxxxxxx
+### <span id="The_recurrence_interval"></span><span id="the_recurrence_interval"></span><span id="THE_RECURRENCE_INTERVAL"></span>The recurrence interval
 
-Xxx xxxxxxx xxx xxxxxxxxxx xxxxxxxx xx x xxxxxxxxx xx xxx xxxxxxx xxxxxx xxxxx. Xxxx xxxx xxxxx Xxxxxxx xxxxx x xxxx xxxxxx xx xxxx xx xxxxxxxxx, xxx xxxxxxxx xx xxx xxxxxxx. Xxx xxxxxxxxx xxxx xxxxxxxx xxx xx xxxxxxx xx xx xx YY xxxxxxx xx xxx xxxxxxxxxx xx Xxxxxxx.
+You specify the recurrence interval as a parameter of the methods listed above. Note that while Windows makes a best effort to poll as requested, the interval is not precise. The requested poll interval can be delayed by up to 15 minutes at the discretion of Windows.
 
-### <span id="The_start_time">
-            </span>
-            <span id="the_start_time">
-            </span>
-            <span id="THE_START_TIME">
-            </span>Xxx xxxxx xxxx
+### <span id="The_start_time"></span><span id="the_start_time"></span><span id="THE_START_TIME"></span>The start time
 
-Xxx xxxxxxxxxx xxx xxxxxxx x xxxxxxxxxx xxxx xx xxx xx xxxxx xxxxxxx. Xxxxxxxx xx xxx xxxx xxxxxxx xxx xxxx xxxxxxx xxxx xxxx x xxx. Xx xxxx x xxxx, xx xxxxxxxxx xxxx xxx xxxx xxxxx xx xxx xxxx xxxx xxx xxxxxx xxxx xxxxx xxxxxxx. Xxx xxxxxxx, xx x xxxxx xxxxxxxx xxxx xxxxxxxxx xxx xxx'x xxxxxx xx Y XX, xxxx xxx xxx xxxx xxxxxxx xxxxxxx xxxxx Y XX.
+You optionally can specify a particular time of day to begin polling. Consider an app that changes its tile content just once a day. In such a case, we recommend that you poll close to the time that you update your cloud service. For example, if a daily shopping site publishes the day's offers at 8 AM, poll for new tile content shortly after 8 AM.
 
-Xx xxx xxxxxxx x xxxxx xxxx, xxx xxxxx xxxx xx xxx xxxxxx xxxxx xxx xxxxxxx xxxxxxxxxxx. Xxxx, xxxxxxx xxxxxxx xxxxxx xxxxxx YY xxxxxxx xx xxx xxxxxxxx xxxxx xxxx.
+If you provide a start time, the first call to the method polls for content immediately. Then, regular polling starts within 15 minutes of the provided start time.
 
-### <span id="Automatic_retry_behavior">
-            </span>
-            <span id="automatic_retry_behavior">
-            </span>
-            <span id="AUTOMATIC_RETRY_BEHAVIOR">
-            </span>Xxxxxxxxx xxxxx xxxxxxxx
+### <span id="Automatic_retry_behavior"></span><span id="automatic_retry_behavior"></span><span id="AUTOMATIC_RETRY_BEHAVIOR"></span>Automatic retry behavior
 
-Xxx XXX xx xxxxxx xxxx xx xxx xxxxxx xx xxxxxx. Xx xxx xxxxxxx xx xxxxxxxxx xxx xxx XXX xxxxxx xx xxxxxxxxx xxx xxx xxxxxx, xxxx xxxxxxxxx xx xxx xxxxxxx xxxxxxxx xx xxxxxxx, xxx xxx XXX xxxx xx xxxxxx xxxxx xx xxx xxxx xxxxxxxx. Xx xxx xxxxxx xx xx xx xxx, xxxxx, xx xxxxxxxxxx xxxxx xxxx x xxxxxxx xxxxxxxx xx xxxxxxx, xxx XXX xx xxxxxx xxxx xxx xxxxxx xxxxxxx xxxx xxx xxx xx xxxxx xxxxx.
+The URI is polled only if the device is online. If the network is available but the URI cannot be contacted for any reason, this iteration of the polling interval is skipped, and the URI will be polled again at the next interval. If the device is in an off, sleep, or hibernated state when a polling interval is reached, the URI is polled when the device returns from its off or sleep state.
 
-## <span id="expiry">
-            </span>
-            <span id="EXPIRY">
-            </span>Xxxxxxxxxx xx xxxx xxx xxxxx xxxxxxxxxxxxx
+## <span id="expiry"></span><span id="EXPIRY"></span>Expiration of tile and badge notifications
 
 
-Xx xxxxxxx, xxxxxxxx xxxx xxx xxxxx xxxxxxxxxxxxx xxxxxx xxxxx xxxx xxxx xxx xxxx xxxx xxx xxxxxxxxxx. Xxxx x xxxxxxxxxxxx xxxxxxx, xxx xxxxxxx xx xxxxxxx xxxx xxx xxxxx, xxxx, xx xxxxx xxx xx xx xxxxxx xxxxx xx xxx xxxx. Xx xx x xxxx xxxxxxxx xx xxx xx xxxxxxxx xxxxxxxxxx xxxx xx xxx xxxxxxxx xxxx xxx xxxxx xxxxxxxxxxxxx, xxxxx x xxxx xxxx xxxxx xxxxx xxx xxxx xxx xx xxxxxxxxxxxx, xx xxxxxx xxxx xxx xxxxxxx xxxx xxx xxxxxxx xxxxxx xxxx xx xx xxxxxxxx. Xx xxxxxxxx xxxxxxxxxx xxxx xx xxxxxxxxx xxx xxxxxxx xxxx x xxxxxxx xxxx xxxx. Xx xxxx xxxxxxx xxx xxxxxxx xx xxxxx xxxxxxx xx xxxx xxxxx xxxxxxx xxxxxxx xxxxxxxxxxx, xx xx xxx xxxx xxxxxxxxxxx xxxx xxx xxxxxxx xxx xx xxxxxxxx xxxxxx xx xxxx.
+By default, periodic tile and badge notifications expire three days from the time they are downloaded. When a notification expires, the content is removed from the badge, tile, or queue and is no longer shown to the user. It is a best practice to set an explicit expiration time on all periodic tile and badge notifications, using a time that makes sense for your app or notification, to ensure that the content does not persist longer than it is relevant. An explicit expiration time is essential for content with a defined life span. It also assures the removal of stale content if your cloud service becomes unreachable, or if the user disconnects from the network for an extended period of time.
 
-Xxxx xxxxx xxxxxxx xxxx xx xxxxxxxxxx xxxx xxx xxxx xxx x xxxxxxxxxxxx xx xxxxxxxxx xxx X-XXX-Xxxxxxx XXXX xxxxxx xx xxx xxxxxxxx xxxxxxx. Xxx X-XXX-Xxxxxxx XXXX xxxxxx xxxxxxxx xx xxx [XXXX-xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=253706). Xxx xxxx xxxxxxxxxxx, xxx [**XxxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701684) xx [**XxxxxXxxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh967945).
+Your cloud service sets an expiration date and time for a notification by including the X-WNS-Expires HTTP header in the response payload. The X-WNS-Expires HTTP header conforms to the [HTTP-date format](http://go.microsoft.com/fwlink/p/?linkid=253706). For more information, see [**StartPeriodicUpdate**](https://msdn.microsoft.com/library/windows/apps/hh701684) or [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945).
 
-Xxx xxxxxxx, xxxxxx x xxxxx xxxxxx'x xxxxxx xxxxxxx xxx, xxx xxx xxx xxx xxxxxxxxxx xxx x xxxxx xxxxx xxxxxx xx xxxxx xxxx xx xxxx xxxxxxx xxxxxxxx (xxxx xx xxx xxxx xxxxx xxxxxxx xx xxx xxx xxxxxxx xxxxx xxxx-xxxx). Xx xxxxxxx xxxxxxx, x xxxx xxx xxxxx xxxxxxxxx xxxx xxx xxx xx xx xxxxxxxxxxx xxxxxxxxxx xxxx xxx x xxxxx xxxx xxxx xxxxxx.
+For example, during a stock market's active trading day, you can set the expiration for a stock price update to twice that of your polling interval (such as one hour after receipt if you are polling every half-hour). As another example, a news app might determine that one day is an appropriate expiration time for a daily news tile update.
 
-## <span id="taggo">
-            </span>
-            <span id="TAGGO">
-            </span>Xxxxxxxx xxxxxxxxxxxxx xx xxx xxxxxxxxxxxx xxxxx
+## <span id="taggo"></span><span id="TAGGO"></span>Periodic notifications in the notification queue
 
 
-Xxx xxx xxx xxxxxxxx xxxx xxxxxxx xxxx [xxxxxxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh781199). Xx xxxxxxx, x xxxx xx xxx Xxxxx xxxxxx xxxxx xxx xxxxxxx xx x xxxxxx xxxxxxxxxxxx xxxxx xx xx xxxxxxxx xx x xxx xxxxxxxxxxxx. Xxxx xxx xxxxxx xxxxxxx, xx xx xxxx xxxxxxxxxxxxx xxx xxxxxxxxxx xx x xxxxx xxx xxx xxxx xxxxxx xxxxxxx xxxx.
+You can use periodic tile updates with [notification cycling](https://msdn.microsoft.com/library/windows/apps/hh781199). By default, a tile on the Start screen shows the content of a single notification until it is replaced by a new notification. When you enable cycling, up to five notifications are maintained in a queue and the tile cycles through them.
 
-Xx xxx xxxxx xxx xxxxxxx xxx xxxxxxxx xx xxxx xxxxxxxxxxxxx, xxx xxxx xxx xxxxxxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxxxxxx xx xxx xxxxx. Xxxxxxx, xx xxxxxxx xxxx xx xxxx xxxxxxxxxxxxx, xxx xxx xxxxxx xxx xxxxx'x xxxxxxxxxxx xxxxxx. X xxx xx xx xxx-xxxxxxxx, xxxx-xxxxxxxxxxx xxxxxx xx xx xx YY xxxxxxxxxxxx xxxxxxxxxx, xxxxxxxxx xx xxx [X-XXX-Xxx](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) XXXX xxxxxx xx xxx xxxxxxxx xxxxxxx. Xxxxxxx xxxxxxxx xxx xxx xx xx xxxxxxxx xxxxxxxxxxxx xxxx xxx xxxx xx xxx xxxxxxxxxxxxx xxxxxxx xx xxx xxxxx. Xx x xxxxx xx xxxxx, xxx xxx xxxxxxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxxxxxx xxxx xxx xxxx xxx. Xx xx xxxxx xx xxxxx, xxx xxxxxxx xxxxxxxxxxx xxxx xx xxxxxxx xxx xxx xxx xxxxxxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxxxxxx xx xxx xxxxx.
+If the queue has reached its capacity of five notifications, the next new notification replaces the oldest notification in the queue. However, by setting tags on your notifications, you can affect the queue's replacement policy. A tag is an app-specific, case-insensitive string of up to 16 alphanumeric characters, specified in the [X-WNS-Tag](https://msdn.microsoft.com/library/windows/apps/hh465435.aspx#pncodes_x_wns_tag) HTTP header in the response payload. Windows compares the tag of an incoming notification with the tags of all notifications already in the queue. If a match is found, the new notification replaces the queued notification with the same tag. If no match is found, the default replacement rule is applied and the new notification replaces the oldest notification in the queue.
 
-Xxx xxx xxx xxxxxxxxxxxx xxxxxxx xxx xxxxxxx xx xxxxxxxxx x xxxxxxx xx xxxx xxxxxxxxxxxx xxxxxxxxx. Xxx xxxxxxx, x xxxxx xxx xxxxx xxxx xxxx xxxxxxxxxxxxx, xxxx xxxxx x xxxxxxxxx xxxxx xxx xxxx xxxxxx xxxx x xxxxx xxxx. Xxxx xxxxxxxx xxx xxxxx xxxx xxxx xxxxxxxxxx xxx xxxxxxxxxxxxx xxx xxx xxxx xxxxx, xxx xxxxx xx xxxxx xx xxx xx xxxx.
+You can use notification queuing and tagging to implement a variety of rich notification scenarios. For example, a stock app could send five notifications, each about a different stock and each tagged with a stock name. This prevents the queue from ever containing two notifications for the same stock, the older of which is out of date.
 
-Xxx xxxx xxxxxxxxxxx, xxx [Xxxxx xxx xxxxxxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/hh781199).
+For more information, see [Using the notification queue](https://msdn.microsoft.com/library/windows/apps/hh781199).
 
-### <span id="Enabling_the_notification_queue">
-            </span>
-            <span id="enabling_the_notification_queue">
-            </span>
-            <span id="ENABLING_THE_NOTIFICATION_QUEUE">
-            </span>Xxxxxxxx xxx xxxxxxxxxxxx xxxxx
+### <span id="Enabling_the_notification_queue"></span><span id="enabling_the_notification_queue"></span><span id="ENABLING_THE_NOTIFICATION_QUEUE"></span>Enabling the notification queue
 
-Xx xxxxxxxxx x xxxxxxxxxxxx xxxxx, xxxxx xxxxxx xxx xxxxx xxx xxxx xxxx (xxx [Xxx xx xxx xxx xxxxxxxxxxxx xxxxx xxxx xxxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465429)). Xxx xxxx xx xxxxxx xxx xxxxx xxxxx xx xx xxxx xxxx xxxx xx xxxx xxx'x xxxxxxxx, xxx xxxxx xx xx xxxx xx xxxxxxx xx xxxx xxxx xxxx xxx xx xxxxxxxx.
+To implement a notification queue, first enable the queue for your tile (see [How to use the notification queue with local notifications](https://msdn.microsoft.com/library/windows/apps/hh465429)). The call to enable the queue needs to be done only once in your app's lifetime, but there is no harm in calling it each time your app is launched.
 
-### <span id="Polling_for_more_than_one_notification_at_a_time">
-            </span>
-            <span id="polling_for_more_than_one_notification_at_a_time">
-            </span>
-            <span id="POLLING_FOR_MORE_THAN_ONE_NOTIFICATION_AT_A_TIME">
-            </span>Xxxxxxx xxx xxxx xxxx xxx xxxxxxxxxxxx xx x xxxx
+### <span id="Polling_for_more_than_one_notification_at_a_time"></span><span id="polling_for_more_than_one_notification_at_a_time"></span><span id="POLLING_FOR_MORE_THAN_ONE_NOTIFICATION_AT_A_TIME"></span>Polling for more than one notification at a time
 
-Xxx xxxx xxxxxxx x xxxxxx XXX xxx xxxx xxxxxxxxxxxx xxxx xxx'x xxxx Xxxxxxx xx xxxxxxxx xxx xxxx xxxx. Xx xxxxx xxx [**XxxxxXxxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh967945) xxxxxx, xxx xxx xxxxxxx xx xx xxxx XXXx xx xxxx xxx xxx xxxx xxx xxxxxxxxxxxx xxxxx. Xxxx XXX xx xxxxxx xxx x xxxxxx xxxxxxxxxxxx xxxxxxx, xx xx xxxx xxx xxxx xxxx. Xxxx xxxxxx XXX xxx xxxxxx xxx xxx xxxxxxxxxx xxx xxx xxxxx.
+You must provide a unique URI for each notification that you'd like Windows to download for your tile. By using the [**StartPeriodicUpdateBatch**](https://msdn.microsoft.com/library/windows/apps/hh967945) method, you can provide up to five URIs at once for use with the notification queue. Each URI is polled for a single notification payload, at or near the same time. Each polled URI can return its own expiration and tag value.
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxx
+## <span id="related_topics"></span>Related topics
 
 
-* [Xxxxxxxxxx xxx xxxxxxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh761461)
-* [Xxx xx xxx xx xxxxxxxx xxxxxxxxxxxxx xxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh761476)
-* [Xxx xx xxx xx xxxxxxxx xxxxxxxxxxxxx xxx xxxxx](https://msdn.microsoft.com/library/windows/apps/hh761476)
+* [Guidelines for periodic notifications](https://msdn.microsoft.com/library/windows/apps/hh761461)
+* [How to set up periodic notifications for badges](https://msdn.microsoft.com/library/windows/apps/hh761476)
+* [How to set up periodic notifications for tiles](https://msdn.microsoft.com/library/windows/apps/hh761476)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

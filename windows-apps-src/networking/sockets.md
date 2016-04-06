@@ -1,27 +1,27 @@
 ---
-xxxxxxxxxxx: Xxx xxx xxx xxxx Xxxxxxx.Xxxxxxxxxx.Xxxxxxx xxx Xxxxxxx xx xxxxxxxxxxx xxxx xxxxx xxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxxxxx.
-xxxxx: Xxxxxxx
-xx.xxxxxxx: YYXYYXYX-XYYX-YXXY-YYXX-YXXXYYYYYYXY
+description: You can use both Windows.Networking.Sockets and Winsock to communicate with other devices as a Universal Windows Platform (UWP) app developer.
+title: Sockets
+ms.assetid: 23B10A3C-E33F-4CD6-92CB-0FFB491472D6
 ---
 
-# Xxxxxxx
+# Sockets
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**Xxxxxxx.Xxxxxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226960)
--   [Xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ms740673)
+-   [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960)
+-   [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673)
 
-Xxx xxx xxx xxxx [**Xxxxxxx.Xxxxxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226960) xxx [Xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ms737523) xx xxxxxxxxxxx xxxx xxxxx xxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxxxxx. Xxxx xxxxx xxxxxxxx xx-xxxxx xxxxxxxx xx xxxxx xxx **Xxxxxxx.Xxxxxxxxxx.Xxxxxxx** xxxxxxxxx xx xxxxxxx xxxxxxxxxx xxxxxxxxxx.
+You can use both [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) and [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) to communicate with other devices as a Universal Windows Platform (UWP) app developer. This topic provides in-depth guidance on using the **Windows.Networking.Sockets** namespace to perform networking operations.
 
-## Xxxxx XXX xxxxxx xxxxxxxxxx
+## Basic TCP socket operations
 
-X XXX xxxxxx xxxxxxxx xxx-xxxxx xxxxxxx xxxx xxxxxxxxx xx xxxxxx xxxxxxxxx xxx xxxx-xxxxx xxxxxxxxxxx. XXX xxxxxxx xxx xxx xxxxxxxxxx xxxxxxx xxxx xx xxxx xx xxx xxxxxxx xxxxxxxxx xxxx xx xxx Xxxxxxxx. Xxxx xxxxxxx xxxxx xxx xx xxxxxx x XXX xxx xx xxxx xxx xxxxxxx xxxx xxxx x XXX xxxxxx xxxxxx xxxxx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxx [**XxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226906) xxxxxxx xx xxxx xx xxx [**Xxxxxxx.Xxxxxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226960) xxxxxxxxx. Xxx xxxx xxxxxxx, xx xxxx xx xxxxxxxx x xxxx xxxxxx xxx xxxx xxxx xxxxxxxx xx xx xxxx xxxxxx xxx xxxxxx xx xxxxxxxxxxx xxxxx XXX xxxxxxxxxx.
+A TCP socket provides low-level network data transfers in either direction for long-lived connections. TCP sockets are the underlying feature used by most of the network protocols used on the Internet. This section shows how to enable a UWP app to send and receive data with a TCP stream socket using the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) classes as part of the [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace. For this section, we will be creating a very simple app that will function as an echo server and client to demonstrate basic TCP operations.
 
-**Xxxxxxxx x XXX xxxx xxxxxx**
+**Creating a TCP echo server**
 
-Xxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxxxxx xxx xx xxxxxx x [**XxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226906) xxxxxx xxx xxxxx xxxxxxxxx xxx xxxxxxxx XXX xxxxxxxxxxx.
+The following code example demonstrates how to create a [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) object and start listening for incoming TCP connections.
 
 ```csharp
 try
@@ -41,7 +41,7 @@ catch (Exception e)
 }
 ```
 
-Xxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxx XxxxxxXxxxxxxx\_XxxxxxxxxxXxxxxxxx xxxxx xxxxxxx xxxx xxx xxxxxxxx xx xxx [**XxxxxxXxxxxxXxxxxxxx.XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701494) xxxxx xx xxx xxxxx xxxxxxx. Xxxx xxxxx xxxxxxx xx xxxxxx xx xxx [**XxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226906) xxxxx xxxxx xxxx x xxxxxx xxxxxx xxx xxxxxxxxxxx x xxxxxxxxxx xxxx xxx xxxx xxxxxx.
+The following code example implements the SocketListener\_ConnectionReceived event handler that was attached to the [**StreamSocketListener.ConnectionReceived**](https://msdn.microsoft.com/library/windows/apps/hh701494) event in the above example. This event handler is called by the [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) class every time a remote client has established a connection with the echo server.
 
 ```csharp
 private async void SocketListener_ConnectionReceived(Windows.Networking.Sockets.StreamSocketListener sender, 
@@ -60,9 +60,9 @@ private async void SocketListener_ConnectionReceived(Windows.Networking.Sockets.
 }
 ```
 
-**Xxxxxxxx x XXX xxxx xxxxxx**
+**Creating a TCP echo client**
 
-Xxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxxxxx xxx xx xxxxxx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxxxxx, xxxxxxxxx x xxxxxxxxxx xx xxx xxxxxx xxxxxx, xxxx x xxxxxxx, xxx xxxxxxx x xxxxxxxx.
+The following code example demonstrates how to create a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) object, establish a connection to the remote server, send a request, and receive a response.
 
 ```csharp
 try
@@ -97,13 +97,13 @@ catch (Exception e)
 }
 ```
 
-## Xxxxx XXX xxxxxx xxxxxxxxxx
+## Basic UDP socket operations
 
-X XXX xxxxxx xxxxxxxx xxx-xxxxx xxxxxxx xxxx xxxxxxxxx xx xxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxxxxx xxxx xxxx xxx xxxxxxx xx xxxxxxxxxxx xxxxxxxxxx. Xxxxxxx XXX xxxxxxx xx xxx xxxxxxxx xxxxxxxxxx xx xxxx xxxxxxxxx xxxx xxxxxxx xxxx xxx xxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxx xxxxxx xxxxxxxx. Xxxxxxx, XXX xxxxxxx xx xxx xxxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxxx xx xxxxxxx xxxx xxxx xx xx xxx xxxxxx xxxxxxxxxxx xx xxx. Xxxx xxxxxxxx xx xxxxxxxxxxxx xxxx xxx XXX xxxxxxx xxx xxxxx xxxxxxx xxxxxxxxx xxx xxxxx xxxx xxxxxxx. Xxxx xxxxxxx xxxxxxxxxxxx xxx xxx xx xxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241319) xxxxx xx xxxxxxx xxx xxxxxxxxx XXX xxxxxxxx xx xxxxxxxx x xxxxxx xxxx xxxxxx xxx xxxxxx.
+A UDP socket provides low-level network data transfers in either direction for network communication that does not require an established connection. Because UDP sockets do not maintain connection on both endpoints they provide fast and simple solution for networking between remote machines. However, UDP sockets do not ensure integrity of the network packets or whether they make it to the remote destination at all. Some examples of applications that use UDP sockets are local network discovery and local chat clients. This section demonstrates the use of the [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) class to sending and receiving UDP messages by creating a simple echo server and client.
 
-**Xxxxxxxx x XXX xxxx xxxxxx**
+**Creating a UDP echo server**
 
-Xxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxxxxx xxx xx xxxxxx x [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241319) xxxxxx xxx xxxx xx xx x xxxxxxxx xxxx xx xxxx xxx xxx xxxxxx xxx xxxxxxxx XXX xxxxxxxx.
+The following code example demonstrates how to create a [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) object and bind it to a specific port so that you can listen for incoming UDP messages.
 
 ```csharp
 Windows.Networking.Sockets.DatagramSocket socket = new Windows.Networking.Sockets.DatagramSocket();
@@ -117,7 +117,7 @@ string serverPort = "1337";
 await socket.BindServiceNameAsync(serverPort);
 ```
 
-Xxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxx **Xxxxxx\_XxxxxxxXxxxxxxx** xxxxx xxxxxxx xx xxxx x xxxxxxx xxxx xxx xxxxxxxx xxxx x xxxxxx xxx xxxx xxx xxxx xxxxxxx xxxx.
+The following code example implements the **Socket\_MessageReceived** event handler to read a message that was received from a client and send the same message back.
 
 ```csharp
 private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSocket sender, Windows.Networking.Sockets.DatagramSocketMessageReceivedEventArgs args)
@@ -139,9 +139,9 @@ private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSoc
 }
 ```
 
-**Xxxxxxxx x XXX xxxx xxxxxx**
+**Creating a UDP echo client**
 
-Xxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxxxxx xxx xx xxxxxx x [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241319) xxxxxx xxx xxxx xx xx x xxxxxxxx xxxx xx xxxx xxx xxx xxxxxx xxx xxxxxxxx XXX xxxxxxxx xxx xxxx x XXX xxxxxxx xx xxx XXX xxxx xxxxxx.
+The following code example demonstrates how to create a [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) object and bind it to a specific port so that you can listen for incoming UDP messages and send a UDP message to the UDP echo server.
 
 ```csharp
 private async void testUdpSocketServer()
@@ -170,7 +170,7 @@ private async void testUdpSocketServer()
 }
 ```
 
-Xxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxx **Xxxxxx\_XxxxxxxXxxxxxxx** xxxxx xxxxxxx xx xxxx x xxxxxxx xxxx xxx xxxxxxxx xxxx xxx XXX xxxx xxxxxx.
+The following code example implements the **Socket\_MessageReceived** event handler to read a message that was received from the UDP echo server.
 
 ```csharp
 private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSocket sender, 
@@ -183,17 +183,17 @@ private async void Socket_MessageReceived(Windows.Networking.Sockets.DatagramSoc
 }
 ```
 
-## Xxxxxxxxxx xxxxxxxxxx xxx xxx xxxxxx xxxxxx
+## Background operations and the socket broker
 
-Xx xxxx xxx xxxxxxxx xxxxxxxxxxx xx xxxx xx xxxxxxx, xxxx xxx xxxx xx xxxxxxxx xx xxxxxxx xxxxx xxxxxxxxxx xxxxxxxx xxxxx xxxx xxx xx xxx xx xxx xxxxxxxxxx. Xx xx xx, xxx xxx xxx xxxxxx xxxxxx. Xxx xxxx xxxxxxxxxxx xx xxx xx xxx xxx xxxxxx xxxxxx, xxx [Xxxxxxx xxxxxxxxxxxxxx xx xxx xxxxxxxxxx](network-communications-in-the-background.md).
+If your app receives connections or data on sockets, then you must be prepared to perform those operations properly while your app is not in the foreground. To do so, you use the socket broker. For more information on how to use the socket broker, see [Network communications in the background](network-communications-in-the-background.md).
 
-## Xxxxxxx xxxxx
+## Batched sends
 
-Xxxxxxxx xxxx Xxxxxxx YY, Xxxxxxx.Xxxxxxxxxx.Xxxxxxx xxxxxxxx xxxxxxx xxxxx, x xxx xxx xxx xx xxxx xxxxxxxx xxxxxxx xx xxxx xxxxxxxx xxxx xxxx xxxxx xxxxxxx-xxxxxxxxx xxxxxxxx xxxx xx xxx xxxx xxxx xx xxx xxxxxxx xxxxxxxxxx. Xxxx xx xxxxxxxxxx xxxxxx xx xxxx xxx xx xxxxx XxXX, XXX, xx xxxxx xxxxx xxxxx xxxxxxx xxxxxx x xxx xx xxxx xx xxxxxxxxxxx xx xxxxxxxx.
+Starting with Windows 10, Windows.Networking.Sockets supports batched sends, a way for you to send multiple buffers of data together with much lower context-switching overhead than if you send each of the buffers separately. This is especially useful if your app is doing VoIP, VPN, or other tasks which involve moving a lot of data as efficiently as possible.
 
-Xxxx xxxx xx XxxxxXxxxx xx x xxxxxx xxxxxxxx x xxxxxx xxxxxxxxxx xx xxxxx xxx xxxxxxx xxxxx. Xxxx xx xxx xxxxxx xxxx xxxxxxx xx x xxxx, xxxx xxxxx xxxxxx x xxxxxxxx xxxxxx xxxxxxxxxx, xxx xxxx xxxxxxx xxxxxxxxxxx xxxxxxxx. Xxx xxx xxxxxxx xxxxx xxxxxxx xxxxxxxxx xxx xxxxxxxxx xx xxxxxx xxxxxxxxxxx. Xxxx xxxxxxxxxxxxx xx xxxxxxxxx xxxxxxx xx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxx xxxxxxxxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241319) xxxxxxxxx.
+Each call to WriteAsync on a socket triggers a kernel transition to reach the network stack. When an app writes many buffers at a time, each write incurs a separate kernel transition, and this creates substantial overhead. The new batched sends pattern optimizes the frequency of kernel transitions. This functionality is currently limited to [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and connected [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) instances.
 
-Xxxx xx xx xxxxxxx xx xxx xx xxx xxxxx xxxx x xxxxx xxxxxx xx xxxxxxx xx x xxx-xxxxxxx xxx.
+Here is an example of how an app would send a large number of buffers in a non-optimal way.
 
 ```csharp
 // Send a set of packets inefficiently, one packet at a time.
@@ -208,7 +208,7 @@ foreach (IBuffer packet in packetsToSend)
 }
 ```
 
-Xxxx xxxxxxx xxxxx x xxxx xxxxxxxxx xxx xx xxxx x xxxxx xxxxxx xx xxxxxxx. Xxxxxxx xxxx xxxxxxxxx xxxx xxxxxxxx xxxxxx xx xxx X# xxxxxxxx, xx xx xxxx xxxxxxxxx xx X# xxxxxxxxxxx. Xx xxxxxxx xxxxxxxx xxxxxxx xx x xxxx, xxxx xxxxxxx xxxxxxx xxx xxxxxx xx xxxxx xxxxx, xxx xxxx xxxxxxxx xxxxxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxxxxx.
+This example shows a more efficient way to send a large number of buffers. Because this technique uses features unique to the C# language, it is only available to C# programmers. By sending multiple packets at a time, this example enables the system to batch sends, and thus optimize kernel transitions for improved performance.
 
 ```csharp
 // More efficient way to send packets.
@@ -228,7 +228,7 @@ foreach (IBuffer packet in packetsToSend)
 await Task.WaitAll(pendingTasks);
 ```
 
-Xxxx xxxxxxx xxxxx xxxxxxx xxx xx xxxx x xxxxx xxxxxx xx xxxxxxx xx x xxx xxxx'x xxxxxxxxxx xxxx xxxxxxx xxxxx. Xxx xxxxx xx xxxxx'x xxx xxx X#-xxxxxxxx xxxxxxxx, xx xx xxxxxxxxxx xxx xxx xxxxxxxxx (xxxxxx xx xx xxxxxxxxxxxx xxxx xx X#). Xxxxxxx, xx xxxx xxxxxxx xxxxxxxx xx xxx **XxxxxxXxxxxx** xxxxxx xx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241319) xxxxxxx xxxx xx xxx xx Xxxxxxx YY.
+This example shows another way to send a large number of buffers in a way that's compatible with batched sends. And since it doesn't use any C#-specific features, it is applicable for all languages (though it is demonstrated here in C#). Instead, it uses changed behavior in the **OutputStream** member of the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) and [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319) classes that is new in Windows 10.
 
 ```csharp
 // More efficient way to send packets in Windows 10, using the new behavior of OutputStream.FlushAsync().
@@ -248,24 +248,24 @@ foreach (IBuffer packet in packetsToSend)
 await outputStream.FlushAsync();
 ```
 
-Xx xxxxxxx xxxxxxxx xx Xxxxxxx, **XxxxxXxxxx** xxxxxxxx xxxxxxxxxxx, xxx xxx xxx xxxxxxxxx xxxx xxx xxxxxxxxxx xx xxx xxxxxx xxx xxxxxxxxx xxx. Xx Xxxxxxx YY, xxx xxxxxxxx xxx xxxxxxx. **XxxxxXxxxx** xx xxx xxxxxxxxxx xx xxxxxx xxxxx xxx xxxxxxxxxx xx xxx xxxxxx xxxxxx xxxx xxxxxxxxx.
+In earlier versions of Windows, **FlushAsync** returned immediately, and did not guarantee that all operations on the stream had completed yet. In Windows 10, the behavior has changed. **FlushAsync** is now guaranteed to return after all operations on the output stream have completed.
 
-Xxxxx xxx xxxx xxxxxxxxx xxxxxxxxxxx xxxxxxx xx xxxxx xxxxxxx xxxxxx xx xxxx xxxx.
+There are some important limitations imposed by using batched writes in your code.
 
--   Xxx xxxxxx xxxxxx xxx xxxxxxxx xx xxx **XXxxxxx** xxxxxxxxx xxxxx xxxxxxx xxxxx xxx xxxxxxxxxxxx xxxxx xx xxxxxxxx.
--   Xxx **XxxxxXxxxx** xxxxxxx xxxx xxxxx xx **XxxxxxXxxxxx.XxxxxxXxxxxx** xxx **XxxxxxxxXxxxxx.XxxxxxXxxxxx**.
--   Xxx **XxxxxXxxxx** xxxxxxx xxxx xxxxx xx Xxxxxxx YY xxx xxxxxx.
--   Xx xxxxx xxxxx, xxx **Xxxx.XxxxXxx** xxxxxxx xx xxx **XxxxxXxxxx** xxxxxxx.
+-   You cannot modify the contents of the **IBuffer** instances being written until the asynchronous write is complete.
+-   The **FlushAsync** pattern only works on **StreamSocket.OutputStream** and **DatagramSocket.OutputStream**.
+-   The **FlushAsync** pattern only works in Windows 10 and onward.
+-   In other cases, use **Task.WaitAll** instead of the **FlushAsync** pattern.
 
-## Xxxx xxxxxxx xxx XxxxxxxxXxxxxx
+## Port sharing for DatagramSocket
 
-Xxxxxxx YY xxxxxxxxxx x xxx [**XxxxxxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701190) xxxxxxxx, [**XxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn895368), xxxxx xxxxxxx xxx xx xxxxxxx xxxx xxx **XxxxxxxxXxxxxx** xx xxxxxxxx xx xxxx xx xxxxxxx xxxx xxxxx XxxYY xx XxxXX xxxxxxxxx xxxxxxx xxxxx xx xxx xxxx xxxxxxx/xxxx.
+Windows 10 introduces a new [**DatagramSocketControl**](https://msdn.microsoft.com/library/windows/apps/hh701190) property, [**MulticastOnly**](https://msdn.microsoft.com/library/windows/apps/dn895368), which enables you to specify that the **DatagramSocket** in question is able to coexist with other Win32 or WinRT multicast sockets bound to the same address/port.
 
-## Xxxxxxxxx x xxxxxx xxxxxxxxxxx xxxx xxx XxxxxxXxxxxx xxxxx
+## Providing a client certificate with the StreamSocket class
 
-Xxx [**Xxxxxxx.Xxxxxxxxxx.XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882) xxxxx xxxxxxxx xxxxx XXX/XXX xx xxxxxxxxxxxx xxx xxxxxx xxx xxx xx xxxxxxx xx. Xx xxxxxxx xxxxx, xxx xxx xxxx xxxxx xx xxxxxxxxxxxx xxxxxx xx xxx xxxxxx xxxxx x XXX xxxxxx xxxxxxxxxxx. Xx Xxxxxxx YY, xxx xxx xxxxxxx x xxxxxx xxxxxxxxxxx xx xxx [**XxxxxxXxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226893) xxxxxx (xxxx xxxx xx xxx xxxxxx xxx XXX xxxxxxxxx xx xxxxxxx). Xx xxx xxxxxx xxxxxxxx xxx xxxxxx xxxxxxxxxxx, Xxxxxxx xxxx xxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxx.
+The [**Windows.Networking.StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882) class supports using SSL/TLS to authenticate the server the app is talking to. In certain cases, the app also needs to authenticate itself to the server using a TLS client certificate. In Windows 10, you can provide a client certificate on the [**StreamSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226893) object (this must be set before the TLS handshake is started). If the server requests the client certificate, Windows will respond with the certificate provided.
 
-Xxxx xx x xxxx xxxxxxx xxxxxxx xxx xx xxxxxxxxx xxxx:
+Here is a code snippet showing how to implement this:
 
 ```csharp
 var socket = new StreamSocket();
@@ -274,21 +274,25 @@ socket.Control.ClientCertificate = certificate;
 await socket.ConnectAsync(destination, SocketProtectionLevel.Tls12);
 ```
 
-## Xxxxxxxxxx xx Xxxxxxx.Xxxxxxxxxx.Xxxxxxx
+## Exceptions in Windows.Networking.Sockets
 
-Xxx xxxxxxxxxxx xxx xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207113) xxxxx xxxx xxxx xxxxxxx xxx xxxxx xx xxxxxxxxx xx xxx xxxxxx xxxxxx xx xxx x xxxxx xxxxxxxx (xxxxxxxx xxxxxxxxxx xxxx xxx xxx xxxxxxx xx x xxxx xxxx). Xx xx xxx xxxx xxxxx xxxx xxx xxxx xxx xxx **XxxxXxxx**, xxx xxxxxxxxxxx xxxxxx xx xx x xxx/xxxxx xxxxx. Xx xx xxxxxxxxx xx xxxxxx, xxx xxx xxx xxxxxx xxx xxxx xxx xxxxxxx x xxx xxxxxxxx.
+The constructor for the [**HostName**](https://msdn.microsoft.com/library/windows/apps/br207113) class used with sockets can throw an exception if the string passed is not a valid hostname (contains characters that are not allowed in a host name). If an app gets input from the user for the **HostName**, the constructor should be in a try/catch block. If an exception is thrown, the app can notify the user and request a new hostname.
 
-Xxx [**Xxxxxxx.Xxxxxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226960) xxxxxxxxx xxx xxxxxxxxxx xxxxxx xxxxxxx xxx xxxxxxxxxxxx xxx xxxxxxxx xxxxxx xxxx xxxxx xxxxxxx xxx XxxXxxxxxx. Xxxx xxx xx xxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxx xxxxxxxxxx xxxxxxxxxxx xx xxxx xxx.
+The [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960) namespace has convenient helper methods and enumerations for handling errors when using sockets and WebSockets. This can be useful for handling specific network exceptions differently in your app.
 
-Xx xxxxx xxxxxxxxxxx xx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241319), [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882), xx [**XxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226906) xxxxxxxxx xx xxxxxxxx xx xx **XXXXXXX** xxxxx. Xxx [**XxxxxxXxxxx.XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701462) xxxxxx xx xxxx xx xxxxxxx x xxxxxxx xxxxx xxxx x xxxxxx xxxxxxxxx xx x [**XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701457) xxxxxxxxxxx xxxxx. Xxxx xx xxx **XxxxxxXxxxxXxxxxx** xxxxxxxxxxx xxxxxx xxxxxxxxxx xx xx xxxxx xxxxxxxx xx xxx xxxxxx Xxxxxxx xxxxxxx xxxxxxxxx. Xx xxx xxx xxxxxx xx xxxxxxxx **XxxxxxXxxxxXxxxxx** xxxxxxxxxxx xxxxxx xx xxxxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxx xx xxx xxxxxxxxx.
+An error encountered on [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) operation is returned as an **HRESULT** value. The [**SocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701462) method is used to convert a network error from a socket operation to a [**SocketErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh701457) enumeration value. Most of the **SocketErrorStatus** enumeration values correspond to an error returned by the native Windows sockets operation. An app can filter on specific **SocketErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
 
-Xx xxxxx xxxxxxxxxxx xx x [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxxxxxxxx xx xxxxxxxx xx xx **XXXXXXX** xxxxx. Xxx [**XxxXxxxxxXxxxx.XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701529) xxxxxx xx xxxx xx xxxxxxx x xxxxxxx xxxxx xxxx x XxxXxxxxx xxxxxxxxx xx x [**XxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh747818) xxxxxxxxxxx xxxxx. Xxxx xx xxx **XxxXxxxxXxxxxx** xxxxxxxxxxx xxxxxx xxxxxxxxxx xx xx xxxxx xxxxxxxx xx xxx xxxxxx XXXX xxxxxx xxxxxxxxx. Xx xxx xxx xxxxxx xx xxxxxxxx **XxxXxxxxXxxxxx** xxxxxxxxxxx xxxxxx xx xxxxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxx xx xxx xxxxxxxxx.
+An error encountered on a [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) operation is returned as an **HRESULT** value. The [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) method is used to convert a network error from a WebSocket operation to a [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) enumeration value. Most of the **WebErrorStatus** enumeration values correspond to an error returned by the native HTTP client operation. An app can filter on specific **WebErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
 
-Xxx xxxxxxxxx xxxxxxxxxx xxxxxx, xx xxx xxx xxxx xxx xxx **XXXXXXX** xxxx xxx xxxxxxxxx xx xxxxx xxxx xxxxxxxx xxxxxxxxxxx xx xxx xxxxx xxxx xxxxxx xxx xxxxxxxxx. Xxxxxxxx **XXXXXXX** xxxxxx xxx xxxxxx xx xxx *Xxxxxxxx.x* xxxxxx xxxx. Xxx xxxx xxxxxxxxx xxxxxxxxxx xxxxxx, xxx **XXXXXXX** xxxxxxxx xx **X\_XXXXXXXXXX**.
+For parameter validation errors, an app can also use the **HRESULT** from the exception to learn more detailed information on the error that caused the exception. Possible **HRESULT** values are listed in the *Winerror.h* header file. For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**.
 
-## Xxx Xxxxxxx XXX
+## The Winsock API
 
-Xxx xxx xxx [Xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ms740673) xx xxxx XXX xxx, xx xxxx. Xxx xxxxxxxxx Xxxxxxx XXX xx xxxxx xx xxxx xx Xxxxxxx Xxxxx Y.YXxxxxxxxx Xxxxxxxxxxx xxx xxxxxxxxx xx xxxxxxx xxxx xx xxx xxxxx, xxxxxxxxxx xxx xxxxxxx (xxxx XXXx xxxx xxx xxxxxxxxxx xxxxxxxx xxxx xxxx xxxxxxx). Xxx xxx xxxx xxxx xxxxxxxxxxx xx Xxxxxxx xxxxxxxxxxx [xxxx](https://msdn.microsoft.com/library/windows/desktop/ms740673).
+You can use [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673) in your UWP app, as well. The supported Winsock API is based on that of Windows Phone 8.1Microsoft Silverlight and continues to support most of the types, properties and methods (some APIs that are considered obsolete have been removed). You can find more information on Winsock programming [here](https://msdn.microsoft.com/library/windows/desktop/ms740673).
+
+
 
 
 <!--HONumber=Mar16_HO1-->
+
+

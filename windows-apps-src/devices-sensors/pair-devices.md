@@ -1,71 +1,75 @@
 ---
-xx.xxxxxxx: XYXYYYXY-YXYX-YYYY-YXYX-YXYYXYYYXYXX
-xxxxx: Xxxx xxxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxx xx xx xxxxxx xxxxxx xxxx xxx xx xxxx. Xxx Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx xxxxxxxxx xxxxxxxx xxxxx xxxxxxxxx xxxx xx xxxx xxxxxxx.
+ms.assetid: F8A741B4-7A6A-4160-8C5D-6B92E267E6EA
+title: Pair devices
+description: Some devices need to be paired before they can be used. The Windows.Devices.Enumeration namespace supports three different ways to pair devices.
 ---
-# Xxxx xxxxxxx
+# Pair devices
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-** Xxxxxxxxx XXXx **
-
--   [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225459)
-
-Xxxx xxxxxxx xxxx xx xx xxxxxx xxxxxx xxxx xxx xx xxxx. Xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225459) xxxxxxxxx xxxxxxxx xxxxx xxxxxxxxx xxxx xx xxxx xxxxxxx.
-
--   Xxxxxxxxx xxxxxxx
--   Xxxxx xxxxxxx
--   Xxxxxx xxxxxxx
-
-**Xxx**  Xxxx xxxxxxx xx xxx xxxx xx xx xxxxxx xx xxxxx xx xx xxxx. Xxxx xx xxxxxxx xxxxx xxx xxxxxxx xx xxxxxxxxx xxxxxxx.
-
- 
-
-## Xxxxxxxxx xxxxxxx
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxxxxx xxx xxxx xx xxx x xxxxxx xx xxxx xxxxxxxxxxx, xxx xx xxx xxxx xxxxxxx xx xxx xxx xxxxxx xx xxxxxx. Xxx xxxxxx xxxx xx xx xxxx xx xxx xxx xxxxxxxxxxxxx xxxxxxxxxx xxxx x xxxxxx. Xxx xxxxxxx, xx xxxx xxx xxxxx xx xxxxxx xxxxxxx xx xxxxx xxxx x xxxxxx, xxx xxx xxx xxxxxxxxxxx xxxxxxxxxx xx xxx xxxxxx xxxxxx, xxxx xxx xxxxx xxxxxxx. Xx xxxxx xxx xxxxxx XXXx xxxxxxxxx xxx xxx xxxxxx xxx xxx xxxxxxxxxx xx, xxxx xxxxxxxx xxxxx xxxx xxxxx xxxxxxxxx xxxxxxx.
+** Important APIs **
 
-Xx xxxx xxxx, xxx xxxxxx xxx xxx XXXx xxxxxxxxxx xxxx xxx xxxxxx, xxxxxx xxx xxxxx xx xxxxxxxxx xxx xxxxxxxx xxx xxxxxx xx xxxxxx xxx xxxxxxx xxxx xxxxx xx xxxxxxxxx. Xxxx xxxxxxx xx xxx xxxx xx xx xxxxxx xx xxxxx xxx xxx xx xxx xxxxx xxxxxxxxxxxxx. Xx xxx xxxxxx xxxx xxxx xx xx xxxxxx, xxxx xxx xxxxxx XXXx xxxx xxxxxx xxx xxxxxxx xxxxxx xxxxxx xxx xxxxxx xx xxx xx xxx xxxx xx xxxxxxxxx xxxx xxxxxxxxxxxxx xxxx xxxx xxx. Xxxx xxx xxxx xxxx xx xxxxxxxxx xxxxx xxxxxxx xx xxx x xxxxx xxxxxx xx xxxxxx xx xxxxx xx xx, xxx xxx xxxx xxxxx xx xxxx xx xxxxxx xxx xxxxxx xxx xxx xxx xxxxxxxxxxxxx.
+-   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
 
-## Xxxxx xxxxxxx
+Some devices need to be paired before they can be used. The [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) namespace supports three different ways to pair devices.
 
+-   Automatic pairing
+-   Basic pairing
+-   Custom pairing
 
-Xxxxx xxxxxxx xx xxxx xxxx xxxxxxxxxxx xxxx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225459) XXXx xx xxxxx xx xxxxxxx xx xxxx xxx xxxxxx. Xx xxxx xxxxxxxx, xxx xxx xxxxxxx Xxxxxxx xxxxxxx xxx xxxxxxx xxxxxxx xxx xxxxxx xx. Xx xxx xxxx xxxxxxxxxxx xx xxxxxxxxx, xx xxxx xx xxxxxxx xx Xxxxxxx. Xxx xxxxx xxx xxxxx xxxxxxx xx xxx xxxx xx xxxx xxxx x xxxxxx xxx xxxxx xx xxx x xxxxxxxx xxxxxx XXX xxxx xxxx xxxxxxx xxxxxxxxx xxxxxxx. Xxx xxxx xxxx xx xx xxxx xx xxx xxx xxxxxx xxx xxxx xx xxxx xxxx xx xxxxx.
-
-Xx xxxxx xx xxxxxxx xxxxx xxxxxxx, xxx xxxxx xxxx xx xxxxxx xxx [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225393) xxxxxx xxx xxx xxxxxx xxx xxx xxxxxxxxxx xx. Xxxx xxx xxxxxxx xxxx xxxxxx, xxx xxxx xxxxxxxx xxxx xxx [**XxxxxxXxxxxxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) xxxxxxxx, xxxxx xx x [**XxxxxxXxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) xxxxxx. Xx xxxxxxx xx xxxx, xxxxxx xxxx [**XxxxxxXxxxxxxxxxxXxxxxxx.XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/mt608800). Xxx xxxx xxxx xx **xxxxx** xxx xxxxxx xx xxxxx xx xxxx xxxx xxx xxxx xx xxxxxxx xx xxxxxxxx xxx xxxxxxx xxxxxx. Xxx xxxxxx xx xxx xxxxxxx xxxxxx xxxx xx xxxxxxxx, xxx xx xxxx xx xx xxxxxx xxx xxxxxxxx, xxx xxxxxx xxxx xx xxxxxx.
-
-Xx xxx xxx xxxxx xxxxx xxxxxxx, xxx xxxx xxxx xxxxxx xx xxxxxxxxxx xxxxxxxxxxx xxxxx xxx xxxxxxx xxxxxx xx xxx xxxxxx. Xxx xxxxxxx xxx xxxx xxx xxxxxxx xxxxxx ([**XxXxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_ispaired)) xxx xxxxxxx xxx xxxxxx xxx xxxx ([**XxxXxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_canpair)). Xxxx xx xxxxx xxx xxxxxxxxxx xx xxx [**XxxxxxXxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) xxxxxx. Xx xxx xxx xxxxx xxxxxxxxx xxxxxxx, xxx xxxxx xxx xxxx xxxxxx xx xxxx xxxxxxxxxxx xxxxxx xxx xxxxxx xxx xxxxxxxx [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225393) xxxxxxx.
-
-## Xxxxxx xxxxxxx
-
-
-Xxxxxx xxxxxxx xxxxxxx xxxx xxx xx xxxxxxxxxxx xx xxx xxxxxxx xxxxxxx. Xxxx xxxxxx xxxx xxx xx xxxxxxx xxx [**XxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt608808) xxxx xxx xxxxxxxxx xxx xxx xxxxxxx xxxxxxx. Xxx xxxx xxxx xx xxxxxxxxxxx xxx xxxxxxxx xxxx xxx xxxx xxxxxxxxx xx xxxxxxxx xxxx xxx xxxx xx xxxxxx. Xxx xxxxxx xxxxxxx xxxx xxx xxxx xxxx xxx xx xxxx x xxxxxx xxxx xxxxxxxxx xxxx xxx xxx xxxxxxx xxxxxxx xxxxxxxx xx xx xxxxxxx xxxx xxx xxxxxxx xxxx xxxxxxxxx.
-
-Xx xxxxx xx xxxxxxxxx xxxxxx xxxxxxx, xxx xxxx xxxx xx xxxxxx xxx [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225393) xxxxxx xxx xxx xxxxxx xxx xxx xxxxxxxxxx xx, xxxx xxxx xxxx xxxxx xxxxxxx. Xxxxxxx, xxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxxxxxx xx xx [**XxxxxxXxxxxxxxxxx.Xxxxxxx.Xxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_custom). Xxxx xxxx xxxx xxx x [**XxxxxxXxxxxxxxxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225393custompairing) xxxxxx. Xxx xx xxx [**XxxxxxXxxxxxxxxxxXxxxxxXxxxxxx.XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225393custompairing_pairasync) xxxxxxx xxxxxxx xxx xx xxxxxxx x [**XxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt608808) xxxxxxxxx. Xxxx xxxxxxxxx xxx xxxxxxx xxxx xxx xxxx xxxx xxxx xx xxxx xx xxxxx xx xxxxxxx xx xxxx xxx xxxxxx. Xxx xxx **XxxxxxXxxxxxxXxxxx** xxxxxxxxx xxxx xxx xxxx xxxxxxxxxxx xxxxx xxx xxxxxxxxx xxxxx xxx xxxx xxxxxxx xxx xxxx xxxx xxxx xx xxxx. Xxxx xxxx xxxx xxxxx xxxxxxx, xxx xxxx xxxx xx **xxxxx** xxx xxxxxx xx xxxxx xx xxxx xxxx xxx xxxx xx xxxxxxx xx xxxxxxxx xxx xxxxxxx xxxxxx. Xxx xxxxxx xx xxx xxxxxxx xxxxxx xxxx xx xxxxxxxx, xxx xx xxxx xx xx xxxxxx xxx xxxxxxxx, xxx xxxxxx xxxx xx xxxxxx.
-
-Xx xxxxxxx xxxxxx xxxxxxx, xxx xxxx xxxx xx xxxxxx x xxxxxxx xxx xxx [**XxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225393custompairing_pairingrequested) xxxxx. Xxxx xxxxxxx xxxxx xx xxxx xxxx xx xxxxxxx xxx xxx xxx xxxxxxxxx [**XxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt608808) xxxx xxxxx xx xxxx xx x xxxxxx xxxxxxx xxxxxxxx. Xxx xxxxxxxxxxx xxxxxx xx xxxx xxxx xxxxxx xx xxx **XxxxxxXxxxxxxXxxxx** xxxxxxxx xx xxxx xx xxx xxxxx xxxxxxxxx.
-
-Xx xx xxxxxxxxx xx xx xxxxx xxxx xxxxxx xxxxxxx xx xxxxxx x xxxxxx-xxxxx xxxxxxxxx. Xxxxxxx xx xxxx, xxxx xxx xxx xxxxxxxxx xx Xxxxxxx xx Xxxxxxx Xxxxx, x xxxxxx xxxxxx xxxx xxxxxx xx xxxxx xx xxx xxxx xxxx xxxxxxx xx xxxxx xx xxxxxx. Xxxx xx xxxxxxx xxxx xx xxxxx xxxxxxxxx xxxxxx x xxxx xxxxxxxxxx xxxx xxxxxxxx xxxx xxxxxxx. Xxxxx xxxx xxxxxx xx xxxxxxxxxxxxx xxxxxxxxx, xxx xxxx xxx xxxx xx xxxxxx xxxx xxx xxxxxx xxxx xxx xxx xxxxxx xxx x [**XxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt608808) xx **XxxxxxxXxxx** xxxx xxxxxxxxx xx xxxxx xxxxxxxxx. Xxx xxx xxxxx **XxxxxxXxxxxxxXxxxx**, xxx xxxx xxxx xx xxxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxxx xx xxx xxxxxxxx **XxxxxxXxxxxxxXxxxx** xxxxx. Xxx xxx xxxxxx xxx xxxxxxxx xx xxx xx xxxxxx xxxxxx xxxxxxx xxx xxxxxxxxx **XxxxxxXxxxxxxXxxxx** xxxxxx.
-
-## Xxxxxxxxx
-
-
-Xxxxxxxxx x xxxxxx xx xxxx xxxxxxxx xx xxx xxxxx xx xxxxxx xxxxxxx xxxxxxxxx xxxxxxxxx xxxxx. Xx xxx xxx xxxxx xxxxxxxxx xxxxxxx, xxxx xxx xxxxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxx xx xxx xxxxxx xxx xxxxx xx xx xxxx xx xxxxxx xx. Xx xxx xx xxxxxx xx xxxxxx x xxxxxx, xxx xxxxxxx xx xxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxx xx xxxxxx xxxxxxx. Xxxx xx xxxxxxx xxxxx xx xx xxxx xx xxxxxxx xxxxxxxxxx xxxxxxxxxxx xx xxxxxxxx xx xxx xxxxxxxxx xxxxxxx.
-
-Xxx xxxxx xxxx xx xxxxxxxxx x xxxxxx xx xxxxxxxxx xxx [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225393) xxxxxx xxx xxx xxxxxx xxxx xxx xxxx xx xxxxxx. Xxxx xxx xxxx xx xxxxxxxx xxx [**XxxxxxXxxxxxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) xxxxxxxx xxx xxxx [**XxxxxxXxxxxxxxxxxXxxxxxx.XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.unpairasync). Xxxx xxxx xxxx xxxxxxx, xxx xxxx xxxx xx **xxxxx** xxx xxxxxx. Xxx xxxxxx xx xxx xxxxxxxxx xxxxxx xxxx xx xxxxxxxx, xxx xx xxxx xx xx xxxxxx xxx xxxxxxxx, xxx xxxxxx xxxx xx xxxxxxxx.
-
-## Xxxxxx
-
-
-Xx xxxxxxxx x xxxxxx xxxxxxx xxx xx xxx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225459) XXXx, xxxxx [xxxx](http://go.microsoft.com/fwlink/?LinkID=620536).
+**Tip**  Some devices do not need to be paired in order to be used. This is covered under the section on automatic pairing.
 
  
 
+## Automatic pairing
+
+
+Sometimes you want to use a device in your application, but do not care whether or not the device is paired. You simply want to be able to use the functionality associated with a device. For example, if your app wants to simply capture an image from a webcam, you are not necessarily interested in the device itself, just the image capture. If there are device APIs available for the device you are interested in, this scenario would fall under automatic pairing.
+
+In this case, you simply use the APIs associated with the device, making the calls as necessary and trusting the system to handle any pairing that might be necessary. Some devices do not need to be paired in order for you to use their functionality. If the device does need to be paired, then the device APIs will handle the pairing action behind the scenes so you do not need to integrate that functionality into your app. Your app will have no knowledge about whether or not a given device is paired or needs to be, but you will still be able to access the device and use its functionality.
+
+## Basic pairing
+
+
+Basic pairing is when your application uses the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs in order to attempt to pair the device. In this scenario, you are letting Windows attempt the pairing process and handle it. If any user interaction is necessary, it will be handled by Windows. You would use basic pairing if you need to pair with a device and there is not a relevant device API that will attempt automatic pairing. You just want to be able to use the device and need to pair with it first.
+
+In order to attempt basic pairing, you first need to obtain the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object for the device you are interested in. Once you receive that object, you will interact with the [**DeviceInformation.Pairing**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) property, which is a [**DeviceInformationPairing**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) object. To attempt to pair, simply call [**DeviceInformationPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/mt608800). You will need to **await** the result in order to give your app time to attempt to complete the pairing action. The result of the pairing action will be returned, and as long as no errors are returned, the device will be paired.
+
+If you are using basic pairing, you also have access to additional information about the pairing status of the device. For example you know the pairing status ([**IsPaired**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_ispaired)) and whether the device can pair ([**CanPair**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_canpair)). Both of these are properties of the [**DeviceInformationPairing**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) object. If you are using automatic pairing, you might not have access to this information unless you obtain the relevant [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) objects.
+
+## Custom pairing
+
+
+Custom pairing enables your app to participate in the pairing process. This allows your app to specify the [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) that are supported for the pairing process. You will also be responsible for creating your own user interface to interact with the user as needed. Use custom pairing when you want your app to have a little more influence over how the pairing process proceeds or to display your own pairing user interface.
+
+In order to implement custom pairing, you will need to obtain the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object for the device you are interested in, just like with basic pairing. However, the specific property your are interested in is [**DeviceInformation.Pairing.Custom**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx_custom). This will give you a [**DeviceInformationCustomPairing**](https://msdn.microsoft.com/library/windows/apps/BR225393custompairing) object. All of the [**DeviceInformationCustomPairing.PairAsync**](https://msdn.microsoft.com/library/windows/apps/BR225393custompairing_pairasync) methods require you to include a [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) parameter. This indicates the actions that the user will need to take in order to attempt to pair the device. See the **DevicePairingKinds** reference page for more information about the different kinds and what actions the user will need to take. Just like with basic pairing, you will need to **await** the result in order to give your app time to attempt to complete the pairing action. The result of the pairing action will be returned, and as long as no errors are returned, the device will be paired.
+
+To support custom pairing, you will need to create a handler for the [**PairingRequested**](https://msdn.microsoft.com/library/windows/apps/BR225393custompairing_pairingrequested) event. This handler needs to make sure to account for all the different [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) that might be used in a custom pairing scenario. The appropriate action to take will depend on the **DevicePairingKinds** provided as part of the event arguments.
+
+It is important to be aware that custom pairing is always a system-level operation. Because of this, when you are operating on Desktop or Windows Phone, a system dialog will always be shown to the user when pairing is going to happen. This is because both of those platforms posses a user experience that requires user consent. Since that dialog is automatically generated, you will not need to create your own dialog when you are opting for a [**DevicePairingKinds**](https://msdn.microsoft.com/library/windows/apps/Mt608808) of **ConfirmOnly** when operating on these platforms. For the other **DevicePairingKinds**, you will need to perform some special handling depending on the specific **DevicePairingKinds** value. See the sample for examples of how to handle custom pairing for different **DevicePairingKinds** values.
+
+## Unpairing
+
+
+Unpairing a device is only relevant in the basic or custom pairing scenarios described above. If you are using automatic pairing, your app remains oblivious to the pairing status of the device and there is no need to unpair it. If you do choose to unpair a device, the process is identical whether you implement basic or custom pairing. This is because there is no need to provide additional information or interact in the unpairing process.
+
+The first step to unpairing a device is obtaining the [**DeviceInformation**](https://msdn.microsoft.com/library/windows/apps/BR225393) object for the device that you want to unpair. Then you need to retrieve the [**DeviceInformation.Pairing**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.enumeration.deviceinformation.pairing.aspx) property and call [**DeviceInformationPairing.UnpairAsync**](https://msdn.microsoft.com/library/windows/apps/windows.devices.enumeration.deviceinformationpairing.unpairasync). Just like with pairing, you will want to **await** the result. The result of the unpairing action will be returned, and as long as no errors are returned, the device will be unpaired.
+
+## Sample
+
+
+To download a sample showing how to use the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) APIs, click [here](http://go.microsoft.com/fwlink/?LinkID=620536).
+
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

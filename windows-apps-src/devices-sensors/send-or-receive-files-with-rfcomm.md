@@ -1,35 +1,35 @@
 ---
-xx.xxxxxxx: YXYXYYYY-YYXX-YYYY-XXYX-XYXYXXYYYYXX
-xxxxx: Xxxxxxxxx XXXXXX
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xx xxxxxxxx xx Xxxxxxxxx XXXXXX xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx, xxxxx xxxx xxxxxxx xxxx xx xxx xx xxxx xx xxxxxxx x xxxx.
+ms.assetid: 5B3A6326-15EE-4618-AA8C-F1C7FB5232FB
+title: Bluetooth RFCOMM
+description: This article provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file.
 ---
-# Xxxxxxxxx XXXXXX
+# Bluetooth RFCOMM
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Xxxxxxxxx XXXx **
+** Important APIs **
 
--   [**Xxxxxxx.Xxxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
--   [**Xxxxxxx.Xxxxxxx.Xxxxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn263529)
+-   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
+-   [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529)
 
-Xxxx xxxxxxx xxxxxxxx xx xxxxxxxx xx Xxxxxxxxx XXXXXX xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx, xxxxx xxxx xxxxxxx xxxx xx xxx xx xxxx xx xxxxxxx x xxxx..
+This article provides an overview of Bluetooth RFCOMM in Universal Windows Platform (UWP) apps, along with example code on how to send or receive a file..
 
-## Xxxxxxxx
+## Overview
 
-Xxx XXXx xx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn263529) xxxxxxxxx xxxxx xx xxxxxxxx xxxxxxxx xxx Xxxxxxx.Xxxxxxx, xxxxxxxxx [**xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225459) xxx [**xxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225654). Xxxx xxxxxxx xxx xxxxxxx xx xxxxxxxx xx xxxx xxxxxxxxx xx [**xxxxxxxxxxx xxxx xxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208119) xxx xxxxxxx xx [**Xxxxxxx.Xxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR241791). Xxxxxxx Xxxxxxxxxxx Xxxxxxxx (XXX) xxxxxxxxxx xxxx x xxxxx xxx xx xxxxxxxx xxxx. Xxxxxxx, xxxx xxxxxx xxxxxxx xxxx xxxxxx xxxxxxxxxxxxxxx xx XXX xxxxxxxxxx xxxxx xxx xxxxx xx xxx xx xxx xxxxxxxx xxxx. Xxxxxxxxxxxx, xxxx xxxxxx xx XXXXXX xx xxx xxxxxxx xxxxxxxxxx XXX xxxxxxxxxx xx xxx. Xxx xxxxx xxxxxxx, xxxx XXX xxxxxx xxxxxx xx xxx xxxxxxxx XXX xxxx, xxxx xxxxx xxxxxxxxxx xxx xxxxxx xxx xxxxxxxxxxx xxxx xxxx.
+The APIs in the [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) namespace build on existing patterns for Windows.Devices, including [**enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) and [**instantiation**](https://msdn.microsoft.com/library/windows/apps/BR225654). Data reading and writing is designed to take advantage of [**established data stream patterns**](https://msdn.microsoft.com/library/windows/apps/BR208119) and objects in [**Windows.Storage.Streams**](https://msdn.microsoft.com/library/windows/apps/BR241791). Session Description Protocol (SDP) attributes have a value and an expected type. However, some common devices have faulty implementations of SDP attributes where the value is not of the expected type. Additionally, many usages of RFCOMM do not require additional SDP attributes at all. For these reasons, this API offers access to the unparsed SDP data, from which developers can obtain the information they need.
 
-Xxx XXXXXX XXXx xxx xxx xxxxxxx xx xxxxxxx xxxxxxxxxxx. Xxxxxxxx x xxxxxxx xxxxxxxxxx xx xxxxxx x YYY-xxx XXXX, xx xx xxxx xxxxxxxx xxxxxxxxx xx xxxxxx x YY- xx YY-xxx xxxxxxx. Xxx XXXXXX XXX xxxxxx x xxxxxxx xxx xxxxxxx xxxxxxxxxxx xxxx xxxxxx xxxx xx xxxxxxxxx xxx xxxxxxxx xx YYY-xxx XXXXx xx xxxx xx YY-xxx xxxxxxxx xxx xxxx xxx xxxxx YY-xxx xxxxxxxx. Xxxx xx xxx xx xxxxx xxx xxx XXX xxxxxxx xxxxxxxxx xxxx xxxxxxxxxxxxx xxxxxx xx x YY-xxx xxxxxxx xxx xxx xxxxxxxxxx xxx xxxxx xx xxxxxxxxx xxxxxxxxx.
+The RFCOMM APIs use the concept of service identifiers. Although a service identifier is simply a 128-bit GUID, it is also commonly specified as either a 16- or 32-bit integer. The RFCOMM API offers a wrapper for service identifiers that allows them be specified and consumed as 128-bit GUIDs as well as 32-bit integers but does not offer 16-bit integers. This is not an issue for the API because languages will automatically upsize to a 32-bit integer and the identifier can still be correctly generated.
 
-Xxxx xxx xxxxxxx xxxxx-xxxx xxxxxx xxxxxxxxxx xx x xxxxxxxxxx xxxx xx xxxx xxxx xxx xxx xx xxxxxxxxxx xxxx xx xxx xxx xx xxxxx xx xxx xxxxxxxxxx xxx xxxxxxxxx. Xxxx xxxxxx xxx xxxxxxxx xxxxxx xxxxxxxxx xxxx xx xxxxxxx xx xxxxxxxxxx xxxxxxxx xx xxxxxxxx, xxx xxxxxxx xxxxxxxxxxxxxxx, xxxxxxx xxxxxxxxx xxx xxxx xx xxx xxx xxxxx x xxxxxxxx xxx. Xxx xxx [**XxxxxxXxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn297315) xxx xxxxxx xxxxxxxxx xxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn297337) xxx xxxxxxx xxxxxxxxxxxxxxx. Xxxx xxxx xxxxx xxxxxxxxxx xxxxx xxxxxxxxx xxx xxxxxx xx xxxx xxx xxx xxx xxx xx xxx xxxxxxxxxx, xxx xxx xxx xxxxxxxx xx xxxxx xxxxxxxxxx xxxxxxxxx xx xxxxxxxx xxxxxxxxxxxxxxx.
+Apps can perform multi-step device operations in a background task so that they can run to completion even if the app is moved to the background and suspended. This allows for reliable device servicing such as changes to persistent settings or firmware, and content synchronization, without requiring the user to sit and watch a progress bar. Use the [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297315) for device servicing and the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn297337) for content synchronization. Note that these background tasks constrain the amount of time the app can run in the background, and are not intended to allow indefinite operation or infinite synchronization.
 
-## Xxxx x xxxx xx x xxxxxx
+## Send a file as a client
 
-Xxxx xxxxxxx x xxxx, xxx xxxx xxxxx xxxxxxxx xx xx xxxxxxx xx x xxxxxx xxxxxx xxxxx xx x xxxxxxx xxxxxxx. Xxxx xxxxxxxx xxx xxxxxxxxx xxxxx:
+When sending a file, the most basic scenario is to connect to a paired device based on a desired service. This involves the following steps:
 
--   Xxx xxx **XxxxxxXxxxxxXxxxxxx.XxxXxxxxxXxxxxxxx\*** xxxxxxxxx xx xxxx xxxxxxxx xx XXX xxxxx xxxx xxx xx xxxx xx xxxxxxxxxx xxxxxx xxxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxxx.
--   Xxxx xx xxxxxxxxxx xxxxxx, xxxxxx xx [**XxxxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn263463), xxx xxxx xxx XXX xxxxxxxxxx xx xxxxxx (xxxxx [**xxxxxxxxxxx xxxx xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208119) xx xxxxx xxx xxxxxxxxx'x xxxx).
--   Xxxxxx x xxxxxx xxx xxx xxx [**XxxxxxXxxxxxXxxxxxx.XxxxxxxxxxXxxxXxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname.aspx) xxx [**XxxxxxXxxxxxXxxxxxx.XxxxxxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename.aspx) xxxxxxxxxx xx [**XxxxxxXxxxxx.XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701504) xx xxx xxxxxx xxxxxx xxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxxxx.
--   Xxxxxx xxxxxxxxxxx xxxx xxxxxx xxxxxxxx xx xxxx xxxxxx xx xxxx xxxx xxx xxxx xxx xxxx xx xx xxx xxxxxx'x [**XxxxxxXxxxxx.XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226920) xx xxx xxxxxx.
+-   Use the **RfcommDeviceService.GetDeviceSelector\*** functions to help generate an AQS query that can be used to enumerated paired device instances of the desired service.
+-   Pick an enumerated device, create an [**RfcommDeviceService**](https://msdn.microsoft.com/library/windows/apps/Dn263463), and read the SDP attributes as needed (using [**established data helpers**](https://msdn.microsoft.com/library/windows/apps/BR208119) to parse the attribute's data).
+-   Create a socket and use the [**RfcommDeviceService.ConnectionHostName**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionhostname.aspx) and [**RfcommDeviceService.ConnectionServiceName**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.devices.bluetooth.rfcomm.rfcommdeviceservice.connectionservicename.aspx) properties to [**StreamSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/Hh701504) to the remote device service with the appropriate parameters.
+-   Follow established data stream patterns to read chunks of data from the file and send it on the socket's [**StreamSocket.OutputStream**](https://msdn.microsoft.com/library/windows/apps/BR226920) to the device.
 
 ```csharp
 Windows.Devices.Bluetooth.RfcommDeviceService _service;
@@ -226,15 +226,15 @@ bool IsCompatibleVersion(RfcommDeviceService^ service)
 }
 ```
 
-## Xxxxxxx Xxxx xx x Xxxxxx
+## Receive File as a Server
 
-Xxxxxxx xxxxxx XXXXXX Xxx xxxxxxxx xx xx xxxx x xxxxxxx xx xxx XX xxx xxxxxx xx xxx xxxxx xxxxxxx.
+Another common RFCOMM App scenario is to host a service on the PC and expose it for other devices.
 
--   Xxxxxx x [**XxxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn263511) xx xxxxxxxxx xxx xxxxxxx xxxxxxx.
--   Xxx xxx XXX xxxxxxxxxx xx xxxxxx (xxxxx [**xxxxxxxxxxx xxxx xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208119) xx xxxxxxxx xxx xxxxxxxxx’x Xxxx) xxx xxxxxx xxxxxxxxxxx xxx XXX xxxxxxx xxx xxxxx xxxxxxx xx xxxxxxxx.
--   Xx xxxxxxx xx x xxxxxx xxxxxx, xxxxxx x xxxxxx xxxxxxxx xx xxxxx xxxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxx.
--   Xxxx x xxxxxxxxxx xx xxxxxxxx, xxxxx xxx xxxxxxxxx xxxxxx xxx xxxxx xxxxxxxxxx.
--   Xxxxxx xxxxxxxxxxx xxxx xxxxxx xxxxxxxx xx xxxx xxxxxx xx xxxx xxxx xxx xxxxxx'x XxxxxXxxxxx xxx xxxx xx xx x xxxx.
+-   Create a [**RfcommServiceProvider**](https://msdn.microsoft.com/library/windows/apps/Dn263511) to advertise the desired service.
+-   Set the SDP attributes as needed (using [**established data helpers**](https://msdn.microsoft.com/library/windows/apps/BR208119) to generate the attribute’s Data) and starts advertising the SDP records for other devices to retrieve.
+-   To connect to a client device, create a socket listener to start listening for incoming connection requests.
+-   When a connection is received, store the connected socket for later processing.
+-   Follow established data stream patterns to read chunks of data from the socket's InputStream and save it to a file.
 
 ```csharp
 Windows.Devices.Bluetooth.RfcommServiceProvider _provider;
@@ -357,4 +357,8 @@ void OnConnectionReceived(
 }
 ```
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

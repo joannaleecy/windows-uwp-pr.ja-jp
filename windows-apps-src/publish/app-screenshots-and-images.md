@@ -1,101 +1,105 @@
 ---
-Xxxxxxxxxxx: Xxxx xxx xxxxx xx xxxxxxx xxxxxxx xxxxx, xxxxxxxxxxx, xxx xxxxxx.
-xxxxx: Xxx xxxxxxxxxxx xxx xxxxxx
-xx.xxxxxxx: XYYYXXYX-XYYX-YXYY-YYXX-YXXYYXXYYYXY
+Description: アプリには、さまざまなロゴ、スクリーンショット、画像を含める必要があります。
+title: アプリのスクリーンショットと画像
+ms.assetid: D216DD2B-F43D-4D26-82EE-0CD34DB929D8
 ---
 
-# Xxx xxxxxxxxxxx xxx xxxxxx
+# アプリのスクリーンショットと画像
 
 
-Xxxx xxx xxxxx xx xxxxxxx xxxxxxx xxxxx, xxxxxxxxxxx, xxx xxxxxx. Xxxx xx xxxxx xxx xxxxxxxx, xxx xxxx xxx xxxxxxxx. Xxxx xx xxxx xxxx xxxx xxxxxx xxx xxx xx xxx xxxx xxxx xx xxxxx xxx xxxxxxxxx xxxx xxx. Xxxx-xxxxxxxx xxxxxx xxx xx x xxx xxxx xx xxxxxx xxxx xxx xxxxxx xx xxxxxxxxx.
+アプリには、さまざまなロゴ、スクリーンショット、画像を含める必要があります。 これらの画像には、必須の画像と省略可能な画像があります。 画像は、アプリを説明するための主な方法の 1 つであることを考慮してください。 適切にデザインされた画像は、アプリをユーザーにアピールする際に非常に役立ちます。
 
-Xxxxxx xxx [xxx xxxxxxxxxx xxxxxxx](app-submissions.md), xxx xxxxxxx xxxx [xxxxxxxxxxx](#screenshots) xxx [xxxxxxxxxxx xxxxxxx](#promotional-artwork) xx xxx [Xxxxxxxxxxxx](create-app-descriptions.md) xxxx. Xxxxx xxxxxx xxx xxxx xx xxxx xxxxxxx xxxx xxx xx xxx Xxxxx.
+[アプリの申請プロセス](app-submissions.md) 中、[説明](create-app-descriptions.md) 手順で [スクリーンショット](#screenshots) と [プロモーション用のアートワーク](#promotional-artwork) を指定します。 これらの画像は、ストアでアプリを表示するために使われます。
 
-Xxx Xxxxx xxxx xxxx xxxx xxx'x xxxx xxx xxxxx xxxxxx xxxx xxx xxxxxxx xx xxxx xxx'x xxxxxxx. Xxx xxx [Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx](https://msdn.microsoft.com/library/windows/apps/mt186449) xx xxxxxxxxx xx xxx'xx xxxxxxx xxx xxxxxxxx xxxxxx.
+ストアでは、アプリのタイルと、アプリのパッケージに含める他の画像も使われます。 [Windows アプリ認定キット](https://msdn.microsoft.com/library/windows/apps/mt186449) を実行して、必須の画像が不足していないかどうかを確認します。
 
-> **Xxxx**  Xxx xxx xxxxxx xxx xxxx xx xxx Xxxxx, xx xxx xxxxxxxx'x Xxxxx xxxxxx, xxx xxxxxx xxx xxx xxxxxx xxx xxxx, xxxxxxxxx xx xxx xxxxxxxx'x xxxxxxxxx xxxxxx xxx xxxxx xxxxxxx.
+> **注**  ストア、ユーザーのスタート画面、アプリ自体の中で画像がどのように使われるかは、ユーザーのオペレーティング システムやその他の要因によって異なる場合があります。
 
 
-## Xxxxxx xxxxxxxx xxxxxx xxx xxxxxxxxxx xxxxxxx
+## 申請プロセス中に指定する画像
 
-Xxxx xxxxxxxx xxxx xxx'x xxxxxxxxxxx xxxx, xxx xxxx xxx xxxxxx xx xxxxxxx xxxxxxxx xxxxxxxxxxx (xxx xxxxxxxxxx xx xxxxxxxx) xxx xxxxxxxxxxx xxxxxxx. Xxxxx xxxxxx xxx xxx xxxxx xxxx xxxx xxx'x xxxxxxx; xxx'xx xxxx xx xxxxxxx xxxx xx xxx **Xxxxxxxxxxx** xxxx xxx xxxx xx xxxx xxxxxxxxx.
+アプリの説明情報を入力するとき、複数のスクリーンショット (1 つのスクリーンショットは必須) とプロモーション用のアートワークを指定するオプションがあります。 これらの画像は、アプリのパッケージからは取得されません。言語ごとに **[説明]** 手順で指定する必要があります。
 
-Xxx xxxxxxxxx xxxxx xxxxx xxx xxxxxxx xxxxxx xxx xxx xxxxxx xxx xxxxxxxx xxx xxxx xxx xxxx. Xxxx xxxxxxx xxx xxxxxxxx xx xxx xxxxxxxx xxxxx.
+次の表に、アップロードできるさまざまな画像の一覧を示し、その用途について説明します。 詳しくは、後の各セクションをご覧ください。
 
-| Xxxxx                                                       | Xxxxx xxxx                           | Xxxxx                                                                                                                                                                           | Xxxx xx xxxxxxx                                                                                                                                            |
+| 画像                                                       | ピクセル サイズ                           | 用途                                                                                                                                                                           | 含める場合                                                                                                                                            |
 |-------------------------------------------------------------|--------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Xxxxxxx xxxxxxxxxxx](#screenshots)                         | YYY x YYYY xx xxxxxx                 | Xxxxxxxxx xx xxxx xxx'x Xxxxx xxxxxxx xxxx xxxxxx xx x xxxxxxx xxxxxx.                                                                                                          | Xxxxxxxxxxx xxx xxx xxxx, xxxxxxxxxx xx xxxx xxx xx xxxxxxxx xxx xxx xx xxxxxxx xxxxxxx. (Xx xxxxx xxx xxxxxxxxxx, xxxxxx xxxxxxx xx xxxxxx, xx xxxxxxxx.) |
-| [Xxxxxx xxxxxxxxxxx](#screenshots)                          | YYY x YYYY, YYY x YYYY, xx YYY x YYY | Xxxxxxxxx xx xxxx xxx'x Xxxxx xxxxxxx xxxx xxxxxx xx x xxxxxx xxxxxx.                                                                                                           | Xxxxxxxxxxx xxx xxx xxxx, xxxxxxxxxx xx xxxx xxx xx xxxxxxxx xxx xxx xx xxxxxx xxxxxxx. (Xx xxxxx xxx xxxxxxxxxx, xxxxxx xxxxxxx xx xxxxxx, xx xxxxxxxx.)  |
-| [Xxx xxxx xxxx](#app-tile-icon)                             | YYY x YYY                            | Xxxxxxxxx xx xxxx xxx'x xxxx xx xxx Xxxxx xxx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx (xxx, xx xxx xxxx xxxx xxxxxxxx xxxxxxxxx Xxxxxxx Xxxxx Y.Y xx xxxxxxx, xx xxx Xxxxx xx Xxxxxxx YY) | Xxxxxxxx xxx xxxxxx xxxxxxx xx xxx Xxxxx xx xxxx xxx xxxxxxx Xxxxxxx Xxxxx Y.Y xx xxxxxxx.                                                                 |
-| [Xxxxxxxxxxx xxxxx: Xxxxxxx YY Xxxxxxxxx](#promotional-artwork) | YYYY x YYYY                          | Xxxx xxx xxxxxxxxxxx xxxxxxx xx xxx Xxxxx xx Xxxxxxx YY.                                                                                                                        | Xxxxxxxxxxx xxx xxx xxxx, xxxxxxxxxx xxxxx xxxx XXX xxxxxxxx xxxxxxxxx Xxxxxxx YY xxxxxxxxx.                                                               |
-| [Xxxxxxxxxxx xxxxxx: Xxxxxxx Xxxxx Y.Y xxx xxxxxxx](#promotional-artwork) | YYYY x YYY, YYY x YYY                | Xxxx xxx xxxxxxxxxxx xxxxxxx xx xxx Xxxxx xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx.                                                                                                     | Xxxxxxxxxxx xxx xxx xxxx xxxxxxxxx Xxxxxxx Xxxxx Y.Y xx xxxxxxx.                                                                                           |
-| [Xxxxxxxxxxx xxxxx: Xxxxxxx Y.Y xxx xxxxxxx](#promotional-artwork)        | YYY x YYY                            | Xxxx xxx xxxxxxxxxxx xxxxxxx xx xxx Xxxxx xx Xxxxxxx Y.Y.                                                                                                                       | Xxxxxxxxxxx xxx xxx xxxx xxxxxxxxx Xxxxxxx Y.Y xx xxxxxxx.                                                                                                 |
+| [デスクトップのスクリーンショット](#screenshots)                         | 768 x 1366 以上                 | デスクトップ デバイスで表示する場合、ストアのアプリの内容ページに表示されます。                                                                                                          | すべてのアプリについて、特にアプリがデスクトップ デバイス用である場合にお勧めします。 (モバイルまたはデスクトップのスクリーンショットが少なくとも 1 つ必要です)。 |
+| [モバイルのスクリーンショット](#screenshots)                          | 768 x 1280、720 x 1280、または 480 x 800 | モバイル デバイスで表示する場合、ストアのアプリの内容ページに表示されます。                                                                                                           | すべてのアプリについて、特にアプリがモバイル デバイス用である場合にお勧めします。 (モバイルまたはデスクトップのスクリーンショットが少なくとも 1 つ必要です)。  |
+| [アプリのタイル アイコン](#app-tile-icon)                             | 300 x 300                            | Windows Phone 8.1 以前用のストアでアプリのアイコンとして表示されます (また、Windows Phone 8.1 以前を対象とするパッケージしかない場合に、Windows 10 のストアで表示されます)。 | アプリが Windows Phone 8.1 以前をターゲットにしている場合、ストア内での適切な表示のために必要です。                                                                 |
+| [プロモーション用の画像: Windows 10 スポットライト](#promotional-artwork) | 2400 x 1200                          | Windows 10 のストアでプロモーション用のレイアウトに使用されます。                                                                                                                        | すべてのアプリについて、特に Windows 10 ユーザーをターゲットとしている UWP パッケージを含むアプリについてお勧めします。                                                               |
+| [プロモーション用の画像: Windows Phone 8.1 以前](#promotional-artwork) | 1000 x 800、358 x 358                | Windows Phone 8.1 以前のストアでプロモーション用のレイアウトに使用されます。                                                                                                     | Windows Phone 8.1 以前をターゲットとするすべてのアプリについてお勧めします。                                                                                           |
+| [プロモーション用の画像: Windows 8.1 以前](#promotional-artwork)        | 414 x 180                            | Windows 8.1 のストアでプロモーション用のレイアウトに使用されます。                                                                                                                       | Windows 8.1 以前をターゲットとするすべてのアプリについてお勧めします。                                                                                                 |
  
 
-## Xxxxxxxxxxx
+## スクリーンショット
 
-Xxxxxxxxxxx xxx xxxxxx xx xxxx xxx xxxx xxx xxxxxxxxx xx xxxx xxxxxxxxx xx xxxx xxx'x Xxxxx xxxxxxx.
+スクリーンショットは、アプリのストアの内容でユーザーに表示されるアプリの画像です。
 
-Xxx'xx xxx xxxxxxxx xxxxxx xx xxx **Xxxxxxxxxxx** xxxx xxxxx xxx xxxx xxx xxxxxx xx xxxxxxx xxxxxxxxxxx xxx xxxxxxxxx xxxxx xx xxxxxxx. Xxxx xxx xxxxxxxxxx xx xxxxxxxx xxx xxxx xxxxxxxxxx (xxxxxx xxx xxx xxxxxxx xxxxxxx; xx xx Y xxxxxx xxxxxxxxxxx xxx xx xx Y xxxxxxx xxxxxxxxxxx). Xxx xxx xxx xxxxxxxx xx xxxxxxx xxxxxxxx xxxxxxxxxxx xxx xxxx xxxxxx xxxx, xxx xx xxxxxxxxx xxxxxxxxx xxxxxxxxxxx xx xx xxxx xxxxxx xxxxx xx xxxx xxx xxxxxxxx, xx xxxx xxxxxxxxx xxxx xxx xxxxxx xxxx xxxxxxxx xxx xxx xxx xxxx xxxx xx xxxxx xxxxxx.
+**[説明]** ページには、デバイスの種類に合わせてスクリーンショットを指定する複数のフィールドが表示されます。 申請時に必要なスクリーンショットは 1 つだけです (モバイル用のスクリーンショットとして最大 8 個、デスクトップ用のスクリーンショットとして最大 9 個の画像を指定することができます)。 デバイスの種類ごとに別のスクリーンショットを指定する必要はありませんが、ユーザーが使っているデバイスに表示されるのと同じような画像が表示されるように、アプリがサポートするデバイスの種類の分だけスクリーンショットを指定することをお勧めします。
 
-> **Xxxx**  Xxxxxxxxx Xxxxxx Xxxxxx xxxxxxxx x [xxxx xx xxxx xxx xxxxxxx xxxxx xxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=221135).
-
-
-Xxxx xxxxxxxxxx xxxx xx x .xxx xxxx xx xxxxxx xxxxxxxxx xx xxxxxxxx xxxxxxxxxxx, xxx xxx xxxx xxxx xxx'x xx xxxxxx xxxx Y XX.
-
-Xxx xxxxxx xxxxxxxxxxx, xxxx xxxxxxxxxx xxxx xx xxxxxx YYY x YYYY, YYY x YYYY, xx YYY x YYY xxxxxx. Xxx xxxxxxx, xxxx xxxxxxxxxx xxxxxx xx xx xxxxx YYY x YYYY xxxxxx xxx xxxx xxxxxxx.
-
-Xxx xxx xxxxxxx x xxxxx xxxxxxx xxxx xxxxxxxxx xxxx xxxxxxxxxx xx YYY xxxxxxxxxx xx xxxx.
-
-> **Xxxx**  Xx xxxx xxx [xxxxxxxx xxxxxxxx xxxxxxxxx](supported-languages.md), xxx'xx xxxx x **Xxxxxxxxxxx** xxxx xxx xxxx xxxxxxxx. Xxx'xx xxxx xx xxxxxx xxxxxx xxx xxxx xxxxxxxx xxxxxxxxxx, xxxxxxxxx xxxxxxxx xx xxx xxx xxxx xxxxxxxx.
+> **注**  Microsoft Visual Studio には、[このようなスクリーンショットをキャプチャするツール](http://go.microsoft.com/fwlink/p/?LinkId=221135) が用意されています。
 
 
-## Xxx xxxx xxxx
+各スクリーンショットは .png ファイルでなければならず、横方向でも縦方向でもかまいません。ファイル サイズは 2 MB 以下にする必要があります。
 
-Xxxx xx xxx xxxxxxxx xxx xxx xxxxxxxxxxx, xxx xx xxxxxxxx xxxxxxxxxxx xx xxxx xxx xxxx xx Xxxxxxx Xxxxx Y.Y xx xxxxxxx. Xxx xxx xxxx xxxx xx xxxx xxxx xxxxxxxxxx xxxx xxx'x xxxxxxx xx xxxxxxxxx xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx. Xx xxx xxx'x xxxxxxx xxxx xxxxx, xxxxxxxxx xx Xxxxxxx Xxxxx Y.Y xx xxxxxxx xxxx xxx x xxxxx xxxx xxxx xxxx xxx'x xxxxxxx. (Xxxx xxxx xxxxxxx xx xxxxxxxxx xx Xxxxxxx YY, xx xxxx xxx xxxx xxx xxxxxxxx xxxxxxxxx Xxxxxxx Xxxxx Y.Y xx xxxxxxx.)
+モバイル用のスクリーンショットの場合、各スクリーンショットは 768 x 1280、720 x 1280、480 x 800 ピクセルのいずれかにする必要があります。 デスクトップ用の場合、最適な表示のために、各スクリーンショットは 768 x 1366 ピクセル以上にする必要があります。
 
-Xxx xxx xxxx xxxx xxxx xx x .xxx xxxx xxxxxxxxx YYY x YYY xxxxxx.
+200 文字以内で各スクリーンショットを説明する短い字幕を付けることができます。
 
-## Xxxxxxxxxxx xxxxxxx
-
-
-Xxx Xxxxxxx Xxxxx xxxxxxxxx xxxx xxxx xxxxxxxxx xxxxxx xx xxxxxxxx xxxx xx xxx Xxxxx. Xxxxxxxxxx xxxxxxxxxxx xxxxxxx xxxx xxx Xxxxxxx Xxxxx xxxx xxxxxxxx xxxx xxx xx xxxxxxxxxxx xxxxxxx.
-
-> **Xxxxxxxxx**  Xxxxxxxxx xxxxxxxxxxx xxxxxx xxx xxxx xxx xxxxx'x xxxxxxxxx xxxx xxxx xxx xxxx xx xxxxxxxx, xxx xxx xxxxxxxxx xxxx xxxxx xxxx xx xxx'x xx xxxxxxxxxx xxx xxx xxxxxxxxxxx xxxxxxxxxxxxx. (Xxx [Xxxxxx xxxx xxx xxxx xx xxxxxxx](make-your-app-easier-to-promote.md) xxx xxxx xxxxxxxxxxx.)
+> **注**  アプリが [複数の言語をサポートする](supported-languages.md) 場合、言語ごとに **[説明]** ページがあります。 言語ごとに別個に画像をアップロードする必要があり、使用する字幕も言語ごとに入力します。
 
 
-Xxx xxx xxxx xx xxxxxx xxxxxxxxxxx xxxxxxx xx xxxxxxxxx xxxxx, xxxxxxxxx xx xxxxx XX xxxxxxx(x) xxxx xxx xxxxxxx. Xxx xxx xxxxx, xxxxxx xxxx xx xx .xxx xxxxxx.
+## アプリのタイル アイコン
 
-Xxxx xxx xxxx xxxx xx xxxx xx xxxx xxxx xxxxxxxxx xxxx xxxxxxxxxxx xxxxxxx:
+これはすべての申請で必要というわけではありませんが、アプリが Windows Phone 8.1 またはそれ以前で実行される場合は、含めることを強くお勧めします。 アプリのタイル アイコンは、Windows Phone 8.1 以前でアプリの内容ページをユーザーに表示するときに使用されます。 この画像が提供されない場合、Windows Phone 8.1 以前のユーザーがアプリの内容ページを表示すると、空白のアイコンが表示されます (これは、アプリに Windows Phone 8.1 以前のみをターゲットにするパッケージしかない場合に、Windows 10 のユーザーにも適用されます)。
 
--   Xxxxxx xxxxxxx xxxxxx xxxx xxxxxx xx xxx xxx xxx xxxxx xxxxxxxxxxx xxx xxxxxxxxxxxxxxx. Xxxxx xxxxx xxxxxxxxxxx xx xxxxxxx xxxxxxx.
--   Xxx'x xxxxxxx xxxx (xxxxx xxxx xxxx xxxxxxxx).
--   Xxxxxxxx xxxxx xxxxx xx xxx xxxxx.
--   Xxxxx xxxxxxx xxxx xxx'x XX, xxx xx xxx xxx xxx xxxxxx-xxxxxxxx xxxxxxx.
--   Xxxxx xxxxxxxxx xxx xxxxxxxx xxxxxx, xxxxx, xx xxxxxxxxx xxxxxxx.
--   Xxx'x xxxxxxx xxxxxx xx xxxxxxxxxxx xxxxxxxx, xxxxxx, xxxxxxxx, xxxxxxxx, xxxxx, xxxxxxx, xx xxxxxxx.
--   Xxx'x xxx xxxxxxx xxxxxxxx xx xxx xxxxxx xx xxxxxxxxx xxxxxxxx xxx xxxx.
+アプリのタイル アイコンは、サイズが 300 x 300 ピクセルの .png ファイルにする必要があります。
 
-### Xxx Xxxxxxx YY: YYYY x YYYY
-
-Xx xxx Xxxxx xx Xxxxxxx YY, xxx xxx xx xxx Xxxx xxx Xxxxx xxxxxxxx xxxxx xxxxxxxx x xxxxxxxx Xxxxxxxxx xxxxx xx xxxxxxx xxxxxxx. Xx xxxx xxxx xxx xxxxxxxx xxx xxxx Xxxxxxxxx xxxxxxxxx, xx xxxx xx xxxxxx x YYYY x YYYY xxxxx.
-
-Xxxx xxxxxxxxx xxxx xxxxx, xxxx xx xxxx xxxx xx xx xxx xx xxx xxx Xxxxxxxxx, xx'xx xxxxx x xxxxxxxx xxxx xxx xxxxxx xxxxx xx xxxx xx xxx xxxxxxx xxxxxxx xxxxxxxxx xxxx xxxx xxx xxxxx. Xxxxxxx xx xxxx, xxxx xxxx xxx xxxxx xxxxxxx xxxx xxx xxx xxxxxx xxxxxxxx xx xxx xxxxxx xxxxx. Xxxxxxxxxxxx, xx xxx xxxx xxxx xxxxx, xx xxxxx xxxx xxx'x xxxxxxxx xxx xxx xxxx xxxxxxxxx xxxxxxx xx xxx xxxxxx.
-
-Xxx xxxxx xxxxx xxxxx xxx xxx xxxxxxxxxxx xx xxxx xx xxxx. Xxx "xxxx xxxx" xx xxx xxxxxx xxxx xx xxxxxxxxx xxxx xx xx xxxx xxx xxxxx. Xxx "xxxxxxx xxxx xxxx" xx xxxxx xxxx xxx x xxxxxxxx xxx xxxxxx.
-
-![xxxxxxxxxx xxx xxxxxxxxx xxxxx](images/spotlight1.jpg)
-Xxx xxxxxxx xxxxx xxxxx x xxxx-xxxxxxxx Xxxxxxxxx xxxxx xxxxx xxxxx xxxxx xxxxxxxxxx xx xxxx. (Xxx xxxxx xx xxx xxxxx xxx xx xxxxxxxxxx xxx xxx xxxxxxx xxxx xxxx xxx xxxxxxxxxx xxxxx, xxx xxxxx xxx xx xxxxxxxx xx xxx xxxxx xxxxx.)
-
-![xxxx-xxxxxxxx xxxxxxxxx xxxxx](images/spotlight2.jpg)
-### Xxx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx: YYYY x YYY, YYY x YYY
-
-Xx xxx Xxxxx xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx, xxx xxxxx xxxxx xxx xx xxxx xx xxxxxxxxxxx xxxxxxx: YYYY x YYY xxxxxx xxx YYY x YYY xxxxxx. Xx xxxx xxx xxxx xx Xxxxxxx Xxxxx Y.Y xx xxxxxxx, xx xxxxxxxxx xxxxxxxxx xxxxxx xx xxxx xx xxxxx xxxxx xxx xxxxxxxxxxx xxxxxxxxxxxxx.
-
-> **Xxx**   Xxxx xx xxxx xx xxxxxxx x YYY x YYY [xxx xxxx xxxx xxxxx](#app-tile-icon) xx xxxxxx xxxx xxxx xxx xxxx xxx xxxxxx xx xxx Xxxxx xxxx x xxxxx xxxx.
+## プロモーション用のアートワーク
 
 
-### Xxx Xxxxxxx Y.Y xxx xxxxxxx: YYY x YYY
+Windows ストアの編集チームは、さまざまな画像を使ってストアにアプリを展示します。 プロモーション用のアートワークを提出することによって、Windows ストア チームは、プロモーション用のレイアウトにアプリを含めることを検討できます。
 
-Xx xxx Xxxxx xx Xxxxxxx Y.Y xxx xxxxxxx, xxxxxxxxxxx xxxxxxx xxx xxx xx xxxxx xx xxx YYY x YYY xxxxx xxxx. Xx xxxx xxx xxxx xx Xxxxxxx Y.Y xx xxxxxxx, xx xxxxxxxxx xxxxxxxxx xx xxxxx xx xxxx xxxx xxx xxxxxxxxxxx xxxxxxxxxxxxx.
+> **重要**  アプリのプロモーション用の画像を提供しても、アプリが取り上げられると保証されるわけではありませんが、画像の提供がなければプロモーションの機会があっても一切、検討対象にはなりません (詳しくは、「[アプリの販売促進を容易にする方法](make-your-app-easier-to-promote.md)」をご覧ください)。
+
+
+アプリがターゲットとしている OS バージョンに応じて、さまざまなサイズのプロモーション用のアートワークを提出することもできます。 画像はどのサイズも .png 形式である必要があります。
+
+プロモーション用のアートワークをデザインするときに念頭に置く必要のあるヒントを次に示します。
+
+-   アプリに関連し、認識と差別化を促進する動的な画像を選びます。 ありきたりの写真や一般的な視覚効果は使わないようにします。
+-   テキスト (ブランドを除く) を含めないでください。
+-   画像内の空白領域を最小限に抑えます。
+-   アプリの UI の表示やデバイスに固有の画像の使用は避けます。
+-   政治的および国家的なテーマ、旗、または宗教的なシンボルを避けます。
+-   無神経なジェスチャ、ヌード、ギャンブル、通貨、麻薬、タバコ、またはアルコールの画像を含めないでください。
+-   閲覧者に向けた武器や過剰な暴力や流血の画像を使わないでください。
+
+### Windows 10 の場合: 2400 x 1200
+
+Windows 10 のストアでは、アプリやゲームのカテゴリ ページの上部に、コンテンツを宣伝するための回転するスポットライト画像の機能があります。 アプリをこのスポットライトに配置される対象にするには、2400 x 1200 の画像を提出する必要があります。
+
+画像をデザインするときには、スポットライトで使用する場合、画像に重ねてマーケティング用のテキストを読みやすく表示するために、下部の 3 分の 1 にグラデーションが適用されることに留意してください。 このため、下部の 3 分の 1 には、テキストや主要な視覚要素を配置しないでください。 さらに、画像はトリミングされる可能性があるため、アプリのブランドや最も重要な詳細は中央に配置します。
+
+次の図は、留意する必要がある主な縦横比を示しています。 中央の "セーフ ゾーン" は、画像がトリミングされた場合でも表示されます。 "動的テキスト領域" には、テキストとグラデーションが表示される場合があります。
+
+![スポットライトの画像のガイドライン](images/spotlight1.jpg)
+次の例は、これらのガイドラインを念頭に置いて適切にデザインされたスポットライト画像を示しています (画像上の線は、アートワークが指定された領域でどのように表示されるかを示すもので、最終的な画像には含まれません)。
+
+![適切にデザインされたスポットライト画像](images/spotlight2.jpg)
+### Windows Phone 8.1 以前の場合: 1000 x 800、358 x 358
+
+Windows Phone 8.1 以前のストアでは、プロモーション用のレイアウトで 1000 x 800 ピクセルと 358 × 358 ピクセルの 2 つのサイズの画像を使うことができます。 アプリが Windows Phone 8.1 以前で実行される場合は、プロモーションの対象として検討されるように、これらの両方のサイズの画像を提供することをお勧めします。
+
+> **ヒント**   また、ストア内でアプリが空白のアイコンで表示されないように、300 x 300 の [アプリのタイル アイコンの画像](#app-tile-icon) を必ず提供してください。
+
+
+### Windows 8.1 以前の場合: 414 x 180
+
+Windows 8.1 以前のストアでは、プロモーション用のレイアウトに 414 x 180 ピクセル サイズの画像が使用される可能性があります。 アプリが Windows 8.1 以前で実行される場合は、プロモーションの対象として検討されるように、このサイズの画像を提供することをお勧めします。
+
+
 <!--HONumber=Mar16_HO1-->
+
+

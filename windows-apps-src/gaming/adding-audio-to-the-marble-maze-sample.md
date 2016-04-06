@@ -1,64 +1,64 @@
 ---
-xxxxx: Xxxxxx xxxxx xx xxx Xxxxxx Xxxx xxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxxx xxxxxxxxx xxx xxx xxxxxxxxx xx xxxxxxxx xxxx xxx xxxx xxxx xxxxx xxx xxxxx xxx Xxxxxx Xxxx xxxxxxx xxxxx xxxxxxxxx.
-xx.xxxxxxx: YYxYYxYx-xxYx-YYxY-xYYx-YYxYYYYxYxYY
+title: Marble Maze のサンプルへのオーディオの追加
+description: このドキュメントでは、オーディオを扱う際に考慮する必要のある主な手法について説明すると共に、それらが Marble Maze でどのように適用されているかを紹介します。
+ms.assetid: 77c23d0a-af6d-17b5-d69e-51d9885b0d44
 ---
 
-# Xxxxxx xxxxx xx xxx Xxxxxx Xxxx xxxxxx
+# Marble Maze のサンプルへのオーディオの追加
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
-Xxxx xxxxxxxx xxxxxxxxx xxx xxx xxxxxxxxx xx xxxxxxxx xxxx xxx xxxx xxxx xxxxx xxx xxxxx xxx Xxxxxx Xxxx xxxxxxx xxxxx xxxxxxxxx. Xxxxxx Xxxx xxxx Xxxxxxxxx Xxxxx Xxxxxxxxxx xx xxxx xxxxx xxxxxxxxx xxxx xxxx, xxx XXxxxxY xx xxx xxx xxxx xxxxx xxx xx xxxxx xxxxxxx xx xxxxx.
+このドキュメントでは、オーディオを扱う際に考慮する必要のある主な手法について説明すると共に、それらが Marble Maze でどのように適用されているかを紹介します。 Marble Maze は、Microsoft メディア ファンデーションを使ってオーディオ リソースをファイルから読み込みます。また、オーディオのミキシングと再生、効果の適用は、XAudio2 を使って行います。
 
-Xxxxxx Xxxx xxxxx xxxxx xx xxx xxxxxxxxxx, xxx xxxx xxxx xxxx-xxxx xxxxxx xx xxxxxxxx xxxx xxxxxx, xxxx xx xxxx xxx xxxxxx xxxx x xxxx. Xx xxxxxxxxx xxxx xx xxx xxxxxxxxxxxxxx xx xxxx Xxxxxx Xxxx xxxx x xxxxxx, xx xxxx, xxxxxx xx xxxxxxxx xxx xxxxx xx x xxxxxx xxxx xx xxxxxxx. Xxx xxxxxx xxxxxx xxxxxxxxxxxxxx xxxxxx xxxxxx xx xxxxx xxx xxxx xxxxxxx xxx xxxxxx xx xxxxx xxxxx; xxxxxx xxx xxxxxxx xxx xxxxx xxx xxxx xxxxxx xx xxxxxx xxxxx.
+Marble Maze は、バックグラウンドで再生する音楽に加え、ゲームのイベント (大理石が壁に当たったときなど) を示すゲーム プレイ音を使っています。 実装で重要となる部分は、大理石がバウンドする音をシミュレートするためにリバーブ (反響) エフェクトを使っている点です。 リバーブ エフェクトを実装すると、小さい空間では反響音がより早く大きい音量で聞こえ、大きい空間では反響音がより遅く小さい音量で聞こえるようになります。
 
-> **Xxxx**   Xxx xxxxxx xxxx xxxx xxxxxxxxxxx xx xxxx xxxxxxxx xx xxxxx xx xxx [XxxxxxX Xxxxxx Xxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/?LinkId=624011).
+> **注**   このドキュメントに対応するサンプル コードは、[DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011) にあります。
 
-Xxxx xxx xxxx xx xxx xxx xxxxxx xxxx xxxx xxxxxxxx xxxxxxxxx xxx xxxx xxx xxxx xxxx xxxxx xx xxxx xxxx:
+このドキュメントでは、ゲームでオーディオを扱う際に重要となるいくつかの事柄について説明します。取り上げる内容は次のとおりです。
 
--   Xxxxxxxx xxxxx Xxxxx Xxxxxxxxxx xx xxxxxx xxxxx xxxxxx xxx XXxxxxY xx xxxx xxxxx. Xxxxxxx, xx xxx xxxx xx xxxxxxxx xxxxx xxxxx-xxxxxxx xxxxxxxxx xxxx xxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx, xxx xxx xxx xx.
--   Xx xxxxx xxxxx xxxxxxxx xxx xxxxxx xxxxx xxx xxxx xxxxxx xxxxx, xxxx xx xxxx xxxxxx xxxxxx, xxx xxx xxxxxxxxx xxxxx. Xxxxxx xxxxxx xxx xxxx xxxx xxxxxx xxxxxx xxx/xx xxx xxxxxxxxx xxxxx. Xxxxxx xxxxxx xxxx xxxx xxxxx xxxxxx xxxxxx xx xxx xxxxxxxxx xxxxx.
--   Xx xxxx xxxxxxxxxx xxxxx xxxxx xxx xxxxx, xxxxxxxx xxxxxxxxx xxxx xxxxx xxxx xxxxxxx xxxxxxx xx xxxx xxxx xxxxxx xx xxxx.
--   Xx xx xxxxx xxxxx xx xx xx, xxxxx xxxxx xxxxxxxx xxxx xxx xxx xxxxx xxxxx xx xxxxxxxxxx, xx xx xxxxxxxxx. Xxxxxx xxxxxxxx xxxx xxxx xxx xxxxxxx xxxxx, xxxxxxx xxxxxxx, xx xx xxxxxxx.
--   Xxx xxxxx xxxxxxxxxx xx xxxxxxx xxx xxxx xx xxxx xxxxx. Xxx xxxxxxx, xxx xxxxxxxxx xxx **XxxxxXxxxxxxx\_XxxxXxxxx** xxx xxxx xxxxxxxxxx xxxxx xxx **XxxxxXxxxxxxx\_XxxxXxxxxxx** xxx xxxxx xxxxxxx.
--   Xxxxxx xxxxxx xxxxxxx, xxxxxxxxx xxxxxxxxxx, xx xxxxxxxxx xxx xxxxxxxxxx xxx xxxxx xxxxxxxxx xxx xxxxxxxxxx.
--   Xxxxxxxx xxxxxxx xx xxxxxxxx xxxxx xxxxx xxxx xxxxxxxxxx xxxx xxxxx xxx xxxxxxxxx xxxxx xx x xxxxxxxxxxx. Xxxxxxxxx, xxx xxx xxxxx xxxxx xxxxxxxxxxxx xx xxxx xx xxxxx xxxxxx.
+-   オーディオ アセットのデコードにはメディア ファンデーションを使い、オーディオの再生には XAudio2 を使います。 ただし、オーディオ アセットを読み込むための機構が既にあり、ユニバーサル Windows プラットフォーム (UWP) アプリで正常に動作する場合は、それを使ってかまいません。
+-   オーディオ グラフは、アクティブなサウンド 1 つにつき 1 つのソース ボイス、0 個以上のサブミックス ボイス、1 つのマスタリング ボイスを含んでいます。 ソース ボイスは、サブミックス ボイスまたはマスタリング ボイス (あるいはその両方) に送ることができます。 サブミックス ボイスは、他のサブミックス ボイスか、マスタリング ボイスに送られます。
+-   BGM ファイルが大きい場合は、メモリの使用量を抑えるために、より小さいバッファーに音楽をストリーミングします。
+-   状況 (アプリがフォーカスを失った、表示されなくなった、中断されたなど) に応じてオーディオの再生を一時停止します。 アプリが再びフォーカスを取得するか、表示されるか、再開されたら、再生を再開します。
+-   オーディオのカテゴリは、各サウンドの役割を反映するように設定します。 たとえば、ゲームのバックグラウンド オーディオには **AudioCategory\_GameMedia** を使い、サウンド効果には **AudioCategory\_GameEffects** を使うのが一般的です。
+-   ヘッドホンなどのデバイスの変更は、オーディオ リソースとインターフェイスをすべて解放し、再作成することによって処理します。
+-   ディスク領域とストリーミングのコストを最小限に抑える必要がある場合は、オーディオ ファイルを圧縮します。 それ以外の場合は、オーディオを圧縮しない方が、読み込み速度が高くなります。
 
-## Xxxxxxxxxxx XXxxxxY xxx Xxxxxxxxx Xxxxx Xxxxxxxxxx
-
-
-XXxxxxY xx x xxx-xxxxx xxxxx xxxxxxx xxx Xxxxxxx xxxx xxxxxxxxxxxx xxxxxxxx xxxx xxxxx. Xx xxxxxxxx x xxxxxxx xxxxxx xxxxxxxxxx (XXX) xxx xxxxx-xxxxx xxxxxx xxx xxxxx. XXxxxxY xxxxxxx xx xxx xxxxxxxxxxxx, XxxxxxXxxxx xxx XXxxxx, xx xxxxxxxxxx xxxxxxxxx xxxxxx xxxx xx XXXX xxxxxxxx-xxxxx xxxxxxxxxxxxx xxx XX xxxxx. Xx xxxx xxxxxxxx xxx xxxx xxxxxxx xxxxx xxxxxxxxxx xxxxxxx xx xxxxx’x xxxxx.
-
-Xxx xxxxxxxx [XXxxxxY Xxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ee415764) xxxxxxxx xxx xxx xxxxxxxx xxx xxxxx XXxxxxY. Xx xxxxx, xxx xxxxxxxx xxx:
-
--   Xxx [**XXXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/ee415908) xxxxxxxxx xx xxx xxxx xx xxx XXxxxxY xxxxxx. Xxxxxx Xxxx xxxx xxxx xxxxxxxxx xx xxxxxx xxxxxx xxx xx xxxxxxx xxxxxxxxxxxx xxxx xxx xxxxxx xxxxxx xxxxxxx xx xxxxx.
--   X xxxxx xxxxxxxxx, xxxxxxx, xxx xxxxx xxxxx xxxx.
--   X xxxxxx xxxxx xx x xxxxxxxxxx xx xxxxx xxxxxxxx (xxxx, Y.Y, xxx xx xx) xxx xxxxxxxxxx xxx xxxxxx xx xxxxx xxxx. Xx XXxxxxY, x xxxxxx xxxxx xx xxxxx xxxxx xxxxxxxxxx xxxxxx. Xxxxxxxxx, xxxxx xxxx xx xxxxxx xxxx xx xxxxxxxx xxxxxx, xxxx xx x xxxx xx x xxxxxxx, xxx xx xxxx xx x xxxxxx xxxxx. Xxxxxx Xxxx xxxx [Xxxxx Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ms694197) xx xxxx xxxxx xxxx xxxx xxxxx. Xxxxx Xxxxxxxxxx xx xxxxxxxxxx xxxxx xx xxxx xxxxxxxx.
--   X xxxxxx xxxxx xxxxxxxxx xxxxx xxxx. Xxxx xxxxxxxxxx xxx xxxxxxx xxxxxxxx xxx xxxxx xxxxxx xx xxxxxxxxx xxxxxxxx xxxxxxx xxxx xxx. Xxxxxx Xxxx xxxx xxxxxxxx xx xxxxxx xxx xxxxxx xxxxxx.
--   X xxxxxxxxx xxxxx xxxxxxxx xxxx xxxx xxxxxx xxx xxxxxx xxxxxx xxx xxxxx xxxx xxxx xx xxx xxxxx xxxxxxxx.
--   Xx xxxxx xxxxx xxxxxxxx xxx xxxxxx xxxxx xxx xxxx xxxxxx xxxxx, xxxx xx xxxx xxxxxx xxxxxx, xxx xxxx xxx xxxxxxxxx xxxxx.
--   X xxxxxxxx xxxxxxx xxxxxx xxxx xxxx xxxx xxxxx xxx xxxxxxxx xx x xxxxx xx xx xx xxxxxx xxxxxx. Xx xxxxx xxxxxxxxx, xxx xxx xxxxx xxxxxx xxxx XXxxxxY xx xxxxxxxx xxxx x xxxxxx, xxxxx xxxx xxx xxxxx xxxxxx xxxxxxx (xxx xxxxxxx, xxxx xxx xxxxxxx xx xxxxxxxxxx xxxxxxxxxx), xxx xxxx. Xxx [Xxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxxx xxxxxxx](#phones) xxxxx xx xxxx xxxxxxxx xxxxxxxx xxx Xxxxxx Xxxx xxxx xxxx xxxxxxxxx xx xxxxxx xxxxxx xxxxxxx.
-
-Xxxxxx Xxxx xxxx xxx xxxxx xxxxxxx (xx xxxxx xxxxx, xxx [**XXXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/ee415908) xxxxxxx) xx xxxxxxx xxxxx. Xxx xxxxxx xxxxxxxxx xxx xxxxxxxxxx xxxxx, xxx xxx xxxxx xxxxxx xxxxxxxxx xxxx-xxxx xxxxxx.
-
-Xxxxxx Xxxx xxxx xxxx xxxxxx xxx xxxxxxxxx xxxxx xxx xxxx xxxxxx. Xxxxxx xxxx x xxxxxxxxx xxxxxx xxxxxxxx xxxxx xxxxxxx xxxx xxx xxxxxx xxx xxxxx xxxx xxxxxx xx xxx xxxxx xxxxxxxx. Xxx xxxxxxxxxx xxxxx xxxxxx, x xxxxxx xxxxx, xxxxxxx xxxx xx x xxxxxxxxx xxxxx xxx xx xxx xxxxxx xxxxxx. Xxx xxxxxx xxxxxx xxxxxxx xxx xxxxxx xxxxxx.
-
-Xxxxx Xxxxxxxxxx xx x xxxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxx xxxxx xxx xxxxx xxxxxxx. XXxxxxY xxx Xxxxx Xxxxxxxxxx xxxxxxxxxx xxxx xxxxx. Xxxxxx Xxxx xxxx Xxxxx Xxxxxxxxxx xx xxxx xxxxx xxxxxx xxxx xxxx xxx xxxx XXxxxxY xx xxxx xxxxx. Xxx xxx'x xxxx xx xxx Xxxxx Xxxxxxxxxx xx xxxx xxxxx xxxxxx. Xx xxx xxxx xx xxxxxxxx xxxxx xxxxx xxxxxxx xxxxxxxxx xxxx xxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx, xxx xx.
-
-Xxx xxxx xxxxxxxxxxx xxxxx XXxxxxY, xxx [Xxxxxxxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/desktop/ee415737). Xxx xxxx xxxxxxxxxxx xxxxx Xxxxx Xxxxxxxxxx, xxx [Xxxxxxxxx Xxxxx Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ms694197).
-
-## Xxxxxxxxxxxx xxxxx xxxxxxxxx
+## XAudio2 と Microsoft メディア ファンデーションの概要
 
 
-Xxxxxx Xxxxx xxxx x Xxxxxxx Xxxxx Xxxxx (.xxx) xxxx xxx xxx xxxxxxxxxx xxxxx, xxx XXX (.xxx) xxxxx xxx xxxx xxxx xxxxxx. Xxxxx xxxxxxx xxx xxxxxxxxx xx Xxxxx Xxxxxxxxxx. Xxxxxxxx xxx .xxx xxxx xxxxxx xx xxxxxxxx xxxxxxxxx xx XXxxxxY, x xxxx xxx xx xxxxx xxx xxxx xxxxxx xxxxxxxx xx xxxx xxx xxx xxxxxxxxxxx XXxxxxY xxxx xxxxxxxxxx. Xxxxxx Xxxx xxxx Xxxxx Xxxxxxxxxx xx xxxx xxxxxx xxxx xxxx .xxx xxxxx. Xxx xxx xxxxxxxx xxxx xx xxx xxxxx xxxxxxx xxxx xxx xxxxxxxxx xx Xxxxx Xxxxxxxxxx, xxx [Xxxxxxxxx Xxxxx Xxxxxxx xx Xxxxx Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/dd757927). Xxxxxx Xxxx xxxx xxx xxx xxxxxxxx xxxxxx-xxxx xxx xxx-xxxx xxxxx xxxxxxx, xxx xxxx xxx xxx XXxxxxY XXXXX xxxxxxxxxxx xxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx XXXXX xxxxxxxxxxx xx XXxxxxY, xxx [XXXXX Xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ee415711).
+XAudio2 は、ゲームのオーディオ サポートに特化した Windows 向けの低水準オーディオ ライブラリです。 ゲーム用のデジタル シグナル処理 (DSP) やオーディオ グラフ エンジンを備えています。 XAudio2 は前身の DirectSound と XAudio を拡張したものであり、SIMD 浮動小数点アーキテクチャや HD オーディオなどのコンピューター トレンドをサポートします。 また、今日のゲームに求められる複雑なサウンド処理のニーズにも対応します。
 
-Xxx **Xxxxx::XxxxxxXxxxxxxxx** xxxxxx, xxxxx xx xxxxxx xxxx **XxxxxxXxxx::XxxxxxXxxxxxXxxxxxxxxxxXxxxxxxxx**, xxxxx xxx xxxxx xxxxxxx xxxx xxxx, xxxxxxxxxxx xxx XXxxxxY xxxxxx xxxxxxx, xxx xxxxxxx xxx xxxxxx, xxxxxx, xxx xxxxxxxxx xxxxxx.
+ドキュメント「[XAudio2 の主要な概念](https://msdn.microsoft.com/library/windows/desktop/ee415764)」では、XAudio2 を使ううえでの重要な概念について説明しています。 その要点は以下のとおりです。
 
-###  Xxxxxxxx xxx XXxxxxY xxxxxxx
+-   XAudio2 エンジンのコアは [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) インターフェイス。 Marble Maze は、このインターフェイスを使って音声を作成します。また、出力デバイスの変更時や障害発生時の通知も、このインターフェイスを使って受け取ります。
+-   オーディオ データは「ボイス」によって処理、調整、再生される。
+-   「ソース ボイス」はオーディオ チャネル (モノラル、5.1 など) のコレクションであり、オーディオ データの 1 つのストリームを表す。 XAudio2 では、ソース ボイスがオーディオ処理の開始点になります。 通常、サウンド データは、ファイルやネットワークなどの外部ソースから読み込まれて、ソース ボイスに送られます。 Marble Maze は、[メディア ファンデーション](https://msdn.microsoft.com/library/windows/desktop/ms694197) を使って、サウンド データをファイルから読み込みます。 メディア ファンデーションについては、この後で説明します。
+-   「サブミックス ボイス」はオーディオ データの処理を行う。 たとえば、オーディオ ストリームに変更を加えたり、複数のストリームを 1 つにまとめたりすることができます。 Marble Maze は、サブミックスを使ってリバーブ エフェクトを作成しています。
+-   「マスタリング ボイス」は、ソース ボイスとサブミックス ボイスのデータを結合し、そのデータをオーディオ ハードウェアに送る。
+-   オーディオ グラフは、アクティブなサウンド 1 つにつき 1 つのソース ボイス、0 個以上のサブミックス ボイス、1 つのマスタリング ボイスを含んでいる。
+-   ボイスまたはエンジン オブジェクト内でイベントが発生したことは、コールバックによってクライアント コードに通知される。 コールバックを使うことで、XAudio2 がバッファーを残して終了した場合にメモリを再利用したり、オーディオ デバイスが変更された場合 (ヘッドホンの接続時や切断時など) に対応したりできます。 Marble Maze がこの機構を使ってデバイスの変更を処理するしくみについては、このドキュメントの「[ヘッドホンとデバイスの変更の処理](#phones)」セクションで説明します。
 
-Xxxxxx xxxx Xxxxxx Xxxx xxxxxxx xxx [**XXXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/ee415908) xxxxxx xx xxxxxxxxx xxxx xxxxx xxxxxx xxxx xx xxxx. Xx xxxxxx xx xxxxx xxxxxx, xxxx xxx [**XXxxxxYXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee419212) xxxxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxx xxx Xxxxxx Xxxx xxxxxxx xxx xxxxx xxxxxx xxxx xxxxxxxxx xxxxxxxxxx xxxxx.
+Marble Maze は、2 つのオーディオ エンジン (つまり、2 つの [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) オブジェクト) を使ってオーディオを処理します。 一方のエンジンが BGM を、もう一方のエンジンがゲーム プレイ音を処理します。
+
+また、各エンジンについて、マスタリング ボイスを 1 つ作成する必要があります。 既に説明したように、マスター エンジンはオーディオ ストリームを 1 つのストリームに結合し、そのストリームをオーディオ ハードウェアに送ります。 BGM ストリーム (ソース ボイス) は、マスタリング ボイスと 2 つのサブミックス ボイスにデータを出力します。 サブミックス ボイスはリバーブ エフェクトを実行します。
+
+メディア ファンデーションは、さまざまなオーディオ形式とビデオ形式をサポートするマルチメディア ライブラリです。 XAudio2 とメディア ファンデーションは相互補完的な関係にあります。 Marble Maze は、メディア ファンデーションを使ってオーディオ アセットをファイルから読み込み、XAudio2 を使ってオーディオを再生しています。 オーディオ アセットの読み込みに、必ずしもメディア ファンデーションを使う必要はありません。 オーディオ アセットを読み込むための機構が既にあり、ユニバーサル Windows プラットフォーム (UWP) アプリで正常に動作する場合は、それを使ってください。
+
+XAudio2 について詳しくは、「[プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/ee415737)」をご覧ください。 メディア ファンデーションについて詳しくは、[Microsoft メディア ファンデーションに関するページ](https://msdn.microsoft.com/library/windows/desktop/ms694197) をご覧ください。
+
+## オーディオ リソースの初期化
+
+
+Marble Maze では、BGM に Windows Media オーディオ (.wma) ファイルが、ゲーム プレイ音に WAV (.wav) ファイルが使われています。 これらの形式は、メディア ファンデーションによってサポートされます。 .wav ファイル形式は XAudio2 がネイティブにサポートしていますが、適切な XAudio2 データ構造体にデータを設定するためには、ゲーム内からファイル形式を手動で解析する必要があります。 メディア ファンデーションを使った方が簡単に .wav ファイルを扱うことができるため、Marble Maze ではメディア ファンデーションを使っています。 メディア ファンデーションでサポートされる全メディア形式の一覧については、「[メディア ファンデーションでサポートされるメディア形式](https://msdn.microsoft.com/library/windows/desktop/dd757927)」をご覧ください。 Marble Maze では、デザイン時と実行時に別々のオーディオ形式を使うことはしていません。また、XAudio2 でサポートされる ADPCM 圧縮機能は使っていません。 XAudio2 の ADPCM 圧縮について詳しくは、「[ADPCM の概要](https://msdn.microsoft.com/library/windows/desktop/ee415711)」をご覧ください。
+
+**MarbleMaze::CreateDeviceIndependentResources** から呼び出される **Audio::CreateResources** メソッドは、ファイルからオーディオ ストリームを読み込み、XAudio2 エンジン オブジェクトを初期化して、ソース ボイス、サブミックス ボイス、マスタリング ボイスを作成します。
+
+###  XAudio2 エンジンの作成
+
+既に説明したように、Marble Maze では、オーディオ エンジンを表す [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) オブジェクト (使うオーディオ エンジンごとに 1 つ) を作成します。 オーディオ エンジンを作成するには、[**XAudio2Create**](https://msdn.microsoft.com/library/windows/desktop/ee419212) 関数を呼び出します。 BGM を処理するオーディオ エンジンの作成方法を次の例に示します。
 
 ```cpp
 DX::ThrowIfFailed(
@@ -66,13 +66,14 @@ DX::ThrowIfFailed(
     );
 ```
 
-Xxxxxx Xxxx xxxxxxxx x xxxxxxx xxxx xx xxxxxx xxx xxxxx xxxxxx xxxx xxxxx xxxx-xxxx xxxxxx.
+ゲーム プレイ音を再生するオーディオ エンジンについても、同様の手順で作成します。
 
-Xxx xx xxxx xxxx xxx [**XXXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/ee415908) xxxxxxxxx xx x XXX xxx xxxxxxx xxxx x xxxxxxx xxx xx xxx xxxx. Xxxxx, xxx xxx'x xxxx xx xxxx **XxXxxxxxxxxxXx** xxxxxx xxx xxxx [**XXxxxxYXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee419212). Xx xxxxxxxx, **XXXxxxxY** xx xxxxxx xxxxxxxx xxxxxx xxxxxxxxxxx. Xxx xxxxxxxxxxx xxxxx xxx xx xxxxxxxxx xxxxx xxxxxxx, xxx [Xxxxxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh464977).
+UWP アプリでの [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) インターフェイスの扱いは、デスクトップ アプリの場合とは 2 つの点で異なります。 まず、[**XAudio2Create**](https://msdn.microsoft.com/library/windows/desktop/ee419212) を呼び出す前に、**CoInitializeEx** を呼び出す必要はありません。 また、**IXAudio2** では、デバイスの列挙がサポートされません。 オーディオ デバイスの列挙方法については、「[デバイスの列挙](https://msdn.microsoft.com/library/windows/apps/hh464977)」をご覧ください。
 
-###  Xxxxxxxx xxx xxxxxxxxx xxxxxx
+###  マスタリング ボイスの作成
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xxx **Xxxxx::XxxxxxXxxxxxxxx** xxxxxx xxxxxxx xxx xxxxxxxxx xxxxx xxx xxx xxxxxxxxxx xxxxx. Xxx xxxx xx [**XXXxxxxY::XxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh405048) xxxxxxxxx xxx xxxxx xxxxxxxx. Xxxx xxxxxxxxxx xxx xxxxx xxx xxx xxxxxx xxxxxx. Xxx **XXXXXXY\_XXXXXXX\_XXXXXXXXXX** xxxxxxxxxxxxx xxxxx xxx xxxxx xxxxxx xx xxx xxx xxxxxx xxxx xxxx xx xxxxxxxxx xx xxx Xxxxx Xxxxxxx Xxxxx. Xx xxxx xxxxxxx, **x\_xxxxxXxxxxxxxxXxxxx** xx xx [**XXXxxxxYXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee415912) xxxxxx.
+以下の例では、**Audio::CreateResources** メソッドを使って BGM のマスタリング ボイスを作成しています。 [
+            **IXAudio2::CreateMasteringVoice**](https://msdn.microsoft.com/library/windows/desktop/hh405048) の呼び出しは、2 つの入力チャネルを指定します。 これによって、リバーブ エフェクトのロジックが単純化されます。 **XAUDIO2\_DEFAULT\_SAMPLERATE** の指定は、[サウンド] コントロール パネルで指定されたサンプル レートを使うようにオーディオ エンジンに指示します。 この例では、**m\_musicMasteringVoice** が [**IXAudio2MasteringVoice**](https://msdn.microsoft.com/library/windows/desktop/ee415912) オブジェクトです。
 
 ```cpp
 // This sample plays the equivalent of background music, which we tag on the  
@@ -96,22 +97,24 @@ DX::ThrowIfFailed(
 );
 ```
 
-Xxx **Xxxxx::XxxxxxXxxxxxxxx** xxxxxx xxxxxxxx x xxxxxxx xxxx xx xxxxxx xxx xxxxxxxxx xxxxx xxx xxx xxxx xxxx xxxxxx, xxxxxx xxxx xx xxxxxxxxx **XxxxxXxxxxxxx\_XxxxXxxxxxx** xxx xxx *XxxxxxXxxxxxxx* xxxxxxxxx, xxxxx xx xxx xxxxxxx. Xxxxxx Xxxx xxxxxxxxx **XxxxxXxxxxxxx\_XxxxXxxxx** xxx xxxxxxxxxx xxxxx xx xxxx xxxxx xxx xxxxxx xx xxxxx xxxx x xxxxxxxxx xxxxxxxxxxx xx xxxx xxxx xxx xxxx. Xxxx x xxxxx xxx xx xxxxxxx, Xxxxxxx xxxxx xxx xxxxxx xxxx xxx xxxxxxx xx xxx **XxxxxXxxxxxxx\_XxxxXxxxx** xxxxxx. Xxx xxxx xxxxx xxxxx xxxx-xxxx xxxxxx xxxxxxx xxxx xxx xxxxxxx xx xxx **XxxxxXxxxxxxx\_XxxxXxxxxxx** xxxxxx. Xxx xxxx xxxx xxxxx xxxxx xxxxxxxxxx, xxx [**XXXXX\_XXXXXX\_XXXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/hh404178) xxxxxxxxxxx.
+ゲーム プレイ音についても、**Audio::CreateResources** メソッドを使い、同様の手順でマスタリング ボイスを作成しますが、*StreamCategory* パラメーターに **AudioCategory\_GameEffects** (既定値) が指定される点が異なります。 BGM の場合は、**AudioCategory\_GameMedia** を指定します。こうすることで、ゲームをプレイしている間、ユーザーは、異なるアプリケーションからの音楽を聴くことができます。 音楽アプリの再生中、**AudioCategory\_GameMedia** オプションによって作成されたボイスはすべて Windows によってミュートされます。 その場合もゲーム プレイ音は聞こえます。ゲーム プレイ音は **AudioCategory\_GameEffects** オプションによって作成されているためです。 オーディオ カテゴリについて詳しくは、[**AUDIO\_STREAM\_CATEGORY**](https://msdn.microsoft.com/library/windows/desktop/hh404178) 列挙体に関するページをご覧ください。
 
-###  Xxxxxxxx xxx xxxxxx xxxxxx
+###  リバーブ エフェクトの作成
 
-Xxx xxxx xxxxx, xxx xxx xxx XXxxxxY xx xxxxxx xxxxxxxxx xx xxxxxxx xxxx xxxxxxx xxxxx. Xxxx x xxxxxxxx xx xxxxx xx xx xxxxxx xxxxx. Xxx xxxxxx xxxxxx xxxx xxx xxxx xx xxxxx xxx xx xxxx xxxxxxx xx x xxxxx. Xxxxxx xxxxxx xxx xx xxxxxxxxxxx; xxxx xx, xxxx xxxxxx xx xxx xxxxx xxx xxxxxxxxx xxx xxxxx xxxxxx. Xxxx xxxxxxxx xx xxxxxxxxx xxxxxxx XXxxxxY xxxxx xx xxxxxxxxx xxxx xxxxxx xxxxxxx xxx xxxxxxxxxxx xxxx xxxxxxx. Xxxxxx xxxxxxx xxx xxxxxxxxxxx xx XXxxxxY xx xxxxx-xxxxxxxx xxxxx xxxxxxxxxx xxxxxxx (XXXX). Xxx xxxx xxxxxxxxxxx xxxxx XXXX, xxx [XXXX Xxxxxxxxx](o:microsoft.directx_sdk.xapo.audio_overview_xapo).
+それぞれのボイスには、オーディオを処理する一連の効果を XAudio2 を使って作成することができます。 そのような一連の効果をエフェクト チェーンと呼びます。 エフェクト チェーンは、1 つまたは複数の効果をボイスに適用するときに使います。 エフェクト チェーンは破壊的に実行できます。つまり、チェーン内の各効果がオーディオ バッファーを上書きできます。 XAudio2 では出力バッファーが無音で初期化される保証がないため、この特性は重要です。 XAudio2 では、エフェクト オブジェクトが、XAPO (Cross-Platform Audio Processing Object) によって表されます。 XAPO について詳しくは、「[XAPO の概要](o:microsoft.directx_sdk.xapo.audio_overview_xapo)」をご覧ください。
 
-Xxxx xxx xxxxxx xx xxxxxx xxxxx, xxxxxx xxxxx xxxxx:
+エフェクト チェーンを作成する際は、以下の手順に従います。
 
-1.  Xxxxxx xxx xxxxxx xxxxxx.
-2.  Xxxxxxxx xx [**XXXXXXY\_XXXXXX\_XXXXXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/ee419236) xxxxxxxxx xxxx xxxxxx xxxx.
-3.  Xxxxxxxx xx [**XXXXXXY\_XXXXXX\_XXXXX**](https://msdn.microsoft.com/library/windows/desktop/ee419235) xxxxxxxxx xxxx xxxx.
-4.  Xxxxx xxx xxxxxx xxxxx xx x xxxxx.
-5.  Xxxxxxxx xx xxxxxx xxxxxxxxx xxxxxxxxx xxx xxxxx xx xx xxx xxxxxx.
-6.  Xxxxxxx xx xxxxxx xxx xxxxxx xxxxxxxx xxxxxxxxxxx.
+1.  エフェクト オブジェクトを作成します。
+2.  [
+            **XAUDIO2\_EFFECT\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/desktop/ee419236) 構造体に効果のデータを設定します。
+3.  [
+            **XAUDIO2\_EFFECT\_CHAIN**](https://msdn.microsoft.com/library/windows/desktop/ee419235) 構造体にデータを設定します。
+4.  エフェクト チェーンをボイスに適用します。
+5.  効果のパラメーターの構造体にデータを設定し、その構造体を効果に適用します。
+6.  必要に応じて効果の無効と有効を切り替えます。
 
-Xxx **Xxxxx** xxxxx xxxxxxx xxx **XxxxxxXxxxxx** xxxxxx xx xxxxxx xxx xxxxxx xxxxx xxxx xxxxxxxxxx xxxxxx. Xxxx xxxxxx xxxxx xxx [**XXxxxxYXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee419213) xxxxxxxx xx xxxxxx x [**XXXxxxxYXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee415915) xxxxxx, xxxxx xxxx xx xxx xxxxxx xxxxx xxx xxx xxxxxx xxxxxx.
+**Audio** クラスは、リバーブを実装するエフェクト チェーンを作成するための **CreateReverb** メソッドを定義します。 このメソッドは [**XAudio2CreateReverb**](https://msdn.microsoft.com/library/windows/desktop/ee419213) 関数を呼び出して、リバーブ エフェクトのサブミックス ボイスとして機能する [**IXAudio2SubmixVoice**](https://msdn.microsoft.com/library/windows/desktop/ee415915) オブジェクトを作成します。
 
 ```cpp
 DX::ThrowIfFailed(
@@ -119,7 +122,8 @@ DX::ThrowIfFailed(
     );
 ```
 
-Xxx [**XXXXXXY\_XXXXXX\_XXXXXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/ee419236) xxxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxx xx XXXX xxx xxx xx xx xxxxxx xxxxx, xxx xxxxxxx, xxx xxxxxx xxxxxx xx xxxxxx xxxxxxxx. Xxx **Xxxxx::XxxxxxXxxxxx** xxxxxx xxxxxxx xx **XXXXXXY\_XXXXXX\_XXXXXXXXXX** xxxxxx xxxx xx xxx xx xxx xxxxxxxx xxxxx, xxxx xxx xxxxxx xxxxxxxx, xxx xxxxxxxxxx xxx [**XXXxxxxYXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee415915) xxxxxx xxx xxx xxxxxx xxxxxx. Xxx **XXXXXXY\_XXXXXX\_XXXXXXXXXX** xxxxxx xxxxxx xx xxx xxxxxxxx xxxxx xxxxxxx xxx xxxx xxxx xxx xxxxxxxxxx xxxxxx xxx xxxxxx xxxxxx xxxxxxxxx xxxx xxxxxx. Xxxxxx Xxxx xxxx xxx xxxxxx xxxxxxxx xx xxxxxxxx xxx xxxxx xxx xxx xxxxxx xxxxxx.
+[
+            **XAUDIO2\_EFFECT\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/desktop/ee419236) 構造体には、エフェクト チェーンで使う XAPO についての情報 (出力チャネルのターゲット数など) が格納されます。 **Audio::CreateReverb** メソッドは、**XAUDIO2\_EFFECT\_DESCRIPTOR** オブジェクトを作成します。オブジェクトの状態は無効に、出力チャネル数は 2 つに設定され、さらに、リバーブ エフェクトの [**IXAudio2SubmixVoice**](https://msdn.microsoft.com/library/windows/desktop/ee415915) オブジェクトを参照するように設定されます。 **XAUDIO2\_EFFECT\_DESCRIPTOR** オブジェクトの開始状態を無効としているのは、先にパラメーターを設定してから、効果に伴うゲーム音の変更を開始する必要があるためです。 Marble Maze は、2 つの出力チャネルを使ってリバーブ エフェクトのロジックを単純化します。
 
 ```cpp
 soundEffectdescriptor.InitialState = false;
@@ -127,14 +131,15 @@ soundEffectdescriptor.OutputChannels = 2;
 soundEffectdescriptor.pEffect = soundEffectXAPO.Get();
 ```
 
-Xx xxxx xxxxxx xxxxx xxx xxxxxxxx xxxxxxx, xxxx xxxxxx xxxxxxxx xx xxxxxx. Xxx [**XXXXXXY\_XXXXXX\_XXXXX**](https://msdn.microsoft.com/library/windows/desktop/ee419235) xxxxxxxxx xxxxx xxx xxxxx xx [**XXXXXXY\_XXXXXX\_XXXXXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/ee419236) xxxxxxx xxxx xxxxxxxxxxx xx xxx xxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxx xxx xxx **Xxxxx::XxxxxxXxxxxx** xxxxxx xxxxxxxxx xxx xxx xxxxxx xx xxxxxxxxx xxxxxx.
+エフェクト チェーンに複数の効果が存在する場合、各効果についてオブジェクトが必要となります。 [
+            **XAUDIO2\_EFFECT\_CHAIN**](https://msdn.microsoft.com/library/windows/desktop/ee419235) 構造体は、効果に関与する [**XAUDIO2\_EFFECT\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/desktop/ee419236) オブジェクトの配列を保持します。 次の例は、**Audio::CreateReverb** メソッドが 1 つの効果を指定してリバーブを実装する方法を示します。
 
 ```cpp
 soundEffectChain.EffectCount = 1;
 soundEffectChain.pEffectDescriptors = &soundEffectdescriptor;
 ```
 
-Xxx **Xxxxx::XxxxxxXxxxxx** xxxxxx xxxxx xxx [**XXXxxxxY::XxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418608) xxxxxx xx xxxxxx xxx xxxxxx xxxxx xxx xxx xxxxxx. Xx xxxxxxxxx xxx [**XXXXXXY\_XXXXXX\_XXXXX**](https://msdn.microsoft.com/library/windows/desktop/ee419235) xxxxxx xxx xxx *xXxxxxxXxxxx* xxxxxxxxx xx xxxxxxxxx xxx xxxxxx xxxxx xxxx xxx xxxxx. Xxxxxx Xxxx xxxx xxxxxxxxx xxx xxxxxx xxxxxxxx xxx x xxxxxx xxxx xx YY xxxxxxxxx. Xx xxxxx xxxx xxxxxx xxxx xxxxxxx xx xxxxxxxxxxx x xxxxxxx xxxxxxx xxxxx xxxxxxx xxx xxx xxxxxx xx xxxxxxxx XXX xxxxxxxxxx. X xxxxxxx xxxxxx xxxx xxxxx xxxx xxxxxxxx xxxx XXX xxxxxxxxxx xxxxxxx xxxxxx x xxxxxxxxxx xxxxxxx xxxxxxx.
+**Audio::CreateReverb** メソッドは、[**IXAudio2::CreateSubmixVoice**](https://msdn.microsoft.com/library/windows/desktop/ee418608) メソッドを呼び出して、効果のサブミックス ボイスを作成します。 *pEffectChain* パラメーターに [**XAUDIO2\_EFFECT\_CHAIN**](https://msdn.microsoft.com/library/windows/desktop/ee419235) オブジェクトを指定して、ボイスにエフェクト チェーンを関連付けます。 また、Marble Maze では、2 つの出力チャネルと 48 KHz のサンプル レートを指定しています。 オーディオ品質と必要な CPU 処理量のバランスを考慮してこのサンプル レートを選びました。 サンプル レートをこれより大きくしても、体感できるほどは品質が上がらず、必要な CPU 処理も増える可能性があります。
 
 ```cpp
 DX::ThrowIfFailed(
@@ -142,11 +147,12 @@ DX::ThrowIfFailed(
     );
 ```
 
-> **Xxx**   Xx xxx xxxx xx xxxxxx xx xxxxxxxx xxxxxx xxxxx xx xx xxxxxxxx xxxxxx xxxxx, xx xxx xxxx xx xxxxxxx xxx xxxxxxx xxxxxx xxxxx, xxx xxx [**XXXxxxxYXxxxx::XxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418594) xxxxxx.
+> **ヒント**   既にあるサブミックス ボイスに対し、既にあるエフェクト チェーンをアタッチする場合、または、現在のエフェクト チェーンを置き換える場合は、[**IXAudio2Voice::SetEffectChain**](https://msdn.microsoft.com/library/windows/desktop/ee418594) メソッドを使います。
 
  
 
-Xxx [**Xxxxx::XXxxxxYXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee419213) xxxxxx xxxxx [**XXXxxxxYXxxxx::XxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418595) xx xxx xxxxxxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxxx xxxx xxx xxxxxx. Xxxx xxxxxx xxxxx x xxxxxxxxx xxxxxxxxx xxxx xx xxxxxxxx xx xxx xxxxxx. Xx [**XXXXXXYXX\_XXXXXX\_XXXXXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/ee419224) xxxxxx, xxxxx xxxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxxxxx, xx xxxxxxxxxxx xx xxx **Xxxxx::Xxxxxxxxxx** xxxxxx xxxxxxx xxxxx xxxxxx xxxxxx xxxxxx xxx xxxx xxxxxxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxx xxx xxx **Xxxxx::Xxxxxxxxxx** xxxxxx xxxxxxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxxx-xxxxx xxxxxx.
+[
+            **Audio::XAudio2CreateReverb**](https://msdn.microsoft.com/library/windows/desktop/ee419213) メソッドは、別途効果に関連付けるパラメーターを設定するために、[**IXAudio2Voice::SetEffectParameters**](https://msdn.microsoft.com/library/windows/desktop/ee418595) を呼び出しています。 このメソッドは、効果に固有のパラメーター構造体を受け取ります。 すべてのリバーブ エフェクトは同じパラメーターを共有するため、その効果のパラメーターを格納する [**XAUDIO2FX\_REVERB\_PARAMETERS**](https://msdn.microsoft.com/library/windows/desktop/ee419224) オブジェクトは **Audio::Initialize** メソッドで初期化されています。 次の例は、**Audio::Initialize** メソッドがニアフィールド リバーブのリバーブ パラメーターを初期化する方法を示します。
 
 ```cpp
 m_reverbParametersSmall.ReflectionsDelay = XAUDIO2FX_REVERB_DEFAULT_REFLECTIONS_DELAY;
@@ -174,9 +180,9 @@ m_reverbParametersSmall.WetDryMix = XAUDIO2FX_REVERB_DEFAULT_WET_DRY_MIX;
 m_reverbParametersSmall.DisableLateField = TRUE;
 ```
 
-Xxxx xxxxxxx xxxx xxx xxxxxxx xxxxxx xxx xxxx xx xxx xxxxxx xxxxxxxxxx, xxx xx xxxx **XxxxxxxXxxxXxxxx** xx XXXX xx xxxxxxx xxxx-xxxxx xxxxxx, **XxxxxXxxxxxxxx** xx Y xx xxxxxxxx xxxx xxxx xxxxxxxx, xxx **XxxxXxxxxxxxx** xx YY xx xxxxxxxx xxxx xxxxxxx xxxxxxx xxxxxxxx. Xxxx xxxx xxxxxxxx xxxxx xxxxxx xx xxxxx xxx xxxx xxxxxxx xxx xxxxxx; xxxxxxx xxxxxxx xxxxxxxx xxxxx xxxxxx xx xx xxxxxxx xxx xxxxx xxx xxxx xxxxxx. Xxx xxx xxxxxxxxxx xxxx xxxxxx xxxxxx xx xxx xxx xxxxxxx xxxxxx xx xxxx xxxx xx xxx xxx **XxxxxxXxxxxxxXYXXYXxXxxxxx** xxxxxxxx xx xxx xxxxxxxx-xxxxxxxx XYXXY (Xxxxxxxxxxx YX Xxxxx Xxxxxxxxx Xxxxxxxxxx Xxxxx Y.Y) xxxxxxxxxx.
+この例では、ほとんどのリバーブ パラメーターに既定値を使っていますが、ニアフィールド リバーブを指定するために **DisableLateField** を TRUE に、平らな近くの表面をシミュレートするために **EarlyDiffusion** を 4 に、非常に散乱性が高い遠くの表面をシミュレートするために **LateDiffusion** を 15 に設定します。 平らな近くの表面では反響音がより早く大きい音量で聞こえ、散乱性の高い遠くの表面では反響音がより遅く小さい音量で聞こえるようになります。 リバーブ値を調整しながらゲームに適した効果を得ることも、**ReverbConvertI3DL2ToNative** 関数を使って業界標準の I3DL2 (Interactive 3D Audio Rendering Guidelines Level 2.0) のパラメーターを使うこともできます。
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx **Xxxxx::XxxxxxXxxxxx** xxxx xxx xxxxxx xxxxxxxxxx. Xxx xxxxxxxxxx xxxxxxxxx xx xx [**XXXXXXYXX\_XXXXXX\_XXXXXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/ee419224) xxxxxx.
+次の例は、**Audio::CreateReverb** がリバーブのパラメーターを設定する方法を示します。 parameters パラメーターは [**XAUDIO2FX\_REVERB\_PARAMETERS**](https://msdn.microsoft.com/library/windows/desktop/ee419224) オブジェクトです。
 
 ```cpp
 DX::ThrowIfFailed(
@@ -184,7 +190,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Xxx **Xxxxx::XxxxxxXxxxxx** xxxxxx xxxxxxxx xx xxxxxxxx xxx xxxxxx xx xxx **xxxxxxXxxxxx** xxxx xx xxx xxx xx xxxxxxx xxx xxxxxx xxx xxxxxx xxxxxx. Xxxx xxxx xxxx xxx xxxxxx xx xxxx (Y.Y) xxx xxxx xxxxxxxxx xxx xxxxxx xxxxxx xx xx xxxxxxx xxx xxxx xxxx xxx xxxxx xxxxxx xxx xxxx xxx xxxxx xxxxxx xxxxxxxx. Xx xx xxxx xxxxxxx xxxxx xxxx xxxxx xxxxx-xxxxx xxxxxxx xxx xxx xxxxxxx (xxxxxxxxxx xxx xxxxxxxxxx xxxx xxxxx xxxx x xxxx xx xxxxx xx x xxxxx xxxx), xx xxxxx xxxx xxxxxxx xx xxxxxxxx. Xxxx xxx xxxxxx xxxx xx xxxxx xxxxxxx, xxx xxxx xxxx x xxxxxx xx {Y.Yx, Y.Yx, Y.Yx, Y.Yx} xx xxxxx xxxx xxxxxx xxxxxx xx xxx xxxx xxxxx xx xxx xxxxxxxxx xxxxx xxx xxxxx xxxxxx xxxxxx xx xxx xxxxx xxxxx xx xxx xxxxxxxxx xxxxx.
+**Audio::CreateReverb** メソッドは、**enableEffect** フラグが設定されている場合は効果を有効にし、そのボリュームと出力マトリックスを設定して終了します。 この部分でボリュームをフル (1.0) に設定し、左右の入力スピーカーと左右の出力スピーカーの両方に対してボリューム マトリックスが無音になるように指定します。 このような処理を行うのは、後から他のコードが (壁の近くから大きな空間の中への移行をシミュレートして) 2 つのリバーブ間のクロスフェードを行うか、または必要な場合は両方のリバーブをミュートするためです。 後でリバーブ パスがミュート解除されたときに、ゲームはマトリックス {1.0f, 0.0f, 0.0f, 1.0f} を設定して、左のリバーブ出力をマスタリング ボイスの左の入力に、右のリバーブ出力をマスタリング ボイスの右の入力にルーティングします。
 
 ```cpp
 if (enableEffect)
@@ -204,7 +210,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Xxxxxx Xxxx xxxxx xxx **XxxxxxXxxxxx** xxxxxx xxxx xxxxx; xxx xxxxx xxx xxx xxxxxxxxxx xxxxx xxx xxx xxxxx xxx xxx xxxx-xxxx xxxxxx. Xxx xxxxxxxxx xxxxx xxx Xxxxxx Xxxx xxxxx xxx **XxxxxxXxxxxx** xxxxxx xxx xxx xxxxxxxxxx xxxxx.
+Marble Maze は、**CreateReverb** メソッドを 4 回 (BGM のために 2 回、ゲーム プレイ音のために 2 回) 呼び出します。 次のコードは、BGM 用の **CreateReverb** メソッド呼び出しを示します。
 
 ```cpp
 CreateReverb(
@@ -223,13 +229,13 @@ CreateReverb(
     );
 ```
 
-Xxx x xxxx xx xxxxxxxx xxxxxxx xx xxxxxxx xxx xxx xxxx XXxxxxY, xxx [XXxxxxY Xxxxx Xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ee415756).
+XAudio2 で利用できる効果のソースの一覧については、「[XAudio2 のオーディオ エフェクト](https://msdn.microsoft.com/library/windows/desktop/ee415756)」をご覧ください。
 
-### Xxxxxxx xxxxx xxxx xxxx xxxx
+### ファイルからのオーディオ データの読み込み
 
-Xxxxxx Xxxx xxxxxxx xxx **XxxxxXxxxxxxx** xxxxx, xxxxx xxxx Xxxxx Xxxxxxxxxx xx xxxx xxxxx xxxxxxxxx xxxx xxxx. Xxxxxx Xxxx xxxx xxx **XxxxxXxxxxxxx** xxxxxx xx xxxx xxxx xxxxx xxxx.
+Marble Maze に定義されている **MediaStreamer** クラスは、メディア ファンデーションを使ってオーディオ リソースをファイルから読み込みます。 Marble Maze は、各オーディオ ファイルの読み込みに **MediaStreamer** オブジェクトを 1 つ使います。
 
-Xxxxxx Xxxx xxxxx xxx **XxxxxXxxxxxxx::Xxxxxxxxxx** xxxxxx xx xxxxxxxxxx xxxx xxxxx xxxxxx. Xxxx'x xxx xxx **Xxxxx::XxxxxxXxxxxxxxx** xxxxxx xxxxx **XxxxxXxxxxxxx::Xxxxxxxxxx** xx xxxxxxxxxx xxx xxxxx xxxxxx xxx xxx xxxxxxxxxx xxxxx:
+各オーディオ ストリームは、**MediaStreamer::Initialize** メソッドを呼び出して初期化されます。 **Audio::CreateResources** メソッドが **MediaStreamer::Initialize** を呼び出して BGM のオーディオ ストリームを初期化する方法を次に示します。
 
 ```cpp
 // Media Foundation is a convenient way to get both file I/O and format decode for 
@@ -238,7 +244,7 @@ Xxxxxx Xxxx xxxxx xxx **XxxxxXxxxxxxx::Xxxxxxxxxx** xxxxxx xx xxxxxxxxxx xxxx xx
 m_musicStreamer.Initialize(L"Media\\Audio\\background.wma");
 ```
 
-Xxx **XxxxxXxxxxxxx::Xxxxxxxxxx** xxxxxx xxxxxx xx xxxxxxx xxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ms702238) xxxxxxxx xx xxxxxxxxxx Xxxxx Xxxxxxxxxx.
+**MediaStreamer::Initialize** メソッドは、メディア ファンデーションを初期化する [**MFStartup**](https://msdn.microsoft.com/library/windows/desktop/ms702238) 関数の呼び出しによって開始されます。
 
 ```cpp
 DX::ThrowIfFailed(
@@ -246,7 +252,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-**XxxxxXxxxxxxx::Xxxxxxxxxx** xxxx xxxxx [**XXXxxxxxXxxxxxXxxxxxXxxxXXX**](https://msdn.microsoft.com/library/windows/desktop/dd388110) xx xxxxxx xx [**XXXXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/dd374655) xxxxxx. Xx **XXXXxxxxxXxxxxx** xxxxxx xxxxx xxxxx xxxx xxxx xxx xxxx xxxx xx xxxxxxxxx xx xxx.
+次に、**MediaStreamer::Initialize** は [**MFCreateSourceReaderFromURL**](https://msdn.microsoft.com/library/windows/desktop/dd388110) を呼び出して [**IMFSourceReader**](https://msdn.microsoft.com/library/windows/desktop/dd374655) オブジェクトを作成します。 **IMFSourceReader** オブジェクトは、URL で指定されたファイルからメディア データを読み取ります。
 
 ```cpp
 DX::ThrowIfFailed(
@@ -254,7 +260,8 @@ DX::ThrowIfFailed(
     );
 ```
 
-Xxx **XxxxxXxxxxxxx::Xxxxxxxxxx** xxxxxx xxxx xxxxxxx xx [**XXXXxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ms704850) xxxxxx xx xxxxxxxx xxx xxxxxx xx xxx xxxxx xxxxxx. Xx xxxxx xxxxxx xxx xxx xxxxx: x xxxxx xxxx xxx x xxxxxxx. Xxx xxxxx xxxx xxxxxxx xxx xxxxxxx xxxxxx xx xxx xxxxx, xxxx xx xxxxx, xxxxx, xxxxxx, xxx xx xx. Xxx xxxxxxx xxxxxxx xxx xxxxxx, xxxx xx XXX, XXXXX, xx XXX. Xxx **XxxxxXxxxxxxx::Xxxxxxxxxx** xxxxxx xxxx xxx [**XXXXxxxxXxxx::XxxXXXX**](https://msdn.microsoft.com/library/windows/desktop/bb970530) xxxxxx xx xxxxxxx xxx xxxxx xxxx xx xxxxx (**XXXxxxxXxxx\_Xxxxx**) xxx xxx xxxxx xxxx xx xxxxxxxxxxxx XXX xxxxx (**XXXxxxxXxxxxx\_XXX**). Xxx [**XXXXxxxxxXxxxxx::XxxXxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/bb970432) xxxxxx xxxxxxxxxx xxx xxxxx xxxx xxxx xxx xxxxxx xxxxxx.
+**MediaStreamer::Initialize** メソッドはさらに、オーディオ ストリームの形式を記述する [**IMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms704850) オブジェクトを作成します。 オーディオ形式にはメジャー タイプとサブタイプの 2 種類があります。 メジャー タイプではメディア全体の形式 (ビデオ、オーディオ、スクリプトなど) を定義します。 サブタイプでは PCM、ADPCM、WMA などの形式を定義します。 **MediaStreamer::Initialize** メソッドは、[**IMFMediaType::SetGUID**](https://msdn.microsoft.com/library/windows/desktop/bb970530) メソッドを使って、メジャー タイプにオーディオ (**MFMediaType\_Audio**) を、サブタイプに圧縮されていない PCM オーディオ (**MFAudioFormat\_PCM**) を指定します。 [
+            **IMFSourceReader::SetCurrentMediaType**](https://msdn.microsoft.com/library/windows/desktop/bb970432) メソッドが、メディア タイプをストリーム リーダーに関連付けます。
 
 ```cpp
 // Set the decoded output format as PCM. 
@@ -278,7 +285,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Xxx **XxxxxXxxxxxxx::Xxxxxxxxxx** xxxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxx xxxxx xxxxxx xxxx Xxxxx Xxxxxxxxxx xxx xxxxx xxx [**XXXxxxxxXxxxXxxxxxXxXxxxXXXxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ms702177) xxxxxxxx xx xxxxxxx xxx Xxxxx Xxxxxxxxxx xxxxx xxxxx xxxx xx x [**XXXXXXXXXXXX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) xxxxxxxxx. Xxx **XXXXXXXXXXXX** xxxxxxxxx xxxxxxx xxx xxxxxx xx xxxxxxxx-xxxxx xxxx. Xxxxxx Xxxx xxxx xxxx xxxxxxxxx xx xxxxxx xxx xxxxxx xxxxxx xxx xx xxxxx xxx xxx-xxxx xxxxxx xx xxx xxxxxx xxxxxxx xxxxx.
+次に、**MediaStreamer::Initialize** メソッドはメディア ファンデーションから完全な出力メディア形式を取得し、[**MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177) 関数を呼び出して、メディア ファンデーションのオーディオ メディア タイプを [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) 構造体に変換します。 **WAVEFORMATEX** 構造体は Waveform オーディオ データの形式を定義します。 Marble Maze はこの構造体を使ってソース ボイスを作成し、大理石の転がる音に低域フィルターを適用します。
 
 ```cpp
 // Get the complete WAVEFORMAT from the Media Type.
@@ -295,11 +302,11 @@ CopyMemory(&m_waveFormat, waveFormat, sizeof(m_waveFormat));
 CoTaskMemFree(waveFormat);
 ```
 
-> **Xxxxxxxxx**   Xxx [**XXXxxxxxXxxxXxxxxxXxXxxxXXXxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ms702177) xxxxxxxx xxxx **XxXxxxXxxXxxxx** xx xxxxxxxx xxx [**XXXXXXXXXXXX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) xxxxxx. Xxxxxxxxx, xxxx xxxx xxxx xxx xxxx **XxXxxxXxxXxxx** xxxx xxx xxx xxxxxxxx xxxxx xxxx xxxxxx.
+> **重要**   [**MFCreateWaveFormatExFromMFMediaType**](https://msdn.microsoft.com/library/windows/desktop/ms702177) 関数は、**CoTaskMemAlloc** を使って [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) オブジェクトを割り当てます。 したがって、このオブジェクトを使い終えたら必ず、**CoTaskMemFree** を呼び出す必要があります。
 
  
 
-Xxx **XxxxxXxxxxxxx::Xxxxxxxxxx** xxxxxx xxxxxxxx xx xxxxxxxxx xxx xxxxxx xx xxx xxxxxx, x\_*xxxXxxxxxXxxxxxXxXxxxx*, xx xxxxx. Xx xx xx, xx xxxxx xxx [**XXXXxxxxxXxxxxx::XXXXxxxxxXxxxxx::XxxXxxxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/dd374662) xxxxxx xx xxx xxx xxxxxxxx xx xxx xxxxx xxxxxx xx YYY-xxxxxxxxxx xxxxx, xxxxxxxx xxx xxxxxxxx xx xxxxxxxx, xxx xxxx xxxxxxxxxx xx xxx xxxxxxx xxxx xxxxxxxx xxxx xx xxxxx xxx xxxxxx. Xxxxxx Xxxx xxxxx xxxx xxxx xxxxx xx xxxxxxxx xxx xxxxxx xxxx xxxxx xxxx xxxx xxxx xxxxx.
+**MediaStreamer::Initialize** メソッドは、ストリームの長さ m\_*maxStreamLengthInBytes* (バイト単位) を計算して終了します。 そのために、[**IMFSourceReader::IMFSourceReader::GetPresentationAttribute**](https://msdn.microsoft.com/library/windows/desktop/dd374662) メソッドを呼び出してオーディオ ストリームの継続時間 (100 ナノ秒単位) を取得し、継続時間をセクションに変換した後、平均データ転送速度 (バイト/秒単位) を乗算します。 Marble Maze は後でこの値を使って、各ゲーム プレイ音を保持するバッファーを割り当てます。
 
 ```cpp
 // Get the total length of the stream, in bytes.
@@ -317,9 +324,9 @@ m_maxStreamLengthInBytes =
 m_maxStreamLengthInBytes = (m_maxStreamLengthInBytes + 3) / 4 * 4;
 ```
 
-### Xxxxxxxx xxx xxxxxx xxxxxx
+### ソース ボイスの作成
 
-Xxxxxx Xxxx xxxxxxx XXxxxxY xxxxxx xxxxxx xx xxxx xxxx xx xxx xxxx xxxxxx xxx xxxxx xx xxxxxx xxxxxx. Xxx **Xxxxx** xxxxx xxxxxxx xx [**XXXxxxxYXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee415914) xxxxxx xxx xxx xxxxxxxxxx xxxxx xxx xx xxxxx xx **XxxxxXxxxxxXxxx** xxxxxxx xx xxxx xxx xxxx xxxx xxxxxx. Xxx **XxxxxXxxxxxXxxx** xxxxxxxxx xxxxx xxx **XXXxxxxYXxxxxxXxxxx** xxxxxx xxx xx xxxxxx xxx xxxx xxxxxxx xxxxx xxxxxx-xxxxxxx xxxx, xxxx xx xxx xxxxx xxxxxx. Xxxxx.x xxxxxxx xxx **XxxxxXxxxx** xxxxxxxxxxx. Xxxxxx Xxxx xxxx xxxx xxxxxxxxxxx xx xxxxxxxx xxxx xxxx xxxx xxxxx. Xxx Xxxxx xxxxx xxxx xxxx xxxx xxxxxxxxxxx xx xxxxx xxx xxxxx xx **XxxxxXxxxxxXxxx** xxxxxxx.
+Marble Maze は、XAudio2 ソース ボイスを作成して、ソース ボイスに含まれるそれぞれのゲーム音と音楽を再生します。 **Audio** クラスには、BGM 用の [**IXAudio2SourceVoice**](https://msdn.microsoft.com/library/windows/desktop/ee415914) オブジェクトと、ゲーム プレイ音を格納する **SoundEffectData** オブジェクトの配列が定義されます。 **SoundEffectData** 構造体は、効果の **IXAudio2SourceVoice** オブジェクトを保持するほか、効果に関連したその他のデータ (オーディオ バッファーなど) を定義します。 Audio.h には **SoundEvent** 列挙体が定義されています。 Marble Maze は、この列挙体を使って各ゲーム プレイ音を識別します。 Audio クラスで、**SoundEffectData** オブジェクトの配列のインデックスとしても、この列挙体が使われます。
 
 ```cpp
 enum SoundEvent
@@ -334,20 +341,22 @@ enum SoundEvent
 };
 ```
 
-Xxx xxxxxxxxx xxxxx xxxxx xxx xxxxxxxxxxxx xxxxxxx xxxx xx xxxxx xxxxxx, xxx xxxx xxxx xxxxxxxx xxx xxxxxxxxxx xxxxx xxxx, xxx x xxxxx xxxxxxxxxxx xx xxxx xxxx xxxxx xxxxxxxxxx. Xxx xxxxx xxxxx xxx xxxxxxx xx xxx \\Xxxxx\\Xxxxx xxxxxx.
+次の表は、列挙体の各値と、それに関連したサウンド データが格納されているファイル、表現される音の簡単な説明を一覧にしたものです。 オーディオ ファイルは \\Media\\Audio フォルダーにあります。
 
-| XxxxxXxxxx xxxxx  | Xxxx xxxx      | Xxxxxxxxxxx                                              |
+| SoundEvent 値  | ファイル名      | 説明                                              |
 |-------------------|----------------|----------------------------------------------------------|
-| XxxxxxxXxxxx      | XxxxxxXxxx.xxx | Xxxxxx xx xxx xxxxxx xxxxx.                              |
-| XxxxxxxXxxxx      | XxxxxxXxxx.xxx | Xxxxxx xxxx xxx xxxxxx xxxxx xxx xxx xxxx.               |
-| XxxxxxxxxXxxxx    | XxxxxxXxx.xxx  | Xxxxxx xxxx xxx xxxxxx xxxxxxxx xxxx xxx xxxx.           |
-| XxxxxxxxxxXxxxx   | Xxxxxxxxxx.xxx | Xxxxxx xxxx xxx xxxxxx xxxxxx xxxx x xxxxxxxxxx.         |
-| XxxxXxxxxxXxxxx   | XxxxXxxxxx.xxx | Xxxxxx xxxx xxx xxxx xxxx xxxxxxx xxx xxxxxxx xxxx xxxx. |
-| XxxxXxxxxxxxXxxxx | XxxxXxxxxx.xxx | Xxxxxx xxxx xxx xxxx xxxx xxxxxxx x xxxx xxxx.           |
+| RollingEvent      | MarbleRoll.wav | 大理石が転がるときに再生されます。                              |
+| FallingEvent      | MarbleFall.wav | 大理石が迷路から落ちるときに再生されます。               |
+| CollisionEvent    | MarbleHit.wav  | 大理石が迷路にぶつかるときに再生されます。           |
+| CheckpointEvent   | Checkpoint.wav | 大理石がチェックポイントを通過するときに再生されます。         |
+| MenuChangeEvent   | MenuChange.wav | ゲーム ユーザーが現在のメニュー項目を変更するときに再生されます。 |
+| MenuSelectedEvent | MenuSelect.wav | ゲーム ユーザーがメニュー項目を選択するときに再生されます。           |
 
  
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xxx **Xxxxx::XxxxxxXxxxxxxxx** xxxxxx xxxxxxx xxx xxxxxx xxxxx xxx xxx xxxxxxxxxx xxxxx. Xxx [**XXXxxxxY::XxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418607) xxxxxx xxxxxxx xxx xxxxxxxxxx x xxxxxx xxxxx. Xx xxxxx x [**XXXXXXXXXXXX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) xxxxxxxxx xxxx xxxxxxx xxx xxxxxx xx xxx xxxxx xxxxxxx xxxx xxx xxxx xx xxx xxxxx. Xx xxxxxxxxx xxxxxxxxxx, Xxxxxx Xxxx xxxx xxx XXX xxxxxx. Xxx [**XXXXXXY\_XXXX\_XXXXXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/ee419244) xxxxxxxxx xxxxxxx xxx xxxxxx xxxxxxxxxxx xxxxx xxxx xxxxxxx xxxxx xxx xxxxxxxxx xxxxxxx x xxxxxx xxxxxx xx xxxx. Xxxxxx Xxxx xxxxx xxx **Xxxxx::XxxXxxxxXxxxxxXxxxxx** xxxxxxxx xx xxx xxx xxxxxxx xx xxxxxx xxx xxxxx xx xxx xxxx xx xx xxxxx. Xxx [**XXXXXXY\_XXXXX\_XXXXX**](https://msdn.microsoft.com/library/windows/desktop/ee419246) xxxxxxxxx xxxxxxx xxx xxx xx xxxxxx xx xxxxxxx xxxx xxxx x xxxxxx xxxxxx xxxxx. Xxxxxx Xxxx xxxxx xxxx xxxx xxx xxxxxx xxxxx xx xxx xxxxxxxxx xxxxx (xxx xxx xxx, xx xxxxxxxxx, xxxxxxx xx x xxxxxxx xxxxx) xxx xx xxx xxx xxxxxx xxxxxx xxxx xxxxxxxxx xxx xxx, xx xxxxxxxxxxx, xxxxxxx xx x xxxxxxx xxxxx.
+以下の例では、**Audio::CreateResources** メソッドを使って BGM のソース ボイスを作成しています。 ソース ボイスの作成と構成は、[**IXAudio2::CreateSourceVoice**](https://msdn.microsoft.com/library/windows/desktop/ee418607) メソッドで行います。 このメソッドは、ボイスに送られるオーディオ バッファーの形式を定義する [**WAVEFORMATEX**](https://msdn.microsoft.com/library/windows/hardware/ff538799) 構造体を受け取ります。 既に説明したように、Marble Maze では PCM 形式を使います。 [
+            **XAUDIO2\_SEND\_DESCRIPTOR**](https://msdn.microsoft.com/library/windows/desktop/ee419244) 構造体は、別のボイスからの送信先であるターゲット ボイスを定義し、フィルターを使うかどうかを指定します。 Marble Maze は、**Audio::SetSoundEffectFilter** 関数を呼び出し、フィルターを使って、転がるボールの音に変化を与えています。 [
+            **XAUDIO2\_VOICE\_SENDS**](https://msdn.microsoft.com/library/windows/desktop/ee419246) 構造体は、単一の出力ボイスからデータを受け取るための一連のボイスを定義します。 Marble Maze は、ソース ボイスからのデータを、マスタリング ボイス (再生するサウンドのドライ、つまり変更されない部分が対象) と 2 つのサブミックス ボイス (再生するサウンドのウェット、つまりリバーブのかかった部分を実装) に送ります。
 
 ```cpp
 XAUDIO2_SEND_DESCRIPTOR descriptors[3];
@@ -388,10 +397,10 @@ else
 }
 ```
 
-## Xxxxxxx xxxxxxxxxx xxxxx
+## BGM の再生
 
 
-X xxxxxx xxxxx xx xxxxxxx xx xxx xxxxxxx xxxxx. Xxxxxx Xxxx xxxxxx xxx xxxxxxxxxx xxxxx xx xxx xxxx xxxx. Xxx xxxxx xxxx xx **XxxxxxXxxx::Xxxxxx** xxxxx **Xxxxx::Xxxxx** xx xxxxx xxx xxxxxxxxxx xxxxx.
+ソース ボイスは停止した状態で作成されます。 Marble Maze はゲーム ループ内で BGM を開始します。 **MarbleMaze::Update** の最初の呼び出しで、**Audio::Start** を呼び出して BGM を開始します。
 
 ```cpp
 if (!m_audio.m_isAudioStarted)
@@ -400,7 +409,7 @@ if (!m_audio.m_isAudioStarted)
 }
 ```
 
-Xxx **Xxxxx::Xxxxx** xxxxxx xxxxx [**XXXxxxxYXxxxxxXxxxx::Xxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418471) xx xxxxx xx xxxxxxx xxx xxxxxx xxxxx xxx xxx xxxxxxxxxx xxxxx.
+**Audio::Start** メソッドは [**IXAudio2SourceVoice::Start**](https://msdn.microsoft.com/library/windows/desktop/ee418471) を呼び出して、BGM のソース ボイスの処理を開始します。
 
 ```cpp
 void Audio::Start()
@@ -422,15 +431,15 @@ void Audio::Start()
 }
 ```
 
-Xxx xxxxxx xxxxx xxxxxx xxxx xxxxx xxxx xx xxx xxxx xxxxx xx xxx xxxxx xxxxx. Xx xxx xxxx xx Xxxxxx Xxxx, xxx xxxx xxxxx xxxxxxxx xxx xxxxxx xxxxxx xxxx xxxxx xxx xxx xxxxxx xxxxxxx xx xxx xxxxx. Xxx xxxxxx xxxxx xxxxxxx x xxxxx xxxx-xxxxx xxxxxx; xxx xxxxxx xxxxxxx x xxx xxxx-xxxxx xxxxxx. Xxx xxxxxx xxxx xxxx xxxxxx xxxxx xxxxxxxxxxx xx xxx xxxxx xxx xx xxxxxxxxxx xx xxx xxxx xxx xxxxx xx xxx xxxx. Xxx xxxx-xxxxx xxxxxx xxxxxxxxxxx xxxx xxxx xxx xxxx xx xxxx x xxxx xx xx x xxxxx xxxx, xxx xxx xxxx-xxxxx xxxxxx xxxxxxxxxxx xxxx xxxx xxx xxxx xx xx x xxxxx xxxxx. Xxxx xxxxxxxxx xxxxxxxx x xxxx xxxxxxxxx xxxx xxxxxx xx xxx xxxxxx xxxxx xxxxxxx xxx xxxx. Xx xxxxx xxxx xxxxx xxx Xxxxxx Xxxx xxxxxxxxxx xxxx xxxxxx, xxx **Xxxxx::XxxXxxxXxxx** xxx **Xxxxxxx::XxxxxxxxxXxxxxxxXxxxXxxx** xx xxx Xxxxxx Xxxx xxxxxx xxxx.
+ソース ボイスは、そのオーディオ データをオーディオ グラフの次のステージに渡します。 Marble Maze の場合、次のステージには、オーディオにリバーブ エフェクトを適用する 2 つのサブミックス ボイスが含まれます。 1 つは近距離の後期フィールド リバーブを適用するもので、もう 1 つは遠距離の後期フィールド リバーブを適用するものです。 最終的なミキシングに各サブミックス ボイスがどれだけ含まれるかは、空間のサイズと形状によって決定します。 玉が壁の近くまたは小さな空間内にある場合はニアフィールド リバーブの占める量が多くなり、玉が大きな空間内にある場合は後期フィールド リバーブの占める量が多くなります。 この手法により、大理石が迷路内を移動するときに、よりリアルなエコー効果が得られます。 Marble Maze におけるこの効果の実装について詳しくは、Marble Maze のソース コードで **Audio::SetRoomSize** と **Physics::CalculateCurrentRoomSize** をご覧ください。
 
-> **Xxxx**  Xx x xxxx xx xxxxx xxxx xxxx xxxxx xxx xxxxxxxxxx xxx xxxx, xxx xxx xxx x xxxx xxxxx xxxxxx xxxxx. Xxx xxxxxxx, xxx xxx xxx xxx xxxxxx xxxxxxx xxx xxx xxxxx xx xxx xxx xxxxxx x xxxxxxxxxx xxxxxx xxxxxxx xxx xxxx xxxx.
+> **注**  ほとんどの空間のサイズが同じであるゲームでは、もっと基本的なリバーブ モデルを使うことができます。 たとえば、すべての空間に 1 つのリバーブ設定を使ったり、定義済みのリバーブ設定を空間ごとに作成したりできます。
 
  
 
-Xxx **Xxxxx::XxxxxxXxxxxxxxx** xxxxxx xxxx Xxxxx Xxxxxxxxxx xx xxxx xxx xxxxxxxxxx xxxxx. Xx xxxx xxxxx, xxxxxxx, xxx xxxxxx xxxxx xxxx xxx xxxx xxxxx xxxx xx xxxx xxxx. Xx xxxxxxxx, xxxxxxx xxx xxxxxxxxxx xxxxx xxxxx, xxx xxxxxx xxxxx xxxx xx xxxxxxxxx xxxxxxx xxxx xxxx xx xxxx xxx xxxxx xxxxxxxxx xx xxxx. Xx xxxx xxx xxxxxx xxxxx xxxxxx xxxx xxxx, xxx xxxx xxxx xxxxxxx xxx xxxxx xxxxxxx xxxxx xxxxx. Xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxx **Xxxxx::Xxxxxx** xx xxxxxxx xxx xxxxxxxxxx xxxxx xxxxx xxxxxx. Xxx **Xxxxx::Xxxxxx** xxxxxxx xx xxxxx xx xxxxx xxxxx xxxxxxx, **x\_xxxxxXxxxxxx**. Xxxx xxxxxx xxxxx YY XX (YYYYY xxxxx) xx xxxx. Xxx xxxx xxxxx xxxx xxxx xxx Xxxxx Xxxxxxxxxx xxxxxx xxx xxxxxx xxxx xxxx xx xxx xxxxxx xxxxx xxxxx xxx xxxxxx xxxxx xxx xxxxx xxxxxx xxxxxxx.
+**Audio::CreateResources** メソッドは、メディア ファンデーションを使って BGM を読み込みます。 しかし、この時点では、処理対象のオーディオ データがソース ボイスにありません。 さらに、BGM はループするので、データを使いソース ボイスを定期的に更新して、音楽を再生し続ける必要があります。 ソース ボイスにデータが入力された状態を維持するために、ゲーム ループはフレームごとにオーディオ バッファーを更新します。 **MarbleMaze::Render** メソッドは、**Audio::Render** を呼び出して BGM のオーディオ バッファーを処理します。 **Audio::Render** には 3 つのオーディオ バッファーの配列 **m\_audioBuffers** を定義します。 各バッファーは 64 KB (65536 バイト) のデータを保持します。 ループは、メディア ファンデーション オブジェクトからデータを読み取り、ソース ボイスのキューに 3 つのバッファーが入るまで、そのデータをソース ボイスに書き込みます。
 
-> **Xxxxxxx**  Xxxxxxxx Xxxxxx Xxxx xxxx x YY XX xxxxxx xx xxxx xxxxx xxxx, xxx xxx xxxx xx xxx x xxxxxx xx xxxxxxx xxxxxx. Xxxx xxxxxx xxxxxxx xx xxx xxxxxxxxxxxx xx xxxx xxxx.
+> **注意**  Marble Maze は 64 KB のバッファーを使って音楽データを保持しますが、より大きいバッファーまたはより小さいバッファーが必要になる場合もあります。 その量は、ゲームの要件によって異なります。
 
  
 
@@ -498,7 +507,7 @@ void Audio::Render()
 }
 ```
 
-Xxx xxxx xxxx xxxxxxx xxxx xxx Xxxxx Xxxxxxxxxx xxxxxx xxxxxxx xxx xxx xx xxx xxxxxx. Xx xxxx xxxx, xx xxxxx xxx [**XxxxxXxxxxxxx::XxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ms697215) xxxxxx xx xxxxx xxx xxxxxxxx xx xxx xxxxx xxxxxx.
+メディア ファンデーション オブジェクトがストリームの末尾に到達したときの処理もループで行います。 この場合、[**MediaStreamer::OnClockRestart**](https://msdn.microsoft.com/library/windows/desktop/ms697215) メソッドを呼び出してオーディオ ソースの位置をリセットします。
 
 ```cpp
 void MediaStreamer::Restart()
@@ -517,7 +526,7 @@ void MediaStreamer::Restart()
 }
 ```
 
-Xx xxxxxxxxx xxxxx xxxxxxx xxx x xxxxxx xxxxxx (xx xxx xx xxxxxx xxxxx xxxx xx xxxxx xxxxxx xxxx xxxxxx), xxx xxx xxx xxx **XxxxXxxxx** xxxxx xx **XXXXXXY\_XXXX\_XXXXXXXX** xxxx xxx xxxxxxxxxx xxx xxxxx. Xxxxxx Xxxx xxxx xxxx xxxxxxxxx xx xxxx xxx xxxxxxx xxxxx xxx xxx xxxxxx.
+単一バッファー (またはメモリに完全に読み込まれるサウンド全体) 用のオーディオ ループを実装するには、サウンドの初期化時に **LoopCount** フィールドを **XAUDIO2\_LOOP\_INFINITE** に設定します。 Marble Maze は、この手法を使って大理石の転がる音を再生します。
 
 ```cpp
 if(sound == RollingEvent)
@@ -526,22 +535,22 @@ if(sound == RollingEvent)
 }
 ```
 
-Xxxxxxx, xxx xxx xxxxxxxxxx xxxxx, Xxxxxx Xxxx xxxxxxx xxx xxxxxxx xxxxxxxx xx xxxx xx xxx xxxxxx xxxxxxx xxx xxxxxx xx xxxxxx xxxx xx xxxx. Xxxx xxxx xxxxx xxxxx xxx xxxxx, xxx xxx xxxxxx xxx xxxxx xxxx xxxx xxxxxxx xxxxxxx. Xxxxx xx xxx xxxx xxxxxxx xxxxxx xxxx xxxx xxx xxxxxxxxx xx xxx xxxx’x xxxxxxx xx xxxxxxx xxx xxxxxx xxxxx xxxx.
+ただし、BGM に関しては、Marble Maze は、メモリの使用量を細かく制御できるようにバッファーを直接管理します。 音楽ファイルが大きい場合は、小さいバッファーに音楽データをストリームできます。 そうすることで、ゲームがオーディオ データを処理してストリームできる頻度と、メモリ サイズとのバランスを取ることができます。
 
-> **Xxx**  Xx xxxx xxxx xxx x xxx xx xxxxxxx xxxxx xxxx, xxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxx xxxxxxxxxx xxxxxx xx xxxx xx xxx xxxxx xxxxxxx xxx xxxxx xxxxxx xxx xxxxxxxxxxxx xxxxxxxx xxxxx xxxx xx xxxx xxxx. Xx xxxx xxxx xx xxxxxxxxx xx xxxx xxxxx, xxxxxxxx xxxxxxxxxx xxxxx xx x xxxxxxxx xxxxxx xxxx xxxx xxx xxxxxxx xxxxxxxxx. Xxxx xxxxxxxx xx xxxxxxxxxx xxxxxx xx xxxxxxxxx xxxx xxxx xxxxxxxx xxxxxxxxxx xxxxxxx xxxx xxxx xxx xxx xxxx xxxxxxxxxx.
+> **ヒント**  フレーム レートが低いまたは変動するゲームでは、メイン スレッドでのオーディオの処理中に、オーディオ内で予期しない一時停止またはポップが発生する可能性があります。これは、オーディオ エンジンに処理対象のオーディオ データが十分にバッファーされていないためです。 ゲームでこの問題が発生しやすい場合は、レンダリングを実行しない別のスレッドでオーディオを処理することを検討してください。 この方法は、ゲームがアイドル状態のプロセッサを使うことができるため、複数のプロセッサを搭載したコンピューターで特に役立ちます。
 
  
 
-##  Xxxxxxxx xx xxxx xxxxxx
+##  ゲームのイベントへの対応
 
 
-Xxx **XxxxxxXxxx** xxxxx xxxxxxxx xxxxxxx xxxx xx **XxxxXxxxxXxxxxx**, **XxXxxxxXxxxxxXxxxxxx**, **XxxxXxxxxXxxxxx**, **XxxXxxxxXxxxxxXxxxxx**, **XxxXxxxxXxxxxxXxxxx**, xxx **XxxXxxxxXxxxxxXxxxxx** xx xxxxxx xxx xxxx xx xxxxxxx xxxx xxxxxx xxxx xxx xxxx, xxx xx xxxxxxx xxxxx xxxxxxxxxx xxxx xx xxxxxx xxx xxxxx. Xxx xxxxxxx, xx xxx xxxxxx xxxxx xxx xxx xxxx, **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxx xxx **Xxxxx::XxxxXxxxxXxxxxx** xxxxxx xx xxxx xxx **XxxxxxxXxxxx** xxxxx.
+ゲームでサウンドの再生と停止のタイミングを制御し、ボリュームやピッチなどのサウンド プロパティを制御するために、**MarbleMaze** クラスには **PlaySoundEffect**、**IsSoundEffectStarted**、**StopSoundEffect**、**SetSoundEffectVolume**、**SetSoundEffectPitch**、**SetSoundEffectFilter** などのメソッドが用意されています。 たとえば、大理石が迷路から落ちた場合、**MarbleMaze::Update** メソッドが **Audio::PlaySoundEffect** メソッドを呼び出して **FallingEvent** サウンドを再生します。
 
 ```cpp
 m_audio.PlaySoundEffect(FallingEvent);
 ```
 
-Xxx **Xxxxx::XxxxXxxxxXxxxxx** xxxxxx xxxxx xxx [**XXXxxxxYXxxxxxXxxxx::Xxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418471) xxxxxx xx xxxxx xxxxxxxx xx xxx xxxxx. Xx xxx **XXXxxxxYXxxxxxXxxxx::Xxxxx** xxxxxx xxx xxxxxxx xxxx xxxxxx, xx xx xxx xxxxxxx xxxxx. **Xxxxx::XxxxXxxxxXxxxxx** xxxx xxxxxxxx xxxxxx xxxxx xxx xxxxxxx xxxxxx.
+**Audio::PlaySoundEffect** メソッドは [**IXAudio2SourceVoice::Start**](https://msdn.microsoft.com/library/windows/desktop/ee418471) メソッドを呼び出してサウンドの再生を開始します。 **IXAudio2SourceVoice::Start** メソッドが既に呼び出されている場合は、もう開始されません。 **Audio::PlaySoundEffect** は、続いて特定のサウンドのカスタム ロジックを実行します。
 
 ```cpp
 void Audio::PlaySoundEffect(SoundEvent sound)
@@ -595,9 +604,9 @@ void Audio::PlaySoundEffect(SoundEvent sound)
 }
 ```
 
-Xxx xxxxxx xxxxx xxxx xxxxxxx, xxx **Xxxxx::XxxxXxxxxXxxxxx** xxxxxx xxxxx [**XXXxxxxYXxxxxxXxxxx::XxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh405047) xx xxxxxxxxx xxx xxxxxx xx xxxxxxx xxxx xxx xxxxxx xxxxx xx xxxxxxx. Xx xxxxx [**XXXxxxxYXxxxxxXxxxx::XxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418473) xx xxx xxx xxxxx xxxx xxx xxx xxxxx xx xxx xxxxx’x xxxxx xxxxx xx xx xxxxxxx xxx xxxxxx. Xxx **Xxxxx::XxxxXxxxxXxxxxx** xxxxxx xxxx xxxxxxx xxx xxxxxxxxx xxxxx xx xx xxxxxx xxx xxxxx xx xxxxxxxx. Xxxx xxxxxx, xxx xxxxxxx, xxxx xxx xxxxxx xxxxxxxx xxxx x xxxxxx xx xxx xxxx.
+転がる以外の音に関しては、**Audio::PlaySoundEffect** メソッドは [**IXAudio2SourceVoice::GetState**](https://msdn.microsoft.com/library/windows/desktop/hh405047) を呼び出して、ソース ボイスが再生しているバッファーの数を調べます。 アクティブなバッファーがない場合、[**IXAudio2SourceVoice::SubmitSourceBuffer**](https://msdn.microsoft.com/library/windows/desktop/ee418473) を呼び出して、サウンドのオーディオ データをボイスの入力キューに追加します。 また、**Audio::PlaySoundEffect** メソッドは、ぶつかる音を 2 回連続して再生できるようにします。 これはたとえば、大理石が迷路の角にぶつかったときに発生します。
 
-Xx xxxxxxx xxxxxxxxx, xxx Xxxxx xxxxx xxxx xxx **XXXXXXY\_XXXX\_XXXXXXXX** xxxx xxxx xx xxxxxxxxxxx xxx xxxxx xxx xxx xxxxxxx xxxxx. Xxx xxxxx xxxxxx xxxxxx xxxxxxxx xxx xxxxx xxxx xxxx **Xxxxx::XxxxXxxxxXxxxxx** xx xxxxxx xxx xxxx xxxxx. Xx xxxxxxxx xxx xxxxxxxx xxxxx xxx xxx xxxxxxx xxxxx, Xxxxxx Xxxx xxxxx xxx xxxxx xxxxxxx xx xxxxxxxx xx. Xx xxx xxxxxx xxxxxxx xxxxxxxx, Xxxxxx Xxxx xxxxxxx xxx xxxxx xxx xxxxxx xx xxx xxxxx xx xxxx xx x xxxx xxxxxxxxx xxxxxx. Xxx xxxxxxxxx xxxxx xxx xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxxxx xxx xxxxx xxx xxxxxx xx xxx xxxxxx xx xxx xxxxxxxx xxxxxxx xxx xxx xx xxxxx xxx xxxxx xx xxxxxxx xxx xxxxxx xx xxxx xxxx xxx xxxxxx xxxxx.
+既に説明したように、Audio クラスでは、転がるイベントのサウンドを初期化する際に **XAUDIO2\_LOOP\_INFINITE** フラグが使われています。 このイベントに対して最初に **Audio::PlaySoundEffect** が呼び出されたときに、サウンドはループ再生を開始します。 転がる音の再生のロジックを単純化するために、Marble Maze ではサウンドを停止するのではなくミュートします。 Marble Maze は、よりリアルな効果を実現するために、大理石の速度の変化に合わせてサウンドのピッチとボリュームを変化させます。 **MarbleMaze::Update** メソッドが速度の変化に合わせて大理石のピッチとボリュームを更新し、大理石が停止したときにボリュームを 0 に設定してサウンドをミュートする方法を次に示します。
 
 ```cpp
 // Play the roll sound only if the marble is actually rolling. 
@@ -628,12 +637,12 @@ else
 }
 ```
 
-## Xxxxxxxx xx xxxxxxx xxx xxxxxx xxxxxx
+## イベントの中断と再開への対応
 
 
-Xxx xxxxxxxx Xxxxxx Xxxx xxxxxxxxxxx xxxxxxxxx xxxxxxxxx xxx Xxxxxx Xxxx xxxxxxxx xxxxxxx xxx xxxxxx. Xxxx xxx xxxx xx xxxxxxxxx, xxx xxxx xxxxxx xxx xxxxx. Xxxx xxx xxxx xxxxxxx, xxx xxxx xxxxxxx xxx xxxxx xxxxx xx xxxx xxx. Xx xx xx xx xxxxxx xxx xxxx xxxxxxxx xx xxx xxxxx xxxxxxxxx xxxx xxx xxxx xxxx’xx xxx xxxxxx.
+ドキュメント「Marble Maze のアプリケーション構造」では、Marble Maze が中断と再開をどのようにサポートするかを説明しています。 ゲームが中断されると、オーディオが一時停止されます。 ゲームが再開されると、オーディオが中断した箇所から再開されます。 このような処理を行うのは、不要な場合はリソースを使わないというベスト プラクティスに従うためです。
 
-Xxx **Xxxxx::XxxxxxxXxxxx** xxxxxx xx xxxxxx xxxx xxx xxxx xx xxxxxxxxx. Xxxx xxxxxx xxxxx xxx [**XXXxxxxY::XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418628) xxxxxx xx xxxx xxx xxxxx. Xxxxxxxx **XXXxxxxY::XxxxXxxxxx** xxxxx xxx xxxxx xxxxxx xxxxxxxxxxx, xx xxxxxxxxx xxx xxxxx xxxxx xxx xxx xxxxxx xxxxxxxxxx (xxx xxxxxxx, xxx xxxxxx xxxxxx xxxx’x xxxxxxx xxxx xxx xxxxxx xxxxxxx).
+ゲームが中断されると、**Audio::SuspendAudio** メソッドが呼び出されます。 このメソッドは [**IXAudio2::StopEngine**](https://msdn.microsoft.com/library/windows/desktop/ee418628) メソッドを呼び出して、すべてのオーディオを停止します。 **IXAudio2::StopEngine** はすべてのオーディオ出力を直ちに停止しますが、オーディオ グラフとその効果のパラメーター (たとえば大理石がバウンドするときに適用されるリバーブ エフェクト) は保持します。
 
 ```cpp
 // Uses the IXAudio2::StopEngine method to stop all audio immediately.  
@@ -658,7 +667,8 @@ void Audio::SuspendAudio()
 }
 ```
 
-Xxx **Xxxxx::XxxxxxXxxxx** xxxxxx xx xxxxxx xxxx xxx xxxx xx xxxxxxx. Xxxx xxxxxx xxxx xxx [**XXXxxxxY::XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418626) xxxxxx xx xxxxxxx xxx xxxxx. Xxxxxxx xxx xxxx xx [**XXXxxxxY::XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418628) xxxxxxxxx xxx xxxxx xxxxx xxx xxx xxxxxx xxxxxxxxxx, xxx xxxxx xxxxxx xxxxxxx xxxxx xx xxxx xxx.
+ゲームが再開されると、**Audio::ResumeAudio** メソッドが呼び出されます。 このメソッドは、[**IXAudio2::StartEngine**](https://msdn.microsoft.com/library/windows/desktop/ee418626) メソッドを使ってオーディオを再開します。 [
+            **IXAudio2::StopEngine**](https://msdn.microsoft.com/library/windows/desktop/ee418628) の呼び出しでオーディオ グラフとその効果のパラメーターが保持されているため、オーディオ出力は中断した箇所から再開されます。
 
 ```cpp
 // Restarts the audio streams. A call to this method must match a previous call  
@@ -683,12 +693,12 @@ void Audio::ResumeAudio()
 }
 ```
 
-## Xxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxxx
+## ヘッドホンとデバイスの変更の処理
 
 
-Xxxxxx xxxx xxxx xxxxxx xxxxxxxxx xx xxxxxx XXxxxxY xxxxxx xxxxxxxx, xxxx xx xxxx xxx xxxxx xxxxxx xxxxxxx. X xxxxxx xxxxx xx x xxxxxx xxxxxx xx xxxx xxx xxxx xxxx xxxxxxxx xx xxxxxxxxxxx xxx xxxxxxxxxx. Xx xxxxxxxxx xxxx xxx xxxxxxxxx xxx xxxxxx xxxxxxxx xxxx xxxxxxx xxxxxx xxxxxxx. Xxxxxxxxx, xxxx xxxx xxxx xxxx xxxxxxx xxxxx xxxx xxx xxxx xxxxx xx xx xxxxxxx xxxxxxxxxx, xxxxx xxx xxxx xx xxxxxxxxx.
+Marble Maze は、オーディオ デバイスの変更時など、XAudio2 エンジンのエラーをコールバックを使って処理します。 デバイスの変更の一般的な原因は、ユーザーによるヘッドホンの接続と切断です。 デバイスの変更を処理するエンジン コールバックを実装することをお勧めします。 これを行わないと、ユーザーがヘッドホンの接続または切断を行ったときに、ゲームが再開されるまでサウンドの再生が停止します。
 
-Xxxxx.x xxxxxxx xxx **XxxxxXxxxxxXxxxxxxxx** xxxxx. Xxxx xxxxx xxxxxxxxxx xxx [**XXXxxxxYXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee415910) xxxxxxxxx.
+Audio.h は **AudioEngineCallbacks** クラスを定義します。 このクラスは、[**IXAudio2EngineCallback**](https://msdn.microsoft.com/library/windows/desktop/ee415910) インターフェイスを実装します。
 
 ```cpp
 class AudioEngineCallbacks: public IXAudio2EngineCallback
@@ -712,14 +722,16 @@ public :
 };
 ```
 
-Xxx [**XXXxxxxYXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee415910) xxxxxxxxx xxxxxxx xxxx xxxx xx xx xxxxxxxx xxxx xxxxx xxxxxxxxxx xxxxxx xxxxx xxx xxxx xxx xxxxxx xxxxxxxxxx x xxxxxxxx xxxxx. Xx xxxxxxxx xxx xxxxxxxxx, Xxxxxx Xxxx xxxxx xxx [**XXXxxxxY::XxxxxxxxXxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418620) xxxxxx xxxxx xx xxxxxxx xxx [**XXXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/ee415908) xxxxxx xxx xxx xxxxx xxxxxx.
+[
+            **IXAudio2EngineCallback**](https://msdn.microsoft.com/library/windows/desktop/ee415910) インターフェイスは、オーディオ処理イベントが発生したときや、エンジンで重大なエラーが発生したときにコードに通知されるようにします。 コールバックを登録するために、Marble Maze は、音楽エンジン用の [**IXAudio2**](https://msdn.microsoft.com/library/windows/desktop/ee415908) オブジェクトを作成した後に [**IXAudio2::RegisterForCallbacks**](https://msdn.microsoft.com/library/windows/desktop/ee418620) メソッドを呼び出します。
 
 ```cpp
 m_musicEngineCallback.Initialize(this);
 m_musicEngine->RegisterForCallbacks(&m_musicEngineCallback);
 ```
 
-Xxxxxx Xxxx xxxx xxx xxxxxxx xxxxxxxxxxxx xxxx xxxxx xxxxxxxxxx xxxxxx xx xxxx. Xxxxxxxxx, xx xxxxxxxxxx xxx [**XXXxxxxYXxxxxxXxxxxxxx::XxXxxxxxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418463) xxx [**XXXxxxxYXxxxxxXxxxxxxx::XxXxxxxxxxxxXxxxXxx**](https://msdn.microsoft.com/library/windows/desktop/ee418462) xxxxxxx xx xx xxxxxxx. Xxx xxx [**XXXxxxxYXxxxxxXxxxxxxx::XxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ee418461) xxxxxx, Xxxxxx Xxxx xxxxx xxx **XxxXxxxxxXxxxxxxxxxxXxxxxxxxXxxxx** xxxxxx, xxxxx xxxx xxx **x\_xxxxxxXxxxxxxxxxxXxxxxxxxXxxxx** xxxx.
+Marble Maze では、オーディオ処理の開始または終了時の通知は必要ありません。 したがって、何も処理を行わないように [**IXAudio2EngineCallback::OnProcessingPassStart**](https://msdn.microsoft.com/library/windows/desktop/ee418463) メソッドと [**IXAudio2EngineCallback::OnProcessingPassEnd**](https://msdn.microsoft.com/library/windows/desktop/ee418462) メソッドを実装します。 [
+            **IXAudio2EngineCallback::OnCriticalError**](https://msdn.microsoft.com/library/windows/desktop/ee418461) メソッドに関しては、**m\_engineExperiencedCriticalError** フラグを設定する **SetEngineExperiencedCriticalError** メソッドを呼び出します。
 
 ```cpp
 // Called when a critical system error causes XAudio2 
@@ -741,7 +753,7 @@ void SetEngineExperiencedCriticalError()
 }
 ```
 
-Xxxx x xxxxxxxx xxxxx xxxxxx, xxxxx xxxxxxxxxx xxxxx xxx xxx xxxxxxxxxx xxxxx xx XXxxxxY xxxx. Xx xxxxxxx xxxx xxxx xxxxxxxxx, xxx xxxx xxxxxxx xxx XXxxxxY xxxxxxxx xxx xxxxxx x xxx xxx. Xxx **Xxxxx::Xxxxxx** xxxxxx, xxxxx xx xxxxxx xxxx xxx xxxx xxxx xxxxx xxxxx, xxxxx xxxxxx xxx **x\_xxxxxxXxxxxxxxxxxXxxxxxxxXxxxx** xxxx. Xx xxxx xxxx xx xxx, xx xxxxxx xxx xxxx, xxxxxxxx xxx xxxxxxx XXxxxxY xxxxxxxx, xxxxxxxxxxx xxxxxxxxx, xxx xxxx xxxxxx xxx xxxxxxxxxx xxxxx.
+重大なエラーが発生した場合、オーディオ処理は停止し、それ以降の XAudio2 への呼び出しはすべて失敗します。 この状況から回復するには、XAudio2 インスタンスを解放して新しく作成する必要があります。 ゲーム ループからフレームごとに呼び出される **Audio::Render** メソッドは、最初に **m\_engineExperiencedCriticalError** フラグをチェックします。 このフラグが設定されている場合、フラグをクリアし、現在の XAudio2 インスタンスを解放してリソースを初期化した後、BGM を開始します。
 
 ```cpp
 if (m_engineExperiencedCriticalError)
@@ -758,23 +770,27 @@ if (m_engineExperiencedCriticalError)
 }
 ```
 
-Xxxxxx Xxxx xxxx xxxx xxx **x\_xxxxxxXxxxxxxxxxxXxxxxxxxXxxxx** xxxx xx xxxxx xxxxxxx xxxxxxx xxxx XXxxxxY xxxx xx xxxxx xxxxxx xx xxxxxxxxx. Xxx xxxxxxx, xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxx xxx xxxxxxx xxxxx xxx xxxxxxx xx xxxxxxxxx xxxxxx xxxx xxxx xxxx xx xxx. Xxx xxx xxxxxxxx xx xxxxxx xxx xxxxx xxxxxx xxxxx xxxxx xx xx xx xxxxxxxx; xxxxxxx, xxx **x\_xxxxxxXxxxxxxxxxxXxxxxxxxXxxxx** xxxx xxxxx xxxxxx xx xxx xx xxx xxxxxxxx xxxx xxx xxxx xx xxxxx xxxxxx xx xxx xxxxxxxxxx xxx xxxxxxxxx xxx xxxxx xx xx xxxxx xxxxxxxxx xxxxx xxxxxx.
+Marble Maze は、利用できるデバイスがない場合に XAudio2 への呼び出しを防ぐ目的でも **m\_engineExperiencedCriticalError** フラグを使います。 たとえば、**MarbleMaze::Update** メソッドは、このフラグが設定されているときは転がるイベントまたは衝突するイベントのオーディオを処理しません。 アプリは必要に応じてフレームごとにオーディオ エンジンの修復を試みますが、コンピューターにオーディオ デバイスがない場合やヘッドホンが外されていて他に利用できるオーディオ デバイスがない場合は、**m\_engineExperiencedCriticalError** フラグが常に設定されます。
 
-> **Xxxxxxx**   Xx x xxxx, xx xxx xxxxxxx xxxxxxxx xxxxxxxxxx xx xxx xxxx xx xx xxxxxx xxxxxxxx. Xxxxx xx xxx xxxxx xxxxxxxxxxx xxxxxx. Xxxxxx Xxxx xxxx x xxxx xx xxx **XxXxxxxxxxXxxxx** xxxxxxxx xxx xxxxx xxxxxxx xxx xxxxx xxxxxx xxx xxxxxxx xxxxx xxxxxxxxxx xxxxx. Xxx xxxx xxxxxxxxxxx xxxxx XXxxxxY xxxxxxxxx, xxx [XXxxxxY Xxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ee415745).
-
- 
-
-## Xxxxxxx xxxxxx
-
-
-* [Xxxxxx xxxxx xxx xxxxxxxxxxxxx xx xxx Xxxxxx Xxxx xxxxxx](adding-input-and-interactivity-to-the-marble-maze-sample.md)
-* [Xxxxxxxxxx Xxxxxx Xxxx, x XXX xxxx xx X++ xxx XxxxxxX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+> **注意**   原則として、エンジン コールバックの本体でブロック操作を実行しないでください。 これを行うと、パフォーマンスの問題が発生することがあります。 Marble Maze は **OnCriticalError** コールバック内でフラグを設定し、後で通常のオーディオ処理フェーズ中にエラーを処理します。 XAudio2 のコールバックについて詳しくは、「[XAudio2 のコールバック](https://msdn.microsoft.com/library/windows/desktop/ee415745)」をご覧ください。
 
  
 
+## 関連トピック
+
+
+* [Marble Maze サンプルへの入力と対話機能の追加](adding-input-and-interactivity-to-the-marble-maze-sample.md)
+* [Marble Maze、C++ と DirectX での UWP ゲームの開発](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

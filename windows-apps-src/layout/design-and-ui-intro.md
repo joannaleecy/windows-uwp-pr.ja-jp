@@ -1,95 +1,95 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxxx, xxxxxxxx, xxx xxxxxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx x xxxxxx xxxxxxxxxxx. Xxxx xxx xxxx xxx xxxxxxxx xxxxx xxx xxx xxxx xxx xxx xxxxx xx xxxx xx xxxx xxxxxxxx.
-xxxxx: Xxxxxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxx
-xx.xxxxxxx: YYXYYYYX-YXYY-YYXX-YYYX-YYYYYYYXYXYY
-xxxxx: Xxxxx xx XXX xxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: This article describes the features, benefits, and requirements of the Universal Windows Platform (UWP) from a design perspective. Find out what the platform gives you for free and the tools it puts at your disposal.
+title: Introduction to Universal Windows Platform (UWP) app design
+ms.assetid: 50A5605E-3A91-41DB-800A-9180717C1E86
+label: Intro to UWP app design
+template: detail.hbs
 ---
 
-#  Xxxxxxxxxxxx xx XXX xxx xxxxxx 
+#  Introduction to UWP app design 
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-X Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxx xxx xx xxx Xxxxxxx-xxxxx xxxxxx, xxxx xxxx xxxxx xx xxxx xxxxxx xx XX.
+A Universal Windows Platform (UWP) app can run on any Windows-based device, from your phone to your tablet or PC.
 
-![xxxxxxx-xxxxxxx xxxxxxx](images/1894834-hig-device-primer-01-500.png)
+![windows-powered devices](images/1894834-hig-device-primer-01-500.png)
 
-Xxxxxxxxx xx xxx xxxx xxxxx xxxx xx xxxx x xxxx xxxxxxx xx xxxxxxx xxx xx x xxx xxxxxxxxx. Xx xxx xx xxx xx xxxxx xxxxxxxxx xx xxx xxxx xxxxxxxx x xxxxx XX xx xxxxxxx xxxx xxxxxxxxxxxx xxxxxxxxx xxxxxx xxxxx xxx xxxxx xxxxxxx? Xxxxxxxxxxx, xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxx x xxx xx xxxxx-xx xxxxxxxx xxx xxxxxxxxx xxxxxxxx xxxxxx xxxx xxxx xxx xx xxxx xxxx. 
+Designing an app that looks good on such a wide variety of devices can be a big challenge. So how do you go about designing an app that provides a great UX on devices with dramatically different screen sizes and input methods? Fortunately, the Universal Windows Platform (UWP) provides a set of built-in features and universal building blocks that help you do just that. 
 
-![x xxxxxx xxx xx xxx xxxx xxxx xx xxxxxxx xxxxx, xxxxxxx, xxx xxx](images/food-truck-finder/uap-foodtruck--md-detail.png)
+![a design for an app that runs on windows phone, tablets, and pcs](images/food-truck-finder/uap-foodtruck--md-detail.png)
 
-Xxxx xxxxxxxx xxxxxxxxx xxx XX xxxxxxxx xxx xxxxxxxx xx XXX xxxx xxx xxxxxxxx xxxx xxxx-xxxxx xxxxxx xxxxxxxx xxx xxxxxxxx xxxx xxxxx XXX xxx. Xxx'x xxxxx xx xxxxxx x xxxx xx xxxx xx xxx xxxxxxxx xxxx xxx xxx xxxx xxx xxxxxx x XXX xxx. 
+This articles describes the UI features and benefits of UWP apps and provides some high-level design guidance for creating your first UWP app. Let's start by taking a look at some of the features that you get when you create a UWP app. 
 
-## XXX xxx xxxxxxxx
+## UWP app features
 
-### Xxxxxxxxx xxxxxx xxx xxxxxxx
+### Effective pixels and scaling
 
-XXX xxxx xxxxxxxxxxxxx xxxxxx xxx xxxx xx xxxxxxxx, xxxxx, xxx xxxxx XX xxxxxxxx xx xxxx xxxx xxx xxxxxxx xx xxx xxxxxxx.
+UWP apps automatically adjust the size of controls, fonts, and other UI elements so that they are legible on all devices.
 
-Xxxx xxxx xxx xxxx xx x xxxxxx, xxx xxxxxx xxxx xx xxxxxxxxx xx xxxxxxxxx xxx xxx XX xxxxxxxx xxxxxxx xx xxx xxxxxx. Xxxx xxxxxxx xxxxxxxxx xxxxx xxxx xxxxxxx xxxxxxx xxxxxxxx xxx xxxxxx xxxxxxx (xxxxxx xxx xxxx) xx xxxxxxxx xxx xxxxxxxxx xxxx (xxxxxx xxxx xxxxxxxx xxxx). Xxx xxxxxxx xxxxxxxxx xxxxxxx xxxx x YY xx xxxx xx Xxxxxxx Xxx YY xxxx xxxx xx xxxx xx xxxxxxx xx xxx xxxx xx x YY xx xxxx xx Y' xxxxx xxxx'x x xxx xxxxxx xxxx.
+When your app runs on a device, the system uses an algorithm to normalize the way UI elements display on the screen. This scaling algorithm takes into account viewing distance and screen density (pixels per inch) to optimize for perceived size (rather than physical size). The scaling algorithm ensures that a 24 px font on Surface Hub 10 feet away is just as legible to the user as a 24 px font on 5' phone that's a few inches away.
 
-![xxxxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxx](images/1910808-hig-uap-toolkit-03.png)
+![viewing distances for different devices](images/1910808-hig-uap-toolkit-03.png)
 
-Xxxxxxx xx xxx xxx xxxxxxx xxxxxx xxxxx, xxxx xxx xxxxxx xxxx XXX xxx, xxx'xx xxxxxxxxx xx *xxxxxxxxx xxxxxx*, xxx xxxxxx xxxxxxxx xxxxxx. Xx, xxx xxxx xxxx xxxxxx xxx xxx xxx xxxxxx xxxx xxx?
+Because of how the scaling system works, when you design your UWP app, you're designing in *effective pixels*, not actual physical pixels. So, how does that impact the way you design your app?
 
--   Xxx xxx xxxxxx xxx xxxxx xxxxxxx xxx xxx xxxxxx xxxxxx xxxxxxxxxx xxxx xxxxxxxxx. Xxxxxxx, xxxxxx xxx xxx xxxxxxxxx xxxxxxxxxx (xxx xxxxxxxxxx xx xxxxxxxxx xxxxxx) xxx x xxxx xxxxx (xx xxxxxx xxxx xxxxxxx [xxxxx xx xxxx xxxxxxx](#sizeclasses)).
+-   You can ignore the pixel density and the actual screen resolution when designing. Instead, design for the effective resolution (the resolution in effective pixels) for a size class (we define size classes [later in this article](#sizeclasses)).
 
--   Xxxx xxx xxxxxx xxxxxx xxxx XX, xx xxxx xx xx xxxxxxxxx xx Y. Xx xxxxxx x xxxxx xxxxxxxxxx, xxxx xxxx xxxxxxx xx xxx YxY xxxxx xxxx: xxxx xxxxxxx, xxxxx xxx xxxxxxxxx xx XX xxxxxxxx, xxx xxx xxxxxxxx (xxx xxx xxx xxxx—xxxx xxx xx xxx xxxx) xx xxxx x xxxxxxxx xx Y xxxxxxxxx xxxxxx.
+-   When the system scales your UI, it does so by multiples of 4. To ensure a crisp appearance, snap your designs to the 4x4 pixel grid: make margins, sizes and positions of UI elements, and the position (but not the size—text can be any size) of text a multiple of 4 effective pixels.
 
-Xxxx xxxxxxxxxxxx xxxxx xxxxxx xxxxxxxx xxxx xxx xx xxx YxY xxxxx xxxx. Xxx xxxxxx xxxxxxx xxxx xxxxxx xxxx xxxxx, xxxxx xxxxx.
+This illustration shows design elements that map to the 4x4 pixel grid. The design element will always have crisp, sharp edges.
 
-![xxxxxxxx xx xxx YxY xxxxx xxxx](images/rsp-design/epx-4pixelgood.png)
+![snapping to the 4x4 pixel grid](images/rsp-design/epx-4pixelgood.png)
 
-Xxx xxxx xxxxxxxxxxxx xxxxx xxxxxx xxxxxxxx xxxx xxx'x xxx xx xxx YxY xxxx. Xxxxx xxxxxx xxxxxxxx xxxx xxxx xxxxxx, xxxx xxxxx xx xxxx xxxxxxx.
+The next illustration shows design elements that don't map to the 4x4 grid. These design elements will have blurry, soft edges on some devices.
 
-![xxxxxx xxxxxxxx xxxx xx xxx xxxxx xx xxx YxY xxxxx xxxx](images/rsp-design/offthegridillustration.png)
+![design elements that do not align to the 4x4 pixel grid](images/rsp-design/offthegridillustration.png)
 
-**Xxx**   Xxxx xxxxxxxx xxxxxx xxxxxxx xx xxxxx xxxxxxx xxxxxxxx, xxx xxx XXX xx YY xxx xxx xxx xxxxx xxxxxxxxxx xx xxx xxxxxxxxx xxxxxxxxxx xxx xxx xxxx xxxxx xxx'xx xxxxxxxxx. (Xxx x xxxx xx xxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxxx, xxx xxx [Xxxxxxxxxxxxxxx xxx xxxxxxxx xxxx xxxxxxx](#sizeclasses) xxxxxxx xx xxxx xxxxxxx.)
-
-
-### Xxxxxxxxx xxxxx xxx xxxxx xxxxxxxxxxxx
-
-Xxxxxxx xxxxx-xx xxxxxxxxxx xx xxx XXX xx xxxxxxxxx xxxxx xxxxxxx xxx xxxxx xxxxxxxxxxxx. Xxxxxxxx xxx xxx xxxxxx xxxx xxxx xxx xxxxxxxx xxxxx xxxxx xxx xxxxxxx, xxx xxxx’x xxxxxxxx xx. Xxxx’x xxxxxxx Xxxxxxxxx Xxxxxxx xxxx xx xxxxxxx xxxx xx xxxxx xxxxxxxxxxxx. Xxxx xxxxx xxx xxx xxxxxx xxxxxx x xxxxx xxxxxxxxxxx xxxxxxx xxxxxx xx xxxx xx xxxxxx xxxxxxx xxx xxxxx xxxxx xxxx xx xxxxxx xxxxx xxxxx xx xxx xxx xx x xxxxxx.
-
-### Xxxxxxxxx xxxxxxxx xxx xxxxxx
+**Tip**   When creating screen mockups in image editing programs, set the DPI to 72 and set the image dimensions to the effective resolution for the size class you're targeting. (For a list of size classes and effective resolutions, see the [Recommendations for specific size classes](#sizeclasses) section of this article.)
 
 
-Xxx XXX xxxx xxxxxxxx xxxx xxxxxx xxxxxxxx xxxxxx xxxx xxxx xx xxxxxx xx xxxxxx xxxx xxx xxxxxxxx xxxxxx xxxxxxxx.
+### Universal input and smart interactions
 
--   **Xxxxxxxxx xxxxxxxx**
+Another built-in capability of the UWP is universal input enabled via smart interactions. Although you can design your apps for specific input modes and devices, you aren’t required to. That’s because Universal Windows apps by default rely on smart interactions. That means you can design around a click interaction without having to know or define whether the click comes from an actual mouse click or the tap of a finger.
 
-    Xxx XXX xxxxxxxx x xxx xx xxxxxxxxx xxxxxxxx xxxx xxx xxxxxxxxxx xx xxxx xxxx xx xxx Xxxxxxx-xxxxxxx xxxxxxx. Xxxx xxx xx xxxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxxxx xxxx xxxxxx xxxx xxxxxxxx xxxx xxxxx xxxxxx xxx xxxx xxx xx xxxxxxxxxxxxx xxxxxxxx xxxx xxxx xxxx xxx xxxx xxxx xxxx xxx xxxxxxxx xxxxx xx xxxxx xxxx x xxxxxx xx xxxx xxx x xxxxxxxx. Xxxxx xxxxxxxx xxx xxxxx-xxxxx xxx xxxxxx xxxx xxx xxxxxx xxx xx xxxxx xxxxxxxxxxx, xxxxx xxxxxx, xxx xxxxxxx xxxxxxxxxxxxx xxx xxxx xxxxxx xxxxxx.
+### Universal controls and styles
 
-    Xxx x xxxxxxxx xxxx xx xxxxx xxxxxxxx xxx xxx xxxxxxxx xxx xxx xxxx xxxx xxxx, xxx xxx [Xxxxxxxx xxx xxxxxxxx](https://dev.windows.com/design/controls-patterns) xxxxxxx.
 
--   **Xxxxxxxxx xxxxxx**
+The UWP also provides some useful building blocks that make it easier to design apps for multiple device families.
 
-    Xxxx XXX xxx xxxxxxxxxxxxx xxxx x xxxxxxx xxx xx xxxxxx xxxx xxxxx xxx xxxxx xxxxxxxx:
+-   **Universal controls**
 
-    -   X xxx xx xxxxxx xxxx xxxxxxxxxxxxx xxxxx xxxx xxx x xxxxx xx xxxx xxxxx (xxxx xxxxxx) xxx xxx xxxxxxxxxxx xxx xxxx'x xxxxxx xxxxx xxxxxxxxxx.
+    The UWP provides a set of universal controls that are guaranteed to work well on all Windows-powered devices. This set of universal controls includes everything from common form controls like radio button and text box to sophisticated controls like grid view and list view that can generate lists of items from a stream of data and a template. These controls are input-aware and deploy with the proper set of input affordances, event states, and overall functionality for each device family.
 
-        ![xxxxx xxx xxxx xxxxxx](images/1910808-hig-uap-toolkit-01.png)
+    For a complete list of these controls and the patterns you can make from them, see the [Controls and patterns](https://dev.windows.com/design/controls-patterns) section.
 
-    -   X Xxxxx-xxxxx xxxx xxxx xxxx xxxxxxx xxxx xxx xxxx xxxxx xxxxx xx xxx xxxxxxx.
-    -   Xxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxx.
-    -   Xxxxxxxxx xxxxxxx xxx xxxx-xxxxxxxx xxxxx. Xxx xxxxxx xxxx xxxxxxxx xxxx xxxx-xxxxxxxx xx xxxx, xx xxxx xxxx xxx xxxx xx x xxxxxx xx xxxx-xxxxxxxx xxxx, xx xxxx xxxxxxx xxxxxxxx.
-    -   Xxxxxxxxx xxxxxxx xxx xxxxx xxxxxxxxx. Xxx xxxxxxx xxxxxx xxxxxxxxxxxxx xxxxxx xxx xxxxxxx xxxx xxx xxxxx xxxxxxxx xxxx Xxxxxxx xxxxxxxx. Xxx xxx xxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxx xxx xxx xxxx'xx xx xxxxxxxxx xxxxxxxx.
-    -   Xxxxx-xx xxxxxxx xxx XXX xxxxxxx xxxxx.
+-   **Universal styles**
 
-    Xxx xxx xxxxxxxxx xxxxx xxxxxxx xxxxxx xx xxxx xxxx xxx x xxxxxxxx xxxxx, xx xxx xxx xxxxxxxxxx xxxxxxx xxxx xxxx xxxx xxx xx xxxxxx x xxxxxx xxxxxx xxxxxxxxxx. Xxx xxxxxxx, xxxx'x x xxxxxx xxx x xxxxxxx xxx xxxx x xxxxxx xxxxxx xxxxx:
+    Your UWP app automatically gets a default set of styles that gives you these features:
 
-    ![x xxxxxxx xxx xxxx xxx xxx xxxxxx xxxxx](images/weather/uwp-weather-tab-phone-700.png)
+    -   A set of styles that automatically gives your app a light or dark theme (your choice) and can incorporate the user's accent color preference.
 
-Xxx xxxx xx'xx xxxxxxxxx xxx xxxxxxxx xxxxxx xx XXX xxxx, xxx'x xxxx x xxxx xx xxx xx xxx xxxx xxxxxxxx xx xxxxxx x XX. 
+        ![light and dark themes](images/1910808-hig-uap-toolkit-01.png)
+
+    -   A Segoe-based type ramp that ensures that app text looks crisp on all devices.
+    -   Default animations for interactions.
+    -   Automatic support for high-contrast modes. Our styles were designed with high-contrast in mind, so when your app runs on a device in high-contrast mode, it will display properly.
+    -   Automatic support for other languages. Our default styles automatically select the correct font for every language that Windows supports. You can even use multiple languages in the same app and they'll be displayed properly.
+    -   Built-in support for RTL reading order.
+
+    You can customize these default styles to give your app a personal touch, or you can completely replace them with your own to create a unique visual experience. For example, here's a design for a weather app with a unique visual style:
+
+    ![a weather app with its own visual style](images/weather/uwp-weather-tab-phone-700.png)
+
+Now that we've described the building blocks of UWP apps, let's take a look at how to put them together to create a UI. 
     
-## Xxx xxxxxxx xx x xxxxxxx XXX xxx
+## The anatomy of a typical UWP app
 
 
-X xxxxxx xxxx xxxxxxxxx xx x xxxxxxx xxxxx, xxxx xx xx xxxx, xxxxxx, xxxxxx, xxx xxxxxxxxxx xxxxx xxx xxxxxxxxxx xxxx xx xxx xx xxxxxxxxxx xxxxxx xx xxx xxxxxx xx xxx xxxxxx xxx'xx xxxxx. Xxxx xxx xxxxx xxxxxxxxx x xxxx xxxxxxxxx, xxx xxxxx xxxxxx xx xxxxxxx xxx xx xxxxxxxxxxxx.
+A modern user interface is a complex thing, made up of text, shapes, colors, and animations which are ultimately made up out of individual pixels of the screen of the device you're using. When you start designing a user interface, the sheer number of choices can be overwhelming.
 
-Xx xxxx xxxxxx xxxxxxx, xxx'x xxxxxx xxx xxxxxxx xx xx xxx xxxx x xxxxxx xxxxxxxxxxx. Xxx'x xxx xxxx xx xxx xx xxxx xx xx xxxxxxx xxx xxxxx. Xxxx xxxx xxx x xxxx xxxxxxxxx, xxxx xx xx xxxxx xxxxx xx XX xxxxxxxx: xxxxxxxxxx, xxxxxxxxxx, xxx xxxxxxx xxxxxxxx.
+To make things simpler, let's define the anatomy of an app from a design perspective. Let's say that an app is made up of screens and pages. Each page has a user interface, made up of three types of UI elements: navigation, commanding, and content elements.
 
 
 
@@ -102,155 +102,122 @@ Xx xxxx xxxxxx xxxxxxx, xxx'x xxxxxx xxx xxxxxxx xx xx xxx xxxx x xxxxxx xxxxxxx
 <tr class="odd">
 <td align="left"><p><img src="images/1895065-hig-anatomyofanapp-02.png" alt="Navigation, command, and content areas of an address book app" /></p>
 <p></p></td>
-<td align="left"><strong>Xxxxxxxxxx xxxxxxxx</strong><p>Xxxxxxxxxx xxxxxxxx xxxx xxxxx xxxxxx xxx xxxxxxx xxxx xxxx xx xxxxxxx. Xxxxxxxx xx xxxxxxxxxx xxxxxxxx xxxxxxx [tabs and pivots](../controls-and-patterns/tabs-pivot.md), [hyperlinks](../controls-and-patterns/hyperlinks.md), xxx [nav panes](../controls-and-patterns/nav-pane.md).</p>
-<p>Xxxxxxxxxx xxxxxxxx xxx xxxxxxx xx xxxxxx xx xxx [Navigation design basics](navigation-basics.md) xxxxxxx.</p>
-<strong>Xxxxxxx xxxxxxxx</strong><p>Xxxxxxx xxxxxxxx xxxxxxxx xxxxxxx, xxxx xx xxxxxxxxxxxx, xxxxxx, xx xxxxxxx xxxxxxx. Xxxxxxxx xx xxxxxxx xxxxxxxx xxxxxxx [button](../controls-and-patterns/buttons.md) xxx xxx [command bar](../controls-and-patterns/app-bars.md). Xxxxxxx xxxxxxxx xxx xxxx xxxxxxx xxxxxxxx xxxxxxxxx xxxx xxxx'x xxxxxxxx xxxxxxx xx xxx xxxxxx.</p>
-<p>Xxxxxxx xxxxxxxx xxx xxxxxxx xx xxxxxx xx xxx [Command design basics](commanding-basics.md) xxxxxxx.</p>
-<strong>Xxxxxxx xxxxxxxx</strong><p>Xxxxxxx xxxxxxxx xxxxxxx xxx xxx'x xxxxxxx. Xxx x xxxxxxxx xxx, xxx xxxxxxx xxxxx xx x xxxxxxx; xxx x xxxx xxx, xxx xxxxxxx xxxxx xx x xxxx xxxxxxx.</p>
-<p>Xxxxxxx xxxxxxxx xxx xxxxxxx xx xxxxxx xx xxx [Content design basics](content-basics.md) xxxxxxx.</p></td>
+<td align="left"><strong>Navigation elements</strong>
+          <p>Navigation elements help users choose the content they want to display. Examples of navigation elements include [tabs and pivots](../controls-and-patterns/tabs-pivot.md), [hyperlinks](../controls-and-patterns/hyperlinks.md), and [nav panes](../controls-and-patterns/nav-pane.md).</p>
+<p>Navigation elements are covered in detail in the [Navigation design basics](navigation-basics.md) article.</p>
+<strong>Command elements</strong>
+          <p>Command elements initiate actions, such as manipulating, saving, or sharing content. Examples of command elements include [button](../controls-and-patterns/buttons.md) and the [command bar](../controls-and-patterns/app-bars.md). Command elements can also include keyboard shortcuts that aren't actually visible on the screen.</p>
+<p>Command elements are covered in detail in the [Command design basics](commanding-basics.md) article.</p>
+<strong>Content elements</strong>
+          <p>Content elements display the app's content. For a painting app, the content might be a drawing; for a news app, the content might be a news article.</p>
+<p>Content elements are covered in detail in the [Content design basics](content-basics.md) article.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Xx x xxxxxxx, xx xxx xxx x xxxxxx xxxxxx xxx x xxxx xxxx xxxx xxxxxxx xxx xxxx xxxxxxxxx. X xxxxxxx xxx xxxx xxxx xxxxxxxx xxxxx xxx xxxxxxx, xxx xxxxxxxxxx, xxxxxxx, xxx xxxxxxx xxxxxxxx xxxxx xxxxxx xxxx xxxx xx xxxx.
+At a minimum, an app has a splash screen and a home page that defines the user interface. A typical app will have multiple pages and screens, and navigation, command, and content elements might change from page to page.
 
-Xxxx xxxxxxxx xx xxx xxxxx XX xxxxxxxx xxx xxxx xxx, xxx xxxxx xxxx xxxxxxxx xxx xxxxxxx xxx xxx xxxxxx xxxxx xxxx xxx xxxx xxx xx.
+When deciding on the right UI elements for your app, you might also consider the devices and the screen sizes your app will run on.
 
-## <span id="Why_tailor_your_app_for_specific_device_families_and_screen_sizes_">
-            </span>
-            <span id="why_tailor_your_app_for_specific_device_families_and_screen_sizes_">
-            </span>
-            <span id="WHY_TAILOR_YOUR_APP_FOR_SPECIFIC_DEVICE_FAMILIES_AND_SCREEN_SIZES_">
-            </span>Xxxxxxxxx xxxx xxx xxx xxxxxxxx xxxxxxx xxx xxxxxx xxxxx.
+## <span id="Why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="why_tailor_your_app_for_specific_device_families_and_screen_sizes_"></span><span id="WHY_TAILOR_YOUR_APP_FOR_SPECIFIC_DEVICE_FAMILIES_AND_SCREEN_SIZES_"></span>Tailoring your app for specific devices and screen sizes.
 
 
-XXX xxxx xxx xxxxxxxxx xxxxxx xx xxxxxxxxx xxxx xxxx xxxxxx xxxxxxxx xxxx xx xxxxxxx xxx xxxxxx xx xxx Xxxxxxx-xxxxxxx xxxxxxx. Xx, xxx xxxxx xxx xxxx xxxx xx xxxxxxxxx xxxx xxx'x XX xxx x xxxxxxxx xxxxxx xxxxxx?
+UWP apps use effective pixels to guarantee that your design elements will be legible and usable on all Windows-powered devices. So, why would you ever want to customize your app's UI for a specific device family?
 
-**Xxxx**  
-Xxxxxx xx xx xxx xxxxxxx, Xxxxxxx xxxxx'x xxxxxxx x xxx xxx xxxx xxx xx xxxxxx xxx xxxxxxxx xxxxxx xxxx xxx xx xxxxxxx xx. Xx xxx xxxx xxx xxx xxxxxx xxxxxx (xxxxxx, xxxxxxx, xxx) xxx xxx xx xxxxxxx xx, xxx xxxxxxxxx xxxxxxxxxx, xxx xxx xxxxxx xx xxxxxx xxxxx xxxxxxxxx xx xxx xxx (xxx xxxx xx xxx xxx'x xxxxxx).
+**Note**  
+Before we go any further, Windows doesn't provide a way for your app to detect the specific device your app is running on. It can tell you the device family (mobile, desktop, etc) the app is running on, the effective resolution, and the amount of screen space available to the app (the size of the app's window).
 
  
 
--   **Xx xxxx xxx xxxx xxxxxxxxx xxx xx xxxxx xxx xxxxxx xxx xxxx xx xxxxxxxx**
+-   **To make the most effective use of space and reduce the need to navigate**
 
-    Xx xxx xxxxxx xx xxx xx xxxx xxxx xx x xxxxxx xxxx xxx x xxxxx xxxxxx, xxxx xx x xxxxx, xxx xxx xxxx xx xxxxxx xx x XX xxxx x xxxx xxxxxx xxxxxxx, xxx xxxxx xxxx xxxxxxxx xx xxxx xxxxxx xxxxx. Xxx xxx xxxxxxxxx xxx xxx xx xxxxxxx xxxx xxxxxxx xxxx xxx xxxxxx xx xxxxx x xxxxxxx xxxx. Xxx xxxxxxx, x xxxxxxxx xxx xxxxx xxxxxxx xxx xxxxxxxxxxx xxxxxxxx xx x xxxx xx x xxxxx, xxx xxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxx xxxxxxxxxxxxxx xx x XX xx xxxxxx.
+    If you design an app to look good on a device that has a small screen, such as a phone, the app will be usable on a PC with a much bigger display, but there will probably be some wasted space. You can customize the app to display more content when the screen is above a certain size. For example, a shopping app might display one merchandise category at a time on a phone, but show multiple categories and products simultaneously on a PC or laptop.
 
-    Xx xxxxxxx xxxx xxxxxxx xx xxx xxxxxx, xxx xxxxxx xxx xxxxxx xx xxxxxxxxxx xxxx xxx xxxx xxxxx xx xxxxxxx.
+    By putting more content on the screen, you reduce the amount of navigation that the user needs to perform.
 
--   **Xx xxxx xxxxxxxxx xx xxxxxxx' xxxxxxxxxxxx**
+-   **To take advantage of devices' capabilities**
 
-    Xxxxxxx xxxxxxx xxx xxxx xxxxxx xx xxxx xxxxxxx xxxxxx xxxxxxxxxxxx. Xxx xxxxxxx, xxxxxx xxx xxxxxx xx xxxx x xxxxxxxx xxxxxx xxx x xxxxxx, xxxxx x XX xxxxx xxx xxxx xxxxxx. Xxxx xxx xxx xxxxxx xxxxx xxxxxxxxxxxx xxx xxxxxxxxx xxx xxxxxx xxxxxxxx xxxx xxx xxxx.
+    Certain devices are more likely to have certain device capabilities. For example, phones are likely to have a location sensor and a camera, while a PC might not have either. Your app can detect which capabilities are available and enable features that use them.
 
--   **Xx xxxxxxxx xxx xxxxx**
+-   **To optimize for input**
 
-    Xxx xxxxxxxxx xxxxxxx xxxxxxx xxxxx xxxx xxx xxxxx xxxxx (xxxxx, xxx, xxxxxxxx, xxxxx), xxx xxx xxx xxxxx xxxxxxxx xxx xxxxxxx xxxxx xxxxx xx xx-xxxxxxxxx xxxx XX xxxxxxxx. Xxx xxxxxxx, xx xxx xxxxx xxxxxxxxxx xxxxxxxx xx xxx xxxxxx xx xxx xxxxxx, xxxx'xx xx xxxxxx xxx xxxxx xxxxx xx xxxxxx—xxx xxxx XX xxxxx xxxxxx xx xxx xxxxxxxxxx xxxxxxxx xxxxxx xxx xxx xx xxx xxxxxx.
+    The universal control library works with all input types (touch, pen, keyboard, mouse), but you can still optimize for certain input types by re-arranging your UI elements. For example, if you place navigation elements at the bottom of the screen, they'll be easier for phone users to access—but most PC users expect to see navigation elements toward the top of the screen.
 
-## <span id="Responsive_design_techniques">
-            </span>
-            <span id="responsive_design_techniques">
-            </span>
-            <span id="RESPONSIVE_DESIGN_TECHNIQUES">
-            </span>Xxxxxxxxxx xxxxxx xxxxxxxxxx
+## <span id="Responsive_design_techniques"></span><span id="responsive_design_techniques"></span><span id="RESPONSIVE_DESIGN_TECHNIQUES"></span>Responsive design techniques
 
 
-Xxxx xxx xxxxxxxx xxxx xxx'x XX xxx xxxxxxxx xxxxxx xxxxxx, xx xxx xxxx xxx'xx xxxxxxxx x xxxxxxxxxx xxxxxx. Xxxx xxx xxx xxxxxxxxxx xxxxxx xxxxxxxxxx xxx xxx xxx xx xxxxxxxxx xxxx xxx'x XX.
+When you optimize your app's UI for specific screen widths, we say that you're creating a responsive design. Here are six responsive design techniques you can use to customize your app's UI.
 
-### <span id="Reposition">
-            </span>
-            <span id="reposition">
-            </span>
-            <span id="REPOSITION">
-            </span>Xxxxxxxxxx
+### <span id="Reposition"></span><span id="reposition"></span><span id="REPOSITION"></span>Reposition
 
-Xxx xxx xxxxx xxx xxxxxxxx xxx xxxxxxxx xx xxx XX xxxxxxxx xx xxx xxx xxxx xxx xx xxxx xxxxxx. Xx xxxx xxxxxxx, xxx xxxxxxxx xxxx xx xxxxx xx xxxxxxx xxxxxxxxxxxx x xxxxxxxxx XX xxxxxxx xxxx xxx xxxx xxxxx xx xxxxxxx xx x xxxx. Xxxx xxx xxx xxxxxxxxxx xx x xxxxxx xxxx xxxxxx xxx xxxx xx-xxxxxx xxxxxx, xxxxxxx xx xxxxxxxx xx xxxxxxxxx xxxxxxxxxxx, xxxxx X xxx xxxxxx x xxxxxxxxx xxxxx. Xx xxx'xx xxxxx x xxxx xxx xxxxxxxxxxx, xxx xxx xxxxx xx xxx xxxx xxxx xxxx XX xxxxxxxx xxx xxxxxxxxxxxx.
+You can alter the location and position of app UI elements to get the most out of each device. In this example, the portrait view on phone or phablet necessitates a scrolling UI because only one full frame is visible at a time. When the app translates to a device that allows two full on-screen frames, whether in portrait or landscape orientation, frame B can occupy a dedicated space. If you're using a grid for positioning, you can stick to the same grid when UI elements are repositioned.
 
-![xxxxxxxxxx](images/rsp-design/rspd-reposition.png)
+![reposition](images/rsp-design/rspd-reposition.png)
 
-Xx xxxx xxxxxxx xxxxxx xxx x xxxxx xxx, xxx xxxxx xxx xxxxxxxxxxx xxx xxxxxxx xx xxxxxx xxxxxxx.
+In this example design for a photo app, the photo app repositions its content on larger screens.
 
-![x xxxxxx xxx xx xxx xxxx xxxxxxxxxxx xxxxxxx xx xxxxxx xxxxxxx](images/rsp-design/rspd-reposition-type1.png)
+![a design for an app that repositions content on larger screens](images/rsp-design/rspd-reposition-type1.png)
 
-### <span id="Resize">
-            </span>
-            <span id="resize">
-            </span>
-            <span id="RESIZE">
-            </span>Xxxxxx
+### <span id="Resize"></span><span id="resize"></span><span id="RESIZE"></span>Resize
 
-Xxx xxx xxxxxxxx xxx xxxxx xxxx xx xxxxxxxxx xxx xxxxxxx xxx xxxx xx XX xxxxxxxx. Xxxx xxxxx xxxxx xxx, xx xxx xxxxxxx xxxx xxxxx, xx xxxxxxx xxx xxxxxxx xxxxxxxxxx xx x xxxxxx xxxxxx xx xxxxxx xxxxxxx xxx xxxxxxx xxxxx.
+You can optimize the frame size by adjusting the margins and size of UI elements. This could allow you, as the example here shows, to augment the reading experience on a larger screen by simply growing the content frame.
 
-![xxxxxxxx xxxxxx xxxxxxxx](images/rsp-design/rspd-resize.png)
+![resizing design elements](images/rsp-design/rspd-resize.png)
 
-### <span id="Reflow">
-            </span>
-            <span id="reflow">
-            </span>
-            <span id="REFLOW">
-            </span>Xxxxxx
+### <span id="Reflow"></span><span id="reflow"></span><span id="REFLOW"></span>Reflow
 
-Xx xxxxxxxx xxx xxxx xx XX xxxxxxxx xxxxx xx xxxxxx xxx xxxxxxxxxxx, xxxx xxx xxx xxxxx xx xxxxxxx xxxxxxx xx xxxxxxx. Xxx xxxxxxxx, xxxx xxxxx xx x xxxxxx xxxxxx, xx xxxxx xxxx xxxxx xx xxxxxx xxxxxx xxxxxxxxxx, xxx xxxxxxx, xxx xxxxxxxx xxxx xxxxx xx x xxxxxxxxx xxx.
+By changing the flow of UI elements based on device and orientation, your app can offer an optimal display of content. For instance, when going to a larger screen, it might make sense to switch larger containers, add columns, and generate list items in a different way.
 
-Xxxx xxxxxxx xxxxx xxx x xxxxxx xxxxxx xx xxxxxxxxxx xxxxxxxxx xxxxxxx xx xxxxx xx xxxxxxx xxx xx xxxxxxxx xx x xxxxxx xxxxxx xx xxxxxxx xxx xxxxxxx xx xxxx.
+This example shows how a single column of vertically scrolling content on phone or phablet can be reflowed on a larger screen to display two columns of text.
 
-![xxxxxxxxx xxxxxx xxxxxxxx](images/rsp-design/rspd-reflow.png)
+![reflowing design elements](images/rsp-design/rspd-reflow.png)
 
-### <span id="_____________Reveal___________">
-            </span>
-            <span id="_____________reveal___________">
-            </span>
-            <span id="_____________REVEAL___________">
-            </span> Xxxxxx
+### <span id="_____________Reveal___________"></span><span id="_____________reveal___________"></span><span id="_____________REVEAL___________"></span> Reveal
 
-Xxx xxx xxxxxx XX xxxxx xx xxxxxx xxxx xxxxxx, xx xxxx xxx xxxxxx xxxxxxxx xxxxxxxxxx xxxxxxxxxxxxx, xxxxxxxx xxxxxxxxxx, xx xxxxxxxxx xxxxxx xxxxxxxxxxxx.
+You can reveal UI based on screen real estate, or when the device supports additional functionality, specific situations, or preferred screen orientations.
 
-Xx xxxx xxxxxxx xxxx xxxx, xxx xxxxxx xxx xxxx xxx xxxxxx xxxx xxxxx xx xxxxxxxx xx xxx xxx xx xxxxx xx xxxxxxx xxx xxx xx xxxxxxxxxx xx xxxxxx xxxxxxx, xxxxx xx xxx xx'x xxxxxxxx xx xxx xxxxxx xx xxx xxxxx. Xxxxxxx xxxxxx xxxxxxx xx xxxxxxxxx xx xxxxxx XX xxxxxxx xx xxxxx xxxxxx xxxxxxxx, xxxxx xxx xxxxxx xxx xx xxxxxxx xx xxxxxxx xxxxxxx xxx xxxxxxxx xx xxxxxx xxxxxxx. Xxx xxxxx xxxxxx xx XX, xxx xxxxxxxx, xxx xxxxxx xxx xxxx xx-xxxxxx xxxxxxxxxxxxx xxxx xx xxx xx x xxxxx.
+In this example with tabs, the middle tab with the camera icon might be specific to the app on phone or phablet and not be applicable on larger devices, which is why it's revealed in the device on the right. Another common example of revealing or hiding UI applies to media player controls, where the button set is reduced on smaller devices and expanded on larger devices. The media player on PC, for instance, can handle far more on-screen functionality than it can on a phone.
 
-![xxxxxx xxxxxx xxxxxxxx](images/rsp-design/rspd-revealhide.png)
+![hiding design elements](images/rsp-design/rspd-revealhide.png)
 
-Xxxx xx xxx xxxxxx-xx-xxxx xxxxxxxxx xxxxxxxx xxxxxxxx xxxx xx xxxxxxx xxxx xxxxxxxx. Xxxx xxxx xxxxxx xx xx x xxxxxxx, xxxx xx xxxx x xxxxx xx xxxxxxx, xx'x xxxx xx xxxx x xxxxxxx xxxxxx xx xxxxxxxx. Xxxx x xxxxxx xx xxxxxxx XX, x xxxxxxxxxxx xxxxxx xx xxxxxxxx xxx xx xxxxxxxx. Xxxx xxxxxxxx xx xxx xx xxxxxx xxxxxxx xx xxxxxx xxxxxxxx xxxxxxx:
+Part of the reveal-or-hide technique includes choosing when to display more metadata. When real estate is at a premium, such as with a phone or phablet, it's best to show a minimal amount of metadata. With a laptop or desktop PC, a significant amount of metadata can be surfaced. Some examples of how to handle showing or hiding metadata include:
 
--   Xx xx xxxxx xxx, xxx xxx xxxxxxx xxx xxxx'x xxxxxx.
--   Xx x xxxxx xxx, xxx xxx xxxxxxx xxxx xxxx xxxxx xx xxxxx xx xxxxxx.
--   Xx x xxxxx xxx, xxx xxx xxxxxxx xxxx xxxx xxxxx x xxxx xx x xxxx, xxxx xx xxxxxxx xxxx xxx xxxx xxxxxxx.
--   Xx xxx xxx, xxx xxx xxxxx xxxxx xxxxxxx xxx xxxxxx xxxx xxxxxxx.
--   Xx xxx xxx, xxx xxx xxxx xxxxxxxxx xxxx'x xxxxxxxxxx xxxxxxx xxx xxx xx xxx xxxxxxxxxxxx. Xxxx xxxxx xxxx xxxxx xx xxxxxxx xx xxxxxx xxxxxxx, xxxxxxx xxxx xxxxx xxx xxxxxx xx xxxxxx xxxx xx xxxx xxxxx xxx xxxxxxx xx xxxxxxxx.
+-   In an email app, you can display the user's avatar.
+-   In a music app, you can display more info about an album or artist.
+-   In a video app, you can display more info about a film or a show, such as showing cast and crew details.
+-   In any app, you can break apart columns and reveal more details.
+-   In any app, you can take something that's vertically stacked and lay it out horizontally. When going from phone or phablet to larger devices, stacked list items can change to reveal rows of list items and columns of metadata.
 
-### <span id="Replace">
-            </span>
-            <span id="replace">
-            </span>
-            <span id="REPLACE">
-            </span>Xxxxxxx
+### <span id="Replace"></span><span id="replace"></span><span id="REPLACE"></span>Replace
 
-Xxxx xxxxxxxxx xxxx xxx xxxxxx xxx xxxx xxxxxxxxx xxx x xxxxxxxx xxxxxx xxxx-xxxxx xx xxxxxxxxxxx. Xx xxxx xxxxxxx, xxx xxx xxxx xxx xxx xxxxxxx, xxxxxxxxx XX xxxxx xxxx xxx x xxxxxxx xxxxxx, xxx xx x xxxxxx xxxxxx xxxx xxxxx xx x xxxxxx xxxxxx.
+This technique lets you switch the user interface for a specific device size-class or orientation. In this example, the nav pane and its compact, transient UI works well for a smaller device, but on a larger device tabs might be a better choice.
 
-![xxxxxxxxx xxxxxx xxxxxxxx](images/rsp-design/rspd-replace.png)
+![replacing design elements](images/rsp-design/rspd-replace.png)
 
-### <span id="_____________Re-architect___________">
-            </span>
-            <span id="_____________re-architect___________">
-            </span>
-            <span id="_____________RE-ARCHITECT___________">
-            </span> Xx-xxxxxxxxx
+### <span id="_____________Re-architect___________"></span><span id="_____________re-architect___________"></span><span id="_____________RE-ARCHITECT___________"></span> Re-architect
 
-Xxx xxx xxxxxxxx xx xxxx xxx xxxxxxxxxxxx xx xxxx xxx xx xxxxxx xxxxxx xxxxxxxx xxxxxxx. Xx xxxx xxxxxxx, xxxxx xxxx xxx xxxx xxxxxx xx xxx xxxxx xxxxxx xxxxxxxxxxxx xxx xxxxxxx xx xxxxx.
+You can collapse or fork the architecture of your app to better target specific devices. In this example, going from the left device to the right device demonstrates the joining of pages.
 
-![xx xxxxxxx xx xx-xxxxxxxxxxxx x xxxx xxxxxxxxx](images/rsp-design/rspd-rearchitect.png)
+![an example of re-architecting a user interface](images/rsp-design/rspd-rearchitect.png)
 
-Xxxx'x xx xxxxxxx xx xxxx xxxxxxxxx xxxxxxx xx xxx xxxxxx xxx x xxxxx xxxx xxx.
+Here's an example of this technique applied to the design for a smart home app.
 
-![xx xxxxxxx xx x xxxxxx xxxx xxxxx xxx xx-xxxxxxxxxx xxxxxxxxxx xxxxxx xxxxxxxxx](images/rsp-design/rspd-rearchitect-type1.png)
+![an example of a design that using the re-artchitect responsive design technique](images/rsp-design/rspd-rearchitect-type1.png)
 
 
-## Xxxxxxx xxxxxxxx
+## Related articles
 
-- [Xxxx'x x XXX xxx?](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
+- [What's a UWP app?](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx)
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

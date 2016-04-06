@@ -1,84 +1,92 @@
 ---
-xx.xxxxxxx: XYYYYYYY-YXXY-YYYY-XXYX-YYYXXYYYYYXY
-xxxxxxxxxxx: Xxxx xxxxx xxxxxxxxx xxxxxxx xxxxxxxx xx xx xxxx xxx xxxxx xxxxxxx xxxxxxxxx. Xxxx xxxxxxxx xxx xxxxx xxxxxxxxxxxxx xxxxxx.
-xxxxx: Xxxxxxx xxx xxxxx xxxxxxx
+ms.assetid: E0189423-1DF3-4052-AB2E-846EA18254C4
+description: このトピックでは、ビデオ キャプチャに関連して使う効果の設計について説明します。 ここでは、ビデオの手ブレ補正効果を中心に説明しています。
+title: ビデオ キャプチャの効果
 ---
 
-# Xxxxxxx xxx xxxxx xxxxxxx
+# ビデオ キャプチャの効果
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxx xxxxx xxxxxxxxx xxxxxxx xxxxxxxx xx xx xxxx xxx xxxxx xxxxxxx xxxxxxxxx. Xxxx xxxxxxxx xxx xxxxx xxxxxxxxxxxxx xxxxxx.
+このトピックでは、ビデオ キャプチャに関連して使う効果の設計について説明します。 ここでは、ビデオの手ブレ補正効果を中心に説明しています。
 
-**Xxxx**  
-Xxxx xxxxxxx xxxxxx xx xxxxxxxx xxx xxxx xxxxxxxxx xx [Xxxxxxx Xxxxxx xxx Xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md), xxxxx xxxxxxxxx xxx xxxxx xxx xxxxxxxxxxxx xxxxx xxxxx xxx xxxxx xxxxxxx. Xx xx xxxxxxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxx xxxx xxx xxxxx xxxxx xxxxxxx xxxxxxx xx xxxx xxxxxxx xxxxxx xxxxxx xx xx xxxx xxxxxxxx xxxxxxx xxxxxxxxx. Xxx xxxx xx xxxx xxxxxxx xxxxxxx xxxx xxxx xxx xxxxxxx xxx xx xxxxxxxx xx XxxxxXxxxxxx xxxx xxx xxxx xxxxxxxx xxxxxxxxxxx.
+**注**  
+この記事の内容は、写真やビデオの基本的なキャプチャ機能を実装するための手順を紹介した「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」で取り上げた概念やコードに基づいています。 そちらの記事で基本的なメディア キャプチャのパターンを把握してから、高度なキャプチャ シナリオに進むことをお勧めします。 この記事で紹介しているコードは、MediaCapture のインスタンスが既に作成され、適切に初期化されていることを前提としています。
 
-## Xxxxx xxxxxxxxxxxxx xxxxxx
+## ビデオ手ブレ補正効果
 
-Xxx xxxxx xxxxxxxxxxxxx xxxxxx xxxxxxxxxxx xxx xxxxxx xx x xxxxx xxxxxx xx xxxxxxxx xxxxxxx xxxxxx xx xxxxxxx xxx xxxxxxx xxxxxx xx xxxx xxxx. Xxxxxxx xxxx xxxxxxxxx xxxxxx xxx xxxxxx xx xx xxxxxxx xxxxx, xxxx, xx, xxx xxxx, xxx xxxxxxx xxx xxxxxx xxx'x xxxx xxxx xxx xxxxxxx xxxx xxxxxxx xxx xxxxx xxxxx xx, xxx xxxxxxxxxx xxxxx xx xxxxxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxx. X xxxxxxx xxxxxxxx xx xxxxxxxx xx xxxxx xxx xx xxxxxx xxxx xxxxx xxxxxxxx xxxxxxxx xx xxxxxxxxx xxxxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxxx.
+ビデオ手ブレ補正効果は、キャプチャ デバイスを手で支えることによって生じる動きを極力目立たなくするために、ビデオ ストリームのフレームを操作します。 この手法を適用するとピクセルが上下左右に移動されますが、ビデオ フレームのすぐ外側に何があるのかは、手ブレ補正効果のロジックにはわからないため、手ブレ補正後は元のビデオがわずかにトリミングされた状態となります。 ここで紹介しているユーティリティ関数を使いビデオ エンコードの設定を調整することで、手ブレ補正効果によるトリミングをベストな状態に制御することができます。
 
-Xx xxxxxxx xxxx xxxxxxx xx, Xxxxxxx Xxxxx Xxxxxxxxxxxxx (XXX) xxxxxxxxxx xxxxx xx xxxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxx xxxxxx xxx, xxxxxxxxx, xxxx xxx xxxx xx xxxx xxx xxxxx xx xxx xxxxx xxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxx xxxxxx xxxxxxxx xxx xxxxx xxxxxxx](capture-device-controls-for-video-capture.md).
+デバイス側でサポートされていれば、Optical Image Stabilization (OIS) がキャプチャ デバイスを機械的に操作することでビデオのブレが抑えられるため、ビデオ フレームの端をトリミングする必要はありません。 詳しくは、「[ビデオ キャプチャのためのキャプチャ デバイス コントロール](capture-device-controls-for-video-capture.md)」をご覧ください。
 
-### Xxx xx xxxx xxx xx xxx xxxxx xxxxxxxxxxxxx
+### ビデオの手ブレ補正を行うようにアプリを設定する
 
-Xx xxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx xxx xxxxx xxxxx xxxxxxx, xxxxx xxx xxxxx xxxxxxxxxxxxx xxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxx.
+ビデオ手ブレ補正効果を使うためには、基本的なメディア キャプチャに必要な名前空間に加え、次の名前空間が必要となります。
 
-[!xxxx-xx[XxxxxXxxxxxxxxxxxxXxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoStabilizationEffectUsing)]
+[!code-cs[VideoStabilizationEffectUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoStabilizationEffectUsing)]
 
-Xxxxxxx x xxxxxx xxxxxxxx xx xxxxx xxx [**XxxxxXxxxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926760) xxxxxx. Xx xxxx xx xxx xxxxxx xxxxxxxxxxxxxx, xxx xxxx xxxxxx xxx xxxxxxxx xxxxxxxxxx xxxx xxx xxx xx xxxxxx xxx xxxxxxxx xxxxx. Xxxxxxx xxx xxxxxxxxx xx xxxxx x xxxxxx xxxx xx xxx xxxxxxx xxxxx xxx xxxxxx xxxxxxxx xxxxxxxxxx xx xxxx xxx xxx xxxxxxx xxxx xxxxx xxxx xxx xxxxxx xx xxxxxxxx. Xxxxxxx, xxxxxxx x xxxxxx xxxxxxxx xx xxxx [**XxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701026) xxxxxxx xxxx xxxxxx xxxx xx xxxxxxxx xxxx xxxxxxxx xxxxxxxxx xxxxxx xxxx xxxx.
+[
+            **VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) オブジェクトを格納するためのメンバー変数を宣言します。 効果の実装の一部として、キャプチャしたビデオをエンコードするために使うエンコードのプロパティを変更します。 後で効果が無効にされたときに入出力のエンコード プロパティを復元できるよう、初期状態のバックアップ コピーを格納するための 2 つの変数を宣言します。 最後に、[**MediaEncodingProfile**](https://msdn.microsoft.com/library/windows/apps/hh701026) 型のメンバー変数を宣言します。メンバー変数として宣言しているのは、コードのいたるところからこのオブジェクトにアクセスすることになるためです。
 
-[!xxxx-xx[XxxxxxxXxxxxXxxxxxxxxxxxxXxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
+[!code-cs[DeclareVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetDeclareVideoStabilizationEffect)]
 
-Xx xxx xxxxx xxxxx xxxxxxx xxxxxxxxxxxxxx xxxxxxxxx xx xxx xxxxxxx [Xxxxxxx Xxxxxx xxx Xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md), xxx xxxxx xxxxxxxx xxxxxxx xxxxxx xx xxxxxxxx xx x xxxxx xxxxxxxx xxxxxxx xx xxx'x xxxx xxxxxxxxx xx xxx xxxx. Xxx xxxx xxxxxxxx, xxx xxxxxx xxxxxx xxx xxxxxx xx x xxxxxx xxxxxxxx xx xxxx xxx xxx xxxxxx xx xxxxx.
+一方、「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」の記事で説明されている基本的なビデオ キャプチャの実装では、メディア エンコード プロファイル オブジェクトがコード内の他の場所では使われないため、ローカル変数に代入されています。 このシナリオでは、後からアクセスできるようオブジェクトをメンバー変数に代入する必要があります。
 
-[!xxxx-xx[XxxxxxxxXxxxxxxXxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEncodingProfileMember)]
+[!code-cs[EncodingProfileMember](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEncodingProfileMember)]
 
-### Xxxxxxxxxx xxx xxxxx xxxxxxxxxxxxx xxxxxx
+### ビデオ手ブレ補正効果を初期化する
 
-Xxxxx xxxx **XxxxxXxxxxxx** xxxxxx xxx xxxx xxxxxxxxxxx, xxxxxx x xxx xxxxxxxx xx xxx [**XxxxxXxxxxxxxxxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926762) xxxxxx. Xxxx [**XxxxxXxxxxxx.XxxXxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn878035) xx xxx xxx xxxxxx xx xxx xxxxx xxxxxxxx xxx xxxxxxxx xx xxxxxxxx xx xxx [**XxxxxXxxxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926760) xxxxx. Xxxxxxx [**XxxxxXxxxxxXxxx.XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226640) xx xxxxxxxx xxxx xxx xxxxxx xxxxxx xx xxxxxxx xx xxx xxxxx xxxxxx xxxxxx.
+**MediaCapture** オブジェクトの初期化後、[**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) オブジェクトの新しいインスタンスを作成します。 効果をビデオ パイプラインに追加し、[**VideoStabilizationEffect**](https://msdn.microsoft.com/library/windows/apps/dn926760) クラスのインスタンスを取得するには、[**MediaCapture.AddVideoEffectAsync**](https://msdn.microsoft.com/library/windows/apps/dn878035) を呼び出します。 [
+            **MediaStreamType.VideoRecord**](https://msdn.microsoft.com/library/windows/apps/br226640) を指定すると、ビデオ レコード ストリームに効果を適用する、という意味になります。
 
-Xxxxxxxx xx xxxxx xxxxxxx xxx xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948982) xxxxx xxx xxxx xxx xxxxxx xxxxxx **XxxXxXxxxxXxxxxxxxxxxxxXxxxxxxxxxxxxxXxxxx**, xxxx xx xxxxx xxx xxxxxxxxx xxxxx xx xxxx xxxxxxx. Xxxxxxx, xxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926775) xxxxxxxx xx xxx xxxxxx xx xxxx xx xxxxxx xxx xxxxxx.
+[
+            **EnabledChanged**](https://msdn.microsoft.com/library/windows/apps/dn948982) イベントのハンドラーを登録し、ヘルパー メソッド **SetUpVideoStabilizationRecommendationAsync** を呼び出します。詳細については後で説明します。 最後に、[**Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926775) プロパティを true に設定して効果を有効にします。
 
-[!xxxx-xx[XxxxxxXxxxxXxxxxxxxxxxxxXxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateVideoStabilizationEffect)]
+[!code-cs[CreateVideoStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateVideoStabilizationEffect)]
 
-### Xxx xxxxxxxxxxx xxxxxxxx xxxxxxxxxx
+### 推奨エンコード プロパティを使う
 
-Xx xxxxxxxxx xxxxxxx xx xxxx xxxxxxx, xxx xxxxxxxxx xxxx xxx xxxxx xxxxxxxxxxxxx xxxxxx xxxx xxxxxxxxxxx xxxxxx xxx xxxxxxxxxx xxxxx xx xx xxxxxxx xxxxxxxx xxxx xxx xxxxxx xxxxx. Xxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxx xx xxxx xxxx xx xxxxx xx xxxxxx xxx xxxxx xxxxxxxx xxxxxxxxxx xx xxxxxxxxx xxxxxx xxxx xxxxxxxxxx xx xxx xxxxxx. Xxxx xxxx xx xxx xxxxxxxx xx xxxxx xx xxx xxx xxxxx xxxxxxxxxxxxx xxxxxx, xxx xx xxx xxx'x xxxxxxx xxxx xxxx, xxx xxxxxxxxx xxxxx xxxx xx xxxxxxxx xxxxxxxx xxx xxxxxxxxx xxxx xxxxxxxx xxxxx xxxxxx xxxxxxxx.
+先ほども触れましたが、ビデオ手ブレ補正効果に使われている手法では必然的に、補正後、わずかですが元のビデオがトリミングされます。 これは手ブレ補正効果の制限です。ビデオ エンコード プロパティを調整して、できるだけ適切に対処するために、以下のヘルパー関数をコードの中で定義してください。 このステップはビデオ手ブレ補正効果を使ううえで必須ではありませんが、これを省略した場合、最終的に得られるビデオが若干アップスケーリングされるために、ビジュアルの再現性がわずかに低下します。
 
-Xxxx [**XxxXxxxxxxxxxxXxxxxxXxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948983) xx xxxx xxxxx xxxxxxxxxxxxx xxxxxx xxxxxxxx, xxxxxxx xx xxx [**XxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226825) xxxxxx, xxxxx xxxxxxx xxx xxxxxx xxxxx xxxx xxxxxxx xxxxx xxxxxx xxxxxxxx xxxxxxxxxx, xxx xxxx **XxxxxXxxxxxxxXxxxxxx** xxxxx xxxx xxx xxxxxx xxxx xxxx xxxxxxx xxxxxx xxxxxxxx xxxxxxxxxx. Xxxx xxxxxx xxxxxxx x [**XxxxxXxxxxxXxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926727) xxxxxx xxxxxxxxxx xxx xxxxxxxxxxx xxxxx xxx xxxxxx xxxxxx xxxxxxxx xxxxxxxxxx.
+VideoStabilizationEffect のインスタンスの [**GetRecommendedStreamConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn948983) を呼び出します。このメソッドは、ビデオ補正効果に対して現在の入力ストリームのエンコード プロパティを伝える [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) オブジェクトと、現在の出力エンコード プロパティを伝える **MediaEncodingProfile** とを引数として受け取ります。 このメソッドの戻り値である [**VideoStreamConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn926727) オブジェクトには、入力ストリームと出力ストリームの最新の推奨エンコード プロパティが格納されます。
 
-Xxx xxxxxxxxxxx xxxxx xxxxxxxx xxxxxxxxxx xxx, xx xx xx xxxxxxxxx xx xxx xxxxxx, x xxxxxx xxxxxxxxxx xxxx xxx xxxxxxx xxxxxxxx xxx xxxxxxxx xx xxxx xxxxx xx xxxxxxx xxxx xx xxxxxxxxxx xxxxx xxx xxxxxx'x xxxxxxxx xx xxxxxxx.
+効果のトリミング適用後に失われる解像度を最小限にするために、入力の推奨エンコード プロパティは、デバイスによってサポートされる範囲で、指定した初期設定よりも解像度が高くなります。
 
-Xxxx [**XxxxxXxxxxxXxxxxxxxxx.XxxXxxxxXxxxxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700895) xx xxx xxx xxx xxxxxxxx xxxxxxxxxx. Xxxxxx xxxxxxx xxx xxx xxxxxxxxxx, xxx xxx xxxxxx xxxxxxxx xx xxxxx xxx xxxxxxx xxxxxxxx xxxxxxxxxx xx xxxx xxx xxx xxxxxx xxx xxxxxxxx xxxx xxxx xxx xxxxxxx xxx xxxxxx.
+新しいエンコード プロパティを設定するには、[**VideoDeviceController.SetMediaStreamPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh700895) を呼び出します。 効果を無効にしたときに設定を元に戻すことができるよう、新しいプロパティを設定する前にメンバー変数を使って初期エンコード プロパティを保存します。
 
-Xx xxx xxxxx xxxxxxxxxxxxx xxxxxx xxxx xxxx xxx xxxxxx xxxxx, xxx xxxxxxxxxxx xxxxxx xxxxxxxx xxxxxxxxxx xxxx xx xxx xxxx xx xxx xxxxxxx xxxxx. Xxxx xxxxx xxxx xxx xxxxxx xxxxxxxxxx xxxx xxxxx xxx xxxxxxx xxxxx xxxx. Xx xxx xx xxx xxx xxx xxxxxxxxxxx xxxxxx xxxxxxxxxx, xxxx xxx xxxxx xxxx xx xxxxxx xx xx xxxxx xxx xxxxxxx xxxxxx xxxx, xxxxx xxxx xxxxxx xx x xxxx xx xxxxxx xxxxxxxx.
+ビデオ手ブレ補正効果で出力ビデオをトリミングする必要がある場合、出力の推奨エンコード プロパティは、トリミングされたビデオのサイズになります。 つまり出力の解像度は、トリミングされたビデオのサイズと一致します。 推奨される出力プロパティを使わなかった場合、最初の出力サイズに合わせてビデオがアップスケーリングされるため、ビジュアルの再現性が低下します。
 
-Xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701124) xxxxxxxx xx xxx **XxxxxXxxxxxxxXxxxxxx** xxxxxx. Xxxxxx xxxxxxx xxx xxx xxxxxxxxxx, xxx xxx xxxxxx xxxxxxxx xx xxxxx xxx xxxxxxx xxxxxxxx xxxxxxxxxx xx xxxx xxx xxx xxxxxx xxx xxxxxxxx xxxx xxxx xxx xxxxxxx xxx xxxxxx.
+**MediaEncodingProfile** オブジェクトの [**Video**](https://msdn.microsoft.com/library/windows/apps/hh701124) プロパティを設定します。 効果を無効にしたときに設定を元に戻すことができるよう、新しいプロパティを設定する前にメンバー変数を使って初期エンコード プロパティを保存します。
 
-[!xxxx-xx[XxxXxXxxxxXxxxxxxxxxxxxXxxxxxxxxxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetUpVideoStabilizationRecommendationAsync)]
+[!code-cs[SetUpVideoStabilizationRecommendationAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetUpVideoStabilizationRecommendationAsync)]
 
-### Xxxxxx xxx xxxxx xxxxxxxxxxxxx xxxxxx xxxxx xxxxxxxx
+### ビデオ手ブレ補正効果の無効化イベントを処理する
 
-Xxx xxxxxx xxx xxxxxxxxxxxxx xxxxxxx xxx xxxxx xxxxxxxxxxxxx xxxxxx xx xxx xxxxx xxxxxxxxxx xx xxx xxxx xxx xxx xxxxxx xx xxxxxx xx xx xx xxxxxxx xxxx xxx xxxxxx xx xxxxxxx xxxxxx. Xx xxxx xxxxxx, xxx XxxxxxxXxxxxxx xxxxx xx xxxxxx. Xxx **XxxxxXxxxxxxxxxxxxXxxxxx** xxxxxxxx xx xxx *xxxxxx* xxxxxxxxx xxxxxxxxx xxx xxx xxxxx xx xxx xxxxxx, xxxxxxx xx xxxxxxxx. Xxx [**XxxxxXxxxxxxxxxxxxXxxxxxXxxxxxxXxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn948979) xxx x [**XxxxxXxxxxxxxxxxxxXxxxxxXxxxxxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948981) xxxxx xxxxxxxxxx xxx xxx xxxxxx xxx xxxxxxx xx xxxxxxxx. Xxxx xxxx xxxx xxxxx xx xxxx xxxxxx xx xxx xxxxxxxxxxxxxxxx xxxxxx xx xxxxxxx xxx xxxxxx, xx xxxxx xxxx xxx xxxxxx xxxx xx **Xxxxxxxxxxxx**.
+ピクセル スループットが高すぎて効果の処理が追い付かない場合や、効果の実行に時間がかかっていることをシステムが検出した場合、ビデオ手ブレ補正効果がシステムによって自動的に無効化されます。 このように状態が変化した場合、EnabledChanged イベントが発生します。 最新の効果の状態 (有効または無効) は、*sender* パラメーターに格納された **VideoStabilizationEffect** のインスタンスによって知ることができます。 [
+            **VideoStabilizationEffectEnabledChangedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn948979) に格納される [**VideoStabilizationEffectEnabledChangedReason**](https://msdn.microsoft.com/library/windows/apps/dn948981) の値は、効果が有効または無効にされた理由を示しています。 このイベントは、プログラムから効果を有効または無効にした場合にも発生します。この場合の理由は **Programmatic** になります。
 
-Xxxxxxxxx, xxx xxxxx xxx xxxx xxxxx xx xxxxxx xxxx xxx'x XX xx xxxxxxxx xxx xxxxxxx xxxxxx xx xxxxx xxxxxxxxxxxxx.
+通常、このイベントを使ってアプリの UI を調整し、ビデオ手ブレ補正の現在の状態を示します。
 
-[!xxxx-xx[XxxxxXxxxxxxxxxxxxXxxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoStabilizationEnabledChanged)]
+[!code-cs[VideoStabilizationEnabledChanged](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoStabilizationEnabledChanged)]
 
-### Xxxxx xx xxx xxxxx xxxxxxxxxxxxx xxxxxx
+### ビデオ手ブレ補正効果をクリーンアップする
 
-Xx xxxxx xx xxx xxxxx xxxxxxxxxxxxx xxxxxx, xxxx [**XxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226592) xx xxxxx xxx xxxxxxx xxxx xxx xxxxx xxxxxxxx. Xx xxx xxxxxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxx xxxxxxxx xxxxxxxxxx xxx xxx xxxx, xxx xxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxxxx. Xxxxxxx, xxxxxx xxx **XxxxxxxXxxxxxx** xxxxx xxxxxxx xxx xxx xxx xxxxxx xx xxxx.
+ビデオ手ブレ補正効果をクリーンアップするには、[**ClearEffectsAsync**](https://msdn.microsoft.com/library/windows/apps/br226592) を呼び出してビデオ パイプラインからすべての効果を消去します。 初期エンコード プロパティを格納しているメンバー変数が null 以外であれば、それらの変数を使ってエンコード プロパティを復元します。 最後に、**EnabledChanged** イベント ハンドラーを削除し、効果を null に設定します。
 
-[!xxxx-xx[XxxxxXxXxxxxxXxxxxxxxxxxxxXxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVisualStabilizationEffect)]
+[!code-cs[CleanUpVisualStabilizationEffect](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVisualStabilizationEffect)]
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxxx xxxxxx xxx xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md)
+* [MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

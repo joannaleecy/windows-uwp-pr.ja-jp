@@ -1,166 +1,177 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxxx xxxxxxxxx xxxxxxxxxxx xxxxxxxxxx xxx xxxx xxxx xxxxxxx xxxxxx xx x xxxx'x xxxxxxxx.
-xxxxx: Xxxxxxxxxx xxx xxxxxxxx-xxxxx xxxx
-xx.xxxxxxx: YYYYYXXY-YXYY-YYYY-YYYX-XXYYYYYYYXYX
+Description: このトピックでは、ユーザーの位置にアクセスする必要があるアプリを構築する際のパフォーマンス ガイドラインを説明します。
+title: 位置認識アプリのガイドライン
+ms.assetid: 16294DD6-5D12-4062-850A-DB5837696B4D
 ---
 
-# Xxxxxxxxxx xxx xxxxxxxx-xxxxx xxxx
+# 位置認識アプリのガイドライン
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225603)
--   [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225534)
+-   [**位置情報**](https://msdn.microsoft.com/library/windows/apps/br225603)
+-   [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534)
 
-Xxxx xxxxx xxxxxxxxx xxxxxxxxxxx xxxxxxxxxx xxx xxxx xxxx xxxxxxx xxxxxx xx x xxxx'x xxxxxxxx.
+このトピックでは、ユーザーの位置にアクセスする必要があるアプリを構築する際のパフォーマンス ガイドラインを説明します。
 
-## Xxxxxxxxxxxxxxx
-
-
--   Xxxxx xxxxx xxx xxxxxxxx xxxxxx xxxx xxxx xxx xxx xxxxxxxx xxxxxxxx xxxx.
-
-    Xxxx xxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn859152) xxxxxx xxxxxxxxx xxx xxxx’x xxxxxxxx. Xx xxxx xxxx, xxxx xxx xxxx xx xx xxx xxxxxxxxxx xxx **XxxxxxxXxxxxxXxxxx** xxxx xx xxxxxx xxxx xxx XX xxxxxx. Xxxxx xxx xxxx xxxxxx xxxx xxx xxxxxxxxxx xx xxxxx xxxxxxxx, xxxx xxx xxx'x xxxxxx xxxxxxxx xxxx.
-
--   Xx xxxxxxxx xxx'x xxxxxxxxx xx xxxx xxx, xxx'x xxxxxx xx xxxxx xxx xxxx xxxxx xx xxxxxxxx x xxxx xxxx xxxxxxxx xx. Xxx xxxxxxx, xx x xxxxxx xxxxxxxxxx xxx xxx x xxxxxx xxx "Xxxxx xx xxxx xx xxxxxxxx," xxx xxx xxxxxxx'x xxxxxx xxxxxxxx xxxxx xxx xxxx xxxxxx xxx xxxxxx. Xx'x xxxx xx xxxxxxxxxxx xxxxxx xxxxxxxx xx xx xx xxxxxxxx xxx xxxx xxx'x xxxx xxxxxxxx.
-
--   Xxx xxxxx xxx xx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225534) xxxxxx xxxx xx xxxx xx xxx xxxx XX xxxxxx xx xxx xxxxxxxxxx xxx, xx xxxxxxx xxx xxxxxxx xxxxxx xx xxx xxxx. Xxx xxxxx xxx xx xxx **Xxxxxxxxxx** xxx xx xxxxxx xxx xxxxx xxxx xx [**xxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh973536) xx xxx xxxxx xxxxxxxxxxxx xx x xxxxxxx xxx xxx [**xxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225540) xxxxx.
-
--   Xxxx xxx xxxx xxx xxxxxxxx xxxx xxxx xx xxxx.
--   Xxxxxxx XX xx xxxxxx xxxxx xx xxxxxxxx xxxxxxx xxxxx xxxxxxxx.
--   Xxxxxxx x xxxxxxxx xxx xx xxxx xxxxx xxxxxxx xx xxx xxxxxxxx xxxx. <!--For info on the available progress controls and how to use them, see [**Guidelines for progress controls**](guidelines-and-checklist-for-progress-controls.md).-->
--   Xxxx xxxxxxxxxxx xxxxx xxxxxxxx xx xxxxxxx xxxx xxxxxxxx xxxxxxxx xxx xxxxxxxx xx xxx xxxxxxxxx.
-
-    Xx xxx xxxxxxxx xxxxxxxx xxx'x xxxxx xxxx xxx xx xxxxxx xxx xxxx'x xxxxxxxx, xx xxxxxxxxx xxxxxxxxx x xxxxxxxxxx xxxx xx xxx **xxxxxxxx xxxxxxx xxxxxxxx** xx xxx **Xxxxxxxx** xxx. Xxx xxxxxxx, xxx xxxxx xxx x Xxxxxxxxx xxxxxxx xx xxxx xxx [**XxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701476) xxxxxx xx xxxxxx xxx **Xxxxxxxx** xxx xxxx xxxx xxxxx xxx `ms-settings:privacy-location` XXX. Xxx xxxx xxxx, xxx [Xxxxxx xxx Xxxxxxx Xxxxxxxx xxx](https://msdn.microsoft.com/library/windows/apps/mt228342).
-
--   Xxxxx xxxxxx xxxxxxxx xxxx xxx xxxxxxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225534) xxxx xxx xxxx xxxxxxxx xxxxxx xx xxxxxxxx xxxx.
-
-    Xxxxxxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225534) xxxxxx xx xxx xxxx xxxxx xxx xxxxxx xx xxxxxxxx xxxx xxxxxxx Xxxxxxxx. Xxx xxx xxxx xxxx xxxxxxx **XXXXXX\_XXXXXX** xxxxxxx xxx xxx xxxxxxxx XXX xxxxx. Xx xxxx xxx xxxxx xx xxxxxx xxxxxxxx xxxx, xxxxx xxx xxxxxx xxxx xxxx xxx xxxx xxxxxxx xxxxxx xx xxxxxxxx xxxx. Xxxxxxx xx xxxxxxxxx xxx xx xxxxxxxx xxxxx xxxxxxxx xxxx xxxx xxxxxxxx xxxx xx xxx xxxxxxxxx xxx xxxxxxxx xxxxxxxx.
-
--   Xxxxxxx XX xxx xxxxxxxxxx xxxxxxxx xxxxxxxx. Xxx xxxxxxx, xxxxxx x xxxxxxx xxxxxx xxxx xxxxxxxxxxxxxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225534) xxxxxx xxx xxxxx xx xxx xxxxxxxx xxxx xxxxx.
-
-    Xxxx xxxx xxx xxxxxxx XX xxx xxxxxxxxxx xxxxxxxx xxxxxxxx—
-
-    -   Xx xxx xxxx xxxxxxxxx xxxxxxxx xxxxxx xxxxx xxxxxxxxx xx, xxxxx xx xx xxxxxxxxxxxx xx xxx xxx. Xxx [**xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225601) xxxxxxxx xxxx xxx xxxxxx xxx xxxxx xx xx [**xxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225542) xxxxx. Xxxx xxx xxxxxx xxxxxx x xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225534) xxxxxx xxx xxxx [**xxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh973536) xx xxx xx xxx xxxxxxx xxxxxxxx xxxx, xx xxxxxxxxx xxxxx xx [**xxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225540) xxxxxx. Xx xxx xxxxxx xxxx xxxxxxxxx xxxx xxxxxxxx xxx xxxx xxxxxxxxx, xxxxx xxx XX xx xxxxx xxxx xxx xxxxxxxxxx xxxxxxxx xxx xxxx xxxx xxxxxxxx xxxxxxxx xxxx xxxxxxxx, xxx xxxxxxx xxxxxxxxxxxxx xx xxx xxx xxxxxx.
-    -   Xxxx xxx xxxxxx xxxx xxx xxxxx xx xxx xxxxxxxx xxxx xxxx xxxxxxxxxx, xx xxxx xxx xxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxxxx xxxx xxxxxxxx xxxxxxxx xxxx, xx xx xxx xxxxx xxxxxxxx-xxxxxxxxxxx xxxx.
-
-**Xxxxxxxxxxx**
-
--   Xxx xxx-xxxx xxxxxxxx xxxxxxxx xx xxxx xxx xxxxx'x xxxx xx xxxxxxx xxxxxxxx xxxxxxx. Xxx xxxxxxx, xx xxx xxxx xxxx x xxxxxxxx xxx xx x xxxxx xxxxx'x xxxx xx xxxxxxx xxxxxxxx xxxxxx xxxxxx. Xxxxxxx, xx xxxxxx xxxxxxx xxxxxxxx xxxxx [**xxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh973536), xx xxxxxxxxx xx [Xxx xxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt219698).
-
-    Xxxx xxx xxxx x xxx-xxxx xxxxxxxx xxxxxxx, xxx xxxxxx xxx xxx xxxxxxxxx xxxxxx.
-
-    -   Xxxxxxx xxx xxxxxxxx xxxxxxxxx xx xxxx xxx xx xxxxxxx xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225535) xx xxx [**XxxxxxxXxxxxxxxXxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/jj635271). Xxx xxxxx xxx xxxxxxxxxxxxxxx xx xxxxx xxxxx xxxxxxxxxx
-    -   Xxx xxx xxx xxx xxxxxxxxx xx [**XxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh973536) xx xxxxxxx xxx xxxx xxx x xxxxxxxx xxx xxxx xxxx xxxxxxxx xx xx xxxxxx xxx xxxx xxx. Xx xxxx xxx xxx xxx x xxxxxxxx xxxx xx x xxx xxxxxxx xx xxxxxxx xxx, xxxx xxx xxx xxxxxxx x xxxxxxxx xxxxxx xxxxxxxxxxx xxx xxxxxxxxxx xx xxxxxx xxxxxx xxxxx.
-    -   Xxx xxx xxxxxxx xxxxxxxxx xx [**XxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh973536). Xxxx xx xxx xxxx xxxx xxx xxx xxxx xxx x xxxxxxxx xx xx xxxxx xx xx xxxxxxxx. Xxx xxxx xxxx xx xxxxxx xxx xxx xxxxx-xxxx xxxxxxx xxxxxxxxxxxxxx xx xxx xxxx xxx xxxxxxxx xxxx xxx xxxxx.
--   Xxx xxxxxxxxxx xxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxx. Xxx [**xxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225540) xxx [**xxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225542) xxxxxx xxx xxxxxxxxx xxxxxxxx xxxx x xxxxxxxx xxxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx xxxxxxx xx xxxx xxxxx.
-
-    Xxxx xxxxxxxxxx xxxxxxxx xxxxxxx, xxx xxx xxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxxx xx xxxx xxx xx xxxxxxx xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225535) xx xxx [**XxxxxxxXxxxxxxxXxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/jj635271). Xxx xxxxxx xxxx xxx xxx xxxxxxxxx xx xxxxx xxx xxxxxxxx xxxxxxx xxx xxxxxx, xx xxxxx xxx [**XxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225539) xx xxx [**XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225541).
-
-    -   Xxxxxxx xxx xxxxxxxx xxxxxxxxx. Xxxx xxxx xxxx xxxxxxxx xxxxxxx xxxx xxxx xxx xxxx xxx xxxxx x xxxxx xxxxxxxx. Xxx xxxxxxx, xx xxx xxxx xxxxxxxx xxxxx xxxx xx xxxxxxx xxxxxxx xxx xxx xxxx xxxxxxxx xxxxxxx xxxxxx xxx xxxx'x xxxxxxxx xxx xxxxxxx xx x xxxxxxxxx xxxx. Xx xxxx xxxx, xxx xxxxxx xxx xxxxxxx xxxxxxxx xxxxxxxx xxx x xxxxxxxx xxxxxx xxxxx xx xxxxxxx xxx [**XxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225539) xxxxxxxx. Xxxx xxx xxx xxxxxx xx xxxxxxxxx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225540) xxxxxx. Xxxxx xxxxxx xxx xxxxxx xxxx xxxx xxx xxxxxx xx xxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxxx.
-
-    -   Xxx [**xxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225541) xxxx xxxxxx xxxx xxxx xxx xxxxxxxxxx xxx xxxx xxxxxxxxx xxx xxx xx xxxxxx xxxxxxxxx. Xxx xxxxxxx, x xxxxxxx xxx xxx xxxxxxx x xxxx xxxxxx xxxx xxxxx YY xxxxxxx. Xxxx xxxx, xxxxx xxxx xxxx-xxxx xxxxxxxxxx xxxx, xxx'x xxxxxxx x xxxxxx xxxxxxxx, xxxxxxxx xxxxxx xx xxxxxxxx xxxxxxx. Xx xxxx xxx xxxxx'x xxxxxxx xxx xxxx xxxxxxxx xxxxxx xx xxxx xxxxxxxx, xx xxxxxxxx xxxxxxx xxxxxxxxxxxx, xxx xxx **XxxxxxXxxxxxxx** xxxxxxxx xx xxxxxxxx xxx xxxxxxx xxxxxxxxx xx xxxxxxxx xxxxxxx xxxx xxxx xxx xxxxx. Xxx xxxxxxxx xxxxxx xxx xxxx xxxxxxxx xxxxx xx xxxxxxxxxxx xxxxxxxx xxxx xxxx xxxxxx.
-
-        Xxxx xxxx xx xxxxxxx xxxx-xxxx xxxx xxxxxx xxx [**XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225541) xx Y, xx xxxxxxxx xxxx xx xxxxxxx xxxxxxxx xx xxxxxxxxx. Xxx xxxxxxx xxxxxx xxxxxxxx xx Y xxxxxx xx xx xxxxxxxx xx xxx xxxxxxxx xxx xxxxxxx – xxxxxxxxx xx xxxxxxx.
-
-        Xxxxxxx xxxx xxxxxxx xxxxxxxx xxxx xxx xxxxx xxx xxxxxx xxxxxxxx xxxxxxxxx xx xxxxxxxxx xxxx, xxx xxxxxxx xxxx xxxxxxx xx xxx xxxxxxxx xxxxxxxxx xxxxxxxx. Xxx xxx xxxx xxx xxxxxxxx xxxx xxx xxxxxxxx xxxx xxxxxxxx xxx xxxx xx xxxxx. Xxxxxxxxx, xx'x xxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx xxxx xxxxxxxx xxxxxxx xx x xxxxxx xxxxxxxxx xxxx xxxx xxx xxxxxxxxx, xx xxxxxxx xxx xxx xxxxxxxxx xxxx xxxxxxxx xxxxxxx.
-
-        **Xxxx**  Xx xxx'x xxxxxxxxxx xxxx xxx xxxxxxxx xxxxxx xxxx xxxxx xxx xxxxxxx xxx xxx xxxxx xxxxxx xxxxxxxx. Xxx xxx xxxxxxxx xxxxxxxx xxxxxxx xxxxx xxx xxxxxx xxxxxxxx, xxx xxx xxxxxx xxxxx xxxxxxx xx xxx xxxxx xxxx xx.
-
-    -   Xx xxxx xxxxxxxx xxxxx, xxx xxx [**xxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225535) xxxxxxxx xx xxxxxxxx xx xxx xxxxxxxx xxxxxxxx xxxxxxx xxxx xxx xxxxx xxxx-xxxxxxxx xxxx. Xx xx xxxx xxxxxxx xxxx-xxxxxxxx xxxx, xxx xxxxxx xxx xxxx xxxxx xx xxx xxxxxxx xx XXX xxxxxxxxx.
-
-        -   Xxx [**xxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225535) xx **XXXX** xx xxxxxx xxx XXX xx xxxxxxx xxxx.
-        -   Xxx [**xxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225535) xx **Xxxxxxx** xxx xxx xxxx x xxxxxx-xxxx xxxx xxxxxxx xx xxxxxxxx xxxxx xxxxxxxxxxx xx xxxx xxx xxxx xxxxxxxx xxxx xxxxxx xxx xx xxxxxxxxx.
-
-        Xx xxxx xxx xxx xxxxxxxx xxxxx xxxxxx xxxxxxxx, xxx xxx xxxx xx xxx xxx [**XxxxxxxXxxxxxxxXxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/jj635271) xxxxxxxx xxxxxxx xx xxxxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225535). Xxxx xx xxxxxxxxxxxx xxxxxx xx Xxxxxxx Xxxxx, xxxxx xxxxxxxx xxx xxxxxxx xx xxxxxxxx xxxxx xx xxxxxxxx xxxxxxx, Xx-Xx xxxxxxx xxx xxxxxxxxxx. Xxxxxxx x xxxx xxxxxxxx xxxxxxxx xxxxx xxxx xxxx xxx xxxxxx xxxxxxxx xxx xxxxx xxxxxxxxxxxx xx xxx xxxx xxx xxxxxx xxxxx xxxx xxxx xxxxxxxxx x xxxxxxxx.
-
-        Xxx xxxxxxx:
-
-        -   Xx xxxx xxx xx xxxxxxxxx xxxxxxxx xxx xxx xxxxxx, xxxxxxx, xxxx, xxx, xx xxxxxxxx xx YYYY xxxxx xx xxxxxxxxx xxxxxx.
-        -   Xx xxx xxx xx xxxxxxxxxx xxxxxx xxxxx xx xxx xxxxxxxxxxxx, xx xxxxxxxx xx YYY xxxxx xx xxxxxxxxx xxxx xx xxxxxxx xxxxxxx.
-        -   Xx xxx xxxx xx xxxxxxx xxx xxxxxxxxxxxxxxx xx xxxxxx xxxxxxxxxxx, xx xxxxxx xxxx xx xxx x xxxxxxxx xxxxxx x xxxxx, xx xx xxxxxxxx xx YYY xxxxxx xx xxxxxxxxxx.
-        -   Xx xxx xxxx xx xxxxxx xx xxxxx xxx xxxxxxxx, xxx xxx xxxxxx xxxxxxx xx xxxxxxxx xx xxxxx YY xxxxxx.
-    -   Xxx xxx [**Xxxxxxxxxxxxx.xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225526) xxxxxxxx xx xxxx xxx xxx xxxxxxxx xxxxxxxx xxxxxxxxxxxx. Xxx xxxxxxx, xxxxxxxxxx xxxx xxxxxx xxx xxx **Xxxxxxxxxxxxx.xxxxxxxx** xxxxxxxx xx xxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxx xxxx xxxxx xxx xxx'x xxxxxxxxxxxx.
-
--   Xxxxxxxx xxxxx-xx xxxxx. Xxx xxxxx xxxx xx xxx xxxxxxxx xxxxxxxx xxxx, xxxxx xxxxx xx x xxxxx xxxxx (Y-Y xxxxxxx) xxxxx xxx xxxxxxxx xxxxxxxx xxxxxx xx. Xxxxxxxx xxxx xx xxx xxxxxx xx xxxx xxx'x XX. Xxx xxxxxxxx, xxx xxx xxxx xx xxxxx xxxxxxxx xxxxx xxxxx xxxxxxx xxx xxxxxxxxxx xx xxx xxxx xx [**XxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh973536).
-
--   Xxxxxxxx xxxxxxxxxx xxxxxxxx. Xx xxxx xxx xxxxx'x xxxx xxxxx, xx xxx'x xxxxxxx xxxxxxxx xxxxxx xxxxxx xxxxx xx'x xxxxxxxxx xx xxx xxxxxxxxxx. Xx xxxx xxx xxxxxx xxxxxxxx xxxxxxx xx xxxxxxx xxxx, xx xxxxx xx xxxx. Xxxx xxx xxx xxxxxxx xxxxx, xx xxxxxxxx xxxx xxx xxxxxx. Xx xxxx xxx xxx xxx xxxxxxx xxxx xxxxxxxx xxxx xx xxx xxxxxxxx.
-
--   Xxx xxx xxx xxxxxx xxxxxxx xxxxxxxxxxx. Xxxxx xxx xxx xxxxx xx xxxxxxx: *xxx* xxx *xxxxxx*.
-
-    -   Xxx xxxxxxx xxxxxxx xxx xxxxxxxxxxxxx, xxxxxxxxx, xxx xxxxxxxxxxxx.
-    -   Xxxxxx xxxxxxx xxxxxxx xxxxxxxxxxx, xxxxxxxxxxxx, xxx xxxxxxx. Xxxxxx xxxxxxx xxx xxxxx xxxx xxxx xxxxxxxxxxxx xx xxx xxx xxxxxxx.
-
-    Xxx Xxxxxxx Xxxxxxx XXXx xxx xxxxxx xxx xx xxxxx xxxxxxx xxxxxx xxx xxx xxxxxxxxxxxx. Xxxxxx xxxxxxx xxx xxxx xxxxxxxx xxx xxxxxx xxxx xxx xxxxxxx, xxx xxxx xxx xxxx xxxxx. Xxx xxxxxx xxx xxx xxxxx xxxxxxx xxx xxx xxxxx xxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187358).
-
-**Xxxxxxxxx xxxxxxx:  **Xxxx xxx XX xx xx xxxxxxxxx xxxxxxx xxxxx, [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225534) xxxxxxx xxx xxxxxx xx xxxxxxxxxxxx. Xxxxxxx, xxx **Xxxxxxxxxx** xxxxxx xxxx xxx xxxx xxx xxxxxxx xx xxxxxxxxx xxx xxxxxxxxx xxxxx xx [**XxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh973536) xxxx xxxx xxx xxxxx Y xxxxxxx, [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225540) xxxxx xxxxxxxxx xxxx xxxxx xx xxxxxx, xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225542) xxxxx xxxxxxxxx xxxx xx xxxxxx xxxx xxxx xxx **XxXxxx** xxxxxx.
-
-## Xxxxxxxxxx xxxxx xxxxxxxx
+## 推奨事項
 
 
-### Xxxxxxxxx xxxxxxx xx xxxxxxxx xxxxxxxx
+-   location オブジェクトは、アプリで位置データが必要になった場合にのみ使用を開始します。
 
-Xxx xxxx xxx xxxx xxx xxxxxxxx xxxxxxxxxxxxx xx xxxxx xxx **xxxxxxxx xxxxxxx xxxxxxxx** xx xxx **Xxxxxxxx** xxx.
+    ユーザーの位置情報にアクセスする前に、[**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) を呼び出します。 このときに、アプリをフォアグラウンドで実行し、**RequestAccessAsync** を UI スレッドから呼び出す必要があります。 位置情報に対するアクセス許可をユーザーがアプリに与えるまで、アプリは位置情報にアクセスできません。
 
--   Xx xxxxxx xxxx xxx xxxx xxxxxxxx xx xxxxxxxxx xxxxxxxx xxxxxxxx:
-    -   Xxxxxx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225542) xxxxx. Xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225601) xxxxxxxx xx xxx xxxxxxxx xx xxx **XxxxxxXxxxxxx** xxxxx xxx xxx xxxxx **Xxxxxxxx** xx xxx xxxx xxxxx xxx xxxxxxxx xxxxxxxx.
-    -   Xxxxx xxx xxxxx xxxxx xxxxxxxx xxxx [**XxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh973536). Xx xxx xxxx xxx xxxxxxxx xxxxxxxx xxxxxxxx, xxxxx xx **XxxXxxxxxxxxxxXxxxx** xxxx xxxx xx **XXXXXX\_XXXXXX** xxxxx xxx xxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225538) xxxxxxxx xxx xxx xxxxx **Xxxxxxxx**.
--   Xx xxx xxxx xx xxx xxx xxxxx xxxxxxxx xxxx xx xxxxxxxxx—xxx xxxxxxx, x xxxxxxx xxx—, xx xxxx xx xx xxx xxxxxxxxx:
-    -   Xxxxxx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225540) xxxxx xx xxx xxxxxxx xx xxx xxxx’x xxxxxxxx xxxxxxx.
-    -   Xxxxxx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225542) xxxxx xx xxxxxxxxx xxxxxxxxxx, xx xxxxxx xxxxxxx xx xxxxxxxx xxxxxxxx.
+-   アプリで位置情報が必須でない場合は、位置情報を必要とするタスクをユーザーが完了することを試みるまではその情報にアクセスしないでください。 たとえば、ソーシャル ネットワーキング アプリに、[位置情報を使ってチェックイン] というボタンがある場合、アプリは、ユーザーがそのボタンをクリックするまでは位置情報にアクセスしないようにします。 アプリのメイン機能で位置情報が必要な場合は、すぐにアクセスしても問題ありません。
 
-Xxxx xxxx xxx xxxxxxxx xxxxxxx xxxx xxxxxx xxxx xx xx xxxxxxx xxxxxxxxx. Xx xxx xxxxx xxxxxx x xxxxxxxx xxxx x xxxxxx xxxxx xxxxxx xxx xxxx xxxxxx xxx xxxxxxxx xxxx xxxx xxxxxxxx xxxxxxxxxxx xx xx xxxxxxx xxxxxxxxx. Xxxx xxxxxxxxxx xxx xxxx'x xxxxxxxx xxxxx xxxxxxxx xxxx xx xxxxxx xxx xxxxxxxx xx xxxx xxxxxxxx xxxxxxxxxxx xxxxxxx xxxxxxxxx.
+-   [
+            **Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトの初めての使用はフォアグラウンド アプリのメイン UI スレッドで行い、ユーザーから同意を得るためのプロンプトをトリガーする必要があります。 **Geolocator** の初めての使用とは、[**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) を初めて呼び出すとき、または [**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントのハンドラーを初めて登録するときです。
 
-### Xxxxxxxxx xxxxxxxxxxxxxxx xx xxxxxxxx
+-   位置データがどのように使われるかをユーザーに知らせてください。
+-   ユーザーが現在の位置を手動で更新できる UI を用意します。
+-   位置データの取得中は、進行状況バーまたは進行状況リングを表示します。 <!--For info on the available progress controls and how to use them, see [**Guidelines for progress controls**](guidelines-and-checklist-for-progress-controls.md).-->
+-   位置情報サービスが無効または利用不可になっている場合は、適切なエラー メッセージまたはダイアログを表示します。
 
-Xxxx xxxx xxx xxx [**Xxxxxxxxxxxxx.xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225526) xx xxxxxx xxx xxxx’x xxxxxxx xxxxxxxx xx xxx xxx xxxxxxx. Xxxxx xxx xxxxx xxxx xxxxx xxx xxxxxxxx—xx xxxxx xxxxxx xx xxxxxxxxxxxxx YY xxxxxx, xx xxxxx xxxxxx xx xxxxxxxxxxxxx YYY xxxxxx, xxx xx xxxxx xxxxxx xx xxxxxxx xxxx Y xxxxxxxxx. Xx xxxxx xxx xxxxxxxx xxxxxxxxxxx, xxx xxx xxxxxx xxxx xxxx xxx xxxxxxxx xxxxxxxx xxxxxxxxxx xx xxx xxxxxxx xx xxx xxxx xxxxxxxxx. Xxx xxxxxxx xxxxxxxxxxx xxxxx xxxxx xxx xxx xxxxxxx, xxx [Xxxxxxx xxxx xxxx YX, YX, xxx Xxxxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt219695).
+    位置情報の設定でアプリからユーザーの位置情報へのアクセスを許可していない場合は、**設定**アプリ内にある**位置情報に関するプライバシー設定**への使いやすいリンクを示すことをお勧めします。 たとえば、ハイパーリンク コントロールを使うか、`ms-settings:privacy-location` URI を使用して [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) メソッドを呼び出すことでコードから**設定**アプリを起動します。 詳しくは、「[Windows 設定アプリの起動](https://msdn.microsoft.com/library/windows/apps/mt228342)」をご覧ください。
 
--   Xxx xxxxxxxx xxxxxxxxxxxxx xxxxx xx YY xxxxxx (XXX xxxxxxxxxx), xxxxxxxx xxx xx xxxxxxx xx x xxx xx xxx xx xxx xxx. Xxxx xxxx xxxxxxxx, xxxxxxxx-xxxxxxxxx xxxxxxxxxxx xxx xxxxxx xxxxxxx xxx xx xxxxx xx xxxx.
+-   位置情報へのアクセスをユーザーが無効にしたときに、キャッシュされた位置データをクリアし、[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) を解放します。
 
-    ![xxxxxxx xx xxx xxxxxxxxx xx xxx xxxxxxxx xx xxxxxxxxxxxxx YY xxxxxx.](images/10metererrorradius.png)
+    ユーザーが設定を使って位置情報へのアクセスをオフにした場合に、[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトを解放します。 すると、アプリは、あらゆる位置情報 API 呼び出しの結果として **ACCESS\_DENIED** を受け取ります。 アプリで位置データを保存またはキャッシュしている場合は、ユーザーが位置情報へのアクセスを無効にするときにすべてのキャッシュ データをクリアします。 位置情報サービス経由で位置データを利用できないときに位置情報を手動で入力するための代替手段を用意してください。
 
--   Xxx xxxxxxxx xxxxxxx YY xxx YYY xxxxxx (xxxxxxxxxxxxx YYY xxxxxx), xxxxxxxx xx xxxxxxxxx xxxxxxxx xxxxxxx Xx-Xx xxxxxxxxxx. Xxxxxxxx xxxxxxxx xxxx xxxxxxxx xxx xx xxxxxxxx xx xxxxxx YYY xxxxxx. Xx xxxx x xxxx, xx xxxxxxxxx xxxx xxxx xxx xxxx xx xxxxx xxxxxx. Xxx xxxx xxxx xxxx xxxxxxxxxx xxxxx x xxxxxxxxx xxx xx xxxxxxxx, xxxx x xxx xxx xx xxxxx xxxx xx xxxxx xxxxxx xxxxxxxxxxx xx.
+-   位置情報サービスを再び有効にするための UI を用意します。 たとえば、[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトを再インスタンス化して位置情報を取得し直す更新ボタンを提供します。
 
-    ![xxxxxxx xx xxx xxxxxxxxx xx xx-xx xxxxxxxx xx xxxxxxxxxxxxx YYY xxxxxx.](images/100metererrorradius.png)
+    位置情報サービスを再び有効にするための UI を提供する—
 
--   Xx xxx xxxxxxxx xxxxxxxx xx xxxxxxx xxxx Y xxxxxxxxx, xxx xxx xxxxxxxx xxxxxxxxx xxxxxxxx xxxx xx XX-xxxxx xxxxxxxxxx. Xxxx xxxxx xx xxxxxxxx xx xxxxx xxx xxx xx xxxxxxxx x xxxxxxxxxx xxxx xx x xxx. Xxxx xxx xxxxxx xxxx xx xx xxx xxxx xxxxx xx xxx xxx, xx xx xxx xxxxxxxxxxx xxxx xxxxx xx xxx xxxxx xxxxxx (xxx xxxxxxx, xxxxxx xxxxx).
+    -   ユーザーが位置情報を無効にした後に再び有効にした場合、アプリには通知されません。 [
+            **status**](https://msdn.microsoft.com/library/windows/apps/br225601) プロパティは変更されず、[**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントも発生しません。 アプリで、新しい [**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトを作成し、[**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) を呼び出して更新された位置情報データを取得するか、[**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントの受信登録をもう一度行います。 位置情報が再び有効になったことを確認できたら、位置情報サービスが無効であることをユーザーに通知するために表示していた UI をクリアし、新しい状態に対して適切に対応します。
+    -   アプリをアクティブ化するとき、位置情報が必要な機能をユーザーが明示的に使おうとしたときなど、状況に応じて必要と思われる任意の時点で、位置情報データを取得し直すことをお勧めします。
 
-    ![xxxxxxx xx xxx xxxxxxxxx xx xx-xx xxxxxxxx xx xxxxxxxxxxxxx Y xxxxxxxxx.](images/1000metererrorradius.png)
+**パフォーマンス**
 
-Xxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxx xxx xxxx xx xxxxxxxx xx xxxxxxx, xxxxxxx x xxxxxxxx xxxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxx xxxxxxxxxxxxxxx. Xxxx xxx xx xxxx xx:
+-   アプリで位置情報の更新を受け取る必要がない場合は、位置情報の要求を 1 回だけ使います。 たとえば、写真に位置情報タグを追加するアプリでは、位置情報更新イベントを受け取る必要はありません。 このようなアプリでは、[**getGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) を使って位置情報を要求します。詳しくは、「[現在の位置情報の取得](https://msdn.microsoft.com/library/windows/apps/mt219698)」をご覧ください。
 
--   Xxxxxx xxx xxxxxxxxxx xxxxxxxxx xxxxxx xxx xxxxxxx xxx xxxxxxxxxx xxxx xxx xxxxx.
--   Xxxxxxx xxx x xxx xxxxxxxxxxx xxxxxxx xx xxxxxxx xxx xxxxxx xx xxxxxxxx, xx xxxx xxxxxxx xxxxxxxx xxx xxx-xxxxxxxx xxxxx.
+    1 回限りの位置情報の要求を行う場合は、次の値を設定する必要があります。
 
-### Xxxxxxx xxxxxxxxxxxxxxx xx xxxxxxxx
+    -   [
+            **DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) または [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271) を設定して、アプリから要求される精度を指定します。 これらのパラメーターを使用する場合の推奨事項については、以下をご覧ください
+    -   [
+            **GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) の最大保存期間のパラメーターを設定して、アプリで有用な位置情報を取得できる期間を指定します。 アプリで数秒または数分前の位置を使用できる場合は、ほとんどすぐに位置を受け取って、デバイスの電力を節約することができます。
+    -   [ **GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) のタイムアウト パラメーターを設定します。 これが、アプリが返される位置またはエラーを待機することができる長さです。 ユーザーへの応答性とアプリが必要とする精度のバランスを理解する必要があります。
+-   頻繁に位置を更新する必要がある場合は、連続的な位置情報のセッションを使います。 特定のしきい値を超えた移動を検出する場合、または発生時に絶えず位置情報の更新を取得する場合は、[**positionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントと [**statusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントを使います。
 
-Xxxx xxxxx xx xxxx—xxx xxxxxxx, x xxxxxxx xxx xx x xxxxx xxxxxxxxxxx xxx—xxxx xxxx xx xxxxxxxxx xxxxxxxx xxxxxxxxx xx xxx xxxxxxxxx xxxxx xx xxxxxxxx. Xx xxxx xx xxxxxxx xxx xxxxxxxx xxxxxxx xxx xxxx xxxx xx xxx xxxxx xx xxxxxxxx xxxxxxxx xx xxx xxxx.
+    位置情報の更新を要求すると、[**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) または [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271) を設定して、アプリから要求される精度を指定できます。 また、[**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539)  または [**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541) を使って、位置情報の更新が必要な頻度を設定する必要があります。
 
--   Xxx xxxxxxxx xxxxxxxxxxxxx xxxxx xx YY xxxxxx (XXX xxxxxxxxxx), xxx xxxxxxxx xxxx xxxxxxxx xx xxxxxx xxxxxxxx xxx xx xxx xx xxxxxxxxxxxx xx xxx xxxxx xx xxx xxxxxxxxxxxx xxxx. Xxxx xxxx, xxxxx xx xxxxxxxx xxxx, xxx xxxxxxx/xxxxxx xxxx xxx xxxx xx xxxx.
--   Xxx xxxxxxxx xxxxxxxxxxxxx xxxxx xx YYY xxxxxx (Xx-Xx xxxxxxxxxx), xxx xxxxxxxx xxxx xxxxxxxx xx xxxxxxxxxx xxxxxxxx xxx xx xx xxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxx xxxx xx xxx xxxx xxxx. Xxxxx xxxxx xxx xxxxxxxxxxxx xxxx.
--   Xxx xxxxxxxx xxxxxxx xxxx Y xxxxxxxxx (XX xxxxxxxxxx), xxxxxxx xxxx xxx xxxxx xx xxxxxxxx, xx xxxxxxx/xxxxxx xxxx.
+    -   移動しきい値を指定します。 アプリによっては、ユーザーの移動距離が大きいときにだけ位置情報を更新すれば済むものがあります。 たとえば、地域のニュースや天気予報の更新情報を提供するアプリでは、ユーザーの位置が別の都市に変わらない限り位置情報を更新する必要はありません。 このような場合は、[**MovementThreshold**](https://msdn.microsoft.com/library/windows/apps/br225539) プロパティを設定して、位置情報更新イベントの発生条件となる最小の移動距離を調整します。 このプロパティには [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントをフィルター処理する効果があります。 これらのイベントは、位置の変化が移動しきい値を超えたときにのみ発生します。
 
-### Xxxxxxx xxxxxxxxxxxxxx
+    -   アプリのエクスペリエンスと整合し、システム リソースの使用が最小限に抑えられる [**reportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541) を使います。 たとえば、天気予報アプリでは、15 分ごとにデータを更新するだけでよいと思われます。 リアルタイムのナビゲーション アプリを除くほとんどのアプリでは、位置情報の更新について、高い精度のストリームを常に必要とするわけではありません。 最大限の精度のデータ ストリームを必要としない場合や、頻繁に更新する必要がない場合は、**ReportInterval** プロパティを設定して、アプリで位置情報を更新する必要がある最小の頻度を指定します。 これにより、必要なときにだけ位置情報を計算することで、位置情報の提供元の電力を節約できます。
 
-X xxxx'x xxxxxxxxxx xxxxxxxx xx xxxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxx (XXX). Xxx xxxxxxxxx xxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxx xxxxxxx.
+        リアルタイムのデータを必要とするアプリでは、最短の間隔を指定せずに、[**ReportInterval**](https://msdn.microsoft.com/library/windows/apps/br225541) を 0 に設定する必要があります。 既定のレポート間隔は、1 秒またはハードウェアでサポートされる最短間隔 (短い方) です。
 
--   [Xxxxxxxxx Xxxxxxx]( http://go.microsoft.com/fwlink/p/?LinkId=259692)
+        位置データを提供するデバイスでは、さまざまなアプリから要求されるレポート間隔を追跡し、要求された最短の間隔でデータをレポートする場合があります。 これにより、精度の要件が最も高いアプリに必要なデータを提供できます。 そのため、別のアプリで要求された更新頻度の方が高い場合は、要求した頻度よりも頻繁に更新が生成されることがあります。
+
+        ** 注:** 位置情報の提供元からのレポート間隔は、必ずしも要求どおりになるとは限りません。 位置情報取得機能デバイスによってはレポート間隔を追跡しないものもありますが、追跡されるものとして指定しておくことをお勧めします。
+
+    -   電力を節約するには、[**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) プロパティを設定して、アプリで高い精度のデータが必要かどうかを位置情報プラットフォームに示します。 高い精度のデータを必要とするアプリがなければ、GPS 位置情報取得機能を無効にして電力を節約できます。
+
+        -   GPS でデータを取得するには、[**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) を **HIGH** に設定します。
+        -   ターゲティング広告のためにのみ位置情報を使うアプリは、消費電力を最小限に抑えるため、[**desiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) を **Default** に設定します。
+
+        精度についてアプリに特定のニーズがある場合は、[**DesiredAccuracy**](https://msdn.microsoft.com/library/windows/apps/br225535) を使う代わりに [**DesiredAccuracyInMeters**](https://msdn.microsoft.com/library/windows/apps/jj635271) プロパティを使うこともあります。 これは、通常、位置情報を移動体通信ビーコン、Wi-Fi ビーコンや衛星に基づいて取得できる Windows Phone に特に役立ちます。 より具体的な精度値を選ぶと、システムが位置情報を提供する際に最も低い消費電力で適切なテクノロジを識別するために役立ちます。
+
+        次に例を示します。
+
+        -   アプリが広告の調整、天気、ニュースなどのための位置情報を取得している場合は、一般に 5000 m の精度で十分です。
+        -   アプリが地域内のごく近隣を表示する場合は、結果の表示には一般に 300 m の精度が適しています。
+        -   ユーザーがお勧めの近くのレストランを探している場合は、ブロック内の位置を取得する必要がありますので、100 m の精度で十分です。
+        -   ユーザーが自身の位置を共有しようとしている場合は、アプリには約 10 m の精度が必要です。
+    -   アプリに特定の精度の要件がある場合は [**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) プロパティを使います。 たとえば、ナビゲーション アプリでは、**Geocoordinate.accuracy** プロパティを使って、利用可能な位置情報データがアプリの要件を満たしているかどうかを調べます。
+
+-   起動時の待ち時間を考慮します。 アプリで初めて位置データを要求したとき、位置情報取得機能が起動するまでに 1 ～ 2 秒の待ち時間が発生することがあります。 アプリの UI を設計するときは、この点に注意してください。 たとえば、[**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) の呼び出しを保留している他のタスクがブロックされないようにしてください。
+
+-   バックグラウンドの動作を考慮します。 アプリにフォーカスがない場合、バックグラウンドで中断されている間は位置情報更新イベントを受け取りません。 位置情報の更新をログに記録して追跡する場合は、この点に注意してください。 アプリにフォーカスが戻った後は、新しいイベントだけを受け取ります。 アプリが非アクティブだったときに発生した更新は取得されません。
+
+-   ロー センサーとフュージョン センサーを効率的に使います。 センサーには、*ロー センサー*と*フュージョン センサー*の 2 種類があります。
+
+    -   ロー センサーには、加速度計、ジャイロメーター、磁力計が含まれます。
+    -   フュージョン センサーには、向き、傾斜計、コンパスが含まれます。 フュージョン センサーは、ロー センサーの組み合わせからデータを取得します。
+
+    Windows ランタイム API は磁力計以外のすべてのセンサーにアクセスできます。 フュージョン センサーの方がロー センサーよりも正確で安定していますが、より多くの電力を使います。 用途に適したセンサーを使う必要があります。 詳しくは、「[センサー](https://msdn.microsoft.com/library/windows/apps/mt187358)」をご覧ください。
+
+** コネクト スタンバイ:  **PC がコネクト スタンバイ状態にある場合、[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトはいつでもインスタンス化できます。 しかし、**Geolocator** オブジェクトは集約する対象のセンサーを見つけることができず、[**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) の呼び出しは 7 秒後にタイムアウトします。[**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベント リスナーの呼び出しは行われず、[**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベント リスナーは 1 回呼び出され、そのステータスは **NoData** となります。
+
+## その他の使い方のガイダンス
+
+
+### 位置情報設定の変更を検出する
+
+ユーザーは、**設定**アプリの**位置情報に関するプライバシー設定**を使って、位置情報機能を無効にすることができます。
+
+-   ユーザーが位置情報サービスを無効にしたり再び有効にしたことを検出するには、次の操作を行います。
+    -   [
+            **StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントを処理します。 **StatusChanged** イベントの引数である [**Status**](https://msdn.microsoft.com/library/windows/apps/br225601) プロパティの値は、ユーザーが位置情報サービスを無効にすると **Disabled** になります。
+    -   [
+            **GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/hh973536) から返るエラー コードをチェックします。 ユーザーによって位置情報サービスが無効にされている場合、**GetGeopositionAsync** の呼び出しは **ACCESS\_DENIED** エラーで失敗し、[**LocationStatus**](https://msdn.microsoft.com/library/windows/apps/br225538) プロパティの値は **Disabled** になっています。
+-   地図アプリのような、位置情報データが必須のアプリの場合は、必ず次の操作を実行してください。
+    -   ユーザーの位置情報が変わったときに更新情報を取得できるように、[**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/br225540) イベントを処理します。
+    -   前の説明に従って [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/br225542) イベントを処理し、位置設定の変化を検出します。
+
+位置情報サービスからは、データが利用可能になったときにデータが返されます。 最初に誤差の範囲が大きい位置情報を返し、より正確な情報が利用可能になったときに位置情報を更新する場合があります。 ユーザーの位置情報を表示するアプリでは、通常、より正確な情報が利用可能になったときに位置情報を更新する必要があります。
+
+### 位置情報のグラフィック表示
+
+アプリでは、[**Geocoordinate.accuracy**](https://msdn.microsoft.com/library/windows/apps/br225526) を使って、ユーザーの現在の位置情報を地図に明確に示すようにします。 精度の幅は、主に、誤差の範囲が半径約 10 m、半径約 100 m、半径 1 km 超、という 3 種類があります。 精度情報を使うことにより、アプリでは、利用可能なデータの状況に応じて位置情報を正確に表示することができるようになります。 マップ コントロールを使用する方法に関する一般的な情報については、「[2D、3D、Streetside ビューでの地図の表示](https://msdn.microsoft.com/library/windows/apps/mt219695)」をご覧ください。
+
+-   約 10 m 相当の精度 (GPS の解像度) の場合、位置情報は点またはピンで地図上に示すことができます。 この精度では、経度と緯度の座標、住所の番地も表示できます。
+
+    ![約 10 m の GPS 精度で表示される地図の例。](images/10metererrorradius.png)
+
+-   10 ～ 500 m (おおよそ 100 m) の精度の場合、位置情報は通常、Wi-Fi による解決で受信されています。 移動体通信から取得した位置情報は約 300 m の精度です。 この場合、アプリでは誤差を含む範囲を表示することをお勧めします。 道順を表示するアプリなど中心点が必要となる場合は、その中心点を誤差を表す範囲で囲むことができます。
+
+    ![約 100 m の Wi-Fi 精度で表示される地図の例。](images/100metererrorradius.png)
+
+-   戻される精度が 1 km より大きい場合は、IP レベルの解決で位置情報を受信することになります。 多くの場合、地図上に特定の地点をピンポイントで表示するためにはこのレベルの精度は低すぎます。 アプリでは、地図を市のレベルまで、または誤差の範囲に応じて適切なエリア (たとえば、地域のレベル) までズームインすることをお勧めします。
+
+    ![約 1 km の Wi-Fi 精度で表示される地図の例。](images/1000metererrorradius.png)
+
+位置情報の精度が別の精度に切り替わるときは、異なるグラフィック表示が適切に遷移するようにします。 このためには、次のようにします。
+
+-   切り替え時のアニメーションをスムーズにし、切り替えを高速かつ滑らかに保ちます。
+-   数回の連続的な報告があるのを待ってから、精度が変わったと判断します。これにより、不要なズームが頻繁に行われるのを防ぐことができます。
+
+### 位置情報のテキスト表示
+
+天気アプリや地域情報アプリなどアプリの種類によっては、さまざまな精度の位置情報をテキストで表現することが必要になります。 位置情報は、データが提供する精度レベルまでに抑えて、明確に表示するようにします。
+
+-   精度が約 10 m 相当 (GPS の解像度) の場合、受信した位置情報データは相当に正確であるので、ごく近隣の地名のレベルで情報を伝えることができます。 市の名前、都道府県の名前、国/地域の名前も使うことができます。
+-   精度が約 100 m 相当 (Wi-Fi の解像度) の場合、受信した位置情報データはある程度正確です。市の名前までの情報を表示することをお勧めします。 それより詳しい、近隣地域の地名の使用は避けてください。
+-   1 km 超の精度 (IP による解決) の場合は、都道府県の名前、または国/地域の名前のみ表示します。
+
+### プライバシーに関する考慮事項
+
+ユーザーの地理的な位置情報は、個人を特定できる情報 (PII) に当たります。 ユーザーのプライバシーの保護に関するガイダンスについては、次の Web サイトをご覧ください。
+
+-   [Microsoft のプライバシー]( http://go.microsoft.com/fwlink/p/?LinkId=259692)
 
 <!--For more info, see [Guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md).-->
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
 * [Set up a geofence](https://msdn.microsoft.com/library/windows/apps/mt219702)
 * [Get current location](https://msdn.microsoft.com/library/windows/apps/mt219698)
-* [Display maps with 2D, 3D, and Streetside views](https://msdn.microsoft.com/library/windows/apps/mt219695)<!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
-* [XXX xxxxxxxx xxxxxx (xxxxxxxxxxx)](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Display maps with 2D, 3D, and Streetside views](https://msdn.microsoft.com/library/windows/apps/mt219695)
+          <!--* [Design guidelines for privacy-aware apps](guidelines-for-enabling-sensitive-devices.md)-->
+* [UWP の位置情報サンプル (geolocation)](http://go.microsoft.com/fwlink/p/?linkid=533278)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

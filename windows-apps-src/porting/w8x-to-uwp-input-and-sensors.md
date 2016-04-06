@@ -1,45 +1,45 @@
 ---
-xxxxxxxxxxx: Xxxx xxxx xxxxxxxxxx xxxx xxx xxxxxx xxxxxx xxx xxx xxxxxxx xxxxxxxx xxxxx xxxx, xxx xxxxxx xx, xxx xxxx.
-xxxxx: Xxxxxxx Xxxxxxx Xxxxxxx Y.x xx XXX xxx X/X, xxxxxx, xxx xxx xxxxx'
-xx.xxxxxxx: xxYYxxYx-xxxx-YYxY-YYYY-YYxxYxxYxYYx
+description: Code that integrates with the device itself and its sensors involves input from, and output to, the user.
+title: Porting Windows Runtime 8.x to UWP for I/O, device, and app model'
+ms.assetid: bb13fb8f-bdec-46f5-8640-57fb0dd2d85b
 ---
 
-# Xxxxxxx Xxxxxxx Xxxxxxx Y.x xx XXX xxx X/X, xxxxxx, xxx xxx xxxxx
+# Porting Windows Runtime 8.x to UWP for I/O, device, and app model
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxx xxxxxxxx xxxxx xxx [Xxxxxxx XXXX xxx XX](w8x-to-uwp-porting-xaml-and-ui.md).
+The previous topic was [Porting XAML and UI](w8x-to-uwp-porting-xaml-and-ui.md).
 
-Xxxx xxxx xxxxxxxxxx xxxx xxx xxxxxx xxxxxx xxx xxx xxxxxxx xxxxxxxx xxxxx xxxx, xxx xxxxxx xx, xxx xxxx. Xx xxx xxxx xxxxxxx xxxxxxxxxx xxxx. Xxx, xxxx xxxx xx xxx xxxxxxxxx xxxxxxx xx xx xxxxxx xxx XX xxxxx *xx* xxx xxxx xxxxx. Xxxx xxxx xxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxxxx, xxxxxxxxxxxxx, xxxxxxxxx, xxxxxxxxxx xxx xxxxxxx (xxxxx xxxxxxxxx xxxx xxxxxx xxxxxxxxxxx xxx xxxxxxxxx), (xxx)xxxxxxxx, xxx xxxxx xxxxxxxxxx xxxx xx xxxxx, xxxxx, xxxxxxxx, xxx xxx.
+Code that integrates with the device itself and its sensors involves input from, and output to, the user. It can also involve processing data. But, this code is not generally thought of as either the UI layer *or* the data layer. This code includes integration with the vibration controller, accelerometer, gyroscope, microphone and speaker (which intersect with speech recognition and synthesis), (geo)location, and input modalities such as touch, mouse, keyboard, and pen.
 
-## Xxxxxxxxxxx xxxxxxxxx (xxxxxxx xxxxxxxx xxxxxxxxxx)
-
-
-Xxx x Xxxxxxxxx Y.Y xxx, xxxxx xx x xxx-xxxxxx "xxxxxxxx xxxxxx" xx xxxx xxxxxxx xxx xxx xxxxxxxx xxxxxxxx xxx xxx xxxxxx xxxxxxx xxx xxxxxxxxxx xxxxx. Xxxxx xxxx xxxxxxxx xxxxxx xx xxxxx xxxx xx xxxxxxx xxxxx xx xxxxxx, xxx xxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx, xxxxx xx xx xxxxxxxx xxxxxx xx xxx; xxx xxxxxxxxxx xxxxx xx xxxxxx xx xxxx xx xx xxx xxxxxxx xxxxxxxx.
-
-Xxx xxxx xxxx, xxx [Xxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt243287).
-
-## Xxxxxxxxxx xxxxx
+## Application lifecycle (process lifetime management)
 
 
-Xxx xxx [**XxxxxXxxxxxx.XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227352) xxxxxxxx, **XxxxxxxxxxXxxxXxxxx** xxx **XxxxxxxxxxXxxxxxxXxxxx** xxx xxxxxxxxxx xxx Xxxxxxx YY xxxx. Xxx xxx Xxxxxxx Xxxxx Xxxxx xxx xxxxx xxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/mt282140).
+For a Universal 8.1 app, there is a two-second "debounce window" of time between the app becoming inactive and the system raising the suspending event. Using this debounce window as extra time to suspend state is unsafe, and for a Universal Windows Platform (UWP) app, there is no debounce window at all; the suspension event is raised as soon as an app becomes inactive.
 
-## Xxxxxxxxx xxx xxxxxxxx xxxx xxx xx xxxxxxx xx
+For more info, see [App lifecycle](https://msdn.microsoft.com/library/windows/apps/mt243287).
+
+## Background audio
 
 
-Xxx xxx xx xxxxxxxx xxxxx xxx-xxxxxxxxx xxxxxxx xxxx Xxxxxxx YY. Xxx xxx xxxxxxxxxx xxxxx xx xxxx xx xxx xxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxx xxxxxx xxx Xxxxxxx xxxxxxx. Xx xxx xxxx xxx xx xxxxx xx xxxxxxxx xxxx xxx xxxxxxxxx xx xxxxxxxxxx xxxxxx xxxxxxxx. Xx xxxxxx, xxx xxx xxxx xxx xxx xxxxxx xx xxxxx xxxxxx xx xxxxxxxxx xxx xx xxxx xxxxxx xxxxxxxx xxxxxxxxxxxx. Xxx xxxx xxxx xx xxxx xxxxxx xxxxxxxx xxx—xxx xxx xx xxxxxx xxxxx xxxxxx xxxxxx xx xxxxxx—xxx [Xxxxx xx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/dn894631).
+For the [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/br227352) property, **ForegroundOnlyMedia** and **BackgroundCapableMedia** are deprecated for Windows 10 apps. Use the Windows Phone Store app model instead. For more information, see [Background Audio](https://msdn.microsoft.com/library/windows/apps/mt282140).
 
-Xx xxx xxxx xxxx xx xxxx Xxxxxxxxx Y.Y xxx xxxx xxxxxxx xxxx xxxxxxxxx xxxxxx xx xx xxxxxxx xx, xxxx xxx xxx xxxx xx xxxxxx xxxx xxxxxxxxx xx xxx xxxxxx xxx xxx xxxxx. Xx xxx xxx xx xxxxxxx xxx xxxxx xxxxxxx, xxx xxx xxxxxx xx xx, xxxx xxx xxx xxxx xx xxxxxxxx xx xxxxxxx xxx xxxxxxxxx xxxxxx xxxx.
+## Detecting the platform your app is running on
 
-**Xxxx**   Xx xxxxxxxxx xxxx xxx xxx xxx xxxxxxxxx xxxxxx xx xxxxxx xxxxxx xx xxxxxx xxx xxxxxxxx xx xxxxxxxx. Xxxxxxxxxxx xxx xxxxxxx xxxxxxxxx xxxxxx xx xxxxxx xxxxxx xx xxxxxxx xxx xxx xxxx xxx xx xxxxxxxxx xxxxxxx x xxxxxxxxxx xxxxxxxxx xxxxxx xx xxxxxx xxxxxx xxxxxxx xx xxxxxxx. Xxxxxx xxxx xxxxxxxxx xxx xxxxxxxxx xxxxxx xx xxxxxx xxxxxx (xxx xxxxxxx xxxxxx), xxxx xxx xxx xxxxxxxx xx xxx xxxxxxx xxxxxx (xxx [Xxxxxxxxxxx xxxxxxxxxxx, xxx xxxxxxxx xxxx](w8x-to-uwp-porting-to-a-uwp-project.md#reviewing-conditional-compilation)). Xx xxx xxxx xxxxxxx x xxxxxxxxxx xxxxxxxxx xxxxxx xx xxxxxx xxxxxx, xx xxxx xx xxx xx xx x xxxxxxx xxxxxxxxx xxxxxxx, xxxxxx xxxx xxxxxx xxx xxxx xxx xxxx xxx xxxxxxx.
+
+The way of thinking about app-targeting changes with Windows 10. The new conceptual model is that an app targets the Universal Windows Platform (UWP) and runs across all Windows devices. It can then opt to light up features that are exclusive to particular device families. If needed, the app also has the option to limit itself to targeting one or more device families specifically. For more info on what device families are—and how to decide which device family to target—see [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).
+
+If you have code in your Universal 8.1 app that detects what operating system it is running on, then you may need to change that depending on the reason for the logic. If the app is passing the value through, and not acting on it, then you may want to continue to collect the operating system info.
+
+**Note**   We recommend that you not use operating system or device family to detect the presence of features. Identifying the current operating system or device family is usually not the best way to determine whether a particular operating system or device family feature is present. Rather than detecting the operating system or device family (and version number), test for the presence of the feature itself (see [Conditional compilation, and adaptive code](w8x-to-uwp-porting-to-a-uwp-project.md#reviewing-conditional-compilation)). If you must require a particular operating system or device family, be sure to use it as a minimum supported version, rather than design the test for that one version.
 
  
 
-Xx xxxxxx xxxx xxx'x XX xx xxxxxxxxx xxxxxxx, xxxxx xxx xxxxxxx xxxxxxxxxx xxxx xx xxxxxxxxx. Xxxxxxxx xx xxx xxxx-xxxxx xxxxxxxx xxx xxxxxxx xxxxxx xxxxxx xx xxx xxxxxx xxxx. Xx xxxx XXXX xxxxxx, xxxxxxxx xx xxx xxxxx xx xxxxxxxxx xxxxxx (xxxxxxxx xxxx xxxxxx) xx xxxx xxxx XX xxxxxx xx xxxxxxxxx xxxxxxxxxxx xxx xxxxx xxxxxxx (xxx [Xxxxxxxxx xxxxxx, xxxxxxx xxxxxxxx, xxx xxxxx xxxxxxx](w8x-to-uwp-porting-xaml-and-ui.md#effective-pixels).). Xxx xxx Xxxxxx Xxxxx Xxxxxxx'x xxxxxxxx xxxxxxxx xxx xxxxxxx xx xxxxx xxxx XX xx xxx xxxxxx xxxx (xxx [Xxxxx xx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/dn894631).).
+To tailor your app's UI to different devices, there are several techniques that we recommend. Continue to use auto-sized elements and dynamic layout panels as you always have. In your XAML markup, continue to use sizes in effective pixels (formerly view pixels) so that your UI adapts to different resolutions and scale factors (see [Effective pixels, viewing distance, and scale factors](w8x-to-uwp-porting-xaml-and-ui.md#effective-pixels).). And use Visual State Manager's adaptive triggers and setters to adapt your UI to the window size (see [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).).
 
-Xxxxxxx, xx xxx xxxx x xxxxxxxx xxxxx xx xx xxxxxxxxxxx xx xxxxxx xxx xxxxxx xxxxxx, xxxx xxx xxx xx xxxx. Xx xxxx xxxxxxx, xx xxx xxx [**XxxxxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn960165) xxxxx xx xxxxxxxx xx x xxxx xxxxxxxx xxx xxx xxxxxx xxxxxx xxxxxx xxxxx xxxxxxxxxxx, xxx xx xxxx xxxx xx xxxx xxxx xx x xxxxxxx xxxx xxxxxxxxx.
+However, if you have a scenario where it is unavoidable to detect the device family, then you can do that. In this example, we use the [**AnalyticsVersionInfo**](https://msdn.microsoft.com/library/windows/apps/dn960165) class to navigate to a page tailored for the mobile device family where appropriate, and we make sure to fall back to a default page otherwise.
 
 ```csharp
    if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile")
@@ -48,7 +48,7 @@ Xxxxxxx, xx xxx xxxx x xxxxxxxx xxxxx xx xx xxxxxxxxxxx xx xxxxxx xxx xxxxxx xxx
         rootFrame.Navigate(typeof(MainPage), e.Arguments);
 ```
 
-Xxxx xxx xxx xxxx xxxxxxxxx xxx xxxxxx xxxxxx xxxx xx xx xxxxxxx xx xxxx xxx xxxxxxxx xxxxxxxxx xxxxxxx xxxx xxx xx xxxxxx. Xxx xxxxxxx xxxxx xxxxx xxx xx xx xxxx xxxxxxxxxxxx, xxx xxx [**XxxxxxxxXxxxxxx.XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206071) xxxxx xxxxxxxxx xxx xxxx xxxxxxx xxx xxxx xxx xxx xxxxx xx xxxxxxx xxxxxx xxxxxx-xxxxxxxx xxxxxxxxx xxxxx xx xxx xxxxxx xxxxxx xxxxxx.
+Your app can also determine the device family that it is running on from the resource selection factors that are in effect. The example below shows how to do this imperatively, and the [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) topic describes the more typical use case for the class in loading device family-specific resources based on the device family factor.
 
 ```csharp
 var qualifiers = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues;
@@ -56,18 +56,22 @@ string deviceFamilyName;
 bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out deviceFamilyName);
 ```
 
-Xxxx, xxx [Xxxxxxxxxxx xxxxxxxxxxx, xxx xxxxxxxx xxxx](w8x-to-uwp-porting-to-a-uwp-project.md#reviewing-conditional-compilation).
+Also, see [Conditional compilation, and adaptive code](w8x-to-uwp-porting-to-a-uwp-project.md#reviewing-conditional-compilation).
 
-## Xxxxxxxx
+## Location
 
 
-Xxxx xx xxx xxxx xxxxxxxx xxx Xxxxxxxx xxxxxxxxxx xx xxx xxx xxxxxxx xxxxxxxx xxxx xx Xxxxxxx YY, xxx xxxxxx xxxx xxxxxx xxx xxx-xxxx xxx xxxxxxx. Xxxx xx xxxx xxxxxxx xxx xxx xx x Xxxxxxx Xxxxx Xxxxx xxx xx x Xxxxxxx YY xxx. Xx, xx xxxx xxx xxxxxxxx xxx xxx xxxxxx xxxxxxx xxxxxx, xx xx xx xxxxxxxx xx xx-xxx xxxxxx, xxxx xxx xxxx xxxx xx xxxxxx xxxx xx xxxx xxx xxx-xxxx xx xxxx xxxxxxxx xxxx.
+When an app that declares the Location capability in its app package manifest runs on Windows 10, the system will prompt the end-user for consent. This is true whether the app is a Windows Phone Store app or a Windows 10 app. So, if your app displays its own custom consent prompt, or if it provides an on-off toggle, then you will want to remove that so that the end-user is only prompted once.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

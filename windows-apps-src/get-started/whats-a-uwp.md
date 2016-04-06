@@ -1,90 +1,94 @@
 ---
-xx.xxxxxxx: XYYYYYYY-XYYX-YXXX-XYYY-XYXYXXYYXYYX
-xxxxx: Xxxx'x x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx?
-xxxxxxxxxxx: Xxxxx xxxxx xxx xxxxxxxxx xxxxx xx xxxx xxxx xx xxxx Xxxxxxxxx Xxxxxxx xxxx--Xxxxxxx Xxxxx xxxx, Xxxxxxx Xxxxx Xxxxx xxxx, xxx Xxxxxxx Xxxxxxx xxxx.
+ms.assetid: C9787269-B54F-4FFA-A884-D4A3BF28F80D
+title: What's a Universal Windows Platform (UWP) app?
+description: Learn about the different types of apps that we call Universal Windows apps--Windows Store apps, Windows Phone Store apps, and Windows Runtime apps.
 ---
 
-# Xxxx'x x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx?
+# What's a Universal Windows Platform (UWP) app?
 
-X Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xx x Xxxxxxx xxxxxxxxxx xxxx xx xxxxx xxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX), xxxxx xxx xxxxx xxxxxxxxxx xx Xxxxxxx Y xx xxx Xxxxxxx Xxxxxxx. Xx xxx xxxx xx XXX xxxx xx xxx xxxx xxxx xxxxx xxxx xxxxx *xxxxxxxxxxx* xx xx xxxxxx xxxxxx XXX xxxxx xxxxxxx, xxx xxxx xxxx xx xxx xxxxxxxx xxxxxx xx xxxx xxxxxxxxxx xx xxxxxxxxxx xxx xxx xxxx xx xxxx.
+A Universal Windows Platform (UWP) app is a Windows experience that is built upon the Universal Windows Platform (UWP), which was first introduced in Windows 8 as the Windows Runtime. At the core of UWP apps is the idea that users want their *experiences* to be mobile across ALL their devices, and they want to use whatever device is most convenient or productive for the task at hand.
 
-Xxxxxxx YY xxxxx xx xxxxxx xx xxxxxxx xxxx xxx xxx XXX xxxx xxxx xxx XXX xxx, xxx xxx xxxxxxx, xxx xxx xxxxx xx xxxxx xxx Xxxxxxx YY xxxxxxx – XX, xxxxxx, xxxxx xxx xxxx. Xx’x xxxxxx xx xxxxxxx x xxxxxx xx xxxxxx xxxxx, xxx xxxx x xxxxxxx xx xxxxxxxxxxx xxxxxx, xxxxxxx xx xx xxxxx, xxxxx & xxxxxxxx, x xxxx xxxxxxxxxx, xx x xxx.
+Windows 10 makes it easier to develop apps for the UWP with just one API set, one app package, and one store to reach all Windows 10 devices – PC, tablet, phone and more. It’s easier to support a number of screen sizes, and also a variety of interaction models, whether it be touch, mouse & keyboard, a game controller, or a pen.
 
-![Xxxxxxx-xxxxxxx xxxxxxx](images/1894834-hig-device-primer-01-500.png)
+![Windows-powered devices](images/1894834-hig-device-primer-01-500.png)
 
-##Xx, xxxx'x x XXX xxx?
-
-
-Xxxx xxxxx x XXX xxx xxxxxxx? Xxxx xxx xxxx xx xxx xxxxxxxxxxxxxxx xxxx xxxx XXX xxxx xx Xxxxxxx YY xxxxxxxxx.
-
--   Xxx xxxxxx xxxxxx xxxxxxxx, xxx xx XX.
-
-    X xxxxxx xxxxxx xxxxxxxxxx xxx XXXx, xxxxxx xxxxxxxxxxxxxxx, xxx xxxxxxxxx xxxx xxx xxx xxxxxx xxxxxx xxxxxxx xxxxxx xxx xxxxxx xxxxxx. Xx xxxx xxxxxxxxxx xxx xxx xx xxxxxxx xx xxxxx xxxx xxx xxx xx xxxxxxxxx xxxx xxx xxxxx.
-
--   Xxxx xxx xxxxxxxx xxx xxxxxxxxxxx xxxxx xxx .XxxX xxxxxxxxx xxxxxx.
-
-    Xxx XXX xxxx xxx xxxxxxxxxxx xx xx XxxX xxxxxxx. Xxxx xxxxxxxx x xxxxxxxxxxx xxxxxxxxxxxx xxxxxxxxx xxx xxxxxxx xxxx xxxx xxxx xxx xx xxxxxxxx xxx xxxxxxx xxxxxxxxxx.
-
--   Xxxxx'x xxx xxxxx xxx xxx xxxxxxx.
-
-    Xxxxx xxx xxxxxxxx xx xx xxx xxxxxxxxx, xxx xxx xxxxxx xxxx xxx xx xxx xxxxx xxx xxxx xx xxxxxxxxx xx xxx xxxxxx xxxxxxxx, xx xxxx xxxxx xxx xxxxxx. Xxx xxxxxx xxx xxxxxx xxx xxxx xxxx xxx Xxxxxxx xxxxxxx xx xxx xxxxx.
-
--   Xxxxx'x x xxxxxx XXX xxxxxxx xxxxxx xxxxxx xxxxxxxx.
-
-    Xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx XXXx xxx xxx xxxx xxx xxx Xxxxxxx xxxxxx xxxxxxxx. Xx xxxx xxx xxxx xxxx xxx xxxx XXXx, xx xxxx xxx xx xxx Xxxxxxx YY xxxxxx.
-
--   Xxxxxxxxx XXXx xxxx xxxx xxx xxxxx xx xx xxxxxxxxxxx xxxxxxx.
-
-    Xxxxxxxxx XXXx xxx xxxxxxxxxxx XXXx xxx xxxx xxxxxx xxxxxx. Xx xxxx xxx xx xxxxxxxx xxx x xxxxxxxxxx xxxxxx xxxxxx, xxx xxx xxxx xx xxxxx xx xx xxxxx xxxxx XXXx. Xxx xxx xxxxx xxxx xxx xxx xxxxxxx xxxx xxxx xx xxx xxxxxxx xx xxxxxxxx xxxx xxxxxx xxxxxx xxxx xxx xx xxxxxxx xx xxxxxx xxxxxxx xx xxxxxxxxx XXX.
-
--   Xxxxxxxx Xxxxxxxx xxx xxxxx
-
-    XX xxxxxxxx xxx *xxxxxxxxx xxxxxx* (xxx [Xxxxxxxxxx xxxxxx YYY xxx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/Dn958435)), xx xxxx xxxxxxxxxxxxx xxxxx xxxxxxxxxx xxxxx xx xxx xxxxxx xx xxxxxx xxxxxx xxxxxxxxx xx xxx xxxxxx. Xxx xxxx xxxx xxxx xxxx xxxxxxxx xxxxx xx xxxxx xxxx xx xxxxxxxx, xxxxx, xxxxx, xxx, xxx Xxxx Xxx xxxxxxxxxxx. Xx xxx xxxx xx xxxxxxx xxxxxx xxxx XX xx x xxxxxxxx xxxxxx xxxx xx xxxxxx, xxx xxxxxx xxxxxx xxx xxxxxxx xxxx xxx xxxxx xxxx XX xx xxx xxxxxxx xxxx xxx xxx xxx xx.
-
-Xxx x xxxx xxxxxxxx xxxx xx xxx XXX, xxx [Xxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx xxxx](universal-application-platform-guide.md).
-
-## Xxx x xxxxxxxx xxx xxxxxxx xxxx
+##So, what's a UWP app?
 
 
-Xxx xxx xxxxxx XXX xxxx xxxxx xxx xxxxxxxxxxx xxxxxxxxx xxx'xx xxxx xxxxxxxx xxxx, xxxx X# xx Xxxxxx Xxxxx xxxx XXXX, XxxxXxxxxx xxxx XXXX, xx X++ xxxx XxxxxxX xxx/xx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX). Xxx xxx xxxx xxxxx xxxxxxxxxx xx xxx xxxxxxxx xxx xxx xxxx xx xx xxx xxxx'x xxxxxxx xx xxxxxxx xxxxxxxx.
+What makes a UWP app special? Here are some of the characteristics that make UWP apps on Windows 10 different.
 
-XXX xxxx xxx xxx Xxxxxxx Xxxxxxx, x xxxxxx XXX xxxxx xxxx xxx xxxxxxxxx xxxxxx. Xxxx XXX xx xxxxxxxxxxx xx X++ xxx xxxxxxxxx xx X#, Xxxxxx Xxxxx, X++, xxx XxxxXxxxxx xx x xxx xxxx xxxxx xxxxxxx xxx xxxx xxxxxxxx.
+-   You target device families, not an OS.
 
-Xxxxxxxxx Xxxxxx Xxxxxx YYYY xxxxxxxx x XXX xxx xxxxxxxx xxx xxxx xxxxxxxx xxxx xxxx xxx xxxxxx x xxxxxx xxxxxxx xxx xxx xxxxxxx. Xxxx xxxx xxxx xx xxxxxxxx, xxx xxx xxxxxxx xx xxx xxxxxxx xxx xxxxxx xx xx xxx Xxxxxxx Xxxxx xxxx xxxxxx Xxxxxx Xxxxxx xx xxx xxxx xxx xxx xx xxxxxxxxx xx xxx Xxxxxxx YY xxxxxx.
+    A device family identifies the APIs, system characteristics, and behaviors that you can expect across devices within the device family. It also determines the set of devices on which your app can be installed from the store.
 
-## XXX xxxx xxxx xx xxxx xx Xxxxxxx
+-   Apps are packaged and distributed using the .AppX packaging format.
 
+    All UWP apps are distributed as an AppX package. This provides a trustworthy installation mechanism and ensures that your apps can be deployed and updated seamlessly.
 
-Xx Xxxxxxx, xxxx xxx xxx xxxxxxx xxxxxxxx, xxxx-xxxx xxxx xx xxxx xxxxx xxx xxxx xxxx xxxxxx xxxx xxx xxxx. Xx xxx xxxxxx xxx xxxxxxx, xxxx xxx xxx xx xx xxxxxxxx xx xxxx xx xxx xxxxx xx xxxx xxxxx’ xxxxx. Xxxxxxx xxxxxxxx xxx xxxx xxxx xx xxxxxxxxx xx xxxx xxxx xxxx xxxxx xxxxxxxxx xx xxxx xxx:
+-   There's one store for all devices.
 
--   Xxxx xxxxx xxx xxx xxxx xxxxxx xxxx xxxxxxxxxxxx xxxxxxxx xxx xxxxxx xxxx xx x xxxxxx.
--   Xxxx xxxxxxxxxxxxx xxxxx xxxx-xxxx, xxxxxxxx xxxxxx xx xxxx xxxx’x xxxxxxxxx xxxx xxxx'xx xxxxxx.
+    After you register as an app developer, you can submit your app to the store and make it available on all device families, or only those you choose. You submit and manage all your apps for Windows devices in one place.
 
--   Xxx Xxxxxx Xxxxxx xx x xxxxx xxxxx xxx xxx xxxxxxxx xxx xxxxxxx xxxxxxxxxxxxx xxx xxxxxxx xxxx xxxxx xxxx xx xxxx xxxxxx xx.
+-   There's a common API surface across device families.
 
--   Xxxxxxxxxx xxxxxxxxx xxx xxxxxxxx xxxxx xxxx xxx xx xxxx xxxx xxxx xxx xxxx xxxxx xx.
+    The Universal Windows Platform (UWP) core APIs are the same for all Windows device families. If your app uses only the core APIs, it will run on any Windows 10 device.
 
--   Xxxx xxx xxx xxx xxxxx xxx Xxxxxxxxx XX xxxxxxx xx xxxx xxxxx xxxxxxxx xxxx xxx xxxxx xxxxxx xxxx.
+-   Extension SDKs make your app light up on specialized devices.
 
-Xxxxxxx, xxx xxx xxx xxxxxxx xxxx xxx xxx Xxxxxxx Xxxxxxxxxx Xxxxxx xx xxxxxx x xxxxxxxxxx xxxxxxx xxxxxxxxxx xxxxxx xxx xx xxx Xxxxxxx xxxxxxx xxxxx xxxxx xxx xxxx xxx. Xxxxxxx xxxx xxxxx xxx xx xxxx xxx xx xxxxx x xxxx’x xxxxxxxxxxx xxx xxxxxxxx xx xxx xxxxx, xxxxxxx xxxxxx xx xxxxx xxxx xxx xxxx xxxxxxxxxxxxxx. Xxx xxx xxx xxxxx xxxx xxxxxxxxxxx xx xxx Xxxxxxxxxx Xxxxxx, xxxxx xxxxxxxx xxx xxxxxxxxxxx xxx xxx xxx xxxxxxxx.
+    Extension SDKs add specialized APIs for each device family. If your app is intended for a particular device family, you can make it light up by using these APIs. You can still have one app package that runs on all devices by checking what device family your app is running on before calling an extension API.
 
-##  Xxxxxxxx xxxx xxx xxxx xxx
+-   Adaptive Controls and input
 
+    UI elements use *effective pixels* (see [Responsive design 101 for UWP apps](https://msdn.microsoft.com/library/windows/apps/Dn958435)), so they automatically adapt themselves based on the number of screen pixels available on the device. And they work well with multiple types of input such as keyboard, mouse, touch, pen, and Xbox One controllers. If you need to further tailor your UI to a specific screen size or device, new layout panels and tooling help you adapt your UI to the devices your app may run on.
 
-Xx Xxxxxxx, xxx xxx xxxxxx xxx xxx'xx xxxxxxxx xxxx xxx—xxxxxx xxxxxx, xxxxxxx, XXx, xxx xxxxx xxxxxxx. Xx xxxx xxx x xxxxxx xx xxxx xx xxxx xxxxx xxxx xxxx xxx xxx xxx xxxxxxxx xx xxxxxxxx. Xxx xxx xxxx xx xx xx xxxxxx xxx xxx xxxx xxxxx xxxx xxx xxx:
+For a more detailed look at the UWP, see [Guide to Universal Windows Platform apps](universal-application-platform-guide.md).
 
--   X xxxx xxxxxxxx xx xxx xxxxxxxx xxxxxx. Xxxx xxxx xxxx xxxxx.
--   Xxxxxx xxxx xxx x xxxxx xxx xx xxx xxxxx xxx xxxx xxx xxxxxx xxxxxx xx, xxxxxxxxx xxxxxx xxxxxxxxxxxxxxx xxx xxxxxxxxxx xxxx xxx xxxx xxxxxxxxxxx "xxxxxxxx" xxxxxxx.
--   Xx-xxx xxxxxxxx xxxxxx xxx xxx xxxx xxxxxxxxxxx xxx xxxxxxxxxx xxxx xxx.
-
-## Xxx'x xxx xxxxxxx
+## Use a language you already know
 
 
-Xxx x xxxx xxxxxxxx xxxx xx xxx XXX, xxxx xxx [Xxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx xxxx](universal-application-platform-guide.md). Xxxx, xxxxx xxx [Xxx xxx xx](get-set-up.md) xx xxxxxxxx xxx xxxxx xxx xxxx xx xxxxx xxxxxxxx xxxx.
+You can create UWP apps using the programming languages you're most familiar with, like C# or Visual Basic with XAML, JavaScript with HTML, or C++ with DirectX and/or Extensible Application Markup Language (XAML). You can even write components in one language and use them in an app that's written in another language.
 
-## Xxxxxxx xxxxxx
+UWP apps use the Windows Runtime, a native API built into the operating system. This API is implemented in C++ and supported in C#, Visual Basic, C++, and JavaScript in a way that feels natural for each language.
+
+Microsoft Visual Studio 2015 provides a UWP app template for each language that lets you create a single project for all devices. When your work is finished, you can produce an app package and submit it to the Windows Store from within Visual Studio to get your app out to customers on any Windows 10 device.
+
+## UWP apps come to life on Windows
 
 
-* [Xxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx xxxx](universal-application-platform-guide.md)
-* [Xxx xxx xx](get-set-up.md)
+On Windows, your app can deliver relevant, real-time info to your users and keep them coming back for more. In the modern app economy, your app has to be engaging to stay at the front of your users’ lives. Windows provides you with lots of resources to help keep your users returning to your app:
+
+-   Live tiles and the lock screen show contextually relevant and timely info at a glance.
+-   Push notifications bring real-time, breaking alerts to your user’s attention when they're needed.
+
+-   The Action Center is a place where you can organize and display notifications and content that users need to take action on.
+
+-   Background execution and triggers bring your app to life just when the user needs it.
+
+-   Your app can use voice and Bluetooth LE devices to help users interact with the world around them.
+
+Finally, you can use roaming data and the Windows Credential Locker to enable a consistent roaming experience across all of the Windows screens where users run your app. Roaming data gives you an easy way to store a user’s preferences and settings in the cloud, without having to build your own sync infrastructure. And you can store user credentials in the Credential Locker, where security and reliability are the top priority.
+
+##  Monetize your app your way
+
+
+On Windows, you can choose how you'll monetize your app—across phones, tablets, PCs, and other devices. We give you a number of ways to make money with your app and the services it delivers. All you need to do is choose the one that works best for you:
+
+-   A paid download is the simplest option. Just name your price.
+-   Trials give you a great way to let users try your app before buying it, providing easier discoverability and conversion than the more traditional "freemium" options.
+-   In-app purchase offers you the most flexibility for monetizing your app.
+
+## Let's get started
+
+
+For a more detailed look at the UWP, read the [Guide to Universal Windows Platform apps](universal-application-platform-guide.md). Then, check out [Get set up](get-set-up.md) to download the tools you need to start creating apps.
+
+## Related topics
+
+
+* [Guide to Universal Windows Platform apps](universal-application-platform-guide.md)
+* [Get set up](get-set-up.md)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

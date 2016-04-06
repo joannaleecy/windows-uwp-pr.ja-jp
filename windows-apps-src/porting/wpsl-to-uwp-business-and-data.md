@@ -1,48 +1,48 @@
 ---
-xxxxxxxxxxx: Xxxxxx xxxx XX xxx xxxx xxxxxxxx xxx xxxx xxxxxx.
-xxxxx: Xxxxxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxxxx xxx xxxx xxxxxx xx XXX
-xx.xxxxxxx: YYxYYYYY-YxYY-YYxY-YxYx-xxxYYxYxYxYx
+description: Behind your UI are your business and data layers.
+title: Porting Windows Phone Silverlight business and data layers to UWP
+ms.assetid: 27c66759-2b35-41f5-9f7a-ceb97f4a0e3f
 ---
 
-#  Xxxxxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxxxx xxx xxxx xxxxxx xx XXX
+#  Porting Windows Phone Silverlight business and data layers to UWP
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxx xxxxxxxx xxxxx xxx [Xxxxxxx xxx X/X, xxxxxx, xxx xxx xxxxx](wpsl-to-uwp-input-and-sensors.md).
+The previous topic was [Porting for I/O, device, and app model](wpsl-to-uwp-input-and-sensors.md).
 
-Xxxxxx xxxx XX xxx xxxx xxxxxxxx xxx xxxx xxxxxx. Xxx xxxx xx xxxxx xxxxxx xxxxx xxxxxxxxx xxxxxx xxx .XXX Xxxxxxxxx XXXx (xxx xxxxxxx, xxxxxxxxxx xxxxxxxxxx, xxxxxxxx, xxx xxxxxx, xxx xxxx xxxxxx, xxxxxxx, xxx xxxxx xxxx xxxxxx). Xxx xxxx xxxxxxxx xx xxxxx xxx [xxxxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx](https://msdn.microsoft.com/library/windows/apps/br211369), xx xxx xxx xxxxxx xx xx xxxx xx xxxx xxxx xx xxxx xxxx xxxxxxx xxxxxx.
+Behind your UI are your business and data layers. The code in these layers calls operating system and .NET Framework APIs (for example, background processing, location, the camera, the file system, network, and other data access). The vast majority of those are [available to a Universal Windows Platform (UWP) app](https://msdn.microsoft.com/library/windows/apps/br211369), so you can expect to be able to port much of this code without change.
 
-## Xxxxxxxxxxxx xxxxxxx
+## Asynchronous methods
 
-Xxx xx xxx xxxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xx xx xxxxxx xxx xx xxxxx xxxx xxxx xxx xxxxx, xxx xxxxxxxxxxxx, xxxxxxxxxx. Xxxxxxxxxx xxx xxxxxx xxxxxx, xxx xxxxx xxxxxxxxxxxx xxxx xx xxxxxxx xxx xxxxxxx xxx xxxxxxxxxxxxx xxx xxxx xx xxx, xxxxxx xx xxxx xxxx xxx XX xx xxxxx xx xxxx xxxxxx. Xx xxxxxxx xxxx, xxx XXX XXX xxxx xxx'x xxxxxxxxx xx xxxxxxxx xxxxxx YYxx xxx xxxx xxxx xxxxxxxxxxxx xxx xxx xxxx xxxxxxxx xxxx **Xxxxx**. Xxxx XX xxxxxx xxxx xxxxxx xxxxxxxxxxx xxxx xxxxxxx xx **Xxxxx** xxxxxx, xxx xxx xxxx xxxx xxxx xxxxx xx xxxxxxx xxxxxx. Xxxxxxxxx xx **Xxxxx** xxxxxx xx xxxx xxxx xxxx, xxxxxxxxxxxxx, xxxxx xxx X# **xxxxx** xxxxxxxx, XxxxXxxxxx xxxxxxx xxxxxxx, xxx X++ xxxxxxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxxxxx xxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187335).
+One of the priorities of the Universal Windows Platform (UWP) is to enable you to build apps that are truly, and consistently, responsive. Animations are always smooth, and touch interactions such as panning and swiping are instantaneous and free of lag, making it feel like the UI is glued to your finger. To achieve this, any UWP API that can't guarantee to complete within 50ms has been made asynchronous and its name suffixed with **Async**. Your UI thread will return immediately from calling an **Async** method, and the work will take place on another thread. Consuming an **Async** method is made very easy, syntactically, using the C# **await** operator, JavaScript promise objects, and C++ continuations. For more info, see [Asynchronous programming](https://msdn.microsoft.com/library/windows/apps/mt187335).
 
-## Xxxxxxxxxx xxxxxxxxxx
+## Background processing
 
-X Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxx xxx x xxxxxxx **XxxxxxxxxXxxxXxxxx** xxxxxx xx xxxxxxx x xxxx xxxxx xxx xxx xx xxx xx xxx xxxxxxxxxx. X XXX xxx xxxx xxx [**XxxxxxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768) xxxxx xx xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx xx x xxxxxxx xxx. Xxx xxxxxx x xxxxx xxxx xxxxxxxxxx xxx xxxx xx xxxx xxxxxxxxxx xxxx. Xxx xxxxxx xxxx xxxx xxxxxxxxxx xxxx xxxxxxxxxxxx, xxxxxxx xxx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/br224811) xxxxxx xx xxxx xxxxx xx xxxxxxx xxx xxxx. Xx x XXX xxx, xxxxxxxx xx xxx xxx **Xxxxxxxxxx Xxxxx** xxxxxxxxxxx xx xxx xxx xxxxxxx xxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt299103).
+A Windows Phone Silverlight app can use a managed **ScheduledTaskAgent** object to perform a task while the app is not in the foreground. A UWP app uses the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) class to create and register a background task in a similar way. You define a class that implements the work of your background task. The system runs your background task periodically, calling the [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method of your class to execute the work. In a UWP app, remember to set the **Background Tasks** declaration in the app package manifest. For more info, see [Support your app with background tasks](https://msdn.microsoft.com/library/windows/apps/mt299103).
 
-Xx xxxxxxxx xxxxx xxxx xxxxx xx xxx xxxxxxxxxx, x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxxx xxx **XxxxxxxxxxXxxxxxxxXxxxxxx** xxxxx. X XXX xxx xxxx XXXx xx xxx [**Xxxxxxx.Xxxxxxxxxx.XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207242) xxxxxxxxx xx xx xxxx. Xxx xxxxxxxx xxx x xxxxxxx xxxxxxx xx xxxxxxxx xxxxxxxxx, xxx xxx xxx XXX xxx xxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxxxxx xxxx xx xxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh452975).
+To transfer large data files in the background, a Windows Phone Silverlight app uses the **BackgroundTransferService** class. A UWP app uses APIs in the [**Windows.Networking.BackgroundTransfer**](https://msdn.microsoft.com/library/windows/apps/br207242) namespace to do this. The features use a similar pattern to initiate transfers, but the new API has improved capabilities and performance. For more info, see [Transferring data in the background](https://msdn.microsoft.com/library/windows/apps/xaml/hh452975).
 
-X Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxxx xxx xxxxxxx xxxxxxx xx xxx **Xxxxxxxxx.Xxxxx.XxxxxxxxxxXxxxx** xxxxxxxxx xx xxxx xxxxx xxxxx xxx xxx xx xxx xx xxx xxxxxxxxxx. Xxx XXX xxxx xxx Xxxxxxx Xxxxx Xxxxx xxx xxxxx, xxx [Xxxxxxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/mt282140) xxx xxx [Xxxxxxxxxx xxxxx](http://go.microsoft.com/fwlink/p/?linkid=619997) xxxxxx.
+A Windows Phone Silverlight app uses the managed classes in the **Microsoft.Phone.BackgroundAudio** namespace to play audio while the app is not in the foreground. The UWP uses the Windows Phone Store app model, see [Background Audio](https://msdn.microsoft.com/library/windows/apps/mt282140) and the [Background audio](http://go.microsoft.com/fwlink/p/?linkid=619997) sample.
 
-## Xxxxx xxxxxxxx, xxxxxxxxxx, xxx xxxxxxxxx
+## Cloud services, networking, and databases
 
-Xxxxxxx xxxx xxx xxx xxxxxxxx xx xxx xxxxx xx xxxxxxxx xxxxx Xxxxx. Xxx [Xxxxxxx Xxxxxxx xxxx Xxxxxx Xxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=403138). Xxx xxxxxxxxx xxxx xxxxxxx xxxx xxxxxx xxx xxxxxxx xxxx xxx: [Xxxxx xxxxxxx xxxx xxxx xx Xxxxxx Xxxxxxxx](http://azure.microsoft.com/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data/).
+Hosting data and app services in the cloud is possible using Azure. See [Getting Started with Mobile Services](http://go.microsoft.com/fwlink/p/?LinkID=403138). For solutions that require both online and offline data see: [Using offline data sync in Mobile Services](http://azure.microsoft.com/documentation/articles/mobile-services-windows-store-dotnet-get-started-offline-data/).
 
-Xxx XXX xxx xxxxxxx xxxxxxx xxx xxx **Xxxxxx.Xxx.XxxxXxxXxxxxxx** xxxxx, xxx xxx **Xxxxxx.Xxx.XxxXxxxxx** xxxxx xx xxx xxxxxxxxx. Xxx xxxxxxxxxxx, xxxxxxx-xxxxxxx xxxxxxxxxxx xx xxx [**Xxxxxxx.Xxx.Xxxx.XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639) xxxxx (xx [Xxxxxx.Xxx.Xxxx.XxxxXxxxxx](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx) xx xxx xxxx xxxx xxxx xx xx xxxxxxxx xx xxxxx xxxxxxxxx xxxx xxxxxxx .XXX). Xxxxx XXXx xxx [Xxxxxx.Xxx.Xxxx.XxxxXxxxxxxXxxxxxx](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) xx xxxxxxxxx xx XXXX xxxxxxx.
+The UWP has partial support for the **System.Net.HttpWebRequest** class, but the **System.Net.WebClient** class is not supported. The recommended, forward-looking alternative is the [**Windows.Web.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) class (or [System.Net.Http.HttpClient](https://msdn.microsoft.com/library/system.net.http.httpclient(v=vs.118).aspx) if you need your code to be portable to other platforms that support .NET). These APIs use [System.Net.Http.HttpRequestMessage](https://msdn.microsoft.com/library/system.net.http.httprequestmessage.aspx) to represent an HTTP request.
 
-XXX xxxx xx xxx xxxxxxxxx xxxxxxx xxxxx-xx xxxxxxx xxx xxxx-xxxxxxxxx xxxxxxxxx xxxx xx xxxx xx xxxxxxxx (XXX) xxxxxxxxx. Xxxxxxx, xxx xxx xxxx xxx XXXxxx xxx xxxxx xxxxxxxxxxxxx xxxxxxxx xxxxxxxx. Xxx xxxx xxxx, xxx [XXXxxx](https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936).
+UWP apps do not currently include built-in support for data-intensive scenarios such as line of business (LOB) scenarios. However, you can make use SQLite for local transactional database services. For more info, see [SQLite](https://visualstudiogallery.msdn.microsoft.com/4913e7d5-96c9-4dde-a1a1-69820d615936).
 
-Xxxx xxxxxxxx XXXx, xxx xxxxxxxx XXXx, xx Xxxxxxx Xxxxxxx xxxxx. Xxx [Xxxxxxx x XXX xx xxx Xxxxxxx Xxxxxxx](https://msdn.microsoft.com/library/hh763341.aspx).
+Pass absolute URIs, not relative URIs, to Windows Runtime types. See [Passing a URI to the Windows Runtime](https://msdn.microsoft.com/library/hh763341.aspx).
 
-## Xxxxxxxxx xxx Xxxxxxxx
+## Launchers and Choosers
 
-Xxxx Xxxxxxxxx xxx Xxxxxxxx (xxxxx xx xxx **Xxxxxxxxx.Xxxxx.Xxxxx** xxxxxxxxx), x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxx xxxxxxxx xxxx xxx xxxxxxxxx xxxxxx xx xxxxxxx xxxxxx xxxxxxxxxx xxxx xx xxxxxxxxx xx xxxxx, xxxxxxxx x xxxxx, xx xxxxxxx xxxxxxx xxxxx xx xxxx xxxx xxxxxxx xxx. Xxxxxx xxx **Xxxxxxxxx.Xxxxx.Xxxxx** xx xxx xxxxx [Xxxxxxx Xxxxx Xxxxxxxxxxx xx Xxxxxxx YY xxxxxxxxx xxx xxxxx xxxxxxxx](wpsl-to-uwp-namespace-and-class-mappings.md) xx xxxx xxx xxxxxxxxxx XXX xxxx. Xxxxx xxxxx xxxx xxxxxxx xxxxxxxxxx, xxxxxx xxxxxxxxx xxx xxxxxxx, xx xxxxxxxxxxxx x xxxxxxxx xxx xxxxxxx xxxx xxxxxxx xxxx.
+With Launchers and Choosers (found in the **Microsoft.Phone.Tasks** namespace), a Windows Phone Silverlight app can interact with the operating system to perform common operations such as composing an email, choosing a photo, or sharing certain kinds of data with another app. Search for **Microsoft.Phone.Tasks** in the topic [Windows Phone Silverlight to Windows 10 namespace and class mappings](wpsl-to-uwp-namespace-and-class-mappings.md) to find the equivalent UWP type. These range from similar mechanisms, called launchers and pickers, to implementing a contract for sharing data between apps.
 
-X Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxx xx xxx xxxx x xxxxxxx xxxxx xx xxxx xxxxxxxxxx xxxx xxxxx, xxx xxxxxxx, xxx xxxxx Xxxxxxx xxxx. X XXX xxx xxxxxxx xxxxxx xxx xxxxxxx xxxxx xxxxx xxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847) xxxxx.
+A Windows Phone Silverlight app can be put into a dormant state or even tombstoned when using, for example, the photo Chooser task. A UWP app remains active and running while using the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) class.
 
-## Xxxxxxxxxxxx (xxxxx xxxx xxx xx-xxx xxxxxxxxx)
+## Monetization (trial mode and in-app purchases)
 
-X Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxx xxx xxx XXX [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh779765) xxxxx xxx xxxx xx xxx xxxxx xxxx xxx xx-xxx xxxxxxxx xxxxxxxxxxxxx, xx xxxx xxxx xxxxx'x xxxx xx xx xxxxxx. Xxx, x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxxxx **XxxxxxxxxxxXxxxxxXxxx.Xxxx** xx xxxxx xxx xxx xxx xxxxxxxx:
+A Windows Phone Silverlight app can use the UWP [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) class for most of its trial mode and in-app purchase functionality, so that code doesn't need to be ported. But, a Windows Phone Silverlight app calls **MarketplaceDetailTask.Show** to offer the app for purchase:
 
 ```csharp
     private void Buy()
@@ -53,7 +53,7 @@ X Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxx xxx xxx XXX [**XxxxxxxXxx**](https://msdn.
     }
 ```
 
-Xxxx xxxx xxxx xx xxxx xxx XXX [**XxxxxxxXxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh967813) xxxxxx:
+Port that code to call the UWP [**RequestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) method:
 
 ```csharp
     private async void Buy()
@@ -62,19 +62,19 @@ Xxxx xxxx xxxx xx xxxx xxx XXX [**XxxxxxxXxxXxxxxxxxXxxxx**](https://msdn.micr
     }
 ```
 
-Xx xxx xxxx xxxx xxxx xxxxxxxxx xxxx xxx xxxxxxxx xxx xx-xxx xxxxxxxx xxxxxxxx xxx xxxxxxx xxxxxxxx, xxxx xxx xxx xxxx xxxx xx xxx xxx [**XxxxxxxXxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh779766) xxxxx xxxxxxx.
+If you have code that simulates your app purchase and in-app purchase features for testing purposes, then you can port that to use the [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766) class instead.
 
-## Xxxxxxxxxxxxx xxx xxxx xx xxxxx xxxxxxx
+## Notifications for tile or toast updates
 
-Xxxxxxxxxxxxx xxx xx xxxxxxxxx xx xxx xxxx xxxxxxxxxxxx xxxxx xxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxx. Xxxx xxx xxxxxxx x xxxxxxxxxxxx xxxx xxx Xxxxxxx Xxxx Xxxxxxxxxxxx Xxxxxxx (XXX), xxx xxx xxxxxxx xxx xxxx xx xxx XX xxxx x xxxx xxxxxx xx xxxx x xxxxx. Xxx xxxxxxx xxx XX xxxx xx xxxx xxxxxxxxxxxx xxxxxxxx, xxx [Xxxxx xxx xxxxxx](w8x-to-uwp-porting-xaml-and-ui.md#tiles-and-toasts).
+Notifications are an extension of the push notification model for Windows Phone Silverlight apps. When you receive a notification from the Windows Push Notification Service (WNS), you can surface the info to the UI with a tile update or with a toast. For porting the UI side of your notification features, see [Tiles and toasts](w8x-to-uwp-porting-xaml-and-ui.md#tiles-and-toasts).
 
-Xxx xxxx xxxxxxx xx xxx xxx xx xxxxxxxxxxxxx xx x XXX xxx, xxx [Xxxxxxx xxxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh868266).
+For more details on the use of notifications in a UWP app, see [Sending toast notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868266).
 
-Xxx xxxx xxx xxxxxxxxx xx xxxxx xxxxx, xxxxxx, xxxxxx, xxxxxxx, xxx xxxxxxxxxxxxx xx x Xxxxxxx Xxxxxxx xxx xxxxx X++, X#, xx Xxxxxx Xxxxx, xxx [Xxxxxxx xxxx xxxxx, xxxxxx, xxx xxxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259).
+For info and tutorials on using tiles, toasts, badges, banners, and notifications in a Windows Runtime app using C++, C#, or Visual Basic, see [Working with tiles, badges, and toast notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259).
 
-## Xxxxxxx (xxxx xxxxxx)
+## Storage (file access)
 
-Xxxxxxx Xxxxx Xxxxxxxxxxx xxxx xxxx xxxxxx xxx xxxxxxxx xx xxx-xxxxx xxxxx xx xxxxxxxx xxxxxxx xx xxxxxx xxxxxx. Xxxx xx x xxxxxx-xxx-xxxxx xxxxxxx, xxxxx xxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxxx:
+Windows Phone Silverlight code that stores app settings as key-value pairs in isolated storage is easily ported. Here is a before-and-after example, first the Windows Phone Silverlight version:
 
 ```csharp
     var propertySet = IsolatedStorageSettings.ApplicationSettings;
@@ -84,7 +84,7 @@ Xxxxxxx Xxxxx Xxxxxxxxxxx xxxx xxxx xxxxxx xxx xxxxxxxx xx xxx-xxxxx xxxxx xx xx
     string myFavoriteAuthor = propertySet.Contains(key) ? (string)propertySet[key] : "<none>";
 ```
 
-Xxx xxx XXX xxxxxxxxxx:
+And the UWP equivalent:
 
 ```csharp
     var propertySet = Windows.Storage.ApplicationData.Current.LocalSettings.Values;
@@ -93,7 +93,7 @@ Xxx xxx XXX xxxxxxxxxx:
     string myFavoriteAuthor = propertySet.ContainsKey(key) ? (string)propertySet[key] : "<none>";
 ```
 
-Xxxxxxxx x xxxxxx xx xxx **Xxxxxxx.Xxxxxxx** xxxxxxxxx xx xxxxxxxxx xx xxxx, xxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxx xxxxxxx xxxx x/x xxxx xxx **XxxxxxxxXxxxxxxXxxx** xxxxx xxxxxxx xx xxx xxxx xxxxxxxxx xxx xxxxxx. Xxxxxxxx xxxx **XxxxxxxxXxxxxxxXxxx** xx xxxxx xxxx, xxxx'x x xxxxxx-xxx-xxxxx xxxxxxx xx xxxxxxx xxx xxxxxxx x xxxx, xxxxx xxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxxx:
+Although a subset of the **Windows.Storage** namespace is available to them, many Windows Phone Silverlight apps perform file i/o with the **IsolatedStorageFile** class because it has been supported for longer. Assuming that **IsolatedStorageFile** is being used, here's a before-and-after example of writing and reading a file, first the Windows Phone Silverlight version:
 
 ```csharp
     const string filename = "FavoriteAuthor.txt";
@@ -110,7 +110,7 @@ Xxxxxxxx x xxxxxx xx xxx **Xxxxxxx.Xxxxxxx** xxxxxxxxx xx xxxxxxxxx xx xxxx, xxx
     }
 ```
 
-Xxx xxx xxxx xxxxxxxxxxxxx xxxxx xxx XXX:
+And the same functionality using the UWP:
 
 ```csharp
     const string filename = "FavoriteAuthor.txt";
@@ -121,17 +121,21 @@ Xxx xxx xxxx xxxxxxxxxxxxx xxxxx xxx XXX:
     string myFavoriteAuthor = await Windows.Storage.FileIO.ReadTextAsync(file);
 ```
 
-X Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxx xxxx-xxxx xxxxxx xx xxx xxxxxxxx XX xxxx. X XXX xxx xxx xxxx-xxxxx xxxxxx xx xxx XX xxxx. Xxx xxxx xxxx, xxx [Xxxxxx xxx XX xxxx](https://msdn.microsoft.com/library/windows/apps/mt188699).
+A Windows Phone Silverlight app has read-only access to the optional SD card. A UWP app has read-write access to the SD card. For more info, see [Access the SD card](https://msdn.microsoft.com/library/windows/apps/mt188699).
 
-Xxx xxxx xxxxx xxxxxxxxx xxxxxx, xxxxx, xxx xxxxx xxxxx xx x XXX xxx, xxx [Xxxxx xxx xxxxxxx xx xxx Xxxxx, Xxxxxxxx, xxx Xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt188703).
+For info about accessing photos, music, and video files in a UWP app, see [Files and folders in the Music, Pictures, and Videos libraries](https://msdn.microsoft.com/library/windows/apps/mt188703).
 
-Xxx xxxx xxxx, xxx [Xxxxx, xxxxxxx, xxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185399).
+For more info, see [Files, folders, and libraries](https://msdn.microsoft.com/library/windows/apps/mt185399).
 
-Xxx xxxx xxxxx xx [Xxxxxxx xxx xxxx xxxxxx xxx XX](wpsl-to-uwp-form-factors-and-ux.md).
+The next topic is [Porting for form factor and UX](wpsl-to-uwp-form-factors-and-ux.md).
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxxxx xxx xxxxx xxxxxxxx](wpsl-to-uwp-namespace-and-class-mappings.md)
+* [Namespace and class mappings](wpsl-to-uwp-namespace-and-class-mappings.md)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

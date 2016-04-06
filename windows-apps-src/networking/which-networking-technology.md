@@ -1,133 +1,137 @@
 ---
-xx.xxxxxxx: YXXYXYYY-XXXX-YYYY-YYYY-XXYXYXYYYYYY
-xxxxxxxxxxx: X xxxxx xxxxxxxx xx xxx xxxxxxxxxx xxxxxxxxxxxx xxxxxxxxx xxx x XXX xxxxxxxxx, xxxx xxxxxxxxxxx xx xxx xx xxxxxx xxx xxxxxxxxxxxx xxxx xxx xxxxx xxx xxxx xxx.
-xxxxx: Xxxxx xxxxxxxxxx xxxxxxxxxx?'
+ms.assetid: 2CC2E526-DACB-4008-9539-DA3D0C190290
+description: A quick overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app.
+title: Which networking technology?'
 
 ---
 
-# Xxxxx xxxxxxxxxx xxxxxxxxxx?
+# Which networking technology?
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-X xxxxx xxxxxxxx xx xxx xxxxxxxxxx xxxxxxxxxxxx xxxxxxxxx xxx x XXX xxxxxxxxx, xxxx xxxxxxxxxxx xx xxx xx xxxxxx xxx xxxxxxxxxxxx xxxx xxx xxxxx xxx xxxx xxx.
+A quick overview of the networking technologies available for a UWP developer, with suggestions on how to choose the technologies that are right for your app.
 
-## Xxxxxxx
+## Sockets
 
-Xxx [Xxxxxxx](sockets.md) xxxx xxx xxx xxxxxxxxxxxxx xxxx xxxxxxx xxxxxx xxx xxxx xx xxx xxxx xxx xxxxxxxx.
+Use [Sockets](sockets.md) when you are communicating with another device and want to use your own protocol.
 
-Xxx xxxxxxxxxxxxxxx xx xxxxxxx xxx xxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxxxx: [**Xxxxxxx.Xxxxxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226960), xxx [Xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ms740673). Xx xxx xxx xxxxxxx xxx xxxx, xxxx Xxxxxxx.Xxxxxxxxxx.Xxxxxxx xxx xxx xxxxxxxxx xx xxxxx x xxxxxx XXX, xxxxxxxx xxx xxx xx XXX xxxxxxxxxx. Xx xxx xxx xxxxx xxxxx-xxxxxxxx xxxxxxxxxx xxxxxxxxx xx xxxxx xxxxxxxx Xxxxxxx xxxx, xx xxxxxx xxx Xxxxxxx XXX, xxxx xxx xxxx.
+Two implementations of sockets are available for Universal Windows Platform (UWP) developers: [**Windows.Networking.Sockets**](https://msdn.microsoft.com/library/windows/apps/br226960), and [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms740673). If you are writing new code, then Windows.Networking.Sockets has the advantage of being a modern API, designed for use by UWP developers. If you are using cross-platform networking libraries or other existing Winsock code, or prefer the Winsock API, then use that.
 
-### Xxxx xx xxx xxxxxxx
+### When to use sockets
 
--   Xxxx xxxxxxx xxxxxxxxxxxxxxx xxxxxx xxx xx xxxxxxxxxxx xxxx xxxxx xxxxxxx xxxxx xxxxxxxxx xx xxxx xxx xxxxxx, xxxxx XXX xx XXX.
+-   Both sockets implementations enable you to communicate with other devices using protocols of your own choice, using TCP or UDP.
 
--   Xxxxxx xxx xxxxxxx XXX xxxx xxxx xxxxx xxxx xxxxx xxxxx xx xxxxxxxxxx xxx xxx xxxxxxxx xxxx xxx xxxxx xx xxxxx.
+-   Choose the sockets API that best meets your needs based on experience and any existing code you might be using.
 
-### Xxxx xxx xx xxx xxxxxxx
+### When not to use sockets
 
--   Xxx'x xxxxxxxxx xxxx xxx XXXX(X) xxxxx xxxxx xxxxxxx. Xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639) xxxxxxx.
--   Xx XxxXxxxxxx (xxx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxx [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xxxxxxx) xxxx xxxx xxxxxxxxxxxxxx xxxxx (XXX xx/xxxx x xxx xxxxxx), xxxxxxxx xxxxx xxxx xxxxxx xxxx xxxxx xxxx xxx xxxx xxx xxxxxxxxxxx xxxxxxxxx xxxxxxxxxxxx xxxxxxx xxxxxxxxxxxxx xxxx xxxxxxx.
+-   Don't implement your own HTTP(S) stack using sockets. Use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) instead.
+-   If WebSockets (the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) and [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) classes) meet your communications needs (TCP to/from a web server), consider using them rather than spend your own time and development resources implementing similar functionality with sockets.
 
-## Xxxxxxxxxx
+## Websockets
 
-Xxx [XxxXxxxxxx](websockets.md) xxxxxxxx xxxxxxx x xxxxxxxxx xxx xxxx, xxxxxx xxx-xxx xxxxxxxxxxxxx xxxxxxx x xxxxxx xxx x xxxxxx xxxx xxx xxx. Xxxx xx xxxxxxxxxxx xxxxxxxxxxx xxxx x xxxx-xxxxxx xxxxxx xxxxxx xxxxxxxxxx, xxxxxxxx xxxxxxxx xx xx xxxx xxx xxxxxxxx xxxx xxxx xxxxxxxxx xx xxxx xxxx. XxxXxxxxxx xxx xxxxx xxx xxx xx xxxx-xxxx xxxxxx xxxxx xxxxxxx xxxxxx xxxxxxx xxxxxxxxxxxxx xxx xx-xx-xxxx xxxxxxxx xx xxxxxxxxxxx (xxxx xxxx xxxxxxxxxx ) xxxx xx xx xxxxxx xxx xxx xxxx xxxx xxxxxxxx. XXX xxxxxxxxxx xxx xxx xxx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxx [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xxxxxxx xx xxxxxxx xxxx xxxxxxx xxxx xxxxxxx xxx Xxxxxxxxx xxxxxxxx.
+The [WebSockets](websockets.md) protocol defines a mechanism for fast, secure two-way communication between a client and a server over the web. Data is transferred immediately over a full-duplex single socket connection, allowing messages to be sent and received from both endpoints in real time. WebSockets are ideal for use in real-time gaming where instant social network notifications and up-to-date displays of information (like game statistics ) need to be secure and use fast data transfer. UWP developers can use the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) and [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) classes to connect with servers that support the Websocket protocol.
 
-### Xxxx xx xxx Xxxxxxxxxx
+### When to use Websockets
 
--   Xxxx xxx xxxx xx xxxx xxx xxxxxxx xxxx xx xx xxxxxxx xxxxx xxxxxxx x xxxxxx xxx x xxxxxx.
+-   When you want to send and receive data on an ongoing basis between a device and a server.
 
-### Xxxx xxx xx xxx Xxxxxxxxxx
+### When not to use Websockets
 
--   Xx xxx xxx xxxxxxx xx xxxxxxxxx xxxx xxxxxxxxxxxx, xxx xxxxx xxxx xx xxxxxxx xx xxxx xxxxxxxxxx XXXX xxxxxxxx xxxx xxx xxxxxx xx xxx xxxxxx, xxxxxx xxxx xxxxxxxxx xxx xxxxxxxx x XxxXxxxxx xxxxxxxxxx.
--   XxxXxxxxxx xxx xxx xx xxxxxxxx xxx xxxx xxxx-xxxxxx xxxxxxxxxx. Xxxxxxxx xxxxxxxx xxxx xxxx xxxxx xxx xxxxxxxxxx xxxx xxxxxxx xxxxxxx XxxXxxxxxx xxxxxx xxxxxxxxxx xx xxxxx xxxx xx xxxx xxxxxx.
+-   If you are sending or receiving data infrequently, you might find it simpler to make individual HTTP requests from the device to the server, rather than establish and maintain a WebSocket connection.
+-   WebSockets may not be suitable for very high-volume situations. Consider modeling your data flows and simulating your traffic through WebSockets before committing to using them in your design.
 
-## XxxxXxxxxx
+## HttpClient
 
-Xxx [XxxxXxxxxx](httpclient.md) (xxx xxx xxxx xx xxx [**Xxxxxxx.Xxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn279692) xxxxxxxxx XXX) xxxx xxx xxx xxxxx XXXX(X) xx xxxxxxxxxxx xxxx x xxx xxxxxxx xx x xxx xxxxxx.
+Use [HttpClient](httpclient.md) (and the rest of the [**Windows.Web.Http**](https://msdn.microsoft.com/library/windows/apps/dn279692) namespace API) when you are using HTTP(S) to communicate with a web service or a web server.
 
-### Xxxx xx xxx XxxxXxxxxx
+### When to use HttpClient
 
--   Xxxx xxxxx XXXX(X) xx xxxxxxxxxxx xxxx xxx xxxxxxxx.
--   Xxxx xxxxxxxxx xx xxxxxxxxxxx x xxxxx xxxxxx xx xxxxxxx xxxxx.
--   Xx XxxXxxxxxx (xxx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxx [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xxxxxxx) xxxx xxxx xxxxxxxxxxxxxx xxxxx (XXX xx/xxxx x xxx xxxxxx), xxx xxx xxx xxxxxx xx xxxxxxxx xxxxxxxx XxxXxxxxxx, xxxxxxxx xxxxx xxxx xxxxxx xxxx xxxxx xxxx xxx xxxx xxx xxxxxxxxxxx xxxxxxxxx xxxxxxxxxxxx xxxxxxx xxxxxxxxxxxxx xxxx XxxxXxxxxx.
--   Xxxx xxx xxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxxx.
+-   When using HTTP(S) to communicate with web services.
+-   When uploading or downloading a small number of smaller files.
+-   If WebSockets (the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) and [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) classes) meet your communications needs (TCP to/from a web server), and the web server in question supports WebSockets, consider using them rather than spend your own time and development resources implementing similar functionality with HttpClient.
+-   When you are streaming content over the network.
 
-### Xxxx xxx xx xxx XxxxXxxxxx
+### When not to use HttpClient
 
--   Xx xxx xxx xxxxxxxxxxxx xxxxx xxxxx, xx xxxxx xxxxxxx xx xxxxx, xxxxxxxx xxxxx xxxxxxxxxx xxxxxxxxx xxxxxxx.
--   Xx xxx xxxx xx xx xxxx xx xxxxxxxx xxxxxx/xxxxxxxx xxxxxx xxxxx xx xxxxxxxxxx xxxx, xx xx xxx xxxx xx xxxx xxxxxxxx xxx xxxxxx xxxxxx/xxxxxxxx xxxxx xx xxxxxxxxxxxx, xxx xxxx xxx xxxxxxxxxx xxxxxxxxx.
--   Xx xxx xxx xxxxxxxxxxxxx xxxxxxx xxx xxxxxxx xxx xxxxxxx xxx xx xxxxxxxx xx xxx xx xx XXXX(X) xxxxxx, xxx xxxxxx xxx xxxxxxx. Xx xxx xxxxxxx xx xxxxxxxxx xxxx xxx XXXX xxxxxx xxx xxx [XxxxXxxxxx](httpclient.md) xx xxxxxxxxxxx xxxx xx.
+-   If you are transferring large files, or large numbers of files, consider using background transfers instead.
+-   If you want to be able to restrict upload/download limits based on connection type, or if you want to save progress and resume upload/download after an interruption, you must use background transfers.
+-   If you are communicating between two devices and neither one is designed to act as an HTTP(S) server, you should use sockets. Do not attempt to implement your own HTTP server and use [HttpClient](httpclient.md) to communicate with it.
 
-## Xxxxxxxxxx xxxxxxxxx
+## Background transfers
 
-Xxx xxx [xxxxxxxxxx xxxxxxxx XXX](background-transfers.md) xxxx xxx xxxx xx xxxxxxxx xxxxxxxx xxxxx xxxx xxx xxxxxxx. Xxx xxxxxxxxxx xxxxxxxx XXX xxxxxxxx xxxxxxxx xxxxxx xxx xxxxxxxx xxxxxxxx xxxx xxx xx xxx xxxxxxxxxx xxxxxx xxx xxxxxxxxxx xxx xxxxxxx xxxxxx xxx xxxxxxxxxxx. Xxx XXX xxxxxxxx xxxxxxx xxxxxx xxx xxxxxxxxxxxxx xxxxxxxx xxx xxxxxxx xxxxxxxxx xxxx xxxxxxxxxxxx xx xxxx, xxx xxxxxxxxx xxx xxxx Xxxx Xxxxx-xxxxx xxx Xxxxxxx Xxxxx-xxxxx, xxxxxxx xxxx xxxxxxxx xxxxxxxx xxxxxxx xxxxx xx xxxx xxxxxxx xxxxxxxxxxxx xxx xxxxxx xxxxxxx xxxxxx. Xxxxx xxxxxxxxxxxx xxx xxxxxxxxx xxxx xxxx xxx xx xxxxxxx xx xxxxxx xx xxxxxxx-xxxxxxx xxxxxxx. Xxx XXX xx xxxxx xxx xxxxxxxxx xxx xxxxxxxxxxx xxxxx xxxxx xxxxx XXXX(X). XXX xx xxxx xxxxxxxxx, xxx xxxx xxx xxxxxxxxx.
+Use the [background transfer API](background-transfers.md) when you want to reliably transfer files over the network. The background transfer API provides advanced upload and download features that run in the background during app suspension and persist beyond app termination. The API monitors network status and automatically suspends and resumes transfers when connectivity is lost, and transfers are also Data Sense-aware and Battery Sense-aware, meaning that download activity adjusts based on your current connectivity and device battery status. These capabilities are essential when your app is running on mobile or battery-powered devices. The API is ideal for uploading and downloading large files using HTTP(S). FTP is also supported, but only for downloads.
 
-X xxx xxxxxxxxxx xxxxxxxx xxxxxxx xx Xxxxxxx YY xx xxx xxxxxxx xx xxxxxxx xxxx-xxxxxxxxxx xxxx x xxxx xxxxxxxx xxx xxxxxxxxx, xx xxxx xxx xxx xxxxxx xxxxx xxxxxxxx, xxxxxxxx xxxxx xxxx, xx xxxxxx xxx xxxx xxxx x xxxxxxxx xx xxxxxxxx.
+A new background transfer feature in Windows 10 is the ability to trigger post-processing when a file transfer has completed, so that you can update local catalogs, activate other apps, or notify the user when a download is complete.
 
-### Xxxx xx xxx xxxxxxxxxx xxxxxxxxx
+### When to use background transfers
 
--   Xxx xxxxxxxxxx xxxxxxxxx xx xxxxxxxx xxxxxxxx xxxxx xxxxx, xx xxxxx xxxxxxx xx xxxxx.
--   Xxx xxxxxxxxxx xxxxxxxxx xxxx xxxxxxxxxx xxxxxxxx xxxxxxxxxx xxxxxx xxxx xxx xxxx xx xxxx-xxxxxxx xxxx xxxxxxxxx xxxx x xxxxxxxxxx xxxx.
--   Xxx xxxxxxxxxx xxxxxxxxx xx xxx xxxx xx xx xxxx xx xxxxxx x xxxxxxxx xx xxxxxxxx xxxxx x xxxxxxx xxxxxxxxxxxx.
--   Xxx xxxxxxxxxx xxxxxxxxx xx xxx xxxx xx xx xxxx xx xxxxxx xxxxxxxx xxxxxxxx xxxxx xx xxxxxxx xxxxxxxxxx xxxx xxxxx xx x xxxxxxx xxxx xxxx.
+-   Use background transfers to reliably transfer large files, or large numbers of files.
+-   Use background transfers with background transfer completion groups when you want to post-process file transfers with a background task.
+-   Use background transfers if you want to be able to resume a transfer in progress after a network interruption.
+-   Use background transfers if you want to be able to change transfer behavior based on network conditions like being on a metered data plan.
 
-### Xxxx xxx xx xxx xxxxxxxxxx xxxxxxxxx
+### When not to use background transfers
 
--   Xx xxx xxx xxxxxxxxxxxx x xxxxx xxxxxx xx xxxxx xxxxx, xxx xxx xxx'x xxxx xx xx xxx xxxx-xxxxxxxxxx xxxx xxx xxxxxxxx xx xxxxxxxx, xxxxxxxx xxxxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639) XXX xx XXXX xxxxxxx.
--   Xx xxx xxxx xx xxxxxx xxxx xxx xxx xx xxxxxxx xx xx xxxxxxx, xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639).
+-   If you are transferring a small number of small files, and you don't need to do any post-processing when the transfer is complete, consider using [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) PUT or POST methods.
+-   If you want to stream data and use it locally as it arrives, use [**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639).
 
-## Xxxxxxxxxx xxxxxxx-xxxxxxx xxxxxxxxxxxx
+## Additional network-related technologies
 
-### Xxxxxxxxxx xxxxxxx
+### Connection quality
 
-Xxx [**Xxxxxxx.Xxxxxxxxxx.Xxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207308) XXX xxxxxxx xxx xx xxxxxx xxxxxxx xxxxxxxxxxxx, xxxx, xxx xxxxx xxxxxxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxx xxxx XXX, xxx [Xxxxxxxxx xxxxxxx xxxxxxxxxx xxxxx xxx xxxxxxxx xxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/hh452983)
+The [**Windows.Networking.Connectivity**](https://msdn.microsoft.com/library/windows/apps/br207308) API enables you to access network connectivity, cost, and usage information. For more information about using this API, see [Accessing network connection state and managing network costs](https://msdn.microsoft.com/library/windows/apps/hh452983)
 
-### XXX Xxxxxxx Xxxxxxxxx
+### DNS Service Discovery
 
-Xxx [**Xxxxxxx.Xxxxxxxxxx.XxxxxxxXxxxxxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn895183) XXX xxxxxxx xxx xx xxxxxxxxx x xxxxxxx xxxxxxx xx xxxxx xxxxxxx xx xxx xxxxxxx xxxxx xxx XXX-XX xxxxxxxx xxxxxxxxx xx XXXX [XXX YYYY](http://go.microsoft.com/fwlink/?LinkId=524158).
+The [**Windows.Networking.ServiceDiscovery.Dnssd**](https://msdn.microsoft.com/library/windows/apps/dn895183) API enables you to advertise a network service to other devices on the network using the DNS-SD protocol described in IETF [RFC 2782](http://go.microsoft.com/fwlink/?LinkId=524158).
 
-### Xxxxxxxxxxxxx xxxx Xxxxxxxxx
+### Communicating over Bluetooth
 
-Xxxxx xxxxx xxxxxx, xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263413) XXX xxxxxxx xxx xx xxx Xxxxxxxxx xx xxxxxxx xx xxxxx xxxxxxx xxx xxxxxxxx xxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxx xx xxxxxxx xxxxx xxxx XXXXXX](https://msdn.microsoft.com/library/windows/apps/mt270289).
+Among other things, the [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/dn263413) API enables you to use Bluetooth to connect to other devices and transfer data. For more information, see [Send or receive files with RFCOMM](https://msdn.microsoft.com/library/windows/apps/mt270289).
 
-### Xxxx xxxxxxxxxxxxx (XXX)
+### Push notifications (WNS)
 
-Xxx [**Xxxxxxx.Xxxxxxxxxx.XxxxXxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241307) XXX xxxxxxx xxx xx xxx xxx Xxxxxxx Xxxxxxxxxxxx Xxxxxxx (XXX) xx xxxxxxx xxxx xxxxxxxxxxxxx xxxx xxx xxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxx xxxx XXX, xxx [Xxxxxxx Xxxx Xxxxxxxxxxxx Xxxxxxxx (XXX) xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187203)
+The [**Windows.Networking.PushNotifications**](https://msdn.microsoft.com/library/windows/apps/br241307) API enables you to use the Windows Notification Service (WNS) to receive push notifications over the network. For more information about using this API, see [Windows Push Notification Services (WNS) overview](https://msdn.microsoft.com/library/windows/apps/mt187203)
 
-### Xxxx xxxxx xxxxxxxxxxxxxx
+### Near field communications
 
-Xxx [**Xxxxxxx.Xxxxxxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241250) XXX xxxxxxx xxx xx xxx xxxx-xxxxx xxxxxxxxxxxxxx xxx xxxx xxxx xxx xxxxxxxxx xx xxx xxxx xxxxxxx xx xxxxxx xxxx xxxx xxxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxx xxxx XXX, xxx [Xxxxxxxxxx xxxxxxxxx xxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465229).
+The [**Windows.Networking.Proximity**](https://msdn.microsoft.com/library/windows/apps/br241250) API enables you to use near-field communications for apps that use proximity or tap with devices to enable easy data transfer. For more information about using this API, see [Supporting proximity and tapping](https://msdn.microsoft.com/library/windows/apps/hh465229).
 
-### XXX/Xxxx xxxxx
+### RSS/Atom feeds
 
-Xxx [**Xxxxxxx.Xxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243632) XXX xxxxxxx xxx xx xxxxxx xxxxxxxxxxx xxxxx xxxxx XXX xxx Xxxx xxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxx xxxx XXX, xxx [XXX/Xxxx xxxxx](web-feeds.md).
+The [**Windows.Web.Syndication**](https://msdn.microsoft.com/library/windows/apps/br243632) API enables you to manage syndication feeds using RSS and Atom formats. For more information about using this API, see [RSS/Atom feeds](web-feeds.md).
 
-### Xx-Xx xxxxxxxxxxx xxx xxxxxxxxxx xxxxxxx
+### Wi-Fi enumeration and connection control
 
-Xxx [**Xxxxxxx.Xxxxxxx.XxXx**](https://msdn.microsoft.com/library/windows/apps/dn975224) XXX xxxxxxx xxx xx xxxxxxxxx Xx-Xx xxxxxxxx, xxxx xxx xxxxxxxxx Xx-Xx xxxxxxxx, xxx xxxxxxx xx xxxxxxx xx x xxxxxxx.
+The [**Windows.Devices.WiFi**](https://msdn.microsoft.com/library/windows/apps/dn975224) API enables you to enumerate Wi-Fi adapters, scan for available Wi-Fi networks, and connect an adapter to a network.
 
-### Xxxxx xxxxxxx
+### Radio control
 
-Xxx [**Xxxxxxx.Xxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn996447) XXX xxxxxx xxx xx xxxx xxx xxxxxxx xxxxxx xx xxx xxxxx xxxxxx, xxxxxxxxx Xx-Xx xxx Xxxxxxxxx.
+The [**Windows.Devices.Radios**](https://msdn.microsoft.com/library/windows/apps/dn996447) API allows you to find and control radios on the local device, including Wi-Fi and Bluetooth.
 
-### Xx-Xx Xxxxxx
+### Wi-Fi Direct
 
-Xxx [**Xxxxxxx.Xxxxxxx.XxXxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297687) XXX xxxxxx xxx xx xxxxxxx xxx xxxxxxxxxxx xxxx xxxxx xxxxx xxxxxxx xxxxx Xx-Xx Xxxxxx xx xxxxxx xx-xxx xxxxx xxxxxxxx xxxxxxxx.
+The [**Windows.Devices.WiFiDirect**](https://msdn.microsoft.com/library/windows/apps/dn297687) API allows you to connect and communicate with other local devices using Wi-Fi Direct to create ad-hoc local wireless networks.
 
-### Xx-Xx Xxxxxx xxxxxxxx
+### Wi-Fi Direct services
 
-Xxx [**Xxxxxxx.Xxxxxxx.XxXxXxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn996481) XXX xxxxxxx xxx xx xxxxxxx Xx-Xx Xxxxxx xxxxxxxx xxx xxxxxxx xx xxxx. Xx-Xx Xxxxxx Xxxxxxxx xxx xxx xxx xxxx xxx xxxxxx xx x Xx-Xx xxxxxx xx-xxx xxxxxxx (x Xxxxxxx Xxxxxxxxxx) xxxxxx xxxxxxxxxxxx xx xxxxxxx xxxxxx (x Xxxxxxx Xxxxxx) xxxx x Xx-Xx Xxxxxx xxxxxxxxxx.
+The [**Windows.Devices.WiFiDirect.Services**](https://msdn.microsoft.com/library/windows/apps/dn996481) API enables you to provide Wi-Fi Direct services and connect to them. Wi-Fi Direct Services are the way that one device on a Wi-Fi direct ad-hoc network (a Service Advertiser) offers capabilities to another device (a Service Seeker) over a Wi-Fi Direct connection.
 
-### Xxxxxx xxxxxxxxx
+### Mobile operators
 
-Xxxxxxx YY xxxxxxx xx x xxxx xxxxxxxxx xxxxxxxx xxxx XXXx xxxx xxxx xxxxxxxxxx xxxx xxxx xxxxxxx xx xxxxxx xxxxxxxxxxxxx xxx xxxxxx xxxxxxxxx. Xxxx xxxx xxxxx xxxxx XXXx xxx xxxxxxx xxx, xxxx xxx xxxx xxxxx xx xxxxxxxx xxx xxxxxxxxxxxx xxxx xxxx xx xxxxxxxx xx Xxxxxxxxx xxxxxx xx xxx xxx xx xxxxxxxxx. Xxxxxx xxx xx xxxxx XXXx xxxx xxxxx xx xxxxxxx xxxxxxxxx xx xxxxxx xxxxxxxxxxxxx xxx xxxxxx xxxxxxxxx.
+Windows 10 exposes to a wide developer audience some APIs that have previously only been exposed to device manufacturers and mobile operators. Note that while these APIs are exposed now, they are also gated by specific app capabilities that must be approved by Microsoft before an app can be published. Actual use of these APIs will still be limited primarily to device manufacturers and mobile operators.
 
-### Xxxxxxx xxxxxxxxxx
+### Network operations
 
-Xxx [**Xxxxxxx.Xxxxxxxxxx.XxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241148) XXX xxxxx xxxxxxxxx xxxx xxx xxxxxxxxxxxxx xxx xxxxxxxxxxxx xx xxxxxx. Xx xxxx, xxxxxxxxxx xx xxx xxx xxxxxxxxxxxx xxxx xxxxxxx xx xxx xxxxxxx xx xxxxxx xxxxxxxxxxxxx xxx xxxxxxx xxxxxxxxx.
+The [**Windows.Networking.NetworkOperators**](https://msdn.microsoft.com/library/windows/apps/br241148) API deals primarily with the configuration and provisioning of phones. As such, permission to use the capabilities that control it are limited to device manufacturers and telecom providers.
 
-### XXX
+### SMS
 
-Xxx [**Xxxxxxx.Xxxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/br206567) xxxxxxxxx xxxxx xxxx XXX xxx xxxxxxx xxxxxxxx xx xxx-xxxxx xxxxxxxx. Xx xx xxxxxxxx xxx xxx xx xxxxxx xxxxxxxxx xxx xxx-xxxxxxxx XXX xxx, xxx xx xxxxxxxxxx xx x xxxxxxxxxx xxxx xxxx xxx xx xxxxxxxx xxx xxx xx xxxx xxx xxxxxxxxxx. Xx xxx xxx xxxxxxx xx xxx xx xxxx xxxx xxxxxxxx, xxx xxxxxx xxx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn642321) XXX xxxxxxx, xx xx xx xxxxxxxx xx xxxxxx xxx xxxx XXX xxxxxxxx, xxx xxxx xxxxxxxx xxxx xxxxx xxxxxxx xxxx xx xxxxxxxx xxxx xxxx, xxxxxxxx x xxxx xxxxxx xxxx/xxxxxxxxx xxxxxxxxxx.
+The [**Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/br206567) namespace deals with SMS and related messages as low-level entities. It is provided for use by mobile operators for app-directed SMS use, and is controlled by a capability that will not be approved for use by most app developers. If you are writing an app to deal with messages, you should use the [**Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/dn642321) API instead, as it is designed to handle not just SMS messages, but also messages from other sources such as realtime chat apps, enabling a much richer chat/messaging experience.
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

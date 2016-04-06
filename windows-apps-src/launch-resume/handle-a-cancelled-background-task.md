@@ -1,34 +1,34 @@
 ---
-xxxxx: Xxxxxx x xxxxxxxxx xxxxxxxxxx xxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxx x xxxxxxxxxx xxxx xxxx xxxxxxxxxx xxxxxxxxxxxx xxxxxxxx xxx xxxxx xxxx, xxxxxxxxx xxx xxxxxxxxxxxx xx xxx xxx xxxxx xxxxxxxxxx xxxxxxx.
-xx.xxxxxxx: XYXYYYYY-XYXY-YYYY-YYYX-YYYXXYXYYYYX
+title: 取り消されたバックグラウンド タスクの処理
+description: 取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリの取り消しを報告するバックグラウンド タスクの作成方法について説明します。
+ms.assetid: B7E23072-F7B0-4567-985B-737DD2A8728E
 ---
 
-# Xxxxxx x xxxxxxxxx xxxxxxxxxx xxxx
+# 取り消されたバックグラウンド タスクの処理
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**XxxxxxxxxxXxxxXxxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224775)
--   [**XXxxxxxxxxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224797)
--   [**XxxxxxxxxxxXxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241619)
+-   [**BackgroundTaskCanceledEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224775)
+-   [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797)
+-   [**ApplicationData.Current**](https://msdn.microsoft.com/library/windows/apps/br241619)
 
-Xxxxx xxx xx xxxx x xxxxxxxxxx xxxx xxxx xxxxxxxxxx xxxxxxxxxxxx xxxxxxxx xxx xxxxx xxxx, xxxxxxxxx xxx xxxxxxxxxxxx xx xxx xxx xxxxx xxxxxxxxxx xxxxxxx.
+取り消し要求を認識し、作業を停止して、固定ストレージを使っているアプリの取り消しを報告するバックグラウンド タスクの作成方法について説明します。
 
-> **Xxxx**  Xxx xxx xxxxxx xxxxxxxx xxxxxx xxxxxxx, xx xxx xxxxxx xxxxxxx xxx xx xxxxxx, xxxxxxxxxx xxxxx xxx xx xxxxxxxxxx. Xx xx xxx xx xxxxxx xxxxxxxxx xx xxx xxxxxxxx, xx xxx xxx xxxx xxx xxxxxx xx, xxxx xxx xxxxxxxxxx xxxx xxxx xx xxxxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxx xxxxxxx xxx XxXxxxxxxx xxxxx. Xxxx xxxxx xx xxxxxx xxx xxxx xxxxxxxxxx xx xxx xxx xx xxx xxxxxxxxxx. Xxxx xxxxxxxxxx xxxx xxxxxx xx xxxxxxxx xx xxxxxx xxxx xxxxxxxx.
+> **注**  デスクトップ以外のすべてのデバイス ファミリでは、デバイスのメモリが少なくなった場合、バックグラウンド タスクが終了することがあります。 メモリ不足の例外が検出されないか、検出されてもアプリによって処理されない場合、バックグラウンド タスクは、警告や OnCanceled イベントの発生なしに終了します。 こうすることで、フォアグラウンドのアプリのユーザー エクスペリエンスが保証されます。 バックグラウンド タスクは、このシナリオを処理できるように設計する必要があります。
 
-Xxxx xxxxx xxxxxxx xxx xxxx xxxxxxx xxxxxxx x xxxxxxxxxx xxxx xxxxx, xxxxxxxxx xxx Xxx xxxxxx xxxx xx xxxx xx xxx xxxxxxxxxx xxxx xxxxx xxxxx. Xx xxx xxxxxxx xxxxxxx xxxxxxxx x xxxxxxxxxx xxxx, xxx [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md). Xxx xxxx xx-xxxxx xxxxxxxxxxx xx xxxxxxxxxx xxx xxxxxxxx, xxx [Xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxx](support-your-app-with-background-tasks.md).
+このトピックでは、バックグラウンド タスクのエントリ ポイントとして使う Run メソッドも含めて、既にバックグラウンド タスク クラスが作られていることを前提とします。 バックグラウンド タスクを直ちに構築する場合は、「[バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください。 条件とトリガーについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
-## Xxx xxx XxXxxxxxxx xxxxxx xx xxxxxxxxx xxxxxxxxxxxx xxxxxxxx
+## OnCanceled メソッドにより、取り消し要求を認識します。
 
-Xxxxx x xxxxxx xx xxxxxx xxx xxxxxxxxxxxx xxxxx.
+取り消しイベントを処理するメソッドを作ります。
 
-Xxxxxx x xxxxxx xxxxx XxXxxxxxxx xxxx xxx xxx xxxxxxxxx xxxxxxxxx. Xxxx xxxxxx xx xxx xxxxx xxxxx xxxxxx xx xxx Xxxxxxx Xxxxxxx xxxxxxxx x xxxxxxxxxxxx xxxxxxx xx xxxx xxxxxxx xxxx xxxxxxxxxx xxxx.
+次のフットプリントを持つ OnCanceled というメソッドを作ります。 このメソッドは、バックグラウンド タスクに対して取り消し要求が出されると、必ず Windows ランタイムによって呼び出されるエントリ ポイントです。
 
-Xxx XxXxxxxxxx xxxxxx xxxxx xx xxxx xxx xxxxxxxxx xxxxxxxxx:
+OnCanceled メソッドには、次のフットプリントがあることが条件付けられます。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 >    private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
 >    {
@@ -42,9 +42,9 @@ Xxx XxXxxxxxxx xxxxxx xxxxx xx xxxx xxx xxxxxxxxx xxxxxxxxx:
 >    }
 > ```
 
-Xxx x xxxx xxxxxxxx xxxxxx **\_XxxxxxXxxxxxxxx** xx xxx xxxxxxxxxx xxxx xxxxx. Xxxx xxxxxxxx xxxx xx xxxx xx xxxxxxxx xxxx x xxxxxxxxxxxx xxxxxxx xxx xxxx xxxx.
+バックグラウンド タスク クラスに **\_CancelRequested** というフラグ変数を追加します。 この変数は、いつ取り消し要求が出されたかを示すために使います。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 >   volatile bool _CancelRequested = false;
 > ```
@@ -53,11 +53,11 @@ Xxx x xxxx xxxxxxxx xxxxxx **\_XxxxxxXxxxxxxxx** xx xxx xxxxxxxxxx xxxx xxxxx. X
 >     volatile bool CancelRequested;
 > ```
 
-Xx xxx XxXxxxxxxx xxxxxx xxx xxxxxxx xx xxxx Y, xxx xxx xxxx xxxxxxxx **\_XxxxxxXxxxxxxxx** xx **xxxx**.
+手順 1. で作った OnCanceled メソッドで、フラグ変数 **\_CancelRequested** を **true** に設定します。
 
-Xxx xxxx [xxxxxxxxxx xxxx xxxxxx]( http://go.microsoft.com/fwlink/p/?linkid=227509) XxXxxxxxxx xxxxxx xxxx **\_XxxxxxXxxxxxxxx** xx **xxxx** xxx xxxxxx xxxxxxxxxxx xxxxxx xxxxx xxxxxx:
+完全な[バックグラウンド タスクのサンプル]( http://go.microsoft.com/fwlink/p/?linkid=227509)、OnCanceled メソッドでは、**\_CancelRequested** を **true** に設定し、役立つデバッグ出力を書き出します。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 >     private void OnCanceled(IBackgroundTaskInstance sender, BackgroundTaskCancellationReason reason)
 >     {
@@ -81,9 +81,9 @@ Xxx xxxx [xxxxxxxxxx xxxx xxxxxx]( http://go.microsoft.com/fwlink/p/?linkid=2275
 >     }
 > ```
 
-Xx xxx xxxxxxxxxx xxxx'x Xxx xxxxxx, xxxxxxxx xxx XxXxxxxxxx xxxxx xxxxxxx xxxxxx xxxxxx xxxxxxxx xxxx. Xxx xxxxxxx, xxx xxx xxxxxxxxx xxxx xx xxxx:
+バックグラウンド タスクの Run メソッドでは、処理を開始する前に OnCanceled イベント ハンドラー メソッドを登録します。 たとえば、次のコード行を使います。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 >     taskInstance.Canceled += new BackgroundTaskCanceledEventHandler(OnCanceled);
 > ```
@@ -91,16 +91,16 @@ Xx xxx xxxxxxxxxx xxxx'x Xxx xxxxxx, xxxxxxxx xxx XxXxxxxxxx xxxxx xxxxxxx xxxxx
 >     taskInstance->Canceled += ref new BackgroundTaskCanceledEventHandler(this, &SampleBackgroundTask::OnCanceled);
 > ```
 
-## Xxxxxx xxxxxxxxxxxx xx xxxxxxx xxx Xxx xxxxxx
+## Run メソッドを終了して、取り消しを処理します。
 
 
-Xxxx x xxxxxxxxxxxx xxxxxxx xx xxxxxxxx, xxx Xxx xxxxxx xxxxx xx xxxx xxxx xxx xxxx xx xxxxxxxxxxx xxxx **\_xxxxxxXxxxxxxxx** xx xxx xx **xxxx**.
+取り消し要求を受け取った Run メソッドは処理を停止し、**\_cancelRequested** が **true** に設定されたタイミングを認識して、終了する必要があります。
 
-Xxxxxx xxx xxxx xx xxxx xxxxxxxxxx xxxx xxxxx xx xxxxx xxx xxxx xxxxxxxx xxxxx xx'x xxxxxxx. Xx **\_xxxxxxXxxxxxxxx** xxx xx xxxx, xxxx xxxx xxxx xxxxxxxxxx.
+バックグラウンド タスク クラスの処理中にフラグ変数を確認するようにコードを変更します。 **\_cancelRequested** が true に設定された時点で、処理を中断します。
 
-Xxx [xxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=618666) xxxxxxxx x xxxxx xxxx xxxxx xxx xxxxxxxx xxxxx xxxxxxxx xx xxx xxxxxxxxxx xxxx xx xxxxxxxx:
+[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、バックグラウンド タスクが取り消されたときに、期間タイマーのコールバックが停止するかどうかの確認を行います。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 >     if ((_cancelRequested == false) &amp;&amp; (_progress &lt; 100))
 >     {
@@ -128,13 +128,13 @@ Xxx [xxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=618666) xx
 >     }
 > ```
 
-> **Xxxx**  Xxx xxxx xxxxxx xxxxx xxxxx xxxx xxx [**XXxxxxxxxxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224800) xxxxxxxx xxxxx xxxx xx xxxxxx xxxxxxxxxx xxxx xxxxxxxx. Xxxxxxxx xx xxxxxxxx xxxx xx xxx xxx xxxxx xxx [**XxxxxxxxxxXxxxXxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224782) xxxxx.
+> **注**  上記のコード サンプルでは、[**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797).[**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) プロパティを使って、バックグラウンド タスクの進行状況を記録します。 進行状況は、[**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) クラスを使ってアプリに報告されます。
 
-Xxxxxx xxx Xxx xxxxxx xx xxxx xxxxx xxxx xxx xxxxxxx, xx xxxxxxx xxxxxxx xxx xxxx xxxxxxxxx xx xxx xxxxxxxxx.
+処理が停止したときに、タスクが完了したのか、取り消されたのかを記録するように、Run メソッドを変更します。
 
-Xxx [xxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=618666) xxxxxxx xxxxxx xx XxxxxXxxxxxxx:
+[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)では、LocalSettings の状態が記録されます。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 >     if ((_cancelRequested == false) &amp;&amp; (_progress &lt; 100))
 >     {
@@ -196,17 +196,17 @@ Xxx [xxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=618666) xx
 >     }
 > ```
 
-## Xxxxxxx
+## 注釈
 
-Xxx xxx xxxxxxxx xxx [xxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=618666) xx xxx xxxxx xxxx xxxxxxxx xx xxx xxxxxxx xx xxxxxxx.
+[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)をダウンロードして、メソッドのコンテキストに従ってコード例を確認できます。
 
-Xxx xxxxxxxxxxxx xxxxxxxx, xxx xxxxxx xxxx xxxxx xxxx xxxxxxxx xx xxx Xxx xxxxxx (xxx xxxxxxxx xxxxx) xxxx xxx [xxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+このサンプル コードでは、説明の便宜上、[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)の Run メソッド (およびコールバック タイマー) の一部しか示していません。
 
-## Xxx xxxxxx xxxxxxx
+## メソッド例を実行します。
 
-Xxx xxxxxxxx Xxx xxxxxx, xxx xxxxx xxxxxxxx xxxx, xxxx xxx [xxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=618666) xxx xxxxx xxxxx xxx xxxxxxx:
+[バックグラウンド タスクのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=618666)のコンテキストがわかるように、以下に完全な Run メソッドとタイマーのコールバック コードを示します。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 > //
 > // The Run method is the entry point of a background task.
@@ -323,24 +323,28 @@ Xxx xxxxxxxx Xxx xxxxxx, xxx xxxxx xxxxxxxx xxxx, xxxx xxx [xxxxxxxxxx xxxx xxxx
 > }
 > ```
 
-> **Xxxx**  Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md)
-* [Xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx](declare-background-tasks-in-the-application-manifest.md)
-* [Xxxxxxxxxx xxx xxxxxxxxxx xxxxx](guidelines-for-background-tasks.md)
-* [Xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx](monitor-background-task-progress-and-completion.md)
-* [Xxxxxxxx x xxxxxxxxxx xxxx](register-a-background-task.md)
-* [Xxxxxxx xx xxxxxx xxxxxx xxxx xxxxxxxxxx xxxxx](respond-to-system-events-with-background-tasks.md)
-* [Xxx x xxxxxxxxxx xxxx xx x xxxxx](run-a-background-task-on-a-timer-.md)
-* [Xxx xxxxxxxxxx xxx xxxxxxx x xxxxxxxxxx xxxx](set-conditions-for-running-a-background-task.md)
-* [Xxxxxx x xxxx xxxx xxxx x xxxxxxxxxx xxxx](update-a-live-tile-from-a-background-task.md)
-* [Xxx x xxxxxxxxxxx xxxxxxx](use-a-maintenance-trigger.md)
+* [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
+* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
+* [バックグラウンド タスクのガイドライン](guidelines-for-background-tasks.md)
+* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
+* [バックグラウンド タスクの登録](register-a-background-task.md)
+* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
+* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
+* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
+* [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
+* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
 
-* [Xxxxx x xxxxxxxxxx xxxx](debug-a-background-task.md)
-* [Xxx xx xxxxxxx xxxxxxx, xxxxxx, xxx xxxxxxxxxx xxxxxx xx Xxxxxxx Xxxxx xxxx (xxxx xxxxxxxxx)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
+* [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

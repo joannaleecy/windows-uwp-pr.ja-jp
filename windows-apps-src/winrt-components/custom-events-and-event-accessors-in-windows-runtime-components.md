@@ -1,35 +1,35 @@
 ---
-xxxxx: Xxxxxx xxxxxx xxx xxxxx xxxxxxxxx xx Xxxxxxx Xxxxxxx Xxxxxxxxxx
-xxxxxxxxxxx: .XXX Xxxxxxxxx xxxxxxx xxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xxxxx xx xxxx xx xxxxxxx xxxxxx xxxxxxxxxx xx xxxxxx xxx xxxxxxxxxxx xxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxx xxxxxxx xxx xxx .XXX Xxxxxxxxx xxxxx xxxxxxx.
-xx.xxxxxxx: YXYYXYYX-YYYY-YYXY-YYYY-YYXXYXXXYXXY
+title: Custom events and event accessors in Windows Runtime Components
+description: .NET Framework support for Windows Runtime Components makes it easy to declare events components by hiding the differences between the Universal Windows Platform (UWP) event pattern and the .NET Framework event pattern.
+ms.assetid: 6A66D80A-5481-47F8-9499-42AC8FDA0EB4
 ---
 
-# Xxxxxx xxxxxx xxx xxxxx xxxxxxxxx xx Xxxxxxx Xxxxxxx Xxxxxxxxxx
+# Custom events and event accessors in Windows Runtime Components
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[Xxxx xxxxxxxxxxx xxxxxxx xx xxx-xxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxx xx'x xxxxxxxxxxxx xxxxxxxx. Xxxxxxxxx xxxxx xx xxxxxxxxxx, xxxxxxx xx xxxxxxx, xxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxx.\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-.XXX Xxxxxxxxx xxxxxxx xxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xxxxx xx xxxx xx xxxxxxx xxxxxx xxxxxxxxxx xx xxxxxx xxx xxxxxxxxxxx xxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxx xxxxxxx xxx xxx .XXX Xxxxxxxxx xxxxx xxxxxxx. Xxxxxxx, xxxx xxx xxxxxxx xxxxxx xxxxx xxxxxxxxx xx x Xxxxxxx Xxxxxxx Xxxxxxxxx, xxx xxxx xxxxxx xxx xxxxxxx xxxx xx xxx XXX.
+.NET Framework support for Windows Runtime Components makes it easy to declare events components by hiding the differences between the Universal Windows Platform (UWP) event pattern and the .NET Framework event pattern. However, when you declare custom event accessors in a Windows Runtime Component, you must follow the pattern used in the UWP.
 
-## Xxxxxxxxxxx xxxxxx
+## Registering events
 
 
-Xxxx xxx xxxxxxxx xx xxxxxx xx xxxxx xx xxx XXX, xxx xxx xxxxxxxx xxxxxxx x xxxxx. Xx xxxxxxxxxx, xxx xxxx xxxx xxxxx xx xxx xxxxxx xxxxxxxx. Xxxx xxxxx xxxx xxx xxx xxx xxxxxx xxxxxxxxx xxx XXX xxxxxx xxxx xxxxxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxx xxx'xx xxxx xx.
+When you register to handle an event in the UWP, the add accessor returns a token. To unregister, you pass this token to the remove accessor. This means that the add and remove accessors for UWP events have different signatures from the accessors you're used to.
 
-Xxxxxxxxxxx, xxx Xxxxxx Xxxxx xxx X\# xxxxxxxxx xxxxxxxx xxxx xxxxxxx: Xxxx xxx xxxxxxx xx xxxxx xxxx xxxxxx xxxxxxxxx xx x Xxxxxxx Xxxxxxx Xxxxxxxxx, xxx xxxxxxxxx xxxxxxxxxxxxx xxx xxx XXX xxxxxxx. Xxx xxxxxxx, xxx xxx x xxxxxxxx xxxxx xx xxxx xxx xxxxxxxx xxxxx'x xxxxxx x xxxxx. Xxx .XXX Xxxxxxxxx xxxxxxxx xxx xxxxx xx xxxxxxx xxx xxxxxxxxxxxxxx:
+Fortunately, the Visual Basic and C# compilers simplify this process: When you declare an event with custom accessors in a Windows Runtime Component, the compilers automatically use the UWP pattern. For example, you get a compiler error if your add accessor doesn't return a token. The .NET Framework provides two types to support the implementation:
 
--   Xxx [XxxxxXxxxxxxxxxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/windows.foundation.eventregistrationtoken.aspx) xxxxxxxxx xxxxxxxxxx xxx xxxxx.
--   Xxx [XxxxxXxxxxxxxxxxxXxxxxXxxxx&xx;X&xx;](https://msdn.microsoft.com/library/hh138412.aspx) xxxxx xxxxxxx xxxxxx xxx xxxxxxxxx x xxxxxxx xxxxxxx xxxxxx xxx xxxxx xxxxxxxx. Xxx xxxxxxx xxxx xxxxxxxx xx xxx xxxxx xxxxxxxx xxxx. Xxx xxxxxx xx xxxxxxxx xx xxxx xxxxx xxx xxxx xxxxx, xxx xxxxx xxxx xx xxxxx xxxxxxx xx xxxxxxxxxx xxx xxxx xxxxx.
+-   The [EventRegistrationToken](https://msdn.microsoft.com/library/windows/apps/windows.foundation.eventregistrationtoken.aspx) structure represents the token.
+-   The [EventRegistrationTokenTable&lt;T&gt;](https://msdn.microsoft.com/library/hh138412.aspx) class creates tokens and maintains a mapping between tokens and event handlers. The generic type argument is the event argument type. You create an instance of this class for each event, the first time an event handler is registered for that event.
 
-Xxx xxxxxxxxx xxxx xxx xxx XxxxxxXxxxxxx xxxxx xxxxx xxx xxxxx xxxxxxx xxx XXX xxxxxx. Xx xxxx xxxxxxx, xxx xxxxxxxxxxx xxx xxx xxxxx xxxxxxxx xxxxxx, XxxxxxXxxxxxxXxxxxXxxx, xxxxx x xxxxxx xxxxxxx xxxxxxxxx xxxx xxxxxxxxxx xxx xxxxxxx xxxxxxx xxxxx.
+The following code for the NumberChanged event shows the basic pattern for UWP events. In this example, the constructor for the event argument object, NumberChangedEventArgs, takes a single integer parameter that represents the changed numeric value.
 
-> **Xxxx**  Xxxx xx xxx xxxx xxxxxxx xxx xxxxxxxxx xxx xxx xxxxxxxx xxxxxx xxxx xxx xxxxxxx xx x Xxxxxxx Xxxxxxx Xxxxxxxxx.
+> **Note**  This is the same pattern the compilers use for ordinary events that you declare in a Windows Runtime Component.
 
  
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```csharp
 > private EventRegistrationTokenTable<EventHandler<NumberChangedEventArgs>> 
 >     m_NumberChangedTokenTable = null;
@@ -92,35 +92,39 @@ Xxx xxxxxxxxx xxxx xxx xxx XxxxxxXxxxxxx xxxxx xxxxx xxx xxxxx xxxxxxx xxx XXX x
 > End Event
 > ```
 
-Xxx xxxxxx (Xxxxxx xx Xxxxxx Xxxxx) XxxXxXxxxxxXxxxxXxxxxxxxxxxxXxxxxXxxxx xxxxxx xxxxxxx xxx xxxxx’x xxxxxxxx xx xxx XxxxxXxxxxxxxxxxxXxxxxXxxxx&xx;X&xx; xxxxxx xxxxxx. Xxxx xxx xxxxx-xxxxx xxxxx xxxx xxxx xxxx xxx xxxxx xxxxx xxxxxxxx xx xxxx xxxxxx. Xx xxx xxxxx xx xxxxx, xxx xxxxxx xxxxxxx xxx xxxxx, xxxxxx x xxxxxxxxx xx xxx xxxxx xx xxx xxxxx, xxx xxxxxxx x xxxxxxxxx xx xxx xxxxx. Xx xxx xxxxx xxxxxxx xxxxxxxx x xxxxx xxxxx xxxxxxxxx, xxx xxxxxx xxxx xxxxxxx xxxx xxxxxxxxx.
+The static (Shared in Visual Basic) GetOrCreateEventRegistrationTokenTable method creates the event’s instance of the EventRegistrationTokenTable&lt;T&gt; object lazily. Pass the class-level field that will hold the token table instance to this method. If the field is empty, the method creates the table, stores a reference to the table in the field, and returns a reference to the table. If the field already contains a token table reference, the method just returns that reference.
 
-> **Xxxxxxxxx**  Xx xxxxxx xxxxxx xxxxxx, xxx xxxxx xxxx xxxxx xxx xxxxx’x xxxxxxxx xx XxxxxXxxxxxxxxxxxXxxxxXxxxx&xx;X&xx; xxxx xx x xxxxx-xxxxx xxxxx. Xx xx xx x xxxxx-xxxxx xxxxx, xxx XxxXxXxxxxxXxxxxXxxxxxxxxxxxXxxxxXxxxx xxxxxx xxxxxxx xxxx xxxx xxxxxxxx xxxxxxx xxx xx xxxxxx xxx xxxxx xxxxx, xxx xxxxxxx xxx xxx xxxx xxxxxxxx xx xxx xxxxx. Xxx x xxxxx xxxxx, xxx xxxxx xx xxx XxxXxXxxxxxXxxxxXxxxxxxxxxxxXxxxxXxxxx xxxxxx xxxx xxx xxx xxxx xxxxx-xxxxx xxxxx.
+> **Important**  To ensure thread safety, the field that holds the event’s instance of EventRegistrationTokenTable&lt;T&gt; must be a class-level field. If it is a class-level field, the GetOrCreateEventRegistrationTokenTable method ensures that when multiple threads try to create the token table, all threads get the same instance of the table. For a given event, all calls to the GetOrCreateEventRegistrationTokenTable method must use the same class-level field.
 
-Xxxxxxx xxx XxxXxXxxxxxXxxxxXxxxxxxxxxxxXxxxxXxxxx xxxxxx xx xxx xxxxxx xxxxxxxx xxx xx xxx [XxxxxXxxxx](https://msdn.microsoft.com/library/fwd3bwed.aspx) xxxxxx (xxx XxXxxxxXxxxx xxxxxx xx X\#) xxxxxxx xxxx xx xxxxxxxxxx xxxxx xx xxxxx xxxxxxx xxx xxxxxx xxxxxx xxx xxxxx xxxxxxx xxxxxxxxx xxxx xxxx xxxxx.
+Calling the GetOrCreateEventRegistrationTokenTable method in the remove accessor and in the [RaiseEvent](https://msdn.microsoft.com/library/fwd3bwed.aspx) method (the OnRaiseEvent method in C#) ensures that no exceptions occur if these methods are called before any event handler delegates have been added.
 
-Xxx xxxxx xxxxxxx xx xxx XxxxxXxxxxxxxxxxxXxxxxXxxxx&xx;X&xx; xxxxx xxxx xxx xxxx xx xxx XXX xxxxx xxxxxxx xxxxxxx xxx xxxxxxxxx:
+The other members of the EventRegistrationTokenTable&lt;T&gt; class that are used in the UWP event pattern include the following:
 
--   Xxx [XxxXxxxxXxxxxxx](https://msdn.microsoft.com/library/hh138458.aspx) xxxxxx xxxxxxxxx x xxxxx xxx xxx xxxxx xxxxxxx xxxxxxxx, xxxxxx xxx xxxxxxxx xx xxx xxxxx, xxxx xx xx xxx xxxxxxxxxx xxxx, xxx xxxxxxx xxx xxxxx.
--   Xxx [XxxxxxXxxxxXxxxxxx(XxxxxXxxxxxxxxxxxXxxxx)](https://msdn.microsoft.com/library/hh138425.aspx) xxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxx xxxx xxx xxxxx xxx xxxx xxx xxxxxxxxxx xxxx.
+-   The [AddEventHandler](https://msdn.microsoft.com/library/hh138458.aspx) method generates a token for the event handler delegate, stores the delegate in the table, adds it to the invocation list, and returns the token.
+-   The [RemoveEventHandler(EventRegistrationToken)](https://msdn.microsoft.com/library/hh138425.aspx) method overload removes the delegate from the table and from the invocation list.
 
-    >**Xxxx**  Xxx XxxXxxxxXxxxxxx xxx XxxxxxXxxxxXxxxxxx(XxxxxXxxxxxxxxxxxXxxxx) xxxxxxx xxxx xxx xxxxx xx xxxx xxxxxx xxxxxx xxxxxx.
+    >**Note**  The AddEventHandler and RemoveEventHandler(EventRegistrationToken) methods lock the table to help ensure thread safety.
 
--   Xxx [XxxxxxxxxxXxxx](https://msdn.microsoft.com/library/hh138465.aspx) xxxxxxxx xxxxxxx x xxxxxxxx xxxx xxxxxxxx xxx xxx xxxxx xxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxxxx xx xxxxxx xxx xxxxx. Xxx xxxx xxxxxxxx xx xxxxx xxx xxxxx, xx xxx xxx xxxxxxx xx xxx Xxxxxxxx xxxxx xx xxxxxx xxx xxxxxxxx xxxxxxxxxxxx.
+-   The [InvocationList](https://msdn.microsoft.com/library/hh138465.aspx) property returns a delegate that includes all the event handlers that are currently registered to handle the event. Use this delegate to raise the event, or use the methods of the Delegate class to invoke the handlers individually.
 
-    >**Xxxx**  Xx xxxxxxxxx xxxx xxx xxxxxx xxx xxxxxxx xxxxx xx xxx xxxxxxx xxxxxxxx xxxxxxx xx xxxx xxxxxxx, xxx xxxx xxx xxxxxxxx xx x xxxxxxxxx xxxxxxxx xxxxxx xxxxxxxx xx. Xxxx xxxxxx x xxxx xxxxxxxxx xx xxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxxx, xxxxxxxx xxx xxxxxxxx xx xxxx xxxx xxxxxx xxxxxxx xxxxxx xxxxx xx xxxxxx xxx xxxxxxxx. Xxxxxxxxx xxx xxxxxxxxx, xx xxx xxxx xx xxxxx xxxxx.
+    >**Note**  We recommend that you follow the pattern shown in the example provided earlier in this article, and copy the delegate to a temporary variable before invoking it. This avoids a race condition in which one thread removes the last handler, reducing the delegate to null just before another thread tries to invoke the delegate. Delegates are immutable, so the copy is still valid.
 
-Xxxxx xxxx xxx xxxx xx xxx xxxxxxxxx xx xxxxxxxxxxx. Xx xxxxxx xxxxxx xx xx xxxxx, xxx xxxx xxxxxxx xxxx xxx xxxxxxx xxx xxxx xxxx.
+Place your own code in the accessors as appropriate. If thread safety is an issue, you must provide your own locking for your code.
 
-X\# xxxxx: Xxxx xxx xxxxx xxxxxx xxxxx xxxxxxxxx xx xxx XXX xxxxx xxxxxxx, xxx xxxxxxxx xxxxx'x xxxxxxx xxx xxxxx xxxxxxxxx xxxxxxxxx. Xx xxxxxxxxx xxxxxx xx xxx xxx xxx xxxx xx xxx xxxxx xx xxxx xxxx.
+C# users: When you write custom event accessors in the UWP event pattern, the compiler doesn't provide the usual syntactic shortcuts. It generates errors if you use the name of the event in your code.
 
-Xxxxxx Xxxxx xxxxx: Xx xxx .XXX Xxxxxxxxx, xx xxxxx xx xxxx x xxxxxxxxx xxxxxxxx xxxx xxxxxxxxxx xxx xxx xxxxxxxxxx xxxxx xxxxxxxx. Xxxxxxx xxx xxxxx xxxx xxxxx xxxxxxxx xxx xxxxxxxx. Xxxxxx Xxxxx xxxxxx xxxxxxxxx xxxxx xxx xxxxxxxxxxxx xxxx xxx xxxxxxxx, xxx xxx xxxxxxxx xxxxxx xxx xxxxxxxx xxxxxx xxxxxxxx xx, xx xxxxxxxxx xx xxx xxxx xxxxx xxxxxx xxxxxx. Xxxx xxx xxxxxx x xxxxxx xxxxx xx x Xxxxxxx Xxxxxxx Xxxxxxxxx, xxx xxxx xx xxxx xxxx xxx xxxxxxxx xxxxxxxx. Xxxx xxxx xxxxx xxxx xxx xxx, xxx xxxxxxx, xxx xxx [XxxxxxxxxXxxxxxxx.XxxXxxxxxxxxxXxxx](https://msdn.microsoft.com/library/system.multicastdelegate.getinvocationlist.aspx) xxxxxx xx xxx xx xxxxx xxxx xxxxxxxx x xxxxxxxx xxxxxxxx xxx xxxx xxxxx xxxxxxx, xx xxx xxxx xx xxxxxx xxx xxxxxxxx xxxxxxxxxx.
+Visual Basic users: In the .NET Framework, an event is just a multicast delegate that represents all the registered event handlers. Raising the event just means invoking the delegate. Visual Basic syntax generally hides the interactions with the delegate, and the compiler copies the delegate before invoking it, as described in the note about thread safety. When you create a custom event in a Windows Runtime Component, you have to deal with the delegate directly. This also means that you can, for example, use the [MulticastDelegate.GetInvocationList](https://msdn.microsoft.com/library/system.multicastdelegate.getinvocationlist.aspx) method to get an array that contains a separate delegate for each event handler, if you want to invoke the handlers separately.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxx (Xxxxxx Xxxxx)](https://msdn.microsoft.com/library/ms172877.aspx)
-* [Xxxxxx (X\# Xxxxxxxxxxx Xxxxx)](https://msdn.microsoft.com/library/awbftdfh.aspx)
-* [.XXX xxx Xxxxxxx Xxxxx Xxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
-* [.XXX xxx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
-* [Xxxxxxxxxxx: Xxxxxxxx x Xxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxx xxx xxxxxxx xx xxxx XxxxXxxxxx](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* [Events (Visual Basic)](https://msdn.microsoft.com/library/ms172877.aspx)
+* [Events (C# Programming Guide)](https://msdn.microsoft.com/library/awbftdfh.aspx)
+* [.NET for Windows Store Apps Overview](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
+* [Walkthrough: Creating a Simple Windows Runtime Component and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

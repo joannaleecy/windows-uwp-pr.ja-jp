@@ -1,16 +1,16 @@
 ---
-xxxxxxxxxxx: Xxxxxxxx xxxxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxxxx xx xxxxxxxxx, xxx xxxxx xxxxx xxxxxx x XxxxxxxxXxxxxxxxxx.
-xxxxx: xXxx xxxxxxxxx
-xx.xxxxxxx: YYYXXYXX-YYXX-YYYY-YXYX-YYXXYYXYYYYX
+description: Uniquely identifies elements that are created and referenced as resources, and which exist within a ResourceDictionary.
+title: xKey attribute
+ms.assetid: 141FC5AF-80EE-4401-8A1B-17CB22C2277A
 ---
 
-# x:Xxx xxxxxxxxx
+# x:Key attribute
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxxxx xxxxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxxxx xx xxxxxxxxx, xxx xxxxx xxxxx xxxxxx x [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208794).
+Uniquely identifies elements that are created and referenced as resources, and which exist within a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794).
 
-## XXXX xxxxxxxxx xxxxx
+## XAML attribute usage
 
 ``` syntax
 <ResourceDictionary>
@@ -18,7 +18,7 @@ Xxxxxxxx xxxxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxxxx xx xxxxxxxxx, xxx x
 </ResourceDictionary>
 ```
 
-## XXXX xxxxxxxxx xxxxx (xxxxxxxx **XxxxxxxxXxxxxxxxxx**)
+## XAML attribute usage (implicit **ResourceDictionary**)
 
 ``` syntax
 <object.Resources>
@@ -26,16 +26,16 @@ Xxxxxxxx xxxxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxxxx xx xxxxxxxxx, xxx x
 </object.Resources>
 ```
 
-## XXXX xxxxxx
+## XAML values
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| xxxxxx | Xxx xxxxxx xxxx xx xxxxxxxxx. Xxx [XxxxxxxxXxxxxxxxxx xxx XXXX xxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187273). |
-| xxxxxxXxxXxxxx | X xxxx xxxxxx xxxx xx x xxx, xxxxx xxxx xxxxxxx xx xxx _XxxxXxxx_> xxxxxxx. Xxx "XxxxXxxx xxxxxxx" xxxxx. | 
+| object | Any object that is shareable. See [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273). |
+| stringKeyValue | A true string used as a key, which must conform to the _XamlName_> grammar. See "XamlName grammar" below. | 
 
-##  XxxxXxxx xxxxxxx
+##  XamlName grammar
 
-Xxx xxxxxxxxx xx xxx xxxxxxxxx xxxxxxx xxx x xxxxxx xxxx xx xxxx xx x xxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XXXX xxxxxxxxxxxxxx:
+The following is the normative grammar for a string that is used as a key in the Universal Windows Platform (UWP) XAML implementation:
 
 ``` syntax
 XamlName ::= NameStartChar (NameChar)*
@@ -46,20 +46,24 @@ DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
 
--   Xxxxxxxxxx xxx xxxxxxxxxx xx xxx xxxxx XXXXX xxxxx, xxx xxxx xxxxxxxxxxxx xx Xxxxx xxxxxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxx, xxxxxx, xxx xxx xxxxxxxxxx (\_) xxxxxxxxx.
--   Xxx Xxxxxxx xxxxxxxxx xxxxx xx xxx xxxxxxxxx.
--   X xxxx xxxxxx xxxxx xxxx x xxxxx.
+-   Characters are restricted to the lower ASCII range, and more specifically to Roman alphabet uppercase and lowercase letters, digits, and the underscore (\_) character.
+-   The Unicode character range is not supported.
+-   A name cannot begin with a digit.
 
-## Xxxxxxx
+## Remarks
 
-Xxxxx xxxxxxxx xx x [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208794) xxxxxxxxx xxxxxxx xx **x:Xxx** xxxxxxxxx xxxx xxxxxxxxx x xxxxxx xxx xxxxx xxxxxx xxxx xxxxxxxxxx. Xxx xxxxxxxxxx xx xxxxxxxx xx xxxx xxxx xx xxx XXXX xxxxxxxxx. Xxx-xxxxxx **x:Xxx** xxxxxx xxxx xxxxxx xx XXXX xxxxx xxxxxxxxxx. Xx xxxxxxxxx xx [{XxxxxxXxxxxxxx} xxxxxx xxxxxxxxx](staticresource-markup-extension.md), x xxx-xxxxxxxx xxx xxxx xxxx xxxxxx xx XXXX xxxxx xxxxxxxxxx.
+Child elements of a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) generally include an **x:Key** attribute that specifies a unique key value within that dictionary. Key uniqueness is enforced at load time by the XAML processor. Non-unique **x:Key** values will result in XAML parse exceptions. If requested by [{StaticResource} markup extension](staticresource-markup-extension.md), a non-resolved key will also result in XAML parse exceptions.
 
-**x:Xxx** xxx [x:Xxxx](x-name-attribute.md) xxx xxx xxxxxxxxx xxxxxxxx. **x:Xxx** xx xxxx xxxxxxxxxxx xx xxxxxxxx xxxxxxxxxxxx. x:Xxxx xx xxxx xxx xxx xxxxx xx XXXX. X [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208715) xxxx xxxxx x xxx xxxxx xxxx xxx xxxxxxxx x xxxxx xxxxxxxx.
+**x:Key** and [x:Name](x-name-attribute.md) are not identical concepts. **x:Key** is used exclusively in resource dictionaries. x:Name is used for all areas of XAML. A [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) call using a key value will not retrieve a keyed resource.
 
-Xxxx xxxx xx xxx xxxxxxxx xxxxxx xxxxx, xxx [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208794) xxxxxx xx xxxxxxxx xx xxx xxx XXXX xxxxxxxxx xxxxxxxx x xxx xxxxxx xx xxxxxxxx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208740) xxxxxxxxxx.
+Note that in the implicit syntax shown, the [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) object is implicit in how the XAML processor produces a new object to populate a [**Resources**](https://msdn.microsoft.com/library/windows/apps/br208740) collection.
 
-Xxx xxxx xxxxxxxxxx xx xxxxxxxxxx **x:Xxx** xx xxx xxxxxxxxx xxxx xxxx x xxx xxxx xxx xxxxxxxxxx [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208794). Xxx xxxxxxx, xx **x:Xxx** xxxxxxx xx xxxxxx xxx x xxxxxxxx xx xxxxxxxxxx xx xxx xxxxx xx xxx *xxx* xxxxxxxxx xx **Xxxxxx** xxxx xxx xxx xxx xxxxxxxx xx x **XxxxxxxxXxxxxxxxxx**.
+The code equivalent of specifying **x:Key** is any operation that uses a key with the underlying [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). For example, an **x:Key** applied in markup for a resource is equivalent to the value of the *key* parameter of **Insert** when you add the resource to a **ResourceDictionary**.
 
-Xx xxxx xx x xxxxxxxx xxxxxxxxxx xxx xxxx x xxxxx xxx **x:Xxx** xx xx xx x xxxxxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208849) xx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209391); xx xxxx xx xxxxx xxxxx xxx xxxxxxxx xxx xx xxx xxxxxxxx xxxx xx xxx **XxxxxxXxxx** xxxxx xxxxxxxxxxx xx x xxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxxx: xxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465498) xxx [XxxxxxxxXxxxxxxxxx xxx XXXX xxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187273).
+An item in a resource dictionary can omit a value for **x:Key** if it is a targeted [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) or [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391); in each of these cases the implicit key of the resource item is the **TargetType** value interpreted as a string. For more info, see [Quickstart: styling controls](https://msdn.microsoft.com/library/windows/apps/hh465498) and [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273).
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

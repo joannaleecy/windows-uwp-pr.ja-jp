@@ -1,48 +1,48 @@
 ---
-xx.xxxxxxx: YYYYXXYX-XYYY-YYYY-YYXY-XYYYYYYXYXYX
-xxxxx: Xxx xxx xxxxxxxxxxx xxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxx xxx xxxxxxxxxxx xxxxxxx xx xxxxxxxxx xxx xxxxxx xxxxxxxxxxx.
+ms.assetid: 1889AC3A-A472-4294-89B8-A642668A8A6E
+title: Use the orientation sensor
+description: Learn how to use the orientation sensors to determine the device orientation.
 ---
-# Xxx xxx xxxxxxxxxxx xxxxxx
+# Use the orientation sensor
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Xxxxxxxxx XXXx **
+** Important APIs **
 
--   [**Xxxxxxx.Xxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**XxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206371)
--   [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206399)
+-   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
+-   [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371)
+-   [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399)
 
-Xxxxx xxx xx xxx xxx xxxxxxxxxxx xxxxxxx xx xxxxxxxxx xxx xxxxxx xxxxxxxxxxx.
+Learn how to use the orientation sensors to determine the device orientation.
 
-Xxxxx xxx xxx xxxxxxxxx xxxxx xx xxxxxxxxxxx xxxxxx XXXx xxxxxxxx xx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206408) xxxxxxxxx: [**XxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206371) xxx [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206399). Xxxxx xxxx xx xxxxx xxxxxxx xxx xxxxxxxxxxx xxxxxxx, xxxx xxxx xx xxxxxxxxxx xxx xxxx xxx xxxx xxx xxxx xxxxxxxxx xxxxxxxx. Xxxxxxx, xxxxx xxxx xxx xxxxxxxxxxx xxxxxxx, xxxx xxx xxxx xxxxxxx xx xxxx xxxxxxx.
+There are two different types of orientation sensor APIs included in the [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) namespace: [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) and [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399). While both of these sensors are orientation sensors, that term is overloaded and they are used for very different purposes. However, since both are orientation sensors, they are both covered in this article.
 
-Xxx [**XxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206371) XXX xx xxxx xxx Y-X xxxx xxx xxxxxx x xxxxxxxxxx xxx x xxxxxxxx xxxxxx. X xxxxxxxxxx xxx xx xxxx xxxxxx xxxxxxxxxx xx x xxxxxxxx xx x xxxxx \[x,x,x\] xxxxx xx xxxxxxxxx xxxx (xxxxxxxxxx xxxx x xxxxxxxx xxxxxx, xxxxx xxxxxxxxxx xxxxxxxxx xxxxxx xxxxx xxxx). Xxx xxxxxxxxxxx xxxxxx xxxxxxxxxxx xx xxxxxx xxxxxx xx xxxx xx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxx xx xxxxxxx xxxxxxx xxx xxxxxxxxxxxx xxxxxxxxxx xx xxxxxxxxx xxxxxxx, xxx xxxxxxx xxxx xxxx xx xxxxxx, xxx xxxxxxxxxx xxxx XxxxxxX xxxxxxx xxxx. X xxxxxxx Y-X xxx xxx xxx xxx Xxxxxxxxxxx xxxxxx xx xxxxxx xxx xxxx'x xxxxxxxxxxx. Xxxx xxxxxx xxxxxxxx xxxxx xxxx xxx xxxxxxxxxxxxx, xxxxxxxxx, xxx xxxxxxx.
+The [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) API is used for 3-D apps two obtain a quaternion and a rotation matrix. A quaternion can be most easily understood as a rotation of a point \[x,y,z\] about an arbitrary axis (contrasted with a rotation matrix, which represents rotations around three axes). The mathematics behind quaternions is fairly exotic in that it involves the geometric properties of complex numbers and mathematical properties of imaginary numbers, but working with them is simple, and frameworks like DirectX support them. A complex 3-D app can use the Orientation sensor to adjust the user's perspective. This sensor combines input from the accelerometer, gyrometer, and compass.
 
-Xxx [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206399) XXX xx xxxx xx xxxxxxxxx xxx xxxxxxx xxxxxx xxxxxxxxxxx xx xxxxx xx xxxxxxxxxxx xxxx xxxxxxxx xx, xxxxxxxx xxxx, xxxxxxxxx xxxx, xxx xxxxxxxxx xxxxx. Xx xxx xxxx xxxxxx xx x xxxxxx xx xxxx-xx xx xxxx-xxxx. Xxxxxx xxxx xxxxxxxxx xxxxxxxxxx xxxx "xxxxxxxx xx" xx "xxxxxxxxx xxxx", xxxx xxxxxx xxxxxxx x xxxxxxxx xxxxx: "Xxx xxxxxxx", "XxxxxxxYYXxxxxxxXxxxxxxxxxxxxxxx", xxx xx xx. Xxx xxxxxxxxx xxxxx xxxx xxxxxx xxxxxxxxxxx xxxxxxxxxx xx xxx xxxxxxxxxxxxx xxxxxx xxxxxxx.
+The [**SimpleOrientation**](https://msdn.microsoft.com/library/windows/apps/BR206399) API is used to determine the current device orientation in terms of definitions like portrait up, portrait down, landscape left, and landscape right. It can also detect if a device is face-up or face-down. Rather than returning properties like "portrait up" or "landscape left", this sensor returns a rotation value: "Not rotated", "Rotated90DegreesCounterclockwise", and so on. The following table maps common orientation properties to the corresponding sensor reading.
 
-| Xxxxxxxxxxx     | Xxxxxxxxxxxxx xxxxxx xxxxxxx      |
+| Orientation     | Corresponding sensor reading      |
 |-----------------|-----------------------------------|
-| Xxxxxxxx Xx     | XxxXxxxxxx                        |
-| Xxxxxxxxx Xxxx  | XxxxxxxYYXxxxxxxXxxxxxxxxxxxxxxx  |
-| Xxxxxxxx Xxxx   | XxxxxxxYYYXxxxxxxXxxxxxxxxxxxxxxx |
-| Xxxxxxxxx Xxxxx | XxxxxxxYYYXxxxxxxXxxxxxxxxxxxxxxx |
+| Portrait Up     | NotRotated                        |
+| Landscape Left  | Rotated90DegreesCounterclockwise  |
+| Portrait Down   | Rotated180DegreesCounterclockwise |
+| Landscape Right | Rotated270DegreesCounterclockwise |
 
-## Xxxxxxxxxxxxx
+## Prerequisites
 
-Xxx xxxxxx xx xxxxxxxx xxxx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX), Xxxxxxxxx Xxxxxx X#, xxx xxxxxx.
+You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
 
-Xxx xxxxxx xx xxxxxxxx xxxx xxx'xx xxxxx xxxx xxxxxxx x xxxxxxxxxxx xxxxxx.
+The device or emulator that you're using must support a orientation sensor.
 
-## Xxxxxx xx XxxxxxxxxxxXxxxxx xxx
+## Create an OrientationSensor app
 
-Xxxx xxxxxxx xx xxxxxxx xxxx xxx xxxxxxxxxxx. Xxx xxxxx xxxxxxxxxx xxxx xxxx xxx xxxxxxx xxx xxxxx xxxxxxxxx xx xxxxxx xx xxxxxxxxxxx xxxxxxxxxxx xxxx xxxxxxx. Xxx xxxxxxxxx xxxxxxxxxx xxxxxxxx xxx xxx xxx xxxx xxxx xxxxxxx.
+This section is divided into two subsections. The first subsection will take you through the steps necessary to create an orientation application from scratch. The following subsection explains the app you have just created.
 
-###  Xxxxxxxxxxxx
+###  Instructions
 
--   Xxxxxx x xxx xxxxxxx, xxxxxxxx x **Xxxxx Xxx (Xxxxxxxxx Xxxxxxx)** xxxx xxx **Xxxxxx X#** xxxxxxx xxxxxxxxx.
+-   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
 
--   Xxxx xxxx xxxxxxx'x XxxxXxxx.xxxx.xx xxxx xxx xxxxxxx xxx xxxxxxxx xxxx xxxx xxx xxxxxxxxx.
+-   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -115,9 +115,9 @@ Xxxx xxxxxxx xx xxxxxxx xxxx xxx xxxxxxxxxxx. Xxx xxxxx xxxxxxxxxx xxxx xxxx xxx
     }
 ```
 
-Xxx'xx xxxx xx xxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx xxxx xxx xxxx xxxx xxxxxxx. Xxx xxxxxxx, xx xxx xxxxxxx x xxxxxxx xxxxx **XxxxxxxxxxxXxxxxxXX**, xxx'x xxxxxxx `namespace App1` xxxx `namespace OrientationSensorCS`.
+You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **OrientationSensorCS**, you'd replace `namespace App1` with `namespace OrientationSensorCS`.
 
--   Xxxx xxx xxxx XxxxXxxx.xxxx xxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxxxxx XXX.
+-   Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
         <Page
@@ -161,25 +161,25 @@ Xxx'xx xxxx xx xxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx xxxx xxx xx
     </Page>
 ```
 
-Xxx'xx xxxx xx xxxxxxx xxx xxxxx xxxx xx xxx xxxxx xxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx xxxxxxxxx xx xxxx xxx. Xxx xxxxxxx, xx xxx xxxxxxx x xxxxxxx xxxxx **XxxxxxxxxxxXxxxxxXX**, xxx'x xxxxxxx `x:Class="App1.MainPage"` xxxx `x:Class="OrientationSensorCS.MainPage"`. Xxx xxxxxx xxxx xxxxxxx `xmlns:local="using:App1"` xxxx `xmlns:local="using:OrientationSensorCS"`.
+You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **OrientationSensorCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="OrientationSensorCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:OrientationSensorCS"`.
 
--   Xxxxx XY xx xxxxxx **Xxxxx** > **Xxxxx Xxxxxxxxx** xx xxxxx, xxxxxx, xxx xxx xxx xxx.
+-   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
 
-Xxxx xxx xxx xx xxxxxxx, xxx xxx xxxxxx xxx xxxxxxxxxxx xx xxxxxx xxx xxxxxx xx xxxxx xxx xxxxxxxx xxxxx.
+Once the app is running, you can change the orientation by moving the device or using the emulator tools.
 
--   Xxxx xxx xxx xx xxxxxxxxx xx Xxxxxx Xxxxxx xxx xxxxxxxx Xxxxx+XY xx xxxxxx **Xxxxx** > **Xxxx Xxxxxxxxx** xx xxxx xxx xxx.
+-   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
 
-###  Xxxxxxxxxxx
+###  Explanation
 
-Xxx xxxxxxxx xxxxxxx xxxxxxxxxxxx xxx xxxxxx xxxx xxx'xx xxxx xx xxxxx xx xxxxx xx xxxxxxxxx xxxxxxxxxxx-xxxxxx xxxxx xx xxxx xxx.
+The previous example demonstrates how little code you'll need to write in order to integrate orientation-sensor input in your app.
 
-Xxx xxx xxxxxxxxxxx x xxxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxx xxxxxx xx xxx **XxxxXxxx** xxxxxx.
+The app establishes a connection with the default orientation sensor in the **MainPage** method.
 
 ```csharp
 _sensor = OrientationSensor.GetDefault();
 ```
 
-Xxx xxx xxxxxxxxxxx xxx xxxxxx xxxxxxxx xxxxxx xxx **XxxxXxxx** xxxxxx. Xxxx xxxx xxxxxxxxx xxx xxxxxxx xxxxxxxx xxxxxxxxx xx xxx xxxxxx xxx xxxxxxxx xx xx x xxxxxxxxx xxxxxxxx xx YY xxxxxxxxxxxx (xxxxx xxxxxxxxxxxx x YY-Xx xxxxxxx xxxx). Xx xxx xxxxxxx xxxxxxxxx xxxxxxxx xx xxxxxxx xxxx xxx xxxxxxxxx xxxxxxxx, xxx xxxx xxxx xxx xxxxx xx xxx xxxxxxx. Xxxxxxxxx, xx xxxx xxx xxxxx xx xxx xxxxxxxxx xxxxxxxx.
+The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
 
 ```csharp
 uint minReportInterval = _sensor.MinimumReportInterval;
@@ -187,24 +187,24 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _sensor.ReportInterval = reportInterval;
 ```
 
-Xxx xxx xxxxxx xxxx xx xxxxxxxx xx xxx **XxxxxxxXxxxxxx** xxxxxx. Xxxx xxxx xxx xxxxxx xxxxxx xxxxxxxx xxx xxxx xxxx xxx xxxxxx, xx xxxxxx xxx xxxxxx xx xxxx xxx xxxxx xxxx xxxxx xxxxxxx. Xxx xxx xxxxxxxxx xxxx xxxxx xxxxxxx xx xxx xxxxxxxxx xxxx.
+The new sensor data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
 
 ```csharp
 _sensor.ReadingChanged += new TypedEventHandler<OrientationSensor, 
 OrientationSensorReadingChangedEventArgs>(ReadingChanged);
 ```
 
-Xxxxx xxx xxxxxx xxx xxxxxxx xx xxx XxxxXxxxxx xxxxx xx xxx xxxxxxx'x XXXX.
+These new values are written to the TextBlocks found in the project's XAML.
 
-## Xxxxxx x XxxxxxXxxxxxxxxxx xxx
+## Create a SimpleOrientation app
 
-Xxxx xxxxxxx xx xxxxxxx xxxx xxx xxxxxxxxxxx. Xxx xxxxx xxxxxxxxxx xxxx xxxx xxx xxxxxxx xxx xxxxx xxxxxxxxx xx xxxxxx x xxxxxx xxxxxxxxxxx xxxxxxxxxxx xxxx xxxxxxx. Xxx xxxxxxxxx xxxxxxxxxx xxxxxxxx xxx xxx xxx xxxx xxxx xxxxxxx.
+This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple orientation application from scratch. The following subsection explains the app you have just created.
 
-### Xxxxxxxxxxxx
+### Instructions
 
--   Xxxxxx x xxx xxxxxxx, xxxxxxxx x **Xxxxx Xxx (Xxxxxxxxx Xxxxxxx)** xxxx xxx **Xxxxxx X#** xxxxxxx xxxxxxxxx.
+-   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
 
--   Xxxx xxxx xxxxxxx'x XxxxXxxx.xxxx.xx xxxx xxx xxxxxxx xxx xxxxxxxx xxxx xxxx xxx xxxxxxxxx.
+-   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -285,9 +285,9 @@ Xxxx xxxxxxx xx xxxxxxx xxxx xxx xxxxxxxxxxx. Xxx xxxxx xxxxxxxxxx xxxx xxxx xxx
     }
 ```
 
-Xxx'xx xxxx xx xxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx xxxx xxx xxxx xxxx xxxxxxx. Xxx xxxxxxx, xx xxx xxxxxxx x xxxxxxx xxxxx **XxxxxxXxxxxxxxxxxXX**, xxx'x xxxxxxx `namespace App1` xxxx `namespace SimpleOrientationCS`.
+You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **SimpleOrientationCS**, you'd replace `namespace App1` with `namespace SimpleOrientationCS`.
 
--   Xxxx xxx xxxx XxxxXxxx.xxxx xxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxxxxx XXX.
+-   Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
     <Page
@@ -307,42 +307,46 @@ Xxx'xx xxxx xx xxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx xxxx xxx xx
     </Page>
 ```
 
-Xxx'xx xxxx xx xxxxxxx xxx xxxxx xxxx xx xxx xxxxx xxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx xxxxxxxxx xx xxxx xxx. Xxx xxxxxxx, xx xxx xxxxxxx x xxxxxxx xxxxx **XxxxxxXxxxxxxxxxxXX**, xxx'x xxxxxxx `x:Class="App1.MainPage"` xxxx `x:Class="SimpleOrientationCS.MainPage"`. Xxx xxxxxx xxxx xxxxxxx `xmlns:local="using:App1"` xxxx `xmlns:local="using:SimpleOrientationCS"`.
+You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **SimpleOrientationCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="SimpleOrientationCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:SimpleOrientationCS"`.
 
--   Xxxxx XY xx xxxxxx **Xxxxx** > **Xxxxx Xxxxxxxxx** xx xxxxx, xxxxxx, xxx xxx xxx xxx.
+-   Press F5 or select **Debug** > **Start Debugging** to build, deploy, and run the app.
 
-Xxxx xxx xxx xx xxxxxxx, xxx xxx xxxxxx xxx xxxxxxxxxxx xx xxxxxx xxx xxxxxx xx xxxxx xxx xxxxxxxx xxxxx.
+Once the app is running, you can change the orientation by moving the device or using the emulator tools.
 
--   Xxxx xxx xxx xx xxxxxxxxx xx Xxxxxx Xxxxxx xxx xxxxxxxx Xxxxx+XY xx xxxxxx **Xxxxx** > **Xxxx Xxxxxxxxx** xx xxxx xxx xxx.
+-   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** > **Stop Debugging** to stop the app.
 
-### Xxxxxxxxxxx
+### Explanation
 
-Xxx xxxxxxxx xxxxxxx xxxxxxxxxxxx xxx xxxxxx xxxx xxx'xx xxxx xx xxxxx xx xxxxx xx xxxxxxxxx xxxxxx-xxxxxxxxxxx xxxxxx xxxxx xx xxxx xxx.
+The previous example demonstrates how little code you'll need to write in order to integrate simple-orientation sensor input in your app.
 
-Xxx xxx xxxxxxxxxxx x xxxxxxxxxx xxxx xxx xxxxxxx xxxxxx xx xxx **XxxxXxxx** xxxxxx.
+The app establishes a connection with the default sensor in the **MainPage** method.
 
 ```csharp
 _simpleorientation = SimpleOrientationSensor.GetDefault();
 ```
 
-Xxx xxx xxxxxx xxxx xx xxxxxxxx xx xxx **XxxxxxxxxxxXxxxxxx** xxxxxx. Xxxx xxxx xxx xxxxxx xxxxxx xxxxxxxx xxx xxxx xxxx xxx xxxxxx, xx xxxxxx xxx xxxxxx xx xxxx xxx xxxxx xxxx xxxxx xxxxxxx. Xxx xxx xxxxxxxxx xxxx xxxxx xxxxxxx xx xxx xxxxxxxxx xxxx.
+The new sensor data is captured in the **OrientationChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
 
 ```csharp
 _simpleorientation.OrientationChanged += new TypedEventHandler<SimpleOrientationSensor, 
 SimpleOrientationSensorOrientationChangedEventArgs>(OrientationChanged);
 ```
 
-Xxxxx xxx xxxxxx xxx xxxxxxx xx x XxxxXxxxx xxxxx xx xxx xxxxxxx'x XXXX.
+These new values are written to a TextBlock found in the project's XAML.
 
 ```csharp
 <TextBlock HorizontalAlignment="Left" Height="24" Margin="8,8,0,0" TextWrapping="Wrap" Text="Current Orientation:" VerticalAlignment="Top" Width="101" Foreground="#FFF8F7F7"/>
  <TextBlock x:Name="txtOrientation" HorizontalAlignment="Left" Height="24" Margin="118,8,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="175" Foreground="#FFFEFAFA"/>
 ```
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [XxxxxxxxxxxXxxxxx Xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241382)
-* [XxxxxxXxxxxxxxxxx Xxxxxx Xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241383)
+* [OrientationSensor Sample](http://go.microsoft.com/fwlink/p/?linkid=241382)
+* [SimpleOrientation Sensor Sample](http://go.microsoft.com/fwlink/p/?linkid=241383)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

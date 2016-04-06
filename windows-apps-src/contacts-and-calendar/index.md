@@ -1,33 +1,39 @@
 ---
-xxxxxxxxxxx: Xxx xx xxx xxxxxxxx xxx xxxxxxxx xxxx xx xxxx XXX xxx.
-xxxxx: Xxxxxxxx xxx xxxxxxxx
-xx.xxxxxxx: xYxYYxxY-YYYY-YxxY-YYYY-YxxxYYxYYYYx
+description: UWP アプリで連絡先とカレンダーの情報を使う方法。
+title: 連絡先とカレンダー
+ms.assetid: b7e53ab5-2828-4fb7-8656-2bec70b3467f
 ---
 
-# Xxxxxxxx xxx xxxxxxxx
+# 連絡先とカレンダー
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxx xxx xxx xxxx xxxxx xxxxxx xxxxx xxxxxxxx xxx xxxxxxxxxxxx xx xxxx xxx xxxxx xxxxxxx, xxxxx, xxxxxxxx xxxx, xx xxxxxxxx xxxx xxxx xxxxx, xx xxxxxxxx xxxxxxxxxxxxx xxx xxxxxx.
+ユーザーどうしがコンテンツ、メール、カレンダー情報、メッセージを共有したり、提供された機能を活用したりできるように、連絡先と予定へのアクセスを有効にします。
 
-Xx xxx x xxx xxxxxxxxx xxxx xx xxxxx xxxx xxx xxx xxxxxx xxxxxxxx xxx xxxxxxxxxxxx, xxx xxxxx xxxxxx:
+アプリで連絡先と予定にアクセスする方法については、次のトピックをご覧ください。
 
-| Xxxxx | Xxxxxxxxxxx |
+| トピック | 説明 |
 |-------|-------------|
-| [Xxxxxx xxxxxxxx](selecting-contacts.md) | Xxxxxxx xxx [<strong>Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxx</strong>](https://msdn.microsoft.com/library/windows/apps/BR225002) xxxxxxxxx, xxx xxxx xxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxx. Xxxx, xx'xx xxxx xxx xxx xx xxxxxx x xxxxxx xxxxxxx xx xxxxxxxx xxxxxxxx, xxx xx'xx xxxx xxx xxx xx xxxxxxxxx xxx xxxxxxx xxxxxx xx xxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxx xxxx xxxx xxx xxxxx. | 
-| [Xxxx xxxxx](sending-email.md) | Xxxxx xxx xx xxxxxx xxx xxxxxxx xxxxx xxxxxx xx xxxxx xxx xxxx xx xxxx xx xxxxx xxxxxxx. Xxx xxx xxx-xxxxxxxx xxx xxxxxx xx xxx xxxxx xxxx xxxx xxxxxx xxxxxxx xxx xxxxxx. Xxx xxxxxxx xxxx xxx xx xxxx xxxxx xxx xxxx xxxx xxx xxxx xxxxxx. |
-| [Xxxx xx XXX xxxxxxx](sending-an-sms-message.md) | Xxxx xxxxx xxxxx xxx xxx xx xxxxxx xxx xxxxxxx XXX xxxxxx xx xxxxx xxx xxxx xx xxxx xx XXX xxxxxxx. Xxx xxx xxx-xxxxxxxx xxx xxxxxx xx xxx XXX xxxx xxxx xxxxxx xxxxxxx xxx xxxxxx. Xxx xxxxxxx xxxx xxx xx xxxx xxxxx xxx xxxx xxxx xxx xxxx xxxxxx. |
-| [Xxxxxx xxxxxxxxxxxx](managing-appointments.md) | Xxxxxxx xxx [<strong>Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxxxx</strong>](https://msdn.microsoft.com/library/windows/apps/Dn263359) xxxxxxxxx, xxx xxx xxxxxx xxx xxxxxx xxxxxxxxxxxx xx x xxxx'x xxxxxxxx xxx. Xxxx, xx'xx xxxx xxx xxx xx xxxxxx xx xxxxxxxxxxx, xxx xx xx x xxxxxxxx xxx, xxxxxxx xx xx xxx xxxxxxxx xxx, xxx xxxxxx xx xxxx xxx xxxxxxxx xxx. Xx'xx xxxx xxxx xxx xx xxxxxxx x xxxx xxxx xxx x xxxxxxxx xxx xxx xxxxxx xx xxxxxxxxxxx-xxxxxxxxxx xxxxxx. |
+| [連絡先の選択](selecting-contacts.md) | [
+            <strong>Windows.ApplicationModel.Contacts</strong>](https://msdn.microsoft.com/library/windows/apps/BR225002) 名前空間では、複数の方法で連絡先を選ぶことができます。 ここでは、1 つまたは複数の連絡先を選ぶ方法について説明します。また、アプリで必要な連絡先情報だけを取得するように連絡先ピッカーを構成する方法についても説明します。 | 
+| [メールの送信](sending-email.md) | メールの作成ダイアログを起動して、ユーザーがメール メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、メールの各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。 |
+| [SMS メッセージの送信](sending-an-sms-message.md) | このトピックでは、SMS の作成ダイアログを起動して、ユーザーが SMS メッセージを送信できるようにする方法について説明します。 ダイアログを表示する前に、SMS の各フィールドにデータを設定することができます。 メッセージは、ユーザーが送信ボタンをタップするまで送信されません。 |
+| [予定の管理](managing-appointments.md) | [
+            <strong>Windows.ApplicationModel.Appointments</strong>](https://msdn.microsoft.com/library/windows/apps/Dn263359) 名前空間を使うと、ユーザーのカレンダー アプリで予定の作成と管理を行うことができます。 ここでは、予定を作成してカレンダー アプリに追加し、カレンダー アプリで置換して、カレンダー アプリから削除する方法を示します。 また、カレンダー アプリの一定の期間を表示し、予定の繰り返しオブジェクトを作る方法も示します。 |
 
  
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxxxxxxxx XXX xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=309836)
-* [Xxxxxxx xxxxxxx XXX xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=310079)
-* [Xxxxxxx Xxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231575)
-* [Xxxxxxxx Xxxxxxx Xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=320151)
+* [予定 API のサンプル](http://go.microsoft.com/fwlink/p/?linkid=309836)
+* [連絡先マネージャー API のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=310079)
+* [連絡先ピッカー アプリのサンプル](http://go.microsoft.com/fwlink/p/?linkid=231575)
+* [連絡先に関連する操作の処理のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=320151)
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

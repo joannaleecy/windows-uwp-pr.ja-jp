@@ -1,28 +1,32 @@
 ---
-xx.xxxxxxx: XYYYYXXY-XXXY-YYYY-XYYY-YYYYXYYXYYYY
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xxx xx xxxxx xxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx, xxxxxxxxx xxx xx xxx xxx Xxxxx xxxxxxxx, xxxx xxx xxxxx, xxx xxxx xxx xxxx.
-xxxxx: Xxx-xx-xxx xxxxxxxxxxxxx
+ms.assetid: E0728EB0-DFC3-4203-A367-8997B16E2328
+description: ここでは、共有コントラクトの使用、コピーと貼り付け、ドラッグ アンド ドロップなど、ユニバーサル Windows プラットフォーム (UWP) アプリ間でデータを共有する方法について説明します。
+title: アプリ間通信
 ---
 
-# Xxx-xx-xxx xxxxxxxxxxxxx
+# アプリ間通信
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxx xxxxxxx xxxxxxxx xxx xx xxxxx xxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx, xxxxxxxxx xxx xx xxx xxx Xxxxx xxxxxxxx, xxxx xxx xxxxx, xxx xxxx xxx xxxx.
+ここでは、共有コントラクトの使用、コピーと貼り付け、ドラッグ アンド ドロップなど、ユニバーサル Windows プラットフォーム (UWP) アプリ間でデータを共有する方法について説明します。
 
-Xxx Xxxxx xxxxxxxx xx xxx xxx xxxxx xxx xxxxxxx xxxxxxxx xxxx xxxxxxx xxxx. Xxx xxxxxxx, x xxxx xxxxx xxxx xx xxxxx x xxxxxxx xxxx xxxxx xxxxxxx xxxxx x xxxxxx xxxxxxxxxx xxx, xx xxxx x xxxx xx x xxxxx xxx xx xxxxx xx xxxxx. Xxxxxxxx xxxxx x Xxxxx xxxxxxxx xx xxxx xxx xxxxxxxx xxxxxxx xx xxxxxxxxx xxxx x xxxx xxx xxxxxxx xxxxxxxx xxxxx xx xxx xxxxxxx xx xxxxxxx xxx.
+共有コントラクトを使うと、データをアプリ間ですばやく交換できます。 たとえば、ユーザーがソーシャル ネットワーキング アプリを使って友人と Web ページを共有する場合や、後で参照するためにリンクをメモ帳アプリで保存する場合があります。 別のアプリのコンテキストですばやくコンテンツを受け取ることができるようなシナリオを実現するには、共有コントラクトの利用を検討してください。
 
-Xx xxx xxx xxxxxxx xxx Xxxxx xxxxxxx xx xxx xxxx. Xxxxx, xx xxx xx x xxxxxx xxx xxxx xxxxxxxx xxxxxxx xxxx xxx xxxx xxxxx xx xxxxx. Xxxxxx, xxx xxx xxx xx x xxxxxx xxx xxxx xxx xxxx xxxxxxx xx xxx xxxxxxxxxxx xxx xxxxxx xxxxxxx. Xx xxx xxx xxxx xx xxxx x xxxxxx xxx xxx x xxxxxx xxx. Xx xxx xxxx xxxx xxx xx xxxxx xxxxxxx xx x xxxxxx xxx, xxx xxxx xx xxxxxx xxxx xxxx xxxxxxx xxxx xxx xxx xxxxxxx.
+アプリで共有機能をサポートする方法は 2 種類あります。 共有するコンテンツを提供する側のソース アプリにする方法と、 共有コンテンツを受け取る側のターゲット アプリにする方法です (アプリはソース アプリにすることもターゲット アプリにすることもできます)。 アプリをソース アプリにしてコンテンツを共有する場合は、アプリで提供できるデータ形式を決定する必要があります。
 
-Xx xxxxxxxx xx xxx Xxxxx xxxxxxxx, xxxx xxx xxxx xxxxxxxxx xxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxx xxxx, xxxx xx xxxxxxxx xxx xxxxxxxx xx xxxx xxx xxxxxxx. Xx xxxxxxxx xx xxxxxxxxxxxxx xxxxxxx XXX xxxx, xxxxx xxxxxxx xxxx xxxxxxx xxxxxxx xx xxx xxxx xxxxxxx xxxxxxxxxxxx.
+共有コントラクトに加えて、アプリは、ドラッグ アンド ドロップやコピーと貼り付けなど、データを転送するための従来の手法を統合することもできます。 UWP アプリ間の通信だけでなく、こうした手法はデスクトップ アプリケーション間の共有もサポートします。
 
-## Xx xxxx xxxxxxx
+## このセクションの内容
 
-| Xxxxx | Xxxxxxxxxxx |
+| トピック | 説明 |
 |-------|-------------|
-| [Xxxxx xxxx](share-data.md) | Xxxx xxxxxxx xxxxxxxx xxx xx xxxxxxx xxx Xxxxx xxxxxxxx xx x XXX xxx. Xxx Xxxxx xxxxxxxx xx xx xxxx xxx xx xxxxxxx xxxxx xxxx, xxxx xx xxxx, xxxxx, xxxxxx, xxx xxxxxx, xxxxxxx xxxx. Xxx xxxxxxx, x xxxx xxxxx xxxx xx xxxxx x xxxxxxx xxxx xxxxx xxxxxxx xxxxx x xxxxxx xxxxxxxxxx xxx, xx xxxx x xxxx xx x xxxxx xxx xx xxxxx xx xxxxx. |
-| [Xxxxxxx xxxx](receive-data.md) | Xxxx xxxxxxx xxxxxxxx xxx xx xxxxxxx xxxxxxx xx xxxx XXX xxx xxxxxx xxxx xxxxxxx xxx xxxxx Xxxxx xxxxxxxx. Xxxx Xxxxx xxxxxxxx xxxxxx xxxx xxx xx xx xxxxxxxxx xx xx xxxxxx xxxx xxx xxxx xxxxxxx Xxxxx. |
-| [Xxxx xxx xxxxx](copy-and-paste.md) | Xxxx xxxxxxx xxxxxxxx xxx xx xxxxxxx xxxx xxx xxxxx xx XXX xxxx xxxxx xxx xxxxxxxxx. Xxxx xxx xxxxx xx xxx xxxxxxx xxx xx xxxxxxxx xxxx xxxxxx xxxxxxx xxxx, xx xxxxxx xx xxx, xxx xxxxxx xxxxx xxx xxx xxxxxxx xxxxxxxxx xxxxxxxxxx xx xxxx xxxxxx. |
-| [Xxxx xxx xxxx](drag-and-drop.md) | Xxxx xxxxxxx xxxxxxxx xxx xx xxx xxxxxxxx xxx xxxxxxxx xx xxxx XXX xxx. Xxxx xxx xxxx xx x xxxxxxx, xxxxxxx xxx xx xxxxxxxxxxx xxxx xxxxxxx xxxx xx xxxxxx xxx xxxxx. Xxxx xxxxxxxxxxx, xxxx xxx xxxx xxxxx xxxxxxxxxx xx xxx xxxxxxxxxx, xxxxxxxxx xxx-xx-xxx, xxx-xx-xxxxxxx, xxx xxxxxxx-xx xxx. |
+| [データの共有](share-data.md) | この記事では、UWP アプリで共有コントラクトをサポートする方法について説明します。 共有コントラクトは、テキスト、リンク、写真、ビデオなどのデータをアプリ間ですばやく共有するための簡単な方法です。 たとえば、ユーザーがソーシャル ネットワーキング アプリを使って友人と Web ページを共有する場合や、後で参照するためにリンクをメモ帳アプリで保存する場合があります。 |
+| [データの受信](receive-data.md) | この記事では、UWP アプリで、共有コントラクトを使って別のアプリから共有されたコンテンツを受け取る方法について説明します。 共有コントラクトを使うと、ユーザーが共有機能を呼び出したときに、アプリをオプションとして提示できます。 |
+| [コピーと貼り付け](copy-and-paste.md) | この記事では、UWP アプリで、クリップボードを使ってコピーと貼り付けをサポートする方法について説明します。 コピーと貼り付けはアプリ間やアプリ内でデータを交換するための従来の方法であり、クリップボード操作はほとんどすべてのアプリである程度サポートできます。 |
+| [ドラッグ アンド ドロップ](drag-and-drop.md) | この記事では、UWP アプリにドラッグ アンド ドロップを追加する方法について説明します。 ドラッグ アンド ドロップは、画像やファイルなどのコンテンツを操作するための従来からある自然な方法です。 ドラッグ アンド ドロップを実装すると、アプリ間、アプリからデスクトップ、デスクトップからアプリなど、すべての方向でシームレスに機能します。 |
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

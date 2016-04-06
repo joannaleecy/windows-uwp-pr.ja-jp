@@ -1,45 +1,37 @@
 ---
-xxxxxxxxxxx: Xxxxxxxx xxxxxxxx xxxxxxx
-xxxxx: Xxxxxxxx xxxxxxxx xxxxxxx
-xx.xxxxxxx: XXXYYYXY-XXYY-YYYX-YYYY-XXYYYXXYYYYY
+description: Template settings classes
+title: Template settings classes
+ms.assetid: CAE933C6-EF13-465A-9831-AB003AF23907
 ---
 
-# Xxxxxxxx xxxxxxxx xxxxxxx
+# Template settings classes
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-## Xxxxxxxxxxxxx
+## Prerequisites
 
-Xx xxxxxx xxxx xxx xxx xxx xxxxxxxx xx xxxx XX, xxx xxxxx xxxxxxxxxx, xxx xxxxxx xxxxx xxxxxxxx. Xxx xxxxxxxxxxxx xxx xxxxxx xxxxxxxx xx xxxx xxx, xxx [Xxx xxxxxxxx xxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/mt228345). Xx xxxx xxxxxx xxxx xxx xxxx xxx xxxxxx xx xxx xx xxxxxx x xxxxxx xxxxxxxx xxx x xxxxxxx xx xxxxxx x xxxx xx xxx xxxxxxx xxxxxxxx xxx xxxxxxx xx. Xxx xxxx xxxx xx xxxx, xxx [Xxxxxxxxxx: Xxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
+We assume that you can add controls to your UI, set their properties, and attach event handlers. For instructions for adding controls to your app, see [Add controls and handle events](https://msdn.microsoft.com/library/windows/apps/mt228345). We also assume that you know the basics of how to define a custom template for a control by making a copy of the default template and editing it. For more info on this, see [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374).
 
-## Xxx xxxxxxxx xxx **XxxxxxxxXxxxxxxx** xxxxxxx
+## The scenario for **TemplateSettings** classes
 
-**XxxxxxxxXxxxxxxx** xxxxxxx xxxxxxx x xxx xx xxxxxxxxxx xxxx xxx xxxx xxxx xxx xxxxxx x xxx xxxxxxx xxxxxxxx xxx x xxxxxxx. Xxx xxxxxxxxxx xxxx xxxxxx xxxx xx xxxxx xxxxxxxxxxxx xxx xxx xxxx xx xxxxxxx XX xxxxxxx xxxxx. Xxx xxxxxx xxx xxxxxxxxx xxxxxxxxxx xxxxxx xxxx xxxx xxxx xxxxxxx xxxxx xxxx xxx'x xxxxxxxxx xxxx xx xxxxxxxx xx xxxx xxxxxx. Xxxx xx xxx xxxxxxxxxx xxx xxxxxxxx xx **Xxxx** xxx **Xx** xxxxxx xxxx xxxxxxx xxxxxxxxxxx xxx xxxxxxxxxx xx xxxxx, xxx xxxx xxx xxxxxxxx **XxxxxxxxXxxxxxxx** xxxxxxxxxx xxxx xx xxxxx.
+**TemplateSettings** classes provide a set of properties that are used when you define a new control template for a control. The properties have values such as pixel measurements for the size of certain UI element parts. The values are sometimes calculated values that come from control logic that isn't typically easy to override or even access. Some of the properties are intended as **From** and **To** values that control transitions and animations of parts, and thus the relevant **TemplateSettings** properties come in pairs.
 
-Xxxxx xxx xxxxxxx **XxxxxxxxXxxxxxxx** xxxxxxx. Xxx xx xxxx xxx xx xxx [**Xxxxxxx.XX.Xxxx.Xxxxxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209818) xxxxxxxxx. Xxxx'x x xxxx xx xxx xxxxxxx, xxx x xxxx xx xxx **XxxxxxxxXxxxxxxx** xxxxxxxx xx xxx xxxxxxxx xxxxxxx. Xxxx **XxxxxxxxXxxxxxxx** xxxxxxxx xx xxx xxx xxxxxx xxx **XxxxxxxxXxxxxxxx** xxxxxx xxx xxx xxxxxxx, xxx xxx xxxxxxxxx xxxxxxxx xxxxxxxx xx xxx xxxxxxxxxx:
+There are several **TemplateSettings** classes. All of them are in the [**Windows.UI.Xaml.Controls.Primitives**](https://msdn.microsoft.com/library/windows/apps/br209818) namespace. Here's a list of the classes, and a link to the **TemplateSettings** property of the relevant control. This **TemplateSettings** property is how you access the **TemplateSettings** values for the control, and can establish template bindings to its properties:
 
--   [
-            **XxxxxXxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227752): xxxxx xx [**XxxxxXxx.XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209364)
--   [
-            **XxxxXxxxXxxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh738499): xxxxx xx [**XxxxXxxxXxxx.XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh738503)
--   [
-            **XxxxXxxxXxxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701948): xxxxx xx [**XxxxXxxxXxxx.XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242923)
--   [
-            **XxxxxxxxXxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227856): xxxxx xx [**XxxxxxxxXxx.XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227537)
--   [
-            **XxxxxxxxXxxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702248): xxxxx xx [**XxxxxxxxXxxx.XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702581)
--   [
-            **XxxxxxxxXxxxxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298721): xxxxx xx [**XxxxxxxxXxxxxx.XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252826)
--   [
-            **XxxxxxXxxxxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209804): xxxxx xx [**XxxxxxXxxxxx.XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209731)
--   [
-            **XxxxXxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209813): xxxxx xx [**XxxxXxx.XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227629)
+-   [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752): value of [**ComboBox.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209364)
+-   [**GridViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738499): value of [**GridViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh738503)
+-   [**ListViewItemTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh701948): value of [**ListViewItem.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br242923)
+-   [**ProgressBarTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227856): value of [**ProgressBar.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227537)
+-   [**ProgressRingTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702248): value of [**ProgressRing.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/hh702581)
+-   [**SettingsFlyoutTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn298721): value of [**SettingsFlyout.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/dn252826)
+-   [**ToggleSwitchTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209804): value of [**ToggleSwitch.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209731)
+-   [**ToolTipTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br209813): value of [**ToolTip.TemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227629)
 
-**XxxxxxxxXxxxxxxx** xxxxxxxxxx xxx xxxxxx xxxxxxxx xx xx xxxx xx XXXX, xxx xxxx. Xxxx xxx xxxx-xxxx xxx-xxxxxxxxxx xx x xxxx-xxxx **XxxxxxxxXxxxxxxx** xxxxxxxx xx x xxxxxx xxxxxxx. Xxx xx xxxxxxxx xxxxxx xxxxxxx xxxxxxxx, xxxxx xxx'xx xxxxxxxx x xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209390)-xxxxx xxxxx xxx xxxx xxx xxxxxxxxx xxx xxxxxxx xxxxx, xxxxxxxx xxxxxxxx x xxxxxx **XxxxxxxxXxxxxxxx** xxxxxxxx xx xxx xxxxxxx xx xxxxx xx xxxxxxxxxxx xxxx xxxx xxxxx xx xxxxxx xxx xxxxxx xxxx xx xx-xxxxxxxxxx xxx xxxxxxx. Xx xxxx xxxxxxxx'x xxxx-xxxx xxxxx, xxxxxx x xxx **XxxxxxxxXxxxxxxx** xxxxx xxxxxxx xx xxxx xxxxxxx xxxx xxx xxxx-xxxx xxxxxxxxxx xxx xxxx xx xxx xxxx xxxxx xxxx xxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxxx, xxxxxxxxx xxxxxxxxxxx, xxx xx xx, xxx xxxx xxxxxxx xxx xxxxxxx xxxxxxxx xx xxxx xxxxx xxxx'x xxxxxxxxxxx xxxxx xxxx xxxxxxx xxxxx. **XxxxxxxxXxxxxxxx** xxxxxxx xxx xxxxxxx xxxx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242356), xx xxxx xxx xxxxxxxxxx xxx xxx xxx xxxxxxxxxx xxxxxxxx xxxxxx xxx xxxxxxxx-xxxxxxx xxxxxxxxx. Xxx xxx xxxxxxxxxx xxxxxxxx xxxxxxxxxxx xxx xxx xxxxxxxxxx xxxx'x xxxxxxx xx xxxxxx XXX, xxxxxxx xxx **XxxxxxxxXxxxxxxx** xxxxxxxxxx xxx xxxxx xx xx xxxx-xxxx xx xxxxxxx.
+**TemplateSettings** properties are always intended to be used in XAML, not code. They are read-only sub-properties of a read-only **TemplateSettings** property of a parent control. For an advanced custom control scenario, where you're creating a new [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390)-based class and thus can influence the control logic, consider defining a custom **TemplateSettings** property on the control in order to communicate info that might be useful for anyone that is re-templating the control. As that property's read-only value, define a new **TemplateSettings** class related to your control that has read-only properties for each of the info items that are relevant for template measurements, animation positioning, and so on, and give callers the runtime instance of that class that's initialized using your control logic. **TemplateSettings** classes are derived from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), so that the properties can use the dependency property system for property-changed callbacks. But the dependency property identifiers for the properties aren't exposed as public API, because the **TemplateSettings** properties are meant to be read-only to callers.
 
-## Xxx xx xxx **XxxxxxxxXxxxxxxx** xx x xxxxxxx xxxxxxxx
+## How to use **TemplateSettings** in a control template
 
-Xxxx'x xx xxxxxxx xxxx xxxxx xxxx xxx xxxxxxxx xxxxxxx XXXX xxxxxxx xxxxxxxxx. Xxxx xxxxxxxxxx xxx xx xxxx xxx xxxxxxx xxxxxxxx xx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227538):
+Here's an example that comes from the starting default XAML control templates. This particular one is from the default template of [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538):
 
 ```xaml
 <Ellipse
@@ -54,7 +46,7 @@ Xxxx'x xx xxxxxxx xxxx xxxxx xxxx xxx xxxxxxxx xxxxxxx XXXX xxxxxxx xxxxxxxxx. X
     Fill="{TemplateBinding Foreground}"/>
 ```
 
-Xxx xxxx XXXX xxx xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227538) xxxxxxxx xx xxxxxxxx xx xxxxx, xx xxxx xx xxxx x xxxx xxxxxxx. Xxxx XXXX xxxxxxx x xxxxxxx xxxx xxxx xx xxx xx Y [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243343) xxxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxxx xxx xxxxxxxxxxxxx xxxxxxxx. Xx x xxxxxxxxx, xxx xxxxx xxx xxxx xxx xxxxxxx xxx xxxxx xxx x xxxxxxxxx xxxxxxxx xxxxxxxxx xx x xxxxxxxxx xxxxx xxxxx xxx xxx xxx xxxxxxxxx xxxxxxxxxx. Xxx xxxxxxx, xxx xxxxx xxxxxxx x **XxxxxxxxXxxx** xxxx xxxx x xxx xx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243371) xxxxxxxx xxxxxxxx xx x xxxxxx xxxxxxx. Xx xx, xxxx xxxxxxxxxx **Xxxxxxxxx** xxxxxxxxx xx xxxx xxx xxxxxxxx xxxxx xxxx xxxx xxxx:
+The full XAML for the [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) template is hundreds of lines, so this is just a tiny excerpt. This XAML defines a control part that is one of 6 [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) elements that portray the spinning animation for indeterminate progress. As a developer, you might not like the circles and might use a different graphics primitive or a different basic shape for how the animation progresses. For example, you might compose a **ProgressRing** that uses a set of [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) elements arranged in a square instead. If so, each individual **Rectangle** component of your new template might look like this:
 
 ```xaml
 <Rectangle
@@ -68,9 +60,9 @@ Xxx xxxx XXXX xxx xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/wind
     Fill="{TemplateBinding Foreground}"/>
 ```
 
-Xxx xxxxxx xxxx xxx **XxxxxxxxXxxxxxxx** xxxxxxxxxx xxx xxxxxx xxxx xx xxxxxxx xxxx xxx xxxxxxxxxx xxxxxx xxxxxx xxxx xxx xxxxx xxxxxxx xxxxx xx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227538). Xxx xxxxxxxxxxx xx xxxxxxxx xx xxx xxxxxxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208709) xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208707) xx xxx **XxxxxxxxXxxx**, xxx xxxxxxxxx x xxxxxxxxxx xxxxxxxxxxx xxx xxxx xx xxx xxxxxx xxxxxxxx xx xxx xxxxxxxxx xx xxxx xxx xxxxxxxx xxxxx xxx xxxx xx xxxxxxx.
+The reason that the **TemplateSettings** properties are useful here is because they are calculated values coming from the basic control logic of [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538). The calculation is dividing up the overall [**ActualWidth**](https://msdn.microsoft.com/library/windows/apps/br208709) and [**ActualHeight**](https://msdn.microsoft.com/library/windows/apps/br208707) of the **ProgressRing**, and allotting a calculated measurement for each of the motion elements in its templates so that the template parts can size to content.
 
-Xxxx'x xxxxxxx xxxxxxx xxxxx xxxx xxx xxxxxxx XXXX xxxxxxx xxxxxxxxx, xxxx xxxx xxxxxxx xxx xx xxx xxxxxxxx xxxx xxxx xxx xxx **Xxxx** xxx **Xx** xx xx xxxxxxxxx. Xxxx xx xxxx xxx [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209348) xxxxxxx xxxxxxxx:
+Here's another example usage from the default XAML control templates, this time showing one of the property sets that are the **From** and **To** of an animation. This is from the [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348) default template:
 
 ```xaml
 <VisualStateGroup x:Name="DropDownStates">
@@ -93,13 +85,17 @@ Xxxx'x xxxxxxx xxxxxxx xxxxx xxxx xxx xxxxxxx XXXX xxxxxxx xxxxxxxxx, xxxx xxxx 
 </VisualStateGroup>
 ```
 
-Xxxxx xxxxx xx xxxx xx XXXX xx xxx xxxxxxxx xx xx xxxx xxxx xx xxxxxxx. Xxx xxxx xx xxxx xxx xx xxxxxxx xxxxxx xxx xxxxx xxxxxxxxxx xxxx xxxx xxx xxx xxxx [**XxxxxXxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227752) xxxxxxxxxx. Xxx [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209348), xxx xx xxx **XxxxxXxxXxxxxxxxXxxxxxxx** xxxxxx xxxxxxx xxxxxxxx xxxxxxxx xxxx xxxxxxx xxxxxxxxxx xx xxx xxxxxxxx xxxx xxxx xxx xxxxx xx xxxxxxxxx xxxx xxx xxxxx xx xxxxxx xxxxxx, xxx xxxx xxxxxxxxxx xxxxxxxx.
+Again there is lots of XAML in the template so we only show an excerpt. And this is only one of several states and theme animations that each use the same [**ComboBoxTemplateSettings**](https://msdn.microsoft.com/library/windows/apps/br227752) properties. For [**ComboBox**](https://msdn.microsoft.com/library/windows/apps/br209348), use of the **ComboBoxTemplateSettings** values through bindings enforces that related animations in the template will stop and start at positions that are based on shared values, and thus transition smoothly.
 
-**Xxxx**  
-Xxxx xxx xx xxx **XxxxxxxxXxxxxxxx** xxxxxx xx xxxx xx xxxx xxxxxxx xxxxxxxx, xxxx xxxx xxx'xx xxxxxxx xxxxxxxxxx xxxx xxxxx xxx xxxx xx xxx xxxxx. Xx xxx, xxx xxxxx xxxx xx xxxxxx x xxxxx xxxxxxxxx xxx xxx xxxxxxx xx xxxx xxx xxxxxx xxxx xx xxx xxxxxxx xxx xx xxxxxxxxx xxxx x xxxxxxxxx xxxxxx xxxx xx xxx **XxxxxxxxXxxxxxxx** xxxxx. Xxx xxxx xxxx, xxx [**XXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209903).
+**Note**  
+When you do use **TemplateSettings** values as part of your control template, make sure you're setting properties that match the type of the value. If not, you might need to create a value converter for the binding so that the target type of the binding can be converted from a different source type of the **TemplateSettings** value. For more info, see [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903).
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxxxxx: Xxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+* [Quickstart: Control templates](https://msdn.microsoft.com/library/windows/apps/xaml/hh465374)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

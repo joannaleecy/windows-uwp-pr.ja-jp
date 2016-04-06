@@ -1,96 +1,100 @@
 ---
-xx.xxxxxxx: YXXXXYXY-XYXX-YYYY-YYYX-YYYYXYYYXYXX
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxx xxx xxx xx xxxxxxx x xxxxxxxx xxxxx xxxxxxxx, xxxxx xxxxxx xxx xx xxxxxxx xxxxxxxx xxxxxx xx xxxxxx xx xxxxx xxxxxxxxxx xxx xxxxxxxxx xxxx xxxxx xx xxx xxxxxxxxx xxxxx, xxxxx, XXX, xxxxxxxx, xxx xxxxxxxx xxxxxxxxxxxx xxxxxxxx.
-xxxxx: Xxxxxxxx xxxxx xxxxxxxx
+ms.assetid: 7DBEE5E2-C3EC-4305-823D-9095C761A1CD
+description: This article shows you how to capture a variable photo sequence, which allows you to capture multiple frames of images in rapid succession and configure each frame to use different focus, flash, ISO, exposure, and exposure compensation settings.
+title: Variable photo sequence
 ---
 
-# Xxxxxxxx xxxxx xxxxxxxx
+# Variable photo sequence
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxxxx xxxxx xxx xxx xx xxxxxxx x xxxxxxxx xxxxx xxxxxxxx, xxxxx xxxxxx xxx xx xxxxxxx xxxxxxxx xxxxxx xx xxxxxx xx xxxxx xxxxxxxxxx xxx xxxxxxxxx xxxx xxxxx xx xxx xxxxxxxxx xxxxx, xxxxx, XXX, xxxxxxxx, xxx xxxxxxxx xxxxxxxxxxxx xxxxxxxx. Xxxx xxxxxxx xxxxxxx xxxxxxxxx xxxx xxxxxxxx Xxxx Xxxxxxx Xxxxx (XXX) xxxxxx.
+This article shows you how to capture a variable photo sequence, which allows you to capture multiple frames of images in rapid succession and configure each frame to use different focus, flash, ISO, exposure, and exposure compensation settings. This feature enables scenarios like creating High Dynamic Range (HDR) images.
 
-Xx xxx xxxx xx xxxxxxx XXX xxxxxx xxx xxx'x xxxx xx xxxxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxxx, xxx xxx xxx xxx [**XxxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/mt181386) XXX xx xxx xxx XXX xxxxxxxxxxxx xxxxx-xx xx Xxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxx Xxxxxxx Xxxxx (XXX) xxxxx xxxxxxx](high-dynamic-range-hdr-photo-capture.md).
+If you want to capture HDR images but don't want to implement your own processing algorithm, you can use the [**AdvancedPhotoCapture**](https://msdn.microsoft.com/library/windows/apps/mt181386) API to use the HDR capabilities built-in to Windows. For more information, see [High Dynamic Range (HDR) photo capture](high-dynamic-range-hdr-photo-capture.md).
 
-**Xxxx**  
-Xxxx xxxxxxx xxxxxx xx xxxxxxxx xxx xxxx xxxxxxxxx xx [Xxxxxxx Xxxxxx xxx Xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md), xxxxx xxxxxxxxx xxx xxxxx xxx xxxxxxxxxxxx xxxxx xxxxx xxx xxxxx xxxxxxx. Xx xx xxxxxxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxx xxxx xxx xxxxx xxxxx xxxxxxx xxxxxxx xx xxxx xxxxxxx xxxxxx xxxxxx xx xx xxxx xxxxxxxx xxxxxxx xxxxxxxxx. Xxx xxxx xx xxxx xxxxxxx xxxxxxx xxxx xxxx xxx xxxxxxx xxx xx xxxxxxxx xx XxxxxXxxxxxx xxxx xxx xxxx xxxxxxxx xxxxxxxxxxx.
+**Note**  
+This article builds on concepts and code discussed in [Capture Photos and Video with MediaCapture](capture-photos-and-video-with-mediacapture.md), which describes the steps for implementing basic photo and video capture. It is recommended that you familiarize yourself with the basic media capture pattern in that article before moving on to more advanced capture scenarios. The code in this article assumes that your app already has an instance of MediaCapture that has been properly initialized.
 
-## Xxx xx xxxx xxx xx xxx xxxxxxxx xxxxx xxxxxxxx xxxxxxx
+## Set up your app to use variable photo sequence capture
 
-Xx xxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx xxx xxxxx xxxxx xxxxxxx, xxxxxxxxxxxx x xxxxxxxx xxxxx xxxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxx.
+In addition to the namespaces required for basic media capture, implementing a variable photo sequence capture requires the following namespaces.
 
-[!xxxx-xx[XXXXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSUsing)]
+[!code-cs[VPSUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSUsing)]
 
-Xxxxxxx x xxxxxx xxxxxxxx xx xxxxx xxx [**XxxxxxxxXxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652564) xxxxxx, xxxxx xx xxxx xx xxxxxxxx xxx xxxxx xxxxxxxx xxxxxxx. Xxxxxxx xx xxxxx xx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887358) xxxxxxx xx xxxxx xxxx xxxxxxxx xxxxx xx xxx xxxxxxxx. Xxxx, xxxxxxx xx xxxxx xx xxxxx xxx [**XxxxxxxxXxxxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn608020) xxxxxx xxx xxxx xxxxx. Xxxx xxx xx xxxx xx xxxx xxxxx xxxxxxxxxx xxxxxxxxx xx xxxxxxxxx xxxx xxxxxxxx xxxx xxxx xx xxxxxxx xxxx xxxxx. Xxxxxxx, xxxxxxx xx xxxxx xxxx xxxx xx xxxx xx xxxxx xxxxx xxxxx xx xxx xxxxxxxx xx xxxxxxxxx xxxxx xxxxxxxx.
+Declare a member variable to store the [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) object, which is used to initiate the photo sequence capture. Declare an array of [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) objects to store each captured image in the sequence. Also, declare an array to store the [**CapturedFrameControlValues**](https://msdn.microsoft.com/library/windows/apps/dn608020) object for each frame. This can be used by your image processing algorithm to determine what settings were used to capture each frame. Finally, declare an index that will be used to track which image in the sequence is currently being captured.
 
-[!xxxx-xx[XXXXxxxxxXxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSMemberVariables)]
+[!code-cs[VPSMemberVariables](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVPSMemberVariables)]
 
-## Xxxxxxx xxx xxxxxxxx xxxxx xxxxxxxx xxxxxxx
+## Prepare the variable photo sequence capture
 
-Xxxxx xxx xxxx xxxxxxxxxxx xxxx [XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md), xxxx xxxx xxxx xxxxxxxx xxxxx xxxxxxxxx xxx xxxxxxxxx xx xxx xxxxxxx xxxxxx xx xxxxxxx xx xxxxxxxx xx xxx [**XxxxxxxxXxxxxXxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn640573) xxxx xxx xxxxx xxxxxxx'x [**XxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226825) xxx xxxxxxxx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn640580) xxxxxxxx.
+After you have initialized your [MediaCapture](capture-photos-and-video-with-mediacapture.md), make sure that variable photo sequences are supported on the current device by getting an instance of the [**VariablePhotoSequenceController**](https://msdn.microsoft.com/library/windows/apps/dn640573) from the media capture's [**VideoDeviceController**](https://msdn.microsoft.com/library/windows/apps/br226825) and checking the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn640580) property.
 
-[!xxxx-xx[XxXXXXxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsVPSSupported)]
+[!code-cs[IsVPSSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsVPSSupported)]
 
-Xxx x [**XxxxxXxxxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652548) xxxxxx xxxx xxx xxxxxxxx xxxxx xxxxxxxx xxxxxxxxxx. Xxxx xxxxxx xxx x xxxxxxxx xxx xxxxx xxxxxxx xxxx xxx xx xxxxxxxxxx xxx xxxxx xx x xxxxx xxxxxxxx. Xxxxx xxxxxxx:
+Get a [**FrameControlCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652548) object from the variable photo sequence controller. This object has a property for every setting that can be configured per frame of a photo sequence. These include:
 
--   [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652552)
--   [**XxxxxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652560)
--   [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652566)
--   [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652570)
--   [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652574)
--   [**XxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652578)
+-   [**Exposure**](https://msdn.microsoft.com/library/windows/apps/dn652552)
+-   [**ExposureCompensation**](https://msdn.microsoft.com/library/windows/apps/dn652560)
+-   [**Flash**](https://msdn.microsoft.com/library/windows/apps/dn652566)
+-   [**Focus**](https://msdn.microsoft.com/library/windows/apps/dn652570)
+-   [**IsoSpeed**](https://msdn.microsoft.com/library/windows/apps/dn652574)
+-   [**PhotoConfirmation**](https://msdn.microsoft.com/library/windows/apps/dn652578)
 
-Xxxx xxxxxxx xxxx xxx x xxxxxxxxx xxxxxxxx xxxxxxxxxxxx xxxxx xxx xxxx xxxxx. Xx xxxxxx xxxx xxxxxxxx xxxxxxxxxxxx xx xxxxxxxxx xxx xxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxx, xxxxx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn278905) xxxxxxxx xx xxx [**XxxxxXxxxxxxxXxxxxxxxxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652628) xxxxxx xxxxxxxx xxxxxxx xxx **XxxxxxxxXxxxxxxxxxxx** xxxxxxxx.
+This example will set a different exposure compensation value for each frame. To verify that exposure compensation is supported for photo sequences on the current device, check the [**Supported**](https://msdn.microsoft.com/library/windows/apps/dn278905) property of the [**FrameExposureCompensationCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652628) object accessed through the **ExposureCompensation** property.
 
-[!xxxx-xx[XxXxxxxxxxXxxxxxxxxxxxXxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsExposureCompensationSupported)]
+[!code-cs[IsExposureCompensationSupported](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetIsExposureCompensationSupported)]
 
-Xxxxxx x xxx [**XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652582) xxxxxx xxx xxxx xxxxx xxx xxxx xx xxxxxxx. Xxxx xxxxxxx xxxxxxxx xxxxx xxxxxx. Xxx xxx xxxxxx xxx xxx xxxxxxxx xxx xxxx xx xxxx xxx xxxx xxxxx. Xxxx, xxxxx xxx [**XxxxxxxXxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn640574) xxxxxxxxxx xx xxx **XxxxxxxxXxxxxXxxxxxxxXxxxxxxxxx** xxx xxx xxxx xxxxx xxxxxxxxxx xx xxx xxxxxxxxxx.
+Create a new [**FrameController**](https://msdn.microsoft.com/library/windows/apps/dn652582) object for each frame you want to capture. This example captures three frames. Set the values for the controls you want to vary for each frame. Then, clear the [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) collection of the **VariablePhotoSequenceController** and add each frame controller to the collection.
 
-[!xxxx-xx[XxxxXxxxxXxxxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitFrameControllers)]
+[!code-cs[InitFrameControllers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitFrameControllers)]
 
-Xxxxxx xx [**XxxxxXxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700993) xxxxxx xx xxx xxx xxxxxxxx xxx xxxx xx xxx xxx xxx xxxxxxxx xxxxxx. Xxxx xxx xxxxxx xxxxxx [**XxxxxXxxxxxx.XxxxxxxXxxxxxxxXxxxxXxxxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn608097), xxxxxxx xx xxx xxxxxxxx xxxxxxxxxx. Xxxx xxxxxx xxxxxxx x [**XxxxxxxxXxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652564) xxxxxx. Xxxxxxx, xxxxxxxx xxxxx xxxxxxxx xxx xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652573) xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652585) xxxxxx.
+Create an [**ImageEncodingProperties**](https://msdn.microsoft.com/library/windows/apps/hh700993) object to set the encoding you want to use for the captured images. Call the static method [**MediaCapture.PrepareVariablePhotoSequenceCaptureAsync**](https://msdn.microsoft.com/library/windows/apps/dn608097), passing in the encoding properties. This method returns a [**VariablePhotoSequenceCapture**](https://msdn.microsoft.com/library/windows/apps/dn652564) object. Finally, register event handlers for the [**PhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/dn652573) and [**Stopped**](https://msdn.microsoft.com/library/windows/apps/dn652585) events.
 
-[!xxxx-xx[XxxxxxxXXX](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPrepareVPS)]
+[!code-cs[PrepareVPS](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPrepareVPS)]
 
-## Xxxxx xxx xxxxxxxx xxxxx xxxxxxxx xxxxxxx
+## Start the variable photo sequence capture
 
-Xx xxxxx xxx xxxxxxx xx xxx xxxxxxxx xxxxx xxxxxxxx, xxxx [**XxxxxxxxXxxxxXxxxxxxxXxxxxxx.XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652577). Xx xxxx xx xxxxxxxxxx xxx xxxxxx xxx xxxxxxx xxx xxxxxxxx xxxxxx xxx xxxxx xxxxxxx xxxxxx xxx xxx xxx xxxxxxx xxxxx xx Y. Xxx xxxx xxx'x xxxxxxxxx xxxxx xxxxxxxx xxx xxxxxx xxxx XX xx xxxxxxx xxxxxxxx xxxxxxx xxxxxxx xxxxx xxxx xxxxxxx xx xx xxxxxxxx.
+To start the capture of the variable photo sequence, call [**VariablePhotoSequenceCapture.StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn652577). Be sure to initialize the arrays for storing the captured images and frame control values and set the current index to 0. Set your app's recording state variable and update your UI to disable starting another capture while this capture is in progress.
 
-[!xxxx-xx[XxxxxXXXXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartVPSCapture)]
+[!code-cs[StartVPSCapture](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetStartVPSCapture)]
 
-## Xxxxxxx xxx xxxxxxxx xxxxxx
+## Receive the captured frames
 
-Xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652573) xxxxx xx xxxxxx xxx xxxx xxxxxxxx xxxxx. Xxxx xxx xxxxx xxxxxxx xxxxxx xxx xxxxxxxx xxxxx xxx xxx xxxxx xxx xxxx xxxxxxxxx xxx xxxxxxx xxxxx xxxxx. Xxxx xxxxxxx xxxxx xxx xx xxx x [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887358) xxxxxxxxxxxxxx xx xxxx xxxxx. Xxx xxxx xxxxxxxxxxx xx xxxxx **XxxxxxxxXxxxxx**, xxx [Xxxxxxx](imaging.md).
+The [**PhotoCaptured**](https://msdn.microsoft.com/library/windows/apps/dn652573) event is raised for each captured frame. Save the frame control values and captured image for the frame and then increment the current frame index. This example shows how to get a [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) representation of each frame. For more information on using **SoftwareBitmap**, see [Imaging](imaging.md).
 
-[!xxxx-xx[XxXxxxxXxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnPhotoCaptured)]
+[!code-cs[OnPhotoCaptured](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnPhotoCaptured)]
 
-## Xxxxxx xxx xxxxxxxxxx xx xxx xxxxxxxx xxxxx xxxxxxxx xxxxxxx
+## Handle the completion of the variable photo sequence capture
 
-Xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652585) xxxxx xx xxxxxx xxxx xxx xx xxx xxxxxx xx xxx xxxxxxxx xxxx xxxx xxxxxxxx. Xxxxxx xxx xxxxxxxxx xxxxx xx xxxx xxx xxx xxxxxx xxxx XX xx xxxxx xxx xxxx xx xxxxxxxx xxx xxxxxxxx. Xx xxxx xxxxx, xxx xxx xxxx xxx xxxxxxxx xxxxxx xxx xxxxx xxxxxxx xxxxxx xx xxxx xxxxx xxxxxxxxxx xxxx.
+The [**Stopped**](https://msdn.microsoft.com/library/windows/apps/dn652585) event is raised when all of the frames in the sequence have been captured. Update the recording state of your app and update your UI to allow the user to initiate new captures. At this point, you can pass the captured images and frame control values to your image processing code.
 
-[!xxxx-xx[XxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnStopped)]
+[!code-cs[OnStopped](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetOnStopped)]
 
-## Xxxxxx xxxxx xxxxxxxxxxx
+## Update frame controllers
 
-Xx xxx xxxx xx xxxxxxx xxxxxxx xxxxxxxx xxxxx xxxxxxxx xxxxxxx xxxx xxxxxxxxx xxx xxxxx xxxxxxxx, xxx xxx'x xxxx xx xxxxxxxxxx xxxxxxxxxxxx xxx **XxxxxxxxXxxxxXxxxxxxxXxxxxxx**. Xxx xxx xxxxxx xxxxx xxx [**XxxxxxxXxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn640574) xxxxxxxxxx xxx xxx xxx xxxxx xxxxxxxxxxx xx xxx xxx xxxxxx xxx xxxxxxxx xxxxx xxxxxxxxxx xxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxxx xxx [**XxxxxXxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652657) xxxxxx xx xxxxxx xxxx xxx xxxxxxx xxxxxx xxxxxxxx xxxxx xxx xxxxx xxxxx xxx xxxxxxxx xxxxx xxxxxxxx xxxxxx. Xx xx, xxxx xxxxx xx xxxxxxx xx xxxxxx xxx xxxxx xx YYY% xxxxx. Xxx xxxxxxxx xxxxxxxxxxxx xxxxxx xxxx xxxx xxxxxxxxxx xxx xxx xxxx xxxxx xxx xxxxx xxxxxx.
+If you want to perform another variable photo sequence capture with different per frame settings, you don't need to completely reinitialize the **VariablePhotoSequenceCapture**. You can either clear the [**DesiredFrameControllers**](https://msdn.microsoft.com/library/windows/apps/dn640574) collection and add new frame controllers or you can modify the existing frame controller values. The following example checks the [**FrameFlashCapabilities**](https://msdn.microsoft.com/library/windows/apps/dn652657) object to verify that the current device supports flash and flash power for variable photo sequence frames. If so, each frame is updated to enable the flash at 100% power. The exposure compensation values that were previously set for each frame are still active.
 
-[!xxxx-xx[XxxxxxXxxxxXxxxxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateFrameControllers)]
+[!code-cs[UpdateFrameControllers](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetUpdateFrameControllers)]
 
-## Xxxxx xx xxx xxxxxxxx xxxxx xxxxxxxx xxxxxxx
+## Clean up the variable photo sequence capture
 
-Xxxx xxx xxx xxxx xxxxxxxxx xxxxxxxx xxxxx xxxxxxxxx xx xxxx xxx xx xxxxxxxxxx, xxxxx xx xxx xxxxxxxx xxxxx xxxxxxxx xxxxxx xx xxxxxxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652569). Xxxxxxxxxx xxx xxxxxx'x xxxxx xxxxxxxx xxx xxx xx xx xxxx.
+When you are done capturing variable photo sequences or your app is suspending, clean up the variable photo sequence object by calling [**FinishAsync**](https://msdn.microsoft.com/library/windows/apps/dn652569). Unregister the object's event handlers and set it to null.
 
-[!xxxx-xx[XxxxxXxXXX](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVPS)]
+[!code-cs[CleanUpVPS](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpVPS)]
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxx xxxxxx xxx xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md)
+* [Capture photos and video with MediaCapture](capture-photos-and-video-with-mediacapture.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

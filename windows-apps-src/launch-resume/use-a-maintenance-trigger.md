@@ -1,37 +1,37 @@
 ---
-xxxxx: Xxx x xxxxxxxxxxx xxxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxx xxx XxxxxxxxxxxXxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxx xx xxx xxxxxxxxxx xxxxx xxx xxxxxx xx xxxxxxx xx.
-xx.xxxxxxx: YYYXYXYY-YXYX-YXXY-XYXY-YYYYXXYXYYXX
+title: Use a maintenance trigger
+description: Learn how to use the MaintenanceTrigger class to run lightweight code in the background while the device is plugged in.
+ms.assetid: 727D9D84-6C1D-4DF3-B3B0-2204EA4D76DD
 ---
 
-# Xxx x xxxxxxxxxxx xxxxxxx
+# Use a maintenance trigger
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700517)
--   [**XxxxxxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224834)
+-   [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517)
+-   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)
 
-Xxxxx xxx xx xxx xxx [**XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700517) xxxxx xx xxx xxxxxxxxxxx xxxx xx xxx xxxxxxxxxx xxxxx xxx xxxxxx xx xxxxxxx xx.
+Learn how to use the [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) class to run lightweight code in the background while the device is plugged in.
 
-## Xxxxxx x xxxxxxxxxxx xxxxxxx xxxxxx
+## Create a maintenance trigger object
 
 
-Xxxx xxxxxxx xxxxxxx xxxx xxx xxxx xxxxxxxxxxx xxxx xxx xxx xxx xx xxx xxxxxxxxxx xx xxxxxxx xxxx xxx xxxxx xxx xxxxxx xx xxxxxxx xx. Xxxx xxxxx xxxxxxx xx xxx [**XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700517) xxxxx, xxxxx xx xxxxxxx xx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224839). Xxxx xxxxxxxxxxx xx xxxxxxx x xxxxxxxxxx xxxx xxxxx xx xxxxxxxxx xx [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md).
+This example assumes that you have lightweight code you can run in the background to enhance your app while the device is plugged in. This topic focuses on the [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) class, which is similar to [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839). More information on writing a background task class is available in [Create and register a background task](create-and-register-a-background-task.md).
 
-Xxxxxx x xxx [**XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224843) xxxxxx. Xxx xxxxxx xxxxxxxxx, *XxxXxxx*, xxxxxxxxx xxxxxxx xxx xxxxxxxxxxx xxxx xxxx xxx xxxx xx xxxxxxxx xx xxx xxxxxxxxxxxx. Xx *XxxXxxx* xx xxx xx xxxx, xxx xxxxx xxxxxxxxx (*XxxxxxxxxXxxx*) xxxxxxxxx xxx xxxxxx xx xxxxxxx xx xxxx xxxxxx xxxxxxxxxx xxx xxxxxxxxxx xxxx. Xx *XxxXxxx* xx xxx xx xxxxx, *XxxxxxxxxXxxx* xxxxxxxxx xxx xxxxxxxxx xx xxxxx xxx xxxxxxxxxx xxxx xxxx xxx.
+Create a new [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) object. The second parameter, *OneShot*, specifies whether the maintenance task will run once or continue to run periodically. If *OneShot* is set to true, the first parameter (*FreshnessTime*) specifies the number of minutes to wait before scheduling the background task. If *OneShot* is set to false, *FreshnessTime* specifies the frequency by which the background task will run.
 
-> **Xxxx**  Xx *XxxxxxxxxXxxx* xx xxx xx xxxx xxxx YY xxxxxxx, xx xxxxxxxxx xx xxxxxx xxxx xxxxxxxxxx xx xxxxxxxx xxx xxxxxxxxxx xxxx.
+> **Note**  If *FreshnessTime* is set to less than 15 minutes, an exception is thrown when attempting to register the background task.
 
  
 
-Xxxx xxxxxxx xxxx xxxxxxx x xxxxxxx xxxx xxxx xxxx xx xxxx:
+This example code creates a trigger that runs once an hour:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 > uint waitIntervalMinutes = 60;
 > 
@@ -43,15 +43,15 @@ Xxxx xxxxxxx xxxx xxxxxxx x xxxxxxx xxxx xxxx xxxx xx xxxx:
 > MaintenanceTrigger ^ taskTrigger = ref new MaintenanceTrigger(waitIntervalMinutes, false);
 > ```
 
-## (Xxxxxxxx) Xxx x xxxxxxxxx
+## (Optional) Add a condition
 
--   Xx xxxxxxxxx, xxxxxx x xxxxxxxxxx xxxx xxxxxxxxx xx xxxxxxx xxxx xxx xxxx xxxx. X xxxxxxxxx xxxxxxxx xxxx xxxxxxxxxx xxxx xxxx xxxxxxx xxxxx xxx xxxxxxxxx xx xxx - xxx xxxx xxxxxxxxxxx, xxx [Xxx xxxxxxxxxx xxx xxxxxxx x xxxxxxxxxx xxxx](set-conditions-for-running-a-background-task.md)
+-   If necessary, create a background task condition to control when the task runs. A condition prevents your background task from running until the condition is met - for more information, see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
 
-    Xx xxxx xxxxxxx, xxx xxxxxxxxx xx xxx xx **XxxxxxxxXxxxxxxxx** xx xxxx xxxxxxxxxxx xxxx xxxx xxx Xxxxxxxx xx xxxxxxxxx (xx xxxx xx xxxxxxx xxxxxxxxx). Xxx x xxxx xx xxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxx, xxx [**XxxxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224835).
+    In this example, the condition is set to **InternetAvailable** so that maintenance runs when the Internet is available (or when it becomes available). For a list of possible background task conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-    Xxx xxxxxxxxx xxxx xxxx x xxxxxxxxx xx xxx xxxxxxxxxxx xxxx xxxxxxx:
+    The following code adds a condition to the maintenance task builder:
 
-    > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+    > [!div class="tabbedCodeSnippets"]
     > ```cs
     > SystemCondition exampleCondition = new SystemCondition(SystemConditionType.InternetAvailable);
     > ```
@@ -59,14 +59,14 @@ Xxxx xxxxxxx xxxx xxxxxxx x xxxxxxx xxxx xxxx xxxx xx xxxx:
     > SystemCondition ^ exampleCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
     > ```
 
-## Xxxxxxxx xxx xxxxxxxxxx xxxx
+## Register the background task
 
 
--   Xxxxxxxx xxx xxxxxxxxxx xxxx xx xxxxxxx xxxx xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxxxxx. Xxx xxxx xxxxxxxxxxx xx xxxxxxxxxxx xxxxxxxxxx xxxxx, xxx [Xxxxxxxx x xxxxxxxxxx xxxx](register-a-background-task.md).
+-   Register the background task by calling your background task registration function. For more information on registering background tasks, see [Register a background task](register-a-background-task.md).
 
-    Xxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxxx xxxx:
+    The following code registers the maintenance task:
 
-    > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+    > [!div class="tabbedCodeSnippets"]
     > ```cs
     > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > string taskName   = "Maintenance background task example";
@@ -80,42 +80,46 @@ Xxxx xxxxxxx xxxx xxxxxxx x xxxxxxx xxxx xxxx xxxx xx xxxx:
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, taskTrigger, exampleCondition);
     > ```
     
-    > **Xxxx**  Xxx xxx xxxxxx xxxxxxxx xxxxxx xxxxxxx, xx xxx xxxxxx xxxxxxx xxx xx xxxxxx, xxxxxxxxxx xxxxx xxx xx xxxxxxxxxx. Xx xx xxx xx xxxxxx xxxxxxxxx xx xxx xxxxxxxx, xx xxx xxx xxxx xxx xxxxxx xx, xxxx xxx xxxxxxxxxx xxxx xxxx xx xxxxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxx xxxxxxx xxx XxXxxxxxxx xxxxx. Xxxx xxxxx xx xxxxxx xxx xxxx xxxxxxxxxx xx xxx xxx xx xxx xxxxxxxxxx. Xxxx xxxxxxxxxx xxxx xxxxxx xx xxxxxxxx xx xxxxxx xxxx xxxxxxxx.
+    > **Note**  For all device families except desktop, if the device becomes low on memory, background tasks may be terminated. If an out of memory exception is not surfaced, or the app does not handle it, then the background task will be terminated without warning and without raising the OnCanceled event. This helps to ensure the user experience of the app in the foreground. Your background task should be designed to handle this scenario.
 
-    > **Xxxx**  Xxxxxxxxx Xxxxxxx xxxx xxxx xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700485) xxxxxx xxxxxxxxxxx xxx xx xxx xxxxxxxxxx xxxxxxx xxxxx.
+    > **Note**  Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
 
-    Xx xxxxxx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxx xxx xxxxxxx xx xxxxxx, xxx xxxx xxxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700471) xxx xxxx xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700485) xxxx xxxx xxx xxxxxxxx xxxxx xxxxx xxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxxxxx xxxxx](guidelines-for-background-tasks.md).
+    To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
-    > **Xxxx**  Xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xx xxx xxxx xx xxxxxxxxxxxx. Xx xxxxx xx xxxxxxxx xx xxx xx xxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxxx. Xxxxxx xxxx xxxx xxx xxxxxxxxxx xxxxxxx xxxxxxxxx xxxxx xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxx - xx xxxxxxx xxxx xxx xxxxxxx xx xxxxxx x xxxxx xxxxxxxxxxxx xxxxxx xxxxx xxxxxxxxxx xx xxxxxxxx x xxxx, xx xxx xxxxx.
-
-
-> **Xxxx**  Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
-## Xxxxxxx xxxxxx
+    > **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
 
 
-****
+> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
-* [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md)
-* [Xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx](declare-background-tasks-in-the-application-manifest.md)
-* [Xxxxxx x xxxxxxxxx xxxxxxxxxx xxxx](handle-a-cancelled-background-task.md)
-* [Xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx](monitor-background-task-progress-and-completion.md)
-* [Xxxxxxxx x xxxxxxxxxx xxxx](register-a-background-task.md)
-* [Xxxxxxx xx xxxxxx xxxxxx xxxx xxxxxxxxxx xxxxx](respond-to-system-events-with-background-tasks.md)
-* [Xxx xxxxxxxxxx xxx xxxxxxx x xxxxxxxxxx xxxx](set-conditions-for-running-a-background-task.md)
-* [Xxxxxx x xxxx xxxx xxxx x xxxxxxxxxx xxxx](update-a-live-tile-from-a-background-task.md)
-* [Xxx x xxxxxxxxxx xxxx xx x xxxxx](run-a-background-task-on-a-timer-.md)
-* [Xxxxxxxxxx xxx xxxxxxxxxx xxxxx](guidelines-for-background-tasks.md)
+## Related topics
+
 
 ****
 
-* [Xxxxx x xxxxxxxxxx xxxx](debug-a-background-task.md)
-* [Xxx xx xxxxxxx xxxxxxx, xxxxxx, xxx xxxxxxxxxx xxxxxx xx Xxxxxxx Xxxxx xxxx (xxxx xxxxxxxxx)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Create and register a background task](create-and-register-a-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Register a background task](register-a-background-task.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+
+****
+
+* [Debug a background task](debug-a-background-task.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

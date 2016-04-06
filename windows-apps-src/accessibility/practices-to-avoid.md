@@ -1,40 +1,44 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxx xxxxxxxxx xx xxxxx xx xxx xxxx xx xxxxxx xx xxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
-xxxxx: Xxxxxxxxxxxxx xxxxxxxxx xx xxxxx
-xx.xxxxxxx: YYYXYXYY-YYYY-YYXX-YYXY-YYXYXYXXXYYX
-xxxxx: Xxxxxxxxx xx xxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Lists the practices to avoid if you want to create an accessible Universal Windows Platform (UWP) app.
+title: Accessibility practices to avoid
+ms.assetid: 024A9B70-9821-45BB-93F1-61C0B2ECF53E
+label: Practices to avoid
+template: detail.hbs
 ---
-Xxxxxxxxxxxxx xxxxxxxxx xx xxxxx
+Accessibility practices to avoid
 =======================================================================================
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxx xxx xxxxxxxxx xx xxxxx xx xxx xxxx xx xxxxxx xx xxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
+Lists the practices to avoid if you want to create an accessible Universal Windows Platform (UWP) app.
 
--   Xxxxx xxxxxxxx xxxxxx XX xxxxxxxx xx xxx xxx xxx xxx xxxxxxx Xxxxxxx xxxxxxxx xx xxxxxxxx xxxx xxxx xxxxxxx xxxxxxxxxxx Xxxxxxxxx XX Xxxxxxxxxx xxxxxxx. Xxxxxxxx Xxxxxxx xxxxxxxx xxx xxxxxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxxx xxxxxx xxxx x xxx xxxxxxxxxxxxx xxxxxxxxxx xxxx xxx xxx-xxxxxxxx. Xx xxxxxxxx, xxxxxxxxxxxx xxx [**XxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR209185) xxxxxxx xxx x xxxx xxxxxx xxxxxxx xx xxxxxxxx xxxx xxxxxxxx (xxx [Xxxxxx xxxxxxxxxx xxxxx](custom-automation-peers.md)).
--   Xxx'x xxx xxxxxx xxxx xx xxxxx xxx-xxxxxxxxxxx xxxxxxxx xxxx xxx xxx xxxxx (xxx xxxxxxx, xx xxxxxxx xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209461) xxxxxxxx xxx xx xxxxxxx xxxx xx xxx xxxxxxxxxxx). Xx xxx-xxxxxxxxxxx xxxxxxxx xxx xx xxx xxx xxxxx, xxxx xx xxxxxxx xxxxxxxx xxxxxxxxxxxxx xxxxxxxxxx xxxxxxx xx xxxxxxxxx xxxxxxxxxx xx xxxxxxxx xxxxxxxxxx xxx xxxxx. Xxxx xxxxxxxxx xxxxxxxxxxxx xxx xxx xxxxx xxx xxxxxxx xx xxxxx xx xxxxxxx xx xxxx xx xxxxx xxxxx xxx xxx xx xxxxxxx xx xxx'x xxxxxxxxx xx xxx xxxxxxxxx xxxxxxxxxx xxxx. Xxxx-xxxx xxxxxxxx xx xxx xxx xxxxx xxx xxxxxxx xxxxx xxx xxxxxx xxxx xxxxxxxxxxx xxxxxxxx xx xxx xxx xxxxx (xxxxxxx, xxxxx xxxxx, xxxx xxxxx xxxxxx, xxxxx xxxxx, xxxxx, xxx xx xx).
--   Xxxxx xxxxx xxxxxxxx xxxxxxxxxxx xx XX xxxxxxxx (xxxx xx xx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209267) xxxxxxx) xxxxxxx xxx xxxxxxxxxxxx xxxxx xxxxx xxxxxxx xxxx xxx xxxxx xxxxxxx xxxxxxxxxxx xxxxx (xxxxx xx xxx xx xxxxx xxxxxxx xxxxx). Xxxxxxxx xxxxxxxx, xxxxxxx XX xxxxxxxx xx xxxxxxxx xx xxxxxxx xxxxx xx xxxxxx xxxx xxxxxx xxxxxxx xxx xxxx xxxxx xxxxxxxx xx xxx xxxxxxx xxxxx. Xx xxx xxxxxxx xxxxx xx XX xxxxxxxx xxx xxxxxxx xxxx xxx xxxxxxxx xx xxxxxxx xxxxx, xxx xxxxxxxx xxx xxxxx xxxxxx (xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209461)) xx xxxxxx xxx xxxxxxx xxxxxxx xxxxx.
--   Xxx’x xxx xxxxx xx xxx xxxx xxx xx xxxxxx xxxxxxxxxxx. Xxxxx xxx xxx xxxxx xxxxx xxxxxx xxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xxxx xxxxxxx xxxxx, xxxx xx xx x xxxxx xxxxxx xxxxxxxxx. Xxxxxxx xxxxx xxxxxx xxxx, xxxxxxxxxx xxxx, xx xxxxxx xxxx xxxxxxxxxxx xx xxxxxxxxxx.
--   Xxx’x xxxxxxxxxxxxx xxxxxxx xx xxxxxx xxx xxxxxx xxxxxx xx xx xxxxxx xxxxxxxxx xxx xxx xxxxxxxxxxxxx. Xx xxx xxxx xx xxxxxxxxxxxxx xxxxxxx xxxx xxxxxxx, xxxxxx xxxx xxxxxxx xxxxx xx xxx xxxx. Xxxxxxxxx xxxxxxxxxxxx xxxxxxxxx xxxx xxxxxx xxxx x xxxxxxxxx xxx xxxxxx xx x xxxxxxx xxx xxxxxxxxx, xxxx xx xxx xxxxxxxxx xxxxxxx xxxx xxxxxxx. Xxx xxxx xx xxxx xx xxx xxxxxxxxx xxxxxxxxxx xxxx xx xxxx xxx xxxxxxxx xxxx xx xxxxxxxxxxx xx xxx xxxxxxxxx xxx xxx xxxx xx xxxxxxxxx xxx xxxxxxxxx xx xxx xxxx xxxxx.
-    **Xxxx**  Xx xxx xx xxxxxxx xxxxxxx xxxxxx x xxxxxx, xxxxxxxx xxxxxxx xxx [**XxxxxxxxxxxxxXxxxxxxxxx.XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/JJ191516) xxxxxxxxxxxxx xxxxxxxx xx xxxx xxxxxxx xx xxx xx xxx xxx-xxxxxxx xxxxxxxx **Xxxxxx** xx **Xxxxxxxxx**. Xxxx xxxxxxxxx xxxxxxxxxxxx xxx xxx xxxx xxxxxxx xx xxx Xxxxxxxxxx Xxxx Xxxxxxxx Xxxxxxxxxxxx (XXXX) xxxxxxx xx xxxx xxxxxxx xxx xxx xxxx xxxxxx xxx xxxx xxxx x xxxxxx xx xxxxxxx xxx xxxxxxx.
+-   Avoid building custom UI elements if you can use the default Windows controls or controls that have already implemented Microsoft UI Automation support. Standard Windows controls are accessible by default and usually require adding only a few accessibility attributes that are app-specific. In contrast, implementing the [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/BR209185) support for a true custom control is somewhat more involved (see [Custom automation peers](custom-automation-peers.md)).
+-   Don't put static text or other non-interactive elements into the tab order (for example, by setting the [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461) property for an element that is not interactive). If non-interactive elements are in the tab order, that is against keyboard accessibility guidelines because it decreases efficiency of keyboard navigation for users. Many assistive technologies use tab order and ability to focus an element as part of their logic for how to present an app's interface to the assistive technology user. Text-only elements in the tab order can confuse users who expect only interactive elements in the tab order (buttons, check boxes, text input fields, combo boxes, lists, and so on).
+-   Avoid using absolute positioning of UI elements (such as in a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/BR209267) element) because the presentation order often differs from the child element declaration order (which is the de facto logical order). Whenever possible, arrange UI elements in document or logical order to ensure that screen readers can read those elements in the correct order. If the visible order of UI elements can diverge from the document or logical order, use explicit tab index values (set [**TabIndex**](https://msdn.microsoft.com/library/windows/apps/BR209461)) to define the correct reading order.
+-   Don’t use color as the only way to convey information. Users who are color blind cannot receive information that is conveyed only through color, such as in a color status indicator. Include other visual cues, preferably text, to ensure that information is accessible.
+-   Don’t automatically refresh an entire app canvas unless it is really necessary for app functionality. If you need to automatically refresh page content, update only certain areas of the page. Assistive technologies generally must assume that a refreshed app canvas is a totally new structure, even if the effective changes were minimal. The cost of this to the assistive technology user is that any document view or description of the refreshed app now must be recreated and presented to the user again.
+    **Note**  If you do refresh content within a region, consider setting the [**AccessibilityProperties.LiveSetting**](https://msdn.microsoft.com/library/windows/apps/JJ191516) accessibility property on that element to one of the non-default settings **Polite** or **Assertive**. Some assistive technologies can map this setting to the Accessible Rich Internet Applications (ARIA) concept of live regions and can thus inform the user that a region of content has changed.
 
      
 
--   X xxxxxxxxxx xxxx xxxxxxxxxx xxxx xx xxxxxxxxx xx xxx xxxx xx x xxxxxxxxxx xxxx xxx xxxxxxxxxx xxx xxx'x xxxxxxxxx. Xxx xxxx xxxx xxxx xxx XX xxxx xxxx xxxxxxxxx xxx xxxxxxxxxx xx xxxxxxxxx xxxxxxxxxx xx xxxxx xx xxxx xxxx xxxxxxxxxx xxxx xxxxxxxx xx xxxx xxxxxx xx x xxxxxxx xxxxxx xxx xxxx xxxxxx.
--   Xxx’x xxx XX xxxxxxxx xxxx xxxxx xxxx xxxx xxxxx xxxxx xxx xxxxxx. Xxxxxxxx xxxxxxxx xxx xxxxx xxxx xxxxxx xx xxxx xxxxxxxx. Xx xx xxxx xx xxxxx xxxxx XX xxxxxxxx xxxx xxxxx.
--   Xxx’x xxxxxx xxxx xxxxxxx xx xxxxxxxx xxxxxxxxxxxxx xxxxxxxxxxxxx. Xxxxxxx xx xxxxxxxxxx xxxxxxx xxxxxx xxxxx xxxx xxxx xxx xxxx xxxxx x xxxxxx xxxxxx xx x XX xxxxxxx xxxx xxx xxxxx. Xxxxxxx xx xxxx xxxxxxx xxxxxxx xxxxxxxx xxxxx, xxxxxxxxxx xxx xxxxxxx, xxx xxxxxxxxxx xx x xxxxxxxxx xxxx. Xxxxxx xxxxxxx xxxxxxx xxxxxxx xxxxxxxxx xxx xxxx xxx xx xxxxxxxxxxxx xxx xxxxx xxx xxxx xxxxxxxxxxxx. Xxx xxxxxxxxxx xx xxxx xxxxxxxxxxx xxxxxxx xxxxxxxxxx xxxxxxxx, xxxxxxxxxx xxxxx, xxxxxxxxxx xxxx xxxx xx xxxxxxx xxxxxxx, xxx xxxxxxxx xxxxxxx xx xxxxxxxx xx xx xxxxxxxxxxxx xxxxx.
+-   A deliberate page navigation that is initiated by the user is a legitimate case for refreshing the app's structure. But make sure that the UI item that initiates the navigation is correctly identified or named to give some indication that invoking it will result in a context change and page reload.
+-   Don’t use UI elements that flash more than three times per second. Flashing elements can cause some people to have seizures. It is best to avoid using UI elements that flash.
+-   Don’t change user context or activate functionality automatically. Context or activation changes should occur only when the user takes a direct action on a UI element that has focus. Changes in user context include changing focus, displaying new content, and navigating to a different page. Making context changes without involving the user can be disorienting for users who have disabilities. The exceptions to this requirement include displaying submenus, validating forms, displaying help text in another control, and changing context in response to an asynchronous event.
 
-Xxxxxxx xxxxxx
+<span id="related_topics"></span>Related topics
 -----------------------------------------------
 
-* [Xxxxxxxxxxxxx](accessibility.md)
-* [Xxxxxxxxxxxxx xx xxx Xxxxx](accessibility-in-the-store.md)
-* [Xxxxxxxxxxxxx xxxxxxxxx](accessibility-checklist.md)
+* [Accessibility](accessibility.md)
+* [Accessibility in the Store](accessibility-in-the-store.md)
+* [Accessibility checklist](accessibility-checklist.md)
  
 
  
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO3-->
+
+

@@ -1,75 +1,70 @@
 ---
-Xxxxxxxxxxx: Xxxxxx xxxx xxxxx xxx xxxxxxx, xxxxx xxxxxxxx xxxxxxx xxx xxxx xxxx x xxxx xx xxxxxxxxxx xx xxxxxxxxxxxx xx xxxx x xxx xxxxxxxx xxx xxxxxxxxx x xxx xxx xxx xxxx xx xxxxxxx xxx xxxxxxxxxxx.
-xxxxx: Xxxxx xxxxxxxx xxx xxxx xxxxxxxxxx
-xx.xxxxxxx: XYYYXYYY-YXXY-YYYY-XYXX-YYYXXYYYYYYY
-xxxxx: Xxxxx xxxxxxxx xxx xxxx xxxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: During text entry and editing, spell checking informs the user that a word is misspelled by highlighting it with a red squiggle and providing a way for the user to correct the misspelling.
+title: Spell checking and text prediction
+ms.assetid: B867C956-5AB2-4207-A8DE-179CE7871180
+label: Spell checking and text prediction
+template: detail.hbs
 ---
 
-# Xxxxxxxxxx xxx xxxxx xxxxxxxx
+# Guidelines for spell checking
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxx xxxx xxxxx xxx xxxxxxx, xxxxx xxxxxxxx xxxxxxx xxx xxxx xxxx x xxxx xx xxxxxxxxxx xx xxxxxxxxxxxx xx xxxx x xxx xxxxxxxx xxx xxxxxxxx x xxx xxx xxx xxxx xx xxxxxxx xxx xxxxxxxxxxx.
+During text entry and editing, spell checking informs the user that a word is misspelled by highlighting it with a red squiggle and provides a way for the user to correct the misspelling.
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxXxxxxXxxxxXxxxxxx xxxxxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/br209688)
-
-
-## <span id="checklist_section">
-            </span>
-            <span id="CHECKLIST_SECTION">
-            </span>Xxxxxxxxxxxxxxx
+-   [**IsSpellCheckEnabled property (XAML)**](https://msdn.microsoft.com/library/windows/apps/br209688)
 
 
--   Xxx xxxxx xxxxxxxx xx xxxx xxxxx xx xxxx xxxxx xxxxx xx xxxxxxxxx xxxx xxxx xxxxx xxxxxxxx. Xxxxx xxxxxxxx xxxxx xxxx xxxxx, xxxxx, xxx xxxxxxxx xxxxxx.
--   Xxx'x xxx xxxxx xxxxxxxx xxxx x xxxx xx xxx xxxxxx xx xx xx xxx xxxxxxxxxx xx xx xxxxx xxxxxx'x xxxxx xxxxx xxxxxxxx. Xxx xxxxxxx, xxx'x xxxx xx xx xxx xxxxx xxxxx xx xxxxxxxxx, xxxxxxxxx xxxxxxx, xx xxxxx. Xxxxx xxxxxxxx xx xxxxxxxx xx xxxxxxx xxx xxxxx xxxxxxxx.
--   Xxx'x xxxxxxx xxxxx xxxxxxxx xxxx xxxxxxx xxx xxxxxxx xxxxx xxxxxxxx xxxxxx xxxxx'x xxxxxxx xxxx xxx xxxxxxxx. Xxxx xxx xxxxx xxxxxxx xxxxx'x xxxxxxx x xxxxxxxx, xx xxxxx'x xx xxxxxxxx, xx xxxxx'x xx xxxx xx xxxxxxx xxx xxxxxx xx. Xxxx, xxxx xxxxx xxxxx xxx xx Xxxxx Xxxxxx Xxxxxx (XXX) xx xxxxx xxxxxxx xxxxxxxx xxxx xxxx xxx, xxx xxxx xxxxxxxx xxxxx xx xxxxxxxxx. Xxx xxxxxxx, xxxx xxxxxxxx x Xxxxxxxx xxxxxxxx xxx, xxxx xxxxxx xxx xxxxx xxxxxxxx xxxxxx xxxxx xxx xxxxxxxxx xxxxxxxxx xxxx xxxxxxxx, xxx'x xxxx xxxxx xxxxxxxx xxx. Xxx xxxx xxx xxxxxx xx xx Xxxxxxx XXX xxx xxxx Xxxxxxx xxxx xxx xxx; xx xxxxx xxxxxxxx xx xxxxxxx, xxx Xxxxxxx xxxx xxx xxxxx xxxxxxx.
-
-## <span id="Additional_usage_guidance">
-            </span>
-            <span id="additional_usage_guidance">
-            </span>
-            <span id="ADDITIONAL_USAGE_GUIDANCE">
-            </span>Xxxxxxxxxx xxxxx xxxxxxxx
+## <span id="checklist_section"></span><span id="CHECKLIST_SECTION"></span>Recommendations
 
 
-Xxxxxxx Xxxxx xxxx xxxxxxx x xxxxx-xx xxxxx xxxxxxx xxx xxxxxxxxx xxx xxxxxx xxxx xxxxx xxxxx, xxx xxxxxxxx xxxx xxxx xxxxx **xxxxxxxXxxxxxxx** xxxxxxxx xxx xx **xxxx**. Xxxx'x xx xxxxxxx xx xxx xxxxx-xx xxxxx xxxxxxx:
+-   Use spell checking to help users as they enter words or sentences into text input controls. Spell checking works with touch, mouse, and keyboard inputs.
+-   Don't use spell checking when a word is not likely to be in the dictionary or if users wouldn't value spell checking. For example, don't turn it on for input boxes of passwords, telephone numbers, or names. Spell checking is disabled by default for these controls.
+-   Don't disable spell checking just because the current spell checking engine doesn't support your app language. When the spell checker doesn't support a language, it doesn't do anything, so there's no harm in leaving the option on. Also, some users might use an Input Method Editor (IME) to enter another language into your app, and that language might be supported. For example, when building a Japanese language app, even though the spell checking engine might not currently recognize that language, don't turn spell checking off. The user may switch to an English IME and type English into the app; if spell checking is enabled, the English will get spell checked.
 
-![xxx xxxxx-xx xxxxx xxxxxxx](images/spellchecking.png)
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>Additional usage guidance
 
-Xxx xxxx xxxx, xxx xxx [**XxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209683).
 
-Xxx xxxxx xxxxxxxx xxxx xxxx xxxxx xxxxxxxx xxx xxxxx xxx xxxxxxxx:
+Windows Store apps provide a built-in spell checker for multiline and single text input boxes, and elements that have their **contentEditable** property set to **true**. Here's an example of the built-in spell checker:
 
--   **Xx xxxx-xxxxxxx xxxxxxxxxxxx**
+![the built-in spell checker](images/spellchecking.png)
 
-    Xxx xxxxx xxxxxxxx xxxxxx xxxxxxxxxxxxx xxxxxxxx xxxxxxxxxx xxxxx xxxx xx'x xxxxxxxxx xxxxx xxx xxxxxxxxxx. Xxx xxxxxxx, xxx xxxxxx xxxxxxxxxxxxx xxxxxxx "xxx" xx "xxx."
+For more info, see the [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683).
 
--   **Xx xxxx xxxxxxxxx xxxxxxxxx**
+Use spell checking with text input controls for these two purposes:
 
-    Xxxx xxx xxxxx xxxxxxxx xxxxxx xx xxx xxxxxxxxx xxxxx xxx xxxxxxxxxxx, xx xxxx x xxx xxxx xxxxx xxx xxxxxxxxxx xxxx xxx xxxxxxxx xxx xxxxxxxxxx xx x xxxxxxx xxxx xxxx xxx xxx xx xxxxx-xxxxx xxx xxxx.
+-   **To auto-correct misspellings**
 
-Xxx XxxxXxxxxx xxxxxxxx, xxxxx xxxxxxxx xx xxxxxx xx xx xxxxxxx xxx xxxxx-xxxx xxxx xxxxx xxxxxxxx xxx xxxxxx xxx xxx xxxxxx-xxxx xxxxxxxx. Xxx xxx xxxxxxxx xxxx xx xx xxx xxxxxx-xxxx xxxxxxxx xx xxxxxxx xxx xxxxxxx'x **xxxxxxxxxx** xxxxxxxx xx **xxxx**. Xxx xxx xxxxxxx xxxxx xxxxxxxx xxx x xxxxxxx xx xxxxxxx xxx **xxxxxxxxxx** xxxxxxxx xx **xxxxx**.
+    The spell checking engine automatically corrects misspelled words when it's confident about the correction. For example, the engine automatically changes "teh" to "the."
 
-Xxx XXXX XxxxXxx xxxxxxxx, xxxxx xxxxxxxx xx xxxxxx xxx xx xxxxxxx. Xxx xxx xxxx xx xx xx xxxxxxx xxx **XxXxxxxXxxxxXxxxxxx** xxxxxxxx xx **xxxx**.
+-   **To show alternate spellings**
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+    When the spell checking engine is not confident about the corrections, it adds a red line under the misspelled word and displays the alternates in a context menu when you tap or right-click the word.
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+For JavaScript controls, spell checking is turned on by default for multi-line text input controls and turned off for single-line controls. You can manually turn it on for single-line controls by setting the control's **spellcheck** property to **true**. You can disable spell checking for a control by setting its **spellcheck** property to **false**.
 
-* [Xxxx xxx xxxx xxxxxxxx](text-controls.md)
-* [Xxxxxxxxxx xxx xxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/hh750315)
-* [Xxxxxxxxxx xxx xxxx xxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh700394)
-**Xxx xxxxxxxxxx (XXXX)**
-* [**XxxxXxx.XxXxxxxXxxxxXxxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209688)
-* [**XxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209683)
+For XAML TextBox controls, spell checking is turned off by default. You can turn it on by setting the **IsSpellCheckEnabled** property to **true**.
+
+\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+
+## <span id="related_topics"></span>Related articles
+
+* [Text and text controls](text-controls.md)
+* [Guidelines for text input](https://msdn.microsoft.com/library/windows/apps/hh750315)
+* [Guidelines for text and typography](https://msdn.microsoft.com/library/windows/apps/hh700394)
+**For developers (XAML)**
+* [**TextBox.IsSpellCheckEnabled property**](https://msdn.microsoft.com/library/windows/apps/br209688)
+* [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
 
  
 
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,37 +1,37 @@
 ---
-xxxxx: Xxxxxx xxx xxxxxx xxx xx xxx xxxxx xxxxxx
-xxxxxxxxxxx: Xxxxxx xxxx xxx xxxxx xx xxxx xx xxx xxxxx xx xxxxxx x xxx-xxxxxxxxxxx xxxxx xxx xxxxxxxxxxxx xxx xxxxxx xxxxxx.
-xx.xxxxxxx: YxYxYYYY-xYYY-YYYY-xxYY-YYYYYYxYxYxY
+title: Render the shadow map to the depth buffer
+description: Render from the point of view of the light to create a two-dimensional depth map representing the shadow volume.
+ms.assetid: 7f3d0208-c379-8871-cc48-027047c6c2d0
 ---
 
-# Xxxxxx xxx xxxxxx xxx xx xxx xxxxx xxxxxx
+# Render the shadow map to the depth buffer
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxx xxxx xxx xxxxx xx xxxx xx xxx xxxxx xx xxxxxx x xxx-xxxxxxxxxxx xxxxx xxx xxxxxxxxxxxx xxx xxxxxx xxxxxx. Xxx xxxxx xxx xxxxx xxx xxxxx xxxx xxxx xx xxxxxxxx xx xxxxxx. Xxxx Y xx [Xxxxxxxxxxx: Xxxxxxxxx xxxxxx xxxxxxx xxxxx xxxxx xxxxxxx xx XxxxxxYX YY](implementing-depth-buffers-for-shadow-mapping.md).
+Render from the point of view of the light to create a two-dimensional depth map representing the shadow volume. The depth map masks the space that will be rendered in shadow. Part 2 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
-## Xxxxx xxx xxxxx xxxxxx
+## Clear the depth buffer
 
 
-Xxxxxx xxxxx xxx xxxxx xxxxxx xxxxxx xxxxxxxxx xx xx.
+Always clear the depth buffer before rendering to it.
 
 ```cpp
 context->ClearRenderTargetView(m_deviceResources->GetBackBufferRenderTargetView(), DirectX::Colors::CornflowerBlue);
 context->ClearDepthStencilView(m_shadowDepthView.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
 ```
 
-## Xxxxxx xxx xxxxxx xxx xx xxx xxxxx xxxxxx
+## Render the shadow map to the depth buffer
 
 
-Xxx xxx xxxxxx xxxxxxxxx xxxx, xxxxxxx x xxxxx xxxxxx xxx xx xxx xxxxxxx x xxxxxx xxxxxx.
+For the shadow rendering pass, specify a depth buffer but do not specify a render target.
 
-Xxxxxxx xxx xxxxx xxxxxxxx, x xxxxxx xxxxxx, xxx xxx xxx xxxxx xxxxx xxxxxxxx xxxxxxx. Xxx xxxxx xxxx xxxxxxx xxx xxxx xxxx xx xxxxxxxx xxx xxxxx xxxxxx xxxxxx xx xxx xxxxxx xxxxxx.
+Specify the light viewport, a vertex shader, and set the light space constant buffers. Use front face culling for this pass to optimize the depth values placed in the shadow buffer.
 
-Xxxx xxxx xx xxxx xxxxxxx, xxx xxx xxxxxxx xxxxxxx xxx xxx xxxxx xxxxxx (xx xxxx xxxxxxxxxx x xxxxx xxxxxx xxxxxxxx). Xxx xxxx xxxxxxx xxx xxxxx xx xxxxxxxxx xxxx xxx xxxx xxxx xx xxx XxxxxxYX xxxxxx xxxx x xxxx xxxxx xxxxxx xxx. Xx xxxxx xxxx xxxxxxxxx, xxx xxx xxx x xxxxxxx xxxxx xxxxxx xxx xxx xxxxxx xxxxxxxxx xxxx. Xxx xxxxxx xx xxxx xxxxxx xx xxxxxx xxxx; xx xxx xxxx [**xxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb943995) xx xxxxx xxxxx.
+Note that on most devices, you can specify nullptr for the pixel shader (or skip specifying a pixel shader entirely). But some drivers may throw an exception when you call draw on the Direct3D device with a null pixel shader set. To avoid this exception, you can set a minimal pixel shader for the shadow rendering pass. The output of this shader is thrown away; it can call [**discard**](https://msdn.microsoft.com/library/windows/desktop/bb943995) on every pixel.
 
-Xxxxxx xxx xxxxxxx xxxx xxx xxxx xxxxxxx, xxx xxx'x xxxxxx xxxxxxxxx xxxxxxxx xxxx xxx'x xxxx x xxxxxx (xxxx x xxxxx xx x xxxx, xx xxxxxxx xxxxxxx xxxx xxx xxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxx).
+Render the objects that can cast shadows, but don't bother rendering geometry that can't cast a shadow (like a floor in a room, or objects removed from the shadow pass for optimization reasons).
 
 ```cpp
 void ShadowSceneRenderer::RenderShadowMap()
@@ -117,12 +117,12 @@ void ShadowSceneRenderer::RenderShadowMap()
 }
 ```
 
-**Xxxxxxxx xxx xxxx xxxxxxx:**  Xxxx xxxx xxxx xxxxxxxxxxxxxx xxxxxxxx x xxxxx xxxx xxxxxxx xx xxxx xxx xxx xxx xxxx xxxxxxxxx xxx xx xxxx xxxxx xxxxxx. Xxx [Xxxxxx Xxxxxxxxxx xx Xxxxxxx Xxxxxx Xxxxx Xxxx](https://msdn.microsoft.com/library/windows/desktop/ee416324) xxx xxxx xxxx xx xxxxxx xxxxxxxxx.
+**Optimize the view frustum:**  Make sure your implementation computes a tight view frustum so that you get the most precision out of your depth buffer. See [Common Techniques to Improve Shadow Depth Maps](https://msdn.microsoft.com/library/windows/desktop/ee416324) for more tips on shadow technique.
 
-## Xxxxxx xxxxxx xxx xxxxxx xxxx
+## Vertex shader for shadow pass
 
 
-Xxx x xxxxxxxxxx xxxxxxx xx xxxx xxxxxx xxxxxx xx xxxxxx xxxx xxx xxxxxx xxxxxxxx xx xxxxx xxxxx. Xxx'x xxxxxxx xxx xxxxxxxx xxxxxxx, xxxxxxxxx xxxxxxxxxxxxxxx, xxx xx xx.
+Use a simplified version of your vertex shader to render just the vertex position in light space. Don't include any lighting normals, secondary transformations, and so on.
 
 ```cpp
 PixelShaderInput main(VertexShaderInput input)
@@ -140,13 +140,17 @@ PixelShaderInput main(VertexShaderInput input)
 }
 ```
 
-Xx xxx xxxx xxxx xx xxxx xxxxxxxxxxx, xxxxx xxx xx xxx xxxxxxx xx [xxxxxxxxx xxxx xxxxx xxxxxxx](render-the-scene-with-depth-testing.md).
+In the next part of this walkthrough, learn how to add shadows by [rendering with depth testing](render-the-scene-with-depth-testing.md).
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

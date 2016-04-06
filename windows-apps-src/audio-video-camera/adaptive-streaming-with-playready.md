@@ -1,20 +1,20 @@
 ---
-xx.xxxxxxx: XXYYYXYY-YYYY-YYYY-YXYY-YYYXYXYYXXYY
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xx xxx xxxxxxxx xxxxxxxxx xx xxxxxxxxxx xxxxxxx xxxx Xxxxxxxxx XxxxXxxxx xxxxxxx xxxxxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
-xxxxx: Xxxxxxxx Xxxxxxxxx xxxx XxxxXxxxx
+ms.assetid: BF877F23-1238-4586-9C16-246F3F25AE35
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに、Microsoft PlayReady コンテンツ保護を使ったマルチメディア コンテンツのアダプティブ ストリーミングを追加する方法について説明します。
+title: PlayReady を使ったアダプティブ ストリーミング
 ---
 
-# Xxxxxxxx Xxxxxxxxx xxxx XxxxXxxxx
+# PlayReady を使ったアダプティブ ストリーミング
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
-\[Xxxx xxxxxxxxxxx xxxxxxx xx xxx-xxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxx xx'x xxxxxxxxxxxx xxxxxxxx. Xxxxxxxxx xxxxx xx xxxxxxxxxx, xxxxxxx xx xxxxxxx, xxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxx.\]
+\[一部の情報はリリース前の製品に関することであり、正式版がリリースされるまでに大幅に変更される可能性があります。 ここに記載された情報について、マイクロソフトは明示または黙示を問わずいかなる保証をするものでもありません。\]
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxx xxxxxxxx xxxxxxxxx xx xxxxxxxxxx xxxxxxx xxxx Xxxxxxxxx XxxxXxxxx xxxxxxx xxxxxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx. Xxxx xxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxx xx Xxxx Xxxx Xxxxxxxxx (XXX) xxx Xxxxxxx Xxxxxxxxx xxxx XXXX (XXXX) xxxxxxx.
+この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに、Microsoft PlayReady コンテンツ保護を使ったマルチメディア コンテンツのアダプティブ ストリーミングを追加する方法について説明します。 現在、この機能では、HTTP ライブ ストリーミング (HLS) と Dynamic Adaptive Streaming over HTTP (DASH) コンテンツの再生がサポートされています。
 
-Xxxx xxxxxxx xxxx xxxxx xxxx xxx xxxxxxx xx xxxxxxxx xxxxxxxxx xxxxxxxx xx XxxxXxxxx. Xxx xxxxxxxxxxx xxxxx xxxxxxxxxxxx xxxxxxxx xxxxxxxxx xx xxxxxxx, xxx [Xxxxxxxx Xxxxxxxxx](adaptive-streaming.md).
+この記事では、アダプティブ ストリーミングの PlayReady 固有の側面についてのみ扱います。 アダプティブ ストリーミングの実装に関する全般的な情報については、「[アダプティブ ストリーミング](adaptive-streaming.md)」をご覧ください。
 
-Xxx xxxx xxxx xxx xxxxxxxxx xxxxx xxxxxxxxxx:
+次の using ステートメントが必要です。
 
 ```csharp
 using LicenseRequest;
@@ -30,9 +30,9 @@ using Windows.Media.Streaming.Adaptive;
 using Windows.UI.Xaml.Controls;
 ```
 
-Xxx **XxxxxxxXxxxxxx** xxxxxxxxx xx xxxx **XxxxxxXxxxxxxXxxxxxx.xx**, x XxxxXxxxx xxxx xxxxxxxx xx Xxxxxxxxx xx xxxxxxxxx.
+**LicenseRequest** 名前空間は、Microsoft がライセンス使用者に提供する PlayReady ファイル **CommonLicenseRequest.cs** にあります。
 
-Xxx xxxx xxxx xx xxxxxxx x xxx xxxxxx xxxxxxxxx:
+いくつかのグローバル変数を宣言する必要があります。
 
 ```csharp
 private AdaptiveMediaSource ams = null;
@@ -41,17 +41,17 @@ private string playReadyLicenseUrl = "";
 private string playReadyChallengeCustomData = "";
 ```
 
-Xxx xxxx xxxx xxxx xx xxxxxxx xxx xxxxxxxxx xxxxxxxx:
+次の定数を宣言することもできます。
 
 ```csharp
 private const int MSPR_E_CONTENT_ENABLING_ACTION_REQUIRED = -2147174251;
 ```
 
-## Xxxxxxx xx xxx XxxxxXxxxxxxxxxXxxxxxx
+## MediaProtectionManager の設定
 
-Xx xxx XxxxXxxxx xxxxxxx xxxxxxxxxx xx xxxx XXX xxx, xxx xxxx xxxx xx xxx xx x [XxxxxXxxxxxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/br207040) xxxxxx. Xxx xx xxxx xxxx xxxxxxxxxxxx xxxx [**XxxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn946912) xxxxxx.
+PlayReady コンテンツ保護を UWP アプリに追加するには、[MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040) オブジェクトを設定する必要があります。 これは、[**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912) オブジェクトを初期化するときに行います。
 
-Xxx xxxxxxxxx xxxx xxxx xx x [XxxxxXxxxxxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/br207040):
+次のコードは、[MediaProtectionManager](https://msdn.microsoft.com/library/windows/apps/br207040) をセットアップします。
 
 ```csharp
 private void SetUpProtectionManager(ref MediaElement mediaElement)
@@ -84,9 +84,9 @@ private void SetUpProtectionManager(ref MediaElement mediaElement)
 }
 ```
 
-Xxxx xxxx xxx xxxxxx xx xxxxxx xx xxxx xxx, xxxxx xx xx xxxxxxxxx xxx xxxxxxx xx xxxxxxx xxxxxxxxxx.
+コンテンツ保護の設定は必須のため、このコードはそのままアプリにコピーできます。
 
-Xxx [XxxxxxxxxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/br207041) xxxxx xx xxxxx xxxx xxx xxxx xx xxxxxx xxxx xxxxx. Xx xxxx xx xxx xx xxxxx xxxxxxx xx xxxxxx xxxx, xxxxxxxxx xxxx xxx xxxx xxx xxx xxxxxxxx:
+バイナリ データの読み込みに失敗すると、[ComponentLoadFailed](https://msdn.microsoft.com/library/windows/apps/br207041) イベントが発生します。 これを処理するにはイベント ハンドラーを追加して、読み込みが完了していないことを通知する必要があります。
 
 ```csharp
 private void ProtectionManager_ComponentLoadFailed(
@@ -97,7 +97,7 @@ private void ProtectionManager_ComponentLoadFailed(
 }
 ```
 
-Xxxxxxxxx, xx xxxx xx xxx xx xxxxx xxxxxxx xxx xxx [XxxxxxxXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/br207045) xxxxx, xxxxx xxxxx xxxx x xxxxxxx xx xxxxxxxxx. Xxxx xxxx xxxxxx xxxx xxxx xx xxxxxxx xx xx, xxx xxxxxxxx xxxxxxxxxxxxx:
+同様に、サービスが要求されたときに発生する [ServiceRequested](https://msdn.microsoft.com/library/windows/apps/br207045) イベントのイベント ハンドラーを追加する必要があります。 このコードは、要求の種類を確認し、それに応じて応答します。
 
 ```csharp
 private async void ProtectionManager_ServiceRequested(
@@ -125,9 +125,9 @@ private async void ProtectionManager_ServiceRequested(
 }
 ```
 
-## Xxxxxxxxxxxxxxxxx xxxxxxx xxxxxxxx
+## 個別化サービス要求
 
-Xxx xxxxxxxxx xxxx xxxxxxxxxx xxxxx x XxxxXxxxx xxxxxxxxxxxxxxxxx xxxxxxx xxxxxxx. Xx xxxx xx xxx xxxxxxx xx x xxxxxxxxx xx xxx xxxxxxxx. Xx xxxxxxxx xxx xxxx xx x xxx/xxxxx xxxxx, xxx xx xxxxx xxx xx xxxxxxxxxx, xx xxx xxx xxxxxxx xxxxxxxxx xxxxxxxxxxxx:
+次のコードでは、PlayReady 個別化サービス要求を事後対応的に行います。 要求は、パラメーターとして関数に渡します。 呼び出しは try/catch ブロックで囲み、例外がない場合は要求が正常に完了したと見なされます。
 
 ```csharp
 async Task<bool> ReactiveIndivRequest(
@@ -166,7 +166,7 @@ async Task<bool> ReactiveIndivRequest(
 }
 ```
 
-Xxxxxxxxxxxxx, xx xxx xxxx xx xxxxxxxxxxx xxxx xx xxxxxxxxxxxxxxxxx xxxxxxx xxxxxxx, xx xxxxx xxxx xx xxxx xxx xxxxxxxx xxxxx xx xxxxx xx xxx xxxx xxxxxxx `ReactiveIndivRequest` xx `ProtectionManager_ServiceRequested`:
+または、個別化サービス要求を事前に行うこともできます。その場合、`ProtectionManager_ServiceRequested` で `ReactiveIndivRequest` を呼び出すコードの代わりに以下の関数を呼び出します。
 
 ```csharp
 async void ProActiveIndivRequest()
@@ -176,9 +176,9 @@ async void ProActiveIndivRequest()
 }
 ```
 
-## Xxxxxxx xxxxxxxxxxx xxxxxxx xxxxxxxx
+## ライセンス取得サービス要求
 
-Xx xxxxxxx xxx xxxxxxx xxx x [XxxxXxxxxXxxxxxxXxxxxxxxxxxXxxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn986285), xx xxxx xxx xxxxx xxxxxxxx xx xxxxxxx xxx xxxxxxx xxx XxxxXxxxx xxxxxxx. Xx xxxx xxx XxxxxXxxxxxxxxxXxxxxxxXxxxxxxxxx xxxxxx xxxx xx xxxxxx xx xxxxxxx xxx xxxxxxx xxx xxxxxxxxxx xx xxx, xxx xx xxxxxxxx xxx xxxxxxx:
+代わりに、要求が [PlayReadyLicenseAcquisitionServiceRequest](https://msdn.microsoft.com/library/windows/apps/dn986285) であった場合、以下の関数を呼び出して PlayReady ライセンスを要求および取得します。 要求が成功したかどうかを、渡した MediaProtectionServiceCompletion オブジェクトに通知し、要求を完了します。
 
 ```csharp
 async void LicenseAcquisitionRequest(
@@ -258,9 +258,9 @@ async void LicenseAcquisitionRequest(
 }
 ```
 
-## Xxxxxxxxxxxx xxx XxxxxxxxXxxxxXxxxxx
+## AdaptiveMediaSource の初期化
 
-Xxxxxxx, xxx xxxx xxxx x xxxxxxxx xx xxxxxxxxxx xxx [XxxxxxxxXxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/dn946912), xxxxxxx xxxx x xxxxx [Xxx](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) xxx [XxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/br242926). Xxx **Xxx** xxxxxx xx xxx xxxx xx xxx xxxxx xxxx (XXX xx XXXX); xxx **XxxxxXxxxxxx** xxxxxx xx xxxxxxx xx xxxx XXXX.
+最後に、特定の [Uri](https://msdn.microsoft.com/library/windows/apps/xaml/system.uri.aspx) と [MediaElement](https://msdn.microsoft.com/library/windows/apps/br242926) から作成された [AdaptiveMediaSource](https://msdn.microsoft.com/library/windows/apps/dn946912) を初期化するための関数が必要になります。 **Uri** は、メディア ファイル (HLS または DASH) へのリンクです。**MediaElement** は、XAML で定義されます。
 
 ```csharp
 async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
@@ -279,13 +279,17 @@ async private void InitializeAdaptiveMediaSource(System.Uri uri, MediaElement m)
 }
 ```
 
-Xxx xxx xxxx xxxx xxxxxxxx xx xxxxxxxxx xxxxx xxxxxxx xxx xxxxx xx xxxxxxxx xxxxxxxxx—xxx xxxxxxxx, xx x xxxxxx xxxxx xxxxx.
+この関数は、アダプティブ ストリーミングの開始をどのイベント (たとえば、ボタン クリック イベント) で処理する場合でも呼び出すことができます。
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

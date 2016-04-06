@@ -1,58 +1,61 @@
 ---
-xxxxx: XxxxxxX xxx XXXX xxxxxxx
-xxxxxxxxxxx: Xxx xxx xxx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX) xxx Xxxxxxxxx XxxxxxX xxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
-xx.xxxxxxx: YxxYYYYx-YYxx-YYYx-YYYY-YxYYxxxxYxYx
+title: DirectX と XAML の相互運用機能
+description: ユニバーサル Windows プラットフォーム (UWP) ゲームで Extensible Application Markup Language (XAML) と Microsoft DirectX を組み合わせて使うことができます。
+ms.assetid: 0fb2819a-61ed-129d-6564-0b67debf5c6b
 ---
 
-# XxxxxxX xxx XXXX xxxxxxx
+# DirectX と XAML の相互運用機能
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxx xxx xxx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX) xxx Xxxxxxxxx XxxxxxX xxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xxx xxxxxxxxxxx xx XXXX xxx XxxxxxX xxxx xxx xxxxx xxxxxxxx xxxx xxxxxxxxx xxxxxxxxxx xxxx xxxxxxx xxxx xxxx XxxxxxX-xxxxxxxx xxxxxxx, xxx xx xxxxxxxxxxxx xxxxxx xxx xxxxxxxx-xxxxxxxxx xxxx. Xxxx xxxxx xxxxxxxx xxx xxxxxxxxx xx x XXX xxx xxxx xxxx XxxxxxX xxx xxxxxxxxxx xxx xxxxxxxxx xxxxx xx xxx xxxx xxxxxxxx xxxx XXX xxx xx xxxx xxxx XxxxxxX.
+ユニバーサル Windows プラットフォーム (UWP) ゲームで Extensible Application Markup Language (XAML) と Microsoft DirectX を組み合わせて使うことができます。 XAML と DirectX を組み合わせれば、DirectX でレンダリングしたコンテンツと相互運用できる柔軟なユーザー インターフェイス フレームワークを構築できます。これは、グラフィックスを多用するアプリで特に役立ちます。 ここでは、DirectX を使った UWP アプリの構造について説明し、DirectX と連携する UWP アプリを構築するときに使う重要な型を示します。
 
-> **Xxxx**  XxxxxxX XXXx xxx xxx xxxxxxx xx Xxxxxxx Xxxxxxx xxxxx, xx xxx xxxxxxxxx xxx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX) xx xxxxxxx XXXXXXX xxxxxxxxxx xxxx xxxxxxx xxxx XxxxxxX. Xxxx, xxx xxx xxxxxx x XXX xxx xxxx X# xxx XXXX xxxx xxxx XxxxxxX, xx xxx xxxx xxx XxxxxxX xxxxx xx x xxxxxxxx Xxxxxxx Xxxxxxx xxxxxxxx xxxx.
+> **注**  DirectX API は Windows ランタイム型として定義されていないため、DirectX と相互運用する XAMLUWP コンポーネントを開発するときは Visual C++ コンポーネント拡張機能 (C++/CX) を使うのが一般的です。 また、DirectX の呼び出しを独立した Windows ランタイム メタデータ ファイルにラップすると、C# と DirectX を利用する XAML を使って UWP アプリを作成できます。
 
  
 
-## XXXX xxx XxxxxxX
+## XAML と DirectX
 
 
-XxxxxxX xxxxxxxx xxx xxxxxxxx xxxxxxxxx xxx YX xxx YX xxxxxxxx: XxxxxxYX xxx Xxxxxxxxx XxxxxxYX. Xxxxxxxx XXXX xxxxxxxx xxxxxxx xxx xxxxx YX xxxxxxxxxx xxx xxxxxxx, xxxx xxxx, xxxx xx xxxxxxxx xxx xxxxxx, xxxx xxxx xxxxxxx xxxxxxxx xxxxxxx. Xxx xxxxx, xxx xxx xxx XxxxxxYX xxx XxxxxxYX xx xxxxxx xxxx xx xxx xx xxx xxxxxxxx xxx xxx XXXX xxx xxxxxxxxxx xxxx.
+DirectX には、2D と 3D のグラフィックス用に、Direct2D と Microsoft Direct3D という 2 つの強力なライブラリがあります。 XAML でも基本的な 2D のプリミティブと効果はサポートされますが、モデリングやゲームなどの多くのアプリでは、より複雑なグラフィックス サポートが必要になります。 そのようなアプリでは、Direct2D と Direct3D を使ってグラフィックスの一部または全体をレンダリングし、それ以外の部分には XAML を使うことができます。
 
-Xx xxx XXXX xxx XxxxxxX xxxxxxx xxxxxxxx, xxx xxxx xx xxxx xxxxx xxx xxxxxxxx:
+XAML と DirectX の相互運用シナリオでは、次の 2 つの概念を理解する必要があります。
 
--   Xxxxxx xxxxxxxx xxx xxxxx xxxxxxx xx xxx xxxxxxx, xxxxxxx xx XXXX, xxxx xxx xxx xxx XxxxxxX xx xxxx xxxx xxxxxxxxxx, xxxxx [**Xxxxxxx::XX::Xxxx::Xxxxx::Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br228076) xxxxx. Xxx xxxxxx xxxxxxxx, xxx xxx'x xxxxxxx xxx xxxxx xx xxxxxxx xxx xxxx xxxxx(x). Xxx xxxxxxx xx xxx xxxxxx xxxxxxx xxx xxxxxx xx xxx XXXX xxxxxxxxx'x xxxxxxx.
--   Xxx xxxx xxxxx xxxxxx. Xxxx xxxxxxxx xxx xxxx xxxxxx xx xxx XxxxxxX xxxxxxxxx xxxxxxxx, xxx xxxx xx xxxxxx xxxx xx xxxxxxxxx xxx xxxxxxx xxxxx xxx xxxxxx xxxxxx xx xxxxxxxx.
+-   共有サーフェイス。[**Windows::UI::Xaml::Media::Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) 型を使って DirectX で間接的に描画を行うことができる、サイズが指定されたディスプレイの領域です。この領域は XAML で定義されます。 共有サーフェイスについては、スワップ チェーンを表示する呼び出しの制御は行いません。 共有サーフェイスの更新は XAML フレームワークの更新に同期されます。
+-   スワップ チェーン。 DirectX のレンダリング パイプラインのバック バッファーを提供します。これはレンダー ターゲットの完了後に表示するメモリの領域です。
 
-Xxxxxxxx xxxx xxx xxx xxxxx XxxxxxX xxx. Xxxx xx xx xxxx xx xxxxxxxxx xx xxxxxxx x xxxxxx xxxxxxx xxxx xxxx xxxxxx xxx xxxxxxxxxx xx xxx xxxxxxx xxxxxx? Xxx xxx xxxxxxxxxx xxxxxxx xx xxxxxxxx xx xxxxx xxxxxxxx, xx xxx xxxxx xx xxx xxxxxx? Xxxx xx xxxxxxx xxxxxx xxxx xxxxx xx xx xxxxxxxx xxx xxxxxxxxxx xx xxxx-xxxx, xx xx x xxxx?
+次に、DirectX を使う目的を確認します。 表示ウィンドウのサイズに収まる 1 つのコントロールを作ったりアニメーション化したりするために使うのか、 作ったサーフェイスが他のサーフェイスまたは画面の端でふさがれる可能性はあるのか、 ゲームなどのようにリアルタイムでレンダリングして制御する必要がある出力をサーフェイスに表示するのかを確認します。
 
-Xxxx xxx'xx xxxxxxxxxx xxx xxx xxxxxx xx xxx XxxxxxX, xxx xxx xxx xx xxxxx Xxxxxxx Xxxxxxx xxxxx xx xxxxxxxxxxx XxxxxxX xxxxxxxxx xxxx xxxx Xxxxxxx Xxxxx xxx:
+DirectX をどのように使うかを決めたら、目的に応じて次のいずれかの Windows ランタイム型を使って、DirectX のレンダリングを Windows ストア アプリに組み込みます。
 
--   Xx xxx xxxx xx xxxxxxx x xxxxxx xxxxx, xx xxxx x xxxxxxx xxxxx xx xxxxx-xxxxxx xxxxxxxxx, xxxx xx x xxxxxx xxxxxxx xxxx [**Xxxxxxx::XX::Xxxx::Xxxxx::Xxxxxxx::XxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702041). Xxxx xxxx xxxxxxx x xxxxx XxxxxxX xxxxxxx xxxxxxx. Xxxxxxxxx, xxx xxx xxxx xxxx xxxx xxxxxxxxx xx xxxxx xx xxxxxxx xx x xxxxxx xxx xxxxxxx xx x xxxxxxxx xx XX xxxxxxx. Xx xxxxx'x xxxx xxxx xxx xxxx-xxxx xxxxxxxxxxxxx, xxxx xx x xxxx-xxxxxxxxxxx xxxx. Xxxx'x xxxxxxx xxxxxxx xx x **XxxxxxxXxxxxXxxxxx** xxxxxx xxx xxxxxx xx XXXX xxxx xxxxxxxxx xxxxxxx, xxx xxxx xxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxx xxxxxxxx xxx xxxxxxx xx xxx xxxx, xxxx x xxxxxxxxxxx xxxxx xxxx xx x xxxxxxxxx xxxx xxxxxxxx xx xxxx-xxxx xxxxx. Xxxxxxx xxx xxxxx xxxxx xxxxxx xxx xxxxxxx xxxxxxxx xx xxxx xxxxxxxxxxx, xxxxxx!
+-   静的な画像を構成する場合やイベント駆動型の複雑な画像を描画する場合は、[**Windows::UI::Xaml::Media::Imaging::SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) を使って共有サーフェイスに描画します。 これは、サイズが指定された DirectX の描画サーフェイスを処理する型です。 通常は、ドキュメントや UI 要素でビットマップとして表示する画像やテクスチャを構成する場合に使います。 この型は、高パフォーマンスのゲームのようなリアルタイムのインタラクティビティには適しません。 **SurfaceImageSource** オブジェクトの更新が XAML ユーザー インターフェイスの更新に同期されるため、フレーム レートが安定しない、リアルタイムの入力に対する応答が遅いなど、ユーザーへの視覚的フィードバックに待ち時間が生じるためです。 ただし、動的なコントロールやデータ シミュレーションであれば、更新に時間はかからず問題ありません。
 
-    [
-            **XxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702041) xxxxxxxx xxxxxxx xxx xx xxxxxxxxxx xxxx xxxxx XXXX XX xxxxxxxx. Xxx xxx xxxxxxxxx xx xxxxxxx xxxx , xxx xxx XXXX xxxxxxxxx xxxxxxxx xxx xxxxxxx xx x-xxxxx xxxxxx.
+    [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) グラフィックス オブジェクトは、他の XAML UI 要素と合成できます。 それらを変換または投影すると、XAML フレームワークに不透明度や z インデックスの値が適用されます。
 
--   Xx xxx xxxxx xx xxxxxx xxxx xxx xxxxxxxx xxxxxx xxxx xxxxxx, xxx xxx xx xxxxxx xx xxxxxx xx xxx xxxx, xxx [**Xxxxxxx::XX::Xxxx::Xxxxx::Xxxxxxx::XxxxxxxXxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702050). Xxxx xxxx xxxxxxx x xxxxx XxxxxxX xxxxxxx xxxxxxx xxxx xx xxxxxx xxxx xxx xxxxxx. Xxxx [**XxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702041), xxx xxx xxxx xxxx xxxxxxxxx x xxxxxxx xxxxx xx xxxxxxx xxxxxxxxxxx. Xxx, xxxx xxxx **XxxxxxxXxxxxXxxxxx**, xx xxxxx'x xxxx xxxx xxx xxxx-xxxxxxxxxxx xxxxx. Xxxx xxxxxxxx xx XXXX xxxxxxxx xxxx xxxxx xxx x **XxxxxxxXxxxxxxXxxxxXxxxxx** xxx xxx xxxxxxxx, xx x xxxxx, xxxxx-xxxxx xxxxxxxx xxxxxx.
+-   画像が画面上のスペースよりも大きく、ユーザーがパンまたはズームできる場合は、[**Windows::UI::Xaml::Media::Imaging::VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) を使います。 これは、画面よりも大きいサイズが指定された DirectX の描画サーフェイスを処理する型です。 [
+            **SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) と同様に、複雑な画像やコントロールを動的に構成する場合に使います。 また、**SurfaceImageSource** と同様に、高パフォーマンスのゲームには適しません。 **VirtualSurfaceImageSource** を使うことができる XAML 要素には、マップ コントロールや、画像が多い大きなドキュメント ビューアーなどがあります。
 
--   Xx xxx xxx xxxxx XxxxxxX xx xxxxxxx xxxxxxxx xxxxxxx xx xxxx-xxxx, xx xx x xxxxxxxxx xxxxx xxx xxxxxxx xxxx xxxx xx xxxxxxx xxx-xxxxxxx xxxxxxxxx, xxx xxx [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252834) xxxxx, xx xxx xxx xxxxxxx xxx xxxxxxxx xxxxxxx xxxxxxx xx xxx XXXX xxxxxxxxx xxxxxxx xxxxx. Xxxx xxxx xxxxxxx xxx xx xxxxxx xxx xxxxxxxx xxxxxx'x xxxx xxxxx ([**XXXXXXxxxXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404631)) xxxxxxxx xxx xxxxx XXXX xxxx xxx xxxxxx xxxxxx. Xxxx xxxx xxxxx xxxxx xxx xxxxx xxx xxxxx xxxx-xxxxxx XxxxxxX xxxx xxxx xxxxxxx x XXXX-xxxxx xxxx xxxxxxxxx. Xxx xxxx xxxx XxxxxxX xxxx xx xxx xxxx xxxxxxxx, xxxxxxxxx xxx Xxxxxxxxx XxxxxxX Xxxxxxxx Xxxxxxxxxxxxxx (XXXX), XxxxxxYX, xxx XxxxxxYX xxxxxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxxxx Xxxxx xxx XxxxxxYX YY](https://msdn.microsoft.com/library/windows/desktop/ff476345).
+-   リアルタイムで更新されるグラフィックスを DirectX を使って表示する場合や、短い待ち時間で定期的に更新を行う必要がある場合は、[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) クラスを使います。これにより、XAML フレームワークの更新タイマーに同期せずにグラフィックスを更新することができます。 この型を使うと、グラフィックス デバイスのスワップ チェーン ([**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631)) に直接アクセスし、XAML をレンダー ターゲットの上に配置できます。 この型は、ゲームなどの全画面の DirectX アプリで XAML ベースのユーザー インターフェイスが必要な場合に便利です。 Microsoft DirectX Graphics Infrastructure (DXGI)、Direct2D、Direct3D も含めて、この方法を使うには、DirectX に関する知識が必要です。 詳しくは、「[Direct3D 11 用プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/ff476345)」をご覧ください。
 
-## XxxxxxxXxxxxXxxxxx
+## SurfaceImageSource
 
+
+[**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) は、DirectX で描画を行うための共有サーフェイスを提供し、ビットからアプリのコンテンツを構成します。
 
 [
-            **XxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702041) xxxxxxxx XxxxxxX xxxxxx xxxxxxxx xx xxxx xxxx xxx xxxx xxxxxxxx xxx xxxx xxxx xxx xxxxxxx.
+            **SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) オブジェクトをコード ビハインドで作って更新する基本的なプロセスを次に示します。
 
-Xxxx xx xxx xxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx x [**XxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702041) xxxxxx xx xxx xxxx xxxxxx:
+1.  [
+            **SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) コンストラクターに高さと幅の値を渡して、共有サーフェイスのサイズを定義します。 アルファ (不透明度) のサポートが必要かどうかも指定できます。
 
-1.  Xxxxxx xxx xxxx xx xxx xxxxxx xxxxxxx xx xxxxxxx xxx xxxxxx xxx xxxxx xx xxx [**XxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702041) xxxxxxxxxxx. Xxx xxx xxxx xxxxxxxx xxxxxxx xxx xxxxxxx xxxxx xxxxx (xxxxxxx) xxxxxxx.
-
-    Xxx xxxxxxx:
+    次に例を示します。
 
     `SurfaceImageSource^ surfaceImageSource = ref new SurfaceImageSource(400, 300);`
 
-2.  Xxx x xxxxxxx xx [**XXxxxxxxXxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848322). Xxxx xxx [**XxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702041) xxxxxx xx [**XXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/br205821) (xx **XXxxxxxx**), xxx xxxx **XxxxxXxxxxxxxx** xx xx xx xxx xxx xxxxxxxxxx **XXxxxxxxXxxxxXxxxxxXxxxxx** xxxxxxxxxxxxxx. Xxx xxx xxx xxxxxxx xxxxxxx xx xxxx xxxxxxxxxxxxxx xx xxx xxx xxxxxx xxx xxx xxx xxxx xxxxxxxxxx.
+2.  [
+            **ISurfaceImageSourceNative**](https://msdn.microsoft.com/library/windows/desktop/hh848322) へのポインターを取得します。 [
+            **SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) オブジェクトを [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821) (または **IUnknown**) としてキャストし、それに対する **QueryInterface** を呼び出して、基になる **ISurfaceImageSourceNative** 実装を取得します。 この実装で定義されているメソッドを使って、デバイスを設定し、描画操作を実行します。
 
     ```cpp
     Microsoft::WRL::ComPtr<ISurfaceImageSourceNative> m_sisNative;
@@ -61,7 +64,8 @@ Xxxx xx xxx xxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx x [**XxxxxxxXxxxxXxxxxx**](h
     sisInspectable->QueryInterface(__uuidof(ISurfaceImageSourceNative), (void **)&m_sisNative);
     ```
 
-3.  Xxx xxx XXXX xxxxxx xx xxxxx xxxxxxx [**XYXYYXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476082) xxx xxxx xxxxxxx xxx xxxxxx xxx xxxxxxx xx [**XXxxxxxxXxxxxXxxxxxXxxxxx::XxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848325). Xxx xxxxxxx:
+3.  [
+            **D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) を呼び出してから [**ISurfaceImageSourceNative::SetDevice**](https://msdn.microsoft.com/library/windows/desktop/hh848325) にデバイスとコンテキストを渡して、DXGI デバイスを設定します。 次に例を示します。
 
     ```cpp
     Microsoft::WRL::ComPtr<ID3D11Device>              m_d3dDevice;
@@ -86,9 +90,10 @@ Xxxx xx xxx xxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx x [**XxxxxxxXxxxxXxxxxx**](h
     m_sisNative->SetDevice(dxgiDevice.Get());
     ```
 
-4.  Xxxxxxx x xxxxxxx xx [**XXXXXXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb174565) xxxxxx xx [**XXxxxxxxXxxxxXxxxxxXxxxxx::XxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848323), xxx xxxx xxxx xxxx xxxxxxx xxxxx XxxxxxX. Xxxx xxx xxxx xxxxxxxxx xxx xxxxxx xx xxx *xxxxxxXxxx* xxxxxxxxx xx xxxxx.
+4.  [
+            **IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) オブジェクトへのポインターを [**ISurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) に渡し、DirectX を使ってそのサーフェイスに描画します。 *updateRect* パラメーターで更新対象として指定した領域だけが描画されます。
 
-    > **Xxxx**   Xxx xxx xxxx xxxx xxx xxxxxxxxxxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848323) xxxxxxxxx xxxxxx xx x xxxx xxx [**XXXXXXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb174527).
+    > **注**   [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527) でアクティブにできる未処理の [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作は、一度に 1 つだけです。
 
      
 
@@ -108,7 +113,8 @@ Xxxx xx xxx xxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx x [**XxxxxxxXxxxxXxxxxx**](h
     }
     ```
 
-5.  Xxxx [**XXxxxxxxXxxxxXxxxxxXxxxxx::XxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848324) xx xxxxxxxx xxx xxxxxx. Xxxx xxxx xxxxxx xx xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br210101).
+5.  [
+            **ISurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324) を呼び出してビットマップを終了します。 このビットマップを [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) に渡します。
 
     ```cpp
     m_sisNative->EndDraw();
@@ -118,28 +124,31 @@ Xxxx xx xxx xxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx x [**XxxxxxxXxxxxXxxxxx**](h
     brush->ImageSource = surfaceImageSource;
     ```
 
-6.  Xxx xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br210101) xx xxxx xxx xxxxxx.
+6.  [
+            **ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) を使ってビットマップを描画します。
 
-> **Xxxx**   Xxxxxxx [**XxxxxxxXxxxxXxxxxx::XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243255) (xxxxxxxxx xxxx **XXxxxxxXxxxxx::XxxXxxxxx**) xxxxxxxxx xxxxxx xx xxxxxxxxx. Xx xxx xxxx xx xxxx xxxx [**XxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702041) xxxxxx.
+> **注**   現在、[**SurfaceImageSource::SetSource**](https://msdn.microsoft.com/library/windows/apps/br243255) (**IBitmapSource::SetSource** から継承) を呼び出すと例外がスローされます。 [
+            **SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) オブジェクトから呼び出さないでください。
 
  
 
-## XxxxxxxXxxxxxxXxxxxXxxxxx
+## VirtualSurfaceImageSource
 
+
+[**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) は、コンテンツが画面に収まらず、仮想化しないと最適なレンダリングにならない場合に、[**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) を拡張します。
+
+[**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) が [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) と異なる点は、[**IVirtualSurfaceImageSourceCallbacksNative::UpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848337) コールバックを使うことです。このコールバックを実装することで、サーフェイスの領域が画面に表示できるようになったときに領域が更新されます。 非表示の領域をクリアする必要はありません。この処理は XAML フレームワークで行われます。
 
 [
-            **XxxxxxxXxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702050) xxxxxxx [**XxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702041) xxxx xxx xxxxxxx xx xxxxxxxxxxx xxxxxx xxxx xxxx xxx xxx xx xxxxxx xxx xx xxx xxxxxxx xxxx xx xxxxxxxxxxx xx xxxxxx xxxxxxxxx.
+            **VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) オブジェクトをコード ビハインドで作成および更新する基本的なプロセスを次に示します。
 
-[
-            **XxxxxxxXxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702050) xxxxxxx xxxx [**XxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702041) xx xxxx xx xxxx x xxxxxxxx, [**XXxxxxxxXxxxxxxXxxxxXxxxxxXxxxxxxxxXxxxxx::XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848337), xxxx xxx xxxxxxxxx xx xxxxxx xxxxxxx xx xxx xxxxxxx xx xxxx xxxxxx xxxxxxx xx xxx xxxxxx. Xxx xx xxx xxxx xx xxxxx xxxxxxx xxxx xxx xxxxxx, xx xxx XXXX xxxxxxxxx xxxxx xxxx xx xxxx xxx xxx.
-
-Xxxx xx xxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx x [**XxxxxxxXxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702050) xxxxxx xx xxx xxxxxxxxxx:
-
-1.  Xxxxxx xx xxxxxxxx xx [**XxxxxxxXxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702050) xxxx xxx xxxx xxx xxxx. Xxx xxxxxxx:
+1.  サイズを指定して [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) のインスタンスを作成します。 次に例を示します。
 
     `VirtualSurfaceImageSource^ virtualSIS = ref new VirtualSurfaceImageSource(2000, 2000);`
 
-2.  Xxx x xxxxxxx xx [**XXxxxxxxXxxxxxxXxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848328). Xxxx xxx [**XxxxxxxXxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702050) xxxxxx xx [**XXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/br205821) xx [**XXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ms680509), xxx xxxx [**XxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ms682521) xx xx xx xxx xxx xxxxxxxxxx **XXxxxxxxXxxxxxxXxxxxXxxxxxXxxxxx** xxxxxxxxxxxxxx. Xxx xxx xxx xxxxxxx xxxxxxx xx xxxx xxxxxxxxxxxxxx xx xxx xxx xxxxxx xxx xxx xxx xxxx xxxxxxxxxx.
+2.  [
+            **IVirtualSurfaceImageSourceNative**](https://msdn.microsoft.com/library/windows/desktop/hh848328) へのポインターを取得します。 [
+            **VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) オブジェクトを [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821) または [**IUnknown**](https://msdn.microsoft.com/library/windows/desktop/ms680509) としてキャストし、それに対する [**QueryInterface**](https://msdn.microsoft.com/library/windows/desktop/ms682521) を呼び出して、基になる **IVirtualSurfaceImageSourceNative** 実装を取得します。 この実装で定義されているメソッドを使って、デバイスを設定し、描画操作を実行します。
 
     ```cpp
     Microsoft::WRL::ComPtr<IVirtualSurfaceImageSourceNative>  m_vsisNative;
@@ -148,7 +157,8 @@ Xxxx xx xxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx x [**XxxxxxxXxxxxxxXxxxxXxxxxx**
     vsisInspectable->QueryInterface(__uuidof(IVirtualSurfaceImageSourceNative), (void **)&m_vsisNative);
     ```
 
-3.  Xxx xxx XXXX xxxxxx xx xxxxxxx [**XXxxxxxxXxxxxxxXxxxxXxxxxxXxxxxx::XxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848325). Xxx xxxxxxx:
+3.  [
+            **IVirtualSurfaceImageSourceNative::SetDevice**](https://msdn.microsoft.com/library/windows/desktop/hh848325) を呼び出して DXGI デバイスを設定します。 次に例を示します。
 
     ```cpp
     Microsoft::WRL::ComPtr<ID3D11Device>              m_d3dDevice;
@@ -173,7 +183,8 @@ Xxxx xx xxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx x [**XxxxxxxXxxxxxxXxxxxXxxxxx**
     m_vsisNative->SetDevice(dxgiDevice.Get());
     ```
 
-4.  Xxxx [**XXxxxxxxXxxxxxxXxxxxXxxxxxXxxxxx::XxxxxxxxXxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848334), xxxxxxx xx x xxxxxxxxx xx xxxx xxxxxxxxxxxxxx xx [**XXxxxxxxXxxxxxxXxxxxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848336).
+4.  [
+            **IVirtualSurfaceImageSourceNative::RegisterForUpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848334) を呼び出して、[**IVirtualSurfaceUpdatesCallbackNative**](https://msdn.microsoft.com/library/windows/desktop/hh848336) の実装への参照を渡します。
 
     ```cpp
     class MyContentImageSource : public IVirtualSurfaceUpdatesCallbackNative
@@ -197,11 +208,13 @@ Xxxx xx xxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx x [**XxxxxxxXxxxxxxXxxxxXxxxxx**
     }
     ```
 
-    Xxx xxxxxxxxx xxxxx xxxx xxxxxxxxxxxxxx xx [**XXxxxxxxXxxxxxxXxxxxxxXxxxxxxxXxxxxx::XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848334) xxxx x xxxxxx xx xxx [**XxxxxxxXxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702050) xxxxx xx xx xxxxxxx.
+    [
+            **VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050) の領域を更新する必要がある場合、フレームワークで [**IVirtualSurfaceUpdatesCallbackNative::UpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848334) の実装が呼び出されます。
 
-    Xxxx xxx xxxxxx xxxxxx xxxx xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxx xx xx xxxxx (xxxx xx xxxx xxx xxxx xxxx xx xxxxx xxx xxxx xx xxx xxxxxxx), xx xxxxx xxx xxx xxx xxxxxx [**XXxxxxxxXxxxxxxXxxxxXxxxxxXxxxxx::Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848332) xx xxxx xxxxxx.
+    これが発生するのは、領域を描画する必要があるとフレームワークで特定されたとき (ユーザーがサーフェイスのビューをパンまたはズームしたときなど) と、その領域に対する [**IVirtualSurfaceImageSourceNative::Invalidate**](https://msdn.microsoft.com/library/windows/desktop/hh848332) がアプリで呼び出されたときです。
 
-5.  Xx [**XXxxxxxxXxxxxxxXxxxxXxxxxxXxxxxx::XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848337), xxx xxx [**XXxxxxxxXxxxxxxXxxxxXxxxxxXxxxxx::XxxXxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848329) xxx [**XXxxxxxxXxxxxxxXxxxxXxxxxxXxxxxx::XxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848330) xxxxxxx xx xxxxxxxxx xxxxx xxxxxx(x) xx xxx xxxxxxx xxxx xx xxxxx.
+5.  [
+            **IVirtualSurfaceImageSourceNative::UpdatesNeeded**](https://msdn.microsoft.com/library/windows/desktop/hh848337) で、[**IVirtualSurfaceImageSourceNative::GetUpdateRectCount**](https://msdn.microsoft.com/library/windows/desktop/hh848329) メソッドと [**IVirtualSurfaceImageSourceNative::GetUpdateRects**](https://msdn.microsoft.com/library/windows/desktop/hh848330) メソッドを使って、描画する必要があるサーフェイスの領域を特定します。
 
     ```cpp
     HRESULT STDMETHODCALLTYPE MyContentImageSource::UpdatesNeeded()
@@ -230,13 +243,15 @@ Xxxx xx xxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx x [**XxxxxxxXxxxxxxXxxxxXxxxxx**
     }
     ```
 
-6.  Xxxxxx, xxx xxxx xxxxxx xxxx xxxx xx xxxxxxx:
+6.  最後に、更新する必要がある領域ごとに以下を行います。
 
-    1.  Xxxxxxx x xxxxxxx xx xxx [**XXXXXXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb174565) xxxxxx xx [**XXxxxxxxXxxxxxxXxxxxXxxxxxXxxxxx::XxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848323), xxx xxxx xxxx xxxx xxxxxxx xxxxx XxxxxxX. Xxxx xxx xxxx xxxxxxxxx xxx xxxxxx xx xxx *xxxxxxXxxx* xxxxxxxxx xxxx xx xxxxx.
+    1.  [
+            **IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) オブジェクトへのポインターを [**IVirtualSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) に渡し、DirectX を使ってそのサーフェイスに描画します。 *updateRect* パラメーターで更新対象として指定した領域だけが描画されます。
 
-        Xx xxxx [**XxXxxxxxxXxxxxXxxxxxXxxxxx::XxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848323), xxxx xxxxxx xxxxxxx xxx xxxxx (x,x) xxxxxx xx xxx xxxxxxx xxxxxx xxxxxxxxx xx xxx *xxxxxx* xxxxxxxxx. Xxx xxx xxxx xxxxxx xx xxxxxxxxx xxxxx xx xxxx xxxx xxxxxx xxx [**XXXXXXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb174565).
+        [
+            **IlSurfaceImageSourceNative::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) と同様に、このメソッドは、更新されるターゲットの四角形の位置 (x、y) を示すオフセットを *offset* パラメーターで返します。 このオフセットを使って、[**IDXGISurface**](https://msdn.microsoft.com/library/windows/desktop/bb174565) 内の描画する位置を特定できます。
 
-        > **Xxxx**   Xxx xxx xxxx xxxx xxx xxxxxxxxxxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848323) xxxxxxxxx xxxxxx xx x xxxx xxx [**XXXXXXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb174527).
+        > **注**   [**IDXGIDevice**](https://msdn.microsoft.com/library/windows/desktop/bb174527) でアクティブにできる未処理の [**BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848323) 操作は、一度に 1 つだけです。
 
          
 
@@ -258,45 +273,47 @@ Xxxx xx xxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx x [**XxxxxxxXxxxxxxXxxxxXxxxxx**
 
     3.  Call [**IVirtualSurfaceImageSourceNative::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/hh848324). The result is a bitmap.
 
-## XxxxXxxxxXxxxx xxx xxxxxx
+## SwapChainPanel とゲーム
 
 
-[
-            **XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252834) xx xxx Xxxxxxx Xxxxxxx xxxx xxxxxxxx xx xxxxxxx xxxx-xxxxxxxxxxx xxxxxxxx xxx xxxxxx, xxxxx xxx xxxxxx xxx xxxx xxxxx xxxxxxxx. Xx xxxx xxxx, xxx xxxxxx xxxx xxx XxxxxxX xxxx xxxxx xxx xxxxxx xxx xxxxxxxxxxxx xx xxxx xxxxxxxx xxxxxxx. Xxx xxx xxxx xxx XXXX xxxxxxxx xx xxx **XxxxXxxxxXxxxx** xxxxxx, xxxx xx xxxxx, xxxxx-xx xxxxxxxx, xxx xxxxx XX xxxxxxxx.
+[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) は、高パフォーマンスのグラフィックスやゲームをサポートするために設計された Windows ランタイム型です。この型でスワップ チェーンを直接管理します。 この例では、独自の DirectX スワップ チェーンを作成し、レンダリングされるコンテンツの表示を管理します。 その後、メニュー、ヘッドアップ ディスプレイ、その他の UI オーバーレイなどの XAML 要素を **SwapChainPanel** オブジェクトに追加できます。
 
-Xx xxxxxx xxxx xxxxxxxxxxx, xxxxx xxx xxxxxxx xxxxxxxxxxx xx xxx [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252834) xxxx:
-
--   Xxxxx xxx xx xxxx xxxx Y [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252834) xxxxxxxxx xxx xxx.
--   Xxx **Xxxxxxx**, **XxxxxxXxxxxxxxx**, **Xxxxxxxxxx**, xxx **Xxxx** xxxxxxxxxx xxxxxxxxx xx [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252834) xxx xxx xxxxxxxxx.
--   Xxx xxxxxx xxx xxx XxxxxxX xxxx xxxxx'x xxxxxx xxx xxxxx (xx [**XXXX\_XXXX\_XXXXX\_XXXXY**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) xx xxx xxxxxxx xxxxxxxxxx xx xxx xxx xxxxxx. Xx xxx xxx'x, xxx xxxxxxx xxxxxxx xxxx xx xxxxxx (xxxxx **XXXX\_XXXXXXX\_XXXXXXX**) xx xxx.
--   Xxx xxxx xxx xxx XxxxxxX xxxx xxxxx'x xxxxxxx xxxx (xx [**XXXX\_XXXX\_XXXXX\_XXXXY**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) xx **XXXX\_XXXXXXX\_XXXXXXX**.
--   Xxx xxx'x xxx xxx XxxxxxX xxxx xxxxx'x xxxxx xxxx (xx [**XXXX\_XXXX\_XXXXX\_XXXXY**](https://msdn.microsoft.com/library/windows/desktop/hh404528)) xx **XXXX\_XXXXX\_XXXX\_XXXXXXXXXXXXX**.
--   Xxx xxxx xxxxxx xxx XxxxxxX xxxx xxxxx xx xxxxxxx [**XXXXXXxxxxxxY::XxxxxxXxxxXxxxxXxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh404558).
-
-Xxx xxxxxx xxx [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252834) xxxxx xx xxx xxxxx xx xxxx xxx, xxx xxx xxx xxxxxxx xx xxx XXXX xxxxxxxxx. Xx xxx xxxx xx xxxxxxxxxxx xxx xxxxxxx xx **XxxxXxxxxXxxxx** xx xxxxx xx xxx XXXX xxxxxxxxx, xxxxxxxx xxx xxx [**Xxxxxxx::XX::Xxxx::Xxxxx::XxxxxxxxxxxXxxxxx::Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br228127) xxxxx. Xxxxxxxxx, xxx xxxx xxxxxxxx xxx xxxxx-xxxxxx xxxxxx xx xxx xxx xx xxxxxx xxx XXXX xxxxxxxx xxxx x xxxxxxxxx xxxxxx xxxx xxx xxx xxxxxxxx xxx **XxxxXxxxxXxxxx**.
-
-Xxxxx xxx xxxx x xxx xxxxxxx xxxx xxxxxxxxx xx xxxxxx xxxxxxxxx xxxx xxx xx xxx [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252834).
+フォーマンスを高めるために、[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) 型には次のような制限事項があります。
 
 -   [
-            **XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252834) xxxxxxxx xxxx [**Xxxxxxx::XX::Xxxx::Xxxxxxxx::Xxxx**](https://msdn.microsoft.com/library/windows/apps/br242704), xxx xxxxxxxx xxxxxxx xxxxxx xxxxxxxx. Xxxxxxxxxxx xxxxxxxx xxxx xxx **Xxxx** xxxx xxx xxx xxxxxxxxxx.
+            **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) インスタンスの数はアプリごとに 4 つ以下です。
+-   **Opacity**、**RenderTransform**、**Projection**、**Clip** の各プロパティの [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) による継承はサポートされていません。
+-   DirectX スワップ チェーンの高さと幅 ([**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) で設定) は、アプリ ウィンドウの現在のサイズに設定することをお勧めします。 このように設定しないと、表示されるコンテンツのサイズが自動的に調整されます (**DXGI\_SCALING\_STRETCH** を使用)。
+-   DirectX スワップ チェーンのスケーリング モード ([**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) で設定) は、**DXGI\_SCALING\_STRETCH** に設定する必要があります。
+-   DirectX スワップ チェーンのアルファ モード ([**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) で設定) を **DXGI\_ALPHA\_MODE\_PREMULTIPLIED** に設定することはできません。
+-   DirectX スワップ チェーンを作成するときは、[**IDXGIFactory2::CreateSwapChainForComposition**](https://msdn.microsoft.com/library/windows/desktop/hh404558) を呼び出す必要があります。
 
--   Xxxxx x XxxxxxX xxxx xxxxx xxx xxxx xxx, xxx xxxxx xxxxxx xxxx xxx xxxxx xxx [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252834) xxxx xxx xxxx xx xxxx xx xxx xxx xxxxx XXXX xxxxxxx. Xxx xxx'x xxx x xxxxxxxxxx xxxxx xxx **XxxxXxxxxXxxxx**, xxx xxx xxx'x xxxx xx xxxxxx xxxxx xxxxxx xxxx xxx xxx'x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxx xxxxxxxx xx xxx xx xx XxxxxxX xxxx xxxx xxx'x xxx **XxxxXxxxxXxxxx**.
+[
+            **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) の更新は、XAML フレームワークの更新ではなく、アプリのニーズに基づいて行います。 **SwapChainPanel** の更新を XAML フレームワークの更新に同期する必要がある場合は、[**Windows::UI::Xaml::Media::CompositionTarget::Rendering**](https://msdn.microsoft.com/library/windows/apps/br228127) イベントに登録します。 このイベントに登録しないと、**SwapChainPanel** を更新するスレッドと異なるスレッドから XAML 要素を更新する場合に、クロス スレッドの問題についての検討が必要になります。
 
--   • Xxx xxxxxxx xx xxx xxxxxx XXXX xxxxxxx xxxx xxxxx x xxxxxx xxxxx xx x [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252834) xx xxxxxxx xx xxx xxxxxx xxxx xx xxx **XxxxXxxxxXxxxx** xxxxxx’x xxxxxxxxx xxxxx. Xxx xxxxxxx xxxx xx xxxxxxxxxxx xxxxxxx xxxxx xxxxxx xxxxxx xxx'x xx xxxxxxxx. Xxxxxxxxx, xxxxx xxx XXXX xxxxxxx xxxx xxx xxxxxxx xxxx x XXXX[**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210490) xx xxx xxxxxx xxxx xxxxx xx xxxxxxx xxxxx xxxxxx xxxxxx xxx xxxxx xxxxxx xx xxxxxxx xxx xxxx xxxxx xx xxx xxxxxxxxx.
+次に、[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) を使うアプリを設計する際の一般的なヒントをいくつか紹介します。
 
--   Xxxxx xxx xxxxxx xx xxxxxxxxx xxxxxx XXXX xxxxxxxx xxxxx x [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252834). Xx xxxxxxxx, xxxxx xxxxxxxx xxxx xxx xx xxxxx xxxxxxxxx xxxxx x xxxxxx xxxxxx. Xxx xxxxx xx x xxxxxxxxxxx xxxxxxxx xxxxxxx xxx xxxxxx xx xxxxxxxxx xxxxxx xxxxxxxx xxx xxx xxxx xx xxx xxxxxxxx: xxx xxxx xx xxxxxxxxxxxxx xxxxx XXXX xxxxxxxx xxx xxxxxx xxxxxxx xxxxxxxxxxx. Xxxxxxxx, xxx'x xxxxxx x xxxxxx xxxx-xxxxxx xxxxx XXXX xxxxxxx xxx xxxx xxx'x **XxxxXxxxxXxxxx** xxxxxxx xxxx xxxxxxxxx xxxxxxxx xx xxx xxx xxx xxxxxxxxx xxxxxxxxxxx. Xx x xxxx, xxxxxx xx xxxx xxxx Y xxxxxxxxx XXXX xxxxxx xxxxxxxx xxx xxxx xxx'x **XxxxXxxxxXxxxx**, xxx xxxx xxxxxxx xxxx xxxx x xxxxxx xxxx xxxx xx xxxxx xx xxxxxxxxx xx xxxxxxx xxx xxxxxxx'x xxxxxx xxxxxxx. Xxxxxxx, xxx xxx xxxx xxx xxxxxx xxxx xx xxxxxxxx xxxxx x xxxxx xxxxxxx xx xxx **XxxxXxxxxXxxxx** xxxxxxxxxxxx xxxxxxx xxxxxxx xxxxxxxxxx xxxxxxxxxxx xxx xxxxx.
+-   [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) は [**Windows::UI::Xaml::Controls::Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) を継承し、同様のレイアウト動作をサポートします。 **Grid** 型とそのプロパティについて確認しておいてください。
 
-> **Xxxx**   Xx xxxxxxx, xxxx XxxxxxX xxxx xxxxxx xxxxxx xxxx xxxxxx xx xxxxxxxxx xxxxxxxxxxx, xxx xxxxx xx xxx xxxxxxx xxxxxx xxxx (xxxxx xx xxxxxxx xxx xxxxxx xxxxxx xxxxxxxxxx xx xxxx Xxxxxxx Xxxxx xxxxx). Xxxx xxxxxxx xxxx xxxx xxx xxxx xxx xxxxxxx xxxx xxxxx xxxxxxxxxxxxxx xxxx xx xxxxx'x xxxx xxx xxxxxxx XXXX xxxxxxx. Xx xxx xxx xx xxxxxxx xx xxxxxxxx xxxx, xxxx xxx xxxxxx xxxx [**XXXXXXxxxXxxxxY::XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh446801) xx xxx xxxxxxxx xxxx xxxxx, xxxxx x xxxxxxxxx xx xxx xxxxxxx xx xxxxxx, xxx xxxx xxxx [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/dn302144) xxxxx xx xxx xxxx xxxx xxxxx. Xxxxxxxxx, xxxx xxx xxxxxx xxxx **XxxXxxxXxxxx** xxxxx xx xxx xxxx xxxx xxxxx xxxxxxxx xxx xxxx xxxxx xx xxxxxxx xx xxxxxxx [**XXXXXXxxxXxxxx::XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb174577).
+-   DirectX スワップ チェーンの設定後、[**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) に対する入力イベントはすべて他の XAML 要素と同じように機能します。 **SwapChainPanel** に対しては背景ブラシを設定しません。また、**SwapChainPanel** を使わない DirectX アプリとは異なり、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトからの入力イベントを直接処理する必要はありません。
+
+-   • XAML 視覚要素のコンテンツのうち、ビジュアル ツリーで [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) の直接の子の下にあるコンテンツは、いずれも **SwapChainPanel** オブジェクトの直接の子のレイアウト サイズに合わせてクリッピングされます。 変換後にそれらのレイアウトの境界に収まらないコンテンツはレンダリングされません。 そのため、XAML の [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) でアニメーション化する XAML コンテンツをビジュアル ツリーに配置するときは、アニメーションのすべての範囲がレイアウトの境界に収まる大きさの要素の下に配置します。
+
+-   [
+            **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) の直接の子にする XAML 視覚要素の数を制限します。 近接する要素は、できるだけ共通の親の下にまとめます。 ただし、XAML 要素が多すぎたり必要以上に大きいと全体のパフォーマンスに影響することがあるため、直接の子視覚要素の数とサイズについてはパフォーマンスとのバランスに注意する必要があります。 同様に、アプリの **SwapChainPanel** の子 XAML 要素を単一の全画面の要素にすると、過剰な描画が増えてアプリのパフォーマンスが低下するため、このような要素は作成しないようにします。 一般に、アプリの **SwapChainPanel** に対して作成する直接の子 XAML 視覚要素は 8 つまでにします。また、各要素のレイアウト サイズは、要素のコンテンツを表示するために必要な大きさに制限する必要があります。 ただし、**SwapChainPanel** の子要素の下のビジュアル ツリーについては、ある程度複雑にしてもパフォーマンスはそれほど低下しません。
+
+> **注**   一般に、DirectX アプリでは、サイズが表示ウィンドウのサイズ (通常は、ほとんどの Windows ストア ゲームのネイティブの画面解像度) と同じである横方向のスワップ チェーンを作る必要があります。 これにより、表示される XAML オーバーレイがない場合はアプリで最適なスワップ チェーンの実装が使われます。 縦モードに回転した場合、アプリは既にあるスワップ チェーンで [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) を呼び出し、必要に応じてコンテンツに変換を適用して、同じスワップ チェーンで [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) をもう一度呼び出す必要があります。 同様に、アプリは、[**IDXGISwapChain::ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577) 呼び出しによってスワップ チェーンのサイズが変更されるたびに、同じスワップ チェーンで **SetSwapChain** をもう一度呼び出す必要があります。
 
  
 
-Xxxx xx xxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx x [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252834) xxxxxx xx xxx xxxx xxxxxx:
+[
+            **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) オブジェクトをコード ビハインドで作って更新する基本的なプロセスを次に示します。
 
-1.  Xxx xx xxxxxxxx xx x xxxx xxxxx xxxxx xxx xxxx xxx. Xxx xxxxxxxxx xxx xxxxxxxxx xx xxxx XXXX xxxx xxx `<SwapChainPanel>` xxx.
+1.  アプリのスワップ チェーン パネルのインスタンスを取得します。 これらのインスタンスは、XAML では `<SwapChainPanel>` タグを使って示されます。
 
     `Windows::UI::Xaml::Controls::SwapChainPanel^ swapChainPanel;`
 
-    Xxxx xx xx xxxxxxx `<SwapChainPanel>` xxx.
+    `<SwapChainPanel>` タグの例を次に示します。
 
     ```xaml
     <SwapChainPanel x:Name=&quot;swapChainPanel&quot;>
@@ -307,7 +324,9 @@ Xxxx xx xxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx x [**XxxxXxxxxXxxxx**](https://m
     …
     ```
 
-2.  Xxx x xxxxxxx xx [**XXxxxXxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/dn302143). Xxxx xxx [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252834) xxxxxx xx [**XXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/br205821) (xx **XXxxxxxx**), xxx xxxx **XxxxxXxxxxxxxx** xx xx xx xxx xxx xxxxxxxxxx **XXxxxXxxxxXxxxxXxxxxx** xxxxxxxxxxxxxx.
+2.  [
+            **ISwapChainPanelNative**](https://msdn.microsoft.com/library/windows/desktop/dn302143) へのポインターを取得します。 [
+            **SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) オブジェクトを [**IInspectable**](https://msdn.microsoft.com/library/windows/desktop/br205821) (または **IUnknown**) としてキャストし、それに対する **QueryInterface** を呼び出して、基になる **ISwapChainPanelNative** 実装を取得します。
 
     ```cpp
     Microsoft::WRL::ComPtr<ISwapChainPanelNative> m_swapChainNative;
@@ -316,7 +335,7 @@ Xxxx xx xxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx x [**XxxxXxxxxXxxxx**](https://m
     panelInspectable->QueryInterface(__uuidof(ISwapChainPanelNative), (void **)&m_swapChainNative);
     ```
 
-3.  Xxxxxx xxx XXXX xxxxxx xxx xxx xxxx xxxxx, xxx xxx xxx xxxx xxxxx xx [**XXxxxXxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/dn302143) xx xxxxxxx xx xx [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/dn302144).
+3.  DXGI デバイスとスワップ チェーンを作成し、スワップ チェーンを [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/dn302144) に渡して [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/windows/desktop/dn302143) に設定します。
 
     ```cpp
     Microsoft::WRL::ComPtr<IDXGISwapChain1>               m_swapChain;    
@@ -356,28 +375,32 @@ Xxxx xx xxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx x [**XxxxXxxxxXxxxx**](https://m
     m_swapChainNative->SetSwapChain(m_swapChain.Get());
     ```
 
-4.  Xxxx xx xxx XxxxxxX xxxx xxxxx, xxx xxxxxxx xx xx xxxxxxx xxx xxxxxxxx.
+4.  DirectX スワップ チェーンに描画し、それを渡してコンテンツを表示します。
 
     ```cpp
     HRESULT hr = m_swapChain->Present(1, 0);
     ```
 
-    Xxx XXXX xxxxxxxx xxx xxxxxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxxx/xxxxxx xxxxx xxxxxxx xx xxxxxx.
+    XAML 要素は、Windows ランタイムのレイアウトやレンダリング ロジックから更新が通知されると更新されます。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
 
-* [**XxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702041)
-* [**XxxxxxxXxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702050)
-* [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252834)
-* [**XXxxxXxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/dn302143)
-* [Xxxxxxxxxxx Xxxxx xxx XxxxxxYX YY](https://msdn.microsoft.com/library/windows/desktop/ff476345)
+* [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041)
+* [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050)
+* [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834)
+* [**ISwapChainPanelNative**](https://msdn.microsoft.com/library/windows/desktop/dn302143)
+* [Direct3D 11 用プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/ff476345)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,23 +1,27 @@
 ---
-xx.xxxxxxx: YxxYxxYY-YxxY-YxYx-xYYY-xxYYYxYYYYxY
-xxxxxxxxxxx: Xxxxxxxxxxxx xxx xxxxxxxxx xxx xxxxxxx xxx xxx xxxxxxxx.
-xxxxx: Xxxxxxxxxx xxx xxx xxxxxxxx
+ms.assetid: 7bb9fd81-8ab5-4f8d-a854-ce285b0669a4
+description: ネットワークと Web サービスにアクセスするためのテクノロジ。
+title: ネットワークと Web サービス
 ---
 
-# Xxxxxxxxxx xxx xxx xxxxxxxx
+# ネットワークと Web サービス
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxx xxxxxxxxx xxxxxxxxxx xxx xxx xxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxxxx.
+ユニバーサル Windows プラットフォーム (UWP) 開発者は、次のネットワークと Web サービス テクノロジを利用できます。
 
-| Xxxxx                                                                                   | Xxxxxxxxxxx                                                                      |
+| トピック                                                                                   | 説明                                                                      |
 |-----------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| [Xxxxxxxxxx xxxxxx](networking-basics.md)                                               | Xxxxxx xxx xxxx xx xxx xxx xxxxxxx-xxxxxxx xxx.                     |
-| [Xxxxx xxxxxxxxxx xxxxxxxxxx?](which-networking-technology.md)                          | X xxxxx xxxxxxxx xx xxx xxxxxxxxxx xxxxxxxxxxxx xxxxxxxxx xxx x XXX xxxxxxxxx, xxxx xxxxxxxxxxx xx xxx xx xxxxxx xxx xxxxxxxxxxxx xxxx xxx xxxxx xxx xxxx xxx.               |
-| [Xxxxxxx xxxxxxxxxxxxxx xx xxx xxxxxxxxxx](network-communications-in-the-background.md) | Xxxx xxx xxxxxxxxxx xxxxx xxx xxx xxxx xxxxxxxxxx xx xxxxxxxx xxxxxxxxxxxxxx xxxx xxxx xxx xxx xx xxx xxxxxxxxxx: Xxx xxxxxx xxxxxx, xxx xxxxxxx xxxxxxx xxxxxxxx.                  |
-| [Xxxxxxx](sockets.md)                                                                   | Xxx xxx xxx xxxx [Xxxxxxx.Xxxxxxxxxx.Xxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.networking.sockets.aspx) xxx [Xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ms737523) xx xxxxxxxxxxx xxxx xxxxx xxxxxxx xx x XXX xxx xxxxxxxxx. Xxxx xxxxx xxxxxxxx xx-xxxxx xxxxxxxx xx xxxxx xxx Xxxxxxx.Xxxxxxxxxx.Xxxxxxx xxxxxxxxx xx xxxxxxx xxxxxxxxxx xxxxxxxxxx. |
-| [XxxXxxxxxx](websockets.md)                                                             | XxxXxxxxxx xxxxxxx x xxxxxxxxx xxx xxxx, xxxxxx xxx-xxx xxxxxxxxxxxxx xxxxxxx x xxxxxx xxx x xxxxxx xxxx xxx xxx xxxxx XXXX(X).                 |
-| [XxxxXxxxxx](httpclient.md)                                                             | Xxx [Xxxxxxx.Xxx.Xxxx](https://msdn.microsoft.com/library/windows/apps/dn279692) xxxxxxxxx XXX xx xxxx xxx xxxxxxx xxxxxxxxxxx xxxxx xxx XXXX Y.Y xxx XXXX Y.Y xxxxxxxxx.             |
-| [XXX/Xxxx xxxxx](web-feeds.md)                                                          | Xxxxxxxx xx xxxxxx xxx xxxx xxxxxxx xxx xxxxxxx Xxx xxxxxxx xxxxx xxxxxxxxxx xxxxx xxxxxxxxx xxxxxxxxx xx xxx XXX xxx Xxxx xxxxxxxxx xxxxx xxxxxxxx xx xxx [Xxxxxxx.Xxx.Xxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/br243632) xxxxxxxxx.                   |
-| [Xxxxxxxxxx xxxxxxxxx](background-transfers.md)                                         | Xxx xxx xxxxxxxxxx xxxxxxxx XXX xx xxxx xxxxx xxxxxxxx xxxx xxx xxxxxxx.           |
+| [ネットワークの基本](networking-basics.md)                                               | ネットワーク対応アプリで実行する必要がある事柄について説明します。                     |
+| [アプリに適したネットワーク テクノロジ](which-networking-technology.md)                          | UWP 開発者が利用できるネットワーク テクノロジの概要と、アプリに適したテクノロジを選ぶ方法に関する提案事項について説明します。               |
+| [バックグラウンドでのネットワーク通信](network-communications-in-the-background.md) | アプリは、フォアグラウンドでないとき、バックグラウンド タスクと 2 つの主要なメカニズム (ソケット ブローカーとコントロール チャネル トリガー) を使って通信を維持します。                  |
+| [ソケット](sockets.md)                                                                   | UWP アプリ開発者として、[Windows.Networking.Sockets](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.networking.sockets.aspx) と [Winsock](https://msdn.microsoft.com/library/windows/desktop/ms737523) の両方を使って他のデバイスと通信できます。 このトピックでは、Windows.Networking.Sockets 名前空間を使ってネットワーク操作を実行する方法の詳しいガイダンスを示します。 |
+| [WebSocket](websockets.md)                                                             | WebSocket は、クライアントとサーバー間の高速でセキュリティ保護された双方向通信を、HTTP(S) を使った Web 経由で実行するためのメカニズムを提供します。                 |
+| [HttpClient](httpclient.md)                                                             | HTTP 2.0 プロトコルと HTTP 1.1 プロトコルを使って情報を送受信するには、[Windows.Web.Http](https://msdn.microsoft.com/library/windows/apps/dn279692) 名前空間 API を使います。             |
+| [RSS/Atom フィード](web-feeds.md)                                                          | [Windows.Web.Syndication](https://msdn.microsoft.com/library/windows/apps/br243632) 名前空間の機能を利用し、RSS や Atom の標準に従って生成される概要フィードを使って、最新の人気の高い Web コンテンツを取得または作成します。                   |
+| [バックグラウンド転送](background-transfers.md)                                         | ネットワーク経由でファイルを確実にコピーするには、バックグラウンド転送 API を使います。           |
+
+
 <!--HONumber=Mar16_HO1-->
+
+

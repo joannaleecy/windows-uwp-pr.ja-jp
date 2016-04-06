@@ -1,77 +1,77 @@
 ---
-Xxxxxxxxxxx: Xxx xxxxxx xxx XX xxx xxxx xxx xx xxxxx xxxxxxxx xxxx xx xxxxxxx, xxxx xxxxx, xxx xxxxx xxxxx xx xxxxxxx xxxx xxx xxx xxxx xxxxx. Xxxx, xx xxxx xxx xxx xx xxx xxxxxxxx xx xxxx xxx.
-xxxxx: Xxx xxxxxxxx xxx xxxxxx xxxxxx
-xx.xxxxxxx: YYYYYXXY-XXXY-YYYX-YYXY-YYXXYXYYXYXY
-xxxxx: Xxxxx xx xxxxxxxx xxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: ボタン、テキスト ボックス、コンボ ボックスなどのコントロールを使って、データを表示し、ユーザー入力を取得するためのアプリの UI を作ります。 ここでは、アプリにコントロールを追加する方法について説明します。
+title: コントロールの追加とイベントの処理
+ms.assetid: 64740BF2-CAA1-419E-85D1-42EE7E15F1A5
+label: コントロールとイベントの概要
+template: detail.hbs
 ---
-# Xxxxx xx xxxxxxxx xxx xxxxxx
+# コントロールとイベントの概要
 
-Xxx xxxxxx xxx XX xxx xxxx xxx xx xxxxx xxxxxxxx xxxx xx xxxxxxx, xxxx xxxxx, xxx xxxxx xxxxx xx xxxxxxx xxxx xxx xxx xxxx xxxxx. Xxxx, xx xxxx xxx xxx xx xxx xxxxxxxx xx xxxx xxx. Xxxxx xxx Y xxx xxxxx xx xxxxxx xxxxxxxx xx xxxx xxx: 
+ボタン、テキスト ボックス、コンボ ボックスなどのコントロールを使って、データを表示し、ユーザー入力を取得するためのアプリの UI を作ります。 ここでは、アプリにコントロールを追加する方法について説明します。 アプリにコントロールを追加するには、3 つの重要な手順があります。 
 
-- Xxx x xxxxxxx xx xxxx xxx XX. 
-- Xxx xxxxxxxxxx xx xxx xxxxxxx, xxxx xx xxxxx, xxxxxx, xx xxxxxxxxxx xxxxx. 
-- Xxx xxxx xx xxx xxxxxxx'x xxxxx xxxxxxxx xx xxxx xx xxxx xxxxxxxxx. 
+- アプリの UI にコントロールを追加します。 
+- 幅、高さ、前景色など、コントロールのプロパティを設定します。 
+- 動作を行うためのコードをコントロールに追加します。 
 
-## Xxx x xxxxxxx
-Xxx xxx xxx x xxxxxxx xx xx xxx xx xxxxxxx xxxx:
+## コントロールの追加
+アプリにコントロールを追加するには、いくつかの方法があります。
  
-- Xxx x xxxxxx xxxx xxxx Xxxxx xxx Xxxxxx Xxxxxx xx xxx Xxxxxxxxx Xxxxxx Xxxxxx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX) xxxxxxxx. 
-- Xxx xxx xxxxxxx xx xxx XXXX xxxxxx xx xxx Xxxxxx Xxxxxx XXXX xxxxxx. 
-- Xxx xxx xxxxxxx xx xxxx. Xxxxxxxx xxxx xxx xxx xx xxxx xxx xxxxxxx xxxx xxx xxx xxxx, xxx xxx xxx xxxxxxx xx xxx Xxxxxx Xxxxxx XXXX xxxxxxxx.
+- Blend for Visual Studio や Microsoft Visual Studio Extensible Application Markup Language (XAML) デザイナーなどのデザイン ツールを使用する。 
+- Visual Studio XAML エディターで XAML マークアップにコントロールを追加する。 
+- コードでコントロールを追加する。 コードで追加するコントロールは、アプリを実行するときには表示されますが、Visual Studio XAML デザイナーでは表示されません。
 
-Xx Xxxxxx Xxxxxx, xxxx xxx xxx xxx xxxxxxxxxx xxxxxxxx xx xxxx xxx, xxx xxx xxx xxxx xx xxx xxxxxxx'x xxxxxxxx, xxxxxxxxx xxx Xxxxxxx, XXXX xxxxxxxx, XXXX xxxxxx, xxx xxx Xxxxxxxxxx xxxxxx. 
+Visual Studio でアプリにコントロールを追加して操作するときには、[ツールボックス]、XAML デザイナー、XAML エディター、[プロパティ] ウィンドウなど、Visual Studio の多くの機能を利用できます。 
 
-Xxx Xxxxxx Xxxxxx Xxxxxxx xxxxxxxx xxxx xx xxx xxxxxxxx xxxx xxx xxx xxx xx xxxx xxx. Xx xxx x xxxxxxx xx xxxx xxx, xxxxxx-xxxxx xx xx xxx Xxxxxxx. Xxx xxxxxxx, xxxx xxx xxxxxx-xxxxx xxx XxxxXxx xxxxxxx, xxxx XXXX xx xxxxx xx xxx XXXX xxxx. 
+Visual Studio の [ツールボックス] には、アプリで使用できる多くのコントロールが表示されます。 コントロールをアプリに追加するには、[ツールボックス] でそのコントロールをダブルクリックします。 たとえば、TextBox コントロールをダブルクリックすると、この XAML が [XAML] ビューに追加されます。 
 
 ```xaml
 <TextBox HorizontalAlignment="Left" Text="TextBox" VerticalAlignment="Top"/>
 ```
 
-Xxx xxx xxxx xxxx xxx xxxxxxx xxxx xxx Xxxxxxx xx xxx XXXX xxxxxxxx.
+また、コントロールを [ツールボックス] から XAML デザイナーにドラッグすることもできます。
 
-## Xxx xxx xxxx xx x xxxxxxx 
+## コントロールの名前の設定 
 
-Xx xxxx xxxx x xxxxxxx xx xxxx, xxx xxx xxx [x:Xxxx](../xaml-platform/x-name-attribute.md) xxxxxxxxx xxx xxxxxxxxx xx xx xxxx xx xxxx xxxx. Xxx xxx xxx xxx xxxx xx xxx Xxxxxx Xxxxxx Xxxxxxxxxx xxxxxx xx xx XXXX. Xxxx'x xxx xx xxx xxx xxxx xx xxx xxxxxxxxx xxxxxxxx xxxxxxx xx xxxxx xxx Xxxx xxxx xxx xx xxx xxx xx xxx Xxxxxxxxxx xxxxxx. 
+コントロールをコードで操作する場合は、コントロールの [x:Name](../xaml-platform/x-name-attribute.md) 属性を設定し、コードでは名前でコントロールを参照します。 名前は、Visual Studio の [プロパティ] ウィンドウまたは XAML で設定できます。 以下では、[プロパティ] ウィンドウの上部にある [名前] ボックスを使って、現在選択されているコントロールの名前を設定する方法を示しています。 
 
-Xx xxxx x xxxxxxx
-1. Xxxxxx xxx xxxxxxx xx xxxx.
-2. Xx xxx Xxxxxxxxxx xxxxx, xxxx x xxxx xxxx xxx Xxxx xxxx xxx.
-3. Xxxxx Xxxxx xx xxxxxx xxx xxxx.
+コントロールに名前を付けるには
+1. 名前を付ける要素を選びます。
+2. [プロパティ] パネルで、[名前] ボックスに名前を入力します。
+3. Enter キーを押して、名前をコミットします。
 
-![Xxxx xxxxxxxx xx xxx Xxxxxx Xxxxxx xxxxxxxx](images/add-controls-control-name-designer.png)
+![Visual Studio デザイナーでの Name プロパティ](images/add-controls-control-name-designer.png)
 
-Xxxx'x xxx xx xxx xxx xxxx xx x xxxxxxx xx xxx XXXX xxxxxx xx xxxxxx xxx x:Xxxx xxxxxxxxx.
+XAML エディターで x:Name 属性を追加してコントロールの名前を設定する方法を示します。
 
 ```xaml
 <Button x:Name="Button1" Content="Button"/>
 ```
 
-## Xxx xxx xxxxxxx xxxxxxxxxx 
+## コントロールのプロパティの設定 
 
-Xxx xxx xxxxxxxxxx xx xxxxxxx xxx xxxxxxxxxx, xxxxxxx, xxx xxxxx xxxxxxxxxx xx xxxxxxxx. Xxxx xxx xxx x xxxxxxx xxxxx x xxxxxx xxxx, xxxx xxxxxxxxxx xxxx xxxxxxx xxxx, xxxxxxxx, xxx xxxxxxx xxxxx xx xxx xxx xxx xx Xxxxxx Xxxxxx. Xxx xxx xxxxxx xxxx xxxxxxxxxx, xxxx xx Xxxxx, Xxxxxx xx Xxxxxx, xx xxxxxxxxx xxx xxxxxxxxxxxx xxx xxxxxxx xx xxx Xxxxxx xxxx. Xxxx xxxxxxxxxxxx xxxxx xxxx xx xxx xxxxxxxx xxxxx xxxxxxxxx xx Xxxxxx xxxx. 
+プロパティを使って、コントロールの外観、内容、その他の属性を指定します。 デザイン ツールを使ってコントロールを追加すると、Visual Studio によってサイズ、位置、コンテンツを制御するプロパティが設定されることがあります。 Width、Height、Margin など、いくつかのプロパティは、[デザイン] ビューでコントロールを選んで操作することで変更できます。 次の図は、[デザイン] ビューで使用できるサイズ変更ツールの一部を示しています。 
 
-![Xxxxxxxx xxxxx xx xxx Xxxxxx Xxxxxx xxxxxxxx](images/add-controls-resizing-designer.png)
+![Visual Studio デザイナーでのサイズ変更ツール](images/add-controls-resizing-designer.png)
 
-Xxx xxxxx xxxx xx xxx xxx xxxxxxx xx xxxxx xxx xxxxxxxxxx xxxxxxxxxxxxx. Xx xxxx xxxx, xxx xxx xxxxx xxx xxxx xxx xxxxxxxx xxxxxxxxxx xxxx Xxxxxx Xxxxxx xxx xxx xxx.
+コントロールのサイズと位置が自動的に調整されることが望ましいということも考えられます。 この場合、Visual Studio によって設定されるサイズと位置に関するプロパティをリセットできます。
 
-Xx xxxxx x xxxxxxxx
-1. Xx xxx Xxxxxxxxxx xxxxx, xxxxx xxx xxxxxxxx xxxxxx xxxx xx xxx xxxxxxxx xxxxx. Xxx xxxxxxxx xxxx xxxxx.
-2. Xx xxx xxxxxxxx xxxx, xxxxx Xxxxx.
+プロパティをリセットするには
+1. [プロパティ] パネルで、プロパティ値の横のプロパティ マーカーをクリックします。 プロパティ メニューが開きます。
+2. プロパティ メニューで、[リセット] をクリックします。
 
-![Xxxxxx Xxxxxx xxxxxxxx xxxxx xxxx xxxxxx](images/add-controls-property-reset.png)
+![Visual Studio のプロパティ メニューのリセット オプション](images/add-controls-property-reset.png)
 
-Xxx xxx xxx xxxxxxx xxxxxxxxxx xx xxx Xxxxxxxxxx xxxxxx, xx XXXX, xx xx xxxx. Xxx xxxxxxx, xx xxxxxx xxx xxxxxxxxxx xxxxx xxx x Xxxxxx, xxx xxx xxx xxxxxxx'x Xxxxxxxxxx xxxxxxxx. Xxxx xxxxxxxxxxxx xxxxx xxx xx xxx xxx Xxxxxxxxxx xxxxxxxx xx xxxxx xxx xxxxx xxxxxx xx xxx Xxxxxxxxxx xxxxxx. 
+コントロールのプロパティは、[プロパティ] ウィンドウ、XAML、またはコードで設定できます。 たとえば、Button の前景色を変更するには、コントロールの Foreground プロパティを設定します。 次の図は、[プロパティ] ウィンドウのカラー ピッカーを使って Foreground プロパティを設定する方法を示しています。 
 
-![Xxxxx xxxxxx xx xxx Xxxxxx Xxxxxx xxxxxxxx](images/add-controls-foreground-designer.png)
+![Visual Studio デザイナーでのカラー ピッカー](images/add-controls-foreground-designer.png)
 
-Xxxx'x xxx xx xxx xxx Xxxxxxxxxx xxxxxxxx xx xxx XXXX xxxxxx. Xxxxxx xxx Xxxxxx Xxxxxx XxxxxxxXxxxx xxxxxx xxxx xxxxx xx xxxx xxx xxxx xxx xxxxxx. 
+次に、XAML エディターの Foreground プロパティを設定する方法を示します。 構文の入力を簡単にするために、Visual Studio の IntelliSense ウィンドウが開いています。 
 
-![Xxxxxxxxxxxx xx XXXX xxxx Y](images/add-controls-foreground-xaml.png)
+![XAML での Intellisense パート 1](images/add-controls-foreground-xaml.png)
 
-![Xxxxxxxxxxxx xx XXXX xxxx Y](images/add-controls-foreground-xaml-2.png)
+![XAML での Intellisense パート 2](images/add-controls-foreground-xaml-2.png)
 
-Xxxx'x xxx xxxxxxxxx XXXX xxxxx xxx xxx xxx Xxxxxxxxxx xxxxxxxx. 
+Foreground プロパティを設定した後の結果の XAML を次に示します。 
 
 ```xaml
 <Button x:Name="Button1" Content="Button" 
@@ -79,23 +79,23 @@ Xxxx'x xxx xxxxxxxxx XXXX xxxxx xxx xxx xxx Xxxxxxxxxx xxxxxxxx.
         Foreground="Beige"/>
 ```
 
-Xxxx'x xxx xx xxx xxx Xxxxxxxxxx xxxxxxxx xx xxxx. 
+次に、Foreground プロパティをコードで設定する方法を示します。 
 
 ```csharp
 Button1.Foreground = new SolidColorBrush(Windows.UI.Colors.Beige);
 ```
 
-## Xxxxxx xx xxxxx xxxxxxx 
+## イベント ハンドラーの作成 
 
-Xxxx xxxxxxx xxx xxxxxx xxxx xxxxxx xxx xx xxxxxxx xx xxxxxxx xxxx xxxx xxxx xx xxxxx xxxxxxx xx xxxx xxx. Xxx xxxxxxx, x Xxxxxx xxxxxxx xxx x Xxxxx xxxxx xxxx xx xxxxxx xxxx x xxxx xxxxxx xxx Xxxxxx. Xxx xxxxxx x xxxxxx, xxxxxx xx xxxxx xxxxxxx, xx xxxxxx xxx xxxxx. Xxx xxx xxxxxxxxx x xxxxxxx'x xxxxx xxxx xx xxxxx xxxxxxx xxxxxx xx xxx Xxxxxxxxxx xxxxxx, xx XXXX, xx xx xxxx. Xxx xxxx xxxx xxxxx xxxxxx, xxx [Xxxxxx xxx xxxxxx xxxxxx xxxxxxxx](../xaml-platform/events-and-routed-events-overview.md).
+各コントロールには、ユーザーの操作またはアプリ内での他の変更に対して応答するためのイベントが用意されています。 たとえば、Button コントロールには、ユーザーがボタンをクリックしたときに発生する Click イベントがあります。 イベントを処理するために、イベント ハンドラーと呼ばれるメソッドを作成します。 [プロパティ] ウィンドウでは、XAML またはコードでイベント ハンドラー メソッドとコントロールのイベントを関連付けることができます。 イベントについて詳しくは、「[イベントとルーティング イベントの概要](../xaml-platform/events-and-routed-events-overview.md)」をご覧ください。
 
-Xx xxxxxx xx xxxxx xxxxxxx, xxxxxx xxx xxxxxxx xxx xxxx xxxxx xxx Xxxxxx xxx xx xxx xxx xx xxx Xxxxxxxxxx xxxxxx. Xxx Xxxxxxxxxx xxxxxx xxxxx xxx xx xxx xxxxxx xxxxxxxxx xxx xxxx xxxxxxx. Xxxx xxx xxxx xx xxx xxxxxx xxx x Xxxxxx.
+イベント ハンドラーを作成するには、コントロールを選んだ後、[プロパティ] ウィンドウの上部にある [イベント] タブをクリックします。 [プロパティ] ウィンドウに、そのコントロールに対して利用可能なすべてのイベントの一覧が表示されます。 Button のイベントの一部を次に示します。
 
-![Xxxxxx Xxxxxx xxxxx xxxx](images/add-controls-add-event-designer.png)
+![Visual Studio のイベント一覧](images/add-controls-add-event-designer.png)
 
-Xx xxxxxx xx xxxxx xxxxxxx xxxx xxx xxxxxxx xxxx, xxxxxx-xxxxx xxx xxxx xxx xxxx xx xxx xxxxx xxxx xx xxx Xxxxxxxxxx xxxxxx. Xx xxxxxx xx xxxxx xxxxxxx xxxx x xxxxxx xxxx, xxxx xxx xxxx xx xxxx xxxxxx xxxx xxx xxxx xxx xxx xxxxx xxxxx. Xxx xxxxx xxxxxxx xx xxxxxxx xxx xxx xxxx-xxxxxx xxxx xx xxxxxx xx xxx xxxx xxxxxx. Xxx xxxxx xxxxxxx xxxxxx xxx Y xxxxxxxxxx. Xxx xxxxx xx `sender`, xxxxx xx x xxxxxxxxx xx xxx xxxxxx xxxxx xxx xxxxxxx xx xxxxxxxx. Xxx `sender` xxxxxxxxx xx xx **Xxxxxx** xxxx. Xxx xxxxxxxxx xxxx `sender` xx x xxxx xxxxxxx xxxx xx xxx xxxxxx xx xxxxx xx xxxxxx xxx xxxxx xx xxx `sender` xxxxxx xxxxxx. Xxxxx xx xxxx xxx xxx xxxxxx, xxx xxxxxx x xxxx xxxx xx xxxx xx xxxx xxx `sender` xx, xxxxx xx xxxxx xxx xxxxxxx xx xxxxxxxx. Xxx xxxxxx xxxxx xx xxxxx xxxx, xxxxx xxxxxxxxx xxxxxxx xx xxxxxxxxxx xx xxx `e` xx `args` xxxxxxxxx.
+イベント ハンドラーを既定の名前で作成するには、[プロパティ] ウィンドウ内でイベント名の横にあるテキスト ボックスをダブルクリックします。 イベント ハンドラーをカスタム名で作成するには、テキスト ボックスに名前を入力して Enter キーを押します。 イベント ハンドラーが作成され、コード ビハインド ファイルがコード エディターで開きます。 イベント ハンドラーのメソッドには、パラメーターが 2 つあります。 1 つが `sender` です。これは、ハンドラーがアタッチされているオブジェクトへの参照です。 `sender` パラメーターは **Object** 型です。 `sender` オブジェクト自体で状態を確認または変更する必要がある場合には、通常、`sender` をもっと正確な型にキャストします。 それぞれのアプリ設計に基づき、`sender` のキャスト先として安全な型をハンドラーのアタッチ先を基に把握する必要があります。 2 つ目の値はイベント データです。これは通常、`e` パラメーターまたは `args` パラメーターとしてシグネチャに表示されます。
 
-Xxxx'x xxxx xxxx xxxxxxx xxx Xxxxx xxxxx xx x Xxxxxx xxxxx `Button1`. Xxxx xxx xxxxx xxx xxxxxx, xxx Xxxxxxxxxx xxxxxxxx xx xxx Xxxxxx xxx xxxxxxx xx xxx xx xxxx. 
+`Button1` という名前が付いた Button の Click イベントを処理するコードを以下に示します。 ボタンをクリックすると、クリックした Button の Foreground プロパティが青色に設定されます。 
 
 ```csharp
 private void Button_Click(object sender, RoutedEventArgs e)
@@ -105,29 +105,33 @@ private void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Xxx xxx xxxx xxxxxxxxx xx xxxxx xxxxxxx xx XXXX. Xx xxx XXXX xxxxxx, xxxx xx xxx xxxxx xxxx xxxx xxx xxxx xx xxxxxx. Xxxxxx Xxxxxx xxxxx xx XxxxxxxXxxxx xxxxxx xxxx xxx xxxxx xxxxxx. Xxxxx xxx xxxxxxx xxx xxxxx, xxx xxx xxxxxx-xxxxx `<New Event Handler>` xx xxx XxxxxxxXxxxx xxxxxx xx xxxxxx x xxx xxxxx xxxxxxx xxxx xxx xxxxxxx xxxx, xx xxxxxx xx xxxxxxxx xxxxx xxxxxxx xxxx xxx xxxx. 
+また、イベント ハンドラーを XAML で関連付けることもできます。 XAML エディターで、処理するイベント名を入力します。 入力を始めると、Visual Studio に IntelliSense ウィンドウが表示されます。 イベントを指定した後は、IntelliSense ウィンドウで `<New Event Handler>` をダブルクリックして新しいイベント ハンドラーを既定の名前で作成するか、一覧から既にあるイベント ハンドラーを選びます。 
 
-Xxxx'x xxx XxxxxxxXxxxx xxxxxx xxxx xxxxxxx. Xx xxxxx xxx xxxxxx x xxx xxxxx xxxxxxx xx xxxxxx xx xxxxxxxx xxxxx xxxxxxx.
+表示される IntelliSense ウィンドウを次に示します。 IntelliSense ウィンドウは、新しいイベント ハンドラーを作成したり、既存のイベント ハンドラーを選択するのに役立ちます。
 
-![Xxxxxxxxxxxx xxx xxx xxxxx xxxxx](images/add-controls-add-event-xaml.png)
+![クリック イベント用の Intellisense](images/add-controls-add-event-xaml.png)
 
-Xxxx xxxxxxx xxxxx xxx xx xxxxxxxxx x Xxxxx xxxxx xxxx xx xxxxx xxxxxxx xxxxx Xxxxxx_Xxxxx xx XXXX. 
+次の例では、XAML で Click イベントを Button_Click という名前のイベント ハンドラーと関連付ける方法を示しています。 
 
 ```xaml
 <Button Name="Button1" Content="Button" Click="Button_Click"/>
 ```
 
-Xxx xxx xxxx xxxxxxxxx xx xxxxx xxxx xxx xxxxx xxxxxxx xx xxx xxxx-xxxxxx. Xxxx'x xxx xx xxxxxxxxx xx xxxxx xxxxxxx xx xxxx.
+イベントは、コード ビハインド内でイベント ハンドラーに関連付けることもできます。 イベント ハンドラーをコードで関連付ける方法を次に示します。
 
 ```csharp
 Button1.Click += new RoutedEventHandler(Button_Click);
 ```
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [**Xxxxxxx xxxx**](app-bars.md)
-* [Xxxxxx](search.md)
-* [Xxxxxxx](dialogs-popups-menus.md)
+* [**コマンド バー**](app-bars.md)
+* [検索](search.md)
+* [ポップアップ](dialogs-popups-menus.md)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,51 +1,53 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxx xx xxxxxxxxx xxxxxx xxxx xxxx xxx, xxxxxxxxx xxx xx xxx xxx XXXx xx xxx xxx xxxx XXXX xxxxxxx, Xxxxx xxx XxxxxXxxxx.
-xxxxx: Xxxxxx xxx xxxxx xxxxxxx
-xx.xxxxxxx: XXXYYYYX-YYXY-YYYY-XYXY-YYYYXXXXYXXX
-xxxxx: Xxxxxx xxx xxxxx xxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: アプリに画像を統合する方法について説明します。Image と ImageBrush という主要な 2 つの XAML クラスの API の使い方について取り上げています。
+title: 画像とイメージ ブラシ
+ms.assetid: CEA8780C-71A3-4168-A6E8-6361CDFB2FAF
+label: 画像とイメージ ブラシ
+template: detail.hbs
 ---
-# Xxxxxx xxx xxxxx xxxxxxx
+# 画像とイメージ ブラシ
 
-Xx xxxxxxx xx xxxxx, xxx xxx xxx xxxxxx xxx **Xxxxx** xxxxxx xx xxx **XxxxxXxxxx** xxxxxx. Xx Xxxxx xxxxxx xxxxxxx xx xxxxx, xxx xx XxxxxXxxxx xxxxxx xxxxxx xxxxxxx xxxxxx xxxx xx xxxxx. 
+画像を表示するには、**Image** オブジェクトまたは **ImageBrush** オブジェクトを使うことができます。 Image オブジェクトは、イメージのレンダリングに使います。ImageBrush オブジェクトは、特定のイメージを使って別のオブジェクトをペイントするために使います。 
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**Xxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
--   [**Xxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx)
--   [**XxxxxXxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
--   [**XxxxxXxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)
+-   [**Image クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)
+-   [**Source プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx)
+-   [**ImageBrush クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx)
+-   [**ImageSource プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)
 
-## Xxx xxxxx xxx xxxxx xxxxxxxx?
-Xxx xx **Xxxxx** xxxxxxx xx xxxxxxx x xxxxx-xxxxx xxxxx xx xxxx xxx.
+## これらの要素は適切か。
+**画像** 要素を使用して、アプリにスタンドアロンの画像を表示します。
 
-Xxx xx **XxxxxXxxxx** xx xxxxx xx xxxxx xx xxxxxxx xxxxxx. Xxxx xxx xx XxxxxXxxxx xxxxxxx xxxxxxxxxx xxxxxxx xxx xxxx, xx xxxxx xxxxxxxxxxx xxx xxxxxxxx xx xxxxxx xxxxxxxxxx. Xxx xxx xxxxxxx xxx xxx xxxxx xx xxxxxxxxx, xxxxxxx, xxx xxxxx, xxxxxxxx xxx xx xxxxxxx xxxxxxxx xxx xxxxx xxxxxxx. 
+**ImageBrush** を使用して、画像を別のオブジェクトに適用します。 ImageBrush の使用法には、テキストの装飾性を高める効果や、コントロールまたはレイアウト コンテナーのタイルの背景などがあります。 画像を拡大、配置、およびタイル貼りする方法を制御できるので、パターンやその他の効果を作成することができます。 
 
-## Xxxxxxxx
+## 例
 
 
 
-## Xxxxxx xx xxxxx
+## 画像を作成する
 
-### Xxxxx
-Xxxx xxxxxxx xxxxx xxx xx xxxxxx xx xxxxx xx xxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx) xxxxxx.
+### 画像
+[
+            **Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx) オブジェクトを使って画像を作成する方法を次の例に示します。
 
 
 ```XAML
 <Image Width="200" Source="licorice.jpg" />
 ```
 
-Xxxx'x xxx xxxxxxxx Xxxxx xxxxxx.
+次に示すのは、レンダリングされた Image オブジェクトです。
 
-![Xxxxxxx xx xx xxxxx xxxxxxx](images/Image_Licorice.jpg)
+![画像要素の例](images/Image_Licorice.jpg)
 
-Xx xxxx xxxxxxx, xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) xxxxxxxx xxxxxxxxx xxx xxxxxxxx xx xxx xxxxx xxxx xxx xxxx xx xxxxxxx. Xxx xxx xxx xxx Xxxxxx xx xxxxxxxxxx xx xxxxxxxx XXX (xxx xxxxxxx, xxxx://xxxxxxx.xxx/xxXxxxxxx.xxx) xx xx xxxxxxxxxx x XXX xxxx xx xxxxxxxx xx xxxx xxx xxxxxxxxx xxxxxxxxx. Xxx xxx xxxxxxx, xx xxx xxx "xxxxxxxx.xxx" xxxxx xxxx xx xxx xxxx xxxxxx xx xxx xxxxxxx xxx xxxxxxx xxxxxxx xxxxxxxx xxxx xxxxxxx xxx xxxxx xxxx xx xxxxxxx.
+この例の [**Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) プロパティは、表示する画像がある場所を指定します。 ソースを設定するには、絶対 URL (http://contoso.com/myPicture.jpg など) を指定するか、アプリのパッケージ化構造を基準とする相対 URL を指定します。 この例では、プロジェクトのルート フォルダーに "licorice.jpg" 画像ファイルを入れ、この画像ファイルをコンテンツとして含めるプロジェクト設定を宣言しています。
 
-### XxxxxXxxxx
+### ImageBrush
 
-Xxxx xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx) xxxxxx, xxx xxx xxx xx xxxxx xx xxxxx xx xxxx xxxx xxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) xxxxxx. Xxx xxxxxxx, xxx xxx xxx xx XxxxxXxxxx xxx xxx xxxxx xx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) xxxxxxxx xx xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.ellipse.aspx) xx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) xxxxxxxx xx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx).
+[
+            **ImageBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.aspx) オブジェクトを使うと、[**Brush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.brush.aspx) オブジェクトを受け付ける領域を、画像を使ってペイントできます。 たとえば、[**Ellipse**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.ellipse.aspx) の [**Fill**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.fill.aspx) プロパティまたは [**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) の [**Background**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.background.aspx) プロパティの値に ImageBrush を使うことができます。
 
-Xxx xxxx xxxxxxx xxxxx xxx xx xxx xx XxxxxXxxxx xx xxxxx xx Xxxxxxx.
+次の例は、ImageBrush を使って Ellipse をペイントする方法を示しています。
 
 ```XAML
 <Ellipse Height="200" Width="300">
@@ -55,26 +57,28 @@ Xxx xxxx xxxxxxx xxxxx xxx xx xxx xx XxxxxXxxxx xx xxxxx xx Xxxxxxx.
 </Ellipse>
 ```
 
-Xxxx'x xxx Xxxxxxx xxxxxxx xx xxx XxxxxXxxxx.
+次に示すのは、ImageBrush でペイントされた Ellipse です。
 
-![Xx Xxxxxxx xxxxxxx xx xx XxxxxXxxxx.](images/Image_ImageBrush_Ellipse.jpg)
+![ImageBrush でペイントされた Ellipse (楕円)。](images/Image_ImageBrush_Ellipse.jpg)
 
-### Xxxxxxx xx xxxxx
+### 画像を拡大する
 
-Xx xxx xxx'x xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) xxxxxx xx xx **Xxxxx**, xx xx xxxxxxxxx xxxx xxx xxxxxxxxxx xx xxx xxxxx xxxxxxxxx xx xxx **Xxxxxx**. Xxxxxxx xxx **Xxxxx** xxx **Xxxxxx** xxxxxxx x xxxxxxxxxx xxxxxxxxxxx xxxx xx xxxxx xxx xxxxx xx xxxxxxxxx. Xxx xxx xxxxxxx xxx xxx xxxxx xxxxx xxxx xxxxxxxxxx xxxx xx xxxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.stretch.aspx) xxxxxxxx. Xxx Xxxxxxx xxxxxxxx xxxxxxx xxxxx xxxxxx, xxxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx) xxxxxxxxxxx xxxxxxx:
+**Image** の [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) 値または [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) 値を設定しないと、**Source** で指定した画像の寸法で表示されます。 **Width** と **Height** を設定すると、画像を表示する領域を囲む四角形が作成されます。 この囲まれた領域に画像を描く方法は、[**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.stretch.aspx) プロパティを使って指定できます。 Stretch プロパティには、[**Stretch**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.stretch.aspx) 列挙体で定義されている次の値を指定します。
 
--   **Xxxx**: Xxx xxxxx xxxxx'x xxxxxxx xx xxxx xxx xxxxxx xxxxxxxxxx. Xx xxxxxxx xxxx xxxx Xxxxxxx xxxxxxx: xx xxx xxxxxx xxxxx xx xxxxxx xxxx xxx xxxxxxxxxx xxxx, xxxx xxxxx xxxx xx xxxxxxx, xxx xxxx xxxxxxx xxx'x xxxxxxxxx xxxxxxx xxx xxx'x xxxx xxx xxxxxxx xxxx xxx xxxxxxxx xxxx xxx xx xxxx x xxxxxxxxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx).
--   **Xxxxxxx**: Xxx xxxxx xx xxxxxx xx xxx xxx xxxxxx xxxxxxxxxx. Xxx xxx xxxxxx xxxxx xx xxx xxxxxxx xx xxxxxxxxx. Xxxx xx xxx xxxxxxx xxxxx.
--   **XxxxxxxXxXxxx**: Xxx xxxxx xx xxxxxx xx xxxx xx xxxxxxxxxx xxxxx xxx xxxxxx xxxx xxx xxxxxxxxx xxx xxxxxxxx xxxxxx xxxxx.
--   **Xxxx**: Xxx xxxxx xx xxxxxx xx xxx xxx xxxxxx xxxxxxxxxx. Xxxxxxx xxx xxxxxxx'x xxxxxx xxx xxxxx xxx xxxxxx xxxxxxxxxxxxx, xxx xxxxxxxx xxxxxx xxxxx xx xxx xxxxx xxxxx xxx xx xxxxxxxxx. Xxxx xx, xxx xxxxx xxxxx xx xxxxxxxxx xx xxxxxxxxxx xxxx xxx xxxxxx xxxx.
+-   **注**: 画像は拡大されず、出力領域全体に描かれません。 このストレッチの設定には注意してください。囲まれた領域よりもソース画像が大きいと、画像はクリップされます。ユーザーは意図的な [**クリップ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) で行うような制御をビューポートに対して行うことができないため、通常このことは望ましくありません。
+-   **Uniform**: 画像は、出力領域の大きさに合わせて拡大されます。 ただし、コンテンツの縦横比は保たれます。 これは既定値です。
+-   **UniformToFill**: 画像は拡大され、出力領域を完全に塗りつぶすように描かれますが、元の縦横比は保たれます。
+-   **Fill**: 画像は、出力領域の大きさに合わせて拡大されます。 コンテンツの高さと幅は個々に拡大されるので、元の画像の縦横比は保たれません。 つまり、出力領域を完全に塗りつぶすために、画像がゆがむことがあります。
 
-![Xx xxxxxxx xx xxxxxxx xxxxxxxx.](images/Image_Stretch.jpg)
+![ストレッチ設定の例。](images/Image_Stretch.jpg)
 
-### Xxxx xx xxxxx
+### 画像をトリミングする
 
-Xxx xxx xxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) xxxxxxxx xx xxxx xx xxxx xxxx xxx xxxxx xxxxxx. Xxx xxx xxx Xxxx xxxxxxxx xx x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.geometry.aspx). Xxxxxxxxx, xxx-xxxxxxxxxxx xxxxxxxx xx xxx xxxxxxxxx.
+[
+            **Clip**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.clip.aspx) プロパティを使うと、画像出力から一定の領域をクリップできます。 Clip プロパティを [**Geometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.geometry.aspx) に設定します。 現在、四角形以外のクリップはサポートされていません。
 
-Xxx xxxx xxxxxxx xxxxx xxx xx xxx x [**XxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) xx xxx xxxx xxxxxx xxx xx xxxxx. Xx xxxx xxxxxxx, xx xxxxxx xx **Xxxxx** xxxxxx xxxx x xxxxxx xx YYY. X **XxxxxxxxxXxxxxxxx** xxxxxxx x xxxxxxxxx xxx xxx xxxx xx xxx xxxxx xxxx xxxx xx xxxxxxxxx. Xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) xxxxxxxx xx xxx xx "YY,YY,YYY,YYY", xxxxx xxxxxxx x xxxxxxxxx xxxxxxxx xx xxxxxxxx "YY,YY" xxxx x xxxxx xx YYY xxx x xxxxxx xx YYY. Xxxx xxx xxxx xx xxx xxxxx xxxx xx xxxxxx xxx xxxx xx xxx xxxxxxxxx xx xxxxxxxxx.
+画像のクリップ領域として [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.aspx) を使う方法を次の例に示します。 この例では、高さ 200 の **Image** オブジェクトを定義します。 **RectangleGeometry** は、表示される画像の領域に長方形を定義します。 [
+            **Rect**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.rectanglegeometry.rect.aspx) プロパティは "25,25,100,150" に設定されています。これは、四角形が "25,25" の位置から始まり、幅 100、高さ 150 になることを定義しています。 この長方形の領域の内部にだけ、画像が表示されます。
 
 ```xaml
 <Image Source="licorice.jpg" Height="200">
@@ -84,68 +88,75 @@ Xxx xxxx xxxxxxx xxxxx xxx xx xxx x [**XxxxxxxxxXxxxxxxx**](https://msdn.microso
 </Image>
 ```
 
-Xxxx'x xxx xxxxxxx xxxxx xx x xxxxx xxxxxxxxxx.
+黒い背景の上にクリップされた画像を次に示します。
 
-![Xx Xxxxx xxxxxx xxxxxxx xx x XxxxxxxxxXxxxxxxx.](images/Image_Cropped.jpg)
+![RectangleGeometry によってトリミングされた Image オブジェクト。](images/Image_Cropped.jpg)
 
-### Xxxxx xx xxxxxxx
+### 不透明度を適用する
 
-Xxx xxx xxxxx xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx) xx xx xxxxx xx xxxx xxx xxxxx xx xxxxxxxx xxxx-xxxxxxxxxxx. Xxx xxxxxxx xxxxxx xxx xxxx Y.Y xx Y.Y xxxxx Y.Y xx xxxxx xxxxxx xxx Y.Y xx xxxxx xxxxxxxxxxx. Xxxx xxxxxxx xxxxx xxx xx xxxxx xx xxxxxxx xx Y.Y xx xx Xxxxx.
+画像が半透明でレンダリングされるように、画像に [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx) を適用することができます。 不透明度の値は、0.0 (完全に透明) ～ 1.0 (完全に不透明) です。 不透明度 0.5 を Image に適用する方法を次の例に示します。
 
 ```xaml
 <Image Height="200" Source="licorice.jpg" Opacity="0.5" />
 ```
 
-Xxxx'x xxx xxxxxxxx xxxxx xxxx xx xxxxxxx xx Y.Y xxx x xxxxx xxxxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxx xxxxxxx.
+次に示すのは、不透明度 0.5 と黒い背景でレンダリングされ、部分的に不透明になった画像です。
 
-![Xx Xxxxx xxxxxx xxxx xx xxxxxxx xx .Y.](images/Image_Opacity.jpg)
+![不透明度 0.5 の Image オブジェクト。](images/Image_Opacity.jpg)
 
-### Xxxxx xxxx xxxxxxx
+### 画像ファイルの形式
 
-**Xxxxx** xxx **XxxxxXxxxx** xxx xxxxxxx xxxxx xxxxx xxxx xxxxxxx:
+**Image** と **ImageBrush** は、次の画像ファイル形式を表示できます。
 
--   Xxxxx Xxxxxxxxxxxx Xxxxxxx Xxxxx (XXXX)
--   Xxxxxxxx Xxxxxxx Xxxxxxxx (XXX)
--   xxxxxx (XXX)
--   Xxxxxxxx Xxxxxxxxxxx Xxxxxx (XXX)
--   Xxxxxx Xxxxx Xxxx Xxxxxx (XXXX)
--   XXXX XX
--   xxxxx (XXX)
+-   Joint Photographic Experts Group (JPEG)
+-   ポータブル ネットワーク グラフィックス (PNG)
+-   ビットマップ (BMP)
+-   グラフィックス交換形式 (GIF)
+-   Tagged Image File Format (TIFF)
+-   JPEG XR
+-   アイコン (ICO)
 
-Xxx XXXx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx), [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) xxx'x xxxxxxx xxx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx xx xxxxx xxxxxxx. Xxx xx xxx xxxxxx xxx xxxxxx xxxxxxxxxx xxx xxxxx-xx, xxx xx xxxx xxxx xxxxxxx xxxxxxx xx xxxxxx xx xxxxxx xx xxxx xx xxxxx xxxx xxx xxxx xxxxxx. Xx xxx xxxx xx xx xxx xxxxxxx xxxx xxxx xxxxx xxxxxx xx xxxxxx, xxxxx xxx xxxxx xxx xx xxxx xxx xx xxxxx xxxxx xxxxxxxxxxx xx xxxxxxxxxxxx, xxx xxxxxx xxx xxx XXXx xxxx xxx xxxxxxxxx xx xxx [**Xxxxxxx.Xxxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.graphics.imaging.aspx) xxxxxxxxx. Xxxxx XXXx xxx xxxx xxxxxxxxx xx xxx Xxxxxxx Xxxxxxx Xxxxxxxxx (XXX) xx Xxxxxxx.
+[
+            **Image**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx)、[**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx)、[**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) 用の API には、メディア形式のエンコードとデコードを行う専用のメソッドは用意されていません。 エンコード操作とデコード操作はすべてビルトインであり、せいぜいエンコードまたはデコードの局面が読み込みイベント用のイベント データの一部として現れる程度です。 アプリが画像の変換または操作を行うため、画像のエンコードまたはデコードに関連する特別の作業が必要となったときは、[**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.graphics.imaging.aspx) 名前空間に用意されている API を使ってください。 これらの API は、Windows の Windows Imaging Component (WIC) でもサポートされます。
 
-Xxx xxxx xxxx xxxxx xxx xxxxxxxxx xxx xxx xx xxxxxxx xxxxx xxxxxxx xx xx xxx, xxx [Xxxxxxxx xxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321).
+アプリ リソースについて、およびアプリにイメージ ソースをパッケージ化する方法について詳しくは、「[アプリ リソースの定義](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)」をご覧ください。
 
-### XxxxxxxxxXxxxxx
+### WriteableBitmap
 
-X [**XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx) xxxxxxxx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) xxxx xxx xx xxxxxxxx xxx xxxx xxxxx'x xxx xxx xxxxx xxxx-xxxxx xxxxxxxx xxxx xxx XXX. Xxx xxx xxxxx xxxxxx xxxxxxxxxxx xxx xx-xxxxxx xxx xxxxxxx xxxxx. Xx xxxxxx xxx xxxxxx xxxxxxx xx x **XxxxxxxxxXxxxxx**, xxx xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.pixelbuffer.aspx) xxxxxxxx xx xxxxxx xxx xxxxxx xxx xxx x xxxxxx xx xxxxxxxx-xxxxxxxx xxxxxx xxxx xx xxxx xx. Xxx xxxxxxx xxxx, xxx [**XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx).
+[
+            **WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx) は、WIC からの基本的なファイルに基づくデコードを使わない、修正可能な [**BitmapSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.aspx) を提供します。 画像を動的に変更し、更新後の画像を再レンダリングできます。 **WriteableBitmap** のバッファーの内容を定義するには、[**PixelBuffer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.pixelbuffer.aspx) プロパティを使ってバッファーにアクセスし、ストリームまたは言語固有のバッファーの種類を使って入力します。 コード例については、「[**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.writeablebitmap.aspx)」をご覧ください。
 
-### XxxxxxXxxxxxXxxxxx
+### RenderTargetBitmap
 
-Xxx [**XxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) xxxxx xxx xxxxxxx xxx XXXX XX xxxx xxxx x xxxxxxx xxx, xxx xxxx xxxxxxxxxx x xxxxxx xxxxx xxxxxx. Xxxxx xxxxxxx, xxxx xxxxx xxxxxx xxx xx xxxxxxx xx xxxxx xxxxx xx xxx xxx, xxxxx xx x xxxxxxxx xx xxx xxxx xx xxx xxxx, xx xxxx xxx xxxxx xxxxxxxxx. Xxx xxxxxxxxxxxx xxxxxx xxxxxxxx xx xxxxxxxx x xxxxxxx xxxxxxxxx xx x XXXX xxxx xxx x xxxxxxxxxx xxxxxx, xxxx xx xxxxxxxxx xx xxxxx xxxx xxxx x [**Xxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) xxxxxxx. **XxxxxxXxxxxxXxxxxx** xxxx xxxx xxxx xxxxxxxxxxx xx xxx xxxxxxx xxxx xxxx xxxxxx xx xxx xxxxxxxx xxxxx. Xxx xxxx xxxx, xxx xxx XXX xxxxxxxxx xxxxx xxx [**XxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx).
+[
+            **RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) クラスは、実行中のアプリから XAML UI ツリーをキャプチャして、ビットマップ画像ソースを表現することができます。 キャプチャした画像ソースは、アプリ内の他の部分に適用したり、リソース (つまり、ユーザーによって作成されたアプリ データ) として保存するなど、さまざまなシナリオに利用することができます。 特にお勧めする用途は、実行時における XAML ページのサムネイルをナビゲーション手段として利用することです。たとえば、[**Hub**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) コントロールから画像形式のリンクを提供することができます。 キャプチャされた画像に表示されるコンテンツに関して、**RenderTargetBitmap** にはいくつか制限があります。 詳しくは、[**RenderTargetBitmap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.rendertargetbitmap.aspx) の API リファレンス トピックをご覧ください。
 
-### Xxxxx xxxxxxx xxx xxxxxxx
+### 画像ソースとスケーリング
 
-Xxx xxxxxx xxxxxx xxxx xxxxx xxxxxxx xx xxxxxxx xxxxxxxxxxx xxxxx, xx xxxxxx xxxx xxxx xxx xxxxx xxxxx xxxx Xxxxxxx xxxxxx xx. Xxxx xxxxxxxxxx x **Xxxxxx** xxx xx **Xxxxx**, xxx xxx xxx x xxxxxx xxxxxxxxxx xxxx xxxx xxxxxxxxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxx xxx xxx xxxxxxx xxxxxxx. Xxx xxxxxxxxx xx xxx xxxxxx xxxxxxxxxx xxx xxxx xxxx, xxx [Xxxxxxxxxx: Xxxxx xxxx xx xxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965325).
+画像ソースは、Windows がスケールするときにアプリで適切に表示されるように、複数の推奨サイズで作る必要があります。 **Image** の **Source** を指定する際には、現在のスケーリングに対応したリソースを自動的に示す名前付け規則を利用できます。 この名前付け規則の詳細や関連情報については、「[クイック スタート: ファイルまたは画像リソースの使用](https://msdn.microsoft.com/library/windows/apps/xaml/hh965325)」をご覧ください。
 
-Xxx xxxx xxxx xxxxx xxx xx xxxxxx xxx xxxxxxx, xxx [XX xxxxxxxxxx xxx xxxxxx xxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn611863).
+スケーリングの設計方法について詳しくは、「[レイアウトとスケーリングの UX ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn611863)」をご覧ください。
 
-### Xxxxx xxx XxxxxXxxxx xx xxxx
+### コードを使った Image と ImageBrush
 
-Xx'x xxxxxxx xx xxxxxxx Xxxxx xxx XxxxxXxxxx xxxxxxxx xxxxx XXXX xxxxxx xxxx xxxx. Xxxx xx xxxxxxx xxxxx xxxxxxxx xxx xxxxx xxx xxxxxx xx xxxxxx xxxxx xx xxxx xx x XXXX XX xxxxxxxxxx.
+コードを使うよりも、XAML を使って Image と ImageBrush 要素を指定する方が一般的です。 これは、これらの要素が XAML UI 定義の一部としてのデザイン ツールの出力結果である場合が多いためです。
 
-Xx xxx xxxxxx xx Xxxxx xx XxxxxXxxxx xxxxx xxxx, xxx xxx xxxxxxx xxxxxxxxxxxx, xxxx xxx xxx xxxxxxxx xxxxxx xxxxxxxx ([**Xxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) xx [**XxxxxXxxxx.XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)). Xxx xxxxxx xxxxxxxxxx xxxxxxx x [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) (xxx x XXX) xxxx xxx xxx xxxx xxxxx xxxx. Xx xxxx xxxxxx xx x xxxxxx, xxx xxx [**XxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) xxxxxx xx xxxxxxxxxx xxx xxxxx. Xx xxxx xxxxxx xx x XXX, xxxxx xxxxxxxx xxxxxxx xx xxxx xxx xxxx xxxx xxx **xx-xxxx** xx **xx-xxxxxxxx** xxxxxxx, xxx xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) xxxxxxxxxxx xxxx xxxxx x XXX. Xxx xxxxx xxxx xxxxxxxx xxxxxxxx xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) xxxxx xx xxxxx xxx xxx xxxxxx xxxxxx xxxx xxxxxxxxxx xx xxxxxxxx xxx xxxxx xxxxxx, xxxxx xxx xxxxx xxxx xxxxxxxxx xxxxxxx xx xxxxxxx xxxxx xxx xxxxx xxxxxx xx xxxxxxxxx. Xxx xxxxxxx xxxx, xxx [XXXX xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=238575).
+コードを使って Image または ImageBrush を定義する場合は、既定のコンストラクターを使い、次に、関連するソースのプロパティ ([**Image.Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.source.aspx) と [**ImageBrush.ImageSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imagebrush.imagesource.aspx)) を設定します。 ソースのプロパティは、コードを使って設定する場合、[**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapimage.aspx) (URI ではない) を必要と使用します。 ソースがストリームである場合は、[**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.imaging.bitmapsource.setsourceasync.aspx) メソッドを使って値を初期化します。 ソースが、**ms-appx**  スキームまたは **ms-resource** スキームを使うアプリ内のコンテンツを含む URI である場合は、URI を受け取る [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/xaml/br243238.aspx) コンストラクターを使います。 イメージ ソースが使えるようになるまで代替コンテンツを表示することが必要であるなど、イメージ ソースの取得やデコードについてタイミングの問題がある場合は、[**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.imaging.bitmapimage.imageopened.aspx) イベントを処理することも検討してください。 コードの例については、「[XAML 画像のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=238575)」をご覧ください。
 
-> **Xxxx**&xxxx;&xxxx;Xx xxx xxxxxxxxx xxxxxx xxxxx xxxx, xxx xxx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxxx xxxxxxxxx xxxx xxxxxxx xxxxx xxx xxxxxxx xxxxxxxxxx, xx xxx xxx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) xxx [**XxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) xxxx xxxxxxxxxx xxx xxxxxxx xxx xxxxx xx xxxxxx xxx xxxxxxxxx xxxxxxxx. Xxx xxxx xxxx xxx [Xxxxxxxx xxxxxxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx).
+> **注**&nbsp;&nbsp; コードを使って画像を確立すると、自動処理を使って、現在のスケール修飾子とカルチャ修飾子で非修飾リソースにアクセスしたり、カルチャとスケールの修飾子で [**ResourceManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemanager.aspx) と [**ResourceMap**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.resources.core.resourcemap.aspx) を使って、リソースを直接取得したりできます。 詳しくは、「[リソース管理システム](https://msdn.microsoft.com/library/windows/apps/xaml/jj552947.aspx)」をご覧ください。
 
-## Xxxxxxxxxxxxxxx
+## 推奨事項
 
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## Xxxxxxx xxxxxxxx
+## 関連記事
 
-**Xxx xxxxxxxxx**
+**デザイナー向け**
 
-**Xxx xxxxxxxxxx (XXXX)**
+**開発者向け (XAML)**
+
+
 <!--HONumber=Mar16_HO1-->
+
+

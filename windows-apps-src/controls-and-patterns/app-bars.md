@@ -1,55 +1,55 @@
 ---
-xxxxx: Xxx xxxx/xxxxxxx xxxx
-xxxxxxxx: xxxxxx.xxx
+label: アプリ バー/コマンド バー
+template: detail.hbs
 ---
 
-# Xxx xxx xxx xxxxxxx xxx
+# アプリ バーとコマンド バー
 
-Xxxxxxx xxxx (xxxx xxxxxx "xxx xxxx") xxxxxxx xxxxx xxxx xxxx xxxxxx xx xxxx xxx'x xxxx xxxxxx xxxxx, xxx xxx xx xxxx xx xxxx xxxxxxxx xx xxxxxxx xxxx xxx xxxxxxxx xx xxx xxxx'x xxxxxxx, xxxx xx x xxxxx xxxxxxxxx xx xxxxxxx xxxx. Xxxx xxx xxxx xx xxxx xxx xxxxxxxxxx xxxxx xxx xxxxx xx xxxxxxx xxx xxxxxxxx. Xxxxxxx xxxx xxx xx xxxx xxxx xxx xxxxxxxxxx xxxxxxx.
+コマンド バー ("アプリ バー" とも呼ばれます) を使うと、ユーザーはアプリの最も一般的なタスクに簡単にアクセスできます。コマンド バーは、ユーザーのコンテキストに固有のコマンドやオプション (写真の選択や描画モードなど) を表示するために使うことができます。 また、アプリのページやセクション間のナビゲーションにも使うことができます。 コマンド バーは、ナビゲーション パターンと一緒に使うことができます。
 
-![Xxxxxxx xx x xxxxxxx xxx xxxx xxxxx](images/controls_appbar_icons.png)
+![アイコンを含むコマンド バーの例](images/controls_appbar_icons.png)
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**XxxxxxxXxx **](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)
--   [**XxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)
--   [**XxxXxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)
--   [**XxxXxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
+-   [**CommandBar **](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.commandbar.aspx)
+-   [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)
+-   [**AppBarToggleButton**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)
+-   [**AppBarSeparator**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx)
 
-## Xx xxxx xxx xxxxx xxxxxxx
+## 適切なコントロールの選択
 
-Xxx XxxxxxxXxx xxxxxxx xx x xxxxxxx-xxxxxxx, xxxxxxxx, xxxxx-xxxxxx xxxxxxx xxxx xxx xxxxxxx xxxx xxxxxxx xxxxxxx, xxxx xx xxxxxx, xxxxxxxx xxxx, xx xxxx xxxxxx, xx xxxx xx xxxxxx xxxxxxxx xxxx xx [XxxXxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx), [XxxXxxXxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx), xxx [XxxXxxXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx) xxxxxxxx.
+CommandBar コントロールは、汎用的で柔軟、軽量なコントロールです。画像、進行状況バー、テキスト ブロックなどの複雑なコンテンツも、[AppBarButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarbutton.aspx)、[AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbartogglebutton.aspx)、[AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.appbarseparator.aspx) コントロールなどの単純なコマンドも表示できます。
 
-XXXX xxxxxxxx xxxx xxx XxxXxx xxxxxxx xxx xxx XxxxxxxXxx xxxxxxx. Xxx xxxxxx xxx xxx XxxXxx xxxx xxxx xxx xxx xxxxxxxxx x Xxxxxxxxx Xxxxxxx Y xxx xxxx xxxx xxx XxxXxx, xxx xxxx xx xxxxxxxx xxxxxxx. Xxx xxx xxxx xx Xxxxxxx YY, xx xxxxxxxxx xxxxx xxx XxxxxxxXxx xxxxxxx xxxxxxx. Xxxx xxxxxxxx xxxxxxx xxx xxx xxxxx xxx XxxxxxxXxx xxxxxxx.
+XAML では、AppBar コントロールと CommandBar コントロールの両方が提供されます。 AppBar を使うユニバーサル Windows 8 アプリをアップグレードする場合にのみ、AppBar を使ってください。また、変更は最小限に抑える必要があります。 Windows 10 の新しいアプリでは、代わりに CommandBar コントロールを使うことをお勧めします。 このドキュメントでは、CommandBar コントロールを使うことを前提としています。
 
-## Xxxxxxxx
+## 例
 
-![Xxxxxxx Y xx xxx xxx xxxxxxxxx](images/AppbarGuidelines_Placement1.png)
+![アプリ バーの配置の例 1](images/AppbarGuidelines_Placement1.png)
 
-## Xxxxxxx
+## 構造
 
-Xx xxxxxxx, xxx xxxxxxx xxx xxxxx x xxx xx xxxx xxxxxxx xxx x "xxx xxxx" xxxxxx, xxxxx xx xxxxxxxxxxx xx xx xxxxxxxx \[•••\]. Xxxx'x xxx xxxxxxx xxx xxxxxxx xx xxx xxxxxxx xxxx xxxxx xxxxx. Xx'x xxxxx xx xxx xxxxxxx, xxxxxx, xxxxxxx xxxxx.
+既定では、コマンド バーには、一連のアイコン ボタンと [その他] ボタン (省略記号の \[•••\]) が表示されます。 後で示すコード例を使って作成されたコマンド バーを次に示します。 コマンド バーは既定の、閉じたコンパクトな状態で表示されます。
 
-![X xxxxxx xxxxxxx xxx](images/command-bar-compact.png)
+![閉じたコマンド バー](images/command-bar-compact.png)
 
-Xxx xxxxxxx xxx xxx xxxx xx xxxxx xx x xxxxxx, xxxxxxx xxxxx xxxx xxxxx xxxx xxxx. Xxx xxx [Xxxx xxx xxxxxx xxxxxx](#open-and-closed-states) xxxxxxx xxx xxxx xxxx. 
+コマンド バーは次のように、閉じた最小の状態で表示することもできます。 詳しくは、「[開いた状態と閉じた状態](#open-and-closed-states)」をご覧ください。 
 
-![X xxxxxx xxxxxxx xxx](images/command-bar-minimal.png)
+![閉じたコマンド バー](images/command-bar-minimal.png)
 
-Xxxx'x xxx xxxx xxxxxxx xxx xx xxx xxxx xxxxx. Xxx xxxxxx xxxxxxxx xxx xxxx xxxxx xx xxx xxxxxxx.
+同じコマンド バーが開いている状態を次に示します。 ラベルは、コントロールのメイン部分を識別します。
 
-![X xxxxxx xxxxxxx xxx](images/commandbar_anatomy_open.png)
+![閉じたコマンド バー](images/commandbar_anatomy_open.png)
 
-Xxx xxxxxxx xxx xx xxxxxxx xxxx Y xxxx xxxxx:
-- Xxx "xxx xxxx" \[•••\] xxxxxx xx xxxxx xx xxx xxxxx xx xxx xxx, xxx xx xxxxxx xxxxxxx. Xxxxxxxx xxx "xxx xxxx" \[•••\] xxxxxx xxx Y xxxxxxx: xx xxxxxxx xxx xxxxxx xx xxx xxxxxxx xxxxxxx xxxxxxx, xxx xx xxxxx xxx xxxxxxxx xxxx xx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxx.
-- Xxx xxxxxxx xxxx xx xxxxxxx xx xxx xxxx xxxx xx xxx xxx. Xx xx xxxxx xx xxx Xxxxxxx xxxxxxxx xx xxxxxxxxx.
-- Xxx xxxxxxx xxxxxxx xxxx xx xxxxxxx xx xxx xxxxx xxxx xx xxx xxx, xxxx xx xxx "xxx xxxx" \[•••\] xxxxxx. Xx xx xxxxx xx xxx XxxxxxxXxxxxxxx xxxxxxxx xx xxxxxxxxx.  
-- Xxx xxxxxxxx xxxx xx xxxxx xxxx xxxx xxx xxxxxxx xxx xx xxxx xxx xxx XxxxxxxxxXxxxxxxx xxxxxxxx xx xxxxxxxxx.
+コマンド バーは、4 つの主な領域に分かれています。
+- [その他] (\[•••\] ) ボタンはバーの右側に表示されます。常に表示された状態です。 [その他] (\[•••\] ) ボタンを押すと 2 つの効果があり、プライマリ コマンド ボタンのラベルが表示され、セカンダリ コマンドが存在する場合はオーバーフロー メニューが開きます。
+- コンテンツ領域はバーの左側に配置されます。 Content プロパティが入力されている場合に表示されます。
+- 基本コマンド領域はバーの右側の [その他] (\[•••\] ) ボタンの横に配置されます。 PrimaryCommands プロパティが入力されている場合に表示されます。  
+- オーバーフロー メニューは、コマンド バーが開き、SecondaryCommands プロパティが入力されている場合にのみ表示されます。
 
-Xxx xxxxxx xx xxxxxxxx xxxx xxx [XxxxXxxxxxxxx]() xx **XxxxxXxXxxx**.
+[FlowDirection]() が **RightToLeft** のときは、レイアウトが逆になります。
 
-## Xxxxxx x xxxxxxx xxx
-Xxxx xxxxxxx xxxxxxx xxx xxxxxxx xxx xxxxx xxxxxxxxxx.
+## コマンド バーの作成
+次の例では、上に示したコマンド バーが作成されます。
 
 ```xaml
 <CommandBar>
@@ -72,65 +72,68 @@ Xxxx xxxxxxx xxxxxxx xxx xxxxxxx xxx xxxxx xxxxxxxxxx.
 </CommandBar>
 ```
 
-## Xxxxxxxx xxx xxxxxxx
-Xxx XxxxxxxXxx xxxxxxx xxx Y xxxxxxxxxx xxx xxx xxx xx xxx xxxxxxxx xxx xxxxxxx: [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx), [**XxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx), xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx). 
+## コマンドとコンテンツ
+CommandBar コントロールには [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx)、[**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx)、[**Content**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.contentcontrol.content.aspx) の 3 つのプロパティがあり、コマンドとコンテンツを追加するために使うことができます。 
 
-Xxxx xxxxxxxxx xx xxx xxxxxxx xx xxx xxxxxxx xxx xxxxx xx xxxxx xxxxxxxx.
+コマンド バーに配置するアクションは、優先順位に基づいて見やすくします。
 
-### Xxxxxxx xxxxxxx xxx xxxxxxxx
+### プライマリ操作とオーバーフロー
 
-Xx xxxxxxx, xxxxx xxx xxx xx xxx xxxxxxx xxx xxx xxxxx xx xxx **XxxxxxxXxxxxxxx** xxxxxxxxxx. Xxxxx xxxxxxxx xxx xxxxx xx xxx xxxx xx xxx "xxx xxxx" \[•••\] xxxxxx, xx xxxx xx xxxx xxx xxxxxx xxxxx. Xxxxx xxx xxxx xxxxxxxxx xxxxxxxx, xxx xxxx xxxx xxx xxxx xx xxxxxx xxxxxxx xx xxx xxx, xx xxx xxxxxx xxxxx. Xx xxx xxxxxxxx xxxxxxx (YYY xxx xxxxx), xxxxxxx Y-Y xxxxx xxxx xxx xx xxx xxxxxxx xxx'x xxxxxx xxxxx, xxxxxxxxx xx xxxxx xx-xxxxxx XX.
+既定では、コマンド バーに追加した項目は **PrimaryCommands** コレクションに追加されます。 これらのコマンドは [その他] (\[•••\]) ボタンの左側の、アクション領域と呼ばれる場所に表示されます。 バーに常に表示する最も重要なコマンドは、アクション領域に配置します。 最小画面 (幅 320 epx) では、他の画面 UI に応じて 2 ～ 4 項目がコマンド バーのアクション領域に収まります。
 
-Xxx xxx xxx xxxxxxxx xx xxx **XxxxxxxxxXxxxxxxx** xxxxxxxxxx, xxx xxxxx xxxxx xxx xxxxx xx xxx xxxxxxxx xxxx. Xxxxx xxxx xxxxxxxxx xxxxxxxx xxxxxx xxx xxxxxxxx xxxx.
+**SecondaryCommands** コレクションにコマンドを追加できます。これらの項目は、オーバーフロー領域に表示されます。 重要度の低いコマンドは、オーバーフロー領域に配置します。
 
-Xxx xxxxxxx xxxxxxxx xxxx xx xxxxxx xx xx xxxxxxxx xxxx xxx xxx. Xxx xxx xxxxxx xxx xxxxxxx xx xxxxxxx xxx [**XxxxxxxXxxXxxxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.commandbaroverflowpresenterstyle.aspx) xxxxxxxx xx x [Xxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) xxxx xxxxxxx xxx [**XxxxxxxXxxXxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbaroverflowpresenter.aspx).
+既定のオーバーフロー領域には、バーとは別に表示されるスタイルが適用されます。 スタイルを調整するには、[**CommandBarOverflowPresenterStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.commandbaroverflowpresenterstyle.aspx) プロパティを、[**CommandBarOverflowPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbaroverflowpresenter.aspx) をターゲットにする [Style](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) に設定します。
 
-Xxx xxx xxxxxxxxxxxxxxxx xxxx xxxxxxxx xxxxxxx xxx XxxxxxxXxxxxxxx xxx XxxxxxxxxXxxxxxxx xx xxxxxx. Xxxxxxx, xxxxxxxx xx xxx xxxxxxxxxxxxx xxxx xxxx xx xxx xx xxx xxxxxxxx xxxx xx xxx xxxxxxx xxx xxxxx xxxxxxx.
+必要に応じて、プログラムを使って PrimaryCommands と SecondaryCommands の間でコマンドを移動できます。 ただし、コマンド バーの幅の変更に合わせてコマンドがオーバーフロー領域の内外に自動的に移動することはありません。
 
-### Xxx xxx xxxxxxx
+### アプリ バーのボタン
 
-Xxxx xxx XxxxxxxXxxxxxxx xxx XxxxxxxxxXxxxxxxx xxx xx xxxxxxxxx xxxx xxxx [**XxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [**XxxXxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx), xxx [**XxxXxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) xxxxxxx xxxxxxxx. Xxxxx xxxxxxxx xxx xxxxxxxxx xxx xxx xx x xxxxxxx xxx, xxx xxxxx xxxxxxxxxx xxxxxxx xxxxxxxxx xx xxxxxxx xxx xxxxxxx xx xxxx xx xxx xxxxxx xxxxx xx xxxxxxxx xxxx.
+PrimaryCommands と SecondaryCommands はどちらも、[**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)、[**AppBarToggleButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx)、[**AppBarSeparator**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) の各コマンド要素のみを入力できます。 これらのコントロールは、コマンド バーで使うように最適化されており、アクション領域とオーバーフロー領域のどちらで使うかに応じて外観が変化します。
 
-Xxx xxx xxx xxxxxx xxxxxxxx xxx xxxxxxxxxxxxx xx xx xxxx xxx xxxxxxxxxx xxxxx. Xxxx xxxx xxx xxxxx; xxxxxx xxx xxxxxxx. Xx xxxxxxx, xxx xxxx xxxxx xx xxxxx. Xxxx xxx [**XxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.iscompact.aspx) xxxxxxxx xx xxx xx **xxxx**, xxx xxxx xxxxx xx xxxxxx. Xxxx xxxx xx x XxxxxxxXxx xxxxxxx, xxx xxxxxxx xxx xxxx xxx xxxxxx'x XxXxxxxxx xxxxxxxx xxxxxxxxxxxxx xx xxx xxxxxxx xxx xx xxxxxx xxx xxxxxx.
+アプリ バーのボタン コントロールは、アイコンとアイコンに関連付けられたラベルによって特徴付けられます。 標準とコンパクトの 2 つのサイズがあります。 既定では、テキスト ラベルが表示されます。 [
+            **IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.iscompact.aspx) プロパティを **true** に設定すると、テキスト ラベルが非表示になります。 CommandBar コントロールで使う場合、コマンド バーの開閉に応じてコマンド バーがボタンの IsCompact プロパティを自動的に設定します。
 
-Xxxx xxx xxxxx xx xxx xxx xxxxxx xx xxx xxxxxxxx xxxx (XxxxxxxxxXxxxxxxx), xx'x xxxxx xx xxxx xxxx. Xxxx'x xxx xxxx xxx xxx xxxxxx xxxxxx xxxxx xx xxx xxxxxx xxxxx xx x xxxxxxx xxxxxxx (xxx), xxx xx xxx xxxxxxxx xxxx xx x xxxxxxxxx xxxxxxx (xxxxxx).
+アプリ バーのボタンをオーバーフロー メニュー (SecondaryCommands) に配置すると、テキストとしてのみ表示されます。 以下に、同じアプリ バーのトグル ボタンがプライマリ コマンドとしてアクション領域に表示された状態 (上) と、セカンダリ コマンドとしてオーバーフロー領域に表示された状態 (下) を示します。
 
-![Xxx xxx xxxxxx xx xxxxxxx xxx xxxxxxxxx xxxxxxx](images/app-bar-toggle-button-two-modes.png)
+![プライマリ コマンドとセカンダリ コマンドとしてのアプリ バーのボタン](images/app-bar-toggle-button-two-modes.png)
 
-- *Xx xxxxx xx x xxxxxxx xxxx xxxxx xxxxxx xxxxxxxxxxxx xxxxxx xxxxx, xx'x xxxx xx xxxx xxxx xxxxxxx xx x xxxxxxxxxx xxxxxxxx.* 
-- *Xx xxxxxxxxxxx xxxxxxx Xxxxxx, Xxx, xxx XX xxxxxxxx xx xxx xxxx xx Xxxxxx, Xx, xxx Xxxxxx. Xxxxxxxxxxx xxxxx xxxxx xxx xxxxxxxxxx xx xxxx xxxxxx xxx xxxxxx xxx xxxxx xxxx xxxxxxxx xxxxx xxxxxxxxx xx xxx xxxxxxxxxx xxxx xxx xx xxx.*
+- *複数のページで一貫して表示されるコマンドがある場合は、一貫した場所にそのコマンドを配置することをお勧めします。* 
+- *また、[Accept] (承諾)、[Yes] (はい)、[OK] (OK) コマンドは、[Reject] (拒否)、[No] (いいえ)、[Cancel] (キャンセル) コマンドの左に配置することをお勧めします。 一貫性があることで、ユーザーは安心してシステム内を移動でき、アプリのナビゲーションに関する知識をさまざまなアプリで利用することができます。*
 
-### Xxxxx xxxxxxx
+### その他のコンテンツ
 
-Xxx xxx xxx xxx XXXX xxxxxxxx xx xxx xxxxxxx xxxx xx xxxxxxx xxx **Xxxxxxx** xxxxxxxx. Xx xxx xxxx xx xxx xxxx xxxx xxx xxxxxxx, xxx xxxx xx xxxxx xxxx xx x xxxxx xxxxxxxxx xxx xxxx xxx xxxxx xxx xxxxxx xxxxx xx xxx Xxxxxxx xxxxxxxx.
+XAML 要素をコンテンツ領域に追加するには、**Content** プロパティを設定します。 複数の要素を追加する場合は、それらの要素をパネル コンテナーに配置し、パネルを Content プロパティの唯一の子にする必要があります。
 
-Xxxx xxxxx xxx xxxx xxxxxxx xxxxxxxx xxx xxxxxxx, xxx xxxxxxx xxxxxxxx xxxx xxxxxxxxxx xxx xxx xxxxx xxx xxxxxxx xx xx xxxxxxx.
+プライマリ コマンドとコンテンツの両方がある場合は、プライマリ コマンドが優先され、コンテンツがクリップされる可能性があります。
 
-Xxxx xxx [**XxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) xx **Xxxxxxx**, xxx xxxxxxx xxx xx xxxxxxx xx xx xx xxxxxx xxxx xxx xxxxxxx xxxx xx xxx xxxxxxx xxx. Xxx xxxxxx xxxxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx) xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) xxxxxx xx xxxx xx xxxx xxxxx xx xxx XX xx xxx xxxxxxx xxxx xx xxxx xxxx xxxx'x xxxxxxx. Xxx xxx [Xxxx xxx xxxxxx xxxxxx](#open-and-closed-states) xxxxxxx xxx xxxx xxxx.
+[
+            **ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) が **Compact** の場合、コンテンツがコンパクトなサイズのコマンド バーよりも大きいと、コンテンツがクリップされる可能性があります。 UI の一部がクリップされないようにするには、コンテンツ領域で UI の各部分を表示または非表示にするように [**Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx) と [**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) の各イベントを処理する必要があります。 詳しくは、「[開いた状態と閉じた状態](#open-and-closed-states)」をご覧ください。
 
-### Xxxxxx xxx xxxxxxxx
+### ラベルとヒント
 
-Xx x xxxx xxxxx xxx xx xxx xxx xxxxxx xx xxx xxxx xx xxx xx xxx xxxx xx xxxx xxxx xx xxxxxxx xxxx, xxxxxxxxxx xxx xxxxxxx xxxxxx xx xxx xxx xxxx xx'x xxxxxx. Xxx xxx xxxxxxx x xxxx-xxxxxx xxxxxxxxx (YxYYXX) xx xxx xxxx xxx x xxxxx xx xxxx xx xxx xxxxxxxxx xxxxxxxx xxxxx x xxxx xxxxx xxxxxx xxxxx. Xx XXXX, xxx xxxxxxx xxxx xxxxx xx xxxxxx xxxxxxxx, xxxx xxxx:
+アプリ バーのボタンのテキスト ラベルが長すぎて 1 行に収まらない場合は、テキスト ラベルが次の行に折り返され、バーを開いたときのバー全体の高さが増加します。 ラベルのテキストにソフト ハイフン文字 (0x00AD) を含めると、テキストの中で単語を分割する位置を示すことができます。 XAML でこの処理を行うには、次のようなエスケープ シーケンスを使います。
 
 ```xaml
 <AppBarButton Icon="Back" Label="Areally&#x00AD;longlabel"/>
 ```
 
-Xxxx xxx xxxxx xxxxx xx xxx xxxxxx xxxxxxxx, xx xxxxx xxxx xxxx.
+指定した場所でラベルが折り返されると、次のようになります。
 
-![Xxx xxx xxxxxx xxxx xxxxxxxx xxxxx](images/app-bar-button-label-wrap.png)
+![ラベルが折り返されたアプリ バーのボタン](images/app-bar-button-label-wrap.png)
 
-Xxxxxxx xxxx xxxxxx xxx xxxxxx xxx xxxxxxx xxx xxxxxxx xxxxxx "xxx xxxx" \[•••\] xx xxxxxxx, xxxxxxxx xxxxx xxxxxxxx xxx xxxxxx xxxxx. Xxxx xxxxx xx xxxxxx xxx xxxxx xxxxx xx xxxxxxxx xxxx xxxxxx.
+[その他] (\[•••\]) を押さない限り、テキスト ラベルはコマンド バーの操作に対して非表示になるため、アクション アイコンのヒントを使用することを検討します。 これにより、マウスのユーザーが操作の目的を理解しやすくなります。
 
-## Xxxx xxx xxxxxx xxxxxx
+## 開いた状態と閉じた状態
 
-Xxx xxxxxxx xxx xxx xx xxxx xx xxxxxx. X xxxx xxx xxxxxx xxxxxxx xxxxx xxxxxx xx xxxxxxxx xxx "xxx xxxx" \[•••\] xxxxxx. Xxx xxx xxxxxx xxxxxxx xxxx xxxxxxxxxxxxxxxx xx xxxxxxx xxx [**XxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) xxxxxxxx. Xxxx xxxx, xxx xxxxxxx xxxxxxx xxxxxxx xxx xxxxx xxxx xxxx xxxxxx xxx xxx xxxxxxxx xxxx xx xxxx xx xxxxxxxxx xxxxxxxx xxx xxxxxxx, xx xxxxx xxxxxxxxxx.
+コマンド バーは、開いたり閉じたりできます。 ユーザーは、[その他] (\[•••\]) ボタンを押して状態を切り替えることができます。 プログラムで切り替えるには、[**IsOpen**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.isopen.aspx) プロパティを設定します。 開いた状態の場合、プライマリ コマンド ボタンはテキスト ラベル付きで表示され、上に示したように、セカンダリ コマンドが存在するときはオーバーフロー メニューが開きます。
 
-Xxx xxx xxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx), [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opened.aspx), [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closing.aspx), xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) xxxxxx xx xxxxxxx xx xxx xxxxxxx xxx xxxxx xxxxxx xx xxxxxx.  
-- Xxx Xxxxxxx xxx Xxxxxxx xxxxxx xxxxx xxxxxx xxx xxxxxxxxxx xxxxxxxxx xxxxxx.
-- Xxx Xxxxxx xxx Xxxxxx xxxxxx xxxxx xxxxx xxx xxxxxxxxxx xxxxxxxxx.
+[
+            **Opening**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opening.aspx)、[**Opened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.opened.aspx)、[**Closing**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closing.aspx)、[**Closed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closed.aspx) の各イベントを使うと、コマンド バーの開閉に対応できます。  
+- Opening イベントと Closing イベントが発生するのは、切り替えアニメーションの開始前です。
+- Opened イベントと Closed イベントが発生するのは、切り替えの完了後です。
 
-Xx xxxx xxxxxxx, xxx Xxxxxxx xxx Xxxxxxx xxxxxx xxx xxxx xx xxxxxx xxx xxxxxxx xx xxx xxxxxxx xxx. Xxxx xxx xxxxxxx xxx xx xxxxxx, xx'x xxxx-xxxxxxxxxxx xx xxx xxx xxxxxxxxxx xxxxx xxxxxxx. Xxxx xxx xxxxxxx xxx xx xxxxxx, xxx xxxxxxx xxx xx xxxx xxxxxx xx xxx xxxx xxx xxxxx xx xxx xxxxxxxx.
+次の例では、Opening イベントと Closing イベントを使ってコマンド バーの不透明度を変更します。 コマンド バーが閉じているときは、アプリの背景が見えるようにコマンド バーが半透明になります。 コマンド バーが開いているときは、ユーザーがコマンドに集中できるようにコマンド バーが不透明になります。
 
 ```xaml
 <CommandBar Opening="CommandBar_Opening"
@@ -157,14 +160,14 @@ private void CommandBar_Closing(object sender, object e)
 
 ```
 
-### XxxxxxXxxxxxxXxxx
+### ClosedDisplayMode
 
-Xxx xxx xxxxxxx xxx xxx xxxxxxx xxx xx xxxxx xx xxx xxxxxx xxxxx xx xxxxxxx xxx [**XxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) xxxxxxxx. Xxxxx xxx Y xxxxxx xxxxxxx xxxxx xx xxxxxx xxxx:
-- **Xxxxxxx**: Xxx xxxxxxx xxxx. Xxxxx xxxxxxx, xxxxxxx xxxxxxx xxxxx xxxxxxx xxxxxx, xxx xxx "xxx xxxx" \[•••\] xxxxxx.
-- **Xxxxxxx**: Xxxxx xxxx x xxxx xxx xxxx xxxx xx xxx "xxx xxxx" \[•••\] xxxxxx. Xxx xxxx xxx xxxxx xxxxxxxx xx xxx xxx xx xxxx xx.
-- **Xxxxxx**: Xxx xxxxxxx xxx xx xxx xxxxx xxxx xx'x xxxxxx. Xxxx xxx xx xxxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxxx xxxx xx xxxxxx xxxxxxx xxx. Xx xxxx xxxx, xxx xxxx xxxx xxx xxxxxxx xxx xxxxxxxxxxxxxxxx xx xxxxxxx xxx **XxXxxx** xxxxxxxx xx xxxxxxxx xxx XxxxxxXxxxxxxXxxx xx **Xxxxxxx** xx **Xxxxxxx**. 
+コマンド バーが閉じた状態でどのように表示されるか制御するには、[**ClosedDisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.closeddisplaymode.aspx) プロパティを設定します。 3 つのクローズド表示モードから選ぶことができます。
+- **Compact**: 既定のモードです。 コンテンツ、プライマリ コマンドのアイコン (ラベルなし)、[その他] (\[•••\]) ボタンが表示されます。
+- **Minimal**: [その他] (\[•••\]) ボタンとして機能する細いバーのみが表示されます。 ユーザーはバーの任意の場所を押してバーを開くことができます。
+- **Hidden**: コマンド バーを閉じたとき、コマンド バーは表示されません。 このモードは、インライン コマンド バーでコンテキスト依存コマンドを表示するときに便利な場合があります。 この場合は、コマンド バーをプログラムで開く必要があります。この操作を行うには、**IsOpen** プロパティを設定するか、ClosedDisplayMode を **Minimal** または **Compact** に変更します。 
 
-Xxxx, x xxxxxxx xxx xx xxxx xx xxxx xxxxxx xxxxxxxxxx xxxxxxxx xxx x [XxxxXxxxXxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx). Xxxx xxx xxxx xxx xxxxx'x xxxx xxxxx, xxx xxxxxxxxxx xxxxxxxx xxx xx xxxxxxxxxxx, xx xxxx'xx xxxxxx. Xxxx xxx xxxx xxx xx xxxxx xxxx, xxx xxxxxxx xxx'x XxxxxxXxxxxxxXxxx xx xxxxxxx xx Xxxxxxx xx xxx xxxxxxxxxx xxxxxxxx xxx xxxxxxx.
+以下では、コマンド バーを使って [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) に単純な書式設定コマンドを保持しています。 編集ボックスにフォーカスがないときには、書式設定コマンドが煩わしくないように非表示にします。 編集ボックスを使っているときは、コマンド バーの ClosedDisplayMode を Compact に変更して書式設定コマンドを表示します。
 
 ```xaml
 <StackPanel Width="300" 
@@ -191,80 +194,83 @@ private void EditStackPanel_LostFocus(object sender, RoutedEventArgs e)
 }
 ```
 
->**Xxxx**&xxxx;&xxxx;Xxx xxxxxxxxxxxxxx xx xxx xxxxxxx xxxxxxxx xx xxxxxx xxx xxxxx xx xxxx xxxxxxx. Xxx xxxx xxxx, xxx xxx [XxxxXxxxXxx](rich-edit-box.md) xxxxxxx.
+>**注**&nbsp;&nbsp;この例では編集コマンドの実装については取り上げません。 詳しくは、「[RichEditBox](rich-edit-box.md)」をご覧ください。
 
-Xxxxxxxx xxx Xxxxxxx xxx Xxxxxx xxxxx xxx xxxxxx xx xxxx xxxxxxxxxx, xxxx xx xxxx xxxx xxxxxx xxx xxxxxxx xxxxx xxxxxxx xxxxx.
+Minimal モードと Hidden モードが役に立つ場合もありますが、すべてのアクションを非表示にするとユーザーが混乱する可能性があることに注意してください。
 
-Xxxxxxxx xxx XxxxxxXxxxxxxXxxx xx xxxxxxx xxxx xx xxxx xx x xxxx xx xxx xxxx xxxxxxx xxx xxxxxx xx xxxxxxxxxxx xxxxxxxx. Xx xxxxxxxx, xxxx xxx XxxxxxxXxx xxxxxxxxxxx xxxxxxx xxxxxx xxx xxxx, xx xxxx xxx xxxxxx xxx xxxxxx xx xxxxx xxxxxxxx.
+ClosedDisplayMode を変更してユーザーにヒントを表示すると、周囲にある要素のレイアウトが影響を受けます。 これに対し、CommandBar の開閉を切り替えても他の要素のレイアウトには影響しません。
 
-### XxXxxxxx
+### IsSticky
 
-Xxxxx xxxxxxx xxx xxxxxxx xxx, xx xxx xxxx xxxxxxxxx xxxx xxx xxx xxxxxxxx xxxxxxx xx xxx xxxxxxx xxxx xx xxxxxxx xxx xxxxxxxx xxxx xx xxxxxxxxx xxx xxx xxxxxx xxx xxxxxx. Xxxxxxx xx xx xxxx xxx xx xxxxxx *xxxxx xxxxxxx*. Xxx xxx xxxxxxx xxx xxx xxx xx xxxxxxxxx xx xxxxxxx xxx [**XxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) xxxxxxxx. Xxxx xxx xxx xx xxxxxx (`IsSticky="true"`), xx'x xxx xxxxxx xx x xxxxx xxxxxxx xxxxxxx. Xxx xxx xxxxxxx xxxx xxxxx xxx xxxx xxxxxxx xxx "xxx xxxx" \[•••\] xxxxxx xx, xx xxxxxxx, xxxxxxx xx xxxx xxxx xxx xxxxxxxx xxxx.
+ユーザーがコマンド バーを開いた後、コントロールの外側の任意の場所でアプリを操作すると、既定では、オーバーフロー メニューが閉じ、ラベルが非表示になります。 この方法で閉じることを*簡易非表示*と呼びます。 バーが閉じる方法を制御するには、[**IsSticky**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.issticky.aspx) プロパティを設定します。 バーが固定の場合 (`IsSticky="true"`)、簡易非表示ジェスチャでは閉じません。 ユーザーが [その他] (\[•••\]) ボタンを押すか、(存在する場合は) オーバーフロー メニューから項目を選ぶまで、バーは開いたままになります。
 
-## Xxxxxxxxxxxxxxx
+## 推奨事項
 
-### Xxxxxxxxx
+### 配置
 
-Xxxxxxx xxxx xxx xx xxxxxx xx xxx xxx xx xxx xxx xxxxxx, xx xxx xxxxxx xx xxx xxx xxxxxx, xxx xxxxxx.
+コマンド バーはアプリ ウィンドウの上部、アプリ ウィンドウの下部、またはインラインに配置できます。
 
-![Xxxxxxx Y xx xxx xxx xxxxxxxxx](images/AppbarGuidelines_Placement1.png)
+![アプリ バーの配置の例 1](images/AppbarGuidelines_Placement1.png)
 
--   Xxx xxxxxx xxxxxxx, xx xxx'xx xxxxxxx xxxx xxx xxxxxxx xxx xx xxxx xxx, xxx xx xx xxx xxxxxx xx xxx xxxxxx xxx xxxx xxxxxxxxxxxx. Xx xxxx xxx xxx xxxx xx xxx xxxxxx, xxxxxxxx xxxxxxx xxx xxxxxxx xxx xx xxx xxx xx xxxx xxx XX xxx'x xxx xxxxxx-xxxxx.
--   Xxx xxxxxx xxxxxxx, xx xxx'xx xxxxxxx xxxx xxx xxxxxxx xxx, xx xxxxxxxxx xxxxxxx xx xx xxx xxx xx xxx xxxxxx.
--   Xxx xxx xxxx xxxxx xxxxxxx xxxx xxxxxx, xx xxxx xxxxxx xxx xxx xxxx xxx xxxxxxxxxx xxxxxxx.
+-   モバイル デバイスでは、コマンド バーをアプリに 1 つだけ配置する場合、手に届きやすいように画面の下部に配置します。 アプリの下部にタブがある場合、UI が下部に集中しすぎないように上部にコマンド バーを配置することを検討してください。
+-   大きな画面では、コマンド バーを 1 つだけ配置する場合、画面の上部に配置することをお勧めします。
+-   ユーザーがコンテキスト依存アクションに使用できるように、コマンド バーをインラインで配置することもできます。
 
-Xxxxxxx xxxx xxx xx xxxxxx xx xxx xxxxxxxxx xxxxxx xxxxxxx xx xxxxxx-xxxx xxxxxxx (xxxx xxxxxxx) xxx xx xxxxx-xxxx xxxxxxx (xxxxx xxxxxxx). Xxxxxx xxxxxxx xxxx xxx xx xxxxxx xxxxxxxx xx xxx xxxxxx xxxxx.
+コマンド バーは、単一ビュー画面 (左側の例) と複数ビュー画面 (右側の例) の次の画面領域に配置できます。 インラインのコマンド バーは、アクション領域の任意の場所に配置できます。
 
-![Xxxxxxx Y xx xxx xxx xxxxxxxxx](images/AppbarGuidelines_Placement2.png)
+![アプリ バーの配置の例 2](images/AppbarGuidelines_Placement2.png)
 
->**Xxxxxx Xxxxxx Xxxxxx**: Xx xxx xxxxxxx xxx xxxx xxxxxx xxxxxxx xx x xxxx xxxx xxx xxxxx xxxxxxxx, xx Xxxx Xxxxx Xxxxx (XXX), xxxxxxx xxxx xxx xxx xxxxxx xxx xxxxxxx xxx xx xxx XxxxxxXxxXxx xxxxxxxx xx x Xxxx xxx xx xxxx xxxx xx xxxxxx xxxxxxx xxxx xxx XXX xx xxxxxxx. Xxxxxxxxx, xxx xxxxxx xxxxx xxx xxxxxxx xxx xxxxxx xxx xxxxxxxxxx xxxxxxxx xx xxxx xxx xxxxxxx. Xxxxx xxx xxxxx xxx xxxxxxx xxx xxxx xxxxxxxxx xxxxxx xxxx xxxxxxx xxx xxxx xx xxxxxx, xx xxx xxx xxxxxxx xxxx xxxx xx'x xxxxxx.
+>**モバイル デバイス ファミリ**: タッチ キーボード、つまりソフト入力パネル (SIP) が表示されているときに、コマンド バーをユーザーに対して表示したままにする必要がある場合、コマンド バーをページの BottomAppBar プロパティに割り当てると、SIP が表示されているときにはコマンド バーが移動して表示されたままになります。 それ以外の場合は、コマンド バーをインラインおよびアプリのコンテンツに対して相対的に配置します。 コマンド バーを配置する場所は、コマンド バーを固定するかどうかや閉じたときに最小モードを使うかどうかなどに影響を与えます。
 
-### Xxxxxxx
+### 操作
 
-Xxxxxxxxxx xxx xxxxxxx xxxx xx xx xxx xxxxxxx xxx xxxxx xx xxxxx xxxxxxxxxx.
+コマンド バーに配置するアクションには、見やすさに基づいて優先順位を付けます。
 
--   Xxxxx xxx xxxx xxxxxxxxx xxxxxxxx, xxx xxxx xxxx xxx xxxx xx xxxxxx xxxxxxx xx xxx xxx, xx xxx xxxxx xxx xxxxx xx xxx xxxxxx xxxxx. Xx xxx xxxxxxxx xxxxxxx (YYY xxx xxxxx), xxxxxxx Y-Y xxxxx xxxx xxx xx xxx xxxxxxx xxx'x xxxxxx xxxxx, xxxxxxxxx xx xxxxx xx-xxxxxx XX.
--   Xxxxx xxxx-xxxxxxxxx xxxxxxxx xxxxx xx xxx xxx'x xxxxxx xxxxx xx xxxxxx xxx xxxxx xxx xxxxx xx xxx xxxxxxxx xxxx. Xxxxx xxxxxxxx xxxx xx xxxxxxx xxxx xxx xxx xxx xxxxxx xxxxxx xxxx xxxxxx, xxx xxxx xxxx xxxx xxx xxxxxxxx xxxx'x xxxx-xxxx xxxx xxxx xxxxx xxx'x xxxxxx xxxx.
--   Xxxxx xxx xxxxx-xxxxxxxxx xxxxxxxx xxxxxx xxx xxxxxxxx xxxx. Xxxxx xxxxxxxx xxxx xxxxxx xxxxxx xx xxx xxxx-xxxx xxxx.
+-   バーに常に表示する最も重要なコマンドは、アクション領域の最初の数スロットに配置します。 最小画面 (幅 320 epx) では、他の画面 UI に応じて 2 ～ 4 項目がコマンド バーのアクション領域に収まります。
+-   重要度の低いコマンドは、バーのアクション領域の後方に配置するか、オーバーフロー領域の最初の数スロット内に配置します。 これらのコマンドは、バーに十分な画面領域がある場合は表示されますが、十分な領域がない場合はオーバーフロー領域のドロップダウン メニューに収まります。
+-   最も重要度の低いコマンドは、オーバーフロー領域内に配置します。 これらのコマンドは、常にドロップダウン メニューに表示されます。
 
-Xxxxx xx xxx xxxxxxx xxxxx xxx xx xxxxxxxxxx xxxx xxxxxx xxxxx xx xxxxxxx. Xxxx xxxx xxxxx xxxxx, xxxxxxx x xxxx xxxxx. Xxx xxxx xxxxx xxxxxxx xxxxx xxx xxxx xxxx xxx "xxx xxxx" \[•••\] xxxxxx xx xxxxxxx.
+アクション領域の項目は、アイコンまたはボタンのいずれかを使って視覚化できます。 アイコンのみを使う場合は、テキスト ラベルを含めます。 テキスト ラベルは、[その他] (\[•••\]) ボタンが押されたときにアイコンの下に表示されます。
 
-Xx xxxxx xx x xxxxxxx xxxx xxxxx xxxxxx xxxxxxxxxxxx xxxxxx xxxxx, xx'x xxxx xx xxxx xxxx xxxxxxx xx x xxxxxxxxxx xxxxxxxx. Xx xxxxxxxxxxx xxxxxxx Xxxxxx, Xxx, xxx XX xxxxxxxx xx xxx xxxx xx Xxxxxx, Xx, xxx Xxxxxx. Xxxxxxxxxxx xxxxx xxxxx xxx xxxxxxxxxx xx xxxx xxxxxx xxx xxxxxx xxx xxxxx xxxx xxxxxxxx xxxxx xxxxxxxxx xx xxx xxxxxxxxxx xxxx xxx xx xxx.
+複数のページで一貫して表示されるコマンドがある場合は、一貫した場所にそのコマンドを配置することをお勧めします。 また、[Accept] (承諾)、[Yes] (はい)、[OK] (OK) コマンドは、[Reject] (拒否)、[No] (いいえ)、[Cancel] (キャンセル) コマンドの左に配置することをお勧めします。 一貫性があることで、ユーザーは安心してシステム内を移動でき、アプリのナビゲーションに関する知識をさまざまなアプリで利用することができます。
 
-Xxxxxxxx xxx xxx xxxxx xxx xxxxxxx xxxxxx xxx xxxxxxxx xxxx xx xxxx xxxx xxx "xxx xxxx" \[•••\] xxxxxx xx xxxxxxx xx xxx xxxxxxx xxx, xxxx xx xxxx xxxx xxxxxx xxx xxxxxxx xxxxx xxxxxxx xxxxx.
+すべてのアクションをオーバーフロー領域内に配置して、コマンド バーに [その他] (\[•••\]) ボタンだけが表示されるようにすることができます。ただし、すべてのアクションを非表示にすると、ユーザーが混乱する可能性があることに注意してください。
 
-### Xxxxxxx xxx xxxxxxx xxx xxxxxxxx
+### コマンド バーのポップアップとヒント
 
-Xxxxxxxx xxxxxxx xxxxxxxxx xxx xxx xxxxxxxx, xxxx xx xxxxxxx Xxxxx, Xxxxx Xxx, xxx Xxxxxxx xx x Xxxxxxx xxxx.
+コマンドは論理的にグループ化することを検討します。たとえば、[返信]、[全員に返信]、[転送] を [応答] メニューに配置します。
 
-![Xxxxxxx xx xxxxxxx xx x xxxxxxx xxx](images/AppbarGuidelines_Flyouts.png)
+![コマンド バーでのポップアップの例](images/AppbarGuidelines_Flyouts.png)
 
-Xxxxxxx xxxx xxxxxx xxx xxxxxx xxx xxxxxxx xxx xxxxxxx xxxxxx \[•••\] xx xxxxxxxx, xxxxxxxx xxxxx xxxxxxxx xxx xxxxxx xxxxx.
+\[•••\] を選択しない限り、テキスト ラベルはコマンド バーの操作に対して非表示になるため、アクション アイコンのヒントを使用することを検討します。
 
-### Xxxxxxxx xxxx
+### オーバーフロー メニュー
 
-![Xxxxxxx xx xxxxxxx xxx xxxx "Xxxx" xxxx](images/AppbarGuidelines_Illustration.png)
+![[その他] 領域があるコマンド バーの例](images/AppbarGuidelines_Illustration.png)
 
--   Xxx xxxxxxxx xxxx xx xxxxxxxxxxx xx xxx "xxx xxxx" \[•••\] xxxxxx, xxx xxxxxxx xxxxx xxxxx xxx xxx xxxx. Xx'x xx xxx xxx-xxxxx xx xxx xxxxxxx, xxxxxxxx xx xxxxxxx xxxxxxx.
--   Xxxx xxxxxx xx xxx xxxxxxx xxxxxx xxxxx xx xxxxxxxxxxx xx xx xxxx. Xxxxxxxxx xxx xxxxxxxx xxxx xxxxxxx xxxx xxxxxx xxx xxxx xx xxx xxxxxxx xx xxx xxxxxxx xxxxxx xxxxx.
--   Xxx xxxxxxxx xxxx xx xxxxxxxxx xxx xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxx.
--   Xxxxxxx xxx xxxx xxx xx xxxxxxx xxx xxxxxxx xxxxxx xxxxx xxx xxx xxxxxxxx xxxx xx xxxxxxxxxxx. Xxx xxx xxxx xxxxxxxxx xxxxxxx xx xxxxxx xxxxxx xx xxx xxxxxxx xxxxxx xxxxx xxxxxxxxxx xx xxxxxx xx xxx xxxxxx xxxx.
--   Xxxxxxxxxxxx xxxx xxxxxxx xxx xxxxxx xx xxx xxxxxxxx xxxx xxxx xxxx xxx xxx xxx xx xxxxxxxx xx xxxxxx xxxxxxx.
+-   オーバーフロー メニューは [その他] (\[•••\]) ボタンで表され、メニューの可視エントリ ポイントです。 ツール バー右端のプライマリ操作の隣に配置されます。
+-   プライマリ操作領域の各操作は、アイコンで表されます。 オーバーフロー メニューを選ぶと、プライマリ操作領域の各操作のテキスト ラベルが表示されます。
+-   オーバーフロー領域は、使用頻度が少ない操作に割り当てられます。
+-   操作は、ブレークポイントを境としてプライマリ操作領域とオーバーフロー メニューの間で移動させることができます。 画面またはアプリのウィンドウ サイズに関係なく、常にアクションをプライマリ操作領域内に維持するように指定することもできます。
+-   使用頻度の低いアクションは、より大きな画面でアプリ バーを展開したときに、オーバーフロー メニュー内に残しておくことができます。
 
-## Xxxxxxxxxx xxxxxxxx
+## 応答性のガイダンス
 
--   Xxx xxxx xxxxxx xx xxxxxxx xx xxx xxx xxx xxxxxx xx xxxxxxx xx xxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxxx, xxxxx xxxxxxx xxx xxxx'x xxxxxxxxx xxxx. Xxx xxxxxx xx xxxxxxx xxxxxxxxx xxxxxx xx xxxxxxxxxx xx xxx xxxxxx'x xxxxx xx xxxxxxxx xxxxxxxxxxx.
--   Xx xxxxxxxxx xxxxxxxxxxx, xxx xxx xxxx xxxxxxx xx xxx xxx xx xxx xxxx xx xxx xxxxxx xxxx xx xxx xxxxxx xxxx xxxxxxx.
+-   アプリ バー内のアクションと同じ数のアクションが、縦向きと横向きの両方の向きで表示される必要があります。これにより、ユーザーが認識する負荷が軽減されます。 利用可能なアクションの数は、縦向きでのデバイスの幅によって決まります。
+-   ブレークポイントをターゲットにすると、メニューのサイズやアプリ ウィンドウのサイズの変化に応じてアクションをメニューの内外に移動できます。
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## Xxxxxxx xxxxxxxx
+## 関連記事
 
-**Xxx xxxxxxxxx**
-[Xxxxxxx xxxxxx xxxxxx xxx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/dn958433)
+**デザイナー向け**
+[UWP アプリのコマンド設計の基本](https://msdn.microsoft.com/library/windows/apps/dn958433)
 
-**Xxx xxxxxxxxxx (XXXX)**
-[
-            **XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn279427)
+**開発者向け (XAML)**
+[**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

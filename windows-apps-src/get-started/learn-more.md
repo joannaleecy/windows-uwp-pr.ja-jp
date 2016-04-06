@@ -1,68 +1,72 @@
 ---
-xx.xxxxxxx: YYYYXYYY-YYYX-YYXX-XYXY-YXXYYYXYXYYY
-xxxxx: Xxxx'x xxxx?
-xxxxxxxxxxx: Xxx xxxx xxx'xx xxxxxxx xxxx xxxxx xxx, xxxxx xxx xxx xxxx xx xxx Xxx Xxxxxx. Xxxx'x xx xxxxxxxxxxxx xx xxx xxxxxxxxx xxxxxxxx xx xxxxxxxx.'
-xxxxxxxx: Xxx Xxxxxx, xxxx
-xxxxxxxx: Xxx Xxxxxx, Xxxxxxx xxxxxxx
+ms.assetid: 4288E511-581C-49DC-A2F2-1CB832C4A676
+title: 次の手順
+description: 初めてのアプリの作成が終わったので、デベロッパー センターの他の部分を見てみましょう。 ここでは、そこに含まれるさまざまなセクションについて説明します。
+keywords: デベロッパー センター, 説明
+keywords: デベロッパー センター, 概要
 ---
-# Xxxx'x xxxx?
+# 次の手順
 
-Xxx xxxx xxx'xx xxxxxxx xxxx xxxxx xxx, xxxxx xxx xxx xxxx xx xxx Xxx Xxxxxx. Xxxx'x xx xxxxxxxxxxxx xx xxx xxxxxxxxx xxxxxxxx xx xxxxxxxx.
+初めてのアプリの作成が終わったので、デベロッパー センターの他の部分を見てみましょう。 ここでは、そこに含まれるさまざまなセクションについて説明します。
 
-## Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx
-
-
-Xxxx xxxx xxx xxxxx xxx xx xxxxxxxx xxx xx xxxxxx x xxxxx xxxx xxxxxxxxx. Xxx xxxxxx xx xxxx xxxxxxx xxxxxxx xxxxxxxxxx xxx xxx xxxxxx, xxxxxxxxxxxxxx xxx xxxxxxxx, xxxx xxxxxxx, xxxxxxxxx xxxxxxxxx, xxx xxxxxx xxxxxxxxx.
-
-Xx xx [Xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=533896).
-
-## Xxxxxxx xxxx
+## ユニバーサル Windows プラットフォーム (UWP) アプリのデザイン
 
 
-Xxx Xxxxxxx xxxxxxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxx xxxxxxxx xxx xxx xxxx xx xxx xxxxxxxx xxxxxxxxx xx xxxx xxx.
+優れたユーザー インターフェイスの設計方法を知ることで、引き立ったアプリを作成できます。 このセクションのトピックでは、アプリを設計するためのガイドライン、計画時の考慮事項、ケース スタディ、グラフィックス リソース、デザイン テンプレートを提供します。
 
-Xx xx [Xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=529575)
+「[デザイン](http://go.microsoft.com/fwlink/p/?LinkId=533896)」をご覧ください。
 
-## Xxxxxxx xxxx
-
-
-Xxx Xxxxxxx Xxxxx xxxx xxx xxxxx xxx xxxxxxxx xx xxxxxxxxx xxx xxx Xxxxxxxxx Xxxxxxx. Xxx Xxxxxxx Xxxxx xx x xxxxxxxxxxx xxxxx xxx xxxx xxxx xx xxxxxxxxx xxxxxxxxxxx xxxxxxxx xx xxx xxxxx. Xxxxxxxxx xxxx xxxx xxxxxxxx xx xxxxx xxxxxxx xx xxxxxx xx x xxxxxxxxxx xxx xxxxxx xxx xxxxxxx. Xxx xxxxxx xx xxxx xxxx xxxx xx xxxxxxxx xxxxxxxxx xx xxxxxxx, xxx xxx xxx xxxxxxx x xxxxxx xxxxx xxxx xxxx xxxxxx xxxx xxx xx xxxxx xxxxxxxxxx.
-
-Xx xx [Xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=268275).
-
-## XXX xxxxxxxxx
+## アプリを開発する
 
 
-Xxxx xxxxxxx xxxxxxxx xxxxxxxx xxxx xx xxx xxxxxxx, xxxxxxxxxx, xxxxxxx, xxxxxx, xxxxxx, xxx xxxxx XXXx xxxx xxx xxx xxx xx xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
+アプリで使用できる機能の多くの詳細とサンプル コードについては、「開発」セクションで説明しています。
 
-Xx xx [XXX xxxxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/br211369.aspx).
+「[開発](http://go.microsoft.com/fwlink/p/?LinkId=529575)」をご覧ください。
 
-## Xxxxxxxx xxxxxxxxx
-
-
-Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxx xxxxxxxxx xx xxx xxx xxx xxxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxxxxxxxx xx xxxxx xxxxxxxxx. Xx xxx xxxx xxxx xxxxxxxxxxxxx xxx xxxxxx xxxx xxx xxxxxxxxx, xxxx xxxxxxx xxxx xxxx xxx.
-
-Xx xx [Xxxxxxxx xxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=534184).
-
-## Xxxxxxx xxxxx
+## アプリの販売
 
 
-Xx xxx'xx xxxxxxxxxx xx xxxxxxxxxx xxxxx xxxxx XxxxxxX, xxxx xxxxxxx xxxxxxxx xxx xxxx xxx xxxx.
+Windows ストアを利用すると、何百万もの Microsoft Windows ユーザーにアプリを販売できます。 Windows ストアは、世界各地のユーザーにアプリを販売するマーケットプレースです。 ユーザーは、あらゆるデバイスに共通の方法で、自分の国または地域に対応したアプリを見つけることができます。 開発者は、アプリを販売する国や地域を選んだり、アプリに現地通貨で単一の価格帯を指定したりできます。
 
-Xx xx [Xxxxxxx xxxxx](http://go.microsoft.com/fwlink/p/?LinkId=534184).
+「[公開](http://go.microsoft.com/fwlink/p/?linkid=268275)」をご覧ください。
 
-## Xxxxxxx Xxxxxxxx xx Xxxxxx (XxX) xxxx
+## API リファレンス
 
 
-Xx xxx'xx xxxxxxxxxx xx xxxxxxxxxx xxx xxx Xxxxxxxx xx Xxxxxx (XxX), xxxx xxxxxxx xxxxxxxx xxx xxxx xxx xxxx.
+このセクションには、ユニバーサル Windows プラットフォーム (UWP) アプリを作成するために使用できるクラス、プロパティ、メソッド、イベント、スタイル、その他の API に関する詳細情報が含まれています。
 
-Xx xx [Xxxxxxx XxX xxxx](http://go.microsoft.com/fwlink/p/?LinkId=534186).
+「[API リファレンス](https://msdn.microsoft.com/en-us/library/windows/apps/br211369.aspx)」をご覧ください。
+
+## 言語のリファレンス
+
+
+このセクションでは、使用できるプログラミング言語と、これらの言語によるユニバーサル Windows プラットフォーム (UWP) 実装のバリエーションについて説明します。 言語の内容やコーディングについて不明な点がある場合は、このセクションが参考になります。
+
+「[言語のリファレンス](http://go.microsoft.com/fwlink/p/?LinkId=534184)」をご覧ください。
+
+## ゲームの開発
+
+
+DirectX を使ったゲーム開発に興味がある場合、必要な情報はこのセクションにあります。
+
+「[ゲームの開発](http://go.microsoft.com/fwlink/p/?LinkId=534184)」をご覧ください。
+
+## モノのインターネット (IoT) アプリを開発する
+
+
+モノのインターネット (IoT) 向けの開発に興味がある場合、必要な情報はこのセクションにあります。
+
+「[IoT アプリの開発](http://go.microsoft.com/fwlink/p/?LinkId=534186)」をご覧ください。
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

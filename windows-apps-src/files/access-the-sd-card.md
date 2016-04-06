@@ -1,67 +1,70 @@
 ---
-xx.xxxxxxx: XXXYXYXY-YYYY-YXXY-YYYY-XYYXXYXYXYYY
-xxxxx: Xxxxxx xxx XX xxxx
-xxxxxxxxxxx: Xxx xxx xxxxx xxx xxxxxx xxx-xxxxxxxxx xxxx xx xx xxxxxxxx xxxxxXX xxxx, xxxxxxxxxx xx xxx-xxxx xxxxxx xxxxxxx xxxx xxxx xxxxxxx xxxxxxxx xxxxxxx.
+ms.assetid: CAC6A7C7-3348-4EC4-8327-D47EB6E0C238
+title: SD カードへのアクセス
+description: オプションの microSD カード上にある重要度の低いデータに保存およびアクセスできます (特に内部ストレージに制限がある低コストのモバイル デバイス)。
 ---
-# Xxxxxx xxx XX xxxx
+# SD カードへのアクセス
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
-Xxx xxx xxxxx xxx xxxxxx xxx-xxxxxxxxx xxxx xx xx xxxxxxxx xxxxxXX xxxx, xxxxxxxxxx xx xxx-xxxx xxxxxx xxxxxxx xxxx xxxx xxxxxxx xxxxxxxx xxxxxxx.
+オプションの microSD カード上にある重要度の低いデータに保存およびアクセスできます (特に内部ストレージに制限がある低コストのモバイル デバイス)。
 
-Xx xxxx xxxxx, xxx xxxx xx xxxxxxx xxx **xxxxxxxxxXxxxxxx** xxxxxxxxxx xx xxx xxx xxxxxxxx xxxx xxxxxx xxxx xxx xxx xxxxx xxx xxxxxx xxxxx xx xxx XX xxxx. Xxxxxxxxx xxx xxxx xxxx xx xxxxxxxx xx xxxxxx xxx xxxx xx xxxxx xxxx xxxx xxx xxxxxx xxx xxxxxxxx.
+ほとんどの場合、アプリで SD カード上のファイルの保存とアクセスを行うには、アプリ マニフェスト ファイルで **removableStorage** 機能を指定する必要があります。 通常、アプリから保存したりアクセスしたりするファイルの種類を処理対象として登録することも必要です。
 
-Xxx xxx xxxxx xxx xxxxxx xxxxx xx xxx xxxxxxxx XX xxxx xx xxxxx xxx xxxxxxxxx xxxxxxx:
+次の方法を使って、オプションの SD カードに対してファイルの保存とアクセスを行うことができます。
 
-- Xxxx xxxxxxx.
+- ファイル ピッカー
 
-- Xxx [**Xxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227346) XXXx.
+- [
+            **Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API
 
-## Xxxx xxx xxx xxx xxx'x xxxxxx xx xxx XX xxxx
+## SD カードでアクセスできるデータとアクセスできないデータ
 
-### Xxxx xxx xxx xxxxxx
+### アクセスできるデータ
 
-- Xxxx xxx xxx xxxx xxxx xxx xxxxx xxxxx xx xxxx xxxxx xxxx xxx xxx xxx xxxxxxxxxx xx xxxxxx xx xxx xxx xxxxxxxx xxxx.
+- アプリでファイルの読み取りと書き込みを実行するには、そのファイルの種類が処理対象となるように、アプリでアプリ マニフェスト ファイルに登録する必要があります。
 
-- Xxxx xxx xxx xxxx xxxxxx xxx xxxxxx xxxxxxx.
+- アプリでは、フォルダーの作成と管理も実行できます。
 
-### Xxxx xxx xxx'x xxxxxx
+### アクセスできないデータ
 
-- Xxxx xxx xxx'x xxx xx xxxxxx xxxxxx xxxxxxx xxx xxx xxxxx xxxx xxxx xxxxxxx.
+- アプリでは、システム フォルダーとそのフォルダー内のファイルを参照したり、アクセスしたりすることはできません。
 
-- Xxxx xxx xxx'x xxx xxxxx xxxx xxx xxxxxx xxxx xxx Xxxxxx xxxxxxxxx. Xxx Xxxxxx xxxxxxxxx xx xxxxxxxxx xxxx xx xxxxxx xxx xxxx xx xxxxxxxx xxxx xxxxxxxxxxxx.
+- 隠し属性でマークされたファイルを参照することはできません。 通常、隠し属性は、データを誤って削除するというリスクを減らすために使われます。
 
-- Xxxx xxx xxx'x xxx xx xxxxxx xxx Xxxxxxxxx xxxxxxx xx xxxxx [**XxxxxXxxxxxx.XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227152). Xxxxxxx xxx xxx xxxxxx xxx Xxxxxxxxx xxxxxxx xx xxx XX xxxx xx xxxxxxxxxx xxx xxxx xxxxxx.
+- [
+            **KnownFolders.DocumentsLibrary**](https://msdn.microsoft.com/library/windows/apps/br227152) を使ってドキュメント ライブラリを参照したり、ドキュメント ライブラリにアクセスしたりすることはできません。 ただしファイル システムを走査することによって、SD カード上のドキュメント ライブラリにアクセスすることはできます。
 
-## Xxxxxxxx xxx xxxxxxx xxxxxxxxxxxxxx
+## セキュリティとプライバシーに関する考慮事項
 
-Xxxx xx xxx xxxxx xxxxx xx x xxxxxx xxxxxxxx xx xxx XX xxxx, xxxxx xxxxx xxx xxx xxxxxxxxx xx xxxx xxx xxxxxxxxx xxxxxxxxxx xx xxxxx xxxx.
+アプリが SD カードのグローバルな場所にファイルを保存する場合、それらのファイルは暗号化されないため、通常は他のアプリからアクセスすることができます。
 
-- Xxxxx xxx XX xxxx xx xx xxx xxxxxx, xxxx xxxxx xxx xxxxxxxxxx xx xxxxx xxxx xxxx xxxx xxxxxxxxxx xx xxxxxx xxx xxxx xxxx xxxx.
+- SD カードがデバイスに挿入されている間、SD カード上のファイルは、同じファイルの種類を処理対象として登録している他のアプリからアクセスすることができます。
 
-- Xxxx xxx XX xxxx xx xxxxxxx xxxx xxx xxxxxx xxx xxxxxx xxxx x XX, xxxx xxxxx xxx xxxxxxx xx Xxxx Xxxxxxxx xxx xxxxxxxxxx xx xxxxx xxxx.
+- SD カードをデバイスから取り外し、PC で開くと、ファイルはエクスプローラーに表示されるため、他のアプリからアクセスすることができます。
 
-Xxxx xx xxx xxxxxxxxx xx xxx XX xxxx xxxxx xxxxx xx xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241621), xxxxxxx, xxxxx xxxxx xxx xxxxxxxxx xxx xxx xxx xxxxxxxxxx xx xxxxx xxxx.
+アプリを SD カードにインストールし、ファイルを SD カードの [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) に保存する場合、それらのファイルは暗号化されるため、他のアプリからアクセスすることはできません。
 
-## Xxxxxxxxxxxx xxx xxxxxxxxx xxxxx xx xxx XX xxxx
+## SD カード上のファイルへアクセスするための要件
 
-Xx xxxxxx xxxxx xx xxx XX xxxx, xxxxxxxxx xxx xxxx xx xxxxxxx xxx xxxxxxxxx xxxxxx.
+SD カードのファイルにアクセスするには通常、次のことを指定する必要があります。
 
-1.  Xxx xxxx xx xxxxxxx xxx **xxxxxxxxxXxxxxxx** xxxxxxxxxx xx xxx xxx xxxxxxxx xxxx.
-2.  Xxx xxxx xxxx xx xxxxxxxx xx xxxxxx xxx xxxx xxxxxxxxxx xxxxxxxxxx xxxx xxx xxxx xx xxxxx xxxx xxx xxxx xx xxxxxx.
+1.  アプリ マニフェスト ファイルで **removableStorage** 機能を指定する必要があります。
+2.  また、アクセスするメディアの種類に関連付けられたファイル拡張子を処理対象として登録する必要があります。
 
-Xxx xxx xxxxxxxxx xxxxxx xxxx xx xxxxxx xxxxx xxxxx xx xxx XX xxxx xxxxxxx xxxxxxxxxxx x xxxxx xxxxxx xxxx **XxxxxXxxxxxx.XxxxxXxxxxxx**, xx xx xxxxxx xxxxx xxxxx xxxx xxx xxxxxx xxxxxxx xx xxx xxxxx xxxxxxx xxxxxxx.
+**KnownFolders.MusicLibrary** などの既知のフォルダーを参照せずに SD カード上のメディア ファイルにアクセスしたり、メディア ライブラリ フォルダーの外部に格納されているメディア ファイルにアクセスしたりするに場合にも、上記の方法を使います。
 
-Xx xxxxxx xxxxx xxxxx xxxxxx xx xxx xxxxx xxxxxxxxx—Xxxxx, Xxxxxx, xx Xxxxxx—xx xxxxx xxxxx xxxxxxx, xxx xxxx xxxx xx xxxxxxx xxx xxxxxxxxxx xxxxxxxxxx xx xxx xxx xxxxxxxx xxxx—**xxxxxXxxxxxx**, **xxxxxxxxXxxxxxx**, xx **xxxxxXxxxxxx**. Xxx xx xxx xxxx xx xxxxxxx xxx **xxxxxxxxxXxxxxxx** xxxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxx xxx xxxxxxx xx xxx Xxxxx, Xxxxxxxx, xxx Xxxxxx xxxxxxxxx](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md).
+ミュージック、写真、ビデオなどのメディア ライブラリに格納されているメディア ファイルに既知のフォルダーを使ってアクセスする場合は、関連付けられている機能 (**musicLibrary**、**picturesLibrary**、**videoLibrary**) をアプリ マニフェスト ファイルで指定するだけで十分です。 **removableStorage** 機能を指定する必要はありません。 詳しくは、「[ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)」をご覧ください。
 
-## Xxxxxxxxx xxxxx xx xxx XX xxxx
+## SD カード上のファイルへのアクセス
 
-### Xxxxxxx x xxxxxxxxx xx xxx XX xxxx
+### SD カードへの参照の取得
 
-Xxx [**XxxxxXxxxxxx.XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227158) xxxxxx xx xxx xxxxxxx xxxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227230) xxx xxx xxx xx xxxxxxxxx xxxxxxx xxxxxxxxx xxxxxxxxx xx xxx xxxxxx. Xx xx XX xxxx xx xxxxxxx, xxx xxxxx (xxx xxxx) **XxxxxxxXxxxxx** xxxxxxxxxx xxx **XxxxxXxxxxxx.XxxxxxxxxXxxxxxx** xxxxxx xxxxxxxxxx xxx XX xxxx.
+[
+            **KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) フォルダーは、デバイスに現在接続されている一連のリムーバブル デバイスに対する論理ルートである [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) です。 SD カードが取り付けられている場合は、**KnownFolders.RemovableDevices** フォルダーの下にある、最初の (唯一の) **StorageFolder** が SD カードを表します。
 
-Xxx xxxx xxxx xxx xxxxxxxxx xx xxxxxxxxx xxxxxxx xx XX xxxx xx xxxxxxx xxx xx xxx x xxxxxxxxx xx xx xx x [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227230).
+次のようなコードを使って、SD カードが存在するかどうかを判断し、SD カードへの参照を [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) として取得します。
 
 ```csharp
 using Windows.Storage;
@@ -84,27 +87,29 @@ using Windows.Storage;
             }
 ```
 
-### Xxxxxxxx xxx xxxxxxxx xx xxx XX xxxx
+### SD カードのコンテンツの照会
 
-Xxx XX xxxx xxx xxxxxxx xxxx xxxxxxx xxx xxxxx xxxx xxxx'x xxxxxxxxxx xx xxxxx xxxxxxx xxx xxx'x xx xxxxxxx xx xxxxx x xxxxxxxx xxxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227151). Xx xxxx xxxxx, xxxx xxx xxx xx xxxxxxxxx xxx xxxxxxxx xx xxx xxxx xx xxxxxxxxxx xxx xxxx xxxxxx xxxxxxxxxxx. Xxx [**XxxXxxxxXxxxx (XxxxxxXxxxXxxxx.XxxxxxxXxxxx)**](https://msdn.microsoft.com/library/windows/apps/br227274) xxx [**XxxXxxxxxxXxxxx (XxxxxxXxxxxxXxxxx.XxxxxxxXxxxx)**](https://msdn.microsoft.com/library/windows/apps/br227281) xx xxx xxx xxxxxxxx xx xxx XX xxxx xxxxxxxxxxx.
+SD カードには、既知のフォルダーとして認識されないさまざまなフォルダーやファイルを含めることができますが、[**KnownFolders**](https://msdn.microsoft.com/library/windows/apps/br227151) の場所の情報を使って照会することはできません。 ファイルを検索するには、アプリでファイル システムを再帰的に走査して、SD カードのコンテンツを列挙する必要があります。 SD カードのコンテンツを効率的に取得するには、[**GetFilesAsync (CommonFileQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227274) と [**GetFoldersAsync (CommonFolderQuery.DefaultQuery)**](https://msdn.microsoft.com/library/windows/apps/br227281) を使います。
 
-Xx xxxxxxxxx xxxx xxx xxx x xxxxxxxxxx xxxxxx xx xxxxxxxx xxx XX xxxx. Xx XX xxxx xxx xxxxxxx xxxx xxxxxxxxx xx xxxx.
+SD カードを走査するにはバックグラウンド スレッドを使うことをお勧めします。 SD カードには、かなりのギガバイト数のデータを格納できる場合があります。
 
-Xxxx xxx xxx xxxx xxxxxxx xxx xxxx xx xxxxxx xxxxxxxx xxxxxxx xx xxxxx xxx xxxxxx xxxxxx.
+また、アプリでは、ユーザーに対してフォルダー ピッカーを使って特定のフォルダーを選ぶように要求することもできます。
 
-Xxxx xxx xxxxxx xxx xxxx xxxxxx xx xxx XX xxxx xxxx x xxxx xxxx xxx xxxxxxx xxxx [**XxxxxXxxxxxx.XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227158), xxx xxxxxxxxx xxxxxxx xxxxxx xx xxx xxxxxxxxx xxx.
+[
+            **KnownFolders.RemovableDevices**](https://msdn.microsoft.com/library/windows/apps/br227158) から取得したパスを使って SD カード上のファイル システムにアクセスした場合のメソッドの動作を次に示します。
 
--   Xxx [**XxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227273) xxxxxx xxxxxxx xxx xxxxx xx xxx xxxx xxxxxxxxxx xxxx xxx xxxx xxxxxxxxxx xx xxxxxx xxx xxx xxxx xxxxxxxxxx xxxxxxxxxx xxxx xxx xxxxx xxxxxxx xxxxxxxxxxxx xxxx xxx xxxx xxxxxxxxx.
+-   [
+            **GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227273) メソッドは、処理対象として登録したファイル拡張子と、指定したメディア ライブラリ機能に関連付けられているファイル拡張子との和集合を返します。
 
--   Xxx [**XxxXxxxXxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227206) xxxxxx xxxxx xx xxx xxxx xxx xxxxxxxxxx xx xxxxxx xxx xxxx xxxxxxxxx xx xxx xxxx xxx xxx xxxxxx xx xxxxxx.
+-   アクセスしようとするファイルの拡張子を処理対象として登録しなかった場合、[**GetFileFromPathAsync**](https://msdn.microsoft.com/library/windows/apps/br227206) メソッドは失敗します。
 
-## Xxxxxxxxxxx xxx xxxxxxxxxx XX xxxx
+## 個々の SD カードの識別
 
-Xxxx xxx XX xxxx xx xxxxx xxxxxxx, xxx xxxxxxxxx xxxxxx xxxxxxxxx x xxxxxx xxxxxxxxxx xxx xxx xxxx. Xx xxxxxx xxxx XX xx x xxxx xx xxx XXXxxxxx xxxxxx xx xxx xxxx xx xxx xxxx. Xx xxx xxx xxx xxxx XX xx xxxxxxxxx xxxxxxx xx xxxxxxxxxx xxx xxxx. Xx xx xxx xxxxxxxxxx xxx xxxx, xxx xxx xxx xx xxxx xx xxxxxxxx xxxxxxx xxxxxxxxxx xxxx xxxx xxxxxxxxx xxxxxxxxxx. Xxxxxxx xxx xxxxxxxx xx xxx xxxx xxx xxxx xxxxxxx xxxxx xxx xxxx xxx xxxx xxxxxxxx xx xxx xxx.
+SD カードが最初にマウントされると、オペレーティング システムによって、そのカードの一意の識別子が生成されます。 この ID は、カードのルートにある WPSystem フォルダー内のファイルに格納されます。 アプリはこの ID を使って、カードを認識できるかどうかを判断することができます。 カードがアプリによって認識されると、アプリでは、既に完了している特定の操作を後で実行できる場合があります。 ただし、アプリが前回カードにアクセスした以降、カードのコンテンツが変更されている可能性があります。
 
-Xxx xxxxxxx, xxxxxxxx xx xxx xxxx xxxxxxx xxxxxx. Xx xxx xxx xxx xxxxxxxxxx xxxxxxx xxx xxxxx XX xxxx xxx xxxxx xxxxx xxx xxxxxxx xx xxxxx xx xxx xxxxxx, xx xxx xxxxxxx xxx xxxx xxxxxxxxxxx xx xxx xxxx xx xxxxxxxxxx xxx xxx xxx xxxxxxxxxx xxx xxxx. Xxxxxxxxxx xx xxx xxxxx x xxx-xxxxxxxx xxxxxxxxxx xxxxxx xx xxxxxx xxx xxx xxxxxx. Xx xxx xxxx xxxxxx x xxxxxxx xx xxxx xx xxxxx xxxx xxxxxxx xxxxxxxxxx xxxx xxx xxxx xxxxx xx xxxxxx xxx xxxxxxx xxxxx.
+たとえば、電子ブックにインデックスを付けるアプリについて考えてみましょう。 アプリが以前に SD カード全体を走査して電子ブックのファイルを探し、電子ブックのインデックスを作成した場合、カードをもう一度挿入し、アプリがカードを認識すると、直ちにインデックスの一覧を表示できます。 これとは別に、新しい電子ブックを検索する優先度の低いバックグラウンド スレッドを開始することもできます。 また、削除された電子ブックへアクセスしようとしたとき、以前に存在していた電子ブックが見つからなかった場合のエラーを処理することもできます。
 
-Xxx xxxx xx xxx xxxxxxxx xxxx xxxxxxxx xxxx XX xx **XxxxxxxXxxxx.XxxxxxxxXxxxxxxXx**.
+この ID を含むプロパティの名前は、**WindowsPhone.ExternalStorageId** です。
 
 ```csharp
 using Windows.Storage;
@@ -144,4 +149,8 @@ using Windows.Storage;
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

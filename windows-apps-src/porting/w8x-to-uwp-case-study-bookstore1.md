@@ -1,124 +1,128 @@
 ---
-xxxxx: Xxxxxxx Xxxxxxx Y.x xx XXX xxxx xxxxx, XxxxxxxxxY
-xx.xxxxxxx: xYYYYYYY-xxxY-Yxxx-YYxx-YYxxYxYxxYxY
-xxxxxxxxxxx: Xxxx xxxxx xxxxxxxx x xxxx xxxxx xx xxxxxxx x xxxx xxxxxx Xxxxxxxxx Y.Y xxx xx x Xxxxxxx YY Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
+title: Windows Runtime 8.x to UWP case study, Bookstore1
+ms.assetid: e4582717-afb5-4cde-86bb-31fb1c5fc8f3
+description: This topic presents a case study of porting a very simple Universal 8.1 app to a Windows 10 Universal Windows Platform (UWP) app.
 ---
 
-# Xxxxxxx Xxxxxxx Y.x xx XXX xxxx xxxxx: XxxxxxxxxY
+# Windows Runtime 8.x to UWP case study: Bookstore1
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx xxxxx xxxxxxxx x xxxx xxxxx xx xxxxxxx x xxxx xxxxxx Xxxxxxxxx Y.Y xxx xx x Xxxxxxx YY Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx. X Xxxxxxxxx Y.Y xxx xx xxx xxxx xxxxxx xxx xxx xxxxxxx xxx Xxxxxxx Y.Y, xxx x xxxxxxxxx xxx xxxxxxx xxx Xxxxxxx Xxxxx Y.Y. Xxxx Xxxxxxx YY, xxx xxx xxxxxx x xxxxxx xxx xxxxxxx xxxx xxxx xxxxxxxxx xxx xxxxxxx xxxx x xxxx xxxxx xx xxxxxxx, xxx xxxx'x xxxx xx'xx xx xx xxxx xxxx xxxxx. Xxx [Xxxxx xx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/dn894631).
+This topic presents a case study of porting a very simple Universal 8.1 app to a Windows 10 Universal Windows Platform (UWP) app. A Universal 8.1 app is one that builds one app package for Windows 8.1, and a different app package for Windows Phone 8.1. With Windows 10, you can create a single app package that your customers can install onto a wide range of devices, and that's what we'll do in this case study. See [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
-Xxx xxx xx'xx xxxx xxxxxxxx xx x **XxxxXxx** xxxxx xx x xxxx xxxxx. Xxx xxxx xxxxx xxx x xxxx xx xxxxx xxxx xxxxx xxxxx, xxxxxx, xxx xxxx xxxxx. Xxx xxxx xxxxx xxxxxx xxxx **Xxxxx Xxxxxx** xxx xx **Xxxxxxx** xxx **Xxxx xx Xxxxxx Xxxxxxxxx** xxx xx **Xx xxx xxxx**.
+The app we'll port consists of a **ListBox** bound to a view model. The view model has a list of books that shows title, author, and book cover. The book cover images have **Build Action** set to **Content** and **Copy to Output Directory** set to **Do not copy**.
 
-Xxx xxxxxxxx xxxxxx xx xxxx xxxxxxx xxxxxxxx xxx xxxxxxxxxxx xxxxxxx xxx xxxxxxxxx, xxx xxxx xxxx xxxxxxx xxx xxxxxxxx xx xxx xxxxxxx xxxxxxx xxx xxxxxxx xxxxxxx xx xx xxx xxxx XXXX xxxxxx, xxxxxxx xxxxxxx xx x xxxx xxxxx, xxxx xx xxxxxxxxx xxxx. X xxxx xxxxx xxxx xx xxxxxxxxxx xxxx xxxxxxxx xx xxxxxxx xx xx xxxxxx xx x xxxx xxxxxxx. Xxx xxxx xxxxxxx xxxxxx xxx'xx xxxx xxx xxxxxxxx, xxxxx xxxx xx xxx xxxxxx.
+The previous topics in this section describe the differences between the platforms, and they give details and guidance on the porting process for various aspects of an app from XAML markup, through binding to a view model, down to accessing data. A case study aims to complement that guidance by showing it in action in a real example. The case studies assume you've read the guidance, which they do not repeat.
 
-**Xxxx**   Xxxx xxxxxxx XxxxxxxxxYXxxxxxxxx\_YY xx Xxxxxx Xxxxxx, xx xxx xxx xxx xxxxxxx "Xxxxxx Xxxxxx xxxxxx xxxxxxxx", xxxx xxxxxx xxx xxxxx xx [XxxxxxXxxxxxxxXxxxxxx](w8x-to-uwp-troubleshooting.md#targetplatformversion).
+**Note**   When opening Bookstore1Universal\_10 in Visual Studio, if you see the message "Visual Studio update required", then follow the steps in [TargetPlatformVersion](w8x-to-uwp-troubleshooting.md#targetplatformversion).
 
-## Xxxxxxxxx
+## Downloads
 
-[Xxxxxxxx xxx XxxxxxxxxY\_YY Xxxxxxxxx Y.Y xxx](http://go.microsoft.com/fwlink/?linkid=532946).
+[Download the Bookstore1\_81 Universal 8.1 app](http://go.microsoft.com/fwlink/?linkid=532946).
 
-[Xxxxxxxx xxx XxxxxxxxxYXxxxxxxxx\_YY Xxxxxxx YY xxx](http://go.microsoft.com/fwlink/?linkid=532950).
+[Download the Bookstore1Universal\_10 Windows 10 app](http://go.microsoft.com/fwlink/?linkid=532950).
 
-## Xxx Xxxxxxxxx Y.Y xxx
+## The Universal 8.1 app
 
-Xxxx’x xxxx XxxxxxxxxY\_YY—xxx xxx xxxx xx'xx xxxxx xx xxxx—xxxxx xxxx. Xx'x xxxx x xxxxxxxxxx-xxxxxxxxx xxxx xxx xx xxxxx xxxxxxx xxx xxxxxxx xx xxx xxx'x xxxx xxx xxxx xxxxx.
+Here’s what Bookstore1\_81—the app that we're going to port—looks like. It's just a vertically-scrolling list box of books beneath the heading of the app's name and page title.
 
-![xxx xxxxxxxxxY\-YY xxxxx xx xxxxxxx](images/w8x-to-uwp-case-studies/c01-01-win81-how-the-app-looks.png)
+![how bookstore1\-81 looks on windows](images/w8x-to-uwp-case-studies/c01-01-win81-how-the-app-looks.png)
 
-XxxxxxxxxY\_YY xx Xxxxxxx
+Bookstore1\_81 on Windows
 
-![xxx xxxxxxxxxY\-YY xxxxx xx xxxxxxx xxxxx](images/w8x-to-uwp-case-studies/c01-02-wp81-how-the-app-looks.png)
+![how bookstore1\-81 looks on windows phone](images/w8x-to-uwp-case-studies/c01-02-wp81-how-the-app-looks.png)
 
-XxxxxxxxxY\_YY xx Xxxxxxx Xxxxx
+Bookstore1\_81 on Windows Phone
 
-##  Xxxxxxx xx x Xxxxxxx YY xxxxxxx
+##  Porting to a Windows 10 project
 
-Xxx XxxxxxxxxY\_YY xxxxxxxx xx xx Y.Y Xxxxxxxxx Xxx xxxxxxx, xxx xx xxxxxxxx xxxxx xxxxxxxx.
+The Bookstore1\_81 solution is an 8.1 Universal App project, and it contains these projects.
 
--   XxxxxxxxxY\_YY.Xxxxxxx. Xxxx xx xxx xxxxxxx xxxx xxxxxx xxx xxx xxxxxxx xxx Xxxxxxx Y.Y.
--   XxxxxxxxxY\_YY.XxxxxxxXxxxx. Xxxx xx xxx xxxxxxx xxxx xxxxxx xxx xxx xxxxxxx xxx Xxxxxxx Xxxxx Y.Y.
--   XxxxxxxxxY\_YY.Xxxxxx. Xxxx xx xxx xxxxxxx xxxx xxxxxxxx xxxxxx xxxx, xxxxxx xxxxx, xxx xxxxx xxxxxx xxx xxxxxxxxx, xxxx xxx xxxx xx xxxx xx xxx xxxxx xxx xxxxxxxx.
+-   Bookstore1\_81.Windows. This is the project that builds the app package for Windows 8.1.
+-   Bookstore1\_81.WindowsPhone. This is the project that builds the app package for Windows Phone 8.1.
+-   Bookstore1\_81.Shared. This is the project that contains source code, markup files, and other assets and resources, that are used by both of the other two projects.
 
-Xxx xxxx xxxx xxxxx, xx xxxx xxx xxxxx xxxxxxx xxxxxxxxx xx [Xx xxx xxxx x Xxxxxxxxx Y.Y xxx](w8x-to-uwp-root.md#if-you-have-an-81-universal-windows-app) xxxx xxxxxxx xx xxxx xxxxxxx xx xxxxxxx. Xxx xxxxxxxx xxxx xx x xxxxxx xxx: xxxx xxx xxx xxx xxxx xxxxxxxx, xxx xxxx xx xxxxxx xxxx xxx xxxx xxxx, xx xxxx xxx Xxxxxxx Y.Y xxx Xxxxxxx Xxxxx Y.Y xxxxx. Xx, xx'xx xxxx xxx xxxxxxxx xx xxx Xxxxxx xxxxxxx (xxx xxxxxxxx xxxx xx xxxx xxxx xxx xxxxx xxxxxxxx) xx x Xxxxxxx YY xxxx xxxxxxx xxx Xxxxxxxxx xxxxxx xxxxxx (xxx xxxx xxx xxx xxxxxxx xxxx xxx xxxxxx xxxxx xx xxxxxxx).
+For this case study, we have the usual options described in [If you have a Universal 8.1 app](w8x-to-uwp-root.md#if-you-have-an-81-universal-windows-app) with respect to what devices to support. The decision here is a simple one: this app has the same features, and does so mostly with the same code, in both its Windows 8.1 and Windows Phone 8.1 forms. So, we'll port the contents of the Shared project (and anything else we need from the other projects) to a Windows 10 that targets the Universal device family (one that you can install onto the widest range of devices).
 
-Xx'x x xxxx xxxxx xxxx xx xxxxxx x xxx xxxxxxx xx Xxxxxx Xxxxxx, xxxx xxxxx xxxx xx xx xxxx XxxxxxxxxY\_YY, xxx xxxxxxx xxx xxxxxx xxxxx xx xxx xxx xxxxxxx. Xxxxx xx xxxxxxxx x xxx Xxxxx Xxxxxxxxxxx (Xxxxxxx Xxxxxxxxx) xxxxxxx. Xxxx xx XxxxxxxxxYXxxxxxxxx\_YY. Xxxxx xxx xxx xxxxx xx xxxx xxxx xxxx XxxxxxxxxY\_YY xx XxxxxxxxxYXxxxxxxxx\_YY.
+It's a very quick task to create a new project in Visual Studio, copy files over to it from Bookstore1\_81, and include the copied files in the new project. Start by creating a new Blank Application (Windows Universal) project. Name it Bookstore1Universal\_10. These are the files to copy over from Bookstore1\_81 to Bookstore1Universal\_10.
 
-**Xxxx xxx Xxxxxx xxxxxxx**
+**From the Shared project**
 
--   Xxxx xxx xxxxxx xxxxxxxxxx xxx xxxx xxxxx xxxxx XXX xxxxx (xxx xxxxxx xx \\Xxxxxx\\XxxxxXxxxxx). Xxxxx xxxxxxx xxx xxxxxx, xx **Xxxxxxxx Xxxxxxxx**, xxxx xxxx **Xxxx Xxx Xxxxx** xx xxxxxxx xx. Xxxxx-xxxxx xxx xxxxxx xxxx xxx xxxxxx xxx xxxxx **Xxxxxxx Xx Xxxxxxx**. Xxxx xxxxxxx xx xxxx xx xxxx xx "xxxxxxxxx" xxxxx xx xxxxxxx xx x xxxxxxx. Xxxx xxxx xxx xxxx x xxxx xx xxxxxx, xxxx xxxx, xxxxx **Xxxxxxx** xx **Xxxxxxxx Xxxxxxxx** xxx xxxx xxxxxxx xxx xxxx xx xxxxxx xx xxx xxxxxxx. Xxxxx'x xx xxxx xx xx xxxx xxx xxxxx xxxx xxx'xx xxxxxxxxx xx xxx xxxxxxxxxxx.
--   Xxxx xxx xxxxxx xxxxxxxxxx xxx xxxx xxxxx xxxxxx xxxx (xxx xxxxxx xx \\XxxxXxxxx).
--   Xxxx XxxxXxxx.xxxx xxx xxxxxxx xxx xxxx xx xxx xxxxxxxxxxx.
+-   Copy the folder containing the book cover image PNG files (the folder is \\Assets\\CoverImages). After copying the folder, in **Solution Explorer**, make sure **Show All Files** is toggled on. Right-click the folder that you copied and click **Include In Project**. That command is what we mean by "including" files or folders in a project. Each time you copy a file or folder, each copy, click **Refresh** in **Solution Explorer** and then include the file or folder in the project. There's no need to do this for files that you're replacing in the destination.
+-   Copy the folder containing the view model source file (the folder is \\ViewModel).
+-   Copy MainPage.xaml and replace the file in the destination.
 
-**Xxxx xxx Xxxxxxx xxxxxxx**
+**From the Windows project**
 
--   Xxxx XxxxxxxxxXxxxxx.xxxx. Xx'xx xxx xxxx xxx xx x xxxx xxxxxxxx-xxxxx xxxxxxx xxx xxx xxxxxxxx xxxx xx xxxx xxxx xxxx xxxxxxx xx x Xxxxxxx YY xxx; xxxx xx xxxxx xx xxx xxxxxxxxxx XxxxxxxXxxxx xxxx xxxx xxx.
+-   Copy BookstoreStyles.xaml. We'll use this one as a good starting-point because all the resource keys in this file will resolve in a Windows 10 app; some of those in the equivalent WindowsPhone file will not.
 
-Xxxx xxx xxxxxx xxxx xxx xxxxxx xxxxx xxxx xxx xxxx xxxxxx xxx xxxxxx xxx xxxxxxxxxx xx xxx XxxxxxxxxY\_YY xxxxxxxxx xx XxxxxxxxxYXxxxxxxxx\_YY. X xxxxx xxx xx xx xxxx xx xx xxx xxx **Xxxxxxx Xx Xxxxx** xxxxxxx. Xx xxxx xxxxxxx xxx xxxxxx xx xxx xxxx xxxxx, xxx xx xxx xxxxx xxxxxxxxxx xxxx. Xxx, xxxx xx xxxx xx xxxxxx xx xxx xxxxx xxxxxxx xx xxx xxx xx xxxxxxx, xxxxxx xxx xxxxx xxxxxxxx xx xxx **XxxxxxxxxYXxxxxxxxx\_YY.XxxxxxxxxXxxxXxxxx.XxxXxxx** xxxxxxxx xxxx "XXXXXXXXXY\_YY" xx "XXXXXXXXXYXXXXXXXXX\_YY".
+Edit the source code and markup files that you just copied and change any references to the Bookstore1\_81 namespace to Bookstore1Universal\_10. A quick way to do that is to use the **Replace In Files** feature. No code changes are needed in the view model, nor in any other imperative code. But, just to make it easier to see which version of the app is running, change the value returned by the **Bookstore1Universal\_10.BookstoreViewModel.AppName** property from "BOOKSTORE1\_81" to "BOOKSTORE1UNIVERSAL\_10".
 
-Xxxxx xxx, xxx xxx xxxxx xxx xxx. Xxxx'x xxx xxx xxx XXX xxx xxxxx xxxxx xxxxxx xxxx xx xxxxxxxx xxxx xxx xx xxxx xx xx Xxxxxxx YY.
+Right now, you can build and run. Here's how our new UWP app looks after having done no explicit work yet to port it to Windows 10.
 
-![xxx xxxxxxx YY xxx xxxx xxxxxxx xxxxxx xxxx xxxxxxx](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
+![the windows 10 app with initial source code changes](images/w8x-to-uwp-case-studies/c01-03-desk10-initial-source-code-changes.png)
 
-Xxx Xxxxxxx YY xxx xxxx xxxxxxx xxxxxx xxxx xxxxxxx xxxxxxx xx x Xxxxxxx xxxxxx
+The Windows 10 app with initial source code changes running on a Desktop device
 
-![xxx xxxxxxx YY xxx xxxx xxxxxxx xxxxxx xxxx xxxxxxx](images/w8x-to-uwp-case-studies/c01-04-mob10-initial-source-code-changes.png)
+![the windows 10 app with initial source code changes](images/w8x-to-uwp-case-studies/c01-04-mob10-initial-source-code-changes.png)
 
-Xxx Xxxxxxx YY xxx xxxx xxxxxxx xxxxxx xxxx xxxxxxx xxxxxxx xx x Xxxxxx xxxxxx
+The Windows 10 app with initial source code changes running on a Mobile device
 
-Xxx xxxx xxx xxx xxxx xxxxx xxx xxxxxxx xxxxxxxx xxxxxxxxx, xxx xxx **XxxxXxx** xx xxxxxxxxxxx. Xx xxxx xxxx xx xxx xxx xxxxxxx. Xx x Xxxxxx xxxxxx, xx xxxxx xxxxx, xx xxx xxx xxx xxxxxx xx xxx xxxx xxx, xxx xxxx xxxx xx xxxx xx xxxx. Xxx, xxx xxxxxxxxxx xx xxx xxx, xx xx'xx xxxxxx xxx xxxxxx xx'xx xxxxx. Xxxx, xxx xxx xxxxxx xx xxxxx xx xxxxx xxxx xxxxxxx xx x Xxxxxxx xxxxxx xx xx xxxx xx xx xxxx xxxx xxx xxxxxxx. Xx, xx'xx xxxxxx xxxx.
+The view and the view model are working together correctly, and the **ListBox** is functioning. We just need to fix the styling. On a Mobile device, in light theme, we can see the border of the list box, but that will be easy to hide. And, the typography is too big, so we'll change the styles we're using. Also, the app should be light in color when running on a Desktop device if we want it to look like the default. So, we'll change that.
 
-## Xxxxxxxxx xxxxxxx
+## Universal styling
 
-Xxx XxxxxxxxxY\_YY xxx xxxx xxx xxxxxxxxx xxxxxxxx xxxxxxxxxxxx (XxxxxxxxxXxxxxx.xxxx) xx xxxxxx xxx xxxxxx xx xxx Xxxxxxx Y.Y xxx Xxxxxxx Xxxxx Y.Y xxxxxxxxx xxxxxxx. Xxxxxxx xx xxxxx xxx XxxxxxxxxXxxxxx.xxxx xxxxx xxxxxxxx xxxxxxx xxx xxxxxx xx xxxx xxx xxx Xxxxxxx YY xxx. Xxx, xxx xxxx xxxx xx xxxx xxxx xx xxxx xx xxxxxxxx xxxx xxxxxxx xxxx xxxxxx xx xxxx. Xx, xxx xxxx xxxxx xxxx xxxxxx xxxxxxx xxxxxxxx xxx xxxxxxxxxxx xxx xxxxxxx xxxxx xxx xxxxxx. Xxx xxxxx xxx xxxxx. Xxx xxx xxx xxx xxx xxxxx xx xxx xxx xx xxxx xxxxx xx xxxxxxxx xxx xxxxxxxx xxx xxx xxx xxxxxxx xx xxx xxx xxxxxxx xxxxxxx xxxx xxx xxx xxx xx xxx xxxx xxxxx.
+The Bookstore1\_81 app used two different resource dictionaries (BookstoreStyles.xaml) to tailor its styles to the Windows 8.1 and Windows Phone 8.1 operating systems. Neither of those two BookstoreStyles.xaml files contains exactly the styles we need for our Windows 10 app. But, the good news is that what we want is actually much simpler than either of them. So, the next steps will mostly involve removing and simplifying our project files and markup. The steps are below. And you can use the links at the top of this topic to download the projects and see the results of all the changes between here and the end of the case study.
 
--   Xx xxxxxxx xx xxx xxxxxxx xxxxxxx xxxxx, xxxx xxx `BookTemplate` xxxx xxxxxxxx xx XxxxXxxx.xxxx xxx xxxxxx xxx `Margin="0,0,0,8"` xxxx xxx xxxx **Xxxx**.
--   Xxxx, xx `BookTemplate`, xxxxx xxx xxxxxxxxxx xx `BookTemplateTitleTextBlockStyle` xxx `BookTemplateAuthorTextBlockStyle`. XxxxxxxxxY\_YY xxxx xxxxx xxxx xx xx xxxxxxxxxxx xx xxxx x xxxxxx xxx xxx xxxxxxxxx xxxxxxxxxxxxxxx xx xxx xxx xxxx. Xx xxx'x xxxx xxxx xxxxxxxxxxx xxx xxxx; xx xxx xxxx xxxxxxxxx xxxxxx xxxxxx xxxxxxxx. Xx, xxxxxxx xxxxx xxxxxxxxxx xxxx `TitleTextBlockStyle` xxx `SubtitleTextBlockStyle`, xxxxxxxxxxxx.
--   Xxx, xx xxxx xx xxx `LayoutRoot`'x Xxxxxxxxxx xx xxx xxxxxxx xxxxxxx xxxxx xx xxxx xxx xxx xxxxx xxxxxxxxxxx xxxx xxxxxxx xx xxx xxxxxxx xx xxxxxx xxxx xxx xxxxx xx. Xxxxxx xx xxxx `"Transparent"` xx `"{ThemeResource ApplicationPageBackgroundThemeBrush}"`.
--   Xx `TitlePanel`, xxxxxx xxx xxxxxxxxx xx `TitleTextBlockStyle` (xxxxx xx xxx x xxxxxx xxx xxx) xx x xxxxxxxxx xx `CaptionTextBlockStyle`. `PageTitleTextBlockStyle` xx xxxxxxx XxxxxxxxxY\_YY xxxxxxxxxxx xxxx xx xxx'x xxxx xxx xxxxxx. Xxxxxx xxxx xx xxxxxxxxx `HeaderTextBlockStyle` xxxxxxx.
--   Xx xx xxxxxx xxxx xx xxx xxx xxxxxxx Xxxxxxxxxx, Xxxxx, xxx XxxxXxxxxxxxxXxxxx xx xxx **XxxxXxx**, xx xxxx xxxxxx xxxxx xxxxx xxxxxxxxxx xxx xxxxx xxxxxx xxxx xxx xxxxxx. Xx xx xxxx xx xxxx xxx xxxxxx xx xxx **XxxxXxx**, xxxxxx, xx xxx `BorderBrush="{x:Null}"` xx xx.
--   Xx'xx xxx xxxxxxxxxxx xxx xx xxx xxxxxxxxx xx xxx XxxxxxxxxXxxxxx.xxxx **XxxxxxxxXxxxxxxxxx** xxxx xxx xxxxxx. Xxx xxx xxxxxx xxx xx xxxxx xxxxxxxxx. Xxx, xxx'x xxxxxx xxx XxxxxxxxxXxxxxx.xxxx xxxx xxxxxx: xx xxxxx xxxx xxx xxxx xxx xxx xx, xx xxx'xx xxx xx xxx xxxx xxxxxxx.
+-   To tighten up the spacing between items, find the `BookTemplate` data template in MainPage.xaml and delete the `Margin="0,0,0,8"` from the root **Grid**.
+-   Also, in `BookTemplate`, there are references to `BookTemplateTitleTextBlockStyle` and `BookTemplateAuthorTextBlockStyle`. Bookstore1\_81 used those keys as an indirection so that a single key had different implementations in the two apps. We don't need that indirection any more; we can just reference system styles directly. So, replace those references with `TitleTextBlockStyle` and `SubtitleTextBlockStyle`, respectively.
+-   Now, we need to set `LayoutRoot`'s Background to the correct default value so that the app looks appropriate when running on all devices no matter what the theme is. Change it from `"Transparent"` to `"{ThemeResource ApplicationPageBackgroundThemeBrush}"`.
+-   In `TitlePanel`, change the reference to `TitleTextBlockStyle` (which is now a little too big) to a reference to `CaptionTextBlockStyle`. `PageTitleTextBlockStyle` is another Bookstore1\_81 indirection that we don't need any longer. Change that to reference `HeaderTextBlockStyle` instead.
+-   We no longer need to set any special Background, Style, nor ItemContainerStyle on the **ListBox**, so just delete those three attributes and their values from the markup. We do want to hide the border of the **ListBox**, though, so add `BorderBrush="{x:Null}"` to it.
+-   We're not referencing any of the resources in the BookstoreStyles.xaml **ResourceDictionary** file any longer. You can delete all of those resources. But, don't delete the BookstoreStyles.xaml file itself: we still have one last use for it, as you'll see in the next section.
 
-Xxxx xxxx xxxxxxxx xx xxxxxxx xxxxxxxxxx xxxxxx xxx xxx xxxxxxx xxxx xxxx.
+That last sequence of styling operations leaves the app looking like this.
 
-![xxx xxxxxx-xxxxxx xxxxxxx YY xxx](images/w8x-to-uwp-case-studies/c01-05-desk10-almost-ported.png)
+![the almost-ported windows 10 app](images/w8x-to-uwp-case-studies/c01-05-desk10-almost-ported.png)
 
-Xxx xxxxxx-xxxxxx Xxxxxxx YY xxx xxxxxxx xx x Xxxxxxx xxxxxx
+The almost-ported Windows 10 app running on a Desktop device
 
-![xxx xxxxxx-xxxxxx xxxxxxx YY xxx](images/w8x-to-uwp-case-studies/c01-06-mob10-almost-ported.png)
+![the almost-ported windows 10 app](images/w8x-to-uwp-case-studies/c01-06-mob10-almost-ported.png)
 
-Xxx xxxxxx-xxxxxx Xxxxxxx YY xxx xxxxxxx xx x Xxxxxx xxxxxx
+The almost-ported Windows 10 app running on a Mobile device
 
-## Xx xxxxxxxx xxxxxxxxxx xx xxx xxxx xxx xxx Xxxxxx xxxxxxx
+## An optional adjustment to the list box for Mobile devices
 
-Xxxx xxx xxx xx xxxxxxx xx x Xxxxxx xxxxxx, xxx xxxxxxxxxx xx x xxxx xxx xx xxxxx xx xxxxxxx xx xxxx xxxxxx. Xxxx xxx xx xxx xxxxx xxxx xxx xxxxxx xxx, xx xx, xxxx xxxxx'x xxxxxxx xxxx xx xx xxxxxx xx xxxx xx: xxxxxx xxx XxxxxxxxxXxxxxx.xxxx xxxxxxxx xxxxxxxxxx xxxx xxxx xxxx xxxxxxx, xxx xxxxxx xxx xxxxxx xxxx xxxxxx xx xxxx XxxxXxxx.xxxx.
+When the app is running on a Mobile device, the background of a list box is light by default in both themes. That may be the style that you prefer and, if so, then there's nothing more to do except to tidy up: delete the BookstoreStyles.xaml resource dictionary file from your project, and remove the markup that merges it into MainPage.xaml.
 
-Xxx, xxxxxxxx xxx xxxxxxxx xx xxxx xxx xxx xxxxxxxxx xxxxx xxxx xxxxx xxxxxxx xxxxx xxxxxxxx xxxxxxxxxx. Xx, xx xxx xxxx xxx xxxx xxx xx xx xxxx xx xxx xxxx xxxxx—xxx xxx xxx xxxxxxxx xxx xxxxxx—xxxx xxxx xxxxxxx xxxxxxxxx x xxx xx xx xxxx.
+But, controls are designed so that you can customize their look while leaving their behavior unaffected. So, if you want the list box to be dark in the dark theme—the way the original app looked—then this section describes a way to do that.
 
-Xxx xxxxxx xx xxxx xxxx xxxxx xx xxxxxx xxx xxx xxxx xx'x xxxxxxx xx Xxxxxx xxxxxxx. Xx, xx'xx xxx x xxxx xxxxxxxx xxxxxxxxxx xxxx xxx xxxxx xxxx xx'xx xxxxxxx xx xxx Xxxxxx xxxxxx xxxxxx, xxx xx'xx xxxxxxxx xx xxx xxx xxxxxxx xxxxx xxxx xx'xx xxxxxxx xxxxxxxxxx xxxx. Xx xx xxxx, xx'xx xxxx x xxxx xx XxxxxxxxxXxxxxx.xxxx xxx xx'xx xxxx xx x xxxxxxx XXX-xxxxxxxxx xxxx, xxxxx xxxx xxxxx xx xx xx xxxxxx xxxx xx Xxxxxx xxxxxxx.
+The change we make only needs to affect the app when it's running on Mobile devices. So, we'll use a very slightly customized list box style when we're running on the Mobile device family, and we'll continue to use the default style when we're running everywhere else. To do that, we'll make a copy of BookstoreStyles.xaml and we'll give it a special MRT-qualified name, which will cause it to be loaded only on Mobile devices.
 
-Xxx x xxx **XxxxxxxxXxxxxxxxxx** xxxxxxx xxxx xxx xxxx xx XxxxxxxxxXxxxxx.XxxxxxXxxxxx-Xxxxxx.xxxx. Xxx xxx xxxx xxx xxxxx xxxx xx xxxxx xxxxxxx xxxx xx XxxxxxxxxXxxxxx.xxxx (xxx xxxx'x xxx xxxx xxx xxx xx xxxx xxxxxx xxx xxxx). Xxx xxxxx xxxx xxxxxxxxx xxxxxxxx xxxxx, xxxxxx, xx xxxx xxx xxxxxxx xxxxxxxxx xxxxxx. Xxx xxx xxx xxxx XXX-xxxxxxxxx xxxxxx xxxxxx xxxx xxx xxxx xxxx, xxx xx xxxxx xxxx xxx xxxx xxxxx xxxx xxx xxxx xxxxxxx xxxx xxxxx x xxxxxx xxxx.xx xxxx-xxxxxx xxxx (xxxxx xxx xx xxxxxxxxxx).
+Add a new **ResourceDictionary** project item and name it BookstoreStyles.DeviceFamily-Mobile.xaml. You now have two files both of whose logical name is BookstoreStyles.xaml (and that's the name you use in your markup and code). The files have different physical names, though, so they can contain different markup. You can use this MRT-qualified naming scheme with any xaml file, but be aware that all xaml files with the same logical name share a single xaml.cs code-behind file (where one is applicable).
 
-Xxxx x xxxx xx xxx xxxxxxx xxxxxxxx xxx xxx xxxx xxx xxx xxxxx xxxx xxxx xxx xxx xx `BookstoreListBoxStyle` xx xxx xxx xxxxxxxx xxxxxxxxxx, XxxxxxxxxXxxxxx.XxxxxxXxxxxx-Xxxxxx.xxxx. Xxx, xx'xx xxxx xxxxxx xxxxxxx xx xxxxx xx xxx xxxxxxx.
+Edit a copy of the control template for the list box and store that with the key of `BookstoreListBoxStyle` in the new resource dictionary, BookstoreStyles.DeviceFamily-Mobile.xaml. Now, we'll make simple changes to three of the setters.
 
--   Xx xxx Xxxxxxxxxx xxxxxx, xxxxxx xxx xxxxx xx `"{x:Null}"`. Xxxx xxxx xxxxxxx x xxxxxxxx xx `"{x:Null}"` xxxxxxxx xx xx xxxxxxx xx xxx xxxx xx xxxxxxx xx xx `null` xx xxxx. Xxx, xxxxx x xxxxx xx `"{x:Null}"` xx x xxxxxx xxx x xxxxxx xxxxxx: xx xxxxxxxxx xxx xxxxxx xx xxx xxxxxxx xxxxx (xxx xxx xxxx xxxxxxxx) xxx xxxxxxxx xxx xxxxxxx xxxxx xx xxx xxxxxxxx xx xxx xxxxxx xxxxxxx.
--   Xx xxx Xxxxxxxxxx xxxxxx, xxxxxx xxx xxxxx xx `"Transparent"` xx xxxxxx xxxx xxxxx xxxxxxxxxx.
--   Xx xxx Xxxxxxxx xxxxxx, xxxx xxx xxxxxx xxxxx xxxxx `Focused` xxx xxxxxx xxx Xxxxxxxxxx, xxxxxx xx xxxx xx xxxxx xxx.
--   Xxxxxx xxx xxx xxxxx xxxxxxx xxxx xxx xxxxxx.
+-   In the Foreground setter, change the value to `"{x:Null}"`. Note that setting a property to `"{x:Null}"` directly on an element is the same as setting it to `null` in code. But, using a value of `"{x:Null}"` in a setter has a unique effect: it overrides the setter in the default style (for the same property) and restores the default value of the property on the target element.
+-   In the Background setter, change the value to `"Transparent"` to remove that light background.
+-   In the Template setter, find the visual state named `Focused` and delete its Storyboard, making it into an empty tag.
+-   Delete all the other setters from the markup.
 
-Xxxxxxx, xxxx `BookstoreListBoxStyle` xxxx XxxxxxxxxXxxxxx.xxxx xxx xxxxxx xxx xxxxx xxxxxxx, xxxxxx xx xxxx xx xxxxx xxx. Xx xx xxxx xx xxxx xx xxxxxxx xxxxx xxxx Xxxxxx xxxx, xxx xxxxxxxxx xx XxxxxxxxxXxxxxx.xxxx xxx xx `BookstoreListBoxStyle` xxxx xxxxxxx, xxx xxxx xxxx xx xxxxxx.
+Finally, copy `BookstoreListBoxStyle` into BookstoreStyles.xaml and delete its three setters, making it into an empty tag. We do this so that on devices other than Mobile ones, our reference to BookstoreStyles.xaml and to `BookstoreListBoxStyle` will resolve, but will have no effect.
 
-![xxx xxxxxx xxxxxxx YY xxx](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
+![the ported windows 10 app](images/w8x-to-uwp-case-studies/c01-07-mob10-ported.png)
 
-Xxx xxxxxx Xxxxxxx YY xxx xxxxxxx xx x Xxxxxx xxxxxx
+The ported Windows 10 app running on a Mobile device
 
-## Xxxxxxxxxx
+## Conclusion
 
-Xxxx xxxx xxxxx xxxxxx xxx xxxxxxx xx xxxxxxx x xxxx xxxxxx xxx—xxxxxxxx xx xxxxxxxxxxxxxxx xxxxxx xxx. Xxx xxxxxxxx, x xxxx xxx xxx xx xxxx xxx xxxxxxxxx xx xxx xxxxxxxxxxxx x xxxxxxx xxx xxxxxxxxxx; xxx xxx xxxxxxxxx xx x xxxx xxxx xxxx xxxxxxx xxxxx xxx xxxx xxxx xxx xxxxxx. Xxxx xxxxxxxxxx xxx xxxx xxxxxxx xxxx xxx xxxx'x xxxxxxxxx, xxx xx xxx xx xxxxxxxxxx. Xxxx xx, xxx xxxx xxxxx xxxxxx xx xxxxx xxx xxx, xx xxxxxxxxx xxx xxxxxxx xxxxxxx, xxx xx xxxxxxxxxxx xxxxxxxxx xxxxxxxxxx xxxx xxx xxx xxx xx xxxx XXX xxxx.
+This case study showed the process of porting a very simple app—arguably an unrealistically simple one. For instance, a list box can be used for selection or for establishing a context for navigation; the app navigates to a page with more details about the item that was tapped. This particular app does nothing with the user's selection, and it has no navigation. Even so, the case study served to break the ice, to introduce the porting process, and to demonstrate important techniques that you can use in real UWP apps.
 
-Xx xxxx xxx xxxxxxxx xxxx xxxxxxx xxxx xxxxxx xx xxxxxxxxx x xxxxxx xxxxxxx. Xxxx xxxxxxxxx, xxx xxxx xxxxxx xxxxxxx, xxx xxxxxxx xxxx xxx xxxx xxxxxx xx xxxxxxx xxx xxxxxxxxx xxxx xxxxxxx.
+We also saw evidence that porting view models is generally a smooth process. User interface, and form factor support, are aspects that are more likely to require our attention when porting.
 
-Xxx xxxx xxxx xxxxx xx [XxxxxxxxxY](w8x-to-uwp-case-study-bookstore2.md), xx xxxxx xx xxxx xx xxxxxxxxx xxx xxxxxxxxxx xxxxxxx xxxx.
+The next case study is [Bookstore2](w8x-to-uwp-case-study-bookstore2.md), in which we look at accessing and displaying grouped data.
+
+
 <!--HONumber=Mar16_HO1-->
+
+

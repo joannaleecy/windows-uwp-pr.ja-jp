@@ -1,50 +1,47 @@
 ---
-xxxxx: Xxx-xxxxx xxxxxxxxxx xxx xxxxxx xxxxxxxx xxxxxxxxxx
-xx.xxxxxxx: XYXXYYXX-XYXY-YYYY-XXXY-YYYYYYYYXYYY
-xxxxxxxxxxx: Xxxxxx xxx-xxxxx xxxxxxxxxx, xxx-xxxxx xxxxxxxxxx xxxx x XxxXxxxxx xxxxx, xx xxxxxx xxxxxxxxx xxx xxxxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxxx xxx xxxx xxxxxxxx.
+title: キー フレーム アニメーションとイージング関数のアニメーション
+ms.assetid: D8AF24CD-F4C2-4562-AFD7-25010955D677
+description: 線形キー フレーム アニメーション、KeySpline 値を設定したキー フレーム アニメーション、イージング関数は、ほとんど同じシナリオを実現できる 3 種類の手法です。
 ---
-# Xxx-xxxxx xxxxxxxxxx xxx xxxxxx xxxxxxxx xxxxxxxxxx
+# キー フレーム アニメーションとイージング関数のアニメーション
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xxxxxx xxx-xxxxx xxxxxxxxxx, xxx-xxxxx xxxxxxxxxx xxxx x **XxxXxxxxx** xxxxx, xx xxxxxx xxxxxxxxx xxx xxxxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxxx xxx xxxx xxxxxxxx: xxxxxxxx x xxxxxxxxxxxx xxxxxxxxx xxxx'x x xxx xxxx xxxxxxx, xxx xxxx xxxx x xxxxxxxxx xxxxxxxxx xxxxxxxx xxxx x xxxxxxxx xxxxx xx xx xxx xxxxx.
+線形キー フレーム アニメーション、**KeySpline** 値を設定したキー フレーム アニメーション、イージング関数は、ほとんど同じシナリオを実現できる 3 種類の手法です。そのシナリオとは、開始状態から終了状態までの間に非線形のアニメーション動作を使う、やや複雑なストーリーボードに設定されたアニメーションの作成です。
 
-## Xxxxxxxxxxxxx
+## 前提条件
 
-Xxxx xxxx xxx'xx xxxx xxx [Xxxxxxxxxxxx xxxxxxxxxx](storyboarded-animations.md) xxxxx. Xxxx xxxxx xxxxxx xx xxx xxxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxxx xx [Xxxxxxxxxxxx xxxxxxxxxx](storyboarded-animations.md) xxx xxx'x xx xxxx xxxx xxxxx. Xxx xxxxxxx, [Xxxxxxxxxxxx xxxxxxxxxx](storyboarded-animations.md) xxxxxxxxx xxx xx xxxxxx xxxxxxxxxx, xxxxxxxxxxx xx xxxxxxxxx, xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210517) xxxxxxxx xxxxxx xxxx xx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration), [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior), xxx xx xx.
+トピック「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」を読んでいること。 このトピックは、「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」で説明したアニメーションの概念を基に作成されています。その内容はここでは触れません。 具体的には、「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」では、アニメーションのターゲットを設定する方法、リソースとしてのストーリーボード、[**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) や [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior) などの [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) プロパティ値について紹介しています。
 
-## Xxxxxxxxx xxxxx xxx-xxxxx xxxxxxxxxx
+## キー フレーム アニメーションを使ったアニメーション化
 
-Xxx-xxxxx xxxxxxxxxx xxxxxx xxxx xxxx xxx xxxxxx xxxxx xxxx xx xxxxxxx xx x xxxxx xxxxx xxx xxxxxxxxx xxxxxxxx. Xx xxxxx xxxxx xxxx xxx xxxxx xxx xxxxxxx x xxxxxxxxx xxxxxxxxxxxx xxxxx, xxx xxx xxxx xxx xxxxx xxxxxxx xx xxx xxxxx xxxxxxxxx xxxxx. Xx xxxxxxxxxx xxxxxxxx xxxxxx xx xxxxxxx, xxx xxx xxxx xxxx xxxxxxx xxxxxxxxxx. Xxx-xxxxx xxxxxxxxxx xxxx xxxxxx xxxxxxxxx xxxxxxxxxxxxx xxxxx, xxxxx xxx xxxx xxxxxxxxxxx xx x xxxxxxxxx **XxxXxxxx** xxxxxxxx xxx xxxxxxxxx xxxx. Xxxxxxxxxxxx, xxxx xxx-xxxxx xxxxxxxxx xxxx xxx x **Xxxxxxxx**, **Xxxxxx**, **Xxxxxx** xxx **Xxxxxx** xxxxxxxxx xx xxx **XxxXxxxx** xxxxx xxx xxxxxxxxxx xxx xxx xxxxxx. Xxx xxxxxxx, xx xxxxxxx xx xxxxxxxxx xxxx xxxxxxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) xxx xxxx xxx xxxxxx, xxx xxxxx xxxxxxx xxx xxxxxx xxxx [**XxxxxxxxXxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243130), [**XxxxxxXxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210316), [**XxxxxxXxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210446), xxx [**XxxxxxXxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210269). Xxx xxx xxx xxx xxx xxx xx xxxxx xxxxx xxxxxx x xxxxxx **XxxXxxxxx** xxxxxxxxxx, xx xxxxxx xxx xxxxxxxxxxxxx xxxx xxxx x xxx xxx xxxxx xx xxxxxxx.
+キー フレーム アニメーションでは、アニメーション タイムラインに沿ってポイントに到達する複数のターゲット値を使うことができます。 つまり、キー フレームごとに異なる中間値も指定でき、到達した最後のキー フレームが最終的なアニメーション値になります。 複数の値を指定してアニメーション化を行うことで、より複雑なアニメーションを実現できます。 キー フレーム アニメーションでは、アニメーションの種類ごとに異なる **KeyFrame** サブクラスとして実装される、異なる補間ロジックを使うこともできます。 具体的には、各種類のキー フレーム アニメーションには、キー フレームを指定するための **KeyFrame** クラスのバリエーションが 4 つ (**Discrete**、**Linear**、**Spline**、**Easing**) あります。 たとえば、[**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) をターゲットとし、キー フレームを使うアニメーションを指定するには、[**DiscreteDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243130)、[**LinearDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210316)、[**SplineDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210446)、[**EasingDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210269) でキー フレームを宣言できます。 単一の **KeyFrames** コレクションに含まれるこれらすべての種類を使って、新しいキー フレームに到達するたびに補間を変更できます。
 
-Xxx xxxxxxxxxxxxx xxxxxxxx, xxxx xxx xxxxx xxxxxxxx xxx xxxxxxxxxxxxx xxxxx xxx **XxxXxxx** xxxx xx xxxxxxx. Xxx **Xxxxx** xx xxxxxxx xx xxxx xxxx xxxx. Xx xxxxx xxx xxxx xxx xxxxxx xxxxxx, xxx xxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxx xxx xxx xxxx xxx xxxxx xx x xxxxxxxx.
+補間の動作のために、各キー フレームはその **KeyTime** の時間に達するまで補間を制御します。 その時点で、その **Value** にも達します。 それ以上のキー フレームがある場合は、値はシーケンス内の次のキー フレームの開始値になります。
 
-Xx xxx xxxxx xx xxx xxxxxxxxx, xx xx xxx xxxxx xxxx **XxxXxxx** xx "Y:Y:Y" xxxxxx, xxx xxxxxxxx xxxxx xx xxxxxxxx xxx xxx-xxxxxxxx xxxxx xx xxx xxxxxxxx xx. Xxxx xx xxxxxxx xx xxx x **Xxxx**/**Xx**/**Xx** xxxxxxxxx xxxx xx xxxxx xx xx **Xxxx**.
+アニメーションの開始時に、**KeyTime** が "0:0:0" のキー フレームがない場合、開始値はプロパティのアニメーション化されていない値になります。 これは **From** がない場合の **From**/**To**/**By** アニメーションの動作方法と似ています。
 
-Xxx xxxxxxxx xx x xxx-xxxxx xxxxxxxxx xx xxxxxxxxxx xxx xxxxxxxx xxxxx xx xxx xxxxxxx **XxxXxxx** xxxxx xxx xx xxx xx xxx xxx xxxxxx. Xxx xxx xxx xx xxxxxxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) xx xxx xxxx, xxx xx xxxxxxx xx'x xxx xxxxxxx xxxx x **XxxXxxx** xx xxxx xxx xxx xxxxxx xx xxx'xx xxx xxx xxxx xx xxx xxxxxxxxx.
+キー フレーム アニメーションの継続時間は、いずれかのキー フレームに設定されている最も大きい **KeyTime** 値と暗黙的に等しくなります。 必要に応じて [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) を明示的に設定することもできますが、独自のキー フレームの **KeyTime** よりも短くならないように注意してください。アニメーションが途中で途切れることになります。
 
-Xx xxxxxxxx xx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration), xxx xxx xxx xxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210517) xxxxx xxxxxxxxxx xx x xxx-xxxxx xxxxxxxxx, xxxx xxx xxx xxxx x **Xxxx**/**Xx**/**Xx** xxxxxxxxx, xxxxxxx xxx xxx-xxxxx xxxxxxxxx xxxxxxx xxxx xxxxxx xxxx **Xxxxxxxx**. Xxxxx xxx:
+[
+            **Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) 以外にも、**From**/**To**/**By** アニメーションの場合と同様に、[**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) ベースのすべてのプロパティをキー フレーム アニメーションに設定できます。キー フレーム アニメーション クラスも **Timeline** から派生しているためです。 それらを次に示します。
 
--   [
-            **XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse): xxxx xxx xxxx xxx xxxxx xx xxxxxxx, xxx xxxxxx xxx xxxxxxxx xx xxxxxxx xxxxx xxxx xxx xxx. Xxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xx xxx xxxxxxxxx.
--   [
-            **XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime): xxxxxx xxx xxxxx xx xxx xxxxxxxxx. Xxx xxxxxxxx xxx xxx **XxxXxxx** xxxxxx xx xxx xxxxxx xxxxx'x xxxxx xxxxxxxx xxxxx **XxxxxXxxx** xx xxxxxxx, xx xxxxx'x xx xxxx xx xxxxxxx xxx xxxxxx
--   [
-            **XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior): xxxxxxxx xxxx xxxxxxx xxxx xxx xxxx xxx xxxxx xx xxxxxxx. **XxxxXxxxxxxx** xxx xx xxxxxx xx xxx xxxxxxxxxxxx xxx xxxxxx.
--   [
-            **XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty):
-    -   Xx xxx xx **Xxxxxxx**, xxxx xxx xxx xxxxxx xxx xxxxx xxxxxxxx xxxxxx xxxxxxxxxx.
-    -   Xx xxx xx xx xxxxxxxxx xxxxx, xxx xxxxxxxx xxxxxxx xxxx xxxx xxxxx.
-    -   Xx xxx xx x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242377), xxx xxxxxxxx xxxxxxx xxxxx xxxx xxxx xx xxxxxxx. Xxxx xxxxx xxxxxxxx xxx xxxxxxxxx xxxx xxx xxxxxxx xxx xxx xxxxx xxxxxxxx, xx xx'x xxx xx xxxxxxx xxxxxx xx xxx xxxxxxxx'x xxxxxxxx xxxxxxxx.
--   [
-            **XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty) (xxx xxxxxxxx xxxx)
+-   [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.autoreverse): 最後のキー フレームに達すると、フレームは最後から逆に繰り返されます。 アニメーションの明確な継続時間が 2 倍になります。
+-   [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.begintime): アニメーションの開始を遅らせます。 **BeginTime** に達するまで、フレーム内にある **KeyTime** 値のタイムラインはカウントを開始しないため、フレームがカットされる心配はありません。
+-   [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.fillbehavior): 最後のキー フレームに達したときの処理を制御します。 **FillBehavior** はどの中間キー フレームにも影響しません。
+-   [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.repeatbehaviorproperty):
+    -   **Forever** に設定した場合、キー フレームとそのタイムラインが無限に繰り返されます。
+    -   反復回数に設定した場合、タイムラインはその回数だけ繰り返されます。
+    -   [
+            **Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) に設定した場合、その時間に達するまでタイムラインが繰り返されます。 このとき、キー フレーム シーケンスの途中でアニメーションが途切れる可能性があります (タイムラインの暗黙的な継続時間の整数ファクターではない場合)。
+-   [**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.speedratioproperty) (通常は使いません)
 
-### Xxxxxx xxx xxxxxx
+### 線形キー フレーム
 
-Xxxxxx xxx xxxxxx xxxxxx xx x xxxxxx xxxxxx xxxxxxxxxxxxx xx xxx xxxxx xxxxx xxx xxxxx'x **XxxXxxx** xx xxxxxxx. Xxxx xxxxxxxxxxxxx xxxxxxxx xx xxx xxxx xxxxxxx xx xxx xxxxxxx **Xxxx**/**Xx**/**Xx** xxxxxxxxxx xxxxxxxxx xx xxx [Xxxxxxxxxxxx xxxxxxxxxx](storyboarded-animations.md) xxxxx.
+線形キー フレームの場合は、フレームの **KeyTime** に達するまで、値の単純な線形補間が行われます。 この補間の動作は、トピック「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」で説明されている単純な **From**/**To**/**By** アニメーションに非常に類似しています。
 
-Xxxx'x xxx xx xxx x xxx-xxxxx xxxxxxxxx xx xxxxx xxx xxxxxx xxxxxx xx x xxxxxxxxx, xxxxx xxxxxx xxx xxxxxx. Xxxx xxxxxxx xxxx xx xxxxxxxxx xxxxx xxx xxxxxx xx xxx xxxxxxxxx xxxxxxxxx xxxxxxxx xxx xxxxxxxx xxx xxx xxxxx Y xxxxxxx, xxxx xxxxxx xxxxxxx xxx xxx xxxx xxxxxx xxxxx xxx xxxxxxxxx xx xxxxxx xxx xxxxxxxx xxxxxx.
+キー フレーム アニメーションで線形キー フレームを使って四角形の描画の高さをスケーリングする方法を以下に示します。 この例で実行するアニメーションでは、四角形の高さが最初の 4 秒間は線形にやや増加し、その後、四角形が当初の高さの 2 倍になるまで急速に拡大します。
 
 ```xml
 <StackPanel>
@@ -62,19 +59,19 @@ Xxxx'x xxx xx xxx x xxx-xxxxx xxxxxxxxx xx xxxxx xxx xxxxxx xxxxxx xx x xxxxxxxx
 </StackPanel>
 ```
 
-### Xxxxxxxx xxx xxxxxx
+### 離散キー フレーム
 
-Xxxxxxxx xxx xxxxxx xxx'x xxx xxx xxxxxxxxxxxxx xx xxx. Xxxx x **XxxXxxx** xx xxxxxxx, xxx xxx **Xxxxx** xx xxxxxx xxxxxxx. Xxxxxxxxx xx xxxxx XX xxxxxxxx xx xxxxx xxxxxxxx, xxxx xxxxx xxxxxxxx xx xxxxxxxxx xxxx xxxxxxx xx "xxxx". Xx xxxxxxx xxxx xxxx xx xxx xxxxxxxxx xxxxxxxx xxxx xxx xxxxxx xxxx. Xxx xxx xxxxxxxx xxx xxxxxxxx xxxxx xx xxxxxxxxxx xxx xxxxxx xx xxx xxxxxx xxx xxxxxxx, xxx xx x xxxxxx xxxxxxxxx xx xxxx xxxx, xxx xxxxx xx xxxxxx xxx xxxxx xxxxxx xx xxxxxx xxx xxxxxx xxxxxxx.
+離散キー フレームでは、補間を一切使いません。 **KeyTime** に達すると、新しい **Value** が単純に適用されます。 アニメーション化される UI プロパティに応じて、"ジャンプ" するように見えるアニメーションになることがよくあります。 これが、望みどおりのきれいな動作であることを確認してください。 宣言するキー フレームの数を増やすことで明確なジャンプを最小限に抑えることができますが、スムーズなアニメーションが必要な場合は、線形キー フレームかスプライン キー フレームを使うことをお勧めします。
 
-**Xxxx**  Xxxxxxxx xxx xxxxxx xxx xxx xxxx xxx xx xxxxxxx x xxxxx xxxx xxx'x xx xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225870), xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh673723), xxxx x [**XxxxxxxxXxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243132). Xx'xx xxxxxxx xxxx xx xxxx xxxxxx xxxxx xx xxxx xxxxx.
+**注** 離散キー フレームは、[**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870)、[**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 型ではない値を [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) でアニメーション化するための唯一の手段です。 その詳しい内容については、このトピックの後半で説明します。
 
  
 
-### Xxxxxx xxx xxxxxx
+### スプライン キー フレーム
 
-X xxxxxx xxx xxxxx xxxxxx x xxxxxxxx xxxxxxxxxx xxxxxxx xxxxxx xxxxxxxxx xx xxx xxxxx xx xxx **XxxXxxxxx** xxxxxxxx. Xxxx xxxxxxxx xxxxxxxxx xxx xxxxx xxx xxxxxx xxxxxxx xxxxxx xx x Xxxxxx xxxxx, xxxxx xxxxxxxxx xxx xxxxxxxxxxxx xx xxx xxxxxxxxx. Xxxxxxxxx x [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210307) xxxxxxx x xxxxxxxx xxxx xxxx xxxxxxxxxxxx xxxxx xxx xxxxxxxx-xxxx xxxxx xx xxx xxxxx xx xxxx Xxxxxx xxxxx. Xxxxxxxxx xxx xxxxxxx x **XxxXxxxxx** xxxxx xx x XXXX xxxxxxxxx xxxxxxxxx xxxxxx xxxx xxx xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) xxxxxx xxxxxxxxx xx xxxxxx xx xxxxxx. Xxxxx xxxxxx xxx "X,X" xxxxx xxx xxx xxxxxxx xxxxxx xx xxx Xxxxxx xxxxx. "X" xx xxxx xxx "X" xx xxx xxxxxxxx xxxxxxxx xx xxx xxxxx. Xxxx xxxxx xxxxxx xxxxxx xx xxxxxxx Y xxx Y xxxxxxxxx. Xxxxxxx xxxxxxx xxxxx xxxxxxxxxxxx xx x **XxxXxxxxx**, xxx xxxxxxxx xxxx xxxx Y,Y xx Y,Y xx xxx xxxxxxxxxxxxxx xx x xxxxxxxx xxxx xxxx xxx x xxxxxx xxxxxxxxxxxxx. Xxxx xxxxxxx xxxxxx xxxxxx xxx xxxxx xx xxxx xxxxx xxx xxxx xxx xxxxxxxx xx xxx xxxxxxxx xxxx xxxx xxx xxx xxxxxx xxxxxxxxx. Xx'x xxxxxxxx xxxx xx xxx xxxx xxxxxxxx xx x xxxxx. Xxx xxx xxx xxx [Xxxxxxxxxxx xxx-xxxxxx xxxxxxxxxx xxxxxx](http://samples.msdn.microsoft.com/Silverlight/SampleBrowser/index.htm#/?sref=KeySplineExample) xx x xxxxxxx xx xxx xxx xxx xxxxxxx xxxxxx xxxxxx xxx xxxxx xxx xxx x xxxxxx xxxxxxxxx xxxx xxxx xxxxx xx xx x **XxxXxxxxx** xxxxx.
+スプライン キー フレームでは、値から値までの可変的な遷移を **KeySpline** プロパティの値に基づいて作成します。 このプロパティは、ベジエ曲線の 1 つ目と 2 つ目の制御点を指定し、アニメーションの加速度を表します。 基本的には、[**KeySpline**](https://msdn.microsoft.com/library/windows/apps/BR210307) は、時間に基づく関数の関係 (関数の時間グラフがそのベジエ曲線の図形となる) を定義するものです。 通常は、スペースまたはコンマで区切った 4 つの [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 値を持つ XAML の短縮形の属性文字列で **KeySpline** 値を指定します。 これらの値は、ベジエ曲線の 2 つの制御点に対応する "X,Y" のペアです。 "X" は時間、"Y" は値に対する関数修飾子です。 各値は、必ず 0 と 1 の間 (両端を含む) である必要があります。 **KeySpline** に対する制御点を変更しない場合、0,0 から 1,1 までの直線は、線形補間の時間に基づく関数を表したものです。 制御点によってその曲線の図形が変化するため、スプライン アニメーションの時間に基づく関数の動作も変化します。 これはグラフで視覚的に確かめることをお勧めします。 ブラウザーで [Silverlight キー スプライン ビジュアライザーのサンプル](http://samples.msdn.microsoft.com/Silverlight/SampleBrowser/index.htm#/?sref=KeySplineExample)を実行すると、制御点によって曲線がどのように変化するかや、制御点を **KeySpline** 値として使ったときのサンプル アニメーションの動作を調べることができます。
 
-Xxxx xxxx xxxxxxx xxxxx xxxxx xxxxxxxxx xxx xxxxxx xxxxxxx xx xx xxxxxxxxx, xxxx xxx xxxx xxx xxxxx x xxx xxxxxx xxxxxxxxx xxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) xxxxx ([**XxxxxxXxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210446)). Xxxx xxx xxxxxx "Y.Y,Y.Y Y.Y,Y.YY" xxxxxxx xxx **XxxXxxxxx**. Xxxx xxxxxxxx x xxxxx xxxxx xxx xxxxxxxxx xxxxxxx xx xxx xxxxxx xx xxxxx xxx xxxx xxxxxxx xxxxxxx xxx xxxxx xxxx xxxxxx xxx **XxxXxxx** xx xxxxxxx.
+次の例は、アニメーションに適用される 3 種類のキー フレームを示しています。最後のキー フレームは、[**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 値のキー スプライン アニメーションです ([**SplineDoubleKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR210446))。 文字列 "0.6,0.0 0.9,0.00" が **KeySpline** に対して適用されていることに注目してください。 これにより、アニメーションが最初はゆっくり動作するものの、**KeyTime** に達する直前で急速に速度を増す曲線となります。
 
 ```xml
 <Storyboard x:Name="myStoryboard">
@@ -140,50 +137,45 @@ This example applies a [**CubicEase**](https://msdn.microsoft.com/library/window
         </Storyboard>
 ```
 
-Xxxx xx xxxx xxx xxxxxx xxxxxxxx xxxxxxx. Xx'xx xxxxx xxxx xx xxx xxxx xxxxxxx.
+これはイージング関数の一例に過ぎません。 詳しくは、次のセクションをご覧ください。
 
-## Xxxxxx xxxxxxxxx
+## イージング関数
 
-Xxxxxx xxxxxxxxx xxxxx xxx xx xxxxx xxxxxx xxxxxxxxxxxx xxxxxxxx xx xxxx xxxxxxxxxx. Xxxxxxxxxxxx xxxxxxxxxx xxx xxxxx xxxxxx xx xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxxx-xxxxx xxxxxxx xx x Y-X xxxxxxxxxx xxxxxx. Xxx xxxxxxx, xxx xxx xxxx xx xxxxxx xx xxxxxxxxxxxxx xxxxxx xx xxxxxx xx xxxxxx xx xxxx xx x xxxxxx. Xxx xxxxx xxx xxx xxxxx xx xxxx **Xxxx**/**Xx**/**Xx** xxxxxxxxxx xx xxxxxxxxxxx xxxxx xxxxxxx xxx xx xxxxx xxxx x xxxxxxxxxxx xxxxxx xx xxxx xxx xxx xxxxxxxxx xxxxx xx xxxx xxxxxxxx xxxx xxxxx x xxxxxxxxxxxx xxxxxxx.
+イージング関数を使うと、独自の数式をアニメーションに適用することができます。 数学演算は、2-D の座標系で実際の物理法則をシミュレートするアニメーションを作るうえで役立ちます。 たとえば、物体の跳ね返りや、ばねの動きを表現することができます。 キー フレームや **From**/**To**/**By** アニメーションを使って、類似した効果を表現することもできますが、膨大な作業が必要となり、完成したアニメーションも、数式を使った場合と比べると正確さに欠ける可能性があります。
 
-Xxxxxx xxxxxxxxx xxx xx xxxxxxx xx xxxxxxxxxx xx xxxxx xxxx:
+イージング関数は 3 とおりの方法でアニメーションに適用できます。
 
--   Xx xxxxx xx xxxxxx xxxxxxxx xx x xxxxxxxx xxxxxxxxx, xx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx. Xxx [**XxxxxxXxxxxXxxXxxxx.XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210267), [**XxxxxxXxxxxxXxxXxxxx.XxxxxxXxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.easingdoublekeyframe.easingfunction.aspx), xx [**XxxxxxXxxxxXxxXxxxx.XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210279).
--   Xx xxxxxxx xxx **XxxxxxXxxxxxxx** xxxxxxxx xx xxx xx xxx **Xxxx**/**Xx**/**Xx** xxxxxxxxx xxxxx. Xxx [**XxxxxXxxxxxxxx.XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243075), [**XxxxxxXxxxxxxxx.XxxxxxXxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) xx [**XxxxxXxxxxxxxx.XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210354).
--   Xx xxxxxxx [**XxxxxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209037) xx xxxx xx x [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209034). Xxxx xx xxxxxxxx xx xxxxxxxx xxxxxx xxxxxx xxx xxxxxxxx; xxx xxxx xxxx, xxx [**XxxxxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209037) xx [Xxxxxxxxxxx xxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
+-   前のセクションで説明したように、キー フレーム アニメーションでイージング キー フレームを使う方法。 [
+            **EasingColorKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210267)、[**EasingDoubleKeyFrame.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.easingdoublekeyframe.easingfunction.aspx)、または [**EasingPointKeyFrame.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210279) を使います。
+-   **From**/**To**/**By** のいずれかの種類のアニメーションで **EasingFunction** プロパティを設定する方法。 [
+            **ColorAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR243075)、[**DoubleAnimation.EasingFunction**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx)、または [**PointAnimation.EasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR210354) を使います。
+-   [
+            **VisualTransition**](https://msdn.microsoft.com/library/windows/apps/BR209034) の一部として [**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037) を設定する方法。 これは、コントロールの表示状態を定義する場合の固有の方法です。詳しくは、「[**GeneratedEasingFunction**](https://msdn.microsoft.com/library/windows/apps/BR209037)」または「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)」をご覧ください。
 
-Xxxx xx x xxxx xx xxx xxxxxx xxxxxxxxx:
+一連のイージング関数を以下にまとめます。
 
--   [
-            **XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR243049): Xxxxxxxx xxx xxxxxx xx xx xxxxxxxxx xxxxxxxx xxxxxx xx xxxxxx xx xxxxxxx xx xxx xxxx xxxxxxxxx.
--   [
-            **XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR243057): Xxxxxxx x xxxxxxxx xxxxxx.
--   [
-            **XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR243063): Xxxxxxx xx xxxxxxxxx xxxx xxxxxxxxxxx xx xxxxxxxxxxx xxxxx x xxxxxxxx xxxxxxxx.
--   [
-            **XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR243126): Xxxxxxx xx xxxxxxxxx xxxx xxxxxxxxxxx xx xxxxxxxxxxx xxxxx xxx xxxxxxx x(x) = xY.
--   [
-            **XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210282): Xxxxxxx xx xxxxxxxxx xxxx xxxxxxxxx x xxxxxx xxxxxxxxxxx xxxx xxx xxxxx xxxxx xx xxxxx xx xxxx.
--   [
-            **XxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210294): Xxxxxxx xx xxxxxxxxx xxxx xxxxxxxxxxx xx xxxxxxxxxxx xxxxx xx xxxxxxxxxxx xxxxxxx.
--   [
-            **XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210399): Xxxxxxx xx xxxxxxxxx xxxx xxxxxxxxxxx xx xxxxxxxxxxx xxxxx xxx xxxxxxx x(x) = xx xxxxx x xx xxxxx xx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) xxxxxxxx.
--   [
-            **XxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210403): Xxxxxxx xx xxxxxxxxx xxxx xxxxxxxxxxx xx xxxxxxxxxxx xxxxx xxx xxxxxxx x(x) = xY.
--   [
-            **XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210405): Xxxxxxx xx xxxxxxxxx xxxx xxxxxxxxxxx xx xxxxxxxxxxx xxxxx xxx xxxxxxx x(x) = xY.
--   [
-            **XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210407): Xxxxxx xx xxxxxxxxx xxxx xxxxxxxxxxx xx xxxxxxxxxxx xxxxx xxx xxxxxxx x(x) = xY.
--   [
-            **XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210439): Xxxxxxx xx xxxxxxxxx xxxx xxxxxxxxxxx xx xxxxxxxxxxx xxxxx x xxxx xxxxxxx.
+-   [**BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049): 指定されたパスのアニメーションを開始する直前に、逆の動きを与えます。
+-   [**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057): 跳ね返りの効果を作成します。
+-   [**CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063): 円関数を使って加速と減速のアニメーションを作成します。
+-   [**CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126): 数式 f(t) = t3 を使って加速と減速のアニメーションを作成します。
+-   [**ElasticEase**](https://msdn.microsoft.com/library/windows/apps/BR210282): 伸び縮みを繰り返して静止する、ばねに似たアニメーションを作成します。
+-   [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294): 指数関数の数式を使って加速と減速のアニメーションを作成します。
+-   [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399): 数式 f(t) = tp を使って加速と減速のアニメーションを作成します (p = [**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) プロパティ)。
+-   [**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403): 数式 f(t) = t2 を使って加速と減速のアニメーションを作成します。
+-   [**QuarticEase**](https://msdn.microsoft.com/library/windows/apps/BR210405): 数式 f(t) = t4 を使って加速と減速のアニメーションを作成します。
+-   [**QuinticEase**](https://msdn.microsoft.com/library/windows/apps/BR210407): 数式 f(t) = t5 を使って加速と減速のアニメーションを作成します。
+-   [**SineEase**](https://msdn.microsoft.com/library/windows/apps/BR210439): 正弦公式を使って加速と減速のアニメーションを作成します。
 
-Xxxx xx xxx xxxxxx xxxxxxxxx xxxx xxxxx xxx xxxxxxxxxx. Xxx xxxxxxx, [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR243057) xxx xxx xxxxxxxxxx [**Xxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx) xxxx xxxxxx xxx xxxxxxxx-xxxx-xxxx xxxxxxxx xx xxxx xxxxxxxxxx **XxxxxxXxxx**. Xxxxx xxxxxx xxxxxxxxx xxxx xx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR243126) xxx'x xxxx xxxxxxxxxx xxxxx xxxx xxx [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210275) xxxxxxxx xxxx xxx xxxxxx xxxxxxxxx xxxxx, xxx xxxxxx xxxxxxx xxx xxxx xxxxxxxx-xxxx-xxxx xxxxxxxx.
+一部のイージング関数には固有のプロパティがあります。 たとえば、[**BounceEase**](https://msdn.microsoft.com/library/windows/apps/BR243057) には [**Bounces**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounces.aspx) と [**Bounciness**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.bounceease.bounciness.aspx) という 2 つのプロパティがあります。これらは、その特定の **BounceEase** の時間に基づく関数の動作を変更します。 [
+            **CubicEase**](https://msdn.microsoft.com/library/windows/apps/BR243126) など、その他のイージング関数は、すべてのイージング関数に共通の [**EasingMode**](https://msdn.microsoft.com/library/windows/apps/BR210275) プロパティ以外にプロパティはなく、生成される時間に基づく関数の動作は常に同じです。
 
-Xxxx xx xxxxx xxxxxx xxxxxxxxx xxxx x xxx xx xxxxxxx, xxxxxxxxx xx xxx xxx xxx xxxxxxxxxx xx xxx xxxxxx xxxxxxxxx xxxx xxxx xxxxxxxxxx. Xxx xxxxxxx, [**XxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210403) xx xxxxxxx xxx xxxx xx x [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210399) xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) xxxxx xx Y. Xxx [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR243063) xx xxxxxxxxx x xxxxxxx-xxxxx [**XxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210294).
+これらのイージング関数の一部は、プロパティを持つイージング関数でのプロパティの設定方法に応じて、重複する場合があります。 たとえば、[**QuadraticEase**](https://msdn.microsoft.com/library/windows/apps/BR210403) は、[**Power**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.powerease.power) が 2 の [**PowerEase**](https://msdn.microsoft.com/library/windows/apps/BR210399) と完全に同じです。 [
+            **CircleEase**](https://msdn.microsoft.com/library/windows/apps/BR243063) は、基本的には既定値の [**ExponentialEase**](https://msdn.microsoft.com/library/windows/apps/BR210294) です。
 
-Xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR243049) xxxxxx xxxxxxxx xx xxxxxx xxxxxxx xx xxx xxxxxx xxx xxxxx xxxxxxx xx xxx xxxxxx xxxxx xx xxx xx **Xxxx**/**Xx** xx xxxxxx xx xxx xxxxxx. Xx xxxxxx xxx xxxxxxxxx xx xxxxxxxx xxx xxxxx xx xxx xxxxxxxx xxxxxxxxx xx xxxxx xx xxxxxxxx xxxx x xxxxxx **Xxxx**/**Xx** xxxxxxxx, xxxx xxxx xx xxx **Xxxx** xx xxxxxxxx xxxxx xxxxx, xxx xxxx xxxx xxx xxxxxxxxx xx xxxxxx.
+[
+            **BackEase**](https://msdn.microsoft.com/library/windows/apps/BR243049) イージング関数は、キー フレームの **From**/**To** または値によって設定される通常の範囲外の値を変更できるため、特別な関数です。 通常の **From**/**To** 動作とは逆の方向に値を変更することでアニメーションを開始し、**From** に戻るか、値をもう一度開始してから、アニメーションを通常どおり実行します。
 
-Xx xx xxxxxxx xxxxxxx, xx xxxxxx xxx xx xxxxxxx xx xxxxxx xxxxxxxx xxx x xxx-xxxxx xxxxxxxxx. Xxxx xxxx xxxxxx xxxxxxx xx xxxxxx xxxxxxxx xx x **Xxxx**/**Xx**/**Xx** xxxxxxxxx.
+前の例で、キー フレーム アニメーションのイージング関数を宣言する方法を紹介しました。 次の例では、イージング関数を **From**/**To**/**By** アニメーションに適用します。
 
 ```xml
 <StackPanel x:Name="LayoutRoot" Background="White">
@@ -203,20 +195,17 @@ Xx xx xxxxxxx xxxxxxx, xx xxxxxx xxx xx xxxxxxx xx xxxxxx xxxxxxxx xxx x xxx-xxx
 </StackPanel>
 ```
 
-Xxxx xx xxxxxx xxxxxxxx xx xxxxxxx xx x **Xxxx**/**Xx**/**Xx** xxxxxxxxx, xx'x xxxxxxxx xxx xxxxxxxx- xxxx-xxxx xxxxxxxxxxxxxxx xx xxx xxx xxxxx xxxxxxxxxxxx xxxxxxx xxx **Xxxx** xxx **Xx** xxxxxx xxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) xx xxx xxxxxxxxx. Xxxxxxx xx xxxxxx xxxxxxxx, xxxx xxxxx xx x xxxxxx xxxxxxxxxxxxx.
+イージング関数が **From**/**To**/**By** アニメーションに適用されると、時間に基づく関数の特性 (アニメーションの [**Duration**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.duration) に基づいて値が **From** 値と **To** 値の間で補完されるしくみ) が変化します。 イージング関数を使わない場合は、線形補間になります。
 
-## <span id="Discrete_object_value_animations">
-            </span>
-            <span id="discrete_object_value_animations">
-            </span>
-            <span id="DISCRETE_OBJECT_VALUE_ANIMATIONS">
-            </span>Xxxxxxxx xxxxxx xxxxx xxxxxxxxxx
+## <span id="Discrete_object_value_animations"></span><span id="discrete_object_value_animations"></span><span id="DISCRETE_OBJECT_VALUE_ANIMATIONS"></span>離散オブジェクト値のアニメーション
 
-Xxx xxxx xx xxxxxxxxx xxxxxxxx xxxxxxx xxxxxxx xxxxxxx xx'x xxx xxxx xxx xxx xxx xxxxx xx xxxxxxxx xxxxx xx xxxxxxxxxx xxxx xxxx'x xx xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225870), xx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Xxxx xx xxx xxx-xxxxx xxxxxxxxx [**XxxxxxXxxxxxxxxXxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210320). Xxxxxxxxx xxxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) xxxxxx xx xxxxxxxxx xxxxxxx xxxxx'x xx xxxxxxxxxxx xx xxxxxxxxxxxxx xxx xxxxxx xxxxxxx xxx xxxxxx. Xxxx xxx xxxxx'x [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210342) xx xxxxxxx, xxx xxxxxxxx xxxxx xx xxxxxxxxxxx xxx xx xxx xxxxx xxxxxxxxx xx xxx xxx xxxxx'x **Xxxxx**. Xxxxxxx xxxxx'x xx xxxxxxxxxxxxx, xxxxx'x xxxx xxx xxx xxxxx xxx xxx xx xxx **XxxxxxXxxxxxxxxXxxxxXxxXxxxxx** xxx xxxxxx xxxxxxxxxx: [**XxxxxxxxXxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243132).
+[
+            **Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870)、または [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 型ではないプロパティにアニメーション化された値を適用する唯一の方法として、ある種類のアニメーションについて以下に説明します。 それは、キー フレーム アニメーション [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) です。 [
+            **Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) 値を使ったアニメーション化は、フレーム間で値が補間される可能性がないため、これとは異なります。 フレームの [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR210342) に達すると、アニメーション化された値はキー フレームの **Value** に指定された値にすぐに設定されます。 補間がないため、**ObjectAnimationUsingKeyFrames** キー フレーム コレクションで使うキー フレームは [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) だけです。
 
-Xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210344) xx x [**XxxxxxxxXxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243132) xx xxxxx xxx xxxxx xxxxxxxx xxxxxxx xxxxxx, xxxxxxx xxx xxxxxx xxxxx xxx xxx xxxxxx xx xxx xxxxx xx xxx xxxxxxxxxxx xx x xxxxxx xx xxxx **Xxxxx** xx xxxxxxxxx xxxxxx. Xxx xxx xxxxx xxx xxxxxxxxx xxxxxx xx xxx xxx x xxxxxxxxx xxxx xx [XxxxxxXxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185588).
+プロパティ要素構文を使って [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) の [**Value**](https://msdn.microsoft.com/library/windows/apps/BR210344) が設定されることはよくあります。これは、設定を試みるオブジェクト値が、属性構文の **Value** を設定するための文字列として表現できない場合があるためです。 [StaticResource](https://msdn.microsoft.com/library/windows/apps/Mt185588) などの参照を使う場合は、属性構文を利用できます。
 
-Xxx xxxxx xxx'xx xxx xx [**XxxxxxXxxxxxxxxXxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210320) xxxx xx xxx xxxxxxx xxxxxxxxx xx xxxx x xxxxxxxx xxxxxxxx xxxxxxxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228076) xxxxxxxx. Xxxxx xxxxxxxxx xxx [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962) xxxxxxx, xxx xxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh673723) xxxxx, xxx xxxx xxx xxxxxxxxx xxxx xxx xxxxxxx xx xxxxxx xxxxxx ([**XxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208807)). Xxxx xxx xx xxxxxxxx xxxxxxxx xx x **Xxxxx**-xxxx xxxxx xxxx xx [**XxxxXxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209665) xxx xxx'x xxxx xx xxx xxxxxxxx xxxxxxxxx. Xxx xxxxxxx x **XxxxxXxxxxXxxxx** xx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225870), xx **Xxxxx**, xxx xxxx xx xxx x **XxxxxxXxxxxxxxxXxxxxXxxXxxxxx** xx xxx xxx xxxxxxxx.
+既定のテンプレートで [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) が使われる状況として、テンプレート プロパティが [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) リソースを参照する場合が挙げられます。 このようなリソースは単なる [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723) 値ではなく [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) オブジェクトであり、システム テーマとして定義されているリソース ([**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/BR208807)) を使います。 これらのリソースは、[**TextBlock.Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) などの **Brush** 型の値に直接割り当てることができ、間接的なターゲット設定を使う必要はありません。 ただし、**SolidColorBrush** は [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx)、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870)、または **Color** ではないため、リソースを使うには **ObjectAnimationUsingKeyFrames** を利用する必要があります。
 
 ```xml
 <Style x:Key="TextButtonStyle" TargetType="Button">
@@ -281,19 +270,24 @@ You also might use [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.co
 </Style>
 ```
 
-Xxx xxx xxx xxxx xxxx xxx [**XxxxxxxxXxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243132) xxx xx [**XxxxxxXxxxxxxxxXxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210320) xxxxx xxx. Xxxx xxxxx xx xx xxxxxxxxxxx xxx xx xxxxxx x "xxxxx xxxx" xxxxxxxxx xx xxxxxxxxx xxx xxxxx xx [**Xxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242760), xx xx xxxxxxx xxxxxxxx xxx xxxxx xxxxxxxx xxxxxx xxxxxx xxxxx xx xxxxxx.
+[
+            **ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) フレーム セットに対して、複数の [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/BR243132) を使うことができます。 この方法は、複数のオブジェクト値が役立つサンプル シナリオで、[**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760) の値をアニメーション化して "スライド ショー" アニメーションを作成する際に検討することをお勧めします。
 
- ## Xxxxxxx xxxxxx
+ ## 関連トピック
 
-* [Xxxxxxxx-xxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185586)
-* [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185583)
-* [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490)
-* [**Xxxxxxxxxx.XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.targetpropertyproperty)
+* [プロパティ パス構文](https://msdn.microsoft.com/library/windows/apps/Mt185586)
+* [依存関係プロパティの概要](https://msdn.microsoft.com/library/windows/apps/Mt185583)
+* [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490)
+* [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.targetpropertyproperty)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

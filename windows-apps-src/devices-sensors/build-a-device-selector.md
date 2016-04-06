@@ -1,98 +1,100 @@
 ---
-xx.xxxxxxx: XYYXXYXY-XXXY-YYYX-YYXY-YYYXYYXYYXXX
-xxxxx: Xxxxx x xxxxxx xxxxxxxx
-xxxxxxxxxxx: Xxxxxxxx x xxxxxx xxxxxxxx xxxx xxxxxx xxx xx xxxxx xxx xxxxxxx xxx xxx xxxxxxxxx xxxxxxx xxxx xxxxxxxxxxx xxxxxxx.
+ms.assetid: D06AA3F5-CED6-446E-94E8-713D98B13CAA
+title: デバイス セレクターのビルド
+description: デバイス セレクターを作成すると、デバイスを列挙するときに、検索するデバイスを絞り込むことができるようになります。
 ---
-# Xxxxx x xxxxxx xxxxxxxx
+# デバイス セレクターのビルド
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-** Xxxxxxxxx XXXx **
+** 重要な API **
 
--   [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+-   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
 
-Xxxxxxxx x xxxxxx xxxxxxxx xxxx xxxxxx xxx xx xxxxx xxx xxxxxxx xxx xxx xxxxxxxxx xxxxxxx xxxx xxxxxxxxxxx xxxxxxx. Xxxx xxxx xxxxxx xxx xx xxxx xxx xxxxxxxx xxxxxxx xxx xxxx xxxx xxxxxxx xxx xxxxxxxxxxx xx xxx xxxxxx. Xx xxxx xxxxxxxxx xxx xxx x xxxxxx xxxxxxxx xxxx x xxxxxx xxxxx. Xxx xxxxxxx, xxx xxxxx xxx [**XxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn264015) xxx xxxxxxx xxxxxxxxxx xxxx XXX. Xxxxx xxxxxx xxxxxxxxx xxxxxx xx Xxxxxxxx Xxxxx Xxxxxx (XXX) xxxxxx. Xx xxx xxx xxx xxxxxxxx xxxx xxx XXX xxxxxx, xxx xxx xxxx xxxx xx [Xxxxx Xxxxxxxx Xxxxx Xxxxxx Xxxxxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/Bb266512).
+デバイス セレクターを作成すると、デバイスを列挙するときに、検索するデバイスを絞り込むことができるようになります。 これにより、関連する結果のみを取得することができ、システムのパフォーマンスも向上します。 多くのシナリオでは、デバイス スタックからデバイス セレクターを取得します。 たとえば、USB 経由で検出したデバイスに [**GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/Dn264015) を使うとします。 これらのデバイス セレクターは高度なクエリ構文 (AQS) 文字列を返します。 AQS 形式を初めて使う場合は、「[プログラムでの高度なクエリ構文の使用](https://msdn.microsoft.com/library/windows/desktop/Bb266512)」をご覧ください。
 
-## Xxxxxxxx xxx xxxxxx xxxxxx
+## フィルター文字列の作成
 
-Xxxxx xxx xxxx xxxxx xxxxx xxx xxxx xx xxxxxxxxx xxxxxxx xxx x xxxxxxxx xxxxxx xxxxxxxx xx xxx xxxxxxxxx xxx xxxx xxxxxxxx. X xxxxxx xxxxxxxx xx xx XXX xxxxxx xxxxxx xxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxxx. Xxxxxx xxxxxxxx x xxxxxx xxxxxx, xxx xxxx xx xxxx xxxx xxx xxxxxx xx xxxxxxxxxxx xxxxx xxx xxxxxxx xxx xxxx xx xxxxxxxxx.
+デバイスを列挙する必要があるにもかかわらず、提供されたデバイス セレクターを目的のシナリオで利用できないことがあります。 デバイス セレクターは、次の情報が含まれる AQS フィルター文字列です。 フィルター文字列を作成する前に、列挙するデバイスに関して、いくつかの重要な情報を知っておく必要があります。
 
--   Xxx [**XxxxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn948991) xx xxx xxxxxxx xxx xxx xxxxxxxxxx xx. Xxx xxxx xxxxxxxxxxx xxxxx xxx **XxxxxxXxxxxxxxxxxXxxx** xxxxxxx xxxxxxxxxxx xxxxxxx, xxx [Xxxxxxxxx xxxxxxx](enumerate-devices.md).
--   Xxx xx xxxxx xx XXX xxxxxx xxxxxx, xxxxx xx xxxxxxxxx xx xxxx xxxxx.
--   Xxx xxxxxxxxxx xxx xxx xxxxxxxxxx xx. Xxx xxxxxxxxx xxxxxxxxxx xxxx xxxxxx xxxx xxx [**XxxxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn948991). Xxx [Xxxxxx xxxxxxxxxxx xxxxxxxxxx](device-information-properties.md) xxx xxxx xxxxxxxxxxx.
--   Xxx xxxxxxxxx xxx xxx xxxxxxxx xxxx. Xxxx xx xxxx xxxxxx xx xxx xxx xxxxxxxxx xxx xxxxxxx xxxx x xxxxxxxx xx xxxxx xxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxx xxxx, xxx [Xxxxxxxxx xxxxxxx xxxx x xxxxxxx](enumerate-devices-over-a-network.md).
+-   目的のデバイスの [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)。 デバイスの列挙への **DeviceInformationKind** の影響について詳しくは、「[デバイスの列挙](enumerate-devices.md)」をご覧ください。
+-   このトピックで説明されている、AQS フィルター文字列を作成する方法。
+-   目的のプロパティ。 使用可能なプロパティは [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) によって異なります。 詳しくは、「[デバイス情報プロパティ](device-information-properties.md)」をご覧ください。
+-   照会で経由するプロトコル。 ワイヤレスまたはワイヤード ネットワーク経由でデバイスを検索する場合にのみ必要です。 そのための方法について詳しくは、「[ネットワーク経由でデバイスを列挙する](enumerate-devices-over-a-network.md)」をご覧ください。
 
-Xxxx xxxxx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225459) XXXx, xxx xxxxxxxxxx xxxxxxx xxx xxxxxx xxxxxxxx xxxx xxx xxxxxx xxxx xxxx xxx xxx xxxxxxxxxx xx. Xxx xxxxxxxxx xxxx xx xxxxxx xxxxx xx xxxxxxx xx xxx [**XxxxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn948991) xxxxxxxxxxx. Xxxx xxxxxxxxxxx xx xxxxxxx xxxxx xxx xx xxxxx xxx xxxxxxx xxxx xxx xxxxxxxxx xx xxx xxxx xxxx xxx xxx xxxxxxxxxx xx. Xx xxx xx xxx xxxxxxx xxx **XxxxxxXxxxxxxxxxxXxxx**, xx xxx xxxxxx xxx xxx xxxxx xxxx xxx xxxxxxx x **XxxxxxXxxxxxxxxxxXxxx** xxxxxxxxx, xxx xxxxxxx xxxx xx **XxxxxxXxxxxxxxx**.
+[
+            **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API を使うときは、多くの場合、デバイス セレクターを目的のデバイスの種類と組み合わせます。 利用可能なデバイスの種類の一覧は、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) 列挙値で定義されています。 この組み合わせは、利用可能なデバイスを目的のデバイスの種類に限定するために役立ちます。 **DeviceInformationKind** を指定しない場合、つまり、使うメソッドに **DeviceInformationKind** パラメーターを渡さない場合、既定の種類は **DeviceInterface** です。
 
-Xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225459) XXXx xxx xxxxxxxxx XXX xxxxxx, xxx xxx xxx xx xxx xxxxxxxxx xxx xxxxxxxxx. Xxx x xxxx xx xxxxxxxxxx xxxx xxx xxxxxxxxx xxxx xxx xxx xxxxxxxxxxxx xxxx xxxxxx xxxxxx, xxx [Xxxxxx xxxxxxxxxxx xxxxxxxxxx](device-information-properties.md).
+[
+            **Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API では、AQS の標準的な構文が使われますが、一部の演算子はサポートされていません。 フィルター文字列の作成に使えるプロパティの一覧については、「[デバイス情報プロパティ](device-information-properties.md)」をご覧ください。
 
-**Xxxxxxx**  Xxxxxx xxxxxxxxxx xxxx xxx xxxxxxx xxxxx xxx `{GUID} PID` xxxxxx xxxxxx xx xxxx xxxx xxxxxxxxxxxx xxxx XXX xxxxxx xxxxxx. Xxxx xx xxxxxxx xxx xxxxxxxx xxxx xx xxxxxxx xxxx xxx xxxx-xxxxx xxxxxxxx xxxx.
+**注意:** `{GUID} PID` 形式を使って定義したカスタム プロパティは AQS フィルター文字列の作成に使えません。 これは、プロパティの型が一般的な既知のプロパティ名から派生しているためです。
 
  
 
-Xxx xxxxxxxxx xxxxx xxxxx xxx XXX xxxxxxxxx xxx xxxx xxxxx xx xxxxxxxxxx xxxx xxxxxxx.
+次の表は、AQS 演算子とそれがサポートするパラメーターの型の一覧です。
 
-| Xxxxxxxx                       | Xxxxxxxxx xxxxx                                                             |
+| 演算子                       | サポートされる型                                                             |
 |--------------------------------|-----------------------------------------------------------------------------|
-| **XXX\_XXXXX**                 | Xxxxxx, xxxxxxx, XXXX, XXxxYY, XXxxYY                                       |
-| **XXX\_XXXXXXXX**              | Xxxxxx, xxxxxxx, XXXX, XXxxYY, XXxxYY                                       |
-| **XXX\_XXXXXXXX**              | XXxxYY, XXxxYY                                                              |
-| **XXX\_XXXXXXXXXXX**           | XXxxYY, XXxxYY                                                              |
-| **XXX\_XXXXXXXXXXXXXXX**       | XXxxYY, XXxxYY                                                              |
-| **XXX\_XXXXXXXXXXXXXXXXXX**    | XXxxYY, XXxxYY                                                              |
-| **XXX\_XXXXX\_XXXXXXXX**       | Xxxxxx, xxxxxx xxxxx, xxxxxxx xxxxx, XXXX xxxxx, XXxxYY xxxxx, XXxxYY xxxxx |
-| **XXX\_XXXXX\_XXXXXXXXXXX**    | Xxxxxx, xxxxxx xxxxx, xxxxxxx xxxxx, XXXX xxxxx, XXxxYY xxxxx, XXxxYY xxxxx |
-| **XXX\_XXXXX\_XXXXXXXXXX**     | Xxxxxx                                                                      |
-| **XXX\_XXXXX\_XXXXXXXX**       | Xxxxxx                                                                      |
-| **XXX\_XXXXXXXXXXXX**          | Xxx xxxxxxxxx                                                               |
-| **XXX\_XXXX\_XXXXX**           | Xxx xxxxxxxxx                                                               |
-| **XXX\_XXXX\_XXXXXXXXXX**      | Xxx xxxxxxxxx                                                               |
-| **XXX\_XXXXXXXXXXX\_XXXXXXXX** | Xxx xxxxxxxxx                                                               |
+| **COP\_EQUAL**                 | 文字列、ブール値、GUID、UInt16、UInt32                                       |
+| **COP\_NOTEQUAL**              | 文字列、ブール値、GUID、UInt16、UInt32                                       |
+| **COP\_LESSTHAN**              | UInt16、UInt32                                                              |
+| **COP\_GREATERTHAN**           | UInt16、UInt32                                                              |
+| **COP\_LESSTHANOREQUAL**       | UInt16、UInt32                                                              |
+| **COP\_GREATERTHANOREQUAL**    | UInt16、UInt32                                                              |
+| **COP\_VALUE\_CONTAINS**       | 文字列、文字列配列、ブール値配列、GUID 配列、UInt16 配列、UInt32 配列 |
+| **COP\_VALUE\_NOTCONTAINS**    | 文字列、文字列配列、ブール値配列、GUID 配列、UInt16 配列、UInt32 配列 |
+| **COP\_VALUE\_STARTSWITH**     | 文字列                                                                      |
+| **COP\_VALUE\_ENDSWITH**       | 文字列                                                                      |
+| **COP\_DOSWILDCARDS**          | サポートされていません                                                               |
+| **COP\_WORD\_EQUAL**           | サポートされていません                                                               |
+| **COP\_WORD\_STARTSWITH**      | サポートされていません                                                               |
+| **COP\_APPLICATION\_SPECIFIC** | サポートされていません                                                               |
 
 
-> **Xxx**  Xxx xxx xxxxxxx **XXXX** xxx **XXX\_XXXXX** xx **XXX\_XXXXXXXX**. Xxxx xxxxxxxxxx xx x xxxxxxxx xxxx xx xxxxx, xx xxxx xxx xxxxx xxxx xxx xxxxx. Xx XXX, xxx xxxxxxx **XXXX** xx xxxxx xxxxx xxxxxxxx \[\].
+> **ヒント:** **COP\_EQUAL** または **COP\_NOTEQUAL** に **NULL** を指定できます。 これは空のプロパティに変換されます。つまり、値は存在しません。 AQS では、空のかっこ \[\] を使って **NULL** を指定できます。
 
-> **Xxxxxxxxx**  Xxxx xxxxx xxx **XXX\_XXXXX\_XXXXXXXX** xxx **XXX\_XXXXX\_XXXXXXXXXXX** xxxxxxxxx, xxxx xxxxxx xxxxxxxxxxx xxxx xxxxxxx xxx xxxxxx xxxxxx. Xx xxx xxxx xx x xxxxxx, xxx xxxxxx xxxx xxxxxxx x xxxx-xxxxxxxxxxx xxxxxx xx xxx xx xxx xxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxx xx x xxxxxxxxx. Xx xxx xxxx xx x xxxxxx xxxxx, xxxxxxxxxx xxx xxx xxxxxxxx. Xxxx xxx xxxxxx xxxxx, xxx xxxxx xx xxxxxxxx xx xxx xx xx xxxxxxxx xxx xxxxxx xxxxxxxxx xxxxxx. Xx xx xxx xxxxxxxx xx xxxxxx x xxxxxx xxxxx xx xxx xx xxx xxxxxxxx xx xxx xxxxx xxxxxxx x xxxxxxxxx.
+> **重要:** **COP\_VALUE\_CONTAINS** および **COP\_VALUE\_NOTCONTAINS** の演算子を使うと、文字列と文字列配列で異なる動作をします。 文字列の場合、大文字と小文字を区別する検索が実行され、デバイスに部分文字列として指定された文字列が含まれているかどうかを確認します。 文字列配列の場合、部分文字列は検索されません。 文字列配列を使って、配列を検索し、指定された文字列全体が含まれているかどうかを確認します。 配列内の要素に部分文字列が含まれているかどうかを確認するために、文字列配列を検索することはできません。
 
-Xx xxx xxxxxx xxxxxx x xxxxxx XXX xxxxxx xxxxxx xxxx xxxx xxxxx xxxx xxxxxxx xxxxxxxxxxxxx, xxx xxx xxxxxx xxxx xxxxxxx xxxxx xxx xxxxxxx xxxx. Xxxxxxx, xx xxx xxxxxx xx xx xxxx, xx xxxxxxxxx xxxxxxxx xxx xxxxxxx xxxx xxxx xxxxxxx XXX xxxxxx xxxxxx xx xxxx xx xxxxxxxx xxxx xxx xxxxxxx xx xx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225459) XXXx. Xxxx xxxx xxxx xxxxxxx xxx xxxxxxxxxxx xx xxxx xxxxxxxxxxx.
+1 つの AQS フィルター文字列により結果を適切に絞り込むことができない場合は、受け取った結果をさらにフィルター処理できます。 ただしその場合は、最初の AQS フィルター文字列によりできる限り結果を絞り込んでから、[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API に渡すことをお勧めします。 これにより、アプリのパフォーマンスを向上させることができます。
 
-## XXX xxxxxx xxxxxxxx
+## AQS 文字列の例
 
-Xxx xxxxxxxxx xxxxxxxx xxxxxxxxxxx xxx xxx XXX xxxxxx xxx xx xxxx xx xxxxx xxx xxxxxxx xxx xxxx xx xxxxxxxxx. Xxx xx xxxxx xxxxxx xxxxxxx xxx xxxxxx xx xxxx x [**XxxxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn948991) xx xxxxxx x xxxxxxxx xxxxxx. Xx xx xxxx xx xxxxxxxxx, xxxxxxxx xxxx xxx xxxxxxx xxxx xx **XxxxxxXxxxxxxxx**.
+ここで示している例では、AQS 構文を使って、列挙するデバイスを制限する方法を説明しています。 以下のフィルター文字列はすべて、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングされており、完全なフィルターを作成できます。 どの種類も指定しない場合、既定の種類は **DeviceInterface** になります。
 
-Xxxx xxxx xxxxxx xx xxxxxx xxxx x [**XxxxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn948991) xx **XxxxxxXxxxxxxxx**, xx xxxxxxxxxx xxx xxxxxxx xxxx xxxxxxx xxx Xxxxx Xxxxxxx xxxxxxxxx xxxxx xxx xxxx xxx xxxxxxxxx xxxxxxx. **=** xxxxxxxxxx xx **XXX\_XXXXXX**.
+このフィルターを **DeviceInterface** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、オーディオ キャプチャ インターフェイス クラスを含むオブジェクトと、現在有効なオブジェクトがすべて列挙されます。 **=** は **COP\_EQUALS** に変換されます。
 
 ``` syntax
 System.Devices.InterfaceClassGuid:="{2eef81be-33fa-4800-9670-1cd474972c3f}" AND 
 System.Devices.InterfaceEnabled:=System.StructuredQueryType.Boolean#True
 ```
 
-Xxxx xxxx xxxxxx xx xxxxxx xxxx x [**XxxxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn948991) xx **Xxxxxx**, xx xxxxxxxxxx xxx xxxxxxx xxxx xxxx xx xxxxx xxx xxxxxxxx xx xx XxxXxXxx. **~~** xxxxxxxxxx xx **XXX\_XXXXX\_XXXXXXXX**.
+このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、GenCdRom のハードウェア ID を 1 つ以上持つオブジェクトがすべて列挙されます。 **~~** は **COP\_VALUE\_CONTAINS** に変換されます。
 
 ``` syntax
 System.Devices.HardwareIds:~~"GenCdRom"
 ```
 
-Xxxx xxxx xxxxxx xx xxxxxx xxxx x [**XxxxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn948991) xx **XxxxxxXxxxxxxxx**, xx xxxxxxxxxx xxx xxxxxxx xxxx xxxx x xxxxx xxxx xxxxxxxxxx xxx xxxxxxxxx Xxxxxxxxx. **~~** xxxxxxxxxx xx **XXX\_XXXXX\_XXXXXXXX**.
+このフィルターを **DeviceContainer** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、部分文字列として Microsoft を含むモデル名を持つオブジェクトがすべて列挙されます。 **~~** は **COP\_VALUE\_CONTAINS** に変換されます。
 
 ``` syntax
 System.Devices.ModelName:~~"Microsoft"
 ```
 
-Xxxx xxxx xxxxxx xx xxxxxx xxxx x [**XxxxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn948991) xx **XxxxxxXxxxxxxxx**, xx xxxxxxxxxx xxx xxxxxxx xxxx xxxx x xxxx xxxxxxxx xxxx xxx xxxxxxxxx Xxxxxxxxx. **~&xx;** xxxxxxxxxx xx **XXX\_XXXXXXXXXX**.
+このフィルターを **DeviceInterface** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、部分文字列の Microsoft から始まる名前を持つオブジェクトがすべて列挙されます。 **~&lt;** は **COP\_STARTSWITH** に変換されます。
 
 ``` syntax
 System.ItemNameDisplay:~<"Microsoft"
 ```
 
-Xxxx xxxx xxxxxx xx xxxxxx xxxx x [**XxxxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn948991) xx **Xxxxxx**, xx xxxxxxxxxx xxx xxxxxxx xxxx xxxx x **Xxxxxx.Xxxxxxx.XxXxxxxxx** xxxxxxxx xxx. **&xx;&xx;\[\]** xxxxxxxxxx xx **XXX\_XXXXXXXXX** xxxxxxxx xxxx x **XXXX** xxxxx.
+このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、**System.Devices.IpAddress** プロパティ セットを持つオブジェクトがすべて列挙されます。 **&lt;&gt;\[\]** は、**NULL** 値を組み合わせた **COP\_NOTEQUALS** に変換されます。
 
 ``` syntax
 System.Devices.IpAddress:<>[]
 ```
 
-Xxxx xxxx xxxxxx xx xxxxxx xxxx x [**XxxxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn948991) xx **Xxxxxx**, xx xxxxxxxxxx xxx xxxxxxx xxxx xx xxx xxxx x **Xxxxxx.Xxxxxxx.XxXxxxxxx** xxxxxxxx xxx. **=\[\]** xxxxxxxxxx xx **XXX\_XXXXXX** xxxxxxxx xxxx x **XXXX** xxxxx.
+このフィルターを **Device** の [**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) とペアリングすると、**System.Devices.IpAddress** プロパティ セットを持たないオブジェクトがすべて列挙されます。 **=\[\]** は、**NULL** 値を組み合わせた **COP\_EQUALS** に変換されます。
 
 ``` syntax
 System.Devices.IpAddress:=[]
@@ -105,4 +107,8 @@ System.Devices.IpAddress:=[]
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

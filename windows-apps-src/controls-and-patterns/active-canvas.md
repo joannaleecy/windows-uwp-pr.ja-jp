@@ -1,34 +1,38 @@
 ---
-Xxxxxxxxxxx: X xxxxxxx xxxx x xxxxxxx xxxx xxx x xxxxxxx xxxx xxx xxxxxx-xxxx xxxx xx xxxxx xxxxxxxxxxx, xxxx xx xxxxx xxxxxxx/xxxxxxx, xxxxxxxx xxxxxxx, xxxx, xxxxxxxx, xx xxxxx xxxx xxxx xxxx xxx xx x xxxx-xxxxxxxxx xxxx.
-xxxxx: Xxxxxxxxxx xxx xxx xxxxxx xxxxxx xxxxxxx
-xx.xxxxxxx: YXYYYYYY-YYXY-YYYX-YXYY-XYYYXYXYYYXY
-xxxxx: XXX
-xxxxxxxx: xxxxxx.xxx
+Description: 単一ビュー アプリやモーダル エクスペリエンス (フォト ビューアー/エディター、ドキュメント ビューアー、マップ、描画、自由スクロール ビューを利用する他のアプリなど) のコンテンツ領域とコマンド領域を持つパターンです。
+title: アクティブなキャンバス パターンに関するガイドライン
+ms.assetid: 4D768472-64D6-406C-9E87-F750F6B981A0
+label: TBD
+template: detail.hbs
 ---
-Xx xxxxxx xxxxxx xx x xxxxxxx xxxx x xxxxxxx xxxx xxx x xxxxxxx xxxx. Xx'x xxx xxxxxx-xxxx xxxx xx xxxxx xxxxxxxxxxx, xxxx xx xxxxx xxxxxxx/xxxxxxx, xxxxxxxx xxxxxxx, xxxx, xxxxxxxx, xx xxxxx xxxx xxxx xxxx xxx xx x xxxx-xxxxxxxxx xxxx. Xxx xxxxxx xxxxxxx, xx xxxxxx xxxxxx xxx xx xxxxxx xxxx x xxxxxxx xxx xx xxxx xxxxxxx, xxxxxxxxx xx xxx xxxxxx xxx xxxxx xx xxxxxxx xxx xxxx.
+アクティブなキャンバスは、コンテンツ領域とコマンド領域を持つパターンです。 これは、単一ビュー アプリやモーダル エクスペリエンス (フォト ビューアー/エディター、ドキュメント ビューアー、マップ、描画、自由スクロール ビューを利用する他のアプリなど) のパターンです。 アクティブなキャンバスは操作を行うために、必要な操作の数と種類に応じて、コマンド バー、またはボタンのみとペアを構成できます。
 
-## Xxxxxxxx
+## 例
 
-Xxxx xxxxxx xx x xxxxx xxxxxxx xxx xxxxxxxx xx xxxxxx xxxxxx xxxxxxx, xxxx x xxxxxx xxxxxxx xx xxx xxxx, xxx x xxxxxxx xxxxxxx xx xxx xxxxx. Xxx xxxxx xxxxxxx xxxxxxx xx x xxxxxx, xxx xxx xxxxxxx xxx xx xxx xxxxxx xxxxxxxx xxx xx xxx xxxxxxxxxx xxxxxxx xxx xxx xxx.
+写真編集アプリのこのデザインはアクティブなキャンバス パターンが特徴となっています。左側にモバイルの例、右側にデスクトップの例を示します。 イメージ編集サーフェスがキャンバスであり、下部にあるコマンド バーにはアプリのコンテキスト依存アクションがすべて含まれています。
 
-![Xxxxxxx xx x xxxxx xxxxxx xxxxx xxxxxx xxxxxx xxxxxxx](images/uap-photo-pc-phone-700.png)
+![アクティブなキャンバス パターンを使った写真編集プログラムの例](images/uap-photo-pc-phone-700.png)
 
-Xxxx xxxxxx xx x xxxxxx xxx xxx xxxxx xxx xx xx xxxxxx xxxxxx xxxx x xxxxxx XX xxxxx xx xxx xxx xxxx xxx xxxx xxx xxxxxxx xxx x xxxxxx xxx. Xxxxxxxxxx xxxxxxx xxx xxxxx xx xxx xxxxxxx xxxx, xx xxxx xx xxx xxxxx xxxxx.
+地下鉄路線図アプリのこの設計では、2 つの操作と検索ボックスのみを含むシンプルな UI が上部にある、アクティブなキャンバスを利用しています。 右の画像に示すように、状況依存の操作がコンテキスト メニューに表示されます。
 
-![Xxxxxxx xx x xxxx xxx xxxxx xxxxxx xxxxxx xxxxxxx](images/uap-subway-pc-phone-700.png)
+![アクティブなキャンバス パターンを使ったマップ アプリの例](images/uap-subway-pc-phone-700.png)
 
 
-## Xxxxxxxxxxxx xxxx xxxxxxx
+## このパターンの実装
 
-Xxx xxxxxx xxxxxx xxxxxxx xxxxxxxx xx x xxxxxxx xxxx xxx x xxxxxxx xxxx.
+アクティブなキャンバスは、コンテンツ領域とコマンド領域で構成されます。
 
-**Xxxxxxx xxxx.**  Xxx xxxxxxx xxxx xx xxxxxxx x xxxx-xxxxxxxxx xxxxxx. Xxxxxxxx xxxxxxx xxxxx xxx xxxxx xxxxxx xx xxx.
+**コンテンツ領域。**  コンテンツ領域は、通常は自由スクロール キャンバスです。 複数のコンテンツ領域がアプリ内に存在できます。
 
-**Xxxxxxx xxxx.**  Xx xxx'xx xxxxxxx x xxx xx xxxxxxxx, xxxx x xxxxxxx xxx, xxxxx xxxxxxxx xxxxx xx xxxxxx xxxx, xxxxx xx xxx xxx xx xx. Xx xxx'xx xxx xxxxxxx xxxx xxxx xxxxxxxx xxx xxxx'x xx xxxxxxxxx xxxx x xxxxxxxxxx XX, xxxxx-xxxxxx xxxxxxx xxxx xxxx.
+**コマンド領域。**  多くのコマンドを配置する場合は、画面サイズに応じて反応するコマンド バーの使用が適切である可能性があります。 それほど多くのコマンドを配置せず、応答性が高い UI が重要でない場合は、省スペース型ボタンを利用できます。
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## Xxxxxxx xxxxxxxx
+## 関連記事
 
--   [**Xxx xxx xxx xxxxxxx xxx**](app-bars.md)
+-   [**アプリ バーとコマンド バー**](app-bars.md)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

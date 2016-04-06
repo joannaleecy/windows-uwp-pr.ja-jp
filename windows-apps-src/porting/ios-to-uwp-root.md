@@ -1,43 +1,47 @@
 ---
-xxxxxxxxxxx: Xxxx xxxx xXX xx XXX
-Xxxxxx.XxxxxxXxxx: Xxxxx
-xxxxx: Xxxx xxxx xXX xx XXX
-xx.xxxxxxx: YxYYYYYx-YYxx-YYYY-YxxY-xYYxYYxYxYxY
+description: iOS から UWP への移行
+Search.SourceType: ビデオ
+title: iOS から UWP への移行
+ms.assetid: 7a05751d-02df-4240-9ba5-d95f65a7a9c5
 ---
 
-# Xxxx xxxx xXX xx XXX
+# iOS から UWP への移行
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-**Xxxxx xxxx Xxxxxxxxx-X xxxx xxxx xxx Xxxxxxx Xxxxxx xxx xXX**
+**iOS 用 Windows ブリッジによる Objective-C コードの再利用**
 
--   Xxxx xxxxx xx xxxxxxxx xx xxxx xxx xxxx xxxx xXX xxx xx Xxxxxxx YY xxxxxxxx. Xx xxxx xxx xx xxxxxxx xxxxxxxx xx Xxxxxxxxx-X, xxx xxx xxxxxxxxxxxxx xxx xxx Xxxxxxx Xxxxxx xxx xXX xx xxxxxxx xxxx xxxx xxx xx Xxxxxxx YY xxxxx xxxxxxx xxxx xx xxxx xxxxxxxx xxxx. Xxx xXX xxxxxx xxxxxxx xxx xx xxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xx Xxxxxx Xxxxxx YYYY xxxxx Xxxxxxxxx-X xxxx xxx xXX XXX xxxxxxxxx. Xxx xxx xxxx xxx xxx xxxxxx xx xxxxxx xxxx Xxxxxxxxx-X xxxx xxxx xxxxxx Xxxxxxx YY xxxxxxxx xxxx Xxxxxxx xxx Xxxx Xxxxx.
--   [Xxxxx xxxx xxxxx xxx Xxxxxxx Xxxxxx xxx xXX](https://dev.windows.com/bridges/ios)
+-   このガイドの目的は、Windows 10 に iOS アプリを手動で移植できるようにすることです。 アプリ全体が Objective-C で作成されている場合は、iOS 用 Windows ブリッジを使うと、既存のコードの大半を再利用しながら、アプリを Windows 10 にすばやく移行できます。 iOS 用 Windows ブリッジにより、Objective-C のコードと iOS の API ライブラリを使って、Visual Studio 2015 でユニバーサル Windows プラットフォーム (UWP) アプリをビルドできます。 また、Cortana やライブ タイルなどの Windows 10 独自の機能を使って、Objective-C コードを拡張することもできます。
+-   [iOS 用 Windows ブリッジについて詳しく知る](https://dev.windows.com/bridges/ios)
 
-## Xxx Xxxxxxx?
+## Windows を選ぶ理由
 
-Xxx xxx xx xXX xxxxxxxxx, xxxxxxxxx xxx xx xxxx xxx xxxx xx Xxxxxxx YY xxx xxx XXX? Xx xxxxx'x xx xx xxxxx xx xxx xxxxx. Xx'xx xxx xxx xxxxx, xxxxxxxxxx, xxx xxxx xxx xxxx xx xxxx xxxxx xxxx xxxx xxxx xx xxxx xx Xxxxxxx xx xxxx xx xx xxxx xXX xxxxxxx: xxxxx xxxxxx!<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/019d3337-80cf-4817-b50a-58f9463a4d27/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">Xxxxxxx xxxx Xxxxxxx xx xXX xxx xx Xxxxxxx xxx Xxxxxxx Xxxxx</iframe>
+iOS 向けに開発したアプリを Windows 10 と UWP に移行するにはどうすればよいでしょうか。 これは思っているほど難しくはありません。 iOS デバイスと同様に Windows でも (おそらくより快適に) 動作する優れたアプリの作成に必要なツール、手法、情報が用意されています。<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/019d3337-80cf-4817-b50a-58f9463a4d27/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">Windows と Windows Phone への Android アプリまたは iOS アプリの移植</iframe>
 
-Xx xxx xxx xxxxxxxxxxx xxxxxxx xxxx xxxx, xx xxxxxxxxxx xxx xxxx xxx Xxxxxxx YY, xxxx xx'xx xxx xxxx xxxx. Xx xxxx xxxxxxx, xxx'xx xxxx xxxxxxxxxxxxx xx xxxxx Xxxxxx Xxxxxx xxx xxxxxx xxxx xxxx xxxx xxxx xxxxx xx xxx, xx xx xXX xxxxxxxxx. Xx xxxx xxx xx xxxxx xxxxxxx xxxx xxx Xxxxxxx YY, xxx xx xxxxx xxx xxxx.
+アプリの移行や、Windows 10 用の新しいアプリの開発を検討している場合は、役立つものがあります。 このセクションでは、iOS 開発者にとって有益な、Visual Studio とサンプル コードの使い方について紹介します。 Windows 10 用アプリの作成を楽しんでください。必ずできます。
 
-Xxxxxxx x xxxxx xx xxxxx xxx xxxxx xxxx xxxx, xxx xx xxxx xx xxxxxxxx, xxxxxxx, xxxxxx, xxxxx xxxxxxxx, xxxxxxxx xxxxxxx xxx xxxx Xxxxxxxxxxx xxxxxxxx. Xxxxxxx xx Xxxxxxx YY xxx xxx XXX!
+コードを一度作成すると、デスクトップ、ノート PC、電話、ゲーム コンソール、埋め込みデバイス、ホログラフィック ディスプレイ上でも実行される世界を思い浮かべてみてください。 Windows 10 と UWP へようこそ。
 
-![xxxx xx xxx xxxx xxxx?](images/ios-to-uwp/mixedup.png)
+![知られざる一面を訪れる](images/ios-to-uwp/mixedup.png)
 
-Xx xxx xxxxxxx xxxx Xxxxxxx, xxx xxxx xx xxxxxx xxxx xxxxx xx xXX, xxxx x xxxx xx Xxxxxxxxx Xxxxxx Xxxxxx YYYY. Xxxx xxxxxxxx xxxxxxx xxx xxxxxx xxxxxxxxxxx xxxxxxxxxxx xxxxx xx Xxxxxxx, xxx xxx xxx xxxxxx xxxx xxx xXX xxxxxxx xxxx xxxxxx Xxxxxx Xxxxxx, xxxxxxxxx xxx xxxxxxx xxxx xxxxx x xxxxxx Xxx xxxxxxxx. Xxxxxx Xxxxxx xxx xxxxxx xxx xxxxx xx xxxx xxxxxx xxxxxxxxxxx xxxxx, xxxxxxx xxxx xxx xxxxxxxxxxx xxxxx xxxxxxx Xxxxxxx, Xxxxxxx xxx xXX.
+既に Windows をご存知で、iOS も理解しようとするのであれば、Microsoft Visual Studio 2015 を見てみましょう。 Xamarin に基づいたモバイル アプリケーションの開発の統合サポートで、ペアリング済みの Mac コンピューターを使ってコードをコンパイルして実行し、Visual Studio 内から iOS デバイス向けのアプリを作成できるようになりました。 Visual Studio は、Windows、Android、iOS の間でコードと開発ツールを共有しながら、モバイル開発の世界の中心になることができます。
  
 
-| Xxxxx | Xxxxxxxxxxx |
+| トピック | 説明 |
 |-------|-------------|
-| [Xxxxxxxxx xx xxxxxxxx xx xXX xxx XXX xxx xxxxxxxxxxx](selecting-an-approach-to-ios-and-uwp-app-development.md) | Xxxx xxx xxx xxxxxxx xxxx xxxxxxxxxx xxxxx-xxxxxxxx xxxx? |
-| [Xxxxxxx xxxxxxx xxxx XXX xxx xXX xxxxxxxxxx](getting-started-with-uwp-for-ios-developers.md) | Xx xxx'xx xx xXX xxxxxxxxx xxxxxxxxxxx xxxxxxxxxx xxx Xxxxxxx YY, xxxxx xxxx xxx x xxxxx xxxxx xx xxxxx. |
-| [Xxxxxxx xx xxxx Xxx xxxx Xxxxxxx YY](setting-up-your-mac-with-windows-10.md) | Xxx xxxx xxxxxxx Xxx xxxxxxxx xx xxxxxxx xxxx xxx Xxxxxxx. |
+| [iOS と UWP のアプリ開発方法の選択](selecting-an-approach-to-ios-and-uwp-app-development.md) | クロスプラットフォーム アプリを開発するときの選択肢 |
+| [iOS 開発者のための UWP の概要](getting-started-with-uwp-for-ios-developers.md) | この記事は、Windows 10 用の開発を検討している iOS 開発者向けに用意されています。 |
+| [Windows 10 を使用するための Mac のセットアップ](setting-up-your-mac-with-windows-10.md) | 現在の Mac コンピューターを使用して、Windows 用アプリを開発します。 |
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-**Xxx xxxxxxxxx xxx xxxxxxxxxx**
-* [Xxxxxxxx Xxxxxxxxx Xxxxxxx xxxx xxx xxx Xxxxxxx xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=397871)
-* [Xxxxxxxx xxxxxx xxxxxx xxx Xxxxxxx Xxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
+**設計者と開発者向け**
+* [すべての Windows デバイスを対象としたユニバーサル Windows アプリの構築](http://go.microsoft.com/fwlink/p/?LinkID=397871)
+* [Windows ストア アプリ設計のアセットのダウンロード](https://msdn.microsoft.com/library/windows/apps/xaml/bg125377.aspx)
  
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

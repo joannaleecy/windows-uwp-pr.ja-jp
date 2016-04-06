@@ -1,39 +1,43 @@
 ---
-xx.xxxxxxx: YYYYxYxY-YYYY-YYYx-xxYx-xYYxYYxxxYYY
-xxxxx: Xxxxx, xxxxxxx, xxx xxxxxxxxx
-xxxxxxxxxxx: .
+ms.assetid: 1901c4c2-5161-435d-bc7b-f40c69cdb138
+title: ファイル、フォルダー、およびライブラリ
+description: 。
 ---
- # Xxxxx, xxxxxxx, xxx xxxxxxxxx
+ # ファイル、フォルダー、およびライブラリ
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxx xxx xxx XXXx xx xxx [Xxxxxxx.Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br227346), [Xxxxxxx.Xxxxxxx.Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br241791), xxx [Xxxxxxx.Xxxxxxx.Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br207928) xxxxxxxxxx xx xxxx xxx xxxxx xxxx xxx xxxxx xxxx xxxxxxx xx xxxxx, xxx xx xxxxxx xxxxx xxx xxxxxxx. Xx xxxx xxxxxxx, xxx'xx xxxx xxxxx xxxxx xxxxxxx xxx xxxxxxx xxx xxxxxxxx, xxxxx xxxx xxx xxxxxx xxxxxxx, xxx xxxxx xxxxxxx xxxx-xxxxx xxxxxxxxx xxxx xx xxx Xxxxx/Xxxxx xxxxxxx.
+[Windows.Storage](https://msdn.microsoft.com/library/windows/apps/br227346)、[Windows.Storage.Streams](https://msdn.microsoft.com/library/windows/apps/br241791)、[Windows.Storage.Pickers](https://msdn.microsoft.com/library/windows/apps/br207928) の各名前空間の API を使い、ファイル内にあるテキストやその他のデータ形式の読み取りと書き込み、およびファイルやフォルダーの管理を行います。 このセクションでは、アプリの設定の読み取りと書き込み、ファイルやフォルダーのピッカー、およびビデオ ライブラリやミュージック ライブラリなどのセキュリティで保護された特別な場所についても説明します。
 
-| Xxxxx | Xxxxxxxxxxx  |
+| トピック | 説明  |
 |-------|--------------|
-| [Xxxxxxxxx xxx xxxxx xxxxx xxx xxxxxxx](quickstart-listing-files-and-folders.md) | Xxxxxx xxxxx xxx xxxxxxx xx xxxxxx x xxxxxx, xxxxxxx, xxxxxx, xx xxxxxxx   xxxxxxxx. Xxx xxx xxxx xxxxx xxx xxxxx xxx xxxxxxx xx x xxxxxxxx xx xxxxxxxxxxxx xxxx xxx xxxxxx xxxxxxx. |
-| [Xxxxxx, xxxxx, xxx xxxx x xxxx](quickstart-reading-and-writing-files.md) | Xxxx xxx xxxxx x xxxx xxxxx x [XxxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxx. |
-| [Xxx xxxx xxxxxxxxxx](quickstart-getting-file-properties.md) | Xxx xxxxxxxxxx—xxx-xxxxx, xxxxx, xxx xxxxxxxx—xxx x xxxx xxxxxxxxxxx xx x   [XxxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxx. |
-| [Xxxx xxxxx xxx xxxxxxx xxxx x xxxxxx](quickstart-using-file-and-folder-pickers.md) | Xxxxxx xxxxx xxx xxxxxxx xx xxxxxxx xxx xxxx xxxxxxxx xxxx x xxxxxx. Xxx xxx xxx xxx   [XxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/br207881) xx xxxx xxxxxx xx x xxxxxx. |
-| [Xxxx x xxxx xxxx x xxxxxx](quickstart-save-a-file-with-a-picker.md) | Xxx [XxxxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/br207871) xx xxx xxxxx xxxxxxx xxx xxxx xxx xxxxxxxx xxxxx xxxx xxxx xxxx xxx xx xxxx x xxxx. |
-| [Xxxxxxxxx XxxxXxxxx xxxxxxx](quickstart-accessing-homegroup-content.md) | Xxxxxx xxxxxxx xxxxxx xx xxx xxxx'x XxxxXxxxx xxxxxx, xxxxxxxxx xxxxxxxx, xxxxx, xxx xxxxxx. |
-| [Xxxxxxxxxxx xxxxxxxxxxxx xx Xxxxxxxxx XxxXxxxx xxxxx](quickstart-determining-availability-of-microsoft-onedrive-files.md) | Xxxxxxxxx xx x Xxxxxxxxx XxxXxxxx xxxx xx xxxxxxxxx xxxxx xxx [XxxxxxxXxxx.XxXxxxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) xxxxxxxx. |
-| [Xxxxx xxx xxxxxxx xx xxx Xxxxx, Xxxxxxxx, xxx Xxxxxx xxxxxxxxx](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | Xxx xxxxxxxx xxxxxxx xx xxxxx, xxxxxxxx, xx xxxxxx xx xxx xxxxxxxxxxxxx xxxxxxxxx. Xxx xxx xxxx xxxxxx xxxxxxx xxxx xxxxxxxxx, xxx xxx xxxx xx xxxxxxx xx x xxxxxxx, xxx xxxxxxxx xxxxxx xxxxxx, xxxxx, xxx xxxxxx. |
-| [Xxxxx xxxxxxxx xxxx xxxxx xxx xxxxxxx](how-to-track-recently-used-files-and-folders.md) | Xxxxx xxxxx xxxx xxxx xxxx xxxxxxxx xxxxxxxxxx xx xxxxxx xxxx xx xxxx xxx'x xxxx xxxxxxxx xxxx xxxx (XXX). Xxx xxxxxxxx xxxxxxx xxx XXX xxx xxx xx xxxxxxx xxxxx xxxxx xx xxxx xxxx xxxx xxxx xxxxxxxx, xxx xx xxxxxxxx xxx xxxxxx xxxx xxxx xxx xxxx'x YY-xxxx xxxxx xx xxxxxxx. Xxx xxxx xxxx xxxxx xxx XXX. |
-| [Xxxxxx xxx XX xxxx](access-the-sd-card.md) | Xxx xxx xxxxx xxx xxxxxx xxx-xxxxxxxxx xxxx xx xx xxxxxxxx xxxxxXX xxxx, xxxxxxxxxx xx xxx-xxxx xxxxxx xxxxxxx xxxx xxxx xxxxxxx xxxxxxxx xxxxxxx. |
-| [Xxxx xxxxxx xxxxxxxxxxx](file-access-permissions.md) | Xxxx xxx xxxxxx xxxxxxx xxxx xxxxxx xxxxxxxxx xx xxxxxxx. Xxxx xxx xxxx xxxxxx xxxxxxxxxx xxxxxxxxx xxxxxxx xxx xxxx xxxxxx, xx xx xxxxxxxxx xxxxxxxxxxxx. |
+| [ファイルとフォルダーの列挙と照会](quickstart-listing-files-and-folders.md) | フォルダー、ライブラリ、デバイス、またはネットワークの場所にあるファイルやフォルダーにアクセスします。 ファイルやフォルダーのクエリを作成することで、任意の場所にあるファイルやフォルダーを照会することもできます。 |
+| [ファイルの作成、書き込み、および読み取り](quickstart-reading-and-writing-files.md) | [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを使ってファイルの読み取りと書き込みを行います。 |
+| [ファイルのプロパティの取得](quickstart-getting-file-properties.md) | [StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトで表されるファイルのプロパティ (最上位、基本、拡張) を取得します。 |
+| [ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md) | ユーザーがピッカーを操作してファイルやフォルダーにアクセスできるようにします。 フォルダーへのアクセスには [FolderPicker](https://msdn.microsoft.com/library/windows/apps/br207881) を使います。 |
+| [ピッカーによるファイルの保存](quickstart-save-a-file-with-a-picker.md) | [FileSavePicker](https://msdn.microsoft.com/library/windows/apps/br207871) を使って、ユーザーがアプリで保存するファイルの名前とその保存場所を指定できるようにします。 |
+| [ホームグループ コンテンツへのアクセス](quickstart-accessing-homegroup-content.md) | ユーザーのホームグループ フォルダーに格納されているコンテンツ (画像、音楽、ビデオなど) にアクセスします。 |
+| [Microsoft OneDrive ファイルが利用可能かどうかの確認](quickstart-determining-availability-of-microsoft-onedrive-files.md) | [StorageFile.IsAvailable](https://msdn.microsoft.com/en-us/library/windows/apps/windows.storage.storagefile.isavailable.aspx) プロパティを使って、Microsoft OneDrive ファイルが利用可能かどうかを確認します。 |
+| [ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md) | 音楽、画像、またはビデオの既存のフォルダーを対応するライブラリに追加できます。 ライブラリからフォルダーを削除したり、ライブラリ内のフォルダーの一覧を取得したり、保存した写真、音楽、ビデオにアクセスしたりすることもできます。 |
+| [最近使ったファイルやフォルダーの追跡](how-to-track-recently-used-files-and-folders.md) | ユーザーが頻繁にアクセスするファイルを追跡するには、そのファイルを最近使ったアプリの一覧 (MRU) に追加します。 MRU はプラットフォームが管理し、最後にアクセスした日時に基づいて項目を並べ替えたり、一覧の上限である 25 項目に達したら最も古い項目を削除したりします。 すべてのアプリにはそれぞれに専用の MRU があります。 |
+| [SD カードへのアクセス](access-the-sd-card.md) | オプションの microSD カードに重要度の低いデータを保存したり、これらのデータにアクセスしたりすることができます (特に内部ストレージに制限がある低コストのモバイル デバイスの場合)。 |
+| [ファイル アクセス許可](file-access-permissions.md) | アプリは既定でファイル システムの特定の場所にアクセスできます。 また、ファイル ピッカーを使うか機能を宣言すると、その他の場所にアクセスすることもできます。 |
 
-## Xxxxxxx xxxxxxx
-[Xxxxxx xxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619993)
+## 関連するサンプル
+[フォルダーの列挙のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619993)
 
-[Xxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619995)
+[ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995)
 
-[Xxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619994)
+[ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

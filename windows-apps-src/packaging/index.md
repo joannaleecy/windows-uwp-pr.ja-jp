@@ -1,21 +1,25 @@
 ---
-xx.xxxxxxx: YxxxxxYY-YYxY-YxxY-xYYY-YYYxxYxxYYYY
-xxxxx: Xxxxxxxxx xxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xx xxxxx xx xxxxxxxx xxxxx xxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
+ms.assetid: 1abcbb13-80f0-4bf1-a812-649ee8bd1915
+title: アプリのパッケージ化
+description: このセクションには、ユニバーサル Windows プラットフォーム (UWP) アプリのパッケージ化に関する記事または記事へのリンクが記載されています。
 ---
-# Xxxxxxxxx xxxx
+# アプリのパッケージ化
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-## Xxxxxxx
+## 目的
 
-Xxxx xxxxxxx xxxxxxxx xx xxxxx xx xxxxxxxx xxxxx xxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
+このセクションには、ユニバーサル Windows プラットフォーム (UWP) アプリのパッケージ化に関する記事または記事へのリンクが記載されています。
 
-| Xxxxx | Xxxxxxxxxxx |
+| トピック | 説明 |
 |-------|-------------|
-| [Xxxxxxxxx XXX xxxx](packaging-uwp-apps.md) | Xx xxxx xxxx XXX xxx xx xxxxxxxxxx xx xx xxxxx xxxxx, xxx xxxx xx xxxxxx xx xxxxxxxxxx xxxxxxx xxx xx. Xxxx xxx xxxxxx xxx xxxxxxxxxx, xxxxxxx xxxx xxxxxxx xxxx xx xxxxxxxxx xx xxx xxx xxxxxxx xxx xxxxxxxxxxx. Xxx xxx xxxxxxxxxx xxxx xxx xxxxxxxx xx xxxxxxxxxxx xxx xxxx xxxxxxx xx x xxxxxx. Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxx xx xxxxxxxxxxx, xxxxxxxx xxx xxxxxxx x XXX xxx xxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxxxxxx, xxx [Xxxxxxxx Xxxx xxxx XXXX](http://go.microsoft.com/fwlink/?LinkID=231020). |
-| [Xxxxxxx xxxx xxxx xxx XxxXxxXxxxxxXxx.xxx xxxx](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Xxxxxxx Xxxxxxxxxxx Xxxxxxxxxx (XxxXxxXxxxxxXxx.xxx) xx x xxxxxxx xxxx xxxx xxxx xxx xxx xx xxxxxx x XXX xxx xxxx x Xxxxxxx YY xxxxxxx xx xxx Xxxxxxx YY Xxxxxx xxxxxx. Xxx xxx xxx xxxx xxxx xx xxxxxx xx .xxxx xxxxxxx xxxx xxx Xxxxxxx YY Xxxxxx xxxxxx xx xxxxxxxxx xx XXX xx xxxxxxxxx xx xxx xxxx xxxxxx xxxxxxx xxxxxxx Xxxxxxxxx Xxxxxx Xxxxxx xx xxx xxxxxxxx xxx xxxx xxx. Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxxxx XXX xxxx xxxxx xxxx xxxx. |
-| [Xxx xxxxxxxxxx xxxxxxxxxxxx](app-capability-declarations.md) | Xxxxxxxxxxxx xxxx xx xxxxxxxx xx xxxx XXX xxx'x [xxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/BR211474) xx xxxxxx xxxxxxx XXX xx xxxxxxxxx xxxx xxxxxxxx, xxxxx, xx xxxxxxx xxxx xxx xxxxxx xx xxx xxxxxxxxxx. |
+| [UWP アプリのパッケージ化](packaging-uwp-apps.md) | UWP アプリを販売、または他のユーザーに配布するには、そのアプリの appxupload パッケージを作成する必要があります。 appxupload を作成すると、別の appx パッケージがテストとサイドローディング用に生成されます。 デバイスに appx パッケージをサイドローディングすることで、アプリを直接配布できます。 この記事では、UWP アプリ パッケージを構成、作成、テストする方法について説明します。 サイドローディングについて詳しくは、「[DISM を使ったアプリのサイドローディング](http://go.microsoft.com/fwlink/?LinkID=231020)」をご覧ください。 |
+| [WinAppDeployCmd.exe ツールを使ったアプリのインストール](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) | Windows のアプリケーションの展開ツール (WinAppDeployCmd.exe) は、Windows 10 コンピューターから Windows 10 Mobile デバイスに UWP アプリを展開するために使うことができるコマンド ライン ツールです。 このツールを使うと、Windows 10 Mobile デバイスが USB で接続されているか同じサブネットにあれば、.appx パッケージを展開できます。Microsoft Visual Studio やそのアプリ用のソリューションは不要です。 この記事では、このツールを使って UWP アプリをインストールする方法について説明します。 |
+| [アプリ機能の宣言](app-capability-declarations.md) | 特定の API、画像や音楽などのリソース、カメラやマイクなどデバイスにアクセスするには、機能を UWP アプリの[パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/BR211474)で宣言する必要があります。 |
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

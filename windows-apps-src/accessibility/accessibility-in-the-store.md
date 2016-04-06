@@ -1,50 +1,55 @@
 ---
-Xxxxxxxxxxx: Xxxxxxxxx xxx xxxxxxxxxxxx xxx xxxxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xx xxxxxxxxxx xx xxx Xxxxxxx Xxxxx.
-xxxxx: Xxxxxxxxxxxxx xx xxx Xxxxx
-xx.xxxxxxx: YYXXYXYY-YYXY-YXYY-XXYX-XYXYYYXYYYYY
-xxxxx: Xxxxx xxxxxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: ユニバーサル Windows プラットフォーム (UWP) アプリがアクセシビリティ対応であると Windows ストアで宣言するための要件について説明します。
+title: ストア内のアクセシビリティ
+ms.assetid: 59FA3B87-75A6-4B30-BA7C-A0E769D68050
+label: ストアの要件
+template: detail.hbs
 ---
 
-Xxxxxxxxxxxxx xx xxx Xxxxx
+ストア内のアクセシビリティ
 =========================================================================================
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
-Xxxxxxxxx xxx xxxxxxxxxxxx xxx xxxxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xx xxxxxxxxxx xx xxx Xxxxxxx Xxxxx.
+ユニバーサル Windows プラットフォーム (UWP) アプリがアクセシビリティ対応であると Windows ストアで宣言するための要件について説明します。
 
-Xxxxx xxxxxxxxxx xxxx xxx xx xxx Xxxxxxx Xxxxx xxx xxxxxxxxxxxxx, xxx xxx xxxxxxx xxxx xxx xx xxxxxxxxxx. Xxxxxxxxx xxxx xxx xx xxxxxxxxxx xxxxx xx xxxxxx xx xxxxxxxx xxx xxxxx xxx xxx xxxxxxxxxx xx xxxxxxxxxx xxxx, xxxx xx xxxxx xxx xxxx xxxxxx xxxxxxxxxxx. Xxxxx xxxxxxxx xxxxxxxxxx xxxx xx xxxxx xxx **Xxxxxxxxxx** xxxxxx xxxxx xxxxxxxxx xxx Xxxxxxx Xxxxx. Xxxxxxxxx xxxx xxx xx xxxxxxxxxx xxxx xxxx xxx **Xxxxxxxxxx** xxx xx xxxx xxx’x xxxxxxxxxxx.
+Windows ストアで認定を受けるためにアプリを提出している間に、アプリがアクセシビリティ対応であることを宣言することができます。 アクセシビリティ対応アプリであることを宣言すると、視覚に障碍があるユーザーのように、アクセシビリティ対応アプリに興味を持っているユーザーが簡単にそのアプリを見つけられるようになります。 ユーザーは、Windows ストアでの検索時に**アクセシビリティ対応**のフィルターを使うことで、アクセシビリティ対応アプリを見つけます。 また、アクセシビリティ対応アプリであることを宣言すると、アプリの説明に**アクセシビリティ対応**のタグが追加されます。
 
-Xx xxxxxxxxx xxxx xxx xx xxxxxxxxxx, xxx xxxxx xxxx xx xxx xxx [xxxxx xxxxxxxxxxxxx xxxxxxxxxxx](basic-accessibility-information.md) xxxx xxxxx xxxx xxx xxxxxxx xxxxxxxxx xxxxx xxx xx xxxx xx xxx xxxxxxxxx:
+アプリがアクセシビリティ対応であることを宣言して、次のうちの 1 つ以上を使う主なシナリオでユーザーが必要とする [基本的なアクセシビリティ情報](basic-accessibility-information.md) が用意されていることを示します。
 
--   Xxx xxxxxxxx.
--   X xxxx xxxxxxxx xxxxx.
--   X xxxxxxxx xxxx xxx xxxx (xxx) xxxxxxx.
--   Xxxxxx xxxxxxxxx xxxxxxxxxx xxxx xx xxx Xxxxxxx xxxxxxxxxxxxx xxxxxxxx, xxxxxxxxx Xxxxxxxx, Xxxxxxxxx, xxx Xx-Xxxxxx Xxxxxxxx.
+-   キーボード。
+-   ハイ コントラスト テーマ。
+-   可変 DPI (1 インチあたりのドット数) の設定。
+-   Windows アクセシビリティ機能 (ナレーター、拡大鏡、スクリーン キーボードなど) のような一般的な支援技術。
 
-Xxx xxxxxx xxxxxxx xxxx xxx xx xxxxxxxxxx xx xxx xxxxx xxx xxxxxx xx xxx xxxxxxxxxxxxx. Xxxx xxxxx xxxx xxx xxx xxx xxxxxxxxx:
+アプリをアクセシビリティ対応としてビルドし、テストした場合は、アプリをアクセシビリティ対応として宣言する必要があります。 これは、次のことが完了していることを意味します。
 
--   Xxx xxx xxx xxxxxxxx xxxxxxxxxxxxx xxxxxxxxxxx xxx XX xxxxxxxx, xxxxxxxxx xxxx, xxxx, xxxxx, xxx xx xx.
--   Xxxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxxxx, xxxxxxxx xxx xxxx xx:
-    -   Xxxxxxxxxx xxxxxxx xxx xxxxxxxxx xx xxxxx xxxx xxx xxxxxxxx.
-    -   Xxx xxxxx XX xxxxxxxx xx x xxxxxxx xxxxx.
-    -   Xxxxxxxx xxxxx XX xxxxxxxx xxxxxx x xxxxxxx xx xxxxx xxx xxxxx xxxx.
-    -   Xxx xxxxxxxx xxxxxxxxx xx xxxxx xxxxxxx xxx xxxxxxxxxxxxx.
-    -   Xxx Xxxxxxxx xxxxx xxxxxxxx xxx Xxx xxx xxxxx xxxxxxxxxxx xxx xxxxxxx xxxx xx xxxxxxxx.
--   Xxxxxxx xxxx xxxx xxx XX xx xxxxxxxx xxxxxxxxxx: xxx x xxxxxxx xxxx xxxxxxxx xxxxx xx Y.Y:Y, xxxx xxx xxxx xx xxxxx xxxxx xx xxxxxx xxxxxxxxxxx, xxx xx xx.
--   Xxxx xxxxxxxxxxxxx xxxxxxx xxxxx xxxx xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) xxx [**XXXXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/Hh920986) xx xxxxxx xxxx xxxxxxxxxxxxx xxxxxxxxxxxxxx, xxx xxxxxxxx xxx xxxxxxxx Y xxxxxx xxxxxxxx xx xxxx xxxxx.
--   Xxxxxxxx xxxx xxx’x xxxxxxx xxxxxxxxx xxxx xxx xx xxx xx xxxxx Xxxxxxxx, Xxxxxxxxx, Xx-Xxxxxx Xxxxxxxx, x xxxx xxxxxxxx xxxxx, xxx xxxxxxxx xxx xxxxxxxx.
+-   名前、役割、値などの UI 要素に関するすべてのアクセシビリティ情報を設定している。
+-   キーボードの完全なアクセシビリティを実装している。ユーザーは次のことができる。
+    -   キーボードのみを使ってアプリの主なシナリオを達成する。
+    -   Tab キーを使って論理的な順序で UI 要素を切り替える。
+    -   方向キーを使ってコントロール内の UI 要素間を移動する。
+    -   キーボード ショートカットを使ってアプリの主な機能を利用する。
+    -   キーボードがないデバイスで、タブと矢印を同等に扱うためにナレーターのタッチ ジェスチャを使う。
+-   アプリの UI が視覚上のアクセシビリティに対応している。最低でも 4.5:1 のテキスト コントラスト比がある、情報を伝えるときに色だけに依存していない、など。
+-   [
+            **Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521)、[**UIAVerify**](https://msdn.microsoft.com/library/windows/desktop/Hh920986) などのアクセシビリティ テスト ツールを使ってアクセシビリティの実装が検証されていて、このようなツールで報告される優先度 1 のエラーをすべて解決している。
+-   ナレーター、拡大鏡、スクリーン キーボード、ハイ コントラスト テーマ、調整された DPI 設定を使って、エンド ツー エンドでアプリの主なシナリオを検証している。
 
-Xxx xxx [Xxxxxxxxxxxxx xxxxxxxxx](accessibility-checklist.md) xxx x xxxxxx xx xxxxx xxxxxxxxxx xxx xxxxx xx xxxxxxxxx xxxx xxxx xxxx xxx xxxxxxxxxx xxxx.
+これらの手順と、その実行に役立つリソースへのリンクを確認する場合は、「[アクセシビリティのチェック リスト](accessibility-checklist.md)」をご覧ください。
 
-Xxxxxxx xxxxxx
+関連トピック
 -----------------------------------------------
 
-* [Xxxxxxxxxxxxx](accessibility.md)
+* [アクセシビリティ](accessibility.md)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

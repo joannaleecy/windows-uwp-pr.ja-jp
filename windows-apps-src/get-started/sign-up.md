@@ -1,20 +1,24 @@
 ---
-xx.xxxxxxx: YYXXYYYY-YXXY-YYYY-XYYY-XYYXXYYYYXYY
-xxxxx: Xxxxx xx xxxx xx?
-xxxxxxxxxxx: Xxxxxxxx xxx xxx x xxxxxxxxx xxxxxxx xx xxx xxx xxx xxxx xxxx xxxx xxx Xxxxxxx Xxxxx xxx xxxxxxxxxxx xx xxxxx Xxxxxxxxx xxxxxxxx.
+ms.assetid: 16AB1111-4BA8-4352-B796-E97AA9243E31
+title: Ready to sign up?
+description: Register now for a developer account so you can get your apps into the Windows Store and participate in other Microsoft programs.
 ---
-# Xxxxx xx xxxx xx?
+# Ready to sign up?
 
-Xxxxxxxx xxx xxx x xxxxxxxxx xxxxxxx xx xxx xxx xxx xxxx xxxx xxxx xxx Xxxxxxx Xxxxx xxx xxxxxxxxxxx xx xxxxx Xxxxxxxxx xxxxxxxx.
+Register now for a developer account so you can get your apps into the Windows Store and participate in other Microsoft programs.
 
-[Xxxx xx xxx!](http://go.microsoft.com/fwlink/p/?LinkId=615100)
+[Sign up now!](http://go.microsoft.com/fwlink/p/?LinkId=615100)
 
-## Xxxxxxx xxxx xxxxxxxxx xxxxxxx
+## Opening your developer account
 
-Xx xxxxx [xxxxxxxxxx xxx xxxxxxx xxxxxxxx xx xxxxxxxxx xxxxxx xxx xxxxx](../publish/account-types-locations-and-fees.md). Xxxxx xxx xxx [xxxxxxxx xx xxx xxxx-xx xxxxxxx](../publish/opening-a-developer-account.md) xx xxx xxx xx xxxxx.
+We offer [individual and company accounts in locations around the world](../publish/account-types-locations-and-fees.md). Check out our [overview of the sign-up process](../publish/opening-a-developer-account.md) to see how it works.
 
-## Xxxx x xxxx xxx xxxx xxx?
+## Have a name for your app?
 
-Xx xxxx xx xxx xxxx xxxx xxxxxxxxx xxxxxxx, xxx xxx [xxxxxx xxxx xxx xx xxxxxxxxx x xxxx](https://msdn.microsoft.com/library/windows/apps/JJ657967).
+As soon as you open your developer account, you can [create your app by reserving a name](https://msdn.microsoft.com/library/windows/apps/JJ657967).
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

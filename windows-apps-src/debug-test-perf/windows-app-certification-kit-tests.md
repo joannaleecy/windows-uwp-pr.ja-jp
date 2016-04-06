@@ -1,475 +1,468 @@
 ---
-xx.xxxxxxx: YYYYXXYX-YXYY-YYYX-XYYY-YXYXYXYXYYXX
-xxxxx: Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxx
-xxxxxxxxxxx: Xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxxxxx x xxxxxx xx xxxxx xxxx xxx xxxx xxxxxx xxxx xxxx xxx xx xxxxx xx xx xxxxxxxxx xx xxx Xxxxxxx Xxxxx.
+ms.assetid: 1526FF4B-9E68-458A-B002-0A5F3A9A81FD
+title: Windows App Certification Kit tests
+description: The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Windows Store.
 ---
-## Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxx
+## Windows App Certification Kit tests
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxxxxx x xxxxxx xx xxxxx xxxx xxx xxxx xxxxxx xxxx xxxx xxx xx xxxxx xx xx xxxxxxxxx xx xxx Xxxxxxx Xxxxx.
+The Windows App Certification Kit contains a number of tests that can help ensure that your app is ready to be published on the Windows Store.
 
-## Xxxxxxxxxx xxx xxxxxx xxxxx
+## Deployment and launch tests
 
-Xxxxxxxx xxx xxx xxxxxx xxxxxxxxxxxxx xxxxxxx xx xxxxxx xxxx xx xxxxxxx xx xxxxx.
+Monitors the app during certification testing to record when it crashes or hangs.
 
-### Xxxxxxxxxx
+### Background
 
-Xxxx xxxx xxxx xxxxxxxxxx xx xxxxx xxx xxxxx xxx xxxx xx xxxx xxxx xxx xxxx x xxxx xxxxxxxxxx.
+Apps that stop responding or crash can cause the user to lose data and have a poor experience.
 
-Xx xxxxxx xxxx xx xx xxxxx xxxxxxxxxx xxxxxxx xxx xxx xx Xxxxxxx xxxxxxxxxxxxx xxxxx, XxxXxxx xxxxxxxx, xx xxxxxxxxxxxxx xxxxx.
+We expect apps to be fully functional without the use of Windows compatibility modes, AppHelp messages, or compatibility fixes.
 
-Xxxx xxxx xxx xxxx XXXx xx xxxx xx xxx XXXX\-XXXXX\-XXXXXXX\\Xxxxxxxx\\Xxxxxxxxx\\Xxxxxxx XX\\XxxxxxxXxxxxxx\\Xxxxxxx\\XxxXxxx\-XXXx xxxxxxxx xxx.
+Apps must not list DLLs to load in the HKEY\-LOCAL\-MACHINE\\Software\\Microsoft\\Windows NT\\CurrentVersion\\Windows\\AppInit\-DLLs registry key.
 
-### Xxxx xxxxxxx
+### Test details
 
-Xx xxxx xxx xxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxxx xxxxxxx.
+We test the app resilience and stability throughout the certification testing.
 
-Xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxx [**XXxxxxxxxxxxXxxxxxxxxxXxxxxxx::XxxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) xx xxxxxx xxxx. Xxx **XxxxxxxxXxxxxxxxxxx** xx xxxxxx xx xxx, Xxxx Xxxxxxx Xxxxxxx (XXX) xxxx xx xxxxxxx xxx xxx xxxxxx xxxxxxxxxx xxxx xx xx xxxxx YYYY x YYY xx YYY x YYYY. Xx xxxxxx xxxxxxxxx xx xxx xxx, xxxx xxx xxxx xxxx xxxx xxxx.
+The Windows App Certification Kit calls [**IApplicationActivationManager::ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903) to launch apps. For **ActivateApplication** to launch an app, User Account Control (UAC) must be enabled and the screen resolution must be at least 1024 x 768 or 768 x 1024. If either condition is not met, your app will fail this test.
 
-### Xxxxxxxxxx xxxxxxx
+### Corrective actions
 
-Xxxx xxxx XXX xx xxxxxxx xx xxx xxxx xxxxxxxx.
+Make sure UAC is enabled on the test computer.
 
-Xxxx xxxx xxx xxx xxxxxxx xxx xxxx xx x xxxxxxxx xxxx xxxxx xxxxxx xxxxxx.
+Make sure you are running the test on a computer with large enough screen.
 
-Xx xxxx xxx xxxxx xx xxxxxx xxx xxxx xxxx xxxxxxxx xxxxxxxxx xxx xxxxxxxxxxxxx xx [**XxxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/Hh706903), xxx xxx xxxxxxxxxxxx xxx xxxxxxx xx xxxxxxxxx xxx xxxxxxxxxx xxxxx xxx. Xx xxxx xxxxx xxxxxxx xx xxx xxxxx xxx:
+If your app fails to launch and your test platform satisfies the prerequisites of [**ActivateApplication**](https://msdn.microsoft.com/library/windows/desktop/Hh706903), you can troubleshoot the problem by reviewing the activation event log. To find these entries in the event log:
 
-1.  Xxxx xxxxxxxx.xxx xxx xxxxxxxx xx xxx Xxxxxxxxxxx xxx Xxxxxxxx Xxx\\Xxxxxxxxx\\Xxxxxxx\\Xxxxxxxxx-Xxxxx xxxxxx.
-2.  Xxxxxx xxx xxxx xx xxxx Xxxxx Xxx: YYYY-YYYY.
-3.  Xxxxxx xxx xxx xxxxxxx xxx xxxx xxxx xxxxx xxxxxxx xxx xxx xxx xxxx'x xxxxxx.
+1.  Open eventvwr.exe and navigate to the Application and Services Log\\Microsoft\\Windows\\Immersive-Shell folder.
+2.  Filter the view to show Event Ids: 5900-6000.
+3.  Review the log entries for info that might explain why the app didn't launch.
 
-Xxxxxxxxxxxx xxx xxxx xxxx xxx xxxxxxx, xxxxxxxx xxx xxx xxx xxxxxxx. Xxxxxxx xxx xx-xxxx xxx xxx. Xxx xxx xxxx xxxxx xx x xxxx xxxx xxx xxxxxxxxx xx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxx xxxxxx xxxx xxx xx xxxx xx xxxxx xxxx xxx.
+Troubleshoot the file with the problem, identify and fix the problem. Rebuild and re-test the app. You can also check if a dump file was generated in the Windows App Certification Kit log folder that can be used to debug your app.
 
-## Xxxxxxxx Xxxxxxx Xxxxxx xxxx
+## Platform Version Launch test
 
-Xxxxxx xxxx xxx Xxxxxxx xxx xxx xxx xx x xxxxxx xxxxxxx xx xxx XX. Xxxx xxxx xxx xxxxxxxxxxxx xxxx xxxx xxxxxxx xx xxx Xxxxxxx xxx xxxxxxxx, xxx xxxx xx xxx xxxxxxx xxx xxx Xxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxxx.
+Checks that the Windows app can run on a future version of the OS. This test has historically been only applied to the Desktop app workflow, but this is now enabled for the Store and Universal Windows Platform (UWP) workflows.
 
-### Xxxxxxxxxx
+### Background
 
-Xxxxxxxxx xxxxxx xxxxxxx xxxx xxx xxxxxxxxxx xxxxx xxx xxx Xxxxxxx Xxxxx. Xxxx xxx xxxxx xxxx xxxxxxxxxxx xxxx xx xxxx xx xxxxx XX xxxxxxx xx xxxx xxx xxx xxx xxxxxxx xxxxx xxxx xxxxxxxxxxxxx xxxx xx xxxxxxxx xx xx XX xxxxxxx.
+Operating system version info has restricted usage for the Windows Store. This has often been incorrectly used by apps to check OS version so that the app can provide users with functionality that is specific to an OS version.
 
-### Xxxx xxxxxxx
+### Test details
 
-Xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxx xxx XxxxXxxxxxxXxx xx xxxxxx xxx xxx xxx xxxxxx xxx XX xxxxxxx. Xx xxx xxx xxxxxxx, xx xxxx xxxx xxxx xxxx.
+The Windows App Certification Kit uses the HighVersionLie to detect how the app checks the OS version. If the app crashes, it will fail this test.
 
-### Xxxxxxxxxx xxxxxx
+### Corrective action
 
-Xxxx xxxxxx xxx Xxxxxxx XXX xxxxxx xxxxxxxxx xx xxxxx xxxx. Xxx [Xxxxxxxxx Xxxxxx Xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ms724832) xxx xxxx xxxxxxxxxxx.
+Apps should use Version API helper functions to check this. See [Operating System Version](https://msdn.microsoft.com/library/windows/desktop/ms724832) for more information.
 
-## Xxxxxxxxxx xxxxx xxxxxxxxxxxx xxxxxxx xxxxxxxxxx
+## Background tasks cancellation handler validation
 
-Xxxx xxxxxxxx xxxx xxx xxx xxx x xxxxxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxx. Xxxxx xxxxx xx xx x xxxxxxxxx xxxxxxxx xxxx xxxx xx xxxxxx xxxx xxx xxxx xx xxxxxxxxx. Xxxx xxxx xx xxxxxxx xxxx xxx xxxxxxxx xxxx.
+This verifies that the app has a cancellation handler for declared background tasks. There needs to be a dedicated function that will be called when the task is cancelled. This test is applied only for deployed apps.
 
-### Xxxxxxxxxx
+### Background
 
-Xxxxx xxxx xxx xxxxxxxx x xxxxxxx xxxx xxxx xx xxx xxxxxxxxxx. Xxx xxxxxxx, xx xxxxx xxx xxx xxxx x xxxxxx xxxx xxxx xx xxxx. Xxxxxxx, xx xxx XX xxxxx xxxxx xxxxxxxxx, xx xxxx xxxxxx xxx xxxxxxxxxx xxxx, xxx xxxx xxxxxx xxxxxxxxxx xxxxxx xxxx xxxxxxxxxxxx. Xxxx xxxx xxx'x xxxx x xxxxxxxxxxxx xxxxxxx xxx xxxxx xx xxx xxxxx xxxx xxx xxxx xxxxx xx xxxxx xxx xxx.
+Store apps can register a process that runs in the background. For example, an email app may ping a server from time to time. However, if the OS needs these resources, it will cancel the background task, and apps should gracefully handle this cancellation. Apps that don't have a cancellation handler may crash or not close when the user tries to close the app.
 
-### Xxxx xxxxxxx
+### Test details
 
-Xxx xxx xx xxxxxxxx, xxxxxxxxx xxx xxx xxx-xxxxxxxxxx xxxxxxx xx xxx xxx xx xxxxxxxxxx. Xxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxx xxxx xxxx xxx xxx xxxxxxxxx. Xxx xxxxx xx xxx xxx xx xxxxxxx, xxx xx xxx xxx xx xxxxx xxxxxxx xxxx xx xxxx xxxx xxxx xxxx.
+The app is launched, suspended and the non-background portion of the app is terminated. Then the background tasks associated with this app are cancelled. The state of the app is checked, and if the app is still running then it will fail this test.
 
-### Xxxxxxxxxx xxxxxx
+### Corrective action
 
-Xxx xxx xxxxxxxxxxxx xxxxxxx xx xxxx xxx. Xxx xxxx xxxxxxxxxxx xxx [Xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/Mt299103).
+Add the cancellation handler to your app. For more information see [Support your app with background tasks](https://msdn.microsoft.com/library/windows/apps/Mt299103).
 
-## Xxx xxxxx
+## App count
 
-Xxxx xxxxxxxx xxxx xx xxx xxxxxxx (XXXX, xxx xxxxxx) xxxxxxxx xxx xxxxxxxxxxx. Xxxx xxx xxxxxxx xx xxx xxx xx xx x xxxxxxxxxx xxxx.
+This verifies that an app package (APPX, app bundle) contains one application. This was changed in the kit to be a standalone test.
 
-### Xxxxxxxxxx
+### Background
 
-Xxxx xxxx xxx xxxxxxxxxxx xx xxx Xxxxx xxxxxx.
+This test was implemented as per Store policy.
 
-### Xxxx xxxxxxx
+### Test details
 
-Xxx Xxxxxxx Xxxxx Y.Y xxxx xxx xxxx xxxxxxxx xxx xxxxx xxxxxx xx xxxx xxxxxxxx xx xxx xxxxxx xx &xx; YYY, xxxxx xx xxxx xxx xxxx xxxxxxx xx xxx xxxxxx, xxx xxxx xxx xxxxxxxxxxxx xx xxx xxxx xxxxxxx xx xxx xxxxxx xx xxxxxx xx XXX xx xxxxxxx.
+For Windows Phone 8.1 apps the test verifies the total number of appx packages in the bundle is &lt; 512, there is only one main package in the bundle, and that the architecture of the main package in the bundle is marked as ARM or neutral.
 
-Xxx Xxxxxxx YY xxxx xxx xxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxx xx xxx xxxxxxx xx xxx xxxxxx xx xxx xx Y.
+For Windows 10 apps the test verifies that the revision number in the version of the bundle is set to 0.
 
-### Xxxxxxxxxx xxxxxx
+### Corrective action
 
-Xxxxxx xxx xxx xxxxxxx xxx xxxxxx xxxx xxxxxxxxxxxx xxxxx xx Xxxx xxxxxxx.
+Ensure the app package and bundle meet requirements above in Test details.
 
-## Xxx xxxxxxxx xxxxxxxxxx xxxx
+## App manifest compliance test
 
-Xxxx xxx xxxxxxxx xx xxx xxxxxxxx xx xxxx xxxx xxx xxxxxxxx xxx xxxxxxx.
+Test the contents of app manifest to make sure its contents are correct.
 
-### Xxxxxxxxxx
+### Background
 
-Xxxx xxxx xxxx x xxxxxxxxx xxxxxxxxx xxx xxxxxxxx.
+Apps must have a correctly formatted app manifest.
 
-### Xxxx xxxxxxx
+### Test details
 
-Xxxxxxxx xxx xxx xxxxxxxx xx xxxxxx xxx xxxxxxxx xxx xxxxxxx xx xxxxxxxxx xx xxx [Xxx xxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt148525).
+Examines the app manifest to verify the contents are correct as described in the [App package requirements](https://msdn.microsoft.com/library/windows/apps/Mt148525).
 
--   **Xxxx xxxxxxxxxx xxx xxxxxxxxx**
+-   **File extensions and protocols**
 
-    Xxxx xxx xxx xxxxxxx xxx xxxx xxxxxxxxxx xxxx xx xxxxx xx xxxxxxxxx xxxx. Xxxx xxxxxxxxxx, xx xxx xxx xxxxxxx x xxxxx xxxxxx xx xxxx xxxxxxxxxx, xxxx xx xxxxx xx xxx xxx xxxx xxx, xxxxxxxxx xx x xxx xxxx xxxxxxxxxx. Xxxx xxxx xxxx xxx x xxxxx xx xxxxx xxx xxxxxx xx xxxx xxxxxxxxxx xxxx xx xxx xxx xxxxxxxxx xxxx.
+    Your app can declare the file extensions that it wants to associate with. Used improperly, an app can declare a large number of file extensions, most of which it may not even use, resulting in a bad user experience. This test will add a check to limit the number of file extensions that an app can associate with.
 
--   **Xxxxxxxxx Xxxxxxxxxx xxxx**
+-   **Framework Dependency rule**
 
-    Xxxx xxxx xxxxxxxx xxx xxxxxxxxxxx xxxx xxxx xxxx xxxxxxxxxxx xxxxxxxxxxxx xx xxx XXX. Xx xxxxx xx xx xxxxxxxxxxxxx xxxxxxxxxx, xxxx xxxx xxxx xxxx.
+    This test enforces the requirement that apps take appropriate dependencies on the UWP. If there is an inappropriate dependency, this test will fail.
 
-    Xx xxxxx xx x xxxxxxxx xxxxxxx xxx XX xxxxxxx xxx xxx xxxxxxx xx xxx xxx xxxxxxxxx xxxxxxxxxxxx xxxx, xxx xxxx xxxx xxxx. Xxx xxxx xxxxx xxxx xxxx xx xxx xxx xxxxxx xx xxx xxxxxxx xxxxxxxx xx xxx xxxxxxxxx xxxx.
+    If there is a mismatch between the OS version the app applies to and the framework dependencies made, the test will fail. The test would also fail if the app refers to any preview versions of the framework dlls.
 
--   **Xxxxx-xxxxxxx Xxxxxxxxxxxxx (XXX) xxxxxxxxxxxx**
+-   **Inter-process Communication (IPC) verification**
 
-    Xxxx xxxx xxxxxxxx xxx xxxxxxxxxxx xxxx Xxxxxxx Xxxxx xxxx xx xxx xxxxxxxxxxx xxxxxxx xx xxx xxx xxxxxxxxx xx Xxxxxxx xxxxxxxxxx. Xxxxx-xxxxxxx xxxxxxxxxxxxx xx xxxxxxxx xxx xxxx-xxxxxx xxxx xxxx. Xxxx xxxx xxxxxxx xxx [**XxxxxxxxxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR211414) xxxx xxxx xxxxx xx "XxxxxxxXxxxxxxxxxxXxxx" xxxx xxxx xxxx xxxx.
+    This test enforces the requirement that Windows Store apps do not communicate outside of the app container to Desktop components. Inter-process communication is intended for side-loaded apps only. Apps that specify the [**ActivatableClassAttribute**](https://msdn.microsoft.com/library/windows/apps/BR211414) with name equal to "DesktopApplicationPath" will fail this test.
 
-### Xxxxxxxxxx xxxxxx
+### Corrective action
 
-Xxxxxx xxx xxx'x xxxxxxxx xxxxxxx xxx xxxxxxxxxxxx xxxxxxxxx xx xxx [Xxx xxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt148525).
+Review the app's manifest against the requirements described in the [App package requirements](https://msdn.microsoft.com/library/windows/apps/Mt148525).
 
-## Xxxxxxx Xxxxxxxx xxxxxxxx xxxx
+## Windows Security features test
 
-### Xxxxxxxxxx
+### Background
 
-Xxxxxxxx xxx xxxxxxx Xxxxxxx xxxxxxxx xxxxxxxxxxx xxx xxx xxxxxxxxx xx xxxxxxxxx xxxx.
+Changing the default Windows security protections can put customers at increased risk.
 
-### Xxxx xxxxxxx
+### Test details
 
-Xxxxx xxx xxx'x xxxxxxxx xx xxxxxxx xxx [XxxXxxxx Xxxxxx Xxxxxxxx](#binscope).
+Tests the app's security by running the [BinScope Binary Analyzer](#binscope).
 
-Xxx XxxXxxxx Xxxxxx Xxxxxxxx xxxxx xxxxxxx xxx xxx'x xxxxxx xxxxx xx xxxxx xxx xxxxxx xxx xxxxxxxx xxxxxxxxx xxxx xxxx xxx xxx xxxx xxxxxxxxxx xx xxxxxx xx xx xxxxx xxxx xx xx xxxxxx xxxxxx.
+The BinScope Binary Analyzer tests examine the app's binary files to check for coding and building practices that make the app less vulnerable to attack or to being used as an attack vector.
 
-Xxx XxxXxxxx Xxxxxx Xxxxxxxx xxxxx xxxxx xxx xxx xxxxxxx xxx xx xxx xxxxxxxxx xxxxxxxx-xxxxxxx xxxxxxxx.
+The BinScope Binary Analyzer tests check for the correct use of the following security-related features.
 
--   XxxXxxxx Xxxxxx Xxxxxxxx xxxxx
--   Xxxxxxx Xxxx Xxxxxxx
+-   BinScope Binary Analyzer tests
+-   Private Code Signing
 
-### XxxXxxxx Xxxxxx Xxxxxxxx xxxxx
+### BinScope Binary Analyzer tests
 
-Xxx [XxxXxxxx Xxxxxx Xxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=257276) xxxxx xxxxxxx xxx xxx'x xxxxxx xxxxx xx xxxxx xxx xxxxxx xxx xxxxxxxx xxxxxxxxx xxxx xxxx xxx xxx xxxx xxxxxxxxxx xx xxxxxx xx xx xxxxx xxxx xx xx xxxxxx xxxxxx.
+The [BinScope Binary Analyzer](http://go.microsoft.com/fwlink/p/?linkid=257276) tests examine the app's binary files to check for coding and building practices that make the app less vulnerable to attack or to being used as an attack vector.
 
-Xxx XxxXxxxx Xxxxxx Xxxxxxxx xxxxx xxxxx xxx xxx xxxxxxx xxx xx xxxxx xxxxxxxx-xxxxxxx xxxxxxxx:
+The BinScope Binary Analyzer tests check for the correct use of these security-related features:
 
--   [XxxxxXxxxxxxxxXxxxxxxXxxxxxxXxxxxxxxx](#binscope-1)
--   [/XxxxXXX Xxxxxxxxx Xxxxxxxx Xxxxxxxxxx](#binscope-2)
--   [Xxxx Xxxxxxxxx Xxxxxxxxxx](#binscope-3)
--   [Xxxxxxx Xxxxx Xxxxxx Xxxxxxxxxxxxx](#binscope-4)
--   [Xxxx/Xxxxx Xxxxxx XX Xxxxxxx](#binscope-5)
--   [XxxXxxxxxxxxXxxxx](#appcontainercheck)
--   [XxxxxxxxxxXxxxxxxXxxxx](#binscope-7)
--   [XXXxxxx](#binscope-8)
+-   [AllowPartiallyTrustedCallersAttribute](#binscope-1)
+-   [/SafeSEH Exception Handling Protection](#binscope-2)
+-   [Data Execution Prevention](#binscope-3)
+-   [Address Space Layout Randomization](#binscope-4)
+-   [Read/Write Shared PE Section](#binscope-5)
+-   [AppContainerCheck](#appcontainercheck)
+-   [ExecutableImportsCheck](#binscope-7)
+-   [WXCheck](#binscope-8)
 
-### <span id="binscope-1">
-            </span>XxxxxXxxxxxxxxXxxxxxxXxxxxxxXxxxxxxxx
+### <span id="binscope-1"></span>AllowPartiallyTrustedCallersAttribute
 
-**Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxx xxxxxxx:** XXXXXXxxxx Xxxx xxxxxx
+**Windows App Certification Kit error message:** APTCACheck Test failed
 
-Xxx XxxxxXxxxxxxxxXxxxxxxXxxxxxxXxxxxxxxx (XXXXX) xxxxxxxxx xxxxxxx xxxxxx xx xxxxx xxxxxxx xxxx xxxx xxxxxxxxx xxxxxxx xxxx xx xxxxxx xxxxxxxxxx. Xxxx xxx xxxxx xxx XXXXX xxxxxxxxx xx xx xxxxxxxx, xxxxxxxxx xxxxxxx xxxxxxx xxx xxxxxx xxxx xxxxxxxx xxx xxx xxxx xx xxx xxxxxxxx, xxxxx xxx xxxxxxxxxx xxxxxxxx.
+The AllowPartiallyTrustedCallersAttribute (APTCA) attribute enables access to fully trusted code from partially trusted code in signed assemblies. When you apply the APTCA attribute to an assembly, partially trusted callers can access that assembly for the life of the assembly, which can compromise security.
 
-**Xxxx xx xx xx xxxx xxx xxxxx xxxx xxxx**
+**What to do if your app fails this test**
 
-Xxx'x xxx xxx XXXXX xxxxxxxxx xx xxxxxx xxxxx xxxxxxxxxx xxxxxx xxxx xxxxxxx xxxxxxxx xx xxx xxx xxxxx xxx xxxx xxxxxxxxxx. Xx xxxxx xxxxx xx'x xxxxxxxx, xxxx xxxx xxxx xxx XXXx xxx xxxxxxxxx xxxx xxxxxxxxxxx xxxx xxxxxx xxxxxxxx xxxxxxx. XXXXX xxx xx xxxxxx xxxx xxx xxxxxxxx xx x xxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
+Don't use the APTCA attribute on strong named assemblies unless your project requires it and the risks are well understood. In cases where it's required, make sure that all APIs are protected with appropriate code access security demands. APTCA has no effect when the assembly is a part of a Universal Windows Platform (UWP) app.
 
-**Xxxxxxx**
+**Remarks**
 
-Xxxx xxxx xx xxxxxxxxx xxxx xx xxxxxxx xxxx (X#, .XXX, xxx.).
+This test is performed only on managed code (C#, .NET, etc.).
 
-### <span id="binscope-2">
-            </span>/XxxxXXX Xxxxxxxxx Xxxxxxxx Xxxxxxxxxx
+### <span id="binscope-2"></span>/SafeSEH Exception Handling Protection
 
-**Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxx xxxxxxx:** XxxxXXXXxxxx Xxxx xxxxxx
+**Windows App Certification Kit error message:** SafeSEHCheck Test failed
 
-Xx xxxxxxxxx xxxxxxx xxxx xxxx xxx xxx xxxxxxxxxx xx xxxxxxxxxxx xxxxxxxxx, xxxx xx x xxxxxx-xx-xxxx xxxxx. Xxxxxxx xxx xxxxxxx xx xxx xxxxxxxxx xxxxxxx xx xxxxxx xx xxx xxxxx xxxx x xxxxxxxx xx xxxxxx, xx xxxxx xx xxxxxxxxxx xx x xxxxxx xxxxxxxx xxxxxxxx xx xxxx xxxxxxxxx xxxxxxxx xxxx xx xxxxxxxxx xxx xxxxx.
+An exception handler runs when the app encounters an exceptional condition, such as a divide-by-zero error. Because the address of the exception handler is stored on the stack when a function is called, it could be vulnerable to a buffer overflow attacker if some malicious software were to overwrite the stack.
 
-**Xxxx xx xx xx xxxx xxx xxxxx xxxx xxxx**
+**What to do if your app fails this test**
 
-Xxxxxx xxx /XXXXXXX xxxxxx xx xxx xxxxxx xxxxxxx xxxx xxx xxxxx xxxx xxx. Xxxx xxxxxx xx xx xx xxxxxxx xx xxx Xxxxxxx xxxxxxxxxxxxxx xx Xxxxxx Xxxxxx. Xxxxxx xxxx xxxxxx xx xxxxxxx xx xxx xxxxx xxxxxxxxxxxx xxx xxx xxxxxxxxxx xxxxxxx xx xxxx xxx.
+Enable the /SAFESEH option in the linker command when you build your app. This option is on by default in the Release configurations of Visual Studio. Verify this option is enabled in the build instructions for all executable modules in your app.
 
-**Xxxxxxx**
+**Remarks**
 
-Xxx xxxx xx xxx xxxxxxxxx xx YY-xxx xxxxxxxx xx XXX xxxxxxx xxxxxxxx xxxxxxx xxxx xxx'x xxxxx xxxxxxxxx xxxxxxx xxxxxxxxx xx xxx xxxxx.
+The test is not performed on 64-bit binaries or ARM chipset binaries because they don't store exception handler addresses on the stack.
 
-### <span id="binscope-3">
-            </span>Xxxx Xxxxxxxxx Xxxxxxxxxx
+### <span id="binscope-3"></span>Data Execution Prevention
 
-**Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxx xxxxxxx:** XXXxxxx Xxxx xxxxxx
+**Windows App Certification Kit error message:** NXCheck Test failed
 
-Xxxx xxxx xxxxxxxx xxxx xx xxx xxxxx'x xxx xxxx xxxx xx xxxxxx xx x xxxx xxxxxxx.
+This test verifies that an app doesn't run code that is stored in a data segment.
 
-**Xxxx xx xx xx xxxx xxx xxxxx xxxx xxxx**
+**What to do if your app fails this test**
 
-Xxxxxx xxx /XXXXXXXX xxxxxx xx xxx xxxxxx xxxxxxx xxxx xxx xxxxx xxxx xxx. Xxxx xxxxxx xx xx xx xxxxxxx xx xxxxxx xxxxxxxx xxxx xxxxxxx Xxxx Xxxxxxxxx Xxxxxxxxxx (XXX).
+Enable the /NXCOMPAT option in the linker command when you build your app. This option is on by default in linker versions that support Data Execution Prevention (DEP).
 
-**Xxxxxxx**
+**Remarks**
 
-Xx xxxxxxxxx xxxx xxx xxxx xxxx xxxx xx x XXX-xxxxxxx XXX xxx xxx xxx xxxxxxxx xxx xxxx xxxx xxxxxx xxxx XXX.
+We recommend that you test your apps on a DEP-capable CPU and fix any failures you find that result from DEP.
 
-### <span id="binscope-4">
-            </span>Xxxxxxx Xxxxx Xxxxxx Xxxxxxxxxxxxx
+### <span id="binscope-4"></span>Address Space Layout Randomization
 
-**Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxx xxxxxxx:** XXXxxxx Xxxx xxxxxx
+**Windows App Certification Kit error message:** DBCheck Test failed
 
-Xxxxxxx Xxxxx Xxxxxx Xxxxxxxxxxxxx (XXXX) xxxxx xxxxxxxxxx xxxxxx xxxx xxxxxxxxxxxxx xxxxxxxxx xx xxxxxx, xxxxx xxxxx xx xxxxxx xxx xxxxxxxxx xxxxxxxx xxxx xxxxxxx x xxxxxxx xx xx xxxxxx xx x xxxxxxx xxxxxxx xxxxxxx xx xxxxxxx xxxxxxxxxxx. Xxxx xxx xxx xxx xxxxxxxxxx xxxx xxxx xxx xxxx xxxx xxxxxxx XXXX.
+Address Space Layout Randomization (ASLR) loads executable images into unpredictable locations in memory, which makes it harder for malicious software that expects a program to be loaded at a certain virtual address to operate predictably. Your app and all components that your app uses must support ASLR.
 
-**Xxxx xx xx xx xxxx xxx xxxxx xxxx xxxx**
+**What to do if your app fails this test**
 
-Xxxxxx xxx /XXXXXXXXXXX xxxxxx xx xxx xxxxxx xxxxxxx xxxx xxx xxxxx xxxx xxx. Xxxxxx xxxx xxx xxxxxxx xxxx xxxx xxx xxxx xxxx xxx xxxx xxxxxx xxxxxx.
+Enable the /DYNAMICBASE option in the linker command when you build your app. Verify that all modules that your app uses also use this linker option.
 
-**Xxxxxxx**
+**Remarks**
 
-Xxxxxxxx, XXXX xxxxx'x xxxxxx xxxxxxxxxxx. Xxx xx xxxx xxxxxxxxx xxxxx xx x xxxxxx xxxxxxxxxxx xxxxxxxxxxx xx YY-xxx xxxxxxx. Xx xx xxxxxxxx xxxx xxxxxxxxxxx xxxxx xxxxxxx xx x xxxxxx xxxxxxxxx xxxxxx xxxx xxxx xxxx xxxxxx xxxxxx xx xxxx xxxxxxxxx xxxxxx xxxxxxxxx.
+Normally, ASLR doesn't affect performance. But in some scenarios there is a slight performance improvement on 32-bit systems. It is possible that performance could degrade in a highly congested system that have many images loaded in many different memory locations.
 
-Xxxx xxxx xx xxxxxxxxx xx xxxx xxxx xxxxxxx xx xxxxxxx xxxx, xxxx xx xx xxxxx X# xx .XXX Xxxxxxxxx.
+This test is performed on only apps written in managed code, such as by using C# or .NET Framework.
 
-### <span id="binscope-5">
-            </span>Xxxx/Xxxxx Xxxxxx XX Xxxxxxx
+### <span id="binscope-5"></span>Read/Write Shared PE Section
 
-**Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxx xxxxxxx:** XxxxxxXxxxxxxxXxxxx Xxxx xxxxxx.
+**Windows App Certification Kit error message:** SharedSectionsCheck Test failed.
 
-Xxxxxx xxxxx xxxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxx xx xxxxxx xxx x xxxxxxxx xxxxxx. Xxx'x xxxxx xxxx xxxx xxxxxx xxxxxxxx xxxxxxxx xxxxxx xxxxxxxxx. Xxx [**XxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) xx [**XxxXxxxXxXxxx**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) xx xxxxxx x xxxxxxxx xxxxxxx xxxxxx xxxxxx xxxxxx.
+Binary files with writable sections that are marked as shared are a security threat. Don't build apps with shared writable sections unless necessary. Use [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) or [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) to create a properly secured shared memory object.
 
-**Xxxx xx xx xx xxxx xxx xxxxx xxxx xxxx**
+**What to do if your app fails this test**
 
-Xxxxxx xxx xxxxxx xxxxxxxx xxxx xxx xxx xxx xxxxxx xxxxxx xxxxxx xxxxxxx xx xxxxxxx [**XxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) xx [**XxxXxxxXxXxxx**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) xxxx xxx xxxxxx xxxxxxxx xxxxxxxxxx xxx xxxx xxxxxxx xxxx xxx.
+Remove any shared sections from the app and create shared memory objects by calling [**CreateFileMapping**](https://msdn.microsoft.com/library/windows/desktop/Aa366537) or [**MapViewOfFile**](https://msdn.microsoft.com/library/windows/desktop/Aa366761) with the proper security attributes and then rebuild your app.
 
-**Xxxxxxx**
+**Remarks**
 
-Xxxx xxxx xx xxxxxxxxx xxxx xx xxxx xxxxxxx xx xxxxxxxxx xxxxxxxxx, xxxx xx xx xxxxx X xx X++.
+This test is performed only on apps written in unmanaged languages, such as by using C or C++.
 
-### XxxXxxxxxxxxXxxxx
+### AppContainerCheck
 
-**Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxx xxxxxxx:** XxxXxxxxxxxxXxxxx Xxxx xxxxxx.
+**Windows App Certification Kit error message:** AppContainerCheck Test failed.
 
-Xxx XxxXxxxxxxxxXxxxx xxxxxxxx xxxx xxx **xxxxxxxxxxxx** xxx xx xxx xxxxxxxx xxxxxxxxxx (XX) xxxxxx xx xx xxxxxxxxxx xxxxxx xx xxx. Xxxx xxxx xxxx xxx **xxxxxxxxxxxx** xxx xxx xx xxx .xxx xxxxx xxx xxx xxxxxxxxx XXXx xx xxxxxxx xxxxxxxx.
+The AppContainerCheck verifies that the **appcontainer** bit in the portable executable (PE) header of an executable binary is set. Apps must have the **appcontainer** bit set on all .exe files and all unmanaged DLLs to execute properly.
 
-**Xxxx xx xx xx xxxx xxx xxxxx xxxx xxxx**
+**What to do if your app fails this test**
 
-Xx x xxxxxx xxxxxxxxxx xxxx xxxxx xxx xxxx, xxxx xxxx xxxx xxx xxxx xxx xxxxxx xxxxxxxx xxx xxxxxx xx xxxxx xxx xxxx xxx xxxx xxx xxx xxx */xxxxxxxxxxxx* xxxx xx xxx xxxxxx.
+If a native executable file fails the test, make sure that you used the latest compiler and linker to build the file and that you use the */appcontainer* flag on the linker.
 
-Xx x xxxxxxx xxxxxxxxxx xxxxx xxx xxxx, xxxx xxxx xxxx xxx xxxx xxx xxxxxx xxxxxxxx xxx xxxxxx, xxxx xx Xxxxxxxxx Xxxxxx Xxxxxx, xx xxxxx xxx Xxxxxxx Xxxxx xxx.
+If a managed executable fails the test, make sure that you used the latest compiler and linker, such as Microsoft Visual Studio, to build the Windows Store app.
 
-**Xxxxxxx**
+**Remarks**
 
-Xxxx xxxx xx xxxxxxxxx xx xxx .xxx xxxxx xxx xx xxxxxxxxx XXXx.
+This test is performed on all .exe files and on unmanaged DLLs.
 
-### <span id="binscope-7">
-            </span>XxxxxxxxxxXxxxxxxXxxxx
+### <span id="binscope-7"></span>ExecutableImportsCheck
 
-**Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxx xxxxxxx:** XxxxxxxxxxXxxxxxxXxxxx Xxxx xxxxxx.
+**Windows App Certification Kit error message:** ExecutableImportsCheck Test failed.
 
-X xxxxxxxx xxxxxxxxxx (XX) xxxxx xxxxx xxxx xxxx xx xxx xxxxxx xxxxx xxx xxxx xxxxxx xx xx xxxxxxxxxx xxxx xxxxxxx. Xxxx xxx xxxxx xx xxx xxxxxxx .xxxxx xxxxxxx xxx xxx XX xxxxx xx xxxxxxx xxx */xxxxx* xxxx xx xxx Xxxxxx X++ xxxxxx xx */xxxxx:.xxxxx=.xxxx*.
+A portable executable (PE) image fails this test if its import table has been placed in an executable code section. This can occur if you enabled .rdata merging for the PE image by setting the */merge* flag of the Visual C++ linker as */merge:.rdata=.text*.
 
-**Xxxx xx xx xx xxxx xxx xxxxx xxxx xxxx**
+**What to do if your app fails this test**
 
-Xxx'x xxxxx xxx xxxxxx xxxxx xxxx xx xxxxxxxxxx xxxx xxxxxxx. Xxxx xxxx xxxx xxx */xxxxx* xxxx xx xxx Xxxxxx X++ xxxxxx xx xxx xxx xx xxxxx xxx ".xxxxx" xxxxxxx xxxx x xxxx xxxxxxx.
+Don't merge the import table into an executable code section. Make sure that the */merge* flag of the Visual C++ linker is not set to merge the ".rdata" section into a code section.
 
-**Xxxxxxx**
+**Remarks**
 
-Xxxx xxxx xx xxxxxxxxx xx xxx xxxxxx xxxx xxxxxx xxxxxx xxxxxxx xxxxxxxxxx.
+This test is performed on all binary code except purely managed assemblies.
 
-### <span id="binscope-8">
-            </span>XXXxxxx
+### <span id="binscope-8"></span>WXCheck
 
-**Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxx xxxxxxx:** XXXxxxx Xxxx xxxxxx.
+**Windows App Certification Kit error message:** WXCheck Test failed.
 
-Xxx xxxxx xxxxx xx xxxxxx xxxx x xxxxxx xxxx xxx xxxx xxx xxxxx xxxx xxx xxxxxx xx xxxxxxxx xxx xxxxxxxxxx. Xxxx xxx xxxxx xx xxx xxxxxx xxx x xxxxxxxx xxx xxxxxxxxxx xxxxxxx xx xx xxx xxxxxx’x *XxxxxxxXxxxxxxxx* xx xxxx xxxx *XXXX\-XXXX*.
+The check helps to ensure that a binary does not have any pages that are mapped as writable and executable. This can occur if the binary has a writable and executable section or if the binary’s *SectionAlignment* is less than *PAGE\-SIZE*.
 
-**Xxxx xx xx xx xxxx xxx xxxxx xxxx xxxx**
+**What to do if your app fails this test**
 
-Xxxx xxxx xxxx xxx xxxxxx xxxx xxx xxxx x xxxxxxxxx xx xxxxxxxxxx xxxxxxx xxx xxxx xxx xxxxxx'x *XxxxxxxXxxxxxxxx* xxxxx xx xx xxxxx xxxxx xx xxx *XXXX\-XXXX*.
+Make sure that the binary does not have a writeable or executable section and that the binary's *SectionAlignment* value is at least equal to its *PAGE\-SIZE*.
 
-**Xxxxxxx**
+**Remarks**
 
-Xxxx xxxx xx xxxxxxxxx xx xxx .xxx xxxxx xxx xx xxxxxx, xxxxxxxxx XXXx.
+This test is performed on all .exe files and on native, unmanaged DLLs.
 
-Xx xxxxxxxxxx xxx xxxx x xxxxxxxx xxx xxxxxxxxxx xxxxxxx xx xx xxx xxxx xxxxx xxxx Xxxx xxx Xxxxxxxx xxxxxxx (/XX). Xxxxxxxxx Xxxx xxx Xxxxxxxx xxxx xxxxx xxx xxxxxxx xxxxxxx xx xxx xx xxxxxxx.
+An executable may have a writable and executable section if it has been built with Edit and Continue enabled (/ZI). Disabling Edit and Continue will cause the invalid section to not be present.
 
-*XXXX\-XXXX* xx xxx xxxxxxx *XxxxxxxXxxxxxxxx* xxx xxxxxxxxxxx.
+*PAGE\-SIZE* is the default *SectionAlignment* for executables.
 
-### Xxxxxxx Xxxx Xxxxxxx
+### Private Code Signing
 
-Xxxxx xxx xxx xxxxxxxxx xx xxxxxxx xxxx xxxxxxx xxxxxxxx xxxxxx xxx xxx xxxxxxx.
+Tests for the existence of private code signing binaries within the app package.
 
-### Xxxxxxxxxx
+### Background
 
-Xxxxxxx xxxx xxxxxxx xxxxx xxxxxx xx xxxx xxxxxxx xx xxxx xxx xx xxxx xxx xxxxxxxxx xxxxxxxx xx xxx xxxxx xxxx xxx xxxxxxxxxxx.
+Private code signing files should be kept private as they may be used for malicious purposes in the event they are compromised.
 
-### Xxxx xxxxxxx
+### Test details
 
-Xxxxx xxx xxxxx xxxxxx xxx xxx xxxxxxx xxxx xxxx xx xxxxxxxxx xx .xxx xx.xxx xxxx xxxxx xxxxxxxx xxxx xxxxxxx xxxxxxx xxxx xxxx xxxxxxxx.
+Tests for files within the app package that have an extension of .pfx or.snk that would indicate that private signing keys were included.
 
-### Xxxxxxxxxx xxxxxxx
+### Corrective actions
 
-Xxxxxx xxx xxxxxxx xxxx xxxxxxx xxxx (x.x. .xxx xxx .xxx xxxxx) xxxx xxx xxxxxxx.
+Remove any private code signing keys (e.g. .pfx and .snk files) from the package.
 
-## Xxxxxxxxx XXX xxxx
+## Supported API test
 
-Xxxx xxx xxx xxx xxx xxx xx xxx xxx-xxxxxxxxx XXXx.
+Test the app for the use of any non-compliant APIs.
 
-### Xxxxxxxxxx
+### Background
 
-Xxxx xxxx xxx xxx XXXx xxx Xxxxxxx Xxxxx xxxx (Xxxxxxx Xxxxxxx xx xxxxxxxxx XxxYY XXXx) xx xx xxxxxxxxx xxx xxx Xxxxxxx Xxxxx. Xxxx xxxx xxxx xxxxxxxxxx xxxxxxxxxx xxxxx x xxxxxxx xxxxxx xxxxx x xxxxxxxxxx xx x xxxxxxxx xxxxxxx xx xxx xxxxxxxx xxxxxxx.
+Apps must use the APIs for Windows Store apps (Windows Runtime or supported Win32 APIs) to be certified for the Windows Store. This test also identifies situations where a managed binary takes a dependency on a function outside of the approved profile.
 
-### Xxxx xxxxxxx
+### Test details
 
--   Xxxxxxxx xxxx xxxx xxxxxx xxxxxx xxx xxx xxxxxxx xxxxx'x xxxx x xxxxxxxxxx xx x XxxYY XXX xxxx xx xxx xxxxxxxxx xxx Xxxxxxx Xxxxx xxx xxxxxxxxxxx xx xxxxxxxx xxx xxxxxx xxxxxxx xxxxx xx xxx xxxxxx.
--   Xxxxxxxx xxxx xxxx xxxxxxx xxxxxx xxxxxx xxx xxx xxxxxxx xxxxx'x xxxx x xxxxxxxxxx xx x xxxxxxxx xxxxxxx xx xxx xxxxxxxx xxxxxxx.
+-   Verifies that each binary within the app package doesn't have a dependency on a Win32 API that is not supported for Windows Store app development by checking the import address table of the binary.
+-   Verifies that each managed binary within the app package doesn't have a dependency on a function outside of the approved profile.
 
-### Xxxxxxxxxx xxxxxxx
+### Corrective actions
 
-Xxxx xxxx xxxx xxx xxx xxx xxxxxxxx xx x xxxxxxx xxxxx xxx xxx x xxxxx xxxxx.
+Make sure that the app was compiled as a release build and not a debug build.
 
-> **Xxxx**  Xxx xxxxx xxxxx xx xx xxx xxxx xxxx xxxx xxxx xxxx xx xxx xxx xxxx xxxx [XXXx xxx Xxxxxxx Xxxxx xxxx](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bg124285.aspx).
+> **Note**  The debug build of an app will fail this test even if the app uses only [APIs for Windows Store apps](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bg124285.aspx).
 
-Xxxxxx xxx xxxxx xxxxxxxx xx xxxxxxxx xxx XXX xxx xxx xxxx xxxx xx xxx xx [XXX xxx Xxxxxxx Xxxxx xxxx](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bg124285.aspx).
+Review the error messages to identify the API the app uses that is not an [API for Windows Store apps](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/bg124285.aspx).
 
-> **Xxxx**  X++ xxxx xxxx xxx xxxxx xx x xxxxx xxxxxxxxxxxxx xxxx xxxx xxxx xxxx xxxx xx xxx xxxxxxxxxxxxx xxxx xxxx XXXx xxxx xxx Xxxxxxx XXX xxx Xxxxxxx Xxxxx xxxx. Xxx, [Xxxxxxxxxxxx xx Xxxxxxx XXXx xx Xxxxxxx Xxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkID=244022) xxx xxxx xxxx.
+> **Note**  C++ apps that are built in a debug configuration will fail this test even if the configuration only uses APIs from the Windows SDK for Windows Store apps. See, [Alternatives to Windows APIs in Windows Store apps](http://go.microsoft.com/fwlink/p/?LinkID=244022) for more info.
 
-## Xxxxxxxxxxx xxxxx
+## Performance tests
 
-Xxx xxx xxxx xxxxxxx xxxxxxx xx xxxx xxxxxxxxxxx xxx xxxxxx xxxxxxxx xx xxxxx xx xxxxxxx x xxxx xxx xxxxx xxxx xxxxxxxxxx.
+The app must respond quickly to user interaction and system commands in order to present a fast and fluid user experience.
 
-Xxx xxxxxxxxxxxxxxx xx xxx xxxxxxxx xx xxxxx xxx xxxx xx xxxxxxxxx xxx xxxxxxxxx xxx xxxx xxxxxxx. Xxx xxxxxxxxxxx xxxx xxxxxxxxxx xxx xxx xxxxxxxxxxxxx xxx xxx xxxx xxxx xxx-xxxxx xxxxxxxxx xxxx xxx xxxxxxxx’x xxxxxxxxxxx xx x xxxx xxx xxxxx xxxxxxxxxx. Xx xxxxxxxxx xxxx xxx’x xxxxxxxxxxx, xx xxxxxxxxx xxxx xxx xxxx xx x xxx-xxxxx xxxxxxxx, xxxx xx xx Xxxxx Xxxx xxxxxxxxx-xxxxx xxxxxxxx xxxx x xxxxxx xxxxxxxxxx xx YYYYxYYY (xx xxxxxx) xxx x xxxxxxxxxx xxxx xxxxx (xx xxxxxxx xx x xxxxx-xxxxx xxxx xxxxx).
+The characteristics of the computer on which the test is performed can influence the test results. The performance test thresholds for app certification are set such that low-power computers meet the customer’s expectation of a fast and fluid experience. To determine your app’s performance, we recommend that you test on a low-power computer, such as an Intel Atom processor-based computer with a screen resolution of 1366x768 (or higher) and a rotational hard drive (as opposed to a solid-state hard drive).
 
-### Xxxxxxxx xxxxxxxxxx
+### Bytecode generation
 
-Xx x xxxxxxxxxxx xxxxxxxxxxxx xx xxxxxxxxxx XxxxXxxxxx xxxxxxxxx xxxx, XxxxXxxxxx xxxxx xxxxxx xx xxx .xx xxxxxxxxx xxxxxxxx xxxxxxxx xxxx xxx xxx xx xxxxxxxx. Xxxx xxxxxxxxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxx xxxxxxxxx xxxxx xxx XxxxXxxxxx xxxxxxxxxx.
+As a performance optimization to accelerate JavaScript execution time, JavaScript files ending in the .js extension generate bytecode when the app is deployed. This significantly improves startup and ongoing execution times for JavaScript operations.
 
-### Xxxx Xxxxxxx
+### Test Details
 
-Xxxxxx xxx xxx xxxxxxxxxx xx xxxxxx xxxx xxx .xx xxxxx xxxx xxxx xxxxxxxxx xx xxxxxxxx.
+Checks the app deployment to verify that all .js files have been converted to bytecode.
 
-### Xxxxxxxxxx Xxxxxx
+### Corrective Action
 
-Xx xxxx xxxx xxxxx, xxxxxxxx xxx xxxxxxxxx xxxx xxxxxxxxxx xxx xxxxx:
+If this test fails, consider the following when addressing the issue:
 
--   Xxxxxx xxxx xxxxx xxxxxxx xx xxxxxxx.
--   Xxxxxx xxxx xxx XxxxXxxxxx xxxxx xxx xxxxxxxxxxxxx xxxxx.
--   Xxxxxxx xxxx xxx xxxxxxxx xxxxxxxx xx xxx xxx xxx xxxxxxxxxxx.
--   Xxxxxxx xxxxxxxxxx xxxxx xxxx xxx xxx xxxxxxx.
+-   Verify that event logging is enabled.
+-   Verify that all JavaScript files are syntactically valid.
+-   Confirm that all previous versions of the app are uninstalled.
+-   Exclude identified files from the app package.
 
-### Xxxxxxxxx xxxxxxx xxxxxxxxxx
+### Optimized binding references
 
-Xxxx xxxxx xxxxxxxx, XxxXX.Xxxxxxx.xxxxxxxxXxxxxxxXxxxxxxxxx xxxxxx xx xxx xx xxxx xx xxxxx xx xxxxxxxx xxxxxx xxxxx.
+When using bindings, WinJS.Binding.optimizeBindingReferences should be set to true in order to optimize memory usage.
 
-### Xxxx Xxxxxxx
+### Test Details
 
-Xxxxxx xxx xxxxx xx XxxXX.Xxxxxxx.xxxxxxxxXxxxxxxXxxxxxxxxx.
+Verify the value of WinJS.Binding.optimizeBindingReferences.
 
-### Xxxxxxxxxx Xxxxxx
+### Corrective Action
 
-Xxx XxxXX.Xxxxxxx.xxxxxxxxXxxxxxxXxxxxxxxxx xx **xxxx** xx xxx xxx XxxxXxxxxx.
+Set WinJS.Binding.optimizeBindingReferences to **true** in the app JavaScript.
 
-## Xxx xxxxxxxx xxxxxxxxx xxxx
+## App manifest resources test
 
-### Xxx xxxxxxxxx xxxxxxxxxx
+### App resources validation
 
-Xxx xxx xxxxx xxx xxxxxxx xx xxx xxxxxxx xx xxxxxx xxxxxxxx xx xxxx xxx’x xxxxxxxx xxx xxxxxxxxx. Xx xxx xxx xxxx xxxxxxx xxxx xxxxx xxxxxx, xxxx xxx’x xxxx xx xxxxx xxxxxx xxxx xx xxxx xxx xxxxx xxx xxxxxxx xxxxxxxxx.
+The app might not install if the strings or images declared in your app’s manifest are incorrect. If the app does install with these errors, your app’s logo or other images used by your app might not display correctly.
 
-### Xxxx Xxxxxxx
+### Test Details
 
-Xxxxxxxx xxx xxxxxxxxx xxxxxxx xx xxx xxx xxxxxxxx xx xxxx xxxx xxxx xxx xxxxxxx xxx xxxxx.
+Inspects the resources defined in the app manifest to make sure they are present and valid.
 
-### Xxxxxxxxxx Xxxxxx
+### Corrective Action
 
-Xxx xxx xxxxxxxxx xxxxx xx xxxxxxxx.
+Use the following table as guidance.
 
 <table>
-<tr><th>Xxxxx xxxxxxx</th><th>Xxxxxxxx</th></tr>
+<tr><th>Error message</th><th>Comments</th></tr>
 <tr><td>
-<p>Xxx xxxxx {xxxxx xxxx} xxxxxxx xxxx Xxxxx xxx XxxxxxXxxx xxxxxxxxxx; xxx xxx xxxxxx xxxx xxx xxxxxxxxx xx x xxxx.</p>
+<p>The image {image name} defines both Scale and TargetSize qualifiers; you can define only one qualifier at a time.</p>
 </td><td>
-<p>Xxx xxx xxxxxxxxx xxxxxx xxx xxxxxxxxx xxxxxxxxxxx.</p>
-<p>Xx xxx xxxxxx xxxxxxx, {xxxxx xxxx} xxxxxxxx xxx xxxx xx xxx xxxxx xxxx xxx xxxxx.</p>
-<p> Xxxx xxxx xxxx xxxx xxxxx xxxxxxx xxxxxx Xxxxx xx XxxxxxXxxx xx xxx xxxxxxxxx.</p>
+<p>You can customize images for different resolutions.</p>
+<p>In the actual message, {image name} contains the name of the image with the error.</p>
+<p> Make sure that each image defines either Scale or TargetSize as the qualifier.</p>
 </td></tr>
 <tr><td>
-<p>Xxx xxxxx {xxxxx xxxx} xxxxxx xxx xxxx xxxxxxxxxxxx.</p>
+<p>The image {image name} failed the size restrictions.</p>
 </td><td>
-<p>Xxxxxx xxxx xxx xxx xxx xxxxxx xxxxxx xx xxx xxxxxx xxxx xxxxxxxxxxxx.</p>
-<p>Xx xxx xxxxxx xxxxxxx, {xxxxx xxxx} xxxxxxxx xxx xxxx xx xxx xxxxx xxxx xxx xxxxx.</p>
+<p>Ensure that all the app images adhere to the proper size restrictions.</p>
+<p>In the actual message, {image name} contains the name of the image with the error.</p>
 </td></tr>
 <tr><td>
-<p>Xxx xxxxx {xxxxx xxxx} xx xxxxxxx xxxx xxx xxxxxxx.</p>
+<p>The image {image name} is missing from the package.</p>
 </td><td>
-<p>X xxxxxxxx xxxxx xx xxxxxxx.</p>
-<p>Xx xxx xxxxxx xxxxxxx, {xxxxx xxxx} xxxxxxxx xxx xxxx xx xxx xxxxx xxxx xx xxxxxxx.</p>
+<p>A required image is missing.</p>
+<p>In the actual message, {image name} contains the name of the image that is missing.</p>
 </td></tr>
 <tr><td>
-<p>Xxx xxxxx {xxxxx xxxx} xx xxx x xxxxx xxxxx xxxx.</p>
+<p>The image {image name} is not a valid image file.</p>
 </td><td>
-<p>Xxxxxx xxxx xxx xxx xxx xxxxxx xxxxxx xx xxx xxxxxx xxxx xxxxxx xxxx xxxxxxxxxxxx.</p>
-<p>Xx xxx xxxxxx xxxxxxx, {xxxxx xxxx} xxxxxxxx xxx xxxx xx xxx xxxxx xxxx xx xxx xxxxx.</p>
+<p>Ensure that all the app images adhere to the proper file format type restrictions.</p>
+<p>In the actual message, {image name} contains the name of the image that is not valid.</p>
 </td></tr>
 <tr><td>
-<p>Xxx xxxxx "XxxxxXxxx" xxx xx XXXX xxxxx {xxxxx} xx xxxxxxxx (x, x) xxxx xx xxx xxxxx. Xxx xxxxx xxxx xx xxxxx (##XXXXXX) xx xxxxxxxxxxx (YY######)</p>
+<p>The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not valid. The pixel must be white (##FFFFFF) or transparent (00######)</p>
 </td><td>
-<p>Xxx xxxxx xxxx xx xx xxxxx xxxx xxxxxxx xxxx xx xxx xxxxx xxxxxxxxxxxx xx xxxxxxxx xxx xxx xx xxx xxxx xxxxxx. Xxxx xxxxx xxxx xx xxxxxxxxxxxxx (xx xxx xxxxxxx xxxx xxxxx xxx xxxxxxxxxxx xxxxxx).</p>
-<p>Xx xxx xxxxxx xxxxxxx, {xxxxx} xxxxxxxx xxx xxxxx xxxxx xx xxx xxxxx xxxx xx xxx xxxxx.</p>
+<p>The badge logo is an image that appears next to the badge notification to identify the app on the lock screen. This image must be monochromatic (it can contain only white and transparent pixels).</p>
+<p>In the actual message, {value} contains the color value in the image that is not valid.</p>
 </td></tr>
 <tr><td>
-<p>Xxx xxxxx "XxxxxXxxx" xxx xx XXXX xxxxx {xxxxx} xx xxxxxxxx (x, x) xxxx xx xxx xxxxx xxx x xxxx-xxxxxxxx xxxxx xxxxx. Xxx xxxxx xxxx xx (##YXYXYX) xx xxxxxx, xx xxxxxxxxxxx (YY######).</p>
+<p>The image "BadgeLogo" has an ABGR value {value} at position (x, y) that is not valid for a high-contrast white image. The pixel must be (##2A2A2A) or darker, or transparent (00######).</p>
 </td><td>
-<p>Xxx xxxxx xxxx xx xx xxxxx xxxx xxxxxxx xxxx xx xxx xxxxx xxxxxxxxxxxx xx xxxxxxxx xxx xxx xx xxx xxxx xxxxxx.   Xxxxxxx xxx xxxxx xxxx  xxxxxxx xx x xxxxx xxxxxxxxxx xxxx xx xxxx-xxxxxxxx xxxxx, xx xxxx xx x xxxx xxxxxxx xx xxx xxxxxx xxxxx xxxx. Xx xxxx-xxxxxxxx xxxxx, xxx xxxxx xxxx xxx xxxx xxxxxxx xxxxxx xxxx xxx xxxxxx xxxx (##YXYXYX) xx xxxxxxxxxxx.</p>
-<p>Xx xxx xxxxxx xxxxxxx, {xxxxx} xxxxxxxx xxx xxxxx xxxxx xx xxx xxxxx xxxx xx xxx xxxxx.</p>
+<p>The badge logo is an image that appears next to the badge notification to identify the app on the lock screen.   Because the badge logo  appears on a white background when in high-contrast white, it must be a dark version of the normal badge logo. In high-contrast white, the badge logo can only contain pixels that are darker than (##2A2A2A) or transparent.</p>
+<p>In the actual message, {value} contains the color value in the image that is not valid.</p>
 </td></tr>
 <tr><td>
-<p>Xxx xxxxx xxxx xxxxxx xx xxxxx xxx xxxxxxx xxxxxxx x XxxxxxXxxx xxxxxxxxx. Xx xxxx xxxxxx x Xxxxx xxxxxxxxx xx xxxxx Xxxxx xxx XxxxxxXxxx xxxxxxxxxxx, xxxxx xxxxxxxx xx Xxxxx-YYY.</p>
+<p>The image must define at least one variant without a TargetSize qualifier. It must define a Scale qualifier or leave Scale and TargetSize unspecified, which defaults to Scale-100.</p>
 </td><td>
-<p>Xxx xxxx xxxx, xxx <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn958435.aspx">Xxxxxxxxxx xxxxxx YYY xxx XXX xxxx</a> xxx <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh465241.aspx">Xxxxxxxxxx xxx xxx xxxxxxxxx</a>.</p>
+<p>For more info, see <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn958435.aspx">Responsive design 101 for UWP apps</a> and <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh465241.aspx">Guidelines for app resources</a>.</p>
 </td></tr>
 <tr><td>
-<p>Xxx xxxxxxx xx xxxxxxx x "xxxxxxxxx.xxx" xxxx.</p>
+<p>The package is missing a "resources.pri" file.</p>
 </td><td>
-<p>Xx xxx xxxx xxxxxxxxxxx xxxxxxx xx xxxx xxx xxxxxxxx, xxxx xxxx xxxx xxxx xxx'x xxxxxxx xxxxxxxx x xxxxx xxxxxxxxx.xxx xxxx.</p>
+<p>If you have localizable content in your app manifest, make sure that your app's package includes a valid resources.pri file.</p>
 </td></tr>
 <tr><td>
-<p>Xxx "xxxxxxxxx.xxx" xxxx xxxx xxxxxxx x xxxxxxxx xxx xxxx x xxxx xxxx xxxxxxx xxx xxxxxxx xxxx  {xxxxxxx xxxx xxxx}</p>
+<p>The "resources.pri" file must contain a resource map with a name that matches the package name  {package full name}</p>
 </td><td>
-<p>Xxx xxx xxx xxxx xxxxx xx xxx xxxxxxxx xxxxxxx xxx  xxx xxxx xx xxx xxxxxxxx xxx xx xxxxxxxxx.xxx xx xxxxxx xxxxxxx xxx xxxxxxx xxxx xx xxx xxxxxxxx.</p>
-<p>Xx xxx xxxxxx xxxxxxx, {xxxxxxx xxxx xxxx} xxxxxxxx xxx xxxxxxx xxxx xxxx xxxxxxxxx.xxx xxxx xxxxxxx.</p>
-<p>Xx xxx xxxx, xxx xxxx xx xxxxxxx xxxxxxxxx.xxx xxx xxx xxxxxxx xxx xx xx xxxx xx  xx xxxxxxxxxx xxx xxx'x xxxxxxx.</p>
+<p>You can get this error if the manifest changed and  the name of the resource map in resources.pri no longer matches the package name in the manifest.</p>
+<p>In the actual message, {package full name} contains the package name that resources.pri must contain.</p>
+<p>To fix this, you need to rebuild resources.pri and the easiest way to do that is  by rebuilding the app's package.</p>
 </td></tr>
 <tr><td>
-<p>Xxx "xxxxxxxxx.xxx" xxxx xxxx xxx xxxx XxxxXxxxx xxxxxxx.</p>
+<p>The "resources.pri" file must not have AutoMerge enabled.</p>
 </td><td>
-<p>XxxxXXX.xxx xxxxxxxx xx xxxxxx xxxxxx <strong>XxxxXxxxx</strong>. Xxx xxxxxxx xxxxx xx <strong>XxxxXxxxx</strong> xx <strong>xxx</strong>. Xxxx xxxxxxx, <strong>XxxxXxxxx</strong> xxxxxx xx xxx'x  xxxxxxxx xxxx xxxxxxxxx xxxx x xxxxxx xxxxxxxxx.xxx xx xxxxxxx. Xx xxx'x xxxxxxxxx xxxx xxx xxxx xxxx xxx xxxxxx xx xxxxxxxxxx xxxxxxx  xxx Xxxxxxx Xxxxx. Xxx xxxxxxxxx.xxx xx xx xxx xxxx xx xxxxxxxxxxx xxxxxxx xxx  Xxxxxxx Xxxxx xxxx xx xx  xxx xxxx xx xxx xxx'x xxxxxxx xxx xxxxxxx xxx xxx xxxxxxxx xxxxxxxxxx xxxx xxx xxx xxxxxxxx.</p>
+<p>MakePRI.exe supports an option called <strong>AutoMerge</strong>. The default value of <strong>AutoMerge</strong> is <strong>off</strong>. When enabled, <strong>AutoMerge</strong> merges an app's  language pack resources into a single resources.pri at runtime. We don't recommend this for apps that you intend to distribute through  the Windows Store. The resources.pri of an app that is distributed through the  Windows Store must be in  the root of the app's package and contain all the language references that the app supports.</p>
 </td></tr>
 <tr><td>
-<p>Xxx xxxxxx {xxxxxx} xxxxxx xxx xxx xxxxxx xxxxxxxxxxx xx {xxxxxx} xxxxxxxxxx.</p>
+<p>The string {string} failed the max length restriction of {number} characters.</p>
 </td><td>
-<p>Xxxxx xx xxx <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/mt148525.aspx">Xxx xxxxxxx xxxxxxxxxxxx</a>.</p>
-<p>Xx xxx xxxxxx xxxxxxx, {xxxxxx} xx xxxxxxxx xx xxx xxxxxx xxxx xxx xxxxx xxx {xxxxxx} xxxxxxxx xxx xxxxxxx xxxxxx.</p>
+<p>Refer to the <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/mt148525.aspx">App package requirements</a>.</p>
+<p>In the actual message, {string} is replaced by the string with the error and {number} contains the maximum length.</p>
 </td></tr>
 <tr><td>
-<p>Xxx xxxxxx {xxxxxx} xxxx xxx xxxx xxxxxxx/xxxxxxxx xxxxxxxxxx.</p>
+<p>The string {string} must not have leading/trailing whitespace.</p>
 </td><td>
-<p>Xxx xxxxxx xxx xxx xxxxxxxx xx xxx xxx xxxxxxxx xxx'x xxxxx xxxxxxx xx xxxxxxxx xxxxx xxxxx xxxxxxxxxx.</p>
-<p>Xx xxx xxxxxx xxxxxxx, {xxxxxx} xx xxxxxxxx xx xxx xxxxxx xxxx xxx xxxxx.</p>
-<p>Xxxx xxxx xxxx xxxx xx xxx xxxxxxxxx xxxxxx xx xxx xxxxxxxx xxxxxx xx xxxxxxxxx.xxx xxxx xxxxxxx xx xxxxxxxx xxxxx xxxxx xxxxxxxxxx.</p>
+<p>The schema for the elements in the app manifest don't allow leading or trailing white space characters.</p>
+<p>In the actual message, {string} is replaced by the string with the error.</p>
+<p>Make sure that none of the localized values of the manifest fields in resources.pri have leading or trailing white space characters.</p>
 </td></tr>
 <tr><td>
-<p>Xxx xxxxxx xxxx xx xxx-xxxxx (xxxxxxx xxxx xxxx xx xxxxxx)</p>
+<p>The string must be non-empty (greater than zero in length)</p>
 </td><td>
-<p>Xxx xxxx xxxx, xxx <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/mt148525.aspx">Xxx xxxxxxx xxxxxxxxxxxx</a>.</p>
+<p>For more info, see <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/mt148525.aspx">App package requirements</a>.</p>
 </td></tr>
 <tr><td>
-<p>Xxxxx xx xx xxxxxxx xxxxxxxx xxxxxxxxx xx xxx "xxxxxxxxx.xxx" xxxx.</p>
+<p>There is no default resource specified in the "resources.pri" file.</p>
 </td><td>
-<p>Xxx xxxx xxxx, xxx <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh465241.aspx">Xxxxxxxxxx xxx xxx xxxxxxxxx</a>.</p>
-<p>Xx xxx xxxxxxx xxxxx xxxxxxxxxxxxx,  Xxxxxx Xxxxxx xxxx xxxxxxxx xxxxx-YYY xxxxx xxxxxxxxx xx xxx xxx xxxxxxx xxxx xxxxxxxxxx xxxxxxx, xxxxxxx xxxxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx. Xxxx xxxx  xxx xxxxxx xxxxxxx xxxxx-YYY xxxxx xxxxxxxxx xx xxxxxxxxx xxxx xxxxxxx xx xxxxxxx xxx xxxxxxxxx xxx xxxx.</p>
+<p>For more info, see <a href="https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh465241.aspx">Guidelines for app resources</a>.</p>
+<p>In the default build configuration,  Visual Studio only includes scale-200 image resources in the app package when generating bundles, putting other resources in the resource package. Make sure  you either include scale-200 image resources or configure your project to include the resources you have.</p>
 </td></tr>
 <tr><td>
-<p>Xxxxx xx xx xxxxxxxx xxxxx xxxxxxxxx xx xxx "xxxxxxxxx.xxx" xxxx.</p>
+<p>There is no resource value specified in the "resources.pri" file.</p>
 </td><td>
-<p>Xxxx xxxx xxxx xxx xxx xxxxxxxx xxx xxxxx xxxxxxxxx xxxxxxx xx xxxxxxxxx.xxx.</p>
+<p>Make sure that the app manifest has valid resources defined in resources.pri.</p>
 </td></tr>
 <tr><td>
-<p>Xxx xxxxx xxxx {xxxxxxxx} xxxx xx xxxxxxx xxxx YYYYYY xxxxx.\*\*</p>
+<p>The image file {filename} must be smaller than 204800 bytes.\*\*</p>
 </td><td>
-<p>Xxxxxx xxx xxxx xx xxx xxxxxxxxx xxxxxx.</p>
+<p>Reduce the size of the indicated images.</p>
 </td></tr>
 <tr><td>
-<p>Xxx {xxxxxxxx} xxxx xxxx xxx xxxxxxx x xxxxxxx xxx xxxxxxx.\*\*</p>
+<p>The {filename} file must not contain a reverse map section.\*\*</p>
 </td><td>
-<p>Xxxxx xxx xxxxxxx xxx xx xxxxxxxxx xxxxxx Xxxxxx Xxxxxx 'XY xxxxxxxxx' xxxx xxxxxxx xxxx xxxxxxx.xxx, xx xxx xx xxxxxxx xx xxxxxxx xxxxxxx.xxx xxxxxxx xxx /x xxxxxxxxx xxxx xxxxxxxxxx x xxx xxxx.</p>
+<p>While the reverse map is generated during Visual Studio 'F5 debugging' when calling into makepri.exe, it can be removed by running makepri.exe without the /m parameter when generating a pri file.</p>
 </td></tr>
 <tr><td colspan="2">
-<p>\*\* Xxxxxxxxx xxxx x xxxx xxx xxxxx xx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx Y.Y xxx Xxxxxxx Y.Y xxx xx xxxx xxxxxxxxxx xxxx xxxxx xxx xxxx xxxxxxx xx xxx xxx xx xxxxx.</p>
+<p>\*\* Indicates that a test was added in the Windows App Certification Kit 3.3 for Windows 8.1 and is only applicable when using the that version of the kit or later.</p>
 </td></tr>
 </table>
 
@@ -477,201 +470,205 @@ Xxx xxx xxxxxxxxx xxxxx xx xxxxxxxx.
 
  
 
-### Xxxxxxxx xxxxxxxxxx
+### Branding validation
 
-Xxxxxxx Xxxxx xxxx xxx xxxxxxxx xx xx xxxxxxxx xxx xxxxx xxxxxxxxxx. Xxxx xxxxx xxx xxxxxxx xxxxxx (xxxx xxxxxxxxx xx XXX xxxxxxx) xxxxxxx x xxxx xxxx xxxxxxxxxx xxx xxxxxx xx xxxxxx xxxxxxxxxx xx xxx xxxxx xxxxxxx.
+Windows Store apps are expected to be complete and fully functional. Apps using the default images (from templates or SDK samples) present a poor user experience and cannot be easily identified in the store catalog.
 
-### Xxxx Xxxxxxx
+### Test Details
 
-Xxx xxxx xxxx xxxxxxxx xx xxx xxxxxx xxxx xx xxx xxx xxx xxx xxxxxxx xxxxxx xxxxxx xxxx XXX xxxxxxx xx xxxx Xxxxxx Xxxxxx.
+The test will validate if the images used by the app are not default images either from SDK samples or from Visual Studio.
 
-### Xxxxxxxxxx xxxxxxx
+### Corrective actions
 
-Xxxxxxx xxxxxxx xxxxxx xxxx xxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxxxxxx xx xxxx xxx.
+Replace default images with something more distinct and representative of your app.
 
-## Xxxxx xxxxxxxxxxxxx xxxx
+## Debug configuration test
 
-Xxxx xxx xxx xx xxxx xxxx xx xx xxx x xxxxx xxxxx.
+Test the app to make sure it is not a debug build.
 
-### Xxxxxxxxxx
+### Background
 
-Xx xx xxxxxxxxx xxx xxx Xxxxxxx Xxxxx, xxxx xxxx xxx xx xxxxxxxx xxx xxxxx xxx xxxx xxxx xxx xxxxxxxxx xxxxx xxxxxxxx xx xx xxxxxxxxxx xxxx. Xx xxxxxxxx, xxx xxxx xxxxx xxxx xxxx xx xxxxxxxxx xxx xxxx xxx xx xxxx xxxx xxxx.
+To be certified for the Windows Store, apps must not be compiled for debug and they must not reference debug versions of an executable file. In addition, you must build your code as optimized for your app to pass this test.
 
-### Xxxx xxxxxxx
+### Test details
 
-Xxxx xxx xxx xx xxxx xxxx xx xx xxx x xxxxx xxxxx xxx xx xxx xxxxxx xx xxx xxxxx xxxxxxxxxx.
+Test the app to make sure it is not a debug build and is not linked to any debug frameworks.
 
-### Xxxxxxxxxx xxxxxxx
+### Corrective actions
 
--   Xxxxx xxx xxx xx x xxxxxxx xxxxx xxxxxx xxx xxxxxx xx xx xxx Xxxxxxx Xxxxx.
--   Xxxx xxxx xxxx xxx xxxx xxx xxxxxxx xxxxxxx xx .XXX xxxxxxxxx xxxxxxxxx.
--   Xxxx xxxx xxx xxx xxx'x xxxxxxx xx xxxxx xxxxxxxx xx x xxxxxxxxx xxx xxxx xx xx xxxxxxxx xxxx x xxxxxxx xxxxxxx. Xx xxxx xxx xxxxxxxx .XXX xxxxxxxxxx, xxxx xxxx xxxx xxx xxxx xxxxxxxxx xxx xxxxxxx xxxxxxx xx xxx .XXX xxxxxxxxx.
+-   Build the app as a release build before you submit it to the Windows Store.
+-   Make sure that you have the correct version of .NET framework installed.
+-   Make sure the app isn't linking to debug versions of a framework and that it is building with a release version. If this app contains .NET components, make sure that you have installed the correct version of the .NET framework.
 
-## Xxxx xxxxxxxx xxxx
+## File encoding test
 
-### XXX-Y xxxx xxxxxxxx
+### UTF-8 file encoding
 
-### Xxxxxxxxxx
+### Background
 
-XXXX, XXX, xxx XxxxXxxxxx xxxxx xxxx xx xxxxxxx xx XXX-Y xxxx xxxx x xxxxxxxxxxxxx xxxx-xxxxx xxxx (XXX) xx xxxxxxx xxxx xxxxxxxx xxxxxxx xxx xxxxx xxxxxxx xxxxxxx xxxxx xxxxxxxxxx.
+HTML, CSS, and JavaScript files must be encoded in UTF-8 form with a corresponding byte-order mark (BOM) to benefit from bytecode caching and avoid certain runtime error conditions.
 
-### Xxxx xxxxxxx
+### Test details
 
-Xxxx xxx xxxxxxxx xx xxx xxxxxxxx xx xxxx xxxx xxxx xxxx xxx xxx xxxxxxx xxxx xxxxxxxx.
+Test the contents of app packages to make sure that they use the correct file encoding.
 
-### Xxxxxxxxxx Xxxxxx
+### Corrective Action
 
-Xxxx xxx xxxxxxxx xxxx xxx xxxxxx **Xxxx Xx** xxxx xxx **Xxxx** xxxx xx Xxxxxx Xxxxxx. Xxxxxx xxx xxxx-xxxx xxxxxxx xxxx xx xxx **Xxxx** xxxxxx xxx xxxxxx **Xxxx xxxx Xxxxxxxx**. Xxxx xxx **Xxxxxxxx** xxxx xxxxxxx xxxxxx, xxxxxx xxx Xxxxxxx (XXX-Y xxxx xxxxxxxxx) xxxxxx xxx xxxxx **XX**.
+Open the affected file and select **Save As** from the **File** menu in Visual Studio. Select the drop-down control next to the **Save** button and select **Save with Encoding**. From the **Advanced** save options dialog, choose the Unicode (UTF-8 with signature) option and click **OK**.
 
-## XxxxxxYX xxxxxxx xxxxx xxxx
+## Direct3D feature level test
 
-### XxxxxxYX xxxxxxx xxxxx xxxxxxx
+### Direct3D feature level support
 
-Xxxxx Xxxxxxxxx XxxxxxYX xxxx xx xxxxxx xxxx xxxx xxx'x xxxxx xx xxxxxxx xxxx xxxxx xxxxxxxx xxxxxxxx.
+Tests Microsoft Direct3D apps to ensure that they won't crash on devices with older graphics hardware.
 
-### Xxxxxxxxxx
+### Background
 
-Xxxxxxx Xxxxx xxxxxxxx xxx xxxxxxxxxxxx xxxxx XxxxxxYX xx xxxxxx xxxxxxxx xx xxxx xxxxxxxxxx xx xxxxxxx xxxxx Y\-Y xxxxxxxx xxxxx.
+Windows Store requires all applications using Direct3D to render properly or fail gracefully on feature level 9\-1 graphics cards.
 
-Xxxxxxx xxxxx xxx xxxxxx xxx xxxxxxxx xxxxxxxx xx xxxxx xxxxxx xxxxx xxx xxx xx xxxxxxxxx, xx xxx xxxxxx x xxxxxxx xxxxxxx xxxxx xxxxxx xxxx Y\-Y, xxxx xxx xxxx xxxxxx xx xxxxxx xxxxxxx xx xxx xxx xxxxxxx xxxxxxxx xxxxx xxx xxxxxxx xxxxxxxxxxxx. Xx xxx xxxxxxx xxxxxxxxxxxx xxx xxx xxx, xxx xxx xxxx xxxxxxx x xxxxxxx xx xxx xxxx xxxxxxxxx xxx XxxxxxYX xxxxxxxxxxxx. Xxxx, xx xx xxx xx xxxxxxxxxx xx x xxxxxx xxxx xxxxx xx xx xxx xxxxxxxxxx, xx xxxxxx xxxxxx xxxx xx xxxxxx xxx xxxxxxx x xxxxxxx xx xxx xxxxxxxx xxxxxxxxx xxx xxxxxxxxxxxx.
+Because users can change the graphics hardware in their device after the app is installed, if you choose a minimum feature level higher than 9\-1, your app must detect at launch whether or not the current hardware meets the minimum requirements. If the minimum requirements are not met, the app must display a message to the user detailing the Direct3D requirements. Also, if an app is downloaded on a device with which it is not compatible, it should detect that at launch and display a message to the customer detailing the requirements.
 
-### Xxxx Xxxxxxx
+### Test Details
 
-Xxx xxxx xxxx xxxxxxxx xx xxx xxxx xxxxxx xxxxxxxxxx xx xxxxxxx xxxxx Y\-Y.
+The test will validate if the apps render accurately on feature level 9\-1.
 
-### Xxxxxxxxxx Xxxxxx
+### Corrective Action
 
-Xxxxxx xxxx xxxx xxx xxxxxxx xxxxxxxxx xx XxxxxxYX xxxxxxx xxxxx Y\-Y, xxxx xx xxx xxxxxx xx xx xxx xx x xxxxxx xxxxxxx xxxxx. Xxx [Xxxxxxxxxx xxx xxxxxxxxx XxxxxxYX xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=253575) xxx xxxx xxxx.
+Ensure that your app renders correctly on Direct3D feature level 9\-1, even if you expect it to run at a higher feature level. See [Developing for different Direct3D feature levels](http://go.microsoft.com/fwlink/p/?LinkID=253575) for more info.
 
-### XxxxxxYX Xxxx xxxxx xxxxxxx
+### Direct3D Trim after suspend
 
-> **Xxxx**  Xxxx xxxx xxxx xxxxxxx xx Xxxxxxx Xxxxx xxxx xxxxxxxxx xxx Xxxxxxx Y.Y xxx xxxxx.
+> **Note**  This test only applies to Windows Store apps developed for Windows 8.1 and later.
 
-### Xxxxxxxxxx
+### Background
 
-Xx xxx xxx xxxx xxx xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) xx xxx XxxxxxYX xxxxxx, xxx xxx xxxx xxx xxxxxxx xxxxxx xxxxxxxxx xxx xxx xxxxxxx YX xxxx. Xxxx xxxxxxxxx xxx xxxx xx xxxx xxxxx xxxxxxxxxx xxx xx xxxxxx xxxxxx xxxxxxxx.
+If the app does not call [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) on its Direct3D device, the app will not release memory allocated for its earlier 3D work. This increases the risk of apps being terminated due to system memory pressure.
 
-### Xxxx Xxxxxxx
+### Test Details
 
-Xxxxxx xxxx xxx xxxxxxxxxx xxxx xYx xxxxxxxxxxxx xxx xxxxxxx xxxx xxxx xxx xxxxxxx x xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) XXX xxxx xxxxx Xxxxxxx xxxxxxxx.
+Checks apps for compliance with d3d requirements and ensures that apps are calling a new [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API upon their Suspend callback.
 
-### Xxxxxxxxxx Xxxxxx
+### Corrective Action
 
-Xxx xxx xxxxxx xxxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) XXX xx xxx [**XXXXXXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/Dn280345) xxxxxxxxx xxxxxxx xx xx xxxxx xx xx xxxxxxxxx.
+The app should call the [**Trim**](https://msdn.microsoft.com/library/windows/desktop/Dn280346) API on its [**IDXGIDevice3**](https://msdn.microsoft.com/library/windows/desktop/Dn280345) interface anytime it is about to be suspended.
 
-## Xxx Xxxxxxxxxxxx xxxx
+## App Capabilities test
 
-### Xxxxxxx xxx xxxxxxxxxxxx
+### Special use capabilities
 
-### Xxxxxxxxxx
+### Background
 
-Xxxxxxx xxx xxxxxxxxxxxx xxx xxxxxxxx xxx xxxx xxxxxxxx xxxxxxxxx. Xxxx xxxxxxx xxxxxxxx xxx xxxxxxx xx xxx xxxxx xxxxxxxxxxxx.
+Special use capabilities are intended for very specific scenarios. Only company accounts are allowed to use these capabilities.
 
-### Xxxx Xxxxxxx
+### Test Details
 
-Xxxxxxxx xx xxx xxx xx xxxxxxxxx xxx xx xxx xxxxx xxxxxxxxxxxx:
+Validate if the app is declaring any of the below capabilities:
 
--   XxxxxxxxxxXxxxxxxxxxxxxx
--   XxxxxxXxxxXxxxxxxxxxxx
--   XxxxxxxxxXxxxxxx
+-   EnterpriseAuthentication
+-   SharedUserCertificates
+-   DocumentsLibrary
 
-Xx xxx xx xxxxx xxxxxxxxxxxx xxx xxxxxxxx, xxx xxxx xxxx xxxxxxx x xxxxxxx xx xxx xxxx.
+If any of these capabilities are declared, the test will display a warning to the user.
 
-### Xxxxxxxxxx Xxxxxxx
+### Corrective Actions
 
-Xxxxxxxx xxxxxxxx xxx xxxxxxx xxx xxxxxxxxxx xx xxxx xxx xxxxx'x xxxxxxx xx. Xxxxxxxxxxxx, xxx xx xxxxx xxxxxxxxxxxx xxx xxxxxxx xx xxxxxxxxxx xx-xxxxxxxx xxxxxx xxxxxx.
+Consider removing the special use capability if your app doesn't require it. Additionally, use of these capabilities are subject to additional on-boarding policy review.
 <!--TODO: after migrating dev-packaging, link to [if your app doesn't require it](dev-packaging.app-capability-declarations#special-and-restricted-capabilities)-->
 
-## Xxxxxxx Xxxxxxx xxxxxxxx xxxxxxxxxx
+## Windows Runtime metadata validation
 
-### Xxxxxxxxxx
+### Background
 
-Xxxxxxx xxxx xxx xxxxxxxxxx xxxx xxxx xx xx xxx xxxxxxx xx xxx XXX xxxx xxxxxx.
+Ensures that the components that ship in an app conform to the UWP type system.
 
-### Xxxx Xxxxxxx
+### Test Details
 
-Xxxxxxxx xxxx xxx **.xxxxx** xxxxx xx xxx xxxxxxx xxxxxxx xx XXX xxxxx.
+Verifies that the **.winmd** files in the package conform to UWP rules.
 
-### Xxxxxxxxxx Xxxxxxx
+### Corrective Actions
 
--   **XxxxxxxxxXx xxxxxxxxx xxxx:** Xxxxxx xxxx XXX xxxxxxx xxx'x xxxxxxxxx xxxxxxxxxx xxxx xxx xxxxxx xx XxxxxxxxxXx xxxxxxx xxxxx.
--   **Xxxx xxxxxxxx xxxx:** Xxxxxx xxxx xxx xxxxxxxx xxx xxx XXX xxxxx xx xxxxxxx xx xxx xxxxx xxxx xxxx xxx xxx xxxxxxx xxxxxxxxx-xxxxxxxx xxxx xx xxx xxx xxxxxxx.
--   **Xxxx xxxx xxxx-xxxxxxxxxxx xxxx:** Xxxxxx xxxx xxx XXX xxxxx xxxx xxxxxx, xxxx-xxxxxxxxxxx xxxxx xxxxxx xxxx xxx xxxxxxx. Xxxx xxxxxx xxxx xx XXX xxxx xxxx xx xxxx xxxx xx x xxxxxxxxx xxxx xxxxxx xxxx xxx xxxxxxx.
--   **Xxxx xxxx xxxxxxxxxxx xxxx:** Xxxxxx xxxxx xxx xx XXX xxxxx xx xxx xxxxxx xxxxxxxxx xx xx xxx Xxxxxxx xxx-xxxxx xxxxxxxxx.
--   **Xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx:** Xxxxxx xxxx xxx xxxxxxxx xxx xxx xxxxx xx xxxxxxxx xxxx xxxxx xx xx xx xxxx xxxx xxx XXX xxxxxxxxxxxxxx.
--   **Xxxxxxxxxx xxxx:** xxxxxx xxxx xxx xxxxxxxxxx xx x XXX xxxxx xxxx x xxx xxxxxx (xxx xxxxxxx xxx xxxxxxxx). Xxxxxx xxxx xxx xxxx xx xxx xxx xxxxxx xxxxxx xxxxx xxxxxxx xxx xxxx xx xxx xxx xxxxxx xxxxx xxxxxxxxx, xxx xxx xxxxxxxxxx xx XXX xxxxx.
+-   **ExclusiveTo attribute test:** Ensure that UWP classes don't implement interfaces that are marked as ExclusiveTo another class.
+-   **Type location test:** Ensure that the metadata for all UWP types is located in the winmd file that has the longest namespace-matching name in the app package.
+-   **Type name case-sensitivity test:** Ensure that all UWP types have unique, case-insensitive names within your app package. Also ensure that no UWP type name is also used as a namespace name within your app package.
+-   **Type name correctness test:** Ensure there are no UWP types in the global namespace or in the Windows top-level namespace.
+-   **General metadata correctness test:** Ensure that the compiler you are using to generate your types is up to date with the UWP specifications.
+-   **Properties test:** ensure that all properties on a UWP class have a get method (set methods are optional). Ensure that the type of the get method return value matches the type of the set method input parameter, for all properties on UWP types.
 
-## Xxxxxxx Xxxxxx xxxxx
+## Package Sanity tests
 
-### Xxxxxxxx xxxxxxxxxxx xxxxx xxxx
+### Platform appropriate files test
 
-Xxxx xxxx xxxxxxx xxxxx xxxxxxxx xxx xxxxx xx xxx xxx xxxxxxxxx xxxxxxxxx xxxx xxx xxxx’x xxxxxxxxx xxxxxxxxxxxx.
+Apps that install mixed binaries may crash or not run correctly depending upon the user’s processor architecture.
 
-### Xxxxxxxxxx
+### Background
 
-Xxxx xxxx xxxxxxxxx xxx xxxxxxxx xx xx xxx xxxxxxx xxx xxxxxxxxxxxx xxxxxxxxx. Xx xxx xxxxxxx xxxxxx xxx xxxxxxx xxxxxxxx xxxx xxx'x xx xxxx xx xxx xxxxxxxxx xxxxxxxxxxxx xxxxxxxxx xx xxx xxxxxxxx. Xxxxxxxxx xxxxxxxxxxx xxxxxxxx xxx xxxx xx xxxx xxx xxxxxxxx xx xx xxxxxxxxxxx xxxxxxxx xx xxx xxx xxxxxxx xxxx.
+This test validates the binaries in an app package for architecture conflicts. An app package should not include binaries that can't be used on the processor architecture specified in the manifest. Including unsupported binaries can lead to your app crashing or an unnecessary increase in the app package size.
 
-### Xxxx Xxxxxxx
+### Test Details
 
-Xxxxxxxxx xxxx xxxx xxxx'x "xxxxxxx" xx xxx XX xxxxxx xx xxxxxxxxxxx xxxx xxxxx-xxxxxxxxxx xxxx xxx xxx xxxxxxx xxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxx
+Validates that each file's "bitness" in the PE header is appropriate when cross-referenced with the app package processor architecture declaration
 
-### Xxxxxxxxxx Xxxxxx
+### Corrective Action
 
-Xxxxxx xxxxx xxxxxxxxxx xx xxxxxx xxxx xxxx xxx xxxxxxx xxxx xxxxxxxx xxxxx xxxxxxxxx xx xxx xxxxxxxxxxxx xxxxxxxxx xx xxx xxx xxxxxxxx:
+Follow these guidelines to ensure that your app package only contains files supported by the architecture specified in the app manifest:
 
--   Xx xxx Xxxxxx Xxxxxxxxx Xxxxxxxxxxxx xxx xxxx xxx xx Xxxxxxx xxxxxxxxx Xxxx, xxx xxx xxxxxxx xxxxxx xxxxxxx xYY, xYY, xx XXX xxxxxx xx xxxxx xxxx xxxxx.
+-   If the Target Processor Architecture for your app is Neutral processor Type, the app package cannot contain x86, x64, or ARM binary or image type files.
 
--   Xx xxx Xxxxxx Xxxxxxxxx Xxxxxxxxxxxx xxx xxxx xxx xx xYY xxxxxxxxx xxxx, xxx xxx xxxxxxx xxxx xxxx xxxxxxx xYY xxxxxx xx xxxxx xxxx xxxxx. Xx xxx xxxxxxx xxxxxxxx xYY xx XXX xxxxxx xx xxxxx xxxxx, xx xxxx xxxx xxx xxxx.
+-   If the Target Processor Architecture for your app is x86 processor type, the app package must only contain x86 binary or image type files. If the package contains x64 or ARM binary or image types, it will fail the test.
 
--   Xx xxx Xxxxxx Xxxxxxxxx Xxxxxxxxxxxx xxx xxxx xxx xx xYY xxxxxxxxx xxxx, xxx xxx xxxxxxx xxxx xxxxxxx xYY xxxxxx xx xxxxx xxxx xxxxx. Xxxx xxxx xx xxxx xxxx xxx xxxxxxx xxx xxxx xxxxxxx xYY xxxxx, xxx xxx xxxxxxx xxx xxxxxxxxxx xxxxxx xxxxxxx xxx xYY xxxxxx.
+-   If the Target Processor Architecture for your app is x64 processor type, the app package must contain x64 binary or image type files. Note that in this case the package can also include x86 files, but the primary app experience should utilize the x64 binary.
 
-    Xxxxxxx, xx xxx xxxxxxx xxxxxxxx XXX xxxxxx xx xxxxx xxxx xxxxx, xx xxxx xxxxxxxx xYY xxxxxxxx xx xxxxx xxxx xxxxx, xx xxxx xxxx xxx xxxx.
+    However, if the package contains ARM binary or image type files, or only contains x86 binaries or image type files, it will fail the test.
 
--   Xx xxx Xxxxxx Xxxxxxxxx Xxxxxxxxxxxx xxx xxxx xxx xx XXX xxxxxxxxx xxxx, xxx xxx xxxxxxx xxxx xxxx xxxxxxx XXX xxxxxx xx xxxxx xxxx xxxxx. Xx xxx xxxxxxx xxxxxxxx xYY xx xYY xxxxxx xx xxxxx xxxx xxxxx, xx xxxx xxxx xxx xxxx.
+-   If the Target Processor Architecture for your app is ARM processor type, the app package must only contain ARM binary or image type files. If the package contains x64 or x86 binary or image type files, it will fail the test.
 
-### Xxxxxxxxx Xxxxxxxxx Xxxxxxxxx xxxx
+### Supported Directory Structure test
 
-Xxxxxxxxx xxxx xxxxxxxxxxxx xxx xxx xxxxxxxx xxxxxxxxxxxxxx xx xxxx xx xxxxxxxxxxxx xxxx xxx xxxxxx xxxx XXX\-XXXX.
+Validates that applications are not creating subdirectories as part of installation that are longer than MAX\-PATH.
 
-### Xxxxxxxxxx
+### Background
 
-XX xxxxxxxxxx (xxxxxxxxx Xxxxxxx, XXXXxxx, xxx.) xxx xxxxxxxxxx xxxxxxx xx XXX\-XXXX xxx xxxx xxxxxx xxxxx xxx xxxx xxx xxxx xxxxxxxxx xxx xxxxxx xxxxx.
+OS components (including Trident, WWAHost, etc.) are internally limited to MAX\-PATH for file system paths and will not work correctly for longer paths.
 
-### Xxxx Xxxxxxx
+### Test Details
 
-Xxxxxxxx xxxx xx xxxx xxxxxx xxx xxx xxxxxxx xxxxxxxxx xxxxxxx XXX\-XXXX.
+Verifies that no path within the app install directory exceeds MAX\-PATH.
 
-### Xxxxxxxxxx Xxxxxx
+### Corrective Action
 
-Xxx x xxxxxxx xxxxxxxxx xxxxxxxxx, xxx xx xxxx xxxx.
+Use a shorter directory structure, and or file name.
 
-## Xxxxxxxx Xxxxx xxxx
+## Resource Usage test
 
-### XxxXX Xxxxxxxxxx Xxxx xxxx
+### WinJS Background Task test
 
-XxxXX xxxxxxxxxx xxxx xxxx xxxxxxx xxxx XxxxXxxxxx xxxx xxxx xxx xxxxxx xxxxx xxxxxxxxxx xx xxxx xxx’x xxxxxxx xxxxxxx.
+WinJS background task test ensures that JavaScript apps have the proper close statements so apps don’t consume battery.
 
-### Xxxxxxxxxx
+### Background
 
-Xxxx xxxx xxxx XxxxXxxxxx xxxxxxxxxx xxxxx xxxx xx xxxx Xxxxx() xx xxx xxxx xxxxxxxxx xx xxxxx xxxxxxxxxx xxxx. Xxxx xxxx xx xxx xx xxxx xxxxx xxxx xxx xxxxxx xxxx xxxxxxxxx xx xxxxxxxxx xxxxxxx xxxx xxx xxxxxx xx xxxxxxxx xxx xxxxxxx.
+Apps that have JavaScript background tasks need to call Close() as the last statement in their background task. Apps that do not do this could keep the system from returning to connected standby mode and result in draining the battery.
 
-### Xxxx Xxxxxxx
+### Test Details
 
-Xx xxx xxx xxxx xxx xxxx x xxxxxxxxxx xxxx xxxx xxxxxxxxx xx xxx xxxxxxxx, xxx xxxx xxxx xxxx. Xxxxxxxxx xxx xxxx xxxx xxxxx xxx XxxxXxxxxx xxxxxxxxxx xxxx xxxx xxxx xx xxxxxxxxx xx xxx xxx xxxxxxx, xxx xxxx xxx x Xxxxx() xxxxxxxxx. Xx xxxxx, xxx xxxx xxxx xxxx; xxxxxxxxx xxx xxxx xxxx xxxx.
+If the app does not have a background task file specified in the manifest, the test will pass. Otherwise the test will parse the JavaScript background task file that is specified in the app package, and look for a Close() statement. If found, the test will pass; otherwise the test will fail.
 
-### Xxxxxxxxxx Xxxxxx
+### Corrective Action
 
-Xxxxxx xxx xxxxxxxxxx XxxxXxxxxx xxxx xx xxxx Xxxxx() xxxxxxxxx.
+Update the background JavaScript code to call Close() correctly.
 
-> **Xxxx**  Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx XXX xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
+> **Note**  This article is for Windows 10 developers writing UWP apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

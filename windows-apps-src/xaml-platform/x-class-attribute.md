@@ -1,16 +1,16 @@
 ---
-xxxxxxxxxxx: Xxxxxxxxxx XXXX xxxxxxxxxxx xx xxxx xxxxxxx xxxxxxx xxxxxxx xxxxxx xxx xxxx-xxxxxx. Xxx xxxx xxxxxxx xxxxx xx xxxxxxx xx x xxxxxxxx xxxx xxxx, xxx xxx xxxxxx xxxxxxx xxxxx xx xxxxxxx xx xxxx xxxxxxxxxx xxxxxx XXXX xxxxxxxxxxx.
-xxxxx: xXxxxx xxxxxxxxx
-xx.xxxxxxx: YYXYXYYY-YYYX-YYXX-YXYY-YXYYYYYXYYYX
+description: Configures XAML compilation to join partial classes between markup and code-behind. The code partial class is defined in a separate code file, and the markup partial class is created by code generation during XAML compilation.
+title: xClass attribute
+ms.assetid: 40A7C036-133A-44DF-9D11-0D39232C948F
 ---
 
-# x:Xxxxx xxxxxxxxx
+# x:Class attribute
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxxxxxx XXXX xxxxxxxxxxx xx xxxx xxxxxxx xxxxxxx xxxxxxx xxxxxx xxx xxxx-xxxxxx. Xxx xxxx xxxxxxx xxxxx xx xxxxxxx xx x xxxxxxxx xxxx xxxx, xxx xxx xxxxxx xxxxxxx xxxxx xx xxxxxxx xx xxxx xxxxxxxxxx xxxxxx XXXX xxxxxxxxxxx.
+Configures XAML compilation to join partial classes between markup and code-behind. The code partial class is defined in a separate code file, and the markup partial class is created by code generation during XAML compilation.
 
-## XXXX xxxxxxxxx xxxxx
+## XAML attribute usage
 
 
 ``` syntax
@@ -19,23 +19,27 @@ Xxxxxxxxxx XXXX xxxxxxxxxxx xx xxxx xxxxxxx xxxxxxx xxxxxxx xxxxxx xxx xxxx-xxxx
 </object>
 ```
 
-## XXXX xxxxxx
+## XAML values
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| xxxxxxxxx | Xxxxxxxx. Xxxxxxxxx x xxxxxxxxx xxxx xxxxxxxx xxx xxxxxxx xxxxx xxxxxxxxxx xx _xxxxxxxxx_. Xx _xxxxxxxxx_ xx xxxxxxxxx, x xxx (.) xxxxxxxxx _xxxxxxxxx_ xxx _xxxxxxxxx_. Xx _xxxxxxxxx_ xx xxxxxxx, _xxxxxxxxx_ xx xxxxxxx xx xxxx xx xxxxxxxxx. |
-| xxxxxxxxx | Xxxxxxxx. Xxxxxxxxx xxx xxxx xx xxx xxxxxxx xxxxx xxxx xxxxxxxx xxx xxxxxx XXXX xxx xxxx xxxx-xxxxxx xxx xxxx XXXX. | 
+| namespace | Optional. Specifies a namespace that contains the partial class identified by _classname_. If _namespace_ is specified, a dot (.) separates _namespace_ and _classname_. If _namespace_ is omitted, _classname_ is assumed to have no namespace. |
+| classname | Required. Specifies the name of the partial class that connects the loaded XAML and your code-behind for that XAML. | 
 
-## Xxxxxxx
+## Remarks
 
-**x:Xxxxx** xxx xx xxxxxxxx xx xx xxxxxxxxx xxx xxx xxxxxxx xxxx xx xxx xxxx xx x XXXX xxxx/xxxxxx xxxx xxx xx xxxxx xxxxxxxx xx xxxxx xxxxxxx, xx xxx xxx [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242324) xxxx xx xxx xxxxxxxxxxx xxxxxxxxxx xx x xxxxxxxx xxxxxxxxxxx. Xxxxxxxxx **x:Xxxxx** xx xxx xxxxxxx xxxxx xxxx x xxxx xxxx xx xxxxxxxxxxx xxxx, xxx xxxxx xxx xxxxxxxxxxxxx xxx x XXXX xxxx xxxx xx xxx xxxxxxxx xxxx xxx **Xxxx** xxxxx xxxxxx, xxxxxxx xx x xxxxxxx-xxxx xxxxx.
+**x:Class** can be declared as an attribute for any element that is the root of a XAML file/object tree and is being compiled by build actions, or for the [**Application**](https://msdn.microsoft.com/library/windows/apps/br242324) root in the application definition of a compiled application. Declaring **x:Class** on any element other than a page root or application root, and under any circumstances for a XAML file that is not compiled with the **Page** build action, results in a compile-time error.
 
-Xxx xxxxx xxxx xx **x:Xxxxx** xxxxxx xx x xxxxxx xxxxx.
+The class used as **x:Class** cannot be a nested class.
 
-Xxx xxxxx xx xxx **x:Xxxxx** xxxxxxxxx xxxx xx x xxxxxx xxxx xxxxxxxxx xxx xxxxx xxxxxxxxx xxxx xx x xxxxx. Xxx xxx xxxx xxxxxxxxx xxxxxxxxxxx xx xxxx xx xxxx xx xxx xxx xxxx-xxxxxx xx xxxxxxxxxx xxxx (xxxx xxxxx xxxxxxxxxx xxxxxx xx xxx xxxxx xxxxx). Xxx xxxx-xxxxxx xxxx xxx x xxxx xx xxxxxxxxxxx xxxxxxxxxx xxxx xx xxxxxx x xxxx xxxx xxxx xx xxxxxxxx xx xxxx xx xxx xxxxxxx. Xxx xxxx-xxxxxx xxxxx xxxx xx xxxxxx. Xxx xxxx-xxxxxx xxxxx xxxx xx xxxxxxx.
+The value of the **x:Class** attribute must be a string that specifies the fully qualified name of a class. You can omit namespace information so long as that is how the code-behind is structured also (your class definition starts at the class level). The code-behind file for a page or application definition must be within a code file that is included as part of the project. The code-behind class must be public. The code-behind class must be partial.
 
-## XXX xxxxxxxx xxxxx
+## CLR language rules
 
-Xxxxxxxx xxxx xxxx-xxxxxx xxxx xxx xx x X++ xxxx, xxxxx xxx xxxxxxx xxxxxxxxxxx xxxx xxxxx xxxxxx xxx XXX xxxxxxxx xxxx, xx xxxx xxxxx xx xx xxxxxxxxxx xx xxx XXXX xxxxxx. Xx xxxxxxxxxx, xxx xxxxxxxxx xxxxxxx xxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxxxx xx xxx **x:Xxxxx** xxxxx xx xxxxxx x xxx ("."), xxxx xxxxxx xxx xxxxxxxxx xxxxxxx xxxxxxxxx xxx xxxxxxxxx xx xxx X++ xxxx xxxx xxxxxxxxxx xxxx xxx XXXX xx "::". Xx xxx xxxxxxx xxxxxx xxxxxxxxxx xx X++, xxxx xxx xxxxxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxx xxxxxxxxx xxxxxxx xxxxxx xxxx xx "." xxxxxx xxxx "::" xxxx xxx xxxxxxx xxx *xxxxxxxxx* xxxx xx xxx **x:Xxxxx** xxxxx.
+Although your code-behind file can be a C++ file, there are certain conventions that still follow the CLR language form, so that there is no difference in the XAML syntax. In particular, the separator between the namespace and classname components of any **x:Class** value is always a dot ("."), even though the separator between namespace and classname in the C++ code file associated with the XAML is "::". If you declare nested namespaces in C++, then the separator between the successive nested namespace strings should also be "." rather than "::" when you specify the *namespace* part of the **x:Class** value.
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

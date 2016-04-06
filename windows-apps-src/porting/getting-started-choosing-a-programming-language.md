@@ -1,42 +1,42 @@
 ---
-xxxxx: Xxxxxxxx x xxxxxxxxxxx xxxxxxxx
-xx.xxxxxxx: YXXYYYYY-XXYY-YXYY-YYYY-YYYXYYYYXYYY
-xxxxxxxxxxx: Xxxxxxxx x xxxxxxxxxxx xxxxxxxx
+title: プログラミング言語の選択
+ms.assetid: 6CA46432-BF03-4B20-9187-565B3503B497
+description: プログラミング言語の選択
 ---
 
-# Xxxxxxx xxxxxxx: Xxxxxxxx x xxxxxxxxxxx xxxxxxxx
+# はじめに: プログラミング言語の選択
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-## Xxxxxxxx x xxxxxxxxxxx xxxxxxxx
+## プログラミング言語の選択
 
-Xxxxxx xx xx xxx xxxxxxx, xxx xxxxxx xxxx xxxxx xxx xxxxxxxxxxx xxxxxxxxx xxxx xxx xxx xxxxxx xxxx xxxx xxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xxxxxxxx xxx xxxxxxxxxxxx xx xxxx xxxxxxx xxx X#, xxx xxx xxxxxxx XXX xxxx xxxxx xxx xx xxxx xxxxxxxxxxx xxxxxxxxx (xxx [Xxxxxxxxx, xxxxx xxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn465799)).
+先へ進む前に、ユニバーサル Windows プラットフォーム (UWP) アプリを開発するときに選択できるプログラミング言語について理解している必要があります。 この記事のチュートリアルでは C# が使われていますが、UWP アプリは複数のプログラミング言語を使って開発できます (「[言語、ツール、フレームワーク](https://msdn.microsoft.com/library/windows/apps/dn465799)」をご覧ください)。
 
-Xxx xxx xxxxxxx xxxxx X++, X#, Xxxxxxxxx Xxxxxx Xxxxx, xxx XxxxXxxxxx. XxxxXxxxxx xxxx XXXXY xxxxxx xxx XX xxxxxx, xxx xxx xxxxx xxxxxxxxx xxx x xxxxxx xxxxxxxx xxxxxx *Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX)* xx xxxxxxxx xxxxx XX.
+C++、C#、Microsoft Visual Basic、JavaScript を使って開発できます。 JavaScript では UI のレイアウトに HTML5 マークアップを使い、他の言語では *XAML (Extensible Application Markup Language)* と呼ばれるマークアップ言語を使って UI を記述します。
 
-Xxxxxxxx xx'xx xxxxxxxx xx X# xx xxxx xxxxxxx, xxx xxxxx xxxxxxxxx xxxxx xxxxxx xxxxxxxx, xxxxx xxx xxx xxxx xx xxxxxxx. Xxx xxxxxxx, xx xxxx xxx'x xxxxxxxxxxx xx x xxxxxxx xxxxxxx, xxxxxxxxxx xxx xxxxxxxxx xxxxxxxx, xxxx X++ xxxxx xx xxx xxxxx xxxxxx. Xxx Xxxxxxxxx .XXX xxxxxxx xx Xxxxxx Xxxxx xx xxxxx xxx Xxxxxx Xxxxx xxx xxxxxxxxxx. XxxxXxxxxx xxxx XXXXY xx xxxxx xxx xxxxx xxxxxx xxxx x xxx xxxxxxxxxxx xxxxxxxxxx. Xxx xxxx xxxx, xxx xxx xx xxx xxxxxxxxx:
+この記事では C# を中心に扱いますが、独自の利点がある他の言語についても検討することをお勧めします。 たとえば、特にグラフィックスを多用した際のアプリのパフォーマンスが最も重要視される場合は、C++ が適切です。 Visual Basic アプリの開発者にとっては、Microsoft .NET バージョンの Visual Basic が適切です。 JavaScript と HTML5 の組み合わせは、Web 開発の経歴がある開発者向けです。 詳しくは、次のいずれかのトピックをご覧ください。
 
--   [Xxxxxx xxxx xxxxx Xxxxxxx Xxxxx xxx xxxxx X++](https://msdn.microsoft.com/library/windows/apps/hh974580)
--   [Xxxxxx xxxx xxxxx Xxxxxxx Xxxxx xxx xxxxx X# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/hh974581)
--   [Xxxxxx xxxx xxxxx Xxxxxxx Xxxxx xxx xxxxx XxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/br211385)
--   [Xxxxxx xxxx xxxxx Xxxxxxx Xxxxx Xxxxx xxx xxxxx X# xx Xxxxxx Xxxxx](http://go.microsoft.com/fwlink/p/?LinkID=397877)
--   [XxxXX xx Xxxxxxx Xxxxx Y.Y](http://go.microsoft.com/fwlink/p/?LinkID=397879)
+-   [C++ を使った初めての Windows ストア アプリの作成](https://msdn.microsoft.com/library/windows/apps/hh974580)
+-   [C# または Visual Basic を使った初めての Windows ストア アプリの作成](https://msdn.microsoft.com/library/windows/apps/hh974581)
+-   [JavaScript を使った初めての Windows ストア アプリの作成](https://msdn.microsoft.com/library/windows/apps/br211385)
+-   [C# または Visual Basic を使った初めての Windows Phone ストア アプリの作成](http://go.microsoft.com/fwlink/p/?LinkID=397877)
+-   [Windows Phone 8.1 での WinJS](http://go.microsoft.com/fwlink/p/?LinkID=397879)
 
-**Xxxx**  Xxx xxxx xxxx xxx YX xxxxxxxx, xxx XxxxXX xxx XxxxXX XX xxxxxxxxx xxx xxx xxxxxxxx xxxxxxxxx xxx XXX xxxx. Xx xxx xxxxx xxxxxx xxx xxxxxxx xxxx XxxxXX XX xxxx xxxx Xxxxxxxxx XxxxxxX, xxx xxx xx xxxxxxxxxx xx xxxx xxxxx **Xxxxx**. Xxxxx xx xx xx-xxxxx xxxxxxx xxxxxxxx xx xxxxxxx XxxxXX xx XxxxxxX xx xxxxxxxxxxx XxxxXX XXX xxxxx xxxx XxxxxxX XXX xxxxx. Xx xxxxx xxxx, xxx xxx xxxxxxxxx:
--   [Xxxxx](https://code.google.com/p/angleproject/)
--   [Xxxxxx xxxx xxxxx Xxxxxxx Xxxxx xxx xxxxx XxxxxxX](https://msdn.microsoft.com/library/windows/apps/br229580)
--   [Xxxxxxx Xxxxx xxx xxxxxxx xxxx xxx XxxxxxX](http://go.microsoft.com/fwlink/p/?LinkId=263603)
--   [Xxxxx xx xxx XxxxxxX XXX?](https://msdn.microsoft.com/library/windows/desktop/ee663275)
+**注**  3D グラフィックスを使うアプリの場合、OpenGL 規格と OpenGL ES 規格は UWP アプリにはネイティブで利用できません。 OpenGL ES のコードを Microsoft DirectX に書き換えない場合は、**Angle** に関心を持つかもしれません。 Angle は OpenGL API 呼び出しを DirectX API 呼び出しに翻訳することにより、OpenGL を DirectX に変換するように設計された進行中のプロジェクトです。 詳しくは、次のトピックをご覧ください。
+-   [Angle](https://code.google.com/p/angleproject/)
+-   [DirectX を使った初めての Windows ストア アプリの作成](https://msdn.microsoft.com/library/windows/apps/br229580)
+-   [DirectX を使った Windows ストア アプリのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=263603)
+-   [DirectX SDK の場所](https://msdn.microsoft.com/library/windows/desktop/ee663275)
 
-## Xxxxxx X# x xx
+## C# を試してみる
 
-Xx xx xXX xxxxxxxxx, xxx'xx xxxxxxxxxx xx Xxxxxxxxx-X xxx Xxxxx. Xxx xxxxxxx Xxxxxxxxx xxxxxxxxxxx xxxxxxxx xx xxxx xx X#. Xxx xxxx xxxxxxxxxx xxx xxxx xxxx, xx xxxxx X# xx xxx xxxxxxx xxx xxxxxxx xxxxxxxx xx xxxxx xxx xxx, xx xxxx xxxxxxx'x xxxx xxx xxxxxxxxxxxx xxxxx xx xxxx xxxxxxxx. Xx xxxxx xxxx xxxxx X#, xxx xxx xxxxxxxxx:
+iOS 開発者は、Objective-C と Swift を日常的に使っています。 両方に最も近い Microsoft プログラミング言語は C# です。 ほとんどの開発者とほとんどのアプリにおいて、最も簡単かつ短期間に学習して使用できる言語は C# と考えられます。そこで、この記事の情報とチュートリアルでは、この言語を中心に取り上げています。 C# について詳しくは、次のトピックをご覧ください。
 
--   [Xxxxxx xxxx xxxxx Xxxxxxx Xxxxx xxx xxxxx X# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/hh974581)
--   [Xxxxxxx Xxxxx xxx xxxxxxx xxxx xxx X#](http://go.microsoft.com/fwlink/p/?LinkId=263453)
--   [Xxxxxx X#](http://go.microsoft.com/fwlink/p/?LinkId=263450)
+-   [C# または Visual Basic を使った初めての Windows ストア アプリの作成](https://msdn.microsoft.com/library/windows/apps/hh974581)
+-   [C を使った Windows ストア アプリのサンプル#](http://go.microsoft.com/fwlink/p/?LinkId=263453)
+-   [Visual C#](http://go.microsoft.com/fwlink/p/?LinkId=263450)
 
-Xxxxxxxxx xx x xxxxx xxxxxxx xx Xxxxxxxxx-X xxx X#. Xxx Xxxxxxxxx-X xxxxxxx xx xxxxx xxxxx, xxxxxxxx xx xxx X# xxxxxxx.
+次に示すのは、Objective-C と C# で書かれたクラスです。 最初に Objective-C バージョンを示し、その後に C# バージョンを示します。
 
 ```obj-c
 // Objective-C header: SampleClass.h.
@@ -86,7 +86,7 @@ mySampleClass.localVariable = false;
 int result = [mySampleClass addThis:1 andThis:2];
 ```
 
-Xxx, xxx xxx X# xxxxxxx. Xxx'xx xxx xxxx xxxx Xxxxx, xxx xxxxxx xxx xxx xxxxxxxxxxxxxx xxx xxx xx xxxxxxxx xxxxx.
+次は C# のバージョンです。 Swift のように、ヘッダーと実装が別個のファイルに分離されていないことがわかります。
 
 ```csharp
 // C# header and implementation.
@@ -132,9 +132,13 @@ mySampleClass.myLocalVariable = false;
 int result = mySampleClass.AddTwoNumbers(1, 2);
 ```
 
-X# xx xx xxxx xxxxxxxx xx xxxx xx, xxx xxxxx xxxx xxx xxxx xxxxxxx xxxxxxx xxx xxxxxxxxxx xxxx xxxx xx .XXX. Xx xx xxxx, xxx'xx xx xxxxxxx xxxxxxx xxxx xxxx xxxxxxx x xxxxxx xxxxxxx xx xxxxx!
+C# は習得が容易な言語であり、.NET を構成する多くのサポート クラスとフレームワークが付属しています。 すぐに、角かっこなしでコードをうまく記述することができるようになります。
 
-## Xxxx xxxx
+## 次のステップ
 
-[Xxxxxxx xxxxxxx: Xxxxxxx xxxxxx xx Xxxxxx Xxxxxx](getting-started-getting-around-in-visual-studio.md)
+[はじめに: Visual Studio の操作方法](getting-started-getting-around-in-visual-studio.md)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

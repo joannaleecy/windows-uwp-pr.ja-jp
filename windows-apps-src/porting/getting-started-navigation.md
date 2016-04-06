@@ -1,40 +1,40 @@
 ---
-xxxxx: Xxxxxxx xxxxxxx xxxx Xxxxxxxxxx
-xxxxxxxxxxx: Xxxxxxx xxxxxxx xxxx xxxxxxxxxx
-xx.xxxxxxx: XYXXYXYX-XYYY-YYYY-XXXX-YYYXYXYXYXXX
+title: ナビゲーションの概要
+description: ナビゲーションの概要
+ms.assetid: F4DF5C5F-C886-4483-BBDA-498C4E2C1BAF
 ---
 
-# Xxxxxxx xxxxxxx: Xxxxxxxxxx
+# はじめに: ナビゲーション
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-## Xxxxxx xxxxxxxxxx
+## ナビゲーションの追加
 
-xXX xxxxxxxx xxx **XXXxxxxxxxxxXxxxxxxxxx** xxxxx xx xxxx xxxx xx-xxx xxxxxxxxxx: xxx xxx xxxx xxx xxx xxxxx xx xxxxxx xxx xxxxxxxxx xx **XXXxxxXxxxxxxxxxx** xxxx xxxxxx xxxx xxx.
+iOS では、アプリのナビゲーション用に **UINavigationController** クラスが用意されています。ビューのプッシュ/ポップ操作を通じて、アプリを定義する **UIViewControllers** の階層を作ることができます。
 
-Xx xxxxxxxx, x Xxxxxxx YY xxx xxxxxxxxxx xxxxxxxx xxxxx xxxxx xxxx xx x xxx-xxxx xxxxxxxx xx xxxxxxxxxx. Xxx xxx xxxxxxx xxxx xxxxx xxxxxxx xxxx xxxx xx xxxx xx xxxx xxxxx xx xxxxxxxx xx xxxx xxxxx xxx xxxxxxx xxx xxx. Xxx xxxx xxxx, xxx [Xxxxxxxxxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/dn958438).
+これに対して、複数のビューを含む Windows 10 アプリはナビゲーションに対してさらに多くの Web サイト アプローチを行います。 ユーザーがコントロールをクリックしてページ間を移動し、アプリ内を進むことを考えてみることができます。 詳しくは、「[ナビゲーション デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)」をご覧ください。
 
-Xxx xx xxx xxxx xx xxxxxx xxxx xxxxxxxxxx xx x Xxxxxxx YY xxx xx xx xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242682) xxxxx. Xxx xxxxxxxxx xxxxxxxxxxx xxxxx xxx xxx xx xxx xxxx xxx.
+Windows 10 アプリでこのナビゲーションを管理する方法の 1 つに、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) クラスを使う方法があります。 以下のチュートリアルでは実際に試す方法を示しています。
 
-Xxxxxxxxxx xxxx xxx xxxxxxxx xxx xxxxxxx xxxxxxx, xxxx xxx **XxxxXxxx.xxxx** xxxx, xxx xxx x xxxxxx xx xxx **Xxxxxx** xxxx. Xxxxxx xxx xxxxxx'x **Xxxxxxx** xxxxxxxx xxxx "Xxxxxx" xx "Xx Xx Xxxx". Xxxx, xxxxxx x xxxxxxx xxx xxx xxxxxx'x **Xxxxx** xxxxx, xx xxxxx xx xxx xxxxxxxxx xxxxxx. Xx xxx xxx'x xxxxxxxx xxx xx xx xxxx, xxxxxx xxx xxxxxxxxxxx xx xxx xxxxxxxx xxxxxxx (Xxxx: xxxxxx-xxxxx xxx xxxxxx xx xxx **Xxxxxx** xxxx).
+以前に開始したソリューションに戻り、**MainPage.xaml** ファイルを開いて、**[デザイン]** ビューにボタンを追加します。 このボタンの **Content** プロパティを "Button" から "Go To Page" に変更します。 次に、ボタンの **Click** イベントのハンドラーを、次の図に示すように作成します。 作成方法がわからない場合は、前のセクションのチュートリアルを見直してください (ヒント: **[デザイン]** ビューにあるボタンをダブルクリックします)。
 
-![xxxxxx x xxxxxx xxx xxx xxxxx xxxxx xx xxxxxx xxxxxx](images/ios-to-uwp/vs-go-to-page.png)
+![Visual Studio でのボタンとそのクリック イベントの追加](images/ios-to-uwp/vs-go-to-page.png)
 
-Xxx'x xxx x xxx xxxx. Xx xxx **Xxxxxxxx** xxxx, xxx xxx **Xxxxxxx** xxxx, xxx xxx **Xxx Xxx Xxxx**. Xxx **Xxxxx Xxxx** xx xxxxx xx xxx xxxxxxxxx xxxxxx, xxx xxxx xxx **Xxx**.
+新しいページを追加しましょう。 **[ソリューション]** ビューで、**[プロジェクト]** メニュー、**[新しい項目の追加]** の順にタップします。 次の図に示すように、**[空白のページ]** をタップし、**[追加]** をタップします。
 
-![xxxxxx x xxx xxxx xx xxxxxx xxxxxx](images/ios-to-uwp/vs-add-new-page.png)
+![Visual Studio での新しいページの追加](images/ios-to-uwp/vs-add-new-page.png)
 
-Xxxx, xxx x xxxxxx xx xxx XxxxxXxxx.xxxx xxxx. Xxx'x xxx xxx XxxXxxXxxxxx xxxxxxx, xxx xxx'x xxxx xx x xxxx xxxxx xxxxx: xx xxx **XXXX** xxxx, xxx ` <AppBarButton Icon="Back"/>` xxxxxxx xxx `<Grid> </Grid>` xxxxxxxx.
+次に、BlankPage.xaml ファイルにボタンを追加します。 ここでは、AppBarButton コントロールを使い、ボタンに "前に戻る矢印" の画像を設定します。**[XAML]** ビューで、` <AppBarButton Icon="Back"/>` を `<Grid> </Grid>` 要素の間に追加します。
 
-Xxx, xxx'x xxx xx xxxxx xxxxxxx xx xxx xxxxxx: xxxxxx-xxxxx xxx xxxxxxx xx xxx **Xxxxxx** xxxx xxx Xxxxxxxxx Xxxxxx Xxxxxx xxxx xxx xxxx "XxxXxxXxxxxx\_Xxxxx" xx xxx **Xxxxx** xxx, xx xxxxx xx xxx xxxxxxxxx xxxxxx, xxx xxxx xxxx xxx xxxxxxxx xxx xxxxxxxxxxxxx xxxxx xxxxxxx xx xxx XxxxxXxxx.xxxx.xx xxxx.
+次に、ボタンにイベント ハンドラー追加します。**[デザイン]** ビュー内のコントロールをダブルクリックすると、次の図に示すように、Microsoft Visual Studio によってテキスト "AppBarButton\_Click" が **[Click]** ボックスに追加されます。続いて、対応するイベント ハンドラーが BlankPage.xaml.cs ファイルに追加され、表示されます。
 
-![xxxxxx x xxxx xxxxxx xxx xxx xxxxx xxxxx xx xxxxxx xxxxxx](images/ios-to-uwp/vs-add-back-button.png)
+![Visual Studio での戻るボタンとそのクリック イベントの追加](images/ios-to-uwp/vs-add-back-button.png)
 
-Xx xxx xxxxxx xx xxx XxxxxXxxx.xxxx xxxx'x **XXXX** xxxx, xxx `<AppBarButton>` xxxxxxx'x Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX) xxxx xxxxxx xxx xxxx xxxx xxxx:
+BlankPage.xaml ファイルの **XAML** ビューに戻り、`<AppBarButton>` 要素の Extensible Application Markup Language (XAML) コードが次のようになっていることを確かめます。
 
 ` <AppBarButton Icon="Back" Click="AppBarButton_Click"/>`
 
-Xxxxxx xx xxx XxxxxXxxx.xxxx.xx xxxx, xxx xxx xxxx xxxx xx xx xx xxx xxxxxxxx xxxx xxxxx xxx xxxx xxxx xxx xxxxxx.
+BlankPage.xaml.cs ファイルに戻り、以下のコードを追加して、ユーザーがボタンをタップすると前のページに戻るようにします。
 
 ```csharp
 private void AppBarButton_Click(object sender, RoutedEventArgs e)
@@ -44,7 +44,7 @@ private void AppBarButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Xxxxxxx, xxxx xxx XxxxXxxx.xxxx.xx xxxx xxx xxx xxxx xxxx. Xx xxxxx XxxxxXxxx xxxxx xxx xxxx xxxx xxx xxxxxx.
+最後に、MainPage.xaml.cs ファイルを開き、次のコードを追加します。 このコードは、ユーザーがボタンをタップしたときに BlankPage を開くためのコードです。
 
 ```csharp
 private void Button_Click(object sender, RoutedEventArgs e)
@@ -54,11 +54,11 @@ private void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Xxx, xxx xxx xxxxxxx. Xxx xxx "Xx Xx Xxxx" xxxxxx xx xx xx xxx xxxxx xxxx, xxx xxxx xxx xxx xxxx-xxxxx xxxxxx xx xxxxxx xx xxx xxxxxxxx xxxx.
+それでは、プログラムを実行してみましょう。 [Go To Page] ボタンをタップすると、他のページに進みます。矢印スタイルの戻るボタンをタップすると、前のページに戻ります。
 
-Xxxx xxxxxxxxxx xx xxxxxxx xx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242682) xxxxx. Xx xxx **XXXxxxxxxxxxXxxxxxxxxx** xxxxx xx xXX xxxx **xxxxXxxxXxxxxxxxxx** xxx **xxxXxxxXxxxxxxxxx** xxxxxxx, xxx **Xxxxx** xxxxx xxx Xxxxxxx Xxxxx xxxx xxxxxxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242694) xxx [**XxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn996568) xxxxxxx. Xxx **Xxxxx** xxxxx xxxx xxx x xxxxxx xxxxxx [**XxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242693), xxxxx xxxx xxxx xxx xxxxx xxxxxx.
+ページのナビゲーションは、[**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) クラスによって管理されます。 iOS の **UINavigationController** クラスでは **pushViewController** メソッドと **popViewController** メソッドが使われるように、Windows ストア アプリの **Frame** クラスには [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) メソッドと [**GoBack**](https://msdn.microsoft.com/library/windows/apps/dn996568) メソッドが用意されています。 **Frame** クラスには、名前から推測されるとおりに動作する [**GoForward**](https://msdn.microsoft.com/library/windows/apps/br242693) というメソッドもあります。
 
-Xxxx xxxxxxxxxxx xxxxxxx x xxx xxxxxxxx xx XxxxxXxxx xxxx xxxx xxx xxxxxxxx xx xx. (Xxx xxxxxxxx xxxxxxxx xxxx xx xxxxx, xx *xxxxxxxx*, xxxxxxxxxxxxx). Xx xxx xxx'x xxxx x xxx xxxxxxxx xx xx xxxxxxx xxxx xxxx, xxx xxx xxxxxxxxx xxxx xx xxx XxxxxXxxx xxxxx'x xxxxxxxxxxx xx xxx XxxxxXxxx.xxxx.xx xxxx. Xxxx xxxx xxxxxx xxx [**XxxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227506) xxxxxxxx.
+このチュートリアルでは、ナビゲーションを行うたびに BlankPage の新しいインスタンスが作成されます。 (前のインスタンスは自動的に*解放*されます)。 毎回新しいインスタンスが作成されることがないようにするには、BlankPage.xaml.cs ファイル内の BlankPage クラスのコンストラクターに以下のコードを追加します。 これにより、[**NavigationCacheMode**](https://msdn.microsoft.com/library/windows/apps/br227506) 動作が有効になります。
 
 ```csharp
 public BlankPage()
@@ -69,14 +69,18 @@ public BlankPage()
 }
 ```
 
-Xxx xxx xxxx xxx xx xxx xxx **Xxxxx** xxxxx'x [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242683) xxxxxxxx xx xxxxxx xxx xxxx xxxxx xx xxx xxxxxxxxxx xxxxxxx xxx xx xxxxxx.
+また、**Frame** クラスの [**CacheSize**](https://msdn.microsoft.com/library/windows/apps/br242683) プロパティを取得または設定すると、キャッシュするナビゲーションの履歴のページ数を管理できます。
 
-Xxx xxxx xxxx xxxxx xxxxxxxxxx, xxx [Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187344) xxx [XXXX xxxxxxxxxxx xxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=242401).
+ナビゲーションについて詳しくは、「[ナビゲーション](https://msdn.microsoft.com/library/windows/apps/mt187344)」と「[XAML パーソナリティ アニメーションのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=242401)」をご覧ください。
 
-**Xxxx**  Xxx xxxx xxxxx xxxxxxxxxx xxx Xxxxxxx Xxxxx xxxx xxxxx XxxxXxxxxx xxx XXXX, xxx [Xxxxxxxxxx: Xxxxx xxxxxx-xxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh452768).
+**注**  JavaScript と HTML を使った Windows ストア アプリのナビゲーションについて詳しくは、「[クイック スタート: 単一ページ ナビゲーションの使用](https://msdn.microsoft.com/library/windows/apps/hh452768)」をご覧ください。
  
-### Xxxx xxxx
+### 次のステップ
 
-[Xxxxxxx xxxxxxx: Xxxxxxxxx](getting-started-animation.md)
+[はじめに: アニメーション](getting-started-animation.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

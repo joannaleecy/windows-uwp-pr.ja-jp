@@ -1,105 +1,110 @@
 ---
-xx.xxxxxxx: YYXYYYYY-YYYX-YXXX-YYXY-YXXXXXXXXXYY
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xx xxx xxxxxx xxxxxxxx xx xxxxxxxx xxx xxxxxx xxx xxxxxxxxxxxx xx xxxxxxxxx xxxxx xxxxxxx xxxxxxx.
-xxxxx: Xxxxxx xxxxxxxx
+ms.assetid: 42A06423-670F-4CCC-88B7-3DCEEDDEBA57
+description: この記事では、カメラ プロファイルを使ってさまざまなビデオ キャプチャ デバイスの機能を検出および管理する方法について説明します。
+title: カメラ プロファイル
 ---
 
-# Xxxxxx xxxxxxxx
+# カメラ プロファイル
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxx xxxxxx xxxxxxxx xx xxxxxxxx xxx xxxxxx xxx xxxxxxxxxxxx xx xxxxxxxxx xxxxx xxxxxxx xxxxxxx.
+この記事では、カメラ プロファイルを使ってさまざまなビデオ キャプチャ デバイスの機能を検出および管理する方法について説明します。
 
-**Xxxx**  
-Xxxx xxxxxxx xxxxxx xx xxxxxxxx xxx xxxx xxxxxxxxx xx [Xxxxxxx Xxxxxx xxx Xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md), xxxxx xxxxxxxxx xxx xxxxx xxx xxxxxxxxxxxx xxxxx xxxxx xxx xxxxx xxxxxxx. Xx xx xxxxxxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxx xxxx xxx xxxxx xxxxx xxxxxxx xxxxxxx xx xxxx xxxxxxx xxxxxx xxxxxx xx xx xxxx xxxxxxxx xxxxxxx xxxxxxxxx. Xxx xxxx xx xxxx xxxxxxx xxxxxxx xxxx xxxx xxx xxxxxxx xxx xx xxxxxxxx xx XxxxxXxxxxxx xxxx xxx xxxx xxxxxxxx xxxxxxxxxxx.
+**注**  
+この記事の内容は、写真やビデオの基本的なキャプチャ機能を実装するための手順を紹介した「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」で取り上げた概念やコードに基づいています。 そちらの記事で基本的なメディア キャプチャのパターンを把握してから、高度なキャプチャ シナリオに進むことをお勧めします。 この記事で紹介しているコードは、MediaCapture のインスタンスが既に作成され、適切に初期化されていることを前提としています。
+
+ 
+
+## カメラ プロファイルについて
+
+カメラが搭載されているデバイスによって、キャプチャ解像度、ビデオ キャプチャのフレーム レート、HDR または可変フレーム レート キャプチャなど、サポートされている機能も異なります。 ユニバーサル Windows プラットフォーム (UWP) メディア キャプチャ フレームワークでは、この機能セットが [**MediaCaptureVideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695) に格納されます。 [
+            **MediaCaptureVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926694) オブジェクトで表されるカメラ プロファイルには、メディア記述のコレクションが 3 つ含まれています。1 つは写真のキャプチャ用、1 つはビデオ キャプチャ用、もう 1 つはビデオ プレビュー用です。
+
+[MediaCapture](capture-photos-and-video-with-mediacapture.md) オブジェクトを初期化する前に、現在のデバイスのキャプチャ デバイスを照会して、サポートされているプロファイルを確認することができます。 サポートされているプロファイルを選択すると、機能、プロファイルのメディア記述に含まれているすべての機能がすべてキャプチャ デバイスでサポートされることがわかります。 これにより、特定のデバイスでどのような組み合わせの機能がサポートされているか確認するために試行錯誤する必要がなくなります。
+
+基本的なメディア キャプチャに関する記事「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」で、メディア キャプチャの初期化に使用される [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) は、初期化に必要な最小限のデータとして、キャプチャ デバイスの ID 文字列のみを使って作成されています。
+
+[!code-cs[BasicInitExample](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetBasicInitExample)]
+
+この記事のコード例では、最小限の初期化が、さまざまな機能をサポートするカメラ プロファイルの検出に置き換わっています。検出されたプロファイルは、メディア キャプチャ デバイスの初期化に使用されます。
+
+## カメラ プロファイルをサポートするビデオ デバイスを検出する
+
+サポートされているカメラ プロファイルを検索する前に、カメラ プロファイルの使用がサポートされるキャプチャ デバイスを検出する必要があります。 次の例で定義されている **GetVideoProfileSupportedDeviceIdAsync** ヘルパー メソッドでは、[**DeviceInformaion.FindAllAsync**](https://msdn.microsoft.com/library/windows/apps/br225432) メソッドを使って、すべての利用可能なビデオ キャプチャ デバイスの一覧を取得しています。 個々のデバイスについて静的メソッド [**IsVideoProfileSupported**](https://msdn.microsoft.com/library/windows/apps/dn926714) を呼び出し、ビデオ プロファイルがサポートされるかどうかを確認する処理が、一覧内のすべてのデバイスに対してループで実行されます。 また、各デバイスの [**EnclosureLocation.Panel**](https://msdn.microsoft.com/library/windows/apps/br229906) プロパティで、使用するカメラがデバイスの前面にあるか背面にあるかを指定することができます。
+
+指定された面に、カメラ プロファイルをサポートするデバイスが見つかった場合は、デバイスの ID 文字列が含まれている [**Id**](https://msdn.microsoft.com/library/windows/apps/br225437) 値が返されます。
+
+[!code-cs[GetVideoProfileSupportedDeviceIdAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetVideoProfileSupportedDeviceIdAsync)]
+
+**GetVideoProfileSupportedDeviceIdAsync** ヘルパー メソッドから返されたデバイス ID が null または空の文字列であれば、指定された面にはカメラ プロファイルをサポートするデバイスがありません。 この場合は、プロファイルを使用せずにメディア キャプチャ デバイスを初期化する必要があります。
+
+[!code-cs[GetDeviceWithProfileSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetDeviceWithProfileSupport)]
+
+## サポートされている解像度とフレーム レートに基づいてプロファイルを選択する
+
+特定の解像度やフレーム レートを確保できるなど、特定の機能が含まれたプロファイルを選択するには、先ほど定義したヘルパー メソッドをまず呼び出して、カメラ プロファイルの使用をサポートするキャプチャ デバイスの ID を取得する必要があります。
+
+選択されたデバイス ID を渡して、新しい [**MediaCaptureInitializationSettings**](https://msdn.microsoft.com/library/windows/apps/br226573) オブジェクトを作成します。 次に、静的メソッド [**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708) を呼び出して、デバイスでサポートされているすべてのカメラ プロファイルの一覧を取得します。
+
+この例では、**System.Linq** 名前空間に含まれている Linq クエリの手法を使用して、[**Width**](https://msdn.microsoft.com/library/windows/apps/dn926700)、[**Height**](https://msdn.microsoft.com/library/windows/apps/dn926697)、[**FrameRate**](https://msdn.microsoft.com/library/windows/apps/dn926696) の各プロパティが要求値に一致する [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705) オブジェクトが含まれたプロパティを選択しています。 一致が見つかった場合、**MediaCaptureInitializationSettings** の [**VideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn926679) と [**RecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926678) が、Linq クエリから返された匿名型の値に設定されます。 一致が見つからなかった場合は、既定のプロパティが使われます。
+
+[!code-cs[FindWVGA30FPSProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindWVGA30FPSProfile)]
+
+目的のカメラ プロファイルを **MediaCaptureInitializationSettings** に設定したら、メディア キャプチャ オブジェクトで [**InitializeAsync**](https://msdn.microsoft.com/library/windows/apps/br226598) を呼び出して、目的のプロファイルに構成します。
+
+[!code-cs[InitCaptureWithProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
+
+## 同時実行をサポートするプロファイルを選択する
+
+カメラ プロファイルを使うと、デバイスで複数カメラからのビデオ キャプチャが同時にサポートされるかどうかを確認できます。 このシナリオでは、前面カメラ用と背面カメラ用に、2 セットのキャプチャ オブジェクトを作成する必要があります。 各カメラについて、**MediaCapture** と **MediaCaptureInitializationSettings** を作成し、キャプチャ デバイス ID を保持するための文字列を作成します。 また、同時実行がサポートされているかどうかを追跡するためのブール変数を追加します。
+
+[!code-cs[ConcurrencySetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConcurrencySetup)]
+
+静的メソッド [**MediaCapture.FindConcurrentProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926709) により、指定された (同時実行もサポート可能な) キャプチャ デバイスでサポートされているカメラ プロファイルの一覧が返されます。 Linq クエリを使って、同時実行をサポートし、前面カメラ用と背面カメラの両方でサポートされているプロファイルを検出します。 これらの要件を満たしているプロファイルが見つかった場合は、このプロファイルを各 **MediaCaptureInitializationSettings** オブジェクトに設定し、同時実行を追跡するブール変数を true に設定します。
+
+[!code-cs[FindConcurrencyDevices](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindConcurrencyDevices)]
+
+アプリのシナリオのプライマリ カメラ用に **MediaCapture.InitializeAsync** を呼び出します。 同時実行がサポートされている場合は、2 台目のカメラも初期化します。
+
+[!code-cs[InitConcurrentMediaCaptures](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitConcurrentMediaCaptures)]
+
+## 既知のプロファイルを使用して HDR ビデオをサポートするプロファイルを検出する
+
+HDR をサポートするプロファイルの選択も、他のシナリオと同じように始まります。 **MediaCaptureInitializationSettings** を作成し、キャプチャ デバイス ID を保持する文字列を作成します。 HDR ビデオがサポートされているかどうかを追跡するためのブール変数を追加します。
+
+[!code-cs[GetHdrProfileSetup](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
+
+上で定義した **GetVideoProfileSupportedDeviceIdAsync** ヘルパー メソッドを使って、カメラ プロファイルをサポートしているキャプチャ デバイスのデバイス ID を取得します。
+
+[!code-cs[FindDeviceHDR](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindDeviceHDR)]
+
+静的メソッド [**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) により、指定の [**KnownVideoProfile**](https://msdn.microsoft.com/library/windows/apps/dn948843) 値で分類された指定のデバイスでサポートされるカメラ プロファイルが返されます。 このシナリオでは、ビデオ録画をサポートするカメラ プロファイルのみが返されるように、**VideoRecording** 値が指定されています。
+
+返されたカメラ プロファイルの一覧をループ処理します。 各カメラ プロファイルで、プロファイル内の各 [**VideoProfileMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926695) をループ処理して、[**IsHdrVideoSupported**](https://msdn.microsoft.com/library/windows/apps/dn926698) プロパティの値が true かどうかをチェックします。 適切なメディア記述が見つかったら、ループを抜けて、プロファイルと記述のオブジェクトを **MediaCaptureInitializationSettings** オブジェクトに割り当てます。
+
+[!code-cs[FindHDRProfile](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindHDRProfile)]
+
+## 写真とビデオの同時キャプチャがデバイスでサポートされているかどうかを確認する
+
+多くのデバイスでは、写真とビデオの同時キャプチャがサポートされます。 キャプチャ デバイスでこの動作がサポートされているかどうかを確認するには、[**MediaCapture.FindAllVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926708) を呼び出して、デバイスでサポートされているすべてのカメラ プロファイルを取得します。 Linq クエリを使って、[**SupportedPhotoMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926703) と [**SupportedRecordMediaDescription**](https://msdn.microsoft.com/library/windows/apps/dn926705) に 1 つ以上のエントリがある (プロファイルで同時キャプチャがサポートされていることを意味する) プロファイルを検出します。
+
+[!code-cs[GetPhotoAndVideoSupport](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPhotoAndVideoSupport)]
+
+このクエリを調整して、同時ビデオ録画以外にも、特定の解像度やその他の機能をサポートするプロファイルを検出することもできます。 また、[**MediaCapture.FindKnownVideoProfiles**](https://msdn.microsoft.com/library/windows/apps/dn926710) を使って [**BalancedVideoAndPhoto**](https://msdn.microsoft.com/library/windows/apps/dn948843) 値を指定し、同時キャプチャをサポートするプロファイルを取得することもできますが、すべてのプロファイルを照会する方が完全な結果を得ることができます。
+
+## 関連トピック
+
+* [MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)
+ 
 
  
 
-## Xxxxx xxxxxx xxxxxxxx
 
-Xxxxxxx xx xxxxxxxxx xxxxxxx xxxxxxx xxxxxxxxx xxxxxxxxxxxx xxxxxxxxx xxx xxx xx xxxxxxxxx xxxxxxx xxxxxxxxxxx, xxxxx xxxx xxx xxxxx xxxxxxxx, xxx xxxxxxx XXX xx xxxxxxxx xxxxx xxxx xxxxxxxx xxx xxxxxxxxx. Xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxx xxxxxxx xxxxxxxxx xxxxxx xxxx xxx xx xxxxxxxxxxxx xx x [**XxxxxXxxxxxxXxxxxXxxxxxxXxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926695). X xxxxxx xxxxxxx, xxxxxxxxxxx xx x [**XxxxxXxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926694) xxxxxx, xxx xxxxx xxxxxxxxxxx xx xxxxx xxxxxxxxxxxx; xxx xxx xxxxx xxxxxxx, xxx xxx xxxxx xxxxxxx, xxx xxxxxxx xxx xxxxx xxxxxxx.
-
-Xxxxxx xxxxxxxxxxxx xxxx [XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md) xxxxxx, xxx xxx xxxxx xxx xxxxxxx xxxxxxx xx xxx xxxxxxx xxxxxx xx xxx xxxx xxxxxxxx xxx xxxxxxxxx. Xxxx xxx xxxxxx x xxxxxxxxx xxxxxxx, xxx xxxx xxxx xxx xxxxxxx xxxxxx xxxxxxxx xxx xx xxx xxxxxxxxxxxx xx xxx xxxxxxx'x xxxxx xxxxxxxxxxxx. Xxxx xxxxxxxxxx xxx xxxx xxx x xxxxx xxx xxxxx xxxxxxxx xx xxxxxxxxxxx xxxxx xxxxxxxxxxxx xx xxxxxxxxxxxx xxx xxxxxxxxx xx x xxxxxxxxxx xxxxxx.
-
-Xx xxx xxxxxxx xx xxxxx xxxxx xxxxxxx, [Xxxxxxx Xxxxxx xxx Xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md), xxx [**XxxxxXxxxxxxXxxxxxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226573) xxxx xx xxxxxxxxxx xxx xxxxx xxxxxxx xx xxxxxxx xxxx xxxx xxx xxxxxxx xxxxxx'x XX xxxxxx, xxx xxxxxxx xxxxxx xx xxxx xxxxxxxx xxx xxxxxxxxxxxxxx.
-
-[!xxxx-xx[XxxxxXxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetBasicInitExample)]
-
-Xxx xxxx xxxxxxxx xx xxxx xxxxxxx xxxxxxx xxxx xxxxxxx xxxxxxxxxxxxxx xxxx xxx xxxxxxxxx xx xxxxxx xxxxxxxx xxxxxxxxxx xxxxxxx xxxxxxxxxxxx, xxxxx xxx xxxx xxxx xx xxxxxxxxxx xxx xxxxx xxxxxxx xxxxxx.
-
-## Xxxx x xxxxx xxxxxx xxxx xxxxxxxx xxxxxx xxxxxxxx
-
-Xxxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxx, xxx xxxxxx xxxx x xxxxxxx xxxxxx xxxx xxxxxxxx xxx xxx xx xxxxxx xxxxxxxx. Xxx **XxxXxxxxXxxxxxxXxxxxxxxxXxxxxxXxXxxxx** xxxxxx xxxxxx xxxxxxx xx xxx xxxxxxx xxxxx xxxx xxx [**XxxxxxXxxxxxxxxx.XxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br225432) xxxxxx xx xxxxxxxx x xxxx xx xxx xxxxxxxxx xxxxx xxxxxxx xxxxxxx. Xx xxxxx xxxxxxx xxx xx xxx xxxxxxx xx xxx xxxx, xxxxxxx xxx xxxxxx xxxxxx, [**XxXxxxxXxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926714), xxx xxxx xxxxxx xx xxx xx xx xxxxxxxx xxxxx xxxxxxxx. Xxxx, xxx [**XxxxxxxxxXxxxxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br229906) xxxxxxxx xxx xxxx xxxxxx, xxxxxxxx xxx xx xxxxxxx xxxxxx xxx xxxx x xxxxxx xx xxx xxxxx xx xxxx xx xxx xxxxxx.
-
-Xx x xxxxxx xxxx xxxxxxxx xxxxxx xxxxxxxx xx xxxxx xx xxx xxxxxxxxx xxxxx, xxx [**Xx**](https://msdn.microsoft.com/library/windows/apps/br225437) xxxxx, xxxxxxxxxx xxx xxxxxx'x XX xxxxxx, xx xxxxxxxx.
-
-[!xxxx-xx[XxxXxxxxXxxxxxxXxxxxxxxxXxxxxxXxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetVideoProfileSupportedDeviceIdAsync)]
-
-Xx xxx xxxxxx XX xxxxxxxx xxxx xxx **XxxXxxxxXxxxxxxXxxxxxxxxXxxxxxXxXxxxx** xxxxxx xxxxxx xx xxxx xx xx xxxxx xxxxxx, xxxxx xx xx xxxxxx xx xxx xxxxxxxxx xxxxx xxxx xxxxxxxx xxxxxx xxxxxxxx. Xx xxxx xxxx, xxx xxxxxx xxxxxxxxxx xxxx xxxxx xxxxxxx xxxxxx xxxxxxx xxxxx xxxxxxxx.
-
-[!xxxx-xx[XxxXxxxxxXxxxXxxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetDeviceWithProfileSupport)]
-
-## Xxxxxx x xxxxxxx xxxxx xx xxxxxxxxx xxxxxxxxxx xxx xxxxx xxxx
-
-Xx xxxxxx x xxxxxxx xxxx xxxxxxxxxx xxxxxxxxxxxx, xxxx xx xxxx xxx xxxxxxx xx xxxxxxx x xxxxxxxxxx xxxxxxxxxx xxx xxxxx xxxx, xxx xxxxxx xxxxx xxxx xxx xxxxxx xxxxxx xxxxxxx xxxxx xx xxx xxx XX xx x xxxxxxx xxxxxx xxxx xxxxxxxx xxxxx xxxxxx xxxxxxxx.
-
-Xxxxxx x xxx [**XxxxxXxxxxxxXxxxxxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226573) xxxxxx, xxxxxxx xx xxx xxxxxxxx xxxxxx XX. Xxxx, xxxx xxx xxxxxx xxxxxx [**XxxxxXxxxxxx.XxxxXxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926708) xx xxx x xxxx xx xxx xxxxxx xxxxxxxx xxxxxxxxx xx xxx xxxxxx.
-
-Xxxx xxxxxxx xxxx x Xxxx xxxxx xxxxxx, xxxxxxxx xx xxx xxxxx **Xxxxxx.Xxxx** xxxxxxxxx, xx xxxxxx x xxxxxxx xxxx xxxxxxxx x [**XxxxxxxxxXxxxxxXxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926705) xxxxxx xxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926700), [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926697), xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn926696) xxxxxxxxxx xxxxx xxx xxxxxxxxx xxxxxx. Xx x xxxxx xx xxxxx, [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926679) xxx [**XxxxxxXxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926678) xx xxx **XxxxxXxxxxxxXxxxxxxxxxxxxxXxxxxxxx** xxx xxx xx xxx xxxxxx xxxx xxx xxxxxxxxx xxxx xxxxxxxx xxxx xxx Xxxx xxxxx. Xx xx xxxxx xx xxxxx, xxx xxxxxxx xxxxxxx xx xxxx.
-
-[!xxxx-xx[XxxxXXXXYYXXXXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindWVGA30FPSProfile)]
-
-Xxxx xxx xxxxxxxxx xxx **XxxxxXxxxxxxXxxxxxxxxxxxxxXxxxxxxx** xxxx xxxx xxxxxxx xxxxxx xxxxxxx, xxx xxxxxx xxxx [**XxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226598) xx xxxx xxxxx xxxxxxx xxxxxx xx xxxxxxxxx xx xx xxx xxxxxxx xxxxxxx.
-
-[!xxxx-xx[XxxxXxxxxxxXxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitCaptureWithProfile)]
-
-## Xxxxxx x xxxxxxx xxxx xxxxxxxx xxxxxxxxxxx
-
-Xxx xxx xxx xxxxxx xxxxxxxx xx xxxxxxxxx xx x xxxxxx xxxxxxxx xxxxx xxxxxxx xxxx xxxxxxxx xxxxxxx xxxxxxxxxxxx. Xxx xxxx xxxxxxxx, xxx xxxx xxxx xx xxxxxx xxx xxxx xx xxxxxxx xxxxxxx, xxx xxx xxx xxxxx xxxxxx xxx xxx xxx xxx xxxx. Xxx xxxx xxxxxx, xxxxxx x **XxxxxXxxxxxx**, x **XxxxxXxxxxxxXxxxxxxxxxxxxxXxxxxxxx**, xxx x xxxxxx xx xxxx xxx xxxxxxx xxxxxx XX. Xxxx, xxx x xxxxxxx xxxxxxxx xxxx xxxx xxxxx xxxxxxx xxxxxxxxxxx xx xxxxxxxxx.
-
-[!xxxx-xx[XxxxxxxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetConcurrencySetup)]
-
-Xxx xxxxxx xxxxxx [**XxxxxXxxxxxx.XxxxXxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926709) xxxxxxx x xxxx xx xxx xxxxxx xxxxxxxx xxxx xxx xxxxxxxxx xx xxx xxxxxxxxx xxxxxxx xxxxxx xxxx xxx xxxx xxxxxxxx xxxxxxxxxxx. Xxx x Xxxx xxxxx xx xxxx x xxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xxx xxxx xx xxxxxxxxx xx xxxx xxx xxxxx xxx xxxx xxxxxx. Xx x xxxxxxx xxxx xxxxx xxxxxx xxxxxxxxxxxx xx xxxxx, xxx xxx xxxxxxx xx xxxx xx xxx **XxxxxXxxxxxxXxxxxxxxxxxxxxXxxxxxxx** xxxxxxx xxx xxx xxx xxxxxxx xxxxxxxxxxx xxxxxxxx xxxxxxxx xx xxxx.
-
-[!xxxx-xx[XxxxXxxxxxxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindConcurrencyDevices)]
-
-Xxxx **XxxxxXxxxxxx.XxxxxxxxxxXxxxx** xxx xxx xxxxxxx xxxxxx xxx xxxx xxx xxxxxxxx. Xx xxxxxxxxxxx xx xxxxxxxxx, xxxxxxxxxx xxx xxxxxx xxxxxx xx xxxx.
-
-[!xxxx-xx[XxxxXxxxxxxxxxXxxxxXxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetInitConcurrentMediaCaptures)]
-
-## Xxx xxxxx xxxxxxxx xx xxxx x xxxxxxx xxxx xxxxxxxx XXX xxxxx
-
-Xxxxxxxxx x xxxxxxx xxxx xxxxxxxx XXX xxxxxx xxxx xxx xxxxx xxxxxxxxx. Xxxxxx x x **XxxxxXxxxxxxXxxxxxxxxxxxxxXxxxxxxx** xxx x xxxxxx xx xxxx xxx xxxxxxx xxxxxx XX. Xxx x xxxxxxx xxxxxxxx xxxx xxxx xxxxx xxxxxxx XXX xxxxx xx xxxxxxxxx.
-
-[!xxxx-xx[XxxXxxXxxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetHdrProfileSetup)]
-
-Xxx xxx **XxxXxxxxXxxxxxxXxxxxxxxxXxxxxxXxXxxxx** xxxxxx xxxxxx xxxxxxx xxxxx xx xxx xxx xxxxxx XX xxx x xxxxxxx xxxxxx xxxx xxxxxxxx xxxxxx xxxxxxxx.
-
-[!xxxx-xx[XxxxXxxxxxXXX](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindDeviceHDR)]
-
-Xxx xxxxxx xxxxxx [**XxxxxXxxxxxx.XxxxXxxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926710) xxxxxxx xxx xxxxxx xxxxxxxx xxxxxxxxx xx xxx xxxxxxxxx xxxxxx xxxx xx xxxxxxxxxxx xx xxx xxxxxxxxx [**XxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948843) xxxxx. Xxx xxxx xxxxxxxx, xxx **XxxxxXxxxxxxxx** xxxxx xx xxxxxxxxx xx xxxxx xxx xxxxxxxx xxxxxx xxxxxxxx xx xxxx xxxx xxxxxxx xxxxx xxxxxxxxx.
-
-Xxxx xxxxxxx xxx xxxxxxxx xxxx xx xxxxxx xxxxxxxx. Xxx xxxx xxxxxx xxxxxxx, xxxx xxxxxxx xxxx [**XxxxxXxxxxxxXxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926695) xx xxx xxxxxxx xxxxxxxx xx xxx xx xxx [**XxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926698) xxxxxxxx xx xxxx. Xxxx x xxxxxxxx xxxxx xxxxxxxxxxx xx xxxxx, xxxxx xxx xx xxx xxxx xxx xxxxxx xxx xxxxxxx xxx xxxxxxxxxxx xxxxxxx xx xxx **XxxxxXxxxxxxXxxxxxxxxxxxxxXxxxxxxx** xxxxxx.
-
-[!xxxx-xx[XxxxXXXXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetFindHDRProfile)]
-
-## Xxxxxxxxx xx x xxxxxx xxxxxxxx xxxxxxxxxxxx xxxxx xxx xxxxx xxxxxxx
-
-Xxxx xxxxxxx xxxxxxx xxxxxxxxx xxxxxx xxx xxxxx xxxxxxxxxxxxxx. Xx xxxxxxxxx xx x xxxxxxx xxxxxx xxxxxxxx xxxx, xxxx [**XxxxxXxxxxxx.XxxxXxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926708) xx xxx xxx xx xxx xxxxxx xxxxxxxx xxxxxxxxx xx xxx xxxxxx. Xxx x xxxx xxxxx xx xxxx x xxxxxxx xxxx xxx xx xxxxx xxx xxxxx xxx xxxx [**XxxxxxxxxXxxxxXxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926703) xxx [**XxxxxxxxxXxxxxxXxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926705) xxxxx xxxxx xxxx xxx xxxxxxx xxxxxxxx xxxxxxxxxxxx xxxxxxx.
-
-[!xxxx-xx[XxxXxxxxXxxXxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPhotoAndVideoSupport)]
-
-Xxx xxx xxxxxx xxxx xxxxx xx xxxx xxx xxxxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xx xxxxx xxxxxxxxxxxx xx xxxxxxxx xx xxxxxxxxxxxx xxxxx xxxxxx. Xxx xxx xxxx xxx xxx [**XxxxxXxxxxxx.XxxxXxxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926710) xxx xxxxxxx xxx [**XxxxxxxxXxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948843) xxxxx xx xxxxxxxx xxxxxxxx xxxx xxxxxxx xxxxxxxxxxxx xxxxxxx, xxx xxxxxxxx xxx xxxxxxxx xxxx xxxxxxx xxxx xxxxxxxx xxxxxxx.
-
-## Xxxxxxx xxxxxx
-
-* [Xxxxxxx xxxxxx xxx xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md)
- 
-
- 
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,41 +1,41 @@
 ---
-xxxxx: Xxx x xxxx xxxxxxxxx
-xxxxxxxxxxx: Xxx'xx xxxx xxx xxx xxxxxx xxxx xxxxxxxxxx xxx xxxx xxxx xxxxxx xx xxxx xx xxx xxxxx xxxxxxxxx xxxxxxxxx.
-xx.xxxxxxx: xxYYYYYx-Yxxx-xYYx-xYYY-xxYYxYYYYYYY
+title: Add a user interface
+description: You've seen how the sample game implements the main game object as well as the basic rendering framework.
+ms.assetid: fa40173e-6cde-b71b-e307-db90f0388485
 ---
 
-# Xxx x xxxx xxxxxxxxx
+# Add a user interface
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxx'xx xxxx xxx xxx xxxxxx xxxx xxxxxxxxxx xxx xxxx xxxx xxxxxx xx xxxx xx xxx xxxxx xxxxxxxxx xxxxxxxxx. Xxx, xxx'x xxxx xx xxx xxx xxxxxx xxxx xxxxxxxx xxxxxxxx xxxxx xxxx xxxxx xx xxx xxxxxx. Xxxx, xxx xxxxx xxx xxx xxx xxx xxxxxx xxxx xxxxxxx xxx xxxxx-xx xxxxxxx xxxxxxxxxx xx xxx xx xxx Y-X xxxxxxxx xxxxxxxx xxxxxx.
+You've seen how the sample game implements the main game object as well as the basic rendering framework. Now, let's look at how the sample game provides feedback about game state to the player. Here, you learn how you can add simple menu options and heads-up display components on top of the 3-D graphics pipeline output.
 
-## Xxxxxxxxx
-
-
--   Xx xxx xxxxx xxxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX xxxx.
-
-## Xxx xxxx xxxxxxxxx xxxxxxx
+## Objective
 
 
-Xxxxx xxxxx xxx xxxx xxxx xx xxxxxxx xxxx xxx xxxx xxxxxxxxx xxxxxxxx xx x XxxxxxX xxxx, xx xxx xxxxx xx xxxxx xx xxx, [XxxxxxYX](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) (xxxx [XxxxxxXxxxx](https://msdn.microsoft.com/library/windows/desktop/dd368038) xxx xxx xxxx xxxxxxxx).
+-   To add basic user interface graphics and behaviors to a Universal Windows Platform (UWP) DirectX game.
 
-Xxxxx, xxx'x xx xxxxx xxxxx xxxx XxxxxxYX xx xxx. Xx'x xxx xxxxxxxxxxxx xxxxxxxx xxx xxxx xxxxxxxxxx xx xxxxxxx, xxxx XXXX xx XXXX. Xx xxxxx'x xxxxxxx xxxx xxxxxxxxx xxxxxxxxxx, xxxx xxxx xxxxx xx xxxxxxx; xxx xx xxxxx'x xxxxxxx xxxxxx xxxxxxxxxx xxxx xxxx, xxxxxx, xx xxxxx.
+## The user interface overlay
 
-XxxxxxYX xx x xxx xx Y-X xxxxxxx XXXx xxxx xx xxxx xxxxx-xxxxx xxxxxxxxxx xxx xxxxxxx. Xxxx xxxxxxxx xxx xxxx XxxxxxYX, xxxx xx xxxxxx. Xxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxx xxxx xxxx xxx xxxxxxxx. Xx xxxx xxxx xxxxxxxx x xxxxxxx xxxx xxxxxxxxx xx xxxx, xxxx xxxxx xxxxx xx xxxxxxxxxx xxx xxxxxxxx xxxxx, xxxxxxxx XXXX xxxxxxx.
 
-(Xxx xxxx xxxxx xxxxxxxxxx x xxxx xxxxxxxxx xxxx XXXX xx x XXX XxxxxxX xxxx, xxx [Xxxxxxxxx xxx xxxx xxxxxx](tutorial-resources.md).)
+While there are many ways to display text and user interface elements in a DirectX game, we are going to focus on one, [Direct2D](https://msdn.microsoft.com/library/windows/apps/dd370990.aspx) (with [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) for the text elements).
 
-Xx xxxx xxxx xxxxxx, xx xxxx xxx xxxxx XX xxxxxxxxxx: xxx xxxxx-xx xxxxxxx xxx xxx xxxxx xxx xx-xxxx xxxxxxxx; xxx xx xxxxxxx xxxx xx xxxxxxx xxxx xxxxx xxxx xxx xxxxxxx (xxxx xx xxxxx xxxx xxx xxxxx xxxxx xxxxxxx).
+First, let's be clear about what Direct2D is not. It's not specifically designed for user interfaces or layouts, like HTML or XAML. It doesn't provide user interface components, like list boxes or buttons; and it doesn't provide layout components like divs, tables, or grids.
 
-### Xxxxx XxxxxxYX xxx x xxxxx-xx xxxxxxx
+Direct2D is a set of 2-D drawing APIs used to draw pixel-based primitives and effects. When starting out with Direct2D, keep it simple. Complex layouts and interface behaviors need time and planning. If your game requires a complex user interface to play, like those found in simulation and strategy games, consider XAML instead.
 
-Xxxx xx xxx xx-xxxx xxxxx-xx xxxxxxx xxx xxx xxxx xxxxxx xxxxxxx xxx xxxx xxxxxxx. Xx'x xxxxxx xxx xxxxxxxxxxx, xxxxxxxx xxx xxxxxx xx xxxxx xx xxxxxxxxxx xxx Y-X xxxxx xxx xxxxxxxx xxx xxxxxxx. X xxxx xxxxxxxxx xx xxxxx-xx xxxxxxx xxxx xxxxx xxxxxxxxx xxx xxxxxxx xx xxx xxxxxx xx xxxxxxx xxx xxxxx xx xxx xxxxxx xx xxx xxxx.
+(For info about developing a user interface with XAML in a UWP DirectX game, see [Extending the game sample](tutorial-resources.md).)
 
-![x xxxxxx xxxx xx xxx xxxx xxxxxxx](images/sample3dgame-overlay-nogame.png)
+In this game sample, we have two major UI components: the heads-up display for the score and in-game controls; and an overlay used to display game state text and options (such as pause info and level start options).
 
-Xx xxx xxx xxx, xxx xxxxxxx xxxxxxxx xx xxxxx xxxxxxxxxx: xxx xxxxxxxxxxxx xxxx xxxxxxxx xxx xxx xxxxx xxxxx, xxx xxx xxxxxxxxxx xxx xxx [xxxx-xxxx xxxxxxxxxx](tutorial--adding-controls.md). Xx xxx xxxxx-xxxxx xxxxxx, XxxxxxXxxxx xxxx xxxxxxx xxx xxxxxx xx xxx xxxxxxx xxxxxx xx xxxxxxxxxx xxxx, xxx xxxxxx xx xxxxx xxx xxxxxx xxx xxxx, xxx xxxx xxxxxxxxx xx xxx xxxxx, xxx xxx xxxxxxx xxxxx xxxxxx. Xxx xx-xxxx xxxxx-xx xxxxxxx xxxxx xx xxx xxxxxxx xx xxxxx xx xxx **Xxxxxx** xxxxxx xx xxx **XxxxXxx** xxxxx, xxx xx xxxxx xxxx xxxx:
+### Using Direct2D for a heads-up display
+
+This is the in-game heads-up display for the game sample without the game visuals. It's simple and uncluttered, allowing the player to focus on navigating the 3-D world and shooting the targets. A good interface or heads-up display must never obfuscate the ability of the player to process and react to the events in the game.
+
+![a screen shot of the game overlay](images/sample3dgame-overlay-nogame.png)
+
+As you can see, the overlay consists of basic primitives: two intersecting line segments for the cross hairs, and two rectangles for the [move-look controller](tutorial--adding-controls.md). In the upper-right corner, DirectWrite text informs the player of the current number of successful hits, the number of shots the player has made, the time remaining in the level, and the current level number. The in-game heads-up display state of the overlay is drawn in the **Render** method of the **GameHud** class, and is coded like this:
 
 ```cpp
 void GameHud::Render(
@@ -166,43 +166,43 @@ void GameHud::Render(
 }
 ```
 
-Xx xxxx xxxx, xxx XxxxxxYX xxxxxx xxxxxx xxxxxxxxxxx xxx xxx xxxxxxx xx xxxxxxx xx xxxxxxx xxx xxxxxxx xx xxx xxxxxx xx xxxx, xxx xxxx xxxxxxxxx, xxx xxx xxxxx xxxxxx. Xxx xxxxxxxxxx xxx xxxxx xxxx xxxxx xx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/dd371902), xxx xxx xxxxx xxxxx xxx xxxxx xxxx x xxxx xx xxxxx xx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/dd371895).
+In this code, the Direct2D render target established for the overlay is updated to reflect the changes in the number of hits, the time remaining, and the level number. The rectangles are drawn with calls to [**DrawRect**](https://msdn.microsoft.com/library/windows/desktop/dd371902), and the cross hairs are drawn with a pair of calls to [**DrawLine**](https://msdn.microsoft.com/library/windows/desktop/dd371895).
 
-> **Xxxx**   Xxx xxxxxxxx xxxxxxx xxx xxxx xx **XxxxXxx::Xxxxxx** xxxxx x [**Xxxxxxx::Xxxxxxxxxx::Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225994) xxxxxxxxx, xxxxx xxxxxxxx xxx xxxx xx xxx xxxx xxxxxx xxxxxxxxx. Xxxx xxxxxxxxxxxx xx xxxxxxxxx xxxx xx XX xxxxxxxxxxx: xxxxxxxxx xxx xxxx xx xxxxxx xx x xxxxxxxxxxx xxxxxx XXXx (xxxxxx xxxxxxxxxxx xxxxxx), xxxxx x XXX xx xxxxxxx xx Y/YY xx xx xxxx. XxxxxxYX xxxxxx xxx xxxxxxx xxxxx xx xxxxxx xxxxxx xxxx xxx xxxxxxx xxxxxx, xxx xx xxxx xx xx xxxxx xxx Xxxxxxx xxxx xxx xxxx (XXX) xxxxxxx. Xxxxxxxxx, xxxx xxx xxxx xxxx xxxxx XxxxxxXxxxx, xxx xxxxxxx XXXx xxxxxx xxxx xxxxxx xxx xxx xxxx xx xxx xxxx. XXXx xxx xxxxxxxxx xx xxxxxxxx xxxxx xxxxxxx.
+> **Note**   You probably noticed the call to **GameHud::Render** takes a [**Windows::Foundation::Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) parameter, which contains the size of the main window rectangle. This demonstrates an essential part of UI programming: obtaining the size of window in a measurement called DIPs (device independent pixels), where a DIP is defined as 1/96 of an inch. Direct2D scales the drawing units to actual pixels when the drawing occurs, and it does so by using the Windows dots per inch (DPI) setting. Similarly, when you draw text using DirectWrite, you specify DIPs rather than points for the size of the font. DIPs are expressed as floating point numbers.
 
  
 
-### Xxxxxxxxxx xxxx xxxxx xxxxxxxxxxx xxxx xx xxxxxxx
+### Displaying game state information with an overlay
 
-Xxxxxxx xxx xxxxx-xx xxxxxxx, xxx xxxx xxxxxx xxx xx xxxxxxx xxxx xxxxxxxxxx xxxx xxxx xxxxxx, xxx xxx xx xxxxx xxxxxxx x xxxxx xxxxx xxxxxxxxx xxxxxxxxx xxxx xxxx xxx xxx xxxxxx xx xxxx. (Xx xxxxx xxxx xxx xxxx-xxxx xxxxxxxxxx xxxxxxxxxx xxx xxx xxxxx, xxxxxxx xxxx xxx xxx xxxxxx xx xxxxx xxxxxx.) Xxxxx xxxxxxx xxxxxx xxx:
+Besides the heads-up display, the game sample has an overlay that represents five game states, and all of which feature a large black rectangle primitive with text for the player to read. (Be aware that the move-look controller rectangles are not drawn, because they are not active in these states.) These overlay states are:
 
--   Xxx xxxx xxxxx xxxxxxx. Xx xxxx xxxx xxxx xxx xxxxxx xxxxxx xxx xxxx. Xx xxxxxxxx xxx xxxx xxxxx xxxxxx xxxx xxxxxxxx.
+-   The game start overlay. We show this when the player starts the game. It contains the high score across game sessions.
 
-    ![x xxxxxx xxxx xx xxx xxxxx xxxxxx xxx xxxxxxYxxxxxxx](images/simple3dgamestart.png)
+    ![a screen shot of the start screen for simple3dgamedx](images/simple3dgamestart.png)
 
--   Xxx xxxxx xxxxx.
+-   The pause state.
 
-    ![x xxxxxx xxxx xx xxx xxxxx xxxxxx xxx xxxxxxYxxxxxxx](images/simple3dgame-overlay-pause.png)
+    ![a screen shot of the pause screen for simple3dgamedx](images/simple3dgame-overlay-pause.png)
 
--   Xxx xxxxx xxxxx xxxxx. Xx xxxx xxxx xxxx xxx xxxxxx xxxxxx x xxx xxxxx.
+-   The level start state. We show this when the player starts a new level.
 
-    ![x xxxxxx xxxx xx xxx xxxxx xxxxx xxxxxx xxx xxxxxxYxxxxxxx](images/simple3dgame-overlay-newgame.png)
+    ![a screen shot of the level start screen for simple3dgamedx](images/simple3dgame-overlay-newgame.png)
 
--   Xxx xxxx xxxx xxxxx. Xx xxxx xxxx xxxx xxx xxxxxx xxxxx x xxxxx.
+-   The game over state. We show this when the player fails a level.
 
-    ![x xxxxxx xxxx xx xxx xxxx xxxx xxxxxx xxx xxxxxxYxxxxxxx](images/simple3dgame-overlay-gameover.png)
+    ![a screen shot of the game over screen for simple3dgamedx](images/simple3dgame-overlay-gameover.png)
 
--   Xxx xxxx xxxx xxxxxxx xxxxx. Xx xxxx xxxx xxxx xxx xxxxxx xxxx. Xx xxxxxxxx xxx xxxxx xxxxx xxx xxxxxx xxx xxxxxxxx.
+-   The game stat display state. We show this when the player wins. It contains the final score the player has achieved.
 
-    ![xxx xxxxxxx xxxxxx xxx xxxxxxYxxxxxxx](images/simple3dgame-overlay-gamestats.png)
+    ![the victory screen for simple3dgamedx](images/simple3dgame-overlay-gamestats.png)
 
-Xxx'x xxxx xx xxx xx xxxxxxxxxx xxx xxxx xxx xxxxxxx xxx xxxxx xxxx xxxxxx.
+Let's look at how we initialize and draw the overlay for these five states.
 
-### Xxxxxxxxxxxx xxx xxxxxxx xxx xxxxxxx
+### Initializing and drawing the overlay
 
-Xxx xxxx xxxxxxxx xxxxxx xxxx xxxx xxxxxx xx xxxxxx: xxx, xxxx xxx xxx x xxxxx xxxxxxxxx xx xxx xxxxxx xx xxx xxxxxx xx xxxxx xxxxxxxxxx; xxx, xxx xxxxxxxxx xxxx xx xxxxxx xxxxx xxxx xx xxxx xxxx; xxx xxxxx, xxx xxxx xxxx xxx Xxxxx XX xxxx xxx xx xxxxx xx xxx xx xxx xxxx xxxxxxxxx. Xx x xxxxxx, xxx xxxxxxxxx xxxx xxxx xxx xxx xxxxxxx xxxx xxxxxxxxx xxxx xxx xxxx xxxxxxx.
+The five explicit states have some things in common: one, they all use a black rectangle in the center of the screen as their background; two, the displayed text is either title text or body text; and three, the text uses the Segoe UI font and is drawn on top of the back rectangle. As a result, the resources they need and the methods that implement them are very similar.
 
-Xxx xxxx xxxxxx xxx xxxx xxxxxxx( **XxxxXxxxXxxxxxx::Xxxxxxxxxx**, **XxxxXxxxXxxxxxx::XxxXxx**, **XxxxXxxxXxxxxxx::XxxxxxxxXxxxxxXXxxxxxxxx**, xxx **XxxxXxxxXxxxxxx::XxxxxxxxXxxXxxxxxxxxXxxxxxxxx**) xxxx xx xxxx xx xxxxxxxxxx, xxx xxx xxxx xxx xxxx, xxxxxxxx xxx XxxxxxXxxxx xxxxxxxxx (xxx xxxx xxxxxxxx), xxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxx, xxxxxxxxxxxx. Xxxx xx xxx xxxx xxx xxxxx xxxx xxxxxxx:
+The game sample has four methods( **GameInfoOverlay::Initialize**, **GameInfoOverlay::SetDpi**, **GameInfoOverlay::RecreateDirectXResources**, and **GameInfoOverlay::RecreateDpiDependentResources**) that it uses to initialize, set the dots per inch, recreate the DirectWrite resources (the text elements), and construct this overlay for display, respectively. This is the code for these four methods:
 
 ```cpp
 void GameInfoOverlay::Initialize(
@@ -359,17 +359,17 @@ void GameInfoOverlay::RecreateDpiDependentResources()
 
 ```
 
-Xxx **Xxxxxxxxxx** xxxxxx xxxxxxx x xxxxxxx xxxx xxx [**XXYXYXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh404478) xxxxxx xxxxxx xx xx, xxxxx xx xxxx xx xxxxxx xx [**XXYXYXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh404479) xxxx xxx xxxxxxx xxxxxx xxxxxx xxx xxxx xxxx, xxx xxxx xxx **x\_xXxxxxXxxxxxx** xxxxx xx xxx xxxxxxxx [**XXXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/dd368183) xxxxxxxxx. Xx xxxx xxxx xxx XXX xxx xxx xxxxxxx. Xxxx, xx xxxxx **XxxxxxxxXxxxxxXxxxxxxxx** xx xxxxxxxx xxx xxxx xxx xxxxxxx.
+The **Initialize** method obtains a factory from the [**ID2D1Device**](https://msdn.microsoft.com/library/windows/desktop/hh404478) object passed to it, which it uses to create an [**ID2D1DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/hh404479) that the overlay object itself can draw into, and sets the **m\_dWriteFactory** field to the provided [**IDWriteFactory**](https://msdn.microsoft.com/library/windows/desktop/dd368183) reference. It also sets the DPI for the context. Then, it calls **RecreateDeviceResources** to assemble and draw the overlay.
 
-**XxxxxxxxXxxxxxXxxxxxxxx** xxxx xxx XxxxxxXxxxx xxxxxxx xxxxxx xx xxxxxx xxxxxxxxxx (xxxxxxx) xxx xxx xxxxx xxx xxxx xxxx xxxxxxx xxxx xxxx xx xxxxxxxxx xx xxx xxxxxxx. Xx xxxxxxx x xxxxx xxxxx xx xxxx xxx xxxx, x xxxxx xxxxx xx xxxx xxx xxxxxxxxxx, xxx xx xxxxxx xxxxx xx xxxx xxxxxx xxxxxxxx. Xxxx, xx xxxxx **XxxxxxxxXxxXxxxxxxxxXxxxxxxxx** xx xxxxxxx x xxxxxx xx xxxx xxx xxxx xx xx xxxxxxx [**XXYXYXxxxxxXxxxxxx::XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh404480). Xxxxxx, **XxxxxxxxXxxXxxxxxxxxXxxxxxxxx** xxxx xxx xxxxxx xxxxxx xxx xxx XxxxxxYX xxxxxx xxxxxxx xx xxx xxxxxx xxx xxxxxx xx, xxxxx xxxx xxxx xxxx xxxxx xx xxx xxxxxx xx xxx xxxxx xxxxx.
+**RecreateDeviceResources** uses the DirectWrite factory object to create formatters (brushes) for the title and body text strings that will be displayed on the overlay. It creates a white brush to draw the text, a black brush to draw the background, and an orange brush to draw action messages. Then, it calls **RecreateDpiDependentResources** to prepare a bitmap to draw the text on by calling [**ID2D1DeviceContext::CreateBitmap**](https://msdn.microsoft.com/library/windows/desktop/hh404480). Lastly, **RecreateDpiDependentResources** sets the render target for the Direct2D device context to the bitmap and clears it, which then sets each pixel in the bitmap to the color black.
 
-Xxx, xxx xxx xxxxxxx xxxxx xx xxxx xxxx xx xxxxxxx!
+Now, all the overlay needs is some text to display!
 
-### Xxxxxxxxxxxx xxxx xxxxx xx xxx xxxxxxx
+### Representing game state in the overlay
 
-Xxxx xx xxx xxxx xxxxxxx xxxxxx xx xxx xxxx xxxxxx xxx x xxxxxxxxxxxxx xxxxxx xx xxx **XxxxXxxxXxxxxxx** xxxxxx. Xxxxx xxxxxxx xxxx x xxxxxxxxx xx xxx xxxxxxx xx xxxxxxxxxxx xxxxxxxx xxxx xx xxx xxxxxx xxxxx xxx xxxx xxxxxx. Xxxx xxxxxxxxxxxxx xx, xx xxxxxx, xxxxxxxxxxx xx xxx xxxxxxx: x xxxxx xxxxxx, xxx x xxxx xxxxxx. Xxxxxxx xxx xxxxxx xxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxx xxxxxx xxx xxxx xxxx xx xxx **XxxxxxxxXxxxxxXxxxxxxxx** xxxxxx, xx xxxx xxxxx xx xxxxxxx xxx xxxxxxx xxxxx-xxxxxxxx xxxxxxx.
+Each of the five overlay states in the game sample has a corresponding method on the **GameInfoOverlay** object. These methods draw a variation of the overlay to communicate explicit info to the player about the game itself. This communication is, of course, represented as two strings: a title string, and a body string. Because the sample already configured the resources and layout for this info in the **RecreateDeviceResources** method, it only needs to provide the overlay state-specific strings.
 
-Xxx, xx xxx xxxxxxxxxx xx xxx **XxxxXxxxXxxxxxx** xxxxx, xxx xxxxxx xxxxxxxx xxxxx xxxxxxxxxxx xxxxx xxxx xxxxxxxxxx xx xxxxxxxx xxxxxxx xx xxx xxxxxxx, xx xxxxx xxxx:
+Now, in the definition of the **GameInfoOverlay** class, the sample declared three rectangular areas that correspond to specific regions of the overlay, as shown here:
 
 ```cpp
 static const D2D1_RECT_F titleRectangle = D2D1::RectF(50.0f, 50.0f, GameInfoOverlayConstant::Width - 50.0f, 100.0f);
@@ -377,13 +377,13 @@ static const D2D1_RECT_F bodyRectangle = D2D1::RectF(50.0f, 110.0f, GameInfoOver
 static const D2D1_RECT_F actionRectangle = D2D1::RectF(50.0f, GameInfoOverlayConstant::Height - 45.0f, GameInfoOverlayConstant::Width - 50.0f, GameInfoOverlayConstant::Height - 5.0f);
 ```
 
-Xxxxx xxxxx xxxx xxxx x xxxxxxxx xxxxxxx:
+These areas each have a specific purpose:
 
--   **xxxxxXxxxxxxxx** xx xxxxx xxx xxxxx xxxx xx xxxxx.
--   **xxxxXxxxxxxxx** xx xxxxx xxx xxxx xxxx xx xxxxx.
--   **xxxxxxXxxxxxxxx** xx xxxxx xxx xxxx xxxx xxxxxxx xxx xxxxxx xx xxxx x xxxxxxxx xxxxxx xx xxxxx. (Xx'x xx xxx xxxxxx xxxx xx xxx xxxxxxx xxxxxx.)
+-   **titleRectangle** is where the title text is drawn.
+-   **bodyRectangle** is where the body text is drawn.
+-   **actionRectangle** is where the text that informs the player to take a specific action is drawn. (It's in the bottom left of the overlay bitmap.)
 
-Xxxx xxxxx xxxxx xx xxxx, xxx'x xxxx xx xxx xx xxx xxxxx-xxxxxxxx xxxxxxx, **XxxxXxxxXxxxxxx::XxxXxxxXxxxx**, xxx xxx xxx xxx xxxxxxx xx xxxxx.
+With these areas in mind, let's look at one of the state-specific methods, **GameInfoOverlay::SetGameStats**, and see how the overlay is drawn.
 
 ```cpp
 void GameInfoOverlay::SetGameStats(int maxLevel, int hitCount, int shotCount)
@@ -435,11 +435,11 @@ void GameInfoOverlay::SetGameStats(int maxLevel, int hitCount, int shotCount)
 }
 ```
 
-Xxxxx xxx XxxxxxYX xxxxxx xxxxxxx xxxx xxx **XxxxXxxxXxxxxxx** xxxxxx xxxxxxxxxxx xxx xxxxxxxxxx xxxxx **Xxxxxxxxxx** xxx **XxxxxxxxXxxxxxXXxxxxxxxx**, xxxx xxxxxx xxxxx xxx xxxxx xxx xxxx xxxxxxxxxx xxxx xxxxx xxxxx xxx xxxxxxxxxx xxxxx. Xx xxxxx xxx xxxx xxx xxx "Xxxx Xxxxx" xxxxxx xx xxx xxxxx xxxxxxxxx xxx x xxxxxx xxxxxxxxxx xxx xxxxxxx xxxx xxxxx xxxxxxxxxxx xx xxx xxxx xxxxxxxxx xxxxx xxx xxxxx xxxx xxxxx.
+Using the Direct2D device context that the **GameInfoOverlay** object initialized and configured using **Initialize** and **RecreateDirectXResources**, this method fills the title and body rectangles with black using the background brush. It draws the text for the "High Score" string to the title rectangle and a string containing the updates game state information to the body rectangle using the white text brush.
 
-Xxx xxxxxx xxxxxxxxx xx xxxxxxx xx x xxxxxxxxxx xxxx xx **XxxxXxxxXxxxxxx::XxxXxxxxx** xxxx x xxxxxx xx xxx **XxxxxxXXxx** xxxxxx, xxxxx xxxxxxxx xxx xxxx xxxxx xxxx xxxxxx xx **XxxXxxxxx** xx xxxxxxxxx xxx xxxxx xxxxxxx xx xxx xxxxxx (xxxx xx "Xxx xx xxxxxxxx").
+The action rectangle is updated by a subsequent call to **GameInfoOverlay::SetAction** from a method on the **DirectXApp** object, which provides the game state info needed by **SetAction** to determine the right message to the player (such as "Tap to continue").
 
-Xxx xxxxxxx xxx xxx xxxxx xxxxx xx xxxxxx xx xxx **XxxXxxxXxxxXxxxxxx** xxxxxx xx **XxxxxxXXxx**, xxxx xxxx:
+The overlay for any given state is chosen in the **SetGameInfoOverlay** method on **DirectXApp**, like this:
 
 ```cpp
 void DirectXApp::SetGameInfoOverlay(GameInfoOverlayState state)
@@ -495,15 +495,15 @@ void DirectXApp::SetGameInfoOverlay(GameInfoOverlayState state)
 }
 ```
 
-Xxx xxx xxx xxxx xxxxxx xxx x xxx xx xxxxxxxxxxx xxxx xxxx xx xxx xxxxxx xxxxx xx xxxx xxxxx.
+And now the game sample has a way to communicate text info to the player based on game state.
 
-### Xxxx xxxxx
+### Next steps
 
-Xx xxx xxxx xxxxx, [Xxxxxx xxxxxxxx](tutorial--adding-controls.md), xx xxxx xx xxx xxx xxxxxx xxxxxxxxx xxxx xxx xxxx xxxxxx, xxx xxx xxxxx xxxxxxx xxxx xxxxx.
+In the next topic, [Adding controls](tutorial--adding-controls.md), we look at how the player interacts with the game sample, and how input changes game state.
 
-### Xxxxxxxx xxxxxx xxxx xxx xxxx xxxxxxx
+### Complete sample code for this section
 
-XxxxXxx.x
+GameHud.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -565,7 +565,7 @@ private:
 };
 ```
 
-XxxxXxx.xxx
+GameHud.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -924,7 +924,7 @@ void GameHud::Render(
 }
 ```
 
-XxxxXxxxXxxxxxx.x
+GameInfoOverlay.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -997,7 +997,7 @@ private:
 };
 ```
 
-XxxxXxxxXxxxxxx.xxx
+GameInfoOverlay.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -1473,16 +1473,20 @@ void GameInfoOverlay::SetAction(GameInfoOverlayCommand action)
 }
 ```
 
-## Xxxxxxx xxxxxx
+## Related topics
 
 
-[Xxxxxx x xxxxxx XXX xxxx xxxx XxxxxxX](tutorial--create-your-first-metro-style-directx-game.md)
+[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

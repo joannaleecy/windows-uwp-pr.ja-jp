@@ -1,26 +1,27 @@
 ---
-xxxxx: Xxxxxxxxxx xxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx xxx xxx Xxxxxxxxxx Xxxxxx xx xxxxxxxx xxxxx xxx xxxxxxxx xxxx xxxxxxxxxxx, xxx xxxx xxxx xxxxxxx xxxxxxx xxxx xxx xxxx'x Xxxxxxxxx xxxxxxx.
-xx.xxxxxxx: YXXXYYYX-YXYX-YYYX-XYYY-YYYYXYXXXYYY
+title: Credential locker
+description: This article describes how Universal Windows Platform (UWP) apps can use the Credential Locker to securely store and retrieve user credentials, and roam them between devices with the user's Microsoft account.
+ms.assetid: 7BCC443D-9E8A-417C-B275-3105F5DED863
+author: awkoren
 ---
 
-# Xxxxxxxxxx xxxxxx
+# Credential locker
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxxxx xxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx xxx xxx Xxxxxxxxxx Xxxxxx xx xxxxxxxx xxxxx xxx xxxxxxxx xxxx xxxxxxxxxxx, xxx xxxx xxxx xxxxxxx xxxxxxx xxxx xxx xxxx'x Xxxxxxxxx xxxxxxx.
+This article describes how Universal Windows Platform (UWP) apps can use the Credential Locker to securely store and retrieve user credentials, and roam them between devices with the user's Microsoft account.
 
-Xxx xxxxxxx, xxx xxxx xx xxx xxxx xxxxxxxx xx x xxxxxxx xx xxxxxx xxxxxxxxx xxxxxxxxx xxxx xx xxxxx xxxxx, xx xxxxxx xxxxxxxxxx. Xxxx xxxxxxx xxxxxxxx xxxxx xxxxxxxxxxx xxx xxxx xxxx. Xxx’xx xxxxx XX xxxx xxxx xxx xxxx xxxx xxx xxxxxxxx xxx xxxxxxxx xxx xxx xxxx, xxxxx xx xxxx xxxx xx xxx xxx xxxx xxxx xxx xxxxxxx. Xxxxx xxx Xxxxxxxxxx Xxxxxx XXX, xxx xxx xxxxx xxx xxxxxxxx xxx xxxxxxxx xxx xxxx xxxx xxx xxxxxx xxxxxxxx xxxx xxx xxx xxx xxxx xx xxxxxxxxxxxxx xxx xxxx xxxx xxxx xxxx xxxx xxx, xxxxxxxxxx xx xxxx xxxxxx xxxx'xx xx.
+For example, you have an app that connects to a service to access protected resources such as media files, or social networking. Your service requires login information for each user. You’ve built UI into your app that gets the username and password for the user, which is then used to log the user into the service. Using the Credential Locker API, you can store the username and password for your user and easily retrieve them and log the user in automatically the next time they open your app, regardless of what device they're on.
 
-Xxxxxxxxxx xxxxxx xxxxx x xxxxxx xxxxxxxxxxx xxx xxxxxx xxxxxxxx. Xx xxxxx xxx xxxxxxxxxxx xxxxxx xxxx xxxx Xxxxxxxxx xxxxxxx, xxx xxx xxxxxxxxx xxxx xxxxxxx xxxx x xxxxxx xxxxxxx (xxxx xx xxx xxxxxxx xxxx xxx xxx xx xxxx), xxxx xxxxxxxxxxx xxxx xxxx xx xxxx xxxxxx xxxxxxx. Xxxxxxx, xxx xxx xxxxxxxxxxx xxxxx xxxx xxxxxx xx xxxx xxx xxxxxx xxxxxxx xxx’x xxxx. Xxxx xxxxxxx xxxx xxxxxxx xxxxxxxxxxx xxx xxx xxxxxx xxxx’x xxxxxxx xxxxxxx xx xxx xxxxxx.
+Credential locker works a little differently for domain accounts. If there are credentials stored with your Microsoft account, and you associate that account with a domain account (such as the account that you use at work), your credentials will roam to that domain account. However, any new credentials added when signed on with the domain account won’t roam. This ensures that private credentials for the domain aren’t exposed outside of the domain.
 
-## Xxxxxxx xxxx xxxxxxxxxxx
+## Storing user credentials
 
 
-1.  Xxxxxx x xxxxxxxxx xx xxx Xxxxxxxxxx Xxxxxx xxxxx xxx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227081) xxxxxx xxxx xxx [**Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227089) xxxxxxxxx.
-2.  Xxxxxx x [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227061) xxxxxx xxxx xxxxxxxx xx xxxxxxxxxx xxx xxxx xxx, xxx xxxxxxxx xxx xxx xxxxxxxx, xxx xxxx xxxx xx xxx [**XxxxxxxxXxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/hh701231) xxxxxx xx xxx xxx xxxxxxxxxx xx xxx xxxxxx.
+1.  Obtain a reference to the Credential Locker using the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) object from the [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) namespace.
+2.  Create a [**PasswordCredential**](https://msdn.microsoft.com/library/windows/apps/br227061) object that contains an identifier for your app, the username and the password, and pass that to the [**PasswordVault.Add**](https://msdn.microsoft.com/library/windows/apps/hh701231) method to add the credential to the locker.
 
 ```cs
 var vault = new Windows.Security.Credentials.PasswordVault();
@@ -28,20 +29,20 @@ vault.Add(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## Xxxxxxxxxx xxxx xxxxxxxxxxx
+## Retrieving user credentials
 
 
-Xxx xxxx xxxxxxx xxxxxxx xxx xxxxxxxxxx xxxx xxxxxxxxxxx xxxx xxx Xxxxxxxxxx Xxxxxx xxxxx xxx xxxx x xxxxxxxxx xx xxx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227081) xxxxxx.
+You have several options for retrieving user credentials from the Credential Locker after you have a reference to the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) object.
 
--   Xxx xxx xxxxxxxx xxx xxx xxxxxxxxxxx xxx xxxx xxx xxxxxxxx xxx xxxx xxx xx xxx xxxxxx xxxx xxx [**XxxxxxxxXxxxx.XxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br227088) xxxxxx.
+-   You can retrieve all the credentials the user has supplied for your app in the locker with the [**PasswordVault.RetrieveAll**](https://msdn.microsoft.com/library/windows/apps/br227088) method.
 
--   Xx xxx xxxx xxx xxxxxxxx xxx xxx xxxxxx xxxxxxxxxxx, xxx xxx xxxxxxxx xxx xxx xxxxxxxxxxx xxx xxxx xxxxxxxx xxxx xxx [**XxxxxxxxXxxxx.XxxxXxxXxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227084) xxxxxx.
+-   If you know the username for the stored credentials, you can retrieve all the credentials for that username with the [**PasswordVault.FindAllByUserName**](https://msdn.microsoft.com/library/windows/apps/br227084) method.
 
--   Xx xxx xxxx xxx xxxxxxxx xxxx xxx xxx xxxxxx xxxxxxxxxxx, xxx xxx xxxxxxxx xxx xxx xxxxxxxxxxx xxx xxxx xxxxxxxx xxxx xxxx xxx [**XxxxxxxxXxxxx.XxxxXxxXxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227083) xxxxxx.
+-   If you know the resource name for the stored credentials, you can retrieve all the credentials for that resource name with the [**PasswordVault.FindAllByResource**](https://msdn.microsoft.com/library/windows/apps/br227083) method.
 
--   Xxxxxxx, xx xxx xxxx xxxx xxx xxxxxxxx xxx xxx xxxxxxxx xxxx xxx x xxxxxxxxxx, xxx xxx xxxxxxxx xxxx xxxx xxxxxxxxxx xxxx xxx [**XxxxxxxxXxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227087) xxxxxx.
+-   Finally, if you know both the username and the resource name for a credential, you can retrieve just that credential with the [**PasswordVault.Retrieve**](https://msdn.microsoft.com/library/windows/apps/br227087) method.
 
-Xxx’x xxxx xx xx xxxxxxx xxxxx xx xxxx xxxxxx xxx xxxxxxxx xxxx xxxxxxxx xx xx xxx xxx xx xxx xxx xxxx xx xxxxxxxxxxxxx xx xx xxxx x xxxxxxxxxx xxx xxxx. Xx xx xxxx xxxxxxxx xxxxxxxxxxx xxx xxx xxxx xxxx, xx xxx xxx xxxx xx xxxxxx x xxxxxxx xxxxxxxxxx xx xxx xxxx xxxxxxx xx.
+Let’s look at an example where we have stored the resource name globally in an app and we log the user on automatically if we find a credential for them. If we find multiple credentials for the same user, we ask the user to select a default credential to use when logging on.
 
 ```cs
 private string resourceName = "My App";
@@ -99,14 +100,14 @@ private Windows.Security.Credentials.PasswordCredential GetCredentialFromLocker(
 }
 ```
 
-## Xxxxxxxx xxxx xxxxxxxxxxx
+## Deleting user credentials
 
 
-Xxxxxxxx xxxx xxxxxxxxxxx xx xxx Xxxxxxxxxx Xxxxxx xx xxxx x xxxxx, xxx-xxxx xxxxxxx.
+Deleting user credentials in the Credential Locker is also a quick, two-step process.
 
-1.  Xxxxxx x xxxxxxxxx xx xxx Xxxxxxxxxx Xxxxxx xxxxx xxx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227081) xxxxxx xxxx xxx [**Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227089) xxxxxxxxx.
+1.  Obtain a reference to the Credential Locker using the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) object from the [**Windows.Security.Credentials**](https://msdn.microsoft.com/library/windows/apps/br227089) namespace.
 
-2.  Xxxx xxx xxxxxxxxxx xxx xxxx xx xxxxxx xx xxx [**XxxxxxxxXxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701242) xxxxxx.
+2.  Pass the credential you want to delete to the [**PasswordVault.Remove**](https://msdn.microsoft.com/library/windows/apps/hh701242) method.
 
 ```cs
 var vault = new Windows.Security.Credentials.PasswordVault();
@@ -114,23 +115,18 @@ vault.Remove(new Windows.Security.Credentials.PasswordCredential(
     "My App", username, password));
 ```
 
-## Xxxx xxxxxxxxx
+## Best practices
 
 
-Xxxx xxx xxx xxxxxxxxxx xxxxxx xxx xxxxxxxxx xxx xxx xxx xxxxxx xxxx xxxxx.
+Only use the credential locker for passwords and not for larger data blobs.
 
-Xxxx xxxxxxxxx xx xxx xxxxxxxxxx xxxxxx xxxx xx xxx xxxxxxxxx xxxxxxxx xxx xxx:
+Save passwords in the credential locker only if the following criteria are met:
 
--   Xxx xxxx xxx xxxxxxxxxxxx xxxxxx xx.
--   Xxx xxxx xxx xxxxx xx xxxx xxxxxxxxx.
+-   The user has successfully signed in.
+-   The user has opted to save passwords.
 
-Xxxxx xxxxx xxxxxxxxxxx xx xxxxx-xxxx xxxxx xxx xxxx xx xxxxxxx xxxxxxxx.
+Never store credentials in plain-text using app data or roaming settings.
 
- 
-
- 
+<!--HONumber=Mar16_HO5-->
 
 
-
-
-<!--HONumber=Mar16_HO1-->

@@ -1,46 +1,46 @@
 ---
-Xxxxxxxxxxx: Xxx x XxxxXxxxXxxxx xxxx XxxxXxxxXxxxxXxxxxxxx xxxxxxxx xx xxxxxx xxxxxxxx xxxx xxxxxxx.
-xxxxx: XxxxXxxxXxxxx
-xx.xxxxxxx: XYXXYXYX-YYYX-YYYY-YYXY-YYXYYXXXYXYY
-xxxxx: Xxxx xxxx xxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Use a RichTextBlock with RichTextBlockOverflow elements to create advanced text layouts.
+title: RichTextBlock
+ms.assetid: E4BE4B1B-418E-4075-88F1-22C09DDF8E45
+label: Rich text block
+template: detail.hbs
 ---
-# Xxxx xxxx xxxxx
-Xxxx xxxx xxxxxx xxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxxx xxxx xxxxxx xxxx xxx xxx xxx xxxx xxx xxxx xxxxxxx xxx xxxxxxxxxx, xxxxxx XX xxxxxxxx, xx xxxxxxx xxxx xxxxxxx.
+# Rich text block
+Rich text blocks provide several features for advanced text layout that you can use when you need support for paragraphs, inline UI elements, or complex text layouts.
 
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
 
--   [**XxxxXxxxXxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)
--   [**XxxxXxxxXxxxxXxxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)
--   [**Xxxxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)
--   [**Xxxxxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)
+-   [**RichTextBlock class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx)
+-   [**RichTextBlockOverflow class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx)
+-   [**Paragraph class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx)
+-   [**Typography class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
+## Is this the right control?
 
-Xxx x **XxxxXxxxXxxxx** xxxx xxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxx, xxxxx-xxxxxx xx xxxxx xxxxxxx xxxx xxxxxxx, xx xxxxxx XX xxxxxxxx xxxx xxxxxx.
+Use a **RichTextBlock** when you need support for multiple paragraphs, multi-column or other complex text layouts, or inline UI elements like images.
 
-Xxx x **XxxxXxxxx** xx xxxxxxx xxxx xxxx-xxxx xxxx xx xxxx xxx. Xxx xxx xxx xx xx xxxxxxx xxxxxx-xxxx xx xxxxx-xxxx xxxx, xxxxxx xxxxxxxxxx, xxx xxxx xxxx xxxxxxxxxx xxxx xxxx, xxxxxx, xx xxxxxxxxxx. XxxxXxxxx xxxxxxxx x xxxxxxx xxxxxxx xxxxx, xx xx’x xxxxxxxxx xxxxxx xx xxx, xxx xx xxx xxxxxxx xxxxxx xxxx xxxxxxxxx xxxxxxxxxxx xxxx XxxxXxxxXxxxx. Xx'x xxxxxxxxx xxx xxxx xxx XX xxxx. Xxxxxxxx xxx xxx xxx xxxx xxxxxx xx xxx xxxx, XxxxXxxxx xx xxxxxxxx xx xxxxxxx x xxxxxx xxxxxxxxx xxx xxxxx’x xxxxxxx xxxx xxxxxxxxxxx.
+Use a **TextBlock** to display most read-only text in your app. You can use it to display single-line or multi-line text, inline hyperlinks, and text with formatting like bold, italic, or underlined. TextBlock provides a simpler content model, so it’s typically easier to use, and it can provide better text rendering performance than RichTextBlock. It's preferred for most app UI text. Although you can put line breaks in the text, TextBlock is designed to display a single paragraph and doesn’t support text indentation.
 
-Xxx xxxx xxxx xxxxx xxxxxxxx xxx xxxxx xxxx xxxxxxx, xxx xxx [Xxxx xxxxxxxx](text-controls.md) xxxxxxx.
+For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
-## Xxxxxxxx
+## Examples
 
 
-## Xxxxxx x xxxx xxxx xxxxx
+## Create a rich text block
 
-Xxx xxxxxxx xxxxxxxx xx XxxxXxxxXxxxx xx xxx [Xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx) xxxxxxxx, xxxxx xxxxxxxx xxxxxxxxx xxxxx xxxx xxx xxx [Xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) xxxxxxx. Xx xxxxx'x xxxx x **Xxxx** xxxxxxxx xxxx xxx xxx xxx xx xxxxxx xxxxxx xxx xxxxxxx'x xxxx xxxxxxx xx xxxx xxx. Xxxxxxx, XxxxXxxxXxxxx xxxxxxxx xxxxxxx xxxxxx xxxxxxxx xxxx XxxxXxxxx xxxxx’x xxxxxxx. 
+The content property of RichTextBlock is the [Blocks](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.blocks.aspx) property, which supports paragraph based text via the [Paragraph](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) element. It doesn't have a **Text** property that you can use to easily access the control's text content in your app. However, RichTextBlock provides several unique features that TextBlock doesn’t provide. 
 
-XxxxXxxxXxxxx xxxxxxxx:
-- Xxxxxxxx xxxxxxxxxx. Xxx xxx xxxxxxxxxxx xxx xxxxxxxxxx xx xxxxxxx xxx [XxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.textindent.aspx) xxxxxxxx.
-- Xxxxxx XX xxxxxxxx. Xxx xx [XxxxxxXXXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) xx xxxxxxx XX xxxxxxxx, xxxx xx xxxxxx, xxxxxx xxxx xxxx xxxx.
-- Xxxxxxxx xxxxxxxxxx. Xxx [XxxxXxxxXxxxxXxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) xxxxxxxx xx xxxxxx xxxxx-xxxxxx xxxx xxxxxxx.
+RichTextBlock supports:
+- Multiple paragraphs. Set the indentation for paragraphs by setting the [TextIndent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.textindent.aspx) property.
+- Inline UI elements. Use an [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) to display UI elements, such as images, inline with your text.
+- Overflow containers. Use [RichTextBlockOverflow](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) elements to create multi-column text layouts.
 
-### Xxxxxxxxxx
+### Paragraphs
 
-Xxx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) xxxxxxxx xx xxxxxx xxx xxxxxx xx xxxx xx xxxxxxx xxxxxx x XxxxXxxxXxxxx xxxxxxx. Xxxxx XxxxXxxxXxxxx xxxxxx xxxxxxx xx xxxxx xxx Xxxxxxxxx. 
+You use [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.aspx) elements to define the blocks of text to display within a RichTextBlock control. Every RichTextBlock should include at least one Paragraph. 
 
-Xxx xxx xxx xxx xxxxxx xxxxxx xxx xxx xxxxxxxxxx xx x XxxxXxxxXxxxx xx xxxxxxx xxx [XxxxXxxxXxxxx.XxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.textindent.aspx) xxxxxxxx. Xxx xxx xxxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxx xx x XxxxXxxxXxxxx xx xxxxxxx xxx [Xxxxxxxxx.XxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.textindent.aspx) xxxxxxxx xx x xxxxxxxxx xxxxx.
+You can set the indent amount for all paragraphs in a RichTextBlock by setting the [RichTextBlock.TextIndent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.textindent.aspx) property. You can override this setting for specific paragraphs in a RichTextBlock by setting the [Paragraph.TextIndent](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.paragraph.textindent.aspx) property to a different value.
 
 ```xaml
 <RichTextBlock TextIndent="12">
@@ -50,13 +50,13 @@ Xxx xxx xxx xxx xxxxxx xxxxxx xxx xxx xxxxxxxxxx xx x XxxxXxxxXxxxx xx xxxxxxx x
 </RichTextBlock>
 ```
 
-### Xxxxxx XX xxxxxxxx
+### Inline UI elements
 
-Xxx [**XxxxxxXXXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) xxxxx xxxx xxx xxxxx xxx XXXxxxxxx xxxxxx xxxx xxxx xxxx. X xxxxxx xxxxxxxx xx xx xxxxx xx Xxxxx xxxxxx xxxx xxxx xxxx, xxx xxx xxx xxxx xxx xxxxxxxxxxx xxxxxxxx, xxxx x Xxxxxx xx XxxxxXxx.
+The [**InlineUIContainer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.inlineuicontainer.aspx) class lets you embed any UIElement inline with your text. A common scenario is to place an Image inline with your text, but you can also use interactive elements, like a Button or CheckBox.
 
-Xx xxx xxxx xx xxxxx xxxx xxxx xxx xxxxxxx xxxxxx xx xxx xxxx xxxxxxxx, xxxxxxxx xxxxx x xxxxx xx xxx xxxxxx XxxxxxXXXxxxxxxxx xxxxx, xxx xxxx xxxxx xxx xxxxxxxx xxxxxxxx xxxxxx xxxx xxxxx.
+If you want to embed more than one element inline in the same position, consider using a panel as the single InlineUIContainer child, and then place the multiple elements within that panel.
 
-Xxxx xxxxxxx xxxxx xxx xx xxx xx XxxxxxXXXxxxxxxxx xx xxxxxx xx xxxxx xxxx x XxxxXxxxXxxxx. 
+This example shows how to use an InlineUIContainer to insert an image into a RichTextBlock. 
 
 ```xaml
 <RichTextBlock>
@@ -70,11 +70,11 @@ Xxxx xxxxxxx xxxxx xxx xx xxx xx XxxxxxXXXxxxxxxxx xx xxxxxx xx xxxxx xxxx x Xxx
 </RichTextBlock>
 ```
 
-## Xxxxxxxx xxxxxxxxxx
+## Overflow containers
 
-Xxx xxx xxx x XxxxXxxxXxxxx xxxx [**XxxxXxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) xxxxxxxx xx xxxxxx xxxxx-xxxxxx xx xxxxx xxxxxxxx xxxx xxxxxxx. Xxx xxxxxxx xxx x XxxxXxxxXxxxxXxxxxxxx xxxxxxx xxxxxx xxxxx xxxx x XxxxXxxxXxxxx xxxxxxx. Xxx xxxx XxxxXxxxXxxxxXxxxxxxx xxxxxxxx xx xxxxxxx xxxx xx xxx XxxxxxxxXxxxxxxXxxxxx xx x XxxxXxxxXxxxx xx xxxxxxx XxxxXxxxXxxxxXxxxxxxx.
+You can use a RichTextBlock with [**RichTextBlockOverflow**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblockoverflow.aspx) elements to create multi-column or other advanced page layouts. The content for a RichTextBlockOverflow element always comes from a RichTextBlock element. You link RichTextBlockOverflow elements by setting them as the OverflowContentTarget of a RichTextBlock or another RichTextBlockOverflow.
 
-Xxxx'x x xxxxxx xxxxxxx xxxx xxxxxxx x xxx xxxxxx xxxxxx. Xxx xxx Xxxxxxxx xxxxxxx xxx x xxxx xxxxxxx xxxxxxx.
+Here's a simple example that creates a two column layout. See the Examples section for a more complex example.
 
 ```xaml
 <Grid>
@@ -92,15 +92,15 @@ Xxxx'x x xxxxxx xxxxxxx xxxx xxxxxxx x xxx xxxxxx xxxxxx. Xxx xxx Xxxxxxxx xxxxx
 </Grid>
 ```
 
-## Xxxxxxxxxx xxxx
+## Formatting text
 
-Xxxxxxxx xxx XxxxXxxxXxxxx xxxxxx xxxxx xxxx, xxx xxx xxxxx xxxxxxx xxxxxxxxxx xxxxxxx xx xxxxxxxxx xxx xxx xxxx xx xxxxxxxx xx xxxx xxx. Xxx xxx xxx xxxxxxxx xxxxxxx xxxxxxxxxx xxxx XxxxXxxxxx, XxxxXxxx, XxxxXxxxx, Xxxxxxxxxx, xxx XxxxxxxxxXxxxxxx xx xxxxxx xxx xxxx xx xxx xxxx. Xxx xxx xxxx xxx xxxxxx xxxx xxxxxxxx xxx Xxxxxxxxxx xxxxxxxx xxxxxxxxxx xx xxxxxx xxxx xxxx. Xxxxx xxxxxxx xxxxxx xxxx xxx xxx XxxxXxxxXxxxx xxxxxxxx xxx xxxx xxxxxxx, xx xx xxx xxxx xxx xxxxx xxx xxxx xxxx x xxxx xxxx xxxxxxx, xxx xxxxxxx, xx xxxxxxxxxx xx xxxxxxx.
+Although the RichTextBlock stores plain text, you can apply various formatting options to customize how the text is rendered in your app. You can set standard control properties like FontFamily, FontSize, FontStyle, Foreground, and CharacterSpacing to change the look of the text. You can also use inline text elements and Typography attached properties to format your text. These options affect only how the RichTextBlock displays the text locally, so if you copy and paste the text into a rich text control, for example, no formatting is applied.
 
-### Xxxxxx xxxxxxxx
+### Inline elements
 
-Xxx [Xxxxxxx.XX.Xxxx.Xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) xxxxxxxxx xxxxxxxx x xxxxxxx xx xxxxxx xxxx xxxxxxxx xxxx xxx xxx xxx xx xxxxxx xxxx xxxx, xxxx xx Xxxx, Xxxxxx, Xxx, Xxxx, xxx XxxxXxxxx. X xxxxxxx xxx xx xxxxx xxxxxxxxxx xx xxxxxxxx xx xxxx xx xx xxxxx xxx xxxx xx x Xxx xx Xxxx xxxxxxx, xxx xxxx xxx xxxxxxxxxx xx xxxx xxxxxxx.
+The [Windows.UI.Xaml.Documents](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.aspx) namespace provides a variety of inline text elements that you can use to format your text, such as Bold, Italic, Run, Span, and LineBreak. A typical way to apply formatting to sections of text is to place the text in a Run or Span element, and then set properties on that element.
 
-Xxxx'x x Xxxxxxxxx xxxx xxx xxxxx xxxxxx xxxxx xx xxxx, xxxx, YYxx xxxx.
+Here's a Paragraph with the first phrase shown in bold, blue, 16pt text.
 
 ```xaml
 <Paragraph>
@@ -109,9 +109,9 @@ Xxxx'x x Xxxxxxxxx xxxx xxx xxxxx xxxxxx xxxxx xx xxxx, xxxx, YYxx xxxx.
 </Paragraph>
 ```
 
-### Xxxxxxxxxx
+### Typography
 
-Xxx xxxxxxxx xxxxxxxxxx xx xxx [Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) xxxxx xxxxxxx xxxxxx xx x xxx xx Xxxxxxxxx XxxxXxxx xxxxxxxxxx xxxxxxxxxx. Xxx xxx xxx xxxxx xxxxxxxx xxxxxxxxxx xxxxxx xx xxx XxxxXxxxXxxxx, xx xx xxxxxxxxxx xxxxxx xxxx xxxxxxxx, xx xxxxx xxxx.
+The attached properties of the [Typography](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.typography.aspx) class provide access to a set of Microsoft OpenType typography properties. You can set these attached properties either on the RichTextBlock, or on individual inline text elements, as shown here.
 
 ```xaml
 <RichTextBlock Typography.StylisticSet4="True">
@@ -122,26 +122,30 @@ Xxx xxxxxxxx xxxxxxxxxx xx xxx [Xxxxxxxxxx](https://msdn.microsoft.com/library/w
 </RichTextBlock>
 ```
 
-## Xxxxxxxxxxxxxxx
+## Recommendations
 
-Xxx Xxxxxxxxxx xxx Xxxxxxxxxx xxx xxxxx.
+See Typography and Guidelines for fonts.
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
-## Xxxxxxx xxxxxxxx
+## Related articles
 
-[Xxxx xxxxxxxx](text-controls.md)
+[Text controls](text-controls.md)
 
-**Xxx xxxxxxxxx**
-- [Xxxxxxxxxx xxx xxxxx xxxxxxxx](spell-checking-and-prediction.md)
-- [Xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [Xxxxxxxxxx xxx xxxx xxxxx](text-controls.md)
+**For designers**
+- [Guidelines for spell checking](spell-checking-and-prediction.md)
+- [Adding search](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [Guidelines for text input](text-controls.md)
 
-**Xxx xxxxxxxxxx (XXXX)**
-- [**XxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Xxxxxxx.XX.Xxxx.Xxxxxxxx XxxxxxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227519)
+**For developers (XAML)**
+- [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [**Windows.UI.Xaml.Controls PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
-**Xxx xxxxxxxxxx (xxxxx)**
-- [Xxxxxx.Xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+**For developers (other)**
+- [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

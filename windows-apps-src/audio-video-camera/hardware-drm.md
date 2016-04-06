@@ -1,57 +1,57 @@
 ---
-xx.xxxxxxx: XYXYXXYX-YYYX-YYYX-YXYY-YYXYYYYXXYXY
-xxxxxxxxxxx: Xxxx xxxxx xxxxxxxx xx xxxxxxxx xx xxx xx xxx XxxxXxxxx xxxxxxxx-xxxxx xxxxxxx xxxxxx xxxxxxxxxx (XXX) xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
-xxxxx: Xxxxxxxx XXX
+ms.assetid: A7E0DA1E-535A-459E-9A35-68A4150EE9F5
+description: このトピックでは、PlayReady ハードウェア ベースのデジタル著作権管理 (DRM) をユニバーサル Windows プラットフォーム (UWP) アプリに追加する方法の概要を示します。
+title: ハードウェア DRM
 ---
 
-# Xxxxxxxx XXX
+# ハードウェア DRM
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
 
-Xxxx xxxxx xxxxxxxx xx xxxxxxxx xx xxx xx xxx XxxxXxxxx xxxxxxxx-xxxxx xxxxxxx xxxxxx xxxxxxxxxx (XXX) xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
+このトピックでは、PlayReady ハードウェア ベースのデジタル著作権管理 (DRM) をユニバーサル Windows プラットフォーム (UWP) アプリに追加する方法の概要を示します。
 
-**Xxxx**  Xxxxxxxx-xxxxx XXX xx xxxx xxxxxxxxx xx xxxxxxx xxxxxxxx xxxx x Xxxxxxx YY xxxxxxx xx xxxx xxxxxxxx'x xxxxxxxx. Xxxxx xx xxx [XxxxXxxxx Xxxxxxxxxx xxx Xxxxxxxxxx Xxxxx](http://www.microsoft.com/playready/licensing/compliance/) xxx xxxx xxxxxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx.
+**注**  ハードウェア ベースの DRM は、特定のハードウェアのファームウェアの Windows 10 バージョンを備えたハードウェアでのみサポートされます。 提供される保証について詳しくは、「[PlayReady の適合性と信頼性規則](http://www.microsoft.com/playready/licensing/compliance/)」をご覧ください。
 
-Xxxxxxxxxxxx, xxxxxxx xxxxxxxxx xxx xxxxxx xxxxxxx xxxxxxxx-xxxxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxxxx xx xxxx xxxx xxxx xxxx xxxxx xxxxxxx xx xxxx. Xxxxxx xxxxxxx xxx x xxxxxxxx xxxxxxxxxxxxxx xx xxx xxxxxxxxxxxxx xxxx xxx xxxx xxxxx xx XxxxXxxxx xx xxxx xxxx xxxx. Xxxx xxxxxxx xxxxxxx xxxxxx xxxxxxxx xx xxxx xxxxxxxxxx (YYYYx) xxx xxxxx-xxxx xxxxxxxxxx (XXX) xxxxxxx xx xxxxxxxx xxxxxx xxxxxxxxx. Xxx xxxxxxxx (xxxxxxxxx xxxxxxx xxxx, xxxxxxx xxxx, xxx xxx xxxxx xxx xxxxxxxx xxxx xx xxxxxx xx xxxxxx xxxx xxxx), xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxx xxxxx xxxxxxx xxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxx xxxxxxxx.
+ますます多くのコンテンツ プロバイダーが、価値の高いコンテンツをアプリで再生するためアクセス許可を付与する、ハードウェア ベースの保護に移行しています。 PlayReady がこのニーズを満たすために、暗号化コアのハードウェアの実装の強力なサポートが追加されました。 このサポートにより、複数のデバイス プラットフォーム上で、高解像度 (1080 p) と超高解像度 (UHD) のコンテンツを安全に再生できます。 キー マテリアル (秘密キー、コンテンツ キー、これらのキーを派生またはロック解除するために使われるその他のキー マテリアルを含みます)、および暗号化解除された圧縮および非圧縮ビデオ サンプルは、ハードウェア セキュリティを利用して保護されます。
 
-## Xxxxxxx XXX Xxxxxxxxxxxxxx
+## Windows TEE 実装
 
-Xxxx xxxxx xxxxxxxx x xxxxx xxxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxx xxxxxxx xxxxxxxxx xxxxxxxxxxx.
+このトピックでは、Windows 10 で信頼された実行環境を実装する方法の概要を簡単に示します。
 
-Xxx xxxxxxx xx xxx Xxxxxxx XXX xxxxxxxxxxxxxx xx xxx xx xxxxx xxx xxxx xxxxxxxx. Xxxxxxx, x xxxxx xxxxxxxxxx xx xxx xxxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxx xxx XXX xxxx xxx xxx Xxxxxxx xxxx xxxx xx xxxxxxxxxx. Xxxxxxx xxxxxxxxxx xxx XXX xxxxx xxxxx xxx xxxxxxxxx xxx xxxxxxxxxx XXXXXX xxxxxxxxx xxxxx xx x xxxx xxxx xxxxxx xx xxx Xxxxxxx Xxxxx Xxxxxxxxxx xxxxxxxxx. Xxxx xxxx xxxxxxxxxx xxx xxxxxx xx xxxxxx xxx Xxxxxxx XxXX (Xxxxxxx Xxxxxxxxx Xxxxxxxxxxx) xxxxxx xx xxx XXX’x xxxxxxxx xxxxxx. Xxx xxxxxxx xx xxxxxx xx xxxxx xxxxxxxxxx xx xxx xx xxxxx xxx xxxx xxxxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxx xxx xxxxxxx xxxxxxxxx xxxxxxxxxxx xxx xxx Xxxxxxx xxxx. Xx xxx xxxx xx xxxxxxx x Xxxxxxx XxxxXxxxx XXX xxxxxxxxxxxxxx, xxx xxx xxxxxxx <WMLA@Microsoft.com>.
+Windows TEE 実装の詳細については、このドキュメントでは説明しません。 ただし、標準の移植キット TEE ポートと Windows ポートの違いについては、簡単に説明します。 Windows は OEM プロキシ レイヤーを実装し、Windows メディア ファンデーション サブシステムのユーザー モード ドライバーに、シリアル化された PRITEE 関数呼び出しを転送します。 これは最終的に Windows TrEE (信頼される実行環境) ドライバーまたは OEM のグラフィックス ドライバーにルーティングされます。 これらのいずれの方法についても、このドキュメントでは説明しません。 次の図は、Windows ポートのコンポーネントの一般的な操作を示しています。 Windows PlayReady TEE 実装を開発する場合は、<WMLA@Microsoft.com> にご連絡ください。
 
-![xxxxxxx xxx xxxxxxxxx xxxxxxx](images/windowsteecomponentdiagram720.jpg)
+![Windows TEE コンポーネント図](images/windowsteecomponentdiagram720.jpg)
 
-## Xxxxxxxxxxxxxx xxx Xxxxx Xxxxxxxx XXX
+## ハードウェア DRM を使うための考慮事項
 
-Xxxx xxxxx xxxxxxxx x xxxxx xxxx xx xxxxxx xxxx xxxxxx xx xxxxxxxxxx xxxx xxxxxxxxxx xxxx xxxxxxxx xx xxx xxxxxxxx XXX.
+このトピックでは、ハードウェア DRM を使うように設計されたアプリを開発するときに考慮する必要があることを、簡単な一覧で示します。
 
--   Xxxxxxxxx Xxxxx Xxxxxxx (XXX) xx xxx xxxxxxxxx.
--   Xxxxxx xxxxxxxxxx xxxxx (XXX) YYY xxxxxxx (xx xxxx xxxxxxxxxx). Xxxxxxxxx xxxxxxxxxx xxxx xxxx xxxxxxxxxx xxxxxxx xxx xxxxxxxx XXX xxxx xx XXX xxxxxxx xxxx YYY (xxxxxxxx xx xx xxx xxxxxxxx). Xx XXX xx xxxxxxx xxxx YYY xxxxx XXXX xx xxxxxxxx. Xxxxxxxxxxxx, Xxxxxxxxx xxxxxxxxxx xxx xxx XXXX xxxx Y (xxxxxxx Y.Y xx xxxxx).
--   Xxxxxx xxxxxxxx XXX, xxxxxx xxxxxxxxxxx xxx xxxxxxxx xx xxx xxxxxxxx xxxxx xx xxx xxxxx xxxxxxx xxxxxxx. Xxx xxxxxxx, xx xxx xxxx xxx xxx xxxxxxxx xxxxxxxxx xxxxx xxx xx xxx xxxxxxxx xxxxxxxx XXXX xxx xxx xxxxx xxxx xxx, xxxxxxxx xxxx xxxx xx xxx xxxxxxx xxxxxxxx XXXX xxxx xx xxx xxxxxxx xx xxxx xxxxx xxxxxxxx xx xxx xxxxxxx xxxx xxxxxxxx XXXX. Xx xxxxxxxx XXX, xxxxxxx xxxxx xxxx xxxx xx xxxx xx xx xx xxxx xxxxx xxxxxxxx xx xxx xxxxxxx xxxx xxxxxxxx XXXX.
--   Xxxxxxxx XXX xx xxx xxxxxxxxxx xx xx xxxx xx xxx xxxxxx xxx xxxxxx xxxxxx xxx xxxxxxxxx xxxxxxxxxx xxx xxx xx xxx xxxxxxx xxxx xxx xxxxxxxx:
-    -   Xxxxx xxxx xx xx xxx xxxxx xx xx xxxxxxxxx xx x xxxxxxxxx xxxxxxx xxx xxxx xxxxx. Xxxxxxxxx xxxxxxxxxx xxxx xxx xxxxx xx xx xxx xxxxx xx xxxxxxx xxxxxxxx xxxxxxxxxxx.
-    -   Xxx xxxxxxx xxxx xxx xxx xxxxx xxxxxxx xxx xxxx xxxx x xxxxxxxx xxxxx xx YYYY.
--   Xxxxxxxx xxxxxxxx xxxxxxxxxx xxxxx (XXXx) xxx xxx xxxxxxxxx xxx xxxxxxxxxx xxxxxxxx.
+-   保護されたメディア プロセス (PMP) はサポートされません。
+-   出力保護レベル (OPL) 270 のサポート (解像度の低下なし)。 ハードウェア DRM の高解像度コンテンツには、270 を超える OPL をお勧めします (ただし、必須ではありません)。 270 を超える OPL は、HDCP が必須であることを意味します。 さらに、HDCP Type 1 (バージョン 2.2 以降) を設定することをお勧めします。
+-   出力の保護は、ソフトウェア DRM とは異なり、最も能力の低いモニターに基づいてすべてのモニターに適用されます。 たとえば、ユーザーが 2 台のモニターを接続していて、1 台のモニターが HDCP をサポートし、もう 1 台がサポートしていない場合、HDCP をサポートするモニターでコンテンツがレンダリングされているのみの場合でも、ライセンスに HDCP が必要な場合、再生は失敗します。 ソフトウェア DRM では、HDCP をサポートされているモニターにレンダリングされているのみの場合、コンテンツは再生されます。
+-   コンテンツのキーとライセンスで、次の条件が満たされていない限り、ハードウェア DRM はクライアントで使用され、安全であることが保証されません。
+    -   オーディオはプレーン テキストであるか、ビデオとは異なるコンテンツ キーに暗号化される必要があります。 再生のパフォーマンスを向上させるため、オーディオはクリア テキストにすることをお勧めします。
+    -   ビデオのコンテンツ キーに使われるライセンスには、セキュリティ レベルとして 3000 が必要です。
+-   永続的なライセンスには、複数のグラフィックス処理装置 (GPU) はサポートされません。
 
-Xx xxxxxx xxxxxxxxxx xxxxxxxx xx xxxxxxxx xxxx xxxxxxxx XXXx, xxxxxxxx xxx xxxxxxxxx xxxxxxxx:
+複数の GPU を持つコンピューターで、永続的なライセンスを処理するには、次のシナリオについて考えてみます。
 
-1.  X xxxxxxxx xxxx x xxx xxxxxxx xxxx xx xxxxxxxxxx xxxxxxxx xxxx.
-2.  Xxx xxxxxxxx xxxx xx xxx xxxx xxxxxxxx xxxxxxxxxx xxxxxxxx xxxxx xxxxx xxxxxxxx XXX.
-3.  Xxx xxxxxxxxxx xxxxxxx xx xxx xxxxx xx xxxx xxxxxxxx xxxx’x xxxxxxxx xxxx.
-4.  Xxx xxxxxxxx xxxx xxxxxxxx x xxx xxxxxxxx xxxx.
-5.  Xxx xxxxxxxx xx xxx xxxxxx xxxx xxxxx (XXX) xxx xxxxx xx xxx xxxxxxxxxx xxxxx xxxx, xxx xxx xxxxxxxx xxx xxxxx xx xxxx xxxx xxxxxxxxx xxxxxxx xxxxx xxx xxxxx-xxxxxxxxx xxxxxxxx xxxx.
+1.  顧客が、グラフィックス カードが搭載された新しいコンピューターを購入します。
+2.  顧客は、ハードウェア DRM の使用中に永続的なライセンスを取得するアプリを使います。
+3.  これで、永続的なライセンスがそのグラフィックス カードのハードウェア キーにバインドされます。
+4.  次に、顧客は新しいグラフィックス カードを取り付けます。
+5.  ハッシュされたデータ ストア (HDS) 内のすべてのライセンスは、搭載されたビデオ カードにバインドされますが、顧客は新たに取り付けられたグラフィックス カードを使って、保護されたコンテンツを再生したいと考えています。
 
-Xx xxxxx xx xxxxxxx xxxxxxxx xxxx xxxxxxx xxxxxxx xxx xxxxxxxx xxx’x xx xxxxxxxxx xx xxx xxxxxxxx, XxxxXxxxx xxxx x xxxxxxxx xxxxxx xxxx xxxxx (XXX) xxx xxxx xxxxxxxx xxxx xxxx xx xxxxxxxxxx. Xxxx xxxx xxxxx XxxxXxxxx xx xxxxxxx xxxxxxx xxxxxxxxxxx xxx x xxxxx xx xxxxxxx xxxxx XxxxXxxxx xxxxx xxxxxxxx xxxxxxx xxxx x xxxxxxx (xxxx xx, xx xxx xxxxxxxx XXX xxxx xx xxx xxxx xxxxxxx x xxxxxxxx xxxxxx, XxxxXxxxx xxxxxx’x xxxx xx xxxxxxxxx x xxxxxxx). Xxxxxxxxx, xx xxx xxx xxxxxxxx x xxxxxxxxxx xxxxxxx xxxxx xxxxx xxxxxxxx XXX, xxxx xxx xxxxx xx xx xxxx xx xxxxxx xxx xxxx xxxxx xxxx xxxxxxx xx xxxxxxxxxxx “xxxx” xx xxx xxx xxxx xxxxxxxx (xx xxxxxxxxxx) x xxxxxxxx xxxx. Xxxxxxx xxxx xx xxx x xxxxxx xxxxxxxx, xxx xxx xxxxxx xx xxxxxx xxx xxxxxxx xxxxx xxxx xxx xxxxxxx xx xxxxxx xxxxx xxxxx x xxxxxxxx xxxxxx xxxxxx xxxx xxxxxx xxx xxx xx xxxx xxxx x xxxxxxxx xxxxxx xx xxx xxxxxx/xxxxxx xxxx.
+ハードウェアでライセンスの暗号化を解除できないために再生エラーが発生しないようにするため、PlayReady は、見つかったグラフィックス カードごとに、ハッシュされた別のデータ ストア (HDS) を使います。 これにより、PlayReady は、通常は既にライセンスを持っているコンテンツのライセンスの取得を試みます (ソフトウェア DRM の場合、またはハードウェアの変更がない場合、PlayReady はライセンスを再取得する必要はありません)。 したがって、アプリが、ハードウェア DRM の使用中に永続的なライセンスを取得した場合、アプリは、エンド ユーザーがグラフィックス カードを取り付けた (または取り外した) 場合にそのライセンスが実質的に失われるケースに対応できる必要があります。 これは一般的なシナリオではないため、ハードウェアの変更後にコンテンツが再生されなくなった場合、クライアント/サーバー コードでハードウェアの変更を処理する方法の調査よりも、サポートへの問い合わせの対応が必要になることがあります。
 
-## Xxxxxxxx Xxxxxxxx XXX
+## ハードウェア DRM のオーバーライド
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxxxxx xxxxxxxx XXX xx xxx xxxxxxx xx xx xxxxxx xxxx xxxx xxx xxxxxxx xxxxxxxx XXX.
+このセクションでは、再生するコンテンツがハードウェア DRM をサポートしていない場合に、ハードウェア DRM をオーバーライドする方法について説明します。
 
-Xx xxxxxxx, xxxxxxxx XXX xx xxxx xx xxx xxxxxx xxxxxxxx xx. Xxxxxxx, xxxx xxxxxxx xx xxx xxxxxxxxx xx xxxxxxxx XXX. Xxx xxxxxxx xx xxxx xx Xxxxxxxx xxxxxxx. Xxxxxxx xxxxxxx xx xxx xxxxxxx xxxx xxxx x xxxxx xxxxx xxxxx xxxx X.YYY xxx XXXX. Xxxxxxx xxxxxxx xx XXXX xxxxxxx, xx xxxx xxxxxxxx XXX xxxx xxxxxxx XXXX xxx xxxx xxxx xxx. Xxxxxxxxx, xx xxx xxxx xx xxxx x xxxxx xx xxxxxxx xxx xxxxxxxx XXX xxxxx’x xxxxxxx xx xx xxx xxxxxx xx xxxxxxxx, xxx xxx xxxx xx xxx xxx xx xxxxxxxx XXX.
+既定では、システムによってサポートされている場合は、ハードウェア DRM が使われます。 ただし、一部のコンテンツは、ハードウェア DRM ではサポートされません。 この 1 つの例として、Cocktail コンテンツがあります。 別の例として、H.264 と HEVC 以外のビデオ コーデックを使う任意のコンテンツがあります。 さらに別の例として、HEVC コンテンツがあります。ハードウェアによって、HEVC をサポートしているものと、そうでないものがあります。 そのため、コンテンツを再生する場合に、ハードウェア DRM が該当のシステムでこれをサポートしていない場合は、ハードウェア DRM を除外することができます。
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xx xxx-xxx xx xxxxxxxx XXX. Xxx xxxx xxxx xx xx xxxx xxxxxx xxx xxxxxx. Xxxx, xxxx xxxx xxx xxx’x xxxx xxx XxxxXxxxx xxxxxx xx xxxxxx, xxxxxxxxx xxxxxxxx xx xxxxxxxxx.
+次の例は、ハードウェア DRM の除外方法を示しています。 この操作は、切り替えの前にのみ行う必要があります。 また、メモリ内に PlayReady オブジェクトが存在していないことも確認してください。存在する場合は、動作が未定義になります。
 
 ``` syntax
 var applicationData = Windows.Storage.ApplicationData.current;
@@ -59,32 +59,39 @@ var localSettings = applicationData.localSettings.createContainer(“PlayReady�
 localSettings.values[“SoftwareOverride”] = 1;
 ```
 
-Xx xxxxxx xxxx xx xxxxxxxx XXX, xxx xxx **XxxxxxxxXxxxxxxx** xxxxx xx **Y**.
+ハードウェア DRM に切り替えるには、**SoftwareOverride** の値を **0** に設定します。
 
-Xxx xxxxx xxxxx xxxxxxxx, xxx xxxx xx xxx **XxxxxXxxxxxxxxxXxxxxxx** xx:
+すべてのメディア再生で、**MediaProtectionManager** を次のように設定する必要があります。
 
 ``` syntax
 mediaProtectionManager.properties[“Windows.Media.Protection.UseSoftwareProtectionLayer”] = true;
 ```
 
-Xxx xxxx xxx xx xxxx xx xxx xxx xx xxxxxxxx XXX xx xxxxxxxx XXX xx xxxx xx X:\\Xxxxx\\&xx;xxxxxxxx&xx;\\XxxXxxx\\Xxxxx\\Xxxxxxxx\\&xx;xxxxxxxxxxx xxxx&xx;\\XxxxxXxxxx\\XxxxXxxxx\\\*
+ハードウェア DRM またはソフトウェア DRM のどちらであるかを確認する最適な方法は、C:\\Users\\&lt;username&gt;\\AppData\\Local\\Packages\\&lt;application name&gt;\\LocalState\\PlayReady\\\* を調べることです。
 
--   Xx xxxxx xx xx xxxx.xxx xxxx, xxxx xxx xxx xx xxxxxxxx XXX.
--   Xx xxx xxxx xxxxxxx \*.xxx xxxx, xxxx xxx xxx xx xxxxxxxx XXX.
--   Xxx xxx xxxxxx xxx xxxxxx XxxxXxxxx xxxxxx xxx xxxxx xxxx xxxx xx xxxx.
+-   mspr.hds ファイルがある場合は、ソフトウェア DRM を使っています。
+-   他の \*.hds ファイルがある場合は、ハードウェア DRM を使っています。
+-   PlayReady フォルダー全体を削除して、テストを再試行することもできます。
 
-## Xxxxxx xxx Xxxx xx Xxxxxxxx XXX
+## ハードウェア DRM の種類を検出する
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxxx xxxx xxxx xx xxxxxxxx XXX xx xxxxxxxxx xx xxx xxxxxx.
+このセクションでは、システムでサポートされているハードウェア DRM の種類を検出する方法について説明します。
 
-Xxx xxx xxx xxx [**XxxxXxxxxXxxxxxx.XxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986441) xxxxxx xx xxxxxxxxx xxxxxxx xxx xxxxxx xxxxxxxx x xxxxxxxx xxxxxxxx xxxxxxx xxxxxx xxxxxxxxxx (XXX) xxxxxxx. Xxx xxxxxxx:
+[
+            **PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) メソッドを使って、システムが特定のハードウェア デジタル権利管理 (DRM) 機能をサポートしているかどうかを判断できます。 次に例を示します。
 
 ``` syntax
 boolean PlayReadyStatics->CheckSupportedHardware(PlayReadyHardwareDRMFeatures enum);
 ```
 
-Xxx [**XxxxXxxxxXxxxxxxxXXXXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986265) xxxxxxxxxxx xxxxxxxx xxx xxxxx xxxx xx xxxxxxxx XXX xxxxxxx xxxxxx xxxx xxx xx xxxxxxx. Xx xxxxxxxxx xx xxxxxxxx XXX xx xxxxxxxxx, xxx xxx **XxxxxxxxXXX** xxxxxx xx xxx xxxxx. Xx xxxxxxxxx xx xxx xxxxxxxx xxxxxxxx xxx Xxxx Xxxxxxxxxx Xxxxx Xxxxxx (XXXX)/X.YYY xxxxx, xxx xxx **XXXX** xxxxxx xx xxx xxxxx.
+[
+            **PlayReadyHardwareDRMFeatures**](https://msdn.microsoft.com/library/windows/apps/dn986265) 列挙体には、照会できるハードウェア DRM 機能の値の有効な一覧が含まれます。 ハードウェア DRM がサポートされているかどうかを判断するには、クエリで **HardwareDRM** メンバーを使います。 ハードウェアが高効率ビデオ コーディング (HEVC)/H.265 コーデックをサポートしているかどうかを判断するには、クエリで **HEVC** メンバーを使います。
 
-Xxx xxx xxxx xxx xxx [**XxxxXxxxxXxxxxxx.XxxxXxxxxXxxxxxxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) xxxxxxxx xx xxx xxx xxxxxxxx xxxxx xx xxx xxxxxx xxxxxxxxxxx xx xxxxxxxxx xx xxxxxxxx XXX xx xxxxxxxxx. Xxxxxx xxx xxxxxxxx xxxxxxxxxxx xxxxxxxx xxxxx xx xxxxxxx xxxx xx xxxxx xx YYYY, xxxxxx xxx xxxxxx xx xxx xxxxxxxxxxxxxx xx xxxxxxxxxxx (xx xxxxx xxxx xxxx xxxxxxxx xxxxxxx Y) xx xxxxxxxx XXX xx xxx xx xxx (xx xxxxx xxxx xxxx xxxxxxxx xxxxxxx x xxxxx xxxx xx xxxx xxxx YYYY).
+[
+            **PlayReadyStatics.PlayReadyCertificateSecurityLevel**](https://msdn.microsoft.com/library/windows/apps/windows.media.protection.playready.playreadystatics.playreadycertificatesecuritylevel.aspx) プロパティを使って、クライアント証明書のセキュリティ レベルを取得し、ハードウェア DRM がサポートされているかどうか判断することもできます。 返された証明書のセキュリティ レベルが 3000 以上でない限り、クライアントが個別化またはプロビジョニングされていないか (この場合、このプロパティは 0 を返します)、ハードウェア DRM が使われていません (この場合、このプロパティは 3000 未満の値を返します)。
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

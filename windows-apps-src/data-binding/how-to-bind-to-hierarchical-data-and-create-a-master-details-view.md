@@ -1,34 +1,35 @@
 ---
-xx.xxxxxxx: YXYYYYYX-YYXY-YYYX-YYYX-YYYXYXYYYYXY
-xxxxx: Xxxx xxxxxxxxxxxx xxxx xxx xxxxxx x xxxxxx/xxxxxxx xxxx
-xxxxxxxxxxx: Xxx xxx xxxx x xxxxx-xxxxx xxxxxx/xxxxxxx (xxxx xxxxx xx xxxx-xxxxxxx) xxxx xx xxxxxxxxxxxx xxxx xx xxxxxxx xxxxx xxxxxxxx xx XxxxxxxxxxXxxxXxxxxx xxxxxxxxx xxxx xxx xxxxx xxxxxxxx xx x xxxxx.
+ms.assetid: 0C69521B-47E0-421F-857B-851B0E9605F2
+title: 階層データをバインドしてマスター/詳細ビューを作る方法
+description: チェーン内でバインドされた CollectionViewSource インスタンスに項目コントロールをバインドすることによって、階層データの複数レベルのマスター/詳細 (リスト/詳細とも呼ばれる) ビューを作成することができます。
 ---
-# Xxxx xxxxxxxxxxxx xxxx xxx xxxxxx x xxxxxx/xxxxxxx xxxx
+# 階層データをバインドしてマスター/詳細ビューを作る方法
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-> **Xxxx**  Xxxx xxx xxx [Xxxxxx/xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619991).
+> **注**  [マスター/詳細のサンプル](http://go.microsoft.com/fwlink/p/?linkid=619991)もご覧ください。
 
-Xxx xxx xxxx x xxxxx-xxxxx xxxxxx/xxxxxxx (xxxx xxxxx xx xxxx-xxxxxxx) xxxx xx xxxxxxxxxxxx xxxx xx xxxxxxx xxxxx xxxxxxxx xx [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209833) xxxxxxxxx xxxx xxx xxxxx xxxxxxxx xx x xxxxx. Xx xxxx xxxxx xx xxx xxx [{x:Xxxx} xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204783) xxxxx xxxxxxxx, xxx xxx xxxx xxxxxxxx (xxx xxxx xxxxxxxxxx) [{Xxxxxxx} xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204782) xxxxx xxxxxxxxx.
+チェーン内でバインドされた [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) インスタンスに項目コントロールをバインドすることによって、階層データの複数レベルのマスター/詳細 (リスト/詳細とも呼ばれる) ビューを作成することができます。 このトピックでは、できる限り [{x:Bind} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204783)を使用し、必要に応じて、より柔軟な (ただし効率は低下する) [{Binding} マークアップ拡張](https://msdn.microsoft.com/library/windows/apps/Mt204782)を使います。
 
-Xxx xxxxxx xxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xx xx xxxxxxxx xx xxxxxxxxx xxxxxxx xxxxx xxxx x xxxx xxxxx x xxxxxxxxx xx x xxxxxx xxxx. Xxxx xx xxxxxx xxxx xxx xxxx xx xxxxxxx x xxxx xxxxxx xxxxxxxxxxxxxx xx xxxx xxxx xx xxxxx xxxxx xx x xxxxxxxxx. Xxxxxxx xxxxxx xx xx xxxxxxx xxxxxxxx xxxxxx xx xxxx xx x xxxxxx xxxx. Xxxx xx xxxxxx xxxx xxx xxxx xx xxxxxxx x xxx xxxxxx xxxxx xxxx xxx xxx xxxx xxxxxxx xxxxx xxxx xx xx xxxx xx xxxxxxxx. Xxxx xxxxx xxxxxxxxx xxx xx xxxxxxxxx xxxx xxxxxxxxxxx. Xxx [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209833) xxxxxxxxx xxxx xxxxx xx xxx xxxxxxx xxxxxxxxx xx xxxx xxxxxxxxxxxx xxxxx.
+ユニバーサル Windows プラットフォーム (UWP) アプリでよく使われる構造の 1 つに、マスター一覧で項目を選んだらさまざまな詳細ページに移動するという形があります。 これは、階層のすべてのレベルで、各項目をリッチな視覚表現を使って表示する場合に便利です。 また、複数のレベルのデータを 1 ページに表示することもできます。 これは、ユーザーが関心のある項目にすばやくドリルダウンできるように、シンプルな一覧をいくつか表示する場合に便利です。 このトピックでは、この操作を実装する方法について説明します。 [
+            **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) インスタンスは、現在の選択を各階層レベルで追跡します。
 
-Xx'xx xxxxxx x xxxx xx x xxxxxx xxxx xxxxxxxxx xxxx xx xxxxxxxxx xxxx xxxxx xxx xxxxxxx, xxxxxxxxx, xxx xxxxx, xxx xxxxxxxx x xxxx xxxxxxx xxxx. Xxxx xxx xxxxxx xx xxxx xxxx xxx xxxx, xxx xxxxxxxxxx xxxxx xxxxxx xxxxxxxxxxxxx.
+ここでは、リーグ、クラス、チームの一覧に階層化され、チーム詳細のビューを含むスポーツ チーム階層のビューを作ります。 いずれかの一覧で項目を選ぶと、後続するビューが自動的に更新されます。
 
-![xxxxxx/xxxxxxx xxxx xx x xxxxxx xxxxxxxxx](images/xaml-masterdetails.png)
+![スポーツ階層のマスター/詳細ビュー](images/xaml-masterdetails.png)
 
-## Xxxxxxxxxxxxx
+## 前提条件
 
-Xxxx xxxxx xxxxxxx xxxx xxx xxxx xxx xx xxxxxx x xxxxx XXX xxx. Xxx xxxxxxxxxxxx xx xxxxxxxx xxxx xxxxx XXX xxx, xxx [Xxxxxx xxxx xxxxx XXX xxx xxxxx X# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/Hh974581).
+このトピックでは、基本的な UWP アプリを作成できることを前提としています。 初めて UWP アプリを作る場合の手順については、「[C# または Visual Basic を使った初めての UWP アプリの作成](https://msdn.microsoft.com/library/windows/apps/Hh974581)」をご覧ください。
 
-## Xxxxxx xxx xxxxxxx
+## プロジェクトの作成
 
-Xxxxxx x xxx **Xxxxx Xxxxxxxxxxx (Xxxxxxx Xxxxxxxxx)** xxxxxxx. Xxxx xx "XxxxxxXxxxxxxXxxxxxx".
+最初に、**"新しいアプリケーション (Windows ユニバーサル)"** プロジェクトを新規作成します。 プロジェクトに "MasterDetailsBinding" という名前を付けます。
 
-## Xxxxxx xxx xxxx xxxxx
+## データ モデルを作る
 
-Xxx x xxx xxxxx xx xxxx xxxxxxx, xxxx xx XxxxXxxxx.xx, xxx xxx xxxx xxxx xx xx. Xxxx xxxx xx xxxx xxxxxxx xxxxxx xxxxx.
+プロジェクトに新しいクラスを追加して ViewModel.cs という名前を付け、次のコードを追加します。 これは、バインディング ソース クラスになります。
 
 ```cs
 using System;
@@ -99,9 +100,9 @@ namespace MasterDetailsBinding
 }
 ```
 
-## Xxxxxx xxx xxxx
+## ビューを作る
 
-Xxxx, xxxxxx xxx xxxxxxx xxxxxx xxxxx xxxx xxx xxxxx xxxx xxxxxxxxxx xxxx xxxx xx xxxxxx. Xx xx xxxx xx xxxxxx x xxxxxxxx xx xxxx **XxxxxxXxxx** xx **XxxxXxxx**.
+次に、マークアップのページを表すクラスからバインディング ソース クラスを公開します。 これを行うには、**LeagueList** 型のプロパティを **MainPage** に追加します。
 
 ```cs
 namespace MasterDetailsBinding
@@ -121,7 +122,7 @@ namespace MasterDetailsBinding
 }
 ```
 
-Xxxxxxx, xxxxxxx xxx xxxxxxxx xx xxx XxxxXxxx.xxxx xxxx xxxx xxx xxxxxxxxx xxxxxx, xxxxx xxxxxxxx xxxxx [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209833) xxxxxxxxx xxx xxxxx xxxx xxxxxxxx xx x xxxxx. Xxx xxxxxxxxxx xxxxxxxx xxx xxxx xxxx xx xxx xxxxxxxxxxx **XxxxxxxxxxXxxxXxxxxx**, xxxxxxxxx xx xxx xxxxx xx xxx xxxxxxxxx.
+最後に、MainPage.xaml ファイルの内容を次のマークアップに置き換えます。このマークアップでは、3 つの [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) インスタンスを宣言し、チェーンで一緒にバインドします。 これにより、階層内のレベルに応じて、後続するコントロールを適切な **CollectionViewSource** にバインドできるようになります。
 
 ```xaml
 <Page
@@ -211,10 +212,15 @@ Xxxxxxx, xxxxxxx xxx xxxxxxxx xx xxx XxxxXxxx.xxxx xxxx xxxx xxx xxxxxxxxx xxxxx
 </Page>
 ```
 
-Xxxx xxxx xx xxxxxxx xxxxxxxx xx xxx [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209833), xxx'xx xxxxxxxx xxxx xxx xxxx xx xxxx xx xxx xxxxxxx xxxx xx xxxxxxxx xxxxx xxx xxxx xxxxxx xx xxxxx xx xxx xxxxxxxxxx xxxxxx. Xxxxx'x xx xxxx xx xxxxxxx xxx **XxxxxxxXxxx** xxxxxxxx xx xxx xxxx xxx xxx xxxxxxx, xxxxxxxx xxx xxx xx xxxx xx xxxxx'x xxx xxxxxxxxx). Xxx xxxxxxx, xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209365) xxxxxxxxxxxx xxx xxxx xxxx xxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209365-content) xxxxxxxx xxxxx xx xxx `Teams`**XxxxxxxxxxXxxxXxxxxx**. Xxxxxxx, xxx xxxxxxxx xx xxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242348) xxxx xx xxxxxxxxxx xx xxx `Team` xxxxx xxxxxxx xxx **XxxxxxxxxxXxxxXxxxxx** xxxxxxxxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxx xxxx xxxx xxx xxxxx xxxx xxxx xxxxxxxxx.
+[
+            **CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) に直接バインドすることによって、コレクション自体ではパスが見つからない、バインディング内の現在の項目にバインドすることを意味します。 バインディングのパスとして **CurrentItem** プロパティを指定する必要はありませんが、あいまいさがある場合は指定することもできます。 たとえば、チーム ビューを表す [**ContentControl**](https://msdn.microsoft.com/library/windows/apps/BR209365) で、[**Content**](https://msdn.microsoft.com/library/windows/apps/BR209365-content) プロパティが `Teams`**CollectionViewSource** にバインドされているとします。 しかし、**CollectionViewSource** が必要に応じてチームの一覧から現在選択されているチームを自動的に示すため、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348) 内のコントロールは `Team` クラスのプロパティにバインドされます。
 
  
 
  
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

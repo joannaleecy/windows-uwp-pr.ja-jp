@@ -1,62 +1,52 @@
 ---
-Description: Xxxxxxxxxxx: Xxx xxxxxx xxxxxxxxxxx xx xxxxxxx xxxxx, xxxxxxx xx xxxxxx xx xxxxxxx, xxx xxxxxxxxxx xxxxx.
-title: xxxxx: Xxxxxx xxxxxxxxxxx
+Description: Use speech recognition to provide input, specify an action or command, and accomplish tasks.
+title: Speech recognition
 ms.assetid: 553C0FB7-35BC-4894-9EF1-906139E17552
 label: Speech recognition
 template: detail.hbs
 ---
 
-# xx.xxxxxxx: YYYXYXXY-YYXX-YYYY-YXXY-YYYYYYXYYYYY
+# Speech recognition
 
 
-xxxxx: Xxxxxx xxxxxxxxxxx xxxxxxxx: xxxxxx.xxx
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxx xxxxxxxxxxx
+Use speech recognition to provide input, specify an action or command, and accomplish tasks.
 
-**\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY.**
+**Important APIs**
 
--   [**Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]**](https://msdn.microsoft.com/library/windows/apps/dn653262)
-
-
-
-Xxx xxxxxx xxxxxxxxxxx xx xxxxxxx xxxxx, xxxxxxx xx xxxxxx xx xxxxxxx, xxx xxxxxxxxxx xxxxx.
+-   [**Windows.Media.SpeechRecognition**](https://msdn.microsoft.com/library/windows/apps/dn653262)
 
 
-## Xxxxxxxxx XXXx
+
+Speech recognition is made up of a speech runtime, recognition APIs for programming the runtime, ready-to-use grammars for dictation and web search, and a default system UI that helps users discover and use speech recognition features.
 
 
-Xxxxxxx.Xxxxx.XxxxxxXxxxxxxxxxx
-
-Xxxxxx xxxxxxxxxxx xx xxxx xx xx x xxxxxx xxxxxxx, xxxxxxxxxxx XXXx xxx xxxxxxxxxxx xxx xxxxxxx, xxxxx-xx-xxx xxxxxxxx xxx xxxxxxxxx xxx xxx xxxxxx, xxx x xxxxxxx xxxxxx XX xxxx xxxxx xxxxx xxxxxxxx xxx xxx xxxxxx xxxxxxxxxxx xxxxxxxx. <span id="Set_up_the_audio_feed">
-            </span>
-            <span id="set_up_the_audio_feed">
-            </span>
-            <span id="SET_UP_THE_AUDIO_FEED">
-            </span>Xxx xx xxx xxxxx xxxx
-
-Xxxxxx xxxx xxxx xxxxxx xxx x xxxxxxxxxx xx xxx xxxxxxxxxx.
-
-## Xxx xxx **Xxxxxxxxxx** xxxxxx xxxxxxxxxx ([**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211430)) xx xxx [Xxx xxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/br211474) (**xxxxxxx.xxxxxxxxxxxx** xxxx) xx xxx xxxxxx xx xxx xxxxxxxxxx’x xxxxx xxxx.
+## <span id="Set_up_the_audio_feed"></span><span id="set_up_the_audio_feed"></span><span id="SET_UP_THE_AUDIO_FEED"></span>Set up the audio feed
 
 
-Xxxx xxxxxx xxx xxx xx xxxxxx xxxxx xxxx xxxxxxxxx xxxxxxxxxxx. Xxx [Xxx xxxxxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt270968).
+Ensure that your device has a microphone or the equivalent.
 
-<span id="Recognize_speech_input">
-            </span>
-            <span id="recognize_speech_input">
-            </span>
-            <span id="RECOGNIZE_SPEECH_INPUT">
-            </span>Xxxxxxxxx xxxxxx xxxxx
+Set the **Microphone** device capability ([**DeviceCapability**](https://msdn.microsoft.com/library/windows/apps/br211430)) in the [App package manifest](https://msdn.microsoft.com/library/windows/apps/br211474) (**package.appxmanifest** file) to get access to the microphone’s audio feed. This allows the app to record audio from connected microphones.
 
-1.  X *xxxxxxxxxx* xxxxxxx xxx xxxxx xxx xxxxxxx (xxxxxxxxxx) xxxx xx xxx xxxxxxxxxx xx xxxxxx xxxxx.
+See [App capability declarations](https://msdn.microsoft.com/library/windows/apps/mt270968).
 
-    Xxxxxxxxxxx xxx xx xxx xxxx xx xxxxxx xxxxxxxxxxx xxx xxxx xxxx xxx xxxxx xxxx xxx xxxxxxxx xx xxxxxx xxxxxxxxxxx. Xxx xxx xxx xxxxxxx xxxxx xx xxxxxxxxxxx xxxx xxxxxxxxxx xxxxxx xxxxxxxxxxx:
+## <span id="Recognize_speech_input"></span><span id="recognize_speech_input"></span><span id="RECOGNIZE_SPEECH_INPUT"></span>Recognize speech input
 
-    **Xxxxxxxxxx xxxxxxxx** ([**XxxxxxXxxxxxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631446)). Xxxxxxxxxx xxxxxxxxx xxx xxx-xxxxxx xxxxxxxx xxxxxxx xxxxxx xxxxxxxxxxx xxx xxxx xxx xxxxxxx xxxxxxxxx xxx xx xxxxxx x xxxxxxx. Xxxx xxxxx xxxxx xxxxxxxx, xxxxxx xxxxxxxxxxx xx xxxxxxxxx xx x xxxxxx xxx xxxxxxx xxx xxx xxxxxxx xxx xxxxxxxx xx xxx xxxxxx. Xxx xxxxxxx xxxx-xxxx xxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxx xxxxx xxx xxxxxxx xxxx x xxxx xxx xxx xx x xxxxxxxxxx xxxxxxxx, xxx xx xxxxxxxxx xx xxxxxxxxx xxxxx xxxxxxx.
 
-    Xxx xxxxxxxxxx xxxxxxxxx xxxxxxx xx xxxx xx xxx xxx'x xxxxxxx xxx xxxxxxxxxxx xxx xxxx [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653226) xxxxxx. Xxxx-xxxx xxxxxxxxx xx xxxxxx xxxx xxx xxx'x xxxx xx xxxxx xxx xxxxx xx xxxxxx x xxxx xxx xxx.
+A *constraint* defines the words and phrases (vocabulary) that an app recognizes in speech input. Constraints are at the core of speech recognition and give your app great over the accuracy of speech recognition.
 
-    Xxxxxxx xxxx xxxxxxx xxxxxxxx xxxxx xx xxxxxxxxx xxx xxxxxxx xxx x xxxxxxx.
+You can use various types of constraints when performing speech recognition:
+
+1.  **Predefined grammars** ([**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446)).
+
+    Predefined dictation and web-search grammars provide speech recognition for your app without requiring you to author a grammar. When using these grammars, speech recognition is performed by a remote web service and the results are returned to the device.
+
+    The default free-text dictation grammar can recognize most words and phrases that a user can say in a particular language, and is optimized to recognize short phrases. The predefined dictation grammar is used if you don't specify any constraints for your [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) object. Free-text dictation is useful when you don't want to limit the kinds of things a user can say. Typical uses include creating notes or dictating the content for a message.
+
+    The web-search grammar, like a dictation grammar, contains a large number of words and phrases that a user might say. However, it is optimized to recognize terms that people typically use when searching the web.
+
+    **Note**  Because predefined dictation and web-search grammars can be large, and because they are online (not on the device), performance might not be as fast as with a custom grammar installed on the device.
 
      
 
@@ -109,32 +99,32 @@ catch (Exception exception)
     }
 ```
 
-2.  Xxx xxx-xxxxxx xxxxxxx, xxxx x xxxxxxxxx xxxxxxx, xxxxxxxx x xxxxx xxxxxx xx xxxxx xxx xxxxxxx xxxx x xxxx xxxxx xxx.
+2.  **Programmatic list constraints** ([**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421)).
 
-    Xxxxxxx, xx xx xxxxxxxxx xx xxxxxxxxx xxxxx xxxx xxxxxx xxxxxxxxx xxx xxxx xxxxxxxxx xxx xxx. **Xxxx**  Xxxxxxx xxxxxxxxxx xxxxxxxxx xxx xxx-xxxxxx xxxxxxxx xxx xx xxxxx, xxx xxxxxxx xxxx xxx xxxxxx (xxx xx xxx xxxxxx), xxxxxxxxxxx xxxxx xxx xx xx xxxx xx xxxx x xxxxxx xxxxxxx xxxxxxxxx xx xxx xxxxxx. **Xxxxxxxxxxxx xxxx xxxxxxxxxxx** ([**XxxxxxXxxxxxxxxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631421)). Xxxxxxxxxxxx xxxx xxxxxxxxxxx xxxxxxx x xxxxxxxxxxx xxxxxxxx xx xxxxxxxx xxxxxx xxxxxxxx xxxxx x xxxx xx xxxxx xx xxxxxxx.
+    Programmatic list constraints provide a lightweight approach to creating simple grammars using a list of words or phrases. A list constraint works well for recognizing short, distinct phrases. Explicitly specifying all words in a grammar also improves recognition accuracy, as the speech recognition engine must only process speech to confirm a match. The list can also be programmatically updated.
 
-    X xxxx xxxxxxxxxx xxxxx xxxx xxx xxxxxxxxxxx xxxxx, xxxxxxxx xxxxxxx. Xxxxxxxxxx xxxxxxxxxx xxx xxxxx xx x xxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxxxxx, xx xxx xxxxxx xxxxxxxxxxx xxxxxx xxxx xxxx xxxxxxx xxxxxx xx xxxxxxx x xxxxx. Xxx xxxx xxx xxxx xx xxxxxxxxxxxxxxxx xxxxxxx. X xxxx xxxxxxxxxx xxxxxxxx xx xx xxxxx xx xxxxxxx xxxx xxxxxxxxxx xxxxxx xxxxx xxxx xxxx xxx xxxx xxxxxx xxx x xxxxxxxxxxx xxxxxxxxx.
+    A list constraint consists of an array of strings that represents speech input that your app will accept for a recognition operation. You can create a list constraint in your app by creating a speech-recognition list-constraint object and passing an array of strings. Then, add that object to the constraints collection of the recognizer. Recognition is successful when the speech recognizer recognizes any one of the strings in the array.
 
-3.  Xxx xxx xxxxxx x xxxx xxxxxxxxxx xx xxxx xxx xx xxxxxxxx x xxxxxx-xxxxxxxxxxx xxxx-xxxxxxxxxx xxxxxx xxx xxxxxxx xx xxxxx xx xxxxxxx.
+3.  **SRGS grammars** ([**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412)).
 
-    Xxxx, xxx xxxx xxxxxx xx xxx xxxxxxxxxxx xxxxxxxxxx xx xxx xxxxxxxxxx. Xxxxxxxxxxx xx xxxxxxxxxx xxxx xxx xxxxxx xxxxxxxxxx xxxxxxxxxx xxx xxx xx xxx xxxxxxx xx xxx xxxxx.
+    An Speech Recognition Grammar Specification (SRGS) grammar is a static document that, unlike a programmatic list constraint, uses the XML format defined by the [SRGS Version 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). An SRGS grammar provides the greatest control over the speech recognition experience by letting you capture multiple semantic meanings in a single recognition.
 
-4.  **XXXX xxxxxxxx** ([**XxxxxxXxxxxxxxxxxXxxxxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631412)).
+4.  **Voice command constraints** ([**SpeechRecognitionVoiceCommandDefinitionConstraint**](https://msdn.microsoft.com/library/windows/apps/dn653220))
 
-    Xx Xxxxxx Xxxxxxxxxxx Xxxxxxx Xxxxxxxxxxxxx (XXXX) xxxxxxx xx x xxxxxx xxxxxxxx xxxx, xxxxxx x xxxxxxxxxxxx xxxx xxxxxxxxxx, xxxx xxx XXX xxxxxx xxxxxxx xx xxx [XXXX Xxxxxxx Y.Y](http://go.microsoft.com/fwlink/p/?LinkID=262302). Xx XXXX xxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxx xxxx xxx xxxxxx xxxxxxxxxxx xxxxxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xx x xxxxxx xxxxxxxxxxx.
+    Use a Voice Command Definition (VCD) XML file to define the commands that the user can say to initiate actions when activating your app. For more detail, see [Launch a foreground app with voice commands in Cortana](launch-a-foreground-app-with-voice-commands-in-cortana.md).
 
-**Xxxxx xxxxxxx xxxxxxxxxxx** ([**XxxxxxXxxxxxxxxxxXxxxxXxxxxxxXxxxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653220)) Xxx x Xxxxx Xxxxxxx Xxxxxxxxxx (XXX) XXX xxxx xx xxxxxx xxx xxxxxxxx xxxx xxx xxxx xxx xxx xx xxxxxxxx xxxxxxx xxxx xxxxxxxxxx xxxx xxx.
-Xxx xxxx xxxxxx, xxx [Xxxxxx x xxxxxxxxxx xxx xxxx xxxxx xxxxxxxx xx Xxxxxxx](launch-a-foreground-app-with-voice-commands-in-cortana.md).
+**Note**  Which type of constraint type you use depends on the complexity of the recognition experience you want to create. Any could be the best choice for a specific recognition task, and you might find uses for all types of constraints in your app.
+To get started with constraints, see [Define custom recognition constraints](define-custom-recognition-constraints.md).
 
  
 
-**Xxxx**  Xxxxx xxxx xx xxxxxxxxxx xxxx xxx xxx xxxxxxx xx xxx xxxxxxxxxx xx xxx xxxxxxxxxxx xxxxxxxxxx xxx xxxx xx xxxxxx. Xxx xxxxx xx xxx xxxx xxxxxx xxx x xxxxxxxx xxxxxxxxxxx xxxx, xxx xxx xxxxx xxxx xxxx xxx xxx xxxxx xx xxxxxxxxxxx xx xxxx xxx.
+The predefined Universal Windows app dictation grammar recognizes most words and short phrases in a language. It is activated by default when a speech recognizer object is instantiated without custom constraints.
 
-Xx xxx xxxxxxx xxxx xxxxxxxxxxx, xxx [Xxxxxx xxxxxx xxxxxxxxxxx xxxxxxxxxxx](define-custom-recognition-constraints.md).
+In this example, we show how to:
 
--   Xxx xxxxxxxxxx Xxxxxxxxx Xxxxxxx xxx xxxxxxxxx xxxxxxx xxxxxxxxxx xxxx xxxxx xxx xxxxx xxxxxxx xx x xxxxxxxx.
--   Xx xx xxxxxxxxx xx xxxxxxx xxxx x xxxxxx xxxxxxxxxx xxxxxx xx xxxxxxxxxxxx xxxxxxx xxxxxx xxxxxxxxxxx.
--   Xx xxxx xxxxxxx, xx xxxx xxx xx: Xxxxxx x xxxxxx xxxxxxxxxx.
+-   Create a speech recognizer.
+-   Compile the default Universal Windows app constraints (no grammars have been added to the speech recognizer's grammar set).
+-   Start listening for speech by using the basic recognition UI and TTS feedback provided by the [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) method. Use the [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) method if the default UI is not required.
 
 ```CSharp
 private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
@@ -154,37 +144,32 @@ private async void StartRecognizing_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Xxxxxxx xxx xxxxxxx Xxxxxxxxx Xxxxxxx xxx xxxxxxxxxxx (xx xxxxxxxx xxxx xxxx xxxxx xx xxx xxxxxx xxxxxxxxxx'x xxxxxxx xxx).
+## <span id="Customize_the_recognition_UI"></span><span id="customize_the_recognition_ui"></span><span id="CUSTOMIZE_THE_RECOGNITION_UI"></span>Customize the recognition UI
 
 
-Xxxxx xxxxxxxxx xxx xxxxxx xx xxxxx xxx xxxxx xxxxxxxxxxx XX xxx XXX xxxxxxxx xxxxxxxx xx xxx [**XxxxxxxxxXxxxXXXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653245) xxxxxx.
+When your app attempts speech recognition by calling [**SpeechRecognizer.RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245), several screens are shown in the following order.
 
-Xxx xxx [**XxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653244) xxxxxx xx xxx xxxxxxx XX xx xxx xxxxxxxx.
+If you're using a constraint based on a predefined grammar (dictation or web search):
 
--   <span id="Customize_the_recognition_UI">
-            </span>
-            <span id="customize_the_recognition_ui">
-            </span>
-            <span id="CUSTOMIZE_THE_RECOGNITION_UI">
-            </span>Xxxxxxxxx xxx xxxxxxxxxxx XX
--   Xxxx xxxx xxx xxxxxxxx xxxxxx xxxxxxxxxxx xx xxxxxxx [**XxxxxxXxxxxxxxxx.XxxxxxxxxXxxxXXXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653245), xxxxxxx xxxxxxx xxx xxxxx xx xxx xxxxxxxxx xxxxx.
--   Xx xxx'xx xxxxx x xxxxxxxxxx xxxxx xx x xxxxxxxxxx xxxxxxx (xxxxxxxxx xx xxx xxxxxx):
+-   The **Listening** screen.
+-   The **Thinking** screen.
+-   The **Heard you say** screen or the error screen.
 
-Xxx **Xxxxxxxxx** xxxxxx.
+If you're using a constraint based on a list of words or phrases, or a constraint based on a SRGS grammar file:
 
--   Xxx **Xxxxxxxx** xxxxxx.
--   Xxx **Xxxxx xxx xxx** xxxxxx xx xxx xxxxx xxxxxx.
--   Xx xxx'xx xxxxx x xxxxxxxxxx xxxxx xx x xxxx xx xxxxx xx xxxxxxx, xx x xxxxxxxxxx xxxxx xx x XXXX xxxxxxx xxxx:
+-   The **Listening** screen.
+-   The **Did you say** screen, if what the user said could be interpreted as more than one potential result.
+-   The **Heard you say** screen or the error screen.
 
-Xxx **Xxxxxxxxx** xxxxxx. Xxx **Xxx xxx xxx** xxxxxx, xx xxxx xxx xxxx xxxx xxxxx xx xxxxxxxxxxx xx xxxx xxxx xxx xxxxxxxxx xxxxxx.
+The following image shows an example of the flow between screens for a speech recognizer that uses a constraint based on a SRGS grammar file. In this example, speech recognition was successful.
 
-![Xxx **Xxxxx xxx xxx** xxxxxx xx xxx xxxxx xxxxxx.](images/speech-listening-initial.png)
+![initial recognition screen for a constraint based on a sgrs grammar file](images/speech-listening-initial.png)
 
-![Xxx xxxxxxxxx xxxxx xxxxx xx xxxxxxx xx xxx xxxx xxxxxxx xxxxxxx xxx x xxxxxx xxxxxxxxxx xxxx xxxx x xxxxxxxxxx xxxxx xx x XXXX xxxxxxx xxxx.](images/speech-listening-intermediate.png)
+![intermediate recognition screen for a constraint based on a sgrs grammar file](images/speech-listening-intermediate.png)
 
-![Xx xxxx xxxxxxx, xxxxxx xxxxxxxxxxx xxx xxxxxxxxxx.](images/speech-listening-complete.png)
+![final recognition screen for a constraint based on a sgrs grammar file](images/speech-listening-complete.png)
 
-xxxxxxx xxxxxxxxxxx xxxxxx xxx x xxxxxxxxxx xxxxx xx x xxxx xxxxxxx xxxx xxxxxxxxxxxx xxxxxxxxxxx xxxxxx xxx x xxxxxxxxxx xxxxx xx x xxxx xxxxxxx xxxx
+The **Listening** screen can provide examples of words or phrases that the app can recognize. Here, we show how to use the properties of the [**SpeechRecognizerUIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653234) class (obtained by calling the [**SpeechRecognizer.UIOptions**](https://msdn.microsoft.com/library/windows/apps/dn653254) property) to customize content on the **Listening** screen.
 
 ```CSharp
 private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
@@ -216,21 +201,24 @@ private async void WeatherSearch_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## xxxxx xxxxxxxxxxx xxxxxx xxx x xxxxxxxxxx xxxxx xx x xxxx xxxxxxx xxxx
+## <span id="related_topics"></span>Related articles
 
 
-**Xxx **Xxxxxxxxx** xxxxxx xxx xxxxxxx xxxxxxxx xx xxxxx xx xxxxxxx xxxx xxx xxx xxx xxxxxxxxx.**
-* [Xxxx, xx xxxx xxx xx xxx xxx xxxxxxxxxx xx xxx [**XxxxxxXxxxxxxxxxXXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653234) xxxxx (xxxxxxxx xx xxxxxxx xxx [**XxxxxxXxxxxxxxxx.XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653254) xxxxxxxx) xx xxxxxxxxx xxxxxxx xx xxx **Xxxxxxxxx** xxxxxx.](speech-interactions.md)
-**<span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx**
-* [Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121)
-**[Xxxxxx xxxxxxxxxxxx](speech-interactions.md)**
-* [**Xxxxxxxxx**](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+**Developers**
+* [Speech interactions](speech-interactions.md)
+**Designers**
+* [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
+**Samples**
+* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO4-->
+
+

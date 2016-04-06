@@ -1,17 +1,17 @@
 ---
-xxxxx: Xxxxxxxxxxx xxxxxx xxxxx xxxx XxxxXX XX Y.Y
-xxxxxxxxxxx: Xxxx xxx xx xxxxxx xxxxx x xxxxxx xx XxxxXX XX Y.Y xxxxxxxx xxxxxxxx xxxxxxx xxxxxxxxx xx xxxxxxxxx xxxxxxxxxx.
-xx.xxxxxxx: YYYYYxxY-YYxY-Yxxx-YYYY-xYxxYxYxxYYY
+title: Walkthrough sample ports from OpenGL ES 2.0
+description: This set of topics walks a number of OpenGL ES 2.0 graphics pipeline porting scenarios of differing complexity.
+ms.assetid: 07390da1-83f3-7fbb-5696-d1da3a2bc870
 ---
 
-# Xxxxxxxxxxx xxxxxx xxxxx xxxx XxxxXX XX Y.Y
+# Walkthrough sample ports from OpenGL ES 2.0
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx xxx xx xxxxxx xxxxx x xxxxxx xx XxxxXX XX Y.Y xxxxxxxx xxxxxxxx xxxxxxx xxxxxxxxx xx xxxxxxxxx xxxxxxxxxx.
+This set of topics walks a number of OpenGL ES 2.0 graphics pipeline porting scenarios of differing complexity.
 
-## XxxxXX XX Y.Y xx XxxxxxYX YY xxxxxxxxxxxx
+## OpenGL ES 2.0 to Direct3D 11 walkthroughs
 
 ## 
 <table>
@@ -21,14 +21,14 @@ Xxxx xxx xx xxxxxx xxxxx x xxxxxx xx XxxxXX XX Y.Y xxxxxxxx xxxxxxxx xxxxxxx xxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[How to: port a simple OpenGL ES 2.0 renderer to Direct3D 11.1](port-a-simple-opengl-es-2-0-renderer-to-directx-11-1.md)</p></td>
-<td align="left"><p>Xxx xxx xxxxx xxxxxxx xxxxxxxx, xx'xx xxxxx xxxx xxx xxxxxx: xxxxxxxx x xxxxxx xxxxxxxx xxx x xxxxxxxx, xxxxxx-xxxxxx xxxx xxxx XxxxXX XX Y.Y xxxx XxxxxxYX, xxxx xxxx xx xxxxxxx xxx XxxxxxX YY Xxx (Xxxxxxxxx Xxxxxxx) xxxxxxxx xxxx Xxxxxx Xxxxxx YYYY.</p></td>
+<td align="left"><p>For the first porting exercise, we'll start with the basics: bringing a simple renderer for a spinning, vertex-shaded cube from OpenGL ES 2.0 into Direct3D, such that it matches the DirectX 11 App (Universal Windows) template from Visual Studio 2015.</p></td>
 </tr>
 </tbody>
 </table>
@@ -42,4 +42,8 @@ Xxxx xxx xx xxxxxx xxxxx x xxxxxx xx XxxxXX XX Y.Y xxxxxxxx xxxxxxxx xxxxxxx xxx
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

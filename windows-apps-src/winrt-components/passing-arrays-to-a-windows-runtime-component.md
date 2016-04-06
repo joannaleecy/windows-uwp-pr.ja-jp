@@ -1,29 +1,29 @@
 ---
-xxxxx: Xxxxxxx xxxxxx xx x Xxxxxxx Xxxxxxx Xxxxxxxxx
-xxxxxxxxxxx: Xx xxx Xxxxxxx Xxxxxxxxx Xxxxxxxx (XXX), xxxxxxxxxx xxx xxxxxx xxx xxxxx xx xxx xxxxxx, xxxxx xxxx. Xxxx xxxxx xxxx xxx xxxxxxxx xx xx xxxxx xxxx xx xxxxxx xx x xxxxxx, xx xxxx xx xxx xxxxx xxxxxx, xxx xxxxxx xxx xxxxx xx xxx xxxxxx.
-xx.xxxxxxx: YXXYYYXX-XXXY-YYYX-YXYY-XXYYYXXYYXXY
+title: Passing arrays to a Windows Runtime Component
+description: In the Windows Universal Platform (UWP), parameters are either for input or for output, never both. This means that the contents of an array that is passed to a method, as well as the array itself, are either for input or for output.
+ms.assetid: 8DE695AC-CEF2-438C-8F94-FB783EE18EB9
 ---
 
-# Xxxxxxx xxxxxx xx x Xxxxxxx Xxxxxxx Xxxxxxxxx
+# Passing arrays to a Windows Runtime Component
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[Xxxx xxxxxxxxxxx xxxxxxx xx xxx-xxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxx xx'x xxxxxxxxxxxx xxxxxxxx. Xxxxxxxxx xxxxx xx xxxxxxxxxx, xxxxxxx xx xxxxxxx, xxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxx.\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-Xx xxx Xxxxxxx Xxxxxxxxx Xxxxxxxx (XXX), xxxxxxxxxx xxx xxxxxx xxx xxxxx xx xxx xxxxxx, xxxxx xxxx. Xxxx xxxxx xxxx xxx xxxxxxxx xx xx xxxxx xxxx xx xxxxxx xx x xxxxxx, xx xxxx xx xxx xxxxx xxxxxx, xxx xxxxxx xxx xxxxx xx xxx xxxxxx. Xx xxx xxxxxxxx xx xxx xxxxx xxx xxx xxxxx, xxx xxxxxx xxxxx xxxx xxx xxxxx xxx xxxxx'x xxxxx xx xx. Xx xxx xxxxxxxx xx xxx xxxxx xxx xxx xxxxxx, xxx xxxxxx xxxxxx xx xxx xxxxx xxx xxxxx'x xxxx xxxx xx. Xxxx xxxxxxxx x xxxxxxx xxx xxxxx xxxxxxxxxx, xxxxxxx xxxxxx xx xxx .XXX Xxxxxxxxx xxx xxxxxxxxx xxxxx, xxx xxx xxxxxxxx xx xx xxxxx xxx xxxxxxx xxxx xxxx xxx xxxxx xxxxxxxxx xx xxxxxx xx xxxxx (**XxXxx** xx Xxxxxx Xxxxx). Xxx [Xxxxxxx Xxxxxxx Xxxxxxxx Xxxxxx Xxxx (Xxxxxxxx.xxx)](https://msdn.microsoft.com/library/hh925576.aspx) xxxxxxxx xxx xx xxxxxxx xxx xxxxxxxx xxxxx xx xxx xxxxx xx xx xx xxx xxxxx xxxx xxxxxxx, xx xxxxxxxx xxx XxxxXxxxXxxxxXxxxxxxxx xxxxxxxxx xx xxx XxxxxXxxxXxxxxXxxxxxxxx xxxxxxxxx xx xxx xxxxxxxxx. Xxxxx xxxxx xx xxxxxxxxxx xx xxxxxxx:
+In the Windows Universal Platform (UWP), parameters are either for input or for output, never both. This means that the contents of an array that is passed to a method, as well as the array itself, are either for input or for output. If the contents of the array are for input, the method reads from the array but doesn't write to it. If the contents of the array are for output, the method writes to the array but doesn't read from it. This presents a problem for array parameters, because arrays in the .NET Framework are reference types, and the contents of an array are mutable even when the array reference is passed by value (**ByVal** in Visual Basic). The [Windows Runtime Metadata Export Tool (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) requires you to specify the intended usage of the array if it is not clear from context, by applying the ReadOnlyArrayAttribute attribute or the WriteOnlyArrayAttribute attribute to the parameter. Array usage is determined as follows:
 
--   Xxx xxx xxxxxx xxxxx xx xxx xx xxx xxxxxxxxx (x **XxXxx** xxxxxxxxx xxxx xxx [XxxXxxxxxxxx](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) xxxxxxxxx xx Xxxxxx Xxxxx) xxx xxxxx xx xxxxxx xxx xxxxxx xxxx. Xx xxx xxxxx xxx XxxxXxxxXxxxxXxxxxxxxx xxxxxxxxx. Xxx XxxxxXxxxXxxxxXxxxxxxxx xxxxxxxxx xx xxxxxxx xx xxxxxx xxxxxxxxxx, xxx xx'x xxxxxxxxx.
+-   For the return value or for an out parameter (a **ByRef** parameter with the [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) attribute in Visual Basic) the array is always for output only. Do not apply the ReadOnlyArrayAttribute attribute. The WriteOnlyArrayAttribute attribute is allowed on output parameters, but it's redundant.
 
-    > **Xxxxxxx**  Xxx Xxxxxx Xxxxx xxxxxxxx xxxx xxx xxxxxxx xxxxxx-xxxx xxxxx. Xxx xxxxxx xxxxx xxxx xxxx xx xxxxxx xxxxxxxxx; xx xxx xxxxxxx **Xxxxxxx**. Xxxxxx xxxxxx x xxx xxxxx.
+    > **Caution**  The Visual Basic compiler does not enforce output-only rules. You should never read from an output parameter; it may contain **Nothing**. Always assign a new array.
  
--   Xxxxxxxxxx xxxx xxxx xxx **xxx** xxxxxxxx (**XxXxx** xx Xxxxxx Xxxxx) xxx xxx xxxxxxx. Xxxxxxxx.xxx xxxxxxxxx xx xxxxx.
--   Xxx x xxxxxxxxx xxxx xx xxxxxx xx xxxxx, xxx xxxx xxxxxxx xxxxxxx xxx xxxxx xxxxxxxx xxx xxx xxxxx xx xxxxxx xx xxxxxxxx xxxxxx xxx [XxxxXxxxXxxxxXxxxxxxxx](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) xxxxxxxxx xx xxx [XxxxxXxxxXxxxxXxxxxxxxx](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx) xxxxxxxxx. Xxxxxxxxxx xxxx xxxxxxxxxx xx xx xxxxx.
+-   Parameters that have the **ref** modifier (**ByRef** in Visual Basic) are not allowed. Winmdexp.exe generates an error.
+-   For a parameter that is passed by value, you must specify whether the array contents are for input or output by applying either the [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx) attribute or the [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx) attribute. Specifying both attributes is an error.
 
-Xx x xxxxxx xxxx xxxxxx xx xxxxx xxx xxxxx, xxxxxx xxx xxxxx xxxxxxxx, xxx xxxxxx xxx xxxxx xx xxx xxxxxx, xxx x xxxx-xxxx xxxxxxxxx xxx xxx xxxxx xxx x xxxxx-xxxx xxxxxxxxx (xx xxx xxxxxx xxxxx) xxx xxx xxxxxx. Xxx xxxxxxxxx xxxx xxxxx xxx xxx xx xxxxxxxxx xxxx xxxxxxx:
+If a method must accept an array for input, modify the array contents, and return the array to the caller, use a read-only parameter for the input and a write-only parameter (or the return value) for the output. The following code shows one way to implement this pattern:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```csharp
 > public int[] ChangeArray([ReadOnlyArray()] int[] input)
 > {
@@ -42,22 +42,26 @@ Xx x xxxxxx xxxx xxxxxx xx xxxxx xxx xxxxx, xxxxxx xxx xxxxx xxxxxxxx, xxx xxxxx
 > End Function 
 > ```
 
-Xx xxxxxxxxx xxxx xxx xxxx x xxxx xx xxx xxxxx xxxxx xxxxxxxxxxx, xxx xxxxxxxxxx xxx xxxx. Xxxx xxxxx xxxxxx xxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxxx xx xxx xxxx xxxxxxxxx xx xxxxxx xx .XXX Xxxxxxxxx xxxx.
+We recommend that you make a copy of the input array immediately, and manipulate the copy. This helps ensure that the method behaves the same whether or not your component is called by .NET Framework code.
 
-## Xxxxx xxxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxx xxxx
+## Using components from managed and unmanaged code
 
 
-Xxxxxxxxxx xxxx xxxx xxx XxxxXxxxXxxxxXxxxxxxxx xxxxxxxxx xx xxx XxxxxXxxxXxxxxXxxxxxxxx xxxxxxxxx xxxxxx xxxxxxxxxxx xxxxxxxxx xx xxxxxxx xxx xxxxxx xx xxxxxxx xx xxxxxx xxxx xx xxxxxxx xxxx. Xx xxx xxxxxx xx xxxxxx xxxx (XxxxXxxxxx xx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx), xxx xxxxx xxxxxxxx xxx xxxxxxx xx xxxxxxx:
+Parameters that have the ReadOnlyArrayAttribute attribute or the WriteOnlyArrayAttribute attribute behave differently depending on whether the caller is written in native code or managed code. If the caller is native code (JavaScript or Visual C++ component extensions), the array contents are treated as follows:
 
--   XxxxXxxxXxxxxXxxxxxxxx: Xxx xxxxx xx xxxxxx xxxx xxx xxxx xxxxxxx xxx xxxxxxxxxxx xxxxxx xxxxxxxxx (XXX) xxxxxxxx. Xxxxxxxx xxx xxxxxxxxx xx xxxxxxxxx. Xxxxxxxxx, xxx xxxxxxxxxx xxxxxxx xxx xxxxxx xxxxx xx xx xxxxx-xxxx xxxxx xxx xxx xxxxxxx xx xxx xxxxxx.
--   XxxxxXxxxXxxxxXxxxxxxxx: Xxx xxxxxx xxxxxx xxx'x xxxx xxx xxxxxxxxxxx xxxxx xxx xxxxxxxx xx xxx xxxxxxxx xxxxx. Xxx xxxxxxx, xxx xxxxx xxx xxxxxx xxxxxxxx xxxxx xxx xx xxxxxxxxxxx, xx xxxxx xxxxxxx xxxxxxx xxxxxx. Xxx xxxxxx xx xxxxxxxx xx xxx xxx xxxxxx xx xxx xxx xxxxxxxx xx xxx xxxxx.
+-   ReadOnlyArrayAttribute: The array is copied when the call crosses the application binary interface (ABI) boundary. Elements are converted if necessary. Therefore, any accidental changes the method makes to an input-only array are not visible to the caller.
+-   WriteOnlyArrayAttribute: The called method can't make any assumptions about the contents of the original array. For example, the array the method receives might not be initialized, or might contain default values. The method is expected to set the values of all the elements in the array.
 
-Xx xxx xxxxxx xx xxxxxxx xxxx, xxx xxxxxxxx xxxxx xx xxxxxxxxx xx xxx xxxxxx xxxxxx, xx xx xxxxx xx xx xxx xxxxxx xxxx xx xxx .XXX Xxxxxxxxx. Xxxxx xxxxxxxx xxx xxxxxxx xx .XXX Xxxxxxxxx xxxx, xx xxx xxxxxxx xxx xxxxxx xxxxx xx xxx xxxxx xxx xxxxxxx xx xxx xxxxxx. Xxxx xx xxxxxxxxx xx xxxxxxxx xxxxxxx xx xxxxxxx xxxx xxxxx xxxxxxx xxx x Xxxxxxx Xxxxxxx Xxxxxxxxx. Xx xxx xxxxx xxx xxxxxxx xx xxxxxxx xxxx, xxx xxxxxxxx xx xx xxxxx xxxx xxxxxx xx xx xxxxxxx xxxxxx xxxxxxx.
+If the caller is managed code, the original array is available to the called method, as it would be in any method call in the .NET Framework. Array contents are mutable in .NET Framework code, so any changes the method makes to the array are visible to the caller. This is important to remember because it affects unit tests written for a Windows Runtime Component. If the tests are written in managed code, the contents of an array will appear to be mutable during testing.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [XxxxXxxxXxxxxXxxxxxxxx](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
-* [XxxxxXxxxXxxxxXxxxxxxxx](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
-* [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X\# xxx Xxxxxx Xxxxx](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [ReadOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.readonlyarrayattribute.aspx)
+* [WriteOnlyArrayAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.writeonlyarrayattribute.aspx)
+* [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

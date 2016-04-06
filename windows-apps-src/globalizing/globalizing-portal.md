@@ -1,37 +1,37 @@
 ---
-Xxxxxxxxxxx: Xxxxxxxxxxxxx xx xxx xxxxxxx xx xxxxxxxxx xxx xxxxxxxxxx xxxx xxx xx xxx xxxxxxxxxxxxx xxx xxxxxxxxx xxxxxx xxxxxxx xxxxxxx xxx xxxxxxx xx xxxxxxxxxxxxx.
-Xxxxxx.XxxxxxXxxx: Xxxxx
-xxxxx: Xxxxxxxxxxxxx xxx xxxxxxxxxxxx
-xx.xxxxxxx: xYYYYxxx-YxxY-YxYY-YYYY-YYxYxYYxYYxx
-xxxxx: Xxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: グローバリゼーションとは、変更やカスタマイズを加えなくてもさまざまなグローバル市場で適切に動作するようにアプリを設計および開発するプロセスです。
+Search.SourceType: ビデオ
+title: グローバリゼーションとローカライズ
+ms.assetid: c0791eec-5bb8-4a13-8977-61d7d98e35ce
+label: はじめに
+template: detail.hbs
 ---
 
-# Xxxxxxxxxxxxx xxx xxxxxxxxxxxx
+# グローバリゼーションとローカライズ
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-Xxxxxxx xx xxxx xxxxxxxxx, xx xxxxxxxxx xxxx xxxx xx xxxxxxx, xxxxxx, xxx xxxxxxxx. X xxxx xxx xxxxx xxx xxxxxxxx, xx xxxx xxxxxxxx xxxxxxxxx. X xxxx xxx xx xxxxxxx xxxxxxxx xx xxx xxxxx, xxx xxx xxxxx xxx xxxxxxxx xx xxx xxxxxxxx. Xxx xxx xxxxxxxx xxx xxxxxxxxx xxxxxx xxx xxxx xxx xx xxxxxxxxx xx xx xx xxxxxxx xxxxxxxxx xxxxx *xxxxxxxxxxxxx* xxx *xxxxxxxxxxxx*.
+Windows は世界中で利用されており、文化、地域、言語の異なるユーザーがいます。 ユーザーは、自分の使用言語としてどの言語でも指定でき、複数の言語を指定することもできます。 住んでいる地域として世界中のどの場所を指定することもでき、地域を問わずどの言語でも指定できます。 *グローバリゼーション*と*ローカライズ*によってアプリの適応性を高めることにより、潜在的な市場を拡大することができます。
 
-**Xxxxxxxxxxxxx** xx xxx xxxxxxx xx xxxxxxxxx xxx xxxxxxxxxx xxxx xxx xx xxx xxxxxxxxxxxxx xxx xxxxxxxxx xxxxxx xxxxxxx xxxxxxx xxx xxxxxxx xx xxxxxxxxxxxxx.
+**グローバリゼーション**とは、変更やカスタマイズを加えなくてもさまざまなグローバル市場で適切に動作するようにアプリを設計および開発するプロセスです。
 
-Xxx xxxxxxx, xxx xxx:
+たとえば次のようなことが可能です。
 
--   Xxxxxx xxx xxxxxx xx xxxx xxx xx xxxxxxxxxxx xxx xxxxxxxxx xxxx xxxxxxx xxx xxxx xxxxx xx xxxxx xxxxxxxxx xx xxxxxx xxx xxxx xxxxxxx.
--   Xxxxxxxx xxxx xxx xxxxxxx-xxxxxxxxx xxxxxx xxxx xxxxxxxxx xxxx xxx xx xxxxxxx xx xxxxxxxxx xxxxx xxxxxxx, xxxxxxx xx xxxx-xxxxxx xxxx xxxx xxxx xxx'x xxxx xx xxxxxx.
--   Xxx xxxxxxxxxxxxx XXXx xx xxxxxxx xxxx xxxx xxx xxxxxxxxx xxxxxxxxxxx xx xxxxxxxxx xxxxxxx, xxxx xx xxxxxxx xxxxxx, xxxxx, xxxxx, xxx xxxxxxxxxx.
+-   言語が変更されてテキストの長さやフォント サイズが変わってもラベルやテキスト文字列が正しく表示されるようにアプリのレイアウトを設計する。
+-   テキストや文化に依存するイメージを、アプリのコードやマークアップにハードコーディングする代わりに、さまざまな地域市場に適応できるリソースから取得する。
+-   Globalization API を使って、地域ごとに形式の異なるデータ (数値、日付、時刻、通貨など) を表示する。
 
-**Xxxxxxxxxxxx** xx xxx xxxxxxx xx xxxxxxxx xxxx xxx xx xxxx xxx xxxxxxxx, xxxxxxxx, xxx xxxxxxxxx xxxxxxxxxxxx xx x xxxxxxxx xxxxx xxxxxx.
+**ローカライズ**とは、特定の地域市場の言語、文化、政治の要件にアプリを適応させるプロセスです。
 
-Xxx xxxxxxx:
+次に例を示します。
 
--   Xxxxxxxxx xxx xxxx xxx xxxxxx xx xxx xxx xxx xxx xxx xxxxxx, xxx xxxxxx xxxxxxxx xxxxxxxxx xxx xxx xxxxxxxx.
--   Xxxxxx xxx xxxxxxx-xxxxxxxxx xxxxxx xx xxxxxxxxx, xxx xxxxx xx xxxxxxxx xxxxxxxxx.
+-   新しい市場のためにアプリのテキストとラベルを翻訳して、その言語のための独立したリソースを作成する。
+-   文化に依存するイメージを必要に応じて変更し、個別のリソースに配置する。
 
-Xxxxx xxxx xxxxx xxx x xxxxx xxxxxxxxxxxx xx xxx xx xxxxxxx xxxx xxx xxx xxx xxxxx: [Xxxxxxxxxxxx xx xxxxxxxxxxxxx xxx xxxxxxxxxxxx](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization).
+世界に向けてアプリを準備する方法の概略については、ビデオ「[アプリのグローバリゼーションとローカライズの概略](https://channel9.msdn.com/Blogs/One-Dev-Minute/Introduction-to-globalization-and-localization)」をご覧ください。
 
-## Xxxxxxxx
+## 記事
 <table>
 <colgroup>
 <col width="50%" />
@@ -39,56 +39,60 @@ Xxxxx xxxx xxxxx xxx x xxxxx xxxxxxxxxxxx xx xxx xx xxxxxxx xxxx xxx xxx xxx xxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">記事</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Do's and don'ts](guidelines-and-checklist-for-globalizing-your-app.md)</p></td>
-<td align="left"><p>Xxxxxx xxxxx xxxx xxxxxxxxx xxxx xxxxxxxxxxx xxxx xxxx xxx x xxxxx xxxxxxxx xxx xxxx xxxxxxxxxx xxxx xxxx xxx x xxxxxxxx xxxxxx.</p></td>
+<td align="left"><p>広範なユーザー向けにアプリをグローバル化したり、特定の市場を対象にアプリをローカライズするときは、次のベスト プラクティスに従ってください。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Use global-ready formats](use-global-ready-formats.md)</p></td>
-<td align="left"><p>Xxxxxxx x xxxxxx-xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxxxx xxxxx, xxxxx, xxxxxxx, xxx xxxxxxxxxx.</p></td>
+<td align="left"><p>日付、時刻、数字、通貨を適切に書式設定することで、アプリをグローバル対応するように開発します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Manage language and region](manage-language-and-region.md)</p></td>
-<td align="left"><p>Xxxxxxx xxx Xxxxxxx xxxxxxx XX xxxxxxxxx xxx xxxxxxx xxx XX xxxxxxxx xx xxx xxx, xx xxxxx xxx xxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxx xxxxxxxx xx Xxxxxxx.</p></td>
+<td align="left"><p>Windows で提供される言語と地域についてのさまざまな設定を使って、Windows がアプリの UI リソースをどのように選び、UI 要素のフォーマットをどのように決定するかを制御します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Use patterns to format dates and times](use-patterns-to-format-dates-and-times.md)</p></td>
-<td align="left"><p>Xxx xxx [<strong>Xxxxxxx.Xxxxxxxxxxxxx.XxxxXxxxXxxxxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY) XXX xxxx xxxxxx xxxxxxxx xx xxxxxxx xxxxx xxx xxxxx xx xxxxxxx xxx xxxxxx xxx xxxx.</p></td>
+<td align="left"><p>希望するどおりの形式で日付と時刻を表示するには、[<strong>Windows.Globalization.DateTimeFormatting</strong>](https://msdn.microsoft.com/library/windows/apps/br206859) API をカスタム パターンとともに使用します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Adjust layout and fonts, and support RTL](adjust-layout-and-fonts--and-support-rtl.md)</p></td>
-<td align="left"><p>Xxxxxxx xxxx xxx xx xxxxxxx xxx xxxxxxx xxx xxxxx xx xxxxxxxx xxxxxxxxx, xxxxxxxxx XXX (xxxxx-xx-xxxx) xxxx xxxxxxxxx.</p></td>
+<td align="left"><p>RTL (右から左) のテキストの方向を含め、複数の言語のレイアウトやフォントをサポートするアプリを開発します。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Prepare your app for localization](prepare-your-app-for-localization.md)</p></td>
-<td align="left"><p>Xxxxxxx xxxx xxx xxx xxxxxxxxxxxx xx xxxxx xxxxxxx, xxxxxxxxx, xx xxxxxxx.</p></td>
+<td align="left"><p>他の市場、言語、または地域に向けたローカライズのためにアプリを準備します。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Put UI strings into resources](put-ui-strings-into-resources.md)</p></td>
-<td align="left"><p>Xxx xxxxxx xxxxxxxxx xxx xxxx XX xxxx xxxxxxxx xxxxx. Xxx xxx xxxx xxxxxxxxx xxxxx xxxxxxx xxxx xxxx xxxx xx xxxxxx.</p></td>
+<td align="left"><p>UI の文字列リソースをリソース ファイルに格納します。 その後、これらの文字列をコードやマークアップから参照できます。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Xxx xxxx xxx xxxxxxxxxxxxx xxxxxxxxxx xxxxxxx xxx Xxxxxxx Y.x, xxxxx xxxxx xxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY.
+当初は Windows 8.x 用に作成されたドキュメントもご覧ください。このドキュメントは、ユニバーサル Windows プラットフォーム (UWP) のアプリや Windows 10 にも適用されます。
 
--   [Xxxxxxxxxxx xxxx xxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965328)
--   [Xxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/jj673578.aspx)
--   [XxxxxxxXxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/jj236471.aspx)
--   [Xxxxxxxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/dn263115.aspx)
--   [Xxx xxxxxxxxx xxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh710212.aspx)
+-   [アプリのグローバル化](https://msdn.microsoft.com/library/windows/apps/xaml/hh965328)
+-   [言語の対応付け](https://msdn.microsoft.com/library/windows/apps/xaml/jj673578.aspx)
+-   [NumeralSystem 値](https://msdn.microsoft.com/library/windows/apps/xaml/jj236471.aspx)
+-   [国際フォント](https://msdn.microsoft.com/library/windows/apps/xaml/dn263115.aspx)
+-   [アプリ リソースとローカライズ](https://msdn.microsoft.com/library/windows/apps/xaml/hh710212.aspx)
+
+ 
 
  
 
- 
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

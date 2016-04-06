@@ -1,56 +1,56 @@
 ---
-xxxxx: Xxxxxxxx xxx xxxxxxxxx xxxxxxxxx
-xxxxxxxxxxx: Xxx, xx'x xxxx xx xxxx xx xxx xxx xxxxxx xxxx xxxx xxxx xxxxxxxxx xxx xxxxx xx xxxxxxx xxx xxxxxxxx.
-xx.xxxxxxx: YxxYYYYx-YYYY-YYYx-xxYY-YxxxYxYYxYxY
+title: Assemble the rendering framework
+description: Now, it's time to look at how the sample game uses that structure and state to display its graphics.
+ms.assetid: 1da3670b-2067-576f-da50-5eba2f88b3e6
 ---
 
-# Xxxxxxxx xxx xxxxxxxxx xxxxxxxxx
+# Assemble the rendering framework
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xx xxx, xxx'xx xxxx xxx xx xxxxxxxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xx xxxx xxxx xxx Xxxxxxx Xxxxxxx, xxx xxx xx xxxxxx x xxxxx xxxxxxx xx xxxxxx xxx xxxx xx xxx xxxx. Xxx, xx'x xxxx xx xxxx xx xxx xxx xxxxxx xxxx xxxx xxxx xxxxxxxxx xxx xxxxx xx xxxxxxx xxx xxxxxxxx. Xxxx, xx xxxx xx xxx xx xxxxxxxxx x xxxxxxxxx xxxxxxxxx, xxxxxxxx xxxx xxx xxxxxxxxxxxxxx xx xxx xxxxxxxx xxxxxx xxxxxxx xxx xxxxxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxx xxxxxxx.
+By now, you've seen how to structure a Universal Windows Platform (UWP) game to work with the Windows Runtime, and how to define a state machine to handle the flow of the game. Now, it's time to look at how the sample game uses that structure and state to display its graphics. Here, we look at how to implement a rendering framework, starting from the initialization of the graphics device through the presentation of the graphics objects for display.
 
-## Xxxxxxxxx
+## Objective
 
 
--   Xx xxxxxxxxxx xxx xx xxx xx x xxxxx xxxxxxxxx xxxxxxxxx xx xxxxxxx xxx xxxxxxxx xxxxxx xxx x XXX XxxxxxX xxxx.
+-   To understand how to set up a basic rendering framework to display the graphics output for a UWP DirectX game.
 
-> **Xxxx**   Xxx xxxxxxxxx xxxx xxxxx xxx xxx xxxxxxxxx xxxx, xxx xxxxxxx xxxxxxx xxx xxxxxxx xxxxxxxx xx xx xxxx xxxxx xxx xxx [xxxxxxxx xx xxxx xx xxx xxx xx xxxx xxxxx](#code_sample):
--   **Xxxxxxx.x/.xxx**.
--   **XxxxxXxxxxx.x/.xxx**. Xxxxxxxx xxxxxxx xxx xxxxxxx xxxxxx, xxxxxxx xxx xxxxxxxx, xxxx xxxxxxxxxxxxx xxx xxxxxxxxxxxxxx. Xxxx xxxxxx!
--   **XxxxXxxxxx.x/.xxx**, **XxxxxxXxxx.x/.xxx**, **XxxxxxxxXxxx.x/.xxx**, **XxxxXxxx.x/.xxx**, xxx **XxxxxXxxx.x/.xxx**. Xxxxxxxx xxx xxxxxxxxxxx xx xxx xxxxxx xxxxxxxxxx xxxx xx xxx xxxx, xxxx xx xxx xxxx xxxxxxx, xxx xxxxxxxx xxx xxxx xxxxxxxxx, xxx xxx xxxxx xx xxx xxxxxxxx xxxxxxx. (**XxxxXxxxxx.xxx**, xxxxxxx xxxxxxxxx xx xxxx xxxxx, xxxxxxxx xxx xxxxxx xxx xxxxxxxxx xxxxx xxxxxxxxxx.)
--   **Xxxxx.x/.xxx** xxx **Xxxxx\[Y-Y\].x/.xxx**. Xxxxxxxx xxx xxxxxxxxxxxxx xxx xxxx xx xxx xxxxx xxx xxxxxx, xxxxxxxxx xxx xxxxxxx xxxxxxxx xxx xxx xxxxxx xxx xxxxxxxx xx xxx xxxxxxx xxx xxxxxxxxx.
--   **XxxxxxXxxxxxx.x/.xxx**. Xxxxxxxx x xxx xx xxxxxxx xxx xxxxxxx xxx xxxxxxx xxxx xx xxx xxxxxxxx xx xxx xxxxxxx.
+> **Note**   The following code files are not discussed here, but provide classes and methods referred to in this topic and are [provided as code at the end of this topic](#code_sample):
+-   **Animate.h/.cpp**.
+-   **BasicLoader.h/.cpp**. Provides methods for loading meshes, shaders and textures, both synchronously and asynchronously. Very useful!
+-   **MeshObject.h/.cpp**, **SphereMesh.h/.cpp**, **CylinderMesh.h/.cpp**, **FaceMesh.h/.cpp**, and **WorldMesh.h/.cpp**. Contains the definitions of the object primitives used in the game, such as the ammo spheres, the cylinder and cone obstacles, and the walls of the shooting gallery. (**GameObject.cpp**, briefly discussed in this topic, contains the method for rendering these primitives.)
+-   **Level.h/.cpp** and **Level\[1-6\].h/.cpp**. Contains the configuration for each of the games six levels, including the success criteria and the number and position of the targets and obstacles.
+-   **TargetTexture.h/.cpp**. Contains a set of methods for drawing the bitmaps used as the textures on the targets.
 
-Xxxxx xxxxx xxxxxxx xxxx xxxx xx xxx xxxxxxxx xx XXX XxxxxxX xxxxx. Xxx xxx xxx xxxxxx xxxx xxxxxxxxxx xx xxx'x xxxx xxxx xxxxxxxxxxxxxx xxxxxxx.
+These files contain code that is not specific to UWP DirectX games. But you can review them separately if you'd like more implementation details.
 
  
 
-Xxxx xxxxxxx xxxxxx xxxxx xxx xxxxx xxxx xxx xxxx xxxxxx ([xxxxxxxx xx xxxx xx xxx xxx xx xxxx xxxxx](#code_sample)):
+This section covers three key files from the game sample ([provided as code at the end of this topic](#code_sample)):
 
--   **Xxxxxx.x/.xxx**
--   **XxxxXxxxxxxx.x/.xxx**
--   **XxxxXxxxxx.x/.xxx**
+-   **Camera.h/.cpp**
+-   **GameRenderer.h/.cpp**
+-   **PrimObject.h/.cpp**
 
-Xxxxx, xx xxxxxx xxxx xxx xxxxxxxxxx xxxxx YX xxxxxxxxxxx xxxxxxxx xxxx xxxxxx, xxxxxxxx, xxx xxxxxxxx. Xxx xxxx xxxx xxxxx XxxxxxYX YY xxxxxxxxxxx xx xxxxxxx, xxx [Xxxxxxxxxxx Xxxxx xxx XxxxxxYX YY](https://msdn.microsoft.com/library/windows/desktop/ff476345).
-Xxxx xxxx xxxx, xxx'x xxxx xx xxx xxxx xxxx xxxx xx xxxx xx xxx xxx xxxx xx xxx xxxxxx.
+Again, we assume that you understand basic 3D programming concepts like meshes, vertices, and textures. For more info about Direct3D 11 programming in general, see [Programming Guide for Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476345).
+With that said, let's look at the work that must be done to put our game on the screen.
 
-## Xx xxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxx XxxxxxX
-
-
-XxxxxxX xx x xxxxxxxxxxx xxxx xx xxx Xxxxxxx Xxxxxxx xxx xx xxx Xxxxxxx YY xxxxxxxxxx. Xxx xx Xxxxxxx YY'x xxxxxxx xxx xxxxx xx xxx xx XxxxxxX, xxx xxx xxxx xxx xxxx xxxxxx xxxx xx xxx xxxx xxx-xxxxx xxxxxxxx xxxxxxxxx, [XXXX](https://msdn.microsoft.com/library/windows/desktop/hh404534), xxxxx xxxxxxxx xx xxxxxxxxxxx xxxxx xxx xxx xxxxxxxx xxxxxxxx xxx xxx xxxxxxx. Xxx xxx XxxxxxYX YY XXXx xxx xxxxxxxxx xxx xxx xx xxxx xx XXXX xxxxxxxx. Xxx xxxxxx xx xxxx, xxxx xxxxxxxxxx xxxxxxxx xx xxxx xxxxx xxxx xxxx xxx xxxxxx xx xxx xxx xxxxxx xxxxxxxx xxxxxxxx xxxxxxxx.
-
-Xx xxx XxxxxxX xxxxxxx xx x XXX xxx, xxx xxxxxx x xxxx xxxxxxxx xxx XxxxxxX xxxxxxxxx xx xxxxxxxxxxxx xxx [**XXxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700482) xxx [**XXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700478) xxxxxxxxxx. Xxxxx xxxxxxx x xxxxxxx xxxxxxx xxx xxxx xxxx xxxxxxxx xxxx xxx xxx xxxxxxxxxxxxxx xx xxxx XxxxxxX xxxx xxxxxxxx, xxxxxxxxxxxx. Xxx XXX xxxxxxxxx, xxxxxxxxxxx xx xxx [**XxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225016) xxxxxx, xxxx xxxx xxxxxxxxxxxxxx.
-
-Xx [Xxxxxxxx xxx xxxx'x XXX xxxxxxxxx](tutorial--building-the-games-metro-style-app-framework.md), xx xxxxxx xx xxx xxx xxxxxxxx xxx xxxx xxx xxxx xxxxxx'x xxx xxxxxxxxx. Xxx, xxx'x xxxx xx xxx xxx xxxx xxxxxxxx xxxxxxxx xx xxx xxxx xxx xxxxxx xxx xxxxxxxx xxxx xxxxxx xxx xxxx xx xxx xxxx.
-
-## Xxxxxxxx xxx xxxxxxxx
+## An overview of the Windows Runtime and DirectX
 
 
-Xxx **XxxxXxxxxxxx** xxxxxxxx xxxx xxxxxxxx xxxx xxx **XxxxxxXXxxx** xxxxxxxx xxxx, xxxx xxxxxxx xxx xxxxxx Y-X, xxx xxxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxx xxx xxx xxxxxxx xxxx xxxxxx xxx xxxxxx xxx xxxxxxx xxxxxxxxxx.
+DirectX is a fundamental part of the Windows Runtime and of the Windows 10 experience. All of Windows 10's visuals are built on top of DirectX, and you have the same direct line to the same low-level graphics interface, [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534), which provides an abstraction layer for the graphics hardware and its drivers. All the Direct3D 11 APIs are available for you to talk to DXGI directly. The result is fast, high performing graphics in your games that give you access to all the latest graphics hardware features.
 
-Xxxx'x xxx xxxxxxxxxx xx **XxxxXxxxxxxx**.
+To add DirectX support to a UWP app, you create a view provider for DirectX resources by implementing the [**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) and [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) interfaces. These provide a factory pattern for your view provider type and the implementation of your DirectX view provider, respectively. The UWP singleton, represented by the [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016) object, runs this implementation.
+
+In [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md), we looked at how the renderer fit into the game sample's app framework. Now, let's look at how the game renderer connects to the view and builds the graphics that define the look of the game.
+
+## Defining the renderer
+
+
+The **GameRenderer** abstract type inherits from the **DirectXBase** renderer type, adds support for stereo 3-D, and declares constant buffers and resources for the shaders that create and define our graphic primitives.
+
+Here's the definition of **GameRenderer**.
 
 ```cpp
 ref class GameRenderer : public DirectXBase
@@ -119,29 +119,29 @@ protected private:
 };
 ```
 
-Xxxxxxx xxx XxxxxxYX YY XXXx xxx xxxxxxx xx XXX XXXx, xxx xxxx xxxxxxx [**XxxXxx**](https://msdn.microsoft.com/library/windows/apps/br244983) xxxxxxxxxx xx xxx xxxxxxx xxxxxxx xx xxxxx XXXx. Xxxxx xxxxxxx xxx xxxxxxxxxxxxx xxxxx xxxx xxxxx xxxx xxxxxxxxx xxxx xxx xx xxxxx xxxx xxx xxx xxxxxxxxxx.
+Because the Direct3D 11 APIs are defined as COM APIs, you must provide [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983) references to the objects defined by these APIs. These objects are automatically freed when their last reference goes out of scope when the app terminates.
 
-Xxx xxxx xxxxxx xxxxxxxx Y xxxxxxxx xxxxxxxx xxxxxxx:
+The game sample declares 4 specific constant buffers:
 
--   **x\_xxxxxxxxXxxxxxXxxxxXxxxxxx**. Xxxx xxxxxxxx xxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxx. Xx'x xxx xxx xxxx xxx xxxxx xxxxxxx xxxxx.
--   **x\_xxxxxxxxXxxxxxXxxxxxXxXxxxxx**. Xxxx xxxxxxxx xxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxx. Xxx xxxxxxxxxx xxxxxx xx xxxxxxxxx xx xxx xxxx xxx xxxxxx xxxxx xx xxx xxxxxx. Xx'x xxxxxxx xxxx xxxx xxx xxxxxx xxxx xxxxxxx.
--   **x\_xxxxxxxxXxxxxxXxxxxxxXxxxxXxxxx**. Xxxx xxxxxxxx xxxxxx xxxxxxxx xxx xxxx xxxxxx. Xxxx xxxxxx xx xxxxxxxxx xx xxx xxxxxx xxxxxxxx xxx xxxx xxxxxxxxx (xxx xxxxxx xx xxx xxxxxxxxxx) xxx xxxxxxx xxxx xxx xxxx xxx xxxxx.
--   **x\_xxxxxxxxXxxxxxXxxxxxxXxxxxXxxx**. Xxxx xxxxxxxx xxxxxx xxxxxxxx xxx xxxxx xxxxxx xxx xxxxxxxx xxxxxxxxxx xx xxxx xxxxxxxxx. Xxx xxxxx xxxxxx xxxxxxxxxx xxxxxxxx xxxx xxxxx xxxxxxxxxxx xxxx xxxxx xxxxxxxxxxx. Xxxxx xxxxxxxxx xxx xxxxxxxx xx xxxx xxxxxxxxx xxx xxx xxxxxxx xxx xxxxx xxxx xxxx.
+-   **m\_constantBufferNeverChanges**. This constant buffer contains the lighting parameters. It's set one time and never changes again.
+-   **m\_constantBufferChangeOnResize**. This constant buffer contains the projection matrix. The projection matrix is dependent on the size and aspect ratio of the window. It's updated only when the window size changes.
+-   **m\_constantBufferChangesEveryFrame**. This constant buffer contains the view matrix. This matrix is dependent on the camera position and look direction (the normal to the projection) and changes only one time per frame.
+-   **m\_constantBufferChangesEveryPrim**. This constant buffer contains the model matrix and material properties of each primitive. The model matrix transforms vertices from local coordinates into world coordinates. These constants are specific to each primitive and are updated for every draw call.
 
-Xxx xxxxx xxxx xx xxxxxxxx xxxxxxxx xxxxxxx xxxx xxxxxxxxx xxxxxxxxxxx xx xx xxxxxx xxx xxxxxx xx xxxx xxxx xxxx xx xxxx xx xxx XXX xxx xxxxx. Xxxxxxxxx, xxx xxxxxx xxxxxxxxx xxxxxxxxx xxxx xxxxxxxxx xxxxxxx xxxxx xx xxx xxxxxxxxx xxxx xxxx xxxx xx xxxxxxx. Xxxx xx x xxxx xxxxxxxx xxx XxxxxxYX xxxxxxxxxxx.
+The whole idea of multiple constant buffers with different frequencies is to reduce the amount of data that must be sent to the GPU per frame. Therefore, the sample separates constants into different buffers based on the frequency that they must be updated. This is a best practice for Direct3D programming.
 
-Xxx xxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxx xxxx xxxxxxx xxx xxxxxxxxxx xxx xxxxxxxx: **x\_xxxxxxXxxxxx** xxx **x\_xxxxxXxxxxx**. Xxx xxxxxx xxxxxx xxxxxxxxx xxx xxxxxxxxxx xxx xxx xxxxx xxxxxxxx, xxx xxx xxxxx xxxxxx (xxxxxxxxx xxxxxx x xxxxxxxx xxxxxx) xxxxxxxxx xxx xxxxxxxx xxx xxx xxx-xxxxx xxxxxxx. Xxxxx xxx xxx xxxxxxxx xx xxxxx xxxxxxx (xxxxxxx xxx xxxx) xxx xxxxxxxxx xxxxxxxxx xxxxxxxxxx. Xxx xxxx xxxxxxxx xxx xxxx xxxxxxx xxx xxx'x xx xxxxxxxx xxxxxxxxxx xx xxx xxx xxxxx xxxxxxxx xxxxxxx. Xxxxx xxx xxxx xxx xxx xxxxx xxx xxxx xxxxxxxxx xxxxxx xx xxxxx xxxxxxx xxxxxxx.
+The renderer contains the shader objects that compute our primitives and textures: **m\_vertexShader** and **m\_pixelShader**. The vertex shader processes the primitives and the basic lighting, and the pixel shader (sometimes called a fragment shader) processes the textures and any per-pixel effects. There are two versions of these shaders (regular and flat) for rendering different primitives. The flat versions are much simpler and don't do specular highlights or any per pixel lighting effects. These are used for the walls and make rendering faster on lower powered devices.
 
-Xxx xxxxxxxx xxxxx xxxxxxxx xxx [XxxxxxXxxxx xxx XxxxxxYX](https://msdn.microsoft.com/library/windows/desktop/ff729481) xxxxxxxxx xxxx xxx xxx xxxxxxx xxx xxx Xxxxx Xx Xxxxxxx (xxx **XxxxXxx** xxxxxx). Xxx xxxxxxx xxx XXX xxx xxxxx xx xxx xx xxx xxxxxx xxxxxx xxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxxxxxx xxxxxxxx.
+The renderer class contains the [DirectWrite and Direct2D](https://msdn.microsoft.com/library/windows/desktop/ff729481) resources used for the overlay and the Heads Up Display (the **GameHud** object). The overlay and HUD are drawn on top of the render target when projection is complete in the graphics pipeline.
 
-Xxx xxxxxxxx xxxx xxxxxxx xxx xxxxxx xxxxxxxx xxxxxxx xxxx xxxx xxx xxxxxxxx xxx xxx xxxxxxxxxx. Xxxx xx xxxxx xxxxxxxx xxx xxx-xxxxxxx (XXX xxxxxxxx xxx xxx xxxxx xxx xxxxx xx xxx xxxxx xx xxxx xx xxx xxxx xxxxxxx).
+The renderer also defines the shader resource objects that hold the textures for the primitives. Some of these textures are pre-defined (DDS textures for the walls and floor of the world as well as the ammo spheres).
 
-Xxx, xx'x xxxx xx xxx xxx xxxx xxxxxx xx xxxxxxx!
+Now, it's time to see how this object is created!
 
-## Xxxxxxxxxxxx xxx xxxxxxxx
+## Initializing the renderer
 
 
-Xxx xxxxxx xxxx xxxxx xxxx **Xxxxxxxxxx** xxxxxx xx xxxx xx xxx XxxxXxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxxx xx **Xxx::XxxXxxxxx**.
+The sample game calls this **Initialize** method as part of the CoreApplication initialization sequence in **App::SetWindow**.
 
 ```cpp
 void GameRenderer::Initialize(
@@ -168,30 +168,30 @@ void GameRenderer::Initialize(
 }
 ```
 
-Xxxx xx x xxxxxx xxxxxxxxxxxxxxx xxxxxx. Xx xxxxxx xx xxx xx xxx xxxxxxxx xxx xxxx xxxxxxxxxx xxxxxxxxxxx, xxx xx xx xxxx'x, xx xxxxxxxxxxxx xxx **XxxxXxx** xxx **XxxxXxxxXxxxxxx** xxxxxxx.
+This is a pretty straightforward method. It checks to see if the renderer had been previously initialized, and if it hasn't, it instantiates the **GameHud** and **GameInfoOverlay** objects.
 
-Xxxxx xxxx, xxx xxxxxxxx xxxxxxxxxxxxxx xxxxxxx xxxx xxx xxxx xxxxxxxxxxxxxx xx **Xxxxxxxxxx** xxxxxxxx xx xxx **XxxxxxXXxxx** xxxxx xx xxxxxxxxx xxxx.
+After that, the renderer initialization process runs the base implementation of **Initialize** provided on the **DirectXBase** class it inherited from.
 
-Xxxx xxx XxxxxxXXxxx xxxxxxxxxxxxxx xxxxxxxxx, xxx **XxxxXxxxXxxxxxx** xxxxxx xx xxxxxxxxxxx. Xxxxx xxxxxxxxxxxxxx xx xxxxxxxx, xx'x xxxx xx xxxx xx xxx xxxxxxx xxx xxxxxxxx xxx xxxxxxx xxx xxxxxxxx xxxxxxxxx xxx xxx xxxx.
+When the DirectXBase initialization completes, the **GameInfoOverlay** object is initialized. After initialization is complete, it's time to look at the methods for creating and loading the graphics resources for the game.
 
-## Xxxxxxxx xxx xxxxxxx XxxxxxX xxxxxxxx xxxxxxxxx
+## Creating and loading DirectX graphics resources
 
 
-Xxx xxxxx xxxxx xx xxxxxxxx xx xxx xxxx xx xx xxxxxxxxx x xxxxxxxxxx xx xxx xxxxxxxx xxxxxxxxx, xxxxxx xxx xxxxxxxxx xx xxxx xx xxxx xxx xxxxxxxx, xxx xxxx xxx xx x xxxxxx xxxxxx xxxx xxxxx xx xxx xxxx xxxxx xxxxxxxx. Xx xxx xxxx xxxxxx (xxx xx xxx Xxxxxxxxx Xxxxxx Xxxxxx**XxxxxxX YY Xxx (Xxxxxxxxx Xxxxxxx)** xxxxxxxx), xxxx xxxxxxx xx xxxxxxxxxxx xxxx xxxxx xxxxxxx:
+The first order of business in any game is to establish a connection to our graphics interface, create the resources we need to draw the graphics, and then set up a render target into which we can draw those graphics. In the game sample (and in the Microsoft Visual Studio**DirectX 11 App (Universal Windows)** template), this process is implemented with three methods:
 
--   **XxxxxxXxxxxxXxxxxxxxxxxXxxxxxxxx**
--   **XxxxxxXxxxxxXxxxxxxxx**
--   **XxxxxxXxxxxxXxxxXxxxxxxxxXxxxxxxxx**
+-   **CreateDeviceIndependentResources**
+-   **CreateDeviceResources**
+-   **CreateWindowSizeDependentResources**
 
-Xxx, xx xxx xxxx xxxxxx, xx xxxxxxxx xxx xx xxxxx xxxxxxx (**XxxxxxXxxxxxXxxxxxxxxxxXxxxxxxxx** xxx **XxxxxxXxxxxxXxxxxxxxx**) xxxxxxxx xx xxx **XxxxxxXXxxx** xxxxx xxxxxxxxxxx xx xxx **XxxxxxX YY Xxx (Xxxxxxxxx Xxxxxxx)** xxxxxxxx. Xxx xxxx xx xxxxx xxxxxxxx xxxxxxx, xx xxxxx xxxx xxx **XxxxxxXXxxx** xxxxxxxxxxxxxxx xxxx xxxxxxxx, xxx xxxx xxx xxxx xxxxxxxxxxxxxx xxxxxxx xxxxxxxx xx xxx xxxx xxxxxx. Xx xxxxx xxxx xxx **XxxxxxXXxxx** xxxxx xxxxxxxxxxxxxx xxxxxxxx xxxx xxx xxxx xxxxxx xxx xxxx xxxxxxxx xxxx xxx xxxxxxx xxxxxxxx xx xxx Xxxxxx Xxxxxx xxxxxxxx xx xxxxxxx xxxxxxxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxx-xxxxxxxx xx xxx **XxxxXxxxxx** xxxxxx.
+Now, in the game sample, we override two of these methods (**CreateDeviceIndependentResources** and **CreateDeviceResources**) provided on the **DirectXBase** class implemented in the **DirectX 11 App (Universal Windows)** template. For each of these override methods, we first call the **DirectXBase** implementations they override, and then add more implementation details specific to the game sample. Be aware that the **DirectXBase** class implementation included with the game sample has been modified from the version provided in the Visual Studio template to include stereoscopic view support and includes pre-rotation of the **SwapBuffer** object.
 
-**XxxxxxXxxxxxXxxxXxxxxxxxxXxxxxxxxx** xx xxx xxxxxxxxxx xx xxx **XxxxXxxxxxxx** xxxxxx. Xx xxx xxx xxxxxxxxxxxxxx xx xx xxxxxxxx xx xxx **XxxxxxXXxxx** xxxxx.
+**CreateWindowSizeDependentResources** is not overridden by the **GameRenderer** object. We use the implementation of it provided in the **DirectXBase** class.
 
-Xxx xxxx xxxx xxxxx xxx **XxxxxxXXxxx** xxxx xxxxxxxxxxxxxxx xx xxxxx xxxxxxx, xxx [Xxx xx xxx xx xxxx XXX XxxxxxX xxx xx xxxxxxx x xxxx](https://msdn.microsoft.com/library/windows/apps/hh465077).
+For more info about the **DirectXBase** base implementations of these methods, see [How to set up your UWP DirectX app to display a view](https://msdn.microsoft.com/library/windows/apps/hh465077).
 
-Xxx xxxxx xx xxxxx xxxxxxxxxx xxxxxxx, **XxxxxxXxxxxxXxxxxxxxxxxXxxxxxxxx**, xxxxx xxx **XxxxXxx::XxxxxxXxxxxxXxxxxxxxxxxXxxxxxxxx** xxxxxx xx xxxxxx xxx [XxxxxxXxxxx](https://msdn.microsoft.com/library/windows/desktop/dd368038) xxxx xxxxxxxxx xxxx xxx xxx Xxxxx XX xxxx, xxxxx xx xxx xxxx xxxx xx xxxx XXX xxxx.
+The first of these overridden methods, **CreateDeviceIndependentResources**, calls the **GameHud::CreateDeviceIndependentResources** method to create the [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) text resources that use the Segoe UI font, which is the font used by most UWP apps.
 
-XxxxxxXxxxxxXxxxxxxxxxxXxxxxxxxx
+CreateDeviceIndependentResources
 
 ```cpp
 void GameRenderer::CreateDeviceIndependentResources()
@@ -270,11 +270,11 @@ void GameHud::CreateDeviceIndependentResources(
 }
 ```
 
-Xxx xxxxxx xxxx xxxx xxxx xxxxxxxxxx: xxx xxx xxxxx xxxxxx xxx xxxxx xxxx xxxx, xxx xxx xxx xxxx xxxx. Xxxx xx xxxx xx xxxx xx xxx xxxxxxx xxxx.
+The sample uses four text formatters: two for title header and title body text, and two for body text. This is used in much of the overlay text.
 
-Xxx xxxxxx xxxxxx, **XxxxxxXxxxxxXxxxxxxxx**, xxxxx xxx xxxxxxxx xxxxxxxxx xxx xxx xxxx xxxx xxxx xx xxxxxxxx xx xxx xxxxxxxx xxxxxx. Xxx'x xxxx xx xxx xxxx xxx xxxx xxxxxx.
+The second method, **CreateDeviceResources**, loads the specific resources for the game that will be computed on the graphics device. Let's look at the code for this method.
 
-XxxxxxXxxxxxXxxxxxxxx
+CreateDeviceResources
 
 ```cpp
 oid GameRenderer::CreateDeviceResources()
@@ -372,9 +372,9 @@ void GameHud::CreateDeviceResources(_In_ ID2D1DeviceContext* d2dContext)
 }
 ```
 
-Xx xxxx xxxxxxx, xx xxxxxx xxxxxxxxx, xxx **XxxxxxXxxxxxXxxxxxxxx** xxxxxx xxxx xxxxx xxx xxxx xxxxx xxxxxx xxx xxxx xxxxx xxx **XxxxXxx::XxxxxxXxxxxxXxxxxxxxx** xxxxxx (xxxx xxxxxx xxxxxxxxxx). Xx xxxxx'x x xxxxxxx xxxxx xxxx xxx xxxxxxxxxx xxxxxxxx xxxxxx, xx xxxxx xxxx xx xx xx-xxxxxxxxxxx. Xx xxxx xxxx, xxx **XxxxxxXxxxxxXxxxxxxxx** xxxxxx xxxxxxxxx x xxx xx xxxxx xxxxx xx xxxxxx xxx xxxx xxxxxx xxxxxxxxx. Xxxx xx xxxx xxxxxxx x xxxxxxxx xx xxx xxxxxxx: x xxxx xx **XxxxxxXxxxxxXxxxxxxxxXxxxx**, xxx xxxx, xxxx xx xxxxxxxxx, **XxxxxxxxXxxxxxXxxxXxxxxxXxxxxxxxx**.
+In this example, in normal execution, the **CreateDeviceResources** method just calls the base class method and then calls the **GameHud::CreateDeviceResources** method (also listed previously). If there's a problem later with the underlying graphics device, it might have to be re-initialized. In this case, the **CreateDeviceResources** method initiates a set of async tasks to create the game device resources. This is done through a sequence of two methods: a call to **CreateDeviceResourcesAsync**, and then, when it completes, **FinalizeCreateGameDeviceResources**.
 
-XxxxxxXxxxXxxxxxXxxxxxxxxXxxxx xxx XxxxxxxxXxxxxxXxxxXxxxxxXxxxxxxxx
+CreateGameDeviceResourcesAsync and FinalizeCreateGameDeviceResources
 
 ```cpp
 task<void> GameRenderer::CreateGameDeviceResourcesAsync(_In_ Simple3DGame^ game)
@@ -657,47 +657,47 @@ void GameRenderer::FinalizeCreateGameDeviceResources()
 }
 ```
 
-**XxxxxxXxxxxxXxxxxxxxxXxxxx** xx x xxxxxx xxxx xxxx xx x xxxxxxxx xxx xx xxxxx xxxxx xx xxxx xxx xxxx xxxxxxxxx. Xxxxxxx xx'x xxxxxxxx xx xxx xx x xxxxxxxx xxxxxx, xx xxxx xxx xxxxxx xx xxx XxxxxxYX YY xxxxxx xxxxxxx (xxxxx xxxxxxx xx [**XXYXYYXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476379)) xxx xxx xxx xxxxxx xxxxxxx xxxxxxx (xxx xxxxxxx xxxxxxx xx [**XXYXYYXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476385)), xx xx xxx xxx xxxxxx xx xxx xxxxxxx xxx xxxxxxxxx. Xxx **XxxxxxxxXxxxxxXxxxXxxxxxXxxxxxxxx** xxxxxx xxxx xx xxx xxxx xxxxxx xxx xxxx xxxx xxxxxx xx xxx XxxxxxYX YY xxxxxx xxxxxxx xxxxxxx.
+**CreateDeviceResourcesAsync** is a method that runs as a separate set of async tasks to load the game resources. Because it's expected to run on a separate thread, it only has access to the Direct3D 11 device methods (those defined on [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379)) and not the device context methods (the methods defined on [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)), so it has the option to not perform any rendering. The **FinalizeCreateGameDeviceResources** method runs on the main thread and does have access to the Direct3D 11 device context methods.
 
-Xxx xxxxxxxx xx xxxxxx xxx xxxxxxx xxx xxxx xxxxxxx xxxxxxxxx xxxxxxxx xx xxxxxxx.
+The sequence of events for loading the game devices resources proceeds as follows.
 
-**XxxxxxXxxxxxXxxxxxxxxXxxxx** xxxxx xxxxxxxxxxx xxxxxxxx xxxxxxx xxx xxx xxxxxxxxxx. Xxxxxxxx xxxxxxx xxx xxx-xxxxxxx, xxxxx-xxxxx xxxxxxx xxxx xxxx xxx xxxx xxxx x xxxxxx xxxx xxxxxx xxxxxx xxxxxxxxx. (Xxxxx xx xxxxx xxxxxxx xx xxxxxxx xxxx xx xxx xxxxxx xxxx xx xxxxxxxx xxxx xxx xxxxxxxxx xx xxx xxxxxxxxxx xxxx xxxx.) Xx xxxx xxxxxx, xxx xxxxxxx xxxxxxx xxx xxxx xxxx xxx xxxxxxx xxxx xxx xx:
+**CreateDeviceResourcesAsync** first initializes constant buffers for the primitives. Constant buffers are low-latency, fixed-width buffers that hold the data that a shader uses during shader execution. (Think of these buffers as passing data to the shader that is constant over the execution of the particular draw call.) In this sample, the buffers contain the data that the shaders will use to:
 
--   Xxxxx xxx xxxxx xxxxxxx xxx xxx xxxxx xxxxx xxxx xxx xxxxxxxx xxxxxxxxxxx
--   Xxxxxxx xxx xxxx xxxxxx xxxxxxxx xxx xxxxxx xx xxxxxxx
--   Xxxxxxx xxx xxxxxxxxxx xxxxxx xxx xxxxx xxxxx xxxxxx
--   Xxxxxxx xxx xxxxxxxxxxxxxxx xx xxx xxxxxxxxxx xx xxxxx xxxxxx xxxxxx
+-   Place the light sources and set their color when the renderer initializes
+-   Compute the view matrix whenever the window is resized
+-   Compute the projection matrix for every frame update
+-   Compute the transformations of the primitives on every render update
 
-Xxx xxxxxxxxx xxxxxxx xxx xxxxxx xxxxxxxxxxx (xxxxxxxx) xxx xxxxxxxxx xxx xxxxxx xxxxxxxxxxx xxx xxxx xxxx xxxxx xxxxx xxxx xxx xxxxxx xxxxx. Xxxxxxxxxx, xxxx xxxx xxxxxxx xx xxxxx xxxxxxxxxxx xxx xxxxxx xx xxx xxxxxx xxxxxx.
+The constants receive the source information (vertices) and transform the vertex coordinates and data from model space into the device space. Ultimately, this data results in texel coordinates and pixels in the render target.
 
-Xxxx, xxx xxxx xxxxxxxx xxxxxx xxxxxxx x xxxxxx xxx xxx xxxxxxx xxxx xxxx xxxxxxx xxx xxxxxxxxxxx. (Xxx **XxxxxXxxxxx.xxx** xx xxx xxxxxx xxx xxx xxxxxxxx xxxxxxxxxxxxxx.)
+Next, the game renderer object creates a loader for the shaders that will perform the computation. (See **BasicLoader.cpp** in the sample for the specific implementation.)
 
-Xxxx, **XxxxxxXxxxxxXxxxxxxxxXxxxx** xxxxxxxxx xxxxx xxxxx xxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxx xxxx **XxxxxxXxxxxxxxXxxxx**. Xxxxx xxxxxxx xxxxxxxxx xxx xxxxxx xx xxx XxxxxxXxxx Xxxxxxx (XXX) xxxxxxxx xxxx xxxx xxxx xxx xxxxxx. XXX xxxxxxxx xxx x xxxxx xxxxxxx xxxxxx xxxx xxxx xxxx XxxxxxX Xxxxxxx Xxxxxxxxxxx (XXXX). Xx xxx xxxxx xxxxxxxx xx xxx xxxxx, xxxxxxx xxx xxxxx xx xxx xxxxx, xxx xx xxx xxxx xxxxxxx xxx xxxxxx xxxxxxxxx.
+Then, **CreateDeviceResourcesAsync** initiates async tasks for loading all the texture resources into **ShaderResourceViews**. These texture resources are stored in the DirectDraw Surface (DDS) textures that came with the sample. DDS textures are a lossy texture format that work with DirectX Texture Compression (DXTC). We use these textures on the walls, ceiling and floor of the world, and on the ammo spheres and pillar obstacles.
 
-Xxxxxxx, xx xxxxxxx x xxxx xxxxx xxxx xxxxxxxx xxx xxx xxxxx xxxxx xxxxxxx xx xxx xxxxxx. Xxx xxxxxxx xxxxxxxx xxxxx xxx xxx xxxxxxxxxx xx xxx xxxxx xxxxx xxxxx, xxx xxxx xxxxx **XxxxxxxxXxxxxxXxxxXxxxxxXxxxxxxxx**.
+Finally, it returns a task group that contains all the async tasks created by the method. The calling function waits for the completion of all these async tasks, and then calls **FinalizeCreateGameDeviceResources**.
 
-**XxxxxxxxXxxxxxXxxxXxxxxxXxxxxxxxx** xxxxx xxx xxxxxxx xxxx xxxx xxx xxxxxxxx xxxxxxx xxxx x xxxxxx xxxxxxx xxxxxx xxxx xx [**XXYXYYXxxxxxXxxxxxx::XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476486): `m_deviceContext->UpdateSubresource`. Xxxx xxxxxx xxxxxxx xxx xxxx xxxxxxx xxx xxx xxxxxx, xxxxxxxx, xxxx, xxx xxxxx xxxx xxxxxxx xxx xxx xxxxxxxxxx xxxxxxxxx. Xx xxxx xxxxx xxx xxxx xxxxxx xxxx xxxxxxxxxxx xxx xxxxxxxxxxx xxxxxx xxxxxxxxx xxxx xxxx xxxxxx.
+**FinalizeCreateGameDeviceResources** loads the initial data into the constant buffers with a device context method call to [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486): `m_deviceContext->UpdateSubresource`. This method creates the mesh objects for the sphere, cylinder, face, and world game objects and the associated materials. It then walks the game object list associating the appropriate device resources with each object.
 
-Xxx xxxxxxxx xxx xxx xxxxxx xxx xxxxxxxx xxxxxx xxxxxxx xxx xxxxxxxxxxxx xxxxxxxxx xxxxx xxx xxxx xx **XxxxxxXxxxxxx.xxx**. Xxx xxxxxxxx xxxxxxx xx xxxxxxxx xx xxx **XxxxxxXxxxxxx** xxxx, xxxxx xxxxxxx xxx xxxxxx xxxxxxx xxx xxx xxxxxx xxxxxxx xx xxx xxxx xxxx xx xxxx xxx **XxxxxxXxxxxxx::XxxxxxXxxxxxxXxxxxxxxXxxx** xxxxxx. Xxx xxxxxxxxx xxxxxxx xx xxxxxxxx xx xxxxxxxxxx xxxxxxx xxxxx, xxxx x xxxxxxx xxxxx xx xxx xxx. Xxxxx xxxxxxxxx xxxxxxxxx xxx xxxxxxxxxx xxxx xxx xxxxxxxxxxx xxxxxx xxxx xxxxxxx.
+The textures for the ringed and numbered target objects are procedurally generated using the code in **TargetTexture.cpp**. The renderer creates an instance of the **TargetTexture** type, which creates the bitmap texture for the target objects in the game when we call the **TargetTexture::CreateTextureResourceView** method. The resulting texture is composed of concentric colored rings, with a numeric value on the top. These generated resources are associated with the appropriate target game objects.
 
-Xxxxxx, **XxxxxxxxXxxxxxXxxxXxxxxxXxxxxxxxx** xxx xxx `m_gameResourcesLoaded` Xxxxxxx xxxxxx xxxxxxxx xx xxxxxxxx xxxx xxx xxxxxxxxx xxx xxx xxxxxx.
+Lastly, **FinalizeCreateGameDeviceResources** set the `m_gameResourcesLoaded` Boolean global variable to indicate that all resources are now loaded.
 
-Xxx xxxx xxx xxx xxxxxxxxx xx xxxxxxx xxx xxxxxxxx xx xxx xxxxxxx xxxxxx, xxx xx xxx xxxxxxxx xxxxx xxxxxxxxx xx xxx xxxxxx xxxxxxx. Xxx, xxx'x xxxx xx xxx xxxxxx xxxx xx xxxxxx xxx xxxxxx'x xxxx xx xxx xxxxx xx xxxx xxxxxx.
+The game has the resources to display the graphics in the current window, and it can recreate those resources as the window changes. Now, let's look at the camera used to define the player's view of the scene in that window.
 
-## Xxxxxxxxxxxx xxx xxxxxx xxxxxx
+## Implementing the camera object
 
 
-Xxx xxxx xxx xxx xxxx xx xxxxx xx xxxxxx xxx xxxxx xx xxx xxx xxxxxxxxxx xxxxxx (xxxxxxxxx xxxxxx xxx xxxxx xxxxx xx xxxxx xxxxx). Xxx xxxxxxx, xxxxxxxxx xxx xxxxxx, xxx xxxxxxxxxx xxx xxxxxxxx xx xxxx xxxxx. Xx xxx xxxxxx xxxx, xxx xxxxxx'x xxxxxxxx xxxxx xxxx xxx xxxx xxxxxxx (xxx "xxxx xx" xxxxxx xxxx xxxxxx xxxxxxxx xxxx xxx xxxxx xxxx xxx xxxxxx, xxx xxx "xxxx xx" xxxxxx xxxx xx xxxxxxx xxxxxxxxxxxxx xx xx) xxxxxx xxx xxxxxx xxxxx. Xxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxx xxx xxxx xx xxxx xxxxx xx xxxxxxxx xxxxxxx xx xxx xxxxx xxxxx; xxx xxx Xxxxx xx Xxxx (XxX), xxxxxx xxxxx, xxx xxxxxxxx xxxxxx xxxxxx xxx xxxxxxxxxx xxxxxxxxxxxxxx. X xxxxxx xxxxxx xxxx xxx xxxxx xxxxxxx xx xxxxxxxxxx xxxx xxx xxxxx xxxxxxxxxxx xx xxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxxx (xxxxx X xx x xxxxxx xxx X xx x xxxxxx):
+The game has the code in place to update the world in its own coordinate system (sometimes called the world space or scene space). All objects, including the camera, are positioned and oriented in this space. In the sample game, the camera's position along with the look vectors (the "look at" vector that points directly into the scene from the camera, and the "look up" vector that is upwards perpendicular to it) define the camera space. The projection parameters determine how much of that space is actually visible in the final scene; and the Field of View (FoV), aspect ratio, and clipping planes define the projection transformation. A vertex shader does the heavy lifting of converting from the model coordinates to device coordinates with the following algorithm (where V is a vector and M is a matrix):
 
 `              V(device) = V(model) x M(model-to-world) x M(world-to-view) x M(view-to-device)           `.
 
--   `M(model-to-world)` xx x xxxxxxxxxxxxxx xxxxxx xxx xxxxx xxxxxxxxxxx xx xxxxx xxxxxxxxxxx. Xxxx xx xxxxxxxx xx xxx xxxxxxxxx. (Xx'xx xxxxxx xxxx xx xxx xxxxxxx xx xxxxxxxxxx, xxxx.)
--   `M(world-to-view)` xx x xxxxxxxxxxxxxx xxxxxx xxx xxxxx xxxxxxxxxxx xx xxxx xxxxxxxxxxx. Xxxx xx xxxxxxxx xx xxx xxxx xxxxxx xx xxx xxxxxx.
--   `M(view-to-device)` xx x xxxxxxxxxxxxxx xxxxxx xxx xxxx xxxxxxxxxxx xx xxxxxx xxxxxxxxxxx. Xxxx xx xxxxxxxx xx xxx xxxxxxxxxx xx xxx xxxxxx.
+-   `M(model-to-world)` is a transformation matrix for model coordinates to world coordinates. This is provided by the primitive. (We'll review this in the section on primitives, here.)
+-   `M(world-to-view)` is a transformation matrix for world coordinates to view coordinates. This is provided by the view matrix of the camera.
+-   `M(view-to-device)` is a transformation matrix for view coordinates to device coordinates. This is provided by the projection of the camera.
 
-Xxx xxxxxx xxxx xx **XxxxxxXxxxxx.xxxx** xx xxxxxx xxxx xxxxx xxxxxxx xxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxx, xxx xxxxxxxx xxxx xxxxxxxxxxxxxx xxx xxxxx xxxxxx.
+The shader code in **VertexShader.hlsl** is loaded with these vectors and matrices from the constant buffers, and performs this transformation for every vertex.
 
-Xxx **Xxxxxx** xxxxxx xxxxxxx xxx xxxx xxx xxxxxxxxxx xxxxxxxx. Xxx'x xxxx xx xxx xxx xxxxxx xxxx xxxxxxxx xx.
+The **Camera** object defines the view and projection matrices. Let's look at how the sample game declares it.
 
 ```cpp
 ref class Camera
@@ -747,12 +747,12 @@ protected private:
 };
 ```
 
-Xxxxx xxx xxx YxY xxxxxxxx xxxx xxxxxx xxx xxxxxxxxxxxxxxx xx xxx xxxx xxx xxxxxxxxxx xxxxxxxxxxx, **x\_xxxxXxxxxx** xxx **x\_xxxxxxxxxxXxxxxx**. (Xxx xxxxxx xxxxxxxxxx, xxx xxx xxx xxxxxxxxxx xxxxxxxx: xxx xxx xxxx xxx'x xxxx.) Xxxx xxx xxxxxxxxxx xxxx xxxxx xxx xxxxxxx, xxxxxxxxxxxx:
+There are two 4x4 matrices that define the transformations to the view and projection coordinates, **m\_viewMatrix** and **m\_projectionMatrix**. (For stereo projection, you use two projection matrices: one for each eye's view.) They are calculated with these two methods, respectively:
 
--   **XxxXxxxXxxxxx**
--   **XxxXxxxXxxxxx**
+-   **SetViewParams**
+-   **SetProjParams**
 
-Xxx xxxx xxx xxxxx xxx xxxxxxx xxxxx xxxx xxxx:
+The code for these two methods looks like this:
 
 ```cpp
 void Camera::SetViewParams(
@@ -842,18 +842,18 @@ void Camera::SetProjParams(
 }
 ```
 
-Xx xxx xxx xxxxxxxxx xxxx xxx xxxxxxxxxx xxxx xx xxxxxxx xxx **Xxxx** xxx **Xxxxxxxxxx** xxxxxxx, xxxxxxxxxxxx, xx xxx **Xxxxxx** xxxxxx. Xxxxx xxxxx xxxxx xx xxx xxxx xxxx xx xxxxxx, xxx **XxxxXxxxxxxx::Xxxxxx** xxxxxx xxxxxx xx xxx xxxx xxxx.
+We get the resulting view and projection data by calling the **View** and **Projection** methods, respectively, on the **Camera** object. These calls occur in the next step we review, the **GameRenderer::Render** method called in the game loop.
 
-Xxx, xxx'x xxxx xx xxx xxx xxxx xxxxxxx xxx xxxxxxxxx xx xxxx xxx xxxx xxxxxxxx xxxxx xxx xxxxxx. Xxxx xxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxx xxxxx xxx xxx xxxxxxxx.
+Now, let's look at how the game creates the framework to draw our game graphics using the camera. This includes defining the primitives that comprise the game world and its elements.
 
-## Xxxxxxxx xxx xxxxxxxxxx
+## Defining the primitives
 
 
-Xx xxx xxxx xxxxxx xxxx, xx xxxxxx xxx xxxxxxxxx xxx xxxxxxxxxx xx xxx xxxx xxxxxxx xxx xxx xxxxxxxxxxxxx xxxxxxxxxxxxxxx xxx xxxx xxxxxxxxx xxxx.
+In the game sample code, we define and implement the primitives in two base classes and the corresponding specializations for each primitive type.
 
-**XxxxXxxxxx.x/.xxx** xxxxxxx xxx xxxx xxxxx xxx xxx xxxx xxxxxxx. Xxx **XxxxxxXxxx.x/.xxx**, **XxxxxxxxXxxx.x/.xxx**, **XxxxXxxx.x/.xxx**, xxx **XxxxxXxxx.x/.xxx** xxxxx xxxxxxx xxx xxxx xxxx xxxxxxxxx xxx xxxxxxxx xxxxxxx xxx xxxx xxxxxxxxx xxxx xxx xxxxxx xxx xxxxxx xxxxxx xxxx xxxx xxxxxxx xxx xxxxxxxxx'x xxxxxxxx. Xxxxx xxxx xxxxx xxx x xxxx xxxxx xx xxxxx xx xxx'xx xxxxxxx xx xxxxxxxxxx xxx xx xxxxxx XxxxxxYX xxxxxxxxxx xx xxxx xxx xxxx xxx, xxx xx xxx'x xxxxx xxxx xxxx xx xx'x xxx xxxxxxxx xx xxxx xxxx'x xxxxxxxxxxxxxx. Xxx xxx, xx xxxxxx xxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxxxxx xxxx xxxx xxxxxxxxx, xxx xxxx xx xxx xxx xxxx xxxxxx xxxxxxx xxxxx xxxxxxx xx xxxxxx xxx xxxx xxxxxx.
+**MeshObject.h/.cpp** defines the base class for all mesh objects. The **SphereMesh.h/.cpp**, **CylinderMesh.h/.cpp**, **FaceMesh.h/.cpp**, and **WorldMesh.h/.cpp** files contain the code that populates the constant buffers for each primitive with the vertex and vertex normal data that defines the primitive's geometry. These code files are a good place to start if you're looking to understand how to create Direct3D primitives in your own game app, but we won't cover them here as it's too specific to this game's implementation. For now, we assume that the vertex buffers for each primitive have been populated, and look at how the game sample handles those buffers to update the game itself.
 
-Xxx xxxx xxxxx xxx xxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxx xxxx xxx xxxxxxxxxxx xx xxx xxxx xx xxxxxxx xx **XxxxXxxxxx.x./.xxx.** Xxxx xxxxx, **XxxxXxxxxx**, xxxxxxx xxx xxxxxx xxx xxxxxxx xxx xxx xxxxxx xxxxxxxxx xxxxxx xxx xxxxxxxxxx. Xxxx xxxxxxxxx xxxxxx xxxx xxxxxxx xxxx xx. Xxx'x xxxx xx xxx xx'x xxxxxxx:
+The base class for objects that represent the primitives from the perspective of the game is defined in **GameObject.h./.cpp.** This class, **GameObject**, defines the fields and methods for the common behaviors across all primitives. Each primitive object type derives from it. Let's look at how it's defined:
 
 ```cpp
 ref class GameObject
@@ -946,22 +946,22 @@ protected private:
 };
 ```
 
-Xxxx xx xxx xxxxxx xxxxxxx xxxx xxxxx xxx xxxxx, xxxxxx xxxxxxxxxx, xx xxxxxxxx xx xxx xxxxxxxxx xx xxx xxxx xxxxx. Xxxxx xxx x xxx xxxxxxx xx xxxxxxxxxx xxxx xxx xxxxxxxxx xx xxxx xxxxx:
+Most of the fields contain data about the state, visual properties, or position of the primitive in the game world. There are a few methods in particular that are necessary in most games:
 
--   **Xxxx**. Xxxx xxx xxxx xxxxxxxx xxx xxx xxxxxxxxx, xxxxx xx xxxxxx xx **x\_xxxx**. Xxxx xxxxxxxx xx xxxxxxx xx **XxxxXxxxxx.x/.xxx**.
--   **XxXxxxxxxx**. Xxxx xxxxxx xxxxxxxxxx xx xxx xxxxxxxxx xx xxxxxx x xxxxxxxx xxxxxxxx xx x xxxxx, xxx xxxxxxx xxx xxxxx xx xxx xxxxxxx xxxxxxx xx xxx xxxxx xxx xxx xxxxxx xx xxx xxxxxxx xx xxx xxxxxx xx xxxx xxxxx. Xxxxxxx xxx xxxxxx xx xxxx xxxxxxxxx xxxx xxxx-xxxxxxxxx xxxxxxxxxx, xxxx xx xxxxxx xxx xxx xxxx'x xxxxxxxx. Xx xx xxx x xxxxxxx xxxxxxx xxxxxxxxx-xxxxxxxxx xxxxxxxxxxxx xxxxxxxx, xxxxxxxx xx xxxxx xx xxxx xx xxx xxxxx xxx xxx.
--   **XxxxxxxXxxxxxxx**. Xxxxxxx xxx xxxxxxxx xxx xxxxxxxxx xxx xxx xxxxxxxxx.
--   **XxxxxxXxxxxxxx**. Xxxxxxx xxx xxxxxxxx xx xxx xxxxxx xx xxx xxxxx xxxxxxxxxx xxxxx.
--   **Xxxxxx**. Xxxx xxx xxxxxxxx xxxxxxxxxx xx xxx xxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxx xxxxxx xxx xxxx xxxxxxx (xxxxx) xxx xxxxxxxxx xxxxxxxx xxxxx xxx xxxxxx xxxxxxx.
+-   **Mesh**. Gets the mesh geometry for the primitive, which is stored in **m\_mesh**. This geometry is defined in **MeshObject.h/.cpp**.
+-   **IsTouching**. This method determines if the primitive is within a specific distance of a point, and returns the point on the surface closest to the point and the normal to the surface of the object at that point. Because the sample is only concerned with ammo-primitive collisions, this is enough for the game's dynamics. It is not a general purpose primitive-primitive intersection function, although it could be used as the basis for one.
+-   **AnimatePosition**. Updates the movement and animation for the primitive.
+-   **UpdatePosition**. Updates the position of the object in the world coordinate space.
+-   **Render**. Puts the material properties of the primitive into the primitive constant buffer and then renders (draws) the primitive geometry using the device context.
 
-Xx'x x xxxx xxxxxxxx xx xxxxxx x xxxx xxxxxx xxxx xxxx xxxxxxx xxx xxxxxxx xxx xx xxxxxxx xxx x xxxxxxxxx xxxxxxx xxxx xxxxx xxxx x xxxx xxxxx xxxxxx xx xxxxxxxxxx, xxx xxx xxxx xxx xxxxxxx xxxxxx xxxxxxxxx xx xxxxxx. Xx xxxx xxxxxxxxxx xxxx xxxx xxxx xxx xxxxxx xxxx xxx xxxxx xxx xxxxxxxxxx xxxxxxxxxxxxxxx, xxxxxxx xxx xxxxxxx xxxxxxxxxx xxxxxx xxxxx xxx xxxxxx xxx xxxxxxxxx xxxxxxxxx.
+It's a good practice to create a base object type that defines the minimum set of methods for a primitive because most games have a very large number of primitives, and the code can quickly become difficult to manage. It also simplifies game code when the update loop can treat the primitives polymorphically, letting the objects themselves define their own update and rendering behaviors.
 
-Xxx'x xxxx xx xxx xxxxx xxxxxxxxx xx x xxxxxxxxx xx xxx xxxx xxxxxx.
+Let's look at the basic rendering of a primitive in the game sample.
 
-## Xxxxxxxxx xxx xxxxxxxxxx
+## Rendering the primitives
 
 
-Xxx xxxxxxxxxx xx xxx xxxx xxxxxx xxx xxx xxxx **Xxxxxx** xxxxxx xxxxxxxxxxx xx xxx xxxxxx **XxxxXxxxxx** xxxxx, xx xxxx:
+The primitives in the game sample use the base **Render** method implemented on the parent **GameObject** class, as here:
 
 ```cpp
 void GameObject::Render(
@@ -995,15 +995,15 @@ void GameObject::Render(
 }
 ```
 
-Xxx **XxxxXxxxxx::Xxxxxx** xxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxx xxxxxx xxxx xxx xxxx xxxxxxxx xx x xxxxx xxxxxxxxx. Xxx xxxx xxxx xxxxxxxx xxxxxxxx xxxxxxx, xxx xxxx xxxxx xx xxxxxx xxxxx xxxxxxx xxx xxxx xxx xxxxxxxxx.
+The **GameObject::Render** method updates the primitive constant buffer with the data specific to a given primitive. The game uses multiple constant buffers, but only needs to update these buffers one time per primitive.
 
-Xxxxx xx xxx xxxxxxxx xxxxxxx xx xxxxx xx xxx xxxxxxx xxxx xxx xxx xxxx xxxxxxxxx. Xxxx xxxx xx xxxxxx (**x\_xxxxxxxxXxxxxxXxxxxXxxxxxx**); xxxx xxxx xx xxxxxxxx xxxx xxx xxxxx (**x\_xxxxxxxxXxxxxxXxxxxxxXxxxxXxxxx)**, xxxx xxx xxxxxxxx xx xxx xxxxxx; xxx xxxx xxxx xx xxxxxxxx xx xxx xxxxxxxxx, xxxx xxx xxxxx xxx xxxxxxxx (**x\_xxxxxxxxXxxxxxXxxxxxxXxxxxXxxx**). Xxx xxxx xxxxxxxx xxxxxxxxx xxxxx xxxxxx xxxx xxxxxxxxx xxxxxxxx xxxxxxx xx xxxxxxxx xxx xxxxxx xxxxxxxxx xxxx xxx XXX xxx XXX xxx. Xxxx xxxxxxxx xxxx xxxxx xx xxxxxxxx xxx xxxxxx xx xxxx xxx XXX xxxxx xx xxxx xxxxx xx. Xxxxxxxx, xxx XXX xxx x xxx xxxxx xx xxxxxxxx, xxx xxxx xxxx xxx xxxx xxxxx **Xxxx**, xxxx xxxxxxx xx xxxxxx xxxxx xxxx xxx xxxx xxxxxxxxxx xxxx xx. Xxxx xxx xxxx xxxxxxx xxx xxxxxxxxx xxxxxxxx xxxxxx xxx xxxxxx xxx xxxx **Xxxx** xxxxxxx, xxx xxxxxxxx xxxxxx xxxx xxxx xxxx xxxxxxx xxx xxx xxxxxxxxxx xxxx xx xxx xxxxx. Xx xxx xxxx xxxxx YYY xxxxxxxxxx, xx xxxxx xxxxxxxxxxx xxxx YYY xxxxxx xx xxx xxxxxxxx xxxxxx xxxx xx xxx xxxxx. Xx xxxx xx xxxxxxxx xxx xxxxxx xx xxxx xxx xxxx xx xxxxxxx xx xxx XXX, xx xxx xxxx xxxx x xxxxxxxx xxxxxxxxx xxxxxxxx xxxxxx xxxx xxxx xxxxxxxx xxx xxxxxxx xxx xxxx xxxxxxxxx.
+Think of the constant buffers as input to the shaders that run for each primitive. Some data is static (**m\_constantBufferNeverChanges**); some data is constant over the frame (**m\_constantBufferChangesEveryFrame)**, like the position of the camera; and some data is specific to the primitive, like its color and textures (**m\_constantBufferChangesEveryPrim**). The game renderer separates these inputs into different constant buffers to optimize the memory bandwidth that the CPU and GPU use. This approach also helps to minimize the amount of data the GPU needs to keep track of. Remember, the GPU has a big queue of commands, and each time the game calls **Draw**, that command is queued along with the data associated with it. When the game updates the primitive constant buffer and issues the next **Draw** command, the graphics driver adds this next command and the associated data to the queue. If the game draws 100 primitives, it could potentially have 100 copies of the constant buffer data in the queue. We want to minimize the amount of data the game is sending to the GPU, so the game uses a separate primitive constant buffer that only contains the updates for each primitive.
 
-Xx x xxxxxxxxx (x xxx) xx xxxxxxxx, **XxxxXxxxxx::Xxxxxx** xxxxxx xxx xxxxxxx xxxxxxx, xxxxx xxxxxxxxx xxxxxxx xxx xxxxxx xxx xxxx xxx xx xx xxxx xxxxxx. Xx xxx xxxxxx xxx xxxx xxx, xxxx xxxxxx xxxxxxx x xxx xxxxxxxx, xxxxx xxxxxxxx xxx xxxxxx xx xxx xxxxx xx xxx xxxxxx xx xxxxxxxx x xxxxxxxxxx xxx xx xxx xxxxxx. Xxxxxxxxx, xx xxxxxxx xxx xxxxxxx xxxxxxxx xxxx xxx xxxx xxxxxx. Xx xxxx xxxxx, xx xxxx xxx xxxxxxxx xx xxxxxxx **Xxxxxxxx::XxxxxxXxxxx**, xxxxx xxxx xxx xxxxxxxxxxx xxxxxxxxx xxxx xxx xxxxxxxx xxxxxx. Xxxx, xx xxxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476473) xx xxx xxx xxxxxxxxxxxxx xxxxxxx xxxxxxxx xxx xxx xxxxx xxxxxx, xxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476493) xxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476472) xx xxx xxx xxxxxx xxxxxx xxx xxxxx xxxxxx xxxxxxx xxxxxxxxxx, xxxxxxxxxxxx.
+If a collision (a hit) is detected, **GameObject::Render** checks the current context, which indicates whether the target has been hit by an ammo sphere. If the target has been hit, this method applies a hit material, which reverses the colors of the rings of the target to indicate a successful hit to the player. Otherwise, it applies the default material with the same method. In both cases, it sets the material by calling **Material::RenderSetup**, which sets the appropriate constants into the constant buffer. Then, it calls [**ID3D11DeviceContext::PSSetShaderResources**](https://msdn.microsoft.com/library/windows/desktop/ff476473) to set the corresponding texture resource for the pixel shader, and [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) and [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) to set the vertex shader and pixel shader objects themselves, respectively.
 
-Xxxx'x xxx **Xxxxxxxx::XxxxxxXxxxx** xxxxxxxxxx xxx xxxxxxxx xxxxxxx xxx xxxxxxx xxx xxxxxx xxxxxxxxx. Xxxxx, xxxx xxxx xxx xxxxxxxx xxxxxx xx xxx xxx xxxx xxx xxxxxxxx xxxxxxx xx xxxxxxxxxx, xxxxxxxxxxxx.
+Here's how **Material::RenderSetup** configures the constant buffers and assigns the shader resources. Again, note that the constant buffer is the one used for updating changes to primitives, specifically.
 
-> **Xxxx**   Xxx **Xxxxxxxx** xxxxx xx xxxxxxx xx **Xxxxxxxx.x/.xxx**.
+> **Note**   The **Material** class is defined in **Material.h/.cpp**.
 
  
 
@@ -1024,7 +1024,7 @@ void Material::RenderSetup(
 }
 ```
 
-Xxxxxxx, xxx **XxxxXxxxxx::Xxxxxx** xxxxx xxx **Xxxxxx** xxxxxx xxx xxx xxxxxxxxxx **XxxxXxxxxx** xxxxxx.
+Finally, the **PrimObject::Render** calls the **Render** method for the underlying **MeshObject** object.
 
 ```cpp
 void MeshObject::Render(_In_ ID3D11DeviceContext *context)
@@ -1039,21 +1039,21 @@ void MeshObject::Render(_In_ ID3D11DeviceContext *context)
 }
 ```
 
-Xxx, xxx xxxx xxxxxx’x **XxxxXxxxxx::Xxxxxx** xxxxxx xxxxxx xxx xxxxxxx xxxxxxx xx xxxxxxx xxx xxxxxxx xx xxx XXX xxxxx xxx xxxxxxx xxxxx xxxxx. Xxx xxxxxx xxxxxx xxxxxxxx xxx xxxxxxxx (xxxxxxxx) xxxx xxxxx xxxxxxxxxxx xxxx xxxxxx (xxxxx) xxxxxxxxxxx, xxxxxx xxxx xxxxxxx xxxxx xxx xxxxxx xx xxx xxx xxxxxxxxxxx xxxxxxxxxxxxxx. Xxxxxx, xxx xxxxx xxxxxxx xxxxxx xxx xxxxxxxxxxx xxxxxxxxx xxxx xxx xxxx xxxxxx xxxxx xxx xxxxxxx xxx xxxxx.
+Now, the game sample’s **MeshObject::Render** method queues the drawing command to execute the shaders on the GPU using the current scene state. The vertex shader converts the geometry (vertices) from model coordinates into device (world) coordinates, taking into account where the camera is and the perspective transformation. Lastly, the pixel shaders render the transformed triangles into the back buffer using the texture set above.
 
-Xxxx xxxxxxx xx xxx xxxxxx xxxxxxxxx xxxxxxx!
+This happens on the actual rendering process!
 
-## Xxxxxxxx xxx xxxxxx xxx xxxxx xxxxxxx
+## Creating the vertex and pixel shaders
 
 
-Xx xxxx xxxxx, xxx xxxx xxxxxx xxx xxxxxxx xxx xxxxxxxxxx xx xxxx xxx xxx xxxxxxxx xxxxxxx xxxx xxxxxx xxxxx xxxxxxxxx. Xxxxx xxxxxxxx xxxxxxx xxxxx xx xxx xxxx xx xxxxxxxxxx xx xxx xxxxxxx xxxx xxx xx xxx xxxxxxxx xxxxxx. Xxxxx xxxxxx xxxxxxxx xxxx xx xxx xxxxx:
+At this point, the game sample has defined the primitives to draw and the constant buffers that define their rendering. These constant buffers serve as the sets of parameters to the shaders that run on the graphics device. These shader programs come in two types:
 
--   Xxxxxx xxxxxxx xxxxxxx xxx-xxxxxx xxxxxxxxxx, xxxx xx xxxxxx xxxxxxxxxxxxxxx xxx xxxxxxxx.
--   Xxxxx (xx xxxxxxxx) xxxxxxx xxxxxxx xxx-xxxxx xxxxxxxxxx, xxxx xx xxxxxxxxx xxx xxx-xxxxx xxxxxxxx. Xxxx xxx xxxx xx xxxx xx xxxxxxx xxxx-xxxxxxxxxx xxxxxxx xx xxxxxxx, xxxx xx xxx xxxxx xxxxxx xxxxxx.
+-   Vertex shaders perform per-vertex operations, such as vertex transformations and lighting.
+-   Pixel (or fragment) shaders perform per-pixel operations, such as texturing and per-pixel lighting. They can also be used to perform post-processing effects on bitmaps, such as the final render target.
 
-Xxx xxxxxx xxxx xx xxxxxxx xxxxx Xxxx-Xxxxx Xxxxxx Xxxxxxxx (XXXX), xxxxx, xx XxxxxxYX YY, xx xxxxxxxx xxxx x xxxxxxx xxxxxxx xxxx x X-xxxx xxxxxx. (Xxx xxxxxxxx xxxxxx xxx xx xxxxx [xxxx](https://msdn.microsoft.com/library/windows/desktop/bb509635).) Xxx xxx xxxxxxxxx xxxxxxx xxx xxx xxxxxx xxxx xxx xxxxxxx xx **XxxxxXxxxxx.xxxx** xxx **XxxxxxXxxxxx.xxxx**. (Xxxxx xxx xxxx xxx "xxx xxxxx" xxxxxxx xxxxxxx xxx xxx xxxxx xxxxxxx: **XxxxxXxxxxxXxxx.xxxx** xxx **XxxxxxXxxxxxXxxx.xxxx**. Xxxxx xxx xxxxxxx xxxxxxx xxxxxxx xxxxxxx, xxxx xx x xxxx xx xxxxxxxx xxxxxxxxxx xx xxxxxxxx xxxxxxxx.) XXxxxxx, xxxxx xx xx .xxxxx xxxx xxxx xxxxxxxx xxx xxxxxx xx xxx xxxxxxxx xxxxxxx, **XxxxxxxxXxxxxxx.xxxxx**.
+The shader code is defined using High-Level Shader Language (HLSL), which, in Direct3D 11, is compiled from a program created with a C-like syntax. (The complete syntax can be found [here](https://msdn.microsoft.com/library/windows/desktop/bb509635).) The two principal shaders for the sample game are defined in **PixelShader.hlsl** and **VertexShader.hlsl**. (There are also two "low power" shaders defined for low power devices: **PixelShaderFlat.hlsl** and **VertexShaderFlat.hlsl**. These two shaders provide reduced effects, such as a lack of specular highlights on textures surfaces.) FInally, there is an .hlsli file that contains the format of the constant buffers, **ConstantBuffers.hlsli**.
 
-**XxxxxxxxXxxxxxx.xxxxx** xx xxxxxxx xxxx xxxx:
+**ConstantBuffers.hlsli** is defined like this:
 
 ```cpp
 Texture2D diffuseTexture : register(t0);
@@ -1111,9 +1111,9 @@ struct PixelShaderFlatInput
 };
 ```
 
-**XxxxxxXxxxxx.xxxx** xx xxxxxxx xxxx xxxx:
+**VertexShader.hlsl** is defined like this:
 
-XxxxxxXxxxxx.xxxx
+VertexShader.hlsl
 
 ```cpp
 #include "ConstantBuffers.hlsli"
@@ -1141,9 +1141,9 @@ PixelShaderInput main(VertextShaderInput input)
 }
 ```
 
-Xxx **xxxx** xxxxxxxx xx **XxxxxxXxxxxx.xxxx** xxxxxxxx xxx xxxxxx xxxxxxxxxxxxxx xxxxxxxx xx xxxxxxxxx xx xxx xxxxxx xxxxxxx. Xx'x xxx xxx xxxx xxx xxxxxx. Xxx xxxxxxxxx xxxxxxx xxx xxxxxx xx xxx xxxxx xxxxxx xxxx xxx xxxxxxxxx xxx xxxxxxxx xxxxxxx.
+The **main** function in **VertexShader.hlsl** performs the vertex transformation sequence we discussed in the camera section. It's run one time per vertex. The resultant outputs are passed to the pixel shader code for texturing and material effects.
 
-XxxxxXxxxxx.xxxx
+PixelShader.hlsl
 
 ```cpp
 #include "ConstantBuffers.hlsli"
@@ -1172,14 +1172,14 @@ float4 main(PixelShaderInput input) : SV_Target
 }
 ```
 
-Xxx **xxxx** xxxxxxxx xx **XxxxxXxxxxx.xxxx** xxxxx xxx Y-X xxxxxxxxxxx xx xxx xxxxxxxx xxxxxxxx xxx xxxx xxxxxxxxx xx xxx xxxxx, xxx xxxxxxxx xxx xxxxx xxxxx xxx xxxx xxxxx xx xxx xxxxxxx xxxxxxxx xxxxx xx xxx xxxxxxxx xxx xxxxxxx (xx xxxx xxxx, xxxxxxxx xxxxxxxx) xxxxxxx xx xxxx.
+The **main** function in **PixelShader.hlsl** takes the 2-D projections of the triangle surfaces for each primitive in the scene, and computes the color value for each pixel of the visible surfaces based on the textures and effects (in this case, specular lighting) applied to them.
 
-Xxx, xxx'x xxxxx xxx xxxxx xxxxx (xxxxxxxxxx, xxxxxx, xxx xxxxxxx) xxxxxxxx, xxx xxx xxx xxx xxxxxx xxxx xxxxxx xxx xxxxxxxx xxxxxxxxx xxxxxxx.
+Now, let's bring all these ideas (primitives, camera, and shaders) together, and see how the sample game builds the complete rendering process.
 
-## Xxxxxxxxx xxx xxxxx xxx xxxxxx
+## Rendering the frame for output
 
 
-Xx xxxxxxx xxxxxxxxx xxxx xxxxxx xx [Xxxxxxxx xxx xxxx xxxx xxxxxx](tutorial--defining-the-main-game-loop.md). Xxx, xxx'x xxxx xx xx xx x xxxxxx xxxx xxxxxx.
+We briefly discussed this method in [Defining the main game object](tutorial--defining-the-main-game-loop.md). Now, let's look at it in a little more detail.
 
 ```cpp
 void GameRenderer::Render()
@@ -1329,29 +1329,29 @@ void GameRenderer::Render()
 }
 ```
 
-Xxx xxxx xxx xxx xxx xxxxxx xx xxxxxxxx x xxxx xxx xxxxxx: xxxxxxxxxx xxx xxx xxxxx xxx xxxxx xxxxxxxx, x xxxxxx xxxxxx xx xxxxxxx xxx xxxxxx'x xxxx xx xxx xxxx xxxxx, xxx xxx xxxxxxxx xxxxxxxxx xxx xxxxxxx.
+The game has all the pieces to assemble a view for output: primitives and the rules for their behavior, a camera object to provide the player's view of the game world, and the graphics resources for drawing.
 
-Xxx, xxx'x xxxx xx xxx xxxxxxx xxxx xxxxxx xx xxx xxxxxxxx.
+Now, let's look at the process that brings it all together.
 
-1.  Xx xxxxxx YX xx xxxxxxx, xxx xxx xxxxxxxxx xxxxxxxxx xxxxxxx xx xxx xxx xxxxx, xxx xxxx xxx xxxx xxx.
-2.  Xxx xxxxx xxxxx xx xxxxxxxx xx x xxxxxxxx xxxxx xxxxxx, xx xxxx xxxxx xxxxx (xxxx xxxxx xx xxx’x xxxx) xx xxxxx xxx xxxxx xxxxxx xx xxx xxxxxx xxxxxx. Xxx xxx xxxxx xxxxxxx xxxxxx xx xxx xxxxxxx xxxxx.
-3.  Xxxxxx xxx xxxxxxxx xxxxxx xxx xxxxx xxxxxx xxxx xx xxxxx xxx xxxxxx'x xxxx xxxxxx xxx xxxx.
-4.  Xxx xx xxx XxxxxxYX xxxxxxx xx xxx xxx xxxx xxxxxxx xxxxxxx xxxx xxxx xxxxxxx xxxxxxx.
-5.  Xxxx xxx **Xxxxxx** xxxxxx xx xxxx xxxxxxxxx xxxxxx. Xxxx xxxxxxx xx x **Xxxx** xx **XxxxXxxxxxx** xxxx xx xxx xxxxxxx xx xxxx xxx xxxxxxxx xx xxxx xxxx xxxxxxxxx. Xxxxxxxxxxxx, xxxx **Xxxx** xxxx xxxxxx xxxxxxxx xxx xxxx xx xxx XXX, xx xxxxxxxxxxxxx xx xxx xxxxxxxx xxxxxx xxxx. Xxxx xxxx xxxx xxxxxxxx xxx xxxxxx xxxxxx xxx xxxx xxx xxxxxx, xxx xxxx xxx xxxxx xxxxxx xxx xxxx xxx xxxxx xxxxx xx xxxx xxxxxxxx xx xxx xxxxxxxxx. Xxx xxxxxxxx xxx xxxx xx xxx xxxxx xxxx xxx xxxxx xxxxxx xxxx xx xx xxx xxxxxxxxx.
-6.  Xxxx xxx XXX xxx xxx xxxxxxx xxxxx xxx XxxxxxYX xxxxxxx.
-7.  Xxxx **XxxxxxXXxxx::Xxxxxxx**.
+1.  If stereo 3D is enabled, set the following rendering process to run two times, one time for each eye.
+2.  The whole scene is enclosed in a bounding world volume, so draw every pixel (even those we don’t need) to clear the color planes of the render target. Set the depth stencil buffer to the default value.
+3.  Update the constant buffer for frame update data by using the camera's view matrix and data.
+4.  Set up the Direct3D context to use the four content buffers that were defined earlier.
+5.  Call the **Render** method on each primitive object. This results in a **Draw** or **DrawIndexed** call on the context to draw the geometry of that each primitive. Specifically, this **Draw** call queues commands and data to the GPU, as parameterized by the constant buffer data. Each draw call executes the vertex shader one time per vertex, and then the pixel shader one time for every pixel of each triangle in the primitive. The textures are part of the state that the pixel shader uses to do the rendering.
+6.  Draw the HUD and the overlay using the Direct2D context.
+7.  Call **DirectXBase::Present**.
 
-Xxx xxx xxxx xxx xxxxxxx xxx xxxxxxx! Xxxxxxxxxx, xxxx xx xxx xxxxx xxxxxxx xxx xxxxxxxxxxxx xxx xxxxxxxx xxxxxxxxx xx x xxxx. Xx xxxxxx, xxx xxxxxx xxxx xxxx, xxx xxxx xxxxxxxxxxxx xxx xxxx xxx xx xxxxx xx xxxxxx xxxx xxxxxxxxxx, xxxx xx xxxxxx xxxxxxxxxxx xx xxxxxx xxxxx xxx xxxxxxxxx xxxxxxxxx, xxx xxxx xxxxxxx xxxxxxx xxx xxxxxxx xxx xxxxxxxx xxxxxx xxxx xx xxxxxx xxx xxxxxxxx.
+And the game has updated the display! Altogether, this is the basic process for implementing the graphics framework of a game. Of course, the larger your game, the more abstractions you must put in place to handle that complexity, such as entire hierarchies of object types and animation behaviors, and more complex methods for loading and managing assets such as meshes and textures.
 
-## Xxxx xxxxx
-
-
-Xxxxxx xxxxxxx, xxx'x xxxx xx x xxx xxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxxx xx'xx xxxx xxxxxxxxx xx xxxxxxx: [xxx xxxx xxxxxxxxx xxxxxxx](tutorial--adding-a-user-interface.md), [xxx xxxxx xxxxxxxx](tutorial--adding-controls.md), xxx [xxx xxxxx](tutorial--adding-sound.md).
-
-## Xxxxxxxx xxxxxx xxxx xxx xxxx xxxxxxx
+## Next steps
 
 
-Xxxxxx.x
+Moving forward, let's look at a few important parts of the game sample that we've only discussed in passing: [the user interface overlay](tutorial--adding-a-user-interface.md), [the input controls](tutorial--adding-controls.md), and [the sound](tutorial--adding-sound.md).
+
+## Complete sample code for this section
+
+
+Camera.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -1410,7 +1410,7 @@ protected private:
 };
 ```
 
-Xxxxxx.xxx
+Camera.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -1592,7 +1592,7 @@ float Camera::Yaw()
 }
 ```
 
-XxxxXxxxxxxx.x
+GameRenderer.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -1678,7 +1678,7 @@ protected private:
 };
 ```
 
-XxxxXxxxxxxx.xxx
+GameRenderer.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2280,7 +2280,7 @@ void GameRenderer::Render()
 }
 ```
 
-XxxxXxxxxx.x
+GameObject.h
 
 ```cpp
 /// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2544,7 +2544,7 @@ __forceinline DirectX::XMMATRIX GameObject::ModelMatrix()
 }
 ```
 
-XxxxXxxxxx.xxx
+GameObject.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2649,7 +2649,7 @@ void GameObject::PlaySound(float impactSpeed, XMFLOAT3 eyePoint)
 }
 ```
 
-Xxxxxxx.x
+Animate.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2791,7 +2791,7 @@ private:
             
 ```
 
-Xxxxxxx.xxx
+Animate.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -3106,7 +3106,7 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
             
 ```
 
-XxxxxXxxxxx.x
+BasicLoader.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -3287,7 +3287,7 @@ private:
 };
 ```
 
-XxxxxXxxxxx.xxx
+BasicLoader.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -4165,7 +4165,7 @@ task<void> BasicLoader::LoadMeshAsync(
 }
 ```
 
-XxxxXxxxxx.x
+MeshObject.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -4204,7 +4204,7 @@ protected private:
             
 ```
 
-XxxxXxxxxx.xxx
+MeshObject.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -4246,7 +4246,7 @@ void MeshObject::Render(_In_ ID3D11DeviceContext *context)
             
 ```
 
-XxxxxxXxxx.x
+SphereMesh.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -4274,7 +4274,7 @@ internal:
             
 ```
 
-XxxxxxXxxx.xxx
+SphereMesh.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -4381,7 +4381,7 @@ SphereMesh::SphereMesh(_In_ ID3D11Device *device, uint32 segments)
             
 ```
 
-XxxxxxxxXxxx.x
+CylinderMesh.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -4410,7 +4410,7 @@ internal:
             
 ```
 
-XxxxxxxxXxxx.xxx
+CylinderMesh.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -4541,7 +4541,7 @@ CylinderMesh::CylinderMesh(_In_ ID3D11Device *device, uint32 segments)
             
 ```
 
-XxxxXxxx.x
+FaceMesh.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -4572,7 +4572,7 @@ internal:
             
 ```
 
-XxxxXxxx.xxx
+FaceMesh.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -4635,7 +4635,7 @@ FaceMesh::FaceMesh(_In_ ID3D11Device *device)
             
 ```
 
-XxxxxXxxx.x
+WorldMesh.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -4687,7 +4687,7 @@ internal:
             
 ```
 
-XxxxxXxxx.xxx
+WorldMesh.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -4853,7 +4853,7 @@ WorldWallsMesh::WorldWallsMesh(_In_ ID3D11Device *device)
             
 ```
 
-Xxxxx.x
+Level.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -4912,7 +4912,7 @@ protected private:
             
 ```
 
-Xxxxx.xxx
+Level.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -4983,7 +4983,7 @@ float Level::TimeLimit()
             
 ```
 
-XxxxxY.x
+Level1.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -5010,7 +5010,7 @@ internal:
             
 ```
 
-XxxxxY.xxx
+Level1.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -5082,7 +5082,7 @@ void Level1::Initialize(std::vector<GameObject^> objects)
             
 ```
 
-XxxxxY.x
+Level2.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -5123,7 +5123,7 @@ private:
             
 ```
 
-XxxxxY.xxx
+Level2.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -5216,7 +5216,7 @@ void Level2::LoadState(PersistentState^ state)
             
 ```
 
-XxxxxY.x
+Level3.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -5245,7 +5245,7 @@ internal:
             
 ```
 
-XxxxxY.xxx
+Level3.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -5424,7 +5424,7 @@ void Level3::Initialize(std::vector<GameObject^> objects)
             
 ```
 
-XxxxxY.x
+Level4.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -5465,7 +5465,7 @@ private:
             
 ```
 
-XxxxxY.xxx
+Level4.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -5559,7 +5559,7 @@ void Level4::LoadState(PersistentState^ state)
             
 ```
 
-XxxxxY.x
+Level5.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -5588,7 +5588,7 @@ internal:
             
 ```
 
-XxxxxY.xxx
+Level5.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -5672,7 +5672,7 @@ void Level5::Initialize(std::vector<GameObject^> objects)
             
 ```
 
-XxxxxY.x
+Level6.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -5707,7 +5707,7 @@ internal:
             
 ```
 
-XxxxxY.xxx
+Level6.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -5754,7 +5754,7 @@ bool Level6::Update(
             
 ```
 
-XxxxxxXxxxxxx.x
+TargetTexture.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -5817,7 +5817,7 @@ protected private:
             
 ```
 
-XxxxxxXxxxxxx.xxx
+TargetTexture.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -6183,7 +6183,7 @@ void TargetTexture::CreateHitTextureResourceView(
             
 ```
 
-Xxxxxxxx.x
+Material.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -6244,7 +6244,7 @@ protected private:
             
 ```
 
-Xxxxxxxx.xxx
+Material.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -6301,21 +6301,25 @@ void Material::RenderSetup(
             
 ```
 
-> **Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## Xxxxxxx xxxxxx
+## Related topics
 
 
-* [Xxxxxx x xxxxxx XXX xxxx xxxx XxxxxxX](tutorial--create-your-first-metro-style-directx-game.md)
+* [Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

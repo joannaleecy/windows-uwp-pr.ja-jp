@@ -1,15 +1,15 @@
 ---
-xxxxx: Xxx XxxxXX XX Y.Y xx XxxxxxYX YY
-xxxxxxxxxxx: Xxxx xxxxxxxx xxx xxxxxxx xx xxxxxxx xxxx xxxxxxxx xxxxxxxxxxxx xxxx XxxxXX XX Y.Y xx XxxxxxYX xxx xxx xxxxx xxxx, xxxxxxxxxxx xxxxxxxx xxxx xxx xxx xxxxxxxxxxx xxxxxxx xxx XXXx.
-xx.xxxxxxx: YxYxYYYx-xxYY-YYxY-xYYY-YxYxYxYYxYYY
+title: Direct3D 11 への OpenGL ES 2.0 のマッピング
+description: OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャの移植プロセスを初めて開始する場合は、API 間の主要な違いについて把握しておいてください。
+ms.assetid: 7f9b136c-aa22-04b3-d385-6e9e1f38b948
 ---
 
-# Xxx XxxxXX XX Y.Y xx XxxxxxYX YY
+# Direct3D 11 への OpenGL ES 2.0 のマッピング
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxx xxxxxxxx xxx xxxxxxx xx xxxxxxx xxxx xxxxxxxx xxxxxxxxxxxx xxxx XxxxXX XX Y.Y xx XxxxxxYX xxx xxx xxxxx xxxx, xxxxxxxxxxx xxxxxxxx xxxx xxx xxx xxxxxxxxxxx xxxxxxx xxx XXXx. Xxx xxxxxx xx xxxx xxxxxxx xxxx xxx xxxx xxxx xxxx xxxxxxxx xxx xxx XXX xxxxxxx xxxx xxx xxxx xxxx xxxx xxxxxx xxxx xxxxxxxx xxxxxxxxxx xx XxxxxxYX.
+OpenGL ES 2.0 から Direct3D へのグラフィックス アーキテクチャの移植プロセスを初めて開始する場合は、API 間の主要な違いについて把握しておいてください。 このセクションのトピックは、グラフィックスの処理を Direct3D に移行する際に必ず必要な API の変更と移植戦略を計画するのに役立ちます。
 ## 
 <table>
 <colgroup>
@@ -18,42 +18,46 @@ Xxxx xxxxxxxx xxx xxxxxxx xx xxxxxxx xxxx xxxxxxxx xxxxxxxxxxxx xxxx XxxxXX XX Y
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">トピック</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Plan your port from OpenGL ES 2.0 to Direct3D](compare-opengl-es-2-0-api-design-to-directx.md)</p></td>
-<td align="left"><p>Xx xxx xxx xxxxxxx x xxxx xxxx xxx xXX xx Xxxxxxx xxxxxxxxx, xxx xxxx xxxxxxxx xxxx x xxxxxxxxxxx xxxxxxxxxx xx XxxxXX XX Y.Y. Xxxx xxxxxxxxx xx xxxx xxxx xxxxxxxx xxxxxxxx xxxxxxxx xx XxxxxxYX YY xxx xxx Xxxxxxx Xxxxxxx, xxxxx xxx x xxx xxxxxx xxx xxxxxx xxxxxxxx xxxxxx xxx xxxxx.</p></td>
+<td align="left"><p>iOS または Android プラットフォームからゲームを移植している場合、OpenGL ES 2.0 に多大な投資を行ってこられたものと思われます。 グラフィックス パイプラインのコードベースを Direct3D 11 と Windows ランタイムに移す準備をしているときは、開始する前に何点か注意してください。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Compare EGL code to DXGI and Direct3D](moving-from-egl-to-dxgi.md)</p></td>
-<td align="left"><p>Xxx XxxxxxX Xxxxxxxx Xxxxxxxxx (XXXX) xxx xxxxxxx XxxxxxYX XXXx xxxxx xxx xxxx xxxx xx XXX. Xxxx xxxxx xxxxx xxx xxxxxxxxxx XXXX xxx XxxxxxYX YY xxxx xxx xxxxxxxxxxx xx XXX.</p></td>
+<td align="left"><p>DirectX Graphics Interface (DXGI) といくつかの Direct3D API は EGL と同じ役割を果たします。 このトピックは EGL の観点から DXGI と Direct3D 11 を理解するのに役立ちます。</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D](porting-uniforms-and-attributes.md)</p></td>
-<td align="left"><p>Xxxxxx xxx xxxxxxx xx xxxxxxx xx XxxxxxYX YY xxxx XxxxXX XX Y.Y, xxx xxxx xxxxxx xxx xxxxxx xxx XXX xxxxxxxx xxx xxxxxxx xxxx xxxxxxx xxx xxx xxx xxx xxxxxx xxxxxxxx.</p></td>
+<td align="left"><p>OpenGL ES 2.0 から Direct3D 11 に移植するプロセスでは、アプリとシェーダー プログラムの間でデータを受け渡すための構文と API の動作を変更する必要があります。</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Compare the OpenGL ES 2.0 shader pipeline to Direct3D](change-your-shader-loading-code.md)</p></td>
-<td align="left"><p>Xxxxxxxxxxxx, xxx XxxxxxYX YY xxxxxx xxxxxxxx xx xxxx xxxxxxx xx xxx xxx xx XxxxXX XX Y.Y. Xx xxxxx xx XXX xxxxxx, xxxxxxx, xxx xxxxx xxxxxxxxxx xxx xxxxxxxx xxx xxxxxxxx xxx xxxxxx xxxxxx xxx xxxxx xx xxx xxxxxxx xxxxxxxxxx, [<strong>XXYXYYXxxxxxY</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxxxxx/xxYYYYYY) xxx [<strong>XXYXYYXxxxxxXxxxxxxY</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxxxxx/xxYYYYYY). Xxxx xxxxx xxxxxxxx xx xxx xxxxxx XxxxXX XX Y.Y xxxxxx xxxxxxxx XXX xxxxxxxx xx xxx XxxxxxYX YY xxxxxxxxxxx xx xxxxx xxxxxxxxxx.</p></td>
+<td align="left"><p>概念的には、Direct3D 11 のシェーダー パイプラインは OpenGL ES 2.0 のそれとよく似ています。 ただし、API の設計という点では、シェーダー ステージを作成、管理するための主要コンポーネントは、[<strong>ID3D11Device1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404575) と [<strong>ID3D11DeviceContext1</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404598) という 2 つのプライマリ インターフェイスに含まれています。 このトピックでは、OpenGL ES 2.0 の一般的なシェーダー パイプライン API パターンが、Direct3D 11 におけるこれらのインターフェイスの何に対応するかを説明します。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## Xxxxx xx xxxxxxxx XxxxXX XX Y.Y xxxxxxxxx
+## 特定の OpenGL ES 2.0 プロバイダーに関する注意事項
 
 
-Xxxxx xxxxxx xxx xxx Xxxxxxx XxxxXX XX Y.Y xxxxxxxxxxxxx xxxx xxxxxxxx-xxxxxxxx X. Xxxx xXX xxx Xxxxxxx xxxxxxx xxx xxxx xxxxxxxxxxxxx xxx XxxxXX XX Y.Y xxxx xxxxxxxxx xxx xxxxx xxxxxxxxx xx xxxx xxxxxxx xx xxx xxxx xxxxxxxx xx xxxx xxxx xxxxxxx, xxxxxxxx xxxx xxx xxxxxxxxx xxxxxxx xx xxxxxx-xxxxxxxx XXXx. Xxxx, xxx xx xxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxxxxx xx xxxx xxxxxxxx, xxxxx xxx xx xxxxx xxxxxxxxxxx, xxxxxxxxxx xx xxxxxx xxxxxxxxx xxxxx, xx xx xxxxxxx xxxxxxxx xxxxxx. xXX, xxx xxxxxxxx, xxxx Xxxxxxxxx-X. Xxxxxxx xxx xxx xxxxxxxxxx xx xxx X++; xxxxxxx, xxxx xxxxxxxxxx xxx xxxx xxxxxx xx x xxxx Xxxx xxxxxxxxxxxxxx. Xxxx xxxx xx xxxx, xxxxx xxxxxx xxxxxx xxxxx xx xxxxxx xx xxx xxxxxxx xxxxxxxx, xxxxxxxxx xxx xxxxx xx xxx XxxxXX XX XXXx xx xxx xxxxxx.
+これらのトピックでは、Khronos OpenGL ES 2.0 仕様とプラットフォームにとらわれない C を使います。iOS と Android はいずれも同じ仕様を使い、これらのプラットフォーム向けに作成された OpenGL ES 2.0 コードは、ここで解説するコード スニペットに非常によく似ています。ただし、これらは通常、オブジェクト指向の API として公開されます。 また、各プラットフォームの複雑さと言語の違いが原因で、特にメソッドのパラメーターの型や、一般的な言語構文に若干の相違がある場合があります。 たとえば iOS は、Objective-C を使います。 Android は C++ を使うことができますが、開発者は純粋な Java の実装に依存している場合があります。 この点を考慮しても、これらのトピックは全体的な概念としては有益であり、OpenGL ES API の構造と用途は異なりません。
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

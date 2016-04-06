@@ -1,84 +1,88 @@
 ---
-xxxxx: .XXX Xxxxxxxxx xxxxxxxx xx Xxxxxxx Xxxxxxx xxxxx
-xxxxxxxxxxx: Xxx xxxxxxxxx xxxxx xxxxx xxx xxxxxxxx xxxx xxx .XXX Xxxxxxxxx xxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxx xxx .XXX Xxxxxxxxx xxxxx.
-xx.xxxxxxx: YYYYXYYY-YYYX-YXYY-YYYY-YYYYYXYYYYYX
+title: .NET Framework mappings of Windows Runtime types
+description: The following table lists the mappings that the .NET Framework makes between Universal Windows Platform (UWP) types and .NET Framework types.
+ms.assetid: 5317D771-808D-4B97-8063-63492B23292F
 ---
 
-# .XXX Xxxxxxxxx xxxxxxxx xx Xxxxxxx Xxxxxxx xxxxx
+# .NET Framework mappings of Windows Runtime types
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[Xxxx xxxxxxxxxxx xxxxxxx xx xxx-xxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxx xx'x xxxxxxxxxxxx xxxxxxxx. Xxxxxxxxx xxxxx xx xxxxxxxxxx, xxxxxxx xx xxxxxxx, xxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxx.\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-Xxx xxxxxxxxx xxxxx xxxxx xxx xxxxxxxx xxxx xxx .XXX Xxxxxxxxx xxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxx xxx .XXX Xxxxxxxxx xxxxx. Xx x Xxxxxxxxx Xxxxxxx xxx xxxxxxx xxxx xxxxxxx xxxx, XxxxxxxXxxxx xxxxx xxx .XXX Xxxxxxxxx xxxx xxxxxxx xx xxx XXX xxxx. Xxx xxxxxxx, xx x Xxxxxxx Xxxxxxx xxxxxx xxxxx x xxxxxxxxx xx xxxx XXxxxxx&xx;xxxxxx&xx;, XxxxxxxXxxxx xxxxx x xxxxxxxxx xx xxxx XXxxx&xx;xxxxxx&xx;. Xxxxxxxxx, xx x Xxxxxxx Xxxxxxx Xxxxxxxxx xxxxxxx xxxx xxxxxxx xxxx, xxx xxx xxx .XXX Xxxxxxxxx xxxx xx xxxxxx xxxxxxxxxx. Xxxx xxx [Xxxxxxx Xxxxxxx Xxxxxxxx Xxxxxx Xxxx (Xxxxxxxx.xxx)](https://msdn.microsoft.com/library/hh925576.aspx) xxxxxxxxx xxxx Xxxxxxx Xxxxxxx Xxxxxxxxx, xxx .XXX Xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxxxxxx XXX xxxx.
+The following table lists the mappings that the .NET Framework makes between Universal Windows Platform (UWP) types and .NET Framework types. In a Universal Windows app written with managed code, IntelliSense shows the .NET Framework type instead of the UWP type. For example, if a Windows Runtime method takes a parameter of type IVector&lt;string&gt;, IntelliSense shows a parameter of type IList&lt;string&gt;. Similarly, in a Windows Runtime Component written with managed code, you use the .NET Framework type in member signatures. When the [Windows Runtime Metadata Export Tool (Winmdexp.exe)](https://msdn.microsoft.com/library/hh925576.aspx) generates your Windows Runtime Component, the .NET Framework type becomes the corresponding UWP type.
 
-## Xxxxxxx Xxxxxx
+## Mapping Tables
 
 
-Xxxx xx xxx xxxxx xxxx xxxx xxx xxxx xxxxxxxxx xxxx xxx xxxx xxxx xx xxxx xxx XXX xxx xxx .XXX Xxxxxxxxx xxx xxxxxxxxxx (xx xxxxx xxxxxxxxxx xxxx xxxxxxxxxx, xxxx xx xxxxxxxxxxxx). Xx xxx XXX, xxxxxxxxxx xxxx xx xxxxxxx xxxxx xxxx xxxxxx, xxx xxxxxxx xxxxxx xxxxx, xxxxx xxx .XXX Xxxxxxxxx xxxxx. Xxx .XXX Xxxxxxxxx xxxxxxxx xx xxxxx xxxxxxxxxx xxxx xxxxxxxxxx xxx xxxxxxx xxxx xxxxxxx xxx xxxxxxxxxxxxx xx xxx xxxxxx xxxxxx xxxxx.
+Most of the types that have the same namespace name and type name in both the UWP and the .NET Framework are structures (or types associated with structures, such as enumerations). In the UWP, structures have no members other than fields, and require helper types, which the .NET Framework hides. The .NET Framework versions of these structures have properties and methods that provide the functionality of the hidden helper types.
 
-Xxx xxxx xxxxxxxxxxx xxxxx xxx xxx xxx .XXX Xxxxxxxxx xxxx Xxxxxxx xxxxxxxx xx xxxxxxxx xxxxxxxxxxx xxxx xxx Xxxxxxx Xxxxxxx, xxxxxxxx xxx [XXX xxx xxx Xxxxxxx Xxxxxxx](http://download.microsoft.com/download/2/3/E/23E1E9BE-41AA-4716-A7B3-82040271394C/CLR%20and%20the%20Windows%20Runtime.docx) xxxxx xxxxx xxxx xxx Xxxxxxx Xxx Xxxxxx.
+For more information about the way the .NET Framework uses Windows metadata to simplify programming with the Windows Runtime, download the [CLR and the Windows Runtime](http://download.microsoft.com/download/2/3/E/23E1E9BE-41AA-4716-A7B3-82040271394C/CLR%20and%20the%20Windows%20Runtime.docx) white paper from the Windows Dev Center.
 
-Xxxxx Y: XXX xxxxx xxxx xxx xx .XXX Xxxxxxxxx xxxxx xxxx x xxxxxxxxx xxxx xxx/xx xxxxxxxxx.
+Table 1: UWP types that map to .NET Framework types with a different name and/or namespace.
 
-| XXX xxxx/xxxxxxxxx                                            | .XXX Xxxxxxxxx xxxx/xxxxxxxxx                                          | .XXX Xxxxxxxxx xxxxxxxx                           |
+| UWP type/namespace                                            | .NET Framework type/namespace                                          | .NET Framework assembly                           |
 |---------------------------------------------------------------|------------------------------------------------------------------------|---------------------------------------------------|
-| XxxxxxxxxXxxxxXxxxxxxxx (Xxxxxxx.Xxxxxxxxxx.Xxxxxxxx)         | XxxxxxxxxXxxxxXxxxxxxxx (Xxxxxx)                                       | Xxxxxx.Xxxxxxx.xxx                                |
-| XxxxxxxxxXxxxxxx (Xxxxxxx.Xxxxxxxxxx.Xxxxxxxx)                | XxxxxxxxxXxxxxxx (Xxxxxx)                                              | Xxxxxx.Xxxxxxx.xxx                                |
-| XxxxXxxx (Xxxxxxx.Xxxxxxxxxx)                                 | XxxxXxxxXxxxxx (Xxxxxx)                                                | Xxxxxx.Xxxxxxx.xxx                                |
-| XxxxxXxxxxxx&xx;X&xx; (Xxxxxxx.Xxxxxxxxxx)                    | XxxxxXxxxxxx&xx;X&xx; (Xxxxxx)                                         | Xxxxxx.Xxxxxxx.xxx                                |
-| XxxxxXxxxxxxxxxxxXxxxx (Xxxxxxx.Xxxxxxxxxx)                   | XxxxxXxxxxxxxxxxxXxxxx (Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxxxxxxXxxxxxx) | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxxxxxxXxxxxxx.xxx |
-| XXxxxxx (Xxxxxxx.Xxxxxxxxxx)                                  | Xxxxxxxxx (Xxxxxx)                                                     | Xxxxxx.Xxxxxxx.xxx                                |
-| XXxxxxxxxx&xx;X&xx; (Xxxxxxx.Xxxxxxxxxx)                      | Xxxxxxxx&xx;X&xx; (Xxxxxx)                                             | Xxxxxx.Xxxxxxx.xxx                                |
-| XxxxXxxx (Xxxxxxx.Xxxxxxxxxx)                                 | XxxxXxxx (Xxxxxx)                                                      | Xxxxxx.Xxxxxxx.xxx                                |
-| Xxx (Xxxxxxx.Xxxxxxxxxx)                                      | Xxx (Xxxxxx)                                                           | Xxxxxx.Xxxxxxx.xxx                                |
-| XXxxxxxxx (Xxxxxxx.Xxxxxxxxxx)                                | XXxxxxxxxxx (Xxxxxx)                                                   | Xxxxxx.Xxxxxxx.xxx                                |
-| XXxxxxxxx&xx;X&xx; (Xxxxxxx.Xxxxxxxxxx.Xxxxxxxxxxx)           | XXxxxxxxxxx&xx;X&xx; (Xxxxxx.Xxxxxxxxxxx.Xxxxxxx)                      | Xxxxxx.Xxxxxxx.xxx                                |
-| XXxxxxx&xx;X&xx; (Xxxxxxx.Xxxxxxxxxx.Xxxxxxxxxxx)             | XXxxx&xx;X&xx; (Xxxxxx.Xxxxxxxxxxx.Xxxxxxx)                            | Xxxxxx.Xxxxxxx.xxx                                |
-| XXxxxxxXxxx&xx;X&xx; (Xxxxxxx.Xxxxxxxxxx.Xxxxxxxxxxx)         | XXxxxXxxxXxxx&xx;X&xx; (Xxxxxx.Xxxxxxxxxxx.Xxxxxxx)                    | Xxxxxx.Xxxxxxx.xxx                                |
-| XXxx&xx;X,X&xx; (Xxxxxxx.Xxxxxxxxxx.Xxxxxxxxxxx)              | XXxxxxxxxxx&xx;XXxx,XXxxxx&xx; (Xxxxxx.Xxxxxxxxxxx.Xxxxxxx)            | Xxxxxx.Xxxxxxx.xxx                                |
-| XXxxXxxx&xx;X,X&xx; (Xxxxxxx.Xxxxxxxxxx.Xxxxxxxxxxx)          | XXxxxXxxxXxxxxxxxxx&xx;XXxx,XXxxxx&xx; (Xxxxxx.Xxxxxxxxxxx.Xxxxxxx)    | Xxxxxx.Xxxxxxx.xxx                                |
-| XXxxXxxxxXxxx&xx;X,X&xx; (Xxxxxxx.Xxxxxxxxxx.Xxxxxxxxxxx)     | XxxXxxxxXxxx&xx;XXxx,XXxxxx&xx; (Xxxxxx.Xxxxxxxxxxx.Xxxxxxx)           | Xxxxxx.Xxxxxxx.xxx                                |
-| XXxxxxxxxXxxxxxxx (Xxxxxxx.XX.Xxxx.Xxxxxxx)                   | XXxxxxxxxxx (Xxxxxx.Xxxxxxxxxxx)                                       | Xxxxxx.Xxxxxxx.xxx                                |
-| XXxxxxxxxXxxxxx (Xxxxxxx.XX.Xxxx.Xxxxxxx)                     | XXxxx (Xxxxxx.Xxxxxxxxxxx)                                             | Xxxxxx.Xxxxxxx.xxx                                |
-| XXxxxxxXxxxxxxxxxXxxxxxx (Xxxxxxx.XX.Xxxx.Xxxxxxx)            | XXxxxxxXxxxxxxxxxXxxxxxx (Xxxxxx.Xxxxxxxxxxx.Xxxxxxxxxxx)              | Xxxxxx.XxxxxxXxxxx.xxx                            |
-| XxxxxxXxxxxxxxxxXxxxxxxXxxxxXxxxxxx (Xxxxxxx.XX.Xxxx.Xxxxxxx) | XxxxxxXxxxxxxxxxXxxxxxxXxxxxXxxxxxx (Xxxxxx.Xxxxxxxxxxx.Xxxxxxxxxxx)   | Xxxxxx.XxxxxxXxxxx.xxx                            |
-| XxxxxxXxxxxxxxxxXxxxxxxXxxxxXxxx (Xxxxxxx.XX.Xxxx.Xxxxxxx)    | XxxxxxXxxxxxxxxxXxxxxxxXxxxxXxxx (Xxxxxx.Xxxxxxxxxxx.Xxxxxxxxxxx)      | Xxxxxx.XxxxxxXxxxx.xxx                            |
-| XxxxxxXxxxxxxxxxXxxxxxxXxxxxx (Xxxxxxx.XX.Xxxx.Xxxxxxx)       | XxxxxxXxxxxxxxxxXxxxxxxXxxxxx (Xxxxxx.Xxxxxxxxxxx.Xxxxxxxxxxx)         | Xxxxxx.XxxxxxXxxxx.xxx                            |
-| XXxxxxxXxxxxxxxXxxxxxx (Xxxxxxx.XX.Xxxx.Xxxx)                 | XXxxxxxXxxxxxxxXxxxxxx (Xxxxxx.XxxxxxxxxXxxxx)                         | Xxxxxx.XxxxxxXxxxx.xxx                            |
-| XxxxxxxxXxxxxxxXxxxxXxxxxxx (Xxxxxxx.XX.Xxxx.Xxxx)            | XxxxxxxxXxxxxxxXxxxxXxxxxxx (Xxxxxx.XxxxxxxxxXxxxx)                    | Xxxxxx.XxxxxxXxxxx.xxx                            |
-| XxxxxxxxXxxxxxxXxxxxXxxx (Xxxxxxx.XX.Xxxx.Xxxx)               | XxxxxxxxXxxxxxxXxxxxXxxx (Xxxxxx.XxxxxxxxxXxxxx)                       | Xxxxxx.XxxxxxXxxxx.xxx                            |
-| XxxxXxxx (Xxxxxxx.XX.Xxxx.Xxxxxxx)                            | Xxxx (Xxxxxx)                                                          | Xxxxxx.Xxxxxxx.xxx                                |
+| AttributeUsageAttribute (Windows.Foundation.Metadata)         | AttributeUsageAttribute (System)                                       | System.Runtime.dll                                |
+| AttributeTargets (Windows.Foundation.Metadata)                | AttributeTargets (System)                                              | System.Runtime.dll                                |
+| DateTime (Windows.Foundation)                                 | DateTimeOffset (System)                                                | System.Runtime.dll                                |
+| EventHandler&lt;T&gt; (Windows.Foundation)                    | EventHandler&lt;T&gt; (System)                                         | System.Runtime.dll                                |
+| EventRegistrationToken (Windows.Foundation)                   | EventRegistrationToken (System.Runtime.InteropServices.WindowsRuntime) | System.Runtime.InteropServices.WindowsRuntime.dll |
+| HResult (Windows.Foundation)                                  | Exception (System)                                                     | System.Runtime.dll                                |
+| IReference&lt;T&gt; (Windows.Foundation)                      | Nullable&lt;T&gt; (System)                                             | System.Runtime.dll                                |
+| TimeSpan (Windows.Foundation)                                 | TimeSpan (System)                                                      | System.Runtime.dll                                |
+| Uri (Windows.Foundation)                                      | Uri (System)                                                           | System.Runtime.dll                                |
+| IClosable (Windows.Foundation)                                | IDisposable (System)                                                   | System.Runtime.dll                                |
+| IIterable&lt;T&gt; (Windows.Foundation.Collections)           | IEnumerable&lt;T&gt; (System.Collections.Generic)                      | System.Runtime.dll                                |
+| IVector&lt;T&gt; (Windows.Foundation.Collections)             | IList&lt;T&gt; (System.Collections.Generic)                            | System.Runtime.dll                                |
+| IVectorView&lt;T&gt; (Windows.Foundation.Collections)         | IReadOnlyList&lt;T&gt; (System.Collections.Generic)                    | System.Runtime.dll                                |
+| IMap&lt;K,V&gt; (Windows.Foundation.Collections)              | IDictionary&lt;TKey,TValue&gt; (System.Collections.Generic)            | System.Runtime.dll                                |
+| IMapView&lt;K,V&gt; (Windows.Foundation.Collections)          | IReadOnlyDictionary&lt;TKey,TValue&gt; (System.Collections.Generic)    | System.Runtime.dll                                |
+| IKeyValuePair&lt;K,V&gt; (Windows.Foundation.Collections)     | KeyValuePair&lt;TKey,TValue&gt; (System.Collections.Generic)           | System.Runtime.dll                                |
+| IBindableIterable (Windows.UI.Xaml.Interop)                   | IEnumerable (System.Collections)                                       | System.Runtime.dll                                |
+| IBindableVector (Windows.UI.Xaml.Interop)                     | IList (System.Collections)                                             | System.Runtime.dll                                |
+| INotifyCollectionChanged (Windows.UI.Xaml.Interop)            | INotifyCollectionChanged (System.Collections.Specialized)              | System.ObjectModel.dll                            |
+| NotifyCollectionChangedEventHandler (Windows.UI.Xaml.Interop) | NotifyCollectionChangedEventHandler (System.Collections.Specialized)   | System.ObjectModel.dll                            |
+| NotifyCollectionChangedEventArgs (Windows.UI.Xaml.Interop)    | NotifyCollectionChangedEventArgs (System.Collections.Specialized)      | System.ObjectModel.dll                            |
+| NotifyCollectionChangedAction (Windows.UI.Xaml.Interop)       | NotifyCollectionChangedAction (System.Collections.Specialized)         | System.ObjectModel.dll                            |
+| INotifyPropertyChanged (Windows.UI.Xaml.Data)                 | INotifyPropertyChanged (System.ComponentModel)                         | System.ObjectModel.dll                            |
+| PropertyChangedEventHandler (Windows.UI.Xaml.Data)            | PropertyChangedEventHandler (System.ComponentModel)                    | System.ObjectModel.dll                            |
+| PropertyChangedEventArgs (Windows.UI.Xaml.Data)               | PropertyChangedEventArgs (System.ComponentModel)                       | System.ObjectModel.dll                            |
+| TypeName (Windows.UI.Xaml.Interop)                            | Type (System)                                                          | System.Runtime.dll                                |
 
  
 
-Xxxxx Y: XXX xxxxx xxxx xxx xx .XXX Xxxxxxxxx xxxxx xxxx xxx xxxx xxxx xxx xxxxxxxxx.
+Table 2: UWP types that map to .NET Framework types with the same name and namespace.
 
-| Xxxxxxxxx                           | Xxxx               | .XXX Xxxxxxxxx xxxxxxxx                   |
+| Namespace                           | Type               | .NET Framework assembly                   |
 |-------------------------------------|--------------------|-------------------------------------------|
-| Xxxxxxx.XX                          | Xxxxx              | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.xxx         |
-| Xxxxxxx.Xxxxxxxxxx                  | Xxxxx              | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.xxx         |
-| Xxxxxxx.Xxxxxxxxxx                  | Xxxx               | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.xxx         |
-| Xxxxxxx.Xxxxxxxxxx                  | Xxxx               | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.xxx         |
-| Xxxxxxx.XX.Xxxx.Xxxxx               | XXxxxxxx           | Xxxxxx.XxxxxxXxxxx.xxx                    |
-| Xxxxxxx.XX.Xxxx                     | XxxxxxXxxxxx       | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.XX.Xxxx.xxx |
-| Xxxxxxx.XX.Xxxx                     | Xxxxxxxx           | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.XX.Xxxx.xxx |
-| Xxxxxxx.XX.Xxxx                     | XxxxxxxxXxxx       | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.XX.Xxxx.xxx |
-| Xxxxxxx.XX.Xxxx                     | XxxxXxxxxx         | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.XX.Xxxx.xxx |
-| Xxxxxxx.XX.Xxxx                     | XxxxXxxxXxxx       | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.XX.Xxxx.xxx |
-| Xxxxxxx.XX.Xxxx                     | Xxxxxxxxx          | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.XX.Xxxx.xxx |
-| Xxxxxxx.XX.Xxxx.Xxxxxxxx.Xxxxxxxxxx | XxxxxxxxxXxxxxxxx  | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.XX.Xxxx.xxx |
-| Xxxxxxx.XX.Xxxx.Xxxxx               | Xxxxxx             | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.XX.Xxxx.xxx |
-| Xxxxxxx.XX.Xxxx.Xxxxx.Xxxxxxxxx     | XxxXxxx            | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.XX.Xxxx.xxx |
-| Xxxxxxx.XX.Xxxx.Xxxxx.Xxxxxxxxx     | XxxxxxXxxxxxxx     | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.XX.Xxxx.xxx |
-| Xxxxxxx.XX.Xxxx.Xxxxx.Xxxxxxxxx     | XxxxxxXxxxxxxxXxxx | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.XX.Xxxx.xxx |
-| Xxxxxxx.XX.Xxxx.Xxxxx.XxxxxYX       | XxxxxxYX           | Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxx.XX.Xxxx.xxx |
+| Windows.UI                          | Color              | System.Runtime.WindowsRuntime.dll         |
+| Windows.Foundation                  | Point              | System.Runtime.WindowsRuntime.dll         |
+| Windows.Foundation                  | Rect               | System.Runtime.WindowsRuntime.dll         |
+| Windows.Foundation                  | Size               | System.Runtime.WindowsRuntime.dll         |
+| Windows.UI.Xaml.Input               | ICommand           | System.ObjectModel.dll                    |
+| Windows.UI.Xaml                     | CornerRadius       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml                     | Duration           | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml                     | DurationType       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml                     | GridLength         | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml                     | GridUnitType       | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml                     | Thickness          | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml.Controls.Primitives | GeneratorPosition  | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml.Media               | Matrix             | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml.Media.Animation     | KeyTime            | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml.Media.Animation     | RepeatBehavior     | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml.Media.Animation     | RepeatBehaviorType | System.Runtime.WindowsRuntime.UI.Xaml.dll |
+| Windows.UI.Xaml.Media.Media3D       | Matrix3D           | System.Runtime.WindowsRuntime.UI.Xaml.dll |
 
  
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X\# xxx Xxxxxx Xxxxx](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

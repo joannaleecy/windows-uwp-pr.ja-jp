@@ -1,41 +1,41 @@
 ---
-xx.xxxxxxx: YYXXYYYY-YYXX-YYXX-XYYX-YYXYYYYXYXYY
-xxxxx: Xxxxxxxx xxxx XXXX xxxxxx
-xxxxxxxxxxx: Xxxxxx xxx xx xx xxxxxxxxx xxxx xx x XXXX xxx&\#YYYY;xxxx xx XXX xxxxx xxx xxxxxx xxxxxxxx. Xxxx xxx xxxx xxxxxx xxxxx xxx xxx xxxx xx xxxxxxx xxx xxxxxx xxxxxxxxxxx xx xxxx XXXX xxx.
+ms.assetid: 79CF3927-25DE-43DD-B41A-87E6768D5C35
+title: Optimize your XAML layout
+description: Layout can be an expensive part of a XAML app&\#8212;both in CPU usage and memory overhead. Here are some simple steps you can take to improve the layout performance of your XAML app.
 ---
-# Xxxxxxxx xxxx XXXX xxxxxx
+# Optimize your XAML layout
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227511)
+-   [**Panel**](https://msdn.microsoft.com/library/windows/apps/BR227511)
 
-Xxxxxx xx xxx xxxxxxx xx xxxxxxxx xxx xxxxxx xxxxxxxxx xxx xxxx XX. Xxx xxxxxxx xxxxxxxxx xxx xxxxxxxxxx xxxxxx xx XXXX xx xxxxxxx xxxxxx, xxxxx xxx xxxxxxxxx xxxxxxx xxxx xxxxxx xxx xx xxxxxxxx xxx xxxxxxx xxx XX xxxxxxxx xxxxxx xxxx. Xxxxxx xxx xx xx xxxxxxxxx xxxx xx x XXXX xxx—xxxx xx XXX xxxxx xxx xxxxxx xxxxxxxx. Xxxx xxx xxxx xxxxxx xxxxx xxx xxx xxxx xx xxxxxxx xxx xxxxxx xxxxxxxxxxx xx xxxx XXXX xxx.
+Layout is the process of defining the visual structure for your UI. The primary mechanism for describing layout in XAML is through panels, which are container objects that enable you to position and arrange the UI elements within them. Layout can be an expensive part of a XAML app—both in CPU usage and memory overhead. Here are some simple steps you can take to improve the layout performance of your XAML app.
 
-## Xxxxxx xxxxxx xxxxxxxxx
+## Reduce layout structure
 
-Xxx xxxxxxx xxxx xx xxxxxx xxxxxxxxxxx xxxxx xxxx xxxxxxxxxxx xxx xxxxxxxxxxxx xxxxxxxxx xx xxx xxxx xx XX xxxxxxxx. Xxxxxx xxxxx xx xxx xxxxxx xxxx, xxx xxxx xxx xxxxxxxxxx xxxxxxxx, xxx *xxxxx xxxxxxxxx xxxxxxxx* xxxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209265) xx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371). Xxxxxxxxxxx xxx xxxx xx xxxxxxxx xxx xxxxxx xx xxx-xxxxx-xxxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxxx x xxxxxxxxxxx xxxxxxxxxxx xxxxxxxx.
+The biggest gain in layout performance comes from simplifying the hierarchical structure of the tree of UI elements. Panels exist in the visual tree, but they are structural elements, not *pixel producing elements* like a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) or a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371). Simplifying the tree by reducing the number of non-pixel-producing elements typically provides a significant performance increase.
 
-Xxxx XXx xxx xxxxxxxxxxx xx xxxxxxx xxxxxx xxxxx xxxxxxx xx xxxx, xxxxxxx xxxxx xx xxxxxx xxx xxxxxxxx. Xx xx xxxxxxxxxx xx xxxx xxxxxx, xxx xx xxxx xxxxx xxx xxxx XX xxx xx xxxxxxxx xxxx x xxxx xxxxxxx xxxxxx xxxxx. Xxxxx x xxxxxx xxxxx xxxxxxxx xxxxxx xxxxxxxxxxx.
+Many UIs are implemented by nesting panels which results in deep, complex trees of panels and elements. It is convenient to nest panels, but in many cases the same UI can be achieved with a more complex single panel. Using a single panel provides better performance.
 
-### Xxxx xx xxxxxx xxxxxx xxxxxxxxx
+### When to reduce layout structure
 
-Xxxxxxxx xxxxxx xxxxxxxxx xx x xxxxxxx xxx—xxx xxxxxxx, xxxxxxxx xxx xxxxxx xxxxx xxxx xxxx xxx-xxxxx xxxx—xxxx xxx xxxx x xxxxxxxxxx xxxxxx.
+Reducing layout structure in a trivial way—for example, reducing one nested panel from your top-level page—does not have a noticeable effect.
 
-Xxx xxxxxxx xxxxxxxxxxx xxxxx xxxx xxxx xxxxxxxx xxxxxx xxxxxxxxx xxxx'x xxxxxxxx xx xxx XX, xxxx xx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) xx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242705). Xxxxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242803) xxxxxxxx xxx x [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242348), xxxxx xxxxxxx x xxxxxxx xx XX xxxxxxxx xxxx xx xxxxxxxxxxxx xxxx xxxxx. Xxxx xxx xxxx xxxxxxx xx xxxxx xxxxxxxxxx xxxx xxxxx xx xxxx xxx, xxx xxxxxxxxxxxx xx xxx xxxxxxxxxxx xx xxxx xxxxxxx xxx x xxxxxxxxxxxxxx xxxxxx xx xxx xxxxxxx xxxxxxxxxxx xx xxxx xxx.
+The largest performance gains come from reducing layout structure that's repeated in the UI, like in a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) or [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705). These [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) elements use a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242348), which defines a subtree of UI elements that is instantiated many times. When the same subtree is being duplicated many times in your app, any improvements to the performance of that subtree has a multiplicative effect on the overall performance of your app.
 
-### Xxxxxxxx
+### Examples
 
-Xxxxxxxx xxx xxxxxxxxx XX.
+Consider the following UI.
 
-![Xxxx xxxxxx xxxxxxx](images/layout-perf-ex1.png)
+![Form layout example](images/layout-perf-ex1.png)
 
-Xxxxx xxxxxxxx xxxxx Y xxxx xx xxxxxxxxxxxx xxx xxxx XX. Xxxx xxxxxxxxxxxxxx xxxxxx xxxxxxx xx xxxxxx xxxxxxxxx xxxxxx xx xxx xxxxxx, xxx xxxxxxx xxxxxxxxxxxxx xx xxx xxxxxxxxxxxxxx xxxxxxx.
+These examples shows 3 ways of implementing the same UI. Each implementation choice results in nearly identical pixels on the screen, but differs substantially in the implementation details.
 
-XxxxxxY: Xxxxxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209635) xxxxxxxx
+Option1: Nested [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) elements
 
-Xxxxxxxx xxxx xx xxx xxxxxxxx xxxxx, xx xxxx Y xxxxx xxxxxxxx xxx xxxxxxx xx xxxxxxxxxxx xxxxxxxx.
+Although this is the simplest model, it uses 5 panel elements and results in significant overhead.
 
 ```xml
   <StackPanel>
@@ -61,9 +61,9 @@ Xxxxxxxx xxxx xx xxx xxxxxxxx xxxxx, xx xxxx Y xxxxx xxxxxxxx xxx xxxxxxx xx xxx
 </StackPanel>
 ```
 
-Xxxxxx Y: X xxxxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704)
+Option 2: A single [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704)
 
-Xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704) xxxx xxxx xxxxxxxxxx, xxx xxxx xxxx x xxxxxx xxxxx xxxxxxx.
+The [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) adds some complexity, but uses only a single panel element.
 
 ```
   <Grid>
@@ -94,9 +94,9 @@ Xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704) xxxx xx
 </Grid>
 ```
 
-Xxxxxx Y: X xxxxxx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn879546):
+Option 3: A single [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546):
 
-Xxxx xxxxxx xxxxx xx xxxx x xxx xxxx xxxxxxx xxxx xxxxx xxxxxx xxxxxx, xxx xxx xx xxxxxx xx xxxxxxxxxx xxx xxxxxxxx xxxx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704).
+This single panel is also a bit more complex than using nested panels, but may be easier to understand and maintain than a [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704).
 
 ```xml
 <RelativePanel>
@@ -119,15 +119,15 @@ Xxxx xxxxxx xxxxx xx xxxx x xxx xxxx xxxxxxx xxxx xxxxx xxxxxx xxxxxx, xxx xxx x
 </RelativePanel>
 ```
 
-Xx xxxxx xxxxxxxx xxxx, xxxxx xxx xxxx xxxx xx xxxxxxxxx xxx xxxx XX. Xxx xxxxxx xxxxxx xx xxxxxxxxx xxxxxxxxxxx xxx xxx xxxxxxxxx, xxxxxxxxx xxxxxxxxxxx, xxxxxxxxxxx, xxx xxxxxxxxxxxxxxx.
+As these examples show, there are many ways of achieving the same UI. You should choose by carefully considering all the tradeoffs, including performance, readability, and maintainability.
 
-## Xxx xxxxxx-xxxx xxxxx xxx xxxxxxxxxxx XX
+## Use single-cell grids for overlapping UI
 
-X xxxxxx XX xxxxxxxxxxx xx xx xxxx x xxxxxx xxxxx xxxxxxxx xxxxxxx xxxx xxxxx. Xxxxxxxxx xxxxxxx, xxxxxxx, xxxxxxxxxx, xxx xxxxxxxxxx xxx xxxx xx xxxxxxxx xxx xxxxxxxx xxxx xxx. Xxx XXXX [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704) xxxxxxx xx xxxxxxxxx xx xxxxxxx xxxxxx xxxxxxxxxxx xxx xxxxxxxx xxxx xxxxxxx.
+A common UI requirement is to have a layout where elements overlap each other. Typically padding, margins, alignments, and transforms are used to position the elements this way. The XAML [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) control is optimized to improve layout performance for elements that overlap.
 
-**Xxxxxxxxx**  Xx xxx xxx xxxxxxxxxxx, xxx x xxxxxx-xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704). Xx xxx xxxxxx [**XxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704-rowdefinitions) xx [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704-columndefinitions).
+**Important**  To see the improvement, use a single-cell [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704). Do not define [**RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-rowdefinitions) or [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/BR242704-columndefinitions).
 
-### Xxxxxxxx
+### Examples
 
 ```xml
 <Grid>
@@ -138,7 +138,7 @@ X xxxxxx XX xxxxxxxxxxx xx xx xxxx x xxxxxx xxxxx xxxxxxxx xxxxxxx xxxx xxxxx. X
 </Grid>
 ```
 
-![Xxxx xxxxxxxx xx x xxxxxx](images/layout-perf-ex2.png)
+![Text overlaid on a circle](images/layout-perf-ex2.png)
 
 ```xml
 <Grid Width="200" BorderBrush="Black" BorderThickness="1">
@@ -147,16 +147,15 @@ X xxxxxx XX xxxxxxxxxxx xx xx xxxx x xxxxxx xxxxx xxxxxxxx xxxxxxx xxxx xxxxx. X
 </Grid>
 ```
 
-![Xxx xxxx xxxxxx xx x xxxx](images/layout-perf-ex3.png)
+![Two text blocks in a grid](images/layout-perf-ex3.png)
 
-## Xxx x xxxxx'x xxxxx-xx xxxxxx xxxxxxxxxx
+## Use a panel's built-in border properties
 
-[
-            **Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209635), [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn879546), xxx [**XxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209378) xxxxxxxx xxxx xxxxx-xx xxxxxx xxxxxxxxxx xxxx xxx xxx xxxx x xxxxxx xxxxxx xxxx xxxxxxx xxxxxx xx xxxxxxxxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209250) xxxxxxx xx xxxx XXXX. Xxx xxx xxxxxxxxxx xxxx xxxxxxx xxx xxxxx-xx xxxxxx xxx: **XxxxxxXxxxx**, **XxxxxxXxxxxxxxx**, **XxxxxxXxxxxx**, xxx **Xxxxxxx**. Xxxx xx xxxxx xx x [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242362), xx xxx xxx xxx xxxx xxxx xxxxxxxx xxx xxxxxxxxxx. Xxxx’xx xxxxxxxx xx xx x xxxx xxxxxxxxxxx xxx x xxxxxxxx **Xxxxxx** xxxxxxx.
+[**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), and [**ContentPresenter**](https://msdn.microsoft.com/library/windows/apps/BR209378) controls have built-in border properties that let you draw a border around them without adding an additional [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) element to your XAML. The new properties that support the built-in border are: **BorderBrush**, **BorderThickness**, **CornerRadius**, and **Padding**. Each of these is a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362), so you can use them with bindings and animations. They’re designed to be a full replacement for a separate **Border** element.
 
-Xx xxxx XX xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209250) xxxxxxxx xxxxxx xxxxx xxxxxx, xxx xxx xxxxx-xx xxxxxx xxxxxxx, xxxxx xxxxx xx xxxxx xxxxxxx xx xxx xxxxxx xxxxxxxxx xx xxxx xxx. Xx xxxxxxxxx xxxxxxxxxx, xxxx xxx xx x xxxxxxxxxxx xxxxxxx, xxxxxxxxxx xx xxx xxxx xx xxxxxxxx XX.
+If your UI has [**Border**](https://msdn.microsoft.com/library/windows/apps/BR209250) elements around these panels, use the built-in border instead, which saves an extra element in the layout structure of your app. As mentioned previously, this can be a significant savings, especially in the case of repeated UI.
 
-### Xxxxxxxx
+### Examples
 
 ```xml
 <RelativePanel BorderBrush="Red" BorderThickness="2" CornerRadius="10" Padding="12">
@@ -165,19 +164,22 @@ Xx xxxx XX xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR20
 </RelativePanel>
 ```
 
-## Xxx **XxxxXxxxxxx** xxxxxx xx xxxxxxx xx xxxxxx xxxxxxx
+## Use **SizeChanged** events to respond to layout changes
 
-Xxx [**XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208706) xxxxx xxxxxxx xxx xxxxxxx xxxxxx xxx xxxxxxxxxx xx xxxxxx xxxxxxx: [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) xxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged). Xxx xxxxx xx xxxxx xxx xx xxxxx xxxxxx xx xxxxxxx xxxxxxxxxxxx xxxx xx xxxxxxx xx xxxxxxx xxxxxx xxxxxx. Xxx xxxxxxxxx xx xxx xxx xxxxxx xxx xxxxxxxxx, xxx xxxxx xxx xxxxxxxxx xxxxxxxxxxx xxxxxxxxxxxxxx xx xxxxxxxx xxxxxxx xxxx.
+The [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) class exposes two similar events for responding to layout changes: [**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) and [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged). You might be using one of these events to receive notification when an element is resized during layout. The semantics of the two events are different, and there are important performance considerations in choosing between them.
 
-Xxx xxxx xxxxxxxxxxx, [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged) xx xxxxxx xxxxxx xxx xxxxx xxxxxx. **XxxxXxxxxxx** xxx xxxxxxxxx xxxxxxxxx. Xx xx xxxxxx xxxxxx xxxxxx xxxx xxx xxxx xx xxx [**XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208706) xxx xxxx xxxxxxx.
+For good performance, [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/BR208706-sizechanged) is almost always the right choice. **SizeChanged** has intuitive semantics. It is raised during layout when the size of the [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) has been updated.
 
-[
-            **XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) xx xxxx xxxxxx xxxxxx xxxxxx, xxx xx xxx xxxxxx xxxxxxxxx—xx xx xxxxxx xx xxxxx xxxxxxx xxxxxxxx xxx xxxxxxx xx xxxxxxx. Xx xx xxxxxxx xx xxxx xx xxxxx xxxxxxxxxx xx xxx xxxxx xxxxxxx, xx xxxxx xxxx xxx xxxx xx xxx xxxx xxxxx xxxx xxxxxx. Xxx **XxxxxxXxxxxxx** xxxx xx xxx xxxx xx xxxx xxxx xx xxxxxxx xx xxxxxxxxxxxx xxxxxxx xxxxxxxx xxxx (xxxxx xx xxxxxxxx).
+[**LayoutUpdated**](https://msdn.microsoft.com/library/windows/apps/BR208706-layoutupdated) is also raised during layout, but it has global semantics—it is raised on every element whenever any element is updated. It is typical to only do local processing in the event handler, in which case the code is run more often than needed. Use **LayoutUpdated** only if you need to know when an element is repositioned without changing size (which is uncommon).
 
-## Xxxxxxxx xxxxxxx xxxxxx
+## Choosing between panels
 
-Xxxxxxxxxxx xx xxxxxxxxx xxx x xxxxxxxxxxxxx xxxx xxxxxxxx xxxxxxx xxxxxxxxxx xxxxxx. Xxxx xxxxxx xx xxxxxxxxx xxxx xx xxxxxxxxxxx xxxxx xxxxx xxxxxxxx xxx xxxxxx xxxxxxxx xxxx xx xxxxxxx xx xxx XX xxx’xx xxxxxxxxxxxx. Xxx xxxxxxx, xx xxx’xx xxxxxxxx xxxxxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209635) , xxx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn879546), xxx xxxxxx xxxxxx xxx xxxxx xxxx xxxxxxxx xxx xxxxxxx xxxxxxx xx xxxx xxxxxx xxxxx xx xxx xxxxxxxxxxxxxx.
+Performance is typically not a consideration when choosing between individual panels. That choice is typically made by considering which panel provides the layout behavior that is closest to the UI you’re implementing. For example, if you’re choosing between [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) , and [**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/Dn879546), you should choose the panel that provides the closest mapping to your mental model of the implementation.
 
-Xxxxx XXXX xxxxx xx xxxxxxxxx xxx xxxx xxxxxxxxxxx, xxx xxx xxx xxxxxx xxxxxxx xxxxxxx xxxxxxxxxxx xxx xxxxxxx XX.
+Every XAML panel is optimized for good performance, and all the panels provide similar performance for similar UI.
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

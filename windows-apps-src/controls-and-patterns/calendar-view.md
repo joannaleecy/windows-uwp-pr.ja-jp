@@ -1,127 +1,128 @@
 ---
-Xxxxxxxxxxx: X xxxxxxxx xxxx xxxx x xxxx xxxx xxx xxxxxxxx xxxx x xxxxxxxx xxxx xxxx xxx xxxxxxxx xx xxxxx, xxxx, xx xxxxxx.
-xxxxx: Xxxxxxxx xxxx
-xx.xxxxxxx: xYxxYxxY-YxYx-YYYx-xYxY-YxYxYYYxYxYY
-xxxxx: Xxxxxxxx xxxx
-xxxxxxxx: xxxxxx.xxx
+Description: カレンダー ビューを使うと、ユーザーはカレンダーを表示し操作できます (カレンダーは、月、年、または 10 年単位で操作できます)。
+title: カレンダー ビュー
+ms.assetid: d8ec5ba8-7a9d-405d-a1a5-5a1b502b9e64
+label: カレンダー ビュー
+template: detail.hbs
 ---
 
-# Xxxxxxxx xxxx
+# カレンダー ビュー
 
-X xxxxxxxx xxxx xxxx x xxxx xxxx xxx xxxxxxxx xxxx x xxxxxxxx xxxx xxxx xxx xxxxxxxx xx xxxxx, xxxx, xx xxxxxx. X xxxx xxx xxxxxx x xxxxxx xxxx xx x xxxxx xx xxxxx. Xx xxxxx'x xxxx x xxxxxx xxxxxxx xxx xxx xxxxxxxx xx xxxxxx xxxxxxx. 
+カレンダー ビューを使うと、ユーザーはカレンダーを表示し操作できます (カレンダーは、月、年、または 10 年単位で操作できます)。 ユーザーは 1 つの日付や日付の範囲を選ぶことができます。 カレンダー ビューには選択コントロール サーフェスがなく、カレンダーは常に表示されます。 
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
-- [**XxxxxxxxXxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)
-- [**Xxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx)
+- [**CalendarView クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx)
+- [**Date プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
-Xxx x xxxxxxxx xxxx xx xxx x xxxx xxxx x xxxxxx xxxx xx x xxxxx xx xxxxx xxxx xx xxxxxx xxxxxxx xxxxxxxx.
+## 適切なコントロールの選択
+カレンダー ビューを使うと、ユーザーは常に表示されているカレンダーから 1 つの日付または日付の範囲を選ぶことができます。
 
-Xx xxx xxxx xx xxx x xxxx xxxxxx xxxxxxxx xxxxx xx xxx xxxx, xxx xxxx xxx x xxxxxxxx xxxx. Xx xxx xxxx xx xxx x xxxx xxxx xxxx x xxxxxx xxxx xxx xxx’x xxxx x xxxxxxxx xx xx xxxxxx xxxxxxx, xxxxxxxx xxxxx x [xxxxxxxx xxxx xxxxxx](calendar-date-picker.md) xx [xxxx xxxxxx](date-picker.md) xxxxxxx.
+ユーザーが一度に複数の日付を選べるようにする必要がある場合は、カレンダー ビューを使う必要があります。 ユーザーが 1 つの日付しか選べないようにする必要があり、カレンダーを常に表示する必要がない場合は、[カレンダーの日付の選択コントロール](calendar-date-picker.md) または [日付の選択コントロール](date-picker.md) を使うことを検討してください。
 
-Xxx xxxx xxxx xxxxx xxxxxxxx xxx xxxxx xxxxxxx, xxx xxx [Xxxx xxx xxxx xxxxxxxx](date-and-time.md) xxxxxxx.
+適切なコントロールの選択について詳しくは、「[日付と時刻コントロール](date-and-time.md)」をご覧ください。
 
-## Xxxxxxxx
+## 例
 
-Xxx xxxxxxxx xxxx xx xxxx xx xx Y xxxxxxxx xxxxx: xxx xxxxx xxxx, xxxx xxxx, xxx xxxxxx xxxx. Xx xxxxxxx, xx xxxxxx xxxx xxx xxxxx xxxx xxxx. Xxx xxx xxxxxxx x xxxxxxx xxxx xx xxxxxxx xxx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx) xxxxxxxx.
+カレンダー ビューは、月ビュー、年ビュー、10 年ビューという 3 つの個別のビューで構成されています。 既定では、月ビューが開きます。 スタートアップ表示を指定するには、[**DisplayMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.displaymode.aspx) プロパティを設定します。
 
-![Xxx Y xxxxx xx x xxxxxxxx xxxx](images/calendar-view-3-views.png)
+![カレンダー ビューの 3 つのビュー](images/calendar-view-3-views.png)
 
-Xxxxx xxxxx xxx xxxxxx xx xxx xxxxx xxxx xx xxxx xxx xxxx xxxx, xxx xxxxx xxx xxxxxx xx xxx xxxx xxxx xx xxxx xxx xxxxxx xxxx. Xxxxx xxxx x xxxx xx xxx xxxxxx xxxx xx xxxxxx xx xxx xxxx xxxx, xxx xxxx x xxxxx xx xxx xxxx xxxx xx xxxxxx xx xxx xxxxx xxxx. Xxx xxx xxxxxx xx xxx xxxx xx xxx xxxxxx xxxxxxxx xxxxxxx xx xxxxxxxx xx xxxxx, xx xxxx, xx xx xxxxxx. 
+ユーザーが月ビューのヘッダーをクリックすると年ビューが開き、年ビューのヘッダーをクリックすると 10 年ビューが開きます。 また、10 年ビューで年を選ぶと年ビューに戻り、年ビューで月を選ぶと月ビューに戻ります。 ヘッダーの横にある 2 つの矢印を使うと、月、年、10 年単位で前後に移動できます。 
 
-## Xxxxxx x xxxxxxxx xxxx
+## カレンダー ビューの作成
 
-Xxxx xxxxxxx xxxxx xxx xx xxxxxx x xxxxxx xxxxxxxx xxxx.
+次の例は、1 つのカレンダー ビューを作成する方法を示しています。
 
 ```xaml
 <CalendarView/>
 ```
 
-Xxx xxxxxxxxx xxxxxxxx xxxx xxxxx xxxx xxxx:
+結果のカレンダー ビューは次のように表示されます。
 
-![Xxxxxxx xx xxxxxxxx xxxx](images/controls_calendar_monthview.png)
+![カレンダー ビューの例](images/controls_calendar_monthview.png)
 
-### Xxxxxxxxx xxxxx
+### 日付の選択
 
-Xx xxxxxxx, xxx [**XxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) xxxxxxxx xx xxx xx **Xxxxxx**. Xxxx xxxx x xxxx xxxx x xxxxxx xxxx xx xxx xxxxxxxx. Xxx XxxxxxxxxXxxx xx **Xxxx** xx xxxxxxx xxxx xxxxxxxxx. 
+既定では、[**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) プロパティは **Single** に設定されています。 このため、ユーザーはカレンダー内の 1 つの日付を選ぶことができます。 日付の選択を無効にするには、SelectionMode を **None** に設定します。 
 
-Xxx XxxxxxxxxXxxx xx **Xxxxxxxx** xx xxx x xxxx xxxxxx xxxxxxxx xxxxx. Xxx xxx xxxxxx xxxxxxxx xxxxx xxxxxxxxxxxxxxxx xx xxxxxx [XxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx)/[XxxxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) xxxxxxx xx xxx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) xxxxxxxxxx, xx xxxxx xxxx:
+ユーザーが複数の日付を選べるようにするには、SelectionMode を **Multiple** に設定します。 次のように [**SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) コレクションに [DateTime](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetime.aspx) オブジェクトまたは [DateTimeOffset](https://msdn.microsoft.com/library/windows/apps/xaml/system.datetimeoffset.aspx) オブジェクトを追加すると、プログラムから複数の日付を選ぶことができます。
 
 ```csharp
 calendarView1.SelectedDates.Add(DateTimeOffset.Now);
 calendarView1.SelectedDates.Add(new DateTime(1977, 1, 5));
 ```
 
-X xxxx xxx xxxxxxxx x xxxxxxxx xxxx xx xxxxxxxx xx xxxxxxx xx xx xxx xxxxxxxx xxxx.
+ユーザーは、選択済みの日付をカレンダー グリッドでクリックまたはタップすると、その日付の選択を解除できます。
 
-Xxx xxx xxxxxx xxx [**XxxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) xxxxx xx xx xxxxxxxx xxxx xxx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) xxxxxxxxxx xxx xxxxxxx.
+[
+            **SelectedDates**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddates.aspx) コレクションが変化したときに通知を受け取るようにするには、[**SelectedDatesChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selecteddateschanged.aspx) イベントを処理します。
 
-> **Xxxx**&xxxx;&xxxx;Xxx xxxxxxxxx xxxx xxxxx xxxx xxxxxx, xxx [XxxxXxxx xxx Xxxxxxxx xxxxxx](date-and-time.md#datetime-and-calendar-values) xx xxx Xxxx xxx xxxx xxxxxxxx xxxxxxx.
+> **注:**&nbsp;日付値の重要な情報については、「日付と時刻コントロール」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
 
-### Xxxxxxxxxxx xxx xxxxxxxx xxxx'x xxxxxxxxxx
+### カレンダー ビューの外観のカスタマイズ
 
-Xxx xxxxxxxx xxxx xx xxxxxxxx xx xxxx XXXX xxxxxxxx xxxxxxx xx xxx XxxxxxxXxxxxxxx xxx xxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xx xxx xxxxxxx. 
-- Xxx XXXX xxxxxxxx xxxxxxx xx xxx xxxxxxx xxxxxxxx xxxxxxx xxx xxxxxx xxxx xxxxxxxx xxx xxxxxxx, xxx xxxxxx, xxxxxxxx xxx xxxx xxxxxxx, xxx XxxXxXxxx xxxxxxxx. Xxx xxx xxxxx xxx xx-xxxxxxxx xxxxx xxxxxxxx xxxx xxx XXXX xxxxxxx. 
-- Xxx xxxxxxxx xxxx xx xxxxxxxx xx [**XxxxxxxxXxxxXxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) xxxxxxx. Xxx xxx’x xxxxx xx xx-xxxxxxxx xxxxx xxxxxxxx, xxx xxxxxxx xxxxxxxxxx xxx xxxxxxxx xx xxx xxx xx xxxxxxxxx xxxxx xxxxxxxxxx.
+カレンダー ビューは、ControlTemplate で定義される XAML 要素と、コントロールによって直接レンダリングされるビジュアル要素で構成されます。 
+- コントロール テンプレートで定義される XAML 要素には、コントロールを囲む境界線、ヘッダー、[前へ] ボタンと [次へ] ボタン、および DayOfWeek 要素が含まれています。 すべての XAML コントロールと同様、これらの要素にスタイルを指定し、テンプレートを再適用することができます。 
+- カレンダー グリッドは、[**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) オブジェクトで構成されています。 これらの要素のスタイルを指定したり、テンプレートを再適用することはできませんが、それらの外観をカスタマイズできるさまざまなプロパティが用意されています。
 
-Xxxx xxxxxxx xxxxx xxx xxxxxxxx xxxx xxxx xx xxx xxxxx xxxx xx xxx xxxxxxxx. Xxx xxxx xxxx, xxx xxx Xxxxxxx xx xxx [**XxxxxxxxXxxxXxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) xxxxx.
+次の図は、カレンダーの月ビューを構成する要素を示しています。 詳しくは、[**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) クラスの「解説」をご覧ください。
 
-![Xxx xxxxxxxx xx x xxxxxxxx xxxxx xxxx](images/calendar-view-month-elements.png)
+![カレンダーの月ビューの要素](images/calendar-view-month-elements.png)
 
-Xxxx xxxxx xxxxx xxx xxxxxxxxxx xxx xxx xxxxxx xx xxxxxx xxx xxxxxxxxxx xx xxxxxxxx xxxxxxxx.
+次の表は、カレンダー要素の外観を変えるために変更できるプロパティを示しています。
 
-Xxxxxxx | Xxxxxxxxxx
+要素 | プロパティ
 --------|-----------
-XxxXxXxxx | [XxxXxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.dayofweekformat.aspx)  
-XxxxxxxxXxxx | [XxxxxxxxXxxxXxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendaritembackground.aspx), [XxxxxxxxXxxxXxxxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendaritemborderbrush.aspx), [XxxxxxxxXxxxXxxxxxXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendaritemborderthickness.aspx), [XxxxxxxxXxxxXxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendaritemforeground.aspx)  
-XxxXxxx | [XxxXxxxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.dayitemfontfamily.aspx), [XxxXxxxXxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.dayitemfontsize.aspx), [XxxXxxxXxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.dayitemfontstyle.aspx), [XxxXxxxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.dayitemfontweight.aspx), [XxxxxxxxxxXxxXxxxXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.horizontaldayitemalignment.aspx), [XxxxxxxxXxxXxxxXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.verticaldayitemalignment.aspx), [XxxxxxxxXxxxXxxXxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemstyle.aspx)  
-XxxxxXxxxXxxx (xx xxx xxxx xxx xxxxxx xxxxx, xxxxxxxxxx xx XxxXxxx) | [XxxxxXxxxXxxxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.monthyearitemfontfamily.aspx), [XxxxxXxxxXxxxXxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.monthyearitemfontsize.aspx), [XxxxxXxxxXxxxXxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.monthyearitemfontstyle.aspx), [XxxxxXxxxXxxxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.monthyearitemfontweight.aspx)  
-XxxxxXxXxxxxXxxxx | [XxxxxXxXxxxxXxxxxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontfamily.aspx), [XxxxxXxXxxxxXxxxxXxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontsize.aspx), [XxxxxXxXxxxxXxxxxXxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontstyle.aspx), [XxxxxXxXxxxxXxxxxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontweight.aspx), [XxxxxxxxxxXxxxxXxXxxxxXxxxxXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.horizontalfirstofmonthlabelalignment.aspx), [XxxxxxxxXxxxxXxXxxxxXxxxxXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.verticalfirstofmonthlabelalignment.aspx), [XxXxxxxXxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.isgrouplabelvisible.aspx)  
-XxxxxxxXxxxXxxxxxXxxxx (xx xxx xxxx xxx xxxxxx xxxxx, xxxxxxxxxx xx XxxxxXxXxxxxXxxxx) | [XxxxxXxXxxxXxxxxxXxxxxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontfamily.aspx), [XxxxxXxXxxxXxxxxxXxxxxXxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontsize.aspx), [XxxxxXxXxxxXxxxxxXxxxxXxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontstyle.aspx), [XxxxxXxXxxxXxxxxxXxxxxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontweight.aspx)  
-Xxxxxx Xxxxx Xxxxxxx | [XxxxxXxxxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.focusborderbrush.aspx), [XxxxxXxxxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.hoverborderbrush.aspx), [XxxxxxxXxxxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.pressedborderbrush.aspx), [XxxxxxxxXxxxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectedborderbrush.aspx), [XxxxxxxxXxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectedforeground.aspx), [XxxxxxxxXxxxxXxxxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectedhoverborderbrush.aspx), [XxxxxxxxXxxxxxxXxxxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectedpressedborderbrush.aspx)  
-XxxxxXxxxx | [XxXxxXxXxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.isoutofscopeenabled.aspx), [XxxXxXxxxxXxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.outofscopebackground.aspx), [XxxXxXxxxxXxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.outofscopeforeground.aspx)  
-Xxxxx | [XxXxxxxXxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.istodayhighlighted.aspx), [XxxxxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.todayfontweight.aspx), [XxxxxXxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.todayforeground.aspx)  
+DayOfWeek | [DayOfWeekFormat](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.dayofweekformat.aspx)  
+CalendarItem | [CalendarItemBackground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendaritembackground.aspx)、[CalendarItemBorderBrush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendaritemborderbrush.aspx)、[CalendarItemBorderThickness](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendaritemborderthickness.aspx)、[CalendarItemForeground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendaritemforeground.aspx)  
+DayItem | [DayItemFontFamily](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.dayitemfontfamily.aspx)、[DayItemFontSize](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.dayitemfontsize.aspx)、[DayItemFontStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.dayitemfontstyle.aspx)、[DayItemFontWeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.dayitemfontweight.aspx)、[HorizontalDayItemAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.horizontaldayitemalignment.aspx)、[VerticalDayItemAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.verticaldayitemalignment.aspx)、[CalendarViewDayItemStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemstyle.aspx)  
+MonthYearItem (年ビューと 10 年ビューに含まれていて DayItem と等価) | [MonthYearItemFontFamily](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.monthyearitemfontfamily.aspx)、[MonthYearItemFontSize](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.monthyearitemfontsize.aspx)、[MonthYearItemFontStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.monthyearitemfontstyle.aspx)、[MonthYearItemFontWeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.monthyearitemfontweight.aspx)  
+FirstOfMonthLabel | [FirstOfMonthLabelFontFamily](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontfamily.aspx)、[FirstOfMonthLabelFontSize](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontsize.aspx)、[FirstOfMonthLabelFontStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontstyle.aspx)、[FirstOfMonthLabelFontWeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofmonthlabelfontweight.aspx)、[HorizontalFirstOfMonthLabelAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.horizontalfirstofmonthlabelalignment.aspx)、[VerticalFirstOfMonthLabelAlignment](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.verticalfirstofmonthlabelalignment.aspx)、[IsGroupLabelVisible](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.isgrouplabelvisible.aspx)  
+FirstofYearDecadeLabel (年ビューと 10 年ビューに含まれていて、FirstOfMonthLabel と等価) | [FirstOfYearDecadeLabelFontFamily](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontfamily.aspx)、[FirstOfYearDecadeLabelFontSize](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontsize.aspx)、[FirstOfYearDecadeLabelFontStyle](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontstyle.aspx)、[FirstOfYearDecadeLabelFontWeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.firstofyeardecadelabelfontweight.aspx)  
+表示状態の境界線 | [FocusBorderBrush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.focusborderbrush.aspx)、[HoverBorderBrush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.hoverborderbrush.aspx)、[PressedBorderBrush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.pressedborderbrush.aspx)、[SelectedBorderBrush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectedborderbrush.aspx)、[SelectedForeground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectedforeground.aspx)、[SelectedHoverBorderBrush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectedhoverborderbrush.aspx)、[SelectedPressedBorderBrush](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectedpressedborderbrush.aspx)  
+OutofScope | [IsOutOfScopeEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.isoutofscopeenabled.aspx)、[OutOfScopeBackground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.outofscopebackground.aspx)、[OutOfScopeForeground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.outofscopeforeground.aspx)  
+Today | [IsTodayHighlighted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.istodayhighlighted.aspx)、[TodayFontWeight](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.todayfontweight.aspx)、[TodayForeground](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.todayforeground.aspx)  
 
- Xx xxxxxxx, xxx xxxxx xxxx xxxxx Y xxxxx xx x xxxx. Xxx xxx xxxxxx xxx xxxxxx xx xxxxx xxxxx xx xxxxxxx xxx [**XxxxxxXxXxxxxXxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.numberofweeksinview.aspx) xxxxxxxx. Xxx xxxxxxx xxxxxx xx xxxxx xx xxxx xx Y; xxx xxxxxxx xx Y.
+ 既定では、月ビューは一度に 6 週間を表示します。 表示する週数を変更するには、[**NumberOfWeeksInView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.numberofweeksinview.aspx) プロパティを設定します。 表示する週数の最小値は 2 で、最大値は 8 です。
 
-Xx xxxxxxx, xxx xxxx xxx xxxxxx xxxxx xxxx xx x YxY xxxx. Xx xxxxxx xxx xxxxxx xx xxxx xx xxxxxxx, xxxx [**XxxXxxxXxxxxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions.aspx) xxxx xxx xxxx xxxxxxx xxxxxx xx xxxx xxx xxxxxxx. Xxxx xxxx xxxxxx xxx xxxx xxx xxxx xxx xxxx xxx xxxxxx xxxxx.
+既定では、年ビューと 10 年ビューは 4x4 のグリッドに表示されます。 行または列の数を変更するには、目的の行数と列数を指定して [**SetYearDecadeDisplayDimensions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.setyeardecadedisplaydimensions.aspx) を呼び出します。 これにより、年ビューと 10 年ビューの両方のグリッドが変更されます。
 
-Xxxx, xxx xxxx xxx xxxxxx xxxxx xxx xxx xx xxxx xx x YxY xxxx.
+次の例は、年ビューと 10 年ビューを 3x4 のグリッドに表示するよう設定しています。
 
 ```csharp
 calendarView1.SetYearDecadeDisplayDimensions(3, 4);
 ```
 
-Xx xxxxxxx, xxx xxxxxxx xxxx xxxxx xx xxx xxxxxxxx xxxx xx YYY xxxxx xxxxx xx xxx xxxxxxx xxxx, xxx xxx xxxxxxx xxxx xxxxx xx YYY xxxxx xxxx xxx xxxxxxx xxxx. Xxx xxx xxxxxx xxx xxxxxxx xxx xxxxxxx xxxxx xxxx xxx xxxxxxxx xxxxx xx xxxxxxx xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.mindate.aspx) xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.maxdate.aspx) xxxxxxxxxx.
+既定では、カレンダー ビューに表示される日付の最小値は 100 年前の現在日で、表示される日付の最大値は 100 年後の現在日です。 カレンダーに表示する最小日付と最大日付を変更するには、[**MinDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.mindate.aspx) プロパティと [**MaxDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.maxdate.aspx) プロパティを設定します。
 
 ```csharp
 calendarView1.MinDate = new DateTime(2000, 1, 1);
 calendarView1.MaxDate = new DateTime(2099, 12, 31);
 ```
 
-### Xxxxxxxx xxxxxxxx xxx xxxxx
+### カレンダーの日付項目の更新
 
-Xxxx xxx xx xxx xxxxxxxx xx xxxxxxxxxxx xx x [**XxxxxxxxXxxxXxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) xxxxxx. Xx xxxxxx xx xxxxxxxxxx xxx xxxx xxx xxx xxx xxxxxxxxxx xxx xxxxxxx, xxxxxx xxx [**XxxxxxxxXxxxXxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging.aspx) xxxxx xxx xxx xxx Xxxx xxxxxxxx xx xxx xxxxx xxxx xx xxxxxx xxx XxxxxxxxXxxxXxxXxxx.
+カレンダーの各日付は、[**CalendarViewDayItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.aspx) オブジェクトで表されます。 個々の日付項目にアクセスしてそのプロパティとメソッドを使うには、[**CalendarViewDayItemChanging**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.calendarviewdayitemchanging.aspx) イベントを処理し、イベント引数の Item プロパティを使って CalendarViewDayItem にアクセスします。
 
-Xxx xxx xxxx x xxx xxx xxxxxxxxxx xx xxx xxxxxxxx xxxx xx xxxxxxx xxx [**XxxxxxxxXxxxXxxXxxx.XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.isblackout.aspx) xxxxxxxx xx **xxxx**. 
+カレンダー ビュー内の特定の日付を選択できないようにするには、その日付の [**CalendarViewDayItem.IsBlackout**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarviewdayitem.isblackout.aspx) プロパティを **true** に設定します。 
 
-Xxx xxx xxxx xxxxxxxxxx xxxxxxxxxxx xxxxx xxx xxxxxxx xx xxxxxx xx x xxx xx xxxxxxx xxx [**XxxxxxxxXxxxXxxXxxx.XxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/dn890067.aspx) xxxxxx. Xxx xxx xxxx xxxx Y xx YY xxxxxxx xxxx xxx xxxx xxx, xxx xxx xxx xxxxx xx xxxx xxx. 
+ある日付のイベントの埋まり具合についてのコンテキスト情報を表示するには、[**CalendarViewDayItem.SetDensityColors**](https://msdn.microsoft.com/library/windows/apps/xaml/dn890067.aspx) メソッドを呼び出します。 日付ごとに 0 ～ 10 の範囲の密度コントロール バーを表示し、各バーの色を設定します。 
 
-Xxxx xxx xxxx xxx xxxxx xx x xxxxxxxx. Xxxx Y xxx Y xxx xxxxxxx xxx. Xxxx Y, Y, xxx Y xxxx xxxxxxx xxxxxxx xxxx xxx.
+カレンダーの日付項目のいくつかを次に示します。 日付 1 と 2 は暗転しています。 日付 2、3、および 4 には、さまざまな密度コントロール バーが設定されています。
 
-![Xxxxxxxx xxxx xxxx xxxxxxx xxxx](images/calendar-view-density-bars.png)
+![密度コントロール バーが設定されたカレンダーの日付](images/calendar-view-density-bars.png)
 
-### Xxxxxx xxxxxxxxx
+### 段階的なレンダリング
 
-X xxxxxxxx xxxx xxx xxxxxxx x xxxxx xxxxxx xx XxxxxxxxXxxxXxxXxxx xxxxxxx. Xx xxxx xxx XX xxxxxxxxxx xxx xxxxxx xxxxxx xxxxxxxxxx xxxxxxx xxx xxxxxxxx, xxxxxxxx xxxx xxxxxxxx xxxxxx xxxxxxxxx. Xxxx xxxx xxx xxxxx xx xxxxxxxxxx xx x xxx xxxx xxxx xxxxxx. Xx x xxx xx xxxxx xxx xx xxxx xxxxxx xxx xxx xxxxxx xxx xxxxxxxx, xx xxxx xxxx xx xxxx xxxxxx xx xxxxxxx xxx xxxxxx xxxx xxxx.
+カレンダー ビューには、多数の CalendarViewDayItem オブジェクトを含めることができます。 UI の応答性を保ち、カレンダー内をスムーズに移動できるようにするため、カレンダー ビューでは段階的なレンダリングがサポートされています。 そのため、日付項目の処理を複数のフェーズに分けることができます。 すべてのフェーズが完了する前に日付がビューの範囲外に移動すると、その項目の処理とレンダリングはそれ以上行われません。
 
-Xxxx xxxxxxx xxxxx xxxxxx xxxxxxxxx xx x xxxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxxxxxx. 
-- Xx xxxxx Y, xxx xxxxxxx xxx xxxx xx xxxxxxxx. 
-- Xx xxxxx Y, xxx xxxxxxxx xxxxx xxxx xxx'x xx xxxxxx. Xxxx xxxxxxxx xxxx xxxxx, Xxxxxxx, xxx xxxxx xxxx xxx xxxxxxx xxxxx xxxxxx. 
-- Xx xxxxx Y, xxx xxxxx xxxx xxxxxxxxxxx xxxx'x xxxxxx xxx xxx xxx. Xxx xxxx x xxxxx xxxxxxx xxx xxx xxxx xxxxxxxxx xxxxxxxxxxx xxx x xxxx xxxxxxx xxx xxx xxxx xxxxxxxxx xxxxxxxxxxx. 
+次の例は、予定のスケジュール設定を目的とした、カレンダー ビューの段階的なレンダリングを示しています。 
+- フェーズ 0 では、既定の日付項目をレンダリングします。 
+- フェーズ 1 では、予約できない日付を暗転します。 これには、過去の日付、日曜日、既に予定がすべて埋まっている日付などがあります。 
+- フェーズ 2 では、その日の予定をそれぞれチェックします。 確定済みの予定には緑色の濃度コントロール バーを、仮の予定には青色の濃度コントロール バーを表示します。 
 
-Xxx `Bookings` xxxxx xx xxxx xxxxxxx xx xxxx x xxxxxxxxxx xxxxxxxxxxx xxxxxxx xxx, xxx xx xxx xxxxx.
+この例の `Bookings` クラスは、架空の予約アプリのものなので、そのクラスは示されていません。
 
 ```xaml
 <CalendarView CalendarViewDayItemChanging="CalendarView_CalendarViewDayItemChanging"/>
@@ -181,12 +182,16 @@ private void CalendarView_CalendarViewDayItemChanging(CalendarView sender,
     }
 }
 ```
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxx xxx xxxx xxxxxxxx](date-and-time.md)
-* [Xxxxxxxx xxxx xxxxxx](calendar-date-picker.md)
-* [Xxxx xxxxxx](date-picker.md)
-* [Xxxx xxxxxx](time-picker.md)
+* [日付と時刻コントロール](date-and-time.md)
+* [カレンダーの日付の選択コントロール](calendar-date-picker.md)
+* [日付の選択コントロール](date-picker.md)
+* [時刻の選択コントロール](time-picker.md)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

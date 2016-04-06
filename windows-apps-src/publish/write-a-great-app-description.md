@@ -1,35 +1,39 @@
 ---
-Xxxxxxxxxxx: X xxxxx xxxxxxxxxxx xxx xxxx xxxx xxx xxxxx xxx xx xxx Xxxxxxx Xxxxx xxx xxxx xxxxxxxxx xxxxxxxxx xx xxxxxxxx xx.
-xxxxx: Xxxxx x xxxxx xxx xxxxxxxxxxx
-xx.xxxxxxx: XYYYXYYX-YYYX-YXXX-YYYX-XYYXYYYXXXXY
+Description: A great description can make your app stand out in the Windows Store and help encourage customers to download it.
+title: Write a great app description
+ms.assetid: E477E98E-090A-4ACE-832F-A98D273EFCA0
 ---
 
-# Xxxxx x xxxxx xxx xxxxxxxxxxx
+# Write a great app description
 
 
-X xxxxx xxxxxxxxxxx xxx xxxx xxxx xxx xxxxx xxx xx xxx Xxxxxxx Xxxxx xxx xxxx xxxxxxxxx xxxxxxxxx xx xxxxxxxx xx. [Xxx xxxxxxxxxxx xxx xxxxx xxxx xxxxxxxxxx xxxx xxx](create-app-descriptions.md) xx xxxxxxxxx xx xxxx xxx'x Xxxxx xxxxxxx. Xxx xxxxx xxx xxxxx xxx xxxx xx xxxxxxxxx xx xxxxxx xxxxxxx xxx xxxxxxxxx xxxxx xx xxx Xxxxx.
+A great description can make your app stand out in the Windows Store and help encourage customers to download it. [The description you enter when submitting your app](create-app-descriptions.md) is displayed in your app's Store listing. The first few lines may also be displayed in search results and algorithm lists in the Store.
 
 
-Xxxx xxx xxxx xxxx xxx xxxxxx xxxx xxx'x xxxxxxxxxxx xxx xxxx xx xxx xx.
+Here are some tips for making your app's description the best it can be.
 
--   **Xxxx xxxxxxxxx xx xxx xxxxx xxx xxxxxxxxx.** Xxx xxxxxxxxx xx xxxx xxxxxxxxxxx xx xxx xxxx xxxxxxxxx, xx xxxx xxxx xx xxxxx xxx xxxxx xxxxxxxxx. Xxxxx xxxxx xxxx xxx xxx xxx xx xxx xx xxx xxxxxxxxx xx xxxxxxx xxxx xxx'x xxxxxx xxxxxx xxx xxxx xxxxxxx xxxxxx xxxx xxxx xx.
--   **Xxxx xx xxxx xx xxxxx xxxxx xxxx xxx.** Xxxxx xxxx xxxxxxx xxxx, xxxxxxxx xxxxxxxxxx xxxxxxxx, xx-xxx xxxxxxxx xxxxxxxxxxxxx, xxx xxxxx xxxxxxx xxxxx xxxx xxx xxxx xxxxxxxxx xxxx xxxx xx xxxx. Xxxx xxxx xxx xxxxxxx xxx xxxxxxxxxxx xx xxxxxxxxxxx xxxx xxx xxx xxxxxxxx xx xxxxxxx xxxxx xxx xxx xx xxx xxxxxxx xxxxx xxx xxx xxxxxxxxxxxx xxxx xxx.
--   **Xxx xxxxx xxx xxxxx xxxxxxxxxx.** Xxxxxxxxx xxxxxxxxx xxx xxxx xxxx x xxxxx xxxxxx xx xxxx xxx'x xxxxxxxxxxx. Xxxxxxxx xx xxx xxxxxxx xx xxxxx xxxxx xxxxxxxxxx xxx xxxxx xxxxx xx xxxxxx xx xxxx.
-    > **Xxxx**  Xxxxxx x xxxx xx [xxx xxxxxxxx](create-app-descriptions.md#app-features) xxx xxxx xxxx xx xxxxxxx xxxx xxxx xxxx xxx xxxx. Xxxx xxxx xxxxxxx xxxxxxxx xxxxx xxx xxx xxxxxxxxxxx.
--   **Xxxxx xxx xxxxxxxx.** Xxxxx xxxx xxxxxxxxxxx xxxxx xxxxxxxx xxxxxxxx. Xx xxxx xxx xxxxxxx xxxxxxx xxxxxxxxx xxxx xxxx xxx xxxx, xxx xxx xx xx x xxx xxxx xxxxx'x xxxxx xxxxxx. Xxx xxxx xxxx, x xxxxxx xxx xxxxxxxx xxxx xxxxx xxxx.
--   **Xxx x xxxxxx xxxx xx xxxx xxxxx.** X xxxx xxxxxxxxxxx xxxxx xxxxxxx, xxx xxxx xxxxxxxx xxxxxx xxxx xx xxx xxx xxxxxx xxxxxxxxxx xxx xxxxxxx xxxx xxx xxx xxxx. X xxxxxxx xxx xxxx xxxx xxxx xxxxxxxxx xx xxxxxxxx xx; x xxxxxx xxx xxx xxxx xxxx x xxx. Xx xxxx xxxxx xxx xxxxx xxxxxx xx xxxxxxxxx xxxx YYY xxxxx, xxx xxxx xxxxx YYYY.
--   **Xx xxxxx xxxxx xxxx xxxxxx xxx xx-xxx xxxxxxxx.** Xx xxx xxxxx x xxxx xxxxx xx xxxx xxx, xx xxxx xx xxxxxxx xxx xxxx xxxxx xxxxx, xx xxxx xxxxxxxxx xxxxxxxxxx xxxxx xxxxxxxx xxx xxxxxxx. Xx'x xxxx x xxxx xxxx xx xxxxxxx xxxx xxxxx xx xx-xxx xxxxxxxx xxx xxxxxxxxx, xxxxxxxxxxxx xx xxxx xxxx xxxxxxxxxxx xxxxxxx xx xxxx xxx'x xxxxxxxxxxxxx.
--   **Xxx xxxxxxxx xxxxxxxxxxxxxx xxx xxxxxxxxxxx.** Xxxxxxxxxxxx xx xxx xxxx, xx xxxxx xxxx xxxx xxxxxxx xxxxxxxxxxx, xxx xx xxxx xx xxxx.
--   **Xxx'x xxxxxx xx xxxxx xxx xxxxxxxx xxx xxxxxxx.** X xxxxxxxxxxx xxxx xxxx xx xxxxxxxxxx xxxxx xx xxxxxxx xxxxxxxxx xxxxx'x xxxxxxx xxxx xx xxx xxxxxxx xx xxxx xxx. Xx xxxx xx xxxxxx xxxx xxxxxxxxxxx (xx xxxx xxxxxxx xxxx xxxx x xxxx) xx xxxxx xxx xxxxxx.
--   **Xxx'x xxxxxxx xxxxx xx xxxx xxxx xxxxxxx xxxxxxxxx.** XXXx xxxx xxx xxxxx xx xxx xxxxxxxxxxx xxxxx xxx'x xx xxxxxxxxx, xx xxx'x xxx xx xxx xxxxx xxx xxxxxx xxxx xxxx xxxxxxx xxxxxx xx xxxxxxx xxxxxxx. Xxxxxxx, xxx xxxxx xx xxx xxxxxxxxxx xxxxx xx xxx **Xxx xxxxxxxxxxx** xxxx.
--   **Xxx'x xxx xx xxx XXXX xxxx.** XXXX xx xxxxx xxxx xxxx xxx xx xxxxxxxx. Xxxx xxxxxxxxxxx xxxxx xx xx xxxxx xxxx xxxx.
--   **Xxx xxxxx xx xxxxxxxxx xxxxxxxxxxxx xx xxxxxxx xxxx xx xxx Xxxxx.** Xxxx x xxxx xx xxx xxxxx xxxxxxxxxx xxxxxxxx xxxxx xxxx. Xxxx xxxx xxxxx xxx xxxxxx xxx xxxx xxx xxx xxxxxxxxx xxxx xx xxxxxxxxx xxxxx xxxx xxx.
+-   **Grab attention in the first few sentences.** The beginning of your description is the most important, so make sure it grabs and holds attention. Think about what you can say in one or two sentences to explain your app's unique appeal and make someone decide they want it.
+-   **Make it easy to learn about your app.** After your initial hook, describe additional benefits, in-app purchase opportunities, and other details about your app that customers will want to know. Make sure you include any disclosures or information that you are required to provide under the law in the markets where you are distributing your app.
+-   **Use lists and short paragraphs.** Potential customers may just take a quick glance at your app's description. Breaking up the content by using short paragraphs and lists makes it easier to scan.
+    > **Note**  Adding a list of [app features](create-app-descriptions.md#app-features) can also help to quickly show what your app does. This list appears directly below the app description.
+-   **Avoid dry language.** Write your description using engaging language. Be sure the wording clearly describes what your app does, but say it in a way that doesn't sound boring. For many apps, a casual and friendly tone works well.
+-   **Use a length that is just right.** A good description reads quickly, but also includes enough info to get the reader interested and explain what the app does. A complex app will need more sentences to describe it; a simple app may need only a few. In most cases the right length is somewhere over 200 words, but well under 3000.
+-   **Be clear about free trials and in-app products.** If you offer a free trial of your app, be sure to explain how that trial works, so that customers understand which features are limited. It's also a good idea to mention what types of in-app products are available, particularly if they have significant impacts on your app's functionality.
+-   **Use standard capitalization and punctuation.** Descriptions in all caps, or those that have unusual punctuation, can be hard to read.
+-   **Don't forget to check the spelling and grammar.** A description with lots of misspelled words or mangled sentences doesn't reflect well on the quality of your app. Be sure to review your description (or have someone else take a look) to check for errors.
+-   **Don't include links or info that belongs elsewhere.** URLs that you enter in the description field won't be clickable, so don't try to add links for things like your privacy policy or support website. Instead, add these in the designated areas of the **App description** page.
+-   **Don't try to use HTML tags.** HTML or other code will not be rendered. Your description needs to be plain text only.
+-   **Get ideas by reviewing descriptions of similar apps in the Store.** Take a look at how other developers describe their apps. This also helps you figure out what you can emphasize that is different about your app.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

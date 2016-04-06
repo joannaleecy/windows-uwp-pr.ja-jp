@@ -1,76 +1,66 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxxx xxxxxxxxx xxx xxx Xxxxxxx XX xxx xxxxxxxx xxx xxxxxxxx xxxx xxxxxxxxxx xxxxxxxxxx xxxx xxxxxx xx xxxxxxxxxx xxxx xxxxx xxxx xxx xxxxxxxxxxx xxxxxxxxx xx xxxx Xxxxxxx Xxxxx xxx.
-xxxxx: Xxxxxxxx
-xx.xxxxxxx: xYYYxxYY-YYxY-YYxY-YxYx-YxxYYYxYYYxx
-xxxxx: Xxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: このトピックでは、新しい Windows UI の回転について説明し、Windows ストア アプリでこの新しい操作のメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。
+title: 回転
+ms.assetid: f098bc05-35b3-46b2-9e9b-9ff292d067ca
+label: 回転
+template: detail.hbs
 ---
 
-# Xxxxxxxx
+# 回転
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
 
-Xxxx xxxxxxx xxxxxxxxx xxx xxx Xxxxxxx XX xxx xxxxxxxx xxx xxxxxxxx xxxx xxxxxxxxxx xxxxxxxxxx xxxx xxxxxx xx xxxxxxxxxx xxxx xxxxx xxxx xxx xxxxxxxxxxx xxxxxxxxx xx xxxx XXX xxx.
+この記事では、新しい Windows UI の回転について説明し、UWP アプリでこの新しい操作のメカニズムを使うときに考慮する必要があるユーザー エクスペリエンスのガイドラインを示します。
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**Xxxxxxx.XX.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242084)
--   [**Xxxxxxx.XX.Xxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227994)
-
-
-## <span id="Dos_and_don_ts">
-            </span>
-            <span id="dos_and_don_ts">
-            </span>
-            <span id="DOS_AND_DON_TS">
-            </span>Xxx xxx xxx'xx
+-   [**Windows.UI.Input**](https://msdn.microsoft.com/library/windows/apps/br242084)
+-   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
 
 
--   Xxx xxxxxxxx xx xxxx xxxxx xxxxxxxx xxxxxx XX xxxxxxxx.
-
-## <span id="Additional_usage_guidance">
-            </span>
-            <span id="additional_usage_guidance">
-            </span>
-            <span id="ADDITIONAL_USAGE_GUIDANCE">
-            </span>Xxxxxxxxxx xxxxx xxxxxxxx
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>推奨と非推奨
 
 
-**Xxxxxxxx xx xxxxxxxx**
+-   ユーザーが直接 UI 要素を回転できるように回転を使います。
 
-Xxxxxxxx xx xxx xxxxx-xxxxxxxxx xxxxxxxxx xxxx xx XXX xxxx xx xxxxxx xxxxx xx xxxx xx xxxxxx xx x xxxxxxxx xxxxxxxxx (xxxxxxxxx xx xxxxxxx-xxxxxxxxx).
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>その他の使い方のガイダンス
 
-Xxxxxxxxx xx xxx xxxxx xxxxxx, xxx xxxxxxxx xxxxxxxxxxx xx xxxxxxxxx xxxxx:
 
--   X xxxxx xx xxxxxx xxx/xxxxxx xx xxxx xxx xxxxxxxx xxxxxxx xx x xxxxxxxx xxxxxx.
--   Xxxxx xx xxxxxxx xxx/xxxxxx xx xxxx xxx xxxxxx xx xxx xxxxxxx xxxxxxxxx xxxxx xxx xxxxxx xxxxxxx.
+**回転の概要**
 
-**Xxxx xx xxx xxxxxxxx**
+回転は UWP アプリで使われるタッチ操作に最適な手法であり、ユーザーがオブジェクトを回転 (時計回りまたは反時計回り) できるようにします。
 
-Xxx xxxxxxxx xx xxxx xxxxx xxxxxxxx xxxxxx XX xxxxxxxx. Xxx xxxxxxxxx xxxxxxxx xxxx xxxx xx xxx xxxxxxxxx xxxxxx xxxxxxxxx xxx xxx xxxxxxxx xxxxxxxxxxx.
+入力デバイスに応じて回転操作は次のように実行されます。
 
-![xxxxxxx xxxxxxxxxxxxx xxxxxxx xxxxxx xxxxxxxx xxxxxxxxx xx xxxxxxxx.](images/ux-rotate-positions.png)
+-   マウスまたはアクティブなペン/スタイラスを使って、選んだオブジェクトの回転グリッパーを移動する。
+-   タッチまたはパッシブなペン/スタイラスを使って、回転ジェスチャによって任意の方向にオブジェクトを回転させる。
 
-**Xxxx**  
-Xxxxxxxxxxx, xxx xx xxxx xxxxx, xxx xxxxxxxx xxxxx xx xxx xx xxx xxx xxxxx xxxxxx xxxxxx xxx xxxx xxx xxxxxxx x xxxxxxxx xxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxx (xxx xxxxxxx, xx x xxxxxxx xx xxxxxx xxxxxxxxxxx). Xxx xxxxxxxxx xxxxxx xxxxxxxxxxx xxx xxx xxxx xxxxxxxxxx xxx xx xxxxxxxx xx xxx xxxxxxxx xxxxx xx xxx xxxxxxxxxxx xx xxxx xxx.
+**回転を使う状況**
 
-Xxxx xxxxx xxxxxxx xxxxx xxx xxxxxxx (xxxxx) xxx xxxxxxxxx (xxxxx xxxxxx) xxxxx xxxxxx: xxx xxxxx xxxxxx xx xxxxxxxx x xxxx xxx xxx xxxxx xx xxxxxxxx x xxx.
+ユーザーが直接 UI 要素を回転できるように回転を使います。 次の図は、サポートされる回転操作の指の配置をいくつか示しています。
 
-![xxxxx xxxxxxx xxx xxx xxxxxxx xxxxx xxxxxx xxx xxx xxxxxxxx xxxxxxx.](images/ux-rotate-points1.png)
-Xx xxxx xxxxxx xxxxxxx, xxxxxxxx xx xxxxxxxxx xxxxxx xxx xxxxxxx (xxxxx) xxxxx xxxxx. Xxxxx xxx xxxxxxxx, xxx xxxxx xxxxxx xx xxxxx xxxxxxxx xxx xxxx xxxxx xxx xxx xxxxx xx xxxxx xxxxxxxx xxx xxx (xxx xxxxxxxx xxxxx).
+![回転がサポートされる異なる指の配置を示す図](images/ux-rotate-positions.png)
 
-![xxxxx xxxxxxx x xxxxxxx xxxxxxx xxxx xxx xxxxxxxx xxxxx xxxxxxxxxxx xx xxx xx xxx xxx xxxxxxx xxxxx xxxxxx.](images/ux-rotate-points2.png)
-Xx xxxx xxxxx xxxxxxx, xxx xxxxxx xx xxxxxxxx xxx xxxx xxxxxxx xx xxx xxxxxxxxxxx (xx xxx xx xxx xxxx) xx xx xxx xxxxxx xxxxx xx xxx xxxxxxx. Xxxxx xxx xxxxxxxx, xxxxxxx xxx xxxxxxx xxx xxx xxxxxx xxxxxx xxx xx xxx xxxxxxx, xxx xxxxxxxx xx xxxxxx xxxxxxxxxxxx xx xxxxxx (xxxxxx xxx xxxx xxx xxxxxx xxxx xxxxxxx).
+**注:**  
+ユーザーが接触点とは無関係に回転の中心点を指定できる場合を除いて (例: 描画アプリやレイアウト アプリ)、直観に従い多くの場合、回転の中心点は 2 つのタッチした点のどちらかになります。 以下の図では、回転の中心点がこのような制約を受けない場合に、どのようにユーザー エクスペリエンスが低下するかについて説明します。
 
-![xxxxx xxxxxxx x xxxxxxx xxxxxxx xxxx xxx xxxxxxxx xxxxx xxxxxxxxxxx xx xxx xxxxxx xx xxx xxxxxxx xxxxxx xxxx xxxxxx xx xxx xxx xxxxxxx xxxxx xxxxxx.](images/ux-rotate-points3.png)
-Xx xxxx xxxx xxxxxxx, xxx xxxxxx xx xxxxxxxx xxx xxxx xxxxxxx xx xxx xxxxxxxxxxx (xx xxx xx xxx xxxx) xx xx x xxxxx xx xxx xxxxxx xx xxx xxxx xxxx xx xxx xxxxxxx. Xxxxx, xxxxxx xxx xxxx xxx xxxxxx xxxx xxxxxxx, xxx xxxxxxxx xx xxxxxx xxxxxxxxxxxx xx xxxxxx xx xxxx xxxx.
+1 番目の図は、最初のタッチ ポイント (親指) と 2 番目のタッチ ポイント (人差し指) を示します。人差し指は木に、親指は丸太にタッチしています。
 
-![xxxxx xxxxxxx x xxxxxxx xxxxxxx xxxx xxx xxxxxxxx xxxxx xxxxxxxxxxx xx xxx xxxxxxxx xxxxxx xx xxx xxxxxxx xxxxxx xxxx xxxxxx xx xxx xxx xxxxxxx xxxxx xxxxxx.](images/ux-rotate-points4.png)
+![回転ジェスチャのための最初の 2 つのタッチ ポイントを示す図](images/ux-rotate-points1.png)
+2 番目の図では、最初のタッチ ポイント (親指) の周りで回転が行われています。 回転の後で、人差し指は相変わらず木の幹にタッチし、親指は相変わらず丸太 (回転の中心点) にタッチしています。
+
+![回転の中心点が最初に 2 つタッチした点の 1 つに制約された状態で回転する絵を示す図](images/ux-rotate-points2.png)
+3 番目の図では、回転の中心がアプリによって絵の中心点に定義されています (またはユーザーによって設定されています)。 回転の後で、絵が指の 1 つの周りで回転しなかったために、直接操作の画像が失われます (ユーザーがこの設定を選んだ場合を除きます)。
+
+![回転の中心点が最初に 2 つタッチした点のどちらでもなく、絵の中心に制約された状態で回転する絵を示す図](images/ux-rotate-points3.png)
+最後の図では、回転の中心がアプリによって絵の左端の中央の点に定義されています (またはユーザーによって設定されています)。 この場合も、ユーザーがこの設定を選んだ場合を除いて、直接操作の画像が失われます。
+
+![回転の中心点が最初に 2 つタッチした点のどちらでもなく、絵の左端の中央に制約された状態で回転する絵を示す図](images/ux-rotate-points4.png)
 
  
 
-Xxxxxxx Y xxxxxxxx xxxxx xxxxx xx xxxxxxxx: xxxx, xxxxxxxxxxx, xxx xxxxxxxx.
+Windows 8 では、自由、制約付き、複合の 3 種類の回転をサポートします。
 
 <table>
 <colgroup>
@@ -79,25 +69,25 @@ Xxxxxxx Y xxxxxxxx xxxxx xxxxx xx xxxxxxxx: xxxx, xxxxxxxxxxx, xxx xxxxxxxx.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">タイプ</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Xxxx xxxxxxxx</td>
-<td align="left"><p>Xxxx xxxxxxxx xxxxxxx x xxxx xx xxxxxx xxxxxxx xxxxxx xxxxxxxx xx x YYY xxxxxx xxx. Xxxx xxx xxxx xxxxxxxx xxx xxxxxx, xxx xxxxxx xxxxxxx xx xxx xxxxxx xxxxxxxx. Xxxx xxxxxxxx xx xxxxxx xxx xxxxxxx xxx xxxxxx xxxxxxxxxxxx xxxx xx Xxxxxxxxx XxxxxXxxxx, Xxxx, Xxxxx, xxx Xxxxx; xxx Xxxxx Xxxxxxxxx, Xxxxxxxxxxx, xxx Xxxxx.</p></td>
+<td align="left">自由回転</td>
+<td align="left"><p>自由回転では、ユーザーはコンテンツを 360°の任意の位置に自由に回転できます。 ユーザーがオブジェクトを離すと、オブジェクトは選んだ位置にとどまります。 自由回転は、Microsoft PowerPoint、Word、Visio、ペイントと Adobe Photoshop、Illustrator、Flash などの描画アプリやレイアウト アプリで便利です。</p></td>
 </tr>
 <tr class="even">
-<td align="left">Xxxxxxxxxxx xxxxxxxx</td>
-<td align="left"><p>Xxxxxxxxxxx xxxxxxxx xxxxxxxx xxxx xxxxxxxx xxxxxx xxx xxxxxxxxxxxx xxx xxxxxxxx xxxx xxxxxx xx YY xxxxxx xxxxxxxxxx (Y, YY, YYY, xxx YYY) xxxx xxxxxxx. Xxxx xxx xxxx xxxxxxxx xxx xxxxxx, xxx xxxxxx xxxxxxxxxxxxx xxxxxxx xx xxx xxxxxxx xxxx xxxxx.</p>
-<p>Xxxxxxxxxxx xxxxxxxx xx xxx xxxx xxxxxx xxxxxx xx xxxxxxxx, xxx xx xxxxxxxxx xx x xxxxxxx xxx xx xxxxxxxxx xxxxxxx. Xxxx xxxxxx xxx x xxxx xx xxxxxxxxx xxx xxxxx xxxxxxx xxxxx xxxx. Xxxxxxxxxxx xxxxxxxx xx xxxxxx xxx xxxxxxxxxxxx xxxx xx xxx xxxxxxxx xxx xxxxx xxxxxx.</p></td>
+<td align="left">制約付き回転</td>
+<td align="left"><p>制約付き回転は、操作中は自由回転をサポートしますが、離したときに 90°単位のスナップ位置が強制されます (0、90、180、270)。 ユーザーがオブジェクトを離すと、オブジェクトは自動的に最も近いスナップ位置まで回転します。</p>
+<p>制約付き回転は回転の最も一般的な方法で、コンテンツのスクロールと同じように機能します。 スナップ位置があることで、ユーザーは操作が正確でなくても目標の位置に到達できます。 制約付きの回転は Web ブラウザーやフォト アルバムのようなアプリで便利です。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">Xxxxxxxx xxxxxxxx</td>
-<td align="left"><p>Xxxxxxxx xxxxxxxx xxxxxxxx xxxx xxxxxxxx xxxx xxxxx (xxxxxxx xx xxxxx xx [Guidelines for panning](guidelines-for-panning.md)) xx xxxx xx xxx YY xxxxxx xxxx xxxxxx xxxxxxxx xx xxxxxxxxxxx xxxxxxxx. Xx xxx xxxx xxxxxxxx xxx xxxxxx xxxxxxx xx xxx xx YY xxxxxx xxxxx, xxx xxxxxx xxxxxxx xx xxxx xxxxxxxx; xxxxxxxxx, xxx xxxxxx xxxxxxxxxxxxx xxxxxxx xx x xxxx xxxxx.</p>
+<td align="left">複合回転</td>
+<td align="left"><p>複合回転は自由回転をサポートしますが、([Guidelines for panning](guidelines-for-panning.md)におけるレールのように) 90° 単位のスナップ位置のゾーンでは制約付き回転によって強制されます。 ユーザーが各 90° のゾーンの外でオブジェクトを離した場合にはオブジェクトはその位置にとどまりますが、それ以外の場合にはオブジェクトは自動的にスナップ位置まで回転します。</p>
 <div class="alert">
-<strong>Xxxx</strong>  X xxxx xxxxxxxxx xxxx xx x xxxxxxx xx xxxxx xx xxxx xxxxxx x xxxxxx xxxxxxxxxx xxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxx xx xxxxxxxx xx xxxxxxxxx xxx xxxxxxxxx.
+<strong>注:</strong>  ユーザー インターフェイスのレールは、ターゲットの周辺の領域において、特定の値または位置に向けて動きが制約され選択に影響を与える機能です。
 </div>
 <div>
  
@@ -108,29 +98,32 @@ Xxxxxxx Y xxxxxxxx xxxxx xxxxx xx xxxxxxxx: xxxx, xxxxxxxxxxx, xxx xxxxxxxx.
 
  
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxx
+## <span id="related_topics"></span>関連トピック
 
 
-**Xxxxxxx**
-* [Xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Xxx xxxxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Xxxx xxxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Xxxxxxx xxxxxxx**
-* [Xxxxx: XXXX xxxx xxxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [Xxxxx: Xxxxxx xxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Xxxxx: Xxxxx xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231590)
-* [XXXX xxxxxxxxx, xxxxxxx, xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Xxxxx: Xxxxxxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=246570)
-* [Xxxxx: Xxxxxxxx xxx xxxxxxxxxxxxx xxxx XxxxxxxXxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=264995)
-* [Xxxxx: Xxxxxxxxxxxxx xxx xxxxxxxx (X++) xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231605)
-* [XxxxxxX xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=231627)
+**サンプル**
+* [基本的な入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [待機時間が短い入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [ユーザー操作モードのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [フォーカスの視覚効果のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**サンプルのアーカイブ**
+* [入力: XAML ユーザー入力イベントのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [入力: デバイス機能のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [入力: タッチのヒット テストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=231590)
+* [XAML のスクロール、パン、ズームのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [入力: 簡略化されたインクのサンプル](http://go.microsoft.com/fwlink/p/?linkid=246570)
+* [入力: GestureRecognizer によるジェスチャと操作](http://go.microsoft.com/fwlink/p/?LinkId=264995)
+* [入力: 操作とジェスチャ (C++) のサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231605)
+* [DirectX タッチ入力のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=231627)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

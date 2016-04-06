@@ -1,152 +1,148 @@
 ---
-xxxxx: Xxxxxxxxxxxx
-xxxxxxxxxxx: Xxx xxxxxxx xxxxxxxx xx xxxxxxxx xx xxx xxxxxxxxxxxx xxxxxxxx xxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xxx xxxxxxxx xxxxxxxxxxx xx xxxxxxxxxx xxxxx, xxx xxx xxxxx xx xxx xxx xx xxxx xxxxxxx.
-xx.xxxxxxx: YXYYYYYY-YYXX-YXXY-YYXY-YYYYYXXYYXYY
+title: Cryptography
+description: The article provides an overview of the cryptography features available to Universal Windows Platform (UWP) apps. For detailed information on particular tasks, see the table at the end of this article.
+ms.assetid: 9C213036-47FD-4AA4-99E0-84006BE63F47
+author: awkoren
 ---
 
-# Xxxxxxxxxxxx
+# Cryptography
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxx xxxxxxx xxxxxxxx xx xxxxxxxx xx xxx xxxxxxxxxxxx xxxxxxxx xxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xxx xxxxxxxx xxxxxxxxxxx xx xxxxxxxxxx xxxxx, xxx xxx xxxxx xx xxx xxx xx xxxx xxxxxxx.
+The article provides an overview of the cryptography features available to Universal Windows Platform (UWP) apps. For detailed information on particular tasks, see the table at the end of this article.
 
-## Xxxxxxxxxxx
+## Terminology
 
 
-Xxx xxxxxxxxx xxxxxxxxxxx xx xxxxxxxx xxxx xx xxxxxxxxxxxx xxx xxxxxx xxx xxxxxxxxxxxxxx (XXX).
+The following terminology is commonly used in cryptography and public key infrastructure (PKI).
 
-| Xxxx                        | Xxxxxxxxxxx                                                                                                                                                                                           |
+| Term                        | Description                                                                                                                                                                                           |
 |-----------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxxxxx                  | Xxx xxxxxxx xx xxxxxxxxxxxx xxxx xx xxxxx x xxxxxxxxxxxxx xxxxxxxxx xxx xxx. Xxx xxxxxxxxxxx xxxx xxx xx xxxxxxxxx xxxx xx xxxxx xxx xxxx xxxxxxxxx xxx xxx xxxx (xxxxxxxxx) xx xxxxxxx (xxxxxx) xxx. |
-| Xxxxxxxxxx                  | Xxx xxxxxxx xx xxxxxxxxx xxxxxxxxx xxxx xx xxx xxxxxxxx xxxx.                                                                                                                                         |
-| Xxxxxxxxx                   | Xxxxxxxxxx xxxxxxxx xx xx xxxxxxxxxxx xxxx xxxxxxx. Xxxxxxxxx xxxxxx xx xxx xxxxxxxxxxx xxxx.                                                                                                         |
-| Xxxxxxxxxx                  | Xxxxxxxxxx xxxxxxxx xx xx xxxxxxxxx, xxx xxxxxxxxx xxxxxxxxxx, xxxx xxxxxxx. Xxxxxxxxx xxxxxx xx xxx xxxxxxxxx xxxx.                                                                                  |
-| Xxxxxxx                     | Xxx xxxxxxx xx xxxxxxxxxx xxxxxxxx xxxxxx xxxx xxxx x xxxxx xxxxxx, xxxxxxxxx xxxxxxx, xxxxx. Xx xxxxxxxxx xxxxxx, xxx xxx xxxxxx xxxxxxxxxx xxxxxxxxx xxxx xxx xx xxxx xxxx xxx xxx xxxx.            |
-| Xxxxxxxxx                   | Xxxxxxxxx xxxx xx xxxxxxx xxxx xxxxxxxxx xxxx xx xxxxxxxxxxxx xxx xxxxxx xx xxx xxxx xx xxxxxx xxxx xxx xxxx xxx xxx xxxxxxxx xxxx xxxxxx xxxxxxxxxxxx.                                               |
-| Xxxxxxxxx                   | X xxxx-xx-xxxx xxxxxxxxx xxx xxxxxxxxxx xxxx.                                                                                                                                                         |
-| Xxx                         | X xxxxxx xx xxxxxxxxxxxx xxxxxx xxxx xx xxxxx xx x xxxxxxxxxxxxx xxxxxxxxx xx xxxxxxx xxx xxxxxxx xxxx.                                                                                               |
-| Xxxxxxxxx Xxx Xxxxxxxxxxxx  | Xxxxxxxxxxxx xx xxxxx xxxxxxxxxx xxx xxxxxxxxxx xxx xxx xxxx xxx. Xxxx xx xxxx xxxxx xx xxxxxx xxx xxxxxxxxxxxx.                                                                                      |
-| Xxxxxxxxxx Xxx Xxxxxxxxxxxx | Xxxxxxxxxxxx xx xxxxx xxxxxxxxxx xxx xxxxxxxxxx xxx x xxxxxxxxx xxx xxxxxxxxxxxxxx xxxxxxx xxx. Xxxx xx xxxx xxxxxx xxxxxx xxx xxxxxxxxxxxx.                                                          |
-| Xxxxxxxx                    | Xxx xxxxxxx xx xxxxxxxx xxxxxxx xxxxxxxx, xxxxxxxxx xxxxxxxxxxxx, xxx xxxxxxxxx xxxxxx x xxxxxxx.                                                                                                     |
-| Xxxxxxxxx Xxxxxxxx          | X XXX xxxx xxxxxxxxxx x xxxxxxxxxxxxx xxxxxxxxx.                                                                                                                                                      |
-| Xxx Xxxxxxx Xxxxxxxx        | X xxxxxxxxx xxx xxxxxxx xxx xxxxxxxx. Xxxxxxxxx, xxxx xxx xx xxxxxx xx xxxxxxxx, xxxxx xxxxx, xx xxx xxxxxxx xxxxxxxx xxxxxx (XXX).                                                                   |
-| X.YYY Xxxxxxxxxxx           | X xxxxxxx xxxxxxxx, xxxxxxxxx xxxxxx xx x xxxxxxxxxxxxx xxxxxxxxx, xx xxxxxx xxx xxxxxxxx xx xx xxxxxxxxxx, xxxxxx, xx xxxxxx xx xxxxx xxxxxxxxxx xxxxxxx.                                            |
+| Encryption                  | The process of transforming data by using a cryptographic algorithm and key. The transformed data can be recovered only by using the same algorithm and the same (symmetric) or related (public) key. |
+| Decryption                  | The process of returning encrypted data to its original form.                                                                                                                                         |
+| Plaintext                   | Originally referred to an unencrypted text message. Currently refers to any unencrypted data.                                                                                                         |
+| Ciphertext                  | Originally referred to an encrypted, and therefore unreadable, text message. Currently refers to any encrypted data.                                                                                  |
+| Hashing                     | The process of converting variable length data into a fixed length, typically smaller, value. By comparing hashes, you can obtain reasonable assurance that two or more data are the same.            |
+| Signature                   | Encrypted hash of digital data typically used to authenticate the sender of the data or verify that the data was not tampered with during transmission.                                               |
+| Algorithm                   | A step-by-step procedure for encrypting data.                                                                                                                                                         |
+| Key                         | A random or pseudorandom number used as input to a cryptographic algorithm to encrypt and decrypt data.                                                                                               |
+| Symmetric Key Cryptography  | Cryptography in which encryption and decryption use the same key. This is also known as secret key cryptography.                                                                                      |
+| Asymmetric Key Cryptography | Cryptography in which encryption and decryption use a different but mathematically related key. This is also called public key cryptography.                                                          |
+| Encoding                    | The process of encoding digital messages, including certificates, for transport across a network.                                                                                                     |
+| Algorithm Provider          | A DLL that implements a cryptographic algorithm.                                                                                                                                                      |
+| Key Storage Provider        | A container for storing key material. Currently, keys can be stored in software, smart cards, or the trusted platform module (TPM).                                                                   |
+| X.509 Certificate           | A digital document, typically issued by a certification authority, to verify the identity of an individual, system, or entity to other interested parties.                                            |
 
  
-## Xxxxxxxxxx
+## Namespaces
 
-Xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxx xxx xx xxxx.
+The following namespaces are available for use in apps.
 
-### Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxxx
+### Windows.Security.Cryptography
 
-Xxxxxxxx xxx XxxxxxxxxxxxxXxxxxx xxxxx xxx xxxxxx xxxxxxx xxxx xxxxxx xxx xx:
+Contains the CryptographicBuffer class and static methods that enable you to:
 
--   Xxxxxxx xxxx xx xxx xxxx xxxxxxx
--   Xxxxxxx xxxx xx xxx xxxx xxxx xxxxxx
--   Xxxxxx xxxxxxxx xxx xxxxxxx xxxxxxxxx
--   Xxxxxx xxxxxxxx xxxxx xxxxxxxxx
+-   Convert data to and from strings
+-   Convert data to and from byte arrays
+-   Encode messages for network transport
+-   Decode messages after transport
 
-### Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxxx.Xxxxxxxxxxxx
+### Windows.Security.Cryptography.Certificates
 
-Xxxxxxxx xxxxxxx, xxxxxxxxxx, xxx xxxxxxxxxxx xxxxx xxxx xxxxxx xxx xx:
+Contains classes, interfaces, and enumeration types that enable you to:
 
--   Xxxxxx x xxxxxxxxxxx xxxxxxx
--   Xxxxxxx x xxxxxxxxxxx xxxxxxxx
--   Xxxxxx x xxxxxxxxxxx xx x XXX xxxx
--   Xxxxxxx xxx xxxxxxxx xxxxxxxxxxx xxxxxxx xxxxxxxxxx
+-   Create a certificate request
+-   Install a certificate response
+-   Import a certificate in a PFX file
+-   Specify and retrieve certificate request properties
 
-### Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxxx.Xxxx
+### Windows.Security.Cryptography.Core
 
-Xxxxxxxx xxxxxxx xxx xxxxxxxxxxx xxxxx xxxx xxxxxx xxx xx:
+Contains classes and enumeration types that enable you to:
 
--   Xxxxxxx xxx xxxxxxx xxxx
--   Xxxx xxxx
--   Xxxx xxxx xxx xxxxxx xxxxxxxxxx
--   Xxxxxx, xxxxxx, xxx xxxxxx xxxx
--   Xxxx xxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxx
--   Xxxx xxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxxx
--   Xxxx xxxx xxxx xxxxxxxxx xxxxxxxxx
--   Xxxx xxxx xxxxxxx xxxxxxxxxxxxxx xxxx (XXX) xxxxxxxxx xxxxxxxxx
--   Xxxx xxxx xxx xxxxxxxxxx xxxxxxxxx xxxxxxxxx
+-   Encrypt and decrypt data
+-   Hash data
+-   Sign data and verify signatures
+-   Create, import, and export keys
+-   Work with asymmetric key algorithm providers
+-   Work with symmetric key algorithm providers
+-   Work with hash algorithm providers
+-   Work with machine authentication code (MAC) algorithm providers
+-   Work with key derivation algorithm providers
 
-### Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxxx.XxxxXxxxxxxxxx
+### Windows.Security.Cryptography.DataProtection
 
-Xxxxxxxx xxxxxxx xxxx xxxxxx xxx xx:
+Contains classes that enable you to:
 
--   Xxxxxxxxxxxxxx xxxxxxx xxx xxxxxxx xxxxxx xxxx
--   Xxxxxxxxxxxxxx xxxxxxx xxx xxxxxxx xxxx xxxxxxx
+-   Asynchronously encrypt and decrypt static data
+-   Asynchronously encrypt and decrypt data streams
 
-## Xxxxxx xxx XXX xxxxxxxxxxx xxxxxxxxxxxx
-
-
-Xxx xxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx xxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxxxxx xxx xxxxxx xxx xxxxxxxxxxxxxx (XXX) xxxxxxxxxxxx.
-
-### Xxxxxxxxxxxx xxxxxxx
-
-Xxx xxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxxxxx xxxxx. Xxx xxxx xxxxxxxxxxx, xxx xxx [**Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br241547) xxxxxxxxx.
-
--   Xxxxxx xxxxxxxxx xxxx
--   Xxxxxxx xxxxxxxxx xxxxxxxxxx
--   Xxxxxx xxxxxxxxxx xxxx
--   Xxxxxxx xxxxxxxxxx xxxxxxxxxx
--   Xxxxxx xxxxxxxx xxxxx xxxx
--   Xxxxxx xxxxxxx xxxxxxxxxxxxxx xxxxx (XXXx)
--   Xxxx xxxxxxx
--   Xxxxxxxxx xxxx xxxxxxx
-
-Xxx XXX xxxx xxxxxxxx x xxxxxxxxxx xxxxxxxxx xxx xxxxxxxx-xxxxx xxxx xxxxxxxxxx. Xxx xxx xxx xxxx xx xxxxxxx xxx xxxxxxxxx xxxxx. Xxx xxxx xxxxxxxxxxx, xxx xxx [**Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxxx.XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241585) xxxxxxxxx.
-
--   Xxxxxxxxxxxx xxxxxxxxxx xx xxxxxx xxxx
--   Xxxxxxxxxxxx xxxxxxxxxx xx x xxxx xxxxxx
-
-### Xxxxxxxx xxxxxxx
-
-Xx xxx xxx xxxxxx xxxxxxxxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxx x xxxxxxx xxx xxxxxx xxxx xxxxxxxx xxxx x xxxxxxx xxxxxx. Xxx xxxx xxxxxxxxxxx, xxx xxx xxxxxx xxxxxxx xxxxxxxxx xx xxx [**Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241404) xxxxxxxxx.
-
-### XXX xxxxxxx
-
-Xxxx xxx xxxxxxx xxx xxxxxxxxx XXX xxxxx. Xxx xxxx xxxxxxxxxxx, xxx xxx [**Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxxx.Xxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241476) xxxxxxxxx.
-
--   Xxxxxx x xxxxxxxxxxx
--   Xxxxxx x xxxx-xxxxxx xxxxxxxxxxx
--   Xxxxxxx x xxxxxxxxxxx xxxxxxxx
--   Xxxxxx x xxxxxxxxxxx xx XXX xxxxxx
--   Xxx xxxxx xxxx xxxxxxxxxxxx xxx xxxx (xxxxxxXxxxXxxxxxxxxxxx xxxxxxxxxxxx xxx)
--   Xxx xxxxxxxxxxxx xxxx xxx xxxx XX xxxxx (xxxxxxXxxxXxxxxxxxxxxx xxxxxxxxxxxx xxx)
-
-Xxxxxxxxxxxx, xxx xxx xxx xxx xxxxxxxx xx xxxxxxx xxx xxxxxxxxx xxxxxxx:
-
--   Xxxxxxx xxx xxxxxxxxxxx xxxxxxx xxxx xxxxxxxxxxxx
--   Xxxxxxx xxx xxxxxxxxxxx xxxx xxxxxxx xxxxxxxxxxxx
--   Xxxxxxxxxx xxxxxxx xxxxxxxxxxx xxxx xxxxxx xxxxx
--   Xxxxxxx xxx xxxxxxxxxxx xxxxxxxxx xxxxxxxx
-    -   Xxxxxxxx xxxxxxxxxxxx xxxx
-    -   Xxxxxxxxxxxx xxxx xxxxx xxxxxxx x xxxxxxxxx xxx xx xxxxxxx
-    -   Xxxxxxxxxxxxx xxxxxx x xxxxxxxxxxx xxxx xxx xxxxxxxxxxx xxxxx
-
-## Xxxxxxxx xxxxxxxx
+## Crypto and PKI application capabilities
 
 
-Xxx xxxxxxxxx xxxxxxxx xxxxxxx xxxx xxxxxx xx xxxxxxxx xxxxxxxxx:
+The simplified application programming interface available for apps enables the following cryptographic and public key infrastructure (PKI) capabilities.
 
-| Xxxxx                                                                         | Xxxxxxxxxxx                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+### Cryptography support
+
+You can perform the following cryptographic tasks. For more information, see the [**Windows.Security.Cryptography.Core**](https://msdn.microsoft.com/library/windows/apps/br241547) namespace.
+
+-   Create symmetric keys
+-   Perform symmetric encryption
+-   Create asymmetric keys
+-   Perform asymmetric encryption
+-   Derive password based keys
+-   Create message authentication codes (MACs)
+-   Hash content
+-   Digitally sign content
+
+The SDK also provides a simplified interface for password-based data protection. You can use this to perform the following tasks. For more information, see the [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) namespace.
+
+-   Asynchronous protection of static data
+-   Asynchronous protection of a data stream
+
+### Encoding support
+
+An app can encode cryptographic data for transmission across a network and decode data received from a network source. For more information, see the static methods available in the [**Windows.Security.Cryptography**](https://msdn.microsoft.com/library/windows/apps/br241404) namespace.
+
+### PKI support
+
+Apps can perform the following PKI tasks. For more information, see the [**Windows.Security.Cryptography.Certificates**](https://msdn.microsoft.com/library/windows/apps/br241476) namespace.
+
+-   Create a certificate
+-   Create a self-signed certificate
+-   Install a certificate response
+-   Import a certificate in PFX format
+-   Use smart card certificates and keys (sharedUserCertificates capabilities set)
+-   Use certificates from the user MY store (sharedUserCertificates capabilities set)
+
+Additionally, you can use the manifest to perform the following actions:
+
+-   Specify per application trusted root certificates
+-   Specify per application peer trusted certificates
+-   Explicitly disable inheritance from system trust
+-   Specify the certificate selection criteria
+    -   Hardware certificates only
+    -   Certificates that chain through a specified set of issuers
+    -   Automatically select a certificate from the application store
+
+## Detailed articles
+
+
+The following articles provide more detail on security scenarios:
+
+| Topic                                                                         | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 |-------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Xxxxxxxxxxxx](certificates.md)                                               | Xxxx xxxxxxx xxxxxxxxx xxx xxx xx xxxxxxxxxxxx xx XXX xxxx. Xxxxxxx xxxxxxxxxxxx xxx xxxx xx xxxxxx xxx xxxxxxxxxxxx xx xxxx x xxxxxx xxx xx x xxxxxx, xxxxxxxx, xx xxxxxxxxxxxx. Xxx xxxxx xxxxxxxxxx xxx xxxx xxxxx xxxx xx xxxxxxxxxxxx xxx xxxxxx xx xxxxxxx. Xxx xxxxxxx, xxxxxxxxxxxx xxx xxxxx xxxx xx xxxxxxxxxxxx x xxx xxxxxx xx x xxxx xxx x xxxx xx x xxx xxxxxx. Xxx xxx xxxxxx xxxxxxxxxxx xxxxxxxx xxx xxxxxxx xx xxxxxx xxxxxx xxxxxxxxxxxx. Xxx xxx xxxx xxxxxx x xxxxxxxxxxx xx x xxxxxxxxxxx xxxxxxxxx. |
-| [Xxxxxxxxxxxxx xxxx](cryptographic-keys.md)                                   | Xxxx xxxxxxx xxxxx xxx xx xxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxxx xx xxxxxx xxxx xxx xxx xx xxxxxxx xxxxxxx xxxxx xxxxxxxxx xxx xxxxxxxxxx xxxx.                                                                                                                                                                                                                                                                                                                                                                             |
-| [Xxxx xxxxxxxxxx](data-protection.md)                                         | Xxxx xxxxxxx xxxxxxxx xxx xx xxx xxx [XxxxXxxxxxxxxxXxxxxxxx](https://msdn.microsoft.com/library/windows/apps/br241559) xxxxx xx xxx [Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxxx.XxxxXxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/br241585) xxxxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxxx xxxx xx x XXX xxx.                                                                                                                                                                                                                  |
-| [XXXx, xxxxxx, xxx xxxxxxxxxx](macs-hashes-and-signatures.md)               | Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxxxxxx xxxxx (XXXx), xxxxxx, xxx xxxxxxxxxx xxx xx xxxx xx XXX xxxx xx xxxxxx xxxxxxx xxxxxxxxx.                                                                                                                                                                                                                                                                                                                                                                                |
-| [Xxxxxx xxxxxxxxxxxx xx xxxxxxxxxxxx](export-restrictions-on-cryptography.md) | Xxx xxxx xxxx xx xxxxxxxxx xx xxxx xxx xxxx xxxxxxxxxxxx xx x xxx xxxx xxxxx xxxxxxx xx xxxx xxxxx xxxxxx xx xxx Xxxxxxx Xxxxx.                                                                                                                                                                                                                                                                                                                                                                                            |
-| [Xxxxxx xxxxxxxxxxxx xxxxx](common-cryptography-tasks.md)                     | Xxxxx xxxxxxxx xxxxxxx xxxxxxx xxxx xxx xxxxxx XXX xxxxxxxxxxxx xxxxx, xxxx xx xxxxxxxx xxxxxx xxxxxxx, xxxxxxxxx xxxxxxx, xxxxxxxxxx xxxxxxx xxxxxxx xxx xxxxxx xxxx, xxxxxxx xx xxx xxxx xxxx xxxxxx, xxx xxxxxxxx xxx xxxxxxxx xxxx.                                                                                                                                                                                                                                                                                    |
+| [Certificates](certificates.md)                                               | This article discusses the use of certificates in UWP apps. Digital certificates are used in public key cryptography to bind a public key to a person, computer, or organization. The bound identities are most often used to authenticate one entity to another. For example, certificates are often used to authenticate a web server to a user and a user to a web server. You can create certificate requests and install or import issued certificates. You can also enroll a certificate in a certificate hierarchy. |
+| [Cryptographic keys](cryptographic-keys.md)                                   | This article shows how to use standard key derivation functions to derive keys and how to encrypt content using symmetric and asymmetric keys.                                                                                                                                                                                                                                                                                                                                                                             |
+| [Data protection](data-protection.md)                                         | This article explains how to use the [DataProtectionProvider](https://msdn.microsoft.com/library/windows/apps/br241559) class in the [Windows.Security.Cryptography.DataProtection](https://msdn.microsoft.com/library/windows/apps/br241585) namespace to encrypt and decrypt digital data in a UWP app.                                                                                                                                                                                                                  |
+| [MACs, hashes, and signatures](macs-hashes-and-signatures.md)               | This article discusses how message authentication codes (MACs), hashes, and signatures can be used in UWP apps to detect message tampering.                                                                                                                                                                                                                                                                                                                                                                                |
+| [Export restrictions on cryptography](export-restrictions-on-cryptography.md) | Use this info to determine if your app uses cryptography in a way that might prevent it from being listed in the Windows Store.                                                                                                                                                                                                                                                                                                                                                                                            |
+| [Common cryptography tasks](common-cryptography-tasks.md)                     | These articles provide example code for common UWP cryptography tasks, such as creating random numbers, comparing buffers, converting between strings and binary data, copying to and from byte arrays, and encoding and decoding data.                                                                                                                                                                                                                                                                                    |
 
  
 
- 
-
- 
+<!--HONumber=Mar16_HO5-->
 
 
-
-
-<!--HONumber=Mar16_HO1-->

@@ -1,89 +1,94 @@
 ---
-xx.xxxxxxx: XYXYYYYY-YYYY-YXYX-YYYY-YYXYYXYYYXXY
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxx xxx xx xxxx xxx xxxxx xxxxx xxxxxxxx xxxxxxxxxx xxx xxx xx xxxxxx xxxxx xxxxx xxx XxxxxxXxxxxx xxxxxxx xxxxx.
-xxxxx: Xxxxx Xxxxxxxx
+ms.assetid: D5D98044-7221-4C2A-9724-56E59F341AB0
+description: この記事では、画像のメタデータ プロパティを読み取ったり書き込んだりする方法のほか、GeotagHelper ユーティリティ クラスを使ってファイルに位置情報タグを設定する方法について説明します。
+title: 画像のメタデータ
 ---
 
-# Xxxxx Xxxxxxxx
+# 画像のメタデータ
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
 
 
-Xxxx xxxxxxx xxxxx xxx xx xxxx xxx xxxxx xxxxx xxxxxxxx xxxxxxxxxx xxx xxx xx xxxxxx xxxxx xxxxx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn903683) xxxxxxx xxxxx.
+この記事では、画像のメタデータ プロパティを読み取ったり書き込んだりする方法のほか、[**GeotagHelper**](https://msdn.microsoft.com/library/windows/apps/dn903683) ユーティリティ クラスを使ってファイルに位置情報タグを設定する方法について説明します。
 
-## Xxxxx xxxxxxxxxx
+## 画像のプロパティ
 
-Xxx [**XxxxxxxXxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227225) xxxxxxxx xxxxxxx x [**XxxxxxxXxxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh770642) xxxxxx xxxx xxxxxxxx xxxxxx xx xxxxxxx-xxxxxxx xxxxxxxxxxx xxxxx xxx xxxx. Xxx xxx xxxxx-xxxxxxxx xxxxxxxxxx xx xxxxxxx [**XxxXxxxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh770646). Xxx xxxxxxxx [**XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207718) xxxxxx xxxxxxx xxxxxxx xxxx xxxxxxx xxxxx xxxxx xxxxxxxx xxxxxx, xxxx xxx xxxxx xx xxx xxxxx xxx xxx xxxxxxx xxxx.
+ファイルの内容に関連した情報には、[**StorageFile.Properties**](https://msdn.microsoft.com/library/windows/apps/br227225) プロパティから返される [**StorageItemContentProperties**](https://msdn.microsoft.com/library/windows/apps/hh770642) オブジェクトを使ってアクセスできます。 画像に固有のプロパティを取得するには、[**GetImagePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/hh770646) を呼び出します。 それによって返される [**ImageProperties**](https://msdn.microsoft.com/library/windows/apps/br207718) オブジェクトは、画像のタイトルやキャプチャの日付など、基本的な画像メタデータのフィールドを含んだメンバーを公開します。
 
-[!xxxx-xx[XxxXxxxxXxxxxxxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetImageProperties)]
+[!code-cs[GetImageProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetImageProperties)]
 
-Xx xxxxxx x xxxxxx xxx xx xxxx xxxxxxxx, xxx xxx Xxxxxxx Xxxxxxxx Xxxxxx, x xxx xx xxxx xxxxxxxx xxxxxxxxxx xxxx xxx xx xxxxxxxxx xxxx x xxxxxx xxxxxx xxxxxxxxxx. Xxxxxx x xxxx xx xxxxxxx xxx xxx xxx xxxxxxxxxx xxx xxxx xxxxxxxx xxx xxxx xx xxxxxxxx. Xxx [**XxxxxXxxxxxxxxx.XxxxxxxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br207732) xxxxxx xxxxx xxxx xxxx xx xxxxxxx xxx xxxxxxx x xxxxxxxxxx xx xxx/xxxxx xxxxx xxxxx xxx xxx xx xxx xxxxxxxx xxxxxxxxxx xxx xxx xxxxx xx xxx xxxxxxxx xxxxx.
+さらに広範なファイル メタデータにアクセスするには、一意の文字列識別子で取得できるファイル メタデータ プロパティが集約された Windows プロパティ システムを使います。 文字列のリストを作成し、取得する必要のある各プロパティの識別子を追加してください。 [
+            **ImageProperties.RetrievePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br207732) メソッドは、この文字列のリストを引数として受け取ってキー/値ペアのディクショナリを返します。このディクショナリのキーがプロパティ識別子で、ディクショナリの値がそのプロパティの値になります。
 
-[!xxxx-xx[XxxXxxxxxxXxxxxxxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetWindowsProperties)]
+[!code-cs[GetWindowsProperties](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetWindowsProperties)]
 
--   Xxx x xxxxxxxx xxxx xx Xxxxxxx Xxxxxxxxxx, xxxxxxxxx xxx xxxxxxxxxxx xxx xxxx xxx xxxx xxxxxxxx, xxx [Xxxxxxx Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/dd561977).
+-   Windows のプロパティの全一覧 (プロパティごとの識別子と型を含む) については、「[Windows プロパティ](https://msdn.microsoft.com/library/windows/desktop/dd561977)」をご覧ください。
 
--   Xxxx xxxxxxxxxx xxx xxxx xxxxxxxxx xxx xxxxxxx xxxx xxxxxxxxxx xxx xxxxx xxxxxx. Xxx x xxxxxxx xx xxx xxxxx xxxxxxxx xxxxxxxxx xxx xxxx xxxxx xxxx, xxx [Xxxxx Xxxxxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ee872003).
+-   一部のプロパティは、特定のファイル コンテナーや特定の画像コーデックでのみサポートされます。 画像の種類ごとのサポートされるメタデータについては、「[フォト メタデータ ポリシー](https://msdn.microsoft.com/library/windows/desktop/ee872003)」をご覧ください。
 
--   Xxxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxxxx xxx xxxxxx x xxxx xxxxx xxxx xxxxxxxxx, xxxxxx xxxxx xxx xxxx xxxxxx xxxxx x xxxxxxxx xxxxxxxx xxxxx.
+-   サポート対象外のプロパティを取得しようとすると null 値が返される場合があります。返されたメタデータの値を使う前に必ず、null のチェックを行ってください。
 
-## Xxxxxx xxxxxx
+## 位置情報タグ ヘルパー
 
-XxxxxxXxxxxx xx x xxxxxxx xxxxx xxxx xxxxx xx xxxx xx xxx xxxxxx xxxx xxxxxxxxxx xxxx xxxxx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225603) XXXx xxxxxxxx, xxxxxxx xxxxxx xx xxxxxxxx xxxxx xx xxxxxxxxx xxx xxxxxxxx xxxxxx.
+GeotagHelper は、地理データを含んだ画像へのタグ付けを支援するユーティリティ クラスです。[**Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) API を直接使って簡単にタグを設定することができます。メタデータの形式を手動で解析したり構築したりする必要はありません。
 
-Xx xxx xxxxxxx xxxx x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263675) xxxxxx xxxxxxxxxxxx xxx xxxxxxxx xxx xxxx xx xxx xx xxx xxxxx, xxxxxx xxxx x xxxxxxxx xxx xx xxx xxxxxxxxxxx XXXx xx xxxx xxxxx xxxxxx, xxx xxx xxx xxx xxxxxx xxxx xx xxxxxxx [**XxxxxxXxxxxx.XxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn903685) xxx xxxxxxx xx x [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxx xxx **Xxxxxxxx**.
+地理位置情報 API の使用後など、タグの設定対象となる画像の位置情報を表す [**Geopoint**](https://msdn.microsoft.com/library/windows/apps/dn263675) オブジェクトが取得済みで、そのオブジェクトが既に存在する場合は、[**GeotagHelper.SetGeotagAsync**](https://msdn.microsoft.com/library/windows/apps/dn903685) に [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) と **Geopoint** を渡して呼び出すことで位置情報タグ データを設定できます。
 
-[!xxxx-xx[XxxXxxXxxxXxxxXxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromPoint)]
+[!code-cs[SetGeoDataFromPoint](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromPoint)]
 
-Xx xxx xxx xxxxxx xxxx xxxxx xxx xxxxxx'x xxxxxxx xxxxxxxx, xxxxxx x xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225534) xxxxxx xxx xxxx [**XxxxxxXxxxxx.XxxXxxxxxXxxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn903686) xxxxxxx xx xxx **Xxxxxxxxxx** xxx xxx xxxx xx xx xxxxxx.
+デバイスの現在位置を使って位置情報タグ データを設定するには、[**Geolocator**](https://msdn.microsoft.com/library/windows/apps/br225534) オブジェクトを新たに作成し、[**GeotagHelper.SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686) の引数に **Geolocator** とタグの設定対象となるファイルとを指定して呼び出します。
 
-[!xxxx-xx[XxxXxxXxxxXxxxXxxxxxxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromGeolocator)]
-
--   Xxx xxxx xxxxxxx xxx **xxxxxxxx** xxxxxx xxxxxxxxxx xx xxxx xxx xxxxxxxx xx xxxxx xx xxx xxx [**XxxXxxxxxXxxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn903686) XXX.
-
--   Xxx xxxx xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn859152) xxxxxx xxxxxxx [**XxxXxxxxxXxxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn903686) xx xxxxxx xxx xxxx xxx xxxxxxx xxxx xxx xxxxxxxxxx xx xxx xxxxx xxxxxxxx.
-
--   Xxx xxxx xxxxxxxxxxx xx xxx xxxxxxxxxxx XXXx, xxx [Xxxx xxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt219699).
-
-Xx xxx x XxxXxxxx xxxxxxxxxxxx xxx xxxxxxxxx xxxxxxxx xx xx xxxxx xxxx, xxxx [**XxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn903684).
-
-[!xxxx-xx[XxxXxxXxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetGeoData)]
-
-## Xxxxxx xxx xxxxxx xxxxx xxxxxxxx
-
-Xxx xxxx xxxxxxxx xxx xx xxxxxxx xxxx xxxxx xxxx xx xx xxxx xxx xxxxx xxx xxxxxxxxxx xx xxx xxxxxx xxxxx xxxxx x [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226176) xx x [XxxxxxXxxxxxx](bitmapencoder-options-reference.md). Xxx xxxxx xxxxxxxxxx xxx xxx xxx Xxxxxxx Xxxxxxxxxx xx xxxxxxx xxx xxxx xxx xxx xxxxxxx xx xxxxxxx, xxx xxx xxx xxxx xxx xxx xxxxxxxx xxxxx xxxxxxxx xxxxxxxx xx xxx Xxxxxxx Xxxxxxx Xxxxxxxxx (XXX) xx xxxxxxx xxx xxxx xx x xxxxxxxxx xxxxxxxx.
-
-Xxxxxxx xxxxx xxxxxxxx xxxxx xxxx xxxxxxxxx xxxxxxxx xxx xx xxxx x [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226176) xxxx xxx xxxxxxx xxxx xxx xxxxxx xxxxx xxxx xxxxxx. Xxx xxxxxxxxxxx xx xxx xx xx xxxx, xxx [Xxxxxxx](imaging.md).
-
-Xxxx xxx xxxx xxx xxxxxxx, xxxxxx x xxxx xx xxxxxxx xxx xxx x xxx xxxxx xxx xxxx xxxxxxxx xxxxxxxx xxx xxxx xx xxxxxxxx, xxxxx xxxxxx xxx Xxxxxxx Xxxxxxxx xxxxxxxxxx xxxxxx xx x XXX xxxxxxxx xxxxx. Xxxx xxx [**XxxxxxXxxxxxxxxxXxxx.XxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226250) xxxxxx xx xxx xxxxxxx'x [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226248) xxxxxx xx xxxxxxx xxx xxxxxxxxx xxxxxxxxxx. Xxx xxxxxxxxxx xxx xxxxxxxx xx x xxxxxxxxxx xx xxx/xxxxx xxxxx xxxxxxxxxx xxx xxxxxxxx xxxx xx xxxx xxx xxx xxxxxxxx xxxxx.
-
-[!xxxx-xx[XxxxXxxxxXxxxxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetReadImageMetadata)]
-
--   Xxx xxxxxxxxxxx xx xxx XXX xxxxxxxx xxxxx xxxxxxxx xxx xxx xxxxxxxxxx xxxxxxxxx, xxx [XXX xxxxx xxxxxx xxxxxx xxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ee719904).
-
--   Xxxx xxxxxxxx xxxxxxxxxx xxx xxxx xxxxxxxxx xx x xxxxxx xx xxxxx xxxxx. [
-            **XxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226250) xxxx xxxx xxxx xxx xxxxx xxxx YxYYYYYXYY xx xxx xx xxx xxxxxxxxx xxxxxxxxxx xx xxx xxxxxxxxx xx xxx xxxxx xxxxxxxxxx xxxx xxx xxxxxxx xxx YxYYYYYXYY xx xxx xxxxx xxxx xxx xxxxxxx xxxxxxxx xx xxx. Xxx xxxxxxxxx xxxxxxxxxx xxxx xxxxx xxxxx xxxxx xxx XXXXXXXX\_XXX\_XXXXXXXXXXXXXXXXXXXX xxx XXXXXXXX\_XXX\_XXXXXXXXXXXXXXXXXXXX xxx xxx xxxxxxx xx xxx xxxxxxxx.x xxxxxx xxxx.
--   Xxxxxxx xx xxxxx xxx xx xxx xxx xxxxxxx x xxxxx xxx x xxxxxxxxxx xxxxxxxx, xxx xxx **XXxxxxxxxxx.XxxxxxxxXxx** xx xxxxxx xxxx x xxxxxxxx xx xxxxxxx xx xxx xxxxxxx xxxxxx xxxxxxxxxx xx xxxxxx xx.
-
-Xxxxxxx xxxxx xxxxxxxx xx xxx xxxxxx xxxxxxxx x **XxxxxxXxxxxxx** xxxxxxxxxx xxxx xxx xxxxx xxxxxx xxxx.
-
-Xxxxxx x [**XxxxxxXxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh974338) xxxxxx xx xxxxxxx xxx xxxxxxxx xxxxxx xxx xxxx xxx. Xxxxxx x [**XxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700687) xxxxxx xx xxxxxxxxx xxx xxxxxxxx xxxxx. Xxxx xxxxxx xxxx xx **xxxxxx** xx xxx xxxxx xxx xxxxxx xx xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br225871) xxxxxxxxxxx xxxx xxxxxxx xxx xxxx xx xxx xxxxx. Xxx xxx **XxxxxxXxxxxXxxxx** xx xxx **XxxxxxXxxxxxxxXxx** xxx xxxx xxxx [**XxxxxxXxxxxxxxxx.XxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226252) xx xxxxx xxx xxxxxxx xx xxxxx xxx xxxxxxxxxx xx xxx xxxxxx.
-
-[!xxxx-xx[XxxxxXxxxxXxxxxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetWriteImageMetadata)]
-
--   Xxx xxxxxxx xx xxxxx xxxxxxxxxx xxx xxxxxxxxx xxx xxxxx xxxxx xxxx xxxxx, xxx [Xxxxxxx Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/dd561977), [Xxxxx Xxxxxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ee872003), xxx [XXX xxxxx xxxxxx xxxxxx xxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ee719904).
+[!code-cs[SetGeoDataFromGeolocator](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSetGeoDataFromGeolocator)]
 
 -   [
-            **XxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226252) xxxx xxxx xxxx xxx xxxxx xxxx YxYYYYYXYY xx xxx xx xxx xxxxxxxxx xxxxxxxxxx xx xxx xxxxxxxxx xx xxx xxxxx xxxxxxxxxx xxxx xxx xxxxxxx.
+            **SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686) API を使うには、アプリ マニフェストに**位置情報**デバイス機能を追加する必要があります。
 
-## Xxxxxxx xxxxxx
+-   [
+            **SetGeotagFromGeolocatorAsync**](https://msdn.microsoft.com/library/windows/apps/dn903686) を呼び出す前に [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) を呼び出し、ユーザーの位置情報をアプリで使うための許可を得ておく必要があります。
 
-* [Xxxxxxx](imaging.md)
+-   地理位置情報 API について詳しくは、「[マップと位置情報](https://msdn.microsoft.com/library/windows/apps/mt219699)」をご覧ください。
+
+位置情報タグで示された画像ファイルの地理的位置を表す GeoPoint を取得するには、[**GetGeotagAsync**](https://msdn.microsoft.com/library/windows/apps/dn903684) を呼び出します。
+
+[!code-cs[GetGeoData](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetGetGeoData)]
+
+## 画像メタデータのデコードとエンコード
+
+画像データを扱う最先端の方法は、[**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) または [BitmapEncoder](bitmapencoder-options-reference.md) を使って、プロパティの読み取りと書き込みをストリーム レベルで行うことです。 これらの操作では、読み取りまたは書き込みの対象データを Windows プロパティを使って指定できるほか、要求するプロパティのパスを Windows Imaging Component (WIC) のメタデータ クエリ言語を使って指定することもできます。
+
+この方法で画像のメタデータを読み取るには、ソース画像ファイル ストリームを使って作成された [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) が必要です。 この方法については、「[イメージング](imaging.md)」をご覧ください。
+
+デコーダーを取得したら、文字列のリストを作成し、Windows プロパティの識別子文字列または WIC メタデータ クエリを使って、取得する各メタデータ プロパティの新しいエントリを追加します。 特定のプロパティを要求するには、デコーダーの [**BitmapProperties**](https://msdn.microsoft.com/library/windows/apps/br226248) メンバーの [**BitmapPropertiesView.GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) メソッドを呼び出します。 要求したプロパティが、プロパティ名 (またはパス) とプロパティ値を含んだキー/値ペアのディクショナリとして返されます。
+
+[!code-cs[ReadImageMetadata](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetReadImageMetadata)]
+
+-   WIC メタデータ クエリ言語とサポートされるプロパティについては、「[WIC ネイティブ イメージ形式メタデータのクエリ](https://msdn.microsoft.com/library/windows/desktop/ee719904)」をご覧ください。
+
+-   メタデータのプロパティの多くは、サポートされる画像の種類に限りがあります。 デコーダーに関連付けられている画像が、要求したプロパティのいずれかをサポートしていない場合、[**GetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226250) はエラー コード 0x88982F41 で失敗します。いずれのメタデータも画像がサポートしていない場合は 0x88982F81 で失敗します。 この 2 つのエラー コードに関連付けられている定数はそれぞれ WINCODEC\_ERR\_PROPERTYNOTSUPPORTED と WINCODEC\_ERR\_UNSUPPORTEDOPERATION で、winerror.h ヘッダー ファイルに定義されています。
+-   特定のプロパティの値が画像に存在するかどうかはわからないので、**IDictionary.ContainsKey** を使って、結果にプロパティが存在するかどうかを確かめたうえでアクセスしてください。
+
+画像のメタデータをストリームに書き込むには、画像の出力ファイルに関連付けられている **BitmapEncoder** が必要です。
+
+設定対象プロパティの値を保持する [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) オブジェクトを作成します。 プロパティの値を表す [**BitmapTypedValue**](https://msdn.microsoft.com/library/windows/apps/hh700687) オブジェクトを作成します。 このオブジェクトでは、値の型を定義する [**PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871) 列挙型の値およびメンバーとして **object** を使います。 **BitmapTypedValue** を **BitmapPropertySet** に追加したうえで、[**BitmapProperties.SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) を呼び出すと、エンコーダーがプロパティをストリームに書き込みます。
+
+[!code-cs[WriteImageMetadata](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetWriteImageMetadata)]
+
+-   画像ファイルの種類ごとのサポート対象プロパティについて詳しくは、「[Windows プロパティ](https://msdn.microsoft.com/library/windows/desktop/dd561977)」、「[フォト メタデータ ポリシー](https://msdn.microsoft.com/library/windows/desktop/ee872003)」、「[WIC ネイティブ イメージ形式メタデータのクエリ](https://msdn.microsoft.com/library/windows/desktop/ee719904)」をご覧ください。
+
+-   エンコーダーに関連付けられている画像が、要求したプロパティのいずれかをサポートしていない場合、[**SetPropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/br226252) はエラー コード 0x88982F41 で失敗します。
+
+## 関連トピック
+
+* [イメージング](imaging.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

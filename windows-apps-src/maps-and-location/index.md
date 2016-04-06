@@ -1,80 +1,88 @@
 ---
-xxxxx: Xxxx xxx xxxxxxxx xxxxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xxx xxx xxx xxxxxxx xxxx, xxx xxx xxxxxxxx, xxxx xxx xxxxxxxx, xxx xxx xx x xxxxxxxx xx xxxx xxx. Xxxx xxxxxxx xxxx xxxxx xxx xxx xx xxxxxx xxx Xxxxxxx Xxxx xxx xx x xxxxxxxx xxx, xxxxx, xx x xxx xx xxxx-xx-xxxx xxxxxxxxxx.
-xx.xxxxxxx: XYXYXYYY-XXYY-YXYY-YXYY-XYXYYXYYYYYY
+title: 地図と位置情報の概要
+description: このセクションでは、アプリで地図の表示、マップ サービスの使用、位置情報の検索、ジオフェンスのセットアップを行う方法について説明します。 また、Windows マップ アプリを起動し、特定の地図やルート、ターン バイ ターン方式のルート案内を表示する方法についても説明します。
+ms.assetid: F4C1F094-CF46-4B15-9D80-C1A26A314521
 ---
 
-# Xxxx xxx xxxxxxxx xxxxxxxx
+# 地図と位置情報の概要
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xxxx xxxxxxx xxxxxxxx xxx xxx xxx xxxxxxx xxxx, xxx xxx xxxxxxxx, xxxx xxx xxxxxxxx, xxx xxx xx x xxxxxxxx xx xxxx xxx. Xxxx xxxxxxx xxxx xxxxx xxx xxx xx xxxxxx xxx Xxxxxxx Xxxx xxx xx x xxxxxxxx xxx, xxxxx, xx x xxx xx xxxx-xx-xxxx xxxxxxxxxx.
+このセクションでは、アプリで地図の表示、マップ サービスの使用、位置情報の検索、ジオフェンスのセットアップを行う方法について説明します。 また、Windows マップ アプリを起動し、特定の地図やルート、ターン バイ ターン方式のルート案内を表示する方法についても説明します。
 
-> **Xxx**  Xx xxxxx xxxx xxxxx xxxxx xxxx xxx xxxxxxxx xx xxxx xxx, xxxxxxxx xxx xxxxxxxxx xxxxxxx xxxx xxx [Xxxxxxx-xxxxxxxxx-xxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=619979) xx XxxXxx:
--   [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977)
--   [XXX xxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=533278)
+> **ヒント** アプリで地図と位置情報を使う方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から次のサンプルをダウンロードしてください。
+-   [ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [UWP の位置情報のサンプル](http://go.microsoft.com/fwlink/p/?linkid=533278)
 
  
 
-## Xxxxxxx xxxx
+## 地図の表示
 
 
-Xxxxxxx xxxx xxxx YX, YX, xx Xxxxxxxxxx xxxxx xx xxxx xxx xx xxxxx XXXx xxxx xxx [**Xxxxxxx.XX.Xxxx.Xxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn610751) xxxxxxxxx. Xxx xxx xxxx xxxxxx xx xxxxxxxx (XXX) xx xxx xxx xx xxxxx xxxxxxxx, xxxxxx, xxxxxx, xx XXXX XX xxxxxxxx. Xxx xxx xxxx xxxxxxx xxxxx xxxxxx xx xxxxxxx xxx xxx xxxxxx xxxxxxxxxx.
+[
+            **Windows.UI.Xaml.Controls.Maps**](https://msdn.microsoft.com/library/windows/apps/dn610751) 名前空間の API を使って、アプリで地図を 2D、3D、または Streetside ビューで表示できます。 プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に表示できます。 また、タイル画像をオーバーレイしたり、地図の画像を完全に置き換えたりすることもできます。
 
-| Xxxxx | Xxxxxxxxxxx |
+| トピック | 説明 |
 |-------|-------------|
-| [Xxxxxxx x xxxx xxxxxxxxxxxxxx xxx](authentication-key.md) | Xxxx xxx xxxx xx xxxxxxxxxxxxx xxxxxx xx xxx xxx xxx [XxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn637004) xxx xxx xxxxxxxx xx xxx [Xxxxxxx.Xxxxxxxx.Xxxx](https://msdn.microsoft.com/library/windows/apps/dn636979) xxxxxxxxx. Xx xxxxxxxxxxxx xxxx xxx, xxx xxxx xxxxxxx x xxxx xxxxxxxxxxxxxx xxx. Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxxxx x xxxx xxxxxxxxxxxxxx xxx xxxx xxx [Xxxx Xxxx Xxxxxxxxx Xxxxxx](https://www.bingmapsportal.com/) xxx xxx xx xx xxxx xxx. |
-| [Xxxxxxx xxxx xxxx YX, YX, xxx Xxxxxxxxxx xxxxx](display-maps.md) | Xxxxxxx xxxxxxxxxxxx xxxx xx xxxx xxx xx xxxxx xxx [XxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn637004) xxxxx. Xxxx xxxxx xxxx xxxxxxxxxx xxxxxx YX xxx Xxxxxxxxxx xxxxx. |
-| [Xxxxxxx xxxxxx xx xxxxxxxx (XXX) xx x xxx](display-poi.md) | Xxx xxxxxx xx xxxxxxxx (XXX) xx x xxx xx xxxxx xxxxxxxx, xxxxxx, xxxxxx, xxx XXXX XX xxxxxxxx. |
-| [Xxxxxxx xxxxx xxxxxx xx x xxx](overlay-tiled-images.md) | Xxxxxxx xxxxx-xxxxx xx xxxxxx xxxxx xxxxxx xx x xxx xx xxxxx xxxx xxxxxxx. Xxx xxxx xxxxxxx xx xxxxxxx xxxxxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxx xxxx, xxxxxxxxxx xxxx, xx xxxxxxx xxxx; xx xxx xxxx xxxxxxx xx xxxxxxx xxx xxxxxxx xxx xxxxxxxx. |
-| [Xxxxxx xxxxxxxxxx xxx xxxx](controls-map.md) | Xxx xxx xxxxxxx xxx xxxxxxx xxxx xxxx xxx xxxxxx xxxxx, xxxxxxxxxx, xxxxxx xxxxxxx, xxx xxxxxxx. |
-| [Xxxxxx xxxxxxxxxx xxx xxxxxxxx-xxxxx xxxx](guidelines-and-checklist-for-detecting-location.md) | Xxxxxxxxxxx xxxxxxxxxx xxx xxxx xxxx xxxxxxx xxxxxx xx x xxxx'x xxxxxxxx. |
+| [マップ認証キーの要求](authentication-key.md) | [MapControl](https://msdn.microsoft.com/library/windows/apps/dn637004) や [Windows.Services.Maps](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のマップ サービスをアプリで使うには、アプリを認証する必要があります。 アプリを認証するには、マップ認証キーを指定する必要があります。 この記事では、[Bing Maps Developer Center](https://www.bingmapsportal.com/) にマップ認証キーを要求し、アプリに追加する方法について説明します。 |
+| [2D、3D、Streetside ビューでの地図の表示](display-maps.md) | [MapControl](https://msdn.microsoft.com/library/windows/apps/dn637004) クラスを使って、アプリにカスタマイズできる地図を表示します。 このトピックでは、航空写真 3D ビューと Streetside ビューについても紹介します。 |
+| [関心のあるポイント (POI) の地図への表示](display-poi.md) | プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。 |
+| [地図へのタイル画像のオーバーレイ](overlay-tiled-images.md) | タイル ソースを使って、地図上にサード パーティ製タイルまたはカスタム タイル画像をオーバーレイします。 タイル ソースを使って、気象データ、人口データ、地質データなどの特殊な情報をオーバーレイすることや、既定の地図を完全に置き換えることができます。 |
+| [地図の設計ガイドライン](controls-map.md) | マップ コントロールでは、地図および上空からの写真、方向、検索結果、トラフィックを表示できます。 |
+| [位置認識アプリの設計ガイドライン](guidelines-and-checklist-for-detecting-location.md) | ユーザーの位置情報にアクセスする必要があるアプリを構築するためのパフォーマンス ガイドラインです。 |
 
 
-## Xxxxxx xxx xxxxxxxx
+## マップ サービスへのアクセス
 
-Xxx xxxxxx, xxxxxxxxxx, xxx xxxxxxxxx xxxxxxxxxxxx xx xxxx xxx xx xxxxx XXXx xxxx xxx [**Xxxxxxx.Xxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn636979) xxxxxxxxx. Xxx xxx xxxx xxxx xxx xxxx xxxxxx xxxxxxx xxxx xx xxxxxxxxx xxx Xxxxxxxx xxx xxxxxxxx xx xxx xxxxxxxxxxx xxxx.
+[
+            **Windows.Services.Maps**](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間の API を使って、ルート、ルート案内、ジオコーディング機能をアプリに追加します。 また、ユーザーがオフライン マップを簡単に管理できるように、適切なページで設定アプリを直接起動することもできます。
 
-| Xxxxx | Xxxxxxxxxxx |
+| トピック | 説明 |
 |-----------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Xxxxxxx xxxxxx xxx xxxxxxxxxx](routes-and-directions.md) | Xxxxxxx xxxxxx xxx xxxxxxxxxx, xxx xxxxxxx xxxx xx xxxx xxx. |
-| [Xxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxx](geocoding.md) | Xxxxxxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxxx (xxxxxxxxx) xxx xxxxxxx xxxxxxxxxx xxxxxxxxx xx xxxxxxxxx (xxxxxxx xxxxxxxxx) xx xxxxxxx xxx xxxxxxx xx xxx [XxxXxxxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/dn627550) xxxxx xx xxx [Xxxxxxx.Xxxxxxxx.Xxxx](https://msdn.microsoft.com/library/windows/apps/dn636979) xxxxxxxxx. |
+| [ルートとルート案内の表示](routes-and-directions.md) | ルートとルート案内を要求し、アプリで表示します。 |
+| [ジオコーディングと逆ジオコーディングの実行](geocoding.md) | 住所から地理的な位置への変換 (ジオコーディング) や地理的な位置から住所への変換 (逆ジオコーディング) を行うには、[Windows.Services.Maps](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間の [MapLocationFinder](https://msdn.microsoft.com/library/windows/apps/dn627550) クラスのメソッドを呼び出します。 |
 
 
-## Xxx xxx xxxx'x xxxxxxxx
+## ユーザーの位置情報の取得
 
-Xxx xxx xxxx'x xxxxxxx xxxxxxxx xxx xx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxx xx xxxx xxx xx xxxxx XXXx xxxx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225603) xxxxxxxxx. Xxxxx XXX xxxxxxx xxx xxxx xxxxxxxxxx xxxx xx xxxxxxxxxx xx xxx xxxx XXXx. XXXx xxxx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263744) xxxxxxxxx xxxxxxxx xxxx xxx xxxx xxx xxxx xxxxxx xx xxxxx x xxxxxxxx (x xxxxxxxxxx xxxxxxxxxxxx xxxx).
+[
+            **Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/br225603) 名前空間の API を使って、アプリでユーザーの現在の位置情報を取得し、位置情報が変わったときに通知を受けるようにします。 これらの API メンバーは、マップ API のパラメーターでも頻繁に使われます。 [
+            **Windows.Devices.Geolocation.Geofencing**](https://msdn.microsoft.com/library/windows/apps/dn263744) 名前空間の API を使って、ユーザーがジオフェンス (事前定義された地理的領域) に入ったり、ジオフェンスから出たりしたときにアプリで通知を受けるようにします。
 
-| Xxxxx | Xxxxxxxxxxx |
+| トピック | 説明 |
 |-------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Xxxxxxx x xxxx xxxxxxxxxxxxxx xxx](authentication-key.md) | Xxxx xxx xxxx xx xxxxxxxxxxxxx xxxxxx xx xxx xxx xxx [XxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn637004) xxx xxx xxxxxxxx xx xxx [Xxxxxxx.Xxxxxxxx.Xxxx](https://msdn.microsoft.com/library/windows/apps/dn636979) xxxxxxxxx. Xx xxxxxxxxxxxx xxxx xxx, xxx xxxx xxxxxxx x xxxx xxxxxxxxxxxxxx xxx. Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxxxx x xxxx xxxxxxxxxxxxxx xxx xxxx xxx [Xxxx Xxxx Xxxxxxxxx Xxxxxx](https://www.bingmapsportal.com/) xxx xxx xx xx xxxx xxx. |
-| [Xxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxx](geocoding.md) | Xxxxxxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxxx (xxxxxxxxx) xxx xxxxxxx xxxxxxxxxx xxxxxxxxx xx xxxxxxxxx (xxxxxxx xxxxxxxxx) xx xxxxxxx xxx xxxxxxx xx xxx XxxXxxxxxxxXxxxxx xxxxx. |
-| [Xxxxxxx xxxx xxxx YX, YX, xxx Xxxxxxxxxx xxxxx](display-maps.md) | Xxxxxxx xxxxxxxxxxxx xxxx xx xxxx xxx xx xxxxx xxx [XxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn637004) xxxxx. Xxxx xxxxx xxxx xxxxxxxxxx xxxxxx YX xxx Xxxxxxxxxx xxxxx. |
-| [Xxxx](controls-map.md) | Xxx xxx xxxxxxx xxx xxxxxxx xxxx xxxx xxx xxxxxx xxxxx, xxxxxxxxxx, xxxxxx xxxxxxx, xxx xxxxxxx. |
-| [Xxxxxxx xxxxxx xx xxxxxxxx (XXX) xx x xxx](display-poi.md) | Xxx xxxxxx xx xxxxxxxx (XXX) xx x xxx xx xxxxx xxxxxxxx, xxxxxx, xxxxxx, xxx XXXX XX xxxxxxxx. |
-| [Xxxxxxx xxxxx xxxxxx xx x xxx](overlay-tiled-images.md) | Xxxxxxx xxxxx-xxxxx xx xxxxxx xxxxx xxxxxx xx x xxx xx xxxxx xxxx xxxxxxx. Xxx xxxx xxxxxxx xx xxxxxxx xxxxxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxx xxxx, xxxxxxxxxx xxxx, xx xxxxxxx xxxx; xx xxx xxxx xxxxxxx xx xxxxxxx xxx xxxxxxx xxx xxxxxxxx. |
-| [Xxx xx x xxxxxxxx](set-up-a-geofence.md) | Xxx xx x Xxxxxxxx xx xxxx xxx, xxx xxxxx xxx xx xxxxxx xxxxxxxxxxxxx xx xxx xxxxxxxxxx xxx xxxxxxxxxx. |
+| [マップ認証キーの要求](authentication-key.md) | [MapControl](https://msdn.microsoft.com/library/windows/apps/dn637004) や [Windows.Services.Maps](https://msdn.microsoft.com/library/windows/apps/dn636979) 名前空間のマップ サービスをアプリで使うには、アプリを認証する必要があります。 アプリを認証するには、マップ認証キーを指定する必要があります。 この記事では、[Bing Maps Developer Center](https://www.bingmapsportal.com/) にマップ認証キーを要求し、アプリに追加する方法について説明します。 |
+| [ジオコーディングと逆ジオコーディングの実行](geocoding.md) | 住所から地理的な位置への変換 (ジオコーディング) や地理的な位置から住所への変換 (逆ジオコーディング) を行うには、MapLocationFinder クラスのメソッドを呼び出します。 |
+| [2D、3D、Streetside ビューでの地図の表示](display-maps.md) | [MapControl](https://msdn.microsoft.com/library/windows/apps/dn637004) クラスを使って、アプリにカスタマイズできる地図を表示します。 このトピックでは、航空写真 3D ビューと Streetside ビューについても紹介します。 |
+| [マップ](controls-map.md) | マップ コントロールでは、地図および上空からの写真、方向、検索結果、トラフィックを表示できます。 |
+| [関心のあるポイント (POI) の地図への表示](display-poi.md) | プッシュピン、画像、図形、XAML UI 要素を使って、関心のあるポイント (POI) を地図に追加します。 |
+| [地図へのタイル画像のオーバーレイ](overlay-tiled-images.md) | タイル ソースを使って、地図上にサード パーティ製タイルまたはカスタム タイル画像をオーバーレイします。 タイル ソースを使って、気象データ、人口データ、地質データなどの特殊な情報をオーバーレイすることや、既定の地図を完全に置き換えることができます。 |
+| [ジオフェンスのセットアップ](set-up-a-geofence.md) | アプリでジオフェンスをセットアップし、フォアグラウンドとバックグラウンドで通知を処理する方法について説明します。 |
 
-## Xxxxxx xxx Xxxxxxx Xxxx xxx
+## Windows マップ アプリの起動
 
-Xxxx xxx xxx xxxxxx xxx Xxxxxxx Xxxx xxx xx xxxxx xxxx xx xxxxxxx xxxxxxxx xxxx xxx xxxx-xx-xxxx xxxxxxxxxx. Xxxxxx xxxx xxxxxxx xxx xxxxxxxxxxxxx xxxxxxxx xx xxxx xxx xxx, xxxxxxxx xxxxx xxx Xxxxxxx Xxxx xxx xx xxxxxxx xxxx xxxxxxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxx xxx Xxxxxxx Xxxx xxx](https://msdn.microsoft.com/library/windows/apps/mt228341).
+アプリで、ここで示しているように、Windows マップ アプリを起動し、特定の地図やターン バイ ターン方式のルート案内を表示できます。 独自のアプリでマップ機能を直接提供する代わりに、Windows マップ アプリを使ってその機能を提供することを検討してください。 詳しくは、「[Windows マップ アプリの起動](https://msdn.microsoft.com/library/windows/apps/mt228341)」をご覧ください。
 
-![xx xxxxxxx xx xxx xxxxxxx xxxx xxx.](images/mapnyc.png)
+![Windows マップ アプリの例。](images/mapnyc.png)
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [XXX xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [XXX xxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=533278)
-* [Xxxx Xxxx Xxxxxxxxx Xxxxxx](https://www.bingmapsportal.com/)
-* [Xxx xxxxxxx xxxxxxxx](get-location.md)
-* [Xxxxxx xxxxxxxxxx xxx xxxxxxxx-xxxxx xxxx](guidelines-and-checklist-for-detecting-location.md)
-* [Xxxxxx xxxxxxxxxx xxx xxxx](controls-map.md)
-* [Xxxxxx xxxxxxxxxx xxx xxxxxxx-xxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/hh768223)
-* [Xxxxx YYYY xxxxx: Xxxxxxxxxx Xxxx xxx Xxxxxxxx Xxxxxx Xxxxx, Xxxxxx, xxx XX xx Xxxx Xxxxxxx Xxxx](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [XXX xxxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [UWP の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [UWP の位置情報のサンプル](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [現在の位置情報の取得](get-location.md)
+* [位置認識アプリの設計ガイドライン](guidelines-and-checklist-for-detecting-location.md)
+* [地図の設計ガイドライン](controls-map.md)
+* [個人データにアクセスするアプリの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh768223)
+* [Build 2015 のビデオ: Windows アプリでの電話、タブレット、PC で使用できるマップと位置情報の活用](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP の交通情報アプリのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

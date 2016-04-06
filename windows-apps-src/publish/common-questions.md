@@ -1,58 +1,63 @@
 ---
-Xxxxxxxxxxx: Xxxxxx xxxxxxxxx xxxxx xx xxxxxxxxx
-xxxxx: Xxxxxx xxxxxxxxx xxxxx xx xxxxxxxxx
-xx.xxxxxxx: XXXYXXYY-YXXY-YXYY-XYXY-YYXYXXYXYYYX
+Description: 広告キャンペーンに関してよく寄せられる質問
+title: 広告キャンペーンに関してよく寄せられる質問
+ms.assetid: EAF7CC74-7DE4-4D11-B9A6-29C6EA6E734B
 ---
 
-# Xxxxxx xxxxxxxxx xxxxx xx xxxxxxxxx
+# 広告キャンペーンに関してよく寄せられる質問
 
 
-## Xxx xxxx xxxx xx xxxx xx xxx xx xx xxx xx xxx?
+## アプリの広告を掲載するにはいくらかかりますか。
 
 
-Xx’x xxxxxx xx xx xxx, xxx xxxxxxxx: xxx xxxx xxx xxxxx, xxx xxxx xxxxxx xxxx xxx xxxx xx. Xxx xxxx xxxxxx xxx xxxx xx, xxx xxxx xxxxxx xxx xxxxxxxx xxx xxxxxx xxx. Xxxx x xxxx xx [xxxx xxxxxxx](create-an-ad-campaign-for-your-app.md) xxx xxxxxxxxxxx xx xxxxxxxx xx xx xxxxxxxx xxx xxxx xxx.
+これは実際に開発者しだいですが、より多くの費用をかけるほど、より多くのユーザーに広告が表示されます。 より多くのユーザーに広告が表示されれば、獲得するクリック数やインストール数が増えます。 アプリの広告キャンペーンの作成について詳しくは、[この記事](create-an-ad-campaign-for-your-app.md) をご覧ください。
 
-## Xxx X xxx xxx xxx xxx xx xx xxxx xx xx xxxxx xxxx?
-
-
-Xxx. Xx xxxx xxxxx *xxxxx xxx*, xxx xxx xxx xxx xxxx xxxx xx xxxxxx. Xxxxx xxx [xxxx xxxxxxx](about-house-ads.md) xxx xxxx xxxxxxxxxxx xx xxxxx xxx.
-
-## Xxx xxx X xxxxxxxxx xx xx?
+## 自分のいずれかのアプリの広告を、自分の他のアプリに表示できますか。
 
 
-Xx xxx xxx xxx xx xxx xxxxxxx xx xxxxxxxxx, xxx xxx xxxxxx xxx xxxx, xxxxxxx, xxx xxxxxxxxxx xxxxx xx xxxx xx. Xxx xxx xxxx xxx x xxxxxx xxx xxxx xx xxxx xx xx xxx xxxx. Xxxxxxxxxxxxx, xxx xxx xxxxxx xxxx xxx xx xxxxxxx xxxx xxxx xxx xxxxxxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxx xx xx xxxxxxxx xxx xxxx xxx.](create-an-ad-campaign-for-your-app.md)
+はい。 そのような広告を「*自社広告*」と呼んでおり、無料で掲載できます。 自社広告について詳しくは、[この記事](about-house-ads.md) をご覧ください。
 
-## Xxxxx xxxx xx xx xxxxxx?
-
-
-Xxxx xx xxxx xxxxxx xx xxxx xxxx xxxxx xxxx xxx'x xxx xxxxxx xxx XX xxxxxxx. Xxx xxx xxxxx xxxxxxxxxx xxxx xxx xxxxxxx xxxx xxx xx xxx Xxxxxxx Xxxxx.
-
-Xx xxxxxxxxx xxx xxxxxxxxx xxxxxxxxx xx xxxxx xxxxxxxxx xxx xxxxxxx:
-
-Xxxxxxx, Xxxxxxxxx, Xxxxxxxxx, Xxxxxxx, Xxxxxxx, Xxxxxxx, Xxxxxxxx, Xxxxxxx, Xxxxxx, Xxxxxxx, Xxxxxx, Xxxxxx, Xxxxx, Xxxxx, Xxxxxxxx, Xxxxxxx, Xxxxxxxxx Xxxxxxxx, Xxxxxxx, Xxxxx, Xx Xxxxxxxx, Xxxxxxx, Xxxxxx, Xxxxxxx, Xxxxxxxxx, Xxxxx, Xxxxxxxx, Xxxx Xxxx XXX, Xxxxx, Xxxxxxxxx, Xxxx, Xxxxxxx, Xxxxx, Xxxxxxx, Xxxxxx, Xxxxxx, Xxxxxxx, Xxxxxxxx, Xxxxxx, Xxxxxxx, Xxx Xxxxxxx, Xxxxxxxxxxx, Xxxxxxxxx, Xxxxxx, Xxxx, Xxxxxx, Xxxxxxxx, Xxxx, Xxxxxxxxxxx, Xxxxxx Xxxx, Xxxxx, Xxxxx Xxxxxx, Xxxxxxxxx, Xxxxx, Xxxxx Xxxxxx, Xxxxxx, Xxxxxxxxxxx, Xxxxxx, Xxxxxxxx, Xxxxxxxx xxx Xxxxxx, Xxxxxxx, Xxxxxx Xxxx Xxxxxxxx, Xxxxxx Xxxxxxx, Xxxxxx Xxxxxx, Xxxxxxx, Xxxxxxxxx, Xxxxxxx.
-
-## Xxxx xxxxxxxxx xxx xxxxxxxxx xxx xx xxxxxxxxx?
+## 広告はどのようにカスタマイズできますか。
 
 
-Xxx xxx xxxxxx xx xxxxxxxxx xx xxx xxxxxxxxx xxxxxxxxx:
+既定の広告テンプレートのいずれかを使う場合、広告のサイズ、画像、背景色を選ぶことができます。 必要に応じて、カスタム キャッチ コピーを広告に追加することもできます。 また、この要件を満たす独自の広告デザインをアップロードできます。 詳しくは、「[アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)」をご覧ください。
 
-Xxxxxx, Xxxxxxx (Xxxxxxxxxx), Xxxxxxx (Xxxxxxxxxxx), Xxxxxx, Xxxxx, Xxxxxxx, Xxxxxxx, Xxxxxx, Xxxxxx, Xxxxxxx, Xxxxxxxxx, Xxxxxxxxxx (Xxxxxx), Xxxxxxxxxx (Xxxxxxxx), Xxxxxxx, Xxxxxxx.
-
-## Xxxx xxxx X xx xxxxxx?
+## 自分の広告はどこに表示されますか。
 
 
-Xxx xxxx xx xxxxxx xxx xxx xxxxx xxxxx xxxxx xx xxx xxxxxxxxx xxxxx.
+広告は、アプリの年齢区分と OS のバージョンを共有するアプリに表示されます。 Windows ストアでアプリを公開するときに、これらのプロパティを設定します。
 
-## Xxx xx X xxxxxx x xxxxxx xxxx xx xxxx xxx xxxxxxx xx x xxxxxx xxxx?
+広告キャンペーンは、以下の国または地域で現在サポートされています。
+
+アルジェリア、アルゼンチン、オーストラリア、オーストリア、バハマ、バーレーン、バルバドス、ベルギー、ベリーズ、ボリビア、ブラジル、カナダ、チリ、中国、コロンビア、デンマーク、ドミニカ共和国、エクアドル、エジプト、エルサルバドル、フィンランド、フランス、ドイツ、グアテマラ、ハイチ、ホンジュラス、香港特別行政区、インド、インドネシア、イラク、アイルランド、イタリア、ジャマイカ、ヨルダン、クウェート、レバノン、マレーシア、メキシコ、モロッコ、ニュージーランド、オランダ、ニカラグア、ノルウェー、オマーン、パナマ、パラグアイ、ペルー、フィリピン、プエルトリコ、カタール、サウジアラビア、シンガポール、スペイン、南アフリカ、スウェーデン、スイス、台湾、タイ、トリニダード・トバゴ、チュニジア、アラブ首長国連邦、英国、米国、ウルグアイ、ベネズエラ、ベトナム。
+
+## 広告キャンペーンではどの言語がサポートされていますか。
 
 
-Xx xx <http://commerce.microsoft.com>, xxx xx xxxx xxxx Xxxxxxxxx xxxxxxx xxxxxxxxxxx, xxx xxxx xxx xxxxxxxxx xxxxxxx.
+次の言語で広告キャンペーンを作成できます。
 
-## Xxxxxxx xxxxxx
+アラビア語、簡体字中国語、繁体字中国語、デンマーク語、オランダ語、英語、フランス語、ドイツ語、イタリア語、ノルウェー語、ポルトガル語 (ブラジル)、ポルトガル語 (ポルトガル)、スペイン語、スウェーデン語。
 
-* [Xxxxxx xx xx xxxxxxxx xxx xxxx xxx](create-an-ad-campaign-for-your-app.md)
-* [Xxxxxxxx xxxx xx xxxxxxxx](managing-your-ad-campaign.md)
-* [Xxxxx xxxxx xxx](about-house-ads.md)
-* [Xxx xxxxxxx xxx xxxxxx](app-install-ads-reports.md)
+## 料金はいつ請求されますか。
+
+
+毎月の請求は、翌月初旬に行われます。
+
+## クレジット カードを削除したり、クレジット カードの詳細を編集したりするにはどうすればよいですか。
+
+
+<
+            http://commerce.microsoft.com> にアクセスし、Microsoft アカウントの資格情報を使ってログインして、必要な変更を加えます。
+
+## 関連トピック
+
+* [アプリ向けの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
+* [広告キャンペーンの管理](managing-your-ad-campaign.md)
+* [自社広告について](about-house-ads.md)
+* [アプリのインストールの広告レポート](app-install-ads-reports.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

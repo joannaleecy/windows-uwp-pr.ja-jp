@@ -1,151 +1,155 @@
 ---
-xx.xxxxxxx: YYXYYXYX-XXYX-YYXY-XYYY-YXXYYXXXYYYX
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxx xxx xxx xx xxxx xxxxx xx xxxxxx xxxxxxx xxxx x Xxxxxxxxx Xxxxxxx xxx.
-xxxxx: Xxxxx xxxxxxx
+ms.assetid: 40B97E0C-EB1B-40C2-A022-1AB95DFB085E
+description: This article shows you how to cast media to remote devices from a Universal Windows app.
+title: Media casting
 ---
 
-# Xxxxx xxxxxxx
+# Media casting
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxxxx xxxxx xxx xxx xx xxxx xxxxx xx xxxxxx xxxxxxx xxxx x Xxxxxxxxx Xxxxxxx xxx.
+This article shows you how to cast media to remote devices from a Universal Windows app.
 
-## Xxxxx-xx xxxxx xxxxxxx xxxx XxxxxXxxxxxx
+## Built-in media casting with MediaElement
 
-Xxx xxxxxxxx xxx xx xxxx xxxxx xxxx x Xxxxxxxxx Xxxxxxx xxx xx xx xxx xxx xxxxx-xx xxxxxxx xxxxxxxxxx xx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxxxxxx.
+The simplest way to cast media from a Universal Windows app is to use the built-in casting capability of the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) control.
 
-Xx xxxxx xxx xxxx xx xxxx x xxxxx xxxx xx xx xxxxxx xx xxx **XxxxxXxxxxxx** xxxxxxx, xxx xxx xxxxxxxxx xxxxxxxxxx xx xxxx xxxxxxx.
+To allow the user to open a video file to be played in the **MediaElement** control, add the following namespaces to your project.
 
-[!xxxx-xx[XxxxxXxXxxxxxxXxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetBuiltInCastingUsing)]
+[!code-cs[BuiltInCastingUsing](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetBuiltInCastingUsing)]
 
-Xx xxxx xxx'x XXXX xxxx, xxx x **XxxxxXxxxxxx** xxx xxx [**XxxXxxxxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298977) xx xxxx.
+In your app's XAML file, add a **MediaElement** and set [**AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/dn298977) to true.
 
-[!xxxx-xxx[XxxxxXxxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml#SnippetMediaElement)]
+[!code-xml[MediaElement](./code/MediaCastingWin10/cs/MainPage.xaml#SnippetMediaElement)]
 
-Xxx x xxxxxx xx xxx xxx xxxx xxxxxxxx xxxxxxx x xxxx.
+Add a button to let the user initiate picking a file.
 
-[!xxxx-xxx[XxxxXxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml#SnippetOpenButton)]
+[!code-xml[OpenButton](./code/MediaCastingWin10/cs/MainPage.xaml#SnippetOpenButton)]
 
-Xx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227737) xxxxx xxxxxxx xxx xxx xxxxxx, xxxxxx x xxx xxxxxxxx xx xxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847), xxx xxxxx xxxx xxxxx xx xxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207850) xxxxxxxxxx, xxx xxx xxx xxxxxxxx xxxxxxxx xx xxx xxxx'x xxxxxx xxxxxxx.
+In the [**Click**](https://msdn.microsoft.com/library/windows/apps/br227737) event handler for the button, create a new instance of the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847), add video file types to the [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) collection, and set the starting location to the user's videos library.
 
-Xxxx [**XxxxXxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/jj635275) xx xxxxxx xxx xxxx xxxxxx xxxxxx. Xxxx xxxx xxxxxx xxxxxxx, xxx xxxxxx xx x [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxx xxxxxxxxxxxx xxx xxxxx xxxx. Xxxxx xx xxxx xxxx xxx xxxx xxx'x xxxx, xxxxx xx xxxx xx xx xxx xxxx xxxxxxx xxx xxxxxxx xxxxxxxxx. Xxxx xxx xxxx'x [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227221.aspx) xxxxxx xx xxx xx [**XXxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241731) xxx xxx xxxx. Xxxxxxx, xxxx xxx **XxxxxXxxxxxx** xxxxxx'x [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br244338) xxxxxx xx xxxx xxx xxxxx xxxx xxx xxxxx xxxxxx xxx xxx xxxxxxx.
+Call [**PickSingleFileAsync**](https://msdn.microsoft.com/library/windows/apps/jj635275) to launch the file picker dialog. When this method returns, the result is a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object representing the video file. Check to make sure the file isn't null, which it will be if the user cancels the picking operation. Call the file's [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227221.aspx) method to get an [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) for the file. Finally, call the **MediaElement** object's [**SetSource**](https://msdn.microsoft.com/library/windows/apps/br244338) method to make the video file the video source for the control.
 
-[!xxxx-xx[XxxxXxxxxxXxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetOpenButtonClick)]
+[!code-cs[OpenButtonClick](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetOpenButtonClick)]
 
-Xxxx xxx xxxxx xx xxxxxx xx xxx **XxxxxXxxxxxx**, xxx xxxx xxx xxxxxx xxxxx xxx xxxxxxx xxxxxx xx xxx xxxxxxxxx xxxxxxxx xx xxxxxx x xxxxx-xx xxxxxx xxxx xxxxxx xxxx xx xxxxxx x xxxxxx xx xxxxx xxx xxxxxx xxxxx xxxx xx xxxx.
+Once the video is loaded in the **MediaElement**, the user can simply press the casting button on the transport controls to launch a built-in dialog that allows them to choose a device to which the loaded media will be cast.
 
-![xxxxxxxxxxxx xxxxxxx xxxxxx](images/media-element-casting-button.png)
+![mediaelement casting button](images/media-element-casting-button.png)
 
-## Xxxxx xxxxxxx xxxx xxx XxxxxxxXxxxxxXxxxxx
+## Media casting with the CastingDevicePicker
 
-X xxxxxx xxx xx xxxx xxxxx xx x xxxxxx xx xx xxx xxx [**XxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972525). Xx xxx xxxx xxxxx, xxxxxxx xxx [**Xxxxxxx.Xxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972568) xxxxxxxxx xx xxxx xxxxxxx.
+A second way to cast media to a device is to use the [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525). To use this class, include the [**Windows.Media.Casting**](https://msdn.microsoft.com/library/windows/apps/dn972568) namespace in your project.
 
-[!xxxx-xx[XxxxxxxXxxxxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetCastingNamespace)]
+[!code-cs[CastingNamespace](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetCastingNamespace)]
 
-Xxxxxxx x xxxxxx xxxxxxxx xxx xxx **XxxxxxxXxxxxxXxxxxx** xxxxxx.
+Declare a member variable for the **CastingDevicePicker** object.
 
-[!xxxx-xx[XxxxxxxXxxxxxxXxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetDeclareCastingPicker)]
+[!code-cs[DeclareCastingPicker](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetDeclareCastingPicker)]
 
-Xxxx xxx xxxx xx xxxxxxxxxxx, xxxxxx x xxx xxxxxxxx xx xxx xxxxxxx xxxxxx xxx xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972540) xx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972526) xxxxxxxx xx xxxxxxxx xxxx xxx xxxxxxx xxxxxxx xxxxxx xx xxx xxxxxx xxxxxx xxxxxxx xxxxx. Xxxxxxxx x xxxxxxx xxx xxx [**XxxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972539) xxxxx, xxxxx xx xxxxxx xxxx xxx xxxx xxxxx x xxxxxx xxx xxxxxxx.
+When you page is initialized, create a new instance of the casting picker and set the [**Filter**](https://msdn.microsoft.com/library/windows/apps/dn972540) to [**SupportsVideo**](https://msdn.microsoft.com/library/windows/apps/dn972526) property to indicate that the casting devices listed by the picker should support video. Register a handler for the [**CastingDeviceSelected**](https://msdn.microsoft.com/library/windows/apps/dn972539) event, which is raised when the user picks a device for casting.
 
-[!xxxx-xx[XxxxXxxxxxxXxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetInitCastingPicker)]
+[!code-cs[InitCastingPicker](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetInitCastingPicker)]
 
-Xx xxxx XXXX xxxx, xxx x xxxxxx xx xxxxx xxx xxxx xx xxxxxx xxx xxxxxx.
+In your XAML file, add a button to allow the user to launch the picker.
 
-[!xxxx-xxx[XxxxXxxxxxXxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml#SnippetCastPickerButton)]
+[!code-xml[CastPickerButton](./code/MediaCastingWin10/cs/MainPage.xaml#SnippetCastPickerButton)]
 
-Xx xxx **Xxxxx** xxxxx xxxxxxx xxx xxx xxxxxx, xxxx [**XxxxxxxxxXxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208986) xx xxx xxx xxxxxxxxx xx x XX xxxxxxx xxxxxxxx xx xxxxxxx xxxxxxx. Xx xxxx xxxxxxx, xxx xxxxxxxxx xx xxx xxxxxxxx xx xxx xxxx xxxxxx xxxxxx xxxxxxxx xx xxx xxxxxx xxxx xx xxx xxxxxxxxxxx xxxxxx. Xxxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn972542) xxxxxx xx xxx [**XxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972525) xxxxxx xx xxxxxx xxx xxxxxxx xxxxxx xxxxxx. Xxxxxxx xxx xxxxxxxx xxx xxxxxxxxxx xx xxx xxxx xxxxxx xxxxxx xx xxxx xxx xxxxxx xxx xxxx xxx xxxxxx xxx xxx xxxx xxx xxxxxx xxxx xxx xxxx xxxxxxx.
+In the **Click** event handler for the button, call [**TransformToVisual**](https://msdn.microsoft.com/library/windows/apps/br208986) to get the transform of a UI element relative to another element. In this example, the transform is the position of the cast picker button relative to the visual root of the application window. Call the [**Show**](https://msdn.microsoft.com/library/windows/apps/dn972542) method of the [**CastingDevicePicker**](https://msdn.microsoft.com/library/windows/apps/dn972525) object to launch the casting picker dialog. Specify the location and dimensions of the cast picker button so that the system can make the dialog fly out from the button that the user pressed.
 
-[!xxxx-xx[XxxxXxxxxxXxxxxxXxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetCastPickerButtonClick)]
+[!code-cs[CastPickerButtonClick](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetCastPickerButtonClick)]
 
-Xx xxx **XxxxxxxXxxxxxXxxxxxxx** xxxxx xxxxxxx, xxxx xxx [**XxxxxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972547) xxxxxx xx xxx [**XxxxxxxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972546) xxxxxxxx xx xxx xxxxx xxxx, xxxxx xxxxxxxxxx xxx xxxxxxx xxxxxx xxxxxxxx xx xxx xxxx. Xxxxxxxx xxxxxxxx xxx xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972519) xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972523) xxxxxx. Xxxxxxx, xxxx [**XxxxxxxXxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972520) xx xxxxx xxxxxxx, xxxxxxx xx xxx xxxxxx xx xxx **XxxxxXxxxxxx** xxxxxx'x [**XxxXxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn920012) xxxxxx xx xxxxxxx xxxx xxx xxxxx xx xx xxxx xx xxx xxxxxxx xx xxx **XxxxxXxxxxxx**.
+In the **CastingDeviceSelected** event handler, call the [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) method of the [**SelectedCastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972546) property of the event args, which represents the casting device selected by the user. Register handlers for the [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) and [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) events. Finally, call [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520) to begin casting, passing in the result of the **MediaElement** object's [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012) method to specify that the media to be cast is the content of the **MediaElement**.
 
-**Xxxx**  Xxx xxxxxxx xxxxxxxxxx xxxx xx xxxxxxxxx xx xxx XX xxxxxx. Xxxxx xxx **XxxxxxxXxxxxxXxxxxxxx** xx xxx xxxxxx xx xxx XX xxxxxx, xxx xxxx xxxxx xxxxx xxxxx xxxxxx x xxxx xx [**XxxxXxxxxxxxxx.XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh750317) xxxxx xxxxxx xxxx xx xx xxxxxx xx xxx XX xxxxxx.
+**Note**  The casting connection must be initiated on the UI thread. Since the **CastingDeviceSelected** is not called on the UI thread, you must place these calls inside a call to [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) which causes them to be called on the UI thread.
 
-[!xxxx-xx[XxxxxxxXxxxxxXxxxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetCastingDeviceSelected)]
+[!code-cs[CastingDeviceSelected](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetCastingDeviceSelected)]
 
-Xx xxx **XxxxxXxxxxxxx** xxx **XxxxxXxxxxxx** xxxxx xxxxxxxx, xxx xxxxxx xxxxxx xxxx XX xx xxxxxx xxx xxxx xx xxx xxxxxxx xxxxxxx xxxxxx. Xxxxx xxxxxx xxx xxxxxxxxx xx xxxxxx xx xxx xxxxxxxxx xxxxxxx xx xxxxxxxx x xxxxxx xxxxxxx xxxxxx xxxxxx.
+In the **ErrorOccurred** and **StateChanged** event handlers, you should update your UI to inform the user of the current casting status. These events are discussed in detail in the following section on creating a custom casting device picker.
 
-[!xxxx-xx[XxxxxXxxxxXxxxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetEmptyStateHandlers)]
+[!code-cs[EmptyStateHandlers](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetEmptyStateHandlers)]
 
-## Xxxxx xxxxxxx xxxx x xxxxxx xxxxxx xxxxxx
+## Media casting with a custom device picker
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxxxx xxx xx xxxxxx xxxx xxx xxxxxxx xxxxxx xxxxxx XX xx xxxxxxxxxxx xxx xxxxxxx xxxxxxx xxx xxxxxxxxxx xxx xxxxxxxxxx xxxx xxxx xxxx.
+The following section describes how to create your own casting device picker UI by enumerating the casting devices and initiating the connection from your code.
 
-Xx xxxxxxxxx xxx xxxxxxxxx xxxxxxx xxxxxxx, xxxxxxx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225459) xxxxxxxxx xx xxxx xxxxxxx.
+To enumerate the available casting devices, include the [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/br225459) namespace in your project.
 
-[!xxxx-xx[XxxxxxxxxxxXxxxxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetEnumerationNamespace)]
+[!code-cs[EnumerationNamespace](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetEnumerationNamespace)]
 
-Xxx xxx xxxxxxxxx xxxxxxxx xx xxxx XXXX xxxx xx xxxxxxxxx xxx xxxxxxxxxxx XX xxx xxxx xxxxxxx:
+Add the following controls to your XAML page to implement the rudimentary UI for this example:
 
--   X xxxxxx xx xxxxx xxx xxxxxx xxxxxxx xxxx xxxxx xxx xxxxxxxxx xxxxxxx xxxxxxx.
--   X [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227538) xxxxxxx xx xxxxxxx xxxxxxxx xx xxx xxxx xxxx xxxxxxx xxxxxxxxxxx xx xxxxxxx.
--   X [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br242868) xx xxxx xxx xxxxxxxxxx xxxxxxx xxxxxxx. Xxxxxx xx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242830) xxx xxx xxxxxxx xx xxxx xx xxx xxxxxx xxx xxxxxxx xxxxxx xxxxxxx xxxxxxxx xx xxx xxxxxxx xxx xxxxx xxxxxxx xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn972549) xxxxxxxx.
--   X xxxxxx xx xxxxx xxx xxxx xx xxxxxxxxxx xxx xxxxxxx xxxxxx.
+-   A button to start the device watcher that looks for available casting devices.
+-   A [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) control to provide feedback to the user that casting enumeration is ongoing.
+-   A [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) to list the discovered casting devices. Define an [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830) for the control so that we can assign the casting device objects directly to the control and still display the [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) property.
+-   A button to allow the user to disconnect the casting device.
 
-[!xxxx-xxx[XxxxxxXxxxxxXXXX](./code/MediaCastingWin10/cs/MainPage.xaml#SnippetCustomPickerXAML)]
+[!code-xml[CustomPickerXAML](./code/MediaCastingWin10/cs/MainPage.xaml#SnippetCustomPickerXAML)]
 
-Xx xxxx xxxx xxxxxx, xxxxxxx xxxxxx xxxxxxxxx xxx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225446) xxx xxx [**XxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972510).
+In your code behind, declare member variables for the [**DeviceWatcher**](https://msdn.microsoft.com/library/windows/apps/br225446) and the [**CastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972510).
 
-[!xxxx-xx[XxxxxxxXxxxxxXxxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetDeclareDeviceWatcher)]
+[!code-cs[DeclareDeviceWatcher](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetDeclareDeviceWatcher)]
 
-Xx xxx **Xxxxx** xxxxxxx xxx xxx *xxxxxXxxxxxxXxxxxx*, xxxxx xxxxxx xxx XX xx xxxxxxxxx xxx xxxxxx xxx xxxxxx xxx xxxxxxxx xxxx xxxxxx xxxxx xxxxxx xxxxxxxxxxx xx xxxxxxx. Xxxxx xxx xxxx xxx xx xxxxxxx xxxxxxx.
+In the **Click** handler for the *startWatcherButton*, first update the UI by disabling the button and making the progress ring active while device enumeration is ongoing. Clear the list box of casting devices.
 
-Xxxx, xxxxxx x xxxxxx xxxxxxx xx xxxxxxx [**XxxxxxXxxxxxxxxxx.XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225427). Xxxx xxxxxx xxx xx xxxx xx xxxxx xxx xxxx xxxxxxxxx xxxxx xx xxxxxxx. Xxxxxxx xxxx xxx xxxx xx xxxxx xxx xxxxxxx xxxx xxxxxxx xxxxx xxxxxxx xx xxxxx xxx xxxxxx xxxxxxxx xxxxxx xxxxxxxx xx [**XxxxxxxXxxxxx.XxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972551).
+Next, create a device watcher by calling [**DeviceInformation.CreateWatcher**](https://msdn.microsoft.com/library/windows/apps/br225427). This method can be used to watch for many different types of devices. Specify that you want to watch for devices that support video casting by using the device selector string returned by [**CastingDevice.GetDeviceSelector**](https://msdn.microsoft.com/library/windows/apps/dn972551).
 
-Xxxxxxx, xxxxxxxx xxxxx xxxxxxxx xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225450), [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225453), [**XxxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225451), xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225457) xxxxxx.
+Finally, register event handlers for the [**Added**](https://msdn.microsoft.com/library/windows/apps/br225450), [**Removed**](https://msdn.microsoft.com/library/windows/apps/br225453), [**EnumerationCompleted**](https://msdn.microsoft.com/library/windows/apps/br225451), and [**Stopped**](https://msdn.microsoft.com/library/windows/apps/br225457) events.
 
-[!xxxx-xx[XxxxxXxxxxxxXxxxxxXxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetStartWatcherButtonClick)]
+[!code-cs[StartWatcherButtonClick](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetStartWatcherButtonClick)]
 
-Xxx **Xxxxx** xxxxx xx xxxxxx xxxx x xxx xxxxxx xx xxxxxxxxxx xx xxx xxxxxxx. Xx xxx xxxxxxx xxx xxxx xxxxx, xxxxxx x xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972524) xxxxxx xx xxxxxxx [**XxxxxxxXxxxxx.XxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972550) xxx xxxxxxx xx xxx XX xx xxx xxxxxxxxxx xxxxxxx xxxxxx, xxxxx xx xxxxxxxxx xx xxx **XxxxxxXxxxxxxxxxx** xxxxxx xxxxxx xxxx xxx xxxxxxx.
+The **Added** event is raised when a new device is discovered by the watcher. In the handler for this event, create a new [**CastingDevice**](https://msdn.microsoft.com/library/windows/apps/dn972524) object by calling [**CastingDevice.FromIdAsync**](https://msdn.microsoft.com/library/windows/apps/dn972550) and passing in the ID of the discovered casting device, which is contained in the **DeviceInformation** object passed into the handler.
 
-Xxx xxx **XxxxxxxXxxxxx** xx xxx xxxxxxx xxxxxx **XxxxXxx** xx xxxx xxx xxxx xxx xxxxxx xx. Xxxxxxx xx xxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242830) xxxxxxx xx xxx XXXX, xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn972549) xxxxxxxx xxxx xx xxxx xx xxx xxxx xxxx xxx xx xxx xxxx xxx. Xxxxxxx xxxx xxxxx xxxxxxx xx xxx xxxxxx xx xxx XX xxxxxx, xxx xxxx xxxxxx xxx XX xxxx xxxxxx x xxxx xx [**XxxxXxxxxxxxxx.XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh750317).
+Add the **CastingDevice** to the casting device **ListBox** so that the user can select it. Because of the [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/br242830) defined in the XAML, the [**FriendlyName**](https://msdn.microsoft.com/library/windows/apps/dn972549) property will be used as the item text for in the list box. Because this event handler is not called on the UI thread, you must update the UI from within a call to [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).
 
-[!xxxx-xx[XxxxxxxXxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetWatcherAdded)]
+[!code-cs[WatcherAdded](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetWatcherAdded)]
 
-Xxx **Xxxxxxx** xxxxx xx xxxxxx xxxx xxx xxxxxxx xxxxxxx xxxx x xxxxxxx xxxxxx xx xx xxxxxx xxxxxxx. Xxxxxxx xxx XX xxxxxxxx xx xxx **Xxxxx** xxxxxx xxxxxx xxxx xxx xxxxxxx xx xxx XX xx xxxx **Xxxxx** xx xxx xxxx xxx'x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242823) xxxxxxxxxx. Xx xxx XX xxxxxxx, xxxxxx xxxx xxxxxx xxxx xxx xxxxxxxxxx. Xxxxx, xxxxxxx xxx XX xx xxxxx xxxxxxx, xxxx xxxx xxxx xx xxxx xxxx xxxxxx x **XxxXxxxx** xxxx.
+The **Removed** event is raised when the watcher detects that a casting device is no longer present. Compare the ID property of the **Added** object passed into the handler to the ID of each **Added** in the list box's [**Items**](https://msdn.microsoft.com/library/windows/apps/br242823) collection. If the ID matches, remove that object from the collection. Again, because the UI is being updated, this call must be made from within a **RunAsync** call.
 
-[!xxxx-xx[XxxxxxxXxxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetWatcherRemoved)]
+[!code-cs[WatcherRemoved](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetWatcherRemoved)]
 
-Xxx **XxxxxxxxxxxXxxxxxxxx** xxxxx xx xxxxxx xxxx xxx xxxxxxx xxx xxxxxxxx xxxxxxxxx xxxxxxx. Xx xxx xxxxxxx xxx xxxx xxxxx, xxxxxx xxx XX xx xxx xxx xxxx xxxx xxxx xxxxxx xxxxxxxxxxx xxx xxxxxxxxx xxx xxxx xxx xxxxxx xxxxxxx xx xxxxxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225456).
+The **EnumerationCompleted** event is raised when the watcher has finished detecting devices. In the handler for this event, update the UI to let the user know that device enumeration has completed and stop the device watcher by calling [**Stop**](https://msdn.microsoft.com/library/windows/apps/br225456).
 
-[!xxxx-xx[XxxxxxxXxxxxxxxxxxXxxxxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetWatcherEnumerationCompleted)]
+[!code-cs[WatcherEnumerationCompleted](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetWatcherEnumerationCompleted)]
 
-Xxx Xxxxxxx xxxxx xx xxxxxx xxxx xxx xxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxx. Xx xxx xxxxxxx xxx xxxx xxxxx, xxxx xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227538) xxxxxxx xxx xxxxxxxx xxx *xxxxxXxxxxxxXxxxxx* xx xxxx xxx xxxx xxx xxxxxxx xxx xxxxxx xxxxxxxxxxx xxxxxxx.
+The Stopped event is raised when the device watcher has finished stopping. In the handler for this event, stop the [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) control and reenable the *startWatcherButton* so that the user can restart the device enumeration process.
 
-[!xxxx-xx[XxxxxxxXxxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetWatcherStopped)]
+[!code-cs[WatcherStopped](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetWatcherStopped)]
 
-Xxxx xxx xxxx xxxxxxx xxx xx xxx xxxxxxx xxxxxxx xxxx xxx xxxx xxx, xxx [**XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209776) xxxxx xx xxxxxx. Xx xx xxxxxx xxxx xxxxxxx xxxx xxx xxxxxxx xxxxxxxxxx xxxx xx xxxxxxx xxx xxxxxxx xxxx xx xxxxxxx.
+When the user selects one of the casting devices from the list box, the [**SelectionChanged**](https://msdn.microsoft.com/library/windows/apps/br209776) event is raised. It is within this handler that the casting connection will be created and casting will be started.
 
-Xxxxx, xxxx xxxx xxx xxxxxx xxxxxxx xx xxxxxxx xx xxxx xxxxxx xxxxxxxxxxx xxxxx'x xxxxxxxxx xxxx xxxxx xxxxxxx. Xxxxxx x xxxxxxx xxxxxxxxxx xx xxxxxxx [**XxxxxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972547) xx xxx **XxxxxxxXxxxxx** xxxxxx xxxxxxxx xx xxx xxxx. Xxx xxxxx xxxxxxxx xxx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972523) xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972519) xxxxxx.
+First, make sure the device watcher is stopped so that device enumeration doesn't interfere with media casting. Create a casting connection by calling [**CreateCastingConnection**](https://msdn.microsoft.com/library/windows/apps/dn972547) on the **CastingDevice** object selected by the user. Add event handlers for the [**StateChanged**](https://msdn.microsoft.com/library/windows/apps/dn972523) and [**ErrorOccurred**](https://msdn.microsoft.com/library/windows/apps/dn972519) events.
 
-Xxxxx xxxxx xxxxxxx xx xxxxxxx [**XxxxxxxXxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972520), xxxxxxx xx xxx xxxxxxx xxxxxx xxxxxxxx xx xxxxxxx xxx **XxxxxXxxxxxx** xxxxxx [**XxxXxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn920012). Xxxxxxx, xxxx xxx xxxxxxxxxx xxxxxx xxxxxxx xx xxxxx xxx xxxx xx xxxx xxxxx xxxxxxx.
+Start media casting by calling [**RequestStartCastingAsync**](https://msdn.microsoft.com/library/windows/apps/dn972520), passing in the casting source returned by calling the **MediaElement** method [**GetAsCastingSource**](https://msdn.microsoft.com/library/windows/apps/dn920012). Finally, make the disconnect button visible to allow the user to stop media casting.
 
-[!xxxx-xx[XxxxxxxxxXxxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetSelectionChanged)]
+[!code-cs[SelectionChanged](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetSelectionChanged)]
 
-Xx xxx xxxxx xxxxxxx xxxxxxx, xxx xxxxxx xxx xxxx xxxxxxx xx xxx xxx xxxxx xx xxx xxxxxxx xxxxxxxxxx:
+In the state changed handler, the action you take depends on the new state of the casting connection:
 
--   Xx xxx xxxxx xx **Xxxxxxxxx** xx **Xxxxxxxxx**, xxxx xxxx xxx **XxxxxxxxXxxx** xxxxxxx xx xxxxxxxx xxx xxx xxxxxxxxxx xxxxxx xx xxxxxxx.
--   Xx xxx xxxxx xx **Xxxxxxxxxxxx**, xxxxxxxx xxx xxxxxxx xxxxxxx xxxxxx xx xxx xxxx xxx, xxxx xxx **XxxxxxxxXxxx** xxxxxxx xxxxxxxx, xxx xxxx xxx xxxxxxxxxx xxxxxx.
--   Xx xxx xxxxx xx **Xxxxxxxxxx**, xxxx xxx **XxxxxxxxXxxx** xxxxxxx xxxxxx xxx xxxx xxx xxxxxxxxxx xxxxxx.
--   Xx xxx xxxxx xx **Xxxxxxxxxxxxx**, xxxx xxx **XxxxxxxxXxxx** xxxxxxx xxxxxx xxx xxxx xxx xxxxxxxxxx xxxxxx.
+-   If the state is **Connected** or **Rendering**, make sure the **ProgressRing** control is inactive and the disconnect button is visible.
+-   If the state is **Disconnected**, unselect the current casting device in the list box, make the **ProgressRing** control inactive, and hide the disconnect button.
+-   If the state is **Connecting**, make the **ProgressRing** control active and hide the disconnect button.
+-   If the state is **Disconnecting**, make the **ProgressRing** control active and hide the disconnect button.
 
-[!xxxx-xx[XxxxxXxxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetStateChanged)]
+[!code-cs[StateChanged](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetStateChanged)]
 
-Xx xxx xxxxxxx xxx xxx **XxxxxXxxxxxxx** xxxxx, xxxxxx xxxx XX xx xxx xxx xxxx xxxx xxxx x xxxxxxx xxxxx xxxxxxxx xxx xxxxxxxx xxx xxxxxxx **XxxxxxxXxxxxx** xxxxxx xx xxx xxxx xxx.
+In the handler for the **ErrorOccurred** event, update your UI to let the user know that a casting error occurred and unselect the current **CastingDevice** object in the list box.
 
-[!xxxx-xx[XxxxxXxxxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetErrorOccurred)]
+[!code-cs[ErrorOccurred](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetErrorOccurred)]
 
-Xxxxxxx, xxxxxxxxx xxx xxxxxxx xxx xxx xxxxxxxxxx xxxxxx. Xxxx xxxxx xxxxxxx xxx xxxxxxxxxx xxxx xxx xxxxxxx xxxxxx xx xxxxxxx xxx **XxxxxxxXxxxxxxxxx** xxxxxx'x [**XxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn972518) xxxxxx. Xxxx xxxx xxxx xx xxxxxxxxxx xx xxx XX xxxxxx xx xxxxxxx [**XxxxXxxxxxxxxx.XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh750317).
+Finally, implement the handler for the disconnect button. Stop media casting and disconnect from the casting device by calling the **CastingConnection** object's [**DisconnectAsync**](https://msdn.microsoft.com/library/windows/apps/dn972518) method. This call must be dispatched to the UI thread by calling [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317).
 
-[!xxxx-xx[XxxxxxxxxxXxxxxx](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetDisconnectButton)]
+[!code-cs[DisconnectButton](./code/MediaCastingWin10/cs/MainPage.xaml.cs#SnippetDisconnectButton)]
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,61 +1,51 @@
 ---
-Xxxxxxxxxxx: Xxxxxxx xxxx xxxxxxxxx xxx xxxxxx xxxxxxxxx xxxx xxx xxxxxx xxxxxxxx, xx xxxx xxxxx xxx xx xx xxxxxx xxxx xxxx'x xxxxxxxx xxxx xxxxxxxx xxxxx.
-xxxxx: Xxxxxxx xxxx xxxxxxxxx
-xx.xxxxxxx: YYYYXYXX-XYXY-YYXY-XYYY-YYYYYYXYYYXX
-xxxxx: XXX
-xxxxxxxx: xxxxxx.xxx
+Description: Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles.
+title: Special tile templates
+ms.assetid: 1322C9BA-D5B2-45E2-B813-865884A467FF
+label: TBD
+template: detail.hbs
 ---
 
-# Xxxxxxx xxxx xxxxxxxxx
+# Special tile templates
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxxx xxxx xxxxxxxxx xxx xxxxxx xxxxxxxxx xxxx xxx xxxxxx xxxxxxxx, xx xxxx xxxxx xxx xx xx xxxxxx xxxx xxxx'x xxxxxxxx xxxx xxxxxxxx xxxxx. Xxxx xxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxxxx xxxxx xxx Xxxxxxx YY, xxxxxx xxx xxx xxxxxx xxxx xxxxxxxx, x xxxxxxx xxxxxxx xxxxxxxx xxxx xxx xxxx xxxxxxx xxx Xxxxxxx YY. Xxxx xxxxxxx xxxxxx xxxxx xxxxxxx xxxx xxxxxxxxx: Xxxxxx, Xxxxxx, xxx Xxxxxx.
+Special tile templates are unique templates that are either animated, or just allow you to do things that aren't possible with adaptive tiles. Each special tile template was specifically built for Windows 10, except for the iconic tile template, a classic special template that has been updated for Windows 10. This article covers three special tile templates: Iconic, Photos, and People.
 
-## <span id="Iconic_tile_template">
-            </span>
-            <span id="iconic_tile_template">
-            </span>
-            <span id="ICONIC_TILE_TEMPLATE">
-            </span>Xxxxxx xxxx xxxxxxxx
+## <span id="Iconic_tile_template"></span><span id="iconic_tile_template"></span><span id="ICONIC_TILE_TEMPLATE"></span>Iconic tile template
 
 
-Xxx xxxxxx xxxxxxxx (xxxx xxxxx xx xxx "XxxxXxxxXxxxx" xxxxxxxx) xxxx xxx xxxxxxx x xxxxx xxxxx xx xxx xxxxxx xx xxx xxxx. Xxxxxxx YY xxxxxxxx xxx xxxxxxxx xx xxxx xxxxx xxx xxxxxx/xxxxxxx.
+The iconic template (also known as the "IconWithBadge" template) lets you display a small image in the center of the tile. Windows 10 supports the template on both phone and tablet/desktop.
 
-![xxxxx xxx xxxxxx xxxx xxxxx](images/iconic-template-mail-2sizes.png)
+![small and medium mail tiles](images/iconic-template-mail-2sizes.png)
 
-### <span id="How_to_create_an_iconic_tile">
-            </span>
-            <span id="how_to_create_an_iconic_tile">
-            </span>
-            <span id="HOW_TO_CREATE_AN_ICONIC_TILE">
-            </span>Xxx xx xxxxxx xx xxxxxx xxxx
+### <span id="How_to_create_an_iconic_tile"></span><span id="how_to_create_an_iconic_tile"></span><span id="HOW_TO_CREATE_AN_ICONIC_TILE"></span>How to create an iconic tile
 
-Xxx xxxxxxxxx xxxxx xxxxx xxxxxxxxxx xxx xxxx xx xxxx xx xxxxxx xx xxxxxx xxxx xxx Xxxxxxx YY. Xx x xxxx xxxxx, xxx xxxx xxxx xxxxxx xxxxx xxxxx, xxxx xxx xxxx x xxxxxxxxxxxx xx xxx xxxx xxxxx xxx xxxxxx xxxxxxxx, xxx xxxxxxx xxx xxxx x xxxxx xxxxxxxxxxxx xxxx xxxxxxxx xxx xxxxxx xx xx xxxxxxxxx xx xxx xxxx.
+The following steps cover everything you need to know to create an iconic tile for Windows 10. At a high level, you need your iconic image asset, then you send a notification to the tile using the iconic template, and finally you send a badge notification that provides the number to be displayed on the tile.
 
-![xxxxxxxxx xxxx xx xxxxxx xxxx](images/iconic-template-dev-flow.png)
+![developer flow of iconic tile](images/iconic-template-dev-flow.png)
 
-**Xxxx Y: Xxxxxx xxxx xxxxx xxxxxx xx XXX xxxxxx**
+**Step 1: Create your image assets in PNG format**
 
-Xxxxxx xxx xxxx xxxxxx xxx xxxx xxxx xxx xxxxx xxxxx xx xxxx xxxxxxx xxxxxxxxx xxxx xxxx xxxxx xxxxxx. Xx x xxxx xxxxxxx, xxxxxx x YYYxYYY xxxxx xxxx, xxxxx xxxxx xxx xxxx xxxxx xxx xxxxxx xxxxx xx xxxxx xxx xxxxxxx. Xx xxxxxxx xxx xxxx xxxx xxxxxxxxxx, xxxxxx xx xxxx xxx xxxx xxxx. Xxx xxxxxx xxxxxxx xx xxx xxxxx xxxxx.
+Create the icon assets for your tile and place those in your project resources with your other assets. At a bare minimum, create a 200x200 pixel icon, which works for both small and medium tiles on phone and desktop. To provide the best user experience, create an icon for each size. See sizing details in the below image.
 
-Xxxx xxxx xxxxxx xx XXX xxxxxx xxx xxxx xxxxxxxxxxxx. Xx Xxxxxxx Xxxxx, xxxxx xxx-xxxxxxxxxxx xxxxx xx xxxxxxxxx xx xxxxx (XXX YYY, YYY, YYY). Xxx xxxxxxxxxxx xxx xxxxxxxxxx, xxx xxxxx xxx xxxxxxx xxxxx xx xxxx.
+Save icon assets in PNG format and with transparency. On Windows Phone, every non-transparent pixel is displayed as white (RGB 255, 255, 255). For consistency and simplicity, use white for desktop icons as well.
 
-Xxxxxxx YY xx xxxxxx, xxxxxx, xxx xxxxxxx xxxx xxxxxxxx xxxxxx xxxx xxxxxx. Xxxxx xxxxxxxx xxxx xxxxxx xxxxxx xxx xxxxxx xxxx xxx xxxxxx xxxx xxxx xxx xxxx, xx xx x Y:Y xxxxx:xxxxxx xxxxx, xxxxx xx xxxxxx xxx xxxxxx xxxx xx x xxxxx xxxx.
+Windows 10 on tablet, laptop, and desktop only supports square icon assets. Phone supports both square assets and assets that are taller than they are wide, up to a 2:3 width:height ratio, which is useful for images such as a phone icon.
 
-![xxxx xxxxxx xx xxxxx xxx xxxxxx xxxxx, xx xxxxx xxx xxxxxxx](images/iconic-template-sizing-info.png)
+![icon sizing on small and medium tiles, on phone and desktop](images/iconic-template-sizing-info.png)
 
-**Xxxx Y: Xxxxxx xxxx xxxx xxxx**
+**Step 2: Create your base tile**
 
-Xxx xxx xxx xxx xxxxxx xxxxxxxx xx xxxx xxxxxxx xxx xxxxxxxxx xxxxx. Xx xxx'xx xxxxx xx xx x xxxxxxxxx xxxx, xxx'xx xxxxx xxxx xx xxxxxx xxx xxxxxxxxx xxxx xx xxx xx xxxxxxx-xxxxxx xxxxxxxxx xxxx. Xxxxxxx xxxxx xxx xxxxxxxxxx xxxxxx xxx xxx xxxxxx xx xxxx xxxxxxxxxxxxx.
+You can use the iconic template on both primary and secondary tiles. If you're using it on a secondary tile, you'll first have to create the secondary tile or use an already-pinned secondary tile. Primary tiles are implicitly pinned and can always be sent notifications.
 
-**Xxxx Y: Xxxx x xxxxxxxxxxxx xx xxxx xxxx**
+**Step 3: Send a notification to your tile**
 
-Xxxxxxxx xxxx xxxx xxx xxxx xxxxx xx xxxxxxx xxx xxxxxxxxxxxx xx xxxx xxxxxxx xx xxx xxxxxx xxxx, xxx XXX xxxxxxx xxxx xxx xxxx xxxxxxx xxx xxxx. Xx xxxx x xxxxx xxxx xxxxxxxxxxxx, xxxxxx x [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208628) xxx xxxx xxxx (xxxxxx xxxxxxx xx xxxxxxxxx xxxx), xxxx xxxx x xxxxxxxxxxxx xx xxx xxxx xxxx xxxx xxx xxxxxx xxxx xxxxxxxx xx xxxx xxxxx. Xxxxxxx, xxx xxxxxx xxxx xxxxxxx xxxxxxxx xxx xxxx xxx xxxxx xxxx xxxxx xxxxx [xxxxxxxx xxxx xxxxxxxxx](tiles-and-notifications-adaptive-tiles-schema.md).
+Although this step can vary based on whether the notification is sent locally or via server push, the XML payload that you send remains the same. To send a local tile notification, create a [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628) for your tile (either primary or secondary tile), then send a notification to the tile that uses the iconic tile template as seen below. Ideally, you should also include bindings for wide and large tile sizes using [adaptive tile templates](tiles-and-notifications-adaptive-tiles-schema.md).
 
-Xxxx'x xxxxxx xxxx xxx xxx XXX xxxxxxx:
+Here's sample code for the XML payload:
 
 ```XML
 <tile>
@@ -73,13 +63,13 @@ Xxxx'x xxxxxx xxxx xxx xxx XXX xxxxxxx:
 </tile>
 ```
 
-Xxxx xxxxxx xxxx xxxxxxxx XXX xxxxxxx xxxx xx xxxxx xxxxxxx xxxx xxxxxx xx xxx xxxxx xxxx xxx xxxxxxx xx Xxxx Y. Xxx xxxx xxxx xx xxxxx xx xxxxxxx xxx xxxxx xxxx xx xxxx xxxx; xxx xxxx'x xxxx xx xxxxxxx xxxxx xxxxxxxxxxxxx.
+This iconic tile template XML payload uses an image element that points to the image that you created in Step 1. Now your tile is ready to display the badge next to your icon; all that's left is sending badge notifications.
 
-**Xxxx Y: Xxxx x xxxxx xxxxxxxxxxxx xx xxxx xxxx**
+**Step 4: Send a badge notification to your tile**
 
-Xx xxxx xxxx Y, xxxx xxxx xxx xxxx xxxxx xx xxxxxxx xxx xxxxxxxxxxxx xx xxxx xxxxxxx xx xxx xxxxxx xxxx, xxx xxx XXX xxxxxxx xxxx xxx xxxx xxxxxxx xxx xxxx. Xx xxxx x xxxxx xxxxx xxxxxxxxxxxx, xxxxxx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208537) xxx xxxx xxxx (xxxxxx xxxxxxx xx xxxxxxxxx xxxx), xxxx xxxx x xxxxx xxxxxxxxxxxx xxxx xxxx xxxxxxx xxxxx (xx xxxxx xxx xxxxx).
+As with step 3, this step can vary based on whether the notification is sent locally or via server push, yet the XML payload that you send remains the same. To send a local badge notification, create a [**BadgeUpdater**](https://msdn.microsoft.com/library/windows/apps/br208537) for your tile (either primary or secondary tile), then send a badge notification with your desired value (or clear the badge).
 
-Xxxx'x xxxxxx xxxx xxx xxx XXX xxxxxxx:
+Here's sample code for the XML payload:
 
 ```XML
 <badge value="2"/></code></pre></td>
@@ -88,38 +78,28 @@ Xxxx'x xxxxxx xxxx xxx xxx XXX xxxxxxx:
 </table>
 ```
 
-Xxx xxxx'x xxxxx xxxx xxxxxx xxxxxxxxxxx.
+The tile's badge will update accordingly.
 
-**Xxxx Y: Xxxxxxx xx xxx xxxxxxxx**
+**Step 5: Putting it all together**
 
-Xxx xxxxxxxxx xxxxx xxxxxxxxxxx xxx xxx xxxxxxx XXXx xxx xxxxxxxx xxx xxxxxxxxxx xxxx xxxx xxxxxx xx xxx xxxxxx xxxx xxxxxxxx. X [xxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh779724) (xxxxx xxxxxxxx xxxxx &xx;xxxxxxx&xx; xxxxxxxx) xx xxxx xx xxxxxxx xxx xxxxxx xxxxxxxx xxx xxx xxxxx xxxxx; x [xxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh779719) xxxxxxxxx xxx xxxxxxxxx xxxxx; xxxx xxxxxxxxxx xxxxxxx xxxx xxxx'x xxxxxxx xxxx, xxxxx, xxx xxxx.
+The following image illustrates how the various APIs and payloads are associated with each aspect of the iconic tile template. A [tile notification](https://msdn.microsoft.com/library/windows/apps/hh779724) (which contains those &lt;binding&gt; elements) is used to specify the iconic template and the image asset; a [badge notification](https://msdn.microsoft.com/library/windows/apps/hh779719) specifies the numerical value; tile properties control your tile's display name, color, and more.
 
-![xxxx xxx xxxxxxxx xxxxxxxxxx xxxx xxx xxxxxx xxxx xxxxxxxx](images/iconic-template-properties-info.png)
+![apis and payloads associated with the iconic tile template](images/iconic-template-properties-info.png)
 
-## <span id="Photos_tile_template">
-            </span>
-            <span id="photos_tile_template">
-            </span>
-            <span id="PHOTOS_TILE_TEMPLATE">
-            </span>Xxxxxx xxxx xxxxxxxx
+## <span id="Photos_tile_template"></span><span id="photos_tile_template"></span><span id="PHOTOS_TILE_TEMPLATE"></span>Photos tile template
 
 
-Xxx xxxxxx xxxx xxxxxxxx xxxx xxx xxxxxxx x xxxxxxxxx xx xxxxxx xx xxxx xxxx xxxx. Xxx xxxxxxxx xx xxxxxxxxx xx xxx xxxx xxxxx, xxxxxxxxx xxxxx, xxx xxxxxxx xxx xxxx xx xxxx xxxx xxxx. Xxx xxxxx xxxxxxx xxxxx xxxx xxxxxx xx x xxxxxx xxxx xxxx xxxx xxx xxxxxx xxxxxxxx. Xxx xxxxxxxx xxx x xxxx xxx xxxxx-xxxx xxxxxxxxx xxxx xxxxxx xxxxxxx xxxxxxxx xxxxxx xxx xxxxx xxxxxxxxxxxx.
+The photos tile template lets you display a slideshow of photos on your live tile. The template is supported on all tile sizes, including small, and behaves the same on each tile size. The below example shows five frames of a medium tile that uses the photos template. The template has a zoom and cross-fade animation that cycles through selected photos and loops indefinitely.
 
-![xxxxx xxxxxxxxx xxxxx xxxxxx xxxx xxxxxxxx](images/photo-tile-template-image01.jpg)
+![image slideshow using photos tile template](images/photo-tile-template-image01.jpg)
 
-### <span id="How_to_use_the_photos_template">
-            </span>
-            <span id="how_to_use_the_photos_template">
-            </span>
-            <span id="HOW_TO_USE_THE_PHOTOS_TEMPLATE">
-            </span>Xxx xx xxx xxx xxxxxx xxxxxxxx
+### <span id="How_to_use_the_photos_template"></span><span id="how_to_use_the_photos_template"></span><span id="HOW_TO_USE_THE_PHOTOS_TEMPLATE"></span>How to use the photos template
 
-Xxxxx xxx xxxxxx xxxxxxxx xx xxxx xx xxx'xx xxxxxxxxx xxx [Xxxxxxx YY xxxxxxx xx XxxxxxxxxxxxXxxxxxxxxx](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx). Xxxxxxxx xxx xxx xxx xxx XXX, xx xxxxxx xxxxxxxxx xxxxx xxxx XxxxxxxxxxxxXxxxxxxxxx xx xxxx xxx xxx'x xxxx xx xxxxx xxxxx xxxxxxxxxx xxxxx XXX xx XXX-xxxxxxxx xxxxxxx.
+Using the photos template is easy if you've installed the [Windows 10 version of NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx). Although you can use raw XML, we highly recommend going with NotificationExtensions so that you don't have to worry about generating valid XML or XML-escaping content.
 
-Xxxxxxx Xxxxx xxxxxxxx xx xx Y xxxxxx xx x xxxxxxxxx; xxxxxx, xxxxxx, xxx xxxxxxx xxxxxxx xx xx YY.
+Windows Phone displays up to 9 photos in a slideshow; tablet, laptop, and desktop display up to 12.
 
-Xxx xxxxxxxxxxx xxxxx xxxxxxx xxx xxxx xxxxxxxxxxxx, xxx xxx [Xxxx xxxxxxxxxxxxx xxxxxxx](tiles-badges-notifications.md).
+For information about sending the tile notification, see the [Send notifications article](tiles-badges-notifications.md).
 
 <span codelanguage="XML"></span>
 ```XML
@@ -197,41 +177,36 @@ TileContent content = new TileContent()
 };
 ```
 
-## <span id="People_tile_template">
-            </span>
-            <span id="people_tile_template">
-            </span>
-            <span id="PEOPLE_TILE_TEMPLATE">
-            </span>Xxxxxx xxxx xxxxxxxx
+## <span id="People_tile_template"></span><span id="people_tile_template"></span><span id="PEOPLE_TILE_TEMPLATE"></span>People tile template
 
 
-Xxx Xxxxxx xxx xx Xxxxxxx YY xxxx x xxxxxxx xxxx xxxxxxxx xxxx xxxxxxxx x xxxxxxxxxx xx xxxxxx xx xxxxxxx xxxx xxxxx xxxxxx xxxxxxxxxx xx xxxxxxxxxxxx xx xxx xxxx. Xxxx xxxx xxxxxxxx xxx xxxx xxxxxxxxx xxxxx Xxxxxxx YY Xxxxx YYYYY, xxx xxxxxx xx xxxxxxx xx xxx xx xx xxxxx xxx.
+The People app in Windows 10 uses a special tile template that displays a collection of images in circles that slide around vertically or horizontally on the tile. This tile template has been available since Windows 10 Build 10572, and anyone is welcome to use it in their app.
 
-Xxx Xxxxxx xxxx xxxxxxxx xxxxx xx xxxxx xx xxxxx xxxxx:
+The People tile template works on tiles of these sizes:
 
-**Xxxxxx xxxx** (XxxxXxxxxx)
+**Medium tile** (TileMedium)
 
-![xxxxxx xxxxxx xxxx](images/people-tile-medium.png)
+![medium people tile](images/people-tile-medium.png)
 
  
 
-**Xxxx xxxx** (XxxxXxxx)
+**Wide tile** (TileWide)
 
-![xxxx xxxxxx xxxx](images/people-tile-wide.png)
-
- 
-
-**Xxxxx xxxx (xxxxxxx xxxx)** (XxxxXxxxx)
-
-![xxxxx xxxxxx xxxx](images/people-tile-large.png)
+![wide people tile](images/people-tile-wide.png)
 
  
 
-Xx xxx'xx xxxxx [XxxxxxxxxxxxXxxxxxxxxx](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx), xxx xxx xxxx xx xx xx xxxx xxx xx xxx Xxxxxx xxxx xxxxxxxx xx xxxxxx x xxx *XxxxXxxxxxxXxxxxxxXxxxxx* xxxxxx xxx xxxx *XxxxXxxxxxx* xxxxxxx. Xxx *XxxxXxxxxxxXxxxxxxXxxxxx* xxxxx xxx xx Xxxxxx xxxxxxxx xxxxx xxx xxx xxxx xxxxxx.
+**Large tile (desktop only)** (TileLarge)
 
-Xx xxx'xx xxxxx xxx XXX, xxx xxx *xxxx-xxxxxxxxxxxx* xx "xxxxxx" xxx xxx xxxx xxxxxx xx xxxxxxxx xx xxx xxxxxxx xxxxxxx.
+![large people tile](images/people-tile-large.png)
 
-Xxx xxxxxxxxx X# xxxx xxxxxx xxxxxxx xxxx xxx'xx xxxxx [XxxxxxxxxxxxXxxxxxxxxx](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx).
+ 
+
+If you're using [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx), all you have to do to make use of the People tile template is create a new *TileBindingContentPeople* object for your *TileBinding* content. The *TileBindingContentPeople* class has an Images property where you add your images.
+
+If you're using raw XML, set the *hint-presentation* to "people" and add your images as children of the binding element.
+
+The following C# code sample assumes that you're using [NotificationExtensions](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/08/20/introducing-notificationsextensions-for-windows-10.aspx).
 
 ```CSharp
 TileContent content = new TileContent()
@@ -280,30 +255,33 @@ TileContent content = new TileContent()
 </tile>
 ```
 
-Xxx xxx xxxx xxxx xxxxxxxxxx, xx xxxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxxx xxxxxx xx xxxxxx xxx xxxx xxxx xxxx:
+For the best user experience, we recommend that you provide the following number of photos for each tile size:
 
--   Xxxxxx xxxx: Y xxxxxx
--   Xxxx xxxx: YY xxxxxx
--   Xxxxx xxxx: YY xxxxxx
+-   Medium tile: 9 photos
+-   Wide tile: 15 photos
+-   Large tile: 20 photos
 
-Xxxxxx xxxx xxxxxx xx xxxxxx xxxxxx xxx x xxx xxxxx xxxxxxx, xxxxx xxxxx xxxx xxx xxxx xxx'x xx xxx xxxxxxxx xxxx. Xxxx xxxx xx xxxxx xxx xxxxxx xx xxxxxx xx xxx xxx xxxx xxxx xxxxx xxxx xxx xxx.
+Having that number of photos allows for a few empty circles, which means that the tile won't be too visually busy. Feel free to tweak the number of photos to get the look that works best for you.
 
-Xx xxxx xxx xxxxxxxxxxxx, xxx [Xxxxxx x xxxxxxxxxxxx xxxxxxxx xxxxxx](tiles-and-notifications-choosing-a-notification-delivery-method.md).
+To send the notification, see [Choose a notification delivery method](tiles-and-notifications-choosing-a-notification-delivery-method.md).
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxx
+## <span id="related_topics"></span>Related topics
 
 
-* [Xxxx xxxx xxxxxx xx XxxXxx](https://github.com/WindowsNotifications/quickstart-people-tile-template)
-* [XxxxxxxxxxxxxXxxxxxxxxx xx XxxXxx](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
-* [Xxxxx, xxxxxx, xxx xxxxxxxxxxxxx](tiles-badges-notifications.md)
-* [Xxxxxx xxxxxxxx xxxxx](tiles-and-notifications-create-adaptive-tiles.md)
-* [Xxxxxxxx xxxx xxxxxxxxx: xxxxxx xxx xxxxxxxxxxxxx](tiles-and-notifications-adaptive-tiles-schema.md)
+* [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-people-tile-template)
+* [NotificationsExtensions on GitHub](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [Tiles, badges, and notifications](tiles-badges-notifications.md)
+* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
+* [Adaptive tile templates: schema and documentation](tiles-and-notifications-adaptive-tiles-schema.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

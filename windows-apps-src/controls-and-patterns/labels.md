@@ -1,65 +1,64 @@
 ---
-Xxxxxxxxxxx: Xxx x xxxxx xx xxxxxxxx xx xxx xxxx xxxx xxxx xxxxxx xxxxx xxxx xx xxxxxxxx xxxxxxx. Xxx xxx xxxx xxxxx x xxxxx xx xxxxxxx xxxxxxxx, xx xxxxxxx xxxxxxxxxxxxx xxxx xxxx x xxxxx xx xxxxxxx xxxxxxxx.
-xxxxx: Xxxxxx
-xx.xxxxxxx: XXXXXXXY-YYYX-YYXX-YYYX-YYYYXXYYYYYY
-xxxxx: Xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: 隣接するコントロールに入力する必要がある内容をユーザーに説明するためにラベルを使います。 また、関連するコントロールのグループにラベルを付けることや、関連するコントロールのグループの近くに説明テキストを表示することができます。
+title: ラベル
+ms.assetid: CFACCCD4-749F-43FB-947E-2591AE673804
+label: ラベル
+template: detail.hbs
 ---
 
-# Xxxxxx
+# ラベル
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-X xxxxx xx xxx xxxx xx xxxxx xx x xxxxxxx xx x xxxxx xx xxxxxxx xxxxxxxx.
+ラベルは、コントロールまたは関連するコントロールのグループの名前やタイトルです。
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   Xxxxxx xxxxxxxx
--   [**XxxxXxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652)
-
-
-Xx XXXX, xxxx xxxxxxxx xxxx x xxxxx-xx Xxxxxx xxxxxxxx xxxx xxx xxx xx xxxxxxx xxx xxxxx. Xxx xxxxxxxx xxxx xxx'x xxxx x Xxxxxx xxxxxxxx, xx xx xxxxx xxxxxx xx xxxxxxxx, xxx xxx xxx x [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652) xxxxxxx.
+-   Header プロパティ
+-   [**TextBlock クラス**](https://msdn.microsoft.com/library/windows/apps/br209652)
 
 
-## Xxxxxxx
+XAML では、多くのコントロールに組み込みの Header プロパティがあり、これを使ってラベルを表示します。 Header プロパティがないコントロールの場合、またはコントロールのグループにラベルを付ける場合は、代わりに [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) を使います。
 
 
-![x xxxxxxxxxx xxxx xxxxxxxxxxx xxx xxxxxxxx xxxxx xxxxxxx](images/label-standard.png)
-
-## <span id="Recommendations">
-            </span>
-            <span id="recommendations">
-            </span>
-            <span id="RECOMMENDATIONS">
-            </span>Xxxxxxxxxxxxxxx
+## 例
 
 
--   Xxx x xxxxx xx xxxxxxxx xx xxx xxxx xxxx xxxx xxxxxx xxxxx xxxx xx xxxxxxxx xxxxxxx. Xxx xxx xxxx xxxxx x xxxxx xx xxxxxxx xxxxxxxx, xx xxxxxxx xxxxxxxxxxxxx xxxx xxxx x xxxxx xx xxxxxxx xxxxxxxx.
--   Xxxx xxxxxxxx xxxxxxxx, xxxxx xxx xxxxx xx x xxxx xx x xxxxxxx xxxx xxxxxx, xxx xx x xxxxxxxx, xxx xxx xx xxxxxxxxxxxxx xxxx. Xxxxx xxxxxx xx xxxxx xxxxxxxxxxx.
--   Xxxx xxx xx xxxx xxxxxxxxxxxxx xxxx xx x xxxxx, xxx xxx xx xxxx xxxxxxxx xxxx xxxx-xxxxxx xxxxxx xxx xxxx xxx xxxxxxxxxxx.
+![標準的なラベル コントロールを示すスクリーンショット](images/label-standard.png)
 
-## Xxxxxxx xxxxxx
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>推奨事項
 
 
-* [Xxxx xxxxxxxx](text-controls.md)
+-   隣接するコントロールに入力する必要がある内容をユーザーに説明するためにラベルを使います。 また、関連するコントロールのグループにラベルを付けることや、関連するコントロールのグループの近くに説明テキストを表示することができます。
+-   コントロールにラベルを付ける場合、説明テキストの文ではなく、名詞や簡潔な名詞句のラベルを入力します。 コロン、その他の句読点は使わないでください。
+-   ラベルに説明テキストを入力するときは、テキスト文字列を長くすることができ、句読点も使うことができます。
 
-**Xxx xxxxxxxxxx**
-* [**XxxxXxx.Xxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252861)
-* [**XxxxxxxxXxx.Xxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn299051)
-* [**XxxxxxXxxxxx.Xxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209713)
-* [**XxxxXxxxxx.Xxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279460)
-* [**XxxxXxxxxx.Xxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn299286)
-* [**Xxxxxx.Xxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252829)
-* [**XxxxxXxx.Xxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279416)
-* [**XxxxXxxxXxx.Xxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252726)
-* [**XxxxXxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652)
+## 関連トピック
+
+
+* [テキスト コントロール](text-controls.md)
+
+**開発者向け**
+* [**TextBox.Header プロパティ**](https://msdn.microsoft.com/library/windows/apps/dn252861)
+* [**PasswordBox.Header プロパティ**](https://msdn.microsoft.com/library/windows/apps/dn299051)
+* [**ToggleSwitch.Header プロパティ**](https://msdn.microsoft.com/library/windows/apps/br209713)
+* [**DatePicker.Header プロパティ**](https://msdn.microsoft.com/library/windows/apps/dn279460)
+* [**TimePicker.Header プロパティ**](https://msdn.microsoft.com/library/windows/apps/dn299286)
+* [**Slider.Header プロパティ**](https://msdn.microsoft.com/library/windows/apps/dn252829)
+* [**ComboBox.Header プロパティ**](https://msdn.microsoft.com/library/windows/apps/dn279416)
+* [**RichEditBox.Header プロパティ**](https://msdn.microsoft.com/library/windows/apps/dn252726)
+* [**TextBlock クラス**](https://msdn.microsoft.com/library/windows/apps/br209652)
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

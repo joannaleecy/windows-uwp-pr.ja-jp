@@ -1,68 +1,72 @@
 ---
-Xxxxxxxxxxx: Xxx Xxxxxxx xxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxx xxx xxx xxx xxxxxxxxxxxx xx xxx xxxxxxxxx xxxx xxxx xxx xx xxx Xxxxxxx Xxxxx.
-xxxxx: Xxxxxxx xxxxxx
-xx.xxxxxxx: XXXXXYYX-YYXX-YYXY-XYYY-YYYYXYXYYXXX
+Description: The Ratings report in the Windows Dev Center dashboard lets you see the distribution of how customers rate your app in the Windows Store.
+title: Ratings report
+ms.assetid: CAFEC20B-04FB-48C8-B663-1238C0B85ECD
 ---
 
-# Xxxxxxx xxxxxx
+# Ratings report
 
 
-Xxx **Xxxxxxx** xxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxx xxx xxx xxx xxxxxxxxxxxx xx xxx xxxxxxxxx xxxx xxxx xxx xx xxx Xxxxxxx Xxxxx. Xxx xxx xxxx xxxx xxxx xx xxxx xxxxxxxxx, xx [xxxxxxxx xxx xxxxxx](download-analytic-reports.md) xx xxxx xxxxxxx. Xxxxxxxxxxxxx, xxx xxx xxxxxxxxxxxxxxxx xxxxxxxx xxxx xxxx xx xxxxx xxx [Xxxxxxx Xxxxx xxxxxxxxx XXXX XXX](../monetize/access-analytics-data-using-windows-store-services.md).
+The **Ratings** report in the Windows Dev Center dashboard lets you see the distribution of how customers rate your app in the Windows Store. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
-Xx xxxx xxxxxx, x xxxxxx xxxxx xxx xxxxxx xx xxxxx (xxxx Y xx Y) xxxx x xxxxxxxx xxxx xxxx xxx xxxx xxxxxx xx xx xxx Xxxxx. Xxx **Xxxxxxx** xxxxxx xxxx xxx xxxxxxx xxxx xx xxx xxxxxxxxxx xxxxxxxx xxxx xx xxxxxxx; xxxxx xxx xxxxxxxxx xx xxx [Xxxxxxx xxxxxx](reviews-report.md).
+In this report, a rating means the number of stars (from 1 to 5) that a customer gave your app when rating it in the Store. The **Ratings** report does not include info on any individual comments left as reviews; those are available in the [Reviews report](reviews-report.md).
 
-## Xxxxx xxxxxxx
-
-
-Xxxx xxx xxx xx xxx xxxx, xxx xxx xxxxxx **Xxxxx xxxxxxx** xx xxxxxx xxx xx xxx xxxx xx xxxx xxxx xx xxxx xxxxx xxx/xx xx xxxxxx.
-
--   **Xxxx**: Xxx xxxxxxx xxxxxx xx **Xxxx YY xxxx**, xxx xxx xxx xxxxxx xxxx xx xx **Xxxx YY xxxxxx**.
--   **Xxxxxx**: Xxx xxxxxxx xxxxxx xx **Xxx xxxxxxx**. Xxx xxx xxxxxx x xxxxxxxx xxxxxx xx xxx xxxx xxxx xxxx xx xxxx xxxx xxxxxxx xxxx xxxxxxxxx xx xxxx xxxxxx.
--   **Xxxxxx xxxx**: Xxx xxxxxxx xxxxxx xx **Xxx xxxxxxx**. Xxx xxx xxxxxx x xxxxxxxx xxxxxx xxxx xx xxx xxxx xxxx xxxx xx xxxx xxxx xxxxxxx xxxx xx xxxxxxxxx xxxxx xxxx xxxx xx xxxxxx.
-
-Xxx xxxx xx xxx xx xxx xxxxxx xxxxxx xxxxx xxxx xxxxxxx xxx xxxxxx xx xxxx xxxxxxxx xx xxx **Xxxxx xxxxxxx** xxxxxxx, xxx xxxx xxxxxxx xxx xxxxx xxxxxxx xxx'xx xxxxxx xxxx.
-
-## Xxxxxxx xxxxxx
+## Apply filters
 
 
-Xxx **Xxxxxxx xxxxxx** xxxxx xxxxx xxx xxxxxxx xxxxxx xx xxxx xxx xxxx xxx xxxxxxxx xxxxxx xx xxxx.
+Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by market.
 
-## Xxxxxx xx xxxxxxx
+-   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
+-   **Market**: The default filter is **All markets**. You can choose a specific market if you want this page to only show ratings from customers in that market.
+-   **Device type**: The default filter is **All devices**. You can choose a specific device type if you want this page to only show ratings left by customers using that type of device.
 
+The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section, and will reflect any other filters you've chosen here.
 
-Xxx **Xxxxxx xx xxxxxxx** xxxxx xxxxx xxx xxxxx xxxxxx xx xxxxxxx xx xxxx xxx xxxx xxx xxxxxxxx xxxxxx xx xxxx.
-
-## Xxx xxx xxxxxxx xxxxxxx
-
-
-Xxx **Xxx xxx xxxxxxx xxxxxxx** xxxxx xxxxx xxx xxxxxx xx xxxxxxx xxx xxxx xxxx xx xxxxxx (xxx xx xxxxxxx) xxxx xxx xxxxxxxx xxxxxx xx xxxx.
-
--   **Xxx xxxxxxx** xxx xxxxxxx xxxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxx'x xxxxxxx.
--   **Xxxxxxx xxxxxxx** xxx xxxxxxx xxxx xxxx xxxx xxxxxxx xx xxx xxxxxxxx.
-
->**Xxxx**  X xxxxxx xxxx xxxxxx xxxx xx xxxxxxx xxxx xx xxx xxxxxxxx xxxx xxxxxxx xx xxxxx xxx xxxx xx xxxxx xx xxxxx xxxxxx xxx xxxx xxx xxxxxx xxxxxx xxx xxxx.
-
-## Xxxxxxx xxxxxx xxxx xxxx
+## Average rating
 
 
-Xxx **Xxxxxxx xxxxxx xxxx xxxx** xxxxx xxxxx xxx xxx xxx'x xxxxxxx xxxxxx xxx xxxxxxx xxxx xxx xxxxxxxx xxxxxx xx xxxx.
+The **Average rating** chart shows the average rating of your app over the selected period of time.
 
-Xxxxxx xxxx xxxxxxxxxxx xxx xxxxxxx xx xxx xxxxxxx xxxx xxxxxx xxx xxxxxxxx xxxxxx xx xxxx (xx xx xxx **Xxxxxxx xxxxxx** xxxxx), xxx **Xxxxxxx xxxxxx xxxx xxxx** xxxxx xxxxx xxx xxx xxxxxxxxx xxxxx xxx xxx xx x xxxxx xxx xx xxxx xxxxxx xxx xxxxxx. Xxxx xxxxx xxx xxxxxxxx xxxxxx xx xxxxxxxxx xx xxxxxxx xxxx xxxxxxxx xx xxxxxxx xx xxxxx xxxxxxx.
-
-Xx xxx xxxx xxxxxxxx xxx xxxx xx **Xxxx YY xxxx** xx **Xxxx Y xxxxxx**, xxx xxxxx xxxxxxxx xxxx xxxxxxx xxxxxx xx xxx. Xx xxx'xx xxxxxxxx xx **Xxxx Y xxxxxx** xx **Xxxx YY xxxxxx**, xxx xxxxx xxxxxxxx xxxx xxxxxxx xxxxxx xx xxxx (xxxx x xxx xxxx xxxxxxxxxx xx xxxxx xx Xxxxxx; xxx xxxxxxx xxxxxx xxxxx xx xxx xxx xxxxxxxx xxxx).
-
-## Xxxxxxx
+## Number of ratings
 
 
-Xxx **Xxxxxxx** xxxxx xxxxx xxxxxxx xxxxxx xxx xxxxxx xx xxxxxxx xxxx xxx xxxxxxxx xxxxxx xx xxxx xx xxxxxx.
+The **Number of ratings** chart shows the total number of ratings of your app over the selected period of time.
 
-> **Xxxx**  Xx xxx xxxx xxxx xxx **Xxxx xxxxxxx** xx xxxxxxx x xxxxxxxx xxxxxx, xxx xxx'x xxx xxxx xxxxx xx xxx **Xxxxxxx** xxxxxx. Xx xxx xxxx xxxxx, xxxxxx xxx **Xxxx xxxxxxx** xx xxxx xxx xxxxxxx.
+## New and revised ratings
 
-Xx xxxxxxx, xx xxxx xxx xxx xxxxxx xxxxx xxx xxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxx xxxxx, xxx xxx xxx xxxxxxx xxxx xxxxx xx xxxxxxxx xxx xxxxx xx xxx **Xxxxxx xx xxxxxxx** xxxxxx xx xxxx xxxxx. Xxx xxx xxxx xxxx xxx xxxx xx **Xxxxxxx xxxxxx** xx **Xxxxxx** xx xxxxxxxx xxxxx xxxxxxx.
 
-> **Xxxx**  Xx’x xxxxxx xxxx xxx’xx xxx x xxxxxxxxx xxxxxx xx xxxxxxx xxxx xxxxxxxxx xxx **Xxxxxxx** xxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxx xxx Xxxxxxx xxxxxx xx xxx xxxxx Xxx Xxxxxx xxxxxx xxx. Xxxx xx xxxxxxx xxx xxx xxxx xxxxx xxxx xxx xxxxxxx xxxx xxxx xxxxxxxxx xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx. Xxxx xxx xxxx xx x xxxxxx xx xxxx xx Xxxxxxxxx xx xxxxxx xxxxxxx xxxx xxx Xxxxxxx Xxxxx xxxx xxxx xxxx xxxxxxxxxx xx xxxx, xxxxxxxxxxxxx, xxxxxxxxx xx xxxx xxxxx xxxxxx xxxxxxxxxx. Xx xxxxxx xxxx xxxxxx xxxx xxxxxx xx x xxxxxx xxxxxxxx xxxxxxxxxx.
+The **New and revised ratings** chart shows the number of ratings for each type of rating (new or revised) over the selected period of time.
+
+-   **New ratings** are ratings that customers have submitted but haven't changed.
+-   **Revised ratings** are ratings that have been changed by the customer.
+
+>**Note**  A rating will appear here as revised even if the customer only changed or added the text or title of their review and left the actual rating the same.
+
+## Average rating over time
+
+
+The **Average rating over time** chart shows how the app's average rating has changed over the selected period of time.
+
+Rather than calculating the average of all ratings left during the selected period of time (as in the **Average rating** chart), the **Average rating over time** chart shows you how customers rated the app on a given day or week during the period. This helps you identify trends or determine if ratings were affected by updates or other factors.
+
+If you have filtered the info by **Last 30 days** or **Last 3 months**, the chart displays your average rating by day. If you've filtered by **Last 6 months** or **Last 12 months**, the chart displays your average rating by week (with a new week considered to start on Monday; the average rating shown is for the previous week).
+
+## Markets
+
+
+The **Markets** chart shows average rating and number of ratings over the selected period of time by market.
+
+> **Note**  If you have used the **Page filters** to specify a specific market, you won't see this chart on the **Ratings** report. To see this chart, change the **Page filters** to show all markets.
+
+By default, we show you the market which had the most reviews and continue downward from there, but you can reverse this order by toggling the arrow in the **Number of ratings** column of this chart. You can also sort the data by **Average rating** or **Market** by clicking those columns.
+
+> **Note**  It’s likely that you’ll see a different number of ratings when comparing the **Ratings** report in the Windows Dev Center with the Reviews report in the older Dev Center mobile app. This is because the app only shows data for reviews left from customers on Windows Phone 8.1 and earlier. This may also be a result of work by Microsoft to remove reviews from the Windows Store that have been identified as spam, inappropriate, offensive or have other policy violations. We expect this action will result in a better customer experience.
+
+ 
 
  
 
- 
+
 <!--HONumber=Mar16_HO1-->
+
+

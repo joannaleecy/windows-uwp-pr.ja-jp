@@ -1,54 +1,54 @@
 ---
-xxxxx: Xxxxxxxxxx xxxxxx xxxxxxxxxxx (XxxxxxX xxx X++)
-xxxxxxxxxxx: Xxxx, xx'xx xxxxxxx xxxx xxxxxxxxx xxx xxxxxxxx xxxxxx xxxxxxxx xx xxxx XXX XxxxxxX xxx, xx xxxx xxx Xxxxxxx YY xxxxxx'x xxxxxxxx xxxxxxxx xxx xxxx xxxxxxxxxxx xxx xxxxxxxxxxx.
-xx.xxxxxxx: xYYYYYxY-xYYY-YYYx-YYYx-YYxxxxxxxYxY
+title: Supporting screen orientation (DirectX and C++)
+description: Here, we'll discuss best practices for handling screen rotation in your UWP DirectX app, so that the Windows 10 device's graphics hardware are used efficiently and effectively.
+ms.assetid: f23818a6-e372-735d-912b-89cabeddb6d4
 ---
 
-# Xxxxxxxxxx xxxxxx xxxxxxxxxxx (XxxxxxX xxx X++)
+# Supporting screen orientation (DirectX and C++)
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxx xxxxxxx xxxxxxxx xxxxxx xxxxxxxxxxxx xxxx xxx xxxxxx xxx [**XxxxxxxXxxxxxxxxxx::XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn264268) xxxxx. Xxxx, xx'xx xxxxxxx xxxx xxxxxxxxx xxx xxxxxxxx xxxxxx xxxxxxxx xx xxxx XXX XxxxxxX xxx, xx xxxx xxx Xxxxxxx YY xxxxxx'x xxxxxxxx xxxxxxxx xxx xxxx xxxxxxxxxxx xxx xxxxxxxxxxx.
+Your Universal Windows Platform (UWP) app can support multiple screen orientations when you handle the [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) event. Here, we'll discuss best practices for handling screen rotation in your UWP DirectX app, so that the Windows 10 device's graphics hardware are used efficiently and effectively.
 
-Xxxxxx xxx xxxxx, xxxxxxxx xxxx xxxxxxxx xxxxxxxx xxxxxx xxxxxxx xxxxx xxxx xx xxx xxxx xxx, xxxxxxxxxx xx xxx xxxxxxxxxxx xx xxx xxxxxx. Xxxxxxx YY xxxxxxx xxx xxxxxxxxx xxxxx xxxxxxx xxxxxxx xxxxxxxxxxx (xxxx xxxx xxxx xx xxxxxx, xx xxxx x xxxxxxxx xxxxxx) xxx xxxxx xxxxx xx xxxxxx xxx xxxxxxx xxxxxxxx. Xxxxxxx xx xxxx, Xxxxxxx YY xxxxxx xxxxxxx xxx xxxxxxxx xx xxx xxxxxx xx xxxxxx xxxx xxx "xxxxxxx" xxxxx xx xxx xxxxxxxxxxx xx xxx xxxxxx. Xx xxxxxxx, xxxx xxx xxxxxxxx xxx xxxxxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxx xx xxxxxxxxxxx, xxx xxxxxxx, x xxxxxx xxxx. Xxxx xxxx xxxxxxx, Xxxxxxx YY xxxxxxxxxxx xxxxxxx xxx xxxxx xxx xxxxx xxxxxxx. Xxx xxxxx xx xxx xxxx xxxxxxxx xxxxxx xxxxxxxxxxxx (xxxxxxxxx xxxxx), Xxxxxxx YY xxxx xxxxxxxxxx xxxxxxx xxxxxxxxx xxx xxxxxxxxxxx xx xxxxxxx xxx xxxxx xxxxx.
+Before you start, remember that graphics hardware always outputs pixel data in the same way, regardless of the orientation of the device. Windows 10 devices can determine their current display orientation (with some sort of sensor, or with a software toggle) and allow users to change the display settings. Because of this, Windows 10 itself handles the rotation of the images to ensure they are "upright" based on the orientation of the device. By default, your app receives the notification that something has changed in orientation, for example, a window size. When this happens, Windows 10 immediately rotates the image for final display. For three of the four specific screen orientations (discussed later), Windows 10 uses additional graphic resources and computation to display the final image.
 
-Xxx XXX XxxxxxX xxxx, xxx [**XxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn264258) xxxxxx xxxxxxxx xxxxx xxxxxxx xxxxxxxxxxx xxxx xxxx xxxx xxx xxx xxxxx. Xxx xxxxxxx xxxxxxxxxxx xx *xxxxxxxxx*, xxxxx xxx xxxxx xxxxx xx xxx xxxxxxx xx xxxxxxx xxxx xxx xxxxxx; xxx xxxxxxxxxxx xxxxxxxxxxx xx *xxxxxxxx*, xxxxx xxx xxxxxxx xx xxxxxxx YY xxxxxxx xx xxxxxx xxxxxxxxx xxx xxx xxxxx xxxxxxx xxxx xxxx xxx xxxxxx.
+For UWP DirectX apps, the [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/dn264258) object provides basic display orientation data that your app can query. The default orientation is *landscape*, where the pixel width of the display is greater than the height; the alternative orientation is *portrait*, where the display is rotated 90 degrees in either direction and the width becomes less than the height.
 
-Xxxxxxx YY xxxxxxx xxxx xxxxxxxx xxxxxxx xxxxxxxxxxx xxxxx:
+Windows 10 defines four specific display orientation modes:
 
--   Xxxxxxxxx—xxx xxxxxxx xxxxxxx xxxxxxxxxxx xxx Xxxxxxx YY, xxx xx xxxxxxxxxx xxx xxxx xx xxxxxxxx xxxxx xxx xxxxxxxx (Y xxxxxxx).
--   Xxxxxxxx—xxx xxxxxxx xxx xxxx xxxxxxx xxxxxxxxx YY xxxxxxx (xx xxxxxxx-xxxxxxxxx YYY xxxxxxx).
--   Xxxxxxxxx, xxxxxxx—xxx xxxxxxx xxx xxxx xxxxxxx YYY xxxxxxx (xxxxxx xxxxxx-xxxx).
--   Xxxxxxxx, xxxxxxx—xxx xxxxxxx xxx xxxx xxxxxxx xxxxxxxxx YYY xxxxxxx (xx xxxxxxx-xxxxxxxxx YY xxxxxxx).
+-   Landscape—the default display orientation for Windows 10, and is considered the base or identity angle for rotation (0 degrees).
+-   Portrait—the display has been rotated clockwise 90 degrees (or counter-clockwise 270 degrees).
+-   Landscape, flipped—the display has been rotated 180 degrees (turned upside-down).
+-   Portrait, flipped—the display has been rotated clockwise 270 degrees (or counter-clockwise 90 degrees).
 
-Xxxx xxx xxxxxxx xxxxxxx xxxx xxx xxxxxxxxxxx xx xxxxxxx, Xxxxxxx YY xxxxxxxxxx xxxxxxxx x xxxxxxxx xxxxxxxxx xx xxxxx xxx xxxxx xxxxx xxxx xxx xxx xxxxxxxxxxx, xxx xxx xxxx xxxx xx xxxxxxx xxxxx xx xxx xxxxxx.
+When the display rotates from one orientation to another, Windows 10 internally performs a rotation operation to align the drawn image with the new orientation, and the user sees an upright image on the screen.
 
-Xxxx, Xxxxxxx YY xxxxxxxx xxxxxxxxx xxxxxxxxxx xxxxxxxxxx xx xxxxxx x xxxxxx xxxx xxxxxxxxxx xxxx xxxxxxxx xxxx xxx xxxxxxxxxxx xx xxxxxxx. Xx xxx xxxxxxx xxxxxxxxxxx xxxxxx, xxx xxxx xxxx xxxxx xxxxxx xx x xxxxx xxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxxxxxx xxxxxx xxxxx. Xxxx xx xxxxxxxxx xx Xxxxxxx YY xx xxx xxx xxx xxxxxx xx xxx xxx xxxxxxxxxxx.
+Also, Windows 10 displays automatic transition animations to create a smooth user experience when shifting from one orientation to another. As the display orientation shifts, the user sees these shifts as a fixed zoom and rotation animation of the displayed screen image. Time is allocated by Windows 10 to the app for layout in the new orientation.
 
-Xxxxxxx, xxxx xx xxx xxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxx xx xxxxxx xxxxxxxxxxx:
+Overall, this is the general process for handling changes in screen orientation:
 
-1.  Xxx x xxxxxxxxxxx xx xxx xxxxxx xxxxxx xxxxxx xxx xxx xxxxxxx xxxxxxxxxxx xxxx xx xxxx xxx xxxx xxxxx xxxxxxx xxxx xxx xxxxxx xxxxxxx xxxxxxxxxxx xx xxx xxxxxx.
-2.  Xxxxxx Xxxxxxx YY xx xxx xxxxxxxxxxx xx xxx xxxx xxxxx xxxxx [**XXXXXXxxxXxxxxY::XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh446801).
-3.  Xxxxxx xxx xxxxxxxxx xxxx xx xxxxxxxx xxxxxx xxxxxxx xxxx xxx xxxx xxxxxxxxxxx xx xxx xxxxxx.
+1.  Use a combination of the window bounds values and the display orientation data to keep the swap chain aligned with the native display orientation of the device.
+2.  Notify Windows 10 of the orientation of the swap chain using [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801).
+3.  Change the rendering code to generate images aligned with the user orientation of the device.
 
-## Xxxxxxxx xxx xxxx xxxxx xxx xxx-xxxxxxxx xxx xxxxxxxx
+## Resizing the swap chain and pre-rotating its contents
 
 
-Xx xxxxxxx x xxxxx xxxxxxx xxxxxx xxx xxx-xxxxxx xxx xxxxxxxx xx xxxx XXX XxxxxxX xxx , xxxxxxxxx xxxxx xxxxx:
+To perform a basic display resize and pre-rotate its contents in your UWP DirectX app , implement these steps:
 
-1.  Xxxxxx xxx [**XxxxxxxXxxxxxxxxxx::XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn264268) xxxxx.
-2.  Xxxxxx xxx xxxx xxxxx xx xxx xxx xxxxxxxxxx xx xxx xxxxxx.
-3.  Xxxx [**XXXXXXxxxXxxxxY::XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh446801) xx xxx xxx xxxxxxxxxxx xx xxx xxxx xxxxx.
-4.  Xxxxxxxx xxx xxxxxx xxxx xxxxxxxxx xxxxxxxxx, xxxx xx xxxx xxxxxx xxxxxxx xxx xxxxx xxxxx xxxx xxxxxxx.
+1.  Handle the [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) event.
+2.  Resize the swap chain to the new dimensions of the window.
+3.  Call [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) to set the orientation of the swap chain.
+4.  Recreate any window size dependent resources, such as your render targets and other pixel data buffers.
 
-Xxx'x xxx'x xxxx xx xxxxx xxxxx xx x xxx xxxx xxxxxx.
+Now's let's look at those steps in a bit more detail.
 
-Xxxx xxxxx xxxx xx xx xxxxxxxx x xxxxxxx xxx xxx [**XxxxxxxXxxxxxxxxxx::XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn264268) xxxxx. Xxxx xxxxx xx xxxxxx xx xxxx xxx xxxxx xxxx xxx xxxxxx xxxxxxxxxxx xxxxxxx, xxxx xx xxxx xxx xxxxxxx xx xxxxxxx.
+Your first step is to register a handler for the [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) event. This event is raised in your app every time the screen orientation changes, such as when the display is rotated.
 
-Xx xxxxxx xxx [**XxxxxxxXxxxxxxxxxx::XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn264268) xxxxx, xxx xxxxxxx xxxx xxxxxxx xxx **XxxxxxxXxxxxxxxxxx::XxxxxxxxxxxXxxxxxx** xx xxx xxxxxxxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700509) xxxxxx, xxxxx xx xxx xx xxx xxxxxxx xx xxx [**XXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700478) xxxxxxxxx xxxx xxxx xxxx xxxxxxxx xxxx xxxxxxxxx.
+To handle the [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) event, you connect your handler for **DisplayInformation::OrientationChanged** in the required [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509) method, which is one of the methods of the [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) interface that your view provider must implement.
 
-Xx xxxx xxxx xxxxxxx, xxx xxxxx xxxxxxx xxx [**XxxxxxxXxxxxxxxxxx::XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn264268) xx x xxxxxx xxxxxx **XxXxxxxxxxxxxXxxxxxx**. Xxxx **XxxxxxxXxxxxxxxxxx::XxxxxxxxxxxXxxxxxx** xx xxxxxx, xx xx xxxx xxxxx x xxxxxx xxxxxx **XxxXxxxxxxXxxxxxxxxxx** xxxxx xxxx xxxxx **XxxxxxXxxxxxXxxxXxxxxxxxxXxxxxxxxx**.
+In this code example, the event handler for [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) is a method called **OnOrientationChanged**. When **DisplayInformation::OrientationChanged** is raised, it in turn calls a method called **SetCurrentOrientation** which then calls **CreateWindowSizeDependentResources**.
 
 ```cpp
 void App::SetWindow(CoreWindow^ window)
@@ -81,7 +81,7 @@ void DX::DeviceResources::SetCurrentOrientation(DisplayOrientations currentOrien
 }
 ```
 
-Xxxx, xxx xxxxxx xxx xxxx xxxxx xxx xxx xxx xxxxxx xxxxxxxxxxx xxx xxxxxxx xx xx xxxxxx xxx xxxxxxxx xx xxx xxxxxxx xxxxxxxx xxxx xxx xxxxxxxxx xx xxxxxxxxx. Xx xxxx xxxxxxx, **XxxxxxXXxxx::XxxxxxXxxxxxXxxxXxxxxxxxxXxxxxxxxx** xx x xxxxxx xxxx xxxxxxx xxxxxxx XXXXXXxxxXxxxx::XxxxxxXxxxxxx, xxxxxxx x YX xxx x YX xxxxxxxx xxxxxx, xxxxxxx XxxXxxxxxxx, xxx xxxxxxxxxx xxxx xxxxxxxxx.
+Next, you resize the swap chain for the new screen orientation and prepare it to rotate the contents of the graphic pipeline when the rendering is performed. In this example, **DirectXBase::CreateWindowSizeDependentResources** is a method that handles calling IDXGISwapChain::ResizeBuffers, setting a 3D and a 2D rotation matrix, calling SetRotation, and recreating your resources.
 
 ```cpp
 void DX::DeviceResources::CreateWindowSizeDependentResources() 
@@ -316,53 +316,53 @@ void DX::DeviceResources::CreateWindowSizeDependentResources()
 
 ```
 
-Xxxxx xxxxxx xxx xxxxxxx xxxxxx xxx xxxxx xxxxxx xx xxx xxxxxx xxx xxx xxxx xxxx xxxx xxxxxx xx xxxxxx, xxxxxxx xxx xxxxxx xxxxxxxxxxx xxxxx (XXX) xxxxxx xxx xxx xxxxxxx xxxxxx xx xxxxxx. Xx xxx xxxxxx, xxx xxxx **XxxxxxxXxxxXxXxxxxx**, xxxxx xx x xxxxxx xxxxxxxx xxxx xxxx xxxx xxxx:
+After saving the current height and width values of the window for the next time this method is called, convert the device independent pixel (DIP) values for the display bounds to pixels. In the sample, you call **ConvertDipsToPixels**, which is a simple function that runs this code:
 
 ` floor((dips * dpi / 96.0f) + 0.5f);`
 
-Xxx xxx xxx Y.Yx xx xxxxxx xxxxxxxx xx xxx xxxxxxx xxxxxxx xxxxx.
+You add the 0.5f to ensure rounding to the nearest integer value.
 
-Xx xx xxxxx, [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxxxxxxx xxx xxxxxx xxxxxxx xx XXXx. Xxx Xxxxxxx YY xxx xxxxxxx xxxxxxxx xx Xxxxxxx, x XXX xx xxxxxxx xx Y/YYxx xx xx xxxx, xxx xxxxxxx xx xxx XX'x xxxxxxxxxx xx *xx*. Xxxx xxx xxxxxxx xxxxxxxxxxx xxxxxxx xx xxxxxxxx xxxx, xxx xxx xxxxx xxx xxxxx xxx xxxxxx xx xxx **XxxxXxxxxx**, xxx xxx xxxxxx xxxxxx xxxx (xxxxxx) xxxx xxxxxx xxxxxxxxxxx. Xxxxxxx XxxxxxYX’x xxxxxxxxxxx xxx xxxxxx xx xxxxxxxx xxxxxx, xxx xxxx xxxxxxx xxxx **XxxxXxxxxx**'x XXX xxxxxx xx xxxxxxx xxxxx xxxxxx xxxxxx xxx xxxx xxxxx xxxxxx xx XxxxxxYX xx xxx xx xxx xxxx xxxxx.
+As an aside, [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) coordinates are always defined in DIPs. For Windows 10 and earlier versions of Windows, a DIP is defined as 1/96th of an inch, and aligned to the OS's definition of *up*. When the display orientation rotates to portrait mode, the app flips the width and height of the **CoreWindow**, and the render target size (bounds) must change accordingly. Because Direct3D’s coordinates are always in physical pixels, you must convert from **CoreWindow**'s DIP values to integer pixel values before you pass these values to Direct3D to set up the swap chain.
 
-Xxxxxxx-xxxx, xxx'xx xxxxx x xxx xxxx xxxx xxxx xxx xxxxx xx xxx xxxxxx xxxxxxx xxx xxxx xxxxx: xxx'xx xxxxxxxx xxxxxxxx xxx XxxxxxYX xxx XxxxxxYX xxxxxxxxxx xx xxxx xxxxx xxxxxx xxx xxxxxxxxx xxxx xxx xxxxxxxxxxxx, xxx xxx'xx xxxxxxx xxx xxxx xxxxx xxxx xxx'xx xxxxxxxx xxx xxxxxxx xx x xxx xxxxxxxxxxx. Xxxx'x x xxxxxx xxxx xxxxxx xx xxxx xxxxxxx, xx xxxxx xx xxx xxxx xxxxxxx xxx **XX::XxxxxxXxxxxxxxx::XxxxxxXxxxxxXxxxXxxxxxxxxXxxxxxxxx**:
+Process-wise, you're doing a bit more work than you would if you simply resized the swap chain: you're actually rotating the Direct2D and Direct3D components of your image before you composite them for presentation, and you're telling the swap chain that you've rendered the results in a new orientation. Here's a little more detail on this process, as shown in the code example for **DX::DeviceResources::CreateWindowSizeDependentResources**:
 
--   Xxxxxxxxx xxx xxx xxxxxxxxxxx xx xxx xxxxxxx. Xx xxx xxxxxxx xxx xxxxxxx xxxx xxxxxxxxx xx xxxxxxxx, xx xxxx xxxxx, xxxx xxx xxxxxx xxx xxxxx xxxxxx—xxxxxxx xxxx XXX xxxxxx xx xxxxxx, xx xxxxxx—xxx xxx xxxxxxx xxxxxx.
+-   Determine the new orientation of the display. If the display has flipped from landscape to portrait, or vice versa, swap the height and width values—changed from DIP values to pixels, of course—for the display bounds.
 
--   Xxxx, xxxxx xx xxx xx xxx xxxx xxxxx xxx xxxx xxxxxxx. Xx xx xxxx'x xxxx xxxxxxx, xxxxxx xx xx xxxxxxx [**XXXXXXxxxxxxY::XxxxxxXxxxXxxxxXxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh404559). Xxxxxxxxx, xxxxxx xxx xxxxxxxx xxxx xxxxx'x xxxxxxx xx xxx xxx xxxxxxx xxxxxxxxxx xx xxxxxxx [**XXXXXXxxxxxxxx:XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb174577). Xxxxxxxx xxx xxx'x xxxx xx xxxxxx xxx xxxx xxxxx xxx xxx xxxxxxxx xxxxx—xxx'xx xxxxxxxxxx xxx xxxxxxx xxxxxxx xxxxxxx xx xxxx xxxxxxxxx xxxxxxxx, xxxxx xxx—xxxxx xxx xxxxx xxxx xxxxxx xxxxxx, xxxx xx xxxx xxx xxxx xxxxxx, xxxx xxxxxxx xxxxxxxx.
+-   Then, check to see if the swap chain has been created. If it hasn't been created, create it by calling [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559). Otherwise, resize the existing swap chain's buffers to the new display dimensions by calling [**IDXGISwapchain:ResizeBuffers**](https://msdn.microsoft.com/library/windows/desktop/bb174577). Although you don't need to resize the swap chain for the rotation event—you're outputting the content already rotated by your rendering pipeline, after all—there are other size change events, such as snap and fill events, that require resizing.
 
--   Xxxxx xxxx, xxx xxx xxxxxxxxxxx Y-X xx Y-X xxxxxx xxxxxxxxxxxxxx xx xxxxx xx xxx xxxxxx xx xxx xxxxxxxx (xxxxxxxxxxxx) xx xxx xxxxxxxx xxxxxxxx xxxx xxxxxxxxx xxxx xx xxx xxxx xxxxx. Xx xxxx Y xxxxxxxx xxxxxxxx xxxxxxxx:
+-   After that, set the appropriate 2-D or 3-D matrix transformation to apply to the pixels or the vertices (respectively) in the graphics pipeline when rendering them to the swap chain. We have 4 possible rotation matrices:
 
-    -   xxxxxxxxx (XXXX\_XXXX\_XXXXXXXX\_XXXXXXXX)
-    -   xxxxxxxx (XXXX\_XXXX\_XXXXXXXX\_XXXXXXYYY)
-    -   xxxxxxxxx, xxxxxxx (XXXX\_XXXX\_XXXXXXXX\_XXXXXXYYY)
-    -   xxxxxxxx, xxxxxxx (XXXX\_XXXX\_XXXXXXXX\_XXXXXXYY)
+    -   landscape (DXGI\_MODE\_ROTATION\_IDENTITY)
+    -   portrait (DXGI\_MODE\_ROTATION\_ROTATE270)
+    -   landscape, flipped (DXGI\_MODE\_ROTATION\_ROTATE180)
+    -   portrait, flipped (DXGI\_MODE\_ROTATION\_ROTATE90)
 
-    Xxx xxxxxxx xxxxxx xx xxxxxxxx xxxxx xx xxx xxxx xxxxxxxx xx Xxxxxxx YY (xxxx xx xxx xxxxxxx xx [**XxxxxxxXxxxxxxxxxx::XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn264268)) xxx xxxxxxxxxxx xxxxxxx xxxxxxxxxxx, xxx xx xxxx xx xxxxxxxxxx xx xxx xxxxxxxxxxx xx xxxx xxxxx (XxxxxxYX) xx xxxxxx (XxxxxxYX) xx xxx xxxxx, xxxxxxxxxxx xxxxxxxx xxxx xx xxxxx xx xxx xxxxxxxxxxx xx xxx xxxxxx. (Xxxx xxxx xx XxxxxxYX, xxx xxxxxx xxxxxx xx xxxxxxx xx xxx xxxxx-xxxx xxxxxx, xxxxx xx XxxxxxYX xxx xxxxxx xx xxxxxxx xx xxx xxxxxxx xxxxxx xx xxx xxxxxx.)
+    The correct matrix is selected based on the data provided by Windows 10 (such as the results of [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268)) for determining display orientation, and it will be multiplied by the coordinates of each pixel (Direct2D) or vertex (Direct3D) in the scene, effectively rotating them to align to the orientation of the screen. (Note that in Direct2D, the screen origin is defined as the upper-left corner, while in Direct3D the origin is defined as the logical center of the window.)
 
-> **Xxxx**   Xxx xxxx xxxx xxxxx xxx Y-X xxxxxxxxxxxxxxx xxxx xxx xxxxxxxx xxx xxx xx xxxxxx xxxx, xxx [Xxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxx (Y-X)](#defining_matrices_2d). Xxx xxxx xxxx xxxxx xxx Y-X xxxxxxxxxxxxxxx xxxx xxx xxxxxxxx, xxx [Xxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxx (Y-X)](#defining_matrices_3d).
+> **Note**   For more info about the 2-D transformations used for rotation and how to define them, see [Defining matrices for screen rotation (2-D)](#defining_matrices_2d). For more info about the 3-D transformations used for rotation, see [Defining matrices for screen rotation (3-D)](#defining_matrices_3d).
 
  
 
-Xxx, xxxx'x xxx xxxxxxxxx xxx: xxxx [**XXXXXXxxxXxxxxY::XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh446801) xxx xxxxxxx xx xxxx xxxx xxxxxxx xxxxxxxx xxxxxx, xxxx xxxx:
+Now, here's the important bit: call [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801) and provide it with your updated rotation matrix, like this:
 
 `m_swapChain->SetRotation(rotation);`
 
-Xxx xxxx xxxxx xxx xxxxxxxx xxxxxxxx xxxxxx xxxxx xxxx xxxxxx xxxxxx xxx xxx xx xxxx xx xxxxxxxx xxx xxx xxxxxxxxxx. Xxx'xx xxx xxxx xxxxxx xxxx xxx xxxxxx xxxx xxxxx Y-X xxxxxxxxxx xx xxxxxxxxx xxxx xxxxx Y-X xxxxxx. (Xx xxxxx'x xxxxxxxxxxxxx xxxxx xx xxx xxx.)
+You also store the selected rotation matrix where your render method can get it when it computes the new projection. You'll use this matrix when you render your final 3-D projection or composite your final 2-D layout. (It doesn't automatically apply it for you.)
 
-Xxxxx xxxx, xxxxxx x xxx xxxxxx xxxxxx xxx xxx xxxxxxx Y-X xxxx, xx xxxx xx x xxx xxxxx xxxxxxx xxxxxx xxx xxx xxxx. Xxx xxx Y-X xxxxxxxxx xxxxxxxx xxx xxx xxxxxxx xxxxx xx xxxxxxx [**XXYXYYXxxxxxXxxxxxx:XXXxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476480).
+After that, create a new render target for the rotated 3-D view, as well as a new depth stencil buffer for the view. Set the 3-D rendering viewport for the rotated scene by calling [**ID3D11DeviceContext:RSSetViewports**](https://msdn.microsoft.com/library/windows/desktop/ff476480).
 
-Xxxxxx, xx xxx xxxx Y-X xxxxxx xx xxxxxx xx xxx xxx, xxxxxx x Y-X xxxxxx xxxxxx xx x xxxxxxxx xxxxxx xxx xxx xxxxxxx xxxx xxxxx xxxxx [**XXYXYXxxxxxXxxxxxx::XxxxxxXxxxxxXxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh404482) xxx xxxxxxxxx xxxx xxx xxxxxx xxx xxx xxxxxxx xxxxxxxxxxx. Xxx xxx xxxxxxxxxx xxx xxxx xx xx xxx xxxxxx xxxxxx, xxxx xx xxx xxxx-xxxxxxxx xxxx (xx xxxx xx xxx xxxx xxxxxxx).
+Lastly, if you have 2-D images to rotate or lay out, create a 2-D render target as a writable bitmap for the resized swap chain using [**ID2D1DeviceContext::CreateBitmapFromDxgiSurface**](https://msdn.microsoft.com/library/windows/desktop/hh404482) and composite your new layout for the updated orientation. Set any properties you need to on the render target, such as the anti-aliasing mode (as seen in the code example).
 
-Xxx, xxxxxxx xxx xxxx xxxxx.
+Now, present the swap chain.
 
-## Xxxxxx xxx xxxxxxxx xxxxx xx xxxxx XxxxXxxxxxXxxxxxXxxxxxx
+## Reduce the rotation delay by using CoreWindowResizeManager
 
 
-Xx xxxxxxx, Xxxxxxx YY xxxxxxxx x xxxxx xxx xxxxxxxxxx xxxxxx xx xxxx xxx xxx xxx, xxxxxxxxxx xx xxx xxxxx xx xxxxxxxx, xx xxxxxxxx xxx xxxxxxxx xx xxx xxxxx. Xxxxxxx, xxxxxxx xxx xxxx xxxx xxxx xxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxx xxxxx xxx xx xxx xxxxxxxxxx xxxxxxxxx xxxx, xx xxxx xx xxxx xxxx xxxxxx xxxx xxxxxx xx xxxx xxx xxxxxx. Xxx'x xxxx xx xxx xxxx xxxx xxxx xxx xxxxxxxx xxx xxxxxxxx xxxxxxxxx, xxxxx? Xxxx'x xxxxx [**XxxxXxxxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/jj215603) xxxxx xx.
+By default, Windows 10 provides a short but noticeable window of time for any app, regardless of app model or language, to complete the rotation of the image. However, chances are that when your app performs the rotation calculation using one of the techniques described here, it will be done well before this window of time has closed. You'd like to get that time back and complete the rotation animation, right? That's where [**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603) comes in.
 
-Xxxx'x xxx xx xxx [**XxxxXxxxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/jj215603): xxxx x [**XxxxxxxXxxxxxxxxxx::XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn264268) xxxxx xx xxxxxx, xxxx [**XxxxXxxxxxXxxxxxXxxxxxx::XxxXxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh404170) xxxxxx xxx xxxxxxx xxx xxx xxxxx xx xxxxxx xx xxxxxxxx xx **XxxxXxxxxxXxxxxxXxxxxxx** xxx, xxxx xxx xxxxxx xxx xxx xxx xxxxxxxxxxx xx xxxxxxxx xxx xxxxxxxxx, xxxx xxx [**XxxxxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/jj215605) xx xxx Xxxxxxx xxxx xxxx xx xxx xxxxxxxx xxx xxxxxxxx xxxxxxxxx xxx xxxxxxx xxx xxx xxxxxx.
+Here's how to use [**CoreWindowResizeManager**](https://msdn.microsoft.com/library/windows/apps/jj215603): when a [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) event is raised, call [**CoreWindowResizeManager::GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh404170) within the handler for the event to obtain an instance of **CoreWindowResizeManager** and, when the layout for the new orientation is complete and presented, call the [**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605) to let Windows know that it can complete the rotation animation and display the app screen.
 
-Xxxx'x xxxx xxx xxxx xx xxxx xxxxx xxxxxxx xxx [**XxxxxxxXxxxxxxxxxx::XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn264268) xxxxx xxxx xxxx:
+Here's what the code in your event handler for [**DisplayInformation::OrientationChanged**](https://msdn.microsoft.com/library/windows/apps/dn264268) might look like:
 
 ```cpp
 CoreWindowResizeManager^ resizeManager = Windows::UI::Core::CoreWindowResizeManager::GetForCurrentView();
@@ -372,30 +372,30 @@ CoreWindowResizeManager^ resizeManager = Windows::UI::Core::CoreWindowResizeMana
 resizeManager->NotifyLayoutCompleted();
 ```
 
-Xxxx x xxxx xxxxxxx xxx xxxxxxxxxxx xx xxx xxxxxxx, Xxxxxxx YY xxxxx xx xxxxxxxxx xxxxxxxxxxx xx xxxx xxx xx xxxxxxxx xx xxx xxxx. Xxxxx xxx xxxxx xxxxx xx xxxx xxxxxxxxx xxxx xxxxxx xx xxx xxxxxxxxx xxxxx:
+When a user rotates the orientation of the display, Windows 10 shows an animation independent of your app as feedback to the user. There are three parts to that animation that happen in the following order:
 
--   Xxxxxxx YY xxxxxxx xxx xxxxxxxx xxxxx.
--   Xxxxxxx YY xxxxx xxx xxxxx xxx xxx xxxx xx xxxxx xx xxxxxxx xxx xxx xxxxxx. Xxxx xx xxx xxxxxx xx xxxx xxxx xxx'x xxxx xx xxxxxx, xxxxxxx xxxx xxx xxxxxxxx xxxxx'x xxxx xxx xx xx.
--   Xxxx xxx xxxxxx xxxxxx xxxxxxx, xx xxxx x xxxxxxxxxxxx xx xxxxxx xxxxxxxxxx xx xxxxxxxx, Xxxxxxx xxxxxxx xxx xxxxx xxx xxxx xxxxx-xxxx xxxxx xx xxx xxxxxxxxxxx.
+-   Windows 10 shrinks the original image.
+-   Windows 10 holds the image for the time it takes to rebuild the new layout. This is the window of time that you'd like to reduce, because your app probably doesn't need all of it.
+-   When the layout window expires, or when a notification of layout completion is received, Windows rotates the image and then cross-fade zooms to new orientation.
 
-Xx xxxxxxxxx xx xxx xxxxx xxxxxx, xxxx xx xxx xxxxx [**XxxxxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/jj215605), Xxxxxxx YY xxxxx xxx xxxxxxx xxxxxx, xxxxxxxxx xxx xxxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxx xx xxxx xxx, xxxxx xx xxx xxxxxxx xx xxx xxx xxxxxxx xxxxxxxxxxx. Xxx xxxxxxx xxxxxx xx xxxx xxxx xxx xxx xxxxx x xxxxxx xxx xxxx xxxxx xxx xxxxxxxxxx, xxx xxxxx x xxxxxx xxxx xxxxxxxxxxx!
+As suggested in the third bullet, when an app calls [**NotifyLayoutCompleted**](https://msdn.microsoft.com/library/windows/apps/jj215605), Windows 10 stops the timeout window, completes the rotation animation and returns control to your app, which is now drawing in the new display orientation. The overall effect is that your app now feels a little bit more fluid and responsive, and works a little more efficiently!
 
-## Xxxxxxxx X: Xxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxx (Y-X)
+## Appendix A: Applying matrices for screen rotation (2-D)
 
 
-Xx xxx xxxxxx xx [Xxxxxxxxxx xxx xxxxxxxx xxxxxxx](#rotation) (xxx xx xxx [XXXX xxxx xxxxx xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=257600)), xxx xxxxx xxxx xxxxxxx xxxx xx xxx xxxxxxxx xxxxxxxx xxxxxxxx xxx XxxxxxYX xxxxxx xxx XxxxxxYX xxxxxx. Xxx'x xxxx xx xxx Y-X xxxxxxxx, xxxxx.
+In the sample in [Optimizing the rotation process](#rotation) (and in the [DXGI swap chain rotation sample](http://go.microsoft.com/fwlink/p/?linkid=257600)), you might have noticed that we had separate rotation matrices for Direct2D output and Direct3D output. Let's look at the 2-D matrices, first.
 
-Xxxxx xxx xxx xxxxxxx xxxx xx xxx'x xxxxx xxx xxxx xxxxxxxx xxxxxxxx xx XxxxxxYX xxx XxxxxxYX xxxxxxx:
+There are two reasons that we can't apply the same rotation matrices to Direct2D and Direct3D content:
 
--   Xxx, xxxx xxx xxxxxxxxx Xxxxxxxxx xxxxxxxxxx xxxxxx. XxxxxxYX xxxx xxx xxxxx-xxxxxx xxxx, xxxxx xxx x-xxxxxxxxxx xxxxxxxxx xx xxxxxxxx xxxxx xxxxxx xxxxxx xxxx xxx xxxxxx. Xxxxxxx, XxxxxxYX xxxx xxx xxxx-xxxxxx xxxx, xxxxx xxx x-xxxxxxxxxx xxxxxxxxx xx xxxxxxxx xxxxx xxxxxxxxx xxxx xxx xxxxxx. Xxx xxxxxx xx xxx xxxxxx xxx xxx xxxxxx xxxxxxxxxxx xx xxxxxxx xx xxx xxxxx-xxxx xxx XxxxxxYX, xxxxx xxx xxxxxx xxx xxx xxxxxx (xxx xxxxxxxxxx xxxxx) xx xx xxx xxxxx-xxxx xxx XxxxxxYX. (Xxx [Y-X xxxxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/bb324490.aspx) xxx xxxx xxxx.)
+-   One, they use different Cartesian coordinate models. Direct2D uses the right-handed rule, where the y-coordinate increases in positive value moving upward from the origin. However, Direct3D uses the left-handed rule, where the y-coordinate increases in positive value rightward from the origin. The result is the origin for the screen coordinates is located in the upper-left for Direct2D, while the origin for the screen (the projection plane) is in the lower-left for Direct3D. (See [3-D coordinate systems](https://msdn.microsoft.com/library/windows/apps/bb324490.aspx) for more info.)
 
-    ![xxxxxxYx xxxxxxxxxx xxxxxx.](images/direct3d-origin.png)![xxxxxxYx xxxxxxxxxx xxxxxx.](images/direct2d-origin.png)
+    ![direct3d coordinate system.](images/direct3d-origin.png)![direct2d coordinate system.](images/direct2d-origin.png)
 
--   Xxx, xxx Y-X xxxxxxxx xxxxxxxx xxxx xx xxxxxxxxx xxxxxxxxxx xx xxxxx xxxxxxxx xxxxxx.
+-   Two, the 3-D rotation matrices must be specified explicitly to avoid rounding errors.
 
-Xxx xxxx xxxxx xxxxxxx xxxx xxx xxxxxx xx xxxxxxx xx xxx xxxxx-xxxx, xx xxx xxxx xxxxxxx x xxxxxxxx xx xxxxx xxx xxxxx-xxxxxx XxxxxxYX xxxxxxxxxx xxxxxx xxxx xxx xxxx-xxxxxx xxx xxxx xx xxx xxxx xxxxx. Xxxxxxxxxxxx, xxx xxxxxxxxxx xxx xxxxx xxxxx xxx xxx xxxx-xxxxxx xxxxxxxxxxx xx xxxxxxxxxxx xxx xxxxxxxx xxxxxx xxxx x xxxxxxxxxxx xxxxxx xxx xxx xxxxxxx xxxxxxxxxx xxxxxx xxxxxx, xxx xxxxxxxxx xxx xxxxx xxxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225)'x xxxxxxxxxx xxxxx xx xxx xxxx xxxxx'x xxxxxxxxxx xxxxx. Xxxx xxx xxxx xxxx xxxxxxxxxxxx xxxxx xxxx xxxxxxxxx xxxx xxx XxxxxxYX xxxxxx xxxxxx xx xxxxxxxxx xxxx xxx xxxx xxxxx. Xxxxxxx, xx xxxx xxx xx xxxxxxx xx xxxxxxxxxxxx xxxxxxxx xxxx xxx xxx xxxxxxxxxx xxxxxxxx xxxx xxx xxxx xxxxx, xxx'x xxxxx xxxx xxxxxxxxxx xxxxx xxxxxxxxxxxxxx.
+The swap chain assumes that the origin is located in the lower-left, so you must perform a rotation to align the right-handed Direct2D coordinate system with the left-handed one used by the swap chain. Specifically, you reposition the image under the new left-handed orientation by multiplying the rotation matrix with a translation matrix for the rotated coordinate system origin, and transform the image from the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)'s coordinate space to the swap chain's coordinate space. Your app also must consistently apply this transform when the Direct2D render target is connected with the swap chain. However, if your app is drawing to intermediate surfaces that are not associated directly with the swap chain, don't apply this coordinate space transformation.
 
-Xxxx xxxx xx xxxxxx xxx xxxxxxx xxxxxx xxxx xxx xxxx xxxxxxxx xxxxxxxxx xxxxx xxxx xxxx xxxx (xx xxxxx xx xxx xxxxxxxxxxx xx xxx xxx xxxxxxxxxx xxxxxx xxxxxx):
+Your code to select the correct matrix from the four possible rotations might look like this (be aware of the translation to the new coordinate system origin):
 
 ```cpp
    
@@ -439,9 +439,9 @@ default:
     
 ```
 
-Xxxxx xxx xxxx xxx xxxxxxx xxxxxxxx xxxxxx xxx xxxxxx xxx xxx Y-X xxxxx, xxx xx xxxx x xxxx xx [**XXYXYXxxxxxXxxxxxx::XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/dd742857) xxxxxxx xxxx xxxxx xx [**XXYXYXxxxxxXxxxxxx::XxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/dd371768) xxx [**XXYXYXxxxxxXxxxxxx::XxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/dd371924).
+After you have the correct rotation matrix and origin for the 2-D image, set it with a call to [**ID2D1DeviceContext::SetTransform**](https://msdn.microsoft.com/library/windows/desktop/dd742857) between your calls to [**ID2D1DeviceContext::BeginDraw**](https://msdn.microsoft.com/library/windows/desktop/dd371768) and [**ID2D1DeviceContext::EndDraw**](https://msdn.microsoft.com/library/windows/desktop/dd371924).
 
-**Xxxxxxx**   XxxxxxYX xxxxx'x xxxx x xxxxxxxxxxxxxx xxxxx. Xx xxxx xxx xx xxxx xxxxx xxx [**XXYXYXxxxxxXxxxxxx::XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/dd742857) xx x xxxx xx xxx xxxxxxx xxxx, xxxx xxxxxx xxxxx xx xx xxxx-xxxxxxxxxx xx xxx xxxxx xxxxxxxxx xxx xxxx xxxxxxx.
+**Warning**   Direct2D doesn't have a transformation stack. If your app is also using the [**ID2D1DeviceContext::SetTransform**](https://msdn.microsoft.com/library/windows/desktop/dd742857) as a part of its drawing code, this matrix needs to be post-multiplied to any other transform you have applied.
 
  
 
@@ -475,14 +475,14 @@ Xxxxx xxx xxxx xxx xxxxxxx xxxxxxxx xxxxxx xxx xxxxxx xxx xxx Y-X xxxxx, xxx xx 
     HRESULT hr = context->EndDraw();
 ```
 
-Xxx xxxx xxxx xxx xxxxxxx xxx xxxx xxxxx, xxxx Y-X xxxxx xxxx xx xxxxxxx xx xxxxx xxx xxx xxxxxxx xxxxxxxxxxx.
+The next time you present the swap chain, your 2-D image will be rotated to match the new display orientation.
 
-## Xxxxxxxx X: Xxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxx (Y-X)
+## Appendix B: Applying matrices for screen rotation (3-D)
 
 
-Xx xxx xxxxxx xx [Xxxxxxxxxx xxx xxxxxxxx xxxxxxx](#rotation) (xxx xx xxx [XXXX xxxx xxxxx xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=257600)), xx xxxxxxx x xxxxxxxx xxxxxxxxxxxxxx xxxxxx xxx xxxx xxxxxxxx xxxxxx xxxxxxxxxxx. Xxx, xxx'x xxxx xx xxx xxxxxxxx xxx xxxxxxxx Y-X xxxxxx. Xx xxxxxx, xxx xxxxxx x xxx xx xxxxxxxx xxx xxxx xx xxx Y xxxxxxxx xxxxxxxxxxxx. Xx xxxxxxx xxxxxxxx xxxxxx xxx xxxx xxxxx xxxxxx xxxxxxxxx, xxxxxxx xxx xxxxxxxx xxxxxxxxxx xx xxxx xxxx.
+In the sample in [Optimizing the rotation process](#rotation) (and in the [DXGI swap chain rotation sample](http://go.microsoft.com/fwlink/p/?linkid=257600)), we defined a specific transformation matrix for each possible screen orientation. Now, let's look at the matrixes for rotating 3-D scenes. As before, you create a set of matrices for each of the 4 possible orientations. To prevent rounding errors and thus minor visual artifacts, declare the matrices explicitly in your code.
 
-Xxx xxx xx xxxxx Y-X xxxxxxxx xxxxxxxx xx xxxxxxx. Xxx xxxxxxxx xxxxx xx xxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxxx xxx Y, YY, YYY, xxx YYY xxxxxx xxxxxxxxx xx xxx xxxxxxxx xxxx xxxxxx xxxxxx xx xxx xxxxxx'x Y-X xxxxx xxxxx. Xxxx xxxxxx'x \[x, x, x\] xxxxxxxxxx xxxxx xx xxx xxxxx xx xxxxxxxxxx xx xxxx xxxxxxxx xxxxxx xxxx xxx Y-X xxxxxxxxxx xx xxx xxxxx xx xxxxxxxx.
+You set up these 3-D rotation matrices as follows. The matrices shown in the following code example are standard rotation matrices for 0, 90, 180, and 270 degree rotations of the vertices that define points in the camera's 3-D scene space. Each vertex's \[x, y, z\] coordinate value in the scene is multiplied by this rotation matrix when the 2-D projection of the scene is computed.
 
 ```cpp
    
@@ -520,11 +520,11 @@ static const XMFLOAT4X4 Rotation270(
     }
 ```
 
-Xxx xxx xxx xxxxxxxx xxxx xx xxx xxxx xxxxx xxxx x xxxx xx [**XXXXXXxxxXxxxxY::XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh446801), xxxx xxxx:
+You set the rotation type on the swap chain with a call to [**IDXGISwapChain1::SetRotation**](https://msdn.microsoft.com/library/windows/desktop/hh446801), like this:
 
 `   m_swapChain->SetRotation(rotation);`
 
-Xxx, xx xxxx xxxxxx xxxxxx, xxxxxxxxx xxxx xxxx xxxxxxx xx xxxx:
+Now, in your render method, implement some code similar to this:
 
 ``` syntax
 struct ConstantBuffer // This struct is provided for illustration.
@@ -541,13 +541,17 @@ ConstantBuffer  m_constantBufferData;          // Constant buffer resource data
 m_constantBufferData.projection = mul(m_constantBufferData.projection, m_rotationTransform3D);
 ```
 
-Xxx, xxxx xxx xxxx xxxx xxxxxx xxxxxx, xx xxxxxxxxxx xxx xxxxxxx xxxxxxxx xxxxxx (xx xxxxxxxxx xx xxx xxxxx xxxxxxxx **x\_xxxxxxxxxxxXxxxxxxxxYX**) xxxx xxx xxxxxxx xxxxxxxxxx xxxxxx, xxx xxxxxxx xxx xxxxxxx xx xxxx xxxxxxxxx xx xxx xxx xxxxxxxxxx xxxxxx xxx xxxx xxxxxxxx. Xxxxxxx xxx xxxx xxxxx xx xxx xxx xxxxx xx xxx xxxxxxx xxxxxxx xxxxxxxxxxx.
+Now, when you call your render method, it multiplies the current rotation matrix (as specified by the class variable **m\_orientationTransform3D**) with the current projection matrix, and assigns the results of that operation as the new projection matrix for your renderer. Present the swap chain to see the scene in the updated display orientation.
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

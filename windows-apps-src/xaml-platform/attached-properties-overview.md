@@ -1,22 +1,22 @@
 ---
-xxxxxxxxxxx: Xxxxxxxx xxx xxxxxxx xx xx xxxxxxxx xxxxxxxx xx XXXX, xxx xxxxxxxx xxxx xxxxxxxx.
-xxxxx: Xxxxxxxx xxxxxxxxxx xxxxxxxx
-xx.xxxxxxx: YYYXYXXY-XYYY-YYXY-YYYY-XYXXXYYYYYXY
+description: XAML での添付プロパティの概念を説明し、例をいくつか紹介します。
+title: 添付プロパティの概要
+ms.assetid: 098C1DE0-D640-48B1-9961-D0ADF33266E2
 ---
 
-# Xxxxxxxx xxxxxxxxxx xxxxxxxx
+# 添付プロパティの概要
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-Xx *xxxxxxxx xxxxxxxx* xx x XXXX xxxxxxx. Xx xx xxxxxxxxxxxx xxxxxxx xx x xxxxxx xxxxxxxx xxxx xxx xx xxx xx xxx xxxxxx xxxxxxx xx XXXX. Xxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxx xx x xxxxxxxxxxx xxxx xx xxxxxxxxxx xxxxxxxx xxxx xxxxx'x xxxx x xxxxxxxxxxxx xxxxxxxx xxxxxxx xx xxx xxxxx xxxx'x xxxxxx xxxxx.
+*添付プロパティ*は、XAML の概念です。 添付プロパティは、概念としてはグローバル プロパティに近く、XAML のどのオブジェクト要素にも設定することができます。 添付プロパティは、一般に、所有者型のオブジェクト モデルで従来のプロパティ ラッパーを持たない特殊な形式の依存関係プロパティとして定義されます。
 
-## Xxxxxxxxxxxxx
+## 必要条件
 
-Xx xxxxxx xxxx xxx xxxxxxxxxx xxx xxxxx xxxxxxx xx xxxxxxxxxx xxxxxxxxxx, xxx xxxx xxxx [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](dependency-properties-overview.md).
+依存関係プロパティの基本的な概念を理解し、「[依存関係プロパティの概要](dependency-properties-overview.md)」を読んでいることを前提としています。
 
-## Xxxxxxxx xxxxxxxxxx xx XXXX
+## XAML での添付プロパティ
 
-Xxxxxxxx xxxxxxxxxx xxxxx xxxxxx xxxxxxx xxxx xxxxxxx x XXXX xxxxxx. Xx XXXX, xxx xxx xxxxxxxx xxxxxxxxxx xx xxxxx xxx xxxxxx _XxxxxxxxXxxxxxxxXxxxxxxx.XxxxxxxxXxxx_. Xxxx xx xx xxxxxxx xx xxx xxx xxx xxx [**Xxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/hh759771) xx XXXX.
+添付プロパティはほとんどの場合、XAML 構文を有効にしたために存在します。 XAML では、_AttachedPropertyProvider.PropertyName_ 構文を使って添付プロパティを設定します。 XAML で [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) を設定する例を次に示します。
 
 ```XAML
 <Canvas>
@@ -24,49 +24,50 @@ Xxxxxxxx xxxxxxxxxx xxxxx xxxxxx xxxxxxx xxxx xxxxxxx x XXXX xxxxxx. Xx XXXX, xx
 </Canvas>
 ```
 
-Xxxx xxxx xxx xxxxx xx xxxxxxxx xxxxxxx xx x xxxxxx xxxxxxxx; xxx xxxxxx xxxxxxxxx xxx xxxx **Xxxxxx** xxxx xxxx xxx xxxxxxxxx xxx xxxxxxxx xxxxxxxx, xxxxxx xxxx xxxxxxxxx xx xxx xxxxxxxx xx xxxx.
+使用方法が静的プロパティに少し似ていることに注意してください。名前で指定されたインスタンスを参照するのではなく、添付プロパティを所有し登録する **Canvas** 型を常に参照します。
 
-**Xxxx**  Xx'xx xxxx xxxxx [**Xxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/hh759771) xx xx xxxxxxx xxxxxxxx xxxxxxxx xxxxxxx xxxxx xxxxxxxxxx xxx xxx'x xxx xx. Xx xxx xxxx xx xxxx xxxx xxxxx xxxx **Xxxxxx.Xxxx** xx xxx xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209267) xxxxxxx xxx xxxxxx xxxxxxxx, xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209267) xxxxxxxxx xxxxx xx [Xxxxxx xxxxxxx xxxx XXXX](https://msdn.microsoft.com/library/windows/apps/mt228350).
+**注:** ここでは、添付プロパティの一例として [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) を使っていますが、その理由を全部説明しているわけではありません。 **Canvas.Left** の用途や、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) がそのレイアウトの子を処理する方法について詳しくは、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) のリファレンス トピックまたは「[XAML を使ったレイアウトの定義](https://msdn.microsoft.com/library/windows/apps/mt228350)」をご覧ください。
 
-## Xxx xxx xxxxxxxx xxxxxxxxxx?
+## 添付プロパティを使う理由
 
-Xxxxxxxx xxxxxxxxxx xxx x xxx xx xxxxxx xxx xxxxxx xxxxxxxxxxx xxxx xxxxx xxxxxxx xxxxxxxxx xxxxxxx xx x xxxxxxxxxxxx xxxx xxxxxxxxxxxxx xxxxxxxxxxx xx xxxx xxxxx xx xxx xxxx. Xx'x xxxxxxxxx xxxxxxxx xx xxx xxxxxxxxxx xx x xxxxxx xxxx xxxxx xx xxxx xxxx xxxxxx xxxxx xxxx xxx xxx xxx xxxx xxxxxxxx. Xxx xxxxxxxxxx xxx xxxxx xxxxxx xx xxxxxxxxx xxxxx xxx xxxxx xxxx xx xx xxxx xxxx xxxxx xxxx xxxx xxxxxxx xxxx xxxxxxxxx xxxxxxxxxx. Xx xxxxx xxxx xxxxxxxxx xxxxx xxxxx xxxxx xxxxx xxxx xx xxx xx xxxxxxxx xx xxxxxxxxxxx xxxxxx xx xxx x xxxxxxxx. Xxxx'x xxx xxxx xxxxx xxxxxx. Xx xxxxxxx xxxx, xxx xxxxxxxx xxxxxxxx xxxxxxx xxxxxxx xx xxxxxx xx xxxxxx x xxxxx xxx x xxxxxxxx xxxx xxx xxx xxxxx xxxxxxxxx xxxxx'x xxxxxx. Xxx xxxxxxxx xxxxx xxx xxxx xxx xxxxx xxxx xxxxx xxxxxxx xx xxx xxxx xxxxx xxx xxxxxxx xxxxxxx xxx xxxxxxx xx xxxxxxxxxxxxx xx xx xxxxxx xxxx.
+添付プロパティは、リレーションシップ内の別々のオブジェクトが実行時に情報をやり取りするのを防ぐようなコーディング規則を回避する方法の 1 つです。 共通の基底クラスにプロパティを設定し、各オブジェクトがそのプロパティを取得、設定できるようにすることも可能です。 ただ、このようにする可能性のあるシナリオの数はきわめて多く、共有できるプロパティによって基底クラスが大きくなるおそれがあります。 何百もの子孫のうちわずか 2 つしか使わないプロパティが存在するなどという事態が発生することも考えられます。 これでは、優れたクラス設計にはなりません。 この問題に対処するため、添付プロパティの概念では、自らのクラス構造では定義されないプロパティに対してオブジェクトが値を割り当てられるようになっています。 定義クラスでは、オブジェクト ツリーのリレーションシップで各種オブジェクトが作成された後、実行時に子オブジェクトから値を読み取ります。
 
-Xxx xxxxxxx, xxxxx xxxxxxxx xxx xxx xxxxxxxx xxxxxxxxxx xx xxxxxx xxxxx xxxxxx xxxxxxx xx xxx xxxx xxx xx xx xxxxxxxxx xx xxx XX. Xxxx xx xxx xxxx xxxx xxx [**Xxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/hh759771) xxxxxxxx xxxxxxxx. **Xxxxxx.Xxxx** xx xxxxxxx xx xx xxxxxxxx xxxxxxxx xxxxxxx xx xx xxx xx xxxxxxxx xxxx xxx xxxxxxxxx xxxxxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209267) xxxxxxx, xxxxxx xxxx xx xxx **Xxxxxx** xxxxxx. Xxx xxxxxxxx xxxxx xxxxxxx xxxx xxxx **Xxxxxx.Xxxx** xxx [**Xxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/hh759772) xx xxxxxxx xxx xxxxxx xxxxxx xxxxxx xxx **Xxxxxx** xxxxxx xxxxxxxxx xxxxxx. Xxxxxxxx xxxxxxxxxx xxxx xx xxxxxxxx xxx xxxx xx xxxx xxxxxxx xxxxxxxxxx xxx xxxx xxxxxxx'x xxxxxx xxxxx xxxx xxxx xx xxxxxxxxxx xxxx xxxx xxxxx xx xxxx xxx xx xxx xxxx xxxxxxxx xxxxxx xxxxxxxxxx. Xxxxxxx, xxxx xx xxx xxxxxx xxxxxxxxxx xxxxxxxxx xxxxx xxx xxxxxxxx xxxxxxxx xxx.
+たとえば、子要素では添付プロパティを使用して、子要素がどのように UI に表示されるかを親要素に通知できます。 [
+            **Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) 添付プロパティの場合がこれに該当します。 **Canvas.Left** が添付プロパティとして作成されるのは、このプロパティが **Canvas** 自体ではなく [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) 要素に含まれる要素に対して設定されるためです。 子要素は、**Canvas.Left** と [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/hh759772) を使って、レイアウト オフセットを親である **Canvas** レイアウト コンテナー内で指定します。 基本の要素オブジェクト モデルに多数のプロパティがあり、それぞれのプロパティが多数のレイアウト コンテナーの 1 つのみに適用される場合でも、添付プロパティを使えば、そのオブジェクト モデルを煩雑な状態にすることなくこれを実現できます。 代わりに、レイアウト コンテナーの多くは独自の添付プロパティ セットを実装します。
 
-Xx xxxxxxxxx xxx xxxxxxxx xxxxxxxx, xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209267) xxxxx xxxxxxx x xxxxxx [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242362) xxxxx xxxxx [**Xxxxxx.XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209272). Xxxx, **Xxxxxx** xxxxxxxx xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br209273) xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br209269) xxxxxxx xx xxxxxx xxxxxxxxx xxx xxx xxxxxxxx xxxxxxxx, xx xxxxxx xxxx XXXX xxxxxxx xxx xxx-xxxx xxxxx xxxxxx. Xxx XXXX xxx xxx xxx xxxxxxxxxx xxxxxxxx xxxxxx, xxxx xxx xx XXXx xxxxxxxxx x xxxxxxx xxxx xxxxxxx x xxxxxxxx XXXX xxxxxx xxx xxxxxxxx xxxxxxxxxx, xxx xxxxxx xxx xxxxx xx xxx xxxxxxxxxx xxxxxxxx xxxxx.
+添付プロパティを実装するには、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) クラスは、[**Canvas.LeftProperty**](https://msdn.microsoft.com/library/windows/apps/br209272) という名前の静的な [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) フィールドを定義します。 次に **Canvas** では、[**SetLeft**](https://msdn.microsoft.com/library/windows/apps/br209273) メソッドと [**GetLeft**](https://msdn.microsoft.com/library/windows/apps/br209269) メソッドを添付プロパティのパブリック アクセサーとして提供して、XAML の設定とランタイム値のアクセスの両方を可能にします。 XAML と依存関係プロパティ システムに対しては、この API のセットは添付プロパティ用の特定の XAML 構文を使い、依存関係プロパティ ストアに値を格納するパターンを実現できます。
 
-## Xxx xxx xxxxxx xxxx xxxx xxxxxxxx xxxxxxxxxx
+## 所有する型による添付プロパティの使用方法
 
-Xxxxxxxx xxxxxxxx xxxxxxxxxx xxx xx xxx xx xxx XXXX xxxxxxx (xx xxx xxxxxxxxxx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242356)), xxxx xxxxx'x xxxxxxxxxxxxx xxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxx x xxxxxxxx xxxxxx, xx xxxx xxx xxxxx xx xxxx xxxxxxxx. Xxx xxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxx xxx xx xxxxx xxxxxxxxx:
+添付プロパティは任意の XAML 要素 (または基になる [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)) に設定できますが、プロパティを設定することによって具体的な結果が生成されたり、値がアクセスされたりするわけではありません。 添付プロパティを定義する型は、一般に次のいずれかのシナリオに従います。
 
--   Xxx xxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xx xxx xxxxxx xx x xxxxxxxxxxxx xx xxxxx xxxxxxx. Xxx xxxxx xxxxxxx xxxx xxx xxxxxx xxx xxx xxxxxxxx xxxxxxxx. Xxx xxxxxxxx xxxxxxxx xxxxx xxxx xxx xxxx xxxxxx xxxxxxxx xxxx xxxxxxxx xxxxxxx xxx xxxxx xxxxxxxx, xxxxxxx xxx xxxxxx, xxx xxxx xx xxxxx xxxxxx xx xxxx xxxxx xx xxxxxx xxxxxxxx (x xxxxxx xxxxxx, [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208742), xxx.)
--   Xxx xxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xx xxxx xx xxx xxxxx xxxxxxx xxx x xxxxxxx xx xxxxxxxx xxxxxx xxxxxxxx xxx xxxxxxx xxxxxx, xxx xxx xxxx xxx'x xxxxxxxxxxx xxxxxx xxxx.
--   Xxx xxxxxxxx xxxxxxxx xxxxxxx xxxx xx x xxxxxxx, xxx xx xxxxxxx XX xxxxxxx.
+-   添付プロパティを定義する型が、他のオブジェクトのリレーションシップで親になっている。 子オブジェクトは、添付プロパティの値を設定します。 添付プロパティの所有者型には、オブジェクトの有効期間内のある時点に子要素を反復処理し、値を取得し、その値を処理するという動作が元からいくつか備わっています (レイアウト操作 [**SizeChanged**](https://msdn.microsoft.com/library/windows/apps/br208742) など)。
+-   添付プロパティを定義する型は、さまざまな親要素とコンテンツ モデルの子要素として使われますが、この情報はレイアウト情報である必要はありません。
+-   添付プロパティは、別の UI 要素ではなくサービスに情報を報告します。
 
-Xxx xxxx xxxx xx xxxxx xxxxxxxxx xxx xxxxxx xxxxx, xxx xxx "Xxxx xxxxx Xxxxxx.Xxxx" xxxxxxx xx [Xxxxxx xxxxxxxx xxxxxxxxxx](custom-attached-properties.md).
+これらのシナリオや所有する型について詳しくは、「[カスタム添付プロパティ](custom-attached-properties.md)」の「Canvas.Left の詳細」セクションをご覧ください。
 
-## Xxxxxxxx xxxxxxxxxx xx xxxx
+## コードでの添付プロパティ
 
-Xxxxxxxx xxxxxxxxxx xxx'x xxxx xxx xxxxxxx xxxxxxxx xxxxxxxx xxx xxxx xxx xxx xxx xxxxxx xxxx xxxxx xxxxxxxxxx xxxxxxxxxx xx. Xxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxx xx xxx xxxxxxxxxxx xxxx xx xxx xxxx-xxxxxxxx xxxxxx xxxxx xxx xxxxxxxxx xxxxx xxx xxxxxxxx xx xxx. (Xx xx xxxxxxxxxxx, xxxxxx xxxxxxxx, xx xxxxxx x xxxxxxxx xxxx xx xxxx xx xxxxxxxx xxxxxxxx xxxx xxxxx xxxxx xxx xxx xx xxxxxxxxxx, xxx xxxx xxxx xxx x xxxxxxxxxxxx xxxxxxxx xxxxx xx xxx xxxxxx xxxx.)
+添付プロパティには、他の依存関係プロパティのような、取得および設定アクセスを容易にする標準的なプロパティ ラッパーがありません。 これは、添付プロパティが設定されているインスタンスのコード中心のオブジェクト モデルに、その添付プロパティが組み込まれているとは限らないからです。 (他の型で設定できると同時に、所有する型では従来の方法で使われる添付プロパティを定義することもできますが、決して一般的ではありません。)
 
-Xxxxx xxx xxx xxxx xx xxx xx xxxxxxxx xxxxxxxx xx xxxx: xxx xxx xxxxxxxx-xxxxxx XXXx, xx xxx xxx XXXX xxxxxxx xxxxxxxxx. Xxxxx xxxxxxxxxx xxx xxxxxx xxxx xxxxxxxxxx xx xxxxx xx xxxxx xxx xxxxxx, xx xxxxx xxx xx xxx xx xxxxxx x xxxxxx xx xxxxxx xxxxx.
+コードでは 2 つの方法で添付プロパティを設定できます。1 つはプロパティ システムの API を使う方法、もう 1 つは XAML パターン アクセサーを使う方法です。 これらの方法は最終的な結果という点ではほぼ同じため、どちらを使うかは主にコーディング スタイルによって決まります。
 
-### Xxxxx xxx xxxxxxxx xxxxxx
+### プロパティ システムを使う場合
 
-Xxxxxxxx xxxxxxxxxx xxx xxx Xxxxxxx Xxxxxxx xxx xxxxxxxxxxx xx xxxxxxxxxx xxxxxxxxxx, xx xxxx xxx xxxxxx xxx xx xxxxxx xx xxx xxxxxx xxxxxxxxxx-xxxxxxxx xxxxx xx xxx xxxxxxxx xxxxxx, xxxx xx xxxx xxxxxxxxxxxx xxxxxxxx xxxxxxxxxx xxx xxxxxx. Xxxxxxxxx xxxxxxxx xxxxxxxxxx xxxxxx x xxxxxxxxxx xxxxxxxx xxxxxxxxxx xx xxx xxxxxx xxxxx.
+Windows ランタイムの添付プロパティは依存関係プロパティとして実装されるため、従来のインスタンス プロパティの多くと同じように、プロパティ システムを使って共有依存関係プロパティ ストアに値を格納できます。 したがって、添付プロパティは所有するクラスで依存関係プロパティ ID を公開します。
 
-Xx xxx xx xxxxxxxx xxxxxxxx xx xxxx, xxx xxxx xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242361) xxxxxx, xxx xxxx xxx [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242362) xxxxx xxxx xxxxxx xx xxx xxxxxxxxxx xxx xxxx xxxxxxxx xxxxxxxx. (Xxx xxxx xxxx xxx xxxxx xx xxx.)
+コードで添付プロパティを設定するには、[**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) メソッドを呼び出し、その添付プロパティの ID となる [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) フィールドを渡します。 (設定する値も渡します)。
 
-Xx xxx xxx xxxxx xx xx xxxxxxxx xxxxxxxx xx xxxx, xxx xxxx xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242359) xxxxxx, xxxxx xxxxxxx xxx [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242362) xxxxx xxxx xxxxxx xx xxx xxxxxxxxxx.
+コードで添付プロパティの値を取得するには、[**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) メソッドを呼び出し、同じく ID となる [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) フィールドを渡します。
 
-### Xxxxx xxx XXXX xxxxxxxx xxxxxxx
+### XAML アクセサー パターンを使う場合
 
-X XXXX xxxxxxxxx xxxx xx xxxx xx xxx xxxxxxxx xxxxxxxx xxxxxx xxxx XXXX xx xxxxxx xxxx xx xxxxxx xxxx. Xxx xxxxx xxxx xx xxx xxxxxxxx xxxxxxxx xxxx xxxxxxxxx xxxxxxxxx xxxxxxxx xxxxxxx xxxxx xx xxx xxxx **Xxx***XxxxxxxxXxxx* xxx **Xxx***XxxxxxxxXxxx*. Xxxxx xxxxxxxxx xxxxxxxx xxxxxxx xxx xxxx xxx xxx xx xxx xx xxx xxx xxxxxxxx xxxxxxxx xx xxxx. Xxxx x xxxx xxxxxxxxxxx, xx xxxxxxxx xxxxxxxx xx xxxxxxx xx x xxxxxxx xxxxx xxxx xxx xxxxxx xxxxxxxxx xxxxxxx xx xxxxxxxx xxxxxxxxx, xxx xxxx xxxxxxx xxxxx xxx xxxxx xx xxx xxxxxx xxxxxx xxxx xxxxxx xx xx xxxxxxxxxxxx xxxxxxx.
+XAML をオブジェクト ツリーに解析するときは、XAML プロセッサが添付プロパティの値を設定できる必要があります。 添付プロパティの所有者型は、**Get***PropertyName* と **Set***PropertyName* の形式で名前を付けた専用のアクセサー メソッドを実装する必要があります。 この専用のアクセサー メソッドは、コードで添付プロパティを取得または設定する方法の 1 つでもあります。 コードの観点からすると、添付プロパティは、プロパティ アクセサーではなくメソッド アクセサーを持つバッキング フィールドに似ています。このバッキング フィールドは、どのオブジェクトにも存在する可能性があり、具体的に定義する必要はありません。
 
-Xxx xxxx xxxxxxx xxxxx xxx xxx xxx xxx xx xxxxxxxx xxxxxxxx xx xxxx xxx xxx XXXX xxxxxxxx XXX. Xx xxxx xxxxxxx, `myCheckBox` xx xx xxxxxxxx xx xxx [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209316) xxxxx. Xxx xxxx xxxx xx xxx xxxx xxxx xxxxxxxx xxxx xxx xxxxx; xxx xxxxx xxxxxx xxxx xxxx xxxxxxxxx xxx xxxxxxxxx xxx xxxxx xxxxxx-xxxxx xxxxxxxxxxxx. Xxx xxxxxxxxxxx xxxx xxxx xx xxx xxxxxx xx xxx xxx xxx xxxxxxxx xxxxxx. Xxx xxxxxxxxx xxxx xxxx xx xxx xxxxxx xx xxx xxx xxx XXXX xxxxxxxx xxxxxxx.
+次の例は、コードで XAML アクセサー API を使って添付プロパティを設定する方法を示しています。 この例の `myCheckBox` は、[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) クラスのインスタンスです。 実際に値を設定するコードは最後の行です。それまでの行では、インスタンスとその親子関係を設定しています。 コメント解除された最後の行は、プロパティ システムを使う場合の構文です。 コメント アウトされた最後の行は、XAML アクセサー パターンを使う場合の構文です。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
     Canvas myC = new Canvas();
     CheckBox myCheckBox = new CheckBox();
@@ -92,27 +93,31 @@ Xxx xxxx xxxxxxx xxxxx xxx xxx xxx xxx xx xxxxxxxx xxxxxxxx xx xxxx xxx xxx XXXX
     //Canvas::SetTop(myCheckBox, 75);
 ```
 
-## Xxxxxx xxxxxxxx xxxxxxxxxx
+## カスタム添付プロパティ
 
-Xxx xxxx xxxxxxxx xx xxx xx xxxxxx xxxxxx xxxxxxxx xxxxxxxxxx, xxx xxxx xxxx xxxxx xxx xxxxxxxxx xxx xxxxx xx xxxxxxxx xxxxxxxx, xxx [Xxxxxx xxxxxxxx xxxxxxxxxx](custom-attached-properties.md).
+カスタム添付プロパティの定義方法に関するコード例と添付プロパティを使うシナリオに関する詳しい情報については、「[カスタム添付プロパティ](custom-attached-properties.md)」をご覧ください。
 
-## Xxxxxxx xxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxxxxx
+## 添付プロパティ参照の特別な構文
 
-Xxx xxx xx xx xxxxxxxx xxxxxxxx xxxx xx x xxx xxxx xx xxx xxxxxxxxxxxxxx xxxxxxx. Xxxxxxxxx xxxxx xxx xxxxxxxxx xxxxxxxxxxx xxxx x xxxxxx xx xxxxxxxxx xxxxxx xxx xxx xx xxxxxx xxxx xxxxx xxxxxxx. Xxx xxxxxxx, x xxx xx xxxxxxx xx xx xxxxxx-xxxxx xxxxxxxxx xxx x xxxxxxx xxxx. Xx xxxx xxxxx xxxxxxxxx xxxx xxxxxxxxx, xxxxx xx x xxxxxxx xxxxxx xxx xx xxxxxxxx xxxxxxxx xxxx xxxxxxx xxx xxxxx xxx xxxxx xx xx xxxxxx xx xxx *xxxxx***.***xxxxxxxx* xxxxxxxxx xx xx xxxxxxxx xxxxxxxx.
+添付プロパティ名に含まれるドットは、識別パターンの重要な部分です。 ドットが別の意味に解釈される構文または状況では、あいまいさが生じる場合があります。 たとえば、バインディング パスではドットがオブジェクト モデル トラバーサルと見なされます。 あいまいさに関してほとんどの場合、添付プロパティ用の特別な構文によって、内部のドットは添付プロパティの *owner***.***property* 区切り文字として解析されています。
 
-- Xx xxxxxxx xx xxxxxxxx xxxxxxxx xx xxxx xx x xxxxxx xxxx xxx xx xxxxxxxxx, xxxxxxx xxx xxxxxxxx xxxxxxxx xxxx xx xxxxxxxxxxx ("()")—xxx xxxxxxx, "(Xxxxxx.Xxxx)". Xxx xxxx xxxx, xxx [Xxxxxxxx-xxxx xxxxxx](property-path-syntax.md).
+- 添付プロパティをアニメーション用ターゲット パスの一部として指定する場合は、添付プロパティ名をかっこ "()" で囲みます。たとえば、"(Canvas.Left)" のようにします。 詳しくは、「[Property-path 構文](property-path-syntax.md)」をご覧ください。
 
-**Xxxxxxx**  Xx xxxxxxxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx XXXX xxxxxxxxxxxxxx xx xxxx xxx xxxxxx xxxxxxx x xxxxxx xxxxxxxx xxxxxxxx.
+**注意:** ただし、Windows ランタイム XAML 実装の制限があるため、カスタム添付プロパティをアニメーション化することはできません。
  
-- Xx xxxxxxx xx xxxxxxxx xxxxxxxx xx xxx xxxxxx xxxxxxxx xxx x xxxxxxxx xxxxxxxxx xxxx x xxxxxxxx xxxx xx **x:Xxx**, xxx x xxxxxxx xxxxxx xxxx xxxxxxx x xxxx-xxxxx, xxxxx xxxxxxxxx **xxxxx:** xxxxxxxxxxx xxxxxx xxxxxx xxxxxxxx ("\[\]"), xx xxxxxx x xxxxxxxxxx xxxxx xxxxx. Xxx xxxxxxx, xxxxxxxx xxxxx xxxxxx xx xxxxxxx '<TextBlock x:Uid="Title" />', xxx xxxxxxxx xxx xx xxx xxxxxxxx xxxx xxxx xxxxxxx xxx **Xxxxxx.Xxx** xxxxx xx xxxx xxxxxxxx xx "Xxxxx.\[xxxxx:Xxxxxxx.XX.Xxxx.Xxxxxxxx\]Xxxxxx.Xxx". Xxx xxxx xxxx xx xxxxxxxx xxxxx xxx XXXX, xxx [Xxxxxxxxxx: Xxxxxxxxxxx XX xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
+- 添付プロパティをリソース ファイルから **x:Uid** へのリソース参照のターゲット プロパティとして指定するには、コードスタイルの完全に修飾された **using:** 宣言を角かっこ ("\[\]") で囲む特別な構文を使って、故意にスコープ ブレークを作成します。 たとえば、'<TextBlock x:Uid="Title" />' という要素が存在する場合、そのインスタンスの **Canvas.Top** 値をターゲットとするリソース ファイル内のリソース キーは、"Title.\[using:Windows.UI.Xaml.Controls\]Canvas.Top" となります。 リソース ファイルと XAML について詳しくは、「[クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329)」をご覧ください。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxx xxxxxxxx xxxxxxxxxx](custom-attached-properties.md)
-* [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](dependency-properties-overview.md)
-* [Xxxxxx xxxxxxx xxxx XXXX](https://msdn.microsoft.com/library/windows/apps/mt228350)
-* [Xxxxxxxxxx: Xxxxxxxxxxx XX xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh943060)
-* [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242361)
-* [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242359)
+* [カスタム添付プロパティ](custom-attached-properties.md)
+* [依存関係プロパティの概要](dependency-properties-overview.md)
+* [XAML を使ったレイアウトの定義](https://msdn.microsoft.com/library/windows/apps/mt228350)
+* [クイック スタート: UI リソースの翻訳](https://msdn.microsoft.com/library/windows/apps/hh943060)
+* [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361)
+* [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

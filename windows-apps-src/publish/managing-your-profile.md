@@ -1,32 +1,36 @@
 ---
-xx.xxxxxxx: XXYYYXYX-YYXY-YYXY-XXXY-YYXYXYYYXYYY
-xxxxx: Xxxxxxxx xxxx xxxxxxx xxxxxxxx xxx xxxxxxx xxxx
-xxxxxxxxxxx: Xxx xxx xxxx xxx xxxxxx xxxx xxxxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxx xxxx xx xxx Xxxxxxx xxxxxxxx xxxxxxx xx xxx xxxxxxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx.
+ms.assetid: DA495F9D-49B8-45A6-BBE0-27F0C804D240
+title: アカウントの設定とプロファイル情報の管理
+description: 開発者アカウントの設定とプロファイル情報の表示および更新は、統合 Windows デベロッパー センター ダッシュボードの [アカウントの設定] セクションで行うことができます。
 ---
-# Xxxxxxxx xxxx xxxxxxx xxxxxxxx xxx xxxxxxx xxxx
+# アカウントの設定とプロファイル情報の管理
 
-Xxx xxx xxxx xxx xxxxxx xxxx xxxxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxx xxxx xx xxx **Xxxxxxx xxxxxxxx** xxxxxxx xx xxx [xxxxxxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt169843).
+開発者アカウントの設定とプロファイル情報の表示および更新は、[統合 Windows デベロッパー センター ダッシュボード](https://msdn.microsoft.com/library/windows/apps/Mt169843)の **[アカウントの設定]** セクションで行うことができます。
 
-## Xxxxxxx xxxxxxxx
+## アカウントの設定
 
-Xxx **Xxxxxxx xxxxxxxx** xxxx xxxxx xxxxxxx xxxxx xxxx xxxxxxx, xxx xxxxxxxx xxxxx xx xxxxx xxxxx xxxxx xxx xxx xxxx xxx/xx xxxxxx xxxx.
+**[アカウントの設定]** ページには、アカウントの詳細が表示されます。また、情報の表示や更新を行うことができる他のページへのリンクも表示されます。
 
-Xx xxx **Xxxxxxx xxxxxxx** xxxxxxx, xxx xxx xxx xxx xxxxxx xxx xxxx xx xxxx xxxxxxx. Xxx xxx xxxx xxxx xxxx xxxxxxxxx XX xxxx xx xxxx xxxx xxxxxxxxx xxxx Xxxxxx XX, Xxxxxxx xxxxxxxxx XX, xxx Xxxxxxx Xxxxx xxxxxxxxx XX. Xxxxx xxxxxx xxx xxxxxxxx xx Xxxxxxxxx xx xxxxxxxx xxxxxxxx xxxx xxxxxxxxx xxxxxxx, xxx xxx xxxxxx xxxx xxxxx xxxxxx.
+**[アカウントの詳細]** セクションでは、アカウントの状態と種類を確認できます。 またこのページでは、販売者 ID、Windows 発行元 ID、Windows Phone 発行元 ID などの発行元 ID の情報を探すこともできます。 これらの情報の値は、開発者アカウントを一意に識別するために Microsoft によって割り当てられており、ユーザーが編集することはできません。
 
-**Xxxx**  Xxxxxxxx xxxxxxx xxx xxxx xxxxxxxxxx xxxx xxx xx xxxxx xx xxx [Xxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt148561) xxxx xxx xxxx xxx.
+**注**  個々のアプリの ID に関する詳細は、各アプリの [[アプリ ID](https://msdn.microsoft.com/library/windows/apps/Mt148561)] ページで確認できます。
 
-## Xxxxxxx xxxx
+## 連絡先情報
 
-Xxx **Xxxxxxx xxxx** xxxxxxx xxxxxxxx xxx xxxx xxx xxxxxxxx xxxx xxxxxxx xx xxxx xxxxxxx. Xx xxx xxxx xxxx xx xxxxxxx xxx xxxxx xxxx xxxxxxx.
+**[連絡先情報]** セクションには、アカウントを設定するときに指定した情報が表示されます。 この情報は、ご利用のアカウントについて Microsoft からご連絡を差し上げる際に使われます。
 
-Xxx xxx xxxx xxxx xxxxxxx xx xxx xx xxxx xxxxxxx xxxx xxx xxxxxxx. Xxxx xxxx xxxxxxxx xxxx xxxx xxx xxxxxxx xx xx xxxxxx xxxx xxxxxxx xxxxx, xxxxxxxxxx xx xxx xxxx x xxxxxxx xxxxxxx. Xxxx xxxxxxxxxxxx xxxxxx xxxx xxxx xx **Xxxxxxx** xxxxx xxxx xx xx xxxxxxx. Xxx xxxxxxxxxxxx xxxxxxx xxx xxxx xxxx x xxx xxxx xx x xxxxxx xx xxxxx, xxx xxxxx xxxxxxxx x xxxxx xxxx xx xxxx xxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxx Xxxxxxxx xx Xxx & Xxxxxxxxxx (xx xxxx xxxx xxxx xxxxxxx xxxxxxxxxxx xx xx xx xxxx).
+何らかの連絡先情報が変わった場合は、このセクションを編集してください。 この情報を変更すると、場合によっては、アカウントの確認をやり直す必要があります (特に会社のアカウントを持っている場合)。 処理中は、確認状態が **[保留中]** と表示されます。 確認処理には、数日から数週間かかることがあり、多くの場合は確認パートナーの Symantec または Dun & Bradstreet から会社への電話連絡が行われます (そのため、最新の連絡先を指定してください)。
 
-Xx xxx xxxxxx xxxx xxxxxxxxx xxxxxxx xxxx, xx’xx xxxx xx xxxxxx xxxx xxxxxxx xxxxx. Xx xxx xx xxxx xxxxx xxx xxxx xxxxxxxxx xx xxx, xxx'xx xxxx xx xxxxxx xxx xxxxxxxxx xxxxxxx xxxx xx xxxx xxx'x xxxxxxxx xxx xxxxxx xxx xxx xxxxx xxxxx xxx xxxxxxx xxxxxxxx xxxxx xxxx xxxxxxx xxx xxxx xxxxxxxxxx.
+発行者の表示名を変更した場合、もう一度アカウントを確認する必要があります。 アプリの公開後に発行者の表示名を変更する場合は、アプリのパッケージ内にある発行者の表示名を変更してから、アカウントの再確認が終了した後、更新したパッケージを使ってアプリをもう一度提出する必要があります。
 
-## Xxxxxxxxxx xxxxxxxx xxx xxxx
+## Additional settings and info (追加の設定と情報)
 
-Xxxx xxxxxxx xxxx xxxxxxxx xxxxx xx [xxx xx xxxx xxxxxx xxxxxxx xxx xxx xxxxx](https://msdn.microsoft.com/library/windows/apps/Bg124529). Xxx'xx xxxx xx xx xxxx xxxxxx xxx xxx xxxxxx xxxxx xxx xxxx xx xx-xxx xxxxxxxx (XXXx).
+このセクションには、[受取りアカウントと税務フォームを準備する](https://msdn.microsoft.com/library/windows/apps/Bg124529)ためのリンクも表示されます。 これらの準備は、アプリやアプリ内製品 (IAP) の代金を請求する前に行う必要があります。
 
-Xxxx xxxxxxxx xxx xxxxxxx x xxxx xx xxx xxx xxxxxx xxx xxxxxxxxxxxx xx xxxx xxxxxxx; xxxxx xxx xx xxxxxxx xx **Xxxxxxx xxxxxxxx**. Xxxx xxxx xxxx xxxx xxx xxxx xxxxxxx xxx xxx [Xxxxxxx Xxxxx Y xx Xxxxxxx Xxxxx Y.Y xxxxxxx xxxx xxx'xx xxxxxxxx xxx xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=533897) xxx xxxxxx xx xxxxxxx xxx xxxxx xxxxxxxxx xxx xxx xxxx Xxxxxx Xxxxxx Xxxxxxxxxxx Xxxxxxxx.
+一部のプログラムでは、アカウントの機能を拡張できるようにするためのコードが用意されている場合があります。これらの機能は、**[アカウント設定]** で入力できます。 このページでは、[テスト用にロック解除した Windows Phone 8 デバイスや Windows Phone 8.1 デバイス](http://go.microsoft.com/fwlink/p/?LinkId=533897)に関する詳細を確認することもできます。また、Visual Studio Application Insights でアプリを使う際にアプリの利用統計情報を有効にしたり、無効にしたりすることもできます。
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

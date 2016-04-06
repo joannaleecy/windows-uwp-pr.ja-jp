@@ -1,43 +1,43 @@
 ---
-xxxxx: Xxxxxx xxx xxxx xxxx xxxxxx
-xxxxxxxxxxx: Xxx, xx xxxx xx xxx xxxxxxx xx xxx xxxx xxxxxx'x xxxx xxxxxx xxx xxx xxx xxxxx xx xxxxxxxxxx xxxxxxxxx xxxx xxxxxxxxxxxx xxxx xxx xxxx xxxxx.
-xx.xxxxxxx: YxxxxxYY-YYxY-xxYY-xxYx-YxYYxxxYYYxY
+title: Define the main game object
+description: Now, we look at the details of the game sample's main object and how the rules it implements translate into interactions with the game world.
+ms.assetid: 6afeef84-39d0-cb78-aa2e-2e42aef936c9
 ---
 
-# Xxxxxx xxx xxxx xxxx xxxxxx
+# Define the main game object
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xx xxxx xxxxx, xx'xx xxxx xxx xxx xxxxx xxxxxxxxx xx xxx xxxxxx xxxx, xxx xx xxxxxxxxxxx x xxxxx xxxxxxx xxxx xxxxxxx xxx xxxx-xxxxx xxxx xxx xxxxxx xxxxxxxxx. Xxx xx xxxxx'x xxxxxxxx xxx xxxx xxxx xxxxx xxx xxxx xxxxxx xx xxxxxx xxxx: xxx xxxxx xxx xxxxxxxxx, xxx xxx xxxx'xx xxxxxxxxxxx! Xxx, xx xxxx xx xxx xxxxxxx xx xxx xxxx xxxxxx'x xxxx xxxxxx xxx xxx xxx xxxxx xx xxxxxxxxxx xxxxxxxxx xxxx xxxxxxxxxxxx xxxx xxx xxxx xxxxx.
+At this point, we've laid out the basic framework of the sample game, and we implemented a state machine that handles the high-level user and system behaviors. But we haven't examined the part that makes the game sample an actual game: the rules and mechanics, and how they're implemented! Now, we look at the details of the game sample's main object and how the rules it implements translate into interactions with the game world.
 
-## Xxxxxxxxx
-
-
--   Xx xxxxx xxx xxxxx xxxxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxxxx xxx xxxxx xxx xxxxxxxxx xx x xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxxx XxxxxxX.
-
-## Xxxxxxxxxxx xxx xxxx'x xxxx
+## Objective
 
 
-Xxx xxxxxxxx xx xxx xxxx'x xxxxx xxxxxxxxx xx xxxxxxx xx xxxxx xxxxx:
+-   To apply the basic development techniques when implementing the rules and mechanics of a simple Universal Windows Platform (UWP) game using DirectX.
 
--   **Xxx.xxx**
--   **XxxxxxYXXxxx.xxx**
-
-Xx [Xxxxxxxx xxx xxxx'x XXX xxx xxxxxxxxx](tutorial--building-the-games-metro-style-app-framework.md), xx xxxxxxxx xxx xxxx xxxxxxxxx xxxxxxx xx **Xxx.xxx**.
-
-**XxxxxxYXXxxx.xxx** xxxxxxxx xxx xxxx xxx x xxxxx, **XxxxxxYXXxxx**, xxxxx xxxxxxxxx xxx xxxxxxxxxxxxxx xx xxx xxxx xxxx xxxxxx. Xxxxxxx, xx xxxxxxxxxx xxx xxxxxxxxx xx xxx xxxxxx xxxx xx x XXX xxx. Xxx, xx xxxx xx xxx xxxx xxxx xxxxx xx x xxxx.
-
-Xxx xxxxxxxx xxxx xxx **XxxxxxYXXxxx.x/.xxx** xx xxxxxxxx xx [Xxxxxxxx xxxxxx xxxx xxx xxxx xxxxxxx](#code_sample).
-
-Xxx'x xxxx x xxxx xx xxx xxxxxxxxxx xx xxx **XxxxxxYXXxxx** xxxxx.
-
-## Xxxxxxxx xxx xxxx xxxx xxxxxx
+## Considering the game's flow
 
 
-Xxxx xxx xxx xxxxxxxxx xxxxxx, xxx xxxx xxxxxxxx'x **Xxxxxxxxxx** xxxxxx xxxxxxx xx xxxxxxxx xx xxx xxxx xxxx xxxxx, xxx **XxxxxxYXXxxx** xxxxxx. Xxxx xxxxxx xxxxxxxx xxx xxxxxxx xxxx xxxxxxxxxxx xxxxxxx xx xxxx xxxxx xx xxx xxxxx xxxxxxx xxxxxxx xx xxx xxx xxxxxxxxx, xx xxxx xxx xxx xx xxx xxxx xxxxxx xxxxxx. Xx xxxx xxxxxxxx xxxxxxx xxxx xxxxxx xxxx xxx xxxxxxxx xxx xxxx'x xxxxxxx xxxxxx xxx xxxxx-xx xxxxxxx, xxx xxx xxxxxxxx xxx xxxxxxxxxx xxx xxxxxxx (xxx xxxxxxxx) xx xxx xxxx. Xxx xxxx xxx xxxxxxxxx xxx xxxxxxxx xxxxxx xxxxxxxxx xxxx xx xxx xxxx xx xxxxx xx XxxxXxxxxxxx.xxx, xxxxx xx xxxxxxx xxxx xx [Xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxx](tutorial--assembling-the-rendering-pipeline.md).
+The majority of the game's basic structure is defined in these files:
 
-Xxx xxxx xxx **XxxxxxYXXxxx** xxxxx xxxx xxxx:
+-   **App.cpp**
+-   **Simple3DGame.cpp**
+
+In [Defining the game's UWP app framework](tutorial--building-the-games-metro-style-app-framework.md), we reviewed the game framework defined in **App.cpp**.
+
+**Simple3DGame.cpp** provides the code for a class, **Simple3DGame**, which specifies the implementation of the game play itself. Earlier, we considered the treatment of the sample game as a UWP app. Now, we look at the code that makes it a game.
+
+The complete code for **Simple3DGame.h/.cpp** is provided in [Complete sample code for this section](#code_sample).
+
+Let's take a look at the definition of the **Simple3DGame** class.
+
+## Defining the core game object
+
+
+When the app singleton starts, the view provider's **Initialize** method creates an instance of the main game class, the **Simple3DGame** object. This object contains the methods that communicate changes in game state to the state machine defined in the app framework, or from the app to the game object itself. It also contains methods that return info for updating the game's overlay bitmap and heads-up display, and for updating the animations and physics (the dynamics) in the game. The code for obtaining the graphics device resources used by the game is found in GameRenderer.cpp, which we discuss next in [Assembling the rendering framework](tutorial--assembling-the-rendering-pipeline.md).
+
+The code for **Simple3DGame** looks like this:
 
 ```cpp
 ref class GameRenderer;
@@ -79,32 +79,32 @@ private:
 };
 ```
 
-Xxxxx, xxx'x xxxxxx xxx xxxxxxxx xxxxxxx xxxxxxx xx **XxxxxxYXXxxx**.
+First, let's review the internal methods defined on **Simple3DGame**.
 
--   **Xxxxxxxxxx**. Xxxx xxx xxxxxxxx xxxxxx xx xxx xxxxxx xxxxxxxxx xxx xxxxxxxxxxx xxx xxxx xxxxxxx.
--   **XxxxXxxx**. Xxxxxxxxxxx x xxx xxxxx xxx xxxxxx xxxxxxx xx.
--   **XxxxXxxxxXxxxx**. Xxxxxx xx xxxxx xxxx (xxx xxx [Xxxxxxxx Xxxxxxxx Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx) xxx xxxx xxxxxxx) xx xxxxxxxxxx xxx xxxxx xxx xxxx xxxxxx xx xxxxx xxxx xx xxx xxxxxxxx xx xxxx xxx xxxxxx xxxxxxxx xxxxx xxxxxxxxx. Xxxx xxxxxx xxxx xx x xxxxxxxx xxxxxx; xx x xxxxxx, xxxx [**XXYXYYXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476379) xxxxxxx (xx xxxxxxx xx [**XXYXYYXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476385) xxxxxxx) xxx xx xxxxxx xxxx xxxx xxxxxx. Xxx xxxxxx xxxxxxx xxxxxxx xxx xxxxxx xx xxx **XxxxxxxxXxxxXxxxx** xxxxxx.
--   **XxxxxxxxXxxxXxxxx**. Xxxxxxxxx xxx xxxx xxx xxxxx xxxxxxx xxxx xxxxx xx xx xxxx xx xxx xxxx xxxxxx. Xxxx xxxxxxxx xxx xxxxx xx XxxxxxYX YY xxxxxx xxxxxxx ([**XXYXYYXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) xxxxxxx.
--   **XxxxxXxxxx**. Xxxxxx xxx xxxx xxxx xxx x xxx xxxxx.
--   **XxxxxXxxx**. Xxxxxx xxx xxxx.
--   **XxxXxxx**. Xxxx xx xxxxxxxxx xx xxx xxxx xxxx. Xx'x xxxxxx xxxx **Xxx::Xxxxxx** xxx xxxx xxxxx xxxxxxxxx xx xxx xxxx xxxx xx xxx xxxx xxxxx xx **Xxxxxx**.
--   **XxXxxxxxxxxx** xxx **XxXxxxxxxx**. Xxxxxxxx xxx xxxxxxx xxx xxxx'x xxxxx, xxxxxxxxxxxx.
+-   **Initialize**. Sets the starting values of the global variables and initializes the game objects.
+-   **LoadGame**. Initializes a new level and starts loading it.
+-   **LoadLevelAsync**. Starts an async task (see the [Parallel Patterns Library](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx) for more details) to initialize the level and then invoke an async task on the renderer to load the device specific level resources. This method runs in a separate thread; as a result, only [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) methods (as opposed to [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) methods) can be called from this thread. Any device context methods are called in the **FinalizeLoadLevel** method.
+-   **FinalizeLoadLevel**. Completes any work for level loading that needs to be done on the main thread. This includes any calls to Direct3D 11 device context ([**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385)) methods.
+-   **StartLevel**. Starts the game play for a new level.
+-   **PauseGame**. Pauses the game.
+-   **RunGame**. Runs an iteration of the game loop. It's called from **App::Update** one time every iteration of the game loop if the game state is **Active**.
+-   **OnSuspending** and **OnResuming**. Suspends and resumes the game's audio, respectively.
 
-Xxx xxx xxxxxxx xxxxxxx:
+And the private methods:
 
--   **XxxxXxxxxXxxxx** xxx **XxxxXxxxx**. Xxxxx xxx xxxxx xxx xxxxxxx xxxxx xx xxx xxxx, xxxxxxxxxxxx.
--   **XxxxXxxxXxxxx** xxx **XxxxXxxxXxxxx**. Xxxxx xxx xxxxx xxx xxxx xxxxx xxxxxx xxxxx, xxxxxxxxxxxx.
--   **XxxxxxxxxxXxxx**. Xxxxxx xxx xxxxx xx xxxx xxxxxx xxxxxx xxxx xx xxxxxxxxxx xxxx xx xxx xxxxxxxx xxxxx xxx xxx xxxxxxxxx xx xxxx xxxxx.
--   **XxxxxxXxxxxxxx**. Xxxx xx xx xxxxxxxxx xxxxxx, xxxxxxx xx xxxxxxx xxx xxx xxxx xxxxxxx xxxxx xx xxxxxx xxxxxxxxx xxxxxxxx, xxxxxxx, xxx xxxxxxx xxxxx. Xxxx xx xxx xxxxx xx xxx xxxxxxxxxxxxx xxxx xxxxxxx xxx xxxx. Xx xxxx xxxxx xx xxxx xx xxx [Xxxxxxxx xxx xxxx](#update_game) xxxxxxx.
+-   **LoadSavedState** and **SaveState**. Loads and saves the current state of the game, respectively.
+-   **SaveHighScore** and **LoadHighScore**. Saves and loads the high score across games, respectively.
+-   **InitializeAmmo**. Resets the state of each sphere object used as ammunition back to its original state for the beginning of each round.
+-   **UpdateDynamics**. This is an important method, because it updates all the game objects based on canned animation routines, physics, and control input. This is the heart of the interactivity that defines the game. We talk about it more in the [Updating the game](#update_game) section.
 
-Xxx xxxxx xxxxxx xxxxxxx xxx xxxxxxxx xxxxxxx xxxx xxxxxx xxxx xxxx xxx xxxxxxx xxxxxxxx xxxxxxxxxxx xx xxx xxx xxxxxxxxx xxx xxxxxxx.
+The other public methods are property getters that return game play and overlay specific information to the app framework for display.
 
-## Xxxxxxxx xxx xxxx xxxxx xxxxxxxxx
+## Defining the game state variables
 
 
-Xxx xxxxxxxx xx xxx xxxx xxxxxx xx xx xxxxx xx x xxxxxxxxx xxx xxx xxxx xxxx xxxxxxx x xxxx xxxxxxx, xxxxx, xx xxxxxxxx, xxxxxxxxx xx xxx xxx xxxxxx xxxx xxxx xx x xxxx xxxxx. Xx xxxx xxxx, xxx xxxx xxxxx xxxx xx xxx xxx xxxxxxxx xx xxx xxxx, xxxxxxxxxxx xxx xxxx xxxx x xxxx xxxxxxxx xxx xxxx.
+One function of the game object is to serve as a container for the data that defines a game session, level, or lifetime, depending on how you define your game at a high level. In this case, the game state data is for the lifetime of the game, initialized one time when a user launches the game.
 
-Xxxx'x xxx xxxxxxxx xxx xx xxxxxxxxxxx xxx xxx xxxx xxxxxx'x xxxxx xxxxxxxxx.
+Here's the complete set of definitions for the game object's state variables.
 
 ```cpp
 private:
@@ -141,19 +141,19 @@ private:
     DirectX::XMFLOAT3                                   m_maxBound;
 ```
 
-Xx xxx xxx xx xxx xxxx xxxxxxx, xxxxx xxx xxxx xxxxxxx xxxxx xxxxxxxxx xxx xxxxxxx xx xxx xxxx xxxx xxxx.
+At the top of the code example, there are four objects whose instances are updated as the game loop runs.
 
--   Xxx **XxxxXxxxXxxxxxxxxx** xxxxxx. Xxxx xxxxxx xxxxxxxxxx xxx xxxxxx xxxxx. (Xxx xxxx xxxx xxxxx xxx **XxxxXxxxXxxxxxxxxx** xxxxxx, xxx [Xxxxxx xxxxxxxx](tutorial--adding-controls.md).)
--   Xxx **XxxxXxxxxxxx** xxxxxx. Xxxx xxxxxx xxxxxxxxxx xxx XxxxxxYX YY xxxxxxxx xxxxxxx xxxx xxx **XxxxxxXXxxx** xxxxx xxxx xxxxxxx xxx xxx xxxxxx-xxxxxxxx xxxxxxx xxx xxxxx xxxxxxxxx. (Xxx xxxx xxxx, xxx [Xxxxxxxxxx xxx xxxxxxxxx xxxxxxxx](tutorial--assembling-the-rendering-pipeline.md)).
--   Xxx **Xxxxxx** xxxxxx. Xxxx xxxxxx xxxxxxxxxx xxx xxxxxx'x xxxxx-xxxxxx xxxx xx xxx xxxx xxxxx. (Xxx xxxx xxxx xxxxx xxx **Xxxxxx** xxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxxxx xxxxxxxx](tutorial--assembling-the-rendering-pipeline.md).)
--   Xxx **Xxxxx** xxxxxx. Xxxx xxxxxx xxxxxxxx xxx xxxxx xxxxxxxx xxx xxx xxxx. (Xxx xxxx xxxx xxxxx xxx **Xxxxx** xxxxxx, xxx [Xxxxxx xxxxx](tutorial--adding-sound.md).)
+-   The **MoveLookController** object. This object represents the player input. (For more info about the **MoveLookController** object, see [Adding controls](tutorial--adding-controls.md).)
+-   The **GameRenderer** object. This object represents the Direct3D 11 renderer derived from the **DirectXBase** class that handles all the device-specific objects and their rendering. (For more info, see [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md)).
+-   The **Camera** object. This object represents the player's first-person view of the game world. (For more info about the **Camera** object, see [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md).)
+-   The **Audio** object. This object controls the audio playback for the game. (For more info about the **Audio** object, see [Adding sound](tutorial--adding-sound.md).)
 
-Xxx xxxx xx xxx xxxx xxxxxxxxx xxxxxxx xxx xxxxx xx xxx xxxxxxxxxx xxx xxxxx xxxxxxxxxx xx-xxxx xxxxxxx, xxx xxxx xxxx xxxxxxxx xxxx xxx xxxxxxxxxxx. Xxx'x xxx xxx xxx xxxxxx xxxxxxxxxx xxxxx xxxxxxxxx xxxx xxx xxxx xx xxxxxxxxxxx.
+The rest of the game variables contain the lists of the primitives and their respective in-game amounts, and game play specific data and constraints. Let's see how the sample configures these variables when the game is initialized.
 
-## Xxxxxxxxxxxx xxx xxxxxxxx xxx xxxx
+## Initializing and starting the game
 
 
-Xxxx x xxxxxx xxxxxx xxx xxxx, xxx xxxx xxxxxx xxxx xxxxxxxxxx xxx xxxxx, xxxxxx xxx xxx xxx xxxxxxx, xxx xxx xxxxxxxxx xxxx xxxxx xxx xxxxxx'x xxxxxxxxxxx, xxx xxxxxxxxxxx xxx xxxxxxx xxxx xx xxxx xxx xx xxxxx xxx xxxxxx.
+When a player starts the game, the game object must initialize its state, create and add the overlay, set the variables that track the player's performance, and instantiate the objects that it will use to build the levels.
 
 ```cpp
 void Simple3DGame::Initialize(
@@ -354,52 +354,52 @@ void Simple3DGame::Initialize(
 }
 ```
 
-Xxx xxxxxx xxxx xxxx xx xxx xxxxxxxxxx xx xxx xxxx xxxxxx xx xxxx xxxxx:
+The sample game sets up the components of the game object in this order:
 
-1.  X xxx xxxxx xxxxxxxx xxxxxx xx xxxxxxx.
-2.  Xxxxxx xxx xxx xxxx'x xxxxxxx xxxxxxxxxx xxx xxxxxxx, xxxxxxxxx xxxxxx xxx xxx xxxxx xxxxxxxxxx, xxxx, xxx xxxxxxxxx.
-3.  X xxxxxxxx xxx xxxxxx xxxx xxxxx xxxx xx xxxxxxx, xxxxx *Xxxx*, xxx xxxxxx xx xxx xxx xxxx xxxxxxxx xxxxxxx xxxxxxxx xxxxxxxxx xx [**XxxxxxxxxxxXxxx::Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241619).
-4.  X xxxx xxxxx xxx xxx xxxxxxx xx-xxxx xxxxxxx xxxxxx xxx xxxxxxx.
-5.  X xxx xxxxxx xx xxxxxxx xxxx x xxxxxxxx xxx xx xxxx xxx xxxxxxxxxx xxxxxxxxxx.
-6.  Xxx xxxxx xxxxxx (xxx xxxxxxxxxx) xx xxx xx xxx xxxx xxxxxxxx xxxxx xxx xxx xx xxx xxxxxx, xx xxx xxxxxx xxx x Y-xx-Y xxxxxxxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxx xxxxxxxx xxx xxx xxxxxx xxxxxxxx.
-7.  Xxx xxxxxx xxxxxx xx xxxxxxx xxx xxx xx xxxxxx. Xx xxx x xxxxxx xxxxxx xx xxxxxx xxx xxxxxx'x xxxxxxxxx xx xxxxx xxx xxxxxxxxx xxx xx xxxx xxx xxxxxx xxxx xxxxxxx xxx xx x xxxxxxxx xxxx xxxxx xxxxx xxxxxxxxx.
-8.  Xxx xxxx xxxxx xxxxxxxxx xx xxxxxxx.
-9.  Xxx xxxxxxxx xxxxxxxxx xxx xxxxxxx.
-10. Xxx xxxxxxx (**Xxxx** xxxxxxx) xxx xxxxxxx xxx xxxxxxxx.
-11. Xxx xxxx xxxxxxx xxx xxxxxxx.
-12. Xxx xxxxxx xxx xxxxxxx.
-13. Xxx xxxx xxxxx xx xxxxxx.
-14. Xxx xxxxx xxxxx xxxx xxxxx xx xxxxxx.
+1.  A new audio playback object is created.
+2.  Arrays for the game's graphic primitives are created, including arrays for the level primitives, ammo, and obstacles.
+3.  A location for saving game state data is created, named *Game*, and placed in the app data settings storage location specified by [**ApplicationData::Current**](https://msdn.microsoft.com/library/windows/apps/br241619).
+4.  A game timer and the initial in-game overlay bitmap are created.
+5.  A new camera is created with a specific set of view and projection parameters.
+6.  The input device (the controller) is set to the same starting pitch and yaw as the camera, so the player has a 1-to-1 correspondence between the starting control position and the camera position.
+7.  The player object is created and set to active. We use a sphere object to detect the player's proximity to walls and obstacles and to keep the camera from getting put in a position that might break immersion.
+8.  The game world primitive is created.
+9.  The cylinder obstacles are created.
+10. The targets (**Face** objects) are created and numbered.
+11. The ammo spheres are created.
+12. The levels are created.
+13. The high score is loaded.
+14. Any prior saved game state is loaded.
 
-Xxx xxxx xxx xxx xxxxxxxxx xx xxx xxx xxx xxxxxxxxxx: xxx xxxxx, xxx xxxxxx, xxx xxxxxxxxx, xxx xxxxxxx, xxx xxx xxxx xxxxxxx. Xx xxxx xxx xxxxxxxxx xx xxx xxxxxx, xxxxx xxxxxxxxx xxxxxxxxxxxxxx xx xxx xx xxx xxxxx xxxxxxxxxx xxx xxxxx xxxxxxxxx xxx xxxx xxxxxxxx xxxxx. Xxx'x xxx xxx xxx xxxx xxxxxx xxx xxxxxx.
+The game now has instances of all the key components: the world, the player, the obstacles, the targets, and the ammo spheres. It also has instances of the levels, which represent configurations of all of the above components and their behaviors for each specific level. Let's see how the game builds the levels.
 
-## Xxxxxxxx xxx xxxxxxx xxx xxxx'x xxxxxx
-
-
-Xxxx xx xxx xxxxx xxxxxxx xxx xxx xxxxx xxxxxxxxxxxx xx xxxx xx xxx **Xxxxx.x/.xxx** xxxx, xxxxx xx xxx'x xxxxx xxxx, xxxxxxx xx xxxxxxx xx x xxxx xxxxxxxx xxxxxxxxxxxxxx. Xxx xxxxxxxxx xxxxx xx xxxx xxx xxxx xxx xxxx xxxxx xx xxx xx x xxxxxxxx **XxxxxX** xxxxxx. Xx xxx'x xxxx xx xxxxxx xxx xxxx, xxx xxx xxxxxx x **Xxxxx** xxxxxx xxxx xxxx xx xxxxxxxx xxxxxx xx x xxxxxxxxx xxx xxxxxxxx xxxxxx xxx xxxxxxxxx xxx xxxxxxx. Xx, xxx xxx xxxx xx xxxx xxxxx xxxxxxxxxxxxx xxxx xxxx x xxxxxxxx xxxx, xx xxxx xxx Xxxxxxxx!
-
-Xxx xxxxxxxx xxxx xxx **Xxxxx.x/.xxx** xx xxxxxxxx xx [Xxxxxxxx xxxxxx xxxx xxx xxxx xxxxxxx](#code_sample).
-
-## Xxxxxxxx xxx xxxx xxxx
+## Building and loading the game's levels
 
 
-Xx xxxx xxxxx, xx xxxx xxx xxx xxxxxxxxxx xx xxxx xx xxxxxxxx xxx xxxx. Xxx xxxxxx xxxx xxxx xxxxxxxxxxx xx xxxxxx xxxx xxx xxxxxxxxxx, xxx xxx xxxxx xxx xxx xxxxxx xx xxxxx xxxxxxxxxxx xxxx xxxx xx xxxx xxxxxxx.
+Most of the heavy lifting for the level construction is done in the **Level.h/.cpp** file, which we won't delve into, because it focuses on a very specific implementation. The important thing is that the code for each level is run as a separate **LevelN** object. If you'd like to extend the game, you can create a **Level** object that took an assigned number as a parameter and randomly placed the obstacles and targets. Or, you can have it load level configuration data from a resource file, or even the Internet!
 
-Xxx, xxx xxxx xxxxx xxxxx xxxxxxxxx xx xxxxxx xxxxx, xxx xxxxxxx xxxxxxxxx xxxxxxxx. Xxxx xx xxxx xxx xxx xxxx xx x xxxx, xxxx xxxxxx-xxxxxx, xxxx-xxxx xxxxx-xx-xxx xx xxxxxxxxxx, xxxx-xxxxx xxxxxxxx xxxxx.
+The complete code for **Level.h/.cpp** is provided in [Complete sample code for this section](#code_sample).
 
-Xx [Xxxxxxxx xxx xxxx'x XXX xxxxxxxxx](tutorial--building-the-games-metro-style-app-framework.md), xx xxxxxx xx xxx xxxxxxx xxxxx xxxxxxx xxxx xxxxxxx xxx xxxx xx xxx xxxx. Xxxxxxxx, xxx xxxxxx xxxxxxxxxx xxxx xxxx xx x xxxx xxxxxx xxx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/hh702093) xxxxxx xx xxx **Xxx** xxxxx, xxxxx xxxxxx xx xx xxxxxxxxxxxxxx xx x XxxxxxX xxxx xxxxxxxx. Xxx xxxxxxxxx xxxxx xxxxxxxxxxx xxxx xx xxxxxxxxxx xx xxx xxxxxx, xxx xxxx xxxxxxx xxxxx xxxxxxxx. Xxx xxxxx xx xxxx xxxxxxxx xxxxxx xxx xxxxx xx xxxxxxxxx.
+## Defining the game play
 
-Xxxx xx x xxxxxxx xxxxxxxxxxxx xxx xxxxx xxxx xx xxx xxxx xxx xxx xxxx-xxxxx xxxxxx.
 
-![x xxxxxxx xxxxxxx xxx xxxx xxxxx xxxxxxx xxx xxx xxxx](images/simple3dgame-mainstatemachine.png)
+At this point, we have all the components we need to assemble the game. The levels have been constructed in memory from the primitives, and are ready for the player to start interacting with them in some fashion.
 
-Xxxx xxx xxxxxx xxxx xxxxxx xxxx, xxx xxxx xxxxxx xxx xx xx xxx xx xxxxx xxxxxx:
+Now, the best games react instantly to player input, and provide immediate feedback. This is true for any type of a game, from twitch-action, real-time shoot-em-ups to thoughtful, turn-based strategy games.
 
--   **Xxxxxxx xxx xxxxxxxxx**. Xxxx xxxxx xx xxxxxxxxx xxxx xxx xxxx xxxxxx xx xxxxxxxxxxx xx xxxx xxx xxxxxxxxxx xx x xxxxx xxx xxxxx xxxxxx. Xx xxxx xxxxx xxx xxxxxxxxx xx x xxxxxxx xx xxxx x xxxxx xxxx, xxx xxxx xxxxx xxxxxxx xx xxxxxxxxx; xx xx xxx xxxxxxxxx xx x xxxxxxx xx xxxx x xxxxx, xxx xxxxx xxxxx xxxxxxx xx xxxxxxxxx. Xxx xxxxxxxxxx xx xxxxxxxx xxxxxxx xxxxxx xxx xxxx xx xxxx xxxxxxx xxx **Xxxxxxxxx xxxxxx** xxxxx xxx xxxx xxxxxxxxxx xxxx xxx **Xxxxxxx xxx xxxxx** xxxxx.
--   **Xxxxxxx xxx xxxxx**. Xxxx xxxxx xx xxxxxxxxx xxxx xxx xxxx xx xxxxxx, xxxxxx xx xxx xxxxxx xx xx xxx xxxxxx (xxxxx, xxx, xxxxxxx xxxxxxxxx). Xxxx xxx xxxxxx xx xxxxx xx xxxx xxxx xxxxx, xxx xxxxxx xx xxxxxxxx xx xxxx x xxx xxxx xxxxx (XxxxXxxx), xxxxx xx xxxxxxx xxx xxxxxx xxxxx (XxxxxXxxxx), xx xxxxxxxx xxx xxxxxxx xxxxx (XxxxxxxxXxxx).
--   **Xxxxxxxx**. Xx x xxxxxx'x xxxxx xxxxx xx xxxxxxxxx xxx xxx xxxxxxxxx xxxxxx xx xx xxxxx xx xxxxxxxx x xxxxx, xxx xxxx xxxxxx xxxxxxxxxxx xxxx xxx *Xxxxxxxx* xxxxx. Xxx xxxx xx xxxxxx xx xxxx xxxxx, xxx xxx xxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxxxxx xxxx xxxxx xx xxxxxxxxx xxxxxxxx xxx xxxxxx xxxxx. Xxxx xxxxx xx xxxx xxxx xxx xxxxxx xxxxxxxx x xxxxx xxxxx, xxxxxx xx xxxxxxxx X, xx xxxxxx xx xxxxxx xxxx xxxxxxxxxxx xxx xxxx xxxxxx, xx xx xxxxxxxxxx x xxxxx xx xxx xxxx.
+In [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md), we looked at the overall state machine that governs the flow of the game. Remember, the sample implements this flow as a loop inside the [**Run**](https://msdn.microsoft.com/library/windows/apps/hh702093) method of the **App** class, which itself is an implementation of a DirectX view provider. The important state transitions must be controlled by the player, and must provide clear feedback. Any delay in this feedback breaks the sense of immersion.
 
-Xxx, xxx'x xxxx xx xxxxxxxx xxxx xx xxx **Xxx** xxxxx (xxx: [Xxxxxxxx xxx xxxx'x XXX xxxxxxxxx](tutorial--building-the-games-metro-style-app-framework.md)) xxx xxx **Xxxxxx** xxxxxx xxxx xxxxxxxxxx xxxx xxxxx xxxxxxx.
+Here is a diagram representing the basic flow of the game and its high-level states.
+
+![a diagram showing the main state machine for our game](images/simple3dgame-mainstatemachine.png)
+
+When the sample game starts play, the game object can be in one of three states:
+
+-   **Waiting for resources**. This state is activated when the game object is initialized or when the components of a level are being loaded. If this state was triggered by a request to load a prior game, the game stats overlay is displayed; if it was triggered by a request to play a level, the level start overlay is displayed. The completion of resource loading causes the game to pass through the **Resources loaded** state and then transition into the **Waiting for press** state.
+-   **Waiting for press**. This state is activated when the game is paused, either by the player or by the system (after, say, loading resources). When the player is ready to exit this state, the player is prompted to load a new game state (LoadGame), start or restart the loaded level (StartLevel), or continue the current level (ContinueGame).
+-   **Dynamics**. If a player's press input is completed and the resulting action is to start or continue a level, the game object transitions into the *Dynamics* state. The game is played in this state, and the game world and player objects are updated here based on animation routines and player input. This state is left when the player triggers a pause event, either by pressing P, by taking an action that deactivates the main window, or by completing a level or the game.
+
+Now, let's look at specific code in the **App** class (see: [Defining the game's UWP framework](tutorial--building-the-games-metro-style-app-framework.md)) for the **Update** method that implements this state machine.
 
 ```cpp
 void App::Update()
@@ -544,23 +544,23 @@ void App::Update()
 }
 ```
 
-Xxx xxxxx xxxxx xxxx xxxxxx xxxx xx xxxx xxx [XxxxXxxxXxxxxxxxxx](tutorial--adding-controls.md) xxxxxxxx'x xxx **Xxxxxx** xxxxxx, xxxxx xxxxxxx xxx xxxx xxxx xxx xxxxxxxxxx. Xxxx xxxx xxxxxxxx xxx xxxxxxxxx xxx xxxxxx'x xxxx (xxx xxxxxx) xx xxxxxx xxx xxx xxxxxxxx xx xxx xxxxxx'x xxxxxxxx.
+The first thing this method does is call the [MoveLookController](tutorial--adding-controls.md) instance's own **Update** method, which updates the data from the controller. This data includes the direction the player's view (the camera) is facing and the velocity of the player's movement.
 
-Xxxx xxx xxxx xx xx xxx Xxxxxxxx xxxxx, xxxx xx, xxxx xxx xxxxxx xx xxxxxxx, xxx xxxx xx xxxxxxx xx xxx **XxxXxxx** xxxxxx, xxxx xxxx xxxx:
+When the game is in the Dynamics state, that is, when the player is playing, the work is handled in the **RunGame** method, with this call:
 
 `GameState runState = m_game->RunGame();`
 
-**XxxXxxx** xxxxxxx xxx xxx xx xxxx xxxx xxxxxxx xxx xxxxxxx xxxxx xx xxx xxxx xxxx xxx xxx xxxxxxx xxxxxxxxx xx xxx xxxx xxxx. Xx xxxxx xxxx xxxx:
+**RunGame** handles the set of data that defines the current state of the game play for the current iteration of the game loop. It flows like this:
 
-1.  Xxx xxxxxx xxxxxxx xxx xxxxx xxxx xxxxxx xxxx xxx xxxxxxx xxxxx xxx xxxxx xx xxxxxxxxx, xxx xxxxx xx xxx xx xxx xxxxx'x xxxx xxx xxxxxxx. Xxxx xx xxx xx xxx xxxxx xx xxx xxxx: xxxx xxxx xxxx xxx xxxxxxx xxx xxx xxxxxxx xxxxxxx xxxx, xxx xxxx xx xxxx.
-2.  Xx xxxx xxx xxx xxx, xxx xxxxxx xxxx xxx **XxxxXxxxxxx** xxxx xxxxx, xxx xxxxxxx xx xxx **Xxxxxx** xxxxxx xx xxx xxxxxxxx xxxx.
-3.  Xx xxxx xxxxxxx, xxx xxxx-xxxx xxxxxxxxxx xx xxxxxx xxx xx xxxxxx xx xxx xxxxxx xxxxxxxx; xxxxxxxxxxxx, xx xxxxxx xx xxx xxxxx xx xxx xxxx xxxxxx xxxxxxxxxx xxxx xxx xxxxxx xxxxx (xxxxx xxx xxxxxx xx xxxxxxx), xxx xxx xxxxxxxx xxxx xxxxx xxx xxxxx xxxx xxx xxxxxxxx xxxx xxx xxxxxxxxxx xxx xxxxxx.
-4.  Xxx xxxxxx xx xxxxxxx xxxxx xx xxx xxx xxxx xxxx xxx xxxx-xxxx xxxxxxxxxx.
-5.  Xxx xxxxxxxx, xx xxx xxxxxxxxxx xxx xxxxxxxxx xx xxxxxxx xx xxx xxxx xxxxx xxxxxxxxxxx xx xxxxxx xxxxxxx, xxx xxxxxxx. Xx xxx xxxx xxxxxx, xxxx xx xxx xxxxxx xx xxx xxxx xxxxxxx xxxx xxxx xxxx xxxxx, xxx xxxxxxxxx xx xxx xxxxxx xxxxxxxxx xxx xxx xxxxxxxx xx xxx xxxxxxx.
-6.  Xxx xxxxxx xxxxxx xx xxx xx xxx xxxxxxxx xxx xxx xxxxxxxxxx xxxxxxxxxx xx x xxxxx xxxx xxxx xxx. Xx xx, xx xxxxxxxxx xxx xxxxx xxx xxx xxxxx xxx xxxxxx xx xxx xx xxxx xx xxx xxxx xxxxx (xx Y). Xx xx'x xxx xxxx xxxxx, xxx xxxxxx xxxxxxx xxx **XxxxXxxxxxxx** xxxx xxxxx; xxxxxxxxx, xx xxxxxxx xxx **XxxxxXxxxxxxx** xxxx xxxxx.
-7.  Xx xxx xxxxx xxx'x xxxxxxxx, xxx xxxxxx xxxx xxx xxxx xxxxx xx **Xxxxxx** xxx xxxxxxx.
+1.  The method updates the timer that counts down the seconds until the level is completed, and tests to see if the level's time has expired. This is one of the rules of the game: when time runs out without all the targets getting shot, the game is over.
+2.  If time has run out, the method sets the **TimeExpired** game state, and returns to the **Update** method in the previous code.
+3.  If time remains, the move-look controller is polled for an update to the camera position; specifically, an update to the angle of the view normal projecting from the camera plane (where the player is looking), and the distance that angle has moved from the previous time the controller was polled.
+4.  The camera is updated based on the new data from the move-look controller.
+5.  The dynamics, or the animations and behaviors of objects in the game world independent of player control, are updated. In the game sample, this is the motion of the ammo spheres that have been fired, the animation of the pillar obstacles and the movement of the targets.
+6.  The method checks to see if the criteria for the successful completion of a level have been met. If so, it finalizes the score for the level and checks to see if this is the last level (of 6). If it's the last level, the method returns the **GameComplete** game state; otherwise, it returns the **LevelComplete** game state.
+7.  If the level isn't complete, the method sets the game state to **Active** and returns.
 
-Xxxx'x xxxx **XxxXxxx**, xxxxx xx **XxxxxxYXXxxx.xxx**, xxxxx xxxx xx xxxx.
+Here's what **RunGame**, found in **Simple3DGame.cpp**, looks like in code.
 
 ```cpp
 GameState Simple3DGame::RunGame()
@@ -642,16 +642,16 @@ GameState Simple3DGame::RunGame()
 }}
 ```
 
-Xxxx'x xxx xxx xxxx: `UpdateDynamics()`. Xx'x xxxx xxxxxx xxx xxxx xxxxx xx xxxx. Xxx'x xxxxxx xx!
+Here's the key call: `UpdateDynamics()`. It's what brings the game world to life. Let's review it!
 
-## Xxxxxxxx xxx xxxx xxxxx
+## Updating the game world
 
 
-X xxxx xxx xxxxx xxxx xxxxxxxxxx xx xxx xxxxx xxx xxxxx xxxxx *xxxxx*, xxxxx xxx xxxx xxxxxx xx xx xxxxxx xxxxxxxxxxx xx xxxxxx xxxxx. Xxxxx xxxx xx xxx xxxx, xxxxx xxxxx xxxxx xxxxx xxxxx, xxxxxxxxx xxxxxx xxx xxxxxx, xxx xxxxx xxxxxxxx xxxxxxx xxx xxxxxxxx. Xxxxxxx xxxx x xxxx xxxxx xx xxxx xx xxxxxxxxxx xxx xxxxxx, xxxx xxx xxxxxxxx xxxx xxxxxx xxxx xxx xxxxxx xxxxxxxx xxxxx. Xx'x xx xxxxx xxx xxx xxxx, xxxx, xxxxxxxxx. Xxxxxxxxx, xxx xxx xxxxxx, xxxxx xxxx xxx xxxxxxx xx xxxxx xx xxxxx xx x xxxxxx, xxxxxxxxx xxxxx.
+A fast and fluid game experience is one where the world feels *alive*, where the game itself is in motion independent of player input. Trees wave in the wind, waves crest along shore lines, machinery smokes and shines, and alien monsters stretch and salivate. Imagine what a game would be like if everything was frozen, with the graphics only moving when the player provided input. It'd be weird and not very, well, immersive. Immersion, for the player, comes from the feeling of being an agent in a living, breathing world.
 
-Xxx xxxx xxxx xxxxxx xxxxxx xxxx xxxxxxxx xxx xxxx xxxxx xxx xxxxxxx xxx xxxxxxxxx xxxxxxxx, xx xxxx xxxxxx xx xxxxx xx xxxxxxxx xxxxxxxxxx xx xxxx xxxxx xxxxxx, xxxxxx xxxx xxx xxxx xx xxxxxxxxxxxx xxxxxx. Xx xxx xxxx xxxxxx, xxxx xxxxxxxxx xx xxxxxx *xxxxxxxx*, xxx xx xxxxxxxxxxx xxx xxxx xxx xxxx xx xxx xxxxxx xxxxxxxxx, xxx xxx xxxxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxx xxxxxxx xx xxxx xxx xxxxx. Xx xxxx xxxxxxxxxxx xxx xxxxxxxxxxx xxxxxxx xxxxxxx, xxxxxxxxx xxxxxxxxxx xxxxxxx xxx xxxxxx xxxxxx xxx xxx xxxxx, xx xxxxxxx xxx xxxx xxx xxx xxxxxxxxx xxx xxxxxxx.
+The game loop should always keep updating the game world and running the animation routines, be they canned or based on physical algorithms or just plain random, except when the game is specifically paused. In the game sample, this principle is called *dynamics*, and it encompasses the rise and fall of the pillar obstacles, and the motion and physical behaviors of the ammo spheres as they are fired. It also encompasses the interaction between objects, including collisions between the player sphere and the world, or between the ammo and the obstacles and targets.
 
-Xxx xxxx xxxx xxxxxxxxxx xxxxx xxxxxxxx xxxxx xxxx xxxx:
+The code that implements these dynamics looks like this:
 
 ```cpp
 void Simple3DGame::UpdateDynamics()
@@ -824,27 +824,27 @@ void Simple3DGame::UpdateDynamics()
 }
 ```
 
-(Xxxx xxxx xxxxxxx xxx xxxx xxxxxxxxxxx xxx xxxxxxxxxxx. Xxx xxxx xxxxxxx xxxx xx xxxxx xx xxx xxxxxxxx xxxx xxxxxx xx xxx xxxxxx xx xxxx xxxxx.)
+(This code example has been abbreviated for readability. The full working code is found in the complete code sample at the bottom of this topic.)
 
-Xxxx xxxxxx xxxxx xxxx xxxx xxxx xx xxxxxxxxxxxx:
+This method deals with four sets of computations:
 
--   Xxx xxxxxxxxx xx xxx xxxxx xxxx xxxxxxx xx xxx xxxxx.
--   Xxx xxxxxxxxx xx xxx xxxxxx xxxxxxxxx.
--   Xxx xxxxxxxxxxxx xx xxx xxxxxx xxx xxx xxxxx xxxxxxxxxx.
--   Xxx xxxxxxxxxx xx xxx xxxx xxxxxxx xxxx xxx xxxxxxxxx, xxx xxxxxxx, xxxxx xxxx xxxxxxx, xxx xxx xxxxx.
+-   The positions of the fired ammo spheres in the world.
+-   The animation of the pillar obstacles.
+-   The intersection of the player and the world boundaries.
+-   The collisions of the ammo spheres with the obstacles, the targets, other ammo spheres, and the world.
 
-Xxx xxxxxxxxx xx xxx xxxxxxxxx xx x xxxx xxxxxxx xx **Xxxxxxx.x/.xxx**. Xxx xxxxxxxx xx xxx xxxx xxx xxx xxxxxxxxxx xxx xxxxxxx xx xxxxxxxxxx xxxxxxx xxxxxxxxxx, xxxxxxxx xx xxx xxxxxxxx xxxx xxx xxxxxxxxxxxxx xx x xxx xx xxxxxx xxxxxxxxx xxx xxx xxxx xxxxx, xxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxx. Xxxx xx xxx xxxxxxxx xx xxx xxxx xxxxx xxxxxxxxxx xxxxx.
+The animation of the obstacles is a loop defined in **Animate.h/.cpp**. The behavior of the ammo and any collisions are defined by simplified physics algorithms, supplied in the previous code and parameterized by a set of global constants for the game world, including gravity and material properties. This is all computed in the game world coordinate space.
 
-Xxx xxxx xx'xx xxxxxxx xxx xxx xxxxxxx xx xxx xxxxx xxx xxxxxxxxxx xxx xxxxxxxxxx, xx xxxx xx xxx xxxx xxxx xx xxxx xxx xxxxxxxxxxxxx xxxxxx xxxxxxx. Xxxxx Xxxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxxxxx xx xxx xxxx xxxx, xxx xxxxxx xxxxxxxxxxx xxxxx **Xxxxxx** xx xxxx xxx xxxxxxx xxxxxx xxxx xxx xxxxxxxx x xxx xxxxx xx xxxxxxx xx xxx xxxxxx.
+Now that we've updated all the objects in the scene and calculated any collisions, we need to use that info to draw the corresponding visual changes. After Update completes in the current iteration of the game loop, the sample immediately calls **Render** to take the updated object data and generate a new scene to present to the player.
 
-Xxx'x xxxx xx xxx xxxxxx xxxxxx xxx.
+Let's look at the render method now.
 
-## Xxxxxxxxx xxx xxxx xxxxx'x xxxxxxxx
+## Rendering the game world's graphics
 
 
-Xx xxxxxxxxx xxxx xxx xxxxxxxx xx x xxxx xxxxxx xx xxxxx xx xxxxxxxx, xxxxx, xx xxxxxxx, xx xxxxx xxxx xxx xxxx xxxx xxxx xxxxxxxx. Xx xxx xxxx xxxxxxxx, xxx xxxx xx xxxxxxx, xxxx xx xxxxxxx xxxxxx xxxxx. Xxxx xxxxxx xxx xxxxxxxxxx xxx xxxxxxxxx xxxx xxx xxxxxxxxxx xx xx xxxxxxxxx xxxxxxxx. Xxxxxxx xx xx xxx x xxxxxx xxxxx xx xxxxx xxxx xxxx xxxxx xxxx xxx xxxxxx xxxxxxx x xxxxxx. Xxxx xxxxx xxxx xxx xxxxxxxx xxxxxx xxxxxxx. X xxxx xxxx xxxxx xxxxxx xxx xxxxx.
+We recommend that the graphics in a game update as often as possible, which, at maximum, is every time the main game loop iterates. As the loop iterates, the game is updated, with or without player input. This allows the animations and behaviors that are calculated to be displayed smoothly. Imagine if we had a simple scene of water that only moved when the player pressed a button. That would make for terribly boring visuals. A good game looks smooth and fluid.
 
-Xxxxxx xxx xxxxxx xxxx'x xxxx, xx xxxxx xxxx. Xx xxx xxxx'x xxxx xxxxxx xx xxxxxxx, xxx xxx'x xxxxxxx xx xxxxxxxxxxx, xxx xxxx xxxxxxxxx xx xxxxxx xxx xxxxxx xxx xxxxxxx xx xxxx xxxxxx.
+Recall the sample game's loop, as shown here. If the game's main window is visible, and isn't snapped or deactivated, the game continues to update and render the results of that update.
 
 ```cpp
 void App::Run()
@@ -880,7 +880,7 @@ void App::Run()
 }
 ```
 
-Xxx xxxxxx xx xxxxxxx xxx xxxxxxx x xxxxxxxxxxxxxx xx xxxx xxxxx xxxxxxxxxxx xxxxx xxx xxxxx xx xxxxxxx xx **Xxx** xxxx x xxxx xx **Xxxxxx**, xxxxx xx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx.
+The method we examine now renders a representation of that state immediately after the state is updated in **Run** with a call to **Update**, which we discussed in the previous section.
 
 ```cpp
 void GameRenderer::Render()
@@ -1030,21 +1030,21 @@ void GameRenderer::Render()
 }
 ```
 
-Xxx xxxxxxxx xxxx xxx xxxx xxxxxx xx xx [Xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxx](tutorial--assembling-the-rendering-pipeline.md).
+The complete code for this method is in [Assembling the rendering framework](tutorial--assembling-the-rendering-pipeline.md).
 
-Xxxx xxxxxx xxxxx xxx xxxxxxxxxx xx xxx YX xxxxx, xxx xxxx xxxxx xxx XxxxxxYX xxxxxxx xx xxx xx xx. Xxxx xxxxxxxxx, xx xxxxxxxx xxx xxxxx xxxx xxxxx xxxx xxx xxxxxxxx xxxxxxx xxx xxxxxxx.
+This method draws the projection of the 3D world, and then draws the Direct2D overlay on top of it. When completed, it presents the final swap chain with the combined buffers for display.
 
-Xx xxxxx xxxx xxxxx xxx xxx xxxxxx xxx xxx xxxxxx xxxx'x XxxxxxYX xxxxxxx: xxx xxxxx xxx xxxx xxxxxxxx xxx xxxx xxxx xxxxxxx xxxx xxxxxxxx xxx xxxxxx xxx xxx xxxxx xxxx, xxx xxx xxxxx xxx xxxx xxxxxxxx xxx xxxxx xxxxx xxxxx xxxx xxx xxxxxxxxxx xxx xxx xxxxxxxxxxx xxxx-xxxx xxxxxxxxxx. Xxx xxxxx xxxx xx xxxxx xx xxxx xxxxxx.
+Be aware that there are two states for the sample game's Direct2D overlay: one where the game displays the game info overlay that contains the bitmap for the pause menu, and one where the game displays the cross hairs along with the rectangles for the touchscreen move-look controller. The score text is drawn in both states.
 
-## Xxxx xxxxx
-
-
-Xx xxx, xxx'xx xxxxxxxx xxxxxxx xxxxx xxx xxxxxx xxxxxxxxx xxxxxx: xxx xxxxx xxxxx xx xxx **Xxxxxx** xxxxxxx xx xxx xxxxxxx xxxxxxxxxx xxx xxxxxx xxxx xxxxxx xx xxxx xxxxxx. Xx xxxxx xxxx xx xxxxxx xx [Xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxx](tutorial--assembling-the-rendering-pipeline.md). Xx xxx'xx xxxx xxxxxxxxxx xx xxx xxx xxxxxx xxxxxxxx xxxxxx xxx xxxx xxxxx, xxxx xxxxx xxx [Xxxxxx xxxxxxxx](tutorial--adding-controls.md).
-
-## Xxxxxxxx xxxx xxxxxx xxx xxxx xxxxxxx
+## Next steps
 
 
-XxxxxxYXXxxx.x
+By now, you're probably curious about the actual rendering engine: how those calls to the **Render** methods on the updated primitives get turned into pixels on your screen. We cover that in detail in [Assembling the rendering framework](tutorial--assembling-the-rendering-pipeline.md). If you're more interested in how the player controls update the game state, then check out [Adding controls](tutorial--adding-controls.md).
+
+## Complete code sample for this section
+
+
+Simple3DGame.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -1169,7 +1169,7 @@ private:
 };
 ```
 
-XxxxxxYXXxxx.xxx
+Simple3DGame.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2242,7 +2242,7 @@ void Simple3DGame::InitializeAmmo()
 }
 ```
 
-Xxxxx.x
+Level.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2301,7 +2301,7 @@ protected private:
             
 ```
 
-Xxxxx.xxx
+Level.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2372,7 +2372,7 @@ float Level::TimeLimit()
             
 ```
 
-XxxxxY.x
+Level1.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2399,7 +2399,7 @@ internal:
             
 ```
 
-XxxxxY.xxx
+Level1.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2471,7 +2471,7 @@ void Level1::Initialize(std::vector<GameObject^> objects)
             
 ```
 
-XxxxxY.x
+Level2.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2512,7 +2512,7 @@ private:
             
 ```
 
-XxxxxY.xxx
+Level2.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2605,7 +2605,7 @@ void Level2::LoadState(PersistentState^ state)
             
 ```
 
-XxxxxY.x
+Level3.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2634,7 +2634,7 @@ internal:
             
 ```
 
-XxxxxY.xxx
+Level3.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2813,7 +2813,7 @@ void Level3::Initialize(std::vector<GameObject^> objects)
             
 ```
 
-XxxxxY.x
+Level4.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2854,7 +2854,7 @@ private:
             
 ```
 
-XxxxxY.xxx
+Level4.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2948,7 +2948,7 @@ void Level4::LoadState(PersistentState^ state)
             
 ```
 
-XxxxxY.x
+Level5.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -2977,7 +2977,7 @@ internal:
             
 ```
 
-XxxxxY.xxx
+Level5.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -3061,7 +3061,7 @@ void Level5::Initialize(std::vector<GameObject^> objects)
             
 ```
 
-XxxxxY.x
+Level6.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -3096,7 +3096,7 @@ internal:
             
 ```
 
-XxxxxY.xxx
+Level6.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -3143,7 +3143,7 @@ bool Level6::Update(
             
 ```
 
-Xxxxxxx.x
+Animate.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -3285,7 +3285,7 @@ private:
             
 ```
 
-Xxxxxxx.xxx
+Animate.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -3600,21 +3600,25 @@ XMFLOAT3 AnimateCirclePosition::Evaluate(_In_ float t)
             
 ```
 
-> **Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## Xxxxxxx xxxxxx
+## Related topics
 
 
-[Xxxxxx x xxxxxx XXX xxxx xxxx XxxxxxX](tutorial--create-your-first-metro-style-directx-game.md)
+[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

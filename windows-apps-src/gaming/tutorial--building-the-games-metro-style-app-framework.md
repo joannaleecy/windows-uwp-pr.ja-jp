@@ -1,41 +1,41 @@
 ---
-xxxxx: Xxxxxx xxx xxxx'x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxxxxx
-xxxxxxxxxxx: Xxx xxxxx xxxx xx xxxxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx XxxxxxX xxxx xx xxxxxxxx xxx xxxxxxxxx xxxx xxxx xxx xxxx xxxxxx xxxxxxxx xxxx Xxxxxxx.
-xx.xxxxxxx: YxxxxYxx-xxYx-xYYx-YYxY-xxYxYxYYxxYx
+title: Define the game's Universal Windows Platform (UWP) app framework
+description: The first part of coding a Universal Windows Platform (UWP) with DirectX game is building the framework that lets the game object interact with Windows.
+ms.assetid: 7beac1eb-ba3d-e15c-44a1-da2f5a79bb3b
 ---
 
-#  Xxxxxx xxx xxxx'x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxxxxx
+#  Define the game's Universal Windows Platform (UWP) app framework
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxx xxxxx xxxx xx xxxxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx XxxxxxX xxxx xx xxxxxxxx xxx xxxxxxxxx xxxx xxxx xxx xxxx xxxxxx xxxxxxxx xxxx Xxxxxxx. Xxxx xxxxxxxx Xxxxxxx Xxxxxxx xxxxxxxxxx xxxx xxxxxxx/xxxxxx xxxxx xxxxxxxx, xxxxxx xxxxx, xxx xxxxxxxx, xxxx xx xxx xxxxxx, xxxxxxxxxxxx xxx xxxxxxxxxxx xxx xxx xxxx xxxxxxxxx. Xx xx xxxx xxx xxx xxxxxx xxxx xx xxxxxxxxxx, xxx xxx xx xxxxxxx xxx xxxx-xxxxx xxxxx xxxxxxx xxx xxx xxxxxx xxx xxxxxx xxxxxxxxxxx.
+The first part of coding a Universal Windows Platform (UWP) with DirectX game is building the framework that lets the game object interact with Windows. This includes Windows Runtime properties like suspend/resume event handling, window focus, and snapping, plus as the events, interactions and transitions for the user interface. We go over how the sample game is structured, and how it defines the high-level state machine for the player and system interaction.
 
-## Xxxxxxxxx
-
-
--   Xx xxx xx xxx xxxxxxxxx xxx x XXX XxxxxxX xxxx, xxx xxxxxxxxx xxx xxxxx xxxxxxx xxxx xxxxxxx xxx xxxxxxx xxxx xxxx.
-
-## Xxxxxxxxxxxx xxx xxxxxxxx xxx xxxx xxxxxxxx
+## Objective
 
 
-Xx xxx XXX XxxxxxX xxxx, xxx xxxx xxxxxx x xxxx xxxxxxxx xxxx xxx xxx xxxxxxxxx, xxx Xxxxxxx Xxxxxxx xxxxxx xxxx xxxxxxx xx xxxxxxxx xx xxxx xxxxxxx xxx, xxx xxx xx xxxxxx xxx xxxxxxxx xxxxxxxxx xx xxxxx. Xxxxxxx xxx Xxxxxxx Xxxxxxx, xxxx xxx xxx x xxxxxx xxxxxxxxxx xxxx xxx xxxxxxxx xxxxxxxxx, xxx xxx xxxx xx xxxxxxx xxx xxxxxxxxx xxx xxxx xxx xxx xx xxxxxx xxxx.
+-   To set up the framework for a UWP DirectX game, and implement the state machine that defines the overall game flow.
 
-Xx xx xxxxxxxxx xx [Xxxxxxx xx xxx xxxx xxxxxxx](tutorial--setting-up-the-games-infrastructure.md), Xxxxxxxxx Xxxxxx Xxxxxx YYYY xxxxxxxx xx xxxxxxxxxxxxxx xx x xxxxx xxxxxxxx xxx XxxxxxX xx xxx **XxxxxxYXXxxxxXxxxxxxx.xxx** xxxx xxxx xx xxxxxxxxx xxxx xxx xxxx xxx **XxxxxxX YY Xxx (Xxxxxxxxx Xxxxxxx)** xxxxxxxx.
+## Initializing and starting the view provider
 
-Xxx xxxx xxxxxxx xxxxx xxxxxxxxxxxxx xxx xxxxxxxx x xxxx xxxxxxxx xxx xxxxxxxx, xxx [Xxx xx xxx xx xxxx XXX xxxx X++ xxx XxxxxxX xx xxxxxxx x XxxxxxX xxxx](https://msdn.microsoft.com/library/windows/apps/hh465077).
 
-Xxxxxxx xx xxx, xxx xxxx xxxxxxx xxx xxxxxxxxxxxxxx xxx Y xxxxxxx xxxx xxx xxx xxxxxxxxx xxxxx:
+In any UWP DirectX game, you must obtain a view provider that the app singleton, the Windows Runtime object that defines an instance of your running app, can use to access the graphics resources it needs. Through the Windows Runtime, your app has a direct connection with the graphics interface, but you need to specify the resources you need and how to handle them.
 
--   [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700495)
--   [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700509)
--   [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/hh700501)
--   [**Xxx**](https://msdn.microsoft.com/library/windows/apps/hh700505)
--   [**Xxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700523)
+As we discussed in [Setting up the game project](tutorial--setting-up-the-games-infrastructure.md), Microsoft Visual Studio 2015 provides an implementation of a basic renderer for DirectX in the **Sample3DSceneRenderer.cpp** file that is available when you pick the **DirectX 11 App (Universal Windows)** template.
 
-Xx xxx XxxxxxXYY Xxx (Xxxxxxxxx Xxxxxxx) xxxxxxxx, xxxxx Y xxxxxxx xxx xxxxxxx xx xxx **Xxx** xxxxxx xx [Xxx.x](#code_sample). Xxx'x xxxx x xxxx xx xxx xxx xxxx xxx xxxxxxxxxxx xx xxxx xxxx.
+For more details about understanding and creating a view provider and renderer, see [How to set up your UWP with C++ and DirectX to display a DirectX view](https://msdn.microsoft.com/library/windows/apps/hh465077).
 
-Xxx Xxxxxxxxxx xxxxxx xx xxx xxxx xxxxxxxx
+Suffice to say, you must provide the implementation for 5 methods that the app singleton calls:
+
+-   [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495)
+-   [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509)
+-   [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)
+-   [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505)
+-   [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523)
+
+In the DirectX11 App (Universal Windows) template, these 5 methods are defined on the **App** object in [App.h](#code_sample). Let's take a look at the way they are implemented in this game.
+
+The Initialize method of the view provider
 
 ```cpp
 void App::Initialize(
@@ -57,13 +57,13 @@ void App::Initialize(
 }
 ```
 
-Xxx xxx xxxxxxxxx xxxxx xxxxx **Xxxxxxxxxx**. Xxxxxxxxx, xx xx xxxxxxx xxxx xxxx xxxxxx xxxxxxx xxx xxxx xxxxxxxxxxx xxxxxxxxx xx x XXX xxxx, xxxx xx xxxxxxxx xxx xxxxxxxxxx xx xxx xxxx xxxxxx xxx xxxxxx xxxx xxxx xxx xxxx xxx xxxxxx x xxxxxx xxxxxxx (xxx x xxxxxxxx xxxxx xxxxxx) xxxxx.
+The app singleton first calls **Initialize**. Therefore, it is crucial that this method handles the most fundamental behaviors of a UWP game, such as handling the activation of the main window and making sure that the game can handle a sudden suspend (and a possible later resume) event.
 
-Xxxx xxx xxxx xxx xx xxxxxxxxxxx, xx xxxxxxxxx xxxxxxxx xxxxxx xxx xxx xxxxxxxxxx xx xxxxx xxx xxxxxx xx xxxxx xxxxxxxxx xxxxx. Xx xxxx xxxxxxx xxx, xxxxxxxxxxxxx xxxxxxxxx xx xxx xxxx'x xxxxxxxx xxx xxxxx xxxxxxx. Xx xxxxxxx xxx xxxxxxx xx [Xxxxxxxx xxx xxxx xxxx xxxxxx](tutorial--defining-the-main-game-loop.md).
+When the game app is initialized, it allocates specific memory for the controller to allow the player to begin providing input. It also creates new, uninitialized instances of the game's renderer and state machine. We discuss the details in [Defining the main game object](tutorial--defining-the-main-game-loop.md).
 
-Xx xxxx xxxxx, xxx xxxx xxx xxx xxxxxx x xxxxxxx (xx xxxxxx) xxxxxxx, xxx xxx xxxxxx xxxxxxxxx xxx xxx xxxxxxxxxx, xxx xxxxxxxx, xxx xxx xxxx xxxxxx. Xxx xxxxx'x xx xxxxxx xx xxxx xxxx, xxx xxx xxxx xx xxxxxxxxxxxxx. Xxxxx'x x xxx xxxx xxxxxx xxxx xxxx xx xxxxxx!
+At this point, the game app can handle a suspend (or resume) message, and has memory allocated for the controller, the renderer, and the game itself. But there's no window to work with, and the game is uninitialized. There's a few more things that need to happen!
 
-Xxx XxxXxxxxx xxxxxx xx xxx xxxx xxxxxxxx
+The SetWindow method of the view provider
 
 ```cpp
 void App::SetWindow(
@@ -101,15 +101,15 @@ void App::SetWindow(
 }
 ```
 
-Xxx, xxxx x xxxx xx xx xxxxxxxxxxxxxx xx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700509), xxx xxx xxxxxxxxx xxxxxxxx x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxx xxxx xxxxxxxxxx xxx xxxx'x xxxx xxxxxx, xxx xxxxx xxx xxxxxxxxx xxx xxxxxx xxxxxxxxx xx xxx xxxx. Xxxxxxx xxxxx'x x xxxxxx xx xxxx xxxx, xxx xxxx xxx xxx xxxxx xxxxxx xx xxx xxxxx xxxx xxxxxxxxx xxxxxxxxxx xxx xxxxxx: x xxxxxxx (xxxx xx xxxx xxxxx xxx xxxxx xxxxxxxx), xxx xxx xxxxx xxxxxx xxx xxxxxx xxxxxxxx, xxxxxxx, xxx XXX xxxxxxx (xx xxx xxxxxxx xxxxxx xxxxxxx).
+Now, with a call to an implementation of [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), the app singleton provides a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object that represents the game's main window, and makes its resources and events available to the game. Because there's a window to work with, the game can now start adding in the basic user interface components and events: a pointer (used by both mouse and touch controls), and the basic events for window resizing, closing, and DPI changes (if the display device changes).
 
-Xxx xxxx xxx xxxx xxxxxxxxxxx xxx xxxxxxxxxx, xxxxxxx xxxxx'x x xxxxxx xx xxxxxxxx xxxx, xxx xxxxxxxxxxx xxx xxxx xxxxxx xxxxxx. Xx xxx xxxx xxxxx xxxx xxx xxxxxxxxxx (xxxxx, xxxxx, xx XXxx YYY xxxxxxxxxx).
+The game app also initializes the controller, because there's a window to interact with, and initializes the game object itself. It can read input from the controller (touch, mouse, or XBox 360 controller).
 
-Xxxxx xxx xxxxxxxxxx xx xxxxxxxxxxx, xxx xxx xxxxxxx xxx xxxxxxxxxxx xxxxx xx xxx xxxxx-xxxx xxx xxxxx-xxxxx xxxxxxx xx xxx xxxxxx xxx xxx xxxx xxx xxxxxx xxxxx xxxxxxxx, xxxxxxxxxxxx. Xxx xxxxxx xxxx xxx xxxxx-xxxx xxxxxxxxx, xxxxxxx xx xxx xxxx xx **XxxXxxxXxxx**, xx x xxxxxxx xxxxxxx xxx xxx xxxxxx xxx xxxxxx xxxxxxx xxx xxxxxxxx, xxx xxxx xx xxxx. Xxx xxxxx-xxxxx xxxxxxxxx, xxxxxxx xx xxx **XxxXxxxXxxx** xxxxxx, xx xxxx xx x xxxxxxx xxxxxx xx xxxx xxx xxxx.
+After the controller is initialized, the app defines two rectangular areas in the lower-left and lower-right corners of the screen for the move and camera touch controls, respectively. The player uses the lower-left rectangle, defined by the call to **SetMoveRect**, as a virtual control pad for moving the camera forward and backward, and side to side. The lower-right rectangle, defined by the **SetFireRect** method, is used as a virtual button to fire the ammo.
 
-Xx'x xxx xxxxxxxx xx xxxx xxxxxxxx.
+It's all starting to come together.
 
-Xxx Xxxx xxxxxx xx xxx xxxx xxxxxxxx
+The Load method of the view provider
 
 ```cpp
 void App::Load(
@@ -153,23 +153,23 @@ void App::Load(
 }
 ```
 
-Xxxxx xxx xxxx xxxxxx xx xxx, xxx xxx xxxxxxxxx xxxxx **Xxxx**. Xx xxx xxxxxx, xxxx xxxxxx xxxx x xxx xx xxxxxxxxxxxx xxxxx (xxx xxxxxx xxx xxxxx xx xxxxxxx xx xxx [Xxxxxxxx Xxxxxxxx Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx)) xx xxxxxx xxx xxxx xxxxxxx, xxxx xxxxxxxx xxxxxxxxx, xxx xxxxxxxxxx xxx xxxx’x xxxxx xxxxxxx. Xx xxxxx xxx xxxxx xxxx xxxxxxx, xxx Xxxx xxxxxx xxxxxxxxx xxxxxxx xxx xxxxxx xxx xxx xx xxxxx xxxxxxxxxx xxxxx. Xx xxxx xxxxxx, xxx xxx xxxx xxxxxxxx x xxxxxxxx xxx xx xxx xxxxxxxx xxxxx xxxx.
+After the main window is set, the app singleton calls **Load**. In the sample, this method uses a set of asynchronous tasks (the syntax for which is defined in the [Parallel Patterns Library](https://msdn.microsoft.com/library/windows/apps/dd492418.aspx)) to create the game objects, load graphics resources, and initialize the game’s state machine. By using the async task pattern, the Load method completes quickly and allows the app to start processing input. In this method, the app also displays a progress bar as the resource files load.
 
-Xx xxxxx xxxxxxxx xxxxxxx xxxx xxx xxxxxxxx xxxxxx, xxxxxxx xxxxxx xx xxx XxxxxxYX YY xxxxxx xxxxxxx xx xxxxxxxxxx xx xxx xxxxxx xxx xxxxxx xxxxxxx xxx xxxxxxx xx, xxxxx xxxxxx xx xxx XxxxxxYX YY xxxxxx xxx xxxxxx xxxxxxxx xx xxxx-xxxxxxxx. Xxx **XxxxxxXxxxXxxxxxXxxxxxxxxXxxxx** xxxx xxxx xx x xxxxxxxx xxxxxx xxxx xxx xxxxxxxxxx xxxx (*XxxxxxxxXxxxxxXxxxXxxxxxXxxxxxxxx*), xxxxx xxxx xx xxx xxxxxxxx xxxxxx. Xx xxx x xxxxxxx xxxxxxx xxx xxxxxxx xxxxx xxxxxxxxx xxxx **XxxxXxxxxXxxxx** xxx **XxxxxxxxXxxxXxxxx**.
+We break resource loading into two separate stages, because access to the Direct3D 11 device context is restricted to the thread the device context was created on, while access to the Direct3D 11 device for object creation is free-threaded. The **CreateGameDeviceResourcesAsync** task runs on a separate thread from the completion task (*FinalizeCreateGameDeviceResources*), which runs on the original thread. We use a similar pattern for loading level resources with **LoadLevelAsync** and **FinalizeLoadLevel**.
 
-Xxxxx xx xxxxxx xxx xxxx’x xxxxxxx xxx xxxx xxx xxxxxxxx xxxxxxxxx, xx xxxxxxxxxx xxx xxxx'x xxxxx xxxxxxx xx xxx xxxxxxxx xxxxxxxxxx (xxx xxxxxxx: xxxxxxx xxx xxxxxxx xxxx xxxxx, xxxxx xxxxxx, xxx xxxxxx xxxxxxxxx). Xx xxx xxxx xxxxx xxxxxxxxx xxxx xxx xxxxxx xx xxxxxxxx x xxxx, xx xxxx xxx xxxxxxx xxxxx (xxx xxxxx xxxx xxxxxx xxx xx xxxx xxx xxxx xxx xxxxxxxxx).
+After we create the game’s objects and load the graphics resources, we initialize the game's state machine to the starting conditions (for example: setting the initial ammo count, level number, and object positions). If the game state indicates that the player is resuming a game, we load the current level (the level that player was on when the game was suspended).
 
-Xx xxx **Xxxx** xxxxxx, xx xx xxx xxxxxxxxx xxxxxxxxxxxx xxxxxx xxx xxxx xxxxxx, xxxx xxxxxxx xxx xxxxxxxx xxxxxx xx xxxxxx xxxxxx. Xx xxx xxxx xx xxx-xxxxx xxxx xxxx xx xxxxxx, xxxx xx x xxxxxx xxxxx xxx xx xxxxxx xxxx xx **XxxXxxxxx** xx **Xxxxxxxxxx**. Xxx xxxxx xxxxx xx xxxx xxxx xxx xxx xxxxxxx xx Xxxxxxx xxxxxxx xxxxxxxxxxxx xx xxx xxxx xxxx xxxx xxx xxxx xxxxxx xx xxxx xxxxx xxxxxxxxxx xxxxx. Xx xxxxxxx xxxxx xxxxxx—xx xxxxx xxx xxxx xx xxxxxxxxx — xxxx xxxxxxx xxxx xxxxx xxxx x xxxxxxxxx xxxxxxx xxxxxxxx xxx.
+In the **Load** method, we do any necessary preparations before the game begins, like setting any starting states or global values. If you want to pre-fetch game data or assets, this is a better place for it rather than in **SetWindow** or **Initialize**. Use async tasks in your game for any loading as Windows imposes restrictions on the time your game can take before it must start processing input. If loading takes awhile—if there are lots of resources — then provide your users with a regularly updated progress bar.
 
-Xxxx xxxxxxxxxx xxxx xxx xxxx, xxxxxx xxxx xxxxxxx xxxx xxxxxx xxxxx xxxxxxx. Xxxx'x x xxxxxx xxxx xx xxxxx xxxxxxxxxxx xxx xxxx xxxxxx:
+When developing your own game, design your startup code around these methods. Here's a simple list of basic suggestions for each method:
 
--   Xxx **Xxxxxxxxxx** xx xxxxxxxx xxxx xxxx xxxxxxx xxx xxxxxxx xx xxx xxxxx xxxxx xxxxxxxx.
--   Xxx **XxxXxxxxx** xx xxxxxx xxxx xxxx xxxxxx xxx xxxxxxx xxx xxxxxx-xxxxxxxx xxxxxx.
--   Xxx **Xxxx** xx xxxxxx xxx xxxxxxxxx xxxxx, xxx xx xxxxxxxx xxx xxxxx xxxxxxxx xx xxxxxxx xxx xxxxxxx xx xxxxxxxxx. Xx xxx xxxx xx xxxxxx xxx xxxxxxxxx xxxxx xx xxxx, xxxx xx xxxxxxxxxxxx xxxxxxxxx xxxxxx, xx xx xxxx xxx.
+-   Use **Initialize** to allocate your main classes and connect up the basic event handlers.
+-   Use **SetWindow** to create your main window and connect any window-specific events.
+-   Use **Load** to handle any remaining setup, and to initiate the async creation of objects and loading of resources. If you need to create any temporary files or data, such as procedurally generated assets, do it here too.
 
-Xx, xxx xxxxxx xxxx xxxxxxx xx xxxxxxxx xx xxx xxxx'x xxxxx xxxxxxx xxx xxxx xx xx xxx xxxxxxxx xxxxxxxxxxxxx. Xx xxxxxxx xxx xxx xxxxxx xxx xxxxx xxxxxx. Xx xxxxxxxx x xxxxxx xx xxxxxxx xxxxxxx xx. Xxx xxxxxxxx xxxx xx xxx xxxxx xx xxx.
+So, the sample game creates an instance of the game's state machine and sets it to the starting configuration. It handles all the system and input events. It provides a window to display content in. The gameplay code is now ready to run.
 
-Xxx Xxx xxxxxx xx xxx xxxx xxxxxxxx
+The Run method of the view provider
 
 ```cpp
 void App::Run()
@@ -205,23 +205,22 @@ void App::Run()
 }
 ```
 
-Xxxx'x xxxxx xx xxx xx xxx xxxx xxxx xx xxx xxxx xxx. Xxxxxx xxx xxx Y xxxxxxx xxx xxx xxx xxxxx, xxx xxxx xxx xxxx xxx **Xxx** xxxxxx, xxxxxxxx xxx xxx!
+Here's where we get to the play part of the game app. Having run the 3 methods and set the stage, the game app runs the **Run** method, starting the fun!
 
-Xx xxx xxxx xxxxxx, xx xxxxx x xxxxx xxxx xxxx xxxxxxxxxx xxxx xxx xxxxxx xxxxxx xxx xxxx xxxxxx. Xxx xxxxxx xxxx xxxxxxxxxxx xx xxx xx xxx xxxxxx xx xxx xxxx xxxxxx xxxxx xxxxxxx:
+In the game sample, we start a while loop that terminates when the player closes the game window. The sample code transitions to one of two states in the game engine state machine:
 
--   Xxx xxxx xxxxxx xxxx xxxxxxxxxxx (xxxxx xxxxx) xx xxxxxxx. Xxxx xxxx xxxxxxx, xxx xxxx xxxxxxxx xxxxx xxxxxxxxxx xxx xxxxx xxx xxx xxxxxx xx xxxxx xx xxxxxx.
--   Xxxxxxxxx, xxx xxxx xxxxxxx xxx xxx xxxxx xxx xxxxxxx xxx xxxxxxxx xxx xxxxxxx.
+-   The game window gets deactivated (loses focus) or snapped. When this happens, the game suspends event processing and waits for the window to focus or unsnap.
+-   Otherwise, the game updates its own state and renders the graphics for display.
 
-Xxxx xxxx xxxx xxx xxxxx, xxx xxxx xxxxxx xxxxx xxxxx xx xxx xxxxxxx xxxxx xx xx xxxxxxx, xxx xx xxx xxxx xxxx [**XxxxXxxxxxXxxxxxxx.XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208215) xxxx xxx **XxxxxxxXxxXxXxxxxxx** xxxxxx. Xxxxx xxxxxxx xxx xxxxx xxxxxx xx xxxxxxxxxx xxxxxxx xxxxxx, xxxxx xxxxx xxxx xxxx xxxx xxxxxxxxxxxx, xx xxxxxx xx xxxxx xxxxxxxxx xxxx xxxx xxxxxxxx xxx xxx "xxxxxx".
+When your game has focus, you must handle every event in the message queue as it arrives, and so you must call [**CoreWindowDispatch.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) with the **ProcessAllIfPresent** option. Other options can cause delays in processing message events, which makes your game feel unresponsive, or result in touch behaviors that feel sluggish and not "sticky".
 
-Xx xxxxxx, xxxx xxx xxx xx xxx xxxxxxx, xxxxxxxxx xx xxxxxxx, xx xxx'x xxxx xx xx xxxxxxx xxx xxxxxxxxx xxxxxxx xx xxxxxxxx xxxxxxxx xxxx xxxx xxxxx xxxxxx. Xx xxxx xxxx xxxx xxx **XxxxxxxXxxXxxXxxXxxxxxx**, xxxxx xxxxxx xxxxx xx xxxx xx xxxxx, xxx xxxx xxxxxxxxx xxxx xxxxx xxx xxx xxxxxx xxxx xxxxxx xx xxx xxxxxxx xxxxx xxxxxx xxx xxxxxxxxxx xx xxx xxxxx. [
-            **XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208215) xxxx xxxxxxxxxxx xxxxxxx xxxxx xxx xxxxx xxx xxxx xxxxxxxxx.
+Of course, when the app is not visible, suspended or snapped, we don't want it to consume any resources cycling to dispatch messages that will never arrive. So your game must use **ProcessOneAndAllPending**, which blocks until it gets an event, and then processes that event and any others that arrive in the process queue during the processing of the first. [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) then immediately returns after the queue has been processed.
 
-Xxx xxxx xx xxxxxxx! Xxx xxxxxx xxxx xx xxxx xx xxxxxxxxxx xxxxxxx xxxx xxxxxx xxx xxxxx xxxxxxxxxx xxx xxxxxxxxx. Xxx xxxxxxxx xxx xxxxx xxxxxxx xx xxx xxxx xxxx xxxxxx. Xx xxxx xxx xxxxxx xx xxxxxx xxx. Xxx xxxxxxxxxx, xxx xxx xxx xx xxx...
+The game is running! The events that it uses to transition between game states are being dispatched and processed. The graphics are being updated as the game loop cycles. We hope the player is having fun. But eventually, the fun has to end...
 
-...xxx xx xxxx xx xxxxx xx xxx xxxxx. Xxxx xx xxxxx **Xxxxxxxxxxxx** xxxxx xx.
+...and we need to clean up the place. This is where **Uninitialize** comes in.
 
-Xxx Xxxxxxxxxxxx xxxxxx xx xxx xxxx xxxxxxxx
+The Uninitialize method of the view provider
 
 ```cpp
 void App::Uninitialize()
@@ -229,24 +228,24 @@ void App::Uninitialize()
 }
 ```
 
-Xx xxx xxxx xxxxxx, xx xxx xxx xxx xxxxxxxxx xxx xxx xxxx xxxxx xxxxxxxxxx xx xxxxx xxx xxxx xx xxxxxxxxxx. Xx Xxxxxxx YY, xxxxxxx xxx xxx xxxxxx xxxxx'x xxxx xxx xxx'x xxxxxxx, xxx xxxxxxx xxxxxx xxx xxxxx xx xxx xxx xxxxxxxxx xx xxxxxx. Xx xxxxxxxx xxxxxxx xxxx xxxxxx xxxx xxx xxxxxx xxxx xxxxxxx xxxx xxxxxx, xxx xxxxxxx xxxxxxx xx xxxxxxxxx, xxxx xxx xxx xxxx xxx xxxx xxxxxxx xx xxxx xxxxxx.
+In the game sample, we let the app singleton for the game clean everything up after the game is terminated. In Windows 10, closing the app window doesn't kill the app's process, but instead writes the state of the app singleton to memory. If anything special must happen when the system must reclaim this memory, any special cleanup of resources, then put the code for that cleanup in this method.
 
-Xx xxxxx xxxx xx xxxxx Y xxxxxxx xx xxxx xxxxxxxx, xx xxxx xxxx xx xxxx. Xxx, xxx'x xxxx xx xxx xxxx xxxxxx'x xxxxxxx xxxxxxxxx xxx xxx xxxxx xxxxxxxx xxxx xxxxxx xx.
+We refer back to these 5 methods in this tutorial, so keep them in mind. Now, let's look at the game engine's overall structure and the state machines that define it.
 
-## Xxxxxxxxxxxx xxx xxxx xxxxxx xxxxx
+## Initializing the game engine state
 
 
-Xxxxxxx x xxxx xxx xxxxxx x XXX xxxx xxx xxxx x xxxxxxxxx xxxxx xx xxx xxxx, xxx xxx xxx xxxx xxx xxxxxx xx xxxxxxxx xxxxxx.
+Because a user can resume a UWP game app from a suspended state at any time, the app can have any number of possible states.
 
-Xxx xxxx xxxxxx xxx xx xx xxx xx xxx xxxxx xxxxxx xxxx xx xxxxxx:
+The game sample can be in one of the three states when it starts:
 
--   Xxx xxxx xxxx xxx xxxxxxx xxx xxx xx xxx xxxxxx xx x xxxxx.
--   Xxx xxxx xxxx xxx xxx xxxxxxx xxxxxxx x xxxx xxx xxxx xxxx xxxxxxxxx. (Xxx xxxx xxxxx xx xxx.)
--   Xx xxxx xxx xxxx xxxxxxx, xx xxx xxxx xxx xxxxxxx xxxxxx. (Xxx xxxx xxxxx xx Y.)
+-   The game loop was running and was in the middle of a level.
+-   The game loop was not running because a game had just been completed. (The high score is set.)
+-   No game has been started, or the game was between levels. (The high score is 0.)
 
-Xxxxxxxxx, xx xxxx xxx xxxx, xxx xxxxx xxxx xxxx xx xxxxx xxxxxx. Xxxxx, xxxxxx xx xxxxx xxxx xxxx XXX xxxx xxx xx xxxxxxxxxx xx xxx xxxx, xxx xxxx xx xxxxxxx, xxx xxxxxx xxxxxxx xxx xxxx xx xxxxxx xx xxxxxx xxxx xxx xxxxx xxxxxxx xxxxxxx.
+Obviously, in your own game, you could have more or fewer states. Again, always be aware that your UWP game can be terminated at any time, and when it resumes, the player expects the game to behave as though they had never stopped playing.
 
-Xx xxx xxxx xxxxxx, xxx xxxx xxxx xxxxx xxxx xxxx.
+In the game sample, the code flow looks like this.
 
 ```cpp
 void App::InitializeGameState()
@@ -275,22 +274,22 @@ void App::InitializeGameState()
 }
 ```
 
-Xxxxxxxxxxxxxx xx xxxx xxxxx xxxx xxxxxxxx xxx xxx, xxx xxxx xxxxx xxxxxxxxxx xxx xxx xxxxx xx xxx xxxx xxxxxxxxxx. Xxx xxxxxx xxxx xxxxxx xxxxx xxxxx, xxxxx xxxxx xxx xxxxxxxxxx xxxx xxx xxx xx xxxxxx xxxxxxx. Xxx xxxxxxxxx xxxxx xx xxxx xxxx: xxx xxxx xxxx xx xxxxxxxxx, xxx xxx xxxxxxxxx xx xxx xxxx xxx xxxxx xx xxxxxx. Xxxxxxxx, xxx xxxxxx xxxxx xxxxxxxxx xxxx xxx xxxxxx xxxx xx xxxxxxx xx xxxxx xx xxx xxxx xxxxxxxxx xx xxxxxxxxxx. Xxxx xxx xxxxxx xxxx xxxxxxxx xxxxx xxxxxxxxxxx, xx xxxxxx xx xxxxxxxx xxx xxxx xxxxxxxxxx xxx xxxx xxxxx xxxxx xx xxx xxxxxx xxx xxxxxxxxxxx xxxxxxxx xxxxxxx.
+Initialization is less about cold starting the app, and more about restarting the app after it has been terminated. The sample game always saves state, which gives the appearance that the app is always running. The suspended state is just that: the game play is suspended, but the resources of the game are still in memory. Likewise, the resume event indicates that the sample game is picking up where it was last suspended or terminated. When the sample game restarts after termination, it starts up normally and then determines the last known state so the player can immediately continue playing.
 
-Xxx xxxxxxxxx xxxx xxx xxx xxxxxxx xxxxxx xxx xxxxxxxxxxx xxx xxx xxxx xxxxxx'x xxxxxxxxxxxxxx xxxxxxx.
+The flowchart lays out the initial states and transitions for the game sample's initialization process.
 
-![xxx xxxxxxx xxx xxxxxxxxxxxx xxx xxxxxxxxx xxx xxxx xxxxxx xxx xxxx xxxx xxxxxx](images/simple3dgame-appstartup.png)
+![the process for initializing and preparing our game before the main loop starts](images/simple3dgame-appstartup.png)
 
-Xxxxxxxxx xx xxx xxxxx, xxxxxxxxx xxxxxxx xxx xxxxxxxxx xx xxx xxxxxx. Xx xxx xxxx xxxxxxx xxx-xxxxx, xx xxxxxxx xx xxxxxx, xxx xxx xxxxxxx xxxxxxxx x xxxxxxxx xxxxxx. Xx xxx xxxx xxxxxxx xx x xxxxx xxxxx xxx xxxx xx xxxxxxxxx, xx xxxxxxxx xxx xxxx xxxxxx xxx xx xxxxxx xx xxxx x xxx xxxx. Xxxxxx, xx xxx xxxx xxxxxxx xxxxxx x xxxxx xxx xxxxxxx, xxx xxxxxxx xxxxxxxx x xxxxx xxxxxx xx xxx xxxx.
+Depending on the state, different options are presented to the player. If the game resumes mid-level, it appears as paused, and the overlay presents a continue option. If the game resumed in a state where the game is completed, it displays the high scores and an option to play a new game. Lastly, if the game resumes before a level has started, the overlay presents a start option to the user.
 
-Xxx xxxx xxxxxx xxxxx'x xxxxxxxxxxx xxxxxxx xxx xxxx xxxxxx xxxx xxxxxxxx, xxxx xx x xxxx xxxx xx xxxxxxxxx xxx xxx xxxxx xxxx xxxxxxx x xxxxxxx xxxxx, xxx xxx xxxx xxxxxxxx xxxx x xxxxxxxxx xxxxx. Xxxx xx xxxxxx xxxxxx xxx xxx XXX xxx.
+The game sample doesn't distinguish between the game itself cold starting, that is a game that is launching for the first time without a suspend event, and the game resuming from a suspended state. This is proper design for any UWP app.
 
-## Xxxxxxxx xxxxxx
+## Handling events
 
 
-Xxx xxxxxx xxxx xxxxxxxxxx x xxxxxx xx xxxxxxxx xxx xxxxxxxx xxxxxx xx **Xxxxxxxxxx**, **XxxXxxxxx**, xxx **Xxxx**. Xxx xxxxxxxx xxxxxxx xxxx xxxxx xxxx xxxxxxxxx xxxxxx, xxxxxxx xxx xxxx xxxxxx xxx xxxx xxxx xxxx xxxxxx xx xxx xxxx xxx xxxx xxxxxxxxx xx xxxxxxxx xxxxxxxxxxx. Xxx'xx xxxxx! Xxxxx xxxxxx xxx xxxxxxxxxxx xx x xxxxxx XXX xxx xxxxxxxxxx, xxx xxxxxxx x XXX xxx xxx xx xxxxxxxxx, xxxxxxxxxxx, xxxxxxx, xxxxxxx, xxxxxxxxx, xxxxxxxxx, xx xxxxxxx xx xxx xxxx, xxx xxxx xxxx xxxxxxxx xxx xxxxx xxxx xxxxxx xx xxxx xx xx xxx, xxx xxxxxx xxxx xx x xxx xxxx xxxxx xxx xxxxxxxxxx xxxxxx xxx xxxxxxxxxxx xxx xxx xxxxxx.
+Our sample code registered a number of handlers for specific events in **Initialize**, **SetWindow**, and **Load**. You probably guessed that these were important events, because the code sample did this work well before it got into any game mechanics or graphics development. You're right! These events are fundamental to a proper UWP app experience, and because a UWP app can be activated, deactivated, resized, snapped, unsnapped, suspended, or resumed at any time, the game must register for those very events as soon as it can, and handle them in a way that keeps the experience smooth and predictable for the player.
 
-Xxxx'x xxx xxxxx xxxxxxxx xx xxx xxxxxx, xxx xxx xxxxxx xxxx xxxxxx. Xxx xxx xxxx xxx xxxx xxxx xxx xxxxx xxxxx xxxxxxxx xx [Xxxxxxxx xxxx xxx xxxx xxxxxxx](#code_sample).
+Here's the event handlers in the sample, and the events they handle. You can find the full code for these event handlers in [Complete code for this section](#code_sample).
 
 <table>
 <colgroup>
@@ -299,70 +298,70 @@ Xxxx'x xxx xxxxx xxxxxxxx xx xxx xxxxxx, xxx xxx xxxxxx xxxx xxxxxx. Xxx xxx xxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx xxxxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Event handler</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">XxXxxxxxxxx</td>
-<td align="left">Xxxxxxx [<strong>XxxxXxxxxxxxxxxXxxx::Xxxxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY). Xxx xxxx xxx xxx xxxx xxxxxxx xx xxx xxxxxxxxxx, xx xxx xxxx xxxxxx xx xxxxxxxxx.</td>
+<td align="left">OnActivated</td>
+<td align="left">Handles [<strong>CoreApplicationView::Activated</strong>](https://msdn.microsoft.com/library/windows/apps/br225018). The game app has been brought to the foreground, so the main window is activated.</td>
 </tr>
 <tr class="even">
-<td align="left">XxXxxxxxxXxxXxxxxxx</td>
-<td align="left">Xxxxxxx [<strong>XxxxxxxXxxxxxxxxx::XxxxxxxXxxXxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY). Xxx XXX xxx xxx xxxx xxxx xxxxxx xxx xxxxxxx, xxx xxx xxxx xxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxxx.
+<td align="left">OnLogicalDpiChanged</td>
+<td align="left">Handles [<strong>DisplayProperties::LogicalDpiChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br226150). The DPI for the main game window has changed, and the game app adjusts its resources accordingly.
 <div class="alert">
-<strong>Xxxx</strong>  [<strong>XxxxXxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxxxxx/xxYYYYYY) xxxxxxxxxxx xxx xx XXXx (Xxxxxx Xxxxxxxxxxx Xxxxxx), xx xx [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987). Xx x xxxxxx, xxx xxxx xxxxxx XxxxxxYX xx xxx xxxxxx xx XXX xx xxxxxxx xxx YX xxxxxx xx xxxxxxxxxx xxxxxxxxx.
+<strong>Note</strong>  [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/desktop/hh404559) coordinates are in DIPs (Device Independent Pixels), as in [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370987). As a result, you must notify Direct2D of the change in DPI to display any 2D assets or primitives correctly.
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left">XxXxxxxxxx</td>
-<td align="left">Xxxxxxx [<strong>XxxxXxxxxxxxxxx::Xxxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY). Xxx xxxx xxx xxxxxxxx xxx xxxx xxxx x xxxxxxxxx xxxxx.</td>
+<td align="left">OnResuming</td>
+<td align="left">Handles [<strong>CoreApplication::Resuming</strong>](https://msdn.microsoft.com/library/windows/apps/br205859). The game app restores the game from a suspended state.</td>
 </tr>
 <tr class="even">
-<td align="left">XxXxxxxxxxxx</td>
-<td align="left">Xxxxxxx [<strong>XxxxXxxxxxxxxxx::Xxxxxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY). Xxx xxxx xxx xxxxx xxx xxxxx xx xxxx. Xx xxx Y xxxxxxx xx xxxx xxxxx xx xxxxxxx.</td>
+<td align="left">OnSuspending</td>
+<td align="left">Handles [<strong>CoreApplication::Suspending</strong>](https://msdn.microsoft.com/library/windows/apps/br205860). The game app saves its state to disk. It has 5 seconds to save state to storage.</td>
 </tr>
 <tr class="odd">
-<td align="left">XxXxxxxxxxxxXxxxxxx</td>
-<td align="left">Xxxxxxx [<strong>XxxxXxxxxx::XxxxxxxxxxXxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY). Xxx xxxx xxx xxx xxxxxxx xxxxxxxxxx, xxx xxx xxxxxx xxxxxx xxxxxxx xx xxxx xxxx xxxxxxxxx xx xxxxxxx xxx xxxxxxxx xxxxxxx.</td>
+<td align="left">OnVisibilityChanged</td>
+<td align="left">Handles [<strong>CoreWindow::VisibilityChanged</strong>](https://msdn.microsoft.com/library/windows/apps/hh701591). The game app has changed visibility, and has either become visible or been made invisible by another app becoming visible.</td>
 </tr>
 <tr class="even">
-<td align="left">XxXxxxxxXxxxxxxxxxXxxxxxx</td>
-<td align="left">Xxxxxxx [<strong>XxxxXxxxxx::Xxxxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY). Xxx xxxx xxx'x xxxx xxxxxx xxx xxxx xxxxxxxxxxx xx xxxxxxxxx, xx xx xxxx xxxxxx xxxxx xxx xxxxx xxx xxxx, xx xxxxxx xxxxx. Xx xxxx xxxxx, xxx xxxxxxx xxxxxxxxx xxxx xxx xxxx xx xxxxxx.</td>
+<td align="left">OnWindowActivationChanged</td>
+<td align="left">Handles [<strong>CoreWindow::Activated</strong>](https://msdn.microsoft.com/library/windows/apps/br208255). The game app's main window has been deactivated or activated, so it must remove focus and pause the game, or regain focus. In both cases, the overlay indicates that the game is paused.</td>
 </tr>
 <tr class="odd">
-<td align="left">XxXxxxxxXxxxxx</td>
-<td align="left">Xxxxxxx [<strong>XxxxXxxxxx::Xxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY). Xxx xxxx xxx xxxxxx xxx xxxx xxxxxx xxx xxxxxxxx xxx xxxx.</td>
+<td align="left">OnWindowClosed</td>
+<td align="left">Handles [<strong>CoreWindow::Closed</strong>](https://msdn.microsoft.com/library/windows/apps/br208261). The game app closes the main window and suspends the game.</td>
 </tr>
 <tr class="even">
-<td align="left">XxXxxxxxXxxxXxxxxxx</td>
-<td align="left">Xxxxxxx [<strong>XxxxXxxxxx::XxxxXxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY). Xxx xxxx xxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxxx xxx xxxxxxx xx xxxxxxxxxxx xxx xxxx xxxxxx, xxx xxxx xxxxxxx xxx xxxxxx xxxxxx.</td>
+<td align="left">OnWindowSizeChanged</td>
+<td align="left">Handles [<strong>CoreWindow::SizeChanged</strong>](https://msdn.microsoft.com/library/windows/apps/br208283). The game app reallocates the graphics resources and overlay to accommodate the size change, and then updates the render target.</td>
 </tr>
 </tbody>
 </table>
 
  
 
-Xxxx xxx xxxx xxxx xxxxxx xxxxx xxxxxx, xxxxxxx xxxx xxx xxxx xx XXX xxx xxxxxx.
+Your own game must handle these events, because they are part of UWP app design.
 
-## Xxxxxxxx xxx xxxx xxxxxx
+## Updating the game engine
 
 
-Xxxxxx xxx xxxx xxxx xx **Xxx**, xxx xxxxxx xxx xxxxxxxxxxx x xxxxx xxxxx xxxxxxx xxx xxxxxxxx xxx xxx xxxxx xxxxxxx xxx xxxxxx xxx xxxx. Xxx xxxxxxx xxxxx xx xxxx xxxxx xxxxxxx xxxxx xxxx xxxxxxx x xxxx, xxxxxxx x xxxxxxxx xxxxx, xx xxxxxxxxxx x xxxxx xxxxx xxx xxxx xxx xxxx xxxxxx (xx xxx xxxxxx xx xxx xxxxxx).
+Within the game loop in **Run**, the sample has implemented a basic state machine for handling all the major actions the player can take. The highest level of this state machine deals with loading a game, playing a specific level, or continuing a level after the game has been paused (by the system or the player).
 
-Xx xxx xxxx xxxxxx, xxxxx xxx Y xxxxx xxxxxx (XxxxxxXxxxxxXxxxx) xxx xxxx xxx xx xx:
+In the game sample, there are 3 major states (UpdateEngineState) the game can be in:
 
--   **Xxxxxxx xxx xxxxxxxxx**. Xxx xxxx xxxx xx xxxxxxx, xxxxxx xx xxxxxxxxxx xxxxx xxxxxxxxx (xxxxxxxxxxxx xxxxxxxx xxxxxxxxx) xxx xxxxxxxxx. Xxxx xxx xxxxx xxxxx xxx xxxxxxx xxxxxxxxx xxxxxxxxx, xx xxxxxxx xxx xxxxx xx **XxxxxxxxxXxxxxx**. Xxxx xxxxxxx xxxxxxx xxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xx xxxx xxx xxxxxxxxx xxxx xxxx. Xx xxx xxxx xxxxxx, xx xxxxxxxx xxxx xxxxxxxx xxxxxxx xxx xxxxxx xxxxx'x xxxx xxx xxxxxxxxxx xxx-xxxxx xxxxxxxxx xx xxxx xxxx.
--   **Xxxxxxx xxx xxxxx**. Xxx xxxx xxxx xx xxxxxxx, xxxxxxx xxx xxxxxxxx xxxx xxxxx. Xxxx xxxxx xx x xxxxxx xxxxxx xx xxxx x xxxx, xxxxx x xxxxx, xx xxxxxxxx x xxxxx. Xxx xxxxxx xxxx xxxxxx xx xxxxx xxx-xxxxxx xx XxxxxXxxxxxXxxxx xxxxxxxxxxx xxxxxx.
--   **Xxxxxxxx**. Xxx xxxx xxxx xx xxxxxxx xxxx xxx xxxx xxxxxxx. Xxxxx xxx xxxx xx xxxxxxx, xxx xxxx xxxxxx xxx Y xxxxxxxxxx xxxx xx xxx xxxxxxxxxx xx: xxx xxxxxxxxxx xx xxx xxx xxxx xxx x xxxxx, xxx xxxxxxxxxx xx x xxxxx xx xxx xxxxxx, xx xxx xxxxxxxxxx xx xxx xxxxxx xx xxx xxxxxx.
+-   **Waiting for resources**. The game loop is cycling, unable to transition until resources (specifically graphics resources) are available. When the async tasks for loading resources completes, it updates the state to **ResourcesLoaded**. This usually happens between levels when the level needs to load new resources from disk. In the game sample, we simulate this behavior because the sample doesn't need any additional per-level resources at that time.
+-   **Waiting for press**. The game loop is cycling, waiting for specific user input. This input is a player action to load a game, start a level, or continue a level. The sample code refers to these sub-states as PressResultState enumeration values.
+-   **Dynamics**. The game loop is running with the user playing. While the user is playing, the game checks for 3 conditions that it can transition on: the expiration of the set time for a level, the completion of a level by the player, or the completion of all levels by the player.
 
-Xxxx'x xxx xxxx xxxxxxxxx. Xxx xxxxxxxx xxxx xx xx [Xxxxxxxx xxxx xxx xxxx xxxxxxx](#code_sample).
+Here's the code structure. The complete code is in [Complete code for this section](#code_sample).
 
-Xxx xxxxxxxxx xx xxx xxxxx xxxxxxx xxxx xx xxxxxx xxx xxxx xxxxxx
+The structure of the state machine used to update the game engine
 
 ```cpp
 void App::Update()
@@ -461,27 +460,27 @@ void App::Update()
 }
 ```
 
-Xxxxxxxx, xxx xxxx xxxx xxxxx xxxxxxx xxxxx xxxx xxxx:
+Visually, the main game state machine looks like this:
 
-![xxx xxxx xxxxx xxxxxxx xxx xxx xxxx](images/simple3dgame-mainstatemachine.png)
+![the main state machine for our game](images/simple3dgame-mainstatemachine.png)
 
-Xx xxxx xxxxx xxx xxxx xxxxx xxxxxx xx xxxx xxxxxx xx [Xxxxxxxx xxx xxxx xxxx xxxxxx](tutorial--defining-the-main-game-loop.md). Xxx xxx, xxx xxxxxxxxx xxxxxxxx xx xxxx xxxx xxxx xx x xxxxx xxxxxxx. Xxxx xxxxxxxx xxxxx xxxx xxxx xxxx xxxxxxxx xxxxxxxx xx xxxxxx xx, xxx xxx xxxxxxxxxxx xxxx xxx xxxxx xx xxxxxxx xxxx xx xxxxx xx xxxxxxxx xxxx xxxxx xx xxxxxx xxxxxxx (xxxx xx xxxxxxxx xxxxxxxx xxxxxxx). Xxxx xxx xxx xxxxxxxx xxxx xxxx, xxxx xxx x xxxxxxx xxxx xxx xxx xx xxx, xxxxxx xxxx xxx xxxxxxx xxx xxxxxxxx xxxxxxx xxx xxxx xx xxxxxx xxx xxxx xx x xxxx xxxxx. Xxxxx xxx xx xxxx xxxxxxxxxxx, xxx xxx xxxxx xxxxxxx xx x xxxxxxxx xxxx xx xxxxxxxxx xxxx xxxxxxxxxx xxx xxxx xx xxxx xxxxxxxxxx.
+We talk about the game logic itself in more detail in [Defining the main game object](tutorial--defining-the-main-game-loop.md). For now, the important takeaway is that your game is a state machine. Each specific state must have very specific criteria to define it, and the transitions from one state to another must be based on discrete user input or system actions (such as graphics resource loading). When you are planning your game, draw out a diagram like the one we use, making sure you address all possible actions the user or system can take at a high level. Games can be very complicated, and the state machine is a powerful tool to visualize this complexity and make it very manageable.
 
-Xx xxxxxx, xx xxx xxx, xxxxx xxx xxxxx xxxxxxxx xxxxxx xxxxx xxxxxxxx. Xxxxx'x xxx xxx xxx xxxxxxxxxx, xxxx xxxxxxx xxx xx xxx xxxxxxxxxx xxxxxx xxx xxxxxx xxx xxxxxxxx. Xx xxx xxxxxxx, x xxxxx xx xxxx xxxx xx xxxx xxxxx. Xxxx xxxxx xxxxxxx xxxxx'x xxxx xxxx xx xx, xxxxxxx xx xxxxx xx x xxxxxx xxxxx; xx xxxxxxx xxxx xxx xxxxx xxxxxxx xxx xxx xxxxxxxxxx xxxx xxxxxx xxx xxxxxxxxxxx xxxx xxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxx, xxx xxx xxxxxxxxxx xxxxxxxxx xxxxxxx. Xx xxxx xxxxx xxxxxxxx xxxxx xxxxxx xx [Xxxxxx xxxxxxxx](tutorial--adding-controls.md).
+Of course, as you saw, there are state machines within state machines. There's one for the controller, that handles all of the acceptable inputs the player can generate. In the diagram, a press is some form of user input. This state machine doesn't care what it is, because it works at a higher level; it assumes that the state machine for the controller will handle any transitions that affect movement and shooting behaviors, and the associated rendering updates. We talk about managing input states in [Adding controls](tutorial--adding-controls.md).
 
-## Xxxxxxxx xxx xxxx xxxxxxxxx
+## Updating the user interface
 
 
-Xx xxxx xx xxxx xxx xxxxxx xxxxxxxx xx xxx xxxxx xx xxx xxxxxx, xxx xxxxx xxx xx xxxxxx xxx xxxx-xxxxx xxxxx xxxxxxxxx xx xxx xxxxx xx xxx xxxx. Xxx xxxx xxxxx, xxxx xxxx xxxxxx xxxxxxxx, xxxx xx xxxx xxxx x xxxxx-xx xxxxxxx xxxx xxxxxxxx xxxxxxxxxxxxxxx xx xxxx xxxxx, xxx xxxxx xxxx-xxxxxxxx xxxx xxxx xx xxxxx, xx xxxx, xx xxx xxxxxx xx xxxxxxx xxxxxxxxx. Xx xxxx xxxx xxx xxxxxxx, xxxxxxx xx xx xxxxxxxx xxxxxxxx xxxx xxx xxxx xxxxxxxx xxxxxxxx xxx xxxxxx xx xxx xxx YX xxxxxxxxxx. Xx xxx xxxxxx xxxx, xx xxxxxx xxxx xxxxxxx xxxxx xxx XxxxxxYX XXXx. Xx xxx xxxx xxxxxx xxxx xxxxxxx xxxxx XXXX, xxxxx xx xxxxxxx xx [Xxxxxxxxx xxx xxxx xxxxxx](tutorial-resources.md).
+We need to keep the player apprised of the state of the system, and allow him to change the high-level state according to the rules of the game. For most games, this game sample included, this is done with a heads-up display that contains representations of game state, and other play-specific info such as score, or ammo, or the number of chances remaining. We call this the overlay, because it is rendered separate from the main graphics pipeline and placed on top the 3D projection. In the sample game, we create this overlay using the Direct2D APIs. We can also create this overlay using XAML, which we discuss in [Extending the game sample](tutorial-resources.md).
 
-Xxxxx xxx xxx xxxxxxxxxx xx xxx xxxx xxxxxxxxx:
+There are two components to the user interface:
 
--   Xxx xxxxx-xx xxxxxxx xxxx xxxxxxxx xxx xxxxx xxx xxxx xxxxx xxx xxxxxxx xxxxx xx xxxx xxxx.
--   Xxx xxxxx xxxxxx, xxxxx xx x xxxxx xxxxxxxxx xxxx xxxx xxxxxxxx xxxxxx xxx xxxxxx/xxxxxxxxx xxxxx xx xxx xxxx. Xxxx xx xxx xxxx xxxxxxx. Xx xxxxxxx xx xxxxxxx xx [Xxxxxx x xxxx xxxxxxxxx](tutorial--adding-a-user-interface.md).
+-   The heads-up display that contains the score and info about the current state of game play.
+-   The pause bitmap, which is a black rectangle with text overlaid during the paused/suspended state of the game. This is the game overlay. We discuss it further in [Adding a user interface](tutorial--adding-a-user-interface.md).
 
-Xxxxxxxxxxxxxx, xxx xxxxxxx xxx x xxxxx xxxxxxx xxx. Xxx xxxxxxx xxx xxxxxxx x xxxxx xxxxx xx xxxx xxxx xxxxxxx. Xx xx xxxxxxxxxxx x xxxxxx xx xxxxxx xxx xxxx xxxxx xxxx xxxxx xxxx xx xxxxxxx xx xxx xxxxxx xxxx xxx xxxx xx xxxxxx xx xxxxxxxxx.
+Unsurprisingly, the overlay has a state machine too. The overlay can display a level start or game over message. It is essentially a canvas to output any info about game state that we display to the player when the game is paused or suspended.
 
-Xxxx'x xxx xxx xxxx xxxxxx xxxxxxxxxx xxx xxxxxxx'x xxxxx xxxxxxx.
+Here's how the game sample structures the overlay's state machine.
 
 ```cpp
 void App::SetGameInfoOverlay(GameInfoOverlayState state)
@@ -517,21 +516,21 @@ void App::SetGameInfoOverlay(GameInfoOverlayState state)
 }
 ```
 
-Xxxxx xxx Y xxxxx xxxxxxx xxxx xxx xxxxxxx xxxxxxxx, xxxxxxxxx xx xxx xxxxx xx xxx xxxx xxxxxx: x xxxxxxxxx xxxxxxx xxxxxx xx xxx xxxxx xx xxx xxxx, x xxxx xxxx xxxxxx, x xxxxx xxxxx xxxxxxx xxxxxx, x xxxx xxxx xxxxxx xxxx xxx xx xxx xxxxxx xxx xxxxxxxx xxxxxxx xxxx xxxxxxx xxx, x xxxx xxxx xxxxxx xxxx xxxx xxxx xxx, xxx x xxxxx xxxx xxxxxx.
+There are 6 state screens that the overlay displays, depending on the state of the game itself: a resources loading screen at the start of the game, a game play screen, a level start message screen, a game over screen when all of the levels are competed without time running out, a game over screen when time runs out, and a pause menu screen.
 
-Xxxxxxxxxx xxxx xxxx xxxxxxxxx xxxx xxxx xxxx'x xxxxxxxx xxxxxxxx xxxxxx xxx xx xxxx xx xx xxxxxxxxxxx xx xxx xxxx'x xxxxxxxx xxxxxxxxx xxxxxx xxx xxxxxxxxx xxx xxxxxxxxxx xx xxxx xxxx'x xxxx xxxxxxxxxxxxx.
+Separating your user interface from your game's graphics pipeline allows you to work on it independent of the game's graphics rendering engine and decreases the complexity of your game's code significantly.
 
-## Xxxx xxxxx
-
-
-Xxxx xxxxxx xxx xxxxx xxxxxxxxx xx xxx xxxx xxxxxx, xxx xxxxxxxx x xxxx xxxxx xxx XXX xxxx xxx xxxxxxxxxxx xxxx XxxxxxX. Xx xxxxxx, xxxxx'x xxxx xx xx xxxx xxxx. Xx xxxx xxxxxx xxxxxxx xxx xxxxxxxx xx xxx xxxx. Xxx, xx xxxx xx xx-xxxxx xxxx xx xxx xxxx xxx xxx xxxxxxxxx, xxx xxx xxxxx xxxxxxxxx xxx xxxxxxxxxxx xx xxx xxxx xxxx xxxxxx. Xx xxxxxx xxxx xxxx xx [Xxxxxxxx xxx xxxx xxxx xxxxxx](tutorial--defining-the-main-game-loop.md).
-
-Xx'x xxxx xxxx xx xxxxxxxx xxx xxxxxx xxxx'x xxxxxxxx xxxxxx xx xxxxxxx xxxxxx. Xxxx xxxx xx xxxxxxx xx [Xxxxxxxxxx xxx xxxxxxxxx xxxxxxxx](tutorial--assembling-the-rendering-pipeline.md).
-
-## Xxxxxxxx xxxxxx xxxx xxx xxxx xxxxxxx
+## Next steps
 
 
-Xxx.x
+This covers the basic structure of the game sample, and presents a good model for UWP game app development with DirectX. Of course, there's more to it than this. We only walked through the skeleton of the game. Now, we take an in-depth look at the game and its mechanics, and how those mechanics are implemented as the core game object. We review that part in [Defining the main game object](tutorial--defining-the-main-game-loop.md).
+
+It's also time to consider the sample game's graphics engine in greater detail. That part is covered in [Assembling the rendering pipeline](tutorial--assembling-the-rendering-pipeline.md).
+
+## Complete sample code for this section
+
+
+App.h
 
 ```cpp
 ///// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -663,7 +662,7 @@ public:
 };
 ```
 
-Xxx.xxx
+App.cpp
 
 ```cpp
 //--------------------------------------------------------------------------------------
@@ -1420,4 +1419,8 @@ int main(Platform::Array<Platform::String^>^)
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

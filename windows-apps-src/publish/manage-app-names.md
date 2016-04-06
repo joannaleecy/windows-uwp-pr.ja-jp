@@ -1,46 +1,50 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxxx xxx xx xxx xxxxx xxxx xxx'xx xxxxxxxx xxx xxxx xxx, xxxxxxx xxxxxxxxxx xxxxx xxxx, xxx xxxxxx xxxxx xxx xxx'x xxxx xxxx xxx Xxxxxx xxx xxxxx xxxx xx xxx Xxx xxxxxxxxxx xxxxxxx xxx xxxx xx xxxx xxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx.
-xxxxx: Xxxxxx xxx xxxxx
-xx.xxxxxxx: XYYXYYYY-YYYX-YYYY-XXYY-YYYXYYYYYYYX
+Description: Windows デベロッパー センター ダッシュ ボードの各アプリの [アプリ管理] セクションで、[アプリ名の管理] ページから、アプリについて予約したすべての名前の表示、追加の名前の予約、不要な名前の削除を行うことができます。
+title: アプリ名の管理
+ms.assetid: D95A6227-746E-4729-AE55-648A7102401C
 ---
 
-# Xxxxxx xxx xxxxx
+# アプリ名の管理
 
 
-Xxx xxx xxxx xxx xx xxx xxxxx xxxx xxx'xx xxxxxxxx xxx xxxx xxx, xxxxxxx xxxxxxxxxx xxxxx xxxx, xxx xxxxxx xxxxx xxx xxx'x xxxx xxxx xxx **Xxxxxx xxx xxxxx** xxxx xx xxx **Xxx xxxxxxxxxx** xxxxxxx xxx xxxx xx xxxx xxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx.
+Windows デベロッパー センター ダッシュ ボードの各アプリの **[アプリ管理]** セクションで、**[アプリ名の管理]** ページから、アプリについて予約したすべての名前の表示、追加の名前の予約、不要な名前の削除を行うことができます。
 
-## Xxxxxxx xxxxxxxxxx xxxxx xxx xxxx xxx
-
-
-Xxx xxx xxxxxxx xxxxxxxx xxx xxxxx xx xxx xxx xxx xxxx xxx. Xxxx xx xxxxxxxxxx xxxxxx xx xxx xxx xxxxxxxx xxxx xxx xx xxxxxxxx xxxxxxxxx xxx xxxx xx xxx xxxxxxxxx xxxxx xxx xxxxxxxxx xxxxxxxxx. Xxx xxx xxxx xxx xxxx xx xxxxxx xxx xxxx xx xx xxx xxxxx xxx xxxxx'x xxxxxxxxx xxx.
-
-Xx xxx **Xxxxxxx xxxx xxxxx** xxxxxxx xx xxx **Xxxxxx xxx xxxxx** xxxx, xxx'xx xxx x xxxx xxx. Xxxxx xxx xxxx xxx'x xxxx xx xxxxxxx, xxxx xxxxx **Xxxxx xxxxxxxxxxxx**. Xx xxx xxxx xx xxxxxxxxx, xxxxx **Xxxxxxx xxxx**.
-
-> **Xxxx**  Xxx xxxx xxxx xxxxx xxxxxxxxx xxx xxxxx, xxx xxx x xxxxxxx xxxx xxx xxx xx xxxxxxxxx, xxx [Xxxxxx xxxx xxx xx xxxxxxxxx x xxxx](create-your-app-by-reserving-a-name.md).
-
-Xxx xxx xxxxxxxx xxxxxxxxx xxxxxxxxxx xxx xxxxx xxxx xx xxxxxxx.
-
-## Xxxxxx xxx xxxxx
+## アプリの追加の名前の予約
 
 
-Xx xxx xx xxxxxx xxxx xx xxx x xxxx xxx'xx xxxxxxxxxx xxxxxxxx, xxx xxx xxxxxxx xx xx xxxxxxxx xx xxxx. Xxxx xxxx xxx'xx xxxxxxx xxxxxx xxx xx xx, xxxxx xxxx xxxxx xxxx xxx xxxx xxxx xxxxxxxxxxx xxxxxx xxxxxxxxx xxx xxxxxxx xxxx xx xxxxxxx xxx xxx.
+同じアプリに使用する複数のアプリ名を予約できます。 これは、複数の言語でアプリを提供している場合、さまざまな言語の異なる名前を使用する場合に特に役立ちます。 また、これを使って、まだ公開していないアプリの名前を変更することもできます。
 
-Xx xxxxxx xxx xx xxxx xxx'x xxxxxxxx xxxxx, xxxx xxx xxxx xxx xx xxxxxx xxxx xx xxx xxx xxxx xxxxx **Xxxxxx**. Xx xxx xxxxxxxxxxxx xxxxxx, xxxxx **Xxxxxx** xxxxx xx xxxxxxx.
+**[アプリ名の管理]** ページの **[その他の名前を予約]** セクションに、テキスト ボックスが表示されます。 予約する名前を入力し、**[利用可能か確認]** をクリックします。 名前が利用できる場合は、**[名前を予約]** をクリックします。
 
-Xxxx xxxx xxxx xxx xxxxx xx xxxx xx xxxxx xxx xxxxxxxx xxxx. Xx xxxxxxxxxx xxxxxx xx xxx xxxx xxxx xxxxxxxxx (xxxxx xxxx xxxxxxx xxx xx xxx xxx'xx xxxxxxxx xxx xxxx xxx), xxx xxx xxxxx **Xxxxxx xxxx xxx** xxxx xxx **Xxxxxxxx** xxxx.
+> **注**  アプリ名の予約に関する詳細や、特定の名前が利用できない可能性がある理由については、「[名前の予約によるアプリの作成](create-your-app-by-reserving-a-name.md)」をご覧ください。
 
-## Xxxxxx xx xxx xxxx xxx xxxxxxx xxxx xxxxxxxxx
+必要に応じて、ここで引き続き追加のアプリ名を予約できます。
+
+## アプリ名の削除
 
 
-Xx xxxx xxx xx xxxxxxx xx xxx Xxxxxxx Xxxxx xxx xxx xxxx xx xxxxxx xx, xxx xxx xx xx xx xxxxxxxxx x xxx xxxx xxx xx (xx xxxxxxxxx xxx xxxxx xxxxxxxxx xxxxx) xxx xxxx xxxxxxxx x xxx xxxxxxxxxx xxx xxx xxx. Xxxx xxxx xxx'xx xxxx xx xxxxxx xxxx xxxxxxx xx xxxxxxx xxx xxx xxxx xx xxxxx xxx xxx Xxxxx xx xxxxxxx xxx xxx xxxxx xxx xxx xxxx. Xx xxxx xx xxx xxx xxx xxxx xx xxx [**Xxxxxxx/Xxxxxxxxxx/XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn423240) xxxxxxx xx xxx xxx xxxxxxxx, xxx xxxxxx xxx xxxxxxxx xx xxxx xxxx xxxxxxxx xxx xxx'x xxxx. Xxx'xx xxxx xxxx xx xxxxxx xxxx xxx'x xxxxxxxxxxx xxx xxxxxx xxx xxxx xx xxx xxxxxxx xx xxxxxxxx xxxxx.
+以前に予約した名前を使用しなくなった場合は、ここで削除することによって予約を解除できます。 この操作によって名前はすぐに他の開発者が予約して使うことができるようになるため、操作を行う前に確認してください。
 
-Xxxx xxxx xxx xxx xxxx xxxxxxxxx xxxx xxx xxx xxxx, xxx xxx xxxxxx xxx xxx xxxx xxxx xxx xx xxxxxx xxxx xx xxx.
+アプリの予約済みの名前の 1 つを削除するには、使わなくなった名前を検索し、**[削除]** をクリックします。 確認のダイアログ ボックスで、もう一度 **[削除]** をクリックして確認します。
+
+アプリには、少なくとも 1 つの予約済みの名前が必要です。 ダッシュボードからアプリを完全に削除する (そのアプリについて予約したすべての名前も解除する) には、アプリの **[概要]** ページから **[このアプリを削除する]** をクリックします。
+
+## 公開済みアプリの名前の変更
+
+
+既に Windows ストアで公開されているアプリの名前を変更する場合は、(前に説明した手順に従って) アプリの新しい名前を予約し、アプリの新しい申請を作成することによってアプリ名を変更できます。 ストアでアプリを新しい名前で表示するには、新しい名前を含めるようにパッケージを更新する必要があります。 アプリ マニフェストの [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) 要素で新しい名前を使い、アプリの名前を含むすべてのグラフィックスとテキストを更新します。 また、アプリの説明も確認し、説明の中でアプリ名が使われている場合は名前を変更する必要があります。
+
+アプリが新しい名前で公開されたら、不要になった古い名前を削除できます。
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

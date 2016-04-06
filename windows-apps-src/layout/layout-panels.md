@@ -1,26 +1,26 @@
 ---
-Xxxxxxxxxxx: Xxx xxxxxx xxxxxx xx xxxxxxx xxx xxxxx XX xxxxxxxx xx xxxx xxx.
-xxxxx: Xxxxxx xxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx
-xx.xxxxxxx: YYXYXYYY-XXXY-YXYY-XXYY-XYYYYYYYYYYY
-xxxxx: Xxxxxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: レイアウト パネルを使って、アプリの UI 要素を配置およびグループ化します。
+title: ユニバーサル Windows プラットフォーム (UWP) アプリのレイアウト パネル
+ms.assetid: 07A7E022-EEE9-4C81-AF07-F80868665994
+label: レイアウト パネル
+template: detail.hbs
 ---
-# Xxxxxx xxxxxx
+# レイアウト パネル
 
-Xxx xxx xxxxxx xxxxxx xx xxxxxxx xxx xxxxx XX xxxxxxxx xx xxxx xxx. Xxx xxxxx-xx XXXX xxxxxx xxxxxx xxxxxxx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx), [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx), [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx), [**XxxxxxxxXxxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx), xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx). Xxxx, xx xxxxxxxx xxxx xxxxx xxx xxxx xxx xx xxx xx xx xxxxxx XXXX XX xxxxxxxx.
+レイアウト パネルを使って、アプリの UI 要素を配置およびグループ化します。 組み込みの XAML レイアウト パネルには、[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)、[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx)、[**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)、[**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx)、[**Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) があります。 ここでは、各パネルについて説明し、パネルを使って XAML UI 要素をレイアウトする方法を示します。
 
-Xxxxx xxx xxxxxxx xxxxxx xx xxxxxxxx xxxx xxxxxxxx x xxxxxx xxxxx:
-- Xxx xxx xxxxx xxxxxxxxx xxx xxxxx xxxxxxxx.
-- Xxx xxx xxxxx xxxxx xxx xxxxx xxxxxxxx.
-- Xxx xxxxxxxxxxx xxxxx xxxxxxxx xxx xxxxxxx xx xxx xx xxxx xxxxx (x-xxxxx).
-- Xxx xxxxxx xxx xxxxxxxxxx xx xxxxxx xxxxx xxxxxxxx xxxxxx xx xxxxxx xxxx xxxxxxx xxxxxx.
+レイアウト パネルを選ぶときに考慮する事項がいくつかあります。
+- パネルに子要素がどのように配置されるか。
+- パネルで子要素のサイズがどのように変更されるか。
+- 重複する子要素をお互いに重ねる方法 (z オーダー)。
+- 目的のレイアウトの作成に必要な、入れ子になったパネル要素の数と複雑さ。
 
 
-**Xxxxx xxxxxxxx xxxxxxxxxx**
+**パネルの添付プロパティ**
 
-Xxxx XXXX xxxxxx xxxxxx xxx xxxxxxxx xxxxxxxxxx xx xxx xxxxx xxxxx xxxxxxxx xxxxxx xxx xxxxxx xxxxx xxxxx xxx xxxx xxxxxx xx xxxxxxxxxx xx xxx XX. Xxxxxxxx xxxxxxxxxx xxx xxx xxxxxx *XxxxxxxxXxxxxxxxXxxxxxxx.XxxxxxxxXxxx*. Xx xxx xxxx xxxxxx xxxx xxx xxxxxx xxxxxx xxxxx xxxxxx, xxxxxxxx xxxxxxxxxx xx XX xxxxxxxx xxxx xxxxxxx xxxxxx xxxxxxxxxxxxxxx xx x xxxxxx xxx xxxxxxxxxxx xx xxx xxxx xxxxxxxxx xxxxxx xxxxx xxxx.
+多くの XAML レイアウト パネルでは添付プロパティを使用して、子要素がどのように UI に表示される必要があるかについて親パネルに通知できるようにしています。 添付プロパティでは、*AttachedPropertyProvider.PropertyName* という構文が使用されます。 パネルを他のパネルに入れ子にする場合、親に対するレイアウト属性を指定する UI 要素の添付プロパティは、最も近い親パネルによってのみ解釈されます。
 
-Xxxx xx xx xxxxxxx xx xxx xxx xxx xxx xxx [**Xxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) xxxxxxxx xxxxxxxx xx x Xxxxxx xxxxxxx xx XXXX. Xxxx xxxxxxx xxx xxxxxx Xxxxxx xxxx xxx Xxxxxx xxxxxx xx xxxxxxxxxx YY xxxxxxxxx xxxxxx xxxx xxx xxxx xxxx xx xxx Xxxxxx.
+XAML で Button コントロールの [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) 添付プロパティを設定する方法の例を以下に示します。 これにより、親 Canvas に、Button を Canvas の左端から 50 有効ピクセルの位置に配置する必要があることを通知します。
 
 ```xaml
 <Canvas>
@@ -28,15 +28,15 @@ Xxxx xx xx xxxxxxx xx xxx xxx xxx xxx xxx [**Xxxxxx.Xxxx**](https://msdn.microso
 </Canvas>
 ```
 
-Xxx xxxx xxxx xxxxx xxxxxxxx xxxxxxxxxx, xxx [Xxxxxxxx xxxxxxxxxx xxxxxxxx](../xaml-platform/attached-properties-overview.md).
+添付プロパティについて詳しくは、「[添付プロパティの概要](../xaml-platform/attached-properties-overview.md)」をご覧ください。
 
-> **Xxxx**&xxxx;&xxxx;Xx xxxxxxxx xxxxxxxx xx x XXXX xxxxxxx xxxx xxxxxxxx xxxxxxx xxxxxx xx xxx xx xxx xxxx xxxx. Xx xxx xxxxxxxx xxxxxxxxxx xx xxxx, xxx xxx *Xxxxxxxx xxxxxxxxxx xx xxxx* xxxxxxx xx xxx *Xxxxxxxx xxxxxxxxxx xxxxxxxx* xxxxxxx.
+> **注**&nbsp;&nbsp;添付プロパティは、コードから取得または設定するための特別な構文を必要とする XAML の概念です。 コードで添付プロパティを使用するには、「*添付プロパティの概要*」の「*コードでの添付プロパティ*」をご覧ください。
 
-**Xxxxx xxxxxxx**
+**パネルの境界線**
 
-Xxx XxxxxxxxXxxxx, XxxxxXxxxx, xxx Xxxx xxxxxx xxxxxx xxxxxx xxxxxxxxxx xxxx xxx xxx xxxx x xxxxxx xxxxxx xxx xxxxx xxxxxxx xxxxxxxx xxxx xx xx xxxxxxxxxx Xxxxxx xxxxxxx. Xxx xxxxxx xxxxxxxxxx xxx **XxxxxxXxxxx**, **XxxxxxXxxxxxxxx**, **XxxxxxXxxxxx**, xxx **Xxxxxxx**.
+RelativePanel、StackPanel、Grid の各パネルには境界線プロパティが定義されており、別の Border 要素でラップすることなく、パネルの周囲に境界線を描画できます。 境界線プロパティには、**BorderBrush**、**BorderThickness**、**CornerRadius**、**Padding** があります。
 
-Xxxx’x xx xxxxxxx xx xxx xx xxx xxxxxx xxxxxxxxxx xx x Xxxx.
+Grid で境界線プロパティを設定する例を以下に示します。
 
 ```xaml
 <Grid BorderBrush="Blue" BorderThickness="12" CornerRadius="12" Padding="12">
@@ -44,28 +44,27 @@ Xxxx’x xx xxxxxxx xx xxx xx xxx xxxxxx xxxxxxxxxx xx x Xxxx.
 </Grid>
 ```
 
-![X Xxxx xxxx xxxxxxx](images/layout-panel-grid-border.png)
+![境界線を持つグリッド](images/layout-panel-grid-border.png)
 
-Xxxxx xxx xxxxx-xx xxxxxx xxxxxxxxxx xxxxxxx xxx XXXX xxxxxxx xxxxx, xxxxx xxx xxxxxxx xxx XX xxxxxxxxxxx xx xxxx xxx. Xxx xxxx xxxx xxxxx xxxxxx xxxxxx xxx XX xxxxxxxxxxx, xxx [Xxxxxxxx xxxx XXXX xxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/mt404609.aspx).
+組み込みの境界線のプロパティを使うことによって、XAML 要素の数を減らし、アプリの UI のパフォーマンスを向上させることができます。 レイアウト パネルと UI のパフォーマンスについて詳しくは、「[XAML レイアウトの最適化](https://msdn.microsoft.com/en-us/library/windows/apps/mt404609.aspx)」をご覧ください。
 
-## XxxxxxxxXxxxx
+## RelativePanel
 
-[
-            **XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) xxxx xxx xxxxxx XX xxxxxxxx xx xxxxxxxxxx xxxxx xxxx xx xx xxxxxxxx xx xxxxx xxxxxxxx xxx xx xxxxxxxx xx xxx xxxxx. Xx xxxxxxx, xx xxxxxxx xx xxxxxxxxxx xx xxx xxxxx xxxx xxxxxx xx xxx xxxxx. Xxx xxx xxx XxxxxxxxXxxxx xxxx x [**XxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx)x xx xxxxxxxxx xxxx XX xxx xxxxxxxxx xxxxxx xxxxx.
+[**RelativePanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx) では、他の要素やパネルを基準として UI 要素を配置する場所を指定することにより、UI 要素をレイアウトすることができます。 既定では、要素はパネルの左上隅に配置されます。 RelativePanel を、[**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.visualstatemanager.aspx) や [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.adaptivetrigger.aspx) と共に使用して、さまざまなウィンドウ サイズに合わせて UI を配置し直すことができます。
 
-Xxxx xxxxx xxxxx xxx xxxxxxxx xxxxxxxxxx xxx xxx xxx xx xxxxx xx xxxxxxx xxxx xxx xxxx xx xxxxxx xx xxx xxxxx, xxx xxxxx xxx xxxxxxxx xx xx xxxxxxxx xx xxxxx xxxxxxxx.
+次の表に、要素をパネルの端や中央に揃えたり、他の要素を基準として要素を揃えて配置したりするために使用できる添付プロパティを示します。
 
-Xxxxx xxxxxxxxx | Xxxxxxx xxxxxxxxx | Xxxxxxx xxxxxxxx
+パネルの配置 | 兄弟の配置 | 兄弟の位置
 ----------------|-------------------|-----------------
-[**XxxxxXxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aligntopwithpanel.aspx) | [**XxxxxXxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aligntopwith.aspx) | [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.above.aspx)  
-[**XxxxxXxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignbottomwithpanel.aspx) | [**XxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignbottomwith.aspx) | [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.below.aspx)  
-[**XxxxxXxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignleftwithpanel.aspx) | [**XxxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignleftwith.aspx) | [**XxxxXx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.leftof.aspx)  
-[**XxxxxXxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignrightwithpanel.aspx) | [**XxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignrightwith.aspx) | [**XxxxxXx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.rightof.aspx)  
-[**XxxxxXxxxxxxxxxXxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanel.aspx) | [**XxxxxXxxxxxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwith.aspx) | &xxxx;   
-[**XxxxxXxxxxxxxXxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithpanel.aspx) | [**XxxxxXxxxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignverticalcenterwith.aspx) | &xxxx;   
+[**AlignTopWithPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aligntopwithpanel.aspx) | [**AlignTopWith**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aligntopwith.aspx) | [**Above**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.above.aspx)  
+[**AlignBottomWithPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignbottomwithpanel.aspx) | [**AlignBottomWith**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignbottomwith.aspx) | [**Below**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.below.aspx)  
+[**AlignLeftWithPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignleftwithpanel.aspx) | [**AlignLeftWith**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignleftwith.aspx) | [**LeftOf**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.leftof.aspx)  
+[**AlignRightWithPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignrightwithpanel.aspx) | [**AlignRightWith**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignrightwith.aspx) | [**RightOf**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.rightof.aspx)  
+[**AlignHorizontalCenterWithPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwithpanel.aspx) | [**AlignHorizontalCenterWith**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignhorizontalcenterwith.aspx) | &nbsp;   
+[**AlignVerticalCenterWithPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignverticalcenterwithpanel.aspx) | [**AlignVerticalCenterWith**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.alignverticalcenterwith.aspx) | &nbsp;   
 
  
-Xxxx XXXX xxxxx xxx xx xxxxxxx xxxxxxxx xx x XxxxxxxxXxxxx.
+次の XAML は、RelativePanel で要素を配置する方法を示しています。
 
 ```xaml
 <RelativePanel BorderBrush="Gray" BorderThickness="1">
@@ -87,23 +86,22 @@ Xxxx XXXX xxxxx xxx xx xxxxxxx xxxxxxxx xx x XxxxxxxxXxxxx.
 </RelativePanel>
 ```
 
-Xxx xxxxxx xxxxx xxxx xxxx. 
+結果は次のようになります。 
 
-![Xxxxxxxx xxxxx](images/layout-panel-relative-panel.png)
+![RelativePanel](images/layout-panel-relative-panel.png)
 
-Xxxx xxx x xxx xxxxx xx xxxx xxxxx xxx xxxxxx xx xxx xxxxxxxxxx.
-- Xxx xxx xxxxxxxxx xx xxxxx xx xxxxxxxx xxxx xx YYxYY. Xx'x xxxxxx xx xxx xxxxx xxxx xxxxxx xx xxx xxxxx, xxxxx xx xxx xxxxxxx xxxxxxxx.
-- Xxx xxxxx xxxxxxxxx xx xxxxx xx xxxxxxxx xxxxxx xx YY. Xxx xxxx xxxx xx xxxxxxx xxxx xxx xxx xxxxxxxxx, xxx xxx xxxxx xxxx xx xxxxxxx xxxx xxx xxxx xxxxxxxxx, xxxxx xxxxxxxxxx xxx xxxxx.
-- Xxx xxxxxx xxxxxxxxx xxx'x xxxxx xx xxxxxxxx xxxx. Xxx xxxx xxxx xx xxxxxxx xxxx xxx xxxx xxxxxxxxx. Xxx xxxxx xxx xxxxxx xxxxx xxx xxxxxxx xxxx xxx xxxx xx xxx xxxxx. Xxx xxxx xx xxxxxxxxxx xx xxxxx xxxxxxxxxx xxx xx xxxx xxxxxx xx xxx xxxxx xxxxxxx.
+長方形のサイズについて、注意が必要な点をいくつか示します。
+- 赤色の長方形には、明示的なサイズとして 44 x 44 が指定されています。 この要素はパネルの左上隅に配置されます。これは既定の位置です。
+- 緑色の四角形には、明示的な高さとして 44 が指定されています。 この長方形の左端は赤色の長方形に揃えられ、その右端は青色の長方形と揃えられています。これにより、この長方形の幅が決まります。
+- 黄色の長方形には、明示的なサイズは指定されていません。 この長方形の左端は青色の長方形に揃えられます。 右端と下端はパネルの端に揃えられます。 この長方形のサイズはこれらの配置によって決まり、パネルのサイズが変更されると、長方形のサイズも変更されます。
 
-## XxxxxXxxxx
+## StackPanel
 
-[
-            **XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) xx x xxxxxx xxxxxx xxxxx xxxx xxxxxxxx xxx xxxxx xxxxxxxx xxxx x xxxxxx xxxx xxxx xxx xx xxxxxxxx xxxxxxxxxxxx xx xxxxxxxxxx. XxxxxXxxxx xxxxxxxx xxx xxxxxxxxx xxxx xx xxxxxxxxx xxxxx xxx xxxx xx xxxxxxx x xxxxx xxxxxxxxxx xx xxx XX xx xxxx xxxx.
+[**StackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx) は、子要素が単一の行に水平方向または垂直方向に配置される単純なレイアウト パネルです。 StackPanel は通常、ページ上に UI の小さなサブセクションを配置する場合に使います。
 
-Xxx xxx xxx xxx [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.orientation.aspx) xxxxxxxx xx xxxxxxx xxx xxxxxxxxx xx xxx xxxxx xxxxxxxx. Xxx xxxxxxx xxxxxxxxxxx xx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.orientation.aspx).
+子要素を並べる向きを指定するには、[**Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.orientation.aspx) プロパティを使います。 既定の向きは [**Vertical**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.orientation.aspx) です。
 
-Xxx xxxxxxxxx XXXX xxxxx xxx xx xxxxxx x xxxxxxxx XxxxxXxxxx xx xxxxx.
+次の XAML は、項目の垂直方向の StackPanel を作成する方法を示しています。
 
 ```xaml
 <StackPanel>
@@ -115,21 +113,23 @@ Xxx xxxxxxxxx XXXX xxxxx xxx xx xxxxxx x xxxxxxxx XxxxxXxxxx xx xxxxx.
 ```
 
 
-Xxx xxxxxx xxxxx xxxx xxxx.
+結果は次のようになります。
 
-![Xxxxx xxxxx](images/layout-panel-stack-panel.png)
+![StackPanel](images/layout-panel-stack-panel.png)
 
-Xx x XxxxxXxxxx, xx x xxxxx xxxxxxx'x xxxx xx xxx xxx xxxxxxxxxx, xx xxxxxxxxx xx xxxx xxx xxxxxxxxx xxxxx (xx xxxxxx xx xxx Xxxxxxxxxxx xx **Xxxxxxxxxx**). Xx xxxx xxxxxxx, xxx xxxxx xx xxx xxxxxxxxxx xx xxx xxx. Xxx xxxxxxxxxx xxxxxx xx xxxx xxx xxxxxx xxxxx xx xxx XxxxxXxxxx.
+StackPanel では、子要素のサイズを明示的に設定しない場合、利用可能な幅 (Orientation が **Horizontal** の場合は高さ) いっぱいに拡大されます。 この例では、長方形の幅は設定されていません。 長方形は、StackPanel の幅いっぱいに拡張されています。
 
-## Xxxx
+## Grid
 
-Xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) xxxxx xxxxxxxx xxxxxxxxx xxxxxxxx xx xxxxx-xxx xxx xxxxx-xxxxxx xxxxxxx. Xxx xxx xxxxxxx x Xxxx xxxxx'x xxxx xxx xxxxxxx xx xxxxx xxx [**XxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowdefinitions.aspx) xxx [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columndefinitions.aspx) xxxxxxxxxx. Xx XXXX, xxx xxxxxxxx xxxxxxx xxxxxx xx xxxxxxx xxx xxxx xxx xxxxxxx xxxxxx xxx Xxxx xxxxxxx. Xxx xxx xxxxxxxxxx xxxxx xxxxxx x xxxxxx xx x xxx xx xxxxx **Xxxx** xx xxxx xxxxxx.
+[
+            **Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) パネルは、複数行および段組レイアウトでのコントロールの配置をサポートしています。 [
+            **RowDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowdefinitions.aspx) プロパティと [**ColumnDefinitions**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columndefinitions.aspx) プロパティを使うことによって、Grid パネルの行と列を指定できます。 XAML では、プロパティ要素構文を使用して、Grid 要素内の行と列を宣言します。 **Auto** サイズ変更またはスター サイズ指定を使うと、列または行内でスペースを分散できます。
 
-Xxx xxxxxxxx xxxxxxx xx xxxxxxxx xxxxx xx xxx Xxxx xx xxxxx xxx [**Xxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.column.aspx) xxx [**Xxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.row.aspx) xxxxxxxx xxxxxxxxxx.
+オブジェクトを Grid の特定のセルに配置するには、[**Grid.Column**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.column.aspx) 添付プロパティと [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.row.aspx) 添付プロパティを使います。
 
-Xxx xxx xxxx xxxxxxx xxxx xxxxxx xxxxxxxx xxxx xxx xxxxxxx xx xxxxx xxx [**Xxxx.XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowspan.aspx) xxx [**Xxxx.XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columnspan.aspx) xxxxxxxx xxxxxxxxxx.
+複数の行や列をまたいでコンテンツを表示するには、[**Grid.RowSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.rowspan.aspx) 添付プロパティと [**Grid.ColumnSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.columnspan.aspx) 添付プロパティを使います。
 
-Xxxx XXXX xxxxxxx xxxxx xxx xx xxxxxx x Xxxx xxxx xxxxx xxxx xxx xxx xxxxxxx. Xxx xxxxxx xx xxx xxxxx xxx xxxxx xxxx xx xxxx xxxxx xxxxxx xx xxxxxxx xxx xxxx. Xxx xxxxxx xx xxx xxxxxx xxx xxxxx xx xxx xxxx xx xxx xxxxxxxxx xxxxxx. Xxx xxxxx xx xxx xxxxxxx xx xxxxx xxxxxxx xxxxxx xxx xxxxxxxxx xxxxxxxxx xxxxx.
+次の XAML の例では、3 つの行と 2 つの列を持つ Grid を作成する方法を示しています。 最初と 3 つ目の行の高さは、ちょうどテキストを含めることのできるサイズです。 2 つ目の行により、残りの高さがすべて使用されています。 列の幅は、使用できるコンテナーの幅の中で均等に分けられます。
 
 ```xaml
 <Grid>
@@ -149,27 +149,27 @@ Xxxx XXXX xxxxxxx xxxxx xxx xx xxxxxx x Xxxx xxxx xxxxx xxxx xxx xxx xxxxxxx. Xx
 ```
 
 
-Xxx xxxxxx xxxxx xxxx xxxx.
+結果は次のようになります。
 
-![Xxxx](images/layout-panel-grid.png)
+![Grid](images/layout-panel-grid.png)
 
-Xx xxxx xxxxxxx, xxx xxxxxx xxxxx xxxx xxxx: 
-- Xxx xxxxxx xxx xxx xx xxxxxxxx xxxxxx xx YY xxxxxxxxx xxxxxx. Xx xxxxxxx, xxx xxxxxx xx xxx xxxxx xxx xxxxx xxxxxxxx xxxxx xx xxxx xxxx.
-- Xxx xxxxx xx xxx xxxxx xxxxxx xx xxx xx **Xxxx**, xx xx'x xx xxxx xx xxxxxx xxx xxx xxxxxxxx. Xx xxxx xxxx, xx'x YY xxxxxxxxx xxxxxx xxxx xx xxxxxxxxxxx xxx xxxxx xx xxx xxx xxxxxxxxx.
-- Xxxxx xxx xx xxxxx xxxx xxxxxxxxxxx xx xxx xxxxxxxxxx, xx xxxx xxx xxxxxxxxx xx xxxx xxx xxxx xxxx xx'x xx.
+この例では、サイズ設定は次のように行われます。 
+- 2 番目の行には、明示的に 44 有効ピクセルの高さが指定されます。 既定では、最初の行の高さは、残っているスペースいっぱいになります。
+- 最初の列の幅は **Auto** に設定されているため、その子に必要な幅になります。 この例では、赤色の長方形の幅に対応するために、その幅は 44 有効ピクセルになります。
+- 長方形に対してその他のサイズの制約はないため、各長方形は配置されているグリッドのセルいっぱいに拡大されます。
 
-## XxxxxxxxXxxxxXxxxXxxx
+## VariableSizedWrapGrid
+
+[**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) は、要素が複数行、複数列に配置されるグリッド スタイルのレイアウト パネルです。このパネルでは、[**MaximumRowsOrColumns**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx) 値に達すると新しい行または列に自動的に折り返して配置されます。 
 
 [
-            **XxxxxxxxXxxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx) xxxxxxxx x xxxx-xxxxx xxxxxx xxxxx xxxxx xxxxxxxx xxx xxxxxxxx xx xxxx xx xxxxxxx xxxx xxxxxxxxxxxxx xxxx xx x xxx xxx xx xxxxxx xxxx xxx [**XxxxxxxXxxxXxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.maximumrowsorcolumns.aspx) xxxxx xx xxxxxxx. 
+            **Orientation**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.orientation.aspx) プロパティは、折り返す前にグリッドの行と列のどちらの向きに項目を追加するかを指定します。 既定の向きは **Vertical** で、グリッドの項目は上から下へ列がいっぱいになるまで追加された後、新しい列に折り返されます。 この値が **Horizontal** の場合は、グリッドの項目は左から右に追加され、新しい行に折り返されます。
 
-Xxx [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.orientation.aspx) xxxxxxxx xxxxxxxxx xxxxxxx xxx xxxx xxxx xxx xxxxx xx xxxx xx xxxxxxx xxxxxx xxxxxxxx. Xxx xxxxxxx xxxxxxxxxxx xx **Xxxxxxxx**, xxxxx xxxxx xxx xxxx xxxx xxxxx xxxx xxx xx xxxxxx xxxxx x xxxxxx xx xxxx, xxxx xxxxx xx x xxx xxxxxx. Xxxx xxx xxxxx xx **Xxxxxxxxxx**, xxx xxxx xxxx xxxxx xxxx xxxx xx xxxxx, xxxx xxxxx xx x xxx xxx.
+セルのサイズは、[**ItemHeight**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.itemheight.aspx) と [**ItemWidth**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.itemwidth.aspx) で指定します。 各セルは同じサイズです。 ItemHeight または ItemWidth が指定されていない場合、最初のセルのサイズがそのコンテンツに合わせて変更され、その他の各セルは最初のセルのサイズになります。
 
-Xxxx xxxxxxxxxx xxx xxxxxxxxx xx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.itemheight.aspx) xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.itemwidth.aspx). Xxxx xxxx xx xxx xxxx xxxx. Xx XxxxXxxxxx xx XxxxXxxxx xx xxx xxxxxxxxx, xxxx xxx xxxxx xxxx xxxxx xx xxx xxx xxxxxxx, xxx xxxxx xxxxx xxxx xx xxx xxxx xx xxx xxxxx xxxx.
+子要素が配置される隣接セルの数を指定するには、[**VariableSizedWrapGrid.ColumnSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.columnspan.aspx) 添付プロパティと [**VariableSizedWrapGrid.RowSpan**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.rowspan.aspx) 添付プロパティを使います。
 
-Xxx xxx xxx xxx [**XxxxxxxxXxxxxXxxxXxxx.XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.columnspan.aspx) xxx [**XxxxxxxxXxxxxXxxxXxxx.XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.rowspan.aspx) xxxxxxxx xxxxxxxxxx xx xxxxxxx xxx xxxx xxxxxxxx xxxxx x xxxxx xxxxxxx xxxxxx xxxx.
-
-Xxxx'x xxx xx xxx x XxxxxxxxXxxxxXxxxXxxx xx XXXX.
+XAML での VariableSizedWrapGrid の使い方を以下に示します。
 
 ```xaml
 <VariableSizedWrapGrid MaximumRowsOrColumns="3" ItemHeight="44" ItemWidth="44">
@@ -185,21 +185,22 @@ Xxxx'x xxx xx xxx x XxxxxxxxXxxxxXxxxXxxx xx XXXX.
 ```
 
 
-Xxx xxxxxx xxxxx xxxx xxxx.
+結果は次のようになります。
 
-![Xxxxxxxx xxxx xxxx xxxx](images/layout-panel-variable-size-wrap-grid.png)
+![VariableSizedWrapGrid](images/layout-panel-variable-size-wrap-grid.png)
 
-Xx xxxx xxxxxxx, xxx xxxxxxx xxxxxx xx xxxx xx xxxx xxxxxx xx Y. Xxx xxxxx xxxxxx xxxxxxxx xxxx Y xxxxx (xxx xxx xxx xxxx xxxxxxxxxx) xxxxxxx xxx xxxx xxxxxxxxx xxxxx Y xxxx. Xxx xxxxx xxxxxxxxx xxxx xxxxx xx xxx xxx xx xxx xxxx xxxxxx.
+この例では、各列の行の最大数は 3 です。 青色の長方形は 2 行にまたがるため、最初の列には項目が 2 つだけ (赤色と青色の四角形) が含まれています。 緑色の四角形は、次の列の先頭に折り返されています。
 
-## Xxxxxx
+## Canvas
 
-Xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) xxxxx xxxxxxxxx xxx xxxxx xxxxxxxx xxxxx xxxxx xxxxxxxxxx xxxxxx. Xxx xxxxxxx xxx xxxxxx xx xxxxxxxxxx xxxxx xxxxxxxx xx xxxxxxx xxx [**Xxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) xxx [**Xxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.top.aspx) xxxxxxxx xxxxxxxxxx xx xxxx xxxxxxx. Xxxxxx xxxxxx, xxx xxxxxx Xxxxxx xxxxx xxxxx xxxxxxxx xxxxxxxx xxxxxx xxxx xxx xxxxxxxx xxx xxxx xxxxx xxxxxx xxxxxx xxx [Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.arrange.aspx) xxxx xx xxxxxx.
+[
+            **Canvas**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx) パネルでは、その子要素が固定座標点を使って配置されます。 個々の子要素の位置を指定するには、要素ごとに [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.left.aspx) 添付プロパティと [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.top.aspx) 添付プロパティを設定します。 レイアウト時に、親 Canvas は、子要素のこれらの添付プロパティ値を読み取り、レイアウトの [Arrange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.arrange.aspx) パス時にこれらの値を使います。
 
-Xxxxxxx xx x Xxxxxx xxx xxxxxxx, xxxxx xxx xxxxxx xx xxxxx xx xxx xx xxxxxxx xxxxxx. Xx xxxxxxx, xxx Xxxxxx xxxxxxx xxxxx xxxxxxx xx xxx xxxxx xx xxxxx xxxx’xx xxxxxxxx, xx xxx xxxx xxxxx xx xxxxxxxx xx xxx (xxxx xxxxxxx xxx x xxxxxxx x-xxxxx xx Y). Xxxx xx xxx xxxx xx xxxxx xxxxx-xx xxxxxx. Xxxxxxx, Xxxxxx xxxx xxxxxxxx xxx [**Xxxxxx.XXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx) xxxxxxxx xxxxxxxx xxxx xxx xxx xxx xx xxxx xx xxx xxxxx xxxxxxxx. Xxx xxx xxx xxxx xxxxxxxx xx xxxx xx xxxxxx xxx xxxx xxxxx xx xxxxxxxx xxxxxx xxx xxxx. Xxx xxxxxxx xxxx xxx xxxxxxx Xxxxxx.XXxxxx xxxxx xxxxx xxxx xxx xxxxxxxxx xxxxx xxxx xxx xxxxx xxxxxxxx xxxx xxxxx xxx xxxx xxxxx xx xxxxxxx xx xxx xxx. Xxxx xxxx xxxxx xxxxx (xxxxxxxxxxxx) xx xxxxxxxxx, xx xxxx xx xxxxxxxx xxxxxxx, xxx xxxxxxxx xxxxx xx xxxxxxx xxxxx xxxxx xx xxxxxxx xx xxx xxx xxx xxx x xxx-xxxxxxx xxxxx xxxxx.
+Canvas 内のオブジェクトは重ね合わせることができます。この場合、1 つのオブジェクトが別のオブジェクトの上に描画されます。 既定では、Canvas は、宣言されている順序で子要素をレンダリングするため、最後の子が一番上に表示されます (各要素の既定の z-index は 0 です)。 これは他の組み込みパネルでも同じです。 ただし、Canvas では、子要素にそれぞれ設定できる [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.zindex.aspx) 添付プロパティもサポートされています。 コードでこのプロパティを設定することにより。実行時に要素の描画順序を変更することができます。 Canvas.ZIndex 値が最大である要素は最後に描画されるため、同じ領域を共有するか、重なり合っている他の要素の上に描画されます。 アルファ値 (透明度) が優先されるため、要素が重なる場合でも、一番上の要素のアルファ値が最大でないと、重なる領域に表示されるコンテンツがブレンドされることがあります。
 
-Xxx Xxxxxx xxxx xxx xx xxx xxxxxx xx xxx xxxxxxxx. Xxxx xxxxxxx xxxx xxxxxxx xxx xxxx.
+Canvas では、子のサイズ変更は行われません。 各要素でそのサイズを指定する必要があります。
 
-Xxxx'x xx xxxxxxx xx x Xxxxxx xx XXXX.
+XAML での Canvas の例を以下に示します。
 
 ```xaml
 <Canvas Width="120" Height="120">
@@ -211,13 +212,18 @@ Xxxx'x xx xxxxxxx xx x Xxxxxx xx XXXX.
 ```
 
 
-Xxx xxxxxx xxxxx xxxx xxxx.
+結果は次のようになります。
 
-![Xxxxxx](images/layout-panel-canvas.png)
+![Canvas](images/layout-panel-canvas.png)
 
-Xxx xxx Xxxxxx xxxxx xxxx xxxxxxxxxx. Xxxxx xx'x xxxxxxxxxx xx xx xxxx xx xxxxxxxxx xxxxxxx xxxxxxxxx xx xxxxxxxx xx XX xxx xxxx xxxxxxxxx, x xxxxx xxxxxxxxxx xxxxxx xxxxx xxxxxx xxxx xxxx xx xxxx XX xx xx xxxx xxxxxxxx xx xxxxxxx xxx xxxxxx xxxx xxxxxxx. Xxx xxxxxx xxxxxx xxxxx xxxx xxxx xxxxxx xxxxxxxxxxx xxxxxxx, xxxxx xxx xxxxxxx, xxxxxxxx xxxxxxxx, xxx x xxxxxx xx xxxxx xxxx xxxxxxxxx.
+Canvas パネルは慎重に使用する必要があります。 UI 要素の位置を正確に制御できるのは便利ですが、シナリオによっては、固定配置されるレイアウト パネルにより UI の領域がアプリ全体のウィンドウ サイズの変更に適応しなくなることがあります。 アプリのウィンドウのサイズ変更は、デバイスの向きの変更、アプリのウィンドウの分割、モニターの変更を始めとする多くのユーザー シナリオによって発生する場合があります。
 
-## Xxxxxx xxx XxxxxXxxxxxx
+## ItemsControl 用のパネル
 
-Xxxxx xxx xxxxxxx xxxxxxx-xxxxxxx xxxxxx xxxx xxx xx xxxx xxxx xx xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) xx xxxxxxx xxxxx xx xx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx). Xxxxx xxx [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx), [**XxxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx), [**XxxxxxxxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx), xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx). Xxx xxx'x xxx xxxxx xxxxxx xxx xxxxxxx XX xxxxxx.
+[
+            **ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx) に項目を表示するための [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) としてのみ使用できる特殊な用途のパネルがいくつかあります。 このようなパネルには、[**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemsstackpanel.aspx)、[**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemswrapgrid.aspx)、[**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.virtualizingstackpanel.aspx)、[**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.wrapgrid.aspx) があります。 一般的な UI のレイアウトに、これらのパネルを使うことはできません。
+
+
 <!--HONumber=Mar16_HO1-->
+
+

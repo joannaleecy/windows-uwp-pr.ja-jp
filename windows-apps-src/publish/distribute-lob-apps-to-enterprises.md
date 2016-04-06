@@ -1,75 +1,79 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxxxxxx xxxx-xx-xxxxxxxx (XXX) xxxx xxxxxxxx xx xxxxxxxxxxx xxx xxxxxx xxxxxxxxxxx xxx xxx Xxxxxxx Xxxxx xxx Xxxxxxxx, xxxxxxx xxxxxx xxx xxxx xxxxxxx xxxxxxxxx xx xxx Xxxxx.
-xxxxx: Xxxxxxxxxx XXX xxxx xx xxxxxxxxxxx
-xx.xxxxxxx: YYYYYYYX-XXYY-YXXY-XXYX-XYYYXXYYYYYY
+Description: 基幹業務 (LOB) アプリを、ボリューム取得できるように、ビジネス向け Windows ストアで企業に直接公開できます。アプリをストアで一般公開する必要はありません。
+title: LOB アプリの企業への配布
+ms.assetid: 2050126E-CE49-4DE3-AC2B-A572AC895158
 ---
 
-# Xxxxxxxxxx XXX xxxx xx xxxxxxxxxxx
+# LOB アプリの企業への配布
 
 
-Xxx xxx xxxxxxx xxxx-xx-xxxxxxxx (XXX) xxxx xxxxxxxx xx xxxxxxxxxxx xxx xxxxxx xxxxxxxxxxx xxx xxx Xxxxxxx Xxxxx xxx Xxxxxxxx, xxxxxxx xxxxxx xxx xxxx xxxxxxx xxxxxxxxx xx xxx Xxxxx.
+基幹業務 (LOB) アプリを、ボリューム取得できるように、ビジネス向け Windows ストアで企業に直接公開できます。アプリをストアで一般公開する必要はありません。
 
-> **Xxxxxxxxx**  Xx xxxx xxxx, xxxx xxxx xxxx xxx xx xxxxxxxxxxx xxxxxxxxxxx xx xxxxxxxxxxx xxx xxx Xxxxx xxx Xxxxxxxx. Xx xxx xxxxxx x xxxx xxx xx XXX, xx xxxx xx xxxx xxxxxxxxx xx xxx xxxxxxxxxx xx x xxxxx xxxx, xxxx xxxxxxx xx xxxxx xxx xxxxxxxxx xxxx xxxx xx xxxxxx. 
+> **重要**  現時点では、無料のアプリのみをビジネス向けストアで企業に配布できます。 有料アプリを LOB として申請すると、有料アプリのボリューム取得サポートが追加された時点で利用可能になります。 
 
-## Xxxxxxx xx xxx xxxxxxxxxx xxxxxxxxxxx
-
-
-Xxx xxxxx xxxx xx xxxxxxxxxx XXX xxxx xxxxxxxxxxx xx xx xxxxxxxxxx xx xx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxx xxxx xxxxxxx xxx xxx xxxxxxxxxx’x xxxxxxx xxxxx.
-
-> **Xxxxxxxxx**  Xxxx xxxxxxxxxxx xxxxxxx xxxx xx xxxxxxxxx xx xxx xxxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxx xxxx xxxx-xx-xxxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=698846).
-
-Xxxx xx xxxxxxxxxx xxxxxxx xx xxxxxx xxx xx xxxxxxx xxxx xxx xxxxx xxxxxxxxx xxx, xxx’xx xxx xx xxxxx xxxx xxxxxxxx x xxxx xx xxxxxxx xxx xxxxxxxxxxx. Xxx xxx xxxx xxxxxxx xxxxx xxxxxxxxxxxx xx xxxxx xx xxx **Xxxxxxxxxx xxxxxxxxxxxx** xxxxxxx xx xxxx **Xxxxxxx xxxxxxxx**.
-
-Xx xxxxxxx xxx xxxxxxxxxxx, xxxxx **Xxxxxx**. Xxxx xxxxxxx xxxx xxxx xx xxxx xx xxxxxxx xxxx xxx xxxx xxxxxxxxxx’x xxxxxxxxx xxx.
-
-## Xxxxxxxxxx xx XXX xxx
+## 企業の関連付けの設定
 
 
-Xxxx xxx’xx xxxxx xx xxxxxxx xx xxx xxx xx xxxxxxxxxx’x xxxxxxxxx xxx, xxx xxxxxxx xx xxxxxxx xx xxx xxx xxxxxxxxxx xxxxxxx. Xxx xxx xxxx xxxxxxx xxx xxxx xxxxxxxxxxxxx xxxxxxx, xxx xxxx xxxxxx xxxx xxx [Xxxxxxx Xxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn764944). Xxxxx xxx xxxx xxx xxxxx xx xxx xxxxxxx xxxx xxx xxxxxxxxx.
+LOB アプリを専用アプリとして企業に公開するには、最初に、お使いのアカウントと企業のプライベート ストアを関連付けます。
 
-### Xxxxxxxxxxxx xxx xxxxxxxxxx
+> **重要**  この関連付けのプロセスは、企業側が開始する必要があります。 詳しくは、「[基幹業務アプリの操作](http://go.microsoft.com/fwlink/p/?LinkId=698846)」をご覧ください。
 
-Xxxxx xxx'xx xxx xx xx xxxxxxxxxx xxxxxxxxxxx, xxxxx xxxx xxx xxxxxx xx xxx xxx’xx xxx x xxxx-xxxx xxx xx xxx **Xxxxxxxxxxxx xxx xxxxxxxxxx** xxxxxxx xx xxx xxxxxxxxxx’x **Xxxxxxx xxx xxxxxxxxxxxx** xxxx. Xx xxxxxxx, xxxx xx xxx xx **Xxxxxx xxxxxxxxxxxx**. Xx xxxx xxx xxx xxxxxxxxx xx xx xxxxxxxxxx, xxx’xx xxxx xx xxxxxx **Xxxx-xx-xxxxxxxx (XXX) xxxxxxxxxxxx**.
+企業は、専用アプリを公開してほしいと思う開発者に、関連付けを確認するためのリンクを含むメールを送信します。 **[アカウント設定]** の **[企業団体]** セクションに移動して、その関連付けを確認することもできます。
 
-Xxxx **Xxxx-xx-xxxxxxxx (XXX) xxxxxxxxxxxx** xx xxxxxxxx, xxx xxxxx **Xxxxxxxxxxxx xxx xxxxxxxxxx** xxxxxxx xxxx xx xxxxxxxx xxxx x xxxx xx xxx xxxxxxxxxxx xx xxxxx xxx xxx xxxxxxx xxxxxxxxx xxxx.
+関連付けを確認するには、**[承諾]** をクリックします。 お使いのアカウントが、その企業専用のアプリを公開できるようになります。
 
-Xxxxxx xxx xxxxxxxxxx(x) xxxxx xxxxxx xx xxxx xx xxx xxx xxx. Xx xxx xxxx xxxx xx xxxx xx xxxxxx xx.
+## LOB アプリの申請
 
-> **Xxxx**  Xx xxxxx xxx xxxxxxxxxx xxxx xx xxxxxxxx xx xxxxx xx xxxxxxx xx xxx xx xxxx-xx-xxxxxxxx.
 
-### Xxxxxxxxxxxxxx xxxxxxxxx
+企業専用のアプリを公開する準備ができたら、プロセスは、アプリの申請プロセスとほぼ同じです。 アプリは同じ認定プロセスで処理され、すべての [Windows ストアのポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944)に準拠する必要があります。 異なる点は 2 つだけです。
 
-Xx xxxxxxx, xxx xxx xxx **Xxxxx-xxxxxxx (xxxxxx) xxxxxx xxxxxxxxx** xx xxxxxxx xxxx xxx xxxxxx xx xxx. Xxxx xxxxxxxxxx XXX xxxx, xxxx xxx xxxx xx xxxxxxx xx xxxx xxx xxxxxxxxxx xxx xxxxxxx xxxx xxx xx xxxxxx. Xxxx xxx’x xxxx xxx xxx xxxxxxxxx xx xxxxxx xxxxxxx xx xxx xxxxxxxxxx(x) xxxx xxx xxxxxxxx xx xxx **Xxxxxxxxxxxx xxx xxxxxxxxxx** xxxxxxx.
+### 配布と表示
 
-Xx xxx’x xxxx xx xxxx xxx xxx xxxxxxxxx xx xxx xxxxxxxxxx xxx xxxxxxxxxxxx (xxxxxxx) xxxxxxxxx, xxx xxx xxxxx xxx **Xxxxxxxxxxxx (xxxxxxx) xxxxxxxxx** xxx xx xxxx.
+企業の関連付けを設定したら、アプリを申請するたびに、その申請の **[価格と使用可能状況]** ページの **[分布と認知度]** セクションにドロップダウン ボックスが表示されます。 既定では、これは **[販売 - 流通配送]** に設定されています。 アプリを企業専用にするには、**[Line-of-business (LOB) distribution] (基幹業務 (LOB) 配布)** を選択する必要があります。
 
-Xxx xxxx xxxx, xxx [Xxxxxxxxxxxxxx xxxxxxxxx xxxxxxx](organizational-licensing.md).
+**[Line-of-business (LOB) distribution] (基幹業務 (LOB) 配布)** を選択すると、通常の **[分布と認知度]** オプションが専用アプリの公開先として選択できる企業の一覧に変わります。
 
-### Xxxxxxxxxx xxxxxxxxxx xx XXX xxxx
+アプリを入手できるようにする企業を選択します。 ここで選択した企業以外はアプリにアクセスできません。
 
-Xxxxx xxx xxxxx **Xxxxxx xx xxx Xxxxx**, xxx xxx xxxx xx xxxxxxx xxx xxxxxxxxxxxxx xxxxxxx. Xxxx xx’x xxxxx, xx xxxxx xxx xxx xxxxxxxxxx xxxx xxx xx xx xxxxx xxxxxxx xxxxx xx xxx Xxxxxxx Xxxxx xxx Xxxxxxxx xxxxxx. Xxx xxxxxxxxxx xxx xxxx xxxxxx xxx xxx xx xxx xxxxx.
+> **注**  基幹業務アプリとして公開するには、少なくとも 1 つの企業を選択する必要があります。
 
-Xxx xxxx xxxx, xxx [Xxxxxxx xxxx xxxx-xx-xxxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=698846) xxx [Xxxxxxxxxx xxxx xxxxx xxxx xxxxxxx xxxxx](http://go.microsoft.com/fwlink/p/?LinkId=698847).
+### 組織のライセンス
 
-### Xxxxxxxx XXX xxxx
+既定では、アプリを申請するとき、**[Store-managed (online) volume licensing] (ストアで管理される (オンラインの) ボリューム ライセンス)** のチェック ボックスはオンになっています。 LOB アプリを公開するとき、このチェック ボックスは、企業がアプリをボリューム取得できるようにオンにしておく必要があります。 このように設定しても、**[分布と認知度]** セクションで選択した企業以外のユーザーが、このアプリを利用できるようになるわけではありません。
 
-Xx xxxxxxx xxxxxxx xx xx xxx xxxx xxx’xx xxxxxxx xxxxxxxxx xx XXX, xxxxxx xxxxxx x xxx xxxxxxxxxx. Xxx xxx xxxxxx xxx xxxxxxxx xx xxxx xxx xxxxx xxxxxxx, xxxx xxxxx **Xxxxxx xx xxx Xxxxx** xx xxxx xxx xxxxxxx xxxxxxx xxxxxxxxx. Xx xxxx xx xxxx xxx xxxxxxxxxx xxxxxxxxxx xx **Xxxxxxxxxxxx xxx xxxxxxxxxx** xxx xxxx (xxxxxx xxx xxxxxxxxxxxxx xxxx xx xxxxxx xxxx, xxxx xx xxxxxxxxx xx xxxxxxxxxx xxxxxxxxxx xx xxxxxxx xxx xxx, xx xxxxxxxx xxx xx xxx xxxxxxxxxxx xx xxxxx xxx’x xxxxxxxxxx xxxxxxxxxxx xx).
+未接続状態 (オフライン) のライセンスによって企業がアプリを利用できるようにするには、**[Disconnected (offline) licensing] (未接続状態 (オフライン) でのライセンス)** チェック ボックスもオンにします。
 
-Xx xxx xxxx xx xxxx xxxxxxxx xx xxx xxxx xxx’xx xxxxxxxxxx xxxxxxxxx xx xxxx-xx-xxxxxxxx, xxx xxxxxxx xxx xxx xxxxxxxxxxxx, xxx’xx xxxx xx xxxxxx x xxx xxxxxxxxxx. Xxxxx, xxx’xx xxxx xx xxxxxx xxxx **Xxxxxxxxxxxx xxx xxxxxxxxxx** xxxxxxxxx xxxx **Xxxx-xx-xxxxxxxx (XXX) xxxxxxxxxxxx** xx **Xxxxxx xxxxxxxxxxxx**. Xxxx, xx xxx **Xxxxxxxxxxxx xxx xxxxxxxxxx** xxxxxxx, xxxxxx **Xxxx xxxx xxx xxx xxxxxxx xxxxxxxxxxx**. Xxxxx xxx xxxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxxxxxx xxxxxxx, xxx xxx xxxx xx xxxxxx xx xxxxxxxxx xxx xxx xxxxxxxxxxxx (xxxxxxxx xxxxxx xxx xxxxxxx xxx xx xxxx xxxxxxxx xx xx xxxx xx xxx xx).
+詳しくは、「[組織のライセンス オプション](organizational-licensing.md)」をご覧ください。
 
-### Xxxxxxxxxxxx XXX xxxx xxxxxxx xxxxxxxxxxx
+### LOB アプリの企業展開
 
-Xxxxxx xxxx xxxxxxxxx xxxxxxx Xxxxx xxx Xxxxxxxx xxxxxxx xxxx xxx xxx xxx xxxx xxxxxx xx xxx Xxxxx xxx xxxxxxxx xxxx xxx xxxxxxxx Xxxxx Xxxxxxxx.
+**[ストアに提出]** をクリックすると、アプリの認定プロセスが開始します。 準備ができたら、企業の管理者が、そのアプリを、ビジネス向け Windows ストア ポータルのプライベート ストアに追加する必要があります。 その後、企業はそのアプリをユーザーに展開できます。
 
-Xx xxxx xxxxx, xxxxxxxxx xxx xxx xxxx xxxxx XXX xxxx xx xx xxxxxxxxx xxxxxxx xxx Xxxxxxx Xxx Xxxxxx xxx xxxxxxx xxxxxxx (xxxx xx xxxxxxxxxx xxxxxxx xx xxxx xxxx xxxx xxxxxxxxxx xxxxxxxxxxxx). Xx xxxx xxxx, xxx xxxxxxxxxxx xxx xxxxxx xxxx xxxxxxxx xx xxxxxxxx xxx xxxxxxxxxxx, xxxxxxx xxxxx xxx Xxxxxxx Xxxxx xxx Xxxxxxxx.
+詳しくは、[基幹業務アプリの操作](http://go.microsoft.com/fwlink/p/?LinkId=698846)に関するページ、および[プライベート ストアを使用したアプリの配布](http://go.microsoft.com/fwlink/p/?LinkId=698847)に関するページをご覧ください。
 
-Xxx xxxx xxxx, xxx [Xxxxxxxx XXX xxxx xx Xxxxxxx YY](http://go.microsoft.com/fwlink/p/?LinkId=623433).
+### LOB アプリの更新
+
+LOB として既に公開したアプリに更新プログラムを公開するには、新しい申請を作成するだけです。 新しいパッケージをアップロードするか、変更を加えて、**[ストアに提出]** をクリックし、更新されたバージョンを利用できるようにします。 **[分布と認知度]** で選択されている企業はそのままにしてください (アプリを取得できるようにする企業を追加する、前にアプリを配布していた企業を削除するなど、意図的に変更する場合を除く)。
+
+前に基幹業務として公開したアプリの提供を終了して、これ以上取得できないようにするには、新しい申請を作成する必要があります。 最初に、**[分布と認知度]** セクションを **[Line-of-business (LOB) distribution] (基幹業務 (LOB) 配布)** から **[Retail distribution] (販売流通)** に変更します。 次に、**[分布と認知度]** オプションで、**[このアプリを非表示にして取得できないようにします]** を選びます。 申請の認定プロセスが完了すると、以降そのアプリは取得できなくなります (アプリを既に所有しているユーザーは引き続き使用できます)。
+
+### サイドローディングによる LOB アプリの配布
+
+ビジネス向けストアでアプリを利用できるようにすることで、アプリはストアによって確実に署名され、標準的なストア ポリシーに準拠します。
+
+場合によっては、企業がさまざまな理由から Windows デベロッパー センターで LOB アプリを申請したくないことがあります (コンプライアンス上の理由や、追加の機能を必要とするアプリなど)。 このような企業は、ビジネス向け Windows ストアを使用せず、サイドローディングによってアプリをコンピューターに直接展開できます。
+
+詳しくは、「[Windows 10 での LOB アプリのサイドローディング](http://go.microsoft.com/fwlink/p/?LinkId=623433)」をご覧ください。
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

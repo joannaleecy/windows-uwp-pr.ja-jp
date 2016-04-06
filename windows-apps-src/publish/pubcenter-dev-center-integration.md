@@ -1,181 +1,185 @@
 ---
-Xxxxxxxxxxx: Xxxxxxxxx Xxxxxxxxxxx xx xxxXxxxxx xxx xxxx xxxxxxxxxx xxxx Xxxxxxx Xxx Xxxxxx.
-xxxxx: xxxXxxxxx-Xxx Xxxxxx xxxxxxxxxxx
-xx.xxxxxxx: XYXXYYXX-YYYY-YYXY-XYYY-XXYXYYYXXXYX
+Description: Microsoft Advertising on pubCenter has been integrated into Windows Dev Center.
+title: pubCenter-Dev Center integration
+ms.assetid: C1EB51DF-7850-45F4-B565-FF5A690EBD8D
 ---
 
-# xxxXxxxxx-Xxx Xxxxxx xxxxxxxxxxx
+# pubCenter-Dev Center integration
 
 
-**Xxxxxxxxx**
+**Important**
 
--   Xx xx Xxxxx Yxx, YYYY, xxxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxx xxxx xx xxxx xx xxx xxxxxx xxxxxxx xxx’xx xxx xx xx Xxx Xxxxxx. Xxx xxxxxx xxx xxxxxx xxx xxxxxxx xx xxxxxxx xx xxxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxxx xx Xxx Xxxxxx. Xxxxxx xxxx xxxx xxx xxxx xxx xxxxxxxxx xxxxxxx xxxxxx Xxxxx YY, YYYY. Xxx xxxx xxxx, xxx [xxxXxxxxx-XxxXxxxxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxxxxxx](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
--   Xx xx Xxxxxxxx Yxx, YYYY, [xxxx xxxXxxxxx xxxxxxx xxxx xx xxxxxx xx xxxx Xxx Xxxxxx xxxxxxx](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts) xx xxxxx xx xxxxxxx xxxxxxx.
--   Xxxx xxxxxx xxxxxxx xxxx xx xxxxxx xx xxxxxxx xx xxxXxxxxx. Xx xxxxxx xxxx xxxxxx xxxxxxx xxxxx xxxxxxx, [xxxx xxxx xxxXxxxxx xxxxxxx xx xxxx Xxx Xxxxxx xxxxxxx](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts) xxx xxxx xxxxx xxx [Xxxxxx xxxxxxx](payout-summary.md) xxxx xx xxx Xxx Xxxxxx xxxxxxxxx.
+-   As of April 1st, 2016, your Microsoft Advertising earnings will be paid to the payout account you’ve set up in Dev Center. You should now manage any updates or changes to your payout account and tax profile only in Dev Center. Please make sure you make any necessary updates before March 31, 2016. For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
+-   As of December 1st, 2015, [your pubCenter account must be linked to your Dev Center account](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts) in order to receive payouts.
+-   Your payout history will no longer be updated in pubCenter. To review your payout history going forward, [link your pubCenter account to your Dev Center account](#scenario-3-you-have-dev-center-and-pubcenter-accounts-registered-with-different-microsoft-accounts) and then visit the [Payout summary](payout-summary.md) page in the Dev Center dashboard.
 
-Xxxxxxxxx Xxxxxxxxxxx xx xxxXxxxxx xxx xxxx xxxxxxxxxx xxxx Xxxxxxx Xxx Xxxxxx.
+Microsoft Advertising on pubCenter has been integrated into Windows Dev Center.
 
-Xxx xxxxx xxxx xxxxxxxx xxxxxxxx xx xxxXxxxxx xxx Xxx Xxxxxx, xxx xxxx xxxxxxxxx xxxxxxxxxx xxxx xxxxxx xx xxx xxxx xxxXxxxxx xxx Xxx Xxxxxx xxxxxxxx xxxx xxxx xxx xx. Xxx xxxxx xxxx xxxx xxx xx xxxx xx xxx xxxxxxxxx xxxxxxxxx. Xxxxxx xxxx xxx xxxxxxx xxxxxxxxx xxx xxxxxxxxx xxxx xxxxx xx xxx.
+You might have multiple accounts in pubCenter and Dev Center, and your migration experience will depend on how your pubCenter and Dev Center accounts have been set up. You might fall into one or more of the following scenarios. Please read the details carefully for scenarios that apply to you.
 
-## Xxxxxxxx \#Y: Xxx xxxx x Xxx Xxxxxx xxxxxxx xxx x xxxXxxxxx xxxxxxx xxxx xxx xxxx Xxxxxxxxx xxxxxxx, xxxxxxxxxx xx xxx xxxx xxxxxxx/xxxxxx
+## Scenario \#1: You have a Dev Center account and a pubCenter account with the same Microsoft account, registered in the same country/region
 
 
-**Xxxxxxx**: Xxx xxxx x Xxx Xxxxxx xxxxxxx xxxxxxxxxx xxxx \[xxxx\]@xxxxxxx.xxx xx xxx Xxxxxx Xxxxxx. Xxx xxxx xxxx x xxxXxxxxx xxxxxxx xxxxxxxxxx xxxx \[xxxx\]@xxxxxxx.xxx xx xxx Xxxxxx Xxxxxx.
+**Example**: You have a Dev Center account registered with \[name\]@outlook.com in the United States. You also have a pubCenter account registered with \[name\]@outlook.com in the United States.
 
-**Xxxxxx**: Xxxx xxxXxxxxx xxxxxxx xxx xxxx xxxxxxxxxxxxx xxxxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xx xxxxxx xx xxxxxx xxxx xxx.
+**Result**: Your pubCenter account has been automatically linked to your Dev Center account. No action is needed from you.
 
--   Xxxxxxx xxx xxx xxxx xxxxxxxx xx xxxxx xx xxxXxxxxx xxx xxxxxxxxx xx xxx [Xxxxxxxxxxx xxxxxxxxxxx xxxxxx](advertising-performance-report.md) xx Xxx Xxxxxx, xxxxx xxx xxx xx xxxxx xxxx xxxxxx.
--   Xx xxx xxxxxx xxxx x xxxxxxxxxx xxxXxxxxx xx xxxx xx xxxx [Xxxxxxxxxxx xxxxxxxxxxx xxxxxx](advertising-performance-report.md), xx xxx xxxx xxxx xxxxxx xx xxxxxxxxxxxx xxxx xxxx xx xxxx xx xx xxx xx Xxx Xxxxxx. Xxxx xxx xxxxxx xx xxxx xxx xx xxxxx xxxxxxxxxxxxxx xx Xxx Xxxxxx xxx xxxXxxxxx. Xx xxx xx xxxxx xxxx xx xxxx xxxxxx xx xxxx xxxxxxxxxxxx xx xxxx xxxx xx Xxx Xxxxxx, xxxxx xxx xxxxxxx-xxxxx **Xxxxxxxxxxx xxxxxxxxxxx** xxxxxx xxx xxxxxx xxx xxxXxxxxx xxx xxxx. Xx xxxxxx xxx xxxxxxx-xxxxx **Xxxxxxxxxxx xxxxxxxxxxx** xxxxxx, xx xx xxxx xxxxxxxxx xxxxxxxx xxxx xxx xxxxx **Xxxxxxxxxxx xxxxxxxxxxx** xx xxx xxxxxxxxxx xxxx.
--   Xx xxxxxx xxx xxxxxxx xxxxxx xxx xxx xxxxxxx xxx xxxx xxxxxxxx xxxXxxxxx xxxxxxx, xxx xxxx xxx xxxXxxxxx.
--   Xxx xxxxxxx xxxxxx xxx xxx xxxxxxx xxxx xxx xxxx xx Xxx Xxxxxx xxxx xx xxxx xxx xxxx xxxXxxxxx xxxxxxx xx xxxx. Xxxx xxxxxxx xxxxxx xxx xxx xxxxxxx xxx xx xxxxxx xxxx Xxx Xxxxxx xxxx. Xxxx xxxxx xxxx:
-    -   Xx xxxx xxxxxxx xxxxxxx xx Xxx Xxxxxx xxx xxxXxxxxx xxxx xxxxxxxxx, xxx xxxxx xxxxx xxxxxxxxx xxxx xxxXxxxxx xxxxxxx xx x xxxxxxxxx xxxx xxxxxxx.
-    -   Xx xxx xxx'x xxxx x xxxxxxx xxxxxx xx xxx xxxxxxx xxx xx xx Xxx Xxxxxx xx xxxXxxxxx, xxxxxx xxx xxxx xx xx Xxx Xxxxxx xxx xxx xxxx xxxxxxx xxxxxx xx xxx xxxxxxx xxxx xx xxxx xxx xxxx xxxXxxxxx xxxxxxx xx xxxx. Xxx xxxx xxxxxxxxxxx xx xxxxxxxx xxxxxxx xxxxxxx xxx xxx xxxxxxx xx Xxx Xxxxxx, xxx [Xxxxxxx xx xxxx xxxxxx xxxxxxx xxx xxx xxxxx](setting-up-your-payout-account-and-tax-forms.md).
-    -   Xxxx xxxXxxxxx xxxxxxx xxxx xxxxxx xxxx xxx xxxxxxx xxxxxx xxx xxx xxxxxxx xxx xx xx xxxXxxxxx xxxxx xxxx xxxxxxx xxxxxx xxx xxx xxxxxxx xxx xxx xx xx Xxx Xxxxxx. Xx xxxx xxx xxxxxxx xxx xx xx Xxx Xxxxxx, xxxx xxxXxxxxx xxxxxxx xxxxxx xxx xxx xxxxxxx xxxx xx xxxxxxxxxx xx xxxxx xxx xx xx Xxx Xxxxxx. Xxx xxxx xxxx, xxx [xxxXxxxxx-XxxXxxxxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxxxxxx](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
--   Xxxx xxxxxx xxxxxxx xxx xxx xxxxxxxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xxx xxxx xxxxxxxxxxx xx xxxxxx xxxxxxx xx Xxx Xxxxxx, xxx [Xxxxxx xxxxxxx](payout-summary.md).
--   Xxx xxxx xxx xxxxxxxxx xxxxxxxxx xxx xxx xxxxxxxxxx xxxx xxxx Xxx Xxxxxx xxxxxxx xxx xxx xxx xxxxxx xxxx xxxx Xxx Xxxxxx xxxxxxxx.
+-   Reports for all your existing ad units in pubCenter are available in the [Advertising performance report](advertising-performance-report.md) on Dev Center, under the app to which they belong.
+-   If you cannot find a particular pubCenter ad unit on your [Advertising performance report](advertising-performance-report.md), we may have been unable to successfully link that ad unit to an app in Dev Center. This can happen if your app is named inconsistently in Dev Center and pubCenter. To see ad units that we were unable to link successfully to your apps in Dev Center, visit the account-level **Advertising performance** report and select the pubCenter app name. To access the account-level **Advertising performance** report, go to your dashboard overview page and click **Advertising performance** in the navigation pane.
+-   To manage the payment method and tax details for your existing pubCenter account, you must use pubCenter.
+-   The payment method and tax details that are used in Dev Center will be used for your pubCenter payouts as well. Your payment method and tax details can be edited from Dev Center only. This means that:
+    -   If your payment methods in Dev Center and pubCenter were different, you might start receiving your pubCenter payouts in a different bank account.
+    -   If you don't have a payment method or tax details set up in Dev Center or pubCenter, please set them up in Dev Center and the same payment method or tax details will be used for your pubCenter payouts as well. For more information on managing payment methods and tax details in Dev Center, see [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md).
+    -   Your pubCenter payouts will happen with the payment method and tax details set up in pubCenter until your payment method and tax details are set up in Dev Center. If they are already set up in Dev Center, your pubCenter payment method and tax details will be superseded by those set up in Dev Center. For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
+-   Your payout reports are now available in your Dev Center account. For more information on payout reports in Dev Center, see [Payout summary](payout-summary.md).
+-   All your app promotion campaigns are now associated with your Dev Center account and you can manage them from Dev Center directly.
 
-> **Xxxx**  Xxx xxxx xx xxxxxx xx xxxx xx xxxxxx xx xxxxx xx xxx xxx xxxxxxxxx xxxxxxxxx xx xxxXxxxxx. Xxx xxxxxxxxxxx xx xxx xx xxxxxx xx xxxxx xx Xxx Xxxxxx, xxx [Xxxxxxxx xxxx xxx](monetize-with-ads.md). Xxx xxxxxxxxxxx xx xxx xx xxxxxx xxx xxxxxxxxx xxxxxxxxx xx Xxx Xxxxxx, xxx [Xxxxxx xx xx xxxxxxxx xxx xxxx xxx](create-an-ad-campaign-for-your-app.md).
+> **Note**  You will no longer be able to create ad units or new app promotion campaigns in pubCenter. For information on how to create ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md). For information on how to create app promotion campaigns in Dev Center, see [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md).
 
-## Xxxxxxxx \#Y: Xxx xxxx x Xxx Xxxxxx xxxxxxx xxx x xxxXxxxxx xxxxxxx xxxx xxx xxxx Xxxxxxxxx xxxxxxx, xxx xxxxxxxxxx xx xxxxxxxxx xxxxxxxxx/xxxxxxx
+## Scenario \#2: You have a Dev Center account and a pubCenter account with the same Microsoft account, but registered in different countries/regions
 
 
-**Xxxxxxx**: Xxx xxxx x Xxx Xxxxxx xxxxxxx xxxxxxxxxx xxxx \[xxxx\]@xxxxxxx.xxx xx xxx Xxxxxx Xxxxxx. Xxx xxxx xxxx x xxxXxxxxx xxxxxxx xxxxxxxxxx xxxx \[xxxx\]@xxxxxxx.xxx xx Xxxxx.
+**Example**: You have a Dev Center account registered with \[name\]@outlook.com in the United States. You also have a pubCenter account registered with \[name\]@outlook.com in India.
 
-**Xxxxxx**: Xxxx xxxXxxxxx xxxxxxx xxx xxxx xxxxxxxxxxxxx xxxxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xx xxxxxx xx xxxxxx xxxx xxx.
+**Result**: Your pubCenter account has been automatically linked to your Dev Center account. No action is needed from you.
 
--   Xxxxxxx xxx xxx xxxx xxxxxxxx xx xxxxx xx xxxXxxxxx xxx xxxxxxxxx xx xxx [Xxxxxxxxxxx xxxxxxxxxxx xxxxxx](advertising-performance-report.md) xx Xxx Xxxxxx, xxxxx xxx xxx xx xxxxx xxxx xxxxxx.
--   Xx xxx xxxxxx xxxx x xxxxxxxxxx xxxXxxxxx xx xxxx xx xxxx [Xxxxxxxxxxx xxxxxxxxxxx xxxxxx](advertising-performance-report.md), xx xxx xxxx xxxx xxxxxx xx xxxxxxxxxxxx xxxx xxxx xx xxxx xx xx xxx xx Xxx Xxxxxx. Xxxx xxx xxxxxx xx xxxx xxx xx xxxxx xxxxxxxxxxxxxx xx Xxx Xxxxxx xxx xxxXxxxxx. Xx xxx xx xxxxx xxxx xx xxxx xxxxxx xx xxxx xxxxxxxxxxxx xx xxxx xxxx xx Xxx Xxxxxx, xxxxx xxx xxxxxxx-xxxxx **Xxxxxxxxxxx xxxxxxxxxxx** xxxxxx xxx xxxxxx xxx xxxXxxxxx xxx xxxx. Xx xxxxxx xxx xxxxxxx-xxxxx **Xxxxxxxxxxx xxxxxxxxxxx** xxxxxx, xx xx xxxx xxxxxxxxx xxxxxxxx xxxx xxx xxxxx **Xxxxxxxxxxx xxxxxxxxxxx** xx xxx xxxxxxxxxx xxxx.
--   Xxxx xxxXxxxxx xxxxxxxx xxxx xxxx xx xxxxxxxxx xx xxxx Xxx Xxxxxx xxxxxxxx xxx xxxxxxxx xx Xxx Xxxxxx. Xxxxxxx, xxxx xxxXxxxxx xxxxxxx xxxx xxxxxxxx xx xxxxxx xx xxx xxxxxxxx xx xxxx xxxXxxxxx xxxxxxx.
--   Xx xxxxxx xxx xxxxxxx xxxxxx xxx xxx xxxxxxx xxx xxxx xxxxxxxx xxxXxxxxx xxxxxxx, xxx xxxx xxx xxxXxxxxx.
--   Xxx xxx xxx xx xxxxx xxxx xxx xxxxxx xx Xxx Xxxxxx, xxxxxxxx xxxx xxxxxx, xx xxxxxxxx, xxx xx xxxx xxx xx xxx xxxxxxxx xx xxxx Xxx Xxxxxx xxxxxxx, xxx xxxxxxxx xxx xxxxx xxx xx xxxxx xxxx xxx xxxx Xxx Xxxxxx xxxxxxx xxxxxx xxx xxx xxxxxxx.
--   Xxx xxxx xxxx xx xxxxxx xxx xxxxxxx xxxxxx xxx xxx xxxxxxx xxx xxxxxxxx xxxx xxxx xxx xx xxxxx xx Xxx Xxxxxx. Xxx xxxx xxxxxxxxxxx xx xxxxxxxx xxxxxxx xxxxxxx xxx xxx xxxxxxx xx Xxx Xxxxxx, xxx [Xxxxxxx xx xxxx xxxxxx xxxxxxx xxx xxx xxxxx](setting-up-your-payout-account-and-tax-forms.md) xxx [xxxXxxxxx-XxxXxxxxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxxxxxx](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
--   Xxxx xxxxxx xxxxxxx xxx xxx xxxxxxxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xxx xxxx xxxxxxxxxxx xx xxxxxx xxxxxxx xx Xxx Xxxxxx, xxx [Xxxxxx xxxxxxx](payout-summary.md).
--   Xxx xxxx xxx xxxxxxxxx xxxxxxxxx xxx xxx xxxxxxxxxx xxxx xxxx Xxx Xxxxxx xxxxxxx xxx xxx xxx xxxxxx xxxx xxxx Xxx Xxxxxx xxxxxxxx.
+-   Reports for all your existing ad units in pubCenter are available in the [Advertising performance report](advertising-performance-report.md) on Dev Center, under the app to which they belong.
+-   If you cannot find a particular pubCenter ad unit on your [Advertising performance report](advertising-performance-report.md), we may have been unable to successfully link that ad unit to an app in Dev Center. This can happen if your app is named inconsistently in Dev Center and pubCenter. To see ad units that we were unable to link successfully to your apps in Dev Center, visit the account-level **Advertising performance** report and select the pubCenter app name. To access the account-level **Advertising performance** report, go to your dashboard overview page and click **Advertising performance** in the navigation pane.
+-   Your pubCenter earnings data will be converted to your Dev Center currency and reported in Dev Center. However, your pubCenter payouts will continue to happen in the currency of your pubCenter account.
+-   To manage the payment method and tax details for your existing pubCenter account, you must use pubCenter.
+-   For any new ad units that you create in Dev Center, earnings will accrue, be reported, and be paid out in the currency of your Dev Center account, and earnings for these new ad units will use your Dev Center payment method and tax details.
+-   You will need to manage the payment method and tax details for earnings from your new ad units in Dev Center. For more information on managing payment methods and tax details in Dev Center, see [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md) and [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
+-   Your payout reports are now available in your Dev Center account. For more information on payout reports in Dev Center, see [Payout summary](payout-summary.md).
+-   All your app promotion campaigns are now associated with your Dev Center account and you can manage them from Dev Center directly.
 
-> **Xxxx**  Xxx xxxx xx xxxxxx xx xxxx xx xxxxxx xx xxxxx xx xxx xxx xxxxxxxxx xxxxxxxxx xx xxxXxxxxx. Xxx xxxxxxxxxxx xx xxx xx xxxxxx xx xxxxx xx Xxx Xxxxxx, xxx [Xxxxxxxx xxxx xxx](monetize-with-ads.md). Xxx xxxxxxxxxxx xx xxx xx xxxxxx xxx xxxxxxxxx xxxxxxxxx xx Xxx Xxxxxx, xxx [Xxxxxx xx xx xxxxxxxx xxx xxxx xxx](create-an-ad-campaign-for-your-app.md).
+> **Note**  You will no longer be able to create ad units or new app promotion campaigns in pubCenter. For information on how to create ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md). For information on how to create app promotion campaigns in Dev Center, see [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md).
 
-## Xxxxxxxx \#Y: Xxx xxxx Xxx Xxxxxx xxx xxxXxxxxx xxxxxxxx xxxxxxxxxx xxxx xxxxxxxxx Xxxxxxxxx xxxxxxxx
+## Scenario \#3: You have Dev Center and pubCenter accounts registered with different Microsoft accounts
 
 
-**Xxxxxxx**: Xxx xxxx x Xxx Xxxxxx xxxxxxx xxxxxxxxxx xxxx \[xxxx\]@xxxxxxx.xxx. Xxx xxxx xxxx x xxxXxxxxx xxxxxxx xxxxxxxxxx xxxx \[xxxxx\_xxxx\]@xxxxxxx.xxx.
+**Example**: You have a Dev Center account registered with \[name\]@outlook.com. You also have a pubCenter account registered with \[other\_name\]@outlook.com.
 
-**Xxxxxx**: Xxx xxxx xx xxxxxxxx xxxx xxxx xxxXxxxxx xxxxxxx(x) xx xxxx Xxx Xxxxxx xxxxxxx. Xx xx xx:
+**Result**: You need to manually link your pubCenter account(s) to your Dev Center account. To do so:
 
-1.  Xxxx xx xx xxx xxxXxxxxx xxxxxxx xxx xxxx xx xxxx.
-2.  Xx xxxx xxxxxxx'x **Xx xxxxxxxxxxx** xxxx, xxx xxxx xxxx x **xxxXxxxxx Xxxxxxx Xxxxxxx Xxxx**. Xxxx xxxx xxxx xxxxxxxxx.
+1.  Sign in to the pubCenter account you wish to link.
+2.  On this account's **My information** page, you will find a **pubCenter Account Linking Code**. Keep this code available.
 
-    > **Xxxx**  X xxx xxxxxxx xxxxxxx xxxx xx xxxxxxxxx xxxxx YY xxxxxxx.
+    > **Note**  A new account linking code is generated every 60 minutes.
 
-3.  Xxxx xxx xx xxxx xxxXxxxxx xxxxxxx.
-4.  Xxxx xx xx xxxx [Xxx Xxxxxx xxxxxxx](https://dev.windows.com/).
-5.  Xx xxx Xxx Xxxxxx xxxxxxxxx, xxxxx **Xxxxxxxxxxx xxxxxxxxxxx** xx xxx xxxx xxxx, xxx xxxx xxxxx **Xxxx x xxxXxxxxx xxxxxxx**.
-6.  Xxxxx xxx xxxxx xxxxxxx xxxxxxxxxx xxxx xxx xxxXxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxx xxxx.
-7.  Xxxxx **Xxxx xxxxxxx** xxx xxxx xxxXxxxxx xxxxxxx xxxx xx xxxxxx xx xxxx Xxx Xxxxxx xxxxxxx.
+3.  Sign out of your pubCenter account.
+4.  Sign in to your [Dev Center account](https://dev.windows.com/).
+5.  In the Dev Center dashboard, click **Advertising performance** in the left pane, and then click **Link a pubCenter account**.
+6.  Enter the email address associated with the pubCenter account and the account linking code.
+7.  Click **Link account** and your pubCenter account will be linked to your Dev Center account.
 
-    > **Xxxx**  Xxx xxx xxxx xxx xx xxxx xxxXxxxxx xxxxxxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xxxxxxx, xxxx xx xxxx xxxXxxxxx xxxxxxxx xxx xx xxxxxx xx xxxx xxx Xxx Xxxxxx xxxxxxx.
+    > **Note**  You can link one or more pubCenter accounts to your Dev Center account. However, each of your pubCenter accounts can be linked to only one Dev Center account.
 
-Xxxxx xxxx xxxXxxxxx xxxxxxx xx xxxxxx xx x Xxx Xxxxxx xxxxxxx:
+After your pubCenter account is linked to a Dev Center account:
 
--   Xxxx xxxXxxxxx xxxxxxx xxxx xxxx xxxxx xxxxxxxxx xx xxx xxxxxx Xxx Xxxxxx xxxxxxx xxxxxx YY xxxxx.
--   Xx xxx xxxxxx xxxx x xxxxxxxxxx xxxXxxxxx xx xxxx xx xxxx [Xxxxxxxxxxx xxxxxxxxxxx xxxxxx](advertising-performance-report.md), xx xxx xxxx xxxx xxxxxx xx xxxxxxxxxxxx xxxx xxxx xx xxxx xx xx xxx xx Xxx Xxxxxx. Xxxx xxx xxxxxx xx xxxx xxx xx xxxxx xxxxxxxxxxxxxx xx Xxx Xxxxxx xxx xxxXxxxxx. Xx xxx xx xxxxx xxxx xx xxxx xxxxxx xx xxxx xxxxxxxxxxxx xx xxxx xxxx xx Xxx Xxxxxx, xxxxx xxx xxxxxxx-xxxxx **Xxxxxxxxxxx xxxxxxxxxxx** xxxxxx xxx xxxxxx xxx xxxXxxxxx xxx xxxx. Xx xxxxxx xxx xxxxxxx-xxxxx **Xxxxxxxxxxx xxxxxxxxxxx** xxxxxx, xx xx xxxx xxxxxxxxx xxxxxxxx xxxx xxx xxxxx **Xxxxxxxxxxx xxxxxxxxxxx** xx xxx xxxxxxxxxx xxxx.
--   Xx xxxx xxxXxxxxx xxxxxxx xxx xxxxxxxxxx xx x xxxxxxxxx xxxxxxx/xxxxxx xxxx xxx Xxx Xxxxxx xxxxxxx, xxxx xxxxxxxx xxxx xxxx xx xxxxxxxxx xx xxx Xxx Xxxxxx xxxxxxxx xx xxxxxxx.
--   Xxxxxxxx xxxx xxxx xxxXxxxxx xxxxxxx xxxx xx xxxxxx xx xxxx xxx xxxxx xxx xxxxxxx xxxxxx xxx xxx xxxxxxx xxx xx xx xxxXxxxxx. Xx xxx xxxx xx xxxx xxxxxxx xx xxxx xxxxxxx xxxxxx xx xxx xxxxxxx, xxx xxxx xxxx xx xx xx xx Xxx Xxxxxx. Xxx [xxxXxxxxx-XxxXxxxxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxxxxxx](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md) xxx xxxx xxxx.
--   Xx xxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxx xx xxx xx xxxxx xxxxxxx xx Xxx Xxxxxx, xxx xxxx xxx xx xxxx xxxxxxx xxx xxx xxxxxxxxxxx xx Xxx Xxxxxx. Xxx [xxxXxxxxx-XxxXxxxxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxxxxxx](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md) xxx xxxx xxxx.
--   Xxxxxxxx xxxx xxx xxx xx xxxxx xxxx xxx xxxxxx xx Xxx Xxxxxx xxxx xx xxxx xxx xxxxx xxxx Xxx Xxxxxx xxxxxxx xxxxxx xxx xxx xxxxxxx. Xxx xxxx xxxxxxxxxxx xx xxxxxxxx xxxxxxx xxxxxxx xxx xxx xxxxxxx xx Xxx Xxxxxx, xxx [Xxxxxxx xx xxxx xxxxxx xxxxxxx xxx xxx xxxxx](setting-up-your-payout-account-and-tax-forms.md).
--   Xxxx xxxXxxxxx xxxxxx xxxxxxx xxx xxx xxxxxxxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xxx xxxx xxxxxxxxxxx xx xxxxxx xxxxxxx xx Xxx Xxxxxx, xxx [Xxxxxx xxxxxxx](payout-summary.md).
--   Xxx xx xxx xxx xxxxxxxxx xxxxxxxxx xxx xxx xx xx xxxXxxxxx xxxx xx xxxxxxxxxxxxx xxxxxx. Xxxxxx xxxxxx xxx xxxxxxxxx xx Xxx Xxxxxx xxxxx xxxxxxx.
+-   Your pubCenter account data will start appearing in the linked Dev Center account within 24 hours.
+-   If you cannot find a particular pubCenter ad unit on your [Advertising performance report](advertising-performance-report.md), we may have been unable to successfully link that ad unit to an app in Dev Center. This can happen if your app is named inconsistently in Dev Center and pubCenter. To see ad units that we were unable to link successfully to your apps in Dev Center, visit the account-level **Advertising performance** report and select the pubCenter app name. To access the account-level **Advertising performance** report, go to your dashboard overview page and click **Advertising performance** in the navigation pane.
+-   If your pubCenter account was registered in a different country/region than the Dev Center account, your earnings data will be converted to the Dev Center currency in reports.
+-   Earnings from your pubCenter account will no longer be paid out using the payment method and tax details set up in pubCenter. If you need to make changes to your payment method or tax details, you will need to do so in Dev Center. See [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md) for more info.
+-   To receive payments for earnings accrued on new ad units created in Dev Center, you must set up your payment and tax instruments in Dev Center. See [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md) for more info.
+-   Earnings from any new ad units that you create in Dev Center will be paid out using your Dev Center payment method and tax details. For more information on managing payment methods and tax details in Dev Center, see [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md).
+-   Your pubCenter payout reports are now available in your Dev Center account. For more information on payout reports in Dev Center, see [Payout summary](payout-summary.md).
+-   All of the app promotion campaigns you set up in pubCenter will be automatically paused. Please create new campaigns in Dev Center going forward.
 
-> **Xxxx**  Xxx xxxx xx xxxxxx xx xxxx xx xxxxxx xx xxxxx xx xxx xxx xxxxxxxxx xxxxxxxxx xx xxxXxxxxx. Xxx xxxxxxxxxxx xx xxx xx xxxxxx xx xxxxx xx Xxx Xxxxxx, xxx [Xxxxxxxx xxxx xxx](monetize-with-ads.md). Xxx xxxxxxxxxxx xx xxx xx xxxxxx xxx xxxxxxxxx xxxxxxxxx xx Xxx Xxxxxx, xxx [Xxxxxx xx xx xxxxxxxx xxx xxxx xxx](create-an-ad-campaign-for-your-app.md).
+> **Note**  You will no longer be able to create ad units or new app promotion campaigns in pubCenter. For information on how to create ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md). For information on how to create app promotion campaigns in Dev Center, see [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md).
 
-## Xxxxxxxxxx xxxxx xxx xxxxxxxxxxxxxxx
+## Additional notes and recommendations
 
 
--   Xx xxxx xx xxxx xxx xx xxxx xxxXxxxxx xxxxxxxx (xxxx xxx-xxxxxxxx Xxxxxxxxx xxxxxxxx) xx xxx Xxx Xxxxxx xxxxxxx xx xxxxx xxx xxxxx xxxx xx xxxxxx xxxx.
--   Xx xxx xxxx xx xxx x xxx xxxxxxx xx xxxXxxxxx, xxxxxx xxx xxxx xx xxxxxxxx Xxxx xxxx. Xxx xxxx xxxxxxxxxxxx xxx xxx xxxxxxxxx xxxxx xxx xxx xx xxxxxxx xx xxxx Xxx Xxxxxx xxxxxxx.
--   Xxx xxxx xx xxxxxx xx xxxx xx xxxxxx xxx xx xxxxx xx xxxXxxxxx. Xxxxxx xxx xx xxxxx xx Xxx Xxxxxx xxxx xxxxx xxxxxxx. Xx xxx xxxx xx xxxx xxxx xxxxxxxx xx xxxxx, xxxxxx xxxxxxx Xxxxxxx.
--   X xxx xxxXxxxxx xxxxxxx xxx xxxx xxxx xxxxxxx xxx xxx, xxxxx xxx xxxx Xxxxxxxxx xxxxxxx, xx xxxx xx xxxx Xxx Xxxxxx xxxxxxx xxxx xxx xxxx Xxxxxxxxx xxxxxxx. Xxx xxx xxx xxxxxxxx xxxx-xxxx xx xxx xxx-xxxxx xxxxxx xx xxxXxxxxx xxxxx xx xxxx xxx xxxxxx xxxxxxxxxxx xxx xxxx xxxxxxxxx xxxXxxxxx xxxxxxxx.
--   Xx xxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxx xx xxx xx xxxxx xxxxxxx xx Xxx Xxxxxx, xxx xxxx xxx xx xxxx xxxxxxx xxx xxx xxxxxxxxxxx xx Xxx Xxxxxx. Xxx xxxx xxxx, xxx [xxxXxxxxx-XxxXxxxxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxxxxxx](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
+-   Be sure to link all of your pubCenter accounts (with non-matching Microsoft accounts) to the Dev Center account in which you would like to manage them.
+-   Do not sign up for a new account in pubCenter, unless you wish to monetize Xbox apps. All your monetization and app promotion needs can now be managed in your Dev Center account.
+-   You will no longer be able to create new ad units in pubCenter. Create new ad units in Dev Center only going forward. If you wish to edit your existing ad units, please contact Support.
+-   A new pubCenter account may have been created for you, under the same Microsoft account, to link to your Dev Center account with the same Microsoft account. Use the new accounts drop-down in the top-right corner of pubCenter pages to view and manage information for your different pubCenter accounts.
+-   To receive payments for earnings accrued on new ad units created in Dev Center, you must set up your payment and tax instruments in Dev Center. For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
 
-## Xxxxxxxxxx xxxxx xxxxxxxxx
+## Frequently asked questions
 
 
-### Xxx xxxx’x X xxxxxxx xx Xxxxxxxxx Xxxxxxxxxxx xxxxxx xxxx xxxxx?
+### Why didn’t I receive my Microsoft Advertising payout this month?
 
-Xxxx xx xxxxxxx xxx xx xxx xx xxxx xx xxx xxxxxxxxx xxxxxxx:
+This is usually due to one or more of the following reasons:
 
--   Xxxx [xxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxx](setting-up-your-payout-account-and-tax-forms.md) xxxx xxx xxx xx xxxxxxxxx xx Xxx Xxxxxx.
--   Xxxx xxxXxxxxx xxxxxxx xxx xxx xxxx xxxxxx xx xxxx Xxx Xxxxxx xxxxxxx.
+-   Your [payout account and tax profile details](setting-up-your-payout-account-and-tax-forms.md) were not set up correctly in Dev Center.
+-   Your pubCenter account has not been linked to your Dev Center account.
 
-Xxx xxxx xxxx, xxx [xxxXxxxxx-XxxXxxxxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxxxxxx](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)
-### X xx xxxxxx xx xxxxxx xxx xx xxxxx xx xxxXxxxxx. Xxxx'x xxxxx xx?
+For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md)
+### I am unable to create new ad units in pubCenter. What's going on?
 
-Xxxxxxxx xxx xx xxxxx xx xx xxxxxx xxxxxxxxx xx xxxXxxxxx. Xx xxx xxxx xxxxxxxxxx xxx Xxxxxxxxx Xx xxxxxxxx xxxxxxx xx xxxx xxx, xx xx xxxx xxxx xxxxxxxxxxxxx xxx xxxxxxx xx xxx xxxx xxx xxxx xxx xxxxxx xxxx xxx xx xxx Xxxxxxx Xxxxx. Xxxxxxxxxxx, xxx xxxxx xxxx xxxxxxxx xxxxxx x xxx xxxxxxxxxx xx xxxx xx Xxx Xxxxxx xxxx xxxx xxx'x **Xxxxxxxx xxxx xxx** xxxx.
+Creating new ad units is no longer supported in pubCenter. If you have integrated the Microsoft Ad mediator control in your app, an ad unit will automatically get created on the back end when you upload your app to the Windows Store. Alternately, you could also manually create a new standalone ad unit in Dev Center from your app's **Monetize with ads** page.
 
-### Xxx xx X xxxxxx xx xxxxx xx Xxx Xxxxxx?
+### How do I create ad units in Dev Center?
 
-Xxxx xxxx xxx'x xxxx xx Xxx Xxxxxx, xxxxx **Xxxxxxxxxxxx** &xx; **Xxxxxxxx xxxx xxx**. Xxx xxxx xxxxxxxxxxx xx xxxxxxxx xx xxxxx xx Xxx Xxxxxx, xxx [Xxxxxxxx xxxx xxx](monetize-with-ads.md).
+From your app's page in Dev Center, click **Monetization** &gt; **Monetize with ads**. For more information on creating ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md).
 
-### X xxxxxxxxx xxx xxxxxx xxxxxxx xx xxx xx xxxxxxxx xxxxxxxxx xxx X xxxxx xxx xx xxxxxxxx xxxxxxx xx xx xxx. Xx X xxxx xxxx xx xx xx xxxXxxxxx xxx xxxxxx x xxx xx xxxx?
+### I installed the latest version of the ad mediator extension and I added the ad mediator control to my app. Do I also need to go to pubCenter and create a new ad unit?
 
-Xx xxx xxx xxxxx xxx xxxxxx xxxxxxx xx xxx [xx xxxxxxxx xxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=518026), xx xxxx xxxxxxxxxxxxx xxxxxx x xxx xx xxxx xxx xxx xxxx xxx xxxxxx xxxx xxx xx xxx Xxxxxxx Xxxxx. Xxx xx xxxxxx xxxx xx xx xx xxxXxxxxx xxx xxxxxxxx xxxxxx x xxx xx xxxx. Xx xx xxxx xxxxxxxx xxxxxx xxx xxxx xxxxxx, xxx xxxx xxxxxxx xx xxxxx xxxx xxxxxxx xx xxxxxxxxxxx xxxx xxxxx.
+If you are using the latest version of the [ad mediator extension](http://go.microsoft.com/fwlink/p/?LinkId=518026), we will automatically create a new ad unit for you when you upload your app to the Windows Store. You no longer need to go to pubCenter and manually create a new ad unit. If ad unit creation failed for some reason, you will receive an email with details of recommended next steps.
 
-### X xx xxxxx xxxxx xx xxxxx xxxxxxx xx xxx xx xxxxxxxx xxxxxxx xx xx xxx xxx X xxxx xx xxx x xxx xx xxxx XX. Xxx xx X xxxxxx xx xxxxx?
+### I am still using an older version of the ad mediator control in my app and I need to get a new ad unit ID. How do I create ad units?
 
-Xxx xxx xxxxxx x xxx xx xxxx xxx xxxx xxx xx xxx Xxx Xxxxxx xxxxxxxxx. Xxxx xxxx xxx'x xxxx xx Xxx Xxxxxx, xxxxx **Xxxxxxxxxxxx** &xx; **Xxxxxxxx xxxx xxx**. Xxx xxxx xxxxxxxxxxx xx xxxxxxxx xx xxxxx xx Xxx Xxxxxx, xxx [Xxxxxxxx xxxx xxx](monetize-with-ads.md).
+You can create a new ad unit for your app in the Dev Center dashboard. From your app's page in Dev Center, click **Monetization** &gt; **Monetize with ads**. For more information on creating ad units in Dev Center, see [Monetize with ads](monetize-with-ads.md).
 
-### Xx xx xxxxx xxx xxxxxxx xxxxxxxxxxxxx xxxxxxx X xxxx xxx xx xxxxxxxx xxxxxxx, xxx X xxxxxxxxx xxxx xxx xxx xxxxx xxxxxx. X xxxx xxxxxxxx xxxxxxx xxxxxxx xxxxx xx xxxxx xxxx Xxx Xxxxxx. Xx X xxxx xx xx xxxxxxxx xxxx xx xxx xxxx xxx xxxxxxxx xx xxxxx xx xxxxx?
+### My ad units got created automatically because I used the ad mediator control, and I confirmed that ads are being served. I also manually created several other ad units from Dev Center. Do I need to do anything more to get paid for earnings on these ad units?
 
-Xxx xx xx xxxXxxxxx xxxx xxx xxxx Xxxxxxxxx xxxxxxx xxxx xxx xxx xxx Xxx Xxxxxx, xxx xxxxxx xxxx Xxxxxxx xxx Xxx Xxxxxxxxxxx xxx xxx xx xxxxxxxxxx. Xxx xxxx xxxxxxx xxxxxx xx xxxxx xxx xx xxxxx xxxxxx xxx xxxxx xxxx xx xxx xxxxx xx xxx xxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxx.
+Log in to pubCenter with the same Microsoft account that you use for Dev Center, and ensure your Payment and Tax Instruments are set up accurately. You will receive payout on these new ad units during the first week of the month if the accrued earnings crosses the threshold limit.
 
-### X xx xxxxxx xx xxxxxx xxx xxx xxxxxxxxx xxxxxxxxx xx xxxXxxxxx. Xxxx xx xx xxx xxxxxxxxx xxxxxxxxx xxxx xxxx xxxx xxxxxxxxxxxxx xxxxxx. Xx xxxx xxxxxxxx?
+### I am unable to create new app promotion campaigns in pubCenter. Some of my app promotion campaigns have also been automatically paused. Is this expected?
 
-Xxx xxxx xxxx xx xxxx xx xxxxxx xxx xxxxxxxxx xxxxxxxxx xx Xxx Xxxxxx xxxxx xxxxxxx. Xxxx xx xxxx xxx xxxxxxxxx xxxxxxxxx xx xxxXxxxxx xxx xxxx xxxx xxxxxx xx xxxx xx xxxx xxxxxxxxxxx. Xxxxxx xxxxxx xxx xxx xxxxxxxxx xxxxxxxxx xx Xxx Xxxxxx xxxxx xxxxxxx.
+You will only be able to create app promotion campaigns in Dev Center going forward. Some of your app promotion campaigns in pubCenter may have been paused as part of this integration. Please create new app promotion campaigns in Dev Center going forward.
 
-### Xxx xx X xxxxxx xxx xxxxxxxxx xxxxxxxxx xx Xxx Xxxxxx?
+### How do I create app promotion campaigns in Dev Center?
 
-Xxxx xxxx xxx'x xxxx xx Xxx Xxxxxx, xxxxx **Xxxxxxxxxxxx** &xx; **Xxxxxxx xxxx xxx**. Xxx xxxx xxxxxxxxxxx xx xxxxxxxx xx xxxxxxxxx xxx xxxx xxxx xx Xxx Xxxxxx, xxx [Xxxxxx xx xx xxxxxxxx xxx xxxx xxx](create-an-ad-campaign-for-your-app.md).
+From your app's page in Dev Center, click **Monetization** &gt; **Promote your app**. For more information on creating ad campaigns for your apps in Dev Center, see [Create an ad campaign for your app](create-an-ad-campaign-for-your-app.md).
 
-### Xxxxx xxx X xxx xxxxxxxxxxx xxxx xx Xxx Xxxxxx?
+### Where can I see performance data in Dev Center?
 
-Xxxx xxxx xxx'x xxxx xx Xxx Xxxxxx, xxxxx **Xxxxxxxxx** &xx; **Xxxxxxxxx Xxxxxxxxxxx xxxxxxxxxxx**. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxxx xxxxxxxxxxx xxxxxx](advertising-performance-report.md).
+From your app's page in Dev Center, click **Analytics** &gt; **Microsoft Advertising performance**. For more information, see [Advertising performance report](advertising-performance-report.md).
 
-### Xxx xx X xxxxxx xx xxxxxxx xxxxxx xxx xxx xxxxxxx xx Xxx Xxxxxx?
+### How do I manage my payment method and tax details in Dev Center?
 
-Xxx [Xxxxxxx xx xxxx xxxxxx xxxxxxx xxx xxx xxxxx](setting-up-your-payout-account-and-tax-forms.md).
+See [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md).
 
-### Xxxxx xxx X xxxx xxxxxx xxxxxxx xx Xxx Xxxxxx?
+### Where can I find payout reports in Dev Center?
 
-Xxx [Xxxxxx xxxxxxx](payout-summary.md).
+See [Payout summary](payout-summary.md).
 
-### X xxxxxx xx xxxXxxxxx xxxxxxx xx xx Xxx Xxxxxx xxxxxxx, xxx X xx xxxxxx xx xxxx xx xxxxx xxxxx xxx xxx X xxxx xxxx xx. Xxxxx xxx X xxxx xxxx?
+### I linked my pubCenter account to my Dev Center account, but I am unable to find ad units under the app I used them in. Where can I find them?
 
-Xx xxx xxxxxx xxxx x xxxxxxxxxx xxxXxxxxx xx xxxx xx xxxx [Xxxxxxxxxxx xxxxxxxxxxx xxxxxx](advertising-performance-report.md), xx xxx xxxx xxxx xxxxxx xx xxxxxxxxxxxx xxxx xxxx xx xxxx xx xx xxx xx Xxx Xxxxxx. Xxxx xxx xxxxxx xx xxx xxxx xxxx xx xxxx xx xxxxxxxx xxxx, xx xxx xxxx xxxx xx xxxx xx xxxx xxxx xx xxx xxxxxx xx xxx xxxx Xxx Xxxxxx xxxxxxx, xx xx xxx xx xxxx xxx xxx xxxx xxxxxxx xxx xxx xx xxx xxxx xxx xxxx. Xx xxx xx xxxxx xxxx xx xxxx xxxxxx xx xxxx xxxxxxxxxxxx xx xxxx xxxx xx Xxx Xxxxxx, xxxxx xxx xxxxxxx-xxxxx **Xxxxxxxxxxx xxxxxxxxxxx** xxxxxx xxx xxxxxx xxx xxxXxxxxx xxx xxxx. Xx xxxxxx xxx xxxxxxx-xxxxx **Xxxxxxxxxxx xxxxxxxxxxx** xxxxxx, xx xx xxxx xxxxxxxxx xxxxxxxx xxxx xxx xxxxx **Xxxxxxxxxxx xxxxxxxxxxx** xx xxx xxxxxxxxxx xxxx.
+If you cannot find a particular pubCenter ad unit on your [Advertising performance report](advertising-performance-report.md), we may have been unable to successfully link that ad unit to an app in Dev Center. This can happen if you used that ad unit in multiple apps, if you used that ad unit in apps that do not belong to the same Dev Center account, or if the ad unit has not been serving any ads in the last few days. To see ad units that we were unable to link successfully to your apps in Dev Center, visit the account-level **Advertising performance** report and select the pubCenter app name. To access the account-level **Advertising performance** report, go to your dashboard overview page and click **Advertising performance** in the navigation pane.
 
-### X xxxx xx xxx xx xx xxxxx xxxxx xx xxx xx xx Xxx Xxxxxx xxxxxxx, xxx xxx X xxx'x xxxx xxxx. Xxxx’x xxxxx xx?
+### I used to see my ad units under an app in my Dev Center account, but now I can't find them. What’s going on?
 
-Xxxx xxxxx xxxxxx xx xx xxx xxxxxx xx xxxx xx xxxxx xxx x xxx xxxx. Xx xx xxx xxxxxxx-xxxxx **Xxxxxxxxxxx xxxxxxxxxxx** xxxxxx xx Xxx Xxxxxx xxx xxxx xxx xxxx xxx xxxxx xx xxxxx.
+This could happen if no ads served in your ad units for a few days. Go to the account-level **Advertising performance** report in Dev Center and look for data for these ad units.
 
-### Xxx xx X xxxx xxx xx xx xxxXxxxxx xxxxxxx xxx xxxx xxxxxx xx xx Xxx Xxxxxx xxxxxxx xxxxxxxxxxxx?
+### How do I find out if my pubCenter account has been linked to my Dev Center account successfully?
 
-Xx xxx xxxx xxx xxxx Xxxxxxxxx xxxxxxx xxxxxxxxxx xxxx xxxx xxxXxxxxx xxx Xxx Xxxxxx xxxxxxxx, xxxx xxxxxxxx xxxx xx xxxxxxxxxxxxx xxxxxx xxx xxx xxxxx xxxxx xxxxxx xxxx xxxXxxxxx xxxxxxxx xxxxxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xx xxxx xxxXxxxxx xxx Xxx Xxxxxx xxxxxxxx xxxx xxxxxxxxxx xxxx xxxxxxxxx Xxxxxxxxx xxxxxxxx, xxx xxxx xxxxx xxxxxx xxxx xxxXxxxxx xxxxxxx xxxxxxxx xxxxxxx xx Xxx Xxxxxx YY xxxxx xxxxx xxx xxxx xxxx xxxXxxxxx xxxxxxx xx xxxx Xxx Xxxxxx xxxxxxx.
+If you have the same Microsoft account associated with your pubCenter and Dev Center accounts, your accounts will be automatically linked and you would start seeing your pubCenter earnings reports in your Dev Center account. If your pubCenter and Dev Center accounts were associated with different Microsoft accounts, you will start seeing your pubCenter account earnings reports on Dev Center 24 hours after you link your pubCenter account to your Dev Center account.
 
-### Xxxx xx X xxxx xx xxxxxxxx xxx xxxxxxx xx xx xxxXxxxxx xxxxxxxx xx xx Xxx Xxxxxx xxxxxxx?
+### When do I need to complete the linking of my pubCenter accounts to my Dev Center account?
 
-Xx xxxxxxxxx xxxx xxx xxxxxx xxx xxxx xxxXxxxxx xxxxxxxx xxx xxxxxx xx xxxx Xxx Xxxxxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxx xxxxxxxxxxx.
+We recommend that you ensure all your pubCenter accounts are linked to your Dev Center account at your earliest possible convenience.
 
-### X xx xxx xxxxxx x xxx xxxxxxxx xxxx-xxxx xx xx xxxXxxxxx Xxxxxxxxx. Xxxx xx xxxx?
+### I am now seeing a new accounts drop-down in my pubCenter Dashboard. What is this?
 
-Xx xxxx xx xxx xxxXxxxxx-Xxx Xxxxxx xxxxxxxxxxx, x xxx xxxXxxxxx xxxxxxx xxx xxxx xxxx xxxxxxx xxx xxx xx xxx xxxx xxx xx xxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xx xxxx xxxXxxxxx xxxxxxxx xxxx-xxxx, xxx xxx xxxxxx xxx xxxxxxx xxx xxxxx xxx xxxxx xxxx xx xxxxxx xxxx.
+As part of the pubCenter-Dev Center integration, a new pubCenter account may have been created for you on the back end to link to your Dev Center account. In this pubCenter accounts drop-down, you can choose the account for which you would like to review data.
 
-### X xxx x xxxxxx xxxxxxxxxx xxxxxxx xxx xxxx xxxxxxxx xx xxxXxxxxx xxx Xxx Xxxxxx. Xx xxxx xxxxxxxx?
+### I see a slight difference between the data reported in pubCenter and Dev Center. Is this expected?
 
-Xxx, xxxxx xxxxx xx x xxxxxx xxxxxxxxxx xx xxx xxxx xxxxx xx xxxXxxxxx xxx Xxx Xxxxxx xxxxxxx. Xxxx xxxxx xx xxxxxxx xxxx xx xxxXxxxxx xx xxxxxxxx xx xxx xxxx xxxx xx xxx xxxXxxxxx xxxxxxx xxx xxxx xx Xxx Xxxxxx xx xxxxxxxx xx XXX.
+Yes, there could be a slight difference in the data shown in pubCenter and Dev Center reports. This could be because data in pubCenter is reported in the time zone of the pubCenter account and data in Dev Center is reported in UTC.
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

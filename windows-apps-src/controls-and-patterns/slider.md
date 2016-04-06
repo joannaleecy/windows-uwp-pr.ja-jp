@@ -1,59 +1,67 @@
 ---
-Xxxxxxxxxxx: Xxxx xxx xxxx xxx x xxxxx xx x xxxxx xxxxx.
-xxxxx: Xxxxxxx
-xx.xxxxxxx: YXXYXXYY-XXYX-YXXY-XYYY-XYXXYXYYYXXX
-xxxxx: Xxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Lets the user set a value in a given range.
+title: Sliders
+ms.assetid: 7EC7EA33-BE7E-4FD5-B205-B8FA7B729ACC
+label: Sliders
+template: detail.hbs
 ---
-# Xxxxxxx
+# Sliders
 
-X xxxxxx xx x xxxxxxx xxxx xxxx xxx xxxx xxxxxx xxxx x xxxxx xx xxxxxx xx xxxxxx x xxxxx xxxxxxx xxxxx x xxxxx.
+A slider is a control that lets the user select from a range of values by moving a thumb control along a track.
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+![A slider control](images/controls/slider.png)
 
--   [**Xxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)
--   [**Xxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)
--   [**XxxxxXxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
+<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
 
-X xxxxxx xxxxxxx xxxx xxx xxxx xxx x xxxxx xx x xxxxx xxxxx xx xxxxxxx—xx xxxxxxxxx xxxx xxx xxxxx—xx x xxxxx.
+-   [**Slider class**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.slider.aspx)
+-   [**Value property**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx)
+-   [**ValueChanged event**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
+## Is this the right control?
 
-Xxx x xxxxxx xxxx xxx xxxx xxxx xxxxx xx xx xxxx xx xxx xxxxxxx, xxxxxxxxxx xxxxxx (xxxx xx xxxxxx xx xxxxxxxxxx) xx x xxxxx xx xxxxxxxx xxxxxx (xxxx xx xxxxxx xxxxxxxxxx xxxxxxxx).
+Use a slider when you want your users to be able to set defined, contiguous values (such as volume or brightness) or a range of discrete values (such as screen resolution settings).
 
-X xxxxxx xx x xxxx xxxxxx xxxx xxx xxxx xxxx xxxxx xxxxx xx xxx xxxxx xx x xxxxxxxx xxxxxxxx, xxx x xxxxxxx xxxxx. Xxx xxxxxxx, xxxxx xxxxx xxxxx xxxxxxx xxxxx xxxxx xxxxxx xx xxx xx xxxxxx—xxx xxxxx xxxxxxx xxx xxxxx xx Y xx Y.
+A slider is a good choice when you know that users think of the value as a relative quantity, not a numeric value. For example, users think about setting their audio volume to low or medium—not about setting the value to 2 or 5.
 
-Xxx'x xxx x xxxxxx xxx xxxxxx xxxxxxxx. Xxx x [xxxxxx xxxxxx](toggles.md) xxxxxxx.
+Don't use a slider for binary settings. Use a [toggle switch](toggles.md) instead.
 
-Xxxx xxx xxxx xxxxxxxxxx xxxxxxx xx xxxxxxxx xxxx xxxxxxxx xxxxxxx xx xxx x xxxxxx:
+Here are some additional factors to consider when deciding whether to use a slider:
 
--   **Xxxx xxx xxxxxxx xxxx xxxx x xxxxxxxx xxxxxxxx?** Xx xxx, xxx [xxxxx xxxxxxx](radio-button.md) xx x [xxxx xxx](lists.md).
--   **Xx xxx xxxxxxx xx xxxxx, xxxxx xxxxxxx xxxxx?** Xx xx, xxx x xxxxxxx [xxxx xxx](text-box.md).
--   **Xxxxx x xxxx xxxxxxx xxxx xxxxxxx xxxxxxxx xx xxx xxxxxx xx xxxxxxx xxxxxxx?** Xx xx, xxx x xxxxxx. Xxx xxxxxxx, xxxxx xxx xxxxxx x xxxxx xxxx xxxxxx xx xxxxxxxxxxx xxxxxx xxx xxxxxx xx xxxxxxx xx xxx, xxxxxxxxxx, xx xxxxxxxxxx xxxxxx.
--   **Xxxx xxx xxxxxxx xxxx x xxxxx xx xxxx xx xxxx xxxxxx?** Xx xxx, xxx [xxxxx xxxxxxx](radio-button.md).
--   **Xxx xxx xxxx xxxxxx xxx xxxxx?** Xxxxxxx xxx xxx xxxx xxxxxxxxxxx. Xx x xxxx xxx'x xxxx xxxxxx xxx xxxxx, xxx xxxx-xxxx xxxx xxxxxxx.
+-   **Does the setting seem like a relative quantity?** If not, use [radio buttons](radio-button.md) or a [list box](lists.md).
+-   **Is the setting an exact, known numeric value?** If so, use a numeric [text box](text-box.md).
+-   **Would a user benefit from instant feedback on the effect of setting changes?** If so, use a slider. For example, users can choose a color more easily by immediately seeing the effect of changes to hue, saturation, or luminosity values.
+-   **Does the setting have a range of four or more values?** If not, use [radio buttons](radio-button.md).
+-   **Can the user change the value?** Sliders are for user interaction. If a user can't ever change the value, use read-only text instead.
 
-Xx xxx xxx xxxxxxxx xxxxxxx x xxxxxx xxx x xxxxxxx xxxx xxx, xxx x xxxxxxx xxxx xxx xx:
+If you are deciding between a slider and a numeric text box, use a numeric text box if:
 
--   Xxxxxx xxxxx xx xxxxx.
--   Xxx xxxx xx xxxxxx xx xxxxxx xxxxx xxx xxxxxxxx.
+-   Screen space is tight.
+-   The user is likely to prefer using the keyboard.
 
-Xxx x xxxxxx xx:
+Use a slider if:
 
--   Xxxxx xxxx xxxxxxx xxxx xxxxxxx xxxxxxxx.
+-   Users will benefit from instant feedback.
 
-## Xxxxxxxx
+## Examples
 
-![X xxxxxx xxxxxxx](images/slider_basic.PNG)
+A slider to control the volume on Windows Phone.
 
-## Xxxxxx x xxxxxx
+![A slider to control the volume on Windows Phone](images/control-examples/slider-phone.png)
 
-Xxxx'x xxx xx xxxxxx x xxxxxx xx XXXX.
+A slider to change text size in Windows display settings.
+
+![A slider to change text size in Windows display settings](images/control-examples/slider-display-settings.png)
+
+## Create a slider
+
+Here's how to create a slider in XAML.
 
 ```xaml
 <Slider x:Name="volumeSlider" Header="Volume" Width="200"
         ValueChanged="Slider_ValueChanged"/>
 ```
+
+Here's how to create a slider in code.
 
 ```csharp
 Slider volumeSlider = new Slider();
@@ -65,7 +73,7 @@ volumeSlider.ValueChanged += Slider_ValueChanged;
 stackPanel1.Children.Add(volumeSlider);
 ```
 
-Xxx xxx xxx xxx xxx xxxxx xx xxx xxxxxx xxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) xxxxxxxx. Xx xxxxxxx xx xxxxx xxxxxxx, xxx xxx xxx xxxx xxxxxxx, xx xxxxxx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) xxxxx.
+You get and set the value of the slider from the [**Value**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.value.aspx) property. To respond to value changes, you can use data binding to bind to the Value property, or handle the [**ValueChanged**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.primitives.rangebase.valuechanged.aspx) event.
 
 ```csharp
 private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e)
@@ -78,83 +86,87 @@ private void Slider_ValueChanged(object sender, RangeBaseValueChangedEventArgs e
 }
 ```
 
-## Xxxxxxxxxxxxxxx
+## Recommendations
 
--   Xxxx xxx xxxxxxx xx xxxx xxxxx xxx xxxxxx xxx xxx xxxxx xxxx xxxx. Xxx xxxxxxxx xxxx xxxxxxxx xxxxxx, xxxx xxxx xxx xxxx xxx xxxxxx xxxxxx xxx xxxxx xxxxx xxx xxxxx. Xxxx xxxx xxx xxxxxxxxx xx xxx xxxxxx xxxxxx xxx xxxxxx xxx xxxxxx xx x xxxx.
--   Xxxx xxxxxxxxx xxxxxxxx xxxxx xx xxxxx x xxxx xxxxx x xxxxxxxxx (xxxx xxxxxxxxx). Xxx xxxxxxx, xxx Xxxxxxx xxxxxx xxxxxxx xxxxx xx xxxxxxxx xxx xxxxxxxx xxxxx xxxxxx.
--   Xxx xxxxxx xx xxxx xxx xxxxx xx xxxxxx. Xxxxxxxxx: Xx xxx xxxxxx xx xxxxxxxxxx xxxxxxxx xxx xxx xxx xxxxx xx Xxxxxxx, Xxxx, Xxxx, xx xxxxxxxxxx, xxx xxx xxxx xxx xxxxx xxxxxx xxxxxxx xxx xxxxxxx xx xxxxx.
--   Xxxxxxx xxx xxxxxxxxxx xxxxxx xx xxxxxxxx xxxxxxx xxxx xxx xxxxxxx xxx xxxxxx.
--   Xxxxxxxx xxx xxxxxxxxx xx xxxx xxxx xxxxxxx xxx xxxx xxxxxxxxx xxx/xx xxxxxxxxxxx xx xxxx xxxxxx. Xxxxxx xxxxx xxxx xxxx xx xxxxx xx xxxx xxxxxxxxx, xxx xxxx xxxxx xx xxxx xx xxxxxx.
--   Xxx'x xxx x xxxxxx xx x xxxxxxxx xxxxxxxxx.
--   Xxx'x xxxxxx xxx xxxx xx xxx xxxxxx xxxxx xxxx xxx xxxxxxx xxxx.
--   Xxx'x xxxxxx x xxxxxxxxxx xxxxxx xx xxx xxxxx xx xxxxxx xx xxxxx xxx xxxxx xxxx xxxx xxxxxx xxxxxx xxx xx xxxxxxx xxxxxxxxxxxxxx xxxxxx xxxx xxx xxxxx. Xxxxxxx, xxx xxxxx xxxxxx xx xxx xxxx xxxxx xxxxxxx. Xxx xxxxxxx xx xxxx xxxxx xxxxx xx xx xx Y xxxxx xxx xxxxx xxxx xxxx xx xxxx xxxx Y xxxxxx, Y xxxx, Y xxx xx Y xxxxx, xxxx xxxxxx x xxxxxx xxxx xxxx Y xxxx xxxxxx.
+-   Size the control so that users can easily set the value they want. For settings with discrete values, make sure the user can easily select any value using the mouse. Make sure the endpoints of the slider always fit within the bounds of a view.
+-   Give immediate feedback while or after a user makes a selection (when practical). For example, the Windows volume control beeps to indicate the selected audio volume.
+-   Use labels to show the range of values. Exception: If the slider is vertically oriented and the top label is Maximum, High, More, or equivalent, you can omit the other labels because the meaning is clear.
+-   Disable all associated labels or feedback visuals when you disable the slider.
+-   Consider the direction of text when setting the flow direction and/or orientation of your slider. Script flows from left to right in some languages, and from right to left in others.
+-   Don't use a slider as a progress indicator.
+-   Don't change the size of the slider thumb from the default size.
+-   Don't create a continuous slider if the range of values is large and users will most likely select one of several representative values from the range. Instead, use those values as the only steps allowed. For example if time value might be up to 1 month but users only need to pick from 1 minute, 1 hour, 1 day or 1 month, then create a slider with only 4 step points.
 
-## Xxxxxxxxxx xxxxx xxxxxxxx
+## Additional usage guidance
 
-### Xxxxxxxx xxx xxxxx xxxxxx: xxxxxxxxxx xx xxxxxxxx
+### Choosing the right layout: horizontal or vertical
 
-Xxx xxx xxxxxx xxxx xxxxxx xxxxxxxxxxxx xx xxxxxxxxxx. Xxx xxxxx xxxxxxxxxx xx xxxxxxxxx xxxxx xxxxxx xx xxx.
+You can orient your slider horizontally or vertically. Use these guidelines to determine which layout to use.
 
--   Xxx x xxxxxxx xxxxxxxxxxx. Xxx xxxxxxx, xx xxx xxxxxx xxxxxxxxxx x xxxx-xxxxx xxxxx xxxx xx xxxxxxxx xxxxx xxxxxxxxxx (xxxx xx xxxxxxxxxxx), xxx x xxxxxxxx xxxxxxxxxxx.
--   Xx xxx xxxxxxx xx xxxx xx xxxx xxxxxx xxxxx, xxxx xx x xxxxx xxx, xxx x xxxxxxxxxx xxxxxxxxxxx.
--   Xxxx xxxxx x xxxxxx xx xxxx xxxx xxx xx xxxxxx xx xxx xxxxxxxxx (xxxxxxxxxxxx xx xxxxxxxxxx), xxx x xxxxxxxxx xxxxxxxxxxx xxx xxx xxxxxx xxxx xxx xxxxxxx xxxxxxxxx. Xxxxxxxxx, xxxxx xxxxx xxxxx xxx xxxxxx xxx xxxxxx xxx xxxxx xxxxxxxxxxxx xxxx xxxx xxx xx xxx xxx xxxx.
--   Xx xxx'xx xxxxx xxx xxxx xxxxx xxxxxxxxxxx xx xxx, xxx xxx xxx xxxx xxxx xxxx xxxx xxxx xxxxxx.
+-   Use a natural orientation. For example, if the slider represents a real-world value that is normally shown vertically (such as temperature), use a vertical orientation.
+-   If the control is used to seek within media, like in a video app, use a horizontal orientation.
+-   When using a slider in page that can be panned in one direction (horizontally or vertically), use a different orientation for the slider than the panning direction. Otherwise, users might swipe the slider and change its value accidentally when they try to pan the page.
+-   If you're still not sure which orientation to use, use the one that best fits your page layout.
 
-### Xxxxx xxxxxxxxx
+### Range direction
 
-Xxx xxxxx xxxxxxxxx xx xxx xxxxxxxxx xxx xxxx xxx xxxxxx xxxx xxx xxxxx xx xxxx xxx xxxxxxx xxxxx xx xxx xxx xxxxx.
+The range direction is the direction you move the slider when you slide it from its current value to its max value.
 
--   Xxx xxxxxxxx xxxxxx, xxx xxx xxxxxxx xxxxx xx xxx xxx xx xxx xxxxxx, xxxxxxxxxx xx xxxxxxx xxxxxxxxx. Xxx xxxxxxx, xxx x xxxxxx xxxxxx, xxxxxx xxx xxx xxxxxxx xxxxxx xxxxxxx xx xxx xxx xx xxx xxxxxx. Xxx xxxxx xxxxx xx xxxxxx (xxxx xx xxxx xx xxx xxxx), xxxxxx xxx xxxxxxx xxxxxxxxx xx xxx xxxx.
--   Xxx xxxxxxxxxx xxxxxx, xxx xxx xxxxx xxxxx xx xxx xxxx xxxx xx xxx xxxxxx xxx xxxx-xx-xxxxx xxxx xxxxxx, xxx xx xxx xxxxx xxx xxxxx-xx-xxxx xxxx xxxxxx.
--   Xxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxx xxxx xxxx: xxxxxx xxx xxx xxxxx xxxxx xx xxx xxxx xxxx xx xxx xxxxxx.
+-   For vertical slider, put the largest value at the top of the slider, regardless of reading direction. For example, for a volume slider, always put the maximum volume setting at the top of the slider. For other types of values (such as days of the week), follow the reading direction of the page.
+-   For horizontal styles, put the lower value on the left side of the slider for left-to-right page layout, and on the right for right-to-left page layout.
+-   The one exception to the previous guideline is for media seek bars: always put the lower value on the left side of the slider.
 
-### Xxxxx xxx xxxx xxxxx
+### Steps and tick marks
 
--   Xxx xxxx xxxxxx xx xxx xxx'x xxxx xxx xxxxxx xx xxxxx xxxxxxxxx xxxxxx xxxxxxx xxx xxx xxx. Xxx xxxxxxx, xx xxx xxx x xxxxxx xx xxxxxxx xxx xxxxxx xx xxxxx xxxxxxx xx xxx, xxx'x xxxxx xxxxxxxx xxxxx xxxxxx. Xxxx xx x xxxx xxxxx xx Y.
--   Xx xxx xxxxxxx xxxxx (xxxx xxxxx xx xxxx xxxxxx), xxxx xxxx xxxx xxx xxxxx xxxx xxxxxx xx xxx xxxxxx'x xxx xxxxx.
--   Xxx xxxx xxxxx xxxx xxx xxxx xx xxxx xxxxx xxx xxxxxxxx xx xxxxx xx xxxxxxxxxxx xxxxxx. Xxx xxxxxxx, x xxxxxx xxxx xxxxxxxx x xxxx xxxxx xxxx xxxx xxxxx xxx YY%, YYY%, xxx YYY%.
--   Xxxx xxxx xxxxx xxxx xxxxx xxxx xx xxxx xxx xxxxxxxxxxx xxxxx xx xxx xxxxxxx.
--   Xxxx xxxx xxxxx xxx x xxxxx xxxxx xxxx xxxxx xxxx xx xxxx xxx xxxxx xxxxx xx xxx xxxxxxx xxxx xxxxxx, xxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxx. Xxxxxxxxx, xxxx xxx xxx xxx xxxxx xxxxxxx xx xxx xxx xxxxx xxxxx.
--   Xxxxxx xxxx xxxx xxxxx xxxx xxxx xxxxxx xxxx'x xxxxxxx. Xxx xxxxxxx, xx xxx xxxxxx xx YYY xxxxxx xxxx xxx xxx YYY xxxx xxxxxx, xxx xxx xxxx xxx xxxx xxxxx xxxxxxx xxxxx xxx'x xxxxxx xxx xxxxxxxx xxxxxxxx. Xxx xx xxxxx xxx xxxx YY xxxx xxxxxx, xxxx xxxx xxxxx.
+-   Use step points if you don't want the slider to allow arbitrary values between min and max. For example, if you use a slider to specify the number of movie tickets to buy, don't allow floating point values. Give it a step value of 1.
+-   If you specify steps (also known as snap points), make sure that the final step aligns to the slider's max value.
+-   Use tick marks when you want to show users the location of major or significant values. For example, a slider that controls a zoom might have tick marks for 50%, 100%, and 200%.
+-   Show tick marks when users need to know the approximate value of the setting.
+-   Show tick marks and a value label when users need to know the exact value of the setting they choose, without interacting with the control. Otherwise, they can use the value tooltip to see the exact value.
+-   Always show tick marks when step points aren't obvious. For example, if the slider is 200 pixels wide and has 200 snap points, you can hide the tick marks because users won't notice the snapping behavior. But if there are only 10 snap points, show tick marks.
 
-### Xxxxxx
+### Labels
 
--   **Xxxxxx xxxxxx**
+-   **Slider labels**
 
-    Xxx xxxxxx xxxxx xxxxxxxxx xxxx xxx xxxxxx xx xxxx xxx.
+    The slider label indicates what the slider is used for.
 
-    -   Xxx x xxxxx xxxx xx xxxxxx xxxxxxxxxxx (xxxx xx xxx xxxxxxxxxx xxx xxx xxxxxxx xxxxxx).
-    -   Xxxxxxxx xxxxxx xxxxx xxx xxxxxx xxxx xxx xxxxxx xx xx x xxxx xxxx xxxxxx xxxx xx xxx xxxxxx xxxxx xxxxx xxxxxxxx.
-    -   Xxxxxxxx xxxxxx xx xxx xxxxx xxxx xxx xxxxxx xx xx x xxxx xxxx xxxxxx xxxx xx xxx xxxxxx xx xxx xxxx xx xxxxx xxxxxxxx.
-    -   Xxxxx xxxxxxx xxxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxx'x xxxxxx xxxxx xxxxxxx xxx xxxxx xxxx xxx xxxx xxxxxxx xxx xxxxxx.
--   **Xxxxx xxxxxx**
+    -   Use a label with no ending punctuation (this is the convention for all control labels).
+    -   Position labels above the slider when the slider is in a form that places most of its labels above their controls.
+    -   Position labels to the sides when the slider is in a form that places most of its labels to the side of their controls.
+    -   Avoid placing labels below the slider because the user's finger might occlude the label when the user touches the slider.
+-   **Range labels**
 
-    Xxx xxxxx, xx xxxx, xxxxxx xxxxxxxx xxx xxxxxx'x xxxxxxx xxx xxxxxxx xxxxxx.
+    The range, or fill, labels describe the slider's minimum and maximum values.
 
-    -   Xxxxx xxx xxx xxxx xx xxx xxxxxx xxxxx, xxxxxx x xxxxxxxx xxxxxxxxxxx xxxxx xxxx xxxxxxxxxxx.
-    -   Xxx xxxx xxx xxxx, xx xxxxxxxx, xxx xxxx xxxxx.
-    -   Xxx'x xxx xxxxxx xxxxxxxxxxx.
-    -   Xxxx xxxx xxxxx xxxxxx xxx xxxxxxxxxxx xxx xxxxxxxx. Xxxxxxxx: Xxxxxxx/Xxxxxxx, Xxxx/Xxxx, Xxx/Xxxx, Xxxx/Xxxx.
--   **Xxxxx xxxxxx**
+    -   Label the two ends of the slider range, unless a vertical orientation makes this unnecessary.
+    -   Use only one word, if possible, for each label.
+    -   Don't use ending punctuation.
+    -   Make sure these labels are descriptive and parallel. Examples: Maximum/Minimum, More/Less, Low/High, Soft/Loud.
+-   **Value labels**
 
-    X xxxxx xxxxx xxxxxxxx xxx xxxxxxx xxxxx xx xxx xxxxxx.
+    A value label displays the current value of the slider.
 
-    -   Xx xxx xxxx x xxxxx xxxxx, xxxxxxx xx xxxxx xxx xxxxxx.
-    -   Xxxxxx xxx xxxx xxxxxxxx xx xxx xxxxxxx xxx xxxxxxx xxx xxxxx (xxxx xx xxxxxx).
-    -   Xxxxx xxx xxxxxx’x xxxxx xx xxxxxxx xxxxxx xxxxxxxxx, xxxxxxxx xxxxxxx xxx xxxxxxx xxxxx xxxx xxxxx xxx, xxxx x xxxxx xx xxxxx xxxxxx. X xxxxxx xxxxxxx xxxx xxxx xxxxx xxxxxx xxxx xxxxxx xxxx xx xxx xxxxx xxxx xxxxxx xxx xxxxxx.
+    -   If you need a value label, display it below the slider.
+    -   Center the text relative to the control and include the units (such as pixels).
+    -   Since the slider’s thumb is covered during scrubbing, consider showing the current value some other way, with a label or other visual. A slider setting text size could render some sample text of the right size beside the slider.
 
-### Xxxxxxxxxx xxx xxxxxxxxxxx
+### Appearance and interaction
 
-X xxxxxx xx xxxxxxxx xx x xxxxx xxx x xxxxx. Xxx xxxxx xx x xxx (xxxxx xxx xxxxxxxxxx xxxx xxxxxxx xxxxxx xx xxxx xxxxx) xxxxxxxxxxxx xxx xxxxx xx xxxxxx xxxx xxx xx xxxxx. Xxx xxxxx xx x xxxxxxxx, xxxxx xxx xxxx xxx xxxxxxxx xx xxxxxx xxxxxxx xxx xxxxx xx xx xxxxxxxxx xxxx xxx xxxxx xx xx.
+A slider is composed of a track and a thumb. The track is a bar (which can optionally show various styles of tick marks) representing the range of values that can be input. The thumb is a selector, which the user can position by either tapping the track or by scrubbing back and forth on it.
 
-X xxxxxx xxx x xxxxx xxxxx xxxxxx. Xx xxxxxxxx xxxxx xxxxxxxxxxxxx, x xxxxxx xxxxxx xx xxxxxxxxxx xxx xxxxxx xxxx xxxx xxx xxxx xx xxx xxxxxxx.
+A slider has a large touch target. To maintain touch accessibility, a slider should be positioned far enough away from the edge of the display.
 
-Xxxx xxx’xx xxxxxxxxx x xxxxxx xxxxxx, xxxxxxxx xxxx xx xxxxxxx xxx xxx xxxxxxxxx xxxx xx xxx xxxx xxxx xx xxxxxx xxxxxxx xx xxxxxxxx. Xxx x xxxxx xxxxx xx x xxxx xxxxx xx xxxx xxx xxxxx xx xxxxx xx xxxxxxxxxx xxx xxxxxxx; xxxx xxxxxxxx xxxx xx xxxxxxxxx xxxxx xxxxxx xxxxxxxxxxx. X xxxxxx xxxx xxxxxxxx xxxxxx, xxx xxxxxxx, xxxxx xxxxxxx x xxxxxxx xxxxxxx xxxxxxx xxxxx xxxxx xx xxx xxxxxxx xxx xx xxx xxxxxx, xxx x xxxxxxx xxxxxxx xxxx xxxxx xxxxx xx xxx xxxxxxx xxx.
+When you’re designing a custom slider, consider ways to present all the necessary info to the user with as little clutter as possible. Use a value label if a user needs to know the units in order to understand the setting; find creative ways to represent these values graphically. A slider that controls volume, for example, could display a speaker graphic without sound waves at the minimum end of the slider, and a speaker graphic with sound waves at the maximum end.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-**Xxx xxxxxxxxx**
-* [Xxxxxxxxxx xxx xxxxxx xxxxxxxx](toggles.md)
-**Xxx xxxxxxxxxx (XXXX)**
-* [**Xxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209614)
+**For designers**
+- [Guidelines for toggle switches](toggles.md)
+**For developers (XAML)**
+- [**Slider class**](https://msdn.microsoft.com/library/windows/apps/br209614)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

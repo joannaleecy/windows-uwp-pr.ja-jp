@@ -1,52 +1,52 @@
 ---
-xxxxxxxxxxx: Xx xxxxxxx XXXX xxxxxx xxxxx xxx xxx xxxxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxxxx xx xxxxxxx xxxxxxxxx xxx XXXX xxxxxx.
-xxxxx: XXXX xxxxxx xxxxx
-xx.xxxxxxx: XYYXXYXY-YYYY-YXXY-XXYY-YXXYYYYXYYYX
+description: We explain XAML syntax rules and the terminology that describes the restrictions or choices available for XAML syntax.
+title: XAML syntax guide
+ms.assetid: A57FE7B4-9947-4AA0-BC99-5FE4686B611D
 ---
 
-# XXXX xxxxxx xxxxx
+# XAML syntax guide
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xx xxxxxxx XXXX xxxxxx xxxxx xxx xxx xxxxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxxxx xx xxxxxxx xxxxxxxxx xxx XXXX xxxxxx. Xxx'xx xxxx xxxx xxxxx xxxxxx xx xxx xxx xxx xx xxxxx xxx XXXX xxxxxxxx, xxx xxxx x xxxxxxxxx xx xxx xxxxxxxxxxx xx xxxxx xx xxxxxx, xx xxx xxx xxxxxxx xxxxx xxx xxx XXXX xxxxxxxx xxxxx xxx xxxx xxxx xxxxxxxxxx xxx xxxxxxx.
+We explain XAML syntax rules and the terminology that describes the restrictions or choices available for XAML syntax. You'll find this topic useful if you are new to using the XAML language, you want a refresher on the terminology or parts of syntax, or you are curious about how the XAML language works and want more background and context.
 
-## XXXX xx XXX
+## XAML is XML
 
-Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX) xxx x xxxxx xxxxxx xxxx xxxxxx xx XXX, xxx xx xxxxxxxxxx xxxxx XXXX xxxx xx xxxxx XXX. Xxx XXXX xxxx xxx xxx xxx xxxxxx xxxxxxxx xxxx xxxxxx XXX. X xxxxx XXX xxxxxx xxxxx xx xxxxx xx xxxxx XXX, xxx xxxx xxxxxx xxxxx xxxx x xxxxxxxxx xxx xxxx xxxxxxxx xxxxxxx xx XXXX. Xxxx xxxxx xxxxxxxx xxxxx XXXX xxxxxx xxxxxxxx.
+Extensible Application Markup Language (XAML) has a basic syntax that builds on XML, and by definition valid XAML must be valid XML. But XAML also has its own syntax concepts that extend XML. A given XML entity might be valid in plain XML, but that syntax might have a different and more complete meaning as XAML. This topic explains these XAML syntax concepts.
 
-## XXXX xxxxxxxxxxxx
+## XAML vocabularies
 
-Xxx xxxx xxxxx XXXX xxxxxxx xxxx xxxx XXX xxxxxx xx xxxx XXXX xx xxx xxxxxxxxx xxxxxxxx xxxx x xxxxxx, xxxx xx xx XXX xxxx. Xxxx'x xxxxxxx XXXX xx xxxxxxxx xx xx xxxxxxxxxx, xxxx'x xxxx xxx "X" xx xxx xxxxxxx XXXX xxxxx. Xxxx XXXX xx xxxxxx, xxx xxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxxx xx XXXX xxx xxxxxxxx xx xxxxx xx xxxx xxxxxxx xxxx xxxxxxxxxxxxxx, xxxxxx xx xxx xxxx xxxxx xxxxxxx xx xxx Xxxxxxx Xxxxxxx, xx xx xxxxx xxxx xxxxxx xx xxx xxxxx xxx xxx Xxxxxxx Xxxxxxx. Xxx XXX xxxxxxxxxxxxx xxxxxxxxx xxxxxx xx xxx xxxxx xxxx xxx xxxxxxx xxxxx-xx xx xxx Xxxxxxx Xxxxxxx xxx xxx xx xxxx xx XXXX xx xxxxx xxx *XXXX xxxxxxxxxx* xxx xxx Xxxxxxx Xxxxxxx. Xxxxxxxxx Xxxxxx Xxxxxx xxxxx xxx xx xxxxxxx xxxxxx xxxx'x xxxxx xxxxxx xxxx XXXX xxxxxxxxxx. Xxxxxx Xxxxxx xxx xxxx xxxxxxx xxxx xxxxxx xxxxx xxx XXXX xxxxx xx xxxx xx xxx xxxxxx xx xxxxx xxxxx xx xxxxxxxxxx xxxxxxxxx xx xxx xxxxxxx. Xxx xxxx xxxx xxxxx XXXX xxx xxxxxx xxxxx, xxx [XXXX xxxxxxxxxx xxx xxxxxxxxx xxxxxxx](xaml-namespaces-and-namespace-mapping.md).
+One area where XAML differs from most XML usages is that XAML is not typically enforced with a schema, such as an XSD file. That's because XAML is intended to be extensible, that's what the "X" in the acronym XAML means. Once XAML is parsed, the elements and attributes you reference in XAML are expected to exist in some backing code representation, either in the core types defined by the Windows Runtime, or in types that extend or are based off the Windows Runtime. The SDK documentation sometimes refers to the types that are already built-in to the Windows Runtime and can be used in XAML as being the *XAML vocabulary* for the Windows Runtime. Microsoft Visual Studio helps you to produce markup that's valid within this XAML vocabulary. Visual Studio can also include your custom types for XAML usage so long as the source of those types is referenced correctly in the project. For more info about XAML and custom types, see [XAML namespaces and namespace mapping](xaml-namespaces-and-namespace-mapping.md).
 
-##  Xxxxxxxxx xxxxxxx
+##  Declaring objects
 
-Xxxxxxxxxxx xxxxx xxxxx xx xxxxx xx xxxxxxx xxx xxxxxxx, xxxxxxx x xxxxxx xxxxxxxx xx xxxxxxxxxxxxxx xx xxxxxxxx xxx xxxxxxxxxx. Xx xxx xxxx xxxxx xxxxx, xx xxxxxxx xxxx xxx xxxxxxx xx XXXX xxxxxx xxxxxxx xx xxxxxx xx x xxxxxxx xxxxxxx xxxxxx xxxxxxxxxxxxxx. Xx xxxxxx x xxx-xxxx xxxxxx xxx xxxx xxx, xxx xxxxxxx x XXXX xxxxxxx xx xxx XXXX xxxxxx. Xxx xxxxxx xx xxxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxx xxxx XXXX.
+Programmers often think in terms of objects and members, whereas a markup language is conceptualized as elements and attributes. In the most basic sense, an element that you declare in XAML markup becomes an object in a backing runtime object representation. To create a run-time object for your app, you declare a XAML element in the XAML markup. The object is created when the Windows Runtime loads your XAML.
 
-X XXXX xxxx xxxxxx xxx xxxxxxx xxx xxxxxxx xxxxxxx xx xxx xxxx, xxxxx xxxxxxxx xx xxxxxx xxxx xxxx xx xxx xxxxxxxxxx xxxx xx xxxx xxxxxxxxxxx xxxxxxxxx xxxx xx x xxxx, xx xxx xxxxxx xxxxx xx xxx xxxxxx xxx-xxxx xxxxxxxxxx xx xx xxxxxxxxxxx.
+A XAML file always has exactly one element serving as its root, which declares an object that will be the conceptual root of some programming structure such as a page, or the object graph of the entire run-time definition of an application.
 
-Xx xxxxx xx XXXX xxxxxx, xxxxx xxx xxxxx xxxx xx xxxxxxx xxxxxxx xx XXXX:
+In terms of XAML syntax, there are three ways to declare objects in XAML:
 
--   **Xxxxxxxx, xxxxx xxxxxx xxxxxxx xxxxxx:** Xxxx xxxx xxxxxxx xxx xxxxxxx xxxx xx xxxxxxxxxxx xx xxxxxx xx xx XXX-xxxx xxxxxxx. Xxx xxx xxx xxxx xxxxxx xx xxxxxxx xxxx xxxxxxx xx xx xxxxxx xxxxxx xxxxxxx xxxx xxx xxxxxxxx xxxxxx.
--   **Xxxxxxxxxx, xxxxx xxxxxxxxx xxxxxx:** Xxxx xxxx xx xxxxxx xxxxxx xxxxx xxxx xxx xxxxxxxxxxxx xxx xxx xx xxxxxx xx xxxxxx. Xxx XXXX xxxxxx xxxx xxxx xxxxxx xx xxx xxx xxxxx xx x xxxxxxxx xx x xxxxx xxxxxxx xxxxxxxxx xxxxx. Xxxxxxx xxx xx xx xxxxxxx xx xxxxxxx xxxxxx xxxxxxx xxx xxxxxxxxxx.
--   Xxxxx x xxxxxx xxxxxxxxx.
+-   **Directly, using object element syntax:** This uses opening and closing tags to instantiate an object as an XML-form element. You can use this syntax to declare root objects or to create nested objects that set property values.
+-   **Indirectly, using attribute syntax:** This uses an inline string value that has instructions for how to create an object. The XAML parser uses this string to set the value of a property to a newly created reference value. Support for it is limited to certain common objects and properties.
+-   Using a markup extension.
 
-Xxxx xxxx xxx xxxx xxxx xxx xxxxxx xxxx xxx xxxxxx xx xxx xxxxxx xxx xxxxxx xxxxxxxx xx x XXXX xxxxxxxxxx. Xxxx xxxxxxx xxx xx xxxxxxx xxxx xx xxxxx xxxxxx xxxxxxx xxxxxx. Xxxx xxxxxxx xxx xx xxxxxxx xxxx xx xxxxx xxxxxxxxx xxx xx xx xxxxxxxxx. Xx xxxx, xxxxxxx xxxx xxx xx xxxxxxx xxxx xxxxxx xxxxxx xxxxxxx xx xxxxxxxxx xxxxxx xxx xxxxxxxxxxxxx xxxx xx XXXX xxxxxxxxxxxx. Xxxx xx xxxx xxxxxx xxxxx xxx xxxxxxxx, xxx xx xxx xxxxxxxx xxxx xx xxxx xxxxxx xx x xxxxxx xx xxxxx.
-Xxxxx xxx xxxx xxxxxxxxxx xxx xxx xxx xx XXXX xx xxxxxxxxx xxxxxxxx xxxxxxx xxxxxx xxxx xxxxxxxx xxx xxxxxx. Xxx xxxxxxxx xxxxxxx xxxxx xx xxxxxxx xxxxxx xx xxxxx xxxxx xx XXXX, xx xxxxx xxxxx xxxxxxxxxx xxxxxxx xxxx xxxxxxxx xx xxx xxxxxxxx xxx xxx xxxxxxxxxxx xx xxxxxxxxxxx xxxxxx.
+This does not mean that you always have the choice of any syntax for object creation in a XAML vocabulary. Some objects can be created only by using object element syntax. Some objects can be created only by being initially set in an attribute. In fact, objects that can be created with either object element or attribute syntax are comparatively rare in XAML vocabularies. Even if both syntax forms are possible, one of the syntaxes will be more common as a matter of style.
+There are also techniques you can use in XAML to reference existing objects rather than creating new values. The existing objects might be defined either in other areas of XAML, or might exist implicitly through some behavior of the platform and its application or programming models.
 
-### Xxxxxxxxx xx xxxxxx xx xxxxx xxxxxx xxxxxxx xxxxxx
+### Declaring an object by using object element syntax
 
-Xx xxxxxxx xx xxxxxx xxxx xxxxxx xxxxxxx xxxxxx, xxx xxxxx xxxx xxxx xxxx: `<objectName>  </objectName>`, xxxxx *xxxxxxXxxx* xx xxx xxxx xxxx xxx xxx xxxxxx xxx xxxx xx xxxxxxxxxxx. Xxxx'x xxxxxx xxxxxxx xxxxx xx xxxxxxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209267) xxxxxx:
+To declare an object with object element syntax, you write tags like this: `<objectName>  </objectName>`, where *objectName* is the type name for the object you want to instantiate. Here's object element usage to declare a [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267) object:
 
 ```xaml
 <Canvas>
 </Canvas>
 ```
 
-Xx xxx xxxxxx xxxx xxx xxxxxxx xxxxx xxxxxxx, xxx xxx xxxxxxx xxx xxxxxx xxxxxxx xx xxxxx xxx xxxx-xxxxxxx xxx xxxxxxx xx xx xxxxxxx/xxxxxxx xxxx: `<Canvas />`
+If the object does not contain other objects, you can declare the object element by using one self-closing tag instead of an opening/closing pair: `<Canvas />`
 
-### Xxxxxxxxxx
+### Containers
 
-Xxxx xxxxxxx xxxx xx XX xxxxxxxx, xxxx xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209267), xxx xxxxxxx xxxxx xxxxxxx. Xxxxx xxx xxxxxxxxx xxxxxxxx xx xx xxxxxxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxx x **Xxxxxx** xxxxxxxxx xxxx xxxxxxxx xxx xxxxxxx, x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243371).
+Many objects used as UI elements, such as [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), can contain other objects. These are sometimes referred to as containers. The following example shows a **Canvas** container that contains one element, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371).
 
 ```xaml
 <Canvas>
@@ -54,17 +54,17 @@ Xxxx xxxxxxx xxxx xx XX xxxxxxxx, xxxx xx [**Xxxxxx**](https://msdn.microsoft.co
 </Canvas>
 ```
 
-### Xxxxxxxxx xx xxxxxx xx xxxxx xxxxxxxxx xxxxxx
+### Declaring an object by using attribute syntax
 
-Xxxxxxx xxxx xxxxxxxx xx xxxx xx xxxxxxxx xxxxxxx, xx'xx xxxx xxxxx xxxx xxxx xx xxxxxxxx xxxxxxxx.
+Because this behavior is tied to property setting, we'll talk about this more in upcoming sections.
 
-### Xxxxxxxxxxxxxx xxxx
+### Initialization text
 
-Xxx xxxx xxxxxxx xxx xxx xxxxxxx xxx xxxxxx xxxxx xxxxx xxxx xxxx'x xxxx xx xxxxxxxxxxxxxx xxxxxx xxx xxxxxxxxxxxx. Xx XXXX, xxxx xxxxxxxxx xxx xxxxxx xx xxxxxx *xxxxxxxxxxxxxx xxxx*. Xxxxxxxxxxxx, xxxxxxxxxxxxxx xxxx xx xxxxxxx xx xxxxxxx x xxxxxxxxxxx xxxx xxx xxxxxxxxxx. Xxxxxxxxxxxxxx xxxx xx xxxxxx xxx xxxxxxx xxxxxxx xxxxxx xx xxxxxxx xxxxxxxxxx.
+For some objects you can declare new values using inner text that's used as initialization values for construction. In XAML, this technique and syntax is called *initialization text*. Conceptually, initialization text is similar to calling a constructor that has parameters. Initialization text is useful for setting initial values of certain structures.
 
-Xxx xxxxx xxx xx xxxxxx xxxxxxx xxxxxx xxxx xxxxxxxxxxxxxx xxxx xx xxx xxxx x xxxxxxxxx xxxxx xxxx xx **x:Xxx**, xx xx xxx xxxxx xx x [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208794). Xxx xxxxx xx xxxx xx xxx xxxxx xxxx xxxxxxxxx xxxxx xxxxx xxxxxxxx xxxxxx xxxxxxxxxx. Xxx xxxx xxxxxxxxxx, xxx xxx'x xxx xxxxxxxxx xxxxxx xx xxx xxx xxxxxxxxx'x xxxxxx: xxxxxxxxxxxxxx xxxx xx xxx xxxx xxx xx xxxxxxx x xxxxxx xxx xxxxxxxxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242343), [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208864), [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208754) xx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/hh673723) xxxxxxxx.
+You often use an object element syntax with initialization text if you want a structure value with an **x:Key**, so it can exist in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). You might do this if you share that structure value among multiple target properties. For some structures, you can't use attribute syntax to set the structure's values: initialization text is the only way to produce a useful and shareable [**CornerRadius**](https://msdn.microsoft.com/library/windows/apps/br242343), [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864), [**GridLength**](https://msdn.microsoft.com/library/windows/apps/br208754) or [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) resource.
 
-Xxxx xxxxxxxxxxx xxxxxxx xxxx xxxxxxxxxxxxxx xxxx xx xxxxxxx xxxxxx xxx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208864), xx xxxx xxxx xxxxxxxxxx xxxxxx xxxx xxx xxxx **Xxxx** xxx **Xxxxx** xx YY, xxx xxxx **Xxx** xxx **Xxxxxx** xx YY. Xxxx xxxxxxx xxxxx xxx **Xxxxxxxxx** xxxxxxx xx x xxxxx xxxxxxxx, xxx xxxx xxx xxxxxxxxx xx xxxx xxxxxxxx. Xxx xxxx xxxx xx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208864) xxxxxxxxxxxxxx xxxx, xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208864).
+This abbreviated example uses initialization text to specify values for a [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864), in this case specifying values that set both **Left** and **Right** to 20, and both **Top** and **Bottom** to 10. This example shows the **Thickness** created as a keyed resource, and then the reference to that resource. For more info on [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864) initialization text, see [**Thickness**](https://msdn.microsoft.com/library/windows/apps/br208864).
 
 ```xaml
 <UserControl ...>
@@ -79,31 +79,31 @@ Xxxx xxxxxxxxxxx xxxxxxx xxxx xxxxxxxxxxxxxx xxxx xx xxxxxxx xxxxxx xxx x [**Xxx
 </UserControl ...>
 ```
 
-**Xxxx**  Xxxx xxxxxxxxxx xxx'x xx xxxxxxxx xx xxxxxx xxxxxxxx. Xxxxxxxxxxxxxx xxxx xxx'x xxxxxxxxx xxx xxxx xxx'x xx xxxx xx xxxxxxxxx. Xxx xxxx xxx xx xxxxxxxxx xxxxxx xx xxxxx xx xxx xxxxxxxxxx xx xxxxx xxxxxx xx XXXX. Xxxxx xxxxx xxx: [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242377), [**XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210411), [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870), [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225994) xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225995).
+**Note**  Some structures can't be declared as object elements. Initialization text isn't supported and they can't be used as resources. You must use an attribute syntax in order to set properties to these values in XAML. These types are: [**Duration**](https://msdn.microsoft.com/library/windows/apps/br242377), [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/br210411), [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994) and [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995).
 
-## Xxxxxxx xxxxxxxxxx
+## Setting properties
 
-Xxx xxx xxx xxxxxxxxxx xx xxxxxxx xxxx xxx xxxxxxxx xx xxxxx xxxxxx xxxxxxx xxxxxx. Xxxxx xxx xxxxxxxx xxxx xx xxx xxxxxxxxxx xx XXXX:
+You can set properties on objects that you declared by using object element syntax. There are multiple ways to set properties in XAML:
 
--   Xx xxxxx xxxxxxxxx xxxxxx.
--   Xx xxxxx xxxxxxxx xxxxxxx xxxxxx.
--   Xx xxxxx xxxxxxx xxxxxx xxxxx xxx xxxxxxx (xxxxx xxxx xx xxxxx xxxxxxxx) xx xxxxxxx xxx XXXX xxxxxxx xxxxxxxx xx xx xxxxxx.
--   Xx xxxxx x xxxxxxxxxx xxxxxx (xxxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxx).
+-   By using attribute syntax.
+-   By using property element syntax.
+-   By using element syntax where the content (inner text or child elements) is setting the XAML content property of an object.
+-   By using a collection syntax (which is usually the implicit collection syntax).
 
-Xx xxxx xxxxxx xxxxxxxxxxx, xxxx xxxx xxxxx'x xxxxx xxxx xxx xxxxxxxx xxxxx xx xxx xxxx xxxx xx xxx xxxxxxxxxx. Xxxx xxxxxxxxxx xxxxxxx xxxx xxx xx xxx xxxxxxxxxx.
-Xxxx xxxxxxxxxx xxxxxxx xxxx xxxx xxx xxxx; xxx xxxxxxx, xxxxx xxx xxxxxxxxxx xxxx xxx xxx xxxxxxxx xxxxxxx xxxxxx, xx xxxxxxxxx xxxxxx. Xxxx'x xxxxxxxx xxxxxxx xxxx xx xxx xxxxxxxx xxx xx xxx xxxxxx xxxx xxxx xxx xxxxxxxx xxxx. Xx xxx Xxxxxxx Xxxxxxx XXX xxxxxxxxx, xxx'xx xxx xxx XXXX xxxxxx xxx xxx xxx xx xxx **Xxxxxx** xxxxxxx. Xxxxxxxxx xxxxx xx xx xxxxxxxxxxx xxxxx xxxx xxxxx xxxx xxx xxxxx xx xxxx xxxxxxx. Xxxxx xxxxxxx xxxxxx xxxx'x xxxxxx xxxxx xxxxxxx xx xxx xxxxxx xx xxxx xxx xxx xxxx xxxxxxxxx xx xxx xxxx xxxxx xxxxxxxxx xxx xxxxx xxxx xxxxxxxx xx XXXX. Xxxxxxxx xxx XXXX xxxxxx xx xxxxxxxx xx xxx **XXXX Xxxxx** xxxxxxxx xx xxxxxxxxx xxxxx xxx xxxxxxxxxx xxxx xxx xx xxx xx XXXX.
+As with object declaration, this list doesn't imply that any property could be set with each of the techniques. Some properties support only one of the techniques.
+Some properties support more than one form; for example, there are properties that can use property element syntax, or attribute syntax. What's possible depends both on the property and on the object type that the property uses. In the Windows Runtime API reference, you'll see the XAML usages you can use in the **Syntax** section. Sometimes there is an alternative usage that would work but would be more verbose. Those verbose usages aren't always shown because we are trying to show you the best practices or the real world scenarios for using that property in XAML. Guidance for XAML syntax is provided in the **XAML Usage** sections of reference pages for properties that can be set in XAML.
 
-Xxxx xxxxxxxxxx xx xxxxxxx xxxx xxxxxx xx xxx xx XXXX xx xxx xxxxx, xxx xxx xxxx xx xxx xxxxx xxxx. Xxxxxxx xxxxx xxx xxxxxxxxxx xxxx xxx xxxx xxxxxxxxxxx xx xxxx xxxx xx xxx xxxx-xxxxxx, xxx xx XXXX.
+Some properties on objects that cannot be set in XAML by any means, and can only be set using code. Usually these are properties that are more appropriate to work with in the code-behind, not in XAML.
 
-X xxxx-xxxx xxxxxxxx xxxxxx xx xxx xx XXXX. Xxxx xx xxxx, xxx xxxxxx xxxx xxxxx xxxx xx xxxxxxx xxxx xxxxx xxx xx xxx xx, xxxx x xxxxxxxxxxx xxxxxxxx, xxxxxx xxxxxx, xx xxxxxxxxxx xxxxxxxx xxxxxxx. X xxxxxxxxxx xxxxxxxx xxxxxx xx xxx xxxxxx xx xxxxx xxxxxxxx xxxxxxxxxx xxxx xxxxxxxxx xx xxxxx xxxx xxxxx-xx xxxxxxxx; xxxxx xxxxxxxx xxx xxxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx xxxxxx. Xxx xxxx xxxx xx xxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxx xxx xxxxxxxxxx xxxxxxxx xxxxxxx, xxx [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](dependency-properties-overview.md).
+A read-only property cannot be set in XAML. Even in code, the owning type would have to support some other way to set it, like a constructor overload, helper method, or calculated property support. A calculated property relies on the values of other settable properties plus sometimes an event with built-in handling; these features are available in the dependency property system. For more info on how dependency properties are useful for calculated property support, see [Dependency properties overview](dependency-properties-overview.md).
 
-Xxxxxxxxxx xxxxxx xx XXXX xxxxx xx xxxxxxxxxx xxxx xxx xxx xxxxxxx x xxxx-xxxx xxxxxxxx, xxx xx xxxx xxx xxx xxx. Xxx "Xxxxxxx x Xxxxxxxx xx Xxxxx x Xxxxxxxxxx Xxxxxx" xxxxxxx xxxxx xx xxxx xxxxx.
+Collection syntax in XAML gives an appearance that you are setting a read-only property, but in fact you are not. See "Setting a Property by Using a Collection Syntax" section later in this topic.
 
-### Xxxxxxx x xxxxxxxx xx xxxxx xxxxxxxxx xxxxxx
+### Setting a property by using attribute syntax
 
-Xxxxxxx xx xxxxxxxxx xxxxx xx xxx xxxxxxx xxxxx xx xxxxx xxx xxx x xxxxxxxx xxxxx xx x xxxxxx xxxxxxxx, xxx xxxxxxx xx XXX xx XXXX. Xxxxxxx XXXX xxxxxxxxxx xx xxxxxxx xx xxx xxx xxx xxxxxxxxx xxxxxx xx XXX. Xxx xxxxxxxxx xxxx xx xxxxxxxxx xx xxx xxxxx xxxxxx xxx xxxx xxxxxxxxx xxx xxxxxxx xxxx, xxxxxxxxx xxxx xxxxxxx xxxx xx xx xxxxx xxx xxxxxxxxxx. Xxx xxxxxxxxx xxxx xx xxxxxxxx xx xx xxxxxx xxxx. Xxx xxxxxxxxx xxxxx xx xxxxxxxxx xxxxxx x xxxx xx xxxxxx. Xxx xxxxxx xxx xx xxxxxx xxxxxx xxxxxx xx xxxxxx xxxxxx xx xxxx xx xxxx xxxxx xxx xxxxxxx xxx xxxxx. Xxx xxxxxxxxx xxxxx xxxxxx xxxx xx xxxxxxxxxxx xx x xxxxxx. Xxx xxxxxx xxxxx xxxxxxxx xxxxxxxx, xxx xx XXXX, xxx xxxxxxxxx xxxxxx xxx xxxxxx xxxxxx xxxxx xxx XXXX xxxxxx xxxx xxxxxxxx xxx xxxx xxxx xxxxx xxxxx xxxxxxxxxx.
+Setting an attribute value is the typical means by which you set a property value in a markup language, for example in XML or HTML. Setting XAML attributes is similar to how you set attribute values in XML. The attribute name is specified at any point within the tags following the element name, separated from element name by at least one whitespace. The attribute name is followed by an equals sign. The attribute value is contained within a pair of quotes. The quotes can be either double quotes or single quotes so long as they match and enclose the value. The attribute value itself must be expressible as a string. The string often contains numerals, but to XAML, all attribute values are string values until the XAML parser gets involved and does some basic value conversion.
 
-Xxxx xxxxxxx xxxx xxxxxxxxx xxxxxx xxx xxxx xxxxxxxxxx xx xxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br208735), [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208751), [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208718), xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br243378) xxxxxxxxxx xx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243371) xxxxxx.
+This example uses attribute syntax for four attributes to set the [**Name**](https://msdn.microsoft.com/library/windows/apps/br208735), [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751), [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), and [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) properties of a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) object.
 
 ```xaml
 <Rectangle Name="rectangle1" Width="100" Height="100" Fill="Blue" /></code></pre></td>
@@ -112,29 +112,25 @@ Xxxx xxxxxxx xxxx xxxxxxxxx xxxxxx xxx xxxx xxxxxxxxxx xx xxx xxx [**Xxxx**](htt
 </table>
 ```
 
-### Xxxxxxx x xxxxxxxx xx xxxxx xxxxxxxx xxxxxxx xxxxxx
+### Setting a property by using property element syntax
 
-Xxxx xxxxxxxxxx xx xx xxxxxx xxx xx xxx xx xxxxx xxxxxxxx xxxxxxx xxxxxx. X xxxxxxxx xxxxxxx xxxxx xxxx xxxx: `<`*xxxxxx*`.`*xxxxxxxx*`>`.
+Many properties of an object can be set by using property element syntax. A property element looks like this: `<`*object*`.`*property*`>`.
 
-Xx xxx xxxxxxxx xxxxxxx xxxxxx, xxx xxxxxx XXXX xxxxxxxx xxxxxxxx xxx xxx xxxxxxxx xxxx xxx xxxx xx xxx. Xx xxxxxxxx XXX, xxxx xxxxxxx xxxxx xxxx xx xxxxxxxxxx xx xxxxxxx xxxx xxx x xxx xx xxx xxxx. Xxxxxxx, xx XXXX, xxx xxx xx xxx xxxxxxx xxxx xxxxxxxxxx xxx xxxxxxx xx x xxxxxxxx xxxxxxx, xxxx *xxxxxxxx* xxxxxxxx xx x xxxxxx xx *xxxxxx* xx x xxxxxxx xxxxxx xxxxx xxxxxxxxxxxxxx. Xx xxx xxxxxxxx xxxxxxx xxxxxx, xx xxxx xx xxxxxxxx xx xxxxxxx xx xxxxxx xxxxxxx xx xxxxx xx "xxxx" xxx xxxxxxxx xxxxxxx xxxx. X xxxxxxxx xxxxxxx xxxx xxxxxx xxxx xxxx xxxxxxx (xxxxxx xxxxxxx, xxxxxxxx xxxxxxxx, xx xxxxx xxxx); xxxxx'x xx xxxxx xx xxxxxx x xxxx-xxxxxxx xxxxxxxx xxxxxxx.
+To use property element syntax, you create XAML property elements for the property that you want to set. In standard XML, this element would just be considered an element that has a dot in its name. However, in XAML, the dot in the element name identifies the element as a property element, with *property* expected to a member of *object* in a backing object model implementation. To use property element syntax, it must be possible to specify an object element in order to "fill" the property element tags. A property element will always have some content (single element, multiple elements, or inner text); there's no point in having a self-closing property element.
 
-Xx xxx xxxxxxxxx xxxxxxx, *xxxxxxxx* xx xxx xxxx xx xxx xxxxxxxx xxxx xxx xxxx xx xxx xxx *xxxxxxxxXxxxxXxXxxxxxXxxxxxx* xx x xxxxxx xxxxxx xxxxxxx, xxxx'x xxxxxxxx xx xxxxxxx xxx xxxxx xxxx xxxxxxxxxxxx xx xxx xxxxxxxx.
+In the following grammar, *property* is the name of the property that you want to set and *propertyValueAsObjectElement* is a single object element, that's expected to satisfy the value type requirements of the property.
 
-`<`
-            *xxxxxx*`>`
+`<`*object*`>`
 
-`<`
-            *xxxxxx*`.`*xxxxxxxx*`>`
+`<`*object*`.`*property*`>`
 
-*xxxxxxxxXxxxxXxXxxxxxXxxxxxx*
+*propertyValueAsObjectElement*
 
-`</`
-            *xxxxxx*`.`*xxxxxxxx*`>`
+`</`*object*`.`*property*`>`
 
-`</`
-            *xxxxxx*`>`
+`</`*object*`>`
 
-Xxx xxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxxx xxxxxx xx xxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br243378) xx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243371) xxxx x [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242962) xxxxxx xxxxxxx. (Xxxxxx xxx **XxxxxXxxxxXxxxx**, [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242963) xx xxx xx xx xxxxxxxxx.) Xxx xxxxxx xxxxxx xx xxxx XXXX xx xxxxxxxxx xx xxx xxxxxxxx XXXX xxxxxxx xxxx xxx **Xxxx** xxxxx xxxxxxxxx xxxxxx.
+The following example uses property element syntax to set the [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) of a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) with a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) object element. (Within the **SolidColorBrush**, [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) is set as an attribute.) The parsed result of this XAML is identical to the previous XAML example that set **Fill** using attribute syntax.
 
 ```xaml
 <colgroup>
@@ -158,17 +154,17 @@ Xxx xxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxxx xxxxxx xx xxx xxx [**Xxxx**](https:/
 </Rectangle>
 ```
 
-### XXXX xxxxxxxxxxxx xxx xxxxxx-xxxxxxxx xxxxxxxxxxx
+### XAML vocabularies and object-oriented programming
 
-Xxxxxxxxxx xxx xxxxxx xx xxxx xxxxxx xx XXXX xxxxxxx xx x Xxxxxxx Xxxxxxx XXXX xxxx xxx xxxxx xxxxxxxxx xxxx xxxx xxxxx. Xxxxxxxx xxxx xxxxxxx: `<Button Background="Blue" .../>`. Xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209395) xxxxxxxx xx xxx xx xxxxxxxxxxx xxxxxxxx xxxxxxxx xx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265) xxxxx. Xxxxxxx, **Xxxxxxxxxx** xx xxxxxxxxx xxxx xxx xxxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209390) xxxxx. Xx xxxx, xx xxx xxxx xx xxx xxxxxxxxx xxxxx xxx **Xxxxxx** xxx'xx xxx xxxx xxx xxxxxxx xxxxx xxxxxxx xx xxxxx xxx xxxxxxxxx xxxxxx xxxx xxxx xx x xxxxx xx xxxxxxxxxx xxxx xxxxxxx: [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227736), [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209390), [**XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208706), [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911), [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242356). Xx xxx **Xxxxxxxxxx** xxxx, xxx xxx xxxx-xxxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xx x XXXX xxxxxxxxxx xxxxx. Xxxxxx (xxxx xxx xxxxxxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911) xxxxxx) xxx xxxxxxxxx xxx.
+Properties and events as they appear as XAML members of a Windows Runtime XAML type are often inherited from base types. Consider this example: `<Button Background="Blue" .../>`. The [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) property is not an immediately declared property on the [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) class. Instead, **Background** is inherited from the base [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390) class. In fact, if you look at the reference topic for **Button** you'll see that the members lists contain at least one inherited member from each of a chain of successive base classes: [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736), [**Control**](https://msdn.microsoft.com/library/windows/apps/br209390), [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706), [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911), [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356). In the **Properties** list, all the read-write properties and collection properties are inherited in a XAML vocabulary sense. Events (like the various [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) events) are inherited too.
 
-Xx xxx xxx xxx Xxxxxxx Xxxxxxx xxxxxxxxx xxx XXXX xxxxxxxx, xxx xxxxxxx xxxx xxxx'x xxxxx xx x xxxxxx xx xxxx xx xxxxxxx xxxx xx xxxxxxxxx xxx xxx xxxx xxxx xxxxxxxxxx xxxxxxx xxx xxxxxxxx, xxxxxxx xxxx xxxxxxxxx xxxxx xx xxxxxx xx xxx xxx xxxxxxxx xxxxx xxxx xxxxxxx xx xxxx x xxxx xxxxx. Xx xxx xxx Xxxxxx Xxxxxx'x XxxxxxxXxxxx xxx XXXX xx xxx XXX xxxxxx, xxx XxxxxxxXxxxx xxx xxx xxxx-xxxxx xx x xxxxx xxx xx xxxxxxxxxx xxx xxxxxxxxxxx xxx xxxxxxxxx xx xxxxxxxx xxxx xx xxxxxxxxxx xxxx xxx xxxxxxxxx xxx xxxxxxx xxxx xxx'xx xxxxxxx xxxx xx xxxxxx xxxxxxx xxx x xxxxx xxxxxxxx.
+If you use the Windows Runtime reference for XAML guidance, the element name that's shown in a syntax or even in example code is sometimes for the type that originally defines the property, because that reference topic is shared by all the possible types that inherit it from a base class. If you use Visual Studio's IntelliSense for XAML in the XML editor, the IntelliSense and its drop-downs do a great job of coalescing the inheritance and providing an accurate list of attributes that are available for setting once you've started with an object element for a class instance.
 
-### XXXX xxxxxxx xxxxxxxxxx
+### XAML content properties
 
-Xxxx xxxxx xxxxxx xxx xx xxxxx xxxxxxxxxx xxxx xxxx xxx xxxxxxxx xxxxxxx x XXXX xxxxxxx xxxxxx. Xxx xxx XXXX xxxxxxx xxxxxxxx xx x xxxx, xxx xxx xxxx xxx xxxxxxxx xxxxxxx xxx xxxx xxxxxxxx xxxx xxxxxxxxxx xx xx XXXX. Xx, xxx xxx xxx xxx xxxxxxxx xx xx xxxxx xxxx xxxxx xx xxxxxxxxx xxxx xxxxx xxxx xxxxxxxx xxxxxx xxx xxxxxx xxxx'x xxxxxx xxxxxxx xxxx. XXXX xxxxxxx xxxxxxxxxx xxxxxxx xxxxxxxxxxxxxxx xxxxxx xxxxxx xxx xxxx xxxxxxxx xxx xxxxx xxx XXXX xxxx xxxxx-xxxxxxxx xx xxxxxxxx xxx xxxxxxx.
+Some types define one of their properties such that the property enables a XAML content syntax. For the XAML content property of a type, you can omit the property element for that property when specifying it in XAML. Or, you can set the property to an inner text value by providing that inner text directly within the owning type's object element tags. XAML content properties support straightforward markup syntax for that property and makes the XAML more human-readable by reducing the nesting.
 
-Xx x XXXX xxxxxxx xxxxxx xx xxxxxxxxx, xxxx xxxxxx xxxx xx xxxxx xx xxx "XXXX" xxxxxxxx xx **Xxxxxx** xxx xxxx xxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxxxxxxxx xxxxxxxxxxxxx. Xxx xxxxxxx, xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209258) xxxxxxxx xxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209250) xxxxx XXXX xxxxxxx xxxxxx xxxxxxx xx xxxxxxxx xxxxxxx xxxxxx xx xxx xxx xxxxxx-xxxxxx **Xxxxxx.Xxxxx** xxxxx xx x **Xxxxxx**, xxxx xxxx:
+If a XAML content syntax is available, that syntax will be shown in the "XAML" sections of **Syntax** for that property in the Windows Runtime reference documentation. For example, the [**Child**](https://msdn.microsoft.com/library/windows/apps/br209258) property page for [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) shows XAML content syntax instead of property element syntax to set the single-object **Border.Child** value of a **Border**, like this:
 
 ```xaml
 <Border>
@@ -176,7 +172,7 @@ Xx x XXXX xxxxxxx xxxxxx xx xxxxxxxxx, xxxx xxxxxx xxxx xx xxxxx xx xxx "XXXX" x
 </Border>
 ```
 
-Xx xxx xxxxxxxx xxxx xx xxxxxxxx xx xxx XXXX xxxxxxx xxxxxxxx xx xxx **Xxxxxx** xxxx, xx xx xxxx **Xxxxxx**, xxxx xxx XXXX xxxxxxx xxxxxx xxxxxxxx xxxx'x xxxxxxxxx xxxxx xxxx xx xxx XXX xxxxxxxx xxxxx: x xxxxxx xxxxxxx xxx xxxxxxx xxx xxxxxxx xxxxxx xxxx. Xxx xxxxxxx, xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br209676) xxxxxxxx xxxx xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652) xxxxx XXXX xxxxxxx xxxxxx xxxx xxx xx xxxxx xxxx xxxxx xx xxx **Xxxx**, xxx xxx xxxxxx "Xxxx" xxxxx xxxxxxx xx xxx xxxxxx. Xxxx'x xx xxxxxxx xxxxx:
+If the property that is declared as the XAML content property is the **Object** type, or is type **String**, then the XAML content syntax supports what's basically inner text in the XML document model: a string between the opening and closing object tags. For example, the [**Text**](https://msdn.microsoft.com/library/windows/apps/br209676) property page for [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) shows XAML content syntax that has an inner text value to set **Text**, but the string "Text" never appears in the markup. Here's an example usage:
 
 ```xaml
 <TextBlock>Hello!</TextBlock></code></pre></td>
@@ -185,9 +181,9 @@ Xx xxx xxxxxxxx xxxx xx xxxxxxxx xx xxx XXXX xxxxxxx xxxxxxxx xx xxx **Xxxxxx** 
 </table>
 ```
 
-Xx x XXXX xxxxxxx xxxxxxxx xxxxxx xxx x xxxxx, xxxx'x xxxxxxxxx xx xxx xxxxxxxxx xxxxx xxx xxx xxxxx, xx xxx "Xxxxxxxxxx" xxxxxxx. Xxxx xxx xxx xxxxx xx xxx [**XxxxxxxXxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br228011). Xxxx xxxxxxxxx xxxx x xxxxx xxxxx "Xxxx". Xxx xxxxx xx "Xxxx" xx xxx xxxx xx xxx xxxxxxxx xx xxxx xxxxx xxxx xx xxx XXXX xxxxxxx xxxxxxxx. Xxx xxxxxxx, xx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209250) xxxxxxxxx xxxx, xxx'xx xxx xxxx: XxxxxxxXxxxxxxx("Xxxx=Xxxxx").
+If a XAML content property exists for a class, that's indicated in the reference topic for the class, in the "Attributes" section. Look for the value of the [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011). This attribute uses a named field "Name". The value of "Name" is the name of the property of that class that is the XAML content property. For example, on the [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) reference page, you'll see this: ContentProperty("Name=Child").
 
-Xxx xxxxxxxxx XXXX xxxxxx xxxx xx xxxxxx xxxxxxx xx xxxx xxx xxx'x xxxxxxxx xxx XXXX xxxxxxx xxxxxxxx xxx xxxxx xxxxxxxx xxxxxxxx xxx xxx xx xxx xxxxxxx. Xxx XXXX xxxxxxx xxxxxxxx xxxx xx xxx xxxxxxxx xxxxxx xxx xxxxxxxx xxxxxxxx, xx xxxxxxxx xxxxx. Xxx xxxxxxx xxxx xx xxxxxxx XXXX:
+One important XAML syntax rule we should mention is that you can't intermix the XAML content property and other property elements you set on the element. The XAML content property must be set entirely before any property elements, or entirely after. For example this is invalid XAML:
 
 ``` syntax
 <StackPanel>
@@ -199,11 +195,11 @@ Xxx xxxxxxxxx XXXX xxxxxx xxxx xx xxxxxx xxxxxxx xx xxxx xxx xxx'x xxxxxxxx xxx 
 </StackPanel>
 ```
 
-## Xxxxxxxxxx xxxxxx
+## Collection syntax
 
-Xxx xx xxx xxxxxxxx xxxxx xxxx xxx xxx xxxxxxx xxxxxxxxxx xx xxxxxx xxxxxxx. Xxx xxxx XX xxxxxxxxx xxxxxxx xxxx x xxxxx xxxxxx xxxxxxx xxx xxxx xxxxxxxx xxxxx xxxxxxxx. Xxx xxxxxxx, x XX xxx xx xxxxx xxxx xxxxx xxxxxxx xxxx xxx xxxxxxxx, xxxx xxxxxx, xxx xxxxxxx x "Xxxxxx" xxxxxx. Xxxxx, xx xxx xxxx xx xxx x xxxxxxxxxxx xxxxxx xxxxx xx xxxxxx xxxxx xxxxxxxx xxxxxxxx, xxxx xxxxx xxxxxxxxx xx xxxxx xx x xxxxxx xxxxxxxxxx xxxxxxxx, xxxxxx xxxx xxxx xxxx xxxxx xxx xxxxx xx xxxxxxxxx xxxxxxxxxx. XXXX xxxxxxxx xxxxxxxx xxxxx xxxxxxxx xx xxxx xx xxxxxxxxxx x xxxxxxx xxxxxxx xxxxxxxxxx xxxxx xx xxxxxxxx xxxxxxxxxx xxxx xxx x xxxxxxxxxx xxxx xx xxxxxxxx, xxx xxxxxxxxxx xxxxxxx xxxxxxxx xxx xxx xxxxx xxxxxxxx xx x xxxxxxxxxx xxxx.
+All of the syntaxes shown thus far are setting properties to single objects. But many UI scenarios require that a given parent element can have multiple child elements. For example, a UI for an input form needs several text box elements, some labels, and perhaps a "Submit" button. Still, if you were to use a programming object model to access these multiple elements, they would typically be items in a single collection property, rather than each item being the value of different properties. XAML supports multiple child elements as well as supporting a typical backing collection model by treating properties that use a collection type as implicit, and performing special handling for any child elements of a collection type.
 
-Xxxx xxxxxxxxxx xxxxxxxxxx xxx xxxx xxxxxxxxxx xx xxx XXXX xxxxxxx xxxxxxxx xxx xxx xxxxx. Xxx xxxxxxxxxxx xx xxxxxxxx xxxxxxxxxx xxxxxxxxxx xxx XXXX xxxxxxx xxxxxx xx xxxxxxxxxx xxxx xx xxxxx xxxx xxx xxxxxxx xxxxxxxxxxx, xxxx xx xxxxxx, xxxxx, xx xxxxx xxxxxxxx. Xxx xxxxxxx, xxx xxxxxxxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx XXXX xxx xxxxxxxxxxx xxx xxxx XX xxxxxxxx xxxxxx x [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209635).
+Many collection properties are also identified as the XAML content property for the class. The combination of implicit collection processing and XAML content syntax is frequently seen in types used for control compositing, such as panels, views, or items controls. For example, the following examples show the simplest possible XAML for compositing two peer UI elements within a [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635).
 
 ```xaml
 <colgroup>
@@ -222,25 +218,25 @@ Xxxx xxxxxxxxxx xxxxxxxxxx xxx xxxx xxxxxxxxxx xx xxx XXXX xxxxxxx xxxxxxxx xxx 
 </StackPanel>
 ```
 
-### Xxx xxxxxxxxx xx XXXX xxxxxxxxxx xxxxxx
+### The mechanism of XAML collection syntax
 
-Xx xxxxx xx xxxxx xxxxxx xxxx XXXX xx xxxxxxxx x "xxx" xx xxx xxxx-xxxx xxxxxxxxxx xxxxxxxx. Xx xxxxxxx, xxxx XXXX xxxxxxx xxxx xx xxxxxx xxxxx xx xx xxxxxxxx xxxxxxxxxx. Xxx XXXX xxxxxxxx xxx XXXX xxxxxxxxxx xxxxxxxxxxxx XXXX xxxxxxx xxxx xx x xxxxxxxxxx xx xxxxxxx xxxxxxxxxx xxxxx xx xxxxxx xxxx xxxxxx. Xxxxxxxxx xxxxx xx x xxxxxxx xxxxxxxx xxxx xx xx xxxxxxx xx **Xxxxx** xxxxxxxx xxxx xxxxxx xx xxxxxxxx xxxxx xx xxx xxxxxxxxxx. Xxxxxxxxx, xxxx xxxxxxxx xx xxx xxxxxxxx xx xxx XXXX xxxxxx. Xxx xxxxxxxxxxx, xxx xxxxxxxxxx xxxxxxxxx xxx XXXX xxxxxxx xx xxx x xxxxxxxx, xxx x xxxxxx: xxxxxxxxxxxx, xxx **Xxx** xxxxxx xx xxxx xxxxx. Xxxx xxx XXXX xxxxxxxxx xxxxxxxxxx xxx xx xxxx xxxxxx xxxxxxxx xxxxxx x XXXX xxxxxxxxxx xxxxxx, xxxx xxxx xxxxxx xx xxxxx xxxxxxx xxxx xx xxxxxxx, xxxx xxxx xxx xxxxxx xx xxxxx xx xxxxx xx xxx xxxxxxxxxx xxxxxxxxxx xx xxxxxxx xxx xxxxxxxxxx'x **Xxx** xxxxxx.
+It might at first appear that XAML is enabling a "set" of the read-only collection property. In reality, what XAML enables here is adding items to an existing collection. The XAML language and XAML processors implementing XAML support rely on a convention in backing collection types to enable this syntax. Typically there is a backing property such as an indexer or **Items** property that refers to specific items of the collection. Generally, that property is not explicit in the XAML syntax. For collections, the underlying mechanism for XAML parsing is not a property, but a method: specifically, the **Add** method in most cases. When the XAML processor encounters one or more object elements within a XAML collection syntax, each such object is first created from an element, then each new object is added in order to the containing collection by calling the collection's **Add** method.
 
-Xxxx x XXXX xxxxxx xxxx xxxxx xx x xxxxxxxxxx, xx xx xxx xxxxx xx xxx **Xxx** xxxxxx xxxx xxxxxxxxxx xxxxxxx x xxxxx XXXX xxxxxxx xx x xxxxxxxxxxx xxxx xxxxx xx xxx xxxxxxxxxx xxxxxx. Xxxx xxxxxxxxxx xxxxx xxx xxxxxxxx xxxxx xx xxx xxxxxxx xxxxxxxxxxxxxx, xxxxxxx xxxx xxx xxxxx xxxxxxxxx xx **Xxx** xxxxxxx xxxx xxxxxxxx xx xxxxxx xxxx xx x xxxx xxxxx xxxx xxx **Xxx** xxxxxxxxx xxxx.
+When a XAML parser adds items to a collection, it is the logic of the **Add** method that determines whether a given XAML element is a permissible item child of the collection object. Many collection types are strongly typed by the backing implementation, meaning that the input parameter of **Add** expects that whatever is passed must be a type match with the **Add** parameter type.
 
-Xxx xxxxxxxxxx xxxxxxxxxx, xx xxxxxxx xxxxx xxxx xxx xxx xx xxxxxxx xxx xxxxxxxxxx xxxxxxxxxx xx xx xxxxxx xxxxxxx. X XXXX xxxxxx xxxx xxxxxx x xxx xxxxxx xxxxxxxx xx xxxxxxxxxx xx xxxxxx xxxxxxx. Xx xxx xxxxxxxxxx xxxxxxxx xxx'xx xxxxxx xx xxx xx xxxx-xxxx, xxxx xxx xxxxx x XXXX xxxxx xxxxxxxxx. Xxxx xxx xxx xxxxxxxx xxxxxxxxxx xxxxxx, xxx xxx xxx'x xxx xxxx xxxxxxxxx.
+For collection properties, be careful about when you try to specify the collection explicitly as an object element. A XAML parser will create a new object whenever it encounters an object element. If the collection property you're trying to use is read-only, this can throw a XAML parse exception. Just use the implicit collection syntax, and you won't see that exception.
 
-## Xxxx xx xxx xxxxxxxxx xx xxxxxxxx xxxxxxx xxxxxx
+## When to use attribute or property element syntax
 
-Xxx xxxxxxxxxx xxxx xxxxxxx xxxxx xxx xx XXXX xxxx xxxxxxx xxxxxxxxx xx xxxxxxxx xxxxxxx xxxxxx xxx xxxxxx xxxxx xxxxxxx, xxx xxxxxxxxxxx xxxx xxx xxxxxxx xxxxxx xxxxxx xxxxxxxxxxxxxxx. Xxxx xxxxxxxxxx xx xxxxxxx xxxxxx xxxxxx, xxx xxxx xxxxxxxxxx xxxxxxx xxxxxxxxxx xxxxxx xxxxxxx xxxx x XXXX xxxxxxx xxxxxxxx. Xxx xxxx xx XXXX xxxxxx xxxxxxxxx xx x xxxxxxxx xxxxxxx xx xxx xxxx xx xxxxxx xxxx xxx xxxxxxxx xxxx xx xxx xxxxxxxx xxxx. Xx xxx xxxxxxxx xxxx xx x xxxxxxxxx xxxx, xxxx xx x xxxxxx (xxxxx xx xxxxxxx), xxxxxxx, Xxxxxxx, xx xxxxxx, xxx xxxxxxxx xxxxxx xxxxxxxx xxxxxxxxx xxxxxx.
+All properties that support being set in XAML will support attribute or property element syntax for direct value setting, but potentially will not support either syntax interchangeably. Some properties do support either syntax, and some properties support additional syntax options like a XAML content property. The type of XAML syntax supported by a property depends on the type of object that the property uses as its property type. If the property type is a primitive type, such as a double (float or decimal), integer, Boolean, or string, the property always supports attribute syntax.
 
-Xxx xxx xxxx xxx xxxxxxxxx xxxxxx xx xxx x xxxxxxxx xx xxx xxxxxx xxxx xxx xxx xx xxx xxxx xxxxxxxx xxx xx xxxxxxx xx xxxxxxxxxx x xxxxxx. Xxx xxxxxxxxxx, xxxx xx xxxxxx xxx xxxx, xxx xxxx xxxxxxxxxx xx xxxxx xx xx xxx xxxxxx. Xxxxxxx, xxxxxxx xxxxx xxxxxx xxxxx xxx xxxx xx xxxxxxx xx xxxxx x xxxxxx xxxxxxxxx xx xx xxxxxxxxx xxxxx, xxxxxx xxxx xx xxxxxx xxxxxxx xxxxxx x xxxxxxxx xxxxxxx. Xxx xxxx xx xxxx, xxxxx xxx xx xx xx xxxxxxxxxx xxxx xxxxxxxxxx, xxxxxxxxx xxxxxx xx xxxx xxxxxxxxxx xxxxxxxx xx xxxxxxxxx xxxxxxxxx xxx xxx xxxxxx xxxx xxx xxxx xxxxxxxx xxxx. Xxx xxxxxx xxxxx xx xxx xxxxxxxxx xx xxxx xx xxx xxxxxxxxxx xxxx xxx xxxxxxxxx xxx xxx xxxxxxxxxxxxxx xx xxx xxx xxxxxx xxxxx. Xxxxxxxxxxx, x xxxxxxxx xxxx xxxxxxxxx xxx xxxx xxxxxx xxxxxxxxx xxxxxxxxxx xx x xxxxxx xxxxxxxx xxxx, xxxxxxxxx xx xxx xx xxxxxxxx xxxxxxxxx xxxxxxxxxxx xx xxx xxxxxx. Xxxxxx xxxxx xxxx xxxxxxx xxxx xxxxxxxx xxxx xxxx x xxxxxxx xxxxxxx xxxxxx xx xxx xxxxxx xxxxxxx xx xxx xxxxxxxxx xxxxxxxxxxxxx. Xx xx xxxxxxx, xxx XXXX xxxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br228076) xxxxx xxx xx xxxxxxxxx xxxxxx xxx xx xxxx xx xxxxxx x xxx [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242962) xxxxx xxx xxx xxxxxxxx xx xxxx **Xxxxx** (xxx xxxxx xxx xxxx **Xxxxx** xxxxxxxxxx xx Xxxxxxx Xxxxxxx XXXX).
+You can also use attribute syntax to set a property if the object type you use to set that property can be created by processing a string. For primitives, this is always the case, the type conversion is built in to the parser. However, certain other object types can also be created by using a string specified as an attribute value, rather than an object element within a property element. For this to work, there has to be an underlying type conversion, supported either by that particular property or supported generally for all values that use that property type. The string value of the attribute is used to set properties that are important for the initialization of the new object value. Potentially, a specific type converter can also create different subclasses of a common property type, depending on how it uniquely processes information in the string. Object types that support this behavior will have a special grammar listed in the syntax section of the reference documentation. As an example, the XAML syntax for [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) shows how an attribute syntax can be used to create a new [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) value for any property of type **Brush** (and there are many **Brush** properties in Windows Runtime XAML).
 
-## XXXX xxxxxxx xxxxx xxx xxxxx
+## XAML parsing logic and rules
 
-Xxxxxxxx'x xx'x xxxxxxxxxxx xx xxxx xxx XXXX xx x xxxxxxx xxx xx xxx x XXXX xxxxxx xxxx xxxx xx: xx x xxx xx xxxxxx xxxxxx xxxxxxxxxxx xx x xxxxxx xxxxx. X XXXX xxxxxx xxxx xxxxxxxxx xxxxx xxxxxx xxxxx x xxx xx xxxxx xxxx xxx xxxx xx xxx xxxxxxxxxx xx xxx XXXX xxxxx.
+Sometime's it's informative to read the XAML in a similar way to how a XAML parser must read it: as a set of string tokens encountered in a linear order. A XAML parser must interpret these tokens under a set of rules that are part of the definition of how XAML works.
 
-Xxxxxxx xx xxxxxxxxx xxxxx xx xxx xxxxxxx xxxxx xx xxxxx xxx xxx x xxxxxxxx xxxxx xx x xxxxxx xxxxxxxx, xxx xxxxxxx xx XXX xx XXXX. Xx xxx xxxxxxxxx xxxxxx, *xxxxxxXxxx* xx xxx xxxxxx xxx xxxx xx xxxxxxxxxxx, *xxxxxxxxXxxx* xx xxx xxxx xx xxx xxxxxxxx xxxx xxx xxxx xx xxx xx xxxx xxxxxx, xxx *xxxxxxxxXxxxx* xx xxx xxxxx xx xxx.
+Setting an attribute value is the typical means by which you set a property value in a markup language, for example in XML or HTML. In the following syntax, *objectName* is the object you want to instantiate, *propertyName* is the name of the property that you want to set on that object, and *propertyValue* is the value to set.
 
 ```xaml
 <objectName propertyName="propertyValue" .../>
@@ -254,19 +250,19 @@ Xxxxxxx xx xxxxxxxxx xxxxx xx xxx xxxxxxx xxxxx xx xxxxx xxx xxx x xxxxxxxx xxxx
 </objectName>
 ```
 
-Xxxxxx xxxxxx xxxxxxx xxx xx xxxxxxx xx xxxxxx xxx xxx x xxxxxxxx xx xxxx xxxxxx. Xxxxxxxx xxx xxxxx xxxxxxx xx x xxxxxx xxxxxxx xx xxxxxx, xxxxx xxx xxxxxxxx xxxxxxxx xxxxx xxxx xxxx xxxxxx xx xxx x XXXX xxxxxxxxx xxxxxx xxxx xxxxxx.
+Either syntax enables you to declare an object and set a property on that object. Although the first example is a single element in markup, there are actually discrete steps here with regard to how a XAML processor parses this markup.
 
-Xxxxx, xxx xxxxxxxx xx xxx xxxxxx xxxxxxx xxxxxxxxx xxxx x xxx *xxxxxxXxxx* xxxxxx xxxx xx xxxxxxxxxxxx. Xxxx xxxxx xxxx xx xxxxxxxx xxxxxx xxx xxx xxxxxxxx xxxxxxxx *xxxxxxxxXxxx* xxx xx xxx xx xx.
+First, the presence of the object element indicates that a new *objectName* object must be instantiated. Only after such an instance exists can the instance property *propertyName* can be set on it.
 
-Xxxxxxx xxxx xx XXXX xx xxxx xxxxxxxxxx xx xx xxxxxxx xxxx xx xxxx xx xx xxx xx xxx xxxxx. Xxx xxxxxxx, xxxxx'x xx xxxxxxxxxx xxxxxxx `<Rectangle Height="50" Width="100" />` xxx `<Rectangle Width="100"  Height="50" />`. Xxxxx xxxxx xxx xxx xx x xxxxxx xx xxxxx.
+Another rule of XAML is that attributes of an element must be able to be set in any order. For example, there's no difference between `<Rectangle Height="50" Width="100" />` and `<Rectangle Width="100"  Height="50" />`. Which order you use is a matter of style.
 
-**Xxxx**  XXXX xxxxxxxxx xxxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xx xxx xxx xxxxxx xxxxxxxx xxxxx xxxx xxx XXX xxxxxx, xxx xxx xxx xxxxxx xxxx xxxx XXXX xxxxx, xx xxxxxxx xxx xxxxxxxxxx xx xxxxxxxxx xxx xxxx.
+**Note**  XAML designers often promote ordering conventions if you use design surfaces other than the XML editor, but you can freely edit that XAML later, to reorder the attributes or introduce new ones.
 
-## Xxxxxxxx xxxxxxxxxx
+## Attached properties
 
-XXXX xxxxxxx XXX xx xxxxxx x xxxxxx xxxxxxx xxxxx xx xx *xxxxxxxx xxxxxxxx*. Xxxxxxx xx xxx xxxxxxxx xxxxxxx xxxxxx, xxx xxxxxxxx xxxxxxxx xxxxxx xxxxxxxx x xxx, xxx xxx xxx xxxxx xxxxxxx xxxxxxx xx XXXX xxxxxxx. Xxxxxxxxxxxx, xxx xxx xxxxxxxxx xxx xxxxx xxxxxxxx xx xxx xxxxxxxx xxxxxxxx, xxx xxx xxxxxxxx xxxx.
+XAML extends XML by adding a syntax element known as an *attached property*. Similar to the property element syntax, the attached property syntax contains a dot, and the dot holds special meaning to XAML parsing. Specifically, the dot separates the owner provider of the attached property, and the property name.
 
-Xx XXXX, xxx xxx xxxxxxxx xxxxxxxxxx xx xxxxx xxx xxxxxx *XxxxxxxxXxxxxxxxXxxxxxxx*.*XxxxxxxxXxxx* Xxxx xx xx xxxxxxx xx xxx xxx xxx xxx xxx xxxxxxxx xxxxxxxx [**Xxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/hh759771) xx XXXX:
+In XAML, you set attached properties by using the syntax *AttachedPropertyProvider*.*PropertyName* Here is an example of how you can set the attached property [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/hh759771) in XAML:
 
 ```xaml
 <Canvas>
@@ -274,43 +270,43 @@ Xx XXXX, xxx xxx xxxxxxxx xxxxxxxxxx xx xxxxx xxx xxxxxx *XxxxxxxxXxxxxxxxXxxxxx
 </Canvas>
 ```
 
-Xxx xxx xxx xxx xxxxxxxx xxxxxxxx xx xxxxxxxx xxxx xxx'x xxxx x xxxxxxxx xx xxxx xxxx xx xxx xxxxxxx xxxx, xxx xx xxxx xxx xxxx xxxxxxxx xxxxxxxx xxxx x xxxxxx xxxxxxxx, xx xx xxxxxxxxx xxxxxxx xx x xxxxxxxxx XXX xxxxxxxxx xxxx xxx **xxx:xxxxx** xxxxxxxxx.
+You can set the attached property on elements that don't have a property of that name in the backing type, and in that way they function somewhat like a global property, or an attribute defined by a different XML namespace like the **xml:space** attribute.
 
-Xx Xxxxxxx Xxxxxxx XXXX xxx'xx xxx xxxxxxxx xxxxxxxxxx xxxx xxxxxxx xxxxx xxxxxxxxx:
+In Windows Runtime XAML you'll see attached properties that support these scenarios:
 
--   Xxxxx xxxxxxxx xxx xxxxxx xxxxxx xxxxxxxxx xxxxxx xxx xxxx xxxxxx xxxxxx xx xxxxxx: [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209267), [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br242704), [**XxxxxxxxXxxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227651).
--   Xxxxxxx xxxxxx xxx xxxxxxxxx xxxxxxxx xx xx xxxxxxxxx xxxxxxx xxxx xxxx xxxxx xxxx xxx xxxxxxx xxxxxxxx: [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209527), [**XxxxxxxxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227689).
--   Xxxxx x xxxxxxx xxxx'x xxxxxxxxx xx x xxxxxxx xxxxx, xxxxx xxx xxxxxxx xxx xxx xxxxx xxxx xxxx xx xxx'x xxxxx xxxxxxxxxxx: [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702143), [**XxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209021), [**XxxxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209081), [**XxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227609).
--   Xxxxxxxxx xxxxxxxxx: [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210490).
+-   Child elements can inform parent container panels how they should behave in layout: [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704), [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/br227651).
+-   Control usages can influence behavior of an important control part that comes from the control template: [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527), [**VirtualizingStackPanel**](https://msdn.microsoft.com/library/windows/apps/br227689).
+-   Using a service that's available in a related class, where the service and the class that uses it don't share inheritance: [**Typography**](https://msdn.microsoft.com/library/windows/apps/hh702143), [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/br209021), [**AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/br209081), [**ToolTipService**](https://msdn.microsoft.com/library/windows/apps/br227609).
+-   Animation targeting: [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490).
 
-Xxx xxxx xxxx, xxx [Xxxxxxxx xxxxxxxxxx xxxxxxxx](attached-properties-overview.md).
+For more info, see [Attached properties overview](attached-properties-overview.md).
 
-## Xxxxxxx "{" xxxxxx
+## Literal "{" values
 
-Xxxxxxx xxx xxxxxxx xxxxx xxxxxx \{ xx xxx xxxxxxx xx xxx xxxxxx xxxxxxxxx xxxxxxxx, xxx xxx xx xxxxxx xxxxxxxx xx xxxxxxx x xxxxxxx xxxxxx xxxxx xxxx xxxxxx xxxx "\{". Xxx xxxxxx xxxxxxxx xx "\{\}". Xxx xxxxxxx, xx xxxxxxx x xxxxxx xxxxx xxxx xx x xxxxxx xxxxxxx xxxxx, xxxxxxx xxx xxxxxxxxx xxxxx xx "\{\}\{". Xxx xxx xxxx xxx xxx xxxxxxxxxxx xxxxxxxxx xxxxx (xxx xxxxxxx, x **'** xxxxxx xx xxxxxxxxx xxxxx xxxxxxxxx xx **""**) xx xxxxxxx x "\{" xxxxx xx x xxxxxx.
+Because the opening brace symbol \{ is the opening of the markup extension sequence, you use an escape sequence to specify a literal string value that starts with "\{". The escape sequence is "\{\}". For example, to specify a string value that is a single opening brace, specify the attribute value as "\{\}\{". You can also use the alternative quotation marks (for example, a **'** within an attribute value delimited by **""**) to provide a "\{" value as a string.
 
-**Xxxx**  "\\}" xxxx xxxxx xx xx'x xxxxxx x xxxxxx xxxxxxxxx.
+**Note**  "\\}" also works if it's inside a quoted attribute.
  
-## Xxxxxxxxxxx xxxxxx
+## Enumeration values
 
-Xxxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx XXX xxx xxxxxxxxxxxx xx xxxxxx. Xx xxx xxxxxx xx x xxxx-xxxxx xxxxxxxx xxx xxx xxx xxxx x xxxxxxxx xx xxxxxxxxx xx xxxxxxxxx xxxxx. Xxx xxxxxxxx xxxxx xxxxxxxxxxx xxxxx xx xxx xx xxx xxxxx xx xxx xxxxxxxx xx xxxxx xxx xxxxxxxxxxx xxxx xx xxx xxxxxxxx xxxx . Xxx xxxxxxx xxxx'x xxx xx xxx [**XXXxxxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208992) xx XXXX: `<Button Visibility="Visible"/>`. Xxxx xxx "Xxxxxxx" xx x xxxxxx xx xxxxxxxx xxxxxx xx x xxxxx xxxxxxxx xx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209006) xxxxxxxxxxx, **Xxxxxxx**.
+Many properties in the Windows Runtime API use enumerations as values. If the member is a read-write property you can set such a property by providing an attribute value. You identify which enumeration value to use as the value of the property by using the unqualified name of the constant name . For example here's how to set [**UIElement.Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) in XAML: `<Button Visibility="Visible"/>`. Here the "Visible" as a string is directly mapped to a named constant of the [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br209006) enumeration, **Visible**.
 
--   Xxx'x xxx x xxxxxxxxx xxxx, xx xxx'x xxxx. Xxx xxxxxxx, xxxx xx xxxxxxx XXXX: `<Button Visibility="Visibility.Visible"/>`.
--   Xxx'x xxx xxx xxxxx xx xxx xxxxxxxx. Xx xxxxx xxxxx, xxx'x xxxx xx xxx xxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxx'x xxxxx xxxxxxxxxx xx xxxxxxxxxx xxxxxxxxx xx xxx xxx xxxxxxxxxxx xxx xxxxxxx. Xxxxxxxx xx xxxxx xxxxxx xx xxxx, xx'x x xxx xxxxxxxx xxxxxx xx XXXX xx xx xxxx xxxxxxx xxx'xx xxxxxxx xx xxxx xxxxx xx x xxxxxxxxx xxxxxxxxxxxxxx xxxxxx. Xxx xxxxxxx, xxx'x xx xxxx: `<Button Visibility="1"/>`.
+-   Don't use a qualified form, it won't work. For example, this is invalid XAML: `<Button Visibility="Visibility.Visible"/>`.
+-   Don't use the value of the constant. In other words, don't rely on the integer value of the enumeration that's there explicitly or implicitly depending on how the enumeration was defined. Although it might appear to work, it's a bad practice either in XAML or in code because you're relying on what could be a transient implementation detail. For example, don't do this: `<Button Visibility="1"/>`.
 
-**Xxxx**  Xx xxxxxxxxx xxxxxx xxx XXXx xxxx xxx XXXX xxx xxx xxxxxxxxxxxx, xxxxx xxx xxxx xx xxx xxxxxxxxxxx xxxx xx xxx **Xxxxxxxx xxxxx** xxxxxxx xx **Xxxxxx**. Xxxx xxxxx xx xxx xxxxxxxxxxx xxxx xxxxx xxx xxx xxxxxxxx xxx xxxxx xxxxxxxxx xxx xxxx xxxxxxxxxxx.
+**Note**  In reference topics for APIs that use XAML and use enumerations, click the link to the enumeration type in the **Property value** section of **Syntax**. This links to the enumeration page where you can discover the named constants for that enumeration.
 
-Xxxxxxxxxxxx xxx xx xxxxxxxx, xxxxxxx xxxx xxxx xxx xxxxxxxxxx xxxx **XxxxxXxxxxxxxx**. Xx xxx xxxx xx xxxxxxx x xxxxxxxxxxx xx xxxxxx xxx x xxxxxxxx xxxxxxxxxxx xx x XXXX xxxxxxxxx xxxxx, xxx xxx xxxx xx xxxx xxxxxxxxxxx xxxxxxxx, xxxx x xxxxx (,) xxxxxxx xxxx xxxx, xxx xx xxxxxxxxxxx xxxxx xxxxxxxxxx. Xxxxxxxx xxxxxxxxxx xxxx'x xxxxxx xx xxx Xxxxxxx Xxxxxxx XXXX xxxxxxxxxx, xxx [**XxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227934) xx xx xxxxxxx xxxxx xxxxxxx x xxxxxxxx xxxxxxxxxxx xxxxx xx XXXX xx xxxxxxxxx.
+Enumerations can be flagwise, meaning that they are attributed with **FlagsAttribute**. If you need to specify a combination of values for a flagwise enumeration as a XAML attribute value, use the name of each enumeration constant, with a comma (,) between each name, and no intervening space characters. Flagwise attributes aren't common in the Windows Runtime XAML vocabulary, but [**ManipulationModes**](https://msdn.microsoft.com/library/windows/apps/br227934) is an example where setting a flagwise enumeration value in XAML is supported.
 
-## Xxxxxxxxxx xx XXXX
+## Interfaces in XAML
 
-Xx xxxx xxxxx xxx'xx xxx x XXXX xxxxxx xxxxx xxx xxxx xx x xxxxxxxx xx xx xxxxxxxxx. Xx xxx XXXX xxxx xxxxxx, x xxxx xxxx xxxxxxxxxx xxxx xxxxxxxxx xx xxxxxxxxxx xx x xxxxx xxxx xxxxxx. Xxxxx xxxx xx x xxxxxxx xxxxxxxx xx xxxx x xxxx xxxxxxxxx xx xxxxx xx xxx xxxxx. Xxx'xx xxx xx xxxxxxxxx xxxx xx x xxxx xx xxx XXXX xxxxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227740) xxx [**XxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227741) xxxxxxxxxx xx [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227736). Xxxxx xxxxxxxxxx xxxxxxx Xxxxx-Xxxx-XxxxXxxxx (XXXX) xxxxxx xxxxxxxx xxxxx xxx **XXxxxxxx** xxxxxxxxx xx xxx xxxxxxxx xxx xxx xxx xxxxx xxx xxxxxx xxxxxxxx.
+In rare cases you'll see a XAML syntax where the type of a property is an interface. In the XAML type system, a type that implements that interface is acceptable as a value when parsed. There must be a created instance of such a type available to serve as the value. You'll see an interface used as a type in the XAML syntax for [**Command**](https://msdn.microsoft.com/library/windows/apps/br227740) and [**CommandParameter**](https://msdn.microsoft.com/library/windows/apps/br227741) properties of [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736). These properties support Model-View-ViewModel (MVVM) design patterns where the **ICommand** interface is the contract for how the views and models interact.
 
-## XXXX xxxxxxxxxxx xxxxxxxxxxx xx Xxxxxxx Xxxxxxx xxxxxxxxx
+## XAML placeholder conventions in Windows Runtime reference
 
-Xx xxx'xx xxxxxxxx xxx xx xxx **Xxxxxx** xxxxxxx xx xxxxxxxxx xxxxxx xxx Xxxxxxx Xxxxxxx XXXx xxxx xxx xxx XXXX, xxx'xx xxxxxxxx xxxx xxxx xxx xxxxxx xxxxxxxx xxxxx x xxx xxxxxxxxxxxx. XXXX xxxxxx xx xxxxxxxxx xxxx xxx X#, Xxxxxxxxx Xxxxxx Xxxxx xx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX) xxxxxx xxxxxxx xxx XXXX xxxxxx xx x xxxxx xxxxxx. Xx'x xxxxxxx xx xxxx xxxxxxxx xxxxx xx xxxx xxx XXXX xxxxx, xxx xxxxxxx xxxxx xxxx-xxxxxxxxxxxx xxxxx xxx xxxxxx xxx xxx xxx. Xx xxxxxxx xxx xxxxx xxxxxxxxx x xxxx xx xxxxxxx xxxx xxxxx xxxxxxxx xxx xxxxxxxxxxxx, xxx xxxxxxx xxxx xx xxx xxxxxxxxxxxx xx xxx **XXXX Xxxxxx** xxxxxxx.
+If you've examined any of the **Syntax** section of reference topics for Windows Runtime APIs that can use XAML, you've probably seen that the syntax includes quite a few placeholders. XAML syntax is different than the C#, Microsoft Visual Basic or Visual C++ component extensions (C++/CX) syntax because the XAML syntax is a usage syntax. It's hinting at your eventual usage in your own XAML files, but without being over-prescriptive about the values you can use. So usually the usage describes a type of grammar that mixes literals and placeholders, and defines some of the placeholders in the **XAML Values** section.
 
-Xxxx xxx xxx xxxx xxxxx / xxxxxxx xxxxx xx x XXXX xxxxxx xxx x xxxxxxxx, xxx xxxx xxxx'x xxxxx xx xxx xxx xxxx xxxx xxxxxxxxxx xxxxxxx xxx xxxxxxxx. Xxx Xxxxxxx Xxxxxxx XXXX xxxxxxxx x xxxxx xxxxxxxxxxx xxxxx xxx xxx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242356)-xxxxx xxxxxxx. Xx xxx xxx xxxxx xxx xx xxxxxxxxx xx x xxxxx xxxx'x xxx xxxxxxxxx xxx xxxxxxxx xxxxx, xxx xxxxxxx xxxxxxx xxxx x xxxxx xxxx xxxxx xxxxxxx xxx xxxxxxxx/xxxxxxxxx. Xxx xxxxxxx, xxx xxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208992) xx xx xxxxxxxxx xx xxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911) xxxxxxx xxxxx xxxxx x xxxx xxxxxxxxxxx. Xxx xxxxxxx: `<Button Visibility="Visible" />`. Xx xxx'x xxxx xxx xxxxxxx xxxx xxxxx xx xxx XXXX xxxxx xxxxxx xxx xxxxxxxxx; xxx xxxxxx xxx xx xxxxxx xxx xxxxxxxx xxxxxxxxxxxx xxxx xxxxx, xxx xxxx xxxxxxxx xxxx xxxxxxxxx x xxxxxxx xxxxx. Xx xxxxx xxxxx xx'x xxxx xx xxxxxxxxxx xxx xxx xxxx xxxxx xx xxx xxxxxxxx xxxxxxx xx xx xx x xxxx-xxxxx xxxxx, xxxx xxxx xxxx xx xxxxxxxxxxxx xxxxxxxxxx xx xxx xxxxxx. Xxx xxxxxxx, xxx xxxxxx xxx xxx xxx **XXXxxxxxx.Xxxxxxxxxx** xx :
+When you see type names / element names in a XAML syntax for a property, the name that's shown is for the type that originally defines the property. But Windows Runtime XAML supports a class inheritance model for the [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)-based classes. So you can often use an attribute on a class that's not literally the defining class, but instead derives from a class that first defined the property/attribute. For example, you can set [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992) as an attribute on any [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) derived class using a deep inheritance. For example: `<Button Visibility="Visible" />`. So don't take the element name shown in any XAML usage syntax too literally; the syntax may be viable for elements representing that class, and also elements that represent a derived class. In cases where it's rare or impossible for the type shown as the defining element to be in a real-world usage, that type name is deliberately lowercased in the syntax. For example, the syntax you see for **UIElement.Visibility** is :
 
 ``` syntax
 <uiElement Visibility="Visible"/>
@@ -318,26 +314,30 @@ Xxxx xxx xxx xxxx xxxxx / xxxxxxx xxxxx xx x XXXX xxxxxx xxx x xxxxxxxx, xxx xxx
 <uiElement Visibility="Collapsed"/>
 ```
 
-Xxxx XXXX xxxxxx xxxxxxxx xxxxxxx xxxxxxxxxxxx xx xxx "Xxxxx" xxxx xxx xxxx xxxxxxx xx x **XXXX Xxxxxx** xxxxxxx xxxx'x xxxxxxxx xxxxx xxx **Xxxxxx** xxxxxxx.
+Many XAML syntax sections include placeholders in the "Usage" that are then defined in a **XAML Values** section that's directly under the **Syntax** section.
 
-XXXX xxxxx xxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxx xxxxxxxxxxxx. Xxxxx xxxxxxxxxxxx xxxx'x xxxxxxxxx xxxxx xxxx xx **XXXX Xxxxxx**, xxxxxxx xxx'xx xxxxx xx xxxxxxxxxx xxxxx xxxx xxxx xxxxxxxxx. Xx xxxxx xxxx xxxxxxx xxxxx xxx xxxxx xx xxxxxx xxxx xx **XXXX Xxxxxx** xxxxx xxx xxxxx xx xx xxxx xxxx xxx xx xxx xxxxxxxxxxx. Xxx xxxxxxxxx, xxxx'x x xxxx xx xxxx xx xxxxx xxxxxxxxxxxx xxx xxxx xxxx xxxx xx x xxxxxxx xxxxx:
+XAML usage sections also use various generalized placeholders. These placeholders aren't redefined every time in **XAML Values**, because you'll guess or eventually learn what they represent. We think most readers would get tired of seeing them in **XAML Values** again and again so we left them out of the definitions. For reference, here's a list of some of these placeholders and what they mean in a general sense:
 
--   *xxxxxx*: xxxxxxxxxxxxx xxx xxxxxx xxxxx, xxx xxxxx xxxxxxxxxxx xxxxxxx xx xxxxxxx xxxxx xx xxxxxxx xxxx xx x xxxxxx-xx-xxxxxx xxxxxx, xxx xxx xxxxxx xxxxx xxx Xxxxxxx xx xxx xxxxxxxxx xxxx xxx xxxx xxxx.
--   *xxxxxx**xxxxxxxx*: *xxxxxx**xxxxxxxx* xx xxxxxxxxxxx xx xxxx xxx xxxxx xxxxx xxx xxxxxx xxxxx xxxxx xx xxx xxxxxx xxx x xxxx xxxx xxx xx xxxx xx xx xxxxxxxxx xxxxx xxx xxxx xxxxxxxxxx. Xxx xxxxxxx, xxx **Xxxx Xxxxxxxxx Xxxxx** xxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br228076) xxxxxxxx: <*xxxxxx**xxxxxxxx*="*xxxxxxxxxxXxxxxXxxx*"/>
--   *xxxxxxxxxxxx*: Xxxx xxxxxxx xx xxx xxxxxxxxx xxxxx xxx xxxxx XXXX xxxxxx xxxxx xxx xx xxxxx xxxxxxxxx. Xxxx xxx'xx xxxxxxxxx xxxx xx xxx xxxxxxxx xxxx xxx xx xxxxx xxxxxxx xxxxxxxx. Xxxx xxxxxxxx xxxx xx xxxxxxx xx xxx xxxx-xxxxxx xxx xxx XXXX xxxx. Xx xxx xxxxxxxxxxx xxxxx, xxxx xxxxxxxx xxxx xxxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxx xxxx xxx'xx xxxxxxxx, xx xxxx xxx xxxx xxx'x xxxxxxx. Xxx xxxx'x xxxxxx x xxxxxxxxxxx xxxxxxxxxxxxx, xxx x XXXX xxxxxxxxxxxxx, xx xx xxx'x xxx xx xxxx xxxxxxxx xxxxx xxx xxxxxxxx xxxx xx xxx XXXX xxxxxx. Xx xxx xxxx xx xxxx xxxxx xxxxxxxx xxx xxxxxx xx xxxxxxxxxxxx xxx xx xxxxx, xxxx'x xx xxx **Xxxxx xxxxxxxxxxx** xxxxxxx xx xxx xxxxxxxxx xxxxx xxx xxx xxxxx, xx x xxxxx xxx xxxx'x xxxxxxx **Xxxxxxxx**.
--   *xxxxXxxxxxXxxx*: xxxxx xx xxxxxxxxx xxxxxx xxx xxx xxxxxxxxxxxx. Xxxxx'x x xxxxxxx xxxxxxxxxxx xxx xxxxxxxxxx xxxx xxx xx xxxxxxxxxxx xxxxx, xxx xx xxxxxxx xxxxxxxx xxx xxxxxxxxxxx xxxx x xxxx xx xxx xxxxxxxxxxx'x xxxx. Xxx xxxxxxx, xxx xxxxxx xxxxx xxx [**XxxxxxxxxXxxxxxx.XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208716) xx <*xxxxxxxxxXxxxxxx***XxxxXxxxxxxxx**="*xxxxXxxxxxxxxXxxxxxXxxx*"/>. Xx xxx'xx xx xxx xx xxxxx xxxxxxxx xxxxxxxxx xxxxx, xxxxx xxx xxxx xx xxx xxxxxxxxxxx xxxx xxxx xxxxxxx xx xxx **Xxxxxxxx Xxxxx** xxxxxxx, xxxx xx xxx xxxx **Xxxx:**. Xxx xxx xxxxxxxxx xxxxx xx x xxxxxxxx xxxx xxxx xxxx xxxxxxxxxxx, xxx xxx xxx xxx xxxxxx xxxx xx xxxxxx xx xxx **Xxxxxx** xxxxxx xx xxx **Xxxxxxx** xxxx.
--   *xxxxxx*, *xxx*, *xxxxxx*, *xxxx*: Xxxxx xxx xxxxxxxxx xxxxx xxxxx xx xxx XXXX xxxxxxxx. Xx xxx'xx xxxxxxxxxxx xxxxx X# xx Xxxxxx Xxxxx, xxxxx xxxxx xxx xxxxxxxxx xx Xxxxxxxxx .XXX xxxxxxxxxx xxxxx xxxx xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**XxxYY**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx), [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx), xxx xxx xxx xxx xxx xxxxxxx xx xxxxx .XXX xxxxx xxxx xxx xxxx xxxx xxxx XXXX-xxxxxxx xxxxxx xx .XXX xxxx-xxxxxx. Xx xxx'xx xxxxxxxxxxx xxxxx X++/XX, xxx'xx xxx xxx X++ xxxxxxxxx xxxxx xxx xxx xxx xxxx xxxxxxxx xxxxx xxxxxxxxxx xx xxxxx xxxxxxx xx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) xxxxxxxxx, xxx xxxxxxx [**Xxxxxxxx::Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx). Xxxxx xxxx xxxxxxxxx xx xxxxxxxxxx xxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxx. Xxx xxx'xx xxxxxxx xxx xxxxx xxxxx xx x **Xxxxxxxx xxxxx** xxxxxxx xx Xxxxxxx xxxxxxx xxx xxx xx x XXXX xxxxxxx, xxxxxxx xxx xxxx xxxxxxxxxxxx xxxxx xxxx xx xxxx xxxxxx xxx XXXX xxxxxx.
+-   *object*: theoretically any object value, but often practically limited to certain types of objects such as a string-or-object choice, and you should check the Remarks on the reference page for more info.
+-   *object* *property*: *object* *property* in combination is used for cases where the syntax being shown is the syntax for a type that can be used as an attribute value for many properties. For example, the **Xaml Attribute Usage** shown for [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) includes: <*object* *property*="*predefinedColorName*"/>
+-   *eventhandler*: This appears as the attribute value for every XAML syntax shown for an event attribute. What you're supplying here is the function name for an event handler function. That function must be defined in the code-behind for the XAML page. At the programming level, that function must match the delegate signature of the event that you're handling, or your app code won't compile. But that's really a programming consideration, not a XAML consideration, so we don't try to hint anything about the delegate type in the XAML syntax. If you want to know which delegate you should be implementing for an event, that's in the **Event information** section of the reference topic for the event, in a table row that's labeled **Delegate**.
+-   *enumMemberName*: shown in attribute syntax for all enumerations. There's a similar placeholder for properties that use an enumeration value, but it usually prefixes the placeholder with a hint of the enumeration's name. For example, the syntax shown for [**FrameworkElement.FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) is <*frameworkElement***FlowDirection**="*flowDirectionMemberName*"/>. If you're on one of those property reference pages, click the link to the enumeration type that appears in the **Property Value** section, next to the text **Type:**. For the attribute value of a property that uses that enumeration, you can use any string that is listed in the **Member** column of the **Members** list.
+-   *double*, *int*, *string*, *bool*: These are primitive types known to the XAML language. If you're programming using C# or Visual Basic, these types are projected to Microsoft .NET equivalent types such as [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Int32**](https://msdn.microsoft.com/library/windows/apps/xaml/system.int32.aspx), [**String**](https://msdn.microsoft.com/library/windows/apps/xaml/system.string.aspx) and [**Boolean**](https://msdn.microsoft.com/library/windows/apps/xaml/system.boolean.aspx), and you can use any members on those .NET types when you work with your XAML-defined values in .NET code-behind. If you're programming using C++/CX, you'll use the C++ primitive types but you can also consider these equivalent to types defined by the [**Platform**](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) namespace, for example [**Platform::String**](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx). There will sometimes be additional value restrictions for particular properties. But you'll usually see these noted in a **Property value** section or Remarks section and not in a XAML section, because any such restrictions apply both to code usages and XAML usages.
 
-## Xxxx xxx xxxxxx, xxxxx xx xxxxx
+## Tips and tricks, notes on style
 
--   Xxxxxx xxxxxxxxxx xx xxxxxxx xxx xxxxxxxxx xx xxx xxxx [XXXX xxxxxxxx](xaml-overview.md). Xxx xxx xxxxxx xxxxxxxxx xxxx xxxx xxxxxxx xxx xxxxxxxx xxxxx xx xxxx xxxxx xx xxx [XxxxxxXxxxxxxx](staticresource-markup-extension.md) xxxxxx xxxxxxxxx (xxx xxxxxxx [XxxxxXxxxxxxx](themeresource-markup-extension.md)). Xxx xxxxxxxx xx xxx XxxxxxXxxxxxxx xxxxxx xxxxxxxxx xx xx xxxxxx xxxxxxxxx xxxx XXXX xxxx xxxxxxxx xxxxxxxxx xxxx xxxx xxxx x XXXX [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208794). Xxx xxxxxx xxxxxx xxxxxx xxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxx xx x **XxxxxxxxXxxxxxxxxx**. Xxx xxxxx xxxxxx xxx xxxxxxx xxxxx xx x xxxxxxx xxxxxxxx xxxxxxxxxx xx xxx-xxxxxxxx xxxxx xx x **XxxxxxxxXxxxxxxxxx** xxx, xxx xxxxxxx x [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242962) xxx x xxxxx xxxx xxxx xxx xxxx xxxx xxxx xxxx xxx xxxxxxxxx xxxxx xx XX. Xx xxxxx x XxxxxxXxxxxxxx, xxx xxxxxxxx xxxx xxxxx xxxxxxxxx xxxxxxx x xxxxxxxx xxxxxxx xxxxx xx xxx xxx xxx xx xxx xx xxxxxxxxx xxxxxx. Xxx xxx xxxxxxxx xx xxxxxxxxx XXXX xxx xxxxx xx xxxxxx xxxx xxxxxxxxxxx xxx xxxx-xxxxx xxxxxx. Xxx xxxx xxxx, xxx [XxxxxxxxXxxxxxxxxx xxx XXXX xxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187273).
--   Xxx'xx xxx xxxxxxx xxxxxxxxx xxxxxxxxxxx xxx xxx xxxxx xxxxx xxx xxxx xxxxx xxx xxxxxxx xx XXXX xxxxxxxx. Xx xxxxxxxxxx, xxxxx xxx xxxxxxxxx xxxxxxxxxxx xxx xxx xx xxxxx xx xxxxxx xxxxxxxx xxxx xxxx x xxx xx xxxxxxxxx xxxxxxxxxx xxx. Xxxx'x xxxx x xxxxxx xx xxxxx. Xxx Xxxxxx Xxxxxx XXX xxxxxx xxxxxxx xxxx xxxxxxx xxxxx xxxxx xxxx xxx xxxx XXXX, xxx xxx xxx xxxxxx xxxxx xx xxx xxxxxxxx. Xxxxx xxx x xxxxx xxxxxx xx xxxxx xxxxx xxx xxxxx xxxxx xx x XXXX xxxx xx xxxxxxxxxx xxxxxxxxxxx; xxx xxxx xxxx xxx [XXXX xxx xxxxxxxxxx](xaml-and-whitespace.md).
+-   Markup extensions in general are described in the main [XAML overview](xaml-overview.md). But the markup extension that most impacts the guidance given in this topic is the [StaticResource](staticresource-markup-extension.md) markup extension (and related [ThemeResource](themeresource-markup-extension.md)). The function of the StaticResource markup extension is to enable factoring your XAML into reusable resources that come from a XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). You almost always define control templates and related styles in a **ResourceDictionary**. You often define the smaller parts of a control template definition or app-specific style in a **ResourceDictionary** too, for example a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) for a color that your app uses more than once for different parts of UI. By using a StaticResource, any property that would otherwise require a property element usage to set can now be set in attribute syntax. But the benefits of factoring XAML for reuse go beyond just simplifying the page-level syntax. For more info, see [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273).
+-   You'll see several different conventions for how white space and line feeds are applied in XAML examples. In particular, there are different conventions for how to break up object elements that have a lot of different attributes set. That's just a matter of style. The Visual Studio XML editor applies some default style rules when you edit XAML, but you can change these in the settings. There are a small number of cases where the white space in a XAML file is considered significant; for more info see [XAML and whitespace](xaml-and-whitespace.md).
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [XXXX xxxxxxxx](xaml-overview.md)
-* [XXXX xxxxxxxxxx xxx xxxxxxxxx xxxxxxx](xaml-namespaces-and-namespace-mapping.md)
-* [XxxxxxxxXxxxxxxxxx xxx XXXX xxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187273)
+* [XAML overview](xaml-overview.md)
+* [XAML namespaces and namespace mapping](xaml-namespaces-and-namespace-mapping.md)
+* [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

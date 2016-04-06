@@ -1,66 +1,70 @@
 ---
-Xxxxxxxxxxx: Xxx Xxxxx xxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxx xxx xxx xxx xxxxxxxxx xxx xxxxx xxxx xxx.
-xxxxx: Xxxxx xxxxxx
-xx.xxxxxxx: YXYXYXYY-XYYY-YXXY-XYXY-YXYXXXYYYXXY
+Description: The Usage report in the Windows Dev Center dashboard lets you see how customers are using your app.
+title: Usage report
+ms.assetid: 5F0E7F94-D121-4AD3-A6E5-9C0DEC437BD3
 ---
 
-# Xxxxx xxxxxx
+# Usage report
 
 
-> **Xxxxxxxxx**  Xxx **Xxxxx** xxxxxx xxxx xxxxxxxx xxxx xx xxx xxxx xxxxxxxxx xxx [Xxxxxx Xxxxxx Xxxxxxxxxxx Xxxxxxxx XXX](http://go.microsoft.com/fwlink/?LinkId=615086) xx xxxx xxx (xx xxxxxx xx xx xxxxxxxx xxx xxx xxx “Xxxx xxxxxxxxx xx xxx Xxxxxxx Xxx Xxxxxx” xxxx xxxxxxxx xxxx xxxxxxx). Xxx xxxx xxxx xxxxxx xxx xxx xx xxx xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxxxx xxxx xxxx xx xxxxx xx xxxx xxxxxx, xxx xxx xxxx xxxx xxx xxxxx xxxxxxxxx xxxxxxx xx xxxx Xxxxxxx xxxxxxxx.
+> **Important**  The **Usage** report only provides data if you have activated the [Visual Studio Application Insights SDK](http://go.microsoft.com/fwlink/?LinkId=615086) in your app (or enable it by checking the box for “Show telemetry in the Windows Dev Center” when building your package). You also must submit the app in the unified Dev Center dashboard before data will be shown in this report, and you must have app usage telemetry enabled in your Account settings.
 
-Xxx **Xxxxx** xxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxx xxx xxx xxx xxxxxxxxx xxx xxxxx xxxx xxx. Xxx xxx xxxx xxxx xxxx xx xxxx xxxxxxxxx, xx [xxxxxxxx xxx xxxxxx](download-analytic-reports.md) xx xxxx xxxxxxx.
+The **Usage** report in the Windows Dev Center dashboard lets you see how customers are using your app. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline.
 
-Xxxx xxxxxx xxxxxxxx x xxxx-xxxxx xxxx xx xxxx xxx'x xxxxx. Xx xxx xxxx xxxxxxxxxx xx Xxxxx xxxxxxxxxxxx xxxx xxx Xxxxxx Xxxxxx Xxxxxxxxxxx Xxxxxxxx XXX xxx xxxx xxx, xxx xxx xxx xxxx xxxxxxxx xxx xxxxx xxxxxxxxx xxxx xx xxx Xxxxx Xxxxxx. Xxxxx xx xxxx xxx'x Xxxxx Xxxxxx xxxxxxx xxxx xx xxxxxxxx xxxx xxx xxx xx xxxx xxxxxx.
+This report provides a high-level look at your app's usage. If you have associated an Azure subscription with the Visual Studio Application Insights SDK for your app, you can get more detailed app usage telemetry info in the Azure Portal. Links to your app's Azure Portal reports will be provided near the top of this report.
 
-Xxxx xxxx xxx Xxxxxxxxx xxxxxxx xxxxxxxxxx xxxx xxxx xxxxxxxxx xxxxxxx xxxx xx xxxxxxxxxx xxxx xxx Xxxxx xxxxxxxxxxxx xxxx xxx Xxxxxxxxxxx Xxxxxxxx. Xx xxx'xx xxx xxxxx xxx xxxx Xxxxxxxxx xxxxxxx xx xxxx xxxxxx, xxx'xx xxxx xx xxx xxxx xxx Xxxxx Xxxxxxxxxx Xxxxxx, xxxx xxx xxx Xxxxxxxxx xxxxxxx xxxxxxxxxx xxxx xxxx xxxxxxxxx xxxxxxx xx x Xxxxxxx Xxxxxxxxxxxxx, Xx-Xxxxxxxxxxxxx, xx xx xxx Xxxxx xxxx xxx xxxx xxxxxxxxxxxx.
+Note that the Microsoft account associated with your developer account must be associated with the Azure subscription used for Application Insights. If you're not using the same Microsoft account in both places, you'll need to log into the Azure Management Portal, then add the Microsoft account associated with your developer account as a Service Administrator, Co-Administrator, or in the Owner role for this subscription.
 
-## Xxxxx xxxxxxx
-
-
-Xxxx xxx xxx xx xxx xxxx, xxx xxx xxxxxx **Xxxxx xxxxxxx** xx xxxxxx xxx xx xxx xxxx xx xxxx xxxx xx xxxx xxxxx xxx/xx xx xxxxxxx xxxxx (xxxxxxx XX xxxxxxxx).
-
--   **Xxxx**: Xxx xxxxxxx xxxxxx xx **Xxxx YY xxxxx**, xxx xxx xxx xxxxxx xxxx xx xx **Xxxx YY xxxxxx**.
--   **Xxxxxxx xxxxxx**: Xxx xxxxxxx xxxxxxx xx **Xxx**. Xx xxxx xxx xxxxxxxx xxxx xxxx xxx xxxxxxx xxxxx, xxx xxx xxxxxx x xxxxxxxx xxx xxxx.
-
-Xxx xxxx xx xxx xx xxx xxxxxx xxxxxx xxxxx xxxx xxxxxxx xxx xxxxxx xx xxxx xxxxxxxx xx **Xxxxx xxxxxxx**. Xx xxxxxxx xxxx xxxx xxxxxxx xxxx xxx xxx xx xxxx xxxxxxxxx xxxxxxx xxxxxx, xxxxxx xxx'xx xxxx xxx **Xxxxx xxxxxxx** xxxxxxx xx xxxxxx xxx xxxx xxx.
-
-## Xxxxx xxxx xxxxxxxx
+## Apply filters
 
 
-Xxx **Xxxxx xxxx xxxxxxxx** xxxxx xxxxx xxx xxxxxx xx xxxxx xxxx xxxxxxxx xxx xxxx xxx xxxx xxx xxxxxxxx xxxxxx xx xxxx.
+Near the top of the page, you can expand **Apply filters** to filter all of the data on this page by date range and/or by product group (related OS versions).
 
-Xxxx xxxx xxxxxxx xxxxxxxxxx x xxxxxxxx xxxxxxxxx xxx xxxxx xxxx xxx xxxx x xxxxxx xx xxxx. Xxxx xxxxx xxxx xxx xxxxx xxxxxx xxxxx (xxxx xx, xxxxxxxx xxxx xxxxxxxx xxxxx xxxx xxxxx xx xxxx xxx xxxx xxxxxxxx).
+-   **Date**: The default filter is **Last 72 hours**, but you can expand this up to **Last 12 months**.
+-   **Product groups**: The default setting is **All**. If your app includes more than one product group, you can choose a specific one here.
 
-## Xxxxxx xxxxx
+The info in all of the charts listed below will reflect the period of time selected in **Apply filters**. By default this will include data for all of your supported product groups, unless you've used the **Apply filters** section to filter for only one.
 
-
-Xxx **Xxxxxx xxxxx** xxxxx xxxxx xxx xxxxxx xx xxxxxxxxx xxx xxxx xxxx xxx xx x xxxxxxxx xxx xxxxxx xxx xxxxxxxx xxxxxx xx xxxx.
-
-Xxxx xxxxxx xxxx xxxxxxxxxx x xxxxxxxx xxx xxxx xxxx xxx xxxx xxx. Xxxx xxxxx xxxx xxx xxxxx xxxxxx xxxx xxxxxxxx (xxxx xx, x xxxxxxxx xx xxxxxxxxxxx xx xxxx xxxxx xxxxxxx xxxx xxxx xxxx xxx xxxx xxxx xx xxxxxxxx xxxxx xxxx xxx).
-
-## Xxxxxxx xxxx xxxxxxx xxxxxx xx xxxxxxx
+## Total user sessions
 
 
-Xxx **Xxxxxxx xxxx xxxxxxx xxxxxx xx xxxxxxx** xxxxx xxxxx xxxxxxx xxxxxx xx xxxx xxxx x xxxxxxxx xxxx xxxx xxx xx x xxxxxxxx xxx xxxxxx xxx xxxxxxxx xxxxxx xx xxxx.
+The **Total user sessions** chart shows the number of daily user sessions for your app over the selected period of time.
 
-Xxx xxx xxxx xxxxx **Xxxxxxx xxxx xxxxxxx xxxxxxxx xx xxxxxxx** xx xxxx xxxx xxxxx xxxxxxx xxx xxxxxxx xxxx xxxx xxxxxxx xxxxxxx xxxxxxxx xxxxxxxx xx xxxxx xxxx xxx xxxx xxx xxxxxxxx xxxxxx xx xxxx.
+Each user session represents a customer launching and using your app over a period of time. This chart does not track unique users (that is, multiple user sessions shown here could be from the same customer).
 
-## Xxxxxx xxxxxx xxxx xxxx YY xxxx
-
-
-Xxx **Xxxxxx xxxxxx xxxx xxxx YY xxxx** xxxxx xxxxx xxx xxxxx xxxxxxxxxxx xxx xxx xxxxxx xxxxxx xxxx xxx xxxx xxxxxxx xxx xxxx xxx. Xxxx xxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxx xxx xxxx xxxxxxxx.
-
-## Xxxx xxxxx xxxx xxxx YY xxxx
+## Active users
 
 
-Xxx **Xxxx xxxxx xxxx xxxx YY xxxx** xxxxx xxxxx xxx xxxxx xxxxxx xx xxxxx xxx xxxxxxxx xxxxx xx xxxx xxx. Xxxx xxx xxxxxxx xxxxxxxx xxxxx xxxx xxx xxxx xxxxxxxx.
+The **Active users** chart shows the number of customers who used your app on a specific day during the selected period of time.
+
+Each active user represents a customer who used your app that day. This chart does not track unique user sessions (that is, a customer is represented in this chart whether they used your app just once or multiple times that day).
+
+## Average user session length in seconds
+
+
+The **Average user session length in seconds** chart shows average length of time that a customer used your app on a specific day during the selected period of time.
+
+You can also click **Average time between sessions in seconds** to have this chart display the average time that elapses between separate sessions of using your app over the selected period of time.
+
+## Custom events over last 30 days
+
+
+The **Custom events over last 30 days** chart shows the total occurrences for any custom events that you have defined for your app. This may include multiple occurrences for the same customer.
+
+## Page views over last 30 days
+
+
+The **Page views over last 30 days** chart shows the total number of views for specific pages in your app. This may include multiple views from the same customer.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,40 +1,44 @@
 ---
-xxxxxxxxxxx: Xxxxxxx xxxxxxx xxxx XXX xxx xXX xxxxxxxxxx
-xxxxx: Xxxxxxx xxxxxxx xxxx XXX xxx xXX xxxxxxxxxx
-xx.xxxxxxx: YXYYYYYX-XYYY-YXYY-XYXY-XXXYYYXXYXXX
+description: iOS 開発者のための UWP の概要
+title: iOS 開発者のための UWP の概要
+ms.assetid: 9F67068B-E578-4C70-B3E0-DFF150FA9BDD
 ---
 
-# Xxxxxxx xxxxxxx xxxx XXX xxx xXX xxxxxxxxxx
+# iOS 開発者のための UWP の概要
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-Xx xxx'xx xx xXX xxxxxxxxx xxxxxxxxxxx xxxxxxxxxx xxx Xxxxxxx YY, xxxxx xxxx xxx x xxxxx xxxxx xx xxxxx. Xxxx'xx xxxxxxxxx xxx xx xxxx xx xxx xxxxxxxx xxx'xx xxxx xx xxxx xx xxx xxx xxxxxxx xxxxxxx xxxx, xxx xxxx'xx xxxxx xxx xxx xxx xxxxxxx xxxx xxxx xx xxx Xxxxxxx Xxxxx.
+この記事は、Windows 10 用の開発を検討している iOS 開発者向けに用意されています。 また、アプリの作成を開始するうえで理解しておく必要がある概念を紹介し、作成したアプリを Windows ストアで公開する方法についても説明します。
 
-Xx xxxx xxxxxxx, xx'xx xxxxx xxxxxxxxx, xxx xxxxxxx xxx xx xxx Xxxxxxxxx Xxxxxx Xxxxxx xxx xxx X# xxxxxxxxxxx xxxxxxxx xx xxxxxx x xxxxxxx xxx, xxx xx xxxxxxxxxx xxx xxx xxxxxxx xxxxx xxxx xxxx xxx xxxxx xxx xxxxxxxxx xxx. (Xxx x X# xxx? Xxx'x xxxxx, xxxxx xxxxxxxxxxx xxxxxxxxx xxx xxxxx xxx xxxxxxxxx, xxx xx'xx xxxxx xx xxxx xx [Xxxxxxx xxxxxxx: Xxxxxxxx x xxxxxxxxxxx xxxxxxxx](getting-started-choosing-a-programming-language.md)).
+このセクションでは、Microsoft Visual Studio と C# プログラミング言語を使って簡単なアプリを作成する方法を少しずつ説明し、特にプロセスが現在お使いのツールとどのように違うかについて説明します。 (C# が気に入りませんでしたか? 心配しないでください。その他のプログラミング言語やツールも使うことができます。これらについては、「[はじめに: プログラミング言語の選択](getting-started-choosing-a-programming-language.md)」で触れます)。
 
-Xxxxxxx YY xxxxxxxxxx x xxx xxxxxxxx xxx xxxxxxxx xxxxxxxx xxxx xx xxxxxxx, xxxxxx, xxxxxx, xxxxx xxxxxxx xxx xxxx. Xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxxxxx xxxx xxxxxx xxxxxxxxxxxx, x xxxxxxxx xxxx xx xxxx xXX xxx xxxx xxxx xxx xx xxxxx xxxxxxxx. Xx xxxxxxxxx xxxxxxxxx xxx xx xxx xxx xxx xxx xxxxxxxx xxx xxxxxxxxx xx xxx xxx xxxx xxxx xxxx xxxx xxxx xx x xxxxxxxxx xxxxxx, xxx xxx xxxx xxxxxxxx.
+Windows 10 では、デスクトップ、ノート PC、タブレット、電話の各デバイス、その他を対象とした魅力的なアプリを作成するための新しいプラットフォームが採用されています。 ユニバーサル Windows プラットフォーム (UWP) アプリには多くの独自の機能が用意されているため、iOS アプリを単純に移植するだけではこれらの機能を利用できなくなる可能性があります。 このため、新しいコントロールと機能を試して、開発者の作業がどのくらい効率化されるか、どのように新しいアプリを作ることができるかについて調べることをお勧めします。
 
-Xxx xxxxxx xxxx xx xxxx: xxx'x xxxx xxxx xxxx xxx, xxx **xxxxxxxxx** xxxx xxx, xxx xxxx xxxxxxxxx xx xxx xxxxxxxx xxx xxx xxxxxxx. Xxx'x xxxxxx xxx xxx xxxxxx xxxxxx xxxxxxxxxxx, xxx xxxxxx xxxx xxxxxxxxxxx xxxx xxx xxxxxx Xxxxxxx YY xxxxxxxx, xxxx xx xxxx xxxxx, xxxxxxxxxxxxx, xxx xxxxxxxxxxx xxxx Xxxxxxx.
+結論は、アプリを単に移植することは避けて、アプリの **(作り直し)** をして、新機能と新しいデバイスを利用することです。 最大公約数で満足せずに、ライブ タイル、通知、Cortana の操作など、Windows 10 独自の機能を使うリッチなエクスペリエンスを作成します。
 
-Xx xxx xxxxxxx xxxx xxxxx xxxxxxxxxxxx, xxx'xx xxxx x xxxxxxxx xxxx xxxx Xxxxxxx YY xxx Xxxxxxxxx Xxxxxx Xxxxxx xxxxxxxxx. Xxx xxx xxxxxxxx xxxxx xxxx xxx [Xxxxxxxxx xxxxxxxxx xxx xxxxxxxxxxx Xxxxxxx Xxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=302144). Xxx'x xxxx x XX? Xxx'x xxxxx, xxx xxx xxx xxxx Xxx: xxx [Xxxxxxxxxx Xxxxxxx xxx xxx xxx xxxxx xx xxxx Xxx](setting-up-your-mac-with-windows-10.md).
+これらのチュートリアルを行うには、Windows 10 と Microsoft Visual Studio の両方がインストールされたコンピューターが必要です。 これらは、[Windows ストア アプリ プログラミングの開発者向けダウンロードに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=302144)からダウンロードできます。 PC がなくても 心配しないでください。Mac を使うことができます。詳しくは、「[Mac への Windows および開発者ツールのインストール](setting-up-your-mac-with-windows-10.md)」をご覧ください。
 
-| Xxxxx | Xxxxxxxxxxx |
+| トピック | 説明 |
 |-------|-------------|
-| [Xxxxxxx xxxxxxx: Xxxxxxxx x xxxxxxx](getting-started-creating-a-project.md) | Xxxxxx Xxxxxx xx xx Xxxxxxx xx Xxxxx xx xx xXX xxx Xxx XX. Xx xxxx xxxxxxxxxxx, xx xxxx xxx xxx xxxxxxxxxxx xxxxx Xxxxxx Xxxxxx. |
-| [Xxxxxxx xxxxxxx: Xxxxxxxx x xxxxxxxxxxx xxxxxxxx](getting-started-choosing-a-programming-language.md) | Xxxxxx xx xx xxx xxxxxxx, xxx xxxxxx xxxx xxxxx xxx xxxxxxxxxxx xxxxxxxxx xxxx xxx xxx xxxxxx xxxx xxxx xxx xxxxxxx XXX xxxx. |
-| [Xxxxxxx xxxxxxx: Xxxxxxx xxxxxx xx Xxxxxx Xxxxxx](getting-started-getting-around-in-visual-studio.md) | Xxx'x xxx xxx xxxx xx xxx xxxxxxx xxxx xx xxxxxxx xxxxxxx, xxx xxxx xx xxx xxx xxxxx xxxx xxxx xxx xxxxxx xxx Xxxxxx Xxxxxx xxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx (XXX). |
-| [Xxxxxxx xxxxxxx: Xxxxxx Xxxxxxxx](getting-started-common-controls.md) | Xxxx xxx xxxx xxxxxx xxxxxxxx xxx'xx xx xxxxx xx xxxx xxxx, xxx xxxxx xXX xxxxxxxxxxx. |
-| [Xxxxxxx xxxxxxx: Xxxxxxxxxx](getting-started-navigation.md) | Xxx xx xxx xxxx xx xxxxxx xxxx xxxxxxxxxx xx x Xxxxxxx YY xxx xx xx xxx xxx [Xxxxx](https://msdn.microsoft.com/library/windows/apps/br242682) xxxxx. Xxx xxxxxxxxx xxxxxxxxxxx xxxxx xxx xxx xx xxx xxxx xxx. |
-| [Xxxxxxx xxxxxxx: Xxxxxxxxx](getting-started-animation.md) | Xxxxxxxxxx xx Xxxxxxx xxxx xxx xx xxxxxxx xxxxxxxxxxxxxxxx, xxx xxxx xxx xxxx xx xxxxxxx xxxxxxxxxxxxx xxxx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX). |
-| [Xxxxxxx xxxxxxx: Xxxx xxxx?](getting-started-what-next.md) | Xxxx xxxx xxxxx xxxxxxxxxxx, xxx xxx xxx xxxxx xxxxxxx xxxx xxxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xxx xxxx xxxx xxxxx, xxxx x xxxx xxxxxxx xxx xxxxxxxxx xxxxxx, xxx xxxx xxxx xx Xxxxxx Xxxxxx xxx xxxxx xxxxxxx xxxx xxxx! |
+| [はじめに: プロジェクトの作成](getting-started-creating-a-project.md) | Windows にとっての Visual Studio は、iOS や Mac OS にとっての Xcode に相当します。 このチュートリアルでは、Visual Studio の使い方に慣れる訓練を行います。 |
+| [はじめに: プログラミング言語の選択](getting-started-choosing-a-programming-language.md) | 先へ進む前に、UWP アプリを開発するときに選択できるプログラミング言語について理解している必要があります。 |
+| [はじめに: Visual Studio の操作方法](getting-started-getting-around-in-visual-studio.md) | ここでは、前の手順で作ったプロジェクトに戻り、Visual Studio 統合開発環境 (IDE) の操作方法について示します。 |
+| [はじめに: コモン コントロール](getting-started-common-controls.md) | ここでは、アプリやそれに対応する iOS アプリで使用するいくつかのコモン コントロールを紹介します。 |
+| [はじめに: ナビゲーション](getting-started-navigation.md) | Windows 10 アプリでこのナビゲーションを管理する方法の 1 つに、[Frame](https://msdn.microsoft.com/library/windows/apps/br242682) クラスを使う方法があります。 以下のチュートリアルでは実際に試す方法を示しています。 |
+| [はじめに: アニメーション](getting-started-animation.md) | Windows アプリでのアニメーションもプログラムで作成できますが、Extensible Application Markup Language (XAML) を使った宣言で定義することもできます。 |
+| [はじめに: 次の手順](getting-started-what-next.md) | この基本情報を使って、もっと興味深いユニバーサル Windows プラットフォーム (UWP) アプリの作成を今すぐ開始できます。 次の手順として、次のトピックを読んでから Visual Studio を起動し、コードの作成を始めます。 |
 
  
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

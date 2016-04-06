@@ -1,27 +1,27 @@
 ---
-xxxxx: Xxxxxx xxx xxxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxx xxxxxxxxx xxxxxxxxxxx xxxx xxxx xxx xxxxxx xxxxxxxx xxxx xxx.
-xx.xxxxxxx: XYYXYYYY-YYXY-YYXX-XXYY-XYYXYXXYYYXY
+title: Handle app suspend
+description: Learn how to save important application data when the system suspends your app.
+ms.assetid: F84F1512-24B9-45EC-BF23-A09E0AC985B0
 ---
 
-# Xxxxxx xxx xxxxxxx
+# Handle app suspend
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242341)
+-   [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341)
 
-Xxxxx xxx xx xxxx xxxxxxxxx xxxxxxxxxxx xxxx xxxx xxx xxxxxx xxxxxxxx xxxx xxx. Xxx xxxxxxx xxxxxxxxx xx xxxxx xxxxxxx xxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242341) xxxxx xxx xxxxx x xxxxxx xx x xxxx.
+Learn how to save important application data when the system suspends your app. The example registers an event handler for the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event and saves a string to a file.
 
-## Xxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxx
+## Register the suspending event handler
 
 
-Xxxxxxxx xx xxxxxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242341) xxxxx, xxxxx xxxxxxxxx xxxx xxxx xxx xxxxxx xxxx xxx xxxxxxxxxxx xxxx xxxxxx xxx xxxxxx xxxxxxxx xx.
+Register to handle the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event, which indicates that your app should save its application data before the system suspends it.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```cs
 using System;
 using Windows.ApplicationModel;
@@ -62,12 +62,12 @@ MainPage::MainPage()
 }
 ```
 
-## Xxxx xxxxxxxxxxx xxxx xxxxxx xxxxxxxxxx
+## Save application data before suspension
 
 
-Xxxx xxxx xxx xxxxxxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242341) xxxxx, xx xxx xxx xxxxxxxxxxx xx xxxx xxx xxxxxxxxx xxxxxxxxxxx xxxx xx xxx xxxxxxx xxxxxxxx. Xxx xxx xxxxxx xxx xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241622) xxxxxxx XXX xx xxxx xxxxxx xxxxxxxxxxx xxxx xxxxxxxxxxxxx.
+When your app handles the [**Suspending**](https://msdn.microsoft.com/library/windows/apps/br242341) event, it has the opportunity to save its important application data in the handler function. The app should use the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) storage API to save simple application data synchronously.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```cs
 partial class MainPage
 {
@@ -98,33 +98,37 @@ void MainPage::App_Suspending(Object^ sender, SuspendingEventArgs^ e)
 }
 ```
 
-## Xxxxxxx
+## Remarks
 
 
-Xxx xxxxxx xxxxxxxx xxxx xxx xxxxxxxx xxx xxxx xxxxxxxx xx xxxxxxx xxx xx xx xxx xxxxxxx xx Xxxxx xxxxxx. Xxx xxxxxx xxxxxxx xxxx xxx xxxxxxxx xxx xxxx xxxxxxxx xxxx xx xx. Xxxx xxx xxxxxx xxxxxxx xxxx xxx, xxx xxxxxxx xx xxxx xxxxxxxxx xxx xxxx xxxxxxxxxx xx xxx xxxx xx xx xxx xxxxxx xxx xxxxxx xxxxxxxxx xxx xxx. Xxx xxxxxx xxxxxxxx xxx xxx xxxxxxx xxxxx xx xxxx xxx, xx xxxx xx xxxxxxx xx xxx xxxx xx xx xx'x xxxx xxxxxxx xx xxx xxxxxxxxxx.
+The system suspends your app whenever the user switches to another app or to the desktop or Start screen. The system resumes your app whenever the user switches back to it. When the system resumes your app, the content of your variables and data structures is the same as it was before the system suspended the app. The system restores the app exactly where it left off, so that it appears to the user as if it's been running in the background.
 
-Xxx xxxxxx xxxxxxxx xx xxxx xxxx xxx xxx xxx xxxx xx xxxxxx xxxxx xx'x xxxxxxxxx. Xxxxxxx, xx xxx xxxxxx xxxx xxx xxxx xxx xxxxxxxxx xx xxxx xxxx xxx xx xxxxxx, xxx xxxxxx xxxx xxxxxxxxx xxxx xxx. Xxxx xxx xxxx xxxxxxxx xxxx xx x xxxxxxxxx xxx xxxx xxx xxxx xxxxxxxxxx, xxx xxxxxx xxxxx xx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225018) xxxxx xxx xxxxxx xxxxxxx xxx xxxxxxxxxxx xxxx xx xxx [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335) xxxxxx.
+The system attempts to keep your app and its data in memory while it's suspended. However, if the system does not have the resources to keep your app in memory, the system will terminate your app. When the user switches back to a suspended app that has been terminated, the system sends an [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) event and should restore its application data in its [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) method.
 
-Xxx xxxxxx xxxxx'x xxxxxx xx xxx xxxx xx'x xxxxxxxxxx, xx xxxx xxx xxxx xxxx xxx xxxxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx xxxx xx'x xxxxxxxxx, xxx xxxxxxx xxxx xxxx xxx xxx xx xxxxxxxxx xxxxx xxxxxxxxxxx.
+The system doesn't notify an app when it's terminated, so your app must save its application data and release exclusive resources and file handles when it's suspended, and restore them when the app is activated after termination.
 
-> **Xxxx**   Xx xxx xxxx xx xx xxxxxxxxxxxx xxxx xxxx xxxx xxx xx xxxxx xxxxxxxxx xxx xxxx xxxx xx xxxxx xxxxxxxxxx xx xxxxxxx xxxxx xxxxx xxxx xxxx xxxxxxxxx. Xxx xxx xxx xxx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224690) xxxxxx xx xxx [**XxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224688) xxxxxx (xxxxxxxxx xxx xxx xxxxx xxxx) xx xxxxx xxxxxxxxxx xx xxxxxxx xxxxx xxxxx xxx xxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224685) xxxxxx xx xxx xxxxxxxx [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224684) xxxxxx.
+> **Note**   If you need to do asynchronous work when your app is being suspended you will need to defer completion of suspend until after your work completes. You can use the [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) method on the [**SuspendingOperation**](https://msdn.microsoft.com/library/windows/apps/br224688) object (available via the event args) to delay completion of suspend until after you call the [**Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) method on the returned [**SuspendingDeferral**](https://msdn.microsoft.com/library/windows/apps/br224684) object.
 
-> **Xxxx**  Xx xxxxxxx xxxxxx xxxxxxxxxxxxxx xx Xxxxxxx Y.Y, xxxx xxx xxxxx xxx xxxxxxxx xxxxxx xx xxxxxxxxx xxxxx xxxx xxx xxxxxxxxx. Xx xxxxxxx xxxx xxx xxxxxxxx, xxx xxxxxxx xxxxxxxxx xxxxxxx xx xxxxxxxx xx xxxx xxx xxx xxx xxx xxxxxxxxxx xx xxx Y-xxxxxx xxxxxxx xxx xxxxxx xxxxxxxx xx Xxxxxxx xx xxxxxxx Y xxx YY xxxxxxx xx Xxxxxxx Xxxxx. Xxx xxxxxx xxxxxx xx xxxxx xxxx xxxxxxx xxxxxx.
+> **Note**  To improve system responsiveness in Windows 8.1, apps are given low priority access to resources after they are suspended. To support this new priority, the suspend operation timeout is extended so that the app has the equivalent of the 5-second timeout for normal priority on Windows or between 1 and 10 seconds on Windows Phone. You cannot extend or alter this timeout window.
 
-> **X xxxx xxxxx xxxxxxxxx xxxxx Xxxxxx Xxxxxx:**  Xxxxxx Xxxxxx xxxxxxxx Xxxxxxx xxxx xxxxxxxxxx xx xxx xxxx xx xxxxxxxx xx xxx xxxxxxxx. Xxxx xx xx xxxxx xxx xxxx xx xxxx xxx Xxxxxx Xxxxxx xxxxx XX xxxxx xxx xxx xx xxxxxxx. Xxxx xxx'xx xxxxxxxxx xx xxx, xxx xxx xxxx xx x xxxxxxx xxxxx xxxxx Xxxxxx Xxxxxx. Xxxx xxxx xxx **Xxxxx Xxxxxxxx** xxxxxxx xx xxxxx xxxxx, xxxx xxxxx xxx **Xxxxxxx** xxxx.
+> **A note about debugging using Visual Studio:**  Visual Studio prevents Windows from suspending an app that is attached to the debugger. This is to allow the user to view the Visual Studio debug UI while the app is running. When you're debugging an app, you can send it a suspend event using Visual Studio. Make sure the **Debug Location** toolbar is being shown, then click the **Suspend** icon.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
 
-* [Xxxxxx xxx xxxxxxxxxx](activate-an-app.md)
-* [Xxxxxx xxx xxxxxx](resume-an-app.md)
-* [XX xxxxxxxxxx xxx xxxxxx, xxxxxxx, xxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/dn611862)
-* [Xxx xxxxxxxxx](app-lifecycle.md)
+* [Handle app activation](activate-an-app.md)
+* [Handle app resume](resume-an-app.md)
+* [UX guidelines for launch, suspend, and resume](https://msdn.microsoft.com/library/windows/apps/dn611862)
+* [App lifecycle](app-lifecycle.md)
+
+ 
 
  
 
- 
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,77 +1,81 @@
 ---
-Xxxxxxxxxxx: Xxx Xxxxxxx Xxxxx xxxxxxxx xxxxxxx xxxxx xxxxxxx xx xxxxxxx xxxxxxx, xxxxx xxxx xxxxxxxx xxxxxxxxxxx xx xxxxxxxxx XX xxxxxxxx.
-xxxxx: Xxxxxxx xxxxxxx xxxxxxxxx
-xx.xxxxxxx: XXYXXXYX-XYXX-YYXX-YYYY-YYYXYXXXYYYY
+Description: The Windows Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
+title: Package version numbering
+ms.assetid: DD7BAE5F-C2EE-44EE-8796-055D4BCB3152
 ---
 
-# Xxxxxxx xxxxxxx xxxxxxxxx
+# Package version numbering
 
 
-Xxxx xxxxxxx xxx xxxxxxx xxxx xxxx x xxxxxxx xxxxxx (xxxxxxxx xx x xxxxx xx xxx **Xxxxxxx** xxxxxxxxx xx xxx **Xxxxxxx/Xxxxxxxx** xxxxxxx xx xxx xxx xxxxxxxx). Xxx Xxxxxxx Xxxxx xxxxxxxx xxxxxxx xxxxx xxxxxxx xx xxxxxxx xxxxxxx, xxxxx xxxx xxxxxxxx xxxxxxxxxxx xx xxxxxxxxx XX xxxxxxxx.
+Each package you provide must have a version number (provided as a value in the **Version** attribute of the **Package/Identity** element in the app manifest). The Windows Store enforces certain rules related to version numbers, which work somewhat differently in different OS versions.
 
-> **Xxxx**  Xxxx xxxxx xxxxxx xx "xxxxxxxx", xxx xxxxxx xxxxx, xxx xxxx xxxxx xxxxx xx xxxxxxx xxxxxxx xxx xxxx .xxxx xxx .xxxxxxxxxx xxxxx.
+> **Note**  This topic refers to "packages", but unless noted, the same rules apply to version numbers for both .appx and .appxbundle files.
 
-## Xxxxxxx xxxxxxxxx xxx Xxxxxxx YY xxxxxxxx
+## Version numbering for Windows 10 packages
 
 
-Xxx xxxxxxx xxxxxx xx xxx Xxxxxxx YY xxxxxxx xxxx xxxxxx xx xxxxxx xxxx xxx xxxxxxx xxxxxx xxx Xxxxxxx Y, Xxxxxxx Y.Y, xxx/xx Xxxxxxx Xxxxx Y.Y xxxxxxxx xxx xxx xxxxxxxxxx (xx xxxxxxxx xxx xxxxx XX xxxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxxxxxx) xxx xxx xxxx xxx. (Xxx xxxx xxxx, xxx [Xxxxxx xxxxxxxx xxx Xxxxxxx YY xx x xxxxxxxxxx-xxxxxxxxx xxx](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).)
+The version number of any Windows 10 package must always be higher than any version number for Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you are publishing (or packages for those OS versions that you have previously published) for the same app. (For more info, see [Adding packages for Windows 10 to a previously-published app](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).)
 
-> **Xxxx**  Xxx xxxx (xxxxxx) xxxxxxx xx xxx xxxxxxx xxxxxx xx xxxxxxxx xxx Xxxxx xxx xxx xxxx xx xxxx xx Y.
+> **Note**  The last (fourth) section of the version number is reserved for Store use and must be left as 0.
 
-Xxxx xxxxxxxx x Xxxxxxx YY xxxxxxx xxxx xxxx xxxxxxxxx xxxxxxxxxx, xxx Xxxxxxx Xxxxx xxxx xxxxxx xxx xxx xxxxxxx-xxxxxxxxx xxxxxxx xxxx xx xxxxxxxxxx xx xxx xxxxxxxx’x xxxxxx. Xxxx xxxxx xxx xxxxxxx xxxxxxxxxxx xxx xxxx xxx xx xxxxxxx xxxx xxxxx xxxxxxxx xxxx xx xxxxxxxx xx xxxxxxxxx xx xxxxxxxx xxxxxx xxxxx. Xxxxxxxxxxx, xxx xxx xxxxxx xxxxx xxxxxxxx xx xxx xxxxx; xxx xxx xxx xxxxxxx xx xxxxxxxxx xxxxxx-xxxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxxxx xxxxxxxxxx.
+When choosing a Windows 10 package from your published submission, the Windows Store will always use the highest-versioned package that is applicable to the customer’s device. This gives you greater flexibility and puts you in control over which packages will be provided to customers on specific device types. Importantly, you can submit these packages in any order; you are not limited to providing higher-versioned packages with each subsequent submission.
 
-Xxx xxx xxxx xxxxxxx xxxxxxxx Xxxxxxx YY xxxxxxxx xxxx xxx xxxx xxxxxxx xxxxxx. Xxxxxxx, xxxxxxxx xxxx xxxxx x xxxxxxx xxxxxx xxxxxx xxxx xxxx xxx xxxx xxxxxxxxxxxx, xxxxxxx xxx xxxx xxxxxxxx xxxx xxx Xxxxx xxxx xxx xxxx xx xxxx xxxxxxxx xxxx xx xxxxxx. Xxx xxxx xxxx, xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211441).
+You can even provide multiple Windows 10 packages with the same version number. However, packages that share a version number cannot also have the same architecture, because the full identity that the Store uses for each of your packages must be unique. For more info, see [**Identity**](https://msdn.microsoft.com/library/windows/apps/br211441).
 
-Xx xxx xx xxxxxxx xxxxxxxx Xxxxxxx YY xxxxxxxx xxxx xxx xxx xxxx xxxxxxx xxxxxx, xxx xxxxxxxxxxxx (xx xxx xxxxx xYY, xYY, XXX, xxxxxxx) xxxx xx xxxx xx xxxxxx xxxxx xxx xx xx xxxxxx xxxx xxxx xxxxxxxxxxx xxxxx xxxxxxx xx xxxxxxx xx xxxxx xxxxxx. Xxxx xxxxxxx xxx xxxxxxx xxxx xxx xxx xxxx xxxxxxx xxxxxx, xxx xxxxxxx xxxxxxxxxxxx xxxx xxxxxx xxx xxxxxx xx xxxxxxxxxx: xx xxx xxxxxx xxxx xxxxxxxx xx xYY xxxxxxx xxxx xxxx x xxxxxx xxxx xxxx xxx xxxx xxxx xxxxxxxx xx xYY xxxxxxx.
+If you do provide multiple Windows 10 packages that use the same version number, the architecture (in the order x64, x86, ARM, neutral) will be used to decide which one is of higher rank when considering which package to provide to given device. When ranking app bundles that use the same version number, the highest architecture rank within the bundle is considered: an app bundle that contains an x64 package will have a higher rank than one that only contains an x86 package.
 
-Xxxx xxxxx xxx x xxx xx xxxxxxxxxxx xx xxxxxx xxxx xxx xxxx xxxx. Xxx xxx xxxxxx xxx xxxxxx xxx xxxxxxxx xxxx xxx xxxxx xxxxxxx xxxxxxx xx xxx xxxxxxx xxx xxxxxxxxxx xxxxxxx xxxx xxx xxx xxx xxxxxxxxxx xxxxxxx, xxx xxx xxx xxxxxx-xxxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxx xxxxxxxxxxxx xx xxxx xxxxxxxxx xx xxxxxxxx xx XX xxxxxxxx, xx xxx xxx xxx xxxxxx-xxxxxxxxx xxxxxxxx xxxx xxxxx xx xxxxxxx xx xxxx xx xxx xx xxxx xxxxxxxx xxxxxxxx xxxx.
+This gives you a lot of flexibility to evolve your app over time. You can upload and submit new packages that use lower version numbers to add support for affordable devices that you did not previously support, you can add higher-versioned packages that have stricter dependencies to take advantage of hardware or OS features, or you can add higher-versioned packages that serve as updates to some or all of your existing customer base.
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxx xxx xxxxxxx xxxxxxxxx xxx xx xxxxxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxx xx xxxx xxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxx.
+The following example illustrates how version numbering can be managed to deliver the intended packages to your customers over multiple submissions.
 
-### Xxxxxxx: Xxxxxx xx x xxxxxx xxxxxxx xxxx xxxxxxxx xxxxxxxxxxx
+### Example: Moving to a single package over multiple submissions
 
-Xxxxxxx YY xxxxxxx xxx xx xxxxx x xxxxxx xxxxxxxx xxxx xxxx xxxxxxxxxx. Xxxx xxxxx xxxxxxxx x xxx xxxxx-xxxxxxxx xxxxxxx xxxx xxxxxx. Xxxxxxx, xxx x xxxxxx xx xxxxxxx, xxx xxxxx xxx xxxx xx xxxxx xxxxxxxx xxxxxxxxx xx xxxxxx x xxxxxx xxxxxxx xxxxx xxxx.
+Windows 10 enables you to write a single codebase that runs everywhere. This makes starting a new cross-platform project much easier. However, for a number of reasons, you might not want to merge existing codebases to create a single project right away.
 
-Xxx xxx xxx xxx xxxxxxx xxxxxxxxxx xxxxx xx xxxxxxxxx xxxx xxxx xxxxxxxxx xx x xxxxxx xxxxxxx xxx xxx Xxxxxxxxx xxxxxx xxxxxx, xxxxx xxxxxxxx x xxxxxx xx xxxxxxx xxxxxxx xxx xxxxxxxx xxxxxx xxxxxxxx (xxxxxxxxx xxxx xxxx xxxx xxxxxxxxx xx Xxxxxxx YY XXXx). Xxx xxxxxxx xxxxx xxxxxxxxxxx xxx xxx xxxx xxxxx xxx xxxxxxxxxxxx xxxxxxx.
+You can use the package versioning rules to gradually move your customers to a single package for the Universal device family, while shipping a number of interim updates for specific device families (including ones that take advantage of Windows 10 APIs). The example below illustrates how the same rules are consistently applied.
 
-| Xxxxxxxxxx | Xxxxxxxx                                                  | Xxxxxxxx xxxxxxxxxx                                                                                                                                                                             |
+| Submission | Contents                                                  | Customer experience                                                                                                                                                                             |
 |------------|-----------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Y          | -   Xxxxxxx xxxxxxx: Y.Y.YY.Y <br> -   Xxxxxx xxxxxx: Xxxxxxx.Xxxxxxx, xxxXxxxxxx YY.Y.YYYYY.Y <br> <br> -   Xxxxxxx xxxxxxx: Y.Y.Y.Y <br> -   Xxxxxx xxxxxx: Xxxxxxx.Xxxxxx, xxxXxxxxxx YY.Y.YYYYY.Y     | -   Xxxxxxx xx Xxxxxxx YY Xxxxxxx xxxxx YY.Y.YYYYY.Y xxx xxxxx xxxx xxx Y.Y.YY.Y <br> -   Xxxxxxx xx Xxxxxxx YY Xxxxxx xxxxx YY.Y.YYYYY.Y xxx xxxxx xxxx xxx Y.Y.Y.Y <br> -   Xxxxx xxxxxx xxxxxxxx xxxx xxx xx xxxx xx xxxxxxxx xxx xxxxxxx xxx xxx |
-| Y          | -   Xxxxxxx xxxxxxx: Y.Y.YY.Y <br> -   Xxxxxx xxxxxx: Xxxxxxx.Xxxxxxx, xxxXxxxxxx YY.Y.YYYYY.Y <br> <br> -   Xxxxxxx xxxxxxx: Y.Y.Y.Y <br> -   Xxxxxx xxxxxx: Xxxxxxx.Xxxxxx, xxxXxxxxxx YY.Y.YYYYY.Y <br> <br> -   Xxxxxxx xxxxxxx: Y.Y.Y.Y <br> -   Xxxxxx xxxxxx: Xxxxxxx.Xxxxxxxxx, xxxXxxxxxx YY.Y.YYYYY.Y    | -   Xxxxxxx xx Xxxxxxx YY Xxxxxxx xxxxx YY.Y.YYYYY.Y xxx xxxxx xxxx xxx Y.Y.YY.Y <br> -   Xxxxxxx xx Xxxxxxx YY Xxxxxx xxxxx YY.Y.YYYYY.Y xxx xxxxx xxxx xxx Y.Y.Y.Y <br> -   Xxxxx (xxx-xxxxxxx, xxx-xxxxxx) xxxxxx xxxxxxxx xxxx xxxx xxx xxxxxxxxxx xxxx xxx Y.Y.Y.Y <br> -   Xxxxxxx xxx xxxxxx xxxxxxx xxxx xxxxxxx xxxx xxx xxx xxxxxxxxx xxxx xxx xxx xxx xxxxxx (xxxxxxx xxxx xxxxxxx xxxx xxx xxxx xxxxxxxxx xxxxxxx—Y.Y.YY.Y xxx Y.Y.Y.Y xxx xxxx xxxxxx xxxx Y.Y.Y.Y) |
-| Y          | -   Xxxxxxx xxxxxxx: Y.Y.YY.Y <br> -   Xxxxxx xxxxxx: Xxxxxxx.Xxxxxxx, xxxXxxxxxx YY.Y.YYYYY.Y <br> <br> -   Xxxxxxx xxxxxxx: Y.Y.Y.Y <br> -   Xxxxxx xxxxxx: Xxxxxxx.Xxxxxxxxx, xxxXxxxxxx YY.Y.YYYYY.Y <br> <br> -   Xxxxxxx xxxxxxx: Y.Y.Y.Y <br> -   Xxxxxx xxxxxx: Xxxxxxx.Xxxxxxxxx, xxxXxxxxxx YY.Y.YYYYY.Y    | -   Xxxxxxx xx Xxxxxxx YY Xxxxxxx xxxxx YY.Y.YYYYY.Y xxx xxxxx xxxx xxx Y.Y.YY.Y <br> -   Xxxxxxx xx Xxxxxxx YY Xxxxxx xxxxx YY.Y.YYYYY.Y xxx xxxxx xxxx xxx Y.Y.Y.Y <br> -   Xxxxxxx xx Xxxxxxx YY Xxxxxx xxxxx >=YY.Y.YYYYY.Y xxx < YY.YYYYYY.Y xxxx xxx Y.Y.Y.Y 
-| Y          | -   Xxxxxxx xxxxxxx: Y.Y.Y.Y <br> -   Xxxxxx xxxxxx: Xxxxxxx.Xxxxxxxxx, xxxXxxxxxx YY.Y.YYYYY.Y   | -   Xxx xxxxxxxxx xx xxx xxxxxx xxxxxxxx xx Xxxxxxx YY xxxxx xYY.Y.YYYYY.Y xxx xxxxx xxxx xxx xxxxxxx Y.Y.Y.Y | 
+| 1          | -   Package version: 1.1.10.0 <br> -   Device family: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.1.0.0 <br> -   Device family: Windows.Mobile, minVersion 10.0.10240.0     | -   Devices on Windows 10 Desktop build 10.0.10240.0 and above will get 1.1.10.0 <br> -   Devices on Windows 10 Mobile build 10.0.10240.0 and above will get 1.1.0.0 <br> -   Other device families will not be able to purchase and install the app |
+| 2          | -   Package version: 1.1.10.0 <br> -   Device family: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.1.0.0 <br> -   Device family: Windows.Mobile, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.0.0.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10240.0    | -   Devices on Windows 10 Desktop build 10.0.10240.0 and above will get 1.1.10.0 <br> -   Devices on Windows 10 Mobile build 10.0.10240.0 and above will get 1.1.0.0 <br> -   Other (non-desktop, non-mobile) device families when they are introduced will get 1.0.0.0 <br> -   Desktop and mobile devices that already have the app installed will not see any update (because they already have the best available version—1.1.10.0 and 1.1.0.0 are both higher than 1.0.0.0) |
+| 3          | -   Package version: 1.1.10.0 <br> -   Device family: Windows.Desktop, minVersion 10.0.10240.0 <br> <br> -   Package version: 1.1.5.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10250.0 <br> <br> -   Package version: 1.0.0.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10240.0    | -   Devices on Windows 10 Desktop build 10.0.10240.0 and above will get 1.1.10.0 <br> -   Devices on Windows 10 Mobile build 10.0.10250.0 and above will get 1.1.5.0 <br> -   Devices on Windows 10 Mobile build >=10.0.10240.0 and < 10.010250.0 will get 1.1.0.0 
+| 4          | -   Package version: 2.0.0.0 <br> -   Device family: Windows.Universal, minVersion 10.0.10240.0   | -   All customers on all device families on Windows 10 build v10.0.10240.0 and above will get package 2.0.0.0 | 
 
-> **Xxxx**  Xx xxx xxxxx, xxxxxxxx xxxxxxx xxxx xxxxxxx xxx xxxxxxx xxxx xxx xxx xxxxxxx xxxxxxxx xxxxxxx xxxxxx xxxx xxxx xxxxxxx xxx. Xxx xxxxxxx, xx xxx xxxxx xxxxxxxxxx xxxxx, xxx xxxxxxx xxxxxxx xxxx xxx xY.Y.YY.Y, xxxx xx xxxx xxxx XX xxxxxxx YY.Y.YYYYY.Y xx xxxxxx xxx xxxx xxxxx xxxx xxxxxx xY.Y.Y.Y. Xxxxx Y.Y.YY.Y xx xxx xxxxxxx xxxxxxx xxxxxx xxxxxxxxx xx xxxx, xxxx xx xxx xxxxxxx xxxx xxxx xxx.
+> **Note**  In all cases, customer devices will receive the package that has the highest possible version number that they qualify for. For example, in the third submission above, all desktop devices will get v1.1.10.0, even if they have OS version 10.0.10250.0 or higher and thus could also accept v1.1.5.0. Since 1.1.10.0 is the highest version number available to them, that is the package they will get.
 
-### Xxxxx xxxxxxx xxxxxxxxx xx xxxx xxxx xx x xxxxxxxxxx-xxxxxxx xxxxxxx xxx xxx xxxxxxxxxxxx
+### Using version numbering to roll back to a previously-shipped package for new acquisitions
 
-Xx xxx xxxx xxxxxx xx xxxx xxxxxxx Xxxxxxx YY xxxxxxx xxxxx, xxx'xx xx xxxx xx xxxx xxxx xxxx xxx’x xxxxxxx xx xxx Xxxxx xx xx xxxxxxx Xxxxxxx YY xxxxxxx xx xxx xxxxxxxx xxxxxxxx xxxx x xxxxxxx. Xxxx xx x xxxxxxxxx xxx xx xxxxx xxx xxxxxxxxxx xx xxxx xxxxxxxxx xxxxx xxx xxx xxx xxxxx.
+If you keep copies of your earlier Windows 10 package files, you'll be able to roll back your app’s package in the Store to an earlier Windows 10 package if you discover problems with a release. This is a temporary way to limit the disruption to your customers while you fix the issue.
 
-Xx xx xxxx, xxxxxx x xxx xxxxxxxxxx. Xxxxxx xxx xxxxxxxxxxx xxxxxxx xxx xxxxxx xxx xxx xxxxxxx xxxx xxx xxxx xx xxxxxxx xx xxx Xxxxx. Xxxxxxxxx xxx xxxx xxxxxxx xxxxxxxx xxx xxxxxxx xxx xxx xxxxxxx xxxx xxxx xxxxx xxxx xxx xxxxxxxxxxx xxxxxxx (xxxxx xxxx xxxxx xxxxxxx xxxx xxxx xx xxxxxxx xxxxxxx xxxxxx). Xxx xxxx xxxx xxxx xxxxxx xxxx xxxx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxx, xxxxx xxxxxxxx xxx xxx xx xxxxx xx xxxxxxxxx xx xxx Xxxxx.
+To do this, create a new submission. Remove the problematic package and upload the old package that you want to provide in the Store. Customers who have already received the package you are rolling back will still have the problematic package (since your older package will have an earlier version number). But this will stop anyone else from acquiring the problematic package, while allowing the app to still be available in the Store.
 
-Xx xxx xxx xxxxxx xxx xxx xxxxxxxxx xxx xxxx xxxxxxx xxxxxxxx xxx xxxxxxxxxxx xxxxxxx, xxx xxx xxxxxx x xxx Xxxxxxx YY xxxxxxx xxxx xxx x xxxxxx xxxxxxx xxxxxx xxxx xxx xxx xxxxxxx xx xxxx xx xxx xxx. Xxxxx xxxx xxxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxxxxxx xxxxxxx, xxx xxxxxxxxx xxxx xx xxxxxxx xx xxx xxx xxxxxxx, xxxxx xx xxxx xxxx x xxxxxx xxxxxxx xxxxxx.
+To fix the issues for the customers who have already received the problematic package, you can submit a new Windows 10 package that has a higher version number than the bad package as soon as you can. After that submission goes through the certification process, all customers will be updated to the new package, since it will have a higher version number.
 
-## Xxxxxxx xxxxxxxxx xxx Xxxxxxx Y.Y (xxx xxxxxxx) xxx Xxxxxxx Xxxxx Y.Y xxxxxxxx
+## Version numbering for Windows 8.1 (and earlier) and Windows Phone 8.1 packages
 
+For .appx packages that target Windows Phone 8.1, the version number of the package in a new submission must always be greater than that of the package included in the last submission (or any previous submission).
 
-Xxx .xxxx xxxxxxxx xxxx xxxxxx Xxxxxxx Xxxxx Y.Y, xxx xxxxxxx xxxxxx xx xxx xxxxxxx xx x xxx xxxxxxxxxx xxxx xxxxxx xx xxxxxxx xxxx xxxx xx xxx xxxxxxx xxxxxxxx xx xxx xxxx xxxxxxxxxx (xx xxx xxxxxxxx xxxxxxxxxx).
+For .appx packages that target Windows 8 and Windows 8.1, the same rule applies per architecture: the version number of the package in a new submission must always be greater than that of the package last shipped to the Windows Store for the same architecture.
 
-Xxx .xxxx xxxxxxxx xxxx xxxxxx Xxxxxxx Y xxx Xxxxxxx Y.Y, xxx xxxx xxxx xxxxxxx xxx xxxxxxxxxxxx: xxx xxxxxxx xxxxxx xx xxx xxxxxxx xx x xxx xxxxxxxxxx xxxx xxxxxx xx xxxxxxx xxxx xxxx xx xxx xxxxxxx xxxx xxxxxxx xx xxx Xxxxxxx Xxxxx xxx xxx xxxx xxxxxxxxxxxx.
+Additionally, the version number of Windows 8.1 packages must always be greater than the version numbers of any of your Windows 8 packages for the same app. In other words, the version number of any Windows 8 package that you submit must be lower than the version number of any Windows 8.1 package that you've submitted for the same app.
 
-Xxxxxxxxxxxx, xxx xxxxxxx xxxxxx xx Xxxxxxx Y.Y xxxxxxxx xxxx xxxxxx xx xxxxxxx xxxx xxx xxxxxxx xxxxxxx xx xxx xx xxxx Xxxxxxx Y xxxxxxxx xxx xxx xxxx xxx. Xx xxxxx xxxxx, xxx xxxxxxx xxxxxx xx xxx Xxxxxxx Y xxxxxxx xxxx xxx xxxxxx xxxx xx xxxxx xxxx xxx xxxxxxx xxxxxx xx xxx Xxxxxxx Y.Y xxxxxxx xxxx xxx'xx xxxxxxxxx xxx xxx xxxx xxx.
+> **Note**  If you also have Windows 10 packages, the version number of the Windows 10 packages must be higher than those for Windows 8, Windows 8.1, and/or Windows Phone 8.1 packages you are publishing or have published. For more info, see [Adding packages for Windows 10 to a previously-published app](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).
 
-> **Xxxx**  Xx xxx xxxx xxxx Xxxxxxx YY xxxxxxxx, xxx xxxxxxx xxxxxx xx xxx Xxxxxxx YY xxxxxxxx xxxx xx xxxxxx xxxx xxxxx xxx Xxxxxxx Y, Xxxxxxx Y.Y, xxx/xx Xxxxxxx Xxxxx Y.Y xxxxxxxx xxx xxx xxxxxxxxxx xx xxxx xxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxx xxxxxxxx xxx Xxxxxxx YY xx x xxxxxxxxxx-xxxxxxxxx xxx](guidance-for-app-package-management.md#adding-packages-for-windows-10-to-a-previously-published-app).
+Here are some examples of what happens in different version number update scenarios for Windows 8 and Windows 8.1.
 
-Xxxx xxx xxxx xxxxxxxx xx xxxx xxxxxxx xx xxxxxxxxx xxxxxxx xxxxxx xxxxxx xxxxxxxxx xxx Xxxxxxx Y xxx Xxxxxxx Y.Y.
-
-| Xxxx xxxx xxxxxxx xx xxxx xxx xx xxx Xxxxx  | Xxx xxx xxxxxx xxxx xxxxxxx | Xxxxx xxx xxx xxxxxxx xx xx xxx Xxxxxxx Xxxxx, xxxx xxxx xx xxxxxxxxx xx x xxx xxxxxxxxxxx | Xxxxx xxx xxx xxxxxxx xx xx xxx Xxxxxxx Xxxxx, xxxx xxxx xx xxxxxxx xx x xxxxxxxx xxxxxxx xxx xxx xxx |
+| With this version of your app in the Store  | And you upload this version | After the new version is in the Windows Store, this will be installed in a new acquisition | After the new version is in the Windows Store, this will be updated if a customer already has the app |
 |---------------------------------------------|-----------------------------|--------------------------------------------------------------------------------------------|----------|
-| Xxxxxxx                                     | xYY, xY.Y.Y.Y               | xYY, xY.Y.Y.Y xx xxxx xYY xxx xYY xxxxxxxxx                                                | Xxxxxxx. |
-| xYY, xY.Y.Y.Y                               | xYY, xY.Y.Y.Y               | xY.Y.Y.Y xxx xxx xxxxxxxx'x xxxxxxxxxxxx                                                   | Xxxxxxx. Xxx xxxxxxx xxxxxxx xxx xxx xxxx. |
-| xYY, xY.Y.Y.Y <br> xYY, xY.Y.Y.Y            | xYY, xY.Y.Y.Y               | xY.Y.Y.Y xxx xxxxxxxxx xxxx xx xYY <br> xY.Y.Y.Y xxx xxxxxxxxx xxxx xx xYY                 | Xxxxxxx xxx xxxxxxxxx xxxxxxx xxx xxx xx xx xYY xxxxxxxx. <br> xY.Y.Y.Y xxxx xx xxxxxxx xx xY.Y.Y.Y xxx xxxxxxxxx xxxxxxx xxx xxx xx xx xYY xxxxxxxx. <br> **Xxxx**  Xx xxx xYY xxxxxxx xx xxx xxx xx xxxxxxx xx xx xYY xxxxxxxx, xxx xxx xxx’x xxx xxxxxxx xx xxx xYY xxxxxxx xxxxxx xxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxxxx. |
-| Xxxxxxx                                     | xxxxxxx, xY.Y.Y.Y           | xxxxxxx, xY.Y.Y.Y xx xxx xxxxxxxxx                                                         | Xxxxxxx. |
-| xxxxxxx, xY.Y.Y.Y                           | xYY, xY.Y.Y.Y <br> xYY, xY.Y.Y.Y <br> XXX, xY.Y.Y.Y | xY.Y.Y.Y xxx xxx xxxxxxxxxxxx xx xxx xxxxxxxx'x xxxxxxxx.          | Xxxxxxx. Xxxxx xxx xxxx xxx xxxxxxx, xY.Y.Y.Y xxxxxxx xx xxx xxx xxxx xxxxxxxx xx xxx xx. |
-| xxxxxxx, xY.Y.Y.Y <br> xYY, xY.Y.Y.Y <br> xYY, xY.Y.Y.Y <br> XXX, xY.Y.Y.Y | xYY, xY.Y.Y.Y <br> xYY, xY.Y.Y.Y <br> XXX, xY.Y.Y.Y | xY.Y.Y.Y xxx xxx xxxxxxxxxxxx xx xxx xxxxxxxx'x xxxxxxxx. | Xxxxxxx xxx xxxxxxxxx xxxxxxx xxx xxxxxxx, xY.Y.Y.Y xxxxxxx xxx. <br> xY.Y.Y.Y xxxx xx xxxxxxx xx xY.Y.Y.Y xxx xxxxxxxxx xxxxxxx xY.Y.Y.Y xx xxx xxx xxxxx xxx xxxxx xxxxxxxx'x xxxxxxxx xxxxxxxxxxxx. |
-| xYY, xY.Y.Y.Y <br> xYY, xY.Y.Y.Y <br> XXX, xY.Y.Y.Y | xYY, xY.Y.Y.Y <br> xYY, xY.Y.Y.Y <br> XXX, xY.Y.Y.Y | xY.Y.Y.Y xxx xxx xxxxxxxxxxxx xx xxx xxxxxxxx'x xxxxxxxx.  | xY.Y.Y.Y xxxx xx xxxxxxx xx xY.Y.Y.Y xxx xxxxxxxxx xxxxxxx xxxxxx xY.Y.Y.Y xx xxx xxx xxxxx xxx xxxxx xxxxxxxx'x xxxxxxxx xxxxxxxxxxxx. |
+| Nothing                                     | x86, v1.0.0.0               | x86, v1.0.0.0 on both x86 and x64 computers                                                | Nothing. |
+| x86, v1.0.0.0                               | x64, v1.0.0.0               | v1.0.0.0 for the customer's architecture                                                   | Nothing. The version numbers are the same. |
+| x86, v1.0.0.0 <br> x64, v1.0.0.0            | x64, v1.0.0.1               | v1.0.0.0 for customers with an x86 <br> v1.0.0.1 for customers with an x64                 | Nothing for customers running the app on an x86 computer. <br> v1.0.0.0 will be updated to v1.0.0.1 for customers running the app on an x64 computer. <br> **Note**  If the x86 version of the app is running on an x64 computer, the app won’t get updated to the x64 version unless the customer uninstalls and reinstalls. |
+| Nothing                                     | neutral, v1.0.0.1           | neutral, v1.0.0.1 on all computers                                                         | Nothing. |
+| neutral, v1.0.0.1                           | x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | v1.0.0.0 for the architecture of the customer's computer.          | Nothing. Those who have the neutral, v1.0.0.1 version of the app will continue to use it. |
+| neutral, v1.0.0.1 <br> x86, v1.0.0.0 <br> x64, v1.0.0.0 <br> ARM, v1.0.0.0 | x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | v1.0.0.1 for the architecture of the customer's computer. | Nothing for customers running the neutral, v1.0.0.1 version app. <br> v1.0.0.0 will be updated to v1.0.0.1 for customers running v1.0.0.0 of the app built for their computer's specific architecture. |
+| x86, v1.0.0.1 <br> x64, v1.0.0.1 <br> ARM, v1.0.0.1 | x86, v1.0.0.2 <br> x64, v1.0.0.2 <br> ARM, v1.0.0.2 | v1.0.0.2 for the architecture of the customer's computer.  | v1.0.0.1 will be updated to v1.0.0.2 for customers running either v1.0.0.1 of the app built for their computer's specific architecture. |
  
-<!--HONumber=Mar16_HO1-->
+> **Note**  Unlike .appx packages, the version numbers in any .xap packages are not considered when determining which package to provide a given customer. To update a customer from one .xap package to a newer one, make sure to remove the older .xap in the new submission.
+
+
+<!--HONumber=Mar16_HO4-->
+
+

@@ -1,33 +1,33 @@
 ---
-xxxxx: Xxxxx xxxxxxxx xxx xxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxx xxxxx xxxxx xxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) X++ xxxx xxxx XxxxxxX.
-xx.xxxxxxx: YxYYxYxY-YYxY-YYxY-xYYY-YYYxYYxYxYYY
+title: Touch controls for games
+description: Learn how to add basic touch controls to your Universal Windows Platform (UWP) C++ game with DirectX.
+ms.assetid: 9d40e6e4-46a9-97e9-b848-522d61e8e109
 ---
 
-# Xxxxx xxxxxxxx xxx xxxxx
+# Touch controls for games
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxx xxx xx xxx xxxxx xxxxx xxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) X++ xxxx xxxx XxxxxxX. Xx xxxx xxx xxx xx xxx xxxxx-xxxxx xxxxxxxx xx xxxx x xxxxx-xxxxx xxxxxx xx x XxxxxxYX xxxxxxxxxxx, xxxxx xxxxxxxx xxxx x xxxxxx xx xxxxxx xxxxxx xxx xxxxxx xxxxxxxxxxx.
+Learn how to add basic touch controls to your Universal Windows Platform (UWP) C++ game with DirectX. We show you how to add touch-based controls to move a fixed-plane camera in a Direct3D environment, where dragging with a finger or stylus shifts the camera perspective.
 
-Xxx xxx xxxxxxxxxxx xxxxx xxxxxxxx xx xxxxx xxxxx xxx xxxx xxx xxxxxx xx xxxx xx xxxxxx xx xxx xxxx x YX xxxxxxxxxxx, xxxx xx x xxx xx xxxxxxxxx. Xxx xxxxxxx, xx x xxxxxxxx xx xxxxxx xxxx, xxx xxx xxx xxxxx xxxxxxxx xx xxx xxx xxxxxx xxxx x xxxx xxxxxxxxxxx xxxx xx xxxxxx xxxx xxx xxxxxx xx xxxxxxx xxxx xx xxxxx.
+You can incorporate these controls in games where you want the player to drag to scroll or pan over a 3D environment, such as a map or playfield. For example, in a strategy or puzzle game, you can use these controls to let the player view a game environment that is larger than the screen by panning left or right.
 
-> **Xxxx**  Xxx xxxx xxxx xxxxx xxxx xxxxx-xxxxx xxxxxxx xxxxxxxx. Xxx xxxxxxx xxxxxxx xxxxxx xxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx XXXx, xx xxxx xxx xxxxxx xxxxxx xxxxx- xx xxxxx-xxxxx xxxxxxx xxxxxx.
+> **Note**  Our code also works with mouse-based panning controls. The pointer related events are abstracted by the Windows Runtime APIs, so they can handle either touch- or mouse-based pointer events.
 
  
 
-## Xxxxxxxxxx
+## Objectives
 
 
--   Xxxxxx x xxxxxx xxxxx xxxx xxxxxxx xxx xxxxxxx x xxxxx-xxxxx xxxxxx xx x XxxxxxX xxxx.
+-   Create a simple touch drag control for panning a fixed-plane camera in a DirectX game.
 
-## Xxx xx xxx xxxxx xxxxx xxxxx xxxxxxxxxxxxxx
+## Set up the basic touch event infrastructure
 
 
-Xxxxx, xx xxxxxx xxx xxxxx xxxxxxxxxx xxxx, xxx **XxxxxxXxxXxxxxxxxxx**, xx xxxx xxxx. Xxxx, xx xxxxxx x xxxxxxxxxx xx xx xxxxxxxx xxxx, xxx xxx xx xxxxxxxxx xxx xxxx xxx xxxxxxx.
+First, we define our basic controller type, the **CameraPanController**, in this case. Here, we define a controller as an abstract idea, the set of behaviors the user can perform.
 
-Xxx **XxxxxxXxxXxxxxxxxxx** xxxxx xx x xxxxxxxxx xxxxxxxxx xxxxxxxxxx xx xxxxxxxxxxx xxxxx xxx xxxxxx xxxxxxxxxx xxxxx, xxx xxxxxxxx x xxx xxx xxx xxx xx xxxxxx xxxx xxxxxxxxxxx xxxx xxx xxxxxx xxxx.
+The **CameraPanController** class is a regularly refreshed collection of information about the camera controller state, and provides a way for our app to obtain that information from its update loop.
 
 ```cpp
 using namespace Windows::UI::Core;
@@ -42,7 +42,7 @@ ref class CameraPanController
 }
 ```
 
-Xxx, xxx'x xxxxxx x xxxxxx xxxx xxxxxxx xxx xxxxx xx xxx xxxxxx xxxxxxxxxx, xxx xxx xxxxx xxxxxxx xxx xxxxx xxxxxxxx xxxx xxxxxxxxx xxx xxxxxx xxxxxxxxxx xxxxxxxxxxxx.
+Now, let's create a header that defines the state of the camera controller, and the basic methods and event handlers that implement the camera controller interactions.
 
 ```cpp
 ref class CameraPanController
@@ -94,49 +94,49 @@ public:
 };  // Class CameraPanController
 ```
 
-Xxx xxxxxxx xxxxxx xxxxxxx xxx xxxxxxx xxxxx xx xxx xxxxxx xxxxxxxxxx. Xxx'x xxxxxx xxxx.
+The private fields contain the current state of the camera controller. Let's review them.
 
--   **x\_xxxxxxxx** xx xxx xxxxxxxx xx xxx xxxxxx xx xxx xxxxx xxxxx. Xx xxxx xxxxxxx, xxx x-xxxxxxxxxx xxxxx xx xxxxx xx Y. Xx xxxxx xxx x XxxxxxX::XXXXXXXY xx xxxxxxxxx xxxx xxxxx, xxx xxx xxx xxxxxxxx xx xxxx xxxxxx xxx xxxxxx xxxxxxxxxxxxx, xx xxx x XxxxxxX::XXXXXXXY. Xx xxxx xxxx xxxxx xxxxxxx xxx **xxx\_Xxxxxxxx** xxxxxxxx xx xxx xxx xxxxxx xx xx xxx xxxxxx xxx xxxxxxxx xxxxxxxxxxx.
--   **x\_xxxXxXxx** xx x Xxxxxxx xxxxx xxxx xxxxxxxxx xxxxxxx x xxx xxxxxxxxx xx xxxxxx; xx, xxxx xxxxxxxxxxxx, xxxxxxx xxx xxxxxx xx xxxxxxxx xxx xxxxxx xxx xxxxxx xxx xxxxxx.
--   **x\_xxxXxxxxxxXX** xx x xxxxxx XX xxx xxx xxxxxxx. Xx xxx'x xxx xxxx xx xxx xxxxxx, xxx xx'x x xxxx xxxxxxxx xx xxxxxxxxx xxxx xxxxxxxxxx xxxxx xxxxx xxxx x xxxxxxxx xxxxxxx.
--   **x\_xxxXxxxxXxxx** xx xxx xxxxx xx xxx xxxxxx xxxxx xxx xxxxxx xxxxx xxxxxxx xxx xxxxxx xx xxxxxxx xxx xxxxx xxxxxx xxx xxxxxx xxx xxxxxx. Xx xxx xxxx xxxxx xxxxx xx xxx x xxxx xxxx xx xxxxxxx xxxxxx xxxx xxx xxxxxx xx xxxxxxx, xx xx xxx xxxxx xxxxxx x xxxxxx.
--   **x\_xxxXxxxxxxXxxxxxxx** xx xxx xxxxx xx xxx xxxxxx xxxxx xxx xxxxxx xxx xxxxxxxxx xxxxx xxx xxxxxxx. Xx xxx xx xx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxx xxxxxx xx xxxx xx xxxxxxxxx xx xxxxxxxx xx **x\_xxxXxxxxXxxx**.
--   **x\_xxxXxxxxxx** xx xxx xxxxx xxxxxxxx xxxxxxx xxx xxx xxxxxx xxxxxxxxxx: xx, xxxx, xxxx, xx xxxxx. Xxxxxxx xx xxx xxxxxxx xxxx x xxxxxx xxxxx xx xxx x-x xxxxx, xxxx xxxxx xx x XxxxxxX::XXXXXXXY xxxxx xxxxxxx.
+-   **m\_position** is the position of the camera in the scene space. In this example, the z-coordinate value is fixed at 0. We could use a DirectX::XMFLOAT2 to represent this value, but for the purposes of this sample and future extensibility, we use a DirectX::XMFLOAT3. We pass this value through the **get\_Position** property to the app itself so it can update the viewport accordingly.
+-   **m\_panInUse** is a Boolean value that indicates whether a pan operation is active; or, more specifically, whether the player is touching the screen and moving the camera.
+-   **m\_panPointerID** is a unique ID for the pointer. We won't use this in the sample, but it's a good practice to associate your controller state class with a specific pointer.
+-   **m\_panFirstDown** is the point on the screen where the player first touched the screen or clicked the mouse during the camera pan action. We use this value later to set a dead zone to prevent jitter when the screen is touched, or if the mouse shakes a little.
+-   **m\_panPointerPosition** is the point on the screen where the player has currently moved the pointer. We use it to determine what direction the player wanted to move by examining it relative to **m\_panFirstDown**.
+-   **m\_panCommand** is the final computed command for the camera controller: up, down, left, or right. Because we are working with a camera fixed to the x-y plane, this could be a DirectX::XMFLOAT2 value instead.
 
-Xx xxx xxxxx Y xxxxx xxxxxxxx xx xxxxxx xxx xxxxxx xxxxxxxxxx xxxxx xxxx.
+We use these 3 event handlers to update the camera controller state info.
 
--   **XxXxxxxxxXxxxxxx** xx xx xxxxx xxxxxxx xxxx xxx xxx xxxxx xxxx xxx xxxxxxx xxxxxxx x xxxxxx xxxx xxx xxxxx xxxxxxx xxx xxx xxxxxxx xx xxxxx xx xxx xxxxxxxxxxx xx xxx xxxxx.
--   **XxXxxxxxxXxxxx** xx xx xxxxx xxxxxxx xxxx xxx xxx xxxxx xxxx xxx xxxxxx xxxxxx x xxxxxx xxxxxx xxx xxxxx xxxxxxx. Xx xxxxxxx xxxx xxx xxx xxxxxxxxxxx xx xxx xxxx xxxx.
--   **XxXxxxxxxXxxxxxxx** xx xx xxxxx xxxxxxx xxxx xxx xxx xxxxx xxxx xxx xxxxxx xxxxxxx xxx xxxxxxxx xxxxxx xxxx xxx xxxxx xxxxxxx.
+-   **OnPointerPressed** is an event handler that our app calls when the players presses a finger onto the touch surface and the pointer is moved to the coordinates of the press.
+-   **OnPointerMoved** is an event handler that our app calls when the player swipes a finger across the touch surface. It updates with the new coordinates of the drag path.
+-   **OnPointerReleased** is an event handler that our app calls when the player removes the pressing finger from the touch surface.
 
-Xxxxxxx, xx xxx xxxxx xxxxxxx xxx xxxxxxxxxx xx xxxxxxxxxx, xxxxxx, xxx xxxxxx xxx xxxxxx xxxxxxxxxx xxxxx xxxxxxxxxxx.
+Finally, we use these methods and properties to initialize, access, and update the camera controller state information.
 
--   **Xxxxxxxxxx** xx xx xxxxx xxxxxxx xxxx xxx xxx xxxxx xx xxxxxxxxxx xxx xxxxxxxx xxx xxxxxx xxxx xx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxx xxxx xxxxxxxxx xxxx xxxxxxx xxxxxx.
--   **XxxXxxxxxxx** xx x xxxxxx xxxx xxx xxx xxxxx xx xxx xxx (x, x, xxx x) xxxxxxxxxxx xx xxxx xxxxxxxx xx xxx xxxxx xxxxx. Xxxx xxxx xxx x-xxxxxxxxxx xx Y xxxxxxxxxx xxxx xxxxxxxx.
--   **xxx\_Xxxxxxxx** xx x xxxxxxxx xxxx xxx xxx xxxxxxxx xx xxx xxx xxxxxxx xxxxxxxx xx xxx xxxxxx xx xxx xxxxx xxxxx. Xxx xxx xxxx xxxxxxxx xx xxx xxx xx xxxxxxxxxxxxx xxx xxxxxxx xxxxxx xxxxxxxx xx xxx xxx.
--   **xxx\_XxxxxXxxxXxxxx** xx x xxxxxxxx xxxx xxx xxx xxxxxxxx xx xxx xxx xxxxxxx xxxxx xxxxxx xxxxx xxx xxxxxxxxxx xxxxxx xx xxxxxx. Xx xxxx xxxxxxx, xx xx xxxxxx xxxxxx xx xxx x-x xxxxx.
--   **Xxxxxx** xx x xxxxxx xxxx xxxxx xxx xxxxxxxxxx xxxxx xxx xxxxxxx xxx xxxxxx xxxxxxxx. Xxx xxxxxxxxxxx xxxx xxxx &xx;xxxxxxxxx&xx; xxxx xxx xxx'x xxxx xxxx xx xxxxxxx xxx xxxxxx xxxxxxxxxx xxxx xxx xxx xxxxxx xxxxxxxx xx xxx xxxxx xxxxx.
+-   **Initialize** is an event handler that our app calls to initialize the controls and attach them to the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object that describes your display window.
+-   **SetPosition** is a method that our app calls to set the (x, y, and z) coordinates of your controls in the scene space. Note that our z-coordinate is 0 throughout this tutorial.
+-   **get\_Position** is a property that our app accesses to get the current position of the camera in the scene space. You use this property as the way of communicating the current camera position to the app.
+-   **get\_FixedLookPoint** is a property that our app accesses to get the current point toward which the controller camera is facing. In this example, it is locked normal to the x-y plane.
+-   **Update** is a method that reads the controller state and updates the camera position. You continually call this &lt;something&gt; from the app's main loop to refresh the camera controller data and the camera position in the scene space.
 
-Xxx, xxx xxxx xxxx xxx xxx xxxxxxxxxx xxx xxxx xx xxxxxxxxx xxxxx xxxxxxxx. Xxx xxx xxxxxx xxxx xxx xxxxx xxx xxxxx xx xxxxx xxxxxxx xxxxxx xxxx xxxxxxxx, xxx xxxx xxx xxxxxx xx. Xxx xxx xxx xxx xxxxxxxx xxx xxxxxxxxxxx xx xxx xxxxxx xxxxxxxx xx xxx xxxxx xxxxx, xxx xxxxx xxx xxxxxxx. Xxxxxxx, xxx xxx xxxxxxxxxxx xxx xxx xxxxxx xxxxxxxx xx xxx xxxxxxx xxx.
+Now, you have here all the components you need to implement touch controls. You can detect when and where the touch or mouse pointer events have occurred, and what the action is. You can set the position and orientation of the camera relative to the scene space, and track the changes. Finally, you can communicate the new camera position to the calling app.
 
-Xxx, xxx'x xxxxxxx xxxxx xxxxxx xxxxxxxx.
+Now, let's connect these pieces together.
 
-## Xxxxxx xxx xxxxx xxxxx xxxxxx
+## Create the basic touch events
 
 
-Xxx Xxxxxxx Xxxxxxx xxxxx xxxxxxxxxx xxxxxxxx Y xxxxxx xx xxxx xxx xxx xx xxxxxx:
+The Windows Runtime event dispatcher provides 3 events we want our app to handle:
 
--   [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208278)
--   [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208276)
--   [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208279)
+-   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
+-   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
+-   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
 
-Xxxxx xxxxxx xxx xxxxxxxxxxx xx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxx. Xx xxxxxx xxxx xxx xxxx x **XxxxXxxxxx** xxxxxx xx xxxx xxxx. Xxx xxxx xxxx, xxx [Xxx xx xxx xx xxxx XXX X++ xxx xx xxxxxxx x XxxxxxX xxxx](https://msdn.microsoft.com/library/windows/apps/hh465077).
+These events are implemented on the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) type. We assume that you have a **CoreWindow** object to work with. For more info, see [How to set up your UWP C++ app to display a DirectX view](https://msdn.microsoft.com/library/windows/apps/hh465077).
 
-Xx xxxxx xxxxxx xxxx xxxxx xxx xxx xx xxxxxxx, xxx xxxxxxxx xxxxxx xxx xxxxxx xxxxxxxxxx xxxxx xxxx xxxxxxx xx xxx xxxxxxx xxxxxx.
+As these events fire while our app is running, the handlers update the camera controller state info defined in our private fields.
 
-Xxxxx, xxx'x xxxxxxxx xxx xxxxx xxxxxxx xxxxx xxxxxxxx. Xx xxx xxxxx xxxxx xxxxxxx, **XxXxxxxxxXxxxxxx**, xx xxx xxx x-x xxxxxxxxxxx xx xxx xxxxxxx xxxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxx xxxxxxx xxx xxxxxxx xxxx xxx xxxx xxxxxxx xxx xxxxxx xx xxxxxx xxx xxxxx.
+First, let's populate the touch pointer event handlers. In the first event handler, **OnPointerPressed**, we get the x-y coordinates of the pointer from the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) that manages our display when the user touches the screen or clicks the mouse.
 
-**XxXxxxxxxXxxxxxx**
+**OnPointerPressed**
 
 ```cpp
 void CameraPanController::OnPointerPressed(
@@ -162,13 +162,13 @@ void CameraPanController::OnPointerPressed(
 }
 ```
 
-Xx xxx xxxx xxxxxxx xx xxx xxx xxxxxxx **XxxxxxXxxXxxxxxxxxx** xxxxxxxx xxxx xxxx xxxxxx xxxxxxxxxx xxxxxx xx xxxxxxx xx xxxxxx xx xxxxxxx **x\_xxxXxXxx** xx XXXX. Xxxx xxx, xxxx xxx xxx xxxxx **Xxxxxx** , xx xxxx xxx xxx xxxxxxx xxxxxxxx xxxx xx xxxxxx xxx xxxxxxxx.
+We use this handler to let the current **CameraPanController** instance know that camera controller should be treated as active by setting **m\_panInUse** to TRUE. That way, when the app calls **Update** , it will use the current position data to update the viewport.
 
-Xxx xxxx xx'xx xxxxxxxxxxx xxx xxxx xxxxxx xxx xxx xxxxxx xxxxxxxx xxxx xxx xxxx xxxxxxx xxx xxxxxx xx xxxxx-xxxxxxx xx xxx xxxxxxx xxxxxx, xx xxxx xxxxxxxxx xxxx xx xx xxxx xxx xxxx xxxxxx xxxxx xxx xxxxxx xxxxx xx xxxxx xxx xxxxx xxxx xxxxxx xxxxxxx.
+Now that we've established the base values for the camera movement when the user touches the screen or click-presses in the display window, we must determine what to do when the user either drags the screen press or moves the mouse with button pressed.
 
-Xxx **XxXxxxxxxXxxxx** xxxxx xxxxxxx xxxxx xxxxxxxx xxx xxxxxxx xxxxx, xx xxxxx xxxx xxxx xxx xxxxxx xxxxx xx xx xxx xxxxxx. Xx xxxx xx xxxx xxx xxx xxxxx xx xxx xxxxxxx xxxxxxxx xx xxx xxxxxxx, xxx xxxx xx xxx xx xx xx.
+The **OnPointerMoved** event handler fires whenever the pointer moves, at every tick that the player drags it on the screen. We need to keep the app aware of the current location of the pointer, and this is how we do it.
 
-**XxXxxxxxxXxxxx**
+**OnPointerMoved**
 
 ```cpp
 void CameraPanController::OnPointerMoved(
@@ -182,9 +182,9 @@ void CameraPanController::OnPointerMoved(
 }
 ```
 
-Xxxxxxx, xx xxxx xx xxxxxxxxxx xxx xxxxxx xxx xxxxxxxx xxxx xxx xxxxxx xxxxx xxxxxxxx xxx xxxxxx. Xx xxx **XxXxxxxxxXxxxxxxx**, xxxxx xx xxxxxx xxxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208279) xx xxxxx, xx xxx **x\_xxxXxXxx** xx XXXXX xxx xxxx xxx xxx xxxxxx xxx xxxxxxxx, xxx xxx xxx xxxxxxx XX xx Y.
+Finally, we need to deactivate the camera pan behavior when the player stops touching the screen. We use **OnPointerReleased**, which is called when [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) is fired, to set **m\_panInUse** to FALSE and turn off the camera pan movement, and set the pointer ID to 0.
 
-**XxXxxxxxxXxxxxxxx**
+**OnPointerReleased**
 
 ```cpp
 void CameraPanController::OnPointerReleased(
@@ -199,12 +199,12 @@ void CameraPanController::OnPointerReleased(
 }
 ```
 
-## Xxxxxxxxxx xxx xxxxx xxxxxxxx xxx xxx xxxxxxxxxx xxxxx
+## Initialize the touch controls and the controller state
 
 
-Xxx'x xxxx xxx xxxxxx xxx xxxxxxxxxx xxx xxx xxxxx xxxxx xxxxxx xx xxx xxxxxx xxxxxxxxxx.
+Let's hook the events and initialize all the basic state fields of the camera controller.
 
-**Xxxxxxxxxx**
+**Initialize**
 
 ```cpp
 void CameraPanController::Initialize( _In_ CoreWindow^ window )
@@ -231,12 +231,12 @@ void CameraPanController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Xxxxxxxxxx** xxxxx x xxxxxxxxx xx xxx xxx'x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxxxx xx x xxxxxxxxx xxx xxxxxxxxx xxx xxxxx xxxxxxxx xx xxxxxxxxx xx xxx xxxxxxxxxxx xxxxxx xx xxxx **XxxxXxxxxx**.
+**Initialize** takes a reference to the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) instance as a parameter and registers the event handlers we developed to the appropriate events on that **CoreWindow**.
 
-## Xxxxxxx xxx xxxxxxx xxx xxxxxxxx xx xxx xxxxxx xxxxxxxxxx
+## Getting and setting the position of the camera controller
 
 
-Xxx'x xxxxxx xxxx xxxxxxx xx xxx xxx xxx xxx xxxxxxxx xx xxx xxxxxx xxxxxxxxxx xx xxx xxxxx xxxxx.
+Let's define some methods to get and set the position of the camera controller in the scene space.
 
 ```cpp
 void CameraPanController::SetPosition( _In_ DirectX::XMFLOAT3 pos )
@@ -261,16 +261,16 @@ DirectX::XMFLOAT3 CameraPanController::get_FixedLookPoint()
 }
 ```
 
-**XxxXxxxxxxx** xx x xxxxxx xxxxxx xxxx xx xxx xxxx xxxx xxx xxx xx xx xxxx xx xxx xxx xxxxxx xxxxxxxxxx xxxxxxxx xx x xxxxxxxx xxxxx.
+**SetPosition** is a public method that we can call from our app if we need to set the camera controller position to a specific point.
 
-**xxx\_Xxxxxxxx** xx xxx xxxx xxxxxxxxx xxxxxx xxxxxxxx: xx'x xxx xxx xxx xxx xxxx xxx xxxxxxx xxxxxxxx xx xxx xxxxxx xxxxxxxxxx xx xxx xxxxx xxxxx xx xx xxx xxxxxx xxx xxxxxxxx xxxxxxxxxxx.
+**get\_Position** is our most important public property: it's the way our app gets the current position of the camera controller in the scene space so it can update the viewport accordingly.
 
-**xxx\_XxxxxXxxxXxxxx** xx x xxxxxx xxxxxxxx xxxx, xx xxxx xxxxxxx, xxxxxxx x xxxx xxxxx xxxx xx xxxxxx xx xxx x-x xxxxx. Xxx xxx xxxxxx xxxx xxxxxx xx xxx xxx xxxxxxxxxxxxx xxxxxxxxx, xxx xxx xxx, xxxx xxxxxxxxxxx xxx x, x, xxx x xxxxxxxxxx xxxxxx xx xxx xxxx xx xxxxxx xxxx xxxxxxx xxxxxx xxx xxx xxxxx xxxxxx.
+**get\_FixedLookPoint** is a public property that, in this example, obtains a look point that is normal to the x-y plane. You can change this method to use the trigonometric functions, sin and cos, when calculating the x, y, and z coordinate values if you want to create more oblique angles for the fixed camera.
 
-## Xxxxxxxx xxx xxxxxx xxxxxxxxxx xxxxx xxxxxxxxxxx
+## Updating the camera controller state information
 
 
-Xxx, xx xxxxxxx xxx xxxxxxxxxxxx xxxx xxxxxxx xxx xxxxxxx xxxxxxxxxx xxxx xxxxxxx xx **x\_xxxXxxxxxxXxxxxxxx** xxxx xxx xxxxxxxxxx xxxx xxxxxxxxxx xx xxx YX xxxxx xxxxx. Xxx xxx xxxxx xxxx xxxxxx xxxxx xxxx xx xxxxxxx xxx xxxx xxx xxxx. Xx xx xx xxxxxxx xxx xxx xxxxxxxx xxxxxxxxxxx xx xxxx xx xxxx xx xxx xxx xxxxx xx xxxx xx xxxxxx xxx xxxx xxxxxx xxxxxx xxxxxxxxxx xxxx xxx xxxxxxxx.
+Now, we perform our calculations that convert the pointer coordinate info tracked in **m\_panPointerPosition** into new coordinate info respective of our 3D scene space. Our app calls this method every time we refresh the main app loop. In it we compute the new position information we want to pass to the app which is used to update the view matrix before projection into the viewport.
 
 ```cpp
 
@@ -313,12 +313,12 @@ void CameraPanController::Update( CoreWindow ^window )
 }
 ```
 
-Xxxxxxx xx xxx'x xxxx xxxxx xx xxxxx xxxxxx xx xxxx xxx xxxxxx xxxxxxx xxxxx, xx xxx x xxxx xxxx xxxxxx xxx xxxxxxx xxxx x xxxxxxxx xx YY xxxxxx. Xx xxxx xxxx x xxxxxxxx xxxxx, xxxxx xx xxxx xxxx xx Y:Y xxxx xxx xxxxx xxxxxxxxx xx xxx xxxxxxx xxxx xxx xxxx xxxx. Xxx xxx xxxxxx xxxx xxxxxxxx xx xxxx xxxx xx xxxxx xx xxx xxxx xx xxxxxxxx.
+Because we don't want touch or mouse jitter to make our camera panning jerky, we set a dead zone around the pointer with a diameter of 32 pixels. We also have a velocity value, which in this case is 1:1 with the pixel traversal of the pointer past the dead zone. You can adjust this behavior to slow down or speed up the rate of movement.
 
-## Xxxxxxxx xxx xxxx xxxxxx xxxx xxx xxx xxxxxx xxxxxxxx
+## Updating the view matrix with the new camera position
 
 
-Xx xxx xxx xxxxxx x xxxxx xxxxx xxxxxxxxxx xxxx xxx xxxxxx xx xxxxxxx xx, xxx xxxxx xx xxxxxxx xxxxxxxx xxx xxxx xxxx xxx xx xx xx (xxxxx YY xxxxxxx xx xxx xxxx xxx xxxx, xxx xxxxxxx). Xxxx xxxxxxxxxx xxxxxxxx xxx xxxxxxx xxxxxxxx xxx xxx xxxxxxxxx:
+We can now obtain a scene space coordinate that our camera is focused on, and which is updated whenever you tell your app to do so (every 60 seconds in the main app loop, for example). This pseudocode suggests the calling behavior you can implement:
 
 ```cpp
  myCameraPanController->Update( m_window ); 
@@ -331,18 +331,22 @@ Xx xxx xxx xxxxxx x xxxxx xxxxx xxxxxxxxxx xxxx xxx xxxxxx xx xxxxxxx xx, xxx xx
         );  
 ```
 
-Xxxxxxxxxxxxxxx! Xxx'xx xxxxxxxxxxx x xxxxxx xxx xx xxxxxx xxxxxxx xxxxx xxxxxxxx xx xxxx xxxx.
+Congratulations! You've implemented a simple set of camera panning touch controls in your game.
 
-> **Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
+> **Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

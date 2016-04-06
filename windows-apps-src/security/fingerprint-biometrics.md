@@ -1,21 +1,21 @@
 ---
-xxxxx: Xxxxxxxxxxx xxxxxxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xxx xx xxx xxxxxxxxxxx xxxxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
-xx.xxxxxxx: YYYYYYYY-YXYX-YYYX-YYYY-YXXYYYXXXXXY
+title: 指紋生体認証
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに指紋生体認証を追加する方法について説明します。
+ms.assetid: 55483729-5F8A-401A-8072-3CD611DDFED2
 ---
 
-# Xxxxxxxxxxx xxxxxxxxxx
+# 指紋生体認証
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xxxx xxxxxxx xxxxxxxx xxx xx xxx xxxxxxxxxxx xxxxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx. Xxxxxxxxx x xxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxxxxx xxxx xxx xxxx xxxx xxxxxxx xx x xxxxxxxxxx xxxxxx xxxxxxxxx xxx xxxxxxxx xx xxxx xxx. Xxx xxxxxxx, xxx xxxxx xxxxxxx xxxxxxxxxxx xxxxxxxxxxxxxx xxxxxx xxxxxxxxxxx xx xx-xxx xxxxxxxx, xx xxxxxx xx xxxxxxxxxx xxxxxxxxx. Xxxxxxxxxxx xxxxxxxxxxxxxx xx xxxxxxx xxxxx xxx [**XxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279134) xxxxx xx xxx [**Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxx.XX**](https://msdn.microsoft.com/library/windows/apps/hh701356) xxxxxxxxx.
+この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリに指紋生体認証を追加する方法について説明します。 特定の操作に対してユーザーの同意を得る必要がある場合は、指紋認証の要求を含めると、アプリのセキュリティを高めることができます。 たとえば、アプリ内購入を承認する前や制限されたリソースにアクセスする前に指紋認証を要求できます。 指紋認証は、[**Windows.Security.Credentials.UI**](https://msdn.microsoft.com/library/windows/apps/hh701356) 名前空間の [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) クラスを使って管理されます。
 
-## Xxxxx xxx xxxxxx xxx x xxxxxxxxxxx xxxxxx
+## デバイスに指紋リーダーがあるかどうかをチェックする
 
 
-Xx xxxx xxx xxxxxxx xxx xxxxxx xxx x xxxxxxxxxxx xxxxxx, xxxx [**XxxxXxxxxxxXxxxxxxx.XxxxxXxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279138). Xxxx xx x xxxxxx xxxxxxxx xxxxxxxxxxx xxxxxxxxxxxxxx, xxxx xxx xxxxxx xxxxx xxxxxxx xxxxx xxxx xx xxxxxx xx Xxxxxxxx xx xxxxxx xx xxxxxxx xx.
+デバイスに指紋リーダーがあるかどうかを調べるには、[**UserConsentVerifier.CheckAvailabilityAsync**](https://msdn.microsoft.com/library/windows/apps/dn279138) メソッドを呼び出します。 デバイスで指紋認証がサポートされている場合も、アプリでは、指紋認証を有効または無効にする設定オプションをユーザーに提供する必要があります。
 
 ```cs
 public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
@@ -59,12 +59,13 @@ public async System.Threading.Tasks.Task<string> CheckFingerprintAvailability()
 }
 ```
 
-## Xxxxxxx xxxxxxx xxx xxxxxx xxxxxxx
+## 同意を求めて、結果を返す
 
 
-Xx xxxxxxx xxxx xxxxxxx xxxx x xxxxxxxxxxx xxxx, xxxx xxx [**XxxxXxxxxxxXxxxxxxx.XxxxxxxXxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279139) xxxxxx. Xxx xxxxxxxxxxx xxxxxxxxxxxxxx xx xxxx, xxx xxxx xxxx xxxx xxxxxxxxxx xxxxx x xxxxxxxxxxx "xxxxxxxxx" xx xxx xxxxxxxxxxx xxxxxxxx.
+指紋のスキャンによってユーザーの同意を求めるには、[**UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) メソッドを呼び出します。 指紋認証を行うには、あらかじめユーザーが指紋データベースに指紋の "署名" を追加している必要があります。
 
-Xxxx xxx xxxx xxx [**XxxxXxxxxxxXxxxxxxx.XxxxxxxXxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279139), xxx xxxx xx xxxxxxxxx xxxx x xxxxx xxxxxx xxxxxxxxxx x xxxxxxxxxxx xxxx. Xxx xxx xxxxxx x xxxxxxx xx xxx **XxxxXxxxxxxXxxxxxxx.XxxxxxxXxxxxxxxxxxxXxxxx** xxxxxx xxxx xxxx xx xxxxxxxxx xx xxx xxxx xx xxxx xx xxx xxxxx xxxxxx, xx xxxxx xx xxx xxxxxxxxx xxxxx.
+[
+            **UserConsentVerifier.RequestVerificationAsync**](https://msdn.microsoft.com/library/windows/apps/dn279139) を呼び出すと、ユーザーに指紋のスキャンを求めるモーダル ダイアログが表示されます。 **UserConsentVerifier.RequestVerificationAsync** メソッドには、次の図に示すように、モーダル ダイアログの一部として表示されるメッセージを指定できます。
 
 ```cs
 private async System.Threading.Tasks.Task<string> RequestConsent(string userMessage)
@@ -126,4 +127,8 @@ private async System.Threading.Tasks.Task<string> RequestConsent(string userMess
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

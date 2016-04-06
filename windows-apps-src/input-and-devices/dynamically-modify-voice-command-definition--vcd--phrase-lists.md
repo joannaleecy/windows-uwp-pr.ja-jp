@@ -1,68 +1,58 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxx xx xxxxxx xxx xxxxxx xxx xxxx xx xxxxxxxxx xxxxxxx (XxxxxxXxxx xxxxxxxx) xx x Xxxxx Xxxxxxx Xxxxxxxxxx (XXX) xxxx xxxxx xxx xxxxxx xxxxxxxxxxx xxxxxx xx xxx xxxx.
-xxxxx: Xxxxxxxxxxx xxxxxx XXX xxxxxx xxxxx
-xx.xxxxxxx: YYYYYXXX-XXYX-YYXX-XXXY-XYYYXXYXYYYY
-xxxxx: Xxxxxx XXX xxxxxx xxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: 実行時に音声認識結果を使って、音声コマンド定義 (VCD) ファイルのサポート対象語句の一覧 (PhraseList 要素) にアクセスして更新する方法を説明します。
+title: 音声コマンド定義 (VCD) の語句一覧の動的変更
+ms.assetid: 98024EAC-EC0E-44AA-AEC5-A611BA7C5884
+label: 音声コマンド定義 (VCD) の語句一覧の動的変更
+template: detail.hbs
 ---
 
-# Xxxxxxxxxxx xxxxxx XXX xxxxxx xxxxx
+# 音声コマンド定義 (VCD) の語句一覧の動的変更
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**Xxxxxxx.XxxxxxxxxxxXxxxx.XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706594)
--   [**XXX xxxxxxxx xxx xxxxxxxxxx xY.Y**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+-   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
+-   [**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-Xxxxx xxx xx xxxxxx xxx xxxxxx xxx xxxx xx xxxxxxxxx xxxxxxx (**XxxxxxXxxx** xxxxxxxx) xx x Xxxxx Xxxxxxx Xxxxxxxxxx (XXX) xxxx xxxxx xxx xxxxxx xxxxxxxxxxx xxxxxx xx xxx xxxx.
+実行時に音声認識結果を使って、音声コマンド定義 (VCD) ファイルのサポート対象語句の一覧 (**PhraseList** 要素) にアクセスして更新する方法を説明します。
 
-Xxxxxxxxxxx xxxxxxxxx x xxxxxx xxxx xx xxx xxxx xxx xx xxxxxx xx xxx xxxxx xxxxxxx xx xxxxxxxx xx x xxxx xxxxxxxxx xxxx xxxx xx xxxx-xxxxxxx xxxxxxxxx xx xxxxxxxxx xxx xxxx.
+実行時に動的に語句一覧を変更できると、ある種のユーザー定義のお気に入りデータや一時的なアプリ データが関係する作業専用の音声コマンドを使う場合に便利です。
 
-Xxx xxxxxxx, xxx'x xxx xxx xxxx x xxxxxx xxx xxxxx xxxxx xxx xxxxx xxxxxxxxxxxx, xxx xxx xxxx xxxxx xx xx xxxx xx xxxxx xxx xxx xx xxxxxx xxx xxx xxxx xxxxxxxx xx "Xxxx xxxx xx &xx;xxxxxxxxxxx&xx;". Xxx xxx'x xxxx xx xxxxxx x xxxxxxxx **XxxxxxXxx** xxxxxxx xxx xxxx xxxxxxxx xxxxxxxxxxx. Xxxxxxx, xxx xxx xxxxxxxxxxx xxxxxxxx **XxxxxxXxxx** xx xxx xxxx xxxx xxx xxxxxxxxxxxx xxxxxxx xx xxx xxxx. Xx xxx **XxxxxxXxx** xxxxxxx xxxxxx, xxx xxxxx xxxxxxx xxxxxxxxx xxxx: `<ListenFor> Show trip to {destination}  </ListenFor>`, xxxxx "xxxxxxxxxxx" xx xxx xxxxx xx xxx **Xxxxx** xxxxxxxxx xxx xxx **XxxxxxXxxx**.
+たとえば、ユーザーが目的地を入力できる旅行アプリがあり、ユーザーがアプリ名の後に「&lt;目的地&gt; 旅行を表示」と発声するだけでアプリを起動できるようにするとします。 想定されるすべての目的地について個別の **ListenFor** 要素を作成する必要はありません。 代わりに、ユーザーが作った目的地を実行時に動的に **PhraseList** に設定できます。 **ListenFor** 要素自体では、`<ListenFor> Show trip to {destination}  </ListenFor>` のように指定できます。ここで、"destination" は、**PhraseList** の **Label** 属性の値です。
 
-Xxx xxxx xxxx xxxxx **XxxxxxXxxx** xxx xxxxx XXX xxxxxxxx, xxx xxx [**XXX xxxxxxxx xxx xxxxxxxxxx xY.Y**](https://msdn.microsoft.com/library/windows/apps/dn706593) xxxxxxxxx.
+**PhraseList** などの VCD 要素について詳しくは、[**VCD elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593) リファレンスをご覧ください。
 
-**Xxxxxxxxxxxxx:  **
+**前提条件: **
 
-Xxxx xxxxx xxxxxx xx [Xxxxxx x xxxxxxxxxx xxx xxxx xxxxx xxxxxxxx xx Xxxxxxx](launch-a-foreground-app-with-voice-commands-in-cortana.md). Xx xxxxxxxx xxxx xx xxxxxxxxxxx xxxxxxxx xxxx x xxxx xxxxxxxx xxx xxxxxxxxxx xxx xxxxx **Xxxxxxxxx Xxxxx**.
+このトピックは、「[Cortana の音声コマンドを使ったフォアグラウンド アプリの起動](launch-a-foreground-app-with-voice-commands-in-cortana.md)」に基づいています。 ここでは、引き続き **Adventure Works** という旅行の計画および管理アプリを使って機能について説明します。
 
-Xx xxx'xx xxx xx xxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx, xxxx x xxxx xxxxxxx xxxxx xxxxxx xx xxx xxxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx xxxx.
+ユニバーサル Windows プラットフォーム (UWP) アプリを開発するのが初めての場合は、以下のトピックに目を通して、ここで説明されているテクノロジをよく理解できるようにしてください。
 
--   [Xxxxxx xxxx xxxxx xxx](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Xxxxx xxxxx xxxxxx xxxx [Xxxxxx xxx xxxxxx xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185584)
+-   [初めてのアプリ作成](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」に記載されているイベントの説明
 
-**Xxxx xxxxxxxxxx xxxxxxxxxx:  **
+**ユーザー エクスペリエンス ガイドライン: **
 
-Xxx [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233) xxx xxxx xxxxx xxx xx xxxxxxxxx xxxx xxx xxxx **Xxxxxxx** xxx [Xxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121) xxx xxxxxxx xxxx xx xxxxxxxxx x xxxxxx xxx xxxxxxxx xxxxxx-xxxxxxx xxx.
+アプリと **Cortana** を統合する方法については「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」を、便利で魅力的な音声認識対応アプリの設計に役立つヒントについては「[音声機能の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)」をご覧ください。
 
-## <span id="Identify_the_command">
-            </span>
-            <span id="identify_the_command">
-            </span>
-            <span id="IDENTIFY_THE_COMMAND">
-            </span>Xxxxxxxx xxx xxxxxxx
+## <span id="Identify_the_command"></span><span id="identify_the_command"></span><span id="IDENTIFY_THE_COMMAND"></span>コマンドの特定
 
 
-Xx xxxxxx x **XxxxxxXxxx** xxxxxxx xx xxx XXX xxxx, xxx xxx **XxxxxxxXxx** xxxxxxx xxxx xxxxxxxx xxx xxxxxx xxxx. Xxx xxx **Xxxx** xxxxxxxxx xx xxxx **XxxxxxxXxx** xxxxxxx (**Xxxx** xxxx xx xxxxxx xx xxx XXX xxxx) xx x xxx xx xxxxxx xxx [**XxxxxXxxxxxxXxxxxxx.XxxxxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn653257) xxxxxxxx xxx xxx xxx [**XxxxxXxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn653258) xxxxxxxxx.
+VCD ファイルの **PhraseList** 要素を更新するには、語句一覧を含む **CommandSet** 要素を取得します。 **CommandSet** 要素の **Name** 属性 (**Name** は VCD ファイル内で重複しないようにします) をキーとして [**VoiceCommandManager.InstalledCommandSets**](https://msdn.microsoft.com/library/windows/apps/dn653257) プロパティにアクセスし、[**VoiceCommandSet**](https://msdn.microsoft.com/library/windows/apps/dn653258) の参照を取得します。
 
-## <span id="Replace_the_phrase_list">
-            </span>
-            <span id="replace_the_phrase_list">
-            </span>
-            <span id="REPLACE_THE_PHRASE_LIST">
-            </span>Xxxxxxx xxx xxxxxx xxxx
+## <span id="Replace_the_phrase_list"></span><span id="replace_the_phrase_list"></span><span id="REPLACE_THE_PHRASE_LIST"></span>語句一覧の置換
 
 
-Xxxxx xxx'xx xxxxxxxxxx xxx xxxxxxx xxx, xxx x xxxxxxxxx xx xxx xxxxxx xxxx xxxx xxx xxxx xx xxxxxx xxx xxxx xxx [**XxxXxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653261) xxxxxx; xxx xxx **Xxxxx** xxxxxxxxx xx xxx **XxxxxxXxxx** xxxxxxx xxx xx xxxxx xx xxxxxxx xx xxx xxx xxxxxxx xx xxx xxxxxx xxxx.
+コマンド セットを特定したら、変更する語句一覧の参照を取得し、**PhraseList** 要素の **Label** 属性と文字列の配列を、語句一覧の新しい内容として [**SetPhraseListAsync**](https://msdn.microsoft.com/library/windows/apps/dn653261) メソッドを呼び出します。
 
-**Xxxx**  Xx xxx xxxxxx x xxxxxx xxxx, xxx xxxxxx xxxxxx xxxx xx xxxxxxxx. Xx xxx xxxx xx xxxxxx xxx xxxxx xxxx x xxxxxx xxxx, xxx xxxx xxxxxxx xxxx xxx xxxxxxxx xxxxx xxx xxx xxx xxxxx xx xxx xxxx xx [**XxxXxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653261).
+**注**  語句一覧は、変更すると語句一覧全体が置き換えられます。 語句一覧に新しい項目を追加する場合は、既にある項目と新しい項目の両方を指定して [**SetPhraseListAsync**](https://msdn.microsoft.com/library/windows/apps/dn653261) を呼び出す必要があります。
 
  
 
-Xxxx, xxx XXX xxxx xxxxxxx x **Xxxxxxx**"xxxxXxxxXxXxxxxxxxxxx" xxxx x **XxxxxxXxxx** xxxx xxxxxxx xxxxx xxxxxxx xxx xxxxxxxxx x xxxxxxxxxxx xx xxx **Xxxxxxxxx Xxxxx** xxxxxx xxx. Xx xxx xxxx xxxxx xxx xxxxxxx xxxxxxxxxxxx xx xxx xxx, xxx xxx xxxxxxx xxx xxxxxxx xx xxx **XxxxxxXxxx**.
+ここでは、VCD ファイルは **Command**"showTripToDestination" と、**Adventure Works** 旅行アプリで目的地を選ぶための 3 つのオプションを定義する **PhraseList** を定義します。 ユーザーがアプリで目的地を保存および削除すると、アプリは **PhraseList** のオプションを更新します。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -91,7 +81,7 @@ Xxxx, xxx XXX xxxx xxxxxxx x **Xxxxxxx**"xxxxXxxxXxXxxxxxxxxxx" xxxx x **XxxxxxX
 </VoiceCommands>
 ```
 
-Xxxx'x xxx xx xxxxxx xxx **XxxxxxXxxx** xxxxx xx xxx xxxxxxxx xxxxxxx xxxx xx xxxxxxxxxx xxxxxxxxxxx xx Xxxxxxx.
+次に、この例の **PhraseList** を更新して、目的地「フェニックス」を追加する方法を示します。
 
 ```CSharp
 Windows.ApplicationModel.VoiceCommands.VoiceCommnadDefinition.VoiceCommandSet commandSetEnUs;
@@ -105,17 +95,12 @@ if (Windows.ApplicationModel.VoiceCommands.VoiceCommandDefinitionManager.
 }
 ```
 
-## <span id="Remarks">
-            </span>
-            <span id="remarks">
-            </span>
-            <span id="REMARKS">
-            </span>Xxxxxxx
+## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>注釈
 
 
-Xxxxx x **XxxxxxXxxx** xx xxxxxxxxx xxx xxxxxxxxxxx xx xxxxxxxxxxx xxx x xxxxxxxxxx xxxxx xxx xx xxxxx. Xxxx xxx xxx xx xxxxx xx xxx xxxxx (xxxxxxxx xx xxxxx, xxx xxxxxxx), xx xxxxxxx’x xx xxxxxxxxxxx xx xxx, xxx xxx **XxxxxxXxxxx** xxxxxxx xxx x **Xxxxxxx** xxxxxxx xx xxxxxx xxx xxxxxxxxx xx xxxxxx-xxxxxxxxxxx xxxxxxx xx xxxxxxx xxxxxxxxxxx.
+**PhraseList** を使った認識の制約は、比較的少ないセットや単語に適しています。 単語セットが大きすぎ (数百語など) たり、まったく制約しない場合は、**PhraseTopic** 要素と **Subject** 要素を使って音声認識結果の関連性を絞り込み、スケーラビリティを高めます。
 
-Xx xxx xxxxxxx, xx xxxx x **XxxxxxXxxxx** xxxx x **Xxxxxxxx** xx "Xxxxxx", xxxxxxx xxxxxxx xx x **Xxxxxxx** xx "Xxxx\\Xxxxx".
+この例では、**Scenario** が "Search" の **PhraseTopic** があり、"City\\State" という **Subject** によってさらに絞り込まれています。
 
 ```XML
 <?xml version="1.0" encoding="utf-8"?>
@@ -144,26 +129,28 @@ Xx xxx xxxxxxx, xx xxxx x **XxxxxxXxxxx** xxxx x **Xxxxxxxx** xx "Xxxxxx", xxxxx
   </CommandSet>
 ```
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>関連記事
 
 
-**Xxxxxxxxxx**
-* [Xxxxxxx xxxxxxxxxxxx](cortana-interactions.md)
-* [Xxxxxx x xxxxxxxxxx xxx xxxx xxxxx xxxxxxxx xx Xxxxxxx](launch-a-foreground-app-with-voice-commands-in-cortana.md)
-* [Xxxxxx x xxxxxxxxxx xxx xxxx xxxxx xxxxxxxx xx Xxxxxxx](launch-a-background-app-with-voice-commands-in-cortana.md)
-* [
-            **XXX xxxxxxxx xxx xxxxxxxxxx xY.Y**](https://msdn.microsoft.com/library/windows/apps/dn706593)
-**Xxxxxxxxx**
-* [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233)
-* [Xxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121)
-**Xxxxxxx**
-* [Xxxxxxx xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619899)
+**開発者向け**
+* [Cortana の操作](cortana-interactions.md)
+* [Cortana の音声コマンドを使ったフォアグラウンド アプリの起動](launch-a-foreground-app-with-voice-commands-in-cortana.md)
+* [Cortana の音声コマンドを使ったバックグラウンド アプリの起動](launch-a-background-app-with-voice-commands-in-cortana.md)
+* [**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+**デザイナー向け**
+* [Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)
+* [音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)
+**サンプル**
+* [Cortana 音声コマンドのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619899)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,23 +1,27 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxxxxxxx .xxxxx xxxx xxxxxxx xxxx xxxxxxxxx xxxx xx xxxx xxx xxx xxxxxx xxxx xxxxx xxx xxxx xxxxxxx.
-xxxxx: Xxxxxxxx xxxxxxxxx xxxxxxx
-xx.xxxxxxx: XXXYYXXX-YYXX-YYXY-YYYY-YYYYYXXYXYYX
+Description: 統計データを含む .files をダウンロードすると、統計情報と情報をオフラインで確認できます。
+title: 分析レポートのダウンロード
+ms.assetid: BCA61ABF-16ED-42C3-9014-68629CB5A24F
 ---
 
-# Xxxxxxxx xxxxxxxxx xxxxxxx
+# 分析レポートのダウンロード
 
 
-Xxx xxx xxxxxxxx .xxxxx xxxx xxxxxxx xxxx xxxxxxxxx xxxx xx xxxx xxx xxx xxxxxx xxxx xxxxx xxx xxxx xxxxxxx. Xxxx xx xxxxxxxx xx .xxx (xxx-xxxxxxxxx xxxxxx) xxxxx, xxxxx xxx xx xxxxxx xx x xxxxxx xx xxxxxxxx.
+統計データを含む .files をダウンロードすると、統計情報と情報をオフラインで確認できます。 データは .tsv (タブ区切りの値) ファイルで用意されているため、多くのプログラムで開くことができます。
 
-## Xx xxxxxxxx x xxxxxxxx xxxxxx
+## 特定のレポートをダウンロードするには
 
-1.  Xxxxx, xxxxxx xxx xxx xxx xxxxx xxx'x xxxx xx xxxxxxxx xxxx.
+1.  まず、情報をダウンロードするアプリを選びます。
 
-    > **Xxx**  Xxx xxx xxxxxx xx xxxxxxxx xxxx xxx xx xxxx xxxx xx x xxxxxxxx xxx. Xxxx xxxx xxx'xx xxx xxxxxxx xx xxxxxxxxxxx x xxxxxx xxx xxx xxx xxxxx xxx xxxx xxxxxxx xx xxxx xxx xxxxxxxx xxx **Xxxxxxxx xxxxxxx** xxxx xx xxx **Xxxxxxxxx** xxxxxxx.
+    > **ヒント**  情報をダウンロードする対象としてすべてのアプリまたは特定のアプリを選ぶことができます。 **[分析]** セクションで **[レポートのダウンロード]** ページにアクセスしたときに使っていたアプリ以外のレポートもダウンロードできます。
 
-2.  Xxxxxx xxx xx xxx xxxxxxxxx xxxxxxx.
+2.  利用可能なレポートのいずれかを選びます。
 
-3.  Xxxxxx xxxx xxx xxxxxxxxx xxxxxx xx xxx **Xxxxxxxxxxx xxxxx** xxx **Xxxx xxxxx** xxxx-xxxx xxxxx. Xxxx xxxx xxx xxxxxxx xxx xxxx xxxxxxxxx xx xxx xxxx xx xxxxxx xxx'xx xxxxxxxx.
+3.  **[集計レベル]** ドロップダウン リストと **[日付の範囲]** ドロップダウン リストで、利用可能な値から選びます。 選んだレポートの種類によってオプションは異なる可能性があることに注意してください。
 
-4.  Xxxxx xxx **Xxxxxxxx xxxxxxx** xxxxxx, xxx xxxx xxxx xx xxxx xxx .xxx xxxx.
+4.  **[レポートのダウンロード]** をクリックし、.tsv ファイルを保存するか開きます。
+
+
 <!--HONumber=Mar16_HO1-->
+
+

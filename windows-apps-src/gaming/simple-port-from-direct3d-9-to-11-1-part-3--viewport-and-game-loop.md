@@ -1,37 +1,37 @@
 ---
-xxxxx: Xxxx xxx xxxx xxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxxxxx x xxxxxx xxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx xxx xx xxxxx xxxx xxx xxxx xxxx, xxxxxxxxx xxx xx xxxxx xx XXxxxxxxxxXxxx xx xxxxxxx x xxxx-xxxxxx XxxxXxxxxx.
-xx.xxxxxxx: YYYxxYYY-xxYY-YYYY-YYxx-xYxYYYxxYYYx
+title: Port the game loop
+description: Shows how to implement a window for a Universal Windows Platform (UWP) game and how to bring over the game loop, including how to build an IFrameworkView to control a full-screen CoreWindow.
+ms.assetid: 070dd802-cb27-4672-12ba-a7f036ff495c
 ---
 
-# Xxxx xxx xxxx xxxx
+# Port the game loop
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Xxxxxxx**
+**Summary**
 
--   [Xxxx Y: Xxxxxxxxxx XxxxxxYX YY](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
--   [Xxxx Y: Xxxxxxx xxx xxxxxxxxx xxxxxxxxx](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
--   Xxxx Y: Xxxx xxx xxxx xxxx
-
-
-Xxxxx xxx xx xxxxxxxxx x xxxxxx xxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx xxx xx xxxxx xxxx xxx xxxx xxxx, xxxxxxxxx xxx xx xxxxx xx [**XXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700478) xx xxxxxxx x xxxx-xxxxxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225). Xxxx Y xx xxx [Xxxx x xxxxxx XxxxxxYX Y xxx xx XxxxxxX YY xxx XXX](walkthrough--simple-port-from-direct3d-9-to-11-1.md) xxxxxxxxxxx.
-
-## Xxxxxx x xxxxxx
+-   [Part 1: Initialize Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)
+-   [Part 2: Convert the rendering framework](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)
+-   Part 3: Port the game loop
 
 
-Xx xxx xx x xxxxxxx xxxxxx xxxx x XxxxxxYX Y xxxxxxxx, xx xxx xx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxx xxxxxxxxx xxx xxxxxxx xxxx. Xx xxx xx xxxxxx xx XXXX, xxx xxx xxxxxx xxxx, xxxxxxx x xxxxxx xxxxxxxxxx xxxxxxxx, xxxx xx xxxxxxx, xxx xx xx.
+Shows how to implement a window for a Universal Windows Platform (UWP) game and how to bring over the game loop, including how to build an [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) to control a full-screen [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Part 3 of the [Port a simple Direct3D 9 app to DirectX 11 and UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough.
 
-Xxx XXX xxxxxxxxxxx xxx x xxxx xxxxxxx xxxxxx. Xxxxxxx xx xxxxxxx xx x xxxxxxxxxxx xxxxxx, x Xxxxxxx Xxxxx xxxx xxxxx XxxxxxX xxxxxxxxxx [**XXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700478). Xxxx xxxxxxxxx xxxxxx xxx XxxxxxX xxxx xxx xxxxx xx xxx xxxxxxxx xx x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxx xxx xxx xxxxxxxxx.
+## Create a window
 
-> **Xxxx**   Xxxxxxx xxxxxxxx xxxxxxx xxxxxxxx xx xxxxxxxxx xxxx xx xxx xxxxxx xxxxxxxxxxx xxxxxx xxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225). Xxx [**Xxxxxx xx Xxxxxx Xxxxxxxx (^)**]xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYxxYY.xxxx.
+
+To set up a desktop window with a Direct3D 9 viewport, we had to implement the traditional windowing framework for desktop apps. We had to create an HWND, set the window size, provide a window processing callback, make it visible, and so on.
+
+The UWP environment has a much simpler system. Instead of setting up a traditional window, a Windows Store game using DirectX implements [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478). This interface exists for DirectX apps and games to run directly in a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) inside the app container.
+
+> **Note**   Windows supplies managed pointers to resources such as the source application object and the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). See [**Handle to Object Operator (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx.
 
  
 
-Xxxx "xxxx" xxxxx xxxxx xx xxxxxxx xxxx [**XXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700478) xxx xxxxxxxxx xxx xxxx **XXxxxxxxxxXxxx** xxxxxxx: [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Xxx**](https://msdn.microsoft.com/library/windows/apps/hh700505), xxx [**Xxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700523). Xx xxxxxxxx xx xxxxxxxx xxx **XXxxxxxxxxXxxx**, xxxxx xx (xxxxxxxxxxx) xxxxx xxxx xxxx xxxx xxxxxx, xxx xxxx xx xxxxxxxxx x xxxxxxx xxxxx xxxx xxxxxxx xx xxxxxxxx xx xxxx **XXxxxxxxxxXxxx**. Xxxx xxxx xxxxx xxx xx xxxxxxxxxx xxxx x xxxxxx xxxxxx **xxxx()**, xxx xxx xxxx xxx xx xx xxx xxx xxxxxxx xx xxxxxx xxx **XXxxxxxxxxXxxx** xxxxxxxx.
+Your "main" class needs to inherit from [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) and implement the five **IFrameworkView** methods: [**Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495), [**SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509), [**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501), [**Run**](https://msdn.microsoft.com/library/windows/apps/hh700505), and [**Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523). In addition to creating the **IFrameworkView**, which is (essentially) where your game will reside, you need to implement a factory class that creates an instance of your **IFrameworkView**. Your game still has an executable with a method called **main()**, but all main can do is use the factory to create the **IFrameworkView** instance.
 
-Xxxx xxxxxxxx
+Main function
 
 ```cpp
 //-----------------------------------------------------------------------------
@@ -47,7 +47,7 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-XXxxxxxxxxXxxx xxxxxxx
+IFrameworkView factory
 
 ```cpp
 //-----------------------------------------------------------------------------
@@ -64,12 +64,12 @@ public:
 };
 ```
 
-## Xxxx xxx xxxx xxxx
+## Port the game loop
 
 
-Xxx'x xxxx xx xxx xxxx xxxx xxxx xxx XxxxxxYX Y xxxxxxxxxxxxxx. Xxxx xxxx xxxxxx xx xxx xxx'x xxxx xxxxxxxx. Xxxx xxxxxxxxx xx xxxx xxxx xxxxxxxxx x xxxxxx xxxxxxx xx xxxxxxx x xxxxx.
+Let's look at the game loop from our Direct3D 9 implementation. This code exists in the app's main function. Each iteration of this loop processes a window message or renders a frame.
 
-Xxxx xxxx xx XxxxxxYX Y xxxxxxx xxxx
+Game loop in Direct3D 9 desktop game
 
 ```cpp
 while(WM_QUIT != msg.message)
@@ -93,13 +93,13 @@ while(WM_QUIT != msg.message)
 }
 ```
 
-Xxx xxxx xxxx xx xxxxxxx - xxx xxxxxx - xx xxx XXX xxxxxxx xx xxx xxxx:
+The game loop is similar - but easier - in the UWP version of our game:
 
-Xxx xxxx xxxx xxxx xx xxx [**XXxxxxxxxxXxxx::Xxx**](https://msdn.microsoft.com/library/windows/apps/hh700505) xxxxxx (xxxxxxx xx **xxxx()**) xxxxxxx xxx xxxx xxxxxxxxx xxxxxx xxx [**XXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700478) xxxxx.
+The game loop goes in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method (instead of **main()**) because our game functions within the [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) class.
 
-Xxxxxxx xx xxxxxxxxxxxx x xxxxxxx xxxxxxxx xxxxxxxxx xxx xxxxxxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ms644943), xx xxx xxxx xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208215) xxxxxx xxxxx xx xx xxx xxx xxxxxx'x [**XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208211). Xxxxx'x xx xxxx xxx xxx xxxx xxxx xx xxxxxx xxx xxxxxx xxxxxxxx - xxxx xxxx **XxxxxxxXxxxxx** xxx xxxxxxx.
+Instead of implementing a message handling framework and calling [**PeekMessage**](https://msdn.microsoft.com/library/windows/desktop/ms644943), we can call the [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) method built in to our app window's [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211). There's no need for the game loop to branch and handle messages - just call **ProcessEvents** and proceed.
 
-Xxxx xxxx xx XxxxxxYX YY Xxxxxxx Xxxxx xxxx
+Game loop in Direct3D 11 Windows Store game
 
 ```cpp
 // Windows Store apps should not exit. Use app lifecycle events instead.
@@ -114,26 +114,30 @@ while (true)
 }
 ```
 
-Xxx xx xxxx x XXX xxx xxxx xxxx xx xxx xxxx xxxxx xxxxxxxx xxxxxxxxxxxxxx, xxx xxxxxxx xxx xxxx xxxxxxxx xxxx, xx xxx XxxxxxX Y xxxxxxx.
+Now we have a UWP app that sets up the same basic graphics infrastructure, and renders the same colorful cube, as our DirectX 9 example.
 
-## Xxxxx xx X xx xxxx xxxx?
+## Where do I go from here?
 
 
-Xxxxxxxx xxx [XxxxxxX YY xxxxxxx XXX](directx-porting-faq.md).
+Bookmark the [DirectX 11 porting FAQ](directx-porting-faq.md).
 
-Xxx XxxxxxX XXX xxxxxxxxx xxxxxxx x xxxxxx XxxxxxYX xxxxxx xxxxxxxxxxxxxx xxxx'x xxxxx xxx xxx xxxx xxxx xxxx. Xxx [Xxxxxx x XxxxxxX xxxx xxxxxxx xxxx x xxxxxxxx](user-interface.md) xxx xxxxxxxx xx xxxxxxx xxx xxxxx xxxxxxxx.
+The DirectX UWP templates include a robust Direct3D device infrastructure that's ready for use with your game. See [Create a DirectX game project from a template](user-interface.md) for guidance on picking the right template.
 
-Xxxxx xxx xxxxxxxxx xx-xxxxx Xxxxxxx Xxxxx xxxx xxxx xxxxxxxxxxx xxxxxxxx:
+Visit the following in-depth Windows Store game game development articles:
 
--   [Xxxxxxxxxxx: x xxxxxx XXX xxxx xxxx XxxxxxX](tutorial--create-your-first-metro-style-directx-game.md)
--   [Xxxxx xxx xxxxx](working-with-audio-in-your-directx-game.md)
--   [Xxxx-xxxx xxxxxxxx xxx xxxxx](tutorial--adding-move-look-controls-to-your-directx-game.md)
+-   [Walkthrough: a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
+-   [Audio for games](working-with-audio-in-your-directx-game.md)
+-   [Move-look controls for games](tutorial--adding-move-look-controls-to-your-directx-game.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,23 +1,20 @@
 ---
-Xxxxxxxxxxx: Xxxx xxx xxx xxxxxxxx xxx xxxxxxxxxx xxx xxx xx xxxxxx xxxxxxxx xxxxx.
-xxxxx: Xxxxxxxx xxxx xxxxxx xxx xxxxxxxxx
-xx.xxxxxxx: YYYXXYYX-YYXY-YYXX-XXYY-YYYYYYXXYYXY
-xxxxx: Xxxxxxxx xxxx xxxxxx xxx xxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Here are the elements and attributes you use to create adaptive tiles.
+title: Adaptive tile schema and templates
+ms.assetid: 858FB05E-87A2-49CF-BE48-570980AD36C8
+label: Adaptive tile schema and templates
+template: detail.hbs
 ---
 
-# Xxxxxxxx xxxx xxxxxxxxx: xxxxxx xxx xxxxxxxx
+# Adaptive tile templates: schema and guidance
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxx xxx xxxxxxxx xxx xxxxxxxxxx xxx xxx xx xxxxxx xxxxxxxx xxxxx. Xxx xxxxxxxxxxxx xxx xxxxxxxx, xxx [Xxxxxx xxxxxxxx xxxxx](tiles-and-notifications-create-adaptive-tiles.md).
+Here are the elements and attributes you use to create adaptive tiles. For instructions and examples, see [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md).
 
-## <span id="tile_element">
-            </span>
-            <span id="TILE_ELEMENT">
-            </span>xxxx xxxxxxx
+## <span id="tile_element"></span><span id="TILE_ELEMENT"></span>tile element
 
 
 ``` syntax
@@ -29,10 +26,7 @@ Xxxx xxx xxx xxxxxxxx xxx xxxxxxxxxx xxx xxx xx xxxxxx xxxxxxxx xxxxx. Xxx xxxxx
 </tile>
 ```
 
-## <span id="visual_element">
-            </span>
-            <span id="VISUAL_ELEMENT">
-            </span>xxxxxx xxxxxxx
+## <span id="visual_element"></span><span id="VISUAL_ELEMENT"></span>visual element
 
 
 ``` syntax
@@ -51,10 +45,7 @@ Xxxx xxx xxx xxxxxxxx xxx xxxxxxxxxx xxx xxx xx xxxxxx xxxxxxxx xxxxx. Xxx xxxxx
 </visual>
 ```
 
-## <span id="binding_element">
-            </span>
-            <span id="BINDING_ELEMENT">
-            </span>xxxxxxx xxxxxxx
+## <span id="binding_element"></span><span id="BINDING_ELEMENT"></span>binding element
 
 
 ``` syntax
@@ -79,10 +70,7 @@ Xxxx xxx xxx xxxxxxxx xxx xxxxxxxxxx xxx xxx xx xxxxxx xxxxxxxx xxxxx. Xxx xxxxx
 </binding>
 ```
 
-## <span id="image_element">
-            </span>
-            <span id="IMAGE_ELEMENT">
-            </span>xxxxx xxxxxxx
+## <span id="image_element"></span><span id="IMAGE_ELEMENT"></span>image element
 
 
 ``` syntax
@@ -96,10 +84,7 @@ Xxxx xxx xxx xxxxxxxx xxx xxxxxxxxxx xxx xxx xx xxxxxx xxxxxxxx xxxxx. Xxx xxxxx
   hint-align? = "stretch" | "left" | "center" | "right" />
 ```
 
-## <span id="text_element">
-            </span>
-            <span id="TEXT_ELEMENT">
-            </span>xxxx xxxxxxx
+## <span id="text_element"></span><span id="TEXT_ELEMENT"></span>text element
 
 
 ``` syntax
@@ -116,12 +101,9 @@ Xxxx xxx xxx xxxxxxxx xxx xxxxxxxxxx xxx xxx xx xxxxxx xxxxxxxx xxxxx. Xxx xxxxx
 </text>
 ```
 
-xxxxXxxxx xxxxxx: xxxxxxx xxxxxxxXxxxxx xxxx xxxxXxxxxx xxxx xxxxXxxxxx xxxxxxxx xxxxxxxxXxxxxx xxxxx xxxxxXxxxxx xxxxxXxxxxxx xxxxxxxxx xxxxxxxxxXxxxxx xxxxxxxxxXxxxxxx xxxxxx xxxxxxXxxxxx xxxxxxXxxxxx
+textStyle values: caption captionSubtle body bodySubtle base baseSubtle subtitle subtitleSubtle title titleSubtle titleNumeral subheader subheaderSubtle subheaderNumeral header headerSubtle headerNumber
 
-## <span id="group_element">
-            </span>
-            <span id="GROUP_ELEMENT">
-            </span>xxxxx xxxxxxx
+## <span id="group_element"></span><span id="GROUP_ELEMENT"></span>group element
 
 
 ``` syntax
@@ -133,10 +115,7 @@ xxxxXxxxx xxxxxx: xxxxxxx xxxxxxxXxxxxx xxxx xxxxXxxxxx xxxx xxxxXxxxxx xxxxxxxx
 </group>
 ```
 
-## <span id="subgroup_element">
-            </span>
-            <span id="SUBGROUP_ELEMENT">
-            </span>xxxxxxxx xxxxxxx
+## <span id="subgroup_element"></span><span id="SUBGROUP_ELEMENT"></span>subgroup element
 
 
 ``` syntax
@@ -152,20 +131,24 @@ xxxxXxxxx xxxxxx: xxxxxxx xxxxxxxXxxxxx xxxx xxxxXxxxxx xxxx xxxxXxxxxx xxxxxxxx
 </subgroup>
 ```
 
-**Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## Xxxxxxx xxxxxx
+## <span id="related_topics"></span>Related topics
 
 
-* [Xxxxxx xxxxxxxx xxxxx](tiles-and-notifications-create-adaptive-tiles.md)
+* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

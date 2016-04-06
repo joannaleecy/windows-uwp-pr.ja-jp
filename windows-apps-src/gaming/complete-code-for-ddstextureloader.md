@@ -1,47 +1,47 @@
 ---
-xxxxx: Xxxxxxxx xxxx xxx XXXXxxxxxxXxxxxx
-xxxxxxxxxxx: Xxxxxxxx xxxx xxx x xxxxx xxx xxxxxx xxxx xxxxx x XXX xxxxxxx xxxx xxxxxx.
-xx.xxxxxxx: xxxxYYYY-YYYY-YYYY-YYxx-xxYYYYYYYYYY
+title: DDSTextureLoader のコード一式
+description: メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。
+ms.assetid: ebaf4111-6235-0316-46cf-bc8643851493
 ---
 
-# Xxxxxxxx xxxx xxx XXXXxxxxxxXxxxxx
+# DDSTextureLoader のコード一式
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-Xxxxxxxx xxxx xxx x xxxxx xxx xxxxxx xxxx xxxxx x XXX xxxxxxx xxxx xxxxxx.
+メモリから DDS テクスチャを読み込むクラスとメソッドのコード一式です。
 
-Xxxx xxxxx xxxxxxxx xxxxx xxxxxxxx:
+このトピックは次のセクションで構成されます。
 
--   [Xxxxxxxxxxxx](#technologies)
--   [Xxxxxxxxxxxx](#requirements)
--   [Xxxx xxx xxxx (X++)](#view-the-code-c)
-
-
-## Xxxxxxxx xxxxxxxx
+-   [テクノロジ](#technologies)
+-   [必要条件](#requirements)
+-   [コードの表示 (C++)](#view-the-code-c)
 
 
-Xxxx xxxxxx xx xxx xxxxxxxxx xxx xxxxxxxx.
+## ダウンロード場所
 
-## Xxxxxxxxxxxx
+
+このサンプルはダウンロードできません。
+
+## テクノロジ
 
 |                       |                 |
 |-----------------------|-----------------|
-| Xxxxxxxxxxx xxxxxxxxx | X++             |
-| Xxxxxxxxxxx xxxxxx    | Xxxxxxx Xxxxxxx |
+| プログラミング言語 | C++             |
+| プログラミング モデル    | Windows ランタイム |
 
-## Xxxxxxxxxxxx
+## 必要条件
 
-| Xxxxxxx xxxxxxxxx xxxxxx | Xxxxxxx YY                            |
+| サポートされている最小のクライアント | Windows 10                            |
 |--------------------------|---------------------------------------|
-| Xxxxxxx xxxxxxxxx xxxxxx | Xxxxxxx Xxxxxx YYYY Xxxxxxxxx Xxxxxxx |
-| Xxxxxxx xxxxxxxx XXX     |                                       |
+| サポートされている最小のサーバー | Windows Server 2016 Technical Preview |
+| 最低限必要な SDK     |                                       |
 
 
-## Xxxx xxx xxxx (X++)
+## コードの表示 (C++)
 
 
-## XXXXxxxxxxXxxxxx.x
+## DDSTextureLoader.h
 
 
 ```cpp
@@ -74,7 +74,7 @@ void CreateDDSTextureFromMemory(
     );
 ```
 
-## XXXXxxxxxxXxxxxx.xxx
+## DDSTextureLoader.cpp
 
 
 ```cpp
@@ -1221,4 +1221,8 @@ void CreateDDSTextureFromMemory(
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

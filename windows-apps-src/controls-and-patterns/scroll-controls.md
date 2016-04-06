@@ -1,34 +1,34 @@
 ---
-Xxxxxxxxxxx: Xxxxxxx xxx xxxxxxxxx xxxxxx xxxxx xx xxxxx xxxxxxx xxxx xxxxxxx xxxxxx xxx xxxxxx xx xxx xxxxxx.
-xxxxx: Xxxxxxxxxx xxx xxxxxx xxxx
-xx.xxxxxxx: YXXXYXYY-XXYX-YYXY-YYXY-XXXYXXXYXXYY
-xxxxx: Xxxxxx xxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Panning and scrolling allows users to reach content that extends beyond the bounds of the screen.
+title: Guidelines for scroll bars
+ms.assetid: 1BFF0E81-BF9C-43F7-95F6-EFC6BDD5EC31
+label: Scroll bars
+template: detail.hbs
 ---
-# Xxxxxx xxxx
+# Scroll bars
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
 
--   [**XxxxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209527)
--   [**XxxxXxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.zoommode.aspx)
+-   [**ScrollViewer class**](https://msdn.microsoft.com/library/windows/apps/br209527)
+-   [**ZoomMode property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.zoommode.aspx)
 
-Xxxxxxx xxx xxxxxxxxx xxxxxx xxxxx xx xxxxx xxxxxxx xxxx xxxxxxx xxxxxx xxx xxxxxx xx xxx xxxxxx.
+Panning and scrolling allows users to reach content that extends beyond the bounds of the screen.
 
-X xxxxxx xxxxxx xxxxxxx xx xxxxxxxx xx xx xxxx xxxxxxx xx xxxx xxx xx xxx xxxxxxxx, xxx xxxxxx xxx xx xxx xxxxxx xxxx. Xxxxx xxxxxxxx xxx xx xxxx xx xxx xxx xxxx (xxx xxxxxx xxxx xxxx xx xxxx xxxxxx xxxxxxxxxxxx), xxx xxx xxxxxxx xxx xx xxxx xx xxxxxx. Xxx xxxxx xxxxxxx xxxx xxxx xxxxxxx.
+A scroll viewer control is composed of as much content as will fit in the viewport, and either one or two scroll bars. Touch gestures can be used to pan and zoom (the scroll bars fade in only during manipulation), and the pointer can be used to scroll. The flick gesture pans with inertia.
 
-**Xxxx**  Xxxxxxx: Xxxxx xxx xxx xxxxxxx xxxxxxx xxxxx xxxxx xx xxx xxxxx xxxxxx xxxxxxxx: xxxxxxx xxxxxxxxxx xxx xxxxx; xxx xxxxxx xxxx xxx xxxxx xxxxx xxxxxxx xxxxxxxxx xxxxx, xxxxxxxx, xxxxxxxx, xxx xxxxxx.
+**Note**  Windows: There are two panning display modes based on the input device detected: panning indicators for touch; and scroll bars for other input devices including mouse, touchpad, keyboard, and stylus.
 
-![X xxxxxx xx xxxx xxxxxxxx xxxxxx xxx xxx xxxxxxx xxxxxxxxx xxxxxxxx xxxx xxxx](images/SCROLLBAR.png)
+![A sample of what standard scroll bar and panning indicator controls look like](images/SCROLLBAR.png)
 
-## Xxxxxxxx
+## Examples
 
-X [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) xxxxxxx xxxxxxx xx xx xxxxxxxxx xx x xxxxxxx xxxx xxxx xxx xxxxxx xxxx. Xxxx xxx xxxxxxx xx xxx xxxxxx xxxxxx xx xxx xxxxxxxx xxxxxxx, xxx xxxxxx xxxxxx xxxxxxxx xxxxxxxxxx xxxx xxx xxxx xxx xxx xx xxxx xxx xxxxxxx xxxx xxxx xx xxxxxxx. Xxx xxxx xxxx xxxxxxxx xxx xx xxx xxxxxxx xx xxx xxxxxx xxxxxx xx xxx *xxxxxx*. Xxx xxxxxxx xxxx xx xxx xxxxxxx xx xxx *xxxxxxxx*.
+A [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx) enables content to be displayed in a smaller area than its actual size. When the content of the scroll viewer is not entirely visible, the scroll viewer displays scrollbars that the user can use to move the content area that is visible. The area that includes all of the content of the scroll viewer is the *extent*. The visible area of the content is the *viewport*.
 
-![X xxxxxxxxxx xxxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxxx xxxxxxx](images/ScrollBar_Standard.jpg)
+![A screenshot that illustrates the standard scrollbar control](images/ScrollBar_Standard.jpg)
 
-## Xxxxxx x xxxxxx xxxxxx
+## Create a scroll viewer
 
-Xxxx XXXX xxxxx xxx xx xxxxx xx xxxxx xx x xxxxxx xxxxxx xxx xxxxxx xxxxxxx.
+This XAML shows how to place an image in a scroll viewer and enable zooming.
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10" 
@@ -38,53 +38,56 @@ Xxxx XXXX xxxxx xxx xx xxxxx xx xxxxx xx x xxxxxx xxxxxx xxx xxxxxx xxxxxxx.
 </ScrollViewer>
 ```
 
-## XxxxxxXxxxxx xx x xxxxxxx xxxxxxxx
+## ScrollViewer in a control template
 
-Xx'x xxxxxxx xxx x XxxxxxXxxxxx xxxxxxx xx xxxxx xx x xxxxxxxxx xxxx xx xxxxx xxxxxxxx. X XxxxxxXxxxxx xxxx, xxxxx xxxx xxx [**XxxxxxXxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) xxxxx xxx xxxxxxx, xxxx xxxxxxx x xxxxxxxx xxxxx xxxx xxxxxxxxxx xxxx xxxx xxx xxxx xxxxxxx'x xxxxxx xxxxx xx xxxxx xxxxxxxxxxx xxxxxxx xxxx xxx xxxxxxxx xxxxxxx xxxx. Xxxx xx xxxxx xxx xxxx xxx xxxxx, xx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) xxxxxxxxx xxxxxx xxxxxxx x XxxxxxXxxxxx. [
-            **XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) xxx [**XxxxXxxxXxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) xxxx xxxxxxx x XxxxxxXxxxxx xx xxxxx xxxxxxxxx.
+It's typical for a ScrollViewer control to exist as a composite part of other controls. A ScrollViewer part, along with the [**ScrollContentPresenter**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollcontentpresenter.aspx) class for support, will display a viewport along with scrollbars only when the host control's layout space is being constrained smaller than the expanded content size. This is often the case for lists, so [**ListView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) templates always include a ScrollViewer. [**TextBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) and [**RichEditBox**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) also include a ScrollViewer in their templates.
 
-Xxxx x **XxxxxxXxxxxx** xxxx xxxxxx xx x xxxxxxx, xxx xxxx xxxxxxx xxxxx xxx xxxxx-xx xxxxx xxxxxxxx xxx xxxxxxx xxxxx xxxxxx xxx xxxxxxxxxxxxx xxxx xxxxxx xxx xxxxxxx xx xxxxxx. Xxx xxxxxxx, x XxxxXxxx xxxxxxxxxx x xxxxx xxxxxxx xxx xxxx xxxxxx xxx xxxxxxx xx xxxxxx xxxxxxxxxxxx. Xxx xxxxx xxxxxx xxx xxx xxxxxxxxxxxxx xxxx xxx xxxx xxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxx xx xxx xxxxxxx, xxx xxxxx-xxxxx xxxxxx xxxx xx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx) xxx'x xx xxxxxx xxx xxx'x xxxxxx xx xxx xxxxxx xxxxxxxxxx xxxxxx. Xxx xxx xxxxxx xxxx xx xxx xxxxx-xx xxxxxxx xxxxxxxx xx xxxxxxxxxx x xxxxxxx xxxxx xxx xxx **Xx*** xxxxxxx xxxxxxx xxx xxxxxx, xx xx xxxxxxxxxxxx xxx xxxxxxx. Xxx xx xxxxxx xxxx xx'x xxx xxxxxxx xx xxxxxxxxx xxx xxxxxxxx xxxxxxx xxxxxxxx, xxxxx xx xxxxxxxxx xxxxx xx xxxx xxx xxxxxxx xxxxxx xx xxxxxxxx xxxx xx xxxxxx xxx xx x xxxx'x xxxxx xxxxxxx xxx xxxxxxxx. Xx xxx xxxxxx xxxxxxxx xxxxxxx xxx xxxxxx xxxx xxxx xxxxx xxxxx xx xxxx. Xxx xxxxx xxxx xx xxxxxxxxxxx xxxxxxx xxxxx xxx xxxxx xxxxx xxxxxx xx xxxxxxxx xxxx xxx xxx xxxxx xxxxxxx xx xxx xxxxxxx, xxx xxx xxxxx xx xxxx xxx xx xxxxxxx xxxxxxxxxxx xxxxxx.
+When a **ScrollViewer** part exists in a control, the host control often has built-in event handling for certain input events and manipulations that enable the content to scroll. For example, a GridView interprets a swipe gesture and this causes the content to scroll horizontally. The input events and raw manipulations that the host control receives are considered handled by the control, and lower-level events such as [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx) won't be raised and won't bubble to any parent containers either. You can change some of the built-in control handling by overriding a control class and the **On*** virtual methods for events, or by retemplating the control. But in either case it's not trivial to reproduce the original default behavior, which is typically there so that the control reacts in expected ways to events and to a user's input actions and gestures. So you should consider whether you really need that input event to fire. You might want to investigate whether there are other input events or gestures that are not being handled by the control, and use those in your app or control interaction design.
 
-Xx xxxx xx xxxxxxxx xxx xxxxxxxx xxxx xxxxxxx x XxxxxxXxxxxx xx xxxxxxxxx xxxx xx xxx xxxxxxxx xxx xxxxxxxxxx xxxx xxx xxxx xxxxxx xxx XxxxxxXxxxxx xxxx, XxxxxxXxxxxx xxxxxxx x xxxxxx xx XXXX xxxxxxxx xxxxxxxxxx xxxx xxx xx xxx xx xxxxxx xxx xxxx xx xxxxxxxx xxxxxxxx. Xxx xxxx xxxx xxxxx xxxxxxxx xxxxxxxxxx, xxx [Xxxxxxxx xxxxxxxxxx xxxxxxxx](../xaml-platform/attached-properties-overview.md).
+To make it possible for controls that include a ScrollViewer to influence some of the behavior and properties that are from within the ScrollViewer part, ScrollViewer defines a number of XAML attached properties that can be set in styles and used in template bindings. For more info about attached properties, see [Attached properties overview](../xaml-platform/attached-properties-overview.md).
 
-**XxxxxxXxxxxx XXXX xxxxxxxx xxxxxxxxxx**
+**ScrollViewer XAML attached properties**
 
-XxxxxxXxxxxx xxxxxxx xxx xxxxxxxxx XXXX xxxxxxxx xxxxxxxxxx:
-- [XxxxxxXxxxxx.XxxxxXxxxXxxxXxXxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.bringintoviewonfocuschange.aspx) 
-- [XxxxxxXxxxxx.XxxxxxxxxxXxxxxxXxxXxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx) 
-- [XxxxxxXxxxxx.XxxxxxxxxxXxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode.aspx)
-- [XxxxxxXxxxxx.XxXxxxxxxxXxxxxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isdeferredscrollingenabled.aspx) 
-- [XxxxxxXxxxxx.XxXxxxxxxxxxXxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.ishorizontalrailenabled.aspx)
-- [XxxxxxXxxxxx.XxXxxxxxxxxxXxxxxxXxxxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.ishorizontalscrollchainingenabled.aspx) 
-- [XxxxxxXxxxxx.XxXxxxxxXxxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isscrollinertiaenabled.aspx)
-- [XxxxxxXxxxxx.XxXxxxxxxxXxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isverticalrailenabled.aspx)
-- [XxxxxxXxxxxx.XxXxxxxxxxXxxxxxXxxxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isverticalscrollchainingenabled.aspx) 
-- [XxxxxxXxxxxx.XxXxxxXxxxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.iszoominertiaenabled.aspx)
-- [XxxxxxXxxxxx.XxXxxxXxxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.iszoominertiaenabled.aspx)
-- [XxxxxxXxxxxx.XxxxxxxxXxxxxxXxxXxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibilityproperty.aspx) 
-- [XxxxxxXxxxxx.XxxxxxxxXxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollmode.aspx)
-- [XxxxxxXxxxxx.XxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.zoommode.aspx)
+ScrollViewer defines the following XAML attached properties:
+- [ScrollViewer.BringIntoViewOnFocusChange](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.bringintoviewonfocuschange.aspx) 
+- [ScrollViewer.HorizontalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollbarvisibility.aspx) 
+- [ScrollViewer.HorizontalScrollMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.horizontalscrollmode.aspx)
+- [ScrollViewer.IsDeferredScrollingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isdeferredscrollingenabled.aspx) 
+- [ScrollViewer.IsHorizontalRailEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.ishorizontalrailenabled.aspx)
+- [ScrollViewer.IsHorizontalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.ishorizontalscrollchainingenabled.aspx) 
+- [ScrollViewer.IsScrollInertiaEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isscrollinertiaenabled.aspx)
+- [ScrollViewer.IsVerticalRailEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isverticalrailenabled.aspx)
+- [ScrollViewer.IsVerticalScrollChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.isverticalscrollchainingenabled.aspx) 
+- [ScrollViewer.IsZoomChainingEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.iszoominertiaenabled.aspx)
+- [ScrollViewer.IsZoomInertiaEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.iszoominertiaenabled.aspx)
+- [ScrollViewer.VerticalScrollBarVisibility](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollbarvisibilityproperty.aspx) 
+- [ScrollViewer.VerticalScrollMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.verticalscrollmode.aspx)
+- [ScrollViewer.ZoomMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.zoommode.aspx)
 
-Xxxxx XXXX xxxxxxxx xxxxxxxxxx xxx xxxxxxxx xxx xxxxx xxxxx xxx XxxxxxXxxxxx xx xxxxxxxx, xxxx xx xxxx xxx XxxxxxXxxxxx xxxxxx xx xxx xxxxxxx xxxxxxxx xxx x XxxxXxxx xx XxxxXxxx, xxx xxx xxxx xx xx xxxx xx xxxxxxxxx xxx xxxxxxxxx xxxxxxxx xx xxx xxxxxxx xxxxxxx xxxxxxxxx xxxxxxxx xxxxx.
+These XAML attached properties are intended for cases where the ScrollViewer is implicit, such as when the ScrollViewer exists in the default template for a ListView or GridView, and you want to be able to influence the scrolling behavior of the control without accessing template parts.
 
-Xxx xxxxxxx, xxxx'x xxx xx xxxx xxx xxxxxxxx xxxxxx xxxx xxxxxx xxxxxxx xxx x XxxxXxxx'x xxxxx xx xxxxxx xxxxxx.
+For example, here's how to make the vertical scroll bars always visible for a ListView's built in scroll viewer.
 ```xaml
 <ListView ScrollViewer.VerticalScrollBarVisibility="Visible"/> 
 ```
 
-Xxx xxxxx xxxxx x XxxxxxXxxxxx xx xxxxxxxx xx xxxx XXXX, xx xx xxxxx xx xxx xxxxxxx xxxx, xxx xxx'x xxxx xx xxx xxxxxxxx xxxxxxxx xxxxxx. Xxxx xxx xxxxxxxxx xxxxxx, xxx xxxxxxx `<ScrollViewer VerticalScrollBarVisibility="Visible"/>`.
+For cases where a ScrollViewer is explicit in your XAML, as is shown in the example code, you don't need to use attached property syntax. Just use attribute syntax, for example `<ScrollViewer VerticalScrollBarVisibility="Visible"/>`.
 
 
-## Xxxxxxxxxxxxxxx
+## Recommendations
 
--   Xxx xxx-xxxx xxxxxxx xxx xxxxxxx xxxxxxx xxxx xxxxxx xxxxxx xxx xxxxxxxx xxxxxxxx (xxxxxxxx xx xxxxxxxxxx). Xxx xxx-xxxx xxxxxxx xxx xxxxxxx xxxxxxx xxxx xxxxxx xxxxxx xxxx xxxxxxxx xxxxxxxxxx (xxxxxxxx xxx xxxxxxxxxx).
--   Xxx xxx xxxxx-xx xxxxxx xxxxxxxxxxxxx xx xxx xxxx xxx, xxxx-xxxx xxxx, xxxx xxxxx xxx, xxxx xxxx, xxxx xxxx, xxx xxx xxxxxxxx. Xxxx xxxxx xxxxxxxx, xx xxxxx xxx xxx xxxx xxxxx xx xxxx xxx xx xxxx, xxx xxxx xx xxxx xx xxxxxx xxxxxx xxxxxxxxxxxx xx xxxxxxxxxx xxxx xxx xxxx xx xxxxx.
--   Xx xxx xxxx xxx xxxx xx xxx xx xxxx xxxxxxxxxx xxxxxx x xxxxxx xxxx, xxx xxxxxxxx xx xxxx, xxx, xxx xxxxxxx, xx xxx xxxx xx xxxxx xxx xxxx xx xxx xxx xxxx xxxx x xxxx-xxxxx xxxxx (xxxxxx xxxx xx xxxxx xxxxx xx xxx xxx xxxxxx) xxxx xxxxx xxx xxxxx xxxxxx x xxxxxx xxxxxx.
--   Xx xxx xxxx xxxx xxxxxx xxxxxxx x xxxx xxxxxxx xx xxxx, xxxxxxxxx xxx xxxxxx xxxxxx xx xxxxxx xxxxxxxxxx xxxx.
--   Xxx x xxxxxx xxxxxx xx xxxxxxx xxx xxxxxx xxxx. Xxxx xxxx xxx xxx xxxxxx xxx xx x xxxxxx xxxxx, xx xxxx xxxxxxxxxx xxx xxxxxx xx xxxxxxx xx xxx xxx.
+-   Use one-axis panning for content regions that extend beyond one viewport boundary (vertical or horizontal). Use two-axis panning for content regions that extend beyond both viewport boundaries (vertical and horizontal).
+-   Use the built-in scroll functionality in the list box, drop-down list, text input box, grid view, list view, and hub controls. With those controls, if there are too many items to show all at once, the user is able to scroll either horizontally or vertically over the list of items.
+-   If you want the user to pan in both directions around a larger area, and possibly to zoom, too, for example, if you want to allow the user to pan and zoom over a full-sized image (rather than an image sized to fit the screen) then place the image inside a scroll viewer.
+-   If the user will scroll through a long passage of text, configure the scroll viewer to scroll vertically only.
+-   Use a scroll viewer to contain one object only. Note that the one object can be a layout panel, in turn containing any number of objects of its own.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-**Xxx xxxxxxxxxx (XXXX)**
-* [**XxxxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209527)
+**For developers (XAML)**
+* [**ScrollViewer class**](https://msdn.microsoft.com/library/windows/apps/br209527)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

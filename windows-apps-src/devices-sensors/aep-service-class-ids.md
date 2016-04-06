@@ -1,115 +1,115 @@
 ---
-xx.xxxxxxx: YYYYYXXY-XYYY-YXYY-XXXY-YYYYXYYXXXXY
-xxxxx: XXX xxxxxxx xxxxx XXx
-xxxxxxxxxxx: Xxxxxxxxxxx Xxxxxxxx (XXX) xxxxxxxx xxxxxxx x xxxxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxx x xxxxxx xxxxxxxx xxxx x xxxxx xxxxxxxx. Xxxxxxx xx xxxxx xxxxxxxx xxxx xxxxxxxxxxx xxxxxxxxxxx xxxx xxxxxx xx xxxx xxxx xxxxxxxxxxx xxxx.
+ms.assetid: 23001DA5-C099-4C02-ACE9-3597F06ECBF4
+title: AEP サービス クラス ID
+description: アソシエーション エンドポイント (AEP) サービスは、デバイスが特定のプロトコル経由でサポートするサービスのプログラミング コントラクトを提供します。 これらのサービスのいくつかでは、サービスの参照時に使う必要がある識別子が設定されています。
 ---
-# XXX xxxxxxx xxxxx XXx
+# AEP サービス クラス ID
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225459)
+-   [**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459)
 
-Xxxxxxxxxxx Xxxxxxxx (XXX) xxxxxxxx xxxxxxx x xxxxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxx x xxxxxx xxxxxxxx xxxx x xxxxx xxxxxxxx. Xxxxxxx xx xxxxx xxxxxxxx xxxx xxxxxxxxxxx xxxxxxxxxxx xxxx xxxxxx xx xxxx xxxx xxxxxxxxxxx xxxx. Xxxxx xxxxxxxxx xxx xxxxxxxxxx xxxx xxx **Xxxxxx.Xxxxxxx.XxxXxxxxxx.XxxxxxxXxxxxXx** xxxxxxxx. Xxxx xxxxx xxxxx xxxxxxx xxxx-xxxxx XXX xxxxxxx xxxxx XXx. Xxx XXX xxxxxxx xxxxx XX xx xxxx xxxxxxxxxx xx xxxxxxxxx xxxx xxxxxx xxxxx XXx.
+アソシエーション エンドポイント (AEP) サービスは、デバイスが特定のプロトコル経由でサポートするサービスのプログラミング コントラクトを提供します。 これらのサービスのいくつかでは、サービスの参照時に使う必要がある識別子が設定されています。 これらのコントラクトは、**System.Devices.AepService.ServiceClassId** プロパティで識別されます。 このトピックでは、既知の AEP サービス クラス ID のいくつかを一覧表示します。 AEP サービス クラス ID は、カスタム クラス ID によってプロトコルに適用することもできます。
 
-Xx xxx xxxxxxxxx xxxxxx xxx xxxxxxxx xxxxx xxxxxx (XXX) xxxxxxx xxxxx xx xxx xxxxx XXx xx xxxxx xxxxx xxxxxxx xx xxx XXX xxxxxxxx xxxx xxxx xx xxx. Xxxx xxxx xxxx xxxxx xxx xxxxx xxxxxxx xx xxx xxxxxxxx xxxxxxxx xxx xxxx xxxxxxxxxxxxx xxxxxxxx xxx xxxxxxxxxxx, xxxxxxx xxxx, xxx xxxxxxx xx xxxxxxx xxx xxx xxxxxx. Xxx xxxxxxx, xx xxxxxxxxxxx xxx xxx xxxxx xxxxxxx xxxxx XXx xx xxx x xxxxxx xx x Xxxxxxxx xxxx xx XXXX xxxxxxx xxxxx xxxxxxxx (XXX). Xxx xxxx xxxxxxxxxxx xxxxx xxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxx xxxx xxxxx, xxx [**XxxxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn948991).
+アプリの開発者は、使用予定の AEP サービスに対するクエリを制限するために、クラス ID に基づいて高度なクエリ構文 (AQS) フィルターを使う必要があります。 これによって、関連サービスへのクエリ結果が制限され、デバイスのパフォーマンス、バッテリ寿命、およびサービス品質が大幅に向上します。 たとえば、アプリケーションでこれらのサービス クラス ID を使って、デバイスを Miracast の同期または DLNA デジタル メディア レンダラー (DMR) として使うことができます。 デバイスとサービスが互いにどのようにやり取りするかについて詳しくは、「[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991)」をご覧ください。
 
-## Xxxxxxxxx xxx Xxxxxxxxx XX xxxxxxxx
+## Bluetooth および Bluetooth LE サービス
 
-Xxxxxxxxx xxxxxxxx xxxx xxxxx xxx xx xxx xxxxxxxxx, xxxxxx xxx Xxxxxxxxx xxxxxxxx xx xxx Xxxxxxxxx XX xxxxxxxx. Xxx xxxxxxxxxxx xxx xxxxx xxxxxxxxx xxx:
+Bluetooth サービスは、Bluetooth プロトコルまたは Bluetooth LE プロトコルの 2 つのプロトコルのいずれかに分類されます。 これらのプロトコルの識別子は次のとおりです。
 
--   Xxxxxxxxx xxxxxxxx XX: {xYxxxYYx-xxYx-YYYY-xxYxYYYxYYxYxYYY}
--   Xxxxxxxxx XX xxxxxxxx XX: {xxYxxYYx-YYYY-YYxY-YYxxYYxxxYYYYxYY}
+-   Bluetooth プロトコル ID: {e0cbf06c-cd8b-4647-bb8a263b43f0f974}
+-   Bluetooth LE プロトコル ID: {bb7bb05e-5972-42b5-94fc76eaa7084d49}
 
-Xxx Xxxxxxxxx xxxxxxxx xxxxxxxx xxxxxxx xxxxxxxx, xxx xxxxxxxxx xxx xxxx xxxxx xxxxxx. Xxx xxxxx xxxx xxxxxx xx xxx XXXX xxxx xxxxx xxxx xxx xxxxxxx, xxx xxx Xxxxxxxxx XXXXx xxx xxxx **YYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX**. Xxx xxxxxxx, xxx XXXXXX xxxxxxx xxx xxx xxxxxxxxx xx YxYYYY, xx xxx xxxx XX xxxxx xx **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX**. Xxx xxxxxxxxx xxxxx xxxxx xxxx xxxxxx Xxxxxxxxx xxxxxxxx.
+Bluetooth プロトコルは複数のサービスをサポートしており、すべてのサービスで同じ基本的なフォーマットを採用しています。 GUID の最初の 4 桁はサービスによって異なりますが、すべての Bluetooth Guid は **0000-0000-1000-8000-00805F9B34FB** で終わります。 たとえば、RFCOMM サービスでは前に 0x0003 が付くため、完全な ID は **00030000-0000-1000-8000-00805F9B34FB** になります。 次の表に、一般的な Bluetooth サービスをいくつか示します。
 
-| Xxxxxxx xxxx                         | XXXX                                     |
+| サービス名                         | GUID                                     |
 |--------------------------------------|------------------------------------------|
-| XXXXXX                               | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxx xxxxxxxxxxxx xxxxxxx    | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxxxxxx XX                 | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxxx xxxxxxx               | **YYYXYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxx xxxxxxxx                | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxx xxxxxxxxxxx              | **YYYXYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxx xxxxxxxxxx               | **YYYXYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxxxxxx xxxxxxx xxxxxxxxxx | **YYYXYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxxx xxxx xxxxxxx          | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxxx xxxxx                 | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxxx xxxxx xxx xxxxxxx     | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxx xxxxxxxxxxx            | **YYYXYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxxxxxxxxx xxxxxxx         | **YYYXYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxxx xxxxxx                | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxxx xxxxxxxxx             | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxxx                       | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxx xxxxxxxxxxx            | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxx xxxx                    | **YYYXYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxx xxxxxxxxx xxxxxx        | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxxxxx xxxxx               | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxx xxxxxxxxxxx            | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxxxx xxxxxxxx xxxxxxx     | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxx xxxx                     | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxxxx xxx xxxxxxxxxx       | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxx XXX xxxxxx xxxxxxx       | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxx xxxxx xxxxxx xxxxxxx    | **YYYXYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxx xxxxxxxx                | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxxxxx xxxx xxxxxx xxxxxxx | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxxx xxxxx xxx xxxxxxx     | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxx xxxxxxxxxx               | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xx xxxxx                      | **YYYYYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxx xxxx                     | **YYYXYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
-| XXXX - Xxxxxx xxxxx                  | **YYYXYYYY-YYYY-YYYY-YYYY-YYYYYXYXYYXX** |
+| RFCOMM                               | **00030000-0000-1000-8000-00805F9B34FB** |
+| GATT - アラート通知サービス    | **18110000-0000-1000-8000-00805F9B34FB** |
+| GATT - オートメーション IO                 | **18150000-0000-1000-8000-00805F9B34FB** |
+| GATT - バッテリ サービス               | **180F0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 血圧                | **18100000-0000-1000-8000-00805F9B34FB** |
+| GATT - 身体構成              | **181B0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 接着状態管理               | **181E0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 連続的な血糖値測定 | **181F0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 現在のタイム サービス          | **18050000-0000-1000-8000-00805F9B34FB** |
+| GATT - サイクリング パワー                 | **18180000-0000-1000-8000-00805F9B34FB** |
+| GATT - サイクリングの速度とリズム     | **18160000-0000-1000-8000-00805F9B34FB** |
+| GATT - デバイス情報            | **180A0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 環境検知         | **181A0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 一般アクセス                | **18000000-0000-1000-8000-00805F9B34FB** |
+| GATT - 一般属性             | **18010000-0000-1000-8000-00805F9B34FB** |
+| GATT - 血糖値                       | **18080000-0000-1000-8000-00805F9B34FB** |
+| GATT - 体温計            | **18090000-0000-1000-8000-00805F9B34FB** |
+| GATT - 心拍数                    | **180D0000-0000-1000-8000-00805F9B34FB** |
+| GATT - ヒューマン インターフェイス デバイス        | **18120000-0000-1000-8000-00805F9B34FB** |
+| GATT - 即時アラート               | **18020000-0000-1000-8000-00805F9B34FB** |
+| GATT - 屋内位置            | **18210000-0000-1000-8000-00805F9B34FB** |
+| GATT - インターネット プロトコル サポート     | **18200000-0000-1000-8000-00805F9B34FB** |
+| GATT - リンク消失                     | **18030000-0000-1000-8000-00805F9B34FB** |
+| GATT - 場所とナビゲーション       | **18190000-0000-1000-8000-00805F9B34FB** |
+| GATT - 次回夏時間変更サービス       | **18070000-0000-1000-8000-00805F9B34FB** |
+| GATT - 電話アラート ステータス サービス    | **180E0000-0000-1000-8000-00805F9B34FB** |
+| GATT - パルス オキシメーター                | **18220000-0000-1000-8000-00805F9B34FB** |
+| GATT - 参照時間更新サービス | **18060000-0000-1000-8000-00805F9B34FB** |
+| GATT - ランニングの速度とリズム     | **18140000-0000-1000-8000-00805F9B34FB** |
+| GATT - スキャン パラメーター               | **18130000-0000-1000-8000-00805F9B34FB** |
+| GATT - 送信電力                      | **18040000-0000-1000-8000-00805F9B34FB** |
+| GATT - ユーザー データ                     | **181C0000-0000-1000-8000-00805F9B34FB** |
+| GATT - 体重計                  | **181D0000-0000-1000-8000-00805F9B34FB** |
 
  
 
-Xxx x xxxx xxxxxxxx xxxxxxx xx xxxxxxxxx Xxxxxxxxx xxxxxxxx, xxx Xxxxxxxxx'x xxxxxxxx xxx xxxxxxx xxxxx [xxxx](http://go.microsoft.com/fwlink/p/?LinkID=619586) xxx [xxxx](http://go.microsoft.com/fwlink/p/?LinkID=619587). Xxx xxx xxxx xxx xxx [**XxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn297571) XXX xx xxx xxxx xxxxxx XXXX xxxxxxxx.
+利用可能な Bluetooth サービスの完全なリストについては、Bluetooth のプロトコルとサービスのページ ([ここ](http://go.microsoft.com/fwlink/p/?LinkID=619586) と [ここ](http://go.microsoft.com/fwlink/p/?LinkID=619587)) をご覧ください。 また、[**GattServiceUuids**](https://msdn.microsoft.com/library/windows/apps/Dn297571) API を使って一般的な GATT サービスをいくつか取得することもできます。
 
-## Xxxxxx Xxxxxxxxx XX xxxxxxxx
+## Bluetooth LE のカスタム サービス
 
-Xxxxxx Xxxxxxxxx XX xxxxxxxx xxx xxx xxxxxxxxx xxxxxxxx xxxxxxxxxx: {xxYxxYYx-YYYY-YYxY-YYxxYYxxxYYYYxYY}
+Bluetooth LE のカスタム サービスは、次のプロトコル識別子を使います。{bb7bb05e-5972-42b5-94fc76eaa7084d49}
 
-Xxxxxx xxxxxxxx xxx xxxxxxx xxxx xxxxx xxx xxxxxxx XXXXx. Xxxx xxxxxx XXXX xxxxxx xx xxxx xxx **Xxxxxx.Xxxxxxx.XxxXxxxxxx.XxxxxxxXxxxxXx**.
+カスタム プロファイルは、独自に定義された GUID を使って定義します。 このカスタム GUID は、**System.Devices.AepService.ServiceClassId** に対して使う必要があります。
 
-## XXxX xxxxxxxx
+## UPnP サービス
 
-XXxX xxxxxxxx xxx xxx xxxxxxxxx xxxxxxxx xxxxxxxxxx: {YxYYYxxY-YYxY-YYxY-YYxxYYYYYYxxxxYY}
+UPnP サービスは、次のプロトコル識別子を使います。{0e261de4-12f0-46e6-91ba428607ccef64}
 
-Xx xxxxxxx, xxx XXxX xxxxxxxx xxxx xxxxx xxxx xxxxxx xxxx x XXXX xxxxx xxx xxxxxxxxx xxxxxxx xx XXX YYYY. Xxx xxxxxxxxx xxxxx xxxxx xxxx xxxxxx XXxX xxxxxxxx xxxxxxx xx Xxxxxxx.
+一般的に、すべての UPnP サービスでは、RFC 4122 で定義されたアルゴリズムを使い、サービスの名前が GUID にハッシュされています。 次の表では、Windows で定義されている一般的な UPnP サービスのいくつかを紹介します。
 
-| Xxxxxxx xxxx                       | XXXX                                     |
+| サービス名                       | GUID                                     |
 |------------------------------------|------------------------------------------|
-| Xxxxxxxxxx xxxxxxx                 | **xxYYYYYx-xYYx-YYxx-xxYYYxxYYYxxxYxY**  |
-| XX xxxxxxxxx                       | **xxxxxxYY-YYYx-YYxx-xYxYYxYYYxYxYYxx**  |
-| Xxxxxxxxx xxxxxxx                  | **xxYxxYYY-xYxY-YxYY-YxYYYYYYxxYYYYYY**  |
-| Xxxxx Y xxxxxxxxxx                 | **YYxYYYxx-xYYY-YYYx-xYYYxYYxYYYYYYYx**  |
-| XXX xxxxxx xxxxxxxxx xxxxxxxxxxxxx | **xYxYxYYY-xYxY-YYYY-xYYxxxYYYxYxYYYx**  |
-| XXX XX xxxxxxxxxx                  | **xYxxYxYY-xYxx-YxYY-YYYYYxxYYYxYYYYx**  |
-| XXX XXXX xxxxxxxxxxxxx             | **YYxYxYxx-YYYx-YYYY-YxYYYxxxxYxYxYYY**  |
-| Xxxxxxx xxxxxxxx                   | **xxYYYYxx-YxYx-YYYY-YYYxYYYYxxYYxxYx**  |
-| Xxxxxxx xxxxx                      | **YxYxYYYY-xYYx-YYYY-YY-xYYYYYYxxYYYxY** |
-| Xxxxx xxxxxxxx xxxxxxxxx           | **YxYxYxxx-xYYY-YYYY-xYxxYYYxYxxYxYYY**  |
-| Xxxxxxx xxxxxxxxx                  | **YYxYYYxx-YYYY-YYYY-xYYxYYYYYYxYxxYx**  |
-| XXXX                               | **YYYxxxYx-YYYY-YYxY-xYxYYYxYxxYYxYYx**  |
+| 接続マネージャー                 | **ba36014c-b51f-51cc-bf711ad779ced3c6**  |
+| AV トランスポート                       | **deeacb78-707a-52df-b1c66f945e7e25bf**  |
+| レンダリング制御                  | **cc7fe721-a3c7-5a14-8c494419dc895513**  |
+| レイヤー 3 転送                 | **97d477fa-f403-577b-a714b29a9007797f**  |
+| WAN 共通インターフェイス構成 | **e4c1c624-c3c4-5104-b72eac425d9d157c**  |
+| WAP IP 接続                  | **e4ac1c23-b5ac-5c27-88146bd837d8832c**  |
+| WFA WLAN の構成             | **23d5f7db-747f-5099-8f213ddfd0c3c688**  |
+| プリンターの拡張                   | **fb9074da-3d9f-5384-922e9978ae51ef0c**  |
+| プリンターの基本                      | **5d2a7252-d45c-5158-87-a405212da327e1** |
+| メディア受信機レジスタ           | **0b4a2add-d725-5198-b2ba852b8bf8d183**  |
+| コンテンツ ディレクトリ                  | **89e701dd-0597-5279-a31c235991d0db1c**  |
+| DIAL                               | **085dfa4a-3948-53c7-a0d716d8ec26b29b**  |
 
  
 
-## XXX xxxxxxxx
+## WSD サービス
 
-XXX xxxxxxxx xxx xxx xxxxxxxxx xxxxxxxx xxxxxxxxxx: {YYYYYYxx-xYxY-YYYY-YYYxxxxxYYYYYYxY}
+WSD サービスは、次のプロトコル識別子を使います。{782232aa-a2f9-4993-971baedc551346b0}
 
-Xx xxxxxxx, xxx XXX xxxxxxxx xxxx xxxxx xxxx xxxxxx xxxx x XXXX xxxxx xxx xxxxxxxxx xxxxxxx xx XXX YYYY. Xxx xxxxxxxxx xxxxx xxxxx xxxx xxxxxx XXX xxxxxxxx xxxxxxx xx Xxxxxxx.
+一般的に、すべての WSD サービスでは、RFC 4122 で定義されたアルゴリズムを使い、サービスの名前が GUID にハッシュされています。 次の表では、Windows で定義されている一般的な WSD サービスのいくつかを紹介します。
 
-| Xxxxxxx xxxx | XXXX                                    |
+| サービス名 | GUID                                    |
 |--------------|-----------------------------------------|
-| Xxxxxxx      | **YYxxxYxx-YYYY-YYYx-YxYYxxYYxYYYYYxx** |
-| Xxxxxxx      | **YYxxYxYx-YYYY-Yxxx-xxYxxYYYxxYxYxYx** |
+| プリンター      | **65dca7bd-2611-583e-9a12ad90f47749cf** |
+| スキャナー      | **56ec8b9e-0237-5cae-aa3fd322dd2e6c1e** |
 
  
 
-## XXX xxxxxx
+## AQS サンプル
 
-Xxxx XXX xxxx xxxxxx xxx xxx XXxX **XxxxxxxxxxxXxxxxxxxXxxxxxx** xxxxxxx xxxx xxxxxxx XXXX. Xx xxxx xxxx, [**XxxxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn948991) xx xxx xx **XxxxxxxxxxxxXxxxxxxxXxxxxxx**.
+この AQS は、DIAL をサポートするすべての UPnP **AssociationEndpointService** オブジェクトに対してフィルターを実行します。 この場合、[**DeviceInformationKind**](https://msdn.microsoft.com/library/windows/apps/Dn948991) は **AsssociationEndpointService** に設定されています。
 
 ``` syntax
 System.Devices.AepService.ProtocolId:="{0e261de4-12f0-46e6-91ba-428607ccef64}" AND 
@@ -123,4 +123,8 @@ System.Devices.AepService.ServiceClassId:="{085DFA4A-3948-53C7-A0D716D8EC26B29B}
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

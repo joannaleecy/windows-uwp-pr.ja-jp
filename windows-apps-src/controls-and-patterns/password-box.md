@@ -1,51 +1,51 @@
 ---
-Xxxxxxxxxxx: X xxxxxxxx xxx xx x xxxx xxxxx xxx xxxx xxxxxxxx xxx xxxxxxxxxx xxxxx xxxx xx xxx xxx xxxxxxx xx xxxxxxx.
-xxxxx: Xxxxxxxxxx xxx xxxxxxxx xxxxx
-xx.xxxxxxx: YYYXYYXY-YXXX-YYXY-YXYX-XXXYYYYXYXYY
-xxx.xxxxxxx: YXXXXXXY-YXXY-YXXY-YXYY-XXYYXYXXXYXX
-xxxxx: Xxxxxxxx xxx
-xxxxxxxx: xxxxxx.xxx
+Description: A password box is a text input box that conceals the characters typed into it for the purpose of privacy.
+title: Guidelines for password boxes
+ms.assetid: 332B04D6-4FFE-42A4-8B3D-ABE8266C7C18
+dev.assetid: 4BFDECC6-9BC5-4FF5-8C63-BB36F6DDF2EF
+label: Password box
+template: detail.hbs
 ---
-# Xxxxxxxx xxx
-X xxxxxxxx xxx xx x xxxx xxxxx xxx xxxx xxxxxxxx xxx xxxxxxxxxx xxxxx xxxx xx xxx xxx xxxxxxx xx xxxxxxx. X xxxxxxxx xxx xxxxx xxxx x xxxx xxx, xxxxxx xxxx xx xxxxxxx xxxxxxxxxxx xxxxxxxxxx xx xxxxx xx xxx xxxx xxxx xxx xxxx xxxxxxx. Xxx xxx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxx.
+# Password box
+A password box is a text input box that conceals the characters typed into it for the purpose of privacy. A password box looks like a text box, except that it renders placeholder characters in place of the text that has been entered. You can configure the placeholder character.
 
-Xx xxxxxxx, xxx xxxxxxxx xxx xxxxxxxx x xxx xxx xxx xxxx xx xxxx xxxxx xxxxxxxx xx xxxxxxx xxxx x xxxxxx xxxxxx. Xxx xxx xxxxxxx xxx xxxxxx xxxxxx, xx xxxxxxx xx xxxxxxxxx xxxxxxxxx xx xxxxxx xxx xxxxxxxx, xxxx xx x xxxxx xxx.
+By default, the password box provides a way for the user to view their password by holding down a reveal button. You can disable the reveal button, or provide an alternate mechanism to reveal the password, such as a check box.
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
 
--   [**XxxxxxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
--   [**Xxxxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)
--   [**XxxxxxxxXxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)
--   [**XxxxxxxxXxxxxxXxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)
--   [**XxxxxxxxXxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)
+-   [**PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx)
+-   [**Password property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx)
+-   [**PasswordChar property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx)
+-   [**PasswordRevealMode property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx)
+-   [**PasswordChanged event**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
+## Is this the right control?
 
-Xxx x **XxxxxxxxXxx** xxxxxxx xx xxxxxxx x xxxxxxxx xx xxxxx xxxxxxx xxxx, xxxx xx x Xxxxxx Xxxxxxxx xxxxxx.
+Use a **PasswordBox** control to collect a password or other private data, such as a Social Security number.
 
-Xxx xxxx xxxx xxxxx xxxxxxxx xxx xxxxx xxxx xxxxxxx, xxx xxx [Xxxx xxxxxxxx](text-controls.md) xxxxxxx.
+For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
-## Xxxxxxxx
+## Examples
 
-Xxx xxxxxxxx xxx xxx xxxxxxx xxxxxx, xxxxxxxxx xxxxx xxxxxxx xxxx.
+The password box has several states, including these notable ones.
 
-X xxxxxxxx xxx xx xxxx xxx xxxx xxxx xxxx xx xxxx xxx xxxx xxxxx xxx xxxxxxx:
+A password box at rest can show hint text so that the user knows its purpose:
 
-![Xxxxxxxx xxx xx xxxx xxxxx xxxx xxxx xxxx](images/passwordbox-rest-hinttext.png)
+![Password box in rest state with hint text](images/passwordbox-rest-hinttext.png)
 
-Xxxx xxx xxxx xxxxx xx x xxxxxxxx xxx, xxx xxxxxxx xxxxxxxx xx xx xxxx xxxxxxx xxxx xxxx xxx xxxx xxxxx xxxxxxx:
+When the user types in a password box, the default behavior is to show bullets that hide the text being entered:
 
-![Xxxxxxxx xxx xxxxx xxxxx xxxxxx xxxx](images/passwordbox-focus-typing.png)
+![Password box focus state typing text](images/passwordbox-focus-typing.png)
 
-Xxxxxxxx xxx "xxxxxx" xxxxxx xx xxx xxxxx xxxxx x xxxx xx xxx xxxxxxxx xxxx xxxxx xxxxxxx:
+Pressing the "reveal" button on the right gives a peek at the password text being entered:
 
-![Xxxxxxxx xxx xxxx xxxxxxxx](images/passwordbox-text-reveal.png)
+![Password box text revealed](images/passwordbox-text-reveal.png)
 
-## Xxxxxx x xxxxxxxx xxx
+## Create a password box
 
-Xxx xxx [Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx) xxxxxxxx xx xxx xx xxx xxx xxxxxxxx xx xxx XxxxxxxxXxx. Xxx xxx xx xxxx xx xxx xxxxxxx xxx xxx [XxxxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx) xxxxx xx xxxxxxx xxxxxxxxxx xxxxx xxx xxxx xxxxxx xxx xxxxxxxx. Xx, xxx xxx xxx xxxxxxx xxxxx, xxxx x xxxxxx [Xxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx), xx xxxxxxx xxxxxxxxxx xxxxx xxx xxxx xxxxxxxxx xxx xxxx xxxxx.
+Use the [Password](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.password.aspx) property to get or set the contents of the PasswordBox. You can do this in the handler for the [PasswordChanged](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchanged.aspx) event to perform validation while the user enters the password. Or, you can use another event, like a button [Click](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx), to perform validation after the user completes the text entry.
 
-Xxxx'x xxx XXXX xxx x xxxxxxxx xxx xxxxxxx xxxx xxxxxxxxxxxx xxx xxxxxxx xxxx xx xxx XxxxxxxxXxx. Xxxx xxx xxxx xxxxxx x xxxxxxxx, xxx xxxxx xx xxx xx xx'x xxx xxxxxxx xxxxx, "Xxxxxxxx". Xx xx xx, xxx xxxxxxx x xxxxxxx xx xxx xxxx.
+Here's the XAML for a password box control that demonstrates the default look of the PasswordBox. When the user enters a password, you check to see if it's the literal value, "Password". If it is, you display a message to the user.
 
 ```xaml
 <StackPanel>  
@@ -69,59 +69,59 @@ private void passwordBox_PasswordChanged(object sender, RoutedEventArgs e)
     }
 }
 ```
-Xxxx'x xxx xxxxxx xxxx xxxx xxxx xxxx xxx xxx xxxx xxxxxx "Xxxxxxxx".
+Here's the result when this code runs and the user enters "Password".
 
-![Xxxxxxxx xxx xxxx x xxxxxxxxxx xxxxxxx](images/passwordbox-revealed-validation.png)
+![Password box with a validation message](images/passwordbox-revealed-validation.png)
 
-### Xxxxxxxx xxxxxxxxx
+### Password character
 
-Xxx xxx xxxxxx xxx xxxxxxxxx xxxx xx xxxx xxx xxxxxxxx xx xxxxxxx xxx [XxxxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx) xxxxxxxx. Xxxx, xxx xxxxxxx xxxxxx xx xxxxxxxx xxxx xx xxxxxxxx.
+You can change the character used to mask the password by setting the [PasswordChar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordchar.aspx) property. Here, the default bullet is replaced with an asterisk.
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="200" PasswordChar="*"/>
 ```
 
-Xxx xxxxxx xxxxx xxxx xxxx.
+The result looks like this.
 
-![Xxxxxxxx xxx xxxx x xxxxxx xxxxxxxxx](images/passwordbox-custom-char.png)
+![Password box with a custom character](images/passwordbox-custom-char.png)
 
-### Xxxxxxx xxx xxxxxxxxxxx xxxx
+### Headers and placeholder text
 
-Xxx xxx xxx xxx [Xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.header.aspx) xxx [XxxxxxxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.placeholdertext.aspx) xxxxxxxxxx xx xxxxxxx xxxxxxx xxx xxx XxxxxxxxXxx. Xxxx xx xxxxxxxxxx xxxxxx xxxx xxx xxxx xxxxxxxx xxxxx, xxxx xx xx x xxxx xx xxxxxx x xxxxxxxx.
+You can use the [Header](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.header.aspx) and [PlaceholderText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.placeholdertext.aspx) properties to provide context for the PasswordBox. This is especially useful when you have multiple boxes, such as on a form to change a password.
 
 ```xaml
 <PasswordBox x:Name="passwordBox" Width="200" Header="Password" PlaceholderText="Enter your password"/>
 ```
 
-![Xxxxxxxx xxx xx xxxx xxxxx xxxx xxxx xxxx](images/passwordbox-rest-hinttext.png)
+![Password box in rest state with hint text](images/passwordbox-rest-hinttext.png)
 
-### Xxxxxxx xxxxxx
+### Maximum length
 
-Xxxxxxx xxx xxxxxxx xxxxxx xx xxxxxxxxxx xxxx xxx xxxx xxx xxxxx xx xxxxxxx xxx [XxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.maxlength.aspx) xxxxxxxx. Xxxxx xx xx xxxxxxxx xx xxxxxxx x xxxxxxx xxxxxx, xxx xxx xxx xxxxx xxx xxxxxxxx xxxxxx, xxx xxxxxxx xxx xxxxx xxxxxxxxxx, xx xxxx xxx xxxx.
+Specify the maximum number of characters that the user can enter by setting the [MaxLength](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.maxlength.aspx) property. There is no property to specify a minimum length, but you can check the password length, and perform any other validation, in your app code.
 
-## Xxxxxxxx xxxxxx xxxx
+## Password reveal mode
 
-Xxx XxxxxxxxXxx xxx x xxxxx-xx xxxxxx xxxx xxx xxxx xxx xxxxx xx xxxxxxx xxx xxxxxxxx xxxx. Xxxx'x xxx xxxxxx xx xxx xxxx'x xxxxxx. Xxxx xxx xxxx xxxxxxxx xx, xxx xxxxxxxx xx xxxxxxxxxxxxx xxxxxx xxxxx.
+The PasswordBox has a built-in button that the user can press to display the password text. Here's the result of the user's action. When the user releases it, the password is automatically hidden again.
 
-![Xxxxxxxx xxx xxxx xxxxxxxx](images/passwordbox-text-reveal.png)
+![Password box text revealed](images/passwordbox-text-reveal.png)
 
-### Xxxx xxxx
+### Peek mode
 
-Xx xxxxxxx, xxx xxxxxxxx xxxxxx xxxxxx (xx "xxxx" xxxxxx) xx xxxxx. Xxx xxxx xxxx xxxxxxxxxxxx xxxxx xxx xxxxxx xx xxxx xxx xxxxxxxx, xx xxxx x xxxx xxxxx xx xxxxxxxx xx xxxxxxxxxx.
+By default, the password reveal button (or "peek" button) is shown. The user must continuously press the button to view the password, so that a high level of security is maintained.
 
-Xxx xxxxx xx xxx [XxxxxxxxXxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) xxxxxxxx xx xxx xxx xxxx xxxxxx xxxx xxxxxxxxxx xxxxxxx x xxxxxxxx xxxxxx xxxxxx xx xxxxxxx xx xxx xxxx. Xxxxx xxxxxxx xxxxxxx xxxxxxx xxx xxxxxxx xx xxxxxxxxx xxxxx x xxxxxxx xxxxx, xxxxxxx xxx XxxxxxxxXxx xxx xxxxx, xxx xxxxxxx xxx xxxx xxxxx xxxxx xxxxxxxx xx xxxxx xxx xxxxxxxxx. Xxx xxxxxxxx xxxxxx xxxxxx xx xxxxx xxxx xxxx xxx XxxxxxxxXxx xxxxxxxx xxxxx xxx xxx xxxxx xxxx xxx x xxxxxxxxx xx xxxxxxx. Xx xxx XxxxxxxxXxx xxxxx xxxxx xxx xxxx xxxxxxx xxxxx, xxx xxxxxx xxxxxx xx xxx xxxxx xxxxx xxxxxx xxx xxxxxxxx xx xxxxxxx xxx xxxxxxxxx xxxxx xxxxxx xxxx.
+The value of the [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.passwordrevealmode.aspx) property is not the only factor that determines whether a password reveal button is visible to the user. Other factors include whether the control is displayed above a minimum width, whether the PasswordBox has focus, and whether the text entry field contains at least one character. The password reveal button is shown only when the PasswordBox receives focus for the first time and a character is entered. If the PasswordBox loses focus and then regains focus, the reveal button is not shown again unless the password is cleared and character entry starts over.
 
-> **Xxxxxxx**&xxxx;&xxxx;Xxxxx xx Xxxxxxx YY, xxx xxxxxxxx xxxxxx xxxxxx xxx xxx xxxxx xx xxxxxxx. Xx xxx xxxxxxxx xx xxxx xxx xxxxxxxx xxxx xxx xxxxxxxx xx xxxxxx xxxxxxxx, xx xxxx xx xxx XxxxxxxxXxxxxxXxxx xx Xxxxxx.
+> **Caution**&nbsp;&nbsp;Prior to Windows 10, the password reveal button was not shown by default. If the security of your app requires that the password is always obscured, be sure to set PasswordRevealMode to Hidden.
 
-### Xxxxxx xxx Xxxxxxx xxxxx
+### Hidden and Visible modes
 
-Xxx xxxxx [XxxxxxxxXxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordrevealmode.aspx) xxxxxxxxxxx xxxxxx, **Xxxxxx** xxx **Xxxxxxx**, xxxx xxx xxxxxxxx xxxxxx xxxxxx xxx xxx xxx xxxxxxxxxxxxxxxx xxxxxx xxxxxxx xxx xxxxxxxx xx xxxxxxxx.
+The other [PasswordRevealMode](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordrevealmode.aspx) enumeration values, **Hidden** and **Visible**, hide the password reveal button and let you programmatically manage whether the password is obscured.
 
-Xx xxxxxx xxxxxxx xxx xxxxxxxx, xxx XxxxxxxxXxxxxxXxxx xx Xxxxxx. Xxxxxx xxx xxxx xxx xxxxxxxx xx xx xxxxxx xxxxxxxx, xxx xxx xxxxxxx x xxxxxx XX xx xxx xxx xxxx xxxxxx xxx XxxxxxxxXxxxxxXxxx xxxxxxx Xxxxxx xxx Xxxxxxx.
+To always obscure the password, set PasswordRevealMode to Hidden. Unless you need the password to be always obscured, you can provide a custom UI to let the user toggle the PasswordRevealMode between Hidden and Visible.
 
-Xx xxxxxxxx xxxxxxxx xx Xxxxxxx Xxxxx, XxxxxxxxXxx xxxx x xxxxx xxx xx xxxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxx. Xxx xxx xxxxxx x xxxxxxx XX xxx xxxx xxx, xx xxxxx xx xxx xxxxxxxxx xxxxxxx. Xxx xxx xxxx xxx xxxxx xxxxxxxx, xxxx [XxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx), xx xxx xxx xxxx xxxxxx xxxxx.
+In previous versions of Windows Phone, PasswordBox used a check box to toggle whether the password was obscured. You can create a similar UI for your app, as shown in the following example. You can also use other controls, like [ToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx), to let the user switch modes.
 
-Xxxx xxxxxxx xxxxx xxx xx xxx x [XxxxxXxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) xx xxx x xxxx xxxxxx xxx xxxxxx xxxx xx x XxxxxxxxXxx.
+This example shows how to use a [CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) to let a user switch the reveal mode of a PasswordBox.
 
 ```xaml
 <StackPanel Width="200">
@@ -147,41 +147,45 @@ private void CheckBox_Changed(object sender, RoutedEventArgs e)
 }
 ```
 
-Xxxx XxxxxxxxXxx xxxxx xxxx xxxx.
+This PasswordBox looks like this.
 
-![Xxxxxxxx xxx xxxx x xxxxxx xxxxxx xxxxxx](images/passwordbox-custom-reveal.png)
+![Password box with a custom reveal button](images/passwordbox-custom-reveal.png)
     
-## Xxxxxx xxx xxxxx xxxxxxxx xxx xxxx xxxx xxxxxxx
+## Choose the right keyboard for your text control
 
-Xx xxxx xxxxx xx xxxxx xxxx xxxxx xxx xxxxx xxxxxxxx, xx Xxxx Xxxxx Xxxxx (XXX), xxx xxx xxx xxx xxxxx xxxxx xx xxx xxxx xxxxxxx xx xxxxx xxx xxxx xx xxxx xxx xxxx xx xxxxxxxx xx xxxxx. XxxxxxxxXxx xxxxxxxx xxxx xxx **Xxxxxxxx** xxx **XxxxxxxXxx** xxxxx xxxxx xxxxxx. Xxx xxxxx xxxxx xx xxxxxxx.
+To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter. PasswordBox supports only the **Password** and **NumericPin** input scope values. Any other value is ignored.
 
-Xxx xxxx xxxx xxxxx xxx xx xxx xxxxx xxxxxx, xxx [Xxx xxxxx xxxxx xx xxxxxx xxx xxxxx xxxxxxxx]().
+For more info about how to use input scopes, see [Use input scope to change the touch keyboard]().
 
-## Xxxxxxxxxxxxxxx
+## Recommendations
 
--   Xxx x xxxxx xx xxxxxxxxxxx xxxx xx xxx xxxxxxx xx xxx xxxxxxxx xxx xxx'x xxxxx. X xxxxx xx xxxxxxx xxxxxxx xx xxx xxx xxxx xxxxx xxx xxx x xxxxx. Xxxxxxxxxxx xxxx xx xxxxxxxxx xxxxxx xxx xxxx xxxxx xxx xxx xxxxxxxxxx xxxx x xxxxx xxx xxxx xxxxxxx.
--   Xxxx xxx xxxxxxxx xxx xx xxxxxxxxxxx xxxxx xxx xxx xxxxx xx xxxxxx xxxx xxx xx xxxxxxx. Xxxx xxxxxx xxxxxx xxxxxxx xxxxxxxxx, xx xxxx xxxxxxxxxxxx xxxx xxxxxxx xx xxx xxxx xxxx xxx xx xx xxxxx-xxxxx.
--   Xxx'x xxx xxxxxxx xxxxxxx xxxxx xxxx xx x xxxxxxxx xxxxx xxx. Xxx xxxxxxxx xxx xxx x xxxxxxxx xxxxxx xxxxxx xxx xxxxx xx xxxxxx xxx xxxxxxxxx xxxx xxxx xxxxx, xxx xxxxxx xxxxxxx xxxxxxx xxxxx xxxx xx xx xxxxx xxxx xxxxx xxxxxxxxxxxx xxxxxx xxxxx xxxxxxxxx xxxx xxxx xxx xx xxxxxxxx xxxx xxx xxxxx xxxxxxx. Xx xxxxxxx xxxx xxxx xxxxxxxxx, xxx xxxx xxxxxxx xxxxxxx xxx xxxxxxxx xx xxx xxx xxx xxx xxxxx xxxxxxx, xx xxx xxx xxxxx xxxxxxx xx xxx xxxx xxxx.
--   Xxxxxxxx xxxxxxxxxx xxx xxxxxxxx xxxxx xxx xxxxxxx xxxxxxxx: xxx xxx xxx xxx xxxxxxxx, xxx x xxxxxx xx xxxxxxx xxx xxx xxxxxxxx.
--   Xxxx xxxx x xxxxxx xxxxxxxx xxx xxx xxxxxx.
--   Xxxx x xxxxxxxx xxx xx xxxx xx xxxxx x XXX, xxxxxxxx xxxxxxxxx xx xxxxxxx xxxxxxxx xx xxxx xx xxx xxxx xxxxxx xx xxxxxxx xxxxxxx xx xxxxx x xxxxxxxxxxxx xxxxxx.
+-   Use a label or placeholder text if the purpose of the password box isn't clear. A label is visible whether or not the text input box has a value. Placeholder text is displayed inside the text input box and disappears once a value has been entered.
+-   Give the password box an appropriate width for the range of values that can be entered. Word length varies between languages, so take localization into account if you want your app to be world-ready.
+-   Don't put another control right next to a password input box. The password box has a password reveal button for users to verify the passwords they have typed, and having another control right next to it might make users accidentally reveal their passwords when they try to interact with the other control. To prevent this from happening, put some spacing between the password in put box and the other control, or put the other control on the next line.
+-   Consider presenting two password boxes for account creation: one for the new password, and a second to confirm the new password.
+-   Only show a single password box for logins.
+-   When a password box is used to enter a PIN, consider providing an instant response as soon as the last number is entered instead of using a confirmation button.
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
-## Xxxxxxx xxxxxxxx
+## Related articles
 
-[Xxxx xxxxxxxx](text-controls.md)
+[Text controls](text-controls.md)
 
-**Xxx xxxxxxxxx**
-- [Xxxxxxxxxx xxx xxxxx xxxxxxxx](spell-checking-and-prediction.md)
-- [Xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [Xxxxxxxxxx xxx xxxx xxxxx](text-controls.md)
+**For designers**
+- [Guidelines for spell checking](spell-checking-and-prediction.md)
+- [Adding search](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [Guidelines for text input](text-controls.md)
 
-**Xxx xxxxxxxxxx (XXXX)**
-- [**XxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Xxxxxxx.XX.Xxxx.Xxxxxxxx XxxxxxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227519)
+**For developers (XAML)**
+- [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [**Windows.UI.Xaml.Controls PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/br227519)
 
 
-**Xxx xxxxxxxxxx (xxxxx)**
-- [Xxxxxx.Xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+**For developers (other)**
+- [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,68 +1,68 @@
 ---
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xxx xx xxxxxxx xxxx xxx xxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxxx xxx xxxxxxxxx.
-xxxxx: Xxxx xxx xxxxx
-xx.xxxxxxx: XYYYXXYY-XYYX-YYYY-XYYX-XYYYXXYYYXXX
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、クリップボードを使用してコピーと貼り付けをサポートする方法について説明します。
+title: コピーと貼り付け
+ms.assetid: E882DC15-E12D-4420-B49D-F495BB484BEE
 ---
-#Xxxx xxx xxxxx
+#コピーと貼り付け
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-Xxxx xxxxxxx xxxxxxxx xxx xx xxxxxxx xxxx xxx xxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxxx xxx xxxxxxxxx. Xxxx xxx xxxxx xx xxx xxxxxxx xxx xx xxxxxxxx xxxx xxxxxx xxxxxxx xxxx, xx xxxxxx xx xxx, xxx xxxxxx xxxxx xxx xxx xxxxxxx xxxxxxxxx xxxxxxxxxx xx xxxx xxxxxx.
-
-## Xxxxx xxx xxxxx-xx xxxxxxxxx xxxxxxx
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-Xx xxxx xxxxx, xxx xx xxx xxxx xx xxxxx xxxx xx xxxxxxx xxxxxxxxx xxxxxxxxxx. Xxxx xx xxx xxxxxxx XXXX xxxxxxxx xxx xxx xxx xx xxxxxx xxxx xxxxxxx xxxxxxx xxxxxxxxx xxxxxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxx xxxxxxxx xxx xxxxxxxxx, xxx xxx [xxxxxxxx xxxx][ControlsList].
+この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリで、クリップボードを使用してコピーと貼り付けをサポートする方法について説明します。 コピーと貼り付けはアプリ間やアプリ内でデータを交換するための古典的な方法であり、クリップボード操作はほとんどすべてのアプリである程度サポートできます。
 
-## Xxx xxx xx
+## 組み込みのクリップボード サポートの確認
 
-Xxxxx, xxxxxxx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.XxxxXxxxxxxx**][DataTransfer] xxxxxxxxx xx xxxx xxx. Xxxx, xxx xx xxxxxxxx xx xxx [**XxxxXxxxxxx**][DataPackage] xxxxxx. Xxxx xxxxxx xxxxxxxx xxxx xxx xxxx xxx xxxx xxxxx xx xxxx xxx xxx xxxxxxxxxx (xxxx xx x xxxxxxxxxxx) xxxx xxx xxxx xx xxxxxxx.
+
+多くの場合、クリップボード操作をサポートするためのコードを記述する必要はありません。 アプリの作成に使うことができる既定の XAML コントロールの多くは、クリップボード操作をサポートしています。 使用可能なコントロールについて詳しくは、「[コントロールの一覧][ControlsList]」をご覧ください。
+
+## 準備
+
+まず、アプリに [**Windows.ApplicationModel.DataTransfer**][DataTransfer] 名前空間を含めます。 次に、[**DataPackage**][DataPackage] オブジェクトのインスタンスを追加します。 このオブジェクトには、ユーザーがコピーするデータと開発者が含めるプロパティ (説明など) の両方が格納されます。
 
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
 DataPackage dataPackage = new DataPackage();
 ```
 
-## Xxxx xxx xxx
+## コピーと切り取り
 
-Xxxx xxx xxx (xxxx xxxxxxxx xx xx xxxx) xxxx xxxxxx xxxxxxx xxx xxxx. Xxxxxx xxxxx xxxxxxxxx xxx xxxx xxxxx xxx [**XxxxXxxxxxx.XxxxxxxxxXxxxxxxxx**][XxxxxxxxxXxxxxxxxx] xxxxxxxx.
+コピーと切り取り (移動とも呼ばれます) には、ほぼ同じ機能があります。 [**DataPackage.RequestedOperation**][RequestedOperation] プロパティを使用して、必要な操作を選択します。
 
-```xx
-// xxxx 
-xxxxXxxxxxx.XxxxxxxxxXxxxxxxxx = XxxxXxxxxxxXxxxxxxxx.Xxxx;
-// xx xxx
-xxxxXxxxxxx.XxxxxxxxxXxxxxxxxx = XxxxXxxxxxxXxxxxxxxx.Xxxx;
+```cs
+// コピー 
+dataPackage.RequestedOperation = DataPackageOperation.Copy;
+// または切り取り
+dataPackage.RequestedOperation = DataPackageOperation.Move;
 ```
 
-Xxxx, xxx xxx xxx xxx xxxx xxxx x xxxx xxx xxxxxxxx xx xxx [**XxxxXxxxxxx**][XxxxXxxxxxx] xxxxxx. Xx xxxx xxxx xx xxxxxxxxx xx xxx **XxxxXxxxxxx** xxxxx, xxx xxx xxx xxx xx xxx xxxxxxxxxxxxx xxxxxxx xx xxx **XxxxXxxxxxx** xxxxxx. Xxxx'x xxx xx xxx xxxx:
+次に、ユーザーが選択したデータを [**DataPackage**][DataPackage] オブジェクトに追加できます。 このデータが **DataPackage** クラスでサポートされている場合は、**DataPackage** オブジェクトの対応するメソッドを使うことができます。 テキストを追加する方法を次に示します。
 
-```xx
-xxxxXxxxxxx.XxxXxxx("Xxxxx Xxxxx!");
+```cs
+dataPackage.SetText("Hello World!");
 ```
 
-Xxx xxxx xxxx xx xx xxx xxx [**XxxxXxxxxxx**][XxxxXxxxxxx] xx xxx xxxxxxxxx xx xxxxxxx xxx xxxxxx [**Xxxxxxxxx.XxxXxxxxxx**][XxxXxxxxxx] xxxxxx.
+最後に、静的な [**Clipboard.SetContent**][SetContent] メソッドを呼び出すことによって [**DataPackage**][DataPackage] をクリップボードに追加します。
 
-```xx
-Xxxxxxxxx.XxxXxxxxxx(xxxxXxxxxxx);
+```cs
+Clipboard.SetContent(dataPackage);
 ```
-## Xxxxx
+## 貼り付け
 
-Xx xxx xxx xxxxxxxx xx xxx xxxxxxxxx, xxxx xxx xxxxxx [**Xxxxxxxxx.XxxXxxxxxx**[XxxXxxxxxx] xxxxxx. Xxxx xxxxxx xxxxxxx x [**XxxxXxxxxxxXxxx**][XxxxXxxxxxxXxxx] xxxx xxxxxxxx xxx xxxxxxx. Xxxx xxxxxx xx xxxxxx xxxxxxxxx xx x [**XxxxXxxxxxx**][XxxxXxxxxxx] xxxxxx, xxxxxx xxxx xxx xxxxxxxx xxx xxxx-xxxx. Xxxx xxxx xxxxxx, xxx xxx xxx xxxxxx xxx [**XxxxxxxxxXxxxxxx**][XxxxxxxxxXxxxxxx] xx xxx [**Xxxxxxxx**][Xxxxxxxx] xxxxxx xx xxxxxxxx xxxx xxxxxxx xxx xxxxxxxxx. Xxxx, xxx xxx xxxx xxx xxxxxxxxxxxxx **XxxxXxxxxxxXxxx** xxxxxx xx xxx xxx xxxx.
+クリップボードの内容を取得するには、静的な [**Clipboard.GetContent**][GetContent] メソッドを呼び出します。 このメソッドは、コンテンツを含む [**DataPackageView**][DataPackageView] を返します。 このオブジェクトは、コンテンツが読み取り専用であることを除いて [**DataPackage**][DataPackage] オブジェクトとほぼ同じです。 このオブジェクトがあれば、[**AvailableFormats**][AvailableFormats] または [**Contains**][Contains] のメソッドを使って使用可能な形式を特定できます。 その後、対応する **DataPackageView** メソッドを呼び出してデータを取得できます。
 
-```xx
-XxxxXxxxxxxXxxx xxxxXxxxxxxXxxx = Xxxxxxxxx.XxxXxxxxxx();
-xx (xxxxXxxxxxxXxxx.Xxxxxxxx(XxxxxxxxXxxxXxxxxxx.Xxxx))
+```cs
+DataPackageView dataPackageView = Clipboard.GetContent();
+if (dataPackageView.Contains(StandardDataFormats.Text))
 {
-    xxxxxx xxxx = xxxxx xxxxXxxxxxxXxxx.XxxXxxxXxxxx();
-    // Xx xxxxxx xxx xxxx xxxx xxxx xxxxxxx, xxx xxxx x XxxxXxxxx xxxxxxx
-    XxxxXxxxxx.Xxxx = "Xxxxxxxxx xxx xxxxxxxx: " + xxxx;
+    string text = await dataPackageView.GetTextAsync();
+    // この例のテキストを出力するには、TextBlock コントロールが必要です
+    TextOutput.Text = "Clipboard now contains: " + text;
 }
 ```
 
-## Xxxxx xxxxxxx xx xxx xxxxxxxxx
+## クリップボードへの変更の追跡
 
-Xx xxxxxxxx xx xxxx xxx xxxxx xxxxxxxx, xxx xxx xxxx xxxx xx xxxxx xxxxxxxxx xxxxxxx. Xx xxxx xx xxxxxxxx xxx xxxxxxxxx'x [**Xxxxxxxxx.XxxxxxxXxxxxxx**][XxxxxxxXxxxxxx] xxxxx.
+コピーと貼り付けのコマンドに加えて、クリップボードへの変更を追跡することもできます。 これを行うには、クリップボードの [**Clipboard.ContentChanged**][ContentChanged] イベントを処理します。
 
 ```cs
 Clipboard.ContentChanged += (s, e) => 
@@ -94,4 +94,8 @@ Clipboard.ContentChanged += (s, e) =>
 [Contains]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datapackageview.contains.aspx
 [ContentChanged]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.applicationmodel.datatransfer.clipboard.contentchanged.aspx 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

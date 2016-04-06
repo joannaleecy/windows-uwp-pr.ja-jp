@@ -1,127 +1,131 @@
 ---
-title: xxxxx: YX xxxxxxxx xxxx xxxx xxx
-description: xxxxxxxxxxx: Xxxxx xxx xx xxx YX xxxxxxxx xxxxxxxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx xxx. Xxxx xxxxx xxxxxx xxx xx xxxxxx xxx YX xxxxx xxxxxx xxxxx xxxxxxxx xxxx YX xxxxx xx xxxxxxxxx xxx xx xxx xxxxxxx xxxxxx.
+title: title: アプリからの 3D 印刷
+description: description: ユニバーサル Windows アプリに 3D 印刷機能を追加する方法について説明します。 このトピックでは、3D モデルが印刷可能であり、正しい形式になっていることを確認した後で 3D 印刷ダイアログを起動する方法について説明します。
 ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
 ---
 
-# xx.xxxxxxx: XYYXYYYY-YXYY-YXYY-XYYX-XXXYYYYYYYYX
+# ms.assetid: D78C4867-4B44-4B58-A82F-EDA59822119C
 
 
-YX xxxxxxxx xxxx xxxx xxx \[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY.
+アプリからの 3D 印刷 \[ Windows 10 の UWP アプリ向けに更新。
 
 
-**Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]**
+**Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]**
 
--   [**Xxxxxxxxx XXXx**](https://msdn.microsoft.com/library/windows/apps/dn998169)
+-   [**重要な API**](https://msdn.microsoft.com/library/windows/apps/dn998169)
 
-Xxxxxxx.Xxxxxxxx.XxxxxxxxYX Xxxxx xxx xx xxx YX xxxxxxxx xxxxxxxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx xxx.
+Windows.Graphics.Printing3D ユニバーサル Windows アプリに 3D 印刷機能を追加する方法について説明します。
 
-## Xxxx xxxxx xxxxxx xxx xx xxxxxx xxx YX xxxxx xxxxxx xxxxx xxxxxxxx xxxx YX xxxxx xx xxxxxxxxx xxx xx xxx xxxxxxx xxxxxx.
-
-
-Xxxxx xxxxx
-
-Xx xxxx xxxxx xxxx xx xx xxxx YX xxxxx xxxxxxxxxxxxx, xxx xxx [Xxxxxxx.Xxxxxxxx.XxxxxxxxYX](https://msdn.microsoft.com/library/windows/apps/dn998169) xxxxxxxxx.
-
-[!xxxx-xx[YXXxxxxXxxxxxxxx](./code/3dprinthowto/cs/MainPage.xaml.cs#Snippet3DPrintNamespace)]
-
-Xxx xxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxx xx xxxx xx xxxx xxxxxxxxxx xxxxx:
-
-[!xxxx-xx[XxxxxXxxxxxxxxx](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetOtherNamespaces)] Xxxx, xxxx xxxx xxxxx xxxx xxxxxxx xxxxxx xxxxxx. Xxxxxxx x [XxxxxYXXxxx](https://msdn.microsoft.com/library/windows/apps/dn998044) xxxxxx xx xxxxx xx x xxxxxxxxx xx xxx xxxxxxxx xxxx xxxx xx xx xx xxxxxx xx xxx xxxxx xxxxxx. Xxxxxxx x [XxxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxx xx xxxx xxx xxxxxxxx YX xxxx xxxx.
-
-Xxxxxxx, xxxxxxx x [XxxxxxxxYXYXXXxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn998063) xxxxxx, xxxxx xxxxxxxxxx x xxxxx-xxxxx YX xxxxx xxxx xxx xxxxxxxxx xxxxxxxx.
-
-## [!xxxx-xx[XxxxxxxXxxx](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeclareVars)]
+## このトピックでは、3D モデルが印刷可能であり、正しい形式になっていることを確認した後で 3D 印刷ダイアログを起動する方法について説明します。
 
 
-Xxxxxx x xxxxxx XX Xxxx xxxxxx xxxx xxxxx xxxx xxxxxxxx: x xxxx xxxxxx xxxxx xxxx xxxxx x xxxx xxxx xxxxxxx xxxxxx, x xxx xxxxxx xxxxx xxxx xxxxxx xxx xxxx xx xxxxxxxxx, xxx x xxxxx xxxxxx xxxxx xxxx xxxxxxxx xxx xxxxxxxx xxx.
+クラス セットアップ
 
-Xxx xxxxxxxxx xxxx xxxxxxxxx xxxxx xxxxxxx (xxxx xxxxx xxxxx xxxxx xxxxxxxx) xx xxxx xxxxx' XXXX xxxx:
+3D 印刷機能を搭載するクラスで、[Windows.Graphics.Printing3D](https://msdn.microsoft.com/library/windows/apps/dn998169) 名前空間を追加します。
 
-[!xxxx-xxx[Xxxxxxx](./code/3dprinthowto/cs/MainPage.xaml#SnippetButtons)]
+[!code-cs[3DPrintNamespace](./code/3dprinthowto/cs/MainPage.xaml.cs#Snippet3DPrintNamespace)]
 
-Xxx x **XxxxXxxxx** xxx XX xxxxxxxx.
+このガイドでは、次の追加の名前空間を使います。
 
-## [!xxxx-xxx[XxxxxxXxxx](./code/3dprinthowto/cs/MainPage.xaml#SnippetOutputText)]
+[!code-cs[OtherNamespaces](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetOtherNamespaces)] 次に、有用なメンバー フィールドをクラスにいくつか追加します。 プリンター ドライバーに渡す印刷タスクへの参照として使うために、[Print3DTask](https://msdn.microsoft.com/library/windows/apps/dn998044) オブジェクトを宣言します。 元の 3D データ ファイルを保持するために、[StorageFile](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを宣言します。
 
+最後に、必要なすべてのメタデータが含まれた、印刷準備が完了した 3D モデルを表す [Printing3D3MFPackage](https://msdn.microsoft.com/library/windows/apps/dn998063) オブジェクトを宣言します。
 
-Xxx xxx YX xxxx Xxx xxxxxx xx xxxxx xxxx xxx xxxxxxxx YX xxxxxxxx xxxx xx xxxxx xxxx xxxx. Xxxx xxx xxx xxxxxxxx xxxx xxxx x YX xxxx, xxxx xxxxx xxxx xxxx x xxx xxxxxxxx, xx xxxxxxxx x YX xxxx xxxxxxxxxxxxxxxx xxxxx xxxxxxxxx.
-
-Xxx xxx xxxx xx xxxxxxxxxx, xxxx xxxxx xxxx xxxx x YX xxxx xxxx (xx xxx xx xxxxxxx xxxxxx xxxx xxxxx) xxxx xxxxxxx xxxxxx xxxx Xxxx Xxxxxxxx.
-
-Xx xxxx `OnLoadClick` xxxxxx, xxx xxx [XxxxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/br207847) xxxxx xx xxxx x xxxxxx xxxx xxxx xxxx xxx'x xxxxxx.
-
-## [!xxxx-xx[XxxxXxxx](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileLoad)]
-
-Xxx YX Xxxxxxx xx xxxxxxx xx YX Xxxxxxxxxxxxx Xxxxxx (.Yxx) Xx xxxx xxxxx, xxx xxx xxxx xx xxxx x YX xxxx xxxx xxxx xxxx xxx'x xxxxxx. Xxxxxxx, YX xxxxxxxx xxxx xxxxx xx xxxx xxxxxxxxx xxxxxxx, xxx xxx xxx xxx xxxxxxxxx xxx YX xxxxxxxx.
-
-> Xxxxxxx YY xxxx xxx YX Xxxxxxxxxxxxx Xxxxxx (.Yxx) xxxx xxxx xxx xxx YX Xxxxxxxx xxxxx. **Xxxx**  Xxx YXX xxxx xxxx xxxxxx x xxxxx xxxx xx xxxxxxxxxxxxx xxx xxxxxxx xx xxxx xxxxxxxx.
-
-Xx xxxxx xxxx xxxxx YXX xxx xxx xxxxxxxx xx xxxxxxxx xx xxxxxxxxx xxx xxxxxxxxx xx YX xxxxxxxx, xxxxx xx xxx [YXX Xxxxxxxxxxxxx](http://3mf.io/what-is-3mf/3mf-specification/). Xxxxxxxxxxx, xxx [YX Xxxxxxx](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) xxx xxx xxxx xxxxx xx xxxx xxxxxxx YX xxxxxxx xxx xxxx xxxx xx .Yxx xxxxx.
-
-> Xx xxxx xxxxxxx, xxxxx xxx xxxx xxxx xxx xxxx, x xxxx xxxxxx xxxxxxxx xx xx xxxx YX Xxxxxxx xxx xxxxxx xxx xxxx xx xxxx xxx xxxxxxxx xxxx xx x .Yxx xxxx xxx xxxx xxxxxx xx.
-
-**Xxxx**  Xx xxxxxxxx xx xxxxxxxxxx xxxx xxxxxxx, **YX Xxxxxxx** xxxxxxxx xxxxxx xxxxx xx xxxx xxxx xxxxxx, xxx xxxxx xxxx, xxx xxxxxxx xxxxx xxxxx-xxxxxxxx xxxxxxxxxx, xx xx xx xxxxx xxxxx xxxxxxxxxxx xxxx xx xxx xxxx xxxxx xxxx YX xxxxxxxx.
-
-## [!xxxx-xx[XxxxXxxxx](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileCheck)]
-
-Xxxxxx xxxxx xxxx xxx YX xxxxxxxx Xxx xxx YX xxxxx xxxx xx xxxx xx xx xxxxxxx, xxxx xx .Yxx xxxxxx. Xx xxxxx xxx xxx xxxxxxx xx xxxxxxxxx xxxxxxxxx xxxx xxxxx xx xxxx xxx xxxx xx xxxxx xxxxx, xxx xxxxx(x) xx xx xxxxxxx xxxx xx x xxxxxx xxxxxxxx xxxx, xxxx xxxxxxx-xxxxxx xxxxxxx xxxxxxx, xxx xxxx xxxxxxxx xxxxxxxx. Xxxxxx xx xxxxx xxxxx xxx xxxx xx xx x xxxxxxx xx xxxxxxxxx xxxxx xxx xxx xx xxxx xx xxxx xx xxxxxxx xxxxxx. Xxxxxxxxxxx, xxxxxxx xxxxxxxx xxxxxxxxx xxx xxxxx xxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxx xx xxxxxxxxx YX xxxxxx.
-
-Xxxx xxxx xx xxxx xx xxx `OnFixClick` xxxxxx.
-
-Xxx YX xxxx xxxx xxxx xx xxxxxxxxx xx xxxxxxxxx [XXxxxxxXxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/br241731), xxxxx xxx xxxx xx xxxx xx xxxxxxxx x [XxxxxxxxYXXxxxx](https://msdn.microsoft.com/library/windows/apps/mt203679) xxxxxx.
-
-[!xxxx-xx[XxxxxxXxxxx](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRepairModel)] Xxx **XxxxxxxxYXXxxxx** xxxxxx xx xxx xxxxxxxx xxx xxxxxxxxx.
-
-Xxx **XxxxXxxxxXxXxxxxxxXxxxx** xx xxxxxx xxx xxxxx xx xxx XxxxxxxxYXYXXXxxxxxx xxxxxx xxx xxxxxxxx xxxx xxxxxxxx xxx xxxxx.
-
-## [!xxxx-xx[XxxxXxxxx](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSaveModel)]
+## [!code-cs[DeclareVars](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetDeclareVars)]
 
 
-Xxxxxxx xxxxxxxx xxxx: xxxxxx x XxxxXxxxxxxxx xxxxxxx Xxxxx xx, xxxx xxx YX xxxxx xxxxxx xx xxxxxxxxx xx xxx xxxx xxx xxx xxxx xxxxxx xx xxxxx xxxxxxxx, xxxx xxx xxxx xxxx xx xxxx xx xxx xxxxxxx xxxxxxxxxx xx xxx YX xxxxx xxxxxxxx. Xxx YX xxxxx XXX xxxx xxxxx xxx **XxxxXxxxxxxxx** xxxxx. Xxx xxxx xxxxx x xxxxxx xx xxxxxx xxxx xxxxx xxxxxxxxxxxxx. Xx xxxxxx, xx xxxx xx xx xxx xxxx xxxx xx xxx xxxxx: Xxx **XxxxXxxxxxxxx** xxxxx xxx xxxxxxxxxx [XxxxxYXXxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn998029) (xxx xxxxxx xxxxxx) xxx x [XxxxxYXXxxxXxxxxxxxxXxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/dn998051) xxxxxx, xxxxx xxxxx xxxx xx xxx xxxxxxxx xxxxxxxxxxx.
+シンプルな UI の作成 このサンプルでは、プログラム メモリにファイルを読み込む読み込みボタン、必要に応じてファイルを変更する修正ボタン、印刷ジョブを開始する印刷ボタンの 3 つのユーザー コントロールを使います。
 
-Xxx xxxxxx xxxx xx **xxxx**.
+次のコードで、これらのボタン (クリック イベント ハンドラー付き) をクラスの XAML ファイルに生成します。
 
-[!xxxx-xx[XxXxxxXxxxx](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetMyTaskTitle)] Xxx xxxx xxxxxxx xx xxxx xxxxxx xx xx xxx xxx *xxxx* xxxxxx xx xxxx x **XxxxxxxxYXYXXXxxxxxx** xxxx xxx xxxxxxxx. Xxx **XxxxxYXXxxxXxxxxxxxxXxxxxXxxx** xxxx xxx xxx xxxxxxxx: **Xxxxxxx**. Xx xx xx xxx xxxx [XxxxxYXXxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn998050) xxx xxxxxxxxxx xxx xxxxx xxx xxxxxxx.
+[!code-xml[Buttons](./code/3dprinthowto/cs/MainPage.xaml#SnippetButtons)]
 
-Xxx xxxxxx **XxxxxxXxxx** xxxxxx xxx xxxxxxx xx xxxxxx xxx xxxxx xxxxxxxxxxx xxx xxxx xxxxx xxx, xxx xx xxxxxxx x xxxxxxxxx xx xxx [XxxxxYXXxxx](https://msdn.microsoft.com/library/windows/apps/dn998044) xxxxxx xxxxx xx xxxx xxxx xxx YX xxxxx xxxxxxxx. **XxxxxxXxxx** xxx xxx xxxxxxxxx xxxxx xxxxxxxxxx: X **xxxxxx** xxx xxx xxxxx xxx xxxx, x **xxxxxx** xxx xxx XX xx xxx xxxxxxx xx xxx, xxx x **XxxxxYXXxxxXxxxxxXxxxxxxxxXxxxxxx** xxxxxxxx. Xxx xxxxxxxx xx xxxxxxxxxxxxx xxxxxxx xxxx xxx **YXXxxxXxxxxxXxxxxxxxx** xxxxx xx xxxxxx (xxxx xx xxxx xx xxx XXX xxxxxx).
+UI フィードバック用に **TextBlock** を追加します。
 
-Xxx xxxxxxxxx xxxxx xx xxxx xx xxxx xxxx xxxxxxxx xx xxxxxxx xxxx x xxxxx xxx xx xxxxxxxxx, xxx xx xx xxxxxxxxxxx xxx xxxxxxxxx xxx xxxxx YX xxxxx xxxxxxx. **XxxxxYXXxxxXxxxxxXxxxxxxxxXxxxxxx** xxxxx xxx xxxxxxxxx, x [XxxxxYXXxxxXxxxxxXxxxxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/dn998056) xxxxxx xxxxx xxxxxxxx xxx xxxx xx xx xxxx. Xxx xxx xxxxxx xxxxxx xx xxxx xxxxx, **XxxXxxxxx**, xxxxxxx xxx xxxxxxx xx xx xxxxxxx.
-
-Xxxxxxxxx x **XxxxxYXXxxxXxxxxxXxxxxxxxxXxxxxxx** xxxxxxxx xx xxxxxxx:
-
-[!xxxx-xx[XxxxxxXxxxxxx](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSourceHandler)]
-
-Xxxx, xxxx **XxxxxxXxxx**, xxxxx xxx xxxxx-xxxxxxx xxxxxxxx `sourceHandler`:
-
-[!xxxx-xx[XxxxxxXxxx](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetCreateTask)] Xxx xxxxxxxx **XxxxxYXXxxx** xx xxxxxxxx xx xxx xxxxx xxxxxxxx xxxxxxxx xx xxx xxxxxxxxx.
-
-Xxx xxx xxx (xxxxxxxxxx) xxx xxxx xxxxxxxxx xx xxxxxx xxxxxxx xxxxxx xxxxxx xx xxx xxxx:
-
-> [!xxxx-xx[Xxxxxxxx](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetOptional)]
-
-## **Xxxx**  Xxx xxxx xxxxxxxxx x `Task_Submitting` xxx `Task_Completed` xxxxxx xx xxx xxxx xx xxxxxxxx xxxx xx xxxxx xxxxxx.
+## [!code-xml[OutputText](./code/3dprinthowto/cs/MainPage.xaml#SnippetOutputText)]
 
 
-Xxxxxxx xxxxxxxx xxxx: xxxx YX xxxxx xxxxxx Xxx xxxxx xxx xx xxxx xxxxxx xx xxxxx xxxx xxxx xxx xx xxxx xxxxx xxxxxxxx xxx YX xxxxx xxxxxx.
+3D データの取得 アプリでは、さまざまな方法で、印刷する 3D 形状データを取得することができます。 たとえば、3D スキャンからデータを取得したり、Web リソースからのモデル データを取り込んだり、数式を使ってプログラムによって 3D メッシュを生成したりできます。
 
-Xxxx x xxxxxxxxxxxx xxxxxxxx xxxxxx xxxxxx, xxx YX xxxxx xxxxxx xxxxxxxx x xxxxxx xx xxxx-xxxxxx xxxxxxxx xxxxxxxxxxxxxx xxx xxxxxx xxx xxxx xx xxxxxx xxxxx xxxxxxx xx xxx (xxxxxxx xxxxxxxxx xxx XXX xx xxx xxxxxxx).
+ここでは簡単にするために、3D データ ファイル (一般的なファイルの種類のいずれか) をエクスプローラーからプログラム メモリに読み込みます。
 
-Xxxxx, xxxxxxxx xxxx `MyTaskRequested` xxxxxx xxxx xxx **XxxxXxxxxxxxx** xxxxx.
+`OnLoadClick` メソッドで、[FileOpenPicker](https://msdn.microsoft.com/library/windows/apps/br207847) クラスを使って、1 つのファイルをアプリのメモリに読み込みます。
 
-[!xxxx-xx[XxxxxxxxXxXxxxXxxxxxxxx](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRegisterMyTaskRequested)]
+## [!code-cs[FileLoad](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileLoad)]
 
-Xxxxx xxxxxxxxxxx xxxx **XxxxXxxxxxxxx** xxxxx xxxxxxx, xxx xxx xxxxxx xxx xxxxxx **XxxxXxxxxXXXxxxx**, xxxxx xxxxxx xx xxx YX xxxxx xxxxxx xx xxx xxxxxxx xxxxxxxxxxx xxxxxx.
+3D Builder による 3D Manufacturing Format (.3mf) への変換 これで、3D データ ファイルをアプリのメモリに読み込むことができます。 ただし、3D 形状データには、さまざまな形式がありますが、すべてが 3D 印刷に効率的であるわけではありません。
 
-[!xxxx-xx[XxxxXxxxxx](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetShowDialog)]
-Xxxxxxx, xx xx x xxxx xxxxxxxx xx xx-xxxxxxxx xxxx xxxxx xxxxxxxx xxxx xxxx xxx xxxxxxx xxxxxxx:
+> Windows 10 では、すべての 3D 印刷タスクについて 3D Manufacturing Format (.3mf) というファイル形式を使います。 **注**  3MF ファイル形式には、このチュートリアルでは扱っていない多くの機能が用意されています。
+
+3MF と 3D 製品のプロデューサーおよびコンシューマー向けに用意されたその機能について詳しくは、[3MF の仕様](http://3mf.io/what-is-3mf/3mf-specification/) をご覧ください。 幸いなことに、[3D Builder](https://www.microsoft.com/store/apps/3d-builder/9wzdncrfj3t6) アプリでは、一般的なほとんどの 3D 形式のファイルを開くことができ、それらを .3mf ファイル形式で保存することができます。
+
+> この例では、ファイルの種類が異なる場合に、簡単な解決策として、3D Builder を開き、インポートしたデータを .3mf ファイルとして保存し再度読み込むようユーザーに求めます。
+
+**注**  **3D Builder** には、ファイル形式の変換以外にも、モデルを編集したり色データを追加したりといった、印刷に固有の操作を行うための簡単なツールが用意されているため、多くの場合、3D 印刷を処理するアプリに統合するだけの価値があります。
+
+## [!code-cs[FileCheck](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetFileCheck)]
+
+3D 印刷可能なモデル データへの修復 .3mf 形式であっても、すべての 3D モデル データを印刷できるわけではありません。 どこを埋めて何を空洞のままにするかをプリンターに正しく判断させるには、印刷するモデルが 1 つのシームレスな塊であること、モデルの面の法線が外側を向いていること、またモデルがマニホールド形状であることが必要条件となります。 これらの問題は、さまざまな形で現れることがあり、図形が複雑な場合は、見つけるのが難しいことがあります。 幸いなことに、現在のソフトウェア ソリューションは、多くの場合、元データの形状を印刷可能な 3D 図形に変換するのに十分な機能を備えています。
+
+この操作は、`OnFixClick` メソッドで行われます。
+
+[IRandomAccessStream](https://msdn.microsoft.com/library/windows/apps/br241731) を実装し、[Printing3DModel](https://msdn.microsoft.com/library/windows/apps/mt203679) オブジェクトを生成します。これを行うには、3D データ ファイルを変換する必要があります。
+
+[!code-cs[RepairModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRepairModel)] これで、**Printing3DModel** オブジェクトを印刷できる状態に修復できました。
+
+**SaveModelToPackageAsync** を使って、クラスを作成したときに宣言した Printing3D3MFPackage オブジェクトにモデルを割り当てます。
+
+## [!code-cs[SaveModel](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSaveModel)]
+
+
+印刷タスクの実行: TaskRequested ハンドラーの作成 3D 印刷ダイアログをユーザーに表示してユーザーが印刷を開始したときに、アプリが目的のパラメーターを 3D 印刷パイプラインに渡す必要があります。 3D 印刷 API によって、**TaskRequested** イベントが発生します。 このイベントを適切に処理するメソッドを記述する必要があります。 通常どおり、メソッドはイベントと同じ型である必要があります。**TaskRequested** イベントには、パラメーター [Print3DManager](https://msdn.microsoft.com/library/windows/apps/dn998029) (センダー オブジェクト) と [Print3DTaskRequestedEventArgs](https://msdn.microsoft.com/library/windows/apps/dn998051) オブジェクト (ほとんどの関連情報を保持するオブジェクト) があります。
+
+戻り値の型は **void** です。
+
+[!code-cs[MyTaskTitle](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetMyTaskTitle)] このメソッドの主な目的は、*args* オブジェクトを使って、**Printing3D3MFPackage** をパイプラインに送信することです。 **Print3DTaskRequestedEventArgs** 型には、**Request** という 1 つのプロパティがあります。 その型は [Print3DTaskRequest](https://msdn.microsoft.com/library/windows/apps/dn998050) で、1 つの印刷ジョブ要求を表します。
+
+そのメソッドである **CreateTask** を使って、プログラムは印刷ジョブに関する適切な情報を送信します。このメソッドは、3D 印刷パイプラインに送信された [Print3DTask](https://msdn.microsoft.com/library/windows/apps/dn998044) オブジェクトへの参照を返します。 **CreateTask** には、印刷ジョブ名を表す **string**、使うプリンターの ID を表す **string**、および **Print3DTaskSourceRequestedHandler** デリゲートという入力パラメーターがあります。 このデリゲートは、**3DTaskSourceRequested** イベントが発生したときに自動的に呼び出されます (これは API によって行われます)。
+
+重要なのは、印刷ジョブが開始されたときにこのデリゲートが呼び出され、適切な 3D 印刷パッケージを提供する役割を果たすということです。 **Print3DTaskSourceRequestedHandler** は、送信するデータを提供する [Print3DTaskSourceRequestedArgs](https://msdn.microsoft.com/library/windows/apps/dn998056) オブジェクトという 1 つのパラメーターを取ります。 このクラスの 1 つのパブリック メソッドである **SetSource** が、印刷するパッケージを受け取ります。
+
+次のように、**Print3DTaskSourceRequestedHandler** デリゲートを実装します。
+
+[!code-cs[SourceHandler](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetSourceHandler)]
+
+次に、新しく定義したデリゲート `sourceHandler` を使って、**CreateTask** を呼び出します。
+
+[!code-cs[CreateTask](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetCreateTask)] 返された **Print3DTask** が、最初に宣言したクラス変数に割り当てられます。
+
+これで、必要に応じてこの参照を使い、タスクによってスローされた特定のイベントを処理できるようになりました。
+
+> [!code-cs[Optional](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetOptional)]
+
+## **注**  これらのイベントに `Task_Submitting` および `Task_Completed` メソッドを登録するには、それらを実装する必要があります。
+
+
+印刷タスクの実行: 3D 印刷ダイアログを開く アプリから印刷するには、最後に 3D 印刷ダイアログを起動する短いコードが必要になります。
+
+従来の印刷ダイアログ ウィンドウと同じように、3D 印刷ダイアログでも、最後に使った印刷仕様がいくつか表示され、ユーザーは使うプリンターを (USB かネットワーク接続かに関係なく) 選択することができます。
+
+最初に、`MyTaskRequested` メソッドを **TaskRequested** イベントに登録します。
+
+[!code-cs[RegisterMyTaskRequested](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetRegisterMyTaskRequested)]
+
+**TaskRequested** イベント ハンドラーを登録したら、メソッド **ShowPrintUIAsync** を呼び出して、現在のアプリケーション ウィンドウに 3D 印刷ダイアログを表示することができます。
+
+[!code-cs[ShowDialog](./code/3dprinthowto/cs/MainPage.xaml.cs#SnippetShowDialog)]
+最後に、アプリにコントロールが戻ったら、イベント ハンドラーの登録を解除することをお勧めします。
 
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO5-->
+
+

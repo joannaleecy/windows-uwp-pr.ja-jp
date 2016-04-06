@@ -1,64 +1,68 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxxx xxx xxx xx xx xxx xxxxx xxxxxxx xxx xx xxxxxxxxxx xx xxxx xxxxxxxxxxxx xxxxxxxx xxxxxx.
-xxxxx: Xxxxxxxxx xxx xxxxxxxxx xxxxxxxxxx
-xx.xxxxxxx: YYXYXXXY-XXYX-YYYY-XXXX-XYYXYYXXYXXX
+Description: Learn what you can do if you think another app is infringing on your intellectual property rights.
+title: Trademark and copyright protection
+ms.assetid: 61C4EEC0-AD4D-4828-ADEC-F18E99DD4FFC
 ---
 
-# Xxxxxxxxx xxx xxxxxxxxx xxxxxxxxxx
+# Trademark and copyright protection
 
 
-Xxxxx xxxx xxx xxx xx xx xxx xxxxx xxxxxxx xxx xx xxxxxxxxxx xx xxxx xxxxxxxxxxxx xxxxxxxx xxxxxx.
+Learn what you can do if you think another app is infringing on your intellectual property rights.
 
-## Y. Xxx xxx X xxxxxx xx xxxxxxxxxxxx xx xx xxxxxxxxxxxx xxxxxxxx xxxxxx xxxxxx x Xxxxxxx xxx?
-
-
-Xxxxxx xxx xxx xxxxxxxxx [xxxx](http://go.microsoft.com/fwlink/p/?LinkId=273879) xx xxxxxx x xxxxxxxxx, xxxxxxxxx xx xxxxxxxxx xxxxxx xxxxxxxxxxxx xxxxxxxxx xx x Xxxxxxx xxx. Xxx xxxxxxxxx, xxxxxxxxx xx xxxxxxxxx xxxxxx xxxxxxxxxxxxx xxxxxxxxxx xxxxxx xxxxxxxx xxxx, xxxxxx xxxxxx xxxx xxxxxxx xx xxxxxxxx@xxxxxxxxx.xxx. Xx xxx xxxx xxxxxxxxxx xxxx xxxxx Xxxxxxxxx’x XXXX xxxxxx, xxxxxx xxxxx: [xxxxx://xxx.xxxxxxxxx.xxx/xxxx/xxxxxXxxxx.xxxx](http://go.microsoft.com/fwlink/p/?LinkId=626976).
-
-## Y. X xxxxxxx xx xxx xx xxxx xxxx x Xxxxxxxxx xxxxxxx/xxxxxxx. Xxx X xxx xxx Xxxxxxxxx xxxxxxx/xxxxxxx xxxx xx xxx xxxx xx xx xxx?
+## 1. How may I report an infringement of my intellectual property rights within a Windows app?
 
 
-Xxxxxxxxx xxxxxxxx xxxxxxx xxxx xxx xx xxx. Xxx xx xxxxx xx x xxxxx xxxxxxxx xxxxxxxxx, xxx xxx xx xx xx xxx xxxxxx xxxxx xxxxxxxxxx:
+Please use the following [form](http://go.microsoft.com/fwlink/p/?LinkId=273879) to submit a copyright, trademark or publicity rights infringement complaint on a Windows app. For copyright, trademark or publicity rights infringements complaints across multiple apps, please submit your request to mktlegal@microsoft.com. If you need additional info about Microsoft’s DMCA policy, please visit: [https://www.microsoft.com/info/cpyrtInfrg.aspx](http://go.microsoft.com/fwlink/p/?LinkId=626976).
 
--   Xxx xxxx xx xxxx xxx xxxxxx xxx xxxxx xxxx xxx Xxxxxxxxx xxxxxxx xx xxxxxxx xxxx xx xxxxx. Xxx xxxxxxx, "Xxxx Xxxxxx Xxxxxxxxxx" xxxxxx xxx xx xxxx xx xx xxx xxxx. "Xxx’x Xxxxxx Xxxxxxxxxx xxx Xxxx" xx x xxxxxx xxxx. Xxxx xxxxx xx xxxxx xxxx xxx xxx xx xxx xxxxxxxxxxx xx Xxxxxxxxx.
--   Xxx xxxxxxxx xxxx xxxxxxxx xxxx xxxx xxx xxx xxxxxxxx xx xxxx xx xxxxxxxxxxx xxxx x Xxxxxxxxx xxxxxxx xx xxxxxxx. Xxx xxxxxxx, "xxxxx xxxx," "xxx," "xxxxxxxx xxx," xxx "xxxxxxxxx xxx" xxx xxx xxxxxxxxxx xxxxx xx xxxxxxx xxxx xxxx xxxxxxx xx xxxxxxxx xx xxxx xx xxxxxxxxxxx xxxx x Xxxxxxxxx xxxxxxx xx xxxxxxx. Xxx xx xxxxx xxxx xx "xxxxxxxxx," "xxxxxxxx," "xxxxxxxxx," xxx "xxxxxxxx" xxxxx xxxxx xxxxxxxxxxx xx xxxxx xxxxxxxxxxx xxx xxxx xxxx xxx xx xxxx xxxxxx x xxxxxx xxxxxxxxx xxxxxxx xxxxxxxxx xxxx Xxxxxxxxx. Xxxx xxxxxxxxxx xxx xxxxxxxxx xxx xxxxxxxxx xx xxxx xxxxxxx.
--   Xxx xxx Xxxxxxxxx xxxxxxx/xxxxxxx xxxx xxxx xx xxxxx xxxx. Xx xxx xxx xxx xxxxx xxxxx xx xxxxxxxxxxxx xxxxxxxx.
-
-Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxx Xxxxxxxxx Xxxxxxxxx Xxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=225434).
-
-## Y. Xx xx XX xx X xxx xxx xxxxxxxxxxx xxxx xx xxxx xx xxxxxxx xxxxxxx xx xxx xxxxx xx xx xxx xx xx xxxx xx xxx xxxxxxx xx xx xxx?
+## 2. I created my app to work with a Microsoft product/service. May I use the Microsoft product/service name in the name of my app?
 
 
-Xxx xxxx xx xxxxxxx xxxx xxx xxxxxxxxx xxxxxxx xxxxx xxx xxx xx x xxxxxxxxxxx xxxx xx xxxx xx xxxxxxx xxxxxxx. Xxxxxxx, Xxxxxxxxx xxxx xxxx xxxx xxx xxx Xxxxx xxxx xxxxxx xxxxxx xxxx xxxxxxxxx xxxxxx xxxxxxxxx xxxxxx xx xxxxx xxxxxxxxxx. Xxxxxxxxxxx, xx xxxxxxxx xxxx xxx xx xxxxxxxx xxxxxxxx xxx xxxxxxxxx.
+Microsoft strongly prefers that you do not. But if there is a clear business necessity, you may do so if you follow these guidelines:
 
-Xxx xxxx xxxxxxxxxxx, xxx [X.X. Xxxxxx xxx Xxxxxxxxx Xxxxxx: Xxxxxxxxx Xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=225271).
+-   The name of your app should not begin with the Microsoft product or service name at issue. For example, "Xbox Points Calculator" should not be used as an app name. "Bob’s Points Calculator for Xbox" is a better name. This makes it clear that the app is not distributed by Microsoft.
+-   Use language that explains that your app was designed to work in conjunction with a Microsoft product or service. For example, "works with," "for," "designed for," and "optimized for" are all acceptable terms to explain that your product is designed to work in conjunction with a Microsoft product or service. Use of terms such as "certified," "official," "authentic," and "licensed" imply legal affiliation or overt endorsement and thus must not be used absent a formal trademark license agreement with Microsoft. Such agreements are typically not available in this context.
+-   Use the Microsoft product/service name only in plain text. Do not use any fancy fonts or accompanying graphics.
 
-## Y. Xxx X xxx Xxxxxxxxx’x xxxxxxxxx xxxxxxxxxx (xxxxx), xxxx xx xxx XXXXXXX XXXX xxxx, xx xx xxx?
+For more information, see [General Microsoft Trademark Guidelines](http://go.microsoft.com/fwlink/p/?LinkId=225434).
 
-
-Xx. Xxxxxxxxx xxxxxx xxxxx xxxxxxx xx xxx xxx xxxxxxxxxxx xxxxx xxxx xxx xxxxxx xxxxxxx. Xxxx x xxxxxxx xx xxxxxxxxx xxx xxxxxxxxx xx xxxx xxxxxxx.
-
-Xxx xxxx xxxxxxxxxxx, xxx [X.X. Xxxxxx xxx Xxxxxxxxx Xxxxxx: Xxxxxxxxx Xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=225271) xx xxxxxxxx [X.X. Xxxxxxxxx Xxxxxx: Xxxxxxxxx Xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=225273).
-
-## Y. Xx X xxxx xx xxx xxxxxxxxxx ® xx xxxxxxxxx ™ xxxxxxx xxxx X xxxxx xx x Xxxxxxxxx xxxxxxxxx xx xx xxx? Xxx xxxx X, xxxx xxxxx x Xxxxxxxxx xxxxxxxxx, xxxxx x xxxxxxxxx xxxxxxxxxxx xxxxxx xx xx xxx, xxx xxxxxxx, "Xxxxxxxxx xx x xxxxxxxxxx xxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxxxxxx"?
+## 3. Is it OK if I use the trademarked name or logo of another company in the title of my app or as part of the content of my app?
 
 
-Xxxxx xx xx xxxxx xxxxxxxxxxx xxxx xxx xxxxxxx xxxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxx, xxx Xxxxxxxxx xxxxx xxxxxxx xxxxxxxxxx xx xx xxx xx.
+You need to consult your own trademark counsel about the use of a trademarked name or logo of another company. However, Microsoft will take apps off the Store upon proper notice from trademark owners regarding misuse of their trademarks. Accordingly, we strongly urge you to exercise adequate due diligence.
 
-## Y. Xx xx XX xx X xxxx x xxxx xxxx xx xxxxxxxxx xx xxxxxxx xxxx’x xxxx xx xxxx xx X xxxxxx xxx xxxx?
+For more information, see [U.S. Patent and Trademark Office: Trademark Basics](http://go.microsoft.com/fwlink/p/?LinkId=225271).
 
-
-Xx, xxx xxxxxxx xxxxxxxxxx. Xxxxx xxxxxxxxx xxxx xxx xxxxxxx xxx xxxx xx x xxxx, xx xxxx xxxxxxx xxxxxxxx xxxxxxxxxx xx x xxxx, xxxx xx xxxxxxxx xxxxxxxxxxx xxxxxxxx, xxxxxxxx, xxxxxx, xxxxxxxxxx, xxx xx xx, xxx xxx xxxxxxxx xxxxxxxxx xxx xxxxxxxxxxx xx xxxxx xxxxxxxx. X xxxx xxxx xx xxx xxxxxxx xx xxxxxxx xxxx’x xxxx xxxxx xxxxxxx xxx xx x xxxxx xx xxxxxxxxx xxxxxxxxxxxx. Xxxxxxxxx xxxxxx xxxx xxxxxx xx xxxx xxxxx, xxx xxx xxx xxxx xx xxxxxxx xxxx xxx xxxxxx xx xxx xxx xxxxxx xxxxx xxxxxxx xxxx xxxx xx xxx xxxxxxx. Xxx xxxx xxxxxxxxxxx, xxxxxxxx [X.X. Xxxxxxxxx Xxxxxx: Xxxxxxxxx Xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=225273).
-
-## Y. Xxxx xxxxxx X xx xx X xxx x xxxxxx xxxx Xxxxxxxxx xxxxxxx xx xx xxx xxxxxxxx x xxxxxxxxx xxxx xx xxx xxxxxxxxx x xxxxxxxxx xx xxxxxxxxx?
+## 4. May I use Microsoft’s graphical trademarks (logos), such as the WINDOWS FLAG logo, in my app?
 
 
-Xxxx xxx xxxxxx xxxx Xxxxxxxxx xxxxxxxxx, xxx xxxxxx xxx xxxxxxxxxxxx. Xxx xxxxxx xxxx Xxxxxxxxx xxx xxxxxxx xxxxxxxx xxxxx xxx xxx xxxxxx xx xxxxxx xx xxxx xxx xxxx xxxx xx xxxxxxx xxx xxxxxxx, xxxx xxx xxxxxxxx xxxx xxx xxxxxxxx, xxx/xx xxxx xxx xxxx xx xxxxxxxx xxxx xxx xx xxx Xxxxx.
+No. Microsoft allows third parties to use its trademarked logos only via formal license. Such a license is typically not available in this context.
+
+For more information, see [U.S. Patent and Trademark Office: Trademark Basics](http://go.microsoft.com/fwlink/p/?LinkId=225271) or download [U.S. Copyright Office: Copyright Basics](http://go.microsoft.com/fwlink/p/?LinkID=225273).
+
+## 5. Do I need to use registered ® or trademark ™ symbols when I refer to a Microsoft trademark in my app? And must I, when using a Microsoft trademark, place a trademark attribution notice in my app, for example, "Microsoft is a registered trademark of the Microsoft Corporation"?
+
+
+There is no legal requirement that you include these symbols or the attribution notice, but Microsoft would greatly appreciate it if you do.
+
+## 6. Is it OK if I make a game that is identical to someone else’s game as long as I change the name?
+
+
+No, not without permission. While copyright does not protect the idea of a game, it does protect original expression in a game, such as original audiovisual elements, graphics, sounds, characters, and so on, and the original selection and arrangement of these elements. A game that is too similar to someone else’s game could subject you to a claim of copyright infringement. Microsoft cannot give advice on this issue, and you may need to consult your own lawyer if you are unsure about whether your game is too similar. For more information, download [U.S. Copyright Office: Copyright Basics](http://go.microsoft.com/fwlink/p/?LinkID=225273).
+
+## 7. What should I do if I get a notice from Microsoft telling me it has received a complaint that my app infringes a trademark or copyright?
+
+
+Read the notice from Microsoft carefully, and follow the instructions. The notice from Microsoft may include specific steps you may follow to inform us what you have done to correct the problem, that you disagree with the claimant, and/or that you want to resubmit your app to the Store.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

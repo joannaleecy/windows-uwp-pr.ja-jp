@@ -1,73 +1,69 @@
 ---
-xx.xxxxxxx: xYYYYxYx-YxYY-YYxx-xxYY-YxYxxYxxYxxY
-xxxxx: Xxxxxxxxxxx xxxxxx xxxx
-xxxxxxxxxxx: Xxxxxxxxxxx Xxxxxxx xxxx xx xxx xxxxxx xxxx xxxxxxxxx xxxxx xxx xxxxx xxxxxxxx xx xxx xxxxxxxxxxx XXX xxx xxx xxxxx xx. Xxx XXX xxxxxx xxxxxxxxxx xx xxxxxx xxx xxxxxx xxx xx xxxx xxxxxx xxxxxxx xxxx xxxxxxxxxxxx x xxxxxx xxxx xx x xxxxxx xxxx.
+ms.assetid: f1297b7d-1a10-52ae-dd84-6d1ad2ae2fe6
+title: コンポジションのビジュアル ツリー
+description: コンポジションのビジュアル オブジェクト ツリー構造は、コンポジション API の他のすべての機能でベースとして使われます。 この API により、開発者は 1 つまたは複数のビジュアル オブジェクトを作成して定義できます。それぞれがビジュアル オブジェクト ツリーの 1 つのノードを表します。
 ---
-# Xxxxxxxxxxx xxxxxx xxxx
+# コンポジションのビジュアル ツリー
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-Xxxxxxxxxxx Xxxxxxx xxxx xx xxx xxxxxx xxxx xxxxxxxxx xxxxx xxx xxxxx xxxxxxxx xx xxx xxxxxxxxxxx XXX xxx xxx xxxxx xx. Xxx XXX xxxxxx xxxxxxxxxx xx xxxxxx xxx xxxxxx xxx xx xxxx xxxxxx xxxxxxx xxxx xxxxxxxxxxxx x xxxxxx xxxx xx x xxxxxx xxxx.
+コンポジションのビジュアル オブジェクト ツリー構造は、コンポジション API の他のすべての機能でベースとして使われます。 この API により、開発者は 1 つまたは複数のビジュアル オブジェクトを作成して定義できます。それぞれがビジュアル オブジェクト ツリーの 1 つのノードを表します。
 
-## Xxxxxxx
+## ビジュアル オブジェクト
 
-Xxxxx xxx xxxxx xxxxxx xxxxx xxxx xxxx xx xxx xxxxxx xxxx xxxxxxxxx xxxx x xxxx xxxxx xxxxx xxxx xxxxxxxx xxxxxxxxxx xxxx xxxxxx xxx xxxxxxx xx x xxxxxx:
+ビジュアル オブジェクト ツリー構造には、3 種類のビジュアル オブジェクトが含まれ、加えて、ビジュアル オブジェクトの内容に影響を与える基本ブラシ クラスと複数のサブクラスがあります。
 
--   [
-            **Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – xxxx xxxxxx, xxx xxxxxxxx xx xxx xxxxxxxxxx xxx xxxx, xxx xxxxxxxxx xx xxx xxxxx Xxxxxx xxxxxxx.
--   [
-            **XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – xxxxxxx xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706858), xxx xxxx xxx xxxxxxx xx xxxxxx xxxxxxxx.
--   [
-            **XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – Xxxxxxx xxxx [**XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706810) xxx xxxx xxx xxxxxxx xx xxxxxxxxx x xxxxx xx xxxx xxx Xxxxxx xxx xxxxxx xxxxxx xxxxxxxxx xxxxxx, xxxxxxx xx x xxxxx xxxxx.
--   [
-            **XxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt589398) – Xxxxxx xxx xxxxxxxxxxx xx xx xxxxxx xx xxx xxxxxxx xx x Xxxxxx. Xxxxx xxx x xxxxxx xx xxxxxxxxxx xx XxxxxxxxxxxXxxxx.
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) - ベース オブジェクト。プロパティの大半はここにあり、他のビジュアル オブジェクトによって継承されます。
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) - [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) から派生し、子ビジュアル オブジェクトを作成できます。
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) - [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) から派生し、ブラシを関連付けることができます。それにより、ビジュアル オブジェクトは画像、効果、単色などのピクセルをレンダリングできるようになります。
+-   [**CompositionBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589398) - ビジュアル オブジェクトの内容に効果を適用できます。 CompositionBrush には多数のサブクラスがあります。
 
-## Xxx XxxxxxxxxxxXxxxxx Xxxxxx
+## CompositionVisual のサンプル
 
-Xx xxx xxxxxx xxxxx xxx x xxxxxx xx xxxxx xxxxx xxxxxxx xxxx xxx xx xxxxxxx xx xxx xxxxxxx xxxxx xxx xxxxxx. Xxxx x xxxxxx xx xxxxxxx xx, xx xxxx xxxx xx xxx xxxxx, xxxxxx YY xxxxxxx, xxx xxxxxx xxxxxx xxxx xxxxxxx xxxxx.
+このサンプルでは、画面にクリックしてドラッグできる複数の単色の正方形を使います。 正方形がクリックされると、前面に移動して 45 度回転し、ドラッグされると不透明になります。
 
-Xxxx xxxxx x xxxxxx xx xxxxx xxxxxxxx xxx xxxxxxx xxxx xxx XXX xxxxxxxxx:
+ここでは、次のように API の操作について多数の基本的な概念を示します。
 
--   Xxxxxxxx x xxxxxxxxxx
--   Xxxxxxxx x XxxxxxXxxxxx xxxx x XxxxxXxxxx
--   Xxxxxxxx x Xxxxxx
--   Xxxxxxxx x Xxxxxx
--   Xxxxxxx Xxxxxxx
--   Xxxxxxxx xxx Xxxxxx’x xxxxxxxx xx xxx xxxxxxxxxx.
+-   コンポジターの作成
+-   SpriteVisual と ColorBrush の作成
+-   ビジュアル オブジェクトのクリップ
+-   ビジュアル オブジェクトの回転
+-   不透明度の設定
+-   コレクション内のビジュアル オブジェクトの位置変更
 
-Xx xxx xxxxxx xxxxx xxx xxxx xxxxx xxxxxxxxx Xxxxxxx xx xxxx:
+このサンプルでは、次の 3 つの異なるビジュアル オブジェクトも使います。
 
--   [
-            **Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706858) – xxxx xxxxxx, xxx xxxxxxxx xx xxx xxxxxxxxxx xxx xxxx, xxx xxxxxxxxx xx xxx xxxxx Xxxxxx xxxxxxx.
--   [
-            **XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706810) – xxxxxxx xxxx Xxxxxx, xxx xxxx xxx xxxxxxx xx xxxxxx xxxxxxxx.
--   [
-            **XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt589433) – Xxxxxxx xxxx Xxxxxx xxx xxxx xxx xxxxxxx xx xxxxxxxxx x xxxxx xx xxxx xxx Xxxxxx xxx xxxxxx xxxxxx xxxxxxxxx xxxxxx, xxxxxxx xx x xxxxx xxxxx.
+-   [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) - ベース オブジェクト。プロパティの大半はここにあり、他のビジュアル オブジェクトによって継承されます。
+-   [**ContainerVisual**](https://msdn.microsoft.com/library/windows/apps/Dn706810) - Visual から派生し、子ビジュアル オブジェクトを作成できます。
+-   [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) - Visual から派生し、ブラシを関連付けることができます。それにより、ビジュアル オブジェクトは画像、効果、単色などのピクセルをレンダリングできるようになります。
 
-Xxxxx xxxx xxxxxx xxxxx’x xxxxx xxxxxxxx xxxx Xxxxxxxxxx xx xxxx xxxxxxx xxxxxxx, xx xxxxxxxx xxx xxxxxxxx xxxxxx xxxx xxx xx xxxxx xxxxxxx xxx.
+このサンプルでは、アニメーションや複雑な効果のような概念は取り上げていませんが、それらのシステムで使われるビルディング ブロックは含まれています。
 
-## Xxxxxxxx x Xxxxxxxxxx
+## コンポジターの作成
 
-Xxxxxxxx x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706789) xxx xxxxxxx xx xxx xxx xx x xxxxxxx xx x xxxxxxxx xx x xxxxxx xxxx. Xxx xxxxxxxxx xxxxxxx xxxxx xxxxxxxx x xxx **Xxxxxxxxxx**:
+[
+            **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) を作成し、ファクトリ用に変数に格納するのは簡単です。 次のスニペットでは、新しい **Compositor** の作成方法を示しています。
 
 ```cs
 _compositor = new Compositor();
 ```
 
-## Xxxxxxxx x XxxxxxXxxxxx xxx XxxxxXxxxx
+## SpriteVisual と ColorBrush の作成
 
-Xxxxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706789) xx'x xxxx xx xxxxxx xxxxxxx xxxxxxxx xxx xxxx xxxx, xxxx xx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt589433) xxx x [**XxxxxxxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt589399):
+[
+            **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) を使って、必要なときにオブジェクト、たとえば [**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) や [**CompositionColorBrush**](https://msdn.microsoft.com/library/windows/apps/Mt589399) を作成するのは簡単です。
 
 ```cs
 var visual = _compositor.CreateSpriteVisual();
 visual.Brush = _compositor.CreateColorBrush(Color.FromArgb(0xFF, 0xFF, 0xFF, 0xFF));
 ```
 
-Xxxxx xxxx xx xxxx x xxx xxxxx xx xxxx xx xxxxxxxxxxxx x xxxxxxxx xxxxxxx, [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt589433) xxxxxxx xxx xxx xxxxx xx xxx xxxxxxx xxxxxx. Xxx **XxxxxxXxxxxx** xxxxxx xxx xxxxx xxxxxxxxxxx xxx xxxxxxxxx xx xxxxx, xxxxx xxx xxxxxx xxxxxxxx. Xxx **XxxxxxXxxxxx** xx x xxxxxx xxxxxx xxxx xxxx xxx xxxx x YX xxxxxxxxx xxxx x xxxxx, xx xxxx xxxx x xxxxx xxxxx.
+これはわずか数行のコードですが、強力な概念を示しており、[**SpriteVisual**](https://msdn.microsoft.com/library/windows/apps/Mt589433) オブジェクトは効果システムの中核となります。 **SpriteVisual** を使うと、色、画像、効果の作成で高い柔軟性と関係性を得られます。 **SpriteVisual** は、ブラシで (この例では単色) で 2D 四角形を塗りつぶすことのできるビジュアル オブジェクトの一種です。
 
-## Xxxxxxxx x Xxxxxx
+## ビジュアル オブジェクトのクリップ
 
-Xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706789) xxx xxxx xx xxxx xx xxxxxx xxxxx xx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706858). Xxxxx xx xx xxxxxxx xxxx xxx xxxxxx xx xxxxx xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706825) xx xxxx xxxx xxxx xx xxx xxxxxx:
+[
+            **Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706789) は、[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) に対するクリップを作成するためにも使えます。 次に示しているのは、ビジュアル オブジェクトの両側をトリミングする [**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) を使ったサンプルからの例です。
 
 ```cs
 var clip = _compositor.CreateInsetClip();
@@ -78,46 +74,43 @@ clip.BottomInset = 1.0f;
 _currentVisual.Clip = clip;
 ```
 
-Xxxx: Xxxx xxxxx xxxxxxx xx xxx XXX [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706825) xxx xxxx xxxxxxxxxx xxxxxxx xx xxx xxxxxxxxxx.
+注: API の他のオブジェクトと同様、[**InsetClip**](https://msdn.microsoft.com/library/windows/apps/Dn706825) のプロパティにもアニメーションを適用できます。
 
-## <span id="Rotating_a_Clip">
-            </span>
-            <span id="rotating_a_clip">
-            </span>
-            <span id="ROTATING_A_CLIP">
-            </span>Xxxxxxxx x Xxxx
+## <span id="Rotating_a_Clip"></span><span id="rotating_a_clip"></span><span id="ROTATING_A_CLIP"></span>クリップの回転
 
-X [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706858) xxx xx xxxxxxxxxxx xxxx x xxxxxxxx. Xxxx xxxx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) xxxxxxxx xxxx xxxxxxx xxx xxxxxxx. Xx xxxxxxxx xx xxxxxxx, xxx xx’x xxxx xx xxxxxxx xxxxxxx xx xxxxx xx xxx xxxxxxxxx xxxxxxx:
+[
+            **Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) は回転により変換できます。 [
+            **RotationAngle**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.rotationangle) では、ラジアンと度の両方がサポートされています。 既定ではラジアンになりますが、次のコードに示しているように、度を指定するのは簡単です。
 
 ```cs
 child.RotationAngleInDegrees = 45.0f;
 ```
 
-Xxxxxxxx xx xxxx xxx xxxxxxx xx x xxx xx xxxxxxxxx xxxxxxxxxx xxxxxxxx xx xxx XXX xx xxxx xxxxx xxxxx xxxxxx. Xxxxxx xxxxxxx Xxxxxx, Xxxxx, Xxxxxxxxxxx, XxxxxxxxXxxx xxx x YxY XxxxxxxxxXxxxxx.
+Rotation は、変換が簡単になるように API に用意された一連の変換コンポーネントのほんの一例です。 そのほかにも Offset、Scale、Orientation、RotationAxis、4x4 TransformMatrix などがあります。
 
-## Xxxxxxx Xxxxxxx
+## 不透明度の設定
 
-Xxxxxxx xxx xxxxxxx xx x xxxxxx xx x xxxxxx xxxxxxxxx xxxxx x xxxxx xxxxx. Xxx xxxxxxx, xx xxx xxxxxx xxx xxx xxxxxxx xxxxx xx .Y xxxxxxx:
+ビジュアル オブジェクトの不透明度の設定も簡単で、浮動小数値を使って指定するだけです。 たとえば、このサンプルでは、すべての正方形の不透明度は .8 から始めています。
 
 ```cs
 visual.Opacity = 0.8f;
 ```
 
-Xxxx xxxxxxxx, xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.opacity) xxxxxxxx xxx xx xxxxxxxx.
+Rotation と同様、[**Opacity**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.visual.opacity) のプロパティにもアニメーションを適用できます。
 
-## Xxxxxxxx xxx Xxxxxx'x xxxxxxxx xx xxx xxxxxxxxxx
+## コレクション内のビジュアル オブジェクトの位置変更
 
-Xxx Xxxxxxxxxxx XXX xxxxxx xxx x Xxxxxx'x xxxxxxxx xx x [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection) xx xx xxxxxxx xx x xxxxxx xx xxxx, xx xxx xx xxxxxx xxxxx xxxxxxx Xxxxxx xxxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertabove), xxxxxx xxxxx xxxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertbelow), xxxx xx xxx xxx xxxx [**XxxxxxXxXxx**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertattop) xx xxx xxxxxx xxxx [**XxxxxxXxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertatbottom).
+コンポジション API を使うと、[**VisualCollection**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection) でのビジュアル オブジェクトの位置を多数の方法で変更できます。たとえば、[**InsertAbove**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertabove) を使うと、別のビジュアル オブジェクトの上に、[**InsertBelow**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertbelow) を使うと、下に配置できます。[**InsertAtTop**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertattop) を使うと、先頭に、[**InsertAtBottom**](https://msdn.microsoft.com/library/windows/apps/Dn706858collection_insertatbottom) を使うと、末尾に移動できます。
 
-Xx xxx xxxxxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706858) xxxx xxx xxxx xxxxxxx xx xx xxxxxx xx xxx xxx:
+このサンプルでは、クリックされた [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) は先頭に並べ替えられています。
 
 ```cs
 parent.Children.InsertAtTop(_currentVisual);
 ```
 
-## Xxxx Xxxxxxx
+## 完全な例
 
-Xx xxx xxxx xxxxxx, xxx xx xxx xxxxxxxx xxxxx xxx xxxx xxxxxxxx xx xxxxxxxxx xxx xxxx x xxxxxx xxxx xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706858) xxxxxxx xx xxxxxx xxxxxxx xxxxxxx xxxxx XXXX, XXX, xx XxxxxxX. Xxxx xxxxxx xxxxx xxx xxxxx **Xxxxxx** xxxxxxx xxx xxxxxxx xxx xxxxx xxx xxx xxxxxxxxxx xxx xxxxxxx.
+完全なサンプルでは、これまで説明した概念のすべてを一緒に使って、[**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) オブジェクトの単純なツリーを作成してたどり、XAML、WWA、または DirectX を使わずに不透明度を変更しています。 このサンプルでは、どのように子 **Visual** オブジェクトが作成されて追加され、プロパティが変更されるかを示しています。
 
 ```cs
 using System;
@@ -512,4 +505,8 @@ namespace compositionvisual
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

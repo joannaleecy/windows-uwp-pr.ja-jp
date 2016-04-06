@@ -1,63 +1,67 @@
 ---
-xxxxx: Xxxxxx xxxxxxxxxxxx xx xxxxxxxxxxxx
-xxxxxxxxxxx: Xxx xxxx xxxx xx xxxxxxxxx xx xxxx xxx xxxx xxxxxxxxxxxx xx x xxx xxxx xxxxx xxxxxxx xx xxxx xxxxx xxxxxx xx xxx Xxxxxxx Xxxxx.
-xx.xxxxxxx: YYYXYXYX-YXYY-YXXX-XYYY-YYYXYYYXYYYY
+title: 暗号化に関する輸出制限の順守
+description: Windows ストアで認定されない原因となり得るような暗号化がアプリで使われていないかを判断するためにこの情報をご利用ください。
+ms.assetid: 204C7D1D-6F08-4AEE-A333-434D715E7617
 ---
 
-# Xxxxxx xxxxxxxxxxxx xx xxxxxxxxxxxx
+# 暗号化に関する輸出制限の順守
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxx xxxx xxxx xx xxxxxxxxx xx xxxx xxx xxxx xxxxxxxxxxxx xx x xxx xxxx xxxxx xxxxxxx xx xxxx xxxxx xxxxxx xx xxx Xxxxxxx Xxxxx.
+Windows ストアで認定されない原因となり得るような暗号化がアプリで使われていないかを判断するためにこの情報をご利用ください。
 
-Xxx Xxxxxx xx Xxxxxxxx xxx Xxxxxxxx xx xxx Xxxxxx Xxxxxx Xxxxxxxxxx xx Xxxxxxxx xxxxxxxxx xxx xxxxxx xx xxxxxxxxxx xxxx xxxx xxxxxxx xxxxx xx xxxxxxxxxx. Xxx xxxx xxxxxx xx xxx Xxxxxxx Xxxxx xxxx xxxxxx xxxx xxxxx xxxx xxx xxxxxxxxxxx xxxxxxx xxx xxx xxxxx xxx xx xxxxxx xx xxx Xxxxxx Xxxxxx. Xxxx xxxx xxxx xxx xxxxxxxx xx xxx xxxxxxxxxx xxxx xxxxx xxxxxxxxx xxx xxxxxxxxxxxx xxxxxxx xx xxx Xxxxxx Xxxxxx xxxx xxxxxx xxxx xxxxx xxxxxxxxxxx. Xxxxxxxxxxxx, xxxx xxxxxxxxxx xx xxx xx xxx Xxxxxxx Xxxxx, xxx xxx xxxxxxxxxx xxxx xxxx xxxx xxxx xxxxx xxxx xxx'x xxxxxxx xxx xxxxxxxxxx xxxx xx xxxxxxxxxx xx xxxxx xxxxxxxxxxx.
+米国商務省産業安全保障局は、一部の種類の暗号化を使う技術の輸出を規制しています。 アプリ ファイルは米国内に保存することができるため、Windows ストアに表示されているすべてのアプリはこれらの法律と規制に従う必要があります。 米国以外の国で配布することを目的として他の国からアプリ開発者によってアップロードされたアプリについても、これらの規制に従う必要があります。 このため、Windows ストアにアプリを提出する際には、すべてのアプリ開発者はこれらの規制で制限されている技術がアプリに含まれていないことを確かめる必要があります。
 
-> **Xxxx**  Xxx xxxxxxxxxxx xxxxxxxx xxxx xxxxxxxx xxxx xxxxxxxx, xxx xx xx xxxx xxxxxxxxxxxxxx xx xxx xxx xxxxxxxxx xxx xx xxxxxxxxxx xxxx xx xxx Xxxxxxx Xxxxx xx xxxx xxxx xxxx xxxx xxx xxxxxxxx xxxx xxx xxxxxxxxxx xxxx xxx xxxxxxxxxxx.
-
- 
-
-Xxx xxxx xxxx xxxxx xxx X.X. Xxxxxxxxxx xx Xxxxxxxx xxx xxx Xxxxxx xx Xxxxxxxx xxx Xxxxxxxx, xxx [Xxxxx xxx Xxxxxx xx Xxxxxxxx xxx Xxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=245644).
-
-Xxx xxxx xxxxx xxx Xxxxxx Xxxxxxxxxxxxxx Xxxxxxxxxxx (XXX) xxxx xxxxxx xxx xxxxxx xx xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxx, xxx [XXX Xxxxxxxx xxx Xxxxx Xxxx Xxx Xxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=245645).
-
-## Xxxxxxxx xxxx
-
-Xxxxx, xxxxxxxxx xx xxxx xxx xxxx x xxxx xx xxxxxxxxxxxx xxxx xx xxxxxxxx xx xxx Xxxxxx Xxxxxxxxxxxxxx Xxxxxxxxxxx. Xxx xxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxx xx xxx xxxx xxxx; xxx xxxxxxxx xxxx xxxx xxxx xxxxx'x xxxxxxx xxxxx xxxxxxxx xxxxxxxxxxx xx xxxxxxxxxxxx.
-
-> **Xxxxxxxxx**  Xxxxxxxx xxx xxxx xxx xxxx xxx xxxxx xxx xxxx xxx, xxx xxxx xxx xxx xxxxxxxx xxxxxxxxx, xxxxxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxxxx xxxx xxxx xxx xxxxxxxx xx xxxxx xx.
-
--   Xxx xxx xx x xxxxxxx xxxxxxxxx, xxxx xx xxxxxxxxxxxxxx xx xxxxxxxxx xxxxxxxx
--   Xxxxxxxxxx xx xxx xxxx xx xxxxx xxxx xxxx xxx xxxx xx xxxxxxxx
--   Xxx xxxxxxxxxx, xxxxxxxxxxx xxxxxxxxxx, xx xxxxxxxx xxxx xxxxxxxxx xxxx x xxxxxx xxx xxxxxxxxxxxxxx
--   Xxxxx x xxxxxx xxxxxxxxxxxxx xxxxxxx xxxx xx XXXX, Xxxxxxxx, Xxxxxx Xxxxxxx Xxxxx (XXX), xx Xxxxxxxxx Xxxxx Xxxxxxxx (XXX)
--   Xxxxxxxxxx xxxxxxxxx xx xxxxx xxxxx xx xxxxxxxxxxx xxxxxxxx
--   Xxxx xxxxxxxxxx xx xxxxxxx xxxxxx xxxxxxxxxx (XXX)
--   Xxxxxxxxx xxxxxxxxxx
-
-Xxx xxx xxxxxxxx xxx xxxxxxx xxxx xx xxxxxxxxxxxxx xxxxxxxxxxxx, xxx [XXX Xxxxxxxx xxx Xxxxx Xxxx Xxx Xxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=245645).
-
-## Xxx-xxxxxxxxxx xxxx
-
-Xxxx xxxx xxxx xx xxx xxxxxxxxxxxx xx xxxxxxxxxxxx xxx xxx xxxxxxxxxx. Xxxx xxx xxx xxxxxxxxxxxx xxxxx:
-
--   Xxxxxxxx xxxxxxxxxx
--   Xxxx xxxxxxxxxx
--   Xxxxxxxxxxxxxx
--   Xxxxxxx xxxxxx xxxxxxxxxx
--   Xxxxx xxxxxxx xxxxxxxxxx
-
-Xxx xxx xxxxxxxx xxx xxxxxxx xxxx xx xxxxxxxxxxxxx xxxxxxxxxxxx, xxx [XXX Xxxxxxxx xxx Xxxxx Xxxx Xxx Xxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=245645).
-
-Xx xxxx xxx xxxxx, xxxxxxxx, xxxxxxxx, xx xxxx xxxxxxxxxxxx xx xxxxxxxxxx xxx xxx xxxx xxxx xx xxx xx xxxx xxxx, xx xxxxx xx Xxxxxx Xxxxxxxxx Xxxxxxxxxxxxxx Xxxxxx (XXXX).
-
-Xx xxx xxx'x xxxx xx XXXX, xxx [XXXX Xxxxxxxxx xxx Xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=245646).
+> **注**  ここにある情報をガイドとして利用できますが、適用されるすべての法律と規制をアプリが順守していることの確認は、Windows ストアでアプリを公開するアプリ開発者の責任で行う必要があります。
 
  
 
+米国 商務省と産業安全保障局の詳しい情報については、[産業安全保障局の Web サイト](http://go.microsoft.com/fwlink/p/?LinkID=245644)をご覧ください。
+
+暗号化を含む技術の輸出を管理する輸出管理規制 (EAR) の情報については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。
+
+## 管理対象の使用
+
+まず、輸出管理規制の対象となる暗号化の種類をアプリが使っているかどうかを判断します。 この質問には、ここで一覧に示している例も含まれていますが、この一覧が暗号化の応用のすべてではないことに注意してください。
+
+> **重要:** アプリ用に自分で記述したコードだけでなく、アプリに含まれたりリンクされたりしているすべてのソフトウェア ライブラリ、ユーティリティ、オペレーティング システム コンポーネントについても考慮してください。
+
+-   認証、整合性チェックなどの、デジタル署名の使用
+-   アプリが使ったりアクセスしたりするデータまたはファイルの暗号化
+-   キー管理、証明書管理、または公開キー インフラストラクチャとやり取りのある操作
+-   NTLM、Kerberos、Secure Sockets Layer (SSL)、トランスポート層セキュリティ (TLS) などの、セキュリティで保護された通信チャネルの使用
+-   暗号化パスワードなどによる情報セキュリティ
+-   コピー防止やデジタル著作権管理 (DRM)
+-   ウイルス対策機能
+
+暗号化の適用に関する最新の一覧については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。
+
+## 制限なしの使用
+
+一部の暗号化の適用は制限されていません。 次のタスクは、制限を受けません。
+
+-   パスワードの暗号化
+-   コピー防止
+-   認証
+-   デジタル著作権管理
+-   デジタル署名の使用
+
+暗号化の適用に関する最新の一覧については、[暗号化技術を使う品目に対する輸出管理規制に関する Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245645)をご覧ください。
+
+アプリがこの一覧に含まれないタスクについて暗号化を呼び出す、サポートする、組み込む、または使う場合は、輸出規制品目番号 (ECCN) が必要です。
+
+ECCN を持っていない場合は、[ECCN についての質問とその回答が掲載された Web ページ](http://go.microsoft.com/fwlink/p/?LinkID=245646)をご覧ください。
+
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

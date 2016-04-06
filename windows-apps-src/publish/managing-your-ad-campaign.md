@@ -1,46 +1,50 @@
 ---
-Xxxxxxxxxxx: Xx xxxxxx xxxx xxx'x xx xxxxxxxxx, xxxxx Xxxxxxxxxxxx &xx; Xxxxxxx xxxx xxx xxxx xxxx xxx'x xxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx.
-xxxxx: Xxxxxxxx xxxx xx xxxxxxxx
-xx.xxxxxxx: YYXYYYYX-YYXX-YXYY-XYYY-YXYYXYXXYXXY
+Description: アプリの広告キャンペーンを管理するには、Windows デベロッパー センター ダッシュボードでアプリのページから、[収益化]、[アプリの宣伝] の順にクリックします。
+title: 広告キャンペーンの管理
+ms.assetid: 42A9457E-15BD-4A61-B828-1C51D0FC9DA0
 ---
 
-# Xxxxxxxx xxxx xx xxxxxxxx
+# 広告キャンペーンの管理
 
 
-Xx xxxxxx xxxx xxx'x xx xxxxxxxxx, xxxxx **Xxxxxxxxxxxx** &xx; **Xxxxxxx xxxx xxx** xxxx xxxx xxx'x xxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx. Xxx **Xxxxxxx xxxx xxx** xxxx xxxxx xxx xx xxx xx xxxxxxxxx xxxxxxxxxx xxxx xxxx xxx xxx xxxxxxxx xxx xxxxxxxxxxx, xxxxxx, xxx xxxxxxxx xxx xxxx xx xxxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxxxxxx, xxxxxx, xxx xxxxxxxx, xxx xxx xxxxxxxxxxx xxx xxxxx xxxxx xx [Xxx xxxxxxx xxx xxxxxx](app-install-ads-reports.md).
+アプリの広告キャンペーンを管理するには、Windows デベロッパー センター ダッシュボードでアプリのページから、**[収益化]**、**[アプリの宣伝]** の順にクリックします。 **[アプリの宣伝]** ページには、アプリに関連付けられたすべての広告キャンペーンが一覧表示され、各広告キャンペーンのインプレッション数、クリック数、インストール数が表示されます。 インプレッション数、クリック数、インストール数について詳しくは、「[アプリのインストールの広告レポート](app-install-ads-reports.md)」でこれらの用語の定義をご覧ください。
 
-Xx xxxxxx xxx xxxx xx xx xxxxxxxxx, xxxxx xxx **Xxxxxxx xxxxxxx** xxxx-xxxx xxx xxxxxx xxxx xxx xxxxxxxxx xxxxxxx:
+広告キャンペーンの一覧をフィルター処理するには、**[セクション フィルター]** ドロップダウンをクリックし、次のフィルターから選びます。
 
--   **Xxxx**: Xxxx xxxxxxxxx xxx xxxx xxxxx xxx xxxxxxxxxxx, xxxxxx, xxx xxxxxxxx xxxx xxx xxxxxxxxxx xxxx xxx xx xxxxxxxxx.
--   **Xxxxxx**: Xxxx xxxxxxxxx xxx xxxxxx xx xxx xx xxxxxxxxx:
-    -   **Xxxxxx** xxxxxxxxx xxxx xxx xx xxxxxxxx xx xxxxxxx xxx xxxxxxxxxx xxxx. Xx xxxxxxxxxxx xxxxx xx xx xxxxxxxx, xxxxx **Xxxxx** xx xxx **Xxxxxx** xxxxxx xx xxx xx xxxxxxxxx xxxxx.
-    -   **Xxxxxx** xxxxxxxxx xxxx xxx xx xxxxxxxx xx xxxxxxxxxxx xx xxxx xxx xxx xxxxxxxxxx xxxx. Xx xxxxxx xx xx xxxxxxxx, xxxxx **Xxxxxx** xx xxx **Xxxxxx** xxxxxx xx xxx xx xxxxxxxxx xxxxx.
-    -   **Xxxxx** xxxxxxxxx xxxx xxx xx xxxxxxxx xxx xxxxxxx xxx xxx xxxx xxx xxxxxxxxx xxxx xxx xxxxxxx xx xxxx xxxxxxxx xxx xx xxxxxxxx.
-    -   **Xxxxx xxxxxxxxx** xxxxxxxxx xxxx xxx xx xxxxxxxx xxx xxxxxx xxxx xxxx xxxx xxxxxxxxx, xxxx xx x xxxxxxx xxxxxxx xx x xxxxxx xx xxxxxx xxxx xxxxxx xxxxxxxxxx. Xx xxx xxx xxxxxx, xxxxx xxx xxxx xx xxx **Xxxxxx** xxxxxx xx xxx xx xxxxxxxxx xxxxx.
--   **Xxxxxxxx xxxx**: Xxxx xxxxxxxxx xxxxxxx xx xxxxxxx xxxx xx [xxxxx](about-house-ads.md) xx xxxxxxxxx.
+-   **日付**: 広告キャンペーンに関連付けられているインプレッション数、クリック数、インストール数の日付範囲を指定します。
+-   **状態**: 広告キャンペーンの状態を指定します。
+    -   **[アクティブ]** は、広告キャンペーンが実行されており、データを処理していることを示します。 広告キャンペーンを一時的に停止するには、広告キャンペーン テーブルの **[アクション]** 列で **[一時停止]** をクリックします。
+    -   **[一時停止]** は、広告キャンペーンが一時的に保留になっており、データを処理していないことを示します。 広告キャンペーンを再開するには、広告キャンペーン テーブルの **[アクション]** 列で **[再開]** をクリックします。
+    -   **[終了]** は、広告キャンペーンの作成時または最終更新時に指定した終了日に広告キャンペーンが到達したことを示します。
+    -   **[ご注意ください]** は、広告キャンペーンに注意が必要な問題があることを示します (課金エラーや、検証に失敗したカスタム広告デザインなど)。 問題を修正するには、広告キャンペーン テーブルの **[アクション]** 列のテキストをクリックします。
+-   **キャンペーンの種類**: 広告キャンペーンを有料と[自社](about-house-ads.md)のどちらにするかを指定します。
 
-## Xxxxxx
-
-
-Xx xxx xxx xxxx xx xxxxxxxxx xxx xxxxxxxxxx, xxxxx **Xxxxxxxxx** &xx; **Xxx xxxxxxx xxx** xx xxx xxxxxxxxxx xxxx xx xxx xxxxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxx xxxxxx, xxx [Xxx xxxxxxx xxx xxxxxx](app-install-ads-reports.md).
-
-## Xxxx xx xx xxxxxxxx
+## レポート
 
 
-Xx xxxx xxxxxxx xx xx xx xxxxxxxx, xxxxx xxx xxxx xx xx xx xxx xxxxxxx xxxx xxx xxxx xx xxxxxxxx. Xxxxx xxx xxxx xxxxxxx, xxxxx **Xxxxxx**, xxxxxx xxx xxxxxxx, xxx xxxx xxxxx **Xxxxxxx**.
+広告キャンペーンのパフォーマンスを確認するには、ダッシュボードのナビゲーション ウィンドウで **[分析]**、**[アプリ インストール広告]** の順にクリックします。 このレポートについて詳しくは、「[アプリのインストールの広告レポート](app-install-ads-reports.md)」をご覧ください。
 
-## Xxxxxxx xxxxxx
+## 広告キャンペーンの編集
 
 
-* [Xxxxxx xx xx xxxxxxxx xxx xxxx xxx](create-an-ad-campaign-for-your-app.md)
-* [Xxxxx xxxxx xxx](about-house-ads.md)
-* [Xxx xxxxxxx xxx xxxxxx](app-install-ads-reports.md)
-* [Xxxxxx xxxxxxxxx](common-questions.md)
+広告キャンペーンに変更を加えるには、その名前をクリックし、その広告キャンペーンの詳細ページに移動します。 変更を加えたら、**[レビュー]** をクリックして詳細を確認し、**[確認]** をクリックします。
+
+## 関連トピック
+
+
+* [アプリの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
+* [自社広告について](about-house-ads.md)
+* [アプリのインストールの広告レポート](app-install-ads-reports.md)
+* [よく寄せられる質問](common-questions.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

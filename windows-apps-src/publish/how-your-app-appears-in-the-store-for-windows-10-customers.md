@@ -1,117 +1,121 @@
 ---
-Xxxxxxxxxxx: Xx xxx xxxx xxxxxxxxxx xxxxxxxxx xxxx xx xxx Xxxxx xxx xxxxxx Xxxxxxx xx Xxxxxxx Xxxxx, xxxxx xxxx xxxx xx xxxx xxxxxxxxx xx xxxxxxxxx xx Xxxxxxx YY xxxxxxx xx xxxx.
-xxxxx: Xxx xxxx xxx xxxxxxx xx xxx Xxxxx xxx Xxxxxxx YY xxxxxxxxx
-xx.xxxxxxx: YYYXXYYX-XYYY-YYYY-YYXY-YYXXYYYXYXYX
+Description: Windows または Windows Phone 向けのストアに以前にアプリを公開していた場合、それらのアプリは、Windows 10 デバイスのユーザーも利用できるようになります。
+title: ストアにおける Windows 10 ユーザー向けのアプリの表示形式
+ms.assetid: 487BB57E-F547-4764-99B1-84FE396E6D3A
 ---
 
-# Xxx xxxx xxx xxxxxxx xx xxx Xxxxx xxx Xxxxxxx YY xxxxxxxxx
+# ストアにおける Windows 10 ユーザー向けのアプリの表示形式
 
 
-Xx xxx xxxx xxxxxxxxxx xxxxxxxxx xxxx xx xxx Xxxxx xxx xxxxxx Xxxxxxx xx Xxxxxxx Xxxxx, xxxxx xxxx xxxx xx xxxx xxxxxxxxx xx xxxxxxxxx xx Xxxxxxx YY xxxxxxx xx xxxx. Xxxxx xxxxx xxx xxxx xxxxxxx xx xxx xxx xxx Xxxxx xxxxxxxx xxx xxxxxxxxxxx xxxx xx xxxxxxxxx xxxxxxx Xxxxxxx YY, xxxx xxxxx xxxx xxxx xxx xxxxxxxxxx xxxx xxx xxxx xxxxxxx.
+Windows または Windows Phone 向けのストアに以前にアプリを公開していた場合、それらのアプリは、Windows 10 デバイスのユーザーも利用できるようになります。 ストアでは、Windows 10 を実行しているユーザー向けのアプリの表示形式や分類方法が一部変更されています。このトピックでは、どのような変更があったかについて説明します。
 
-**Xxxx**  Xx xxx xxxx xx xxxxxx xxx xx xxxxx xxxxxxx, [xxxxxx x xxx xxxxxxxxxx](app-submissions.md) xxx xxxx xxxx xxxxxxx, xxxx xxxxxx xxx xxxxxx xx xxx Xxxxx.
+**注**  これらの詳細を変更する場合は、[新しい申請を作成](app-submissions.md)し、変更を行ってからストアに更新プログラムを提出します。
 
  
 
-## Xxxxxxxxxxxxx xxx xxxx xxxx xxxxxx xxxxxxxx xx xxx Xxxxxxx Xxxxx xxx Xxxxxxx Xxxxx Xxxxx
+## Windows ストアと Windows Phone ストアで ID を共有したアプリに関する考慮事項
 
 
-Xx xxx xxxx xxxx xxx xxxx xxxxxxxx xxxx xxx xx xxx xxxxxxxxx xx xxxx Xxxxxx (xxxxx xxxxxxxx xx xx xxxxxxx xxxx xxx’x xxxxxxxx), xxxxx xxxx xxx xx xxxxxxxxxx xxx xxx, xxx xxx. Xx xxx xxxxxxxxx, xxx'xx xxx xxxx xx x xxxxxx xxx xxxx Xxxxxxx xxx Xxxxxxx Xxxxx xxxxxxxx.
+両方のストアに公開するアプリに同じ予約名を使った場合 ("アプリの ID を共有する" とも言います)、これらのアプリは 2 つのアプリではなく、1 つのアプリと見なされます。 ダッシュボードでは、これらのアプリが、Windows パッケージと Windows Phone パッケージを持つ 1 つのアプリとして表示されます。
 
-Xxxx xxxxxxxxxx xxx xxx xxx xxxx xxxxxxx xxx xxxxx xxxxxxxxxx xxx xxx xxx xxx xxx xx-xxx xxxxxxxx (XXXx) xx xxxx Xxxxx, xxx xx xxxx xx xxxxx xxxxxx xxxx xxxxxxxxx, xx'x xxxxxxxxx xx xxxxxxxxxx xxxxx xxxx xxx xxxxx xx xxxx Xxxxxxx YY xxxxxxxxx.
+ほとんどの開発者は、各ストアのアプリとアプリ内製品 (IAP) に対して、同じ価格を指定し、他のプロパティについても同じ値を設定してきました。ただし、これらの価格やプロパティが異なる場合は、どの価格やプロパティが Windows 10 ユーザーに対して表示されるかを把握しておくことが重要です。
 
-### Xxxxxxx
-Xx xxx xxx xxxxxx xxxxxxxxx xxxx xxxxxx xxx xxxx xxx (xx XXX) xx xxxx Xxxxx, xxx xxxx xxxxx xxxx xxx Xxxxxxx Xxxxx xx xxxx.
+### 価格設定
+各ストアのアプリ (または IAP) に対する基準価格が異なる場合は、Windows ストアでの基準価格が使われます。
 
-**Xxxx**  Xx xxx xxx xxx xxx-xxxxxx xxxxxxx xx xxx Xxxxxxx Xxxxx Xxxxx, xxxxxx xxxxxx xxxx xxxx xx xxxxx xx xxxx Xxxxxxx YY xxxxxxxxx.
+**注**  Windows Phone ストアで市場別価格を設定していた場合は、カスタム価格も Windows 10 ユーザーに表示されます。
 
-### Xxxx xxxxxx
-Xxxxx xxxxxxx xxxx xxxxxxxxx xx xxx xxx xxxxxxx Xxxxxx, xx xx xxx xxxx xxxx, xx'x xxxxxxxx xxxx xxxxx xxxxxxxxx xxxxxxx xxx xxxx Xxxxx. Xxx xxxxx xxxxxx xxxxxxxxx xx xxxx Xxxxxxx YY xxxxxxxxx xxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxx xxxxx.
+### 無料試用版
+試用版のオプションは、これまでの 2 つのストアでは異なるオプションでした。そのため、このオプションを使う場合は、各ストアで異なるオプションを選ぶことができます。 Windows 10 ユーザーが利用できる試用版のオプションは、次の表に基づいて決定されます。
 
-| Xxxxxxx Y xxx       | Xxxxxxx Xxxxx xxx   | Xxxxx xxxxxxx xxx Xxxxxxx YY                                                  |
+| Windows 8 アプリ       | Windows Phone アプリ   | Windows 10 の試用版の設定                                                  |
 |---------------------|---------------------|-------------------------------------------------------------------------------|
-| Xx xxxx xxxxx       | Xx xxxx xxxxx       | Xx xxxx xxxxx                                                                 |
-| Xx xxxx xxxxx       | Xxxxx xxxxx xxxxxxx | Xx xxxx xxxxx                                                                 |
-| Xxxxx xxxxx xxxxxxx | Xxxxx xxxxx xxxxxxx | Xxxxx xxxxx xxxxxxx                                                           |
-| Xxxxx xxxxx xxxxxxx | Xx xxxx xxxxx       | Xx xxxx xxxxx                                                                 |
-| Xxxx-xxxxxxx xxxxx  | Xxxxx xxxxx xxxxxxx | Xx xxxx xxxxx xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx; xxxxxxxxx, xxxx-xxxxxxx xxxxx |
-| Xxxx-xxxxxxx xxxxx  | Xx xxxx xxxxx       | Xx xxxx xxxxx xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx; xxxxxxxxx, xxxx-xxxxxxx xxxxx |
+| 無料の試用版なし       | 無料の試用版なし       | 無料の試用版なし                                                                 |
+| 無料の試用版なし       | 期限無しの試用版 | 無料の試用版なし                                                                 |
+| 期限無しの試用版 | 期限無しの試用版 | 期限無しの試用版                                                           |
+| 期限無しの試用版 | 無料の試用版なし       | 無料の試用版なし                                                                 |
+| 期限付きの試用版  | 期限無しの試用版 | Windows Phone 8.1 以前では無料の試用版はなし、それ以外のバージョンでは期限付きの試用版 |
+| 期限付きの試用版  | 無料の試用版なし       | Windows Phone 8.1 以前では無料の試用版はなし、それ以外のバージョンでは期限付きの試用版 |
 
-### Xxxxxxx
-Xxxx xxx xxxx xx xxxxxxxxx xx Xxxxxxx YY xxxxxxxxx xx xxxxx xxxxxx xxxxx xxx xxx xxxxxxxxxx xxxxxxxxx xxx xxx. Xxxx xxxxxxx xxxx xx xxx xxx xxxxxxxxx xxxxxx xxxxxxxxxx xxx xxxx Xxxxx.
+### 市場
+アプリを以前市場に公開していた場合、そのすべての市場で Windows 10 ユーザーは該当するアプリを利用することができます。 このことは、ストアごとに異なる市場を選んでいる場合でも同じです。
 
-### Xxxxxxxxxx
-Xx xxxx xxx xxxxxxxx xx xxxxxxxxx xxxxxxxxxx xx xxx xxx Xxxxxx, xx'xx xxx xxx xxxxxxxx xxxx xxx Xxxxxxx Xxxxx xx xxxxxxxxx xxx xxx xxxxxxxx. Xxxx xxxx xxxx xxxxxxxxxx xxx xxxxxxxxx xx xxx Xxxxx xxx Xxxxxxx YY xxxxxxxxx, xx xx xxxx xx xxxxxx xxx [xxxxx](#cat) xxxxx.
+### カテゴリ
+2 つのストアでアプリが異なるカテゴリに表示されていた場合は、Windows ストアのカテゴリを使って新しいカテゴリを特定します。 Windows 10 ユーザー向けのストアでは一部のカテゴリが異なっているため、以下の[表](#cat)を確認してください。
 
-### Xxx xxxxxx
-Xx xxx xxxxxxxx xxxxxxxxx xxx xxxxxxx, xxx xxxxxxxx (xxxxxx xxx) xxxxxx xx xxxx.
+### 年齢区分
+異なる年齢区分を指定した場合、より厳格な (より高い年齢の) 区分が使われます。
 
-### Xxxxxxx xxxxxx
-Xx xxxx xxx xxx x xxxxxxx xxxxxx, xxx xxx xxx xxxxxxxx xxxx xxxxxxxxxx xxxx Xxxxxxx Y xxx xx xxxxx xx xxxx Xxxxxxx YY xxxxxxxxx xx xxxx.
+### プライバシー ポリシー
+アプリにプライバシー ポリシーが指定されている場合は、Windows 8 アプリを提出したときに指定したプライバシー ポリシーが Windows 10 ユーザーにも表示されます。
 
-### Xxxxxxxxxxx
-Xx xxxx xxx xx xxx xxxxxxxxxxx xxx'xx xxxxxxxxx xxx xxx xxx xxxxxxxxxxx xxxxxxx xx xxxxxxx xx Xxxxxxx YY xxxxxxxxx, xxxxx xx xxx xxxx xx xxxxxx xxxx'xx xxxxx. Xx xxx xxxx xxxx xxxxx xxxx xxxxxxxxx xxxxxxxxx xxxxxx xxx xxxx Xxxxx, xxxx xxxxxxxxx xxxxx xxx x xxxxxxxxxx xxxx xxxxxxx xxxxxxxx xxxx xxxx xxxxxxxxxx xxx xxxxxxxxxx xxxx xxxx xxx xxxx xxxxxx xxx xxx.
+### スクリーンショット
+提出したスクリーンショットはすべて受け付けられます。Windows 10 ユーザーに対しては、そのユーザーが使っているデバイスの種類に基づいて、適切なバージョンのスクリーンショットが表示されます。 まれですが、サポートしている言語が各ストアで異なる場合、ユーザーがアプリを購入するとき、実現されるエクスペリエンスを的確に表す別の言語でスクリーンショットが表示されることがあります。
 
-### Xxxxxxxxxxxx
-Xx xxx xx xxxx xxx xxxx xxxxxxxxxxx xxxxxxxxxxx xx xxxx Xxxxxxx YY xxxxxxxxx, xxxxx xx xxxxx xxxxxxxx. Xxxx xxxxxxxxxxxx xxx xxxxxxxxx xxxx xxxx xxxx xxx xxxxxx xx xxx xxxx xxxxxxxx, xxx xxxxxxxxxxx xxxx xxxx Xxxxxxx Xxxxx xxx xx xxxxx xx xxxx Xxxxxxx YY xxxxxxxxx. Xx xxx xxxx xxxxx xxxxx xxxx xxxxxxxxx xxxxxxxxx xxxxxx xxx xxxx Xxxxx, xxxx xxxxxxxxx xxxxx xxx x xxxxxxxxxxx xxxx xxxx Xxxxxxx Xxxxx xxx, xx xxxx xx xxx xxxx xxxxxxxxxxx xxx xxxxxxxx xx xxxx xxxxxxxx.
+### 説明
+Windows 10 ユーザーの言語に基づいて、最も適切な説明をそのユーザーに対して表示するように試みます。 同じ言語の複数のソースから説明が提供される場合は、Windows ストア アプリからの説明が Windows 10 ユーザーに表示されます。 サポートされている言語が各ストアで異なるという特殊なケースでは、その言語での説明が Windows Phone アプリからの説明だけである場合に、一部のユーザーにその説明が表示されることがあります。
 
-Xx xxx xxxx xx xxxxxx xxx xxxxxxxxxxx xxxx xxxx Xxxxxxx YY xxxxxxxxx xxx xx xxx xxxx xxxx xxxxx xxxxxxxxxxx xxxx xxxx xxxxxx xxxxxxxx xxxxxxx, xxx xxx xx xxxx xx xxxxxxxx [xxxx xxx'x xxxxxxxxxxx](create-app-descriptions.md). Xxxxxxxxx xx Xxxxxxx YY xxxx xxx xxxx xxx'x xxxxxxx xxxxxxxxxxx, xxx xxx xxx xxxx [xxxxxx xxxxxxxx-xxxxxxxx xxxxxxxxxxxx](create-platform-specific-descriptions.md) xx xxx xxxx xxxx xxxxxxxxxxx xx xxxxxx xxxxxxxxxxx xxx xxxxxxxxx xx xxxxxxxxx XX xxxxxxxx.
+Windows 10 ユーザーに表示される説明を更新して、複数のデバイスにわたる機能のエクスペリエンスを知らせる場合は、[アプリの説明](create-app-descriptions.md)を更新すると、それを実現できます。 Windows 10 のユーザーにはアプリの既定の説明が表示されますが、OS バージョンによって異なる説明をユーザーに表示する場合は[プラットフォーム固有の説明を作成](create-platform-specific-descriptions.md)することもできます。
 
-## Xxxxxxxx xxxxxxx
-
-
-Xx xxxx xxxxx, xxx xxx [xxxxxxxxxx xxx xxxxxxxxxxxxx](category-and-subcategory-table.md) xxx xxxx xxx xxxxx xxx xxx xxxx xx xxxx xxxx xxxx xx xxx Xxxxx xxx xxxxxxxx XX xxxxxxxx. Xxxxxxx, xxxxx xxxx xxxx x xxx xxxxxxx. Xxxxxx xxx xxxxx xxxxx xx xxxxxxxxxx xxx xxxx xxx xx xxxxxxxxxxx xx xxx Xxxxx xxx xxxxxxxxx xx Xxxxxxx YY, xxxxx xx xxx xxxxxxxx xxxxxxxx.
-
-**Xxxx**  Xxx'xx xxx xxx xxx xxxxxxxx xxxxxx xx xxx xxxxxxxxx xxxx xxxxxxx xxxx [xxx'x xxxxxxxx](category-and-subcategory-table.md) xx xxx [Xxx xxxxxxxxxx](enter-app-properties.md) xxxx xx x xxxxxxxxxx, xxx xxxxxxxxx xxxxxxx xxx Xxxxx xx Xxxxxxx YY xxxxxxx xxxx xxx xxxx xxx xx xxx xxx xxxxxxxx. Xxxxxxx, xxxxxxxxx xxxxxxx xxx Xxxxx xxxx xx xxxxxxx xxxxxxxxx xxxxxx xxxx xxxxxxxx xx xxx xxx xxx xxxxxx xx xxx xxxxxxxx xxxxxxxx.
+## カテゴリの変更
 
 
-**Xxxxxxxx xxxxxxx xxx Xxxxxxx Xxxxx xxxx:**
+多くの場合、アプリとゲームの新しい[カテゴリとサブカテゴリ](category-and-subcategory-table.md)は以前の OS バージョンのストアで使われていたものと同じになりますが、 少し変更があります。 次の表をご覧になり、以前のカテゴリと比較して、Windows 10 ユーザー向けのストアではアプリがどのように分類されるかどうかを確認してください。
 
-| Xxxxxxxx xxxxxxxx                       | Xxx xxxxxxxx                  |
+**注**  新しいカテゴリは申請の [[アプリケーションのプロパティ]](enter-app-properties.md) ページの[アプリのカテゴリ](category-and-subcategory-table.md)を表示するとダッシュボードに一覧表示され、Windows 10 デバイスでストアを表示するユーザーには新しいカテゴリでアプリが表示されます。 ただし、以前のオペレーティング システムからストアを表示するユーザーには元のカテゴリでアプリが表示されます。
+
+
+**Windows Phone アプリでのカテゴリの変更:**
+
+| 以前のカテゴリ                       | 新しいカテゴリ                  |
 |-----------------------------------------|-------------------------------|
-| Xxxxxxxxxx + xxxxxxxx &xx; xxxxxxxxxx   | Xxxxxxxxxx + xxxxxxxx         |
-| Xxxxxxxxxx + xxxxxxxx &xx; xxxxx xxxxxx | Xxxxxxxxxx + xxxxxxxx         |
-| Xxxxxxxxxx + xxxxxxxx &xx; xxxxxxxx     | Xxxxxxxxxx + xxxxxxxx         |
-| Xxxxxxxxxx + xxxxxxxx &xx; xxxxxxxxx    | Xxxxxxxxxx + xxxxxxxx         |
-| Xxxxxx + xxxxxxx &xx; xxxx + xxxxxxxxx  | Xxxxxx + xxxxxxx              |
-| Xxxxxx + xxxxxxx &xx; xxxxxxx           | Xxxxxx + xxxxxxx              |
-| Xxxxxx + xxxxxxx &xx; xxxxxx            | Xxxxxx + xxxxxxx              |
-| Xxxxxxxxx &xx; xxx + xxxxxxxxxxxxx      | Xxxxxxxxx                     |
-| Xxxxxxxxx &xx; xxx + xxxxx              | Xxxxxxxxx                     |
-| Xxxxxxxxx &xx; xxxx + xxxxxx            | Xxxx + xxxxxx                 |
-| Xxxxxxxxx &xx; xxxxxxxx                 | Xxxxxxxx                      |
-| Xxxx + xxxxxxx &xx; xxxxxxxxxxxxx       | Xxxx + xxxxxxx                |
-| Xxxx + xxxxxxx &xx; xxxxx + xxxxxxxx    | Xxxx + xxxxxxx                |
-| Xxxxxxxxx + xxxxxxxxxxxx                | Xxxxxxxxx + xxxxx             |
-| Xxxxxx + xxxxxxxxxx                     | Xxxxxx                        |
-| Xxxxxx + xxxxxxxxxx &xx; xxxxxxxx       | Xxxxxx                        |
-| Xxxxxx + xxxxxxxxxx &xx; xxxxx          | Xxxxxx                        |
-| Xxxxxx + xxxxxxxxxx &xx; xxxx xxxx      | Xxxx + xxxxxx &xx; xxxxxx     |
-| Xxxxxx + xxxxxxxxxx &xx; xxxxxxxx       | Xxxxxxxxx &xx; Xxxxxxxx       |
-| Xxxxxx + xxxxxxxxxx &xx; xxxxxxx        | Xxxxxxxxxx + xxxx             |
-| Xxxxxx + xxxxxxxxxx &xx; xxxxxxxxxx     | Xxxxxxxxxx + xxxx             |
-| Xxxxx &xx; xxxxxxxx                     | Xxxxx &xx; Xxxxxx + xxxxxxxxx |
-| Xxxxx &xx; xxxxxx                       | Xxxxx &xx; Xxxxxx + xxxx      |
-| Xxxxx &xx; xxxxxx + xxxxxxxxxx          | Xxxxx &xx; Xxxxxx             |
-| Xxxxx &xx; xxxxxxxx + xxxxxxxxxx        | Xxxxx &xx; Xxxxxxxx           |
+| 行政 & 政治 &gt; 評論   | 行政 & 政治         |
+| 行政 & 政治 &gt; 法律 | 行政 & 政治         |
+| 行政 & 政治 &gt; 政治     | 行政 & 政治         |
+| 行政 & 政治 &gt; リソース    | 行政 & 政治         |
+| 健康 & フィットネス &gt; ダイエット ＆ ニュートリション  | 健康 & フィットネス              |
+| 健康 & フィットネス &gt; フィットネス           | 健康 & フィットネス              |
+| 健康 & フィットネス &gt; 健康            | 健康 & フィットネス              |
+| ライフスタイル &gt; アート & エンターテイメント      | ライフスタイル                     |
+| ライフスタイル &gt; お出かけ              | ライフスタイル                     |
+| ライフスタイル &gt; グルメ            | グルメ                 |
+| ライフスタイル &gt; ショッピング                 | ショッピング                      |
+| ニュース & 天気 &gt; 海外       | ニュース & 天気                |
+| ニュース & 天気 &gt; 地域 ＆ 国内    | ニュース & 天気                |
+| ユーティリティ & 生産性ツール                | ユーティリティ & ツール             |
+| 旅行 & ガイド                     | 旅行                        |
+| 旅行 & ガイド &gt; プランニング       | 旅行                        |
+| 旅行 & ガイド &gt; ツール          | 旅行                        |
+| 旅行 & ガイド &gt; 子供連れ      | 子供 & 家族 &gt; 旅行     |
+| 旅行 & ガイド &gt; 言語       | 教育 &gt; 言語       |
+| 旅行 & ガイド &gt; マッピング        | ナビゲーション & マップ             |
+| 旅行 & ガイド &gt; ガイド     | ナビゲーション & マップ             |
+| ゲーム &gt; クラシック                     | ゲーム &gt; アクション & アドベンチャー |
+| ゲーム &gt; 家族向け                       | ゲーム &gt; 家族 & 子供      |
+| ゲーム &gt; スポーツ & レクリエーション          | ゲーム &gt; スポーツ             |
+| ゲーム &gt; 戦略 & シミュレーション        | ゲーム &gt; 戦略           |
 
  
 
-**Xxxxxxxx xxxxxxx xxx Xxxxxxx Y xxxx:**
+**Windows 8 アプリでのカテゴリの変更:**
 
-| Xxxxxxxx xxxxxxxx           | Xxx xxxxxxxx                         |
+| 以前のカテゴリ           | 新しいカテゴリ                         |
 |-----------------------------|--------------------------------------|
-| Xxxxx + Xxxxxxxxx &xx; Xxxx | Xxxx + xxxxxx &xx; Xxxxx + xxxxxxxxx |
-| Xxxxx + Xxxxxx &xx; Xxxxx   | Xxxxx + xxxxx                        |
-| Xxxxx + Xxxxxx &xx; Xxxxx   | Xxxxx                                |
-| Xxxxxxxxxx                  | Xxxxxxxxxx + xxxxxxxx                |
-| Xxxxxxx                     | Xxxxxxxx Xxxxxxx                     |
-| Xxxxx &xx; Xxxxxx           | Xxxxx &xx; Xxxxxx + xxxxxxxxx        |
-| Xxxxx &xx; Xxxxxxxxx        | Xxxxx &xx; Xxxxxx + xxxxxxxxx        |
-| Xxxxx &xx; Xxxxxx           | Xxxxx &xx; Xxxxxx + xxxxxxxxx        |
-| Xxxxx &xx; Xxxx             | Xxxxx &xx; Xxxx + xxxxx              |
-| Xxxxx &xx; Xxxx             | Xxxxx &xx; Xxxxxx + xxxx             |
-| Xxxxx &xx; Xxxxxx           | Xxxxx &xx; Xxxxxx + xxxx             |
-| Xxxxx &xx; Xxxxxx           | Xxxxx &xx; Xxxxxx + xxxxxx           |
-| Xxxxx &xx; Xxxxxx           | Xxxxx &xx; Xxxxxx + xxxxxx           |
+| 書籍 & 参考資料 &gt; 子供向け | 子供 & 家族 &gt; 書籍 & 参考資料 |
+| ミュージック & ビデオ &gt; ビデオ   | 写真 & ビデオ                        |
+| ミュージック & ビデオ &gt; ミュージック   | 音楽                                |
+| 政府                  | 行政 & 政治                |
+| ファイナンス                     | パーソナル ファイナンス                     |
+| ゲーム &gt; アクション           | ゲーム &gt; アクション & アドベンチャー        |
+| ゲーム &gt; アドベンチャー        | ゲーム &gt; アクション & アドベンチャー        |
+| ゲーム &gt; アーケード           | ゲーム &gt; アクション & アドベンチャー        |
+| ゲーム &gt; カード             | ゲーム &gt; カード & ボード              |
+| ゲーム &gt; 子供             | ゲーム &gt; 家族 & 子供             |
+| ゲーム &gt; 家族向け           | ゲーム &gt; 家族 & 子供             |
+| ゲーム &gt; パズル           | ゲーム &gt; パズル & クイズ           |
+| ゲーム &gt; レーシング           | ゲーム &gt; レーシング & フライト           |
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,39 +1,39 @@
 ---
-xx.xxxxxxx: YXXXXXXY-YXYX-YYXY-XYYX-XYXYYYYYYXYX
-xxxxx: Xxxxxxxxxxxx xxxxxxxxxx
-xxxxxxxxxxx: Xxxxxxxxxxxx xxxxxxxxxx xxx xxx xxxx xxxxxxxxxx xx xxx xxxxxx xxxxx.
+ms.assetid: 0CBCEEA0-2B0E-44A1-A09A-F7A939632F3A
+title: Storyboarded animations
+description: Storyboarded animations are not just animations in the visual sense.
 ---
-# Xxxxxxxxxxxx xxxxxxxxxx
+# Storyboarded animations
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxxxxxxxx xxxxxxxxxx xxx xxx xxxx xxxxxxxxxx xx xxx xxxxxx xxxxx. X xxxxxxxxxxxx xxxxxxxxx xx x xxx xx xxxxxx xxx xxxxx xx x xxxxxxxxxx xxxxxxxx xx x xxxxxxxx xx xxxx. Xxx xx xxx xxxx xxxxxxx xxx xxxxx xxxx x xxxxxxxxxxxx xxxxxxxxx xxxx'x xxx xxxx xxx xxxxxxxxx xxxxxxx xx xx xxxxxx xxx xxxxxx xxxxx xxx x xxxxxxx, xx xxxx xx x xxxxxxx xxxxxxxx xx xxxx xxxxxxxxxx.
+Storyboarded animations are not just animations in the visual sense. A storyboarded animation is a way to change the value of a dependency property as a function of time. One of the main reasons you might need a storyboarded animation that's not from the animation library is to define the visual state for a control, as part of a control template or page definition.
 
-## Xxxxxxxxxxx xxxx Xxxxxxxxxxx xxx XXX
+## Differences with Silverlight and WPF
 
-Xx xxx xxx xxxxxxxx xxxx Xxxxxxxxx Xxxxxxxxxxx xx Xxxxxxx Xxxxxxxxxxxx Xxxxxxxxxx (XXX), xxxx xxxx xxxxxxx; xxxxxxxxx, xxx xxx xxxx xx.
+If you are familiar with Microsoft Silverlight or Windows Presentation Foundation (WPF), read this section; otherwise, you can skip it.
 
-Xx xxxxxxx, xxxxxxxx xxxxxxxxxxxx xxxxxxxxxx xx x Xxxxxxx Xxxxxxx xxx xx xxxx Xxxxxxxxxxx xx XXX. Xxx xxxxx xxx x xxxxxx xx xxxxxxxxx xxxxxxxxxxx:
+In general, creating storyboarded animations in a Windows Runtime app is like Silverlight or WPF. But there are a number of important differences:
 
--   Xxxxxxxxxxxx xxxxxxxxxx xxx xxx xxx xxxx xxx xx xxxxxxxx xxxxxxx x XX, xxx xxx xxxx xxxxxxxxxxx xxx xxxxxxx xxx xxx xxx xxxxxxxxxx xx xx xx. Xxxxxx xxxx xxxxx xxxxxxxxxxxx xxxxxxxxxx xx'x xxxxx x xxxxxx xxxxxx xxxxxxxx xx xxx xxxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxx. Xxxxx xxx xxxxxxx xxxxxx xxxxxxxxxxx XX xxxxxxxxxx xxxxxxx xxxxxxx xxxx xxx xxxxxxxxxxx xx xxxxxxxxx xxxxxxxx xxxxxxxxx. Xxx xxxx xxxx xxx [Xxxxxxxxxx xxxxxxxx](animations-overview.md).
--   Xx xxx Xxxxxxx Xxxxxxx, xxxx XXXX xxxxxxxx xxxxxxx xxxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxx xx xxxx xx xxxxx xxxxx-xx xxxxxxxx. Xxx xxx xxxx xxxx, XXX xxx Xxxxxxxxxxx xxxxxxxx xxxx'x xxxx x xxxxxxx xxxxxxxxx xxxxxxxx.
--   Xxx xxx xxxxxx xxxxxxxxxx xxx xxxxxx xxx xxx xx xxxxxxx xx x Xxxxxxx Xxxxxxx xxx, xx xxx xxxxxxxxx xxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxx xxxxx xxxxx xxx xxxxxxxxxxx xx xxxx XX. Xxxxxxxxxx xxxxx xxx xxxxxx xxxxxxxxxx xxxxx xxxxx xx x xxxxxxxxxxx xxxxxx xxx xxxxxx *xxxxxxxxx xxxxxxxxxx*. Xx'x xxxxxxxxx xxxxxxx xxx xxxxxxxx xx xxxx xxxxxxxxx xx xxxxxxxx xxxxxxx xxxxxxx xxx XX xxxxxx, xxxxx xx xxxx xxxxx xxxxxx xxxx xxxxx xxx xxxxx xxxxxxx xxx xxxxxx xx xxxxx xxx xxxxxxx xxxxxxx xx XX. X xxxxxxxxx xxxxxxxxx xxxx'x xxxxxxxxx xxxxxxxxx xxxxxx xxxxxxxxx xx xxx XX xxxxxx xxx xxxx xxx xxx xxxxxx xxxxxxxxxxxx xx xxxxxxx xxxxxxxxxx. Xx xxxx xxxxxxxxx xxxxxx x xxxxxx xxxxxx xx xxxxxxxxx xxx xxx xxxxxxxxx xx xxxxxx xxxxxxxxxxx xx xxx XX xxxxxx, xxx xxxxx xxxx xx xxxxxxxxxx xxxxxx xxx xxxxxxxxx xx xxx xx xxx. Xxxx'x xxxx xxx **XxxxxxXxxxxxxxxXxxxxxxxx** xxxxxxxx xx xxxxxxxx xxxxxxxxx xxxxxxx xx xxx. Xxx [Xxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxxx](./storyboarded-animations.md#dependent-and-independent-animations) xxx xxxx xxxx.
--   Xxxxxx xxxxxx xxxxxxxxx xxx xxx xxxxxxxxx xxxxxxxxx xx xxx Xxxxxxx Xxxxxxx.
+-   Storyboarded animations are not the only way to visually animate a UI, nor are they necessarily the easiest way for app developers to do so. Rather than using storyboarded animations it's often a better design practice to use theme animations and transition animations. These can quickly create recommended UI animations without getting into the intricacies of animation property targeting. For more info see [Animations overview](animations-overview.md).
+-   In the Windows Runtime, many XAML controls include theme animations and transition animations as part of their built-in behavior. For the most part, WPF and Silverlight controls didn't have a default animation behavior.
+-   Not all custom animations you create can run by default in a Windows Runtime app, if the animation system determines that the animation might cause bad performance in your UI. Animations where the system determines there could be a performance impact are called *dependent animations*. It's dependent because the clocking of your animation is directly working against the UI thread, which is also where active user input and other updates are trying to apply the runtime changes to UI. A dependent animation that's consuming extensive system resources on the UI thread can make the app appear unresponsive in certain situations. If your animation causes a layout change or otherwise has the potential to impact performance on the UI thread, you often need to explicitly enable the animation to see it run. That's what the **EnableDependentAnimation** property on specific animation classes is for. See [Dependent and independent animations](./storyboarded-animations.md#dependent-and-independent-animations) for more info.
+-   Custom easing functions are not currently supported in the Windows Runtime.
 
-## Xxxxxxxx xxxxxxxxxxxx xxxxxxxxxx
+## Defining storyboarded animations
 
-X xxxxxxxxxxxx xxxxxxxxx xx x xxx xx xxxxxx xxx xxxxx xx x xxxxxxxxxx xxxxxxxx xx x xxxxxxxx xx xxxx. Xxx xxxxxxxx xxx xxx xxxxxxxxx xx xxx xxxxxx x xxxxxxxx xxxx xxxxxxxx xxxxxxx xxx XX xx xxxx xxx. Xxx xxxxx XXXX xx xxxxx xxxxxxxx XX xxx xx xxx, xxxxxxx xx xx x XX-xxxxxxx xxxxxxxx xxx xxx xxxxxxxxx. Xxx xxxxxxx, xxx xxx xxxxxxx xxx xxxxx xx x [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242932), xx xxx xxxxx xxxxx xx x xxxxxx'x xxxxxxxxxx.
+A storyboarded animation is a way to change the value of a dependency property as a function of time. The property you are animating is not always a property that directly affects the UI of your app. But since XAML is about defining UI for an app, usually it is a UI-related property you are animating. For example, you can animate the angle of a [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932), or the color value of a button's background.
 
-Xxx xx xxx xxxx xxxxxxx xxx xxxxx xx xxxxxxxx x xxxxxxxxxxxx xxxxxxxxx xx xx xxx xxx x xxxxxxx xxxxxx xx xxx xx-xxxxxxxxxx x xxxxxxx, xxx xxx xxx xxxxxxxx xxxxxx xxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
+One of the main reasons you might be defining a storyboarded animation is if you are a control author or are re-templating a control, and you are defining visual states. For more info, see [Storyboarded animations for visual states](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
 
-Xxxxxxx xxx xxx xxxxxxxx xxxxxx xxxxxx xx x xxxxxx xxxxxxxxx xxx xx xxx, xxx xxxxxxxx xxx XXXx xxx xxxxxxxxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxx xx xxxx xxxxx xxxxxx xxxxx xx xxxxxx.
+Whether you are defining visual states or a custom animation for an app, the concepts and APIs for storyboarded animations that are described in this topic mostly apply to either.
 
-Xx xxxxx xx xx xxxxxxxx, xxx xxxxxxxx xxx xxx xxxxxxxxx xxxx x xxxxxxxxxxxx xxxxxxxxx xxxx xx x *xxxxxxxxxx xxxxxxxx*. X xxxxxxxxxx xxxxxxxx xx x xxx xxxxxxx xx xxx Xxxxxxx Xxxxxxx XXXX xxxxxxxxxxxxxx. Xxx xxxxxxxxx xxxxxxxxxx xx xxxx xxxxxx XX xxxxxxxx xxx xxxxxxxxx xxxxxxxxxxx xx xxxxxxxxxx xxxxxxxxxx, xx xxxx xxx xxx xxxxxxx xxxx, xxxxx xxxx-xxxxx xxxxxx, xx xxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208849) xxx xxxxxx xxx xxxxxxxx xxxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208817). Xxx xxxx xxxx xxxxx xxx xxxxxxxxxx xxxxxxxxxx xxxx, xxx [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185583).
+In order to be animated, the property you are targeting with a storyboarded animation must be a *dependency property*. A dependency property is a key feature of the Windows Runtime XAML implementation. The writeable properties of most common UI elements are typically implemented as dependency properties, so that you can animate them, apply data-bound values, or apply a [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) and target the property with a [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817). For more info about how dependency properties work, see [Dependency properties overview](https://msdn.microsoft.com/library/windows/apps/Mt185583).
 
-Xxxx xx xxx xxxx, xxx xxxxxx x xxxxxxxxxxxx xxxxxxxxx xx xxxxxxx XXXX. Xx xxx xxx x xxxx xxxx xx Xxxxxxxxx Xxxxxx Xxxxxx, xx xxxx xxxxxxx xxx XXXX xxx xxx. Xx'x xxxxxxxx xx xxxxxx x xxxxxxxxxxxx xxxxxxxxx xxxxx xxxx xxx, xxx xxxx'x xxxx xxxxxx.
+Most of the time, you define a storyboarded animation by writing XAML. If you use a tool such as Microsoft Visual Studio, it will produce the XAML for you. It's possible to define a storyboarded animation using code too, but that's less common.
 
-Xxx'x xxxx xx x xxxxxx xxxxxxx. Xx xxxx XXXX xxxxxxx, xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208962) xxxxxxxx xx xxxxxxxx xx x xxxxxxxxxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371) xxxxxx.
+Let's look at a simple example. In this XAML example, the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property is animated on a particular [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) object.
 
 ```xml
 <!-- Animates the rectangle's opacity. -->
@@ -48,19 +48,19 @@ Xxx'x xxxx xx x xxxxxx xxxxxxx. Xx xxxx XXXX xxxxxxx, xxx [**Xxxxxxx**](https://
       Width="300" Height="200" Fill="Blue"/>
 ```
       
-### Xxxxxxxxxxx xxx xxxxxx xx xxxxxxx
+### Identifying the object to animate
 
-Xx xxx xxxxxxxx xxxxxxx, xxx xxxxxxxxxx xxx xxxxxxxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208962) xxxxxxxx xx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371). Xxx xxx'x xxxxxxx xxx xxxxxxxxxx xx xxx xxxxxx xxxxxx. Xxxxxxx xxx xx xxxx xxxxxx xxx xxxxxxxxx xxxxxxxxxx xx x xxxxxxxxxx. Xxxxxxxxxxx xxx xxxxxxx xxxxxxx xx XXXX xxxx'x xxx xx xxx xxxxxxxxxxx xxxxxxxx xx xxx XXXX XX xxxxxxxxxx xx xxx xxxxxx xx xxxxxxx. Xxxxxxx, xxxx'xx xxxxxxx xxx xx xx x XXXX xxxxxxxx.
+In the previous example, the storyboard was animating the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property of a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371). You don't declare the animations on the object itself. Instead you do this within the animation definition of a storyboard. Storyboards are usually defined in XAML that's not in the immediately vicinity of the XAML UI definition of the object to animate. Instead, they're usually set up as a XAML resource.
 
-Xx xxxxxxx xx xxxxxxxxx xx x xxxxxx, xxx xxxxxxxxx xxx xxxxxx xx xxx xxxxxxxxxxx xxxxxxxxxxx xxxx. Xxx xxxxxx xxxxxx xxxxx xxx [x:Xxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204788) xx xxx XXXX XX xxxxxxxxxx xx xxxx xxx xxxxxx xxxx xxx xxxx xx xxxxxxx. Xxx xxxx xxxxxx xxx xxxxxx xx xxxxxxx xx xxxxxxx [**Xxxxxxxxxx.XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759823) xxxxxx xxx xxxxxxxxx xxxxxxxxxx. Xxx xxx xxxxx xx **Xxxxxxxxxx.XxxxxxXxxx**, xxx xxx xxx xxxx xxxxxx xx xxx xxxxxx xxxxxx, xxxxx xx xxxx xxx xxx xxxxxxx xxx xxxxxxxxx xxxx x:Xxxx xxxxxxxxx.
+To connect an animation to a target, you reference the target by its identifying programming name. You should always apply the [x:Name attribute](https://msdn.microsoft.com/library/windows/apps/Mt204788) in the XAML UI definition to name the object that you want to animate. You then target the object to animate by setting [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/Hh759823) within the animation definition. For the value of **Storyboard.TargetName**, you use the name string of the target object, which is what you set earlier and elsewhere with x:Name attribute.
 
-### Xxxxxxxxx xxx xxxxxxxxxx xxxxxxxx xx xxxxxxx
+### Targeting the dependency property to animate
 
-Xxx xxx x xxxxx xxx [**Xxxxxxxxxx.XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759824) xx xxx xxxxxxxxx. Xxxx xxxxxxxxxx xxxxx xxxxxxxx xxxxxxxx xx xxx xxxxxxxx xxxxxx xx xxxxxxxx.
+You set a value for [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/Hh759824) in the animation. This determines which specific property of the targeted object is animated.
 
-Xxxxxxxxx xxx xxxx xx xxxxxx x xxxxxxxx xxxx'x xxx xx xxxxxxxxx xxxxxxxx xx xxx xxxxxx xxxxxx, xxx xxxx xx xxxxxx xxxx xxxxxx xx xx xxxxxx-xxxxxxxx xxxxxxxxxxxx. Xxx xxxxx xxxx xx xx xxxx xx xxxxx xx xxxxx xxxx xxxx x xxx xx xxxxxxxxxxxx xxxxxx xxx xxxxxxxx xxxxxx xxxxx xxx xxx xxxxxxxxx x xxxxxxxx xxxx xxxx xxx xx xxxxxxxx ([**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225870), [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh673723)). Xxxx xxxxxxx xx xxxxxx *xxxxxxxx xxxxxxxxx*, xxx xxx xxxxxx xxx xxxxxxxxx x xxxxxxxx xx xxxx xxx xx xxxxx xx x *xxxxxxxx xxxx*.
+Sometimes you need to target a property that's not an immediate property of the target object, but that is nested more deeply in an object-property relationship. You often need to do this in order to drill down into a set of contributing object and property values until you can reference a property type that can be animated ([**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870), [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723)). This concept is called *indirect targeting*, and the syntax for targeting a property in this way is known as a *property path*.
 
-Xxxx'x xx xxxxxxx. Xxx xxxxxx xxxxxxxx xxx x xxxxxxxxxxxx xxxxxxxxx xx xx xxxxxx xxx xxxxx xx x xxxx xx xx xxx XX xx xxxxxxx xx xxxxx xx xxxxxxxxx xxxx xxx xxxxxxx xx xx x xxxxxxxxxx xxxxx. Xxx xxx xxxx xx xxxxxxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209665) xx x [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209652), xx xxxx xx xxxxx xxxx xxx xx xxxxx. Xxx'x xxxxxx xxxx x [**XxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243066) xx xxxxxxxx, xxx xxxx'x xxxxxxx. Xxxxxxx, xxxx xx xxx xxxxxxxxxx xx XX xxxxxxxx xxxx xxxxxx xxx xxxxxx'x xxxxx xxx xxxxxxxx xx xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Xxxxxxx, xxxx'xx xx xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228076). Xx xxxx xxx xxxxxxxx xxxx xx xxxxxx xxx xxxxxxxxx xx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242963) xxxxxxxx xx xxx [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962) xxxxx, xxxxx xx x **Xxxxx**-xxxxxxx xxxx xxxx'x xxxxxxxxx xxxx xxx xxxxx xxxxx-xxxxxxx XX xxxxxxxxxx. Xxx xxxx'x xxxx xxxx xxxxx xxxx xx xxxxx xx xxxxxxx x xxxxxxxx xxxx xxx xxxx xxxxxxxxx'x xxxxxxxx xxxxxxxxx:
+Here's an example. One common scenario for a storyboarded animation is to change the color of a part of an app UI or control in order to represent that the control is in a particular state. Say you want to animate the [**Foreground**](https://msdn.microsoft.com/library/windows/apps/BR209665) of a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), so that it turns from red to green. You'd expect that a [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066) is involved, and that's correct. However, none of the properties on UI elements that affect the object's color are actually of type [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723). Instead, they're of type [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076). So what you actually need to target for animation is the [**Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) property of the [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) class, which is a **Brush**-derived type that's typically used for these color-related UI properties. And here's what that looks like in terms of forming a property path for your animation's property targeting:
 
 ```xml
 <Storyboard x:Name="myStoryboard">
@@ -70,52 +70,49 @@ Xxxx'x xx xxxxxxx. Xxx xxxxxx xxxxxxxx xxx x xxxxxxxxxxxx xxxxxxxxx xx xx xxxxxx
     </Storyboard>
 ```
 
-Xxxx'x xxx xx xxxxx xx xxxx xxxxxx xx xxxxx xx xxx xxxxx:
+Here's how to think of this syntax in terms of its parts:
 
--   Xxxx xxx xx () xxxxxxxxxxx xxxxxxxx x xxxxxxxx xxxx.
--   Xxxxxx xxx xxxxxxxx xxxx, xxxxx'x x xxx, xxx xxxx xxx xxxxxxxxx x xxxx xxxx xxx x xxxxxxxx xxxx, xx xxxx xxx xxxxxxxx xxx'xx xxxxxxxxxxx xx xxxxxxxxxxx.
--   Xxx xxx xx xxx xxxxxx, xxx xxx xxxx'x xxx xxxxxx xxxxxxxxxxx, xx x xxxx. Xxxx xx xxxxxxxxxxx xx xxx xxxxxx xx xxxx, xxxx xxx xxxxx xx xxx xxxxx xxxxxxxx (xxxxx xx xx xxxxxx), xxxx xxxx xxx xxxxxx xxxxx, xxx xxxxxx x xxxxxxxx xxx-xxxxxxxx xx xxx xxxxx xxxxxxxx'x xxxxx.
+-   Each set of () parentheses encloses a property name.
+-   Within the property name, there's a dot, and that dot separates a type name and a property name, so that the property you're identifying is unambiguous.
+-   The dot in the middle, the one that's not inside parentheses, is a step. This is interpreted by the syntax to mean, take the value of the first property (which is an object), step into its object model, and target a specific sub-property of the first property's value.
 
-Xxxx'x x xxxx xx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxx xxx'xx xxxxxxxx xx xxxxx xxxxxxxx xxxxxxxx xxxxxxxxx, xxx xxxx xxxxxxxx xxxx xxxxxxx xxxx xxxxxxxxxxx xxx xxxxxx xxx'xx xxx:
+Here's a list of animation targeting scenarios where you'll probably be using indirect property targeting, and some property path strings that approximate the syntax you'll use:
 
--   Xxxxxxxxx xxx [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) xxxxx xx x [**XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243027), xx xxxxxxx xx x [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208980): `(UIElement.RenderTransform).(TranslateTransform.X)`
--   Xxxxxxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242963) xxxxxx x [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR210078) xx x [**XxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210108), xx xxxxxxx xx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR243378): `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
--   Xxxxxxxxx xxx [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) xxxxx xx x [**XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243027), xxxxx xx Y xx Y xxxxxxxxxx xx x [**XxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243022), xx xxxxxxx xx x [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208980):`(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
+-   Animating the [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) value of a [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), as applied to a [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980): `(UIElement.RenderTransform).(TranslateTransform.X)`
+-   Animating a [**Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) within a [**GradientStop**](https://msdn.microsoft.com/library/windows/apps/BR210078) of a [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/BR210108), as applied to a [**Fill**](https://msdn.microsoft.com/library/windows/apps/BR243378): `(Shape.Fill).(GradientBrush.GradientStops)[0].(GradientStop.Color)`
+-   Animating the [**X**](https://msdn.microsoft.com/library/windows/apps/BR243029) value of a [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027), which is 1 of 4 transforms in a [**TransformGroup**](https://msdn.microsoft.com/library/windows/apps/BR243022), as applied to a [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980):`(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)`
 
-Xxx'xx xxxxxx xxxx xx xxxxx xxxxxxxx xxx xxxxxx xxxxxxxx xxxxxx xxxxxxx. Xxxx xx xx xxxxxxx. Xx xxxxxxxxx xxxx xxx xxxxxxxx xxxx xxxxxxxxx xx xxx x xxxxxxxxxx xx xxxxx, xxx xxxx xxx xxxx xx xxxx (xx xxxxxxxxxx xx x xxxx-xxxxx xxxxx) xxxx xxxxxx xxxx xxxxxxxxxx.
+You'll notice some of these examples use square brackets around numbers. This is an indexer. It indicates that the property name preceding it has a collection as value, and that you want an item (as identified by a zero-based index) from within that collection.
 
-Xxx xxx xxxx xxxxxxx XXXX xxxxxxxx xxxxxxxxxx. Xxxxxx xxxxxxx xxx xxxx xxxxxxxx xxxxxxxx xxxx xx xxxxxxxxxxx, xxx xxxxxxx `(Canvas.Left)`. Xxx xxxx xxxx, xxx [Xxxxxxxxx XXXX xxxxxxxx xxxxxxxxxx](./storyboarded-animations.md#animating-xaml-attached-properties).
+You can also animate XAML attached properties. Always enclose the full attached property name in parentheses, for example `(Canvas.Left)`. For more info, see [Animating XAML attached properties](./storyboarded-animations.md#animating-xaml-attached-properties).
 
-Xxx xxxx xxxx xx xxx xx xxx x xxxxxxxx xxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxxxxx xx xxxxxxx, xxx [Xxxxxxxx-xxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185586) xx [**Xxxxxxxxxx.XxxxxxXxxxxxxx xxxxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759824).
+For more info on how to use a property path for indirect targeting of the property to animate, see [Property-path syntax](https://msdn.microsoft.com/library/windows/apps/Mt185586) or [**Storyboard.TargetProperty attached property**](https://msdn.microsoft.com/library/windows/apps/Hh759824).
 
-### Xxxxxxxxx xxxxx
+### Animation types
 
-Xxx Xxxxxxx Xxxxxxx xxxxxxxxx xxxxxx xxx xxxxx xxxxxxxx xxxxx xxxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxx xx:
+The Windows Runtime animation system has three specific types that storyboarded animations can apply to:
 
--   [
-            **Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), xxx xx xxxxxxxx xxxx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243136)
--   [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225870), xxx xx xxxxxxxx xxxx xxx [**XxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210346)
--   [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh673723), xxx xx xxxxxxxx xxxx xxx [**XxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243066)
+-   [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx), can be animated with any [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136)
+-   [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870), can be animated with any [**PointAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210346)
+-   [**Color**](https://msdn.microsoft.com/library/windows/apps/Hh673723), can be animated with any [**ColorAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243066)
 
-Xxxxx'x xxxx x xxxxxxxxxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) xxxxxxxxx xxxx xxx xxxxxx xxxxxxxxx xxxxxx, xxxxx xx'xx xxxxxxx xxxxx.
+There's also a generalized [**Object**](https://msdn.microsoft.com/library/windows/apps/xaml/system.object.aspx) animation type for object reference values, which we'll discuss later.
 
-### Xxxxxxxxxx xxx xxxxxxxx xxxxxx
+### Specifying the animated values
 
-Xx xxx xx'xx xxxxx xxx xxx xx xxxxxx xxx xxxxxx xxx xxx xxxxxxxx xx xxxxxxx, xxx xxxxx'x xxx xxxxxxxxx xxxx xxx xxxxxxxxx xxxx xx xxx xxxxxxxx xxxxx xxxx xx xxxx.
+So far we've shown you how to target the object and the property to animate, but haven't yet described what the animation does to the property value when it runs.
 
-Xxx xxxxxxxxx xxxxx xx'xx xxxxxxxxx xxx xxxxxxxxx xxxxxxxx xx xx **Xxxx**/**Xx**/**Xx** xxxxxxxxxx. Xxxx xxxxx xxxx xxx xxxxxxxxx xx xxxxxxxx xxx xxxxx xx x xxxxxxxx, xxxx xxxx, xxxxx xxx xx xxxx xx xxxxx xxxxxx xxxx xxxx xxxx xxx xxxxxxxxx xxxxxxxxxx:
+The animation types we've described are sometimes referred to as **From**/**To**/**By** animations. This means that the animation is changing the value of a property, over time, using one or more of these inputs that come from the animation definition:
 
--   Xxx xxxxx xxxxxx xx xxx **Xxxx** xxxxx. Xx xxx xxx'x xxxxxxx x **Xxxx** xxxxx, xxx xxxxxxxx xxxxx xx xxxxxxxx xxxxx xxx xxxxxxxx xxxxxxxx xxx xx xxx xxxx xxxxxx xxx xxxxxxxxx xxxx. Xxxx xxxxx xx x xxxxxxx xxxxx, x xxxxx xxxx x xxxxx xx xxxxxxxx, xx x xxxxx xxxxxxxxxxxx xxxxxxx xx x XXXX XX xxxxxxxxxx xx xxx xxxx.
--   Xx xxx xxx xx xxx xxxxxxxxx, xxx xxxxx xx xxx **Xx** xxxxx.
--   Xx, xx xxxxxxx xx xxxxxx xxxxx xxxxxxxx xx xxx xxxxxxxx xxxxx, xxx xxx **Xx** xxxxxxxx. Xxx'x xxx xxxx xxxxxxx xx xxx **Xx** xxxxxxxx.
--   Xx xxx xxx'x xxxxxxx x **Xx** xxxxx xx x **Xx** xxxxx, xxx xxxxxx xxxxx xx xxxxxxxx xxxxx xxx xxxxxxxx xxxxxxxx xxx xx xxx xxxx xxxxxx xxx xxxxxxxxx xxxx. Xx xxxx xxxx xxx'x xxxxxx xxxx x **Xxxx** xxxxx xxxxxxx xxxxxxxxx xxx xxxxxxxxx xxx'x xxxxxx xxx xxxxx xx xxx; xxx xxxxxxxx xxx xxxxxx xxxxxx xxx xxxx xxx xxxx.
--   Xx xxxxxxxxx xxxxxxxxx xxx xx xxxxx xxx xx **Xxxx**, **Xx** xx **Xx** xxx xxxxx xxx xxxxx.
+-   The value starts at the **From** value. If you don't specify a **From** value, the starting value is whatever value the animated property has at the time before the animation runs. This might be a default value, a value from a style or template, or a value specifically applied by a XAML UI definition or app code.
+-   At the end of the animation, the value is the **To** value.
+-   Or, to specify an ending value relative to the starting value, set the **By** property. You'd set this instead of the **To** property.
+-   If you don't specify a **To** value or a **By** value, the ending value is whatever value the animated property has at the time before the animation runs. In this case you'd better have a **From** value because otherwise the animation won't change the value at all; its starting and ending values are both the same.
+-   An animation typically has at least one of **From**, **By** or **To** but never all three.
 
-Xxx'x xxxxxxx xxx xxxxxxx XXXX xxxxxxx xxx xxxx xxxxx xx xxx **Xxxx** xxx **Xx** xxxxxx, xxx xxx **Xxxxxxxx**. Xxx xxxxxxx xx xxxxxxxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208962) xxxxxxxx, xxx xxx xxxxxxxx xxxx xx **Xxxxxxx** xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Xx xxx xxxxxxxxx xx xxx xxxx xx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243136).
+Let's revisit the earlier XAML example and look again at the **From** and **To** values, and the **Duration**. The example is animating the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property, and the property type of **Opacity** is [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). So the animation to use here is [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136).
 
-`From="1.0" To="0.0"` xxxxxxxxx xxxx xxxx xxx xxxxxxxxx xxxx, xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208962) xxxxxxxx xxxxxx xx x xxxxx xx Y xxx xxxxxxxx xx Y. Xx xxxxx xxxxx, xx xxxxx xx xxxx xxxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) xxxxxx xxxx xx xxx **Xxxxxxx** xxxxxxxx, xxxx xxxxxxxxx xxxx xxxxx xxx xxxxxx xx xxxxx xxxxxx xxx xxxx xxxx xx xxxxxxxxxxx.
+`From="1.0" To="0.0"` specifies that when the animation runs, the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property starts at a value of 1 and animates to 0. In other words, in terms of what these [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) values mean to the **Opacity** property, this animation will cause the object to start opaque and then fade to transparent.
 
 ```xml
 ...
@@ -128,67 +125,67 @@ Xxx'x xxxxxxx xxx xxxxxxx XXXX xxxxxxx xxx xxxx xxxxx xx xxx **Xxxx** xxx **Xx**
 ...
 ```
 
-`Duration="0:0:1"` xxxxxxxxx xxx xxxx xxx xxxxxxxxx xxxxx, xxxx xx, xxx xxxx xxx xxxxxxxxx xxxxx. X [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243207) xxxxxxxx xx xxxxxxxxx xx xxx xxxx xx *xxxxx*:*xxxxxxx*:*xxxxxxx*. Xxx xxxx xxxxxxxx xx xxxx xxxxxxx xx xxx xxxxxx.
+`Duration="0:0:1"` specifies how long the animation lasts, that is, how fast the rectangle fades. A [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) property is specified in the form of *hours*:*minutes*:*seconds*. The time duration in this example is one second.
 
-Xxx xxxx xxxx xxxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242377) xxxxxx xxx xxx XXXX xxxxxx, xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242377).
+For more info about [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) values and the XAML syntax, see [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377).
 
-**Xxxx**  Xxx xxx xxxxxxx xx xxxxxx, xx xxx xxxx xxxx xxxx xxx xxxxxxxx xxxxx xx xxx xxxxxx xxxxx xxxxxxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208962) xxxxxx xxxxx xx Y, xxxxxx xxxxxxx xxx xxxxxxx xx xx xxxxxxxx xxx, xxx xxxxx xxxx xxx **Xxxx** xxxxx, xxx xxxxxxxxx xxxxx xxx xxx xxxxxxxx xxxxxxxx xxxxx, xxx xxx xxxxxx xxxxx xx xxx xxxx.
+**Note**  For the example we showed, if you were sure that the starting state of the object being animated has [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) always equal to 1, either through the default or an explicit set, you could omit the **From** value, the animation would use the implicit starting value, and the result would be the same.
 
  
 
-### Xxxx/Xx/Xx xxx xxxxxxxx
+### From/To/By are nullable
 
-Xx xxxxxxxxx xxxxxxxxxx xxxx xxx xxx xxxx **Xxxx**, **Xx** xx **Xx** xxx xxxx xxx xxxxxxx xxx-xxxxxxxx xxxxxx xx xxxxxxxxxxx xxx x xxxxxxx xxxxx. **Xxxx**, **Xx** xx **Xx** xxxxxxxxxx xx xx xxxxxxxxx xxxx'x xx xxx xxxx xxx xxxxx xxxxx. Xxx xxxxxxx xxx xxxx xx xxx [**XxxxxxXxxxxxxxx.Xx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) xxxxxxxx xxx'x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Xxxxxxx xx'x x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) xxx **Xxxxxx**. Xxx xxx xxxxxxx xxxxx xx **xxxx**, xxx Y. Xxxx **xxxx** xxxxx xx xxx xxx xxxxxxxxx xxxxxx xxxxxxxxxxxxx xxxx xxx xxxxx'x xxxxxxxxxxxx xxx x xxxxx xxx x **Xxxx**, **Xx** xx **Xx** xxxxxxxx. Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX) xxxxx'x xxxx x **Xxxxxxxx** xxxx, xx xx xxxx [**XXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225864) xxxxxxx.
+We mentioned previously that you can omit **From**, **To** or **By** and thus use current non-animated values as substitutes for a missing value. **From**, **To** or **By** properties of an animation aren't of the type you might guess. For example the type of the [**DoubleAnimation.To**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.doubleanimation.easingfunction.aspx) property isn't [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx). Instead it's a [**Nullable**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx) for **Double**. And its default value is **null**, not 0. That **null** value is how the animation system distinguishes that you haven't specifically set a value for a **From**, **To** or **By** property. Visual C++ component extensions (C++/CX) doesn't have a **Nullable** type, so it uses [**IReference**](https://msdn.microsoft.com/library/windows/apps/BR225864) instead.
 
-### Xxxxx xxxxxxxxxx xx xx xxxxxxxxx
+### Other properties of an animation
 
-Xxx xxxx xxxxxxxxxx xxxxxxxxx xx xxxx xxxxxxx xxx xxx xxxxxxxx xx xxxx xxxx xxxx xxxxxxxx xxxx xxx xxxxxxxxxxx xxx xxxx xxxxxxxxxx.
+The next properties described in this section are all optional in that they have defaults that are appropriate for most animations.
 
-### **XxxxXxxxxxx**
+### **AutoReverse**
 
-Xx xxx xxx'x xxxxxxx xxxxxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243202) xx [**XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243211) xx xx xxxxxxxxx, xxxx xxxxxxxxx xxxx xxx xxxx, xxx xxx xxx xxx xxxx xx xxxxxxxxx xx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243207).
+If you don't specify either [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/BR243202) or [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) on an animation, that animation will run once, and run for the time as specified as the [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207).
 
-Xxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243202) xxxxxxxx xxxxxxxxx xxxxxxx x xxxxxxxx xxxxx xx xxxxxxx xxxxx xx xxxxxxx xxx xxx xx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243207). Xx xxx xxx xx xx **xxxx**, xxx xxxxxxxxx xxxxxxxx xxxxx xx xxxxxxx xxx xxx xx xxx xxxxxxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243207), xxxxxxxx xxx xxxxx xxxx xxx xxxxxx xxxxx (**Xx**) xxxx xx xxx xxxxxxxx xxxxx (**Xxxx**). Xxxx xxxxx xxxx xxx xxxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxx xxx xxxx xx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243207).
+The [**AutoReverse**](https://msdn.microsoft.com/library/windows/apps/BR243202) property specifies whether a timeline plays in reverse after it reaches the end of its [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207). If you set it to **true**, the animation reverses after it reaches the end of its declared [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207), changing the value from its ending value (**To**) back to its starting value (**From**). This means that the animation effectively runs for double the time of its [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207).
 
-### **XxxxxxXxxxxxxx**
+### **RepeatBehavior**
 
-Xxx [**XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243211) xxxxxxxx xxxxxxxxx xxxxxx xxx xxxx xxxxx x xxxxxxxx xxxxx, xx x xxxxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxx xxxxxx xxxxxx. Xx xxxxxxx, x xxxxxxxx xxx xx xxxxxxxxx xxxxx xx "Yx", xxxxx xxxxx xx xxxxx xxx xxxx xxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243207) xxx xxxx xxx xxxxxx.
+The [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211) property specifies either how many times a timeline plays, or a larger duration that the timeline should repeat within. By default, a timeline has an iteration count of "1x", which means it plays one time for its [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) and does not repeat.
 
-Xxx xxx xxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxxxxx, xxx xxxxxxx x xxxxx xx "Yx" xxxxxx xxx xxxxxxxxx xx xxx xxxxx xxxxx. Xx, xxx xxx xxxxxxx x xxxxxxxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242377) xxx [**XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243211). Xxxx **Xxxxxxxx** xxxxxx xx xxxxxx xxxx xxx **Xxxxxxxx** xx xxx xxxxxxxxx xxxxxx xx xx xxxxxxxxx. Xxx xxxxxxx, xx xxx xxxxxxx x **XxxxxxXxxxxxxx** xx "Y:Y:YY", xxx xx xxxxxxxxx xxxx xxx x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243207) xx "Y:Y:Y", xxxx xxxxxxxxx xxxxxxx xxxx xxxxx. Xx xxxxx xxx'x xxxxxx xxxxxx, xxx xxxxxxxxx xxxx xxxxxxxxx xx xxx xxxx xxxx xxx **XxxxxxXxxxxxxx** xxxx xx xxxxxxx, xxxxx xxxxx xx xxxxxxx xxxxxxx. Xxxxxxx xxx xxx xxxxxxx xxx xxxxxxx xxxxx "Xxxxxxx", xxxxx xxxxxx xxx xxxxxxxxx xx xxx xxxxxxxxxx xxxxx xx'x xxxxxxxxxxxx xxxxxxx.
+You can cause the animation to run multiple iterations, for example a value of "3x" causes the animation to run three times. Or, you can specify a different [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) for [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211). That **Duration** should be longer than the **Duration** of the animation itself to be effective. For example, if you specify a **RepeatBehavior** of "0:0:10", for an animation that has a [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) of "0:0:2", that animation repeats five times. If these don't divide evenly, the animation gets truncated at the time that the **RepeatBehavior** time is reached, which might be partway through. Finally you can specify the special value "Forever", which causes the animation to run infinitely until it's deliberately stopped.
 
-Xxx xxxx xxxx xxxxx [**XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210411) xxxxxx xxx xxx XXXX xxxxxx, xxx [**XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210411).
+For more info about [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411) values and the XAML syntax, see [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR210411).
 
-### **XxxxXxxxxxxx="Xxxx"**
+### **FillBehavior="Stop"**
 
-Xx xxxxxxx, xxxx xx xxxxxxxxx xxxx, xxx xxxxxxxxx xxxxxx xxx xxxxxxxx xxxxx xx xxx xxxxx **Xx** xx **Xx**-xxxxxxxx xxxxx xxxx xxxxx xxx xxxxxxxx xx xxxxxxxxx. Xxxxxxx, xx xxx xxx xxx xxxxx xx xxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243209) xxxxxxxx xx [**XxxxXxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR210306), xxx xxxxx xx xxx xxxxxxxx xxxxx xxxxxxx xx xxxxxxxx xxx xxxxx xxx xxxxxx xxx xxxxxxxxx xxx xxxxxxx, xx xxxx xxxxxxxxx xx xxx xxxxxxx xxxxxxxxx xxxxx xx xxxxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx xxxxxx (xxx xxxx xxxx xx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185583)).
+By default, when an animation ends, the animation leaves the property value as the final **To** or **By**-modified value even after its duration is surpassed. However, if you set the value of the [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) property to [**FillBehavior.Stop**](https://msdn.microsoft.com/library/windows/apps/BR210306), the value of the animated value reverts to whatever the value was before the animation was applied, or more precisely to the current effective value as determined by the dependency property system (for more info on this distinction, see [Dependency properties overview](https://msdn.microsoft.com/library/windows/apps/Mt185583)).
 
-### **XxxxxXxxx**
+### **BeginTime**
 
-Xx xxxxxxx, xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR243204) xx xx xxxxxxxxx xx "Y:Y:Y", xx xx xxxxxx xx xxxx xx xxx xxxxxxxxxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490) xxxx. Xxx xxxxx xxxxxx xxxx xx xxx **Xxxxxxxxxx** xxxxxxxx xxxx xxxx xxx xxxxxxxxx xxx xxx xxxx xx xxxxxxx xxx xxxxx xxxxx xx xxx xxxxxx xxxxxx xx xxxxxxx xxxxxxxxx, xx xx xxxxxx x xxxxxxxxxx xxxxx xxxxx.
+By default, the [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204) of an animation is "0:0:0", so it begins as soon as its containing [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) runs. You might change this if the **Storyboard** contains more than one animation and you want to stagger the start times of the others versus an initial animation, or to create a deliberate short delay.
 
-### **XxxxxXxxxx**
+### **SpeedRatio**
 
-Xx xxx xxxx xxxx xxxx xxx xxxxxxxxx xx x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490) xxx xxx xxxxxx xxx xxxx xxxx xx xxx xx xxxx xx xxx xxxxxxxxxx xxxxxxxx xx xxx **Xxxxxxxxxx**. Xx'x xxx xxxxxx **Xxxxxxxxxx** xxxx xxxxxxxxxx xxxxxxxx xxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242377) xxxx xxxxxxx xxxxx xxx xxxxxxxxxx xxx. Xxxx xxxxxxxx xxx'x xxxx xxxx xxxxx. Xxx xxxx xxxx xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243213).
+If you have more than one animation in a [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) you can change the time rate of one or more of the animations relative to the **Storyboard**. It's the parent **Storyboard** that ultimately controls how the [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) time elapses while the animations run. This property isn't used very often. For more info see [**SpeedRatio**](https://msdn.microsoft.com/library/windows/apps/BR243213).
 
-## Xxxxxxxx xxxx xxxx xxx xxxxxxxxx xx x **Xxxxxxxxxx**
+## Defining more than one animation in a **Storyboard**
 
-Xxx xxxxxxxx xx x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490) xxx xx xxxx xxxx xxx xxxxxxxxx xxxxxxxxxx. Xxx xxxxx xxxx xxxx xxxx xxx xxxxxxxxx xx xxx xxx xxxxxxxx xxxxxxx xxxxxxxxxx xx xxx xxxxxxxxxx xx xxx xxxx xxxxxx xxxxxx. Xxx xxxxxxx, xxx xxxxx xxxxxx xxxx xxx [**XxxxxxxxxX**](https://msdn.microsoft.com/library/windows/apps/BR228122) xxx [**XxxxxxxxxX**](https://msdn.microsoft.com/library/windows/apps/BR228124) xxxxxxxxxx xx x [**XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243027) xxxx xx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208980) xx x XX xxxxxxx; xxxx xxxx xxxxx xxx xxxxxxx xx xxxxxxxxx xxxxxxxxxx. Xxx xxxx xxx xxxxxxxxx xxxxxxxxxx xx xxxxxxxxxx xxxx, xxx xxx xxxxx xxxx xxx xxxxxxxxxx xx xx xxxx xx xxx xxxx **Xxxxxxxxxx** xxxxxxx xxx xxxxxx xxxx xxxxx xxx xxxxxxxxxx xx xx xxx xxxxxxxx.
+The contents of a [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) can be more than one animation definition. You might have more than one animation if you are applying related animations to two properties of the same target object. For example, you might change both the [**TranslateX**](https://msdn.microsoft.com/library/windows/apps/BR228122) and [**TranslateY**](https://msdn.microsoft.com/library/windows/apps/BR228124) properties of a [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) used as the [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980) of a UI element; this will cause the element to translate diagonally. You need two different animations to accomplish that, but you might want the animations to be part of the same **Storyboard** because you always want those two animations to be run together.
 
-Xxx xxxxxxxxxx xxx'x xxxx xx xx xxx xxxx xxxx, xx xxxxxx xxx xxxx xxxxxx. Xxxx xxx xxxx xxxxxxxxx xxxxxxxxx, xxx xxx'x xxxx xx xxxxx xxx xxxxxxxx xxxxxx.
+The animations don't have to be the same type, or target the same object. They can have different durations, and don't have to share any property values.
 
-Xxxx xxx xxxxxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490) xxxx, xxxx xx xxx xxxxxxxxxx xxxxxx xxxx xxx xxx.
+When the parent [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) runs, each of the animations within will run too.
 
-Xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490) xxxxx xxxxxxxx xxx x xxx xx xxx xxxx xxxxxxxxx xxxxxxxxxx xx xxx xxxxxxxxx xxxxx xx, xxxxxxx xxxx xxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210517) xxxx xxxxx. Xxxx, x **Xxxxxxxxxx** xxx xxxx x [**XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243211), xx x [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR243204). Xxx xxx'x xxxxxxx xxx xxxxx xx x **Xxxxxxxxxx** xxxxxx xxxxxx xxx xxxx xxx xxx xxxxxxxxx xxxxxxxxxx xx xxxx xxxx xxxxxxxx. Xx x xxxxxxx xxxx, xxx **Xxxxxxxx** xxxxxxxx xx xxx xx x **Xxxxxxxxxx** xxxxxxx xx xxx xxx xxxxx xxxxxxxxxx. Xx xxx xxxxx, xxx **Xxxxxxxxxx** xxx xx xxxxxxxx xxxxxxxx xxxx'x xxxxxxxxxx xxxx xxx xxxxxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242377) xxxxx xx xxx xxxxxxxxx xxxxxxxxxx. Xx xxxxxxxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243207) xx x **Xxxxxxxxxx** xxxx'x xxxxxxx xxxx xxx xx xxx xxxxx xxxxxxxxxx xxxx xxxxx xxxx xxxxxxxxx xx xxx xxx xxx, xxxxx xxx'x xxxxxxx xxxxxxxxx.
+The [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) class actually has a lot of the same animation properties as the animation types do, because both share the [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) base class. Thus, a **Storyboard** can have a [**RepeatBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243211), or a [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204). You don't usually set these on a **Storyboard** though unless you want all the contained animations to have that behavior. As a general rule, any **Timeline** property as set on a **Storyboard** applies to all its child animations. If let unset, the **Storyboard** has an implicit duration that's calculated from the longest [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR242377) value of the contained animations. An explicitly set [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) on a **Storyboard** that's shorter than one of its child animations will cause that animation to get cut off, which isn't usually desirable.
 
-X xxxxxxxxxx xxx'x xxxxxxx xxx xxxxxxxxxx xxxx xxxxxxx xx xxxxxx xxx xxxxxxx xxx xxxx xxxxxxxx xx xxx xxxx xxxxxx. Xx xxx xxx xxxx, xxx'xx xxx x xxxxxxx xxxxx xxxx xxx xxxxxxxxxx xxxxx xx xxx. Xxxx xxxxxxxxxxx xxxxxxx xxxx xx xxx xxxxxxxxxx xxx'x xxxxxxx xx xxxx xxxxxxx xx xxxxxxxxxxxx xxxxxxxxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR243204) xxxxxx xxx xxxxxxxxx. Xx xxx xxxxxx xxxx xx xxxxx x xxxx xxxxxxx xxxxxxxxx xxxxxxxx xx xxx xxxx xxxxxxxx xx x xxxxxx xxxxxxxxxx, xxx xxx xx xx xxxx xx xx xxx x xxx-xxxxx xxxxxxxxx. Xxx [Xxx-xxxxx xxx xxxxxx xxxxxxxx xxxxxxxxxx](key-frame-and-easing-function-animations.md).
+A storyboard can't contain two animations that attempt to target and animate the same property on the same object. If you try this, you'll get a runtime error when the storyboard tries to run. This restriction applies even if the animations don't overlap in time because of deliberately different [**BeginTime**](https://msdn.microsoft.com/library/windows/apps/BR243204) values and durations. If you really want to apply a more complex animation timeline to the same property in a single storyboard, the way to do this is to use a key-frame animation. See [Key-frame and easing function animations](key-frame-and-easing-function-animations.md).
 
-Xxx xxxxxxxxx xxxxxx xxx xxxxx xxxx xxxx xxx xxxxxxxxx xx xxx xxxxx xx x xxxxxxxx, xx xxxxx xxxxxx xxxx xxxx xxxxxxxx xxxxxxxxxxx. Xxxxx xxxx xxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxx xxxxxxx xxxxxxxxxxx xxx'x xxxxxx. Xxxxxxx xx'x xxxxxxxx xxxx xx xxx-xxxxxxx xxxxxxxxx xxxx xxx xxxxx xx x xxxxxxx xxxxxxxx xxxx xx xxxxxxxxx xxx **XxxxXxx** xxxxx xx xx xxxxxxxxx xxxx xxx xxxxxxxxxx xxx xx xxxx xx xxx xxxxxxx'x xxxxxx xxxxx xxxxx.
+The animation system can apply more than one animation to the value of a property, if those inputs come from multiple storyboards. Using this behavior deliberately for simultaneously running storyboards isn't common. However it's possible that an app-defined animation that you apply to a control property will be modifying the **HoldEnd** value of an animation that was previously run as part of the control's visual state model.
 
-## Xxxxxxxx x xxxxxxxxxx xx x xxxxxxxx
+## Defining a storyboard as a resource
 
-X [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490) xx xxx xxxxxxxxx xxxx xxx xxx xxxxxxxxx xxxxxxx xx. Xxx xxxxxxxxx xxxxxx xxx **Xxxxxxxxxx** xx x xxxxxxxx xxxx xx xxxxxxxxx xx xxx xxxxxx xxxx xxx xxxx xx xxxxxxx, xxxxxx xx xxxx-xxxxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208740) xx [**Xxxxxxxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242338).
+A [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) is the container that you put animation objects in. You typically define the **Storyboard** as a resource that is available to the object that you want to animate, either in page-level [**Resources**](https://msdn.microsoft.com/library/windows/apps/BR208740) or [**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/BR242338).
 
-Xxxx xxxx xxxxxxx xxxxx xxx xxx xxxxxxxx xxxxxxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490) xxxxx xx xxxxxxxxx xx x xxxx-xxxxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208740) xxxxxxxxxx, xxxxx xxx **Xxxxxxxxxx** xx x xxxxx xxxxxxxx xx xxx xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR227503). Xxxx xxx [x:Xxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204788). Xxxx xxxxxxxxx xx xxx xxx xxxxxx x xxxxxxxx xxxx xxx xxx **Xxxxxxxxxx**, xx xxxx xxxxx xxxxxxxx xx XXXX xx xxxx xx xxxx xxx xxxxx xx xxx **Xxxxxxxxxx** xxxxx.
+This next example shows how the previous example [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) would be contained in a page-level [**Resources**](https://msdn.microsoft.com/library/windows/apps/BR208740) definition, where the **Storyboard** is a keyed resource of the root [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503). Note the [x:Name attribute](https://msdn.microsoft.com/library/windows/apps/Mt204788). This attribute is how you define a variable name for the **Storyboard**, so that other elements in XAML as well as code can refer to the **Storyboard** later.
 
 ```xml
 <Page ...>
@@ -209,30 +206,30 @@ Xxxx xxxx xxxxxxx xxxxx xxx xxx xxxxxxxx xxxxxxx [**Xxxxxxxxxx**](https://msdn.m
 </Page>
 ```
 
-Xxxxxxxx xxxxxxxxx xx xxx XXXX xxxx xx x XXXX xxxx xxxx xx xxxx.xxxx xx xxx.xxxx xx x xxxxxx xxxxxxxx xxx xxx xx xxxxxxxx xxxxx xxxxxxxxx xx xxxx XXXX. Xxx xxxx xxx xxxxxx xxxxxxxxx xxxx xxxxxxxx xxxxx xxx xxxxx xxxx xxxx xxxx xx xxxxx. Xxx xxxx xxxx, xxx [XxxxxxxxXxxxxxxxxx xxx XXXX xxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt187273).
+Defining resources at the XAML root of a XAML file such as page.xaml or app.xaml is a common practice for how to organize keyed resources in your XAML. You also can factor resources into separate files and merge them into apps or pages. For more info, see [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/Mt187273).
 
-**Xxxx**  Xxxxxxx Xxxxxxx XXXX xxxxxxxx xxxxxxxxxxx xxxxxxxxx xxxxxx xxxxx xxx [x:Xxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204787) xx xxx [x:Xxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204788). Xxxxx x:Xxxx xxxxxxxxx xx xxxx xxxxxx xxx x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490), xxxxxxx xxx'xx xxxx xx xxxxxxxxx xx xx xxxxxxxx xxxx xxxxxxxxxx, xx xxxx xxx xxx xxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) xxxxxx xxx xxx xxx xxxxxxxxxx. Xx xxx xx xxx [x:Xxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204787), xxx'xx xxxx xx xxx [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208794) xxxxxxx xxxx xx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.item) xxxxxxx xx xxxxxxxx xx xx x xxxxx xxxxxxxx xxx xxxx xxxx xxx xxxxxxxxx xxxxxx xx **Xxxxxxxxxx** xx xxx xxx **Xxxxxxxxxx** xxxxxxx.
+**Note**  Windows Runtime XAML supports identifying resources either using the [x:Key attribute](https://msdn.microsoft.com/library/windows/apps/Mt204787) or the [x:Name attribute](https://msdn.microsoft.com/library/windows/apps/Mt204788). Using x:Name attribute is more common for a [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490), because you'll want to reference it by variable name eventually, so that you can call its [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) method and run the animations. If you do use [x:Key attribute](https://msdn.microsoft.com/library/windows/apps/Mt204787), you'll need to use [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) methods such as the [**Item**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.resourcedictionary.item) indexer to retrieve it as a keyed resource and then cast the retrieved object to **Storyboard** to use the **Storyboard** methods.
 
  
 
-Xxx xxxx xxx xxxx xxxxxxxxxx xxxxxx x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490) xxxx xxxx xxx xxx xxxxxxxxx xxx xxxxxx xxxxx xxxxxxxxxx xxx x xxxxxxx'x xxxxxx xxxxxxxxxx. Xx xxxx xxxx xxx **Xxxxxxxxxx** xxxxxxxx xxx xxxxxx xx xxxx x [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209007) xxxxxxxxx xxxx'x xxxxxx xxxx xxxxxx xx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208849) (xx'x xxx **Xxxxx** xxxx xx xxx xxxxx xxxxxxxx). Xxx xxx'x xxxx x xxx xx xxxx xxx xxxx **Xxxxxxxxxx** xx xxxx xxxx xxxxxxx xx'x xxx **XxxxxxXxxxx** xxxx xxx x xxxxxx xxxx xxxx xxx [**XxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) xxx xxxxxx. Xxx xxxxxx xxx xxxxxxxx xxx xxxxx xxxxxxxx xxxx xxxxxxxx XXXX [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208794) xxxxx xxxxxx xxxx xxxxxx xx x xxxx xx xxx **Xxxxxxxxx** xxxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
+You also put your animations within a [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) unit when you are declaring the visual state animations for a control's visual appearance. In that case the **Storyboard** elements you define go into a [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) container that's nested more deeply in a [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) (it's the **Style** that is the keyed resource). You don't need a key or name for your **Storyboard** in this case because it's the **VisualState** that has a target name that the [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) can invoke. The styles for controls are often factored into separate XAML [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/BR208794) files rather than placed in a page or app **Resources** collection. For more info, see [Storyboarded animations for visual states](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808).
 
-## Xxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxxx
+## Dependent and independent animations
 
-Xx xxxx xxxxx xx xxxx xx xxxxxxxxx xxxx xxxxxxxxx xxxxxx xxxxx xxx xxx xxxxxxxxx xxxxxx xxxxx. Xx xxxxxxxxxx, xxxxxxxxx xxxxxxxxx xxxxxxxxxxxxx xxxx xxx x Xxxxxxx Xxxxxxx xxx xxxxxxx xx xxx xxxxxx, xxx xxx xxxx xxxxxxxxx xxxx xxxxxxxxxx xxxxxxx. X Xxxxxxx Xxxxxxx xxx xxxxxx xxx x xxxx XX xxxxxx, xxx xxxx xxxxxx xx xxxxxxxxxxx xxx xxxxxxxx xxx xxxxxx xxxx xxxxxxx xxxxxxxxxxx. Xx xxxxxxxx, x Xxxxxxx Xxxxxxx xxx xxx x xxxxxxxxxxx xxxxxx, xxxxx xx xxxx xxx xxxxxxxxxxxxxx xxxxxxx xxxxxxxxxxx xxxxxx xxxx xxx xxxxx. Xxxx xxx xxxxxxx xxx XX, xxxxx'x xxxxxxxxx xx xxxxx x xxx xx xxxx xxx xxx XX xxxxxx. Xxx xxxxxx xxxx xxxxxx xxxxx xxxxx xx xxx xxxxxx xxxxx xxxxxx xxxxx xxxx xxxxxxxxx xxxxxxx xxxx xxxxxxx. Xxxx xx xxxxxxxxx xxx xxxxxxxxx xxx xxxxxx xxxxxxxx xxxxx xx xxx xxxxxxxx xxxxxxxx. Xx xxx'xx xxx xxxxxxx, xxxxx'x xxxx xxxx xx xxxxxxxxx xxx xxxx xxx XX xxxx xxxxxxxxxx, xx xxxx xxxxxx xxxxxxxxxxx xx xxxxx xxx xxxxxxxx xxxx xxx xxxx xx xxx xxxx XX xxxxxx.
+At this point we need to introduce some important points about how the animation system works. In particular, animation interacts fundamentally with how a Windows Runtime app renders to the screen, and how that rendering uses processing threads. A Windows Runtime app always has a main UI thread, and this thread is responsible for updating the screen with current information. In addition, a Windows Runtime app has a composition thread, which is used for precalculating layouts immediately before they are shown. When you animate the UI, there's potential to cause a lot of work for the UI thread. The system must redraw large areas of the screen using fairly short time intervals between each refresh. This is necessary for capturing the latest property value of the animated property. If you're not careful, there's risk that an animation can make the UI less responsive, or will impact performance of other app features that are also on the same UI thread.
 
-Xxx xxxxxxx xx xxxxxxxxx xxxx xx xxxxxxxxxx xx xxxx xxxx xxxx xx xxxxxxx xxxx xxx XX xxxxxx xx xxxxxx x *xxxxxxxxx xxxxxxxxx*. Xx xxxxxxxxx xxx xxxxxxx xx xxxx xxxx xx xx *xxxxxxxxxxx xxxxxxxxx*. Xxx xxxxxxxxxxx xxxxxxx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxxx xxx'x xxxx xxxxxxxxxx xx xxxxxxxxx xxxxx ([**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243136) xxx xx xx) xx xx xxxxxxxxx xxxxxxx. Xxxxxxx, xx'x xxxxxxxxxx xx xxxxx xxxxxxxx xxxxxxxxxx xxx xxx xxxxxxxxx, xxx xxxxx xxxxxxx xxxx xxxxxxxxxxx xxx xxxxxxxxxxx xx xxxxxxxx. Xxxxx xxx xxxxxxxxxxxxx xxxxx xxxx xx xx xxxxxxxxx xxxx xxxxxx XX, xxx xxxxxxxxx xxx xxxx xxxxxxx xxxxxx xx xxx XX xxxxxx, xxx xxx xxxxxxx xx xxxxxxx xx xxx xxxxxxxxxxx xxxxxx xx xx xxxxxxxxxxx xxxxxxxxx.
+The variety of animation that is determined to have some risk of slowing down the UI thread is called a *dependent animation*. An animation not subject to this risk is an *independent animation*. The distinction between dependent and independent animations isn't just determined by animation types ([**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) and so on) as we described earlier. Instead, it's determined by which specific properties you are animating, and other factors like inheritance and composition of controls. There are circumstances where even if an animation does change UI, the animation can have minimal impact to the UI thread, and can instead be handled by the composition thread as an independent animation.
 
-Xx xxxxxxxxx xx xxxxxxxxxxx xx xx xxx xxx xx xxxxx xxxxxxxxxxxxxxx:
+An animation is independent if it has any of these characteristics:
 
--   Xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243207) xx xxx xxxxxxxxx xx Y xxxxxxx (xxx Xxxxxxx)
--   Xxx xxxxxxxxx xxxxxxx [**XXXxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208962)
--   Xxx xxxxxxxxx xxxxxxx x xxx-xxxxxxxx xxxxx xx xxxxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911) xxxxxxxxxx: [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208980), [**Xxxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.projection.aspx), [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
--   Xxx xxxxxxxxx xxxxxxx [**Xxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759771) xx [**Xxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/Hh759772)
--   Xxx xxxxxxxxx xxxxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228076) xxxxx xxx xxxx x [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962), xxxxxxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242963)
--   Xxx xxxxxxxxx xx xx [**XxxxxxXxxxxxxxxXxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210320)
+-   The [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) of the animation is 0 seconds (see Caution)
+-   The animation targets [**UIElement.Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962)
+-   The animation targets a sub-property value of these [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) properties: [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208980), [**Projection**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.uielement.projection.aspx), [**Clip**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.clip)
+-   The animation targets [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) or [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772)
+-   The animation targets a [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) value and uses a [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962), animating its [**Color**](https://msdn.microsoft.com/library/windows/apps/BR242963)
+-   The animation is an [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320)
 
-**Xxxxxxx**  Xx xxxxx xxx xxxx xxxxxxxxx xx xx xxxxxxx xx xxxxxxxxxxx, xxx xxxx xxxxxxxxxx xxx `Duration="0"`. Xxx xxxxxxx, xx xxx xxxxxx `Duration="0"` xxxx xxxx XXXX, xxx xxxxxxxxx xx xxxxxxx xx xxxxxxxxx, xxxx xxxxxx xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR243169) xx xxx xxxxx xx "Y:Y:Y".
+**Caution**  In order for your animation to be treated as independent, you must explicitly set `Duration="0"`. For example, if you remove `Duration="0"` from this XAML, the animation is treated as dependent, even though the [**KeyTime**](https://msdn.microsoft.com/library/windows/apps/BR243169) of the frame is "0:0:0".
 
  
 
@@ -247,29 +244,29 @@ Xx xxxxxxxxx xx xxxxxxxxxxx xx xx xxx xxx xx xxxxx xxxxxxxxxxxxxxx:
 </Storyboard>
 ```
 
-Xx xxxx xxxxxxxxx xxxxx'x xxxx xxxxx xxxxxxxx, xx'x xxxxxxxx x xxxxxxxxx xxxxxxxxx. Xx xxxxxxx, xxx xxxxxxxxx xxxxxx xxx'x xxx x xxxxxxxxx xxxxxxxxx. Xx xxxxxx xxx xxxxxxx xx xxxxxxxxxx xxx xxxxxxx, xxx xxxxx xxx xxxx xx xxxxxx xxxx xxxxxxxxx xxxxxxx. Xxx xxx xxxxx xxx xxxx xxxxxxxxx, xxx xxx xxxx xxxxxxxxxxxx xxxxxx xxxx xxxx xxxxxxxxx xxxxxxxxx. Xx xxxxxx xxxx xxxxxxxxx, xxx xxx **XxxxxxXxxxxxxxxXxxxxxxxx** xxxxxxxx xx xxx xxxxxxxxx xxxxxx xx **xxxx**. (Xxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210517) xxxxxxxx xxxx xxxxxxxxxx xx xxxxxxxxx xxx x xxxxxxxxx xxxxxxxxxxxxxx xx xxx xxxxxxxx xxx xxxx'xx xxx xxxxx `EnableDependentAnimation`.)
+If your animation doesn't meet these criteria, it's probably a dependent animation. By default, the animation system won't run a dependent animation. So during the process of developing and testing, you might not even be seeing your animation running. You can still use this animation, but you must specifically enable each such dependent animation. To enable your animation, set the **EnableDependentAnimation** property of the animation object to **true**. (Each [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) subclass that represents an animation has a different implementation of the property but they're all named `EnableDependentAnimation`.)
 
-Xxx xxxxxxxxxxx xx xxxxxxxx xxxxxxxxx xxxxxxxxxx xxxxxxx xxxx xxx xxx xxxxxxxxx xx x xxxxxxxxx xxxxxx xxxxxx xx xxx xxxxxxxxx xxxxxx xxx xxx xxxxxxxxxxx xxxxxxxxxx. Xx xxxx xxxxxxxxxx xx xx xxxxx xxxx xxxxxxxxxx xx xxxx x xxxxxxxxxxx xxxx xxx xxx xxxxxxxxxxxxxx xx xxxx XX. Xxxxxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xx xxxxxxx xxx xxxxx xx x xxxx-xxxxx xxx. Xx xx'x xxxxxx xx xxxx xx xxxx xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxx xxxx xxx xxxx xxx'x XX xxxxxxxxxx. Xx xxxx'x xxxx xx xxxx xxx xxxx xx xxxxxxxxxx xxxx xxx'x xxxxxxxxxxx xxxxxxx xx xxxxxxxxxx xxxxxxxxxx xxxx xxx x xxx xx xxxxxx. Xxx xxxx xxxx xx xxxxxxxxxxx xxxx xxx xxxxxxxxx, xxx [Xxxxxxxx xxxxxxxxxx xxx xxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204774).
+The requirement of enabling dependent animations falling onto the app developer is a conscious design aspect of the animation system and the development experience. We want developers to be aware that animations do have a performance cost for the responsiveness of your UI. Poorly performing animations are difficult to isolate and debug in a full-scale app. So it's better to turn on only the dependent animations you really need for your app's UI experience. We didn't want to make too easy to compromise your app's performance because of decorative animations that use a lot of cycles. For more info on performance tips for animation, see [Optimize animations and media](https://msdn.microsoft.com/library/windows/apps/Mt204774).
 
-Xx xx xxx xxxxxxxxx, xxx xxx xxxx xxxxxx xx xxxxx xx xxx-xxxx xxxxxxx xxxx xxxxxx xxxxxxxx xxxxxxxxx xxxxxxxxxx, xxxx xxxxx xxxxx **XxxxxxXxxxxxxxxXxxxxxxxx** xx **xxxx**. Xxx [**Xxxxxxxx.XxxxxXxxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.allowdependentanimations).
+As an app developer, you can also choose to apply an app-wide setting that always disables dependent animations, even those where **EnableDependentAnimation** is **true**. See [**Timeline.AllowDependentAnimations**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.timeline.allowdependentanimations).
 
-**Xxx**  Xx xxx xxx xxxxxxxxx xxxxxx xxxxxx xxx x xxxxxxx xxxxx Xxxxxx Xxxxxx, xxx xxxxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxx xx xxxxx x xxxxxxxxx xxxxxxxxx xx x xxxxxx xxxxx xxxxxxxx.
+**Tip**  If you are composing visual states for a control using Visual Studio, the designer will produce warnings whenever you attempt to apply a dependent animation to a visual state property.
 
  
 
-## Xxxxxxxx xxx xxxxxxxxxxx xx xxxxxxxxx
+## Starting and controlling an animation
 
-Xxxxxxxxxx xx'xx xxxxx xxx xx xxx xxxxx'x xxxxxxxx xxxxx xx xxxxxxxxx xx xxx xx xx xxxxxxx! Xxxxx xxx xxxxxxxxx xx xxxxxxx xxx xx xxxxxxx, xxx xxxxx xxxxxxx xxxx xx xxxxxxxxx xx xxxxxxxxx xx XXXX xxx xxxxxx xxx xxx'x xxxxxx xxx. Xxx xxxx xxxxxxxxxx xxxxx xx xxxxxxxxx xx xxxx xxx xxxx'x xxxxxxx xx xxx xxx xxxxxxxx xx xxx xxxx xxxxxxxxxx. Xx xxx xxxxxxxx xxxxx, xxx xxxxx xx xxxxxxxxx xx xxxxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) xxxxxx xx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490) xxxx'x xxx xxxxxx xxx xxxx xxxxxxxxx. Xxx xxx'x xxxx xxxxxxx xxxx XXXX xxxxxxxx, xx xxxxxxxx xxx xx xx xxxxxx xxxx xxxxxxxxxx, xxx'xx xx xxxxx xx xxxx xxxx. Xxxx xxxx xxxxxx xx xxx xxxx-xxxxxx xxx xxx xxxxx xx xxxxxxxxxx xx xxxx xxx, xx xxxxxxx xxx xxxxx xx xxxx xxxxxxx xx xxx'xx xxxxxxxx x xxxxxx xxxxxxx xxxxx.
+Everything we've shown you so far doesn't actually cause an animation to run or be applied! Until the animation is started and is running, the value changes that an animation is declaring in XAML are latent and won't happen yet. You must explicitly start an animation in some way that's related to the app lifetime or the user experience. At the simplest level, you start an animation by calling the [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) method on the [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) that's the parent for that animation. You can't call methods from XAML directly, so whatever you do to enable your animations, you'll be doing it from code. That will either be the code-behind for the pages or components of your app, or perhaps the logic of your control if you're defining a custom control class.
 
-Xxxxxxxxx, xxx'xx xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) xxx xxxx xxx xxx xxxxxxxxx xxx xx xxx xxxxxxxx xxxxxxxxxx. Xxxxxxx, xxx xxx xxxx xxx [**Xxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx), [**Xxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop) xxxxxxx xx xxxxxxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490) xx xxx-xxxx, xx xxxx xx xxxxx XXXx xxxx xxx xxxx xxx xxxx xxxxxxxx xxxxxxxxx xxxxxxx xxxxxxxxx.
+Typically, you'll call [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) and just let the animation run to its duration completion. However, you can also use [**Pause**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx), [**Resume**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) and [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop) methods to control the [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) at run-time, as well as other APIs that are used for more advanced animation control scenarios.
 
-Xxxx xxx xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) xx x xxxxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxxx xxxxxx xxxxxxxxxx (`RepeatBehavior="Forever"`) xxxx xxxxxxxxx xxxx xxxxx xxx xxxx xxxxxxxxxx xx xx xxxxxxxx, xx xxx xxxxxxxxxxxx xxxx [**Xxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) xx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop).
+When you call [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) on a storyboard that contain animations that repeat infinitely (`RepeatBehavior="Forever"`) that animation runs until the page containing it is unloaded, or you specifically call [**Pause**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx) or [**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop).
 
-### Xxxxxxxx xx xxxxxxxxx xxxx xxx xxxx
+### Starting an animation from app code
 
-Xxx xxx xxxxxx xxxxx xxxxxxxxxx xxxxxxxxxxxxx, xx xx xxxxxxxx xx xxxx xxxxxxx. Xxx xxx xxxxxxxxx xxxx, xxx xxxxxxxxx xxx xx xxxxxx xxxxxxxx xxxxx xxxx xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208723) xx xxx xx xxx xxxxxxxxx xxxxxxx. Xxx **Xxxxxx** xxxxx xx x xxxx xxxxx xx xxx xxx xxxx xxxxxxx xx xxxx xxxxx xxx XX xx xxxxx xxx xxxxxxxxxxx, xxx xxx xxxxxxxxx xxx'x xx xxx xxx xx xxx xxxxxxxxx xxxxxxx xxxxxxx xxxx xx XX xxx xxxxx xxxxxxx.
+You can either start animations automatically, or in response to user actions. For the automatic case, you typically use an object lifetime event such as [**Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) to act as the animation trigger. The **Loaded** event is a good event to use for this because at that point the UI is ready for interaction, and the animation won't be cut off at the beginning because another part of UI was still loading.
 
-Xx xxxx xxxxxxx, xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed) xxxxx xx xxxxxxxx xx xxx xxxxxxxxx xx xxxx xxxx xxx xxxx xxxxxx xxx xxxxxxxxx, xxx xxxxxxxxx xxxxxx.
+In this example, the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.pointerpressed) event is attached to the rectangle so that when the user clicks the rectangle, the animation begins.
 
 ```xml
 <Rectangle PointerPressed="Rectangle_Tapped"
@@ -277,9 +274,9 @@ Xx xxxx xxxxxxx, xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/win
   Width="300" Height="200" Fill="Blue"/>
   ```
 
-Xxx xxxxx xxxxxxx xxxxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490) (xxx xxxxxxxxx) xx xxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) xxxxxx xx xxx **Xxxxxxxxxx**.
+The event handler start the [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) (the animation) by using the [**Begin**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.begin) method of the **Storyboard**.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ``` csharp
 myStoryboard.Begin();
 ```
@@ -290,42 +287,46 @@ myStoryboard->Begin();
 myStoryBoard.Begin()
 ```
 
-Xxx xxx xxxxxx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.timeline.completed.aspx) xxxxx xx xxx xxxx xxxxx xxxxx xx xxx xxxxx xxx xxxxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxx. Xxxx, xxx xxxxxxxxxxxxxxx xxxxxxxx xxxxxx/xxxxxxxxx xxxxxxxxxxxx, xxx [**XxxXxxxxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242358) xxxxxx xxx xx xxxxxx.
+You can handle the [**Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.timeline.completed.aspx) event if you want other logic to run after the animation has finished applying values. Also, for troubleshooting property system/animation interactions, the [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/BR242358) method can be useful.
 
-**Xxx**  Xxxxxxxx xxx xxx xxxxxx xxx xx xxx xxxxxxxx xxxxx xxx xxx xxxxxxxx xx xxxxxxxxx xxxx xxx xxxx, xxx xxxxx xxxx xx xxxxxx xxxxx xxxxxxx xx xxxxxxxxx xx xxxxxxxxxx xxxxxxx xxxxxx xx xxx xxxxxxxxx xxxxxxx xxx xxxx XX xxxxxxxx. Xxx xxxxxxx xxxxxxxxxx xxxxxx x xxxx xxxxxxxxxx XX xxxxxxxxxx xxxxxx xxx Xxxxxxx Xxxxxxx xxxx, xxx xxx xxxxxx xx xxx.
+**Tip**  Whenever you are coding for an app scenario where you are starting an animation from app code, you might want to review again whether an animation or transition already exists in the animation library for your UI scenario. The library animations enable a more consistent UI experience across all Windows Runtime apps, and are easier to use.
+
+ 
+
+### Animations for visual states
+
+The run behavior for a [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) that's used to define a control's visual state is different from how an app might run a storyboard directly. As applied to a visual state definition in XAML, the **Storyboard** is an element of a containing [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), and the state as a whole is controlled by using the [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) API. Any animations within will run according to their animation values and [**Timeline**](https://msdn.microsoft.com/library/windows/apps/BR210517) properties when the containing **VisualState** is used by a control. For more info, see [Storyboards for visual states](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808). For visual states, the apparent [**FillBehavior**](https://msdn.microsoft.com/library/windows/apps/BR243209) is different. If a visual state is changed to another state, all the property changes applied by the previous visual state and its animations are canceled, even if the new visual state doesn't specifically apply a new animation to a property.
+
+### **Storyboard** and **EventTrigger**
+
+There is one way to start an animation that can be declared entirely in XAML. However, this technique isn't widely used anymore. It's a legacy syntax from WPF and early versions of Silverlight prior to [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) support. This [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) syntax still works in Windows Runtime XAML for import/compatibility reasons, but only works for a trigger behavior based on the [**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) event; attempting to trigger off other events will throw exceptions or fail to compile. For more info, see [**EventTrigger**](https://msdn.microsoft.com/library/windows/apps/BR242390) or [**BeginStoryboard**](https://msdn.microsoft.com/library/windows/apps/BR243053).
+
+## Animating XAML attached properties
+
+It's not a common scenario, but you can apply an animated value to a XAML attached property. For more info on what attached properties are and how they work, see [Attached properties overview](https://msdn.microsoft.com/library/windows/apps/Mt185579). Targeting an attached property requires a [property-path syntax](https://msdn.microsoft.com/library/windows/apps/Mt185586) that encloses the property name in parentheses. You can animate the built-in attached properties such as [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/Hh759773) by using an [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/BR210320) that applies discrete integer values. However, an existing limitation of the Windows Runtime XAML implementation is that you cannot animate a custom attached property.
+
+## More animation types, and next steps for learning about animating your UI
+
+Up to now, we've shown the custom animations that are animating between two values, and then linearly interpolating the values as necessary while the animation runs. These are called **From**/**To**/**By** animations. But there's another animation type that enables you to declare intermediate values that fall between the start and end. These are called *key-frame animations*. There's also a way to alter the interpolation logic on either a **From**/**To**/**By** animation or a key-frame animation. This involves applying an easing function. For more info on these concepts, see [Key-frame and easing function animations](key-frame-and-easing-function-animations.md).
+
+## Related topics
+
+* [Property-path syntax](https://msdn.microsoft.com/library/windows/apps/Mt185586)
+* [Dependency properties overview](https://msdn.microsoft.com/library/windows/apps/Mt185583)
+* [Key-frame and easing function animations](key-frame-and-easing-function-animations.md)
+* [Storyboarded animations for visual states](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
+* [Control templates](https://msdn.microsoft.com/library/windows/apps/Mt210948)
+* [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490)
+* [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/Hh759824)
+ 
 
  
 
-### Xxxxxxxxxx xxx xxxxxx xxxxxx
 
-Xxx xxx xxxxxxxx xxx x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490) xxxx'x xxxx xx xxxxxx x xxxxxxx'x xxxxxx xxxxx xx xxxxxxxxx xxxx xxx xx xxx xxxxx xxx x xxxxxxxxxx xxxxxxxx. Xx xxxxxxx xx x xxxxxx xxxxx xxxxxxxxxx xx XXXX, xxx **Xxxxxxxxxx** xx xx xxxxxxx xx x xxxxxxxxxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209007), xxx xxx xxxxx xx x xxxxx xx xxxxxxxxxx xx xxxxx xxx [**XxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) XXX. Xxx xxxxxxxxxx xxxxxx xxxx xxx xxxxxxxxx xx xxxxx xxxxxxxxx xxxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210517) xxxxxxxxxx xxxx xxx xxxxxxxxxx **XxxxxxXxxxx** xx xxxx xx x xxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxxxx xxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808). Xxx xxxxxx xxxxxx, xxx xxxxxxxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243209) xx xxxxxxxxx. Xx x xxxxxx xxxxx xx xxxxxxx xx xxxxxxx xxxxx, xxx xxx xxxxxxxx xxxxxxx xxxxxxx xx xxx xxxxxxxx xxxxxx xxxxx xxx xxx xxxxxxxxxx xxx xxxxxxxx, xxxx xx xxx xxx xxxxxx xxxxx xxxxx'x xxxxxxxxxxxx xxxxx x xxx xxxxxxxxx xx x xxxxxxxx.
-
-### **Xxxxxxxxxx** xxx **XxxxxXxxxxxx**
-
-Xxxxx xx xxx xxx xx xxxxx xx xxxxxxxxx xxxx xxx xx xxxxxxxx xxxxxxxx xx XXXX. Xxxxxxx, xxxx xxxxxxxxx xxx'x xxxxxx xxxx xxxxxxx. Xx'x x xxxxxx xxxxxx xxxx XXX xxx xxxxx xxxxxxxx xx Xxxxxxxxxxx xxxxx xx [**XxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209007manager) xxxxxxx. Xxxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242390) xxxxxx xxxxx xxxxx xx Xxxxxxx Xxxxxxx XXXX xxx xxxxxx/xxxxxxxxxxxxx xxxxxxx, xxx xxxx xxxxx xxx x xxxxxxx xxxxxxxx xxxxx xx xxx [**XxxxxxxxxXxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208723) xxxxx; xxxxxxxxxx xx xxxxxxx xxx xxxxx xxxxxx xxxx xxxxx xxxxxxxxxx xx xxxx xx xxxxxxx. Xxx xxxx xxxx, xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242390) xx [**XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243053).
-
-## Xxxxxxxxx XXXX xxxxxxxx xxxxxxxxxx
-
-Xx'x xxx x xxxxxx xxxxxxxx, xxx xxx xxx xxxxx xx xxxxxxxx xxxxx xx x XXXX xxxxxxxx xxxxxxxx. Xxx xxxx xxxx xx xxxx xxxxxxxx xxxxxxxxxx xxx xxx xxx xxxx xxxx, xxx [Xxxxxxxx xxxxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185579). Xxxxxxxxx xx xxxxxxxx xxxxxxxx xxxxxxxx x [xxxxxxxx-xxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185586) xxxx xxxxxxxx xxx xxxxxxxx xxxx xx xxxxxxxxxxx. Xxx xxx xxxxxxx xxx xxxxx-xx xxxxxxxx xxxxxxxxxx xxxx xx [**Xxxxxx.XXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759773) xx xxxxx xx [**XxxxxxXxxxxxxxxXxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210320) xxxx xxxxxxx xxxxxxxx xxxxxxx xxxxxx. Xxxxxxx, xx xxxxxxxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx XXXX xxxxxxxxxxxxxx xx xxxx xxx xxxxxx xxxxxxx x xxxxxx xxxxxxxx xxxxxxxx.
-
-## Xxxx xxxxxxxxx xxxxx, xxx xxxx xxxxx xxx xxxxxxxx xxxxx xxxxxxxxx xxxx XX
-
-Xx xx xxx, xx'xx xxxxx xxx xxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxx xxx xxxxxx, xxx xxxx xxxxxxxx xxxxxxxxxxxxx xxx xxxxxx xx xxxxxxxxx xxxxx xxx xxxxxxxxx xxxx. Xxxxx xxx xxxxxx **Xxxx**/**Xx**/**Xx** xxxxxxxxxx. Xxx xxxxx'x xxxxxxx xxxxxxxxx xxxx xxxx xxxxxxx xxx xx xxxxxxx xxxxxxxxxxxx xxxxxx xxxx xxxx xxxxxxx xxx xxxxx xxx xxx. Xxxxx xxx xxxxxx *xxx-xxxxx xxxxxxxxxx*. Xxxxx'x xxxx x xxx xx xxxxx xxx xxxxxxxxxxxxx xxxxx xx xxxxxx x **Xxxx**/**Xx**/**Xx** xxxxxxxxx xx x xxx-xxxxx xxxxxxxxx. Xxxx xxxxxxxx xxxxxxxx xx xxxxxx xxxxxxxx. Xxx xxxx xxxx xx xxxxx xxxxxxxx, xxx [Xxx-xxxxx xxx xxxxxx xxxxxxxx xxxxxxxxxx](key-frame-and-easing-function-animations.md).
-
-## Xxxxxxx xxxxxx
-
-* [Xxxxxxxx-xxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185586)
-* [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185583)
-* [Xxx-xxxxx xxx xxxxxx xxxxxxxx xxxxxxxxxx](key-frame-and-easing-function-animations.md)
-* [Xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)
-* [Xxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt210948)
-* [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490)
-* [**Xxxxxxxxxx.XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759824)
- 
-
- 
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

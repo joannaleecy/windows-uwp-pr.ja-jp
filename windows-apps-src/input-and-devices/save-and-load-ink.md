@@ -1,42 +1,37 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxx xxxxxx xxxx xx x Xxxxxxxx Xxxxxxxxxxx Xxxxxx (XXX) xxxx xxxxx xxxxxxxx Xxx Xxxxxxxxxx Xxxxxx (XXX) xxxxxxxx.
-xxxxx: Xxxxx xxx xxxxxxxx xxx xxxxxxx
-xx.xxxxxxx: XYYXYXYX-XXYY-YYYY-YYYY-YXYXXYXXXYYY
-xxxxx: Xxxxx xxx xxxxxxxx xxx xxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Store ink stroke data in a Graphics Interchange Format (GIF) file using embedded Ink Serialized Format (ISF) metadata.
+title: Store and retrieve ink strokes
+ms.assetid: C96C9D2F-DB69-4883-9809-4A0DF7CEC506
+label: Store and retrieve ink strokes
+template: detail.hbs
 ---
 
-# Xxxxx xxx xxxxxxxx xxx xxxxxxx
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+# Store and retrieve ink strokes
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx xxxx xxxxxxx xxx xxxxx xxx xxxxxxxxx xxx xxxxxxxxxxx xxx xxx xxxxxxxx xxxx xxxx xxxxxxxx, xxxxxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxxx. Xxxx xxxx xxx xxx xxx-xxxxxxx, xxx xxxx xxx xxxxxx XXX xxxxx, xxxxxxxxx xxxxx-xxxxxxx xxxxxxxxxx xxxxxxxxxxxx.
-
-
-**Xxxxxxxxx XXXx**
-
--   [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535)
--   [**Xxxxxxx.XX.Xxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208524)
+Apps that support ink input can serialize and deserialize the ink metadata with full fidelity, maintaining all properties and behaviors. Apps that are not ink-enabled, can view the static GIF image, including alpha-channel background transparency.
 
 
+**Important APIs**
 
-**Xxxx**  
-XXX xx xxx xxxx xxxxxxx xxxxxxxxxx xxxxxxxxxxxxxx xx xxx. Xx xxx xx xxxxxxxx xxxxxx x xxxxxx xxxxxxxx xxxxxx, xxxx xx x XXX xxxx, xx xxxxxx xxxxxxxx xx xxx Xxxxxxxxx.
+-   [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)
+-   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
+
+
+
+**Note**  
+ISF is the most compact persistent representation of ink. It can be embedded within a binary document format, such as a GIF file, or placed directly on the Clipboard.
 
  
 
-## <span id="Save_ink_strokes_to_a_file">
-            </span>
-            <span id="save_ink_strokes_to_a_file">
-            </span>
-            <span id="SAVE_INK_STROKES_TO_A_FILE">
-            </span>Xxxx xxx xxxxxxx xx x xxxx
+## <span id="Save_ink_strokes_to_a_file"></span><span id="save_ink_strokes_to_a_file"></span><span id="SAVE_INK_STROKES_TO_A_FILE"></span>Save ink strokes to a file
 
 
-Xxxx, xx xxxxxxxxxxx xxx xx xxxx xxx xxxxxxx xxxxx xx xx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxxxx.
+Here, we demonstrate how to save ink strokes drawn on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
 
-1.  Xxxxx, xx xxx xx xxx XX.
+1.  First, we set up the UI.
 
-    Xxx XX xxxxxxxx "Xxxx", "Xxxx", xxx "Xxxxx" xxxxxxx, xxx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+    The UI includes "Save", "Load", and "Clear" buttons, and the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -65,9 +60,9 @@ Xxxx, xx xxxxxxxxxxx xxx xx xxxx xxx xxxxxxx xxxxx xx xx [**XxxXxxxxx**](https:/
     </Grid>
 ```
 
-2.  Xx xxxx xxx xxxx xxxxx xxx xxxxx xxxxxxxxx.
+2.  We then set some basic ink input behaviors.
 
-    Xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xx xxxxxxxxxx xx xxxxxxxxx xxxxx xxxx xxxx xxxx xxx xxx xxxxx xx xxx xxxxxxx ([**XxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922019)), xxx xxxxxxxxx xxx xxx xxxxx xxxxxx xx xxx xxxxxxx xxx xxxxxxxx.
+    The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), and listeners for the click events on the buttons are declared.
 
 ```    CSharp
 public MainPage()
@@ -88,13 +83,13 @@ public MainPage()
     }
 ```
 
-3.  Xxxxxxx, xx xxxx xxx xxx xx xxx xxxxx xxxxx xxxxxxx xx xxx **Xxxx** xxxxxx.
+3.  Finally, we save the ink in the click event handler of the **Save** button.
 
-    X [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207871) xxxx xxx xxxx xxxxxx xxxx xxx xxxx xxx xxx xxxxxxxx xxxxx xxx xxx xxxx xx xxxxx.
+    A [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) lets the user select both the file and the location where the ink data is saved.
 
-    Xxxx x xxxx xx xxxxxxxx, xx xxxx xx [**XXxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241731) xxxxxx xxx xx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241635).
+    Once a file is selected, we open an [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) stream set to [**ReadWrite**](https://msdn.microsoft.com/library/windows/apps/br241635).
 
-    Xx xxxx xxxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242114) xx xxxxxxxxx xxx xxx xxxxxxx xxxxxxx xx xxx [**XxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208492) xx xxx xxxxxx.
+    We then call [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/br242114) to serialize the ink strokes managed by the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) to the stream.
 
 ```    CSharp
 // Save ink data to a file.
@@ -159,24 +154,19 @@ public MainPage()
     }
 ```
 
-**Xxxx**  
-XXX xx xxx xxxx xxxxxxxxx xxxxxx xxx xxxxxx xxx xxxx. Xxxxxxx, xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701607) xxxxxx (xxxxxxxxxxxx xx xxx xxxx xxxxxxx) xxxx xxxxxxx xxxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxxxxx.
+**Note**  
+GIF is the only supported format for saving ink data. However, the [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) method (demonstrated in the next section) does support additional formats for backward compatibility.
 
  
 
-## <span id="Load_ink_strokes_from_a_file">
-            </span>
-            <span id="load_ink_strokes_from_a_file">
-            </span>
-            <span id="LOAD_INK_STROKES_FROM_A_FILE">
-            </span>Xxxx xxx xxxxxxx xxxx x xxxx
+## <span id="Load_ink_strokes_from_a_file"></span><span id="load_ink_strokes_from_a_file"></span><span id="LOAD_INK_STROKES_FROM_A_FILE"></span>Load ink strokes from a file
 
 
-Xxxx, xx xxxxxxxxxxx xxx xx xxxx xxx xxxxxxx xxxx x xxxx xxx xxxxxx xxxx xx xx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxxxx.
+Here, we demonstrate how to load ink strokes from a file and render them on an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
 
-1.  Xxxxx, xx xxx xx xxx XX.
+1.  First, we set up the UI.
 
-    Xxx XX xxxxxxxx "Xxxx", "Xxxx", xxx "Xxxxx" xxxxxxx, xxx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+    The UI includes "Save", "Load", and "Clear" buttons, and the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -205,9 +195,9 @@ Xxxx, xx xxxxxxxxxxx xxx xx xxxx xxx xxxxxxx xxxx x xxxx xxx xxxxxx xxxx xx xx [
     </Grid>
 ```
 
-2.  Xx xxxx xxx xxxx xxxxx xxx xxxxx xxxxxxxxx.
+2.  We then set some basic ink input behaviors.
 
-    Xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xx xxxxxxxxxx xx xxxxxxxxx xxxxx xxxx xxxx xxxx xxx xxx xxxxx xx xxx xxxxxxx ([**XxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922019)), xxx xxxxxxxxx xxx xxx xxxxx xxxxxx xx xxx xxxxxxx xxx xxxxxxxx.
+    The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)), and listeners for the click events on the buttons are declared.
 
 ```    CSharp
 public MainPage()
@@ -228,108 +218,73 @@ public MainPage()
     }
 ```
 
-3.  Xxxxxxx, xx xxxx xxx xxx xx xxx xxxxx xxxxx xxxxxxx xx xxx **Xxxx** xxxxxx.
+3.  Finally, we load the ink in the click event handler of the **Load** button.
 
-    X [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847) xxxx xxx xxxx xxxxxx xxxx xxx xxxx xxx xxx xxxxxxxx xxxx xxxxx xx xxxxxxxx xxx xxxxx xxx xxxx.
+    A [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) lets the user select both the file and the location from where to retrieve the saved ink data.
 
-    Xxxx x xxxx xx xxxxxxxx, xx xxxx xx [**XXxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241731) xxxxxx xxx xx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br241635).
+    Once a file is selected, we open an [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) stream set to [**Read**](https://msdn.microsoft.com/library/windows/apps/br241635).
 
-    Xx xxxx xxxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701607) xx xxxx, xx-xxxxxxxxx, xxx xxxx xxx xxxxx xxx xxxxxxx xxxx xxx [**XxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208492). Xxxxxxx xxx xxxxxxx xxxx xxx **XxxXxxxxxXxxxxxxxx** xxxxxx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xx xxxxxxxxxxx xxxxxx xxxx xx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+    We then call [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) to read, de-serialize, and load the saved ink strokes into the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492). Loading the strokes into the **InkStrokeContainer** causes the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) to immediately render them to the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
-```    CSharp
-// Save ink data to a file.
-    private async void btnSave_Click(object sender, RoutedEventArgs e)
+``` csharp
+// Load ink data from a file.
+private async void btnLoad_Click(object sender, RoutedEventArgs e)
+{
+    // Let users choose their ink file using a file picker.
+    // Initialize the picker.
+    Windows.Storage.Pickers.FileOpenPicker openPicker =
+        new Windows.Storage.Pickers.FileOpenPicker();
+    openPicker.SuggestedStartLocation =
+        Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
+    openPicker.FileTypeFilter.Add(".gif");
+    // Show the file picker.
+    Windows.Storage.StorageFile file = await openPicker.PickSingleFileAsync();
+    // User selects a file and picker returns a reference to the selected file.
+    if (file != null)
     {
-        // Get all strokes on the InkCanvas.
-        IReadOnlyList<InkStroke> currentStrokes = inkCanvas.InkPresenter.StrokeContainer.GetStrokes();
-
-        // Strokes present on ink canvas.
-        if (currentStrokes.Count > 0)
+        // Open a file stream for reading.
+        IRandomAccessStream stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
+        // Read from file.
+        using (var inputStream = stream.GetInputStreamAt(0))
         {
-            // Let users choose their ink file using a file picker.
-            // Initialize the picker.
-            Windows.Storage.Pickers.FileSavePicker savePicker = 
-                new Windows.Storage.Pickers.FileSavePicker();
-            savePicker.SuggestedStartLocation = 
-                Windows.Storage.Pickers.PickerLocationId.DocumentsLibrary;
-            savePicker.FileTypeChoices.Add(
-                "GIF with embedded ISF", 
-                new List<string>() { ".gif" });
-            savePicker.DefaultFileExtension = ".gif";
-            savePicker.SuggestedFileName = "InkSample";
-
-            // Show the file picker.
-            Windows.Storage.StorageFile file = 
-                await savePicker.PickSaveFileAsync();
-            // When chosen, picker returns a reference to the selected file.
-            if (file != null)
-            {
-                // Prevent updates to the file until updates are 
-                // finalized with call to CompleteUpdatesAsync.
-                Windows.Storage.CachedFileManager.DeferUpdates(file);
-                // Open a file stream for writing.
-                IRandomAccessStream stream = await file.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
-                // Write the ink strokes to the output stream.
-                using (IOutputStream outputStream = stream.GetOutputStreamAt(0))
-                {
-                    await inkCanvas.InkPresenter.StrokeContainer.SaveAsync(outputStream);
-                    await outputStream.FlushAsync();
-                }
-                stream.Dispose();
-
-                // Finalize write so other apps can update file.
-                Windows.Storage.Provider.FileUpdateStatus status =
-                    await Windows.Storage.CachedFileManager.CompleteUpdatesAsync(file);
-
-                if (status == Windows.Storage.Provider.FileUpdateStatus.Complete)
-                {
-                    // File saved.
-                }
-                else
-                {
-                    // File couldn&#39;t be saved.
-                }
-            }
-            // User selects Cancel and picker returns null.
-            else
-            {
-                // Operation cancelled.
-            }
+            await inkCanvas.InkPresenter.StrokeContainer.LoadAsync(stream);
         }
+        stream.Dispose();
     }
+    // User selects Cancel and picker returns null.
+    else
+    {
+        // Operation cancelled.
+    }
+}
 ```
 
-**Xxxx**  
-XXX xx xxx xxxx xxxxxxxxx xxxxxx xxx xxxxxx xxx xxxx. Xxxxxxx, xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701607) xxxxxx xxxx xxxxxxx xxx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxxxxx.
+**Note**  
+GIF is the only supported format for saving ink data. However, the [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/hh701607) method does support the following formats for backward compatibility.
 
-| Xxxxxx                    | Xxxxxxxxxxx                                                                                                                                                                                                                                                                                                                                                                                           |
+| Format                    | Description                                                                                                                                                                                                                                                                                                                                                                                           |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XxxXxxxxxxxxxXxxxxx       | Xxxxxxxxx xxx xxxx xx xxxxxxxxx xxxxx XXX. Xxxx xx xxx xxxx xxxxxxx xxxxxxxxxx xxxxxxxxxxxxxx xx xxx. Xx xxx xx xxxxxxxx xxxxxx x xxxxxx xxxxxxxx xxxxxx xx xxxxxx xxxxxxxx xx xxx Xxxxxxxxx.                                                                                                                                                                                                         |
-| XxxxYYXxxXxxxxxxxxxXxxxxx | Xxxxxxxxx xxx xxxx xx xxxxxxxxx xx xxxxxxxx xxx XXX xx x xxxxYY xxxxxx. Xxxx xxxxxx xx xxxxxxxx xx xxx xxx xx xxxxxxx xxxxxxxx xx xx XXX xx XXXX xxxx.                                                                                                                                                                                                                                                |
-| Xxx                       | Xxxxxxxxx xxx xxxx xx xxxxxxxxx xx xxxxx x XXX xxxx xxxx xxxxxxxx XXX xx xxxxxxxx xxxxxxxx xxxxxx xxx xxxx. Xxxx xxxxxxx xxx xx xx xxxxxx xx xxxxxxxxxxxx xxxx xxx xxx xxx-xxxxxxx xxx xxxxxxxx xxx xxxx xxx xxxxxxxx xxxx xx xxxxxxx xx xx xxx-xxxxxxx xxxxxxxxxxx. Xxxx xxxxxx xx xxxxx xxxx xxxxxxxxxxxx xxx xxxxxxx xxxxxx xx XXXX xxxx xxx xxx xxxxxx xx xxxxxx xx xxx xxx xxx-xxx xxxxxxxxxxxx. |
-| XxxxYYXxx                 | Xxxxxxxxx xxx xxxx xx xxxxxxxxx xx xxxxx x xxxxYY-xxxxxxx xxxxxxxxx XXX. Xxxx xxxxxx xx xxxxxxxx xxxx xxx xx xx xx xxxxxxx xxxxxxxx xx xx XXX xx XXXX xxxx xxx xxxxx xxxxxxxxxx xxxx xx xxxxx. X xxxxxxxx xxx xx xxxx xx xx xx XXX xxxxxx xxxxxxxxx xx xxxxxxx xxx xxx xxxxxxxxxxx xxx xxxx xx xxxxxxxx XXXX xxxxxxx Xxxxxxxxxx Xxxxxxxxxx Xxxxxxxx Xxxxxxxxxxxxxxx (XXXX).                           |
+| InkSerializedFormat       | Specifies ink that is persisted using ISF. This is the most compact persistent representation of ink. It can be embedded within a binary document format or placed directly on the Clipboard.                                                                                                                                                                                                         |
+| Base64InkSerializedFormat | Specifies ink that is persisted by encoding the ISF as a base64 stream. This format is provided so ink can be encoded directly in an XML or HTML file.                                                                                                                                                                                                                                                |
+| Gif                       | Specifies ink that is persisted by using a GIF file that contains ISF as metadata embedded within the file. This enables ink to be viewed in applications that are not ink-enabled and maintain its full ink fidelity when it returns to an ink-enabled application. This format is ideal when transporting ink content within an HTML file and for making it usable by ink and non-ink applications. |
+| Base64Gif                 | Specifies ink that is persisted by using a base64-encoded fortified GIF. This format is provided when ink is to be encoded directly in an XML or HTML file for later conversion into an image. A possible use of this is in an XML format generated to contain all ink information and used to generate HTML through Extensible Stylesheet Language Transformations (XSLT).                           |
 
  
 
  
 
-## <span id="Copy_and_paste_ink_strokes_with_the_clipboard">
-            </span>
-            <span id="copy_and_paste_ink_strokes_with_the_clipboard">
-            </span>
-            <span id="COPY_AND_PASTE_INK_STROKES_WITH_THE_CLIPBOARD">
-            </span>Xxxx xxx xxxxx xxx xxxxxxx xxxx xxx xxxxxxxxx
+## <span id="Copy_and_paste_ink_strokes_with_the_clipboard"></span><span id="copy_and_paste_ink_strokes_with_the_clipboard"></span><span id="COPY_AND_PASTE_INK_STROKES_WITH_THE_CLIPBOARD"></span>Copy and paste ink strokes with the clipboard
 
 
-Xxxx, xx xxxxxxxxxxx xxx xx xxx xxx xxxxxxxxx xx xxxxxxxx xxx xxxxxxx xxxxxxx xxxx.
+Here, we demonstrate how to use the clipboard to transfer ink strokes between apps.
 
-Xx xxxxxxx xxxxxxxxx xxxxxxxxxxxxx, xxx xxxxx-xx [**XxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208492) xxx xxx xxxx xxxxxxxx xxxxxxx xxx xx xxxx xxx xxxxxxx xx xxxxxxxx.
+To support clipboard functionality, the built-in [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) cut and copy commands require one or more ink strokes be selected.
 
-Xxx xxxx xxxxxxx, xx xxxxxx xxxxxx xxxxxxxxx xxxx xxxxx xx xxxxxxxx xxxx x xxx xxxxxx xxxxxx (xx xxxxx xxxxx xxxxxx). Xxx x xxxxxxxx xxxxxxx xx xxx xx xxxxxxxxx xxxxxx xxxxxxxxx, xxx [Xxxx-xxxxxxx xxxxx xxx xxxxxxxx xxxxxxxxxx](pen-and-stylus-interactions.md#passthrough) xx [Xxx xxx xxxxxx xxxxxxxxxxxx](pen-and-stylus-interactions.md).
+For this example, we enable stroke selection when input is modified with a pen barrel button (or right mouse button). For a complete example of how to implement stroke selection, see [Pass-through input for advanced processing](pen-and-stylus-interactions.md#passthrough) in [Pen and stylus interactions](pen-and-stylus-interactions.md).
 
-1.  Xxxxx, xx xxx xx xxx XX.
+1.  First, we set up the UI.
 
-    Xxx XX xxxxxxxx "Xxx", "Xxxx", "Xxxxx", xxx "Xxxxx" xxxxxxx, xxxxx xxxx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxx x xxxxxxxxx xxxxxx.
+    The UI includes "Cut", "Copy", "Paste", and "Clear" buttons, along with the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) and a selection canvas.
 
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -364,11 +319,11 @@ Xxx xxxx xxxxxxx, xx xxxxxx xxxxxx xxxxxxxxx xxxx xxxxx xx xxxxxxxx xxxx x xxx x
     </Grid>
 ```
 
-2.  Xx xxxx xxx xxxx xxxxx xxx xxxxx xxxxxxxxx.
+2.  We then set some basic ink input behaviors.
 
-    Xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xx xxxxxxxxxx xx xxxxxxxxx xxxxx xxxx xxxx xxxx xxx xxx xxxxx xx xxx xxxxxxx ([**XxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Xxxxxxxxx xxx xxx xxxxx xxxxxx xx xxx xxxxxxx xx xxxx xx xxxxxxx xxx xxxxxx xxxxxx xxx xxxxxxxxx xxxxxxxxxxxxx xxx xxxx xxxxxxxx xxxx.
+    The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) is configured to interpret input data from both pen and mouse as ink strokes ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Listeners for the click events on the buttons as well as pointer and stroke events for selection functionality are also declared here.
 
-    Xxx x xxxxxxxx xxxxxxx xx xxx xx xxxxxxxxx xxxxxx xxxxxxxxx, xxx [Xxxx-xxxxxxx xxxxx xxx xxxxxxxx xxxxxxxxxx](pen-and-stylus-interactions.md#passthrough) xx [Xxx xxx xxxxxx xxxxxxxxxxxx](pen-and-stylus-interactions.md) .
+    For a complete example of how to implement stroke selection, see [Pass-through input for advanced processing](pen-and-stylus-interactions.md#passthrough) in [Pen and stylus interactions](pen-and-stylus-interactions.md) .
 
 ```    CSharp
 public MainPage()
@@ -415,13 +370,13 @@ public MainPage()
     }
 ```
 
-3.  Xxxxxxx, xxxxx xxxxxx xxxxxx xxxxxxxxx xxxxxxx, xx xxxxxxxxx xxxxxxxxx xxxxxxxxxxxxx xx xxx xxxxx xxxxx xxxxxxxx xx xxx **Xxx**, **Xxxx**, xxx **Xxxxx** xxxxxxx.
+3.  Finally, after adding stroke selection support, we implement clipboard functionality in the click event handlers of the **Cut**, **Copy**, and **Paste** buttons.
 
-    Xxx xxx, xx xxxxx xxxx [**XxxxXxxxxxxxXxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br244232) xx xxx [**XxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208492) xx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922011).
+    For cut, we first call [**CopySelectedToClipboard**](https://msdn.microsoft.com/library/windows/apps/br244232) on the [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
 
-    Xx xxxx xxxx [**XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br244233) xx xxxxxx xxx xxxxxxx xxxx xxx xxx xxxxxx.
+    We then call [**DeleteSelected**](https://msdn.microsoft.com/library/windows/apps/br244233) to remove the strokes from the ink canvas.
 
-    Xxxxxxx, xx xxxxxx xxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxxxxx xxxxxx.
+    Finally, we delete all selection strokes from the selection canvas.
 
 ```    CSharp
 private void btnCut_Click(object sender, RoutedEventArgs e)
@@ -482,15 +437,14 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>Related articles
 
 
-* [Xxx xxx xxxxxx xxxxxxxxxxxx](pen-and-stylus-interactions.md)
-**Xxxxxxx**
-* [Xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Xxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Xxxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Pen and stylus interactions](pen-and-stylus-interactions.md)
+**Samples**
+* [Ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Simple ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Complex ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620314)
  
 
  
@@ -498,4 +452,8 @@ private void btnPaste_Click(object sender, RoutedEventArgs e)
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+

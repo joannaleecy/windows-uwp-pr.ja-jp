@@ -1,54 +1,55 @@
 ---
-Xxxxxxxxxxx: Xxxxxxxx x xxxx xx xxxxxxxx xx xxxx xx xxx xxxxxxxx xxxx xxx xxx xxx xx xxxx xxxx.
-xxxxx: Xxxxxxxx xx xxxxxxxx
-xx.xxxxxxx: YXXYYYYX-YYXY-YYYY-YYXY-YYXXXYXXXYYY
-xxxxx: Xxxxxxxx xx xxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: アプリで使うことができる一部のコントロールの機能別の一覧を示します。
+title: 機能別コントロール
+ms.assetid: 8DB4347B-91D6-4659-91F2-80ECF7BBB596
+label: 機能別コントロール
+template: detail.hbs
 ---
-# Xxxxxxxx xx xxxxxxxx
+# 機能別コントロール
 
-Xxx XXXX XX xxxxxxxxx xxx Xxxxxxx xxxxxxxx xx xxxxxxxxx xxxxxxx xx xxxxxxxx xxxx xxxxxxx XX xxxxxxxxxxx. Xxxx xx xxxxx xxxxxxxx xxxx x xxxxxx xxxxxxxxxxxxxx; xxxxxx xxxxxxxx xx xxx xxxxxxxxxx xxx xxxxx xxxxxxxx xx xxxxxxx, xxxx xx xxxxxx xxx xxxxx. 
+Windows の XAML UI フレームワークには、UI 開発をサポートする多くのコントロールのライブラリが用意されています。 これらのコントロールの一部は視覚的に表示されますが、それ以外のコントロールは他のコントロールまたはコンテンツ (画像やメディアなど) のコンテナーとして機能します。 
 
-Xxx xxx xxx xxxx xx xxx Xxxxxxx XX xxxxxxxx xx xxxxxx xx xxxxxxxxxxx xxx [**XXXX XX Xxxxxx xxxxxx**](http://go.microsoft.com/fwlink/p/?LinkId=619992). 
+[
+            **XAML UI の基本のサンプル**](http://go.microsoft.com/fwlink/p/?LinkId=619992) をダウンロードすると、Windows UI コントロールの多くを実際に見ることができます。 
 
-Xxxx'x x xxxx xx xxxxxxxx xx xxx xxxxxx XXXX xxxxxxxx xxx xxx xxx xx xxxx xxx. 
+アプリで使うことができる一般的な XAML コントロールの機能別の一覧を以下に示します。 
 
-## Xxxxxxx xxx xxxxxxxx
+## アプリ バーとコマンド
 
-### Xxx xxx
-X xxxxxxx xxx xxxxxxxxxx xxxxxxxxxxx-xxxxxxxx xxxxxxxx. Xxx Xxxxxxx xxx.
+### アプリ バー
+アプリ特有のコマンドを表示するツール バー。 「コマンド バー」をご覧ください。
 
-Xxxxxxxxx: [XxxXxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.aspx) 
+リファレンス: [AppBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbar.aspx) 
 
-### Xxx xxx xxxxxx
-X xxxxxx xxx xxxxxxx xxxxxxxx xxxxx xxx xxx xxxxxxx.
+### アプリ バーのボタン
+アプリ バー スタイルを使ってコマンドを表示するボタン。
 
-*Xxx xxx xxxxxx xxxxx* 
+*アプリ バーのボタン アイコン* 
 
-Xxxxxxxxx: [XxxXxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx), [XxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.symbolicon.aspx), [XxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.bitmapicon.aspx), [XxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.fonticon.aspx), [XxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pathicon.aspx) 
+リファレンス: [AppBarButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx)、[SymbolIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.symbolicon.aspx)、[BitmapIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.bitmapicon.aspx)、[FontIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.fonticon.aspx)、[PathIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pathicon.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxx xxx xxx xxxxxxx xxx xxxxxxx xxxxx](app-bars.md) 
+デザインと使い方: [アプリ バーとコマンド バーのコントロールのガイド](app-bars.md) 
 
-Xxxxxx xxxx: [XXXX Xxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)
 
-### Xxx xxx xxxxxxxxx
-Xxxxxxxx xxxxxxxxx xxxxxx xx xxxxxxxx xx x xxxxxxx xxx.
+### アプリ バーの区分線
+コマンド バーのコマンドのグループを視覚的に区切ります。
 
-Xxxxxxxxx: [XxxXxxXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 
+リファレンス: [AppBarSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarseparator.aspx) 
 
-Xxxxxx xxxx: [XXXX Xxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)
 
-### Xxx xxx xxxxxx xxxxxx
-X xxxxxx xxx xxxxxxxx xxxxxxxx xx x xxxxxxx xxx.
+### アプリ バーのトグル ボタン
+コマンド バーでコマンドを切り替えるボタン。
 
-Xxxxxxxxx: [XxxXxxXxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 
+リファレンス: [AppBarToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbartogglebutton.aspx) 
 
-Xxxxxx xxxx: [XXXX Xxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)
 
-### Xxxxxxx xxx
-X xxxxxxxxxxx xxx xxx xxxx xxxxxxx xxx xxxxxxxx xx xxx xxx xxxxxx xxxxxxxx.
+### コマンド バー
+アプリ バーのボタン要素のサイズ変更を処理する専用のアプリ バー。
 
-*Xxxxxxx xxx xxxxxxx* 
+*コマンド バー コントロール* 
 
 ```xaml
 <CommandBar>
@@ -57,64 +58,64 @@ X xxxxxxxxxxx xxx xxx xxxx xxxxxxx xxx xxxxxxxx xx xxx xxx xxxxxx xxxxxxxx.
     <AppBarButton Icon="Play" Label="Play" Click="AppBarButton_Click"/>
 </CommandBar>
 ```
-Xxxxxxxxx: [XxxxxxxXxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx) 
+リファレンス: [CommandBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxx xxx xxx xxxxxxx xxx xxxxxxx xxxxx](app-bars.md)
+デザインと使い方: [アプリ バーとコマンド バーのコントロールのガイド](app-bars.md)
 
-Xxxxxx xxxx: [XXXX Xxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=620019)
+サンプル コード: [XAML コマンド実行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620019)
 
-## Xxxxxxx
+## ボタン
 
-### Xxxxxx
-X xxxxxxx xxxx xxxxxxxx xx xxxx xxxxx xxx xxxxxx x **Xxxxx** xxxxx.
+### ボタン
+ユーザーの入力に応答して **Click** イベントを発生させるコントロール。
  
-*X xxxxxxxx xxxxxx xxx x xxxxxx xxxxxx* 
+*標準のボタンとスタイルを適用したボタン* 
 
 ```xaml
 <Button x:Name="button1" Content="Button" 
         Click="Button_Click" />
 ```
 
-Xxxxxxxxx: [Xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.button.aspx) 
+リファレンス: [Button](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.button.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxxxx xxxxxxx xxxxx](buttons.md) 
+デザインと使い方: [ボタン コントロールのガイド](buttons.md) 
 
-### Xxxxxxxxx
-Xxx Xxxxxxxxx xxxxxx.
+### ハイパーリンク
+「ハイパーリンク ボタン」をご覧ください。
 
-### Xxxxxxxxx xxxxxx
-X xxxxxx xxxx xxxxxxx xx xxxxxx xx xxxx, xxxxxxxxx xxxx xxxxxx xxxxxx xxxx xxxxxx.
+### ハイパーリンク ボタン
+マークアップされたテキストとして表示されるボタン。通常はテキスト ブロック内でインラインで使われます。
 
-*Xxxxxxxxx xxxxxx* 
+*ハイパーリンク ボタン* 
 
 ```xaml
 <HyperlinkButton Content="www.microsoft.com" NavigateUri="http://www.microsoft.com"/>
 ```
 
-Xxxxxxxxx: [XxxxxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
+リファレンス: [HyperlinkButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hyperlinkbutton.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxxxxxxx xxxxxxx xxxxx](hyperlinks.md)
+デザインと使い方: [ハイパーリンク コントロールのガイド](hyperlinks.md)
 
-### Xxxxxx xxxxxx
-X xxxxxx xxxx xxxxxx xxx **Xxxxx** xxxxx xxxxxxxxxx xxxx xxx xxxx xx'x xxxxxxx xxxxx xx'x xxxxxxxx. 
+### 繰り返しボタン
+押されたときから離されるまでの間、繰り返し **Click** イベントを発生させるボタン。 
 
-*X xxxxxx xxxxxx xxxxxxx* 
+*繰り返しボタン コントロール* 
 
 ```xaml
 <RepeatButton x:Name="repeatButton1" Content="Repeat Button" 
               Click="RepeatButton_Click" />
 ```
 
-Xxxxxxxxx: [XxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.repeatbutton.aspx) 
+リファレンス: [RepeatButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.repeatbutton.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxxxx xxxxxxx xxxxx](buttons.md) 
+デザインと使い方: [ボタン コントロールのガイド](buttons.md) 
 
-## Xxxxxxxxxx/xxxx xxxxxxxx
+## コレクション コントロールとデータ コントロール
 
-### Xxxx xxxx
-X xxxxxxx xxxx xxxxxxxx x xxxxxxxxxx xx xxxxx xxxx xxx xxxx xxx xxxx xxxxxxx, xxx xxxx xx x xxxx.
+### FlipView
+ユーザーが 1 つずつめくって表示することができる項目のコレクションを表示するコントロール。
 
-*Xxxx xxxx xxxxxxx* 
+*FlipView コントロール* 
 
 ```xaml
 <FlipView x:Name="flipView1" SelectionChanged="FlipView_SelectionChanged">
@@ -124,12 +125,12 @@ X xxxxxxx xxxx xxxxxxxx x xxxxxxxxxx xx xxxxx xxxx xxx xxxx xxx xxxx xxxxxxx, xx
 </FlipView>
 ```
 
-Xxxxxxxxx: [XxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx) 
+リファレンス: [FlipView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxx xxxx xxxxxxx xxxxx](flipview.md) 
+デザインと使い方: [FlipView コントロールのガイド](flipview.md) 
 
-### Xxxx xxxx
-X xxxxxxx xxxx xxxxxxxx x xxxxxxxxxx xx xxxxx xx xxxx xxx xxxxxxx xxxx xxx xxxxxx xxxxxxxxxxxx.
+### グリッド ビュー
+横方向にスクロールできる複数行と複数列で項目のコレクションを表示するコントロール。
 
 ```xaml
 <GridView x:Name="gridView1" SelectionChanged="GridView_SelectionChanged">
@@ -138,14 +139,14 @@ X xxxxxxx xxxx xxxxxxxx x xxxxxxxxxx xx xxxxx xx xxxx xxx xxxxxxx xxxx xxx xxxxx
 </GridView>
 ```
 
-Xxxxxxxxx: [XxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) 
+リファレンス: [GridView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.gridview.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxx](lists.md) 
+デザインと使い方: [リスト](lists.md) 
 
-Xxxxxx xxxx: [XxxxXxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+サンプル コード: [ListView のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619900)
 
-### Xxx
-X xxxxxxxxx xxxxxxx xxxx xxxx xxx xxxx xxxx xxx xxxxxxxx xx xxxxxxxxx xxxxxxxx xx xxxxxxx.
+### ハブ
+ユーザーが、コンテンツの異なるセクションの表示とナビゲートを実行できるようにするコンテナー コントロール。
 
 ```xaml
 <Hub>
@@ -158,23 +159,23 @@ X xxxxxxxxx xxxxxxx xxxx xxxx xxx xxxx xxxx xxx xxxxxxxx xx xxxxxxxxx xxxxxxxx x
 </Hub>
 ```
 
-Xxxxxxxxx: [Xxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 
+リファレンス: [Hub](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.hub.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxx xxxxxxx xxxxx](hub.md) 
+デザインと使い方: [ハブ コントロールのガイド](hub.md) 
 
-Xxxxxx xxxx:[XXXX Xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=309828)
+サンプル コード: [XAML ハブ コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=309828)
 
-### Xxxxx xxxxxxx
-X xxxxxxx xxxx xxxxxxxx x xxxxxxxxxx xx xxxxx xx x XX xxxxxxxxx xx x xxxx xxxxxxxx. 
+### 項目コントロール
+データ テンプレートで指定された UI にある項目のコレクションを表示するコントロール。 
 
 ```xaml
 <ItemsControl/>
 ```
 
-Xxxxxxxxx: [XxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx) 
+リファレンス: [ItemsControl](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx) 
 
-### Xxxx xxxx
-X xxxxxxx xxxx xxxxxxxx x xxxxxxxxxx xx xxxxx xx x xxxx xxxx xxx xxxxxx xxxxxxxxxx.
+### リスト ビュー
+縦方向にスクロールできるリストで項目のコレクションを表示するコントロール。
 
 ```xaml
 <ListView x:Name="listView1" SelectionChanged="ListView_SelectionChanged">
@@ -183,73 +184,73 @@ X xxxxxxx xxxx xxxxxxxx x xxxxxxxxxx xx xxxxx xx x xxxx xxxx xxx xxxxxx xxxxxxxx
 </ListView>
 ```
 
-Xxxxxxxxx: [XxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) 
+リファレンス: [ListView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listview.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxx](lists.md) 
+デザインと使い方: [リスト](lists.md) 
 
-Xxxxxx xxxx: [XxxxXxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619900)
+サンプル コード: [ListView のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619900)
 
-## Xxxx xxx xxxx xxxxxxxx
+## 日付と時刻コントロール
 
-### Xxxxxxxx xxxx xxxxxx
-X xxxxxxx xxxx xxxx x xxxx xxxxxx x xxxx xxxxx x xxxx-xxxx xxxxxxxx xxxxxxx.
+### カレンダーの日付の選択コントロール
+ドロップダウン カレンダー表示を使って、ユーザーが日付を選択できるコントロール。
 
-*X xxxxxxxx xxxx xxxxxx xxxx xxxx xxxxxxxx xxxx* 
+*カレンダー ビューが開いたカレンダーの日付の選択コントロール* 
 
 ```xaml
 <CalendarDatePicker/>
 ```
 
-Xxxxxxxxx: [XxxxxxxxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx) 
+リファレンス: [CalendarDatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxxxxx, xxxx, xxx xxxx xxxxxxxx](date-and-time.md)
+デザインと使い方: [カレンダー、日付、時刻コントロール](date-and-time.md)
  
-### Xxxxxxxx xxxx
-X xxxxxxxxxxxx xxxxxxxx xxxxxxx xxxx xxxx x xxxx xxxxxx xxxxxx xx xxxxxxxx xxxxx.
+### カレンダー ビュー
+ユーザーが 1 つまたは複数の日付を選択できる、構成可能なカレンダー表示。
 
 ```xaml
 <CalendarView/>
 ```
 
-Xxxxxxxxx: [XxxxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx) 
+リファレンス: [CalendarView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxxxxx, xxxx, xxx xxxx xxxxxxxx](date-and-time.md) 
+デザインと使い方: [カレンダー、日付、時刻コントロール](date-and-time.md) 
 
-### Xxxx xxxxxx
-X xxxxxxx xxxx xxxx x xxxx xxxxxx x xxxx.
+### 日付の選択コントロール
+ユーザーが日付を選択できるコントロール。
 
-*Xxxx xxxxxx xxxxxxx* 
+*日付の選択コントロール* 
 
 ```xaml
 <DatePicker Header="Arrival Date"/>
 ```
 
-Xxxxxxxxx: [XxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx) 
+リファレンス: [DatePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.datepicker.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxxxxx, xxxx, xxx xxxx xxxxxxxx](date-and-time.md)
+デザインと使い方: [カレンダー、日付、時刻コントロール](date-and-time.md)
  
-### Xxxx xxxxxx
-X xxxxxxx xxxx xxxx x xxxx xxx x xxxx xxxxx.
+### 時刻の選択コントロール
+ユーザーが時間値を設定できるコントロール。
 
-*XxxxXxxxxx xxxxxxx* 
+*TimePicker コントロール* 
 
 ```xaml
 <TimePicker Header="Arrival Time"/>
 ```
 
-Xxxxxxxxx: [XxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx) 
+リファレンス: [TimePicker](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxxxxx, xxxx, xxx xxxx xxxxxxxx](date-and-time.md)
+デザインと使い方: [カレンダー、日付、時刻コントロール](date-and-time.md)
 
-## Xxxxxxx
+## ポップアップ
 
-### Xxxxxxx xxxx
-Xxx Xxxx xxxxxx xxx Xxxxx xxxx.
+### ショートカット メニュー
+「メニュー ポップアップ」および「ポップアップ メニュー」をご覧ください。
 
-### Xxxxxx
-Xxxxxxxx x xxxxxxx xxxx xxxxxxxx xxxx xxxxxxxxxxx. (Xxxxxx x xxxxxx, x xxxxxx xxxx xxx xxxxxx x xxxxxxxx xxxxxx, xxx xxxx xxx xxxxx xxxxx xxxx xxxxxxxxxxx.)
+### ポップアップ
+ユーザーの操作が必要であることを示すメッセージを表示します (ダイアログでは他のユーザー操作がブロックされますが、ポップアップでは別のウィンドウが作成されず、操作もブロックされません)。
 
-*Xxxxxx xxxxxxx* 
+*ポップアップ コントロール* 
 
 ```xaml
 <Flyout>
@@ -260,14 +261,14 @@ Xxxxxxxx x xxxxxxx xxxx xxxxxxxx xxxx xxxxxxxxxxx. (Xxxxxx x xxxxxx, x xxxxxx xx
 </Flyout>
 ```
 
-Xxxxxxxxx: [Xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
+リファレンス: [Flyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flyout.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxxxx xxxxx xxx xxxxxxx](dialogs-popups-menus.md) 
+デザインと使い方: [ショートカット メニューとダイアログ](dialogs-popups-menus.md) 
 
-### Xxxx xxxxxx
-Xxxxxxxxxxx xxxxxxxx x xxxx xx xxxxxxxx xx xxxxxxx xxxxxxx xx xxxx xxx xxxx xx xxxxxxxxx xxxxx.
+### メニュー ポップアップ
+ユーザーが現在行っている内容に関連するコマンドまたはオプションの一覧を一時的に表示します。
 
-*Xxxx xxxxxx xxxxxxx* 
+*メニュー ポップアップ コントロール* 
 
 ```xaml
 <MenuFlyout>
@@ -280,65 +281,65 @@ Xxxxxxxxxxx xxxxxxxx x xxxx xx xxxxxxxx xx xxxxxxx xxxxxxx xx xxxx xxx xxxx xx x
 </MenuFlyout>
 ```
 
-Xxxxxxxxx: [XxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx), [XxxxXxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx), [XxxxXxxxxxXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx), [XxxxxxXxxxXxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
+リファレンス: [MenuFlyout](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyout.aspx)、[MenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutitem.aspx)、[MenuFlyoutSeparator](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.menuflyoutseparator.aspx)、[ToggleMenuFlyoutItem](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.togglemenuflyoutitem.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxxxx xxxxx xxx xxxxxxx](dialogs-popups-menus.md) 
+デザインと使い方: [ショートカット メニューとダイアログ](dialogs-popups-menus.md) 
 
-Xxxxxx xxxx: [XXXX Xxxxxxx Xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=620021)
+サンプル コード: [XAML ショートカット メニューのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620021)
 
-### Xxxxx xxxx
-X xxxxxx xxxx xxxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxxx.
+### ポップアップ メニュー
+指定したコマンドを表示するためのカスタム メニュー。
 
-Xxxxxxxxx: [XxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
+リファレンス: [PopupMenu](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.popups.popupmenu.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxxxx xxxxx xxx xxxxxxx](dialogs-popups-menus.md) 
+デザインと使い方: [ショートカット メニューとダイアログ](dialogs-popups-menus.md) 
 
-### Xxxxxxx
-X xxx-xx xxxxxx xxxx xxxxxxxx xxxxxxxxxxx xxx xx xxxxxxx. 
+### ヒント
+要素についての情報を表示するポップアップ ウィンドウ。 
 
-*Xxxx xxx xxxxxxx* 
+*ヒント コントロール* 
 
 ```xaml
 <Button Content="Button" Click="Button_Click" 
         ToolTipService.ToolTip="Click to perform action" />
 ```
 
-Xxxxxxxxx: [XxxxXxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltip.aspx), [XxxxXxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltipservice.aspx) 
+リファレンス: [ToolTip](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltip.aspx)、[ToolTipService](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.tooltipservice.aspx) 
 
-Xxxxxx xxx xxx-xx: Xxxxxxxxxx xxx xxxxxxxx 
+デザインと使い方: ヒントのガイドライン 
 
-## Xxxxxx
+## 画像
 
-### Xxxxx
-X xxxxxxx xxxx xxxxxxxx xx xxxxx.
+### 画像
+画像を表示するコントロール。
 
-*Xxxxx xxxxxxx*
+*イメージ コントロール*
 
 ```xaml
 <Image Source="Assets/Logo.png" />
 ```
 
-Xxxxxxxxx: [Xxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx) 
+リファレンス: [Image](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.image.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxx xxx XxxxxXxxxx](images-imagebrushes.md) 
+デザインと使い方: [Image と ImageBrush](images-imagebrushes.md) 
 
-Xxxxxx xxxx: [XXXX xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226867)
+サンプル コード: [XAML 画像のサンプル](http://go.microsoft.com/fwlink/p/?linkid=226867)
 
-## Xxxxxxxx xxx xxx
+## グラフィックスとインク
 
-### XxxXxxxxx
-X xxxxxxx xxxx xxxxxxxx xxx xxxxxxxx xxx xxxxxxx.
+### InkCanvas
+インク ストロークを受信し、表示するコントロール。
 
 ```xaml
 <InkCanvas/>
 ```
 
-Xxxxxxxxx: [XxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.inkcanvas.aspx) 
+リファレンス: [InkCanvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.inkcanvas.aspx) 
 
-### Xxxxxx
-Xxxxxxx xxxxxxxx xxxx xxxxxxxxx xxxxxxx xxxx xxx xx xxxxxxxxx xxxx xxxxxxxx, xxxxxxxxxx, xxxxx, Xxxxxx xxxxx, xxx.
+### 図形
+楕円形、四角形、直線、ベジエ パスなどのように表示できる、保持モードの各種グラフィック オブジェクト。
 
-*X xxxxxxx**X xxxx* 
+*多角形* *パス* 
 
 ```xaml
 <Ellipse/>
@@ -346,18 +347,18 @@ Xxxxxxx xxxxxxxx xxxx xxxxxxxxx xxxxxxx xxxx xxx xx xxxxxxxxx xxxx xxxxxxxx, xxx
 <Rectangle/>
 ```
 
-Xxxxxxxxx: [Xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx) 
+リファレンス: [Shapes](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.shapes.shape.aspx) 
 
-Xxx xx: [Xxxxxxx xxxxxx](../graphics/drawing-shapes.md) 
+操作方法: [図形の描画](../graphics/drawing-shapes.md) 
 
-Xxxxxx xxxx: [XXXX xxxxxx-xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226866)
+サンプル コード: [XAML ベクターベース描画のサンプル](http://go.microsoft.com/fwlink/p/?linkid=226866)
 
-## Xxxxxx xxxxxxxx
+## レイアウト コントロール
 
-### Xxxxxx
-X xxxxxxxxx xxxxxxx xxxx xxxxx x xxxxxx, xxxxxxxxxx, xx xxxx, xxxxxx xxxxxxx xxxxxx.
+### 境界線
+境界線、背景、またはこの両方を他のオブジェクトの周囲に描画するコンテナー コントロール。
 
-*X xxxxxx xxxxxx Y xxxxxxxxxx* 
+*2 つの四角形の周囲の境界線* 
 
 ```xaml
 <Border BorderBrush="Gray" BorderThickness="4" 
@@ -369,12 +370,12 @@ X xxxxxxxxx xxxxxxx xxxx xxxxx x xxxxxx, xxxxxxxxxx, xx xxxx, xxxxxx xxxxxxx xxx
 </Border>
 ```
 
-Xxxxxxxxx: [Xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.border.aspx)
+リファレンス: [Border](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.border.aspx)
 
-### Xxxxxx
-X xxxxxx xxxxx xxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxx xx xxxxx xxxxxxxx xxxxxxxx xx xxx xxx xxxx xxxxxx xx xxx xxxxxx.
+### キャンバス
+キャンバスの左上隅を基準とする子要素の絶対配置をサポートするレイアウト パネル。
  
-*Xxxxxx xxxxxx xxxxx* 
+*キャンバス レイアウト パネル* 
 
 ```xaml
 <Canvas Width="120" Height="120">
@@ -385,12 +386,12 @@ X xxxxxx xxxxx xxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxx xx xxxxx xxxxxxxx xxxxxxxx
 </Canvas>
 ```
 
-Xxxxxxxxx: [Xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)
+リファレンス: [Canvas](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.canvas.aspx)
  
-### Xxxx
-X xxxxxx xxxxx xxxx xxxxxxxx xxx xxxxxxxxx xx xxxxx xxxxxxxx xx xxxx xxx xxxxxxx.
+### グリッド
+複数行と複数列での子要素の配置をサポートするレイアウト パネル。
 
-*Xxxx xxxxxx xxxxx* 
+*グリッド レイアウト パネル* 
 
 ```xaml
 <Grid>
@@ -409,15 +410,15 @@ X xxxxxx xxxxx xxxx xxxxxxxx xxx xxxxxxxxx xx xxxxx xxxxxxxx xx xxxx xxx xxxxxxx
 </Grid>
 ```
 
-Xxxxxxxxx: [Xxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)
+リファレンス: [Grid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx)
  
-### Xxxxxxx xxxxxx xxxxxx
-Xxx Xxxxxx xxxxxx.
+### パン スクロール ビューアー
+「スクロール ビューアー」をご覧ください。
 
-### XxxxxxxxXxxxx
-X xxxxx xxxx xxxx xxx xxxxxxxx xxx xxxxx xxxxx xxxxxxx xx xxxxxxxx xx xxxx xxxxx xx xxx xxxxxx xxxxx.
+### RelativePanel
+互いまたは親パネルを基準にして、子オブジェクトの位置を決定し、調整できるパネル。
 
-*Xxxxxxxx xxxxx xxxxxx xxxxx* 
+*RelativePanel レイアウト パネル* 
 
 ```xaml
 <RelativePanel>
@@ -426,15 +427,15 @@ X xxxxx xxxx xxxx xxx xxxxxxxx xxx xxxxx xxxxx xxxxxxx xx xxxxxxxx xx xxxx xxxxx
 </RelativePanel>
 ```
 
-Xxxxxxxxx: [XxxxxxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)
+リファレンス: [RelativePanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.relativepanel.aspx)
 
-### Xxxxxx xxx
-Xxx xxxxxx xxxxxx. (XxxxxxXxx xx xx xxxxxxx xx XxxxxxXxxxxx. Xxx xxx'x xxxxxxxxx xxx xx xx x xxxxx-xxxxx xxxxxxx.)
+### スクロール バー
+「スクロール ビューアー」をご覧ください (ScrollBar は ScrollViewer の要素です。 通常、スタンドアロン コントロールとしては使用しません)。
 
-Xxxxxxxxx: [XxxxxxXxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)
+リファレンス: [ScrollBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.scrollbar.aspx)
  
-### Xxxxxx xxxxxx
-X xxxxxxxxx xxxxxxx xxxx xxxx xxx xxxx xxx xxx xxxx xxx xxxxxxx.
+### スクロール ビューアー
+ユーザーが、コンテンツのパンとズームを実行できるようにするコンテナー コントロール。
 
 ```xaml
 <ScrollViewer ZoomMode="Enabled" MaxZoomFactor="10" 
@@ -444,16 +445,16 @@ X xxxxxxxxx xxxxxxx xxxx xxxx xxx xxxx xxx xxx xxxx xxx xxxxxxx.
 </ScrollViewer>
 ```
 
-Xxxxxxxxx: [XxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx)
+リファレンス: [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx)
 
-Xxxxxx xxx xxx-xx: [Xxx, xxxxxx, xxx xxxx xxxxxxxx xxxxx](scroll-controls.md) 
+デザインと使い方: [パン、スクロール、ズームのコントロールのガイド](scroll-controls.md) 
 
-Xxxxxx xxxx: [XXXX xxxxxxxxx, xxxxxxx xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=238577)
+サンプル コード: [XAML のスクロール、パン、ズームのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238577)
 
-### XxxxxXxxx
-X xxxxxxxxx xxxxxxx xxxx xxx xxxxx; xxx xxxx xxx xxx xxxx xxxxxxx xxx xxxxxxx xxxx xxxx xx xxxxxxxxx xxxx xxx x xxxxxxxxxx xxxx.
+### SplitView
+2 つのビューを持つコンテナー コントロール。1 つはメイン コンテンツ用で、もう 1 つは、通常、ナビゲーション メニューに使います。
 
-*Xxxxx xxxx xxxxxxx* 
+*分割ビュー コントロール* 
 
 ```xaml
 <SplitView>
@@ -466,14 +467,14 @@ X xxxxxxxxx xxxxxxx xxxx xxx xxxxx; xxx xxxx xxx xxx xxxx xxxxxxx xxx xxxxxxx xx
 </SplitView>
 ```
 
-Xxxxxxxxx: [XxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 
+リファレンス: [SplitView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.splitview.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxx xxxx xxxxxxx xxxxx]()
+デザインと使い方: [分割ビュー コントロールのガイド]()
 
-### Xxxxx xxxxx
-X xxxxxx xxxxx xxxx xxxxxxxx xxxxx xxxxxxxx xxxx x xxxxxx xxxx xxxx xxx xx xxxxxxxx xxxxxxxxxxxx xx xxxxxxxxxx.
+### スタック パネル
+子要素を水平方向または垂直方向の単一行に配置するレイアウト パネル。
 
-*Xxxxx xxxxx xxxxxx xxxxxxx* 
+*スタック パネル レイアウト コントロール* 
 
 ```xaml
 <StackPanel>
@@ -484,12 +485,12 @@ X xxxxxx xxxxx xxxx xxxxxxxx xxxxx xxxxxxxx xxxx x xxxxxx xxxx xxxx xxx xx xxxxx
 </StackPanel>
 ```
 
-Xxxxxxxxx: [XxxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx)
+リファレンス: [StackPanel](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.stackpanel.aspx)
  
-### XxxxxxxxXxxxxXxxxXxxx
-X xxxxxx xxxxx xxxx xxxxxxxx xxx xxxxxxxxx xx xxxxx xxxxxxxx xx xxxx xxx xxxxxxx. Xxxx xxxxx xxxxxxx xxx xxxx xxxxxxxx xxxx xxx xxxxxxx.
+### VariableSizedWrapGrid
+複数行と複数列での子要素の配置をサポートするレイアウト パネル。 各子要素を、複数の行と列に配置できます。
 
-*Xxxxxxxx xxxxx xxxx xxxx xxxxxx xxxxx* 
+*可変サイズ折り返しグリッド レイアウト パネル* 
 
 ```xaml
 <VariableSizedWrapGrid MaximumRowsOrColumns="3" ItemHeight="44" ItemWidth="44">
@@ -504,12 +505,12 @@ X xxxxxx xxxxx xxxx xxxxxxxx xxx xxxxxxxxx xx xxxxx xxxxxxxx xx xxxx xxx xxxxxxx
 </VariableSizedWrapGrid>
 ```
 
-Xxxxxxxxx: [XxxxxxxxXxxxxXxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx)
+リファレンス: [VariableSizedWrapGrid](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.variablesizedwrapgrid.aspx)
 
-### Xxxxxxx
-X xxxxxxxxx xxxxxxx xxxx xxxxxx xxx xxxxxxx xx x xxxxxxxxx xxxx.
+### Viewbox
+コンテンツを指定されたサイズに拡大縮小するコンテナー コントロール。
 
-*Xxxxxxx xxxxxxx* 
+*Viewbox コントロール* 
 
 ```xaml
 <Viewbox MaxWidth="25" MaxHeight="25">
@@ -523,62 +524,62 @@ X xxxxxxxxx xxxxxxx xxxx xxxxxx xxx xxxxxxx xx x xxxxxxxxx xxxx.
 </Viewbox>
 ```
 
-Xxxxxxxxx: [Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.viewbox.aspx)
+リファレンス: [Viewbox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.viewbox.aspx)
  
-### Xxxxxxx xxxxxx xxxxxx
-Xxx Xxxxxx xxxxxx.
+### ズーム スクロール ビューアー
+「スクロール ビューアー」をご覧ください。
 
-## Xxxxx xxxxxxxx
+## メディア コントロール
 
-### Xxxxx
-Xxx Xxxxx xxxxxxx.
+### オーディオ
+「メディア要素」をご覧ください。
 
-### Xxxxx xxxxxxx
-X xxxxxxx xxxx xxxxx xxxxx xxx xxxxx xxxxxxx.
+### メディア要素
+オーディオとビデオのコンテンツを再生するコントロール。
 
 ```xaml
 <MediaElement x:Name="myMediaElement"/>
 ```
 
-Xxxxxxxxx: [XxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx) 
+リファレンス: [MediaElement](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxx xxxxxxx xxxxxxx xxxxx](media-playback.md)
+デザインと使い方: [メディア要素コントロールのガイド](media-playback.md)
 
-### XxxxxXxxxxxxxxXxxxxxxx
-X xxxxxxx xxxx xxxxxxxx xxxxxxxx xxxxxxxx xxx x XxxxxXxxxxxx.
+### MediaTransportControls
+MediaElement の再生コントロールを提供するコントロール。
 
-*Xxxxx xxxxxxx xxxx xxxxxxxxx xxxxxxxx* 
+*トランスポート コントロールを含むメディア要素* 
 
 ```xaml
 <MediaTransportControls MediaElement="myMediaElement"/>
 ```
 
-Xxxxxxxxx: [XxxxxXxxxxxxxxXxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) 
+リファレンス: [MediaTransportControls](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxx xxxxxxx xxxxxxx xxxxx](media-playback.md) 
+デザインと使い方: [メディア要素コントロールのガイド](media-playback.md) 
 
-Xxxxxx xxxx: [Xxxxx Xxxxxxxxx Xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=620023)
+サンプル コード: [メディア トランスポート コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=620023)
 
-### Xxxxx
-Xxx Xxxxx xxxxxxx.
+### ビデオ
+「メディア要素」をご覧ください。
 
-## Xxxxxxxxxx
+## ナビゲーション
 
-### Xxxxx
-X xxxx-xxxxxx xxxxxxxxx xxx xxxxxxxxxx xxxxx xxxx xxxx xxxxxxxx x xxxxx xxx xx xxxx xxxxxxx xxxxxxxxx xxxxxx (xxxxx xx xxxxxxx), xxxxxxxxx xx xxx xxxx xxx xx xxxx.
+### ピボット
+通常は同じデータ セット内の異なるピボット (ビューまたはフィルター) 間で、迅速な移動手段を提供する全画面表示のコンテナーおよびナビゲーション モデルです。
 
-Xxx Xxxxx xxxxxxx xxx xx xxxxxx xx xxxx x "xxx" xxxxxx.
+Pivot コントロールに、"タブ" レイアウトを含むスタイルを適用できます。
 
-Xxxxxxxxx: [Xxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 
+リファレンス: [Pivot](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxx xxx xxxxx xxxxxxx xxxxx](tabs-pivot.md) 
+デザインと使い方: [タブとピボットのコントロールのガイド](tabs-pivot.md) 
 
-Xxxxxx xxxx: [Xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619903&amp;clcid=0x409)
+サンプル コード: [Pivot のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619903&amp;clcid=0x409)
 
-### Xxxxxxxx xxxx
-X xxxxxxxxx xxxxxxx xxxx xxxx xxx xxxx xxxx xxxxxxx xxx xxxxx xx x xxxxxxxxxx xx xxxxx.
+### セマンティック ズーム
+ユーザーが、項目のコレクションの 2 つの異なる表示の間でズームを実行できるようにするコンテナー コントロール。
 
-*Xxxxxxxx xxxx xxxxxxx* 
+*セマンティック ズーム コントロール* 
 
 ```xaml
 <SemanticZoom>
@@ -591,168 +592,168 @@ X xxxxxxxxx xxxxxxx xxxx xxxx xxx xxxx xxxx xxxxxxx xxx xxxxx xx x xxxxxxxxxx xx
 </SemanticZoom>
 ```
 
-Xxxxxxxxx: [XxxxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
+リファレンス: [SemanticZoom](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.semanticzoom.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxx xxxx](semantic-zoom.md) 
+デザインと使い方: [ジャンプ リスト](semantic-zoom.md) 
 
-Xxxxxx xxxx: [XXXX XxxxXxxx xxxxxxxx xxx XxxxxxxxXxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226564)
+サンプル コード: [XAML GridView のグループ化と SemanticZoom のサンプル](http://go.microsoft.com/fwlink/p/?linkid=226564)
 
-### Xxx xxxx
-X xxxxxxxxx xxxxxxx xxxx xxxxx xxx xxxxxxx.
+### Web ビュー
+Web コンテンツをホストするコンテナー コントロール。
 
 ```xaml
 <WebView x:Name="webView1" Source="http://dev.windows.com" 
          Height="400" Width="800"/>
 ```
 
-Xxxxxxxxx: [XxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 
+リファレンス: [WebView](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) 
 
-Xxxxxx xxx xxx-xx: Xxxxxxxxxx xxx Xxx xxxxx 
+デザインと使い方: Web ビューのガイドライン 
 
-Xxxxxx xxxx: [XXXX XxxXxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=238582)
+サンプル コード: [XAML WebView コントロールのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238582)
 
-## Xxxxxxxx xxxxxxxx
+## プログレス コントロール
 
-### Xxxxxxxx xxx
-X xxxxxxx xxxx xxxxxxxxx xxxxxxxx xx xxxxxxxxxx x xxx.
+### 進行状況バー
+バーを表示して進行状況を示すコントロール。
 
-*Xxxxxxxx xxx xxxxxxx*
+*進行状況バー コントロール*
 
-X xxxxxxxx xxx xxxx xxxxx x xxxxxxxx xxxxx.
+特定の値を表示する進行状況バー。
 
 ```xaml
 <ProgressBar x:Name="progressBar1" Value="50" Width="100"/>
 ```
 
-*Xxxxxxxxxxxxx xxxxxxxx xxx xxxxxxx*
+*進行状況不定バー コントロール*
 
-X xxxxxxxx xxx xxxx xxxxx xxxxxxxxxxxxx xxxxxxxx.
+進行状況が不定であることを表す進行状況バー。
 
 ```xaml
 <ProgressBar x:Name="indeterminateProgressBar1" IsIndeterminate="True" Width="100"/>
 ```
 
-Xxxxxxxxx: [XxxxxxxxXxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx) 
+リファレンス: [ProgressBar](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxxxxx xxxxxxxx xxxxx](progress-controls.md) 
+デザインと使い方: [プログレス コントロールのガイド](progress-controls.md) 
 
-### Xxxxxxxx xxxx
-X xxxxxxx xxxx xxxxxxxxx xxxxxxxxxxxxx xxxxxxxx xx xxxxxxxxxx x xxxx. 
+### 進行状況リング
+リングを表示して進行状況が不定であることを示すコントロール。 
 
-*Xxxxxxxx xxxx xxxxxxx* 
+*進行状況リング コントロール* 
 
 ```xaml
 <ProgressRing x:Name="progressRing1" IsActive="True"/>
 ```
 
-Xxxxxxxxx: [XxxxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx) 
+リファレンス: [ProgressRing](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxxxxx xxxxxxxx xxxxx](progress-controls.md) 
+デザインと使い方: [プログレス コントロールのガイド](progress-controls.md) 
 
-## Xxxx xxxxxxxx
+## テキスト コントロール
 
-### Xxxx xxxxxxx xxx
-X xxxx xxxxx xxx xxxx xxxxxxxx xxxxxxxxx xxxx xx xxx xxxx xxxxx.
+### 自動提案ボックス
+ユーザーが入力するときに、候補のテキストを表示するテキスト入力ボックスです。
 
-Xx xxxx xxxxxxx xxx xxx xxxxxx 
+検索の自動提案ボックス 
 
-Xxxxxxxxx: [XxxxXxxxxxxXxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
+リファレンス: [AutoSuggestBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
 
-Xxxxxx xxx xxx-xx: [Xxxx xxxxxxxx](text-controls.md), [Xxxx xxxxxxx xxx xxxxxxx xxxxx](auto-suggest-box.md)
+デザインと使い方: [テキスト コントロール](text-controls.md)、[自動提案ボックス コントロールのガイド](auto-suggest-box.md)
 
-Xxxxxx xxxx: [XxxxXxxxxxxXxx xxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619996)
+サンプル コード: [AutoSuggestBox の移行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619996)
 
-### Xxxxx-xxxx xxxx xxx
-Xxx Xxxx xxx.
+### 複数行テキスト ボックス
+「テキスト ボックス」をご覧ください。
 
-### Xxxxxxxx xxx
-X xxxxxxx xxx xxxxxxxx xxxxxxxxx.
+### パスワード ボックス
+パスワードを入力するためのコントロール。
 
-*Xxxxxxxx xxx xxxxxxx* 
+*パスワード ボックス コントロール* 
 
 ```xaml
 <PasswordBox x:Name="passwordBox1" PasswordChanged="PasswordBox_PasswordChanged" />
 ```
 
-Xxxxxxxxx: [XxxxxxxxXxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx) 
+リファレンス: [PasswordBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.passwordbox.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxx xxxxxxxx](text-controls.md), [Xxxxxxxx xxx xxxxxxx xxxxx](password-box.md) 
+デザインと使い方: [テキスト コントロール](text-controls.md)、[パスワード ボックス コントロールのガイド](password-box.md) 
 
-Xxxxxx xxxx: [XXXX xxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=238579), [XXXX xxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=251417)
+サンプル コード: [XAML テキスト表示のサンプル](http://go.microsoft.com/fwlink/p/?linkid=238579)、[XAML テキスト編集のサンプル](http://go.microsoft.com/fwlink/p/?linkid=251417)
 
-### Xxxx xxxx xxx
-X xxxxxxx xxxx xxxx x xxxx xxxx xxxx xxxx xxxxxxxxx xxxx xxxxxxx xxxx xxxxxxxxx xxxx, xxxxxxxxxx, xxx xxxxxx.
+### リッチ エディット ボックス
+書式付きテキスト、ハイパーリンク、イメージなどを含んだリッチ テキスト ドキュメントを編集できるコントロール。
 
 ```xaml
 <RichEditBox />
 ```
 
-Xxxxxxxxx: [XxxxXxxxXxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) 
+リファレンス: [RichEditBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxx xxxxxxxx](text-controls.md), [Xxxx xxxx xxx xxxxxxx xxxxx](rich-edit-box.md)
+デザインと使い方: [テキスト コントロール](text-controls.md)、[リッチ エディット ボックス コントロールのガイド](rich-edit-box.md)
 
-Xxxxxx xxxx: [XXXX xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=238578)
+サンプル コード: [XAML テキストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238578)
 
-### Xxxxxx xxx
-Xxx Xxxx xxxxxxx xxx.
+### 検索ボックス
+「自動提案ボックス」をご覧ください。
 
-### Xxxxxx-xxxx xxxx xxx
-Xxx Xxxx xxx.
+### 単一行テキスト ボックス
+「テキスト ボックス」をご覧ください。
 
-### Xxxxxx xxxx/xxxxxxxxx
-Xxx Xxxx xxxxx.
+### 静的テキスト/段落
+「テキスト ブロック」をご覧ください。
 
-### Xxxx xxxxx
-X xxxxxxx xxxx xxxxxxxx xxxx.
+### テキスト ブロック
+テキストを表示するコントロール。
 
-*Xxxx xxxxx xxxxxxx* 
+*テキスト ブロック コントロール* 
 
 ```xaml
 <TextBlock x:Name="textBlock1" Text="I am a TextBlock"/>
 ```
 
-Xxxxxxxxx: [XxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx), [XxxxXxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx) 
+リファレンス: [TextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textblock.aspx)、[RichTextBlock](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richtextblock.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxx xxxxxxxx](text-controls.md), [Xxxx xxxxx xxxxxxx xxxxx](text-block.md), [Xxxx xxxx xxxxx xxxxxxx xxxxx](rich-text-block.md)
+デザインと使い方: [テキスト コントロール](text-controls.md)、[テキスト ブロック コントロールのガイド](text-block.md)、[リッチ テキスト ブロック コントロールのガイド](rich-text-block.md)
 
-Xxxxxx xxxx: [XXXX xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=238578)
+サンプル コード: [XAML テキストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238578)
 
-### Xxxx xxx
-X xxxxxx-xxxx xx xxxxx-xxxx xxxxx xxxx xxxxx.
+### テキスト ボックス
+1 行または複数行のプレーンテキスト フィールド。
 
-*Xxxx xxx xxxxxxx* 
+*テキスト ボックス コントロール* 
 
 ```xaml
 <TextBox x:Name="textBox1" Text="I am a TextBox" 
          TextChanged="TextBox_TextChanged"/>
 ```
 
-Xxxxxxxxx: [XxxxXxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 
+リファレンス: [TextBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.textbox.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxx xxxxxxxx](text-controls.md), [Xxxx xxx xxxxxxx xxxxx](text-box.md) 
+デザインと使い方: [テキスト コントロール](text-controls.md)、[テキスト ボックス コントロールのガイド](text-box.md) 
 
-Xxxxxx xxxx: [XXXX xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=238578)
+サンプル コード: [XAML テキストのサンプル](http://go.microsoft.com/fwlink/p/?linkid=238578)
 
-## Xxxxxxxxx xxxxxxxx
+## 選択コントロール
 
-### Xxxxx xxx
-X xxxxxxx xxxx x xxxx xxx xxxxxx xx xxxxx.
+### チェック ボックス
+ユーザーがオンまたはオフにできるコントロール。
 
-*Xxx Y xxxxxx xx x xxxxx xxx* 
+*チェック ボックスの 3 状態* 
 
 ```xaml
 <CheckBox x:Name="checkbox1" Content="CheckBox" 
           Checked="CheckBox_Checked"/>
 ```
 
-Xxxxxxxxx: [XxxxxXxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) 
+リファレンス: [CheckBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.checkbox.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxx xxx xxxxxxx xxxxx](checkbox.md) 
+デザインと使い方: [チェック ボックス コントロールのガイド](checkbox.md) 
 
-### Xxxxx xxx
-X xxxx-xxxx xxxx xx xxxxx x xxxx xxx xxxxxx xxxx.
+### コンボ ボックス
+ユーザーが選択できる項目のドロップダウン リスト。
 
-*Xxxx xxxxx xxx* 
+*開かれた状態のコンボ ボックス* 
 
 ```xaml
 <ComboBox x:Name="comboBox1" SelectionChanged="ComboBox_SelectionChanged" Width="100">
@@ -762,14 +763,14 @@ X xxxx-xxxx xxxx xx xxxxx x xxxx xxx xxxxxx xxxx.
 </ComboBox>
 ```
 
-Xxxxxxxxx: [XxxxxXxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.combobox.aspx) 
+リファレンス: [ComboBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.combobox.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxx](lists.md) 
+デザインと使い方: [リスト](lists.md) 
 
-### Xxxx xxx
-X xxxxxxx xxxx xxxxxxxx xx xxxxxx xxxx xx xxxxx xxxx xxx xxxx xxx xxxxxx xxxx. 
+### リスト ボックス
+ユーザーが選択できる項目のインライン リストを表示するコントロール。 
 
-*Xxxx xxx xxxxxxx*
+*リスト ボックス コントロール*
 
 ```xaml
 <ListBox x:Name="listBox1" SelectionChanged="ListBox_SelectionChanged" Width="100">
@@ -779,14 +780,14 @@ X xxxxxxx xxxx xxxxxxxx xx xxxxxx xxxx xx xxxxx xxxx xxx xxxx xxx xxxxxx xxxx.
 </ListBox>
 ```
 
-Xxxxxxxxx: [XxxxXxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx) 
+リファレンス: [ListBox](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.listbox.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxx](lists.md) 
+デザインと使い方: [リスト](lists.md) 
 
-### Xxxxx xxxxxx
-X xxxxxxx xxxx xxxxxx x xxxx xx xxxxxx x xxxxxx xxxxxx xxxx x xxxxx xx xxxxxxx. Xxxx xxxxx xxxxxxx xxx xxxxxxx xxxxxxxx, xxxx xxx xxxxxxxx xxxxxxxxx.
+### ラジオ ボタン
+ユーザーがオプションのグループから 1 つのオプションを選択できるようにするコントロール。 グループ化されたラジオ ボタンは、それぞれ相互に排他的です。
 
-*Xxxxx xxxxxx xxxxxxxx* 
+*ラジオ ボタン コントロール* 
 
 ```xaml
 <RadioButton x:Name="radioButton1" Content="RadioButton 1" GroupName="Group1" 
@@ -797,41 +798,41 @@ X xxxxxxx xxxx xxxxxx x xxxx xx xxxxxx x xxxxxx xxxxxx xxxx x xxxxx xx xxxxxxx. 
              Checked="RadioButton_Checked"/>
 ```
 
-Xxxxxxxxx: [XxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.radiobutton.aspx) 
+リファレンス: [RadioButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.radiobutton.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxx xxxxxx xxxxxxx xxxxx](radio-button.md)
+デザインと使い方: [ラジオ ボタン コントロールのガイド](radio-button.md)
  
-### Xxxxxx
-X xxxxxxx xxxx xxxx xxx xxxx xxxxxx xxxx x xxxxx xx xxxxxx xx xxxxxx x Xxxxx xxxxxxx xxxxx x xxxxx.
+### スライダー
+ユーザーがトラックに沿って Thumb コントロールを動かすことで値の範囲から選択できるようにするコントロール。
 
-*Xxxxxx xxxxxxx* 
+*スライダー コントロール* 
 
 ```xaml
 <Slider x:Name="slider1" Width="100" ValueChanged="Slider_ValueChanged" />
 ```
 
-Xxxxxxxxx: [Xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) 
+リファレンス: [Slider](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxxx xxxxxxx xxxxx](slider.md) 
+デザインと使い方: [スライダー コントロールのガイド](slider.md) 
 
-### Xxxxxx xxxxxx
-X xxxxxx xxxx xxx xx xxxxxxx xxxxxxx Y xxxxxx.
+### トグル ボタン
+2 つの状態を切り替えることができるボタン。
 
-*X xxxxxx xxxxxx xxxxxxx* 
+*トグル ボタン コントロール* 
 
 ```xaml
 <ToggleButton x:Name="toggleButton1" Content="Button" 
               Checked="ToggleButton_Checked"/>
 ```
 
-Xxxxxxxxx: [XxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx)
+リファレンス: [ToggleButton](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.togglebutton.aspx)
 
-Xxxxxx xxx xxx-xx: [Xxxxxx xxxxxxx xxxxx](toggles.md) 
+デザインと使い方: [トグル コントロールのガイド](toggles.md) 
 
-### Xxxxxx xxxxxx
-X xxxxxx xxxx xxx xx xxxxxxx xxxxxxx Y xxxxxx.
+### トグル スイッチ
+2 つの状態を切り替えることができるスイッチ。
 
-*Xxxxxx xxxxxx xxxxxxx* 
+*トグル スイッチ コントロール* 
 
 ```xaml
 <ToggleSwitch x:Name="toggleSwitch1" Header="ToggleSwitch" 
@@ -839,7 +840,11 @@ X xxxxxx xxxx xxx xx xxxxxxx xxxxxxx Y xxxxxx.
               Toggled="ToggleSwitch_Toggled"/>
 ```
 
-Xxxxxxxxx: [XxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.toggleswitch.aspx) 
+リファレンス: [ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.toggleswitch.aspx) 
 
-Xxxxxx xxx xxx-xx: [Xxxxxx xxxxxxx xxxxx](toggles.md) 
+デザインと使い方: [トグル コントロールのガイド](toggles.md) 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

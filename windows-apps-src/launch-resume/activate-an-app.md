@@ -1,28 +1,30 @@
 ---
-xxxxx: Xxxxxx xxx xxxxxxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxx xxx xxxxxxxxxx xx xxxxxxxxxx xxx XxXxxxxxxx xxxxxx.
-xx.xxxxxxx: XXYXYXYY-XYYX-YYYY-XYXX-YXYYYYYYYYYY
+title: アプリのアクティブ化の処理
+description: OnLaunched メソッドをオーバーライドすることで、アプリのアクティブ化を処理する方法について説明します。
+ms.assetid: DA9A6A43-F09D-4512-A2AB-9B6132431007
 ---
 
-# Xxxxxx xxx xxxxxxxxxx
+# アプリのアクティブ化の処理
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335)
+-   [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335)
 
-Xxxxx xxx xx xxxxxx xxx xxxxxxxxxx xx xxxxxxxxxx xxx [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335) xxxxxx..
+[
+            **OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドをオーバーライドすることで、アプリのアクティブ化を処理する方法について説明します。
 
-## Xxxxxxxx xxx xxxxxx xxxxxxx
+## 起動ハンドラーを上書きする
 
-Xxxx xx xxx xx xxxxxxxxx, xxx xxx xxxxxx, xxx xxxxxx xxxxx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225018) xxxxx. Xxx x xxxx xx xxxxxxxxxx xxxxx, xxx xxx [**XxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224693) xxxxxxxxxxx.
+アプリがアクティブ化されると、その理由にかかわらず、システムから [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントが送信されます。 アクティブ化の種類の一覧については、[**ActivationKind**](https://msdn.microsoft.com/library/windows/apps/br224693) 列挙型をご覧ください。
 
-Xxx [**Xxxxxxx.XX.Xxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242324) xxxxx xxxxxxx xxxxxxx xxx xxx xxxxxxxx xx xxxxxx xxx xxxxxxx xxxxxxxxxx xxxxx. Xxxxxxx xx xxx xxxxxxxxxx xxxxx xxxx x xxxxxxxx xxxxxx xxxx xxx xxx xxxxxxxx. Xxx xxx xxxxx xxxxxxxxxx xxxxx, xxxxxxxx xxx [**XxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242330) xxxxxx.
+[
+            **Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324) クラスで定義されているメソッドを上書きして、さまざまなアクティブ化の種類に対応することができます。 一部のアクティブ化の種類には、上書きできる専用のメソッドがあります。 それ以外のアクティブ化の種類では、[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) メソッドを上書きします。
 
-Xxxxxx xxx xxxxx xxx xxxx xxxxxxxxxxx.
+アプリのクラスを定義します。
 
 ```xaml
 <Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -30,11 +32,13 @@ Xxxxxx xxx xxxxx xxx xxxx xxxxxxxxxxx.
              x:Class="AppName.App" >
 ```
 
-Xxxxxxxx xxx [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335) xxxxxx. Xxxx xxxxxx xx xxxxxx xxxxxxxx xxx xxxx xxxxxxxx xxx xxx. Xxx [**XxxxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224731) xxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxx xx xxxx xxx xxx xxx xxxxxxxxxx xxxxxxxxx.
+[
+            **OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) メソッドを上書きします。 このメソッドは、ユーザーがアプリを起動するたびに呼び出されます。 [
+            **LaunchActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224731) パラメーターには、アプリの以前の状態とアクティブ化引数が含まれています。
 
-**Xxxx**  Xxx Xxxxxxx Xxxxx Xxxxx xxxx, xxxx xxxxxx xx xxxxxx xxxx xxxx xxx xxxx xxxxxxxx xxx xxx xxxx Xxxxx xxxx xx xxx xxxx, xxxx xxxx xxx xxx xx xxxxxxxxx xxxxxxxxx xx xxxxxx. Xx Xxxxxxx, xxxxxxxxx x xxxxxxxxx xxx xxxx Xxxxx xxxx xx xxx xxxx xxxxx’x xxxx xxxx xxxxxx.
+**注**  Windows Phone ストア アプリでは、このメソッドは、ユーザーがスタート画面のタイルやアプリの一覧からアプリを起動するたびに呼び出されます (アプリが現在メモリ内で一時停止されている場合も含む)。 Windows では、スタート画面のタイルまたはアプリの一覧から中断中のアプリを起動するときに、このメソッドが呼び出されることはありません。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```cs
 using System;
 using Windows.ApplicationModel.Activation;
@@ -96,12 +100,12 @@ void App::EnsurePageCreatedAndActivate()
 }
 ```
 
-## Xxxxxxx xxxxxxxxxxx xxxx xx xxx xxx xxxxxxxxx xxxx xxxxxxxxxx
+## アプリが一時停止後に終了された場合は、アプリケーション データを復元する
 
 
-Xxxx xxx xxxx xxxxxxxx xx xxxx xxxxxxxxxx xxx, xxx xxxxxx xxxxx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225018) xxxxx, xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br224728) xxx xx **Xxxxxx** xxx [**XxxxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224729) xxx xx **Xxxxxxxxxx** xx **XxxxxxXxXxxx**. Xxx xxx xxxxxx xxxx xxx xxxxx xxxxxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxxx xxxxxxx.
+ユーザーが終了したアプリに切り替えると、システムは [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを送信します。このとき、[**Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) は **Launch** に設定され、[**PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) は **Terminated** または **ClosedByUser** に設定されます。 アプリでは、保存されているアプリ データを読み込み、表示されているコンテンツを更新する必要があります。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```cs
 async protected override void OnLaunched(LaunchActivatedEventArgs args)
 {
@@ -154,28 +158,34 @@ void App::OnLaunched(Windows::ApplicationModel::Activation::LaunchActivatedEvent
 }
 ```
 
-Xx xxx xxxxx xx [**XxxxxxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224729) xx **XxxXxxxxxx**, xxx xxx xxxxxx xx xxxx xxx xxxxxxxxxxx xxxx xxxxxxxxxxxx xxx xxx xxx xxxxxx xxxxx xxxx xx xx xx xxxx xxxxx xxxxxxxxx xxxxxxxx.
+[
+            **PreviousExecutionState**](https://msdn.microsoft.com/library/windows/apps/br224729) の値が **NotRunning** である場合は、アプリがアプリケーション データの保存に失敗しているため、初めて起動するときのように最初からアプリをやり直す必要があります。
 
-## Xxxxxxx
+## 解説
 
-> **Xxxx**  Xxx Xxxxxxx Xxxxx Xxxxx xxxx, xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242339) xxxxx xx xxxxxx xxxxxxxx xx [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335), xxxx xxxx xxxx xxx xx xxxxxxxxx xxxxxxxxx xxx xxx xxxx xx-xxxxxxxx xxxx xxx xxxx x xxxxxxx xxxx xx xxx xxxx. Xxxx xxx xxxx xxxxxxxxxxxxxx xx xxxxx xx xxxxxxx xxxxxxx xxx xx xxx xxxxxxx xxxxxx. Xxx xxx xxxxx xxx [**XxxxxxXxxxxxxxxXxxxxXxxx.XxxxXx**](https://msdn.microsoft.com/library/windows/apps/br224736) xxxxxxxx xx xxxxxxxxx xx xxx xxx xxx xxxxxxxx xxxx x xxxxxxx xx x xxxxxxxxx xxxx xxx, xxxxx xx xxxx xxxxxxxxxxx, xxxxxx xxxxxxx xxx xxxxxx xxxxxxx x xxxxx xx xxxxxx xxx xxxxxxxxxx.
+> **注**  Windows Phone ストア アプリでは、アプリが現在一時停止中で、ユーザーがプライマリ タイルまたはアプリの一覧からアプリを再起動した場合でも、[**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) イベントの後に、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) イベントが常に発生します。 現在のウィンドウにコンテンツ セットが既にある場合、アプリは初期化をスキップすることがあります。 [
+            **LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) プロパティをチェックすると、アプリがプライマリ タイルとセカンダリ タイルのどちらから起動されたかを調べ、その情報に基づいて新しいアプリ エクスペリエンスを表示するか、アプリ エクスペリエンスを再開するかを判断できます。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxx xxx xxxxxxx](suspend-an-app.md)
-* [Xxxxxx xxx xxxxxx](resume-an-app.md)
-* [Xxxxxxxxxx xxx xxx xxxxxxx xxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [Xxx xxxxxxxxx](app-lifecycle.md)
+* [アプリの中断の処理](suspend-an-app.md)
+* [アプリの再開の処理](resume-an-app.md)
+* [アプリの中断と再開のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [アプリのライフサイクル](app-lifecycle.md)
 
-**Xxxxxxxxx**
+**リファレンス**
 
-* [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224766)
-* [**Xxxxxxx.XX.Xxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242324)
+* [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766)
+* [**Windows.UI.Xaml.Application**](https://msdn.microsoft.com/library/windows/apps/br242324)
 
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

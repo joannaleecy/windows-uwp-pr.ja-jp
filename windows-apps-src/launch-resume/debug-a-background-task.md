@@ -1,113 +1,117 @@
 ---
-xxxxx: Xxxxx x xxxxxxxxxx xxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxx x xxxxxxxxxx xxxx, xxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxx xxx xxxxx xxxxxxx xx xxx Xxxxxxx xxxxx xxx.
-xx.xxxxxxx: YYXYXXYY-YXXY-YYXX-YYYY-XYXYYYXYYXYX
+title: Debug a background task
+description: Learn how to debug a background task, including background task activation and debug tracing in the Windows event log.
+ms.assetid: 24E5AC88-1FD3-46ED-9811-C7E102E01E9C
 ---
 
-# Xxxxx x xxxxxxxxxx xxxx
+# Debug a background task
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/br224847)
+-   [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847)
 
-Xxxxx xxx xx xxxxx x xxxxxxxxxx xxxx, xxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxx xxx xxxxx xxxxxxx xx xxx Xxxxxxx xxxxx xxx.
+Learn how to debug a background task, including background task activation and debug tracing in the Windows event log.
 
-Xxxx xxxxx xxxxxxx xxxx xxx xxxxxxx xxxx xx xxxxxxxx xxx xxxx x xxxxxxxxxx xxxx xx xxxxx.
+This topic assumes that you already have an existing app with a background task to debug.
 
-## Xxxx xxxx xxx xxxxxxxxxx xxxx xxxxxxx xx xxx xx xxxxxxxxx
-
-
--   Xx X\# xxx X++, xxxx xxxx xxx xxxx xxxxxxx xxxxxxxxxx xxx xxxxxxxxxx xxxx xxxxxxx. Xx xxxx xxxxxxxxx xx xxx xx xxxxx, xxx xxxxxxxxxx xxxx xxx'x xx xxxxxxxx xx xxx xxx xxxxxxx.
--   Xx X\# xxx X++, xxxx xxxx xxx **Xxxxxx xxxx** xx xxx xxxxxxxxxx xxxx xxxxxxx xx "Xxxxxxx Xxxxxxx Xxxxxxxxx".
--   Xxx xxxxxxxxxx xxxxx xxx xxxx xx xxxxxxxx xx xxx xxxxx xxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxxxx.
-
-## Xxxxxxx xxxxxxxxxx xxxxx xxxxxxxx xx xxxxx xxxxxxxxxx xxxx xxxx
+## Make sure the background task project is set up correctly
 
 
-Xxxxxxxxxx xxxxx xxx xx xxxxxxxxx xxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxx Xxxxxx. Xxxx xxx xxx xxxx xxxxxxx xxx xxxx xxx xxxxx xx.
+-   In C# and C++, make sure the main project references the background task project. If this reference is not in place, the background task won't be included in the app package.
+-   In C# and C++, make sure the **Output type** of the background task project is "Windows Runtime Component".
+-   The background class and must be declared in the entry point attribute in the package manifest.
 
-1.  Xx X\#, xxx x xxxxxxxxxx xx xxx Xxx xxxxxx xx xxx xxxxxxxxxx xxxxx, xxx/xx xxxxx xxxxxxxxx xxxxxx xx xxxxx [**Xxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx).
-
-    Xx X++, xxx x xxxxxxxxxx xx xxx Xxx xxxxxxxx xx xxx xxxxxxxxxx xxxxx, xxx/xx xxxxx xxxxxxxxx xxxxxx xx xxxxx [**XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/aa363362).
-
-2.  Xxx xxxx xxxxxxxxxxx xx xxx xxxxxxxx xxx xxxx xxxxxxx xxx xxxxxxxxxx xxxx xxxxx xxx xxxxxxx xxxx xxxx xxxx xx xxx **Xxxxxxxxx Xxxxxx** xxxxxxx. Xxxx xxxx xxxx xxxxx xxx xxxxx xx xxx xxxxxxxxxx xxxxx xxxx xxx xx xxxxxxxxx xx Xxxxxx Xxxxxx.
-
-    Xxx xxxx xx xxxx, xxx xxxxxxxxxx xxxx xxxx xxxxxxx xx xxxxxxxxxx xxx xx xxxx xxxxx xx xxxxxxx xxx xxx xxxxxxx. Xxx xxxxxxx, xx x xxxxxxxxxx xxxx xxx xxxxxxxxxx xxxx x xxx-xxxx XxxxXxxxxxx xxx xxxx xxxxxxx xxx xxxxxxx xxxxx, xxxxxxxxx xxx xxxx xxxxxxx Xxxxxx Xxxxxx xxxx xxxx xx xxxxxx.
-
-    **Xxxx**  Xxxxxxxxxx xxxxx xxxxx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032) xx [**XxxxXxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700543), xxx xxxxxxxxxx xxxxx xxxxx x [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224838) xxxx xxx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224839) xxxxxxx xxxx, xxxxxx xx xxxxxxxxx xx xxxx xxxxxx.     
-
-    ![xxxxxxxxx xxxxxxxxxx xxxxx](images/debugging-activation.png)
-
-3.  Xxxx xxx xxxxxxxxxx xxxx xxxxxxxxx, xxx xxxxxxxx xxxx xxxxxx xx xx xxx xxxxxxx xxxxx xxxxxx xx XX.
-
-## Xxxxx xxxxxxxxxx xxxx xxxxxxxxxx
+## Trigger background tasks manually to debug background task code
 
 
-Xxxxxxxxxx xxxx xxxxxxxxxx xxxxxxx xx xxxxx xxxxxx xxxxxxxx xx xxxxxxxxx. Xxxx xxxxxxxxx xxxxx xxx xx xxxxx xxx xxxx xxxx xxxx xxxxx xxx xxxxx xx.
+Background tasks can be triggered manually through Microsoft Visual Studio. Then you can step through the code and debug it.
 
--   Xxx xxxx xxx xxxxxxxxx xx xxx xxxxxxxxxx xxxx xxxxx
--   Xxx xxxxx xxxxx xxxxxxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxxxx
--   Xxx xxxxx xxxxx xxxxxxxxx xx xxxx xxx xxxx xxxxxxxxxxx xxx xxxxxxxxxx xxxx
+1.  In C#, put a breakpoint in the Run method of the background class, and/or write debugging output by using [**System.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/xaml/hh441592.aspx).
 
-1.  Xxx Xxxxxx Xxxxxx xx xxxx xxx xxxxx xxxxx xx xxx xxxxxxxxxx xxxx:
+    In C++, put a breakpoint in the Run function of the background class, and/or write debugging output by using [**OutputDebugString**](https://msdn.microsoft.com/library/windows/desktop/aa363362).
 
-    -   Xx X\# xxx X++, xxxx xxx xxxx xxx xxxxxxxxx xx xxx xxxxxxxxxx xxxx xxxxx xxxxxxxxx xx xxx xxxxxxxxxx xxxx xxxxxxx.
+2.  Run your application in the debugger and then trigger the background task using the suspend drop down menu in the **Lifecycle Events** toolbar. This drop down shows the names of the background tasks that can be activated by Visual Studio.
 
-2.  Xxx xxx xxxxxxxx xxxxxxxx xx xxxxx xxxx xxx xxxxxxxxxx xxxx xx xxxxxxxxx xxxxxxxx xx xxx xxxxxxx xxxxxxxx:
+    For this to work, the background task must already be registered and it must still be waiting for the trigger. For example, if a background task was registered with a one-shot TimeTrigger and that trigger has already fired, launching the task through Visual Studio will have no effect.
 
-    -   Xx X\# xxx X++, xxx xxxxx xxxxx xxxxxxxxx xxxx xxxxx xxx xxxxxxxxxx xxxx xxxxxxxxx xxxxxxxx xx xxx xxxxx xxxx. Xxx xxxxxxx: XxxxxxxXxxxxxxxxY.XxXxxxxxxxxxXxxx.
-    -   Xxx xxx xxxxxxx xxxx(x) xxxx xxxx xxx xxxx xxxx xxxx xx xxxxxxxxx.
-    -   Xxx xxxxxxxxxx XXXX XXX xx xxxxxxxxx xxxxxx xxx xxx xxxxx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032) xx [**XxxxXxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700543).
+    **Note**  Background tasks using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) or [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), and background tasks using a [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) with the [**SmsReceived**](https://msdn.microsoft.com/library/windows/apps/br224839) trigger type, cannot be activated in this manner.     
 
-3.  Xxxxxxx xxxx. Xx xxx xxx xxxxx xxxxx xxxx xx Xxxxxxx xx xxxxxxxx xxx xxxxxxxxxx xxxx, xxxxxx xxxxx xxxxxxx xxx xxx xxx Xxxxxxx xxxxx xxx.
+    ![debugging background tasks](images/debugging-activation.png)
 
-    Xx xxx xxxxxx xxxx xxxxxxxxx xxx xxx xxxxx xxx xxxxx xxx xxxxx xxxxx xxxxx xx xxxxxxx xxx xxx xxxxxxxxxx xxxx, xxxx xxx xx xxx xxxxxxxxxxx xxx xxxxxxxxxx xxxx xxxxxxxxx. Xxx xxxx xxxx xxxx xxxx xxx [Xxxxxxxx x xxxxxxxxxx xxxx](register-a-background-task.md).
+3.  When the background task activates, the debugger will attach to it and display debug output in VS.
 
-    1.  Xxxx xxxxx xxxxxx xx xxxxx xx xxx Xxxxx xxxxxx xxx xxxxxxxxx xxx xxxxxxxx.xxx.
-    2.  Xx xx **Xxxxxxxxxxx xxx Xxxxxxxx Xxxx** -&xx; **Xxxxxxxxx** -&xx; **Xxxxxxx** -&xx; **XxxxxxxxxxXxxxXxxxxxxxxxxxxx** xx xxx xxxxx xxxxxx.
-    3.  Xx xxx xxxxxxx xxxx, xxxxxx **Xxxx** -&xx; **Xxxx Xxxxxxxx xxx Xxxxx Xxxx** xx xxxxxx xxx xxxxxxxxxx xxxxxxx.
-    4.  Xxxxxx xxx **Xxxxxxxxxx xxx** xxx xxxxx **Xxxxxx Xxx**.
-    5.  Xxx xxx xxxxx xxxx xxx xx xxxxxxxx xxx xxxxxxxx xxx xxxxxxxxxx xxxx xxxxx.
-    6.  Xxxx xxx xxxxxxxxxx xxxx xxx xxxxxxxx xxxxx xxxxxxxxxxx. Xxxx xxxx xxxxxxx xxx xxxxx xxxxx xxxxxxxxxx xxx xxx xxxxxxxxxx xxxx.
-
-![xxxxx xxxxxx xxx xxxxxxxxxx xxxxx xxxxx xxxxxxxxxxx](images/event-viewer.png)
-
-## Xxxxxxxxxx xxxxx xxx Xxxxxx Xxxxxx xxxxxxx xxxxxxxxxx
+## Debug background task activation
 
 
-Xx xx xxx xxxx xxxx xxxxxxxxxx xxxxx xx xxxxxxxx xxxxx Xxxxxx Xxxxxx, xxx xxx xxxxxxx (xxxxx xxx/xx xxxxx) xxxxxxxxx xx Xxxxxxxx Xxxxxxxx xx xxxx xxxxxxx, xxxxxxxxxxxx xx-xxxxxxxxx xxx xxx xxxx Xxxxxx Xxxxxx xxx xxxxx xxx xxx’x xxxxxxxxxx xxxxx xx xxxxx. Xxxx xxx xx xxxxxxxx xx xxxxxxx:
+Background task activation depends on three things matching up correctly. This procedure shows how to check and make sure that these all match up.
 
--   Xxx Xxxxxxx XxxxxXxxxx xx xxxxxx xxx xxxxxxx xxx (xxxxxxx xx Xxxxxx Xxxxxx) xx xxxxxxx xxx xxxxxx xxxxxxxxx xxxxxxxxx xxx xxxxxxx.
--   Xx xxx xxxxxxx xxxxxxxx xxx xxx xxxxx Xxxxxx Xxxxxx xxx xxx xxxxxxxxxx xxxxx xxx xxx xxxxxxx, xxxxxx xx xxx xxx/xxx xx xx xxx xxx xxx’x xxxxxxxxxx xxxxx xxxxxxx xxxxx.
--   Xxx xxx xxxxxx xxx "Xxxxxx xx-xxxxxxx xx xxxxxxx" xxxxxxxxx xxxxxx xx xxxxx xxxx xx X\# xxxxxxxx.
--   Xxxx xxxxx xxx xxx xx xxxxx xxx xxxxx xxxxxxxxxx xx xxxxxxxxx xxx xxxxxxx xxxxxxx (xxx’x xxxxxx xx xxxxx xxxxxxxxx).
+-   The name and namespace of the background task class
+-   The entry point attribute specified in the package manifest
+-   The entry point specified by your app when registering the background task
 
-## Xxxxxxx
+1.  Use Visual Studio to note the entry point of the background task:
+
+    -   In C# and C++, note the name and namespace of the background task class specified in the background task project.
+
+2.  Use the manifest designer to check that the background task is correctly declared in the package manifest:
+
+    -   In C# and C++, the entry point attribute must match the background task namespace followed by the class name. For example: RuntimeComponent1.MyBackgroundTask.
+    -   All the trigger type(s) used with the task must also be specified.
+    -   The executable MUST NOT be specified unless you are using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) or [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543).
+
+3.  Windows only. To see the entry point used by Windows to activate the background task, enable debug tracing and use the Windows event log.
+
+    If you follow this procedure and the event log shows the wrong entry point or trigger for the background task, your app is not registering the background task correctly. For help with this task see [Register a background task](register-a-background-task.md).
+
+    1.  Open event viewer by going to the Start screen and searching for eventvwr.exe.
+    2.  Go to **Application and Services Logs** -&gt; **Microsoft** -&gt; **Windows** -&gt; **BackgroundTaskInfrastructure** in the event viewer.
+    3.  In the actions pane, select **View** -&gt; **Show Analytic and Debug Logs** to enable the diagnostic logging.
+    4.  Select the **Diagnostic log** and click **Enable Log**.
+    5.  Now try using your app to register and activate the background task again.
+    6.  View the diagnostic logs for detailed error information. This will include the entry point registered for the background task.
+
+![event viewer for background tasks debug information](images/event-viewer.png)
+
+## Background tasks and Visual Studio package deployment
 
 
--   Xxxx xxxx xxxx xxx xxxxxx xxx xxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxxxxx xxxxxx xxxxxxxxxxx xxx xxxxxxxxxx xxxx xxxxx. Xxxxxxxx xxxxxxxxxxxxx xx xxx xxxx xxxxxxxxxx xxxx xxx xxxxx xxxxxxxxxx xxxxxxx xx xxxxxxx xxx xxxxxxxxxx xxxx xxxx xxxx xxxx xxxx xxxx xx xx xxxxxxxxx.
--   Xx Xxxxxxx, xx xxx xxxxxxxxxx xxxx xxxxxxxx xxxx xxxxxx xxxxxx xxxx xxxx xx xxx xxx xxx xx xxx xxxx xxxxxx xxxxxx xxxxxx xx xxxxx xxx xxxxxxxxxx xxxx. Xxx xxxx xx xxxxxxxxxx xxxxxxxx xxxxxxx xxx xxxx xxxxxx-xxxxxxx xxxx, xxx [Xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx](declare-background-tasks-in-the-application-manifest.md).
--   Xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xx xxx xxxx xx xxxxxxxxxxxx. Xx xxxxx xx xxxxxxxx xx xxx xx xxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxxx. Xxxxxx xxxx xxxx xxx xxxxxxxxxx xxxxxxx xxxxxxxxx xxxxx xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxx - xx xxxxxxx xxxx xxx xxxxxxx xx xxxxxx x xxxxx xxxxxxxxxxxx xxxxxx xxxxx xxxxxxxxxx xx xxxxxxxx x xxxx, xx xxx xxxxx.
+If an app that uses background tasks is deployed using Visual Studio, and the version (major and/or minor) specified in Manifest Designer is then updated, subsequently re-deploying the app with Visual Studio may cause the app’s background tasks to stall. This can be remedied as follows:
 
-Xxx xxxx xxxx xx xxxxx XX xx xxxxx x xxxxxxxxxx xxxx xxx [Xxx xx xxxxxxx xxxxxxx, xxxxxx, xxx xxxxxxxxxx xxxxxx xx Xxxxxxx Xxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
+-   Use Windows PowerShell to deploy the updated app (instead of Visual Studio) by running the script generated alongside the package.
+-   If you already deployed the app using Visual Studio and its background tasks are now stalled, reboot or log off/log in to get the app’s background tasks working again.
+-   You can select the "Always re-install my package" debugging option to avoid this in C# projects.
+-   Wait until the app is ready for final deployment to increment the package version (don’t change it while debugging).
 
-## Xxxxxxx xxxxxx
+## Remarks
 
-* [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md)
-* [Xxxxxxxx x xxxxxxxxxx xxxx](register-a-background-task.md)
-* [Xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx](declare-background-tasks-in-the-application-manifest.md)
-* [Xxxxxxxxxx xxx xxxxxxxxxx xxxxx](guidelines-for-background-tasks.md)
-* [Xxx xx xxxxxxx xxxxxxx, xxxxxx, xxx xxxxxxxxxx xxxxxx xx Xxxxxxx Xxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
-* [Xxxxxxxxx xxx xxxx xxxxxxx xx Xxxxxxx Xxxxxxx Xxxxx xxxx xxxx Xxxxxx Xxxxxx xxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
+
+-   Make sure your app checks for existing background task registrations before registering the background task again. Multiple registrations of the same background task can cause unexpected results by running the background task more than once each time it is triggered.
+-   On Windows, if the background task requires lock screen access make sure to put the app on the lock screen before trying to debug the background task. For info on specifying manifest options for lock screen-capable apps, see [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md).
+-   Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
+
+For more info on using VS to debug a background task see [How to trigger suspend, resume, and background events in Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx).
+
+## Related topics
+
+* [Create and register a background task](create-and-register-a-background-task.md)
+* [Register a background task](register-a-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps](https://msdn.microsoft.com/library/windows/apps/xaml/hh974425.aspx)
+* [Analyzing the code quality of Windows Windows Store apps with Visual Studio code analysis](https://msdn.microsoft.com/library/windows/apps/xaml/hh441471.aspx)
+
+ 
 
  
 
- 
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

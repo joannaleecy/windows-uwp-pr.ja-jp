@@ -1,36 +1,36 @@
 ---
-xxxxx: xXxxxx xxxxxxxxx
-xxxxxxxxxxx: Xxx xXxxxx xxxx xxx xXxxx xxxxxx xxxxxxxxx xx xxxxxx XxxxXxxx xxx XxxxXxxx xxxxx xxxxxxxxxxxxx xxx xxxxxxx xxx xxxxxxx xxxxxxxxxx.
-xx.xxxxxxx: XXYYYYYX-YXYY-YXYY-YXYY-YYYYYYYXYYYX
+title: xPhase attribute
+description: Use xPhase with the xBind markup extension to render ListView and GridView items incrementally and improve the panning experience.
+ms.assetid: BD17780E-6A34-4A38-8D11-9703107E247E
 ---
 
-# x:Xxxxx xxxxxxxxx
+# x:Phase attribute
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxx **x:Xxxxx** xxxx xxx [{x:Xxxx} xxxxxx xxxxxxxxx](x-bind-markup-extension.md) xx xxxxxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242878) xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242705) xxxxx xxxxxxxxxxxxx xxx xxxxxxx xxx xxxxxxx xxxxxxxxxx. **x:Xxxxx** xxxxxxxx x xxxxxxxxxxx xxx xx xxxxxxxxx xxx xxxx xxxxxx xx xxxxx xxx [**XxxxxxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298914) xxxxx xx xxxxxxxx xxxxxxx xxx xxxxxxxxx xx xxxx xxxxx. Xxxx xxx [Xxxxxx XxxxXxxx xxx XxxxXxxx xxxxx xxxxxxxxxxxxx](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally).
+Use **x:Phase** with the [{x:Bind} markup extension](x-bind-markup-extension.md) to render [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705) items incrementally and improve the panning experience. **x:Phase** provides a declarative way of achieving the same effect as using the [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) event to manually control the rendering of list items. Also see [Update ListView and GridView items incrementally](../debug-test-perf/optimize-gridview-and-listview.md#update-items-incrementally).
 
-## XXXX xxxxxxxxx xxxxx
+## XAML attribute usage
 
 
 ``` syntax
 <object x:Phase="PhaseValue".../>
 ```
 
-## XXXX xxxxxx
+## XAML values
 
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| XxxxxXxxxx | X xxxxxx xxxx xxxxxxxxx xxx xxxxx xx xxxxx xxx xxxxxxx xxxx xx xxxxxxxxx. Xxx xxxxxxx xx Y. | 
+| PhaseValue | A number that indicates the phase in which the element will be processed. The default is 0. | 
 
-## Xxxxxxx
+## Remarks
 
-Xx x xxxx xx xxxxxx xxxx xxxx xxxxx, xx xxxxx xxx xxxxx xxxxx, xxxx xxxxxxxxx xx xxx xxxxxxxxxx xx xxx xxxx xxxxxxxx, xxx xxxx xxx xxx xx xxxx xx xxxxxx xxxxx xxxx xxxxxx xx xxxx xx xxxx xxx xxxxx xx xxxxxxxxx. Xxxx xx xxxxxxxxxxxx xxxx xxx x xxxxxxxx xxxxxx xxxx x xxxxx-xxxxxxxxx XXX xxxx xx x xxxxx xx x xxxxxx.
+If a list is panned fast with touch, or using the mouse wheel, then depending on the complexity of the data template, the list may not be able to render items fast enough to keep up with the speed of scrolling. This is particularly true for a portable device with a power-efficient CPU such as a phone or a tablet.
 
-Xxxxxxx xxxxxxx xxxxxxxxxxx xxxxxxxxx xx xxx xxxx xxxxxxxx xx xxxx xxx xxxxxxxx xxx xx xxxxxxxxxxx, xxx xxx xxxx xxxxxxxxx xxxxxxxx xxxxxxxx xxxxx. Xxxx xxxxxxx xxx xxxx xx xxxx xxxx xxxxxxx xxx xxxx xxxx xx xxxxxxx xxxx, xxx xxxx xxxxxx xxxx xxxxxxxx xx xxxx xxxxxxxx xx xxxx xxxxxxx.
+Phasing enables incremental rendering of the data template so that the contents can be prioritized, and the most important elements rendered first. This enables the list to show some content for each item if panning fast, and will render more elements of each template as time permits.
 
-## Xxxxxxx
+## Example
 
 ```xaml
 <DataTemplate x:Key="PhasedFileTemplate" x:DataType="model:FileItem">
@@ -54,23 +54,27 @@ Xxxxxxx xxxxxxx xxxxxxxxxxx xxxxxxxxx xx xxx xxxx xxxxxxxx xx xxxx xxx xxxxxxxx 
 </DataTemplate>
 ```
 
-Xxx xxxx xxxxxxxx xxxxxxxxx Y xxxxxx:
+The data template describes 4 phases:
 
-1.  Xxxxxxxx xxx XxxxxxxXxxx xxxx xxxxx. Xxx xxxxxxxx xxxxxxx x xxxxx xxxxxxxxx xxxx xx xxxxxxxxxx xxxxxxxxxx xx xx xxxx xx xxxxx Y.
-2.  Xxxxx xxx xxxxxxXxxx xxxx xxxxx.
-3.  Xxxxx xxx xxxxxxXxxxXxxx xxx xxxxxxXxxxxXxxx xxxx xxxxxx.
-4.  Xxxxx xxx xxxxx.
+1.  Presents the DisplayName text block. All controls without a phase specified will be implicitly considered to be part of phase 0.
+2.  Shows the prettyDate text block.
+3.  Shows the prettyFileSize and prettyImageSize text blocks.
+4.  Shows the image.
 
-Xxxxxxx xx x xxxxxxx xx [{x:Xxxx}](x-bind-markup-extension.md) xxxx xxxxx xxxx xxxxxxxx xxxxxxx xxxx [**XxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242879) xxx xxxx xxxxxxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxxx xxx xxxx xxxxxxx. Xxxx xxxxxxxxx xxxx xxxxx, **XxxxXxxxXxxx** xxxxxxx x xxxxxx xxxxx xxx xxx xxxxx xx xxx xxxx xxxxxx xxxxxx xxxx xxx xxxx xxxxx. Xxx xxxxxxxxx xxxx xx xxxxxxxxx xx xxxx-xxxxxx xxxxxxx xx xxxx xx xxx xxxx xx xxxxxxxx, xxx xxxx xxxxxxxx xxx xx xx-xxxxxxxx, xxx xxx xxxxxxxxx xxx xxxxx xxxx xxx xx xxxxxx xxxxxxx.
+Phasing is a feature of [{x:Bind}](x-bind-markup-extension.md) that works with controls derived from [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879) and that incrementally processes the item template for data binding. When rendering list items, **ListViewBase** renders a single phase for all items in the view before moving onto the next phase. The rendering work is performed in time-sliced batches so that as the list is scrolled, the work required can be re-assessed, and not performed for items that are no longer visible.
 
-Xxx **x:Xxxxx** xxxxxxxxx xxx xx xxxxxxxxx xx xxx xxxxxxx xx x xxxx xxxxxxxx xxxx xxxx [{x:Xxxx}](x-bind-markup-extension.md). Xxxx xx xxxxxxx xxx x xxxxx xxxxx xxxx Y, xxx xxxxxxx xxxx xx xxxxxx xxxx xxxx (xxx **Xxxxxxx**, xxx **Xxxxxxxxxx**) xxxxx xxxx xxxxx xx xxxxxxxxx xxx xxxxxxxx xxx xxxxxxx. Xxxx x [**XxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242879)-xxxxxxx xxxxxxx xx xxxxxxxx, xx xxxx xxxxxxx xxx xxxx xxxxxxxxx xxxx xxxxx xxxx xxx xx xxxxxx xx xxxxxx xx xxxxxx xxx xxxxx xxxxxxx xxxxx. XX xxxxxxxx xxxxxx xxx xxxxxxxx xxxx xxxxxx xxxxx xxx xxxxxx xxxxx xxxx xxx xxxx-xxxxx xxxxx. Xxxxxxx xxxxxx xxxx xxxx-xxxxxxx xxxx xx xx xxxxxxx, xxx xxxxxxxxx xxxxxxx xxxxx xx xxxx xxx XX xxxxxxxx xx xxxx xxxx xxx xxxxx.
+The **x:Phase** attribute can be specified on any element in a data template that uses [{x:Bind}](x-bind-markup-extension.md). When an element has a phase other than 0, the element will be hidden from view (via **Opacity**, not **Visibility**) until that phase is processed and bindings are updated. When a [**ListViewBase**](https://msdn.microsoft.com/library/windows/apps/br242879)-derived control is scrolled, it will recycle the item templates from items that are no longer on screen to render the newly visible items. UI elements within the template will retain their old values until they are data-bound again. Phasing causes that data-binding step to be delayed, and therefore phasing needs to hide the UI elements in case they are stale.
 
-Xxxx XX xxxxxxx xxx xxxx xxxx xxx xxxxx xxxxxxxxx. Xx xx, xxxx xxxx xxxxx xx xxx xxxxxxxx xx xxx xxxxxxx. Xx x xxxxx xx xxx xxxxxxxxx, xxxxx Y xx xxxxxxx.
+Each UI element may have only one phase specified. If so, that will apply to all bindings on the element. If a phase is not specified, phase 0 is assumed.
 
-Xxxxx xxxxxxx xx xxx xxxx xx xx xxxxxxxxxx xxx xxx xxx xxxx xx xxx xxxxx xx [**XxxxxxxxxXxxxxxxXxxxxxxxXxxxxXxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298493). Xxx [**XxxxxxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298914) xxxxx xxxx xx xxxxxx xxx xxxx xxxxx xxxxxx xxx **x:Xxxxx** xxxxxxxx xxx xxxxxxxxx.
+Phase numbers do not need to be contiguous and are the same as the value of [**ContainerContentChangingEventArgs.Phase**](https://msdn.microsoft.com/library/windows/apps/dn298493). The [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/dn298914) event will be raised for each phase before the **x:Phase** bindings are processed.
 
-Xxxxxxx xxxx xxxxxxx [{x:Xxxx}](x-bind-markup-extension.md) xxxxxxxx, xxx [{Xxxxxxx}](binding-markup-extension.md) xxxxxxxx.
+Phasing only affects [{x:Bind}](x-bind-markup-extension.md) bindings, not [{Binding}](binding-markup-extension.md) bindings.
 
-Xxxxxxx xxxx xxxx xxxxx xxxx xxx xxxx xxxxxxxx xx xxxxxxxx xxxxx x xxxxxxx xxxx xx xxxxx xx xxxxxxx. Xxx Xxxxxxx YY, xxxx xxxxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242878) xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242705). Xxxxxxx xxxx xxx xxxxx xx xxxx xxxxxxxxx xxxx xx xxxxx xxxx xxxxxxxx, xx xxx xxxxx xxxxxxxxx xxxx xx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209369) xx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/dn251843) xxxxxxxx—xx xxxxx xxxxx, xxx xxx XX xxxxxxxx xxxx xx xxxx xxxxx xx xxxx.
+Phasing will only apply when the item template is rendered using a control that is aware of phasing. For Windows 10, that means [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/br242705). Phasing will not apply to data templates used in other item controls, or for other scenarios such as [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/br209369) or [**Hub**](https://msdn.microsoft.com/library/windows/apps/dn251843) sections—in those cases, all the UI elements will be data bound at once.
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

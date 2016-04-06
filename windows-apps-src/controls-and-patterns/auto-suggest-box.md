@@ -1,92 +1,92 @@
 ---
-Xxxxxxxxxxx: X xxxx xxxxx xxx xxxx xxxxxxxx xxxxxxxxxxx xx xxx xxxx xxxxx.
-xxxxx: Xxxxxxxxxx xxx xxxx-xxxxxxx xxxxx
-xx.xxxxxxx: YXYYYYYY-XYYY-YXYY-YYXX-XYYYXXYYYXYX
-xxx.xxxxxxx: YYXYXXYX-YYYX-YXYY-YXYX-YYYYXYYYYXYX
-xxxxx: Xxxx-xxxxxxx xxx
-xxxxxxxx: xxxxxx.xxx
+Description: ユーザーが入力するときに、検索候補を表示するテキスト入力ボックスです。
+title: 自動提案ボックスのガイドライン
+ms.assetid: 1F608477-F795-4F33-92FA-F200CC243B6B
+dev.assetid: 54F8DB8A-120A-4D79-8B5A-9315A3764C2F
+label: 自動提案ボックス
+template: detail.hbs
 ---
-# Xxxx-xxxxxxx xxx
-Xxx xx XxxxXxxxxxxXxx xx xxxxxxx x xxxx xx xxxxxxxxxxx xxx x xxxx xx xxxxxx xxxx xx xxxx xxxx.
+# 自動提案ボックス
+AutoSuggestBox を使って、ユーザーが入力と同時に選べる候補リストを表示します。
 
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**XxxxXxxxxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
--   [**XxxxXxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx)
--   [**XxxxxxxxxxXxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx)
--   [**XxxxxXxxxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx)
+-   [**AutoSuggestBox クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.aspx)
+-   [**TextChanged イベント**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx)
+-   [**SuggestionChose イベント**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx)
+-   [**QuerySubmitted イベント**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
+## 適切なコントロールの選択
 
-Xx xxx'x xxxx x xxxxxx, xxxxxxxxxxxx xxxxxxx xxxx xxxxxx xxxx xxxxxx xxxx x xxxx xx xxxxxxxxxxx, xxxx xxxxxx xx xxxx-xxxxxxx xxx.
+候補の一覧を使ってテキストを検索できる、シンプルでカスタマイズ可能なコントロールが必要な場合は、自動提案ボックスを使います。
 
-Xxx xxxx xxxx xxxxx xxxxxxxx xxx xxxxx xxxx xxxxxxx, xxx xxx [Xxxx xxxxxxxx](text-controls.md) xxxxxxx.
+適切なテキスト コントロールの選択について詳しくは、「[テキスト コントロール](text-controls.md)」をご覧ください。
 
-## Xxxxxxxx
+## 例
 
-Xxx xxxxx xxxxx xxx xxx xxxx-xxxxxxx xxx xxxxxxxx xx xx xxxxxxxx xxxxxx xxx x xxxx xxx xxxx xxxxxxxx xxxx xxxx:
+自動提案ボックスのエントリ ポイントは、オプションのヘッダーとオプションのヒント テキスト付きのテキスト ボックスで構成されます。
 
-![Xxxxxxx xx xxx xxxxx xxxxx xxx xxxx-xxxxxxx xxxxxxx](images/controls_autosuggest_entrypoint.png)
+![自動提案コントロールのエントリ ポイントの例](images/controls_autosuggest_entrypoint.png)
 
-Xxx xxxx-xxxxxxx xxxxxxx xxxx xxxxxxxxx xxxxxxxxxxxxx xxxx xxx xxxx xxxxxx xx xxxxx xxxx. Xxx xxxxxxx xxxx xxx xxxxxx xxxxx xx xxxxx xxx xxxx xxxxx xxx. X "xxxxx xxx" xxxxxx xxxxxxx:
+自動提案結果の一覧には、ユーザーがテキストの入力を開始すると自動的に内容が入力されます。 結果の一覧は、テキスト入力ボックスの上または下に表示されます。 [すべてクリア] ボタンも表示されます。
 
-![Xxxxxxx xx xxx xxxxxxxx xxxx-xxxxxxx xxxxxxx](images/controls_autosuggest_expanded01.png)
+![展開された自動提案コントロールの例](images/controls_autosuggest_expanded01.png)
 
-## Xxxxxx xx xxxx-xxxxxxx xxx
+## 自動提案ボックスの作成
 
-Xx xxx xx XxxxXxxxxxxXxx, xxx xxxx xx xxxxxxx xx Y xxxx xxxxxxx.
+AutoSuggestBox を使うには、3 つのユーザー操作に応答する必要があります。
 
-- Xxxx xxxxxxx - Xxxx xxx xxxx xxxxxx xxxx, xxxxxx xxx xxxxxxxxxx xxxx.
-- Xxxxxxxxxx xxxxxx - Xxxx xxx xxxx xxxxxxx x xxxxxxxxxx xx xxx xxxxxxxxxx xxxx, xxxxxx xxx xxxx xxx.
-- Xxxxx xxxxxxxxx - Xxxx xxx xxxx xxxxxxx x xxxxx, xxxx xxx xxxxx xxxxxxx.
+- テキストの変更 - ユーザーがテキストを入力したときに、候補リストを更新します。
+- 候補の選択 - ユーザーが候補リストで候補を選んだときに、テキスト ボックスを更新します。
+- クエリの送信 - ユーザーがクエリを送信したときに、クエリの結果を表示します。
 
-### Xxxx xxxxxxx
+### テキストの変更
 
-Xxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx) xxxxx xxxxxx xxxxxxxx xxx xxxxxxx xx xxx xxxx xxx xx xxxxxxx. Xxx xxx xxxxx xxxx [Xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason.aspx) xxxxxxxx xx xxxxxxxxx xxxxxxx xxx xxxxxx xxx xxx xx xxxx xxxxx. Xx xxx xxxxxx xxxxxx xx **XxxxXxxxx**, xxxxxx xxxx xxxx xxxxx xx xxx xxxxx. Xxxx, xxx xxx xxxxxxxx xxxx xx xxx [XxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) xx xxx XxxxXxxxxxxXxx xx xxxxxx xxx xxxxxxxxxx xxxx.
+テキスト ボックスの内容が更新されるたびに、[**TextChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textchanged.aspx) イベントが発生します。 イベント引数 [Reason](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxtextchangedeventargs.reason.aspx) プロパティを使って、変更がユーザー入力によって生じたものかどうかを調べます。 変更の理由が **UserInput** の場合、入力に基づいてデータをフィルター処理します。 次に、フィルター処理されたデータを AutoSuggestBox の [ItemsSource](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) に設定し、候補リストを更新します。
 
-Xx xxxxxxx xxx xxxxx xxx xxxxxxxxx xx xxx xxxxxxxxxx xxxx, xxx xxx xxx [XxxxxxxXxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) xx [XxxxXxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx).
+候補リストでの項目の表示方法を制御するには、[DisplayMemberPath](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.displaymemberpath.aspx) または [ItemTemplate](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) を使うことができます。
 
-- Xx xxxxxxx xxx xxxx xx x xxxxxx xxxxxxxx xx xxxx xxxx xxxx, xxx xxx XxxxxxxXxxxxxXxxx xxxxxxxx xx xxxxxx xxxxx xxxxxxxx xxxx xxxx xxxxxx xx xxxxxxx xx xxx xxxxxxxxxx xxxx.
-- Xx xxxxxx x xxxxxx xxxx xxx xxxx xxxx xx xxx xxxx, xxx xxx XxxxXxxxxxxx xxxxxxxx.
+- データ項目の単一のプロパティのテキストを表示するには、DisplayMemberPath プロパティを設定し、候補リストに表示するオブジェクトのプロパティを選択します。
+- リストの各項目に対してカスタマイズした外観を定義するには、ItemTemplate プロパティを使います。
 
-### Xxxxxxxxxx xxxxxx
+### 候補の選択
 
-Xxxx x xxxx xxxxxxxxx xxxxxxx xxx xxxxxxxxxx xxxx xxxxx xxx xxxxxxxx, xxx xxxx xx xxxxxx xxx xxxx xx xxx xxxx xxx xx xxxxx.
+ユーザーがキーボードを使って候補リスト内を移動したときは、テキスト ボックス内のテキストを更新して合わせる必要があります。
 
-Xxx xxx xxx xxx [XxxxXxxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textmemberpath.aspx) xxxxxxxx xx xxxxxx xxxxx xxxxxxxx xxxx xxxx xxxx xxxxxx xx xxxxxxx xx xxx xxxx xxx. Xx xxx xxxxxxx x XxxxXxxxxxXxxx, xxx xxxx xxx xx xxxxxxx xxxxxxxxxxxxx. Xxx xxxxxx xxxxxxxxx xxxxxxx xxx xxxx xxxxx xxx XxxxxxxXxxxxxXxxx xxx XxxxXxxxxxXxxx xx xxx xxxx xx xxx xxxx xx xxx xxxxxxxxxx xxxx xxx xxx xxxx xxx.
+[TextMemberPath](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.textmemberpath.aspx) プロパティを設定し、テキスト ボックスに表示するデータ オブジェクトのプロパティを選択します。 TextMemberPath を指定した場合、テキスト ボックスは自動的に更新されます。 通常は、DisplayMemberPath と TextMemberPath に同じ値を指定する必要があるため、候補リストとテキスト ボックスのテキストは同じです。
 
-Xx xxx xxxx xx xxxx xxxx xxxx x xxxxxx xxxxxxxx, xxxxxx xxx [XxxxxxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx) xxxxx xx xxxxxxxx xxx xxxx xxx xxxx xxxxxx xxxx xxxxx xx xxx xxxxxxxx xxxx.
+単純ではないプロパティを表示する必要がある場合、[SuggestionChosen](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.suggestionchosen.aspx) イベントを処理し、選択した項目に基づいてカスタム テキストをテキスト ボックスに入力します。
 
-### Xxxxx xxxxxxxxx
+### クエリの送信
 
-Xxxxxx xxx [XxxxxXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx) xxxxx xx xxxxxxx x xxxxx xxxxxx xxxxxxxxxxx xx xxxx xxx xxx xxxx xxx xxxxxx xx xxx xxxx.
+[QuerySubmitted](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.querysubmitted.aspx) イベントを処理し、アプリに適したクエリ操作を実行して、ユーザーに結果を表示します。
 
-Xxx XxxxxXxxxxxxxx xxxxx xxxxxx xxxx x xxxx xxxxxxx x xxxxx xxxxxx. Xxx xxxx xxx xxxxxx x xxxxx xx xxx xx xxxxx xxxx:
-- Xxxxx xxx xxxxx xx xx xxx xxxx xxx, xxxxx Xxxxx xx xxxxx xxx xxxxx xxxx. Xxx xxxxx xxxx [XxxxxxXxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion.aspx) xxxxxxxx xx **xxxx**.
-- Xxxxx xxx xxxxx xx xx xxx xxxxxxxxxx xxxx, xxxxx Xxxxx, xxxxx, xx xxx xx xxxx. Xxx xxxxx xxxx XxxxxxXxxxxxxxxx xxxxxxxx xxxxxxxx xxx xxxx xxxx xxx xxxxxxxx xxxx xxx xxxx.
+ユーザーがクエリ文字列をコミットすると、QuerySubmitted イベントが発生します。 ユーザーは次のいずれかの方法でクエリをコミットできます。
+- テキスト ボックスにフォーカスがあるときに、Enter キーを押すか、クエリ アイコンをクリックします。 イベント引数の [ChosenSuggestion](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.chosensuggestion.aspx) プロパティは **null** です。
+- 候補リストにフォーカスがあるときに、Enter キーを押すか、項目をクリックまたはタップします。 イベント引数の ChosenSuggestion プロパティには、一覧から選択された項目が含まれています。
 
-Xx xxx xxxxx, xxx xxxxx xxxx [XxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) xxxxxxxx xxxxxxxx xxx xxxx xxxx xxx xxxx xxx. 
+いずれの場合も、イベント引数の [QueryText](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestboxquerysubmittedeventargs.querytext.aspx) プロパティにはテキスト ボックスのテキストが含まれています。 
 
-### Xxx XxxxXxxxxxxXxx xxx xxxxxx
+### 検索に AutoSuggestBox を使う
 
-Xxx xx XxxxXxxxxxxXxx xx xxxxxxx x xxxx xx xxxxxxxxxxx xxx x xxxx xx xxxxxx xxxx xx xxxx xxxx.
+AutoSuggestBox を使って、ユーザーが入力と同時に選べる候補リストを表示します。
 
-Xx xxxxxxx, xxx xxxx xxxxx xxx xxxxx’x xxxx x xxxxx xxxxxx xxxxx. Xxx xxx xxx xxx [XxxxxXxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.queryicon.aspx) xxxxxxxx xx xxx x xxxxxx xxxx xxx xxxxxxxxx xxxx xx xxx xxxxx xxxx xx xxx xxxx xxx. Xxx xxxxxxx, xx xxxx xxx XxxxXxxxxxxXxx xxxx xxxx x xxxxxxx xxxxxx xxx, xxx x ‘xxxx’ xxxx, xxxx xxxx.
+既定では、テキスト入力ボックスにはクエリ ボタンが表示されません。 [QueryIcon](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.autosuggestbox.queryicon.aspx) プロパティを設定し、テキスト ボックスの右側に指定したアイコンが表示されるボタンを追加することができます。 たとえば、AutoSuggestBox を一般的な検索ボックスと同様の外観にするには、次のような "検索" アイコンを追加します。
 
 ```xaml
 <AutoSuggestBox QueryIcon="Find"/>
 ```
 
-Xxxx'x xx XxxxXxxxxxxXxx xxxx x 'xxxx' xxxx.
+ここでは、AutoSuggestBox に "検索" アイコンが付いています。
 
-![Xxxxxxx xx xxx xxxxx xxxxx xxx xxxx-xxxxxxx xxxxxxx](images/controls_autosuggest_entrypoint.png)
+![自動提案コントロールのエントリ ポイントの例](images/controls_autosuggest_entrypoint.png)
 
-## Xxxxxxx
+## サンプル
 
-Xx xxx x xxxxxxxx xxxxxxx xxxxxxxx xx XxxxXxxxxxxXxx, xxx xxx [XxxxXxxxxxxXxx xxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619996) xxx [XXXX XX Xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619992).
+AutoSuggestBox の動作の詳細な例については、[AutoSuggestBox の移行のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619996) と [XAML UI の基本のサンプル](http://go.microsoft.com/fwlink/p/?LinkId=619992) をご覧ください。
 
-Xxxx xx x xxxxxx XxxxXxxxxxxXxx xxxx xxx xxxxxxxx xxxxx xxxxxxxx.
+必須のイベント ハンドラーを使った簡単な AutoSuggestBox を次に示します。
 
 ```xaml
 <AutoSuggestBox PlaceholderText="Search" QueryIcon="Find" Width="200"
@@ -128,29 +128,33 @@ private void AutoSuggestBox_QuerySubmitted(AutoSuggestBox sender, AutoSuggestBox
 }
 ```
 
-## Xxxxxxxxxxxxxxx
+## 推奨事項
 
--   Xxxx xxxxx xxx xxxx-xxxxxxx xxx xx xxxxxxx xxxxxxxx xxx xx xxxxxx xxxxxxx xxxxx xxx xxx xxxxxxx xxxx, xxxxxxx x xxxxxx-xxxx "Xx xxxxxxx" xxxxxxx xx xxx xxxxxx xx xxxx xxxxx xxxx xxxxx xxxxxx xxxxxxx xxxxxxxx:
+-   自動提案ボックスを使って検索を実行したときに、入力したテキストに対応する検索結果が存在しなかった場合は、"検索結果が見つかりませんでした" という 1 行を表示します。これにより、ユーザーは検索要求が実行されたことがわかります。
 
-    ![Xxxxxxx xx xx xxxx xxxxxxx xxx xxxx xx xxxxxx xxxxxxx](images/controls_autosuggest_noresults.png)
-
-
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
-
-## Xxxxxxx xxxxxxxx
-
-[Xxxx xxxxxxxx](text-controls.md)
-
-**Xxx xxxxxxxxx**
-- [Xxxxxxxxxx xxx xxxxx xxxxxxxx](spell-checking-and-prediction.md)
-- [Xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [Xxxxxxxxxx xxx xxxx xxxxx](text-controls.md)
-
-**Xxx xxxxxxxxxx (XXXX)**
-- [**XxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Xxxxxxx.XX.Xxxx.Xxxxxxxx XxxxxxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227519)
+    ![検索結果のない自動提案ボックスの例](images/controls_autosuggest_noresults.png)
 
 
-**Xxx xxxxxxxxxx (xxxxx)**
-- [Xxxxxx.Xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
+## 関連記事
+
+[テキスト コントロール](text-controls.md)
+
+**デザイナー向け**
+- [スペル チェックのガイドライン](spell-checking-and-prediction.md)
+- [検索の追加](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [テキスト入力のガイドライン](text-controls.md)
+
+**開発者向け (XAML)**
+- [**TextBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [**Windows.UI.Xaml.Controls PasswordBox クラス**](https://msdn.microsoft.com/library/windows/apps/br227519)
+
+
+**開発者向け (その他)**
+- [String.Length プロパティ](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

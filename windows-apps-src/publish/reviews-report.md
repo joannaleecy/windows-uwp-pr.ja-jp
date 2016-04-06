@@ -1,79 +1,83 @@
 ---
-Xxxxxxxxxxx: Xxx Xxxxxxx xxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxx xxx xxx xxx xxxxxxxx xxxx xxxxxxxxx xxxxxxx xxxx xxxxxx xxxx xxx xx xxx Xxxxx.
-xxxxx: Xxxxxxx xxxxxx
-xx.xxxxxxx: XYYXYXYX-YXYX-YXYX-YYYY-YXXXYYYXYXYX
+Description: The Reviews report in the Windows Dev Center dashboard lets you see the comments that customers entered when rating your app in the Store.
+title: Reviews report
+ms.assetid: E50C3A4D-1D8A-4E5B-8182-3FAD049F2A2D
 ---
 
-# Xxxxxxx xxxxxx
+# Reviews report
 
 
-Xxx **Xxxxxxx** xxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxx xxx xxx xxx xxxxxxxx xxxx xxxxxxxxx xxxxxxx xxxx xxxxxx xxxx xxx xx xxx Xxxxx. Xxx xxx xxxx xxxx xxxx xx xxxx xxxxxxxxx, xx [xxxxxxxx xxx xxxxxx](download-analytic-reports.md) xx xxxx xxxxxxx. Xxxxxxxxxxxxx, xxx xxx xxxxxxxxxxxxxxxx xxxxxxxx xxxx xxxx xx xxxxx xxx [Xxxxxxx Xxxxx xxxxxxxxx XXXX XXX](../monetize/access-analytics-data-using-windows-store-services.md).
+The **Reviews** report in the Windows Dev Center dashboard lets you see the comments that customers entered when rating your app in the Store. You can view this data in your dashboard, or [download the report](download-analytic-reports.md) to view offline. Alternatively, you can programmatically retrieve this data by using the [Windows Store analytics REST API](../monetize/access-analytics-data-using-windows-store-services.md).
 
-> **Xxxx**  Xxx xxx xxxx [xxxxxxx xx xxxxxxxx xxxxxxx](respond-to-customer-reviews.md) xxxx xxxx xxxx.
+> **Note**  You can also [respond to customer reviews](respond-to-customer-reviews.md) from this page.
 
-Xxxx xxxxxx xxxxx xxx xxxxxx xx xxxxx xxxx x xxxxxxxx xxxxx xxxx xxx xxxx xxxxxxx x xxxxxx, xxx xxxx xxx xxxxxxx xxxx xxxxxxx xxxxxx xxxx xxx; xxx xxxxxxxxxx xxxxx xxxx xxxxxxx, xxx xxx [Xxxxxxx xxxxxx](ratings-report.md).
+This report shows the number of stars that a customer rated your app when leaving a review, but does not analyze star ratings across your app; for statistics about your ratings, see the [Ratings report](ratings-report.md).
 
-Xxxx xxxx xxxxxxxxx xxx xxxxx x xxxxxx xxx xxxx xxx xxxxxxx xxxxxx xxx xxxxxxxx, xx xxx xxxx xxxxxxxxx xxx xxxxx xxxxxxx xxxx xxxxxxx. Xx xxxxxxx, xxxx xxxx xxxx xxxxx xxxxxxx xxxx xxx'x xxxxxxx xxxxxx xxxxxxx, xxx xxx xxx xxx xxx **Xxxx xxxxxxx** xx xxxx xxxx xxxxxxx xxxx xxxxxxx xxxxxxx, xx xxxxxxxxx xxxxx.
+Note that customers can leave a rating for your app without adding any comments, so you will typically see fewer reviews than ratings. By default, this page also shows ratings that don't include review content, but you can use the **Page filters** to show only ratings that include reviews, as described below.
 
-Xxxx xxxxxxxx xxxxxx xxxxxxxx:
+Each customer review contains:
 
--   Xxx xxxxx xxx xxxxxx xxxx xxxxxxxx xx xxx xxxxxxxx. (Xxxxxxx xxxxxxx xx xxxxxxxxx xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx xxxx xxx xxxx x xxxxx.)
--   Xxx xxxx xx xxx xxxxxx.
--   Xxx xxxx xx xxx xxxxxxxx xx xx xxxxxxx xx xxx Xxxxxxx Xxxxx.
--   Xxx xxxxxxxx'x xxxxxxx/xxxxxx.
--   Xxx xxxxxxx xxxxxxx xx xxx xxx xx xxx xxxxxxxx'x xxxxxx xx xxx xxxx xxx xxxxxx xxx xxxx. (Xxxx xxxx xx xxx xxxxxxxxx xxx xxxxxxx xxxxxxxxx xxxxxx xx xxxxxxxxx xx xxxxxxxxx xx Xxxxxxx Y.Y xxx xxxxxxx.)
--   Xxx XX xxxxxxx xx xxx xxxxxx xxxxx xxx xxxxxxxx xxx xxxxx xxxx xxx xxxxxx xxx xxxx.
--   Xxx xxxx xx xxx xxxxxx xxxxx xxx xxxxxxxx xxx xxxxx xxxx xxx xxxxxx xxx xxxx. (Xxxx xxxx xx xxx xxxxxxxxx xxx xxxxxxx xxxxxxxxx xxxxxx xx xxxxxxxxx xx xxxxxxxxx xx Xxxxxxx Y.Y xxx xxxxxxx.)
--   Xxx xxxxxx'x "xxxxxxxxxx xxxxx," xx xxxxx xx xxxxx xxxxxxxxx xxxx xxxxxxx xxxx xxxxxx. Xxxxx xxx xxxxx xx x xxxxxx xx xxx xxxxxxx: xxx xxxxx xxxxxx xxxxx xxx xxxx xxxxxxxxx xxxxx xx xx xxxxxx, xxx xxx xxxxxx xxxxxx xx xxx xxxxx xxxxxx xx xxxxxxxxx xxx xxxxx xxx xxxxxx. Xxx xxxxxxx, x xxxxxxxxxx xxxxx xx Y/YY xxxxx xxxx xxx xx YY xxxxxx, Y xxxxx xxx xxxxxx xxxxxx xxx Y xxx xxx. (Xx xxxxx xxx xx xxxxxxxxxx xxxxx xxx x xxxxxx, xx xxxxxxxxxx xxxxx xx xxxxxxxxx.)
+-   The title and review text provided by the customer. (Reviews written by customers on Windows Phone 8.1 and earlier will not have a title.)
+-   The date of the review.
+-   The name of the reviewer as it appears in the Windows Store.
+-   The reviewer's country/region.
+-   The package version of the app on the customer's device at the time the review was left. (This info is not available for reviews submitted online or submitted by customers on Windows 8.1 and earlier.)
+-   The OS version of the device which the customer was using when the review was left.
+-   The name of the device which the customer was using when the review was left. (This info is not available for reviews submitted online or submitted by customers on Windows 8.1 and earlier.)
+-   The review's "usefulness count," as rated by other customers when reading that review. These are shown as a series of two numbers: the first number shows how many customers rated it as useful, and the second number is the total number of customers who rated the review. For example, a usefulness count of 4/10 means that out of 10 raters, 4 found the review useful and 6 did not. (If there are no usefulness votes for a review, no usefulness count is displayed.)
 
-## Xxxxx xxxxxxx
-
-
-Xxxx xxx xxx xx xxx xxxx, xxx xxx xxxxxx **Xxxxx xxxxxxx** xx xxxxxx xxx xx xxx xxxx xx xxxx xxxx.
-
->**Xxx**  Xx xxx xxx'x xxx xxx xxxxxxx xx xxx xxxx, xxxxx xx xxxx xxxx xxxx xxxxxxx xxxxx'x xxxxxxxx xxx xx xxxx xxxxxxx. Xxx xxxxxxx, xx xxx xxxxxx xx x Xxxxxx XX xxxx xxxx xxx xxxxx'x xxxxxxx, xxx xxx'x xxx xxx xxxxxxx.
-
--   **Xxxxxx**: Xx xxxxxxx xxx xxxx xxxxxxx xxx xxxxxxx, xxx xxx xxx xxxxx xxx xxxxxxx xxxxxxxx xxxxxxx (xxxx Y xx Y xxxxx) xx xxx xxxx xx xxxx xxx xxxxxxx xxxxxxxxxx xxxx xxxxxxxxxx xxxx xxxxxxx.
--   **Xxxx**: Xxx xxxxxxx xxxxxx xx **Xxxx YY xxxx**, xxx xxx xxx xxxxxx xxxx xx xx **Xxxx YY xxxxxx**.
--   **Xxxxxx xxxxxxx**: Xxx xxxxxxx xxxxxxx xx **Xxx**, xxxxx xxxxxxxx xxxxxxx xxxxxxx xxxxxx xxxx xxxxx. Xxx xxx xxxxxx **Xxxxxxx xxxx xxxxxx xxxxxxx** xx xxxx xxxx xxxxxxx xxxx xxxxxxx xxxxxxx xxxxxx xxxxxxx.
--   **Xxxxxx XX**: Xxx xxxxxxx xxxxxxx xx **Xxx**. Xxx xxx xxxxxx x xxxxxxxx xxxxxxxx xxxxxxxxx xxxxxx xx xxx xxxx xxxx xxxx xx xxxx xxxx xxxxxxx xxxx xxxxxxxxx xxxxx xxxx xxxxxxx(x) xxxxx xxxxxx xxxx XX.
--   **Xxxxxxxxx**: Xxx xxxxxxx xxxxxxx xx **Xxx**. Xxx xxx xxxxxx xx xxxxxx xxx xxxxxxx xx xxxx xxxx xxx xxxxxxx xxxxx xxx xxxx [xxxxxxxxx xx xxxxxxxxx](respond-to-customer-reviews.md), xx xxxx xxxxx xxxxx xxx xxxx xxx xxx xxxxxxxxx.
--   **Xxxxxxx**: Xxx xxxxxxx xxxxxxx xx **Xxx**. Xxx xxx xxxxxx xx xxxxxx xxx xxxxxxx xx xxxx xxxx xxx xxxxxxx xxxxx xxxx xxxx xxxxxxx xx xxx xxxxxxxx xxxxx xxx [xxxxxxxxx xx x xxxxxx](respond-to-customer-reviews.md), xx xxxx xxxxx xxxxx xxxx xxx xxx xxxx xxxxxxx xx xxx xxxxxxxx.
--   **Xxxxxx**: Xxx xxxxxxx xxxxxxx xx **Xxx xxxxxxx**. Xxx xxx xxxxxx x xxxxxxxx xxxxxx xx xxx xxxx xxxx xxxx xx xxxx xxxx xxxxxxx xxxx xxxxxxxxx xx xxxx xxxxxx.
--   **Xxxxxx xxxx**: Xxx xxxxxxx xxxxxx xx **Xxx xxxxxxx**. Xxx xxx xxxxxx x xxxxxxxx xxxxxx xxxx xx xxx xxxx xxxx xxxx xx xxxx xxxx xxxxxxx xxxx xx xxxxxxxxx xxxxx xxxx xxxx xx xxxxxx.
--   **Xxxxxxx xxxxxxx**: Xxx xxxxxxx xxxxxx xx **Xxx xxxxxxxx**. Xxx xxx xxxxxx x xxxxxxxx xxxxxxx xx xxx xxxx xxxx xxxx xx xxxx xxxx xxxxxxx xxxx xx xxxxxxxxx xxx xxx xxxx xxxxxxx xxxx xxxx xxxxxxxx xxxx xxx.
-
-Xxx xxxx xx xxx xx xxx xxxxxx xxxxxx xxxxx xxxx xxxxxxx xxx xxxxxx xx xxxx xxxxxxxx xx xxx **Xxxxx xxxxxxx** xxxxxxx, xxx xxxx xxxxxxx xxx xxxxx xxxxxxx xxx'xx xxxxxx xxxx.
-
-> **Xxxx**  Xxx xxxxxxx xxxxxx xxxx x xxxxxxxx xxxx xx xxx Xxxxx xxxxx xxxx xxxxxxx xxx xxxxxxxx’x xxxxxx xxx xxxxxx xxxx, xxx xxxxxxxxx xxxxxxx xxxx xxx xxxx xxxx, xx xx xxx xxxxxx xxxx xxxx xxx xxx xx xxxx xxxxxx. Xx xxx xxx xxx xxxxxxx xxxxxx xxxx xxxxxx xx xxx Xxxxx xxx x xxxxx xxxxxxxx, xxx’xx xxxx xx xxxxx xxxxxxx xx xxxxxx x xxxxxxxx xxxxxx xxx xxxxxx xxxx, xxx xx xxx xxx **Xxxx** xx **Xxxx YY xxxxxx**.
-
-## Xxxxxxxxxxx xxxxxxx
+## Apply filters
 
 
-Xx xxxxxxx, xxxxxxx xxxx xxxx xxx xxxxxxx xx xxxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxx xxx. Xx xxx xxxxxx, xxxxxx xxxxxxxxxxx xxx xx xxxxxxxx xx xxxxxxxxxx xxx **Xxxxxxxxx xxxxxxx** xxxxxxxx xx xxx xxxxx xxxxx, xxxxx xxx xxxx xx xxxxxxx.
+Near the top of the page, you can expand **Apply filters** to filter all of the data on this page.
 
-Xxxxxx xxxx xxxx xxxxxxx xxx xxxxxxxxxx xx xx xxxxxxxxx xxxxxxxxxxx xxxxxx, xxx xxx xxxxxxxxx xxxxxxxxxxx xxx xxx xxxxxx xx xxxxxxxx. Xxx xxxxxxxx xxxx xx xxxxxxxx xx xxx xxxx xx xxxxxxx xx xx xxx xxxxxxxxxxx, xx xxxxxxxxx xx xxxxxxx xxxx xxxxx xxxxx.
+>**Tip**  If you don't see any reviews on the page, check to make sure your filters haven't excluded all of your reviews. For example, if you filter by a Target OS that your app doesn't support, you won't see any reviews.
 
-## Xxxxxxx xxxxxxx
+-   **Rating**: By default all star ratings are checked, but you can check and uncheck specific ratings (from 1 to 5 stars) if you want to only see reviews associated with particular star ratings.
+-   **Date**: The default filter is **Last 30 days**, but you can expand this up to **Last 12 months**.
+-   **Review content**: The default setting is **All**, which includes ratings without review text added. You can select **Ratings with review content** to only show ratings that include written review content.
+-   **Target OS**: The default setting is **All**. You can choose a specific targeted operating system if you want this page to only show ratings from customers using your package(s) which target that OS.
+-   **Responses**: The default setting is **All**. You can choose to filter the reviews to only show the reviews where you have [responded to customers](respond-to-customer-reviews.md), or only those where you have not yet responded.
+-   **Updates**: The default setting is **All**. You can choose to filter the reviews to only show the reviews which have been updated by the customer since you [responded to a review](respond-to-customer-reviews.md), or only those which have not yet been updated by the customer.
+-   **Market**: The default setting is **All markets**. You can choose a specific market if you want this page to only show reviews from customers in that market.
+-   **Device type**: The default filter is **All devices**. You can choose a specific device type if you want this page to only show reviews left by customers using that type of device.
+-   **Package version**: The default filter is **All packages**. You can choose a specific package if you want this page to only show reviews left by customers who had that package when they reviewed your app.
+
+The info in all of the charts listed below will reflect the period of time selected in the **Apply filters** section, and will reflect any other filters you've chosen here.
+
+> **Note**  The average rating that a customer sees in the Store takes into account the customer’s market and device type, and considers ratings over the past year, so it may differ from what you see in this report. To see how the average rating will appear in the Store for a given customer, you’ll need to apply filters to select a specific market and device type, and to set the **Date** to **Last 12 months**.
+
+## Translating reviews
 
 
-Xxx xxx xxxx xxx xxxxxxx xx xxx xxxx xx xxxx xxx/xx xx xxxxxx, xx xxxxxxxxx xx xxxxxxxxxx xxxxx. Xxxxx xxx **Xxxx xx** xxxx xx xxxx xxxxxxx xx xxxx xx Xxxx xxx/xx Xxxxxx. Xxxx xxx xxxxx x xxxxx xxxxxx xx xxx Xxxx xx Xxxxxx xxxxxxx, xxx xxxxxxx xxxxxxxx xxxx xx xxxxxxx xxx xxx xxxx xxx xxx xxxxxxx xxxxx xxxxx xxxx xx xxx **Xxxx xx** xxxxxxx. Xxx xxx xxxxxx xxx xxxxxxx xxxxxxxx xxxxxxxxxx xx xxxxxxxx xxx **X** xxxx xxxxxxx xx xxxx xxxxx.
+By default, reviews that were not written in your preferred language are translated for you. If you prefer, review translation can be disabled by unchecking the **Translate reviews** checkbox at the upper right, above the list of reviews.
 
-## Xxxxxxxxxx xx xxxxxxxx xxxxxxx
+Please note that reviews are translated by an automatic translation system, and the resulting translation may not always be accurate. The original text is provided if you wish to compare it to the translation, or translate it through some other means.
+
+## Sorting reviews
 
 
-Xxx xxx xxx xxx Xxxxxxx Xxxxx Xxx Xxxxxx xxxxxxxxx xx xxxx xxxxxxxxx xx xxxx xx xxxx xxxxxxxxx' xxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxx xx xxxxxxxx xxxxxxx](respond-to-customer-reviews.md).
+You can sort the reviews on the page by date and/or by rating, in ascending or descending order. Click the **Sort by** link to view options to sort by Date and/or Rating. When you click a radio button in the Date or Rating section, the sorting criteria will be applied and you will see the sorting label shown next to the **Sort by** heading. You can remove the sorting criteria altogether by clicking the **X** that appears on each label.
 
-Xxxx xxx xxxx xxxxxxxxxx xxxxxxx xxx xxx xxxx xx xxxxxxxx, xxxxx xx xxx xxxxxxx xxx xxxxxxx xxx'xx xxxxxx.
+## Responding to customer reviews
 
--   Xx xxx xxxxxx xxxx xxxxxxx xxxx xxxxxxx x xxx xx xxxxxxx xxxxxxx, xx xxxxxxxx xxxxx x xxxxxxx, xxxxxxxx xxxxxxxxx x xxx xxxxxxx xxxx xxxxxxxxx xxx xxxxxxxx xxxxxxxx. (Xx xxxx xx xxxxxx xxxx xxx'x [xxxxxxxxxxx](create-app-descriptions.md) xx xxxxxxxx xxxx xxx xxxxx xxx xxxx xxxxx.)
--   Xx xxx xxxxxxx xxxxxx xx xxxx, xxx xxxx xxxxxx xx xxxxxxxxx xx xxx, xxx xxxxx xxxx xx xxxx xxx xxxx xx [xxxxxx xxxx xxx xx xxxx xxxxxx](app-promotion-and-customer-engagement.md), xxxxx xx'x xxxx xxxx-xxxxxxxx xx xxxxx xxx xxxx xxxxx xx xxx.
 
-> **Xxxx**  Xx’x xxxxxx xxxx xxx’xx xxx x xxxxxxxxx xxxxxx xx xxxxxxx xxxx xxxxxxxxx xxx **Xxxxxxx** xxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxx xxx Xxxxxxx xxxxxx xx xxx xxxxx Xxx Xxxxxx xxxxxx xxx. Xxxx xx xxxxxxx xxx xxx xxxx xxxxx xxxx xxx xxxxxxx xxxx xxxx xxxxxxxxx xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx. Xxxx xxx xxxx xx x xxxxxx xx xxxx xx Xxxxxxxxx xx xxxxxx xxxxxxx xxxx xxx Xxxxxxx Xxxxx xxxx xxxx xxxx xxxxxxxxxx xx xxxx, xxxxxxxxxxxxx, xxxxxxxxx xx xxxx xxxxx xxxxxx xxxxxxxxxx. Xx xxxxxx xxxx xxxxxx xxxx xxxxxx xx x xxxxxx xxxxxxxx xxxxxxxxxx.
+You can use the Windows Store Dev Center dashboard to send responses to many of your customers' reviews. For more info, see [Respond to customer reviews](respond-to-customer-reviews.md).
 
- 
+Here are some additional actions you may wish to consider, based on the ratings and reviews you're seeing.
+
+-   If you notice many reviews that suggest a new or changed feature, or complain about a problem, consider releasing a new version that addresses the specific feedback. (Be sure to update your app's [description](create-app-descriptions.md) to indicate that the issue has been fixed.)
+-   If the average rating is high, but your number of downloads is low, you might want to look for ways to [expose your app to more people](app-promotion-and-customer-engagement.md), since it's been well-received by those who have tried it out.
+
+> **Note**  It’s likely that you’ll see a different number of reviews when comparing the **Reviews** report in the Windows Dev Center with the Reviews report in the older Dev Center mobile app. This is because the app only shows data for reviews left from customers on Windows Phone 8.1 and earlier. This may also be a result of work by Microsoft to remove reviews from the Windows Store that have been identified as spam, inappropriate, offensive or have other policy violations. We expect this action will result in a better customer experience.
 
  
 
  
+
+ 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

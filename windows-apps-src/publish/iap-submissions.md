@@ -1,63 +1,67 @@
 ---
-Xxxxxxxxxxx: XXXx xxx xxxxxxxxx xxxxxxx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx.
-xxxxx: XXX xxxxxxxxxxx
-xx.xxxxxxx: XYYYXXYX-XYXY-YYXX-XYYY-YXYYXYYYXXYY
+Description: IAP は Windows デベロッパー センター ダッシュボードを使って公開します。
+title: IAP の申請
+ms.assetid: E175AF9E-A1D4-45DF-B353-5E24E573AE67
 ---
 
-# XXX xxxxxxxxxxx
+# IAP の申請
 
 
-Xx XXX (xx-xxx xxxxxxx) xx x xxxxxxxxxxxxx xxxx xxx xxxx xxx xxxx xxx xx xxxxxxxxx xx xxxxxxxxx. Xx XXX xxx xx x xxx xxx xxx-xx xxxxxxx, x xxx xxxx xxxxx, xx xxxxxxxx xxxx xxx xxxxx xxxx xxxx xxxxx xxxxxxx. Xxx xxxx xxx XXXx x xxxxx xxx xx xxxx xxxxx, xxx xxxx xxxx xx xxxxx xxxxxxxx xxxxxxxxxxx xxx xxxxxxxxxx.
+IAP (アプリ内製品) は、お客様が購入可能なアプリの補助アイテムです。 IAP には、楽しいアドオン新機能、新しいゲーム レベル、またはユーザーの関心を引くと思われるその他のアイテムなどがあります。 IAP は収益を得るためだけでなく、お客様との意見交換や顧客エンゲージメントの獲得を促すためにも役立ちます。
 
-XXXx xxx xxxxxxxxx xxxxxxx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx. Xxx'xx xxxx xxxx xx [xxxxxx xxx XXXx](https://msdn.microsoft.com/library/windows/apps/mt219684) xx xxxx xxx'x xxxx.
+IAP は Windows デベロッパー センター ダッシュボードを使って公開します。 また、アプリのコードで [IAP を有効にする](https://msdn.microsoft.com/library/windows/apps/mt219684)ことも必要です。
 
-Xxx xxxxx xxxx xx xxx XXX xxxxxxxxxx xxxxxxx xx xx xxxxxx xxx XXX xx xxx xxxxxxxxx xx [xxxxxxxx xxx xxxxxxx XX](set-your-iap-product-id.md). Xxxxx xxxx, xxx xxx xxxxxx x xxxxxxxxxx xx xxxx xxxx XXX xxx xx xxxxxxxxx xxx xxx Xxxxxxx Xxxxx. Xxx xxx xxxxxx xx XXX xx xxx xxxx xxxx xxx [xxxxxx xxxx xxx](app-submissions.md), xx xxx xxx xxxx xx xx xxxxxxxxxxxxx. Xxx xxx xxx xxxx [xxxxxxx](#updating-an-iap-after-submission) xx XXXx xxxxx xxx xxx xx xx xxx Xxxxx xxxxxxx xxxxxx xx xxxxxxxx xxx xxx xxxxx.
+IAP の申請プロセスは、[その製品 ID を定義](set-your-iap-product-id.md)することにより、ダッシュボードで IAP を作成することから始まります。 その後、IAP が Windows ストアで購入可能になるように申請を作成できます。 [アプリの申請](app-submissions.md)と同時にまたは別々に IAP を申請できます。 アプリがストアに公開された後は、アプリを再び申請することなく、IAP を[更新](#updating-an-iap-after-submission)できます。
 
-## Xxxxxxxxx xxx xxxxxxxxxx xx XXX
+## IAP の申請用チェック リスト
 
 
-Xxxx xx xxx xxxx xxxx xxx xxx xxxxxxx xxxx xxxxxxxx xxxx XXX xxxxxxxxxx. Xxx xxxxx xxxx xxx xxx xxxxxxxx xx xxxxxxx xxx xxxxx xxxxx. Xxxx xx xxxxx xxx xxxxxxxx, xx xxxx xxxxxxx xxxxxx xxxxxxx xxxxxxxx xxxx xxx xxx xxxxxx xx xxxxxxx.
+ここで示しているのは、IAP の申請を作成するときに提供できる情報です。 提供する情報は必須のものと、 省略可能なものがあります。提供されている既定値は必要に応じて変更できます。
 
-### Xxxxxxxxxx xxxx
-| Xxxxx xxxx                    | Xxxxx                                       | Xxx xxxx xxxx                                                             |
+### [プロパティ] ページ
+| フィールド名                    | コメント                                       | 詳しい情報                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **Xxxxxxx xxxx**              | Xxxxxxxx. Xx **Xxxxxxx**, x **Xxxxxxx xxxxxxxx** xx xxxxxxxx. | [Xxxxx XXX xxxxxxxxxx](enter-iap-properties.md)         |
-| **Xxxxxxx xxxx**              | Xxxxxxxx                                    | [Xxxxx XXX xxxxxxxxxx](enter-iap-properties.md)                           | 
-| **Xxxxxxxx**                  | Xxxxxxxx (xx xx YY xxxxxxxx, YY xxxxxxxxx xxxxx xxxx) | [Xxxxx XXX xxxxxxxxxx](enter-iap-properties.md)                 |
-| **Xxx**                       | Xxxxxxxx (YYYY xxxxxxxxx xxxxx)             | [Xxxxx XXX xxxxxxxxxx](enter-iap-properties.md)                           |
+| **製品の種類**              | 必須。 **[永続的]** を選んだ場合は、**[製品の有効期間]** を指定する必要があります。 | [IAP のプロパティの入力](enter-iap-properties.md)         |
+| **コンテンツの種類**              | 必須                                    | [IAP のプロパティの入力](enter-iap-properties.md)                           | 
+| **キーワード**                  | 省略可能 (10 キーワードまで、それぞれ 30 文字以内)。 | [IAP のプロパティの入力](enter-iap-properties.md)                 |
+| **タグ**                       | 省略可能 (3,000 文字以内)。             | [IAP のプロパティの入力](enter-iap-properties.md)                           |
 
-### Xxxxxxx xxx xxxxxxxxxxxx xxxx 
-| Xxxxx xxxx                    | Xxxxx                                       | Xxx xxxx xxxx                                                             |
+### [価格と使用可能状況] ページ 
+| フィールド名                    | コメント                                       | 詳しい情報                                                             |
 |-------------------------------|---------------------------------------------|---------------------------------------------------------------------------|
-| **Xxxx xxxxx**                | Xxxxxxxx                                    | [Xxx XXX xxxxxxx xxx xxxxxxxxxxxx](set-iap-pricing-and-availability.md)   |
-| **Xxxxxxx xxx xxxxxx xxxxxxx** | Xxxxxxx: xxxxxxxxx xx xxx xxxxxxxx xxxxxxx | [Xxx XXX xxxxxxx xxx xxxxxxxxxxxx](set-iap-pricing-and-availability.md)   |
-| **Xxxx xxxxxxx**              | Xxxxxxxx                                    | [Xxx XXX xxxxxxx xxx xxxxxxxxxxxx](set-iap-pricing-and-availability.md)   |
-| **Xxxxxxxxxxxx xxx xxxxxxxxxx** | Xxxxxxx: XXX xxx xx xxxxx xx xxxxxxxxx xxxxxxxx xx xxxxxxxxx xxx Xxxxx | [Xxx XXX xxxxxxx xxx xxxxxxxxxxxx](set-iap-pricing-and-availability.md) |
-| **Xxxxxxx xxxx**              | Xxxxxxx: Xxxxxxx xx xxxx xx xxx XXX xxxxxx xxxxxxxxxxxxx | [Xxx XXX xxxxxxx xxx xxxxxxxxxxxx](set-iap-pricing-and-availability.md)   |
+| **基本価格**                | 必須                                    | [IAP の価格と使用可能状況の設定](set-iap-pricing-and-availability.md)   |
+| **市場とカスタム価格** | 既定: お客様は対象となるすべての市場で購入できます。 | [IAP の価格と使用可能状況の設定](set-iap-pricing-and-availability.md)   |
+| **セール価格**              | 省略可能                                    | [IAP の価格と使用可能状況の設定](set-iap-pricing-and-availability.md)   |
+| **配布と表示** | 既定: お客様はストアを参照または検索することで IAP を見つけることができます。 | [IAP の価格と使用可能状況の設定](set-iap-pricing-and-availability.md) |
+| **公開日**              | 既定: IAP は認定を受けるとすぐに公開されます。 | [IAP の価格と使用可能状況の設定](set-iap-pricing-and-availability.md)   |
 
-### Xxxxxxxxxxxx xxxx
-Xxx xxxxxxxxxxx xxxxxxxx. Xx xxxxxxxxx xxxxxxxxx xxxxxxxxxxxx xxx xxxxx xxxxxxxx xxxx xxx xxxxxxxx.
+### [説明] ページ
+1 つの説明が必要です。 アプリがサポートする各言語で説明を提供することをお勧めします。
 
-| Xxxxx xxxx                    | Xxxxx                                       | Xxx xxxx xxxx       |
+| フィールド名                    | コメント                                       | 詳しい情報       |
 |-------------------------------|---------------------------------------------|---------------------|
-| **Xxxxx**                     | Xxxxxxxx (YYY xxxxxxxxx xxxxx)              | [Xxxxxx XXX xxxxxxxxxxxx](create-iap-descriptions.md)                     |
-| **Xxxxxxxxxxx**               | Xxxxxxxx (YYY xxxxxxxxx xxxxx)              | [Xxxxxx XXX xxxxxxxxxxxx](create-iap-descriptions.md)                     |
-| **Xxxx**                      | Xxxxxxxx (.xxx, YYYxYYY xxxxxx)             | [Xxxxxx XXX xxxxxxxxxxxx](create-iap-descriptions.md)                     |
+| **タイトル**                     | 必須 (100 文字以内)。              | [IAP の説明の作成](create-iap-descriptions.md)                     |
+| **説明**               | 省略可能 (200 文字以内)              | [IAP の説明の作成](create-iap-descriptions.md)                     |
+| **アイコン**                      | 省略可能 (.png、300 x 300 ピクセル)             | [IAP の説明の作成](create-iap-descriptions.md)                     |
 
-Xxxx xxx'xx xxxxxxxx xxxxxxxx xxxx xxxx, xxxxx **Xxxxxx xx xxx Xxxxx**. Xx xxxx xxxxx, xxx xxxxxxxxxxxxx xxxxxxx xxxxx xxxxx xx xxxx. Xxxxx xxxx, xxxx XXX xxxx xx xxxxxxxxx xx xxx Xxxxx xxx xxxxx xxx xxxxxxxxx xx xxxxxxxx!
+これらの情報の入力が完了したら、**[Submit to the Store]** (ストアに提出) をクリックします。 ほとんどの場合、認定プロセスは約 1 時間かかります。 その後、IAP はストアに公開され、お客様が購入できるようになります。
 
-**Xxxx**  Xxx XXX xxxx xxxx xx xxxxxxxxxxx xx xxxx xxx'x xxxx. Xxx xxxx xxxx, xxx [Xxxxxx xx-xxx xxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt219684)
-
-
-## Xxxxxxxx xx XXX xxxxx xxxxxxxxxxx
+**注**  IAP は、アプリのコードでも実装する必要があります。 詳しくは、「[アプリ内製品購入の有効化](https://msdn.microsoft.com/library/windows/apps/mt219684)」をご覧ください。
 
 
-Xxx xxx xxxx xxxxxxx xx x xxxxxxxxx XXX xx xxx xxxx. XXX xxxxxxx xxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxxxxxxx xx xxxx xxx, xx xxx xxxxxxxxx xxx'x xxxx xx xxxxxx xxx xxxxxx xxx xx xxxxx xx xxxx xxxxxxx xx xx XXX xxxx xx xxxxxxxx xxx xxxxx xx xxxxxxxxxxx.
+## 公開後の IAP の更新
 
-> **Xxxxxxxxx**  Xx xxxx xxx xx xxxxxxxxx xx xxxxxxxxx xx Xxxxxxx Y.x, xxx xxxx xxxx xx xxxxxx xxx xxxxxxx x xxx xxx xxxxxxxxxx xx xxxxx xx xxxx xxx XXX xxxxxxx xxxxxxx xx xxxxx xxxxxxxxx. Xxxxxxxxx, xx xxx xxx xxx XXXx xx xx xxx xxxxxxxxx Xxxxxxx Y.x xxxxx xxx xxx xxx xxxx xxxxxxxxx, xxx'xx xxxx xx xxxxxx xxxx xxx'x xxxx xx xxxxxxxxx xxxxx XXXx, xxxx xxxxxxxx xxx xxx. Xxxxxxxxx, xxx xxx XXXx xxx'x xx xxxxxxx xx xxxxxxxxx xx Xxxxxxx Y.x.
 
-Xx xxxxxx xxxxxxx, xx xx xxx XXX'x xxxx xx xxxx xxxxxxxxx xxx xxxxx **Xxxxxx**. Xxxx xxxx xxxxxx x xxx xxxxxxxxxx xxx xxx XXX, xxxxx xxx xxxx xxxx xxxx xxxxxxxx xxxxxxxxxx xx x xxxxxxxx xxxxx. Xxxxxx xxx xxxx xxx'x xxxx, xxx xxxx xxxxx **Xxxxxx xx xxx Xxxxx**.
+公開した IAP はいつでも変更できます。 IAP の変更はアプリとは別に申請および公開されるため、一般的には、価格や説明の更新などの IAP に対する変更ではアプリ全体を更新する必要はありません。
 
-Xx xxx'x xxxx xx xxxxxx xx XXX xxx'xx xxxxxxxxxx xxxxxxx, xxx xxx xx xxxx xx xxxxxxxx x xxx xxxxxxxxxx xxx xxxxxxxx xxx [Xxxxxxxxxxxx xxx xxxxxxxxxx](set-iap-pricing-and-availability.md) xxxxxx xx **Xx xxxxxx xxxxxxxxx xxx xxxxxxxx. Xxx xxxxxxxxx xx xxxx xxx'x xxxxxxx**. Xx xxxx xx xxxxxx xxxx xxx'x xxxx xx xxxxxx xx xxxx xxxxxx xxxxxxxxxx xx xxx XXX.
+> **重要**  Windows 8.x のユーザーがこのアプリを利用できる場合、IAP の更新がこれらのユーザーにも表示されるようにするために、新しいアプリの申請を作成して公開する必要があります。 同様に、アプリを公開した後で、Windows 8.x を対象とする新しい IAP をアプリに追加する場合は、IAP を参照するようにアプリのコードを更新して、アプリを再申請する必要があります。 それ以外の場合、新しい IAP は、Windows 8.x のユーザーには表示されません。
+
+更新を申請するには、ダッシュボードで IAP のページに移動し、**[更新]** をクリックします。 これにより、以前の申請からの情報をひな型として、IAP の新しい申請が作成されます。 目的の情報を変更したら、**[Submit to the Store]** (ストアに提出) をクリックします。
+
+既に提供されている IAP を削除する場合は、新しい申請を作成し、[分布と認知度](set-iap-pricing-and-availability.md) オプションを **[購入不可。アプリのリストには表示されません]** に変更します。 必要に応じて、アプリのコードを更新し、IAP への参照も削除してください。
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

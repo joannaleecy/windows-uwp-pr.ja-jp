@@ -1,38 +1,38 @@
 ---
-xxxxx: Xxxxxxx Xxxxxx xx Xxxxxxx Xxxxxxx Xxxxxxxxxx
-xx.xxxxxxx: YXYYYYXY-YXYX-YYYY-XYXX-XYYYYYXYYYYY
-xxxxxxxxxxx: 
+title: Raising Events in Windows Runtime Components
+ms.assetid: 3F7744E8-8A3C-4203-A1CE-B18584E89000
+description: 
 ---
 
-# Xxxxxxx Xxxxxx xx Xxxxxxx Xxxxxxx Xxxxxxxxxx
+# Raising Events in Windows Runtime Components
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[Xxxx xxxxxxxxxxx xxxxxxx xx xxx-xxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxx xx'x xxxxxxxxxxxx xxxxxxxx. Xxxxxxxxx xxxxx xx xxxxxxxxxx, xxxxxxx xx xxxxxxx, xxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxx.\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-Xx xxxx Xxxxxxx Xxxxxxx xxxxxxxxx xxxxxx xx xxxxx xx x xxxx-xxxxxxx xxxxxxxx xxxx xx x xxxxxxxxxx xxxxxx (xxxxxx xxxxxx) xxx xxx xxxx XxxxXxxxxx xx xx xxxx xx xxxxxxx xxx xxxxx, xxx xxx xxxxxxxxx xxx/xx xxxxx xx xx xxx xx xxxxx xxxx:
+If your Windows Runtime component raises an event of a user-defined delegate type on a background thread (worker thread) and you want JavaScript to be able to receive the event, you can implement and/or raise it in one of these ways:
 
--   (Xxxxxx Y) Xxxxx xxx xxxxx xxxxxxx xxx [Xxxxxxx.XX.Xxxx.XxxxXxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) xx xxxxxxx xxx xxxxx xx xxx XxxxXxxxxx xxxxxx xxxxxxx. Xxxxxxxx xxxxxxxxx xxxx xx xxx xxxx xxxxxx, xx xxxx xxxxxxxxx xx xxxxx xxx xxxxxxx xxx xxxxxxx xxxxxxxxxxx.
--   (Xxxxxx Y) Xxx [Xxxxxxx.Xxxxxxxxxx.XxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&xx;Xxxxxx&xx; xxx xxxx xxxx xxxxxxxxxxx (xxx xxxx xxx xxxxx xxxx xxxxxxxxxxx). Xx Xxxxxx Y xx xxx xxxxxxxx xx xxx xxxxxxxxxxx xx xxx xxxxxxxx, xxxx xxxx xx x xxxx xxxxxx xxxxxx xx xxxx xx xxxx xxxxxxxxxxx xx xxxxxxxxxx.
--   (Xxxxxx Y) Xxxxxx xxxx xxx xxxxx xxx xxxx xxx xxx xxxxxxxxx. Xxxx xxxxxx xx xxx xxxx xxxxxxxxx xx xxxxxxxxx, xxx xx xxxxxxxxx xxxx xxxxxxxxxxx xxx xxxxx xxxxxxx xxxxxx xxxxxxxxxxx xxxxxxxx xx Xxxxxx Y xx xxxxxxxxx xxxxxxxxx.
+-   (Option 1) Raise the event through the [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx) to marshal the event to the JavaScript thread context. Although typically this is the best option, in some scenarios it might not provide the fastest performance.
+-   (Option 2) Use [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt; but lose type information (but lose the event type information). If Option 1 is not feasible or its performance is not adequate, then this is a good second choice if loss of type information is acceptable.
+-   (Option 3) Create your own proxy and stub for the component. This option is the most difficult to implement, but it preserves type information and might provide better performance compared to Option 1 in demanding scenarios.
 
-Xx xxx xxxx xxxxx xx xxxxx xx x xxxxxxxxxx xxxxxx xxxxxxx xxxxx xxx xx xxxxx xxxxxxx, x XxxxXxxxxx xxxxxx xxxx xxx xxxxxxx xxx xxxxx.
+If you just raise an event on a background thread without using one of these options, a JavaScript client will not receive the event.
 
-## Xxxxxxxxxx
-
-
-Xxx Xxxxxxx Xxxxxxx xxxxxxxxxx xxx xxxx xxx xxxxxxxxxxxxx XXX xxxxxxx, xx xxxxxx xxxx xxxxxxxx xxx xxx xx xxxxxx xxxx. Xx xxx Xxxxxxx XXX, xxxx xx xxx xxxxxxxxxx xxx xxxxx XXX xxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxx xxxx xxxx xxxxxxx xx xxx xxxxxxxxxx xxxxxx xxx xx xxx XX xxxxxx. Xx x XXX xxxxxx xxx’x xx xxxx xxxxx, xxxx xx xxxxxxxx xxxxxx xxxxxxx xxxxx xx xxxxxxx xxx xxxxx xx xxxxxxxxxxx xxxx xxxxx XXX xxxxxxx xxxxxx xxx XX xxxxxx-xxxxxxxxxx xxxxxx xxxxxxxx. (Xx XXX xxxxx, xxxx xx xxxxx xx xxxxxxxxxxxxx xxxxxxx xxxxxx xxxxxxxxxx.)
-
-Xxxx xx xxx xxxxxxx xx xxx Xxxxxxx XXX xxx xxxxxx xxxxx xx xxxx xxxxxxx xxx xxxxx xxxxx xx. Xxxxxxx, xxxxxxx xxx xxxxx xxx’x xx xxxxxxx xxx xxxxxxx xxxxx xxxx xx Xxxxxxx.Xxxxxxxxxx.[XxxxxXxxxxXxxxxxx&xx;XXxxxxx, XXxxxxx&xx;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx) xxxxxxx xxxx xxx xxx xxxxxxxx xxxxx xxxxx xxx xxxxxxx xxx xxxx xxxxxxxx. Xx'x xxxx xxxx XxxxXxxxxx xxxxxxx xxxx xxx xxxx xx xxxxxxx xx xxxxx xxxxxxx xx xxxxx, xxx xx xxx xxxx xxxx xxxxxxxxx xx xx xxxxxx xxxx XxxxXxxxxx xx xxxx xx xxxx X++ xx x .XXX xxxxxxxx, xxxx xxx xxxx xxx xxx xx xxx xxxxxxxxx xxxxx xxxxxxx.
-
-## (Xxxxxx Y) Xxxxx xxx xxxxx xxxxxxx xxx XxxxXxxxxxxxxx
+## Background
 
 
-Xxx xxx xxxx xxxxxx xx xxx xxxx-xxxxxxx xxxxxxxx xxxx xx xxxxx xxx [Xxxxxxx.XX.Xxxx.XxxxXxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx), xxx XxxxXxxxxx xxxx xx xxxx xx xxxxxxx xxxx. Xx xxx xxx xxxxxx xxxxx xxxxxx xx xxx, xxx xxxx xxx xxxxx. Xx xxxxxxx xxxxxxx xxx xxxxx xxxxxx xxx xxx xxxxx xxxxxxxx xxxxxxx xx xxxxx, xxxx xxx xxx xx xxx xxxxx xxxxxxx.
+All Windows Runtime components and apps are fundamentally COM objects, no matter what language you use to create them. In the Windows API, most of the components are agile COM objects that can communicate equally well with objects on the background thread and on the UI thread. If a COM object can’t be made agile, then it requires helper objects known as proxies and stubs to communicate with other COM objects across the UI thread-background thread boundary. (In COM terms, this is known as communication between thread apartments.)
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xx xxx xxx XxxxXxxxxxxxxx xx xxxxx x xxxxxxxx-xxxxx xxxxx. Xxxxxx xxxx xxx xxxx xxxxxxxx xx Xxxxx, xxx Xxxxxx.
+Most of the objects in the Windows API are either agile or have proxies and stubs built in. However, proxies and stubs can’t be created for generic types such as Windows.Foundation.[TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx) because they are not complete types until you provide the type argument. It's only with JavaScript clients that the lack of proxies or stubs becomes an issue, but if you want your component to be usable from JavaScript as well as from C++ or a .NET language, then you must use one of the following three options.
+
+## (Option 1) Raise the event through the CoreDispatcher
+
+
+You can send events of any user-defined delegate type by using the [Windows.UI.Core.CoreDispatcher](https://msdn.microsoft.com/library/windows/apps/windows.ui.core.coredispatcher.aspx), and JavaScript will be able to receive them. If you are unsure which option to use, try this one first. If latency between the event firing and the event handling becomes an issue, then try one of the other options.
+
+The following example shows how to use the CoreDispatcher to raise a strongly-typed event. Notice that the type argument is Toast, not Object.
 
 ```csharp
 public event EventHandler<Toast> ToastCompletedEvent;
@@ -67,12 +67,12 @@ public void MakeToastWithDispatcher(string message)
 }
 ```
 
-## (Xxxxxx Y) Xxx XxxxxXxxxxxx&xx;Xxxxxx&xx; xxx xxxx xxxx xxxxxxxxxxx
+## (Option 2) Use EventHandler&lt;Object&gt; but lose type information
 
 
-Xxxxxxx xxx xx xxxx xx xxxxx xxxx x xxxxxxxxxx xxxxxx xx xx xxx [Xxxxxxx.Xxxxxxxxxx.XxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&xx;Xxxxxx&xx; xx xxx xxxx xx xxx xxxxx. Xxxxxxx xxxxxxxx xxxx xxxxxxxx xxxxxxxxxxxxx xx xxx xxxxxxx xxxx xxx xxxxxxxx x xxxxx xxx xxxx xxx xx. Xxx xxxxxxxx xx xxxx xxx xxxx xxxxxxxxxxx xx xxxx xxxxx xxxx xxx xxxxxx xx xxxx. X++ xxx .XXX xxxxxxx xxxx xxxx xxxxxxx xxxxxxxxxxxxx xxxx xxxx xx xxxx xxxx xx xxxx xxx xxxxx xx xxxxxxxx. XxxxXxxxxx xxxxxxx xxx’x xxxx xxx xxxxxxxx xxxx xxxxxxxxxxx. Xxxx xxxx xxx xxx xxxxxxxxxx, xxxxx xx xxxxx xxxxx xx xxx xxxxxxxx.
+Another way to send an event from a background thread is to use [Windows.Foundation.EventHandler](https://msdn.microsoft.com/library/windows/apps/br206577.aspx)&lt;Object&gt; as the type of the event. Windows provides this concrete instantiation of the generic type and provides a proxy and stub for it. The downside is that the type information of your event args and sender is lost. C++ and .NET clients must know through documentation what type to cast back to when the event is received. JavaScript clients don’t need the original type information. They find the arg properties, based on their names in the metadata.
 
-Xxxx xxxxxxx xxxxx xxx xx xxx Xxxxxxx.Xxxxxxxxxx.XxxxxXxxxxxx&xx;Xxxxxx&xx; xx X\#:
+This example shows how to use Windows.Foundation.EventHandler&lt;Object&gt; in C#:
 
 ```csharp
 public sealed Class1
@@ -105,7 +105,7 @@ public event EventHandler<Object> ToastCompletedEvent;
 }
 ```
 
-Xxx xxxxxxx xxxx xxxxx xx xxx XxxxXxxxxx xxxx xxxx xxxx:
+You consume this event on the JavaScript side like this:
 
 ```javascript
 toastCompletedEventHandler: function (event) {
@@ -114,35 +114,35 @@ toastCompletedEventHandler: function (event) {
 }
 ```
 
-## (Xxxxxx Y) Xxxxxx xxxx xxx xxxxx xxx xxxx
+## (Option 3) Create your own proxy and stub
 
 
-Xxx xxxxxxxxx xxxxxxxxxxx xxxxx xx xxxx-xxxxxxx xxxxx xxxxx xxxx xxxx xxxxx-xxxxxxxxx xxxx xxxxxxxxxxx, xxx xxxx xx xxxxxx xxxx xxx xxxxx xxx xxxx xxxxxxx xxx xxxxx xxxx xx xxxx xxx xxxxxxx. Xxxxxxxxx, xxx xxxx xx xxx xxxx xxxxxx xxxx xx xxxx xxxxxxxxxx xxxxx xxxxxxx xx xxx xxxxx xxx xxxxxxx xxx xxxxxxxx. Xxxx, xxxxx xx xx xxxxxxxxx xxxx xxxx xxxxxx xxxx xxxxxxx xxxxxx xxxxxxxxxxx xxxx xxx xxxxx xxx xxxxxxx. Xxxxxx xxxxxxxxxxx xxxxxxx xx xxxx xxxxxxx. Xxx xxx Xxxxxx Xxxxxx xxxxxxxx xx xxxxx xxxxxxxxx xxxxx xx xxxxxxx xxxxxx xxxxxxxxxxx xx xxxx xxxxxxxxxxx xxx xxxxxxxxx xxxxxxx xxx xxxxx xx xx xxxx x xxxxxxxxxx.
+For potential performance gains on user-defined event types that have fully-preserved type information, you have to create your own proxy and stub objects and embed them in your app package. Typically, you have to use this option only in rare situations where neither of the other two options are adequate. Also, there is no guarantee that this option will provide better performance than the other two options. Actual performance depends on many factors. Use the Visual Studio profiler or other profiling tools to measure actual performance in your application and determine whether the event is in fact a bottleneck.
 
-Xxx xxxx xx xxxx xxxxxxx xxxxx xxx xx xxx X\# xx xxxxxx x xxxxx Xxxxxxx Xxxxxxx xxxxxxxxx, xxx xxxx xxx X++ xx xxxxxx x XXX xxx xxx xxxxx xxx xxxx xxxx xxxx xxxxxx XxxxXxxxxx xx xxxxxxx x Xxxxxxx.Xxxxxxxxxx.XxxxxXxxxxXxxxxxx&xx;XXxxxxx, XXxxxxx&xx; xxxxx xxxx'x xxxxxx xx xxx xxxxxxxxx xx xx xxxxx xxxxxxxxx. (Xxx xxx xxxx xxx X++ xx Xxxxxx Xxxxx xx xxxxxx xxx xxxxxxxxx. Xxx xxxxx xxxx xxx xxxxxxx xx xxxxxxxx xxx xxxxxxx xxx xxxxx xxx xxx xxxx.) Xxxx xxxxxxxxxxx xx xxxxx xx Xxxxxxxx x Xxxxxxx Xxxxxxx xx-xxxxxxx xxxxxxxxx xxxxxx (X++/XX) xxx xxxxx xxxxxxx xxx xxxxxxxx.
+The rest of this article shows how to use C# to create a basic Windows Runtime component, and then use C++ to create a DLL for the proxy and stub that will enable JavaScript to consume a Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt; event that's raised by the component in an async operation. (You can also use C++ or Visual Basic to create the component. The steps that are related to creating the proxies and stubs are the same.) This walkthrough is based on Creating a Windows Runtime in-process component sample (C++/CX) and helps explain its purposes.
 
-Xxxx xxxxxxxxxxx xxx xxxxx xxxxx:
+This walkthrough has these parts:
 
--   Xxxx xxx xxxx xxxxxx xxx xxxxx Xxxxxxx Xxxxxxx xxxxxxx. Xxx xxxxx xxxxxxx xx xxxxx xx xxxx [Xxxxxxx.Xxxxxxxxxx.XxxxxXxxxxXxxxxxx&xx;XXxxxxx, XXxxxxx&xx;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx) xxx xxx xxxxx xxxxx xx xxx xxxx xxxx'x xxxxxxxx xx XxxxXxxxxx xx xxx xxxxxxxx xxx XXxxxx. Xxxxx xxxxxxx xxx'x xxxxxxxxxxx xxxx XxxxXxxxxx xxxxx xxx xxxxxxxx xxx xxxxx xxxxx.
--   Xxxx xxx xxxxxxxxx xxx xxxx xxxxx xxxxxx, xxxxx x xxxxxx, xxx xxxxxxx xx xxxxx xxxx'x xxxxxx xx xxx Xxxxxxx Xxxxxxx xxxxxxxxx.
--   Xxxxx xxx xxxxxxxx xx xxx xxxxx xxxx xxxxxxxx xxx xxxxx xxx xxxx xxxxxxx.
--   Xxx xxxx xxx xxx XXX xxxx xx xxxxxxxx xxx X xxxxxx xxxx xxx xxx xxxxx xxx xxxx.
--   Xxxxxxxx xxx xxxxx-xxxx xxxxxxx xx xxxx xxx XXX xxxxxxx xxx xxxx xxxx, xxx xxxxxxxxx xxx xxxxx-xxxx XXX xx xxx xxx xxxxxxx.
+-   Here you will create two basic Windows Runtime classes. One class exposes an event of type [Windows.Foundation.TypedEventHandler&lt;TSender, TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br225997.aspx) and the other class is the type that's returned to JavaScript as the argument for TValue. These classes can't communicate with JavaScript until you complete the later steps.
+-   This app activates the main class object, calls a method, and handles an event that's raised by the Windows Runtime component.
+-   These are required by the tools that generate the proxy and stub classes.
+-   You then use the IDL file to generate the C source code for the proxy and stub.
+-   Register the proxy-stub objects so that the COM runtime can find them, and reference the proxy-stub DLL in the app project.
 
-## Xx xxxxxx xxx Xxxxxxx Xxxxxxx xxxxxxxxx
+## To create the Windows Runtime component
 
-1.  Yx Xxxxxx Xxxxxx, xx xxx xxxx xxx, xxxxxx **Xxxx &xx; Xxx Xxxxxxx**. Xx xxx **Xxx Xxxxxxx** xxxxxx xxx, xxxxxx **XxxxXxxxxx &xx; Xxxxxxxxx Xxxxxxx** xxx xxxx xxxxxx **Xxxxx Xxx**. Xxxx xxx xxxxxxx XxxxxxxXxxxxxxxxxx xxx xxxx xxxxxx xxx **XX** xxxxxx.
-2.  Xxx x X\# Xxxxxxx Xxxxxxx xxxxxxxxx xx xxx xxxxxxxx: Xx Xxxxxxxx Xxxxxxxx, xxxx xxx xxxxxxxx xxxx xxx xxx xxxxxxxx xxx xxxx xxxxxx **Xxx &xx; Xxx Xxxxxxx**. Xxxxxx **Xxxxxx X\# &xx; Xxxxxxx Xxxxx** xxx xxxx xxxxxx **Xxxxxxx Xxxxxxx Xxxxxxxxx**. Xxxx xxx xxxxxxx XxxxxxxXxxxxxxxx xxx xxxx xxxxxx xxx **XX** xxxxxx. XxxxxxxXxxxxxxxx xxxx xx xxx xxxx xxxxxxxxx xxx xxx xxxxxxxxxx xxx xxxx xxxxxx xx xxxxx xxxxx.
+1.  1n Visual Studio, on the menu bar, choose **File &gt; New Project**. In the **New Project** dialog box, expand **JavaScript &gt; Universal Windows** and then select **Blank App**. Name the project ToasterApplication and then choose the **OK** button.
+2.  Add a C# Windows Runtime component to the solution: In Solution Explorer, open the shortcut menu for the solution and then choose **Add &gt; New Project**. Expand **Visual C# &gt; Windows Store** and then select **Windows Runtime Component**. Name the project ToasterComponent and then choose the **OK** button. ToasterComponent will be the root namespace for the components you will create in later steps.
 
-    Xx Xxxxxxxx Xxxxxxxx, xxxx xxx xxxxxxxx xxxx xxx xxx xxxxxxxx xxx xxxx xxxxxx **Xxxxxxxxxx**. Xx xxx **Xxxxxxxx Xxxxx** xxxxxx xxx, xxxxxx **Xxxxxxxxxxxxx Xxxxxxxxxx** xx xxx xxxx xxxx, xxx xxxx xx xxx xxx xx xxx xxxxxx xxx, xxx **Xxxxxxxxxxxxx** xx **Xxxxx** xxx **Xxxxxxxx** xx xYY, xYY, xx XXX. Xxxxxx xxx **XX** xxxxxx.
+    In Solution Explorer, open the shortcut menu for the solution and then choose **Properties**. In the **Property Pages** dialog box, select **Configuration Properties** in the left pane, and then at the top of the dialog box, set **Configuration** to **Debug** and **Platform** to x86, x64, or ARM. Choose the **OK** button.
 
-    > **Xxxxxxxxx**  Xxxxxxxx = Xxx XXX xxx’x xxxx xxxxxxx xx'x xxx xxxxx xxx xxx xxxxxx-xxxx XxxYY XXX xxxx xxx'xx xxx xx xxx xxxxxxxx xxxxx.
+    > **Important**  Platform = Any CPU won’t work because it's not valid for the native-code Win32 DLL that you'll add to the solution later.
 
-3.  Xx Xxxxxxxx Xxxxxxxx, xxxxxx xxxxxY.xx xx XxxxxxxXxxxxxxxx.xx xx xxxx xx xxxxxxx xxx xxxx xx xxx xxxxxxx. Xxxxxx Xxxxxx xxxxxxxxxxxxx xxxxxxx xxx xxxxx xx xxx xxxx xx xxxxx xxx xxx xxxx xxxx.
-4.  Xx xxx .xx xxxx, xxx x xxxxx xxxxxxxxx xxx xxx Xxxxxxx.Xxxxxxxxxx xxxxxxxxx xx xxxxx XxxxxXxxxxXxxxxxx xxxx xxxxx.
-5.  Xxxx xxx xxxxxxx xxxxxxx xxx xxxxx, xxxx xxxxxxxxx xxxx xxx xxxxxxxxxx xx xxxxxx xxx xxxxxx xxxxxxx. Xx XxxxxxxXxxxxxxxx.xx, xxxxxx xx xxxxxxxxx xxx xxx xxxxxxx, xxx xxxxxxx xxx xxx xxx Xxxxx xxxx xxx xxxxxxx xxxxxxxx.
+3.  In Solution Explorer, rename class1.cs to ToasterComponent.cs so that it matches the name of the project. Visual Studio automatically renames the class in the file to match the new file name.
+4.  In the .cs file, add a using directive for the Windows.Foundation namespace to bring TypedEventHandler into scope.
+5.  When you require proxies and stubs, your component must use interfaces to expose its public members. In ToasterComponent.cs, define an interface for the toaster, and another one for the Toast that the toaster produces.
 
-    > **Xxxx**  Xx X\# xxx xxx xxxx xxxx xxxx. Xxxxxxx, xxxxx xxxxxx x xxxxx, xxx xxxx xxxx xxx xxxxxxxx xxxx xxx xxxxxx **Xxxxxxxx &xx; Xxxxxxx Xxxxxxxxx**. Xx xxx xxxx xxxx'x xxxxxxxxx, xxxxxxxx xxxx xxx xxxxxxxxxx xxxxxx xxxxxxxxxxxxx.
+    > **Note**  In C# you can skip this step. Instead, first create a class, and then open its shortcut menu and choose **Refactor &gt; Extract Interface**. In the code that's generated, manually give the interfaces public accessibility.
 
     ```csharp
     public interface IToaster
@@ -157,9 +157,9 @@ Xxxx xxxxxxxxxxx xxx xxxxx xxxxx:
         }
     ```
 
-    Xxx XXxxxx xxxxxxxxx xxx x xxxxxx xxxx xxx xx xxxxxxxxx xx xxxxxxxx xxx xxxx xx xxxxx. Xxx XXxxxxxx xxxxxxxxx xxx x xxxxxx xx xxxx xxxxx, xxx xx xxxxx xx xxxxxxxx xxxx xxx xxxxx xx xxxx. Xxxxxxx xxxx xxxxx xxxxxxx xxx xxxxxxxxxx xxxxx (xxxx xx, xxxx) xx xxxxx, xx'x xxxxx xx x xxxxx xxxxx.
+    The IToast interface has a string that can be retrieved to describe the type of toast. The IToaster interface has a method to make toast, and an event to indicate that the toast is made. Because this event returns the particular piece (that is, type) of toast, it's known as a typed event.
 
-6.  Xxxx, xx xxxx xxxxxxx xxxx xxxxxxxxx xxxxx xxxxxxxxxx, xxx xxx xxxxxx xxx xxxxxx xx xxxx xxxx xxx xxxxxxxxxx xxxx xxx XxxxXxxxxx xxx xxxx xxx'xx xxxxxxx xxxxx.
+6.  Next, we need classes that implement these interfaces, and are public and sealed so that they are accessible from the JavaScript app that you'll program later.
 
     ```csharp
     public sealed class Toast : IToast
@@ -208,9 +208,9 @@ Xxxx xxxxxxxxxxx xxx xxxxx xxxxx:
         }
     ``` 
 
-    Xx xxx xxxxxxxxx xxxx, xx xxxxxx xxx xxxxx xxx xxxx xxxx xx x xxxxxx-xxxx xxxx xxxx xx xxxx xxx xxxxxxxxxxxx. Xxxxxxxx xxx XXX xxxxx xxxxxxx xxxx xxx xxxxx xxx xxxxx xxxxxxx xx xxx xxxxx xxxx, xx xxx’x xxxxxxxxx xx xxxx xxxx xxxxxxx xxx xxxxxx xxxxx’x xx xxx xxxx xxxx xxxxxxx xx xxx xxxxxxx xx xxx xxxxxxxxx.
+    In the preceding code, we create the toast and then spin up a thread-pool work item to fire the notification. Although the IDE might suggest that you apply the await keyword to the async call, it isn’t necessary in this case because the method doesn’t do any work that depends on the results of the operation.
 
-    > **Xxxx**  Xxx xxxxx xxxx xx xxx xxxxxxxxx xxxx xxxx XxxxxxXxxx.XxxXxxxx xxxxxx xx xxxxxxxxxxx x xxxxxx xxx xx xxxx xxx xxxxx xx x xxxxxxxxxx xxxxxx. Xxx xxxxx xxxxx xxxx xxxxxxxxxx xxxxxx xx xxxxx xx xxx xxxxxxxxx xxxxxxx, xxx xx xxxxx xxxx xxxx xxxxxxx xxx .XXX Xxxx xxxxxxxxx xxxxxxxxxxxxx xxxxxxxx xxxxx/xxxxx xxxxx xxxx xx xxx XX xxxxxx.
+    > **Note**  The async call in the preceding code uses ThreadPool.RunAsync solely to demonstrate a simple way to fire the event on a background thread. You could write this particular method as shown in the following example, and it would work fine because the .NET Task scheduler automatically marshals async/await calls back to the UI thread.
   
     ````csharp
     public async void MakeToast(string message)
@@ -269,9 +269,9 @@ Xxxx xxxxxxxxxxx xxx xxxxx xxxxx:
 
     ![missing proxy](./images/debuggererrormissingproxy.png)
 
-    The first step in creating a proxy and stub for a component is to add a unique ID or GUID to the interfaces. However, the GUID format to use differs depending on whether you're coding in C\#, Visual Basic, or another .NET language, or in C++.
+    The first step in creating a proxy and stub for a component is to add a unique ID or GUID to the interfaces. However, the GUID format to use differs depending on whether you're coding in C#, Visual Basic, or another .NET language, or in C++.
 
-## To generate GUIDs for the component's interfaces (C\# and other .NET languages)
+## To generate GUIDs for the component's interfaces (C# and other .NET languages)
 
 1.  On the menu bar, choose Tools &gt; Create GUID. In the dialog box, select 5. \[Guid(“xxxxxxxx-xxxx...xxxx)\]. Choose the New GUID button and then choose the Copy button.
 
@@ -324,4 +324,8 @@ Xxxx xxxxxxxxxxx xxx xxxxx xxxxx:
 
 * [Creating Windows Runtime Components in C++](creating-windows-runtime-components-in-cpp.md)
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

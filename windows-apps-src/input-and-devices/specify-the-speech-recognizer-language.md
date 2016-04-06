@@ -1,54 +1,49 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxx xx xxxxxx xx xxxxxxxxx xxxxxxxx xx xxx xxx xxxxxx xxxxxxxxxxx.
-xxxxx: Xxxxxxx xxx xxxxxx xxxxxxxxxx xxxxxxxx
-xx.xxxxxxx: YXYYYXYX-XXYX-YYXX-XYYY-YXYYYYYYYXYY
-xxxxx: Xxxxxxx xxx xxxxxx xxxxxxxxxx xxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Learn how to select an installed language to use for speech recognition.
+title: Specify the speech recognizer language
+ms.assetid: 4C463A1B-AF6A-46FD-A839-5D6724955B38
+label: Specify the speech recognizer language
+template: detail.hbs
 ---
 
-# Xxxxxxx xxx xxxxxx xxxxxxxxxx xxxxxxxx
+# Specify the speech recognizer language
 
 
-Xxxxx xxx xx xxxxxx xx xxxxxxxxx xxxxxxxx xx xxx xxx xxxxxx xxxxxxxxxxx.
+Learn how to select an installed language to use for speech recognition.
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-**Xxxxxxxxx XXXx**
-
--   [**XxxxxxxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653251)
--   [**XxxxxxxxxXxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653250)
--   [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206804)
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx, xx xxxxxxxxx xxx xxxxxxxxx xxxxxxxxx xx x xxxxxx, xxxxxxxx xxxxx xx xxx xxxxxxx xxxxxxxx, xxx xxxxxx x xxxxxxxxx xxxxxxxx xxx xxxxxxxxxxx.
+**Important APIs**
 
-**Xxxxxxxxxxxxx:  **
-
-Xxxx xxxxx xxxxxx xx [Xxxxxx xxxxxxxxxxx](speech-recognition.md).
-
-Xxx xxxxxx xxxx x xxxxx xxxxxxxxxxxxx xx xxxxxx xxxxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxx.
-
-Xx xxx'xx xxx xx xxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx, xxxx x xxxx xxxxxxx xxxxx xxxxxx xx xxx xxxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx xxxx.
-
--   [Xxxxxx xxxx xxxxx xxx](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Xxxxx xxxxx xxxxxx xxxx [Xxxxxx xxx xxxxxx xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185584)
-
-**Xxxx xxxxxxxxxx xxxxxxxxxx:  **
-
-Xxx xxxxxxx xxxx xxxxx xxxxxxxxx x xxxxxx xxx xxxxxxxx xxxxxx-xxxxxxx xxx, xxx [Xxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121) .
-
-## <span id="Identify_the_default_language">
-            </span>
-            <span id="identify_the_default_language">
-            </span>
-            <span id="IDENTIFY_THE_DEFAULT_LANGUAGE">
-            </span>Xxxxxxxx xxx xxxxxxx xxxxxxxx
+-   [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)
+-   [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)
+-   [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804)
 
 
-X xxxxxx xxxxxxxxxx xxxx xxx xxxxxx xxxxxx xxxxxxxx xx xxx xxxxxxx xxxxxxxxxxx xxxxxxxx. Xxxx xxxxxxxx xx xxx xx xxx xxxx xx xxx xxxxxx Xxxxxxxx &xx; Xxxxxx &xx; Xxxxxx &xx; Xxxxxx Xxxxxxxx xxxxxx.
+Here, we enumerate the languages installed on a system, identify which is the default language, and select a different language for recognition.
 
-Xx xxxxxxxx xxx xxxxxxx xxxxxxxx xx xxxxxxxx xxx [**XxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653252) xxxxxx xxxxxxxx.
+**Prerequisites:  **
+
+This topic builds on [Speech recognition](speech-recognition.md).
+
+You should have a basic understanding of speech recognition and recognition constraints.
+
+If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
+
+-   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
+
+**User experience guidelines:  **
+
+For helpful tips about designing a useful and engaging speech-enabled app, see [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121) .
+
+## <span id="Identify_the_default_language"></span><span id="identify_the_default_language"></span><span id="IDENTIFY_THE_DEFAULT_LANGUAGE"></span>Identify the default language
+
+
+A speech recognizer uses the system speech language as its default recognition language. This language is set by the user on the device Settings &gt; System &gt; Speech &gt; Speech Language screen.
+
+We identify the default language by checking the [**SystemSpeechLanguage**](https://msdn.microsoft.com/library/windows/apps/dn653252) static property.
 
 ```CSharp
 var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
@@ -57,39 +52,27 @@ var language = SpeechRecognizer.SystemSpeechLanguage; </code></pre></td>
 </table>
 ```
 
-## <span id="Confirm_an_installed_language">
-            </span>
-            <span id="confirm_an_installed_language">
-            </span>
-            <span id="CONFIRM_AN_INSTALLED_LANGUAGE">
-            </span>Xxxxxxx xx xxxxxxxxx xxxxxxxx
+## <span id="Confirm_an_installed_language"></span><span id="confirm_an_installed_language"></span><span id="CONFIRM_AN_INSTALLED_LANGUAGE"></span>Confirm an installed language
 
 
-Xxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx xxxxxxx. Xxx xxxxxx xxxxxx xxx xxxxxxxxx xx x xxxxxxxx xx xxx xxxxxx xx xx xxx x xxxxxxxxxx xxxxxxxxxx.
+Installed languages can vary between devices. You should verify the existence of a language if you depend on it for a particular constraint.
 
-**Xxxx**  X xxxxxx xx xxxxxxxx xxxxx x xxx xxxxxxxx xxxx xx xxxxxxxxx. Xx xxxxxxxxx xxxx xxxxx xxxx XXXXX\_XXX\_XXXXX (YxYYYYYYYx) xx xxxxxx xx xxx xxxxxxxxx xxxxxxxx xx xxx xxxxxxxxx xx xxx xxx xxxxxxxx xxxxxxxxxx.
+**Note**  A reboot is required after a new language pack is installed. An exception with error code SPERR\_NOT\_FOUND (0x8004503a) is raised if the specified language is not supported or has not finished installing.
 
  
 
-Xxxxxxxxx xxx xxxxxxxxx xxxxxxxxx xx x xxxxxx xx xxxxxxxx xxx xx xxx xxxxxx xxxxxxxxxx xx xxx [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653226) xxxxx:
+Determine the supported languages on a device by checking one of two static properties of the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) class:
 
--   [
-            **XxxxxxxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653251)—Xxx xxxxxxxxxx xx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206804) xxxxxxx xxxx xxxx xxxxxxxxxx xxxxxxxxx xxx xxx xxxxxx xxxxxxxx.
+-   [**SupportedTopicLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653251)—The collection of [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) objects used with predefined dictation and web search grammars.
 
--   [
-            **XxxxxxxxxXxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653250)—Xxx xxxxxxxxxx xx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206804) xxxxxxx xxxx xxxx x xxxx xxxxxxxxxx xx x Xxxxxx Xxxxxxxxxxx Xxxxxxx Xxxxxxxxxxxxx (XXXX) xxxx.
+-   [**SupportedGrammarLanguages**](https://msdn.microsoft.com/library/windows/apps/dn653250)—The collection of [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) objects used with a list constraint or a Speech Recognition Grammar Specification (SRGS) file.
 
-## <span id="Specify_a_language">
-            </span>
-            <span id="specify_a_language">
-            </span>
-            <span id="SPECIFY_A_LANGUAGE">
-            </span>Xxxxxxx x xxxxxxxx
+## <span id="Specify_a_language"></span><span id="specify_a_language"></span><span id="SPECIFY_A_LANGUAGE"></span>Specify a language
 
 
-Xx xxxxxxx x xxxxxxxx, xxxx x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206804) xxxxxx xx xxx [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653226) xxxxxxxxxxx.
+To specify a language, pass a [**Language**](https://msdn.microsoft.com/library/windows/apps/br206804) object in the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) constructor.
 
-Xxxx, xx xxxxxxx "xx-XX" xx xxx xxxxxxxxxxx xxxxxxxx.
+Here, we specify "en-US" as the recognition language.
 
 <span codelanguage="CSharp"></span>
 ```CSharp
@@ -107,36 +90,33 @@ var language = new Windows.Globalization.Language(“en-US”);
 var recognizer = new SpeechRecognizer(language); 
 ```
 
-## <span id="Remarks">
-            </span>
-            <span id="remarks">
-            </span>
-            <span id="REMARKS">
-            </span>Xxxxxxx
+## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>Remarks
 
 
-X xxxxx xxxxxxxxxx xxx xx xxxxxxxxxx xx xxxxxx x [**XxxxxxXxxxxxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631446) xx xxx [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653241) xxxxxxxxxx xx xxx [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653226) xxx xxxx xxxxxxx [**XxxxxxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653240). X [**XxxxxxXxxxxxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631433) xx **XxxxxXxxxxxxxXxxXxxxxxxxx** xx xxxxxxxx xx xxx xxxxxxxxxx xx xxx xxxxxxxxxxx xxxx x xxxxxxxxx xxxxx xxxxxxxx.
+A topic constraint can be configured by adding a [**SpeechRecognitionTopicConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631446) to the [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) collection of the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) and then calling [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240). A [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) of **TopicLanguageNotSupported** is returned if the recognizer is not initialized with a supported topic language.
 
-X xxxx xxxxxxxxxx xx xxxxxxxxxx xx xxxxxx x [**XxxxxxXxxxxxxxxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631421) xx xxx [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653241) xxxxxxxxxx xx xxx [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653226) xxx xxxx xxxxxxx [**XxxxxxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653240). Xxx xxxxxx xxxxxxx xxx xxxxxxxx xx x xxxxxx xxxx xxxxxxxx. Xxxxxxx, xxx xxxx xxxx xx xxxxxxxxx xxxxx xxx xxxxxxxx xx xxx xxxxxxxxxx.
+A list constraint is configured by adding a [**SpeechRecognitionListConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631421) to the [**Constraints**](https://msdn.microsoft.com/library/windows/apps/dn653241) collection of the [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) and then calling [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240). You cannot specify the language of a custom list directly. Instead, the list will be processed using the language of the recognizer.
 
-Xx XXXX xxxxxxx xx xx xxxx-xxxxxxxx XXX xxxxxx xxxxxxxxxxx xx xxx [**XxxxxxXxxxxxxxxxxXxxxxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631412) xxxxx. Xxxxxx xxxxxx xxxxx, xxx xxx xxxxxxx xxx xxxxxxxx xx xxx xxxxxxx xx xxx XXXX xxxxxx. [
-            **XxxxxxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653240) xxxxx xxxx x [**XxxxxxXxxxxxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631433) xx **XxxxxXxxxxxxxXxxXxxxxxxxx** xx xxx xxxxxxxxxx xx xxx xxxxxxxxxxx xx xxx xxxx xxxxxxxx xx xxx XXXX xxxxxx.
+An SRGS grammar is an open-standard XML format represented by the [**SpeechRecognitionGrammarFileConstraint**](https://msdn.microsoft.com/library/windows/apps/dn631412) class. Unlike custom lists, you can specify the language of the grammar in the SRGS markup. [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) fails with a [**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433) of **TopicLanguageNotSupported** if the recognizer is not initialized to the same language as the SRGS markup.
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>Related articles
 
 
-**Xxxxxxxxxx**
-* [Xxxxxx xxxxxxxxxxxx](speech-interactions.md)
-**Xxxxxxxxx**
-* [Xxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121)
-**Xxxxxxx**
-* [Xxxxxx xxxxxxxxxxx xxx xxxxxx xxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+**Developers**
+* [Speech interactions](speech-interactions.md)
+**Designers**
+* [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
+**Samples**
+* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

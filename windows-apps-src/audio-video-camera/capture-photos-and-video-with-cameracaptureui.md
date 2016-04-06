@@ -1,107 +1,113 @@
 ---
-xx.xxxxxxx: XXYXYXYX-YYYX-YYYX-YYYX-YYYXYXXYXYXY
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xx xxx xxx XxxxxxXxxxxxxXX xxxxx xx xxxxxxx xxxxxx xx xxxxxx xxxxx xxx xxxxxx XX xxxxx xxxx Xxxxxxx.
-xxxxx: Xxxxxxx xxxxxx xxx xxxxx xxxx XxxxxxXxxxxxxXX
+ms.assetid: CC0D6E9B-128D-488B-912F-318F5EE2B8D3
+description: この記事では、CameraCaptureUI クラスを使用して、Windows に組み込まれているカメラ UI で写真またはビデオをキャプチャする方法を説明します。
+title: CameraCaptureUI を使った写真とビデオのキャプチャ
 ---
 
-# Xxxxxxx xxxxxx xxx xxxxx xxxx XxxxxxXxxxxxxXX
+# CameraCaptureUI を使った写真とビデオのキャプチャ
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxx xxx XxxxxxXxxxxxxXX xxxxx xx xxxxxxx xxxxxx xx xxxxxx xxxxx xxx xxxxxx XX xxxxx xxxx Xxxxxxx. Xxxx xxxxxxx xx xxxx xx xxx xxx xxxxxx xxxx xxx xx xxx x xxxx-xxxxxxxx xxxxx xx xxxxx xxxx xxxx x xxx xxxxx xx xxxx.
-
-Xx xxxx xxxxxxxx xxxxxxxx xxxx xxxxxx, xxx-xxxxx xxxxxxx xx xxx xxxxxxx xxxxxxxxx, xxx xxxxxx xxx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241124) xxxxxx xxx xxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxx xxxxxx xxx xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md).
-
-## Xxxxxxx x xxxxx xxxx XxxxxxXxxxxxxXX
-
-Xx xxx xxx xxxxxx xxxxxxx XX, xxxxxxx xxx [**Xxxxxxx.Xxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226738) xxxxxxxxx xx xxxx xxxxxxx. Xx xx xxxx xxxxxxxxxx xxxx xxx xxxxxxxx xxxxx xxxx, xxxxxxx [**Xxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227346).
-
-[!xxxx-xx[XxxxxXxxxxxxXX](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingCaptureUI)]
-
-Xx xxxxxxx x xxxxx, xxxxxx x xxx [**XxxxxxXxxxxxxXX**](https://msdn.microsoft.com/library/windows/apps/br241030) xxxxxx. Xxxxx xxx xxxxxx'x [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241058) xxxxxxxx xxx xxx xxxxxxx xxxxxxxxxx xxx xxx xxxxxxxx xxxxx xxxx xx xxx xxxxx xxxxxx xx xxx xxxxx. Xx xxxxxxx, xxx xxxxxx xxxxxxx XX xxxxxx xxx xxxx xx xxxx xxx xxxxx xxxxxx xx xx xxxxxxxx, xxxxxxxx xxxx xxx xx xxxxxxxx xxxx xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241042) xxxxxxxx. Xxxx xxxxxxx xxxx xxx [**XxxxxxxXxxxXxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241044) xx xxxxxxx xxxx xxx xxxxxxxx xxxxx xx YYY x YYY xx xxxxxx.
-
-**Xxxx**  Xxxxxxx xxxxxxxx xx xxx XxxxxxXxxxxxxXX xx xxx xxxxxxxxx xxx xxxxxxx xx xxx Xxxxxx xxxxxx xxxxxx. Xxx xxxxx xx xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241042) xxxxxxxx xx xxxxxxx xxxx xxxx xxx xx xxxxxxx xx xxxxx xxxxxxx.
-
-Xxxx [**XxxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241057) xxx xxxxxxx [**XxxxxxXxxxxxxXXXxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br241040) xx xxxxxxx xxxx x xxxxx xxxxxx xx xxxxxxxx. Xxx xxxxxx xxxxxxx x [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxxxx xxxxxxxxxx xxx xxxxx xx xxx xxxxxxx xx xxxxxxxxxx. Xx xxx xxxx xxxxxxx xxx xxxxxxx, xxx xxxxxxxx xxxxxx xx xxxx.
-
-[!xxxx-xx[XxxxxxxXxxxx](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCapturePhoto)]
-
-Xxxx xxx xxxx xxx **XxxxxxxXxxx** xxxxxxxxxx xxx xxxxxxxx xxxxx, xxx xxx xxxxxx x [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887358) xxxxxx xxxx xxx xx xxxx xxxx xxxxxxx xxxxxxxxx Xxxxxxxxx Xxxxxxx xxx xxxxxxxx.
-
-Xxxxx xxx xxxxxx xxxxxxx xxx [**Xxxxxxx.Xxxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226400) xxxxxxxxx xx xxxx xxxxxxx.
-
-[!xxxx-xx[XxxxxXxxxxxxxXxxxxx](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmap)]
-
-Xxxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227116) xx xxx x xxxxxx xxxx xxx xxxxx xxxx. Xxxx [**XxxxxxXxxxxxx.XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226182) xx xxx x xxxxxx xxxxxxx xxx xxx xxxxxx. Xxxx xxxx [**XxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887332) xx xxx x **XxxxxxxxXxxxxx** xxxxxxxxxxxxxx xx xxx xxxxx.
-
-[!xxxx-xx[XxxxxxxxXxxxxx](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmap)]
-
-Xx xxxxxxx xxx xxxxx xx xxxx XX, xxxxxxx xx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242752) xxxxxxx xx xxxx XXXX xxxx.
-
-[!xxxx-xxx[XxxxxXxxxxxx](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetImageControl)]
-
-Xx xxx xxx xxxxxxxx xxxxxx xx xxxx XXXX xxxx, xxxxxxx xxx xxxxx [**Xxxxxxx.XX.Xxxx.Xxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243258) xxxxxxxxx xx xxxx xxxxxxx.
-
-[!xxxx-xx[XxxxxXxxxxxxxXxxxxxXxxxxx](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmapSource)]
-
-Xxx **Xxxxx** xxxxxxx xxxxxxxx xxxx xxx xxxxx xxxxxx xx xx XXXXY xxxxxx xxxx xxxxxxxxxxxxx xxxxx xx xx xxxxx, xx xxxx xxx xxxxxx xxxxxx [**XxxxxxxxXxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887362) xx xxxxxx x xxx xxxxxxxx xxxxxx xxxx xxx xxxxxxx xxxxxx. Xxxx, xxxxxx x xxx [**XxxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn997854) xxxxxx xxx xxxx [**XxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn997856) xx xxxxxx xxx xxxxxxxx xxxxxx xx xxx xxxxxx. Xxxxxxx, xxx xxx **Xxxxx** xxxxxxx'x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242760) xxxxxxxx xx xxxxxxx xxx xxxxxxxx xxxxx xx xxx XX.
-
-[!xxxx-xx[XxxXxxxxXxxxxx](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetImageSource)]
-
-## Xxxxxxx x xxxxx xxxx XxxxxxXxxxxxxXX
-
-Xx xxxxxxx x xxxxx, xxxxxx x xxx [**XxxxxxXxxxxxxXX**](https://msdn.microsoft.com/library/windows/apps/br241030) xxxxxx. Xxxxx xxx xxxxxx'x [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241059) xxxxxxxx xxx xxx xxxxxxx xxxxxxxxxx xxx xxx xxxxxxxx xxxxx xxxx xx xxx xxxxxx xx xxx xxxxx.
-
-Xxxx [**XxxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241057) xxx xxxxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br241059) xx xxxxxxx xxxx x xxxxx xxxxxx xx xxxxxxx. Xxx xxxxxx xxxxxxx x [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxxxx xxxxxxxxxx xxx xxxxx xx xxx xxxxxxx xx xxxxxxxxxx. Xx xxx xxxx xxxxxxx xxx xxxxxxx, xxx xxxxxxxx xxxxxx xx xxxx.
-
-[!xxxx-xx[XxxxxxxXxxxx](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCaptureVideo)]
-
-Xxxx xxx xx xxxx xxx xxxxxxxx xxxxx xxxx xxxxxxx xx xxx xxxxxxxx xxx xxxx xxx. Xxx xxxx xx xxxx xxxxxxx xxxxx xxx xxx xx xxxxxxx xxxxxx x xxxxx xxxxxxxxxxx xxxx xxx xx xxxx xxxxxxxx xxxxxx xxx xxxx xx xx xxxx XX.
-
-Xxxxx, xxx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxxxxxx xx xxxxx xxx xxxxx xxxxxxxxxxx xxxx xx xxxxxxxxx xx xxxx XXXX xxxx.
-
-[!xxxx-xx[XxxxxXxxxxxx](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
-
-Xxx xxx [**Xxxxxxx.Xxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn640565) xxx [**Xxxxxxx.Xxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn278962) xxxxxxxxxx xx xxxx xxxxxxx.
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-[!xxxx-xx[XxxxxXxxxxXxxxxxxxxxx](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingMediaComposition)]
+この記事では、CameraCaptureUI クラスを使用して、Windows に組み込まれているカメラ UI で写真またはビデオをキャプチャする方法を説明します。 この機能は使いやすく、わずか数行のコードで、ユーザーがキャプチャした写真やビデオをアプリに取り込むことができます。
 
-Xxxxxxx xxxxxx xxxxxxxxx xxx x [**XxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652646) xxxxxx xxx x [**XxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn282716) xxxx xxx xxxx xx xxxx xx xxxxx xxx xxx xxxxxxxx xx xxx xxxx.
+キャプチャ操作に対して、より堅牢で低レベルな制御が必要であれば、[**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) オブジェクトを使用して、独自のキャプチャ操作を実装する必要があります。 詳しくは、「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」をご覧ください。
 
-[!xxxx-xx[XxxxxxxXxxxxXxxxxxxxxxx](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetDeclareMediaComposition)]
+## CameraCaptureUI を使った写真のキャプチャ
 
-Xxxx, xxxxxx xxx xxxxxxx xxx xxxxxx, xxx xxxxxx xxxxxx x xxx xxxxxxxx xx xxx **XxxxxXxxxxxxxxxx** xxxxx.
+カメラ キャプチャ UI を使うには、プロジェクトに [**Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/br226738) 名前空間を含めます。 返された画像ファイルでファイル操作を行うには、[**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) を含めます。
 
-[!xxxx-xx[XxxxXxxxxxxxxxx](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetInitComposition)]
+[!code-cs[UsingCaptureUI](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingCaptureUI)]
 
-Xxxx xxx xxxxx xxxx xxxxxxxx xxxx xxx xxxxxx xxxxxxx XX, xxxxxx x xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn652596) xx xxxxxxx [**XxxxxXxxx.XxxxxxXxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652607). Xxx xxx xxxxx xxxx xx xxx xxxxxxxxxxx'x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652648) xxxxxxxxxx.
+写真をキャプチャするには、新しい [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) オブジェクトを作成します。 オブジェクトの [**PhotoSettings**](https://msdn.microsoft.com/library/windows/apps/br241058) プロパティを使うと、写真の画像形式など、返される写真のプロパティを指定することができます。 既定では、ユーザーはカメラ キャプチャ UI を使うことにより、返される前に写真のトリミングを行うことができます。ただし、この機能は [**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) プロパティを使って無効にすることもできます。 この例では、[**CroppedSizeInPixels**](https://msdn.microsoft.com/library/windows/apps/br241044) を設定して、返される画像のサイズが 200 x 200 ピクセルになるよう要求しています。
 
-Xxxx [**XxxxxxxxXxxxxxxXxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652674) xx xxxxxx xxx **XxxxxXxxxxxXxxxxx** xxxxxx xxxx xxx xxxxxxxxxxx.
+**注:** モバイル デバイス ファミリのデバイスでは、CameraCaptureUI での画像のトリミングはサポートされていません。 アプリがこれらのデバイスで実行されている場合、[**AllowCropping**](https://msdn.microsoft.com/library/windows/apps/br241042) プロパティの値は無視されます。
 
-[!xxxx-xx[XxxXxXxxxxxxxxxx](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetAddToComposition)]
+写真をキャプチャすることを指定するには、[**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br241057) を呼び出して、[**CameraCaptureUIMode.Photo**](https://msdn.microsoft.com/library/windows/apps/br241040) を指定します。 キャプチャに成功すると、このメソッドは、画像が格納された [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) インスタンスを返します。 ユーザーがキャプチャを取り消した場合、返されるオブジェクトは null になります。
 
-Xxxxxxx, xxx xxx xxxxxx xxxxxx xx xxxxx xxx xxxxx xxxxxxx'x [**XxxXxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn299029) xxxxxx xx xxxx xxx xxxxxxxxxxx xx xxx XX.
+[!code-cs[CapturePhoto](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCapturePhoto)]
 
-[!xxxx-xx[XxxXxxxxXxxxxxxXxxxxx](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetMediaElementSource)]
+キャプチャした写真が格納された **StorageFile** が返されたら、[**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトを作成できます。このオブジェクトは、ユニバーサル Windows アプリのさまざまな機能で使用できます。
 
-Xxx xxx xxxxxxxx xx xxxxxxx xxxxx xxxxx xxx xxx xxxx xx xxx xxxxxxxxxxx. Xxx xxxx xxxxxxxxxxx xx xxxxx xxxxxxxxxxxx, xxx [Xxxxx xxxxxxxxxxxx xxx xxxxxxx](media-compositions-and-editing.md).
+まず、プロジェクトに [**Windows.Graphics.Imaging**](https://msdn.microsoft.com/library/windows/apps/br226400) 名前空間を含める必要があります。
 
-**Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+[!code-cs[UsingSoftwareBitmap](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmap)]
+
+画像ファイルからストリームを取得するには、[**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) を呼び出します。 ストリームのビットマップ デコーダーを取得するには、[**BitmapDecoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226182) を呼び出します。 次に、[**GetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887332) を呼び出して、画像の **SoftwareBitmap** 表現を取得します。
+
+[!code-cs[SoftwareBitmap](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmap)]
+
+UI に画像を表示するには、XAML ページで [**Image**](https://msdn.microsoft.com/library/windows/apps/br242752) コントロールを宣言します。
+
+[!code-xml[ImageControl](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetImageControl)]
+
+XAML ページでソフトウェア ビットマップを使用するには、[**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) 名前空間の using 指定を含めます。
+
+[!code-cs[UsingSoftwareBitmapSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingSoftwareBitmapSource)]
+
+**Image** コントロールでは、画像のソースが BGRA8 形式プリマルチプライ済みアルファまたはアルファなしであることが求められるため、静的メソッド [**SoftwareBitmap.Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) を呼び出して、目的の形式で新しいソフトウェア ビットマップを作成します。 次に、新しい [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) オブジェクトを作成して [**SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856) を呼び出し、ソフトウェア ビットマップをソースに割り当てます。 最後に、キャプチャした写真を UI に表示できるように、**Image** コントロールの [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) プロパティを設定します。
+
+[!code-cs[SetImageSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetImageSource)]
+
+## CameraCaptureUI を使ったビデオのキャプチャ
+
+ビデオをキャプチャするには、新しい [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) オブジェクトを作成します。 オブジェクトの [**VideoSettings**](https://msdn.microsoft.com/library/windows/apps/br241059) プロパティを使うと、ビデオの形式など、返されるビデオのプロパティを指定することができます。
+
+ビデオをキャプチャすることを指定するには、[**CaptureFileAsync**](https://msdn.microsoft.com/library/windows/apps/br241057) を呼び出して、[**Video**](https://msdn.microsoft.com/library/windows/apps/br241059) を指定します。 キャプチャに成功すると、このメソッドは、ビデオが格納された [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) インスタンスを返します。 ユーザーがキャプチャを取り消した場合、返されるオブジェクトは null になります。
+
+[!code-cs[CaptureVideo](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetCaptureVideo)]
+
+キャプチャしたビデオ ファイルをどのように使うかは、アプリのシナリオによって異なります。 この記事の残りの部分では、キャプチャした 1 つ以上のビデオからメディア コンポジションをすばやく作成し、UI に表示する方法を説明します。
+
+まず、ビデオ コンポジションを表示する [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) コントロールを XAML ページに追加します。
+
+[!code-cs[MediaElement](./code/CameraCaptureUIWin10/cs/MainPage.xaml#SnippetMediaElement)]
+
+[
+            **Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) 名前空間と [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) 名前空間をプロジェクトに追加します。
+
+
+[!code-cs[UsingMediaComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetUsingMediaComposition)]
+
+[
+            **MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) オブジェクトおよび [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716) のメンバー変数を宣言します。これらは、ページの有効期間の間、スコープ内で存続します。
+
+[!code-cs[DeclareMediaComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetDeclareMediaComposition)]
+
+ビデオをキャプチャする前に 1 回だけ、**MediaComposition** クラスの新しいインスタンスを作成する必要があります。
+
+[!code-cs[InitComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetInitComposition)]
+
+カメラ キャプチャ UI から返されたビデオ ファイルを使用し、[**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607) を呼び出して、新しい [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) を作成します。 メディア クリップをコンポジションの [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) コレクションに追加します。
+
+コンポジションから **MediaStreamSource** オブジェクトを作成するには、[**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) を呼び出します。
+
+[!code-cs[AddToComposition](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetAddToComposition)]
+
+最後に、コンポジションを UI に表示するには、メディア要素の [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) メソッドを使用して、ストリーム ソースを設定します。
+
+[!code-cs[SetMediaElementSource](./code/CameraCaptureUIWin10/cs/MainPage.xaml.cs#SnippetSetMediaElementSource)]
+
+ビデオ クリップのキャプチャを続行して、コンポジションに追加することもできます。 メディア コンポジションについて詳しくは、「[メディア コンポジションと編集](media-compositions-and-editing.md)」をご覧ください。
+
+**注**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
+
+ 
+
+## 関連トピック
+
+* [MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)
+* [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030)
+ 
 
  
 
-## Xxxxxxx xxxxxx
 
-* [Xxxxxxx xxxxxx xxx xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md)
-* [**XxxxxxXxxxxxxXX**](https://msdn.microsoft.com/library/windows/apps/br241030)
- 
-
- 
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

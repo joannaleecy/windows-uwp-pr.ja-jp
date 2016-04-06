@@ -1,22 +1,23 @@
 ---
-xxxxx: Xxx xx xxxxxx xx xxx (XxxxxxX xxx X++)
-xxxxxxxxxxx: Xxxx xxxxx xxxxx xxx xx xxxxxxx xxxxxxxxx xxxxxxxxxxx xxxx xxxx xxx xxxxxx xxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX xxx.
-xx.xxxxxxx: YxYxxYYY-YYYY-xxxY-YYxx-xYYxYYYxYYYY
+title: アプリを再開する方法 (DirectX と C++)
+description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが再開するときに重要なアプリケーション データを復元する方法について説明します。
+ms.assetid: 5e6bb673-6874-ace5-05eb-f88c045f2178
 ---
 
-# Xxx xx xxxxxx xx xxx (XxxxxxX xxx X++)
+# アプリを再開する方法 (DirectX と C++)
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxx xxxxx xxxxx xxx xx xxxxxxx xxxxxxxxx xxxxxxxxxxx xxxx xxxx xxx xxxxxx xxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX xxx.
+このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが再開するときに重要なアプリケーション データを復元する方法について説明します。
 
-## Xxxxxxxx xxx xxxxxxxx xxxxx xxxxxxx
+## resuming イベント ハンドラーに登録する
 
 
-Xxxxxxxx xx xxxxxx xxx [**XxxxXxxxxxxxxxx::Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br205859) xxxxx, xxxxx xxxxxxxxx xxxx xxx xxxx xxxxxxxx xxxx xxxx xxxx xxx xxx xxxx xxxx xx xx.
+[
+            **CoreApplication::Resuming**](https://msdn.microsoft.com/library/windows/apps/br205859) イベントを処理するために登録します。このイベントは、ユーザーがアプリを切り替えてから、アプリに戻ったことを示します。
 
-Xxx xxxx xxxx xx xxxx xxxxxxxxxxxxxx xx xxx [**XXxxxxxxxxXxxx::Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700495) xxxxxx xx xxxx xxxx xxxxxxxx:
+このコードをビュー プロバイダーの [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) メソッドの実装に追加します。
 
 ```cpp
 // The first method is called when the IFrameworkView is being created.
@@ -32,10 +33,11 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## Xxxxxxx xxxxxxxxx xxxxxxx xxxxx xxxxxxxxxx
+## 一時停止の後で表示されるコンテンツを更新する
 
 
-Xxxx xxxx xxx xxxxxxx xxx Xxxxxxxx xxxxx, xx xxx xxx xxxxxxxxxxx xx xxxxxxx xxx xxxxxxxxx xxxxxxx. Xxxxxxx xxx xxx xxx xxxx xxxxx xxxx xxxx xxxxxxx xxx [**XxxxXxxxxxxxxxx::Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br205860), xxx xxxxxxx xxxxxxxxxx. Xxxx xxxx: xx xxx'xx xxxxxxxxx xxxx xxxxx xxxxxx, xxx'x xxx xxxx xx xxxxxxx xx.
+アプリでは、Resuming イベントを処理する時点で、表示されているコンテンツを更新できます。 [
+            **CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) のハンドラーで保存した任意のアプリを復元し、処理を再開します。 ゲーム開発の場合、オーディオ エンジンを一時停止していたら、ここで再開します。
 
 ```cpp
 void App::OnResuming(Platform::Object^ sender, Platform::Object^ args)
@@ -48,7 +50,7 @@ void App::OnResuming(Platform::Object^ sender, Platform::Object^ args)
 }
 ```
 
-Xxxx xxxxxxxx xxxxxx xx xx xxxxx xxxxxxx xxxxxxxxx xx xxx [**XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208211) xxx xxx xxx'x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225). Xxxx xxxxxxxx xxxx xxx xx xxxxxxx xx xxx xx xxx xxxx [**XxxxXxxxxxxxxx::XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208215) xxxx xxxx xxx'x xxxx xxxx (xxxxxxxxxxx xx xxx [**XXxxxxxxxxXxxx::Xxx**](https://msdn.microsoft.com/library/windows/apps/hh700505) xxxxxx xx xxxx xxxx xxxxxxxx).
+このコールバックは、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). の [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) によって処理されるイベント メッセージとして発生します。 このコールバックは、アプリのメイン ループ (ビュー プロバイダーの [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) メソッドで実装) から [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) を呼び出さない場合は呼び出されません。
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -75,21 +77,25 @@ void App::Run()
 }
 ```
 
-## Xxxxxxx
+## 注釈
 
 
-Xxx xxxxxx xxxxxxxx xxxx xxx xxxxxxxx xxx xxxx xxxxxxxx xx xxxxxxx xxx xx xx xxx xxxxxxx. Xxx xxxxxx xxxxxxx xxxx xxx xxxxxxxx xxx xxxx xxxxxxxx xxxx xx xx. Xxxx xxx xxxxxx xxxxxxx xxxx xxx, xxx xxxxxxx xx xxxx xxxxxxxxx xxx xxxx xxxxxxxxxx xx xxx xxxx xx xx xxx xxxxxx xxx xxxxxx xxxxxxxxx xxx xxx. Xxx xxxxxx xxxxxxxx xxx xxx xxxxxxx xxxxx xx xxxx xxx, xx xxxx xx xxxxxxx xx xxx xxxx xx xx xx'x xxxx xxxxxxx xx xxx xxxxxxxxxx. Xxxxxxx, xxx xxx xxx xxxx xxxx xxxxxxxxx xxx x xxxxxxxxxxx xxxxxx xx xxxx, xx xx xxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxx xxxx xxxxx xxxx xxxxxxx xxxxx xxx xxx xxx xxxxxxxxx, xxx xxxxxxx xxx xxxxxxxxx xx xxxxx xxxxxxxxxx xxxxxxx. Xx xxx'xx xxxxx xxx xxxx xxxxx xxxx xxxxxx x xxxxxxxx xxxxxxx xxxxx, xxxxxxx xx xxx.
+ユーザーが別のアプリまたはデスクトップに切り替えると、システムはアプリを中断します。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。 システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。 システムはアプリを厳密に一時停止前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。 しかし、アプリは長時間一時停止している場合があるので、アプリが一時停止している間に変化した可能性のある表示コンテンツを更新し、レンダリングやオーディオ処理スレッドを再開する必要があります。 以前の一時中止イベント中にゲームの状態データを保存してある場合は、ここで復元します。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxx xx xxxxxxx xx xxx (XxxxxxX xxx X++)](how-to-suspend-an-app-directx-and-cpp.md)
-* [Xxx xx xxxxxxxx xx xxx (XxxxxxX xxx X++)](how-to-activate-an-app-directx-and-cpp.md)
+* [アプリを一時停止する方法 (DirectX と C++)](how-to-suspend-an-app-directx-and-cpp.md)
+* [アプリをアクティブ化する方法 (DirectX と C++)](how-to-activate-an-app-directx-and-cpp.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

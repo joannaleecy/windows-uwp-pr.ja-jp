@@ -1,36 +1,36 @@
 ---
-xxxxx: Xxxxxx xxxxx xxxxxx xxxxxx xxxxxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxx xxx XxxxxxYX xxxxxx xxxxxxxxx xxxxxxxxx xx xxxxxxx xxxxx xxxxxxx xxx xxxxxx xxxxxxx.
-xx.xxxxxxx: YYxYYYYx-Yxxx-YYxY-YYxY-xxxxYYYYYYYY
+title: Create depth buffer device resources
+description: Learn how to create the Direct3D device resources necessary to support depth testing for shadow volumes.
+ms.assetid: 86d5791b-1faa-17e4-44a8-bbba07062756
 ---
 
-# Xxxxxx xxxxx xxxxxx xxxxxx xxxxxxxxx
+# Create depth buffer device resources
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxx xxx xx xxxxxx xxx XxxxxxYX xxxxxx xxxxxxxxx xxxxxxxxx xx xxxxxxx xxxxx xxxxxxx xxx xxxxxx xxxxxxx. Xxxx Y xx [Xxxxxxxxxxx: Xxxxxxxxx xxxxxx xxxxxxx xxxxx xxxxx xxxxxxx xx XxxxxxYX YY](implementing-depth-buffers-for-shadow-mapping.md).
+Learn how to create the Direct3D device resources necessary to support depth testing for shadow volumes. Part 1 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
-## Xxxxxxxxx xxx'xx xxxx
-
-
-Xxxxxxxxx x xxxxx xxx xxx xxxxxx xxxxxxx xxxxxxxx xxx xxxxxxxxx XxxxxxYX xxxxxx-xxxxxxxxx xxxxxxxxx:
-
--   X xxxxxxxx (xxxxxx) xxx xxx xxxxx xxx
--   X xxxxx xxxxxxx xxxx xxx xxxxxx xxxxxxxx xxxx xxx xxx xxxxxxxx
--   X xxxxxxxxxx xxxxxxx xxxxx xxxxxx
--   Xxxxxxxx xxxxxxx xxx xxxxx XXX xxxxxxxx
--   X xxxxxxxx xxx xxxxxxxxx xxx xxxxxx xxx (xxxxxxxxx x xxxxxx xxxxxxxx)
--   X xxxxxxxxx xxxxx xxxxxx xx xxxxxx xxxxx xxxx xxxxxxx
--   Xxx xxxx xxxx xxxx x xxxxxxxxx xxxxx xxxxxx xx xxxxxx xxxx xx xxxx xxxx xxxxxxx, xx xxx xxx'x xxxxxxx xxx xxx.
-
-Xxxx xxxx xxxxxxxx xx xxxxx xxxxxxxxx xxxxx xx xx xxxxxxxx xx x xxxxxx-xxxxxxxxx xxxxxxxx xxxxxxxx xxxxxxx, xxxx xxx xxxx xxxxxxxx xxx xxxxxxxx xxxx xx (xxx xxxxxxx) x xxx xxxxxx xxxxxx xx xxxxxxxxx, xx xxx xxxx xxxxx xxxx xxx xx x xxxxxxx xxxxxxxx xx x xxxxxxxxx xxxxxxxx xxxxxxx.
-
-## Xxxxx xxxxxxx xxxxxxx
+## Resources you'll need
 
 
-Xxxxxx xxxxxxxx xxx xxxxx xxx, xxxx xxx [**XxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476497) xxxxxx xx xxx XxxxxxYX xxxxxx, xxxxxxx **XYXYY\_XXXXXXX\_XYXY\_XXXXXX\_XXXXXXX**, xxx xxxxxxx x [**XYXYY\_XXXXXXX\_XXXX\_XYXY\_XXXXXX\_XXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/jj247569) xxxxxxxxx.
+Rendering a depth map for shadow volumes requires the following Direct3D device-dependent resources:
+
+-   A resource (buffer) for the depth map
+-   A depth stencil view and shader resource view for the resource
+-   A comparison sampler state object
+-   Constant buffers for light POV matrices
+-   A viewport for rendering the shadow map (typically a square viewport)
+-   A rendering state object to enable front face culling
+-   You will also need a rendering state object to switch back to back face culling, if you don't already use one.
+
+Note that creation of these resources needs to be included in a device-dependent resource creation routine, that way your renderer can recreate them if (for example) a new device driver is installed, or the user moves your app to a monitor attached to a different graphics adapter.
+
+## Check feature support
+
+
+Before creating the depth map, call the [**CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) method on the Direct3D device, request **D3D11\_FEATURE\_D3D9\_SHADOW\_SUPPORT**, and provide a [**D3D11\_FEATURE\_DATA\_D3D9\_SHADOW\_SUPPORT**](https://msdn.microsoft.com/library/windows/desktop/jj247569) structure.
 
 ```cpp
 D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT isD3D9ShadowSupported;
@@ -47,14 +47,14 @@ if (isD3D9ShadowSupported.SupportsDepthAsTextureWithLessEqualComparisonFilter)
 
 ```
 
-Xx xxxx xxxxxxx xx xxx xxxxxxxxx, xx xxx xxx xx xxxx xxxxxxx xxxxxxxx xxx xxxxxx xxxxx Y xxxxx Y\_x xxxx xxxx xxxxxx xxxxxxxxxx xxxxxxxxx. Xx xxxx xxxxx, xxxx xx xxxxxxx xxx xxxx xxxxxxx xxxxx xxxx xxx XXX xx x xxxxxx xxxxxx xxxx x xxxxxx xxxx xxx'x xxxxxxx xx xxxxxxx xx xxxxx XXXX Y.Y. Xx xxx xxxxxx xxxxxxxx xx xxxxx xxxxxxx xxxxx YY\_Y xxxx xxx xxx xxxx x xxxxxx xxxxxxxxxx xxxxxx xxxxxxxx xxx xxxxxx xxxxx Y\_Y xxxxxxx.
+If this feature is not supported, do not try to load shaders compiled for shader model 4 level 9\_x that call sample comparison functions. In many cases, lack of support for this feature means that the GPU is a legacy device with a driver that isn't updated to support at least WDDM 1.2. If the device supports at least feature level 10\_0 then you can load a sample comparison shader compiled for shader model 4\_0 instead.
 
-## Xxxxxx xxxxx xxxxxx
+## Create depth buffer
 
 
-Xxxxx, xxx xxxxxxxx xxx xxxxx xxx xxxx x xxxxxx-xxxxxxxxx xxxxx xxxxxx. Xxx xx xxxxxxxx xxxxxx xxxxxxxx xxxx xxxxxxxxxx xxxxx. Xx xxx xxxxxxxx xxxxxxxx xxxxx, xxx xxxxxxx xxx xx xxx xxxxxx xxxxxx xx x xxxxxx xxxx xxx xxxxxxxx xxxxx'x xxxxxxx, xxx x xxxxx-xxxxxxxxx xxxxxx xxx xxxxxx xxxxxxxxxx xx xxxxx.
+First, try creating the depth map with a higher-precision depth format. Set up matching shader resource view properties first. If the resource creation fails, for example due to low device memory or a format that the hardware doesn't support, try a lower-precision format and change properties to match.
 
-Xxxx xxxx xx xxxxxxxx xx xxx xxxx xxxx x xxx-xxxxxxxxx xxxxx xxxxxx, xxx xxxxxxx xxxx xxxxxxxxx xx xxxxxx-xxxxxxxxxx XxxxxxYX xxxxxxx xxxxx Y\_Y xxxxxxx.
+This step is optional if you only need a low-precision depth format, for example when rendering on medium-resolution Direct3D feature level 9\_1 devices.
 
 ```cpp
 D3D11_TEXTURE2D_DESC shadowMapDesc;
@@ -74,7 +74,7 @@ HRESULT hr = pD3DDevice->CreateTexture2D(
     );
 ```
 
-Xxxx xxxxxx xxx xxxxxxxx xxxxx. Xxx xxx xxx xxxxx xx xxxx xx xxx xxxxx xxxxxxx xxxx xxx xxx xxx xxxxxx xx Y xx xxx xxxxxx xxxxxxxx xxxx. Xxxx xxxx x xxxxxxx xxxxxxxxx xx XXXXXXXYX, xxx xxxx xxxx xx xxx x xxxxxxxx [**XXXX\_XXXXXX**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
+Then create the resource views. Set the mip slice to zero on the depth stencil view and set mip levels to 1 on the shader resource view. Both have a texture dimension of TEXTURE2D, and both need to use a matching [**DXGI\_FORMAT**](https://msdn.microsoft.com/library/windows/desktop/bb173059).
 
 ```cpp
 D3D11_DEPTH_STENCIL_VIEW_DESC depthStencilViewDesc;
@@ -102,14 +102,14 @@ hr = pD3DDevice->CreateShaderResourceView(
     );
 ```
 
-## Xxxxxx xxxxxxxxxx xxxxx
+## Create comparison state
 
 
-Xxx xxxxxx xxx xxxxxxxxxx xxxxxxx xxxxx xxxxxx. Xxxxxxx xxxxx Y\_Y xxxx xxxxxxxx XYXYY\_XXXXXXXXXX\_XXXX\_XXXXX. Xxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxx xx [Xxxxxxxxxx xxxxxx xxxx xx x xxxxx xx xxxxxxxx](target-a-range-of-hardware.md) - xx xxx xxx xxxx xxxx xxxxx xxxxxxxxx xxx xxxxxx xxxxxx xxxx.
+Now create the comparison sampler state object. Feature level 9\_1 only supports D3D11\_COMPARISON\_LESS\_EQUAL. Filtering choices are explained more in [Supporting shadow maps on a range of hardware](target-a-range-of-hardware.md) - or you can just pick point filtering for faster shadow maps.
 
-Xxxx xxxx xxx xxx xxxxxxx xxx XYXYY\_XXXXXXX\_XXXXXXX\_XXXXXX xxxxxxx xxxx xxx xx xxxx xxxx xx xxxxxxx xxxxx Y\_Y xxxxxxx. Xxxx xxxxxxx xx xxxxx xxxxxxx xxxx xxx'x xxxx xxxxxxx xxx xxxxx xx xx xxx xxxxx'x xxxx xxxxxxx xxxxxx xxxxx xxx xxxxx xxxx. Xx xxxxxxxxxx Y xx Y xxx xxxx xxxxxx, xxx xxx xxxxxxx xxxxxxx xxxxxx xxxxxxx xxx xxxxx'x xxxx xxxxxxx xxxx xx xxxx xxx xxxxx xxxx, xxx xxxxxxxxx xxxxxxx xxxx xxx xxx xx xx xxxxxx.
+Note that you can specify the D3D11\_TEXTURE\_ADDRESS\_BORDER address mode and it will work on feature level 9\_1 devices. This applies to pixel shaders that don't test whether the pixel is in the light's view frustum before doing the depth test. By specifying 0 or 1 for each border, you can control whether pixels outside the light's view frustum pass or fail the depth test, and therefore whether they are lit or in shadow.
 
-Xx xxxxxxx xxxxx Y\_Y, xxx xxxxxxxxx xxxxxxxx xxxxxx xxxx xx xxx: **XxxXXX** xx xxx xx xxxx, **XxxXXX** xx xxx xx **XYXYY\_XXXXXYY\_XXX**, xxx **XxxXxxxxxxxxx** xx xxx xx xxxx.
+On feature level 9\_1, the following required values must be set: **MinLOD** is set to zero, **MaxLOD** is set to **D3D11\_FLOAT32\_MAX**, and **MaxAnisotropy** is set to zero.
 
 ```cpp
 D3D11_SAMPLER_DESC comparisonSamplerDesc;
@@ -141,10 +141,10 @@ DX::ThrowIfFailed(
     );
 ```
 
-## Xxxxxx xxxxxx xxxxxx
+## Create render states
 
 
-Xxx xxxxxx x xxxxxx xxxxx xxx xxx xxx xx xxxxxx xxxxx xxxx xxxxxxx. Xxxx xxxx xxxxxxx xxxxx Y\_Y xxxxxxx xxxxxxx **XxxxxXxxxXxxxxx** xxx xx **xxxx**.
+Now create a render state you can use to enable front face culling. Note that feature level 9\_1 devices require **DepthClipEnable** set to **true**.
 
 ```cpp
 D3D11_RASTERIZER_DESC drawingRenderStateDesc;
@@ -160,7 +160,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Xxxxxx x xxxxxx xxxxx xxx xxx xxx xx xxxxxx xxxx xxxx xxxxxxx. Xx xxxx xxxxxxxxx xxxx xxxxxxx xxxxx xx xxxx xxxx xxxxxxx, xxxx xxx xxx xxxx xxxx xxxx.
+Create a render state you can use to enable back face culling. If your rendering code already turns on back face culling, then you can skip this step.
 
 ```cpp
 D3D11_RASTERIZER_DESC shadowRenderStateDesc;
@@ -177,10 +177,10 @@ DX::ThrowIfFailed(
     );
 ```
 
-## Xxxxxx xxxxxxxx xxxxxxx
+## Create constant buffers
 
 
-Xxx'x xxxxxx xx xxxxxx x xxxxxxxx xxxxxx xxx xxxxxxxxx xxxx xxx xxxxx'x xxxxx xx xxxx. Xxx xxx xxxx xxx xxxx xxxxxxxx xxxxxx xx xxxxxxx xxx xxxxx xxxxxxxx xx xxx xxxxxx. Xxx x xxxxxxxxxxx xxxxxx xxx xxxxx xxxxxx, xxx xxx xx xxxxxxxxxx xxxxxx xxx xxxxxxxxxxx xxxxxx (xxxx xx xxxxxxxx).
+Don't forget to create a constant buffer for rendering from the light's point of view. You can also use this constant buffer to specify the light position to the shader. Use a perspective matrix for point lights, and use an orthogonal matrix for directional lights (such as sunlight).
 
 ```cpp
 DX::ThrowIfFailed(
@@ -192,7 +192,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Xxxx xxx xxxxxxxx xxxxxx xxxx. Xxxxxx xxx xxxxxxxx xxxxxxx xxxx xxxxxx xxxxxxxxxxxxxx, xxx xxxxx xx xxx xxxxx xxxxxx xxxx xxxxxxx xxxxx xxx xxxxxxxx xxxxx.
+Fill the constant buffer data. Update the constant buffers once during initialization, and again if the light values have changed since the previous frame.
 
 ```cpp
 {
@@ -234,10 +234,10 @@ context->UpdateSubresource(
     );
 ```
 
-## Xxxxxx x xxxxxxxx
+## Create a viewport
 
 
-Xxx xxxx x xxxxxxxx xxxxxxxx xx xxxxxx xx xxx xxxxxx xxx. Xxx xxxxxxxx xxx'x x xxxxxx-xxxxx xxxxxxxx; xxx'xx xxxx xx xxxxxx xx xxxxxxxxx xx xxxx xxxx. Xxxxxxxx xxx xxxxxxxx xxxxx xxxx xxx xxxxxx xxx xxx xxxx xxxx xx xxxx xxxxxxxxxx xx xxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxxxx xxxx xxx xxxxxx xxx xxxxxxxxx.
+You need a separate viewport to render to the shadow map. The viewport isn't a device-based resource; you're free to create it elsewhere in your code. Creating the viewport along with the shadow map can help make it more convenient to keep the dimension of the viewport congruent with the shadow map dimension.
 
 ```cpp
 // Init viewport for shadow rendering
@@ -248,13 +248,17 @@ m_shadowViewport.MinDepth = 0.f;
 m_shadowViewport.MaxDepth = 1.f;
 ```
 
-Xx xxx xxxx xxxx xx xxxx xxxxxxxxxxx, xxxxx xxx xx xxxxxx xxx xxxxxx xxx xx [xxxxxxxxx xx xxx xxxxx xxxxxx](render-the-shadow-map-to-the-depth-buffer.md).
+In the next part of this walkthrough, learn how to create the shadow map by [rendering to the depth buffer](render-the-shadow-map-to-the-depth-buffer.md).
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

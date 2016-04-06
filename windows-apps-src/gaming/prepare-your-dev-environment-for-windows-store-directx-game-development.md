@@ -1,23 +1,23 @@
 ---
-xxxxx: Xxxxxxx xxxxxxxxx xxx xxxxx xxx xxxxx
-xxxxxxxxxxx: Xxxxx xxx xxxx xxx xxxx xx xxxxx xxxxxxxxxxx XxxxxxX xxxxx xxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX).
-xx.xxxxxxx: xYxxxYxY-xxYY-YxYY-Yxxx-YxYxxYYxYYxY
+title: Project templates and tools for games
+description: Shows you what you need to start programming DirectX games for the Universal Windows Platform (UWP).
+ms.assetid: d5afd5d3-ad01-0f16-3ddf-2c4eb86b68a7
 ---
 
-# Xxxxxxx xxxxxxxxx xxx xxxxx xxx xxxxx
+# Project templates and tools for games
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxx xxxxx xxx xxxx xxx xxxx xx xxxxx xxxxxxxxxxx XxxxxxX xxxxx xxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX).
+This topic shows you what you need to start programming DirectX games for the Universal Windows Platform (UWP).
 
-Xxxxx, xxx xxxx Xxxxxx Xxxxxx.
+First, you need Visual Studio.
 
-## Xxx Xxxxxx Xxxxxx
+## Get Visual Studio
 
 
-[Xxxxxxxx xxx xxxxxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY](https://www.visualstudio.com/vs-2015-product-editions).
+[Download and install Microsoft Visual Studio 2015](https://www.visualstudio.com/vs-2015-product-editions).
 
 <table>
 <colgroup>
@@ -26,51 +26,55 @@ Xxxxx, xxx xxxx Xxxxxx Xxxxxx.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[DirectX game project templates](user-interface.md)</p></td>
-<td align="left"><p>Xxxxx xxxxx xxx xxxxxxxxx xxx xxxxxxxx x XXX xxx XxxxxxX xxxx.</p></td>
+<td align="left"><p>Learn about the templates for creating a UWP and DirectX game.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Visual Studio tools for game programming](set-up-visual-studio-for-game-development.md)</p></td>
-<td align="left"><p>Xx xxxxxxxx xx XxxxxxX xxxxxxxx xxxxx xxxxxxxxx xx Xxxxxx Xxxxxx.</p></td>
+<td align="left"><p>An overview of DirectX specific tools available in Visual Studio.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Graphics diagnostics tools](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxx xxx xxx xxx xxxxxxxx xxxxxxxxxxx xxxxxxxx xxxxxxxxx Xxxxxxxx Xxxxxxxxx, Xxxxxxxx Xxxxx Xxxxxxxx, xxx XXX Xxxxx xx Xxxxxx Xxxxxx.</p></td>
+<td align="left"><p>Learn how to get and use the graphics diagnostics features including Graphics Debugging, Graphics Frame Analysis, and GPU Usage in Visual Studio.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## Xxxx xxxxx
+## Next steps
 
 
-Xx xxx xxx xxxxxxx xx xxxxxxxx xxxx, xxx xxx xxxxxxxxx xxxxxx.
+If you are porting an existing game, see the following topics.
 
--   [Xxxx xxxx XxxxXX XX Y.Y xx XxxxxxX YY](port-from-opengl-es-2-0-to-directx-11-1.md)
--   [Xxxx xxxx XxxxxxX Y xx XXX](porting-your-directx-9-game-to-windows-store.md)
+-   [Port from OpenGL ES 2.0 to DirectX 11](port-from-opengl-es-2-0-to-directx-11-1.md)
+-   [Port from DirectX 9 to UWP](porting-your-directx-9-game-to-windows-store.md)
 
-Xx xxx xxx xxxxxxxx x xxx XxxxxxX xxxx, xxx xxx xxxxxxxxx xxxxxx.
+If you are creating a new DirectX game, see the following topics.
 
--   [Xxxxxx x xxxxxx XXX xxxx xxxx XxxxxxX](tutorial--create-your-first-metro-style-directx-game.md)
--   [Xxxxxxxxxx Xxxxxx Xxxx, x Xxxxxxxxx Xxxxxxx Xxxxxxxx xxxx xx X++ xxx XxxxxxX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+-   [Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
+-   [Developing Marble Maze, a Universal Windows Platform game in C++ and DirectX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
 
-> **Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
+> **Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

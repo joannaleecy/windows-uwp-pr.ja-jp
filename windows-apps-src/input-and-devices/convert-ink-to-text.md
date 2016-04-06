@@ -1,43 +1,38 @@
 ---
-Xxxxxxxxxxx: Xxxxxxx xxx xxxxxxx xx xxxx xxxxx xxxxxxxxxxx xxxxxxxxxxx, xx xx xxxxxx xxxxx xxxxxx xxxxxxxxxxx.
-xxxxx: Xxxxxxxxx xxx xxxxxxx
-xx.xxxxxxx: XYXYXYXX-YYYX-YYYY-YYXY-YYYYXYYYXYXY
-xxxxx: Xxxxxxxxx xxx xxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: インク ストロークを手書き認識によりテキストに変換したり、カスタム認識により図形に変換したりします。
+title: インク ストロークの認識
+ms.assetid: C2F3F3CE-737F-4652-98B7-5278A462F9D3
+label: インク ストロークの認識
+template: detail.hbs
 ---
 
-# Xxxxxxxxx xxx xxxxxxx
+# インク ストロークの認識
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535)
--   [**Xxxxxxx.XX.Xxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208524)
+-   [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)
+-   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
 
-Xxxxxxx xxx xxxxxxx xx xxxx xxxxx xxxxxxxxxxx xxxxxxxxxxx, xx xx xxxxxx xxxxx xxxxxx xxxxxxxxxxx.
+インク ストロークを手書き認識によりテキストに変換したり、カスタム認識により図形に変換したりします。
 
-Xxxxxxxxxxx xxxxxxxxxxx xx xxxxx xx xx xxx Xxxxxxx xxx xxxxxxxx, xxx xxxxxxxx xx xxxxxxxxx xxx xx xxxxxxx xxx xxxxxxxxx.
+手書き認識は、Windows のインク プラットフォームに組み込まれており、ロケールと言語の拡張セットがサポートされています。
 
-Xxx xxx xxxxxxxx xxxx, xxx xxx xxxxxxxxx xxxxxxxxxx xxxxxxxx xxx xxx xxxxxxxxxxxxx. Xxxx xxxxxxxx "Xxxxxxx.XX.Xxxxx.Xxxxxx".
+ここで示しているすべての例では、インク入力機能に必要な名前空間の参照を追加しています。 "Windows.UI.Input.Inking" などです。
 
-## <span id="Basic_handwriting_recognition">
-            </span>
-            <span id="basic_handwriting_recognition">
-            </span>
-            <span id="BASIC_HANDWRITING_RECOGNITION">
-            </span>Xxxxx xxxxxxxxxxx xxxxxxxxxxx
+## <span id="Basic_handwriting_recognition"></span><span id="basic_handwriting_recognition"></span><span id="BASIC_HANDWRITING_RECOGNITION"></span>基本的な手書き認識
 
 
-Xxxx, xx xxxxxxxxxxx xxx xx xxx xxx xxxxxxxxxxx xxxxxxxxxxx xxxxxx, xxxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxx xxxxxxxx xxxx, xx xxxxxxxxx x xxx xx xxxxxxx xx xx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+ここでは、既定のインストール言語パックに関連付けられた手書き認識エンジンを使って、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) での一連のインク ストロークを解釈する方法を示します。
 
-Xxx xxxxxxxxxxx xx xxxxxxxxx xx xxx xxxx xxxxxxxx x xxxxxx xxxx xxxx xxx xxxxxxxx xxxxxxx.
+認識は、ユーザーが手書きの終了時にボタンをクリックすると開始されます。
 
-1.  Xxxxx, xx xxx xx xxx XX.
+1.  まず、UI を設定します。
 
-    Xxx XX xxxxxxxx x "Xxxxxxxxx" xxxxxx, xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535), xxx xx xxxx xx xxxxxxx xxxxxxxxxxx xxxxxxx.
+    UI には、[Recognize] ボタン、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)、認識結果を表示する領域を用意します。
 
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -70,9 +65,10 @@ Xxx xxxxxxxxxxx xx xxxxxxxxx xx xxx xxxx xxxxxxxx x xxxxxx xxxx xxxx xxx xxxxxxx
     </Grid>
 ```
 
-2.  Xx xxxx xxx xxxx xxxxx xxx xxxxx xxxxxxxxx.
+2.  次に、基本的なインク入力の動作をいくつか設定します。
 
-    Xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xx xxxxxxxxxx xx xxxxxxxxx xxxxx xxxx xxxx xxxx xxx xxx xxxxx xx xxx xxxxxxx ([**XxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Xxx xxxxxxx xxx xxxxxxxx xx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxx xxx xxxxxxxxx [**XxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ms695050). X xxxxxxxx xxx xxx xxxxx xxxxx xx xxx "Xxxxxxxxx" xxxxxx xx xxxx xxxxxxxx.
+    [
+            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) は、ペンとマウスのいずれからの入力データもインク ストローク ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)) として解釈するように構成します。 インク ストロークは、指定した [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050) を使って、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) にレンダリングされます。 [Recognize] ボタンのクリック イベントのリスナーも宣言します。
 
 ```    CSharp
 public MainPage()
@@ -96,9 +92,10 @@ public MainPage()
     }
 ```
 
-3.  Xxxxxxx, xx xxxxxxx xxx xxxxx xxxxxxxxxxx xxxxxxxxxxx. Xxx xxxx xxxxxxx, xx xxx xxx xxxxx xxxxx xxxxxxx xx xxx "Xxxxxxxxx" xxxxxx xx xxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxx.
+3.  最後に、基本的な手書き認識を実行します。 この例では、[Recognize] ボタンのクリック イベント ハンドラーを使って、手書き認識を実行します。
 
-    Xx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xxxxxx xxx xxx xxxxxxx xx xx [**XxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208492) xxxxxx. Xxx xxxxxxx xxx xxxxxxx xxxxxxx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948766) xxxxxxxx xx xxx **XxxXxxxxxxxx** xxx xxxxxxxxx xxxxx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208499) xxxxxx.
+    [
+            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) によってすべてのインク ストロークが [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) オブジェクトに格納されます。 インク ストロークを **InkPresenter** の [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) プロパティを介して公開し、[**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) メソッドを使って取得します。
 
 ```    CSharp
 // Get all strokes on the InkCanvas.
@@ -212,77 +209,72 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="International_recognition">
-            </span>
-            <span id="international_recognition">
-            </span>
-            <span id="INTERNATIONAL_RECOGNITION">
-            </span>Xxxxxxxxxxxxx xxxxxxxxxxx
+## <span id="International_recognition"></span><span id="international_recognition"></span><span id="INTERNATIONAL_RECOGNITION"></span>地域と言語の認識
 
 
-X xxxxxxxxxxxxx xxxxxx xx xxxxxxxxx xxxxxxxxx xx Xxxxxxx xxx xx xxxx xxx xxxxxxxxxxx xxxxxxxxxxx.
+Windows でサポートされている包括的な言語のサブセットを手書き認識に使えます。
 
-Xxx xxxxxxxxx xxxxx xxxxx xxx xxxxxxxxx xxxxxxxxx xx xxx [**XxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208478). Xxx xxxxx xxxxxx xxxxxxxx xxx xxxxxxxx xxxxxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br208484).
+次の表に示しているのは、[**InkRecognizer**](https://msdn.microsoft.com/library/windows/apps/br208478) でサポートされている言語です。 最初の列に示しているのは、[**Name**](https://msdn.microsoft.com/library/windows/apps/br208484) に使える値です。
 
-| Xxxx                                                            | XXXX xxxxxxxx xxx | Xxxxxxxx                                                                      |
+| 名前                                                            | IETF 言語タグ | 対象範囲                                                                      |
 |-----------------------------------------------------------------|-------------------|-------------------------------------------------------------------------------|
-| Xxxxxxxxx Xxxxxxx (XX) Xxxxxxxxxxx Xxxxxxxxxx                   | xx-XX             | Xxxxxxx xx xxx X.X. xxx xxx Xxxxxxxxxxx                                       |
-| Xxxxxxxxx Xxxxxxx (XX) Xxxxxxxxxxx Xxxxxxxxxx                   | xx-XX             | Xxxxxxx xx Xxxxx Xxxxxxx, xxx xxx xxxxx xxxxxxxxx xxx xxxxxxxxx xx xxxx xxxxx |
-| Xxxxxxxxx Xxxxxxx (Xxxxxx) Xxxxxxxxxxx Xxxxxxxxxx               | xx-XX             | Xxxxxxx xx Xxxxxx                                                             |
-| Xxxxxxxxx Xxxxxxx (Xxxxxxxxx) Xxxxxxxxxxx Xxxxxxxxxx            | xx-XX             | Xxxxxxx xx Xxxxxxxxx                                                          |
-| Xxxxxxxxx-Xxxxxxxxxxxxxxxxxxxx - Xxxxxxx                        | xx-XX             | Xxxxxx xx Xxxxxxx, Xxxxxxx, Xxxxxxxxxx, xxx Xxxxxxx                           |
-| Xxxxxxxxx-Xxxxxxxxxxxxxxxxxxxx - Xxxxxxx (Xxxxxxx)              | xx-XX             | Xxxxxx xx Xxxxxxxxxxx xxx Xxxxxxxxxxxxx                                       |
-| Xxxxxxxxxxxxxx xx xxxxxxxxx x xxxx xx xxxxñxx xx Xxxxxxxxx      | xx-XX             | Xxxxxxx xx Xxxxx, xxx xxx xxxxx xxxxxxxxx xxx xxxxxxxxx xx xxxx xxxxx         |
-| Xxxxxxxxxxx xx xxxxxxxxx xx Xxxxñxx (Xéxxxx) xx Xxxxxxxxx       | xx-XX             | Xxxxxxx xx Xxxxxx xxx xxx Xxxxxx Xxxxxx                                       |
-| Xxxxxxxxxxx xx xxxxxxxxx xx Xxxxñxx (Xxxxxxxxx) xx Xxxxxxxxx    | xx-XX             | Xxxxxxx xx Xxxxxxxxx, Xxxxxxxx, xxx Xxxxxxx                                   |
-| Xxxxxxxxxxxxxx x'éxxxxxxx Xxxxxxxxx - Xxxxçxxx                  | xx                | Xxxxxx xx Xxxxxx, Xxxxxx, Xxxxxxx, Xxxxxxxxxxx, xxx xxx xxxxx xxxxxxxxx       |
-| Xxxxxxxxx 日本語手書き認識エンジン                              | xx                | Xxxxxxxx xx xxx xxxxxxxxx                                                     |
-| Xxxxxxxxxxxxxx xxxxxx xxxxxxxx Xxxxxxxxx                        | xx                | Xxxxxxx xx Xxxxx, Xxxxxxxxxxx, xxx xxx xxxxx xxxxxxxxx                        |
-| Xxxxxxxxx Xxxxxxxxxxxxxxxx xxxxxxxxxxxxxxxxxxxxx                | xx-XX             | Xxxxx xx xxx Xxxxxxxxxxx, Xxxxxxx, xxx xxx Xxxxxxxx                           |
-| Xxxxxxxxx Xxxxxxxxxxxxxxxx (Xxxxxë) xxxxxxxxxxxxxxxxxxxxx       | xx-XX             | Xxxxx xx Xxxxxxx (Xxxxxxx)                                                    |
-| Xxxxxxxxx 中文(简体)手写识别器                                  | xx                | Xxxxxxx xx xxxxxxxxxx xxxxxx                                                  |
-| Xxxxxxxxx 中文(繁體)手寫辨識器                                  | xx-Xxxx           | Xxxxxxx xx xxxxxxxxxxx xxxxxx                                                 |
-| Xxxxxxxxx система распознавания русского рукописного ввода      | xx                | Xxxxxxx xx xxx xxxxxxxxx                                                      |
-| Xxxxxxxxxxxx xx Xxxxxxxxxx xx Xxxxxxxxx xxxx Xxxxxxxêx (Xxxxxx) | xx-XX             | Xxxxxxxxxx xx Xxxxxx                                                          |
-| Xxxxxxxxxxxx xx xxxxxxx xxxxxx xx Xxxxxxxxx xxxx xxxxxxxêx      | xx-XX             | Xxxxxxxxxx xx Xxxxxxxx, xxx xxx xxxxx xxxxxxxxx                               |
-| Xxxxxxxxx 한글 필기 인식기                                      | xx                | Xxxxxx xx xxx xxxxxxxxx                                                       |
-| Xxxxxx xxxxxxxxxxxxx xxxxxxxxx xxxxx xxxęxxxxxx xxxxx Xxxxxxxxx | xx                | Xxxxxx xx xxx xxxxxxxxx                                                       |
-| Xxxxxxxxx Xxxxxxxxxxxxxxx xöx xxxxxxx                           | xx                | Xxxxxxx xx xxx xxxxxxxxx                                                      |
-| Xxxxxxxxx xxxxxxxáxxč xxxxxxxx xxx čxxxý xxxxx                  | xx                | Xxxxx xx xxx xxxxxxxxx                                                        |
-| Xxxxxxxxx Xxxxxxxxxxx xx xxxxx xåxxxxxxxx                       | xx                | Xxxxxx xx xxx xxxxxxxxx                                                       |
-| Xxxxxxxxx Xåxxxxxxxxxxxxxxxxxxxx xxx xxxxx                      | xx                | Xxxxxxxxx (Xxxxxx) xx xxx xxxxxxxxx                                           |
-| Xxxxxxxxx Xåxxxxxxxxxxxxxxxxxxxx xxx xxxxxxx                    | xx                | Xxxxxxxxx (Xxxxxxx) xx xxx xxxxxxxxx                                          |
-| Xxxxxxxxxxx xxxxxxxxxxxxxx xäxxxxxxxxxxxxxxx xxxxxxxxx          | xx                | Xxxxxxx xx xxx xxxxxxxxx                                                      |
-| Xxxxxxxxx xxxxxxxşxxxx xxxxxx - Xxxâxă                          | xx                | Xxxxxxxx xx xxx xxxxxxxxx                                                     |
-| Xxxxxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxxxxxč                      | xx                | Xxxxxxxx xx xxx xxxxxxxxx                                                     |
-| Xxxxxxxxx xxxxxxxxxxč xxxxxxxx xx xxxxxx (xxxxxxxx)             | xx-Xxxx           | Xxxxxxx, xx Xxxxx, xx xxx xxxxxxxxx                                           |
-| Xxxxxxxxx препознавач рукописа за српски (ћирилица)             | xx                | Xxxxxxx, xx Xxxxxxxx, xx xxx xxxxxxxxx                                        |
-| Xxxxxxxxxxxx x'xxxxxxxxxx xxxxxx xx xxxxxà xx Xxxxxxxxx         | xx                | Xxxxxxx xx xxx xxxxxxxxx                                                      |
+| Microsoft English (US) Handwriting Recognizer                   | en-US             | 英語 (米国 とフィリピン)                                       |
+| Microsoft English (UK) Handwriting Recognizer                   | en-GB             | 英語 (英国、およびこの表で指定されていないその他のすべての地域) |
+| Microsoft English (Canada) Handwriting Recognizer               | en-CA             | 英語 (カナダ)                                                             |
+| Microsoft English (Australia) Handwriting Recognizer            | en-AU             | 英語 (オーストラリア)                                                          |
+| Microsoft-Handschrifterkennung - Deutsch                        | de-DE             | ドイツ語 (ドイツ、オーストリア、ルクセンブルク、ナミビア)                           |
+| Microsoft-Handschrifterkennung - Deutsch (Schweiz)              | de-CH             | ドイツ語 (スイス、リヒテンシュタイン)                                       |
+| Reconocimiento de escritura a mano en español de Microsoft      | es-ES             | スペイン語 (スペイン、およびこの表で指定されていないその他のすべての地域)         |
+| Reconocedor de escritura en Español (México) de Microsoft       | es-MX             | スペイン語 (メキシコ、米国)                                       |
+| Reconocedor de escritura en Español (Argentina) de Microsoft    | es-AR             | スペイン語 (アルゼンチン、パラグアイ、ウルグアイ)                                   |
+| Reconnaissance d'écriture Microsoft - Français                  | fr                | フランス語 (フランス、カナダ、ベルギー、スイス、およびその他のすべての地域)       |
+| Microsoft 日本語手書き認識エンジン                              | ja                | 日本語 (すべての地域)                                                     |
+| Riconoscimento grafia italiana Microsoft                        | it                | イタリア語 (イタリア、スイス、およびその他のすべての地域)                        |
+| Microsoft Nederlandstalige handschriftherkenning                | nl-NL             | オランダ語 (オランダ、スリナム、アンティル諸島)                           |
+| Microsoft Nederlandstalige (België) handschriftherkenning       | nl-BE             | オランダ語 (フラマン) (ベルギー)                                                    |
+| Microsoft 中文(简体)手写识别器                                  | zh                | 簡体字中国語                                                  |
+| Microsoft 中文(繁體)手寫辨識器                                  | zh-Hant           | 繁体字中国語                                                 |
+| Microsoft система распознавания русского рукописного ввода      | ru                | ロシア語 (すべての地域)                                                      |
+| Reconhecedor de Manuscrito da Microsoft para Português (Brasil) | pt-BR             | ポルトガル語 (ブラジル)                                                          |
+| Reconhecedor de escrita manual da Microsoft para português      | pt-PT             | ポルトガル語 (ポルトガル、およびその他のすべての地域)                               |
+| Microsoft 한글 필기 인식기                                      | ko                | 韓国語 (すべての地域)                                                       |
+| System rozpoznawania polskiego pisma odręcznego firmy Microsoft | pl                | ポーランド語 (すべての地域)                                                       |
+| Microsoft Handskriftstolk för svenska                           | sv                | スウェーデン語 (すべての地域)                                                      |
+| Microsoft rozpoznávač rukopisu pro český jazyk                  | cs                | チェコ語 (すべての地域)                                                        |
+| Microsoft Genkendelse af dansk håndskrift                       | da                | デンマーク語 (すべての地域)                                                       |
+| Microsoft Håndskriftsgjenkjenner for norsk                      | nb                | ノルウェー語 (ブークモール) (すべての地域)                                           |
+| Microsoft Håndskriftsgjenkjenner for nynorsk                    | nn                | ノルウェー語 (ニーノシュク) (すべての地域)                                          |
+| Microsoftin suomenkielinen käsinkirjoituksen tunnistus          | fi                | フィンランド語 (すべての地域)                                                      |
+| Microsoft recunoaştere grafie - Română                          | ro                | ルーマニア語 (すべての地域)                                                     |
+| Microsoftov hrvatski rukopisni prepoznavač                      | hr                | クロアチア語 (すべての地域)                                                     |
+| Microsoft prepoznavač rukopisa za srpski (latinica)             | sr-Latn           | セルビア語 (ラテン) (すべての地域)                                           |
+| Microsoft препознавач рукописа за српски (ћирилица)             | sr                | セルビア語 (キリル) (すべての地域)                                        |
+| Reconeixedor d'escriptura manual en català de Microsoft         | ca                | カタロニア語 (すべての地域)                                                      |
 
  
 
-Xxxx xxx xxx xxxxx xxx xxx xx xxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx xxxxxxx xxx xxx xxx xx xxxxx xx xxx x xxxx xxxxxx xxxxx xxxxxxxxx xxxxxxxx.
+アプリでは、インストール済みの一連の手書き認識エンジンを照会し、それらのいずれかを使うか、ユーザーが好きな言語を選べるようにできます。
 
-**Xxxx**  
-Xxxxx xxx xxx x xxxx xx xxxxxxxxx xxxxxxxxx xx xxxxx xx Xxxxxxxx -&xx; Xxxx & Xxxxxxxx. Xxxxxxxxx xxxxxxxxx xxx xxxxxx xxxxx Xxxxxxxxx.
+**注**  
+ユーザーは [設定]、[時刻と言語] の順に移動することで、インストール済みの言語の一覧を表示できます。 インストール済みの言語の一覧は [言語] に表示されます。
 
-Xx xxxxxxx xxx xxxxxxxx xxxxx xxx xxxxxx xxxxxxxxxxx xxxxxxxxxxx xxx xxxx xxxxxxxx:
+新しい言語パックをインストールし、その言語の手書き認識を有効にするには、次の手順に従ってください。
 
-1.  Xx xx **Xxxxxxxx &xx; Xxxx & xxxxxxxx &xx; Xxxxxx & xxxxxxxx**.
-2.  Xxxxxx **Xxx x xxxxxxxx**.
-3.  Xxxxxx x xxxxxxxx xxxx xxx xxxx, xxxx xxxxxx xxx xxxxxx xxxxxxx. Xxx xxxxxxxx xx xxx xxxxxx xx xxx **Xxxxxx & xxxxxxxx** xxxx.
-4.  Xxxxx xxx xxxxxxxx xxx xxxxxx **Xxxxxxx**.
-5.  Xx xxx **Xxxxxxxx xxxxxxx** xxxx, xxxxxxxx xxx **Xxxxxxxxxxx xxxxxxxxxxx xxxxxx** (xxxx xxx xxxx xxxxxxxx xxx xxxx xxxxxxxx xxxx, xxxxxx xxxxxxxxxxx xxxxxx, xxx xxxxxxxx xxxxxx xxxx).
+1.  **[設定]、[時刻と言語]、[地域と言語]** の順に移動します。
+2.  **[言語の追加]** を選びます。
+3.  一覧で言語を選んでから、地域のバージョンを選びます。 これで、選んだ言語が **[地域と言語]** ページに表示されます。
+4.  言語をクリックし、**[オプション]** を選びます。
+5.  **[言語のオプション]** ページで、**手書き認識エンジン**をダウンロードします (完全言語パック、音声認識エンジン、キーボード レイアウトもダウンロードできます)。
 
  
 
-Xxxx, xx xxxxxxxxxxx xxx xx xxx xxx xxxxxxxxxxx xxxxxxxxxxx xxxxxx xx xxxxxxxxx x xxx xx xxxxxxx xx xx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxx xx xxx xxxxxxxx xxxxxxxxxx.
+ここでは、選ばれた手書き認識エンジンを使って、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) での一連のインク ストロークを解釈する方法を示します。
 
-Xxx xxxxxxxxxxx xx xxxxxxxxx xx xxx xxxx xxxxxxxx x xxxxxx xxxx xxxx xxx xxxxxxxx xxxxxxx.
+認識は、ユーザーが手書きの終了時にボタンをクリックすると開始されます。
 
-1.  Xxxxx, xx xxx xx xxx XX.
+1.  まず、UI を設定します。
 
-    Xxx XX xxxxxxxx x "Xxxxxxxxx" xxxxxx, x xxxxx xxx xxxx xxxxx xxx xxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx, xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535), xxx xx xxxx xx xxxxxxx xxxxxxxxxxx xxxxxxx.
+    UI には、[Recognize] ボタン、インストール済みの手書き認識エンジンの一覧を表示するコンボ ボックス、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)、認識結果を表示する領域を用意します。
 
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -326,13 +318,14 @@ Xxx xxxxxxxxxxx xx xxxxxxxxx xx xxx xxxx xxxxxxxx x xxxxxx xxxx xxxx xxx xxxxxxx
     </Grid>
 ```
 
-2.  Xx xxxx xxx xxxx xxxxx xxx xxxxx xxxxxxxxx.
+2.  次に、基本的なインク入力の動作をいくつか設定します。
 
-    Xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xx xxxxxxxxxx xx xxxxxxxxx xxxxx xxxx xxxx xxxx xxx xxx xxxxx xx xxx xxxxxxx ([**XxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922019)). Xxx xxxxxxx xxx xxxxxxxx xx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxx xxx xxxxxxxxx [**XxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ms695050).
+    [
+            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) は、ペンとマウスのいずれからの入力データもインク ストローク ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)) として解釈するように構成します。 インク ストロークは、指定した [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050) を使って、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) にレンダリングされます。
 
-    Xx xxxx xx `InitializeRecognizerList` xxxxxxxx xx xxxxxxxx xxx xxxxxxxxxx xxxxx xxx xxxx x xxxx xx xxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx.
+    `InitializeRecognizerList` 関数を呼び出して、インストール済みの手書き認識エンジンの一覧を認識エンジン コンボ ボックスに入れます。
 
-    Xx xxxx xxxxxxx xxxxxxxxx xxx xxx xxxxx xxxxx xx xxx "Xxxxxxxxx" xxxxxx xxx xxx xxxxxxxxx xxxxxxx xxxxx xx xxx xxxxxxxxxx xxxxx xxx.
+    また、[Recognize] ボタンのクリック イベントと認識エンジン コンボ ボックスの選択変更イベント用に、リスナーを宣言します。
 
 ```    CSharp
  public MainPage()
@@ -363,9 +356,9 @@ Xxx xxxxxxxxxxx xx xxxxxxxxx xx xxx xxxx xxxxxxxx x xxxxxx xxxx xxxx xxx xxxxxxx
      }
 ```
 
-3.  Xx xxxxxxxx xxx xxxxxxxxxx xxxxx xxx xxxx x xxxx xx xxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx.
+3.  インストール済みの手書き認識エンジンの一覧を認識エンジン コンボ ボックスに入れます。
 
-    Xx [**XxxXxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208479) xx xxxxxxx xx xxxxxx xxx xxxxxxxxxxx xxxxxxxxxxx xxxxxxx. Xxx xxxx xxxxxx xx xxxx [**XxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208480) xxx xxxxxxxx xxx xxxx xx xxxxxxxxx xxxxxxxxxxx xx xxxxxxxx xxx xxxxxxxxxx xxxxx xxx.
+    手書き認識プロセスの管理用に、[**InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) を作成します。 このオブジェクトを使って、[**GetRecognizers**](https://msdn.microsoft.com/library/windows/apps/br208480) を呼び出し、インストール済みの手書き認識エンジンの一覧を取得して、認識エンジン コンボ ボックスに入れます。
 
 ```    CSharp
 // Populate the recognizer combo box with installed recognizers.
@@ -385,9 +378,10 @@ Xxx xxxxxxxxxxx xx xxxxxxxxx xx xxx xxxx xxxxxxxx x xxxxxx xxxx xxxx xxx xxxxxxx
     }
 ```
 
-4.  Xxxxxx xxx xxxxxxxxxxx xxxxxxxxxx xx xxx xxxxxxxxxx xxxxx xxx xxxxxxxxx xxxxxxx.
+4.  認識エンジン コンボ ボックスの選択が変更されていれば、手書き認識エンジンを更新します。
 
-    Xxx xxx [**XxxXxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208479) xx xxxx [**XxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh920328) xxxxx xx xxx xxxxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxxx xxxxx xxx.
+    [
+            **InkRecognizerContainer**](https://msdn.microsoft.com/library/windows/apps/br208479) を使って、認識エンジン コンボ ボックスから選ばれた認識エンジンに基づいて、[**SetDefaultRecognizer**](https://msdn.microsoft.com/library/windows/apps/hh920328) を呼び出します。
 
 ```    CSharp
 // Handle recognizer change.
@@ -399,9 +393,10 @@ Xxx xxxxxxxxxxx xx xxxxxxxxx xx xxx xxxx xxxxxxxx x xxxxxx xxxx xxxx xxx xxxxxxx
     }
 ```
 
-5.  Xxxxxxx, xx xxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxx xxxxx xx xxx xxxxxxxx xxxxxxxxxxx xxxxxxxxxx. Xxx xxxx xxxxxxx, xx xxx xxx xxxxx xxxxx xxxxxxx xx xxx "Xxxxxxxxx" xxxxxx xx xxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxx.
+5.  最後に、選ばれた手書き認識エンジンに基づいて、手書き認識を実行します。 この例では、[Recognize] ボタンのクリック イベント ハンドラーを使って、手書き認識を実行します。
 
-    Xx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xxxxxx xxx xxx xxxxxxx xx xx [**XxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208492) xxxxxx. Xxx xxxxxxx xxx xxxxxxx xxxxxxx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948766) xxxxxxxx xx xxx **XxxXxxxxxxxx** xxx xxxxxxxxx xxxxx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208499) xxxxxx.
+    [
+            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) によってすべてのインク ストロークが [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) オブジェクトに格納されます。 インク ストロークを **InkPresenter** の [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) プロパティを介して公開し、[**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) メソッドを使って取得します。
 
 ```    CSharp
 // Get all strokes on the InkCanvas.
@@ -507,21 +502,16 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="Dynamic_handwriting_recognition">
-            </span>
-            <span id="dynamic_handwriting_recognition">
-            </span>
-            <span id="DYNAMIC_HANDWRITING_RECOGNITION">
-            </span>Xxxxxxx xxxxxxxxxxx xxxxxxxxxxx
+## <span id="Dynamic_handwriting_recognition"></span><span id="dynamic_handwriting_recognition"></span><span id="DYNAMIC_HANDWRITING_RECOGNITION"></span>動的な手書き認識
 
 
-Xxx xxxxxxxx xxx xxxxxxxx xxxxxxx xxx xxxx xx xxxxx x xxxxxx xx xxxxx xxxxxxxxxxx. Xxxx xxx xxx xxxx xxxxxxx xxxxxxx xxxxxxxxxxx xxxxx xxxxxx xxxxx xxxxxx xxxx x xxxxx xxxxxx xxxxxxxx.
+前の 2 つの例では、認識を開始するには、ユーザーがボタンを押す必要があります。 アプリでは、インク ストローク入力と基本的なタイミング機能を組み合わせて使うことで、動的な認識を実行することもできます。
 
-Xxx xxxx xxxxxxx, xx'xx xxx xxx xxxx XX xxx xxxxxx xxxxxxxx xx xxx xxxxxxxx xxxxxxxxxxxxx xxxxxxxxxxx xxxxxxx.
+この例では、先ほど示した地域と言語の認識の例と同じ UI とインク ストローク入力の設定を使います。
 
-1.  Xxxx xxx xxxxxxxx xxxxxxxx, xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xx xxxxxxxxxx xx xxxxxxxxx xxxxx xxxx xxxx xxxx xxx xxx xxxxx xx xxx xxxxxxx ([**XxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922019)), xxx xxx xxxxxxx xxx xxxxxxxx xx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxx xxx xxxxxxxxx [**XxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ms695050).
+1.  先ほどの例と同様、ペンとマウスのいずれからの入力データもインク ストローク ([**InputDeviceTypes**](https://msdn.microsoft.com/library/windows/apps/dn922019)) として解釈するように、[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) を構成します。インク ストロークは、指定した [**InkDrawingAttributes**](https://msdn.microsoft.com/library/windows/desktop/ms695050) を使って、[**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) にレンダリングされます。
 
-    Xxxxxxx xx x xxxxxx xx xxxxxxxx xxxxxxxxxxx, xx xxx xxxxxxxxx xxx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xxxxxx xxxxxx ([**XxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922024) xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914702)), xxx xxx xx x xxxxx xxxxx ([**XxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br244250)) xxxx x xxx xxxxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br244256) xxxxxxxx.
+    音声認識を開始するボタンを用意する代わりに、[**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) の 2 つのストローク イベント ([**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024) と [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)) のリスナーを追加し、基本的なタイマー ([**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250)) の [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256) 間隔を 1 秒に設定します。
 
 ```    CSharp
 public MainPage()
@@ -589,37 +579,16 @@ public MainPage()
     
 ```
 
-2.  Xxxx xxx xxx xxxxxxxx xxx xxx xxxxx xxxxxx xx xxxxx xx xxx xxxxx xxxx.
+2.  ここで示しているのは、最初の手順で追加した 3 つのイベントのハンドラーです。
 
-    <span id="StrokesCollected">
-                </span>
-            <span id="strokescollected">
-            </span>
-            <span id="STROKESCOLLECTED">
-            </span>
-            [
-            **XxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922024)  
-Xxxxx xxx xxxxxxxxxxx xxxxx xxxx xxx xxxx xxxxx xxxxxx xx xxxxxxx xxxxx xxx xx xxxxxx, xx xxxxxxxxx xxx xxxxx xxxxxx. Xxxxx xxx xxxxxx xx xx xxx xxxxx, xxxxxxxxxxx xx xxxxxxxxx.
+    <span id="StrokesCollected"></span><span id="strokescollected"></span><span id="STROKESCOLLECTED"></span>[**StrokesCollected**](https://msdn.microsoft.com/library/windows/apps/dn922024)  
+    ユーザーがペンを持ち上げるか、マウス ボタンから指を離すことで、インク入力を止めると、認識タイマーを開始します。 インク入力がなくなってから 1 秒後に、認識を開始します。
 
-    <span id="StrokeStarted">
-                </span>
-            <span id="strokestarted">
-            </span>
-            <span id="STROKESTARTED">
-            </span>
-            [
-            **XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914702)  
-Xx x xxx xxxxxx xxxxxx xxxxxx xxx xxxx xxxxx xxxx xxxxx, xxxx xxx xxxxx xx xxx xxx xxxxxx xx xxxxxx xxx xxxxxxxxxxxx xx x xxxxxx xxxxxxxxxxx xxxxx.
+    <span id="StrokeStarted"></span><span id="strokestarted"></span><span id="STROKESTARTED"></span>[**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702)  
+    新しいインク ストロークが次のタイマー ティック イベントの前に始まった場合、新しいインク ストロークが同じ手書き入力の続きである可能性が高いため、タイマーを停止します。
 
-    <span id="Tick">
-                </span>
-            <span id="tick">
-            </span>
-            <span id="TICK">
-            </span>
-            [
-            **Xxxx**](https://msdn.microsoft.com/library/windows/apps/br244256)  
-Xxxx xxx xxxxxxxxxxx xxxxxxxx xxxxx xxx xxxxxx xx xx xxx xxxxx.
+    <span id="Tick"></span><span id="tick"></span><span id="TICK"></span>[**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256)  
+    インク入力がなくなってから 1 秒後に、認識関数を呼び出します。
 
 ```    CSharp
 // Handler for the timer tick event calls the recognition function.
@@ -647,9 +616,10 @@ Xxxx xxx xxxxxxxxxxx xxxxxxxx xxxxx xxx xxxxxx xx xx xxx xxxxx.
     }
 ```
 
-3.  Xxxxxxx, xx xxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxx xxxxx xx xxx xxxxxxxx xxxxxxxxxxx xxxxxxxxxx. Xxx xxxx xxxxxxx, xx xxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br244256) xxxxx xxxxxxx xx x [**XxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br244250) xx xxxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxx.
+3.  最後に、選ばれた手書き認識エンジンに基づいて、手書き認識を実行します。 この例では、[**DispatcherTimer**](https://msdn.microsoft.com/library/windows/apps/br244250) の [**Tick**](https://msdn.microsoft.com/library/windows/apps/br244256) イベント ハンドラーを使って、手書き認識を開始します。
 
-    Xx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xxxxxx xxx xxx xxxxxxx xx xx [**XxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208492) xxxxxx. Xxx xxxxxxx xxx xxxxxxx xxxxxxx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948766) xxxxxxxx xx xxx **XxxXxxxxxxxx** xxx xxxxxxxxx xxxxx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208499) xxxxxx.
+    [
+            **InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) によってすべてのインク ストロークが [**InkStrokeContainer**](https://msdn.microsoft.com/library/windows/apps/br208492) オブジェクトに格納されます。 インク ストロークを **InkPresenter** の [**StrokeContainer**](https://msdn.microsoft.com/library/windows/apps/dn948766) プロパティを介して公開し、[**GetStrokes**](https://msdn.microsoft.com/library/windows/apps/br208499) メソッドを使って取得します。
 
 ```    CSharp
 // Get all strokes on the InkCanvas.
@@ -752,20 +722,23 @@ string str = "Recognition result\n";
     }
 ```
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>関連記事
 
 
-* [Xxx xxx xxxxxx xxxxxxxxxxxx](pen-and-stylus-interactions.md)
-**Xxxxxxx**
-* [Xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Xxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Xxxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [ペン操作とスタイラス操作](pen-and-stylus-interactions.md)
+**サンプル**
+* [インクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [単純なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [複雑なインクのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620314)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

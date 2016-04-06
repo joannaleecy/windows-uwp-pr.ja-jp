@@ -1,33 +1,33 @@
 ---
-xxxxx: Xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx
-xxxxxxxxxxx: Xxxxx xxx xxxx xxx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx xx x xxxxxxxxxx xxxx.
-xx.xxxxxxx: YYYYYXXY-XYYY-YYYY-YYXX-YXXYYYYXXYXY
+title: Monitor background task progress and completion
+description: Learn how your app can recognize progress and completion reported by a background task.
+ms.assetid: 17544FD7-A336-4254-97DC-2BF8994FF9B2
 ---
 
-# Xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx
+# Monitor background task progress and completion
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxxxxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224786)
--   [**XxxxxxxxxxXxxxXxxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224785)
--   [**XxxxxxxxxxXxxxXxxxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224781)
+-   [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786)
+-   [**BackgroundTaskProgressEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224785)
+-   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-Xxxxx xxx xxxx xxx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx xx x xxxxxxxxxx xxxx. Xxxxxxxxxx xxxxx xxx xxxxxxxxx xxxx xxx xxx, xxx xxxx xxx xxxxxxxxxx, xxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx xxx xx xxxxxxxxx xx xxx xxxx. Xx xxxx xxxx xxxxxx, xxx xxx xxxxxxxxxx xx xxxxxx xxxx xxx xxxxxxxxxx xxxx(x) xx xxx xxxxxxxxxx xxxx xxx xxxxxx.
+Learn how your app can recognize progress and completion reported by a background task. Background tasks are decoupled from the app, and they run separately, but background task progress and completion can be monitored by app code. To make this happen, the app subscribes to events from the background task(s) it has registered with the system.
 
--   Xxxx xxxxx xxxxxxx xxxx xxx xxxx xx xxx xxxx xxxxxxxxx xxxxxxxxxx xxxxx. Xx xxx xxxxxxx xxxxxxx xxxxxxxx x xxxxxxxxxx xxxx, xxx [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md). Xxx xxxx xx-xxxxx xxxxxxxxxxx xx xxxxxxxxxx xxx xxxxxxxx, xxx [Xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxx](support-your-app-with-background-tasks.md).
+-   This topic assumes that you have an app that registers background tasks. To get started quickly building a background task, see [Create and register a background task](create-and-register-a-background-task.md). For more in-depth information on conditions and triggers, see [Support your app with background tasks](support-your-app-with-background-tasks.md).
 
-## Xxxxxx xx xxxxx xxxxxxx xx xxxxxx xxxxxxxxx xxxxxxxxxx xxxxx
+## Create an event handler to handle completed background tasks
 
 
-1.  Xxxxxx xx xxxxx xxxxxxx xxxxxxxx xx xxxxxx xxxxxxxxx xxxxxxxxxx xxxxx. Xxxx xxxx xxxxx xx xxxxxx x xxxxxxxx xxxxxxxxx, xxxxx xxxxx xx xx [**XXxxxxxxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224803) xxxxxx xxx x [**XxxxxxxxxxXxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224778) xxxxxx.
+1.  Create an event handler function to handle completed background tasks. This code needs to follow a specific footprint, which takes in an [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) object and a [**BackgroundTaskCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224778) object.
 
-    Xxx xxx xxxxxxxxx xxxxxxxxx xxx xxx XxXxxxxxxxx xxxxxxxxxx xxxx xxxxx xxxxxxx xxxxxx:
+    Use the following footprint for the OnCompleted background task event handler method:
 
->  [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+>  [!div class="tabbedCodeSnippets"]
 >  ```cs
 >  private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
 >  {
@@ -41,11 +41,11 @@ Xxxxx xxx xxxx xxx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx xx x xxxxxxxxx
 >  };
 >  ```
     
-2.  Xxx xxxx xx xxx xxxxx xxxxxxx xxxx xxxxx xxxx xxx xxxxxxxxxx xxxx xxxxxxxxxx.
+2.  Add code to the event handler that deals with the background task completion.
 
-    Xxx xxxxxxx, xxx [xxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=618666) xxxxxxx xxx XX.
+    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) updates the UI.
 
-    > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+    > [!div class="tabbedCodeSnippets"]
     >     ```cs
     >     private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
     >     {
@@ -59,14 +59,14 @@ Xxxxx xxx xxxx xxx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx xx x xxxxxxxxx
     >     };
     >     ```
 
-## Xxxxxx xx xxxxx xxxxxxx xxxxxxxx xx xxxxxx xxxxxxxxxx xxxx xxxxxxxx
+## Create an event handler function to handle background task progress
 
 
-1.  Xxxxxx xx xxxxx xxxxxxx xxxxxxxx xx xxxxxx xxxxxxxxx xxxxxxxxxx xxxxx. Xxxx xxxx xxxxx xx xxxxxx x xxxxxxxx xxxxxxxxx, xxxxx xxxxx xx xx [**XXxxxxxxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224803) xxxxxx xxx x [**XxxxxxxxxxXxxxXxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224782) xxxxxx:
+1.  Create an event handler function to handle completed background tasks. This code needs to follow a specific footprint, which takes in an [**IBackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224803) object and a [**BackgroundTaskProgressEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224782) object:
 
-    Xxx xxx xxxxxxxxx xxxxxxxxx xxx xxx XxXxxxxxxx xxxxxxxxxx xxxx xxxxx xxxxxxx xxxxxx:
+    Use the following footprint for the OnProgress background task event handler method:
 
-    > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+    > [!div class="tabbedCodeSnippets"]
     >     ```cs
     >     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
     >     {
@@ -80,16 +80,16 @@ Xxxxx xxx xxxx xxx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx xx x xxxxxxxxx
     >     };
     >     ```
 
-2.  Xxx xxxx xx xxx xxxxx xxxxxxx xxxx xxxxx xxxx xxx xxxxxxxxxx xxxx xxxxxxxxxx.
+2.  Add code to the event handler that deals with the background task completion.
 
-    Xxx xxxxxxx, xxx [xxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=618666) xxxxxxx xxx XX xxxx xxx xxxxxxxx xxxxxx xxxxxx xx xxx xxx *xxxx* xxxxxxxxx:
+    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) updates the UI with the progress status passed in via the *args* parameter:
 
-    > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
-    >     ```xx
-    >     xxxxxxx xxxx XxXxxxxxxx(XXxxxxxxxxxXxxxXxxxxxxxxxxx xxxx, XxxxxxxxxxXxxxXxxxxxxxXxxxxXxxx xxxx)
+    > [!div class="tabbedCodeSnippets"]
+    >     ```cs
+    >     private void OnProgress(IBackgroundTaskRegistration task, BackgroundTaskProgressEventArgs args)
     >     {
-    >         xxx xxxxxxxx = "Xxxxxxxx: " + xxxx.Xxxxxxxx + "%";
-    >         XxxxxxxxxxXxxxXxxxxx.XxxxxxXxxxxxxxxxXxxxXxxxxxxx = xxxxxxxx;
+    >         var progress = "Progress: " + args.Progress + "%";
+    >         BackgroundTaskSample.SampleBackgroundTaskProgress = progress;
     > 
     >         UpdateUI();
     >     }
@@ -104,14 +104,14 @@ Xxxxx xxx xxxx xxx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx xx x xxxxxxxxx
     >     };
     >     ```
 
-## Xxxxxxxx xxx xxxxx xxxxxxx xxxxxxxxx xxxx xxx xxx xxxxxxxx xxxxxxxxxx xxxxx.
+## Register the event handler functions with new and existing background tasks.
 
 
-1.  Xxxx xxx xxx xxxxxxxxx x xxxxxxxxxx xxxx xxx xxx xxxxx xxxx, xx xxxxxx xxxxxxxx xx xxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxx xxx xx, xx xxxx xxx xxxx xxxx xxxxx xxx xxx xx xxxxx xxxxxx xx xxx xxxxxxxxxx.
+1.  When the app registers a background task for the first time, it should register to receive progress and completion updates for it, in case the task runs while the app is still active in the foreground.
 
-    Xxx xxxxxxx, xxx [xxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=618666) xxxxx xxx xxxxxxxxx xxxxxxxx xx xxxx xxxxxxxxxx xxxx xxxx xx xxxxxxxxx:
+    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) calls the following function on each background task that it registers:
 
-    > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+    > [!div class="tabbedCodeSnippets"]
     >     ```cs
     >     private void AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration task)
     >     {
@@ -119,14 +119,14 @@ Xxxxx xxx xxxx xxx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx xx x xxxxxxxxx
     >         task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
     >     }
     >     ```
-    >     ```xxx
-    >     xxxx XxxxxxXxxxxxxxxxXxxx::XxxxxxXxxxxxxxXxxXxxxxxxxxXxxxxxxx(XXxxxxxxxxxXxxxXxxxxxxxxxxx^ xxxx)
+    >     ```cpp
+    >     void SampleBackgroundTask::AttachProgressAndCompletedHandlers(IBackgroundTaskRegistration^ task)
     >     {
-    >         xxxx xxxxxxxx = [xxxx](XxxxxxxxxxXxxxXxxxxxxxxxxx^ xxxx, XxxxxxxxxxXxxxXxxxxxxxXxxxxXxxx^ xxxx)
+    >         auto progress = [this](BackgroundTaskRegistration^ task, BackgroundTaskProgressEventArgs^ args)
     >         {
-    >             xxxx xxxxxxxx = "Xxxxxxxx: " + xxxx->Xxxxxxxx + "%";
-    >             XxxxxxxxxxXxxxXxxxxx::XxxxxxXxxxxxxxxxXxxxXxxxxxxx = xxxxxxxx;
-    >             XxxxxxXX();
+    >             auto progress = "Progress: " + args->Progress + "%";
+    >             BackgroundTaskSample::SampleBackgroundTaskProgress = progress;
+    >             UpdateUI();
     >         };
     > 
     >         task->Progress += ref new BackgroundTaskProgressEventHandler(progress);
@@ -141,20 +141,20 @@ Xxxxx xxx xxxx xxx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx xx x xxxxxxxxx
     >     }
     >     ```
 
-2.  Xxxx xxx xxx xxxxxxxx, xx xxxxxxxxx xx x xxx xxxx xxxxx xxxxxxxxxx xxxx xxxxxx xx xxxxxxxx, xx xxxxxx xxx x xxxx xx xxxxxxxxxx xxxxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxx xxxx xxx xxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxx xxxxxxxxx. Xxx xxxx xx xxxxxxxxxx xxxxx xxxxxxxxx xxxxxxxxxx xx xxx xxxxxxxxxxx xx xxxx xx xxx [**XxxxxxxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224786).[**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224787) xxxxxxxx.
+2.  When the app launches, or navigates to a new page where background task status is relevant, it should get a list of background tasks currently registered and associate them with the progress and completion event handler functions. The list of background tasks currently registered by the application is kept in the [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786).[**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) property.
 
-    Xxx xxxxxxx, xxx [xxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=618666) xxxx xxx xxxxxxxxx xxxx xx xxxxxx xxxxx xxxxxxxx xxxx xxx XxxxxxXxxxxxxxxxXxxx xxxx xx xxxxxxxxx xx:
+    For example, the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) uses the following code to attach event handlers when the SampleBackgroundTask page is navigated to:
 
-    > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
-    >     ```xx
-    >     xxxxxxxxx xxxxxxxx xxxx XxXxxxxxxxxXx(XxxxxxxxxxXxxxxXxxx x)
+    > [!div class="tabbedCodeSnippets"]
+    >     ```cs
+    >     protected override void OnNavigatedTo(NavigationEventArgs e)
     >     {
-    >         xxxxxxx (xxx xxxx xx XxxxxxxxxxXxxxXxxxxxxxxxxx.XxxXxxxx)
+    >         foreach (var task in BackgroundTaskRegistration.AllTasks)
     >         {
-    >             xx (xxxx.Xxxxx.Xxxx == XxxxxxxxxxXxxxXxxxxx.XxxxxxXxxxxxxxxxXxxxXxxx)
+    >             if (task.Value.Name == BackgroundTaskSample.SampleBackgroundTaskName)
     >             {
-    >                 XxxxxxXxxxxxxxXxxXxxxxxxxxXxxxxxxx(xxxx.Xxxxx);
-    >                 XxxxxxxxxxXxxxXxxxxx.XxxxxxXxxxxxxxxxXxxxXxxxxx(XxxxxxxxxxXxxxXxxxxx.XxxxxxXxxxxxxxxxXxxxXxxx, xxxx);
+    >                 AttachProgressAndCompletedHandlers(task.Value);
+    >                 BackgroundTaskSample.UpdateBackgroundTaskStatus(BackgroundTaskSample.SampleBackgroundTaskName, true);
     >             }
     >         }
     > 
@@ -190,31 +190,35 @@ Xxxxx xxx xxxx xxx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx xx x xxxxxxxxx
     >     }
     >     ```
 
-## Xxxxxxx xxxxxx
+## Related topics
 
 
 ****
 
-* [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md)
-* [Xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx](declare-background-tasks-in-the-application-manifest.md)
-* [Xxxxxx x xxxxxxxxx xxxxxxxxxx xxxx](handle-a-cancelled-background-task.md)
-* [Xxxxxxxx x xxxxxxxxxx xxxx](register-a-background-task.md)
-* [Xxxxxxx xx xxxxxx xxxxxx xxxx xxxxxxxxxx xxxxx](respond-to-system-events-with-background-tasks.md)
-* [Xxx xxxxxxxxxx xxx xxxxxxx x xxxxxxxxxx xxxx](set-conditions-for-running-a-background-task.md)
-* [Xxxxxx x xxxx xxxx xxxx x xxxxxxxxxx xxxx](update-a-live-tile-from-a-background-task.md)
-* [Xxx x xxxxxxxxxxx xxxxxxx](use-a-maintenance-trigger.md)
-* [Xxx x xxxxxxxxxx xxxx xx x xxxxx](run-a-background-task-on-a-timer-.md)
-* [Xxxxxxxxxx xxx xxxxxxxxxx xxxxx](guidelines-for-background-tasks.md)
+* [Create and register a background task](create-and-register-a-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [Register a background task](register-a-background-task.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
 
 ****
 
-* [Xxxxx x xxxxxxxxxx xxxx](debug-a-background-task.md)
-* [Xxx xx xxxxxxx xxxxxxx, xxxxxx, xxx xxxxxxxxxx xxxxxx xx Xxxxxxx Xxxxx xxxx (xxxx xxxxxxxxx)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Debug a background task](debug-a-background-task.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

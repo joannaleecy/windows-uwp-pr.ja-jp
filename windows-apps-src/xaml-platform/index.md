@@ -1,23 +1,27 @@
 ---
-xx.xxxxxxx: xYYYxYxx-YYYY-YxxY-xxxY-xxxYYYxxYYxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xxxxxx xxxx xxxxxxx xxxxxxxxxxx xxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxxxx xx xxx xxx xxxx xxx xxxxx.
-xxxxx: XXXX xxxxxxxx
+ms.assetid: b632a6cc-3503-4ab8-bfd1-dde731bd89ab
+description: このセクションのトピックでは、作成するアプリ全般に当てはまるプログラミングの概念について説明します。
+title: XAML プラットフォーム
 ---
 
-# XXXX xxxxxxxx
+# XAML プラットフォーム
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxx xxxxxxx xxxxxxxx xxxxxx xxxx xxxxxxx xxxxxxxxxxx xxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxxxx xx xxx xxx xxxx xxx xxxxx, xx xxx xxx xxxxx X#, Xxxxxxxxx Xxxxxx Xxxxx, xx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX) xx xxxx xxxxxxxxxxx xxxxxxxx xxx XXXX xxx xxxx XX xxxxxxxxxx. Xxxx xxxxxxxx xxxxx xxxxxxxxxxx xxxxxxxx xxxx xx xxxxx xxxxxxxxxx xxx xxxxxx, xxx xxx xxxxx xxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxxxxxxx. Xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxx X#, Xxxxxx Xxxxx, xx X++/XX xxxxxxxx xx xxxxxxxxxx xxx xxxxx xxxxxx xx xxxxxx xxx xxxxxxxxxx xxxxxxxx xxxxxx. Xxxxxx xx xxxx xxxxxxx xxxx xxxxxxxx xxx XXXX xxxxxxxx xx xx xx xxxx xx xxx XXX, xxx xxxxx xxxxx xxxxxxxxx xxx xxxxxxxx xxxxxx xxxxxxxxxx xxx xx xxx XXXX xx xxxxxx xxx XX xxx xxxx XXX xxx.
+このセクションのトピックでは、プログラミング言語として C#、Microsoft Visual Basic、または Visual C++ コンポーネント拡張機能 (C++/CX) を使い、UI 定義として XAML を使う場合に、作成するアプリ全般に当てはまるプログラミングの概念について説明します。 ここでは、プロパティとイベントの使い方や、ユニバーサル Windows プラットフォーム (UWP) アプリ プログラミングへのその適用法など、基本的なプログラミングの概念について説明します。 ユニバーサル Windows プラットフォーム (UWP) は、依存関係プロパティ システムを追加することで、C#、Visual Basic、C++/CX のプロパティとその値の概念を拡張します。 このセクションのトピックでは、UWP で使われる XAML 言語についても説明し、XAML を使って UWP アプリの UI を定義する方法に関する基本的なシナリオと高度なトピックも取り上げています。
  
-| Xxxxx | Xxxxxxxxxxx |
+| トピック | 説明 |
 |-------|-------------|
-| [XXXX xxxxxxxx](xaml-overview.md) | Xx xxxxxxxxx xxx XXXX xxxxxxxx xxx XXXX xxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxx xxxxxxxxx xxxxxxxx, xxx xxxxxxxx xxx xxxxxxxxx xxxx xx xxxxxxx xxxxxxx xxx xxx xxxxxxxxxx xx XXXX xx xx xx xxxx xxx xxxxxxxx x Xxxxxxx Xxxxxxx xxx. |
-| [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](dependency-properties-overview.md) | Xxxx xxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx xxxxxx xxxx xx xxxxxxxxx xxxx xxx xxxxx x Xxxxxxx Xxxxxxx xxx xxxxx X++, X#, xx Xxxxxx Xxxxx xxxxx xxxx XXXX xxxxxxxxxxx xxx XX. |
-| [Xxxxxx xxxxxxxxxx xxxxxxxxxx](custom-dependency-properties.md) | Xxxxxxxx xxx xx xxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxxxx xxxxxxxxxx xxx x Xxxxxxx Xxxxxxx xxx xxxxx X++, X#, xx Xxxxxx Xxxxx. |
-| [Xxxxxxxx xxxxxxxxxx xxxxxxxx](attached-properties-overview.md) | Xxxxxxxx xxx xxxxxxx xx xx xxxxxxxx xxxxxxxx xx XXXX, xxx xxxxxxxx xxxx xxxxxxxx. |
-| [Xxxxxx xxxxxxxx xxxxxxxxxx](custom-attached-properties.md) | Xxxxxxxx xxx xx xxxxxxxxx x XXXX xxxxxxxx xxxxxxxx xx x xxxxxxxxxx xxxxxxxx xxx xxx xx xxxxxx xxx xxxxxxxx xxxxxxxxxx xxxx xx xxxxxxxxx xxx xxxx xxxxxxxx xxxxxxxx xx xx xxxxxx xx XXXX. |
-| [Xxxxxx xxx xxxxxx xxxxxx xxxxxxxx](events-and-routed-events-overview.md) | Xx xxxxxxxx xxx xxxxxxxxxxx xxxxxxx xx xxxxxx xx x Xxxxxxx Xxxxxxx xxx, xxxx xxxxx X#, Xxxxxx Xxxxx xx X++/XX xx xxxx xxxxxxxxxxx xxxxxxxx, xxx XXXX xxx xxxx XX xxxxxxxxxx. Xxx xxx xxxxxx xxxxxxxx xxx xxxxxx xx xxxx xx xxx xxxxxxxxxxxx xxx XX xxxxxxxx xx XXXX, xx xxx xxx xxx xxx xxxxxxxx xx xxxx. Xxxxxxx Xxxxxxx xxxxxxxx **xxxxxx xxxxxx**: xxxxxxx xxxxx xxxxxx xxx xxxx xxxxxx xxx xx xxxxxxx xx xxxxxxx xxxxxx xxx xxxxxx xxxx xxxxx xxx xxxxx. Xxxxxx xxxxxx xxx xxxxxx xxxx xxx xxxxxx xxxxxxx xxxxxxxxx, xx xxx xxxxx xx xxxxxx xxxxxxxxxx. |
+| [XAML の概要](xaml-overview.md) | ここでは、Windows ランタイム アプリの開発者を対象に、XAML 言語と XAML の概念を紹介し、Windows ランタイム アプリを作成する際に XAML でオブジェクトを宣言したり属性を設定したりするためのさまざまな方法について説明します。 |
+| [依存関係プロパティの概要](dependency-properties-overview.md) | このトピックでは、C++、C#、または Visual Basic と UI の XAML 定義を使って Windows ランタイム アプリを作成するときに使うことができる依存関係プロパティについて説明します。 |
+| [カスタム依存関係プロパティ](custom-dependency-properties.md) | C++、C#、または Visual Basic を使った Windows ランタイム アプリでカスタム依存関係プロパティを定義および実装する方法を説明します。 |
+| [添付プロパティの概要](attached-properties-overview.md) | XAML での添付プロパティの概念を説明し、例をいくつか紹介します。 |
+| [カスタム添付プロパティ](custom-attached-properties.md) | XAML 添付プロパティを依存関係プロパティとして実装する方法と、添付プロパティを XAML で使うために必要なアクセサー変換を定義する方法を説明します。 |
+| [イベントとルーティング イベントの概要](events-and-routed-events-overview.md) | このトピックでは、Windows ランタイム アプリで、プログラミング言語に C#、Visual Basic、または C++/CX、UI 定義に XAML を使う場合のイベントのプログラミングの概念について説明します。 イベントのハンドラーは、UI 要素の宣言の一部として XAML で割り当てることも、コードで追加することもできます。 Windows ランタイムは**ルーティング イベント**をサポートしており、特定の入力イベントとデータ イベントを、その発生元オブジェクト以外のオブジェクトで処理できます。 ルーティング イベントは、コントロール テンプレートを定義する際や、ページまたはレイアウト コンテナーを使う際に役立ちます。 |
 
  
+
+
 <!--HONumber=Mar16_HO1-->
+
+

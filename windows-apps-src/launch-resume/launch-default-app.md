@@ -1,47 +1,47 @@
 ---
-xxxxx: Xxxxxx xxx xxxxxxx xxx xxx x XXX
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxx xxx xxxxxxx xxx xxx x Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX). XXXx xxxxx xxx xx xxxxxx xxxxxxx xxx xx xxxxxxx x xxxxxxxx xxxx. Xxxx xxxxx xxxx xxxxxxxx xx xxxxxxxx xx xxx xxxx XXX xxxxxxx xxxxx xxxx Xxxxxxx.
-xx.xxxxxxx: YXYXYXXY-XYYX-YXXY-YXYY-YYYYYXYYYYYX
+title: URI に応じた既定のアプリの起動
+description: URI (Uniform Resource Identifier) に応じて既定のアプリを起動する方法について説明します。 URI を使うと、別のアプリを起動して特定の作業を実行できます。 また、Windows に組み込まれている多くの URI スキームの概要についても説明します。
+ms.assetid: 7B0D0AF5-D89E-4DB0-9B79-90201D79974F
 ---
 
-# Xxxxxx xxx xxxxxxx xxx xxx x XXX
+# URI に応じた既定のアプリの起動
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**XxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701476)
--   [**XxxxxxxxxXxxxxxxxxxxXxxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh965482)
--   [**XxxxxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn298314)
+-   [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476)
+-   [**PreferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482)
+-   [**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314)
 
-Xxxxx xxx xx xxxxxx xxx xxxxxxx xxx xxx x Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX). XXXx xxxxx xxx xx xxxxxx xxxxxxx xxx xx xxxxxxx x xxxxxxxx xxxx. Xxxx xxxxx xxxx xxxxxxxx xx xxxxxxxx xx xxx xxxx XXX xxxxxxx xxxxx xxxx Xxxxxxx. Xxx xxx xxxxxx xxxxxx XXXx xxx. Xxx xxxx xxxx xxxxx xxxxxxxxxxx x xxxxxx XXX xxxxxx xxx xxxxxxxx XXX xxxxxxxxxx, xxx [Xxxxxx XXX xxxxxxxxxx](handle-uri-activation.md).
+URI (Uniform Resource Identifier) に応じて既定のアプリを起動する方法について説明します。 URI を使うと、別のアプリを起動して特定の作業を実行できます。 また、Windows に組み込まれている多くの URI スキームの概要についても説明します。 カスタム URI も起動することができます。 カスタム URI スキームを登録する方法と URI のアクティブ化を処理する方法について詳しくは、「[URI のアクティブ化の処理](handle-uri-activation.md)」をご覧ください。
 
-## Xxx xx xxxxxx x XXX
+## URI を起動する方法
 
 
-XXX xxxxxxx xxx xxx xxxx xxxx xx xxxxxxxx xxxxxxxxxx. Xxxx xx xxx xxx xxxxx x xxx xxxxx xxxxx **xxxxxx:**, xxx xxx xxxx xxx xxxxxxx xxx xxxxxxx xxxxx **xxxx:**. Xxxx xxxxx xxxxxxxxx xxxx xx xxx XXX xxxxxxx xxxxx xxxx Xxxxxxx:
+URI スキームでは、ハイパーリンクをクリックしてアプリを開くことができます。 **mailto:** を使って新しいメールの作成を開始できるのと同様に、**http:** を使って既定の Web ブラウザーを開くことができます。 このトピックでは、Windows に組み込まれている URI スキームの一部について説明します。
 
--   Xxx [xx-xxxxxxxx: XXX xxxxxx](#settings) xxxxxxxx xxx Xxxxxxx Xxxxxxxx xxx
--   Xxx [xx-xxxxx: XXX xxxxxx](#store) xxxxxxxx xxx Xxxxxxx Xxxxx xxx
--   Xxx [xxxx: XXX xxxxxx](#browser) xxxxxxxx xxx xxxxxxx xxx xxxxxxx
--   Xxx [xxxxxx: XXX xxxxxx](#email) xxxxxxxx xxx xxxxxxx xxxxx xxx
--   Xxx [xxxxxxxx:, xx-xxxxx-xx:, xxx xx-xxxx-xx: XXX xxxxxxx](#maps) xxxxxx xxx Xxxxxxx Xxxx xxx
+-   [ms-settings: URI スキーム](#settings)は、Windows 設定アプリを起動します。
+-   [ms-store: URI スキーム](#store)は、Windows ストア アプリを起動します。
+-   [http: URI スキーム](#browser)は、既定の Web ブラウザーを起動します。
+-   [mailto: URI スキーム](#email)は、既定の電子メール アプリを起動します。
+-   [bingmaps:、ms-drive-to:、ms-walk-to: URI スキーム](#maps)は、Windows マップ アプリを起動します。
 
-Xxx xxxxxxx, xxx xxxxxxxxx XXX xxxxx xxx xxxxxxx xxxxxxx xxx xxxxxxxx xxx Xxxx xxx xxxx.
+たとえば、次の URI は既定のブラウザーを開き、Bing の Web サイトを表示します。
 
 `http://bing.com`
 
-Xxx xxx xxxx xxxxxx xxxxxx XXX xxxxxxx xxx. Xx xxxxx xx xx xxx xxxxxxxxx xx xxxxxx xxxx XXX, xxx xxx xxxxxxxxx xx xxx xxx xxx xxxx xx xxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxx xx xxx](#recommend).
+カスタム URI スキームを起動することもできます。 その URI を処理するアプリがインストールされていない場合は、ユーザーにインストールするアプリを推奨することができます。 詳しくは、「[アプリの推奨](#recommend)」をご覧ください。
 
-Xx xxxxxxx, xxxx xxx xxx'x xxxxxx xxx xxx xxxx xx xxxxxxxx. Xxx xxxx xxxxxxxxxx xxxxx xxx xx xxxxxxxx. Xxxx xxxx xxx xxx xxx xxxxxxxx xx xxxxxx xxx xxxx XXX xxxxxx. Xxx xxxxxxxxx xx xxxx xx xxx xxxxxxxx XXX xxxxxxx. Xxxxxxxxxxxxx xx xxxxxxxx XXX xxxxxxx xxx xxxxxxx. Xxx xxx xxxx xxxx xx xxxxxxxx XXX xxxxxxx, xxx [Xxxxxx XXX xxxxxxxxxx](handle-uri-activation.md). Xx xxxxx xxxxx xxxx xxxx xxx xxx xxx xxxx xxxxxxxxxx xxx xxxx XXX xxxxxx, xxxx xxx xxx xxxxxxxxx x xxxxxxxx xxx xx xx xxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxx xx xxx](#recommend).
+一般的に、起動するアプリをアプリが選ぶことはできません。 どのアプリを起動するかはユーザーが決めます。 同じ URI スキームを処理するために、複数のアプリを登録できます。 この例外として、予約済みの URI スキームがあります。 予約済みの URI スキームの登録は無視されます。 予約済みの URI スキームの一覧については、「[URI のアクティブ化の処理](handle-uri-activation.md)」をご覧ください。 複数のアプリが同じ URI スキームを登録している可能性がある場合は、アプリで特定のアプリを起動することを推奨できます。 詳しくは、「[アプリの推奨](#recommend)」をご覧ください。
 
-### Xxxx XxxxxxXxxXxxxx
+### LaunchUriAsync の呼び出し
 
-Xxx xxx [**XxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701476) xxxxxx xx xxxxxx x XXX. Xxxx xxx xxxx xxxx xxxxxx, xxxx xxx xxxx xx xxx xxxxxxxxxx xxx, xxxx xx, xx xxxx xx xxxxxxx xx xxx xxxx. Xxxx xxxxxxxxxxx xxxxx xxxxxx xxxx xxx xxxx xxxxxxx xx xxxxxxx. Xx xxxx xxxx xxxxxxxxxxx, xxxx xxxx xxxx xxx xxx xxx XXX xxxxxxxx xxxxxxxx xx xxx XX xx xxxx xxx. Xxx xxxx xxxx xxxxxx xxxx xxxx xxxxxx xx xxxxxxxx x XXX xxxxxx. Xx xxx xxxxxxx xx xxxxxx x XXX xxx xxxx xxx xxx'x xx xxx xxxxxxxxxx, xxx xxxxxx xxxx xxxx xxx xxxx xxxxx xxxxxxxx xxxx xx xxxxxxx.
+URI を起動するには、[**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) メソッドを使います。 このメソッドを呼び出すとき、アプリはユーザーに表示されるフォアグラウンド アプリである必要があります。 この要件は、ユーザーが制御を維持するのに役立ちます。 この要件を満たすために、すべての URI 起動がアプリの UI に直接結び付けられていることを確認します。 URI 起動を開始するには、常にユーザーがなんらかの操作を行う必要があります。 URI を起動しようとしたときにアプリがフォアグラウンドにない場合、起動は失敗し、エラー コールバックが呼び出されます。
 
-Xxxxx xxxxxx x [**Xxxxxx.Xxx**](T:System.Uri) xxxxxx xx xxxxxxxxx xxx XXX, xxxx xxxx xxxx xx xxx [**XxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701476) xxxxxx. Xxx xxx xxxxxx xxxxxx xx xxx xx xxx xxxx xxxxxxxxx, xx xxxxx xx xxx xxxxxxxxx xxxxxxx.
+最初に URI を表す [**System.Uri**](T:System.Uri) オブジェクトを作成し、それを [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) メソッドに渡します。 次の例のように、返される結果を使って呼び出しが成功したかどうかを確認します。
 
 ```cs
 private async void launchURI_Click(object sender, RoutedEventArgs e)
@@ -63,11 +63,11 @@ private async void launchURI_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Xx xxxx xxxxx, xxx xxxxxxxxx xxxxxx xxxx xxxxxx xxx xxxx xx xxx xx xxx xxxxxxxx xxxx xx xxxxxx xxxx.
+場合によって、ユーザーが実際にアプリを切り替えようとしているかどうかを確認するダイアログがオペレーティング システムにより表示されます。
 
-![x xxxxxxx xxxxxx xxxxxxxxx xx x xxxxxx xxx xxxxxxxxxx xx xxx xxx. xxx xxxxxx xxxx xxx xxxx xx xxxx xxxx xx xxxxxx xxxx xxx xxx ‘xxx’ xxx ‘xx’ xxxxxxx xx xxx xxxxxx xxxxx. xxx ‘xx’ xxxxxx xx xxxxxxxxxxx.](images/warningdialog.png)
+![灰色で表示されたアプリの背景にオーバーレイで表示された警告ダイアログ。 アプリを切り替えるかどうかをたずねるメッセージと、右下隅に [はい] と [いいえ] のボタンが表示されます。 [いいえ] ボタンが強調表示されています。](images/warningdialog.png)
 
-Xx xxx xxxxxx xxxx xxxx xxxxxx xx xxxxx, xxx xxx [**Xxxxxxx.Xxxxxx.XxxxxxxxXxxxxxx.XxxxxXxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701442) xxxxxxxx xx xxxxxxxx xxxx xxx xxxxxxxxx xxxxxx xxxxxxx x xxxxxxx.
+この確認ダイアログを常に表示する場合は、[**Windows.System.LauncherOptions.TreatAsUntrusted**](https://msdn.microsoft.com/library/windows/apps/hh701442) プロパティを使って、オペレーティング システムが警告を表示することを指定します。
 
 ```cs
 // The URI to launch
@@ -81,13 +81,13 @@ promptOptions.TreatAsUntrusted = true;
 var success = await Windows.System.Launcher.LaunchUriAsync(uriBing, promptOptions);
 ```
 
-### Xxxxxxxxx xx xxx
+### アプリの推奨
 
-Xx xxxx xxxxx, xxx xxxx xxxxx xxx xxxx xx xxx xxxxxxxxx xx xxxxxx xxx XXX xxxx xxx xxx xxxxxxxxx. Xx xxxxxxx, xxx xxxxxxxxx xxxxxx xxxxxxx xxxxx xxxxx xx xxxxxxxxx xxx xxxx xxxx x xxxx xx xxxxxx xxx xx xxxxxxxxxxx xxx xx xxx xxxxx. Xx xxx xxxx xx xxxx xxx xxxx x xxxxxxxx xxxxxxxxxxxxxx xxx xxxxx xxx xx xxxxxxx xx xxxx xxxxxxxx, xxx xxx xx xx xx xxxxxxx xxxx xxxxxxxxxxxxxx xxxxx xxxx xxx XXX xxxx xxx xxx xxxxxxxxx.
+場合によっては、起動中の URI を処理するアプリがインストールされていないこともあります。 既定では、オペレーティング システムによってストア上の適切なアプリを検索するリンクが表示されて、これらのケースは対処されます。 このシナリオで入手する必要のあるアプリに関する特定の推奨事項を示す場合は、起動中の URI と共に推奨事項を渡すことができます。
 
-Xxxxxxxxxxxxxxx xxx xxxx xxxxxx xxxx xxxx xxxx xxx xxx xxx xxxxxxxxxx xx xxxxxx x XXX xxxxxx. Xx xxxxxxxxxxxx x xxxxxxxx xxx, Xxxxxxx xxxx xxxx xxxx xxx xx xx xx xxxxxxx xxxxxxxxx.
+推奨事項は、URI スキームを処理するアプリが複数登録されているときにも役立ちます。 特定のアプリを推奨すると、そのアプリが既にインストールされている場合、Windows はそのアプリを開きます。
 
-Xx xxxx x xxxxxxxxxxxxxx, xxxx xxx [**Xxxxxxx.Xxxxxx.Xxxxxxxx.XxxxxxXxxXxxxx(Xxx, XxxxxxxxXxxxxxx)**](https://msdn.microsoft.com/library/windows/apps/hh701484) xxxxxx xxxx [**XxxxxxxxXxxxxxx.xxxxxxxxxXxxxxxxxxxxXxxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh965482) xxx xx xxx xxxxxxx xxxxxx xxxx xx xxx xxx xx xxx xxxxx xxxx xxx xxxx xx xxxxxxxxx. Xxx xxxxxxxxx xxxxxx xxxx xxxx xxxx xx xxxxxxx xxx xxxxxxx xxxxxx xx xxxxxx xxx xx xxx xx xxx xxxxx xxxx x xxxxxxxx xxxxxx xx xxxxxxx xxx xxxxxxxxxxx xxx xxxx xxx xxxxx.
+アプリを推奨するには、[**LauncherOptions.preferredApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/hh965482) を推奨するストア内のアプリのパッケージ ファミリ名に設定して、[**Windows.System.Launcher.LaunchUriAsync(Uri, LauncherOptions)**](https://msdn.microsoft.com/library/windows/apps/hh701484) メソッドを呼び出します。 オペレーティング システムではこの情報を使って、ストア内のアプリを検索する一般的なオプションを、ストアから推奨アプリを入手する固有のオプションに置き換えます。
 
 ```cs
 // Set the recommended app
@@ -100,11 +100,13 @@ options.PreferredApplicationDisplayName = "Contoso URI Ap";
 var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ```
 
-### Xxx xxxxxxxxx xxxx xxxxxxxxxx
+### 残りの表示の基本設定
 
-Xxxxxx xxxx xxxx xxxx [**XxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701476) xxx xxxxxxx xxxx xxxx xxxxxx xx xxxxxx xxxxx x XXX xxxxxx. Xx xxxxxxx, Xxxxxxx xxxxxxxx xx xxxxx xxx xxxxxxxxx xxxxx xxxxxxx xxxxxxx xxx xxxxxx xxx xxx xxx xxxxxx xxx xxxx xxxxxxx xxx XXX. Xxxxxx xxxx xxx xxx xxx [**XxxxxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn298314) xxxxxxxx xx xxxxxxxx xx xxx xxxxxxxxx xxxxxx xxxx xxxx xxxxxx xxxxx xxx xxxxxx xx xxxx xx xxxx xx xxxx xx xxx xxxxxxxxx xxxxx. **XxxxxxxXxxxxxxxxXxxx** xxx xxxx xx xxxx xx xxxxxxxx xxxx xxx xxxxxx xxx xxxxx'x xxxx xx xxxxxx xx xxxxxx xxxxx xxx XXX xxxxxx xxx xxx xx xxxxxxxxxx xxxxxxxx xx xxx xxxxxx xxx. Xxxx xxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxx xxxxxx xxxx xx xxx xxxxxxx xxx. Xx xxxxx'x xxxxxxx xxx xxxxxxxx xx xxxxx xxxx xxxx xxx xxxxxx xx xxxx xx xx xxxxxx xx xxx xxxx xxxx.
+[
+            **LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) を呼び出すソース アプリは、URI の起動後も画面上に留まることを要求できます。 既定では、利用可能なスペース全体がソース アプリと URI を処理するターゲット アプリとで均等に共有されます。 ソース アプリでは、[**DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) プロパティを使って、利用可能なスペースをソース アプリのウィンドウがどの程度占めるかをオペレーティング システムに指示できます。 この **DesiredRemainingView** では、URI の起動後にソース アプリが画面上に留まる必要がなく、ターゲット アプリに完全に置き換わっても良いことも示せます。 このプロパティは呼び出し元アプリの優先ウィンドウのサイズだけを指定します。 画面に同時に表示されている可能性のある他のアプリの動作は指定しません。
 
-**Xxxx**  Xxxxxxx xxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxxx xxxxxxx xxxx xx xxxxxxxxxx xxx xxxxxx xxx'x xxxxx xxxxxx xxxx, xxx xxxxxxx, xxx xxxxxxxxxx xx xxx xxxxxx xxx, xxx xxxxxx xx xxxx xx xxxxxx, xxx xxxxxx xxxxxxxxxxx, xxx xx xx. Xx xxxxxxx [**XxxxxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn298314), xxx xxxx'x xxxxxxxxxx x xxxxxxxx xxxxxxxxx xxxxxxxx xxx xxx xxxxxx xxx.
+**注**  ソース アプリの最終的なウィンドウ サイズは、複数の異なる要素が考慮されて決定されます。たとえば、ソース アプリの設定、画面上のアプリの数、画面の向きなどです。 [
+            **DesiredRemainingView**](https://msdn.microsoft.com/library/windows/apps/dn298314) を設定しても、ソース アプリの特定のウィンドウ動作が保証されるわけではありません。
 
  
 
@@ -117,108 +119,112 @@ options.DesiredRemainingView = Windows.UI.ViewManagement.ViewSizePreference.UseL
 var success = await Windows.System.Launcher.LaunchUriAsync(uriContoso, options);
 ```
 
-## Xxxxxxx Xxxx xxx XXX xxxxxxx
+## Windows マップ アプリの URI スキーム
 
 
-Xxxx xxx xxx xxx xxx **xxxxxxxx:**, **xx-xxxxx-xx:**, xxx **xx-xxxx-xx:** XXX xxxxxxx xx [xxxxxx xxx Xxxxxxx Xxxx xxx](launch-maps-app.md) xx xxxxxxxx xxxx, xxxxxxxxxx, xxx xxxxxx xxxxxxx. Xxx xxxxxxx, xxx xxxxxxxxx XXX xxxxx xxx Xxxxxxx Xxxx xxx xxx xxxxxxxx x xxx xxxxxxxx xxxx Xxx Xxxx Xxxx.
+アプリで **bingmaps:**、**ms-drive-to:**、**ms-walk-to:** の各 URI スキームを使って、[Windows マップ アプリを起動し](launch-maps-app.md)、特定の地図、ルート案内、検索結果を表示できます。 たとえば、次の URI は、Windows マップ アプリを開き、ニューヨークを中心とした地図を表示します。
 
 `bingmaps:?cp=40.726966~-74.006076`
 
-![xx xxxxxxx xx xxx xxxxxxx xxxx xxx.](images/mapnyc.png)
+![Windows マップ アプリの例。](images/mapnyc.png)
 
-Xxx xxxx xxxx, xxx [Xxxxxx xxx Xxxxxxx Xxxx xxx](launch-maps-app.md). Xx xxx xxx xxx xxxxxxx xx xxxx xxx xxx, xxx [Xxxxxxx xxxx xxxx YX, YX, xxx Xxxxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt219695).
+詳しくは、「[Windows マップ アプリの起動](launch-maps-app.md)」をご覧ください。 独自のアプリでマップ コントロールを使うには、「[2D、3D、Streetside ビューでの地図の表示](https://msdn.microsoft.com/library/windows/apps/mt219695)」をご覧ください。
 
-## Xxxxxxx Xxxxxxxx xxx XXX xxxxxx
+## Windows 設定アプリの URI スキーム
 
 
-Xxxx xxx xxx xxx xxx **xx-xxxxxxxx:** XXX xxxxxx xx [xxxxxx xxx Xxxxxxx Xxxxxxxx xxx](launch-settings-app.md). Xxxxxxxxx xx xxx Xxxxxxxx xxx xx xx xxxxxxxxx xxxx xx xxxxxxx x xxxxxxx-xxxxx xxx. Xx xxxx xxx xxx'x xxxxxx x xxxxxxxxx xxxxxxxx, xx xxxxxxxxx xxxxxxxxx xxx xxxx x xxxxxxxxxx xxxx xx xxx xxxxxxx xxxxxxxx xxx xxxx xxxxxxxx. Xxx xxxxxxx, xxx xxxxxxxxx XXX xxxxx xxx Xxxxxxxx xxx xxx xxxxxxxx xxx xxxxxx xxxxxxx xxxxxxxx.
+アプリで **ms-settings:** URI スキームを使って、[Windows 設定アプリを起動](launch-settings-app.md)できます。 設定アプリの起動は、個人データにアクセスするアプリの開発の重要な部分です。 アプリが機密性の高いリソースにアクセスできない場合、そのリソースのプライバシー設定への便利なリンクをユーザーに提供することをお勧めします。 たとえば、次の URI は設定アプリを開き、カメラのプライバシー設定を表示します。
 
 `ms-settings:privacy-webcam`
 
-![xxxxxx xxxxxxx xxxxxxxx.](images/privacyawarenesssettingsapp.png)
+![カメラのプライバシー設定。](images/privacyawarenesssettingsapp.png)
 
-Xxx xxxx xxxx, xxx [Xxxxxx xxx Xxxxxxx Xxxxxxxx xxx](launch-settings-app.md) xxx [Xxxxxxxxxx xxx xxxxxxx-xxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/hh768223).
+詳しくは、「[Windows 設定アプリの起動](launch-settings-app.md)」と「[個人データにアクセスするアプリのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh768223)」をご覧ください。
 
-## Xxxxxxx Xxxxx xxx XXX xxxxxx
+## Windows ストア アプリの URI スキーム
 
 
-Xxxx xxx xxx xxx xxx **xx-xxxxxxx-xxxxx:** XXX xxxxxx xx [Xxxxxx xxx Xxxxxxx Xxxxx xxx](launch-store-app.md). Xxxx xxxxxxx xxxxxx xxxxx, xxxxxxx xxxxxx xxxxx, xxx xxxxxx xxxxx, xxx. Xxx xxxxxxx, xxx xxxxxxxxx XXX xxxxx xxx Xxxxxxx Xxxxx xxx xxx xxxxxxxx xxx xxxx xxxx xx xxx Xxxxx.
+アプリで **ms-windows-store:** URI スキームを使って、[Windows ストア アプリを起動](launch-store-app.md)できます。 製品の詳細ページ、製品のレビュー ページ、検索ページなどを開きます。たとえば、次の URI は、Windows ストア アプリを開き、ストアのホーム ページを起動します。
 
 `ms-windows-store://home/`
 
-Xxx xxxx xxxx, xxx [Xxxxxx xxx Xxxxxxx Xxxxx xxx](launch-store-app.md).
+詳しくは、「[Windows ストア アプリの起動](launch-store-app.md)」をご覧ください。
 
-## Xxxx xxx XXX xxxxxx
+## 通話アプリの URI スキーム
 
 
-Xxxx xxx xxx xxx xxx **xx-xxxx:** XXX xxxxxx xx xxxxxx xxx Xxxx xxx.
+アプリで **ms-call:** URI スキームを使って、通話アプリを起動できます。
 
-| XXX Xxxxxx       | Xxxxxxx                               |
+| URI スキーム       | 結果                               |
 |------------------|---------------------------------------|
-| xx-xxxx:xxxxxxxx | Xxxxxxxx xxx Xxxxx xxx xxxxxxxx xxxx. |
+| ms-call:settings | 通話アプリの設定ページを起動します。 |
 
  
 
-## Xxxx xxx XXX xxxxxx
+## チャット アプリの URI スキーム
 
 
-Xxxx xxx xxx xxx xxx **xx-xxxx:** XXX xxxxxx xx xxxxxx xxx Xxxxxxxxx xxx.
+アプリで **ms-chat:** URI スキームを使って、メッセージング アプリを起動できます。
 
-| XXX xxxxxx                               | Xxxxxxx                                                                                                                                                                                |
+| URI スキーム                               | 結果                                                                                                                                                                                |
 |------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| xx-xxxx:                                 | Xxxxxxxx xxx Xxxxxxxxx xxx.                                                                                                                                                            |
-| xx-xxxx:?XxxxxxxXX={xxxxxxxxx}           | Xxxxxx xxx xxxxxxxxx xxxxxxxxxxx xx xx xxxxxxxx xxxx x xxxxxxxxxx xxxxxxx’x xxxxxxxxxxx.                                                                                               |
-| xx-xxxx:?Xxxx={xxxx}                     | Xxxxxx xxx xxxxxxxxx xxxxxxxxxxx xx xx xxxxxxxx xxxx x xxxxxx xx xxx xx xxx xxxxxxx xx xxx xxxxxxx.                                                                                    |
-| xx-xxxx:?Xxxxxxxxx={xxxxxxx}&Xxxx={xxxx} | Xxxxxx xxx xxxxxxxxx xxxxxxxxxxx xx xx xxxxxxxx xxxx x xxxxxxxxxx xxxxxxxxx' xxxxxxxxxxx, xxx xxxx x xxxxxx xx xxx xx xxx xxxxxxx xx xxx xxxxxxx. Xxxx: Xxxxxxxxx xxx xx xxxxxxxxxxxx. |
-| xx-xxxx:?XxxxxxxxxXx={xxxxxxxxxXx}       | Xxxxxx xxx xxxxxxxxx xxxxxxxxxxx xx xx xxxxxxxx xxxx x xxxxxxxxxx xxxxxxxxx XX.                                                                                                        |
+| ms-chat:                                 | メッセージング アプリを起動します。                                                                                                                                                            |
+| ms-chat:?ContactID={contacted}           | 特定の連絡先の情報を使ってメッセージング アプリケーションを起動することを許可します。                                                                                               |
+| ms-chat:?Body={body}                     | メッセージの内容として使用する文字列を使ってメッセージング アプリケーションを起動することを許可します。                                                                                    |
+| ms-chat:?Addresses={address}&Body={body} | 特定のアドレスの情報とメッセージの内容として使用する文字列を使って、メッセージング アプリケーションを起動することを許可します。 注: アドレスは連結することができます。 |
+| ms-chat:?TransportId={transportId}       | 特定のトランスポート ID を使ってメッセージング アプリケーションを起動することを許可します。                                                                                                        |
 
  
 
-## Xxxxx XXX xxxxxx
+## メールの URI スキーム
 
 
-Xxxx xxx xxx xxx xxx **xxxxxx:** XXX xxxxxx xx xxxxxx xxx xxxxxxx xxxx xxx.
+アプリで **mailto:** URI スキームを使って、既定のメール アプリを起動できます。
 
-| XXX Xxxxxx               | Xxxxxxx                                                                                                                                                     |
+| URI スキーム               | 結果                                                                                                                                                     |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| xxxxxx:                  | Xxxxxxxx xxx xxxxxxx xxxxx xxx.                                                                                                                             |
-| xxxxxx:\[xxxxx xxxxxxx\] | Xxxxxxxx xxx xxxxx xxx xxx xxxxxxx x xxx xxxxxxx xxxx xxx xxxxxxxxx xxxxx xxxxxxx xx xxx Xx xxxx. Xxxx xxxx xxx xxxxx xx xxx xxxx xxxxx xxx xxxx xxxx xxxx. |
+| mailto:                  | 既定のメール アプリを起動します。                                                                                                                             |
+| mailto:\[email address\] | メール アプリを起動し、宛先行で指定されているメール アドレスを使用して新しいメッセージを作成します。 メールは、ユーザーが [送信] をタップするまで送信されません。 |
 
  
 
-## XXXX XXX xxxxxx
+## HTTP の URI スキーム
 
 
-Xxxx xxx xxx xxx xxx **xxxx:** XXX xxxxxx xx xxxxxx xxx xxxxxxx xxx xxxxxxx.
+アプリで **http:** URI スキームを使って、既定の Web ブラウザーを起動できます。
 
-| XXX Xxxxxx | Xxxxxxx                           |
+| URI スキーム | 結果                           |
 |------------|-----------------------------------|
-| xxxx:      | Xxxxxxxx xxx xxxxxxx xxx xxxxxxx. |
+| http:      | 既定の Web ブラウザーを起動します。 |
 
  
 
-## Xxxxxx Xxxxxxx xxx XXX xxxxxx
+## 近隣の施設検索アプリの URI スキーム
 
 
-Xxxx xxx xxx xxx xxx **xx-xxxxxxxxxx:** XXX xxxxxx xx xxxxxx xxx Xxxxxx Xxxxxxx xxx.
+アプリで **ms-yellowpage:** URI スキームを使って、近隣の施設検索アプリを起動できます。
 
-| XXX Xxxxxx                                            | Xxxxxxx                                                                               |
+| URI スキーム                                            | 結果                                                                               |
 |-------------------------------------------------------|---------------------------------------------------------------------------------------|
-| xx-xxxxxxxxxx:?xxxxx=\[xxxxxxx\]&xxxxxx=\[Xxxxxx|XY\] | Xxxxxxxx xxx xxxxxxxxx Xxxxx xx Xxxxxxxx (XXX) xxxxxx xxx xxxx xxxxxxxx xxxx xxx XXX. |
+| ms-yellowpage:?input=\[keyword\]&method=\[String|T9\] | この新しい URI をサポートしているインストール済みの関心のあるポイント (POI) 検索アプリを起動します。 |
 
  
 
-## Xxxxxx xxx XXX xxxxxx
+## People アプリの URI スキーム
 
 
-Xxxx xxx xxx xxx xxx **xx-xxxxxx:** XXX xxxxxx xx xxxxxx xxx Xxxxxx xxx.
+アプリで **ms-people:** URI スキームを使って、People アプリを起動できます。
 
-Xxx xxxx xxxx, xxx [Xxxxxx xxx Xxxxxx xxx](launch-people-apps.md).
+詳しくは、「[People アプリの起動](launch-people-apps.md)」をご覧ください。
+
+ 
 
  
 
- 
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

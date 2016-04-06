@@ -1,51 +1,50 @@
 ---
-Xxxxxxxxxxx: X xxx xxxx xxxxxxx xxxxxx x xxxx xxxx xxxx xxx xxxx xxxxxxx xxx xxxxxxx xxxxx xxx Xxxxxxxxx Xxxx xxxxxxxxx xxxxxx. Xxxxxxxxxx xxx xxxx xxxxxx xxx xxxxxxxx xx x xxx xxxx xxxxxxx.
-xxxxx: Xxx xxxx
-xx.xxxxxxx: XYXXXYYY-XYXY-YXYY-XXYX-YYXXYXXXYXXY
-xxxxx: Xxx xxxx
-xxxxxxxx: xxxxxx.xxx
+Description: A web view control embeds a view into your app that renders web content using the Microsoft Edge rendering engine. Hyperlinks can also appear and function in a web view control.
+title: Web view
+ms.assetid: D3CFD438-F9D6-4B72-AF1D-16EF2DFC1BB1
+label: Web view
+template: detail.hbs
 ---
 
-# Xxx xxxx
+# Web view
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-X xxx xxxx xxxxxxx xxxxxx x xxxx xxxx xxxx xxx xxxx xxxxxxx xxx xxxxxxx xxxxx xxx Xxxxxxxxx Xxxx xxxxxxxxx xxxxxx. Xxxxxxxxxx xxx xxxx xxxxxx xxx xxxxxxxx xx x xxx xxxx xxxxxxx.
+A web view control embeds a view into your app that renders web content using the Microsoft Edge rendering engine. Hyperlinks can also appear and function in a web view control.
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxXxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227702)
+-   [**WebView class**](https://msdn.microsoft.com/library/windows/apps/br227702)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
+## Is this the right control?
 
-Xxx x xxx xxxx xxxxxxx xx xxxxxxx xxxxxx xxxxxxxxx XXXX xxxxxxx xxxx x xxxxxx xxx xxxxxx, xxxxxxxxxxx xxxxxxxxx xxxx, xx xxxxxxx xxxxx xx xxxx xxx xxxxxxx. Xxxx xxxxxxx xxx xxxx xxxxxxx xxxxxx xxxx xxx xxxxxxxxxxx xxxxxxx xxx xxxxxx xxx xxxx xxx'x xxxx.
+Use a web view control to display richly formatted HTML content from a remote web server, dynamically generated code, or content files in your app package. Rich content can also contain script code and communicate between the script and your app's code.
 
-## Xxxxxx x xxx xxxx
+## Create a web view
 
-**Xxxxxx xxx xxxxxxxxxx xx x xxx xxxx**
+**Modify the appearance of a web view**
 
-[
-            **XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) xx xxx x [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) xxxxxxxx, xx xx xxxxx'x xxxx x xxxxxxx xxxxxxxx. Xxxxxxx, xxx xxx xxx xxxxxxx xxxxxxxxxx xx xxxxxxx xxxx xxxxxx xxxxxxx xx xxx xxx xxxx.
-- Xx xxxxxxxxx xxx xxxxxxx xxxx, xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) xxxxxxxxxx. 
-- Xx xxxxxxxxx, xxxxx, xxxx, xxx xxxxxx x xxx xxxx, xxx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.rendertransform.aspx) xxxxxxxx.
-- Xx xxxxxxx xxx xxxxxxx xx xxx xxx xxxx, xxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx) xxxxxxxx.
-- Xx xxxxxxx x xxxxx xx xxx xx xxx xxx xxxx xxxxxxxxxx xxxx xxx XXXX xxxxxxx xxxx xxx xxxxxxx x xxxxx, xxx xxx [**XxxxxxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultbackgroundcolor.aspx) xxxxxxxx. 
+[**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) is not a [**Control**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.aspx) subclass, so it doesn't have a control template. However, you can set various properties to control some visual aspects of the web view.
+- To constrain the display area, set the [**Width**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.width.aspx) and [**Height**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.height.aspx) properties. 
+- To translate, scale, skew, and rotate a web view, use the [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.rendertransform.aspx) property.
+- To control the opacity of the web view, set the [**Opacity**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.opacity.aspx) property.
+- To specify a color to use as the web page background when the HTML content does not specify a color, set the [**DefaultBackgroundColor**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultbackgroundcolor.aspx) property. 
 
-**Xxx xxx xxx xxxx xxxxx**
+**Get the web page title**
 
-Xxx xxx xxx xxx xxxxx xx xxx XXXX xxxxxxxx xxxxxxxxx xxxxxxxxx xx xxx xxx xxxx xx xxxxx xxx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.documenttitle.aspx) xxxxxxxx. 
+You can get the title of the HTML document currently displayed in the web view by using the [**DocumentTitle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.documenttitle.aspx) property. 
 
-**Xxxxx xxxxxx xxx xxx xxxxx**
+**Input events and tab order**
 
-Xxxxxxxx XxxXxxx xx xxx x Xxxxxxx xxxxxxxx, xx xxxx xxxxxxx xxxxxxxx xxxxx xxxxx xxx xxxxxxxxxxx xx xxx xxx xxxxxxxx. Xx xxxxxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.focus.aspx) xxxxxx, xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.gotfocus.aspx) xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.lostfocus.aspx) xxxxxx, xxx xx xxx xx xxx-xxxxxxx xxxxxxxxxx. Xxx xxxxxxxx xx xxx xxx xxxxxxxx xx xxx xxxx xx xxx xxxxxxxx xx xxx XXXX xxxxxxxx xxxxx. Xxx xxx xxxxxxxx xxxxxxxx xxx xxxxxxxx xx xxx xxx xxxx xxxxxxx xxxx xxx xxxxxxx xxxxx xxxxx. 
+Although WebView is not a Control subclass, it will receive keyboard input focus and participate in the tab sequence. It provides a [**Focus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.focus.aspx) method, and [**GotFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.gotfocus.aspx) and [**LostFocus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.lostfocus.aspx) events, but it has no tab-related properties. Its position in the tab sequence is the same as its position in the XAML document order. The tab sequence includes all elements in the web view content that can receive input focus. 
 
-Xx xxxxxxxxx xx xxx Xxxxxx xxxxx xx xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) xxxxx xxxx, xxx xxxx xxxxx’x xxxxxxx xxxx xx xxx xxxx xxxxx xxxxxx xxxxxxxxx xxxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), xxxx xx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx), [**XxxXx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx), xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx). Xxxxxxx, xxx xxx xxx [**XxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) xxxx xxx XxxxXxxxxx **xxxx** xxxxxxxx xx xxx xxx XXXX xxxxx xxxxxxxx, xxx xx xxx **xxxxxx.xxxxxxxx.xxxxxx** xxxx xxx XXXX xxxxx xxxxxxx xx xxxxxx xxx xxxxxxxxxxx xxxxx [**XxxXxxx.XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx).
+As indicated in the Events table on the [**WebView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.aspx) class page, web view doesn’t support most of the user input events inherited from [**UIElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.aspx), such as [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keydown.aspx), [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.keyup.aspx), and [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.uielement.pointerpressed.aspx). Instead, you can use [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) with the JavaScript **eval** function to use the HTML event handlers, and to use **window.external.notify** from the HTML event handler to notify the application using [**WebView.ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx).
 
-### Xxxxxxxxxx xx xxxxxxx
+### Navigating to content
 
-Xxx xxxx xxxxxxxx xxxxxxx XXXx xxx xxxxx xxxxxxxxxx: [**XxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx), [**XxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx), [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx), [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx), [**XxxXxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx), xxx [**XxxXxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx). Xxx xxx xxx xxxxx xx xxx xxxxxxx xxx xxxxxxxx xxxxxxxxxxxx xx xxxx xxx. 
+Web view provides several APIs for basic navigation: [**GoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goback.aspx), [**GoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.goforward.aspx), [**Stop**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.stop.aspx), [**Refresh**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.refresh.aspx), [**CanGoBack**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoback.aspx), and [**CanGoForward**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cangoforward.aspx). You can use these to add typical web browsing capabilities to your app. 
 
-Xx xxx xxx xxxxxxx xxxxxxx xx xxx xxx xxxx, xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.source.aspx) xxxxxxxx xx XXXX. Xxx XXXX xxxxxx xxxxxxxxxxxxx xxxxxxxx xxx xxxxxx xx x [**Xxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.uri.aspx). 
+To set the initial content of the web view, set the [**Source**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.source.aspx) property in XAML. The XAML parser automatically converts the string to a [**Uri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.uri.aspx). 
 
 ```xaml
 <!-- Source file is on the web. -->
@@ -58,38 +57,38 @@ Xx xxx xxx xxxxxxx xxxxxxx xx xxx xxx xxxx, xxx xxx [**Xxxxxx**](https://msdn.mi
 <WebView x:Name="webView3" Source="ms-appx-web:///help/about.html"/>
 ```
 
-Xxx Xxxxxx xxxxxxxx xxx xx xxx xx xxxx, xxx xxxxxx xxxx xxxxx xx, xxx xxxxxxxxx xxx xxx xx xxx **Xxxxxxxx** xxxxxxx xx xxxx xxxxxxx xx xxxx. 
+The Source property can be set in code, but rather than doing so, you typically use one of the **Navigate** methods to load content in code. 
 
-Xx xxxx xxx xxxxxxx, xxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigate.aspx) xxxxxx xxxx x **Xxx** xxxx xxxx xxx xxxx xx xxxxx xxxxxx. 
+To load web content, use the [**Navigate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigate.aspx) method with a **Uri** that uses the http or https scheme. 
 
 ```csharp
 webView1.Navigate("http://www.contoso.com");
 ```
 
-Xx xxxxxxxx xx x XXX xxxx x XXXX xxxxxxx xxx XXXX xxxxxxx, xxx xxx [**XxxxxxxxXxxxXxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx) xxxxxx. Xxxx xxxxxx xxxxxxxx xxxx [**XxxxXxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) xxx [**XxxxXxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx) xxx xxx [**XxxxXxxxxxxXxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx) xxxxxxxx xxxxx. 
+To navigate to a URI with a POST request and HTTP headers, use the [**NavigateWithHttpRequestMessage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatewithhttprequestmessage.aspx) method. This method supports only [**HttpMethod.Post**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.post.aspx) and [**HttpMethod.Get**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httpmethod.get.aspx) for the [**HttpRequestMessage.Method**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.web.http.httprequestmessage.method.aspx) property value. 
 
-Xx xxxx xxxxxxxxxxxx xxx xxxxxxxxxxx xxxxxxx xxxx xxxx xxx’x [**XxxxxXxxxxx**]() xx [**XxxxxxxxxXxxxxx**]() xxxx xxxxxx, xxx xxx **Xxxxxxxx** xxxxxx xxxx x **Xxx** xxxx xxxx xxx [xx-xxxxxxx xxxxxx](). Xxx xxx xxxx xxxxxxx xxx xxxx xxxxxx xxxxxxxx xxx xx xxxxx xxxx xxxxxxx xx x xxxxxxxxx xxxxx xxx xxxxx xx xxxxxxxxx xxxxxx. Xxxx xxxxxxx xxxxxxxxxx xx XXXx xxxx xx xx-xxxxxxx:///xxxxx/*xxxxxx*/*xxxx*.xxxx xxx xx-xxxxxxx:///xxxx/*xxxxxx*/*xxxx*.xxxx . (Xx xxxx xxxxxxxxxx xx xxxxxxxxx xxxxx, xxx [**XxxxxxxxXxXxxxxXxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx).) 
+To load uncompressed and unencrypted content from your app’s [**LocalFolder**]() or [**TemporaryFolder**]() data stores, use the **Navigate** method with a **Uri** that uses the [ms-appdata scheme](). The web view support for this scheme requires you to place your content in a subfolder under the local or temporary folder. This enables navigation to URIs such as ms-appdata:///local/*folder*/*file*.html and ms-appdata:///temp/*folder*/*file*.html . (To load compressed or encrypted files, see [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx).) 
 
-Xxxx xx xxxxx xxxxx-xxxxx xxxxxxxxxx xx xxxxxxxx xxxx xxx xxxxxxx xx xxxxx xxxxx-xxxxx xxxxxxxxxx. Xxx xxxxxxx, xxx xxx xxxxxxxx xx xx-xxxxxxx:///xxxx/xxxxxxY/xxxx.xxxx, xxx xxx xxx’x xxxx x xxxx xx xxxx xxxx xx xx-xxxxxxx:///xxxx/xxxxxxY/xxxx.xxxx. Xxxxxxx, xxx xxx xxxxx xxxx xx XXXX xxxxxxx xx xxx xxx xxxxxxx xxxxx xxx **xx-xxxx-xxx xxxxxx**, xxx xx xxx xxxxxxx xxxxx xxx **xxxx** xxx **xxxxx** XXX xxxxxxx.
+Each of these first-level subfolders is isolated from the content in other first-level subfolders. For example, you can navigate to ms-appdata:///temp/folder1/file.html, but you can’t have a link in this file to ms-appdata:///temp/folder2/file.html. However, you can still link to HTML content in the app package using the **ms-appx-web scheme**, and to web content using the **http** and **https** URI schemes.
 
 ```csharp
 webView1.Navigate("ms-appdata:///local/intro/welcome.html");
 ```
 
-Xx xxxx xxxxxxx xxxx xxx xxxx xxx xxxxxxx, xxx xxx **Xxxxxxxx** xxxxxx xxxx x **Xxx** xxxx xxxx xxx [**xx-xxxx-xxx xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/jj655406.aspx#ms_appx_web). 
+To load content from the your app package, use the **Navigate** method with a **Uri** that uses the [**ms-appx-web scheme**](https://msdn.microsoft.com/library/windows/apps/xaml/jj655406.aspx#ms_appx_web). 
 
 ```csharp
 webView1.Navigate("ms-appx-web:///help/about.html");
 ```
 
-Xxx xxx xxxx xxxxx xxxxxxx xxxxxxx x xxxxxx xxxxxxxx xxxxx xxx [**XxxxxxxxXxXxxxxXxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx) xxxxxx. Xxxx xxxxxxx xxxxxxxx xxxxxxxxx xxxx xx xxxxxxxxxxx xxx xxxxxxx xxx-xxxxx xxxxxxx xxx xxxxxxx xxx, xx xxxxxxxxxx xxxxxxx xxxx x xxxxxxxxxx xxxx.
+You can load local content through a custom resolver using the [**NavigateToLocalStreamUri**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetolocalstreamuri.aspx) method. This enables advanced scenarios such as downloading and caching web-based content for offline use, or extracting content from a compressed file.
 
-### Xxxxxxxxxx xx xxxxxxxxxx xxxxxx
+### Responding to navigation events
 
-Xxx xxx xxxx xxxxxxx xxxxxxxx xxxxxxx xxxxxx xxxx xxx xxx xxx xx xxxxxxx xx xxxxxxxxxx xxx xxxxxxx xxxxxxx xxxxxx. Xxx xxxxxx xxxxx xx xxx xxxxxxxxx xxxxx xxx xxx xxxx xxx xxxx xxxxxxx: [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx), [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx), [**XXXXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx), [**XxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)
+The web view control provides several events that you can use to respond to navigation and content loading states. The events occur in the following order for the root web view content: [**NavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationstarting.aspx), [**ContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.contentloading.aspx), [**DOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.domcontentloaded.aspx), [**NavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigationcompleted.aspx)
 
 
-**XxxxxxxxxxXxxxxxxx** - Xxxxxx xxxxxx xxx xxx xxxx xxxxxxxxx xx xxx xxxxxxx. Xxx xxx xxxxxx xxxxxxxxxx xx x xxxxxxx xxx xxxx xxxxx xx xxxxxxx xxx XxxXxxxXxxxxxxxxxXxxxxxxxXxxxxXxxx.Xxxxxx xxxxxxxx xx xxxx. 
+**NavigationStarting** - Occurs before the web view navigates to new content. You can cancel navigation in a handler for this event by setting the WebViewNavigationStartingEventArgs.Cancel property to true. 
 
 ```csharp
 webView1.NavigationStarting += webView1_NavigationStarting;
@@ -102,7 +101,7 @@ private void webView1_NavigationStarting(object sender, WebViewNavigationStartin
 }
 ```
 
-**XxxxxxxXxxxxxx** - Xxxxxx xxxx xxx xxx xxxx xxx xxxxxxx xxxxxxx xxx xxxxxxx. 
+**ContentLoading** - Occurs when the web view has started loading new content. 
 
 ```csharp
 webView1.ContentLoading += webView1_ContentLoading;
@@ -117,7 +116,7 @@ private void webView1_ContentLoading(WebView sender, WebViewContentLoadingEventA
 }
 ```
 
-**XXXXxxxxxxXxxxxx** - Xxxxxx xxxx xxx xxx xxxx xxx xxxxxxxx xxxxxxx xxx xxxxxxx XXXX xxxxxxx. 
+**DOMContentLoaded** - Occurs when the web view has finished parsing the current HTML content. 
 
 ```csharp
 webView1.DOMContentLoaded += webView1_DOMContentLoaded;
@@ -132,7 +131,7 @@ private void webView1_DOMContentLoaded(WebView sender, WebViewDOMContentLoadedEv
 }
 ```
 
-**XxxxxxxxxxXxxxxxxxx** - Xxxxxx xxxx xxx xxx xxxx xxx xxxxxxxx xxxxxxx xxx xxxxxxx xxxxxxx xx xx xxxxxxxxxx xxx xxxxxx. Xx xxxxxxxxx xxxxxxx xxxxxxxxxx xxx xxxxxx, xxxxx xxx [**XxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) xxx [**XxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) xxxxxxxxxx xx xxx [**XxxXxxxXxxxxxxxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx) xxxxx. 
+**NavigationCompleted** - Occurs when the web view has finished loading the current content or if navigation has failed. To determine whether navigation has failed, check the [**IsSuccess**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.issuccess.aspx) and [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.weberrorstatus.aspx) properties of the [**WebViewNavigationCompletedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewnavigationcompletedeventargs.aspx) class. 
 
 ```csharp
 webView1.NavigationCompleted += webView1_NavigationCompleted;
@@ -151,31 +150,27 @@ private void webView1_NavigationCompleted(WebView sender, WebViewNavigationCompl
 }
 ```
 
-Xxxxxxx xxxxxx xxxxx xx xxx xxxx xxxxx xxx xxxx **xxxxxx** xx xxx xxx xxxx xxxxxxx: 
-- [
-            **XxxxxXxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationstarting.aspx) - Xxxxxx xxxxxx x xxxxx xx xxx xxx xxxx xxxxxxxxx xx xxx xxxxxxx. 
-- [
-            **XxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framecontentloading.aspx) - Xxxxxx xxxx x xxxxx xx xxx xxx xxxx xxx xxxxxxx xxxxxxx xxx xxxxxxx. 
-- [
-            **XxxxxXXXXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) - Xxxxxx xxxx x xxxxx xx xxx xxx xxxx xxx xxxxxxxx xxxxxxx xxx xxxxxxx XXXX xxxxxxx. 
-- [
-            **XxxxxXxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) - Xxxxxx xxxx x xxxxx xx xxx xxx xxxx xxx xxxxxxxx xxxxxxx xxx xxxxxxx. 
+Similar events occur in the same order for each **iframe** in the web view content: 
+- [**FrameNavigationStarting**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationstarting.aspx) - Occurs before a frame in the web view navigates to new content. 
+- [**FrameContentLoading**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framecontentloading.aspx) - Occurs when a frame in the web view has started loading new content. 
+- [**FrameDOMContentLoaded**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framedomcontentloaded.aspx) - Occurs when a frame in the web view has finished parsing its current HTML content. 
+- [**FrameNavigationCompleted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.framenavigationcompleted.aspx) - Occurs when a frame in the web view has finished loading its content. 
 
-### Xxxxxxxxxx xx xxxxxxxxx xxxxxxxx
+### Responding to potential problems
 
-Xxx xxx xxxxxxx xx xxxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xxxx xx xxxx xxxxxxx xxxxxxx, xxxxxxx xxxx xxx xxxx xxx'x xxxx, xxx xxxxxxxx xx xxxxxx xxxxxxx. 
+You can respond to potential problems with the content such as long running scripts, content that web view can't load, and warnings of unsafe content. 
 
-Xxxx xxx xxxxx xxxxxx xxxxxxxxxxxx xxxxx xxxxxxx xxx xxxxxxx. Xxx [**XxxxXxxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.longrunningscriptdetected.aspx) xxxxx xxxxxx xxxxxxxxxxxx xxxxx xxx xxx xxxx xxxxxxxx XxxxXxxxxx xxx xxxxxxxx xx xxxxxxxxxxx xx xxxxxxxxx xxx xxxxxx. Xx xxxxxxxxx xxx xxxx xxx xxxxxx xxx xxxx xxxxxxx, xxxxx xxx [**XxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime.aspx) xxxxxxxx xx xxx [**XxxXxxxXxxxXxxxxxxXxxxxxXxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.aspx). Xx xxxx xxx xxxxxx, xxx xxx xxxxx xxxx [**XxxxXxxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution.aspx) xxxxxxxx xx **xxxx**. Xxx xxxxxx xxxxxx xxxx xxx xxxxxxx xxxxx xxxxxx xx xx xxxxxxxx xxxxxx x xxxxxxxxxx xxx xxxx xxxxxxxxxx. 
+Your app might appear unresponsive while scripts are running. The [**LongRunningScriptDetected**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.longrunningscriptdetected.aspx) event occurs periodically while the web view executes JavaScript and provides an opportunity to interrupt the script. To determine how long the script has been running, check the [**ExecutionTime**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.executiontime.aspx) property of the [**WebViewLongRunningScriptDetectedEventArgs**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.aspx). To halt the script, set the event args [**StopPageScriptExecution**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewlongrunningscriptdetectedeventargs.stoppagescriptexecution.aspx) property to **true**. The halted script will not execute again unless it is reloaded during a subsequent web view navigation. 
 
-Xxx xxx xxxx xxxxxxx xxxxxx xxxx xxxxxxxxx xxxx xxxxx. Xxxx xx xxxxxxx xx xxxx xx xxxx xxxxxxx xxxx xxx xxx xxxx xxx'x xxxx, xxx [**XxxxxxxxxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unviewablecontentidentified.aspx) xxxxx xxxxxx. Xxx xxx xxxxxx xxxx xxxxx xxx xxxxxx xxx xxxx, xx xxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.system.launcher.aspx) xxxxx xx xxxxxxxx xxx xxxx xx xx xxxxxxxx xxxxxxx xx xxxxxxx xxx.
+The web view control cannot host arbitrary file types. When an attempt is made to load content that the web view can't host, the [**UnviewableContentIdentified**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unviewablecontentidentified.aspx) event occurs. You can handle this event and notify the user, or use the [**Launcher**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.system.launcher.aspx) class to redirect the file to an external browser or another app.
 
-Xxxxxxxxx, xxx [**XxxxxxxxxxxXxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsupportedurischemeidentified.aspx) xxxxx xxxxxx xxxx x XXX xxxxxx xxxx'x xxx xxxxxxxxx xx xxxxxxx xx xxx xxx xxxxxxx, xxxx xx xxxxxxxxx:// xx xxxxxx://. Xxx xxx xxxxxx xxxx xxxxx xx xxxxxxx xxxxxx xxxxxxxx xxxxxxx xx xxxxxxxx xxx xxxxxxx xxxxxx xxxxxxxx xx xxxxxx xxx XXX.
+Similarly, the [**UnsupportedUriSchemeIdentified**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsupportedurischemeidentified.aspx) event occurs when a URI scheme that's not supported is invoked in the web content, such as fbconnect:// or mailto://. You can handle this event to provide custom behavior instead of allowing the default system launcher to launch the URI.
 
-Xxx [**XxxxxxXxxxxxxXxxxxxxXxxxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsafecontentwarningdisplaying.aspx) xxxxxx xxxx xxx xxx xxxx xxxxx x xxxxxxx xxxx xxx xxxxxxx xxxx xxx xxxxxxxx xx xxxxxx xx xxx XxxxxXxxxxx Xxxxxx. Xx xxx xxxx xxxxxxx xx xxxxxxxx xxx xxxxxxxxxx, xxxxxxxxxx xxxxxxxxxx xx xxx xxxx xxxx xxx xxxxxxx xxx xxxxxxx xxx xxxx xxx xxxxx.
+The [**UnsafeContentWarningDisplayingevent**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.unsafecontentwarningdisplaying.aspx) occurs when the web view shows a warning page for content that was reported as unsafe by the SmartScreen Filter. If the user chooses to continue the navigation, subsequent navigation to the page will not display the warning nor fire the event.
 
-### Xxxxxxxx xxxxxxx xxxxx xxx xxx xxxx xxxxxxx
+### Handling special cases for web view content
 
-Xxx xxx xxx xxx [**XxxxxxxxXxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelement.aspx) xxxxxxxx xxx [**XxxxxxxxXxxxXxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelementchanged.aspx) xxxxx xx xxxxxx, xxxxxxx xx, xxx xxxxxx xxxx-xxxxxx xxxxxxxxxxx xx xxx xxxxxxx, xxxx xx xxxx-xxxxxx xxxxx xxxxxxxx. Xxx xxxxxxx, xxx xxx xxx xxx XxxxxxxxXxxxXxxxxxXxxxxxxXxxxxxx xxxxx xx xxxxxx xxx xxx xxxx xx xxxxxx xxx xxxxxxxx xx xxxx xxx xxxx, xx, xx xxx xxxxxxxxx xxxxxxx xxxxxxxxxxx, xxx x xxxxxxxx xxx xx xxxx xxxxxx xxxx xxxx x xxxx xxxxxx xxx xxxxxxxxxx xx xxxxxxx.
+You can use the [**ContainsFullScreenElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelement.aspx) property and [**ContainsFullScreenElementChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.containsfullscreenelementchanged.aspx) event to detect, respond to, and enable full-screen experiences in web content, such as full-screen video playback. For example, you may use the ContainsFullScreenElementChanged event to resize the web view to occupy the entirety of your app view, or, as the following example illustrates, put a windowed app in full screen mode when a full screen web experience is desired.
 
 ```csharp
 // Assume webView is defined in XAML
@@ -196,9 +191,9 @@ private void webView_ContainsFullScreenElementChanged(WebView sender, object arg
 }
 ```
 
-Xxx xxx xxx xxx [**XxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.newwindowrequested.aspx) xxxxx xx xxxxxx xxxxx xxxxx xxxxxx xxx xxxxxxx xxxxxxxx x xxx xxxxxx xx xx xxxxxxxxx, xxxx xx x xxxxx xxxxxx. Xxx xxx xxx xxxxxxx XxxXxxx xxxxxxx xx xxxxxxx xxx xxxxxxxx xx xxx xxxxxxxxx xxxxxx.
+You can use the [**NewWindowRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.newwindowrequested.aspx) event to handle cases where hosted web content requests a new window to be displayed, such as a popup window. You can use another WebView control to display the contents of the requested window.
 
-Xxx [**XxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) xxxxx xx xxxxxx xxx xxxxxxxx xxxx xxxxxxx xxxxxxx xxxxxxxxxxxx. Xxxxx xxxxxxxxx xxxxxxx xxxxxxxxxxx, XxxxxxxXX xxxxxxx, xxx xxxx xxxxx xxx xxxxx (xxx xxxxxxx, xxxx x xxxxxxxxxx xx xxxxxx). Xx xxxx xxx xxxxxxxx xxxx xxxxxxxx xx xxxx xxxxx, xxx xxxxx xxx xxxxxxxx xx xxxxxxx xxxx xxxxxxxxxx xx xxx xxx xxxxxxxx. Xxx xxxxxxx, xx xxx xxxx xxxx xxxxxxxxxxx xxxxx xxx xxxxxxxxx xxxxxxxxxx xxxxxxxxxxxx xx xxxxxxx xx Xxxxxxx.xxxxxxxxxxxx:
+Use [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) event to enable web features that require special capabilities. These currently include geolocation, IndexedDB storage, and user audio and video (for example, from a microphone or webcam). If your app accesses user location or user media, you still are required to declare this capability in the app manifest. For example, an app that uses geolocation needs the following capability declarations at minimum in Package.appxmanifest:
 
 ```xml
   <Capabilities>
@@ -207,9 +202,9 @@ Xxx [**XxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xa
   </Capabilities>
 ```
 
-Xx xxxxxxxx xx xxx xxx xxxxxxxx xxx [**XxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) xxxxx, xxx xxxx xxxx xxxx xx xxxxxxx xxxxxxxx xxxxxx xxxxxxx xxx xxxx xxxxxxxxxx xxxxxxxx xx xxxxx xxxxxxxxxxxx xx xxxxx xxx xxxxx xxxxxxxx xx xx xxxxxxx.
+In addition to the app handling the [**PermissionRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.permissionrequested.aspx) event, the user will have to approve standard system dialogs for apps requesting location or media capabilities in order for these features to be enabled.
 
-Xxxx xx xx xxxxxxx xx xxx xx xxx xxxxx xxxxxx xxxxxxxxxxx xx x xxx xxxx Xxxx:
+Here is an example of how an app would enable geolocation in a map from Bing:
 
 ```csharp
 // Assume webView is defined in XAML
@@ -225,17 +220,17 @@ private void webView_PermissionRequested(WebView sender, WebViewPermissionReques
 }
 ```
 
-Xx xxxx xxx xxxxxxxx xxxx xxxxx xx xxxxx xxxxxxxxxxxx xxxxxxxxxx xx xxxxxxx xx x xxxxxxxxxx xxxxxxx, xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) xxxxxx xx [**XxxXxxxXxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) xx xxxxxx x [**XxxXxxxXxxxxxxxXxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx) xxxx xxx xx xxxxx xxxx xx x xxxxx xxxx. Xxx [**XxxXxxxXxxxxxxxxxXxxxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx). 
+If your app requires user input or other asynchronous operations to respond to a permission request, use the [**Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx) method of [**WebViewPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.aspx) to create a [**WebViewDeferredPermissionRequest**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewdeferredpermissionrequest.aspx) that can be acted upon at a later time. See [**WebViewPermissionRequest.Defer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewpermissionrequest.defer.aspx). 
 
-Xx xxxxx xxxx xxxxxxxx xxx xxx xx x xxxxxxx xxxxxx xx x xxx xxxx, xx xx xxxxx xxxxx xxxx xxxxxxxx xx xxxxxxxxx, xxxx xxx xxxxxx xxxxxx [**XxxxxXxxxxxxxxXxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cleartemporarywebdataasync.aspx) xx xxxxx xxx xxx xxxxxxx xxxxxx xxxxxxx xxxx x xxx xxxx xxxxxxx. Xxxx xxxxxxxx xxxxxxxxx xxxxx xxxx xxxxxxxxx xxxxxxxxx xxxx. 
+If users must securely log out of a website hosted in a web view, or in other cases when security is important, call the static method [**ClearTemporaryWebDataAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.cleartemporarywebdataasync.aspx) to clear out all locally cached content from a web view session. This prevents malicious users from accessing sensitive data. 
 
-### Xxxxxxxxxxx xxxx xxx xxxx xxxxxxx
+### Interacting with web view content
 
-Xxx xxx xxxxxxxx xxxx xxx xxxxxxx xx xxx xxx xxxx xx xxxxx xxx [**XxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) xxxxxx xx xxxxxx xx xxxxxx xxxxxx xxxx xxx xxx xxxx xxxxxxx, xxx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) xxxxx xx xxx xxxxxxxxxxx xxxx xxxx xxx xxx xxxx xxxxxxx.
+You can interact with the content of the web view by using the [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) method to invoke or inject script into the web view content, and the [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) event to get information back from the web view content.
 
-Xx xxxxxx XxxxXxxxxx xxxxxx xxx xxx xxxx xxxxxxx, xxx xxx [**XxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) xxxxxx. Xxx xxxxxxx xxxxxx xxx xxxxxx xxxx xxxxxx xxxxxx. 
+To invoke JavaScript inside the web view content, use the [**InvokeScriptAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.invokescriptasync.aspx) method. The invoked script can return only string values. 
 
-Xxx xxxxxxx, xx xxx xxxxxxx xx x xxx xxxx xxxxx `webView1` xxxxxxxx x xxxxxxxx xxxxx `setDate` xxxx xxxxx Y xxxxxxxxxx, xxx xxx xxxxxx xx xxxx xxxx. 
+For example, if the content of a web view named `webView1` contains a function named `setDate` that takes 3 parameters, you can invoke it like this. 
 
 ```csharp
 string[] args = {"January", "1", "2000"};
@@ -243,9 +238,9 @@ string returnValue = await webView1.InvokeScriptAsync("setDate", args);
 ```
 
 
-Xxx xxx xxx **XxxxxxXxxxxxXxxxx** xxxx xxx XxxxXxxxxx **xxxx** xxxxxxxx xx xxxxxx xxxxxxx xxxx xxx xxx xxxx.
+You can use **InvokeScriptAsync** with the JavaScript **eval** function to inject content into the web page.
 
-Xxxx, xxx xxxx xx x XXXX xxxx xxx (`nameTextBox.Text`) xx xxxxxxx xx x xxx xx xx XXXX xxxx xxxxxx xx `webView1`. 
+Here, the text of a XAML text box (`nameTextBox.Text`) is written to a div in an HTML page hosted in `webView1`. 
 
 ```csharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -255,15 +250,15 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-Xxxxxxx xx xxx xxx xxxx xxxxxxx xxx xxx **xxxxxx.xxxxxxxx.xxxxxx** xxxx x xxxxxx xxxxxxxxx xx xxxx xxxxxxxxxxx xxxx xx xxxx xxx. Xx xxxxxxx xxxxx xxxxxxxx, xxxxxx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) xxxxx. 
+Scripts in the web view content can use **window.external.notify** with a string parameter to send information back to your app. To receive these messages, handle the [**ScriptNotify**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.scriptnotify.aspx) event. 
 
-Xx xxxxxx xx xxxxxxxx xxx xxxx xx xxxx xxx **XxxxxxXxxxxx** xxxxx xxxx xxxxxxx xxxxxx.xxxxxxxx.xxxxxx, xxx xxxx xxxxxxx xxx xxxx'x XXX xx xxx **XxxxxxxxxxxXxxxxxxXxxXxxxx** xxxxxxx xx xxx xxx xxxxxxxx. (Xxx xxx xx xxxx xx Xxxxxxxxx Xxxxxx Xxxxxx xx xxx Xxxxxxx XXXx xxx xx xxx Xxxxxxx.xxxxxxxxxxxx xxxxxxxx.) Xxx XXXx xx xxxx xxxx xxxx xxx XXXXX, xxx xxx xxxxxxx xxxxxxxxx xxxxxxxxx (xxx xxxxxxx, `https://*.microsoft.com`) xxx xxxx xxxxxx xxxxxxx xxxxxx xxxxxxxxx (xxx xxxxxxx, `https://*.com` xxx `https://*.*`). Xxx xxxxxxxx xxxxxxxxxxx xxxx xxx xxxxx xx xxxxxxx xxxx xxxxxxxxxx xxxx xxx xxx xxxxxxx, xxxx xx xx-xxxxx-xxxxxx:// XXX, xx xx xxxxxx xxxxx [**XxxxxxxxXxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx). 
+To enable an external web page to fire the **ScriptNotify** event when calling window.external.notify, you must include the page's URI in the **ApplicationContentUriRules** section of the app manifest. (You can do this in Microsoft Visual Studio on the Content URIs tab of the Package.appxmanifest designer.) The URIs in this list must use HTTPS, and may contain subdomain wildcards (for example, `https://*.microsoft.com`) but they cannot contain domain wildcards (for example, `https://*.com` and `https://*.*`). The manifest requirement does not apply to content that originates from the app package, uses an ms-local-stream:// URI, or is loaded using [**NavigateToString**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.navigatetostring.aspx). 
 
-### Xxxxxxxxx xxx Xxxxxxx Xxxxxxx xx x xxx xxxx
+### Accessing the Windows Runtime in a web view
 
-Xxx xxx xxx xxx [**XxxXxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx) xxxxxx xx xxxxxx xx xxxxxxxx xx x xxxxxx xxxxx xxxx x Xxxxxxx Xxxxxxx xxxxxxxxx xxxx xxx XxxxXxxxxx xxxxxxx xx xxx xxx xxxx. Xxxx xxxxxx xxxx xxxxxx xx xxx xxxxxx xxxxxxx, xxxxxxxxxx, xxx xxxxxx xx xxxx xxxxxx xx xxx XxxxXxxxxx xxxxxxx xx xxxx xxx xxxx. Xxx xxxxx xxxx xx xxxxxxxxx xxxx xxx [**XxxxxXxxXxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.metadata.allowforwebattribute.aspx) xxxxxxxxx. 
+You can use the [**AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx) method to inject an instance of a native class from a Windows Runtime component into the JavaScript context of the web view. This allows full access to the native methods, properties, and events of that object in the JavaScript content of that web view. The class must be decorated with the [**AllowForWeb**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.foundation.metadata.allowforwebattribute.aspx) attribute. 
 
-Xxx xxxxxxx, xxxx xxxx xxxxxxx xx xxxxxxxx xx `MyClass` xxxxxxxx xxxx x Xxxxxxx Xxxxxxx xxxxxxxxx xxxx x xxx xxxx.
+For example, this code injects an instance of `MyClass` imported from a Windows Runtime component into a web view.
 
 ```csharp
 private void webView_NavigationStarting(WebView sender, WebViewNavigationStartingEventArgs args) 
@@ -275,11 +270,11 @@ private void webView_NavigationStarting(WebView sender, WebViewNavigationStartin
 }
 ```
 
-Xxx xxxx xxxx, xxx [**XxxXxxx.XxxXxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx). 
+For more info, see [**WebView.AddWebAllowedObject**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.addweballowedobject.aspx). 
 
-Xx xxxxxxxx, xxxxxxx XxxxXxxxxx xxxxxxx xx x xxx xxxx xxx xx xxxxxxx xx xxxxxxxx xxxxxx Xxxxxxx Xxxxxxx XXXx. Xxxx xxxxxxxx xxxxxxxx xxxxxx xxxxxxxxxxxx xxx xxx xxxx xxxxxx xx x xxx xxxx. Xx xxxxxx xxxx xxxxxxx, xxx XXX xxx xxxxxxx xxxxxxx xxxx xx xxxxxxxxxxx xx xxx XxxxxxxxxxxXxxxxxxXxxXxxxx xx xxx xxx xx Xxxxxxx.xxxxxxxxxxxx, xxxx XxxxxxxXxxxxxxXxxxxx xxxxxxxxxxxx xxx xx "xxx". 
+In addition, trusted JavaScript content in a web view can be allowed to directly access Windows Runtime APIs. This provides powerful native capabilities for web apps hosted in a web view. To enable this feature, the URI for trusted content must be whitelisted in the ApplicationContentUriRules of the app in Package.appxmanifest, with WindowsRuntimeAccess specifically set to "all". 
 
-Xxxx xxxxxxx xxxxx x xxxxxxx xx xxx xxx xxxxxxxx. Xxxx, x xxxxx XXX xx xxxxx xxxxxx xx xxx Xxxxxxx Xxxxxxx. 
+This example shows a section of the app manifest. Here, a local URI is given access to the Windows Runtime. 
 
 ```csharp
   <Applications>
@@ -293,47 +288,45 @@ Xxxx xxxxxxx xxxxx x xxxxxxx xx xxx xxx xxxxxxxx. Xxxx, x xxxxx XXX xx xxxxx xxx
   </Applications>
 ```
 
-### Xxxxxxx xxx xxx xxxxxxx xxxxxxx
+### Options for web content hosting
 
-Xxx xxx xxx xxx [**XxxXxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.settings.aspx) xxxxxxxx (xx xxxx [**XxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewsettings.aspx)) xx xxxxxxx xxxxxxx XxxxXxxxxx xxx XxxxxxxXX xxx xxxxxxx. Xxx xxxxxxx, xx xxx xxx x xxx xxxx xx xxxxxxx xxxxxxxx xxxxxx xxxxxxx, xxx xxxxx xxxx xx xxxxxxx XxxxXxxxxx xxx xxxx xxxxxxxxxxx.
+You can use the [**WebView.Settings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.settings.aspx) property (of type [**WebViewSettings**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewsettings.aspx)) to control whether JavaScript and IndexedDB are enabled. For example, if you use a web view to display strictly static content, you might want to disable JavaScript for best performance.
 
-### Xxxxxxxxx xxx xxxx xxxxxxx
+### Capturing web view content
 
-Xx xxxxxx xxxxxxx xxx xxxx xxxxxxx xxxx xxxxx xxxx, xxx xxx [**XxxxxxxXxxxxxxxXxxxxxxXxXxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync.aspx) xxxxxx, xxxxx xxxxxxx xxx xxxxxxxx xxxxxxx xx x [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datapackage.aspx). Xxxx xxxxxx xx xxxxxxxxxxxx, xx xxx xxxx xxx x xxxxxxxx xx xxxxxxx xxxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx) xxxxx xxxxxxx xxxx xxxxxxxxx xxxxxx xxx xxxxxxxxxxxx xxxx xx xxxxxxxx. 
+To enable sharing web view content with other apps, use the [**CaptureSelectedContentToDataPackageAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.captureselectedcontenttodatapackageasync.aspx) method, which returns the selected content as a [**DataPackage**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datapackage.aspx). This method is asynchronous, so you must use a deferral to prevent your [**DataRequested**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.datatransfer.datatransfermanager.datarequested.aspx) event handler from returning before the asynchronous call is complete. 
 
-Xx xxx x xxxxxxx xxxxx xx xxx xxx xxxx'x xxxxxxx xxxxxxx, xxx xxx [**XxxxxxxXxxxxxxXxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.capturepreviewtostreamasync.aspx) xxxxxx. Xxxx xxxxxx xxxxxxx xx xxxxx xx xxx xxxxxxx xxxxxxx xxx xxxxxx xx xx xxx xxxxxxxxx xxxxxx. 
+To get a preview image of the web view's current content, use the [**CapturePreviewToStreamAsync**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.capturepreviewtostreamasync.aspx) method. This method creates an image of the current content and writes it to the specified stream. 
 
-### Xxxxxxxxx xxxxxxxx
+### Threading behavior
 
-Xx xxxxxxx, xxx xxxx xxxxxxx xx xxxxxx xx xxx XX xxxxxx xx xxxxxxx xx xxx xxxxxxx xxxxxx xxxxxx, xxx xxx xxx XX xxxxxx xx xxx xxxxx xxxxxxx. Xxx xxx xxx xxx [**XxxXxxx.XxxxxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultexecutionmode.aspx) xxxxxx xxxxxxxx xx xxxxx xxx xxxxxxx xxxxxxxxx xxxxxxxx xxx xxx xxxxxxx xxxxxx. Xx xxxxxxxxx, xxx xxx xxx xxx [**XxxXxxx(XxxXxxxXxxxxxxxxXxxx)**](https://msdn.microsoft.com/library/windows/apps/xaml/dn932036.aspx) xxxxxxxxxxx xx xxxxxxxx xxxx xxxxxxxx. 
+By default, web view content is hosted on the UI thread on devices in the desktop device family, and off the UI thread on all other devices. You can use the [**WebView.DefaultExecutionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webview.defaultexecutionmode.aspx) static property to query the default threading behavior for the current client. If necessary, you can use the [**WebView(WebViewExecutionMode)**](https://msdn.microsoft.com/library/windows/apps/xaml/dn932036.aspx) constructor to override this behavior. 
 
-> **Xxxx**&xxxx;&xxxx;Xxxxx xxxxx xx xxxxxxxxxxx xxxxxx xxxx xxxxxxx xxxxxxx xx xxx XX xxxxxx xx xxxxxx xxxxxxx, xx xx xxxx xx xxxx xx xxx xxxxxx xxxxxxx xxxx xxx xxxxxx XxxxxxxXxxxxxxxxXxxx.
+> **Note**&nbsp;&nbsp;There might be performance issues when hosting content on the UI thread on mobile devices, so be sure to test on all target devices when you change DefaultExecutionMode.
 
-X xxx xxxx xxxx xxxxx xxxxxxx xxx xxx XX xxxxxx xx xxx xxxxxxxxxx xxxx xxxxxx xxxxxxxx xxxx xxxxxxx xxxxxxxx xx xxxxxxxxx xx xxxx xxx xxx xxxx xxxxxxx xx xxx xxxxxx, xxxx xx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx), [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx), xxx xxxxx xxxxxxx xxxxxxxx. Xxxxx xxxxxxxx xxxx xxx xx xxxx xx xxxxxxx xxxxxxxx xxxxxxxxx xx xxx xxx-xxxxxx xxx xxxx. Xx xxxxxxxx, xxxxxxxx xxx-xxxxxx xxx xxxxxxx xx xxx xxxxxxxx xxxxxxxxx – xxx xxxxxx xxxxx xx xxxxxxx xxxx [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx) xxxx xxxxxxx.
+A web view that hosts content off the UI thread is not compatible with parent controls that require gestures to propagate up from the web view control to the parent, such as [**FlipView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipview.aspx), [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.scrollviewer.aspx), and other related controls. These controls will not be able to receive gestures initiated in the off-thread web view. In addition, printing off-thread web content is not directly supported – you should print an element with [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.webviewbrush.aspx) fill instead.
 
-## <span id="Recommendations">
-            </span>
-            <span id="recommendations">
-            </span>
-            <span id="RECOMMENDATIONS">
-            </span>Xxxxxxxxxxxxxxx
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Recommendations
 
 
--   Xxxx xxxx xxxx xxx xxxxxxx xxxxxx xx xxxxxxxxx xxxxxxxxx xxx xxx xxxxxx xxx xxxx xxxxxx, xxxxxxxxxx, xxx xxxxxxxxxx xxxx xxx xxxxxxxxxx xxxx xxx xxxx xx xxxx xxx.
--   Xxxxx xxxxxx xxxxxx xx xxxxxxxxxxxxx xxxxx. Xxxxx xxx xxx xxxxxxx xxxx xxxx xxx xxxx xx xx xxxxx xxxx.
--   Xx x xxx xxxx xxxxx'x xxxx xxxx xxx xxxx xx xxxx xxx, xxxxxxxx xxxxxxxxxxx xxxxxxxx xx xxxx xx xxxxxxxxxx xxxxxxxx xxxxx. Xx xxxx xxx xxxx xxxxxxx xxx xxxx xx xxxx xxx, xxxxx xxxx xxx xx xxx xx xxx xxxxxxxx xxxxxxxxxx.
+-   Make sure that the website loaded is formatted correctly for the device and uses colors, typography, and navigation that are consistent with the rest of your app.
+-   Input fields should be appropriately sized. Users may not realize that they can zoom in to enter text.
+-   If a web view doesn't look like the rest of your app, consider alternative controls or ways to accomplish relevant tasks. If your web view matches the rest of your app, users will see it all as one seamless experience.
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxx
+## <span id="related_topics"></span>Related topics
 
-* [**XxxXxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227702)
+* [**WebView class**](https://msdn.microsoft.com/library/windows/apps/br227702)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

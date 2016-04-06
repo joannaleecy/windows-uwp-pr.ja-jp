@@ -1,44 +1,45 @@
 ---
-Xxxxxxxxxxx: Xxxxxxxx xxxxxx xx x xxxxxxxxxx, xxxx xx xxxxxx xx xx xxxxx xx xxxxx xx x xxxxxxx xxxxxxx xxxx, xxx xxxxx xx x xxxx.
-xxxxx: Xxxxxxxxxx xxx xxxx xxxx xxxxxxxx
-xx.xxxxxxx: XYXYYXYY-YXYX-YXXX-YYXY-YYYYYXXYXYXY
-xxxxx: Xxxx xxxx
-xxxxxxxx: xxxxxx.xxx
+Description: コレクション内の画像 (アルバム内の写真や製品の詳細ページ内の項目など) を一度に 1 つずつ表示します。
+title: フリップ ビュー コントロールのガイドライン
+ms.assetid: A4E05D92-1A0E-4CDD-84B9-92199FF8A8A3
+label: フリップ ビュー
+template: detail.hbs
 ---
-# Xxxx xxxx
+# フリップ ビュー
 
-Xxx x xxxx xxxx xxx xxxxxxxx xxxxxx xx xxxxx xxxxx xx x xxxxxxxxxx, xxxx xx xxxxxx xx xx xxxxx xx xxxxx xx x xxxxxxx xxxxxxx xxxx, xxx xxxx xx x xxxx. Xxx xxxxx xxxxxxx, xxxxxxx xxxxxx xx xxxx xxxxx xxxxxxx xxx xxxxxxxxxx. Xxx x xxxxx, xxxxxxxxxx xxxxxxx xxxxxx xx xxxxx xxxxx. Xxx x xxxxxxxx, xxxxx xxxx xxxx xxxxxxx xxx xxxxxxxxxx.
+コレクション内の画像やその他の項目 (アルバムの写真や製品の詳細ページの項目など) を一度に 1 つずつ表示するには、フリップ ビュー コントロールを使います。 タッチ デバイスでは、項目をスワイプしてコレクション内を移動します。 マウスでは、マウスをホバーするとナビゲーション ボタンが表示されます。 キーボードでは、方向キーを使ってコレクション内を移動します。
 
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**XxxxXxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)
--   [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
--   [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
+-   [**FlipView クラス**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.flipview.aspx)
+-   [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx)
+-   [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
+## 適切なコントロールの選択
 
-Xxxx xxxx xx xxxx xxx xxxxxxxx xxxxxx xx xxxxx xx xxxxxx xxxxxxxxxxx (xx xx YY xx xx xxxxx). Xxxxxxxx xx xxxx xxxxxxxxxxx xxxxxxx xxxxx xx x xxxxxxx xxxxxxx xxxx xx xxxxxx xx x xxxxx xxxxx. Xxxxxxxx xx xxx'x xxxxxxxxx xxxx xxxx xxx xxxx xxxxx xxxxxxxxxxx, xxx xxxxxxx xx xxxxxx xxx xxxxxxx xxxxxxxxxx xxxxxx xx x xxxxx xxxxx.
+フリップ ビューは、小規模から中規模のコレクション (最大で 25 個程度の項目を含むコレクション) の画像を参照する場合に最適です。 このようなコレクションの例として、製品の詳細ページ内の項目やフォト アルバム内の写真などがあります。 多くの場合、大規模なコレクションで FlipView を使うことはお勧めしませんが、このコントロールは、フォト アルバム内の個々の画像を表示するためによく使われます。
 
-## Xxxxxxxx
+## 例
 
-Xxxxxxxxxx xxxxxxxx, xxxxxxxx xx xxx xxxx-xxxx xxxx xxx xxxxxxxx xxxxx, xx xxx xxxxxxx xxxxxx xxx x xxxx xxxx. Xxxx xxxxxx xxxxx xxxx xx xxxxxx xxxxxxxx xx xxxxxxxxx xxxxxxxxxxx xx xxx xxxxxxx:
+水平方向の閲覧、左端の項目から開始し、右にフリップするのが、FlipView の一般的なレイアウトです。 このレイアウトは、すべてのデバイス上で縦方向でも横方向でも正常に動作します。
 
-![Xxxxxxx xx xxxxxxxxxx xxxx xxxx xxxxxx](images/controls_flipview_horizonal.jpg)
+![水平方向の FlipView のレイアウトに関する例](images/controls_flipview_horizonal.jpg)
 
-X xxxx xxxx xxx xxxx xx xxxxxxx xxxxxxxxxx:
+フリップ ビューは、垂直方向にも閲覧できます。
 
-![Xxxxxxx xx xxxxxxxx xxxx xxxx](images/controls_flipview_vertical.jpg)
+![垂直方向のフリップ ビューに関する例](images/controls_flipview_vertical.jpg)
 
-## Xxxxxx x xxxx xxxx
+## フリップ ビューを作成する
 
-XxxxXxxx xx xx [XxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx), xx xx xxx xxxxxxx x xxxxxxxxxx xx xxxxx xx xxx xxxx. Xx xxxxxxxx xxx xxxx, xxx xxxxx xx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) xxxxxxxxxx, xx xxx xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) xxxxxxxx xx x xxxx xxxxxx.
+FlipView は [ItemsControl](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.aspx) であるため、あらゆる種類の項目をコレクションを含めることができます。 ビューのデータを設定するには、項目を [**Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) コレクションに追加するか、[**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) プロパティをデータ ソースに設定します。
 
-Xx xxxxxxx, x xxxx xxxx xx xxxxxxxxx xx xxx xxxx xxxx xx xxx xxxxxx xxxxxxxxxxxxxx xx xxx xxxx xxxxxx xx'x xxxxx xx. Xx xxxxxxx xxxxxxx xxx xxxxx xx xxx xxxx xxxx xxx xxxxxxxxx, xxx xxxxxx x [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.datatemplate.aspx) xx xxxxxx xxx xxxxxx xx xxxxxxxx xxxx xx xxxxxxx xx xxxxxxxxxx xxxx. Xxx xxxxxxxx xx xxx xxxxxx xxx xx xxxxx xx xxxxxxxxxx xx x xxxx xxxxxx, xx xxxx xxxxxxx xxxxxxx xxxxxx. Xxx xxxxxx xxx XxxxXxxxxxxx xx xxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) xxxxxxxx xx xxx XxxxXxxx.
+既定では、データ項目は、バインドされているデータ オブジェクトの文字列表現としてフリップ ビューに表示されます。 フリップ ビューでの項目の表示方法を正確に指定するには、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.datatemplate.aspx) を作成して、個々の項目を表示するために使うコントロールのレイアウトを定義します。 レイアウト内のコントロールは、データ オブジェクトのプロパティにバインドすることも、インラインでコンテンツを定義することもできます。 DataTemplate は、FlipView の [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) プロパティに割り当てます。
 
-### Xxx xxxxx xx xxx Xxxxx xxxxxxxxxx
+### 項目コレクションへの項目の追加
 
-Xxx xxx xxx xxxxx xx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) xxxxxxxxxx xxxxx XXXX xx xxxx. Xxx xxxxxxxxx xxx xxxxx xxxx xxx xx xxx xxxx x xxxxx xxxxxx xx xxxxx xxxx xxx'x xxxxxx xxx xxx xxxxxx xxxxxxx xx XXXX, xx xx xxx xxxxxxxx xxx xxxxx xx xxxx xx xxx xxxx. Xxxx'x x xxxx xxxx xxxx xxxxx xxxxxxx xxxxxx.
+[
+            **Items**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.items.aspx) コレクションに項目を追加するには、XAML かコードを使います。 通常、項目が少数で、その項目が変わらず、XAML で簡単に定義できる場合や、実行時にコードで項目を生成する場合は、この方法で項目を追加します。 項目をインラインで定義したフリップ ビューを次に示します。
 
 ```xaml
 <FlipView x:Name="flipView1">
@@ -59,15 +60,15 @@ flipView1.Items.Add("Item 2");
 stackPanel1.Children.Add(flipView1);
 ```
 
-Xxxx xxx xxx xxxxx xx x xxxx xxxx xxxx xxx xxxxxxxxxxxxx xxxxxx xx x [**XxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipviewitem.aspx) xxxxxxxxx. Xx xxxxxx xxx xx xxxx xx xxxxxxxxx xxx xxx xxxxx x xxxxx xx xxx xxxx xxxxxxxxx xx xxxxxxx xxx [**XxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) xxxxxxxx. 
+フリップ ビューに項目を追加すると、追加した項目は [**FlipViewItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.flipviewitem.aspx) コンテナーに自動的に設定されます。 項目の表示方法を変更するには、[**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemcontainerstyle.aspx) プロパティを設定して、項目コンテナーにスタイルを適用します。 
 
-Xxxx xxx xxxxxx xxx xxxxx xx XXXX, xxxx xxx xxxxxxxxxxxxx xxxxx xx xxx Xxxxx xxxxxxxxxx.
+XAML で項目を定義すると、定義した項目は Items コレクションに自動的に追加されます。
 
-### Xxx xxx xxxxx xxxxxx
+### 項目ソースの設定
 
-Xxx xxxxxxxxx xxx x xxxx xxxx xx xxxxxxx xxxx xxxx x xxxxxx xxxx xx x xxxxxxxx xx xxx Xxxxxxxx. Xx xxxxxxxx x xxxx xxxx xxxx x xxxx xxxxxx, xxx xxx xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) xxxxxxxx xx x xxxxxxxxxx xx xxxx xxxxx.
+通常、フリップ ビューを使って、データベースやインターネットなどのソースからデータを表示します。 データ ソースからフリップ ビューのデータを設定するには、[**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) プロパティをデータ項目のコレクションに設定します。
 
-Xxxx, xxx xxxx xxxx'x XxxxxXxxxxx xx xxx xx xxxx xxxxxxxx xx xx xxxxxxxx xx x xxxxxxxxxx.
+以下の例では、コードでコレクションのインスタンスに直接フリップ ビューの ItemsSource を設定しています。
 
 ```csharp
 // Data source.
@@ -85,9 +86,9 @@ flipView1.SelectionChanged += FlipView_SelectionChanged;
 stackPanel1.Children.Add(flipView1);
 ```
 
-Xxx xxx xxxx xxxx xxx XxxxxXxxxxx xxxxxxxx xx x xxxxxxxxxx xx XXXX. Xxx xxxx xxxx, xxx [Xxxx xxxxxxx xxxx XXXX](../data-binding/data-binding-quickstart.md).
+ItemsSource プロパティを、XAML でコレクションにバインドすることもできます。 詳しくは、「[XAML を使ったデータ バインディング](../data-binding/data-binding-quickstart.md)」をご覧ください。
 
-Xxxx, xxx XxxxxXxxxxx xx xxxxx xx x [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx) xxxxx `itemsViewSource`. 
+ItemsSource が `itemsViewSource` という名前の [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.data.collectionviewsource.aspx) にバインドされている例を次に示します。 
 
 ```xaml
 <Page.Resources>
@@ -101,13 +102,13 @@ Xxxx, xxx XxxxxXxxxxx xx xxxxx xx x [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.micr
           ItemsSource="{Binding Source={StaticResource itemsViewSource}}"/>
 ```
 
->**Xxxx**&xxxx;&xxxx;Xxx xxx xxxxxxxx x xxxx xxxx xxxxxx xx xxxxxx xxxxx xx xxx Xxxxx xxxxxxxxxx, xx xx xxxxxxx xxx XxxxxXxxxxx xxxxxxxx, xxx xxx xxx'x xxx xxxx xxxx xx xxx xxxx xxxx. Xx xxx xxx xxx XxxxxXxxxxx xxxxxxxx xxx xxx xxx xx xxxx xx XXXX, xxx xxxxx xxxx xx xxxxxxx. Xx xxx xxx xxx XxxxxXxxxxx xxxxxxxx xxx xxx xxx xx xxxx xx xxx Xxxxx xxxxxxxxxx xx xxxx, xx xxxxxxxxx xx xxxxxx.
+>**注**&nbsp;&nbsp;フリップ ビューのデータを設定するには、その Items コレクションに項目を追加するか ItemsSource プロパティを設定しますが、同時に両方の方法で設定することはできません。 ItemsSource プロパティを設定して XAML で項目を追加した場合、追加された項目は無視されます。 ItemsSource プロパティを設定してコードで Items コレクションに項目を追加した場合、例外がスローされます。
 
-### Xxxxxxx xxx xxxx xx xxx xxxxx
+### 項目の表示方法の指定
 
-Xx xxxxxxx, x xxxx xxxx xx xxxxxxxxx xx xxx xxxx xxxx xx xxx xxxxxx xxxxxxxxxxxxxx xx xxx xxxx xxxxxx xx'x xxxxx xx. Xxx xxxxxxxxx xxxx xx xxxx x xxxx xxxx xxxxxxxxxxxx xx xxxx xxxx. Xx xxxxxxx xxxxxxx xxx xxxxx xx xxx xxxx xxxx xxx xxxxxxxxx, xxx xxxxxx x [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx). Xxx XXXX xx xxx XxxxXxxxxxxx xxxxxxx xxx xxxxxx xxx xxxxxxxxxx xx xxxxxxxx xxxx xx xxxxxxx xx xxxxxxxxxx xxxx. Xxx xxxxxxxx xx xxx xxxxxx xxx xx xxxxx xx xxxxxxxxxx xx x xxxx xxxxxx, xx xxxx xxxxxxx xxxxxxx xxxxxx. Xxx XxxxXxxxxxxx xx xxxxxxxx xx xxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) xxxxxxxx xx xxx XxxxXxxx xxxxxxx.
+既定では、データ項目は、バインドされているデータ オブジェクトの文字列表現としてフリップ ビューに表示されます。 通常は、リッチな表現でデータを表示する必要があります。 フリップ ビューでの項目の表示方法を正確に指定するには、[**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.datatemplate.aspx) を作成します。 DataTemplate の XAML では、個々の項目を表示するために使うコントロールのレイアウトと外観を定義します。 レイアウト内のコントロールは、データ オブジェクトのプロパティにバインドすることも、インラインでコンテンツを定義することもできます。 DataTemplate は、FlipView の [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) プロパティに割り当てます。
 
-Xx xxxx xxxxxxx, xxx XxxxXxxxxxxx xx x XxxxXxxx xx xxxxxxx xxxxxx. Xx xxxxxxx xx xxxxx xx xxx xxxxx xx xxxxxxx xxx xxxxx xxxx. 
+この例では、FlipView の ItemTemplate がインラインで定義されています。 画像名を表示するためにオーバーレイが画像に追加されます。 
 
 ```XAML
 <FlipView x:Name="flipView1" Width="480" Height="270" 
@@ -128,15 +129,15 @@ Xx xxxx xxxxxxx, xxx XxxxXxxxxxxx xx x XxxxXxxx xx xxxxxxx xxxxxx. Xx xxxxxxx xx
 </FlipView>
 ```
 
-Xxxx'x xxxx xxx xxxxxx xxxxxxx xx xxx xxxx xxxxxxxx xxxxx xxxx.
+このデータ テンプレートで定義されたレイアウトは次のように表示されます。
 
-Xxxx xxxx xxxx xxxxxxxx.
+フリップ ビュー データ テンプレート。
 
-### Xxx xxx xxxxxxxxxxx xx xxx xxxx xxxx
+### フリップ ビューの向きの設定
 
-Xx xxxxxxx, xxx xxxx xxxx xxxxx xxxxxxxxxxxx. Xx xxxx xxx xx xxxx xxxxxxxxxx, xxx x xxxxx xxxxx xxxx x xxxxxxxx xxxxxxxxxxx xx xxx xxxx xxxx'x [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx).
+既定では、フリップ ビューは横方向にめくれます。 縦方向にめくれるようにするには、フリップ ビューの [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.itemscontrol.itemspanel.aspx) として縦方向のスタック パネルを使います。
 
-Xxxx xxxxxxx xxxxx xxx xx xxx x xxxxx xxxxx xxxx x xxxxxxxx xxxxxxxxxxx xx xxx XxxxxXxxxx xx x XxxxXxxx.
+次の例は、FlipView の ItemsPanel として縦方向のスタック パネルを使う方法を示しています。
 
 ```XAML
 <FlipView x:Name="flipViewVertical" Width="480" Height="270" 
@@ -165,35 +166,39 @@ Xxxx xxxxxxx xxxxx xxx xx xxx x xxxxx xxxxx xxxx x xxxxxxxx xxxxxxxxxxx xx xxx X
 </FlipView>
 ```
 
-Xxxx'x xxxx xxx xxxx xxxx xxxxx xxxx xxxx x xxxxxxxx xxxxxxxxxxx.
+縦方向のフリップ ビューは次のように表示されます。
 
-![Xxxxxxx xx xxxxxxxx xxxx xxxx](images/controls_flipview_vertical.jpg)
+![垂直方向のフリップ ビューに関する例](images/controls_flipview_vertical.jpg)
 
-## Xxxxxx x xxxxxxx xxxxxxxxx
+## コンテキスト インジケーターの追加
 
-X xxxxxxx xxxxxxxxx xx x xxxx xxxx xxxxxxxx x xxxxxx xxxxx xx xxxxxxxxx. Xxx xxxx xx x xxxxxxxx xxxxxxx xxxxxxxxx xxxx'x xxxxxxxxxxx. Xx xxxx xx xxxx xxxxxxx, xxx xxxx xxxxxxxxx xx xxxxxxx xxxxxxxx xxx xxxxx xxx xxxxxxx:
+フリップ ビュー内のコンテキスト インジケーターによって、便利な基準点を設けることができます。 標準的なコンテキスト インジケーターに含まれるドットは、対話型です。 次の例に示されているように、最適な配置は、通常はギャラリーの下中央です。
 
-![Xxxxxxx xx x xxxx xxxxxxxxx](images/controls_pageindicator.png)
+![ページ インジケーターの例](images/controls_pageindicator.png)
 
-Xxx xxxxxx xxxxxxxxxxx (YY-YY xxxxx), xxxxxxxx xxxxx xx xxxxxxxxx xxxx xxxxxxxx xxxx xxxxxxx, xxxx xx x xxxx xxxxx xx xxxxxxxxxx. Xxxxxx x xxxxxxx xxxxxxxxx xxxx xxxx xxxxxx xxxx, xxxx xxxxxxxxx xx xxx xxxx xxxxx xxxxx x xxxxx xxxxxxx xx xxx xxxxxxxxxxxxx xxxxx xxx xxxxxx xx xxxxxxxxxx:
+比較的大きなコレクション (10 ～ 25 個の項目) の場合、より多くのコンテキストを提供するインジケーター (縮小表示のフィルム ストリップなど) を使用することを検討します。 単純なドットを使用するコンテキスト インジケーターとは異なり、フィルム ストリップ内の各サムネイルは対応する画像の小さいバージョンであり、選択可能にする必要があります。
 
-![Xxxxxxx xx xxxxxxx xxxxxxxxx](images/controls_contextindicator.jpg)
+![コンテキスト インジケーターの例](images/controls_contextindicator.jpg)
 
-## Xxxxxxxxxxxxxxx
+## 推奨事項
 
--   Xxxx xxxxx xxxx xxxx xxx xxxxxxxxxxx xx xx xx YY xx xx xxxxx.
--   Xxxxx xxxxx x xxxx xxxx xxxxxxx xxx xxxxxx xxxxxxxxxxx, xx xxx xxxxxxxxxx xxxxxx xx xxxxxxxx xxxxxxx xxxx xxxx xxx xx xxxxxxx. Xx xxxxxxxxx xxxxx xx xxx xxxxx xxxxxx, xxxxx xxxxx xxxx xxxxxxxx xx xxxxxxxxx xx xxxxxx. Xxxxx xxxxxx xxxxxx xxxxxx xxxxxx xx x xxxx xxxx xxxx x xxxxx xxx xxxx xxxxxxxx xx xxx xxxx xxxx xxxxxx. Xxx xxxxx xxxxx xxxxxxxxxxx, xxxxxxxx x [Xxxx xxxx xx xxxx xxxx](lists.md).
--   Xxx xxxxxxx xxxxxxxxxx:
-    -   Xxx xxxxx xx xxxx (xx xxxxxxxxx xxxxxx xxxxxx xxx xxxxxx) xxxxx xxxx xxxx xxxxxxxx xxx xxxxx x xxxxxxxxxxxx-xxxxxxx xxxxxxx.
-    -   Xx xxx xxxx x xxxxxxx xxxxxxxxx xx x xxxxxxxxxx-xxxxxxx xxxxxxx, xx xxxxx xxxx xxxxxxxx xxx xx xxx xxxxx xx xxx xxxxxx.
-    -   Xxx xxxxxxxxxxx xxx xxxxxxxxx xxx xxxxxxx xxxx. Xxxxxxx xxx xxxxxxxxxxx xxx xx xxxxx xxx xxx xxxxx xxxx xxx xxxx.
-    -   Xxx xxxxxx xx xxxx xxx xxxx, xxx xxx'x xxxx xx xxxx xxxx xxx xxxx xxxxx xxxxxxxx xx xxxx xxx xx xxx xxxxx - YY xxxx xx xxxxxxx xxx xxxxxxx xxxxxx xx xxxx.
+-   FlipView は最大 25 個程度の項目のコレクションに最適です。
+-   大規模なコレクションでは FlipView コントロールを使わないでください。これは、項目ごとにフリップ操作を繰り返す必要があり、ユーザーの負担になるためです。 フォト アルバムは例外です。フォト アルバムには数百または数千の画像が含まれている場合があります。 ほとんどの場合、フォト アルバムでは、グリッド ビューのレイアウトで写真を選ぶと、フリップ ビューに切り替わります。 他の大きいコレクションについては、[リスト ビューまたはグリッド ビュー](lists.md)を検討してください。
+-   コンテキスト インジケーターの場合:
+    -   ドット (または選択した任意の視覚的マーカー) の順序は、中央に配置され、水平方向にパンするギャラリーの下にあるときに最適に動作します。
+    -   垂直方向にパンするギャラリーでコンテキスト インジケーターを使う場合は、中央に配置され、画像の右側にあるときに最適な動作になります。
+    -   強調表示されているドットは現在の項目を示します。 通常、強調表示されているドットは白で、その他のドットは灰色で表されます。
+    -   ドットの数は変更できますが、多すぎるとユーザーは現在の場所を把握することが難しくなります。通常、表示するドットの最大数は 10 個です。
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## Xxxxxxx xxxxxxxx
+## 関連記事
 
-[Xxxxxxxxxx xxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt186889)
-- [**XxxxXxxx xxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/br242678)
-- [**XxxxxxxxXxxxx xxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
+[リストのガイドライン](https://msdn.microsoft.com/library/windows/apps/mt186889)
+- [**FlipView クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242678)
+- [**CarouselPanel クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/hh967950)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

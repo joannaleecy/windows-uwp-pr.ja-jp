@@ -1,51 +1,51 @@
 ---
-xxxxx: Xxxxxxx XxxxXX XX Y.Y xxxxxxx, xxxxxxxx, xxx xxxxxx xxxxxxxxxx xx XxxxxxYX
-xxxxxxxxxxx: Xxxxxx xxx xxxxxxx xx xxxxxxx xx XxxxxxYX YY xxxx XxxxXX XX Y.Y, xxx xxxx xxxxxx xxx xxxxxx xxx XXX xxxxxxxx xxx xxxxxxx xxxx xxxxxxx xxx xxx xxx xxx xxxxxx xxxxxxxx.
-xx.xxxxxxx: YxYYYYYY-YYYY-YYxY-xxYY-xYYxYYYxYYxx
+title: Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D
+description: During the process of porting to Direct3D 11 from OpenGL ES 2.0, you must change the syntax and API behavior for passing data between the app and the shader programs.
+ms.assetid: 9b215874-6549-80c5-cc70-c97b571c74fe
 ---
 
-# Xxxxxxx XxxxXX XX Y.Y xxxxxxx, xxxxxxxx, xxx xxxxxx xxxxxxxxxx xx XxxxxxYX
+# Compare OpenGL ES 2.0 buffers, uniforms, and vertex attributes to Direct3D
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XXYXYYXxxxxxY::XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
--   [**XXYXYYXxxxxxY::XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476512)
--   [**XXYXYYXxxxxxXxxxxxxY::XXXxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476454)
+-   [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
+-   [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512)
+-   [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454)
 
-Xxxxxx xxx xxxxxxx xx xxxxxxx xx XxxxxxYX YY xxxx XxxxXX XX Y.Y, xxx xxxx xxxxxx xxx xxxxxx xxx XXX xxxxxxxx xxx xxxxxxx xxxx xxxxxxx xxx xxx xxx xxx xxxxxx xxxxxxxx.
+During the process of porting to Direct3D 11 from OpenGL ES 2.0, you must change the syntax and API behavior for passing data between the app and the shader programs.
 
-Xx XxxxXX XX Y.Y, xxxx xx xxxxxx xx xxx xxxx xxxxxx xxxxxxxx xx xxxx xxxx: xx xxxxxxxx xxx xxxxxxxx xxxx, xx xxxxxxxxxx xxx xxxxxx xxxx, xx xxxxxx xxxxxxx xxx xxxxx xxxxxxxx xxxx (xxxx xx xxxxxxxx). Xx XxxxxxYX YY, xxxxx xxxxxxx xxx xx xxxxxxxx xxxxxxx, xxxxxx xxxxxxx, xxx xxxxxxxxxxxx. Xxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxx, xxxx xxx xxxxxxx xxxxx xxxxxxxxx xx xxxxx.
+In OpenGL ES 2.0, data is passed to and from shader programs in four ways: as uniforms for constant data, as attributes for vertex data, as buffer objects for other resource data (such as textures). In Direct3D 11, these roughly map to constant buffers, vertex buffers, and subresources. Despite the superficial commonality, they are handled quite different in usage.
 
-Xxxx'x xxx xxxxx xxxxxxx.
+Here's the basic mapping.
 
-| XxxxXX XX Y.Y             | XxxxxxYX YY                                                                                                                                                                         |
+| OpenGL ES 2.0             | Direct3D 11                                                                                                                                                                         |
 |---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| xxxxxxx                   | xxxxxxxx xxxxxx (**xxxxxxx**) xxxxx.                                                                                                                                                |
-| xxxxxxxxx                 | xxxxxx xxxxxx xxxxxxx xxxxx, xxxxxxxxxx xx xx xxxxx xxxxxx xxx xxxxxx xxxx x xxxxxxxx XXXX xxxxxxxx.                                                                                |
-| xxxxxx xxxxxx             | xxxxxx; Xxx [**XYXYY\_XXXXXXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476220) xxx [**XYXYY\_XXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476092) xxx xxx x xxxxxxx-xxx xxxxxx xxxxxxxxxxx. |
-| xxxxx xxxxxx xxxxxx (XXX) | xxxxxx xxxxxx(x); Xxx [**XXYXYYXxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476582) xxxx [**XXYXYYXxxxxxxYX**](https://msdn.microsoft.com/library/windows/desktop/ff476635).                                       |
-| xxxx xxxxxx               | xxxx xxxxx xxxx "xxxx xxxxxx" xxxxxxx; Xxx [**XXXXXXxxxXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404631) xxxx xxxxxxxx [**XXXXXXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/ff471343).                       |
+| uniform                   | constant buffer (**cbuffer**) field.                                                                                                                                                |
+| attribute                 | vertex buffer element field, designated by an input layout and marked with a specific HLSL semantic.                                                                                |
+| buffer object             | buffer; See [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) and [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and for a general-use buffer definitions. |
+| frame buffer object (FBO) | render target(s); See [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) with [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635).                                       |
+| back buffer               | swap chain with "back buffer" surface; See [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) with attached [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343).                       |
 
  
 
-## Xxxx xxxxxxx
+## Port buffers
 
 
-Xx XxxxXX XX Y.Y, xxx xxxxxxx xxx xxxxxxxx xxx xxxxxxx xxx xxxx xx xxxxxx xxxxxxxxx xxxxxxx xxxx xxxxxxx
+In OpenGL ES 2.0, the process for creating and binding any kind of buffer generally follows this pattern
 
--   Xxxx xxXxxXxxxxxx xx xxxxxxxx xxx xx xxxx xxxxxxx xxx xxxxxx xxx xxxxxxx xx xxxx.
--   Xxxx xxXxxxXxxxxx xx xxxxxx xxx xxxxxx xx x xxxxxx, xxxx xx XX\_XXXXXXX\_XXXXX\_XXXXXX.
--   Xxxx xxXxxxxxXxxx xx xxxxxxxx xxx xxxxxx xxxx xxxxxxxx xxxx (xxxx xx xxxxxx xxxxxxxxxx, xxxxx xxxx, xx xxxxx xxxx) xx x xxxxxxxx xxxxxx.
+-   Call glGenBuffers to generate one or more buffers and return the handles to them.
+-   Call glBindBuffer to define the layout of a buffer, such as GL\_ELEMENT\_ARRAY\_BUFFER.
+-   Call glBufferData to populate the buffer with specific data (such as vertex structures, index data, or color data) in a specific layout.
 
-Xxx xxxx xxxxxx xxxx xx xxxxxx xx xxx xxxxxx xxxxxx, xxxxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xx xxxx xxxxxxxxxx xxxxxx. Xx xxxxxxx xxx, x xxxxxx xx xxxxxxxxxxx xx x xxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxx, x xxxxxx xxxxxx xx xxx xxxxxx xxxxxxxx, x xxxxxxx xxxxxx xx xxx xxxxxx xxxxxxxx, xxx xxxxxxx xxxxxx (xx) xxxxxxxxxxx. Xxx xxxxxx xxxxxxxx x xxxxxxxxxx xxxx xx xxxxx xxxxxxxx, xx xxxx xxxxx (xxxx x xxxxxxxx xxxx, xx xxxxx, xx xxx), xxx xxxxx xxxxxxxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxx xx xxxx xxxxx. (Xx XxxxxxYX YY xx xxxx xx XxxxXX XX Y.Y xx xx xxxxxxxxxxx xx xxxx xxxxxxxx xxxxxx xxxxxxx xxx xxxx xxxx.)
+The most common kind of buffer is the vertex buffer, which minimally contains the positions of the vertices in some coordinate system. In typical use, a vertex is represented by a structure that contains the position coordinates, a normal vector to the vertex position, a tangent vector to the vertex position, and texture lookup (uv) coordinates. The buffer contains a contiguous list of these vertices, in some order (like a triangle list, or strip, or fan), and which collectively represent the visible polygons in your scene. (In Direct3D 11 as well as OpenGL ES 2.0 it is inefficient to have multiple vertex buffers per draw call.)
 
-Xxxx'x xx xxxxxxx x xxxxxx xxxxxx xxx xx xxxxx xxxxxx xxxxxxx xxxx XxxxXX XX Y.Y:
+Here's an example a vertex buffer and an index buffer created with OpenGL ES 2.0:
 
-XxxxXX XX Y.Y: Xxxxxxxx xxx xxxxxxxxxx x xxxxxx xxxxxx xxx xx xxxxx xxxxxx.
+OpenGL ES 2.0: Creating and populating a vertex buffer and an index buffer.
 
 ``` syntax
 glGenBuffers(1, &renderer->vertexBuffer);
@@ -57,19 +57,19 @@ glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->indexBuffer);
 glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(int) * CUBE_INDICES, renderer->vertexIndices, GL_STATIC_DRAW);
 ```
 
-Xxxxx xxxxxxx xxxxxxx xxxxx xxxxxxx xxx xxxx, xxxx xxxxxxxx. Xxx xxxxxx xxxxxxxx xxx xxxxxx xxxx xxxxxxx xxxxxxx (xxxxxxx) xx xxxxxx xxxxxx xxxxxxx xxx xxx xxxxx xxxxxxx xx xxxxxx xxxxxx xxxxxx. Xx xxx xxxxxxxx xxxx, xxx xxxx xxxx xx:
+Other buffers include pixel buffers and maps, like textures. The shader pipeline can render into texture buffers (pixmaps) or render buffer objects and use those buffers in future shader passes. In the simplest case, the call flow is:
 
--   Xxxx xxXxxXxxxxxxxxxxx xx xxxxxxxx x xxxxx xxxxxx xxxxxx.
--   Xxxx xxXxxxXxxxxxxxxxx xx xxxx xxx xxxxx xxxxxx xxxxxx xxx xxxxxxx.
--   Xxxx xxXxxxxxxxxxxXxxxxxxYX xx xxxx xxxx x xxxxxxxxx xxxxxxx xxx.
+-   Call glGenFramebuffers to generate a frame buffer object.
+-   Call glBindFramebuffer to bind the frame buffer object for writing.
+-   Call glFramebufferTexture2D to draw into a specified texture map.
 
-Xx XxxxxxYX YY, xxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx "xxxxxxxxxxxx," xxx xxx xxxxx xxxx xxxxxxxxxx xxxxxx xxxx xxxxxxxx xx XXX-xxx xxxxxxxx.
+In Direct3D 11, buffer data elements are considered "subresources," and can range from individual vertex data elements to MIP-map textures.
 
--   Xxxxxxxx x [**XYXYY\_XXXXXXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476220) xxxxxxxxx xxxx xxx xxxxxxxxxxxxx xxx x xxxxxx xxxx xxxxxxx.
--   Xxxxxxxx x [**XYXYY\_XXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476092) xxxxxxxxx xxxx xxx xxxx xx xxx xxxxxxxxxx xxxxxxxx xx xxx xxxxxx xx xxxx xx xxx xxxxxx xxxx.
--   Xxxx [**XXYXYYXxxxxxY::XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh404575) xxxx xxxxx xxx xxxxxxxxxx.
+-   Populate a [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220) structure with the configuration for a buffer data element.
+-   Populate a [**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) structure with the size of the individual elements in the buffer as well as the buffer type.
+-   Call [**ID3D11Device1::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/hh404575) with these two structures.
 
-XxxxxxYX YY: Xxxxxxxx xxx xxxxxxxxxx x xxxxxx xxxxxx xxx xx xxxxx xxxxxx.
+Direct3D 11: Creating and populating a vertex buffer and an index buffer.
 
 ``` syntax
 D3D11_SUBRESOURCE_DATA vertexBufferData = {0};
@@ -98,9 +98,9 @@ m_d3dDevice->CreateBuffer(
     
 ```
 
-Xxxxxxxx xxxxx xxxxxxx xx xxxx, xxxx xx x xxxxx xxxxxx, xxx xx xxxxxxx xx [**XXYXYYXxxxxxxYX**](https://msdn.microsoft.com/library/windows/desktop/ff476635) xxxxxxx. Xxxxx xxx xx xxxxx xx xxxxxxxxx xx xx [**XXYXYYXxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476582) xx [**XXYXYYXxxxxxXxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476628), xxxxx, xxxx xxxxx xxxx, xxx xx xxxxxxxxx xxxx xxx xxxxxxxxxx xxxx xxxxx xx xxxxxx xx x xxxxxx, xxxxxxxxxxxx.
+Writable pixel buffers or maps, such as a frame buffer, can be created as [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) objects. These can be bound as resources to an [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) or [**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628), which, once drawn into, can be displayed with the associated swap chain or passed to a shader, respectively.
 
-XxxxxxYX YY: Xxxxxxxx x xxxxx xxxxxx xxxxxx.
+Direct3D 11: Creating a frame buffer object.
 
 ``` syntax
 ComPtr<ID3D11RenderTargetView> m_d3dRenderTargetViewWin;
@@ -114,14 +114,14 @@ m_d3dDevice->CreateRenderTargetView(
   &m_d3dRenderTargetViewWin);
 ```
 
-## Xxxxxx xxxxxxxx xxx xxxxxxx xxxxxx xxxxxxx xx XxxxxxYX xxxxxxxx xxxxxxx
+## Change uniforms and uniform buffer objects to Direct3D constant buffers
 
 
-Xx Xxxx XX XX Y.Y, xxxxxxxx xxx xxx xxxxxxxxx xx xxxxxx xxxxxxxx xxxx xx xxxxxxxxxx xxxxxx xxxxxxxx. Xxxx xxxx xxxxxx xx xxxxxxx xx xxx xxxxxxx.
+In Open GL ES 2.0, uniforms are the mechanism to supply constant data to individual shader programs. This data cannot be altered by the shaders.
 
-Xxxxxxx x xxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxxx xxx xx xxx xxXxxxxxx\* xxxxxxx xxxx xxx xxxxxx xxxxxxxx xx xxx XXX xxxxx xxxx x xxxxxxx xx xxx xxxx xx xxx xxxxxx. Xxxxx xxxx xxXxxxxxx\* xxxxxx xxxxxxxx, xxx xxxxxxx xxxx xx xx xxx XXX xxxxxx xxx xxxxxxxxxx xx xxx xxxxxxx xxxx xxxx xxxxxxxx xxxx xxxxxxx. Xxx xxx xxxxxxxx xx xxxxxx xxxx xxx xxxx xx xxxxxx xx xxxx x xxx xxxx xxx xxxxxx xxx xxxxxxxxx xx xxxxx xx xxx xxxxxxx xxxxxxxxxxx xx xxx xxxxxx (xx xxxxx xxxxxxxxxx xxxxx).
+Setting a uniform typically involves providing one of the glUniform\* methods with the upload location in the GPU along with a pointer to the data in app memory. After ithe glUniform\* method executes, the uniform data is in the GPU memory and accessible by the shaders that have declared that uniform. You are expected to ensure that the data is packed in such a way that the shader can interpret it based on the uniform declaration in the shader (by using compatible types).
 
-XxxxXX XX Y.Y Xxxxxxxx x xxxxxxx xxx xxxxxxxxx xxxx xx xx
+OpenGL ES 2.0 Creating a uniform and uploading data to it
 
 ``` syntax
 renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
@@ -131,19 +131,19 @@ renderer->mvpLoc = glGetUniformLocation(renderer->programObject, "u_mvpMatrix");
 glUniformMatrix4fv(renderer->mvpLoc, 1, GL_FALSE, (GLfloat*) &renderer->mvpMatrix.m[0][0]);
 ```
 
-Xx x xxxxxx'x XXXX, xxx xxxxxxxxxxxxx xxxxxxx xxxxxxxxxxx xxxxx xxxx xxxx:
+In a shader's GLSL, the corresponding uniform declaration looks like this:
 
-Xxxx XX XX Y.Y: XXXX xxxxxxx xxxxxxxxxxx
+Open GL ES 2.0: GLSL uniform declaration
 
 ``` syntax
 uniform mat4 u_mvpMatrix;
 ```
 
-XxxxxxYX xxxxxxxxxx xxxxxxx xxxx xx "xxxxxxxx xxxxxxx," xxxxx, xxxx xxxxxxxx, xxxxxxx xxxxxxxx xxxx xxxxxxxx xx xxxxxxxxxx xxxxxxx. Xx xxxx xxxxxxx xxxxxxx, xx xx xxxxxxxxx xx xxxx xxx xxxxxxxx xxxxxx xxxx xx xxxxxx xxxxxxxxxxx xx xxx xxx xxx xxxxxx xxxxxxx xx xxxxxxxxx xx. Xxxxx XxxxxxXXxxx xxxxx (xxxx xx [**XXXXXXXY**](https://msdn.microsoft.com/library/windows/desktop/ee419608)) xxxxxxx xx xxxxxxxx xxxxx (xxxx xx **xxxxx\*** xx **xxxxx\[Y\]**) xxxxxxxxxx xxxxxx xxxx xxxxxxx xxxxxxxxx.
+Direct3D designates uniform data as "constant buffers," which, like uniforms, contain constant data provided to individual shaders. As with uniform buffers, it is important to pack the constant buffer data in memory identically to the way the shader expects to interpret it. Using DirectXMath types (such as [**XMFLOAT4**](https://msdn.microsoft.com/library/windows/desktop/ee419608)) instead of platform types (such as **float\*** or **float\[4\]**) guarantees proper data element alignment.
 
-Xxxxxxxx xxxxxxx xxxx xxxx xx xxxxxxxxxx XXX xxxxxxxx xxxx xx xxxxxxxxx xxxx xxxx xx xxx XXX. Xxx xxxx xx xxxxxx xxxx xxx xxxxxxxx xxxxxxxx xx xxxxxxxxx xx xxx xxxxxx xx xxx xxxxxx.
+Constant buffers must have an associated GPU register used to reference that data on the GPU. The data is packed into the register location as indicated by the layout of the buffer.
 
-XxxxxxYX YY: Xxxxxxxx x xxxxxxxx xxxxxx xxx xxxxxxxxx xxxx xx xx
+Direct3D 11: Creating a constant buffer and uploading data to it
 
 ``` syntax
 struct ModelViewProjectionConstantBuffer
@@ -166,9 +166,9 @@ m_d3dDevice->CreateBuffer(
   &m_constantBuffer);
 ```
 
-Xx x xxxxxx'x XXXX, xxx xxxxxxxxxxxxx xxxxxxxx xxxxxx xxxxxxxxxxx xxxxx xxxx xxxx:
+In a shader's HLSL, the corresponding constant buffer declaration looks like this:
 
-XxxxxxYX YY: Xxxxxxxx xxxxxx XXXX xxxxxxxxxxx
+Direct3D 11: Constant buffer HLSL declaration
 
 ``` syntax
 cbuffer ModelViewProjectionConstantBuffer : register(b0)
@@ -177,21 +177,21 @@ cbuffer ModelViewProjectionConstantBuffer : register(b0)
 };
 ```
 
-Xxxx xxxx x xxxxxxxx xxxx xx xxxxxxxx xxx xxxx xxxxxxxx xxxxxx. Xxxxxxxxx XxxxxxYX xxxxxxx xxxxxx xxxx xxxxxxxxx xxxxxxx xxxxxxxxx xxxxxxxxx, xx xx xxx xxxxxx xxx xxxxxxx xxxxxx xxx xxx xxxxxx xxxxxxx xxxxx xxx xxx xxxxxxxxx.
+Note that a register must be declared for each constant buffer. Different Direct3D feature levels have different maximum available registers, so do not exceed the maximum number for the lowest feature level you are targeting.
 
-## Xxxx xxxxxx xxxxxxxxxx xx x XxxxxxYX xxxxx xxxxxxx xxx XXXX xxxxxxxxx
+## Port vertex attributes to a Direct3D input layouts and HLSL semantics
 
 
-Xxxxx xxxxxx xxxx xxx xx xxxxxxxx xx xxx xxxxxx xxxxxxxx, XxxxXX XX Y.Y xxxxxxxx xxxx xxx xxxxxxx xxxx xx "xxxxxxxxxx" xxxxxxx xx "xxxxxxxx". (Xxxx xxx xxxxxxx xx xxxxx xxxxxxxx xx XxxxXX xxx XXXX.) Xxxxxx-xxxxxxxx xxxx xxxx xxx xxxxxx xxxxxxxx, xxxxxxx, xxxxxxxx, xxx xxxxx xxxxxx xxx xxxxxxxx xx xxx xxxxxxx xx xxxxxxxxx xxxxxx. Xxxxx xxxxxxxxx xxxxxx xxxxxxxxxx xx xxxxxxxx xxxxxxx xxx xxxx xxxxxxx xx xxx xxxxxx xxxx; xxx xxxxxxx, xxx xxxxx xxxxxxxxx xxxxx xxxxx xx xxx xxxxxxxx xxxxxxxxx xx xx xxxxxxxxxx xxxxxx, xxx xxx xxxxxx xx xxx xxxxxx, xxx xx xx.
+Since vertex data can be modified by the shader pipeline, OpenGL ES 2.0 requires that you specify them as "attributes" instead of "uniforms". (This has changed in later versions of OpenGL and GLSL.) Vertex-specific data such the vertex position, normals, tangents, and color values are supplied to the shaders as attribute values. These attribute values correspond to specific offsets for each element in the vertex data; for example, the first attribute could point to the position component of an individual vertex, and the second to the normal, and so on.
 
-Xxx xxxxx xxxxxxx xxx xxxxxx xxx xxxxxx xxxxxx xxxx xxxx xxxx xxxxxx xx xxx XXX xxxxx xxxx xxxx:
+The basic process for moving the vertex buffer data from main memory to the GPU looks like this:
 
--   Xxxxxx xxx xxxxxx xxxx xxxx xxXxxxXxxxxx.
--   Xxx xxx xxxxxxxx xx xxx xxxxxxxxxx xx xxx XXX xxxx xxXxxXxxxxxXxxxxxxx. Xxxx xx xxx xxxx xxxxxxxxx xx xxx xxxxxx xxxx xxxxxxx.
--   Xxxx xxXxxxxxXxxxxxXxxxxxx xx xxxxxxx xxx xxx xxxxxxx xxxxxxxxx xxxx xxx xxxxxx xxxxxx xx xxxxxxxxxx xxxxxx xxxx xxxxxxx. Xx xxxx xxx xxxx xxxxxxxxx.
--   Xxxxxx xxx xxxxxx xxxx xxxxxx xxxxxxxxxxx xxxx xxXxxxxxXxxxxxXxxxxxXxxxx.
+-   Upload the vertex data with glBindBuffer.
+-   Get the location of the attributes on the GPU with glGetAttribLocation. Call it for each attribute in the vertex data element.
+-   Call glVertexAttribPointer to provide set the correct attribute size and offset inside an individual vertex data element. Do this for each attribute.
+-   Enable the vertex data layout information with glEnableVertexAttribArray.
 
-XxxxXX XX Y.Y: Xxxxxxxxx xxxxxx xxxxxx xxxx xx xxx xxxxxx xxxxxxxxx
+OpenGL ES 2.0: Uploading vertex buffer data to the shader attribute
 
 ``` syntax
 glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, renderer->vertexBuffer);
@@ -207,20 +207,20 @@ glVertexAttribPointer(loc, 4, GL_FLOAT, GL_FALSE,
 glEnableVertexAttribArray(loc);
 ```
 
-Xxx, xx xxxx xxxxxx xxxxxx, xxx xxxxxxx xxxxxxxxxx xxxx xxx xxxx xxxxx xxx xxxxxxx xx xxxx xxxx xx xxXxxXxxxxxXxxxxxxx.
+Now, in your vertex shader, you declare attributes with the same names you defined in your call to glGetAttribLocation.
 
-XxxxXX XX Y.Y: Xxxxxxxxx xx xxxxxxxxx xx XXXX
+OpenGL ES 2.0: Declaring an attribute in GLSL
 
 ``` syntax
 attribute vec4 a_position;
 attribute vec4 a_color;                     
 ```
 
-Xx xxxx xxxx, xxx xxxx xxxxxxx xxxxx xxx XxxxxxYX. Xxxxxxx xx x xxxxxxxxxx, xxxxxx xxxx xx xxxxxxxx xx xxxxx xxxxxxx, xxxxx xxxxxxx xxxxxx xxxxxxx xxx xxx xxxxxxxxxxxxx xxxxx xxxxxxx. Xxxxxxx, xxxxx XxxxxxYX xxxx xxx xxxx xxx "xxxxxxxxx" xxxxxxxxxxx, xxx xxxx xxxxxxx xx xxxxx xxxxxx xxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxxx xx xxx xxxx xxxxxxxx xx xxx xxxxxx xxxxxx xxx xxx XXXX xxxxxxxxx xxxx xxxxxxxx xxxxx xxx xxx xxxxx xxxxxxxxxx xxx xx xx xxxxxxxxxxx xx xxx xxxxxx xxxxxx. XXXX xxxxxxxxx xxxxxxx xxxx xxx xxxxxx xxx xxxxx xx xxxx xxxxxxxxx xxxx x xxxxxxxx xxxxxx xxxx xxxxxxx xxx xxxxxx xxxxxx xx xx xxx xxxxxxx. Xxx xxxxxxx, xxxxxx xxxxxxxx xxxx xx xxxxxx xx XXXXXXXX, xxxxxx xxxx xx xxxxxx xx XXXXXX, xxx xxxxxx xxxxx xxxx xx xxxxxx xx XXXXX. (Xxxxx xxxxxx xxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxxx, xxx xxxxx xxxxxxxxx xxxx xxxxxxxxx xxxxxxxxxxxxxxx xxxxx xx xxx xxxxxx xxxxx.) Xxx xxxx xxxx xx XXXX xxxxxxxxx, xxxx [Xxxx xxxx xxxxxx xxxxxxxx](change-your-shader-loading-code.md) xxx [XXXX Xxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/bb205574).
+In some ways, the same process holds for Direct3D. Instead of a attributes, vertex data is provided in input buffers, which include vertex buffers and the corresponding index buffers. However, since Direct3D does not have the "attribute" declaration, you must specify an input layout which declares the individual component of the data elements in the vertex buffer and the HLSL semantics that indicate where and how those components are to be interpreted by the vertex shader. HLSL semantics require that you define the usage of each component with a specific string that informs the shader engine as to its purpose. For example, vertex position data is marked as POSITION, normal data is marked as NORMAL, and vertex color data is marked as COLOR. (Other shader stages also require specific semantics, and those semantics have different interpretations based on the shader stage.) For more info on HLSL semantics, read [Port your shader pipeline](change-your-shader-loading-code.md) and [HLSL Semantics](https://msdn.microsoft.com/library/windows/desktop/bb205574).
 
-Xxxxxxxxxxxx, xxx xxxxxxx xx xxxxxxx xxx xxxxxx xxx xxxxx xxxxxxx, xxx xxxxxxx xxx xxxxx xxxxxx xx xxxxxx xxx "Xxxxx Xxxxxxxx" (XX) xxxxx xx xxx XxxxxxYX xxxxxxxx xxxxxxxx.
+Collectively, the process of setting the vertex and index buffers, and setting the input layout is called the "Input Assembly" (IA) stage of the Direct3D graphics pipeline.
 
-XxxxxxYX YY: Xxxxxxxxxxx xxx xxxxx xxxxxxxx xxxxx
+Direct3D 11: Configuring the input assembly stage
 
 ``` syntax
 // Set up the IA stage corresponding to the current draw operation.
@@ -242,14 +242,14 @@ m_d3dContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 m_d3dContext->IASetInputLayout(m_inputLayout.Get());
 ```
 
-Xx xxxxx xxxxxx xx xxxxxxxx xxx xxxxxxxxxx xxxx x xxxxxx xxxxxx xx xxxxxxxxx xxx xxxxxx xx xxx xxxxxx xxxx xxxxxxx xxx xxx xxxxxxxx xxxx xxx xxxx xxxxxxxxx. Xxx xxxxxx xxxxxxx xxxx xxxxxx xxxxxxxxx xx xxx XYXYY\_XXXXX\_XXXXXXX\_XXXX xxx xxxxxx xxxx xxxxxxxxxx xx xxx xxxxxx xx xxx xxxxxxxxxxxxx xxxxxxxxx. Xxxx, xxx xxxxxx x xxxxxx xxx xxxxxx xxxx xxxx xxx xxx xxxxxxxxxx:
+An input layout is declared and associated with a vertex shader by declaring the format of the vertex data element and the semantic used for each component. The vertex element data layout described in the D3D11\_INPUT\_ELEMENT\_DESC you create must correspond to the layout of the corresponding structure. Here, you create a layout for vertex data that has two components:
 
--   X xxxxxx xxxxxxxx xxxxxxxxxx, xxxxxxxxxxx xx xxxx xxxxxx xx xx XXXXXXXY, xxxxx xx xx xxxxxxx xxxxx xx Y YY-xxx xxxxxxxx xxxxx xxxxxx xxx xxx (x, x, x) xxxxxxxxxxx.
--   X xxxxxx xxxxx xxxxx, xxxxxxxxxxx xx xx XXXXXXXY, xxxxx xx xx xxxxxxx xxxxx xx Y YY-xxx xxxxxxxx xxxxx xxxxxx xxx xxx xxxxx (XXXX).
+-   A vertex position coordinate, represented in main memory as an XMFLOAT3, which is an aligned array of 3 32-bit floating point values for the (x, y, z) coordinates.
+-   A vertex color value, represented as an XMFLOAT4, which is an aligned array of 4 32-bit floating point values for the color (RGBA).
 
-Xxx xxxxxx x xxxxxxxx xxx xxxx xxx, xx xxxx xx x xxxxxx xxxx. Xxx xxxx xxxx xxx xxxxxxxxxxx xx [**XXYXYYXxxxxxY::XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476512). Xxx xxxxx xxxxxx xx xxxx xxxx xx xxxx [**XXYXYYXxxxxxXxxxxxxY::XXXxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476454) xxxx xxx xxx xx xxx xxxxx xxxxxxxx xxxxxx xxx xxxxxx xxxxxx.
+You assign a semantic for each one, as well as a format type. You then pass the description to [**ID3D11Device1::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512). The input layout is used when we call [**ID3D11DeviceContext1::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) when you set up the input assembly during our render method.
 
-XxxxxxYX YY: Xxxxxxxxxx xx xxxxx xxxxxx xxxx xxxxxxxx xxxxxxxxx
+Direct3D 11: Describing an input layout with specific semantics
 
 ``` syntax
 ComPtr<ID3D11InputLayout> m_inputLayout;
@@ -275,9 +275,9 @@ m_d3dDevice->CreateInputLayout(
 m_d3dContext->IASetInputLayout(m_inputLayout.Get());
 ```
 
-Xxxxxxx, xxx xxxx xxxx xxxx xxx xxxxxx xxx xxxxxxxxxx xxx xxxxx xxxx xx xxxxxxxxx xxx xxxxx. Xxx xxxxxxxxx xxx xxxxxxxx xx xxx xxxxxx xxx xxxx xx xxxxxx xxx xxxxxxx xxxxxxxxx xx XXX xxxxxx.
+Finally, you make sure that the shader can understand the input data by declaring the input. The semantics you assigned in the layout are used to select the correct locations in GPU memory.
 
-XxxxxxYX YY: Xxxxxxxxx xxxxxx xxxxx xxxx xxxx XXXX xxxxxxxxx
+Direct3D 11: Declaring shader input data with HLSL semantics
 
 ``` syntax
 struct VertexShaderInput
@@ -294,4 +294,8 @@ struct VertexShaderInput
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

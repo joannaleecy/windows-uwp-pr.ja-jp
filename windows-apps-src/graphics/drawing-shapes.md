@@ -1,65 +1,71 @@
 ---
-xx.xxxxxxx: YYXXYXXY-YYYY-YYXY-XXYY-YXYXYYXYYXYY
-xxxxx: Xxxx xxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxx xxxxxx, xxxx xx xxxxxxxx, xxxxxxxxxx, xxxxxxxx, xxx xxxxx. Xxx Xxxx xxxxx xx xxx xxx xx xxxxxxxxx x xxxxxx xxxxxxx xxxxxx-xxxxx xxxxxxx xxxxxxxx xx x XXXX XX; xxx xxxxxxx, xxx xxx xxxx Xxxxxx xxxxxx.
+ms.assetid: 54CC0BD4-1961-44D7-AB40-6E8B58E42D65
+title: 図形の描画
+description: 楕円形、長方形、多角形、パスなどの図形を描画する方法について説明します。 Path クラスは、きわめて複雑なベクター ベースの画像記述言語を XAML UI で視覚化するための手段です。たとえば、ベジエ曲線を描画することができます。
 ---
-# Xxxx xxxxxx
+# 図形の描画
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-** Xxxxxxxxx XXXx **
+** 重要な API **
 
--   [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR243355)
--   [**Xxxxxxx.XX.Xxxx.Xxxxxx xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243401)
--   [**Xxxxxxx.XX.Xxxx.Xxxxx xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243045)
+-   [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355)
+-   [**Windows.UI.Xaml.Shapes 名前空間**](https://msdn.microsoft.com/library/windows/apps/BR243401)
+-   [**Windows.UI.Xaml.Media 名前空間**](https://msdn.microsoft.com/library/windows/apps/BR243045)
 
-Xxxxx xxx xx xxxx xxxxxx, xxxx xx xxxxxxxx, xxxxxxxxxx, xxxxxxxx, xxx xxxxx. Xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR243355) xxxxx xx xxx xxx xx xxxxxxxxx x xxxxxx xxxxxxx xxxxxx-xxxxx xxxxxxx xxxxxxxx xx x XXXX XX; xxx xxxxxxx, xxx xxx xxxx Xxxxxx xxxxxx.
+楕円形、長方形、多角形、パスなどの図形を描画する方法について説明します。 [
+            **Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) クラスは、きわめて複雑なベクター ベースの画像記述言語を XAML UI で視覚化するための手段です。たとえば、ベジエ曲線を描画することができます。
 
-## Xxxxxxxxxxxx
+## はじめに
 
-Xxx xxxx xx xxxxxxx xxxxxx x xxxxxx xx xxxxx xx XXXX XX: [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243377) xxxxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210041) xxxxxxx. Xxx xxxx xxxxxxxxxx xxxxxxx xxxxx xxxxxxx xx xxxx x **Xxxxx** xxx x xxxxx xxxxxxxxxx xxxx xx xxx xxx xx xxxxxxxx xx xxx xxxxxx, xxx x **Xxxxxxxx** xxxxxx xxxxxxx x xxxxxx xx xxxxx xxx xx xxx xxxxxxxx xxxxxx xx xxxxx xxxxxxxxxx xxxxxxxxxxx xx xxxxxxx XX xxxxxxxx. Xxx xxx xxxxx xx x **Xxxxx** xx x [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911) xxxx xxx xxxxxxxx xxxxxxx xx x **Xxxxxxxx**. Xxxx xxxxx xxxxxx xxxxxx xxx **Xxxxx** xxxxxxx.
+XAML UI に空間領域を定義するクラスのセットには、[**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) と [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) の 2 つがあります。 これらのクラス間の主な違いは、**Shape** にはブラシが関連付けられ、画面にレンダリングできますが、**Geometry** は単に空間領域を定義するだけで、レンダリングはされない (ただし、別の UI プロパティに情報を提供する働きはある) という点です。 **Shape** は、**Geometry** で境界線が定義される [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) と考えることができます。 このトピックでは、主に **Shape** クラスについて説明します。
 
-Xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243377) xxxxxxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR243345), [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243343), [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371), [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243359), [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243365), xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR243355). **Xxxx** xx xxxxxxxxxxx xxxxxxx xx xxx xxxxxx xx xxxxxxxxx xxxxxxxx, xxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210041) xxxxx xx xxxxxxxx xxxx xxxxxxx xxxx'x xxx xxx xx xxxxxx xxx xxxxx xx x **Xxxx**.
+[
+            **Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) クラスには、[**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345)、[**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343)、[**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371)、[**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359)、[**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365)、[**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) があります。 中でも **Path** は、任意のジオメトリを定義できる興味深いクラスです。また、[**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) クラスは **Path** の構成要素を定義する方法の 1 つであるため、ここに関与します。
 
-## Xxxx xxx Xxxxxx xxx xxxxxx
+## 図形の Fill と Stroke
 
-Xxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243377) xx xxxxxx xx xxx xxx xxxxxx, xxx xxxx xxxxxxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228076) xxxx xx. Xxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) xxxxxxxx xx xxx **Xxxxx** xx xxx **Xxxxx** xxx xxxx. Xxx xxxx xxxx xxxxx xxxxxxx, xxx [Xxxxx xxxxxxx](using-brushes.md).
+[
+            **Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) をアプリのキャンバスにレンダリングするには、[**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) を関連付ける必要があります。 **Shape** の [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) プロパティを目的の **Brush** に設定します。 ブラシについて詳しくは、「[ブラシの使用](using-brushes.md)」をご覧ください。
 
-X [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243377) xxx xxxx xxxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke), xxxxx xx x xxxx xxxx xx xxxxx xxxxxx xxx xxxxx'x xxxxxxxxx. X **Xxxxxx** xxxx xxxxxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228076) xxxx xxxxxxx xxx xxxxxxxxxx, xxx xxxxxx xxxx x xxx-xxxx xxxxx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness). **XxxxxxXxxxxxxxx** xx x xxxxxxxx xxxx xxxxxxx xxx xxxxxxxxx'x xxxxxxxxx xxxxxx xxx xxxxx xxxx. Xx xxx xxx'x xxxxxxx x **Xxxxx** xxxxx xxx **Xxxxxx**, xx xx xxx xxx **XxxxxxXxxxxxxxx** xx Y, xxxx xxx xxxxxx xxxxxx xxx xxxxx xx xxx xxxxx.
+[
+            **Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) には、[**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) という、図形の周囲に描画される境界線を設定することもできます。 **Stroke** にも、その外観を定義する [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) が必要です。また、[**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) が 0 以外の値に設定されている必要があります。 **StrokeThickness** は、図形の境界線の太さを定義するプロパティです。 **Stroke** に対して **Brush** 値を指定しなかった場合、または **StrokeThickness** を 0 に設定した場合、図形の周囲に境界線が描画されません。
 
-## Xxxxxxx
+## 楕円形
 
-Xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243343) xx x xxxxx xxxx x xxxxxx xxxxxxxxx. Xx xxxxxx x xxxxx **Xxxxxxx**, xxxxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208751), [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208718), xxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228076) xxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
+[
+            **Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) は、曲線の境界を持つ図形です。 基本的な **Ellipse** を作成するには、[**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) と [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718)、および [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) に対する [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) を指定します。
 
-Xxx xxxx xxxxxxx xxxxxxx xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243343) xxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208751) xx YYY xxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208718) xx YYY, xxx xxxx x [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Hh748056) xxxxxxx [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962) xx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
+次の例では、[**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) を 200、[**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) を 200 に設定し、色が [**SteelBlue**](https://msdn.microsoft.com/library/windows/apps/Hh748056) の [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) を [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) に指定して、[**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) を作成します。
 
 ```xml
 <Ellipse Fill="SteelBlue" Height="200" Width="200" />
 ```
 
-Xxxx'x xxx xxxxxxxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243343).
+この [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) をレンダリングすると、次のようになります。
 
-![X xxxxxxxx Xxxxxxx.](images/shapes-ellipse.jpg)
+![レンダリングされた Ellipse。](images/shapes-ellipse.jpg)
 
-Xx xxxx xxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243343) xx xxxx xxxx xxxxxx xxxxx xxxxxxxx x xxxxxx, xxx xxxx'x xxx xxx xxxxxxx x xxxxxx xxxxx xx XXXX: xxx xx **Xxxxxxx** xxxx xxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208751) xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208718).
+この [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) は、ほとんどの人が円と考える形状になっていますが、XAML ではまさにこのようにして円形を宣言します。つまり、**Ellipse** の [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) と [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) を等しい値に設定します。
 
-Xxxx xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243343) xx xxxxxxxxxx xx x XX xxxxxx, xxx xxxx xx xxxxxxx xx xx xxx xxxx xx x xxxxxxxxx xxxx xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208751) xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208718); xxx xxxx xxxxxxx xxx xxxxxxxxx xxxx xxx xxxx xxxxxxxxx xxx xxxxx xx xxxx xx xxx xxxxxx xxxx xxxx.
+[
+            **Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) を UI レイアウトに配置すると、そのサイズは、対応する [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) と [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) を持つ四角形と同じであると見なされます。境界の外側の領域は、レンダリングは適用されませんが、レイアウト スロットのサイズの一部として扱われます。
 
-X xxx xx Y [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243343) xxxxxxxx xxx xxxx xx xxx xxxxxxx xxxxxxxx xxx xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR227538) xxxxxxx, xxx Y xxxxxxxxxx **Xxxxxxx** xxxxxxxx xxx xxxx xx x [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227544).
+一連の 6 つの [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/BR243343) 要素は [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/BR227538) コントロールのコントロール テンプレートの一部であり、2 つの同心の **Ellipse** 要素は [**RadioButton**](https://msdn.microsoft.com/library/windows/apps/BR227544) の一部です。
 
-## <span id="Rectangle">
-            </span>
-            <span id="rectangle">
-            </span>
-            <span id="RECTANGLE">
-            </span>Xxxxxxxxx
+## <span id="Rectangle"></span><span id="rectangle"></span><span id="RECTANGLE"></span>長方形
 
-X [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371) xx x xxxx-xxxxx xxxxx xxxx xxx xxxxxxxx xxxxx xxxxx xxxxx. Xx xxxxxx x xxxxx **Xxxxxxxxx**, xxxxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208751), x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208718), xxx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
+[
+            **Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) は、向かい合った辺の長さがそれぞれ等しい四辺形です。 基本的な **Rectangle** を作成するには、[**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751)、[**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718)、[**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) を指定します。
 
-Xxx xxx xxxxx xxx xxxxxxx xx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371). Xx xxxxxx xxxxxxx xxxxxxx, xxxxxxx x xxxxx xxx xxx [**XxxxxxX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) xxx [**XxxxxxX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy) xxxxxxxxxx. Xxxxx xxxxxxxxxx xxxxxxx xxx x-xxxx xxx x-xxxx xx xx xxxxxxx xxxx xxxxxxx xxx xxxxx xx xxx xxxxxxx. Xxx xxxxxxx xxxxxxx xxxxx xx **XxxxxxX** xx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208751) xxxxxxx xx xxx xxx xxx xxxxxxx xxxxxxx xxxxx xx **XxxxxxX** xx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208718) xxxxxxx xx xxx.
+[
+            **Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) は、コーナーを角丸にすることもできます。 角丸コーナーを作成するには、[**RadiusX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) および [**RadiusY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy) プロパティの値を指定します。 これらのプロパティは、コーナーの曲線を定義する楕円形の X 軸と Y 軸を指定します。 **RadiusX** の最大値は [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) の 1/2 であり、**RadiusY** の最大値は [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) の 1/2 です。
 
-Xxx xxxx xxxxxxx xxxxxxx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243371) xxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208751) xx YYY xxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208718) xx YYY. Xx xxxx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/Hh747837) xxxxx xx [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242962) xxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) xxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh747833) xxxxx xx **XxxxxXxxxxXxxxx** xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke). Xx xxx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) xx Y. Xx xxx xxx [**XxxxxxX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) xxxxxxxx xx YY xxx xxx [**XxxxxxX**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy) xxxxxxxx xx YY, xxxxx xxxxx xxx **Xxxxxxxxx** xxxxxxx xxxxxxx.
+次の例では、[**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) が 200 で [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) が 100 の [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/BR243371) を作成します。 [
+            **Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) には値が [**Blue**](https://msdn.microsoft.com/library/windows/apps/Hh747837) の [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/BR242962) を使い、[**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) には値が [**Black**](https://msdn.microsoft.com/library/windows/apps/Hh747833) の **SolidColorBrush** を使っています。 [
+            **StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) は 3 に設定します。 [
+            **RadiusX**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusx.aspx) プロパティを 50、[**RadiusY**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.rectangle.radiusy) プロパティを 10 に設定することで、**Rectangle** を角丸コーナーにしています。
 
 ```xml
 <Rectangle Fill="Blue"
@@ -94,38 +100,39 @@ The next example creates a [**Polygon**](https://msdn.microsoft.com/library/wind
          Points="10,200,60,140,130,140,180,200" />
 ```
 
-Xxxx'x xxx xxxxxxxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243359).
+この [**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) をレンダリングすると、次のようになります。
 
-![X xxxxxxxx Xxxxxxx.](images/shapes-polygon.jpg)
+![レンダリングされた Polygon。](images/shapes-polygon.jpg)
 
-**Xxx**  X [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225870) xxxxx xx xxxxx xxxx xx x xxxx xx XXXX xxx xxxxxxxxx xxxxx xxxx xxxxxxxxx xxx xxxxxxxx xx xxxxxx. Xxx xxxxxxx, x **Xxxxx** xx xxxx xx xxx xxxxx xxxx xxx xxxxx xxxxxx, xx xxx xxx xxxx xxxxxxx xxxxx xx x xxxxxxxxxx xxxxx xxx xxxxx xxxxxx xxxxxxxx. Xxx xxxx xxxx xxxxx **Xxxxx** xxx xxx xx xxx xx xx XXXX xx xxxx, xxx xxx XXX xxxxxxxxx xxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225870).
-
- 
-
-## Xxxx
-
-X [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR243345) xx xxxxxx x xxxx xxxxx xxxxxxx xxx xxxxxx xx xxxxxxxxxx xxxxx. X **Xxxx** xxxxxxx xxx xxxxx xxxxxxxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill), xxxxxxx xx xxx xx xxxxxxxx xxxxx. Xxx x **Xxxx**, xxxx xxxx xx xxxxxxx xxxxxx xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) xxxxxxxxxx, xxxxxxx xxxxxxxxx xxx **Xxxx** xxx'x xxxxxx.
-
-Xxx xxx'x xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225870) xxxxxx xx xxxxxxx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR243345) xxxxx, xxxxxxx xxx xxx xxxxxxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) xxxxxx xxx [**XY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x1.aspx), [**XY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y1.aspx), [**XY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x2.aspx) xxx [**XY**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y2.aspx). Xxxx xxxxxxx xxxxxxx xxxxxx xxx xxxxxxxxxx xx xxxxxxxx xxxxx. Xxx xxxxxxx, `<Line Stroke="Red" X2="400"/>` xxxxxxx x xxxxxxxxxx xxxx xxxx xx YYY xxxxxx xxxx. Xxx xxxxx X,X xxxxxxxxxx xxx Y xx xxxxxxx, xx xx xxxxx xx xxxxxx xxxx XXXX xxxxx xxxx x xxxx xxxx `(0,0)` xx `(400,0)`. Xxx xxxxx xxxx xxx x [**XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243027) xx xxxx xxx xxxxxx **Xxxx**, xx xxx xxxxxx xx xx xxxxx xx x xxxxx xxxxx xxxx (Y,Y).
-
-## <span id="_Polyline">
-            </span>
-            <span id="_polyline">
-            </span>
-            <span id="_POLYLINE">
-            </span> Xxxxxxxx
-
-X [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243365) xx xxxxxxx xx x [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243359) xx xxxx xxx xxxxxxxx xx xxx xxxxx xx xxxxxxx xx x xxx xx xxxxxx, xxxxxx xxx xxxx xxxxx xx x **Xxxxxxxx** xx xxx xxxxxxxxx xx xxx xxxxx xxxxx.
-
-**Xxxx**   Xxx xxxxx xxxxxxxxxx xxxx xx xxxxxxxxx xxxxx xxxxx xxx xxx xxxxx xx xxx [**Xxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) xxx xxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243365), xxx xx xxxx xxxx xxx xxxxxxxx xxxxx xxxx xxxx x [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243359) xxxxxxx.
+**ヒント**  [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) の値は、図形の頂点を宣言する場合以外のシナリオで XAML の型としてよく使われます。 たとえば、**Point** はタッチ イベントのイベント データの一部であるため、座標空間におけるタッチ操作が発生した位置を正確に認識することができます。 **Point** の詳しい情報と、それを XAML やコードで使う方法については、API リファレンスの [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) のトピックをご覧ください。
 
  
 
-Xx xxx xxxxxxx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) xx x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243365), xxx **Xxxx** xxxxxx xxx xxxxxxxx xxxxx xx xxx xxxxx, xxxx xx xxx xxxxx xxxxx xxx xxx xxxxx xx xxx [**Xxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) xxx xxx xxx **Xxxxxxxx** xx xxx xxxxxxxxx. Xx xxx xx xxx xxxxxxx x **Xxxx**, xxxx xxx **Xxxxxxxx** xx xxxxxxx xx xxxx xxxxx xxxx xxxxxxxx xx xxx xxx xxxxxxxxx xxxxxxx xxxxxxxxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR243345) xxxxxxxx xxxxx xxx xxxxx xxxxxx xxx xxx xxxxxx xx xxxxxxxxxxx xxxxx xxxxxxxxxxx.
+## 直線
 
-Xx xxxx x [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243359), xxx [**Xxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) xxxxxxxx xxxxxxx xxx xxxxxxxxxx xx xxxxxx xxxx xxxx xx xxx xxxxxxxx. Xx XXXX, xxx xxxxxx xxx xxxxxx xxxx x xxxxx-xxxxxxxxx xxxx. Xx xxxx-xxxxxx, xxx xxx x [**XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210220) xx xxxxxx xxx xxxxxx xxx xxx xxx xxxx xxxxxxxxxx xxxxx xx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225870) xxxxxxxxx xx xxx xxxxxxxxxx.
+[
+            **Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) は、座標空間において 2 点間に描画される単純な直線です。 **Line** は内部領域を持たないため、[**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) に何か値を指定してもすべて無視されます。 **Line** には、[**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) プロパティと [**StrokeThickness**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.strokethickness) プロパティの値を必ず指定してください。指定しないと、**Line** はレンダリングされません。
 
-Xxxx xxxxxxx xxxxxxx x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243365) xxxx xxxx xxxxxx xxx xx `(10,200)`, `(60,140)`, `(130,140)`, xxx `(180,200)`. X [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) xx xxxxxxx xxx xxx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill).
+[
+            **Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 図形を指定する際、[**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 値は使いません。[**X1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x1.aspx)、[**Y1**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y1.aspx)、[**X2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.x2.aspx)、[**Y2**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.line.y2.aspx) のそれぞれに対して個別に [**Double**](https://msdn.microsoft.com/library/windows/apps/xaml/system.double.aspx) 値を指定します。 これで、水平方向または垂直方向の直線に対する最低限のマークアップは完成します。 たとえば、長さ 400 ピクセルの水平方向の直線を定義するには、`<Line Stroke="Red" X2="400"/>` とします。 その他の X,Y プロパティは既定で 0 に設定されるため、点で見た場合、この XAML は `(0,0)` から `(400,0)` に直線を描画していることになります。 (0,0) 以外の点から開始する必要がある場合は、[**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/BR243027) を使って **Line** 全体を移動することができます。
+
+## <span id="_Polyline"></span><span id="_polyline"></span><span id="_POLYLINE"></span>ポリライン
+
+[
+            **Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) は、[**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) と同様に、図形の境界線を点のセットによって定義しますが、**Polyline** では最後の点が最初の点に接続されません。
+
+**注**   [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) の始点と終点が等しくなるように明示的に [**Points**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) を設定することもできますが、その場合は、[**Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) を使うのが一般的です。
+
+ 
+
+[
+            **Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) の [**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) を指定した場合、**Polyline** に対して設定された [**Points**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) の始点と終点が交わらなくても、図形の内部領域が **Fill** によって塗りつぶされます。 **Polyline** で **Fill** を指定しなかった場合のレンダリングは、複数の [**Line**](https://msdn.microsoft.com/library/windows/apps/BR243345) 要素を個別に指定し、前の直線の終点が次の直線の始点と交わるようにした場合と同様の結果となります。
+
+[
+            **Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) の場合と同様に、[**Points**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.shapes.polyline.points.aspx) プロパティによって境界線を構成する点のコレクションが定義されます。 XAML では、これらの点をコンマ区切り一覧で定義します。 コード ビハインドでは、[**PointCollection**](https://msdn.microsoft.com/library/windows/apps/BR210220) を使って点のコレクションを定義し、それぞれの点を [**Point**](https://msdn.microsoft.com/library/windows/apps/BR225870) 構造体としてコレクションに追加します。
+
+次の例では、4 つの点を `(10,200)`、`(60,140)`、`(130,140)`、`(180,200)` に設定した [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) を作成します。 [
+            **Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) は定義されていますが、[**Fill**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.fill) は定義されていません。
 
 ```xml
 <Polyline Stroke="Black"
@@ -133,26 +140,30 @@ Xxxx xxxxxxx xxxxxxx x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows
         Points="10,200,60,140,130,140,180,200" />
 ```
 
-Xxxx'x xxx xxxxxxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243365). Xxxxxx xxxx xxx xxxxx xxx xxxx xxxxxx xxx xxx xxxxxxxxx xx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) xxxxxxx xx xxxx xxx xx x [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243359).
+この [**Polyline**](https://msdn.microsoft.com/library/windows/apps/BR243365) をレンダリングすると、次のようになります。 [
+            **Polygon**](https://msdn.microsoft.com/library/windows/apps/BR243359) とは異なり、[**Stroke**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.shape.stroke) の最初と最後の点が接続されないことに注意してください。
 
-![X xxxxxxxx Xxxxxxxx.](images/shapes-polyline.jpg)
+![レンダリングされた Polyline。](images/shapes-polyline.jpg)
 
-## Xxxx
+## Path
 
-X [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR243355) xx xxx xxxx xxxxxxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243377) xxxxxxx xxx xxx xxx xx xx xxxxxx xx xxxxxxxxx xxxxxxxx. Xxx xxxx xxxx xxxxxxxxxxx xxxxx xxxxxxxxxx. Xxx'x xxx xxxx xx xxx xx xxxxxx x xxxxx **Xxxx** xx XXXX.
+[
+            **Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) は、任意の形状を定義するために使える、最も用途が広い [**Shape**](https://msdn.microsoft.com/library/windows/apps/BR243377) です。 ただし、用途が広い反面、複雑さも伴います。 次に、XAML で基本的な **Path** を作成する方法を紹介します。
 
-Xxx xxxxxx xxx xxxxxxxx xx x xxxx xxxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) xxxxxxxx. Xxxxx xxx xxx xxxxxxxxxx xxx xxxxxxx **Xxxx**:
+パスの形状は、[**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) プロパティで定義します。 **Data** の設定には次の 2 つの方法があります。
 
--   Xxx xxx xxx x xxxxxx xxxxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) xx XXXX. Xx xxxx xxxx, xxx **Xxxx.Xxxx** xxxxx xx xxxxxxxxx x xxxxxxxxxxxxx xxxxxx xxx xxxxxxxx. Xxx xxxxxxxxx xxx'x xxxx-xxxx xxxx xxxxx xx xxxxxx xxxx xxxxx xx xx xxxxx xxxxxxxxxxx. Xxxxxxx, xxx xxx xxxxxx xxxxx xxxx xxxxxx xxx xx xxxx xx x xxxxxx xx xxxxxxx xxxxxxxx xx x xxxxxxx. Xxxx xxx xxxx xx xxxxxx xxx xxxxxx, xxx xxxx xxxxx xxx x XXXX xxxx xx XXXX xxxxxx xxxxxxxx xxxx **Xxxx.Xxxx** xxxxxxxxxxx.
--   Xxx xxx xxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) xxxxxxxx xx x xxxxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210041) xxxxxx. Xxxx xxx xx xxxx xx xxxx xx xx XXXX. Xxxx xxxxxx **Xxxxxxxx** xx xxxxxxxxx x [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210041group), xxxxx xxxx xx x xxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxxxxx xxxx x xxxxxx xxxxxx xxx xxxxxxxx xx xxx xxxxxx xxxxx. Xxx xxxx xxxxxx xxxxxx xxx xxxxx xxxx xx xxxxxxx xxx xxxx xx xxx xxx xx xxxx xx xxx xxxxxx xxx xxxxxxx xxxxxx xxxx xxx xx xxxxxxx xx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210164) xxxxxx xxx x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210143), xxx xxxxxxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228068).
+-   [
+            **Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) には、XAML で文字列値を設定することができます。 この場合、**Path.Data** の値には、グラフィックスのシリアル化形式が使われます。 一般に、いったん構築されたこの値をテキストとして (文字列形式として) 編集することはしません。 サーフェス上のデザインや図面のメタファーを扱うことのできるデザイン ツールを使います。 その出力結果を保存 (またはエクスポート) すると、**Path.Data** 情報を含んだ XAML ファイルまたは XAML 文字列フラグメントが得られます。
+-   [
+            **Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) プロパティは、単一の [**Geometry**](https://msdn.microsoft.com/library/windows/apps/BR210041) オブジェクトに設定できます。 この設定は、コードまたは XAML で行うことができます。 この単一の **Geometry** は通常、[**GeometryGroup**](https://msdn.microsoft.com/library/windows/apps/BR210041group) です。オブジェクト モデルの趣旨に沿って、複数のジオメトリ定義を 1 つのオブジェクトに合成できるコンテナーとして機能します。 これは主に、[**PathFigure**](https://msdn.microsoft.com/library/windows/apps/BR210143) の [**Segments**](https://msdn.microsoft.com/library/windows/apps/BR210164) 値として定義される曲線と複雑な図形を、場合によっては複数組み合わせて使う必要があるとき ([**BezierSegment**](https://msdn.microsoft.com/library/windows/apps/BR228068) など) に用いる方法です。
 
-Xxxx xxxxxxx xxxxx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR243355) xxxx xxxxx xxxx xxxxxxxx xxxx xxxxx Xxxxx xxx Xxxxxx Xxxxxx xx xxxxxxx xxxx x xxx xxxxxx xxxxxx xxx xxxx xxxxxx xxx xxxxxx xx XXXX. Xxx xxxxx **Xxxx** xxxxxxxx xx x Xxxxxx xxxxx xxxxxxx xxx x xxxx xxxxxxx. Xxx xxxxxxx xx xxxxxx xxxxxxxx xx xxxx xxx xxxx xxxxxxxx xx xxxx xxxxxxxx xxxxx xx xxx [**Xxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) xxxxxxxxxxxxx xxxxxx xxx xxxx xxx xxxxxxx xxxxxxxxx.
+この例に示す [**Path**](https://msdn.microsoft.com/library/windows/apps/BR243355) は、Blend for Visual Studio を使っていくつかのベクター図形を生成し、その結果を XAML として保存したものです。 **Path** 全体は、ベジエ曲線セグメントと直線セグメントから成ります。 この例の目的は、[**Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) のシリアル化形式にどのような要素が存在し、各数値が何を表しているかをわかりやすく紹介することです。
 
-Xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) xxxxxx xxxx xxx xxxx xxxxxxx, xxxxxxxxx xx "X", xxxxx xxxxxxxxxxx xx xxxxxxxx xxxxx xxxxx xxx xxx xxxx.
+この [**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) は、"M" で示される移動コマンドによって開始され、これによってパスの絶対開始点が設定されます。
 
-Xxx xxxxx xxxxxxx xx x xxxxx Xxxxxx xxxxx xxxx xxxxxx xx `(100,200)` xxx xxxx xx `(400,175)`, xxxxx xx xxxxx xx xxxxx xxx xxx xxxxxxx xxxxxx `(100,25)` xxx `(400,350)`. Xxxx xxxxxxx xx xxxxxxxxx xx xxx "X" xxxxxxx xx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) xxxxxxxxx xxxxxx.
+最初のセグメントは、`(100,200)` から始まり `(400,175)` で終わる三次ベジエ曲線であり、2 つの制御点 `(100,25)` および `(400,350)` を使って描かれます。 このセグメントは、[**Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) 属性文字列の "C" コマンドによって示されます。
 
-Xxx xxxxxx xxxxxxx xxxxxx xxxx xx xxxxxxxx xxxxxxxxxx xxxx xxxxxxx "X", xxxxx xxxxxxxxx x xxxx xxxxx xxxx xxx xxxxxxxxx xxxxxxx xxxxxxxx `(400,175)` xx x xxx xxxxxxxx `(280,175)`. Xxxxxxx xx'x x xxxxxxxxxx xxxx xxxxxxx, xxx xxxxx xxxxxxxxx xx xx x-xxxxxxxxxx.
+2 番目のセグメントは、絶対水平直線コマンド "H" によって開始されます。これは、前のサブパスの終点 `(400,175)` から新しい終点 `(280,175)` まで描かれる直線を指定します。 これは水平直線コマンドであるため、指定される値は X 座標です。
 
 ```xml
 <Path Stroke="DarkGoldenRod" 
@@ -193,13 +204,19 @@ The next example shows a usage of the other technique we discussed: a [**Geometr
           </Path>
 ```
 
-Xxx xxxxxx xxx xxxxx xxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210168) xxxx xxx xxxxxxx xxxxx xx xxxx xxxx xx xxx xxxxx xxx **Xxxxxx** xxx **Xxxxx** xxxxxxxxxx xxxx xxx xxxxxxxxxxx xxxxx xxxxxx xxx x XX xxxxxxxxx. Xxx xxx'x xx xxxx xxxx xxx xxxxxxxxxxxxx xxxx xx [**Xxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data). Xxx xxxx xxxx, xxx [Xxxxxxxxxxxx xxxxxxxxxx](storyboarded-animations.md).
+[
+            **PathGeometry**](https://msdn.microsoft.com/library/windows/apps/BR210168) とさまざまな構成要素を使う理由の 1 つとして、それぞれの構成要素に **Double** プロパティと **Point** プロパティがあり、UI アニメーションのターゲットになる可能性があることが挙げられます。 [
+            **Path.Data**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.shapes.path.data) のシリアル化形式を使ってこれを行うことはできません。 詳しくは、「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」をご覧ください。
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

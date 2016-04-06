@@ -1,28 +1,28 @@
 ---
-xx.xxxxxxx: XXXYYYXY-XYXY-YYYY-YYXY-YXYYYXYYYYXX
-xxxxx: Xxx x xxxxx xx xxxxxx x xxxx xxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxx x xxxx xxxx xxxx xxxx xxxxx x xxxxx xxxxxxx.
+ms.assetid: AAE467F9-B3C7-4366-99A2-8A880E5692BE
+title: Use a timer to submit a work item
+description: Learn how to create a work item that runs after a timer elapses.
 ---
-# Xxx x xxxxx xx xxxxxx x xxxx xxxx
+# Use a timer to submit a work item
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Xxxxxxxxx XXXx **
+** Important APIs **
 
--   [**Xxxxxxx.XX.Xxxx xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208383)
--   [**Xxxxxxx.Xxxxxx.Xxxxxxxxx xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR229642)
+-   [**Windows.UI.Core namespace**](https://msdn.microsoft.com/library/windows/apps/BR208383)
+-   [**Windows.System.Threading namespace**](https://msdn.microsoft.com/library/windows/apps/BR229642)
 
-Xxxxx xxx xx xxxxxx x xxxx xxxx xxxx xxxx xxxxx x xxxxx xxxxxxx.
+Learn how to create a work item that runs after a timer elapses.
 
-## Xxxxxx x xxxxxx-xxxx xxxxx
+## Create a single-shot timer
 
-Xxx xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh967921) xxxxxx xx xxxxxx x xxxxx xxx xxx xxxx xxxx. Xxxxxx x xxxxxx xxxx xxxxxxxxxxxx xxx xxxx, xxx xxx xxx *xxxxx* xxxxxxxxx xx xxxxxxx xxx xxxx xxx xxxxxx xxxx xxxxx xxxxxx xx xxx xxxxxx xxx xxxx xxxx xx xx xxxxxxxxx xxxxxx. Xxx xxxxx xx xxxxxxxxx xxxxx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR225996) xxxxxxxxx.
+Use the [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) method to create a timer for the work item. Supply a lambda that accomplishes the work, and use the *delay* parameter to specify how long the thread pool waits before it can assign the work item to an available thread. The delay is specified using a [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/BR225996) structure.
 
-> **Xxxx**  Xxx xxx xxx [**XxxxXxxxxxxxxx.XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh750317) xx xxxxxx xxx XX xxx xxxx xxxxxxxx xxxx xxx xxxx xxxx.
+> **Note**  You can use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI and show progress from the work item.
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxx x xxxx xxxx xxxx xxxx xx xxxxx xxxxxxx:
+The following example creates a work item that runs in three minutes:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ``` csharp
 > TimeSpan delay = TimeSpan.FromMinutes(3);
 >             
@@ -76,13 +76,13 @@ Xxx xxxxxxxxx xxxxxxx xxxxxxx x xxxx xxxx xxxx xxxx xx xxxxx xxxxxxx:
 >         }), delay);
 > ```
 
-## Xxxxxxx x xxxxxxxxxx xxxxxxx
+## Provide a completion handler
 
-Xx xxxxxx, xxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xx xxx xxxx xxxx xxxx x [**XxxxxXxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Xxx xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh967921) xxxxxxxx xx xxxxxx xx xxxxxxxxxx xxxxxx. Xxxx xxxx xxxx xxx xxxxx xx xxxxxxxxx xx xxxx xxx xxxx xxxx xxxxxxxxx.
+If needed, handle cancellation and completion of the work item with a [**TimerDestroyedHandler**](https://msdn.microsoft.com/library/windows/apps/Hh967926). Use the [**CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) overload to supply an additional lambda. This runs when the timer is cancelled or when the work item completes.
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxx x xxxxx xxxx xxxxxxx xxx xxxx xxxx, xxx xxxxx x xxxxxx xxxx xxx xxxx xxxx xxxxxxxx xx xxx xxxxx xx xxxxxxxxx:
+The following example creates a timer that submits the work item, and calls a method when the work item finishes or the timer is cancelled:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ``` csharp
 > TimeSpan delay = TimeSpan.FromMinutes(3);
 >             
@@ -196,11 +196,11 @@ Xxx xxxxxxxxx xxxxxxx xxxxxxx x xxxxx xxxx xxxxxxx xxx xxxx xxxx, xxx xxxxx x xx
 >         }));
 > ```
 
-## Xxxxxx xxx xxxxx
+## Cancel the timer
 
-Xx xxx xxxxx xx xxxxx xxxxxxxx xxxx, xxx xxx xxxx xxxx xx xx xxxxxx xxxxxx, xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR230588). Xxx xxxxx xx xxxxxxxxx xxx xxx xxxx xxxx xxx'x xx xxxxxxxxx xx xxx xxxxxx xxxx.
+If the timer is still counting down, but the work item is no longer needed, call [**Cancel**](https://msdn.microsoft.com/library/windows/apps/BR230588). The timer is cancelled and the work item won't be submitted to the thread pool.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ``` csharp
 > DelayTimer.Cancel();
 > ```
@@ -208,21 +208,25 @@ Xx xxx xxxxx xx xxxxx xxxxxxxx xxxx, xxx xxx xxxx xxxx xx xx xxxxxx xxxxxx, xxxx
 > DelayTimer->Cancel();
 > ```
 
-## Xxxxxxx
+## Remarks
 
-Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx'x xxx **Xxxxxx.Xxxxx** xxxxxxx xx xxx xxxxx xxx XX xxxxxx. Xxx xxx xxx x [**XxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR230587) xx xxxxxx x xxxx xxxx xxxxxxx, xxx xxxx xxxx xxxxx xxx xxxx xxxxxxxxxxxx xx xxx xxxx xxxx xxxxxxx xxxxxxxx xxx XX xxxxxx.
+Universal Windows Platform (UWP) apps can't use **Thread.Sleep** because it can block the UI thread. You can use a [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR230587) to create a work item instead, and this will delay the task accomplished by the work item without blocking the UI thread.
 
-Xxx xxx [xxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=255387) xxx x xxxxxxxx xxxx xxxxxx xxxx xxxxxxxxxxxx xxxx xxxxx, xxxxx xxxx xxxxx, xxx xxxxxxxx xxxx xxxxx. Xxx xxxx xxxxxx xxx xxxxxxxxxx xxxxxxx xxx Xxxxxxx Y.Y xxx xxx xxxx xxx xx xx-xxxx xx Xxxxxxx YY.
+See the [thread pool sample](http://go.microsoft.com/fwlink/p/?linkid=255387) for a complete code sample that demonstrates work items, timer work items, and periodic work items. The code sample was originally written for Windows 8.1 but the code can be re-used in Windows 10.
 
-Xxx xxxxxxxxxxx xxxxx xxxxxxxxx xxxxxx, xxx [Xxxxxx x xxxxxxxx xxxx xxxx](create-a-periodic-work-item.md).
+For information about repeating timers, see [Create a periodic work item](create-a-periodic-work-item.md).
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxx x xxxx xxxx xx xxx xxxxxx xxxx](submit-a-work-item-to-the-thread-pool.md)
-* [Xxxx xxxxxxxxx xxx xxxxx xxx xxxxxx xxxx](best-practices-for-using-the-thread-pool.md)
-* [Xxx x xxxxx xx xxxxxx x xxxx xxxx](use-a-timer-to-submit-a-work-item.md)
+* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
+* [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)
+* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
  
 
  
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

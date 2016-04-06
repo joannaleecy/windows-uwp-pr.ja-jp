@@ -1,40 +1,44 @@
 ---
-xx.xxxxxxx: YYYYYYXY-XXYX-YXYY-YXXX-XXYXXYXXXXXX
-xxxxx: XXXX xxx xxxxxxxx xxxxxxxxxxx xxxx
-xxxxxxxxxxx: Xxxx xxxxx xxxxxxxxx xxxx xxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxx xx xxxx xxxxxx xx xxxxxxxx xxxxxx xxxxxxxx, xxx xxxxxxxxxxx xxxxxxxx.
+ms.assetid: 159681E4-BF9E-4A57-9FEE-EC7ED0BEFFAD
+title: MVVM and language performance tips
+description: This topic discusses some performance considerations related to your choice of software design patterns, and programming language.
 ---
-# XXXX xxx xxxxxxxx xxxxxxxxxxx xxxx
+# MVVM and language performance tips
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx xxxxx xxxxxxxxx xxxx xxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxx xx xxxx xxxxxx xx xxxxxxxx xxxxxx xxxxxxxx, xxx xxxxxxxxxxx xxxxxxxx.
+This topic discusses some performance considerations related to your choice of software design patterns, and programming language.
 
-## Xxx Xxxxx-Xxxx-XxxxXxxxx (XXXX) xxxxxxx
+## The Model-View-ViewModel (MVVM) pattern
 
-Xxx Xxxxx-Xxxx-XxxxXxxxx (XXXX) xxxxxxx xx xxxxxx xx x xxx xx XXXX xxxx. (XXXX xx xxxx xxxxxxx xx Xxxxxx’x xxxxxxxxxxx xx xxx Xxxxx-Xxxx-Xxxxxxxxx xxxxxxx, xxx xx xx xxxxxxxx xx XXXX). Xxx xxxxx xxxx xxx XXXX xxxxxxx xx xxxx xx xxx xxxxxxxxxxxxx xxxx xx xxxx xxxx xxxx xxx xxxx xxxxxx xxx xxx xxxx xxxxxxxxxxx. Xxx xxxxxxxxxxx xxx XXXX xxx xxxxx.
+The Model-View-ViewModel (MVVM) pattern is common in a lot of XAML apps. (MVVM is very similar to Fowler’s description of the Model-View-Presenter pattern, but it is tailored to XAML). The issue with the MVVM pattern is that it can inadvertently lead to apps that have too many layers and too many allocations. The motivations for MVVM are these.
 
--   **Xxxxxxxxxx xx xxxxxxxx**. Xx’x xxxxxx xxxxxxx xx xxxxxx x xxxxxxx xxxx xxxxxxx xxxxxx, xxx x xxxxxxx xxxx XXXX xx XXX xx x xxx xx xxxxxx xx xxx (xx xxxx x xxxxxx xxxxxxx) xxxx xxxxxxx xxxxxx: xxx xxxxxx xxxx, x xxxxxxx xxxxx xx xxx xxxx (xxxx-xxxxx), xxx xxx xxxx-xxxxxxxxxxx xxx xxxxx (xxx xxxxx). Xx xxxxxxxxxx, xx’x x xxxxxxx xxxxxxxx xx xxxx xxxxxxxxx xxx xxx xxxx xxxxx xxx xxxx, xxxxxxxxxx xxx xxx xxxxx xxxxx xxxxxxx xxxx, xxx xxxxxx xxxxxxxxxxx xxx xxx xxxx-xxxxx xxxxx xxxx xxxxx.
--   **Xxxx xxxxxxx**. Xxx xxx xxxx xxxx xxx xxxx-xxxxx (xxx xxxxxxxxxxxx xxx xxxxx) xxxxxxxxxxx xx xxx xxxx, xxxxxxx xxx xxxxxxx xx xxxxxxxx xxxxxxx, xxxxxxx xxxxx, xxx xx xx. Xx xxxxxxx xxx xxxx xxxxx, xxx xxx xxxx x xxxxx xxxxxxx xx xxxx xxx xxxxxxx xxxx xxxxxx xx xxxxxx x xxxxxx.
--   **Xxxxxxx xx xxxx xxxxxxxxxx xxxxxxx**. Xxx xxxx xxxxx xx xxx xxx xxxx xxxxxxxx xxxxxxx, xxx xxx xxxx xxxx xxxxxxx, xx xxx xxxx xxxxxxxxxx xx xxxxxxx xxxxx xx xxx-xxxx xxxxxxxx. Xx xxxxxxx xxx xxxx xxxxxxxx, xxxxx xxxxxxx xxx xx xxxxxxxxxxxx xxxx xxxxxxx xxx xxxx xxxx xxxxx xx xxx xxx.
+-   **Separation of concerns**. It’s always helpful to divide a problem into smaller pieces, and a pattern like MVVM or MVC is a way to divide an app (or even a single control) into smaller pieces: the actual view, a logical model of the view (view-model), and the view-independent app logic (the model). In particular, it’s a popular workflow to have designers own the view using one tool, developers own the model using another tool, and design integrators own the view-model using both tools.
+-   **Unit testing**. You can unit test the view-model (and consequently the model) independent of the view, thereby not relying on creating windows, driving input, and so on. By keeping the view small, you can test a large portion of your app without ever having to create a window.
+-   **Agility to user experience changes**. The view tends to see the most frequent changes, and the most late changes, as the user experience is tweaked based on end-user feedback. By keeping the view separate, these changes can be accommodated more quickly and with less churn to the app.
 
-Xxxxx xxx xxxxxxxx xxxxxxxx xxxxxxxxxxx xx xxx XXXX xxxxxxx, xxx Yxx xxxxx xxxxxxxxxx xxxx xxxx xxxxxxxxx xx. Xxx xxxxxx xxxxxxxxx xx xxx xxxxxxxxx xx xxx xxxxxxx xxx xxxx xx xxxx xxxx x xxx xxxx xxxxxxxx xxxx xxx xx xxxxxxxxx.
+There are multiple concrete definitions of the MVVM pattern, and 3rd party frameworks that help implement it. But strict adherence to any variation of the pattern can lead to apps with a lot more overhead than can be justified.
 
--   XXXX xxxx xxxxxxx (xxx {Xxxxxxx} xxxxxx xxxxxxxxx) xxx xxxxxxxx xx xxxx xx xxxxxx xxxxx/xxxx xxxxxxxx. Xxx {Xxxxxxx} xxxxxx xxxx xx xxx-xxxxxxx xxxxxxx xxx xxx XXX xxxxxxxx. Xxxxxxxx x {Xxxxxxx} xxxxxx x xxxxxx xx xxxxxxxxxxx, xxx xxxxxxxx x xxxxxxx xxxxxx xxx xxxxx xxxxxxxxxx xxx xxxxxx. Xxxxx xxxxxxxx xxx xxxxx xxxxxxxxx xxxx xxx {x:Xxxx} xxxxxx xxxxxxxxx, xxxxx xxxxxxxx xxx xxxxxxxx xx xxxxx xxxx. **Xxxxxxxxxxxxxx:** xxx {x:Xxxx}.
--   Xx’x xxxxxxx xx XXXX xx xxxxxxx Xxxxxx.Xxxxx xx xxx xxxx-xxxxx xxxxx xx XXxxxxxx, xxxx xx xxx xxxxxx XxxxxxxxXxxxxxx xx XxxxxXxxxxxx xxxxxxx. Xxxxx xxxxxxxx xxx xxxxx xxxxxxxxxxx, xxxxxx, xxxxxxxxx xxx XxxXxxxxxxXxxxxxx xxxxx xxxxxxxx, xxxxxx xx xxx xxxxxxx xxx, xxx xxxxxx xx xxx xxxxxxx/xxxxxxxxxx xxxx xxx xxx xxxx. **Xxxxxxxxxxxxxx:** Xx xx xxxxxxxxxxx xx xxxxx xxx xxxxxxxxxx XXxxxxxx xxxxxxxxx, xxxxxxxx xxxxxxx xxxxx xxxxxxxx xx xxxx xxxx-xxxxxx xxx xxxxxxxxx xxxx xx xxx xxxx xxxxxx xxx xxxx x xxxxxxx xx xxxx xxxx-xxxxx xxxx xxxxx xxxxxx xxx xxxxxx. Xxx'xx xxxx xxxx xx xxx xxxxx xxxx xx xxxxxxx xxx Xxxxxx xxxx xxx xxxxxxx xx xxxxxxxxxxx.
--   Xx’x xxxxxxx xx XXXX xx xxxxxx x Xxxx xxxx xxx xxxxxxxx xxxxxxxxxxxxxx xx xxx XX, xxxx xxxxxxxx xxxxx xx xxx xxxx xx xxxxxxx xxx Xxxxxxxxxx xxxxxxxx xx xxxxxxxxxx xx xxx XX. Xxxx xxxx xxxxxxxxxxxxx xx xxxxxxx xxxx xxx xxxxxxxx xx xxxxxxx xxx (xxxxxxx xxxx xxxxx xx xxx xxxx xxx xxxxx xxxxxx xxxxxxx). **Xxxxxxxxxxxxxxx:** Xxx xxx x:XxxxxXxxxXxxxxxxx xxxxxxx xx xxxxx xxxxxxxxxxx xxxxxxxx xx xxx xxxx xxx xx xxxxxxx. Xxxx, xxxxxx xxxxxxxx xxxx xxxxxxxx xxx xxx xxxxxxxxx xxxxx xx xxx xxxx xxx xxx xxxx-xxxxxx xx xxxx xxxx xxx xxxxxxxxx xxxxxxxx xxxxxx.
+-   XAML data binding (the {Binding} markup extension) was designed in part to enable model/view patterns. But {Binding} brings with it non-trivial working set and CPU overhead. Creating a {Binding} causes a series of allocations, and updating a binding target can cause reflection and boxing. These problems are being addressed with the {x:Bind} markup extension, which compiles the bindings at build time. **Recommendation:** use {x:Bind}.
+-   It’s popular in MVVM to connect Button.Click to the view-model using an ICommand, such as the common DelegateCommand or RelayCommand helpers. Those commands are extra allocations, though, including the CanExecuteChanged event listener, adding to the working set, and adding to the startup/navigation time for the page. **Recommendation:** As an alternative to using the convenient ICommand interface, consider putting event handlers in your code-behind and attaching them to the view events and call a command on your view-model when those events are raised. You'll also need to add extra code to disable the Button when the command is unavailable.
+-   It’s popular in MVVM to create a Page with all possible configurations of the UI, then collapse parts of the tree by binding the Visibility property to properties in the VM. This adds unnecessarily to startup time and possibly to working set (because some parts of the tree may never become visible). **Recommendations:** Use the x:DeferLoadStrategy feature to defer unnecessary portions of the tree out of startup. Also, create separate user controls for the different modes of the page and use code-behind to keep only the necessary controls loaded.
 
-## X++/XX xxxxxxxxxxxxxxx
+## C++/CX recommendations
 
--   **Xxx xxx xxxxxx xxxxxxx**. Xxxxx xxx xxxxxxxxx xxxxxxxxxxx xxxxxxxxxxxx xxxx xx xxx X++/XX xxxxxxxx. Xxxxxx xxxx xxx xx xxxxxxxx xxxxx xxx xxxxxx xxxxxxx.
--   **Xxxxxxx XXXX (/XX-)**. XXXX xx xx xx xxxxxxx xx xxx xxxxxxxx xx, xxxxxx xxxx xxxxx xxxxxxxxxxx xxxxxxxx xx xxx, xxx’xx xxxxxxxx xxxxx xx. XXXX xxx xxxxxxxxxxx xxxxxxxx, xxx xxxxxx xxxx xxxx xxx x xxxx xxxxxxxxxx xx xx, xxx xxxxxx xxxx xx xxx. Xxx XXXX xxxxxxxxx xxx xx xxxxxxxxxxx xxxx xxxx xxxx xxx XXXX.
--   **Xxxxx xxxxx xxx xx xxxxxxxx**. Xxxxxxxx xxx xxxx xxxxxxxxxx xxxx xxxxxxx xxxxx XxxXX XXXx, xxx xxxx xxxx xxxx xxxxxxxxxxx xxxx xxxx xxxxxxxx. Xxx X++/XX xxxx xx xxxxxxx xx x xxxxxxxx xxxxxxx – xxxxx – xxxx xxxx xxxxxxx xxxx xxxxxx xxxxxxxxxxx. Xx xxx xxxxxxxx, xxxxxxx xxxx xxx xx xxxxxxxx xx xxx xxx xxxxx xx xxxx xxxx.
--   **Xxxxx xxx xx X++/XX xx xxx “xxxxxxxx xxxxx” xx xxxx xxx**. X++/XX xx xxxxxxxx xx xx x xxxxxxxxxx xxx xx xxxxxx XxxXX XXXx xxxx X++ xxxx. Xx xxxxx xxx xx xxxxxxxx xxxx xxxx xxxxxxxx. Xxx xxxxxx xxxxx X++/XX xxxxxx xxx xxxxxxxx xxxxx/xxxxx xx xxxx xxxxx, xxx xxxxxxx xx xxx xxx xx xxx xxxxxxxxxx xxxxxxx xxxx xxxx xxx XxxXX.
+-   **Use the latest version**. There are continual performance improvements made to the C++/CX compiler. Ensure your app is building using the latest toolset.
+-   **Disable RTTI (/GR-)**. RTTI is on by default in the compiler so, unless your build environment switches it off, you’re probably using it. RTTI has significant overhead, and unless your code has a deep dependency on it, you should turn it off. The XAML framework has no requirement that your code use RTTI.
+-   **Avoid heavy use of ppltasks**. Ppltasks are very convenient when calling async WinRT APIs, but they come with significant code size overhead. The C++/CX team is working on a language feature – await – that will provide much better performance. In the meantime, balance your use of ppltasks in the hot paths of your code.
+-   **Avoid use of C++/CX in the “business logic” of your app**. C++/CX is designed to be a convenient way to access WinRT APIs from C++ apps. It makes use of wrappers that have overhead. You should avoid C++/CX inside the business logic/model of your class, and reserve it for use at the boundaries between your code and WinRT.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

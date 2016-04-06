@@ -1,65 +1,66 @@
 ---
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xxx xx xxxxxxx xxx Xxxxx xxxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
-xxxxx: Xxxxx xxxx
-xx.xxxxxxx: YYYYYXYX-XXYY-YXYY-YYXX-YXYYYYXYYYYY
+description: This article explains how to support the Share contract in a Universal Windows Platform (UWP) app.
+title: Share data
+ms.assetid: 32287F5E-EB86-4B98-97FF-8F6228D06782
+author: awkoren
 ---
 
-# Xxxxx xxxx
+# Share data
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx xxxxxxx xxxxxxxx xxx xx xxxxxxx xxx Xxxxx xxxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx. Xxx Xxxxx xxxxxxxx xx xx xxxx xxx xx xxxxxxx xxxxx xxxx, xxxx xx xxxx, xxxxx, xxxxxx, xxx xxxxxx, xxxxxxx xxxx. Xxx xxxxxxx, x xxxx xxxxx xxxx xx xxxxx x xxxxxxx xxxx xxxxx xxxxxxx xxxxx x xxxxxx xxxxxxxxxx xxx, xx xxxx x xxxx xx x xxxxx xxx xx xxxxx xx xxxxx.
+This article explains how to support the Share contract in a Universal Windows Platform (UWP) app. The Share contract is an easy way to quickly share data, such as text, links, photos, and videos, between apps. For example, a user might want to share a webpage with their friends using a social networking app, or save a link in a notes app to refer to later.
 
-## Xxx xx xx xxxxx xxxxxxx
+## Set up an event handler
 
-Xxx x [**XxxxXxxxxxxxx**][DataRequested] xxxxx xxxxxxx xx xx xxxxxx xxxxxxxx x xxxx xxxxxxx xxxxx. Xxxx xxx xxxxx xxxxxx xxxx xxx xxxx xxxx x xxxxxxx xx xxxx xxx (xxxx xx x xxxxxx xx xxx xxx xxxxxxx) xx xxxxxxxxxxxxx xx x xxxxxxxx xxxxxxxx (xx xxx xxxx xxxxxxxx x xxxxx xxx xxxx x xxxx xxxxx, xxx xxxxxxx).
+Add a [**DataRequested**][DataRequested] event handler to be called whenever a user invokes share. This can occur either when the user taps a control in your app (such as a button or app bar command) or automatically in a specific scenario (if the user finishes a level and gets a high score, for example).
 
-[!xxxx-xx[Xxxx](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetPrepareToShare)]
 
-Xxxx x [**XxxxXxxxxxxxx**][DataRequested] xxxxx xxxxxx, xxxx xxx xxxxxxxx x [**XxxxXxxxxxx**][DataRequest] xxxxxx. Xxxx xxxxxxxx x [**XxxxXxxxxxx**][DataPackage] xxxx xxx xxx xxx xx xxxxxxx xxx xxxxxxx xxxx xxx xxxx xxxxx xx xxxxx. Xxx xxxx xxxxxxx x xxxxx xxx xxxx xx xxxxx. X xxxxxxxxxxx xx xxxxxxxx, xxx xxxxxxxxxxx.
+When a [**DataRequested**][DataRequested] event occurs, your app receives a [**DataRequest**][DataRequest] object. This contains a [**DataPackage**][DataPackage] that you can use to provide the content that the user wants to share. You must provide a title and data to share. A description is optional, but recommended.
 
-[!xxxx-xx[Xxxx](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetCreateRequest)]
 
-## Xxxxxx xxxx
+## Choose data
 
-Xxx xxx xxxxx xxxxxxx xxxxx xx xxxx, xxxxxxxxx:
+You can share various types of data, including:
 
--   Xxxxx xxxx
--   Xxxxxxx Xxxxxxxx Xxxxxxxxxxx (XXXx)
--   XXXX
--   Xxxxxxxxx xxxx
--   Xxxxxxx
--   Xxxxx xxxx
--   Xxxxx
--   Xxxxxx xxxxxxxxx-xxxxxxx xxxx
+-   Plain text
+-   Uniform Resource Identifiers (URIs)
+-   HTML
+-   Formatted text
+-   Bitmaps
+-   Plain text
+-   Files
+-   Custom developer-defined data
 
-Xxx [**XxxxXxxxxxx**][DataPackage] xxxxxx xxx xxxxxxx xxx xx xxxx xx xxxxx xxxxxxx, xx xxx xxxxxxxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xxxxxxx xxxx.
+The [**DataPackage**][DataPackage] object can contain one or more of these formats, in any combination. The following example demonstrates sharing text.
 
-[!xxxx-xx[Xxxx](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetContent)]
 
-## Xxx xxxxxxxxxx
+## Set properties
 
-Xxxx xxx xxxxxxx xxxx xxx xxxxxxx, xxx xxx xxxxxx x xxxxxxx xx xxxxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxxxxxxxxxx xxxxx xxx xxxxxxx xxxxx xxxxxx. Xxxxx xxxxxxxxxx xxxx xxxxxx xxxx xxxxxxx xxx xxxx xxxxxxxxxx. Xxx xxxxxxx, x xxxxxxxxxxx xxxxx xxxx xxx xxxx xx xxxxxxx xxxxxxx xxxx xxxx xxxx xxx xxx. Xxxxxx x xxxxxxxxx xxxx xxxxxxx xx xxxxx xx x xxxx xx x xxx xxxx xxxxxxxx x xxxxxx xxxxxxxxx xx xxx xxxx. Xxx xxxx xxxxxxxxxxx, xxx [**XxxxXxxxxxx.XxxxXxxxxxxXxxxxxxxXxx**][DataPackagePropertySet].
+When you package data for sharing, you can supply a variety of properties that provide additional information about the content being shared. These properties help target apps improve the user experience. For example, a description helps when the user is sharing content with more than one app. Adding a thumbnail when sharing an image or a link to a web page provides a visual reference to the user. For more information, see [**DataPackage.DataPackagePropertySet**][DataPackagePropertySet].
 
-Xxx xxxxxxxxxx xxxxxx xxx xxxxx xxx xxxxxxxx. Xxx xxxxx xxxxxxxx xx xxxxxxxxx xxx xxxx xx xxx.
+All properties except the title are optional. The title property is mandatory and must be set.
 
-[!xxxx-xx[Xxxx](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetSetProperties)]
 
-## Xxxxxx xxx xxxxx XX
+## Launch the share UI
 
-X XX xxx xxxxxxx xx xxxxxxxx xx xxx xxxxxx. Xx xxxxxx xx, xxxx xxx [**XxxxXxxxxXX**][ShowShareUi] xxxxxx.
+A UI for sharing is provided by the system. To launch it, call the [**ShowShareUI**][ShowShareUi] method.
 
-[!xxxx-xx[Xxxx](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
+[!code-cs[Main](./code/share_data/cs/MainPage.xaml.cs#SnippetShowUI)]
 
-## Xxxxxx xxxxxx
+## Handle errors
 
-Xx xxxx xxxxx, xxxxxxx xxxxxxx xx x xxxxxxxxxxxxxxx xxxxxxx. Xxxxxxx, xxxxx'x xxxxxx x xxxxxx xxxx xxxxxxxxx xxxxxxxxxx xxxxx xxxxxx. Xxx xxxxxxx, xxx xxx xxxxx xxxxxxx xxx xxxx xx xxxxxx xxxxxxx xxx xxxxxxx xxx xxx xxxx xxxx'x xxxxxx xxx. Xx xxxxxx xxxxx xxxxxxxxxx, xxx xxx [**XxxxXxxxXxxxxxxXxxx**][FailWithDisplayText] xxxxxx, xxxxx xxxx xxxxxxx x xxxxxxx xx xxx xxxx xx xxxxxxxxx xxxx xxxxx.
+In most cases, sharing content is a straightforward process. However, there's always a chance that something unexpected could happen. For example, the app might require the user to select content for sharing but the user didn't select any. To handle these situations, use the [**FailWithDisplayText**][FailWithDisplayText] method, which will display a message to the user if something goes wrong.
 
-## Xxxxx xxxxx xxxx xxxxxxxxx
+## Delay share with delegates
 
-Xxxxxxxxx, xx xxxxx xxx xxxx xxxxx xx xxxxxxx xxx xxxx xxxx xxx xxxx xxxxx xx xxxxx xxxxx xxxx. Xxx xxxxxxx, xx xxxx xxx xxxxxxxx xxxxxxx x xxxxx xxxxx xxxx xx xxxxxxx xxxxxxxxx xxxxxxxx xxxxxxx, xx'x xxxxxxxxxxx xx xxxxxx xxx xxxxx xxxxxx xxxxxx xxx xxxx xxxxx xxxxx xxxxxxxxx.
+Sometimes, it might not make sense to prepare the data that the user wants to share right away. For example, if your app supports sending a large image file in several different possible formats, it's inefficient to create all those images before the user makes their selection.
 
-Xx xxxxx xxxx xxxxxxx, x [**XxxxXxxxxxx**][DataPackage] xxx xxxxxxx x xxxxxxxx — x xxxxxxxx xxxx xx xxxxxx xxxx xxx xxxxxxxxx xxx xxxxxxxx xxxx. Xx xxxxxxxxx xxxxx x xxxxxxxx xxx xxxx xxxx xxx xxxx x xxxx xxxxx xx xxxxx xx xxxxxxxx-xxxxxxxxx.
+To solve this problem, a [**DataPackage**][DataPackage] can contain a delegate — a function that is called when the receiving app requests data. We recommend using a delegate any time that the data a user wants to share is resource-intensive.
 
 <!-- For some reason, this snippet was inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -86,8 +87,11 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 }
 ```
 
-## Xxxxxxx xxxxxx
-* [Receive data](receive-data.md)<!-- LINKS -->
+## Related topics
+* [Receive data](receive-data.md)
+
+
+<!-- LINKS -->
 * [DataPackage]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datapackage.aspx 
 * [DataPackagePropertySet]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datapackagepropertyset.aspx 
 * [DataRequest]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datarequest.aspx 
@@ -96,4 +100,8 @@ async void OnDeferredImageRequestedHandler(DataProviderRequest request)
 * [ShowShareUi]: https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.datatransfermanager.showshareui.aspx
  
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO5-->
+
+

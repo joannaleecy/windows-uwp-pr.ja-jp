@@ -1,43 +1,43 @@
 ---
-Xxxxxxxxxxx: Xxxxxxxxxx xxxxxxxx xxx xxxx xx xxxxxxx xxxx xx xxx xxx, xx xxxxxxx xxx, xx xxxxxx x xxxxxxxx xxxxxxx xxxxxxxx xxxxxxxxxx (XXX) xxxxx x xxxxxxxx xxxxxxx xxx.
-xxxxx: Xxxxxxxxxx
-xx.xxxxxxx: YYYYYXXY-YYXX-YYYY-XYYX-YYYXYYYXXYXY
-xxxxx: Xxxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: ハイパーリンクはユーザーを、アプリの別の部分、別のアプリ、または別のブラウザー アプリを使って呼び出した URI (Uniform Resource Identifier) に誘導します。
+title: ハイパーリンク
+ms.assetid: 74302FF0-65FC-4820-B59A-718A765EF7F0
+label: ハイパーリンク
+template: detail.hbs
 ---
-# Xxxxxxxxxx
+# ハイパーリンク
 
-Xxxxxxxxxx xxxxxxxx xxx xxxx xx xxxxxxx xxxx xx xxx xxx, xx xxxxxxx xxx, xx xxxxxx x xxxxxxxx xxxxxxx xxxxxxxx xxxxxxxxxx (XXX) xxxxx x xxxxxxxx xxxxxxx xxx. Xxxxx xxx xxx xxxx xxxx xxx xxx xxx x xxxxxxxxx xx x XXXX xxx: xxx Xxxxxxxxx xxxx xxxxxxx xxx XxxxxxxxxXxxxxx xxxxxxx.
+ハイパーリンクはユーザーを、アプリの別の部分、別のアプリ、または別のブラウザー アプリを使って呼び出した URI (Uniform Resource Identifier) に誘導します。 XAML アプリにハイパーリンクを追加するには 2 つの方法、ハイパーリンク テキスト要素と HyperlinkButton コントロールがあります。
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**Xxxxxxxxx xxxx xxxxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/dn279356)
--   [**XxxxxxxxxXxxxxx xxxxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/br242739)
--   [**x xxxxxxx | x xxxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/hh465917)
+-   [**ハイパーリンク テキスト要素 (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn279356)
+-   [**HyperlinkButton コントロール (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242739)
+-   [**要素 | オブジェクト (HTML)**](https://msdn.microsoft.com/library/windows/apps/hh465917)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
+## 適切なコントロールの選択
 
-Xxx x xxxxxxxxx xxxx xxx xxxx xxxx xxxx xxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxx xxx xxxx xx xxxx xxxxxxxxxxx xxxxx xxx xxxx xxxx xxx xxxxxxxx.
+ユーザーがテキストを選び、そのテキストに関する詳しい情報が表示される場所に移動するとき、この操作に応答するテキストが必要となる場合に、ハイパーリンクを使います。
 
-Xxxxxx xxx xxxxx xxxx xx xxxxxxxxx xxxxx xx xxxx xxxxx:
+必要に応じて適切な種類のハイパーリンクを選んでください。
 
--   Xxx xx xxxxxx Xxxxxxxxx xxxx xxxxxxx xxxxxx xx x xxxx xxxxxxx. X Xxxxxxxxx xxxxxxx xxxxx xxxx xxxxx xxxx xxxxxxxx xxx xxx xxx xxx xx xx xxx XxxxxxXxxxxxxxxx. Xxx x xxxx xxxxxxxxx xx xxx xxxx xxxxxxxxx xxxx xxxxxxxx xxx xxx'x xxxxxxxxxxx xxxx x xxxxx xxx xxxxxx. Xxxxxxxxx xxxx xxx xx xxxxx xxx xxxxxxxxx xx xxxxxx, xxxxxxxxxx xxx xxxxx.
--   Xxx x XxxxxxxxxXxxxxx xxx xxxxx-xxxxx xxxxxxxxxx. X XxxxxxxxxXxxxxx xx x xxxxxxxxxxx Xxxxxx xxxxxxx xxxx xxx xxx xxx xxxxxxxx xxxx xxx xxxxx xxx x Xxxxxx.
--   Xxx x XxxxxxxxxXxxxxx xxxx xx [Xxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) xx xxx xxxxxxx xx xxxx x xxxxxxxxx xxxxx.
+-   テキスト コントロール内でインライン ハイパーリンク テキスト要素を使用します。 ハイパーリンク要素は他のテキスト要素とともに表示され、すべて InlineCollection で使うことができます。 自動テキスト折り返しを必要とするが、大きいサイズのヒット ターゲットを必要としない場合は、テキスト ハイパーリンクを使います。 ハイパーリンク テキストのサイズは小さく、ターゲットとして使うのが難しくなることがあります (特にタッチ操作の場合)。
+-   スタンドアロンのハイパーリンクには HyperlinkButton を使用します。 HyperlinkButton は、ボタンを使用する任意の場所で使用できる特殊なボタン コントロールです。
+-   クリック可能なイメージを作成するには、[イメージ](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.image.aspx) と一緒にそのコンテンツとして HyperlinkButton を使用します。
 
-## Xxxxxxxx
+## 例
 
-Xxxxxxxxx xxxx xxxxxxx| 
+ハイパーリンク テキスト要素 | 
 ----------|----------------
-![Xxxxxxx xx x xxxxxxxxx xx x xxxx xxxxxxx](images/controls_hyperlink-element.png) | Xxxx'x xx xxxxxxx xx x xxxxxxxxx xxxx xxxxxxx xxxx xxxxxxx xxxxxx xxx xxxxx xxxx xxx xxxxxxxxxxx xxxx:  
+![テキスト要素としてのハイパーリンクの例](images/controls_hyperlink-element.png) | インラインで周囲のテキストと表示されるハイパーリンク テキスト要素の例を次に示します。  
 
-XxxxxxxxxXxxxxx xxxxxxx| 
+HyperlinkButton コントロール | 
 ----------|----------------
-![Xxxxxxx xx x xxxxxxxxx xx x xxxxxx xxxxxxx](images/controls_hyperlink-button-image.png) | Xxxx'x xx xxxxxxx xx xxxxxxxxx xxxxxxx. Xxxx xxxxxx xx xxxxxx-xx xxxx, xxx xxx xx xxxxxx xxxxxx x xxxxxx xxxxxxxxx. Xxx Xxxxxxx xxxx xxxxx xx xxxx x xxxxxxxxx xxxxxxxxx:
+![ボタン コントロールとしてのハイパーリンクの例](images/controls_hyperlink-button-image.png) | ハイパーリンク ボタンの例を次に示します。 これは、マークアップ テキストとして表示され、レイアウト コンテナー内に配置できます。 Contoso ロゴ画像もクリック可能なハイパーリンクです。
 
-## Xxxxxx x Xxxxxxxxx xxxx xxxxxxx
+## ハイパーリンク テキスト要素を作成する
 
-Xxxx xxxxxxx xxxxx xxx xx xxx x Xxxxxxxxx xxxx xxxxxxx xxxxxx xx x [XxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx).
+この例では、[TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) 内のハイパーリンク テキスト要素の使用方法を示します。
 
 ```xml
 <StackPanel Width="200">
@@ -49,12 +49,12 @@ Xxxx xxxxxxx xxxxx xxx xx xxx x Xxxxxxxxx xxxx xxxxxxx xxxxxx xx x [XxxxXxxxx](h
 
 ```
 
->Xxx  
-Xxxx xxx xxx x Xxxxxxxxx xx x xxxx xxxxxxx xxxx xxxxx xxxx xxxxxxxx xx XXXX, xxxxx xxx xxxxxxx xx x [Xxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) xxxxxxxxx xxx xxxxx xxx `xml:space="preserve"` xxxxxxxxx xx xxx Xxxx xx xxxx xxx xxxxx xxxxx xxxxxxx xxx Xxxxxxxxx xxx xxxxx xxxxxxxx.
+>チップ  
+テキスト コントロールでハイパーリンクを XAML のその他のテキスト要素と一緒に使用する場合、[スパン](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.aspx) コンテナーにコンテンツを配置してスパンに `xml:space="preserve"` 属性を適用すると、ハイパーリンクとその他の要素間に空白を保持します。
 
-## Xxxxxx x XxxxxxxxxXxxxxx
+## HyperlinkButton を作成する
 
-Xxxx'x xxx xx xxx x XxxxxxxxxXxxxxx, xxxx xxxx xxxx xxx xxxx xx xxxxx.
+テキストおよび画像の両方で HyperlinkButton を使用する方法を次に示します。
 
 ```xml
 <StackPanel>
@@ -70,83 +70,88 @@ Xxxx'x xxx xx xxx x XxxxxxxxxXxxxxx, xxxx xxxx xxxx xxx xxxx xx xxxxx.
 
 ```
 
-## Xxxxxx xxxxxxxxxx
+## ナビゲーションの処理
 
-Xxx xxxx xxxxx xx xxxxxxxxxx, xxx xxxxxx xxxxxxxxxx xxx xxxx xxx; xxx xxx xxx xxx **XxxxxxxxXxx** xxxxxxxx, xx xxxxxx xxx **Xxxxx** xxxxx.
+どちらの種類のハイパーリンクでも同様にナビゲーションを処理します。**NavigateUri** プロパティを設定するか、または**クリック**イベントを処理することができます。
 
-**Xxxxxxxx xx x XXX**
+**URI に移動**
 
-Xx xxx xxx xxxxxxxxx xx xxxxxxxx xx x XXX, xxx xxx XxxxxxxxXxx xxxxxxxx. Xxxx x xxxx xxxxxx xx xxxx xxx xxxxxxxxx, xxx xxxxxxxxx XXX xxxxx xx xxx xxxxxxx xxxxxxx. Xxx xxxxxxx xxxxxxx xxxx xx x xxxxxxxx xxxxxxx xxxx xxxx xxx.
+ハイパーリンクを使用して URI に移動するには、NavigateUri プロパティを設定します。 ユーザーがハイパーリンクをクリックしてまたはタップすると、指定された URI が既定のブラウザーで開きます。 既定のブラウザーは、アプリと別のプロセスで実行されます。
 
-> Xxxx  
->Xxx xxx'x xxxx xx xxx xxxx: xx xxxxx: xxxxxxx. Xxx xxx xxx xxxxxxx xxxx xx xx-xxxx:, xx-xxxxxxx:, xx xx-xxxxxxxxx:, xx xxxxx'x xxxxxxxx xxxxxxx xx xxxxx xxxxxxxxx xxxx'x xxxxxxxxxxx xx xxxx xx x xxxxxxx. Xxxxxxx, xxx xxxx: xxxxxx xx xxxxxxxxxxxx xxxxxxx. Xxx xxxx xxxx, xxx [XXX xxxxxxx](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx).
+> 注:  
+>Http: または https: スキームを使用する必要はありません。 ブラウザーに読み込むのに適したリソース コンテンツがこれらの場所にある場合は、ms-appx:、ms-appdata: または ms リソース: などのスキームを使うことができます。 ただし、file: スキームは明確に禁止されます。 詳しくは、「[URI スキーム](https://msdn.microsoft.com/library/windows/apps/jj655406.aspx)」 をご覧ください。
 
-> Xxxx x xxxx xxxxxx xxx xxxxxxxxx, xxx xxxxx xx xxx XxxxxxxxXxx xxxxxxxx xx xxxxxx xx x xxxxxx xxxxxxx xxx XXX xxxxx xxx xxxxxxx. Xxx xxxxxx xxxx xxxxxxxx xxx xxx xxxx xx xxxxxxxxxx xxx xxx xxxxxx xx xxx XXX xxxxxxxx xxx XxxxxxxxXxx.
+> ユーザーがハイパーリンクをクリックすると、URI の種類とスキームのシステムのハンドラーに NavigateUri プロパティの値が渡されます。 システムは、NavigateUri の指定された URI のスキームに対して登録されているアプリを起動します。
 
-Xx xxx xxx'x xxxx xxx xxxxxxxxx xx xxxx xxxxxxx xx x xxxxxxx Xxx xxxxxxx (xxx xxx'x xxxx x xxxxxxx xx xxxxxx), xxxx xxx'x xxx x xxxxx xxx XxxxxxxxXxx. Xxxxxxx, xxxxxx xxx Xxxxx xxxxx, xxx xxxxx xxxx xxxx xxxx xxxx xxx xxxx.
-
-
-**Xxxxxx xxx Xxxxx xxxxx**
-
-Xxx xxx Xxxxx xxxxx xxx xxxxxxx xxxxx xxxx xxxxxxxxx x XXX xx x xxxxxxx, xxxx xx xxxxxxxxxx xxxxxx xxx xxx. Xxx xxxxxxx, xx xxx xxxx xx xxxx x xxx xxx xxxx xxxxxx xxxx xxxxxxx x xxxxxxx, xxxx x [Xxxxx.Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.frame.navigate.aspx) xxxxxx xxxxxx xxxx Xxxxx xxxxx xxxxxxx xx xxxxxxxx xx xxx xxx xxx xxxx. Xx xxx xxxx xx xxxxxxxx, xxxxxxxx XXX xx xxxx xxxxxx x [XxxXxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) xxxxxxx xxxx xxxx xxxxxx xx xxxx xxx, xxxx [XxxXxxx.Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.navigate.aspx) xx xxxx xx xxxx Xxxxx xxxxxxx xxxxx.
-
-Xxx xxx'x xxxxxxxxx xxxxxx xxx Xxxxx xxxxx xx xxxx xx xxxxxxxxxx x XxxxxxxxXxx xxxxx, xx xxxxx xxxxxxxxx xxx xxxxxxxxx xxxx xx xxxxx xxx xxxxxxxxx xxxxxxx. Xx xxxx xxxxxx xx xx xxxx xxx XXX xx xxx xxxxxxx xxxxxxx, xxx xxx xxxx xxxxxxxxx x xxxxx xxx XxxxxxxxXxx, xxx'x xxxxxx xxx Xxxxx xxxxx. Xxxxxxxxxx, xx xxx xxxxxx xxx Xxxxx xxxxx, xxx'x xxxxxxx x XxxxxxxxXxx.
-
-Xxxxx'x xxxxxxx xxx xxx xx xxxxxx xxx Xxxxx xxxxx xxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxxx xxxx xxxxxxx xxx xxxxx xxxxxx xxxxxxxxx xxx XxxxxxxxXxx; xxxx xxxxxx xxxxx xxxxx xxxxxxxxxxxxx (xxxxxxxxxxxxxx) xxxx xxx xxxxxxxxx xx xxxxxxxxx xxx xxx'x xx xxxxxxxx xxxx xxxxxx xxx Xxxxx xxxxx xxxxxxx. 
-
-## Xxxxx xxx Xxxxxxxxx xxxx xxxxxxx
-
-Xxxx xxxxxxx xxxxxxx xxxx xx xxx Xxxxxxxxx xxxx xxxxxxx, xxx xx xxx XxxxxxxxxXxxxxx xxxxxxx.
-
-**Xxxxx xxxxxx**
-
-Xxxxxxx x Xxxxxxxxx xx xxx x [XXXxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx), xx xxxx xxx xxxx xxx xxx xx XX xxxxxxx xxxxx xxxxxx xxxx xx Xxxxxx, XxxxxxxXxxxxxx, xxx xx xx. Xxxxxxx, x Xxxxxxxxx xxx xxx xxx Xxxxx xxxxx, xxxx xxx xxxxxxxx xxxxxxxx xx xxx xxxxxx xxxxxxx xxx XXX xxxxxxxxx xx xxx XxxxxxxxXxx. Xxx xxxxxx xxxxxxx xxx xxxxx xxxxxxx xxxx xxxxxx xxxxxx xxx Xxxxxxxxx xxxxxxx xxx xxxxxx xxx Xxxxx xxxxx xx xxxxxxxx.
-
-**Xxxxxxx**
-
-Xxxxxxxxx xxx xxxxxxxxxxxx xx xxx xxxxxxx xxxx xxx xxxxx xx xxx [Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) xxxxxxxxxx. Xxxxxxxxxxxx, x Xxxxxxxxx xxxx xxxxxxx [Xxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx) xxx xxxxx [Xxxx]() xxxxx xxxx xxxx'x xxxxxxx Xxxxxxxxx. [XxxxxxXXXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) xxx'x xx xx xxx Xxxxxxx xxxxxxxxxx xx x Xxxxxxxxx. Xxxxxxxxxx xx xxx xxxxxxxxxx xxxxxxx xxxxxx xx xxxxxxx xxxxxxxx xxxxxxxxx xx XXXX xxxxx xxxxxxxxx.
-
-**Xxxxxxxxx xxx xxxxx/xxxxx xxxxxxxx**
-
-Xxxxxxxxx xxxxx'x xxxxxxx xxxx [Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.aspx), xx xx xxxxx'x xxxx x [Xxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.style.aspx) xxxxxxxx xx x [Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.template.aspx). Xxx xxx xxxx xxx xxxxxxxxxx xxxx xxx xxxxxxxxx xxxx [XxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.aspx), xxxx xx Xxxxxxxxxx xx XxxxXxxxxx, xx xxxxxx xxx xxxxxxxxxx xx x Xxxxxxxxx, xxx xxx xxx'x xxx x xxxxxx xxxxx xx xxxxxxxx xx xxxxx xxxxxxx. Xxxxxxx xx xxxxx x xxxxxxxx, xxxxxxxx xxxxx xxxxxx xxxxxxxxx xxx xxxxxx xx Xxxxxxxxx xxxxxxxxxx xx xxxxxxx xxxxxxxxxxx. Xxxx xxxxxxxxxx xx Xxxxxxxxx xxx xxxxxxxx xxxx x {XxxxxXxxxxxxx} xxxxxx xxxxxxxxx xxxxx xxxxxxxx xx xxx xxxxxx. Xxxx xxxxxxx xxx Xxxxxxxxx xxxxxxxxxx xx xxxxxx xx xxxxxxxxxxx xxxx xxxx xxx xxxx xxxxxxx xxx xxxxxx xxxxx xx xxx-xxxx.
-
-Xxx xxxxxxx xxxxx xx xxx xxxxxxxxx xx xxx xxxxxx xxxxx xx xxx xxxxxx. Xxx xxx xxx xxx [Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.foreground.aspx) xxxxxxxx xx xxxxxxxx xxxx.
-
-## Xxxxxxxxx xxxxxxxxxx
-Xx xxxxxxx, xxxxxxxxxx xxx xxxxxxxxxx. Xxxx xxxxxxxxx xx xxxxxxxxx xxxxxxx xx xxxxx xxxx xxxxxxxxxxxxx xxxxxxxxxxxx. Xxxxx-xxxxx xxxxx xxx xxx xxxxxxxxx xx xxxxxxxxxxx xxxxxxx xxxxxxxxxx xxx xxxxx xxxx. Xx xxx xxxxxxx xxxxxxxxxx, xxx xxxxxx xxxxxxxx xxxxxx xxxx xxxxx xxxx xx xxxxxxxxxx xxxxxxxxxx xx xxxxxxxxxxx xxxxxxxxxx xxxx xxxxx xxxx, xxxx xx XxxxXxxxxx xx XxxxXxxxx.
-
-**Xxxxxxxxx xxxx xxxxxxxx**
-
-Xxx xxx xxx xxx [XxxxxxxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.hyperlink.underlinestyle.aspx) xxxxxxxx xx xxxxxxx xxx xxxxxxxxx. Xx xxx xx, xxxxxxxx xxxxx [XxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontweight.aspx) xx [XxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontstyle.aspx) xx xxxxxxxxxxxxx xxxx xxxx xxxx.
-
-**XxxxxxxxxXxxxxx** 
-
-Xx xxxxxxx, xxx XxxxxxxxxXxxxxx xxxxxxx xx xxxxxxxxxx xxxx xxxx xxx xxx x xxxxxx xx xxx xxxxx xxx xxx [Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) xxxxxxxx.
-
-Xxx xxxx xxxx xxx xxxxxx xxxxxxxxxx xx xxx xxxxxxxxx xxxxx:
-- Xxx xxx x [XxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) xx xxx xxxxx xxx xxx Xxxxxxx xxxxxxxx, xxx xxx xxx [Xxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.text.aspx) xxxxxxxx xx xxx XxxxXxxxx.
-- Xxx xx-xxxxxxxx xxx XxxxxxxxxXxxxxx xxx xxxxxx xxx xxxx xx xxx [XxxxxxxXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx) xxxxxxxx xxxx.
-
-Xx xxx xxxx x xxxxxx xxxx xxxxxxx xx xxx-xxxxxxxxxx xxxx, xxxxxxxx xxxxx x xxxxxxxx Xxxxxx xxxxxxx xxx xxxxxxxx xxx xxxxx-xx `TextBlockButtonStyle` xxxxxx xxxxxxxx xx xxx Xxxxx xxxxxxxx.
+ハイパーリンクで、コンテンツを既定の Web ブラウザーで読み込む必要がない場合 (ブラウザーを表示しない場合) は、NavigateUri の値を設定しないでください。 代わりに、Click イベントを処理し、目的に合ったコードを記述します。
 
 
-## Xxxxxxxxxxxxxxx
+**Click イベントの処理**
 
--   Xxxx xxx xxxxxxxxxx xxx xxxxxxxxxx; xxx'x xxx xxxx xxx xxxxx xxxxxxx.
--   Xxx xxx Xxxx xxxxx xxxx xxx xxxx xxxx xxx xxxx-xxxxx xxxxxxxxxx. Xxxx xxxxx [**xxxxx xxx xxx Xxxxxxx YY xxxx xxxx**](text-controls.md).
--   Xxxx xxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxx xx xxxx xxx xxxx xxx xxxxxxxxxxxxx xxxxxxx xxxx xxx xxx xx xxxx xxxx xxxxxxxxx xxxx xxx.
--   Xxx xxxxxxxx xx xxxxxxxxxx xxxx xxxxxxxx xx xxxxx xxx xxxx xxxx xx xxxxxxxx. Xx xxx xxxx xxxx xx xxxxxxxx xx xx xxxxxxxx xxxx, xxxxxxx xxx xxx-xxxxx xxxxxx xxxx xxxxxx xxx xxxxxxx, xxx xxxxx xxx xxxx xxxx x xxxxxxxxx xxxx xxxxx.
+アプリ内のナビゲーションなど、ブラウザーの URI の起動以外の操作に Click イベントを使用します。 たとえば、ブラウザーを開くのではなく、新しいアプリのページを読み込む場合は、クリック イベント ハンドラー内で [Frame.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.frame.navigate.aspx) メソッドを呼び出して新しいアプリのページに移動します。 同様にアプリ内にある [WebView](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.aspx) コントロール内で外部の絶対 URI を読み込む場合は、[WebView.Navigate](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.webview.navigate.aspx) を Click ハンドラーのロジックの一部として呼び出します。
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+通常は、これらはハイパーリンク要素を使用する別の 2 つの方法に相当するので、Click イベントの処理は行わず、NavigateUri 値も指定しません。 既定のブラウザーで URI を開き、NavigateUri の値を指定した場合は、クリック イベントは処理しません。 逆に、クリック イベントを処理する場合は、NavigateUri を指定しないでください。
 
-## Xxxxxxx xxxxxxxx
+既定のブラウザーが NavigateUri に指定されている任意の有効なターゲットを読み込むことを防ぐためにClick イベント ハンドラー内でできることはありません。ハイパーリンクがアクティブ化されると操作は自動的に (非同期的に) 行われ、Click イベント ハンドラー内で取り消すことはできません。 
 
-[Xxxx xxxxxxxx](text-controls.md)
+## ハイパーリンク テキスト要素の注意点
 
-**Xxx xxxxxxxxx**
-- [Xxxxxxxxxx xxx xxxxxxxx](tooltips.md)
+このセクションは、ハイパーリンク テキスト要素にのみ該当します。HyperlinkButton コントロールには該当しません。
 
-**Xxx xxxxxxxxxx (XXXX)**
-- [**Xxxxxxx.XX.Xxxx.Xxxxxxxxx.Xxxxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279356)
-- [**Xxxxxxx.XX.Xxxx.Xxxxxxxx.XxxxxxxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242739)
+**入力イベント**
+
+ハイパーリンクは [UIElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.uielement.aspx) ではないため、Tapped、PointerPressed などの UI 要素の入力イベントのセットはありません。 代わりに、ハイパーリンクには、独自の Click イベントに加えて、NavigateUri として指定されている任意の URI を読み込むシステムの暗黙的な動作があります。 システムは、ハイパーリンクのアクションを呼び出し、応答で Click イベントを発生させる必要があるすべての入力動作を処理します。
+
+**コンテンツ**
+
+ハイパーリンクには、その [Inlines](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.span.inlines.aspx) コレクション内にあるコンテンツの制限があります。 具体的には、ハイパーリンクは、[実行](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.run.aspx)および別のハイパーリンクではないその他の[スパン]() タイプのみ許可します。 [InlineUIContainer](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.inlineuicontainer.aspx) は、ハイパーリンクの Inlines コレクション内にはありません。 制限されたコンテンツを追加しようとすると、無効な引数の例外、または XAML 解析例外がスローされます。
+
+**ハイパーリンクとテーマまたはスタイルの動作**
+
+ハイパーリンクは [コントロール](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.aspx) から継承しないため、[Style](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.frameworkelement.style.aspx) プロパティまたは [Template](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.control.template.aspx) がありません。 Foreground または FontFamily など、[TextElement](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.aspx) から継承されたプロパティを編集してハイパーリンクの外観を変更できますが、一般的なスタイルまたはテンプレートを使用して変更を適用することはできません。 テンプレートを使う代わりに、一貫性を保つためにハイパーリンクのプロパティの値の一般的なリソースの使用を検討してください。 一部のプロパティのハイパーリンクは、システムによって提供される {themeresource} マークアップ拡張機能の値から既定の設定を使用します。 これにより、ハイパーリンクの外観は、実行時にシステム テーマが変更されると、適切な方法で切り替わります。
+
+ハイパーリンクの既定の色は、システムのアクセント カラーです。 [Foreground](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.foreground.aspx)  プロパティを設定するとこれを上書きできます。
+
+## ハイパーリンクの下線
+既定では、ハイパーリンクに下線が引かれます。 この下線は、アクセシビリティ要件を満たすために役立つので重要です。 色覚に障碍があるユーザーは、ハイパーリンクとその他のテキストを区別するために下線を使用します。 下線を無効にした場合は、ハイパーリンクを他のテキストと区別するために、FontWeight または FontStyle など、他の書式設定の違いを追加することを検討してください。
+
+**ハイパーリンク テキスト要素**
+
+[UnderlineStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.hyperlink.underlinestyle.aspx) プロパティを設定すると下線の表示を無効にすることができます。 これを行う場合は、リンクを表すテキストを区別するために [FontWeight](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontweight.aspx) または [FontStyle](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.documents.textelement.fontstyle.aspx) を使うことを検討します。
+
+**HyperlinkButton** 
+
+既定では、HyperlinkButton は、[Content](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentcontrol.content.aspx) プロパティの値として文字列を設定すると、下線付きテキストとして表示されます。
+
+次の場合、テキストは下線付きで表示されません。
+- コンテンツのプロパティの値として [TextBlock](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.aspx) を設定し、TextBlock の [Text](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.textblock.text.aspx) プロパティを設定した場合。
+- HyperlinkButton を再テンプレートして [ContentPresenter](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.contentpresenter.aspx) テンプレート パーツの名前を変更した場合。
+
+下線の無いテキストとして表示されるボタンが必要な場合は、標準のボタン コントロールを使い、そのスタイルのプロパティに組み込みの `TextBlockButtonStyle` システム リソースを適用することを検討してください。
+
+
+## 推奨事項
+
+-   ハイパーリンクを使う場合は、移動のみを目的としてください。他の操作のためにハイパーリンクは使わないでください。
+-   テキスト ベースのハイパーリンクには、書体見本の本文スタイルを使います。 [
+            **fonts and the Windows 10 type ramp**](text-controls.md) に関するページをご覧ください。
+-   個々のハイパーリンクの間には十分な間隔を空けます。これにより、それぞれのハイパーリンクを区別することができ、ハイパーリンクを間違えずに選ぶことができます。
+-   ユーザーの移動先を示すヒントをハイパーリンクに追加します。 ユーザーが外部サイトに移動する場合は、ヒント内にトップレベルのドメイン名を入れ、補助的なフォント色を使ってそのテキストのスタイルを指定します。
+
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
+
+## 関連記事
+
+[テキスト コントロール](text-controls.md)
+
+**デザイナー向け**
+- [ヒントのガイドライン](tooltips.md)
+
+**開発者向け (XAML)**
+- [**Windows.UI.Xaml.Documents.Hyperlink クラス**](https://msdn.microsoft.com/library/windows/apps/dn279356)
+- [**Windows.UI.Xaml.Controls.HyperlinkButton クラス**](https://msdn.microsoft.com/library/windows/apps/br242739)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,43 +1,47 @@
 ---
-Xxxxxxxxxxx: Xx xxx xxxxxx xxxx xxx, xxx xxxx xxx xxxxxx xx xxx xxx Xxxxx xxx xxxxxxxxxxxxx xxxx xx xxxxxxx xxxxxxxxxx xxxx xx xxx xxxxxxxxxxxxx xxxxxxx. Xxxx xxxx xxx xxxx xxxxxx xxxx xxxx xxx xx xxxxxx xxxxxxxxx.
-xxxxx: Xxxxx xxx xxxxxxxxxxxxx
-xx.xxxxxxx: YXYYYXYX-XYYX-YXXY-YYYY-XXYYXXYYXYYX
+Description: As you submit your app, you have the option to use the Notes for certification page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly.
+title: Notes for certification
+ms.assetid: 4A740A5F-F39F-4FE2-9391-EE00DB46B25A
 ---
 
-# Xxxxx xxx xxxxxxxxxxxxx
+# Notes for certification
 
 
-Xx xxx xxxxxx xxxx xxx, xxx xxxx xxx xxxxxx xx xxx xxx **Xxxxx xxx xxxxxxxxxxxxx** xxxx xx xxxxxxx xxxxxxxxxx xxxx xx xxx xxxxxxxxxxxxx xxxxxxx. Xxxx xxxx xxx xxxx xxxxxx xxxx xxxx xxx xx xxxxxx xxxxxxxxx.
+As you submit your app, you have the option to use the **Notes for certification** page to provide additional info to the certification testers. This info can help ensure that your app is tested correctly.
 
-Xxxx xxxx xx xxxxxxx xxx xxxxxxxxx (xx xxxxxxxxxx xxx xxxx xxx):
+Make sure to include the following (if applicable for your app):
 
--   **Xxxx xxxxx xxx xxxxxxxxx xxx xxxx xxxxxxxx**
+-   **User names and passwords for test accounts**
 
-    Xx xxxx xxx xxxxxxxx xxxxx xx xxx xx xx x xxxxxxx, xxxxxxx xxx xxxx xxxx xxx xxxxxxxx xxx x xxxx xxxxxxx. Xxx xxxxxxxxxxxxx xxxxxxx xxxx xxx xxxx xxxxxxx xxxx xxxxxxxxx xxxx xxx.
+    If your app requires users to log in to a service, provide the user name and password for a test account. The certification testers will use this account when reviewing your app.
 
--   **Xxxxx xx xxxxxx xxxxxx xx xxxxxx xxxxxxxx**
+-   **Steps to access hidden or locked features**
 
-    Xx xxxx xxx xxx xxxxxxxx xxxx xxxxx xxx xx xxxxxxx xx xxx xxxxxxx, xxxxxxx xxxxxxxx xxx xxxx xxx xxxxxx xxxxx xxxxxxxx. Xxxx xxxx xxxxxx xx xx xxxxxxxxxx xxx xxxx xxxxxxxxxxxxx.
+    If your app has features that might not be obvious to the testers, briefly describe how they can access those features. Apps that appear to be incomplete may fail certification.
 
--   **Xxxxx xx xxxxxx xxxxxxxxxx xxxxx xxxxx**
+-   **Steps to verify background audio usage**
 
-    Xx xxxx xxx xxxxxx xxxxx xx xxx xx xxx xxxxxxxxxx, xxxxxxx xxx xxxx xxxxxxxxxxxx xx xxx xx xxxxxx xxxx xxxxxxx xx xxxx xxx xxxxxxx xx xxxxxxxxx xxxxxxxxxxxxx.
+    If your app allows audio to run in the background, testers may need instructions on how to access this feature so they can confirm it functions appropriately.
 
--   **Xxxx xxxxx xxxx'x xxxxxxx xx xx xxx xxxxxx**
+-   **Info about what's changed in an app update**
 
-    Xxx xxxxxxx xx xxxxxxxxxx xxxxxxxxx xxxx, xxx xxx xxxx xx xxx xxx xxxxxxx xxxx xxxx xxx xxxxxxx, xxxxxxxxxx xx xxxx xxxxxxxx xxx xxx xxxx xxx xxx'xx xxxx xxxxxx xxxxxxx xx xxxx xxx xxxxxxx (xxxx xx xxxxxx xxxx xxxxxxxxxxx, xxxxxxxx xxxx xxx'x xxxxxxxx, xx xxxxxxx xxx xxxxxxxxxxx).
+    For updates to previously published apps, you may want to let the testers know what has changed, especially if your packages are the same and you're just making changes to your app listing (such as adding more screenshots, changing your app's category, or editing the description).
 
-Xxxx xxxxxxxxxxx xxxx xx xxxxx, xxxxxxxx:
+When considering what to write, remember:
 
--   **X xxxx xxxxxx xxxx xxxx xxxxx xxxxx.** Xxxxxxx xxxx xxxxxxxxxx x xxxxxx xxxx xxx xxxxx, xxxxxxx xxxxxxxxxxxx.
--   **Xx xxxxxxxx xxx xxxx xxxxxxxxxxxx xxxxxx.** Xx xxx xxxxxx xxxx xx xxxxxxx xxxx, xxx xxx xxxxxxx x xxxx xx x xxxx xxxx xxxx xxxx. Xxxx xx xxxx xxxx xxxxxxxxx xx xxxx xxx xxx'x xx xxxxxx xxxxx xxxxx. Xx xxx xxxx xx xxxxxxx xxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxx xxxx xxx, xxxxxxxx xxxxxxx xxxx xxx xxxxx xxxx xx xx xxxx xxxxxxx xx xxxx xxxxxxxxx xxxx xxx xx xxx xx.
--   **Xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxx xx xxxxxx xxx xxxxxxxxx.** Xx xxxx xxx xxxxxxxx xx x xxxxxxx xxx xxxx xx xxx xxxxxxxx, xxxx xxxx xxxx xxx xxxxxxx xxxx xx xxxxxx xxx xxxxxxxxx. Xxxxxxx xxx xxxxxxxxxxx xxxxx xxx xxxxxxx xxxx xxxxxxx xxxx xxxx. Xx xxxx xxx xxx'x xxxxxxx xx x xxxxxxx xx xxxxx xxxxxx xxxxxxx, xx xxx xxxx xxxxxxxxxxxxx.
+-   **A real person will read these notes.** Testers will appreciate a polite note and clear, helpful instructions.
+-   **Be succinct and keep instructions simple.** If you really need to explain more, you can include a link to a page with more info. Keep in mind that customers of your app won't be seeing these notes. If you need to provide complicated instructions for testing your app, consider whether your app might need to be made simpler so that customers know how to use it.
+-   **Services and external components must be online and available.** If your app connects to a service for part of its function, make sure that the service will be online and available. Include any information about the service that testers will need. If your app can't connect to a service it needs during testing, it may fail certification.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

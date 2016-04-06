@@ -1,88 +1,83 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxx x xxxx xxx xxxxxxxx xxxx x xxxxxxxxxx xxx xxxxxxx xxx Xxxxxxx xxxxx xxx xxxxxx xxxxxx xxx xxxxxxxxx xx x xxxxx xxxxxxx.
-xxxxx: Xxxxxxxx xxxx x xxxxxxxxxx xxx
-xx.xxxxxxx: YXYYXYYX-XYYY-YYYX-YYXX-YYYYYYXXYXXY
-xxxxx: Xxxxxxxx xxxx x xxxxxxxxxx xxx
-xxxxxxxx: xxxxxx.xxx
+Description: 音声コマンドの実行時に Cortana の音声とキャンバスを通じてバックグラウンド アプリを操作する方法について説明します。
+title: バックグラウンド アプリの操作
+ms.assetid: 6C60F03C-A242-435D-96BB-736892CC1CA6
+label: バックグラウンド アプリの操作
+template: detail.hbs
 ---
 
-# Xxxxxxxx xxxx x xxxxxxxxxx xxx xx Xxxxxxx
+# Cortana でのバックグラウンド アプリの操作
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**Xxxxxxx.XxxxxxxxxxxXxxxx.XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706594)
--   [**Xxxxx Xxxxxxx Xxxxxxxxxx (XXX) xxxxxxxx xxx xxxxxxxxxx xY.Y**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+-   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
+-   [**音声コマンド定義 (VCD) の要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-Xxxxx xxx x xxxx xxx xxxxxxxx xxxx x xxxxxxxxxx xxx xxxxxxx xxx **Xxxxxxx** xxxxx xxx xxxxxx xxxxxx xxx xxxxxxxxx xx x xxxxx xxxxxxx.
+音声コマンドの実行時に **Cortana** の音声とキャンバスを通じてバックグラウンド アプリを操作する方法について説明します。
 
-Xxxxx xxxxxxxx xxxx **Xxxxxxx** xxx xxxxxxx x xxxx xxxx xxxxxxxxxx xxx xxxxxxxxxxx xxxx xxxxxx **Xxxxxxx** xxxx xx xxxxxxxxxx xx xxx xxxxxxxxxx xxx. Xxx xxx xxx xxxxxxx x xxxxxx xx xxxxxxxxx xxxxx xx xxxxxxx xx xxxxxxx xxxxxxxxxxxxx xxxx xxxxxxxx:
+**Cortana** の音声コマンドには、バックグラウンド アプリによって制御される、**Cortana** 内での多彩なユーザー エクスペリエンスとの操作フローを含めることができます。 アプリでは、以下のような機能をサポートするさまざまな種類の画面を指定できます。
 
--   Xxxxxxxxxx xxxxxxxxxx
--   Xxxx-xxx
--   Xxxxxxxx
--   Xxxxxxxxxxxx
--   Xxxxxxxxxxxxxx
--   Xxxxx
+-   正常完了
+-   ハンドオフ
+-   進行状況
+-   確認
+-   不明瞭解消
+-   エラー
 
-**Xxxxxxxxxxxxx:  **
+**前提条件:  **
 
-Xxxx xxxxx xxxxxx xx [Xxxxxx x xxxxxxxxxx xxx xxxx xxxxx xxxxxxxx xx Xxxxxxx](launch-a-background-app-with-voice-commands-in-cortana.md). Xx xxxxxxxx xxxx xx xxxxxxxxxxx xxxxxxxx xxxx x xxxx xxxxxxxx xxx xxxxxxxxxx xxx xxxxx **Xxxxxxxxx Xxxxx**.
+このトピックは、「[Cortana の音声コマンドを使ったバックグラウンド アプリの起動](launch-a-background-app-with-voice-commands-in-cortana.md)」に基づいています。 ここでは、引き続き **Adventure Works** という旅行の計画および管理アプリを使って機能について説明します。
 
-Xx xxx'xx xxx xx xxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx, xxxx x xxxx xxxxxxx xxxxx xxxxxx xx xxx xxxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx xxxx.
+ユニバーサル Windows プラットフォーム (UWP) アプリを開発するのが初めての場合は、以下のトピックに目を通して、ここで説明されているテクノロジをよく理解できるようにしてください。
 
--   [Xxxxxx xxxx xxxxx xxx](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Xxxxx xxxxx xxxxxx xxxx [Xxxxxx xxx xxxxxx xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185584)
+-   [初めてのアプリ作成](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」に記載されているイベントの説明
 
-**Xxxx xxxxxxxxxx xxxxxxxxxx:  **
+**ユーザー エクスペリエンス ガイドライン:  **
 
-Xxx [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233) xxx xxxx xxxxx xxx xx xxxxxxxxx xxxx xxx xxxx **Xxxxxxx** xxx [Xxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121) xxx xxxxxxx xxxx xx xxxxxxxxx x xxxxxx xxx xxxxxxxx xxxxxx-xxxxxxx xxx.
+アプリと **Cortana** を統合する方法については「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」を、便利で魅力的な音声認識対応アプリの設計に役立つヒントについては「[音声機能の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)」をご覧ください。
 
-## <span id="Completion_screen">
-            </span>
-            <span id="completion_screen">
-            </span>
-            <span id="COMPLETION_SCREEN">
-            </span>Xxxxxxxxxx xxxxxx
+## <span id="Completion_screen"></span><span id="completion_screen"></span><span id="COMPLETION_SCREEN"></span>完了画面
 
 
-X xxxxxxxxxx xxxxxx xxxxxxxx xxx xxxx xxxx xxxxxxxxxxx xxxxx xxx xxxxxxxxx xxxxx xxxxxxx xxxx.
+完了画面には、完了した音声コマンド タスクに関する情報が表示されます。
 
-Xxxxx xxxx xxxx xxxx xxxx YYY xxxxxxxxxxxx xxx xxxx xxx xx xxxxxxx, xxx xxxxxxx xx xxxxxxxxxx xxxxxxxxxxx xxxx xxx xxxx, xxx xx xxxxxxxxx xxxxxxx xxxxxxx xxxxxxxxxxxxx xxxx **Xxxxxxx**, xxxxx xxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxx.
+アプリが応答するまでの時間が 500 ミリ秒未満で、ユーザーからの追加の情報が必要ないタスクは、**Cortana** からそれ以上のサポートを受けずに、完了画面を表示して完了することができます。
 
-Xxxx, xx xxxx xxx **Xxxxxxx** xxx xxxxxxx x xxxxxxxxxxxx xxxxxx xxxx xxx **Xxxxxxxxx Xxxxx** xxx xxx xx xxxxxxxx xxxx xx Xxx Xxxxx.
+ここでは、**Cortana** に、ラスベガスへの旅行予定に関する取り消しの結果を **Adventure Works** アプリから取得して表示する方法について説明します。
 
-![xxxxxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxx](images/cortana-completion-screen.png)
+![Cortana のバックグラウンド アプリの完了画面](images/cortana-completion-screen.png)
 
-1.  **Xxxxxx xxx xxxxxxxx xxxxxxx xx xx xxxxxxxxx xxx xxxxxx xx Xxxxxxx**
+1.  **Cortana に表示して読み上げるフィードバック文字列を選ぶ**
 
-    Xxxxxx xxx [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233) xxx xxxxxxxxxxxxxxx xx xxxxxxxxx xxxxxxx xxxx **Xxxxxxx** xxxxx xxx xxxxxx.
+    「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」に記載された、**Cortana** が表示して読み上げる文字列を作成する際の推奨事項に従います。
 
-2.  **Xxxxxx xxxxxxx xxxxx xxxxx xx xxx xxxxxx xxxxxxxxx (xxxxxxxx)**
+2.  **実行するアクションに基づいてコンテンツ タイルを選ぶ (省略可能)**
 
-    Xxxxxxx xxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxx xxx xxx xxxx xxx xxxx xxxx xxx xxxxxxxx xxxxxxx xxxxxxx.
+    コンテンツ タイルは、ユーザーに追加のコンテキストを示し、フィードバック文字列を簡潔に保つのに役立ちます。
 
-    **Xxxxxxx** xxxxxxxx xxx xxxxxxxxx xxxxxxx xxxx xxxxxxxxx (xxxx xxx xxxxxxxx xxx xx xxxx xx xxx xxxxxxxxxx xxxxxx):
+    **Cortana** では、次のコンテンツ タイル テンプレートがサポートされます (完了画面で使うことができるテンプレートは 1 つだけです)。
 
-    -   Xxxxx xxxx
-    -   Xxxxx xxxx xx xx xxxxx xxxxx xx xxxx
-    -   Xxxxx xxxx xxxx
-    -   Xxxxx xxxx xxxx xxx xx xx xxxxx xxxxx xx xxxx
+    -   タイトルのみ
+    -   最大 3 行のテキストを含むタイトル
+    -   アイコン付きのタイトル
+    -   アイコン付きで最大 3 行のテキストを含むタイトル
 
-    Xxx xxxx xxx xx:
+    以下のアイコンを使うことができます。
 
-    -   YYx x YYx
-    -   YYx x YYx
-    -   YYYx x YYYx
+    -   幅 68 x 高さ 68
+    -   幅 68 x 高さ 92
+    -   幅 280 x 高さ 140
 
-    Xxx xxx xxxx xxx xxxxx xxxxxx xxxx xxx xx xxx xxxxxxxxxx xx xxxxxx xxxxxxx x xxxx xx xxx xxxx xxxx xx xxxx xxx.
+    ユーザーのタイルやアプリへのテキスト リンクをタップして、アプリをフォアグラウンドで起動できるようにすることもできます。
 
-3.  **Xxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxxx**
+3.  **正常完了画面を表示する**
 
-    Xxxx'x xx xxxxxxx xx x xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xxxxxxxx xxxxxxx xxxxx.
+    複数のコンテンツ タイルが表示された正常完了画面の例を次に示します。
 
 ```    CSharp
 var userMessage = new VoiceCommandUserMessage();
@@ -116,68 +111,59 @@ var userMessage = new VoiceCommandUserMessage();
     await voiceServiceConnection.ReportSuccessAsync(response);
 ```
 
-## <span id="Hand-off_screen">
-            </span>
-            <span id="hand-off_screen">
-            </span>
-            <span id="HAND-OFF_SCREEN">
-            </span>Xxxx-xxx xxxxxx
+## <span id="Hand-off_screen"></span><span id="hand-off_screen"></span><span id="HAND-OFF_SCREEN"></span>ハンドオフ画面
 
 
-Xxxx x xxxxx xxxxxxx xx xxxxxxxxxx, **Xxxxxxx** xxxx xxxxxxx xxxxxxxx xxxxxx xxxxxxxxxxxxx YYY xxxxxxxxxxxx. Xx xxx xxx xxxxxxx xxxxxx xxxxxxxx xxx xxxxxx xxxxxxxxx xx xxx xxxxx xxxxxxx xxxxxx YYYxx, **Xxxxxxx** xxxxxxxx x xxxx-xxx xxxxxx xxxx xx xxxxx xxx xx xx Y xxxxxxx.
+音声コマンドが認識されたら、**Cortana** は約 500 ミリ秒以内にフィードバックを表示する必要があります。 アプリ サービスが 500 ミリ秒以内に音声コマンドにより指定されたアクションを完了できない場合、**Cortana** は最大 5 秒間ハンドオフ画面をユーザーに表示します。
 
-Xxx xxx xxxx xxx xxxx xxx xxxxxxxxx xx xxx xxxx-xxx xxxxxx, xxx xxx xxxx xxxxxxx xxxx XXX xxx xxxx-xx-xxxxxx (XXX) xxxxxxx xxxxxxx xx xxxxxxxx xxxx xxx xxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxx.
+ハンドオフ画面にはアプリ アイコンと名前が表示されます。音声コマンドが正しく理解されたことを示すために、GUI と音声合成 (TTS) の両方のハンドオフ文字列を提供する必要があります。
 
-Xxxx'x xx xxxxxxx xx x xxxx-xxx xxxxxx xxx xxx **Xxxxxxxxx Xxxxx** xxx. Xx xxxx xxxxxxx, x xxxx xxx xxxxxxx **Xxxxxxx** xxx xxxxxxxx xxxxx. Xxx xxxx-xxx xxxxxx xxxxxxxx x xxxxxxx xxxxxxxxxx xxxx xxx xxx xxxxxxx xxxx, xx xxxx, xxx xxx **Xxxxxxxx** xxxxxx xxxxxxxx xx xxx XXX xxxx.
+**Adventure Works** アプリのハンドオフ画面の例を次に示します。 この例では、ユーザーは **Cortana** に旅行の予定を照会しました。 ハンドオフ画面には、アプリ サービス名を使ってカスタマイズされたメッセージ、アイコン、VCD ファイルで宣言された**フィードバック**文字列が表示されます。
 
-![xxxxxxx xxxxxxxxxx xxx xxxx-xxx xxxxxx](images/cortana-backgroundapp-progress-result.png)
+![Cortana のバックグラウンド アプリのハンドオフ画面](images/cortana-backgroundapp-progress-result.png)
 
-## <span id="Progress_screen">
-            </span>
-            <span id="progress_screen">
-            </span>
-            <span id="PROGRESS_SCREEN">
-            </span>Xxxxxxxx xxxxxx
+## <span id="Progress_screen"></span><span id="progress_screen"></span><span id="PROGRESS_SCREEN"></span>進行状況画面
 
 
-Xx xxx xxx xxxxxxx xxxxx xxxx xxxx YYYxx xxxxxxx xxxxx, **Xxxxxxx** xxxxxxx xxx xxxx xx xxxx’x xxxxxxxxx xxxx x xxxxxxxx xxxxxx. Xxx xxx xxxx xx xxxxxxxxx, xxx xxx xxxx xxxxxxx xxxx XXX xxx XXX xxxxxxxx xxxxxxx xx xxxxxxxx xxxx xxx xxxx xx xxxxx xxxxxxxx xxxxxxx.
+アプリ サービスがステップ間で 500 ミリ秒以上時間がかかっている場合、**Cortana** は何が起こっているのかを進行状況画面でユーザーに伝えます。 アプリ アイコンが表示されます。タスクがアクティブに処理されていることを示すため、GUI と TTS の両方の進行状況文字列を提供する必要があります。
 
-**Xxxxxxx** xxxxx x xxxxxxxx xxxxxx xxx x xxxxxxx xx Y xxxxxxx. Xxxxx Y xxxxxxx, **Xxxxxxx** xxxxxxxx xxx xxxx xxxx xx xxxxx xxxxxxx xxx xxx xxx xxxxxxx xx xxxxxx. Xx xxx xxx xxxxxxx xxxxx xxxx xxxx Y xxxxxxx xx xxxxxxxx xxx xxxxxx, xx xxx xxxxxxxx xx xxxxxx **Xxxxxxx** xxxx xxxxxxxx xxxxxxx.
+**Cortana** には、最大 5 秒間進行状況画面が表示されます。 5 秒後、**Cortana** はユーザーにエラー メッセージを表示し、アプリ サービスが終了します。 アプリ サービスがアクションを完了するのに 5 秒以上必要とする場合、進行状況画面を表示して **Cortana** の更新を続けます。
 
-Xxxx'x xx xxxxxxx xx x xxxx-xxx xxxxxx xxx xxx **Xxxxxxxxx Xxxxx** xxx. Xx xxxx xxxxxxx, x xxxx xxx xxxxxxxx x xxxx xx Xxx Xxxxx xxxxxxx **Xxxxxxx**. Xxx xxxxxxxx xxxxxx xxxxxxxx x xxxxxxx xxxxxxxxxx xxx xxx xxxxxx, xx xxxx, xxx x xxxxxxx xxxx xxxx xxxxxxxxxxx xxxxx xxx xxxx xxxxx xxxxxxxx.
+**Adventure Works** アプリのハンドオフ画面の例を次に示します。 この例では、ユーザーは **Cortana** を使ってラスベガス旅行を取り消しました。 進行状況画面には、アクションに合わせてカスタマイズされたメッセージ、アイコン、および取り消す旅行についての情報を含むコンテンツ タイルが表示されます。
 
-![xxxxxxx xxxxxxxxxx xxx xxxxxxxx xxxxxx ](images/cortana-progress-screen.png)
+![Cortana のバックグラウンド アプリの進行状況画面 ](images/cortana-progress-screen.png)
 
-1.  **Xxxxxx xxx xxxxxxxx xxxxxxx xx xx xxxxxxxxx xxx xxxxxx xx Xxxxxxx**
+1.  **Cortana に表示して読み上げるフィードバック文字列を選ぶ**
 
-    Xxxxxx xxx [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233) xxx xxxxxxxxxxxxxxx xx xxxxxxxxx xxxxxxx xxxx **Xxxxxxx** xxxxx xxx xxxxxx.
+    「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」に記載された、**Cortana** が表示して読み上げる文字列を作成する際の推奨事項に従います。
 
-2.  **Xxxxxx xxxxxxx xxxxx xxxxx xx xxx xxxxxx xxxxxxxxx (xxxxxxxx)**
+2.  **実行するアクションに基づいてコンテンツ タイルを選ぶ (省略可能)**
 
-    Xxxxxxx xxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxx xxx xxx xxxx xxx xxxx xxxx xxx xxxxxxxx xxxxxxx xxxxxxx.
+    コンテンツ タイルは、ユーザーに追加のコンテキストを示し、フィードバック文字列を簡潔に保つのに役立ちます。
 
-    **Xxxxxxx** xxxxxxxx xxx xxxxxxxxx xxxxxxx xxxx xxxxxxxxx (xxxx xxx xxxxxxxx xxx xx xxxx xx xxx xxxxxxxxxx xxxxxx):
+    **Cortana** では、次のコンテンツ タイル テンプレートがサポートされます (完了画面で使うことができるテンプレートは 1 つだけです)。
 
-    -   Xxxxx xxxx
-    -   Xxxxx xxxx xx xx xxxxx xxxxx xx xxxx
-    -   Xxxxx xxxx xxxx
-    -   Xxxxx xxxx xxxx xxx xx xx xxxxx xxxxx xx xxxx
+    -   タイトルのみ
+    -   最大 3 行のテキストを含むタイトル
+    -   アイコン付きのタイトル
+    -   アイコン付きで最大 3 行のテキストを含むタイトル
 
-    Xxx xxxx xxx xx:
+    以下のアイコンを使うことができます。
 
-    -   YYx x YYx
-    -   YYx x YYx
-    -   YYYx x YYYx
+    -   幅 68 x 高さ 68
+    -   幅 68 x 高さ 92
+    -   幅 280 x 高さ 140
 
-    Xxx xxx xxxx xxx xxxxx xxxxxx xxxx xxx xx xxx xxxxxxxxxx xx xxxxxx xxxxxxx x xxxx xx xxx xxxx xxxx xx xxxx xxx.
+    ユーザーのタイルやアプリへのテキスト リンクをタップして、アプリをフォアグラウンドで起動できるようにすることもできます。
 
-3.  **Xxxxx xxx xxxxxxxx**
+3.  **応答を構築する**
 
-    Xxxx [**XxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706579) xx xxxx xxx xxxxxxxx xxxxxx xx **Xxxxxxx**.
+    [
+            **ReportProgressAsync**](https://msdn.microsoft.com/library/windows/apps/dn706579) を呼び出して、**Cortana** に進行状況画面を表示します。
 
-4.  **Xxxx xxx xxxxxxxx xxxxxx**
+4.  **進行状況画面を表示する**
 
-    Xxxx'x xx xxxxxxx xx x xxxxxxxx xxxxxx xxxx x xxxxxxx xxxx.
+    コンテンツ タイルを含む進行状況画面の例を次に示します。
 
 ```    CSharp
 var userMessage = new VoiceCommandUserMessage();
@@ -193,56 +179,52 @@ var userMessage = new VoiceCommandUserMessage();
     await voiceServiceConnection.ReportProgressAsync(response);
 ```
 
-## <span id="Confirmation_screen">
-            </span>
-            <span id="confirmation_screen">
-            </span>
-            <span id="CONFIRMATION_SCREEN">
-            </span>Xxxxxxxxxxxx xxxxxx
+## <span id="Confirmation_screen"></span><span id="confirmation_screen"></span><span id="CONFIRMATION_SCREEN"></span>確認画面
 
 
-Xxxx xx xxxxxx xxxxxxxxx xx x xxxxx xxxxxxx xx xxxxxxxxxxxx, xxx x xxxxxxxxxxx xxxxxx, xx xxx xxxxxxxxxxx xxxxxxxxxx xx xxx xxxx, xx xxx xxxxxxx xxx xxxxxxx xxxxxxxxxxxx.
+音声コマンドにより指定されたアクションが、元に戻すことができないアクション、大きな影響を与えるアクション、認識の信頼性が高くないアクションの場合、アプリ サービスは確認を要求できます。
 
-Xxxx'x xx xxxxxxx xx x xxxxxxxxxxxx xxxxxx xxx xxx **Xxxxxxxxx Xxxxx** xxx. Xx xxxx xxxxxxx, x xxxx xxx xxxxxxxxxx xxx xxx xxxxxxx xx xxxxxx x xxxx xx Xxx Xxxxx xxxxxxx **Xxxxxxx**. Xxx xxx xxxxxxx xxx xxxxxxxx **Xxxxxxx** xxxx x xxxxxxxxxxxx xxxxxx xxxx xxxxxxx xxx xxxx xxx x xxx xx xx xxxxxx xxxxxx xxxxxxxxx xxx xxxx.
+**Adventure Works** アプリの確認画面の例を次に示します。 この例では、**Cortana** を使って、アプリ サービスに対してラスベガス旅行を取り消すように指示しました。 アプリ サービスは、旅行を取り消す前にユーザーに「はい」または「いいえ」の回答を求める確認画面を **Cortana** に提供しました。
 
-Xx xxx xxxx xxxx xxxxxxxxx xxxxx xxxx "Xxx" xx "Xx", **Xxxxxxx** xxxxxx xxxxxxxxx xxx xxxxxx xx xxx xxxxxxxx. Xx xxxx xxxx, **Xxxxxxx** xxxxxxx xxx xxxx xxxx x xxxxxxx xxxxxxxx xxxxxxxx xx xxx xxx xxxxxxx.
+ユーザーが「はい」または「いいえ」以外のことを言った場合、**Cortana** は質問に対する回答を特定できません。 この場合、**Cortana** はアプリ サービスによって提供されたものと同様の質問をユーザーに表示します。
 
-Xx xxx xxxxxx xxxxxx, xx xxx xxxx xxxxx xxxxx’x xxx "Xxx" xx "Xx", **Xxxxxxx** xxxxxxx xxx xxxx x xxxxx xxxx xxxx xxx xxxx xxxxxxxx xxxxxxxx xxxx xx xxxxxxx. Xx xxx xxxx xxxxx xxxxx’x xxx "Xxx" xx "Xx", **Xxxxxxx** xxxxx xxxxxxxxx xxx xxxxx xxxxx xxx xxxx xxx xxxx xx xxx xxx xx xxx xxxxxxx xxxxxxx.
+2 つ目のプロンプトでもユーザーが「はい」または「いいえ」と言わない場合、**Cortana** はお詫びの言葉を前に添えて 3 度目の同じ質問をユーザーに表示します。 それでもユーザーが「はい」または「いいえ」と言わない場合、**Cortana** は音声入力の待機をやめ、代わりにボタンのタップをユーザーに求めます。
 
-Xxx xxxxxxxxxxxx xxxxxx xxxxxxxx x xxxxxxx xxxxxxxxxx xxx xxx xxxxxx, xx xxxx, xxx x xxxxxxx xxxx xxxx xxxxxxxxxxx xxxxx xxx xxxx xxxxx xxxxxxxx.
+確認画面には、アクションに合わせてカスタマイズされたメッセージ、アイコン、および取り消す旅行についての情報を含むコンテンツ タイルが表示されます。
 
-![xxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxx xxxxxx](images/cortana-confirmation-screen.png)
+![Cortana のバックグラウンド アプリの確認画面](images/cortana-confirmation-screen.png)
 
-1.  **Xxxxxx xxx xxxxxxxx xxxxxxx xx xx xxxxxxxxx xxx xxxxxx xx Xxxxxxx**
+1.  **Cortana に表示して読み上げるフィードバック文字列を選ぶ**
 
-    Xxxxxx xxx [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233) xxx xxxxxxxxxxxxxxx xx xxxxxxxxx xxxxxxx xxxx **Xxxxxxx** xxxxx xxx xxxxxx.
+    「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」に記載された、**Cortana** が表示して読み上げる文字列を作成する際の推奨事項に従います。
 
-2.  **Xxxxxx xxxxxxx xxxxx xxxxx xx xxx xxxxxx xxxxxxxxx (xxxxxxxx)**
+2.  **実行するアクションに基づいてコンテンツ タイルを選ぶ (省略可能)**
 
-    Xxxxxxx xxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxx xxx xxx xxxx xxx xxxx xxxx xxx xxxxxxxx xxxxxxx xxxxxxx.
+    コンテンツ タイルは、ユーザーに追加のコンテキストを示し、フィードバック文字列を簡潔に保つのに役立ちます。
 
-    **Xxxxxxx** xxxxxxxx xxx xxxxxxxxx xxxxxxx xxxx xxxxxxxxx (xxxx xxx xxxxxxxx xxx xx xxxx xx xxx xxxxxxxxxx xxxxxx):
+    **Cortana** では、次のコンテンツ タイル テンプレートがサポートされます (完了画面で使うことができるテンプレートは 1 つだけです)。
 
-    -   Xxxxx xxxx
-    -   Xxxxx xxxx xx xx xxxxx xxxxx xx xxxx
-    -   Xxxxx xxxx xxxx
-    -   Xxxxx xxxx xxxx xxx xx xx xxxxx xxxxx xx xxxx
+    -   タイトルのみ
+    -   最大 3 行のテキストを含むタイトル
+    -   アイコン付きのタイトル
+    -   アイコン付きで最大 3 行のテキストを含むタイトル
 
-    Xxx xxxx xxx xx:
+    以下のアイコンを使うことができます。
 
-    -   YYx x YYx
-    -   YYx x YYx
-    -   YYYx x YYYx
+    -   幅 68 x 高さ 68
+    -   幅 68 x 高さ 92
+    -   幅 280 x 高さ 140
 
-    Xxx xxx xxxx xxx xxxxx xxxxxx xxxx xxx xx xxx xxxxxxxxxx xx xxxxxx xxxxxxx x xxxx xx xxx xxxx xxxx xx xxxx xxx.
+    ユーザーのタイルやアプリへのテキスト リンクをタップして、アプリをフォアグラウンドで起動できるようにすることもできます。
 
-3.  **Xxxxx xxx xxxxxxxx**
+3.  **応答を構築する**
 
-    Xxxx [**XxxxxxxXxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706582) xx xxxx xxx xxxxxxxxxxxx xxxxxx xx **Xxxxxxx**.
+    [
+            **RequestConfirmationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706582) を呼び出して、**Cortana** に確認画面を表示します。
 
-4.  **Xxxx xxx xxxxxxxxxxxx xxxxxx**
+4.  **確認画面を表示する**
 
-    Xxxx'x xx xxxxxxx xx x xxxxxxxxxxxx xxxxxx xxxx x xxxxxxx xxxx.
+    コンテンツ タイルを含む確認画面の例を次に示します。
 
 ```    CSharp
 var userPrompt = new VoiceCommandUserMessage();
@@ -287,58 +269,54 @@ var userPrompt = new VoiceCommandUserMessage();
     }
 ```
 
-## <span id="Disambiguation_screen">
-            </span>
-            <span id="disambiguation_screen">
-            </span>
-            <span id="DISAMBIGUATION_SCREEN">
-            </span>Xxxxxxxxxxxxxx xxxxxx
+## <span id="Disambiguation_screen"></span><span id="disambiguation_screen"></span><span id="DISAMBIGUATION_SCREEN"></span>不明瞭解消画面
 
 
-Xxxx xx xxxxxx xxxxxxxxx xx x xxxxx xxxxxxx xxx xxxx xxxx xxx xxxxxxxx xxxxxxx, xx xxx xxxxxxx xxx xxxxxxx xxxx xxxx xxxx xxx xxxx.
+音声コマンドにより指定されたアクションに考えれる結果が複数ある場合、アプリ サービスはユーザーに詳細情報を要求できます。
 
-Xxxx'x xx xxxxxxx xx x xxxxxxxxxxxxxx xxxxxx xxx xxx **Xxxxxxxxx Xxxxx** xxx. Xx xxxx xxxxxxx, x xxxx xxx xxxxxxxxxx xxx xxx xxxxxxx xx xxxxxx x xxxx xx Xxx Xxxxx xxxxxxx **Xxxxxxx**. Xxxxxxx, xxx xxxx xxx xxx xxxxx xx Xxx Xxxxx xx xxxxxxxxx xxxxx xxx xxx xxx xxxxxxx xxxxxx xxxxxxxx xxx xxxxxx xxxxxxx xxx xxxx xxxxxxxxx xxx xxxxxxxx xxxx.
+**Adventure Works** アプリの不明瞭解消画面の例を次に示します。 この例では、**Cortana** を使って、アプリ サービスに対してラスベガス旅行を取り消すように指示しました。 ただし、ユーザーには異なる日付のラスベガス旅行が 2 つあるため、アプリ サービスはユーザーが目的の旅行を選ばないとアクションを完了できません。
 
-Xxx xxx xxxxxxx xxxxxxxx **Xxxxxxx** xxxx x xxxxxxxxxxxxxx xxxxxx xxxx xxxxxxx xxx xxxx xx xxxx x xxxxxxxxx xxxx x xxxx xx xxxxxxxx xxxxx, xxxxxx xx xxxxxxx xxx.
+アプリ サービスは、取り消す前に、一致する旅行の一覧から選ぶように求める不明瞭解消画面を **Cortana** に提供します。
 
-Xx xxxx xxxx, **Xxxxxxx** xxxxxxx xxx xxxx xxxx x xxxxxxx xxxxxxxx xxxxxxxx xx xxx xxx xxxxxxx.
+この場合、**Cortana** はアプリ サービスによって提供されたものと同様の質問をユーザーに表示します。
 
-Xx xxx xxxxxx xxxxxx, xx xxx xxxx xxxxx xxxxx’x xxx xxxxxxxxx xxxx xxx xx xxxx xx xxxxxxxx xxx xxxxxxxxx, **Xxxxxxx** xxxxxxx xxx xxxx x xxxxx xxxx xxxx xxx xxxx xxxxxxxx xxxxxxxx xxxx xx xxxxxxx. Xx xxx xxxx xxxxx xxxxx’x xxx xxxxxxxxx xxxx xxx xx xxxx xx xxxxxxxx xxx xxxxxxxxx, **Xxxxxxx** xxxxx xxxxxxxxx xxx xxxxx xxxxx xxx xxxx xxx xxxx xx xxx xxx xx xxx xxxxxxx xxxxxxx.
+2 つ目のプロンプトでもユーザーが選択内容を特定できる内容を言わない場合、**Cortana** はお詫びの言葉を前に添えて 3 度目の同じ質問をユーザーに表示します。 それでもユーザーが選択内容を特定できる内容を言わない場合、**Cortana** は音声入力の待機をやめ、代わりにボタンのタップをユーザーに求めます。
 
-Xxx xxxxxxxxxxxxxx xxxxxx xxxxxxxx x xxxxxxx xxxxxxxxxx xxx xxx xxxxxx, xx xxxx, xxx x xxxxxxx xxxx xxxx xxxxxxxxxxx xxxxx xxx xxxx xxxxx xxxxxxxx.
+不明瞭解消画面には、アクションに合わせてカスタマイズされたメッセージ、アイコン、および取り消す旅行についての情報を含むコンテンツ タイルが表示されます。
 
-![xxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxxxx xxxxxx ](images/cortana-disambiguation-screen.png)
+![Cortana のバックグラウンド アプリの不明瞭解消画面 ](images/cortana-disambiguation-screen.png)
 
-1.  **Xxxxxx xxx xxxxxxxx xxxxxxx xx xx xxxxxxxxx xxx xxxxxx xx Xxxxxxx**
+1.  **Cortana に表示して読み上げるフィードバック文字列を選ぶ**
 
-    Xxxxxx xxx [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233) xxx xxxxxxxxxxxxxxx xx xxxxxxxxx xxxxxxx xxxx **Xxxxxxx** xxxxx xxx xxxxxx.
+    「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」に記載された、**Cortana** が表示して読み上げる文字列を作成する際の推奨事項に従います。
 
-2.  **Xxxxxx xxxxxxx xxxxx xxxxx xx xxx xxxxxx xxxxxxxxx (xxxxxxxx)**
+2.  **実行するアクションに基づいてコンテンツ タイルを選ぶ (省略可能)**
 
-    Xxxxxxx xxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxx xxx xxx xxxx xxx xxxx xxxx xxx xxxxxxxx xxxxxxx xxxxxxx.
+    コンテンツ タイルは、ユーザーに追加のコンテキストを示し、フィードバック文字列を簡潔に保つのに役立ちます。
 
-    **Xxxxxxx** xxxxxxxx xxx xxxxxxxxx xxxxxxx xxxx xxxxxxxxx (xxxx xxx xxxxxxxx xxx xx xxxx xx xxx xxxxxxxxxx xxxxxx):
+    **Cortana** では、次のコンテンツ タイル テンプレートがサポートされます (完了画面で使うことができるテンプレートは 1 つだけです)。
 
-    -   Xxxxx xxxx
-    -   Xxxxx xxxx xx xx xxxxx xxxxx xx xxxx
-    -   Xxxxx xxxx xxxx
-    -   Xxxxx xxxx xxxx xxx xx xx xxxxx xxxxx xx xxxx
+    -   タイトルのみ
+    -   最大 3 行のテキストを含むタイトル
+    -   アイコン付きのタイトル
+    -   アイコン付きで最大 3 行のテキストを含むタイトル
 
-    Xxx xxxx xxx xx:
+    以下のアイコンを使うことができます。
 
-    -   YYx x YYx
-    -   YYx x YYx
-    -   YYYx x YYYx
+    -   幅 68 x 高さ 68
+    -   幅 68 x 高さ 92
+    -   幅 280 x 高さ 140
 
-    Xxx xxx xxxx xxx xxxxx xxxxxx xxxx xxx xx xxx xxxxxxxxxx xx xxxxxx xxxxxxx x xxxx xx xxx xxxx xxxx xx xxxx xxx.
+    ユーザーのタイルやアプリへのテキスト リンクをタップして、アプリをフォアグラウンドで起動できるようにすることもできます。
 
-3.  **Xxxxx xxx xxxxxxxx**
+3.  **応答を構築する**
 
-    Xxxx [**XxxxxxxXxxxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706583) xx xxxx xxx xxxxxxxxxxxxxx xxxxxx xx **Xxxxxxx**.
+    [
+            **RequestDisambiguationAsync**](https://msdn.microsoft.com/library/windows/apps/dn706583) を呼び出して、**Cortana** に不明瞭解消画面を表示します。
 
-4.  **Xxxx xxx xxxxxxxxxxxxxx xxxxxx**
+4.  **不明瞭解消画面を表示する**
 
-    Xxxx'x xx xxxxxxx xx x xxxxxxxxxxxxxx xxxxxx xxxx xxxxxxx xxxxx.
+    コンテンツ タイルを含む不明瞭解消画面の例を次に示します。
 
 ```    CSharp
 // Create a VoiceCommandUserMessage for the initial question.  
@@ -401,50 +379,46 @@ Xxx xxxxxxxxxxxxxx xxxxxx xxxxxxxx x xxxxxxx xxxxxxxxxx xxx xxx xxxxxx, xx xxxx,
     }
 ```
 
-## <span id="Error_screen">
-            </span>
-            <span id="error_screen">
-            </span>
-            <span id="ERROR_SCREEN">
-            </span>Xxxxx xxxxxx
+## <span id="Error_screen"></span><span id="error_screen"></span><span id="ERROR_SCREEN"></span>エラー画面
 
 
-Xxxx xx xxxxxx xxxxxxxxx xx x xxxxx xxxxxxx xxxxxx xx xxxxxxxxx, xx xxx xxxxxxx xxx xxxxxxx xx xxxxx xxxxxx.
+音声コマンドにより指定されたアクションを完了できない場合、アプリ サービスにエラー画面を表示できます。
 
-Xxxx'x xx xxxxxxx xx xx xxxxx xxxxxx xxx xxx **Xxxxxxxxx Xxxxx** xxx. Xx xxxx xxxxxxx, x xxxx xxx xxxxxxxxxx xxx xxx xxxxxxx xx xxxxxx x xxxx xx Xxx Xxxxx xxxxxxx **Xxxxxxx**. Xxxxxxx, xxx xxxx xxxx xxx xxxx xxx xxxxx xxxxxxxxx xx Xxx Xxxxx.
+**Adventure Works** アプリのエラー画面の例を次に示します。 この例では、**Cortana** を使って、アプリ サービスに対してラスベガス旅行を取り消すように指示しました。 ただし、ユーザーには予定されているラスベガス旅行がありません。
 
-Xxx xxx xxxxxxx xxxxxxxx **Xxxxxxx** xxxx xx xxxxx xxxxxx xxxx xxxxxxxx x xxxxxxx xxxxxxxxxx xxx xxx xxxxxx, xx xxxx, xxx xxx xxxxxxxx xxxxx xxxxxxx.
+アプリ サービスは、アクションに合わせてカスタマイズされたメッセージ、アイコン、特定のエラー メッセージが表示されるエラー画面を **Cortana** に提供します。
 
-1.  **Xxxxxx xxx xxxxxxxx xxxxxxx xx xx xxxxxxxxx xxx xxxxxx xx Xxxxxxx**
+1.  **Cortana に表示して読み上げるフィードバック文字列を選ぶ**
 
-    Xxxxxx xxx [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233) xxx xxxxxxxxxxxxxxx xx xxxxxxxxx xxxxxxx xxxx **Xxxxxxx** xxxxx xxx xxxxxx.
+    「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」に記載された、**Cortana** が表示して読み上げる文字列を作成する際の推奨事項に従います。
 
-2.  **Xxxxxx xxxxxxx xxxxx xxxxx xx xxx xxxxxx xxxxxxxxx (xxxxxxxx)**
+2.  **実行するアクションに基づいてコンテンツ タイルを選ぶ (省略可能)**
 
-    Xxxxxxx xxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxx xxx xxx xxxx xxx xxxx xxxx xxx xxxxxxxx xxxxxxx xxxxxxx.
+    コンテンツ タイルは、ユーザーに追加のコンテキストを示し、フィードバック文字列を簡潔に保つのに役立ちます。
 
-    **Xxxxxxx** xxxxxxxx xxx xxxxxxxxx xxxxxxx xxxx xxxxxxxxx (xxxx xxx xxxxxxxx xxx xx xxxx xx xxx xxxxxxxxxx xxxxxx):
+    **Cortana** では、次のコンテンツ タイル テンプレートがサポートされます (完了画面で使うことができるテンプレートは 1 つだけです)。
 
-    -   Xxxxx xxxx
-    -   Xxxxx xxxx xx xx xxxxx xxxxx xx xxxx
-    -   Xxxxx xxxx xxxx
-    -   Xxxxx xxxx xxxx xxx xx xx xxxxx xxxxx xx xxxx
+    -   タイトルのみ
+    -   最大 3 行のテキストを含むタイトル
+    -   アイコン付きのタイトル
+    -   アイコン付きで最大 3 行のテキストを含むタイトル
 
-    Xxx xxxx xxx xx:
+    以下のアイコンを使うことができます。
 
-    -   YYx x YYx
-    -   YYx x YYx
-    -   YYYx x YYYx
+    -   幅 68 x 高さ 68
+    -   幅 68 x 高さ 92
+    -   幅 280 x 高さ 140
 
-    Xxx xxx xxxx xxx xxxxx xxxxxx xxxx xxx xx xxx xxxxxxxxxx xx xxxxxx xxxxxxx x xxxx xx xxx xxxx xxxx xx xxxx xxx.
+    ユーザーのタイルやアプリへのテキスト リンクをタップして、アプリをフォアグラウンドで起動できるようにすることもできます。
 
-3.  **Xxxxx xxx xxxxxxxx**
+3.  **応答を構築する**
 
-    Xxxx [**XxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706578) xx xxxx xxx xxxxx xxxxxx xx **Xxxxxxx**.
+    [
+            **ReportFailureAsync**](https://msdn.microsoft.com/library/windows/apps/dn706578) を呼び出して、**Cortana** にエラー画面を表示します。
 
-4.  **Xxxx xxx xxxxx xxxxxx**
+4.  **エラー画面を表示する**
 
-    Xxxx'x xx xxxxxxx xx xx xxxxx xxxxxx.
+    次に示すのは、エラー画面の例です。
 
 ```    CSharp
 var userMessage = new VoiceCommandUserMessage();
@@ -457,25 +431,28 @@ var userMessage = new VoiceCommandUserMessage();
     await voiceServiceConnection.ReportFailureAsync(response);
 ```
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>関連記事
 
 
-**Xxxxxxxxxx**
-* [Xxxxxxx xxxxxxxxxxxx](cortana-interactions.md)
-* [**XXX xxxxxxxx xxx xxxxxxxxxx xY.Y**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+**開発者向け**
+* [Cortana の操作](cortana-interactions.md)
+* [**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-**Xxxxxxxxx**
-* [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233)
-* [Xxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121)
+**デザイナー向け**
+* [Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)
+* [音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)
 
-**Xxxxxxx**
-* [Xxxxxxx xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619899)
+**サンプル**
+* [Cortana 音声コマンドのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619899)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

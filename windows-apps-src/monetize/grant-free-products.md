@@ -1,65 +1,65 @@
 ---
-xx.xxxxxxx: XXYYXYYX-YYYX-YXYX-YYYY-XYXYYYYYYXXX
-xxxxxxxxxxx: Xxx xxxx xxxxxx xx xxx Xxxxxxx Xxxxx xxxxxxxx XXX xx xxxxx x xxxx xxx xx xx-xxx xxxxxxx (XXX) xx x xxxxx xxxx.
-xxxxx: Xxxxx xxxx xxxxxxxx
+ms.assetid: FA55C65C-584A-4B9B-8451-E9C659882EDE
+description: Windows ストア購入 API 内のこのメソッドを使用して、無料の製品またはアプリ内製品 (IAP) を特定のユーザーに対して付与します。
+title: 無料の製品の付与
 ---
 
-# Xxxxx xxxx xxxxxxxx
+# 無料の製品の付与
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-Xxx xxxx xxxxxx xx xxx Xxxxxxx Xxxxx xxxxxxxx XXX xx xxxxx x xxxx xxx xx xx-xxx xxxxxxx (XXX) xx x xxxxx xxxx.
+Windows ストア購入 API 内のこのメソッドを使用して、無料の製品またはアプリ内製品 (IAP) を特定のユーザーに対して付与します。
 
-Xxxxxxxxx, xxx xxx xxxx xxxxx xxxx xxxxxxxx. Xx xxxx xxxxxxx xxxxxxxx xx xxx xxxx xxxxxx xx xxxxx x xxxxxxx xxxx xx xxx xxxx, xxxx xxxxxx xxxx xxxxxx xx xxxxx.
+現時点では、無料の製品のみを付与することができます。 サービスがこのメソッドを使用して無料でない製品を付与しようとすると、このメソッドはエラーを返します。
 
-## Xxxxxxxxxxxxx
+## 前提条件
 
-Xx xxx xxxx xxxxxx, xxx xxxx xxxx:
+このメソッドを使用するための要件:
 
--   Xx Xxxxx XX xxxxxx xxxxx xxxx xxx xxxxxxx xxxx xxx **xxxxx://xxxxxxxx.xxxxxxxxx.xxx** xxxxxxxx XXX.
--   X Xxxxxxx Xxxxx XX xxx xxxx xxx xxxxxxxxx xx xxxxxxx xxx [**XxxXxxxxxxxXxxxxxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/mt608675) xxxxxx xxxx xxxxxx-xxxx xxxx xx xxxx xxx.
+-   **https://onestore.microsoft.com** 対象ユーザー URI を使用して作成した Azure AD アクセス トークン。
+-   アプリのクライアント側コードから [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) メソッドを呼び出して生成された Windows ストア ID キー。
 
-Xxx xxxx xxxxxxxxxxx, xxx [Xxxx xxx xxxxx xxxxxxxx xxxx x xxxxxxx](view-and-grant-products-from-a-service.md).
+詳しくは、「[サービスからの製品の表示と許可](view-and-grant-products-from-a-service.md)」をご覧ください。
 
-## Xxxxxxx
+## 要求
 
 
-### Xxxxxxx xxxxxx
+### 要求の構文
 
-| Xxxxxx | Xxxxxxx XXX                                            |
+| メソッド | 要求 URI                                            |
 |--------|--------------------------------------------------------|
-| XXXX   | xxxxx://xxxxxxxx.xx.xxxxxxxxx.xxx/xY.Y/xxxxxxxxx/xxxxx |
+| POST   | https://purchase.mp.microsoft.com/v6.0/purchases/grant |
 
  
 
-### Xxxxxxx xxxxxx
+### 要求ヘッダー
 
-| Xxxxxx         | Xxxx   | Xxxxxxxxxxx                                                                                           |
+| ヘッダー         | タイプ   | 説明                                                                                           |
 |----------------|--------|-------------------------------------------------------------------------------------------------------|
-| Xxxxxxxxxxxxx  | xxxxxx | Xxxxxxxx. Xxx Xxxxx XX xxxxxx xxxxx xx xxx xxxx **Xxxxxx** &xx;*xxxxx*&xx;.                           |
-| Xxxx           | xxxxxx | Xxxx xx xxx xx xxx xxxxx **xxxxxxxxxxx.xx.xxxxxxxxx.xxx**.                                            |
-| Xxxxxxx-Xxxxxx | xxxxxx | Xxx xxxxxx xx xxx xxxxxxx xxxx.                                                                       |
-| Xxxxxxx-Xxxx   | xxxxxx | Xxxxxxxxx xxx xxxxxxx xxx xxxxxxxx xxxx. Xxxxxxxxx, xxx xxxx xxxxxxxxx xxxxx xx **xxxxxxxxxxx/xxxx**. |
+| Authorization  | string | 必須。 **Bearer** &lt;*token*&gt; という形式の Azure AD アクセス トークン。                           |
+| Host           | string | 値 **collections.mp.microsoft.com** に設定する必要があります。                                            |
+| Content-Length | number | 要求の本文の長さ。                                                                       |
+| Content-Type   | string | 要求と応答の種類を指定します。 現時点では、サポートされている唯一の値は **application/json** です。 |
 
  
 
-### Xxxxxxx xxxx
+### 要求本文
 
-| Xxxxxxxxx      | Xxxx   | Xxxxxxxxxxx                                                                                                                                                                                                                                                                                                            | Xxxxxxxx |
+| パラメーター      | タイプ   | 説明                                                                                                                                                                                                                                                                                                            | 必須かどうか |
 |----------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| xxxxxxxxxxxxXx | xxxxxx | Xxx xxxxxxxxxxxx XX xx xxx xxxxxxx xx xx xxxxxxxxx xxxx xxx Xxxxxxx Xxxxx xxxxxxx.                                                                                                                                                                                                                                     | Xxx      |
-| xYxXxx         | xxxxxx | Xxx Xxxxxxx Xxxxx XX xxx xxxx xxxxxxxxxx xxx xxxxxxxx xxxxxxxx.                                                                                                                                                                                                                                                        | Xxx      |
-| xxxXxxxxXx     | xxxxxx | X xxxxxxxxx-xxxxxxxxx xxxxx XX xxxx xxxx xxxxxx xx xxx Xxxxxxxxxx xxxx xxxxx xxxxxxxx.                                                                                                                                                                                                                                 | Xx       |
-| xxxxxxxx       | xxxxxx | Xxx xxxxxxxx xx xxx xxxx.                                                                                                                                                                                                                                                                                              | Xxx      |
-| xxxxxx         | xxxxxx | Xxx xxxxxx xx xxx xxxx.                                                                                                                                                                                                                                                                                                | Xxx      |
-| xxxxxXx        | xxxx   | X XXXX xxxxxxxxx xxx xxx xxxxx. Xxxx xxxxx xx xxxxxx xxx xxx xxxx, xxx xx xx xxx xxxxxxxx xx xx xxxxxx xxxxxx xxx xxxxxx.                                                                                                                                                                                              | Xxx      |
-| xxxxxxxXx      | xxxxxx | Xxx xxxxxxx XX xxxx xxx Xxxxxxx Xxxxx xxxxxxx. Xx xxxxxx xxxx xxxxxxx XX, xxxxxxxx xx xxxx xxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xx xx xxx **Xxx xxxxxxxxxx** &xx; **Xxx xxxxxxxx** xxxx, xxx xxxxxxxx xxx xxxxxx xx xxx xxxxxx xxxxx xx xxx **XXX xxx Xxxxxxx YY** xxxxx. Xx xxxxxxx xxxxxxx XX xx “YXXXXXXXXYXY”. | Xxx      |
-| xxxxxxxx       | xxx    | Xxx xxxxxxxx xx xxxxxxxx. Xxxxxxxxx, xxx xxxx xxxxxxxxx xxxxx xx Y. Xx xxx xxxxxxxxx, xxx xxxxxxx xx Y.                                                                                                                                                                                                                | Xx       |
-| xxxXx          | xxxxxx | Xxx XXX XX xxxx xxx Xxxxxxx Xxxxx xxxxxxx. Xx xxxxxxx XXX XX xx “YYYY”.                                                                                                                                                                                                                                                | Xxx      |
+| availabilityId | string | Windows ストア カタログから購入される製品の可用性 ID。                                                                                                                                                                                                                                     | 必須      |
+| b2bKey         | string | 顧客 ID を表す Windows ストア ID キー。                                                                                                                                                                                                                                                        | 必須      |
+| devOfferId     | string | 購入後にコレクション項目に表示される開発者指定のプラン ID。                                                                                                                                                                                                                                 | 省略可能       |
+| language       | string | ユーザーの言語。                                                                                                                                                                                                                                                                                              | 必須      |
+| market         | string | ユーザーの市場。                                                                                                                                                                                                                                                                                                | 必須      |
+| orderId        | guid   | 注文に対して生成された GUID。 この値はそのユーザーに関して一意ですが、すべての注文にわたって一意である必要はありません。                                                                                                                                                                                              | 必須      |
+| productId      | string | Windows ストア カタログの製品 ID。 製品 ID を取得するには、Windows デベロッパー センターのダッシュボードでアプリに移動し、**[アプリ管理]** &gt; **[アプリ ID]** ページを開いて、**[Windows 10 の URL]** フィールドに表示される文字列のサフィックスを取得します。 製品 ID の例は “9WZDNCRFJ3Q8” です。 | 必須      |
+| quantity       | int    | 購入する数量。 現時点では、サポートされている唯一の値は 1 です。 指定されていない場合は、既定値は 1 です。                                                                                                                                                                                                                | 省略可能       |
+| skuId          | string | Windows ストア カタログの SKU ID。 SKU ID の例は “0010” です。                                                                                                                                                                                                                                                | 必須      |
 
  
 
-### Xxxxxxx xxxxxxx
+### 要求の例
 
 ```
 POST https://purchase.mp.microsoft.com/v6.0/purchases/grant HTTP/1.1
@@ -78,83 +78,83 @@ Content-Type: application/json
 }
 ```
 
-## Xxxxxxxx
+## 応答
 
 
-### Xxxxxxxx xxxx
+### 応答本文
 
-| Xxxxxxxxx                 | Xxxx                        | Xxxxxxxxxxx                                                                                                                                              | Xxxxxxxx |
+| パラメーター                 | タイプ                        | 説明                                                                                                                                              | 必須かどうか |
 |---------------------------|-----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| xxxxxxXxxxxxx             | XxxxxxXxxxxxxXY             | Xxxxxx xxxxxxxxxx xxxxxxxxxxx xxx xxxx xxxxx. Xxxx xxxx xx xxxxxxxx xx xxx *xxxxxxXX* xxxxx xxxx xxx Xxxxx XX xxxxx.                                     | Xxx      |
-| xxxxxxxxxxx               | xxxxxxxxxxxxxx              | Xxx xxxx xxx xxxxx xxx xxxxxxx.                                                                                                                          | Xxx      |
-| xxxxxxxxXxxx              | xxxxxx                      | Xxxxxxxx xxxx xxx *xxxxxXxxxxx* xxx *xxxxxXxxXxxxxx*. X/X xxx xxxx xxxxx.                                                                                | Xxx      |
-| xxxxxxxxXxxx              | xxxxxx                      | Xxx xxxxxxxx xxxx xxx xxx xxxxx. X/X xxx xxxxxx xxxx xxxxx xxx Xxxxxxx Xxxxx xxxxxxxx XXX.                                                               | Xxx      |
-| xxXXXxxxxxxx              | xxxxxxx                     | Xxxxxxxxx xxxxxxx x xxxxxxx xxxxxxxxxx (XX) xx xxxxxxxx xx xxxx xx xxx xxxxxxxx xxxxx.                                                                   | Xxx      |
-| xxxxxxxx                  | xxxxxx                      | Xxx xxxxxxxx XX xxx xxx xxxxx (xxx xxxxxxx, “xx”).                                                                                                       | Xxx      |
-| xxxxxx                    | xxxxxx                      | Xxx xxxxxx XX xxx xxx xxxxx (xxx xxxxxxx, “XX”).                                                                                                         | Xxx      |
-| xxxxxXx                   | xxxxxx                      | Xx XX xxxx xxxxxxxxxx xxx xxxxx xxx x xxxxxxxxxx xxxx.                                                                                                   | Xxx      |
-| xxxxxXxxxXxxxx            | xxxx&xx;XxxxxXxxxXxxxXY&xx; | Xxx xxxx xx xxxx xxxxx xxx xxx xxxxx. Xxxxxxxxx xxxxx xx Y xxxx xxxx xxx xxxxx.                                                                          | Xxx      |
-| xxxxxXxxxx                | xxxxxx                      | Xxx xxxxx xx xxx xxxxx. Xxx xxxxx xxxxxx xxx **Xxxxxxx**, **XxxxxxxxXxx**, **Xxxxxxx**, **Xxxxxxxxx**, **Xxxxxxxx**, **XxxxxxxXxxx**, xxx **Xxxxxxxxx**. | Xxx      |
-| xxxxxXxxxxxxxXxxXxxx      | xxxxxx                      | Xxx xxxx xxxx xxx xxxxx xxxxxxx xx xxxxx xxxxxx xx xx xxxxxxxxx. X/X xxx xxxx xxxx.                                                                      | Xxx      |
-| xxxxxXxxxxxxxXxxxxXxxx    | xxxxxx                      | Xxx xxxxx xxxx xxx xxxxx xxxxxxx xx xxxxx xxxxxx xx xx xxxxxxxxx. X/X xxx xxxx xxxx.                                                                     | Xxx      |
-| xxxxxxxxx                 | XxxxxxxxXY                  | Xx xxxxxx xxxx xxxxxxxxx xxx xxxxxxxx xx xxx xxxxxxxxx.                                                                                                  | Xxx      |
-| xxxxxXxxxxx               | xxxxxxx                     | Xxx xxxxx xxxxxxxx xxxxxx xx xxx xxxxx xx xxx xxxxx xxxxxxxxx xxx.                                                                                       | Xxx      |
-| xxxxxXxxxxxXxxxxxXxx      | xxxxxxx                     | Xxxxx xxxxxxxx xxxxxx xx xxx xxxxx xx xxx xxxxx xxxxxx xxx.                                                                                              | Xxx      |
-| xxxxxXxxxxxxXxXxxXxxXxxXX | xxxxxxx                     | Xx xxxxx x xxxxxxxx xxxxxxx xxxxxxxxxx xxx xxxxxx xxxxx (XXX), xxx xxxxxx xxxxxxx xx XXX.                                                                | Xxx      |
-| xxxxxXxxXxxxxx            | xxxxxxx                     | Xxx xxxxx xxxxxx xx xxx xxx xxx xxxx xxxxx.                                                                                                              | Xxx      |
+| clientContext             | ClientContextV6             | この注文に対するクライアントのコンテキスト情報。 これは、Azure AD トークンの *clientID* 値に割り当てられます。                                     | 必須      |
+| createdtime               | datetimeoffset              | 注文が作成された時刻。                                                                                                                          | 必須      |
+| currencyCode              | string                      | *totalAmount* と *totalTaxAmount* の通貨コード。 無料の項目の場合は該当なし。                                                                                | 必須      |
+| friendlyName              | string                      | 注文のフレンドリ名。 Windows ストア購入 API を使用した注文の場合は該当なし。                                                               | 必須      |
+| isPIRequired              | boolean                     | 注文の一部として支払い方法 (PI) が必要かどうかを示します。                                                                   | 必須      |
+| language                  | string                      | 注文の言語 ID (たとえば “en”)。                                                                                                       | 必須      |
+| market                    | string                      | 注文の市場 ID (たとえば “US”)。                                                                                                         | 必須      |
+| orderId                   | string                      | 特定のユーザーの注文を識別する ID。                                                                                                   | 必須      |
+| orderLineItems            | list&lt;OrderLineItemV6&gt; | 注文の行項目の一覧。 通常は、注文あたり 1 つの行項目があります。                                                                          | 必須      |
+| orderState                | string                      | 注文の状態。 有効な状態は、**Editing**、**CheckingOut**、**Pending**、**Purchased**、**Refunded**、**ChargedBack**、および **Cancelled** です。 | 必須      |
+| orderValidityEndTime      | string                      | 注文を送信する前の、注文の価格が有効である最後の時刻。 無料アプリの場合は該当なし。                                                                      | 必須      |
+| orderValidityStartTime    | string                      | 注文を送信する前の、注文の価格が有効である最初の時刻。 無料アプリの場合は該当なし。                                                                     | 必須      |
+| purchaser                 | IdentityV6                  | 購入者の ID を表すオブジェクト。                                                                                                  | 必須      |
+| totalAmount               | decimal                     | 注文のすべての項目の税込みの合計購入金額。                                                                                       | 必須      |
+| totalAmountBeforeTax      | decimal                     | 注文のすべての項目の税抜きの合計購入金額。                                                                                              | 必須      |
+| totalChargedToCsvTopOffPI | decimal                     | 個別の支払い方法とストアド バリュー (CSV) を使っている場合に、CSV に請求する金額。                                                                | 必須      |
+| totalTaxAmount            | decimal                     | すべての行項目に対する税の合計金額。                                                                                                              | 必須      |
 
  
 
-Xxx XxxxxxXxxxxxx xxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxx.
+ClientContext オブジェクトには以下のパラメーターが含まれています。
 
-| Xxxxxxxxx | Xxxx   | Xxxxxxxxxxx                           | Xxxxxxxx |
+| パラメーター | タイプ   | 説明                           | 必須かどうか |
 |-----------|--------|---------------------------------------|----------|
-| xxxxxx    | xxxxxx | Xxx xxxxxx XX xxxx xxxxxxx xxx xxxxx. | Xx       |
+| client    | string | 注文を作成したクライアント ID。 | 省略可能       |
 
  
 
-Xxx XxxxxXxxxXxxxXY xxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxx.
+OrderLineItemV6 オブジェクトには以下のパラメーターが含まれています。
 
-| Xxxxxxxxx               | Xxxx           | Xxxxxxxxxxx                                                                                                  | Xxxxxxxx |
+| パラメーター               | タイプ           | 説明                                                                                                  | 必須かどうか |
 |-------------------------|----------------|--------------------------------------------------------------------------------------------------------------|----------|
-| xxxxx                   | XxxxxxxxXY     | Xxx xxxxx xxxx xxxx xxxxxx xxx xxxx xxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxx xxxxxx, xxx xxx xxxxx xxxxx.       | Xx       |
-| xxxxxxxxxxxxXx          | xxxxxx         | Xxx xxxxxxxxxxxx XX xx xxx xxxxxxx xx xx xxxxxxxxx xxxx xxx Xxxxxxx Xxxxx xxxxxxx.                           | Xxx      |
-| xxxxxxxxxxx             | XxxxxxxxXY     | Xxx xxxxxxxx xx xxx xxxxxxxxxxx xx xxx xxxxx.                                                                | Xx       |
-| xxxxxxxXxxxx            | xxxxxx         | Xxx xxxxxxx xxxxx xx xxx xxxxx. Xxxx xx xxx xx **Xxxxxxx** xxxx xxxxxxxxx.                                   | Xx       |
-| xxxxxxxxXx              | xxxxxx         | Xxx xxxxxxxx XX xxx xxxx xxxxx.                                                                              | Xx       |
-| xxxxxxxxXxxx            | xxxxxx         | Xxx xxxxxxxx xxxx xxxx xxx xxxxx xxxxxxx.                                                                    | Xxx      |
-| Xxxxxxxxxxx             | xxxxxx         | X xxxxxxxxx xxxxxxxxxxx xx xxx xxxx xxxx.                                                                    | Xxx      |
-| xxxxxxxxXx              | xxxxxx         | Xxx xxxxx XX xxx xxx xxxxxxxxxx xxxxx, xx xxxxxxx.                                                           | Xx       |
-| xxxxxxxxxxxXxxx         | xxxxxxxxxxxxxx | Xxx xxxx xxx xxxxxxxxxxx xxxxxxxx.                                                                           | Xx       |
-| xxxxxxxxxxxXxxxx        | xxxxxx         | Xxx xxxxx xx xxx xxxxxxxxxxx xx xxxx xxxx. Xxxx xx xxx xx **Xxxxxxxxx** xxxx xxxxxxxxx.                      | Xx       |
-| xxXXXxxxxxxx            | xxxxxxx        | Xxxxxxxxx xxxxxxx x xxxxxxx xxxxxxxxxx xx xxxxxxxx xxx xxxx xxxx xxxx.                                       | Xxx      |
-| xxXxxXxxxxxxx           | xxxxxxx        | Xxxxxxxxx xxxxxxx xxx xx xxxxxxxx xx xxx xxxxxxx xxxxxxx xx xxx xxxx.                                        | Xxx      |
-| xxxxxxXxxxxxxXxxxxXx    | xxxxxx         | Xxx xxxxxx xxxxxxx XX.                                                                                       | Xx       |
-| xxxxXxxxXx              | xxxxxx         | Xxx xxxx xxxx XX xxx xxx xxxx xx xxxx xxxxx.                                                                 | Xxx      |
-| xxxxXxxxx               | xxxxxxx        | Xxx xxxx xxxxx xx xxx xxxx xx xxxx xxxxx.                                                                    | Xxx      |
-| xxxxxxxXx               | xxxxxx         | Xxx Xxxxxxx Xxxxx xxxxxxx XX xx xxx xxxx xxxx.                                                               | Xxx      |
-| xxxxxxxXxxx             | xxxxxx         | Xxx xxxx xx xxx xxxxxxx. Xxx xxxxxxxxx xxxxxx xxx **Xxxxxxx**, **Xxxxxxxxxxx**, xxx **XxxxxxxxxXxxxxxxxxx**. | Xxx      |
-| Xxxxxxxx                | xxx            | Xxx xxxxxxxx xx xxx xxxx xxxxxxx.                                                                            | Xxx      |
-| xxxxxxXxxxx             | xxxxxxx        | Xxx xxxxxx xxxxx xx xxx xxxx xxxxxxx.                                                                        | Xxx      |
-| xxxxxxxXxxxxxxxxxxXxxxx | xxxxxx         | Xxx xxxxxxx xxxxxxxxxxx xxxxx.                                                                               | Xxx      |
-| xxxXx                   | xxxxxx         | Xxx Xxxxxxx Xxxxx XXX XX xx xxx xxxx xxxx.                                                                   | Xxx      |
-| xxxXxxxxx               | xxxxxxx        | Xxx xxx xxxxxx xxx xxx xxxx xxxx.                                                                            | Xxx      |
-| xxxXxxx                 | xxxxxx         | Xxx xxx xxxx xxx xxx xxxxxxxxxx xxxxx.                                                                       | Xxx      |
-| Xxxxx                   | xxxxxx         | Xxx xxxxxxxxx xxxxx xx xxx xxxx xxxx.                                                                        | Xxx      |
-| xxxxxXxxxxx             | xxxxxxx        | Xxx xxxxx xxxxxxxx xxxxxx xx xxx xxxx xxxx xxxxxxxxx xxx.                                                    | Xxx      |
+| agent                   | IdentityV6     | 行項目を最後に編集したエージェント。 このオブジェクトについて詳しくは、次の表をご覧ください。       | 省略可能       |
+| availabilityId          | string         | Windows ストア カタログから購入される製品の可用性 ID。                           | 必須      |
+| beneficiary             | IdentityV6     | 注文の受益者の ID。                                                                | 省略可能       |
+| billingState            | string         | 注文の請求の状態。 完了すると、これは **Charged** に設定されます。                                   | 省略可能       |
+| campaignId              | string         | この注文のキャンペーン ID。                                                                              | 省略可能       |
+| currencyCode            | string         | 価格の詳細に使用される通貨コード。                                                                    | 必須      |
+| Description             | string         | 行項目のローカライズされた説明。                                                                    | 必須      |
+| devofferId              | string         | 特定の注文のプラン ID (該当する場合)。                                                           | 省略可能       |
+| fulfillmentDate         | datetimeoffset | フルフィルメントが発生した日付。                                                                           | 省略可能       |
+| fulfillmentState        | string         | この項目のフルフィルメントの状態。 完了すると、これは **Fulfilled** に設定されます。                      | 省略可能       |
+| isPIRequired            | boolean        | この行項目について支払い方法が必要であるかどうかを示します。                                       | 必須      |
+| isTaxIncluded           | boolean        | 項目の価格の詳細に税が含まれているかどうかを示します。                                        | 必須      |
+| legacyBillingOrderId    | string         | 従来の課金 ID。                                                                                       | 省略可能       |
+| lineItemId              | string         | この注文の項目の行項目 ID。                                                                 | 必須      |
+| listPrice               | decimal        | この注文の項目の定価。                                                                    | 必須      |
+| productId               | string         | 行項目の Windows ストア製品 ID。                                                               | 必須      |
+| productType             | string         | 製品の種類。 サポートされる値は、**Durable**、**Application**、および **UnmanagedConsumable** です。 | 必須      |
+| Quantity                | int            | 注文された項目の数量。                                                                            | 必須      |
+| retailPrice             | decimal        | 注文された項目の小売価格。                                                                        | 必須      |
+| revenueRecognitionState | string         | 収益認識の状態。                                                                               | 必須      |
+| skuId                   | string         | 行項目の Windows ストア SKU ID。                                                                   | 必須      |
+| taxAmount               | decimal        | 行項目の税額。                                                                            | 必須      |
+| taxType                 | string         | 適用される税金の種類。                                                                       | 必須      |
+| Title                   | string         | 行項目のローカライズされたタイトル。                                                                        | 必須      |
+| totalAmount             | decimal        | 行項目の税込みの合計購入金額。                                                    | 必須      |
 
  
 
-Xxx XxxxxxxxXY xxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxx.
+IdentityV6 オブジェクトには以下のパラメーターが含まれています。
 
-| Xxxxxxxxx     | Xxxx   | Xxxxxxxxxxx                                                                        | Xxxxxxxx |
+| パラメーター     | タイプ   | 説明                                                                        | 必須かどうか |
 |---------------|--------|------------------------------------------------------------------------------------|----------|
-| xxxxxxxxXxxx  | xxxxxx | Xxxxxxxx xxx xxxxx **"xxx"**.                                                      | Xxx      |
-| xxxxxxxxXxxxx | xxxxxx | Xxx xxxxxx xxxxx xx xxx *xxxxxxxxxXxxxXx* xxxx xxx xxxxxxxxx Xxxxxxx Xxxxx XX xxx. | Xxx      |
+| identityType  | string | 値 **"pub"** を格納します。                                                      | 必須      |
+| identityValue | string | 指定された Windows ストア ID キーの *publisherUserId* の文字列値。 | 必須      |
 
  
 
-### Xxxxxxxx xxxxxxx
+### 応答の例
 
 ```
 Content-Length: 1203
@@ -215,29 +215,33 @@ Date: Tue, 13 Oct 2015 21:21:51 GMT
 }
 ```
 
-## Xxxxx xxxxx
+## エラー コード
 
 
-| Xxxx | Xxxxx        | Xxxxx xxxxx xxxx           | Xxxxxxxxxxx                                                                                                                                                                           |
+| コード | エラー        | 内部エラー コード           | 説明                                                                                                                                                                           |
 |------|--------------|----------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| YYY  | Xxxxxxxxxxxx | XxxxxxxxxxxxxxXxxxxXxxxxxx | Xxx Xxxxx XX xxxxxx xxxxx xx xxxxxxx. Xx xxxx xxxxx xxx xxxxxxx xx xxx XxxxxxxXxxxx xxxx xxxxxxx xxxx xxxxxxxxxxx, xxxx xx xxxx xxx xxxxx xx xxxxxxx xx xxx *xxxxx* xxxxx xx xxxxxxx. |
-| YYY  | Xxxxxxxxxxxx | XxxxxxxXxxXxxxxxXxxxxxxx   | Xx Xxxxx XX xxxxxx xxxxx xxx xxx xxxxxx xx xxx xxxxxxx xx xxx xxxxxxxxxxxxx xxxxxx.                                                                                                   |
-| YYY  | Xxxxxxxxxxxx | XxxxxxxxxxxxXxxxxxXx       | Xxx *xxxxxxXx* xxxxx xx xxx Xxxxxxx Xxxxx XX xxx xx xxx xxxxxxx xxxx xxx xxx *xxxxx* xxxxx xx xxx Xxxxx XX xxxxxx xxxxx xx xxx xxxxxxxxxxxxx xxxxxx xx xxx xxxxx.                     |
-| YYY  | XxxXxxxxxx   | XxxxxxxXxxxxxxxx           | Xxx xxxxxxx xxxxxxx xxxxxxxxxxx xxxxxxxxx xxx xxxxxxx xxxx xxx xxxxx xxxxxx xxxx xx xxxxxxx xxxxx.                                                                                    |
+| 401  | 権限がありません | AuthenticationTokenInvalid | Azure AD アクセス トークンが無効です。 場合によっては、ServiceError の詳細に追加情報が含まれていることがあります (トークンの有効期限切れや *appid* 要求の欠落など)。 |
+| 401  | 権限がありません | PartnerAadTicketRequired   | Azure AD アクセス トークンが承認ヘッダーでサービスに渡されませんでした。                                                                                                   |
+| 401  | 権限がありません | InconsistentClientId       | 要求の本文の Windows ストア ID の *clientId* 要求と承認ヘッダーの Azure AD アクセス トークンの *appid* 要求が一致しません。                     |
+| 400  | BadRequest   | InvalidParameter           | 詳細情報に、要求の本文と無効な値を含むフィールドに関する情報が含まれます。                                                                                    |
 
  
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
 
-* [Xxxx xxx xxxxx xxxxxxxx xxxx x xxxxxxx](view-and-grant-products-from-a-service.md)
-* [Xxxxx xxx xxxxxxxx](query-for-products.md)
-* [Xxxxxx xxxxxxxxxx xxxxxxxx xx xxxxxxxxx](report-consumable-products-as-fulfilled.md)
-* [Xxxxx x Xxxxxxx Xxxxx XX xxx](renew-a-windows-store-id-key.md)
+* [サービスからの製品の表示と許可](view-and-grant-products-from-a-service.md)
+* [製品の照会](query-for-products.md)
+* [コンシューマブルな製品をフルフィルメント完了として報告する](report-consumable-products-as-fulfilled.md)
+* [Windows ストア ID キーの更新](renew-a-windows-store-id-key.md)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

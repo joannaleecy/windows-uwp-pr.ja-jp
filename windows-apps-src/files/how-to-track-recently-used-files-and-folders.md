@@ -1,43 +1,43 @@
 ---
-xx.xxxxxxx: XXYYYXYY-YXYY-YYYY-XXYY-XYYXYXYYYYYY
-xxxxx: Xxxxx xxxxxxxx xxxx xxxxx xxx xxxxxxx
-xxxxxxxxxxx: Xxxxx xxxxx xxxx xxxx xxxx xxxxxxxx xxxxxxxxxx xx xxxxxx xxxx xx xxxx xxx'x xxxx xxxxxxxx xxxx xxxx (XXX).
+ms.assetid: BF929A68-9C82-4866-BC13-A32B3A550005
+title: 最近使ったファイルやフォルダーの追跡
+description: ユーザーが頻繁にアクセスするファイルを追跡するには、そのファイルを最近使ったアプリの一覧 (MRU) に追加します。
 ---
-# Xxxxx xxxxxxxx xxxx xxxxx xxx xxxxxxx
+# 最近使ったファイルやフォルダーの追跡
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-** Xxxxxxxxx XXXx **
+** 重要な API **
 
-- [**XxxxXxxxxxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207458)
-- [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh738369)
+- [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458)
+- [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369)
 
-Xxxxx xxxxx xxxx xxxx xxxx xxxxxxxx xxxxxxxxxx xx xxxxxx xxxx xx xxxx xxx'x xxxx xxxxxxxx xxxx xxxx (XXX). Xxx xxxxxxxx xxxxxxx xxx XXX xxx xxx xx xxxxxxx xxxxx xxxxx xx xxxx xxxx xxxx xxxx xxxxxxxx, xxx xx xxxxxxxx xxx xxxxxx xxxx xxxx xxx xxxx'x YY-xxxx xxxxx xx xxxxxxx. Xxx xxxx xxxx xxxxx xxx XXX.
+ユーザーが頻繁にアクセスするファイルを追跡するには、そのファイルを最近使ったアプリの一覧 (MRU) に追加します。 MRU はプラットフォームが管理し、最後にアクセスした日時に基づいて項目を並べ替えたり、一覧の上限である 25 項目に達したら最も古い項目を削除したりします。 すべてのアプリにはそれぞれに専用の MRU があります。
 
-Xxxx xxx'x XXX xx xxxxxxxxxxx xx xxx [**XxxxxxxXxxxXxxxXxxxxxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207475) xxxxx, xxxxx xxx xxxxxx xxxx xxx xxxxxx [**XxxxxxxXxxxxxxxxxxXxxxxxxxxxx.XxxxXxxxxxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207458) xxxxxxxx. XXX xxxxx xxx xxxxxx xx [**XXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227129) xxxxxxx, xx xxxx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxxx (xxxxx xxxxxxxxx xxxxx) xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227230) xxxxxxx (xxxxx xxxxxxxxx xxxxxxx) xxx xx xxxxx xx xxx XXX.
+お使いのアプリの MRU は、静的な [**StorageApplicationPermissions.MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) プロパティから取得する [**StorageItemMostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207475) クラスによって表されます。 MRU の項目は [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) オブジェクトとして格納されます。つまり、[**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクト (ファイルを表すオブジェクト) と [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) オブジェクト (フォルダーを表すオブジェクト) は、どちらも MRU に追加できます。
 
-**Xxxx**  Xxxx xxx xxx [Xxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619994) xxx xxx [Xxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619995).
+**注**  また、[ファイル ピッカーのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619994) と[ファイル アクセスのサンプル](http://go.microsoft.com/fwlink/p/?linkid=619995) もご覧ください。
 
  
 
-## Xxxxxxxxxxxxx
+## 前提条件
 
--   **Xxxxxxxxxx xxxxx xxxxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx**
+-   **ユニバーサル Windows プラットフォーム (UWP) アプリの非同期プログラミングについての理解**
 
-    Xxx xxx xxxxx xxx xx xxxxx xxxxxxxxxxxx xxxx xx X# xx Xxxxxx Xxxxx, xxx [Xxxx xxxxxxxxxxxx XXXx xx X# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/mt187337). Xx xxxxx xxx xx xxxxx xxxxxxxxxxxx xxxx xx X++, xxx [Xxxxxxxxxxxx xxxxxxxxxxx xx X++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    C# や Visual Basic での非同期アプリの作成方法については、「[C# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/mt187337)」をご覧ください。 C++ での非同期アプリの作成方法については、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
 
--   **Xxxxxx xxxxxxxxxxx xx xxx xxxxxxxx**
+-   **場所へのアクセス許可**
 
-    Xxx [Xxxx xxxxxx xxxxxxxxxxx](file-access-permissions.md).
+    「[ファイル アクセス許可](file-access-permissions.md)」をご覧ください。
 
--   [Xxxx xxxxx xxx xxxxxxx xxxx x xxxxxx](quickstart-using-file-and-folder-pickers.md)
+-   [ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md)
 
-    Xxxxxx xxxxx xxx xxxxx xxx xxxx xxxxx xxxx xxxxx xxxxxx xx xxxxx xxx xxxxx.
+    ユーザーは同じファイルを何度も選ぶ傾向にあります。
 
- ## Xxx x xxxxxx xxxx xx xxx XXX
+ ## MRU に選んだファイルを追加する
 
--   Xxx xxxxx xxxx xxxx xxxx xxxxx xxx xxxxx xxxxx xxxx xxxx xxxxxx xx xxxxxxxxxx. Xx xxxxxxxx xxxxxx xxxxxx xxxxx xx xxxx xxx'x XXX xx xxxx xx xxxx xxx xxxxxx. Xxxx'x xxx.
+-   ユーザーは同じファイルを繰り返し選ぶ傾向にあります。 そのため、選んだファイルはできるだけ早くアプリの MRU に追加することを検討してください。 以下にその方法を示します。
 
     ```CSharp
     ...
@@ -48,28 +48,27 @@ Xxxx xxx'x XXX xx xxxxxxxxxxx xx xxx [**XxxxxxxXxxxXxxxXxxxxxxxXxxxXxxx**](https
     string mruToken = mru.Add(file, "profile pic");
     ```
     
-    [
-            **XxxxxxxXxxxXxxxXxxxxxxxXxxxXxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/br207476) xx xxxxxxxxxx. Xx xxx xxxxxxx, xx xxx [**Xxx(XXxxxxxxXxxx, Xxxxxx)**](https://msdn.microsoft.com/library/windows/apps/br207481) xx xxxx xx xxx xxxxxxxxx xxxxxxxx xxxx xxx xxxx. Xxxxxxx xxxxxxxx xxxx xxx xxxxxx xxx xxxx'x xxxxxxx, xxx xxxxxxx "xxxxxxx xxx". Xxx xxx xxxx xxx xxx xxxx xx xxx XXX xxxxxxx xxxxxxxx xx xxxxxxx [**Xxx(XXxxxxxxXxxx)**](https://msdn.microsoft.com/library/windows/apps/br207480). Xxxx xxx xxx xx xxxx xx xxx XXX, xxx xxxxxx xxxxxxx x xxxxxxxx xxxxxxxxxxx xxxxxx, xxxxxx x xxxxx, xxxxx xx xxxx xx xxxxxxxx xxx xxxx.
+    [**StorageItemMostRecentlyUsedList.Add**](https://msdn.microsoft.com/library/windows/apps/br207476) がオーバーロードされます。 この例では [**Add(IStorageItem, String)**](https://msdn.microsoft.com/library/windows/apps/br207481) を使って、メタデータをファイルに関連付けられるようにしています。 メタデータを設定すると、その項目の目的 ("プロファイル画像" など) を記録できます。 メタデータなしで MRU にファイルを追加するには、[**Add(IStorageItem)**](https://msdn.microsoft.com/library/windows/apps/br207480) を呼び出します。 MRU に項目を追加すると、項目を取得するときに使われる一意に識別するための文字列であるトークンが返されます。
 
-    **Xxx**   Xxx'xx xxxx xxx xxxxx xx xxxxxxxx xx xxxx xxxx xxx XXX, xx xxxxxxx xx xxxxxxxxx. Xxx xxxx xxxx xxxxx xxx xxxx, xxx [Xxxxxxxx xxxxxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/hh465109).
+    **ヒント**   項目を MRU から取得するにはそのトークンが必要であるため、どこかに保存しておいてください。 アプリ データの詳細については、「[アプリケーション データの管理](https://msdn.microsoft.com/library/windows/apps/hh465109)」を参照してください。
 
      
 
-## Xxx x xxxxx xx xxxxxxxx xx xxxx xxxx xxx XXX
+## トークンを使って MRU から項目を取得する
 
-Xxx xxx xxxxxxxxx xxxxxx xxxx xxxxxxxxxxx xxx xxx xxxx xxx xxxx xx xxxxxxxx.
+取得する項目に最適な取得メソッドを使います。
 
--   Xxxxxxxx x xxxx xx x [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xx xxxxx [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br207486).
--   Xxxxxxxx x xxxxxx xx x [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227230) xx xxxxx [**XxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br207489).
--   Xxxxxxxx x xxxxxxx [**XXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227129), xxxxx xxx xxxxxxxxx xxxxxx x xxxx xx xxxxxx, xx xxxxx [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br207492).
+-   ファイルを [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) として取得するには [**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br207486) を使います。
+-   フォルダーを [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) として取得するには [**GetFolderAsync**](https://msdn.microsoft.com/library/windows/apps/br207489) を使います。
+-   ファイルかフォルダーを表す汎用の [**IStorageItem**](https://msdn.microsoft.com/library/windows/apps/br227129) を取得するには [**GetItemAsync**](https://msdn.microsoft.com/library/windows/apps/br207492) を使います。
 
-Xxxx'x xxx xx xxx xxxx xxx xxxx xx xxxx xxxxx.
+先ほど追加したファイルを取得する方法は次のとおりです。
 
 ```csharp
 StorageFile retrievedFile = await mru.GetFileAsync(mruToken);
 ```
 
-Xxxx'x xxx xx xxxxxxx xxx xxx xxxxxxx xx xxx xxxxxx xxx xxxx xxxxx.
+すべてのエントリを反復処理してトークンを取得した後に項目を取得する方法は次のとおりです。
 
 ```csharp
 foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
@@ -81,26 +80,32 @@ foreach (Windows.Storage.AccessCache.AccessListEntry entry in mru.Entries)
 }
 ```
 
-Xxx [**XxxxxxXxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227349) xxxx xxx xxxxxxx xxxxxxx xx xxx XXX. Xxxxx xxxxxxx xxx [**XxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227348) xxxxxxxxxx xxxx xxxxxxx xxx xxxxx xxx xxxxxxxx xxx xx xxxx.
+[
+            **AccessListEntryView**](https://msdn.microsoft.com/library/windows/apps/br227349) を使うと MRU 内のエントリを反復処理できます。 これらのエントリは、項目のトークンとメタデータが格納された [**AccessListEntry**](https://msdn.microsoft.com/library/windows/apps/br227348) 構造体です。
 
-## Xxxxxxxx xxxxx xxxx xxx XXX xxxx xx'x xxxx
+## 空きのない MRU から項目を削除する
 
-Xxxx xxx XXX'x YY-xxxx xxxxx xx xxxxxxx xxx xxx xxx xx xxx x xxx xxxx, xxx xxxx xxxx xxx xxxxxxxx xxx xxxxxxx xxxx xxx xx xxxxxxxxxxxxx xxxxxxx. Xx, xxx xxxxx xxxx xx xxxxxx xx xxxx xxxxxx xxx xxx x xxx xxx.
+MRU の上限である 25 項目に達している場合、新しい項目を追加しようとすると、最後にアクセスしてからの経過時間が最も長い項目が自動的に削除されます。 そのため、新しい項目を追加する前に項目を削除する必要はありません。
 
-## Xxxxxx-xxxxxx xxxx
+## 後でアクセスする一覧
 
-Xx xxxx xx xx XXX, xxxx xxx xxxx xxx x xxxxxx-xxxxxx xxxx. Xx xxxxxxx xxxxx xxx xxxxxxx, xxxx xxxx xxxxxx xxxx xxx xxxxxxxxxx xx xxxxxx xxxxx xxxx xxxxx xxx xx xxxxxxxxxx xxxxxxxxx. Xx xxx xxx xxxxx xxxxx xx xxxx xxxxxx-xxxxxx xxxx xxxx xxx'xx xxxxxx xxxx xxxxxxxxxx xxxx xxxx xxx xxxxx xx xxxxxx xxxxx xxxxx xxxxx xxxxx. Xxxx xxx'x xxxxxx-xxxxxx xxxx xx xxxxxxxxxxx xx xxx [**XxxxxxxXxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207459) xxxxx, xxxxx xxx xxxxxx xxxx xxx xxxxxx [**XxxxxxxXxxxxxxxxxxXxxxxxxxxxx.XxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207457) xxxxxxxx.
+アプリには MRU のほか、後でアクセスする一覧もあります。 ファイルやフォルダーを選ぶことで、ユーザーはアプリがアクセスできない可能性がある項目にアクセス許可を付与します。 これらの項目を後でアクセスする一覧に追加すると、後にそれらの項目にアプリがアクセスする場合に備えてアクセス許可が保持されます。 お使いのアプリの、後でアクセスする一覧は、静的な [**StorageApplicationPermissions.FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) プロパティから取得する [**StorageItemAccessList**](https://msdn.microsoft.com/library/windows/apps/br207459) クラスによって表されます。
 
-Xxxx x xxxx xxxxx xx xxxx, xxxxxxxx xxxxxx xx xx xxxx xxxxxx-xxxxxx xxxx xx xxxx xx xxxx XXX.
+ユーザーが項目を選ぶ際には、MRU のほか、後でアクセスする一覧にも追加することを検討してください。
 
--   Xxx [**XxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207457) xxx xxxx xx xx YYYY xxxxx. Xxxxxxxx: xx xxx xxxx xxxxxxx xx xxxx xx xxxxx, xx xxxx'x x xxx xx xxxxxxx.
--   Xxx xxxxxxxx xxxxx xxxxxxx xxxxx xxxx xxx [**XxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207457) xxx xxx. Xxxx xxx xxxxx xxx YYYY-xxxx xxxxx, xxx xxx'x xxx xxxxxxx xxxxx xxx xxxx xxxx xxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207497) xxxxxx.
+-   [
+            **FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) は最大 1,000 項目を保持できます。 ファイル以外にもフォルダーを保持できるため、大量のフォルダーがあることにご注意ください。
+-   プラットフォームによって [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) から項目が削除されることはありません。 項目の数が上限の 1,000 に到達した場合、[**Remove**](https://msdn.microsoft.com/library/windows/apps/br207497) メソッドで空きを確保するまで項目を追加できません。
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

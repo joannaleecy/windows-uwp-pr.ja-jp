@@ -1,44 +1,43 @@
 ---
-xxxxx: Xxxx-xxxx xxxxxxxx xxx xxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxx xxxxxxxxxxx xxxxx xxx xxxxxxxx xxxx-xxxx xxxxxxxx (xxxx xxxxx xx xxxxxxxxx xxxxxxxx) xx xxxx XxxxxxX xxxx.
-xx.xxxxxxx: YxYxYYYx-YxxY-YxYY-xxYY-YYYYxYYxxYYY
+title: Move-look controls for games
+description: Learn how to add traditional mouse and keyboard move-look controls (also known as mouselook controls) to your DirectX game.
+ms.assetid: 4b4d967c-3de9-8a97-ae68-0327f00cc933
 ---
 
-# <span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game">
-            </span>Xxxx-xxxx xxxxxxxx xxx xxxxx
+# <span id="dev_gaming.tutorial__adding_move-look_controls_to_your_directx_game"></span>Move-look controls for games
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxx xxx xx xxx xxxxxxxxxxx xxxxx xxx xxxxxxxx xxxx-xxxx xxxxxxxx (xxxx xxxxx xx xxxxxxxxx xxxxxxxx) xx xxxx XxxxxxX xxxx.
+Learn how to add traditional mouse and keyboard move-look controls (also known as mouselook controls) to your DirectX game.
 
-Xx xxxx xxxxxxx xxxx-xxxx xxxxxxx xxx xxxxx xxxxxxx, xxxx xxx xxxx xxxxxxxxxx xxxxxxx xx xxx xxxxx-xxxx xxxxxxx xx xxx xxxxxx xxxx xxxxxxx xxxx x xxxxxxxxxxx xxxxx, xxx xxx xxxx xxxxxxxxxx xxxxxxx xxx xxx xxxxxxxxx xx xxx xxxxxx, xxxx xxx xxxxxx xxxxxxxxx xx xxx xxxx xxxxx xxx xxxxxx xxxxxxx xx xxxx xxxx.
+We also discuss move-look support for touch devices, with the move controller defined as the lower-left section of the screen that behaves like a directional input, and the look controller defined for the remainder of the screen, with the camera centering on the last place the player touched in that area.
 
-Xx xxxx xx xx xxxxxxxxxx xxxxxxx xxxxxxx xx xxx, xxxxx xx xx xxxx xxx: xxx xxxxxxxx (xx xxx xxxxx-xxxxx xxxxxxxxxxx xxxxx xxx) xxxxxxxx xxxx xxxx xx xxxx YX xxxxx, xxx xxxxxxx xx xx xxxx xxxx xxxx xxxx xxxxxxx xx xxxxxx xxxxxxx xx xxxxxxxx, xx xxxxxxxx xxxx xxx xxxxx. Xxx xxxxx (xx xxxxx xxxxxxx) xxxxxxxx xxxx xxxx. Xxx xxx xxxx xxxx xx xxxx xx x xxxxxxxxx -- xxxx xx xxxxx, xx xx xxxx, xx xxxxxxxxx xx xxxx xxxxx. Xx xxxxx xx x xxxxxx xx xxxx xxxx, xxx xxxxx xxx xxx xxxxx xx xxxxxx xxxx xxxxxx xxxx xx xxxx xxxxxx, xxx xxxx xxxxx xxx xxxxxxx xxx xx xxxx xxxxxxx xx, xx xxxx xx xxxx xxxx xxxx xx. Xx xxxxxx xxx xxxxxx, xxx xxxxx xxxx xxx xxxxxx xxxx xxxxxxxx xx xxx xxxxxx, xxx xxxx xxxx xx xxxxx xx xxx xxxx xxxx. Xxx xxx xxx xxx xxxx xx x xxxx xxxxxxxxx xxxxxxx xxxxxx xxx xxxxxxxxxx YX xxxxxxxxxxxx!
+If this is an unfamiliar control concept to you, think of it this way: the keyboard (or the touch-based directional input box) controls your legs in this 3D space, and behaves as if your legs were only capable of moving forward or backward, or strafing left and right. The mouse (or touch pointer) controls your head. You use your head to look in a direction -- left or right, up or down, or somewhere in that plane. If there is a target in your view, you would use the mouse to center your camera view on that target, and then press the forward key to move towards it, or back to move away from it. To circle the target, you would keep the camera view centered on the target, and move left or right at the same time. You can see how this is a very effective control method for navigating 3D environments!
 
-Xxxxx xxxxxxxx xxx xxxxxxxx xxxxx xx XXXX xxxxxxxx xx xxxxxx, xxxxx xxx X, X, X, xxx X xxxx xxx xxxx xxx x-x xxxxx xxxxx xxxxxx xxxxxxxx, xxx xxx xxxxx xx xxxx xx xxxxxxx xxxxxx xxxxxxxx xxxxxx xxx x xxx x xxxx.
+These controls are commonly known as WASD controls in gaming, where the W, A, S, and D keys are used for x-z plane fixed camera movement, and the mouse is used to control camera rotation around the x and y axes.
 
-## Xxxxxxxxxx
-
-
--   Xxx xxxxx xxxx-xxxx xxxxxxxx xx xxxx XxxxxxX xxxx xxx xxxx xxxxx xxx xxxxxxxx, xxx xxxxx xxxxxxx.
--   Xxxxxxxxx x xxxxx-xxxxxx xxxxxx xxxx xx xxxxxxxx x YX xxxxxxxxxxx.
-
-## X xxxx xx xxxxx xxxxxxx xxxxxxxxxxxxxxx
+## Objectives
 
 
-Xxx xxxxx xxxxxxxx, xx xxxxxxxxx xxx xxxxxxxxxxx: xxx xxxx xxxxxxxxxx, xxxxx xxxxxxx xxxxxxxx xx xxx x-x xxxxx xxxxxxxx xx xxx xxxxxx'x xxxx xxxxx; xxx xxx xxxx xxxxxxxxxx, xxxxx xxxx xxx xxxxxx'x xxxx xxxxx. Xxx xxxx xxxxxxxxxx xxxx xx xxx xxxxxxxx XXXX xxxxxxx, xxx xxx xxxx xxxxxxxxxx xxxx xx xxx xxxxx. Xxx xxx xxxxx xxxxxxxx, xx xxxx xx xxxxxx x xxxxxx xx xxx xxxxxx xxxx xxxxxx xx xxx xxxxxxxxxxx xxxxxx, xx xxx xxxxxxx XXXX xxxxxxx, xxxx xxx xxxxxxxxx xx xxx xxxxxx xxxxxxx xx xxx xxxxx xxxxx xxx xxx xxxx xxxxxxxx.
+-   Add basic move-look controls to your DirectX game for both mouse and keyboard, and touch screens.
+-   Implement a first-person camera used to navigate a 3D environment.
 
-Xxx xxxxxx xxxxx xxxx xxxx.
-
-![xxx xxxx-xxxx xxxxxxxxxx xxxxxx](images/movelook-touch.png)
-
-Xxxx xxx xxxx xxx xxxxx xxxxxxx (xxx xxx xxxxx!) xx xxx xxxxx xxxx xx xxx xxxxxx, xxx xxxxxxxx xxxxxxx xxxx xxxx xxx xxxxxx xxxx xxxxxxx. Xxx xxxxxxxx xxxxxxxxx xxxx xxxx xxx xxxxxx xxxx xxxxxxxxx. Xxx xxxx xxxxx xxx xxxx xxx xxxxx xxxxxxxx xxxxxx xxx xxxx xxxxxxxxxx'x xxxxxxx xxxxx. Xxxxxxx xx xxxx xxxxx, xxx xx xxxxxxx x xxxx xxxxxxxxxx -- xxx xxxx xxxxx xx xxxx xxx xxxxxx xx xxxxx xxx'x xxxx xx xx xxxx.
-
-## Xxx xx xxx xxxxx xxxxx xxxxx xxxxxxxxxxxxxx
+## A note on touch control implementations
 
 
-Xxxxx, xx xxxx xxxxxx xxx xxxxxxx xxxxx xxxx xx xxx xx xxxxxx xxxxx xxxxxx xxxx xxx xxxxx xxx xxxxxxxx, xxx xxxxxx xxx xxxxxx xxxxxxxxxxx xxxxx xx xxxx xxxxx. Xxxxxxx xx'xx xxxxxxxxxxxx xxxx-xxxx xxxxxxxx, xx xxxx xx **XxxxXxxxXxxxxxxxxx**.
+For touch controls, we implement two controllers: the move controller, which handles movement in the x-z plane relative to the camera's look point; and the look controller, which aims the camera's look point. Our move controller maps to the keyboard WASD buttons, and the look controller maps to the mouse. But for touch controls, we need to define a region of the screen that serves as the directional inputs, or the virtual WASD buttons, with the remainder of the screen serving as the input space for the look controls.
+
+Our screen looks like this.
+
+![the move-look controller layout](images/movelook-touch.png)
+
+When you move the touch pointer (not the mouse!) in the lower left of the screen, any movement upwards will make the camera move forward. Any movement downwards will make the camera move backwards. The same holds for left and right movement inside the move controller's pointer space. Outside of that space, and it becomes a look controller -- you just touch or drag the camera to where you'd like it to face.
+
+## Set up the basic input event infrastructure
+
+
+First, we must create our control class that we use to handle input events from the mouse and keyboard, and update the camera perspective based on that input. Because we're implementing move-look controls, we call it **MoveLookController**.
 
 ```cpp
 using namespace Windows::UI::Core;
@@ -53,7 +52,7 @@ ref class MoveLookController
 };  // class MoveLookController
 ```
 
-Xxx, xxx'x xxxxxx x xxxxxx xxxx xxxxxxx xxx xxxxx xx xxx xxxx-xxxx xxxxxxxxxx xxx xxx xxxxx-xxxxxx xxxxxx, xxxx xxx xxxxx xxxxxxx xxx xxxxx xxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxx xxx xxxx xxxxxx xxx xxxxx xx xxx xxxxxx.
+Now, let's create a header that defines the state of the move-look controller and its first-person camera, plus the basic methods and event handlers that implement the controls and that update the state of the camera.
 
 ```cpp
 #define ROTATION_GAIN 0.004f    // Sensitivity adjustment for the look controller
@@ -134,70 +133,70 @@ internal:
 };  // class MoveLookController
 ```
 
-Xxx xxxx xxxxxxxx Y xxxxxx xx xxxxxxx xxxxxx. Xxx'x xxxxxx xxx xxxxxxx xx xxxx xxx.
+Our code contains 4 groups of private fields. Let's review the purpose of each one.
 
-Xxxxx, xx xxxxxx xxxx xxxxxx xxxxxx xxxx xxxx xxx xxxxxxx xxxx xxxxx xxx xxxxxx xxxx.
+First, we define some useful fields that hold our updated info about our camera view.
 
--   **x\_xxxxxxxx** xx xxx xxxxxxxx xx xxx xxxxxx (xxx xxxxxxxxx xxx xxxxxxxxx) xx xxx YX xxxxx, xxxxx xxxxx xxxxxxxxxxx.
--   **x\_xxxxx** xx xxx xxxxx xx xxx xxxxxx, xx xxx xx-xxxx xxxxxxxx xxxxxx xxx xxxxxxxxx'x x-xxxx, xx xxxxxxx.
--   **x\_xxx** xx xxx xxx xx xxx xxxxxx, xx xxx xxxx-xxxxx xxxxxxxx xxxxxx xxx xxxxxxxxx'x x-xxxx, xx xxxxxxx.
+-   **m\_position** is the position of the camera (and therefore the viewplane) in the 3D scene, using scene coordinates.
+-   **m\_pitch** is the pitch of the camera, or its up-down rotation around the viewplane's x-axis, in radians.
+-   **m\_yaw** is the yaw of the camera, or its left-right rotation around the viewplane's y-axis, in radians.
 
-Xxx, xxx'x xxxxxx xxx xxxxxx xxxx xx xxx xx xxxxx xxxx xxxxx xxx xxxxxx xxx xxxxxxxx xx xxx xxxxxxxxxxx. Xxxxx, xx'xx xxxxxx xxx xxxxxx xx xxxx xxx xxx xxxxx-xxxxx xxxx xxxxxxxxxx. (Xxxxx'x xxxxxxx xxxxxxx xxxxxx xxx xxx xxxxxxxx xxxxxxxxxxxxxx xx xxx xxxx xxxxxxxxxx. Xx xxxx xxxx xxxxxxxx xxxxxx xxxx xxxxxxxx xxxxxxxx.)
+Now, let's define the fields that we use to store info about the status and position of our controllers. First, we'll define the fields we need for our touch-based move controller. (There's nothing special needed for the keyboard implementation of the move controller. We just read keyboard events with specific handlers.)
 
--   **x\_xxxxXxXxx** xxxxxxxxx xxxxxxx xxx xxxx xxxxxxxxxx xx xx xxx.
--   **x\_xxxxXxxxxxxXX** xx xxx xxxxxx XX xxx xxx xxxxxxx xxxx xxxxxxx. Xx xxx xx xx xxxxxxxxxxxxx xxxxxxx xxx xxxx xxxxxxx xxx xxx xxxx xxxxxxx xxxx xx xxxxx xxx xxxxxxx XX xxxxx.
--   **x\_xxxxXxxxxXxxx** xx xxx xxxxx xx xxx xxxxxx xxxxx xxx xxxxxx xxxxx xxxxxxx xxx xxxx xxxxxxxxxx xxxxxxx xxxx. Xx xxx xxxx xxxxx xxxxx xx xxx x xxxx xxxx xx xxxx xxxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxx.
--   **x\_xxxxXxxxxxxXxxxxxxx** xx xxx xxxxx xx xxx xxxxxx xxx xxxxxx xxx xxxxxxxxx xxxxx xxx xxxxxxx xx. Xx xxx xx xx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxx xxxxxx xx xxxx xx xxxxxxxxx xx xxxxxxxx xx **x\_xxxxXxxxxXxxx**.
--   **x\_xxxxXxxxxxx** xx xxx xxxxx xxxxxxxx xxxxxxx xxx xxx xxxx xxxxxxxxxx: xx (xxxxxxx), xxxx (xxxx), xxxx, xx xxxxx.
+-   **m\_moveInUse** indicates whether the move controller is in use.
+-   **m\_movePointerID** is the unique ID for the current move pointer. We use it to differentiate between the look pointer and the move pointer when we check the pointer ID value.
+-   **m\_moveFirstDown** is the point on the screen where the player first touched the move controller pointer area. We use this value later to set a dead zone to keep tiny movements from jittering the view.
+-   **m\_movePointerPosition** is the point on the screen the player has currently moved the pointer to. We use it to determine what direction the player wanted to move by examining it relative to **m\_moveFirstDown**.
+-   **m\_moveCommand** is the final computed command for the move controller: up (forward), down (back), left, or right.
 
-Xxx, xx xxxxxx xxx xxxxxx xx xxx xxx xxx xxxx xxxxxxxxxx, xxxx xxx xxxxx xxx xxxxx xxxxxxxxxxxxxxx.
+Now, we define the fields we use for our look controller, both the mouse and touch implementations.
 
--   **x\_xxxxXxXxx** xxxxxxxxx xxxxxxx xxx xxxx xxxxxxx xx xx xxx.
--   **x\_xxxxXxxxxxxXX** xx xxx xxxxxx XX xxx xxx xxxxxxx xxxx xxxxxxx. Xx xxx xx xx xxxxxxxxxxxxx xxxxxxx xxx xxxx xxxxxxx xxx xxx xxxx xxxxxxx xxxx xx xxxxx xxx xxxxxxx XX xxxxx.
--   **x\_xxxxXxxxXxxxx** xx xxx xxxx xxxxx, xx xxxxx xxxxxxxxxxx, xxxx xxx xxxxxxxx xx xxx xxxxxxxx xxxxx.
--   **x\_xxxxXxxxXxxxx** xx xxx xxxxxxxx xxxxxxxxxx xxxxxxx xxx xxxxxxx **x\_xxxxxxxx** xxx **x\_xxxxXxxxXxxxx**.
+-   **m\_lookInUse** indicates whether the look control is in use.
+-   **m\_lookPointerID** is the unique ID for the current look pointer. We use it to differentiate between the look pointer and the move pointer when we check the pointer ID value.
+-   **m\_lookLastPoint** is the last point, in scene coordinates, that was captured in the previous frame.
+-   **m\_lookLastDelta** is the computed difference between the current **m\_position** and **m\_lookLastPoint**.
 
-Xxxxxxx, xx xxxxxx Y Xxxxxxx xxxxxx xxx xxx Y xxxxxxx xx xxxxxxxx, xxxxx xx xxx xx xxxxxxxx xxx xxxxxxx xxxxx xx xxxx xxxxxxxxxxx xxxx xxxxxx (xx xx xxx):
+Finally, we define 6 Boolean values for the 6 degrees of movement, which we use to indicate the current state of each directional move action (on or off):
 
--   **x\_xxxxxxx**, **x\_xxxx**, **x\_xxxx**, **x\_xxxxx**, **x\_xx** xxx **x\_xxxx**.
+-   **m\_forward**, **m\_back**, **m\_left**, **m\_right**, **m\_up** and **m\_down**.
 
-Xx xxx xxx Y xxxxx xxxxxxxx xx xxxxxxx xxx xxxxx xxxx xx xxx xx xxxxxx xxx xxxxx xx xxx xxxxxxxxxxx:
+We use the 6 event handlers to capture the input data we use to update the state of our controllers:
 
--   **XxXxxxxxxXxxxxxx**. Xxx xxxxxx xxxxxxx xxx xxxx xxxxx xxxxxx xxxx xxx xxxxxxx xx xxx xxxx xxxxxx, xx xxxxxxx xxx xxxxxx.
--   **XxXxxxxxxXxxxx**. Xxx xxxxxx xxxxx xxx xxxxx xxxx xxx xxxxxxx xx xxx xxxx xxxxxx, xx xxxxxxx xxx xxxxx xxxxxxx xx xxx xxxxxx.
--   **XxXxxxxxxXxxxxxxx**. Xxx xxxxxx xxxxxxxx xxx xxxx xxxxx xxxxxx xxxx xxx xxxxxxx xx xxx xxxx xxxxxx, xx xxxxxxx xxxxxxxx xxx xxxxxx.
--   **XxXxxXxxx**. Xxx xxxxxx xxxxxxx x xxx.
--   **XxXxxXx**. Xxx xxxxxx xxxxxxxx x xxx.
+-   **OnPointerPressed**. The player pressed the left mouse button with the pointer in our game screen, or touched the screen.
+-   **OnPointerMoved**. The player moved the mouse with the pointer in our game screen, or dragged the touch pointer on the screen.
+-   **OnPointerReleased**. The player released the left mouse button with the pointer in our game screen, or stopped touching the screen.
+-   **OnKeyDown**. The player pressed a key.
+-   **OnKeyUp**. The player released a key.
 
-Xxx xxxxxxx, xx xxx xxxxx xxxxxxx xxx xxxxxxxxxx xx xxxxxxxxxx, xxxxxx, xxx xxxxxx xxx xxxxxxxxxxx' xxxxx xxxx.
+And finally, we use these methods and properties to initialize, access, and update the controllers' state info.
 
--   **Xxxxxxxxxx**. Xxx xxx xxxxx xxxx xxxxx xxxxxxx xx xxxxxxxxxx xxx xxxxxxxx xxx xxxxxx xxxx xx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxx xxxx xxxxxxxxx xxx xxxxxxx xxxxxx.
--   **XxxXxxxxxxx**. Xxx xxx xxxxx xxxx xxxxxx xx xxx xxx (x, x, xxx x) xxxxxxxxxxx xx xxx xxxxxxxx xx xxx xxxxx xxxxx.
--   **XxxXxxxxxxxxxx**. Xxx xxx xxxxx xxxx xxxxxx xx xxx xxx xxxxx xxx xxx xx xxx xxxxxx.
--   **xxx\_Xxxxxxxx**. Xxx xxx xxxxxxxx xxxx xxxxxxxx xx xxx xxx xxxxxxx xxxxxxxx xx xxx xxxxxx xx xxx xxxxx xxxxx. Xxx xxx xxxx xxxxxxxx xx xxx xxxxxx xx xxxxxxxxxxxxx xxx xxxxxxx xxxxxx xxxxxxxx xx xxx xxx.
--   **xxx\_XxxxXxxxx**. Xxx xxx xxxxxxxx xxxx xxxxxxxx xx xxx xxx xxxxxxx xxxxx xxxxxx xxxxx xxx xxxxxxxxxx xxxxxx xx xxxxxx.
--   **Xxxxxx**. Xxxxx xxx xxxxx xx xxx xxxx xxx xxxx xxxxxxxxxxx xxx xxxxxxx xxx xxxxxx xxxxxxxx. Xxx xxxxxxxxxxx xxxx xxxx xxxxxx xxxx xxx xxx'x xxxx xxxx xx xxxxxxx xxx xxxxxx xxxxxxxxxx xxxx xxx xxx xxxxxx xxxxxxxx xx xxx xxxxx xxxxx.
+-   **Initialize**. Our app calls this event handler to initialize the controls and attach them to the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object that describes our display window.
+-   **SetPosition**. Our app calls this method to set the (x, y, and z) coordinates of our controls in the scene space.
+-   **SetOrientation**. Our app calls this method to set the pitch and yaw of the camera.
+-   **get\_Position**. Our app accesses this property to get the current position of the camera in the scene space. You use this property as the method of communicating the current camera position to the app.
+-   **get\_LookPoint**. Our app accesses this property to get the current point toward which the controller camera is facing.
+-   **Update**. Reads the state of the move and look controllers and updates the camera position. You continually call this method from the app's main loop to refresh the camera controller data and the camera position in the scene space.
 
-Xxx, xxx xxxx xxxx xxx xxx xxxxxxxxxx xxx xxxx xx xxxxxxxxx xxxx xxxx-xxxx xxxxxxxx. Xx, xxx'x xxxxxxx xxxxx xxxxxx xxxxxxxx.
+Now, you have here all the components you need to implement your move-look controls. So, let's connect these pieces together.
 
-## Xxxxxx xxx xxxxx xxxxx xxxxxx
+## Create the basic input events
 
 
-Xxx Xxxxxxx Xxxxxxx xxxxx xxxxxxxxxx xxxxxxxx Y xxxxxx xx xxxx xxxxxxxxx xx xxx **XxxxXxxxXxxxxxxxxx** xxxxx xx xxxxxx:
+The Windows Runtime event dispatcher provides 5 events we want instances of the **MoveLookController** class to handle:
 
--   [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208278)
--   [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208276)
--   [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208279)
--   [**XxxXx**](https://msdn.microsoft.com/library/windows/apps/br208271)
--   [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208270)
+-   [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278)
+-   [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276)
+-   [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279)
+-   [**KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271)
+-   [**KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270)
 
-Xxxxx xxxxxx xxx xxxxxxxxxxx xx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxx. Xx xxxxxx xxxx xxx xxxx x **XxxxXxxxxx** xxxxxx xx xxxx xxxx. Xx xxx xxx'x xxxx xxx xx xxxxxx xxx, xxx [Xxx xx xxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) X++ xxx xx xxxxxxx x XxxxxxX xxxx](https://msdn.microsoft.com/library/windows/apps/hh465077).
+These events are implemented on the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) type. We assume that you have a **CoreWindow** object to work with. If you don't know how to obtain one, see [How to set up your Universal Windows Platform (UWP) C++ app to display a DirectX view](https://msdn.microsoft.com/library/windows/apps/hh465077).
 
-Xx xxxxx xxxxxx xxxx xxxxx xxx xxx xx xxxxxxx, xxx xxxxxxxx xxxxxx xxx xxxxxxxxxxx' xxxxx xxxx xxxxxxx xx xxx xxxxxxx xxxxxx.
+As these events fire while our app is running, the handlers update the controllers' state info defined in our private fields.
 
-Xxxxx, xxx'x xxxxxxxx xxx xxxxx xxx xxxxx xxxxxxx xxxxx xxxxxxxx. Xx xxx xxxxx xxxxx xxxxxxx, **XxXxxxxxxXxxxxxx()**, xx xxx xxx x-x xxxxxxxxxxx xx xxx xxxxxxx xxxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxx xxxxxxx xxx xxxxxxx xxxx xxx xxxx xxxxxx xxx xxxxx xx xxxxxxx xxx xxxxxx xx xxx xxxx xxxxxxxxxx xxxxxx.
+First, let's populate the mouse and touch pointer event handlers. In the first event handler, **OnPointerPressed()**, we get the x-y coordinates of the pointer from the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) that manages our display when the user clicks the mouse or touches the screen in the look controller region.
 
-**XxXxxxxxxXxxxxxx**
+**OnPointerPressed**
 
 ```cpp
 void MoveLookController::OnPointerPressed(
@@ -244,11 +243,11 @@ _In_ PointerEventArgs^ args)
 }
 ```
 
-Xxxx xxxxx xxxxxxx xxxxxx xxxxxxx xxx xxxxxxx xx xxx xxx xxxxx (xxx xxx xxxxxxxx xx xxxx xxxxxx, xxxxx xxxxxxxx xxxx xxxxx xxx xxxxx) xxx xx xx xx xx xxx xxxx xxxxxxxxxx xxxx. Xx xxxx xxxxxxxx xxx xxxx, xx xxxxxx xxxxxxx xxx xxxxxxx xxx xxxx xxxxxxx, xxxxxxxxxxxx, xxxxxxx xxxx xxxxx xx xxxxxxxxx xx x xxxxxxxx xxxx xx xxxx xxxxx, xx xxxxxxx xx **x\_xxxxXxXxx** xx xxxxx. Xx xx, xxx xxxxxxx xxxxxxxx xxx xxxxx xx xxx xxxx xxxxxxxxxx xxxx xxxxx xxx xxxxx xxxxxxxx xxx xxxx **x\_xxxxXxXxx** xx xxxx, xx xxxx xxxx xxxx xxxxxxx xx xxxxxx xxxxx, xx xxx'x xxxxxxxxx xxx xxxxx xxxxxxxx xx xxx xxxx xxxxxxxxxx xxxxx xxxxxxxxxxx. Xx xxxx xxxxxxx xxx xxxx xxxxxxxxxx xxxxxxx XX xx xxx xxxxxxx xxxxxxx'x XX.
+This event handler checks whether the pointer is not the mouse (for the purposes of this sample, which supports both mouse and touch) and if it is in the move controller area. If both criteria are true, it checks whether the pointer was just pressed, specifically, whether this click is unrelated to a previous move or look input, by testing if **m\_moveInUse** is false. If so, the handler captures the point in the move controller area where the press happened and sets **m\_moveInUse** to true, so that when this handler is called again, it won't overwrite the start position of the move controller input interaction. It also updates the move controller pointer ID to the current pointer's ID.
 
-Xx xxx xxxxxxx xx xxx xxxxx xx xx xxx xxxxx xxxxxxx xxx'x xx xxx xxxx xxxxxxxxxx xxxx, xx xxxx xx xx xxx xxxx xxxxxxxxxx xxxx. Xx xxxx **x\_xxxxXxxxXxxxx** xx xxx xxxxxxx xxxxxxxx xxxxx xxx xxxx xxxxxxx xxx xxxxx xxxxxx xx xxxxxxx xxx xxxxxxx, xxxxxx xxx xxxxx, xxx xxxxxxx xxx xxxx xxxxxxxxxx'x xxxxxxx XX xx xxx xxxxxxx xxxxxxx XX. Xx xxxx xxxx xxx xxxxx xx xxx xxxx xxxxxxxxxx xx xxxxxx.
+If the pointer is the mouse or if the touch pointer isn't in the move controller area, it must be in the look controller area. It sets **m\_lookLastPoint** to the current position where the user pressed the mouse button or touched and pressed, resets the delta, and updates the look controller's pointer ID to the current pointer ID. It also sets the state of the look controller to active.
 
-**XxXxxxxxxXxxxx**
+**OnPointerMoved**
 
 ```cpp
 void MoveLookController::OnPointerMoved(
@@ -290,15 +289,15 @@ void MoveLookController::OnPointerMoved(
 }
 ```
 
-Xxx **XxXxxxxxxXxxxx** xxxxx xxxxxxx xxxxx xxxxxxxx xxx xxxxxxx xxxxx (xx xxxx xxxx, xx x xxxxx xxxxxx xxxxxxx xx xxxxx xxxxxxx, xx xx xxx xxxxx xxxxxxx xx xxxxx xxxxx xxxxx xxx xxxx xxxxxx xx xxxxxxx). Xx xxx xxxxxxx XX xx xxx xxxx xx xxx xxxx xxxxxxxxxx xxxxxxx'x XX, xxxx xx'x xxx xxxx xxxxxxx; xxxxxxxxx, xx xxxxx xx xx'x xxx xxxx xxxxxxxxxx xxxx'x xxx xxxxxx xxxxxxx.
+The **OnPointerMoved** event handler fires whenever the pointer moves (in this case, if a touch screen pointer is being dragged, or if the mouse pointer is being moved while the left button is pressed). If the pointer ID is the same as the move controller pointer's ID, then it's the move pointer; otherwise, we check if it's the look controller that's the active pointer.
 
-Xx xx'x xxx xxxx xxxxxxxxxx, xx xxxx xxxxxx xxx xxxxxxx xxxxxxxx. Xx xxxx xxxxxxxx xx xx xxxx xxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208276) xxxxx xxxxx xxxxxx, xxxxxxx xx xxxx xx xxxxxxx xxx xxxxx xxxxxxxx xxxx xxx xxxxx xxx xx xxxxxxxx xxxx xxx **XxXxxxxxxXxxxxxx** xxxxx xxxxxxx.
+If it's the move controller, we just update the pointer position. We keep updating it as long the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) event keeps firing, because we want to compare the final position with the first one we captured with the **OnPointerPressed** event handler.
 
-Xx xx'x xxx xxxx xxxxxxxxxx, xxxxxx xxx x xxxxxx xxxx xxxxxxxxxxx. Xx xxxx xx xxxxxxxxx x xxx xxxx xxxxx xxx xxxxxx xxx xxxxxx xx xx, xx xx xxxxxxxxx xxx xxxxx xxxxxxx xxx xxxx xxxx xxxxx xxx xxx xxxxxxx xxxxxx xxxxxxxx, xxx xxxx xx xxxxxxxx xxxxxx xxx xxxxx xxxxxx, xxxxx xx xxx xxxxx xx xxxx xxx xxxx xxxxxxxxx xxxxxxx xx xxxxxx xxxxxxxx xx xxx xxxxxxxx xx xxx xxxxxx xxxxxxxx. Xxxxx xxxx xxxxx, xx xxxxxxxxx xxx xxxxx xxx xxx xxx.
+If it's the look controller, things are a little more complicated. We need to calculate a new look point and center the camera on it, so we calculate the delta between the last look point and the current screen position, and then we multiply versus our scale factor, which we can tweak to make the look movements smaller or larger relative to the distance of the screen movement. Using that value, we calculate the pitch and the yaw.
 
-Xxxxxxx, xx xxxx xx xxxxxxxxxx xxx xxxx xx xxxx xxxxxxxxxx xxxxxxxxx xxxx xxx xxxxxx xxxxx xxxxxx xxx xxxxx xx xxxxxxxx xxx xxxxxx. Xx xxx **XxXxxxxxxXxxxxxxx**, xxxxx xx xxxx xxxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208279) xx xxxxx, xx xxx **x\_xxxxXxXxx** xx **x\_xxxxXxXxx** xx XXXXX xxx xxxx xxx xxx xxxxxx xxx xxxxxxxx, xxx xx xxxx xxx xxx xxxxxxx XX.
+Finally, we need to deactivate the move or look controller behaviors when the player stops moving the mouse or touching the screen. We use **OnPointerReleased**, which we call when [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) is fired, to set **m\_moveInUse** or **m\_lookInUse** to FALSE and turn off the camera pan movement, and to zero out the pointer ID.
 
-**XxXxxxxxxXxxxxxxx**
+**OnPointerReleased**
 
 ```cpp
 void MoveLookController::OnPointerReleased(
@@ -322,9 +321,9 @@ _In_ PointerEventArgs ^args)
 }
 ```
 
-Xx xxx, xx xxxxxxx xxx xxx xxxxx xxxxxx xxxxxx. Xxx, xxx'x xxxxxx xxx xxx xxxxx xxxxxx xxx x xxxxxxxx-xxxxx xxxx xxxxxxxxxx.
+So far, we handled all the touch screen events. Now, let's handle the key input events for a keyboard-based move controller.
 
-**XxXxxXxxx**
+**OnKeyDown**
 
 ```cpp
 void MoveLookController::OnKeyDown(
@@ -346,9 +345,9 @@ void MoveLookController::OnKeyDown(
 }
 ```
 
-Xx xxxx xx xxx xx xxxxx xxxx xx xxxxxxx, xxxx xxxxx xxxxxxx xxxx xxx xxxxxxxxxxxxx xxxxxxxxxxx xxxx xxxxx xx xxxx.
+As long as one of these keys is pressed, this event handler sets the corresponding directional move state to true.
 
-**XxXxxXx**
+**OnKeyUp**
 
 ```cpp
 void MoveLookController::OnKeyUp(
@@ -370,14 +369,14 @@ void MoveLookController::OnKeyUp(
 }
 ```
 
-Xxx xxxx xxx xxx xx xxxxxxxx, xxxx xxxxx xxxxxxx xxxx xx xxxx xx xxxxx. Xxxx xx xxxx **Xxxxxx**, xx xxxxxx xxxxx xxxxxxxxxxx xxxx xxxxxx, xxx xxxx xxx xxxxxx xxxxxxxxxxx. Xxxx xx x xxx xxxxxxx xxxx xxx xxxxx xxxxxxxxxxxxxx!
+And when the key is released, this event handler sets it back to false. When we call **Update**, it checks these directional move states, and move the camera accordingly. This is a bit simpler than the touch implementation!
 
-## Xxxxxxxxxx xxx xxxxx xxxxxxxx xxx xxx xxxxxxxxxx xxxxx
+## Initialize the touch controls and the controller state
 
 
-Xxx'x xxxx xx xxx xxxxxx xxx, xxx xxxxxxxxxx xxx xxx xxxxxxxxxx xxxxx xxxxxx.
+Let's hook up the events now, and initialize all the controller state fields.
 
-**Xxxxxxxxxx**
+**Initialize**
 
 ```cpp
 void MoveLookController::Initialize( _In_ CoreWindow^ window )
@@ -417,12 +416,12 @@ void MoveLookController::Initialize( _In_ CoreWindow^ window )
 }
 ```
 
-**Xxxxxxxxxx** xxxxx x xxxxxxxxx xx xxx xxx'x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxxxx xx x xxxxxxxxx xxx xxxxxxxxx xxx xxxxx xxxxxxxx xx xxxxxxxxx xx xxx xxxxxxxxxxx xxxxxx xx xxxx **XxxxXxxxxx**. Xx xxxxxxxxxxx xxx xxxx xxx xxxx xxxxxxx'x XXx, xxxx xxx xxxxxxx xxxxxx xxx xxx xxxxx xxxxxx xxxx xxxxxxxxxx xxxxxxxxxxxxxx xx xxxx, xxx xxxx xxx xxxxxx xxxxxxx xxxxxxxx xxxxx xxxx xxx xxx xxxxxx.
+**Initialize** takes a reference to the app's [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) instance as a parameter and registers the event handlers we developed to the appropriate events on that **CoreWindow**. It initializes the move and look pointer's IDs, sets the command vector for our touch screen move controller implementation to zero, and sets the camera looking straight ahead when the app starts.
 
-## Xxxxxxx xxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxxxxx xx xxx xxxxxx
+## Getting and setting the position and orientation of the camera
 
 
-Xxx'x xxxxxx xxxx xxxxxxx xx xxx xxx xxx xxx xxxxxxxx xx xxx xxxxxx xxxx xxxxxxx xx xxx xxxxxxxx.
+Let's define some methods to get and set the position of the camera with respect to the viewport.
 
 ```cpp
 void MoveLookController::SetPosition( _In_ DirectX::XMFLOAT3 pos )
@@ -460,10 +459,10 @@ DirectX::XMFLOAT3 MoveLookController::get_LookPoint()
 }
 ```
 
-## Xxxxxxxx xxx xxxxxxxxxx xxxxx xxxx
+## Updating the controller state info
 
 
-Xxx, xx xxxxxxx xxx xxxxxxxxxxxx xxxx xxxxxxx xxx xxxxxxx xxxxxxxxxx xxxx xxxxxxx xx **x\_xxxxXxxxxxxXxxxxxxx** xxxx xxx xxxxxxxxxx xxxxxxxxxxx xxxxxxxxxx xx xxx xxxxx xxxxxxxxxx xxxxxx. Xxx xxx xxxxx xxxx xxxxxx xxxxx xxxx xx xxxxxxx xxx xxxx xxx xxxx. Xx, xx xx xxxx xxxx xx xxxxxxx xxx xxx xxxx xxxxx xxxxxxxx xxxx xx xxxx xx xxxx xx xxx xxx xxx xxxxxxxx xxx xxxx xxxxxx xxxxxx xxxxxxxxxx xxxx xxx xxxxxxxx.
+Now, we perform our calculations that convert the pointer coordinate info tracked in **m\_movePointerPosition** into new coordinate information respective of our world coordinate system. Our app calls this method every time we refresh the main app loop. So, it is here that we compute the new look point position info we want to pass to the app for updating the view matrix before projection into the viewport.
 
 ```cpp
 void MoveLookController::Update(CoreWindow ^window)
@@ -546,16 +545,16 @@ void MoveLookController::Update(CoreWindow ^window)
 }
 ```
 
-Xxxxxxx xx xxx'x xxxx xxxxxxx xxxxxxxx xxxx xxx xxxxxx xxxx xxx xxxxx-xxxxx xxxx xxxxxxxxxx, xx xxx x xxxxxxx xxxx xxxx xxxxxx xxx xxxxxxx xxxx x xxxxxxxx xx YY xxxxxx. Xx xxxx xxx xxxxxxxx, xxxxx xx xxx xxxxxxx xxxxx xxxx x xxxxxxxx xxxx xxxx. (Xxx xxx xxxxxx xxxx xxxxxxxx xx xxxx xxxxxx, xx xxxx xxxx xx xxxxx xx xxx xxxx xx xxxxxxxx xxxxx xx xxx xxxxxxxx xxx xxxxxxx xxxxx xx xxx xxxx xxxxxxxxxx xxxx.)
+Because we don't want jittery movement when the player uses our touch-based move controller, we set a virtual dead zone around the pointer with a diameter of 32 pixels. We also add velocity, which is the command value plus a movement gain rate. (You can adjust this behavior to your liking, to slow down or speed up the rate of movement based on the distance the pointer moves in the move controller area.)
 
-Xxxx xx xxxxxxx xxx xxxxxxxx, xx xxxx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxxx xxxx xxx xxxx xxx xxxx xxxxxxxxxxx xxxx xxx xxxxxxxx xx xxx xxxxxx xxxx xxxxx xx xxxx xx xxx xxxxxx xxxx xxxxxxxx xxx xxxx xxxxxx xxx xxx xxxxx. Xxxxx, xx xxxxxx xxx x xxxxxxxxxx, xxxxxxx xx xx xxxxx-xxxx xx xxxx xxxx xx xxxxx xxxx xxx xxxx xxxxxxxxxx, xxx xxxx xxxxx xxxxxxx xx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxx, xx x xxxxxx xxxxx xxxxx xxxxx xxx xxxxxxx xxxx. Xxxx, xx xxxx xxx x xxx x xxxx, xxxxxxx xx xx/xxxx xxx xxxxx xx xxxxx xxxx xxxxxx (xxxx xx x x-xxxx xxxxxxxx) xx xxx xxxx xxxxxxxxxx xxxxxx xxxxxxxxx xxxx x xxxxxx xxxxxx xxxx xxxxx xxx xxxx xxxxx xxxx xx xxx xx xxx xxxxxx (xxx x-xxxx).
+When we compute the velocity, we also translate the coordinates received from the move and look controllers into the movement of the actual look point we send to the method that computes our view matrix for the scene. First, we invert the x coordinate, because if we click-move or drag left or right with the look controller, the look point rotates in the opposite direction in the scene, as a camera might swing about its central axis. Then, we swap the y and z axes, because an up/down key press or touch drag motion (read as a y-axis behavior) on the move controller should translate into a camera action that moves the look point into or out of the screen (the z-axis).
 
-Xxx xxxxx xxxxxxxx xx xxx xxxx xxxxx xxx xxx xxxxxx xx xxx xxxx xxxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxx, xxx xxxx xx xxxx xx xxxx xx xxx xxxxxxxx xxxx xx xxxxx xxx **xxx\_Xxxxxxxx** xxxxxx (xxxx xxxxxx xxxxxx xxx xxxxx xxx xxxx xxxxx). Xxxxx xxxx, xx xxxxx xxx xxxx xxxxxxx xx xxxx.
+The final position of the look point for the player is the last position plus the calculated velocity, and this is what is read by the renderer when it calls the **get\_Position** method (most likely during the setup for each frame). After that, we reset the move command to zero.
 
-## Xxxxxxxx xxx xxxx xxxxxx xxxx xxx xxx xxxxxx xxxxxxxx
+## Updating the view matrix with the new camera position
 
 
-Xx xxx xxxxxx x xxxxx xxxxx xxxxxxxxxx xxxx xxx xxxxxx xx xxxxxxx xx, xxx xxxxx xx xxxxxxx xxxxxxxx xxx xxxx xxxx xxx xx xx xx (xxxxx YY xxxxxxx xx xxx xxxx xxx xxxx, xxx xxxxxxx). Xxxx xxxxxxxxxx xxxxxxxx xxx xxxxxxx xxxxxxxx xxx xxx xxxxxxxxx:
+We can obtain a scene space coordinate that our camera is focused on, and which is updated whenever you tell your app to do so (every 60 seconds in the main app loop, for example). This pseudocode suggests the calling behavior you can implement:
 
 ```cpp
 myMoveLookController->Update( m_window );   
@@ -568,18 +567,22 @@ myFirstPersonCamera->SetViewParameters(
                  ); 
 ```
 
-Xxxxxxxxxxxxxxx! Xxx'xx xxxxxxxxxxx xxxxx xxxx-xxxx xxxxxxxx xxx xxxx xxxxx xxxxxxx xxx xxxxxxxx/xxxxx xxxxx xxxxx xxxxxxxx xx xxxx xxxx!
+Congratulations! You've implemented basic move-look controls for both touch screens and keyboard/mouse input touch controls in your game!
 
-> **Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
+> **Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

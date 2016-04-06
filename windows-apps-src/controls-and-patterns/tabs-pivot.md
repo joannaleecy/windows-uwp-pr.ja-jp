@@ -1,66 +1,66 @@
 ---
-Xxxxxxxxxxx: Xxxx xxx xxxxxx xxx xxxxxx xxxxx xx xxxxxxxx xxxxxxx xxxxxxxxxx xxxxxxxx xxxxxxx.
-xxxxx: Xxxx xxx xxxxxx
-xx.xxxxxxx: YYYXXYYX-XXYX-YYYY-XYYY-XYYYYYXXYYYY
-xxxxx: Xxxx xxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Tabs and pivots are enable users to navigate between frequently accessed content.
+title: Tabs and pivots
+ms.assetid: 556BC70D-CF5D-4295-A655-D58163CC1824
+label: Tabs and pivots
+template: detail.hbs
 ---
-# Xxxx xxx xxxxxx
+# Tabs and pivots
 
-Xxxx xxx xxxxxx xxx xxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxxxxx, xxxxxxxx xxxxxxx xxxxxxxxxx. Xxx xxx/xxxxx xxxxxxx xx xxxx xx xxx xx xxxx xxxxxxx xxxxx xxxx xxxx xxxxxxxxxxxxx xxxxxxxx xxxxxxx. Xxx xxxxxxx xxxxxxx xx-xxxxxx xxx xxxx x xxxxxxxxx xxxxx xxxx'x xxxxxxx xxxxx, xx xxxxx xxx xxxxxx xxxxx xx xxxxx xxxxxxxx xxxx'xx xx.
-![Xx xxxxxxxx xx xxxx](images/HIGSecOne_Tabs.png)
+Tabs and pivots are used for navigating frequently accessed, distinct content categories. The tab/pivot pattern is made of two or more content panes that have corresponding category headers. The headers persist on-screen and have a selection state that's clearly shown, so users are always aware of which category they're in.
+![An examples of tabs](images/HIGSecOne_Tabs.png)
 
-Xxxx xxx xxxxxx xxx xxxxxxxxxxx xxx xxxx xxxxxxx, xxx xxxx xxx xxxxx xxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) xxxxxxx. Xxx xxxxx xxxxxxxxxxxxx xx xxx Xxxxx xxxxxxx xx xxxxxxxxx xxxxx xx xxxx xxxxxxx.
+Tabs and pivots are effectively the same pattern, and both are built using the [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control. The basic functionality of the Pivot control is described later in this article.
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
 
--   [**Xxxxx xxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/dn608241)
+-   [**Pivot class**](https://msdn.microsoft.com/library/windows/apps/dn608241)
 
-## Xxx xxx/xxxxx xxxxxxx
+## The tab/pivot pattern
 
-Xxxx xxxxxxxx xx xxx xxxx xxx xxx/xxxxx xxxxxxx, xxxxx xxx x xxx xxx xxxxxx xxxxxxxxx xx xxxxxxxx xxxxx xx xxx xxxxxxx'x xxxxxxxxxxxx xxxxxxx xxx.
+When building an app with the tab/pivot pattern, there are a few key design variables to consider based on the pattern's configurable feature set.
 
-- **Xxxxxx xxxxxxxxx.**   Xxxxxxx xxx xx xxxxxx xx xxx xxx xx xxx xxxxxx xx xxx xxxxxx.
+- **Header placement.**   Headers can be placed at the top or the bottom of the screen.
     
-    **Xxxx**&xxxx;&xxxx;Xxxxxxx xxxxxxx xx xxx xxxxxx xx xxx xxxxxx xxxxxxxx xx-xxxxxxxxxx xxx Xxxxx xxxxxxx.
-- **Xxxxxx xxxxxx.**  Xxxxxxx xxx xxxx xx xxxx xxxx xxxx, xxxx xxxx, xx xxxx xxxx.
-- **Xxxxxx xxxxxxxxx.**  Xxxxxxx xxx xx xxxx-xxxxxxxxx xx xxxxxxxx.
-- **Xxx-xxxxx xx xxx-xxxxx xxxxxxxxxx.**  Xxxx/xxxxxx xxx xx xxxx xxx xxxxxx xxxxx xx xxxxxxxxxx, xxx xxx xx xxxxxxx xx x xxx-xxxxx/xxx-xxxxx xxxxxxx. Xxxx xxxxx xxx xxx xxxxxx xx xxxx/xxxxxx, xxx xxx-xxxxx xxx xxx-xxxxx xxxxxxx xxxxxx xxxx xxxxxx xxxxxx xxxxxxxxxxxxxxx xx xxxx xxxxx xxx xxxxxxx xxxxxxxx xxx xxx.
-- **Xxxxx xxxxxxx xxxxxxx.**  Xxx xxxxxxx xxxx xxxxxxx xxxxx xxxxxxxx, xxx xxx xxx xxx xx xxx xxxxxxxxxxx xxxx xx xxxxxxxx xxxxxxx xxxxxxx xxxxxxxxxx:
-    1. Xxx xx x xxx/xxxxx xxxxxx xx xxxxxxxx xx xxxx xxxxxxxx, xx xxxxx xx xxx xxxxxxx xxxx xx xxxxxxxx xx xxx xxxxxxxx xxxxxxxx.
-    2. Xxx xx x xxx/xxxxx xxxxxx xx xxxxxxxx xx xxxx xxxxxxxx (xx xxxxx).
+    **Note**&nbsp;&nbsp;Placing headers at the bottom of the screen requires re-templating the Pivot control.
+- **Header labels.**  Headers can have an icon with text, text only, or icon only.
+- **Header alignment.**  Headers can be left-justified or centered.
+- **Top-level or sub-level navigation.**  Tabs/pivots can be used for either level of navigation, and can be stacked in a top-level/sub-level pattern. When there are two levels of tabs/pivots, the top-level and sub-level headers should have enough visual differentiation so that users can clearly separate the two.
+- **Touch gesture support.**  For devices that support touch gestures, you can use one of two interaction sets to navigate between content categories:
+    1. Tap on a tab/pivot header to navigate to that category, or swipe on the content area to navigate to the adjacent category.
+    2. Tap on a tab/pivot header to navigate to that category (no swipe).
 
-### Xxxxxxx xxxxxxxxxxxxxx
+### Pattern configurations
 
-Xxx xxxxxxx xxxxxxxxxxx xx xxx xxx/xxxxx xxxxxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxx xxx xxxxxx(x) xx xxxxx xxxx xxx xxxx xxxxxx. Xxxx xxxxx xxxxxxxx xxxx xx xxx xxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxxxxxx.
+The optimal arrangement of the tab/pivot pattern depends on the interaction scenario and the device(s) on which your app will appear. This table outlines some of the top scenarios and pattern configurations.
 
-Xxxxxxxxxxx xxxxxxxx|Xxxxxxxxxxx xxxxxxxxxxxxx
+Interaction scenario|Recommended configuration
 --------------------|-------------------------
-Xxxxxx xxxxxxxxx xxxxxxx Y xx Y xxx-xxxxx xxxx xx xxxx xxxx xxxxxxx xxxxxxxxxx xx x xxxxx xx xxxxxxx|Xxx/xxxxxx: Xxxxxx xx xxx xxx xx xxx xxxxxx, xxxxxxxx
-|Xxxxxx xxxxxx: Xxxxx + xxxx
-|Xxxxx xx xxxxxxx xxxx: Xxxxxxx
-Xxxxxx xxxxxxx x xxxxx xx xxxxxxx xxxxxxxxxx xx x xxxxx xx xxxxxxx xx xxxxx xxxxxxx xx x xxxxxxx xxxx xxx'x xxxxxxxxx xxx xxxxxxxxxx|Xxx/xxxxxx: Xxxxxx xx xxx xxxxxx xx xxx xxxxxx, xxxxxxxx
-|Xxxxxx xxxxxx: Xxxxx + xxxx
-|Xxxxx xx xxxxxxx xxxx: Xxxxxxxx
-Xxx-xxxxx xxxxxxxxxx xxxx x xxxxx xxx xxxxxxxx|Xxx/xxxxxx: Xxxxxx xx xxx xxx xx xxx xxxxxx, xxxx-xxxxxxx
- *xx*|Xxxxxx xxxxxx: Xxxx-xxxx
- Xxxx-xxxxx xxxxxxxxxx xx x xxxxx xxxxxx|Xxxxx xx xxxxxxx xxxx: Xxxxxxxx
+Moving laterally between 2 to 5 top-level list or grid view content categories on a phone or phablet|Tab/pivots: Placed at the top of the screen, centered
+|Header labels: Icons + text
+|Swipe on content area: Enabled
+Moving between a range of content categories on a phone or phablet in which swiping on a content area isn't practical for navigation|Tab/pivots: Placed at the bottom of the screen, centered
+|Header labels: Icons + text
+|Swipe on content area: Disabled
+Top-level navigation with a mouse and keyboard|Tab/pivots: Placed at the top of the screen, left-aligned
+ *or*|Header labels: Text-only
+ Page-level navigation on a touch device|Swipe on content area: Disabled
 
-## Xxxxxxxx
+## Examples
 
-Xxxx xxxxxx xx x xxxx xxxxx xxx xxxxx xxxx xxxxxxx xxx/xxxxx xxxxxxx xx xxx xxx xx xxxxxx xxx xxxx xxxx. Xx xxxxxx xxxxxxx, xxxxxxx xxxx xx xxx xxxxxx xxxxx xxxx xxx xxxxxxxxxxxx.
+This design of a food truck app shows what placing tab/pivot headers on the top or bottom can look like. On mobile devices, placing them at the bottom works well for reachability.
 
-![Xx xxxxxxx xx xxxx xx x xxxxxx xxxxxx](images/uap_foodtruck_phone_320_tabsboth.png)
+![An example of tabs on a mobile device](images/uap_foodtruck_phone_320_tabsboth.png)
 
-Xxx xxxx xxxxx xxx xxxxxx xx xxxxxx/xxxxxxx xxxxxxxx xxxx-xxxx xxxxxxx. Xxxxx xxxxx xxxx xxxx xxx xxxxxxx xxxxx xxxx xxxxx xxxxxxxxx, xxx xxx xxxxx xxx xxxxxxxx, xxxx-xxxx xxxxxxx xxxx xxxx.
+The food truck app design on laptop/desktop features text-only headers. Using icons with text for headers helps with touch targeting, but for mouse and keyboard, text-only headers work well.
 
-![Xxxxxxx xx xxxx xx xxxxxxx](images/uap_foodtruck_desktop_home_700.png)
+![Example of tabs on desktop](images/uap_foodtruck_desktop_home_700.png)
 
-## Xxxxxx x xxxxx xxxxxxx
+## Create a pivot control
 
-Xxx xxx/xxxxx xxxxxxxxxx xxxxxxx xx xxxxx xxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) xxxxxxx. Xxx xxxxxxx xxxxx xxxx xxx xxxxx xxxxxxxxxxxxx xxxxxxxxx xx xxxx xxxxxxx.
+The tab/pivot navigation pattern is built using the [**Pivot**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.aspx) control. The control comes with the basic functionality described in this section.
 
-Xxxx XXXX xxxxxxx x xxxxx xxxxx xxxxxxx xxxx Y xxxxxxxx xx xxxxxxx.
+This XAML creates a basic pivot control with 3 sections of content.
 
 ```xaml
 <Pivot x:Name="rootPivot" Title="PIVOT TITLE">
@@ -79,50 +79,54 @@ Xxxx XXXX xxxxxxx x xxxxx xxxxx xxxxxxx xxxx Y xxxxxxxx xx xxxxxxx.
 </Pivot>
 ```
 
-**Xxxxx xxxxx**
+**Pivot items**
 
-Xxxxx xx xx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx), xx xx xxx xxxxxxx x xxxxxxxxxx xx xxxxx xx xxx xxxx. Xxx xxxx xxx xxx xx xxx Xxxxx xxxx xx xxx xxxxxxxxxx x [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx) xx xxxxxxxxxx xxxxxxx xx x XxxxxXxxx. Xxxxxxx x Xxxxx xx xxxxx xxxx xx xxxxxxxx xxxxxxx xxxxx xx xxxxxxx, xx'x xxxxxx xx xxxxxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) xxxxxxxxxx xxxxxxxx xxxx XXXX XX xxxxxxxx. Xx, xxx xxx xxx xxx [XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) xxxxxxxx xx x xxxx xxxxxx. Xxxxx xxxxx xx xxx XxxxxXxxxxx xxx xx xx xxx xxxx, xxx xx xxxx xxxx'x xxxxxxxxxx XxxxxXxxxx, xxx xxxx xxxxxx xx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) xxx [**XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx) xx xxxxxxx xxx xxx xxxxx xxx xxxxxxxxx.
+Pivot is an [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.aspx), so it can contain a collection of items of any type. Any item you add to the Pivot that is not explicitly a [**PivotItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivotitem.aspx) is implicitly wrapped in a PivotItem. Because a Pivot is often used to navigate between pages of content, it's common to populate the [**Items**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.items.aspx) collection directly with XAML UI elements. Or, you can set the [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemssource.aspx) property to a data source. Items bound in the ItemsSource can be of any type, but if they aren't explicitly PivotItems, you must define an [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.itemscontrol.itemtemplate.aspx) and [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.headertemplate.aspx) to specify how the items are displayed.
 
-Xxx xxx xxx xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) xxxxxxxx xx xxx xx xxx xxx Xxxxx'x xxxxxx xxxx. Xxx xxx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) xxxxxxxx xx xxx xx xxx xxx xxxxx xx xxx xxxxxx xxxx. 
+You can use the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selecteditem.aspx) property to get or set the Pivot's active item. Use the [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.selectedindex.aspx) property to get or set the index of the active item. 
 
-**Xxxxx xxxxxxx**
+**Pivot headers**
 
-Xxx xxx xxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) xxxxxxxxxx xx xxx xxxxx xxxxxxxx xx xxx Xxxxx xxxxxx. 
+You can use the [**LeftHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.leftheader.aspx) and [**RightHeader**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.pivot.rightheader.aspx) properties to add other controls to the Pivot header. 
 
-### Xxxxx xxxxxxxxxxx
+### Pivot interaction
 
-Xxx xxxxxxx xxxxxxxx xxxxx xxxxx xxxxxxx xxxxxxxxxxxx:
+The control features these touch gesture interactions:
 
--   Xxxxxxx xx x xxxxxx xxxxxxxxx xx xxxx xxxxxx'x xxxxxxx xxxxxxx.
--   Xxxxxxx xxxx xx xxxxx xx x xxxxxx xxxxxxxxx xx xxx xxxxxxxx xxxxxx/xxxxxxx.
--   Xxxxxxx xxxx xx xxxxx xx xxxxxxx xxxxxxx xxxxxxxxx xx xxx xxxxxxxx xxxxxx/xxxxxxx.
+-   Tapping on a header navigates to that header's section content.
+-   Swiping left or right on a header navigates to the adjacent header/section.
+-   Swiping left or right on section content navigates to the adjacent header/section.
 
-Xxx xxxxxxx xxxxx xx xxx xxxxx:
+The control comes in two modes:
 
-**Xxxxxxxxxx**
+**Stationary**
 
--   Xxxxxx xxx xxxxxxxxxx xxxx xxx xxxxx xxxxxxx xxx xxxxxx xxx xxxxxxx xxxxx.
--   Xxxxxxx xx x xxxxx xxxxx xxxxxxxxx xx xxx xxxxxxxxxxxxx xxxx, xxxxxx xxx xxxxx xxxxxx xxxx xxx xxxx. Xxx xxxxxx xxxxx xx xxxxxxxxxxx.
+-   Pivots are stationary when all pivot headers fit within the allowed space.
+-   Tapping on a pivot label navigates to the corresponding page, though the pivot itself will not move. The active pivot is highlighted.
 
-**Xxxxxxxx**
+**Carousel**
 
--   Xxxxxx xxxxxxxx xxxx xxx xxxxx xxxxxxx xxx'x xxx xxxxxx xxx xxxxxxx xxxxx.
--   Xxxxxxx x xxxxx xxxxx xxxxxxxxx xx xxx xxxxxxxxxxxxx xxxx, xxx xxx xxxxxx xxxxx xxxxx xxxx xxxxxxxx xxxx xxx xxxxx xxxxxxxx.
+-   Pivots carousel when all pivot headers don't fit within the allowed space.
+-   Tapping a pivot label navigates to the corresponding page, and the active pivot label will carousel into the first position.
 
-Xxx xxxxxxx xxx xxxxx-xx xxxxxxxxxx xxxxxxxxxxxxx, xxxxx xx xxxxx xx xxx xxxxxx xx xxxxxxx xxx xxx xxxxxx xxxxxx xx xxx xxxxxx.
+The control has built-in breakpoint functionality, which is based on the number of headers and the string length of the labels.
 
-## Xxxxxxxxxxxxxxx
+## Recommendations
 
--   Xxxx xxx xxxxxxxxx xx xxx/xxxxx xxxxxxx xx xxxxxx xxxx. Xxx xxxxxx xxxxxx xxxxx YYY xxx, xxxxxx-xxxxxxxx xxxxxxx xxxxx xxxxxx, xxxxx xxxx-xxxxxxxx xxx xxxxxx xxxxxx xxxxx YYY xxx xx xxxxxxxxxxx xx xxxx xxxxx.
--   Xxxx xxxxxxx x xxxxxx, xxxx xxx xxxxxx xx xxxx/xxxxx xxxxxxx xxxxxxx xxxxxxxxx xxxx xxxxxx, xxxxx xxxxxxx xxxxxxx xxxx xxx xxxxxxxx xxxx.
--   Xxxx/xxxxxx xxx xx xxxx xx xxxxxx xxxxxx xxxxxxxxxxx, xxx xx xxxx xx xxxxxxxx xxx xxxx xxxxx xxxxxx xx xxxxxxx (xxxxxxx xxx xxxxxx) xx xxxx xxxxxxxxx xxx xxxxxxxx xxxxxxxxxxxx.
--   Xxxxx xxxxx xxxx xxxx Y xxxxxxx xxxx xxxxx xxxxxxxx (xxxxx-xxxx) xxxx, xx xxxxxx xxxx xxxx Y xxx xxxxx xxx xxxx xx xxxx xxxxxxxxxxx.
--   Xx xxxxxx xxxxxxx, xxxxxxx xxxx/xxxxxx xx xxx xxxxxx xxxxx xxxx xxx xxxxxxxxxxxx, xx xxxxxxx xx xxxx xx xxxxxxx xxxx xx xxx XX, xxx xx xxxxx xxx-xxxxx XX.
--   Xxxx xxx xx-xxxxxx xxxxxxxx xx xxxxxxxx, xxxxxxx xxx xxxx xxx-xxxxxx xx xxxxxxxx xxxxx.
+-   Base the alignment of tab/pivot headers on screen size. For screen widths below 720 epx, center-aligning usually works better, while left-aligning for screen widths above 720 epx is recommended in most cases.
+-   When scaling a window, once the number of tabs/pivot headers exceeds available real estate, start pushing headers into the overflow area.
+-   Tabs/pivots can be used in either screen orientation, but be sure to maintain the same total number of headers (visible and hidden) in both landscape and portrait orientations.
+-   Avoid using more than 5 headers when using carousel (round-trip) mode, as having more than 5 can cause the user to lose orientation.
+-   On mobile devices, placing tabs/pivots at the bottom works well for reachability, if swiping is used in another part of the UI, and to avoid top-heavy UI.
+-   When the on-screen keyboard is deployed, headers can move off-screen to preserve space.
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxxxxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/dn958438)
+[Navigation design basics](https://msdn.microsoft.com/library/windows/apps/dn958438)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

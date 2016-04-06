@@ -1,82 +1,86 @@
 ---
-Xxxxxxxxxxx: Xxx xxxxxx/xxxxxx xxxxxxx xxxxxxxx x xxxxxx xxxx xxx xxx xxxxxxx xxx xxx xxxxxxxxx xxxxxxxx xxxx. Xxxx xxxxxxx xx xxxxxxxxxx xxxx xxx xxxxx xxx xxxxxxx xxxxx/xxxxxxx xxxxx.
-xxxxx: Xxxxxx/xxxxxxx
-xx.xxxxxxx: YYXYXXYX-XXXY-YYXX-YXXX-YXYYXXYYXYXY
-xxxxx: Xxxxxx/xxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: The master/detail pattern displays a master list and the details for the currently selected item. This pattern is frequently used for email and contact lists/address books.
+title: Master/details
+ms.assetid: 45C9FE8B-ECA6-44BF-8DDE-7D12ED34A7F7
+label: Master/details
+template: detail.hbs
 ---
-# Xxxxxx/xxxxxxx xxxxxxx
+# Master/details pattern
 
-Xxx xxxxxx/xxxxxxx xxxxxxx xxx x xxxxxx xxxx (xxxxxxx xxxx x [xxxx xxxx](lists.md)) xxx x xxxxxxx xxxx xxx xxxxxxx. Xxxx xx xxxx xx xxx xxxxxx xxxx xx xxxxxxxx, xxx xxxxxxx xxxx xx xxxxxxx. Xxxx xxxxxxx xx xxxxxxxxxx xxxx xxx xxxxx xxx xxxxxxx xxxxx.
+The master/details pattern has a master pane (usually with a [list view](lists.md)) and a details pane for content. When an item in the master list is selected, the details pane is updated. This pattern is frequently used for email and address books.
 
-![Xxxxxxx xx xxxxxx-xxxxxxx xxxxxxx](images/HIGSecOne_MasterDetail.png)
+![Example of master-details pattern](images/HIGSecOne_MasterDetail.png)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
+## Is this the right pattern?
 
-Xxx xxxxxx/xxxxxxx xxxxxxx xxxxx xxxx xx xxx xxxx xx:
+The master/details pattern works well if you want to:
 
--   Xxxxx xx xxxxx xxx, xxxxxxx xxxx, xx xxx xxx xxxx xx xxxxx xx x xxxx-xxxxxxx xxxxxx.
--   Xxxxxx xxx xxxxxxxxxx x xxxxx xxxxxxxxxx xx xxxxxxx.
--   Xxxxx xxx xxxxx xxxxxxxx xxx xxxxxxx xx xxxxx xxxx x xxxx xxxxx xxxxxxx xxxx-xxx-xxxxx xxxxxxx xxxxxxxx.
+-   Build an email app, address book, or any app that is based on a list-details layout.
+-   Locate and prioritize a large collection of content.
+-   Allow the quick addition and removal of items from a list while working back-and-forth between contexts.
 
-## Xxxxxx xxx xxxxx xxxxx
+## Choose the right style
 
-Xxxx xxxxxxxxxxxx xxx xxxxxx/xxxxxxx xxxxxxx, xx xxxxxxxxx xxxx xxx xxx xxxxxx xxx xxxxxxx xxxxx xx xxx xxxx-xx-xxxx xxxxx, xxxxx xx xxx xxxxxx xx xxxxxxxxx xxxxxx xxxxx.
+When implementing the master/details pattern, we recommend that you use either the stacked style or the side-by-side style, based on the amount of available screen space.
 
-| Xxxxxxxxx xxxxxx xxxxx | Xxxxxxxxxxx xxxxx |
+| Available window width | Recommended style |
 |------------------------|-------------------|
-| YYY xxx-YYY xxx        | Xxxxxxx           |
-| YYY xxx xx xxxxx       | Xxxx-xx-xxxx      |
+| 320 epx-719 epx        | Stacked           |
+| 720 epx or wider       | Side-by-side      |
 
  
-## Xxxxxxx xxxxx
+## Stacked style
 
-Xx xxx xxxxxxx xxxxx, xxxx xxx xxxx xx xxxxxxx xx x xxxx: xxx xxxxxx xx xxx xxxxxxx.
+In the stacked style, only one pane is visible at a time: the master or the details.
 
-![X xxxxxx xxxxxx xx xxxxxxx xxxx](images/patterns-md-stacked.png)
+![A master detail in stacked mode](images/patterns-md-stacked.png)
 
-Xxx xxxx xxxxxx xx xxx xxxxxx xxxx xxx "xxxxxx xxxx" xx xxx xxxxxxx xxxx xx xxxxxxxxx xx xxxx xx xxx xxxxxx xxxx. Xx xxx xxxx, xx xxxxxxx xx xxxxxx xxx xxxxxx xxx xxxxxxx xxxxx xxxxx xx xxx xxxxxxxx xxxxx.
+The user starts at the master pane and "drills down" to the details pane by selecting an item in the master list. To the user, it appears as though the master and details views exist on two separate pages.
 
-### Xxxxxx x xxxxxxx xxxxxx/xxxxxxx xxxxxxx
+### Create a stacked master/details pattern
 
-Xxx xxx xx xxxxxx xxx xxxxxxx xxxxxx/xxxxxxx xxxxxxx xx xx xxx xxxxxxxx xxxxx xxx xxx xxxxxx xxxx xxx xxx xxxxxxx xxxx. Xxxxx xxx xxxx xxxx xxxx xxxxxxxx xxx xxxxxx xxxx xx xxx xxxx, xxx xxx xxxxxxx xxxxxxx xxx xxx xxxxxxx xxxx xx x xxxxxxxx xxxx.
+One way to create the stacked master/details pattern is to use separate pages for the master pane and the details pane. Place the list view that provides the master list on one page, and the content element for the details pane on a separate page.
 
-![Xxxxx xxx xxx xxxxxxx-xxxxx xxxxxx xxxxxx](images/patterns-md-stacked-parts.png)
+![Parts for the stacked-style master detail](images/patterns-md-stacked-parts.png)
 
-Xxx xxx xxxxxx xxxx, x [xxxx xxxx](lists.md) xxxxxxx xxxxx xxxx xxx xxxxxxxxxx xxxxx xxxx xxx xxxxxxx xxxxxx xxx xxxx.
+For the master pane, a [list view](lists.md) control works well for presenting lists that can contain images and text.
 
-Xxx xxx xxxxxxx xxxx, xxx xxx xxxxxxx xxxxxxx xxxx xxxxx xxx xxxx xxxxx. Xx xxx xxxx x xxx xx xxxxxxxx xxxxxx, xxxxxxxx xxxxx x xxxx xxxxxx xx xxxxxxx xxxxxxxx xxxx x xxxx.
+For the details pane, use the content element that makes the most sense. If you have a lot of separate fields, consider using a grid layout to arrange elements into a form.
 
-## Xxxx-xx-xxxx xxxxx
+## Side-by-side style
 
-Xx xxx xxxx-xx-xxxx xxxxx, xxx xxxxxx xxxx xxx xxxxxxx xxxx xxx xxxxxxx xx xxx xxxx xxxx.
+In the side-by-side style, the master pane and details pane are visible at the same time.
 
-![Xxx xxxxxx/xxxxxx xxxxxxx](images/patterns-masterdetail-400x227.png)
+![The master/detail pattern](images/patterns-masterdetail-400x227.png)
 
-Xxx xxxx xx xxx xxxxxx xxxx xxx x xxxxxxxxx xxxxxx xx xxxxxxxx xxx xxxxxxxxx xxxxxxxx xxxx. Xxxxxxxxx x xxx xxxx xx xxx xxxxxx xxxx xxxxxxx xxx xxxxxxx xxxx.
+The list in the master pane has a selection visual to indicate the currently selected item. Selecting a new item in the master list updates the details pane.
 
-### Xxxxxx x xxxx-xx-xxxx xxxxxx/xxxxxxx xxxxxxx
+### Create a side-by-side master/details pattern
 
-Xxx xxx xxxxxx xxxx, x [xxxx xxxx](lists.md) xxxxxxx xxxxx xxxx xxx xxxxxxxxxx xxxxx xxxx xxx xxxxxxx xxxxxx xxx xxxx.
+For the master pane, a [list view](lists.md) control works well for presenting lists that can contain images and text.
 
-Xxx xxx xxxxxxx xxxx, xxx xxx xxxxxxx xxxxxxx xxxx xxxxx xxx xxxx xxxxx. Xx xxx xxxx x xxx xx xxxxxxxx xxxxxx, xxxxxxxx xxxxx x xxxx xxxxxx xx xxxxxxx xxxxxxxx xxxx x xxxx.
+For the details pane, use the content element that makes the most sense. If you have a lot of separate fields, consider using a grid layout to arrange elements into a form.
 
-## Xxxxxxxx
+## Examples
 
-Xxxx xxxxxx xx xx xxx xxxx xxxxxx xxx xxxxx xxxxxx xxxx x xxxxxx/xxxxxxx xxxxxxx. Xx xxxx xxxxxxx xx xxx xxx xx xx xxxxx xxxxxx xx xxxxx, xxx xxxxxx xxxx/xxxx xx xx xxx xxxx, xxxx xxx xxxxxxx xxxx xx xxx xxxxx.
+This design of an app that tracks the stock market uses a master/details pattern. In this example of the app as it would appear on phone, the master pane/list is on the left, with the details pane on the right.
 
-![Xxxxxxx xx xx xxx xxxxx xxx xxxxxx-xxxxxxx xxxxxxx, xx xxxxx](images/uap-finance-phone-masterdetails-600.png)
+![Example of an app using the master-details pattern, on phone](images/uap-finance-phone-masterdetails-600.png)
 
-Xxxx xxxxxx xx xx xxx xxxx xxxxxx xxx xxxxx xxxxxx xxxx x xxxxxx/xxxxxxx xxxxxxx. Xx xxxx xxxxxxx xx xxx xxx xx xx xxxxx xxxxxx xx xxxxxxx, xxx xxxxxx xxxx/xxxx xxx xxxxxxx xxxx xxx xxxx xxxxxxx xxx xxxx-xxxxxx. Xxx xxxxxx xxxx xxxxxxxx x xxxxxx xxx xx xxx xxx xxx x xxxxxxx xxx xx xxx xxxxxx.
+This design of an app that tracks the stock market uses a master/details pattern. In this example of the app as it would appear on desktop, the master pane/list and details pane are both visible and full-screen. The master pane features a search box at the top and a command bar at the bottom.
 
-![Xxxxxxx xx xx xxx xxxxx xxx xxxxxx-xxxxxxx xxxxxxx, xx xxxxxxx](images/uap-finance-desktop700.png)
+![Example of an app using the master-details pattern, on desktop](images/uap-finance-desktop700.png)
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
-## Xxxxxxx xxxxxxxx
+## Related articles
 
-- [Xxxxx](lists.md)
-- [Xxxxxx](search.md)
-- [Xxx xxx xxxxxxx xxxx](app-bars.md)
-- [**XxxxXxxx xxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+- [Lists](lists.md)
+- [Search](search.md)
+- [App and command bars](app-bars.md)
+- [**ListView class (XAML)**](https://msdn.microsoft.com/library/windows/apps/br242878)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

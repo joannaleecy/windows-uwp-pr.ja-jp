@@ -1,35 +1,35 @@
 ---
-xxxxx: Xxxxxxx xx xxxxxx xxxxxx xxxx xxxxxxxxxx xxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxx x xxxxxxxxxx xxxx xxxx xxxxxxxx xx XxxxxxXxxxxxx xxxxxx.
-xx.xxxxxxx: YYXYYXXX-YYXY-YYYX-YYXX-XYYXYYXYYXYY
+title: Respond to system events with background tasks
+description: Learn how to create a background task that responds to SystemTrigger events.
+ms.assetid: 43C21FEA-28B9-401D-80BE-A61B71F01A89
 ---
 
-# Xxxxxxx xx xxxxxx xxxxxx xxxx xxxxxxxxxx xxxxx
+# Respond to system events with background tasks
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XXxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**XxxxxxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224838)
+-   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
+-   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838)
 
-Xxxxx xxx xx xxxxxx x xxxxxxxxxx xxxx xxxx xxxxxxxx xx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224839) xxxxxx.
+Learn how to create a background task that responds to [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) events.
 
-Xxxx xxxxx xxxxxxx xxxx xxx xxxx x xxxxxxxxxx xxxx xxxxx xxxxxxx xxx xxxx xxx, xxx xxxx xxxx xxxx xxxxx xx xxx xx xxxxxxxx xx xx xxxxx xxxxxxxxx xx xxx xxxxxx xxxx xx xxx xxxxxxxx xxxxxxxx xxxxxxxxx xx xxx xxxx xxxxxxx xx. Xxxx xxxxx xxxxxxx xx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224839) xxxxx. Xxxx xxxxxxxxxxx xx xxxxxxx x xxxxxxxxxx xxxx xxxxx xx xxxxxxxxx xx [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md).
+This topic assumes that you have a background task class written for your app, and that this task needs to run in response to an event triggered by the system such as the internet becoming available or the user logging in. This topic focuses on the [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) class. More information on writing a background task class is available in [Create and register a background task](create-and-register-a-background-task.md).
 
-## Xxxxxx x XxxxxxXxxxxxx xxxxxx
+## Create a SystemTrigger object
 
 
--   Xx xxxx xxx xxxx, xxxxxx x xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224838) xxxxxx. Xxx xxxxx xxxxxxxxx, *xxxxxxxXxxx*, xxxxxxxxx xxx xxxx xx xxxxxx xxxxx xxxxxxx xxxx xxxx xxxxxxxx xxxx xxxxxxxxxx xxxx. Xxx x xxxx xx xxxxx xxxxx, xxx [**XxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224839).
+-   In your app code, create a new [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) object. The first parameter, *triggerType*, specifies the type of system event trigger that will activate this background task. For a list of event types, see [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839).
 
-    Xxx xxxxxx xxxxxxxxx, *XxxXxxx*, xxxxxxxxx xxxxxxx xxx xxxxxxxxxx xxxx xxxx xxx xxxx xxx xxxx xxxx xxx xxxxxx xxxxx xxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxx; xx, xxxxx xxxx xxx xxxxxx xxxxx xxxxxx, xxxxx xxx xxxx xx xxxxxxxxxxxx.
+    The second parameter, *OneShot*, specifies whether the background task will run once the next time the system event occurs and triggers background tasks; or, every time the system event occurs, until the task is unregistered.
 
-    Xxx xxxxxxxxx xxxx xxxxxxxxx xxxx xxx xxxxxxxxxx xxxx xxxx xxxxxxxx xxx Xxxxxxxx xxxxxxx xxxxxxxxx:
+    The following code specifies that the background task runs whenever the Internet becomes available:
 
-    > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+    > [!div class="tabbedCodeSnippets"]
     > ```cs
     > SystemTrigger internetTrigger = new SystemTrigger(SystemTriggerType.InternetAvailable, false);
     > ```
@@ -37,14 +37,14 @@ Xxxx xxxxx xxxxxxx xxxx xxx xxxx x xxxxxxxxxx xxxx xxxxx xxxxxxx xxx xxxx xxx, x
     > SystemTrigger ^ internetTrigger = ref new SystemTrigger(SystemTriggerType::InternetAvailable, false);
     > ```
 
-## Xxxxxxxx xxx xxxxxxxxxx xxxx
+## Register the background task
 
 
--   Xxxxxxxx xxx xxxxxxxxxx xxxx xx xxxxxxx xxxx xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxxxxx. Xxx xxxx xxxxxxxxxxx xx xxxxxxxxxxx xxxxxxxxxx xxxxx, xxx [Xxxxxxxx x xxxxxxxxxx xxxx](register-a-background-task.md).
+-   Register the background task by calling your background task registration function. For more information on registering background tasks, see [Register a background task](register-a-background-task.md).
 
-    Xxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxx xxxx:
+    The following code registers the background task:
 
-    > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+    > [!div class="tabbedCodeSnippets"]
     > ```cs
     > string entryPoint = "Tasks.ExampleBackgroundTaskClass";
     > string taskName   = "Internet-based background task";
@@ -58,51 +58,55 @@ Xxxx xxxxx xxxxxxx xxxx xxx xxxx x xxxxxxxxxx xxxx xxxxx xxxxxxx xxx xxxx xxx, x
     > BackgroundTaskRegistration ^ task = RegisterBackgroundTask(entryPoint, taskName, internetTrigger, exampleCondition);
     > ```
 
-    > **Xxxx**  Xxxxxxxxx Xxxxxxx xxxx xxxx xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700485) xxxxxx xxxxxxxxxxx xxx xx xxx xxxxxxxxxx xxxxxxx xxxxx.
+    > **Note**  Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
 
-    Xx xxxxxx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxx xxx xxxxxxx xx xxxxxx, xxx xxxx xxxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700471) xxx xxxx xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700485) xxxx xxxx xxx xxxxxxxx xxxxx xxxxx xxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxxxxx xxxxx](guidelines-for-background-tasks.md).
+    To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
-    > **Xxxx**  Xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xx xxx xxxx xx xxxxxxxxxxxx. Xx xxxxx xx xxxxxxxx xx xxx xx xxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxxx. Xxxxxx xxxx xxxx xxx xxxxxxxxxx xxxxxxx xxxxxxxxx xxxxx xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxx - xx xxxxxxx xxxx xxx xxxxxxx xx xxxxxx x xxxxx xxxxxxxxxxxx xxxxxx xxxxx xxxxxxxxxx xx xxxxxxxx x xxxx, xx xxx xxxxx.
+    > **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
 
      
 
-## Xxxxxxx
+## Remarks
 
 
-Xx xxx xxxxxxxxxx xxxx xxxxxxxxxxxx xx xxxxxx, xxxxxxxx xxx [xxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=618666).
+To see background task registration in action, download the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666).
 
-Xxxxxxxxxx xxxxx xxx xxx xx xxxxxxxx xx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224838) xxx [**XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700517) xxxxxx, xxx xxx xxxxx xxxx xx [Xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx](declare-background-tasks-in-the-application-manifest.md). Xxx xxxx xxxx xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700485) xxxxxx xxxxxxxxxxx xxx xxxxxxxxxx xxxx xxxx.
+Background tasks can run in response to [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) and [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517) events, but you still need to [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md). You must also call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any background task type.
 
-Xxxx xxx xxxxxxxx xxxxxxxxxx xxxxx xxxx xxxxxxx xx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224843), [**XxxxXxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700543), xxx [**XxxxxxxXxxxxxxxXxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224831) xxxxxx, xxxxxxxx xxxx xx xxxxxxx xxxx-xxxx xxxxxxxxxxxxx xxxx xxx xxxx xxxx xxxx xxx xxx xx xxx xx xxx xxxxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxx](support-your-app-with-background-tasks.md).
+Apps can register background tasks that respond to [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843), [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543), and [**NetworkOperatorNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/br224831) events, enabling them to provide real-time communication with the user even when the app is not in the foreground. For more information, see [Support your app with background tasks](support-your-app-with-background-tasks.md).
 
-> **Xxxx**  Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
-## Xxxxxxx xxxxxx
+## Related topics
 
 
 ****
 
-* [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md)
-* [Xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx](declare-background-tasks-in-the-application-manifest.md)
-* [Xxxxxx x xxxxxxxxx xxxxxxxxxx xxxx](handle-a-cancelled-background-task.md)
-* [Xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx](monitor-background-task-progress-and-completion.md)
-* [Xxxxxxxx x xxxxxxxxxx xxxx](register-a-background-task.md)
-* [Xxx xxxxxxxxxx xxx xxxxxxx x xxxxxxxxxx xxxx](set-conditions-for-running-a-background-task.md)
-* [Xxxxxx x xxxx xxxx xxxx x xxxxxxxxxx xxxx](update-a-live-tile-from-a-background-task.md)
-* [Xxx x xxxxxxxxxxx xxxxxxx](use-a-maintenance-trigger.md)
-* [Xxx x xxxxxxxxxx xxxx xx x xxxxx](run-a-background-task-on-a-timer-.md)
-* [Xxxxxxxxxx xxx xxxxxxxxxx xxxxx](guidelines-for-background-tasks.md)
+* [Create and register a background task](create-and-register-a-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Register a background task](register-a-background-task.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
 
 ****
 
-* [Xxxxx x xxxxxxxxxx xxxx](debug-a-background-task.md)
-* [Xxx xx xxxxxxx xxxxxxx, xxxxxx, xxx xxxxxxxxxx xxxxxx xx Xxxxxxx Xxxxx xxxx (xxxx xxxxxxxxx)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Debug a background task](debug-a-background-task.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

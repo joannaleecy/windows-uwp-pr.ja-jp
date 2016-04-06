@@ -1,47 +1,48 @@
 ---
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xxx xx xxxxxxx xxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxx xxxx xxxxxxx xxx xxxxx Xxxxx xxxxxxxx. Xxxx Xxxxx xxxxxxxx xxxxxx xxxx xxx xx xx xxxxxxxxx xx xx xxxxxx xxxx xxx xxxx xxxxxxx Xxxxx.
-xxxxx: Xxxxxxx xxxx
-xx.xxxxxxx: YXXXYXYX-XXXY-YYYY-XYYY-XYYXYYXXXXYY
+description: This article explains how to receive content in your Universal Windows Platform (UWP) app shared from another app using Share contract. This Share contract allows your app to be presented as an option when the user invokes Share.
+title: Receive data
+ms.assetid: 0AFF9E0D-DFF4-4018-B393-A26B11AFDB41
+author: awkoren
 ---
 
-# Xxxxxxx xxxx
+# Receive data
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxxxx xxxxxxxx xxx xx xxxxxxx xxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxx xxxx xxxxxxx xxx xxxxx Xxxxx xxxxxxxx. Xxxx Xxxxx xxxxxxxx xxxxxx xxxx xxx xx xx xxxxxxxxx xx xx xxxxxx xxxx xxx xxxx xxxxxxx Xxxxx.
+This article explains how to receive content in your Universal Windows Platform (UWP) app shared from another app using Share contract. This Share contract allows your app to be presented as an option when the user invokes Share.
 
-## Xxxxxxx xxxx xxx xx x xxxxx xxxxxx
+## Declare your app as a share target
 
-Xxx xxxxxx xxxxxxxx x xxxx xx xxxxxxxx xxxxxx xxxx xxxx x xxxx xxxxxxx Xxxxx. Xx xxxxx xx xxxxxx xx xxx xxxx, xxxx xxx xxxx xx xxxxxxx xxxx xx xxxxxxxx xxx Xxxxx xxxxxxxx. Xxxx xxxx xxx xxxxxx xxxx xxxx xxxx xxx xx xxxxxxxxx xx xxxxxxx xxxxxxx.
+The system displays a list of possible target apps when a user invokes Share. In order to appear on the list, your app need to declare that it supports the Share contract. This lets the system know that your app is available to receive content.
 
-1.  Xxxx xxx xxxxxxxx xxxx. Xx xxxxxx xx xxxxxx xxxxxxxxx xxxx **xxxxxxx.xxxxxxxxxxxx**.
-2.  Xxxx xxx **Xxxxxxxxxxxx** xxx.
-3.  Xxxxxx **Xxxxx Xxxxxx** xxxx xxx **Xxxxxxxxx Xxxxxxxxxxxx** xxxx xxx xxxxx **Xxx**.
+1.  Open the manifest file. It should be called something like **package.appxmanifest**.
+2.  Open the **Declarations** tab.
+3.  Choose **Share Target** from the **Available Declarations** list and click **Add**.
 
-## Xxxxxx xxxx xxxxx xxx xxxxxxx
+## Choose file types and formats
 
-Xxxx, xxxxxx xxxx xxxx xxxxx xxx xxxx xxxxxxx xxx xxxxxxx. Xxx Xxxxx XXXx xxxxxxx xxxxxxx xxxxxxxx xxxxxxx, xxxx xx Xxxx, XXXX, xxx Xxxxxx. Xxx xxx xxxx xxxxxxx xxxxxx xxxx xxxxx xxx xxxx xxxxxxx. Xx xxx xx, xxxxxxxx xxxx xxxxxx xxxx xxxx xx xxxx xxxx xxxxx xxxxx xxx xxxxxxx xxx, xxxxxxxxx xxxxx xxxx xxx'x xxx xxx xxxxxxx xx xxxxx xxxx.
+Next, decide what file types and data formats you support. The Share APIs support several standard formats, such as Text, HTML, and Bitmap. You can also specify custom file types and data formats. If you do, remember that source apps have to know what those types and formats are, otherwise those apps can't use the formats to share data.
 
-Xxxx xxxxxxxx xxx xxxxxxx xxxx xxx xxx xxxxxx. Xxxx xxxxxx xxxx xxxx xxxxxxx xxx xxxx xxxxx xxxxxx xxxxxx xxxx xxx xxxx xxxxxxx xxxxx.
+Only register for formats your app can handle. Only target apps that support the data being shared appear when the user invokes share.
 
-Xx xxx xxxx xxxxx:
+To set file types:
 
-1.  Xxxx xxx xxxxxxxx xxxx. Xx xxxxxx xx xxxxxx xxxxxxxxx xxxx **xxxxxxx.xxxxxxxxxxxx**.
-2.  Xx xxx **Xxxxxxxxx Xxxx Xxxxx** xxxxxxx xx xxx **Xxxxxxxxxxxx** xxxx, xxxxx **Xxx Xxx**.
-3.  Xxxx xxx xxxx xxxx xxxxxxxxx xxxx xxx xxxx xx xxxxxxx. Xxx xxxxxxx, .xxxx. Xxx xxxx xx xxxxxxx xxx xxxxxx. Xx xxx xxxx xx xxxxxxx xxx xxxx xxxxx, xxxxx xxx **XxxxxxxxXxxXxxxXxxx** xxx.
+1.  Open the manifest file. It should be called something like **package.appxmanifest**.
+2.  In the **Supported File Types** section of the **Declarations** page, click **Add New**.
+3.  Type the file name extension that you want to support. For example, .docx. You need to include the period. If you want to support all file types, check the **SupportsAnyFileType** box.
 
-Xx xxx xxxx xxxxxxx:
+To set data formats:
 
-1.  Xxxx xxx xxxxxxxx xxxx.
-2.  Xxxx xxx **Xxxx Xxxxxxx** xxxxxxx xx xxx **Xxxxxxxxxxxx** xxxx xxx xxxxx **Xxx Xxx**.
-3.  Xxxx xxx xxxx xx xxx xxxx xxxxxx xxx xxxxxxx. Xxx xxxxxxx, "Xxxx".
+1.  Open the manifest file.
+2.  Open the **Data Formats** section of the **Declarations** page and click **Add New**.
+3.  Type the name of the data format you support. For example, "Text".
 
-## Xxxxxx xxxxx xxxxxxxxxx
+## Handle share activation
 
-Xxxx x xxxx xxxxxxx xxxx xxx (xxxxxxx xx xxxxxxxxx xx xxxx x xxxx xx xxxxxxxxx xxxxxx xxxx xx xxx xxxxx XX), xx [**Xxxxxxxxxxx.XxXxxxxXxxxxxXxxxxxxxx**][XxXxxxxXxxxxxXxxxxxxxx] xxxxx xx xxxxxx. Xxxx xxx xxxxx xx xxxxxx xxxx xxxxx xx xxxxxxx xxx xxxx xxx xxxx xxxxx xx xxxxx.
+When a user selects your app (usually by selecting it from a list of available target apps in the share UI), an [**Application.OnShareTargetActivated**][OnShareTargetActivated] event is raised. Your app needs to handle this event to process the data the user wants to share.
 
-Xxxx xxxx xx xxxx xxx xx xxxxxxx xxxx xx xx xxxxxxxxx xx x Xxxxx xxxxxx, xxx xxxxxxxx xxxxxxxx xx xxxx xxx xx xxxxxxxxxx xxx x xxx xxxxxxxx xx xxxx xxx xx xxxxxxxx xx xxxxxx xxx xxxxxxxx.
+Note that if your app is running when it is activated as a Share target, the existing instance of your app is terminated and a new instance of your app is launched to handle the contract.
 
 <!-- For some reason, the snippets in this file are all inline in the WDCML topic. Suggest moving to VS project with rest of snippets. -->
 ```cs
@@ -51,90 +52,96 @@ protected override async void OnShareTargetActivated(ShareTargetActivatedEventAr
 } 
 ```
 
-Xxx xxxx xxxx xxx xxxx xxxxx xx xxxxx xx xxxxxxxxx xx x XxxxxXxxxxxxxx xxxxxx. Xxx xxx xxx xxxx xxxxxx xx xxxxx xxx xxxxxx xx xxx xxxx xx xxxxxxxx.
+The data that the user wants to share is contained in a ShareOperation object. You can use this object to check the format of the data it contains.
 
-```xx
-XxxxxXxxxxxxxx xxxxxXxxxxxxxx = xxxx.XxxxxXxxxxxxxx;
-xx (xxxxxXxxxxxxxx.Xxxx.Xxxxxxxx(XxxxxxxxXxxxXxxxxxx.Xxxx))
+```cs
+ShareOperation shareOperation = args.ShareOperation;
+if (shareOperation.Data.Contains(StandardDataFormats.Text))
 {
-    xxxxxx xxxx = xxxxx xxxxxXxxxxxxxx.Xxxx.XxxXxxxXxxxx();
+    string text = await shareOperation.Data.GetTextAsync();
 
-    // Xx xxxxxx xxx xxxx xxxx xxxx xxxxxxx, xxx xxxx x XxxxXxxxx xxxxxxx
-    // xxxx x xxxx xx &xxxx;xxxxxxXxxxxxx&xxxx;.
-    xxxxxxXxxxxxx.Xxxx = &xxxx;Xxxx: &xxxx; + xxxx;
+    // To output the text from this example, you need a TextBlock control
+    // with a name of &quot;sharedContent&quot;.
+    sharedContent.Text = &quot;Text: &quot; + text;
 } 
 ```
 
-## Xxxxxx xxxxxxx xxxxxx
+## Report sharing status
 
-Xx xxxx xxxxx, xx xxx xxxx xxxx xxx xxxx xxx xx xxxxxxx xxx xxxx xx xxxxx xx xxxxx. Xxxxxxxx xxxxxxx xxxxx xxxxxxx xxxxxxxxxxx xx xxxxx xx xxxxxx. Xxxxx xxxxx xxx xxxxxx xxxx x xxxxxx xxxx xxxxxx, xx xxxx xxxx xxxxxx xx xxxxxxx.
+In some cases, it can take time for your app to process the data it wants to share. Examples include users sharing collections of files or images. These items are larger than a simple text string, so they take longer to process.
 
-```xx
-xxxxxXxxxxxxxx.XxxxxxXxxxXxxxxxxxx(); 
+```cs
+shareOperation.ReportDataRetreived(); 
 ```
 
-Xxxxx xxxxxxx [**XxxxxxXxxxxxx**][XxxxxxXxxxxxx], xxx'x xxxxxx xxx xxxx xxxx xxxxxxxxxxx xxxx xxxx xxx. Xx x xxxxxx, xxx xxxxxxx'x xxxx xx xxxxxx xxxx xxx xx xx x xxxxx xxxxx xx xxx xx xxxxxxxxx xx xxx xxxx.
+After calling [**ReportStarted**][ReportStarted], don't expect any more user interaction with your app. As a result, you shouldn't call it unless your app is at a point where it can be dismissed by the user.
 
-Xxxx xx xxxxxxxx xxxxx, xx'x xxxxxxxx xxxx xxx xxxx xxxxx xxxxxxx xxx xxxxxx xxx xxxxxx xxxx xxx xxx xxx xxx xxxx xxxx xxx XxxxXxxxxxx xxxxxx. Xx x xxxxxx, xx xxxxxxxxx xxxx xxx xxx xxx xxxxxx xxxx xxxx xxxx xxx xxx xxxxxxxx xxx xxxx xx xxxxx. Xxxx xxx, xxx xxxxxx xxx xxxxxxx xx xxxxxxxxx xxx xxxxxx xxx xx xxxxxxxxx.
+With an extended share, it's possible that the user might dismiss the source app before your app has all the data from the DataPackage object. As a result, we recommend that you let the system know when your app has acquired the data it needs. This way, the system can suspend or terminate the source app as necessary.
 
-```xx
-xxxxxXxxxxxxxx.XxxxxxXxxxxxxxxXxxxxxxxxxXxxx(); 
+```cs
+shareOperation.ReportSubmittedBackgroundTask(); 
 ```
 
-Xx xxxxxxxxx xxxx xxxxx, xxxx [**XxxxxxXxxxx**][XxxxxxXxxxx] xx xxxx xx xxxxx xxxxxxx xx xxx xxxxxx. Xxx xxxx xxxx xxx xxx xxxxxxx xxxx xxxx xxxxx xx xxx xxxxxx xx xxx xxxxx. Xx xxxx xxxxx, xxxx xxx xx xxxx xxxx xxx xxx xxxxx xx xxxxx. Xxx xxxx xxxx xxxx xx xxxxx xxxxx xx xxxxx xxx xxxxxxx xx xxxx xxx. Xxxxxxxxx xx xxxx xxxxxxxx, xxx xxx xxxxxx xxxx x xxxxxxxxxx xxxxx xxx'x xxxxxxx xxxxxx xx xxx xxx xxxxx xxxxxxxxx. Xx xxxx xxxx, xxx xxx xxxxxx xx xxx xxxx **XxxxxxXxxxx** xxx xx xxxxxxxx xxxx xxx xxxxx.
+If something goes wrong, call [**ReportError**][ReportError] to send an error message to the system. The user will see the message when they check on the status of the share. At that point, your app is shut down and the share is ended. The user will need to start again to share the content to your app. Depending on your scenario, you may decide that a particular error isn't serious enough to end the share operation. In that case, you can choose to not call **ReportError** and to continue with the share.
 
-```xx
-xxxxxXxxxxxxxx.XxxxxxXxxxx(&xxxx;Xxxxx xxx xxxxx xxx xxxxxx! Xxx xxxxx xxxxx.&xxxx;); 
+```cs
+shareOperation.ReportError(&quot;Could not reach the server! Try again later.&quot;); 
 ```
 
-Xxxxxxx, xxxx xxxx xxx xxx xxxxxxxxxxxx xxxxxxxxx xxx xxxxxx xxxxxxx, xxx xxxxxx xxxx [**XxxxxxXxxxxxxxx**][XxxxxxXxxxxxxxx] xx xxx xxx xxxxxx xxxx.
+Finally, when your app has successfully processed the shared content, you should call [**ReportCompleted**][ReportCompleted] to let the system know.
 
-```xx
-xxxxxXxxxxxxxx.XxxxxxXxxxxxxxx();
+```cs
+shareOperation.ReportCompleted();
 ```
 
-Xxxx xxx xxx xxxxx xxxxxxx, xxx xxxxxxx xxxx xxxx xx xxx xxxxx xxxx xxxxxxxxx, xxx xxx xxx'x xxxx xxxx xxxx xxxx xxxx. Xxxxxxx, xxxxx xxx xxxxx xxxx x xxxxxx xxx xxx xxxx [**XxxxxxXxxxXxxxxxxxx**][XxxxxxXxxxXxxxxxxxx] xxxxxx [**XxxxxxXxxxxxx**][XxxxxxXxxxxxx]. Xxx xxxxxxx, xxx xxx xxxxx xxxxxxxx xxx xxxx xx xxxx xx x xxxx xx xxx xxxxxxxxxx xxxxxxx, xxx xxx xxxx **XxxxxxXxxxxxx** xxxxx xxx xxxx xxxxxx x Xxxxx xxxxxx.
+When you use these methods, you usually call them in the order just described, and you don't call them more than once. However, there are times when a target app can call [**ReportDataRetrieved**][ReportDataRetrieved] before [**ReportStarted**][ReportStarted]. For example, the app might retrieve the data as part of a task in the activation handler, but not call **ReportStarted** until the user clicks a Share button.
 
-## Xxxxxx x XxxxxXxxx xx xxxxxxx xxx xxxxxxxxxx
+## Return a QuickLink if sharing was successful
 
-Xxxx x xxxx xxxxxxx xxxx xxx xx xxxxxxx xxxxxxx, xx xxxxxxxxx xxxx xxx xxxxxx x [**XxxxxXxxx**][XxxxxXxxx]. X **XxxxxXxxx** xx xxxx x xxxxxxxx xxxx xxxxx xx xxxxxx xxx xxxxx xx xxxxx xxxxxxxxxxx xxxx xxxx xxx. Xxx xxxxxxx, xxx xxxxx xxxxxx x **XxxxxXxxx** xxxx xxxxx x xxx xxxx xxxxxxx xxx-xxxxxxxxxx xxxx x xxxxxx'x xxxxx xxxxxxx.
+When a user selects your app to receive content, we recommend that you create a [**QuickLink**][QuickLink]. A **QuickLink** is like a shortcut that makes it easier for users to share information with your app. For example, you could create a **QuickLink** that opens a new mail message pre-configured with a friend's email address.
 
-X **XxxxxXxxx** xxxx xxxx x xxxxx, xx xxxx, xxx xx Xx. Xxx xxxxx (xxxx "Xxxxx Xxx") xxx xxxx xxxxxx xxxx xxx xxxx xxxx xxx Xxxxx xxxxx. Xxx Xx xx xxxx xxxx xxx xxxx xx xxxxxx xxx xxxxxx xxxxxxxxxxx, xxxx xx xx xxxxx xxxxxxx xx xxxxx xxxxxxxxxxx. Xxxx xxxx xxx xxxxxxx x **XxxxxXxxx**, xxx xxx xxxxxxx xxx **XxxxxXxxx** xx xxx xxxxxx xx xxxxxxx [**XxxxxxXxxxxxxxx**][XxxxxxXxxxxxxxx].
+A **QuickLink** must have a title, an icon, and an Id. The title (like "Email Mom") and icon appear when the user taps the Share charm. The Id is what your app uses to access any custom information, such as an email address or login credentials. When your app creates a **QuickLink**, the app returns the **QuickLink** to the system by calling [**ReportCompleted**][ReportCompleted].
 
-X **XxxxxXxxx** xxxx xxx xxxxxxxx xxxxx xxxx. Xxxxxxx, xx xxxxxxxx xx xxxxxxxxxx xxxx, xxxx xxxxxxxx, xx xxxx xx xxxx xxx. Xxxx xxx xx xxxxxxxxxxx xxx xxxxxxx xxx Xx xx xxx **XxxxxXxxx** xxx xxx xxxxxxxxxxxxx xxxx xxxx. Xxxx xxx xxxx xxxx xxx **XxxxxXxxx**, xxx xxx xxx xxx Xx xxxxxxx xxx [**XxxxxXxxxxxxxx.XxxxxXxxxXx**][XxxxxXXxxXx] xxxxxxxx.
+A **QuickLink** does not actually store data. Instead, it contains an identifier that, when selected, is sent to your app. Your app is responsible for storing the Id of the **QuickLink** and the corresponding user data. When the user taps the **QuickLink**, you can get its Id through the [**ShareOperation.QuickLinkId**][QuickLInkId] property.
 
-```xx
-xxxxx xxxx XxxxxxXxxxxxxxx(XxxxxXxxxxxxxx xxxxxXxxxxxxxx, xxxxxx xxxxxXxxxXx, xxxxxx xxxxxXxxxXxxxx)
+```cs
+async void ReportCompleted(ShareOperation shareOperation, string quickLinkId, string quickLinkTitle)
 {
-    XxxxxXxxx xxxxxXxxxXxxx = xxx XxxxxXxxx
+    QuickLink quickLinkInfo = new QuickLink
     {
-        Xx = xxxxxXxxxXx,
-        Xxxxx = xxxxxXxxxXxxxx,
+        Id = quickLinkId,
+        Title = quickLinkTitle,
 
-        // Xxx xxxxxxxxxx, xxx xxxxxxxxx XxxxXxxxx xxx XxxxXxxxxxx xxx xxx 
-        // xxxxxxxxxxxxx xxxx xxx xxxxxxxx
-        XxxxxxxxxXxxxXxxxx = { &xxxx;*&xxxx; },
-        XxxxxxxxxXxxxXxxxxxx = { XxxxxxxxXxxxXxxxxxx.Xxxx, XxxxxxxxXxxxXxxxxxx.Xxx, 
-                XxxxxxxxXxxxXxxxxxx.Xxxxxx, XxxxxxxxXxxxXxxxxxx.XxxxxxxXxxxx }
+        // For quicklinks, the supported FileTypes and DataFormats are set 
+        // independently from the manifest
+        SupportedFileTypes = { &quot;*&quot; },
+        SupportedDataFormats = { StandardDataFormats.Text, StandardDataFormats.Uri, 
+                StandardDataFormats.Bitmap, StandardDataFormats.StorageItems }
     };
 
-    XxxxxxxXxxx xxxxXxxx = xxxxx Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxx.Xxxxxxx.XxxxxxxxxXxxxxxxx.XxxxxxXxxxXxxxx(
-            &xxxx;xxxxxx\\xxxx.xxx&xxxx;, XxxxxxxxXxxxxxxxxXxxxxx.XxxxXxXxxxxx);
-    xxxxxXxxxXxxx.Xxxxxxxxx = XxxxxxXxxxxxXxxxxxXxxxxxxxx.XxxxxxXxxxXxxx(xxxxXxxx);
-    xxxxxXxxxxxxxx.XxxxxxXxxxxxxxx(xxxxxXxxxXxxx);
+    StorageFile iconFile = await Windows.ApplicationModel.Package.Current.InstalledLocation.CreateFileAsync(
+            &quot;assets\\user.png&quot;, CreationCollisionOption.OpenIfExists);
+    quickLinkInfo.Thumbnail = RandomAccessStreamReference.CreateFromFile(iconFile);
+    shareOperation.ReportCompleted(quickLinkInfo);
 }
 ```
 
-## Xxxxxxx xxxxxx
-* [Share data](share-data.md)<!-- LINKS -->
-* [XxXxxxxXxxxxxXxxxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.application.onsharetargetactivated.aspx)
-* [XxxxxxXxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
-* [XxxxxxXxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reporterror.aspx)
-* [XxxxxxXxxxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportecompleted.aspx)
-* [XxxxxxXxxxXxxxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportdataretrieved.aspx)
-* [XxxxxxXxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
-* [XxxxxXxxx](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.aspx)
-* [XxxxxXXxxXx](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
+## Related topics
+* [Share data](share-data.md)
+ 
+<!-- LINKS -->
+* [OnShareTargetActivated](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.application.onsharetargetactivated.aspx)
+* [ReportStarted](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
+* [ReportError](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reporterror.aspx)
+* [ReportCompleted](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportecompleted.aspx)
+* [ReportDataRetrieved](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportdataretrieved.aspx)
+* [ReportStarted](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.shareoperation.reportstarted.aspx)
+* [QuickLink](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.aspx)
+* [QuickLInkId](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.datatransfer.sharetarget.quicklink.id.aspx)
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO5-->
+
+

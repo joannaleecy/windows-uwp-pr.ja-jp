@@ -1,95 +1,99 @@
 ---
-xx.xxxxxxx: YYXYYYXY-XYYY-YXXX-YXYY-XYYYXYYXYXYY
-xxxxx: Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx
-xxxxxxxxxxx: Xx xxxx xxxx xxx xxx xxxx xxxxxx xx xxxxx xxxxxxxxx xx xxx Xxxxxxx Xxxxx, xx xxxxxxxx Xxxxxxx Xxxxxxxxx, xxxxxxxx xxx xxxx xx xxxxxxx xxxxxx xxx xxxxxx xx xxx xxxxxxxxxxxxx. Xxxx xxxxx xxxxx xxx xxx xx xxxxxxx xxx xxx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx.
+ms.assetid: 78D833B9-E528-4BCA-9C48-A757F17E6C22
+title: Windows App Certification Kit
+description: To give your app the best chance of being published on the Windows Store, or becoming Windows Certified, validate and test it locally before you submit it for certification. This topic shows you how to install and run the Windows App Certification Kit.
 ---
-# Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx
+# Windows App Certification Kit
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xx xxxx xxxx xxx xxx xxxx xxxxxx xx xxxxx [xxxxxxxxx xx xxx Xxxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/Hh694062), xx xxxxxxxx [Xxxxxxx Xxxxxxxxx](https://msdn.microsoft.com/windows/desktop/jj134964.aspx), xxxxxxxx xxx xxxx xx xxxxxxx xxxxxx xxx xxxxxx xx xxx xxxxxxxxxxxxx. Xxxx xxxxx xxxxx xxx xxx xx xxxxxxx xxx xxx xxx [Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx](http://go.microsoft.com/fwlink/p/?LinkID=309666).
+To give your app the best chance of being [published on the Windows Store](https://msdn.microsoft.com/library/windows/apps/Hh694062), or becoming [Windows Certified](https://msdn.microsoft.com/windows/desktop/jj134964.aspx), validate and test it locally before you submit it for certification. This topic shows you how to install and run the [Windows App Certification Kit](http://go.microsoft.com/fwlink/p/?LinkID=309666).
 
-## Xxxxxxxxxxxxx
+## Prerequisites
 
-Xxxxxxxxxxxxx xxx xxxxxxx x Xxxxxxxxx Xxxxxxx xxx:
+Prerequisites for testing a Universal Windows app:
 
--   Xxx xxxx xxxxxxx xxx xxx Xxxxxxx YY.
--   Xxx xxxx xxxxxxx [Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxxxx YY]( http://go.microsoft.com/fwlink/p/?LinkID=309666), xxxxx xx xxxxxxxx xx xxx Xxxxxxx Xxxxxxxx Xxxxxxxxxxx Xxx (XXX) xxx Xxxxxxx YY.
--   Xxx xxxx xxxx x xxxxx xxxxxxxxx xxxxxxx xxx xxxx xxxxxxxx. Xxx [Xxx x xxxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/Hh974578) xx xxxxx xxx.
--   Xxx xxxx xxxxxx xxx Xxxxxxx xxx xxxx xxx xxxx xx xxxx xx xxxx xxxxxxxx.
+-   You must install and run Windows 10.
+-   You must install [Windows App Certification Kit version 10]( http://go.microsoft.com/fwlink/p/?LinkID=309666), which is included in the Windows Software Development Kit (SDK) for Windows 10.
+-   You must have a valid developer license for your computer. See [Get a developer license](https://msdn.microsoft.com/library/windows/apps/Hh974578) to learn how.
+-   You must deploy the Windows app that you want to test to your computer.
 
-**X xxxx xxxxx xx-xxxxx xxxxxxxx**
+**A note about in-place upgrades**
 
-Xxx xxxxxxxxxxxx xx x xxxx xxxxxx [Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx]( http://go.microsoft.com/fwlink/p/?LinkID=309666) xxxx xxxxxxx xxx xxxxxxxx xxxxxxx xx xxx xxx xxxx xx xxxxxxxxx xx xxx xxxxxxx.
+The installation of a more recent [Windows App Certification Kit]( http://go.microsoft.com/fwlink/p/?LinkID=309666) will replace any previous version of the kit that is installed on the machine.
 
-## Xxxxxxxx xxxx Xxxxxxx xxx xxxxx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxxxxxxxxxx
+## Validate your Windows app using the Windows App Certification Kit interactively
 
-1.  Xxxx xxx **Xxxxx** xxxx, xxxxxx **Xxxx**, xxxx **Xxxxxxx Xxxx**, xxx xxxxx **Xxxxxxx Xxx Xxxx Xxx**.
+1.  From the **Start** menu, search **Apps**, find **Windows Kits**, and click **Windows App Cert Kit**.
 
-2.  Xxxx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx, xxxxxx xxx xxxxxxxx xx xxxxxxxxxx xxx xxxxx xxxx xx xxxxxxx. Xxx xxxxxxx: Xx xxx xxx xxxxxxxxxx x Xxxxxxx xxx, xxxxxx **Xxxxxxxx x Xxxxxxx xxx**.
+2.  From the Windows App Certification Kit, select the category of validation you would like to perform. For example: If you are validating a Windows app, select **Validate a Windows app**.
 
-    Xxx xxx xxxxxx xxxxxxxx xx xxx xxx xxx'xx xxxxxxx, xx xxxxxx xxx xxx xxxx x xxxx xx xxx XX. Xxxx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xx xxx xxx xxx xxxxx xxxx, xxx XX xxxxx xxx xxx Xxxxxxx xxxx xxxx xxx xxxx xxxxxxxxx xx xxxx xxxxxxxx. Xxx xxx xxxxxxxxxx xxxx, xxx XX xxxx xxxxxxx xxx xxxx xxxxxx Xxxxxxx xxxx xxxx xxx xxxx xxxxxxxxx. Xx xxx xxx xxxx xxx xxxx xx xxxx xx xxx xxxxxx, xxx xxx xxxxx xx **Xx xxx xxx'x xxxxxx** xx xxx x xxxxxxxxxxxxx xxxx xx xxx xxxx xxxxxxxxx xx xxxx xxxxxx.
+    You may browse directly to the app you're testing, or choose the app from a list in the UI. When the Windows App Certification Kit is run for the first time, the UI lists all the Windows apps that you have installed on your computer. For any subsequent runs, the UI will display the most recent Windows apps that you have validated. If the app that you want to test is not listed, you can click on **My app isn't listed** to get a comprehensive list of all apps installed on your system.
 
-3.  Xxxxx xxx xxxx xxxxx xx xxxxxxxx xxx xxx xxxx xxx xxxx xx xxxx, xxxxx **Xxxx**.
+3.  After you have input or selected the app that you want to test, click **Next**.
 
-4.  Xxxx xxx xxxx xxxxxx, xxx xxxx xxx xxx xxxx xxxxxxxx xxxx xxxxxx xx xxx xxx xxxx xxx xxx xxxxxxx. Xx x xxxx xx xxxxxx xxx xx xxx xxxx, xxx xxxx xx xxx xxxxxxxxxx xx xxxx xxxxxxxxxxx. Xxx xxxxxxx, xx xxx xxx xxxxxxx x Xxxxxxx YY xxx xx Xxxxxxx Y, xxxx xxxxxx xxxxx xxxx xxxxx xx xxx xxxxxxxx. Xxxx xxxx xxx Xxxxxxx Xxxxx xxx xxxxx xxx xxxxx xxxx xxxx xxxxxxxx. Xxxxxx xxx xxxxx xxx xxxx xx xxx xxx xxxxx **Xxxx**.
+4.  From the next screen, you will see the test workflow that aligns to the app type you are testing. If a test is grayed out in the list, the test is not applicable to your environment. For example, if you are testing a Windows 10 app on Windows 7, only static tests will apply to the workflow. Note that the Windows Store may apply all tests from this workflow. Select the tests you want to run and click **Next**.
 
-    Xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxxx xxxxxxxxxx xxx xxx.
+    The Windows App Certification Kit begins validating the app.
 
-5.  Xx xxx xxxxxx xxxxx xxx xxxx, xxxxx xxx xxxx xx xxx xxxxxx xxxxx xxx xxxx xx xxxx xxx xxxx xxxxxx.
+5.  At the prompt after the test, enter the path to the folder where you want to save the test report.
 
-    Xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxxxx xx XXXX xxxxx xxxx xx XXX xxxxxx xxx xxxxx xx xx xxxx xxxxxx.
+    The Windows App Certification Kit creates an HTML along with an XML report and saves it in this folder.
 
-6.  Xxxx xxx xxxxxx xxxx xxx xxxxxx xxx xxxxxxx xx xxx xxxx.
+6.  Open the report file and review the results of the test.
 
-**Xxxx**  Xx xxx'xx xxxxx Xxxxxx Xxxxxx, xxx xxx xxx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxx xxx xxxxxx xxxx xxx xxxxxxx. Xxx [Xxxxxxxxx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/Mt627715) xx xxxxx xxx.
+**Note**  If you're using Visual Studio, you can run the Windows App Certification Kit when you create your app package. See [Packaging UWP apps](https://msdn.microsoft.com/library/windows/apps/Mt627715) to learn how.
 
  
 
-## Xxxxxxxx xxxx Xxxxxxx xxx xxxxx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxx x xxxxxxx xxxx
+## Validate your Windows app using the Windows App Certification Kit from a command line
 
-**Xxxxxxxxx**  Xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxx xx xxx xxxxxx xxx xxxxxxx xx xx xxxxxx xxxx xxxxxxx.
+**Important**  The Windows App Certification Kit must be run within the context of an active user session.
 
-1.  Xx xxx xxxxxxx xxxxxx, xxxxxxxx xx xxx xxxxxxxxx xxxx xxxxxxxx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx.
+1.  In the command window, navigate to the directory that contains the Windows App Certification Kit.
 
-    **Xxxx**   Xxx xxxxxxx xxxx xx X:\\Xxxxxxx Xxxxx\\Xxxxxxx Xxxx\\YY\\Xxx Xxxxxxxxxxxxx Xxx\\.
+    **Note**   The default path is C:\\Program Files\\Windows Kits\\10\\App Certification Kit\\.
 
-2.  Xxxxx xxx xxxxxxxxx xxxxxxxx xx xxxx xxxxx xx xxxx xx xxx xxxx xx xxxxxxx xxxxxxxxx xx xxxx xxxx xxxxxxxx:
+2.  Enter the following commands in this order to test an app that is already installed on your test computer:
 
     `appcert.exe reset`
 
     `appcert.exe test -packagefullname [package full name] -reportoutputpath [report file name]`
 
-    Xx xxx xxx xxx xxx xxxxxxxxx xxxxxxxx xx xxx xxx xx xxx xxxxxxxxx. Xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxx xxxx xxx xxxxxxx xxx xxxxx xxx xxxxxxxxxxx xxxx xxxxxxxx:
+    Or you can use the following commands if the app is not installed. The Windows App Certification Kit will open the package and apply the appropriate test workflow:
 
     `appcert.exe reset`
 
     `appcert.exe test -appxpackagepath [package path] -reportoutputpath [report file name]`
 
-3.  Xxxxx xxx xxxx xxxxxxxxx, xxxx xxx xxxxxx xxxx xxxxx `[report file name]` xxx xxxxxx xxx xxxx xxxxxxx.
+3.  After the test completes, open the report file named `[report file name]` and review the test results.
 
-**Xxxx**  Xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxx xx xxx xxxx x xxxxxxx, xxx xxx xxxxxxx xxxx xxxxxxxx xxx xxx xxxxxxx xxxxxx xx xxxxxx xxxx xxxxxxx xxx xxxxxx xx xxx xx XxxxxxxY.
+**Note**  The Windows App Certification Kit can be run from a service, but the service must initiate the kit process within an active user session and cannot be run in Session0.
 
-**Xxxx**   Xxx xxxx xxxx xxxxx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxxxx xxxx, xxxxx xxx xxxxxxx `appcert.exe /?`
+**Note**   For more info about the Windows App Certification Kit command line, enter the command `appcert.exe /?`
 
-## Xxxxxxx xxxx x xxx-xxxxx xxxxxxxx
+## Testing with a low-power computer
 
-Xxx xxxxxxxxxxx xxxx xxxxxxxxxx xx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxx xxxxx xx xxx xxxxxxxxxxx xx x xxx-xxxxx xxxxxxxx.
+The performance test thresholds of the Windows App Certification Kit are based on the performance of a low-power computer.
 
-Xxx xxxxxxxxxxxxxxx xx xxx xxxxxxxx xx xxxxx xxx xxxx xx xxxxxxxxx xxx xxxxxxxxx xxx xxxx xxxxxxx. Xx xxxxxxxxx xx xxxx xxx’x xxxxxxxxxxx xxxxx xxx [Xxxxxxx Xxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Dn764944), xx xxxxxxxxx xxxx xxx xxxx xxxx xxx xx x xxx-xxxxx xxxxxxxx, xxxx xx xx Xxxxx Xxxx xxxxxxxxx-xxxxx xxxxxxxx xxxx x xxxxxx xxxxxxxxxx xx YYYYxYYY (xx xxxxxx) xxx x xxxxxxxxxx xxxx xxxxx (xx xxxxxxx xx x xxxxx-xxxxx xxxx xxxxx).
+The characteristics of the computer on which the test is performed can influence the test results. To determine if your app’s performance meets the [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944), we recommend that you test your app on a low-power computer, such as an Intel Atom processor-based computer with a screen resolution of 1366x768 (or higher) and a rotational hard drive (as opposed to a solid-state hard drive).
 
-Xx xxx-xxxxx xxxxxxxxx xxxxxx, xxxxx xxxxxxxxxxx xxxxxxxxxxxxxxx xxxxx xxxxxx xxxx xxxx. Xxxxx xx xxx xxxx xxxxxxx [Xxxxxxx Xxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Dn764944) xxx xxxx xxxx xxx xxxx xxx xxxx xxxxxxx xxxxxxx xx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xx xxxx xxxx xxxx xxxx xxx xxxxxxxx xxxx xxx xxxxxx xxxxxxxxxxx xxxxxxxxxxxx.
+As low-power computers evolve, their performance characteristics might change over time. Refer to the most current [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944) and test your app with the most current version of the Windows App Certification Kit to make sure that your app complies with the latest performance requirements.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxx](windows-app-certification-kit-tests.md)
-* [Xxxxxxx Xxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Dn764944)
+* [Windows App Certification Kit tests](windows-app-certification-kit-tests.md)
+* [Windows Store Policies](https://msdn.microsoft.com/library/windows/apps/Dn764944)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

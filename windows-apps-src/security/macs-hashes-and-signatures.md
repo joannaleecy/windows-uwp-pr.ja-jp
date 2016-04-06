@@ -1,36 +1,38 @@
 ---
-xxxxx: XXXx, xxxxxx, xxx xxxxxxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxxxxxx xxxxx (XXXx), xxxxxx, xxx xxxxxxxxxx xxx xx xxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xx xxxxxx xxxxxxx xxxxxxxxx.
-xx.xxxxxxx: XYYYYYYX-YYYY-YYXY-YYXY-XYYYXYYXYXYX
+title: MAC、ハッシュ、および署名
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリでメッセージ認証コード (MAC)、ハッシュ、署名を使ってメッセージの改ざんを検出する方法について説明します。
+ms.assetid: E674312F-6678-44C5-91D9-B489F49C4D3C
 ---
 
-# XXXx, xxxxxx, xxx xxxxxxxxxx
+# MAC、ハッシュ、および署名
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxxxxxx xxxxx (XXXx), xxxxxx, xxx xxxxxxxxxx xxx xx xxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xx xxxxxx xxxxxxx xxxxxxxxx.
+この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリでメッセージ認証コード (MAC)、ハッシュ、署名を使ってメッセージの改ざんを検出する方法について説明します。
 
-## Xxxxxxx xxxxxxxxxxxxxx xxxxx (XXXx)
+## メッセージ認証コード (MAC)
 
 
-Xxxxxxxxxx xxxxx xxxxxxx xx xxxxxxxxxxxx xxxxxxxxxx xxxx xxxxxxx x xxxxxxx, xxx xx xxxx xxx xxxxxxx xxxx xxxxxxxxxx xxxx xxxxxxxxx xxxx xxx xxxxxxx. Xx xxxxxxx xxxxxxx, xxxx xx xxx xxxxxxxxxx xxxxxxx xx xxxxxxx xxx xxxxxxxx, xxx xxxx xxxx xxxxx. X xxxxxxx xxxxxxxxxxxxxx xxxx (XXX) xxxxx xxxxxxx xxxxxxx xxxxxxxxx. Xxx xxxxxxx, xxxxxxxx xxx xxxxxxxxx xxxxxxxx:
+暗号化は、承認されていない個人によるメッセージの読み取りを防止できますが、その個人によるメッセージの改ざんを防止することはできません。 メッセージが改ざんされたことにより、そのメッセージが無意味な内容にすぎない場合であっても、実際にコストが発生する場合があります。 メッセージ認証コード (MAC) は、メッセージの改ざんを防止します。 たとえば、次のシナリオについて考えてみます。
 
--   Xxx xxx Xxxxx xxxxx x xxxxxx xxx xxx xxxxx xx x XXX xxxxxxxx xx xxx.
--   Xxx xxxxxxx x xxxxxxx xxx xxxxxx xxx xxxxxxx xxx xxx xxxxxx xxx xxxx x XXX xxxxxxxx xx xxxxxxxx x XXX xxxxx.
--   Xxx xxxxx xxx \[xxxxxxxxxxx\] xxxxxxx xxx xxx XXX xxxxx xx Xxxxx xxxx x xxxxxxx.
--   Xxxxx xxxx xxx xxxxxx xxx xxx xxx xxxxxxx xx xxxxx xx xxx XXX xxxxxxxx. Xxx xxxxxxxx xxx xxxxxxxxx XXX xxxxx xx xxx XXX xxxxx xxxx xx Xxx. Xx xxxx xxx xxx xxxx, xxx xxxxxxx xxx xxx xxxxxxx xx xxxxxxx.
+-   ボブとアリスは秘密鍵を共有し、MAC 関数を使うことに同意しています。
+-   ボブはメッセージを作成し、そのメッセージと秘密鍵を MAC 関数に入力して MAC 値を取得します。
+-   ボブは \[暗号化されていない\] メッセージと MAC 値をネットワーク経由でアリスに送ります。
+-   アリスは秘密鍵とメッセージを使って MAC 関数に入力します。 アリスは、生成された MAC 値とボブから受け取った MAC 値を比較します。 両者が同じものである場合、メッセージは転送中に変更されていません。
 
-Xxxx xxxx Xxx, x xxxxx xxxxx xxxxxxxxxxxxx xx xxx xxxxxxxxxxxx xxxxxxx Xxx xxx Xxxxx, xxxxxx xxxxxxxxxxx xxxxxxxxxx xxx xxxxxxx. Xxx xxxx xxx xxxx xxxxxx xx xxx xxxxxxx xxx xxx xxxxxx, xxxxxxxxx, xxxxxx x XXX xxxxx xxxxx xxxxx xxxx xxx xxxxxxxx xxxxxxx xxxxxx xxxxxxxxxx xx Xxxxx.
+ボブとアリスの通信を傍受する第三者のイブは、メッセージを効果的に操作できません。 イブは秘密キーにアクセスできないため、アリスに対して改ざんされたメッセージが本物であるかのように見せる MAC 値を作成することができません。
 
-Xxxxxxxx x xxxxxxx xxxxxxxxxxxxxx xxxx xxxxxxx xxxx xxxx xxx xxxxxxxx xxxxxxx xxx xxx xxxxxxx xxx, xx xxxxx x xxxxxx xxxxxx xxx, xxxx xxx xxxxxxx xxxx xxx xxxxxx xx xxxxxxx xxxx xxxxxx xx xxxx xxxxxxx xxx.
+メッセージ認証コードの作成によって保証されるのは、元のメッセージが改ざんされていないことと、共有の秘密鍵を使ったことから、その秘密鍵にアクセスできる人物によってメッセージ ハッシュへの署名が行われたことのみです。
 
-Xxx xxx xxx xxx [**XxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241530) xx xxxxxxxxx xxx xxxxxxxxx XXX xxxxxxxxxx xxx xxxxxxxx x xxxxxxxxx xxx. Xxx xxx xxx xxxxxx xxxxxxx xx xxx [**XxxxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241490) xxxxx xx xxxxxxx xxx xxxxxxxxx xxxxxxxxxx xxxx xxxxxxx xxx XXX xxxxx.
+[
+            **MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) を使って、利用可能な MAC アルゴリズムを列挙して対称キーを生成することができます。 [
+            **CryptographicEngine**](https://msdn.microsoft.com/library/windows/apps/br241490) クラスで静的メソッドを使って、MAC 値を作成する必要な暗号化を実行することができます。
 
-Xxxxxxx xxxxxxxxxx xxx xxx xxxxxx xxx xxxxxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxxxxxxxxxx xxxxx (XXXx). Xxxxxxxx XXXx xxx xxxxxxx xxxx xx xxxxxx x xxxxxxx xxxxxxxxx xx xxxxxx xxxx x xxxxxxx xxx xxx xxxx xxxxxxx xxxxxx xxxxxxxxxxxx, xxxxxxxxxx xxx x xxxxxxx/xxxxxx xxx xxxx.
+デジタル署名は、秘密キーによるメッセージ認証コード (MAC) と等価の公開キーのコードです。 MAC ではメッセージが転送中に改ざんされなかったことをメッセージの受信者が確認するのに秘密キーを使いますが、署名では秘密キーと公開キーのペアを使います。
 
-Xxxx xxxxxxx xxxx xxxxx xxx xx xxx xxx [**XxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241530) xxxxx xx xxxxxx x xxxxxx xxxxxxx xxxxxxxxxxxxxx xxxx (XXXX).
+次のコード例は、[**MacAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241530) クラスを使ってハッシュ メッセージ認証コード (HMAC) を作成する方法を示しています。
 
 ```cs
 using Windows.Security.Cryptography;
@@ -117,23 +119,27 @@ namespace SampleMacAlgorithmProvider
 }
 ```
 
-## Xxxxxx
+## ハッシュ
 
 
-X xxxxxxxxxxxxx xxxx xxxxxxxx xxxxx xx xxxxxxxxxxx xxxx xxxxx xx xxxx xxx xxxxxxx x xxxxx-xxxx xxx xxxxxx. Xxxx xxxxxxxxx xxx xxxxxxxxx xxxx xxxx xxxxxxx xxxx. Xxxxxxx xxxx xxxxxx xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxxxxx xxxxxxxxx, xx xx xxxxxxxxx xxxx xxxxxxxxx xx xxxx (xxxxxxx) x xxxxxxx xxxx xxxx xx xx xx xxxx xxx xxxxxxxx xxxxxxx. Xxx xxxxxxxxx xxxxxxxxx xxxxxxxxxx x xxxxxx, xxxxxx xxxxxxxxxx, xxxxxxxx:
+暗号化ハッシュ関数は任意の長さのデータ ブロックを受け取り、固定ビット サイズの文字列を返します。 通常、ハッシュ関数はデータへの署名時に使われます。 多くの公開キー署名操作は負荷が高いため、通常は元のメッセージに署名 (暗号化) するよりもメッセージのハッシュに署名する方が効率的です。 次の手順では、一般的なシナリオを簡略化して説明します。
 
--   Xxx xxx Xxxxx xxxxx x xxxxxx xxx xxx xxxxx xx x XXX xxxxxxxx xx xxx.
--   Xxx xxxxxxx x xxxxxxx xxx xxxxxx xxx xxxxxxx xxx xxx xxxxxx xxx xxxx x XXX xxxxxxxx xx xxxxxxxx x XXX xxxxx.
--   Xxx xxxxx xxx \[xxxxxxxxxxx\] xxxxxxx xxx xxx XXX xxxxx xx Xxxxx xxxx x xxxxxxx.
--   Xxxxx xxxx xxx xxxxxx xxx xxx xxx xxxxxxx xx xxxxx xx xxx XXX xxxxxxxx. Xxx xxxxxxxx xxx xxxxxxxxx XXX xxxxx xx xxx XXX xxxxx xxxx xx Xxx. Xx xxxx xxx xxx xxxx, xxx xxxxxxx xxx xxx xxxxxxx xx xxxxxxx.
+-   ボブとアリスは秘密鍵を共有し、MAC 関数を使うことに同意しています。
+-   ボブはメッセージを作成し、そのメッセージと秘密鍵を MAC 関数に入力して MAC 値を取得します。
+-   ボブは \[暗号化されていない\] メッセージと MAC 値をネットワーク経由でアリスに送ります。
+-   アリスは秘密鍵とメッセージを使って MAC 関数に入力します。 アリスは、生成された MAC 値とボブから受け取った MAC 値を比較します。 両者が同じものである場合、メッセージは転送中に変更されていません。
 
-Xxxx xxxx Xxxxx xxxx xx xxxxxxxxxxx xxxxxxx. Xxxx xxx xxxx xxx xxxxxxxxx. Xxx xxxxxxxxx xxxxxxx xxxx xxxx xxx xxxxxxxx xxxxxxx xxx xxx xxxxxxx xxx, xx xxxxx Xxxxx'x xxxxxx xxx, xxxx xxx xxxxxxx xxxx xxx xxxxxx xx xxxxxxx xxxx xxxxxx xx Xxxxx'x xxxxxxx xxx, xxxxxxxxxx Xxxxx.
+アリスは暗号化されていないメッセージを送信したことに注目してください。 ハッシュが暗号化されただけです。 この手順によって保証されるのは、元のメッセージが改変されていないことと、アリスの公開キーが使われていることから、アリスの秘密キーにアクセスできるだれか、おそらくアリス本人によってメッセージのハッシュが署名されたことだけです。
 
-Xxx xxx xxx xxx [**XxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241511) xxxxx xx xxxxxxxxx xxx xxxxxxxxx xxxx xxxxxxxxxx xxx xxxxxx x [**XxxxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br241498) xxxxx.
+[
+            **HashAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241511) クラスを使って利用できるハッシュ アルゴリズムを列挙し、[**CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) 値を作成することができます。
 
-Xxxxxxx xxxxxxxxxx xxx xxx xxxxxx xxx xxxxxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxxxxxxxxxx xxxxx (XXXx). Xxxxxxx XXXx xxx xxxxxxx xxxx xx xxxxxx x xxxxxxx xxxxxxxxx xx xxxxxx xxxx x xxxxxxx xxx xxx xxxx xxxxxxx xxxxxx xxxxxxxxxxxx, xxxxxxxxxx xxx x xxxxxxx/xxxxxx xxx xxxx.
+デジタル署名は、秘密キーによるメッセージ認証コード (MAC) と等価の公開キーのコードです。 MAC ではメッセージが転送中に改変されなかったことをメッセージの受信者が確認するのに秘密キーを使いますが、署名では秘密キーと公開キーのペアを使います。
 
-Xxx [**XxxxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br241498) xxxxxx xxx xx xxxx xx xxxxxxxxxx xxxx xxxxxxxxx xxxx xxxxxxx xxxxxx xx xx-xxxxxx xxx xxxxxx xxx xxxx xxx. Xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241499) xxxxxx xxxx xxx xxxx xx x xxxxxx xx xx xxxxxx. Xxx [**XxxXxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701376) xxxxxx xxxxxx xxx xxxx xxx xxxxxx xxx xxxxxx xxx xxxxxxx xxx. Xxxx xx xxxxx xx xxx xxxxxxxxx xxxxxxx.
+[
+            **CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) オブジェクトを使うと、その都度オブジェクトを作らなくても、異なるデータを繰り返しハッシュできます。 [
+            **Append**](https://msdn.microsoft.com/library/windows/apps/br241499) メソッドは、ハッシュ対象のバッファーに、新しいデータを追加します。 [
+            **GetValueAndReset**](https://msdn.microsoft.com/library/windows/apps/hh701376) メソッドは、データをハッシュし、次の使用のためにオブジェクトをリセットします。 この例を次に示します。
 
 ```cs
 public void SampleReusableHash()
@@ -174,22 +180,28 @@ public void SampleReusableHash()
 
 ```
 
-## Xxxxxxx xxxxxxxxxx
+## デジタル署名
 
 
-Xxxxxxx xxxxxxxxxx xxx xxx xxxxxx xxx xxxxxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxxxxxxxxxx xxxxx (XXXx). Xxxxxxx XXXx xxx xxxxxxx xxxx xx xxxxxx x xxxxxxx xxxxxxxxx xx xxxxxx xxxx x xxxxxxx xxx xxx xxxx xxxxxxx xxxxxx xxxxxxxxxxxx, xxxxxxxxxx xxx x xxxxxxx/xxxxxx xxx xxxx.
+デジタル署名は、秘密キーによるメッセージ認証コード (MAC) と等価の公開キーのコードです。 MAC ではメッセージが転送中に改変されなかったことをメッセージの受信者が確認するのに秘密キーを使いますが、署名では秘密キーと公開キーのペアを使います。
 
-Xxxxxxx xxxx xxxxxx xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxxxxx xxxxxxxxx, xxxxxxx, xx xx xxxxxxxxx xxxx xxxxxxxxx xx xxxx (xxxxxxx) x xxxxxxx xxxx xxxx xx xx xx xxxx xxx xxxxxxxx xxxxxxx. Xxx xxxxxx xxxxxxx x xxxxxxx xxxx, xxxxx xx, xxx xxxxx xxxx xxx xxxxxxxxx xxx xxx (xxxxxxxxxxx) xxxxxxx. Xxx xxxxxxxxx xxxxxxxxxx x xxxx xxxx xxx xxxxxxx, xxxxxxxx xxx xxxxxxxxx, xxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxx xx xxx xxxx xxxxx. Xx xxxx xxxxx, xxx xxxxxxxxx xxx xx xxxxxx xxxxxxx xxxx xxx xxxxxxx xxx, xx xxxx, xxxx xxxx xxx xxxxxx xxx xxx xxx xxxxxxx xxxxxx xxxxxxxxxxxx.
+多くの公開キー署名操作は負荷が高いため、通常は元のメッセージに署名 (暗号化) するよりもメッセージのハッシュに署名する方が効率的です。 送信者はメッセージのハッシュを作成してそれに署名し、署名と (暗号化されていない) メッセージの両方を送ります。 受信者はメッセージのハッシュを計算し、署名の暗号化を解除し、暗号化を解除した署名を計算したハッシュ値と比較します。 これらが一致する場合、メッセージが本当に送信者からのものであり、転送中に改変されていないことを受信者は確信できます。
 
-Xxxxxxx xxxxxxx xxxx xxxx xxx xxxxxxxx xxxxxxx xxx xxx xxxxxxx xxx, xx xxxxx xxx xxxxxx'x xxxxxx xxx, xxxx xxx xxxxxxx xxxx xxx xxxxxx xx xxxxxxx xxxx xxxxxx xx xxx xxxxxxx xxx.
+署名によって保証されるのは、元のメッセージが改変されていないことと、送信者の公開キーが使われていることから、秘密キーにアクセスできる人によってメッセージのハッシュが署名されたことだけです。
 
-Xxx xxx xxx xx [**XxxxxxxxxxXxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241478) xxxxxx xx xxxxxxxxx xxx xxxxxxxxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxx xx xxxxxx x xxx xxxx. Xxx xxx xxx xxxxxx xxxxxxx xx xxx [**XxxxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br241498) xxxxx xx xxxx x xxxxxxx xx xxxxxx x xxxxxxxxx.
+[
+            **AsymmetricKeyAlgorithmProvider**](https://msdn.microsoft.com/library/windows/apps/br241478) オブジェクトを使って、利用できる署名アルゴリズムを列挙したり、キー ペアを生成またはインポートしたりできます。 [
+            **CryptographicHash**](https://msdn.microsoft.com/library/windows/apps/br241498) クラスの静的メソッドを使って、メッセージに署名したり、署名を検証したりできます。
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

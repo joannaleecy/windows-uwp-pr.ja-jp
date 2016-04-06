@@ -1,240 +1,175 @@
 ---
-Xxxxxxxxxxx: Xxx xxxx xxxx XXXx xx xxx Xxxxxxx.XX.Xxxx.Xxxx xxxxxxxxx xxxxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xx xxxxxxx xxxx xxxxx xxxx xxx xxxx xxxxxxx xxxxxxxxx xx Xxxxxxx xxxxxxx.
-xxxxx: Xxxxxx xxxx xxxxx xxxxxxxx
-xx.xxxxxxx: YYXYXYXX-YXYX-YYXX-YXYX-YYYYYYXXYXYY
-xxxxx: Xxxxxx xxxx xxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: The core text APIs in the Windows.UI.Text.Core namespace enable a Universal Windows Platform (UWP) app to receive text input from any text service supported on Windows devices.
+title: Custom text input overview
+ms.assetid: 58F5F7AC-6A4B-45FC-8C2A-942730FD7B74
+label: Custom text input
+template: detail.hbs
 ---
 
-# Xxxxxx xxxx xxxxx
+# Custom text input
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxx xxxx xxxx XXXx xx xxx [**Xxxxxxx.XX.Xxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn958238) xxxxxxxxx xxxxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xx xxxxxxx xxxx xxxxx xxxx xxx xxxx xxxxxxx xxxxxxxxx xx Xxxxxxx xxxxxxx. Xxx XXXx xxx xxxxxxx xx xxx [Xxxx Xxxxxxxx Xxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ms629032) XXXx xx xxxx xxx xxx xx xxx xxxxxxxx xx xxxx xxxxxxxx xxxxxxxxx xx xxx xxxx xxxxxxxx. Xxxx xxxxxxx xxx xxx xx xxxxxxx xxxx xx xxx xxxxxxxx xxx xxxx xxx xxxxx xxxx, xxxx xxxxxxxx, xxxxxx, xx xxx.
+The core text APIs in the [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) namespace enable a Universal Windows Platform (UWP) app to receive text input from any text service supported on Windows devices. The APIs are similar to the [Text Services Framework](https://msdn.microsoft.com/library/windows/desktop/ms629032) APIs in that the app is not required to have detailed knowledge of the text services. This enables the app to receive text in any language and from any input type, like keyboard, speech, or pen.
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**Xxxxxxx.XX.Xxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn958238)
--   [**XxxxXxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958158)
-
-
-## <span id="Why_use_core_text_APIs_">
-            </span>
-            <span id="why_use_core_text_apis_">
-            </span>
-            <span id="WHY_USE_CORE_TEXT_APIS_">
-            </span>Xxx xxx xxxx xxxx XXXx?
+-   [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238)
+-   [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158)
 
 
-Xxx xxxx xxxx, xxx XXXX xx XXXX xxxx xxx xxxxxxxx xxx xxxxxxxxxx xxx xxxx xxxxx xxx xxxxxxx. Xxxxxxx, xx xxxx xxx xxxxxxx xxxxxxx xxxx xxxxxxxxx, xxxx x xxxx xxxxxxxxxx xxx, xxx xxxxx xxxx xxx xxxxxxxxxxx xx x xxxxxx xxxx xxxx xxxxxxx. Xxx xxxxx xxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxxxx XXXx xx xxxxxx xxxx xxxx xxxx xxxxxxx, xxx xxxxx xxx'x xxxxxxx x xxx xx xxxxxxx xxxxxxxxxxx-xxxxx xxxx xxxxx, xxxxx xx xxxxxxxx xx xxxxxxx Xxxx Xxxxx xxxxxxxxx.
-
-Xxxxxxx, xxx xxx [**Xxxxxxx.XX.Xxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn958238) XXXx xxxx xxx xxxx xx xxxxxx x xxxxxx xxxx xxxx xxxxxxx. Xxxxx XXXx xxx xxxxxxxx xx xxxx xxx x xxx xx xxxxxxxxxxx xx xxxxxxxxxx xxxx xxxxx, xx xxx xxxxxxxx, xxx xxx xxx xxxxxxx xxx xxxx xxxxxxxxxx xxxx xxxxxx xx xxxx xxx. Xxxx xxxxx xxx xxxx xxxxxxxx xxxxx xxxx xxx xxxx xxxx XXXx xxx xxxxxxx xxxx xxxxx xxxx xxx xxxxxxxx xxxx xxxxx xxxxxxx xx Xxxxxxx xxxxxxx, xxxx [Xxxx Xxxxxxxx Xxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ms629032) xxxxx Xxxxx Xxxxxx Xxxxxxx (XXXx) xxx xxxxxxxxxxx xx XXx xx xxx XxxxXxxx xxxxxxxx (xxxxx xxxxxxxx xxxx-xxxxxxxxxx, xxxxxxxxxx, xxx xxxxxxxxx) xx xxxxxx xxxxxxx.
-
-## <span id="Architecture">
-            </span>
-            <span id="architecture">
-            </span>
-            <span id="ARCHITECTURE">
-            </span>Xxxxxxxxxxxx
+## <span id="Why_use_core_text_APIs_"></span><span id="why_use_core_text_apis_"></span><span id="WHY_USE_CORE_TEXT_APIS_"></span>Why use core text APIs?
 
 
-Xxx xxxxxxxxx xx x xxxxxx xxxxxxxxxxxxxx xx xxx xxxx xxxxx xxxxxx.
+For many apps, the XAML or HTML text box controls are sufficient for text input and editing. However, if your app handles complex text scenarios, like a word processing app, you might need the flexibility of a custom text edit control. You could use the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) keyboard APIs to create your text edit control, but these don't provide a way to receive composition-based text input, which is required to support East Asian languages.
 
--   "Xxxxxxxxxxx" xxxxxxxxxx x XXX xxx xxxxxxx x xxxxxx xxxx xxxxxxx xxxxx xxxxx xxx xxxx xxxx XXXx.
--   Xxx [**Xxxxxxx.XX.Xxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn958238) XXXx xxxxxxxxxx xxx xxxxxxxxxxxxx xxxx xxxx xxxxxxxx xxxxxxx Xxxxxxx. Xxxxxxxxxxxxx xxxxxxx xxx xxxx xxxx xxxxxxx xxx xxx xxxx xxxxxxxx xx xxxxxxx xxxxxxxxx xxxxxxx x [**XxxxXxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958158) xxxxxx xxxx xxxxxxxx xxx xxxxxxx xxx xxxxxx xx xxxxxxxxxx xxx xxxxxxxxxxxxx.
+Instead, use the [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) APIs when you need to create a custom text edit control. These APIs are designed to give you a lot of flexibility in processing text input, in any language, and let you provide the text experience best suited to your app. Text input and edit controls built with the core text APIs can receive text input from all existing text input methods on Windows devices, from [Text Services Framework](https://msdn.microsoft.com/library/windows/desktop/ms629032) based Input Method Editors (IMEs) and handwriting on PCs to the WordFlow keyboard (which provides auto-correction, prediction, and dictation) on mobile devices.
 
-![xxxx xxxx xxxxxxxxxxxx xxxxxxx](images/coretext/architecture.png)
-
-## <span id="Text_ranges_and_selection">
-            </span>
-            <span id="text_ranges_and_selection">
-            </span>
-            <span id="TEXT_RANGES_AND_SELECTION">
-            </span>Xxxx xxxxxx xxx xxxxxxxxx
+## <span id="Architecture"></span><span id="architecture"></span><span id="ARCHITECTURE"></span>Architecture
 
 
-Xxxx xxxxxxxx xxxxxxx xxxxx xxx xxxx xxxxx xxx xxxxx xxxxxx xx xxxx xxxx xxxxxxxx xx xxxx xxxxx. Xxxx, xx xxxxxxx xxx xxxx xxxxxxxxxxx xxxxxx xxxx xx xxx xxxx xxxx XXXx xxx xxx xxxxxx xxx xxxxxxxxxx xxx xxxxxxxxxxx xx xxxx xxxxxx.
+The following is a simple representation of the text input system.
 
-### <span id="Application_caret_position">
-            </span>
-            <span id="application_caret_position">
-            </span>
-            <span id="APPLICATION_CARET_POSITION">
-            </span>Xxxxxxxxxxx xxxxx xxxxxxxx
+-   "Application" represents a UWP app hosting a custom edit control built using the core text APIs.
+-   The [**Windows.UI.Text.Core**](https://msdn.microsoft.com/library/windows/apps/dn958238) APIs facilitate the communication with text services through Windows. Communication between the text edit control and the text services is handled primarily through a [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) object that provides the methods and events to facilitate the communication.
 
-Xxxx xxxxxx xxxx xxxx xxx xxxx xxxx XXXx xxx xxxxxxxxx xx xxxxx xx xxxxx xxxxxxxxx. Xx "Xxxxxxxxxxx Xxxxx Xxxxxxxx (XXX)" xx x xxxx-xxxxx xxxxxx xxxx xxxxxxxxx xxx xxxxx xx xxxxxxxxxx xxxx xxx xxxxx xx xxx xxxx xxxxxx xxxxxxxxxxx xxxxxx xxx xxxxx, xx xxxxx xxxx.
+![core text architecture diagram](images/coretext/architecture.png)
 
-![xxxxxxx xxxx xxxxxx xxxxxxx](images/coretext/stream-1.png)
-### <span id="Text_ranges_and_selection">
-            </span>
-            <span id="text_ranges_and_selection">
-            </span>
-            <span id="TEXT_RANGES_AND_SELECTION">
-            </span>Xxxx xxxxxx xxx xxxxxxxxx
+## <span id="Text_ranges_and_selection"></span><span id="text_ranges_and_selection"></span><span id="TEXT_RANGES_AND_SELECTION"></span>Text ranges and selection
 
-Xxxx xxxxxx xxx xxxxxxxxxx xxx xxxxxxxxxxx xx xxx [**XxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958201) xxxxxxxxx xxxxx xxxxxxxx xxx xxxxxx:
 
-| Xxxxx                  | Xxxx xxxx                                                                 | Xxxxxxxxxxx                                                                      |
+Edit controls provide space for text entry and users expect to edit text anywhere in this space. Here, we explain the text positioning system used by the core text APIs and how ranges and selections are represented in this system.
+
+### <span id="Application_caret_position"></span><span id="application_caret_position"></span><span id="APPLICATION_CARET_POSITION"></span>Application caret position
+
+Text ranges used with the core text APIs are expressed in terms of caret positions. An "Application Caret Position (ACP)" is a zero-based number that indicates the count of characters from the start of the text stream immediately before the caret, as shown here.
+
+![example text stream diagram](images/coretext/stream-1.png)
+### <span id="Text_ranges_and_selection"></span><span id="text_ranges_and_selection"></span><span id="TEXT_RANGES_AND_SELECTION"></span>Text ranges and selection
+
+Text ranges and selections are represented by the [**CoreTextRange**](https://msdn.microsoft.com/library/windows/apps/dn958201) structure which contains two fields:
+
+| Field                  | Data type                                                                 | Description                                                                      |
 |------------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------------|
-| **XxxxxXxxxxXxxxxxxx** | **Xxxxxx** \[XxxxXxxxxx\] | **Xxxxxx.XxxYY** \[.XXX\] | **xxxYY** \[X++\] | Xxx xxxxx xxxxxxxx xx x xxxxx xx xxx XXX xxxxxxxxxxx xxxxxx xxx xxxxx xxxxxxxxx. |
-| **XxxXxxxxXxxxxxxx**   | **Xxxxxx** \[XxxxXxxxxx\] | **Xxxxxx.XxxYY** \[.XXX\] | **xxxYY** \[X++\] | Xxx xxx xxxxxxxx xx x xxxxx xx xxx XXX xxxxxxxxxxx xxxxx xxx xxxx xxxxxxxxx.     |
+| **StartCaretPosition** | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | The start position of a range is the ACP immediately before the first character. |
+| **EndCaretPosition**   | **Number** \[JavaScript\] | **System.Int32** \[.NET\] | **int32** \[C++\] | The end position of a range is the ACP immediately after the last character.     |
 
  
 
-Xxx xxxxxxx, xx xxx xxxx xxxxx xxxxx xxxxxxxxxx, xxx xxxxx \[Y, Y\] xxxxxxxxx xxx xxxx "Xxxxx". **XxxxxXxxxxXxxxxxxx** xxxx xxxxxx xx xxxx xxxx xx xxxxx xx xxx **XxxXxxxxXxxxxxxx**. Xxx xxxxx \[Y, Y\] xx xxxxxxx.
+For example, in the text range shown previously, the range \[0, 5\] specifies the word "Hello". **StartCaretPosition** must always be less than or equal to the **EndCaretPosition**. The range \[5, 0\] is invalid.
 
-### <span id="Insertion_point">
-            </span>
-            <span id="insertion_point">
-            </span>
-            <span id="INSERTION_POINT">
-            </span>Xxxxxxxxx xxxxx
+### <span id="Insertion_point"></span><span id="insertion_point"></span><span id="INSERTION_POINT"></span>Insertion point
 
-Xxx xxxxxxx xxxxx xxxxxxxx, xxxxxxxxxx xxxxxxxx xx xx xxx xxxxxxxxx xxxxx, xx xxxxxxxxxxx xx xxxxxxx xxx **XxxxxXxxxxXxxxxxxx** xx xx xxxxx xx xxx **XxxXxxxxXxxxxxxx**.
+The current caret position, frequently referred to as the insertion point, is represented by setting the **StartCaretPosition** to be equal to the **EndCaretPosition**.
 
-### <span id="Noncontiguous_selection">
-            </span>
-            <span id="noncontiguous_selection">
-            </span>
-            <span id="NONCONTIGUOUS_SELECTION">
-            </span>Xxxxxxxxxxxxx xxxxxxxxx
+### <span id="Noncontiguous_selection"></span><span id="noncontiguous_selection"></span><span id="NONCONTIGUOUS_SELECTION"></span>Noncontiguous selection
 
-Xxxx xxxx xxxxxxxx xxxxxxx xxxxxxxxxxxxx xxxxxxxxxx. Xxx xxxxxxx, Xxxxxxxxx Xxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxxx xxxxxxxxxx, xxx xxxx xxxxxx xxxx xxxxxxx xxxxxxx xxxxxx xxxxxxxxx. Xxxxxxx, xxx xxxx xxxx XXXx xx xxx xxxxxxx xxxxxxxxxxxxx xxxxxxxxxx. Xxxx xxxxxxxx xxxx xxxxxx xxxx x xxxxxx xxxxxxxxxx xxxxxxxxx, xxxx xxxxx xxx xxxxxx xxx-xxxxx xx xxx xxxxxxxxxxxxx xxxxxxxxxx.
+Some edit controls support noncontiguous selections. For example, Microsoft Office apps support multiple arbitrary selections, and many source code editors support column selection. However, the core text APIs do not support noncontiguous selections. Edit controls must report only a single contiguous selection, most often the active sub-range of the noncontiguous selections.
 
-Xxx xxxxxxx, xxxxxxxx xxxx xxxx xxxxxx:
+For example, consider this text stream:
 
-![xxxxxxx xxxx xxxxxx xxxxxxx](images/coretext/stream-2.png)
-Xxxxx xxx xxx xxxxxxxxxx: \[Y, Y\] xxx \[Y, YY\]. Xxx xxxx xxxxxxx xxxx xxxxxx xxxx xxx xx xxxx; xxxxxx \[Y, Y\] xx \[Y, YY\].
+![example text stream diagram](images/coretext/stream-2.png)
+There are two selections: \[0, 1\] and \[6, 11\]. The edit control must report only one of them; either \[0, 1\] or \[6, 11\].
 
-## <span id="Working_with_text">
-            </span>
-            <span id="working_with_text">
-            </span>
-            <span id="WORKING_WITH_TEXT">
-            </span>Xxxxxxx xxxx xxxx
+## <span id="Working_with_text"></span><span id="working_with_text"></span><span id="WORKING_WITH_TEXT"></span>Working with text
 
 
-Xxx [**XxxxXxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958158) xxxxx xxxxxxx xxxx xxxx xxxxxxx Xxxxxxx xxx xxxx xxxxxxxx xxxxxxx xxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958176) xxxxx, xxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958175) xxxxx, xxx xxx [**XxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958172) xxxxxx.
+The [**CoreTextEditContext**](https://msdn.microsoft.com/library/windows/apps/dn958158) class enables text flow between Windows and edit controls through the [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) event, the [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) event, and the [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) method.
 
-Xxxx xxxx xxxxxxx xxxxxxxx xxxx xxxxxxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958176) xxxxxx xxxx xxx xxxxxxxxx xxxx xxxxx xxxxxxxx xxxx xxxx xxxxx xxxxxxx xxxx xxxxxxxxx, xxxxxx, xx XXXx.
+Your edit control receives text through [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) events that are generated when users interact with text input methods like keyboards, speech, or IMEs.
 
-Xxxx xxx xxxxxx xxxx xx xxxx xxxx xxxxxxx, xxx xxxxxxx, xx xxxxxxx xxxx xxxx xxx xxxxxxx, xxx xxxx xx xxxxxx Xxxxxxx xx xxxxxxx [**XxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958172).
+When you change text in your edit control, for example, by pasting text into the control, you need to notify Windows by calling [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172).
 
-Xx xxx xxxx xxxxxxx xxxxxxxx xxx xxx xxxx, xxxx x [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958175) xxxxx xx xxxxxx. Xxx xxxx xxxxxxx xxx xxx xxxx xx xxx **XxxxXxxxxxxxx** xxxxx xxxxxxx.
+If the text service requires the new text, then a [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) event is raised. You must provide the new text in the **TextRequested** event handler.
 
-### <span id="Accepting_text_updates">
-            </span>
-            <span id="accepting_text_updates">
-            </span>
-            <span id="ACCEPTING_TEXT_UPDATES">
-            </span>Xxxxxxxxx xxxx xxxxxxx
+### <span id="Accepting_text_updates"></span><span id="accepting_text_updates"></span><span id="ACCEPTING_TEXT_UPDATES"></span>Accepting text updates
 
-Xxxx xxxx xxxxxxx xxxxxx xxxxxxxxx xxxxxx xxxx xxxxxx xxxxxxxx xxxxxxx xxxx xxxxxxxxx xxx xxxx xxx xxxx xxxxx xx xxxxx. Xx xxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958176) xxxxx xxxxxxx, xxxxx xxxxxxx xxx xxxxxxxx xx xxxx xxxx xxxxxxx:
+Your edit control should typically accept text update requests because they represent the text the user wants to enter. In the [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) event handler, these actions are expected of your edit control:
 
-1.  Xxxxxx xxx xxxx xxxxxxxxx xx [**XxxxXxxxXxxxXxxxxxxxXxxxxXxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn958236) xx xxx xxxxxxxx xxxxxxxxx xx [**XxxxXxxxXxxxXxxxxxxxXxxxxXxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958234).
-2.  Xxxxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxxxx xx [**XxxxXxxxXxxxXxxxxxxxXxxxxXxxx.XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958233).
-3.  Xxxxxx xxx xxxxxx xxxx xxx xxxxxx xxxxxxxxx xx xxxxxxx [**XxxxXxxxXxxxXxxxxxxxXxxxxXxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958235) xx [**XxxxXxxxXxxxXxxxxxxxXxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958237).
+1.  Insert the text specified in [**CoreTextTextUpdatingEventArgs.Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) in the position specified in [**CoreTextTextUpdatingEventArgs.Range**](https://msdn.microsoft.com/library/windows/apps/dn958234).
+2.  Place selection at the position specified in [**CoreTextTextUpdatingEventArgs.NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233).
+3.  Notify the system that the update succeeded by setting [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) to [**CoreTextTextUpdatingResult.Succeeded**](https://msdn.microsoft.com/library/windows/apps/dn958237).
 
-Xxx xxxxxxx, xxxx xx xxx xxxxx xx xx xxxx xxxxxxx xxxxxx xxx xxxx xxxxx "x". Xxx xxxxxxxxx xxxxx xx xx \[YY, YY\].
+For example, this is the state of an edit control before the user types "d". The insertion point is at \[10, 10\].
 
-![xxxxxxx xxxx xxxxxx xxxxxxx](images/coretext/stream-3.png)
-Xxxx xxx xxxx xxxxx "x", x [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958176) xxxxx xx xxxxxx xxxx xxx xxxxxxxxx [**XxxxXxxxXxxxXxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn958229) xxxx:
+![example text stream diagram](images/coretext/stream-3.png)
+When the user types "d", a [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) event is raised with the following [**CoreTextTextUpdatingEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn958229) data:
 
--   [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[YY, YY\]
--   [
-            **Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "x"
--   [
-            **XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[YY, YY\]
+-   [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958234) = \[10, 10\]
+-   [**Text**](https://msdn.microsoft.com/library/windows/apps/dn958236) = "d"
+-   [**NewSelection**](https://msdn.microsoft.com/library/windows/apps/dn958233) = \[11, 11\]
 
-Xx xxxx xxxx xxxxxxx, xxxxx xxx xxxxxxxxx xxxxxxx xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958235) xx **Xxxxxxxxx**. Xxxx'x xxx xxxxx xx xxx xxxxxxx xxxxx xxx xxxxxxx xxx xxxxxxx.
+In your edit control, apply the specified changes and set [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) to **Succeeded**. Here's the state of the control after the changes are applied.
 
-![xxxxxxx xxxx xxxxxx xxxxxxx](images/coretext/stream-4.png)
-### <span id="Rejecting_text_updates">
-            </span>
-            <span id="rejecting_text_updates">
-            </span>
-            <span id="REJECTING_TEXT_UPDATES">
-            </span>Xxxxxxxxx xxxx xxxxxxx
+![example text stream diagram](images/coretext/stream-4.png)
+### <span id="Rejecting_text_updates"></span><span id="rejecting_text_updates"></span><span id="REJECTING_TEXT_UPDATES"></span>Rejecting text updates
 
-Xxxxxxxxx, xxx xxxxxx xxxxx xxxx xxxxxxx xxxxxxx xxx xxxxxxxxx xxxxx xx xx xx xxxx xx xxx xxxx xxxxxxx xxxx xxxxxx xxx xx xxxxxxx. Xx xxxx xxxx, xxx xxxxxx xxx xxxxx xxx xxxxxxx. Xxxxxxx, xxxxxx xxx xxxxxx xxxx xxx xxxxxx xxxxxx xx xxxxxxx [**XxxxXxxxXxxxXxxxxxxxXxxxxXxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958235) xx [**XxxxXxxxXxxxXxxxxxxxXxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958237).
+Sometimes, you cannot apply text updates because the requested range is in an area of the edit control that should not be changed. In this case, you should not apply any changes. Instead, notify the system that the update failed by setting [**CoreTextTextUpdatingEventArgs.Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) to [**CoreTextTextUpdatingResult.Failed**](https://msdn.microsoft.com/library/windows/apps/dn958237).
 
-Xxx xxxxxxx, xxxxxxxx xx xxxx xxxxxxx xxxx xxxxxxx xxxx xx x-xxxx xxxxxxx. Xxxxxx xxxxxx xx xxxxxxxx xxxxxxx x-xxxx xxxxxxxxx xxxxxx xxxxxxx xxxxxx, xx xxxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958176) xxxxxx xxx xxxxxx xxx xxx xxxxx xxx, xxx xxxxxx xxxxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958235) xx **Xxxxxx** xx xxxx xxxx xxxxxxx.
+For example, consider an edit control that accepts only an e-mail address. Spaces should be rejected because e-mail addresses cannot contain spaces, so when [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) events are raised for the space key, you should simply set [**Result**](https://msdn.microsoft.com/library/windows/apps/dn958235) to **Failed** in your edit control.
 
-### <span id="Notifying_text_changes">
-            </span>
-            <span id="notifying_text_changes">
-            </span>
-            <span id="NOTIFYING_TEXT_CHANGES">
-            </span>Xxxxxxxxx xxxx xxxxxxx
+### <span id="Notifying_text_changes"></span><span id="notifying_text_changes"></span><span id="NOTIFYING_TEXT_CHANGES"></span>Notifying text changes
 
-Xxxxxxxxx, xxxx xxxx xxxxxxx xxxxx xxxxxxx xx xxxx xxxx xx xxxx xxxx xx xxxxxx xx xxxx-xxxxxxxxx. Xx xxxxx xxxxx, xxx xxxx xxxxxx xxx xxxx xxxxxxxx xx xxxxx xxxxxxx xx xxxxxxx xxx [**XxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958172) xxxxxx.
+Sometimes, your edit control makes changes to text such as when text is pasted or auto-corrected. In these cases, you must notify the text services of these changes by calling the [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) method.
 
-Xxx xxxxxxx, xxxx xx xxx xxxxx xx xx xxxx xxxxxxx xxxxxx xxx xxxx xxxxxx "Xxxxx". Xxx xxxxxxxxx xxxxx xx xx \[Y, Y\].
+For example, this is the state of an edit control before the user pastes "World". The insertion point is at \[6, 6\].
 
-![xxxxxxx xxxx xxxxxx xxxxxxx](images/coretext/stream-5.png)
-Xxx xxxx xxxxxxxx xxx xxxxx xxxxxx xxx xxx xxxx xxxxxxx xxxx xx xxxx xxx xxxxxxxxx xxxx:
+![example text stream diagram](images/coretext/stream-5.png)
+The user performs the paste action and the edit control ends up with the following text:
 
-![xxxxxxx xxxx xxxxxx xxxxxxx](images/coretext/stream-4.png)
-Xxxx xxxx xxxxxxx, xxx xxxxxx xxxx [**XxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958172) xxxx xxxxx xxxxxxxxx:
+![example text stream diagram](images/coretext/stream-4.png)
+When this happens, you should call [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) with these arguments:
 
--   *xxxxxxxxXxxxx* = \[Y, Y\]
--   *xxxXxxxxx* = Y
--   *xxxXxxxxxxxx* = \[YY, YY\]
+-   *modifiedRange* = \[6, 6\]
+-   *newLength* = 5
+-   *newSelection* = \[11, 11\]
 
-Xxx xx xxxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958175) xxxxxx xxxx xxxxxx, xxxxx xxx xxxxxx xx xxxxxx xxx xxxx xxxx xxx xxxx xxxxxxxx xxx xxxxxxx xxxx.
+One or more [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) events will follow, which you handle to update the text that the text services are working with.
 
-### <span id="Overriding_text_updates">
-            </span>
-            <span id="overriding_text_updates">
-            </span>
-            <span id="OVERRIDING_TEXT_UPDATES">
-            </span>Xxxxxxxxxx xxxx xxxxxxx
+### <span id="Overriding_text_updates"></span><span id="overriding_text_updates"></span><span id="OVERRIDING_TEXT_UPDATES"></span>Overriding text updates
 
-Xx xxxx xxxx xxxxxxx, xxx xxxxx xxxx xx xxxxxxxx x xxxx xxxxxx xx xxxxxxx xxxx-xxxxxxxxxx xxxxxxxx.
+In your edit control, you might want to override a text update to provide auto-correction features.
 
-Xxx xxxxxxx, xxxxxxxx xx xxxx xxxxxxx xxxx xxxxxxxx x xxxxxxxxxx xxxxxxx xxxx xxxxxxxxxx xxxxxxxxxxxx. Xxxx xx xxx xxxxx xx xxx xxxx xxxxxxx xxxxxx xxx xxxx xxxxx xxx xxxxx xxx xx xxxxxxx xxx xxxxxxxxxx. Xxx xxxxxxxxx xxxxx xx xx \[Y, Y\].
+For example, consider an edit control that provides a correction feature that formalizes contractions. This is the state of the edit control before the user types the space key to trigger the correction. The insertion point is at \[3, 3\].
 
-![xxxxxxx xxxx xxxxxx xxxxxxx](images/coretext/stream-6.png)
-Xxx xxxx xxxxxxx xxx xxxxx xxx xxx x xxxxxxxxxxxxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958176) xxxxx xx xxxxxx. Xxx xxxx xxxxxxx xxxxxxx xxx xxxx xxxxxx. Xxxx xx xxx xxxxx xx xxx xxxx xxxxxxx xxx x xxxxx xxxxxx xxxxxx xxx xxxxxxxxxx xx xxxxxxxxx. Xxx xxxxxxxxx xxxxx xx xx \[Y, Y\].
+![example text stream diagram](images/coretext/stream-6.png)
+The user presses the space key and a corresponding [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) event is raised. The edit control accepts the text update. This is the state of the edit control for a brief moment before the correction is completed. The insertion point is at \[4, 4\].
 
-![xxxxxxx xxxx xxxxxx xxxxxxx](images/coretext/stream-7.png)
-Xxxxxxx xx xxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958176) xxxxx xxxxxxx, xxx xxxx xxxxxxx xxxxx xxx xxxxxxxxx xxxxxxxxxx. Xxxx xx xxx xxxxx xx xxx xxxx xxxxxxx xxxxx xxx xxxxxxxxxx xx xxxxxxxx. Xxx xxxxxxxxx xxxxx xx xx \[Y, Y\].
+![example text stream diagram](images/coretext/stream-7.png)
+Outside of the [**TextUpdating**](https://msdn.microsoft.com/library/windows/apps/dn958176) event handler, the edit control makes the following correction. This is the state of the edit control after the correction is complete. The insertion point is at \[5, 5\].
 
-![xxxxxxx xxxx xxxxxx xxxxxxx](images/coretext/stream-8.png)
-Xxxx xxxx xxxxxxx, xxx xxxxxx xxxx [**XxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958172) xxxx xxxxx xxxxxxxxx:
+![example text stream diagram](images/coretext/stream-8.png)
+When this happens, you should call [**NotifyTextChanged**](https://msdn.microsoft.com/library/windows/apps/dn958172) with these arguments:
 
--   *xxxxxxxxXxxxx* = \[Y, Y\]
--   *xxxXxxxxx* = Y
--   *xxxXxxxxxxxx* = \[Y, Y\]
+-   *modifiedRange* = \[1, 2\]
+-   *newLength* = 2
+-   *newSelection* = \[5, 5\]
 
-Xxx xx xxxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958175) xxxxxx xxxx xxxxxx, xxxxx xxx xxxxxx xx xxxxxx xxx xxxx xxxx xxx xxxx xxxxxxxx xxx xxxxxxx xxxx.
+One or more [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) events will follow, which you handle to update the text that the text services are working with.
 
-### <span id="Providing_requested_text">
-            </span>
-            <span id="providing_requested_text">
-            </span>
-            <span id="PROVIDING_REQUESTED_TEXT">
-            </span>Xxxxxxxxx xxxxxxxxx xxxx
+### <span id="Providing_requested_text"></span><span id="providing_requested_text"></span><span id="PROVIDING_REQUESTED_TEXT"></span>Providing requested text
 
-Xx'x xxxxxxxxx xxx xxxx xxxxxxxx xx xxxx xxx xxxxxxx xxxx xx xxxxxxx xxxxxxxx xxxx xxxx-xxxxxxxxxx xx xxxxxxxxxx, xxxxxxxxxx xxx xxxx xxxx xxxxxxx xxxxxxx xx xxx xxxx xxxxxxx, xxxx xxxxxxx x xxxxxxxx, xxx xxxxxxx, xx xxxx xxxx xx xxxxxxxx xx xxx xxxx xxxxxxx xx xxxxxxxxx xx xxxxxxxx xxxxxxxx. Xxxxxxxxx, xxxxxxxx x [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958175) xxxxx xx xxxxxx, xxx xxxx xxxxxxx xxx xxxx xxxxxxxxx xx xxxx xxxx xxxxxxx xxx xxx xxxxxxxxx xxxxx.
+It's important for text services to have the correct text to provide features like auto-correction or prediction, especially for text that already existed in the edit control, from loading a document, for example, or text that is inserted by the edit control as explained in previous sections. Therefore, whenever a [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) event is raised, you must provide the text currently in your edit control for the specified range.
 
-Xxxxx xxxx xx xxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958227) xx [**XxxxXxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958221) xxxxxxxxx x xxxxx xxxx xxxx xxxx xxxxxxx xxxxxx xxxxxxxxxxx xx-xx. Xxx xxxxxxx, xxx **Xxxxx** xx xxxxxx xxxx xxx xxxx xx xxx xxxx xxxxxxx xx xxx xxxx xx xxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn958175) xxxxx, xx xxx xxx xx xxx **Xxxxx** xx xxx xx xxxxxx. Xx xxxxx xxxxx, xxx xxxxxx xxxxxx xxxxxxxx xxxxx xxxxx xxxxx, xxxxx xx xxxxxxxxx x xxxxxx xx xxx xxxxxxxxx xxxxx.
+There will be times the [**Range**](https://msdn.microsoft.com/library/windows/apps/dn958227) in [**CoreTextTextRequest**](https://msdn.microsoft.com/library/windows/apps/dn958221) specifies a range that your edit control cannot accommodate as-is. For example, the **Range** is larger than the size of the edit control at the time of the [**TextRequested**](https://msdn.microsoft.com/library/windows/apps/dn958175) event, or the end of the **Range** is out of bounds. In these cases, you should return whatever range makes sense, which is typically a subset of the requested range.
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>Related articles
 
 
-**Xxxxxxx xxxxxxx**
-* [XXXX xxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+**Archive samples**
+* [XAML text editing sample](http://go.microsoft.com/fwlink/p/?LinkID=251417)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

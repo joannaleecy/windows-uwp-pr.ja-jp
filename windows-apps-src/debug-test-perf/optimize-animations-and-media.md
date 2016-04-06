@@ -1,154 +1,154 @@
 ---
-xx.xxxxxxx: XXYXYYYX-XXXY-YYYX-XYYX-YXYXYXXYYYXY
-xxxxx: Xxxxxxxx xxxxxxxxxx, xxxxx, xxx xxxxxx
-xxxxxxxxxxx: Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxx xxxxxxxxxx, xxxx xxxxx xxxx, xxx xxxx-xxxxxxxxxxx xxxxx xxxxxxx xxx xxxxxxxx.
+ms.assetid: DE5B084C-DAC1-430B-A15B-5B3D5FB698F7
+title: Optimize animations, media, and images
+description: Create Universal Windows Platform (UWP) apps with smooth animations, high frame rate, and high-performance media capture and playback.
 ---
-# Xxxxxxxx xxxxxxxxxx, xxxxx, xxx xxxxxx
+# Optimize animations, media, and images
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxx xxxxxxxxxx, xxxx xxxxx xxxx, xxx xxxx-xxxxxxxxxxx xxxxx xxxxxxx xxx xxxxxxxx.
+Create Universal Windows Platform (UWP) apps with smooth animations, high frame rate, and high-performance media capture and playback.
 
-## Xxxx xxxxxxxxxx xxxxxx
+## Make animations smooth
 
-X xxx xxxxxx xx XXX xxxx xx xxxxxx xxxxxxxxxxxx. Xxxx xxxxxxxx xxxxx xxxxxxxxxxxxx xxxx "xxxxx xx xxxx xxxxxx," xxxxxx xxxxxxxxxxx xxx xxxxxxxxxx, xxx xxxxx xxxxxxx xxxx xxxxxxx xxxxx xxxxxxxx. Xx xxx XXXX xxxxxxxxx xxxxx xx x xxxxxx xxxxxx xxx xxxxxxxxxxx xxxxxx xxxx xx xxxxxxxxx xx xxx xxxxxxxxxxx xxx xxxxxxxxx xx xx xxx’x xxxxxx xxxxxxxx. Xxxxxxx xxx xxxxxxxxxxx xxxxxx xx xxxxxxxx xxxx XX xxxxxx (xxx xxxxxx xxxx xxxx xxxxxxxxx xxx xxxxxxxxx xxxx), xxxx xxx xxxxxxx x xxxxxxxxxx xxxxx xxxx xxx xxxxxx xxxxxxxxxx xxxxxxxxxx xx xxxxxxxxxxx xxxxxx xxxxxx xx xxxxxxxx xxxxxxxxxxxx. Xxxx xxxxxxx xxxxx xxx xx xxx xxx xxxxxxxxxxx xxxxxx xx xxxx xx xxx’x xxxxxxxxxx xxxxxxx xxxxxx. Xxx xxxx xxxx xxxxx xxxxxxxxxx, xxx [Xxxxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt187350). Xx xxxxx xxxxx xxxxxxxxxx xx xxx’x xxxxxxxxxxxxxx xxxxx xxxxxxxxxx xxxxxxxxx xxxxxxxxxxxx, xxx [Xxxx xxx XX xxxxxx xxxxxxxxxx](keep-the-ui-thread-responsive.md).
+A key aspect of UWP apps is smooth interactions. This includes touch manipulations that "stick to your finger," smooth transitions and animations, and small motions that provide input feedback. In the XAML framework there is a thread called the composition thread that is dedicated to the composition and animation of an app’s visual elements. Because the composition thread is separate from UI thread (the thread that runs framework and developer code), apps can achieve a consistent frame rate and smooth animations regardless of complicated layout passes or extended calculations. This section shows how to use the composition thread to keep an app’s animations buttery smooth. For more info about animations, see [Animations overview](https://msdn.microsoft.com/library/windows/apps/Mt187350). To learn about increasing an app’s responsiveness while performing intensive computations, see [Keep the UI thread responsive](keep-the-ui-thread-responsive.md).
 
-### Xxx xxxxxxxxxxx xxxxxxx xx xxxxxxxxx xxxxxxxxxx
+### Use independent instead of dependent animations
 
-Xxxxxxxxxxx xxxxxxxxxx xxx xx xxxxxxxxxx xxxx xxxxxxxxx xx xxx xx xxx xxxx xx xxxxxxxx xxxxxxx xxxxxxx xx xxx xxxxxxxx xxxxx xxxxxxxx xxx'x xxxxxx xxxx xx xxx xxxxxxx xx x xxxxx. Xxxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxx xx xxx xxxxxxxxxxx xxxxxx xxxxxxx xx xxx XX xxxxxx. Xxxx xxxxxxxxxx xxxx xxxx xxxxxx xxxxxx xxxxxxx xxx xxxxxxxxxxx xxxxxx xx xxxxxxx xx x xxxxxxxxxx xxxxxxx.
+Independent animations can be calculated from beginning to end at the time of creation because changes to the property being animated don't affect rest of the objects in a scene. Independent animations can therefore run on the composition thread instead of the UI thread. This guarantees that they remain smooth because the composition thread is updated at a consistent cadence.
 
-Xxx xx xxxxx xxxxx xx xxxxxxxxxx xxx xxxxxxxxxx xx xx xxxxxxxxxxx:
+All of these types of animations are guaranteed to be independent:
 
--   Xxxxxx xxxxxxxxxx xxxxx xxx xxxxxx
--   Xxxx-xxxxxxxx xxxxxxxxxx
--   Xxxxxxxxxx xx xxx [**Xxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Hh759771) xxx [**Xxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/Hh759772) xxxxxxxxxx
--   Xxxxxxxxxx xx xxx [**XXXxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208962) xxxxxxxx
--   Xxxxxxxxxx xx xxxxxxxxxx xx xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228076) xxxx xxxxxxxxx xxx [**XxxxxXxxxxXxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242963) xxxxxxxxxxx
--   Xxxxxxxxxx xx xxx xxxxxxxxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911) xxxxxxxxxx xxxx xxxxxxxxx xxxxxxxxxxxxx xx xxxxx xxxxxx xxxxx xxxxx:
+-   Object animations using key frames
+-   Zero-duration animations
+-   Animations to the [**Canvas.Left**](https://msdn.microsoft.com/library/windows/apps/Hh759771) and [**Canvas.Top**](https://msdn.microsoft.com/library/windows/apps/Hh759772) properties
+-   Animations to the [**UIElement.Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) property
+-   Animations to properties of type [**Brush**](https://msdn.microsoft.com/library/windows/apps/BR228076) when targeting the [**SolidColorBrush.Color**](https://msdn.microsoft.com/library/windows/apps/BR242963) subproperty
+-   Animations to the following [**UIElement**](https://msdn.microsoft.com/library/windows/apps/BR208911) properties when targeting subproperties of these return value types:
 
-    -   [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911-rendertransform)
-    -   [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911-projection)
-    -   [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911-clip)
+    -   [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/BR208911-rendertransform)
+    -   [**Projection**](https://msdn.microsoft.com/library/windows/apps/BR208911-projection)
+    -   [**Clip**](https://msdn.microsoft.com/library/windows/apps/BR208911-clip)
 
-Xxxxxxxxx xxxxxxxxxx xxxxxx xxxxxx, xxxxx xxxxxxxxx xxxxxx xx xxxxxxxxxx xxxxxxx xxxxx xxxxx xxxx xxx XX xxxxxx. Xxxxxxxxx xxxxxxxxxx xxxxxxx xxxxxxxxxxxxx xx xxxxxxxxxx xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208751) xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208718). Xx xxxxxxx, xxxxxxxxx xxxxxxxxxx xxx xxx xxx xxx xxxxxxx xx xxx-xx xxxx xxx xxx xxxxxxxxx. Xxxx xxxxxxx, xxxx xxx xxxxxxxx xx xxx XX xxxxxx xxxxxxx xxxxxxxxx, xxx xxxx xxxxx xx xxxxxxx xx xxx xxxxxxxxx xx xxx xx xxxxx x xxx xx xxxxx xxxx xx xxx XX xxxxxx.
+Dependent animations affect layout, which therefore cannot be calculated without extra input from the UI thread. Dependent animations include modifications to properties like [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) and [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718). By default, dependent animations are not run and require an opt-in from the app developer. When enabled, they run smoothly if the UI thread remains unblocked, but they begin to stutter if the framework or app is doing a lot of other work on the UI thread.
 
-Xxxxxx xxx xxxxxxxxxx xx xxx XXXX xxxxxxxxx xxx xxxxxxxxxxx xx xxxxxxx, xxx xxxxx xxx xxxx xxxxxxx xxxx xxx xxx xxxx xx xxxxxxx xxxx xxxxxxxxxxxx. Xxxxxx xx xxxxx xxxxxxxxx xxxxxxxxxxxx:
+Almost all animations in the XAML framework are independent by default, but there are some actions that you can take to disable this optimization. Beware of these scenarios particularly:
 
--   Xxxxxxx xxx [**XxxxxxXxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210356) xxxxxxxx xx xxxxx x xxxxxxxxx xxxxxxxxx xx xxx xx xxx XX xxxxxx. Xxxxxxx xxxxx xxxxxxxxxx xxxx xx xxxxxxxxxxx xxxxxxx. Xxx xxxxxxx xxxxxxx [**XxxxxXxxxxxxxx.XxxxxX**](https://msdn.microsoft.com/library/windows/apps/BR242946) xxx [**XxxxxXxxxxxxxx.XxxxxX**](https://msdn.microsoft.com/library/windows/apps/BR242948) xxxxxxx xx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208751) xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208718) xx xx xxxxxx. Xxx’x xx xxxxxx xx xxxxx xxxxxxx xxxx xxxxxx xxx xxxx. Xxx xxxxxxxxx xxxxxxx xxxxxxxx xxxxxxx xxxx xxxxx xxx [**XxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242940) xx xxxxx xxxxxxxx. Xxx xxxxx/xxxx xxxx xx xxxxxxxxxxxx xx xxx xxxxx xxxx xx xxxxxx xx’x xxxxxx xxxxx.
--   Xxxxxx xxx xxxxx xxxxxxx, xxxxx xxx xxxxxxxxxxx xxxxxxxxx xxxxxxxxxx. Xx xxxxxxx xx xxxx xx xxxxxxxx xxxxxxxxxxxxxxx xx xxx xxxxxxx xx xxx [**XxxxxxxxxxXxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228127) xxxxx.
--   Xxxxxxx xxx xxxxxxxxx xxxxxxxxxx xxxxxxxxxxx xx xx xxxxxxx xxxx xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911-cachemode) xxxxxxxx xxx xx **XxxxxxXxxxx**. Xxxx xx xxxxxxxxxx xxxxxxxxx xxxxxxx xxx xxxxx xxxx xx xx-xxxxxxxxxx xxx xxxx xxxxx.
+-   Setting the [**EnableDependentAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210356) property to allow a dependent animation to run on the UI thread. Convert these animations into an independent version. For example animate [**ScaleTransform.ScaleX**](https://msdn.microsoft.com/library/windows/apps/BR242946) and [**ScaleTransform.ScaleY**](https://msdn.microsoft.com/library/windows/apps/BR242948) instead of the [**Width**](https://msdn.microsoft.com/library/windows/apps/BR208751) and [**Height**](https://msdn.microsoft.com/library/windows/apps/BR208718) of an object. Don’t be afraid to scale objects like images and text. The framework applies bilinear scaling only while the [**ScaleTransform**](https://msdn.microsoft.com/library/windows/apps/BR242940) is being animated. The image/text will be rerasterized at the final size to ensure it’s always clear.
+-   Making per frame updates, which are effectively dependent animations. An example of this is applying transformations in the handler of the [**CompositonTarget.Rendering**](https://msdn.microsoft.com/library/windows/apps/BR228127) event.
+-   Running any animation considered independent in an element with the [**CacheMode**](https://msdn.microsoft.com/library/windows/apps/BR208911-cachemode) property set to **BitmapCache**. This is considered dependent because the cache must be re-rasterized for each frame.
 
-### Xxx'x xxxxxxx x XxxXxxx xx XxxxxXxxxxxx
+### Don't animate a WebView or MediaElement
 
-Xxx xxxxxxx xxxxxx x [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR227702) xxxxxxx xx xxx xxxxxxxx xxxxxxxx xx xxx XXXX xxxxxxxxx xxx xx xxxxxxxx xxxxx xxxx xx xx xxxxxxxx xxxx xxx xxxx xx xxx xxxxx. Xxxx xxxxx xxxx xxxx xx xxxx xxxxxxxxx xxx xxxxxxx xxxxxx xxx xxxxxx xxx xxx xxxxxxxxxxx xxxxxxxxx xxxxxxxxxxxxxxx xxxxxx (xxx xxxxxxx, xxx XXXX xxxxxxx xxxxx xxx xxxx xx xxxx xxxx xxx xxxx xx xxx XXXX xxxxxxx xx xxx xxxx). Xxxx xxx xxxx xx xxxxxxx x **XxxXxxx** xxxxxxx, xxxx xx xxxx x [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227702brush) xxx xxx xxxxxxxx xx xxx xxxxxxxxx.
+Web content within a [**WebView**](https://msdn.microsoft.com/library/windows/apps/BR227702) control is not directly rendered by the XAML framework and it requires extra work to be composed with the rest of the scene. This extra work adds up when animating the control around the screen and can potentially introduce synchronization issues (for example, the HTML content might not move in sync with the rest of the XAML content on the page). When you need to animate a **WebView** control, swap it with a [**WebViewBrush**](https://msdn.microsoft.com/library/windows/apps/BR227702brush) for the duration of the animation.
 
-Xxxxxxxxx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242926) xx x xxxxxxxxx xxx xxxx. Xxxxxx xxx xxxxxxxxxxx xxxxxxxxx, xx xxx xxxxx xxxxxxx xx xxxxx xxxxxxxxx xx xxx xxxxx xxxxxxx xxxxx xxxxxx.
+Animating a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) is a similarly bad idea. Beyond the performance detriment, it can cause tearing or other artifacts in the video content being played.
 
-### Xxx xxxxxxxx xxxxxxxxxx xxxxxxxxx
+### Use infinite animations sparingly
 
-Xxxx xxxxxxxxxx xxxxxxx xxx x xxxxxxxxx xxxxxx xx xxxx, xxx xxxxxxx xxx [**Xxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243207) xxxxxxxx xx Xxxxxxx xxxxxx xx xxxxxxxxx xx xxx xxxxxxxxxxxx. Xx xxxxxxxxx xxxxxxxxxx xxx xxx xx xxxxxxxx xxxxxxxxxx xxxxxxx xxxx xxxxxxxxxxx xxxxxxx XXX xxxxxxxxx xxx xxx xxxxxxx xxx XXX xxxx xxxxx xxxx x xxx xxxxx xx xxxx xxxxx, xxxxxxx xx xx xxx xxx xx xxxxx xxxx xxxxxxx.
+Most animations execute for a specified amount of time, but setting the [**Timeline.Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) property to Forever allows an animation to run indefinitely. We recommend minimizing the use of infinite animations because they continually consume CPU resources and can prevent the CPU from going into a low power or idle state, causing it to run out of power more quickly.
 
-Xxxxxx x xxxxxxx xxx [**XxxxxxxxxxxXxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR228127) xx xxxxxxx xx xxxxxxx xx xxxxxxxx xxxxxxxxx. Xxxxxxxx xxx XX xxxxxx xx xxxxxx xxxx xxxx xxxxx xx xxxx xx xx, xxx xxxxxx xxxxxxx xxx xxxx xxxxx xxxxxx xx xx xxx xxxxx xxxxx. Xxxxxx xxx xxxxxxx xxxx xxxxx xx xx xxxx xx xx xxxx xxx xxxxxxxxxx xx xxxx xx’x xxxxxx xxxxx.
+Adding a handler for [**CompositionTarget.Rendering**](https://msdn.microsoft.com/library/windows/apps/BR228127) is similar to running an infinite animation. Normally the UI thread is active only when there is work to do, but adding handler for this event forces it to run every frame. Remove the handler when there is no work to be done and reregister it when it’s needed again.
 
-### Xxx xxx xxxxxxxxx xxxxxxx
+### Use the animation library
 
-Xxx [**Xxxxxxx.XX.Xxxx.Xxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243232) xxxxxxxxx xxxxxxxx x xxxxxxx xx xxxx-xxxxxxxxxxx, xxxxxx xxxxxxxxxx xxxx xxxx x xxxx xxx xxxx xxxxxxxxxx xxxx xxxxx Xxxxxxx xxxxxxxxxx. Xxx xxxxxxxx xxxxxxx xxxx "Xxxxx" xx xxxxx xxxx, xxx xxx xxxxxxxxx xx [Xxxxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt187350). Xxxx xxxxxxx xxxxxxxx xxxx xxxxxx xxxxxxxxx xxxxxxxxx, xxxx xx xxxxxxxxx xxx xxxxx xxxx xx xxx xxx xxx xxxxxxxx xxxxx xxx xxxxxxx xxxxxxxxxxx. Xx xxxxxxxxx xxxxx xxxx xxxxxxxxx xxxxxxx xxxxxxxx xxxxxxxx xx xxxxxxxx xxxxxxxxxxx xxx xxxxxxxxxxx xxx XXX XX.
+The [**Windows.UI.Xaml.Media.Animation**](https://msdn.microsoft.com/library/windows/apps/BR243232) namespace includes a library of high-performance, smooth animations that have a look and feel consistent with other Windows animations. The relevant classes have "Theme" in their name, and are described in [Animations overview](https://msdn.microsoft.com/library/windows/apps/Mt187350). This library supports many common animation scenarios, such as animating the first view of the app and creating state and content transitions. We recommend using this animation library whenever possible to increase performance and consistency for UWP UI.
 
-> **Xxxx**   Xxx xxxxxxxxx xxxxxxx xxx'x xxxxxxx xxx xxxxxxxx xxxxxxxxxx. Xxx XXXX xxxxxxxxx xxxxx xxx xxxxxxxxx xxxxxxx xxxxx'x xxxxx, xxx [Xxxxxxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt187354).
+> **Note**   The animation library can't animate all possible properties. For XAML scenarios where the animation library doesn't apply, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/Mt187354).
 
 
-### Xxxxxxx XxxxxxxxxXxxxxxxxxYX xxxxxxxxxx xxxxxxxxxxxxx
+### Animate CompositeTransform3D properties independently
 
-Xxx xxx xxxxxxx xxxx xxxxxxxx xx x [**XxxxxxxxxXxxxxxxxxYX**](https://msdn.microsoft.com/library/windows/apps/Dn914714) xxxxxxxxxxxxx, xx xxxxx xxxx xxx xxxxxxxxxx xxx xxxx. Xxx xxxxxxxx xxx xxxx xxxx, xxx [**XXXxxxxxx.XxxxxxxxxYX**](https://msdn.microsoft.com/library/windows/apps/BR208911-transform3d). Xxx xxxx xxxx xxxxx xxxxxxxxx xxxxxxxxxx, xxx [Xxxxxxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt187354) xxx [Xxx-xxxxx xxx xxxxxx xxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt187352).
+You can animate each property of a [**CompositeTransform3D**](https://msdn.microsoft.com/library/windows/apps/Dn914714) independently, so apply only the animations you need. For examples and more info, see [**UIElement.Transform3D**](https://msdn.microsoft.com/library/windows/apps/BR208911-transform3d). For more info about animating transforms, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/Mt187354) and [Key-frame and easing function animations](https://msdn.microsoft.com/library/windows/apps/Mt187352).
 
-## Xxxxxxxx xxxxx xxxxxxxxx
+## Optimize media resources
 
-Xxxxx, xxxxx, xxx xxxxxx xxx xxxxxxxxxx xxxxx xx xxxxxxx xxxx xxx xxxxxxxx xx xxxx xxx. Xx xxxxx xxxxxxx xxxxx xxxxxxxx xxx xxxxxxx xxxxx xxxx xxxxxxxx xxxxxxxxxx xx xxxx xxxxxxxxxx xxx xxxxxx xx xxxxxxxxx xxxx xx xxxxx, xxxxxx, xxx xxxx xxxx xxxx xxxxxxx xxxxxxxxx. Xxx XXXX xxxxxxxxx xxxxxx xx xxx xxxxxx xxxxxxxx xxxxx xx xxx XXX xxxxx xxxxxxx xx xxxx xxx xxxxx xxxxxxxxxxxx xxx xxxx. Xxxx xx xxxxxxx xxxx xxxxxxxxxx xxxxxx xxxx xxxxx xxx xx xxx xxx xxxx xxx xxxxx xx xxxx XXX xxx.
+Audio, video, and images are compelling forms of content that the majority of apps use. As media capture rates increase and content moves from standard definition to high definition the amount of resources need to store, decode, and play back this content increases. The XAML framework builds on the latest features added to the UWP media engines so apps get these improvements for free. Here we explain some additional tricks that allow you to get the most out media in your UWP app.
 
-### Xxxxxxx xxxxx xxxxxxx
+### Release media streams
 
-Xxxxx xxxxx xxx xxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx xxxxxxxxx xxxx xxxxxxxxx xxx. Xxxxxxx xxxxx xxxx xxxxxxxxx xxx xxxxxxx xxxxxxxx xxx xxxx xx xxxx xxx'x xxxxxx xxxxxxxxx, xxx xxxx xxxxxxxx xx xxxxxxx xxx xxxxxx xx xxxxx xx xxxx xx xxx xxx xx xxxxxxxx xxxxx xx.
+Media files are some of the most common and expensive resources apps typically use. Because media file resources can greatly increase the size of your app's memory footprint, you must remember to release the handle to media as soon as the app is finished using it.
 
-Xxx xxxxxxx, xx xxxx xxx xxxxxxx xxxx x [**XxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR241747) xx xx [**XXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR241718) xxxxxx, xx xxxx xx xxxx xxx xxxxx xxxxxx xx xxx xxxxxx xxxx xxxx xxx xxx xxxxxxxx xxxxx xx, xx xxxxxxx xxx xxxxxxxxxx xxxxxx.
+For example, if your app working with a [**RandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/BR241747) or an [**IInputStream**](https://msdn.microsoft.com/library/windows/apps/BR241718) object, be sure to call the close method on the object when your app has finished using it, to release the underlying object.
 
-### Xxxxxxx xxxx xxxxxx xxxxx xxxxxxxx xxxx xxxxxxxx
+### Display full screen video playback when possible
 
-Xx XXX xxxx, xxxxxx xxx xxx [**XxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242926-isfullwindow) xxxxxxxx xx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242926) xx xxxxxx xxx xxxxxxx xxxx xxxxxx xxxxxxxxx. Xxxx xxxxxxx xxxxxx xxxxx xxxxxxxxxxxxx xxx xxxx xxxxxx xxxxx xxxxxxxx.
+In UWP apps, always use the [**IsFullWindow**](https://msdn.microsoft.com/library/windows/apps/BR242926-isfullwindow) property on the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) to enable and disable full window rendering. This insures system level optimizations are used during media playback.
 
-Xxx XXXX xxxxxxxxx xxx xxxxxxxx xxx xxxxxxx xx xxxxx xxxxxxx xxxx xx xx xxx xxxx xxxxx xxxxx xxxxxxxx, xxxxxxxxx xx xx xxxxxxxxxx xxxx xxxx xxxx xxxxx xxx xxxxxx xxxxxx xxxxx xxxxx. Xxx xxxx xxxxxxxxx xxxxx xxxxxxxx xxx xxx xxxx xx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242926) xx xx xxx xxxxx xxx xxxxxx xx xxx xxxxxx xxx xxx’x xxxxxxx xxxxx XXXX xxxxxxxx
+The XAML framework can optimize the display of video content when it is the only thing being rendered, resulting in an experience that uses less power and yields higher frame rates. For most efficient media playback set the size of a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) to be the width and height of the screen and don’t display other XAML elements
 
-Xxxxx xxx xxxxxxxxxx xxxxxxx xx xxxxxxx XXXX xxxxxxxx xx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242926) xxxx xxxxx xx xxx xxxx xxxxx xxx xxxxxx xx xxx xxxxxx, xxx xxxxxxx xxxxxx xxxxxxxx xx xxxxxxxxx xxxxxxxxx xxxxxxxx. Xxxxxx xxxx xx xxxx xxxxx xxxxxxxx (xx. xxxxxxx Xxxxxxxxxx=”Xxxxxxxxx”) xxxx xxxx xxx xxx xxxxxx xxxx xxxxx xxxxxxxx xxxx xxxx xxx xxxx xxxxxxxxx xxxxx.
+There are legitimate reasons to overlay XAML elements on a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) that takes up the full width and height of the screen, for example closed captions or momentary transport controls. Making sure to hide these elements (eg. setting Visibility=”Collapsed”) when they are not needed pops media playback back into its most efficient state.
 
-### Xxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxx
+### Display deactivation and conserving power
 
-Xx xxxxxxx xxx xxxxxxx xxxx xx xxxxxxxxxxxx xxxx xxxx xxxxxx xx xx xxxxxx xxxxxxxx, xxxx xx xxxx xx xxx xx xxxxxxx xxxxx, xxx xxx xxxx [**XxxxxxxXxxxxxx.XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR241818).
+To prevent the display from be deactivating when user action is no longer detected, such as when an app is playing video, you can call [**DisplayRequest.RequestActive**](https://msdn.microsoft.com/library/windows/apps/BR241818).
 
-Xx xxxxxxxx xxxxx xxx xxxxxxx xxxx, xxx xxxxxx xxxx [**XxxxxxxXxxxxxx.XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR241819) xx xxxxxxx xxx xxxxxxx xxxxxxx xx xxxx xx xx xx xx xxxxxx xxxxxxxx.
+To conserve power and battery life, you should call [**DisplayRequest.RequestRelease**](https://msdn.microsoft.com/library/windows/apps/BR241819) to release the display request as soon as it is no longer required.
 
-Xxxx xxx xxxx xxxxxxxxxx xxxx xxx xxxxxx xxxxxxx xxx xxxxxxx xxxxxxx:
+Here are some situations when you should release the display request:
 
--   Xxxxx xxxxxxxx xx xxxxxx, xxx xxxxxxx xx xxxx xxxxxx, xxxxxxxxx, xx xxxxxxxxxx xxx xx xxxxxxx xxxxxxxxx.
--   Xxxxxxxx xxxxx. Xxx xxxxxxx, xxx xxxxx xx xxxx xxxxxxx xx xxx xxxxxxxxxxxx xx xxxx.
--   X xxxxxxxx xxxxx xxx xxxxxxxx. Xxx xxxxxxx, xxxxxxx xxxxxxxxxxxx xxxxxx xx x xxxxxxxxx xxxx.
+-   Video playback is paused, for example by user action, buffering, or adjustment due to limited bandwidth.
+-   Playback stops. For example, the video is done playing or the presentation is over.
+-   A playback error has occurred. For example, network connectivity issues or a corrupted file.
 
-### Xxx xxxxx xxxxxxxx xx xxx xxxx xx xxxxxxxx xxxxx
+### Put other elements to the side of embedded video
 
-Xxxxx xxxx xxxxx xx xxxxxxxx xxxx xxxxx xxxxx xx xxxxxx xxxxxx x xxxx. Xxx xxx xxxxxxxxx xxxx xxx xxxx xxxxxx xxxxxxxxxxxx xxxxxxx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242926) xx xxx xxx xxxx xx xxx xxxx xxx xxxxx xxx xxxxx XXXX xxxxxxx xxxxx. Xxxxxx xx xxxxxxxxxxxxxxx xxxxxxxx xxxx xxxx xx xxxxxxx x xxxxxx xxxxxx x **XxxxxXxxxxxx**.
+Often apps offer an embedded view where video is played within a page. Now you obviously lost the full screen optimization because the [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) is not the size of the page and there are other XAML objects drawn. Beware of unintentionally entering this mode by drawing a border around a **MediaElement**.
 
-Xxx’x xxxx XXXX xxxxxxxx xx xxx xx xxxxx xxxx xx’x xx xxxxxxxx xxxx. Xx xxx xx, xxx xxxxxxxxx xx xxxxxx xx xx x xxxxxx xxxxx xxxx xx xxxxxxx xxx xxxxx. Xxxxxxx xxxxxxxxx xxxxxxxx xxxxx xx xxxxxxxx xxxxx xxxxxxx xxxxxxx xx xx xxx xx xxx xxxxx xx x xxxx xxxxxxx xx xxxxxxxxxx xxx xxxx xxxxxxxxx. Xx xxxx xxxxx, xxx xxx xxx xxxxxxxxx x xxx xx xxxxxxxxx xxxxxxxx (xxxx, xxxxx, xxxx, xxx.).
+Don’t draw XAML elements on top of video when it’s in embedded mode. If you do, the framework is forced to do a little extra work to compose the scene. Placing transport controls below an embedded media element instead of on top of the video is a good example of optimizing for this situation. In this image, the red bar indicates a set of transport controls (play, pause, stop, etc.).
 
-![XxxxxXxxxxxx xxxx xxxxxxxxxx xxxxxxxx](images/videowithoverlay.png)
-Xxx’x xxxxx xxxxx xxxxxxxx xx xxx xx xxxxx xxxx xx xxx xxxx xxxxxx. Xxxxxxx xxxxx xxx xxxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxx xx xxx xxxx xxxxx xxx xxxxx xx xxxxx xxxxxxxx. Xx xxx xxxx xxxxx, xxx xxxxxxxx xxx xxxxxx xxxxx xxx xxxxx.
+![MediaElement with overlaying elements](images/videowithoverlay.png)
+Don’t place these controls on top of media that is not full screen. Instead place the transport controls somewhere outside of the area where the media is being rendered. In the next image, the controls are placed below the media.
 
-![XxxxxXxxxxxx xxxx xxxxxxxxxxx xxxxxxxx](images/videowithneighbors.png)
+![MediaElement with neighboring elements](images/videowithneighbors.png)
 
-### Xxxxx xxxxxxx xxx xxxxxx xxx x XxxxxXxxxxxx
+### Delay setting the source for a MediaElement
 
-Xxxxx xxxxxxx xxx xxxxxxxxx xxxxxxx xxx xxx XXXX xxxxxxxxx xxxxxx xxxxxxx xxxx xxx xxxxxxxx xxxxx xxxxxxx xx xxxx xx xxxxxxxx. Xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242926) xx xxxxxx xx xx xxxx xxxx xxxxx xxx xxxxxx xx xxx xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242926-source) xxxxxxxx xx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242926-setsource) xxxxxx. Xxxxxxx xxxxx xxxx xxx xxxx xx xxxxxx xxxxx xx xxxx xxxxx xxxxxx xxx xxxxxxxx xx xxx xxxx xxxxxxxxxx xxxx xxx **XxxxxXxxxxxx** xx xxxx xx xxxxxxxx.
+Media engines are expensive objects and the XAML framework delays loading dlls and creating large objects as long as possible. The [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/BR242926) is forced to do this work after its source is set via the [**Source**](https://msdn.microsoft.com/library/windows/apps/BR242926-source) property or the [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR242926-setsource) method. Setting these when the user is really ready to play media delays the majority of the cost associated with the **MediaElement** as long as possible.
 
-### Xxx XxxxxXxxxxxx.XxxxxxXxxxxx
+### Set MediaElement.PosterSource
 
-Xxxxxxx [**XxxxxXxxxxxx.XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242926-postersource) xxxxxxx XXXX xx xxxxxxx xxxx XXX xxxxxxxxx xxxx xxxxx xxxx xxxxxxxxx xxxx xxxx. Xxxx XXX xxxxxx xx xxx xx xxx xx xxxxxx xxxxxx xx xxxxxxxx.
+Setting [**MediaElement.PosterSource**](https://msdn.microsoft.com/library/windows/apps/BR242926-postersource) enables XAML to release some GPU resources that would have otherwise been used. This API allows an app to use as little memory as possible.
 
-### Xxxxxxx xxxxx xxxxxxxxx
+### Improve media scrubbing
 
-Xxxxxxxxx xx xxxxxx x xxxxx xxxx xxx xxxxx xxxxxxxxx xx xxxx xxxxxx xxxxxxxxxx. Xxxxxxxxx xxxxxx xxxxxxxxxx xxxx xx xxxxxxxx xxx xxxxx xx x Xxxxxx. Xxxx xxx x xxxxxx xxxx xx xxx xx xxxx xxxx xx xxxxxxxxx xx xxxxxxxx:
+Scrubbing is always a tough task for media platforms to make really responsive. Generally people accomplish this by changing the value of a Slider. Here are a couple tips on how to make this as efficient as possible:
 
--   Xxxxxx xxxx xxx xxxxx xx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209614) xx [**XxxxxXxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242926-position) xx xxxxxx xx xxxxx xx x xxxxx. Xxx'x xx xxxx. Xx xxx xxxxxx xxx xxxxxx, xxxx xxxx xx xxx x xxxxxxxxxx xxxxxx xxxxxxxxx xxx xxxx xxxxx. Xxx XXXX xxxxxxxxx xxxx xxxxxxx **XxxxxXxxxxxx.Xxxxxxxx** xxxx xxxxx YYY xxxxxxxxxxxx xxxxxx xxxxxxxx.
--   Xxx xxxx xx xxx xxxx xxxxxxxxx xx xxx Xxxxxx xxxx xxxxx xxxx xxx xxxxxx xx xxx xxxxx.
--   Xxxxxxxxx xx xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911-pointerpressed), [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911-pointermoved), [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911-pointerreleased) xxxxxx xx xxx xxxxxx xx xxx xxx [**XxxxxXxxxxxx.XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242926-playbackrate) xxxxxxxx xx Y xxxx xxx xxxx xxxxx xxx xxxxx xx xxx xxxxxx.
--   Xx xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911-pointerreleased) xxxxx xxxxxxx, xxxxxxxx xxx xxx xxxxx xxxxxxxx xx xxx xxxxxx xxxxxxxx xxxxx xx xxxxxxx xxxxxxx xxxxx xxxxxxxx xxxxx xxxxxxxxx.
+-   Either bind the value of a [**Slider**](https://msdn.microsoft.com/library/windows/apps/BR209614) to [**MediaElement.Position**](https://msdn.microsoft.com/library/windows/apps/BR242926-position) or update it based on a timer. Don't do both. If you choose the latter, make sure to use a reasonable update frequency for your timer. The XAML framework only updates **MediaElement.Position** only every 250 milliseconds during playback.
+-   The size of the step frequency on the Slider must scale with the length of the video.
+-   Subscribe to the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/BR208911-pointerpressed), [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/BR208911-pointermoved), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/BR208911-pointerreleased) events on the slider to set the [**MediaElement.PlaybackRate**](https://msdn.microsoft.com/library/windows/apps/BR242926-playbackrate) property to 0 when the user drags the thumb of the slider.
+-   In the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/BR208911-pointerreleased) event handler, manually set the media position to the slider position value to achieve optimal thumb snapping while scrubbing.
 
-### Xxxxx xxxxx xxxxxxxxxx xx xxxxxx xxxxxxxxxx
+### Match video resolution to device resolution
 
-Xxxxxxxx xxxxx xxxxx x xxx xx xxxxxx xxx XXX xxxxxx, xx xxxxxx x xxxxx xxxxxx xxxxx xx xxx xxxxxxxxxx xx xxxx xx xxxxxxxxx xx. Xxxxx xx xx xxxxx xx xxxxx xxx xxxxxxxxx xx xxxxxx YYYY xxxxx xx xx’x xxxxx xx xxx xxxxxx xxxx xx x xxxx xxxxxxx xxxx. Xxxx xxxx xxx’x xxxx xxx xxxx xxxxx xxxxxxx xx xxxxxxxxx xxxxxxxxxxx; xxx xx xx xx xxxxxxxxx, xxx xx xxxxxxxx xxxx xx xxxxx xx xxx xxxxxxxxxx xx xxxxx xx xxxx xx xxxxxxxxx.
+Decoding video takes a lot of memory and GPU cycles, so choose a video format close to the resolution it will be displayed at. There is no point in using the resources to decode 1080 video if it’s going to get scaled down to a much smaller size. Many apps don’t have the same video encoded at different resolutions; but if it is available, use an encoding that is close to the resolution at which it will be displayed.
 
-### Xxxxxx xxxxxxxxxxx xxxxxxx
+### Choose recommended formats
 
-Xxxxx xxxxxx xxxxxxxxx xxx xx x xxxxxxxxx xxxxx xxx xx xxxxx xxxxxx xx xxxxxxxx xxxxxxxxx. Xxxx x XXX xxxxxxxxxxx xxxxxxxxxxx, xx xxxxxxxxx X.YYY xxxxx xx xxx xxxxxxx xxxxx xxxxxx xxx XXX xxx XXY xx xxx xxxxxxxxx xxxxx xxxxxxx. Xxx xxxxx xxxx xxxxxxxx, XXY xx xxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxx xxxxxxx. X.YYY xxxxxxxx xx xxxxxxxxxxx xxxxxxx xxxx xxxxxx xxxxxxxx xxxxxxxx. Xxxx, xxxxxxxx xxxxxxxx xxxxxxxxxxxx xxx XX-Y xxxxxxxx xx xxxxxxx xxxxxxxxx, xxx x xxxxx xxx xx xxxxxxxx xxxxxxxx xx xxx xxxxxx, xxx xxxxxxxxxxxx xx xxxxxxx xx xxxx xxxxx xx x xxxxxxx xxxxxxxxxxxx xxxxx (xx XXXX xxxxx), xxxxxx xxxx x xxxx-xxxxx xxxxx xxxxxxxx xxxxxxx (x.x. XXX xxxx).
+Media format selection can be a sensitive topic and is often driven by business decisions. From a UWP performance perspective, we recommend H.264 video as the primary video format and AAC and MP3 as the preferred audio formats. For local file playback, MP4 is the preferred file container for video content. H.264 decoding is accelerated through most recent graphics hardware. Also, although hardware acceleration for VC-1 decoding is broadly available, for a large set of graphics hardware on the market, the acceleration is limited in many cases to a partial acceleration level (or IDCT level), rather than a full-steam level hardware offload (i.e. VLD mode).
 
-Xx xxx xxxx xxxx xxxxxxx xx xxx xxxxx xxxxxxx xxxxxxxxxx xxxxxxx, xxx xxxx xxxxxx xxx xxx xx xxxx x xxxx xxxxxxx xxxxxxx xxxxxxxxxxx xxxxxxxxxx xxx XXX xxxxxxxxx. Xxxxxxxxxx xxxxxxx XXX xxxx xxxx X xxxxxxxx xxx xxxxxxxx xxx xxxxxxxxxxx xx xxxxxxx xx xxxxx xxxxx.
+If you have full control of the video content generation process, you must figure out how to keep a good balance between compression efficiency and GOP structure. Relatively smaller GOP size with B pictures can increase the performance in seeking or trick modes.
 
-Xxxx xxxxxxxxx xxxxx, xxx-xxxxxxx xxxxx xxxxxxx, xxx xxxxxxx xx xxxxx, xxx XXX xxxxx xxxx xxxxxxxxxxxx XXX xxxx xx xxxxxx xxxxxxxxxx xxxxxxxx xxxx xx xxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxx.
+When including short, low-latency audio effects, for example in games, use WAV files with uncompressed PCM data to reduce processing overhead that is typical for compressed audio formats.
 
-### Xxxxxxxx xxxxx xxxxxxxxxx
+### Hardware audio offloading
 
-Xxx xxxxxxxx xxxxx xxxxxxx xx xx xxxxxxxxxxxxx xxxxxxx, [**XxxxxXxxxxxx.XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242926-audiocategory) xxxx xx xxx xx **XxxxxxxxxxXxxxXxxxx** xx **XxxxxxxxxxXxxxxxxXxxxx**. Xxxxxxxx xxxxx xxxxxxx xxxxxxxxx xxxxx xxxxxxxxx xxxxx xxx xxxxxxx xxxxxxxxxxxxx xxx xxxxxxx xxxx.
+For hardware audio offload to be automatically applied, [**MediaElement.AudioCategory**](https://msdn.microsoft.com/library/windows/apps/BR242926-audiocategory) must be set to **ForegroundOnlyMedia** or **BackgroundCapableMedia**. Hardware audio offload optimizes audio rendering which can improve functionality and battery life.
 
-## Xxxxxxxx xxxxx xxxxxxxxx
+## Optimize image resources
 
-### Xxxxx xxxxxx xx xxx xxxxxxxxxxx xxxx
+### Scale images to the appropriate size
 
-Xxxxxx xxx xxxxxxxx xx xxxx xxxx xxxxxxxxxxx, xxxxx xxx xxxx xx xxxx xxxxx xxxx XXX xxxx xxxxxxxx xxx xxxxx xxxx xxx xxxx xxxxxx xxxxx xx’x xxxxxx xxxx xxxx. Xxx xxxxx’x xx xxxxx xxxxxxxx xxx xxxxxx x xxxx-xxxxxxxxxx xxxxx xx xxxxxx xxxx xx xxxxxxx xx xxxxxxx xxxx xxx xxxxxx xxxx. Xxxxxxx, xxxxxx x xxxxxxx xx xxx xxxxx xx xxx xxxxx xxxx xx xxxx xx xxxxx xx-xxxxxx xxxxx xxx [**XxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243243) xxx [**XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243241) xxxxxxxxxx.
+Images are captured at very high resolutions, which can lead to apps using more CPU when decoding the image data and more memory after it’s loaded from disk. But there’s no sense decoding and saving a high-resolution image in memory only to display it smaller than its native size. Instead, create a version of the image at the exact size it will be drawn on-screen using the [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) and [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) properties.
 
-Xxx'x xx xxxx:
+Don't do this:
 
 ```xaml
 <Image Source="ms-appx:///Assets/highresCar.jpg" 
        Width="300" Height="200"/>    <!-- BAD CODE DO NOT USE.-->
 ```
 
-Xxxxxxx, xx xxxx:
+Instead, do this:
 
 ```xaml
 <Image>
@@ -159,49 +159,49 @@ Xxxxxxx, xx xxxx:
 </Image>
 ```
 
-Xxx xxxxx xxx [**XxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243243) xxx [**XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243241) xxx xx xxxxxxx xxxxxxxx xxxxxx. Xxx [**XxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn298545) xxxxxxxx xxx xx xxxx xx xxxxxx xxxx xxxxxxxx: xxxxxxx **XxxxxxXxxxxXxxx** xx **Xxxxxxx** xxxxxxx xx xxx xxxxxx xxxx xxxxxxxxxxxxx xxxxxxxxxx xxx xxx xxxxxx’x xxxxxxx xxxxx xxxxxx, xxxxxxx xx xxxxx XXXX xxxxxxx. Xx xxxxx xxxxxxxxx xx xxxxxxxxx xxxxxxxxxxx xx xxx **XxxxxxXxxxxXxxx** xx **Xxxxxxx** xx, xxx xxxxxxxx, xxx xxxx **XxxxxxXxxxxXxxxx** xxx **XxxxxxXxxxxXxxxxx** xx xxxxx xxx Xxxxxx xxx Xxxxx xxxxxxxxxx xx xxx Xxxxx xxxxxxx xxx xxxxx xxxx xx xxxxxxxxx xx. Xxxx xxx xxxxxxx xxxxxxxx xx xxxxx xxxxxxxx xxxxxx, xxx xxxx xxxxxxx xxx xxx xxxxxx’x xxxxxxx xxxxx xxxxxx xxxxxxxx; xxx xxx xxxxxx xxxxxx xxx xxxxx xxxxxx xxxxxxxxxxxxx xx xxxx xxx xxxx xxxxxxx xxxxx xxxxxxx xxxxxxxxxxx.
+The units for [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) and [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) are by default physical pixels. The [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) property can be used to change this behavior: setting **DecodePixelType** to **Logical** results in the decode size automatically accounting for the system’s current scale factor, similar to other XAML content. It would therefore be generally appropriate to set **DecodePixelType** to **Logical** if, for instance, you want **DecodePixelWidth** and **DecodePixelHeight** to match the Height and Width properties of the Image control the image will be displayed in. With the default behavior of using physical pixels, you must account for the system’s current scale factor yourself; and you should listen for scale change notifications in case the user changes their display preferences.
 
-Xx XxxxxxXxxxxXxxxx/Xxxxxx xxx xxxxxxxxxx xxx xxxxxx xxxx xxx xxxxx xxxx xx xxxxxxxxx xx-xxxxxx xxxx xxx xxx xxxx xxxxxxxxxxxxx xxx xxxxx xxxxxx—xx xx Y xxxxx xxx xxxxx—xxxxx xxxxxxx xxxxxxx xxxxxxxxx xxx xxxxx xxxxxx. Xxx xxxxx xxxx xxxx xx xxxxxx xxxx xxxxx xxxxxxxx xxxxxxx xxxxx xxxxx xxxxx xx xx xxxxxx xxxxxx xxx xxxxx xxxxx xxxxxxx.
+If DecodePixelWidth/Height are explicitly set larger than the image will be displayed on-screen then the app will unnecessarily use extra memory—up to 4 bytes per pixel—which quickly becomes expensive for large images. The image will also be scaled down using bilinear scaling which could cause it to appear blurry for large scale factors.
 
-Xx XxxxxxXxxxxXxxxx/XxxxxxXxxxxXxxxxx xxx xxxxxxxxxx xxx xxxxxxx xxxx xxx xxxxx xxxx xx xxxxxxxxx xx xxxxxx xxxx xx xxxx xx xxxxxx xx xxx xxxxx xxxxxx xxxxxxxxx.
+If DecodePixelWidth/DecodePixelHeight are explicitly set smaller than the image will be displayed on screen then it will be scaled up and could appear pixelated.
 
-Xx xxxx xxxxx xxxxx xx xxxxxxxxxxx xxxxxx xxxx xxxxxx xx xxxxxxxxxx xxxxx xx xxxx, xxx xxxxxx xxxxx xx XXXX’x xxxxxxxxx xxxxx-xxxx-xxxxxxxx xxxxx xxxx xxxx x xxxx xxxxxx xxxxxxx xx xxxxxx xxx xxxxx xx xxx xxxxxxxxxxx xxxx xx xx xxxxxxxx XxxxxxXxxxxXxxxx/XxxxxxXxxxxXxxxxx xx xxx xxxxxxxxx.
+In some cases where an appropriate decode size cannot be determined ahead of time, you should defer to XAML’s automatic right-size-decoding which will make a best effort attempt to decode the image at the appropriate size if an explicit DecodePixelWidth/DecodePixelHeight is not specified.
 
-Xxx xxxxxx xxx xx xxxxxxxx xxxxxx xxxx xx xxx xxxx xxx xxxx xx xxx xxxxx xxxxxxx xxxxx xx xxxx. Xxx xxxxxx xxxx xx xxxxxxxxxxx xxx [**XxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn298545) xx **Xxxxxxx** xx xxx xxxxxxxx xxxxxx xxxx xx xxxxxxxx xx xxxxx XXXX xxxxxxx xxxxx. Xxx xxxxxxx, xx xxx xxxxxxxxxx xxx xxx xxxxxxx xxxx xxxx Xxxxx.Xxxxx xxx Xxxxx.Xxxxxx, xxx xxxxx xxx XxxxxxXxxxxXxxx xx XxxxxxXxxxxXxxx.Xxxxxxx xx xxx xxx xxxx xxxxxxx xxxxx xxxxxxxxxx xx xx Xxxxx xxxxxxx xxx xxxx xxxxxxxxxx xxx XxxxxxXxxxx.XxxxxxXxxxxXxxxx xxx/xx XxxxxxXxxxx.XxxxxxXxxxxXxxxxx xx xxxxxxx xxx xxxx xx xxx xxxxx xx xxxxxxx xxxxxxxxxxx xxxxx xxxxxx xxxxxxx.
+You should set an explicit decode size if you know the size of the image content ahead of time. You should also in conjunction set [**DecodePixelType**](https://msdn.microsoft.com/library/windows/apps/Dn298545) to **Logical** if the supplied decode size is relative to other XAML element sizes. For example, if you explicitly set the content size with Image.Width and Image.Height, you could set DecodePixelType to DecodePixelType.Logical to use the same logical pixel dimensions as an Image control and then explicitly use BitmapImage.DecodePixelWidth and/or BitmapImage.DecodePixelHeight to control the size of the image to achieve potentially large memory savings.
 
-Xxxx xxxx Xxxxx.Xxxxxxx xxxxxx xx xxxxxxxxxx xxxx xxxxxxxxxxx xxx xxxx xx xxx xxxxxxx xxxxxxx.
+Note that Image.Stretch should be considered when determining the size of the decoded content.
 
-### Xxxxx-xxxxx xxxxxxxx
+### Right-sized decoding
 
-Xx xxx xxxxx xxxx xxx xxx'x xxx xx xxxxxxxx xxxxxx xxxx, XXXX xxxx xxxx x xxxx xxxxxx xxxxxxx xx xxxx xxxxxx xx xxxxxxxx xx xxxxx xx xxx xxxxx xxxx xx xxxx xxxxxx xx-xxxxxx xxxxxxxxx xx xxx xxxxxxxxxx xxxx’x xxxxxxx xxxxxx. Xxx'xx xxxxxxx xx xxxxx xxxx xxxxxxxxxxx xx xxxx x xxx xx xx xxxx xxx xx xxxx xxxxxxx xxxx xxxxxxxx. Xxxx xxxxxxx xxxx xx xxxxxxxx xx xxx xx xxx xxxxxxxxx xxxxxxxxxx xxx xxx.
+In the event that you don't set an explicit decode size, XAML will make a best effort attempt to save memory by decoding an image to the exact size it will appear on-screen according to the containing page’s initial layout. You're advised to write your application in such a way as to make use of this feature when possible. This feature will be disabled if any of the following conditions are met.
 
--   Xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243235) xx xxxxxxxxx xx xxx xxxx XXXX xxxx xxxxx xxxxxxx xxx xxxxxxx xxxx [**XxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/JJ191522) xx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243235-urisource).
--   Xxx xxxxx xx xxxxxxx xxxxx xxxxxxxxxxx xxxxxxxx xxxx xx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243255).
--   Xxx xxxxx xx xxxxxx xxx xxxxxxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208962) xx Y xx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208911-visibility) xx **Xxxxxxxxx** xx xxx xxxx xxxxx xxxxxxx xx xxxxx xx xxx xxxxxx xxxxxxx.
--   Xxx xxxxx xxxxxxx xx xxxxx xxxx x [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242968) xx **Xxxx**.
--   Xxx xxxxx xx xxxx xx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242756).
--   `CacheMode="BitmapCache"` xx xxx xx xxx xxxxx xxxxxxx xx xx xxx xxxxxx xxxxxxx.
--   Xxx xxxxx xxxxx xx xxx-xxxxxxxxxxx (xxxx xx xxxx xxxxxxx xx x xxxxx xx xx xxxx).
+-   The [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) is connected to the live XAML tree after setting the content with [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) or [**UriSource**](https://msdn.microsoft.com/library/windows/apps/BR243235-urisource).
+-   The image is decoded using synchronous decoding such as [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255).
+-   The image is hidden via setting [**Opacity**](https://msdn.microsoft.com/library/windows/apps/BR208962) to 0 or [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208911-visibility) to **Collapsed** on the host image element or brush or any parent element.
+-   The image control or brush uses a [**Stretch**](https://msdn.microsoft.com/library/windows/apps/BR242968) of **None**.
+-   The image is used as a [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756).
+-   `CacheMode="BitmapCache"` is set on the image element or on any parent element.
+-   The image brush is non-rectangular (such as when applied to a shape or to text).
 
-Xx xxx xxxxx xxxxxxxxx, xxxxxxx xx xxxxxxxx xxxxxx xxxx xx xxx xxxx xxx xx xxxxxxx xxxxxx xxxxxxx.
+In the above scenarios, setting an explicit decode size is the only way to achieve memory savings.
 
-Xxx xxxxxx xxxxxx xxxxxx x [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243235) xx xxx xxxx xxxx xxxxxx xxxxxxx xxx xxxxxx. Xxx xxxx xx xxxxx xxxxxxx xx xxxxx xx xxxxxxxxx xx xxxxxx, xxxx xxxx xxxxxxxxxxxxx xx xxx xxxx. Xxxxxxxx xxx xxxxxxxx xxxxx xxxxx xxx xxxxxxx "Xxxx xxxx xxxxxxxx". Xxx xxxxxx xxxxxx xxxxx xxxxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243255) xxx xxxxxxx xxx [**XxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/JJ191522) xxxx xxxxxxx x xxxxxx xxxxxx. Xxx xx'x x xxxx xxxx xx xxxxx xxxxxx xxxxx xxxxxxx (xxxxxx xxxx xxxx xxxxxxx xx xxxx xxxxxxxxx xxxxxxxxxx) xxxxx xxxxxxx xxx xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243235-imageopened) xxxxx xx xx xxxxxx. Xxxxx xxxx xx x xxxxxxxx xxxx: xxx xxx'x xxxxxxx xxxx xxxxxxxxx xxxxx-xxxxx xxxxxxxx xx xx'x xxxx. Xx xxxx xxx xxxx xxxx xxxxx xxxxxxx xxxxxxxxx xxxx xx xxxxxx xxxx xxx xxx xxxxxx xxxx xxxxxxxxxx xx xxxxxxxx.
+You should always attach a [**BitmapImage**](https://msdn.microsoft.com/library/windows/apps/BR243235) to the live tree before setting the source. Any time an image element or brush is specified in markup, this will automatically be the case. Examples are provided below under the heading "Live tree examples". You should always avoid using [**SetSource**](https://msdn.microsoft.com/library/windows/apps/BR243255) and instead use [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) when setting a stream source. And it's a good idea to avoid hiding image content (either with zero opacity or with collapsed visibility) while waiting for the [**ImageOpened**](https://msdn.microsoft.com/library/windows/apps/BR243235-imageopened) event to be raised. Doing this is a judgment call: you won't benefit from automatic right-sized decoding if it's done. If your app must hide image content initially then it should also set the decode size explicitly if possible.
 
-**Xxxx xxxx xxxxxxxx**
+**Live tree examples**
 
-Xxxxxxx Y (xxxx)—Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX) xxxxxxxxx xx xxxxxx.
+Example 1 (good)—Uniform Resource Identifier (URI) specified in markup.
 
 ```xaml
 <Image x:Name="myImage" UriSource="Assets/cool-image.png"/>
 ```
 
-Xxxxxxx Y xxxxxx—XXX xxxxxxxxx xx xxxx-xxxxxx.
+Example 2 markup—URI specified in code-behind.
 
 ```xaml
 <Image x:Name="myImage"/>
 ```
 
-Xxxxxxx Y xxxx-xxxxxx (xxxx)—xxxxxxxxxx xxx XxxxxxXxxxx xx xxx xxxx xxxxxx xxxxxxx xxx XxxXxxxxx.
+Example 2 code-behind (good)—connecting the BitmapImage to the tree before setting its UriSource.
 
 ```vb
 var bitmapImage = new BitmapImage();
@@ -209,7 +209,7 @@ myImage.Source = bitmapImage;
 bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.RelativeOrAbsolute);
 ```
 
-Xxxxxxx Y xxxx-xxxxxx (xxx)—xxxxxxx xxx xxx XxxxxxXxxxx'x XxxXxxxxx xxxxxx xxxxxxxxxx xx xx xxx xxxx.
+Example 2 code-behind (bad)—setting the the BitmapImage's UriSource before connecting it to the tree.
 
 ```vb
 var bitmapImage = new BitmapImage();
@@ -217,46 +217,45 @@ bitmapImage.UriSource = new URI("ms-appx:///Assets/cool-image.png", UriKind.Rela
 myImage.Source = bitmapImage;
 ```
 
-### Xxxxxxx xxxxxxxxxxxxx
+### Caching optimizations
 
-Xxxxxxx xxxxxxxxxxxxx xxx xx xxxxxx xxx xxxxxx xxxx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243235-urisource) xx xxxx xxxxxxx xxxx xx xxx xxxxxxx xx xxxx xxx xxx. Xxx XXX xx xxxx xx xxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxx, xxx xxxxxxxxxx xxx XXXX xxxxxxxxx xxxx xxx xxxxxxxx xx xxxxxx xxx xxxxxxx xxxxxxxx xxxxx. Xxxxxxx, xx xxxx xxx xxx xxxxxx xxxxxxxx xx xxxxxxxx xxxxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxxxx xxxxx.
+Caching optimizations are in effect for images that use [**UriSource**](https://msdn.microsoft.com/library/windows/apps/BR243235-urisource) to load content from an app package or from the web. The URI is used to uniquely identify the underlying content, and internally the XAML framework will not download or decode the content multiple times. Instead, it will use the cached software or hardware resources to display the content multiple times.
 
-Xxx xxxxxxxxx xx xxxx xxxxxxxxxxxx xx xx xxx xxxxx xx xxxxxxxxx xxxxxxxx xxxxx xx xxxxxxxxx xxxxxxxxxxx (xxxxx xxx xx xxxxxxxxx xxxxxxxxxx xx xxxxxxx xxxxxxxxx xxxxx-xxxxx xxxxxxxx). Xxxx xxxxx xxxxx xxxx xxxxxx xxx xxxxxxxxxx xx xxx xxxxx, xxx xx XXXX xxxxxx xxxx xx xxxxx xxxx x xxxxxx XXX xxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxx xx xxxx xxxxxx x xxx xxxxxxx xx xxxx xxxx. Xx xxxx xxx, xxxxxxx, xxxxxxxx xxx xxxxxxx xxxxx xxxx xxxxx.
+The exception to this optimization is if the image is displayed multiple times at different resolutions (which can be specified explicitly or through automatic right-sized decoding). Each cache entry also stores the resolution of the image, and if XAML cannot find an image with a source URI that matches the required resolution then it will decode a new version at that size. It will not, however, download the encoded image data again.
 
-Xxxxxxxxxxxx, xxx xxxxxx xxxxxxx xxxxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243235-urisource) xxxx xxxxxxx xxxxxx xxxx xx xxx xxxxxxx, xxx xxxxx xxxxx x xxxx xxxxxx xxx [**XxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/JJ191522) xxxx xx'x xxx xxxxxxxx.
+Consequently, you should embrace using [**UriSource**](https://msdn.microsoft.com/library/windows/apps/BR243235-urisource) when loading images from an app package, and avoid using a file stream and [**SetSourceAsync**](https://msdn.microsoft.com/library/windows/apps/JJ191522) when it's not required.
 
-### Xxxxxx xx xxxxxxxxxxx xxxxxx (XxxxXxxx, xxx xxxxxxxx)
+### Images in virtualized panels (ListView, for instance)
 
-Xx xx xxxxx xx xxxxxxx xxxx xxx xxxx—xxxxxxx xxx xxx xxxxxxxxxx xxxxxxx xx, xx xxxxxxx xx’x xx x xxxxxx xxxxxxxxxxx xxxxx xxx xxx xxxxxxxxxx xxxxxxx xxxx xxxxxxxx xxx xx xxxx—xxxx XXXX xxxx xxxxxxxx xxxxxx xxxxx xx xxxxxxxxx xxx xxxxxxxx xxxxxxxxx xxx xxx xxxxx xxxxx xxxx xxx xx xxxxxx xxxxxxxx. Xxx xxxxxx xx xxx xxxxxxxx xxxxxxxxxxx, xxx xxxxxx xx xxxxxxxx xxxxxx xxx xxxxx xxxxxx xxxx xxxxxx xxxxx xxx xxxxxx xx xxx xxxxx xxxxxxx xx xxxxxx xxxxx xx xxx xxxx.
+If an image is removed from the tree—because the app explicitly removed it, or because it’s in a modern virtualized panel and was implicitly removed when scrolled out of view—then XAML will optimize memory usage by releasing the hardware resources for the image since they are no longer required. The memory is not released immediately, but rather is released during the frame update that occurs after one second of the image element no longer being in the tree.
 
-Xxxxxxxxxxxx, xxx xxxxxx xxxxxx xx xxx xxxxxx xxxxxxxxxxx xxxxxx xx xxxx xxxxx xx xxxxx xxxxxxx.
+Consequently, you should strive to use modern virtualized panels to host lists of image content.
 
-### Xxxxxxxx-xxxxxxxxxx xxxxxx
+### Software-rasterized images
 
-Xxxx xx xxxxx xx xxxx xxx x xxx-xxxxxxxxxxx xxxxx xx xxx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242756), xxx xxxxx xxxx xxx x xxxxxxxx xxxxxxxxxxxxx xxxx, xxxxx xxxx xxx xxxxx xxxxxx xx xxx. Xxxxxxxxxxxx, xx xxxx xxxxx x xxxx xx xxx xxxxx xx xxxx xxxxxxxx xxx xxxxxxxx xxxxxx. Xxx xxxxxxxx, xx xx xxxxx xx xxxx xx x xxxxx xxx xx xxxxxxx xxxx xxx xxxxxxxxxxx xxxxx xxxx xxxxx xxxx xx xxxxxx xxxxx xxxxxxxxxx. Xxxx xxxxx **XxxxXxxx** xx x xxx-xxxxxxxxxxx xxxxx, xxxx, xxxx xxx xxxxxx xxx-xxxxx xxx xxxxxx xx xxxxxxxxxxxxx xxx xxxx xxxx xxxx xx xxxxxxxx xx.
+When an image is used for a non-rectangular brush or for a [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756), the image will use a software rasterization path, which will not scale images at all. Additionally, it must store a copy of the image in both software and hardware memory. For instance, if an image is used as a brush for an ellipse then the potentially large full image will be stored twice internally. When using **NineGrid** or a non-rectangular brush, then, your app should pre-scale its images to approximately the size they will be rendered at.
 
-### Xxxxxxxxxx xxxxxx xxxxx-xxxxxxx
+### Background thread image-loading
 
-XXXX xxx xx xxxxxxxx xxxxxxxxxxxx xxxx xxxxxx xx xx xxxxxx xxx xxxxxxxx xx xx xxxxx xxxxxxxxxxxxxx xx x xxxxxxx xx xxxxxxxx xxxxxx xxxxxxx xxxxxxxxx xx xxxxxxxxxxxx xxxxxxx xx xxxxxxxx xxxxxx. Xxxx xxxxxxx xxxx xxxxxx xxxxx xxx xxxxxxxxx xxxxxxx. Xxxx xxxxxxx xxxx xx xxxxxxxx xx xxx xx xxx xxxxxxxxx xxxxxxxxxx xxx xxx.
+XAML has an internal optimization that allows it to decode the contents of an image asynchronously to a surface in hardware memory without requiring an intermediate surface in software memory. This reduces peak memory usage and rendering latency. This feature will be disabled if any of the following conditions are met.
 
--   Xxx xxxxx xx xxxx xx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242756).
--   `CacheMode="BitmapCache"` xx xxx xx xxx xxxxx xxxxxxx xx xx xxx xxxxxx xxxxxxx.
--   Xxx xxxxx xxxxx xx xxx-xxxxxxxxxxx (xxxx xx xxxx xxxxxxx xx x xxxxx xx xx xxxx).
+-   The image is used as a [**NineGrid**](https://msdn.microsoft.com/library/windows/apps/BR242756).
+-   `CacheMode="BitmapCache"` is set on the image element or on any parent element.
+-   The image brush is non-rectangular (such as when applied to a shape or to text).
 
-### XxxxxxxxXxxxxxXxxxxx
+### SoftwareBitmapSource
 
-Xxx [**XxxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn997854) xxxxx xxxxxxxxx xxxxxxxxxxxxx xxxxxxxxxxxx xxxxxx xxxxxxx xxxxxxxxx XxxXX xxxxxxxxxx xxxx xx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226176), xxxxxx XXXx, xxx XXXX. Xxxx xxxxx xxxxxxxx xx xxxxx xxxx xxxx xxxxx xxxxxxxxx xx xxxxxxxxx xxxx [**XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243259), xxx xxxx xxxxx xxxxxx xxxx xxxxxx xxx xxxxxx-xx-xxxxxx xxxxxxx.
+The [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Dn997854) class exchanges interoperable uncompressed images between different WinRT namespaces such as [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/BR226176), camera APIs, and XAML. This class obviates an extra copy that would typically be necessary with [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/BR243259), and that helps reduce peak memory and source-to-screen latency.
 
-Xxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn887358) xxxx xxxxxxxx xxxxxx xxxxxxxxxxx xxx xxxx xx xxxxxxxxxx xx xxx x xxxxxx [**XXXXXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/Ee719675) xx xxxxxxx x xxxxxxxxxx xxxxxxx xxxxx xxxx xxxxxx xxx xxx xx xx-xxx xxxxxx xx xx xxxx xxx. Xxxx xx xx xxxxxxxx X++ xxx xxxx.
+The [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Dn887358) that supplies source information can also be configured to use a custom [**IWICBitmap**](https://msdn.microsoft.com/library/windows/desktop/Ee719675) to provide a reloadable backing store that allows the app to re-map memory as it sees fit. This is an advanced C++ use case.
 
-Xxxx xxx xxxxxx xxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn887358) xxx [**XxxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn997854) xx xxxxxxxxxxxx xxxx xxxxx XxxXX XXXx xxxx xxxxxxx xxx xxxxxxx xxxxxx. Xxx xxxx xxx xxxxxx xxx **XxxxxxxxXxxxxxXxxxxx** xxxx xxxxxxx xxxxxxxxxxxx xxxxx xxxx xxxxxxx xx xxxxx [**XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243259).
+Your app should use [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/Dn887358) and [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/Dn997854) to interoperate with other WinRT APIs that produce and consume images. And your app should use **SoftwareBitmapSource** when loading uncompressed image data instead of using [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/BR243259).
 
-### Xxx XxxXxxxxxxxxXxxxx xxx xxxxxxxxxx
+### Use GetThumbnailAsync for thumbnails
 
-Xxx xxx xxxx xxx xxxxxxx xxxxxx xx xxxxxxxx xxxxxxxxxx. Xxxxxxxx xxx xxxxx xxx [**XxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243243) xxx [**XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243241) xx xxxxxxx xxxxx xxxxxxxx xx xxxxxx, XXX xxxxxxxx xxxx xxxx xxxxxxxxx XXXx xxx xxxxxxxxxx xxxxxxxxxx. [
-            **XxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227210) xxxxxxxx xxx xxxxxxxxxx xxx xxxxxx xxxx xxxx xxx xxxx xxxxxx xxxxxxx xxxxxx. Xxxx xxxxxxxx xxxx xxxxxx xxxxxxxxxxx xxxx xxx XXXX XXXx xxxxxxx xxx xxxxx xxxxx’x xxxx xx xx xxxxxx xx xxxxxxx.
+One use case for scaling images is creating thumbnails. Although you could use [**DecodePixelWidth**](https://msdn.microsoft.com/library/windows/apps/BR243243) and [**DecodePixelHeight**](https://msdn.microsoft.com/library/windows/apps/BR243241) to provide small versions of images, UWP provides even more efficient APIs for retrieving thumbnails. [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) provides the thumbnails for images that have the file system already cached. This provides even better performance than the XAML APIs because the image doesn’t need to be opened or decoded.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 FileOpenPicker picker = new FileOpenPicker();
 picker.FileTypeFilter.Add(".bmp");
@@ -294,8 +293,12 @@ Dim img As New Image()
 img.Source = bmp
 ```
 
-### Xxxxxx xxxxxx xxxx
+### Decode images once
 
-Xx xxxxxxx xxxxxx xxxx xxxxx xxxxxxx xxxx xxxx xxxx, xxxxxx xxx [**Xxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242760) xxxxxxxx xxxx xx Xxx xxxxxx xxxx xxxxx xxxxxx xxxxxxx. Xxx XXXX xxxxxxxxx xxx xxxxxxxxx xxx xxxx Xxx xx xxxxxxxx xxxxxx xxxx xxx xxxxxxx xxxxx, xxx xx xxxxxx xx xxx xxxx xxx xxxxxxxx xxxxxx xxxxxxx xxxx xxxxxxx xxx xxxx xxxx xxx xxxxxxx x xxxxxxxxx xxxxxxx xxxxx xxx xxxx xxxxxx xxxxxx.
+To prevent images from being decoded more than once, assign the [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/BR242760) property from an Uri rather than using memory streams. The XAML framework can associate the same Uri in multiple places with one decoded image, but it cannot do the same for multiple memory streams that contain the same data and creates a different decoded image for each memory stream.
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

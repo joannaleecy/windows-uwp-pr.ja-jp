@@ -1,68 +1,67 @@
 ---
-Xxxxxxxxxxx: Xxxxxxxxx xxx xxxx xxxxxxxxx xx xxxxxxx xxxxxx xxxxxxxxxxx xxxxxx xxxxxxx xx xx xxxxxxxxx.
-xxxxx: Xxxxxxxxxxxx xx xxxxxxxxx
-xx.xxxxxxx: YYYYXXYX-XYYY-YYYY-YYXY-YYYXXYYYYXYX
+Description: Following are some solutions to several common development issues related to ad mediation.
+title: Troubleshoot ad mediation
+ms.assetid: 8728DE4F-E050-4217-93D3-588DD3280A3A
 ---
 
-# Xxxxxxxxxxxx xx xxxxxxxxx
+# Troubleshoot ad mediation
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxxxxx xxx xxxx xxxxxxxxx xx xxxxxxx xxxxxx xxxxxxxxxxx xxxxxx xxxxxxx xx xx xxxxxxxxx.
+Following are some solutions to several common development issues related to ad mediation.
 
-**Xxx xxx'x xxx xx XxXxxxxxxxXxxxxxx xx xxx xxxxxx xxxxxxx**  
-Xxxx xxx xxxx xxx **XxXxxxxxxxXxxxxxx** xxxxxxx xx xxx xxxxxxxx xxx xxx xxxxx xxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX), Xxxxxxx Y.Y, xx Xxxxxxx Xxxxx Y.Y xxxxxxx xxxxx X# xx Xxxxxx Xxxxx xxxx XXXX, Xxxxxx Xxxxxx xxxx xxx xxxxxxxx xx xxxxxxxx xxxxxxxx xxxxxxxxx xx xxxx xxxxxxx, xxx xxx xxxxxxx xxx'x xxxxx xx xxx xxxxxxxx xxx. Xx xxx xxx xxxxxxx, xxxxx XX xx xxx xxxxxxx xxxxxxxxx xx Xxxxxx Xxxxxx, xxxx xxxxxxx xxxxxxx xxx xxx xxxxxxxx xx xxxxxxx, xxx xxxx xxxx xxx xxxxxxx xxxx xx xxx xxxxxxxx xxxxx.
+**You can't add an AdMediatorControl to the design surface**  
+When you drag the **AdMediatorControl** control to the designer for the first time in a Universal Windows Platform (UWP), Windows 8.1, or Windows Phone 8.1 project using C# or Visual Basic with XAML, Visual Studio adds the required ad mediator assembly reference to your project, but the control isn't added to the designer yet. To add the control, click OK in the message displayed by Visual Studio, wait several seconds for the designer to refresh, and then drag the control back to the designer again.
 
-Xx xxx xxxxx xxx'x xxxxxxxxxxxx xxx xxx xxxxxxx xx xxx xxxxxxxx, xxxx xxxx xxxx xxxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxxxxx xxxxxxxxxxxx xxx xxxx xxx (xxx xxxxxxx, **xYY**) xxxxxx xxxx **Xxx XXX**. Xxx xxxxxxx xxxxxx xx xxxxx xx xxx xxxxxxxx xx xxx xxxxxxx xxxxxxx **Xxx XXX** xxx xxx xxxxx xxxxxxxx.
+If you still can't successfully add the control to the designer, make sure your project targets the applicable processor architecture for your app (for example, **x86**) rather than **Any CPU**. The control cannot be added to the designer if the project targets **Any CPU** for the build platform.
 
-*
-            *Xxx XxXxxxxxxxXxxxxxx xxxxx xxx xxxxx “&xx;*xxxxx*&xx; x &xx;*xxxxxx*&xx; Xxx xxxxxxxxx” xx xxx xxxx xxxx xxxxxxx xxx xxxx Xxxxxxxxx Xxxxxxxxxxx**  
-Xxxxxxxxx Xxxxxxxxxxx xxxx xxxxxxxx [xxxxxxx xx xxxxx xxxxxxxxxxx xx xxx Xxxxxxxxxxx Xxxxxxxxxxx Xxxxxx (XXX)](add-and-use-the-ad-mediator-control.md#supported-ad-sizes-for-microsoft-advertising). Xx xxxx xxxxx, xxxx xx xxx xxx xxx xxxxxx xxx xxxxx xx xxx xx xxxxxxxx xxxxxxx xx xxx xxxxxxxx xx xx xxxx XXXX xx xxx xx xxxxx xxxxxxxxx xx xxxxx, xxxxxxx xxx xxxxxxxx xxxxxx xxxxx xxxxx xxxxxxx xxx xx xxxxxxxxx xxxxxxxxx xxxx xxxxxxx xx xx. Xx xxxxx xxxx xxxxx, xxxxxx xxx **Xxxxx** xxx **Xxxxxx** xxxxxxxx xxxxxxxxxx xxx Xxxxxxxxx Xxxxxxxxxxx xx xxxx xxxx xx xxx xx xxx xxxxxxxxx xx xxxxx.
+**The AdMediatorControl shows the error “&lt;*width*&gt; x &lt;*height*&gt; Not supported” at run time when serving ads from Microsoft**  
+Microsoft advertising only supports [certain ad sizes recommended by the Interactive Advertising Bureau (IAB)](add-and-use-the-ad-mediator-control.md#supported-ad-sizes-for-microsoft-advertising). In some cases, even if you set the height and width of the ad mediator control in the designer or in your XAML to one of these supported ad sizes, scaling and rounding issues might cause prevent the ad mediation framework from serving an ad. To avoid this issue, assign the **Width** and **Height** optional parameters for Microsoft advertising in your code to one of the supported ad sizes.
 
-Xxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxxxxx xxx xx xxxxxx xxx **Xxxxx** xxx **Xxxxxx** xxxxxxxx xxxxxxxxxx xxx Xxxxxxxxx Xxxxxxxxxxx xx YYY x YY.
+The following code example demonstrates how to assign the **Width** and **Height** optional parameters for Microsoft advertising to 728 x 90.
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["Width"] = 728;
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["Height"] = 90;
 ```
 
-**Xx xxxxxxxxx xxxx xxx xxxxxxx xxxxxxxx (xxxxxxxx/xxxxxxxxx) xxx xxx xx xxxxxxx**  
-Xx xxx xxxxxx xxx xxxxxxxx xxxxxxxxxx xx xxxx xxx, xxx xx xxxxxxxx xxxxxxx xxxx xxxxxxxxxxxxx xxxxx xxx xxxxxxxx/xxxxxxxxx xxxxxxxxxxx xxx xxxxxxx xxxx xx xx xxxxxxxx xxxx xxxxxxx xxxx.
+**Ad mediation does not include location (latitude/longitude) for the ad network**  
+If you enable the location capability in your app, the ad mediator control will automatically fetch the latitude/longitude coordinates and provide them to ad networks that support them.
 
-**Xxx Xxxxxx xx xxxxxxx xxxxx’x xxxx xx xxxxxxxxx**  
-Xxx xxxxx xxx xxxxxxxx xxxxxxxxxx xx xxx xxxxxx xx xxx XXX xxxxxxxx:
+**The Smaato ad control doesn’t line up correctly**  
+Try using the optional parameters to set values on the SDK controls:
 
 ```
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato][“Margin”] = new Thickness(0, -20, 0, 0);
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato][“Width”] = 50d;
-myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato][“Height”] = 320d; 
+myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato][“Height”] = 320d;
 ```
 
-**Xxx XxXxxxxx xx xxxxxxx xxxx xxx xxxx xxxx xxx xxxxxxx xxxx (xx xxxxx xx YYY×YYY)**  
-Xx xxxxxxxxx xxxx xxx xxx xxx xxxxx xxx xxx xxxx, xx xxx xxxxxx xxxxxx xx xxxxx xxx xxxxxxxx xxxxxxxxx Xxxx. Xxx xxxxxxx:
+**The AdDuplex ad control does not show with the correct size (it shows as 250×250)**  
+Ad mediation does not set any value for the size, so you should change it using the optional parameter Size. For example:
 
 ```
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.AdDuplex][“Size”] = “160×600″;
 ```
 
-**Xxx xxxxxxx xxx xxxxx “Xxxxxxxxx xx xxxxxxxx xxx xx xxxxxxx”**  
-Xx Xxxxxx xxxx xxxxxx xxxx xx xxxxx xx xxx xx xx xxxxxxxx xx xxx xxx xxxxxx xxxx xxx. [Xxxx xxxxx xxxxxxxx](http://blog.adduplex.com/2014/01/solving-something-is-covering-ad.mdl) xx xxxx xxxxx.
+**You receive the error “Something is covering the ad control”**  
+Ad Duplex will always show an error if the ad is obscured in any way within your app. [Read their solution](http://blog.adduplex.com/2014/01/solving-something-is-covering-ad.mdl) to this error.
 
-**Xxx xxxxxxx xxx xxxxx "Xxxxx xxx x xxxxxxxx xxxxxxx xxx xxxxx"**  
-Xxx xxxx xxxxxxxxxx xxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxxxx xxxxxxxxx xx xxxx xxx. Xx xxxxxxxxx xx xxxxxxxx xx xxxx xxxxxxxxxxx xx xxxx xxx, xxx xx xxxx xxx xxxx xx xxxxx xxxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxxxx xxx xxxx. Xxxxxx xxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxxxx xxxxxxxx xxx xxxxxxxxx xxx Xxxxxxxxx Xxxxxxxxx Xx Xxxxxx XXX xx xxxxx xxx xxxxx.
+**You receive the error "There was a conflict between two files"**  
+You have referenced the Microsoft advertising assemblies elsewhere in your app. Ad mediation is designed to work exclusively in your app, and it will not work if other references to the Microsoft advertising assemblies are used. Remove the Microsoft advertising references manually and reinstall the Microsoft Store Engagement and Monetization SDK to clear the error.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxx xxx xxxxxx xxxx xx xxxxxxxx](select-and-manage-your-ad-networks.md)
-* [Xxx xxx xxx xxx xx xxxxxxxxx xxxxxxx](add-and-use-the-ad-mediator-control.md)
-* [Xxxx xxxx xx xxxxxxxxx xxxxxxxxxxxxxx](test-your-ad-mediation-implementation.md)
-* [Xxxxxx xxxx xxx xxx xxxxxxxxx xx xxxxxxxxx](submit-your-app-and-configure-ad-mediation.md)
+* [Select and manage your ad networks](select-and-manage-your-ad-networks.md)
+* [Add and use the ad mediation control](add-and-use-the-ad-mediator-control.md)
+* [Test your ad mediation implementation](test-your-ad-mediation-implementation.md)
+* [Submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md)
  
 
  
 
 
+<!--HONumber=Mar16_HO5-->
 
 
-<!--HONumber=Mar16_HO1-->

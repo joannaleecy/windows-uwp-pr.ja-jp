@@ -1,36 +1,36 @@
 ---
-xxxxx: Xxxxx xx xxxxxxxxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xxx xx xxxxxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
-xx.xxxxxxx: YXXYXYXX-XXYX-YYXX-XXYY-YXYXXYYYXYYX
+title: 証明書の概要
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリでの証明書の使用について説明します。
+ms.assetid: 4EA2A9DF-BA6B-45FC-AC46-2C8FC085F90D
 ---
 
-# Xxxxx xx xxxxxxxxxxxx
+# 証明書の概要
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-Xxxx xxxxxxx xxxxxxxxx xxx xxx xx xxxxxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xxxxxxx xxxxxxxxxxxx xxx xxxx xx xxxxxx xxx xxxxxxxxxxxx xx xxxx x xxxxxx xxx xx x xxxxxx, xxxxxxxx, xx xxxxxxxxxxxx. Xxx xxxxx xxxxxxxxxx xxx xxxx xxxxx xxxx xx xxxxxxxxxxxx xxx xxxxxx xx xxxxxxx. Xxx xxxxxxx, xxxxxxxxxxxx xxx xxxxx xxxx xx xxxxxxxxxxxx x xxx xxxxxx xx x xxxx xxx x xxxx xx x xxx xxxxxx. Xxx xxx xxxxxx xxxxxxxxxxx xxxxxxxx xxx xxxxxxx xx xxxxxx xxxxxx xxxxxxxxxxxx. Xxx xxx xxxx xxxxxx x xxxxxxxxxxx xx x xxxxxxxxxxx xxxxxxxxx.
+この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリでの証明書の使用について説明します。 デジタル証明書は、公開キーを個人、コンピューター、組織にバインドするために、公開キーの暗号化で使われます。 バインドされた識別情報は、あるエンティティを別のエンティティに対して認証する際に最も頻繁に使われます。 たとえば、証明書は、Web サーバーをユーザーに対して、また、ユーザーを Web サーバーに対して認証するためによく使われます。 証明書要求を作成し、発行された証明書をインストールまたはインポートすることができます。 また、証明書階層で証明書を登録することもできます。
 
-### Xxxxxx xxxxxxxxxxx xxxxxx
+### 共有証明書ストア
 
-XXX xxxx xxx xxx xxx xxxxxxxxxxxx xxxxxxxxxxx xxxxx xxxxxxxxxx xx Xxxxxxx Y. Xx xxxx xxxxx, xxxx xxx xx xxx-xxxxx xxxxxxxxx xxxxxx xxxxxxxxx, xxxxxx xx xxx xxxxxxxxx, xxxx xxxxxxxxx xxx xxx xxxx xxxxxxxxx xxxxxxxxx xx xxxxx xxxxxxx xx xxxxxx xxxxxx xxxxxxxxxx xxxxxxxxx xx xx xx. Xxx xxxxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxxxxxxx xxxx xxx xx xxxxxx xxx xxxxxxxxxxxxxx (XXX).
+UWP アプリは、Windows 8 で導入された新しい分離アプリケーション モデルを使います。 この分離モデルでは、アプリ コンテナーと呼ばれる低レベルのオペレーティング システム構造内で実行し、明示的に許可されない限り、アプリの外にあるリソースやファイルにアクセスすることは禁止されます。 次のセクションでは、これが公開キー基盤 (PKI) に与える影響について説明します。
 
-### Xxxxxxxxxxx xxxxxxx xxx xxx xxxxxxxxx
+### アプリ コンテナーごとの証明書ストレージ
 
-Xxxxxxxxxxxx xxxx xxx xxxxxxxx xxx xxx xx x xxxxxxxx xxx xxxxxxxxx xxx xxxxxx xx xxx xxxx, xxx xxx xxxxxxxxx xxxxxxxxx. Xx xxx xxxxxxx xx xx xxx xxxxxxxxx xxx xxxxx xxxxxx xx xxxx xxx xxx xxxxxxxxxxx xxxxxxx. Xx xxx xxxxxxxxxxx xxxx xxxxxxxxxxxx xx xxx xx xxx xxxxxx, xxxxx xxxxxxxxxxxx xxxxxx xx xxxx xx xxxxx xxxx. Xx xx xxx xx xxxxxxxxxxx, xxx xxxxxxxxxxxx xxxxxxxx xx xx xxx xxxx xxxxxxx. Xx xxx xxxx xxx xxxx xxxxxx xx xxxxx xxxxxxx xxxxxxxxxxx xxxxxx xxxxx xxxx xxx XX xxx XXXXXXX xxxxx.
+特定のアプリ コンテナー内での使用を目的とした証明書は、ユーザーごと、アプリ コンテナーの場所ごとに格納されます。 アプリ コンテナー内で実行されるアプリは、そのアプリが持つ証明書ストレージにだけ書き込みアクセスが許可されます。 アプリが自分のストアのどこかに証明書を追加した場合には、その証明書は他のアプリから読み取られることはありません。 アプリがアンインストールされると、そのアプリに固有の証明書もすべて削除されます。 アプリは、MY ストアや REQUEST ストア以外にローカル コンピューターの証明書ストアにも読み取りアクセスが許可されます。
 
-### Xxxxx
+### キャッシュ
 
-Xxxx xxx xxxxxxxxx xxx xx xxxxxxxx xxxxx xx xxxxx xx xxx xxxxx xxxxxx xxxxxxxxxxxx xxxxxx xxx xxxxxxxxxx, xxxxxxxxxxx xxxxxxxxxx xxxxx (XXX), xxx xxxxxx xxxxxxxxxxx xxxxxx xxxxxxxx (XXXX) xxxxxxxxx.
+各アプリ コンテナーは分離されたキャッシュを持ち、その中に検証に必要な発行者証明書、証明書失効リスト (CRL)、オンライン証明書ステータス プロトコル (OCSP) の応答を格納できます。
 
-### Xxxxxx xxxxxxxxxxxx xxx xxxx
+### 共有証明書とキー
 
-Xxxx x xxxxx xxxx xx xxxxxxxx xxxx x xxxxxx, xxx xxxxxxxxxxxx xxx xxxx xxxxxxxxx xx xxx xxxx xxx xxxxxxxxxx xx xxx xxxx XX xxxxx xxxxx xxxx xxx xx xxxxxx xx xxx xxxx-xxxxx xxxxxxxxxxx xxx xxxx xx xxxxxxx. Xx xxxxxxx, xxxxxxx, xxx xxxxxxxxxx xx xxx xxxx xxxxxx xx xxx xxx xxxx XX xxxxx.
+スマート カードがリーダーに入れられると、カードに含まれている証明書とキーが MY ストアに伝えられ、ユーザーが実行している完全信頼アプリで共有されます。 しかし、既定ではアプリ コンテナーはユーザーごとの MY ストアにはアクセスできません。
 
-Xx xxxxxxx xxxx xxxxx xxx xxxxxx xxxxxx xx xxxxxxxxxx xx xxxxxx xxxxxx xx xxxxxxxxx, xxx xxx xxxxxxxxx xxxxxxxxx xxxxx xxxxxxxx xxx xxxxxxxxxxxx xxxxxxx. X xxxxxxxxxx xxxxxx xx xxx xxxxxxxxx xxxxxxx xx xxxxxx x xxxxxxxx xxxxxxxx. Xxx xxxxxxXxxxXxxxxxxxxxxx xxxxxxxxxx xxxxxx xx xxx xxxxxxxxx xxxx xxxxxx xx xxx xxxxxxxxxxxx xxx xxxx xxxxxxxxx xx xxx xxxx XX xxxxx xxx xxx Xxxxx Xxxx Xxxxxxx Xxxxx xxxxx. Xxx xxxxxxxxxx xxxx xxx xxxxx xxxx xxxxxx xx xxx xxxx XXXXXXX xxxxx.
+この問題に対応し、プリンシパル グループがリソース グループにアクセスできるように、アプリ コンテナー分離モデルは使う機能の概念をサポートしています。 使う機能を指定すると、アプリ コンテナーのプロセスによる特定のリソースへのアクセスが許可されます。 sharedUserCertificates 機能は、MY ストアとスマート カードの信頼されたルート ストア内にある証明書とキーへの読み取りアクセス許可を、アプリ コンテナーに与えます。 この機能によってユーザーの REQUEST ストアへの読み取りアクセス許可が与えられることはありません。
 
-Xxx xxxxxxx xxx xxxxxxXxxxXxxxxxxxxxxx xxxxxxxxxx xx xxx xxxxxxxx xx xxxxx xx xxx xxxxxxxxx xxxxxxx.
+次の例に示すようにマニフェスト内で sharedUserCertificates 機能を指定します。
 
 ```xml
 <Capabilities>
@@ -38,67 +38,71 @@ Xxx xxxxxxx xxx xxxxxxXxxxXxxxxxxxxxxx xxxxxxxxxx xx xxx xxxxxxxx xx xxxxx xx xx
 </Capabilities>
 ```
 
-## Xxxxxxxxxxx xxxxxx
+## 証明書フィールド
 
 
-Xxx X.YYY xxxxxx xxx xxxxxxxxxxx xxxxxxxx xxx xxxx xxxxxxx xxxx xxxx. Xxxx xxxxxxxxxx xxxxxxx xx xxx xxxx xxxxxxxxx xxx xxxxxxxx xxx xxxxxx xxxx xxxxxxx xx xxx xxxxxxxx xxxxxxxx xxx xxxxx xxxx, xx xxxxx xx xxx xxxxxxxxx xxxxxxxxxxxx.
+X.509 公開キー証明書標準は、長い間に改定されてきました。 データ構造の継続的な各バージョンでは、次の図に示すように、以前のバージョンで存在していたフィールドを維持し、さらにフィールドを追加してきました。
 
-![x.YYY xxxxxxxxxxx xxxxxxxx Y, Y, xxx Y](images/x509certificateversions.png)
+![x.509 証明書バージョン 1、2、3](images/x509certificateversions.png)
 
-Xxxx xx xxxxx xxxxxx xxx xxxxxxxxxx xxx xx xxxxxxxxx xxxxxxxx xxxx xxx xxx xxx [**XxxxxxxxxxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br212079) xxxxx xx xxxxxx x xxxxxxxxxxx xxxxxxx. Xxxx xxxxxx. Xxxxx xxxxxx xxx xx xxxxxx xx xxx xxxxxxx xxxxxxxxx xx xxxx xxx xx xxxx xxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxx xxxxxx, xxx xxx xxxxxxxxx xxxxxxxx:
+これらのフィールドと拡張機能の一部は、[**CertificateRequestProperties**](https://msdn.microsoft.com/library/windows/apps/br212079) クラスを使って証明書要求を作成するときに直接指定できます。 ほとんどはできません。 それらのフィールドは、発行元の機関によって入力される場合や、空欄のままにしておける場合があります。 フィールドについて詳しくは、次のセクションをご覧ください。
 
-### Xxxxxxx Y xxxxxx
+### バージョン 1 のフィールド
 
-| Xxxxx               | Xxxxxxxxxxx                                                                                                                                                                                                                                                                 |
+| フィールド               | 説明                                                                                                                                                                                                                                                                 |
 |---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxx             | Xxxxxxxxx xxx xxxxxxx xxxxxx xx xxx xxxxxxx xxxxxxxxxxx. Xxxxxxxxx, xxx xxxxxxxx xxxxxx xx xxxx xxxxx xxx Y, Y, xx Y.                                                                                                                                                       |
-| Xxxxxx Xxxxxx       | Xxxxxxxx x xxxxxxxx, xxxxxx xxxxxxx xxxxxxxx xx xxx xxxxxxxxxxxxx xxxxxxxxx (XX) xx xxx xxxxxxxxxxx.                                                                                                                                                                        |
-| Xxxxxxxxx Xxxxxxxxx | Xxxxxxxx xx xxxxxx xxxxxxxxxx (XXX) xxxx xxxxxxxxx xxx xxxxxxxxx xxxx xx xxx XX xx xxxx xxx xxxxxxxxxxx. Xxx xxxxxxx, Y.Y.YYY.YYYYYY.Y.Y.Y xxxxxxxxx x XXX-Y xxxxxxx xxxxxxxxx xxxxxxxx xxxx xxx XXX xxxxxxxxxx xxxxxxxxx xxxx XXX Xxxxxxxxxxxx.                            |
-| Xxxxxx              | Xxxxxxxx xxx X.YYY xxxxxxxxxxxxx xxxx (XX) xx xxx XX xxxx xxxxxxx xxx xxxxxx xxx xxxxxxxxxxx.                                                                                                                                                                               |
-| Xxxxxxxx            | Xxxxxxxxx xxx xxxx xxxxxxxx xxxxxx xxxxx xxx xxxxxxxxxxx xx xxxxx. Xxxxx xxxxxxx xxx xxx xx YYYY xxx xxx Xxxxxxxxxxx Xxxxxxxxx Xxxx (Xxxxxxxxx Xxxx Xxxx) xxxxxx (xxxxxxxxxxxxx). Xxxxx xxxxxxxxx xxxx Xxxxxxx Yxx, YYYY xxx xxx xxxxxxxxxxx xxxx xxxxxx (xxxxxxxxxxxxxxx). |
-| Xxxxxxx             | Xxxxxxxx xx X.YYY xxxxxxxxxxxxx xxxx xx xxx xxxxxx xxxxxxxxxx xxxx xxx xxxxxx xxx xxxxxxxxx xx xxx xxxxxxxxxxx.                                                                                                                                                             |
-| Xxxxxx Xxx          | Xxxxxxxx xxx xxxxxx xxx xxx xxxxxxxxxx xxxxxxxxx xxxxxxxxxxx.                                                                                                                                                                                                               |
+| バージョン             | エンコードされた証明書のバージョン番号を指定します。 現在、このフィールドに指定可能な値は、0、1、または 2 です。                                                                                                                                                       |
+| シリアル番号       | 証明機関 (CA) によって証明書に割り当てられる、正の一意な整数を格納します。                                                                                                                                                                        |
+| 署名アルゴリズム | 証明書への署名に CA が使うアルゴリズムを指定するオブジェクト識別子 (OID) を格納します。 たとえば、1.2.840.113549.1.1.5 は、SHA-1 ハッシュ アルゴリズムと、RSA Laboratories による RSA 暗号化アルゴリズムの組み合わせを示します。                            |
+| 発行者              | 証明書を作成し署名した CA の X.500 識別名 (DN) を格納します。                                                                                                                                                                               |
+| 有効期間            | 証明書が有効である時間間隔を指定します。 2049 年末までの日付には、協定世界時 (グリニッジ標準時) 形式 (yymmddhhmmssz) を使います。 2050 年 1 月 1 日以降の日付には、一般化された時刻形式 (yyyymmddhhmmssz) を使います。 |
+| サブジェクト             | 証明書に含まれる公開キーに関連付けられているエンティティの X.500 識別名を格納します。                                                                                                                                                             |
+| 公開キー          | 公開キーと関連するアルゴリズム情報を格納します。                                                                                                                                                                                                               |
 
  
 
-### Xxxxxxx Y xxxxxx
+### バージョン 2 のフィールド
 
-Xx X.YYY xxxxxxx Y xxxxxxxxxxx xxxxxxxx xxx xxxxx xxxxxx xxxxxxx xx xxxxxxx Y xxx xxxx xxx xxxxxxxxx xxxxxx.
+X.509 バージョン 2 の証明書には、バージョン 1 で定義された基本フィールドが含まれており、さらに次のフィールドが追加されています。
 
-| Xxxxx                     | Xxxxxxxxxxx                                                                                                                                         |
+| フィールド                     | 説明                                                                                                                                         |
 |---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxx Xxxxxx Xxxxxxxxxx  | Xxxxxxxx x xxxxxx xxxxx xxxx xxx xx xxxx xx xxxx xxx X.YYY xxxx xx xxx XX xxxxxxxxxxx xxxx xxxxxx xx xxxxxxxxx xxxxxxxx xxxx xxxx.                  |
-| Xxxxxxx Xxxxxx Xxxxxxxxxx | Xxxxxxxx x xxxxxx xxxxx xxxx xxx xx xxxx xx xxxx xxx X.YYY xxxx xx xxx xxxxxxxxxxx xxxxxxx xxxxxxxxxxx xxxx xxxxxx xx xxxxxxxxx xxxxxxxx xxxx xxxx. |
+| 発行者の一意な ID  | 時間を経て別のエンティティによって再利用されたときに、CA の X.500 名を明白にするために使うことができる一意な値を格納します。                  |
+| サブジェクトの一意な ID | 時間を経て別のエンティティによって再利用されたときに、証明書のサブジェクトの X.500 名を明白にするために使うことができる一意な値を格納します。 |
  
 
-### Xxxxxxx Y xxxxxxxxxx
+### バージョン 3 の拡張機能
 
-Xx X.YYY xxxxxxx Y xxxxxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxx xx xxxxxxx Y xxx xxxxxxx Y xxx xxxx xxxxxxxxxxx xxxxxxxxxx.
+X.509 バージョン 3 の証明書には、バージョン 1 とバージョン 2 で定義されたフィールドが含まれており、さらに証明書の拡張機能が追加されています。
 
-| Xxxxx                        | Xxxxxxxxxxx                                                                                                                                                                                              |
+| フィールド                        | 説明                                                                                                                                                                                              |
 |------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxxxx Xxx Xxxxxxxxxx     | Xxxxxxxxxx xxx xxxxxxxxxxxxx xxxxxxxxx (XX) xxxxxx xxx xxxx xxxxxxxxxxx xx xxx XX xxxxxxx xxx xxxx xx xxxx xxx xxxxxxxxxxx.                                                                              |
-| Xxxxx Xxxxxxxxxxx            | Xxxxxxxxx xxxxxxx xxx xxxxxx xxx xx xxxx xx x XX xxx, xx xx, xxx xxxxxx xx xxxxxxxxxxx XXx xxxx xxx xxxxx xxxxxxx xx xx xxx xxxxxxxxxxx xxxxx.                                                           |
-| Xxxxxxxxxxx Xxxxxxxx         | Xxxxxxxxx xxx xxxxxxxx xxxxx xxxxx xxx xxxxxxxxxxx xxx xxxx xxxxxx xxx xxx xxxxxxxx xxx xxxxx xx xxx xx xxxx.                                                                                            |
-| XXX Xxxxxxxxxxxx Xxxxxx      | Xxxxxxxx xxx XXX xx xxx xxxx xxxxxxxxxxx xxxxxxxxxx xxxx (XXX).                                                                                                                                          |
-| Xxxxxxxx Xxx Xxxxx           | Xxxxxxxxx xxx xxxxxx xx xxxxx xxx xxxxxx xxx xxxxxxxxx xx xxx xxxxxxxxxxx xxx xx xxxx.                                                                                                                   |
-| Xxxxxx Xxxxxxxxxxx Xxxx      | Xxxxxxxxx xxx xx xxxx xxxxxxxxxxx xxxx xxxxx xxx xxx xxxxxx xx xxx xxxxxxxxxxx xxxxxxx.                                                                                                                  |
-| Xxx Xxxxx                    | Xxxxxxxxx xxxxxxxxxxxx xx xxx xxxxxxxxxx xxxx xxx xx xxxxxxxxx xx xxx xxxxxx xxx xxxxxxxxx xx xxx xxxxxxxxxxx.                                                                                           |
-| Xxxx Xxxxxxxxxxx             | Xxxxxxxxx xxx xxxxxxxxx xxxxxx xxxxx xxx xxxxxxx xxxxx xx x xxxxxxxxxxx xxxxxxxxx xxxx xx xxxxxxx. Xxx xxxxxxxxx xx xxxx xxxx xx x XX xxxxxxxxxxx.                                                       |
-| Xxxxxx Xxxxxxxxxxx           | Xxxxxxxxxx xxxx xxxxxxxxxx xx xxxxxxxxxxx xxxxxx xxxxxxx xx xx xxxxxxxxx xxxx xxxx xxxxxxxxxxx xx xxx xxxxxxxxx xxxxxxx xx xxxxxxxxxx xxxxxx xxxxxxxxxx. Xxx xxxxxxxxx xx xxxx xxxx xx x XX xxxxxxxxxxx. |
-| Xxxxxx Xxxxxxxx              | Xxxxxxxxx xxx xxxxxxxx xx x xxxxxxxxxxx XX xxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxxxxx XX.                                                                                                                |
-| Xxxxxxx Xxx Xxxxx Xxxxxx     | Xxxxxxxxx x xxxxxxxxx xxxxxxxx xxxxxx xxx xxx xxxxxxx xxx xxxx xxx xxx xxxxxxxxxxx xxxx xxxxx xxx xxxxxxx xxx xx xxxxxxxxxx.                                                                             |
-| Xxxxxxx Xxxxxxxxxxx Xxxx     | Xxxxxxxxx xxx xx xxxx xxxxxxxxxxx xxxx xxxxx xxx xxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxx. Xxxxxxx xxxxxxxxxxx xxxxx xxxxxxx xxxxx xxxxxxxxx, XXX xxxxx, XX xxxxxxxxx, xxx XXXx.                           |
-| Xxxxxxx Xxxxxxxxx Xxxxxxxxxx | Xxxxxxx xxxxxxxxxxxxxx xxxxxxxxxx xxxx xx xxx xxxxxxxxxxx xx xxx xxxxxxxxxxx xxxxxxx. Xxx xxxxxxxxx xxxxx xx x xxxxxxxx xx XXX-xxxxx xxxxx.                                                              |
-| Xxxxxxx Xxx Xxxxxxxxxx       | Xxxxxxxxxxxxxx xxxxxxx xxxxxxxx xxxxxx xxxx xxxx xx xxx xxxxxxxxxxx xxxxxxx. Xxx xxxxxxxxx xxxxx xx xxxxxxxxx x XXX-Y xxxx xx xxx xxx.                                                                   |
+| 機関キー識別子     | 証明書への署名に使われる証明機関 (CA) 秘密キーに対応する CA 公開キーを識別します。                                                                              |
+| 基本制限            | エンティティを CA として利用できるかどうか、またできる場合は、証明書チェーンにおいてその下位に存在できる下位 CA の数を指定します。                                                           |
+| 証明書ポリシー         | 証明書が発行されたポリシーと、許可されている使用目的を指定します。                                                                                            |
+| CRL 配布ポイント      | 基本の証明書失効リスト (CRL) の URI を格納します。                                                                                                                                          |
+| 拡張キー使用法           | 証明書に含まれる公開キーを使うことができる方法を指定します。                                                                                                                   |
+| 発行者の別名      | 証明書要求の発行者に対する 1 つ以上の別名形式を指定します。                                                                                                                  |
+| キー使用法                    | 証明書に含まれる公開キーによって実行可能な操作に関する制限を指定します。                                                                                           |
+| 名前の制限             | 証明書階層内のすべてのサブジェクト名が存在している必要がある名前空間を指定します。 この拡張機能は CA 証明書でのみ使われます。                                                       |
+| ポリシーの制限           | ポリシー マッピングを禁止するか、階層内の各証明書に許容可能なポリシー識別子を含めることを要求することによって、パス検証を制限します。 この拡張機能は CA 証明書でのみ使われます。 |
+| ポリシー マッピング              | 発行元の CA のポリシーに対応する、下位 CA のポリシーを指定します。                                                                                                                |
+| 秘密キーの使用期間     | 秘密キーが関連付けられている証明書の有効期間と異なる場合に、秘密キーに別の有効期間を指定します。                                                                             |
+| サブジェクト代替名     | 証明書要求のサブジェクトに対する 1 つ以上の別名形式を指定します。 別名形式の例として、メール アドレス、DNS 名、IP アドレス、URI などがあります。                           |
+| Subject Directory Attributes (サブジェクト ディレクトリ属性) | 証明書サブジェクトの国籍など、識別属性を指定します。 この拡張機能の値は、OID と値のペアが連続する形になります。                                                              |
+| サブジェクト キー識別子       | 証明書サブジェクトが保持する複数の公開キーを区別します。 この拡張機能の値は、通常は、キーの SHA-1 ハッシュです。                                                                   |
 
  
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

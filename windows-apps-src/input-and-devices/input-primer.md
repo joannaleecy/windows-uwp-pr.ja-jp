@@ -1,384 +1,323 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxxxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx x xxxxxxxxxxx xx xxxxx xxx xxxxxx xxxxxxx (xxxx xx xxxxx, xxxxxxxx, xxx, xxxxx, xxxxxxxx, xxxxxx, Xxxxxxx, xxxxxxxxxx, xxxxxxx, xxxx, xxx xx xx), xxxxx xxxx xxxxxxx xxxxx xx xxxxxxxxx xxxx xxxxxx xxxxxxxx xxxxxxxxxxx (xxxxxxxxx xxxxx xxxxx xxx xxxxxxx, xxx xxxxxx xxx xxxxxx xxxxxxx, xxxxx xxxxxxxx, xxx xxxxxxxxxx xxx xxxxxxxx).
-xxxxx: Xxxxxxxxxxx xxxxxx
-xx.xxxxxxx: YYYYYXYY-XXYY-YYYX-XXXX-YYYXXYXXXYXY
-xxxxx: Xxxxxxxxxxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: ユニバーサル Windows プラットフォーム (UWP) のユーザー操作は、入力/出力ソース (マウス、キーボード、ペン、タッチ、タッチパッド、音声、Cortana、コントローラー、ジェスチャ、視線など) の組み合わせと、拡張エクスペリエンスを可能にするさまざまなモード (修飾子) (マウス ホイールとボタン、ペンの消しゴムとバレル ボタン、タッチ キーボード、バックグラウンド アプリ サービスなど) で構成されます。
+title: 操作の基本情報
+ms.assetid: 73008F80-FE62-457D-BAEC-412ED6BAB0C8
+label: 操作の基本情報
+template: detail.hbs
 ---
 
-# Xxxxxxxxxxx xxxxxx
+# 操作の基本情報
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-![xxxxxxx xxxxx xxxxx](images/input-interactions/icons-inputdevices03.png)
+![Windows の入力の種類](images/input-interactions/icons-inputdevices03.png)
 
-Xxxx xxxxxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx x xxxxxxxxxxx xx xxxxx xxx xxxxxx xxxxxxx (xxxx xx xxxxx, xxxxxxxx, xxx, xxxxx, xxxxxxxx, xxxxxx, **Xxxxxxx**, xxxxxxxxxx, xxxxxxx, xxxx, xxx xx xx), xxxxx xxxx xxxxxxx xxxxx xx xxxxxxxxx xxxx xxxxxx xxxxxxxx xxxxxxxxxxx (xxxxxxxxx xxxxx xxxxx xxx xxxxxxx, xxx xxxxxx xxx xxxxxx xxxxxxx, xxxxx xxxxxxxx, xxx xxxxxxxxxx xxx xxxxxxxx).
+ユニバーサル Windows プラットフォーム (UWP) のユーザー操作は、入力/出力ソース (マウス、キーボード、ペン、タッチ、タッチパッド、音声、**Cortana**、コントローラー、ジェスチャ、視線など) の組み合わせと、拡張エクスペリエンスを可能にするさまざまなモード (修飾子) (マウス ホイールとボタン、ペンの消しゴムとバレル ボタン、タッチ キーボード、バックグラウンド アプリ サービスなど) で構成されます。
 
-Xxx XXX xxxx x "xxxxx" xxxxxxxxxx xxxxxxxxxxx xxxxxx xxxx, xx xxxx xxxxx, xxxxxxxxxx xxx xxxx xx xxxxxxxxxxxx xxxxxx xxx xxxxxx xxxxx xx xxxxx xxxxxxxx xx xxxx xxx. Xxxx xxxxxxxx xxxxxxxx xxxxx, xxxxxxxx, xxxxx, xxx xxx xxxxx xx x xxxxxxx xxxxxxx xxxx xx xxxxxxx xxxxxx xxxxxxxx xxxx xx xxx xx xxxxx-xxx-xxxx, xxxxxxxxxxxx xxxxxxxx xxxx xx xxxxx xxx xxxxxxx, xx xxxxxxxxx xxxxxxx xxx.
+UWP では "スマート" な状況依存の対話式操作システムが採用されているため、ほとんどの場合、アプリが受け取った固有の入力の種類を個別に処理する必要はありません。 たとえば、タップや長押しなどの静的ジェスチャ、スライドでのパン操作などの操作ジェスチャ、またはデジタル インクのレンダリング操作をサポートするために、汎用的なポインターの種類として処理されるタッチ、タッチパッド、マウス、ペン入力があります。
 
-Xxxxxxxxxxx xxxxxxxx xxxx xxxx xxxxx xxxxxx xxxx xxx xxx xxxxxxxxx, xxxxxxxxxxxx, xxx xxxxxxxxxxx xxxx xxxxxx xxxx xxxxxxx xxxx xxxxxxx. Xxxx xxx xxxx xxx xxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxx xxxxxxxxxxx xxx xxxxxxxxxx xxx xxxx xxx, xx xxxxxxx xxx xx xxxxxxx xxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx.
+特定のフォームファクターと組み合わせて使うときの各入力デバイスの種類とその動作、機能、制限事項を把握しておきましょう。 これにより、プラットフォームのコントロールとアフォーダンスがアプリに十分であるか、カスタマイズした操作エクスペリエンスの提供が必要であるかを判断しやすくなります。
 
-## <span id="Cortana">
-            </span>
-            <span id="cortana">
-            </span>
-            <span id="CORTANA">
-            </span>Xxxxxxx
+## <span id="Cortana"></span><span id="cortana"></span><span id="CORTANA"></span>Cortana
 
 
-Xx Xxxxxxx YY, **Xxxxxxx** xxxxxxxxxxxxx xxxx xxx xxxxxx xxxxx xxxxxxxx xxxx x xxxx xxx xxxxxx xxxx xxxxxxxxxxx xx xxxxx xxx x xxxxxx xxxxxx.
+Windows 10 では、**Cortana** の機能拡張を利用して、ユーザーの音声コマンドを処理し、アプリケーションを起動して、単一のアクションを実行することができます。
 
-Xxxxxx xxxxxxx
--   Xxxxxx xxx xxxxxxxx
--   Xxxxxx
--   XXx xxx xxxxxxx
--   Xxxxxxx Xxx
--   XxX
--   Xxxx
--   XxxxXxxx
+デバイスのサポート
+-   電話とファブレット
+-   タブレット
+-   PC とノート PC
+-   Surface Hub
+-   IoT
+-   Xbox
+-   HoloLens
 
-![xxxxxxx](images/input-interactions/icons-cortana01.png)
+![Cortana](images/input-interactions/icons-cortana01.png)
 
-Xxxxxxx xxxxx
-X xxxxx xxxxxxx xx x xxxxxx xxxxxxxxx, xxxxxxx xx x Xxxxx Xxxxxxx Xxxxxxxxxx (XXX) xxxx, xxxxxxxx xx xx xxxxxxxxx xxx xxxxxxx **Xxxxxxx**. Xxx xxx xxx xx xxxxxxxx xx xxx xxxxxxxxxx xx xxxxxxxxxx, xxxxxxxxx xx xxx xxxxx xxx xxxxxxxxxx xx xxx xxxxxxxxxxx. Xxx xxxxxxxx, xxxxx xxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxxxxxx xx xxxx xxxxx xxx xxxx xxxxxxx xx xxx xxxxxxxxxx, xxxxx xxxxx xxxxxxxx xxx xx xxxxxxx xx xxx xxxxxxxxxx.
+一般的な使い方
+音声コマンドは、1 つの言葉を声に出すことであり、音声コマンド定義 (VCD) ファイルで定義されています。**Cortana** を通じてインストール済みアプリに指示が伝えられます。 アプリは、操作のレベルと複雑さに応じて、フォアグラウンドまたはバックグラウンドで起動することができます。 たとえば、追加のコンテキストやユーザー入力が必要な音声コマンドはフォアグラウンドで処理するのが最適ですが、基本的なコマンドはバックグラウンドで処理できます。
 
-Xxxxxxxxxxx xxx xxxxx xxxxxxxxxxxxx xx xxxx xxx, xxx xxxxxxxxx x xxxxxxx xxxxx xxxxx xxx xxx xxxx xx xxxxxxxxxx xxxx xx xxx xxxxx xxxxxxx xxxxxxx xxxx xxx xxxxxxxx, xxxx **Xxxxxxx** xxxxxx x xxxxxxx xxxxxxx xxxx xxx xxx xxx xxxx. Xx xxxx xxxxx, xxxx xxx xxxx xxx xxxx xxxxxxxxxxx xxxx xxx xxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233).
+アプリの基本的な機能を統合して、ユーザーが直接アプリを開かずにほとんどのタスクを実行できる中心的エントリ ポイントを提供することで、**Cortana** はアプリとユーザーの仲介役となります。 多くの場合、これによってユーザーの時間と労力を大幅に減らすことができます。 詳しくは、「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」をご覧ください。
 
-Xxxx xxxx
-[Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233)
+詳細
+[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)
  
 
-## <span id="Speech">
-            </span>
-            <span id="speech">
-            </span>
-            <span id="SPEECH">
-            </span>Xxxxxx
+## <span id="Speech"></span><span id="speech"></span><span id="SPEECH"></span>音声認識
 
 
-Xxxxxx xx xx xxxxxxxxx xxx xxxxxxx xxx xxx xxxxxx xx xxxxxxxx xxxx xxxxxxxxxxxx. Xx'x xx xxxx xxx xxxxxxxx xxx xx xxxxxxxxxxx xxxx xxxxxxxxxxxx, xxx xxxx xxxxxx xx xxxxxxxxxx xxx xxxx xxxxxxxx xx x xxxxxxx xx xxxxxxxxxx.
+音声認識により、アプリケーションを効果的かつ自然に操作できます。 また、音声認識により、アプリケーションを正確かつ容易に操作し、さまざまな状況で生産性を高め、いつでも新しい情報を入手することができます。
 
-Xxxxxx xxx xxxxxxxxxx xx, xx xxxx xxxxx, xx xxx xxxxxxx xxxxx xxxx, xxxxxxxxx xx xxx xxxx'x xxxxxx. Xxx xxxxxxx, xxxxxxx xxxx xx XxxxXxxx xxx Xxxx xx xxx xxxxxxx xxxxxxxxxxx xxxxx xxxxx (xxxxx xxxx x xxxxxxxx xxxxxxxx xx xxxxxxx xxxxxxxxx). Xxxxxxx, xxxx xxxx xx xxxxxx xxxxx xxx xxxxxx (xxxxx xxxxxxxx xxxx xxxxx xxx-xxxxxxxxxxx xxxxx xxxxx xxxx xx xxxx xxx xxxxxxx) xxx xxxx xxxx xxxxxxxxxxxx.
+音声認識は補完的な入力手段としてだけでなく、ユーザーのデバイスに応じて、多くの状況でメインの入力手段として利用できます。 たとえば、HoloLens、Xbox などのデバイスでは、従来の入力の種類がサポートされません (特定のシナリオのソフトウェア キーボードを除く)。 こうしたデバイスでは、ほとんどのユーザー操作で音声入出力が使われています (多くの場合、視線、ジェスチャなどの他の非標準的な種類の入力と組み合わせて使われます)。
 
-Xxxx-xx-xxxxxx (xxxx xxxxx xx XXX, xx xxxxxx xxxxxxxxx) xx xxxx xx xxxxxx xx xxxxxx xxx xxxx.
+ユーザーへの通知や指示には、音声合成 (TTS とも呼ばれます) が使用されています。
 
-Xxxxxx xxxxxxx
--   Xxxxxx xxx xxxxxxxx
--   Xxxxxx
--   XXx xxx xxxxxxx
--   Xxxxxxx Xxx
--   XxX
--   Xxxx
--   XxxxXxxx
+デバイスのサポート
+-   電話とファブレット
+-   タブレット
+-   PC とノート PC
+-   Surface Hub
+-   IoT
+-   Xbox
+-   HoloLens
 
-![xxxxxx](images/input-interactions/icons-speech01.png)
+![音声認識](images/input-interactions/icons-speech01.png)
 
-Xxxxxxx xxxxx
+一般的な使い方
 
-Xxxxx xxx xxxxx xxxxx xx Xxxxxx xxxxxxxxxxx:
+音声操作には 3 つのモードがあります。
 
-<span id="Natural_language">
-            </span>
-            <span id="natural_language">
-            </span>
-            <span id="NATURAL_LANGUAGE">
-            </span>Xxxxxxx xxxxxxxx  
-Xxxxxxx xxxxxxxx xx xxx xx xxxxxxxx xxxxxxxx xxxx xxxxxx xx x xxxxxxx xxxxx. Xxx xxxxxx xxxxxx xxxx xxxxxx xx xxxxxx xxx xxxxxxxxx xx xxxxxxxxx, xxx xx xxxxxxxxx xxxxxxxxxx. Xxxx xx'x xxx, xx xxxxx xxx xxxxxxxxx xxxxx xxx xxxx xxxxx xx xxx xxx xxxx xxxx xxxxxx.
+<span id="Natural_language"></span><span id="natural_language"></span><span id="NATURAL_LANGUAGE"></span>自然言語  
+自然言語とは、人が人とコミュニケーションをとるために通常使っている言葉のことです。 表現は人や状況によって異なるため、一般的に解釈されます。 解釈されない場合は、人は単語や語順を変えて、同じ考えを伝えようとします。
 
-Xxxxxxx xxxxxxxx xxxxxxxxxxxx xxxx xx xxx xxx xxxxxxx: xx xxxxx xx xxx xxx xxxxxxx xxx xxxxxx xx xx xx xxxx x xxxxxx xxx xxxxxx xx xx xxxxxxxxxx xxx xxxxx xxxxxxxxxxx.
+自然言語によるアプリの操作はこれと似ています。私たちは人に話しかけるようにアプリに話しかけ、話しかけた内容をアプリが理解し、その内容に従って応答することを期待します。
 
-Xxxxxxx xxxxxxxx xx xxx xxxx xxxxxxxx xxxx xx xxxxxx xxxxxxxxxxx, xxx xxx xx xxxxxxxxxxx xxx xxxxxxx xxxxxxx **Xxxxxxx**.
+自然言語は最も高度な音声操作で、**Cortana** によって実装および公開できます。
 
-<span id="Command_and_control">
-            </span>
-            <span id="command_and_control">
-            </span>
-            <span id="COMMAND_AND_CONTROL">
-            </span>Xxxxxxx xxx xxxxxxx  
-Xxxxxxx xxx xxxxxxx xx xxx xxx xx xxxxxx xxxxxxxx xx xxxxxxxx xxxxxxxx xxx xxxxxxxxxxxxx xxxx xx xxxxxxxx x xxxxxx xx xxxxxxxxx x xxxx xxxx.
+<span id="Command_and_control"></span><span id="command_and_control"></span><span id="COMMAND_AND_CONTROL"></span>音声コマンド  
+音声コマンドを使うと、ボタンのクリック、メニューの選択などのコントロールと機能を音声でアクティブ化できます。
 
-Xx xxxxxxx xxx xxxxxxx xx xxxxxxxx xx x xxxxxxxxxx xxxx xxxxxxxxxx, x xxxxxx xxxxx xxxx xx xxxxxxxxx xxx xxxxxxxxxxx. Xxxxxx xx xxxxxxxxx xxx xx xxxxxxx xxxxx xxxxxxx xxx x xxxx xxxxx xx xxxxx xxxxxxxxxxx xx xxxxxxxx xxxxxxxxxxxx.
+音声コマンドは、優れたユーザー エクスペリエンスには欠かせません。このため入力の種類を 1 つにすることは、通常お勧めしません。 音声認識は、通常、基本設定やハードウェア機能に基づいて、ユーザー向け入力オプションの 1 つとして含まれています。
 
-<span id="Dictation">
-            </span>
-            <span id="dictation">
-            </span>
-            <span id="DICTATION">
-            </span>Xxxxxxxxx  
-Xxx xxxx xxxxx xxxxxx xxxxx xxxxxx. Xxxx xxxxxxxxx xx xxxxxxxxx xx xxxx.
+<span id="Dictation"></span><span id="dictation"></span><span id="DICTATION"></span>ディクテーション  
+最も基本的な音声入力方法です。 発声した各語句がテキストに変換されます。
 
-Xxxxxxxxx xx xxxxxxxxx xxxx xxxx xx xxx xxxxx’x xxxx xx xxxxxxxxxx xxxxxxx xx xxxxxx.
+ディクテーションは通常、アプリが語句の意味や意図を理解する必要がない場合に使われます。
 
-Xxxx xxxx
-[Xxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121)
+詳細
+[音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)
  
 
-## <span id="Pen">
-            </span>
-            <span id="pen">
-            </span>
-            <span id="PEN">
-            </span>Xxx
+## <span id="Pen"></span><span id="pen"></span><span id="PEN"></span>ペン
 
 
-X xxx (xx xxxxxx) xxx xxxxx xx x xxxxx xxxxxxx xxxxxxxx xxxxxx, xxxx x xxxxx, xxx xx xxx xxxxxxx xxxxxx xxx xxxxxxx xxx xxxxx.
+ペン (スタイラス) は、マウス同様ピクセル単位のポインティング デバイスとして動作し、デジタル インク入力には最適なデバイスです。
 
-**Xxxx**  Xxxxx xxx xxx xxxxx xx xxx xxxxxxx: xxxxxx xxx xxxxxxx.
--   Xxxxxxx xxxx xx xxx xxxxxxx xxxxxxxxxxx, xxx xxxxxxxxxxx xxxxxxx xxxxx xxxxx xxxx x xxxxxx. Xxxx xxxxxxx x xxxxx xxxxxx xxxxxxx xxxx xxxxxxxxxx xxxxx xxxxx xx xxxxxxx xxxxxxxx. Xxxxxxx xxxxx xxxxx xxxx xxxxx xxxx xx xxxx xxxxx xx xxx xxxxx xxxxxxx, xxxxx xxxx xxx xxxxxx xxxxxxxx xxx xx xxxxxxxxxxxx xxxx xxxxxxxxx.
--   Xxxxxx xxxx xxxxxxx xxxxxxxxxxx xxx xxx xxxx xxxx xxxxxxx xxxxxx xxxxxxxx xx xxxxxxx xxxx xxxx xxxxxxxxx xxxxx xxxx (xxxxxxxxx xxxxx, xx xxxxxxxxx xxxx) xx xxx xxxxxx xxx xxxx xxx. Xxxx xxxxxxxxx xx xxxx xxxx xxxxxx.
+**注** ペン デバイスには、アクティブとパッシブの 2 種類があります。
+-   電気的な回路が組み込まれていないパッシブなペンは、1 本の指からのタッチ入力を効果的にエミュレートします。 このペンには、接触の圧力に基づいて入力を認識する基本的なデバイス ディスプレイが必要です。 ユーザーは入力サーフェスに手を置きながら書き込むことがよくあるため、パーム リジェクションの失敗が原因で入力データが汚染されることがあります。
+-   アクティブなペンには電気的な回路が組み込まれています。このペンは複雑なデバイス ディスプレイで動作して、より広範な入力データ (ホバー、近接通信データを含む) をシステムやアプリに提供できます。 パーム リジェクションは、はるかに堅牢です。
 
  
 
-Xxxx xx xxxxx xx xxx xxxxxxx xxxx, xx xxx xxxxxxxxx xx xxxxxx xxxx xxxx xxxxxxx xxxx xxxxx xxxx xxx xxx xxxx xxxxxxxxx xxx xxxxxxx xxx xxx xxxxxxxx xxxxxxxxxxxx.
+ここでペン デバイスと言う場合、高度な入力データを提供し、主に正確なインク操作やポイント操作に使われるアクティブなペンを指します。
 
-Xxxxxx xxxxxxx
--   Xxxxxx xxx xxxxxxxx
--   Xxxxxx
--   XXx xxx xxxxxxx
--   Xxxxxxx Xxx
--   XxX
+デバイスのサポート
+-   電話とファブレット
+-   タブレット
+-   PC とノート PC
+-   Surface Hub
+-   IoT
 
-![xxx](images/input-interactions/icons-pen01.png)
+![ペン](images/input-interactions/icons-pen01.png)
 
-Xxxxxxx xxxxx
-Xxx Xxxxxxx xxx xxxxxxxx, xxxxxxxx xxxx x xxx, xxxxxxxx x xxxxxxx xxx xx xxxxxx xxxxxxxxxxx xxxxx, xxxxxxxx, xxx xxxxxxxxxxx. Xxx xxxxxxxx xxxxxxxx xxxxxxxxx xxx xxxx xxxx xxxxxxxxx xxxxx, xxxxxxxxxx xxx xxxx, xxxxxxxxx xxxx xxxx xx xxx xxxxxxx xx xxx xxxxxx xxxxxx, xxxxxxxx xxx xxx xxxx, xxx xxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx. Xx xxxxxxxx xx xxxxxxxxx xxx xxxxxxx xxxxxxxxx xx xxx xxx xx xxx xxxx xxxxxx xx xxxxx, xxxx xxx xxx xxxx xxxxxxx xxxx xxxx xx xxxxxxxx, xxxxx, xxxxx, xxx xxxxxxx, xx xxxxx xxxx xxxxxxxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxx xx xxxxx xxxx x xxx, xxxxxx, xx xxxxx.
+一般的な使い方
+Windows のインク プラットフォームでペンを使うと、自然な形で手書きのノート、描画、コメントを作成できます。 このプラットフォームは、デジタイザー入力からのインク データのキャプチャ、インク データの生成、出力デバイスへのひと筆としてのデータのレンダリング、インク データの管理、手書き認識の実行をサポートします。 ユーザーが書いたり描画したりするときのペンの空間移動のキャプチャに加えて、アプリで筆圧、形状、色、不透明度などの情報を収集して、紙の上でペン、鉛筆、ブラシを使っているときに近いユーザー エクスペリエンスを実現することもできます。
 
-Xxxxx xxx xxx xxxxx xxxxx xxxxxxx xx xxx xxxxxxx xxx xxxxx xx xxxxxxx xxxxxx xxxxxxxxxxxx xx XX xxxxxxxx xx xxx xxxxxx xxxxxxx xxxxxxxx xxxxxxxx xxxxxxxxx xx xxxxx xxxxxxx (xxxx xx xxxxxxx, xxxxxxx, xxxxxxxx, xxxxxxxx, xxx xx xx).
+ペン入力とタッチ入力が異なるのは、タッチでは画面上の UI 要素に対する物理的なジェスチャ (スワイプ、スライド、ドラッグ、回転など) を通じて、それらのオブジェクトへの直接の操作をエミュレートする機能があることです。
 
-Xxx xxxxxx xxxxxxx xxx-xxxxxxxx XX xxxxxxxx, xx xxxxxxxxxxx, xx xxxxxxx xxxxx xxxxxxxxxxxx. Xxx xxxxxxx, xxx xxxxxxxx xxx xxxx (xx + xxx -) xxxxxxx xx xxx xxxxx xxxx xxxxxxx xxxxx xx xxxxxxx, xx xxxxxx, xxxxxx, xxx xxxx xxxxxxx.
+このような操作をサポートするには、ペン固有の UI コマンド、またはアフォーダンスを提供する必要があります。 たとえば、"前へ" ボタンと "次へ" ボタン (または "+" ボタンと "-" ボタン) を使ってコンテンツのページをフリップしたり、オブジェクトを回転、サイズ変更、ズームしたりできるようにします。
 
-Xxxx xxxx
-[Xxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn456352)
+詳細
+[ペンの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn456352)
  
 
-## <span id="Touch">
-            </span>
-            <span id="touch">
-            </span>
-            <span id="TOUCH">
-            </span>Xxxxx
+## <span id="Touch"></span><span id="touch"></span><span id="TOUCH"></span>タッチ
 
 
-Xxxx xxxxx, xxxxxxxx xxxxxxxx xxxx xxx xx xxxx xxxxxxx xxx xx xxxx xx xxxxxx xxxxxxx xxx xxxxxx xxxxxxxxxxxx xx XX xxxxxxxx (xxxx xx xxxxxxx, xxxxxxxx, xxxxxxxx, xx xxxxxx), xx xx xxxxxxxxxxx xxxxx xxxxxx (xxxxxxx xx xxxxx xx xxx), xx xx x xxxxxxxxxxxxx xxxxx xxxxxx (xx xxxxxx xxxxxxx xx xxxxx xxxxx, xxxx xx xxxxxxxx xx xxx xxxxxx xxxxx xxxx x xxx). Xxxxxxx xxxxxxxxxxx xxxx xx xxxx xxx xxxxxxx xxxx xxxxxxx, xxxx-xxxxx xxxxxxxxxx xxx xxxxx xx xxxx xxxxxxxx xxxx xxxxxxxx xx x xxxxxx.
+タッチ操作では、(マウスやペンのように) 代替の入力方法として、または相補的な入力方法として (汚れ、ペンで描くひと筆などの他の入力を変更)、UI 要素の直接的な操作 (パン、回転、サイズ変更、移動など) をエミュレートするために、1 つまたは複数の指から物理的なジェスチャを使用できます。 このような触覚的なエクスペリエンスは、ユーザーが画面の要素を操作するときに、より自然で現実的で感覚を提供します。
 
-Xxxxxx xxxxxxx
--   Xxxxxx xxx xxxxxxxx
--   Xxxxxx
--   XXx xxx xxxxxxx
--   Xxxxxxx Xxx
--   XxX
+デバイスのサポート
+-   電話とファブレット
+-   タブレット
+-   PC とノート PC
+-   Surface Hub
+-   IoT
 
-![xxxxx](images/input-interactions/icons-touch01.png)
+![タッチ](images/input-interactions/icons-touch01.png)
 
-Xxxxxxx xxxxx
-Xxxxxxx xxx xxxxx xxxxx xxx xxxx xxxxxxxxxxxxx, xxxxxxxxx xx xxx xxxxxx.
+一般的な使い方
+タッチ入力のサポートは、デバイスによって大きく異なることがあります。
 
-Xxxx xxxxxxx xxx'x xxxxxxx xxxxx xx xxx, xxxx xxxxxxx xxxxxxx x xxxxxx xxxxx xxxxxxx, xxxxx xxxxxx xxxxxxx xxxxx-xxxxx (xxx xx xxxx xxxxxxxx).
+たとえば、デバイスによって、タッチ操作をまったくサポートしなかったり、1 か所の接触のみ、またはマルチタッチ操作 (2 か所以上の接触) をサポートしたりします。
 
-Xxxx xxxxxxx xxxx xxxxxxx xxxxx-xxxxx xxxxx, xxxxxxxxx xxxxxxxxx xxx xxxxxx, xxxxxxxxxx xxxxxxxx.
+マルチタッチ入力をサポートするデバイスのほとんどは、通常、10 か所の独自の同時接触を認識します。
 
-Xxxxxxx Xxx xxxxxxx xxxxxxxxx YYY xxxxxx, xxxxxxxxxx xxxxx xxxxxxxx.
+Surface Hub デバイスは、100 か所の独自の同時タッチ接触を認識します。
 
-Xx xxxxxxx, xxxxx xx:
+一般的にタッチには、次のような特徴があります。
 
--   Xxxxxx xxxx, xxxxxx xxxxx xxxx xxxx x Xxxxxxxxx Xxxx xxxxxx xxxx Xxxxxxx Xxx, xxxxx xxxxxxxxxxxxx xx xxxxxxxxxx.
--   Xxx xxxxxxxxxxx xx xxxxxx xxxxxxxxxxx.
--   Xxxx xxx xxx xxxxxxxxxxxx, xxxxxxxxx xxxx xxxxx (xxxxx xxxxxxxx) xxx xxxxxx (xxx-xxxxxxxxxx).
+-   単一ユーザー。ただし、共同作業が強調されている Surface Hub などの Microsoft チーム デバイスで使用されている場合を除きます。
+-   デバイスの向きに制限されない。
+-   すべての操作 (テキスト入力 (タッチ キーボード)、手描き入力 (アプリで構成) を含む) で使用される。
 
-Xxxx xxxx
-[Xxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465370)
+詳細
+[タッチの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465370)
  
 
-## <span id="Touchpad">
-            </span>
-            <span id="touchpad">
-            </span>
-            <span id="TOUCHPAD">
-            </span>Xxxxxxxx
+## <span id="Touchpad"></span><span id="touchpad"></span><span id="TOUCHPAD"></span>タッチパッド
 
 
-X xxxxxxxx xxxxxxxx xxxx xxxxxxxx xxxxx-xxxxx xxxxx xxxx xxx xxxxxxxxx xxxxx xx x xxxxxxxx xxxxxx, xxxx xx x xxxxx. Xxxx xxxxxxxxxxx xxxxx xxx xxxxxxxx xxxxxx xx xxxx x xxxxx-xxxxxxxxx XX xxx xxx xxxxxxx xxxxxxx xx xxxxxxxxxxxx xxxx.
+タッチパッドは、間接的なマルチタッチ入力と、マウスのようなポインティング デバイスの精密入力を組み合わせたものです。 この組み合わせにより、タッチパッドはタッチに最適化された UI にも、生産性アプリのより小さいターゲットにも適しています。
 
-Xxxxxx xxxxxxx
--   XXx xxx xxxxxxx
--   XxX
+デバイスのサポート
+-   PC とノート PC
+-   IoT
 
-![xxxxxxxx](images/input-interactions/icons-touchpad01.png)
+![タッチパッド](images/input-interactions/icons-touchpad01.png)
 
-Xxxxxxx xxxxx
-Xxxxxxxxx xxxxxxxxx xxxxxxx x xxx xx xxxxx xxxxxxxx xxxx xxxxxxx xxxxxxx xxxxxxx xx xxxxx xxx xxxxxx xxxxxxxxxxxx xx xxxxxxx xxx XX.
+一般的な使い方
+通常、タッチパッドは、オブジェクトと UI の直接的な操作に使われるタッチと同様のサポートを実現する、一連のタッチ ジェスチャをサポートします。
 
-Xxxxxxx xx xxxx xxxxxxxxxxx xx xxxxxxxxxxx xxxxxxxxxxx xxxxxxxxx xx xxxxxxxxx, xx xxxxxxxxx xxxx xxxxxxxxx xxxxx-xxxxx XX xxxxxxxx xx xxxxxxxxxxx xxxxxx xxxx xxxxxxx xxxxxx xx xxxxxxx xxx xxxxx xxxxx. Xxxxxxx xxxxxxxx-xxxxxxxx XX xxxxxxxx, xx xxxxxxxxxxx, xx xxxxxxx xxxxx xxxxxxxxxxxx.
+タッチパッドでサポートされている対話式操作のエクスペリエンスは複合的であるため、単にタッチ入力のサポートに依存するのではなく、マウス スタイル UI コマンドまたはアフォーダンスも提供することをお勧めします。 このような操作をサポートするには、タッチパッド固有の UI コマンド、またはアフォーダンスを提供します。
 
-Xxx xxxxxx xxxxxxx xxxxx-xxxxxxxx XX xxxxxxxx, xx xxxxxxxxxxx, xx xxxxxxx xxxxx xxxxxxxxxxxx. Xxx xxxxxxx, xxx xxxxxxxx xxx xxxx (xx + xxx -) xxxxxxx xx xxx xxxxx xxxx xxxxxxx xxxxx xx xxxxxxx, xx xxxxxx, xxxxxx, xxx xxxx xxxxxxx.
+このような操作をサポートするには、マウス固有の UI コマンド、またはアフォーダンスを提供する必要があります。 たとえば、"前へ" ボタンと "次へ" ボタン (または "+" ボタンと "-" ボタン) を使ってコンテンツのページをフリップしたり、オブジェクトを回転、サイズ変更、ズームしたりできるようにします。
 
-Xxxx xxxx
-[Xxxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn456353)
+詳細
+[タッチパッドの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn456353)
  
 
-## <span id="Keyboard">
-            </span>
-            <span id="keyboard">
-            </span>
-            <span id="KEYBOARD">
-            </span>Xxxxxxxx
+## <span id="Keyboard"></span><span id="keyboard"></span><span id="KEYBOARD"></span>キーボード
 
 
-X xxxxxxxx xx xxx xxxxxxx xxxxx xxxxxx xxx xxxx, xxx xx xxxxx xxxxxxxxxxxxx xx xxxxxx xxxx xxxxxxx xxxxxxxxxxxx xx xxxxx xxx xxxxxxxx xx x xxxxxx xxx xxxx xxxxxxxxx xxx xx xxxxxxxx xxxx xx xxx.
+キーボードはテキスト用の主要な入力デバイスであり、多くの場合、特定の障碍のあるユーザーや、キーボードを使った方がアプリをすばやく効率よく操作できると考えるユーザーにとって欠かせません。
 
-Xxxx [Xxxxxxxxx xxx Xxxxx](http://go.microsoft.com/fwlink/p/?LinkID=699431), x xxx xxxxxxxxxx xxx xxxxxxxxxx Xxxxxxx YY xxxxxx xxxxxxx, xxxxx xxx xxxxxxx xxxxx xxxxxx xx x xxxxx xxx xxxxxxxx xx xxxx xxxxx xxxxxx xxxx xxxx x xxxxxx.
+互換性のある Windows 10 Mobile デバイスの新しいエクスペリエンスである[電話用 Continuum](http://go.microsoft.com/fwlink/p/?LinkID=699431) を利用すると、ユーザーは電話をマウスやキーボードに接続して、その電話をノート PC のように使うことができます。
 
-Xxxxxx xxxxxxx
--   Xxxxxx xxx xxxxxxxx
--   Xxxxxx
--   XXx xxx xxxxxxx
--   Xxxxxxx Xxx
--   XxX
--   Xxxx
--   XxxxXxxx
+デバイスのサポート
+-   電話とファブレット
+-   タブレット
+-   PC とノート PC
+-   Surface Hub
+-   IoT
+-   Xbox
+-   HoloLens
 
-![xxxxxxxx](images/input-interactions/icons-keyboard01.png)
+![キーボード](images/input-interactions/icons-keyboard01.png)
 
-Xxxxxxx xxxxx
-Xxxxx xxx xxxxxxxx xxxx Xxxxxxxxx Xxxxxxx xxxx xxxxxxx x xxxxxxxx xxxxxxxx xxx xxx xxxxxxxx xxxxxxxxx: xxx Xx-Xxxxxx Xxxxxxxx (XXX) xxx xxx xxxxx xxxxxxxx.
+一般的な使い方
+ユーザーはハードウェア キーボードと 2 つのソフトウェア キーボード (スクリーン キーボード (OSK) およびタッチ キーボード) を通じて、ユニバーサル Windows アプリを操作できます。
 
-Xxx XXX xx x xxxxxx, xxxxxxxx xxxxxxxx xxxx xxx xxx xxx xxxxxxx xx xxx xxxxxxxx xxxxxxxx xx xxxx xxx xxxxx xxxx xxxxx xxxxx, xxxxx, xxx/xxxxxx xx xxxxx xxxxxxxx xxxxxx (x xxxxx xxxxxx xx xxx xxxxxxxx). Xxx XXX xx xxxxxxxx xxx xxxxxxx xxxx xxx'x xxxx x xxxxxxxx xxxxxxxx, xx xxx xxxxx xxxxx xxxxxxxx xxxxxxxxxxx xxxxxxx xxxx xxxx xxxxx xxxxxxxxxxx xxxxxxxx xxxxx xxxxxxx. Xxx XXX xxxxxxxx xxxx, xx xxx xxx, xxx xxxxxxxxxxxxx xx x xxxxxxxx xxxxxxxx.
+OSK は、物理的なキーボードの代わりに使うことができる視覚的なソフトウェア キーボードです。タッチ、マウス、ペン/スタイラス、またはその他のポインティング デバイスを通じてデータを入力します (タッチ スクリーンは必須ではありません)。 OSK は、物理的なキーボードが存在しないシステムや、運動障碍により一般的な物理入力デバイスを使うことができないユーザーのために用意されています。 OSK は、ハードウェア キーボードの機能のすべて、または少なくともほとんどをエミュレートします。
 
-Xxx xxxxx xxxxxxxx xx x xxxxxx, xxxxxxxx xxxxxxxx xxxx xxx xxxx xxxxx xxxx xxxxx xxxxx. Xxx xxxxx xxxxxxxx xx xxx x xxxxxxxxxxx xxx xxx XXX xx xx xx xxxx xxx xxxx xxxxx xxxx (xx xxxxx'x xxxxxxx xxx xxxxxxxx xxxxxxxx) xxx xxxxxxx xxxx xxxx x xxxx xxxxx xx xxxxx xxxxxxxx xxxx xxxxxxx xxxx xxxxx. Xxx xxxxx xxxxxxxx xxxx xxx xxxxxxx xxx xx xxxxxx xxxxxxxx.
+タッチ キーボードは、タッチ入力でのテキスト入力に使われる、視覚的なソフトウェア キーボードです。 タッチ キーボードはテキスト入力専用であり (ハードウェア キーボードをエミュレートしません)、テキスト フィールドや編集可能なテキスト コントロールにフォーカスがあるときにだけ表示されるので、OSK の代わりになるものではありません。 タッチ キーボードは、アプリ コマンドやシステム コマンドをサポートしていません。
 
-**Xxxx**  Xxx XXX xxx xxxxxxxx xxxx xxx xxxxx xxxxxxxx, xxxxx xxx'x xx xxxxx xx xxx XXX xx xxxxxxx.
+**注** OSK の方がタッチ キーボードより優先され、OSK が表示されている場合はタッチ キーボードは表示されません。
 
  
 
-Xx xxxxxxx, x xxxxxxxx xx:
+一般的にキーボードには、次のような特徴があります。
 
--   Xxxxxx xxxx.
--   Xxx xxxxxxxxxxx xx xxxxxx xxxxxxxxxxx.
--   Xxxx xxx xxxx xxxxx, xxxxxxxxxx, xxxxxxxx, xxx xxxxxxxxxxxxx.
--   Xxxxxx xxxxxxxxx, xxxxxx xxxxxxxxxxx xx xxxxxxxxxx.
+-   単一ユーザー。
+-   デバイスの向きに制限されない。
+-   テキスト入力、ナビゲーション、ゲームプレイ、およびアクセシビリティのために使用される。
+-   常に利用可能 (事前または事後)。
 
-Xxxx xxxx
-[Xxxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh972345)
+詳細
+[キーボードの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/hh972345)
  
 
-## <span id="Mouse">
-            </span>
-            <span id="mouse">
-            </span>
-            <span id="MOUSE">
-            </span>Xxxxx
+## <span id="Mouse"></span><span id="mouse"></span><span id="MOUSE"></span>マウス
 
 
-X xxxxx xx xxxx xxxxxx xxx xxxxxxxxxxxx xxxx xxx xxxx-xxxxxxx XX xxxxx xxxx xxxxxxxxxxxx xxxxxxx xxxxx-xxxxx xxxxxxxxx xxx xxxxxxxxx xxx xxxxxxxxxx.
+マウスは、ユーザー操作でターゲット設定とコマンド実行にピクセルレベルの精度を必要とする、生産性アプリや高密度 UI に最適です。
 
-Xxxxxx xxxxxxx
--   Xxxxxx xxx xxxxxxxx
--   Xxxxxx
--   XXx xxx xxxxxxx
--   Xxxxxxx Xxx
--   XxX
+デバイスのサポート
+-   電話とファブレット
+-   タブレット
+-   PC とノート PC
+-   Surface Hub
+-   IoT
 
-![xxxxx](images/input-interactions/icons-mouse01.png)
+![マウス](images/input-interactions/icons-mouse01.png)
 
-Xxxxxxx xxxxx
-Xxxxx xxxxx xxx xx xxxxxxxx xxxx xxx xxxxxxxx xx xxxxxxx xxxxxxxx xxxx (Xxxx, Xxxxx, Xxx, xxx xx xx). Xxxxx xxxx xxx xx xxxxxxxx xxxx xxx xxxx xxxxx xxxxxx, xxx xxxxx xxxxx xxxxxx, xxx xxxxx xxxxxx, xxx xxx X xxxxxxx xxx xx xxxxxxxx xxxxx-xxxxxxxxx xxxxxxx xxx. (Xxxx Xxxxxxxxx xxxxx xxxxxxx xxxx xxx xxxxxxxxxx xxxxxxx, xxxxxxxx xx xx X xxxxxxx, xxxxxxxxx xxxx xx xxxxxxxx xxxx xxx xxxxxxx xx Xxx xxxxxxxx).
+一般的な使い方
+マウス入力は、キーボードのさまざまなキー (Ctrl、Shift、Alt キーなど) を追加して変更できます。 これらのキーは、マウスの左ボタンや右ボタン、ホイール ボタン、X ボタンと組み合わせて、マウスに最適化した拡張コマンド セットを作成できます (一部の Microsoft マウス デバイスでは、追加のボタン (X ボタン) は通常、Web ブラウザーで前後のページに移動するために使います)。
 
-Xxxxxxx xx xxx, xxxxx xxxxx xxx xxxxx xxxxx xxxxxxx xx xxx xxxxxxx xxx xxxxx xx xxxxxxx xxxxxx xxxxxxxxxxxx xx XX xxxxxxxx xx xxx xxxxxx xxxxxxx xxxxxxxx xxxxxxxx xxxxxxxxx xx xxxxx xxxxxxx (xxxx xx xxxxxxx, xxxxxxx, xxxxxxxx, xxxxxxxx, xxx xx xx).
+ペンと同様に、マウス入力とタッチ入力が異なるのは、タッチでは画面上の UI 要素に対する物理的なジェスチャ (スワイプ、スライド、ドラッグ、回転など) を通じて、それらのオブジェクトへの直接の操作をエミュレートする機能があることです。
 
-Xxx xxxxxx xxxxxxx xxxxx-xxxxxxxx XX xxxxxxxx, xx xxxxxxxxxxx, xx xxxxxxx xxxxx xxxxxxxxxxxx. Xxx xxxxxxx, xxx xxxxxxxx xxx xxxx (xx + xxx -) xxxxxxx xx xxx xxxxx xxxx xxxxxxx xxxxx xx xxxxxxx, xx xxxxxx, xxxxxx, xxx xxxx xxxxxxx.
+このような操作をサポートするには、マウス固有の UI コマンド、またはアフォーダンスを提供する必要があります。 たとえば、"前へ" ボタンと "次へ" ボタン (または "+" ボタンと "-" ボタン) を使ってコンテンツのページをフリップしたり、オブジェクトを回転、サイズ変更、ズームしたりできるようにします。
 
-Xxxx xxxx
-[Xxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn456351)
+詳細
+[マウスの設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn456351)
  
 
-## <span id="Gesture">
-            </span>
-            <span id="gesture">
-            </span>
-            <span id="GESTURE">
-            </span>Xxxxxxx
+## <span id="Gesture"></span><span id="gesture"></span><span id="GESTURE"></span>ジェスチャ
 
 
-X xxxxxxx xx xxx xxxx xx xxxx xxxxxxxx xxxx xx xxxxxxxxxx xx xxxxx xxx xxxxxxxxxxx xx xxxxxxxxxxx xxxx xx xxxxxxxxxxx. Xxxxxxxx xxxx xxxx xxxxx, xxxx xxxxxx xxxxx x xxxx xx xxxxxx xxxxxxxxx xx xxx xxxxxx, xx xxxxxxxx, xxxxxxx xxxxxxxx xx xxxxxxxx, xx xxxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxx xxxxx xxx xxxxxx xxxx. Xx xxxxxxx xxxx xxxxxxxxx xxxxxx xxxxxxxx, xx xxxxx xxxxxxx xxx xxxx xxxxxxxxx xx xxxxxx xxx xxxxxxx.
+ジェスチャは、アプリケーションを制御または操作するための入力として認識される、なんらかの形式のユーザーの動きです。 ジェスチャには、手を使って画面上の何かをターゲットにするだけの単純なものから、特定の学習されたパターンの動きをターゲットにしたり、体全体を使った連続的な動きの長いストレッチまで、さまざまな形式があります。 カスタム ジェスチャを設計するときは、その意味がロケールやカルチャによって異なる場合があるため、注意が必要です。
 
-Xxxxxx xxxxxxx
--   XXx xxx xxxxxxx
--   XxX
--   Xxxx
--   XxxxXxxx
+デバイスのサポート
+-   PC とノート PC
+-   IoT
+-   Xbox
+-   HoloLens
 
-![xxxxxxx](images/input-interactions/icons-gesture01.png)
+![ジェスチャ](images/input-interactions/icons-gesture01.png)
 
-Xxxxxxx xxxxx
-Xxxxxxxxx xxxxxxxxx xxxxxxx x xxx xx xxxxx xxxxxxxx xxxx xxxxxxx xxxxxxx xxxxxxx xx xxxxx xxx xxxxxx xxxxxxxxxxxx xx xxxxxxx xxx XX.
+一般的な使い方
+通常、タッチパッドは、オブジェクトと UI の直接的な操作に使われるタッチと同様のサポートを実現する、一連のタッチ ジェスチャをサポートします。
 
-Xxxxxxx xx xxxx xxxxxxxxxxx xx xxxxxxxxxxx xxxxxxxxxxx xxxxxxxxx xx xxxxxxxxx, xx xxxxxxxxx xxxx xxxxxxxxx xxxxx-xxxxx XX xxxxxxxx xx xxxxxxxxxxx xxxxxx xxxx xxxxxxx xxxxxx xx xxxxxxx xxx xxxxx xxxxx. Xxxxxxx xxxxxxxx-xxxxxxxx XX xxxxxxxx, xx xxxxxxxxxxx, xx xxxxxxx xxxxx xxxxxxxxxxxx.
+タッチパッドでサポートされている対話式操作のエクスペリエンスは複合的であるため、単にタッチ入力のサポートに依存するのではなく、マウス スタイル UI コマンドまたはアフォーダンスも提供することをお勧めします。 このような操作をサポートするには、タッチパッド固有の UI コマンド、またはアフォーダンスを提供します。
 
-Xxx xxxxxx xxxxxxx xxxxx-xxxxxxxx XX xxxxxxxx, xx xxxxxxxxxxx, xx xxxxxxx xxxxx xxxxxxxxxxxx. Xxx xxxxxxx, xxx xxxxxxxx xxx xxxx (xx + xxx -) xxxxxxx xx xxx xxxxx xxxx xxxxxxx xxxxx xx xxxxxxx, xx xxxxxx, xxxxxx, xxx xxxx xxxxxxx.
+このような操作をサポートするには、マウス固有の UI コマンド、またはアフォーダンスを提供する必要があります。 たとえば、"前へ" ボタンと "次へ" ボタン (または "+" ボタンと "-" ボタン) を使ってコンテンツのページをフリップしたり、オブジェクトを回転、サイズ変更、ズームしたりできるようにします。
 
  
 
-## <span id="Gamepad_Controller">
-            </span>
-            <span id="gamepad_controller">
-            </span>
-            <span id="GAMEPAD_CONTROLLER">
-            </span>Xxxxxxx/Xxxxxxxxxx
+## <span id="Gamepad_Controller"></span><span id="gamepad_controller"></span><span id="GAMEPAD_CONTROLLER"></span>ゲームパッド/コントローラー
 
 
-Xxx xxxxxxx/xxxxxxxxxx xx x xxxxxx xxxxxxxxxxx xxxxxx xxxxxxxxx xxxxxxxxx xx xxxxxxx xxxxx. Xxxxxxx, xx xx xxxx xxxx xxx xx xxxxxxx xxxxx xxxxxxxx xxxxx xxx xxxxxxxx x XX xxxxxxxxxx xxxxxxxxxx xxxx xxxxxxx xx xxx xxxxxxxx.
+ゲームパッド/コントローラーは、通常はゲーム専用の高度に専門化されたデバイスです。 ただし、基本的なキーボード入力をエミュレートするためにも使われ、キーボードとよく似た UI ナビゲーション エクスペリエンスを提供します。
 
-Xxxxxx xxxxxxx
--   XXx xxx xxxxxxx
--   XxX
--   Xxxx
+デバイスのサポート
+-   PC とノート PC
+-   IoT
+-   Xbox
 
-![xxxxxxxxxx](images/input-interactions/icons-controller01.png)
+![コントローラー](images/input-interactions/icons-controller01.png)
 
-Xxxxxxx xxxxx
-Xxxxxxxxx xxxxxxxxx xxxxxxx x xxx xx xxxxx xxxxxxxx xxxx xxxxxxx xxxxxxx xxxxxxx xx xxxxx xxx xxxxxx xxxxxxxxxxxx xx xxxxxxx xxx XX.
+一般的な使い方
+通常、タッチパッドは、オブジェクトと UI の直接的な操作に使われるタッチと同様のサポートを実現する、一連のタッチ ジェスチャをサポートします。
 
-Xxxxxxx xx xxxx xxxxxxxxxxx xx xxxxxxxxxxx xxxxxxxxxxx xxxxxxxxx xx xxxxxxxxx, xx xxxxxxxxx xxxx xxxxxxxxx xxxxx-xxxxx XX xxxxxxxx xx xxxxxxxxxxx xxxxxx xxxx xxxxxxx xxxxxx xx xxxxxxx xxx xxxxx xxxxx. Xxxxxxx xxxxxxxx-xxxxxxxx XX xxxxxxxx, xx xxxxxxxxxxx, xx xxxxxxx xxxxx xxxxxxxxxxxx.
+タッチパッドでサポートされている対話式操作のエクスペリエンスは複合的であるため、単にタッチ入力のサポートに依存するのではなく、マウス スタイル UI コマンドまたはアフォーダンスも提供することをお勧めします。 このような操作をサポートするには、タッチパッド固有の UI コマンド、またはアフォーダンスを提供します。
 
-Xxx xxxxxx xxxxxxx xxxxx-xxxxxxxx XX xxxxxxxx, xx xxxxxxxxxxx, xx xxxxxxx xxxxx xxxxxxxxxxxx. Xxx xxxxxxx, xxx xxxxxxxx xxx xxxx (xx + xxx -) xxxxxxx xx xxx xxxxx xxxx xxxxxxx xxxxx xx xxxxxxx, xx xxxxxx, xxxxxx, xxx xxxx xxxxxxx.
+このような操作をサポートするには、マウス固有の UI コマンド、またはアフォーダンスを提供する必要があります。 たとえば、"前へ" ボタンと "次へ" ボタン (または "+" ボタンと "-" ボタン) を使ってコンテンツのページをフリップしたり、オブジェクトを回転、サイズ変更、ズームしたりできるようにします。
 
  
 
-## <span id="Multiple_inputs">
-            </span>
-            <span id="multiple_inputs">
-            </span>
-            <span id="MULTIPLE_INPUTS">
-            </span>Xxxxxxxx xxxxxx
+## <span id="Multiple_inputs"></span><span id="multiple_inputs"></span><span id="MULTIPLE_INPUTS"></span>複数の入力
 
 
-Xxxxxxxxxxxxx xx xxxx xxxxx xxx xxxxxxx xx xxxxxxxx xxx xxxxxxxxx xxxx xxxx xx xxxx xxxx xx xxxx xxxxx xxxxx (xxxxxxx, xxxxxx, xxxxx, xxxxxxxx, xxxxx, xxx xxxxxxxx) xx xxxxxxxx xxxxxxxxx xxxxxxxxxxx, xxxxxxxxx, xxx xxxxxxxxxxxxx.
+できるだけ多くのユーザーやデバイスに対応し、可能な限り多くの入力の種類 (ジェスチャ、音声、タッチ、タッチパッド、マウス、キーボード) と連携するようにアプリを設計すると、最大の柔軟性、操作性、ユーザー補助が得られます。
 
-Xxxxxx xxxxxxx
--   Xxxxxx xxx xxxxxxxx
--   Xxxxxx
--   XXx xxx xxxxxxx
--   Xxxxxxx Xxx
--   XxX
--   Xxxx
--   XxxxXxxx
+デバイスのサポート
+-   電話とファブレット
+-   タブレット
+-   PC とノート PC
+-   Surface Hub
+-   IoT
+-   Xbox
+-   HoloLens
 
-![xxxxxxxx xxxxxx](images/input-interactions/icons-inputdevices03-vertical.png)
+![複数の入力](images/input-interactions/icons-inputdevices03-vertical.png)
 
-Xxxxxxx xxxxx
-Xxxx xx xxxxxx xxx x xxxxxxxxxxx xx xxxxx xxx xxxxxxx xxxx xxxxxxxxxxxxx xxxx xxxx xxxxx, xxxxxxxx xxxxx xxx xxxxx xx xxxxx xxx xxxx xx xxxxxx xxxx xxxxxxxxxxx xxxx xx xxx. Xxxxxxx, xxxxx xxxxxxxx xxxxxxxxxxxx xxxx xx xx xx xxxxxxxxx xxx xxxxxxx xx xxxxxxxx xx xxxx xxx xxxx xxxxxx x xxxx xxxxxxxxx xxxxxxxxxx.
+一般的な使い方
+人がお互いにコミュニケーションをとる際に音声とジェスチャを組み合わせて使うように、アプリの操作では、複数の種類とモードの入力を使うと便利な場合があります。 ただし、これら複合的な操作は混乱を招くこともあるため、できる限り直感的で自然である必要があります。
 
 
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx XXX xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、UWP アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

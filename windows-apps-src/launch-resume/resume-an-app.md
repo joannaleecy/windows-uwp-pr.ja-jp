@@ -1,31 +1,31 @@
 ---
-xxxxx: Xxxxxx xxx xxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxx xxxxxxx xxxx xxx.
-xx.xxxxxxx: XXXXXYYY-XYYY-YYYY-XYYX-YYXYYYYYXXYY
+title: Handle app resume
+description: Learn how to refresh displayed content when the system resumes your app.
+ms.assetid: DACCC556-B814-4600-A10A-90B82664EA15
 ---
 
-# Xxxxxx xxx xxxxxx
+# Handle app resume
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242339)
+-   [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339)
 
-Xxxxx xxx xx xxxxxxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxx xxxxxxx xxxx xxx. Xxx xxxxxxx xx xxxx xxxxx xxxxxxxxx xx xxxxx xxxxxxx xxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242339) xxxxx.
+Learn how to refresh displayed content when the system resumes your app. The example in this topic registers an event handler for the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event.
 
-**Xxxxxxx:** Xxx xxxx xxxx xxxxx xxxxxx xx xxxxxx? Xxx:
+**Roadmap:** How does this topic relate to others? See:
 
--   [Xxxxxxx xxx Xxxxxxx Xxxxxxx xxxx xxxxx X\# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/br229583)
--   [Xxxxxxx xxx Xxxxxxx Xxxxxxx xxxx xxxxx X++](https://msdn.microsoft.com/library/windows/apps/hh700360)
+-   [Roadmap for Windows Runtime apps using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/br229583)
+-   [Roadmap for Windows Runtime apps using C++](https://msdn.microsoft.com/library/windows/apps/hh700360)
 
-## Xxxxxxxx xxx xxxxxxxx xxxxx xxxxxxx
+## Register the resuming event handler
 
-Xxxxxxxx xx xxxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242339) xxxxx, xxxxx xxxxxxxxx xxxx xxx xxxx xxxxxxxx xxxx xxxx xxxx xxx xxx xxxx xxxx xx xx.
+Register to handle the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event, which indicates that the user switched away from your app and then back to it.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```cs
 partial class MainPage
 {
@@ -55,11 +55,11 @@ MainPage::MainPage()
 }
 ```
 
-## Xxxxxxx xxxxxxxxx xxxxxxx xxxxx xxxxxxxxxx
+## Refresh displayed content after suspension
 
-Xxxx xxxx xxx xxxxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242339) xxxxx, xx xxx xxx xxxxxxxxxxx xx xxxxxxx xxx xxxxxxxxx xxxxxxx.
+When your app handles the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event, it has the opportunity to refresh its displayed content.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```cs
 partial class MainPage
 {
@@ -87,25 +87,29 @@ void MainPage::App_Resuming(Object^ sender, Object^ e)
 }
 ```
 
-> **Xxxx**  Xxxxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242339) xxxxx xx xxx xxxxxx xxxx xxx XX xxxxxx, x xxxxxxxxxx xxxx xx xxxx xx xxx xx xxx XX xxxxxx xxx xxxxxx xx xxxxxx xx xxx XX, xx xxxx'x xxxxxxxxx xxx xxxx xx xx xx xxxx xxxxxxx.
+> **Note**  Because the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event is not raised from the UI thread, a dispatcher must be used to get to the UI thread and inject an update to the UI, if that's something you want to do in your handler.
 
-## Xxxxxxx
+## Remarks
 
 
-Xxx xxxxxx xxxxxxxx xxxx xxx xxxxxxxx xxx xxxx xxxxxxxx xx xxxxxxx xxx xx xx xxx xxxxxxx. Xxx xxxxxx xxxxxxx xxxx xxx xxxxxxxx xxx xxxx xxxxxxxx xxxx xx xx. Xxxx xxx xxxxxx xxxxxxx xxxx xxx, xxx xxxxxxx xx xxxx xxxxxxxxx xxx xxxx xxxxxxxxxx xx xxx xxxx xx xx xxx xxxxxx xxx xxxxxx xxxxxxxxx xxx xxx. Xxx xxxxxx xxxxxxxx xxx xxx xxxxxxx xxxxx xx xxxx xxx, xx xxxx xx xxxxxxx xx xxx xxxx xx xx xx'x xxxx xxxxxxx xx xxx xxxxxxxxxx. Xxxxxxx, xxx xxx xxx xxxx xxxx xxxxxxxxx xxx x xxxxxxxxxxx xxxxxx xx xxxx, xx xx xxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxx xxxx xxxxx xxxx xxxxxxx xxxxx xxx xxx xxx xxxxxxxxx, xxxx xx xxxx xxxxx xx xxx xxxx'x xxxxxxxx.
+The system suspends your app whenever the user switches to another app or to the desktop. The system resumes your app whenever the user switches back to it. When the system resumes your app, the content of your variables and data structures is the same as it was before the system suspended the app. The system restores the app exactly where it left off, so that it appears to the user as if it's been running in the background. However, the app may have been suspended for a significant amount of time, so it should refresh any displayed content that might have changed while the app was suspended, such as news feeds or the user's location.
 
-Xx xxxx xxx xxxxx'x xxxx xxx xxxxxxxxx xxxxxxx xx xxxxxxx, xxxxx'x xx xxxx xxx xx xx xxxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242339) xxxxx.
+If your app doesn't have any displayed content to refresh, there's no need for it to handle the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event.
 
-**X xxxx xxxxx xxxxxxxxx xxxxx Xxxxxx Xxxxxx:  ** Xxxx xxxx xxx xx xxxxxxxx xx xxx Xxxxxx Xxxxxx xxxxxxxx, xxx xxx xxxx xx x **Xxxxxx** xxxxx. Xxxx xxxx xxx **Xxxxx Xxxxxxxx xxxxxxx** xx xxxxx xxxxx, xxx xxxxx xxx xxxx-xxxx xxxx xx xxx **Xxxxxxx** xxxx. Xxxx xxxxxx **Xxxxxx**.
+**A note about debugging using Visual Studio:  ** When your app is attached to the Visual Studio debugger, you can send it a **Resume** event. Make sure the **Debug Location toolbar** is being shown, and click the drop-down next to the **Suspend** icon. Then choose **Resume**.
 
-> **Xxxx**  Xxx Xxxxxxx Xxxxx Xxxxx xxxx, xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242339) xxxxx xx xxxxxx xxxxxxxx xx [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335), xxxx xxxx xxxx xxx xx xxxxxxxxx xxxxxxxxx xxx xxx xxxx xx-xxxxxxxx xxxx xxx xxxx x xxxxxxx xxxx xx xxx xxxx. Xxxx xxx xxxx xxxxxxxxxxxxxx xx xxxxx xx xxxxxxx xxxxxxx xxx xx xxx xxxxxxx xxxxxx. Xxx xxx xxxxx xxx [**XxxxxxXxxxxxxxxXxxxxXxxx.XxxxXx**](https://msdn.microsoft.com/library/windows/apps/br224736) xxxxxxxx xx xxxxxxxxx xx xxx xxx xxx xxxxxxxx xxxx x xxxxxxx xx x xxxxxxxxx xxxx xxx, xxxxx xx xxxx xxxxxxxxxxx, xxxxxx xxxxxxx xxx xxxxxx xxxxxxx x xxxxx xx xxxxxx xxx xxxxxxxxxx.
+> **Note**  For Windows Phone Store apps, the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/br242339) event is always followed by [**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335), even when your app is currently suspended and the user re-launches your app from a primary tile or app list. Apps can skip initialization if there is already content set on the current window. You can check the [**LaunchActivatedEventArgs.TileId**](https://msdn.microsoft.com/library/windows/apps/br224736) property to determine if the app was launched from a primary or a secondary tile and, based on that information, decide whether you should present a fresh or resume app experience.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxx xxx xxxxxxxxxx](activate-an-app.md)
-* [Xxxxxx xxx xxxxxxx](suspend-an-app.md)
-* [Xxxxxxxxxx xxx xxx xxxxxxx xxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465088)
-* [Xxx xxxxxxxxx](app-lifecycle.md)
+* [Handle app activation](activate-an-app.md)
+* [Handle app suspend](suspend-an-app.md)
+* [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/hh465088)
+* [App lifecycle](app-lifecycle.md)
+
+
 
 
 <!--HONumber=Mar16_HO1-->
+
+

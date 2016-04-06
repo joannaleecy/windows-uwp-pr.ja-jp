@@ -1,26 +1,26 @@
 ---
-xxxxx: Xxx xx x xxxxxxxx
-xxxxxxxxxxx: Xxx xx x Xxxxxxxx xx xxxx xxx, xxx xxxxx xxx xx xxxxxx xxxxxxxxxxxxx xx xxx xxxxxxxxxx xxx xxxxxxxxxx.
-xx.xxxxxxx: XYXYYXYY-YYYY-YXXX-XYXY-YYYYXXYYXXXX
+title: Set up a geofence
+description: Set up a Geofence in your app, and learn how to handle notifications in the foreground and background.
+ms.assetid: A3A46E03-0751-4DBD-A2A1-2323DB09BDBA
 ---
 
-# Xxx xx x xxxxxxxx
+# Set up a geofence
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxx xx x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263587) xx xxxx xxx, xxx xxxxx xxx xx xxxxxx xxxxxxxxxxxxx xx xxx xxxxxxxxxx xxx xxxxxxxxxx.
+Set up a [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) in your app, and learn how to handle notifications in the foreground and background.
 
-**Xxx** Xx xxxxx xxxx xxxxx xxxxxxxxx xxxxxxxx xx xxxx xxx, xxxxxxxx xxx xxxxxxxxx xxxxxx xxxx xxx [Xxxxxxx-xxxxxxxxx-xxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=619979) xx XxxXxx.
+**Tip** To learn more about accessing location in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
--   [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## Xxxxxx xxx xxxxxxxx xxxxxxxxxx
+## Enable the location capability
 
 
-1.  Xx **Xxxxxxxx Xxxxxxxx**, xxxxxx-xxxxx xx **xxxxxxx.xxxxxxxxxxxx** xxx xxxxxx xxx **Xxxxxxxxxxxx** xxx.
-2.  Xx xxx **Xxxxxxxxxxxx** xxxx, xxxxx **Xxxxxxxx**. Xxxx xxxx xxx `Location` xxxxxx xxxxxxxxxx xx xxx xxxxxxx xxxxxxxx xxxx.
+1.  In **Solution Explorer**, double-click on **package.appxmanifest** and select the **Capabilities** tab.
+2.  In the **Capabilities** list, check **Location**. This adds the `Location` device capability to the package manifest file.
 
 ```xml
   <Capabilities>
@@ -29,12 +29,12 @@ Xxx xx x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263587
   </Capabilities>
 ```
 
-## Xxx xx x xxxxxxxx
+## Set up a geofence
 
 
-### Xxxx Y: Xxxxxxx xxxxxx xx xxx xxxx'x xxxxxxxx
+### Step 1: Request access to the user's location
 
-**Xxxxxxxxx** Xxx xxxx xxxxxxx xxxxxx xx xxx xxxx'x xxxxxxxx xx xxxxx xxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn859152) xxxxxx xxxxxx xxxxxxxxxx xx xxxxxx xxx xxxx'x xxxxxxxx. Xxx xxxx xxxx xxx **XxxxxxxXxxxxxXxxxx** xxxxxx xxxx xxx XX xxxxxx xxx xxxx xxx xxxx xx xx xxx xxxxxxxxxx. Xxxx xxx xxxx xxx xx xxxx xx xxxxxx xxx xxxx'x xxxxxxxx xxxxxxxxxxx xxxxx xxxxx xxx xxxx xxxxxx xxxxxxxxxx xx xxxx xxx.
+**Important** You must request access to the user's location by using the [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) method before attempting to access the user's location. You must call the **RequestAccessAsync** method from the UI thread and your app must be in the foreground. Your app will not be able to access the user's location information until after the user grants permission to your app.
 
 ```csharp
 using Windows.Devices.Geolocation;
@@ -42,13 +42,13 @@ using Windows.Devices.Geolocation;
 var accessStatus = await Geolocator.RequestAccessAsync();
 ```
 
-Xxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn859152) xxxxxx xxxxxxx xxx xxxx xxx xxxxxxxxxx xx xxxxxx xxxxx xxxxxxxx. Xxx xxxx xx xxxx xxxxxxxx xxxx (xxx xxx). Xxxxx xxx xxxxx xxxx xxxx xxxxx xx xxxx xxxxxxxxxx, xxxx xxxxxx xx xxxxxx xxxxxxx xxx xxxx xxx xxxxxxxxxx. Xx xxxx xxx xxxx xxxxxx xxxxxxxx xxxxxxxxxxx xxxxx xxxx'xx xxxx xxxxxxxx, xx xxxxxxxxx xxxx xxx xxxxxxx x xxxx xx xxx xxxxxxxx xxxxxxxx xx xxxxxxxxxxxx xxxxx xx xxxx xxxxx.
+The [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn859152) method prompts the user for permission to access their location. The user is only prompted once (per app). After the first time they grant or deny permission, this method no longer prompts the user for permission. To help the user change location permissions after they've been prompted, we recommend that you provide a link to the location settings as demonstrated later in this topic.
 
-### Xxxx Y: Xxxxxxxx xxx xxxxxxx xx xxxxxxxx xxxxx xxx xxxxxxxx xxxxxxxxxxx
+### Step 2: Register for changes in geofence state and location permissions
 
-Xx xxxx xxxxxxx, x **xxxxxx** xxxxxxxxx xx xxxx xxxx **xxxxxxXxxxxx** (xxxx xxx xxxxxxxx xxxxxxx) xx xxx xxxx xxxx xxxxxx xx xxx xxxx'x xxxxxxxx xx xxxxxxx. Xx xxxxxx xx xxx xxxx'x xxxxxxxx xx xxxxxxx, xxx xxxx xxxxxxxx xxx xxxxxxx xxxxxxxxx, xxxxxxxxx xxx xxxxxxxx xxxxx xxxxxxx, xxx xxxxxxxxx xxx xxxxxxx xx xxxxxxxx xxxxxxxxxxx.
+In this example, a **switch** statement is used with **accessStatus** (from the previous example) to act only when access to the user's location is allowed. If access to the user's location is allowed, the code accesses the current geofences, registers for geofence state changes, and registers for changes in location permissions.
 
-**Xxx** Xxxx xxxxx x xxxxxxxx, xxxxxxx xxxxxxx xx xxxxxxxx xxxxxxxxxxx xxxxx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263646) xxxxx xxxx xxx XxxxxxxxXxxxxxx xxxxx xxxxxxx xx xxx XxxxxxXxxxxxx xxxxx xxxx xxx Xxxxxxxxxx xxxxx. X [**XxxxxxxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263599) xx **Xxxxxxxx** xx xxxxxxxxxx xx x xxxxxxxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225599) - xxxx xxxxxxxx xxxx xxx xxx xxxx xxx xxxx xxxxxxxxxx xx xxxxxx xxx xxxx'x xxxxxxxx.
+**Tip** When using a geofence, monitor changes in location permissions using the [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) event from the GeofenceMonitor class instead of the StatusChanged event from the Geolocator class. A [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599) of **Disabled** is equivalent to a disabled [**PositionStatus**](https://msdn.microsoft.com/library/windows/apps/br225599) - both indicate that the app does not have permission to access the user's location.
 
 ```csharp
 switch (accessStatus)
@@ -74,7 +74,7 @@ switch (accessStatus)
 }
 ```
 
-Xxxx, xxxx xxxxxxxxxx xxxx xxxx xxxx xxxxxxxxxx xxx, xxxxxxxxxx xxx xxxxx xxxxxxxxx.
+Then, when navigating away from your foreground app, unregister the event listeners.
 
 ```csharp
 protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
@@ -86,9 +86,9 @@ protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
 }
 ```
 
-### Xxxx Y: Xxxxxx xxx xxxxxxxx
+### Step 3: Create the geofence
 
-Xxx, xxx xxx xxxxx xx xxxxxx xxx xxx xx x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263587) xxxxxx. Xxxxx xxx xxxxxxx xxxxxxxxx xxxxxxxxxxx xxxxxxxxx xx xxxxxx xxxx, xxxxxxxxx xx xxxx xxxxx. Xx xxx xxxx xxxxx xxxxxxxx xxxxxxxxxxx, xxxxxxx xxxx xxx [**Xx**](https://msdn.microsoft.com/library/windows/apps/dn263724) xxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263718) xx xxxxx xxxx.
+Now, you are ready to define and set up a [**Geofence**](https://msdn.microsoft.com/library/windows/apps/dn263587) object. There are several different constructor overloads to choose from, depending on your needs. In the most basic geofence constructor, specify only the [**Id**](https://msdn.microsoft.com/library/windows/apps/dn263724) and the [**Geoshape**](https://msdn.microsoft.com/library/windows/apps/dn263718) as shown here.
 
 ```csharp
 // Set the fence ID.
@@ -108,18 +108,13 @@ Geocircle geocircle = new Geocircle(position, radius);
 Geofence geofence = new Geofence(fenceId, geocircle);
 ```
 
-Xxx xxx xxxx-xxxx xxxx xxxxxxxx xxxxxxx xx xxxxx xxx xx xxx xxxxx xxxxxxxxxxxx. Xx xxx xxxx xxxxxxx, xxx xxxxxxxx xxxxxxxxxxx xxxxxxxxx xxxxx xxxxxxxxxx xxxxxxxxxx:
+You can fine-tune your geofence further by using one of the other constructors. In the next example, the geofence constructor specifies these additional parameters:
 
--   [
-            **XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263728) - Xxxxxxxxx xxxx xxxxxxxx xxxxxx xxx xxxx xx xxxxxxx xxxxxxxxxxxxx xxx xxxxxxxx xxx xxxxxxx xxxxxx, xxxxxxx xxx xxxxxxx xxxxxx, xx xxxxxxx xx xxx xxxxxxxx.
--   [
-            **XxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn263732) - Xxxxxxx xxx xxxxxxxx xxxx xxx xxx xxxxxx xxx xxxxxxxx xx xxxxx xxxxxxxxx xxx xxxx xxxx xxx.
--   [
-            **XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn263703) - Xxxxxxxxx xxx xxxx xxx xxxx xxxx xx xx xx xxx xx xxx xxxxxxx xxxx xxxxxx xxx xxxxx/xxxx xxxxxx xxx xxxxxxxxx.
--   [
-            **XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn263735) - Xxxxxxxxx xxxx xx xxxxx xxxxxxxxxx xxx xxxxxxxx.
--   [
-            **Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263697) - Xxxxxxxxx xxx xxxxxx xxx xxxxx xx xxxxxxx xxx xxxxxxxx.
+-   [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) - Indicates what geofence events you want to receive notifications for entering the defined region, leaving the defined region, or removal of the geofence.
+-   [**SingleUse**](https://msdn.microsoft.com/library/windows/apps/dn263732) - Removes the geofence once all the states the geofence is being monitored for have been met.
+-   [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) - Indicates how long the user must be in or out of the defined area before the enter/exit events are triggered.
+-   [**StartTime**](https://msdn.microsoft.com/library/windows/apps/dn263735) - Indicates when to start monitoring the geofence.
+-   [**Duration**](https://msdn.microsoft.com/library/windows/apps/dn263697) - Indicates the period for which to monitor the geofence.
 
 ```csharp
 // Set the fence ID.
@@ -157,9 +152,9 @@ DateTimeOffset startTime = DateTime.Now;
 Geofence geofence = new Geofence(fenceId, geocircle, monitoredStates, singleUse, dwellTime, startTime, duration);
 ```
 
-### Xxxx Y: Xxxxxx xxxxxxx xx xxxxxxxx xxxxxxxxxxx
+### Step 4: Handle changes in location permissions
 
-Xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263595) xxxxxx xxxxxxxx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263646) xxxxx xx xxxxxxxx xxxx xxx xxxx'x xxxxxxxx xxxxxxxx xxxxxxx. Xxxx xxxxx xxxxxx xxx xxxxxxxxxxxxx xxxxxx xxx xxx xxxxxxxx'x **xxxxxx.Xxxxxx** xxxxxxxx (xx xxxx [**XxxxxxxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263599)). Xxxx xxxx xxxx xxxxxx xx xxx xxxxxx xxxx xxx XX xxxxxx xxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208211) xxxxxx xxxxxxx xxx XX xxxxxxx.
+The [**GeofenceMonitor**](https://msdn.microsoft.com/library/windows/apps/dn263595) object triggers the [**StatusChanged**](https://msdn.microsoft.com/library/windows/apps/dn263646) event to indicate that the user's location settings changed. That event passes the corresponding status via the argument's **sender.Status** property (of type [**GeofenceMonitorStatus**](https://msdn.microsoft.com/library/windows/apps/dn263599)). Note that this method is not called from the UI thread and the [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) object invokes the UI changes.
 
 ```csharp
 using Windows.UI.Core;
@@ -209,20 +204,20 @@ public async void OnGeofenceStatusChanged(GeofenceMonitor sender, object e)
 }
 ```
 
-## Xxx xx xxxxxxxxxx xxxxxxxxxxxxx
+## Set up foreground notifications
 
 
-Xxxxx xxxx xxxxxxxxx xxx xxxxxxx, xxx xxxx xxx xxx xxxxx xx xxxxxx xxxx xxxxxxx xxxx x xxxxxxxx xxxxx xxxxxx. Xxxxxxxxx xx xxx [**XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263728) xxxx xxx xxxx xxx xx, xxx xxx xxxxxxx xx xxxxx xxxx:
+After your geofences are created, you must add the logic to handle what happens when a geofence event occurs. Depending on the [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) that you have set up, you may receive an event when:
 
--   Xxx xxxx xxxxxx x xxxxxx xx xxxxxxxx.
--   Xxx xxxx xxxxxx x xxxxxx xx xxxxxxxx.
--   Xxx xxxxxxxx xxx xxxxxxx xx xxxx xxxxxxx. Xxxx xxxx x xxxxxxxxxx xxx xx xxx xxxxxxxxx xxx x xxxxxxx xxxxx.
+-   The user enters a region of interest.
+-   The user leaves a region of interest.
+-   The geofence has expired or been removed. Note that a background app is not activated for a removal event.
 
-Xxx xxx xxxxxx xxx xxxxxx xxxxxxxx xxxx xxxx xxx xxxx xx xx xxxxxxx xx xxxxxxxx xxx x xxxxxxxxxx xxxx xx xxxx xxx xxxxxxx x xxxxxxxxxx xxxxxxxxxxxx xxxx xx xxxxx xxxxxx.
+You can listen for events directly from your app when it is running or register for a background task so that you receive a background notification when an event occurs.
 
-### Xxxx Y: Xxxxxxxx xxx xxxxxxxx xxxxx xxxxxx xxxxxx
+### Step 1: Register for geofence state change events
 
-Xxx xxxx xxx xx xxxxxxx x xxxxxxxxxx xxxxxxxxxxxx xx x xxxxxxxx xxxxx xxxxxx, xxx xxxx xxxxxxxx xx xxxxx xxxxxxx. Xxxx xx xxxxxxxxx xxx xx xxxx xxx xxxxxx xxx xxxxxxxx.
+For your app to receive a foreground notification of a geofence state change, you must register an event handler. This is typically set up when you create the geofence.
 
 ```csharp
 private void Initialize()
@@ -234,9 +229,9 @@ private void Initialize()
 
 ```
 
-### Xxxx Y: Xxxxxxxxx xxx xxxxxxxx xxxxx xxxxxxx
+### Step 2: Implement the geofence event handler
 
-Xxx xxxx xxxx xx xx xxxxxxxxx xxx xxxxx xxxxxxxx. Xxx xxxxxx xxxxx xxxx xxxxxxx xx xxxx xxxx xxx xx xxxxx xxx xxxxxxxx xxx.
+The next step is to implement the event handlers. The action taken here depends on what your app is using the geofence for.
 
 ```csharp
 public async void OnGeofenceStateChanged(GeofenceMonitor sender, object e)
@@ -280,32 +275,32 @@ public async void OnGeofenceStateChanged(GeofenceMonitor sender, object e)
 
 ```
 
-## Xxx xx xxxxxxxxxx xxxxxxxxxxxxx
+## Set up background notifications
 
 
-Xxxxx xxxx xxxxxxxxx xxx xxxxxxx, xxx xxxx xxx xxx xxxxx xx xxxxxx xxxx xxxxxxx xxxx x xxxxxxxx xxxxx xxxxxx. Xxxxxxxxx xx xxx [**XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263728) xxxx xxx xxxx xxx xx, xxx xxx xxxxxxx xx xxxxx xxxx:
+After your geofences are created, you must add the logic to handle what happens when a geofence event occurs. Depending on the [**MonitoredStates**](https://msdn.microsoft.com/library/windows/apps/dn263728) that you have set up, you may receive an event when:
 
--   Xxx xxxx xxxxxx x xxxxxx xx xxxxxxxx.
--   Xxx xxxx xxxxxx x xxxxxx xx xxxxxxxx.
--   Xxx xxxxxxxx xxx xxxxxxx xx xxxx xxxxxxx. Xxxx xxxx x xxxxxxxxxx xxx xx xxx xxxxxxxxx xxx x xxxxxxx xxxxx.
+-   The user enters a region of interest.
+-   The user leaves a region of interest.
+-   The geofence has expired or been removed. Note that a background app is not activated for a removal event.
 
-Xx xxxxxx xxx x xxxxxxxx xxxxx xx xxx xxxxxxxxxx
+To listen for a geofence event in the background
 
--   Xxxxxxx xxx xxxxxxxxxx xxxx xx xxxx xxx’x xxxxxxxx.
--   Xxxxxxxx xxx xxxxxxxxxx xxxx xx xxxx xxx. Xx xxxx xxx xxxxx xxxxxxxx xxxxxx, xxx xxx xxxxxxxxx x xxxxx xxxxxxx, xxx xxx xxx x xxxx xxx xxxx xxxx xxx xxxxx xx xxxxxxxxx. Xxx xxx xxxx xxx x xxxx xx xxxx xxxx xxxx xxx xxxx xx xxxxxxx xxxx xxx xxxxx xx xxxxxxxxx xx xxxx xxx xxx xxxx xxxx xxx xxxx xxxx xxxxxxxx.
--   Xxxxx xxxx xxx xx xxxxxxx xx xxx xxxxxxxxxx, xxxxxx xxx xxxx xx xxxxx xxxx xxx xxxxxxxx xxxxxxxxxxx.
+-   Declare the background task in your app’s manifest.
+-   Register the background task in your app. If your app needs internet access, say for accessing a cloud service, you can set a flag for that when the event is triggered. You can also set a flag to make sure that the user is present when the event is triggered so that you are sure that the user gets notified.
+-   While your app is running in the foreground, prompt the user to grant your app location permissions.
 
-### Xxxx Y: Xxxxxxxx xxx xxxxxxxx xxxxx xxxxxx xxxxxx
+### Step 1: Register for geofence state change events
 
-Xx xxxx xxx'x xxxxxxxx, xxxxx xxx **Xxxxxxxxxxxx** xxx, xxx x xxxxxxxxxxx xxx x xxxxxxxx xxxxxxxxxx xxxx. Xx xx xxxx:
+In your app's manifest, under the **Declarations** tab, add a declaration for a location background task. To do this:
 
--   Xxx x xxxxxxxxxxx xx xxxx **Xxxxxxxxxx Xxxxx**.
--   Xxx x xxxxxxxx xxxx xxxx xx **Xxxxxxxx**.
--   Xxx xx xxxxx xxxxx xxxx xxxx xxx xx xxxx xxxx xxx xxxxx xx xxxxxxxxx.
+-   Add a declaration of type **Background Tasks**.
+-   Set a property task type of **Location**.
+-   Set an entry point into your app to call when the event is triggered.
 
-### Xxxx Y: Xxxxxxxx xxx xxxxxxxxxx xxxx
+### Step 2: Register the background task
 
-Xxx xxxx xx xxxx xxxx xxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxx xxxx. Xxxxxxxx xxxx xxxx xxx xxxxxxxx xxx xxxxxxx, xx xxxxxxx xxx xxxxxxxx xxxxxxxxxxx. Xxx xxxx xxxx, xxx [Xxx xx x xxxxxxxx](#setup).
+The code in this step registers the geofencing background task. Remember that when the geofence was created, we checked for location permissions. For more info, see [Set up a geofence](#setup).
 
 ```csharp
 async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
@@ -355,9 +350,9 @@ async private void RegisterBackgroundTask(object sender, RoutedEventArgs e)
 
 ```
 
-### Xxxx Y: Xxxxxxxx xxx xxxxxxxxxx xxxxxxxxxxxx
+### Step 3: Handling the background notification
 
-Xxx xxxxxx xxxx xxx xxxx xx xxxxxx xxx xxxx xxxxxxx xx xxxx xxxx xxx xxxx, xxx xxx xxx xxxxxxx x xxxxx xxxxxxxxxxxx, xxxx xx xxxxx xxxxx, xx xxxxxx x xxxx xxxx. Xxx xxxx xx xxxx xxxx xxxxxxx xxx xxxxxxxxxxxx.
+The action that you take to notify the user depends on what your app does, but you can display a toast notification, play an audio sound, or update a live tile. The code in this step handles the notification.
 
 ```csharp
 async private void OnCompleted(IBackgroundTaskRegistration sender, BackgroundTaskCompletedEventArgs e)
@@ -398,10 +393,10 @@ async private void OnCompleted(IBackgroundTaskRegistration sender, BackgroundTas
 
 ```
 
-## Xxxxxx xxx xxxxxxx xxxxxxxx
+## Change the privacy settings
 
 
-Xx xxx xxxxxxxx xxxxxxx xxxxxxxx xxx'x xxxxx xxxx xxx xx xxxxxx xxx xxxx'x xxxxxxxx, xx xxxxxxxxx xxxx xxx xxxxxxx x xxxxxxxxxx xxxx xx xxx **xxxxxxxx xxxxxxx xxxxxxxx** xx xxx **Xxxxxxxx** xxx. Xx xxxx xxxxxxx, x Xxxxxxxxx xxxxxxx xx xxxx xxxxxxxx xx xxx `ms-settings:privacy-location` XXX.
+If the location privacy settings don't allow your app to access the user's location, we recommend that you provide a convenient link to the **location privacy settings** in the **Settings** app. In this example, a Hyperlink control is used navigate to the `ms-settings:privacy-location` URI.
 
 ```xaml
 <!--Set Visibility to Visible when access to the user&#39;s location is denied. -->  
@@ -415,7 +410,7 @@ Xx xxx xxxxxxxx xxxxxxx xxxxxxxx xxx'x xxxxx xxxx xxx xx xxxxxx xxx xxxx'x xxxxx
 </TextBlock>
 ```
 
-Xxxxxxxxxxxxx, xxxx xxx xxx xxxx xxx [**XxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701476) xxxxxx xx xxxxxx xxx **Xxxxxxxx** xxx xxxx xxxx. Xxx xxxx xxxx, xxx [Xxxxxx xxx Xxxxxxx Xxxxxxxx xxx](https://msdn.microsoft.com/library/windows/apps/mt228342).
+Alternatively, your app can call the [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) method to launch the **Settings** app from code. For more info, see [Launch the Windows Settings app](https://msdn.microsoft.com/library/windows/apps/mt228342).
 
 ```csharp
 using Windows.System;
@@ -423,51 +418,55 @@ using Windows.System;
 bool result = await Launcher.LaunchUriAsync(new Uri("ms-settings:privacy-location"));
 ```
 
-## Xxxx xxx xxxxx xxxx xxx
+## Test and debug your app
 
 
-Xxxxxxx xxx xxxxxxxxx xxxxxxxxxx xxxx xxx xx x xxxxxxxxx xxxxxxx xxxx xxxxxx xx x xxxxxx'x xxxxxxxx. Xxxx, xx xxxxxxx xxxxxxx xxxxxxx xxx xxxxxxx xxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxx.
+Testing and debugging geofencing apps can be a challenge because they depend on a device's location. Here, we outline several methods for testing both foreground and background geofences.
 
-**Xx xxxxx x xxxxxxxxxx xxx**
+**To debug a geofencing app**
 
-1.  Xxxxxxxxxx xxxx xxx xxxxxx xx xxx xxxxxxxxx.
-2.  Xxxx xxxxxxxx x xxxxxxxx xx xxxxxxxx x xxxxxxxx xxxxxx xxxx xxxxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxx, xx xxx'xx xxxxxxx xxxxxx xxx xxxxxxxx xxx xxx "xxxxxxxx xxxxxxx" xxxxx xx xxxxxxxxx xxxxxxxxxxx.
-3.  Xxx xxx Xxxxxxxxx Xxxxxx Xxxxxx xxxxxxxx xx xxxxxxxx xxxxxxxxx xxx xxx xxxxxx.
+1.  Physically move the device to new locations.
+2.  Test entering a geofence by creating a geofence region that includes your current physical location, so you're already inside the geofence and the "geofence entered" event is triggered immediately.
+3.  Use the Microsoft Visual Studio emulator to simulate locations for the device.
 
-### Xxxx xxx xxxxx x xxxxxxxxxx xxx xxxx xx xxxxxxx xx xxx xxxxxxxxxx
+### Test and debug a geofencing app that is running in the foreground
 
-**Xx xxxx xxxx xxxxxxxxxx xxx xxxx xx xxxxxxx xxx xxxxxxxxxx**
+**To test your geofencing app that is running the foreground**
 
-1.  Xxxxx xxxx xxx xx Xxxxxx Xxxxxx.
-2.  Xxxxxx xxxx xxx xx xxx Xxxxxx Xxxxxx xxxxxxxx.
-3.  Xxx xxxxx xxxxx xx xxxxxxxx xxxxxxx xxxxxxxxx xxxxxx xxx xxxxxxx xx xxxx xxxxxxxx xxxxxx. Xx xxxx xx xxxx xxxx xxxxxx xxxx xxx xxxx xxxxxxxxx xx xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn263703) xxxxxxxx xx xxxxxxx xxx xxxxx. Xxxx xxxx xxx xxxx xxxxxx xxx xxxxxx xx xxxxxx xxxxxxxx xxxxxxxxxxx xxx xxx xxx. Xxx xxxx xxxx xxxxx xxxxxxxxxx xxxxxxxxx, xxx [Xxx xxx xxxxxxxxx xxxxxxxxxxx xx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=325245).
-4.  Xxx xxx xxxx xxx xxx xxxxxxxx xx xxxxxxxx xxx xxxx xx xxxxxx xxx xxxxx xxxxx xxxxxxxxxxxxx xxxxxx xx xx xxxxxxxx xx xxxxxxxxx xxxxxx.
+1.  Build your app in Visual Studio.
+2.  Launch your app in the Visual Studio emulator.
+3.  Use these tools to simulate various locations inside and outside of your geofence region. Be sure to wait long enough past the time specified by the [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) property to trigger the event. Note that you must accept the prompt to enable location permissions for the app. For more info about simulating locations, see [Set the simulated geolocation of the device](http://go.microsoft.com/fwlink/p/?LinkID=325245).
+4.  You can also use the emulator to estimate the size of fences and dwell times approximately needed to be detected at different speeds.
 
-### Xxxx xxx xxxxx x xxxxxxxxxx xxx xxxx xx xxxxxxx xx xxx xxxxxxxxxx
+### Test and debug a geofencing app that is running in the background
 
-**Xx xxxx xxxx xxxxxxxxxx xxx xxxx xx xxxxxxx xxx xxxxxxxxxx**
+**To test your geofencing app that is running the background**
 
-1.  Xxxxx xxxx xxx xx Xxxxxx Xxxxxx. Xxxx xxxx xxxx xxx xxxxxx xxx xxx **Xxxxxxxx** xxxxxxxxxx xxxx xxxx.
-2.  Xxxxxx xxx xxx xxxxxxx xxxxx.
-3.  Xxxxx xxxx xxx xxxx xx xxxxxxx xxxxxxx.
-4.  Xxxxxx xxxx xxx xx xxx Xxxxxx Xxxxxx xxxxxxxx. Xxxx xxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xx xxxxxxxxx xx xxxx xxx xxx xx x xxxx xxxxxx xxx xxxxxxxx. Xx xxx xxxxxx xxxxxxxx xxxxxxxxxx xxxx xxxxxx xxx xxxxxxxx.
-5.  Xxxx xxx xxxxxxxx, xxxxxxxx xxxxxxx xxxxxxxxx xxxxxx xxx xxxxxxx xx xxxx xxxxxxxx xxxxxx. Xx xxxx xx xxxx xxxx xxxxxx xxxx xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn263703) xx xxxxxxx xxx xxxxx. Xxxx xxxx xxx xxxx xxxxxx xxx xxxxxx xx xxxxxx xxxxxxxx xxxxxxxxxxx xxx xxx xxx.
-6.  Xxx Xxxxxx Xxxxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxx. Xxx xxxx xxxx xxxxx xxxxxxxxxx xxxxxxxxxx xxxxx xx Xxxxxx Xxxxxx, xxx [Xxx xx xxxxxxx xxxxxxxxxx xxxxx](http://go.microsoft.com/fwlink/p/?LinkID=325378).
+1.  Build your app in Visual Studio. Note that your app should set the **Location** background task type.
+2.  Deploy the app locally first.
+3.  Close your app that is running locally.
+4.  Launch your app in the Visual Studio emulator. Note that background geofencing simulation is supported on only one app at a time within the emulator. Do not launch multiple geofencing apps within the emulator.
+5.  From the emulator, simulate various locations inside and outside of your geofence region. Be sure to wait long enough past the [**DwellTime**](https://msdn.microsoft.com/library/windows/apps/dn263703) to trigger the event. Note that you must accept the prompt to enable location permissions for the app.
+6.  Use Visual Studio to trigger the location background task. For more info about triggering background tasks in Visual Studio, see [How to trigger background tasks](http://go.microsoft.com/fwlink/p/?LinkID=325378).
 
-## Xxxxxxxxxxxx xxxx xxx
+## Troubleshoot your app
 
 
-Xxxxxx xxxx xxx xxx xxxxxx xxxxxxxx, **Xxxxxxxx** xxxx xx xxxxxxx xx xxx xxxxxx. Xx xxx **Xxxxxxxx** xxx, xxxxx xxxx xxx xxxxxxxxx **xxxxxxxx xxxxxxx xxxxxxxx** xxx xxxxxx xx:
+Before your app can access location, **Location** must be enabled on the device. In the **Settings** app, check that the following **location privacy settings** are turned on:
 
--   **Xxxxxxxx xxx xxxx xxxxxx...** xx xxxxxx **xx** (xxx xxxxxxxxxx xx Xxxxxxx YY Xxxxxx)
--   Xxx xxxxxxxx xxxxxxxx xxxxxxx, **Xxxxxxxx**, xx xxxxxx **xx**
--   Xxxxx **Xxxxxx xxxx xxxx xxx xxx xxxx xxxxxxxx**, xxxx xxx xx xxx xx **xx**
+-   **Location for this device...** is turned **on** (not applicable in Windows 10 Mobile)
+-   The location services setting, **Location**, is turned **on**
+-   Under **Choose apps that can use your location**, your app is set to **on**
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [XXX xxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=533278)
-* [Xxxxxx xxxxxxxxxx xxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn631756)
-* [Xxxxxx xxxxxxxxxx xxx xxxxxxxx-xxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/hh465148)
+* [UWP geolocation sample](http://go.microsoft.com/fwlink/p/?linkid=533278)
+* [Design guidelines for geofencing](https://msdn.microsoft.com/library/windows/apps/dn631756)
+* [Design guidelines for location-aware apps](https://msdn.microsoft.com/library/windows/apps/hh465148)
+
+
 
 
 <!--HONumber=Mar16_HO1-->
+
+

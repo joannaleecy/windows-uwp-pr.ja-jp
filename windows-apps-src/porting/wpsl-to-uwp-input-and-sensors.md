@@ -1,44 +1,44 @@
 ---
-xxxxxxxxxxx: Xxxx xxxx xxxxxxxxxx xxxx xxx xxxxxx xxxxxx xxx xxx xxxxxxx xxxxxxxx xxxxx xxxx, xxx xxxxxx xx, xxx xxxx.
-xxxxx: Xxxxxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xx XXX xxx X/X, xxxxxx, xxx xxx xxxxx'
-xx.xxxxxxx: xxYxYxYY-YYxY-YYxY-YYYx-xYxxYYYYYxYY
+description: Code that integrates with the device itself and its sensors involves input from, and output to, the user.
+title: Porting Windows Phone Silverlight to UWP for I/O, device, and app model'
+ms.assetid: bf9f2c03-12c1-49e4-934b-e3fa98919c53
 ---
 
-#  Xxxxxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xx XXX xxx X/X, xxxxxx, xxx xxx xxxxx
+#  Porting Windows Phone Silverlight to UWP for I/O, device, and app model
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxx xxxxxxxx xxxxx xxx [Xxxxxxx XXXX xxx XX](wpsl-to-uwp-porting-xaml-and-ui.md).
+The previous topic was [Porting XAML and UI](wpsl-to-uwp-porting-xaml-and-ui.md).
 
-Xxxx xxxx xxxxxxxxxx xxxx xxx xxxxxx xxxxxx xxx xxx xxxxxxx xxxxxxxx xxxxx xxxx, xxx xxxxxx xx, xxx xxxx. Xx xxx xxxx xxxxxxx xxxxxxxxxx xxxx. Xxx, xxxx xxxx xx xxx xxxxxxxxx xxxxxxx xx xx xxxxxx xxx XX xxxxx xx xxx xxxx xxxxx. Xxxx xxxx xxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxxxx, xxxxxxxxxxxxx, xxxxxxxxx, xxxxxxxxxx xxx xxxxxxx (xxxxx xxxxxxxxx xxxx xxxxxx xxxxxxxxxxx xxx xxxxxxxxx), (xxx)xxxxxxxx, xxx xxxxx xxxxxxxxxx xxxx xx xxxxx, xxxxx, xxxxxxxx, xxx xxx.
+Code that integrates with the device itself and its sensors involves input from, and output to, the user. It can also involve processing data. But, this code is not generally thought of as either the UI layer or the data layer. This code includes integration with the vibration controller, accelerometer, gyroscope, microphone and speaker (which intersect with speech recognition and synthesis), (geo)location, and input modalities such as touch, mouse, keyboard, and pen.
 
-## Xxxxxxxxxxx xxxxxxxxx (xxxxxxx xxxxxxxx xxxxxxxxxx)
+## Application lifecycle (process lifetime management)
 
-Xxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxxxxxxx xxxx xx xxxx xxx xxxxxxx xxx xxxxxxxxxxx xxxxx xxx xxx xxxx xxxxx xx xxxxx xx xxxxxxx xxxxx xxxxxxxxxx xxx xxxxxxxxxxxx xx-xxxxxxxxx. Xxx xxx xxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx xxxxxx xxxxxxxxx xxxx xxxx xx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxx, xxxxx xxxx'xx xxxx xxxxxxxx xxxx xxx xxxx xxxx xx xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxx xx xxxxxxxxx xxx xxx xxxx xxx xxxxxx xx xxxx xx xxx xxxxxxxxxx xx xxx xxxxxx. Xxx'xx xxxx xxxx xxxx xxxx xxxx xxxxx xx xxx xxx xxxxxx xxxxxxxxxx xxxxxx.
+Your Windows Phone Silverlight app contains code to save and restore its application state and its view state in order to support being tombstoned and subsequently re-activated. The app lifecycle of Universal Windows Platform (UWP) apps has strong parallels with that of Windows Phone Silverlight apps, since they're both designed with the same goal of maximizing the resources available to whichever app the user has chosen to have in the foreground at any moment. You'll find that your code will adapt to the new system reasonable easily.
 
-**Xxxx**   Xxxxxxxx xxx xxxxxxxx **Xxxx** xxxxxx xxxxxxxxxxxxx xxxxxxxxxx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx. Xxxxxxxx xxx xxxxxxxx **Xxxx** xxxxxx xx x xxxxxx xxxxxx *xxxx xxx* xxxxxxxxxxxxx xxxxxxxxx x XXX xxx. Xxxxxxx, xx xxxxxxx xxxxxxxxx, xxx xxxx xx xxx xx xxxxxxxxxx. Xxx, xxxxx xxxxxxx xxx xxxxxxxxxxx xx xx xxx xxxx xxxxxxxx xxxxxxxxxxxxx xx xxxxxxxxxxx xxxxxxxxx xxxxxx.
+**Note**   Pressing the hardware **Back** button automatically terminates a Windows Phone Silverlight app. Pressing the hardware **Back** button on a mobile device *does not* automatically terminate a UWP app. Instead, it becomes suspended, and then it may be terminated. But, those details are transparent to an app that responds appropriately to application lifecycle events.
 
-X "xxxxxxxx xxxxxx" xx xxx xxxxxx xx xxxx xxxxxxx xxx xxx xxxxxxxx xxxxxxxx xxx xxx xxxxxx xxxxxxx xxx xxxxxxxxxx xxxxx. Xxx x XXX xxx, xxxxx xx xx xxxxxxxx xxxxxx; xxx xxxxxxxxxx xxxxx xx xxxxxx xx xxxx xx xx xxx xxxxxxx xxxxxxxx.
+A "debounce window" is the period of time between the app becoming inactive and the system raising the suspending event. For a UWP app, there is no debounce window; the suspension event is raised as soon as an app becomes inactive.
 
-Xxx xxxx xxxx, xxx [Xxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt243287).
+For more info, see [App lifecycle](https://msdn.microsoft.com/library/windows/apps/mt243287).
 
-## Xxxxxx
+## Camera
 
-Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxx xxxxxxx xxxx xxxx xxx **Xxxxxxxxx.Xxxxxxx.Xxxxxx**, **Xxxxxxxxx.Xxxxxxx.XxxxxXxxxxx**, xx **Xxxxxxxxx.Xxxxx.Xxxxx.XxxxxxXxxxxxxXxxx** xxxxxxx. Xx xxxx xxxx xxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX), xxx xxx xxx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241124) xxxxx. Xxxxx xx x xxxx xxxxxxx xx xxx [**XxxxxxxXxxxxXxXxxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700836) xxxxx. Xxxx xxxxxx xxxxxx xxx xx xxxxxxx x xxxxx xx x xxxxxxx xxxx, xxx xx xxxxxxxx xxx **xxxxxxxxxx** xxx **xxxxxx**[**xxxxxx xxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn934747) xx xx xxx xx xxx xxx xxxxxxx xxxxxxxx.
+Windows Phone Silverlight camera capture code uses the **Microsoft.Devices.Camera**, **Microsoft.Devices.PhotoCamera**, or **Microsoft.Phone.Tasks.CameraCaptureTask** classes. To port that code to the Universal Windows Platform (UWP), you can use the [**MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) class. There is a code example in the [**CapturePhotoToStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh700836) topic. That method allows you to capture a photo to a storage file, and it requires the **microphone** and **webcam** [**device capabilities**](https://msdn.microsoft.com/library/windows/apps/dn934747) to be set in the app package manifest.
 
-Xxxxxxx xxxxxx xx xxx [**XxxxxxXxxxxxxXX**](https://msdn.microsoft.com/library/windows/apps/br241030) xxxxx, xxxxx xxxx xxxxxxxx xxx **xxxxxxxxxx** xxx **xxxxxx**[**xxxxxx xxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn934747).
+Another option is the [**CameraCaptureUI**](https://msdn.microsoft.com/library/windows/apps/br241030) class, which also requires the **microphone** and **webcam** [**device capabilities**](https://msdn.microsoft.com/library/windows/apps/dn934747).
 
-Xxxx xxxx xxx xxx xxxxxxxxx xxx XXX xxxx.
+Lens apps are not supported for UWP apps.
 
-## Xxxxxxxxx xxx xxxxxxxx xxxx xxx xx xxxxxxx xx
+## Detecting the platform your app is running on
 
-Xxx xxx xx xxxxxxxx xxxxx xxx-xxxxxxxxx xxxxxxx xxxx Xxxxxxx YY. Xxx xxx xxxxxxxxxx xxxxx xx xxxx xx xxx xxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxx xxxxxx xxx Xxxxxxx xxxxxxx. Xx xxx xxxx xxx xx xxxxx xx xxxxxxxx xxxx xxx xxxxxxxxx xx xxxxxxxxxx xxxxxx xxxxxxxx. Xx xxxxxx, xxx xxx xxxx xxx xxx xxxxxx xx xxxxx xxxxxx xx xxxxxxxxx xxx xx xxxx xxxxxx xxxxxxxx xxxxxxxxxxxx. Xxx xxxx xxxx xx xxxx xxxxxx xxxxxxxx xxx—xxx xxx xx xxxxxx xxxxx xxxxxx xxxxxx xx xxxxxx—xxx [Xxxxx xx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/dn894631).
+The way of thinking about app-targeting changes with Windows 10. The new conceptual model is that an app targets the Universal Windows Platform (UWP) and runs across all Windows devices. It can then opt to light up features that are exclusive to particular device families. If needed, the app also has the option to limit itself to targeting one or more device families specifically. For more info on what device families are—and how to decide which device family to target—see [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).
 
-**Xxxx**   Xx xxxxxxxxx xxxx xxx xxx xxx xxxxxxxxx xxxxxx xx xxxxxx xxxxxx xx xxxxxx xxx xxxxxxxx xx xxxxxxxx. Xxxxxxxxxxx xxx xxxxxxx xxxxxxxxx xxxxxx xx xxxxxx xxxxxx xx xxxxxxx xxx xxx xxxx xxx xx xxxxxxxxx xxxxxxx x xxxxxxxxxx xxxxxxxxx xxxxxx xx xxxxxx xxxxxx xxxxxxx xx xxxxxxx. Xxxxxx xxxx xxxxxxxxx xxx xxxxxxxxx xxxxxx xx xxxxxx xxxxxx (xxx xxxxxxx xxxxxx), xxxx xxx xxx xxxxxxxx xx xxx xxxxxxx xxxxxx (xxx [Xxxxxxxxxxx xxxxxxxxxxx, xxx xxxxxxxx xxxx](wpsl-to-uwp-porting-to-a-uwp-project.md#conditional-compilation)). Xx xxx xxxx xxxxxxx x xxxxxxxxxx xxxxxxxxx xxxxxx xx xxxxxx xxxxxx, xx xxxx xx xxx xx xx x xxxxxxx xxxxxxxxx xxxxxxx, xxxxxx xxxx xxxxxx xxx xxxx xxx xxxx xxx xxxxxxx.
+**Note**   We recommend that you not use operating system or device family to detect the presence of features. Identifying the current operating system or device family is usually not the best way to determine whether a particular operating system or device family feature is present. Rather than detecting the operating system or device family (and version number), test for the presence of the feature itself (see [Conditional compilation, and adaptive code](wpsl-to-uwp-porting-to-a-uwp-project.md#conditional-compilation)). If you must require a particular operating system or device family, be sure to use it as a minimum supported version, rather than design the test for that one version.
 
-Xx xxxxxx xxxx xxx'x XX xx xxxxxxxxx xxxxxxx, xxxxx xxx xxxxxxx xxxxxxxxxx xxxx xx xxxxxxxxx. Xxxxxxxx xx xxx xxxx-xxxxx xxxxxxxx xxx xxxxxxx xxxxxx xxxxxx xx xxx xxxxxx xxxx. Xx xxxx XXXX xxxxxx, xxxxxxxx xx xxx xxxxx xx xxxxxxxxx xxxxxx (xxxxxxxx xxxx xxxxxx) xx xxxx xxxx XX xxxxxx xx xxxxxxxxx xxxxxxxxxxx xxx xxxxx xxxxxxx (xxx [Xxxx/xxxxxxxxx xxxxxx, xxxxxxx xxxxxxxx, xxx xxxxx xxxxxxx](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels).). Xxx xxx Xxxxxx Xxxxx Xxxxxxx'x xxxxxxxx xxxxxxxx xxx xxxxxxx xx xxxxx xxxx XX xx xxx xxxxxx xxxx (xxx [Xxxxx xx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/dn894631).).
+To tailor your app's UI to different devices, there are several techniques that we recommend. Continue to use auto-sized elements and dynamic layout panels as you always have. In your XAML markup, continue to use sizes in effective pixels (formerly view pixels) so that your UI adapts to different resolutions and scale factors (see [View/effective pixels, viewing distance, and scale factors](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels).). And use Visual State Manager's adaptive triggers and setters to adapt your UI to the window size (see [Guide to UWP apps](https://msdn.microsoft.com/library/windows/apps/dn894631).).
 
-Xxxxxxx, xx xxx xxxx x xxxxxxxx xxxxx xx xx xxxxxxxxxxx xx xxxxxx xxx xxxxxx xxxxxx, xxxx xxx xxx xx xxxx. Xx xxxx xxxxxxx, xx xxx xxx [**XxxxxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn960165) xxxxx xx xxxxxxxx xx x xxxx xxxxxxxx xxx xxx xxxxxx xxxxxx xxxxxx xxxxx xxxxxxxxxxx, xxx xx xxxx xxxx xx xxxx xxxx xx x xxxxxxx xxxx xxxxxxxxx.
+However, if you have a scenario where it is unavoidable to detect the device family, then you can do that. In this example, we use the [**AnalyticsVersionInfo**](https://msdn.microsoft.com/library/windows/apps/dn960165) class to navigate to a page tailored for the mobile device family where appropriate, and we make sure to fall back to a default page otherwise.
 
 ```csharp
    if (Windows.System.Profile.AnalyticsInfo.VersionInfo.DeviceFamily == "Windows.Mobile")
@@ -47,7 +47,7 @@ Xxxxxxx, xx xxx xxxx x xxxxxxxx xxxxx xx xx xxxxxxxxxxx xx xxxxxx xxx xxxxxx xxx
         rootFrame.Navigate(typeof(MainPage), e.Arguments);
 ```
 
-Xxxx xxx xxx xxxx xxxxxxxxx xxx xxxxxx xxxxxx xxxx xx xx xxxxxxx xx xxxx xxx xxxxxxxx xxxxxxxxx xxxxxxx xxxx xxx xx xxxxxx. Xxx xxxxxxx xxxxx xxxxx xxx xx xx xxxx xxxxxxxxxxxx, xxx xxx [**XxxxxxxxXxxxxxx.XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206071) xxxxx xxxxxxxxx xxx xxxx xxxxxxx xxx xxxx xxx xxx xxxxx xx xxxxxxx xxxxxx xxxxxx-xxxxxxxx xxxxxxxxx xxxxx xx xxx xxxxxx xxxxxx xxxxxx.
+Your app can also determine the device family that it is running on from the resource selection factors that are in effect. The example below shows how to do this imperatively, and the [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) topic describes the more typical use case for the class in loading device family-specific resources based on the device family factor.
 
 ```csharp
 var qualifiers = Windows.ApplicationModel.Resources.Core.ResourceContext.GetForCurrentView().QualifierValues;
@@ -55,42 +55,41 @@ string deviceFamilyName;
 bool isDeviceFamilyNameKnown = qualifiers.TryGetValue("DeviceFamily", out deviceFamilyName);
 ```
 
-Xxxx, xxx [Xxxxxxxxxxx xxxxxxxxxxx, xxx xxxxxxxx xxxx](wpsl-to-uwp-porting-to-a-uwp-project.md#conditional-compilation).
+Also, see [Conditional compilation, and adaptive code](wpsl-to-uwp-porting-to-a-uwp-project.md#conditional-compilation).
 
-## Xxxxxx xxxxxx
+## Device status
 
-X Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxx xxx xxx **Xxxxxxxxx.Xxxxx.Xxxx.XxxxxxXxxxxx** xxxxx xx xxx xxxx xxxxx xxx xxxxxx xx xxxxx xxx xxx xx xxxxxxx. Xxxxx xxxxx xx xx xxxxxx XXX xxxxxxxxxx xxx xxx **Xxxxxxxxx.Xxxxx.Xxxx** xxxxxxxxx, xxxx xxx xxxx xxxxxxxxxx xxx xxxxxx xxxx xxx xxx xxx xx x XXX xxx xx xxxxx xx xxxxx xx xxxxxxx xx xxx **XxxxxxXxxxxx** xxxxx.
+A Windows Phone Silverlight app can use the **Microsoft.Phone.Info.DeviceStatus** class to get info about the device on which the app is running. While there is no direct UWP equivalent for the **Microsoft.Phone.Info** namespace, here are some properties and events that you can use in a UWP app in place of calls to members of the **DeviceStatus** class.
 
-| Xxxxxxx Xxxxx Xxxxxxxxxxx                                                               | XXX                                                                                                                                                                                                                                                                                                                                |
+| Windows Phone Silverlight                                                               | UWP                                                                                                                                                                                                                                                                                                                                |
 |-----------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **XxxxxxxxxxxXxxxxxxXxxxxxXxxxx** xxx **XxxxxxxxxxxXxxxxxxXxxxxxXxxxxXxxxx** xxxxxxxxxx | [
-            **XxxxxxXxxxxxx.XxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn633832) xxx [**XxxXxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn633836) xxxxxxxxxx                                                                                                                                    |
-| **XxxxxxxxxxxXxxxXxxxxxXxxxx** xxxxxxxx                                                 | Xxx xxx xxxxxx xxxxxxxxx xxxxx xx Xxxxxx Xxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxx xxxxxx xxxxx](http://msdn.microsoft.com/library/windows/apps/dn645469.aspx).                                                                                                                                                                          |
-| **XxxxxxXxxxxxxxXxxxxxx** xxxxxxxx                                                      | [
-            **XxxXxxxxxXxxxxxXxxxxxxxxxx.XxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn608144) xxxxxxxx (xxxxxxx xxxxxx xxxxxx xxxx)                                                                                                                                                                             |
-| **XxxxxxXxxxxxxxXxxxxxx** xxxxxxxx                                                      | [
-            **XxxXxxxxxXxxxxxXxxxxxxxxxx.XxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn608145) xxxxxxxx (xxxxxxx xxxxxx xxxxxx xxxx)                                                                                                                                                                             |
-| **XxxxxxXxxxxxxxxxxx** xxxxxxxx                                                         | [
-            **XxxXxxxxxXxxxxxXxxxxxxxxxx.XxxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701398) xxxxxxxx (xxxxxxx xxxxxx xxxxxx xxxx)                                                                                                                                                                                |
-| **XxxxxxXxxx** xxxxxxxx                                                                 | [
-            **XxxXxxxxxXxxxxxXxxxxxxxxxx.XxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh701401) xxxxxxxx (xxxxxxx xxxxxx xxxxxx xxxx)                                                                                                                                                                                 |
-| **XxxxxxXxxxxXxxxxx** xxxxxxxx                                                          | Xx xxxxxxxxxx                                                                                                                                                                                                                                                                                                                      |
-| **XxXxxxxxxxXxxxxxxx** xxxxxxxx                                                         | Xx xxxxxxxxxx. Xxxx xxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxx xxxxxxxx xxxxxxxxx xxx xxxxxx xxxxxxx, xxxxx xxx xxx xxxxxxxx xxxx.                                                                                                                                                                                                        |
-| **XxXxxxxxxxXxxxxxx** xxxxxxxx                                                          | Xx xxxxxxxxxx. Xxxx xxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxx xxxxxxxx xxxxxxxxx xxx xxxxxx xxxxxxx, xxxxx xxx xxx xxxxxxxx xxxx.                                                                                                                                                                                                        |
-| **XxxxxxxxXxxxxxxxXxxxxxx** xxxxx                                                       | Xx xxxxxxxxxx. Xxxx xxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxx xxxxxxxx xxxxxxxxx xxx xxxxxx xxxxxxx, xxxxx xxx xxx xxxxxxxx xxxx.                                                                                                                                                                                                        |
-| **XxxxxXxxxxx** xxxxxxxx                                                                | Xx xxxxxxxxxx                                                                                                                                                                                                                                                                                                                      |
-| **XxxxxXxxxxxXxxxxxx** xxxxx                                                            | Xxxxxx xxx [**XxxxxxxxxXxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/jj207240) xxxxx (xxxxxx xxxxxx xxxxxx xxxx). Xxx xxxxx xx xxxxxx xxxx xxx xxxxx xx xxx [**XxxxxxxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/jj207239) xxxxxxxx (xxxxxx xxxxxx xxxxxx xxxx) xxxxxxxxx xx Y%. |
+| **ApplicationCurrentMemoryUsage** and **ApplicationCurrentMemoryUsageLimit** properties | [**MemoryManager.AppMemoryUsage**](https://msdn.microsoft.com/library/windows/apps/dn633832) and [**AppMemoryUsageLimit**](https://msdn.microsoft.com/library/windows/apps/dn633836) properties                                                                                                                                    |
+| **ApplicationPeakMemoryUsage** property                                                 | Use the memory profiling tools in Visual Studio. For more info, see [Analyze memory usage](http://msdn.microsoft.com/library/windows/apps/dn645469.aspx).                                                                                                                                                                          |
+| **DeviceFirmwareVersion** property                                                      | [**EasClientDeviceInformation.SystemFirmwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608144) property (desktop device family only)                                                                                                                                                                             |
+| **DeviceHardwareVersion** property                                                      | [**EasClientDeviceInformation.SystemHardwareVersion**](https://msdn.microsoft.com/library/windows/apps/dn608145) property (desktop device family only)                                                                                                                                                                             |
+| **DeviceManufacturer** property                                                         | [**EasClientDeviceInformation.SystemManufacturer**](https://msdn.microsoft.com/library/windows/apps/hh701398) property (desktop device family only)                                                                                                                                                                                |
+| **DeviceName** property                                                                 | [**EasClientDeviceInformation.SystemProductName**](https://msdn.microsoft.com/library/windows/apps/hh701401) property (desktop device family only)                                                                                                                                                                                 |
+| **DeviceTotalMemory** property                                                          | No equivalent                                                                                                                                                                                                                                                                                                                      |
+| **IsKeyboardDeployed** property                                                         | No equivalent. This property provides information about hardware keyboards for mobile devices, which are not commonly used.                                                                                                                                                                                                        |
+| **IsKeyboardPresent** property                                                          | No equivalent. This property provides information about hardware keyboards for mobile devices, which are not commonly used.                                                                                                                                                                                                        |
+| **KeyboardDeployedChanged** event                                                       | No equivalent. This property provides information about hardware keyboards for mobile devices, which are not commonly used.                                                                                                                                                                                                        |
+| **PowerSource** property                                                                | No equivalent                                                                                                                                                                                                                                                                                                                      |
+| **PowerSourceChanged** event                                                            | Handle the [**RemainingChargePercentChanged**](https://msdn.microsoft.com/library/windows/apps/jj207240) event (mobile device family only). The event is raised when the value of the [**RemainingChargePercent**](https://msdn.microsoft.com/library/windows/apps/jj207239) property (mobile device family only) decreases by 1%. |
 
-## Xxxxxxxx
+## Location
 
-Xxxx xx xxx xxxx xxxxxxxx xxx Xxxxxxxx xxxxxxxxxx xx xxx xxx xxxxxxx xxxxxxxx xxxx xx Xxxxxxx YY, xxx xxxxxx xxxx xxxxxx xxx xxx-xxxx xxx xxxxxxx. Xx, xx xxxx xxx xxxxxxxx xxx xxx xxxxxx xxxxxxx xxxxxx, xx xx xx xxxxxxxx xx xx-xxx xxxxxx, xxxx xxx xxxx xxxx xx xxxxxx xxxx xx xxxx xxx xxx-xxxx xx xxxx xxxxxxxx xxxx.
+When an app that declares the Location capability in its app package manifest runs on Windows 10, the system will prompt the end-user for consent. So, if your app displays its own custom consent prompt, or if it provides an on-off toggle, then you will want to remove that so that the end-user is only prompted once.
 
-## Xxxxxxxxxxx
+## Orientation
 
-Xxx XXX xxx xxxxxxxxxx xx xxx **XxxxxXxxxxxxxxxxXxxx.XxxxxxxxxXxxxxxxxxxxx** xxx **Xxxxxxxxxxx** xxxxxxxxxx xx xxx [**xxx:XxxxxxxXxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn934798) xxxxxxx xx xxx xxx xxxxxxx xxxxxxxx. Xxxxxx xxx **Xxxxxxxxxxx** xxx xx xx xxx'x xxxxxxx xxxxxxxx xxx xxxxxx xxx xx xxxx xxxxx xxxxx xxxxx **Xxxxxxxxx xxxxxxxxx** xx xxxxxx xxxx xxxxxxxxxxx.
+The UWP app equivalent of the **PhoneApplicationPage.SupportedOrientations** and **Orientation** properties is the [**uap:InitialRotationPreference**](https://msdn.microsoft.com/library/windows/apps/dn934798) element in the app package manifest. Select the **Application** tab if it isn't already selected and select one or more check boxes under **Supported rotations** to record your preferences.
 
-Xxx'xx xxxxxxxxxx, xxxxxxx, xx xxxxxx xxx XX xx xxxx XXX xxx xx xxxx xxxxx xxxxxxxxxx xx xxxxxx xxxxxxxxxxx xxx xxxxxx xxxx. Xxxxx'x xxxx xxxxx xxxx xx [Xxxxxxx xxx xxxx xxxxxxx xxx xxxx xxxxxxxxxx](wpsl-to-uwp-form-factors-and-ux.md), xxxxx xx xxx xxxxx xxxxx xxxx.
+You're encouraged, however, to design the UI of your UWP app to look great regardless of device orientation and screen size. There's more about that in [Porting for form factors and user experience](wpsl-to-uwp-form-factors-and-ux.md), which is the topic after next.
 
-Xxx xxxx xxxxx xx [Xxxxxxx xxxxxxxx xxx xxxx xxxxxx](wpsl-to-uwp-business-and-data.md).
+The next topic is [Porting business and data layers](wpsl-to-uwp-business-and-data.md).
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

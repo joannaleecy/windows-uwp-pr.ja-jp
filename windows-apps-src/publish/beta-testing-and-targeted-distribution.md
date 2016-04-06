@@ -1,77 +1,81 @@
 ---
-Xxxxxxxxxxx: Xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxxx xxx xxx xxxxxx xx xxxx xxxx xxx xxxxxxxxx xxxx xx xxxxxxxxx xxxxxx xx xxxx xxx xxx xxxx xxxxxxx xxx xx xxx xxxxxx xxx xxxxx xx xx xxx xxxxxx.
-xxxxx: Xxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxxxx
-xx.xxxxxxx: YYXYXXYY-XYXY-YYXY-YXYY-YXYXYYXXYYYX
+Description: Windows デベロッパー センター ダッシュボードには特定のユーザーだけがアプリを利用できるようにするオプションがあり、これによって一般ユーザーにアプリを提供する前にテスターがアプリを試すことができます。
+title: ベータ テストとターゲット配布
+ms.assetid: 38E4ED22-D6C1-40D8-9B16-6B3E51BD962E
 ---
 
-# Xxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxxxx
+# ベータ テストとターゲット配布
 
 
-Xx xxxxxx xxx xxxxxxxxx xxx xxxx xxxx xxx, xxxxx’x xxxxxxx xxxx xxx xxxx-xxxxx xxxx xx xxxxxx xxxxx xxxxxx xxx xx. Xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxxx xxx xxx xxxxxx xx xxxx xxxx xxx xxxxxxxxx xxxx xx xxxxxxxxx xxxxxx xx xxxx xxx xxx xxxx xxxxxxx xxx xx xxx xxxxxx xxx xxxxx xx xx xxx xxxxxx. Xxxx xxxxxxx xxx xxxxxxxx xxxxxx xxxx xxx’xx xxxxxxxxxx, xxxx xx xxxxxxxxxxxx, xxxxxxxxx xxx xxxx, xx xxxxxx xxxx xxxxx xxxxx xxx xxx xx xxxxx. Xxx’xx xxxx xxxx x xxxxxx xx xxx xxxxx xxxxxxxx xxxxxx xxx xxxxxxx xxx xxx xx xxx xxxxxx, xxxxxxxxx xx x xxxx xxxxxxxx xxxxx xxxxxxx.
+どれほど慎重にアプリをテストしても、他のユーザーに使用してもらうという現実世界のテストには及びません。 Windows デベロッパー センター ダッシュボードには特定のユーザーだけがアプリを利用できるようにするオプションがあり、これによって一般ユーザーにアプリを提供する前にテスターがアプリを試すことができます。 テスターは、開発者が見落とした問題を発見する場合があります。スペル ミスや混乱を招くアプリの流れだけでなく、アプリのクラッシュの原因となるエラーも発見します。 その後、アプリを一般にリリースする前にそれらの問題を修正する機会が得られ、最終的な製品の完成度が高まります。
 
-Xxxxxxx, xxx Xxxxxxx Xxxxx Xxxxx xxxxxxxx xxx xxxxxx xx xxxxxxxxxxxx xxxxxx xx xxx xx x xxxx. Xx xxx xxxxxxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxx xxx xxxxx xxxxxxxxxxxx xx xxxx xxxx xx xxxx xxxx xxxxxxx xxxxxxx xxxxxxx xx xxxxxx x xxxxxxxx xxxxxxx xx xxxx xxx xxxx x xxxxxxxx xxxx xxx xxxxxxx xxxxxxxx. Xxx xxx xx xxxx xxxxxxx, xxxx xxxxxx x xxx xxxxxxxxxx xxxx xxx’xx xxxxx xx xxxx xxx xxx xxxxxxxxx xx xxxxxxxx. (Xx xxxxxx, xxx xxx xxxxxx x xxxxxxxx xxx xxx xxxxxxx xxxx xx xxx xxxxxx. Xx xxx xx, xxxx xxxx xx xxxx xx x xxxxxxxxx xxxx xxxx xxxx xxx xxxxxx xx xxx xxxxx, xxxxxx xxx xxxx.)
+以前 Windows Phone ストアでは、ベータ版としてアプリを申請するための専用オプションが提供されていました。 Windows デベロッパー センター統合ダッシュボードで、アプリをテスターのみに限定して配布できます。別の名前やパッケージ ID を使って別バージョンのアプリを作る必要はありません。 自身でテストを行い、アプリを公開する準備が整ったら新しい提出を作成することができます。 (もちろん、必要であれば、テスト用に別のアプリを作ることもできます。 作る場合、そのアプリには、最終的なパブリック アプリの名前とは違う名前を付ける必要があります。)
 
-Xxx xxxxxx xx xxxxxxxxxxxx xxxx xxx xx xxxxxxx xxxxxxx xx xxxxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxxx. Xxxxx xxx'xx xxxx xxxxxxx xxx Xxxxxxx YY xxx xxx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx.
+アプリをテスターに配布する方法は、アプリの対象オペレーティング システムによって異なります。 ここでは、Windows 10 のオプションと Windows Phone 8.1 以前のオプションについて説明します。
 
-## Xxxxxx xxxx xxx xxxxxxxxx xx xxxxxxx xx Xxxxxxx YY xxxxxxx
-
-
-Xxxx xxx xxxxxx xx xxx xxxx xxx xxxx xxxx xx xxxx xxxxxxxxx xx xxxx xxxxxxx, xx xxxx xxxxxxx xxx xxxx [xxx xxxxxxxxxx xxxxxxx](app-submissions.md) xx xxx xxx xxx xxxxxx xx xxx Xxxxxxx Xxx Xxxxxx Xxxxxxxxx. Xxxx xxxxxxx xxxx xxx xx Xxxxxxx YY, xxxxx xxx xxx xxxx xxxxxx xxx’xx xxxx xx xx xx xxxx xxxx xxx xx xxxxxxxxx xxx xxxx xx xxxx xxxxxxx:
-
--   Xx xxx **Xxxxxxx xxx xxxxxxxxxxxx** xxxx, xxxxxx **Xxxx xxxx xxx xxx xxxxxxx xxxxxxxxxxx. Xxxxxxxxx xxxx x xxxxxxxxxxx xxxx xxx xxxxx xxxxxxxx xx xx Xxxxxxx YY xxxxxxx** xx xxx [Xxxxxxxxxxxx xxx xxxxxxxxxx](set-app-pricing-and-availability.md#distribution-and-visibility) xxxxxxx. Xxxx xxxxxxxx xxxxxx xxxx xxxxxxx xxxx xxx xx xxx Xxxxx xxx xxxxxxxxx xx xxxxxxxx.
--   Xxxxx xxx xxx xxxxxx xxxxxxxxxxxxx, [xxxxxxxx xxxxxxxxxxx xxxxx](generate-promotional-codes.md) xxx xxx xxx xxx xxxxxxxxxx xx xxxx xxxxxxx. Xxx xxx xxxxxxxx xx xx YYY xxxxxxxxxxx xxxxx xxx x xxxxxx xxx xx x xxx xxxxx xxxxxx. Xxxxx xxxxx xxxx xxxx xxxx xxxxxxx x xxxxxx xxxx xx xxx xxx’x xxxxxxx, xxx xxxx xxxxx xxxx xx xxxxxxxx xx xxx xxxx, xxxx xx xxx xxxx xxx x xxxxx xxx xx xxxx xxx xxxxxxx xxxx xxxxxxxxxx.
-
-Xxxxx xxx xxxxxxxxxx xxx xxxxxxxxxxx xxxx xxxxx xx xxxx xxxxxxx, xxxx xxx xxxxxxxx xxxx xxx xxx xxxx, xxx xx xxx, xxx xxxx xxx xxxxxxxx xx xxxx xxx xxxxxxx xxx xxx.
-
-Xxxx, xxxx xxx’xx xxxxx xx xxxx xxxx xxx xxxxxxxxx xx xxx xxxxxx, xxx xxx xxxxxx x xxx xxxxxxxxxx xxx xxxxxx xxx **Xxxxxxxxxxxx xxx xxxxxxxxxx** xxxxxx xx **Xxxxxx xxx xxxx xxxx xxx xx xxx Xxxxx**.
-
-Xxxx xxx xxxx xxxxxx xx xxxx xx xxxx xxxx xxxxx xxxx:
-
--   Xxx xxx xxxx xxxx xxxxxxx xx xxxxxxx xxxxxxx xx xxxx xxx xx xxx xxxx xx xxxxxxxx x xxx xxxxxxxxxx. Xxxx xxxx xx xxxx xxx **Xxxxxxxxxxxx xxx xxxxxxxxxx** xxxxxx xxx xx **Xxxx xxxx xxx xxx xxxxxxx xxxxxxxxxxx. Xxxxxxxxx xxxx x xxxxxxxxxxx xxxx xxx xxxxx xxxxxxxx xx xx Xxxxxxx YY xxxxxxx**. Xxx xxxxxxx xxxx xxx xxx xxxxxx xxxxx xx xxxx xxxxxxx xxx xxxxxxxxxxxxx xxxxxxx, xxx xx xxx xxxx xxxx xx xxxx xx xxx xx.
--   Xxxx xxxxxxx xxxx xxxx x Xxxxxxx YY xxxxxx xx xxxxx xxxx xxx xxxxxxx xxx xxx. (Xxxxxxx, xxxx xxx xxxxx'x xxxx xx xxxxxxx Xxxxxxx YY xxxxxxxx xx xxxxx xx xxx xxxx xxxxxx xx xxxxxxx.)
--   Xxx xxx xxxxxx xxxx [xxxxxxxxxxx xxxxx](generate-promotional-codes.md) xx xxxxxxxxxx xx xxx xxxx (xx xx YYY xxxxx xxxxx xxx xxxxxx).
--   Xxx xxx’x xxxxxx xxxxxx xx xxx xxx xxxxx xxxx xxxxxxx xxxxxxxx xx. Xxxx xxxx xxxx xxxxxxxxxx xxx xxx, xxxx xxx xxxxxxxx xx xxx xx, xxx xxxx’xx xxx xxx xxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxx.
--   Xxx xxxx xxxx xx xxxxxxxxx xxx xxx’x xxxx xx xxxxxxx xxxxxxxx xxxx xxxx xxxxxxx. Xxxxxxxx xxxxxxxxx xx xxxxx xx xxxxxxx xxxx xx xxx xxxx xxx xx xxxx xxxx xxx xxxxxx xxxxxxx xxxxxxxx.
--   Xxx xxx xxxxxx [xxxxxxxx xxxxxxx](analytics.md) xxx xxxx xxx, xxxxxxxxx xxx xxxxxxx xx xxxxxxx xxxx xx xxxx xxxxxxx.
--   Xxx xxx xxxxxxx xx-xxx xxxxxxxx (XXXx) xxxx xxx xxxxxxxxxx xxxx xxx xx xxxxxxx. Xxxxx xxx xxxxxxxx xxx’x xxxx xx xxxxxx xxxx, xxxx xxxx xx xxx xxx xxxxx xxx xxx XXXx xx Xxxx xxxxx xxx’xx xxxxx xxxx xxxxxxx. Xxxx, xxxx xxx xxxx xxx xxx xxxxxxxxx xx xxxxx xxxxxxxxx, xxx xxx xxxxxx x xxx xxxxxxxxxx xxx xxxx XXX xx xxxxxx xxx xxxxx.
-
-## Xxxxx xxxxxxx xxx xxxxxxxxxxxx xxxx xx xxxxxxx
-
-Xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxxxx xxxxxxxxxx xxxx xx xxxxxxxxxx xxxx xxx xxxx xx x xxxxxxxx xxxxx xx xxxxxx xxx xxxxxxxxxx xxxxxxx xx xxx [Xxxxxxxxxxxx xxx xxxxxxxxxx](set-app-pricing-and-availability.md#distribution-and-visibility) xxxxxxx xx xxx **Xxxxxxx xxx xxxxxxxxxxxx** xxxx xxxx xxxxxxxxxx xx xxx. Xxx xxx xxx xxxxx xxxxxxx xxx xxxxxxx xx xxxxxxxxx xxxxxxxxxxxx xxxx xxx. Xxxx xxxx xxxxx xxxxxxx xx xxx xxxx xxx xxx xxxxxxxxx xxxxxxx. Xxxxx xxxxxxxxxxx xxxxx xxx xxxxxx xxx xxx xx xxx Xxxxx (xx xxxxxxxxx xxxxx) xx xxxxxxxxxxx xxxx xxx xxx xxxxxxx xxxx xxx xx Xxxxxxx YY xxxxxxx.
-
-Xx xxx xxxxxx xxxxxx xx xxxxx xxxxxxx xxxxx, xxx xxx xxxxxx xxxxxx xx xxxxxx xxx xxx xxx [Xxxxxxxxxxxx xxx xxxxxxxxxx](set-app-pricing-and-availability.md#distribution-and-visibility) xxxxxx xx **Xxxx xxxx xxx xxxxxxxxx xx xxx Xxxxx** xxxx xxx’xx xxxxx xx xxx xxx xxxxxxx xxxxxx xxx xxxx xxx xxx xxxxxxx xxxxxxxxx. Xxx xxx’x xxxx xx xxxxxx xxx xxx’x xxxx xxx xxxxxx x xxxxxxxxxx xxxxxxxx xxx (xxxxxx xxx xxxxxx xx xx xx).
-
-### Xxxxxxxx xxxxxxxxxxxx xx xxxxxxxxx xxxx x xxxx xx xxxx xxx'x xxxxxxx
-
-Xxxx xxxx xxxxxx, xxxx xxxxxx xxxx x xxxxxx xxxx xx xxxx xxx'x xxxxxxx xxx xxxxxxxx xx. Xxx xxx xxxx xxxx xxxx xx xxx [Xxx xxxxxxxx](view-app-identity-details.md) xxxx xx xxx xxxxxxxxx (xxx xxx **XXX xxx Xxxxxxx Xxxxx** xx **XXX xxx Xxxxxxx YY**). Xx xxxxxxxxx xxxx xx xxxx xx xxxx xxx xxx xx xxxxxxxxx xx xxxxxxxx xxx Xxxxx, xxx xxxxxx xxxx xxx xxxx xxx xxxxxxxx xx. (Xxxx xxxx xxxx xxx xxxx xx xxxxxx **Xxxx** xx xxxxx xxx xxxxxxx xx xxxxxxxx xx xx xx xxxx.)
-
-Xx xxx xxxx xxxxxx, xxxxxx **Xxxx xxxx xxx xx xxx Xxxxx. Xxxxxxxxx xxxx x xxxxxx xxxx xx xxx xxx’x xxxxxxx xxx xxxxx xxxxxxxx xx, xxxxxx xx Xxxxxxx Y xxx Xxxxxxx Y.Y:** xx xxx [Xxxxxxxxxxxx xxx xxxxxxxxxx](set-app-pricing-and-availability.md#distribution-and-visibility) xxxxxxx xx xxx **Xxxxxxx xxx xxxxxxxxxxxx** xxxx xxxx xxxxxxxxxx xxxx xxx.
-
-> **Xxxxxxxxx**  Xxxx xxxxxx xxxx xxx xxxx xxx xxxxxxx xx Xxxxxxx Y xx Xxxxxxx Y.Y.
+## Windows 10 デバイスでテスターがアプリを入手できるようにする
 
 
-### Xxxxxxxx xxxxxxxxxxxx xx xxxxxxxxx xxxx xxxxxxxxx xxxxx xxxxxxxxx
+テスターのみが利用できるアプリを申請するときは、Windows デベロッパー センター ダッシュボードで申請する他のアプリと同様に、[アプリ申請プロセス](app-submissions.md) を行います。 Windows 10 でアプリをテストする際に、テスターがアプリを無料で利用できるようにする 2 つの主な設定があります。
 
-Xxx xxxxxxx xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx, xxxx xxxxxx xxxxxxxx x xxx xx xxxxx xxxxxxxxxxxx xx xxxx xxx. Xxxx xxx xxxxxx xxxxx xxxxx xxxxxxxxx (xxxxxxxxxx xxxx xxxxx Xxxxxxxxx xxxxxxxx) xxxx xxx xxxxx xx xxx xxx xxx xxxxxxxx xxxx xxx xx xxxxx xxx xxxxxx xxxx xx xxx xxxxxxx.
+-   **[価格と使用可能状況]** ページの [配布と表示](set-app-pricing-and-availability.md#distribution-and-visibility) セクションで、**[このアプリを非表示にして取得できないようにします。プロモーション コードを持つユーザーは、Windows 10 デバイスで引き続きダウンロードできます]** を選びます。 これにより、ユーザーは検索や参照によってストア内でアプリを見つけることができなくなります。
+-   アプリが認定に合格した後で、アプリの [プロモーション コードを生成](generate-promotional-codes.md) して、テスターに配布します。 6 か月間に 1 つのアプリに対して最大 250 のプロモーション コードを生成できます。 これらのコードにより、テスターにはアプリの内容への直接リンクが提供されます。また、申請を作成した際にアプリに価格を設定していた場合でも、テスターは無料でアプリをダウンロードできます。
 
-> **Xxxxxxxxx**  Xxxx xxxxxx xxxx xxxxx xxx xxxxxxx xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx; xx xxxxxxx xxxx xx xxxx xx xxxxxxxx xx xx xxxxxxx xxxxxxx xxxxx xxxxxxxxx xxxxxxx.
+プロモーション コードのリンクをテスターに配布した後で、テスターはアプリを無料でダウンロードして試し、アプリの改善に役立つフィードバックを提供できるようになります。
+
+一般ユーザーにアプリを提供する準備が整ったら、新しい申請を作成して **[配布と表示]** オプションを **[誰でもストア内でお客様のアプリを検索できます]** に変更します。
+
+このとき、次の点に注意してください。
+
+-   いつでも新しい申請を作成してアプリの更新バージョンをテスターに提供できます。 **[配布と表示]** オプションが **[このアプリを非表示にして取得できないようにします。プロモーション コードを持つユーザーは、Windows 10 デバイスで引き続きダウンロードできます]** に設定されていることを確認してください。 認定プロセスが完了した後にテスターは更新プログラムを入手できますが、他の人は入手できません。
+-   アプリをインストールできる Windows 10 デバイスをテスターが持っている必要があります。 (ただし、このテスト方法を使用するために Windows 10 パッケージをアプリに含める必要はありません。)
+-   いつでも [プロモーション コード](generate-promotional-codes.md) を追加作成して配布できます (6 か月ごとに 250 のコードまで)。
+-   テスターがアプリをダウンロードした後で、アプリへのアクセスを取り消すことはできません。 アプリをダウンロードした後、テスターは継続してアプリを使うことができ、その後公開したすべての更新プログラムを入手できます。
+-   テスターからフィードバックを収集する方法を決定する必要があります。 テスターが簡単にコメントを送れるように、ベータ アプリでメールまたは Web サイトのリンクを提供することを検討してください。
+-   テスターが残した評価やレビューを含め、アプリの [分析レポート](analytics.md) を確認できます。
+-   テスターにアプリを配布するときに、アプリ内製品 (IAP) を含めることができます。 IAP について課金しない場合は、テストの間 IAP の価格を無料に設定します。 他のユーザーがアプリを利用できるようにするときに、IAP ごとに新しい申請を作成して価格を変更できます。
+
+## テスターにアプリを配布するその他の方法
+
+Windows デベロッパー センター ダッシュボードには、アプリを申請する際に、**[価格と使用可能状況]** ページの [配布と表示](set-app-pricing-and-availability.md#distribution-and-visibility) セクションにある他のオプションを使うことで、対象のユーザー グループに対してのみアプリを配布する他の方法があります。 テストやアプリの配布のためにこれらのオプションを使うことができます。 これらのオプションが機能しないオペレーティング システムがあることに注意してください。 Windows 10 デバイスでアプリをテストするときは、(上述のように) プロモーション コードを使い、アプリをストアに表示しないことをお勧めします。
+
+上記のどちらの方法を選んだ場合でも、いつでも更新プログラムを申請することができ、テスト期間を終了してアプリを一般公開する準備ができたときには [配布と表示](set-app-pricing-and-availability.md#distribution-and-visibility) オプションを **[このアプリをストアで提供する]** に設定することができます。 アプリの名前を変更して完全に別のアプリを作成する必要はありません (意図的にそのようにする場合は除きます)。
+
+### アプリ掲載ページへのリンクを持つユーザーへのターゲット配布
+
+このオプションでは、アプリ掲載ページへの直接リンクを持つユーザーのみがアプリをダウンロードできます。 このリンクは、ダッシュボードの [アプリ ID](view-app-identity-details.md) ページで確認できます (**[URL for Windows Phone]** (Windows Phone の URL) または **[Windows 10 の URL]**)。 ユーザーはストアの検索や参照によってアプリを見つけることはできませんが、リンクを持つユーザーはダウンロードできます。 (テスターが無料でダウンロードするためには、アプリの価格を**無料**にする必要があることに注意してください。)
+
+このオプションを使用するには、アプリを申請するときに、**[価格と使用可能状況]** ページの [配布と表示](set-app-pricing-and-availability.md#distribution-and-visibility) セクションで **[このアプリをストア内で非表示にします。アプリ掲載ページへの直接リンクを持っているユーザーに限り、引き続きダウンロードが可能です (ただし、Windows 8 および Windows 8.1 ではダウンロードできません)。]** を選びます。
+
+> **重要:** Windows 8 または Windows 8.1 のテスターに対しては、このオプションは機能しません。
+
+
+### 指定したメール アドレスを持つユーザーへのターゲット配布
+
+Windows Phone 8.1 以前でテストする場合、このオプションを使ってアプリの配布を限定できます。 ボックスに入力したメール アドレス (Microsoft アカウントに関連付けられているアドレス) を持つユーザーのみが、アプリ掲載ページへの直接リンクを使ってアプリをダウンロードできます。
+
+> **重要:** このオプションは、Windows Phone 8.1 以前のテスターに対してのみ機能します。他のオペレーティング システムを実行しているデバイスでアプリをダウンロードすることはできません。
 
  
-Xxx xxx xxxx xxxx xxx'x xxxxxx xxxx xx xxx [Xxx xxxxxxxx](view-app-identity-details.md) xxxx xx xxx xxxxxxxxx (xxx xxx **XXX xxx Xxxxxxx Xxxxx**). Xx xxxxxxxxx xxxx xx xxxx xx xxxx xxx xxx xx xxxxxxxxx xx xxxxxxxx xxx Xxxxx, xxx xxxx xx xxxx xxxx xxx xxxx xx xxxx xxx'x xxxxxxx, xxxx xxx'x xx xxxx xx xxxxxxxx xxx xxx xxxxxx xxxx xxx xxxxx x Xxxxxxxxx xxxxxxx xxxxxxxxxx xxxx xx xxxxx xxxxxxx xxxx xxx xxxxxxxx xxxx xxxxxxxxxx xxxx xxx.
+アプリの直接リンクは、ダッシュボードの [アプリ ID](view-app-identity-details.md) ページで確認できます (**[URL for Windows Phone]** (Windows Phone の URL))。 ユーザーはストアの検索や参照によってアプリを見つけることはできません。ユーザーがアプリ掲載ページへのリンクを持っている場合でも、アプリを申請したときに入力したメール アドレスと関連付けられた Microsoft アカウントを使っていない限りアプリをダウンロードできません。
 
-> **Xxxx**  Xx xxx xxx xxxx xxxxxx, xxx xxx xxxxx xxxx xxx xxx xxxxxxxxx xxx xxxxxxx xx Xxxxxxx YY xxxxxxx xx [xxxxxxxxxx xxxxxxxxxxx xxxxx](generate-promotional-codes.md) xx xxxxxxxxx xxxxx. Xxxxxx xxxx xxx xx xxxx xxx'x xxxxxxxxxxx xxxxx xxx xxxxxxxx xx xx x Xxxxxxx YY xxxxxx, xxxx xx xxx xxxx'x xxxxx xxxxx xxxxx xxxx.
+> **注:** このオプションを採用する場合、前述のように [プロモーション コードを生成](generate-promotional-codes.md) して、Windows 10 デバイスのテスターがアプリを利用できるようにすることもできます。 メールを入力していない場合でも、アプリのプロモーション コードのいずれかを持っているユーザーは、Windows 10 デバイスでアプリをダウンロードできます。
 
 
-Xx xxx xxxx xxxxxx, xxxxxx **Xxxx xxxx xxx xxx xxxx xx xxxxxxxxx xxxx xx xxx xxxxxx xxx xxxxxxx xxxxx, xxx xxx xxxxxxxx xxxx xxx xx Xxxxxxx Xxxxx Y.x xxxxxxx. X xxxxxxxxxxx xxxx xxx xx xxxx xx xxxxxxxx xxxx xxx xx Xxxxxxx YY xxxxxxx** xx xxx [Xxxxxxxxxxxx xxx xxxxxxxxxx](set-app-pricing-and-availability.md#distribution-and-visibility) xxxxxxx xx xxx **Xxxxxxx xxx xxxxxxxxxxxx** xxxx xxxx xxxxxxxxxx xxxx xxx.
+このオプションを使用するには、アプリを申請するときに、**[価格と使用可能状況]** ページの [分布と認知度](set-app-pricing-and-availability.md#distribution-and-visibility) セクションで **[このアプリを非表示にして、以下に指定したユーザーだけが入手できるようにします。Windows Phone 8.x デバイスでは、そのユーザーがアプリをダウンロードできます。Windows 10 デバイスでこのアプリをダウンロードするには、プロモーション コードを使用できます]** を選びます。
 
-Xx xxx xxxxxx xxxx xxxxxx, xxxx xxx xxxxxxxxx xxxxxx xx xxxx:
+このオプションを選ぶ場合は、次の点に注意してください。
 
--   Xxxx xxxxxx xxx xxxx xx xxxxxxxx xx xxx xxxx xxxxx xxxxxxxxxx xxxxxxxxx xxx xxx xxxx xxx [Xxxxxxxxxxxx xxx xxxxxxxxxx](set-app-pricing-and-availability.md#distribution-and-visibility) xxxxxx xxx xx **Xxxxxx xxx xxxx xxxx xxx xx xxx Xxxxx**.
--   Xxxx xxx xxxx xx xxxxxx **Xxxx** xx xxxxx xxx xxxx xxxxxxx xx xxxxxxxx xx xx xx xxxx.
--   Xxxx xxxxxxx xxx xxxx xxxxxxxx xxx xxx xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx. Xxxxxxx xxxx xxxx x xxxxxx Xxxxxxx Xxxxx xxxxxx xx xxxxx xx xxx xxx xxx, xxx xxx xxxxxx xxxxx’x xxxx xx xx xxxxxxxx xx xxxxxxxxxx.
--   Xxxx xxxxxxx xxxx xxxx xx xxxx x Xxxxxxxxx xxxxxxx xx xxxxx xx xxxxxx xxx Xxxxxxx Xxxxx xxx xxxxxxxx xxxx xxx. Xxx’xx xxxx xx xxxx xxx xxxxx xxxxxxx xxxxxxxxxx xxxx xxxx xxxxxx’x Xxxxxxxxx xxxxxxx xx xxxxx xx xxx xxxx xx xxxx xxxx. Xx xxxxxx x xxx Xxxxxxxxx xxxxxxx, xxxxxxx xxx xx xx [Xxxxxxxxx xxxxxxx xxxxx](http://go.microsoft.com/fwlink/p/?LinkId=618945).
--   Xxx xxx xxxxxxx xx xx YY,YYY xxxxx xxxxxxxxx xx xxx xxxx xxx.
--   Xxxxx xxxxxxxxx xxxx xx xxxxxxxxx xxxx xxxxxxxxxx.
--   Xxx xxx xxx xxxxxxxxxx xxxxxxxxx xxxxx, xxx xxxx xxxx xx xxxxxx x xxx xxxxxxxxxx xx xx xx.
--   Xxx xxx’x xxxxxx xxxxxx xx xxx xxx xxxxx xxxx xxxxxxx xxxxxxxx xx. Xxxx xxxx xxxx xxxxxxxxxx xxx xxx, xxxx xxx xxxxxxxx xx xxx xx, xxx xxxx’xx xxx xxx xxxxxxx xxx xxxxxx.
+-   このオプションは、以前 [配布と表示](set-app-pricing-and-availability.md#distribution-and-visibility) オプションを **[誰でもストア内でお客様のアプリを検索できます]** に設定して発行したことがない場合にのみ選ぶことができます。
+-   テスターが無料でダウンロードするためには、アプリの価格を**無料**にする必要があります。
+-   テスターは、Windows Phone 8.1 以前のデバイスでのみアプリをダウンロードできます。 テスターがアプリを使うには製品版の Windows Phone デバイスが必要ですが、デバイスがロック解除または登録されている必要はありません。
+-   テスターは、Windows ストアにアクセスしてアプリをダウンロードするために Microsoft アカウントが必要です。 テスターをリストに追加するには、各テスターの Microsoft アカウントに関連付けられたメール アドレスを知っている必要があります。 テスターが新しい Microsoft アカウントを作成するには、[Microsoft アカウント設定](http://go.microsoft.com/fwlink/p/?LinkId=618945) のためのページにアクセスします。
+-   テキスト ボックスには、最大 10,000 のメール アドレスを入力できます。
+-   メール アドレスは、セミコロンで区切る必要があります。
+-   後で他のアドレスを追加できますが、そのためには新しい申請を作成する必要があります。
+-   テスターがアプリをダウンロードした後で、アプリへのアクセスを取り消すことはできません。 アプリをダウンロードした後、テスターは継続してアプリを使うことができ、申請されたすべての更新プログラムを入手できます。
+
+
 <!--HONumber=Mar16_HO1-->
+
+

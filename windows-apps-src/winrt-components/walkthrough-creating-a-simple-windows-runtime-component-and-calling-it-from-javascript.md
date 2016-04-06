@@ -1,41 +1,41 @@
 ---
-xxxxx: Xxxxxxxx x Xxxxxx Xxxxxxx Xxxxxxx xxxxxxxxx xxx xxxxxxx xx xxxx XxxxXxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxxxxxx xxxxx xxx xxx xxx xxx xxx .XXX Xxxxxxxxx xxxx Xxxxxx Xxxxx xx X# xx xxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxx, xxxxxxxx xx x Xxxxxxx Xxxxxxx xxxxxxxxx, xxx xxx xx xxxx xxx xxxxxxxxx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx xxxxx xxx Xxxxxxx xxxxx XxxxXxxxxx.
-xx.xxxxxxx: YYYYXYYX-XXYY-YXXY-YYXX-YYYYYXXYXYYY
+title: Creating a Simple Windows Runtime component and calling it from JavaScript
+description: This walkthrough shows how you can use the .NET Framework with Visual Basic or C# to create your own Windows Runtime types, packaged in a Windows Runtime component, and how to call the component from your Universal Windows app built for Windows using JavaScript.
+ms.assetid: 1565D86C-BF89-4EF3-81FE-35367DB8D671
 ---
 
-# Xxxxxxxxxxx: Xxxxxxxx x Xxxxxx Xxxxxxx Xxxxxxx xxxxxxxxx xxx xxxxxxx xx xxxx XxxxXxxxxx
+# Walkthrough: Creating a Simple Windows Runtime component and calling it from JavaScript
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[Xxxx xxxxxxxxxxx xxxxxxx xx xxx-xxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxx xx'x xxxxxxxxxxxx xxxxxxxx. Xxxxxxxxx xxxxx xx xxxxxxxxxx, xxxxxxx xx xxxxxxx, xxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxx.\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-Xxxx xxxxxxxxxxx xxxxx xxx xxx xxx xxx xxx .XXX Xxxxxxxxx xxxx Xxxxxx Xxxxx xx X\# xx xxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxx, xxxxxxxx xx x Xxxxxxx Xxxxxxx xxxxxxxxx, xxx xxx xx xxxx xxx xxxxxxxxx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx xxxxx xxx Xxxxxxx xxxxx XxxxXxxxxx.
+This walkthrough shows how you can use the .NET Framework with Visual Basic or C# to create your own Windows Runtime types, packaged in a Windows Runtime component, and how to call the component from your Universal Windows app built for Windows using JavaScript.
 
-Xxxxxx Xxxxxx xxxxx xx xxxx xx xxx x Xxxxxxx Xxxxxxx xxxxxxxxx xxxxxxx xxxx X\# xx Xxxxxx Xxxxx xx xxxx xxx, xxx xx xxxxxx Xxxxxxx Xxxxxxx xxxxx xxxx xxx xxx xxxx xxxx XxxxXxxxxx. Xxxxxxxxxx, xxxx Xxxxxxx Xxxxxxx xxxxx xxx xxx xxx .XXX Xxxxxxxxx xxxxxxxxxxxxx xxxx'x xxxxxxx xx x Xxxxxxxxx Xxxxxxx xxx. (Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X\# xxx Xxxxxx Xxxxx](creating-windows-runtime-components-in-csharp-and-visual-basic.md) xxx [.XXX xxx Xxxxxxx Xxxxx xxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx).) Xxxxxxxxxx, xxx xxxxxxx xx xxxx xxxx xxx xxxxxx xxxx Xxxxxxx Xxxxxxx xxxxx xxx xxxxx xxxxxxxxxx xxx xxxxxx xxxxxx. Xxxx xxx xxxxx xxxx xxxxxxxx, Xxxxxx Xxxxxx xxxxxx xxxx .XXX Xxxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxx xxxxxxx xxx xxxx xxxxxxxx x xxxxx xxxx xxxx xxxxxxx x Xxxxxxx xxxxxxxx (.xxxxx) xxxx. Xxxx xx xxxx Xxxxxxx Xxxxxxx xxxxxxxxx, xxxxx Xxxxxx Xxxxxx xxxxxxxx xx xxxx xxx.
+Visual Studio makes it easy to add a Windows Runtime component written with C# or Visual Basic to your app, and to create Windows Runtime types that you can call from JavaScript. Internally, your Windows Runtime types can use any .NET Framework functionality that's allowed in a Universal Windows app. (For more information, see [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET for Windows Store apps overview](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx).) Externally, the members of your type can expose only Windows Runtime types for their parameters and return values. When you build your solution, Visual Studio builds your .NET Framework Windows Runtime Component project and then executes a build step that creates a Windows metadata (.winmd) file. This is your Windows Runtime component, which Visual Studio includes in your app.
 
-> **Xxxx**  Xxx .XXX Xxxxxxxxx xxxxxxxxxxxxx xxxx xxxx xxxxxxxx xxxx .XXX Xxxxxxxxx xxxxx, xxxx xx xxxxxxxxx xxxx xxxxx xxx xxxxxxxxxx xxxxx, xx xxxxx Xxxxxxx Xxxxxxx xxxxxxxxxxx. Xxxxx .XXX Xxxxxxxxx xxxxx xxx xx xxxx xx xxx xxxxxx xxxxxxxxx xx x Xxxxxxx Xxxxxxx xxxxxxxxx, xxx xxxx xxxxxx xx xxxxx xx xxx xxxxxxxxx xx xxx xxxxxxxxxxxxx Xxxxxxx Xxxxxxx xxxxx. Xxx [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X\# xxx Xxxxxx Xxxxx](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+> **Note**  The .NET Framework automatically maps some commonly used .NET Framework types, such as primitive data types and collection types, to their Windows Runtime equivalents. These .NET Framework types can be used in the public interface of a Windows Runtime component, and will appear to users of the component as the corresponding Windows Runtime types. See [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
-Xxxx xxxxxxxxxxx xxxxxxxxxxx xxx xxxxxxxxx xxxxx. Xxxxx xxx'xx xxxxxxxxx xxx xxxxx xxxxxxx, xxxxx xxxx xx xxx Xxxxxxx xxx xxxx XxxxXxxxxx, xxx xxx xxxxxxxx xxx xxxxxxxxx xxxxxxxx xx xxx xxxxx.
+This walkthrough illustrates the following tasks. After you've completed the first section, which sets up the Windows app with JavaScript, you can complete the remaining sections in any order.
 
-## Xxxxxxxxxxxxx:
+## Prerequisites:
 
--   Xxxxxxx YY
--   Xxxxxxxxx Xxxxxx Xxxxxx YYYY xx Xxxxxxxxx Xxxxxx Xxxxxx Xxxxxxxxx YYYY
+-   Windows 10
+-   Microsoft Visual Studio 2015 or Microsoft Visual Studio Community 2015
 
-## Xxxxxxxx x xxxxxx Xxxxxxx Xxxxxxx xxxxx
+## Creating a simple Windows Runtime class
 
 
-Xxxx xxxxxxx xxxxxxx x Xxxxxxxxx Xxxxxxx xxx xxxxx xxx Xxxxxxx xxxxx XxxxXxxxxx, xxx xxxx x Xxxxxx Xxxxx xx X\# Xxxxxxx Xxxxxxx Xxxxxxxxx xxxxxxx. Xx xxxxx xxx xx xxxxxx x xxxxxxx Xxxxxxx Xxxxxxx xxxx, xxxxxx xx xxxxxxxx xx xxx xxxx xxxx XxxxXxxxxx, xxx xxxx xxxxxx xxx xxxxxxxx xxxxxxx. Xxx xxxxxx xxxxxxx xx xxx xxxxxxx xxx xx xxxxxxxxxxxx xxxx xx xxxx xxx xxxxx xx xxx xxxxxxxxx. Xxxx xxxx xx xxxx xx xxxxxxxx.
+This section creates a Universal Windows app built for Windows using JavaScript, and adds a Visual Basic or C# Windows Runtime Component project. It shows how to define a managed Windows Runtime type, create an instance of the type from JavaScript, and call static and instance members. The visual display of the example app is deliberately dull to keep the focus on the component. Feel free to make it prettier.
 
-1.  Xx Xxxxxx Xxxxxx, xxxxxx x xxx XxxxXxxxxx xxxxxxx: Xx xxx xxxx xxx, xxxxxx **Xxxx, Xxx, Xxxxxxx**. Xx xxx **Xxxxxxxxx Xxxxxxxxx** xxxxxxx xx xxx **Xxx Xxxxxxx** xxxxxx xxx, xxxxxx **XxxxXxxxxx**, xxx xxxx xxxxxx **Xxxxxxx**, xxx xxxx **Xxxxxxxxx**. (Xx Xxxxxxx xx xxx xxxxxxxxx, xxxx xxxx xxx'xx xxxxx Xxxxxxx Y xx xxxxx.) Xxxxxx xxx **Xxxxx Xxxxxxxxxxx** xxxxxxxx xxx xxxxx XxxxxxXxx xxx xxx xxxxxxx xxxx.
-2.  Xxxxxx xxx xxxxxxxxx xxxxxxx: Xx Xxxxxxxx Xxxxxxxx, xxxx xxx xxxxxxxx xxxx xxx xxx XxxxxxXxx xxxxxxxx xxx xxxxxx **Xxx**, xxx xxxx xxxxxx **Xxx Xxxxxxx** xx xxx x xxx X\# xx Xxxxxx Xxxxx xxxxxxx xx xxx xxxxxxxx. Xx xxx **Xxxxxxxxx Xxxxxxxxx** xxxxxxx xx xxx **Xxx Xxx Xxxxxxx** xxxxxx xxx, xxxxxx **Xxxxxx Xxxxx** xx **Xxxxxx X\#**, xxx xxxx xxxxxx **Xxxxxxx**, xxx xxxx **Xxxxxxxxx**. Xxxxxx xxx **Xxxxxxx Xxxxxxx Xxxxxxxxx** xxxxxxxx xxx xxxxx **XxxxxxXxxxxxxxx** xxx xxx xxxxxxx xxxx.
-3.  Xxxxxx xxx xxxx xx xxx xxxxx xx **Xxxxxxx**. Xxxxxx xxxx xx xxxxxxx, xxx xxxxx xx xxxxxx **xxxxxx xxxxxx** (**Xxxxxx XxxXxxxxxxxxxx** xx Xxxxxx Xxxxx). Xxx xxx Xxxxxxx Xxxxxxx xxxxxxx xxx xxxxxx xxxx xxxx xxxxxxxxx xxxx xx xxxxxx.
-4.  Xxx xxx xxxxxx xxxxxxx xx xxx xxxxx, x **xxxxxx** xxxxxx (**Xxxxxx** xxxxxx xx Xxxxxx Xxxxx) xxx xx xxxxxxxx xxxxxxxx:
+1.  In Visual Studio, create a new JavaScript project: On the menu bar, choose **File, New, Project**. In the **Installed Templates** section of the **New Project** dialog box, choose **JavaScript**, and then choose **Windows**, and then **Universal**. (If Windows is not available, make sure you're using Windows 8 or later.) Choose the **Blank Application** template and enter SampleApp for the project name.
+2.  Create the component project: In Solution Explorer, open the shortcut menu for the SampleApp solution and choose **Add**, and then choose **New Project** to add a new C# or Visual Basic project to the solution. In the **Installed Templates** section of the **Add New Project** dialog box, choose **Visual Basic** or **Visual C#**, and then choose **Windows**, and then **Universal**. Choose the **Windows Runtime Component** template and enter **SampleComponent** for the project name.
+3.  Change the name of the class to **Example**. Notice that by default, the class is marked **public sealed** (**Public NotInheritable** in Visual Basic). All the Windows Runtime classes you expose from your component must be sealed.
+4.  Add two simple members to the class, a **static** method (**Shared** method in Visual Basic) and an instance property:
 
-    > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+    > [!div class="tabbedCodeSnippets"]
     > ```cpp 
     > namespace SampleComponent
     > {
@@ -60,13 +60,13 @@ Xxxx xxxxxxx xxxxxxx x Xxxxxxxxx Xxxxxxx xxx xxxxx xxx Xxxxxxx xxxxx XxxxXxxxxx,
     > End Class
     > ```
 
-5.  Xxxxxxxx: Xx xxxxxx XxxxxxxXxxxx xxx xxx xxxxx xxxxx xxxxxxx, xx Xxxxxxxx Xxxxxxxx, xxxx xxx xxxxxxxx xxxx xxx xxx XxxxxxXxxxxxxxx xxxxxxx, xxx xxxx xxxxxx **Xxxxx**.
-6.  Xx Xxxxxxxx Xxxxxxxx, xx xxx XxxxXxxxxx xxxxxxx, xxxx xxx xxxxxxxx xxxx xxx **Xxxxxxxxxx**, xxx xxxx xxxxxx **Xxx Xxxxxxxxx** xx xxxx xxx **Xxxxxxxxx Xxxxxxx**. Xxxxxx **Xxxxxxxx**, xxx xxxx xxxxxx **Xxxxxxxx**. Xxxxxx xxx xxxxx xxx xxx xxx XxxxxxXxxxxxxxx xxxxxxx xxx xxxxxx **XX** xx xxx x xxxxxxxxx.
+5.  Optional: To enable IntelliSense for the newly added members, in Solution Explorer, open the shortcut menu for the SampleComponent project, and then choose **Build**.
+6.  In Solution Explorer, in the JavaScript project, open the shortcut menu for **References**, and then choose **Add Reference** to open the **Reference Manager**. Choose **Projects**, and then choose **Solution**. Select the check box for the SampleComponent project and choose **OK** to add a reference.
 
-## Xxxx xxx xxxxxxxxx xxxx XxxxXxxxxx
+## Call the component from JavaScript
 
 
-Xx xxx xxx Xxxxxxx Xxxxxxx xxxx xxxx XxxxXxxxxx, xxx xxx xxxxxxxxx xxxx xx xxx xxxxxxxxx xxxxxxxx xx xxx xxxxxxx.xx xxxx (xx xxx xx xxxxxx xx xxx xxxxxxx) xxxx xx xxxxxxxx xx xxx Xxxxxx Xxxxxx xxxxxxxx. Xx xxxxxx xx xxxxx xxx xxx.xxxxxxxxxxxx xxxxx xxxxxxx xxx xxxxxx xxx xxxx xx xxx.xxxxx.
+To use the Windows Runtime type from JavaScript, add the following code in the anonymous function in the default.js file (in the js folder of the project) that is provided by the Visual Studio template. It should go after the app.oncheckpoint event handler and before the call to app.start.
 
 ```javascript
 var ex;
@@ -89,16 +89,16 @@ function basics2() {
 }
 ```
 
-Xxxxxx xxxx xxx xxxxx xxxxxx xx xxxx xxxxxx xxxx xx xxxxxxx xxxx xxxxxxxxx xx xxxxxxxxx. Xxxx xxxxxxxxxxxxxx xx xxxx xx xxx xxxxxxx xxxx XxxxXxxxxx xxxxxxxx xx xxxxxx xxx xxxxxxx xxx xx xxx Xxxxxxx Xxxxxxx. Xxxxxxxxxx xxx xxxxx xxxxx xxx Xxxxxx-xxxxx. Xxxxxx xxxxx xxx xxxxx-xxxxx xxxxxx xxx xxxxx xxxxx, xxxxx xxx xxx xxxxxxxxx. Xxx [Xxxxx xxx Xxxxxxx Xxxxxxx xx XxxxXxxxxx](https://msdn.microsoft.com/library/hh710230.aspx). Xxx xxxxx xxx xxxxx xxxxxx xxx xx xxxxxxxxx. X xxxxxx xx xxxxxxx xxxxxxxxx xxxxxxx xxxxxxxx xxxxxxx xx xxxxxxxxx, xxx xx xxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx xx x xxxxxxxxx xxxxxx, xxxx xxx xxxxx xxx xxxxxxx xxxxxx xx xxxxxxxxx: xxx xxxxxxx, x xxxxxx xxxxx XXXxxxxxXxxx xxxxxxx xx xxXxxxxxXxxx. Xx Xxxxxx Xxxxxx, xxx xxx xxxxx xxxx Xxxxxxx Xxxxxxx xxxxxxxxx xxxxxxx xxx xxxx xxx XxxxxxxXxxxx xx xxxx XxxxXxxxxx xxxxxxx xx xxx xxx xxxxxxx xxxxxx.
+Notice that the first letter of each member name is changed from uppercase to lowercase. This transformation is part of the support that JavaScript provides to enable the natural use of the Windows Runtime. Namespaces and class names are Pascal-cased. Member names are camel-cased except for event names, which are all lowercase. See [Using the Windows Runtime in JavaScript](https://msdn.microsoft.com/library/hh710230.aspx). The rules for camel casing can be confusing. A series of initial uppercase letters normally appears as lowercase, but if three uppercase letters are followed by a lowercase letter, only the first two letters appear in lowercase: for example, a member named IDStringKind appears as idStringKind. In Visual Studio, you can build your Windows Runtime component project and then use IntelliSense in your JavaScript project to see the correct casing.
 
-Xx xxxxxxx xxxxxxx, xxx .XXX Xxxxxxxxx xxxxxxxx xxxxxxx xx xxxxxx xxx xxxxxxx xxx xx xxx Xxxxxxx Xxxxxxx xx xxxxxxx xxxx. Xxxx xx xxxxxxxxx xx xxxxxxxxxx xxxxxxxx xx xxxx xxxxxxx, xxx xx xxx xxxxxxxx [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X\# xxx Xxxxxx Xxxxx](creating-windows-runtime-components-in-csharp-and-visual-basic.md) xxx [.XXX Xxxxxxxxx Xxxxxxx xxx Xxxxxxx Xxxxx Xxxx xxx Xxxxxxx Xxxxxxx](https://msdn.microsoft.com/library/hh694558.aspx).
+In similar fashion, the .NET Framework provides support to enable the natural use of the Windows Runtime in managed code. This is discussed in subsequent sections of this article, and in the articles [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md) and [.NET Framework Support for Windows Store Apps and Windows Runtime](https://msdn.microsoft.com/library/hh694558.aspx).
 
-## Xxxxxx x xxxxxx xxxx xxxxxxxxx
+## Create a simple user interface
 
 
-Xx xxxx XxxxXxxxxx xxxxxxx, xxxx xxx xxxxxxx.xxxx xxxx xxx xxxxxx xxx xxxx xx xxxxx xx xxx xxxxxxxxx xxxx. Xxxx xxxx xxxxxxxx xxx xxxxxxxx xxx xx xxxxxxxx xxx xxx xxxxxxx xxx xxx xxxxxxxxx xxx xxxxxxxx xxxxx xxx xxx xxxxx xxxxxx.
+In your JavaScript project, open the default.html file and update the body as shown in the following code. This code includes the complete set of controls for the example app and specifies the function names for the click events.
 
-> **Xxxx**  Xxxx xxx xxxxx xxx xxx xxx, xxxx xxx XxxxxxY xxx XxxxxxY xxxxxx xxx xxxxxxxxx.
+> **Note**  When you first run the app, only the Basics1 and Basics2 button are supported.
 
 ```html
 <body>
@@ -123,7 +123,7 @@ Xx xxxx XxxxXxxxxx xxxxxxx, xxxx xxx xxxxxxx.xxxx xxxx xxx xxxxxx xxx xxxx xx xx
 </body>
 ```
 
-Xx xxxx XxxxXxxxxx xxxxxxx, xx xxx xxx xxxxxx, xxxx xxxxxxx.xxx. Xxxxxx xxx xxxx xxxxxxx xx xxxxx, xxx xxx xxxxxx xx xxxxxxx xxx xxxxxx xx xxxxxxx xxx xxx xxxxxxxxx xx xxxxxx xxxx.
+In your JavaScript project, in the css folder, open default.css. Modify the body section as shown, and add styles to control the layout of buttons and the placement of output text.
 
 ```css
 body
@@ -144,7 +144,7 @@ body
 }
 ```
 
-Xxx xxx xxx xxxxx xxxxxxxx xxxxxxxxxxxx xxxx xx xxxxxx x xxxx xxxxxx xx xxx xxxxxxxXxx xxxx xx xxx.xxxxxxxxxxx xx xxxxxxx.xx. Xxxxxxx xxx xxxxxxxx xxxx xx xxxx xxxx xxxxx xxxXxxxxxx xxx xxxxxx xx xx xxx xxxxxxxxx xxxx:
+Now add the event listener registration code by adding a then clause to the processAll call in app.onactivated in default.js. Replace the existing line of code that calls setPromise and change it to the following code:
 
 ```javascript
 args.setPromise(WinJS.UI.processAll().then(function () {
@@ -155,44 +155,44 @@ args.setPromise(WinJS.UI.processAll().then(function () {
 }));
 ```
 
-Xxxx xx x xxxxxx xxx xx xxx xxxxxx xx XXXX xxxxxxxx xxxx xxxxxx x xxxxx xxxxx xxxxxxx xxxxxxxx xx XXXX. Xxx [Xxxxxx x "Xxxxx Xxxxx" xxx (XX)](https://msdn.microsoft.com/library/windows/apps/mt280216).
+This is a better way to add events to HTML controls than adding a click event handler directly in HTML. See [Create a "Hello World" app (JS)](https://msdn.microsoft.com/library/windows/apps/mt280216).
 
-## Xxxxx xxx xxx xxx xxx
+## Build and run the app
 
 
-Xxxxxx xxx xxxxx, xxxxxx xxx xxxxxx xxxxxxxx xxx xxx xxxxxxxx xx XXX, xYY, xx xYY, xx xxxxxxxxxxx xxx xxxx xxxxxxxx.
+Before you build, change the target platform for all projects to ARM, x64, or x86, as appropriate for your computer.
 
-Xx xxxxx xxx xxx xxx xxxxxxxx, xxxxxx xxx XY xxx. (Xx xxx xxx x xxx-xxxx xxxxx xxxxxxx xxxxxxx xxxx XxxxxxXxxxxxxxx xx xxxxxxxxx, xxx xxxxxxxxx xx xxx xxxxx xxxxxxx xxxxxxx xx xxxxxxx.)
+To build and run the solution, choose the F5 key. (If you get a run-time error message stating that SampleComponent is undefined, the reference to the class library project is missing.)
 
-Xxxxxx Xxxxxx xxxxx xxxxxxxx xxx xxxxx xxxxxxx, xxx xxxx xxxxxxxx xx XXXxxxx xxxx xxxx xxxx [Xxxxxxxx.xxx (Xxxxxxx Xxxxxxx Xxxxxxxx Xxxxxx Xxxx)](https://msdn.microsoft.com/library/hh925576.aspx) xx xxxxxx xxxx Xxxxxxx Xxxxxxx xxxxxxxxx. Xxx xxxxxxxxx xx xxxxxxxx xx x .xxxxx xxxx xxxx xxxxxxxx xxxx xxx xxxxxxx xxxx xxx xxx Xxxxxxx xxxxxxxx xxxx xxxxxxxxx xxx xxxx. XxxXxXxx.xxx xxxxxxxxx xxxxx xxxxx xxxxxxxx xxxx xxx xxxxx xxxx xxxx'x xxxxxxx xx x Xxxxxxx Xxxxxxx xxxxxxxxx, xxx xxx xxxxx xxxxxxxx xxx xxxxxxxxx xx xxx Xxxxxx Xxxxxx XXX. Xxxxxx Xxxxxx xxxx xxxx xxxxxxxxx xx xxx xxx xxxxxxx (.xxxx xxxx) xxx xxxx Xxxxxxxxx Xxxxxxx xxx, xxx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxxx.
+Visual Studio first compiles the class library, and then executes an MSBuild task that runs [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx) to create your Windows Runtime component. The component is included in a .winmd file that contains both the managed code and the Windows metadata that describes the code. WinMdExp.exe generates build error messages when you write code that's invalid in a Windows Runtime component, and the error messages are displayed in the Visual Studio IDE. Visual Studio adds your component to the app package (.appx file) for your Universal Windows app, and generates the appropriate manifest.
 
-Xxxxxx xxx Xxxxxx Y xxxxxx xx xxxxxx xxx xxxxxx xxxxx xxxx xxx xxxxxx XxxXxxxxx xxxxxx xx xxx xxxxxx xxxx, xxxxxx xx xxxxxxxx xx xxx Xxxxxxx xxxxx, xxx xxxxxxx xxx xxxxx xx xxx XxxxxxXxxxxxxx xxxxxxxx xx xxx xxxxxx xxxx. Xxx xxxxxx xx xxxxx xxxx:
+Choose the Basics 1 button to assign the return value from the static GetAnswer method to the output area, create an instance of the Example class, and display the value of its SampleProperty property in the output area. The output is shown here:
 
 ``` syntax
 "The answer is 42."
 0
 ```
 
-Xxxxxx xxx Xxxxxx Y xxxxxx xx xxxxxxxxx xxx xxxxx xx xxx XxxxxxXxxxxxxx xxxxxxxx xxx xx xxxxxxx xxx xxx xxxxx xx xxx xxxxxx xxxx. Xxxxxxxxx xxxxx xxxx xx xxxxxxx xxx xxxxxxx xxx xx xxxx xx xxxxxxxxx xxxxx xxx xxxxxx xxxxx, xxx xxx xx xxxxxx xxxxxxx xxxxxxx xxxx xxx XxxxXxxxxx. Xxxxxxx xxxxxxx xx XxxxXxxxxx xxx xxxxxx xx xxxxxx-xxxxxxxxx xxxxxxxx-xxxxx xxxxxx, xxxx xxx xxxxxxxxx xx .XXX Xxxxxxxxx xxxxxxx xxxxx.
+Choose the Basics 2 button to increment the value of the SampleProperty property and to display the new value in the output area. Primitive types such as strings and numbers can be used as parameter types and return types, and can be passed between managed code and JavaScript. Because numbers in JavaScript are stored in double-precision floating-point format, they are converted to .NET Framework numeric types.
 
-> **Xxxx**  Xx xxxxxxx, xxx xxx xxx xxxxxxxxxxx xxxx xx xxxx XxxxXxxxxx xxxx. Xx xxxxx xxxx Xxxxxx Xxxxx xx X\# xxxx, xxx Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X\# xxx Xxxxxx Xxxxx.
-
- 
-
-Xx xxxx xxxxxxxxx xxx xxxxx xxxx xxx, xxxxxx xxxx xxx xxx xx Xxxxxx Xxxxxx, xxx xxxxxx Xxxxx+XY.
-
-## Xxxxx xxx Xxxxxxx Xxxxxxx xxxx XxxxXxxxxx xxx xxxxxxx xxxx
-
-
-Xxx Xxxxxxx Xxxxxxx xxx xx xxxxxx xxxx xxxxxx XxxxXxxxxx xx xxxxxxx xxxx. Xxxxxxx Xxxxxxx xxxxxxx xxx xx xxxxxx xxxx xxx xxxxx xxxxxxx xxx xxx, xxx xxxxxx xxx xx xxxxxxx xxxx xxxxxx xxxx. Xxxxxxx, xxx xxxx xxx xxx Xxxxxxx Xxxxxxx xxxxx xx xxx xxx xxxxxxxxxxxx xxxxxx xx xxxx xxxxxxx, xxxxxxx XxxxXxxxxx xxx xxx .XXX Xxxxxxxxx xxxxxxx xxx Xxxxxxx Xxxxxxx xxxxxxxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xxxxx xxxxxxxxxxx, xxxxx xxx [Xxxxxxx.Xxxxxxxxxx.Xxxxxxxxxxx.XxxxxxxxXxx](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.propertyset.aspx) xxxxx. Xx xxxx xxxxxxx, xxx xxxxxx xx xxxxxxxx xx xxx XxxxxxxxXxx xxxxxxxxxx xx xxxxxxx xxxx xxx xxxxxxxx xx xxxxx xxxxxxx xx xxxxx xxxxxxx xx xxx xxxxxxxxxx. Xxxx xxx xxx XxxxXxxxxx xxxx xxxx xxxx xxx xxxxxxxxxx, xxxxxxxxx xxx xxx xxxxx xxxxxxx, xxx xxxx xxx xxxxxxxxxx. Xxxxxxx, xxx xxx x xxxxxx xxxx xxxxx xxxxxxx xx xxx xxxxxxxxxx xxxx xxxxxxx xxxx xxx xxxxx XxxxXxxxxx xxxxxxxx x xxxxxxx xxxxxxxxx.
-
-> **Xxxxxxxxx**  Xx xxxx xxxxxxx, xxx xxxxx xx xxxxx xxxxx xx xxx XX xxxxxx. Xx xxx xxxx xxx xxxxx xxxx x xxxxxxxxxx xxxxxx, xxx xxxxxxx xx xx xxxxx xxxx, xxx xxxx xxxx xx xx xxxx xxxxx xxxx xx xxxxx xxx XxxxXxxxxx xx xxxxxx xxx xxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxx Xxxxxx xx Xxxxxxx Xxxxxxx Xxxxxxxxxx](raising-events-in-windows-runtime-components.md).
+> **Note**  By default, you can set breakpoints only in your JavaScript code. To debug your Visual Basic or C# code, see Creating Windows Runtime Components in C# and Visual Basic.
 
  
 
-Xx xxx XxxxxxXxxxxxxxx xxxxxxx, xxx x xxx **xxxxxx xxxxxx** xxxxx (**Xxxxxx XxxXxxxxxxxxxx** xxxxx xx Xxxxxx Xxxxx) xxxxx XxxxxxxxXxxXxxxx. Xxx xxxxx xxxxx x XxxxxxxxXxx xxxxxxxxxx xxx xxxxxxx xxx XxxXxxxxxx xxxxx. Xxx xxxxx xxxxxxx xxxxxx xxx xxxxxx xx xxxxxxx xx xxxx xxxx xxxx xxxxx, xxx xxx XxxxxxxXxxxx xxxxxx xxxxxxxx x xxxxxx xxxx xx xxxxxxxxx xx XXXX. Xxxxxx xxx xxxxxxxxxx **xxxxx** xxxxxxxxx (**Xxxxxxx** xxxxxxxxx xx Xxxxxx Xxxxx); xx xxxxxxx xx xxx xxxx xx xxx xxxxxxxx **xxxxx** xxxxxxxxxx xxxxxx xxxx xxxxxxxxxxx xxxx.
+To stop debugging and close your app, switch from the app to Visual Studio, and choose Shift+F5.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+## Using the Windows Runtime from JavaScript and managed code
+
+
+The Windows Runtime can be called from either JavaScript or managed code. Windows Runtime objects can be passed back and forth between the two, and events can be handled from either side. However, the ways you use Windows Runtime types in the two environments differ in some details, because JavaScript and the .NET Framework support the Windows Runtime differently. The following example demonstrates these differences, using the [Windows.Foundation.Collections.PropertySet](https://msdn.microsoft.com/library/windows/apps/windows.foundation.collections.propertyset.aspx) class. In this example, you create an instance of the PropertySet collection in managed code and register an event handler to track changes in the collection. Then you add JavaScript code that gets the collection, registers its own event handler, and uses the collection. Finally, you add a method that makes changes to the collection from managed code and shows JavaScript handling a managed exception.
+
+> **Important**  In this example, the event is being fired on the UI thread. If you fire the event from a background thread, for example in an async call, you will need to do some extra work in order for JavaScript to handle the event. For more information, see [Raising Events in Windows Runtime Components](raising-events-in-windows-runtime-components.md).
+
+ 
+
+In the SampleComponent project, add a new **public sealed** class (**Public NotInheritable** class in Visual Basic) named PropertySetStats. The class wraps a PropertySet collection and handles its MapChanged event. The event handler tracks the number of changes of each kind that occur, and the DisplayStats method produces a report that is formatted in HTML. Notice the additional **using** statement (**Imports** statement in Visual Basic); be careful to add this to the existing **using** statements rather than overwriting them.
+
+> [!div class="tabbedCodeSnippets"]
 > ```csharp
 > using Windows.Foundation.Collections;
 > 
@@ -262,9 +262,9 @@ Xx xxx XxxxxxXxxxxxxxx xxxxxxx, xxx x xxx **xxxxxx xxxxxx** xxxxx (**Xxxxxx XxxX
 > End Class
 > ```
 
-Xxx xxxxx xxxxxxx xxxxxxx xxx xxxxxxxx .XXX Xxxxxxxxx xxxxx xxxxxxx, xxxxxx xxxx xxx xxxxxx xx xxx xxxxx (xx xxxx xxxx, xxx XxxxxxxxXxx xxxxxx) xx xxxx xx xxx XXxxxxxxxxxXxx&xx;xxxxxx, xxxxxx&xx; xxxxxxxxx (XXxxxxxxxxxXxx(Xx Xxxxxx, Xxxxxx) xx Xxxxxx Xxxxx), xxxxx xx xx xxxxxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxxxxxxxx [XXxxxxxxxxxXxx&xx;X, X&xx;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx). (Xxx xxx xxxx xxx xxxxxx xx xxx xxxx xx xxxxxxxxx.) Xxxx, xxx xxxxx xxxxxxxxx xxx xxxxxxxxx xx xx xxxxxxxxx xxxxxx xxxx xx xx xxxxxx.
+The event handler follows the familiar .NET Framework event pattern, except that the sender of the event (in this case, the PropertySet object) is cast to the IObservableMap&lt;string, object&gt; interface (IObservableMap(Of String, Object) in Visual Basic), which is an instantiation of the Windows Runtime interface [IObservableMap&lt;K, V&gt;](https://msdn.microsoft.com/library/windows/apps/br226050.aspx). (You can cast the sender to its type if necessary.) Also, the event arguments are presented as an interface rather than as an object.
 
-Xx xxx xxxxxxx.xx xxxx, xxx xxx XxxxxxxY xxxxxxxx xx xxxxx. Xxxx xxxx xxxxxxx x XxxxxxxxXxxXxxxx xxxxxx, xxxx xxx XxxxxxxxXxx xxxxxxxxxx, xxx xxxx xxx xxx xxxxx xxxxxxx, xxx xxXxxXxxxxxx xxxxxxxx, xx xxxxxx xxx XxxXxxxxxx xxxxx. Xxxxx xxxxxx xxxxxxx xx xxx xxxxxxxxxx, xxxxxxxY xxxxx xxx XxxxxxxXxxxx xxxxxx xx xxxx x xxxxxxx xx xxxxxx xxxxx.
+In the default.js file, add the Runtime1 function as shown. This code creates a PropertySetStats object, gets its PropertySet collection, and adds its own event handler, the onMapChanged function, to handle the MapChanged event. After making changes to the collection, runtime1 calls the DisplayStats method to show a summary of change types.
 
 ```javascript
 var propertysetstats;
@@ -314,15 +314,15 @@ function onMapChanged(change) {
 }
 ```
 
-Xxx xxx xxx xxxxxx Xxxxxxx Xxxxxxx xxxxxx xx XxxxXxxxxx xx xxxx xxxxxxxxx xxxx xxx xxx xxx xxxxxx xxxx xx .XXX Xxxxxxxxx xxxx. Xxx XxxxXxxxxx xxxxx xxxxxxx xxxxx xxxx xxx xxxxxxxx. Xxxx xxx xxxx xxxx xxxxxx xx xxx Xxxxxx Xxxxxx xxxxxxxx, xxx xxxxx xxxxxxxx xx xxx xxxxxx. Xxx xxxxxxx xx xxx xxxxx xxxxxxxx xxxxxxxxx xxxx xxxxxx xxxxxxxx xx xxxx xxxxxx.
+The way you handle Windows Runtime events in JavaScript is very different from the way you handle them in .NET Framework code. The JavaScript event handler takes only one argument. When you view this object in the Visual Studio debugger, the first property is the sender. The members of the event argument interface also appear directly on this object.
 
-Xx xxx xxx xxx, xxxxxx xxx XY xxx. Xx xxx xxxxx xx xxx xxxxxx, xxx xxx xxx xxxxx xxxxxxx, "Xxxxxxxxx xxxxxxxx xxxx 'XxxxxxXxxxxxxxx.Xxxxxxx' xx xxx xxxxxxxxx xxxxxxxxx. Xxxxxx xxxx xx xx xxxxxx."
+To run the app, choose the F5 key. If the class is not sealed, you get the error message, "Exporting unsealed type 'SampleComponent.Example' is not currently supported. Please mark it as sealed."
 
-Xxxxxx xxx **Xxxxxxx Y** xxxxxx. Xxx xxxxx xxxxxxx xxxxxxxx xxxxxxx xx xxxxxxxx xxx xxxxx xx xxxxxxx, xxx xx xxx xxx xxx XxxxxxxXxxxx xxxxxx xx xxxxxx xx xxxxxxx x xxxxxxx xx xxxxxx. Xx xxxx xxxxxxxxx xxx xxxxx xxx xxx, xxxxxx xxxx xx Xxxxxx Xxxxxx xxx xxxxxx Xxxxx+XY.
+Choose the **Runtime 1** button. The event handler displays changes as elements are added or changed, and at the end the DisplayStats method is called to produce a summary of counts. To stop debugging and close the app, switch back to Visual Studio and choose Shift+F5.
 
-Xx xxx xxx xxxx xxxxx xx xxx XxxxxxxxXxx xxxxxxxxxx xxxx xxxxxxx xxxx, xxx xxx xxxxxxxxx xxxx xx xxx XxxxxxxxXxxXxxxx xxxxx:
+To add two more items to the PropertySet collection from managed code, add the following code to the PropertySetStats class:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```csharp
 > public void AddMore()
 > {
@@ -337,9 +337,9 @@ Xx xxx xxx xxxx xxxxx xx xxx XxxxxxxxXxx xxxxxxxxxx xxxx xxxxxxx xxxx, xxx xxx x
 > End Sub
 > ```
 
-Xxxx xxxx xxxxxxxxxx xxxxxxx xxxxxxxxxx xx xxx xxx xxx xxx Xxxxxxx Xxxxxxx xxxxx xx xxx xxx xxxxxxxxxxxx. Xx xxx xxxx xxxx xxxx xxxxxxxx, xxx'xx xxxxxx xxxx XxxxxxxXxxxx xxxxx'x xxxx xxx xxxxxx xxxxxx xxx xxxx xx xxx XxxxXxxxxx xxxx. Xxxxxxx, xx xxxxx xxx Xxx xxxxxx xxxxxxxx xxxx xx xxxxxxxxxxx xx xxx .XXX Xxxxxxxxx. Xxxx xx xxxxxxx xxxx xxxxxxxx xxxx xxxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxx xxxxx xxx xxxxxxx xxxxxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxx xxx .XXX Xxxxxxxxx. Xxxx xxx xxx xxxxx xxxxxxxxxx xx xxxxxxx xxxx, xxxx xxxxxx xx xxxxx .XXX Xxxxxxxxx xxxxxxxxxxx. Xxxx xx xxxxxxxxx xx [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X\# xxx Xxxxxx Xxxxx](creating-windows-runtime-components-in-csharp-and-visual-basic.md). Xxxx xxx xxx xxx xxxx xxxxxxxxxx xx XxxxXxxxxx, xxx xxxx xxxxxx xxxx xxx Xxxxxxx Xxxxxxx xx xxxx xxxxxxxxx xxxxxxx xx xxx xxxxxxxxx xx xxxxxx xxxxx xxxxxx xxxxxxxxx.
+This code highlights another difference in the way you use Windows Runtime types in the two environments. If you type this code yourself, you'll notice that IntelliSense doesn't show the insert method you used in the JavaScript code. Instead, it shows the Add method commonly seen on collections in the .NET Framework. This is because some commonly used collection interfaces have different names but similar functionality in the Windows Runtime and the .NET Framework. When you use these interfaces in managed code, they appear as their .NET Framework equivalents. This is discussed in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md). When you use the same interfaces in JavaScript, the only change from the Windows Runtime is that uppercase letters at the beginning of member names become lowercase.
 
-Xxxxxxx, xx xxxx xxx XxxXxxx xxxxxx xxxx xxxxxxxxx xxxxxxxx, xxx xxx xxxxxxxY xxxxxxxx xx xxxxxxx.xx.
+Finally, to call the AddMore method with exception handling, add the runtime2 function to default.js.
 
 ```javascript
 function runtime2() {
@@ -356,7 +356,7 @@ function runtime2() {
 }
 ```
 
-Xxx xxx xxxxx xxxxxxx xxxxxxxxxxxx xxxx xxx xxxx xxx xxx xxx xxxxxxxxxx.
+Add the event handler registration code the same way you did previously.
 
 ```javascript
 var runtimeButton1 = document.getElementById("runtimeButton1");
@@ -365,20 +365,20 @@ var runtimeButton2 = document.getElementById("runtimeButton2");
 runtimeButton2.addEventListener("click", runtime2, false);
 ```
 
-Xx xxx xxx xxx, xxxxxx xxx XY xxx. Xxxxxx **Xxxxxxx Y** xxx xxxx **Xxxxxxx Y**. Xxx XxxxXxxxxx xxxxx xxxxxxx xxxxxxx xxx xxxxx xxxxxx xx xxx xxxxxxxxxx. Xxx xxxxxx xxxxxx, xxxxxxx, xxx x xxxxxxxxx xxx. Xxxxx xx .XXX Xxxxxxxxx xxxxxxxxxxxx xxxxxx xxx Xxx xxxxxx xx xxxxx xx xxxxxxxxx, xxx xxxx xx xxxx xxxxxxx. XxxxXxxxxx xxxxxxx xxx .XXX Xxxxxxxxx xxxxxxxxx.
+To run the app, choose the F5 key. Choose **Runtime 1** and then **Runtime 2**. The JavaScript event handler reports the first change to the collection. The second change, however, has a duplicate key. Users of .NET Framework dictionaries expect the Add method to throw an exception, and that is what happens. JavaScript handles the .NET Framework exception.
 
-> **Xxxx**  Xxx xxx'x xxxxxxx xxx xxxxxxxxx'x xxxxxxx xxxx XxxxXxxxxx xxxx. Xxx xxxxxxx xxxx xx xxxxxxxx xx x xxxxx xxxxx. Xxx xxxx xxxxxxxxxxx, xxx "Xxxxxxxx xxxxxxxxxx" xx Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X\# xxx Xxxxxx Xxxxx.
+> **Note**  You can't display the exception's message from JavaScript code. The message text is replaced by a stack trace. For more information, see "Throwing exceptions" in Creating Windows Runtime Components in C# and Visual Basic.
 
-Xx xxxxxxxx, xxxx XxxxXxxxxx xxxxxx xxx xxxxxx xxxxxx xxxx x xxxxxxxxx xxx, xxx xxxxx xx xxx xxxx xxx xxxxxxx. Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx xx xxx xxxxxxxxx xxxx xxxx XxxxXxxxxx xxx xxx .XXX Xxxxxxxxx xxxxxxx xxx Xxxxxxx Xxxxxxx, xx xxxxxxxxx xx [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X\# xxx Xxxxxx Xxxxx](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+By contrast, when JavaScript called the insert method with a duplicate key, the value of the item was changed. This difference in behavior is due to the different ways that JavaScript and the .NET Framework support the Windows Runtime, as explained in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
-## Xxxxxxxxx xxxxxxx xxxxx xxxx xxxx xxxxxxxxx
+## Returning managed types from your component
 
 
-Xx xxxxxxxxx xxxxxxxxxx, xxx xxx xxxx xxxxxx Xxxxxxx Xxxxxxx xxxxx xxxx xxx xxxxx xxxxxx xxxxxxx xxxx XxxxXxxxxx xxxx xxx xxxx X\# xx Xxxxxx Xxxxx xxxx. Xxxx xx xxx xxxx, xxx xxxx xxxxx xxx xxxxxx xxxxx xxxx xx xxx xxxx xx xxxx xxxxx (xxxxxx xxxx xxx xxxxxx xxxxx xxxxx xxxx xxxxxxxxx xxxxxxx xx XxxxXxxxxx). Xxxxxxx, xx xxx xxxxxxxxx xxxxxxx, xxx XxxxxxxxXxx xxxxx xxxxxxxx xx xxxx xxxxxxxxx xxxxxxx xx xxxxxxx xxxx. (Xxx xxxxxxx, xx XxxxXxxxxx xxx xxxxxx xxx xxxxxx xxxxxx, xxx xx xxx .XXX Xxxxxxxxx xxxx xxx xxxxxx xxx Xxx xxxxxx.) Xxxx xxxxxxx xxxxxxxx xxx xxx xxxxx xxxxxxxxxxx xxxxxx .XXX Xxxxxxxxx xxxxx xxxxxx xx XxxxXxxxxx.
+As discussed previously, you can pass native Windows Runtime types back and forth freely between your JavaScript code and your C# or Visual Basic code. Most of the time, the type names and member names will be the same in both cases (except that the member names start with lowercase letters in JavaScript). However, in the preceding section, the PropertySet class appeared to have different members in managed code. (For example, in JavaScript you called the insert method, and in the .NET Framework code you called the Add method.) This section explores the way those differences affect .NET Framework types passed to JavaScript.
 
-Xx xxxxxxxx xx xxxxxxxxx Xxxxxxx Xxxxxxx xxxxx xxxx xxx xxxxxxx xx xxxx xxxxxxxxx xx xxxxxx xx xxxx xxxxxxxxx xxxx XxxxXxxxxx, xxx xxx xxxxxx x xxxxxxx xxxx, xxxxxxx xx xxxxxxx xxxx, xx XxxxXxxxxx xx xx xx xxxx xxx xxxxxxxxxxxxx Xxxxxxx Xxxxxxx xxxx. Xxxx xx xxx xxxxx, xxxxxx xxxxxxx xx x xxxxxxx xxxxx, xxx xxxxxxxxxx xxx xxxxxx xxxxx xx xxx xxxxxxx xxxx Xxxxxx Xxxxx xx X\# xxxxxxxxx xxxxx, xxxxx xxx .XXX Xxxxxxxxx xxxxx. Xx xxxxxxxxxxx xxxx xxx xxxxxxxxxxx, xxx xxx xxxxxxxxx xxxx xx xxx Xxxxxxx xxxxx, xx xxxxxx x xxxxxx xxxx xxxxxxx x xxxxxxx xxxxxxxxxx xx xxxxxxx, xxxxxxx xx xxxxxxxx:
+In addition to returning Windows Runtime types that you created in your component or passed to your component from JavaScript, you can return a managed type, created in managed code, to JavaScript as if it were the corresponding Windows Runtime type. Even in the first, simple example of a runtime class, the parameters and return types of the members were Visual Basic or C# primitive types, which are .NET Framework types. To demonstrate this for collections, add the following code to the Example class, to create a method that returns a generic dictionary of strings, indexed by integers:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```csharp
 > public static IDictionary<int, string> GetMapOfNames()
 > {
@@ -403,13 +403,13 @@ Xx xxxxxxxx xx xxxxxxxxx Xxxxxxx Xxxxxxx xxxxx xxxx xxx xxxxxxx xx xxxx xxxxxxxx
 > End Function
 > ```
 
-Xxxxxx xxxx xxx xxxxxxxxxx xxxx xx xxxxxxxx xx xx xxxxxxxxx xxxx xx xxxxxxxxxxx xx [Xxxxxxxxxx&xx;XXxx, XXxxxx&xx;](https://msdn.microsoft.com/library/xfhwa508.aspx), xxx xxxx xxxx xx x Xxxxxxx Xxxxxxx xxxxxxxxx. Xx xxxx xxxx, xxx xxxxxxxxx xx XXxxxxxxxxx&xx;xxx, xxxxxx&xx; (XXxxxxxxxxx(Xx Xxxxxxx, Xxxxxx) xx Xxxxxx Xxxxx). Xxxx xxx Xxxxxxx Xxxxxxx xxxx XXxx&xx;xxx, xxxxxx&xx; xx xxxxxx xx xxxxxxx xxxx, xx xxxxxxx xx XXxxxxxxxxx&xx;xxx, xxxxxx&xx;, xxx xxx xxxxxxx xx xxxx xxxx xxx xxxxxxx xxxx xx xxxxxx xx XxxxXxxxxx.
+Notice that the dictionary must be returned as an interface that is implemented by [Dictionary&lt;TKey, TValue&gt;](https://msdn.microsoft.com/library/xfhwa508.aspx), and that maps to a Windows Runtime interface. In this case, the interface is IDictionary&lt;int, string&gt; (IDictionary(Of Integer, String) in Visual Basic). When the Windows Runtime type IMap&lt;int, string&gt; is passed to managed code, it appears as IDictionary&lt;int, string&gt;, and the reverse is true when the managed type is passed to JavaScript.
 
-**Xxxxxxxxx**  Xxxx x xxxxxxx xxxx xxxxxxxxxx xxxxxxxx xxxxxxxxxx, XxxxXxxxxx xxxx xxx xxxxxxxxx xxxx xxxxxxx xxxxx xx xxx xxxx. Xxx xxxxxxx, xx xxx xxxxxx Xxxxxxxxxx&xx;xxx, xxxxxx&xx; xx XxxxXxxxxx xxxx, xx xxxxxxx xx XXxxxxxxxxx&xx;xxx, xxxxxx&xx; xx xxxxxx xxxxx xxxxxxxxx xxx xxxxxxx xx xxx xxxxxx xxxx. Xxxx xxxxx xxxx xx xxx xxxxx xxxxxxxxx xxxxx'x xxxxxxx x xxxxxx xxxx xxxxxxx xx xxxxx xxxxxxxxxx, xxxx xxxxxx xxx'x xxxxxxx xx XxxxXxxxxx.
+**Important**  When a managed type implements multiple interfaces, JavaScript uses the interface that appears first in the list. For example, if you return Dictionary&lt;int, string&gt; to JavaScript code, it appears as IDictionary&lt;int, string&gt; no matter which interface you specify as the return type. This means that if the first interface doesn't include a member that appears on later interfaces, that member isn't visible to JavaScript.
 
  
 
-Xx xxxx xxx xxx xxxxxx xxx xxx xxx xxxxxxxxxx, xxx xxx xxxxxxxY xxx xxxxxxxY xxxxxxxxx xx xxxxxxx.xx:
+To test the new method and use the dictionary, add the returns1 and returns2 functions to default.js:
 
 ```javascript
 var names;
@@ -445,7 +445,7 @@ function showMap(map) {
 }
 ```
 
-Xxx xxx xxxxx xxxxxxxxxxxx xxxx xx xxx xxxx xxxx xxxxx xx xxx xxxxx xxxxx xxxxxxxxxxxx xxxx:
+Add the event registration code to the same then block as the other event registration code:
 
 ```javascript
 var returnsButton1 = document.getElementById("returnsButton1");
@@ -454,21 +454,21 @@ var returnsButton2 = document.getElementById("returnsButton2");
 returnsButton2.addEventListener("click", returns2, false);
 ```
 
-Xxxxx xxx x xxx xxxxxxxxxxx xxxxxx xx xxxxxxx xxxxx xxxx XxxxXxxxxx xxxx. Xxxxx xx xxx, xx xxxxxxxx x xxxxXxx xxxxxxxx xx xxxxxxx xxx xxxxxxxx xx xxx xxxxxxxxxx xx XXXX. Xx xxx xxxx xxx xxxxXxx, xxxxxx xxx xxxxxxxxx xxxxxxx. Xx xxx .XXX Xxxxxxxxx, xxxxx'x xx Xxxxx xxxxxx xx xxx xxxxxxx XXxxxxxxxxx xxxxxxxxx, xxx xxx xxxx xx xxxxxxxx xx x Xxxxx xxxxxxxx xxxxxx xxxx xx x Xxxx xxxxxx. Xx XxxxXxxxxx, XXxxxxxxxxx&xx;xxx, xxxxxx&xx; xxxxxxx xx xx xxx Xxxxxxx Xxxxxxx xxxx XXxx&xx;xxx, xxxxxx&xx;. (Xxx xxx [XXxx&xx;X,X&xx;](https://msdn.microsoft.com/library/windows/apps/br226042.aspx) xxxxxxxxx.)
+There are a few interesting things to observe about this JavaScript code. First of all, it includes a showMap function to display the contents of the dictionary in HTML. In the code for showMap, notice the iteration pattern. In the .NET Framework, there's no First method on the generic IDictionary interface, and the size is returned by a Count property rather than by a Size method. To JavaScript, IDictionary&lt;int, string&gt; appears to be the Windows Runtime type IMap&lt;int, string&gt;. (See the [IMap&lt;K,V&gt;](https://msdn.microsoft.com/library/windows/apps/br226042.aspx) interface.)
 
-Xx xxx xxxxxxxY xxxxxxxx, xx xx xxxxxxx xxxxxxxx, XxxxXxxxxx xxxxx xxx Xxxxxx xxxxxx (xxxxxx xx XxxxXxxxxx) xx xxx xxxxx xx xxx xxxxxxxxxx.
+In the returns2 function, as in earlier examples, JavaScript calls the Insert method (insert in JavaScript) to add items to the dictionary.
 
-Xx xxx xxx xxx, xxxxxx xxx XY xxx. Xx xxxxxx xxx xxxxxxx xxx xxxxxxx xxxxxxxx xx xxx xxxxxxxxxx, xxxxxx xxx **Xxxxxxx Y** xxxxxx. Xx xxx xxx xxxx xxxxxxx xx xxx xxxxxxxxxx, xxxxxx xxx **Xxxxxxx Y** xxxxxx. Xxxxxx xxxx xxx xxxxxxx xxx xxxxxxxxx xx xxxxx xx xxxxxxxxx, xx xxx xxxxx xxxxxx xxxx Xxxxxxxxxx&xx;XXxx, XXxxxx&xx;. Xx xxx xxxx xxxx xxxxxx, xxx xxx xxxxxx x XxxxxxXxxxxxxxxx&xx;xxx, xxxxxx&xx; xxxx XxxXxxXxXxxxx. (Xxx XxxxxxxxXxx xxxxx xxxx xx xxxxxxx xxxxxxxx xxx x xxxxxxxxx xxxxxxxx xxxxxxxxxxxx xxxx Xxxxxxxxxx&xx;XXxx, XXxxxx&xx;.)
+To run the app, choose the F5 key. To create and display the initial contents of the dictionary, choose the **Returns 1** button. To add two more entries to the dictionary, choose the **Returns 2** button. Notice that the entries are displayed in order of insertion, as you would expect from Dictionary&lt;TKey, TValue&gt;. If you want them sorted, you can return a SortedDictionary&lt;int, string&gt; from GetMapOfNames. (The PropertySet class used in earlier examples has a different internal organization from Dictionary&lt;TKey, TValue&gt;.)
 
-Xx xxxxxx, XxxxXxxxxx xx xxx x xxxxxxxx xxxxx xxxxxxxx, xx xxxxx xxxxxxxx xxxxx xxxxxxx xxxxxxxxxxx xxx xxxx xx xxxx xxxxxxxxxx xxxxxxx. Xxxxxx xxx **Xxxxxxx Y** xxxxxx xxxxx. XxxxXxxxxx xxxxxxxxxx xxxxxxx xxx "Y" xx x xxxxxxx Y, xxx xxx xxxxxxx Y xxxx'x xxxxxx xx xx xx x xxxxxx. Xxx xx xxxxxxx xxx xxxxxx "xxxxx" xx xxxx. Xxx xxxx'x xxxx xxx xxxxxxxxx. Xxxxxx xxx **Xxxxxxx Y** xxxxxx x xxx xxxx xxxxx. Xx xxxxxxx xxxx, xxx Xxx xxxxxx xxxxx xxxxxxxx xxxxxxxxx xxx xxxxxxxxxx, xxxx xx xxx xxxxxx xxxx xxxx xx xxx xxxxxxx xxxxx. Xx xxxxxxxx, xxx Xxxxxx xxxxxx xxxxxxx xxx xxxxx xxxxxxxxxx xxxx xx xxxxxxxx xxx xxx xxxxxxx x Xxxxxxx xxxxx xxxx xxxxxxxxx xxxxxxx x xxx xxx xxx xxxxx xx xxx xxxxxxxxxx. Xxxx xx xxx xxx xxxxx xxxxxxxxxx xxxx xxx xxx Y xxxxx xxxxxxxx.
+Of course, JavaScript is not a strongly typed language, so using strongly typed generic collections can lead to some surprising results. Choose the **Returns 2** button again. JavaScript obligingly coerces the "7" to a numeric 7, and the numeric 7 that's stored in ct to a string. And it coerces the string "forty" to zero. But that's only the beginning. Choose the **Returns 2** button a few more times. In managed code, the Add method would generate duplicate key exceptions, even if the values were cast to the correct types. In contrast, the Insert method updates the value associated with an existing key and returns a Boolean value that indicates whether a new key was added to the dictionary. This is why the value associated with the key 7 keeps changing.
 
-Xxxxxxx xxxxxxxxxx xxxxxxxx: Xx xxx xxxx xx xxxxxxxxxx XxxxXxxxxx xxxxxxxx xx x xxxxxx xxxxxxxx, xxxx xxx xxx xx xxx xxxxxx "xxxxxxxxx". Xx xxxxx, xx xxxxxxx xxxx xxx xxxx .XXX Xxxxxxxxx xxxxxxxxxx xxxxx xx xxxx XxxxXxxxxx xxxx.
+Another unexpected behavior: If you pass an unassigned JavaScript variable as a string argument, what you get is the string "undefined". In short, be careful when you pass .NET Framework collection types to your JavaScript code.
 
-> **Xxxx**  Xx xxx xxxx xxxxx xxxxxxxxxx xx xxxx xx xxxxxxxxxxx, xxx xxx xx xx xxxx xxxxxxxxxxx xx xxxxxx xxx xxxx xxxx x .XXX Xxxxxxxxx xxxxxx xxx xxxxx xxx XxxxxxXxxxxxx xxxxx, xx xxxxx xx xxx xxxxXxx xxxxxxxx.
+> **Note**  If you have large quantities of text to concatenate, you can do it more efficiently by moving the code into a .NET Framework method and using the StringBuilder class, as shown in the showMap function.
 
-Xxxxxxxx xxx xxx'x xxxxxx xxxx xxx xxxxxxx xxxxx xxxx x Xxxxxxx Xxxxxxx xxxxxxxxx, xxx xxx xxxxxx .XXX Xxxxxxxxx xxxxxxx xxxxxxxxxxx xxx Xxxxxxx Xxxxxxx xxxxxxx xx xxxxx xxxx xxxx xx xxx xxxxxxxxx:
+Although you can't expose your own generic types from a Windows Runtime component, you can return .NET Framework generic collections for Windows Runtime classes by using code such as the following:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```csharp
 > public static object GetListOfThis(object obj)
 > {
@@ -483,14 +483,14 @@ Xxxxxxxx xxx xxx'x xxxxxx xxxx xxx xxxxxxx xxxxx xxxx x Xxxxxxx Xxxxxxx xxxxxxxx
 > End Function
 > ```
 
-Xxxx&xx;X&xx; xxxxxxxxxx XXxxx&xx;X&xx;, xxxxx xxxxxxx xx xxx Xxxxxxx Xxxxxxx xxxx XXxxxxx&xx;X&xx; xx XxxxXxxxxx.
+List&lt;T&gt; implements IList&lt;T&gt;, which appears as the Windows Runtime type IVector&lt;T&gt; in JavaScript.
 
-## Xxxxxxxxx xxxxxx
+## Declaring events
 
 
-Xxx xxx xxxxxxx xxxxxx xx xxxxx xxx xxxxxxxx .XXX Xxxxxxxxx xxxxx xxxxxxx xx xxxxx xxxxxxxx xxxx xx xxx Xxxxxxx Xxxxxxx. Xxx .XXX Xxxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxxxx xxx Xxxxxx.XxxxxXxxxxxx&xx;XXxxxxXxxx&xx; xxxxxxxx xxx xxx Xxxxxxx Xxxxxxx XxxxxXxxxxxx&xx;X&xx; xxxxxxxx, xx xxxxx XxxxxXxxxxxx&xx;XXxxxxXxxx&xx; xx x xxxx xxx xx xxxxxxxxx xxx xxxxxxxx .XXX Xxxxxxxxx xxxxxxx. Xx xxx xxx xxxx xxxxx, xxx xxx xxxxxxxxx xxxx xx xxxxxxx xx xxx XxxxxxXxxxxxxxx xxxxxxx:
+You can declare events by using the standard .NET Framework event pattern or other patterns used by the Windows Runtime. The .NET Framework supports equivalence between the System.EventHandler&lt;TEventArgs&gt; delegate and the Windows Runtime EventHandler&lt;T&gt; delegate, so using EventHandler&lt;TEventArgs&gt; is a good way to implement the standard .NET Framework pattern. To see how this works, add the following pair of classes to the SampleComponent project:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```csharp
 > namespace SampleComponent
 > {
@@ -535,11 +535,11 @@ Xxx xxx xxxxxxx xxxxxx xx xxxxx xxx xxxxxxxx .XXX Xxxxxxxxx xxxxx xxxxxxx xx xxx
 > End Class
 > ```
 
-Xxxx xxx xxxxxx xx xxxxx xx xxx Xxxxxxx Xxxxxxx, xxx xxxxx xxxxxxxx xxxxx xxxxxxxx xxxx Xxxxxx.Xxxxxx. Xx xxxxx'x xxxxxxx xxxx Xxxxxx.XxxxxXxxx, xx xx xxxxx xx xxx .XXX Xxxxxxxxx, xxxxxxx XxxxxXxxx xx xxx x Xxxxxxx Xxxxxxx xxxx.
+When you expose an event in the Windows Runtime, the event argument class inherits from System.Object. It doesn't inherit from System.EventArgs, as it would in the .NET Framework, because EventArgs is not a Windows Runtime type.
 
-Xx xxx xxxxxxx xxxxxx xxxxx xxxxxxxxx xxx xxxx xxxxx (**Xxxxxx** xxxxxxx xx Xxxxxx Xxxxx), xxx xxxx xxx xxx Xxxxxxx Xxxxxxx xxxxx xxxxxxx. Xxx [Xxxxxx xxxxxx xxx xxxxx xxxxxxxxx xx Xxxxxxx Xxxxxxx Xxxxxxxxxx](custom-events-and-event-accessors-in-windows-runtime-components.md).
+If you declare custom event accessors for your event (**Custom** keyword in Visual Basic), you must use the Windows Runtime event pattern. See [Custom events and event accessors in Windows Runtime Components](custom-events-and-event-accessors-in-windows-runtime-components.md).
 
-Xx xxxxxx xxx Xxxx xxxxx, xxx xxx xxxxxxY xxxxxxxx xx xxxxxxx.xx. Xxx xxxxxxY xxxxxxxx xxxxxxx xx xxxxx xxxxxxx xxxxxxxx xxx xxx Xxxx xxxxx, xxx xxxxxxxxxxx xxxxxxx xxx XxXxxx xxxxxx xx xxxxx xxx xxxxx. Xx xxx xxxxx x xxxxxxxxxx xx xxx xxxx xx xxx xxxxx xxxxxxx, xxx xxx xxx xxxx xxx xxxxxx xxxxxx xx xxx xxxxxx xxxxxxxxx xxxxxxxx xxx xxxxxx xxxxxx xxx xxxx xxxxxxx xx XxxxXxxxxXxxx.
+To handle the Test event, add the events1 function to default.js. The events1 function creates an event handler function for the Test event, and immediately invokes the OnTest method to raise the event. If you place a breakpoint in the body of the event handler, you can see that the object passed to the single parameter includes the source object and both members of TestEventArgs.
 
 ```javascript
 var ev;
@@ -554,21 +554,21 @@ function events1() {
 }
 ```
 
-Xxx xxx xxxxx xxxxxxxxxxxx xxxx xx xxx xxxx xxxx xxxxx xx xxx xxxxx xxxxx xxxxxxxxxxxx xxxx:
+Add the event registration code to the same then block as the other event registration code:
 
 ```javascript
 var events1Button = document.getElementById("events1Button");
 events1Button.addEventListener("click", events1, false);
 ```
 
-## Xxxxxxxx xxxxxxxxxxxx xxxxxxxxxx
+## Exposing asynchronous operations
 
 
-Xxx .XXX Xxxxxxxxx xxx x xxxx xxx xx xxxxx xxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxxxx xxxxxxxxxx, xxxxx xx xxx Xxxx xxx xxxxxxx [Xxxx&xx;XXxxxxx&xx;](https://msdn.microsoft.com/library/dd321424.aspx) xxxxxxx. Xx xxxxxx xxxx-xxxxx xxxxxxxxxxxx xxxxxxxxxx xx x Xxxxxxx Xxxxxxx xxxxxxxxx, xxx xxx Xxxxxxx Xxxxxxx xxxxxxxxxx [XXxxxxXxxxxx](https://msdn.microsoft.com/library/br205781.aspx), [XXxxxxXxxxxxXxxxXxxxxxxx&xx;XXxxxxxxx&xx;](https://msdn.microsoft.com/library/br205784.aspx), [XXxxxxXxxxxxxxx&xx;XXxxxxx&xx;](https://msdn.microsoft.com/library/br205802.aspx), xxx [XXxxxxXxxxxxxxxXxxxXxxxxxxx&xx;XXxxxxx, XXxxxxxxx&xx;](https://msdn.microsoft.com/library/br205807.aspx). (Xx xxx Xxxxxxx Xxxxxxx, xxxxxxxxxx xxxxxx xxxxxxx, xxx xxxxxxx xx xxx.)
+The .NET Framework has a rich set of tools for asynchronous processing and parallel processing, based on the Task and generic [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) classes. To expose task-based asynchronous processing in a Windows Runtime component, use the Windows Runtime interfaces [IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/br205802.aspx), and [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/br205807.aspx). (In the Windows Runtime, operations return results, but actions do not.)
 
-Xxxx xxxxxxx xxxxxxxxxxxx x xxxxxxxxxx xxxxxxxxxxxx xxxxxxxxx xxxx xxxxxxx xxxxxxxx xxx xxxxxxx xxxxxxx. Xxx XxxXxxxxxXxXxxxxXxxxx xxxxxx xxxx xxx [XxxxxXxxx](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) xxxxx xx xxxxxxxx x xxxx xxx xx xxxxxxx xxx xxxxxxxxxxxx xxx xxxxxxxx-xxxxxxxxx xxxxxxxx xx x XxxXX.Xxxxxxx xxxxxx. Xxxxx xx xxxxxx xxx xxxxxxxxx **xxxxx** xxxxxxxxxx (**Xxxxxxx** xx Xxxxxx Xxxxx) xx xxx Xxxxxxx xxxxx:
+This section demonstrates a cancelable asynchronous operation that reports progress and returns results. The GetPrimesInRangeAsync method uses the [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) class to generate a task and to connect its cancellation and progress-reporting features to a WinJS.Promise object. Begin by adding the following **using** statements (**Imports** in Visual Basic) to the Example class:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```csharp
 > using System.Runtime.InteropServices.WindowsRuntime;
 > using Windows.Foundation;
@@ -577,9 +577,9 @@ Xxxx xxxxxxx xxxxxxxxxxxx x xxxxxxxxxx xxxxxxxxxxxx xxxxxxxxx xxxx xxxxxxx xxxxx
 > Imports System.Runtime.InteropServices.WindowsRuntime
 > ```
 > 
-> Xxx xxx xxx XxxXxxxxxXxXxxxxXxxxx xxxxxx xx xxx Xxxxxxx xxxxx:
+> Now add the GetPrimesInRangeAsync method to the Example class:
 > 
-> > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> > [!div class="tabbedCodeSnippets"]
 > ```csharp
 > public static IAsyncOperationWithProgress<IList<long>, double> GetPrimesInRangeAsync(long start, long count)
 > {
@@ -662,27 +662,27 @@ Xxxx xxxxxxx xxxxxxxxxxxx x xxxxxxxxxx xxxxxxxxxxxx xxxxxxxxx xxxx xxxxxxx xxxxx
 > End Function
 > ```
 
-XxxXxxxxxXxXxxxxXxxxx xx x xxxx xxxxxx xxxxx xxxxxx xxxxxx, xxx xxxx'x xx xxxxxx. Xxx xxxxx xxxx xx xx xxxxxxxxxxxx xx xxxxxxxxxxxx xxxxxxxxx, xx xxxxxxxxxx xx xxxxxxxxx, xxx x xxxx xxxxxxxxxxxxxx xx xx xxxxxxxxx xxxx xx'xx xxxxxxxxxxxxx xxxxxxxxxxxx. XxxXxxxxxXxXxxxxXxxxx xxxxx xxxxxx xx xxxxx xxxxx: Xx xxxxxxx x xxxxxxxxx xx xxx xxx xxxxxxxx xxxx xxx xxxx xxxx xx xxxxx xx xxx xxxxxx xxxx, xxxxxx xxxx xxxxx xxxx xxx xxxxx xxxxxxx. Xxxxxxxx xxxxxxx xxxx xxxx:
+GetPrimesInRangeAsync is a very simple prime number finder, and that's by design. The focus here is on implementing an asynchronous operation, so simplicity is important, and a slow implementation is an advantage when we're demonstrating cancellation. GetPrimesInRangeAsync finds primes by brute force: It divides a candidate by all the integers that are less than or equal to its square root, rather than using only the prime numbers. Stepping through this code:
 
--   Xxxxxx xxxxxxxx xx xxxxxxxxxxxx xxxxxxxxx, xxxxxxx xxxxxxxxxxxx xxxxxxxxxx xxxx xx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxx xxxxxxx xxxxx.
--   Xxx xxx xx xxxx xxxxxxxxxxxxxx xx xxx [XxxxxXxxx.Xxx&xx;XXxxxxx, XXxxxxxxx&xx;(Xxxx&xx;XxxxxxxxxxxxXxxxx, XXxxxxxxx&xx;XXxxxxxxx&xx;, Xxxx&xx;XXxxxxx&xx;](https://msdn.microsoft.com/library/hh779740.aspx)&xx;) xxxxxx, xxx xxx xxxxxxxx xxxx xx xxx xxxxxx'x xxxx xxxxxxxxx. Xxx xxxxxxxx xxxx xxxxxx x xxxxxxxxxxxx xxxxx xxx xx xxxxxxxxx xxx xxxxxxxxx xxxxxxxx, xxx xxxx xxxxxx x xxxxxxx xxxx xxxx xxxx xxxxx xxxxxxxxxx. Xxxx XxxxXxxxxx xxxxx xxx XxxXxxxxxXxXxxxxXxxxx xxxxxx, xxx xxxxxxxxx xxxxx xxxxx (xxx xxxxxxxxxxx xx xxx xxxxx xxxxx xxxx):
+-   Before starting an asynchronous operation, perform housekeeping activities such as validating parameters and throwing exceptions for invalid input.
+-   The key to this implementation is the [AsyncInfo.Run&lt;TResult, TProgress&gt;(Func&lt;CancellationToken, IProgress&lt;TProgress&gt;, Task&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779740.aspx)&gt;) method, and the delegate that is the method's only parameter. The delegate must accept a cancellation token and an interface for reporting progress, and must return a started task that uses those parameters. When JavaScript calls the GetPrimesInRangeAsync method, the following steps occur (not necessarily in the order given here):
 
-    -   Xxx [XxxXX.Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) xxxxxx xxxxxxxx xxxxxxxxx xx xxxxxxx xxx xxxxxxxx xxxxxxx, xxxxx xx xxxxxxxxxxxx, xxx xxxxxx xxxxxxxx xxxxxxx.
-    -   Xxx XxxxxXxxx.Xxx xxxxxx xxxxxxx x xxxxxxxxxxxx xxxxxx xxx xx xxxxxx xxxx xxxxxxxxxx xxx XXxxxxxxx&xx;X&xx; xxxxxxxxx. Xx xxx xxxxxxxx, xx xxxxxx xxxx x [XxxxxxxxxxxxXxxxx](https://msdn.microsoft.com/library/system.threading.cancellationtoken.aspx) xxxxx xxxx xxx xxxxxxxxxxxx xxxxxx, xxx xxx [XXxxxxxxx&xx;X&xx;](https://msdn.microsoft.com/library/hh138298.aspx) xxxxxxxxx.
+    -   The [WinJS.Promise](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) object supplies functions to process the returned results, react to cancellation, and handle progress reports.
+    -   The AsyncInfo.Run method creates a cancellation source and an object that implements the IProgress&lt;T&gt; interface. To the delegate, it passes both a [CancellationToken](https://msdn.microsoft.com/library/system.threading.cancellationtoken.aspx) token from the cancellation source, and the [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) interface.
 
-        > **Xxxx**  Xx xxx Xxxxxxx xxxxxx xxxxx'x xxxxxx x xxxxxxxx xx xxxxx xx xxxxxxxxxxxx, XxxxxXxxx.Xxx xxxxx xxxxxx x xxxxxxxxxx xxxxx, xxx xxxxxxxxxxxx xxx xxxxx xxxxx. Xx xxx Xxxxxxx xxxxxx xxxxx'x xxxxxx x xxxxxxxx xx xxxxxx xxxxxxxx xxxxxxx, XxxxxXxxx.Xxx xxxxx xxxxxxxx xx xxxxxx xxxx xxxxxxxxxx XXxxxxxxx&xx;X&xx;, xxx xxx xxxxxxx xxx xxxxxxx.
+        > **Note**  If the Promise object doesn't supply a function to react to cancellation, AsyncInfo.Run still passes a cancelable token, and cancellation can still occur. If the Promise object doesn't supply a function to handle progress updates, AsyncInfo.Run still supplies an object that implements IProgress&lt;T&gt;, but its reports are ignored.
 
-    -   Xxx xxxxxxxx xxxx xxx [Xxxx.Xxx&xx;XXxxxxx&xx;(Xxxx&xx;XXxxxxx&xx;, XxxxxxxxxxxxXxxxx](https://msdn.microsoft.com/library/hh160376.aspx)) xxxxxx xx xxxxxx x xxxxxxx xxxx xxxx xxxx xxx xxxxx xxx xxx xxxxxxxx xxxxxxxxx. Xxx xxxxxxxx xxx xxx xxxxxxx xxxx xx xxxxxxxx xx x xxxxxx xxxxxxxx xxxx xxxxxxxx xxx xxxxxxx xxxxxx. Xxxx xxxxx xxxx xx x xxxxxx.
-    -   Xxx XxxxxXxxx.Xxx xxxxxx xxxxxxx xx xxxxxx xxxx xxxxxxxxxx xxx [XXxxxxXxxxxxxxxXxxxXxxxxxxx&xx;XXxxxxx, XXxxxxxxx&xx;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) xxxxxxxxx, xxxxxxxx xxx Xxxxxxx Xxxxxxx xxxxxxxxxxxx xxxxxxxxx xxxx xxx xxxxx xxxxxx, xxx xxxxxxxx xxx Xxxxxxx xxxxxx'x xxxxxxxx-xxxxxxxxx xxxxxxxx xxxx xxx XXxxxxxxx&xx;X&xx; xxxxxxxxx.
-    -   Xxx XXxxxxXxxxxxxxxXxxxXxxxxxxx&xx;XXxxxxx, XXxxxxxxx&xx; xxxxxxxxx xx xxxxxxxx xx XxxxXxxxxx.
+    -   The delegate uses the [Task.Run&lt;TResult&gt;(Func&lt;TResult&gt;, CancellationToken](https://msdn.microsoft.com/library/hh160376.aspx)) method to create a started task that uses the token and the progress interface. The delegate for the started task is provided by a lambda function that computes the desired result. More about that in a moment.
+    -   The AsyncInfo.Run method creates an object that implements the [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx) interface, connects the Windows Runtime cancellation mechanism with the token source, and connects the Promise object's progress-reporting function with the IProgress&lt;T&gt; interface.
+    -   The IAsyncOperationWithProgress&lt;TResult, TProgress&gt; interface is returned to JavaScript.
 
--   Xxx xxxxxx xxxxxxxx xxxx xx xxxxxxxxxxx xx xxx xxxxxxx xxxx xxxxx'x xxxx xxx xxxxxxxxx. Xxxxxxx xx'x x xxxxxx xxxxxxxx, xx xxx xxxxxx xx xxx xxxxx xxx xxx XXxxxxxxx xxxxxxxxx. Xxxx xxxx x xxxxxxxxx xxxxxx xx xxxxxxxxx, xxx xxxxxx xxxxxxxx:
+-   The lambda function that is represented by the started task doesn't take any arguments. Because it's a lambda function, it has access to the token and the IProgress interface. Each time a candidate number is evaluated, the lambda function:
 
-    -   Xxxxxx xx xxx xxxxxxx xxx xxxx xxxxxxxxxx xxxxx xx xxxxxxxx xxx xxxx xxxxxxx. Xx xx xxx, xxx xxxxxx xxxxxxxx xxxxx xxx XXxxxxxxx&xx;X&xx;.Xxxxxx xxxxxx, xxx xxx xxxxxxxxxx xx xxxxxx xxxxxxx xx xxx xxxxxxxx xxxx xxx Xxxxxxx xxxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxx.
-    -   Xxxx xxx xxxxxxxxxxxx xxxxx xx xxxxx xx xxxxxxxxx xx xxx xxxxxxxxx xxx xxxx xxxxxxxx. Xx xxx [XXxxxxXxxx.Xxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel.aspx) xxxxxx (xxxxx xxx XXxxxxXxxxxxxxxXxxxXxxxxxxx&xx;XXxxxxx, XXxxxxxxx&xx; xxxxxxxxx xxxxxxxx) xxx xxxx xxxxxx, xxx xxxxxxxxxx xxxx xxx XxxxxXxxx.Xxx xxxxxx xxx xx xxxxxxx xxxx xxx xxxxxxxxxxxx xxxxx xx xxxxxxxx.
--   Xxxx xxx xxxxxx xxxxxxxx xxxxxxx xxx xxxx xx xxxxx xxxxxxx, xxx xxxx xx xxxxxx xx xxx xxxxxxxx xxxx xxx XxxXX.Xxxxxxx xxxxxx xxxxxxxxx xxx xxxxxxxxxx xxx xxxxxxx.
+    -   Checks to see whether the next percentage point of progress has been reached. If it has, the lambda function calls the IProgress&lt;T&gt;.Report method, and the percentage is passed through to the function that the Promise object specified for reporting progress.
+    -   Uses the cancellation token to throw an exception if the operation has been canceled. If the [IAsyncInfo.Cancel](https://msdn.microsoft.com/library/windows/apps/windows.foundation.iasyncinfo.cancel.aspx) method (which the IAsyncOperationWithProgress&lt;TResult, TProgress&gt; interface inherits) has been called, the connection that the AsyncInfo.Run method set up ensures that the cancellation token is notified.
+-   When the lambda function returns the list of prime numbers, the list is passed to the function that the WinJS.Promise object specified for processing the results.
 
-Xx xxxxxx xxx XxxxXxxxxx xxxxxxx xxx xxx xx xxx xxxxxxxxxxxx xxxxxxxxx, xxx xxx xxxxxXxx xxx xxxxxXxxxxx xxxxxxxxx xx xxxxxxx.xx.
+To create the JavaScript promise and set up the cancellation mechanism, add the asyncRun and asyncCancel functions to default.js.
 
 ```javascript
 var resultAsync;
@@ -716,7 +716,7 @@ function asyncCancel() {
 }
 ```
 
-Xxx'x xxxxxx xxx xxxxx xxxxxxxxxxxx xxxx xxx xxxx xx xxx xxx xxxxxxxxxx.
+Don't forget the event registration code the same as you did previously.
 
 ```javascript
 var btnAsync = document.getElementById("btnAsync");
@@ -725,16 +725,20 @@ var btnCancel = document.getElementById("btnCancel");
 btnCancel.addEventListener("click", asyncCancel, false);
 ```
 
-Xx xxxxxxx xxx xxxxxxxxxxxx XxxXxxxxxXxXxxxxXxxxx xxxxxx, xxx xxxxxXxx xxxxxxxx xxxxxxx x XxxXX.Xxxxxxx xxxxxx. Xxx xxxxxx'x xxxx xxxxxx xxxxx xxxxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxx, xxxxx xx xxxxxx (xxxxxxxxx xxxxxxxxxxxx), xxx xxxxxx xxxxxxxx xxxxxxx. Xx xxxx xxxxxxx, xxx xxxxxxxx xxxxxxx xxx xxxxxxx xx xxx xxxxxx xxxx. Xxxxxxxxxxxx xx xxxxxxxxxx xxxxxx xxx xxxxxxx xxxx xxxxxx xxx xxxxxx xxx xxxxxxxxx. Xxxxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxx.
+By calling the asynchronous GetPrimesInRangeAsync method, the asyncRun function creates a WinJS.Promise object. The object's then method takes three functions that process the returned results, react to errors (including cancellation), and handle progress reports. In this example, the returned results are printed in the output area. Cancellation or completion resets the buttons that launch and cancel the operation. Progress reporting updates the progress control.
 
-Xxx xxxxxXxxxxx xxxxxxxx xxxx xxxxx xxx xxxxxx xxxxxx xx xxx XxxXX.Xxxxxxx xxxxxx.
+The asyncCancel function just calls the cancel method of the WinJS.Promise object.
 
-Xx xxx xxx xxx, xxxxxx xxx XY xxx. Xx xxxxx xxx xxxxxxxxxxxx xxxxxxxxx, xxxxxx xxx **Xxxxx** xxxxxx. Xxxx xxxxxxx xxxx xxxxxxx xx xxx xxxx xxxx xxxxxxxx xx. Xx xxx xxxxxxxx xxx xxxx xx xxxxxxxxxx xxxxxx xxx xxxx xxxx xx xxxxx, xxxxxxxx xxx xxxx xx xxx xxxxxxxx xxxxxx xxxx xx xxxxxx xx XxxXxxxxxXxXxxxxXxxxx xx xxx xx xxxx xxxxxxx xx xxx. Xxx xxx xxxx-xxxx xxx xxxxxxxx xx xxx xxxxxxxxx xx xxxxxxxxxx xx xxxxxxxxxx xxx xxxxx xx xxxxxxx xx xxxx, xxx xxxxxx xxxxx xx xxx xxxxxx xx xxx xxxxxxxx xxxxxx xxxx xxxx x xxxxxx xxxxxx. Xx xxxxxx xxx xxxxxxxxx, xxxxxx xxx **Xxxxxx Xxxxx** xxxxxx.
+To run the app, choose the F5 key. To start the asynchronous operation, choose the **Async** button. What happens next depends on how fast your computer is. If the progress bar zips to completion before you have time to blink, increase the size of the starting number that is passed to GetPrimesInRangeAsync by one or more factors of ten. You can fine-tune the duration of the operation by increasing or decreasing the count of numbers to test, but adding zeros in the middle of the starting number will have a bigger impact. To cancel the operation, choose the **Cancel Async** button.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [.XXX xxx Xxxxxxx Xxxxx Xxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
-* [.XXX xxx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
-* [Xxxxxxxxxxx: Xxxxxxxx x Xxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxx xxx xxxxxxx xx xxxx XxxxXxxxxx](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+* [.NET for Windows Store Apps Overview](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
+* [Walkthrough: Creating a Simple Windows Runtime Component and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

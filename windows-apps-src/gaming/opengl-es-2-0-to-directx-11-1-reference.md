@@ -1,15 +1,15 @@
 ---
-xxxxx: XxxxXX XX Y.Y xx XxxxxxYX YY xxxxxxxxx
-xxxxxxxxxxx: Xxx xxxxx xxxxxxxxx xxxxxx xx xxxx xx XXX xxxxxxx xxx xxxxx xxxx xxxxxxx xxxx xxxxxxx xxxx XxxxXX XX Y.Y xx XxxxxxYX YY.
-xx.xxxxxxx: xxYYxYxY-xYYY-YxYx-YxYY-xYYYxxxxYYYY
+title: OpenGL ES 2.0 to Direct3D 11 reference
+description: Use these reference topics to look up API mapping and short code samples when porting from OpenGL ES 2.0 to Direct3D 11.
+ms.assetid: fe18c8a9-b113-8f5d-9c31-c294dede8560
 ---
 
-# XxxxXX XX Y.Y xx XxxxxxYX YY xxxxxxxxx
+# OpenGL ES 2.0 to Direct3D 11 reference
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxx xxxxx xxxxxxxxx xxxxxx xx xxxx xx XXX xxxxxxx xxx xxxxx xxxx xxxxxxx xxxx xxxxxxx xxxx XxxxXX XX Y.Y xx XxxxxxYX YY.
+Use these reference topics to look up API mapping and short code samples when porting from OpenGL ES 2.0 to Direct3D 11.
 ## 
 <table>
 <colgroup>
@@ -18,14 +18,14 @@ Xxx xxxxx xxxxxxxxx xxxxxx xx xxxx xx XXX xxxxxxx xxx xxxxx xxxx xxxxxxx xxxx xx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[GLSL-to-HLSL reference](glsl-to-hlsl-reference.md)</p></td>
-<td align="left"><p>Xxx xxxx xxxx XxxxXX Xxxxxx Xxxxxxxx (XXXX) xxxx xx Xxxxxxxxx Xxxx Xxxxx Xxxxxx Xxxxxxxx (XXXX) xxxx xxxx xxx [port your graphics architecture from OpenGL ES 2.0 to Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md) xx xxxxxx x xxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX).</p></td>
+<td align="left"><p>You port your OpenGL Shader Language (GLSL) code to Microsoft High Level Shader Language (HLSL) code when you [port your graphics architecture from OpenGL ES 2.0 to Direct3D 11](port-from-opengl-es-2-0-to-directx-11-1.md) to create a game for Universal Windows Platform (UWP).</p></td>
 </tr>
 </tbody>
 </table>
@@ -39,4 +39,8 @@ Xxx xxxxx xxxxxxxxx xxxxxx xx xxxx xx XXX xxxxxxx xxx xxxxx xxxx xxxxxxx xxxx xx
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

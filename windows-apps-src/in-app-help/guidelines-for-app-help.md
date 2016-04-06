@@ -1,52 +1,49 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxxxxxxxxx xxxxxxxx xxx xx xxxxxx xxxxxxxxx Xxxx xxxxxxx xxx xxxx xxx.
-xxxxx: Xxxxxxxxxx xxx xxx xxxx
-xx.xxxxxxx: XXYXXYYY-XYYX-YYYX-YYYX-XXYYYYYYYYXY
-xxxxx: Xxxxxxxxxx xxx xxx xxxx
-xxxxxxxx: xxxxxx.xxx
+Description: このガイドラインは、アプリの効果的なヘルプ コンテンツの設計方法を説明しています。
+title: アプリのヘルプのガイドライン
+ms.assetid: EB9EC212-A50C-444B-957A-DC17441773F0
+label: アプリのヘルプのガイドライン
+template: detail.hbs
 ---
 
-# Xxxxxxxxxx xxx xxx xxxx
+# アプリのヘルプのガイドライン
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください。\]
 
 
-Xxxxx xxxxxxxxxx xxxxxxxx xxx xx xxxxxx xxxxxxxxx Xxxx xxxxxxx xxx xxxx xxx. Xxxx xxxxxxx xxxxxx xx x xxxxxx xxxx xxx xxx xxxxxxx xxxx, xxxxx, xxx xxxxxx. Xx xxx xxxx xx xxxxxxx xxxxxxx Xxxx xxxxxxx, xxxx xx x xxxxxxx xxxxxxx xx xxxxx xx xxxxxx xxxx xx xxxx Xxxx xxxxxxx.
+このガイドラインは、アプリの効果的なヘルプ コンテンツの設計方法を説明しています。 ヘルプ コンテンツは 1 ページに収めます。テキスト、リンク、画像を含めることができます。 ダイナミックなヘルプ コンテンツを提供する場合は、サポート Web サイトにリンクするか、ヘルプ セクションにオンライン ページを埋め込みます。
 
-## <span id="appropriate_use_of_help">
-            </span>
-            <span id="APPROPRIATE_USE_OF_HELP">
-            </span>Xxxxxx xx xxx xxxxxxx Xxxx xxxxxxx?
+## <span id="appropriate_use_of_help"></span><span id="APPROPRIATE_USE_OF_HELP"></span>アプリにヘルプ コンテンツを含めるかどうか
 
 
-Xx'x xx xx xxx xxxxxxx xx xxxxxxx Xxxx; xxx xxxxx xxx xxxxx x xxxxxxxxxx Xxxx xxxxxxx. Xxx xxxxxxx, xx xxx xxx xxxxxxxx xxxx xxx xx xxx XX xxxxxxxx xxxx xxxxx xxxxxxx x xxxx, xxx xxxxx xxxxxxxxx [xxxxxxxxxxxxx XX](instructional-ui.md), xxxxxx x xxxxxx xx-xxx xxxx, xx xxxxxxxx xxxxxxxxxxx xxxxx xxxxxxxx xxxxxxx xx xxxxxxxx x xxxxxxxx xxxx xxxxxxx. Xx xxx xx xxxxxx x xxxxxxxxxx Xxxx xxxxxxx, xx'x xxxx xx xxxx xx xx xxxxxxxx xx xxxxxxxx.
+ヘルプを含めるかどうかは、必要に応じて選択できます。すべてのアプリに専用のヘルプ セクションが必要になるわけではありません。 たとえば、ユーザーが混乱する可能性のある UI 要素がアプリに 1 つか 2 つしかない場合は、独立したヘルプ セクションを作成する代わりに、[説明 UI](instructional-ui.md) を組み込むか、単純なアプリ内デモを作成することができます。UI 要素の設計を見直すこともできます。 専用のヘルプ セクションを作成する場合は、できるだけ簡潔にすることをお勧めします。
 
-## <span id="dos_and_donts">
-            </span>
-            <span id="DOS_AND_DONTS">
-            </span>Xxxxxxxxxxxxxxx
+## <span id="dos_and_donts"></span><span id="DOS_AND_DONTS"></span>推奨事項
 
 
--   Xxxx Xxxx xxxxx xxxxx xxx xxxx xxx xxxxx xx xxxxxx.
--   Xx xxxx Xxxx xxxxxxx xxxxx'x xxx xx x xxxxxx xxxx xx xx xxx xxxx xx xxxxxxx xxxxxxx xxxxxxx xxxx'xx xxxx xxxxxxxx, xxxx xx x xxxxxxx xxxxxxx xx xxxxx xx xxxxxx xxxx xx xxxx Xxxx xxxxxx. Xxxx xx xxxx xxxx xxxxxxx xx x xxx xxxx xxxxx xxxx xxxx xxx xx xxx xxx xxxxxxxxxx. Xx xxxxxxxx, xxxxx xxx xxxxxx xxxxxxx xx xxxxxx x xxxx xxxxxxxx xxxx xxxxxxxxxx.
--   Xxxxx xxxxxxxxx xxxxx xxx xxxxxx.
--   Xxx'x xxx Xxxx xx xxxxxxxx xxx xxxx xxx xxxxxxxx. Xx xxx xxxx xx xxxxxxx xxxxxxxx xxxxxxx xxxxx xxxx xxx, xxxxxxxx xxxxxxxxx x xxxx xx x xxxxxxx xxx xxxx xx xxx xxx xx xxxx Xxxx xxxxxxx.
--   Xxx'x xxx Xxxx xx xxxxxx xxxxxxxxx xxxx x xxxxx xxxxxxx xx xxx xxx xx xxxxxxxxx.
--   Xxxxx xxxxx xx xxxxxx Xxxx xxxx xxx Xxxxxxxx xxxx.
+-   ヘルプ ページは短く、ユーザーが参照しやすくなるようにします。
+-   ヘルプ コンテンツが 1 ページに収まらない場合、または更新が必要な情報をダイナミック コンテンツに含める必要がある場合は、サポート Web サイトにリンクするか、ヘルプ ポップアップにオンライン ページを埋め込みます。 Web ページにリンクすると、ユーザーがアプリから引き離されることを忘れないでください。 可能な場合は、オンライン コンテンツを埋め込んで、より統一感のあるユーザー エクスペリエンスを実現します。
+-   専門的な用語や業界用語の使用は避けます。
+-   ヘルプを使って、アプリのすべての機能を説明しないでください。 アプリについて詳しく説明する場合は、ヘルプ コンテンツの最後に、サポート Web ページへのリンクを記載することを検討してください。
+-   アプリの新しいバージョンが利用できることをユーザーに知らせるためにヘルプを使わないでください。
+-   設定ページからヘルプにアクセスできるようにします。
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>関連記事
 
-* [Xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxxxxxx XX](instructional-ui.md)
+* [説明 UI のデザインのガイドライン](instructional-ui.md)
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

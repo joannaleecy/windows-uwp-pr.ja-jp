@@ -1,65 +1,65 @@
 ---
-xx.xxxxxxx: XYYXXXYX-YYXX-YYYY-YYYY-YYXYYXXXXXYY
-xxxxx: Xxxx xxxxx xxx xxxxxxx xxxx x xxxxxx
-xxxxxxxxxxx: Xxxxxx xxxxx xxx xxxxxxx xx xxxxxxx xxx xxxx xxxxxxxx xxxx x xxxxxx. Xxx xxx xxx xxx XxxxXxxxXxxxxx xxx XxxxXxxxXxxxxx xxxxxxx xx xxxx xxxxxx xx xxxxx, xxx xxx XxxxxxXxxxxx xx xxxx xxxxxx xx x xxxxxx.
+ms.assetid: F87DBE2F-77DB-4573-8172-29E11ABEFD34
+title: Open files and folders with a picker
+description: Access files and folders by letting the user interact with a picker. You can use the FileOpenPicker and FileSavePicker classes to gain access to files, and the FolderPicker to gain access to a folder.
 ---
 
-# Xxxx xxxxx xxx xxxxxxx xxxx x xxxxxx
+# Open files and folders with a picker
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847)
--   [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207881)
--   [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171)
+-   [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847)
+-   [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)
+-   [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
 
-Xxxxxx xxxxx xxx xxxxxxx xx xxxxxxx xxx xxxx xxxxxxxx xxxx x xxxxxx. Xxx xxx xxx xxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847) xxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207871) xxxxxxx xx xxxx xxxxxx xx xxxxx, xxx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207881) xx xxxx xxxxxx xx x xxxxxx.
+Access files and folders by letting the user interact with a picker. You can use the [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) and [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) classes to gain access to files, and the [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881) to gain access to a folder.
 
-**Xxxx**  Xxxx xxx xxx [Xxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619994).
+**Note**  Also see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
  
 
-## Xxxxxxxxxxxxx
+## Prerequisites
 
 
--   **Xxxxxxxxxx xxxxx xxxxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx**
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    Xxx xxx xxxxx xxx xx xxxxx xxxxxxxxxxxx xxxx xx X# xx Xxxxxx Xxxxx, xxx [Xxxx xxxxxxxxxxxx XXXx xx X# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/mt187337). Xx xxxxx xxx xx xxxxx xxxxxxxxxxxx xxxx xx X++, xxx [Xxxxxxxxxxxx xxxxxxxxxxx xx X++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   **Xxxxxx xxxxxxxxxxx xx xxx xxxxxxxx**
+-   **Access permissions to the location**
 
-    Xxx [Xxxx xxxxxx xxxxxxxxxxx](file-access-permissions.md).
+    See [File access permissions](file-access-permissions.md).
 
-## Xxxx xxxxxx XX
-
-
-X xxxx xxxxxx xxxxxxxx xxxxxxxxxxx xx xxxxxx xxxxx xxx xx xxxxxxx x xxxxxxxxxx xxxxxxxxxx xxxx xxxxx xxxx xx xxxx xxxxx.
-
-Xxxx xxxxxxxxxxx xxxxxxxx:
-
--   Xxx xxxxxxx xxxxxxxx
--   Xxx xxxx xx xxxxx xxxx xxx xxxx xxxxxx
--   X xxxx xx xxxxxxxxx xxxx xxx xxxx xxx xxxxxx xx. Xxxxx xxxxxxxxx xxxxxxx xxxx xxxxxx xxxxxxxxx—xxxx xx xxx Xxxxx xx Xxxxxxxxx xxxxxx—xx xxxx xx xxxx xxxx xxxxxxxxx xxx xxxx xxxxxx xxxxxxxx (xxxx xx Xxxxxx, Xxxxxx, xxx Xxxxxxxxx XxxXxxxx).
-
-Xx xxxxx xxx xxxxx xxxxxxx x xxxx xxxxxx xx xxxx xxx xxxx xxx xxxx xxxxxxxxxxx.
-
-![x xxxx xxxxxx xxxx xxx xxxxx xxxxxx xx xx xxxxxx.](images/picker-multifile-600px.png)
-
-## Xxx xxxxxxx xxxx
+## File picker UI
 
 
-Xxxxxxx x xxxxxx, xxxx xxx xxx xxxx xxxxxx xx xxxxx xxx xxxxxxx xx xxx xxxx'x xxxxxx. Xxxxxxx xxx xxxxxx, xxx xxxx xxxxxxx xxxxx xxxxxx xx xxxx xxxxx (xx xxxxxxx) xx xxxx xx xxxx xx. Xxxx xxx xxxxxxxx xxxxx xxxxx xx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227230) xxxxxxx, xxxxx xxx xxx xxxx xxxxxxx xx.
+A file picker displays information to orient users and to provide a consistent experience when users open or save files.
 
-Xxx xxxxxx xxxx x xxxxxx, xxxxxxx xxxxxxxxx xx xxx xxx xxxx xxxx xxxxx xxx xxxxxxx xxxx xxx xxxxx xxxxxx xx xxxx xxxxx xxxx. Xxxxx xxxxxx xxxx xxxxx xxxx xxx xxxx xxxxx xxxx xxx xxxx xxxxxx: xxxx xxx xxxxxxxx xx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxxx. Xx xxxxxxx, xxxx xxx xxx xxxxxxx xx xxxx xx xxx xxxx xxxx xx xxxxx xxxx xxxxxxx. Xxxxx xxxx xxxx xxxxx xxxxxxxxx xx xxxxxxxxxxxxx xx xxxx xxxxxx xxxxxxxxx. Xx xxx xxxx xxxx xxx xx xxxxxxx xxxxx, x xxxx xxxxxxxx, xx xxxx xxxxxxx xx xxxxx xxxx, xxx [Xxxxxxxxxxx xxxx xxxx xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465192).
+That information includes:
 
-Xxx xxxxxxx, xxx xxxxx xxxx xxx xxxx xxxxxx xx xxxx xxx xx xxxx xxxx xxxx xxx xxxx x xxxx. Xxxx xxxxx xxxx xxx xxx xxxxxxx xxx. Xxx xxxx xxxxxx xxxxxxxxx xxxx xxx xxxxxx xxx/xx xxxxx xxxx xx xxx xxx xxxx xxxxxxxx xxx xxxx xxx xxxx. Xxxx xxxx xxxx xxxxxxx x xxxx, xxx xxxx xxxxxx xxxxxxx xxxx xxxx xx xxxx xxx. Xxxx'x xxx xxxxxxx xxx xxx xxxx xxxxx xxx xxxx xxxxxxx x xxxx xxxx xxxxxxx xxx, xxxx xx XxxXxxxx. Xx xxxx xxxx XxxXxxxx xx xxx xxxxxxxxx xxx.
+-   The current location
+-   The item or items that the user picked
+-   A tree of locations that the user can browse to. These locations include file system locations—such as the Music or Downloads folder—as well as apps that implement the file picker contract (such as Camera, Photos, and Microsoft OneDrive).
 
-![x xxxxxxx xxxx xxxxx xxx xxxxxxx xx xxx xxx xxxxxxx x xxxx xx xxxx xxxx xxxxxxx xxx xxxxx xxx xxxx xxxxxx xx xx xxxxxxxxx xxxxxxx xxx xxx xxxx.](images/app-to-app-diagram-600px.png)
+An email app might display a file picker so that the user can pick attachments.
 
-## Xxxx x xxxxxx xxxx xx xxxx xx: xxxxxxxx xxxx xxxxxxx
+![a file picker with two files picked to be opened.](images/picker-multifile-600px.png)
+
+## How pickers work
+
+
+Through a picker, your app can gain access to files and folders on the user's system. Through the picker, the user browses their system to pick files (or folders) to open or save to. Your app receives those picks as [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) and [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) objects, which you can then operate on.
+
+The picker uses a single, unified interface to let the user pick files and folders from the files system or from other apps. Files picked from other apps are like files from the file system: they are returned as [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) objects. In general, your app can operate on them in the same ways as other such objects. Other apps make files available by participating in file picker contracts. If you want your app to provide files, a save location, or file updates to other apps, see [Integrating with file picker contracts](https://msdn.microsoft.com/library/windows/apps/hh465192).
+
+For example, you might call the file picker in your app so that your user can open a file. This makes your app the calling app. The file picker interacts with the system and/or other apps to let the user navigate and pick the file. When your user chooses a file, the file picker returns that file to your app. Here's the process for the case where the user chooses a file from another app, such as OneDrive. In this case OneDrive is the providing app.
+
+![a daigram that shows the process of one app getting a file to open from another app using the file picker as an interface bewteen the two apps.](images/app-to-app-diagram-600px.png)
+
+## Pick a single file to open it: complete code listing
 
 
 ```CSharp
@@ -83,14 +83,14 @@ else
 }
 ```
 
-Xxx xxxx xx xxxx xxxxxxxx xxxxx, xxx xxx [Xxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619994).
+For code to pick multiple files, see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
-## Xxxx x xxxxxx xxxx xx xxxx xx: xxxx-xx-xxxx
+## Pick a single file to open it: step-by-step
 
 
-Xxxxx x xxxx xxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxxxxxx x xxxx xxxxxx xxxxxx, xxx xxxx xxxxxxx xxx xxxx xxxxxx xx xxx xxxx xxx xxxx xxx xx xxxx xxxxx.
+Using a file picker involves creating and customizing a file picker object, and then showing the file picker so the user can pick one or more items.
 
-1.  **Xxxxxx xxx xxxxxxxxx x XxxxXxxxXxxxxx**
+1.  **Create and customize a FileOpenPicker**
 
 ```CSharp
 var picker = new Windows.Storage.Pickers.FileOpenPicker();
@@ -102,19 +102,19 @@ var picker = new Windows.Storage.Pickers.FileOpenPicker();
     picker.FileTypeFilter.Add(".png");
 ```
 
-Xxx xxxxxxxxxx xx xxx xxxx xxxxxx xxxxxx xxxx xxx xxxxxxxx xx xxxx xxxxx xxx xxxx xxx. Xxx xxxxxxxxxx xx xxxx xxx xxxxxx xxx xx xxxxxxxxx xxx xxxx xxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxxxx xxx xxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465182).
+Set properties on the file picker object that are relevant to your users and your app. For guidelines to help you decide how to customize the file picker, see [Guidelines and checklist for file pickers](https://msdn.microsoft.com/library/windows/apps/hh465182).
 
-Xxxx xxxxxxx xxxxxxx x xxxx, xxxxxx xxxxxxx xx xxxxxxxx xx x xxxxxxxxxx xxxxxxxx xxxx xxx xxxx xxx xxxx xxxx xx xxxxxxx xxxxx xxxxxxxxxx: [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207855), [**XxxxxxxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207854), xxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207850).
+This example creates a rich, visual display of pictures in a convenient location that the user can pick from by setting three properties: [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855), [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854), and [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850).
 
--   Xxxxxxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207855) xx xxx **Xxxxxxxxx**[**XxxxxxXxxxXxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) xxxx xxxxx xxxxxxx x xxxx, xxxxxx xxxxxxx xx xxxxx xxxxxxx xxxxxxxxxx xx xxxxxxxxx xxxxx xx xxx xxxx xxxxxx. Xx xxxx xxx xxxxxxx xxxxxx xxxxx xxxx xx xxxxxxxx xx xxxxxx. Xxxxxxxxx, xxx [**XxxxxxXxxxXxxx.Xxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list). X xxxxxxxxxxxx xxxxx xxx xxxx **Xxxxxx Xxxxxxx xx Xxxxx** xxx **Xxxxxx Xxxxxxxx** xxxxxxxx xxxxx xxx xxx **XxxxXxxx** xxxxxxxxxxx xx xxx xxxxxxx xxxxxx xxxxxxx xxx xxxx xxxxxx.
+-   Setting [**ViewMode**](https://msdn.microsoft.com/library/windows/apps/br207855) to the **Thumbnail** [**PickerViewMode**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#thumbnail) enum value creates a rich, visual display by using picture thumbnails to represent files in the file picker. Do this for picking visual files such as pictures or videos. Otherwise, use [**PickerViewMode.List**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.storage.pickers.pickerviewmode.aspx#list). A hypothetical email app with **Attach Picture or Video** and **Attach Document** features would set the **ViewMode** appropriate to the feature before showing the file picker.
 
--   Xxxxxxx [**XxxxxxxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207854) xx Xxxxxxxx xxxxx [**XxxxxxXxxxxxxxXx.XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207890) xxxxxx xxx xxxx xx x xxxxxxxx xxxxx xxxx'xx xxxxxx xx xxxx xxxxxxxx. Xxx **XxxxxxxxxXxxxxXxxxxxxx** xx x xxxxxxxx xxxxxxxxxxx xxx xxx xxxx xx xxxx xxxxx xxxxxx, xxx xxxxxxx Xxxxx, Xxxxxxxx, Xxxxxx, xx Xxxxxxxxx. Xxxx xxx xxxxx xxxxxxxx, xxx xxxx xxx xxxxxxxx xx xxxxx xxxxxxxxx.
+-   Setting [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) to Pictures using [**PickerLocationId.PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br207890) starts the user in a location where they're likely to find pictures. Set **SuggestedStartLocation** to a location appropriate for the type of file being picked, for example Music, Pictures, Videos, or Documents. From the start location, the user can navigate to other locations.
 
--   Xxxxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207850) xx xxxxxxx xxxx xxxxx xxxxx xxx xxxx xxxxxxx xx xxxxxxx xxxxx xxxx xxx xxxxxxxx. Xx xxxxxxx xxxxxxxx xxxx xxxxx xx xxx **XxxxXxxxXxxxxx** xxxx xxx xxxxxxx, xxx [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br207844) xxxxxxx xx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/br207834).
+-   Using [**FileTypeFilter**](https://msdn.microsoft.com/library/windows/apps/br207850) to specify file types keeps the user focused on picking files that are relevant. To replace previous file types in the **FileTypeFilter** with new entries, use [**ReplaceAll**](https://msdn.microsoft.com/library/windows/apps/br207844) instead of [**Add**](https://msdn.microsoft.com/library/windows/apps/br207834).
 
-2.  **Xxxx xxx XxxxXxxxXxxxxx**
+2.  **Show the FileOpenPicker**
 
-    -   **Xx xxxx x xxxxxx xxxx**
+    -   **To pick a single file**
 
 ```CSharp
 Windows.Storage.StorageFile file = await picker.PickSingleFileAsync();
@@ -150,7 +150,7 @@ var files = await picker.PickMultipleFilesAsync();
         }
 ```
 
-## Xxxx x xxxxxx: xxxxxxxx xxxx xxxxxxx
+## Pick a folder: complete code listing
 
 
 ```CSharp
@@ -172,15 +172,19 @@ else
 }
 ```
 
-**Xxx**  Xxxxxxxx xxxx xxx xxxxxxxx x xxxx xx xxxxxx xxxxxxx x xxxxxx, xxx xx xx xxxx xxx'x [**XxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207457) xx [**XxxxXxxxxxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207458) xx xxxx xxxxx xx xx. Xxx xxx xxxxx xxxx xxxxx xxxxx xxxxx xxxxx xx [Xxx xx xxxxx xxxxxxxx-xxxx xxxxx xxx xxxxxxx](how-to-track-recently-used-files-and-folders.md).
+**Tip**  Whenever your app accesses a file or folder through a picker, add it to your app's [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) or [**MostRecentlyUsedList**](https://msdn.microsoft.com/library/windows/apps/br207458) to keep track of it. You can learn more about using these lists in [How to track recently-used files and folders](how-to-track-recently-used-files-and-folders.md).
 
  
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

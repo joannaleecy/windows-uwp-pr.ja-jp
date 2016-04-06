@@ -1,279 +1,219 @@
 ---
-Xxxxxxxxxxx: Xxxxxxxxxxx xxxxxx xxxx xxxx xxxx xxxxx Xxxxxxx xxxxx xxxxxxxx, xxxxxx xxxxxxxxxxx, xxx xxxxxx xxxxxxxxx.
-xxxxx: Xxxxxx xxxxxxxxxxxx
-xx.xxxxxxx: YYYXXYXX-XXYY-YYYY-YXYY-YYYXYYYYYYYY
-xxxxx: Xxxxxx xxxxxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Incorporate speech into your apps using Cortana voice commands, speech recognition, and speech synthesis.
+title: Speech interactions
+ms.assetid: 646DB3CE-FA81-4727-8C21-936C81079439
+label: Speech interactions
+template: detail.hbs
 ---
 
-# Xxxxxx xxxxxxxxxxxx
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+# Speech interactions
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxxxxx xxxxxx xxxxxxxxxxx xxx xxxx-xx-xxxxxx (xxxx xxxxx xx XXX, xx xxxxxx xxxxxxxxx) xxxxxxxx xxxx xxx xxxx xxxxxxxxxx xx xxxx xxx.
-
-
-**Xxxxx xxxxxx xxxxxxxxxx**
-
--   Xxx xxx [Xxxxxxx xxxxxx xxxxxxxxxx](cortana-interactions.md) xx xxx xxx xxxxxxxx xxx xxxxxxxxxxxxx xx xxx **Xxxxxxx** XX.
+Integrate speech recognition and text-to-speech (also known as TTS, or speech synthesis) directly into the user experience of your app.
 
 
-**Xxxxxx xxxxxxxxxxx:  **xxxxxxxx xxxxx xxxxxx xx xxx xxxx xxxx xxxx xxx xxxx xxxxx, xxx xxxx xxxxxxxxx, xx xxxxxxx xx xxxxxx xx xxxxxxx, xxx xx xxxxxxxxxx xxxxx. Xxxx xxx-xxxxxxx xxxxxxxx xxx xxxx-xxxx xxxxxxxxx xxx xxx xxxxxx, xxx xxxxxx xxxxxxxx xxxxxxxx xxxxx Xxxxxx Xxxxxxxxxxx Xxxxxxx Xxxxxxxxxxxxx (XXXX) Xxxxxxx Y.Y xxx xxxxxxxxx.
+**Other speech components**
 
-**XXX:  **xxxx x xxxxxx xxxxxxxxx xxxxxx (xxxxx) xx xxxxxxx x xxxx xxxxxx xxxx xxxxxx xxxxx. Xxx xxxxx xxxxxx xxx xx xxxxxx xxxxx, xxxxxxxxx xxxx xx xxxx xxxxxxx Xxxxxx Xxxxxxxxx Xxxxxx Xxxxxxxx (XXXX). XXXX xxxxxxxx x xxxxxxxx xxx xx xxxxxxx xxxxxxxxxxxxxxx xx xxxxxx xxxxxx, xxxx xx xxxxxxxxxxxxx, xxxxxx, xxxxx, xxxx xx xxxxx, xxx xxxxxxxx.
+-   See the [Cortana design guidelines](cortana-interactions.md) if you are exposing app functionality in the **Cortana** UI.
 
-**Xxxx**  Xxxxx **Xxxxxxx** xxx xxxxxxxxxx xxxxx xxxxxxxx, xxxx xxx xxx xx xxxxxxxx xx xxx xxxxxxxxxx (xxx xxx xxxxx xxxxx, xxxx xx xx xx xxx xxxxxxxx xxxx xxx Xxxxx xxxx) xx xxxxxxxxx xx x xxxxxxxxxx xxxxxxx (**Xxxxxxx** xxxxxxx xxxxx xxx xxxxxxxx xxxxxxx xxxx xxx xxx). Xxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxxxxxx xx xxxx xxxxx (xxxx xx xxxxxxx x xxxxxxx xx x xxxxxxxx xxxxxxx) xxx xxxx xxxxxxx xx x xxxxxxxxxx xxx, xxxxx xxxxx xxxxxxxx xxx xx xxxxxxx xx **Xxxxxxx** xxxxxxx x xxxxxxxxxx xxx.
-Xx xxx xxx xxxxxxxx xxxxxxxxxxxxx xx x xxxxxxxxxx xxxxxxx xxxxxxx xxxxx xxxxxxxx xx xxx **Xxxxxxx** XX, xxx xxx [Xxxxxxx xxxxxx xxxxxxxxxx](cortana-design-guidelines.md).
+
+**Speech recognition:  **converts words spoken by the user into text for form input, for text dictation, to specify an action or command, and to accomplish tasks. Both pre-defined grammars for free-text dictation and web search, and custom grammars authored using Speech Recognition Grammar Specification (SRGS) Version 1.0 are supported.
+
+**TTS:  **uses a speech synthesis engine (voice) to convert a text string into spoken words. The input string can be either basic, unadorned text or more complex Speech Synthesis Markup Language (SSML). SSML provides a standard way to control characteristics of speech output, such as pronunciation, volume, pitch, rate or speed, and emphasis.
+
+**Note**  Using **Cortana** and customized voice commands, your app can be launched in the foreground (the app takes focus, just as if it was launched from the Start menu) or activated as a background service (**Cortana** retains focus but provides results from the app). Commands that require additional context or user input (such as sending a message to a specific contact) are best handled in a foreground app, while basic commands can be handled in **Cortana** through a background app.
+If you are exposing functionality as a background service through voice commands in the **Cortana** UI, see the [Cortana design guidelines](cortana-design-guidelines.md).
 
  
 
-Xxxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxxx, xxxxxx xxx xx x xxxxxx xxx xxxxxxxxx xxx xxx xxxxxx xx xxxxxxxx xxxx xxxx xxx, xxxxxxxxxxxxx, xx xxxx xxxxxxxxx, xxxxxxxx, xxxxx, xxxxx, xxx xxxxxxxx.
+Designed and implemented thoughtfully, speech can be a robust and enjoyable way for people to interact with your app, complementing, or even replacing, keyboard, mouse, touch, and gestures.
 
-## <span id="Speech_interaction_design">
-            </span>
-            <span id="speech_interaction_design">
-            </span>
-            <span id="SPEECH_INTERACTION_DESIGN">
-            </span>Xxxxxx xxxxxxxxxxx xxxxxx
+## <span id="Speech_interaction_design"></span><span id="speech_interaction_design"></span><span id="SPEECH_INTERACTION_DESIGN"></span>Speech interaction design
 
 
-Xxxxx xxxxxxxxxx xxx xxxxxxxxxxxxxxx xxxxxxxx xxx xx xxxx xxxxxxxxx xxxx xxxxxx xxxxxxxxxxx xxx XXX xxxx xxx xxxxxxxxxxx xxxxxxxxxx xx xxxx xxx.
+These guidelines and recommendations describe how to best integrate both speech recognition and TTS into the interaction experience of your app.
 
-Xx xxx xxx xxxxxxxxxxx xxxxxxxxxx xxxxxx xxxxxxxxxxxx xx xxxx xxx:
+If you are considering supporting speech interactions in your app:
 
--   Xxxx xxxxxxx xxx xx xxxxx xxxxxxx xxxxxx? Xxx x xxxx xxxxxxxx xxxxxxx xxxxx, xxxxxx xxxxxxxx, xx xxxxx xxxx xx xxxx xxxxxx, xxxxx xxxxx, xx xxxx xxxxxxxx?
--   Xx xxxxxx xxxxx x xxxx xxxxxx xxx xxxxxxxxxx x xxxx?
--   Xxx xxxx x xxxx xxxx xxxx xxxxxx xxxxx xx xxxxxxxxx?
--   Xx xxx xxx xxxxxx xxxxxxxxx, xx xxxx xxx xxxx xxxx xx xxxx xx xxxxxx xxx xxx xxx xx xxxxx xxxxxxxxx xxxx?
--   Xxxx xxxxxxx xxxxxxxx xx xxxxxx xx xxxxxxxx? Xx xxx xxxxxxx xxx xxxxxxx xxxx xx xx xxxxxxxxxx xx xxxxxx?
--   Xxx xxxxxx, xxxxxxxxxxxx, xxx xxxxxxxxxxxxxx xxxxxxx xx XXX xxxxxxxx?
--   Xxxx xx xxx xxxxxxxxxxx xxxxxx xxxxxxx xxx xxx xxxx?
--   Xx x xxxxxx xx xxxxxxxxxxx xxxxxxxxxx xxxxxxxx (xxxx xx xxxxxxxx, xxxxxxx, xx xxxxxx) xxx xxx xxxxxxx xx xxxx xxx?
--   Xx xxxxxxx xxxxxxxxxxxx xxxxxxxx?
+-   What actions can be taken through speech? Can a user navigate between pages, invoke commands, or enter data as text fields, brief notes, or long messages?
+-   Is speech input a good option for completing a task?
+-   How does a user know when speech input is available?
+-   Is the app always listening, or does the user need to take an action for the app to enter listening mode?
+-   What phrases initiate an action or behavior? Do the phrases and actions need to be enumerated on screen?
+-   Are prompt, confirmation, and disambiguation screens or TTS required?
+-   What is the interaction dialog between app and user?
+-   Is a custom or constrained vocabulary required (such as medicine, science, or locale) for the context of your app?
+-   Is network connectivity required?
 
-## <span id="Text_input">
-            </span>
-            <span id="text_input">
-            </span>
-            <span id="TEXT_INPUT">
-            </span>Xxxx xxxxx
+## <span id="Text_input"></span><span id="text_input"></span><span id="TEXT_INPUT"></span>Text input
 
 
-Xxxxxx xxx xxxx xxxxx xxx xxxxx xxxx xxxxx xxxx (xxxxxx xxxx xx xxxxxx) xx xxxx xxxx (xxxxxxxxxx xxxxxxxxx). Xxxxx xxxx xxxxx xxxx xx xxxx xxxx YY xxxxxxx xx xxxxxx, xxxxx xxxx xxxx xxxxx xxxxxxx xxx xx xx xx xxx xxxxxxx xx xxxxxx. (Xxxx xxxx xxxxx xxx xx xxxxxxxxx xxxxxxx xxxx xxxxxxxxxxxx xx xxxx xxx xxxxxxxxxx xx xxxxxxxxxx xxxxxxxxx.)
+Speech for text input can range from short form (single word or phrase) to long form (continuous dictation). Short form input must be less than 10 seconds in length, while long form input session can be up to two minutes in length. (Long form input can be restarted without user intervention to give the impression of continuous dictation.)
 
-Xxx xxxxxx xxxxxxx x xxxxxx xxx xx xxxxxxxx xxxx xxxxxx xxxxxxxxxxx xx xxxxxxxxx xxx xxxxxxxxx xx xxx xxxx xxx xxxxxxx xxx xxxx xxxxx xx xxxx xx xx. Xxx xxxxxxx, x xxxxxxx xxx xxxxxx xxxx x xxxxxxxxxx xxxxx (xxx [Xxxxxxx xxxx](../controls-and-patterns/app-bars.md)) xxx xx xxxx xx xxxx xxxx xxxxxxxxxxxx xxx xxxxx.
+You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see [Command bars](../controls-and-patterns/app-bars.md)) can be used to show both availability and state.
 
-Xxxxxxx xxxxxxx xxxxxxxxxxx xxxxxxxx xx xxxxxxxx xxx xxxxxxxx xxxx xx xxxxxxxx xxxxx xxxxxxxxxxx xx xxxxx xxxxxxxxx.
+Provide ongoing recognition feedback to minimize any apparent lack of response while recognition is being performed.
 
-Xxx xxxxx xxxxxx xxxxxxxxxxx xxxx xxxxx xxxxxxxx xxxxx, xxxxxxxxxxxxxx xxxxxxx, xxxxxxxxxxx, xx xxxxxxxxxx xxxxxx xxxxxxxxxxx.
+Let users revise recognition text using keyboard input, disambiguation prompts, suggestions, or additional speech recognition.
 
-Xxxx xxxxxxxxxxx xx xxxxx xx xxxxxxxx xxxx x xxxxxx xxxxx xxxx xxxxxx xxxxxxxxxxx, xxxx xx xxxxx xx xxxxxxxx. Xxxx xxxxxxxx xxxxxxxxx xxxx xxx xxxx xxx xxxxx xxxx xxxxxxx xxxx, xxxx xx xxxxxxxxxx xxx xxxxxxxxxxx xxxx xx xxxxxxxxxxx xxxx xxxxx xxxx xxxxxx.
+Stop recognition if input is detected from a device other than speech recognition, such as touch or keyboard. This probably indicates that the user has moved onto another task, such as correcting the recognition text or interacting with other form fields.
 
-Xxxxxxx xxx xxxxxx xx xxxx xxx xxxxx xx xxxxxx xxxxx xxxxxxxxx xxxx xxxxxxxxxxx xx xxxx. Xx xxx xxxxxxxxxxxxx xxxxxxx xxxxxxxxxxx xxxxx xxxx xxxxxx xx xxxx xx xx xxxxxxxxx xxxxxxxxx xxx xxxx xxx xxxxxxx xxxxxxxx xxxx xxxx xxx.
+Specify the length of time for which no speech input indicates that recognition is over. Do not automatically restart recognition after this period of time as it typically indicates the user has stopped engaging with your app.
 
-Xxxxxxx xxx xxxxxxxxxx xxxxxxxxxxx XX xxx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxx xx x xxxxxxx xxxxxxxxxx xx xxx xxxxxxxxx. Xxxxxxxxxx xxxxxxxxxx xxxxxxxx x xxxxxxx xxxxxxxxxx.
+Disable all continuous recognition UI and terminate the recognition session if a network connection is not available. Continuous recogntion requires a network connection.
 
-## <span id="Commanding">
-            </span>
-            <span id="commanding">
-            </span>
-            <span id="COMMANDING">
-            </span>Xxxxxxxxxx
+## <span id="Commanding"></span><span id="commanding"></span><span id="COMMANDING"></span>Commanding
 
 
-Xxxxxx xxxxx xxx xxxxxxxx xxxxxxx, xxxxxx xxxxxxxx, xxx xxxxxxxxxx xxxxx.
+Speech input can initiate actions, invoke commands, and accomplish tasks.
 
-Xx xxxxx xxxxxxx, xxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxx xxx xxx xxxxxxx xxx xxxxxxx, xxxx xxxxxxxx xx xxxxx xxxxx. Xxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxx xxxx xxx xxx xx xxxxxxx xxx xxxx xxxxxxxxxx xxxxxxxxx xxx xxx xxxx.
+If space permits, consider displaying the supported responses for the current app context, with examples of valid input. This reduces the potential responses your app has to process and also eliminates confusion for the user.
 
-Xxx xx xxxxx xxxx xxxxxxxxx xxxx xxxx xxxx xxxxxx xx xxxxxxxx x xxxxxxxx xx xxxxxxxx. Xxx xxxxxxx, "Xxxx xx xxx xxxx xx xx xxxxx?" xx xxxx xxxx xxxxx xxx xxxxx xxxxxxx x xxxx xxxxx xxxxxxx xxxxxxxxxx xxx xx xxx xxxxxx xxx xxxxxxxxx xxxxx xx. Xxxxxxxxxxxxx, "Xxxxx xxx xxxx xx xxxx x xxxx xx xxxxxx xx xxxxx?" xxxxxxxxxx xxx xxxxxxxx xx xxx xx xxx xxxxx xxxxxxx xxxx x xxxxxxxxxxxxxxx xxxxx xxxxxxx xxxxxxxxxx. X xxxxx xxxxxxx xx xxxx xxxxxx xx xxxxxx xxx xxxxxxx xx xxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxxxx.
+Try to frame your questions such that they elicit as specific a response as possible. For example, "What do you want to do today?" is very open ended and would require a very large grammar definition due to how varied the responses could be. Alternatively, "Would you like to play a game or listen to music?" constrains the response to one of two valid answers with a correspondingly small grammar definition. A small grammar is much easier to author and results in much more accurate recognition results.
 
-Xxxxxxx xxxxxxxxxxxx xxxx xxx xxxx xxxx xxxxxx xxxxxxxxxxx xxxxxxxxxx xx xxx. Xx xxx xxxx'x xxxxxx xx xxxxxxx, xx'x xxxxxx xx xxx xxxxxxxxxxxxx xxxx xx xxxxxxxx xx xxxxxxxxxx xxxxxx.
+Request confirmation from the user when speech recognition confidence is low. If the user's intent is unclear, it's better to get clarification than to initiate an unintended action.
 
-Xxx xxxxxx xxxxxxx x xxxxxx xxx xx xxxxxxxx xxxx xxxxxx xxxxxxxxxxx xx xxxxxxxxx xxx xxxxxxxxx xx xxx xxxx xxx xxxxxxx xxx xxxx xxxxx xx xxxx xx xx. Xxx xxxxxxx, x xxxxxxx xxx xxxxxx xxxx x xxxxxxxxxx xxxxx (xxx [Xxxxxxxxxx xxx xxxxxxx xxxx](../controls-and-patterns/app-bars.md)) xxx xx xxxx xx xxxx xxxx xxxxxxxxxxxx xxx xxxxx.
+You should provide a visual cue to indicate that speech recognition is supported and available to the user and whether the user needs to turn it on. For example, a command bar button with a microphone glyph (see [Guidelines for command bars](../controls-and-patterns/app-bars.md)) can be used to show both availability and state.
 
-Xx xxx xxxxxx xxxxxxxxxxx xxxxxx xx xxxxxxxxx xxx xx xxxx, xxxxxxxx xxxxxxxxxx x xxxxx xxxxxxxxx xx xxx xxxxxxx xxxx xx xxx xxx.
+If the speech recognition switch is typically out of view, consider displaying a state indicator in the content area of the app.
 
-Xx xxxxxxxxxxx xx xxxxxxxxx xx xxx xxxx, xxxxxxxx xxxxx xxx xxxxx-xx xxxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxx. Xxx xxxxx-xx xxxxxxxxxx xxxxxxxx xxxxxxxxxxxx xxxxxxx xxxx xxxxxxx, xxxxxxxx, xxxxxxxxxxxxxxx, xxxxxxxxxxxxx, xxx xxxxxx.
+If recognition is initiated by the user, consider using the built-in recognition experience for consistency. The built-in experience includes customizable screens with prompts, examples, disambiguations, confirmations, and errors.
 
-Xxx xxxxxxx xxxx xxxxxxxxx xx xxx xxxxxxxxx xxxxxxxxxxx:
+The screens vary depending on the specified constraints:
 
--   Xxx-xxxxxxx xxxxxxx (xxxxxxxxx xx xxx xxxxxx)
+-   Pre-defined grammar (dictation or web search)
 
-    -   Xxx **Xxxxxxxxx** xxxxxx.
-    -   Xxx **Xxxxxxxx** xxxxxx.
-    -   Xxx **Xxxxx xxx xxx** xxxxxx xx xxx xxxxx xxxxxx.
--   Xxxx xx xxxxx xx xxxxxxx, xx x XXXX xxxxxxx xxxx
+    -   The **Listening** screen.
+    -   The **Thinking** screen.
+    -   The **Heard you say** screen or the error screen.
+-   List of words or phrases, or a SRGS grammar file
 
-    -   Xxx **Xxxxxxxxx** xxxxxx.
-    -   Xxx **Xxx xxx xxx** xxxxxx, xx xxxx xxx xxxx xxxx xxxxx xx xxxxxxxxxxx xx xxxx xxxx xxx xxxxxxxxx xxxxxx.
-    -   Xxx **Xxxxx xxx xxx** xxxxxx xx xxx xxxxx xxxxxx.
+    -   The **Listening** screen.
+    -   The **Did you say** screen, if what the user said could be interpreted as more than one potential result.
+    -   The **Heard you say** screen or the error screen.
 
-Xx xxx **Xxxxxxxxx** xxxxxx xxx xxx:
+On the **Listening** screen you can:
 
--   Xxxxxxxxx xxx xxxxxxx xxxx.
--   Xxxxxxx xxxxxxx xxxx xx xxxx xxx xxxx xxx xxx.
--   Xxxxxxx xxxxxxx xxx **Xxxxx xxx xxx** xxxxxx xx xxxxx.
--   Xxxx xxx xxxxxxxxxx xxxxxx xxxx xx xxx xxxx xx xxx **Xxxxx xxx xxx** xxxxxx.
+-   Customize the heading text.
+-   Provide example text of what the user can say.
+-   Specify whether the **Heard you say** screen is shown.
+-   Read the recognized string back to the user on the **Heard you say** screen.
 
-Xxxx xx xx xxxxxxx xx xxx xxxxx-xx xxxxxxxxxxx xxxx xxx x xxxxxx xxxxxxxxxx xxxx xxxx x XXXX-xxxxxxx xxxxxxxxxx. Xx xxxx xxxxxxx, xxxxxx xxxxxxxxxxx xx xxxxxxxxxx.
+Here is an example of the built-in recognition flow for a speech recognizer that uses a SRGS-defined constraint. In this example, speech recognition is successful.
 
-![xxxxxxx xxxxxxxxxxx xxxxxx xxx x xxxxxxxxxx xxxxx xx x xxxx xxxxxxx xxxx](images/speech/speech-listening-initial.png)
+![initial recognition screen for a constraint based on a sgrs grammar file](images/speech/speech-listening-initial.png)
 
-![xxxxxxxxxxxx xxxxxxxxxxx xxxxxx xxx x xxxxxxxxxx xxxxx xx x xxxx xxxxxxx xxxx](images/speech/speech-listening-intermediate.png)
+![intermediate recognition screen for a constraint based on a sgrs grammar file](images/speech/speech-listening-intermediate.png)
 
-![xxxxx xxxxxxxxxxx xxxxxx xxx x xxxxxxxxxx xxxxx xx x xxxx xxxxxxx xxxx](images/speech/speech-listening-complete.png)
+![final recognition screen for a constraint based on a sgrs grammar file](images/speech/speech-listening-complete.png)
 
-## <span id="Always_listening">
-            </span>
-            <span id="always_listening">
-            </span>
-            <span id="ALWAYS_LISTENING">
-            </span>Xxxxxx xxxxxxxxx
+## <span id="Always_listening"></span><span id="always_listening"></span><span id="ALWAYS_LISTENING"></span>Always listening
 
 
-Xxxx xxx xxx xxxxxx xxx xxx xxxxxxxxx xxxxxx xxxxx xx xxxx xx xxx xxx xx xxxxxxxx, xxxxxxx xxxx xxxxxxxxxxxx.
+Your app can listen for and recognize speech input as soon as the app is launched, without user intervention.
 
-Xxx xxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxxx xxxxx xx xxx xxx xxxxxxx. Xxxx xxxxx xxx xxxxxx xxxxxxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxx xx xxx xxxxxxx xxxx, xxx xxxxxxxxx xxxxxx.
+You should customize the grammar constraints based on the app context. This keeps the speech recognition experience very targeted and relevant to the current task, and minimizes errors.
 
-## <span id="What_can_I_say_">
-            </span>
-            <span id="what_can_i_say_">
-            </span>
-            <span id="WHAT_CAN_I_SAY_">
-            </span>"Xxxx xxx X xxx?"
+## <span id="What_can_I_say_"></span><span id="what_can_i_say_"></span><span id="WHAT_CAN_I_SAY_"></span>"What can I say?"
 
 
-Xxxx xxxxxx xxxxx xx xxxxxxx, xx'x xxxxxxxxx xx xxxx xxxxx xxxxxxxx xxxx xxxxxxx xxx xx xxxxxxxxxx xxx xxxx xxxxxxx xxx xx xxxxxxxxx.
+When speech input is enabled, it's important to help users discover what exactly can be understood and what actions can be performed.
 
-Xx xxxxxx xxxxxxxxxxx xx xxxx xxxxxxx, xxxxxxxx xxxxx xxx xxxxxxx xxx xx x xxxx xxxxxxx xx xxxx xxx xxxxx xxx xxxxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxxx.
+If speech recognition is user enabled, consider using the command bar or a menu command to show all words and phrases supported in the current context.
 
-Xx xxxxxx xxxxxxxxxxx xx xxxxxx xx, xxxxxxxx xxxxxx xxx xxxxxx "Xxxx xxx X xxx?" xx xxxxx xxxx. Xxxx xxx xxxx xxxx xxxx xxxxxx, xxxxxxx xxx xxxxx xxx xxxxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxxx. Xxxxx xxxx xxxxxx xxxxxxxx x xxxxxxxxxx xxx xxx xxxxx xx xxxxxxxx xxxxxx xxxxxxxxxxxx xxxxxx xxx xxxxxx.
+If speech recognition is always on, consider adding the phrase "What can I say?" to every page. When the user says this phrase, display all words and phrases supported in the current context. Using this phrase provides a consistent way for users to discover speech capabilities across the system.
 
-## <span id="Recognition_failures">
-            </span>
-            <span id="recognition_failures">
-            </span>
-            <span id="RECOGNITION_FAILURES">
-            </span>Xxxxxxxxxxx xxxxxxxx
+## <span id="Recognition_failures"></span><span id="recognition_failures"></span><span id="RECOGNITION_FAILURES"></span>Recognition failures
 
 
-Xxxxxx xxxxxxxxxxx xxxx xxxx. Xxxxxxxx xxxxxx xxxx xxxxx xxxxxxx xx xxxx, xxxx xxxx xxxx xx x xxxxxx xx xxxxxxxxxx, xx xxxx xx xxxxx xx xxxxxxxx xx xxx.
+Speech recognition will fail. Failures happen when audio quality is poor, when only part of a phrase is recognized, or when no input is detected at all.
 
-Xxxxxx xxxxxxx xxxxxxxxxx, xxxx x xxxx xxxxxxxxxx xxx xxxxxxxxxxx xxxxxx, xxx xxxxxxx.
+Handle failure gracefully, help a user understand why recognition failed, and recover.
 
-Xxxx xxx xxxxxx xxxxxx xxx xxxx xxxx xxxx xxxxx'x xxxxxxxxxx xxx xxxx xxxx xxxx xx xxx xxxxx.
+Your app should inform the user that they weren't understood and that they need to try again.
 
-Xxxxxxxx xxxxxxxxx xxxxxxxx xx xxx xx xxxx xxxxxxxxx xxxxxxx. Xxx xxxx xx xxxxxx xx xxxxxx x xxxxxxxxx xxxxxx, xxxxx xxxxxxxxx xxxxxxxxxxx xxxxxxx.
+Consider providing examples of one or more supported phrases. The user is likely to repeat a suggested phrase, which increases recognition success.
 
-Xxx xxxxxx xxxxxxx x xxxx xx xxxxxxxxx xxxxxxx xxx x xxxx xx xxxxxx xxxx. Xxxx xxx xx xxx xxxx xxxxxxxxx xxxx xxxxx xxxxxxx xxx xxxxxxxxxxx xxxxxxx xxxxx.
+You should display a list of potential matches for a user to select from. This can be far more efficient than going through the recognition process again.
 
-Xxx xxxxxx xxxxxx xxxxxxx xxxxxxxxxxx xxxxx xxxxx, xxxxx xx xxxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxxxxx. Xxx xxxxxxx, xxx xxxxx xxxxxxx xxxx xxx xxxx xxx xx xxx x xxxxxxxx, xx xxx xxxxx xx x xxxxx xx xxxxxx xxxx x xxxx xx xxxxxxxxx xxxxxxx.
+You should always support alternative input types, which is especially helpful for handling repeated recognition failures. For example, you could suggest that the user try to use a keyboard, or use touch or a mouse to select from a list of potential matches.
 
-Xxx xxx xxxxx-xx xxxxxx xxxxxxxxxxx xxxxxxxxxx xx xx xxxxxxxx xxxxxxx xxxx xxxxxx xxx xxxx xxxx xxxxxxxxxxx xxx xxx xxxxxxxxxx xxx xxxx xxx xxxx xxxx xxxxxxx xxxxxxxxxxx xxxxxxx.
+Use the built-in speech recognition experience as it includes screens that inform the user that recognition was not successful and lets the user make another recognition attempt.
 
-Xxxxxx xxx xxx xxx xx xxxxxxx xxxxxx xx xxx xxxxx xxxxx. Xxx xxxxxx xxxxxxxxxx xxx xxxxxx xxxxxx xxxx xxx xxxxx xxxxxxx xxxx xxxxx xxxxxxxxx xxxxxx xxxxxx xxxxxxxxxxx xxxxxxxx. Xxx xxx xxx xxx xxxxxxxxxxx xxxxxxxx xx xxx xxxxxx xxxxxxxxxx xx xxxxxx xxx xxxx xx xxx xxxxx xxx xxx xxxx xxxx xxxxxxxxxx xxxxxx, xx xxxxxxxx. Xxx xxxxxxx, xx xxx xxxxxx xxxxxxx xx xxx xxxxxxxxxx xx xxx xxx, xxx xxx xxxxxx xxx xxxx xx xxxxx xxxxxx xx xxxx xxx xxxxxx xx.
+Listen for and try to correct issues in the audio input. The speech recognizer can detect issues with the audio quality that might adversely affect speech recognition accuracy. You can use the information provided by the speech recognizer to inform the user of the issue and let them take corrective action, if possible. For example, if the volume setting on the microphone is too low, you can prompt the user to speak louder or turn the volume up.
 
-## <span id="Constraints">
-            </span>
-            <span id="constraints">
-            </span>
-            <span id="CONSTRAINTS">
-            </span>Xxxxxxxxxxx
+## <span id="Constraints"></span><span id="constraints"></span><span id="CONSTRAINTS"></span>Constraints
 
 
-Xxxxxxxxxxx, xx xxxxxxxx, xxxxxx xxx xxxxxx xxxxx xxx xxxxxxx xxxx xxx xx xxxxxxx xx xxx xxxxxx xxxxxxxxxx. Xxx xxx xxxxxxx xxx xx xxx xxx-xxxxxxx xxx xxxxxxx xxxxxxxx xx xxx xxx xxxxxx x xxxxxx xxxxxxx xxxx xx xxxxxxxxx xxxx xxxx xxx.
+Constraints, or grammars, define the spoken words and phrases that can be matched by the speech recognizer. You can specify one of the pre-defined web service grammars or you can create a custom grammar that is installed with your app.
 
-### <span id="Predefined_grammars">
-            </span>
-            <span id="predefined_grammars">
-            </span>
-            <span id="PREDEFINED_GRAMMARS">
-            </span>Xxxxxxxxxx xxxxxxxx
+### <span id="Predefined_grammars"></span><span id="predefined_grammars"></span><span id="PREDEFINED_GRAMMARS"></span>Predefined grammars
 
-Xxxxxxxxxx xxxxxxxxx xxx xxx-xxxxxx xxxxxxxx xxxxxxx xxxxxx xxxxxxxxxxx xxx xxxx xxx xxxxxxx xxxxxxxxx xxx xx xxxxxx x xxxxxxx. Xxxx xxxxx xxxxx xxxxxxxx, xxxxxx xxxxxxxxxxx xx xxxxxxxxx xx x xxxxxx xxx xxxxxxx xxx xxx xxxxxxx xxx xxxxxxxx xx xxx xxxxxx
+Predefined dictation and web-search grammars provide speech recognition for your app without requiring you to author a grammar. When using these grammars, speech recognition is performed by a remote web service and the results are returned to the device
 
--   Xxx xxxxxxx xxxx-xxxx xxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxx xxxxx xxx xxxxxxx xxxx x xxxx xxx xxx xx x xxxxxxxxxx xxxxxxxx, xxx xx xxxxxxxxx xx xxxxxxxxx xxxxx xxxxxxx. Xxxx-xxxx xxxxxxxxx xx xxxxxx xxxx xxx xxx'x xxxx xx xxxxx xxx xxxxx xx xxxxxx x xxxx xxx xxx. Xxxxxxx xxxx xxxxxxx xxxxxxxx xxxxx xx xxxxxxxxx xxx xxxxxxx xxx x xxxxxxx.
--   Xxx xxx-xxxxxx xxxxxxx, xxxx x xxxxxxxxx xxxxxxx, xxxxxxxx x xxxxx xxxxxx xx xxxxx xxx xxxxxxx xxxx x xxxx xxxxx xxx. Xxxxxxx, xx xx xxxxxxxxx xx xxxxxxxxx xxxxx xxxx xxxxxx xxxxxxxxx xxx xxxx xxxxxxxxx xxx xxx.
+-   The default free-text dictation grammar can recognize most words and phrases that a user can say in a particular language, and is optimized to recognize short phrases. Free-text dictation is useful when you don't want to limit the kinds of things a user can say. Typical uses include creating notes or dictating the content for a message.
+-   The web-search grammar, like a dictation grammar, contains a large number of words and phrases that a user might say. However, it is optimized to recognize terms that people typically use when searching the web.
 
-**Xxxx**  Xxxxxxx xxxxxxxxxx xxxxxxxxx xxx xxx-xxxxxx xxxxxxxx xxx xx xxxxx, xxx xxxxxxx xxxx xxx xxxxxx (xxx xx xxx xxxxxx), xxxxxxxxxxx xxxxx xxx xx xx xxxx xx xxxx x xxxxxx xxxxxxx xxxxxxxxx xx xxx xxxxxx.
+**Note**  Because predefined dictation and web-search grammars can be large, and because they are online (not on the device), performance might not be as fast as with a custom grammar installed on the device.
 
  
 
-Xxxxx xxxxxxxxxx xxxxxxxx xxx xx xxxx xx xxxxxxxxx xx xx YY xxxxxxx xx xxxxxx xxxxx xxx xxxxxxx xx xxxxxxxxx xxxxxx xx xxxx xxxx. Xxxxxxx, xxxx xx xxxxxxx xxxxxxxxxx xx x xxxxxxx.
+These predefined grammars can be used to recognize up to 10 seconds of speech input and require no authoring effort on your part. However, they do require connection to a network.
 
-### <span id="Custom_grammars">
-            </span>
-            <span id="custom_grammars">
-            </span>
-            <span id="CUSTOM_GRAMMARS">
-            </span>Xxxxxx xxxxxxxx
+### <span id="Custom_grammars"></span><span id="custom_grammars"></span><span id="CUSTOM_GRAMMARS"></span>Custom grammars
 
-X xxxxxx xxxxxxx xx xxxxxxxx xxx xxxxxxxx xx xxx xxx xx xxxxxxxxx xxxx xxxx xxx. Xxxxxx xxxxxxxxxxx xxxxx x xxxxxx xxxxxxxxxx xx xxxxxxxxx xx xxx xxxxxx.
+A custom grammar is designed and authored by you and is installed with your app. Speech recognition using a custom constraint is performed on the device.
 
--   Xxxxxxxxxxxx xxxx xxxxxxxxxxx xxxxxxx x xxxxxxxxxxx xxxxxxxx xx xxxxxxxx xxxxxx xxxxxxxx xxxxx x xxxx xx xxxxx xx xxxxxxx. X xxxx xxxxxxxxxx xxxxx xxxx xxx xxxxxxxxxxx xxxxx, xxxxxxxx xxxxxxx. Xxxxxxxxxx xxxxxxxxxx xxx xxxxx xx x xxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxxxxx, xx xxx xxxxxx xxxxxxxxxxx xxxxxx xxxx xxxx xxxxxxx xxxxxx xx xxxxxxx x xxxxx. Xxx xxxx xxx xxxx xx xxxxxxxxxxxxxxxx xxxxxxx.
--   Xx XXXX xxxxxxx xx x xxxxxx xxxxxxxx xxxx, xxxxxx x xxxxxxxxxxxx xxxx xxxxxxxxxx, xxxx xxx XXX xxxxxx xxxxxxx xx xxx [XXXX Xxxxxxx Y.Y](http://go.microsoft.com/fwlink/p/?LinkID=262302). Xx XXXX xxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxx xxxx xxx xxxxxx xxxxxxxxxxx xxxxxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xx x xxxxxx xxxxxxxxxxx.
+-   Programmatic list constraints provide a lightweight approach to creating simple grammars using a list of words or phrases. A list constraint works well for recognizing short, distinct phrases. Explicitly specifying all words in a grammar also improves recognition accuracy, as the speech recognition engine must only process speech to confirm a match. The list can also be programmatically updated.
+-   An SRGS grammar is a static document that, unlike a programmatic list constraint, uses the XML format defined by the [SRGS Version 1.0](http://go.microsoft.com/fwlink/p/?LinkID=262302). An SRGS grammar provides the greatest control over the speech recognition experience by letting you capture multiple semantic meanings in a single recognition.
 
-    Xxxx xxx xxxx xxxx xxx xxxxxxxxx XXXX xxxxxxxx:
+    Here are some tips for authoring SRGS grammars:
 
-    -   Xxxx xxxx xxxxxxx xxxxx. Xxxxxxxx xxxx xxxxxxx xxxxx xxxxxxx xxxx xx xxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xxxx xxxxxx xxxxxxxx xxxx xxxxxxx xxxx xxxxxxx. Xx'x xxxxxx xx xxxx xxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxx xxxx xx xxxx x xxxxxx xxxxxxx xxx xxxx xxxxxx xxx.
-    -   Xxx xxxxx xxxx xxxx xx xxx xxx xxxx xxx xxxxxxx xxx xxxxxx xxx xxxxxxx xxxxxxxx xx xxxxxx.
-    -   Xxxxxx xxxx xxxxxxx xx xxxxx xxx xxxxx x xxxxxxx xx x xxxxxxx xx xxxx. Xxx xxxxxxx, xxx xxx xxx xxx **XXXXXXX** xxxx xx xxxxx xxxxxx xxxxx xxxx xxxx xxxxxxx xxxx xxx xxxxxx. Xxxx xxxx xxxxx xxxxx xxxxxxxxxx xxxxx xxxx xxxx xx xxxxxxx xx xxxx xxx. Xxx xxxxxxx, "xxxx xx", "xxx", "xx", "xxxxx", xxx xx xx.
-    -   Xxx xxx [xxxx:xxxxxx](http://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) xxxxxxx xx xxxx xxxxx xxxxxx xxxxx. Xxxx xx x Xxxxxxxxx xxxxxxxxx xx xxx XXXX xxxxxxxxxxxxx xx xxxx xxxxx xxxxxxx xxxxxxx.
-    -   Xxx xx xxxxx xxxxxxxx xxxxxxx xx xxxx xxxxxxx xxxx xxxxxxx xxxx xxx xxxxxxxx. Xxxxxxxxxxx xxxxx xx xx xxxx xxxxxxxx xxx xxxxxxx xxxxxxxxxx xxx xx xxxx xxxxxxxxx.
-    -   Xxxxx xxxxx xxxxxxx xxxx xxxxx xxxxxxx. Xxx xxxxxxx, xxxxxxx xxxx xx "xxxxx", "xxxxxx", xxx "xxxxxx" xxx xxxxxxx xxx xxxxxxxxxxx xxxxxx xxx xxxxxx xx xxxx xxxxxxxxxxx xxxxxxxx.
+    -   Keep each grammar small. Grammars that contain fewer phrases tend to provide more accurate recognition than larger grammars that contain many phrases. It's better to have several smaller grammars for specific scenarios than to have a single grammar for your entire app.
+    -   Let users know what to say for each app context and enable and disable grammars as needed.
+    -   Design each grammar so users can speak a command in a variety of ways. For example, you can use the **GARBAGE** rule to match speech input that your grammar does not define. This lets users speak additional words that have no meaning to your app. For example, "give me", "and", "uh", "maybe", and so on.
+    -   Use the [sapi:subset](http://msdn.microsoft.com/library/windowsphone/design/jj572474.aspx) element to help match speech input. This is a Microsoft extension to the SRGS specification to help match partial phrases.
+    -   Try to avoid defining phrases in your grammar that contain only one syllable. Recognition tends to be more accurate for phrases containing two or more syllables.
+    -   Avoid using phrases that sound similar. For example, phrases such as "hello", "bellow", and "fellow" can confuse the recognition engine and result in poor recognition accuracy.
 
-**Xxxx**  Xxxxx xxxx xx xxxxxxxxxx xxxx xxx xxx xxxxxxx xx xxx xxxxxxxxxx xx xxx xxxxxxxxxxx xxxxxxxxxx xxx xxxx xx xxxxxx. Xxx xxxxx xx xxx xxxx xxxxxx xxx x xxxxxxxx xxxxxxxxxxx xxxx, xxx xxx xxxxx xxxx xxxx xxx xxx xxxxx xx xxxxxxxxxxx xx xxxx xxx.
+**Note**  Which type of constraint type you use depends on the complexity of the recognition experience you want to create. Any could be the best choice for a specific recognition task, and you might find uses for all types of constraints in your app.
 
  
 
-### <span id="Custom_pronunciations">
-            </span>
-            <span id="custom_pronunciations">
-            </span>
-            <span id="CUSTOM_PRONUNCIATIONS">
-            </span>Xxxxxx xxxxxxxxxxxxxx
+### <span id="Custom_pronunciations"></span><span id="custom_pronunciations"></span><span id="CUSTOM_PRONUNCIATIONS"></span>Custom pronunciations
 
-Xx xxxx xxx xxxxxxxx xxxxxxxxxxx xxxxxxxxxx xxxx xxxxxxx xx xxxxxxxxx xxxxx, xx xxxxx xxxx xxxxxxxx xxxxxxxxxxxxxx, xxx xxxxx xx xxxx xx xxxxxxx xxxxxxxxxxx xxxxxxxxxxx xxx xxxxx xxxxx xx xxxxxxxx xxxxxx xxxxxxxxxxxxxx.
+If your app contains specialized vocabulary with unusual or fictional words, or words with uncommon pronunciations, you might be able to improve recognition performance for those words by defining custom pronunciations.
 
-Xxx x xxxxx xxxx xx xxxxx xxx xxxxxxx, xx x xxxx xx xxxxxxxxxxxx xxxx xxxxx xxx xxxxxxx, xxx xxx xxxxxx xxxxxx xxxxxxxxxxxxxx xx x XXXX xxxxxxx. Xxx [xxxxx Xxxxxxx](http://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx) xxx xxxx xxxx.
+For a small list of words and phrases, or a list of infrequently used words and phrases, you can create custom pronunciations in a SRGS grammar. See [token Element](http://msdn.microsoft.com/library/windowsphone/design/hh361600.aspx) for more info.
 
-Xxx xxxxxx xxxxx xx xxxxx xxx xxxxxxx, xx xxxxxxxxxx xxxx xxxxx xxx xxxxxxx, xxx xxx xxxxxx xxxxxxxx xxxxxxxxxxxxx xxxxxxx xxxxxxxxx. Xxx [Xxxxx Xxxxxxxx xxx Xxxxxxxx Xxxxxxxxx](http://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx) xxx xxxx xxxx.
+For larger lists of words and phrases, or frequently used words and phrases, you can create separate pronunciation lexicon documents. See [About Lexicons and Phonetic Alphabets](http://msdn.microsoft.com/library/windowsphone/design/hh361646.aspx) for more info.
 
-## <span id="Testing">
-            </span>
-            <span id="testing">
-            </span>
-            <span id="TESTING">
-            </span>Xxxxxxx
+## <span id="Testing"></span><span id="testing"></span><span id="TESTING"></span>Testing
 
 
-Xxxx xxxxxx xxxxxxxxxxx xxxxxxxx xxx xxx xxxxxxxxxx XX xxxx xxxx xxx'x xxxxxx xxxxxxxx. Xxxx xx xxx xxxx xxx xx xxxxxxxxx xxx xxxxxxxxxxxxx xx xxx xxxxxx xxxxxxxxxxx xxxxxxxxxx xx xxxx xxx. Xxx xxxxxxx, xxx xxxxx xxxxxxx xxxx xxxxxxxxxxx xxxxxxx xxxxxxx xxxx xxx xxx'x xxxxxxxxx xxx x xxxxxx xxxxxx?
+Test speech recognition accuracy and any supporting UI with your app's target audience. This is the best way to determine the effectiveness of the speech interaction experience in your app. For example, are users getting poor recognition results because your app isn't listening for a common phrase?
 
-Xxxxxx xxxxxx xxx xxxxxxx xx xxxxxxx xxxx xxxxxx xx xxxxxxx xxxxx xxxx x xxxx xx xxxxxxxxx xxxxxxx. Xx xxx xxxxxxx xxxxxxx xxx xxxx xx xxxxxxxxx xxxxxxx, xxxxxx xx xx xxxxxx xxxxxxxxxxxx.
+Either modify the grammar to support this phrase or provide users with a list of supported phrases. If you already provide the list of supported phrases, ensure it is easily discoverable.
 
-## <span id="Text-to-speech__TTS_">
-            </span>
-            <span id="text-to-speech__tts_">
-            </span>
-            <span id="TEXT-TO-SPEECH__TTS_">
-            </span>Xxxx-xx-xxxxxx (XXX)
+## <span id="Text-to-speech__TTS_"></span><span id="text-to-speech__tts_"></span><span id="TEXT-TO-SPEECH__TTS_"></span>Text-to-speech (TTS)
 
 
-XXX xxxxxxxxx xxxxxx xxxxxx xxxx xxxxx xxxx xx XXXX.
+TTS generates speech output from plain text or SSML.
 
-Xxx xx xxxxxx xxxxxxx xxxx xxx xxxxxx xxx xxxxxxxxxxx.
+Try to design prompts that are polite and encouraging.
 
-Xxxxxxxx xxxxxxx xxx xxxxxx xxxx xxxx xxxxxxx xx xxxx. Xx'x xxx xxxxx xx xxxxxx xx x xxxx xxxxxxx, xxx xxxxx xxxxxxx xx xxxxxx xx x xxxx xxxx xx xxxxxx xxxxxxx xxxx xxx xxxxxxxxx xx xxxxxxxx.
+Consider whether you should read long strings of text. It's one thing to listen to a text message, but quite another to listen to a long list of search results that are difficult to remember.
 
-Xxx xxxxxx xxxxxxx xxxxx xxxxxxxx xx xxx xxxxx xxxxx, xx xxxx, XXX.
+You should provide media controls to let users pause, or stop, TTS.
 
-Xxx xxxxxx xxxxxx xx xxx XXX xxxxxxx xx xxxxxx xxxx xxx xxxxxxxxxxxx xxx xxxxx xxxxxxx.
+You should listen to all TTS strings to ensure they are intelligible and sound natural.
 
--   Xxxxxxxxx xxxxxxxx xx xxxxxxx xxxxxxxx xx xxxxx xx xxxxxxxx xxxx xxxxxxx xx xxxxxxxxxxx xxxxx xxxxx x xxxxxx xx xxxxxx xxxxxxxxxxxxxx.
--   Xxxxxx xxx xxxxx xxxxxxxxx xxxx xxx xxxxxxx xx xxxxxxx xx xxxxxxxxx xxxx xxx x xxxxxx xxxxxxx xxxxx xxx x xxxxxx.
+-   Stringing together an unusual sequence of words or speaking part numbers or punctuation might cause a phrase to become unintelligible.
+-   Speech can sound unnatural when the prosody or cadence is different from how a native speaker would say a phrase.
 
-Xxxx xxxxxx xxx xx xxxxxxxxx xx xxxxx XXXX xxxxxxx xx xxxxx xxxx xx xxxxx xx xxx xxxxxx xxxxxxxxxxx. Xxx xxxx xxxx xxxxx XXXX, xxx [Xxx XXXX xx Xxxxxxx Xxxxxxxxxxx Xxxxxx](http://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx) xxx [Xxxxxx Xxxxxxxxx Xxxxxx Xxxxxxxx Xxxxxxxxx](http://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx).
+Both issues can be addressed bu using SSML instead of plain text as input to the speech synthesizer. For more info about SSML, see [Use SSML to Control Synthesized Speech](http://msdn.microsoft.com/library/windowsphone/design/hh378454.aspx) and [Speech Synthesis Markup Language Reference](http://msdn.microsoft.com/library/windowsphone/design/hh378377.aspx).
 
-## Xxxxx xxxxxxxx xx xxxx xxxxxxx 
+## Other articles in this section 
 <table>
 <colgroup>
 <col width="50%" />
@@ -281,34 +221,34 @@ Xxxx xxxxxx xxx xx xxxxxxxxx xx xxxxx XXXX xxxxxxx xx xxxxx xxxx xx xxxxx xx xxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Speech recognition](speech-recognition.md)</p></td>
-<td align="left"><p>Xxx xxxxxx xxxxxxxxxxx xx xxxxxxx xxxxx, xxxxxxx xx xxxxxx xx xxxxxxx, xxx xxxxxxxxxx xxxxx.</p></td>
+<td align="left"><p>Use speech recognition to provide input, specify an action or command, and accomplish tasks.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Specify the speech recognizer language](specify-the-speech-recognizer-language.md)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxx xx xxxxxxxxx xxxxxxxx xx xxx xxx xxxxxx xxxxxxxxxxx.</p></td>
+<td align="left"><p>Learn how to select an installed language to use for speech recognition.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Define custom recognition constraints](define-custom-recognition-constraints.md)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxx xxx xxx xxxxxx xxxxxxxxxxx xxx xxxxxx xxxxxxxxxxx.</p></td>
+<td align="left"><p>Learn how to define and use custom constraints for speech recognition.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Enable continuous dictation](enable-continuous-dictation.md)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxxx xxx xxxxxxxxx xxxx-xxxx, xxxxxxxxxx xxxxxxxxx xxxxxx xxxxx.</p></td>
+<td align="left"><p>Learn how to capture and recognize long-form, continuous dictation speech input.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Manage issues with audio input](manage-issues-with-audio-input.md)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxx xxxxxx xxxx xxxxxx-xxxxxxxxxxx xxxxxxxx xxxxxx xx xxxxx-xxxxx xxxxxxx.</p></td>
+<td align="left"><p>Learn how to manage issues with speech-recognition accuracy caused by audio-input quality.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Set speech recognition timeouts](set-speech-recognition-timeouts.md)</p></td>
-<td align="left"><p>Xxx xxx xxxx x xxxxxx xxxxxxxxxx xxxxxxx xxxxxxx xx xxxxxxxxxxxxxx xxxxxx (xxxxxx) xxx xxxxxxxxx xxxxxxxxx xxx xxxxxx xxxxx.</p></td>
+<td align="left"><p>Set how long a speech recognizer ignores silence or unrecognizable sounds (babble) and continues listening for speech input.</p></td>
 </tr>
 </tbody>
 </table>
@@ -316,18 +256,21 @@ Xxxx xxxxxx xxx xx xxxxxxxxx xx xxxxx XXXX xxxxxxx xx xxxxx xxxx xx xxxxx xx xxx
  
 
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>Related articles
 
 
-* [Xxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185614)
-* [Xxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185598)
- **Xxxxxxx**
-* [Xxxxxx xxxxxxxxxxx xxx xxxxxx xxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+* [Speech interactions](https://msdn.microsoft.com/library/windows/apps/mt185614)
+* [Cortana interactions](https://msdn.microsoft.com/library/windows/apps/mt185598)
+ **Samples**
+* [Speech recognition and speech synthesis sample](http://go.microsoft.com/fwlink/p/?LinkID=619897)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

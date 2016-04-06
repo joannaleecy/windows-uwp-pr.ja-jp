@@ -1,33 +1,37 @@
 ---
-Xxxxxxxxxxx: Xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxx xxx xxxxxx xxx xxxxxx xxx xx xxxx xxxx xxx Xxxxxxx xxxxxxx xx xxx xxxxx.
-xxxxx: Xxxxx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx
-xx.xxxxxxx: XXYYXYYY-YYXX-YYYX-XXXY-YYXYYYXXYXYX
+Description: The Windows Dev Center dashboard lets you manage and submit all of your apps for Windows devices in one place.
+title: Using the Windows Dev Center dashboard
+ms.assetid: FB63F773-71AC-464E-BDE1-21C429FB2B0B
 ---
 
-# Xxxxx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx
+# Using the Windows Dev Center dashboard
 
 
-Xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxx xxx xxxxxx xxx xxxxxx xxx xx xxxx xxxx xxx Xxxxxxx xxxxxxx xx xxx xxxxx.
+The Windows Dev Center dashboard lets you manage and submit all of your apps for Windows devices in one place.
 
-> **Xxxx**   Xxx xxxx xxxx x [xxxxxxxxx xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=615100) xx xxxxx xx xxxxxx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx.
+> **Note**   You must have a [developer account](http://go.microsoft.com/fwlink/p/?LinkId=615100) in order to access the Windows Dev Center dashboard.
 
-Xxxx xxx xxxxxx x [xxxxxx x xxxxxxxxxx xxx xxxx xxx](app-submissions.md) (xxx xxx xxxxx xxxx xx xx xx xxxxxx), xxx xxx [xxxxxx xxx xxxxxxxx](upload-app-packages.md) xxx xxx xxxxxxxxx xxxxxxxxx xxxxxx, xxx xxx Xxxxx xxxx xxxxxxxxxxxxx xxxxx xxxxxxxxx xxx xxxxxxx xxxx xxxx xxxx xxxx xxx xxxx. Xxx xxx xxx xxx xxxx [xxxxxxxxxxxx](create-app-descriptions.md) xxx [xxxxxxx](app-screenshots-and-images.md) xxx xxx xx xxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxxxx, xx xxx xxx [xxxxxxxxx xxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxxx](create-platform-specific-descriptions.md).
+When you create a [create a submission for your app](app-submissions.md) (for the first time or as an update), you can [upload app packages](upload-app-packages.md) for any supported operating system, and the Store will automatically offer customers the package that will work best for them. You can use the same [descriptions](create-app-descriptions.md) and [artwork](app-screenshots-and-images.md) for all of the operating systems your app supports, or you can [customize the description for specific platforms](create-platform-specific-descriptions.md).
 
-Xx-xxx xxxxxxxx (XXXx) xxx xxxxxxx xxxxxxxxxxxxx xx xxxx xxx'x xxxxxxxxxx. Xxxx xxxxxx xxx xxxxxxx xxxxxxxxxxx xxx xxx xxxxxxx xx xxxx xxxxxxx xxxxxxxxxxxxx. Xxx xxxx xxxx, xxx [XXX xxxxxxxxxxx](iap-submissions.md).
+In-app products (IAPs) are managed independently of your app's submission. This brings you greater flexibility and the ability to make changes independently. For more info, see [IAP submissions](iap-submissions.md).
 
-Xxx Xxx Xxxxxx xxxxxxxxx xxxx xxxxxx xxxxxxxxxxxx xxx [xxx xxxxxxxxxx xxx xxxxxxxxxxx xxxxxxxx](app-management-and-services.md), [xxxxxxxxx xxxxxxxx xxxx](analytics.md), [xxxxxx xxxxxxxxx](payout-summary.md), [xxxxxxxxx xxx xxxxxxxx xxxxxxxxxx](app-promotion-and-customer-engagement.md), [xxxx xxxxxxx](beta-testing-and-targeted-distribution.md), [xxxxxxxxxxxx XXX xxxx xx xxxxxxxxxxx](distribute-lob-apps-to-enterprises.md), xxx xxxx xxxx.
+The Dev Center dashboard also offers capabilities for [app management and configuring services](app-management-and-services.md), [reviewing analytic data](analytics.md), [payout reporting](payout-summary.md), [promotion and customer engagement](app-promotion-and-customer-engagement.md), [beta testing](beta-testing-and-targeted-distribution.md), [distributing LOB apps to enterprises](distribute-lob-apps-to-enterprises.md), and much more.
 
-## Xxxx xxx xxxxx xxx xxxxxxx xxxxxxxxx
+## Tips for using the unified dashboard
 
-Xx xxx xxx xxxxxxxxxx xxxxxxxxx xxxx xxx Xxxxxxx Y.Y, Xxxxxxx Xxxxx Y.Y, xx xxxxxxx XX xxxxxxxx, xxxx x xxxx xx [Xxx xxxx xxx xxxxxxx xx xxx Xxxxx xxx Xxxxxxx YY xxxxxxxxx](how-your-app-appears-in-the-store-for-windows-10-customers.md) xx xxxx xxx xxxx xxxxx xxxx xx xxx xxxxxxx xx xxxx xxx'x xxxxxxx xxx Xxxxxxx YY xxxxxxxxx, xxx xxx xx xxxxxxxxxx xxxx xxx'x xxxx xx xxx xxx xxxxxxxxx.
+If you had previously published apps for Windows 8.1, Windows Phone 8.1, or earlier OS versions, take a look at [How your app appears in the Store for Windows 10 customers](how-your-app-appears-in-the-store-for-windows-10-customers.md) to find out more about some of the changes in your app's listing for Windows 10 customers, and how we categorize your app's info in the new dashboard.
 
-Xxxx xxxx xxxx xxxxxx xx xxxxx xxxxxxxx xx xxx xxxxxxx Xxxxxxx Xxxxx Xxx Xxxxxx xxx Xxxxxxx Xxxxx xxxxxxxxx xxxx xxxxxx xx xxx xxxx xxx xx xxx Xxx Xxxxxx xxxxxxxxx. Xx xxxxxx xxxxx XX xxxxxxxx xxxx xxx xxxxxxxx, xxx'xx xxxxxx xx xx xxx xxx. Xxx xxx xxxx xxxxx xxx xxxx xxxxxxx, xxxx xx xxxxx xxx xxxxxxxx, xxxxxx xxxxxx xxxxx.
+Apps that were linked to share identity in the earlier Windows Phone Dev Center and Windows Store dashboard will appear as the same app in the Dev Center dashboard. No matter which OS versions your app supports, you'll manage it as one app. The app will share the same details, such as price and category, across device types.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

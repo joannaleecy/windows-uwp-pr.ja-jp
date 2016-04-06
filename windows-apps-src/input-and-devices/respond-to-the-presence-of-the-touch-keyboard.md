@@ -1,84 +1,76 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxx xx xxxxxx xxx XX xx xxxx xxx xxxx xxxxxxx xx xxxxxx xxx xxxxx xxxxxxxx.
-xxxxx: Xxxxxxx xx xxx xxxxxxxx xx xxx xxxxx xxxxxxxx
-xx.xxxxxxx: YYXYYYYX-YYXY-YXYX-YYXY-YYYYYYYXXYYY
-xxxxx: Xxxxxxx xx xxx xxxxxxxx xx xxx xxxxx xxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Learn how to tailor the UI of your app when showing or hiding the touch keyboard.
+title: Respond to the presence of the touch keyboard
+ms.assetid: 70C6130E-23A2-4F9D-88E7-7060062DA988
+label: Respond to the presence of the touch keyboard
+template: detail.hbs
 ---
 
-# Xxxxxxx xx xxx xxxxxxxx xx xxx xxxxx xxxxxxxx
+# Respond to the presence of the touch keyboard
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br209185)
--   [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242255)
+-   [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185)
+-   [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255)
 
-Xxxxx xxx xx xxxxxx xxx XX xx xxxx xxx xxxx xxxxxxx xx xxxxxx xxx xxxxx xxxxxxxx.
+Learn how to tailor the UI of your app when showing or hiding the touch keyboard.
 
-![xxx xxxxx xxxxxxxx xx xxxxxxx xxxxxx xxxx](images/touchkeyboard-standard.png)
+![the touch keyboard in default layout mode](images/touchkeyboard-standard.png)
 
-<sup>Xxx\\ xxxxx\\ xxxxxxxx\\ xx\\ xxxxxxx\\ xxxxxx\\ xxxx</sup>
+<sup>The\\ touch\\ keyboard\\ in\\ default\\ layout\\ mode</sup>
 
-Xxx xxxxx xxxxxxxx xxxxxxx xxxx xxxxx xxx xxxxxxx xxxx xxxxxxx xxxxx. Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxxx xxxxxxxx xxxxxx xxx xxxxx xxxxxxxx xx xxxxxxx xxxx x xxxx xxxx xx xx xxxxxxxx xxxxx xxxxx. Xxx xxxxx xxxxxxxx xxxxxxxxx xxxxxxx xxxxxxx xxxxx xxx xxxx xxxxxxxxx xxxxxxx xxxxxxxx xx x xxxx, xxx xxxx xxxxxxxx xxx xxxx xxxxx xx xxx xxxxx xxxxxxx xxxxx xxxxxx xxx xxxx.
+The touch keyboard enables text entry for devices that support touch. Universal Windows Platform (UWP) text input controls invoke the touch keyboard by default when a user taps on an editable input field. The touch keyboard typically remains visible while the user navigates between controls in a form, but this behavior can vary based on the other control types within the form.
 
-Xx xxxxxxx xxxxxxxxxxxxx xxxxx xxxxxxxx xxxxxxxx xx x xxxxxx xxxx xxxxx xxxxxxx xxxx xxxx xxx xxxxxx xxxx x xxxxxxxx xxxx xxxxx xxxxxxx, xxx xxxx xxx xxx [**XxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br209185) xxxxx xx xxxxxx xxxx xxxxxxxx xx Xxxxxxxxx XX Xxxxxxxxxx xxx xxxxxxxxx xxx xxxxxxx XX Xxxxxxxxxx xxxxxxx xxxxxxxx. Xxx [Xxxxxxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt244347) xxx [Xxxxxx xxxxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt297667).
+To support corresponding touch keyboard behavior in a custom text input control that does not derive from a standard text input control, you must use the [**AutomationPeer**](https://msdn.microsoft.com/library/windows/apps/br209185) class to expose your controls to Microsoft UI Automation and implement the correct UI Automation control patterns. See [Keyboard accessibility](https://msdn.microsoft.com/library/windows/apps/mt244347) and [Custom automation peers](https://msdn.microsoft.com/library/windows/apps/mt297667).
 
-Xxxx xxxx xxxxxxx xxx xxxx xxxxx xx xxxx xxxxxx xxxxxxx, xxx xxx xxxxxxx xxxxxxxxxxxxx xx xxx xxxxxxxx xx xxx xxxxx xxxxxxxx.
+Once this support has been added to your custom control, you can respond appropriately to the presence of the touch keyboard.
 
-**Xxxxxxxxxxxxx:  **
+**Prerequisites:  **
 
-Xxxx xxxxx xxxxxx xx [Xxxxxxxx xxxxxxxxxxxx](keyboard-interactions.md).
+This topic builds on [Keyboard interactions](keyboard-interactions.md).
 
-Xxx xxxxxx xxxx x xxxxx xxxxxxxxxxxxx xx xxxxxxxx xxxxxxxx xxxxxxxxxxxx, xxxxxxxx xxxxxxxx xxxxx xxx xxxxxx, xxx XX Xxxxxxxxxx.
+You should have a basic understanding of standard keyboard interactions, handling keyboard input and events, and UI Automation.
 
-Xx xxx'xx xxx xx xxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx, xxxx x xxxx xxxxxxx xxxxx xxxxxx xx xxx xxxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx xxxx.
+If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
 
--   [Xxxxxx xxxx xxxxx xxx](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Xxxxx xxxxx xxxxxx xxxx [Xxxxxx xxx xxxxxx xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185584)
+-   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
 
-**Xxxx xxxxxxxxxx xxxxxxxxxx:  **
+**User experience guidelines:  **
 
-Xxx xxxxxxx xxxx xxxxx xxxxxxxxx x xxxxxx xxx xxxxxxxx xxx xxxxxxxxx xxx xxxxxxxx xxxxx, xxx [Xxxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh972345) .
+For helpful tips about designing a useful and engaging app optimized for keyboard input, see [Keyboard design guidelines](https://msdn.microsoft.com/library/windows/apps/hh972345) .
 
-## <span id="Touch_keyboard_and_a_custom_UI">
-            </span>
-            <span id="touch_keyboard_and_a_custom_ui">
-            </span>
-            <span id="TOUCH_KEYBOARD_AND_A_CUSTOM_UI">
-            </span>Xxxxx xxxxxxxx xxx x xxxxxx XX
+## <span id="Touch_keyboard_and_a_custom_UI"></span><span id="touch_keyboard_and_a_custom_ui"></span><span id="TOUCH_KEYBOARD_AND_A_CUSTOM_UI"></span>Touch keyboard and a custom UI
 
 
-Xxxx xxx x xxx xxxxx xxxxxxxxxxxxxxx xxx xxxxxx xxxx xxxxx xxxxxxxx.
+Here are a few basic recommendations for custom text input controls.
 
--   Xxxxxxx xxx xxxxx xxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxxxxxxx xxxx xxxx xxxx.
+-   Display the touch keyboard throughout the entire interaction with your form.
 
--   Xxxxxx xxxx xxxx xxxxxx xxxxxxxx xxxx xxx xxxxxxxxxxx XX Xxxxxxxxxx [**XxxxxxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br209182) xxx xxx xxxxxxxx xx xxxxxxx xxxx xxxxx xxxxx xxxx x xxxx xxxxx xxxxx xxxxx xx xxx xxxxxxx xx xxxx xxxxx. Xxx xxxxxxx, xx xxx xxxx x xxxx xxxx'x xxxxxx xx xxx xxxxxx xx x xxxx-xxxxx xxxxxxxx, xxx xxx xxxx xxx xxxxxxxx xx xxxxxxx, xxx xxxx xxxx xxxx xxx **XxxxxxxxxxXxxxxxxXxxx** xx Xxxx.
+-   Ensure that your custom controls have the appropriate UI Automation [**AutomationControlType**](https://msdn.microsoft.com/library/windows/apps/br209182) for the keyboard to persist when focus moves from a text input field while in the context of text entry. For example, if you have a menu that's opened in the middle of a text-entry scenario, and you want the keyboard to persist, the menu must have the **AutomationControlType** of Menu.
 
--   Xxx'x xxxxxxxxxx XX Xxxxxxxxxx xxxxxxxxxx xx xxxxxxx xxx xxxxx xxxxxxxx. Xxxxx xxxxxxxxxxxxx xxxxx xxxx xx xxx xxxxxxxx xx XX Xxxxxxxxxx xxxxxxxxxx.
+-   Don't manipulate UI Automation properties to control the touch keyboard. Other accessibility tools rely on the accuracy of UI Automation properties.
 
--   Xxxxxx xxxx xxxxx xxx xxxxxx xxx xxx xxxxx xxxxx xxxx xxxx'xx xxxxxxxxxxx xxxx.
+-   Ensure that users can always see the input field that they're interacting with.
 
-    Xxxxxxx xxx xxxxx xxxxxxxx xxxxxxxx x xxxxx xxxxxxx xx xxx xxxxxx, xxx XXX xxxxxxx xxxx xxx xxxxx xxxxx xxxx xxxxx xxxxxxx xxxx xxxx xx x xxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx xx xxx xxxx, xxxxxxxxx xxxxxxxx xxxx xxx xxx xxxxxxxxx xx xxxx.
+    Because the touch keyboard occludes a large portion of the screen, the UWP ensures that the input field with focus scrolls into view as a user navigates through the controls on the form, including controls that are not currently in view.
 
-    Xxxx xxxxxxxxxxx xxxx XX, xxxxxxx xxxxxxx xxxxxxxx xx xxx xxxxxxxxxx xx xxx xxxxx xxxxxxxx xx xxxxxxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242262) xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242260) xxxxxx xxxxxxx xx xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242255) xxxxxx.
+    When customizing your UI, provide similar behavior on the appearance of the touch keyboard by handling the [**Showing**](https://msdn.microsoft.com/library/windows/apps/br242262) and [**Hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) events exposed by the [**InputPane**](https://msdn.microsoft.com/library/windows/apps/br242255) object.
 
-    ![x xxxx xxxx xxx xxxxxxx xxx xxxxx xxxxxxxx xxxxxxx](images/touch-keyboard-pan1.png)
+    ![a form with and without the touch keyboard showing](images/touch-keyboard-pan1.png)
 
-    Xx xxxx xxxxx, xxxxx xxx XX xxxxxxxx xxxx xxxxxx xxxx xx xxx xxxxxx xxx xxxxxx xxxx. Xxxxxx xxx XX xx xxxx xxx xxxx xxxxxxxx xxx xxxxxxxxx xx x xxxxxxx xxxxxx xxx xxx xxxxxxxxx XX xxxxxxxx xxx xxxxxx. Xxx xxxxxxx:
+    In some cases, there are UI elements that should stay on the screen the entire time. Design the UI so that the form controls are contained in a panning region and the important UI elements are static. For example:
 
-    ![x xxxx xxxx xxxxxxxx xxxxx xxxx xxxxxx xxxxxx xxxx xx xxxx](images/touch-keyboard-pan2.png)
+    ![a form that contains areas that should always stay in view](images/touch-keyboard-pan2.png)
 
-## <span id="handling_events">
-            </span>
-            <span id="HANDLING_EVENTS">
-            </span>Xxxxxxxx xxx Xxxxxxx xxx Xxxxxx xxxxxx
+## <span id="handling_events"></span><span id="HANDLING_EVENTS"></span>Handling the Showing and Hiding events
 
 
-Xxxx'x xx xxxxxxx xx xxxxxxxxx xxxxx xxxxxxxx xxx xxx [**xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242262) xxx [**xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242260) xxxxxx xx xxx xxxxx xxxxxxxx.
+Here's an example of attaching event handlers for the [**showing**](https://msdn.microsoft.com/library/windows/apps/br242262) and [**hiding**](https://msdn.microsoft.com/library/windows/apps/br242260) events of the touch keyboard.
 
 ```CSharp
 public class MyApplication
@@ -128,26 +120,29 @@ public class MyApplication
 }
 ```
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>Related articles
 
 
 
-* [Xxxxxxxx xxxxxxxxxxxx](keyboard-interactions.md)
-* [Xxxxxxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt244347)
-* [Xxxxxx xxxxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt297667)
+* [Keyboard interactions](keyboard-interactions.md)
+* [Keyboard accessibility](https://msdn.microsoft.com/library/windows/apps/mt244347)
+* [Custom automation peers](https://msdn.microsoft.com/library/windows/apps/mt297667)
 
 
-**Xxxxxxx xxxxxxx**
-* [Xxxxx: Xxxxx xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=246019)
-* [Xxxxxxxxxx xx xxx xxxxxxxxxx xx xxx xx-xxxxxx xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231633)
-* [XXXX xxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=251417)
-* [XXXX xxxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=238570)
+**Archive samples**
+* [Input: Touch keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=246019)
+* [Responding to the appearance of the on-screen keyboard sample](http://go.microsoft.com/fwlink/p/?linkid=231633)
+* [XAML text editing sample](http://go.microsoft.com/fwlink/p/?LinkID=251417)
+* [XAML accessibility sample](http://go.microsoft.com/fwlink/p/?linkid=238570)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

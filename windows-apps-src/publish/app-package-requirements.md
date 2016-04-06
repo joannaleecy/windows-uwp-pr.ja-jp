@@ -1,80 +1,84 @@
 ---
-Xxxxxxxxxxx: Xxxxxx xxxxx xxxxxxxxxx xx xxxxxxx xxxx xxx'x xxxxxxxx xxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxx.
-xxxxx: Xxx xxxxxxx xxxxxxxxxxxx
-xx.xxxxxxx: YYYXYYXX-YXYX-YYXX-YYYY-YYXXYYXXYYYX
+Description: Windows ストアに申請するために、次のガイドラインに従ってアプリのパッケージを準備してください。
+title: アプリ パッケージの要件
+ms.assetid: 651B82BA-9D0C-45AC-8997-88CD93DC903C
 ---
 
-# Xxx xxxxxxx xxxxxxxxxxxx
+# アプリ パッケージの要件
 
-Xxxxxx xxxxx xxxxxxxxxx xx xxxxxxx xxxx xxx'x xxxxxxxx xxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxx.
+Windows ストアに申請するために、次のガイドラインに従ってアプリのパッケージを準備してください。
 
-## Xxxxxx xxx xxxxx xxxx xxx'x xxxxxxx xxx xxx Xxxxxxx Xxxxx
+## Windows ストアに向けてアプリのパッケージを構築する前に
 
-Xxxx xxxx xx [xxxx xxxx xxx xxxx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx](https://msdn.microsoft.com/library/windows/apps/mt186449). Xx xxxx xxxxxxxxx xxxx xxx xxxx xxxx xxx xx xxxxxxxxx xxxxx xx xxxxxxxx. Xxxx xxxx xxxxx xx xxxxxxx xxxx xxx xxx xxxx xx xxxxxxxxx xxxx xxx Xxxxxxx Xxxxx, xx xxx xxxx xx xxxxxxxxx xxx xxx xx xxxxxxxxx xxxx xxxx xxxxxxxxx xxxxxxxx.
+[Windows アプリ認定キットでアプリをテスト](https://msdn.microsoft.com/library/windows/apps/mt186449) したことを確認してください。 また、さまざまな種類のハードウェアでアプリをテストすることをお勧めします。 アプリが認定され、Windows ストアから入手できるようになるまでの間、アプリをインストールして実行できるのは、開発者用ライセンスを持つコンピューター上のみになります。
 
-## Xxxxxxxx xxx xxx xxxxxxx xxxxx Xxxxxxxxx Xxxxxx Xxxxxx
+## Microsoft Visual Studio を使ったアプリ パッケージのビルド
 
-Xx xxx'xx xxxxx Xxxxxxxxx Xxxxxx Xxxxxx xx xxxx xxxxxxxxxxx xxxxxxxxxxx, xxx xxxxxxx xxxx xxxxx-xx xxxxx xxxx xxxx xxxxxxxx xx xxx xxxxxxx x xxxxx xxx xxxx xxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt270969).
+開発環境として Microsoft Visual Studio を使っている場合は、アプリ パッケージを迅速かつ簡単に作成するための組み込みツールが既に用意されています。 詳しくは、「[アプリのパッケージ化](https://msdn.microsoft.com/library/windows/apps/mt270969)」をご覧ください。
 
-> **Xxxx**  Xx xxxx xxxx xxx xxxx xxxxxxxxx xxx XXXX. 
-
-
-Xxxx xxx xxxxxx xxxx xxxxxxx xx Xxxxxx Xxxxxx, xxxx xxxx xxx xxx xxxxxx xx xxxx xxx xxxx Xxxxxxxxx xxxxxxx xxxxxxxxxx xxxx xxxx xxxxxxxxx xxxxxxx. Xxxx xxxxx xx xxx xxxxxxx xxxxxxxx xxxx xxxxxxxx xxxxxxx xxxxxxx xx xxxx xxxxxxx. Xxxx xxxx xx xxxxxxxx xxx xxxxx xxxxxxxxxxxxx.
-
-Xxxx xxx xxxxx xxxx xxx'x xxxxxxxx, Xxxxxx Xxxxxx xxx xxxxxx xx .xxxx xxxx xx xx .xxxxxxxxxx xxxx (xx x .xxx xxxx xxx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx). Xxx xxxx xxxx xxxxxx Xxxxxxx YY, xxxxxx xxxxxx xxx .xxxxxxxxxx xxxx xx xxx [Xxxxxxxx](upload-app-packages.md) xxxx. Xxx xxxx xxxx xxxxx xxxxxxxxx XXX xxxx xxx xxx Xxxxx, xxx [Xxxxxxxxx Xxxxxxxxx Xxxxxxx xxxx xxx Xxxxxxx YY](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
-
-Xxxx xxx'x xxxxxxxx xxx'x xxxx xx xx xxxxxx xxxx x xxxxxxxxxxx xxxxxx xx x xxxxxxx xxxxxxxxxxx xxxxxxxxx.
-
-### Xxx xxxxxxx
-
-Xxx xxxx xxxx xxxxxx Xxxxxxx Y.Y, Xxxxxxx Xxxxx Y.Y, xxx xxxxx, Xxxxxx Xxxxxx xxx xxxxxxxx xx xxx xxxxxx (.xxxxxxxxxx) xx xxxxxx xxx xxxx xx xxx xxx xxxx xxxxx xxxxxxxx. Xxxx xxx xx xxxxxxx xx xxx'xx xxxxxxx xxxxxxxx-xxxxxxxx xxxxxx, x xxxxxxx xx xxxxx-xxxxx xxxxxx, xx xxxxxxxxx xxxx xxxxx xx xxxxxxxx xxxxxxxx xx Xxxxxxxxx XxxxxxX.
-
-> **Xxxx**  Xxx xxx xxxxxx xxx xxxxxxx xxxx xxxxxxxx xxx xxx xxxxxxxxxxxxx. Xxx xxxxxx xxxxxx xxxx xxx xxxxxx xxx xxxx xxxxxxxx XX.
+> **注**  すべてのファイル名に ANSI を使っていることを確認してください。 
 
 
-Xxxx xx xxx xxxxxx, x xxxx xxxx xxxx xxxxxxxx xxx xxxxxxxx xxxxx, xxxxxx xxxx xxx xxxxxxxx xxxxxxxxx. Xxx xxxx xxxx xxxxx xxx xxxxxxx, xxx [Xxxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt270969) xxx [Xxxxxxxxx Xxxxxxxxx Xxxxxxx xxxx xxx Xxxxxxx YY](http://go.microsoft.com/fwlink/p/?LinkId=620193 ).
+Visual Studio でパッケージを作るときは、必ず、開発者アカウントに関連付けられている同じ Microsoft アカウントでサインインしてください。 パッケージ マニフェストの一部には、お使いのアカウントに関連する固有の詳細情報が含まれています。 この情報は自動的に検出されて追加されます。
 
-## Xxxxxxxx xxx xxx xxxxxxx xxxxxxxx
+アプリのパッケージをビルドする場合、Visual Studio では .appx ファイルまたは .appxupload ファイル (または、Windows Phone 8.1 以前の場合は .xap ファイル) を作成することができます。 Windows 10 を対象とするアプリの場合は、常に .appxupload ファイルを [パッケージ](upload-app-packages.md) ページにアップロードします。 ストア用の UWP アプリのパッケージ化について詳しくは、「[Windows 10 用ユニバーサル Windows アプリのパッケージ化](http://go.microsoft.com/fwlink/p/?LinkId=620193 )」をご覧ください。
 
-Xx xxx xxx'x xxx Xxxxxx Xxxxxx xx xxxxxx xxxx xxxxxxx, xxx xxxx [xxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/br211476).
+アプリのパッケージに、信頼された証明機関が発行する証明書で署名する必要はありません。
 
-Xx xxxx xx xxxxxx xxx [Xxx xxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/br211474) xxxxxxxxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxxxxx. Xxxx xxxxxxxx xxxx xxxxxx xxx xxxxxxx xxxxxxxx xxxxxx xx xxxxx xx xxxx xxxxxxxxxxxxx.
+### アプリ バンドル
 
-Xxxx xxxxxxxx xxxx xxxxxxx xxxx xxxxxxxx xxxx xxxxx xxxx xxxxxxx xxx xxxx xxx. Xxx xxx xxxx xxxx xxxx xx xxxxxxx xx [Xxxx xxx xxxxxxxx xxxxxxx](view-app-identity-details.md) xx xxx **Xxx xxxxxxxxxx** xxxxxxx xx xxxx xxx'x xxxxxxxx xxxx xx xxx xxxxxxxxx.
+アプリの対象が Windows 8.1、Windows Phone 8.1、およびそれ以降である場合は、Visual Studio でアプリ バンドル (.appxbundle) を生成することによって、ユーザーがダウンロードするアプリのサイズを小さくすることができます。 その利便性が発揮されるのは、言語固有のアセットや多様な画像倍率のアセット、特定バージョンの Microsoft DirectX に適用されるリソースを定義した場合などです。
 
-> **Xxxx**  Xxxxxx xx xxx xxxxxxxx xxx xxxx-xxxxxxxxx. Xxxxxx xxx xxxxx xxxxxxxxxxx xxxx xxxx xxxxx. Xxxxx xxx xxxxxx xxxxxxxxx xxx xxxxxx xxxx xx xxxxxx xxxx xxxx xxx xxxxxxx.
-
-
-Xxx xxxxxxx xxx x xxxxxxxxx xxxxxxxx. Xxxxxx xxx [Xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn263089) xxxxxxxxxxxxx xxx xxx xxxxxxx xxx xxxxxxxxxxxx xxx xxx xxxxxx xxxxxxxxx.
-
-> **Xxx**  Xx xxxx xx xxx xxx [Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx](https://msdn.microsoft.com/library/windows/apps/mt186449) xxxxxx xxx xxxxxx xxxx xxxxxxxx. Xxxx xxx xxx xxxx xxxxxxxxx xx xxxx xxxxxxxx xxx xxx xxxxxxxx xxxx xxxxx xxxxx xxxxxxxxxxxxx xx xxxxxxxxxx xxxxxxxx.
+> **注**  1 つのアプリ バンドルには、すべてのアーキテクチャ用のパッケージを含めることができます。 対象 OS ごとにバンドルを 1 つだけ申請する必要があります。
 
 
-Xx xxxx xxx xxx xxxx xxxx xxx xxxxxxx, xxxxx xxx xxxxxxxx xxxxxxxx xxxx xx xxx xxxx xx xxxx xxxxxxx (xxx xxxxxxxx XX):
+アプリ バンドルが使われている場合、ユーザーは、自分に関係したファイルだけをダウンロードすればよく、すべてのリソースをダウンロードする必要はありません。 アプリ バンドルについて詳しくは、「[アプリのパッケージ化](https://msdn.microsoft.com/library/windows/apps/mt270969)」と「[Windows 10 用ユニバーサル Windows アプリのパッケージ化](http://go.microsoft.com/fwlink/p/?LinkId=620193 )」をご覧ください。
 
--   [**Xxxxxxx/Xxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211422)
--   [**Xxxxxxx/Xxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211428)
--   [**Xxxxxxx/Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211462)
+## 手動によるアプリ パッケージのビルド
 
-## Xxxxxxx xxxxxx xxxxxxxxxxxx
+パッケージの作成に Visual Studio を使わない場合は、[パッケージ マニフェストを手動で作成](https://msdn.microsoft.com/library/windows/apps/br211476) する必要があります。
 
-Xxxx xxx’x xxxxxxxx xxxx xxxxxx xxxx xxxxx xxxxxxxxxxxx.
+マニフェストの詳細や要件については、[アプリ パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/br211474) に関するドキュメントをご覧ください。 認定に合格するには、マニフェストがパッケージ マニフェスト スキーマに従っている必要があります。
 
-| Xxx xxxxxxx xxxxxxxx | Xxxxxxxxxxx                                                          |
+マニフェストには、アカウントとアプリに関するいくらかの具体的な情報を含める必要があります。 この情報は、ダッシュボードにあるアプリの概要ページの [**アプリの管理**] セクションで [アプリの ID の詳細情報を表示する](view-app-identity-details.md) ことで確認できます。
+
+> **注**  マニフェスト内の値は、大文字と小文字が区別されます。 スペースや句読点なども一致する必要があります。 注意して入力し、間違いがないか確認してください。
+
+
+アプリ バンドルには、特別なマニフェストが使われます。 アプリ バンドル マニフェストの詳細や要件については、[バンドル マニフェスト](https://msdn.microsoft.com/library/windows/apps/dn263089) に関するドキュメントをご覧ください。
+
+> **ヒント**  [Windows アプリ認定キット](https://msdn.microsoft.com/library/windows/apps/mt186449) を実行してから、パッケージを提出してください。 これによって、認定や提出の失敗の原因となる可能性がある問題がマニフェストに含まれているかどうかを判断できます。
+
+
+アプリに複数のパッケージがある場合、以下のアプリ マニフェストの要素は各パッケージで (ターゲット OS ごとに) 同じである必要があります。
+
+-   [**Package/Capabilities**](https://msdn.microsoft.com/library/windows/apps/br211422)
+-   [**Package/Dependencies**](https://msdn.microsoft.com/library/windows/apps/br211428)
+-   [**Package/Resources**](https://msdn.microsoft.com/library/windows/apps/br211462)
+
+## パッケージの形式の要件
+
+アプリのパッケージは、次の要件に準拠している必要があります。
+
+| アプリ パッケージの性質 | 要件                                                          |
 |----------------------|----------------------------------------------------------------------|
-| Xxxxxxx xxxx         | .xxxxxxxxxx: YY XX xxxxxxx xxx xxxxxx <br>.xxxx xxxxxxxx xxxxxxxxx Xxxxxxx Y.Y: Y XX xxxxxxx xxx xxxxxxx <br> .xxxx xxxxxxxx xxxxxxxxx Xxxxxxx Y: Y XX xxxxxxx xxx xxxxxxx <br> .xxxx xxxxxxxx xxxxxxxxx Xxxxxxx Xxxxx Y.Y: Y XX xxxxxxx xxx xxxxxxx <br> .xxx xxxxxxxx: Y XX xxxxxxx xxx xxxxxxx                                                                           |
-| Xxxxx xxx xxxxxx     | XXXY-YYY xxxxxxxxx                                                   |
+| パッケージのサイズ         | .appxbundle: バンドルあたり最大 25 GB <br>Windows 8.1 を対象とする .appx パッケージ: パッケージあたり最大 8 GB <br> Windows 8 を対象とする .appx パッケージ: パッケージあたり最大 2 GB <br> Windows Phone 8.1 を対象とする .appx パッケージ: パッケージあたり最大 4 GB <br> .xap パッケージ: パッケージあたり最大 1 GB                                                                           |
+| ブロック マップ ハッシュ     | SHA2-256 アルゴリズム                                                   |
  
 
-## XxxxxXxxxxxxx XXX xxxx
+## StoreManifest XML ファイル
 
-XxxxxXxxxxxxx.xxx xx xx xxxxxxxx xxxxxxxxxxxxx xxxx xxxx xxx xx xxxxxxxx xx xxx xxxxxxxx. Xxx xxxxxxx xx xx xxxxxx xxxxxxxx, xxxx xx xxxxxxxxx xxxx xxx xx x Xxxxxxx Xxxxx xxxxxx xxx xx xxxxxxxxx xxxxxxxxxxxx xxxx x xxxxxxx xxxxxxx xx xx xx xxxxxxxxxx xx x xxxxxx, xxxx xxx xxxxxxx xxxxxxxx xxxx xxx xxxxx. XxxxxXxxxxxxx.xxx xx xxxxxxxxx xxxx xxx xxx xxxxxxx xxx xxxx xx xx xxx xxxx xxxxxx xx xxxx xxx'x xxxx xxxxxxx. Xxx xxxx xxxx, xxx [XxxxxXxxxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/mt617325).
+StoreManifest.xml は、必要に応じてアプリ パッケージに含めることのできる構成ファイルです。 その目的は、Windows ストア デバイス アプリとしてアプリを宣言する機能や、パッケージ マニフェストの対象外となるデバイスに適用される要件を宣言する機能などを有効にすることです。 StoreManifest.xml はアプリ パッケージと共に提出し、アプリのメイン プロジェクトのルート フォルダーにあることが必要です。 詳しくは、「[StoreManifest スキーマ](https://msdn.microsoft.com/library/windows/apps/mt617325)」をご覧ください。
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

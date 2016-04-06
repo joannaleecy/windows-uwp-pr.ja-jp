@@ -1,29 +1,29 @@
 ---
-xxxxxxxxxxx: Xxxx xxx xxxxxxxxxx xxxxx xxx xxx xxxx xxxxxxxxxx xx xxxxxxxx xxxxxxxxxxxxxx xxxx xxxx xxx xxx xx xxx xxxxxxxxxx.
-xxxxx: Xxxxxxx xxxxxxxxxxxxxx xx xxx xxxxxxxxxx
-xx.xxxxxxx: YYYXYXYY-YYYY-YYYX-YYXY-YYXYYYYXYXXY
+description: Apps use background tasks and two main mechanisms to maintain communications when they are not in the foreground.
+title: Network communications in the background
+ms.assetid: 537F8E16-9972-435D-85A5-56D5764D3AC2
 ---
 
-# Xxxxxxx xxxxxxxxxxxxxx xx xxx xxxxxxxxxx
+# Network communications in the background
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn806009)
--   [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032)
+-   [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009)
+-   [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
 
-Xxxx xxx xxxxxxxxxx xxxxx xxx xxx xxxx xxxxxxxxxx xx xxxxxxxx xxxxxxxxxxxxxx xxxx xxxx xxx xxx xx xxx xxxxxxxxxx: Xxx xxxxxx xxxxxx, xxx xxxxxxx xxxxxxx xxxxxxxx. Xxxx xxxx xxx xxxxxxx xxx xxxxxxxx xxxxxxxxx xx x xxxxxx xx x xxxxxx xxxxxx xxxxxx xxxx xxxx xxxxx xxx xxxxxxxxxx. Xxx xxxxxx xxxx xxxxxxxxx xxx xxx xxxx xxxxxxx xxxxxxx xx xxx xxxxxx, xxxxxxxxx xxxxxxxxx xxxx xx xxx xxx, xxx xxx xxx xxxxxxxxx xxx xxxxxxxx xxxxxxx.
+Apps use background tasks and two main mechanisms to maintain communications when they are not in the foreground: The socket broker, and control channel triggers. Apps that use sockets can delegate ownership of a socket to a system socket broker when they leave the foreground. The broker then activates the app when traffic arrives on the socket, transfers ownership back to the app, and the app processes the arriving traffic.
 
-## Xxxxxx xxxxxx xxx xxx XxxxxxXxxxxxxxXxxxxxx
+## Socket broker and the SocketActivityTrigger
 
-Xx xxxx xxx xxxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241319), [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882), xx [**XxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226906) xxxxxxxxxxx, xxxx xxx xxxxxx xxx [**XxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn806009) xxx xxx xxxxxx xxxxxx xx xx xxxxxxxx xxxx xxxxxxx xxxxxxx xxx xxxx xxx xxxxx xx'x xxx xx xxx xxxxxxxxxx.
+If your app uses [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) connections, then you should use [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) and the socket broker to be notified when traffic arrives for your app while it's not in the foreground.
 
-Xx xxxxx xxx xxxx xxx xx xxxxxxx xxx xxxxxxx xxxx xxxxxxxx xx x xxxxxx xxxx xxxx xxx xx xxx xxxxxx, xxxx xxx xxxx xxxxxxx xxxx xxx-xxxx xxxxx xx xxxxxxx, xxx xxxx xxxxxxxx xxxxxx xxxxxxxxx xx xxx xxxxxx xxxxxx xxxx xx xx xxxxxxxxxxxxx xx x xxxxx xxxxx xx xx xxx xxxxxx.
+In order for your app to receive and process data received on a socket when your app is not active, your app must perform some one-time setup at startup, and then transfer socket ownership to the socket broker when it is transitioning to a state where it is not active.
 
--   Xxx xxx-xxxx xxxxx xxxxx xxx:
+-   The one-time setup steps are:
 
-    -   Xxxxxx x XxxxxxXxxxxxxxXxxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx xxx xxx xxxxxxx xxxx xxx XxxxXxxxxXxxxx xxxxxxxxx xxx xx xxxx xxxx xxx xxxxxxxxxx x xxxxxxxx xxxxxx.
+    -   Create a SocketActivityTrigger and register a background task for the trigger with the TaskEntryPoint parameter set to your code for processing a received packet.
 
 ```csharp
             var socketTaskBuilder = new BackgroundTaskBuilder(); 
@@ -49,15 +49,15 @@ Xx xxxxx xxx xxxx xxx xx xxxxxxx xxx xxxxxxx xxxx xxxxxxxx xx x xxxxxx xxxx xxxx
            await _tcpListener.BindServiceNameAsync("my-service-name"); 
 ```
 
--   Xxx xxxxxx xx xxxx xx xxxxxxx xx:
+-   The action to take at suspend is:
 
-    Xxxx xxxx xxx xx xxxxx xx xxxxxxx, xxxx **XxxxxxxxXxxxxxxxx** xx xxx xxxxxx xx xxxxxxxx xx xx x xxxxxx xxxxxx. Xxx xxxxxx xxxxxxxx xxx xxxxxx xxx xxxxxxxxx xxxx xxxxxxxxxx xxxx xxxx xxxx xx xxxxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxxxxx x xxxxxxx **XxxxxxxxXxxxxxxxx** xxxxxxxx xx xxxxxxx xxx xxxxxxxx xxx **XxxxxxXxxxxxXxxxxxxx** xxxxxxx. (Xxxx xxxx xxx xxxxxxxxx xxxxx xx xxxxxxx xxxx xxxx xxxxx xxx **XxxxxxxxXxxxxxxxx** xxxxxx, xx xxx xxxx xxxx xxx xxxxxx xxxxxxxxxxx xxx xxx xxxxxx xxxxx xxxxxxxxx xxx xxx xxxxxxxxxxxx. Xxxx xxxx xxxxx xxxxxxxx xxxxxxx xx xxxxxxxxxx **XxxxxxxxXxxxxxxxx** xxxxxx xxxx xxx xxxxxxxxxxxxxx xxx xxxx xxxxxx xxxx xxx xxx, xx xxxx xxx **XxXxxxxxxxxx** xxxx xxxxxxx xxxx xx xxxx.)
+    When your app is about to suspend, call **TransferOwnership** on the socket to transfer it to a socket broker. The broker monitors the socket and activates your background task when data is received. The following example includes a utility **TransferOwnership** function to perform the transfer for **StreamSocketListener** sockets. (Note that the different types of sockets each have their own **TransferOwnership** method, so you must call the method appropriate for the socket whose ownership you are transferring. Your code would probably contain an overloaded **TransferOwnership** helper with one implementation for each socket type you use, so that the **OnSuspending** code remains easy to read.)
 
-    Xx xxx xxxxxxxxx xxxxxxxxx xx x xxxxxx xx x xxxxxx xxxxxx xxx xxxxxx xxx XX xxx xxx xxxxxxxxxx xxxx xxxxx xxx xxxxxxxxxxx xxx xx xxx xxxxxxxxx xxxxxxx:
+    An app transfers ownership of a socket to a socket broker and passes the ID for the background task using the appropriate one of the following methods:
 
-    -   Xxx xx xxx [**XxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn804256) xxxxxxx xx x [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241319).
-    -   Xxx xx xxx [**XxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn781433) xxxxxxx xx x [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882).
-    -   Xxx xx xxx [**XxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn804407) xxxxxxx xx x [**XxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226906).
+    -   One of the [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804256) methods on a [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319).
+    -   One of the [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn781433) methods on a [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882).
+    -   One of the [**TransferOwnership**](https://msdn.microsoft.com/library/windows/apps/dn804407) methods on a [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906).
 
 ```csharp
     private void TransferOwnership(StreamSocketListener tcpListener) 
@@ -80,15 +80,15 @@ Xx xxxxx xxx xxxx xxx xx xxxxxxx xxx xxxxxxx xxxx xxxxxxxx xx x xxxxxx xxxx xxxx
     } 
 ```
 
--  Xx xxxx xxxxxxxxxx xxxx'x xxxxx xxxxxxx:
+-  In your background task's event handler:
 
-   -  Xxxxx, xxx x xxxxxxxxxx xxxx xxxxxxxx xx xxxx xxx xxx xxxxxx xxx xxxxx xxxxx xxxxxxxxxxxx xxxxxxx.
+   -  First, get a background task deferral so that you can handle the event using asynchronous methods.
 
 ```csharp
 var deferral = taskInstance.GetDeferral();
 ```
 
-   -  Xxxx, xxxxxxx xxx XxxxxxXxxxxxxxXxxxxxxXxxxxxx xxxx xxx xxxxx xxxxxxxxx, xxx xxxx xxx xxxxxx xxxx xxx xxxxx xxx xxxxxx:
+   -  Next, extract the SocketActivityTriggerDetails from the event arguments, and find the reason that the event was raised:
 
 ```csharp
 var details = taskInstance.TriggerDetails as SocketActivityTriggerDetails; 
@@ -143,38 +143,38 @@ case SocketActivityTriggerReason.SocketClosed:
             break; 
 ```
 
--   Xxx'x xxxxxx xx Xxxxxxxx xxxx xxxxxxxx, xxxx xxx xxxx xxxxxxxx xxxxxxxxxx xxx xxxxx xxxxxxxxxxxx:
+-   Don't forget to Complete your deferral, once you have finished processing the event notification:
 
 ```csharp
   deferral.Complete();
 ```
 
-Xxx x xxxxxxxx xxxxxx xxxxxxxxxxxxx xxx xxx xx xxx [**XxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn806009) xxx xxxxxx xxxxxx, xxx xxx [XxxxxxXxxxxxxxXxxxxxXxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=620606). Xxx xxxxxxxxxxxxxx xx xxx xxxxxx xx xxxxxxxxx xx XxxxxxxxY\_Xxxxxxx.xxxx.xx, xxx xxx xxxxxxxxxx xxxx xxxxxxxxxxxxxx xx xx XxxxxxXxxxxxxxXxxx.xx.
+For a complete sample demonstrating the use of the [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009) and socket broker, see the [SocketActivityStreamSocket sample](http://go.microsoft.com/fwlink/p/?LinkId=620606). The initialization of the socket is performed in Scenario1\_Connect.xaml.cs, and the background task implementation is in SocketActivityTask.cs.
 
-Xxx xxxx xxxxxxxx xxxxxx xxxx xxx xxxxxx xxxxx **XxxxxxxxXxxxxxxxx** xx xxxx xx xx xxxxxxx x xxx xxxxxx xx xxxxxxxx xx xxxxxxxx xxxxxx, xxxxxx xxxx xxxxx xxx **XxXxxxxxxxxx** xxxx xxxxxxx xx xx xx xx xxxxxxxxx xx xxxx xxxxx. Xxxx xx xxxxxxx xxx xxxxxx xxxxxxx xx xxxxxxxxxxxxx xxx [**XxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn806009), xxx xxxxx'x xxx xxx xxxxxx xxx xxx xxxxx xxxxxxxx xxxxx xx xx xxxxxxx. Xxxx xxx xxxx xxxxxxxx xx xxxx xxxxxxx, xxx xxxxxx xxx **XxXxxxxxxxxx** xx xxxxxxxxx xxxx xx xxxx **XxxxxxxxXxxxxxxxx**.
+You will probably notice that the sample calls **TransferOwnership** as soon as it creates a new socket or acquires an existing socket, rather than using the **OnSuspending** even handler to do so as described in this topic. This is because the sample focuses on demonstrating the [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009), and doesn't use the socket for any other activity while it is running. Your app will probably be more complex, and should use **OnSuspending** to determine when to call **TransferOwnership**.
 
-## Xxxxxxx xxxxxxx xxxxxxxx
+## Control channel triggers
 
-Xxxxx, xxxxxx xxxx xxx'xx xxxxx xxxxxxx xxxxxxx xxxxxxxx (XXXx) xxxxxxxxxxxxx. Xx xxx'xx xxxxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241319), [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882), xx [**XxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226906) xxxxxxxxxxx, xx xxxxxxxxx xxx xxx [**XxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn806009). Xxx xxx xxx XXXx xxx **XxxxxxXxxxxx**, xxx xxxx xxx xxxx xxxxxxxxx xxx xxxxx xxx xxxx xx Xxxxxxxxx Xxxxxxx xxxx.
+First, ensure that you're using control channel triggers (CCTs) appropriately. If you're using [**DatagramSocket**](https://msdn.microsoft.com/library/windows/apps/br241319), [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), or [**StreamSocketListener**](https://msdn.microsoft.com/library/windows/apps/br226906) connections, we recommend you use [**SocketActivityTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806009). You can use CCTs for **StreamSocket**, but they use more resources and might not work in Connected Standby mode.
 
-Xx xxx xxx xxxxx XxxXxxxxxx, [**XXXXXXXXXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**Xxxxxx.Xxx.Xxxx.XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639) xx **Xxxxxxx.Xxx.Xxxx.XxxxXxxxxx**, xxx xxxx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+If you are using WebSockets, [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151), [**System.Net.Http.HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) or **Windows.Web.Http.HttpClient**, you must use [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
-## XxxxxxxXxxxxxxXxxxxxx xxxx XxxXxxxxxx
+## ControlChannelTrigger with WebSockets
 
-Xxxx xxxxxxx xxxxxxxxxxxxxx xxxxx xxxx xxxxx [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032). Xxxxx xxx xxxx xxxxxxxxx-xxxxxxxx xxxxx xxxxxxxx xxx xxxx xxxxxxxxx xxxx xxxxxx xx xxxxxxxx xxxx xxxxx x **XxxxxxxXxxXxxxxx** xx **XxxxxxXxxXxxxxx** xxxx **XxxxxxxXxxxxxxXxxxxxx**. Xx xxxxxxxx, xxxxx xxxxxxxxxxxxxx xxxxxx xxx xxx xxxx xxxxxxxx xx xxxxxxx xxxxxxx xx xxx **XxxxxxXxxXxxxxx** xxx xxxxxxx. Xxxxxxxx xx xxxxxxx xxxxxxx xx xxx **XxxxxxxXxxXxxxxx** xxx xxx xxxxxxxx.
+Some special considerations apply when using [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). There are some transport-specific usage patterns and best practices that should be followed when using a **MessageWebSocket** or **StreamWebSocket** with **ControlChannelTrigger**. In addition, these considerations affect the way that requests to receive packets on the **StreamWebSocket** are handled. Requests to receive packets on the **MessageWebSocket** are not affected.
 
-Xxx xxxxxxxxx xxxxx xxxxxxxx xxx xxxx xxxxxxxxx xxxxxx xx xxxxxxxx xxxx xxxxx [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032):
+The following usage patterns and best practices should be followed when using [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032):
 
--   Xx xxxxxxxxxxx xxxxxx xxxxxxx xxxx xx xxxx xxxxxx xx xxx xxxxx. Xxxx xx xxxxxxxx xx xxxxx xxx xxxx xxxxxxxxxxxx xxxxx xx xxxxx.
--   Xxx XxxXxxxxx xxxxxxxx xxxxxxx x xxxxxxxx xxxxx xxx xxxx-xxxxx xxxxxxxx. Xxx [**XxxXxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701531) xxxxx xxx xxxx xxxxxx-xxxxxxxxx XxxXxxxxx xxxxxxxx xxxx-xxxxx xxxxxxxx xx xxx xxxxxx. Xxx **XxxXxxxxxXxxxXxxxx** xxxxx xxxxxx xx xxxxxxxxxx xx xxx XxxxXxxxxXxxxx xxx x XxxxXxxxxXxxxxxx xx xxx xxx.
+-   An outstanding socket receive must be kept posted at all times. This is required to allow the push notification tasks to occur.
+-   The WebSocket protocol defines a standard model for keep-alive messages. The [**WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) class can send client-initiated WebSocket protocol keep-alive messages to the server. The **WebSocketKeepAlive** class should be registered as the TaskEntryPoint for a KeepAliveTrigger by the app.
 
-Xxxx xxxxxxx xxxxxxxxxxxxxx xxxxxx xxx xxx xxxx xxxxxxxx xx xxxxxxx xxxxxxx xx xxx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxx xxxxxxx. Xx xxxxxxxxxx, xxxx xxxxx x **XxxxxxXxxXxxxxx** xxxx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032), xxxx xxx xxxx xxx x xxx xxxxx xxxxxxx xxx xxxxxxxx xxxxx xxxxxxx xx xxx **xxxxx** xxxxx xx X# xxx XX.XXX xx Xxxxx xx X++. Xxx xxx xxxxx xxxxxxx xx xxxxxxxxxxx xx x xxxx xxxxxx xxxxx xx xxxx xxxxxxx.
+Some special considerations affect the way that requests to receive packets on the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) are handled. In particular, when using a **StreamWebSocket** with the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), your app must use a raw async pattern for handling reads instead of the **await** model in C# and VB.NET or Tasks in C++. The raw async pattern is illustrated in a code sample later in this section.
 
-Xxxxx xxx xxx xxxxx xxxxxxx xxxxxx Xxxxxxx xx xxxxxxxxxxx xxx [**XXxxxxxxxxxXxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/br224811) xxxxxx xx xxx xxxxxxxxxx xxxx xxx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032) xxxx xxx xxxxxx xx xxx xxxxxxx xxxxxxxxxx xxxxxxxx. Xxx **Xxx** xxxxxx xx xxxxxxx xxxxx xxx xxxxxxxxxx xxxxxxxx xxxxxxx. Xxxx xxxxxxx xxxx xxx xxx xxx xxxxxxxx xxx xxxx/xxxxxx xxxxxx xxx **Xxx** xxxxxx xx xxxxxxx.
+Using the raw async pattern allows Windows to synchronize the [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method on the background task for the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) with the return of the receive completion callback. The **Run** method is invoked after the completion callback returns. This ensures that the app has received the data/errors before the **Run** method is invoked.
 
-Xx xx xxxxxxxxx xx xxxx xxxx xxx xxx xxx xx xxxx xxxxxxx xxxx xxxxxx xx xxxxxxx xxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxx. Xx xx xxxx xxxxxxxxx xx xxxx xxxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208119) xxxxxx xx xxxxxxxx xxxx xxxx xxx [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxxxxxxxx xxxxx xxxx xxxxxx xxx xxxxxxxxxxxxxxx xxxxxxxxx xxxxx. Xx xx xxx xxxxxxxxx xx xxx xxx [**XxxxXxxxxx.XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208135) xxxxxx xxxxxxxx xx xxx xx xxx xxxxxxxxx. Xxxxxxx, xxx [**XXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241656) xxxxxxxx xx xxx [**XXxxxxXxxxxx.XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241719) xxxxxx xx xxx [**XxxxxxXxxXxxxxx.XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226936) xxxxxxxx xxx xx xxxxx xxxxxx xx [**XxxxXxxxxx.XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208133) xxxxxx xxx xxxxxxx xxxxxxxxxx.
+It is important to note that the app has to post another read before it returns control from the completion callback. It is also important to note that the [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) cannot be directly used with the [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) transport since that breaks the synchronization described above. It is not supported to use the [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/br208135) method directly on top of the transport. Instead, the [**IBuffer**](https://msdn.microsoft.com/library/windows/apps/br241656) returned by the [**IInputStream.ReadAsync**](https://msdn.microsoft.com/library/windows/apps/br241719) method on the [**StreamWebSocket.InputStream**](https://msdn.microsoft.com/library/windows/apps/br226936) property can be later passed to [**DataReader.FromBuffer**](https://msdn.microsoft.com/library/windows/apps/br208133) method for further processing.
 
-Xxx xxxxxxxxx xxxxxx xxxxx xxx xx xxx x xxx xxxxx xxxxxxx xxx xxxxxxxx xxxxx xx xxx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923).
+The following sample shows how to use a raw async pattern for handling reads on the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
 
 ```csharp
 void PostSocketRead(int length) 
@@ -217,9 +217,9 @@ void PostSocketRead(int length)
 }
 ```
 
-Xxx xxxx xxxxxxxxxx xxxxxxx xx xxxxxxxxxx xx xxxx xxxxxx xxx [**XXxxxxxxxxxXxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/br224811) xxxxxx xx xxx xxxxxxxxxx xxxx xxx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032) xx xxxxxxx. Xxxxxxx xxx xxxxxxxx xxxxxxxxxxxxxxx xx xxxx xxx xx xxx xx xxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxxxxx. Xxx xxx xxxxxxxxx xxxxxxx xxxxxxxxx xxx xxxx xx xxx xxxxx xxxx xxx [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xx xxx xxxx xxxxxxxxxx xxxxxxxx. Xxx xxxxxxx xxxxxx xx xxxxxxxxx xxxxxx xxx xxxxxxx xx xxx **XXxxxxxxxxxXxxx.Xxx** xxxxxx. Xx xxxx xxxxxx xxxxx, xxxx xxxxx xx xxxxxxxxxxx xx xxxxx x xxxxxxx xxxxx xxxx xxx xxxx xxxxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxx xxxx xxx xxx xxxxxxxxxx xxxx xxxxx xxxxxxxxx.
+The read completion handler is guaranteed to fire before the [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method on the background task for the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) is invoked. Windows has internal synchronization to wait for an app to return from the read completion callback. The app typically quickly processes the data or the error from the [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) in the read completion callback. The message itself is processed within the context of the **IBackgroundTask.Run** method. In this sample below, this point is illustrated by using a message queue that the read completion handler inserts the message into and the background task later processes.
 
-Xxx xxxxxxxxx xxxxxx xxxxx xxx xxxx xxxxxxxxxx xxxxxxx xx xxx xxxx x xxx xxxxx xxxxxxx xxx xxxxxxxx xxxxx xx xxx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923).
+The following sample shows the read completion handler to use with a raw async pattern for handling reads on the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
 
 ```csharp
 public void OnDataReadCompletion(uint bytesRead, DataReader readPacket)
@@ -258,16 +258,16 @@ public void OnDataReadCompletion(uint bytesRead, DataReader readPacket)
 }
 ```
 
-Xx xxxxxxxxxx xxxxxx xxx Xxxxxxxxxx xx xxx xxxx-xxxxx xxxxxxx. Xxx XxxXxxxxx xxxxxxxx xxxxxxx x xxxxxxxx xxxxx xxx xxxx-xxxxx xxxxxxxx.
+An additional detail for Websockets is the keep-alive handler. The WebSocket protocol defines a standard model for keep-alive messages.
 
-Xxxx xxxxx [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923), xxxxxxxx x[**XxxXxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701531) xxxxx xxxxxxxx xx xxx [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224774) xxx x XxxxXxxxxXxxxxxx xx xxxxx xxx xxx xx xx xxxxxxxxxxx xxx xxxx xxxx-xxxxx xxxxxxxx xx xxx xxxxxx (xxxxxx xxxxxxxx) xxxxxxxxxxxx. Xxxx xxxxxx xx xxxx xx xxxx xx xxx xxxxxxxxxx xxxxxxxxxxxx xxx xxxx xx xxxx xx xx xxx xxxxxxx xxxxxxxx.
+When using [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), register a[**WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) class instance as the [**TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774) for a KeepAliveTrigger to allow the app to be unsuspended and send keep-alive messages to the server (remote endpoint) periodically. This should be done as part of the background registration app code as well as in the package manifest.
 
-Xxxx xxxx xxxxx xxxxx xx [**Xxxxxxx.Xxxxxxx.XxxXxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701531) xxxxx xx xx xxxxxxxxx xx xxx xxxxxx:
+This task entry point of [**Windows.Sockets.WebSocketKeepAlive**](https://msdn.microsoft.com/library/windows/apps/hh701531) needs to be specified in two places:
 
--   Xxxx xxxxxxxx XxxxXxxxxXxxxxxx xxxxxxx xx xxx xxxxxx xxxx (xxx xxxxxxx xxxxx).
--   Xx xxx xxx xxxxxxx xxxxxxxx xxx xxx xxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxxx.
+-   When creating KeepAliveTrigger trigger in the source code (see example below).
+-   In the app package manifest for the keepalive background task declaration.
 
-Xxx xxxxxxxxx xxxxxx xxxx x xxxxxxx xxxxxxx xxxxxxxxxxxx xxx x xxxxxxxxx xxxxxxx xxxxx xxx &xx;Xxxxxxxxxxx&xx; xxxxxxx xx xx xxx xxxxxxxx.
+The following sample adds a network trigger notification and a keepalive trigger under the &lt;Application&gt; element in an app manifest.
 
 ```xml
   <Extensions>
@@ -288,9 +288,9 @@ Xxx xxxxxxxxx xxxxxx xxxx x xxxxxxx xxxxxxx xxxxxxxxxxxx xxx x xxxxxxxxx xxxxxxx
   </Extensions> 
 ```
 
-Xx xxx xxxx xx xxxxxxxxx xxxxxxx xxxx xxxxx xx **xxxxx** xxxxxxxxx xx xxx xxxxxxx xx x [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032) xxx xx xxxxxxxxxxxx xxxxxxxxx xx x [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923), [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842), xx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882). X **Xxxx&xx;xxxx&xx;** xxxxxx xxx xx xxxx xx xxxxxxxx x **XxxxxxxXxxxxxxXxxxxxx** xxx xxxx xxxxxxxxxxxx xxx XxxXxxxxx xxxx-xxxxxx xx xxx **XxxxxxXxxXxxxxx** xxx xxxxxxx xxx xxxxxxxxx. Xx xxxx xx xxx xxxxxxxxxxxx, xxx **XxxxxxXxxXxxxxx** xxxxxxxxx xx xxx xx xxx xxxxxxxxx xxx xxx **XxxxxxxXxxxxxxXxxxxxx** xxx x xxxx xx xxxxxx. Xxx **Xxxx.Xxxxxx** xxxx xxxxx xxx xxxxxxx xxxxxx xxxxx xxx xxxxx xx xxx xxxx xxxxxxx xxx xxxxxx xxxxxxxxxx xx xxxxxxx xxxx. Xxx xxxx xx xxx xxxxxxxx xxxxx xxx xxxxxx xxxxxxx xxxxxx xxxx xx xxxxx. Xxxx xxxxxxxxxx xxxx xxx xxxxx xxxxxx xx xxxxxxxx. Xxx **Xxxx** xxx xxxxxxx xxxxxxxx **xxxxx** xxxxxxxxxx xxxx xxx xxxxxxxxx xx xxx **Xxxx**. Xxxx xxxxxxx xxxxxx xx xxxx xxxx xxx **XxxxxxxXxxxxxxXxxxxxx** xxxxxx xxxx x **XxxxxxXxxXxxxxx** xx **XxxxxxxXxxXxxxxx** xx xxxx xx xxx xxxxxxxxx. Xxx xxxxx xxxxxxxxxx xxxx xxx xxxx x xxxx xxxxxx xx xxxx xx xxxxxxxx (x xxxxxxx xxxxx xxxx xxxxxxxxx, xxx xxxxxxx), xxx xxx xxxxxx xxx xxx xxx xxxxx xxxxxxx xxxxxxxxx xxxxxxxxxx.
+An app must be extremely careful when using an **await** statement in the context of a [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and an asynchronous operation on a [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), or [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882). A **Task&lt;bool&gt;** object can be used to register a **ControlChannelTrigger** for push notification and WebSocket keep-alives on the **StreamWebSocket** and connect the transport. As part of the registration, the **StreamWebSocket** transport is set as the transport for the **ControlChannelTrigger** and a read is posted. The **Task.Result** will block the current thread until all steps in the task execute and return statements in message body. The task is not resolved until the method returns either true or false. This guarantees that the whole method is executed. The **Task** can contain multiple **await** statements that are protected by the **Task**. This pattern should be used with the **ControlChannelTrigger** object when a **StreamWebSocket** or **MessageWebSocket** is used as the transport. For those operations that may take a long period of time to complete (a typical async read operation, for example), the app should use the raw async pattern discussed previously.
 
-Xxx xxxxxxxxx xxxxxx xxxxxxxxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032) xxx xxxx xxxxxxxxxxxx xxx XxxXxxxxx xxxx-xxxxxx xx xxx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923).
+The following sample registers [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) for push notification and WebSocket keep-alives on the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923).
 
 ```csharp
 private bool RegisterWithControlChannelTrigger(string serverUri)
@@ -426,23 +426,23 @@ async Task<bool> RegisterWithCCTHelper(string serverUri)
 }
 ```
 
-Xxx xxxx xxxxxxxxxxx xx xxxxx [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032), xxx xxx [XxxxxxxXxxxxxxXxxxxxx XxxxxxXxxXxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=251232).
+For more information on using [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), see the [ControlChannelTrigger StreamWebSocket sample](http://go.microsoft.com/fwlink/p/?linkid=251232).
 
-## XxxxxxxXxxxxxxXxxxxxx xxxx XxxxXxxxxx
+## ControlChannelTrigger with HttpClient
 
-Xxxx xxxxxxx xxxxxxxxxxxxxx xxxxx xxxx xxxxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032). Xxxxx xxx xxxx xxxxxxxxx-xxxxxxxx xxxxx xxxxxxxx xxx xxxx xxxxxxxxx xxxx xxxxxx xx xxxxxxxx xxxx xxxxx x [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxx **XxxxxxxXxxxxxxXxxxxxx**. Xx xxxxxxxx, xxxxx xxxxxxxxxxxxxx xxxxxx xxx xxx xxxx xxxxxxxx xx xxxxxxx xxxxxxx xx xxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxx xxxxxxx.
+Some special considerations apply when using [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). There are some transport-specific usage patterns and best practices that should be followed when using a [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with **ControlChannelTrigger**. In addition, these considerations affect the way that requests to receive packets on the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) are handled.
 
-**Xxxx**[XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxxx XXX xx xxx xxxxxxxxx xxxxxxxxx xxxxx xxx xxxxxxx xxxxxxx xxxxxxx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+**Note**  [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) using SSL is not currently supported using the network trigger feature and [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
  
-Xxx xxxxxxxxx xxxxx xxxxxxxx xxx xxxx xxxxxxxxx xxxxxx xx xxxxxxxx xxxx xxxxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032):
+The following usage patterns and best practices should be followed when using [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032):
 
--   Xxx xxx xxx xxxx xx xxx xxxxxxx xxxxxxxxxx xxx xxxxxxx xx xxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xx [XxxxXxxxxxXxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241638) xxxxxx xx xxx [Xxxxxx.Xxx.Xxxx](http://go.microsoft.com/fwlink/p/?linkid=227894) xxxxxxxxx xxxxxx xxxxxxx xxx xxxxxxx xx xxx xxxxxxxx XXX.
--   Xx xxx xxx xxxx xx xxxx xxxx xx xx xxxxxxx xxxxxxx xx xxxx xxx xxxxx xxx xxxxxxxxx xxxxxxxx xxxxxx xxxxxxxx xxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxxxxxxx xx xx xxxx xxxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032). Xxxx xxx xxx xxxxxxxxxx xxxx xxx xxxxxxxxx xxx xx xxxxxxxx xxxxx, xx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxxxx xxx xx xxxxxxxxxx xx xxx xxxxxxxxx xxxxxx xxxx xxxx xxx **XxxxxxxXxxxxxxXxxxxxx** xxxxxx. Xxxx xxxxxxx xx xxxxxxxx xxxxxxx xxxx xxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxx. Xxxxx XXX xxxx x xxxxxxxxxxx, xx xxx xxx xxxxxxx x xxxxxx xx xx xxxxxxxxx xxx XXX xxxxx xx xx xxxxx xxx xxxxxxxx xxxxxxxxxxxx xx xxxxxx xxxx. Xxxxx xxxxxxxxxxxxxx xxx xxxxxx xxxxxxxxxxxxxx xxx xx xxxxxxxx. Xx xxx xxxxx xx xxxxxx xxxxxxxxxxxxxx xxxxxxx, xxx xxxxxxxxxx xxx xx xxxxxx. Xxx xxx xx xxx xxx xxxx xxxx xxxxx xxxxxxxxxxxxxx xxxxxxxxxx xxxxxx xx xx xxx x xxxxx. Xxxx xx XXXX xxxxxxxx xx xxxxxxxx, xx xx xxx xxxxxxxxxx xxxx xxx xxxxxx xxxxxxxxxx xxx xx xxxxxxxxxxx xxxxxxxx. Xx xxxxxxx xxxx xxxxxxx xxxx xxxxxx xxxx xxx xxx xxx xxx xxx xxxx xx-xx-xxxx xxxxxxxxxx XXX xxxxxx xxxxx xxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxxxx xx xxx xxxxxxxxx xxxx xxx **XxxxxxxXxxxxxxXxxxxxx** xxxxxx.
+-   The app may need to set various properties and headers on the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) or [HttpClientHandler](http://go.microsoft.com/fwlink/p/?linkid=241638) object in the [System.Net.Http](http://go.microsoft.com/fwlink/p/?linkid=227894) namespace before sending the request to the specific URI.
+-   An app may need to make need to an initial request to test and setup the transport properly before creating the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) transport to be used with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Once the app determines that the transport can be properly setup, an [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) object can be configured as the transport object used with the **ControlChannelTrigger** object. This process is designed prevent some scenarios from breaking the connection established over the transport. Using SSL with a certificate, an app may require a dialog to be displayed for PIN entry or if there are multiple certificates to choose from. Proxy authentication and server authentication may be required. If the proxy or server authentication expires, the connection may be closed. One way an app can deal with these authentication expiration issues is to set a timer. When an HTTP redirect is required, it is not guaranteed that the second connection can be established reliably. An initial test request will ensure that the app can use the most up-to-date redirected URL before using the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) object as the transport with the **ControlChannelTrigger** object.
 
-Xxxxxx xxxxx xxxxxxx xxxxxxxxxx, xxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxxxx xxxxxx xx xxxxxxxx xxxxxx xxxx xxx [**XxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701175) xxxxxx xx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032) xxxxxx. Xxxxxxx, xx [XxxxXxxxxxxXxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=259153) xxxxxx xxxx xx xxxxxxxxx xxxxxxxxxxx xxx xxx xxxx xxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxxxx xxx xxx **XxxxxxxXxxxxxxXxxxxxx**. Xxx [XxxxXxxxxxxXxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=259153) xxxxxx xx xxxxxxx xxxxx xxx [XxxXxxxxxxXxxxxxx.Xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=259154) xxxxxx. Xxx [XxxxXxxxxxxXxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=259153) xxxxxx xxxx xx xxxxxxx xx xxxx xxxxxx xx **XxxxxXxxxxxxxx** xxxxxx .
+Unlike other network transports, the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) object cannot be directly passed into the [**UsingTransport**](https://msdn.microsoft.com/library/windows/apps/hh701175) method of the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) object. Instead, an [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) object must be specially constructed for use with the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) object and the **ControlChannelTrigger**. The [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) object is created using the [RtcRequestFactory.Create](http://go.microsoft.com/fwlink/p/?linkid=259154) method. The [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) object that is created is then passed to **UsingTransport** method .
 
-Xxx xxxxxxxxx xxxxxx xxxxx xxx xx xxxxxxxxx xx [XxxxXxxxxxxXxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=259153) xxxxxx xxx xxx xxxx xxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxxxx xxx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+The following sample shows how to construct an [HttpRequestMessage](http://go.microsoft.com/fwlink/p/?linkid=259153) object for use with the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) object and the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
 ```csharp
 using System;
@@ -484,13 +484,13 @@ private void SetupHttpRequestAndSendToHttpServer()
 }
 ```
 
-Xxxx xxxxxxx xxxxxxxxxxxxxx xxxxxx xxx xxx xxxx xxxxxxxx xx xxxx XXXX xxxxxxxx xx xxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xx xxxxxxxx xxxxxxxxx x xxxxxxxx xxx xxxxxxx. Xx xxxxxxxxxx, xxxx xxxxx x [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032), xxxx xxx xxxx xxx x Xxxx xxx xxxxxxxx xxxxx xxxxxxx xx xxx **xxxxx** xxxxx.
+Some special considerations affect the way that requests to send HTTP requests on the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) to initiate receiving a response are handled. In particular, when using a [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), your app must use a Task for handling sends instead of the **await** model.
 
-Xxxxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637), xxxxx xx xx xxxxxxxxxxxxxxx xxxx xxx [**XXxxxxxxxxxXxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/br224811) xxxxxx xx xxx xxxxxxxxxx xxxx xxx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032) xxxx xxx xxxxxx xx xxx xxxxxxx xxxxxxxxxx xxxxxxxx. Xxx xxxx xxxxxx, xxx xxx xxx xxxx xxx xxx xxxxxxxx XxxxXxxxxxxxXxxxxxx xxxxxxxxx xx xxx **Xxx** xxxxxx xxx xxxx xxxxx xxx xxxxx xxxxxxxx xx xxxxxxxx.
+Using [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637), there is no synchronization with the [**IBackgroundTask.Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method on the background task for the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) with the return of the receive completion callback. For this reason, the app can only use the blocking HttpResponseMessage technique in the **Run** method and wait until the whole response is received.
 
-Xxxxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032) xx xxxxxxxxxx xxxxxxxxx xxxx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226882), [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxxxxxxxxx . Xxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxxxxx xxxxxxxx xx xxxxxxxxx xxx x Xxxx xx xxx xxx xxxxx xxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxx. Xxxx xxxxx xxxx xxx **XxxxxxxXxxxxxxXxxxxxx** xxxx xxxxxxxxxxxx xxxx xxxx xxxx xx xxxx xx xxx xxxx xx xxxxx xx xxxxxxxxxx xx xxx xxx. Xx xxx xxxxxx xxxxx, xxx xxxx xxxxxx xxx xxxxxxxxXxxx xxxxxxxx xx [XxxxXxxxxx.XxxxXxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxxxx xxxx xxxxxx xxxxxxx xxxx xxx xxxx xxxxxx xxxx xxxx xxxx xx xxx xxxxxxx xxxxxx.
+Using [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) is noticeably different from the [**StreamSocket**](https://msdn.microsoft.com/library/windows/apps/br226882), [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) transports . The [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) receive callback is delivered via a Task to the app since the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) code. This means that the **ControlChannelTrigger** push notification task will fire as soon as the data or error is dispatched to the app. In the sample below, the code stores the responseTask returned by [HttpClient.SendAsync](http://go.microsoft.com/fwlink/p/?linkid=241637) method into global storage that the push notify task will pick up and process inline.
 
-Xxx xxxxxxxxx xxxxxx xxxxx xxx xx xxxxxx xxxx xxxxxxxx xx xxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxx xxxx xxxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+The following sample shows how to handle send requests on the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) when used with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
 ```csharp
 using System;
@@ -535,7 +535,7 @@ private void SendHttpRequest()
 }
 ```
 
-Xxx xxxxxxxxx xxxxxx xxxxx xxx xx xxxx xxxxxxxxx xxxxxxxx xx xxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxx xxxx xxxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032).
+The following sample shows how to read responses received on the [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) when used with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032).
 
 ```csharp
 using System.Net;
@@ -576,18 +576,22 @@ public string ReadResponse(Task<HttpResponseMessage> httpResponseTask)
 }
 ```
 
-Xxx xxxx xxxxxxxxxxx xx xxxxx [XxxxXxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241637) xxxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032), xxx xxx [XxxxxxxXxxxxxxXxxxxxx XxxxXxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=258323).
+For more information on using [HttpClient](http://go.microsoft.com/fwlink/p/?linkid=241637) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), see the [ControlChannelTrigger HttpClient sample](http://go.microsoft.com/fwlink/p/?linkid=258323).
 
-## XxxxxxxXxxxxxxXxxxxxx xxxx XXXXXxxxXxxxxxxY
+## ControlChannelTrigger with IXMLHttpRequest2
 
-Xxxx xxxxxxx xxxxxxxxxxxxxx xxxxx xxxx xxxxx [**XXXXXXXXXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh831151) xxxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032). Xxxxx xxx xxxx xxxxxxxxx-xxxxxxxx xxxxx xxxxxxxx xxx xxxx xxxxxxxxx xxxx xxxxxx xx xxxxxxxx xxxx xxxxx x **XXXXXXXXXxxxxxxY** xxxx **XxxxxxxXxxxxxxXxxxxxx**. Xxxxx **XxxxxxxXxxxxxxXxxxxxx** xxxx xxx xxxxxx xxx xxx xxxx xxxxxxxx xx xxxx xx xxxxxxx XXXX xxxxxxxx xx xxx **XXXXXXXXXxxxxxxY** xxx xxxxxxx.
+Some special considerations apply when using [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). There are some transport-specific usage patterns and best practices that should be followed when using a **IXMLHTTPRequest2** with **ControlChannelTrigger**. Using **ControlChannelTrigger** does not affect the way that requests to send or receive HTTP requests on the **IXMLHTTPRequest2** are handled.
 
-Xxxxx xxxxxxxx xxx xxxx xxxxxxxxx xxxx xxxxx [**XXXXXXXXXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh831151) xxxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032)
+Usage patterns and best practices when using [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)
 
--   Xx [**XXXXXXXXXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh831151) xxxxxx xxxx xxxx xx xxx xxxxxxxxx xxx x xxxxxxxx xx xxxx xxx xxxxxxx/xxxxxxxx. Xxxx xxxx xxxx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032) xxxxxx, xx xx xxxxxxxxxx xx xxxxxx xxx xxx xx xxx **XxxxxxxXxxxxxxXxxxxxx** xxxxxx xxxx xxx xxxx xxxx xxx [**XxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701175) xxxxxx xxxxxxxxxx, xxxx xxxx xxxxxxxxxxx x xxx **XXXXXXXXXxxxxxxY** xxxxxx. Xx xxx xxxxxx xxxxxx xxx xxxxxxxx **XXXXXXXXXxxxxxxY** xxxxxx xxxxxx xxxxxxxxx x xxx **XXXXXXXXXxxxxxxY** xxxxxx xx xxxxxx xxxx xxx xxx xxxx xxx xxxxxx xxx xxxxxxxxx xxxxxxxx xxxxxx.
--   Xxx xxx xxx xxxx xx xxxx xxx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh831167) xxx [**XxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh831168) xxxxxxx xx xxx xx xxx XXXX xxxxxxxxx xxxxxx xxxxxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/desktop/hh831164) xxxxxx.
--   Xx xxx xxx xxxx xx xxxx xxxx xx xx xxxxxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/desktop/hh831164) xxxxxxx xx xxxx xxx xxxxx xxx xxxxxxxxx xxxxxxxx xxxxxx xxxxxxxx xxx xxxxxxxxx xx xx xxxx xxxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032). Xxxx xxx xxx xxxxxxxxxx xxxx xxx xxxxxxxxx xx xxxxxxxx xxxxx, xxx [**XXXXXXXXXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh831151) xxxxxx xxx xx xxxxxxxxxx xx xxx xxxxxxxxx xxxxxx xxxx xxxx xxx **XxxxxxxXxxxxxxXxxxxxx**. Xxxx xxxxxxx xx xxxxxxxx xxxxxxx xxxx xxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxx. Xxxxx XXX xxxx x xxxxxxxxxxx, xx xxx xxx xxxxxxx x xxxxxx xx xx xxxxxxxxx xxx XXX xxxxx xx xx xxxxx xxx xxxxxxxx xxxxxxxxxxxx xx xxxxxx xxxx. Xxxxx xxxxxxxxxxxxxx xxx xxxxxx xxxxxxxxxxxxxx xxx xx xxxxxxxx. Xx xxx xxxxx xx xxxxxx xxxxxxxxxxxxxx xxxxxxx, xxx xxxxxxxxxx xxx xx xxxxxx. Xxx xxx xx xxx xxx xxxx xxxx xxxxx xxxxxxxxxxxxxx xxxxxxxxxx xxxxxx xx xx xxx x xxxxx. Xxxx xx XXXX xxxxxxxx xx xxxxxxxx, xx xx xxx xxxxxxxxxx xxxx xxx xxxxxx xxxxxxxxxx xxx xx xxxxxxxxxxx xxxxxxxx. Xx xxxxxxx xxxx xxxxxxx xxxx xxxxxx xxxx xxx xxx xxx xxx xxx xxxx xx-xx-xxxx xxxxxxxxxx XXX xxxxxx xxxxx xxx **XXXXXXXXXxxxxxxY** xxxxxx xx xxx xxxxxxxxx xxxx xxx **XxxxxxxXxxxxxxXxxxxxx** xxxxxx.
+-   An [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) object when used as the transport has a lifetime of only one request/response. When used with the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) object, it is convenient to create and set up the **ControlChannelTrigger** object once and then call the [**UsingTransport**](https://msdn.microsoft.com/library/windows/apps/hh701175) method repeatedly, each time associating a new **IXMLHTTPRequest2** object. An app should delete the previous **IXMLHTTPRequest2** object before supplying a new **IXMLHTTPRequest2** object to ensure that the app does not exceed the allocated resource limits.
+-   The app may need to call the [**SetProperty**](https://msdn.microsoft.com/library/windows/desktop/hh831167) and [**SetRequestHeader**](https://msdn.microsoft.com/library/windows/desktop/hh831168) methods to set up the HTTP transport before calling [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) method.
+-   An app may need to make need to an initial [**Send**](https://msdn.microsoft.com/library/windows/desktop/hh831164) request to test and setup the transport properly before creating the transport to be used with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). Once the app determines that the transport is properly setup, the [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) object can be configured as the transport object used with the **ControlChannelTrigger**. This process is designed prevent some scenarios from breaking the connection established over the transport. Using SSL with a certificate, an app may require a dialog to be displayed for PIN entry or if there are multiple certificates to choose from. Proxy authentication and server authentication may be required. If the proxy or server authentication expires, the connection may be closed. One way an app can deal with these authentication expiration issues is to set a timer. When an HTTP redirect is required, it is not guaranteed that the second connection can be established reliably. An initial test request will ensure that the app can use the most up-to-date redirected URL before using the **IXMLHTTPRequest2** object as the transport with the **ControlChannelTrigger** object.
 
-Xxx xxxx xxxxxxxxxxx xx xxxxx [**XXXXXXXXXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh831151) xxxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032), xxx xxx [XxxxxxxXxxxxxxXxxxxxx xxxx XXXXXXXXXxxxxxxY xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=258538).
+For more information on using [**IXMLHTTPRequest2**](https://msdn.microsoft.com/library/windows/desktop/hh831151) with [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032), see the [ControlChannelTrigger with IXMLHTTPRequest2 sample](http://go.microsoft.com/fwlink/p/?linkid=258538).
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

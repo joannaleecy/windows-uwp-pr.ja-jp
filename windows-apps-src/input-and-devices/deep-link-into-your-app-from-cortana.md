@@ -1,153 +1,214 @@
 ---
-Xxxxxxxxxxx: Xxxxxxx xxxx xxxxx xxxx xxx xxxxxxxxxx xxx xxxxxxx xx Xxxxxxx xx xxxxxx xxx xxx xx xxx xxxxxxxxxx xx x xxxxxxxx xxxxx xx xxxxxxx.
-xxxxx: Xxxx xxxx xxxx Xxxxxxx xx x xxxxxxxxxx xxx
-xx.xxxxxxx: XXYYYXYY-YYYY-YYYX-YYXY-YXYYXYYXYYYY
-xxxxx: Xxxx xxxx xx x xxxxxxxxxx xxx
-xxxxxxxx: xxxxxx.xxx
+Description: Provide deep links from the background app service in Cortana to launch the app to the foreground in a specific state or context.
+title: Deep link from Cortana to a background app
+ms.assetid: BE811A87-8821-476A-90E4-2E20D37E4043
+label: Deep link to a background app
+template: detail.hbs
 ---
 
-# Xxxx xxxx xxxx Xxxxxxx xx x xxxxxxxxxx xxx
+# Deep link from Cortana to a background app
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**Xxxxxxx.XxxxxxxxxxxXxxxx.XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706594)
--   [**Xxxxx Xxxxxxx Xxxxxxxxxx (XXX) xxxxxxxx xxx xxxxxxxxxx xY.Y**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+-   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
+-   [**Voice Command Definition (VCD) elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-Xxxxxxx xxxx xxxxx xxxx xxx xxxxxxxxxx xxx xxxxxxx xx **Xxxxxxx** xx xxxxxx xxx xxx xx xxx xxxxxxxxxx xx x xxxxxxxx xxxxx xx xxxxxxx.
+Provide deep links from a background app in **Cortana** that launch the app to the foreground in a specific state or context.
 
-X xxxx xxxx xx xxxxxxxxx xx xxxxxxx xx xxx **Xxxxxxx** xxxxxxxxxx xxxxxx, xxx xxx xxx xxxxxxx xxxx xxxxx xx xxxxxxx xxxxx xxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxx xxxx x xxxxxxxxxx xxx xx Xxxxxxx](interact-with-a-background-app-in-cortana.md).
+> **Note**  
+Both **Cortana** and the background app service are terminated when the foreground app is launched.
 
-**Xxxxxxxxxxxxx:  **
+A deep link is displayed by default on the **Cortana** completion screen as shown here ("Go to AdventureWorks"), but you can display deep links on various other screens. 
 
-Xxxx xxxxx xxxxxx xx [Xxxxxxxx xxxx x xxxxxxxxxx xxx xx Xxxxxxx](interact-with-a-background-app-in-cortana.md). Xx xxxxxxxx xxxxx x xxxx xxxxxxxx xxx xxxxxxxxxx xxx xxxxx **Xxxxxxxxx Xxxxx** xx xxxxxxxxxxx xxxxxxx **Xxxxxxx** xxxxxxxx.
+![cortana background app completion screen](images/cortana-completion-screen-upcomingtrip-small.png)
 
-Xx xxx'xx xxx xx xxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx, xxxx x xxxx xxxxxxx xxxxx xxxxxx xx xxx xxxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx xxxx.
+**Prerequisites:  **
 
--   [Xxxxxx xxxx xxxxx xxx](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Xxxxx xxxxx xxxxxx xxxx [Xxxxxx xxx xxxxxx xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185584)
+This topic builds on [Interact with a background app in Cortana](interact-with-a-background-app-in-cortana.md). We continue using a trip planning and management app named **Adventure Works** to demonstrate various **Cortana** features.
 
-**Xxxx xxxxxxxxxx xxxxxxxxxx:  **
+If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
 
-Xxx [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233) xxx xxxx xxxxx xxx xx xxxxxxxxx xxxx xxx xxxx **Xxxxxxx** xxx [Xxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121) xxx xxxxxxx xxxx xx xxxxxxxxx x xxxxxx xxx xxxxxxxx xxxxxx-xxxxxxx xxx.
+-   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
 
-## <span id="Overview">
-            </span>
-            <span id="overview">
-            </span>
-            <span id="OVERVIEW">
-            </span>Xxxxxxxx
+**User experience guidelines:  **
 
+See [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233) for info about how to integrate your app with **Cortana** and [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121) for helpful tips on designing a useful and engaging speech-enabled app.
 
-Xxxxx xxx xxxxxx xxxx xxx xxxxxxx **Xxxxxxx** xx:
-
--   Xxxxxxxxx xx xx x xxxxxxxxxx xxx (xxx [Xxxxxx x xxxxxxxxxx xxx xxxx xxxxx xxxxxxxx xx Xxxxxxx](launch-a-foreground-app-with-voice-commands-in-cortana.md)).
--   Xxxxxxxx xxxxxxxx xxxxxxxxxxxxx xx x xxxxxxxxxx xxx xxxxxxx (xxx [Xxxxxx x xxxxxxxxxx xxx xxxx xxxxx xxxxxxxx xx Xxxxxxx](launch-a-background-app-with-voice-commands-in-cortana.md)).
--   Xxxx xxxxxxx xx xxxxxxxx xxxxx, xxxxxxx, xxx xxxxx xx xxxxxxx.
-
-Xx xxxxxxx xxx xxxx xxxx xxxx.
-
-Xxxx xxxxxxx xx xxxxxx xxxx Xxxxxxx xxx xxxx xxx xxxxxxx xxx x xxxxxxx xx xxx xxxx xxx (xxxxxxx xx xxxxxxxxx xxx xxxx xx xxxxxx xxxx xxx xxxxxxx xxx Xxxxx xxxx), xx xxx xxxxxxxxx xxxxxx xx xxxxxx xxxxxx xxx xxxxxxxxxxxxx xxxxxx xxxx xxx xxxx xx xxx xxxxxxxx xxxxxxx Xxxxxxx. Xxxx xxxxxxx xx xxxxxxx xxx xx xxxxxxxx xxxxxxxxx xxx xxxxxx xx xxxx xxx.
-
-Xxxxx xxx xxxxx xxxx xx xxxxxxx xxxx xxxxx:
-
--   X "Xx xx &xx;xxx&xx;" xxxx xx xxxxxxx **Xxxxxxx** xxxxxxx.
--   X xxxx xxxxxxxx xx x xxxxxxx xxxx xx xxxxxxx **Xxxxxxx** xxxxxxx.
--   Xxx xxx xxxxxxx xxxxxxxxxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxx.
-
-Xxxx **Xxxxxxx** xxx xxx xxxxxxxxxx xxx xxxxxxx xxx xxxxxxxxxx xxxx xxx xxxxxxxxxx xxx xx xxxxxxxx.
-
-## <span id="Go_to__app__deep_link">
-            </span>
-            <span id="go_to__app__deep_link">
-            </span>
-            <span id="GO_TO__APP__DEEP_LINK">
-            </span>"Xx xx &xx;xxx&xx;" xxxx xxxx
+## <span id="Overview"></span><span id="overview"></span><span id="OVERVIEW"></span>Overview
 
 
-**Xxxxxxx** xxx xxxxxx x "Xx xx &xx;xxx&xx;" xxxx xxxx xxxxx xxx xxxxxxx xxxx xx xxxxxxx xxxxxxx.
+Users can access your app through **Cortana** by:
 
-![xxxxxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxx](images/cortana-completion-screen.png)
+-   Activating it as a foreground app (see [Activate a foreground app with voice commands through Cortana](launch-a-foreground-app-with-voice-commands-in-cortana.md)).
+-   Exposing specific functionality as a background app service (see [Activate a background app with voice commands through Cortana](launch-a-background-app-with-voice-commands-in-cortana.md)).
+-   Deep linking to specific pages, content, and state or context.
 
-Xxx xxx xxxxxxx x xxxxxx xxxxxxxx xxx xxxx xxxx xx xxxx xxxx xxx xxxx xxxxxxx xxxxxxx xx xxx xxx xxxxxxx. Xx xxx xxx'x xxxxxxx x xxxxxx xxxxxxxx, xxx xxx xx xxxxxxxx xx xxx xxxx xxxxxx.
+We discuss deep linking here.
 
-Xxxx, xx xxx xx [**XxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974183) xxxxxxxxx xxxx x xxxxx xx "Xxx Xxxxx" xx x [**XxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974182) xxxxxx xxxx xx xxx [**XxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706580) xxxx xx xxx [**XxxxxXxxxxxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974204). xxxxxx
+Deep linking is useful when Cortana and your app service act as a gateway to your full-featured app (instead of requiring the user to launch the app through the Start menu), or for providing access to richer detail and functionality within your app that is not possible through Cortana. Deep linking is another way to increase usability and promote your app.
 
-```CSharp
-var userMessage = new VoiceCommandUserMessage();
-string keepingTripToDestination = string.Format(
-  cortanaResourceMap.GetValue("KeepingTripToDestination", 
-    cortanaContext).ValueAsString, destination);
-userMessage.DisplayMessage = userMessage.SpokenMessage = 
-  keepingTripToDestination;
+There are three ways to provide deep links:
 
-response = VoiceCommandResponse.CreateResponse(userMessage);
-response.AppLaunchArgument = “Las Vegas”;
-await voiceServiceConnection.ReportSuccessAsync(response);
+-   A "Go to &lt;app&gt;" link on various **Cortana** screens.
+-   A link embedded in a content tile on various **Cortana** screens.
+-   Programmatically launching the foreground app from the background app service.
+
+## <span id="Go_to__app__deep_link"></span><span id="go_to__app__deep_link"></span><span id="GO_TO__APP__DEEP_LINK"></span>"Go to &lt;app&gt;" deep link
+
+
+**Cortana** displays a "Go to &lt;app&gt;" deep link below the content card on most screens.
+
+![cortana background app completion screen](images/cortana-completion-screen.png)
+
+You can provide a launch argument for this link that opens your app in similar context as the app service. If you don't provide a launch argument, the app is launched to the main screen.
+
+In this example from AdventureWorksVoiceCommandService.cs of the **AdventureWorks** sample, we pass the specified destination to the SendCompletionMessageForDestination method, which retrieves all matching trips and provides a deep link to the app.
+
+First, we create a  [**VoiceCommandUserMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```) that is spoken by **Cortana** and shown on the **Cortana** canvas. A [**VoiceCommandContentTile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) list object is then created for displaying the collection of result cards on the canvas. 
+
+These two objects are then passed to the [CreateResponse](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) method of the [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) object (```response```). We then set the [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) property value to the value of the destination in the voice command.
+
+Finally, we call the [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) method of the [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204).
+
+```csharp
+/// <summary>
+/// Show details for a single trip, if the trip can be found. 
+/// This demonstrates a simple response flow in Cortana.
+/// </summary>
+/// <param name="destination">The destination specified in the voice command.</param>
+private async Task SendCompletionMessageForDestination(string destination)
+{
+...
+    IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
+
+    var userMessage = new VoiceCommandUserMessage();
+    var destinationsContentTiles = new List<VoiceCommandContentTile>();
+...
+    var response = VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
+
+    if (trips.Count() > 0)
+    {
+        response.AppLaunchArgument = destination;
+    }
+
+    await voiceServiceConnection.ReportSuccessAsync(response);
+}
 ```
 
-## <span id="Content_tile_deep_link">
-            </span>
-            <span id="content_tile_deep_link">
-            </span>
-            <span id="CONTENT_TILE_DEEP_LINK">
-            </span>Xxxxxxx xxxx xxxx xxxx
+
+## <span id="Content_tile_deep_link"></span><span id="content_tile_deep_link"></span><span id="CONTENT_TILE_DEEP_LINK"></span>Content tile deep link
 
 
-Xxx xxx xxxxxxx xxxx xxxxxxx xxxx xxxx xxxxx xx xxxxxxx **Xxxxxxx** xxxxxxx.
+You can add deep links to content cards on various **Cortana** screens.
 
-![xxxxxxx xxxxxxxxxx xxx xxxx-xxx xxxxxx ](images/cortana-backgroundapp-progress-result.png)
+![cortana background app hand-off screen ](images/cortana-backgroundapp-progress-result.png)
 
-Xxxx xxx "Xx xx &xx;xxx&xx;" xxxxx, xxx xxx xxxxxxx x xxxxxx xxxxxxxx xx xxxx xxxx xxx xxxx xxxxxxx xxxxxxx xx xxx xxx xxxxxxx. Xx xxx xxx'x xxxxxxx x xxxxxx xxxxxxxx, xxx xxxxxxx xxxx xx xxx xxxxxx xx xxxx xxx.
+Like the "Go to &lt;app&gt;" links, you can provide a launch argument to open your app with similar context as the app service. If you don't provide a launch argument, the content tile does not link to your app.
 
-Xxxx, xx xxx xxx xxxxxxx xxxxx xxxx xxxxxxxxx [**XxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974183) xxxxxxxxx xxxxxx xx x [**XxxxxXxxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn974168) xxxx xxxx xx xxx [**XxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706580) xxxx xx xxx [**XxxxxXxxxxxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974204) xxxxxx.
+In this example from AdventureWorksVoiceCommandService.cs of the **AdventureWorks** sample, we pass the specified destination to the SendCompletionMessageForDestination method, which retrieves all matching trips and provides content cards with deep links to the app.
 
-```CSharp
-var userMessage = new VoiceCommandUserMessage();
-userMessage.DisplayMessage = "Here are your trips.";
-userMessage.SpokenMessage = 
-  "You have two trips to Vegas coming up.";
+First, we create a  [**VoiceCommandUserMessage**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandusermessage.aspx) (```userMessage```) that is spoken by **Cortana** and shown on the **Cortana** canvas. A [**VoiceCommandContentTile**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandcontenttile.aspx) list object is then created for displaying the collection of result cards on the canvas. 
 
-var destinationsContentTiles = new List<VoiceCommandContentTile>();
+These two objects are then passed to the [CreateResponse](https://msdn.microsoft.com/en-us/library/windows/apps/windows.applicationmodel.voicecommands.voicecommandresponse.createresponse.aspx) method of the [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) object (```response```). We then set the [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) property value to the value of the destination in the voice command.
 
-var destinationTile1 = new VoiceCommandContentTile();
-destinationTile1.ContentTileType = 
-  VoiceCommandContentTileType.TitleWith68x68IconAndText;
-destinationTile1.AppLaunchArgument = “id_Vegas_001";
-destinationTile1.Title = "Las Vegas Tech Conference";
-destinationTile1.TextLine1 = "May 15th 2015";
-destinationsContentTiles.Add(destinationTile1);
+Finally, we call the [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) method of the [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204).
+Here, we add two content tiles with different [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) parameter values to a [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/dn974168) list used in the [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) call of the [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) object.
 
-var destinationTile2 = new VoiceCommandContentTile();
-destinationTile2.ContentTileType = 
-  VoiceCommandContentTileType.TitleWith68x68IconAndText;
-destinationTile2.AppLaunchArgument = “id_Vegas_002";
-destinationTile2.Title = "Fun in Vegas";
-destinationTile2.TextLine1 = "August 24th 2015";
-destinationsContentTiles.Add(destinationTile2);
+```csharp
+/// <summary>
+/// Show details for a single trip, if the trip can be found. 
+/// This demonstrates a simple response flow in Cortana.
+/// </summary>
+/// <param name="destination">The destination specified in the voice command.</param>
+private async Task SendCompletionMessageForDestination(string destination)
+{
+    // If this operation is expected to take longer than 0.5 seconds, the task must
+    // supply a progress response to Cortana before starting the operation, and
+    // updates must be provided at least every 5 seconds.
+    string loadingTripToDestination = string.Format(
+               cortanaResourceMap.GetValue("LoadingTripToDestination", cortanaContext).ValueAsString,
+               destination);
+    await ShowProgressScreen(loadingTripToDestination);
+    Model.TripStore store = new Model.TripStore();
+    await store.LoadTrips();
 
-var response = 
-  VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
+    // Query for the specified trip. 
+    // The destination should be in the phrase list. However, there might be  
+    // multiple trips to the destination. We pick the first.
+    IEnumerable<Model.Trip> trips = store.Trips.Where(p => p.Destination == destination);
 
-response.AppLaunchArgument = “destination=Las Vegas";
-    
-await voiceServiceConnection.ReportSuccessAsync(response);
+    var userMessage = new VoiceCommandUserMessage();
+    var destinationsContentTiles = new List<VoiceCommandContentTile>();
+    if (trips.Count() == 0)
+    {
+        string foundNoTripToDestination = string.Format(
+               cortanaResourceMap.GetValue("FoundNoTripToDestination", cortanaContext).ValueAsString,
+               destination);
+        userMessage.DisplayMessage = foundNoTripToDestination;
+        userMessage.SpokenMessage = foundNoTripToDestination;
+    }
+    else
+    {
+        // Set plural or singular title.
+        string message = "";
+        if (trips.Count() > 1)
+        {
+            message = cortanaResourceMap.GetValue("PluralUpcomingTrips", cortanaContext).ValueAsString;
+        }
+        else
+        {
+            message = cortanaResourceMap.GetValue("SingularUpcomingTrip", cortanaContext).ValueAsString;
+        }
+        userMessage.DisplayMessage = message;
+        userMessage.SpokenMessage = message;
+
+        // Define a tile for each destination.
+        foreach (Model.Trip trip in trips)
+        {
+            int i = 1;
+            
+            var destinationTile = new VoiceCommandContentTile();
+
+            destinationTile.ContentTileType = VoiceCommandContentTileType.TitleWith68x68IconAndText;
+            destinationTile.Image = await StorageFile.GetFileFromApplicationUriAsync(new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
+
+            destinationTile.AppLaunchArgument = trip.Destination;
+            destinationTile.Title = trip.Destination;
+            if (trip.StartDate != null)
+            {
+                destinationTile.TextLine1 = trip.StartDate.Value.ToString(dateFormatInfo.LongDatePattern);
+            }
+            else
+            {
+                destinationTile.TextLine1 = trip.Destination + " " + i;
+            }
+
+            destinationsContentTiles.Add(destinationTile);
+            i++;
+        }
+    }
+
+    var response = VoiceCommandResponse.CreateResponse(userMessage, destinationsContentTiles);
+
+    if (trips.Count() > 0)
+    {
+        response.AppLaunchArgument = destination;
+    }
+
+    await voiceServiceConnection.ReportSuccessAsync(response);
+}
 ```
-
-## <span id="Programmatic_deep_link">
-            </span>
-            <span id="programmatic_deep_link">
-            </span>
-            <span id="PROGRAMMATIC_DEEP_LINK">
-            </span>Xxxxxxxxxxxx xxxx xxxx
+## <span id="Programmatic_deep_link"></span><span id="programmatic_deep_link"></span><span id="PROGRAMMATIC_DEEP_LINK"></span>Programmatic deep link
 
 
-Xxx xxx xxxx xxxxxxxxxxxxxxxx xxxxxx xxxx xxx xxxx x xxxxxx xxxxxxxx xx xxxx xxxx xxx xxxx xxxxxxx xxxxxxx xx xxx xxx xxxxxxx. Xx xxx xxx'x xxxxxxx x xxxxxx xxxxxxxx, xxx xxx xx xxxxxxxx xx xxx xxxx xxxxxx.
+You can also programmatically launch your app with a launch argument to open your app with similar context as the app service. If you don't provide a launch argument, the app is launched to the main screen.
 
-Xxxx, xx xxx xx [**XxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974183) xxxxxxxxx xxxx x xxxxx xx "Xxx Xxxxx" xx x [**XxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974182) xxxxxx xxxx xx xxx [**XxxxxxxXxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706581) xxxx xx xxx [**XxxxxXxxxxxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974204) xxxxxx.
+Here, we add an [**AppLaunchArgument**](https://msdn.microsoft.com/library/windows/apps/dn974183) parameter with a value of "Las Vegas" to a [**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) object used in the [**RequestAppLaunchAsync**](https://msdn.microsoft.com/library/windows/apps/dn706581) call of the [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) object.
 
 ```CSharp
 var userMessage = new VoiceCommandUserMessage();
@@ -160,17 +221,12 @@ response.AppLaunchArgument = “Las Vegas”;
 await  VoiceCommandServiceConnection.RequestAppLaunchAsync(response);
 ```
 
-## <span id="App_manifest">
-            </span>
-            <span id="app_manifest">
-            </span>
-            <span id="APP_MANIFEST">
-            </span>Xxx xxxxxxxx
+## <span id="App_manifest"></span><span id="app_manifest"></span><span id="APP_MANIFEST"></span>App manifest
 
 
-Xx xxxxxx xxxx xxxxxxx xx xxxx xxx, xxx xxxx xxxxxxx xxx `windows.personalAssistantLaunch` xxxxxxxxx xx xxx Xxxxxxx.xxxxxxxxxxxx xxxx xx xxxx xxx xxxxxxx.
+To enable deep linking to your app, you must declare the `windows.personalAssistantLaunch` extension in the Package.appxmanifest file of your app project.
 
-Xxxx, xx xxxxxxx xxx `windows.personalAssistantLaunch` xxxxxxxxx xxx xxx **Xxxxxxxxx Xxxxx** xxx.
+Here, we declare the `windows.personalAssistantLaunch` extension for the **Adventure Works** app.
 
 ```XML
 <Extensions>
@@ -182,17 +238,12 @@ Xxxx, xx xxxxxxx xxx `windows.personalAssistantLaunch` xxxxxxxxx xxx xxx **Xxxxx
 </Extensions>
 ```
 
-## <span id="Protocol_contract">
-            </span>
-            <span id="protocol_contract">
-            </span>
-            <span id="PROTOCOL_CONTRACT">
-            </span>Xxxxxxxx xxxxxxxx
+## <span id="Protocol_contract"></span><span id="protocol_contract"></span><span id="PROTOCOL_CONTRACT"></span>Protocol contract
 
 
-Xxxx xxx xx xxxxxxxx xx xxx xxxxxxxxxx xxxxxxx Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX) xxxxxxxxxx xxxxx x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224693) xxxxxxxx. Xxxx xxx xxxx xxxxxxxx xxxx xxx'x [**XxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242330) xxxxx xxx xxxxx xxx xx **XxxxxxxxxxXxxx** xx **Xxxxxxxx**. Xxx xxxx xxxx, xxx [Xxxxxx XXX xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt228339).
+Your app is launched to the foreground through Uniform Resource Identifier (URI) activation using a [**Protocol**](https://msdn.microsoft.com/library/windows/apps/br224693) contract. Your app must override your app's [**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) event and check for an **ActivationKind** of **Protocol**. For more info, see [Handle URI activation](https://msdn.microsoft.com/library/windows/apps/mt228339).
 
-Xxxx, xx xxxxxx xxx XXX xxxxxxxx xx xxx [**XxxxxxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224742) xx xxxxxx xxx xxxxxx xxxxxxxx. Xxx xxxx xxxxxxx, xxx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/br224746) xx xxx xx "xxxxxxx.xxxxxxxxxxxxxxxxxxxxxxx:?XxxxxxXxxxxxx=Xxx Xxxxx".
+Here, we decode the URI provided by the [**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742) to access the launch argument. For this example, the [**Uri**](https://msdn.microsoft.com/library/windows/apps/br224746) is set to "windows.personalassistantlaunch:?LaunchContext=Las Vegas".
 
 ```CSharp
 if (args.Kind == ActivationKind.Protocol)
@@ -217,20 +268,19 @@ if (args.Kind == ActivationKind.Protocol)
   }
 ```
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>Related articles
 
 
-**Xxxxxxxxxx**
-* [Xxxxxxx xxxxxxxxxxxx](cortana-interactions.md)
-* [**XXX xxxxxxxx xxx xxxxxxxxxx xY.Y**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+**Developers**
+* [Cortana interactions](cortana-interactions.md)
+* [**VCD elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-**Xxxxxxxxx**
-* [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233)
-* [Xxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121)
+**Designers**
+* [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233)
+* [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
 
-**Xxxxxxx**
-* [Xxxxxxx xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619899)
+**Samples**
+* [Cortana voice command sample](http://go.microsoft.com/fwlink/p/?LinkID=619899)
  
 
  
@@ -238,4 +288,8 @@ if (args.Kind == ActivationKind.Protocol)
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+

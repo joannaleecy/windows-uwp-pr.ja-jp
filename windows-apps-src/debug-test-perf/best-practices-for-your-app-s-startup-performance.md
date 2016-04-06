@@ -1,126 +1,126 @@
 ---
-xx.xxxxxxx: YYXXXYXY-YYYY-YXYX-YYYY-YYXXYYXYYXYY
-xxxxx: Xxxx xxxxxxxxx xxx xxxx xxx'x xxxxxxx xxxxxxxxxxx
-xxxxxxxxxxx: Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxxx xxxxxxx xxxxx xx xxxxxxxxx xxx xxx xxx xxxxxx xxxxxx xxx xxxxxxxxxx.
+ms.assetid: 00ECF6C7-0970-4D5F-8055-47EA49F92C12
+title: アプリ起動時のパフォーマンスのベスト プラクティス
+description: 起動とアクティブ化を処理する方法を向上させることによって、最適な起動時間のユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 ---
-# Xxxx xxxxxxxxx xxx xxxx xxx'x xxxxxxx xxxxxxxxxxx
+# アプリ起動時のパフォーマンスのベスト プラクティス
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxxx xxxxxxx xxxxx xx xxxxxxxxx xxx xxx xxx xxxxxx xxxxxx xxx xxxxxxxxxx.
+起動とアクティブ化を処理する方法を向上させることによって、最適な起動時間のユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 
-## Xxxx xxxxxxxxx xxx xxxx xxx'x xxxxxxx xxxxxxxxxxx
+## アプリ起動時のパフォーマンスのベスト プラクティス
 
-Xx xxxx, xxxxx xxxxxxxx xxxxxxx xxxx xxx xx xxxx xx xxxx xxxxx xx xxx xxxx xx xxxxx xx xxxxx xx. Xxx xxx xxxxxxxx xx xxxx xxxxx, xx xxx'x xxxxxxx xxxx xxxxxx xxxx xxx xxxx xxxxxx xxx xxx, xxx xxxx xxxx xxx xxxx xxx xxxxxxxx xxxx xxx xxx xx xxxx xxxxxxxxxx xxx. Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xx xxx xx xxx xxxxxx xxxxxxxxxxx xxx xx xxxx xxx xxxx xx xxxxxx.
+ユーザーがアプリを速いまたは遅いと判断する要因の 1 つとして、アプリの起動にかかる時間があります。 このトピックの目的上、アプリの起動時間は、ユーザーがアプリを開始した際に始まり、ユーザーがアプリに対して何らかの意図を持つ操作を開始できるようになった時点で終わるものとします。 このセクションでは、アプリ起動時のパフォーマンスを向上させるための推奨事項を紹介します。
 
-### Xxxxxxxxx xxxx xxx'x xxxxxxx xxxx
+### アプリの起動時間の測定
 
-Xx xxxx xx xxxxx xxxx xxx x xxx xxxxx xxxxxx xxx xxxxxxxx xxxxxxx xxx xxxxxxx xxxx. Xxxx xxxxx xxx x xxxxxxxx xxx xxxx xxxxxxxxxxx xxx xxxxxxx xxxx xxx'xx xxxxxxxxx xx xxxxxxxxxx xxxxx x xxxxxxx xxxx xx xxxxxxxx.
+アプリを数回起動してから、実際に起動時間を測定するようにしてください。 これによって測定のベースラインが確立され、起動時間を合理的に可能な限り短縮できます。
 
-Xx xxx xxxx xxxx XXX xxx xxxxxxx xx xxxx xxxxxxxxx' xxxxxxxxx, xxxx xxx xxx xxxx xxxxxxxx xxxx xxx .XXX Xxxxxx xxxxxxxxx. .XXX Xxxxxx xx xx xxxxx-xx-xxxx xxxxxxxxxxx xxxxxxxxxx xxxx xxxxxxxx XXXX xxxx xxxxxxxx-xxxxxxxx xxxxxxx xxxx. .XXX Xxxxxx xxxx xxxxx xxxxxx, xxx xxxx xxxxxx, xxx xxx xxxx xxxxxxx xxxx xxxxx XXXX xxxxxxxxxxxx. Xxxxxxxxxxxx xxxxx xxxx .XXX Xxxxxx xxxxxxxxxx xxxx xx x xxxxxx xxxxxxx xxx xxx xxx xxxxxxxxx .XXX Xxxx xxxx xxx xxx xx xxx xxxxxxx, xx xxxx xxx’x xxxxxx xx xxx xx-xxx .XXX xxxxxxxxxxxxxx. Xx xxxx xxxxxxxxxxx xxxxxxx, xx xxxxxxx xxxx xxx xxxx .XXX Xxxxxx xx xxx’xx xxxxxxxx xx xx “Xxxxxxx” xxxx, xxx xx xxxx XxxxXXX xx xxx’xx xxxxxxxx xx xx “Xxxxx” xxxx. Xxx xxx xxxxxxxxx xxxx xx Xxxxxx Xxxxxx xxxx xxx Xxxxx xxxx xx “Xxxxxxxxxx” (X#) xx Xxxxxxx->Xxxxxxxx xx "Xx Xxxxxxx" (XX). Xxxx xxx x xxxxxxxx xxxx xxxx “Xxxxxxx xxxx .XXX Xxxxxx Xxxxxxxxx”.
+UWP アプリがユーザーのコンピューターに届くまで、アプリは .NET ネイティブ ツール チェーンを使ってコンパイルされてきました。 .NET ネイティブは、MSIL をネイティブに実行可能なマシン コードに変換する事前コンパイル テクノロジです。 .NET ネイティブ アプリは、MSIL アプリに比べて、すばやく起動し、メモリ使用量やバッテリ使用量は少なくなります。 .NET ネイティブを使ってビルドされたアプリケーションはカスタム ランタイムおよびあらゆるデバイスで実行できる新しい集約型の .NET Core にリンクされるため、インボックスの .NET の実装に依存しません。 開発コンピューターで、既定では、アプリを "リリース" モードでビルドしている場合、アプリは .NET ネイティブを使用し、"デバッグ" モードでビルドしている場合、アプリは CoreCLR を使用します。 Visual Studio では、[プロパティ] の [ビルド] ページ (C# の場合) または [マイ プロジェクト] の [コンパイル] -> [詳細設定] (VB の場合) でこれを構成できます。 [.NET ネイティブ ツール チェーンでコンパイルする] というチェック ボックスを探します。
 
-Xx xxxxxx, xxx xxxxxx xxxx xxxxxxxxxxxx xxxx xxx xxxxxxxxxxxxxx xx xxxx xxx xxx xxxx xxxx xxxxxxxxxx. Xx, xx xxx'xx xxx xxxx xxx'xx xxxxxxxxx xxxx xxx xx xxxxxx xxxx xx xxxx xxxxxxxxxxx xxxxxxx, xxx xxxxx xxx xxx Xxxxxx Xxxxx Xxxxxxxxx (Xxxx.xxx) xxxx xx xxxxxxxxxx xxxx xxx xxxxxx xxx xxxxxxx xxx xxxxxxx xxxx.
+当然、エンド ユーザーが一般的に経験する起動時間を測定する必要があります。 そのため、開発コンピューターでアプリをネイティブ コードにコンパイルしていることを確認していない場合は、起動時間を測定する前に、ネイティブ イメージ ジェネレーター (Ngen.exe) ツールを実行してアプリをプリコンパイルすることができます。
 
-Xxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxx xx xxx Xxxx.xxx xx xxxxxxxxxx xxxx xxx.
+次の手順では、Ngen.exe を実行してアプリをプリコンパイルする方法について説明します。
 
-**Xx xxx Xxxx.xxx**
+**Ngen.exe を実行するには**
 
-1.  Xxx xxxx xxx xx xxxxx xxx xxxx xx xxxxxx xxxx Xxxx.xxx xxxxxxx xx.
-2.  Xxxx xxx **Xxxx Xxxxxxxxx** xx xxxxx xxx xx xxx xxxxxxxxx:
-    -   Xxxxxx xxx "Xxxx Xxxxxxxxx" xxxx xxx xxxxx xxxxxx.
-    -   Xxx "xxxxxxxx.xxx."
-3.  Xx xxx xxxx-xxxx xxxx xx **Xxxx Xxxxxxxxx**, xxxxxx **Xxxx Xxxxxxxxx Xxxxxxx**.
-4.  Xxxxxx **Xxxxxxxxx.**
-5.  Xxxxxx **Xxxxxxx.**
-6.  Xxxxxx **.XXX Xxxxxxxxx**.
-7.  Xxxxxx **.XXX Xxxxxxxxx XXXX Y.x** xxxx xxx xxxx xxxx.
+1.  少なくとも 1 回アプリを実行して、Ngen.exe にアプリを検出させます。
+2.  次のいずれかの方法で**タスク スケジューラ**を開きます。
+    -   スタート画面で「タスク スケジューラ」を検索します。
+    -   taskschd.msc を実行します。
+3.  **タスク スケジューラ**の左ウィンドウで **[タスク スケジューラ ライブラリ]** を展開します。
+4.  **[Microsoft]** を展開します。
+5.  **[Windows]** を展開します。
+6.  **[.NET Framework]** を展開します。
+7.  タスクの一覧から **[.NET Framework NGEN 4.x]** を選択します。
 
-    Xx xxx xxx xxxxx x YY-xxx xxxxxxxx, xxxxx xx xxxx x **.XXX Xxxxxxxxx XXXX xY.x YY**. Xx xxx xxx xxxxxxxx x YY-xxx xxx, xxxxxx .**XXX Xxxxxxxxx XXXX xY.x YY**.
+    64 ビット コンピューターを使っている場合は、**[.NET Framework NGEN v4.x 64]** も表示されます。 64 ビット アプリを開発している場合は、**[NET Framework NGEN v4.x 64]** を選択します。
 
-8.  Xxxx xxx **Xxxxxx** xxxx, xxxxx **Xxx**.
+8.  **[操作]** メニューの **[実行]** をクリックします。
 
-Xxxx.xxx xxxxxxxxxxx xxx xxx xxxx xx xxx xxxxxxx xxxx xxxx xxxx xxxx xxx xx xxx xxxx xxxxxx xxxxxx. Xx xxxxx xxx x xxx xx xxxx xxxx xxxx xx xx xxxxxxxxxxx, xxxx xxx xxxx x xxxx xxxx, xxx xxxxxxxxxx xxxx xxx xxxx xxxxxx.
+Ngen.exe は、使用されたことがありネイティブ イメージを持たない、コンピューター上のすべてのアプリをプリコンパイルします。 プリコンパイルが必要なアプリが多い場合には時間がかかりますが、その後の実行時間が大幅に高速化されます。
 
-Xxxx xxx xxxxxxxxx xxxx xxx, xxx xxxxxx xxxxx xx xx xxxxxx xxxx. Xxxxxxx, xxx xxx xx xxxx-xx-xxxx xxxxxxxx, xxxxx xxxxx xxxx xx xx xxxxxxxx xx xxx xxx xxxx. Xxx xxxx xxxxx Xxxx.xxx xx xxx x xxx xxxxxx xxxxx.
+アプリが再コンパイルされると、ネイティブ イメージは使われなくなります。 一方、アプリをジャスト イン タイムでコンパイルする場合は、アプリは実行時にコンパイルされます。 新しいネイティブ イメージを取得するためには Ngen.exe をもう一度実行する必要があります。
 
-### Xxxxx xxxx xx xxxx xx xxxxxxxx
+### 可能な限りの処理の遅延
 
-Xx xxxxxxxx xxxx xxx'x xxxxxxx xxxx, xx xxxx xxx xxxx xxxx xxxxxxxxxx xxxxx xx xx xxxx xx xxx xxx xxxx xxxxx xxxxxxxxxxx xxxx xxx xxx. Xxxx xxx xx xxxxxxxxxx xxxxxxxxxx xx xxx xxx xxxxx xxxxxxx xxxxxxxxxx xxxxxxxxxx. Xxx xxxxxx xxxxxxxx xxxxxxx xxxxx xx xxxxxxxx xxx xxxxx xxxx xx xx xxxx. Xx xxx xxx xxxxxxxx xxx xxxxxx xx xxxxxxxxxx xxxx xxx xxxxxx, xxx xxxxx xx xxxx xx xxxxxxx xxxx xxx'x xxxxxxx xxxx xxx xxx xxxxxx xxxxxxxxxxx.
+アプリの起動時間を短縮するには、ユーザーがアプリの操作を開始するために絶対に必要な処理だけを実行します。 これが特に有効なのは、追加のアセンブリの読み込みを遅延できる場合です。 共通言語ランタイムを最初に使用する際に、アセンブリが読み込まれます。 ここで読み込まれるアセンブリの数を最小化できれば、アプリの起動時間とメモリ消費を改善できる場合があります。
 
-### Xx xxxx-xxxxxxx xxxx xxxxxxxxxxxxx
+### 長時間の処理の個別実行
 
-Xxxx xxx xxx xx xxxxxxxxxxx xxxx xxxxxx xxxxx xxx xxxxx xx xxx xxx xxxx xxxx'x xxxxx xxxxxxxxxx. Xxx xxxxxxx, xx xxxx xxx xxxxxxxx xxxx xxxx xxxxx x xxxxx xx xxxxxxxx, xxx xxx xxxx xxxx xxxx xxxxxxx xxxxxxxxxxxxx xx xxx xxx'x xxxxxxx xxxx xx xxxxxxxxxx xxx xxxx xxxxxxxxxxxxxx. Xxxx xxx xxxx xx xxxxxxxxx, xxxxxxxx xxx xxx'x xxxx xxxxxxxxx xxxx xxx xxxx.
+アプリが部分的に機能していない場合でも、アプリで操作を受け付けることができます。 たとえば、アプリが表示するデータの取得に時間がかかっている場合に、データを非同期で取得することによって、そのコードをアプリの起動コードとは別に実行できます。 データが利用できる状態であれば、アプリのユーザー インターフェイスにデータを表示することができます。
 
-Xxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XXXx xxxx xxxxxxxx xxxx xxx xxxxxxxxxxxx, xx xxx xxxx xxxxxxxx xx xxxxxxxxxx xxxx xxxxxxxxxxxxxx xxxxxx. Xxx xxxx xxxx xxxxx xxxxxxxxxxxx XXXx, xxx [Xxxx xxxxxxxxxxxx XXXx xx X# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/Mt187337). Xx xxx xx xxxx xxxx xxxxx'x xxx xxxxxxxxxxxx XXXx, xxx xxx xxx xxx Xxxx xxxxx xx xx xxxx xxxxxxx xxxx xx xxxx xxx xxx'x xxxxx xxx xxxx xxxx xxxxxxxxxxx xxxx xxx xxx. Xxxx xxxx xxxx xxxx xxx xxxxxxxxxx xx xxx xxxx xxxxx xxx xxxx xxxxx.
+データを取得するユニバーサル Windows プラットフォーム (UWP) API の多くは非同期であるため、その状態でも、ほとんどの場合はデータが非同期で取得されます。 非同期 API について詳しくは、「[C# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/Mt187337)」をご覧ください。 非同期 API を使わない処理を実行する場合、Task クラスを使って長時間の処理を実行することで、ユーザーによるアプリの操作がブロックされないようにすることができます。 これによってデータの読み込み中もアプリの応答性が維持されます。
 
-Xx xxxx xxx xxxxx xx xxxxxxxxxx xxxx xxxx xx xxxx xxxx xx xxx XX, xxxxxxxx xxxxxx x xxxxxx xx xxxx xxxx xxxx xxxx xxxxxxxxx xxxx, "Xxxxxxx xxxxxx xxxx," xx xxxx xxxx xxxxx xxxx xxxx xxx xxx xx xxxxx xxxxxxxxxx.
+アプリによる UI の一部の読み込みで特に長い時間がかかっている場合、ユーザーにアプリが処理中であることを通知する "最新データの取得中" などの文字列を該当する領域に追加することを検討してください。
 
-## Xxxxxxxx xxxxxxx xxxx
+## 起動時間の最小化
 
-Xxx xxx xxx xxxxxxxx xxxx xxxxxxx x xxxxxxxxxxx xxxxxx xx xxxx xx xxxx xxxxxxxxx, xxxxx XXXX, xxx xx xxxx xxxxxxxxxx, xxx xxx xxxxx xx xxxxxxxxxx. Xxxx, xx xxxxxxx xxx xxxxxxx xx xxxxxxxxxx xx xxxxxxxx xx xxxx xxxxx xxxxxx. Xx xxxx xxxxxxx xxxx xxx xxxxxxxx xxx xxxx xxxxx xx xxxx xxxxx, xxx xxxxxxxxxx xxx xxxxxx xxxx xxxxx xx xxxx xxx'x xxxxxxx xxxx xxxxxxxxx xx xxx xxxx.
+非常にシンプルなアプリを除くほとんどのアプリでは、アクティブ化の際に、リソースを読み込む、XAML を解析する、データ構造をセットアップする、ロジックを実行するという一連の処理に、ユーザーが気付くレベルの時間が必要です。 ここでは、アクティブ化のプロセスを 3 つのフェーズに分けて見ていきます。 また、各フェーズにかかる時間を短縮するためのヒントのほか、アプリの起動の各フェーズを調整し、ユーザーに受け入れられるようにする方法も紹介します。
 
-Xxx xxxxxxxxxx xxxxxx xx xxx xxxx xxxxxxx xxx xxxxxx x xxxx xxxxxx xxx xxx xxx xxx xxxxxx xxx xxx xx xxxxxxxxxx. Xxxx xx x xxxxxxxx xxxx xxxxxxx xx’x x xxxx’x xxxxx xxxxxxxxxx xx xxxx xxx. Xxxx xxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxxxx xxxx xxx xxxxxx xxx xxxx. Xxx xxxxxx xxx xxx xxx xxx xxxxxxxxx xx xx xxxxxx xx xxxxxx xxxxxxxx xxxx xxxx xxx'x xxxxx xxxxxxx. Xxxx xxxxx, xx xx xxx xxxxx xxx xxxx xx xxxxxxxx, xxx Xxxxxxx Xxxxxxxx Xxxxxxx (XXX) xxxxx xxxx xx, xx xxx xxxx xxxxx xxxxxxxxx xx.
+アクティブ化期間とは、ユーザーがアプリを起動してからアプリが機能するまでの時間のことです。 これは、ユーザーがアプリから受ける第一印象となるため、重要な時間です。 ユーザーは、システムやアプリから途切れることなく即座にフィードバックが返ってくることを求めています。 アプリの起動が遅いと、システムやアプリが壊れているか、設計が不完全と受け取られます。 そのうえ、アプリのアクティブ化に時間がかかりすぎると、プロセス有効期間マネージャー (PLM) によってアプリが強制終了されることや、ユーザーがアプリをアンインストールすることさえあります。
 
-### Xxxxxxxxxxxx xx xxx xxxxxx xx xxxxxxx
+### 起動の各段階の概要
 
-Xxxxxxx xxxxxxxx x xxxxxx xx xxxxxx xxxxxx, xxx xxx xx xxxx xxxx xx xx xxxxxxxxx xxxxxxxxxxx xxx xxx xxxx xxxx xxxxxxxxxx. Xxx xxxxxxxxx xxxxx xxxxx xxxxxxx xxxx xxxx xxxxxxxx xx xxxx xxx xxxx xxx xxx xxxxxxxxxxx xxxxxxx xxxxx xxxxx.
+起動には、多くの移動要素があり、最適なユーザー エクスペリエンスのためにそのすべてを正しく調整する必要があります。 次の手順は、ユーザーがアプリのタイルをクリックしてから、アプリケーションのコンテンツが表示されるまでの間に発生します。
 
--   Xxx Xxxxxxx xxxxx xxxxxx xxx xxxxxxx xxx Xxxx xx xxxxxx.
--   Xxx Xxxxxxxxxxx xxxxxx xx xxxxxxx.
-    -   (Xxxxxxx xxxxxxxx) Xxxxxxxxxxx xxxxx XxxxxxxxxxXxxxxxxxx, xxxxx xxxxxx Xxx.xxxx xx xx xxxxxx xxx xxxxxxx xxxxxxx.
--   Xxxxxxxxxxx.XxXxxxxxxx xxxxx xx xxxxxx.
-    -   (XxxxxxxXxxxxxxx) Xxx xxxx xxxxxxx x Xxxxx xxx xxxxxxxxx xx XxxxXxxx.
-    -   (XxxxxxxXxxxxxxx) Xxxxxxxx xxxxxxxxxxx xxxxx XxxxxxxxxxXxxxxxxxx xxxxx xxxxxx XxxxXxxx.xxxx xx xx xxxxxx xxx xxxxxxx xxxxxxx.
-    -   XxxxxxxXxxxxxxx) Xxxxxx.Xxxxxxx.Xxxxxxxx() xx xxxxxx.
--   XXXX Xxxxxxxx xxxx xxx Xxxxxx xxxx xxxxxxxxx Xxxxxxx & Xxxxxxx.
-    -   XxxxxXxxxxxxx xxxx xxxxx xxxxxxx xxxxxxxx xxxxxxx xx xx xxxxxxx xxx xxxx xxxxxxx, xxxxx xx xxxxxxxxx xxx xxxx xx Xxxxxx xxxx xxx xxxxxxx.
--   Xxxxxx xx xxxxxx xx xxxxxx xxxxxxx xxx xxx xxx xxxxxx xxxxxxxx.
--   Xxxxx xx xxxxxxxxx xx xxx Xxxxxxx Xxxxxxx Xxxxxxx (XXX).
+-   Windows シェルがプロセスを開始し、Main が呼び出されます。
+-   Application オブジェクトが作成されます。
+    -   (プロジェクト テンプレート) コンストラクターが InitializeComponent を呼び出し、これにより App.xaml が解析され、オブジェクトが作成されます。
+-   Application.OnLaunched イベントが発生します。
+    -   (ProjectTemplate) アプリ コードがフレームを作成し、MainPage に移動します。
+    -   (ProjectTemplate) メインページのコンストラクターが InitializeComponent を呼び出し、これにより MainPage.xaml が解析され、オブジェクトが作成されます。
+    -   ProjectTemplate) Window.Current.Activate() が呼び出されます。
+-   XAML プラットフォームが、測定と配置を含むレイアウト パスを実行します。
+    -   ApplyTemplate によって、各コントロールについてコントロール テンプレートのコンテンツが作成されます。これは、通常、起動のレイアウトの時間の大部分を占めます。
+-   Render が呼び出されて、すべてのウィンドウのコンテンツの視覚効果が作成されます。
+-   デスクトップ ウィンドウ マネージャー (DWM) にフレームが表示されます。
 
-### Xx xxxx xx xxxx Xxxxxxx xxxx
+### 起動パスでの処理を少なくする
 
-Xxxx xxxx xxxxxxx xxxx xxxx xxxx xxxx xxxxxxxx xxxx xx xxx xxxxxx xxx xxxx xxxxx xxxxx.
+起動コード パスには、最初のフレームで不要なものは含めないでください。
 
--   Xx xxx xxxx xxxx xxxx xxxxxxxxxx xxxxxxxx xxxx xxx xxx xxxxxx xxxxxx xxxxx xxxxx, xxxxxxxx xxxxx xxxxxxx xxxx.
--   Xx xxx xxxx x xxxxxxx xx xxxx XX xxxxxxxxx xx xxxx xxxx xxx xxxxx, xxxx xxxxx xxxx XX. Xxxxx, xxxxx xx xxx XX xxxx xx xxx xxxxxxxxx xx xxxxx xxxx xxx xxxxxxxxxxxxxx xxxxx xx xxx xxxxx-xxxxxxxxx XX. Xxx xxxxxx xxxx xxxxxxxx xxxxxxx xxxx xxxxxxx xx xxxx xxx xxxxxxxxxxx xxxx xxxx xxxxxxx xx xxx xx xxxxxxxx xx xxxx xxxxxxx xxxxxxxxxxxx.
--   Xxxx xxxxxxxx XX xx xxxx XX xx xxxxxxx xxx xxxx.
--   Xx xxxxxxxx xx xxx xxxxxxx xxxx xxxxxxx x xxx xx xxxxxxx xx xxxxxxxxxxxxx xxxxx, xx XX xxxx xx xxxxxxxxxxx xxxxxxxxx xx xxxx.
+-   最初のフレームで不要なコントロールが含まれているユーザー dll を使っている場合は、読み込みを遅らせることを検討します。
+-   UI の一部をクラウドからデータに依存している場合は、その UI を分割します。 最初に、クラウド データに依存しない UI を表示し、非同期的にクラウドに依存する UI を表示します。 アプリケーションがオフラインで動作したり、低速ネットワーク接続に影響されないようにするために、データをローカルにキャッシュすることも検討します。
+-   UI がデータを待機している場合は、進行状況 UI を表示します。
+-   大量の構成ファイルの解析やコードにより動的に生成される UI が含まれているアプリの設計には注意してください。
 
-### Xxxxxx xxxxxxx xxxxx
+### 要素数の削減
 
-Xxxxxxx xxxxxxxxxxx xx x XXXX xxx xx xxxxxxxx xxxxxxxxxx xx xxx xxxxxx xx xxxxxxxx xxx xxxxxx xxxxxx xxxxxxx. Xxx xxxxx xxxxxxxx xxx xxxxxx, xxx xxxx xxxx xxxx xxx xxxx xxxx xx xxxxx xx. Xx x xxxxx xxxxxxxxx, xxxxxxxx xxxx xxxxxxx xx xxxx Yxx xx xxxxxx.
+XAML アプリの起動時のパフォーマンスは、起動時に作成する要素の数に直接関連しています。 作成する要素が少ないほど、アプリの起動時間は短くなります。 大まかなベンチマークとしては、各要素の作成に 1 ミリ秒かかることを考慮します。
 
--   Xxxxxxxxx xxxx xx xxxxx xxxxxxxx xxx xxxx xxx xxxxxxx xxxxxx, xx xxxx xxx xxxxxxxx xxxxxxxx xxxxx. Xxx [XxxxXxxx xxx XxxxXxxx XX xxxxxxxxxxxx](optimize-gridview-and-listview.md).
--   XxxxXxxxxxxx xxx xxxxxxx xxxxxxxxx xxxx xx xxxxxxxx, xx xxxxx xxxxxx xxxx xx xxxxx xxxx xxxxxxx.
--   Xx xxx xxxxxx xxx XXXX xxxx xxxx xxx xxxxxx xx xxx xxxxxx, xxxx xxx xxxxxx xxxxxxx xxxxxxx xxxxx xxxxxx xx XXXX xxxxxx xx xxxxxxx xxxxxx xxxx xxxxxxx.
+-   項目コントロールで使用されるテンプレートは、何度も繰り返されるため、最も大きな影響を受けます。 「[ListView と GridView の UI の最適化](optimize-gridview-and-listview.md)」をご覧ください。
+-   UserControl とコントロール テンプレートが展開されるため、これらも考慮する必要があります。
+-   画面に表示されない任意の XAML を作成する場合、XAML のそれらの部分を起動時に作成する必要があるかどうかを判断する必要があります。
 
-Xxx [Xxxxxx Xxxxxx Xxxx Xxxxxx Xxxx](http://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx) xxxxxx xxxxx xxx xxxxx xxxxxxx xxxxxx xxx xxxx xxxx xx xxx xxxx.
+[Visual Studio のライブ ビジュアル ツリー](http://blogs.msdn.com/b/visualstudio/archive/2015/02/24/introducing-the-ui-debugging-tools-for-xaml.aspx) には、ツリー内の各ノードの子要素数が示されます。
 
-![Xxxx xxxxxx xxxx.](images/live-visual-tree.png)
+![ライブ ビジュアル ツリー。](images/live-visual-tree.png)
 
-**Xxx x:XxxxxXxxxXxxxxxxx**. Xxxxxxxxxx xx xxxxxxx, xx xxxxxxx xxx xxxxxxx xx Y, xxxx xxx xxxxxxx xxx xxxxxxx xxxx xxxxx xxxxxxx. Xxxxx x:XxxxxXxxxXxxxxxxx, xxx xxx xxxxx xxx xxxxxxx xx x xxxxx xx XX, xxx xxxx xx xxxx xxxxxx. Xxxx xx xxxx xxx xx xxxxx xxxxxxxxxx XX xxxx xx xxx xxxxxxx xxxxxx xxx xxxxxxx xxxxxx, xx xxxx xxx xxx xxxx xx xxxx xxxxxx, xx xx xxxx xx x xxx xx xxxxxxx xxxxx. Xx xxxxxxx xxx xxxxxxx, xxx xxxx xxxx xxxx XxxxXxxx xxx xxx xxxxxxx. Xxx xx xxxxxxx xxx xxxx xxxxxxxxxxx, xxx [x:XxxxxXxxxXxxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204785).
+**x:DeferLoadStrategy を使用する**。 要素を折りたたむか、不透明度を 0 に設定すると、要素は作成されなくなります。 x:DeferLoadStrategy を使って、UI の要素の読み込みを遅らせて、必要に応じて読み込むことができます。 これは、起動画面に表示されない UI の処理を遅延させ、必要に応じて読み込んだり、遅延させた一連のロジックの一部として読み込む場合に適した方法です。 読み込みをトリガーするために必要なことは、要素の FindName を呼び出すことだけです。 詳しい説明と例については、「[x:DeferLoadStrategy 属性](https://msdn.microsoft.com/library/windows/apps/Mt204785)」をご覧ください。
 
-**Xxxxxxxxxxxxxx**. Xx xxx xxxx xxxx xx xxxxxxxx xxxxxxx xx xxxx XX xxxx xx’x xxxxxx xxxxxxx xxxx xxx xxx XX xxxxxxxxxxxxxx. Xx xxxx XX xx xxx xxxxxxxxxxx xxxx xxx xxx xxxxxx xxx xxxx xx xxxxxxxx xxx xxx xxxxxxxx xx xxxxx, xxx xxxx xxx xxxx xxxx xxxx xxxxxxx. Xxx [XxxxXxxx xxx XxxxXxxx XX xxxxxxxxxxxx](optimize-gridview-and-listview.md).
+**仮想化**。 UI に一覧またはリピーター コンテンツがある場合、UI の仮想化を使うことを強くお勧めします。 一覧の UI が仮想化されていない場合、すべての要素を作成するコストを前払いすることになり、起動が遅くなる可能性があります。 「[ListView と GridView の UI の最適化](optimize-gridview-and-listview.md)」をご覧ください。
 
-Xxxxxxxxxxx xxxxxxxxxxx xx xxx xxxx xxxxx xxx xxxxxxxxxxx, xx’x xxxx xxxxx xxxxxxxxxx. Xxxxxxxx xxx xxxxx xx xxxxxxxxxx xx xxxx xxxxxx xxxxxxx xxxxx xxxxx xxxx xxxxxxxx xxxx xxx xxxx xxxx xxxx xxx xxxxxxxxxxx xx xxxxxx. Xxxxx xxxx xxxxxxxx xxx xxxxxxxxxxx xxxxxx xxxx xxx xxxxxxx xx xx xxx xxxxxx. Xxxxxxxx, xxxxxxxxxxxx xxxx xx xx xxxxxxxx xxxxxx xx xxxx xx xxx xxxxxxx, xxx xxx xxx xx xxxx xx xxxxxxxx xx xxxxx xx xxx XX, xx xxxxx xxxxxx xx xxxxxxx xx xxxxxxxxxxx xxxxx xxxx xxx XX.
+アプリケーションのパフォーマンスには、生のパフォーマンスだけでなく、印象も関連します。 視覚的側面が最初に実行されるように処理の順序を変更すると、ユーザーにアプリケーションが高速であるという印象を与えます。 ユーザーは、画面にコンテンツが表示されると、アプリケーションが読み込まれたと見なします。 一般的には、アプリケーションは起動処理の一環として複数の処理を実行する必要がありますが、そのすべてが UI を表示する必要はないため、そのような処理は遅延させたり、UI よりも優先順位を下げたりする必要があります。
 
-Xxxx xxxxx xxxxx xxxxx xxx “xxxxx xxxxx” xxxxx xxxxx xxxx xxxxxxxxx/XX, xxx xx x xxxxxxx xx xxx xxxx xxxxx xxxxxxx xx xxxx xx xxx xxx xxxx.
+このトピックでは、アニメーション/テレビに由来する "最初のフレーム" について説明します。これは、エンド ユーザーに対してコンテンツが表示されるまでの時間を測定する方法です。
 
-### Xxxxxxx xxxxxxx xxxxxxxxxx
+### 起動時の印象の改善
 
-Xxx’x xxx xxx xxxxxxx xx x xxxxxx xxxxxx xxxx xx xxxxxxxx xxxx xxxxx xx xxxxxxx xxx xxxxxxxxx xxxxxxxxxx xx xxxx xxx xxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxx. Xxx xxxx xxxxxxx, xxx xxxxx xxxxx xx xxxxxxxxxx xx xxx xxxx xxxxxxx xxx xxxx xxxxxxx xxx xxxx’x xxxx xxx xxx xxxx xxxxxxxx xx xxx xxx xxxx. Xxxxxx xxxx xxxx, xxx xxxxxx xxxxx’x xxxx xxx xxxxxxx xx xxxxxxx xx xxx xxxx xx xxxx xxxxxxxx xxxx xxx xxxxxxx xxxx xxx xxxxxxx. Xxx xxxxxxxxx x xxxxxx xxxxxx xxxxx xxxx xxxxxxx xx xxx xxxxxx. Xxx xxxx xxxx xxxxxxx xxx xxxx xxxx xxx xxxxx xxxxx xx xxxxxxxxxx xxx xxxxxxxxx xx xxxxxxxxx xxx xxxxxx xxxxxx xxxxxx xxxx xxx xxx XX xxxx xx xxxxxx xxxxxxx xxxx.
+それでは、簡単なオンライン ゲームの例を使って、起動の各フェーズを示した後、プロセス全体を通じてユーザーにフィードバックを返すさまざまな手法を紹介します。 この例の場合、アクティブ化の最初のフェーズは、ユーザーがゲームのタイルをタップしてからゲームがコードの実行を開始するまでの時間になります。 この間、システムには、正しいゲームが起動したことを示すためにユーザーに表示するコンテンツがありません。 ただし、スプラッシュ画面を指定することによって、このコンテンツをシステムに提供できます。 次に、ゲームがコードの実行を開始すると、動かないスプラッシュ画面をアプリ独自の UI に置き換えて、アクティブ化の最初のフェーズが完了したことをユーザーに示します。
 
-Xxx xxxxxx xxxxx xx xxxxxxxxxx xxxxxxxxxxx xxxxxxxx xxx xxxxxxxxxxxx xxxxxxxxxx xxxxxxxx xxx xxx xxxx. Xx xx xxx xxx xxxxxxx xxxxxx xxx xxxxxxx XX xxxx xxx xxxx xxxxxxxxx xxxxx xxx xxxxx xxxxx xx xxxxxxxxxx, xxxx xxx xxxxxx xxxxx xx xxxxxxx xxx xxx xxx xxxxxxx xxx XX xxxxxxxxxxx. Xxxxxxxxx xx xxxxxxxxx xxxx xxx xxx xxxxxxx x xxxxxxx xxxx xxxxx xx xx xxxxxxxxxxx.
+アクティブ化の 2 番目のフェーズでは、ゲームにとって重要な構造の作成と初期化を行います。 アクティブ化の最初のフェーズの後に、利用できるデータを使って最初の UI をすばやく作成できれば、2 番目のフェーズは短時間で終わり、UI をすぐに表示できます。 それができない場合は、初期化中に読み込みページを表示することをお勧めします。
 
-Xxxx xxx xxxxxxx xxxx xxxxx xxxx xx xx xx xxx xxx xx xxx xx xx xxxxxx xx xxxxxxxxxx x xxxxxxxx xxx xx x xxxxxxxx xxxx. Xxx xxx xxxxx xx xxxx xxx xxx xxxxxxxxx xxxx xx xx xxxxxxxxxx xxxxx xxxxxx xxxxxxxx xxxxxxxxxx. Xx xxx xxxx xx xxx xxxx, xx xxxxx xxxx xx xxxxxxx xxx xxxxxxx xxxxxx xxx xxxx XX xxxxxxxx xxxx xxxx xxxxxx xxx xxxxxx xx xxxxxx xxxx xxxx xxxx xxxxxx. Xxxxx xxxxx xxxx x xxxxxx xx xxxxxxx, xx xxx xxx xxxxx xxx xxxx xxxxxxxx xx xxxxxxxxx xxx xxxxxx xxxxxx xxxx x xxxxxxx xxxx, xxxxx xxxxx x xxxxxx xxxxxxxxx xxxxxxx xx xxx xxxxx xx xxx xxxx.
+読み込みページはどのようなものでもかまいません。単純に進行状況バーや進行状況リングを表示することもできます。 重要な点は、アプリがタスクを実行していて、まだ応答できないことを示すことです。 ゲームの場合は、初期画面を表示することがありますが、その UI のために画像やサウンドをディスクからメモリに読み込む必要があります。 これらのタスクには数秒かかるため、スプラッシュ画面を、ゲームのテーマに沿った簡単なアニメーションを表示する読み込みページに置き換えて、ユーザーにアプリの情報を提供し続けます。
 
-Xxx xxxxx xxxxx xxxxxx xxxxx xxx xxxx xxx x xxxxxxx xxx xx xxxx xx xxxxxx xx xxxxxxxxxxx XX, xxxxx xxxxxxxx xxx xxxxxxx xxxx. Xx xxxx xxxxx xxx xxxx xxxx xxxxxxxxx xx xxx xxxxxx xxxx xx xxx xxxxxxx xxxx xxx xxx xxxxxx xxxx xxxx. Xxx xxxx xxx xxxx xxxx xxxxxx xxxxxxx xx xxxxxx xx xxxxxxxxxxx XX; xxx xxxxxxx xx’x xx xxxxxx xxxx xx xxx’x xx xxxxxxxxxx xxxxx xx xxxxxxxx xx xxx xxxxxxxx xxx xxxxxxxxx xxxx xxxxxxxxxx xxxx. Xxxxx xx xxx xxx xxx xxxx xx xxxxx xx xx xxxxxxxxxx, xxx xxxx xxx xxxxxxxx xxxx xxx XX, xxx xxxxxxxx xxxx xxxx xxxxxxxxxx xxxx xxxx xxx xxx xxxxxx xxxx xxxxxxxx xxxx xxxxxxx xx xxxxx xxxxxxx. Xx xxx xxxx xxxx xxxx xxx xx xxx xx xxxxxx xxxxx xxxxxxxxxx, xx xx’x xxxxxxxxx xxxx xxxxxxxxxxxxx xx xxxx xxxxxxxxx xx xxxx xx xxxxxxxx.
+読み込みページを置き換える対話型 UI を作成するための最小限の情報が準備できると、3 番目のフェーズが開始します。 この時点でオンライン ゲームが使うことができる情報は、ディスクからアプリに読み込まれているコンテンツだけです。 対話型 UI を作成できるだけの十分なコンテンツをゲームに組み込むこともできますが、これはオンライン ゲームであるため、インターネットに接続して追加情報をダウンロードするまで機能しません。 機能するために必要なすべての情報が準備できるまでの間、ユーザーは UI を操作できますが、Web からの追加データを必要とする機能については、コンテンツがまだ読み込み中であることを示すフィードバックを返す必要があります。 アプリが完全に機能するまでには、多少時間がかかる場合があります。そのため、できるだけ早く機能を使えるようにすることが重要です。
 
-Xxx xxxx xx xxxxxxxxxx xxx xxxxx xxxxxx xx xxxxxxxxxx xx xxx xxxxxx xxxx, xxx’x xxx xxxx xx xxxxxx xxxx.
+これでオンライン ゲームにおけるアクティブ化の 3 つのフェーズを特定できたので、次にそれらを実際のコードと結び付けて考えてみましょう。
 
-### Xxxxx Y
+### フェーズ 1
 
-Xxxxxx xx xxx xxxxxx, xx xxxxx xx xxxx xxx xxxxxx xxxx xx xxxxx xx xxxxxxx xx xxx xxxxxx xxxxxx. Xx xxxx xx xx xxxxxxxxx xx xxxxx xxx xxxxxxxxxx xxxxx xx xxx XxxxxxXxxxxx xxxxxxx xx xx xxx’x xxxxxxxx, xx xx xxx xxxxxxx. Xxxxxxx xxxxxxxx xxxx xxxxx xxx xxx xxxxxx xxxxxxxxxx.
+アプリが起動する前に、スプラッシュ画面として表示するものをシステムに通知する必要があります。 それには、例に示すように、アプリのマニフェストの SplashScreen 要素に画像と背景色を指定します。 アプリがアクティブ化を開始すると、それが Windows によって表示されます。
 
 ```xml
 <Package ...>
@@ -137,15 +137,16 @@ Xxxxxx xx xxx xxxxxx, xx xxxxx xx xxxx xxx xxxxxx xxxx xx xxxxx xx xxxxxxx xx xx
 </Package>
 ```
 
-Xxx xxxx xxxx, xxx [Xxx x xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt187306).
+詳しくは、「[スプラッシュ画面の追加](https://msdn.microsoft.com/library/windows/apps/Mt187306)」をご覧ください。
 
-Xxx xxx xxx’x xxxxxxxxxxx xxxx xx xxxxxxxxxx xxxx xxxxxxxxxx xxxx xxx xxxxxxxx xx xxx xxx. Xxx xxxxxxxxxxx xx xxxxxx xxxx xxx xxxxx xxxx xxx xxx xx xxx xxx xxx xxxxxxxxxxx xxxx xxxx xxx xxx xx xxxxxxxxx. Xxx xxxxxxx, xxx xxxxxxxxxxx xxx'x xxxxxx xxx xx xxx xxxx xxx xxxx xxx, xxxxxx xx xxx xxxxxxxxxx, xxx xxxx xxxxxxxxx xxx xxx xxxxxx xxxxxxxx.
+アプリのコンストラクターを使って、アプリにとって重要なデータ構造だけを初期化します。 コンストラクターは、最初にアプリを実行したときにのみ呼び出されます。アプリがアクティブ化されるたびに必ず呼び出されるわけではありません。 たとえば、既に実行され、バックグラウンドで動いているアプリが検索コントラクトを介してアクティブ化された場合、コンストラクターは呼び出されません。
 
-### Xxxxx Y
+### フェーズ 2
 
-Xxxxx xxx x xxxxxx xx xxxxxxx xxx xx xxx xx xx xxxxxxxxx, xxxx xx xxxxx xxx xxx xxxx xx xxxxxx xxxxxxxxxxx. Xxx xxx xxxxxxxx [**XxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242330), [**XxXxxxxxXxxxXxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701797), [**XxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242331), [**XxXxxxXxxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701799), [**XxXxxxXxxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701801), [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242335), [**XxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242336), xxx [**XxXxxxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701806) xxxxxxx xx xxxxxx xxxx xxxxxx xx xxxxxxxxxx. Xxx xx xxx xxxxxx xxxx xx xxx xxxx xx xx xxxxx xxxxxxx xx xxxxxx x XX, xxxxxx xx xx [**Xxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209051), xxx xxxx xxxx [**Xxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209046). Xx xxxx xxxxx xxx xxxxxx xxxxxx xx xxxxxxxx xx xxx XX xxxx xxx xxx xxxxxxx. Xxxx xxxxxx xxxxx xxxxxx xx xxxxxxx xxxxxx xx xxx xxx'x xxxxxx XX xx xxxxxx xxxx xx xxxxxxxxx xx xxxxxxxxxx xx xxxxxx xx.
+アプリはさまざまな理由でアクティブ化され、それぞれの対応を変えることが必要になる場合があります。 [
+            **OnActivated**](https://msdn.microsoft.com/library/windows/apps/BR242330)、[**OnCachedFileUpdaterActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701797)、[**OnFileActivated**](https://msdn.microsoft.com/library/windows/apps/BR242331)、[**OnFileOpenPickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701799)、[**OnFileSavePickerActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701801)、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/BR242335)、[**OnSearchActivated**](https://msdn.microsoft.com/library/windows/apps/BR242336)、[**OnShareTargetActivated**](https://msdn.microsoft.com/library/windows/apps/Hh701806) メソッドを上書きして、さまざまなアクティブ化の理由に対応することができます。 アプリがこれらのメソッドで実行する必要がある作業の 1 つが UI を作成して [**Window.Content**](https://msdn.microsoft.com/library/windows/apps/BR209051) に割り当て、[**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) を呼び出すことです。 この時点で、スプラッシュ画面が、アプリによって作成された UI に置き換えられます。 ここで表示するものは、読み込み画面でも、アクティブ化時に実際の UI を作成するための十分な情報を利用できる場合は、アプリの実際の UI でもかまいません。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 public partial class App : Application
 {
@@ -258,11 +259,11 @@ Partial Friend Class ExtendedSplash
 End Class 
 ```
 
-Xxxx xxxx xxxxxxx x xxxxxxx xxxx xx xxx xxxxxxxxxx xxxxxxx xxxxx xxxx xx xxxxxx xxx XX xx xxx xxxxxxxxxx. Xxxxx xxxx xxxxxxx xxx xxxx xxxxxxx, xxx [**XxxxxxxxxXxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208723) xxxxx xxxxxx. Xx xxx xxxxx xxxxxxx xxx xxxxxxx xxx xxxxxx'x xxxxxxx, xxxxx xx xxxxxxxxx xxx xxxxxxx xxxxxx, xxxx xxx xxxxx xxxxxxx xxxx xxxx.
+アクティブ化ハンドラーで読み込みページを表示するアプリは、バックグラウンドで UI の作成作業を開始します。 その要素が作成されると、[**FrameworkElement.Loaded**](https://msdn.microsoft.com/library/windows/apps/BR208723) イベントが発生します。 このイベント ハンドラーで、現在は読み込み画面になっているウィンドウのコンテンツを、新しく作成したホーム ページに置き換えます。
 
-Xx’x xxxxxxxx xxxx xx xxx xxxx xx xxxxxxxx xxxxxxxxxxxxxx xxxxxx xxxx x xxxxxxx xxxx. Xxxxx xxxx xxxxxxxxx xxx xxxx xxxxxxxx xxxxx xxx xxxxxxxxxx xxxxxxx, xxx xxxxxxx xxxx xx xxxxxxxxxx xx [**Xxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209046) xx xxx xxxxxx xxxxxx YY xxxxxxx xx xxx xxxxx xx xxx xxxxxxxxxx xxxxxxx.
+初期化時間が長いアプリの場合は読み込みページを表示することが重要です。 アクティブ化プロセスに関する確かなフィードバックを返すこととは別に、アクティブ化プロセスの開始から 15 秒以内に [**Window.Activate**](https://msdn.microsoft.com/library/windows/apps/BR209046) が呼び出されないと、プロセスは終了されます。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 partial class GameHomePage : Page
 {
@@ -314,46 +315,50 @@ partial class GameHomePage : Page
 End Class
 ```
 
-Xxx xx xxxxxxx xx xxxxx xxxxxxxx xxxxxx xxxxxxx, xxx [Xxxxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=234889).
+追加スプラッシュ画面の使用例については、[スプラッシュ画面のサンプル](http://go.microsoft.com/fwlink/p/?linkid=234889) をご覧ください。
 
-### Xxxxx Y
+### フェーズ 3
 
-Xxxx xxxxxxx xxx xxx xxxxxxxxx xxx XX xxxxx'x xxxx xx xx xxxxxxxxxx xxxxx xxx xxx. Xx xxx xxxx xx xxx xxxx, xxx XX xx xxxxxxxxx xxxx xxxxxxxxxxxx xxx xxxxxxxx xxxx xxxxxxx xxxx xxxx xxx xxxxxxxx. Xx xxxx xxxxx xxx xxxx xxxxxxxxx xxx xxxxxxxxxx xxxx xxxxxx xx xxxx xxx xxx xxxxx xxxxxxxxxx xxx xxxxxxxxxxxxx xxxxxxx xxxxxxxx xx xxxx xx xxxxxxxx.
+アプリに UI が表示されたからといって、アプリが完全に使える状態になったわけではありません。 このゲームの場合は、インターネットからのデータを必要とする機能に対してプレースホルダーを使って UI を表示します。 この時点で、アプリが完全に機能するために必要な追加データがゲームにダウンロードされ、データを取得するたびに機能が段階的に有効になります。
 
-Xxxxxxxxx xxxx xx xxx xxxxxxx xxxxxx xxx xxxxxxxxxx xxx xx xxxxxxxx xxxx xxx xxx. Xxxx xx xxx xxxx xxxx x xxxxxx xxxx. Xxxx xxxxx xxx xxxxxxxxxx xxxxxxx xxxxx xxxxxx. Xxx xxxx xxxxxxxx (xxxx xx xxxx xxxxxxx xxx xxxxx xxxxxxx) xxxx xxxx xxxx xxxx xxx xxx xx xxxxxx xxxxxxxxxx. Xxxx xxxx xxx xx xxxxx xxx xxxx x xxxx xxxxxx xx xxxx xx xxxxxxxx. Xxx xxx xxx xxxx xxxx xxxx xxxxxx xxx xxxxxxxxxx xxxxxxx xxx xxxx x xxxx xxxxxx xx xxx xxxxxxxxx xxxxxxxxxxx xx xx xxx.
+アクティブ化に必要なコンテンツの多くがアプリにパッケージされている場合があります。 単純なゲームなどがそうです。 このようにすると、アクティブ化プロセスが非常に単純になります。 しかし、多くのプログラム (ニュース リーダー、フォト ビューアーなど) では、機能するために Web から情報を取得する必要があります。 こうしたデータは大きく、ダウンロードするのにかなりの時間がかかる場合があります。 アプリがアクティブ化プロセス中にこうしたデータを取得する方法によっては、アプリの体感的なパフォーマンスに大きく影響することがあります。
 
-Xxx xxxxx xxxxxxx x xxxxxxx xxxx, xx xxxxx, x xxxxxx xxxxxx, xxx xxxxxxx xx xx xxx xxxxx xx xxxxxxxx xx xxxxxx xxxx xxx xx xxxxx xxx xxxxxxxxxxxxx xx xxxxx xxx xx xxx xx xxxxxxxxxx. Xxxx xxxxx xx xxx xxxx xxxx xx’x xxxx xx xxxxx xx xx xx xxxxxxxxxx xx xxx xxxxxx. Xx xxxxxxxxx xxxx xx xxx xxxxxxxx xxx xxxxxxx xxxxxx xx xxxx xx xxxx xx xxxxxxxxxxx XX xxxx xxxxxxxxxxx xxxxxxxx xx xxxxx Y xxx xxxx xxxxxxxxxxxxx xxxx xxxx, xxxxx xxxxxxxx xxx xxxxxxxxxxx xxxxxxxx, xx xxxxx Y. Xxx xxxx xxxx xx xxxxxxx xxxx xxxx, xxx [Xxxxxxxx XxxxXxxx xxx XxxxXxxx](optimize-gridview-and-listview.md).
+アクティブ化のフェーズ 1 または 2 で、機能するために必要なデータ セット全体をダウンロードしようとして、読み込みページ (さらに悪い場合は、スプラッシュ画面) を数分間表示すると、 アプリがハングしているように見えたり、システムによって終了されたりします。 フェーズ 2 ではプレースホルダー要素を使って対話型 UI を表示するための最小限のデータをダウンロードし、フェーズ 3 でプレースホルダー要素を置き換えるデータを段階的に読み込むことをお勧めします。 データの処理について詳しくは、「[ListView と GridView の最適化](optimize-gridview-and-listview.md)」をご覧ください。
 
-Xxx xxxxxxx xx xxx xxxxxx xx xxxx xxxxx xx xxxxxxx xx xxxxxxxxxx xx xx xxx, xxx xxxxxxxxx xxx xxxx xx xxxx xxxxxxxx xx xxxxxxxx (xxxxxx xxxxxx, xxxxxxx xxxxxx, XX xxxxx xxxx xxxxx) xxxxx xxx xxxx xxxx xx xxxxxx xx xxx, xxx xxx xxxxxx xx x xxxxx, xxx xxxx.
+起動の各フェーズにどれだけ厳密に対応するかはまったくの任意ですが、できるだけ多くのフィードバック (スプラッシュ画面、読み込み画面、データの読み込み中の UI) をユーザーに提供すると、ユーザーはアプリとシステム全体が軽快だと感じます。
 
-### Xxxxxxxx xxxxxxx xxxxxxxxxx xx xxx xxxxxxx xxxx
+### スタートアップ パス内のマネージ アセンブリを最小限に抑える
 
-Xxxxxxxx xxxx xxxxx xxxxx xx xxx xxxx xx xxxxxxx (XXXx) xxxxxxxx xx x xxxxxxx. Xxxxxxx xxxxx xxxxxxx xxxxxxxx xxxxxxxxx xxx xxxx, xxx xx xxx xxx xxxxxxx, xxx xxxx xx xxxxx xx xxx xxx xx. Xxxx xxx xxx xxxxxxxx xxxxxx xx xxxx xxxxxxx, xxx xx xxx xxxx xx xxxxxx xx xxxx xxxxxxx, xxx. Xx xxx xxxx xx X# xxx Xxxxxx Xxxxx, xxx XXX xxxxx xx xxxxx xxxx xxxx xx xxxx xx xxxxxxxx xx xxxxxxx xxxxxxxxxx xx xxxxxx. Xxxx xx, xxx XXX xxxxx’x xxxx x xxxxxx xxxxx xx xxxxxxxx xxxxxx xxxxxxxxxx xx. Xx, xxxxxxxxx xxxx xxxxxxxxxx xxxx xxx xxxxxxxxx xx xxx xxxxxx xx xxxx xxx xx xxxxxxx xxxx xx xxxx xxx XXX xxxxx’x xxxx xxxxxxxxxxx xxxxxxx. Xx xxx xxxx xxxxxx xxxx xxxxx xx xxxx xxxxxxx xxxx xxxx xxxx xxxxxxxxxxx xxxxxxxxxx, xxx xxx xxxx xxxxx xxxx xxxxx xx xxxxx xxxxxxx xx xxxxx xxx xxxxxxxxxxx xxxxx.
+多くの場合、再利用可能なコードは、プロジェクトに含まれるモジュール (DLL) の形で提供されます。 こうしたモジュールを読み込むには、ディスクにアクセスする必要があります。それには、当然負荷が発生します。 これにより、コールド起動に大きな影響が及びますが、ウォーム起動にも影響が及ぶ場合があります。 C# と Visual Basic の場合、CLR はアセンブリをオンデマンドで読み込むことで、その負荷の発生をできるだけ遅らせようとします。 つまり、モジュールは実行されたメソッドによって参照されるまで読み込まれません。 そのため、CLR によって不要なモジュールが読み込まれないように、スタートアップ コードではアプリの起動に必要なアセンブリだけを参照するようにします。 スタートアップ パス内の使われないコード パスに不必要な参照が含まれている場合は、それらのコード パスを別のメソッドに移動すると、不必要な読み込みを回避できます。
 
-Xxxxxxx xxx xx xxxxxx xxxxxx xxxxx xx xx xxxxxxx xxxx xxx xxxxxxx. Xxxxxxx xxx xxxxx xxxxxxxx xxxxxxxxx xxxxx xxxx xxxx xxxx xxxxxxx xxx xxxxx xxxx. Xxxx xx xxx xxxxxx xxxxxxxx, xxx xxx xxxxxx xxxxxxx xxxxxxx xxxx xx xx xxxxx'x xxxx x xxxxxxxx xxxxxxxxxx xx xxxxxxxxx xxxxxxxxxxxx xx xxxx xxxxxxxxxxx. Xxx xxx xxx xxxxx xxxx xx [XxxxXxxx](http://go.microsoft.com/fwlink/p/?linkid=251609) xx xxx [Xxxxxxx Xxxxxxxxxxx Xxxxxxxx (XXX)](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/ff191077.aspx) xx xxxx xxx xxxx xxxxxxx xxx xxxxxx xx xxxxxxx.
+また、アプリ モジュールを結合して、モジュールの読み込みを減らすこともできます。 一般的に、2 つの小さなアセンブリよりも、1 つの大きなアセンブリの方が短い時間で読み込むことができます。 常に短くなるわけではないため、開発者の生産性やコードの再利用性に実質的な違いがない場合にのみ、モジュールを結合してください。 [PerfView](http://go.microsoft.com/fwlink/p/?linkid=251609) や [Windows Performance Analyzer (WPA)](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/ff191077.aspx) などのツールを使うと、起動時に読み込まれるモジュールを調べることができます。
 
-### Xxxx xxxxx xxx xxxxxxxx
+### 効率的に Web 要求を行う
 
-Xxx xxx xxxxxxxxxxxx xxxxxxx xxx xxxxxxx xxxx xx xx xxx xx xxxxxxxxx xxx xxxxxxxx xxxxxxx, xxxxxxxxx XXXX, xxxxxx, xxx xxx xxxxx xxxxx xxxxxxxxx xx xxx xxx. Xxxx xxxxxxxxxx xxx xxxxxx xxxx xxxxxxx xxxxxxxxxx. Xx xx xxx xxxxx x xxxxxxxxxx xxxx xx xxxxxxxxxxxxxx, xxx xxx xxxxxx xxx xxxxxxx xxxxxxx xxxx xx xxxxxxx xx xxxx xxxx xxxxxxx xx xxxxxxxxxx xx xxxx x xxxxxx xxxxxx.
+XAML や画像など、アプリに重要なファイルをローカルでパッケージ化することで、アプリの読み込み時間を大幅に短縮できます。 ネットワーク操作よりも、ディスク操作の方が処理が速くなります。 アプリの初期化時に特定のファイルが必要な場合は、ファイルをリモート サーバーから取得する代わりに、ディスクから読み取ることで起動時間全体を短縮できます。
 
-## Xxxxxxx xxx Xxxxx Xxxxx Xxxxxxxxxxx
+## 効率的なジャーナルとページのキャッシュ
 
-Xxx Xxxxx xxxxxxx xxxxxxxx xxxxxxxxxx xxxxxxxx. Xx xxxxxx xxxxxxxxxx xx x Xxxx (Xxxxxxxx xxxxxx), xxxxxxxxxx xxxxxxxxxx (XxxxXxxxx/XxxxxxxXxxxx xxxxxxxxxx, XxXxxxxxx/XxXxxx xxxxxx), Xxxx xxxxxxx (Xxxx.XxxxxxxxxxXxxxxXxxx), xxx xxxxxxxxxxxxx xxxxxxx (XxxXxxxxxxxxxXxxxx xxxxxx).
+Frame コントロールには、ナビゲーション機能が用意されています。 このコントロールは、ページへのナビゲーション (Navigate メソッド)、ナビゲーションのジャーナル (BackStack/ForwardStack プロパティ、GoForward/GoBack メソッド)、ページのキャッシュ (Page.NavigationCacheMode)、およびシリアル化のサポート (GetNavigationState メソッド) を提供します。
 
-Xxx xxxxxxxxxxx xx xx xxxxx xx xxxx Xxxxx xx xxxxxxxxx xxxxxx xxx xxxxxxxxxx xxx xxxx xxxxxxx.
+フレームについて注意が必要なパフォーマンスは、主に、ジャーナルとページのキャッシュに関連するものです。
 
-**Xxxxx xxxxxxxxxx**. Xxxx xxx xxxxxxxx xx x xxxx xxxx Xxxxx.Xxxxxxxx(), x XxxxXxxxxXxxxx xxx xxx xxxxxxx xxxx xx xxxxx xx Xxxxx.XxxxXxxxx xxxxxxxxxx. XxxxXxxxxXxxxx xx xxxxxxxxxx xxxxx, xxx xxxxx’x xx xxxxx-xx xxxxx xx xxx xxxx xx xxx XxxxXxxxx xxxxxxxxxx. Xxxxxxxxxxx, x xxxx xxxxx xxxxxxxx xx x xxxx xxx xxxx xxxx xxxxxxxxxx xxxxxxxxxxxx.
+**フレーム ジャーナル**。 Frame.Navigate() を使ってページに移動すると、現在のページの PageStackEntry が Frame.BackStack コレクションに追加されます。 PageStackEntry は比較的小さいサイズですが、BackStack コレクションのサイズに組み込みの制限はありません。 ユーザーはループ内を移動することができ、このコレクションは無制限に増大する可能性があります。
 
-Xxx XxxxXxxxxXxxxx xxxx xxxxxxxx xxx xxxxxxxxx xxxx xxx xxxxxx xx xxx Xxxxx.Xxxxxxxx() xxxxxx. Xx’x xxxxxxxxxxx xxxx xxxx xxxxxxxxx xx x xxxxxxxxx xxxxxxxxxxxx xxxx (xxxx xx xx xxx xx xxxxxx), xx xxxxx xx xxxxx xxx Xxxxx.XxxXxxxxxxxxxXxxxx() xxxxxx xx xxxx. Xxx xxxx xxxxxxxxx xxxxx xxxxxxxxxxx xxxxxxxxx xx xxxxxx xxxx xxxxxxxx xxx xxxx xxxxxxxxxxx xxxxxxx xx xxxxxxx xxx xx xxxxx xxxxxxxxx, xxxxxx xxxx xxxxx xx xxx XxxxXxxxx xxxx xxxx xxxx xxxxxxxxx. Xxx xxxxxxx, xxx xxxxx xxxxxxxxxxx xxx x XxxxxxxXxxx xx x xxxxxxxxx, xxx xxxxxxxxxxxx xxx XxxxXxxxx xx xxxxxxx xx xxxxxxxxxx xxxxxx xx xxxxx xxxx.
+PageStackEntry には、Frame.Navigate() メソッドに渡されたパラメーターも含まれます。 Frame.GetNavigationState() メソッドを使用するために、このパラメーターをシリアル化できるプリミティブ型 (int や string など) にすることをお勧めします。 ただし、このパラメーターは、大量のワーキング セットやその他のリソースの原因となるオブジェクトを参照している可能性があり、BackStack の各エントリのコストがそれだけ高くなります。 たとえば、パラメーターとして StorageFile を使用できますが、その結果、BackStack には開いた無数のファイルが保持されます。
 
-Xxxxxxxxx xx’x xxxxxxxxxxx xx xxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxx, xxx xx xxxxx xxx xxxx xx xxx XxxxXxxxx. Xxx XxxxXxxxx xx x xxxxxxxx xxxxxx (XXxxx xx X#, Xxxxxxxx::Xxxxxx xx X++/XX), xxx xx xxx xx xxxxxxx xxxxxx xx xxxxxxxx xxxxxxx.
+したがって、ナビゲーション パラメーターを小さくし、BackStack のサイズを制限することが推奨されます。 BackStack は、標準ベクター (C# では IList、C++/CX では Platform::Vector) であるため、エントリを削除するだけでトリミングできます。
 
-**Xxxx xxxxxxx**. Xx xxxxxxx, xxxx xxx xxxxxxxx xx x xxxx xxxx xxx Xxxxx.Xxxxxxxx xxxxxx, x xxx xxxxxxxx xx xxx xxxx xx xxxxxxxxxxxx. Xxxxxxxxx, xx xxx xxxx xxxxxxxx xxxx xx xxx xxxxxxxx xxxx xxxx Xxxxx.XxXxxx, x xxx xxxxxxxx xx xxx xxxxxxxx xxxx xx xxxxxxxxx.
+**ページのキャッシュ**。 既定では、Frame.Navigate メソッドを使ってページに移動すると、ページの新しいインスタンスがインスタンス化されます。 同様に、Frame.GoBack で前のページに戻ると、前のページの新しいインスタンスが割り当てられます。
 
-Xxxxx, xxxxxx, xxxxxx xx xxxxxxxx xxxx xxxxx xxxx xxx xxxxx xxxxx xxxxxxxxxxxxxx. Xx xxx x xxxx xxx xxxx xxx xxxxx, xxx xxx Xxxx.XxxxxxxxxxXxxxxXxxx xxxxxxxx. Xxxxxxx xxxx xxxx xx Xxxxxxxx xxxx xxxxx xxx xxxx xx xx xxxxxx, xxxxxxx xx xx Xxxxxxx xxxx xxxxx xx xx xx xxxxxx. Xx xxxxxxx xxx xxxxx xxxx xx YY xxxxx, xxx xxxx xxx xx xxxxxxxxxx xxxx xxx Xxxxx.XxxxxXxxx xxxxxxxx. Xxx Xxxxxxxx xxxxx xxxx xx xxxxxx, xxx xx xxxxx xxx xxxxx xxxx XxxxxXxxx Xxxxxxxx xxxxx, Xxxxxxx xxxxx xxx xx xxxxxx xx xxxx.
+ただし、Frame には、これらのインスタンス化を回避できる、オプションのページ キャッシュが用意されています。 ページをキャッシュに保存するには、Page.NavigationCacheMode プロパティを使います。 このモードを Required に設定するとページは強制的にキャッシュに保存され、Enabled に設定するとページのキャッシュへの保存が許可されます。 既定では、キャッシュのサイズは 10 ページですが、Frame.CacheSize プロパティを使ってオーバーライドすることができます。 Required ページはすべてキャッシュされ、Required ページが CacheSize よりも少ない場合は、Enabled ページもキャッシュすることができます。
 
-Xxxx xxxxxxx xxx xxxx xxxxxxxxxxx xx xxxxxxxx xxxxxxxxxxxxxx, xxx xxxxxxxxx xxxxxxxxx xxxxxxxxxx xxxxxxxxxxx. Xxxx xxxxxxx xxx xxxx xxxxxxxxxxx xx xxxx-xxxxxxx xxx xxxxxxxxx xxxxxxxxx xxxxxxx xxx.
+ページをキャッシュすると、インスタンス化が回避され、ナビゲーションのパフォーマンスが向上することにより、パフォーマンス面のメリットとなる可能性があります。 ページのキャッシュが過剰になると、ワーキング セットに影響を及ぼすため、パフォーマンスが低下する可能性があります。
 
-Xxxxxxxxx xx’x xxxxxxxxx xx xxx xxxx xxxxxxx xx xxxxxxxxxxx xxx xxxx xxxxxxxxxxx. Xxx xxxxxxx, xxx xxx xxxx xx xxx xxxx xxxxx x xxxx xx xxxxx xx x Xxxxx, xxx xxxx xxx xxx xx xx xxxx, xx xxxxxxxxx xxx xxxxx xx x xxxxxx xxxx xxx xxxx xxxx. Xxx xxxx xxxx xxxxxx xxxxxxxx xx xxx xx xxxxx. Xx xxx xxxxxx xxxx xx xxx xxxx xxx xxx xxxxx, xx xxxxxx xxxxxxxx xx xxxxxx xx xxxx. Xxx xx xxx xxxxxx xxxx xx xxxx xxxxxxxxxxxxx, xx xxxxx xx xxxxxx xx xxxxx xxxxxxx xxx.
+したがって、アプリケーションで適切なページのキャッシュを使用することをお勧めします。 たとえば、アプリがフレームに項目の一覧を表示する場合、項目をタップすると、アプリはフレームをその項目の詳細ページに移動します。 この一覧ページは、キャッシュするように設定することをお勧めします。 詳細ページがすべての項目で同じである場合、このページもキャッシュすることをお勧めします。 ただし、詳細ページの種類が異なる場合は、キャッシュを無効のままにしておくことをお勧めします。
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

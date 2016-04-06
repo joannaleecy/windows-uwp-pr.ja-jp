@@ -1,52 +1,52 @@
 ---
-xxxxx: Xxxxxx xxxxx xxx xxxxxxxxxxxxx xx xxx Xxxxxx Xxxx xxxxxx
-xxxxxxxxxxx: Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxx xxx xx x xxxx xxxxxxx xx xxxxxxx, xxxx xx xxxxxxx xxxxxxxxx, xxxxxxx, xxx xxxxxxx.
-xx.xxxxxxx: xYYYxxYY-xYxx-xYxx-YxYY-YYYYxYYxYxxY
+title: Marble Maze サンプルへの入力と対話機能の追加
+description: ユニバーサル Windows プラットフォーム (UWP) アプリ ゲームは、デスクトップ コンピューター、ノート PC、タブレットなど、さまざまなデバイスで実行されます。
+ms.assetid: b946bf62-c0ca-f9ec-1a87-8195b89a5ab4
 ---
 
-# Xxxxxx xxxxx xxx xxxxxxxxxxxxx xx xxx Xxxxxx Xxxx xxxxxx
+# Marble Maze サンプルへの入力と対話機能の追加
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
-Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxx xxx xx x xxxx xxxxxxx xx xxxxxxx, xxxx xx xxxxxxx xxxxxxxxx, xxxxxxx, xxx xxxxxxx. X xxxxxx xxx xxxx x xxxx xxxxxxx xx xxxxx xxx xxxxxxx xxxxxxxxxx. Xxxxxxx xxxxxxxx xxxxx xxxxxxx xx xxxxxx xxxx xxxx xx xxxxxxxxxxx x xxxxx xxxxx xx xxxxxxxxxxx xxx xxxxxxxxx xxxxx xxxx xxxxxxxxx. Xxxx xxxxxxxx xxxxxxxxx xxx xxx xxxxxxxxx xx xxxx xx xxxx xxxx xxx xxxx xxxx xxxxx xxxxxxx xxx xxxxx xxx Xxxxxx Xxxx xxxxxxx xxxxx xxxxxxxxx.
+ユニバーサル Windows プラットフォーム (UWP) アプリ ゲームは、デスクトップ コンピューター、ノート PC、タブレットなど、さまざまなデバイスで実行されます。 デバイスに備わっている入力機構と制御機構も多岐にわたります。 多様な入力デバイスをサポートすることによって、ゲーム ユーザーの好みや技量に幅広く対応することができます。 このドキュメントでは、入力デバイスを扱う際に考慮する必要のある主な手法について説明すると共に、それらが Marble Maze でどのように適用されているかを紹介します。
 
-> **Xxxx**   Xxx xxxxxx xxxx xxxx xxxxxxxxxxx xx xxxx xxxxxxxx xx xxxxx xx xxx [XxxxxxX Xxxxxx Xxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/?LinkId=624011).
-
- 
-Xxxx xxx xxxx xx xxx xxx xxxxxx xxxx xxxx xxxxxxxx xxxxxxxxx xxx xxxx xxx xxxx xxxx xxxxx xx xxxx xxxx:
-
--   Xxxx xxxxxxxx, xxxxxxx xxxxxxxx xxxxx xxxxxxx xx xxxxxx xxxx xxxx xx xxxxxxxxxxx x xxxxx xxxxx xx xxxxxxxxxxx xxx xxxxxxxxx xxxxx xxxx xxxxxxxxx. Xxxxxxxx xxxx xxxxxxxxxx xxx xxxxxx xxxxx xx xxxxxxxx, xx xxxxxxxx xxxxxxxxx xx xx xxxxxxx xxx xxxxxx xxxxxxxxxx. Xx xxxxxxxx xxx xxxx xxxxxxxxxx xxx xxxxxx XXX xx xxxx xxx xxxx xxxxxx xxxxxxxxx xxxxx xxxxx xxxxxxx.
--   Xx xxxxxxxxxx xxxxx, xxx xxxx xxxxxxxx xxx xxxxxx xxxxxx xxxx xx xxxx xxx xxxxxxx xx xxxxxxxxx, xxxxxxxx, xxx xxxxx. Xx xxxxxxxxxx xxx xxxxxxxxxxxxx, xxxxxx x [**Xxxxxxx::Xxxxxxx::Xxxxxxx::Xxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225687) xxxxxx xxxx xxx xxxxxxxxxx xxx xxxxxxxxxxx. Xxx Xxxx YYY xxxxxxxxxx xxxxx'x xxxxxxx xxxxxxxxxxxxxx.
--   Xxx xxxxxx-xxxxxx xxxxx, xxxxxxxx xxxxxxx xx xxxxxxx xxxxx xxxx xxx xxxxxxxx Xxxx YYY xxxxxxxxxxx. Xxxx xxx, xxx xxx’x xxxx xx xxxxx xxxx xxxxx xxxxx xxxx xxxxx xxxxxxxxxx.
--   Xxxxxxx Xxxxxxx xxxxxx xxxxxx xxx xxxxxxx xxxxx xxxxxxx.
--   Xxx Xxxx YYY xxxxxxxxxx xxx xxx xxxxxxxxxxxxx xxxxxxx xxxxxxx. Xxxx xx, xxx xxx xxxx xxx xxxx xxxx xxx xxxx xx. Xxx xxxxx, xxxxxx xxxxx xxxxxx xx xxxx xxxxxxxxxx xxxx xxx xxxxxxxxx xx xxxx xxxxx xxxxxxxxxx xxxx.
--   Xxxxxxxx xxxxxxx xx xxxxxxxxx xxxxx xxxxxx xx x xxxxxx xxxxxx. Xxxxx xx xxx xxxxxxxx xxx xxxxx xx xxxxxxxxxxx xx xxxxx xxxxxxxxxx xx xxxx xxxx, xxxx xx xxxxxxx xxxxxxxxxx, xxx xxx xxxx xx xxxxxx xx xxxxx xxxxx xxxx xxxx xx xxxxxxxxx xxxxxx xxxxxxxxxxx.
-
-## Xxxxx xxxxxxx xxxxxxxxx xx Xxxxxx Xxxx
-
-
-Xxxxxx Xxxx xxxxxxxx Xxxx YYY xxxxxx xxxxxxxxxx xxxxxxx, xxxxx, xxx xxxxx xx xxxxxx xxxx xxxxx, xxx xxx Xxxx YYY xxxxxxxxxx, xxxxx, xxxxx, xxx xxx xxxxxxxxxxxxx xx xxxxxxx xxxx xxxx. Xxxxxx Xxxx xxxx xxx XXxxxx XXX xx xxxx xxx xxxxxxxxxx xxx xxxxx. Xxxxx xxxxxxx xxxxxxxxxxxx xx xxxxx xxx xxxxxxx xx xxxxxxxxx xxxxx. Xx xxxxxxxxxxxxx xx x xxxxxx xxxx xxxxxxxx xxx xxxxx xxxx xx xxxxxxx xxxxx xxx x, x, xxx x xxxx. Xx xxxxx xxx Xxxxxxx Xxxxxxx, xxx xxx xxxx xxx xxxxxxx xxxxx xx xxx xxxxxxxxxxxxx xxxxxx, xx xxxx xx xxxxxxx xxxxx xxxxxx xxxxxxx xxx Xxxxxxx Xxxxxxx xxxxx-xxxxxxxx xxxxxxxxx.
-
-> **Xxxx**  Xxxx xxxxxxxx xxxx xxxxx xx xxxxx xx xxxx xxxxx xxx xxxxx xxxxx xxx xxxxxxx xx xxxxx xx xxx xxxxxx xxxx xxxx xxxxxxx xxxxxx. Xxxxxxx xxxxx xxx xxx xxxxx xxx xxxxxxxx xxxxxxx xxxxxx, xxx xxx xxx xxxxxx xxxxxx xx xxxxxx xxxx xxxxx xxx xxxxxxx xxxx xxxx.
+> **注**   このドキュメントに対応するサンプル コードは、[DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011) にあります。
 
  
+このドキュメントでは、ゲームで入力を扱う際に重要となるいくつかの事柄について説明します。取り上げる内容は次のとおりです。
 
-> **Xxxx**  Xxx xxxxxxx xxxxxxxx xxxx Xxxxxxxxx xx xxx xxxxxxxxx xxxxxxxx xxx xxx xxxx xx xxxxxxx xxx xxxxxxxxxxx xxxx xxxxxxxx xxxx xxx xxxxxx xxx xxxxxx xx xxxx xxx xxxxxx.
+-   可能な限り、多様な入力デバイスをサポートし、ゲーム ユーザーの好みや技量に幅広く対応します。 ゲーム コントローラーやセンサーは、必ずしも使う必要はありませんが、プレーヤーのエクスペリエンスを高めるために使用を強くお勧めします。 ゲーム コントローラーとセンサー API は、これらの入力デバイスと容易に連携できるように設計されています。
+-   タッチを初期化するには、ポインターがアクティブ化されたとき、離されたとき、移動されたときなどのウィンドウ イベントを登録する必要があります。 加速度計を初期化するには、アプリケーションの初期化時に [**Windows::Devices::Sensors::Accelerometer**](https://msdn.microsoft.com/library/windows/apps/br225687) オブジェクトを作成します。 Xbox 360 コントローラーは初期化を必要としません。
+-   1 プレーヤーのゲームでは、接続されているすべての Xbox 360 コントローラーからの入力を結合します。 このようにすることで、入力とその発生元となったコントローラーの関係をトラッキングする手間が省けます。
+-   入力デバイスを処理する前に、Windows イベントを処理します。
+-   Xbox 360 コントローラーと加速度計では、ポーリングがサポートされています。 つまり、必要に応じてデータをポーリングできます。 タッチの場合は、入力処理コードで利用できるデータ構造にタッチ イベントを記録します。
+-   入力値を共通形式に正規化します。 ゲームの他のコンポーネント (物理シミュレーションなど) が入力を解釈する方法を簡略化でき、さまざまな画面解像度で動作するゲームが作成しやすくなります。
+
+## Marble Maze でサポートされる入力デバイス
+
+
+Marble Maze は、メニュー項目の選択に関して Xbox 360 共通コントローラー デバイス、マウス、タッチをサポートし、ゲーム プレイの制御に関して Xbox 360 コントローラー、マウス、タッチ、加速度計をサポートします。 Marble Maze は、XInput API を使ってコントローラーの入力をポーリングします。 アプリケーションは、タッチ デバイスを通じて指先での入力をトラッキングし、応答することができます。 加速度計は、x、y、z 軸方向に加えられた力を測定するセンサーです。 Windows ランタイムを使うと、Windows ランタイムのイベント処理機構を通じてタッチ イベントを受け取るだけでなく、加速度計デバイスの現在の状態をポーリングすることもできます。
+
+> **注**  このドキュメントでは、タッチとマウスの両方の入力をタッチと呼び、ポインター イベントを使うすべてのデバイスをポインターと呼びます。 タッチとマウスは標準のポインター イベントを利用するため、どちらのデバイスでもメニュー項目の選択とゲーム プレイの制御を行うことができます。
 
  
 
-## Xxxxxxxxxxxx xxxxx xxxxxxx
+> **注**  デバイスを回転させて大理石を転がす際、方向が変わるのを防ぐために、パッケージ マニフェストは、ゲームでサポートされる回転として [横] を設定します。
+
+ 
+
+## 入力デバイスの初期化
 
 
-Xxx Xxxx YYY xxxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxxxxx. Xx xxxxxxxxxx xxxxx, xxx xxxx xxxxxxxx xxx xxxxxxxxx xxxxxx xxxx xx xxxx xxx xxxxxxx xx xxxxxxxxx (xxx xxxxxxx, xxxx xxxx xxxxxxx xxx xxxxx xxxxxx xx xxxxxxx xxx xxxxxx), xxxxxxxx, xxx xxxxx. Xx xxxxxxxxxx xxx xxxxxxxxxxxxx, xxx xxxx xx xxxxxx x [**Xxxxxxx::Xxxxxxx::Xxxxxxx::Xxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225687) xxxxxx xxxx xxx xxxxxxxxxx xxx xxxxxxxxxxx.
+Xbox 360 コントローラーは初期化を必要としません。 タッチを初期化するには、ポインターがアクティブになったとき (たとえばユーザーがマウス ボタンを押すか画面に触れたとき)、離されたとき、移動されたときなどのウィンドウ イベントを登録する必要があります。 加速度計を初期化するには、アプリケーションの初期化時に [**Windows::Devices::Sensors::Accelerometer**](https://msdn.microsoft.com/library/windows/apps/br225687) オブジェクトを作成する必要があります。
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xxx **XxxxxxXXxxx** xxxxxxxxxxx xxxxxxxxx xxx xxx [**Xxxxxxx::XX::Xxxx::XxxxXxxxxxxxxxxXxxxxXxxxxx::XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298471), [**Xxxxxxx::XX::Xxxx::XxxxXxxxxxxxxxxXxxxxXxxxxx::XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298472), xxx [**Xxxxxxx::XX::Xxxx::XxxxXxxxxxxxxxxXxxxxXxxxxx::XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298469) xxxxxxx xxxxxx xxx xxx [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252834). Xxxxx xxxxxx xxx xxxxxxxxxx xxxxxx xxx xxxxxxxxxxxxxx xxx xxxxxx xxx xxxx xxxx.
+次の例では、**DirectXPage** コンストラクターが [**SwapChainPanel**](https://msdn.microsoft.com/library/windows/apps/dn252834) の [**Windows::UI::Core::CoreIndependentInputSource::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn298471) ポインター イベント、[**Windows::UI::Core::CoreIndependentInputSource::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn298472) ポインター イベント、および [**Windows::UI::Core::CoreIndependentInputSource::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn298469) ポインター イベントに対して登録する方法を示しています。 これらのイベントは、アプリの初期化中、ゲーム ループの前に登録されます。
 
-Xxxxx xxxxxx xxx xxxxxxx xx x xxxxxxxx xxxxxx xxxx xxxxxxx xxx xxxxx xxxxxxxx.
+これらのイベントは、イベント ハンドラーを呼び出す別のスレッドで処理されます。
 
-Xxx xxxx xxxxxxxxxxx xxxxx xxx xxx xxxxxxxxxxx xx xxxxxxxxxxx, xxx [Xxxxxx Xxxx xxxxxxxxxxx xxxxxxxxx](marble-maze-application-structure.md).
+アプリケーションの初期化方法について詳しくは、「[Marble Maze のアプリケーション構造](marble-maze-application-structure.md)」をご覧ください。
 
 ```cpp
 coreInput->PointerPressed += ref new TypedEventHandler<Object^, PointerEventArgs^>(this, &DirectXPage::OnPointerPressed);
@@ -54,41 +54,41 @@ coreInput->PointerMoved += ref new TypedEventHandler<Object^, PointerEventArgs^>
 coreInput->PointerReleased += ref new TypedEventHandler<Object^, PointerEventArgs^>(this, &DirectXPage::OnPointerReleased);
 ```
 
-Xxx XxxxxxXxxx xxxxx xxxx xxxxxxx x xxx::xxx xxxxxx xx xxxx xxxxx xxxxxx. Xxx xxx xxx xxxx xxx xxxxxx xx x xxxxx xxxx xxxxxxxx xxxxxxxxxx xxx xxxxx xxxxxxx. Xxxx xxx xxxx xx xxx xxxxxxxx xxxxxxx xxxxx xxxxx xxxxx xxx xxx xxxxxx xx xxx xxxxxx. Xxxxxx Xxxx xxxxx xxxx xxxxx xxxxxx xx xxxxxxxxx xxx xxxxxx xx xxxxx xxx xxxx xx xxxxxx.
+また、MarbleMaze クラスはタッチ イベントを保持するための std::map オブジェクトを作成します。 この map オブジェクトのキーは、入力ポインターを一意に識別する値です。 それぞれのキーは、各タッチ ポイントと画面の中央の間の距離にマップされます。 後で迷路の傾きの量を計算するときに、これらの値が使われます。
 
 ```cpp
 typedef std::map<int, XMFLOAT2> TouchMap;
 TouchMap        m_touches;
 ```
 
-Xxx XxxxxxXxxx xxxxx xxxxx xx Xxxxxxxxxxxxx xxxxxx.
+MarbleMaze クラスは Accelerometer オブジェクトを保持します。
 
 ```cpp
 Windows::Devices::Sensors::Accelerometer^           m_accelerometer;
 ```
 
-Xxx Xxxxxxxxxxxxx xxxxxx xx xxxxxxxxxxx xx xxx XxxxxxXxxx::Xxxxxxxxxx xxxxxx, xx xxxxx xx xxx xxxxxxxxx xxxxxxx. Xxx Xxxxxxx::Xxxxxxx::Xxxxxxx::Xxxxxxxxxxxxx::XxxXxxxxxx xxxxxx xxxxxxx xx xxxxxxxx xx xxx xxxxxxx xxxxxxxxxxxxx. Xx xxxxx xx xx xxxxxxx xxxxxxxxxxxxx, Xxxxxxxxxxxxx::XxxXxxxxxx xxx xxxxx xx x\_xxxxxxxxxxxxx xxxxxxx xxxxxxx.
+Accelerometer オブジェクトは、次の例に示すように MarbleMaze::Initialize メソッドで初期化されます。 Windows::Devices::Sensors::Accelerometer::GetDefault メソッドは既定の加速度計のインスタンスを返します。 既定の加速度計がない場合、Accelerometer::GetDefault の m\_accelerometer 値は nullptr のままになります。
 
 ```cpp
 // Returns accelerometer ref if there is one; nullptr otherwise.
 m_accelerometer = Windows::Devices::Sensors::Accelerometer::GetDefault();
 ```
 
-##  Xxxxxxxxxx xxx xxxxx
+##  メニューの操作
 
 
-###  Xxxxxxxx Xxxx YYY xxxxxxxxxx xxxxx
+###  Xbox 360 コントローラーの入力のトラッキング
 
-Xxx xxx xxx xxx xxxxx, xxxxx, xx xxx Xxxx YYY xxxxxxxxxx xx xxxxxxxx xxx xxxxx, xx xxxxxxx:
+メニューの操作には、次のようにマウス、タッチ、Xbox 360 コントローラーを使うことができます。
 
--   Xxx xxx xxxxxxxxxxx xxx xx xxxxxx xxx xxxxxx xxxx xxxx.
--   Xxx xxxxx, xxx X xxxxxx, xx xxx Xxxxx xxxxxx xx xxxx x xxxx xxxx xx xxxxx xxx xxxxxxx xxxx, xxxx xx xxx xxxx-xxxxx xxxxx.
--   Xxx xxx Xxxxx xxxxxx xx xxxxx xx xxxxxx xxx xxxx.
--   Xxxxx xx x xxxx xxxx xxxx xxx xxxxx xx xxxxxx xxxx xxxxxx.
+-   アクティブなメニュー項目を変更するには、方向パッドを使います。
+-   メニュー項目を選択したり現在のメニュー (ハイスコア表など) を閉じたりするには、タッチ、A ボタン、[スタート] ボタンを使います。
+-   ゲームを一時停止または再開するには、[スタート] ボタンを使います。
+-   操作を選択するには、マウスでそのメニュー項目をクリックします。
 
-###  Xxxxxxxx xxxxx xxx xxxxx xxxxx
+###  タッチとマウスによる入力のトラッキング
 
-Xx xxxxx Xxxx YYY xxxxxxxxxx xxxxx, xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxxxx xx xxxxx xx xxxxxxx xxxx xxxxxx xxx xxxxx xxxxxxxxx. XXxxxx xxxxxxxx xxxx xxx xxxxxxx xxxxx xx xxx xxxxxxxxxx. Xxxxxxxxx, **XxxxxxXxxx::Xxxxxx** xxxx xxxxxxx xxx xxxxxx xxxx xxxxx, xxx xxxx xxxxxxxx Xxxx YYY xxxxxxxxxx, xxxxxxx xxxx xxxxxx xxx xxxxxxx xxxxxx xxx xxxxxxxx xxxxx xxx xxxxxxx xxxx xxxxxx xx xxxxxxxxx xxxxxxx.
+Xbox 360 コントローラーの入力をトラッキングするために、**MarbleMaze::Update** メソッドは入力動作を定義するボタンの配列を定義します。 XInput から提供されるのは、コントローラーの現在の状態のみです。 そのため、**MarbleMaze::Update** も 2 つの配列を定義します。使用可能な各 Xbox 360 コントローラーについて、各ボタンが前のフレームの間に押されたかどうかと、各ボタンが現在押されているかどうかをこれらの配列によってトラッキングします。
 
 ```cpp
 // This array contains the constants from XINPUT that map to the 
@@ -111,15 +111,15 @@ static bool wasButtonDown[XUSER_MAX_COUNT][buttonCount] = { false, };
 bool isButtonDown[XUSER_MAX_COUNT][buttonCount] = { false, };
 ```
 
-Xxx xxx xxxxxxx xx xx xxxx Xxxx YYY xxxxxxxxxxx xx x Xxxxxxx xxxxxx. Xx xxxxx xxxxxx xx xxxxxx xxx xxxxx xxxxxxxxxx xx xxx xxxxxx xxx, xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxxxxx xxxxx xxxxxx xxx xxxxxxxxxxx.
+1 台の Windows デバイスには最大 4 つの Xbox 360 コントローラーを接続できます。 どのコントローラーがアクティブであるかを識別する手間を省くため、**MarbleMaze::Update** メソッドは、すべてのコントローラーの入力を結合します。
 
 ```cpp
 bool combinedButtonPressed[buttonCount] = { false, };
 ```
 
-Xx xxxx xxxx xxxxxxxx xxxx xxxx xxx xxxxxx, xxx xxxx xx xxxxx xxxxx xxx xxxx xxxxxx xxxxxxxxxx.
+複数プレーヤーをサポートするゲームでは、各プレーヤーの入力を個別にトラッキングする必要があります。
 
-Xx x xxxx, xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxx xxxx xxxxxxxxxx xxx xxxxx xxx xxxxx xxx xxxxx xx xxxx xxxxxx.
+**MarbleMaze::Update** メソッドは、ループ内で各コントローラーの入力をポーリングし、各ボタンの状態を読み込みます。
 
 ```cpp
 // Account for input on any connected controller.
@@ -146,7 +146,7 @@ for (DWORD userIndex = 0; userIndex < XUSER_MAX_COUNT; ++userIndex)
 }
 ```
 
-Xxxxx xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxx xxx xxxxx, xx xxxxxxx xxx xxxxxxxx xxxxx xxxxx. Xxx xxxxxxxx xxxxx xxxxx xxxxxx xxxx xxxxx xxxxxxx xxx xxxxxxx xxx xxxx xxx xxxxxxxxxx xxxxxxx. Xxxx xxxxxxx xxx xxxx xx xxxxxxx xx xxxxxx xxxx xx xxx xxxx x xxxxxx xx xxxxxxxxx xxxxxxx, xxx xxx xxxx xxx xxxxxx xx xxxx.
+入力のポーリング後、**MarbleMaze::Update** メソッドは結合された入力配列を更新します。 結合された入力配列によってトラッキングされるのは、現在は押されているが、それ以前は押されていなかったボタンのみです。 これによって、ボタンが最初に押されたときにのみアクションを実行し、ボタンが押されたままになっているときは実行しないようにできます。
 
 ```cpp
 bool combinedButtonPressed[buttonCount] = { false, };
@@ -160,7 +160,7 @@ for (int i = 0; i < buttonCount; ++i)
 }
 ```
 
-Xxxxx xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxxxxx xxxxxx xxxxx, xx xxxxxxxx xxx xxxxxxx xxxx xxxx xxxxxx. Xxx xxxxxxx, xxxx xxx Xxxxx xxxxxx (XXXXXX\_XXXXXXX\_XXXXX) xx xxxxxxx, xxx xxxx xxxxx xxxxxxx xxxx xxxxxx xx xxxxxx xx xxxx xxxxxx xx xxxxxx.
+ボタンの入力を収集した後、**MarbleMaze::Update** メソッドは必要なアクションがあれば実行します。 たとえば、[スタート] ボタン (XINPUT\_GAMEPAD\_START) が押されたときは、ゲームの状態がアクティブから一時停止、または一時停止からアクティブに変わります。
 
 ```cpp
 // Check whether the user paused or resumed the game. 
@@ -175,7 +175,7 @@ if (combinedButtonPressed[1] || m_pauseKeyPressed)
 }
 ```
 
-Xx xxx xxxx xxxx xx xxxxxx, xxx xxxxxx xxxx xxxx xxxxxxx xxxx xxx xxxxxxxxxxx xxx xx xxxxxxx xx xx xxxx. Xx xxx xxxx xxxxxxx xxx xxxxxxx xxxxxxxxx, xxx xxxxxxxxxxx XX xxxxxxx xx xxxxxx xx xxxxx xxxxxx.
+メイン メニューがアクティブである場合、方向パッドが上方向または下方向へ押されるとアクティブなメニュー項目が変わります。 ユーザーが現在の選択項目を選択すると、該当する UI 要素が選択中としてマークされます。
 
 ```cpp
 // Handle menu navigation. 
@@ -231,16 +231,16 @@ case GameState::InGamePaused:
 }
 ```
 
-Xxxxx xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxxxxxx xxxxxxxxxx xxxxx, xx xxxxx xxx xxxxxxx xxxxx xxxxx xxx xxx xxxx xxxxx.
+コントローラーの入力を処理した後、**MarbleMaze::Update** メソッドは次のフレームのために現在の入力状態を保存します。
 
 ```cpp
 // Update the button state for the next frame.
 memcpy(wasButtonDown, isButtonDown, sizeof(wasButtonDown));
 ```
 
-### Xxxxxxxx xxxxx xxx xxxxx xxxxx
+### タッチとマウスによる入力のトラッキング
 
-Xxx xxxxx xxx xxxxx xxxxx, x xxxx xxxx xx xxxxxx xxxx xxx xxxx xxxxxxx xx xxxxxx xx. Xxx xxxxxxxxx xxxxxxx xxxxx xxx xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxxxxxx xxxxxxx xxxxx xx xxxxxx xxxx xxxxx. Xxx **x\_xxxxxXxxxx** xxxxxx xxxxxxxx xxxxxx xxx xxxxxxxxx xxxxx xxx xxxx xxxxxxx xx xxxxxxx xx xxx xxxxxx. Xxx xxx xx xxxxx Xxxxxx Xxxx xxxxxxxx xxxxxxx xxxxx xx xxxxxxxxx xx xxxxxxx xxxxxx xxxxx xx xxxx xxxxxxxx xx xxx xxxxxxx Xxxxxxxxxx xxxxxxx xxxxx.
+タッチとマウスによる入力では、メニュー項目は、ユーザーがその項目をタッチまたはクリックしたときに選択されます。 次の例は、**MarbleMaze::Update** メソッドがポインターの入力を処理してメニュー項目を選択する方法を示します。 **m\_pointQueue** メンバー変数は、ユーザーが画面上でタッチまたはクリックした場所をトラッキングします。 Marble Maze のポインター入力の収集方法については、このドキュメントの「ポインターの入力の処理」で詳しく説明します。
 
 ```cpp
 // Check whether the user chose a button from the UI. 
@@ -252,7 +252,7 @@ while (!m_pointQueue.empty())
 }
 ```
 
-Xxx **XxxxXxxxxxxxx::XxxXxxx** xxxxxx xxxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxx xx xxxxxxx xx xxx xxxxxx xx xxx XX xxxxxxx. Xxx XX xxxxxxxx xxxx xxxx xxxx xxxx xxx xxxxxx xx xxxxx xxxxxxx. Xxxx xxxxxx xxxx xxx **XxxxxXxXxxx** xxxxxx xxxxxxxx xx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxx xx xxxxxxx xx xxx xxxxxx xx xxxx XX xxxxxxx.
+**UserInterface::HitTest** メソッドは、指定された点が UI 要素の境界内にあるかどうかを判断します。 このテストに合格した UI 要素はすべて、タッチされているとマークされます。 このメソッドは、指定された点が各 UI 要素の境界内にあるかどうかを判断するために **PointInRect** ヘルパー関数を利用します。
 
 ```cpp
 void UserInterface::HitTest(D2D1_POINT_2F point)
@@ -272,9 +272,9 @@ void UserInterface::HitTest(D2D1_POINT_2F point)
 }
 ```
 
-### Xxxxxxxx xxx xxxx xxxxx
+### ゲームの状態の更新
 
-Xxxxx xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxxxxxx xxxxxxxxxx xxx xxxxx xxxxx, xx xxxxxxx xxx xxxx xxxxx xx xxx xxxxxx xxx xxxxxxx.
+コントローラーとタッチの入力を処理した後、**MarbleMaze::Update** メソッドは、いずれかのボタンが押された場合にゲームの状態を更新します。
 
 ```cpp
 // Update the game state if the user chose a menu option. 
@@ -290,28 +290,28 @@ if (m_highScoreButton.IsPressed())
 }
 ```
 
-##  Xxxxxxxxxxx xxxx xxxx
+##  ゲーム プレイの制御
 
 
-Xxx xxxx xxxx xxx xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxx xxxxxxxx xx xxxxxx xxx xxxxx xx xxxx xxxxxxx. Xx xxxx xxxx xxxxxxx xxxxx xxxx xxxxxxxx xxxxxxx, xxx xxx xxxxxxxxxx xxx xxxxx xxxx xxx xxxxxxx xxxx xxx xxx xx xxxxxxxxx xx xxxx xxx xxx xxxxx xxxx xxxx'x xxxxxx xx xxxxxxxx. Xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxxxx xxx xxx xx xxxxxxxxx xxxx xxxxxxxxxxx xxxxxxxx xxxx xxx xxxxxxx.
+ゲーム ループと **MarbleMaze::Update** メソッドは、連携してゲーム オブジェクトの状態を更新します。 多様なデバイスからの入力を受け付けるゲームを開発する場合、すべてのデバイスからの入力を一連の変数に蓄積することで保守しやすいコードを作成することができます。 **MarbleMaze::Update** メソッドは、すべてのデバイスからの動作を蓄積する一連の変数を定義します。
 
 ```cpp
 float combinedTiltX = 0.0f;
 float combinedTiltY = 0.0f;
 ```
 
-Xxx xxxxx xxxxxxxxx xxx xxxx xxxx xxx xxxxx xxxxxx xx xxxxxxx. Xxx xxxxxxx, xxxxxxx xxxxx xx xxxxxxx xx xxxxx xxx Xxxxxxx Xxxxxxx xxxxx-xxxxxxxx xxxxx. Xxxxxxxxxx, xxx xxxx xxx xxxxx xxxx xxxx xxx Xxxx YYY xxxxxxxxxx xxxx xxx xxxx xx. Xx xxxxxxxxx xxxx xxx xxxxxx xxxxxx xxx xxxxx xxxxxxxxx xxxx xx xxxxxxxxxx xxx x xxxxx xxxxxx. Xxxx xxxxxxx xxxxxxxxx xxx Xxxxxx Xxxx xxxxx xxxxx xxxx xxxx xxxxxx, xxx xx xxxxxxx xxx xxxxxxxx xxxxx xxxxxx, xxx xxx xx xxxx xxx xxxxxxxx xxxxx xxxxxx xx xxxxxx xxx xxxxx xx xxx xxxx.
+入力機構は入力デバイスによって異なります。 たとえば、ポインターの入力は Windows ランタイムのイベント処理モデルを使って処理されます。 これに対して、Xbox 360 コントローラーからの入力データは必要なときに自分でポーリングします。 デバイスごとに定められた入力機構に常に従うことをお勧めします。 このセクションでは、Marble Maze が各デバイスからの入力を読み取り、結合された入力値を更新し、結合された入力値を使ってゲームの状態を更新する方法について説明します。
 
-###  Xxxxxxxxxx xxxxxxx xxxxx
+###  ポインターの入力の処理
 
-Xxxx xxx xxxx xxxx xxxxxxx xxxxx, xxxx xxx [**Xxxxxxx::XX::Xxxx::XxxxXxxxxxxxxx::XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208217) xxxxxx xx xxxxxxx xxxxxx xxxxxx. Xxxx xxxx xxxxxx xx xxxx xxxx xxxx xxxxxx xxx xxxxxx xx xxxxxx xxx xxxxx. Xxxxxx Xxxx xxxxxx **XxxxXxxxxxxXxxxxxXxxxxx::XxxxxxxXxxXxXxxxxxx** xx xxxx xxxxxx xx xxxxxxx xxx xxxxxx xxxxxx, xxx xxxx xxxxxxxxxxx xxxxxx. Xxxxx xxxxxx xxx xxxxxxxxx, Xxxxxx Xxxx xxxxxxx xxx xxxxxxxx xxx xxxx xxxxx.
+ポインターの入力を処理するときは、[**Windows::UI::Core::CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208217) メソッドを呼び出してウィンドウ イベントを処理します。 このメソッドは、ゲーム ループ内でシーンの更新またはレンダリングの前に呼び出します。 Marble Maze は、このメソッドに **CoreProcessEventsOption::ProcessAllIfPresent** を渡してキュー内のすべてのイベントを処理した後、すぐに制御を戻します。 イベントの処理後に Marble Maze はレンダリングを行い、次のフレームを表示します。
 
 ```cpp
 // Process windowing events.
 CoreWindow::GetForCurrentThread()->Dispatcher->ProcessEvents(CoreProcessEventsOption::ProcessAllIfPresent);
 ```
 
-Xxx Xxxxxxx Xxxxxxx xxxxx xxx xxxxxxxxxx xxxxxxx xxx xxxx xxxxx xxxx xxxxxxxx. Xxx **XxxxxxXXxx** xxxxx xxxxxxxxx xxx xxxxxx xxx xxxxxxxx xxxxxxx xxxxxxxxxxx xx xxx **XxxxxxXxxx** xxxxx.
+Windows ランタイムは、イベントが発生するたびに、登録されているハンドラーを呼び出します。 **DirectXApp** クラスはイベントを登録し、ポインターの情報を **MarbleMaze** クラスに転送します。
 
 ```cpp
 void DirectXApp::OnPointerPressed(
@@ -339,7 +339,7 @@ void DirectXApp::OnPointerMoved(
 }
 ```
 
-Xxx **XxxxxxXxxx** xxxxx xxxxxx xx xxxxxxx xxxxxx xx xxxxxxxx xxx xxx xxxxxx xxxx xxxxx xxxxx xxxxxx. Xxx **XxxxxxXxxx::XxxXxxxx** xxxxxx xx xxxxxx xxxx xxx xxxxxxx xx xxxxx xxxxxxx, xxx xxxxxxx, xxxx xxx xxxx xxxxxxxxx xxxxxxx xxx xxxxxx xx x xxxxx-xxxxxxx xxxxxx. Xxx **XxxxxxXxxx::XxxXxxxx** xxxxxx xx xxxxxx xxxx xxx xxxxxxx xxxxxxxx xxxxx. Xxx **XxxxxxXxxx::XxxxxxXxxxx** xxxxxx xx xxxxxx xxxx xxx xxxxxxx xx xxxxxxxx, xxx xxxxxxx, xxxx xxx xxxx xxxxx xxxxxxxx xxx xxxxxx.
+**MarbleMaze** クラスは、タッチ イベントを保持する map オブジェクトを更新することによってポインター イベントに対応します。 **MarbleMaze::AddTouch** メソッドは、ポインターが最初に押されたとき (たとえばタッチ対応デバイス上でユーザーが最初に画面に触れたとき) に呼び出されます。 **MarbleMaze::AddTouch** メソッドは、ポインターの位置が移動したときに呼び出されます。 **MarbleMaze::RemoveTouch** メソッドは、ポインターが離されたとき (たとえばユーザーが画面に触れるのを止めたとき) に呼び出されます。
 
 ```cpp
 void MarbleMaze::AddTouch(int id, Windows::Foundation::Point point)
@@ -361,7 +361,7 @@ void MarbleMaze::RemoveTouch(int id)
 }
 ```
 
-Xxx XxxxxXxXxxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxx xxxxxxx xxxxxxxx xx xxxx xxx xxxxxx xx xx xxx xxxxxx xx xxx xxxxxx, xxx xxxx xxxxxx xxx xxxxxxxxxxx xx xxxx xxxx xxxxx xxxxxxxxxxxxx xxxxxxx -Y.Y xxx +Y.Y. Xxxx xxxxx xx xxxxxx xx xxxxxxxxx xxx xxxx xx xxx xxxx xx x xxxxxxxxxx xxx xxxxxx xxxxxxxxx xxxxx xxxxxxx.
+PointToTouch 関数は、原点が画面の中心に来るように現在のポインターの位置を変換した後、座標をスケーリングして、およそ -1.0 ～ +1.0 の範囲内になるようにします。 これにより、入力方法の違いにかかわらず、一貫した方法で容易に迷路の傾きを計算することができます。
 
 ```cpp
 inline XMFLOAT2 PointToTouch(Windows::Foundation::Point point, Windows::Foundation::Rect bounds)
@@ -374,7 +374,7 @@ inline XMFLOAT2 PointToTouch(Windows::Foundation::Point point, Windows::Foundati
 }
 ```
 
-Xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxxxx xxx xxxxxxxx xxxxx xxxxxx xx xxxxxxxxxxxx xxx xxxx xxxxxx xx x xxxxxxxx xxxxxxx xxxxx. Xxxx xxxxxxx xxxxx xxx xxxxxxxxxx xx xxxxxxxxxxxxx xxxx xxxxxxx xxxxxxxxx xxxxxx.
+**MarbleMaze::Update** メソッドは、傾き係数を一定のスケーリング値ずつインクリメントすることにより、結合された入力値を更新します。 このスケーリング値は、いくつかの値を試して決定されました。
 
 ```cpp
 // Account for touch input. 
@@ -386,11 +386,11 @@ for (TouchMap::const_iterator iter = m_touches.cbegin(); iter != m_touches.cend(
 }
 ```
 
-### Xxxxxxxxxx xxxxxxxxxxxxx xxxxx
+### 加速度計の入力の処理
 
-Xx xxxxxxx xxxxxxxxxxxxx xxxxx, xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxx xxx [**Xxxxxxx::Xxxxxxx::Xxxxxxx::Xxxxxxxxxxxxx::XxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225699) xxxxxx. Xxxx xxxxxx xxxxxxx x [**Xxxxxxx::Xxxxxxx::Xxxxxxx::XxxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225688) xxxxxx, xxxxx xxxxxxxxxx xx xxxxxxxxxxxxx xxxxxxx. Xxx **Xxxxxxx::Xxxxxxx::Xxxxxxx::XxxxxxxxxxxxxXxxxxxx::XxxxxxxxxxxxX** xxx **Xxxxxxx::Xxxxxxx::Xxxxxxx::XxxxxxxxxxxxxXxxxxxx::XxxxxxxxxxxxX** xxxxxxxxxx xxxx xxx x-xxxxx xxxxxxxxxxxx xxxxx xxx x xxx x xxxx, xxxxxxxxxxxx.
+加速度計の入力を処理するために、**MarbleMaze::Update** メソッドは [**Windows::Devices::Sensors::Accelerometer::GetCurrentReading**](https://msdn.microsoft.com/library/windows/apps/br225699) メソッドを呼び出します。 このメソッドは、加速度計の測定値を表す [**Windows::Devices::Sensors::AccelerometerReading**](https://msdn.microsoft.com/library/windows/apps/br225688) オブジェクトを返します。 **Windows::Devices::Sensors::AccelerometerReading::AccelerationX** プロパティと **Windows::Devices::Sensors::AccelerometerReading::AccelerationY** プロパティは、x 軸方向と y 軸方向の重力加速度をそれぞれ保持します。
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxx xxx xxxxxxxxxxxxx xxx xxxxxxx xxx xxxxxxxx xxxxx xxxxxx. Xx xxx xxxx xxx xxxxxx, xxxxxxx xxxxxx xxx xxxxxx xx xxxx xxxxxx.
+次の例は、**MarbleMaze::Update** メソッドが加速度計をポーリングし、結合された入力値の更新を行う方法を示します。 デバイスを傾けると、重力によって大理石が速く移動します。
 
 ```cpp
 // Account for sensors. 
@@ -408,11 +408,11 @@ if (m_accelerometer != nullptr)
 }
 ```
 
-Xxxxxxx xxx xxxxxx xx xxxx xxxx xx xxxxxxxxxxxxx xx xxxxxxx xx xxx xxxx’x xxxxxxxx, xxxxxx xxxxxx xxxx xxx xxxx x xxxxx Xxxxxxxxxxxxx xxxxxx xxxxxx xxx xxxx xxx xxxxxxxxxxxxx.
+ユーザーのコンピューターに加速度計が搭載されているかどうかは不確かなため、加速度計のポーリングを行う前には必ず、有効な Accelerometer オブジェクトがあることを確認してください。
 
-### Xxxxxxxxxx Xxxx YYY xxxxxxxxxx xxxxx
+### Xbox 360 コントローラーの入力の処理
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxx xxxx xxx Xxxx YYY xxxxxxxxxx xxx xxxxxxx xxx xxxxxxxx xxxxx xxxxxx. Xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxx x xxx xxxx xx xxxxxx xxxxx xx xx xxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxxxx. Xxx **XXxxxxXxxXxxxx** xxxxxx xxxxx xx XXXXXX\_XXXXX xxxxxx xxxx xxxxxxx xxxxx xx xxx xxxxxxxxxx. Xxx **xxxxxxxxXxxxX** xxx **xxxxxxxxXxxxX** xxxxxx xxx xxxxxxx xxxxxxxxx xx xxx x xxx x xxxxxx xx xxx xxxx xxxxxxxxxx.
+次の例は、**MarbleMaze::Update** メソッドが Xbox 360 コントローラーからの読み取りを行い、結合された入力値を更新する方法を示します。 **MarbleMaze::Update** メソッドは for ループを使って、接続されたコントローラーから入力を受け取ることができるようにします。 **XInputGetState** メソッドは、XINPUT\_STATE オブジェクトにコントローラーの現在の状態を設定します。 **combinedTiltX** 値と **combinedTiltY** 値は、左スティックの x 値と y 値に従って更新されます。
 
 ```cpp
 // Account for input on any connected controller.
@@ -439,21 +439,21 @@ for (DWORD userIndex = 0; userIndex < XUSER_MAX_COUNT; ++userIndex)
 }
 ```
 
-XXxxxx xxxxxxx xxx **XXXXXX\_XXXXXXX\_XXXX\_XXXXX\_XXXXXXXX** xxxxxxxx xxx xxx xxxx xxxxxxxxxx. Xxxx xx xx xxxxxxxxxxx xxxx xxxx xxxxxxxxx xxx xxxx xxxxx.
+XInput は、左スティックの定数 **XINPUT\_GAMEPAD\_LEFT\_THUMB\_DEADZONE** を定義します。 これは、ほとんどのゲームに適したデッド ゾーンのしきい値です。
 
-> **Xxxxxxxxx**  Xxxx xxx xxxx xxxx xxx Xxxx YYY xxxxxxxxxx, xxxxxx xxxxxxx xxx xxx xxxx xxxx. Xxx xxxx xxxx xxxxxx xx xxx xxxxxxxx xxxxx xxxxxxxx xx xxxxx xxxxxxxxxxx xx xxxxxxx xxxxxxxx. Xx xxxx xxxxxxxxxxx, x xxxxx xxxxxxxx xxx xxxxxxxx xx xxxxxxx, xxx xx xxxxxx xx xxx xxxxxxxx x xxxxxxxxxx xxxxxxx. Xx xxxxxxx xxx xxxx xx xxxx xxxx, xxxxxx x xxxx xx xxx-xxxxxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxx xxxx xxxx, xxx [Xxxxxxx Xxxxxxx Xxxx XXxxxx.](https://msdn.microsoft.com/library/windows/desktop/ee417001)
-
- 
-
-###  Xxxxxxxx xxxxx xx xxx xxxx xxxxx
-
-Xxxxxxx xxxxxx xxxxx xxxxxx xx xxxxxxxxx xxxx. Xxx xxxxxxx, xxxxxxx xxxxx xxxxx xx xx xxxxxx xxxxxxxxxxx, xxx xxxxxxxxxx xxxxx xxxxx xx xx x xxxxxxxxxx xxxxxxxxx xxxxxx. Xxx xxxxxxxxx xxxx xxxxxxxxx xxxxx xxxx xxxxxxxx xxxxxxx xxxx xxx xxx xx xxxxx xxxxxx xx xxxxxxxxxxxxx, xx xxxxxxxxxx xxxxxx xx x xxxxxx xxxxxx. Xxxxxx Xxxx xxxxxxxxxx xxxxxx xx xxxxxxx xxxx xx xxx xxxxx \[-Y.Y, Y.Y\]. Xx xxxxxxxxx Xxxx YYY xxxxxxxxxx xxxxx, Xxxxxx Xxxx xxxxxxx xxx xxxxx xxxxxx xx YYYYY xxxxxxx xxxxxxxxxx xxxxx xxxxxx xxxxxx xxxx xxxxxxx -YYYYY xxx YYYYY. Xxx **XxxxxXxXxxxx** xxxxxxxx, xxxxx xx xxxxxxxxxx xxxxxxxxx xx xxxx xxxxxxx, xxxxxxxx x xxxxxxx xxxxxx xx xxxxxxxxxx xxxxxx xxxxxxxxxxx xx xxxxxxxxxx xxxxxx xxxx xxxxx xxxxxxxxxxxxx xxxxxxx -Y.Y xxx +Y.Y.
-
-> **Xxx**  Xxxx xx xxxx xxxxxxxxxxx xxxx xxx xxxxx xxxxxx, xx xxxxxxxxx xxxx xxx xxxxxx xxxxxxxxx xxxxx xxxxxx. Xxxxx xx xxx xxxxxxxx xxx xxxxx xx xxxxxxxxxxx xx xxxxx xxxxxxxxxx xx xxxx xxxx, xxxx xx xxxxxxx xxxxxxxxxx, xxx xxxxx xx xxxxxx xx xxxxx xxxxx xxxx xxxx xx xxxxxxxxx xxxxxx xxxxxxxxxxx.
+> **重要**  Xbox 360 コントローラーを使うときは、常にデッド ゾーンを考慮してください。 デッド ゾーンとは、ゲームパッド間の、最初の移動に対する感度の差異を指します。 小さな移動があったときに、あるコントローラーでは測定値が生成されないのに、別のコントローラーでは測定値が生成されることがあります。 これをゲームで考慮するために、サムスティックの最初の移動に対して、移動なしと見なすゾーンを作成します。 デッド ゾーンについて詳しくは、「[XInput の概要](https://msdn.microsoft.com/library/windows/desktop/ee417001)」をご覧ください。
 
  
 
-Xxxxx xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxxxxxx xxxxx, xx xxxxxxx x xxxxxx xxxx xxxxxxxxxx xxx xxxxxx xx xxx xxxx xx xxx xxxx xx xxx xxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxx xxx Xxxxxx Xxxx xxxx xxx **XXXxxxxxYXxxxxxxxx** xxxxxxxx xx xxxxxx x xxxxxxxxxx xxxxxxx xxxxxx. Xxx *XxxXxxx* xxxxxxxx xxxxxxxxxx xxx xxxxxx xx xxxxx xxx xxxx xxxxx xxx xxxxxxxx xxx xxxx xxxx xxxxxxx xx xxx xxxx.
+###  ゲームの状態への入力の適用
+
+デバイスは、さまざまな方法で入力値を報告します。 たとえば、ポインターの入力は通常、画面座標で報告されますが、コントローラーの入力の形式は、それとはまったく異なることが考えられます。 複数のデバイスからの入力を一連の入力値に結合する際の課題の 1 つに、正規化 (共通形式への値の変換) があります。 Marble Maze は、値を範囲 \[-1.0, 1.0\] にスケーリングすることによって正規化します。 Xbox 360 コントローラーの入力を正規化するために、Marble Maze は入力値を 32768 で除算します。これは、サムスティックの入力値が常に -32768 ～ 32767 の範囲内であるためです。 このセクションで既に説明した **PointToTouch** 関数は、画面座標をおよそ -1.0 ～ +1.0 の範囲内の正規化された値に変換することによって同様の結果を得ます。
+
+> **ヒント**  アプリケーションで用いられる入力方法が 1 つであっても、常に入力値を正規化することをお勧めします。 そうすることで、ゲームの他のコンポーネント (物理シミュレーションなど) が入力を解釈する方法を簡略化でき、さまざまな画面解像度で動作するゲームが作成しやすくなります。
+
+ 
+
+入力を処理した後、**MarbleMaze::Update** メソッドは、大理石に対する迷路の傾きの影響を表すベクターを作成します。 次の例は、Marble Maze が **XMVector3Normalize** 関数を使って正規化された重力ベクターを作成する方法を示します。 *MaxTilt* 変数は迷路の傾きの量を制限し、迷路が横向きに傾けられるのを防ぎます。
 
 ```cpp
 const float maxTilt = 1.0f / 8.0f;
@@ -461,7 +461,7 @@ XMVECTOR gravity = XMVectorSet(combinedTiltX * maxTilt, combinedTiltY * maxTilt,
 gravity = XMVector3Normalize(gravity);
 ```
 
-Xx xxxxxxxx xxx xxxxxx xx xxxxx xxxxxxx, Xxxxxx Xxxx xxxxxx xxx xxxxxxx xxxxxxx xxxxxx xx xxx xxxxxxx xxxxxxxxxx, xxxxxxx xxx xxxxxxx xxxxxxxxxx xxx xxx xxxx xxxx xxx xxxxxxx xxxxx xxx xxxxxxxx xxxxx, xxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxxxxx xx xxx xxxxxx. Xx xxx xxxxxx xxx xxxxxx xxxxxxx xxx xxxx, xxx **XxxxxxXxxx::Xxxxxx** xxxxxx xxxxxx xxx xxxxxx xxxx xx xxx xxxx xxxxxxxxxx xxxx xxx xxxxxx xxxxxxx xxx xxxxxx xxx xxxxx xx xxx xxxxxxx xxxxxxxxxx.
+シーン オブジェクトの更新を完了するために、Marble Maze は更新された重力ベクターを物理シミュレーションに渡し、前のフレームからの経過時間の物理シミュレーションを更新したうえで、大理石の位置と方向を更新します。 大理石が迷路から落ちた場合、**MarbleMaze::Update** メソッドは、最後に接触したチェックポイントまで大理石を戻し、物理シミュレーションの状態をリセットします。
 
 ```cpp
 XMFLOAT3 g;
@@ -498,25 +498,29 @@ if (marblePosition.z >= resetDepth)
 }
 ```
 
-Xxxx xxxxxxx xxxx xxx xxxxxxxx xxx xxx xxxxxxx xxxxxxxxxx xxxxx. Xxx xxxxxxx xxxxx xxxx, xxx Xxxxxxx.x xxx Xxxxxxx.xxx xx xxx Xxxxxx Xxxx xxxxxxx.
+このセクションでは、物理シミュレーションのしくみについては説明しません。 詳しくは、Marble Maze のソースの Physics.h と Physics.cpp をご覧ください。
 
-## Xxxx xxxxx
-
-
-Xxxx [Xxxxxx xxxxx xx xxx Xxxxxx Xxxx xxxxxx](adding-audio-to-the-marble-maze-sample.md) xxx xxxxxxxxxxx xxxxx xxxx xx xxx xxx xxxxxxxxx xx xxxx xx xxxx xxxx xxx xxxx xxxx xxxxx. Xxx xxxxxxxx xxxxxxxxx xxx Xxxxxx Xxxx xxxx Xxxxxxxxx Xxxxx Xxxxxxxxxx xxx XXxxxxY xx xxxx, xxx, xxx xxxx xxxxx xxxxxxxxx.
-
-## Xxxxxxx xxxxxx
+## 次の手順
 
 
-* [Xxxxxx xxxxx xx xxx Xxxxxx Xxxx xxxxxx](adding-audio-to-the-marble-maze-sample.md)
-* [Xxxxxx xxxxxx xxxxxxx xx xxx Xxxxxx Xxxx xxxxxx](adding-visual-content-to-the-marble-maze-sample.md)
-* [Xxxxxxxxxx Xxxxxx Xxxx, x XXX xxxx xx X++ xxx XxxxxxX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+オーディオを扱う際の主な手法については、「[Marble Maze サンプルへのオーディオの追加](adding-audio-to-the-marble-maze-sample.md)」をご覧ください。 このドキュメントでは、Marble Maze が Microsoft メディア ファンデーションと XAudio2 を使ってオーディオ リソースの読み込み、ミキシング、再生を行う方法について説明しています。
+
+## 関連トピック
+
+
+* [Marble Maze のサンプルへのオーディオの追加](adding-audio-to-the-marble-maze-sample.md)
+* [Marble Maze サンプルへの視覚的なコンテンツの追加](adding-visual-content-to-the-marble-maze-sample.md)
+* [Marble Maze、C++ と DirectX での UWP ゲームの開発](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

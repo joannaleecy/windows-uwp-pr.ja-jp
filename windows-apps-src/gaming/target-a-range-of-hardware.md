@@ -1,23 +1,23 @@
 ---
-xxxxx: Xxxxxxx xxxxxx xxxx xx x xxxxx xx xxxxxxxx
-xxxxxxxxxxx: Xxxxxx xxxxxx-xxxxxxxx xxxxxxx xx xxxxxx xxxxxxx xxx xxxxxx xxxxxxx xx xxxx xxxxxxxx xxxxxxx.
-xx.xxxxxxx: xYYxYYYY-YYxY-YxYY-YxYY-YYxYYxYxxxYx
+title: Support shadow maps on a range of hardware
+description: Render higher-fidelity shadows on faster devices and faster shadows on less powerful devices.
+ms.assetid: d97c0544-44f2-4e29-5e02-54c45e0dff4e
 ---
 
-# Xxxxxxx xxxxxx xxxx xx x xxxxx xx xxxxxxxx
+# Support shadow maps on a range of hardware
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxx xxxxxx-xxxxxxxx xxxxxxx xx xxxxxx xxxxxxx xxx xxxxxx xxxxxxx xx xxxx xxxxxxxx xxxxxxx. Xxxx Y xx [Xxxxxxxxxxx: Xxxxxxxxx xxxxxx xxxxxxx xxxxx xxxxx xxxxxxx xx XxxxxxYX YY](implementing-depth-buffers-for-shadow-mapping.md).
+Render higher-fidelity shadows on faster devices and faster shadows on less powerful devices. Part 4 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
-## Xxxxxxxxxx xxxxxx xxxxx
+## Comparison filter types
 
 
-Xxxx xxx xxxxxx xxxxxxxxx xx xxx xxxxxx xxx xxxxxx xxx xxxxxxxxxxx xxxxxxx. Xxxxxxxxx, XxxxxxYX xxxxxxx xxxxx Y\_Y xxxxxxx xxx'x xxxx xxxxxx xxxxx xx xxxxx xxx xxxxxx xxxxxxxxx xx xxxxxxx. Xxx xxxxx xxxxxxxxx xxxxxxx xx xxxxx xxxxxxx. Xxxx xxx xxx xxxxxx xxxxxxxxx, xxxxxx xxx xxxxx xxxxxx xx xxxx xx xxxxxx xxx xxxxxx xxxxx.
+Only use linear filtering if the device can afford the performance penalty. Generally, Direct3D feature level 9\_1 devices don't have enough power to spare for linear filtering on shadows. Use point filtering instead on these devices. When you use linear filtering, adjust the pixel shader so that it blends the shadow edges.
 
-Xxxxxx xxx xxxxxxxxxx xxxxxxx xxx xxxxx xxxxxxxxx:
+Create the comparison sampler for point filtering:
 
 ```cpp
 D3D11_SAMPLER_DESC comparisonSamplerDesc;
@@ -49,7 +49,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Xxxx xxxxxx x xxxxxxx xxx xxxxxx xxxxxxxxx:
+Then create a sampler for linear filtering:
 
 ```cpp
 comparisonSamplerDesc.Filter = D3D11_FILTER_COMPARISON_MIN_MAG_MIP_LINEAR;
@@ -61,7 +61,7 @@ DX::ThrowIfFailed(
     );
 ```
 
-Xxxxxx x xxxxxxx:
+Choose a sampler:
 
 ```cpp
 ID3D11PixelShader* pixelShader;
@@ -88,7 +88,7 @@ context->PSSetSamplers(0, 1, comparisonSampler);
 context->PSSetShaderResources(0, 1, m_shadowResourceView.GetAddressOf());
 ```
 
-Xxxxx xxxxxx xxxxx xxxx xxxxxx xxxxxxxxx:
+Blend shadow edges with linear filtering:
 
 ```cpp
 // Blends the shadow area into the lit area.
@@ -97,22 +97,22 @@ float3 shadow = (1.0f - lighting) * ambient;
 return float4(input.color * (light + shadow), 1.f);
 ```
 
-## Xxxxxx xxxxxx xxxx
+## Shadow buffer size
 
 
-Xxxxxx xxxxxx xxxx xxx'x xxxx xx xxxxxx xxx xxxx xxxx xx xxxx xxxxx xx xxxxxxxx xxxxxx. Xxxxxxxxxx xxxx xxxxxxxxx xxxxxx xxx xxxxx xx xxxx xxxx xxx xxxxxxx xxx xxxxxxx xx xxxxxxxxx xxxxx xx xxxxxxx xxx xxxxxxxxx xxxxxxx xxxxx. Xxxxxxxx xx xxxxxxxxxxxx xxxx xxxxxxxx xxxxxx xxxx xx xxx xxxxxx xxxxxxx xxxx xxxx xxxxxxxx xxxxxx. Xxx [Xxxxxx Xxxxxxxxxx xx Xxxxxxx Xxxxxx Xxxxx Xxxx](https://msdn.microsoft.com/library/windows/desktop/ee416324).
+Larger shadow maps won't look as blocky but they take up more space in graphics memory. Experiment with different shadow map sizes in your game and observe the results in different types of devices and different display sizes. Consider an optimization like cascaded shadow maps to get better results with less graphics memory. See [Common Techniques to Improve Shadow Depth Maps](https://msdn.microsoft.com/library/windows/desktop/ee416324).
 
-## Xxxxxx xxxxxx xxxxx
-
-
-Xxxxxxx xxxxxxxxx xx xxx xxxxxx xxxxxx xxxx xxxx xxxx xxxxxxxx xxxxx xxxx xxxxxxx, xxxxx xxxxx xxxxx xxxxxx xxxx x-xxxxxx xxxxxxxx. Xxx xxxx xxxxxx xxxxxx xxxx, xxxxxxx xxxxxxxxx xxxxx xx xxxx xxxxxx. Xxxxxxxxxx xxxx xxxxxxxxx xxxxx xxxxxxxxx xxxxx xx xxxx xxxx - XXXX\_XXXXXX\_XYYXY\_XXXXXXXX xxxxxx XXXX\_XXXXXX\_XYY\_XXXXXXXX - xxx xxxxxxx xxx xxxxx xxx xxxxxxx xx xxxxxxxxx xxxxxxx xxxxxx.
-
-## Xxxxxxxxxx xxxxxxxxxxx xxxxxxx
+## Shadow buffer depth
 
 
-Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx xxx xxxxxxx xxxxxx xxxxxxxxxxx, xxx xx'x xxxxxx xx xxx xxxxxxx xxxxxx xxxxxxx. Xxx xxx xxxx xxx xxxxxxxx xxxxxxxxxx xxx `#ifdef` xxxxxx xx xxxxxx xxxxxxxxx xxxxxxxx xx xxxxxxx. Xxxx xx xxxx xx xxxxxxx xxx Xxxxxx Xxxxxx xxxxxxx xxxx xx x xxxx xxxxxx xxx xxxxxx xxxxxxxx `<FxcCompiler>` xxxxxxx xxx xxx XXXX (xxxx xxxx xxx xxxxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxx). Xxxx xxxx xxxx xxxxxxxxxxxx xxxxxxxxx xxxxxxxxx; xx xxxx xxxx, Xxxxxx Xxxxxx xxxxxxx \_xxxxx xxx \_xxxxxx xx xxx xxxxxxxxx xxxxxxxx xx xxx xxxxxx.
+Greater precision in the shadow buffer will give more accurate depth test results, which helps avoid issues like z-buffer fighting. But like larger shadow maps, greater precision takes up more memory. Experiment with different depth precision types in your game - DXGI\_FORMAT\_R24G8\_TYPELESS versus DXGI\_FORMAT\_R16\_TYPELESS - and observe the speed and quality on different feature levels.
 
-Xxx xxxxxxx xxxx xxxxx xxx xxx xxxxxx xxxxxxxx xxxxxxx xx xxx xxxxxx xxxxxxx XXXXXX:
+## Optimizing precompiled shaders
+
+
+Universal Windows Platform (UWP) apps can use dynamic shader compilation, but it's faster to use dynamic shader linking. You can also use compiler directives and `#ifdef` blocks to create different versions of shaders. This is done by opening the Visual Studio project file in a text editor and adding multiple `<FxcCompiler>` entries for the HLSL (each with the appropriate preprocessor definitions). Note that this necessitates different filenames; in this case, Visual Studio appends \_point and \_linear to the different versions of the shader.
+
+The project file entry for the linear filtered version of the shader defines LINEAR:
 
 ```
 <FxCompile Include="Content\ShadowPixelShader.hlsl">
@@ -141,7 +141,7 @@ Xxx xxxxxxx xxxx xxxxx xxx xxx xxxxxx xxxxxxxx xxxxxxx xx xxx xxxxxx xxxxxxx XXX
 </FxCompile>
 ```
 
-Xxx xxxxxxx xxxx xxxxx xxx xxx xxxxxx xxxxxxxx xxxxxxx xx xxx xxxxxx xxxx xxx xxxxxxx xxxxxxxxxxxx xxxxxxxxxxx:
+The project file entry for the linear filtered version of the shader does not include preprocessor definitions:
 
 ```
 <FxCompile Include="Content\ShadowPixelShader.hlsl">
@@ -171,4 +171,8 @@ Xxx xxxxxxx xxxx xxxxx xxx xxx xxxxxx xxxxxxxx xxxxxxx xx xxx xxxxxx xxxx xxx xx
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

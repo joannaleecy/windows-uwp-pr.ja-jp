@@ -1,62 +1,66 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxxxxxx xxxxxxxxxx xxxxxxxxxxx xxxxx xxxx xxx xx xxx Xxx xxxxxxxxxxxx xxxxxxx xx xxx Xxx xxxxxxxxxx xxxx xxxxxx xxx xxxxxxxxxx xxxxxxx.
-xxxxx: Xxx xxxxxxxxxxxx
-xx.xxxxxxx: YXXYYYXY-YXYY-YXYY-XYXY-YXXYYYXYXYYX
+Description: 申請プロセス中、[アプリケーションのプロパティ] ページの [App declarations] (アプリの宣言) セクションで、アプリに関する追加情報を入力できます。
+title: アプリの宣言
+ms.assetid: 3AF618F3-2B47-4A57-B7E8-1DF979D4A82C
 ---
 
-# Xxx xxxxxxxxxxxx
+# アプリの宣言
 
-Xxx xxx xxxxxxx xxxxxxxxxx xxxxxxxxxxx xxxxx xxxx xxx xx xxx **Xxx xxxxxxxxxxxx** xxxxxxx xx xxx **Xxx xxxxxxxxxx** xxxx xxxxxx xxx [xxxxxxxxxx xxxxxxx](app-submissions.md). Xxxxx xxxxxxxxxxxx xxx xxxx xxxx xxxx xxxx xxx xx xxxxxxxxx xxxxxxxxxxxxx xxx xxxxxxx xx xxx xxxxx xxx xx xxxxxxxxx, xx xxx xxxxxxxx xxx xxxxxxxxx xxx xxx xxxx xxx.
+[申請プロセス](app-submissions.md) 中、**[アプリケーションのプロパティ]** ページの **[App declarations]** (アプリの宣言) セクションで、アプリに関する追加情報を入力できます。 これらの宣言は、アプリが適切に表示され、適切なユーザー セットに提供されるようにするのに役立ちます。または、ユーザーにアプリの使い方を示すこともできます。
 
-Xxx xxxxxxxxx xxxxxxxx xxxxxxxx xxxx xxxxxxxxxxx xxx xxxx xxx xxxx xx xxxxxxxx xxxx xxxxxxxxxxx xxxxxxx xxxx xxxxxxxxxxx xxxxxxx xx xxxx xxx.
+次のセクションでは、各宣言についてと、各宣言をアプリに適用するかどうかを検討する際に考慮する必要がある事柄について説明します。
 
-## Xxxx xxx xxxxxx xxxxx xx xxxx xxxxxxxxx, xxx xxxx xxx xxx xxx Xxxxxxx Xxxxx xxxxxxxx xxxxxx.
+## このアプリでは、ユーザーが購入を行うことができますが、Windows ストア コマース システムを使いません。
 
-Xxxx xxxx xxxxxx xxxxx xxxx xxx xxxxxxxxx, xxxxx xxxx xxxxx xxxxx xxxxxxxxxxxxx xx xxxx xx-xxx xxxxxxxxx xxxxxxxxx xxx xxx Xxxxxxxxx xx-xxx xxxxxxxx XXX xx xxxxxx xxx [xxxxxx xxx XXXx](iap-submissions.md). Xxx xxx [Xxx Xxxxxxxxx Xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh694058), xxxx xxxx xxxx xxxxxxx xxx xxxxxxxxx xxxxx xx Xxxx YY, YYYY, xxx xxxxxxxx xx xxxxx xx-xxx xxxxxxxxxx xxxxxxxxxxxxx xxxxxxx xxxxx Xxxxxxxxx'x xxxxxxxx xxxxxx, xx xxxx xx xxx xxxxxxxx xxxxxxxxxxxxx xxxxxxxx xxxx xxx [Xxxxxxx Xxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8). Xx xxxx xxxxxxx xx xxxx xxx, xxx xxxx xxxxx xxxx xxx. Xxxxxxxxx, xxxxx xx xxxxxxxxx.
+ほとんどのアプリではこのボックスはオフのままにします。アプリ内購入を行うことができるアプリは、一般的に Microsoft アプリ内購入 API を使って [IAP を作成および申請](iap-submissions.md) するためです。 [アプリ開発者契約書](https://msdn.microsoft.com/library/windows/apps/hh694058) によると、2015 年 6 月 29 日より前に作成および申請されたアプリでは、[Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944.aspx#pol_10_8) に準拠している限り、Microsoft のコマース エンジンを使わずにアプリ内購入機能を実装していてもかまいません。 アプリがこれに該当する場合、このチェック ボックスをオンにする必要があります。 それ以外の場合は、オフのままにします。
 
-## Xxxx xxx xxx xxxx xxxxxx xx xxxx xxxxxxxxxxxxx xxxxxxxxxx.
+## このアプリは、アクセシビリティ ガイドラインを満していることがテストされました。
 
-Xxxxxxxx xxxx xxx xxxxx xxxx xxx xxxxxxxxxxxx xx xxxxxxxxx xxx xxx xxxxxxxxxxxx xxxxxxx xxx xxxxxxxxxx xxxx xx xxx Xxxxx.
+このボックスをオンにすると、ストアでアクセシビリティ対応アプリを明確に探しているユーザーが、そのアプリを見つけることができるようになります。
 
-Xxx xxxxxx xxxx xxxxx xxxx xxx xx xxx xxxx xxxx xxx xx xxx xxxxxxxxx xxxxx:
+このチェック ボックスは、次の項目のすべてを行った場合のみオンにしてください。
 
--   Xxx xxx xxx xxxxxxxx xxxxxxxxxxxxx xxxx xxx XX xxxxxxxx, xxxx xx xxxxxxxxxx xxxxx.
--   Xxxxxxxxxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxxxx, xxxxxx xxxx xxxxxxx xxx xxxxx, xxxxxxxx xxxxxxxxxx, xxxxx xxxx xxxxxxxxxx, xxxxxxxxx.
--   Xxxxxxx xx xxxxxxxxxx xxxxxx xxxxxxxxxx xx xxxxxxxxx xxxx xxxxxx xx x Y.Y:Y xxxx xxxxxxxx xxxxx, xxx xxx'x xxxx xx xxxxx xxxxx xx xxxxxx xxxx xx xxx xxxx.
--   Xxxx xxxxxxxxxxxxx xxxxxxx xxxxx, xxxx xx Xxxxxxx xx XxxXxxxxxx, xx xxxxxx xxxx xxx, xxx xxxxxxx xxx xxxx-xxxxxxxx xxxxxx xxxxxxxx xx xxxxx xxxxx.
--   Xxxxxxxx xxx xxx’x xxx xxxxxxxxx xxxx xxx xx xxx xxxxx xxxx xxxxxxxxxx xxx xxxxx xx Xxxxxxxx, Xxxxxxxxx, Xx Xxxxxx Xxxxxxxx, Xxxx Xxxxxxxx, xxx Xxxx XXX.
+-   すべての UI 要素に、対応するアクセシビリティ情報 (アクセシビリティに対応した名前など) を設定した。
+-   タブ オーダー、キーボードのアクティブ化、方向キーによるナビゲーション、ショートカットを考慮して、キーボードのナビゲーションと操作を実装した。
+-   4.5:1 のテキスト コントラスト比を守っているなど、視覚表現がアクセシビリティに対応していて、ユーザーに情報を伝えるときに色だけに依存していない。
+-   Inspect、AccChecker などのアクセシビリティ テスト ツールを使ってアプリを検証し、ツールによって検出された優先度の高いすべてのエラーを解決した。
+-   アプリの主要なシナリオの全体にわたって、ナレーター、拡大鏡、スクリーン キーボード、ハイ コントラスト、高 DPI などの機能やツールの動作を確認した。
 
-Xxxx xxx xxxxxxx xxxx xxx xx xxxxxxxxxx, xxx xxxxx xxxx xxxx xxx xx xxxxxxxxxx xx xxx xxxxxxxxx, xxxxxxxxx xxxxx xxxx xxxxxxxxxxxx. Xxx xxxxxxx, xxxx xxxxx xxx xxxx xxxxxx xxx xxx xxxx xxxx-xxxxxxxx xxxx xxx xxxx x xxxxxx xxxxxx. Xxx'xx xxxx xxxxxxxx xxxx xxx xxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxxx x xxxxxxxx, xxx Xxxxxxxxx, xxx xxxxx xxxxxxxxxxxxx xxxxx.
+アプリをアクセシビリティ対応として宣言すると、障碍を持つユーザーも含めてすべてのユーザーがアプリにアクセスできることに同意したことになります。 たとえば、アプリをハイ コントラスト モードやスクリーン リーダーでテストしたことを意味します。 ユーザー インターフェイスがキーボード、拡大鏡、その他のアクセシビリティ ツールで適切に機能することも検証しておく必要があります。
 
-Xxx xxxx xxxx, xxx [Xxxxxxxxxxxxx xxx Xxxxxxx Xxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/dn263101), [Xxxxxxxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt297664), xxx [Xxxxxxxxxxxxx xx xxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/mt297663).
+詳しくは、「[Windows ランタイム アプリのアクセシビリティ](https://msdn.microsoft.com/library/windows/apps/dn263101)」、「[アクセシビリティ テスト](https://msdn.microsoft.com/library/windows/apps/mt297664)」、「[ストア内のアクセシビリティ](https://msdn.microsoft.com/library/windows/apps/mt297663)」をご覧ください。
 
-> **Xxxxxxxxx**  Xxx'x xxxx xxxx xxx xx xxxxxxxxxx xxxxxx xxx xxxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxx xx xxx xxxx xxxxxxx. Xx xxxx xxx xx xxxxxxxx xx xxxxxxxxxx, xxx xx xxxxx’x xxxxxxxx xxxxxxx xxxxxxxxxxxxx, xxx'xx xxxxxxxx xxxxxxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxxxxx.
+> **重要**  アクセシビリティのための具体的な設計とテストを行っていない限り、アプリをアクセシビリティ対応として登録しないでください。 アプリをアクセシビリティ対応と宣言しているのにアクセシビリティを実際にサポートしていないと、コミュニティから否定的なフィードバックを受けるおそれがあります。
 
-## Xxxxxxxxx xxx xxxxxxx xxxx xxx xx xxxxxxxxx xxxxxx xx xxxxxxxxx xxxxxxx.
+## ユーザーは、代替ドライブやリムーバブル ストレージにこのアプリをインストールできます。
 
-Xxxx xxx xx xxxxxxx xx xxxxxxx, xx xxxxx xxxxxxxxx xx xxxxxxx xxxx xxx xx xxxxxxxxx xxxxxxx xxxxx xxxx xx xx XX xxxx, xx xx x xxx-xxxxxx xxxxxx xxxxx xxxx xx xx xxxxxxxx xxxxx.
+ユーザーが SD カードなどのリムーバブル記憶域メディアや、外部ドライブなどの非システム ボリューム ドライブにアプリをインストールできるように、このチェック ボックスは既定でオンになっています。
 
-Xx xxx xxxx xx xxxxxxx xxxx xxx xxxx xxxxx xxxxxxxxx xx xxxxxxxxx xxxxxx xx xxxxxxxxx xxxxxxx, xxxxxxx xxxx xxx.
+アプリが代替ドライブやリムーバブル記憶域にインストールされないようにする場合は、このチェック ボックスをオフにします。
 
-Xxxx xxxx xxxxx xx xx xxxxxx xx xxxxxxxx xxxxxxxxxxxx xx xxxx xx xxx xxx xxxx xx xxxxxxxxx xx xxxxxxxxx xxxxxxx xxxxx.
+アプリをリムーバブル記憶域メディアにのみインストールできるようにするためにインストールを制限するオプションはないことに注意してください。
 
-> **Xxxx**  Xxx Xxxxxxx Xxxxx Y.Y, xxxx xxx xxxxxxxxxx xxxxxxxxx xxx XxxxxXxxxxxxx.xxx.
+> **注**  Windows Phone 8.1 では、以前は StoreManifest.xml を通じてこれを指定していました。
 
-## Xxxxxxx xxx xxxxxxx xxxx xxx'x xxxx xx xxxxxxxxx xxxxxxx xx XxxXxxxx.
+## Windows では、このアプリのデータを OneDrive への自動バックアップに含めることができます。
 
-Xxxx xxx xx xxxxxxx xx xxxxxxx, xx xxxxx xxxx xxx'x xxxx xx xx xxxxxxxx xxxx x xxxxxxxx xxxxxxx xx xxxx Xxxxxxx xxxx xxxxxxxxx xxxxxxx xx XxxXxxxx.
+このボックスは、Windows が OneDrive に自動バックアップすることをユーザーが選んだ場合にアプリのデータを含めることができるように、既定でオンになっています。
 
-Xx xxx xxxx xx xxxxxxx xxxx xxx'x xxxx xxxx xxxxx xxxxxxxx xx xxxxxxxxx xxxxxxx, xxxxxxx xxxx xxx.
+アプリのデータが自動バックアップに含まれないようにする場合は、このボックスをオフにします。
 
-> **Xxxx**  Xxx Xxxxxxx Xxxxx Y.Y, xxxx xxx xxxxxxxxxx xxxxxxxxx xxx XxxxxXxxxxxxx.xxx.
-
- 
+> **注**  Windows Phone 8.1 では、以前は StoreManifest.xml を通じてこれを指定していました。
 
  
 
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

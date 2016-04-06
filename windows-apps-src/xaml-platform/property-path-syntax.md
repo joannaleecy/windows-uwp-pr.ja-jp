@@ -1,115 +1,118 @@
 ---
-xxxxxxxxxxx: Xxx xxx xxx xxx XxxxxxxxXxxx xxxxx xxx xxx xxxxxx xxxxxx xx xxxxxxxxxxx x XxxxxxxxXxxx xxxxx xxxxxx xx XXXX xx xx xxxx.
-xxxxx: Xxxxxxxx-xxxx xxxxxx'
-xx.xxxxxxx: XXYXXXYY-XYYX-YYXY-XXYY-XYYYXYYYYYYY
+description: You can use the PropertyPath class and the string syntax to instantiate a PropertyPath value either in XAML or in code.
+title: Property-path syntax'
+ms.assetid: FF3ECF47-D81F-46E3-BE01-C839E0398025
 ---
 
-# Xxxxxxxx-xxxx xxxxxx
+# Property-path syntax
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxx xxx xxx xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br244259) xxxxx xxx xxx xxxxxx xxxxxx xx xxxxxxxxxxx x **XxxxxxxxXxxx** xxxxx xxxxxx xx XXXX xx xx xxxx. **XxxxxxxxXxxx** xxxxxx xxx xxxx xx xxxx xxxxxxx. X xxxxxxx xxxxxx xx xxxx xxx xxxxxxxxx xxxxxxxxxxxx xxxxxxxxxx. Xxx xxxxxxxxx xxxxxxxxx xxxxx'x xxxxxx xxxxxxxxxx Xxxxxxxx-xxxx xxxxxx xxxxxx, xx xxxxx xxx xxxx xx x xxxxxx. Xxx xxxx xxxxxxxxx, x xxxxxxxx xxxx xxxxxxxxx x xxxxxxxxx xx xxx xx xxxx xxxxxx-xxxxxxxx xxxxxxxxxxxxx xxxx xxxxxxxxxx xxxxxxx xx x xxxxxx xxxxxxxx.
+You can use the [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) class and the string syntax to instantiate a **PropertyPath** value either in XAML or in code. **PropertyPath** values are used by data binding. A similar syntax is used for targeting storyboarded animations. But animation targeting doesn't create underlying Property-path syntax values, it keeps the info as a string. For both scenarios, a property path describes a traversal of one or more object-property relationships that eventually resolve to a single property.
 
-Xxx xxx xxx x xxxxxxxx xxxx xxxxxx xxxxxxxx xx xx xxxxxxxxx xx XXXX. Xxx xxx xxx xxx xxxx xxxxxx xxxxxx xx xxxxxxxxx x [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br244259) xxxx xxxx x [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209820) xx xxxx, xx xx xxx xx xxxxxxxxx xxxxxx xx xxxx xxxxx [**XxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210503). Xxxxx xxx xxx xxxxxxxx xxxxxxx xxxxx xx xxx Xxxxxxx Xxxxxxx xxxx xxx x xxxxxxxx xxxx: xxxx xxxxxxx, xxx xxxxxxxxx xxxxxxxxx. Xxxxxxxxx xxxxxxxxx xxxxx'x xxxxxx xxxxxxxxxx Xxxxxxxx-xxxx xxxxxx xxxxxx xx xxx Xxxxxxx Xxxxxxx xxxxxxxxxxxxxx, xx xxxxx xxx xxxx xx x xxxxxx, xxx xxx xxxxxxxx xx xxxxxx-xxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx. Xxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxx xxxx xxxxxxxx x xxxxxxxx xxxx xxxxxxxx xxxxxxxxxxx, xx xx xxxxxxxx xxxxxxxx xxxx xxxxxx xxxxxxxxxx xxx xxxx.
+You can set a property path string directly to an attribute in XAML. You can use the same string syntax to construct a [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) that sets a [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) in code, or to set an animation target in code using [**SetTargetProperty**](https://msdn.microsoft.com/library/windows/apps/br210503). There are two distinct feature areas in the Windows Runtime that use a property path: data binding, and animation targeting. Animation targeting doesn't create underlying Property-path syntax values in the Windows Runtime implementation, it keeps the info as a string, but the concepts of object-property traversal are very similar. Data binding and animation targeting each evaluate a property path slightly differently, so we describe property path syntax separately for each.
 
-## Xxxxxxxx xxxx xxx xxxxxxx xx xxxx xxxxxxx
+## Property path for objects in data binding
 
-Xx Xxxxxxx Xxxxxxx, xxx xxx xxxx xx xxx xxxxxx xxxxx xx xxx xxxxxxxxxx xxxxxxxx. Xxx xxxxxx xxxxxxxx xxxxx xxx x xxxx xxxxxxx xxxxx'x xxxx xx xx x xxxxxxxxxx xxxxxxxx; xx xxx xx x xxxxxxxx xx x xxxxxxxx xxxxxx (xxx xxxxxxx x xxxxx xxxxxxx xx x Xxxxxxxxx .XXX xxxxxxxx xx X++). Xx, xxx xxxxxx xxxxxx xxx xxx xxxxxxx xxxxx xxx xx xx xxxxxxxx xxxxxxxxxx xxxxxx xxxxxxx xxxxxxx xx xxx xxx. Xxx xxxxxx xxx xx xxxxxxxxxx xxxxxx xx x xxxxxx xxxxxxxx xxxx, xx xx x xxxxxxxxx xx xxx xxxxxx-xxxxxxxx xxxxxxxxxxxxx xx xxx xxxxxx xxxxx xx xxx xxxxxxxx xxxxxx.
+In Windows Runtime, you can bind to the target value of any dependency property. The source property value for a data binding doesn't have to be a dependency property; it can be a property on a business object (for example a class written in a Microsoft .NET language or C++). Or, the source object for the binding value can be an existing dependency object already defined by the app. The source can be referenced either by a simple property name, or by a traversal of the object-property relationships in the object graph of the business object.
 
-Xxx xxx xxxx xx xx xxxxxxxxxx xxxxxxxx xxxxx, xx xxx xxx xxxx xx x xxxxxx xxxxxxxx xxxx xxxxx xxxxx xx xxxxxxxxxxx. Xx xxxx xxxxxx xx x xxxxxxxxxx, xx xx xxx xxxx xxxxxxxxx x xxxxxxxxxx xxxxxxxx, xxx xxxx-xxxxxxx xxxxxx xxxxxxx xxx xxxxxxxxxx xxxxx xx xxx xxxxxx xx xxx xxxxxxx xxxxxx, xxxxxxxxx xx xxxxxxxx xxxx xx xxxxxxxxxx x [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br242868) xxxx x xxxx xx xxxxx xxxx x xxxx xxxxxx xxxxxxxxxx xxxxxxx xxxxxxx xx xxxxxxxxxx xxx xxxxxxxx xxxxx xx xxxx xxxxxxxxxx.
+You can bind to an individual property value, or you can bind to a target property that holds lists or collections. If your source is a collection, or if the path specifies a collection property, the data-binding engine matches the collection items of the source to the binding target, resulting in behavior such as populating a [**ListBox**](https://msdn.microsoft.com/library/windows/apps/br242868) with a list of items from a data source collection without needing to anticipate the specific items in that collection.
 
-### Xxxxxxxxxx xx xxxxxx xxxxx
+### Traversing an object graph
 
-Xxx xxxxxxx xx xxx xxxxxx xxxx xxxxxxx xxx xxxxxxxxx xx xx xxxxxx-xxxxxxxx xxxxxxxxxxxx xx xx xxxxxx xxxxx xx xxx xxx (**.**) xxxxxxxxx. Xxxx xxx xx x xxxxxxxx xxxx xxxxxx xxxxxxxxx x xxxxxxxx xxxxxxx xx xxxxxx (xxxx xxxx xx xxx xxx) xxx x xxxxxxxx xx xxxx xxxxxx (xxxxx xxxx xx xxx xxx). Xxx xxxxxx xx xxxxxxxxx xxxx-xx-xxxxx, xxxxx xxxxxxx xxxxxxxx xxxxxxx xxxxxxxx xxxxxx-xxxxxxxx xxxxxxxxxxxxx. Xxx'x xxxx xx xx xxxxxxx:
+The element of the syntax that denotes the traversal of an object-property relationship in an object graph is the dot (**.**) character. Each dot in a property path string indicates a division between an object (left side of the dot) and a property of that object (right side of the dot). The string is evaluated left-to-right, which enables stepping through multiple object-property relationships. Let's look at an example:
 
 ``` syntax
 <Binding Path="Customer.Address.StreetAddress1"
 ```
 
-Xxxx'x xxx xxxx xxxx xx xxxxxxxxx:
+Here's how this path is evaluated:
 
-1.  Xxx xxxx xxxxxxx xxxxxx (xx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209832) xxxxxxxxx xx xxx xxxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209820)) xx xxxxxxxx xxx x xxxxxxxx xxxxx "Xxxxxxxx".
-2.  Xxx xxxxxx xxxx xx xxx xxxxx xx xxx "Xxxxxxxx" xxxxxxxx xx xxxxxxxx xxx x xxxxxxxx xxxxx "Xxxxxxx".
-3.  Xxx xxxxxx xxxx xx xxx xxxxx xx xxx "Xxxxxxx" xxxxxxxx xx xxxxxxxx xxx x xxxxxxxx xxxxx "XxxxxxXxxxxxxY".
+1.  The data context object (or a [**Source**](https://msdn.microsoft.com/library/windows/apps/br209832) specified by the same [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)) is searched for a property named "Customer".
+2.  The object that is the value of the "Customer" property is searched for a property named "Address".
+3.  The object that is the value of the "Address" property is searched for a property named "StreetAddress1".
 
-Xx xxxx xx xxxxx xxxxx, xxx xxxxx xx xxxxxxx xx xx xxxxxx. Xxx xxxx xx xxx xxxxxx xx xxxxxxx xxxx xxxx xxx xxxxxxx xx xxxxxxx xx x xxxxxxxx xxxxxxxx. Xxxx xxxxxxx xxxxx xxxx xx "Xxxxxxx" xxxx xxxx x xxxxxx xxxxx xxxx xxxx'x xxxxxx xxxx xxxx xx xxx xxxxxx xxx xxx xxxxxx xxxxxxx. Xxxxxxxxx, xxx xxxxxxx xx xxxxxxxx xx xxx xxxxxxxx xxxxxx xxxxxxxx xxxxxx xx x xxxxxxxx xxxxxx xxxx xxx x xxxxx xxx xxxxxxxxxx xxxxxxxxxxx xxxxxxxxx.
+At each of these steps, the value is treated as an object. The type of the result is checked only when the binding is applied to a specific property. This example would fail if "Address" were just a string value that didn't expose what part of the string was the street address. Typically, the binding is pointing to the specific nested property values of a business object that has a known and deliberate information structure.
 
-### Xxxxx xxx xxx xxxxxxxxxx xx x xxxx-xxxxxxx xxxxxxxx xxxx
+### Rules for the properties in a data-binding property path
 
--   Xxx xxxxxxxxxx xxxxxxxxxx xx x xxxxxxxx xxxx xxxx xx xxxxxx xx xxx xxxxxx xxxxxxxx xxxxxx.
--   Xxx xxx xxxxxxxx (xxx xxxxxxxx xxxx xx xxx xxxx xxxxx xxxxxxxx xx xxx xxxx) xxxx xx xxxxxx xxx xxxx xx xxxxxxx – xxx xxx'x xxxx xx xxxxxx xxxxxx.
--   Xxx xxx xxxxxxxx xxxx xx xxxx/xxxxx xx xxxx xxxx xx xxxx xx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br209830) xxxxxxxxxxx xxx x xxx-xxx xxxxxxx.
+-   All properties referenced by a property path must be public in the source business object.
+-   The end property (the property that is the last named property in the path) must be public and must be mutable – you can't bind to static values.
+-   The end property must be read/write if this path is used as the [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) information for a two-way binding.
 
-### Xxxxxxxx
+### Indexers
 
-X xxxxxxxx xxxx xxx xxxx-xxxxxxx xxx xxxxxxx xxxxxxxxxx xx xxxxxxx xxxxxxxxxx. Xxxx xxxxxxx xxxxxxx xx xxxxxxx xxxxx/xxxxxxx, xx xx xxxxxxxxxxxx/xxxx. Xxx xxxxxx xxxxxxxx "\[\]" xxxxxxxxxx xx xxxxxxxx xx xxxxxxx xxxxxxxx. Xxx xxxxxxxx xx xxxxx xxxxxxxx xxx xx xxxxxx xx xxxxxxx (xxx xxxxxxx xxxx) xx xx xxxxxxxx xxxxxx (xxx xxxxxxxxxxxx). Xxx xxx xxxx xxxx xx x xxxxxxxxxx xxxxx xxx xxx xx xx xxxxxxx. Xxx xxx xxx xxxxxxxxx xxxxxxx xxxxxxxxxx xx xxx xxxx xxxx xxxx x xxx xxxxxxxxxx xxx xxxxxx-xxxxxxxx.
+A property path for data-binding can include references to indexed properties. This enables binding to ordered lists/vectors, or to dictionaries/maps. Use square brackets "\[\]" characters to indicate an indexed property. The contents of these brackets can be either an integer (for ordered list) or an unquoted string (for dictionaries). You can also bind to a dictionary where the key is an integer. You can use different indexed properties in the same path with a dot separating the object-property.
 
-Xxx xxxxxxx, xxxxxxxx x xxxxxxxx xxxxxx xxxxx xxxxx xx x xxxx xx "Xxxxx" (xxxxxxx xxxx), xxxx xx xxxxx xxx x xxxxxxxxxx xx "Xxxxxxx" xxxxx xxxx xxxxxx xx xxxxx xx xxxx xxxx. Xx xxxxxxx xxxxxxxx xxxx xx x xxxxxxxx xxxxxx xx xxx xxxxxx xxxx xx: "Xxxxx\[Y\].Xxxxxxx\[Xxxxx\]". (Xxx xxx Y xx xxxxxxxx xxx xxxxxx xxxx xx "Xxxxx" xxxxxxx xxx xxxx xx xxxx-xxxxxxx.)
+For example, consider a business object where there is a list of "Teams" (ordered list), each of which has a dictionary of "Players" where each player is keyed by last name. An example property path to a specific player on the second team is: "Teams\[1\].Players\[Smith\]". (You use 1 to indicate the second item in "Teams" because the list is zero-indexed.)
 
-**Xxxx**  Xxxxxxxx xxxxxxx xxx X++ xxxx xxxxxxx xx xxxxxxx; xxx [Xxxx xxxxxxx xx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt210946).
+**Note**  Indexing support for C++ data sources is limited; see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-### Xxxxxxxx xxxxxxxxxx
+### Attached properties
 
-Xxxxxxxx xxxxx xxx xxxxxxx xxxxxxxxxx xx xxxxxxxx xxxxxxxxxx. Xxxxxxx xxx xxxxxxxxxxx xxxx xx xx xxxxxxxx xxxxxxxx xxxxxxx xxxxxxxx x xxx, xxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxx xxxxxx xxxxxxxxxxx xx xxxx xxx xxx xxx'x xxxxxxx xx xx xxxxxx-xxxxxxxx xxxx. Xxx xxxxxxx, xxx xxxxxx xx xxxxxxx xxxx xxx xxxx xx xxx [**Xxxxxx.XXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh759773) xx x xxxxxxx xxxx xx "(Xxxxxx.XXxxxx)". Xxx xxxx xxxx xx xxxxxxxx xxxxxxxxxx xxx [Xxxxxxxx xxxxxxxxxx xxxxxxxx](attached-properties-overview.md).
+Property paths can include references to attached properties. Because the identifying name of an attached property already includes a dot, you must enclose any attached property name within parentheses so that the dot isn't treated as an object-property step. For example, the string to specify that you want to use [**Canvas.ZIndex**](https://msdn.microsoft.com/library/windows/apps/hh759773) as a binding path is "(Canvas.ZIndex)". For more info on attached properties see [Attached properties overview](attached-properties-overview.md).
 
-### Xxxxxxxxx xxxxxxxx xxxx xxxxxx
+### Combining property path syntax
 
-Xxx xxx xxxxxxx xxxxxxx xxxxxxxx xx xxxxxxxx xxxx xxxxxx xx x xxxxxx xxxxxx. Xxx xxxxxxx, xxx xxx xxxxxx x xxxxxxxx xxxx xxxx xxxxxxxxxx xx xxxxxxx xxxxxxxx xxxxxxxx, xx xxxx xxxx xxxxxx xxx xxxx x xxxxxxxx.
+You can combine various elements of property path syntax in a single string. For example, you can define a property path that references an indexed attached property, if your data source had such a property.
 
-### Xxxxxxxxx x xxxxxxx xxxxxxxx xxxx
+### Debugging a binding property path
 
-Xxxxxxx x xxxxxxxx xxxx xx xxxxxxxxxxx xx x xxxxxxx xxxxxx xxx xxxxxx xx xxxx xxxx xxx xx xxxxxxx xxxx xx xxx-xxxx, xxx xxxx xxxxx xxxxx x xxxxxxxx xxxx xxx xxxxxxx xxxxxxx xxxxx xxxx xx xxxx xx xxxxxxxxxxxx xxxxxx-xxxx xx xxxxxxx-xxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxx. Xx xxxx xxxxx xxx xxx-xxxx xxxxxx xx xxxxxxx xx xxxxxxx x xxxxxxxx xxxx xx x xxxxx xxxxx xxxx xx xxxxx, xxxxxxx xxxx xx xxx xx-xxxxxx xxxxxxxx xxxxxxxx xx xxxxxxx xxxxxxxxxx. Xxxxxxxxxxx, Xxxxxxxxx Xxxxxx Xxxxxx xxxxxxxx x xxxxx xxxxxx xxxx xxxx xxx xxxxxxx xxxxx xxxx xx x xxxxxxxx xxxx xxxx'x xxxxxxxxxx x xxxxxxx xxxxxx xxxxxx xx xxxxxxx. Xxx xxxx xxxx xx xxxxx xxxx xxxxxxxxxxx xxxx xxxxxxx, xxx ["Xxxxxxxxx" xxxxxxx xx Xxxx xxxxxxx xx xxxxx](../data-binding/data-binding-in-depth.md#debugging).
+Because a property path is interpreted by a binding engine and relies on info that may be present only at run-time, you must often debug a property path for binding without being able to rely on conventional design-time or compile-time support in the development tools. In many cases the run-time result of failing to resolve a property path is a blank value with no error, because that is the by-design fallback behavior of binding resolution. Fortunately, Microsoft Visual Studio provides a debug output mode that can isolate which part of a property path that's specifying a binding source failed to resolve. For more info on using this development tool feature, see ["Debugging" section of Data binding in depth](../data-binding/data-binding-in-depth.md#debugging).
 
-## Xxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxxx
+## Property path for animation targeting
 
-Xxxxxxxxxx xxxx xx xxxxxxxxx x xxxxxxxxxx xxxxxxxx xxxxx xxxxxxxxxxxx xxxxxx xxx xxxxxxx xxxx xxx xxxxxxxxx xxxx. Xx xxxxxxxx xxx xxxxxx xxxxx xxx xxxxxxxx xx xx xxxxxxxx xxxxxx, xxx xxxxxxxxx xxxxxxx xx xxxxxxx xx xxxx ([x:Xxxx xxxxxxxxx](x-name-attribute.md)). Xx xx xxxxx xxxxxxxxx xx xxxxxx x xxxxxxxx xxxx xxxx xxxxxx xxxx xxx xxxxxx xxxxxxxxxx xx xxx [**Xxxxxxxxxx.XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh759823), xxx xxxx xxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxxxxx xxxxx xxxxx xxx xxxxxxxxx xxxxxx xxxxx. Xxxx xxxxxxxx xxxx xx xxxx xx xxx xxxxx xxx [**Xxxxxxxxxx.XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh759824).
+Animations rely on targeting a dependency property where storyboarded values are applied when the animation runs. To identify the object where the property to be animated exists, the animation targets an element by name ([x:Name attribute](x-name-attribute.md)). It is often necessary to define a property path that starts with the object identified as the [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823), and ends with the particular dependency property value where the animation should apply. That property path is used as the value for [**Storyboard.TargetProperty**](https://msdn.microsoft.com/library/windows/apps/hh759824).
 
-Xxx xxxx xxxx xx xxx xxx xx xxxxxx xxxxxxxxxx xx XXXX, xxx [Xxxxxxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187354).
+For more info on the how to define animations in XAML, see [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354).
 
-## Xxxxxx xxxxxxxxx
+## Simple targeting
 
-Xx xxx xxx xxxxxxxxx x xxxxxxxx xxxx xxxxxx xx xxx xxxxxxxx xxxxxx xxxxxx, xxx xxxx xxxxxxxx'x xxxx xxx xxxx xx xxxxxxxxx xxxxxxx xxxxxxxx xx xx (xxxxxx xxxx xx x xxx-xxxxxxxx xx x xxxxxxxx'x xxxxx) xxxx xxx xxx xxxxxx xxxx xxx xxxxxxxx xxxxx xxxxxxxx xxxxxxx xxx xxxxxxx xxxxxxxxxxxxx. Xxx xxxxxxx, xx xxx xxx xxxxxxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br243377) xxxxxxxx xxxx xx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243371), xxx xxx xxx xxxxxxxx xx xxxxxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/hh673723) xx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br243378) xxxxxxxx, xxxx xxxxxxxx xxxx xxx xx "Xxxx".
+If you are animating a property that exists on the targeted object itself, and that property's type can have an animation applied directly to it (rather than to a sub-property of a property's value) then you can simply name the property being animated without any further qualification. For example, if you are targeting a [**Shape**](https://msdn.microsoft.com/library/windows/apps/br243377) subclass such as [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), and you are applying an animated [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) to the [**Fill**](https://msdn.microsoft.com/library/windows/apps/br243378) property, your property path can be "Fill".
 
-## Xxxxxxxx xxxxxxxx xxxxxxxxx
+## Indirect property targeting
 
-Xxx xxx xxxxxxx x xxxxxxxx xxxx xx x xxx-xxxxxxxx xx xxx xxxxxx xxxxxx. Xx xxxxx xxxxx, xx xxxxx'x x xxxxxxxx xx xxx xxxxxx xxxxxx xxxx'x xx xxxxxx xxxxxx, xxx xxxx xxxxxx xxx xxxxxxxxxx, xxx xxxx xxxxxx x xxxxxxxx xxxx xxxx xxxxxxxx xxx xx xxxx xxxxxxx xxxx xxxxxx-xxxxxxxx xxxxxxxxxxxx. Xxxxxxxx xxx xxx xxxxxxxxxx xx xxxxxx xxxxx xxx xxxx xx xxxxxxx x xxx-xxxxxxxx, xxx xxxxxxx xxx xxxxxxxx xxxx xx xxxxxxxxxxx, xxx xxx xxxxxxx xxx xxxxxxxx xx *xxxxxxxx*.*xxxxxxxxxxxx* xxxxxx. Xxx xxxxxxx, xx xxxxxxx xxxx xxx xxxx xxx xxxxxx xxxxx xx x xxxxxx xxxxxx'x [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208980) xxxxxxxx, xxx xxxxxxx "(XXXxxxxxx.XxxxxxXxxxxxxxx)" xx xxx xxxxx xxxx xx xxx xxxxxxxx xxxx. Xxxx xxx'x xxx x xxxxxxxx xxxx, xxxxxxx xxxxx xxx xx xxxxxxxxxx xxxx xxx xxxxx xx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243006) xxxxx xxxxxxxx. Xx xxx xxxx xxxxxxx, xxx xxx xxxxxxxx xxx xxxxxxxx xxxx xx xxxx xxx xxx xxxxxxxx xx x xxxxxxxx xx x **Xxxxxxxxx** xxxxxxxx xxxx xxx xx xxxxxxxx xx x **Xxxxxx** xxxxx: "(XXXxxxxxx.XxxxxxXxxxxxxxx).(XxxxxxxxxXxxxxxxxx.XxxxxxxxxX)"
+You can animate a property that is a sub-property of the target object. In other words, if there's a property of the target object that's an object itself, and that object has properties, you must define a property path that explains how to step through that object-property relationship. Whenever you are specifying an object where you want to animate a sub-property, you enclose the property name in parentheses, and you specify the property in *typename*.*propertyname* format. For example, to specify that you want the object value of a target object's [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) property, you specify "(UIElement.RenderTransform)" as the first step in the property path. This isn't yet a complete path, because there are no animations that can apply to a [**Transform**](https://msdn.microsoft.com/library/windows/apps/br243006) value directly. So for this example, you now complete the property path so that the end property is a property of a **Transform** subclass that can be animated by a **Double** value: "(UIElement.RenderTransform).(CompositeTransform.TranslateX)"
 
-## Xxxxxxxxxx x xxxxxxxxxx xxxxx xx x xxxxxxxxxx
+## Specifying a particular child in a collection
 
-Xx xxxxxxx x xxxxx xxxx xx x xxxxxxxxxx xxxxxxxx, xxx xxx xxx x xxxxxxx xxxxxxx. Xxx xxxxxx xxxxxxxx "\[\]" xxxxxxxxxx xxxxxx xxx xxxxxxx xxxxx xxxxx. Xxx xxx xxxxxxxxx xxxx xxxxxxx xxxxx, xxx xxxxxxxxxxxx. Xxxxxxx x xxxxxxxxxx xxx'x x xxxxx xxxx xxx xx xxxxxxxx, xx xxxxxxx xxxxx xxx xxxxx xx xxx xxx xxxxxxxx xx x xxxxxxxx xxxx.
+To specify a child item in a collection property, you can use a numeric indexer. Use square brackets "\[\]" characters around the integer index value. You can reference only ordered lists, not dictionaries. Because a collection isn't a value that can be animated, an indexer usage can never be the end property in a property path.
 
-Xxx xxxxxxx, xx xxxxxxx xxxx xxx xxxx xx xxxxxxx xxx xxxxx xxxxx xxxx xxxxx xx x [**XxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br210108) xxxx xx xxxxxxx xx x xxxxxxx'x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209395) xxxxxxxx, xxxx xx xxx xxxxxxxx xxxx: "(Xxxxxxx.Xxxxxxxxxx).(XxxxxxxxXxxxx.XxxxxxxxXxxxx)\[Y\].(XxxxxxxxXxxx.Xxxxx)". Xxxx xxx xxx xxxxxxx xx xxx xxx xxxx xxxx xx xxx xxxx, xxx xxxx xxx xxxx xxxx xxxxxxxxxxxx xxxx xxxxxxxxx xxx [**XxxxxxxxXxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br210094) xxxxxxxx xx xxxx Y xx xxx xxxxxxxxxx xx xxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/hh673723) xxxxxxxx xxxxx xx xx.
+For example, to specify that you want to animate the first color stop color in a [**LinearGradientBrush**](https://msdn.microsoft.com/library/windows/apps/br210108) that is applied to a control's [**Background**](https://msdn.microsoft.com/library/windows/apps/br209395) property, this is the property path: "(Control.Background).(GradientBrush.GradientStops)\[0\].(GradientStop.Color)". Note how the indexer is not the last step in the path, and that the last step particularly must reference the [**GradientStop.Color**](https://msdn.microsoft.com/library/windows/apps/br210094) property of item 0 in the collection to apply a [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) animated value to it.
 
-## Xxxxxxxxx xx xxxxxxxx xxxxxxxx
+## Animating an attached property
 
-Xx xxx'x x xxxxxx xxxxxxxx, xxx xx xx xxxxxxxx xx xxxxxxx xx xxxxxxxx xxxxxxxx, xx xxxx xx xxxx xxxxxxxx xxxxxxxx xxx x xxxxxxxx xxxxx xxxx xxxxxxx xx xxxxxxxxx xxxx. Xxxxxxx xxx xxxxxxxxxxx xxxx xx xx xxxxxxxx xxxxxxxx xxxxxxx xxxxxxxx x xxx, xxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxx xxxxxx xxxxxxxxxxx xx xxxx xxx xxx xxx'x xxxxxxx xx xx xxxxxx-xxxxxxxx xxxx. Xxx xxxxxxx, xxx xxxxxx xx xxxxxxx xxxx xxx xxxx xx xxxxxxx xxx [**Xxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/hh759795) xxxxxxxx xxxxxxxx xx xx xxxxxx, xxx xxx xxxxxxxx xxxx "(Xxxx.Xxx)".
+It isn't a common scenario, but it is possible to animate an attached property, so long as that attached property has a property value that matches an animation type. Because the identifying name of an attached property already includes a dot, you must enclose any attached property name within parentheses so that the dot isn't treated as an object-property step. For example, the string to specify that you want to animate the [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) attached property on an object, use the property path "(Grid.Row)".
 
-**Xxxx**  Xxx xxxx xxxxxxx, xxx xxxxx xx [**Xxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/hh759795) xx xx **XxxYY** xxxxxxxx xxxx. xx xxx xxx'x xxxxxxx xx xxxx x **Xxxxxx** xxxxxxxxx. Xxxxxxx, xxx'x xxxxxx xx [**XxxxxxXxxxxxxxxXxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210320) xxxx xxx [**XxxxxxxxXxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br243132) xxxxxxxxxx, xxxxx xxx [**XxxxxxXxxXxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br210344) xx xxx xx xx xxxxxxx xxxx xx "Y" xx "Y".
+**Note**  For this example, the value of [**Grid.Row**](https://msdn.microsoft.com/library/windows/apps/hh759795) is an **Int32** property type. so you can't animate it with a **Double** animation. Instead, you'd define an [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320) that has [**DiscreteObjectKeyFrame**](https://msdn.microsoft.com/library/windows/apps/br243132) components, where the [**ObjectKeyFrame.Value**](https://msdn.microsoft.com/library/windows/apps/br210344) is set to an integer such as "0" or "1".
 
-## Xxxxx xxx xxx xxxxxxxxxx xx xx xxxxxxxxx xxxxxxxxx xxxxxxxx xxxx
+## Rules for the properties in an animation targeting property path
 
--   Xxx xxxxxxx xxxxxxxx xxxxx xx xxx xxxxxxxx xxxx xx xxx xxxxxx xxxxxxxxxx xx x [**Xxxxxxxxxx.XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh759823).
--   Xxx xxxxxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxx xxx xxxxxxxx xxxx xxxx xx xxxxxx.
--   Xxx xxx xxxxxxxx (xxx xxxxxxxx xxxx xx xxx xxxx xxxxx xxxxxxxx xx xxx xxxx) xxxx xx xxxxxx, xx xxxx-xxxxx, xxx xx x xxxxxxxxxx xxxxxxxx.
--   Xxx xxx xxxxxxxx xxxx xxxx x xxxxxxxx xxxx xxxx xx xxxx xx xx xxxxxxxx xx xxx xx xxx xxxxx xxxxxxx xx xxxxxxxxx xxxxx ([**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/hh673723) xxxxxxxxxx, **Xxxxxx** xxxxxxxxxx, [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870) xxxxxxxxxx, [**XxxxxxXxxxxxxxxXxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210320)).
+-   The assumed starting point of the property path is the object identified by a [**Storyboard.TargetName**](https://msdn.microsoft.com/library/windows/apps/hh759823).
+-   All objects and properties referenced along the property path must be public.
+-   The end property (the property that is the last named property in the path) must be public, be read-write, and be a dependency property.
+-   The end property must have a property type that is able to be animated by one of the broad classes of animation types ([**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) animations, **Double** animations, [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870) animations, [**ObjectAnimationUsingKeyFrames**](https://msdn.microsoft.com/library/windows/apps/br210320)).
 
-## Xxx XxxxxxxxXxxx xxxxx
+## The PropertyPath class
 
-Xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br244259) xxxxx xx xxx xxxxxxxxxx xxxxxxxx xxxx xx [**Xxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br209830) xxx xxx xxxxxxx xxxxxxxx.
+The [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) class is the underlying property type of [**Binding.Path**](https://msdn.microsoft.com/library/windows/apps/br209830) for the binding scenario.
 
-Xxxx xx xxx xxxx, xxx xxx xxxxx x [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br244259) xx XXXX xxxxxxx xxxxx xxx xxxx xx xxx. Xxx xx xxxx xxxxx xxx xxx xxxx xx xxxxxx x **XxxxxxxxXxxx** xxxxxx xxxxx xxxx xxx xxxxxx xx xx x xxxxxxxx xx xxx-xxxx.
+Most of the time, you can apply a [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) in XAML without using any code at all. But in some cases you may want to define a **PropertyPath** object using code and assign it to a property at run-time.
 
-[
-            **XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br244259) xxx x [**XxxxxxxxXxxx(Xxxxxx)**](https://msdn.microsoft.com/library/windows/apps/br244261) xxxxxxxxxxx, xxx xxxxx'x xxxx x xxxxxxx xxxxxxxxxxx. Xxx xxxxxx xxx xxxx xx xxxx xxxxxxxxxxx xx x xxxxxx xxxx'x xxxxxxx xxxxx xxx xxxxxxxx xxxx xxxxxx xx xx xxxxxxxxx xxxxxxx. Xxxx xx xxxx xxx xxxx xxxxxx xxx'x xxx xx xxxxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br209830) xx x XXXX xxxxxxxxx. Xxx xxxx xxxxx XXX xx xxx **XxxxxxxxXxxx** xxxxx xx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br244260) xxxxxxxx, xxxxx xx xxxx-xxxx. Xxx xxxxx xxx xxxx xxxxxxxx xx xxx xxxxxxxxxxxx xxxxxx xxx xxxxxxx **XxxxxxxxXxxx** xxxxxxxx.
+[**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259) has a [**PropertyPath(String)**](https://msdn.microsoft.com/library/windows/apps/br244261) constructor, and doesn't have a default constructor. The string you pass to this constructor is a string that's defined using the property path syntax as we explained earlier. This is also the same string you'd use to assign [**Path**](https://msdn.microsoft.com/library/windows/apps/br209830) as a XAML attribute. The only other API of the **PropertyPath** class is the [**Path**](https://msdn.microsoft.com/library/windows/apps/br244260) property, which is read-only. You could use this property as the construction string for another **PropertyPath** instance.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxx xxxxxxx xx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt210946)
-* [Xxxxxxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187354)
-* [{Xxxxxxx} xxxxxx xxxxxxxxx](binding-markup-extension.md)
-* [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br244259)
-* [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209820)
-* [**Xxxxxxx xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209825)
-* [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208713)
+* [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946)
+* [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354)
+* [{Binding} markup extension](binding-markup-extension.md)
+* [**PropertyPath**](https://msdn.microsoft.com/library/windows/apps/br244259)
+* [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820)
+* [**Binding constructor**](https://msdn.microsoft.com/library/windows/apps/br209825)
+* [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

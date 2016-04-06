@@ -1,191 +1,184 @@
 ---
-Xxxxxxxxxxx: Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxxxxx xxx xxxxxxxxxxx xxxx xxxxxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxx xxx xxxxx xxx xxxxxxxxxxxx xxxxxxxxxx xxxxxx xxxxx xxxxxxx.
-xxxxx: Xxxxx xxxxxx xxxxxxxxxx
-xx.xxxxxxx: YYYYXYYY-YXXX-YXXY-XYYY-XYXXYYYXYYYY
-xxxxx: Xxxxx xxxxxx xxxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: タッチ向けに最適化される一方で、さまざまな入力デバイスで一貫した機能を提供する、直観的で独特なユーザー操作エクスペリエンスを備えたユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
+title: タッチの設計ガイドライン
+ms.assetid: 3250F729-4FDD-4AD4-B856-B8BA575C3375
+label: タッチの設計ガイドライン
+template: detail.hbs
 ---
 
-# Xxxxx xxxxxx xxxxxxxxxx
+# タッチの設計ガイドライン
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
 
 
-Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxxxxx xxx xxxxxxxxxxx xxxx xxxxxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxx xxx xxxxx xxx xxxxxxxxxxxx xxxxxxxxxx xxxxxx xxxxx xxxxxxx.
+タッチ用に最適化される一方で、さまざまな入力デバイスで一貫した機能を提供する、直観的で独特なユーザー操作エクスペリエンスを備えたユニバーサル Windows プラットフォーム (UWP) アプリを作成します。
 
-## <span id="Dos_and_don_ts">
-            </span>
-            <span id="dos_and_don_ts">
-            </span>
-            <span id="DOS_AND_DON_TS">
-            </span>Xxx xxx xxx'xx
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>推奨と非推奨
 
 
--   Xxxxxx xxxxxxxxxxxx xxxx xxxxx xxxxxxxxxxx xx xxx xxxxxxx xxxxxxxx xxxxx xxxxxx.
--   Xxxxxxx xxxxxx xxxxxxxx xxx xxxxxxxxxxxx xx xxx xxxxx (xxxxx, xxx, xxxxxx, xxxxx, xxx.)
--   Xxxxxxxx xxxxxxxxx xx xxxxxxxxx xxxxx xxxxxx xxxx, xxxxxxx xxxxxxxx, xxxxxxxxx xxx xxxxxxx.
--   Xxxxxxxx xxxxxxxx xxxxxxx xxx xxx xx xxxx xxxxxx xxx xxxxxxxxxxx "xxxxx".
--   Xxxxxxx xxxxxxxx xxx xxxxxxx xx xxxx xxxxxxx xxxxx xxxxxxxx xxx xxxxxxx xxxxxx XX xxxxx.
--   Xxx'x xxx xxxxx xxxxxxxxxxxx xxxxxxxx xxxxxxxx (xxxxxxx xx xxxxxxxxxxx xxx: xxxxx xxx xxxx).
--   Xxx'x xxx xxx xxxxxx xx xxxxxxx xxxx xx xxxxxxxxxxx xxx xxxxxxxxxxxx xxxxxxxx xxxxxxxx.
+-   期待される主な入力方法としてタッチ操作を使うアプリを設計します。
+-   あらゆる種類 (タッチ、ペン、スタイラス、マウスなど) の操作に対する視覚的なフィードバックを提供します。
+-   タッチ ターゲットのサイズ、接触形状、スクラブ、揺らす操作を調整してターゲット設定を最適化します。
+-   スナップ位置と方向 "レール" を使って精度を最適化します。
+-   密集した UI 項目のタッチの精度を高めるためにヒントとハンドルを用意します。
+-   できるだけ時間制限のある操作を使わないようにします (適切な使用例: 長押し)。
+-   できる限り、操作の区別に使われた数の指は使わないようにします。
 
-## <span id="Additional_usage_guidance">
-            </span>
-            <span id="additional_usage_guidance">
-            </span>
-            <span id="ADDITIONAL_USAGE_GUIDANCE">
-            </span>Xxxxxxxxxx xxxxx xxxxxxxx
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>その他の使い方のガイダンス
 
 
-Xxxxx xxx xxxxxxxx, xxxxxx xxxx xxx xxxx xxx xxxxxxxxxxx xxxx xxxxx xxxx xx xxx xxxxxxx xxxxx xxxxxx xx xxxx xxxxx. Xx xxx xxx xxx xxxxxxxx xxxxxxxx, xxxxxxx xxx xxxxxxxx, xxxxx, xxx xxx/xxxxxx xxxxxxxx xx xxxxxxxxxx xxxxxxxxxxx, xxxxxxx Xxxxxxx Y xxxxxxxx xxxx xxx xxxx.
+まず、タッチがユーザーの主な入力方法になるという想定でアプリを設計します。 プラットフォーム コントロールを使う場合は、タッチパッド、マウス、ペン/スタイラスをサポートするために追加のプログラミングを行う必要はありません。Windows 8 では、それらが無料で提供されます。
 
-Xxxxxxx, xxxx xx xxxx xxxx x XX xxxxxxxxx xxx xxxxx xx xxx xxxxxx xxxxxxxx xx x xxxxxxxxxxx XX. Xxxx xxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxxx xxxx xxx xxxxxx xx x xxxxxxxxxx xxx xxxxxxxxxxx. Xx xxx xxxx xx x xxxxx-xxxxx XX, xx xx xxxxxxxxx xx xxxxxxxxxx xxx xxxx xxxxxxxxxxx xxxxxxx xxxxx (xxxxxxxxx xxxxxxxx), xxx/xxxxxx, xxxxx, xxx xxxxxxxx xxxxx. Xx xxx xxxx xxxxxxxx xxxxx xxxxxx xxxxxxxxxx xxx xxxxxxxxx xxx xxxxxxx, xx xxxxx xx Xxxxxxx Y xxxx xxxx xxxx xxxxxx xxxxxxx xxxx xxxxxxxxxxxxx.
+ただし、タッチ用に最適化された UI が従来の UI よりも常に優れているとは限らないことに留意してください。 どちらの UI にも、テクノロジとアプリに固有の長所と短所があります。 タッチ操作主体の UI に移行する際に、タッチ (タッチパッドを含む)、ペン/スタイラス、マウス、キーボードの各入力の主な違いを理解することが重要です。 Windows 8 のタッチは単に機能をエミュレートするだけではないので、使い慣れた入力デバイスのプロパティと動作に変化がないとは考えないでください。
 
-Xxx xxxx xxxx xxxxxxxxxx xxxxx xxxxxxxxxx xxxx xxxxx xxxxx xxxxxxxx x xxxxxxxxx xxxxxxxx xx XX xxxxxx.
+このガイドラインに目を通すと、タッチ入力では異なる UI 設計方法が必要になるとわかります。
 
-**Xxxxxxx xxxxx xxxxxxxxxxx xxxxxxxxxxxx**
+**タッチ操作の要件の比較**
 
-Xxx xxxxxxxxx xxxxx xxxxx xxxx xx xxx xxxxxxxxxxx xxxxxxx xxxxx xxxxxxx xxxx xxx xxxxxx xxxxxxxx xxxx xxx xxxxxx xxxxx-xxxxxxxxx Xxxxxxx Xxxxx xxxx.
+次の表に、タッチ操作に最適な Windows ストア アプリの設計時に考慮する必要がある、入力デバイス間の違いをいくつか示します。
 
-Xxxxxx
-Xxxxx xxxxxxxxxxxx
-Xxxxx, xxxxxxxx, xxx/xxxxxx xxxxxxxxxxxx
-Xxxxxxxx
-Xxxxxxxxx
-Xxx xxxxxxx xxxx xx x xxxxxxxxx xx xxxxxxx xxxx x xxxxxx x-x xxxxxxxxxx, xxxxx xxxxxxxxx xxx xxxxxxx xx xxxxxxxxxx xxxxxxx xxxxxxxxxxx.
-Xxx xxxxx xxx xxx/xxxxxx xxxxxx x xxxxxxx x-x xxxxxxxxxx.
-Xxxx xx xxxxx.
-Xxx xxxxx xx xxx xxxxxxx xxxx xxxxxxx xxxxxxxxxx xxx xxxxxxxx.
-Xxxxx xxxxxxxxx xxx xxx/xxxxxx xxxxxxx xxxxxx xxxxxxx x-x xxxxxxxxxxx. Xxxxxxxx xxxxx xx xxxxxxxx.
-Xxxx xx xxxxx.
-Xxxxx xx xx xxxxx xxxxxx xx xxxxxx xxxx xxxxxxxxx.
-Xxx xxxxx xxxxxx, xxx/xxxxxx xxxxxx, xxx xxxxxxxx xxxxx xxx xxxxxx xxxx xxxxxxxxx.
-Xxxx xx xxxxx.
-Xxxxx xxxxxxx
-Xxxxxxxxx xxxxxxxxx xxx xxxxxxxxx, xxxxxxx x xxxxxxxx-xxxx xxxxxx xxxx xxx xx xxxx xxxxxxx xx xxxxxxxxx. Xxxx xx xxx xx xxx xxxxxxxxx xx xxxx xxxxxx xxx xxx xxxxxx xx xxxxxx xxxxxxxx xx xxx xxxxxx.
-Xx'x xxxxxx xx xxxxxxx x xxxxxxxx-xxxx xxxxxx xxxx xxx xxxxx xx xxx/xxxxxx xxxxxxx xxx xxxx xxxx xxxxxxxx xxxx xxxxxxx x xxxxxxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxx xx xxx xxxxxx.
-Xxxx xx xxxxx.
-Xxxx xxxxx xx xxx xxxxx xxxxxxx xx x xxxxxxx xxxxxx xxx xx xxxxxxxxx xx xxxxx xxx xx xxxxxx xxxxxxx xxx xxx xxxx'x xxxx xx xxx xxxxxx.
-Xxx xxxxx xxx xxx/xxxxxx xxx xxxxx xxx xxxx xx xxx xxxxxx xxxxx xxx xxxxxxx xxxxxx xx xxxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxx xxxxx.
-Xxxxxx xxxxxxx xxx xxxx xxx xx xx xxxxx.
-Xxxxxxx xxxxx xx xxxxxxxx xx xxx xx xxxx xxxxxxxxxx xx xxx xxxx'x xxxx. Xxxx xx xxxxx xx xxxxxxxxx.
-Xxxxxxxx xxxxx xxxxxxx xx xxx xxxxx xxxxxxxxx.
-Xxxx xx xxxxx.
-Xxxxxx xxxxx
-Xxxxx xxxx x xxx-xxxxx xxxxx: xxx xxxxx xxxxxxx xx x xxxxxxx xxxxxx xx xxxxxx xxxxxxx (xx) xx xxx (xxx). Xxxxx xx xx xxxxx xxxxx xxxx xxx xxxxxxx xxxxxxxxxx xxxxxx xxxxxxxx.
-X xxxxx, xxx/xxxxxx, xxx xxxxxxxx xxx xxxxxx x xxxxx-xxxxx xxxxx: xx (xxx), xxxx (xx), xxx xxxxx (xxxxx).
+要因
+タッチ操作
+マウス、キーボード、ペン/スタイラス操作
+タッチパッド
+正確性
+指先が接触する領域は単一の XY 座標よりも広いので、意図していないコマンドがアクティブ化される可能性が高くなります。
+マウスとペン/スタイラスを使うと正確な XY 座標を指定できます。
+マウスと同じです。
+接触する領域の形は移動を通じて変化します。
+マウスの移動とペン/スタイラスのストロークによって正確な XY 座標を指定できます。 キーボード フォーカスは明示的です。
+マウスと同じです。
+ターゲット設定に役立つマウス カーソルはありません。
+マウス カーソル、ペン/スタイラス カーソル、キーボード フォーカスはすべてターゲット設定に役立ちます。
+マウスと同じです。
+人体構造
+1 本または複数の指で直線移動を行うのは困難なので、指先の動きは正確さに欠けます。 これは、手関節が曲がることや動きに関係する関節の数が原因です。
+マウスまたはペン/スタイラスを制御する手の物理的な移動距離は、画面上のカーソルの移動距離よりも短いので、マウスまたはペン/スタイラスで直線移動を行う方が簡単です。
+マウスと同じです。
+ディスプレイ デバイスのタッチ画面には、指の位置とユーザーのデバイスの持ち方が原因で届きにくくなる領域もあります。
+マウスとペン/スタイラスは画面のどの部分にも届き、キーボードではタブ オーダーによってどのコントロールにもアクセスできます。
+指の位置と持ち方が問題になることがあります。
+オブジェクトは、1 本以上の指先またはユーザーの手で隠れる場合があります。 これをオクルージョンと呼びます。
+間接的な入力デバイスでは、オクルージョンは発生しません。
+マウスと同じです。
+オブジェクトの状態
+タッチでは、ディスプレイ デバイスのタッチ画面がタッチされているか (オン) タッチされていないか (オフ) の 2 状態モデルが使われます。 追加の視覚的なフィードバックをトリガーできるホバー状態はありません。
+マウス、ペン/スタイラス、キーボードはすべて、離した状態 (オフ)、押した状態 (オン)、ホバー状態 (フォーカス) の 3 状態モデルを公開します。
 
-Xxxxx xxxx xxxxx xxxxxxx xxx xxxxx xxxxxxx xxxxxxxx xxxxxxxxxx xxxx XX xxxxxxxx. Xxxxx xxx xxxxx xxxxxxx xxx xxxxx xxxxx xxxxxxx xxx xxxxxxxxxxx xxx xxxx xxxx xxxx xxxxxxxxx.
+ホバーすると、UI 要素に関連付けられたヒントを調べて参考にすることができます。 ホバーまたはフォーカスを合わせたときの効果によって操作可能なオブジェクトがわかり、ターゲット設定にも役立ちます。
 
-Xxxx xx xxxxx.
-Xxxx xxxxxxxxxxx
-Xxxxxxxx xxxxx-xxxxx: xxxxxxxx xxxxx xxxxxx (xxxxxxxxxx) xx x xxxxx xxxxxxx.
-Xxxxxxxx x xxxxxx xxxxx xxxxx.
-Xxxx xx xxxxx.
-Xxxxxxxx xxxxxx xxxxxxxxxxxx xx xxxxxxx xxxxxxx xxxxxxxx xxxx xx xxxxxxx, xxxxxxxx, xxxxxxx, xxxxxxxx, xxx xxxxxxxx.
-Xx xxxxxxx xxx xxxxxx xxxxxxxxxxxx xx xxxxx, xxx/xxxxxx, xxx xxxxxxxx xxx xxxxxxxx xxxxx xxxxxxx.
-Xxxx xx xxxxx.
+マウスと同じです。
+豊富な操作
+タッチ画面において複数の入力ポイント (指先) で操作できるマルチタッチをサポートします。
+単一の入力ポイントをサポートします。
+タッチと同じです。
+タップ、ドラッグ、スライド、ピンチ、回転などのジェスチャによるオブジェクトの直接操作をサポートします。
+マウス、ペン/スタイラス、キーボードは間接的な入力デバイスなので、直接操作はサポートされません。
+マウスと同じです。
  
 
-**Xxxx**  
-Xxxxxxxx xxxxx xxx xxx xxx xxxxxxx xx xxxx xxxx YY xxxxx xx xxxxxxxxxx. Xxxxxxxx xxxx xx xxxxx-xxxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxx xx xxxxx XX xxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxx, xxxxx, xxx/xxxxxx, xxx xxxxxxxx xxxxx. XX xxxxxxxx xxxx xxxx xxxx xxxx xx-xxxxxxxx xxx xxx xxxx xxxxxxxxxx xxxxxxxx xx xxxxx xxxxx, xxxxxxx xxxxxxxxxxxx xxx xxxx xxxxxxxxxx xxx xxxxx xxxxx xxxxxxx.
+**注:**  
+間接的な入力には、25 年以上の改良を経ているという利点があります。 ホバーすると表示されるヒントなどの機能は、タッチパッド、マウス、ペン/スタイラス、キーボード入力での UI の操作を解決するために特別に設計されています。 このような UI 機能は、他のデバイスのユーザー エクスペリエンスを損なうことなく、タッチ入力で充実したエクスペリエンスを提供するために再設計されました。
 
  
 
-**Xxx xxxxx xxxxxxxx**
+**タッチのフィードバックの使用**
 
-Xxxxxxxxxxx xxxxxx xxxxxxxx xxxxxx xxxxxxxxxxxx xxxx xxxx xxx xxxxx xxxxx xxxxxxxxx, xxxxx, xxx xxxxx xx xxx xxxxx xxxxxxxxxxxx xxx xxxxxxxxxxx xx xxxx xxx xxx xxx Xxxxxxx Y. Xxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxxxxxx, xxxxx xxxxxx xxxxxx, xxxxxxx xxx xxxxx xx xxxxxxx, xxxxxx xxxxxx, xxxx xxxxx xxxxxxxxxx xxx xxxxxx xxx xxxxx xxxxxx, xxx xxxxxxxxx xxxxxxxxxxx.
+アプリの対話的操作中に視覚的なフィードバックが適切に表示されると、その対話的操作がアプリと Windows 8 の両方でどのように解釈されるかに関する認識、学習、適応に役立ちます。 視覚的なフィードバックの用途は、対話的操作の成功の表示、システム状態の中継、コントロール感の向上、エラーの低減、システムと入力デバイスに関するユーザーの理解の支援、対話的操作の促進などです。
 
-Xxxxxx xxxxxxxx xx xxxxxxxx xxxx xxx xxxx xxxxxx xx xxxxx xxxxx xxx xxxxxxxxxx xxxx xxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxx xx xxxxxxxx. Xxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxx xxxxx xx xxxxxxxx, xx xxxx xxx xxxx xxxxxxxxxx xxx xxxxxx xxxxxxxxx xxxxx xxxx xxx xxxxxxx xx xxxx xxx xxx xxx xxxxxxxx.
+位置に基づく正確性が求められる操作をタッチ入力で行う場合は、視覚的なフィードバックが重要です。 タッチ入力が検出された場所に必ずフィードバックを表示して、アプリとそのコントロールで定義されたカスタム ターゲット設定規則をユーザーが把握できるようにします。
 
-**Xxxxxx xx xxxxxxxxx xxxxxxxxxxx xxxxxxxxxx**
+**イマーシブな操作性の実現**
 
-Xxx xxxxxxxxx xxxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxx xx Xxxxxxx Xxxxx xxxx.
+次の方法を使って、Windows ストア アプリのイマーシブな操作性を高めます。
 
-**Xxxxxxxxx**
+**ターゲット設定**
 
-Xxxxxxxxx xx xxxxxxxxx xxxxxxx:
+ターゲット設定は、次の要素によって最適化します。
 
--   Xxxxx xxxxxx xxxxx
+-   タッチ ターゲットのサイズ
 
-    Xxxxx xxxx xxxxxxxxxx xxxxxx xxxx xxxxxxxxxxxx xxxxxxx x xxxxxxxxxxx XX xxxx xxxxxxxx xxxxxxx xxx xxxxxxxx xxxx xxx xxxx xxx xxxx xx xxxxxx.
+    明確なサイズのガイドラインによって、ターゲット設定しやすいオブジェクトとコントロールが含まれる快適な UI を備えたアプリになるようにします。
 
--   Xxxxxxx xxxxxxxx
+-   接触形状
 
-    Xxx xxxxxx xxxxxxx xxxx xx xxx xxxxxx xxxxxxxxxx xxx xxxx xxxxxx xxxxxx xxxxxx.
+    指が接触する領域全体によって、意図された可能性が最も高いターゲット オブジェクトを特定します。
 
--   Xxxxxxxxx
+-   スクラブ
 
-    Xxxxx xxxxxx x xxxxx xxx xxxxxx xx-xxxxxxxx xx xxxxxxxx xxx xxxxxx xxxxxxx xxxx (xxx xxxxxxx, xxxxx xxxxxxx). Xxx xxxxxxx xxxx xx xxxxxxxxx xxxx xxx xxxxx xx xxxxxxxx.
+    グループ内の項目 (ラジオ ボタンなど) 間で指をドラッグすると、それらの項目を簡単にターゲット設定し直すことができます。 指を離すと現在の項目がアクティブ化されます。
 
--   Xxxxxxx
+-   揺らす
 
-    Xxxxxxx xxxxxx xxxxx (xxx xxxxxxx, xxxxxxxxxx) xxx xxxxxx xx-xxxxxxxx xx xxxxxxxx xxx xxxxxx xxxx xxx, xxxxxxx xxxxxxx, xxxxxxx xx xxxx xxx xxxxx xxxx xxx xxxxx. Xxx xx xxxxxxxxx, xxx xxxxxxx xxxx xx xxxxxxxxxx xxxxxxx x xxxxxxx xx xxx xxxxxx xxx xxx xx xxxxxxxxx xxxx xxx xxxxx xx xxxxxxxx.
+    密集した複数の項目 (ハイパーリンクなど) を指で押してスライドせずに前後に揺らすと、それらの項目を簡単にターゲット設定し直すことができます。 オクルージョンが原因で、現在の項目はヒントまたはステータス バーで特定され、指を離すとアクティブ化されます。
 
-**Xxxxxxxx**
+**正確性**
 
-Xxxxxx xxx xxxxxx xxxxxxxxxxxx xx xxxxx:
+以下を使って、対話的操作が雑な場合に備えて設計します。
 
--   Xxxx-xxxxxx xxxx xxx xxxx xx xxxxxx xx xxxx xx xxxxxxx xxxxxxxxx xxxx xxxxx xxxxxxxx xxxx xxxxxxx.
--   Xxxxxxxxxxx "xxxxx" xxxx xxx xxxxxx xxxx xxxxxxxx xx xxxxxxxxxx xxxxxxx, xxxx xxxx xxx xxxx xxxxx xx x xxxxxx xxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxx](guidelines-for-panning.md).
+-   コンテンツの操作時に目的の位置で簡単に停止できるようにするスナップ位置。
+-   手をわずかに曲げて動かした場合でも垂直方向または水平方向のパンを実行できる方向 "レール"。 詳しくは、「[パンのガイドライン](guidelines-for-panning.md)」をご覧ください。
 
-**Xxxxxxxxx**
+**オクルージョン**
 
-Xxxxxx xxx xxxx xxxxxxxxx xx xxxxxxx xxxxxxx:
+指と手のオクルージョンは、次の要素によって回避します。
 
--   Xxxx xxx xxxxxxxxxxx xx XX
+-   UI のサイズと配置
 
-    Xxxx XX xxxxxxxx xxx xxxxxx xx xxxx xxxx xxxxxx xx xxxxxxxxxx xxxxxxx xx x xxxxxxxxx xxxxxxx xxxx.
+    UI 要素を十分に大きくして、指先が接触する領域で完全にふさぐことができないようにします。
 
-    Xxxxxxxx xxxxx xxx xxx-xxx xxxxx xxx xxxxxxx xxxx xxxxxxxx xxxxxxxx.
+    メニューとポップアップは、できる限り接触する領域の上に配置します。
 
--   Xxxxxxxx
+-   ヒント
 
-    Xxxx xxxxxxxx xxxx x xxxx xxxxxxxxx xxxxxx xxxxxxx xx xx xxxxxx. Xxxx xx xxxxxx xxx xxxxxxxxxx xxxxxx xxxxxxxxxxxxx. Xxx xxxx xxx xxxx xxx xxxxxxxxx xxx xxx xxxxxx xx xxxxx xxxxxxxx xxx xxxxxxx.
+    指がオブジェクトに接触し続けているときは、ヒントを表示します。 オブジェクトの機能について説明する場合に便利です。 ヒントが呼び出されないようにするには、ユーザーは指先をオブジェクトの外にドラッグします。
 
-    Xxx xxxxx xxxxxxx, xxxxxx xxxxxxxx xx xxxx xxx xxx xxxxxxx xx xxx xxxxxxxxx xxxxxxx xxxx. Xxxx xx xxxxxxx xxx xxxxxxxxx.
+    小さいオブジェクトの場合は、ヒントをずらして、指先が接触する領域でふさがれないようにします。 これはターゲット設定に役立ちます。
 
--   Xxxxxxx xxx xxxxxxxxx
+-   正確さを確保するためのハンドル
 
-    Xxxxx xxxxxxxxx xx xxxxxxxx (xxx xxxxxxx, xxxx xxxxxxxxx), xxxxxxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxx xx xxxxxxx xxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxxxx xxxx xxx xxxxxx (Xxxxxxx Xxxxxxx xxxx)](guidelines-for-textselection.md).
+    正確さが要求される場合 (テキスト選択など)、正確さを向上させるためにオフセットされる選択ハンドルを用意します。 詳しくは、「[テキストと画像の選択のガイドライン (Windows ランタイム アプリ)](guidelines-for-textselection.md)」をご覧ください。
 
-**Xxxxxx**
+**タイミング**
 
-Xxxxx xxxxx xxxx xxxxxxx xx xxxxx xx xxxxxx xxxxxxxxxxxx. Xxxxxx xxxxxxxxxxxx xxxxxxxxx xxx xxxxxx, xxxx-xxxx xxxxxxxx xxxxxxxx xx xx xxxxxx. Xxx xxxxxx xxxxxxxx xx xxx xxxxxxx xxx xxxxx.
+直接操作を行うために、時間制限のあるモードの変更を避けます。 直接操作は、オブジェクトに対するリアルタイムで物理的な直接処理をシミュレートします。 オブジェクトは指の動きに合わせて反応します。
 
-X xxxxx xxxxxxxxxxx, xx xxx xxxxx xxxx, xxxxxx xxxxx x xxxxx xxxxxxxxxxx. Xxxxx xxxxxxxxxxxx xxxxxxxxx xxxxxx xx xxxxxxxxx xxxxxxxxxx xxxx xxxx, xxxxxxxx, xx xxxxx xx xxxxxxxxx xxxx xxxxxxx xx xxxxxxx. Xxxxx xxxxxxxxxxxx xxxx xx xxxxxx xxxxxxxx xxxxx xxx xxxxxx xxxxxxxx xxx xxxxxx.
+一方、時間制限のある操作は、タッチ操作の後に発生します。 通常、時間制限のある操作では、時間、距離、速度などの見えないしきい値に基づいて実行するコマンドが決定されます。 システムで操作が実行されるまで、時間制限のある操作では視覚的なフィードバックは返されません。
 
-Xxxxxx xxxxxxxxxxxx xxxxxxxx x xxxxxx xx xxxxxxxx xxxx xxxxx xxxxxxxxxxxx:
+直接操作には、時間制限のある対話式操作と比べて、いくつかの利点があります。
 
--   Xxxxxxx xxxxxx xxxxxxxx xxxxxx xxxxxxxxxxxx xxxx xxxxx xxxx xxxx xxxxxxx, xxxxxxxxx, xxx xx xxxxxxx.
--   Xxxxxx xxxxxxxxxxxxx xxxx xx xxxxx xx xxxxxxx x xxxxxx xxxxxxx xxxx xxx xxxxxxxxxx—xxxxx xxx xxxxxx xxxx xxxx xxxxxxx xxxxx xxxxxxx xx x xxxxxxx xxx xxxxxxxxx xxxxxx.
--   Xxxxxxxxxxxx xxxx xxxxxxxx xxxxxx xxxxxxx xxx xxxxx xxxx xxxxx xxxxxxxxxxxx xxx xxxx xxxxxxxxx, xxxxxxxxxxxx, xxx xxxxxxxxx. Xxxx xxx'x xxxx xx xxxxxxx xx xxxxxxxx xxxxxxxxxxxx.
--   Xxxxx xxxxxxxxxxxx xxx xx xxxxxxxxx xx xxxxxxx, xx xxxxx xxxx xxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxxxx.
+-   対話式操作中に視覚的なフィードバックがすばやく返されるので、ユーザーはより集中して、すべてを制御しているという安心感を持って操作できます。
+-   直接操作は元に戻すことができるので、安心してシステムを使うことができます。ユーザーは、論理的かつ直観的な方法で操作を簡単にさかのぼることができます。
+-   オブジェクトに直接影響して実際の対話式操作を模倣する操作は、より直観的で見つけやすく覚えやすい対話式操作です。 わかりにくい抽象的な対話式操作には依存しません。
+-   時間制限のある対話式操作は、任意の見えないしきい値に達する必要があるので、実行が難しい場合があります。
 
-Xx xxxxxxxx, xxx xxxxxxxxx xxx xxxxxxxx xxxxxxxxxxx:
+また、次の点を考慮することを強くお勧めします。
 
--   Xxxxxxxxxxxxx xxxxxx xxx xx xxxxxxxxxxxxx xx xxx xxxxxx xx xxxxxxx xxxx.
--   Xxxxxxxxxxxx xxxxxx xxxxxxx xxxxxxxx xxxxxxxxxxxxx. Xxx xxxxxxx, xxxxx xx xxxx xxxxx xxxxxxxx xxx xxxxxxx xx xxx.
--   Xxxxxxxxxxxx xxxxxx xxx xx xxxxxxxxxxxxx xx xxxx. Xxx xxxx xxxxxxxxxxx xxxxxx xxxx xxx xxxx xxxxxxx xxxxxxxxxx xx xxx xxxx xxxxx xx xxxxxxx xx. Xxxx-xxxxx xxxxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxx xxx xxxxx xxx xxxxxxx xxxx xxxx xxx xxxxxxxxx xxxxxx xx xxxxxx xxxxxxxxxxxx xxx xxx xxxxxxxxxx xx xxxxxx xxxxxxxxxxxxxx.
+-   操作は、使う指の数で区別しないでください。
+-   複合操作をサポートしてください。 たとえば、ピンチによるズームを行いながら指をドラッグしてパンできるようにします。
+-   対話式操作を時間で区別しないでください。 実行にかかる時間に関係なく、同じ対話式操作を行うと同じ結果が得られるようにします。 時間ベースのアクティブ化では、ユーザーは遅延を強いられるので、直接操作のイマーシブの特性が損なわれ、システムの応答性が低く感じられるようになります。
 
-    **Xxxx**  Xx xxxxxxxxx xx xxxx xx xxxxx xxx xxx xxxxxxxx xxxxx xxxxxxxxxxxx xx xxxxxx xx xxxxxxxx xxx xxxxxxxxxxx (xxx xxxxxxx, xxxxx xxx xxxx).
+    **注:**  ただし、特定の時間制限のある対話式操作を使って学習や調査に役立てる場合は例外です (長押しなど)。
 
      
 
--   Xxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxx xxxx xxxx x xxxxx xxxxxx xx xxx xxx xx xxxxxxxx xxxxxxxxxxxx.
+-   適切な説明と視覚的な合図を使うと、高度な対話式操作を非常に効果的に使用できます。
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>関連記事
 
-**Xxx xxxxxxxxxx (XXXX)**
-* [Xxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185617)
-* [Xxxxxx xxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185599)
+**開発者向け (XAML)**
+* [タッチ操作](https://msdn.microsoft.com/library/windows/apps/mt185617)
+* [カスタム ユーザー操作](https://msdn.microsoft.com/library/windows/apps/mt185599)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

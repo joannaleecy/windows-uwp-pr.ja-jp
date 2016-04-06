@@ -1,30 +1,30 @@
 ---
-xxxxx: Xxxxxxx xxxxx xxxxxx xx x xxx
-xxxxxxxxxxx: Xxxxxxx xxxxx-xxxxx xx xxxxxx xxxxx xxxxxx xx x xxx xx xxxxx xxxx xxxxxxx. Xxx xxxx xxxxxxx xx xxxxxxx xxxxxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxx xxxx, xxxxxxxxxx xxxx, xx xxxxxxx xxxx; xx xxx xxxx xxxxxxx xx xxxxxxx xxx xxxxxxx xxx xxxxxxxx.
-xx.xxxxxxx: YYYXXYXY-XYYX-YXYX-XXYY-YXYXYYXYYXXX
+title: Overlay tiled images on a map
+description: Overlay third-party or custom tiled images on a map by using tile sources. Use tile sources to overlay specialized information such as weather data, population data, or seismic data; or use tile sources to replace the default map entirely.
+ms.assetid: 066BD6E2-C22B-4F5B-AA94-5D6C86A09BDF
 ---
 
-# Xxxxxxx xxxxx xxxxxx xx x xxx
+# Overlay tiled images on a map
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxxx xxxxx-xxxxx xx xxxxxx xxxxx xxxxxx xx x xxx xx xxxxx xxxx xxxxxxx. Xxx xxxx xxxxxxx xx xxxxxxx xxxxxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxx xxxx, xxxxxxxxxx xxxx, xx xxxxxxx xxxx; xx xxx xxxx xxxxxxx xx xxxxxxx xxx xxxxxxx xxx xxxxxxxx.
+Overlay third-party or custom tiled images on a map by using tile sources. Use tile sources to overlay specialized information such as weather data, population data, or seismic data; or use tile sources to replace the default map entirely.
 
-**Xxx** Xx xxxxx xxxx xxxxx xxxxx xxxx xx xxxx xxx, xxxxxxxx xxx xxxxxxxxx xxxxxx xxxx xxx [Xxxxxxx-xxxxxxxxx-xxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=619979) xx XxxXxx.
+**Tip** To learn more about using maps in your app, download the following sample from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
--   [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+-   [Universal Windows Platform (UWP) map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
 
-## Xxxxx xxxxx xxxxxxxx
+## Tiled image overview
 
 
-Xxx xxxxxxxx xxxx xx Xxxxx Xxxx xxx Xxxx Xxxx xxx xxxx xxxx xxxxxx xxxxx xxx xxxxx xxxxxxxxx xxx xxxxxxx. Xxxxx xxxxx xxx YYY xxxxxx xx YYY xxxxxx xx xxxx, xxx xxx xxx-xxxxxxxx xx xxxxxxxx xxxxxx xx xxxxxx. Xxxx xxxxx-xxxxx xxxxxxxx xxxx xxxxxxx xxx-xxxxx xxxx xxxx'x xxx xxxx xxxxx. Xxx xxxx xxxxxxx xx xxxxxxxx xxxxx-xxxxx xxxxx, xx xx xxxxxx xxxx xxx xxxxxx xxxxx, xxx xxxxxxx xxxx xx xxx xxx xxxxxxxxx xx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+Map services such as Nokia Maps and Bing Maps cut maps into square tiles for quick retrieval and display. These tiles are 256 pixels by 256 pixels in size, and are pre-rendered at multiple levels of detail. Many third-party services also provide map-based data that's cut into tiles. Use tile sources to retrieve third-party tiles, or to create your own custom tiles, and overlay them on the map displayed in the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-**Xxxxxxxxx**  
-Xxxx xxx xxx xxxx xxxxxxx, xxx xxx'x xxxx xx xxxxx xxxx xx xxxxxxx xx xx xxxxxxxx xxxxxxxxxx xxxxx. Xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637004) xxxxxxxx xxxxx xx xx xxxxx xxxx. Xxxx xxxxxxx xxxxxxxxx xxx X xxx X xxxxxxxxxxx xxx xxx xxxx xxxxx xxx xxx xxxxxxxxxx xxxx. Xxx xxxxxx xxxxxxx xxx xxxxxx xx xxx Xxx xx xxxxxxxx xx xxx xx xxxxxxxx xxx xxxxx xx xxx **XxxXxxxxxXxxxxx** xxxxxxxx. Xxxx xx, xxx xxxxxx xxxxxxxxxxx xxxxxxxxxx xx xxx xxxx Xxx xx xxxxxxxx xx xxxxxxxx xxxxx xx xxxx xxx X xxx X xxxxxxxxxxx xxx xxx xxxx xxxxx xxx xxxx xxxx.
+**Important**  
+When you use tile sources, you don't have to write code to request or to position individual tiles. The [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004) requests tiles as it needs them. Each request specifies the X and Y coordinates and the zoom level for the individual tile. You simply specify the format of the Uri or filename to use to retrieve the tiles in the **UriFormatString** property. That is, you insert replaceable parameters in the base Uri or filename to indicate where to pass the X and Y coordinates and the zoom level for each tile.
 
-Xxxx'x xx xxxxxxx xx xxx [**XxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636992) xxxxxxxx xxx xx [**XxxxXxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636986) xxxx xxxxx xxx xxxxxxxxxxx xxxxxxxxxx xxx xxx X xxx X xxxxxxxxxxx xxx xxx xxxx xxxxx.
+Here's an example of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property for an [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) that shows the replaceable parameters for the X and Y coordinates and the zoom level.
 
 ``` syntax
     http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
@@ -32,69 +32,69 @@ Xxxx'x xx xxxxxxx xx xxx [**XxxXxxxxxXxxxxx**](https://msdn.microsoft.com/librar
 
  
 
-(Xxx X xxx X xxxxxxxxxxx xxxxxxxxx xxx xxxxxxxx xx xxx xxxxxxxxxx xxxx xxxxxx xxx xxx xx xxx xxxxx xx xxx xxxxxxxxx xxxxx xx xxxxxx. Xxx xxxx xxxxxxxxx xxxxxx xxxxxx xxxx {Y, Y} xx xxx xxxxx xxxx xxxxxx xx xxx xxx. Xxx xxxxxxx, xxx xxxx xx {Y, Y} xx xx xxx xxxxxx xxxxxx xx xxx xxxxx xxx xx xxx xxxx xx xxxxx.)
+(The X and Y coordinates represent the location of the individual tile within the map of the world at the specified level of detail. The tile numbering system starts from {0, 0} in the upper left corner of the map. For example, the tile at {1, 2} is in the second column of the third row of the grid of tiles.)
 
-Xxx xxxx xxxx xxxxx xxx xxxx xxxxxx xxxx xx xxxxxxx xxxxxxxx, xxx [Xxxx Xxxx Xxxx Xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=626692).
+For more info about the tile system used by mapping services, see [Bing Maps Tile System](http://go.microsoft.com/fwlink/p/?LinkId=626692).
 
-### Xxxxxxx xxxxx xxxx x xxxx xxxxxx
+### Overlay tiles from a tile source
 
-Xxxxxxx xxxxx xxxxxx xxxx x xxxx xxxxxx xx x xxx xx xxxxx xxx [**XxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637141).
+Overlay tiled images from a tile source on a map by using the [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
 
-1.  Xxxxxxxxxxx xxx xx xxx xxxxx xxxx xxxx xxxxxx xxxxxxx xxxx xxxxxxx xxxx [**XxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637141).
+1.  Instantiate one of the three tile data source classes that inherit from [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141).
 
-    -   [**XxxxXxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636986)
-    -   [**XxxxxXxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636994)
-    -   [**XxxxxxXxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636983)
+    -   [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986)
+    -   [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994)
+    -   [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983)
 
-    Xxxxxxxxx xxx **XxxXxxxxxXxxxxx** xx xxx xx xxxxxxx xxx xxxxx xx xxxxxxxxx xxxxxxxxxxx xxxxxxxxxx xx xxx xxxx Xxx xx xxxxxxxx.
+    Configure the **UriFormatString** to use to request the tiles by inserting replaceable parameters in the base Uri or filename.
 
-    Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xx [**XxxxXxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636986). Xxxx xxxxxxx xxxxxxxxx xxx xxxxx xx xxx [**XxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636992) xx xxx xxxxxxxxxxx xx xxx **XxxxXxxXxxxXxxxXxxxxx**.
+    The following example instantiates an [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). This example specifies the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) in the constructor of the **HttpMapTileDataSource**.
 
     ```cs
         HttpMapTileDataSource dataSource = new HttpMapTileDataSource(
           "http://www.<web service name>.com/z={zoomlevel}&amp;x={x}&amp;y={y}");
     ```
 
-2.  Xxxxxxxxxxx xxx xxxxxxxxx x [**XxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637144). Xxxxxxx xxx [**XxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637141) xxxx xxx xxxxxxxxxx xx xxx xxxxxxxx xxxx xx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637149) xx xxx **XxxXxxxXxxxxx**.
+2.  Instantiate and configure a [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144). Specify the [**MapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn637141) that you configured in the previous step as the [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149) of the **MapTileSource**.
 
-    Xxx xxxxxxxxx xxxxxxx xxxxxxxxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637149) xx xxx xxxxxxxxxxx xx xxx [**XxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637144).
+    The following example specifies the [**DataSource**](https://msdn.microsoft.com/library/windows/apps/dn637149) in the constructor of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
 
     ```cs
         MapTileSource tileSource = new MapTileSource(dataSource);
     ```
 
-    Xxx xxx xxxxxxxx xxx xxxxxxxxxx xx xxxxx xxx xxxxx xxx xxxxxxxxx xx xxxxx xxxxxxxxxx xx xxx [**XxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637144).
+    You can restrict the conditions in which the tiles are displayed by using properties of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
 
-    -   Xxxxxxx xxxxx xxxx xxxxxx x xxxxxxxx xxxxxxxxxx xxxx xx xxxxxxxxx x xxxxx xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637147) xxxxxxxx.
-    -   Xxxxxxx xxxxx xxxx xx xxxxxxx xxxxxx xx xxxxxx xx xxxxxxxxx x xxxxx xxx xxx [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637171) xxxxxxxx.
+    -   Display tiles only within a specific geographic area by providing a value for the [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) property.
+    -   Display tiles only at certain levels of detail by providing a value for the [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) property.
 
-    Xxxxxxxxxx, xxxxxxxxx xxxxx xxxxxxxxxx xx xxx [**XxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637144) xxxx xxxxxx xxx xxxxxxx xx xxx xxxxxxx xx xxx xxxxx, xxxx xx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637157), [**XxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637145), [**XxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637153), xxx [**XxXxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637155).
+    Optionally, configure other properties of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) that affect the loading or the display of the tiles, such as [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157), [**AllowOverstretch**](https://msdn.microsoft.com/library/windows/apps/dn637145), [**IsRetryEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637153), and [**IsTransparencyEnabled**](https://msdn.microsoft.com/library/windows/apps/dn637155).
 
-3.  Xxx xxx [**XxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637144) xx xxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637053) xxxxxxxxxx xx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+3.  Add the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144) to the [**TileSources**](https://msdn.microsoft.com/library/windows/apps/dn637053) collection of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
     ```cs
          MapControl1.TileSources.Add(tileSource);
     ```
 
-## Xxxxxxx xxxxx xxxx x xxx xxxxxxx
+## Overlay tiles from a web service
 
 
-Xxxxxxx xxxxx xxxxxx xxxxxxxxx xxxx x xxx xxxxxxx xx xxxxx xxx [**XxxxXxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636986).
+Overlay tiled images retrieved from a web service by using the [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
 
-1.  Xxxxxxxxxxx xx [**XxxxXxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636986).
-2.  Xxxxxxx xxx xxxxxx xx xxx Xxx xxxx xxx xxx xxxxxxx xxxxxxx xx xxx xxxxx xx xxx [**XxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636992) xxxxxxxx. Xx xxxxxx xxxx xxxxx, xxxxxx xxxxxxxxxxx xxxxxxxxxx xx xxx xxxx Xxx. Xxx xxxxxxx, xx xxx xxxxxxxxx xxxx xxxxxx, xxx xxxxx xx xxx **XxxXxxxxxXxxxxx** xx:
+1.  Instantiate an [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986).
+2.  Specify the format of the Uri that the web service expects as the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property. To create this value, insert replaceable parameters in the base Uri. For example, in the following code sample, the value of the **UriFormatString** is:
 
     ``` syntax
         http://www.<web service name>.com/z={zoomlevel}&x={x}&y={y}
     ```
 
-    Xxx xxx xxxxxxx xxx xx xxxxxxx x Xxx xxxx xxxxxxxx xxx xxxxxxxxxxx xxxxxxxxxx {x}, {x}, xxx {xxxxxxxxx}. Xxxx xxx xxxxxxxx (xxx xxxxxxx, Xxxxx, Xxxx, xxx Xxxxxx) xxxxxxx Xxxx xx xxxx xxxxxx. Xx xxx xxx xxxxxxx xxxxxxxx xxxxxxxxxx xxxxxxxxx xxxx xxxx'x xxxxxxxxx xxxx xxx [**XxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636992) xxxxxxxx, xxxx xxx xxxx xx xxxxxx x xxxxxx Xxx. Xxxxxx xxx xxxxxx x xxxxxx Xxx xx xxxxxxxx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636993) xxxxx. Xxx xxxx xxxx, xxx xxx [Xxxxxxx x xxxxxx XXX](#customuri) xxxxxxx xxxxx xx xxxx xxxxx.
+    The web service has to support a Uri that contains the replaceable parameters {x}, {y}, and {zoomlevel}. Most web services (for example, Nokia, Bing, and Google) support Uris in this format. If the web service requires additional arguments that aren't available with the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property, then you have to create a custom Uri. Create and return a custom Uri by handling the [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn636993) event. For more info, see the [Provide a custom URI](#customuri) section later in this topic.
 
-3.  Xxxx, xxxxxx xxx xxxxxxxxx xxxxx xxxxxxxxx xxxxxxxxxx xx xxx [Xxxxx xxxxx xxxxxxxx](#tileintro).
+3.  Then, follow the remaining steps described previously in the [Tiled image overview](#tileintro).
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxxx xxxxx xxxx x xxxxxxxxxx xxx xxxxxxx xx x xxx xx Xxxxx Xxxxxxx. Xxx xxxxx xx xxx [**XxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636992) xx xxxxxxxxx xx xxx xxxxxxxxxxx xx xxx [**XxxxXxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636986). Xx xxxx xxxxxxx, xxxxx xxx xxxx xxxxxxxxx xxxxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxx xx xxx xxxxxxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637147) xxxxxxxx.
+The following example overlays tiles from a fictitious web service on a map of North America. The value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) is specified in the constructor of the [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986). In this example, tiles are only displayed within the geographic boundaries specified by the optional [**Bounds**](https://msdn.microsoft.com/library/windows/apps/dn637147) property.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
         private void AddHttpMapTileSource()
         {
@@ -139,36 +139,36 @@ void MainPage::AddHttpMapTileSource()
 }
 ```
 
-## Xxxxxxx xxxxx xxxx xxxxx xxxxxxx
+## Overlay tiles from local storage
 
 
-Xxxxxxx xxxxx xxxxxx xxxxxx xx xxxxx xx xxxxx xxxxxxx xx xxxxx xxx [**XxxxxXxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636994). Xxxxxxxxx, xxx xxxxxxx xxx xxxxxxxxxx xxxxx xxxxx xxxx xxxx xxx.
+Overlay tiled images stored as files in local storage by using the [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). Typically, you package and distribute these files with your app.
 
-1.  Xxxxxxxxxxx x [**XxxxxXxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636994).
-2.  Xxxxxxx xxx xxxxxx xx xxx xxxx xxxxx xx xxx xxxxx xx xxx [**XxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636998) xxxxxxxx. Xx xxxxxx xxxx xxxxx, xxxxxx xxxxxxxxxxx xxxxxxxxxx xx xxx xxxx xxxxxxxx. Xxx xxxxxxx, xx xxx xxxxxxxxx xxxx xxxxxx, xxx xxxxx xx xxx [**XxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636992) xx:
+1.  Instantiate a [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994).
+2.  Specify the format of the file names as the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) property. To create this value, insert replaceable parameters in the base filename. For example, in the following code sample, the value of the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) is:
 
     ``` syntax
         Tile_{zoomlevel}_{x}_{y}.png
     ```
 
-    Xx xxx xxxxxx xx xxx xxxx xxxxx xxxxxxxx xxxxxxxxxx xxxxxxxxx xxxx xxxx'x xxxxxxxxx xxxx xxx [**XxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636998) xxxxxxxx, xxxx xxx xxxx xx xxxxxx x xxxxxx Xxx. Xxxxxx xxx xxxxxx x xxxxxx Xxx xx xxxxxxxx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637001) xxxxx. Xxx xxxx xxxx, xxx xxx [Xxxxxxx x xxxxxx XXX](#customuri) xxxxxxx xxxxx xx xxxx xxxxx.
+    If the format of the file names requires additional arguments that aren't available with the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) property, then you have to create a custom Uri. Create and return a custom Uri by handling the [**UriRequested**](https://msdn.microsoft.com/library/windows/apps/dn637001) event. For more info, see the [Provide a custom URI](#customuri) section later in this topic.
 
-3.  Xxxx, xxxxxx xxx xxxxxxxxx xxxxx xxxxxxxxx xxxxxxxxxx xx xxx [Xxxxx xxxxx xxxxxxxx](#tileintro).
+3.  Then, follow the remaining steps described previously in the [Tiled image overview](#tileintro).
 
-Xxx xxx xxx xxx xxxxxxxxx xxxxxxxxx xxx xxxxxxxxx xx xxxx xxxxx xxxx xxxxx xxxxxxx:
+You can use the following protocols and locations to load tiles from local storage:
 
-| Xxx | Xxxx xxxx |
+| Uri | More info |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| xx-xxxx:/// | Xxxxxx xx xxx xxxx xx xxx xxx'x xxxxxxxxxxxx xxxxxx. |
-|  | Xxxx xx xxx xxxxxxxx xxxxxxxxxx xx xxx [Xxxxxxx.XxxxxxxxxXxxxxxxx](https://msdn.microsoft.com/library/windows/apps/br224681) xxxxxxxx. |
-| xx-xxxxxxx:///xxxxx | Xxxxxx xx xxx xxxx xx xxx xxx'x xxxxx xxxxxxx. |
-|  | Xxxx xx xxx xxxxxxxx xxxxxxxxxx xx xxx [XxxxxxxxxxxXxxx.XxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/br241621) xxxxxxxx. |
-| xx-xxxxxxx:///xxxx | Xxxxxx xx xxx xxx'x xxxx xxxxxx. |
-|  | Xxxx xx xxx xxxxxxxx xxxxxxxxxx xx xxx [XxxxxxxxxxxXxxx.XxxxxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/br241629) xxxxxxxx. |
+| ms-appx:/// | Points to the root of the app's installation folder. |
+|  | This is the location referenced by the [Package.InstalledLocation](https://msdn.microsoft.com/library/windows/apps/br224681) property. |
+| ms-appdata:///local | Points to the root of the app's local storage. |
+|  | This is the location referenced by the [ApplicationData.LocalFolder](https://msdn.microsoft.com/library/windows/apps/br241621) property. |
+| ms-appdata:///temp | Points to the app's temp folder. |
+|  | This is the location referenced by the [ApplicationData.TemporaryFolder](https://msdn.microsoft.com/library/windows/apps/br241629) property. |
 
  
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxxxx xxxx xxx xxxxxx xx xxxxx xx xxx xxx'x xxxxxxxxxxxx xxxxxx xx xxxxx xxx `ms-appx:///` xxxxxxxx. Xxx xxxxx xxx xxx [**XxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636998) xx xxxxxxxxx xx xxx xxxxxxxxxxx xx xxx [**XxxxxXxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636994). Xx xxxx xxxxxxx, xxxxx xxx xxxx xxxxxxxxx xxxx xxx xxxx xxxxx xx xxx xxx xx xxxxxx xxx xxxxx xxxxxxxxx xx xxx xxxxxxxx [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637171) xxxxxxxx.
+The following example loads tiles that are stored as files in the app's installation folder by using the `ms-appx:///` protocol. The value for the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) is specified in the constructor of the [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994). In this example, tiles are only displayed when the zoom level of the map is within the range specified by the optional [**ZoomLevelRange**](https://msdn.microsoft.com/library/windows/apps/dn637171) property.
 
 ```csharp
         void AddLocalMapTileSource()
@@ -190,15 +190,15 @@ Xxx xxxxxxxxx xxxxxxx xxxxx xxxxx xxxx xxx xxxxxx xx xxxxx xx xxx xxx'x xxxxxxxx
         }
 ```
 
-## Xxxxxxx x xxxxxx XXX
+## Provide a custom URI
 
 
-Xx xxx xxxxxxxxxxx xxxxxxxxxx xxxxxxxxx xxxx xxx [**XxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636992) xxxxxxxx xx xxx [**XxxxXxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636986) xx xxx [**XxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636998) xxxxxxxx xx xxx [**XxxxxXxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636994) xxxx'x xxxxxxxxxx xx xxxxxxxx xxxx xxxxx, xxxx xxx xxxx xx xxxxxx x xxxxxx Xxx. Xxxxxx xxx xxxxxx x xxxxxx Xxx xx xxxxxxxxx x xxxxxx xxxxxxx xxx xxx **XxxXxxxxxxxx** xxxxx. Xxx **XxxXxxxxxxxx** xxxxx xx xxxxxx xxx xxxx xxxxxxxxxx xxxx.
+If the replaceable parameters available with the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636992) property of the [**HttpMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636986) or the [**UriFormatString**](https://msdn.microsoft.com/library/windows/apps/dn636998) property of the [**LocalMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636994) aren't sufficient to retrieve your tiles, then you have to create a custom Uri. Create and return a custom Uri by providing a custom handler for the **UriRequested** event. The **UriRequested** event is raised for each individual tile.
 
-1.  Xx xxxx xxxxxx xxxxxxx xxx xxx **XxxXxxxxxxxx** xxxxx, xxxxxxx xxx xxxxxxxx xxxxxx xxxxxxxxx xxxx xxx [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743), [**X**](https://msdn.microsoft.com/library/windows/apps/dn610744), xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn610745) xxxxxxxxxx xx xxx [**XxxXxxxXxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn637177) xx xxxxxx xxx xxxxxx Xxx.
-2.  Xxxxxx xxx xxxxxx Xxx xx xxx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/dn610748) xxxxxxxx xx xxx [**XxxXxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637173), xxxxx xx xxxxxxxxx xx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637179) xxxxxxxx xx xxx [**XxxXxxxXxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn637177).
+1.  In your custom handler for the **UriRequested** event, combine the required custom arguments with the [**X**](https://msdn.microsoft.com/library/windows/apps/dn610743), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn610744), and [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn610745) properties of the [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177) to create the custom Uri.
+2.  Return the custom Uri in the [**Uri**](https://msdn.microsoft.com/library/windows/apps/dn610748) property of the [**MapTileUriRequest**](https://msdn.microsoft.com/library/windows/apps/dn637173), which is contained in the [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637179) property of the [**MapTileUriRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637177).
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxx x xxxxxx Xxx xx xxxxxxxx x xxxxxx xxxxxxx xxx xxx **XxxXxxxxxxxx** xxxxx. Xx xxxx xxxxx xxx xx xxxxxxxxx xxx xxxxxxxx xxxxxxx xx xxx xxxx xx xx xxxxxxxxx xxxxxxxxxxxxxx xx xxxxxx xxx xxxxxx Xxx.
+The following example shows how to provide a custom Uri by creating a custom handler for the **UriRequested** event. It also shows how to implement the deferral pattern if you have to do something asynchronously to create the custom Uri.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -236,17 +236,17 @@ using System.Threading.Tasks;
         }
 ```
 
-## Xxxxxxx xxxxx xxxx x xxxxxx xxxxxx
+## Overlay tiles from a custom source
 
 
-Xxxxxxx xxxxxx xxxxx xx xxxxx xxx [**XxxxxxXxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636983). Xxxxxx xxxxx xxxxxxxxxxxxxxxx xx xxxxxx xx xxx xxx, xx xxxxx xxxx xxx xxxx xx xxxx xxxxxxxx xxxxx xxxx xxxxxxx xxxxxx.
+Overlay custom tiles by using the [**CustomMapTileDataSource**](https://msdn.microsoft.com/library/windows/apps/dn636983). Create tiles programmatically in memory on the fly, or write your own code to load existing tiles from another source.
 
-Xx xxxxxx xx xxxx xxxxxx xxxxx, xxxxxxx x xxxxxx xxxxxxx xxx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636984) xxxxx. Xxx **XxxxxxXxxxxxxxx** xxxxx xx xxxxxx xxx xxxx xxxxxxxxxx xxxx.
+To create or load custom tiles, provide a custom handler for the [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) event. The **BitmapRequested** event is raised for each individual tile.
 
-1.  Xx xxxx xxxxxx xxxxxxx xxx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn636984) xxxxx, xxxxxxx xxx xxxxxxxx xxxxxx xxxxxxxxx xxxx xxx [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**X**](https://msdn.microsoft.com/library/windows/apps/dn637136), xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637137) xxxxxxxxxx xx xxx [**XxxXxxxXxxxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn637132) xx xxxxxx xx xxxxxxxx x xxxxxx xxxx.
-2.  Xxxxxx xxx xxxxxx xxxx xx xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn637140) xxxxxxxx xx xxx [**XxxXxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637128), xxxxx xx xxxxxxxxx xx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637134) xxxxxxxx xx xxx [**XxxXxxxXxxxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn637132). Xxx **XxxxxXxxx** xxxxxxxx xx xx xxxx [**XXxxxxxXxxxxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701664).
+1.  In your custom handler for the [**BitmapRequested**](https://msdn.microsoft.com/library/windows/apps/dn636984) event, combine the required custom arguments with the [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136), and [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) properties of the [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132) to create or retrieve a custom tile.
+2.  Return the custom tile in the [**PixelData**](https://msdn.microsoft.com/library/windows/apps/dn637140) property of the [**MapTileBitmapRequest**](https://msdn.microsoft.com/library/windows/apps/dn637128), which is contained in the [**Request**](https://msdn.microsoft.com/library/windows/apps/dn637134) property of the [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). The **PixelData** property is of type [**IRandomAccessStreamReference**](https://msdn.microsoft.com/library/windows/apps/hh701664).
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxx xxxxxx xxxxx xx xxxxxxxx x xxxxxx xxxxxxx xxx xxx **XxxxxxXxxxxxxxx** xxxxx. Xxxx xxxxxxx xxxxxxx xxxxxxxxx xxx xxxxx xxxx xxx xxxxxxxxx xxxxxx. Xxx xxxxxxx xxxxxxx xxx [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**X**](https://msdn.microsoft.com/library/windows/apps/dn637136), xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637137) xxxxxxxxxx xx xxx [**XxxXxxxXxxxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn637132). Xxxxxxxx xxxx xx xxx x xxxx xxxxx xxxxxxx, xxx xxxxxxx xxxxxxxxxxxx xxx xxx xxx xxxxxx xx-xxxxxx xxxxxx xxxxx xx xxx xxx. Xxx xxxxxxx xxxx xxxxx xxx xx xxxxxxxxx xxx xxxxxxxx xxxxxxx xx xxx xxxx xx xx xxxxxxxxx xxxxxxxxxxxxxx xx xxxxxx xxx xxxxxx xxxxx.
+The following example shows how to provide custom tiles by creating a custom handler for the **BitmapRequested** event. This example creates identical red tiles that are partially opaque. The example ignores the [**X**](https://msdn.microsoft.com/library/windows/apps/dn637135), [**Y**](https://msdn.microsoft.com/library/windows/apps/dn637136), and [**ZoomLevel**](https://msdn.microsoft.com/library/windows/apps/dn637137) properties of the [**MapTileBitmapRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn637132). Although this is not a real world example, the example demonstrates how you can create in-memory custom tiles on the fly. The example also shows how to implement the deferral pattern if you have to do something asynchronously to create the custom tiles.
 
 ```csharp
 using Windows.UI.Xaml.Controls.Maps;
@@ -345,20 +345,24 @@ InMemoryRandomAccessStream^ TileSources::CustomRandomAccessSteram::get()
 }
 ```
 
-## Xxxxxxx xxx xxxxxxx xxx
+## Replace the default map
 
 
-Xx xxxxxxx xxx xxxxxxx xxx xxxxxxxx xxxx xxxxx-xxxxx xx xxxxxx xxxxx:
+To replace the default map entirely with third-party or custom tiles:
 
--   Xxxxxxx [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637143).**XxxxxxxxxxXxxxxxxxxxx** xx xxx xxxxx xx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637157) xxxxxxxx xx xxx [**XxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637144).
--   Xxxxxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637127).**Xxxx** xx xxx xxxxx xx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637051) xxxxxxxx xx xxx [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn637004).
+-   Specify [**MapTileLayer**](https://msdn.microsoft.com/library/windows/apps/dn637143).**BackgroundReplacement** as the value of the [**Layer**](https://msdn.microsoft.com/library/windows/apps/dn637157) property of the [**MapTileSource**](https://msdn.microsoft.com/library/windows/apps/dn637144).
+-   Specify [**MapStyle**](https://msdn.microsoft.com/library/windows/apps/dn637127).**None** as the value of the [**Style**](https://msdn.microsoft.com/library/windows/apps/dn637051) property of the [**MapControl**](https://msdn.microsoft.com/library/windows/apps/dn637004).
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxx Xxxx Xxxxxxxxx Xxxxxx](https://www.bingmapsportal.com/)
-* [XXX xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977)
-* [Xxxxxx xxxxxxxxxx xxx xxxx](https://msdn.microsoft.com/library/windows/apps/dn596102)
-* [Xxxxx YYYY xxxxx: Xxxxxxxxxx Xxxx xxx Xxxxxxxx Xxxxxx Xxxxx, Xxxxxx, xxx XX xx Xxxx Xxxxxxx Xxxx](https://channel9.msdn.com/Events/Build/2015/2-757)
-* [XXX xxxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+* [Bing Maps Developer Center](https://www.bingmapsportal.com/)
+* [UWP map sample](http://go.microsoft.com/fwlink/p/?LinkId=619977)
+* [Design guidelines for maps](https://msdn.microsoft.com/library/windows/apps/dn596102)
+* [Build 2015 video: Leveraging Maps and Location Across Phone, Tablet, and PC in Your Windows Apps](https://channel9.msdn.com/Events/Build/2015/2-757)
+* [UWP traffic app sample](http://go.microsoft.com/fwlink/p/?LinkId=619982)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

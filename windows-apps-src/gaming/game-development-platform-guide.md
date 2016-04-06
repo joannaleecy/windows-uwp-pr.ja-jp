@@ -1,56 +1,56 @@
 ---
-xxxxx: Xxxx xxxxxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx
-xxxxxxxxxxx: Xx xxxx xxxxx, xxx'xx xxxxx xxxxx xxx xxxxxxxxxxxx xxxxxxxxx xxx xxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxx.
-xx.xxxxxxx: xxYxYYYY-YxYx-xxxx-YYYY-YYxxYYxxxxYx
+title: ユニバーサル Windows プラットフォーム (UWP) アプリのゲーム テクノロジ
+description: このガイドでは、ユニバーサル Windows プラットフォーム UWP ゲームの開発に利用できるテクノロジについて説明します。
+ms.assetid: bc4d4648-0d6e-efbb-7608-80bd09decd6e
 ---
 
-# Xxxx xxxxxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx
+# ユニバーサル Windows プラットフォーム (UWP) アプリのゲーム テクノロジ
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xx xxxx xxxxx, xxx'xx xxxxx xxxxx xxx xxxxxxxxxxxx xxxxxxxxx xxx xxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxx.
+このガイドでは、ユニバーサル Windows プラットフォーム UWP ゲームの開発に利用できるテクノロジについて説明します。
 
-##  Xxxxxxxx xx Xxxxxxx YY xxx xxxx xxxxxxxxxxx
-
-
-Xxxx xxx xxxxxxxxxxxx xx XXX xx Xxxxxxx YY, xxxx Xxxxxxx YY xxxxxx xxxx xx xxxx xx xxxx xxx xx xxx Xxxxxxxxx xxxxxxxxx. Xxxx xxxx xxxxxxxxx xxxx xxxxxxxx xxxxxxxx xx Xxxxxxx, xxxxx xx x xxxxxxxx xxxxxxxxxx xxxxxx xx Xxxxxxx YY xxxxxxx. Xxx xxxxxxxxxxx xx xxxxx xxx xxxxxx xxxxx xxxx xxxx Xxxxxxx YY xxxxxx xxxx xx xxxx xx xxxxx x xxxx xxxxxx xx xxxxxxxxx xxxxxxx xxx Xxxxxxx Xxxxx.
-
-Xx xxxxxxxx, Xxxxxxx YY xxxxxx xxxx xxx xxxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxxx xx xxxxx:
-
--   Xxxxxxx xxxxxx xxxxxx xxx xxxxxxx xxxxxxx xxxxxx xxxxxx xxxx
--   Xxxxxxxx xxxxxxxx xxxxxx xxxxxxxxxx xxxxxxxx xxxxxxxxx xxx xxxxxxxx xxxx xxxxxx xxx xxx xxxxxxxxxx xxxx
-
-## XXX Xxxxx xxxx X++ xxx XxxxxxX
+##  ゲーム開発向けの Windows 10 のメリット
 
 
-Xxxx-xxxx xxxxx xxxxxxxxx xxxx xxxxxxxxxxx xxxxxx xxxx xxx xx xxx XxxxxxX XXXx. XxxxxxX xx x xxxxxxxxxx xx xxxxxx XXXx xxx xxxxxxxx xxxxx xxx xxxxxxxxxx xxxxxxxxxxxx xxxx xxxxxxx xxxx xxxxxxxxxxx, xxxx xx YX xxxxx. Xxxxxxx xxx XxxxxxX XXXx xxx xxxxxx, X++ xx xxx xxxx xxxxxxxx xxxxxxxxx xxx xxx xxxx XxxxxxX.
+Windows 10 で UWP が導入されたことにより、作成した Windows 10 のタイトルはすべての Microsoft プラットフォームに対応できます。 以前のバージョンの Windows から無料で移行できるため、Windows 10 のユーザー数は着実に増加しています。 これらの 2 つの事実を組み合わせると、Windows 10 のタイトルは、Windows ストアを通じて膨大な数のユーザーに提供できることを意味します。
 
-## Xxxxxxxxxxx Xxxxxxxxxxx
+また Windows 10 には、特にゲームに便利な、多くの新しい機能が用意されています。
 
+-   メモリのページングの削減および全体的なメモリ システム サイズの削減
+-   グラフィックス メモリの管理機能の向上により、フォアグラウンドのゲームに、より多くのメモリがアクティブに割り当てられ、保護されます。
 
-Xx xxxxxx xxxxx xxx XXX, xxx'xx xxxx xx xxx xx xxxx xxxxxxxxxxx xxxxxxxxxxx xx xxxxxxxxxx x xxxx xx Xxxxxx Xxxxxx YYYY. Xxxxxx Xxxxxx YYYY xxxxxx xxx xx xxxxxx XXX xxxx xxx xxxxxxxx xxxxx xxx xxxx xxxxxxxxxxx:
-
--   Xxxxxx Xxxxxx xxxxx xxx XX xxxx xxxxxxxxxxx - Xxxxxx Xxxxxx xxxxxxxx xxxxx xxx xxxxxxxx, xxxxxxx, xxxxxxxxxx, xxx xxxxxxxxx xxxxx, xxxxx, xxx xxxxxx xxxxxxxxx. Xxxxx xxx xxxx xxxxx xxxx xxx xxx xxx xx xxxxxxx xxxxxxxxx xx xxxxx xxxx xxx xxxxx XxxxxxX xxxxxxxx xxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxx Xxxxxx Xxxxxx xxxxx xxx xxxx xxxxxxxxxxx](set-up-visual-studio-for-game-development.md).
--   Xxxxxx Xxxxxx xxxxxxxx xxxxxxxxxxx xxxxxxxx - Xxxxxxxx xxxxxxxxxx xxxxx xxx xxx xxxxxxxxx xxxx xxxxxx Xxxxxxx xx xx xxxxxxxx xxxxxxx. Xxx xxxxxxxxxx xxxxx xxxxx xxx xx xx xxxxxxxx xxxxxxxxx, xxxxxxxx xxxxx xxxxxxxx, xxx xxxxxxx XXX xxxxx xx xxxx xxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxx xxx XxxxxxX xxxxxxx xxx Xxxxxx Xxxxxx xxxxxxxx xxxxxxxxxx xxxxxxxx](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md).
-
-Xxx xxxx xxxxxxxxxxx, xxx Xxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx xxx XxxxxxX xxxx xxxxxxxxxxx xxxxxxxxxxx.
-
-## Xxxxxxx Xxxxxxx xxxx XxxxxxX Xxxx Xxxxxxx Xxxxxxxxx
+## C++ と DirectX を使った UWP ゲーム
 
 
-Xxxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxxxxx, xxx xxx xxx xxx xx xxx XxxxxxX xxxxxxx xxxxxxx xxxxxxxxx xx xxxxxx xxxx XXX XxxxxxX xxxx. Xxxxxx Xxxxxx YYYY xxx xxxxx xxxxxxxxx xxxxxxxxx xxx xxxxxxxx xxx XXX XxxxxxX xxxxxxxx, **XxxxxxX YY Xxx (Xxxxxxxxx Xxxxxxx)**, **XxxxxxX YY Xxx (Xxxxxxxxx Xxxxxxx)**, xxx **XxxxxxX YY xxx XXXX Xxx (Xxxxxxxxx Xxxxxxx)**. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx xxx XxxxxxX xxxx xxxxxxx xxxx x xxxxxxxx](user-interface.md).
+高パフォーマンスを必要とするリアルタイム ゲームでは、DirectX API を使用する必要があります。 DirectX は、3D ゲームなど、高パフォーマンスを必要とするゲームやマルチメディア アプリケーションを作成するための、ネイティブ API のコレクションです。 DirectX API はネイティブであるため、DirectX と共に使用できる言語は C++ のみです。
 
-## Xxxxxxx YY XXXx
+## 開発環境
 
 
-Xxxxxxx YY xxxxxxxx x xx xxxxxxxxx xxxxxxxxxx xx XXXx xxxx xxx xxxxxx xxx xxxx xxxxxxxxxxx. Xxxxx xxx XXXx xxx xxxxxx xxx xxxxxxx xx xxxxx xxxxxxxxx, YX Xxxxxxxx, YX Xxxxxxxx, Xxxxx, Xxxxx, Xxxx Xxxxxxxxx, Xxxx Xxxxxxxxx, xxx xxxxxxxxxx.
+UWP 用のゲームを作成するには、Visual Studio 2015 をインストールして開発環境をセットアップする必要があります。 Visual Studio 2015 を使うことによって、UWP アプリを作成でき、ゲーム開発用のツールが提供されます。
 
-Xxxxx xxx xxxx XXXx xxxxxxx xx xxxx xxxxxxxxxxx, xxx xxx xxx xxxxx xxxx xx xxx xxx xx xxx XXXx. Xxx xxxxxxx, xxxx xxxxx xxxx xxxx xxx YX xxxxxxxx xxx xxxx xxxx xxx xx XxxxxxYX, xxxx xxxxx xxx xxxx xxx YX xxxxxxxx xxx xxxx xxxx xxx xx XxxxxxYX, xxx xxxxx xxxxx xxxxx xxx xxxx xxx xx xxxx. Xxx xxxxxxxxx xxxxxxx xxxxx xxx xxxx xxxxxxxxxxx xxxxxxx XXXx xxxxxxx xx xxxxxxxxxxxxx xxxx.
+-   Visual Studio の DX ゲームのプログラミング用ツール: Visual Studio には、画像、モデル、シェーダー リソースを作成、編集、プレビュー、エクスポートするためのツールが用意されています。 また、ビルド時のリソースの変換や、DirectX グラフィックス コードのデバッグに使うことができるツールもあります。 詳しくは、「[ゲーム プログラミング用の Visual Studio ツールの使用](set-up-visual-studio-for-game-development.md)」をご覧ください。
+-   Visual Studio グラフィックス診断機能: オプション機能として、グラフィックス診断ツールを Windows 内から利用できるようになりました。 診断ツールを使って、グラフィックス デバッグやグラフィックス フレーム分析を実行し、リアルタイムで GPU 使用率を監視できます。 詳しくは、「[DirectX ランタイムと Visual Studio グラフィックス診断機能の使用](use-the-directx-runtime-and-visual-studio-graphics-diagnostic-features.md)」をご覧ください。
 
-![xxxx xxxxxxxx xxxxxxxxxxxx](images/gameplatformtechnologies.png)
+詳しくは、「ユニバーサル Windows プラットフォームと DirectX ゲーム プログラミング環境の準備」をご覧ください。
 
--   YX Xxxxxxxx - Xxxxxxx YY xxxxxxxx xxx YX xxxxxxxx XXX xxxx, XxxxxxYX YY, xxx [XxxxxxYX YY](https://msdn.microsoft.com/library/windows/desktop/dn899121). Xxxx xx xxxxx XXXx xxxxxxx xxx xxxxxxxxxx xx xxxxxx YX xxx YX xxxxxxxx. XxxxxxYX YY xxx XxxxxxYX YY xxx xxx xxxx xxxxxxxx, xxx xxxxxx xxx xx xxxx xxxx xxx xx xxx XXXx xx xxx YX Xxxxxxxx xxx XX xxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxx xxx xxxxxxxx XXXx xx xxxx xxxx, xxx [Xxxxx YX xxxxxxxx xxx XxxxxxX xxxxx](an-introduction-to-3d-graphics-with-directx.md).
+## DirectX ゲーム プロジェクト テンプレートの概要
+
+
+開発環境をセットアップすると、DirectX 関連のプロジェクト テンプレートのいずれかを使って UWP DirectX ゲームを作成できます。 Visual Studio 2015 には、新しい UWP DirectX プロジェクトを作成するためのテンプレートとして、**DirectX 11 アプリ (ユニバーサル Windows)**、**DirectX 12 アプリ (ユニバーサル Windows)**、**DirectX 11 および XAML アプリ (ユニバーサル Windows)** の 3 つがあります。 詳しくは、「[テンプレートからのユニバーサル Windows プラットフォームおよび DirectX ゲーム プロジェクトの作成](user-interface.md)」をご覧ください。
+
+## Windows 10 API
+
+
+Windows 10 では、ゲーム開発に役立つさまざまな API を利用できます。 3D グラフィックス、2D グラフィックス、オーディオ、入力、テキスト リソース、ユーザー インターフェイス、ネットワークなど、ゲームのほとんどすべての側面にかかわる API が用意されています。
+
+ゲーム開発に関連する API は数多くありますが、すべてのゲームですべての API を使用する必要はありません。 たとえば、3D グラフィックスと Direct3D のみを利用するゲームもあれば、2D グラフィックスと Direct2D のみを利用するゲームもあります。また、その両方を使用するゲームもあります。 次の図は、ゲーム開発に関連する API を機能別にグループ分けしています。
+
+![ゲーム プラットフォーム テクノロジ](images/gameplatformtechnologies.png)
+
+-   3D グラフィックス: Windows 10 では、Direct3D 11 と [Direct3D 12](https://msdn.microsoft.com/library/windows/desktop/dn899121) の 2 つの 3D グラフィックス API セットをサポートしています。 これら API はいずれも、3D および 2D グラフィックスを作成する機能を提供します。 Direct3D 11 と Direct3D 12 を同時に使うことはありませんが、いずれも 2D グラフィックスおよび UI グループのすべての API と共に使うことができます。 ゲームでグラフィックス API を使う方法について詳しくは、「[DirectX ゲームの基本的な 3D グラフィックス](an-introduction-to-3d-graphics-with-directx.md)」をご覧ください。
 
     <table>
     <colgroup>
@@ -59,33 +59,33 @@ Xxxxx xxx xxxx XXXx xxxxxxx xx xxxx xxxxxxxxxxx, xxx xxx xxx xxxxx xxxx xx xxx x
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">XXX</th>
-    <th align="left">Xxxxxxxxxxx</th>
+    <th align="left">API</th>
+    <th align="left">説明</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
-    <td align="left">XxxxxxYX YY</td>
-    <td align="left"><p>XxxxxxYX YY xxxxxxxxxx xxx xxxx xxxxxxx xx XxxxxxYX, xxx YX xxxxxxxx XXX xx xxx xxxxx xx XxxxxxX. Xxxx xxxxxxx xx XxxxxxYX xx xxxxxxxx xx xx xxxxxx xxx xxxx xxxxxxxxx xxxx xxxxxxxx xxxxxxxx xx XxxxxxYX. Xxx xxxxxxxx xxx XxxxxxYX YY'x xxxxxxxxx xxxxx xx xxxx xx xx xxxxx xxxxx xxx xxxxxxxx xxx xx xxxxxx xxxx xxxxxxxx xxxxxxxxx xxxxxxxx xxx xxxx xxxx xxxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxxxxxxx xx xxxxxxx xxx xxxxxxxxx xxxxx.</p>
-    <p><strong>Xxxx xx xxx</strong></p>
-    <p>Xxx XxxxxxYX YY xxxx xxx xxxx xx xxxxxxxx xxxx xxxx'x xxxxxxxxxxx xxx xxxx xxxx xx XXX xxxxx.</p>
-    <p><strong>Xxx xxxx xxxxxxxxxxx</strong></p>
-    <p>Xxx xxx [XxxxxxYx YY](https://msdn.microsoft.com/library/windows/desktop/dn899121) xxxxxxxxxxxxx.</p></td>
+    <td align="left">Direct3D 12</td>
+    <td align="left"><p>Direct3D 12 では、DirectX の核となる 3D グラフィックス API である Direct3D の次期バージョンが導入されます。 このバージョンの Direct3D は、以前のバージョンの Direct3D よりも高速かつ効率的になるように設計されています。 Direct3D 12 の速度の向上のトレードオフは、より下位レベルで動作することであり、グラフィックス リソースを自分で管理する必要があることです。また、速度の向上を実現するには、広範なグラフィックスのプログラミングの経験が必要です。</p>
+    <p><strong>使う状況</strong></p>
+    <p>Direct3D 12 は、ゲームのパフォーマンスを最大化する必要があり、ゲームが CPU バウンドである場合に使います。</p>
+    <p><strong>詳細情報</strong></p>
+    <p>[Direct3d 12](https://msdn.microsoft.com/library/windows/desktop/dn899121) に関連するドキュメントをご覧ください。</p></td>
     </tr>
     <tr class="even">
-    <td align="left">XxxxxxYX YY</td>
-    <td align="left"><p>XxxxxxYX YY xx xxx xxxxxxxx xxxxxxx xx XxxxxxYX xxx xxxxxx xxx xx xxxxxx YX xxxxxxxx xxxxx x xxxxxx xxxxx xx xxxxxxxx xxxxxxxxxxx xxxx XYX YY.</p>
-    <p><strong>Xxxx xx xxx</strong></p>
-    <p>Xxx XxxxxxYX YY xx xxx xxxx xxxxxxxx XxxxxxYX YY xxxx, xxxx xxxx xx xxx XXX xxxxx, xx xxx xxxx xxx xxxxxxx xx xxxxxx xxxxxxxxx xxxxxxx xxx xxx.</p>
-    <p><strong>Xxx xxxx xxxxxxxxxxx</strong></p>
-    <p>Xxx xxx [XxxxxxYX YY](https://msdn.microsoft.com/library/windows/desktop/ff476080) xxxxxxxxxxxxx.</p></td>
+    <td align="left">Direct3D 11</td>
+    <td align="left"><p>Direct3D 11 は、以前のバージョンの Direct3D であり、D3D 12 より上位レベルのハードウェア アブストラクションを使用して 3D グラフィックスを作成できます。</p>
+    <p><strong>使う状況</strong></p>
+    <p>Direct3D 11 のコードが既にある場合、ゲームが CPU バウンドではない場合、またはリソースが自動的に管理されるメリットが必要な場合は、Direct3D 11 を使います。</p>
+    <p><strong>詳細情報</strong></p>
+    <p>[Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080) に関連するドキュメントをご覧ください。</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   YX Xxxxxxxx xxx XX - XXXx xxxxxxxxxx YX xxxxxxxx xxxx xx xxxx xxx xxxx xxxxxxxxxx. Xxx xx xxx YX xxxxxxxx xxx XX XXXx xxx xxxxxxxx.
+-   2D グラフィックスおよび UI API: テキストやユーザー インターフェイスなどの 2D グラフィックスに関する API です。 すべての 2D グラフィックスおよび UI API はオプションです。
 
     <table>
     <colgroup>
@@ -94,41 +94,41 @@ Xxxxx xxx xxxx XXXx xxxxxxx xx xxxx xxxxxxxxxxx, xxx xxx xxx xxxxx xxxx xx xxx x
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">XXX</th>
-    <th align="left">Xxxxxxxxxxx</th>
+    <th align="left">API</th>
+    <th align="left">説明</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
-    <td align="left">XxxxxxYX</td>
-    <td align="left"><p>XxxxxxYX xx x xxxxxxxx-xxxxxxxxxxx, xxxxxxxxx-xxxx, Y-X xxxxxxxx XXX xxxx xxxxxxxx xxxx xxxxxxxxxxx xxx xxxx-xxxxxxx xxxxxxxxx xxx Y-X xxxxxxxx, xxxxxxx, xxx xxxx. Xxx XxxxxxYX XXX xx xxxxx xx XxxxxxYX xxx xx xxxxxxxx xx xxxxxxxxxxxx xxxx xxxx XXX, XXX+, xxx XxxxxxYX.</p>
-    <p><strong>Xxxx xx xxx</strong></p>
-    <p>XxxxxxYX xxx xx xxxx xxxxxxx xx XxxxxxYX xx xxxxxxx xxxxxxxx xxx xxxx YX xxxxx xxxx xx x xxxx-xxxxxxxx xx xxxxx xxxx, xx xxx xx xxxx xxxx XxxxxxYX xx xxxxxxxx xxxxxxxx xx YX xxxxxxxx xx x YX xxxx, xxxx xx x xxxx xxxxxxxxx xx xxxxx-xx-xxxxxxx.</p>
-    <p><strong>Xxx xxxx xxxxxxxxxxx</strong></p>
-    <p>Xxx xxx [XxxxxxYX](https://msdn.microsoft.com/library/windows/desktop/dd370990) xxxxxxxxxxxxx.</p></td>
+    <td align="left">Direct2D</td>
+    <td align="left"><p>Direct2D は、2D ジオメトリ、ビットマップ、テキストの高パフォーマンスかつ高品質のレンダリングを実現する、ハードウェア アクセラレータによる、即時モードの 2D グラフィックス API です。 Direct2D API は Direct3D を基にして構築されており、GDI、GDI+、Direct3D とも適切に相互運用できるように設計されています。</p>
+    <p><strong>使う状況</strong></p>
+    <p>Direct2D は、横スクロール ゲームやボード ゲームなどの純粋な 2D ゲーム用のグラフィックスを提供するために、Direct3D の代わりに使うことができます。また、ユーザー インターフェイスやヘッドアップ ディスプレイなど、3D ゲーム内での 2D グラフィックスの作成を簡素化するために Direct3D と共に使うこともできます。</p>
+    <p><strong>詳細情報</strong></p>
+    <p>[Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990) に関連するドキュメントをご覧ください。</p></td>
     </tr>
     <tr class="even">
-    <td align="left">XxxxxxXxxxx</td>
-    <td align="left"><p>XxxxxxXxxxx xxxxxxxx xxxxx xxxxxxxxxxxx xxx xxxxxxx xxxx xxxx xxx xxx xx xxxx xxxx XxxxxxYX xx XxxxxxYX xx xxxxxxx xxxx xxxxxx xxx xxxx xxxxxxxxxx xx xxxxx xxxxx xxxxx xxxx xx xxxxxxxx. XxxxxxXxxxx xxxxxxxx xxxxxxxxx, xxxxxxx, xxx xxx-xxxxxxx xx xxxxx-xxxxxx xxxx. XxxxxxXxxxx xxxxxxx xxxx xx xxx xxxxxxxxx xxxxxxxxx xxx xxxxxx xxx xxxxxxxxx xxxxxxxxxxxx. XxxxxxXxxxx xxxx xxxxxxxx x xxx-xxxxx xxxxx xxxxxxxxx XXX xxx xxxxxxxxxx xxx xxxx xx xxxxxxx xxxxx xxx xxxxxx xxx Xxxxxxx-xx-xxxxx xxxxxxxxxx.</p>
-    <p><strong>Xxxx xx xxx</strong></p>
+    <td align="left">DirectWrite</td>
+    <td align="left"><p>DirectWrite は、テキストを操作するための追加の機能を提供します。Direct3D や Direct2D と共に使用して、ユーザー インターフェイスや、テキストが必要なその他の領域にテキスト出力を提供できます。 DirectWrite は、複数形式のテキストの測定、描画、ヒット テストをサポートします。 DirectWrite は、グローバル アプリケーションとローカライズされたアプリケーションで、サポートされているすべての言語のテキストを処理します。 DirectWrite は、独自のレイアウトと Unicode からグリフへの処理を実行する必要がある開発者に、下位レベルのグリフ レンダリング API も提供します。</p>
+    <p><strong>使う状況</strong></p>
     <p></p>
-    <p><strong>Xxx xxxx xxxxxxxxxxx</strong></p>
-    <p>Xxx xxx [XxxxxxXxxxx](https://msdn.microsoft.com/library/windows/desktop/dd368038) xxxxxxxxxxxxx.</p></td>
+    <p><strong>詳細情報</strong></p>
+    <p>[DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038) に関連するドキュメントをご覧ください。</p></td>
     </tr>
     <tr class="odd">
-    <td align="left">XxxxxxXxxxxxxxxxx</td>
-    <td align="left"><p>XxxxxxXxxxxxxxxxx xx x Xxxxxxx xxxxxxxxx xxxx xxxxxxx xxxx-xxxxxxxxxxx xxxxxx xxxxxxxxxxx xxxx xxxxxxxxxx, xxxxxxx, xxx xxxxxxxxxx. Xxxxxxxxxxx xxxxxxxxxx xxx xxx xxx XxxxxxXxxxxxxxxxx XXX xx xxxxxx xxxxxxxx xxxxxxxx xxxx xxxxxxxxxx xxxx xxxxxxx xxxx xxx xxxxx xxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxx xx xxxxxxx.</p>
-    <p><strong>Xxxx xx xxx</strong></p>
-    <p>XxxxxxXxxxxxxxxxx xx xxxxxxxx xx xxxxxxxx xxx xxxxxxx xx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxxxxxx. Xx xxxx xxxx xxxxxxxx xxxxxxx xxxx xxxxxxxxxx, xxx xxx xxx XxxxxxXxxxxxxxxxx xx xxxxxxxx xxx xxxxxxxx xxx xxxxxxxxxx xx xxx XX.</p>
-    <p><strong>Xxx xxxx xxxxxxxxxxx</strong></p>
-    <p>Xxx xxx [XxxxxxXxxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/hh437371) xxxxxxxxxxxxx.</p></td>
+    <td align="left">DirectComposition</td>
+    <td align="left"><p>DirectComposition は、変換、効果、アニメーションを使って、高パフォーマンスのビットマップ合成を実現できる Windows コンポーネントです。 アプリケーション開発者は、DirectComposition API によって、ビジュアル要素間で機能豊富で柔軟な切り替えのアニメーションを使った、視覚的に魅力のあるユーザー インターフェイスを作成できます。</p>
+    <p><strong>使う状況</strong></p>
+    <p>DirectComposition は、視覚要素を合成し、切り替えのアニメーションを作成するプロセスを簡略化するように設計されています。 複雑なユーザー インターフェイスがゲームに必要な場合、DirectComposition を使って、簡単に UI を作成および管理できます。</p>
+    <p><strong>詳細情報</strong></p>
+    <p>[DirectComposition](https://msdn.microsoft.com/library/windows/desktop/hh437371) に関連するドキュメントをご覧ください。</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   Xxxxx - XXXx xxxxxxxxxx xxxxxxx xxxxx xxx xxxxxxxx xxxxx xxxxxxx. Xxx xxxxxxxxxxx xxxxx xxxxx xxx xxxxx XXXx xx xxxx xxxx, xxx [Xxxxx xxx xxxxx](working-with-audio-in-your-directx-game.md).
+-   オーディオ: オーディオの再生やオーディオ エフェクトの適用に関する API です。 ゲームでオーディオ API を使う方法について詳しくは、「[ゲームのオーディオ](working-with-audio-in-your-directx-game.md)」をご覧ください。
 
     <table>
     <colgroup>
@@ -137,33 +137,33 @@ Xxxxx xxx xxxx XXXx xxxxxxx xx xxxx xxxxxxxxxxx, xxx xxx xxx xxxxx xxxx xx xxx x
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">XXX</th>
-    <th align="left">Xxxxxxxxxxx</th>
+    <th align="left">API</th>
+    <th align="left">説明</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
-    <td align="left">XXxxxxY</td>
-    <td align="left"><p>XXxxxxY xx x xxx-xxxxx xxxxx XXX xxxx xxxxxxxx x xxxxxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxxxxx. XXxxxx xx xxxxxxxx xx xx xxxx xxxxxxxxxx xxx xxxx xxxxx xxxxxxx xxxxx xxxxxxxxxxx xxx xxxxxxx xx xxxxxx xxxxxx xxxxx xxxxxxx xxx xxxxxxx xxxxxx xx xxxxx xxxxxxx xxx xxxxxxx.</p>
-    <p><strong>Xxxx xx xxx</strong></p>
-    <p>Xxx XXxxxxY xxxx xxxx xxxx xxxxx xx xxxx xxxxxx xxxx xxxxxxx xxxxxxxx xxx xxxxx.</p>
-    <p><strong>Xxx xxxx xxxxxxxxxxx</strong></p>
-    <p>Xxx xxx [XXxxxxY](https://msdn.microsoft.com/library/windows/desktop/hh405049) xxxxxxxxxxxxx.</p></td>
+    <td align="left">XAudio2</td>
+    <td align="left"><p>XAudio2 は、信号処理とミキシングの基礎を提供する下位レベルのオーディオ API です。 XAudio は、カスタム オーディオ エフェクトや、オーディオ エフェクトとフィルターの複雑なチェーンを作成する機能を維持しながら、ゲーム オーディオ エンジンに対する応答性が高くなるように設計されています。</p>
+    <p><strong>使う状況</strong></p>
+    <p>ゲームでオーバーヘッドと遅延を最小限に抑えながらサウンドを再生する必要がある場合、XAudio2 を使用します。</p>
+    <p><strong>詳細情報</strong></p>
+    <p>[XAudio2](https://msdn.microsoft.com/library/windows/desktop/hh405049) に関連するドキュメントをご覧ください。</p></td>
     </tr>
     <tr class="even">
-    <td align="left">Xxxxx Xxxxxxxxxx</td>
-    <td align="left"><p>Xxxxxxxxx Xxxxx Xxxxxxxxxx xx xxxxxxxx xxx xxx xxxxxxxx xx xxxxx xxxxx xxx xxxxxxx, xxxx xxxxx xxx xxxxx, xxx xxx xxxx xx xxxx xx xxxxx xxxx xxxxxx xxxxx xxxxxxxxxxxxx xxxx XXxxxxY xx xxxxxxxx xxx xxxx xxxxxxxxxx xxxxxxxx xx xxxxxxxxxx.</p>
-    <p><strong>Xxxx xx xxx</strong></p>
-    <p>Xxxxx xxxxxxxxxx xx xxxxxxxxxxxx xxxxxx xxx xxxxxxxxx xxxxxx xx xxx-xxxxxxxxxxx xxxxxxxxxx xx xxxx xxxx. Xxxxx xxxxxxxxxx xx xxxx xxxxxx xxx xxxxxxxx xxxxx xxxxx xxx xxxxxxxx xxxxx XXxxxxY.</p>
-    <p><strong>Xxx xxxx xxxxxxxxxxx</strong></p>
-    <p>Xxx xxx [Xxxxxxxxx Xxxxx Xxxxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ms694197).</p></td>
+    <td align="left">メディア ファンデーション</td>
+    <td align="left"><p>Microsoft メディア ファンデーションは、オーディオとビデオの両方のメディア ファイルやストリームの再生用として設計されていますが、XAudio2 よりも高いレベルの機能が必要とされている場合や、追加のオーバーヘッドを許容できる場合にゲームで利用することもできます。</p>
+    <p><strong>使う状況</strong></p>
+    <p>メディア ファンデーションは、特に、ゲーム中の映画的なシーンや非対話型のコンポーネントに利用できます。 また、メディア ファンデーションは、XAudio2 を使って再生するオーディオ ファイルをデコードするのに便利です。</p>
+    <p><strong>詳細情報</strong></p>
+    <p>「[Microsoft メディア ファンデーションの概要](https://msdn.microsoft.com/library/windows/desktop/ms694197)」をご覧ください。</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   Xxxxx - XXXx xxxxxxxxxx xxxxx xxxx xxx xxxxxxxx, xxxxx, xxxxxxx, xxx xxxxx xxxx xxxxx xxxxxxx.
+-   入力: キーボード、マウス、ゲームパッド、その他のユーザー入力ソースからの入力に関する API です。
 
     <table>
     <colgroup>
@@ -172,49 +172,50 @@ Xxxxx xxx xxxx XXXx xxxxxxx xx xxxx xxxxxxxxxxx, xxx xxx xxx xxxxx xxxx xx xxx x
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">XXX</th>
-    <th align="left">Xxxxxxxxxxx</th>
+    <th align="left">API</th>
+    <th align="left">説明</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
-    <td align="left">XXxxxx</td>
-    <td align="left"><p>Xxx XXxxxx Xxxx Xxxxxxxxxx XXX xxxxxxx xxxxxxxxxxxx xx xxxxxxx xxxxx xxxx xxxx xxxxxxxxxxx.</p>
-    <p><strong>Xxxx xx xxx</strong></p>
-    <p>Xx xxxx xxxx xxxxx xx xxxxxxx xxxxxx xxxxx xxx xxx xxxx xxxxxxxx XXxxxx xxxx, xxx xxx xxxxxxxx xx xxxx xxx xx XXxxxx. XXxxxx xxx xxxx xxxxxxxx xx Xxxxxxx.Xxxxxx.Xxxxx xxx XXX, xxx xx xxx'xx xxxxxxx xxx xxxxx xxxx, xxx xxxxxx xxx Xxxxxxx.Xxxxxx.Xxxxx xxxxxxx xx XXxxxx.</p>
-    <p><strong>Xxx xxxx xxxxxxxxxxx</strong></p>
-    <p>Xxx xxx [XXxxxx](https://msdn.microsoft.com/library/windows/desktop/hh405053) xxxxxxxxxxxxx.</p></td>
+    <td align="left">XInput</td>
+    <td align="left"><p>XInput ゲーム コント ローラー API によって、アプリケーションでゲーム コントローラーからの入力を受信できます。</p>
+    <p><strong>使う状況</strong></p>
+    <p>ゲームでゲームパッドからの入力をサポートする必要がある場合や、XInput のコードが既にある場合は、引き続き XInput を利用できます。 UWP の場合、XInput は Windows.Gaming.Input に置き換えられたため、新しい入力コードを記述する場合は、XInput ではなく Windows.Gaming.Input を使う必要があります。</p>
+    <p><strong>詳細情報</strong></p>
+    <p>[XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053) に関連するドキュメントをご覧ください。</p></td>
     </tr>
     <tr class="even">
-    <td align="left">Xxxxxxx.Xxxxxx.Xxxxx</td>
-    <td align="left"><p>Xxx Xxxxxxx.Xxxxxx.Xxxxx XXX xxxxxxxx XXxxxx xxx xxxxxxxx xxx xxxx xxxxxxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxxxx xxxx Xxxxxx:</p>
+    <td align="left">Windows.Gaming.Input</td>
+    <td align="left"><p>Windows.Gaming.Input API は XInput を置き換える API であり、同じ機能を提供すると共に、XInput に比べて次のような利点があります。</p>
     <ul>
-    <li>Xxxxx xxxxxxxx xxxxx</li>
-    <li>Xxxxx XXX xxxx xxxxxxx xxx xxxxxxxxxx xxxxx</li>
-    <li>Xxx xxxxxxx xx xxxx xxxx xxxx xxxx Y xxxxxxxx xx xxxx</li>
-    <li>Xxx xxxxxxx xx xxxxxx xxxxxxxx Xxxx Xxx xxxxxxx xxxxxxxx, xxxx xx xxx xxxxxxx xxxxxxxxx xxxxxx</li>
-    <li>Xxx xxxxxxx xx xx xxxxxxxx xxxx xxxxxxxxxxx xxxxxxx/xxxxxxxxxx xxx xxxxx xxxxxxx xx xxxxxxx</li>
-    <li>Xxx xxxxxxx xx xxxxxxxxx xxxxx xx x xxxxxxxx xxxx (Xxxxxxx.Xxxxxx.Xxxx)</li>
+    <li>リソースの使用量が少ない</li>
+    <li>入力を取得するための API 呼び出しの待ち時間が短い</li>
+    <li>同時に 4 つ以上のゲームパッドを処理する機能</li>
+    <li>トリガー バイブレーション モーターなど、追加の Xbox One ゲームパッド機能にアクセスする機能</li>
+    <li>コントローラー接続/切断をポーリングではなくイベントで通知する機能</li>
+    <li>入力を特定のユーザー (Windows.System.User) に関連付ける機能</li>
     </ul>
-    <p><strong>Xxxx xx xxx</strong></p>
-    <p>Xx xxxx xxxx xxxxx xx xxxxxxx xxxxxxx xxxxx xxx xx xxx xxxxx xxxxxxxx XXxxxx xxxx xx xxx xxxx xxx xx xxx xxxxxxxx xxxxxx xxxxx, xxx xxxxxx xxxx xxx xx Xxxxxxx.Xxxxxx.Xxxxx.</p>
-    <p><strong>Xxx xxxx xxxxxxxxxxx</strong></p>
-    <p>Xxx xxx [<strong>Xxxxxxx.Xxxxxx.Xxxxx</strong>](https://msdn.microsoft.com/library/windows/apps/dn707817) xxxxxxxxxxxxx.</p></td>
+    <p><strong>使う状況</strong></p>
+    <p>ゲームでゲームパッド入力をサポートする必要があるが、XInput の既存のコードを使っていない場合や、上に示したメリットのいずれかが必要である場合は、Windows.Gaming.Input を使う必要があります。</p>
+    <p><strong>詳細情報</strong></p>
+    <p>[
+                <strong>Windows.Gaming.Input</strong>](https://msdn.microsoft.com/library/windows/apps/dn707817) に関連するドキュメントをご覧ください。</p></td>
     </tr>
     <tr class="odd">
-    <td align="left">Xxxxxxx.XX.Xxxx.XxxxXxxxxx</td>
-    <td align="left"><p>Xxx Xxxxxxx.XX.Xxxx.XxxxXxxxxx xxxxx xxxxxxxx xxxxxx xxx xxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxxx, xxx xxx xxxx xxx xxx xx xxxxxx.</p>
-    <p><strong>Xxxx xx xxx</strong></p>
-    <p>Xxx Xxxxxxx.XX.Xxxx.XxxxXxxxxxx xxxxxx xxxx xxx xxxx xx xxxxx xxx xxxxx xx xxx xxxxxxx xx xxxx xxxx.</p>
-    <p><strong>Xxx xxxx xxxxxxxxxxx</strong></p>
-    <p>Xxx [Xxxx-xxxx xxxxxxxx xxx xxxxx](tutorial--adding-move-look-controls-to-your-directx-game.md) xxx xxxx xxxxxxxxxxx xxxxx xxxxx xxx xxxxx xx xxxxxxxx xx xxxx xxxx.</p></td>
+    <td align="left">Windows.UI.Core.CoreWindow</td>
+    <td align="left"><p>Windows.UI.Core.CoreWindow クラスは、ポインターのボタンの押下や移動を追跡するためのイベント、キーの押下やリリースのイベントを提供します。</p>
+    <p><strong>使う状況</strong></p>
+    <p>ゲームでマウスやキーの押下を追跡する必要がある場合、Windows.UI.Core.CoreWindows のイベントを使います。</p>
+    <p><strong>詳細情報</strong></p>
+    <p>ゲームでマウスやキーボードを使う方法について詳しくは、「[ゲームのムーブ/ルック コントロール](tutorial--adding-move-look-controls-to-your-directx-game.md)」をご覧ください。</p></td>
     </tr>
     </tbody>
-    </table>
+</table>
 
      
 
--   Xxxx - XXXx xxxxxxxxxx xxxxxxxxxxx xxxxxxxx xxxx xxxxxxxxxxxx xxxxxxxxxx.
+-   数値演算: 一般的に使用される数値演算の簡素化に関する API です。
 
     <table>
     <colgroup>
@@ -223,25 +224,25 @@ Xxxxx xxx xxxx XXXx xxxxxxx xx xxxx xxxxxxxxxxx, xxx xxx xxx xxxxx xxxx xx xxx x
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">XXX</th>
-    <th align="left">Xxxxxxxxxxx</th>
+    <th align="left">API</th>
+    <th align="left">説明</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
-    <td align="left">XxxxxxXXxxx</td>
-    <td align="left"><p>Xxx XxxxxxXXxxx XXX xxxxxxxx XXXX-xxxxxxxx X++ xxxxx xxx xxxxxxxxx xxx xxxxxx xxxxxx xxxxxxx xxx xxxxxxxx xxxx xxxxxxxxxx xxxxxx xx xxxxx.</p>
-    <p><strong>Xxxx xx xxx</strong></p>
-    <p>Xxx xx XxxxxxXXxxx xx xxxxxxxx xxx xxxxxxxxxx xxxxxx xxxxxxxxxxxx xxxxxxxxxx.</p>
-    <p><strong>Xxx xxxx xxxxxxxxxxx</strong></p>
-    <p>Xxx xxx [XxxxxxXXxxx](https://msdn.microsoft.com/library/windows/desktop/hh437833) xxxxxxxxxxxxx.</p></td>
+    <td align="left">DirectXMath</td>
+    <td align="left"><p>DirectXMath API は、ゲームで一般的な線形代数およびグラフィックスの数値演算用の SIMD フレンドリな C++ の型および関数を提供します。</p>
+    <p><strong>使う状況</strong></p>
+    <p>DirectXMath の使用はオプションであり、一般的な数値演算を簡素化します。</p>
+    <p><strong>詳細情報</strong></p>
+    <p>[DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833) に関連するドキュメントをご覧ください。</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   Xxxxxxxxxx - XXXx xxxxxxxxxx xxxxxxxxxxxxx xxxx xxxxx xxxxxxxxx xxx xxxxxxx xxxx xxxxxx xxx Xxxxxxxx xx xxxxxxx xxxxxxxx.
+-   ネットワーク: インターネットまたはプライベート ネットワーク上の他のコンピューターやデバイスとの通信に関する API です。
 
     <table>
     <colgroup>
@@ -250,33 +251,33 @@ Xxxxx xxx xxxx XXXx xxxxxxx xx xxxx xxxxxxxxxxx, xxx xxx xxx xxxxx xxxx xx xxx x
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">XXX</th>
-    <th align="left">Xxxxxxxxxxx</th>
+    <th align="left">API</th>
+    <th align="left">説明</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
-    <td align="left">Xxxxxxx.Xxxxxxxxxx.Xxxxxxx</td>
-    <td align="left"><p>Xxx Xxxxxxx.Xxxxxxxxxx.Xxxxxxx xxxxxxxxx xxxxxxxx XXX xxx XXX xxxxxxx xxxx xxxxx xxxxxxxx xx xxxxxxxxxx xxxxxxx xxxxxxxxxxxxx.</p>
-    <p><strong>Xxxx xx xxx</strong></p>
-    <p>Xxx Xxxxxxx.Xxxxxxxxxx.Xxxxxxx xx xxxx xxxx xxxxx xx xxxxxxxxxxx xxxx xxxxx xxxxxxxxx xx xxxxxxx xxxx xxx xxxxxxx.</p>
-    <p><strong>Xxx xxxx xxxxxxxxxxx</strong></p>
-    <p>Xxx [Xxxx xxxx xxxxxxxxxx xx xxxx xxxx](work-with-networking-in-your-directx-game.md).</p></td>
+    <td align="left">Windows.Networking.Sockets</td>
+    <td align="left"><p>Windows.Networking.Sockets 名前空間は、信頼性の高いまたは信頼性の低いネットワーク通信を実現する TCP および UDP ソケットを提供します。</p>
+    <p><strong>使う状況</strong></p>
+    <p>Windows.Networking.Sockets は、ゲームがネットワーク経由で他のコンピューターやデバイスと通信する必要がある場合に使用します。</p>
+    <p><strong>詳細情報</strong></p>
+    <p>「[ゲームでのネットワークの使用](work-with-networking-in-your-directx-game.md)」をご覧ください。</p></td>
     </tr>
     <tr class="even">
-    <td align="left">Xxxxxxx.Xxx.XXXX</td>
-    <td align="left"><p>Xxx Xxxxxxx.Xxx.XXXX xxxxxxxxx xxxxxxxx x xxxxxxxx xxxxxxxxxx xx XXXX xxxxxxx xxxx xxx xx xxxx xx xxxxxx x xxx xxxx.</p>
-    <p><strong>Xxxx xx xxx</strong></p>
-    <p>Xxx Xxxxxxx.Xxx.XXXX xxxx xxxx xxxx xxxxx xx xxxxxx x xxx xxxx xx xxxxxxxx xx xxxxx xxxxxxxxxxx.</p>
-    <p><strong>Xxx xxxx xxxxxxxxxxx</strong></p>
-    <p>Xxx [Xxxx xxxx xxxxxxxxxx xx xxxx xxxx](work-with-networking-in-your-directx-game.md).</p></td>
+    <td align="left">Windows.Web.HTTP</td>
+    <td align="left"><p>Windows.Web.HTTP 名前空間では、Web サイトへのアクセスに利用できる、HTTP サーバーへの信頼性の高い接続を実現できます。</p>
+    <p><strong>使う状況</strong></p>
+    <p>ゲームで Web サイトにアクセスして情報を取得または保存する必要がある場合に、Windows.Web.HTTP を使います。</p>
+    <p><strong>詳細情報</strong></p>
+    <p>「[ゲームでのネットワークの使用](work-with-networking-in-your-directx-game.md)」をご覧ください。</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
--   Xxxxxxx Xxxxxxxxx - Xxxxxxxxx xxxx xxxxx xx xxx Xxxxxxx YY XXXx.
+-   サポート ユーティリティ: Windows 10 API に基づいて構築されたライブラリです。
 
     <table>
     <colgroup>
@@ -285,67 +286,71 @@ Xxxxx xxx xxxx XXXx xxxxxxx xx xxxx xxxxxxxxxxx, xxx xxx xxx xxxxx xxxx xx xxx x
     </colgroup>
     <thead>
     <tr class="header">
-    <th align="left">Xxxxxxx</th>
-    <th align="left">Xxxxxxxxxxx</th>
+    <th align="left">ライブラリ</th>
+    <th align="left">説明</th>
     </tr>
     </thead>
     <tbody>
     <tr class="odd">
-    <td align="left">XxxxxxX Xxxx Xxx</td>
-    <td align="left"><p>Xxx XxxxxxX Xxxx Xxx (XxxxxxXXX) xx x xxxxxxxxxx xx xxxxxx xxxxxxx xxx xxxxxxx XxxxxxX YY.x xxxx xx X++.</p>
-    <p><strong>Xxxx xx xxx</strong></p>
-    <p>Xxx xxx XxxxxxX Xxxx Xxx xx xxx'xx x X++ xxxxxxxxx xxxxxxx xxx x xxxxxx xxxxxxxxxxx xx xxx xxxxxx XYXX xxxxxxx xxxx xx xxx'xx xx XXX Xxxx Xxxxxx xxxxxxxxx xxxxxxxxxxxxx xx xxxxxx X++.</p>
-    <p><strong>Xxx xxxx xxxxxxxxxxx</strong></p>
-    <p>Xxx xxx XxxxxxX Xxxx Xxx xxxxxxx xxxx, [xxxxx://xxxxxx.xxx/Xxxxxxxxx/XxxxxxXXX](https://github.com/Microsoft/DirectXTK).</p></td>
+    <td align="left">DirectX ツール キット</td>
+    <td align="left"><p>DirectX ツール キット (DirectXTK) は、C++ で DirectX 11.x コードを作成するためのヘルパー クラスのコレクションです。</p>
+    <p><strong>使う状況</strong></p>
+    <p>C++ を使っている開発者がレガシ D3DX ユーティリティ コードに代わる最新のユーティリティを探している場合や、XNA Game Studio を使っている開発者がネイティブ C++ に移行する場合に、DirectX ツール キットを使います。</p>
+    <p><strong>詳細情報</strong></p>
+    <p>DirectX ツール キット プロジェクトのページ [https://github.com/Microsoft/DirectXTK](https://github.com/Microsoft/DirectXTK) をご覧ください。</p></td>
     </tr>
     <tr class="even">
-    <td align="left">XxxYX</td>
-    <td align="left"><p>XxxYX xx xx xxxx-xx-xxx Xxxxxxx Xxxxxxx XXX xxx xxxxxxxxx xxxx YX xxxxxxxx xxxxxxxxx.</p>
-    <p><strong>Xxxx xx xxx</strong></p>
-    <p>Xxx XxxYX xx xxx'xx x X++ xxxxxxxxx xxx xxxx xx xxxxxx xx xxx XxxXX xxxxxxx xxx XxxxxxYX xxx XxxxxxXxxxx, xx xxx'xx x X# xxxxxxxxx xxxxxxx xx xxx XxxxxxYX xxx XxxxxxXxxxx.</p>
-    <p><strong>Xxx xxxx xxxxxxxxxxx</strong></p>
-    <p>Xxx xxx XxxYX xxxxxxx xxxx, [xxxxx://xxxxxx.xxx/Xxxxxxxxx/XxxYX](https://github.com/Microsoft/Win2D).</p></td>
+    <td align="left">Win2D</td>
+    <td align="left"><p>Win2D は、即時モードの 2D グラフィックス レンダリング用の、使いやすい Windows ランタイム API です。</p>
+    <p><strong>使う状況</strong></p>
+    <p>C++ を使っている開発者が Direct2D と DirectWrite の使いやすい WinRT ラッパーを必要としている場合や、C# を使っている開発者が Direct2D と DirectWrite を使う必要がある場合に、Win2D を使います。</p>
+    <p><strong>詳細情報</strong></p>
+    <p>Win2D プロジェクトのページ [https://github.com/Microsoft/Win2D](https://github.com/Microsoft/Win2D) をご覧ください。</p></td>
     </tr>
     </tbody>
     </table>
 
      
 
-## Xxxx Xxxx Xxxxxxxx
+## Xbox Live サービス
 
 
-Xxx Xxxx Xxxx xxxxxxx xxx – xxxxx xxxx xxxx Xxxx, Xxxxxxxxxxxx, Xxxxxxxxxx, xxx xxxx – xx xxxxxx xx Xxxxxxx YY. Xxxx, xxx'xx xx xxxx xx xxxx xxxx XX@Xxxx xx xxxxxxx Xxxx xx xxxx XXX xxxxx! Xx xxx xxxxxx, xx’xx xxxx xxxx xxx xxxx xxxx xxxxxxxxx xxx xxxxxxxx xxxxx xx Xxxx Xxx. Xxx xxxx xxxxxxxxxxx, xxx xxx [XX@Xxxx](http://www.xbox.com/developers/id) xxxx.
+Xbox Live 機能セット (Xbox とのクロス プレイ、達成度、ゲーマースコアなど) が Windows 10 でも利用できます。 近日中に、ID@Xbox を使って作業することによって、UWP ゲームに Live を含めることができるようになる予定です。 また、将来的には、お客様のユニバーサル アプリ プラットフォームのゲームを、Xbox One 向けにも出荷できるようにサポートする予定です。 詳しくは、[ID@Xbox](http://www.xbox.com/developers/id) に関するページをご覧ください。
 
-##  Xxxxxxxxxxxx xx xxxxxxx xxxxx xxxx XxxxxxX xxx XXX
-
-
-### XXX Xxxxx xxxxxxx XxxxxxX
-
-Xxxxxxx xxxxx xxxx xxxxxxx xxxxxxxxxxx xxxxxxxxxxxx, xxxx xx xxxx xxxxx xx xxxxx xxxxx, xxx xx xxxxxxx xxxxxxx XxxxxxX xxx xxx'x xxxxxxxxxxx xxxx xx xx xxxxxxx xx X++. Xxxxx xxxx xx xxxxx xxx xxxx xxx xx xxx xx xxx xxxxxxxxx xxxxxxxxx xx XXX xxxx xx X#, Xxxxxx Xxxxx, X++, xxx XXXX/XxxxXxxxxx. Xx xxxxxxxxxxx xxx xxxxxxxxx xxxxxxxx xxx xxx x xxxxxxxxxxx xxx xxxx xxxx, xxxxxxxx [XxxxXxxxxx xxx XXXXY xxxxx xxxx xxxxxx](http://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031) xx xx xxxxxxx.
-
-### Xxxx Xxxxxxx
-
-Xx xx xxxxxxxxxxx xx xxxxxxx xxxx xxx xxxx xxxxxx xxxxx xxx Xxxxxxx xxxx xxxxxxxxxxx XXXx, xxxx xxxx xxxxxxx xxxx xxxxxxx xxxx xxxxx xx xxx Xxxxxxx xxxx xxxxxxxxxxx XXXx xxx xxxxxxxxx xxx xxxxxxxxxx xxxxx xx Xxxxxxx xxxxxxxxx. Xxxx xxxxxxxxxxx x xxxx xxxxxx xx xxxxxxx, xxx xxxx xxxxxxxx xxxxxxx:
-
--   Xxxx xxxx xxxxxx - X xxxx xxxx xxxxxx xxxxxxxxxxxx xxxx xx xxx xx xxx Xxxxxxx YY XXXx xxx xxxxx xxx xxxx xxxxxxx x xxxx xxxxxx xxxx xxxxxxx, xxxx xx xxxxxxxx, xxxxx, xxxxx, xxx xxxxxxxxxx. Xxxx xxxx xxxxxxx xxx xxxx xxxxxxx xxxx xxxxx xxxxxxxxxxxxx xxxx xx xxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxx.
--   Xxxxxxxx xxxxxx - Xxxxxxxx xxxxxxx xxxxxxxxxxx xxx Xxxxxxx YY xxxxxxxx XXXx, xxxxxx xxxxxxxx xxxxxxxxx, xxx xxxxxxx x xxxxxxx xx xxxxx xxx xxxxx xxxxxxx.
--   Xxxxx xxxxxx - Xxxxx xxxxxxx xxxxxxxxxxx xxx Xxxxxxx YY xxxxx XXXx, xxxxxx xxxxx xxxxxxxxx, xxx xxxxxxx xxxxxxxx xxxxx xxxxxxxxxx xxx xxxxxxx.
--   Xxxxxxx xxxxxx - Xxxxxxx xxxxxxx xxxxxxxxxxx Xxxxxxx YY xxxxxxxxxx XXXx xxx xxxxxx xxxx-xx-xxxx xx xxxxxx-xxxxx xxxxxxxxxxx xxxxxxx xx xxxx xxxx, xxx xxx xxxxxxx xxxxxxxx xxxxxxxxxx xxxxxxxxxxxxx xx xxxxxxx xxxxx xxxxxxx xx xxxxxxx.
--   Xxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxx xxxxxx - XX xxx xxxxxxxxxxx xxxxxxx xxxxxxx x xxxxxxxxx xxx xxxxxxxxxxx xxx xxxxxxxx xx xxxxxx xx xxxx xxxx.
--   Xxxxxxx xxxxxxx xxxxxxx - X xxxxxxx xx xxxxxxxxxx xxxxxxx xxxxx xxx xxxxxxxx xxxxxx xxx xxxx xxxxxxxxxxx xxxxxxx xxxx xxx xxxxx xxx xxxx, xxxx xx xxxxxxxx xxxxxxxxx xxxxxxx xxx xxxxxx xxxxx.
-
-## Xxxxxxxxxx x xxxx xx xxx Xxxxx
+##  DirectX と UWP を使ったゲーム作成の代替手段
 
 
-Xxxx xxx’xx xxxxx xx xxxxxxx xxxx xxxx, xxx’xx xxxx xx xxxxxx x xxxxxxxxx xxxxxxx xxx xxxxxx xxxx xxxx xx xxx Xxxxxxx Xxxxx.
+### DirectX を使わない UWP ゲーム
 
-Xxx xxxxxxxxxxx xxxxx xxxxxxxxxx xxxx xxxx xx xxx Xxxxxxx Xxxxx, xxx <https://dev.windows.com/publish>.
+カード ゲームやボード ゲームなど、最低限のパフォーマンスの要件を満たす単純なゲームは、DirectX を使わずに作成でき、必ずしも C++ で記述されている必要はありません。 このような種類のゲームでは、C#、Visual Basic、C++、HTML/JavaScript など、UWP でサポートされている言語のいずれかを利用できます。 パフォーマンスと負荷の高いグラフィックスがゲームで必要な場合は、[JavaScript と HTML5 のタッチ ゲームのサンプル](http://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031)を参考にしてください。
+
+### ゲーム エンジン
+
+Windows ゲーム開発 API を使って独自のゲーム エンジンを作成する代替手段として、Windows ゲーム開発 API を基にして作成された多くの高品質ゲーム エンジンを、Windows プラットフォームでのゲームの開発に利用できます。 ゲーム エンジンまたはライブラリを検討する場合、複数のオプションがあります。
+
+-   フル ゲーム エンジン: フル ゲーム エンジンは、ゲーム エンジンをゼロから作成する場合に使用する、グラフィックス、オーディオ、入力、ネットワークなどの Windows 10 API のほとんどまたはすべてをカプセル化します。 また、フル ゲーム エンジンは、人工知能や経路探索などのゲーム ロジック機能も備えています。
+-   グラフィックス エンジン: グラフィックス エンジンは、Windows 10 のグラフィックス API をカプセル化して、グラフィックス リソースを管理し、さまざまなモデルとワールドの形式をサポートします。
+-   オーディオ エンジン: オーディオ エンジンは Windows 10 のオーディオ API をカプセル化して、オーディオ リソースを管理し、高度なオーディオ処理とエフェクトを提供します。
+-   ネットワーク エンジン: ネットワーク エンジンは、Windows 10 のネットワーク API をカプセル化して、ピア ツー ピアまたはサーバー ベースのマルチプレイヤーのサポートをゲームに追加します。また、多数のプレイヤーをサポートするための高度なネットワーク機能が含まれる場合もあります。
+-   人工知能と経路探索エンジン: AI と経路探索エンジンは、ゲーム内でエージェントの動作を制御するためのフレームワークを提供します。
+-   特殊な用途のエンジン: インベントリ システムやダイアログ ツリーなど、発生する可能性があるほぼすべてのゲーム開発関連タスクを処理するために、さまざまな追加のエンジンが存在します。
+
+## ストアへのゲームの提出
+
+
+ゲームを公開する準備ができたら、開発者アカウントを作成して、ゲームを Windows ストアに提出する必要があります。
+
+Windows ストアにゲームを提出する方法について詳しくは、<https://dev.windows.com/publish> をご覧ください。
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

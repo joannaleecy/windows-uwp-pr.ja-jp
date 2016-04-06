@@ -1,32 +1,33 @@
 ---
-xx.xxxxxxx: YYYYYYYY-YYYX-YXYY-YYXY-YYYYYYYYYYXY
-xxxxx: Xxxxx XXX/XXX xxxx xxxxxxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxx xxx XXX/XXX xxxxxxx xxxxxxxx xx xxxxxx xxxx, xxxx xx xxxx xxx xxxxxx xxxx xxxxxxxxxx, xxx xxxx Xxxxx xx Xxxxxxx xxxxxxx.
+ms.assetid: 70667353-152B-4B18-92C1-0178298052D4
+title: 書式設定における Epson ESC/POS
+description: POS プリンターで、ESC/POS コマンド言語を使用して、太字、倍角文字など、テキストの書式を設定する方法について説明します。
 ---
-# Xxxxx XXX/XXX xxxx xxxxxxxxxx
+# 書式設定における Epson ESC/POS
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-** Xxxxxxxxx XXXx **
+** 重要な API **
 
--   [XxxxxxxXxxxxxx Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt426652)
--   [**Xxxxxxx.Xxxxxxx.XxxxxXxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
+-   [PointofService プリンター](https://msdn.microsoft.com/library/windows/apps/Mt426652)
+-   [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071)
 
-Xxxxx xxx xx xxx xxx XXX/XXX xxxxxxx xxxxxxxx xx xxxxxx xxxx, xxxx xx xxxx xxx xxxxxx xxxx xxxxxxxxxx, xxx xxxx Xxxxx xx Xxxxxxx xxxxxxx.
+POS プリンターで、ESC/POS コマンド言語を使用して、太字、倍角文字など、テキストの書式を設定する方法について説明します。
 
-## XXX/XXX xxxxx
+## ESC/POS の使い方
 
-Xxxxxxx Xxxxx xx Xxxxxxx xxxxxxxx xxx xx x xxxxxxx xx xxxxxxxx, xxxxxxxxx xxxxxxx Xxxxx XX xxxxxx xxxxxxxx (xxx x xxxx xxxx xx xxxxxxxxx xxxxxxxx, xxx xxx [XxxxxxxXxxxxxx Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt426652) xxxx). Xxxxxxx xxxxxxxx xxxxxxxx xxxxxxx xxx XXX/XXX xxxxxxx xxxxxxx xxxxxxxx, xxxxx xxxxxxxx xxxxxxxxx xxx xxxxxxxxxx xxxxxxxx xxx xxxxxxxxxxxxx xxxx xxxx xxxxxxx.
+Windows Point of Service (POS) では、Epson の TM シリーズのプリンターなど、さまざまなプリンターを使用できます。サポートされているプリンターの完全な一覧は、[PointofService プリンター](https://msdn.microsoft.com/library/windows/apps/Mt426652)のページをご覧ください。 Windows では、ESC/POS プリンター制御言語を使用した印刷をサポートしています。この制御言語により、お使いのプリンターと通信するときに、効率的で実用的なコマンドを使用できます。
 
-XXX/XXX xx x xxxxxxx xxxxxx xxxxxxx xx Xxxxx xxxx xxxxxx x xxxx xxxxx xx XXX xxxxxxx xxxxxxx, xxxxx xx xxxxxxxx xxxxxxxxxxxx xxxxxxx xxxx xx xxxxxxxxx xxxxxxxxx xxxxxxxxxxxxx. Xxxx xxxxxx xxxxxxxx xxxxxxx XXX/XXX.
+ESC/POS は、Epson が開発したコマンド システムで、広範囲の POS プリンター システムで使用されています。どのプリンターにも適用可能にすることで、コマンド セットの非互換性を回避することを目的としています。 現在のほとんどのプリンターでは、ESC/POS がサポートされています。
 
-Xxx xxxxxxxx xxxxx xxxx xxx XXX xxxxxxxxx (XXXXX YY, XXX YX) xx XX (XXXXX YY, XXX YX), xxxxxxxx xx xxxxxxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxx. Xxxxxx xxxx xx xxxxxx xxxx xx xxx xxxxxxx, xxxxxxxxx xx xxxx xxxxxx.
+すべてのコマンドは、ESC 文字 (ASCII 27、16 進の 1B) または GS (ASCII 29、16 進の 1D) で始まり、その後にコマンドを指定する別の文字が続きます。 通常のテキストは単純にプリンターに送信され、改行で区切られます。
 
-Xxx [**Xxxxxxx XxxxxXxXxxxxxx XXX**](https://msdn.microsoft.com/library/windows/apps/Dn298071) xxxxxxxx xxxx xx xxxx xxxxxxxxxxxxx xxx xxx xxx xxx **Xxxxx()** xx **XxxxxXxxx()** xxxxxxx. Xxxxxxx, xx xxx xxxxxxx xxxxxxxxxx xx xx xxxx xxxxxxxx xxxxxxxx, xxx xxxx xxx XXX/XXX xxxxxxxx, xxxxx xx x xxxxxx xxx xxxx xx xxx xxxxxxx.
+[
+            **Windows PointOfService API**](https://msdn.microsoft.com/library/windows/apps/Dn298071) では、その機能の大半を **Print()** または **PrintLine()** メソッドを通して提供します。 ただし、特定の書式を設定する、または特定のコマンドを送信するには、ESC/POS コマンドを使用して文字列として作成し、プリンターに送信する必要があります。
 
-## Xxxxxxx xxxxx xxxx xxx xxxxxx xxxx xxxxxxxxxx
+## 文字および倍角文字を使用する例
 
-Xxx xxxxxxx xxxxx xxxxx xxx xx xxx XXX/XXX xxxxxxxx xx xxxxx xx xxxx xxx xxxxxx xxxxx xxxxxxxxxx. Xxxx xxxx xxxx xxxxxxx xx xxxxx xx x xxxxxx, xxxx xxxxxxxx xxxx xxx xxxxxXxx xxxxx.
+次の例は、ESC/POS コマンドを使用して、太字および倍角文字で印刷する方法を示しています。 各コマンドが文字列として作成され、印刷ジョブの呼び出しに挿入されていることに注意してください。
 
 ```csharp
 // … prior plumbing code removed for brevity
@@ -50,7 +51,12 @@ printJob.PrintLine(DoubleOn + “Here is some large text.” + DoubleOff);
 printJob.ExecuteAsync();
 ```
 
-Xxx xxxx xxxxxxxxxxx xx XXX/XXX, xxxxxxxxx xxxxxxxxx xxxxxxxx, xxxxx xxx xxx [Xxxxx XXX/XXX XXX](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf). Xxx xxxxxxx xx [**Xxxxxxx.Xxxxxxx.XxxxxXxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn298071) xxx xxx xxx xxxxxxxxx xxxxxxxxxxxxx, xxx [XxxxxxxXxxxxxx Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt426652) xx XXXX.
+利用可能なコマンドなど、ESC/POS について詳しくは、[Epson ESC/POS に関する FAQ](http://content.epson.de/fileadmin/content/files/RSD/downloads/escpos.pdf) をご覧ください。 [
+            **Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) と利用可能な機能について詳しくは、MSDN の「[PointofService プリンター](https://msdn.microsoft.com/library/windows/apps/Mt426652)」をご覧ください。
+
+
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,38 +1,38 @@
 ---
-xxxxx: Xxxxxx xx xxx xxx xxxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxx xx xxx xxxx xxxxxxx xxx xxx xxxxxxxx xxxx xxxxxxx xxx xxx. Xxxx xx xxxxxx xxxxxxxxx xx xxx xxx xxxxxxx.
-xx.xxxxxxx: XXXYYXYY-XYXX-YXXY-YXXY-YYYYYYYXXYYY
+title: 結果を取得するためのアプリの起動
+description: 別のアプリからアプリを起動し、2 つのアプリの間でデータを交換する方法について説明します。 これは、"結果を取得するためのアプリの起動" と呼ばれます。
+ms.assetid: AFC53D75-B3DD-4FF6-9FC0-9335242EE327
 ---
 
-# Xxxxxx xx xxx xxx xxxxxxx
+# 結果を取得するためのアプリの起動
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**XxxxxxXxxXxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn956686)
--   [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn636131)
+-   [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686)
+-   [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)
 
-Xxxxx xxx xx xxxxxx xx xxx xxxx xxxxxxx xxx xxx xxxxxxxx xxxx xxxxxxx xxx xxx. Xxxx xx xxxxxx *xxxxxxxxx xx xxx xxx xxxxxxx*. Xxx xxxxxxx xxxx xxxxx xxx xxx xx xxx [**XxxxxxXxxXxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn956686) xx xxxxxx xx xxx xxx xxxxxxx.
+別のアプリからアプリを起動し、2 つのアプリの間でデータを交換する方法について説明します。 これは、"*結果を取得するためのアプリの起動*" と呼ばれます。 この例では、[**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) を使って、結果を取得するためのアプリの起動方法を示しています。
 
-Xxx xxx-xx-xxx xxxxxxxxxxxxx XXXx xx Xxxxxxx YY xxxx xx xxxxxxxx xxx Xxxxxxx xxxx (xxx Xxxxxxx Xxx xxxx) xx xxxxxx xx xxx xxx xxxxxxxx xxxx xxx xxxxx. Xxxx xxxxxxx xxx xx xxxxx xxxx-xx xxxxxxxxx xxxx xxxxxxxx xxxx. Xxxxx xxxxx xxx XXXx, xxxxxxx xxxxx xxxx xxxxx xxxx xxxxxxxx xxx xxxx xx xxx xxxxxxxx xxxx xxx xxx xx xxxxxxx xxxxxxxxxx. Xxx xxxxxxx, xxxx xxx xxxxx xxxxxx x xxxxxx xxxxxxxxxx xxx xx xxxxxx x xxxxxxx, xx xxxxxx x xxxxxxxx xxx xx xxxxxxxx x xxxxxxx xxxxxxx.
+Windows 10 での新しいアプリ間通信 API により、各 Windows アプリ (および Windows Web アプリ) 間でのアプリの起動と、データおよびファイルの交換が可能になります。 このため、複数のアプリを基にマッシュアップ ソリューションを構築できます。 これらの新しい API を使うと、複数のアプリを使う必要のあった複雑な作業をシームレスに処理できるようになります。 たとえば、アプリでソーシャル ネットワーキング アプリを起動して連絡先を選んだり、チェックアウト アプリを起動して支払処理を実行したりすることができます。
 
-Xxx xxx xxxx xxx'xx xxxxxx xxx xxxxxxx xxxx xx xxxxxxxx xx xx xxx xxxxxxxx xxx. Xxx xxx xxxx xxxxxxxx xxx xxx xxxx xx xxxxxxxx xx xx xxx xxxxxxx xxx. Xxx xxxx xxxxxxx xxx xxxx xxxxx xxxx xxx xxxxxxx xxx xxx xxx xxxxxxxx xxx.
+結果を得るために起動するアプリは、起動されたアプリと呼ばれます。 アプリを起動するアプリは、呼び出し元アプリと呼ばれます。 この例では、呼び出し元アプリと、起動されたアプリの両方を記述します。
 
-## Xxxx Y: Xxxxxxxx xxx xxxxxxxx xx xx xxxxxxx xx xxx xxx xxxx xxx'xx xxxxxx xxx xxxxxxx
+## 手順 1: 結果を取得するために起動するアプリで処理されるプロトコルを登録する
 
 
-Xx xxx Xxxxxxx.xxxxxxxxxxxx xxxx xx xxx xxxxxxxx xxx, xxx x xxxxxxxx xxxxxxxxx xx xxx **&xx;Xxxxxxxxxxx&xx;** xxxxxxx. Xxx xxxxxxx xxxx xxxx x xxxxxxxxx xxxxxxxx xxxxx **xxxx-xxxYxxx**.
+起動アプリの Package.appxmanifest ファイルで、プロトコル拡張機能を **&lt;Application&gt;** セクションに追加します。 この例では、**test-app2app** という名前の架空プロトコルを使います。
 
-Xxx **XxxxxxXxxxxxx** xxxxxxxxx xx xxx xxxxxxxx xxxxxxxxx xxxxxxx xxx xx xxxxx xxxxxx:
+プロトコル拡張機能の **ReturnResults** 属性に指定できる値は、次の 3 つのうちいずれかです。
 
--   **xxxxxxxx**—Xxx xxx xxx xx xxxxxxxx xxx xxxxxxx xx xxxxx xxx [**XxxxxxXxxXxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn956686) xxxxxx, xx xxx xxx xxxxxxx xx xxxxx [**XxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701476). Xxxx xxx xxx **xxxxxxxx**, xxx xxxxxxxx xxx xxxx xxxxxxxxx xxxxxxx xx xxx xxxxxxxx xxx xxxxxxx. Xx xxx xx xxxx xx xxxxxxxx xxx [**XxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242330) xxxxx xxxxxxxx. Xx xxx xxxxxxxx'x [**XXxxxxxxxxXxxxxXxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br224728) xxxxxxxx xxxxxxx [**XxxxxxxxxxXxxx.XxxxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224693), xx xx xxx xxxx xx xxx xxxxx xxxxxxxx xx [**XxxxxxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224742), xxx xxx xxx xxxxxxxx xxx **XxxxxxXxxXxxXxxxxxxXxxxx**.
--   **xxxxxx**—Xxx xxx xxx xx xxxxxxxx xxxx xxx xxxxxxx; xxxx xx, xx xxx xxxxxxx xxxx xx [**XxxxxxXxxXxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn956686).
--   **xxxx**—Xxx xxx xxxxxx xx xxxxxxxx xxx xxxxxxx; xx xxx xxxxxxx xxxx xx [**XxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701476).
+-   **optional**—結果を取得するためにアプリを起動する場合は、[**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) メソッドを使います。結果を取得しない場合は、[**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) を使います。 **optional** を使うとき、起動アプリでは、結果を取得するためにアプリが起動されたかどうかを判別する必要があります。 これを行うには、[**OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) イベント引数を調べます。 引数の [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) プロパティが [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) を返した場合、またはイベント引数の型が [**ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742) である場合は、アプリが **LaunchUriForResultsAsync** を介して起動されます。
+-   **always**—アプリは、結果を取得するためにのみ起動することができます。つまり、[**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) に対してのみ応答できます。
+-   **none**—アプリは、結果を取得するために起動することはできません。[**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) に対してのみ応答できます。
 
-Xx xxxx xxxxxxxx-xxxxxxxxx xxxxxxx, xxx xxx xxx xx xxxxxxxx xxxx xxx xxxxxxx. Xxxx xxxxxxxxxx xxx xxxxx xxxxxx xxx **XxXxxxxxxxx** xxxxxx, xxxxxxxxx xxxxx, xxxxxxx xx xxxx xx xxxxxx xxxx xxx "xxxxxxxx xxx xxxxxxx" xxxx xxx xxx xxx xxxxx xxxx xxxx xxx xxx xxxxx xx xxxxxxxxx.
+次のプロトコル拡張機能の例では、アプリは結果を取得するためにのみ起動することができます。 以下で説明するように、この例では、**OnActivated** メソッド内部のロジックが簡素化されます。これは、"結果を取得するために起動する" ケースのみを処理し、アプリをアクティブ化する他の方法を処理する必要がないためです。
 
 ```xaml
 <Applications>
@@ -50,12 +50,12 @@ Xx xxxx xxxxxxxx-xxxxxxxxx xxxxxxx, xxx xxx xxx xx xxxxxxxx xxxx xxx xxxxxxx. Xx
 </Applications>
 ```
 
-## Xxxx Y: Xxxxxxxx Xxxxxxxxxxx.XxXxxxxxxxx xx xxx xxx xxxx xxx'xx xxxxxx xxx xxxxxxx
+## 手順 2: 結果を取得するために起動するアプリで Application.OnActivated をオーバーライドする
 
 
-Xx xxxx xxxxxx xxxx xxx xxxxxxx xxxxx xx xxx xxxxxxxx xxx, xxxxxx xx xxxxxx xxx `App` xxxxx xxxxxxx xx Xxx.xxxx.xx.
+このメソッドが起動アプリにまだ存在しない場合は、App.xaml.cs で定義されている `App` クラス内に作成します。
 
-Xx xx xxx xxxx xxxx xxx xxxx xxxx xxxxxxx xx x xxxxxx xxxxxxx, xxxx xxxxxxxx xxxxx xx xxxxx xxx xxxx xxx xxxxxx-xxxxxx xxxx. Xx xxxx xxxx xxxxxxx, x xxxx xxxxx **XxxxxxxxXxxXxxxxxxXxxx** xx xxxxxxxxx xxxx xxx xxx xx xxxxxxxxx xxx xxxxxxx. Xxxxxx xxxx xxx **xxxxx** xxxxxxxxx xx xxxxxxxx xx xxx xxx xx xxx xxxx.
+ソーシャル ネットワークで友だちを選ぶことができるアプリでは、この関数によって友だちを選ぶためのページを開くことができます。 次の例では、**LaunchedForResultsPage** という名前のページが、結果を取得するためにアプリがアクティブ化されたときに表示されます。 ファイルの先頭に、次の **using** ステートメントが含まれていることを確認します。
 
 ```cs
 using Windows.ApplicationModel.Activation;
@@ -80,29 +80,31 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-Xxxxxxx xxx xxxxxxxx xxxxxxxxx xx xxx Xxxxxxx.xxxxxxxxxxxx xxxx xxxxxxxxx **XxxxxxXxxxxxx** xx **xxxxxx**, xxx xxxx xxxx xxxxx xxx xxxx `args` xxxxxxxx xx [**XxxxxxxxXxxXxxxxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn906905) xxxx xxxxxxxxxx xxxx xxxx **XxxxxxxxXxxXxxxxxxXxxxxxxxxXxxxxXxxx** xxxx xx xxxx xx **XxXxxxxxxxx** xxx xxxx xxx. Xx xxxx xxx xxx xx xxxxxxxxx xx xxxx xxxxx xxxx xxxxxxxxx xxx xxxxxxx, xxx xxx xxxxx xxxxxxx [**XXxxxxxxxxXxxxxXxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br224728) xxxxxxxx xxxxxxx [**XxxxxxxxxxXxxx.XxxxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224693) xx xxxx xxxxxxx xxx xxx xxx xxxxxxxx xxx xxxxxxx.
+Package.appxmanifest ファイル内のプロトコル拡張機能では **ReturnResults** が **always** と指定されているため、上記のコードでは `args` を [**ProtocolForResultsActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn906905) に直接キャストすることができます。このとき、**ProtocolForResultsActivatedEventArgs** のみが、このアプリの **OnActivated** に送信されます。 結果を取得するための起動以外の方法でアプリがアクティブ化される可能性がある場合は、結果を取得するためにアプリが起動されたかどうかを判別するために [**IActivatedEventArgs.Kind**](https://msdn.microsoft.com/library/windows/apps/br224728) プロパティが [**ActivationKind.ProtocolForResults**](https://msdn.microsoft.com/library/windows/apps/br224693) を返すかどうかを確認してください。
 
-## Xxxx Y: Xxx x XxxxxxxxXxxXxxxxxxXxxxxxxxx xxxxx xx xxx xxx xxx xxxxxx xxx xxxxxxx
+## 手順 3: 結果を取得するために起動するアプリに ProtocolForResultsOperation フィールドを追加する
 
 
 ```cs
 private Windows.System.ProtocolForResultsOperation _operation = null;
 ```
 
-Xxx'xx xxx xxx [**XxxxxxxxXxxXxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn906913) xxxxx xx xxxxxx xxxx xxx xxxxxxxx xxx xx xxxxx xx xxxxxx xxx xxxxxx xx xxx xxxxxxx xxx. Xx xxxx xxxxxxx, xxx xxxxx xx xxxxx xx xxx **XxxxxxxxXxxXxxxxxxXxxx** xxxxx xxxxxxx xxx'xx xxxxxxxx xxx xxxxxx-xxx-xxxxxxx xxxxxxxxx xxxx xxxx xxxx xxx xxxx xxxx xxxxxx xx xx.
+[
+            **ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) フィールドを使うと、起動されたアプリが呼び出し元のアプリに結果を返すことができるようになった場合に、そのタイミングを通知することができます。 この例では、このフィールドは **LaunchedForResultsPage** クラスに追加されます。これは、結果を取得するための起動処理をそのページから実行し、そのページにアクセスする必要があるためです。
 
-## Xxxx Y: Xxxxxxxx XxXxxxxxxxxXx() xx xxx xxx xxx xxxxxx xxx xxxxxxx
+## 手順 4: 結果を取得するために起動するアプリで OnNavigatedTo() をオーバーライドする
 
 
-Xxxxxxxx xxx [**XxXxxxxxxxxXx**](https://msdn.microsoft.com/library/windows/apps/br227508) xxxxxx xx xxx xxxx xxxx xxx'xx xxxxxxx xxxx xxxx xxx xx xxxxxxxx xxx xxxxxxx. Xx xxxx xxxxxx xxxx xxx xxxxxxx xxxxx, xxxxxx xx xxxxxx xxx xxxxx xxx xxx xxxx xxxxxxx xx &xx;xxxxxxxx&xx;.xxxx.xx. Xxxxxx xxxx xxx xxxxxxxxx **xxxxx** xxxxxxxxx xx xxxxxxxx xx xxx xxx xx xxx xxxx:
+結果を取得するためにアプリを起動するときに表示するページで、[**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) メソッドをオーバーライドします。 このメソッドがまだ存在しない場合は、&lt;ページ名&gt;.xaml.cs で定義されているページのクラス内に作成します。 ファイルの先頭に、次の **using** ステートメントが含まれていることを確認します。
 
 ```cs
 using Windows.ApplicationModel.Activation
 ```
 
-Xxx [**XxxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br243285) xxxxxx xx xxx [**XxXxxxxxxxxXx**](https://msdn.microsoft.com/library/windows/apps/br227508) xxxxxx xxxxxxxx xxx xxxx xxxxxx xxxx xxx xxxxxxx xxx. Xxx xxxx xxx xxx xxxxxx YYYXX xxx xx xxxxxx xx x [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn636131) xxxxxx.
+[
+            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) メソッド内の [**NavigationEventArgs**](https://msdn.microsoft.com/library/windows/apps/br243285) オブジェクトには、呼び出し元アプリから渡されたデータが含まれます。 データは最大で 100 KB になります。また、データは [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) オブジェクトに格納されます。
 
-Xx xxxx xxxxxxx xxxx, xxx xxxxxxxx xxx xxxxxxx xxx xxxx xxxx xxxx xxx xxxxxxx xxx xx xx xx x [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn636131) xxxxx x xxx xxxxx **XxxxXxxx**, xxxxxxx xxxx'x xxxx xxx xxxxxxx'x xxxxxxx xxx xx xxxxx xx xxxx.
+次のコード例では、起動されたアプリは、呼び出し元のアプリから送信されたデータが **TestData** というキーで [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) に格納されていることを想定しています。これは、サンプルの呼び出し元アプリで、データを送信するためにそのようにコード化されているためです。
 
 ```cs
 using Windows.ApplicationModel.Activation;
@@ -122,10 +124,10 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 private Windows.System.ProtocolForResultsOperation _operation = null;
 ```
 
-## Xxxx Y: Xxxxx xxxx xx xxxxxx xxxx xx xxx xxxxxxx xxx
+## 手順 5: 呼び出し元のアプリにデータを返すコードを記述する
 
 
-Xx xxx xxxxxxxx xxx, xxx [**XxxxxxxxXxxXxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn906913) xx xxxxxx xxxx xx xxx xxxxxxx xxx. Xx xxxx xxxxxxx xxxx, x [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn636131) xxxxxx xx xxxxxxx xxxx xxxxxxxx xxx xxxxx xx xxxxxx xx xxx xxxxxxx xxx. Xxx **XxxxxxxxXxxXxxxxxxXxxxxxxxx** xxxxx xx xxxx xxxx xx xxxx xxx xxxxx xx xxx xxxxxxx xxx.
+起動アプリで、[**ProtocolForResultsOperation**](https://msdn.microsoft.com/library/windows/apps/dn906913) を使って呼び出し元のアプリにデータを返します。 次のコード例では、呼び出し元のアプリに返す値を格納する [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) オブジェクトが作成されます。 その後で、**ProtocolForResultsOperation** フィールドを使って、呼び出し元のアプリに値を送信します。
 
 ```cs
     ValueSet result = new ValueSet();
@@ -133,10 +135,10 @@ Xx xxx xxxxxxxx xxx, xxx [**XxxxxxxxXxxXxxxxxxXxxxxxxxx**](https://msdn.microsof
     _operation.ReportCompleted(result);
 ```
 
-## Xxxx Y: Xxxxx xxxx xx xxxxxx xxx xxx xxx xxxxxxx xxx xxx xxx xxxxxxxx xxxx
+## 手順 6: 結果を取得するためにアプリを起動し、返されたデータを取得するコードを記述する
 
 
-Xxxxxx xxx xxx xxxx xxxxxx xx xxxxx xxxxxx xx xxxx xxxxxxx xxx xx xxxxx xx xxxx xxxxxxx xxxx. Xxxx xxx **xxxxx** xxxxxxxxxx, xxxxx xxx xxxxxxxxx xxx xxx xxxx xx xxxxxxx:
+次のコード例に示すように、呼び出し元のアプリの非同期メソッド内で、アプリを起動します。 **using** ステートメントは、コードをコンパイルするために必要となります。
 
 ```cs
 using System.Threading.Tasks;
@@ -165,38 +167,43 @@ async Task<string> LaunchAppForResults()
 }
 ```
 
-Xx xxxx xxxxxxx, x [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn636131) xxxxxxxxxx xxx xxx **XxxxXxxx** xx xxxxxx xx xxx xxxxxxxx xxx. Xxx xxxxxxxx xxx xxxxxxx x **XxxxxXxx** xxxx x xxx xxxxx **XxxxxxxxXxxx** xxxx xxxxxxxx xxx xxxxxx xxxxxxxx xx xxx xxxxxx.
+この例では、キー **TestData** を含んでいる [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) が、起動アプリに渡されます。 起動アプリは、**ReturnedData** という名前のキーを持つ **ValueSet** を作成します。これには、呼び出し元に返される結果が含まれています。
 
-Xxx xxxx xxxxx xxx xxxxxx xxx xxx xxxx xxx'xx xxxxxx xxx xxxxxxx xxxxxx xxxxxxx xxxx xxxxxxx xxx. Xxxxxxxxx, [**XxxxxxXxxXxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn906892) xxxx xxxxxx **XxxxxxXxxXxxxxx.XxxXxxxxxxxxxx**.
+結果を取得するために起動するアプリは、呼び出し元アプリを実行する前にビルドし、展開する必要があります。 このように操作しないと、[**LaunchUriResult.Status**](https://msdn.microsoft.com/library/windows/apps/dn906892) は **LaunchUriStatus.AppUnavailable** を報告します。
 
-Xxx'xx xxxx xxx xxxxxx xxxx xx xxx xxxxxxxx xxx xxxx xxx xxx xxx [**XxxxxxXxxxxxxxxxxXxxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn893511). Xxx xxx xx xxx xxx xxxxxx xxxx xx xx xxxx xxx xxxxxxxxx xxxx xxxx xxxxxx xxx xxxxxxxx xxx:
+[
+            **TargetApplicationPackageFamilyName**](https://msdn.microsoft.com/library/windows/apps/dn893511) を設定するときは、起動アプリのファミリ名が必要です。 ファミリ名を取得する方法の 1 つは、起動アプリ内から、次の呼び出しを行うことです。
 
 ```cs
 string familyName = Windows.ApplicationModel.Package.Current.Id.FamilyName;
 ```
 
-## Xxxxxxx
+## 注釈
 
 
-Xxx xxxxxxx xx xxxx xxx-xx xxxxxxxx x "xxxxx xxxxx" xxxxxxxxxxxx xx xxxxxxxxx xx xxx xxx xxxxxxx. Xxx xxx xxxxxx xx xxxx xxx xxxx xxx xxx [**XxxxxxXxxXxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn956686) XXX xxxx xxx xxxxxxxxxxxxxx xxxxxx xx xxx xxx xxxxxxxxxxx xxx xxx [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn636131) xxxxx. Xxxxxxx xxxx xxx x **XxxxxXxx** xx xxxxxxx xx YYYXX. Xx xxx xxxx xx xxxx xxxxxx xxxxxxx xx xxxx, xxx xxx xxxxx xxxxx xx xxxxx xxx [**XxxxxxXxxxxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn889985) xxxxx xx xxxxxx xxxx xxxxxx xxxx xxx xxx xxxx xxxxxxx xxxx. Xxx xxxxxxx, xxxxx x **XxxxxXxx** xxxxx `inputData`, xxx xxxxx xxxxx xxx xxxxx xx x xxxx xxxx xxx xxxx xx xxxxx xxxx xxx xxxxxxxx xxx:
+この方法の例については、結果を取得するためのアプリの起動の概要を説明した "hello world" アプリをご覧ください。 重要な注意点は、新しい [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686) API を使うと、アプリを非同期的に起動し、[**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) クラスを使って通信できるようになることです。 **ValueSet** を使って渡すデータは、100 KB に制限されます。 より多くのデータを渡す必要がある場合は、アプリ間で渡すことができるファイル トークンを作成するための、[**SharedStorageAccessManager**](https://msdn.microsoft.com/library/windows/apps/dn889985) クラスを使ってファイルを共有することができます。 たとえば、`inputData` という名前の **ValueSet** を指定し、起動アプリと共有するファイルのトークンを格納できます。
 
 ```cs
 inputData["ImageFileToken"] = SharedStorageAccessManager.AddFile(myFile);
 ```
 
-Xxxx xxxx xx xx xxx xxxxxxxx xxx xxx **XxxxxxXxxXxxXxxxxxxXxxxx**.
+その後で、**LaunchUriForResultsAsync** を使って、トークンを起動アプリに渡します。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
 
-* [**XxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh701476)
-* [**XxxxxxXxxXxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn956686)
-* [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn636131)
+* [**LaunchUri**](https://msdn.microsoft.com/library/windows/apps/hh701476)
+* [**LaunchUriForResultsAsync**](https://msdn.microsoft.com/library/windows/apps/dn956686)
+* [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131)
+
+ 
 
  
 
- 
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

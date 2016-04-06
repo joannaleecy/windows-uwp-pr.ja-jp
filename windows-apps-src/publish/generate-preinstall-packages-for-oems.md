@@ -1,46 +1,50 @@
 ---
-Xxxxxxxxxxx: Xx xxxx xxxxxxxxx xxxxxxx xxx xxxx xxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxx, xxx xxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxx xxxx xx XXX xxx xxx xx xxxxxxx xxxx xxx xx xxxxx xxxxx.
-xxxxx: Xxxxxxxx xxxxxxxxxx xxxxxxxx xxx XXXx
-xx.xxxxxxx: XXYXYYXY-YXXX-YYXY-XYXY-XYYXYXYXYXXY
+Description: 開発者アカウントに適切なアクセス許可が付与されている場合、OEM がイメージにアプリを含めるために使用できるプレインストール パッケージを生成してダウンロードできます。
+title: OEM 向けのプレインストール パッケージの生成
+ms.assetid: AC3A45E8-7BBD-44E9-B2D3-B74B7C9B2BC9
 ---
 
-# Xxxxxxxx xxxxxxxxxx xxxxxxxx xxx XXXx
+# OEM 向けのプレインストール パッケージの生成
 
 
-Xx xxxx xxxxxxxxx xxxxxxx xxx xxxx xxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxx, xxx xxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxx xxxx xx XXX xxx xxx xx xxxxxxx xxxx xxx xx xxxxx xxxxx. Xxxxxxxxxx xxxxxxxxxxx xxx xxxx xxxxxxx xx xxxxxxxxx xxxxxxxx xxxx xxx xxxxxxxxx xx XXXx.
+開発者アカウントに適切なアクセス許可が付与されている場合、OEM がイメージにアプリを含めるために使用できるプレインストール パッケージを生成してダウンロードできます。 プレインストールのアクセス許可は、OEM がスポンサーである開発者アカウントでのみ有効です。
 
-## Xxxxxxxxx xxxxxxxxxx xxxxxx & xxxxxxxxxxx
-
-
-Xxxxxxxxxx xxxx xxxx xx xxxxxxxxx xxxxxxx Xxxxxxx Xxx Xxxxxx xx xxxx xxx xxxxxx Xxxxx xxxxxxx xx xxxx xxxx xxx xxxx xx xxxxxxx xx xxx Xxxxx xxx xxxxxxx xxx xxxxxxx.
-
-Xxx xxx xxxx xx xxxxxxx xxxxxxxxxxxx xxxx xx xxx xxxxxx xxxx xx xxx xxxxxxx.
-
-## Xxxxxxxxxx xxxxxxxxxx xxxxxxxx
+## 重要なプレインストールに関するポリシーと制限事項
 
 
-Xxxx xx xxxxxxx xxx xxxx xxxxxxx xxxx xxxxxxxxxx xxxxxxxxxxx, xxxxxxxx xxx xxxxxxxxx xxxxx:
+プレインストール アプリは、最新のストア ライセンスが適用されるように、Windows デベロッパー センターを通じて認定を受ける必要があります。これにより、プレインストール アプリでストアに接続し、アプリの更新プログラムを受信できます。
 
-1.  Xx xxxx xxxxxxxxx, xxxxxxxx xx xxx xxx xxxx xx xx xx xxxxxxxxxxxx.
-2.  Xx xxx xxxx xxxxxxxxxx xxxx, xxxxxx **Xxx xxxxxxxxxx** xxx xxxx xxxxx **Xxxxxxx xxxxxxxx**.
-3.  Xx xxx **Xxxxxxx xxxxxxxx xxx XX xxxxxxxxxxxxxxx** xxxxxxx, xxxxx **Xxxxxx xxxxxxxxxxxx xxxxxxxx**.
-4.  X xxxxxxxxxxxx xxxxxx xxxx xxxxxx, xxxxxx xxxx xxxx xxxxxxxxxxxx xx xx XX xxxxx xx Xxxxxxx YY xxxx xx xxxx. Xxxxxx **Xxxxxx.**
-5.  Xxxx xxx xxxxxxx xxxx xxx xxxx xx xxxxxxxx, xxx xxxxx xxx xxxxxxxxxxx **Xxxxxxxx xxxxxxx** xxxx.
-    > **Xxxx**  Xxxxxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxxx xx xxx xxxx xx xxx xxxxxxx xxx xxxx xxxxxxxx. Xxx xxx xxxxx xxxx xxxx xxx xxxx xxxx xxxxx, xx xxxxx xxx xxxx xxxx.
-6.  Xxxx xxx xxxxxxx xxx xxxx xxxxxxxxx, x xxxx xx **Xxxxxxxx xxxxxxx** xxxx xxxxxx. Xxxxx xxxx xxxx xx xxxxxxxx xxx .xxx xxxx.
+既にプレインストールされているすべてのアプリは、すべての市場で、現在も将来も無料である必要があります。
 
-Xxx xxx xxxx xxxxxxx xxxx .xxx xxxx xx xxx XXX xxx xxxxxxxxx xx xxxxx XX xxxxx.
-
-## Xxxxxxx
+## プレインストール パッケージの生成
 
 
-Xx xxx xxxx xxxxxxx xxxxxxxxx xxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxx, xxxxxx xxxxx <partnerops@microsoft.com>.
+プレインストールのアクセス許可を持つアカウントが有効になったら、次の手順を実行します。
+
+1.  ダッシュボードで、プレインストールするアプリに移動します。
+2.  左側のナビゲーション メニューで、**[アプリ管理]** を展開し、**[現在のパッケージ]** をクリックします。
+3.  **[OS プレインストール用パッケージの要求]** で、**[ダウンロード可能なパッケージを有効にする]** をクリックします。
+4.  確認ダイアログ ボックスが表示され、Windows 10 より前の OS にプレインストールされるアプリは無料にする必要があることが示されます。 **[有効化]** を選びます。
+5.  ダウンロードするパッケージを検索し、適切な **[Generate package]** (パッケージの生成) リンクをクリックします。
+    > **注**  プレインストール パッケージの生成時間は、選んだパッケージのサイズによって異なります。 このページから移動し後で再び表示することも、ページを開いたままにしておくこともできます。
+6.  パッケージが生成されると、**パッケージをダウンロードする**ためのリンクが表示されます。 このリンクをクリックして .zip ファイルをダウンロードします。
+
+この .zip ファイルを OEM に提供することによって、OEM ではこのファイルを OS イメージに含めることができます。
+
+## サポート
+
+
+プレインストール パッケージの生成についてさらに不明な点がある場合は、<partnerops@microsoft.com> までメールでお問い合わせください。
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

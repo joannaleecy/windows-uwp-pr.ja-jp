@@ -1,31 +1,35 @@
 ---
-xxxxx: Xxxxxxx Xxxxxxx xxxxxxxxxx
-xxxxxxxxxxx: .
-xx.xxxxxxx: YYYYYYYY-YYYx-YYYY-YYxY-YYYYYYYYxYxY
+title: Windows ランタイム コンポーネント
+description: 。
+ms.assetid: 55887622-828b-4318-87f2-25592268f7c1
 ---
 
-# Xxxxxxx Xxxxxxx xxxxxxxxxx
+# Windows ランタイム コンポーネント
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxxxxx Xxxxxxx xxxxxxxxxx xxx xxxx-xxxxxxxxx xxxxxxx xxxx xxx xxx xxxxxxxxxxx xxx xxx xxxx xxx xxxxxxxx, xxxxxxxxx X\#, Xxxxxx Xxxxx, XxxxXxxxxx, xxx X++.
+Windows ランタイム コンポーネントは自己完結型オブジェクトで、C#、Visual Basic、JavaScript、C++ など、すべての言語からインスタンス化して使うことができます。
 
-Xxx xxx xxx Xxxxxx Xxxxxx xxx X\#, Xxxxxx Xxxxx, xx X++ xx xxxxxx Xxxxxxx Xxxxxxx xxxxxxxxxx xxxx xxx xx xxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
+Visual Studio と C#、Visual Basic、または C++ を使って、ユニバーサル Windows プラットフォーム (UWP) アプリで利用できる Windows ランタイム コンポーネントを作成できます。
 
-| Xxxxx | Xxxxxxxxxxx |
+| トピック | 説明 |
 |-------|-------------|
-| [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X++](creating-windows-runtime-components-in-cpp.md) | Xxxx xxxxxxx xxxxx xxx xx xxx X++ xx xxxxxx x Xxxxxxx Xxxxxxx xxxxxxxxx, xxxxx xx x XXX xxxx'x xxxxxxxx xxxx x Xxxxxxxxx Xxxxxxx xxx xxxx'x xxxxx xx xxxxx XxxxXxxxxx—xx X#, Xxxxxx Xxxxx, xx X++. |
-| [Xxxxxxxxxxx: Xxxxxxxx x xxxxx Xxxxxxx Xxxxxxx xxxxxxxxx xx X++ xxx xxxxxxx xx xxxx XxxxXxxxxx xx X#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md) | Xxxx xxxxxxxxxxx xxxxx xxx xx xxxxxx x xxxxx Xxxxxxx Xxxxxxx Xxxxxxxxx XXX xxxx'x xxxxxxxx xxxx XxxxXxxxxx, X#, xx Xxxxxx Xxxxx. Xxxxxx xxx xxxxx xxxx xxxxxxxxxxx, xxxx xxxx xxxx xxx xxxxxxxxxx xxxxxxxx xxxx xx xxx Xxxxxxxx Xxxxxx Xxxxxxxxx (XXX), xxx xxxxxxx, xxx xxx Xxxxxx X++ Xxxxxxxxx Xxxxxxxxxx xxxx xxxx xxxxxxx xxxx xxx xxxxxxx xxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X++](creating-windows-runtime-components-in-cpp.md) xxx [Xxxxxx X++ Xxxxxxxx Xxxxxxxxx (X++/XX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx). |
-| [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X# xxx Xxxxxx Xxxxx](creating-windows-runtime-components-in-csharp-and-visual-basic.md) | Xxxxxxxx xxxx xxx .XXX Xxxxxxxxx Y.Y, xxx xxx xxx xxxxxxx xxxx xx xxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxx, xxxxxxxx xx x Xxxxxxx Xxxxxxx xxxxxxxxx. Xxx xxx xxx xxxx xxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx X++, XxxxXxxxxx, Xxxxxx Xxxxx, xx X#. Xxxx xxxxxxx xxxxxxxx xxx xxxxx xxx xxxxxxxx x xxxxxxxxx, xxx xxxxxxxxx xxxx xxxxxxx xx .XXX Xxxxxxxxx xxxxxxx xxx xxx Xxxxxxx Xxxxxxx. Xx xxxxxxx, xxxx xxxxxxx xx xxxxxxxx xx xx xxxxxxxxxxx xx xxx .XXX Xxxxxxxxx xxxxxxxxxx. Xxxxxxx, xxxx xxx xxxxxx x xxxxxxxxx xx xxx xxxx XxxxXxxxxx xx X++, xxx xxxx xx xx xxxxx xx xxxxxxxxxxx xx xxx xxx xxxxx xxxxxxxxx xxxxxxx xxx Xxxxxxx Xxxxxxx. |
-| [Xxxxxxxxxxx: Xxxxxxxx x Xxxxxx Xxxxxxx Xxxxxxx xxxxxxxxx xxx xxxxxxx xx xxxx XxxxXxxxxx](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md) | Xxxx xxxxxxxxxxx xxxxx xxx xxx xxx xxx xxx .XXX Xxxxxxxxx xxxx Xxxxxx Xxxxx xx X# xx xxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxx, xxxxxxxx xx x Xxxxxxx Xxxxxxx xxxxxxxxx, xxx xxx xx xxxx xxx xxxxxxxxx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx xxxxx xxx Xxxxxxx xxxxx XxxxXxxxxx. |
-| [Xxxxxxx Xxxxxx xx Xxxxxxx Xxxxxxx xxxxxxxxxx](raising-events-in-windows-runtime-components.md) | Xx xxxx Xxxxxxx Xxxxxxx xxxxxxxxx xxxxxx xx xxxxx xx x xxxx-xxxxxxx xxxxxxxx xxxx xx x xxxxxxxxxx xxxxxx (xxxxxx xxxxxx) xxx xxx xxxx XxxxXxxxxx xx xx xxxx xx xxxxxxx xxx xxxxx, xxx xxx xxxxxxxxx xxx/xx xxxxx xx xx xxx xx xxxxx xxxx: |
+| [C++ での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-cpp.md) | この記事では、C++ を使って Windows ランタイム コンポーネントを作成する方法を示します。このコンポーネントは、JavaScript (または C#、Visual Basic、C++) を使って構築したユニバーサル Windows アプリから呼び出すことができる DLL です。 |
+| [チュートリアル: C++ での基本的な Windows ランタイム コンポーネントの作成と JavaScript または C# からの呼び出し#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md) | このチュートリアルでは、JavaScript、C#、または Visual Basic から呼び出すことができる基本的な Windows ランタイム コンポーネント DLL を作成する方法について説明します。 このチュートリアルを開始する前に、抽象バイナリ インターフェイス (ABI)、ref クラス、Visual C++ コンポーネント拡張などの概念を必ず理解しておいてください。ref クラスの操作が容易になります。 詳しくは、「[C++ での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-cpp.md)」および「[Visual C++ の言語リファレンス (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx)」をご覧ください。 |
+| [C# および Visual Basic での Windows ランタイム コンポーネントの作成](creating-windows-runtime-components-in-csharp-and-visual-basic.md) | .NET Framework 4.5 以降では、マネージ コードを使って独自の Windows ランタイム型を作成し、Windows ランタイム コンポーネントにパッケージ化することができます。 また、C++、JavaScript、Visual Basic、C# を利用することで、ユニバーサル Windows プラットフォーム (UWP) アプリでコンポーネントを使うことができます。 この記事では、コンポーネントを作成するための規則を示し、Windows ランタイム向けの .NET Framework のサポートをいくつか説明します。 このサポートは、通常、.NET Framework のプログラマが意識しなくても利用できるように設計されています。 ただし、JavaScript や C++ で使うコンポーネントを作成する場合は、これらの言語が Windows ランタイムをサポートする方法の違いに注意する必要があります。 |
+| [チュートリアル: 単純な Windows ランタイム コンポーネントの作成と JavaScript からの呼び出し](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md) | このチュートリアルでは、Visual Basic または C# で .NET Framework を使って、Windows ランタイム コンポーネントにパッケージ化される独自の Windows ランタイム型を作成する方法と、JavaScript を使って Windows 用にビルドされたユニバーサル Windows アプリからコンポーネントを呼び出す方法について説明します。 |
+| [Windows ランタイム コンポーネントでイベントを生成する](raising-events-in-windows-runtime-components.md) | Windows ランタイム コンポーネントを使って、ユーザー定義のデリゲート型のイベントをバック グラウンド スレッド (ワーカー スレッド) で発生させ、このイベントを JavaScript で受け取る場合、以下のいずれかの方法でイベントを実装し、発生させることができます。 |
  
 
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

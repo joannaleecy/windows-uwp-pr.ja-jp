@@ -1,50 +1,50 @@
 ---
-xxxxx: Xxxxxx xxx Xxxxxxx Xxxx xxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxx xxx Xxxxxxx Xxxx xxx xxxx xxxx xxx.
-xx.xxxxxxx: XYYYYYYX-XYYY-YXYY-YXYY-YYXYXYYXYXYY
+title: Windows マップ アプリの起動
+description: アプリから Windows マップ アプリを起動する方法について説明します。
+ms.assetid: E363490A-C886-4D92-9A64-52E3C24F1D98
 ---
 
-# Xxxxxx xxx Xxxxxxx Xxxx xxx
+# Windows マップ アプリの起動
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xxxxx xxx xx xxxxxx xxx Xxxxxxx Xxxx xxx xxxx xxxx xxx. Xxxx xxxxx xxxxxxxxx xxx **xxxxxxxx:**, **xx-xxxxx-xx:**, xxx **xx-xxxx-xx:** Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX) xxxxxxx. Xxx xxxxx XXX xxxxxxx xx xxxxxx xxx Xxxxxxx Xxxx xxx xx xxxxxxxx xxxx, xxxxxxxxxx, xxx xxxxxx xxxxxxx.
+アプリから Windows マップ アプリを起動する方法について説明します。 このトピックでは、**bingmaps:**、**ms-drive-to:**、**ms-walk-to:** の各 URI (Uniform Resource Identifier) スキームについて説明します。 これらの URI スキームを使って Windows マップ アプリを起動し、特定の地図、ルート案内、検索結果を表示できます。
 
-**Xxx** Xx xxxxx xxxx xxxxx xxxxxxxxx xxx Xxxxxxx Xxxx xxx xxxx xxxx xxx, xxxxxxxx xxx [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619977) xxxx xxx [Xxxxxxx-xxxxxxxxx-xxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=619979) xx XxxXxx.
+**ヒント** アプリから Windows マップ アプリを起動する方法について詳しくは、GitHub の [Windows-universal-samples リポジトリ](http://go.microsoft.com/fwlink/p/?LinkId=619979)から[ユニバーサル Windows プラットフォーム (UWP) の地図サンプル](http://go.microsoft.com/fwlink/p/?LinkId=619977)をダウンロードしてください。
 
-## Xxxxxxxxxxx XXXx
+## URI の概要
 
 
-XXX xxxxxxx xxx xxx xxxx xxxx xx xxxxxxxx xxxxxxxxxx (xx xxxxxxxxxxxxxxxx, xx xxxx xxx). Xxxx xx xxx xxx xxxxx x xxx xxxxx xxxxx **xxxxxx:** xx xxxx x xxx xxxxxxx xxxxx **xxxx:**, xxx xxx xxxx xxx Xxxxxxx xxxx xxx xxxxx **xxxxxxxx:**, **xx-xxxxx-xx:**, xxx **xx-xxxx-xx:**.
+URI スキームを使うと、ハイパーリンクのクリックによって (またはアプリでプログラム的に) アプリを開くことができます。 **mailto:** を使って新しいメールの作成を開始したり、**http:** を使って既定の Web ブラウザーを開いたりできるのと同様に、**bingmaps:**、**ms-drive-to:**、**ms-walk-to:** を使って Windows マップ アプリを開くことができます。
 
--   Xxx **xxxxxxxx:** XXX xxxxxxxx xxxx xxx xxxxxxxxx, xxxxxx xxxxxxx, xxxxxxxxxx, xxx xxxxxxx.
--   Xxx **xx-xxxxx-xx:** XXX xxxxxxxx xxxx-xx-xxxx xxxxxxx xxxxxxxxxx xxxx xxxx xxxxxxx xxxxxxxx.
--   Xxx **xx-xxxx-xx:** XXX xxxxxxxx xxxx-xx-xxxx xxxxxxx xxxxxxxxxx xxxx xxxx xxxxxxx xxxxxxxx.
+-   **bingmaps:** URI は、位置情報、検索結果、ルート案内、交通情報用の地図を提供します。
+-   **ms-drive-to:** URI は、現在の場所からのターン バイ ターン方式の自動車ルート案内を提供します。
+-   **ms-walk-to:** URI は、現在の場所からのターン バイ ターン方式の徒歩ルート案内を提供します。
 
-Xxx xxxxxxx, xxx xxxxxxxxx XXX xxxxx xxx Xxxxxxx Xxxx xxx xxx xxxxxxxx x xxx xxxxxxxx xxxx Xxx Xxxx Xxxx.
+たとえば、次の URI は、Windows マップ アプリを開き、ニューヨークを中心とした地図を表示します。
 
 ```xml
 <bingmaps:?cp=40.726966~-74.006076>
 ```
 
-![x xxx xxxxxxxx xxxx xxx xxxx xxxx.](images/mapnyc.png)
+![ニューヨークを中心とした地図。](images/mapnyc.png)
 
-Xxxx xx x xxxxxxxxxxx xx xxx XXX xxxxxx:
+URI スキームについて次に説明します。
 
-**xxxxxxxx://?xxxxx**
+**bingmaps://?query**
 
-Xx xxxx XXX xxxxxx, *xxxxx* xx x xxxxxx xx xxxxxxxxx xxxx/xxxxx xxxxx:
+この URI スキームでは、*query* は、次のようなパラメーター名と値の一連のペアを示します。
 
-**&xxxxxY=xxxxxY&xxxxxY=xxxxxY …**
+**&param1=value1&param2=value2 …**
 
-Xxx x xxxx xxxx xx xxx xxxxxxxxx xxxxxxxxxx, xxx xxx [xxxxxxxx:](#bingmaps), [xx-xxxxx-xx:](#msdriveto), xxx [xx-xxxx-xx:](#mswalkto) xxxxxxxxx xxxxxxxxx. Xxxxx xxx xxxx xxxxxxxx xxxxx xx xxxx xxxxx.
+使用可能なパラメーターの一覧については、[bingmaps:](#bingmaps)、[ms-drive-to:](#msdriveto)、[ms-walk-to:](#mswalkto) のパラメーター リファレンスをご覧ください。 このトピックでも後で例を示します。
 
-## Xxxxxx x XXX xxxx xxxx xxx
+## アプリからの URI の起動
 
 
-Xx xxxxxx xxx Xxxxxxx Xxxx xxx xxxx xxxx xxx, xxxx xxx [**XxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701476) xxxxxx xxxx x **xxxxxxxx:**, **xx-xxxxx-xx:**, xx **xx-xxxx-xx:** XXX. Xxx xxxxxxxxx xxxxxxx xxxxxxxx xxx xxxx XXX xxxx xxx xxxxxxxx xxxxxxx. Xxx xxxx xxxx xxxxx xxxxxxxxx xxxx xxx XXX, xxx [Xxxxxx xxx xxxxxxx xxx xxx x XXX](launch-default-app.md).
+アプリから Windows マップ アプリを起動するには、**bingmaps:**、**ms-drive-to:**、または **ms-walk-to:** URI を指定して [**LaunchUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701476) メソッドを呼び出します。 次の例では、前の例と同じ URI を起動します。 URI によるアプリの起動について詳しくは、「[URI に応じた既定のアプリの起動](launch-default-app.md)」をご覧ください。
 
 ```cs
 // Center on New York City
@@ -56,104 +56,104 @@ launcherOptions.TargetApplicationPackageFamilyName = "Microsoft.WindowsMaps_8wek
 var success = await Windows.System.Launcher.LaunchUriAsync(uriNewYork, launcherOptions);
 ```
 
-Xx xxxx xxxxxxx, xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701435) xxxxx xx xxxx xx xxxx xxxxxx xxx Xxxxxxx Xxxx xxx xx xxxxxxxx.
+この例では、Windows マップ アプリを確実に起動するために [**LauncherOptions**](https://msdn.microsoft.com/library/windows/apps/hh701435) クラスを使っています。
 
-## Xxxxxxx xxxxx xxxxxxxxx
+## 既知の場所の表示
 
 
-Xxxxx xxx xxxxxxx xxxx xx xxxxxxx xxx xxx xxxxxx xxxxx xxx xxx xxxx xxxxx. Xxxxx *xx* (xxxxxx xxxxx) xxx *xxx* (xxxx xxxxx) xxxxxxxxxx xxx xxx xxxx xxxxxxxxxxxxxxx xxxxxxx xxx xxxx xxxxxxx xxxxxxxxxxx xxxxxxx. Xxxxx *xx* xxxxxxxxx (xxxxxxxxx xx xxxx xxxxxxx xx xxxxxxxx xxx xxxxxxxxx xxxxxx) xx xxxx xxxxxxxxxxx xxxxxxx xx xxxxx xxxx xxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxxxxxxxxx xxx xxx xxxxxx xxxxx xxx xxxx xxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx. Xxx *xx* xxxxxxxxx xx xxxxxxx xxxx xxx xxxxx xxxxxxxxxx (*xx*, *xx*, xxx *xxx*) xxx xxxxxxx.
+地図の中心点とズーム レベルを制御するには、いくつかの方法があります。 *cp* (中心点) パラメーターと *lvl* (ズーム レベル) パラメーターを使う方法が最も簡単な方法であり、これらのパラメーターによって予測可能な結果を得ることができます。 この方法と比べると、*bb* パラメーター (緯度と経度の値で囲まれた領域を指定) を使う方法では予測が難しくなります。これは、このパラメーターでは画面の解像度を考慮し、指定される座標に基づいて地図の中心点とズーム レベルを決定するためです。 これら 3 つのパラメーター (*bb*、*cp*、*lvl*) がすべて指定されていると、*bb* パラメーターは無視されます。
 
-Xx xxxxxxx xxx xxxx xx xxxx, xxx xxx *xx* (Xxxxxxxxxx) xxx *xxx* (xxxxx) xxx xxxxxxxxxx. Xxx *xx* xxxxxxxxx xxxx xxx xxx xxxx x Xxxxxxxxxx xxxx. Xxx *xxx* xxxxxxxxx xxxx xxx xxxxxx xxxxxxx xxxx, xxxxxx, xxx YX xxxxx. Xxxx xxxxx xxx YX xxxxx, xxx *xxx*, *xxx*, xxx *xxx* xxxxxxxxxx xxx xx xxxx xx xxxxxxx xxx YX xxxx. *xxx* xxxxxxxxx xxx xxxxxxx xx xxx xxxx, *xxx* xxxxxxxxx xxx xxxxx xx xxx xxxx, xxx *xxx* xxxxxxxxx xxx xxxxxxxx xxxx xxx xxxxxx xxxxx xx xxxx xx xxxx. Xxx xxxx xxxx xxxxx xxxxx xxx xxxxx xxxxxxxxxx, xxx xxx [xxxxxxxx: xxxxxxxxx xxxxxxxxx](#bingmaps).
+ビューの種類を制御するには、*ss* (Streetside) パラメーターと *sty* (スタイル) パラメーターを使います。 *ss* パラメーターは、Streetside ビューに地図を配置します。 *sty* パラメーターは、道路図、航空写真、3D ビュー表示を切り替えます。 3D スタイルを使う場合、*hdg*、*pit*、*rad* パラメーターを使って 3D ビューを指定できます。 *hdg* はビューの方位を指定します。*pit* はビューのピッチを指定します。*rad* はビューに表示する中心点からの距離を指定します。 これらのパラメーターやその他のパラメーターについて詳しくは、[bingmaps: のパラメーター リファレンス](#bingmaps)をご覧ください。
 
-| Xxxxxx Xxx                                                                 | Xxxxxxx                                                                                                                                                                                                   |
+| サンプル URI                                                                 | 結果                                                                                                                                                                                                   |
 |----------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| xxxxxxxx:                                                                  | Xxxxx xxx Xxxx xxx.                                                                                                                                                                                       |
-| xxxxxxxx:?xx=YY.YYYYYY~-YY.YYYYYY                                          | Xxxxxxxx x xxx xxxxxxxx xxxx Xxx Xxxx Xxxx.                                                                                                                                                               |
-| xxxxxxxx:?xx=YY.YYYYYY~-YY.YYYYYY&xxx=YY                                   | Xxxxxxxx x xxx xxxxxxxx xxxx Xxx Xxxx Xxxx xxxx x xxxx xxxxx xx YY.                                                                                                                                       |
-| xxxxxxxx:?xx=YY.YYY\_-YY.YY~YY.YY\_-YY.Y                                   | Xxxxxxxx x xxx xx Xxx Xxxx Xxxx xxxx xxx xxxx xx xxx xxxxxx xx xxx xxxxxxxx xxx.                                                                                                                          |
-| xxxxxxxx:?xx=YY.YYY\_-YY.YY~YY.YY\_-YY.Y&xx=YY~-YYY                        | Xxxxxxxx x xxx xx Xxx Xxxx Xxxx, xxxxx xx xxx xxxx xxxxxxxxx xx xxx xxxxxxxx xxx xxxxxxxx. Xxx xxxxxx xxxxx xxx Xxxxxxx xxxxxxxxx xx xxx **xx** xxxxxxxx xx xxxxxxx.                                      |
-| xxxxxxxx:?xx=YY.YYY\_-YY.YY~YY.YY\_-YY.Y&xx=YY~-YYY&xxx=Y                  | Xxxxxxxx x xxx xx Xxx Xxxx, xxxxx xx xxx xxxx xxxxxxxxx xx xxx **xx** xxxxxxxx. Xxx **xx** xxxxxxxx, xxxxx xxxxxxxxx Xxxxxxx, xx xxxxxxx xxxxxxx **xx** xxx **xxx** xxx xxxxxxx xxxx **xx** xx xxxxxxxxx. |
-| xxxxxxxx:?xxxxxxxxxx=xxxxx.YY.YYYYYY\_-YYY.YYYYYY\_Xxxxxxx%YYXxxxxx&xxx=YY | Xxxxxxxx x xxx xxxx x xxxxx xxxxx Xxxxxxx Xxxxxx (xx Xxx Xxxxx) xxx xxxx xxx xxxx xxxxx xx YY.                                                                                                            |
-| xxxxxxxx:?xxxxxxxxxx=xxxxx.YY.YYYYYY\_-YY.YYYYYY\_Xxxx%YYYXXxxxxxxx        | Xxxxxxxx x xxx xxxx x xxxxx xxxxx Xxxx\_Xxxxxxxx (xx Xxx Xxxxx).                                                                                                                                          |
-| xxxxxxxx:?xx=YY.YYYYYY~-YY.YYYYYY&xxxx=Y&xxx=x                             | Xxxxxxxx x xxx xx XXX xxxx xxxxxxx xx xxx xxxxxx xxx xxxxx.                                                                                                                                               |
-| xxxxxxxx:?xx=YY.YYYY~-YYY.YYYY&xxx=Yx                                      | Xxxxxxxx x YX xxxx xx xxx Xxxxx Xxxxxx.                                                                                                                                                                   |
-| xxxxxxxx:?xx=YY.YYYY~-YYY.YYYY&xxx=Yx&xxx=YYY&xxx=YY&xxx=YYY               | Xxxxxxxx x YX xxxx xx xxx Xxxxx Xxxxxx xxxx x xxxxxx xx YYYx, x xxxxx xx YY xxxxxxx, xxx x xxxxxxx xx YYY xxxxxxx.                                                                                        |
-| xxxxxxxx:?xx=YY.YYYY~-YYY.YYYY&xx=Y                                        | Xxxxxxxx x Xxxxxxxxxx xxxx xx xxx Xxxxx Xxxxxx.                                                                                                                                                           |
+| bingmaps:                                                                  | マップ アプリを開きます。                                                                                                                                                                                       |
+| bingmaps:?cp=40.726966~-74.006076                                          | ニューヨークを中心とした地図を表示します。                                                                                                                                                               |
+| bingmaps:?cp=40.726966~-74.006076&lvl=10                                   | ズーム レベル 10 でニューヨークを中心とした地図を表示します。                                                                                                                                       |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5                                   | 境界ボックスの画面サイズでニューヨークの地図を表示します。                                                                                                                          |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122                        | 境界ボックスの引数で指定された領域に基づいてニューヨークの地図を表示します。 **cp** 引数で指定されたシアトルの中心点は無視されます。                                      |
+| bingmaps:?bb=39.719\_-74.52~41.71\_-73.5&cp=47~-122&lvl=8                  | **bb** 引数で指定された領域に基づいてニューヨークの地図を表示します。 **bb** の指定時に、**cp** と **lvl** が無視されるので、シアトルを指定する **cp** 引数は無視されます。 |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16 | シーザーズ パレス (ラスベガス) という名前のポイントを使って地図を表示します。ズーム レベルは 16 に設定されます。                                                                                                            |
+| bingmaps:?collection=point.40.726966\_-74.006076\_Some%255FBusiness        | Some\_Business (ラスベガス) という名前のポイントを使って地図を表示します。                                                                                                                                          |
+| bingmaps:?cp=40.726966~-74.006076&trfc=1&sty=a                             | 航空写真の地図形式を使い、交通情報を有効にして、ニューヨークの地図を表示します。                                                                                                                                               |
+| bingmaps:?cp=47.6204~-122.3491&sty=3d                                      | スペース ニードルの 3D ビューを表示します。                                                                                                                                                                   |
+| bingmaps:?cp=47.6204~-122.3491&sty=3d&rad=200&pit=75&hdg=165               | 半径 200 m、ピッチ 75 度、方位 165 度で、スペース ニードルの 3D ビューを表示します。                                                                                        |
+| bingmaps:?cp=47.6204~-122.3491&ss=1                                        | スペース ニードルの Streetside ビューを表示します。                                                                                                                                                           |
 
  
 
-## Xxxxxxx xxxxxx xxxxxxx
+## 検索結果の表示
 
 
-Xx xxxxxxxxx xxxx xxxxx x xxxxxxxx xxxxxx xxxxx xxx *x* xxxxxxxxx, xxxx xxx xxxxx xxxxxxxx xx xxxxxxxx xxx xxx xx xx xxxxxxxxxxx xxxx xxxxxx xxx *xx* xx xxx *xxxxx* xxxxxxxxx xx xxxxxxx x xxxxxxxx. Xx xxx xxxx xxx xxx xxxxx xxx Xxxx xxx xxxxxxxxxx xx xxx xxxxx xxxxxxxx xxx xxx xx xxx xxxxxxx x xxxxxxxx xxx x xxxxxxxx xxxxxx, xxx xxxxxx xxx xx xxxxxxxxx xx xxx xxxxxxx xxxxx xxx xxx xxxxxx xxxxxxxxxx xxxxxxx. Xxxxxx xxxxxxx xxx xxxxxxxxx xx xxx xxxx xxxxxxxxxxx xxx xxxx, xx xxxxxx xxxxx xx x xxxx xx xxx xxx *xxx* (xxxx xxxxx), xx xxxxxxxxx xx xxxxx xxx Xxxx xxx xx xxxxxx. Xxx xxxx xxxx xxxxx xxxxx xxx xxxxx xxxxxxxxxx, xxx xxx [xxxxxxxx: xxxxxxxxx xxxxxxxxx](#bingmaps).
+ビジネス検索を実行するときには、検索語句をできるだけ具体的に示すための *q* パラメーターを使うことをお勧めします。このパラメーターを *cp* パラメーターまたは *where* パラメーターと組み合わせて使い、場所を指定します。 ユーザーが自身の位置情報を使うためのアクセス許可を地図アプリにまだ与えておらず、ビジネス検索の対象となる場所も指定されていない場合、検索は国レベルで実行され、意味のある結果が返されない可能性があります。 検索結果は最適な地図ビューに表示されます。そのため、*lvl* (ズーム レベル) を設定する必要がない場合は、マップ アプリでズーム レベルを決定できるようにすることをお勧めします。 これらのパラメーターやその他のパラメーターについて詳しくは、[bingmaps: のパラメーター リファレンス](#bingmaps)をご覧ください。
 
-| Xxxxxx Xxx                                                    | Xxxxxxx                                                                                                                                         |
+| サンプル URI                                                    | 結果                                                                                                                                         |
 |---------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------|
-| xxxxxxxx:?xxxxx=YYYY%YYXxxxxxxxxxxx%YYXxx,%YYXxxxxxxxxx,%YYXX | Xxxxxxxx x xxx xxx xxxxxxxx xxx xxx xxxxxxx xx xxx Xxxxx Xxxxx xx Xxxxxxxxxx, X.X.                                                              |
-| xxxxxxxx:?xx=YY.YYYYYY~-YY.YYYYYY&xxx=YY&xxxxx=Xxx%YYXxxx     | Xxxxxxxx xxx Xxx Xxxx xxxx xxx xxxxxxxxx xxxxxx xxxxx, xxxxxxxx xxx xxxxxxx xx x xxx, xxx xxxx xxx xxxx xxxxx xx YY.                            |
-| xxxxxxxx:?xxx=YY&xxxxx=Xxx%YYXxxx                             | Xxxxxxxx xxx Xxx Xxxx xxx xxxxx xxx xxxxxx xx xxxx xxxxx YY.                                                                                    |
-| xxxxxxxx:?xx=YY.YYYYYY~-YY.YYYYYY&xxx=YY.Y&x=xxxxx            | Xxxxxxxx xxx xxxxx xxxx xxx xxxxxxxxx xxxxxx xxxxx (xxxx xx, xx Xxx Xxxx Xxxx), xxxxxxxx xxx xxxxxxx xx x xxx, xxx xxxx xxx xxxx xxxxx xx YY.Y. |
-| xxxxxxxx:?x=xxxxxx&xxxxx=Xxxxxxx                              | Xxxxxxxx xxx xxxxxx xx Xxxxxxx.                                                                                                                 |
+| bingmaps:?where=1600%20Pennsylvania%20Ave,%20Washington,%20DC | 地図を表示し、ワシントンD.C. のホワイト ハウスの住所を検索します。                                                              |
+| bingmaps:?cp=40.726966~-74.006076&lvl=10&where=New%20York     | 指定した中心点の近辺でニューヨークを検索し、その結果を地図に表示します。ズーム レベルは 10 に設定されます。                            |
+| bingmaps:?lvl=10&where=New%20York                             | ニューヨークを検索し、その結果をズーム レベル 10 で表示します。                                                                                    |
+| bingmaps:?cp=40.726966~-74.006076&lvl=14.5&q=pizza            | 指定した中心点 (ニューヨーク) の近辺でピザ店を検索し、その結果を地図に表示します。ズーム レベルは 14.5 に設定されます。 |
+| bingmaps:?q=coffee&where=Seattle                              | シアトルでコーヒーを検索します。                                                                                                                 |
 
  
 
-## Xxxxxxx xxxxxxxx xxxxxx
+## 複数のポイントの表示
 
 
-Xxx xxx *xxxxxxxxxx* xxxxxxxxx xx xxxx x xxxxxx xxx xx xxxxxx xx xxx xxx. Xx xxxxx xx xxxx xxxx xxx xxxxx, x xxxx xx xxxxxx xx xxxxxxxxx. Xxxxx xxx xx xx xx YY xxxxxx xx x xxxxxxxxxx xxx xxxx xxx xxxxxx xx xxx xxxxx xxxxxxxx. Xxx xxxxxxxxxx xxxxx xxxxxxxxxx xxxx xxxxxx xxx xxxxxxxxxx xxxxxxxx. Xxx xxxx xxxx xxxxx xxxx xxxxxxxxx xxx xxxxxx, xxx xxx [xxxxxxxx: xxxxxxxxx xxxxxxxxx](#bingmaps).
+地図上のポイントのカスタム セットを表示するには、*collection* パラメーターを使います。 ポイントが複数ある場合は、ポイントの一覧が表示されます。 コレクションには 25 個までポイントを含めることができます。これらのポイントは指定された順序で表示されます。 コレクションは、検索要求やルート案内の要求よりも優先されます。 このパラメーターやその他のパラメーターについて詳しくは、[bingmaps: のパラメーター リファレンス](#bingmaps)をご覧ください。
 
-| Xxxxxx Xxx                                                                                                                                                         | Xxxxxxx                                                                                                                   |
+| サンプル URI                                                                                                                                                         | 結果                                                                                                                   |
 |--------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| xxxxxxxx:?xxxxxxxxxx=xxxxx.YY.YYYYYY\_-YYY.YYYYYY\_Xxxxxxx%YYXxxxxx                                                                                                | Xxxxxxxx xxx Xxxxxx'x Xxxxxx xx Xxx Xxxxx xxx xxxxxxxx xxx xxxxxxx xx x xxx xx xxx xxxx xxx xxxx.                         |
-| xxxxxxxx:?xxxxxxxxxx=xxxxx.YY.YYYYYY\_-YYY.YYYYYY\_Xxxxxxx%YYXxxxxx&xxx=YY                                                                                         | Xxxxxxxx x xxxxxxx xxxxx Xxxxxxx Xxxxxx xx Xxx Xxxxx xxx xxxxx xx xxxxx YY.                                               |
-| xxxxxxxx:?xxxxxxxxxx=xxxxx.YY.YYYYYY\_-YYY.YYYYYY\_Xxxxxxx%YYXxxxxx~xxxxx.YY.YYYYYY\_-YYY.YYYYYY\_Xxx%YYXxxxxxxx&xxx=YY&xx=YY.YYYYYY~-YYY.YYYYYY                   | Xxxxxxxx x xxxxxxx xxxxx Xxxxxxx Xxxxxx xxx x xxxxxxx xxxxx Xxx Xxxxxxxx xx Xxx Xxxxx xxx xxxxx xx xxxxx YY.              |
-| xxxxxxxx:?xxxxxxxxxx=xxxxx.YY.YYYYYY\_-YY.YYYYYY\_Xxxx%YYYXXxxxxxxx%YYYXxxxx%YYYXXxxxxxxxxx                                                                        | Xxxxxxxx Xxx Xxxx xxxx x xxxxxxx xxxxx Xxxx\_Xxxxxxxx\_xxxx\_Xxxxxxxxxx.                                                  |
-| xxxxxxxx:?xxxxxxxxxx=xxxx.Xxxxx%YYXxxx~xxxxx.YY.YYYYYY\_-YYY.YYYYYY\_Xxxxxxx%YYXxxxxx~xxxxx.YY.YYYYYY\_-YYY.YYYYYY\_Xxx%YYXxxxxxxx&xxx=YY&xx=YY.YYYYYY~-YYY.YYYYYY | Xxxxxxxx x xxxx xxxxx Xxxxx Xxxx xxx xxx xxxxxxxx xxx Xxxxxxx Xxxxxx xxx Xxx Xxxxxxxx xx Xxx Xxxxx xxx xxxxx xx xxxxx YY. |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace                                                                                                | ラスベガスのシーザーズ パレスを検索し、その結果を地図に表示します (最適な地図のビューで表示されます)。                         |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace&lvl=16                                                                                         | ラスベガスにあるシーザーズ パレスという名前のプッシュピンを表示し、ズーム レベルを 16 に設定します。                                               |
+| bingmaps:?collection=point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669                   | ラスベガスにあるシーザーズ パレスおよびベラジオという名前のプッシュピンを表示し、ズーム レベルを 16 に設定します。              |
+| bingmaps:?collection=point.40.726966\_-74.006076\_Fake%255FBusiness%255Fwith%255FUnderscore                                                                        | Fake\_Business\_with\_Underscore という名前のプッシュピンと共にニューヨークを表示します。                                                  |
+| bingmaps:?collection=name.Hotel%20List~point.36.116584\_-115.176753\_Caesars%20Palace~point.36.113126\_-115.175188\_The%20Bellagio&lvl=16&cp=36.114902~-115.176669 | Hotel List という名前の一覧、およびラスベガスにあるシーザーズ パレスとベラジオの 2 つのプッシュピンを表示し、ズーム レベルを 16 に設定します。 |
 
  
 
-## Xxxxxxx xxxxxxxxxx xxx xxxxxxx
+## ルート案内と交通情報の表示
 
 
-Xxx xxx xxxxxxx xxxxxxxxxx xxxxxxx xxx xxxxxx xxxxx xxx *xxx* xxxxxxxxx; xxxxx xxxxxx xxx xx xxxxxx xx xxxxxxx xx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxxx. Xxx xxx *xxxx* xxxxxxxxx xx xxxx xxxxxxx xxxxxxxxxxx. Xx xxxxxxx xxx xxxx xx xxxxxxxxxx: xxxxxxx, xxxxxxx, xx xxxxxxx, xxx xxx *xxxx* xxxxxxxxx. Xx *xxxx* xxx'x xxxxxxxxx, xxxxxxxxxx xxxx xx xxxxxxxx xxxxx xxx xxxx'x xxxx xx xxxxxxxxxxxxxx xxxxxxxxxx. Xxx xxxx xxxx xxxxx xxxxx xxxxxxxxxx xxx xxxxxx, xxx xxx [xxxxxxxx: xxxxxxxxx xxxxxxxxx](#bingmaps).
+*rtp* パラメーターを使って、2 つのポイント間のルート案内を表示できます。これらのポイントは、住所または緯度と軽度の座標で指定できます。 交通情報を表示するには、*trfc* パラメーターを使います。 ルート案内の種類 (自動車、徒歩、乗り換え案内) を指定するには、*mode* パラメーターを使います。 *mode* が指定されていない場合、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。 これらのパラメーターやその他のパラメーターについて詳しくは、[bingmaps: のパラメーター リファレンス](#bingmaps)をご覧ください。
 
-![xx xxxxxxx xx xxxxxxxxxx](images/windowsmapgcdirections.png)
+![ルート案内の例](images/windowsmapgcdirections.png)
 
-| Xxxxxx Xxx                                                                                                              | Xxxxxxx                                                                                                                                                         |
+| サンプル URI                                                                                                              | 結果                                                                                                                                                         |
 |-------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| xxxxxxxx:?xxx=xxx.YY.YYYY\_-YYY.YYYY~xxx.YY.YYYY\_-YYY.YYYY                                                             | Xxxxxxxx x xxx xxxx xxxxx-xx-xxxxx xxxxxxxxxx. Xxxxxxx *xxxx* xx xxx xxxxxxxxx, xxxxxxxxxx xxxx xx xxxxxxxx xxxxx xxx xxxx'x xxxx xx xxxxxxxxxxxxxx xxxxxxxxxx. |
-| xxxxxxxx:?xx=YY.YYYY~-YY.YYYY&xxxx=Y                                                                                    | Xxxxxxxx x xxx xxxxxxxx xxxx Xxxxxxxxx, XX xxxx xxxxxxx.                                                                                                        |
-| xxxxxxxx:?xxx=xxx.Xxx Xxxxxxxxx Xxx, Xxxxxxx, XX YYYYY~xxx.YY.YYYY\_-YYY.YYYY                                           | Xxxxxxxx x xxx xxxx xxxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxx xx xxx xxxxxxxxx xxxxxxxx.                                                                            |
-| xxxxxxxx:?xxx=xxx.Y%YYXxxxxxxxx%YYXxx,%YYXxxxxxx,%YYXX,%YYYYYYY~xxx.YY.YYYY\_-YYY.YYYY\_Xxxxx%YYXxxxxx%YYxxxxxxxx%YYxxx | Xxxxxxxx xxxxxxxxxx xxxx Y Xxxxxxxxx Xxx, Xxxxxxx, XX, YYYYY xx xxx Xxxxx Xxxxxx'x xxxxxxxx xxx.                                                                |
-| xxxxxxxx:?xxx=xxx.Xxxxxxxxx, XX~xxx.Xxxxxxxx Xxxxxxx                                                                    | Xxxxxxxx x xxx xxxx xxxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxx xx xxx xxxxxxxxx xxxxxxxx.                                                                   |
-| xxxxxxxx:?xxx=xxx.Xxxxxxxx%YYXxxx,%YYXX~xxx.Xxx%YYXxxxxxxxx%YYXxxxxxxxxxxxx%YYXxxxxxx,%YYXX&xxxx=x                      | Xxxxxxxx xxxxxxx xxxxxxxxxx xxxx Xxxxxxxx Xxxx, XX xx Xxx Xxxxxxxxx Xxxxxxxxxxxxx Xxxxxxx, XX.                                                                  |
-| xxxxxxxx:?xxx=xxx.Xxxxxxxx%YYXxxx,%YYXX~xxx.Xxx%YYXxxxxxxxx%YYXxxxxxxxxxxxx%YYXxxxxxx,%YYXX&xxxx=x                      | Xxxxxxxx xxxxxxx xxxxxxxxxx xxxx Xxxxxxxx Xxxx, XX xx Xxx Xxxxxxxxx Xxxxxxxxxxxxx Xxxxxxx, XX.                                                                  |
-| xxxxxxxx:?xxx=xxx.Xxxxxxxx%YYXxxx,%YYXX~xxx.Xxx%YYXxxxxxxxx%YYXxxxxxxxxxxxx%YYXxxxxxx,%YYXX&xxxx=x                      | Xxxxxxxx xxxxxxx xxxxxxxxxx xxxx Xxxxxxxx Xxxx, XX xx Xxx Xxxxxxxxx Xxxxxxxxxxxxx Xxxxxxx, XX.                                                                  |
+| bingmaps:?rtp=pos.44.9160\_-110.4158~pos.45.0475\_-109.4187                                                             | ポイント ツー ポイントのルート案内と共に地図を表示します。 *mode* が指定されていないため、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。 |
+| bingmaps:?cp=43.0332~-87.9167&trfc=1                                                                                    | ウィスコンシン州のミルウォーキーを中心とした地図と交通情報を表示します。                                                                                                        |
+| bingmaps:?rtp=adr.One Microsoft Way, Redmond, WA 98052~pos.39.0731\_-108.7238                                           | 指定した住所から指定した場所までのルート案内と共に地図を表示します。                                                                            |
+| bingmaps:?rtp=adr.1%20Microsoft%20Way,%20Redmond,%20WA,%2098052~pos.36.1223\_-111.9495\_Grand%20Canyon%20northern%20rim | 1 Microsoft Way, Redmond, WA、98052 からグランドキャニオンの北端までのルート案内を表示します。                                                                |
+| bingmaps:?rtp=adr.Davenport, CA~adr.Yosemite Village                                                                    | 指定した場所から指定したランドマークまでの自動車ルート案内と共に地図を表示します。                                                                   |
+| bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&mode=d                      | カリフォルニア州のマウンテンビューからカリフォルニア州のサンフランシスコ国際空港までの自動車ルート案内を表示します。                                                                  |
+| bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&mode=w                      | カリフォルニア州のマウンテンビューからカリフォルニア州のサンフランシスコ国際空港までの徒歩ルート案内を表示します。                                                                  |
+| bingmaps:?rtp=adr.Mountain%20View,%20CA~adr.San%20Francisco%20International%20Airport,%20CA&mode=t                      | カリフォルニア州のマウンテンビューからカリフォルニア州のサンフランシスコ国際空港までの乗り換え案内を表示します。                                                                  |
 
  
 
-## Xxxxxxx xxxx-xx-xxxx xxxxxxxxxx
+## ターン バイ ターン方式のルート案内の表示
 
 
-Xxx **xx-xxxxx-xx:** xxx **xx-xxxx-xx:** XXX xxxxxxx xxx xxx xxxxxx xxxxxxxx xxxx x xxxx-xx-xxxx xxxx xx x xxxxx. Xxxxx XXX xxxxxxx xxx xxxx xxxxxxx xxxxxxxxxx xxxx xxx xxxx'x xxxxxxx xxxxxxxx. Xx xxx xxxx xxxxxxx xxxxxxxxxx xxxxxxx xxxxxx xxxx xx xxx xxxxxxx xxx xxxx'x xxxxxxx xxxxxxxx, xxx xxx **xxxxxxx:** XXX xxxxxx xx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx. Xxx xxxx xxxx xxxxx xxxxx XXX xxxxxxx, xxx xxx [xx-xxxxx-xx:](#msdriveto) xxx [xx-xxxx-xx:](#mswalkto) xxxxxxxxx xxxxxxxxx.
+**ms-drive-to:** と **ms-walk-to:** の各 URI スキームでは、直接ターン バイ ターン方式のルート案内を起動できます。 これらの URI スキームでは、ユーザーの現在の場所からのルート案内のみを提供できます。 ユーザーの現在の場所を含まないポイント間のルート案内を提供する必要がある場合は、前のセクションで説明した **binmaps:** URI スキームを使います。 これらの URI スキームについて詳しくは、[ms-drive-to:](#msdriveto) と [ms-walk-to:](#mswalkto) のパラメーター リファレンスをご覧ください。
 
-> **Xxxxxxxxx**  Xxxx xxx **xx-xxxxx-xx:** xx **xx-xxxx-xx:** XXX xxxxxxx xxx xxxxxxxx, xxx Xxxx xxx xxxx xxxxx xx xxx xx xxx xxxxxx xxx xxxx xxx x XXX xxxxxxxx xxx. Xx xx xxx, xxxx xxx Xxxx xxx xxxx xxxxxxx xx xxxx-xx-xxxx xxxxxxxxxx. Xx xx xxxx'x, xxx xxx xxxx xxxxxxx xxx xxxxx xxxxxxxx, xx xxxxxxxxx xx [Xxxxxxx xxxxxxxxxx xxx xxxxxxx](#directions).
+> **重要**  **ms-drive-to:** または **ms-walk-to:** の URI スキームが呼び出されると、マップ アプリは、デバイスで GPS 位置情報の修正が行われたことがあるかどうかを確認します。 行われたことがある場合は、ターン バイ ターン方式のルート案内に進みます。 行われたことがない場合は、「[ルート案内と交通情報の表示](#directions)」で説明したルートの概要を表示します。
 
  
 
-![xx xxxxxxx xx xxxx-xx-xxxx xxxxxxxxxx](images/windowsmapsappdirections.png)
+![ターン バイ ターン方式のルート案内の例](images/windowsmapsappdirections.png)
 
-| Xxxxxx Xxx                                                                                                | Xxxxxxx                                                                                       |
+| サンプル URI                                                                                                | 結果                                                                                       |
 |-----------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| xx-xxxxx-xx:?xxxxxxxxxxx.xxxxxxxx=YY.YYYYYY&xxxxxxxxxxx.xxxxxxxxx=-YYY.YYYYYY&xxxxxxxxxxx.xxxx=Xxxxx Xxxx | Xxxxxxxx x xxx xxxx xxxx-xx-xxxx xxxxxxx xxxxxxxxxx xx Xxxxx Xxxx xxxx xxxx xxxxxxx xxxxxxxx. |
-| xx-xxxx-xx:?xxxxxxxxxxx.xxxxxxxx=YY.YYYYYY&xxxxxxxxxxx.xxxxxxxxx=-YYY.YYYYYY&xxxxxxxxxxx.xxxx=Xxxxx Xxxx  | Xxxxxxxx x xxx xxxx xxxx-xx-xxxx xxxxxxx xxxxxxxxxx xx Xxxxx Xxxx xxxx xxxx xxxxxxx xxxxxxxx. |
+| ms-drive-to:?destination.latitude=47.680504&destination.longitude=-122.328262&destination.name=Green Lake | 現在の場所からグリーン湖までのターン バイ ターン方式の自動車ルート案内と共に地図を表示します。 |
+| ms-walk-to:?destination.latitude=47.680504&destination.longitude=-122.328262&destination.name=Green Lake  | 現在の場所からグリーン湖までのターン バイ ターン方式の徒歩ルート案内と共に地図を表示します。 |
 
  
 
-## xxxxxxxx: xxxxxxxxx xxxxxxxxx
+## bingmaps: のパラメーター リファレンス
 
 
-Xxx xxxxxx xxx xxxx xxxxxxxxx xx xxxx xxxxx xx xxxxx xx xxxxx Xxxxxxxxx Xxxxxx–Xxxx Xxxx (XXXX).
+次に示す各パラメーターの構文は、拡張バッカスナウア記法 (ABNF) を使って表されています。
 
 <table>
 <colgroup>
@@ -164,251 +164,255 @@ Xxx xxxxxx xxx xxxx xxxxxxxxx xx xxxx xxxxx xx xxxxx xx xxxxx Xxxxxxxxx Xxxxxx�
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxxxx</th>
-<th align="left">Xxxxxxxxxx</th>
-<th align="left">XXXX Xxxxxxxxxx xxx Xxxxxxx</th>
-<th align="left">Xxxxxxx</th>
+<th align="left">パラメーター</th>
+<th align="left">定義</th>
+<th align="left">ABNF での定義と例</th>
+<th align="left">詳細</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>**xx**</p></td>
-<td align="left"><p>Xxxxxx xxxxx</p></td>
-<td align="left"><p>xx = "xx=" xxxxx</p>
-<p>xxxxx = xxxxxxxxxx "~" xxxxxxxxxx</p>
-<p>xxxxxxxxxx = ["-"] Y*YXXXXX ["." Y*YXXXXX]</p>
-<p>xxxxxxxxxx = ["-"] Y*YXXXXX ["." Y*YXXXXX]</p>
-<p>Xxxxxxx:</p>
-<p>xx=YY.YYYYYY~-YY.YYYYYY</p></td>
-<td align="left"><p>Xxxx xxxxxx xxxx xx xxxxxxxxx xx xxxxxxx xxxxxxx xxx xxxxxxxxx xx x xxxxx(**~**).</p>
-<p>Xxxxx xxxxxxxxx xxxxxx xxx xxxxxxx -YYY xxx +YYY xxxxxxxxx.</p>
-<p>Xxxxx xxxxxxxx xxxxxx xxx xxxxxxx -YY xxx +YY xxxxxxxxx.</p></td>
+<td align="left"><p>**cp**</p></td>
+<td align="left"><p>中心点</p></td>
+<td align="left"><p>cp = "cp=" cpval</p>
+<p>cpval = degreeslat "~" degreeslon</p>
+<p>degreeslat = ["-"] 1*3DIGIT ["." 1*7DIGIT]</p>
+<p>degreeslon = ["-"] 1*2DIGIT ["." 1*7DIGIT]</p>
+<p>例:</p>
+<p>cp=40.726966~-74.006076</p></td>
+<td align="left"><p>どちらの値も、10 進角で表し、チルダ (**~**) で区切る必要があります。</p>
+<p>有効な経度の値の範囲は -180 ～ +180 です (両端の値を含む)。</p>
+<p>有効な緯度の値の範囲は -90 ～ +90 です (両端の値を含む)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>**xx**</p></td>
-<td align="left"><p>Xxxxxxxx xxx</p></td>
-<td align="left"><p>xx = "xx=" xxxxxxxxxxxxx "_" xxxxxxxxxxxxx "~" xxxxxxxxxxxxx "_" xxxxxxxxxxxxx</p>
-<p>xxxxxxxxxxxxx = xxxxxxxxxx</p>
-<p>xxxxxxxxxxxxx = xxxxxxxxxx</p>
-<p>xxxxxxxxxxxxx = xxxxxxxxxx</p>
-<p>xxxxxxxxxxxxx = xxxxxxxxxx</p>
-<p>Xxxxxxx:</p>
-<p>xx=YY.YYY_-YY.YY~YY.YY_-YY.Y</p></td>
-<td align="left"><p>X xxxxxxxxxxx xxxx xxxx xxxxxxxxx xxx xxxxxxxx xxx xxxxxxxxx xx xxxxxxx xxxxxxx, xxxxx x xxxxx (**~**) xx xxxxxxxx xxx xxxxx xxxx xxxxxx xxxx xxx xxxxx xxxxx xxxxxx. Xxxxxxxx xxx xxxxxxxxx xxx xxxx xxx xxxxxxxxx xxxx xx xxxxxxxxxx (**_**).</p>
-<p>Xxxxx xxxxxxxxx xxxxxx xxx xxxxxxx -YYY xxx +YYY xxxxxxxxx.</p>
-<p>Xxxxx xxxxxxxx xxxxxx xxx xxxxxxx -YY xxx +YY xxxxxxxxx.</p></td>
+<td align="left"><p>**bb**</p></td>
+<td align="left"><p>境界ボックス</p></td>
+<td align="left"><p>bb = "bb=" southlatitude "_" westlongitude "~" northlatitude "_" eastlongitude</p>
+<p>southlatitude = degreeslat</p>
+<p>northlatitude = degreeslat</p>
+<p>westlongitude = degreeslon</p>
+<p>eastlongitude = degreeslon</p>
+<p>例:</p>
+<p>bb=39.719_-74.52~41.71_-73.5</p></td>
+<td align="left"><p>境界ボックスを指定する四角形の領域。10 進角で表し、左下隅と右上隅を区別するためにチルダ (**~**) を使います。 それぞれの緯度と経度は、アンダー スコア (**_**) で区切られます。</p>
+<p>有効な経度の値の範囲は -180 ～ +180 です (両端の値を含む)。</p>
+<p>有効な緯度の値の範囲は -90 ～ +90 です (両端の値を含む)。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>**xxxxx**</p></td>
-<td align="left"><p>Xxxxxxxx</p></td>
-<td align="left"><p>xxxxx = "xxxxx=" xxxxxxxx</p>
-<p>xxxxxxxx = Y*( XXXXX / XXXXX / "-" / "." / "_" / xxx-xxxxxxx / "!" / "$" / "'" / "(" / ")" / "*" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
-<p>Xxxxxxx:</p>
-<p>xxxxx=YYYY%YYXxxxxxxxxxxx%YYXxx,%YYXxxxxxxxxx,%YYXX</p></td>
-<td align="left"><p>Xxxxxx xxxx xxxxx xx x xxxxxxxx, xxxxxxxx xx xxxxx.</p></td>
+<td align="left"><p>**where**</p></td>
+<td align="left"><p>位置情報</p></td>
+<td align="left"><p>where = "where=" whereval</p>
+<p>whereval = 1*( ALPHA / DIGIT / "-" / "." / "_" / pct-encoded / "!" / "$" / "'" / "(" / ")" / "*" / "+" / "," / ";" / ":" / "@" / "/" / "?")</p>
+<p>例:</p>
+<p>where=1600%20Pennsylvania%20Ave,%20Washington,%20DC</p></td>
+<td align="left"><p>検索語句 (所在地、ランドマークや場所の名称)。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>**x**</p></td>
-<td align="left"><p>Xxxxx Xxxx</p></td>
-<td align="left"><p>x = "x=" xxxx</p>
-<p>xxxx = xxxxxxxx / "~"</p>
-<p>Xxxxxxx:</p>
-<p>x=xxxxxxx%YYxxxxxxxxxxx</p></td>
-<td align="left"><p>Xxxxxx xxxx xxx xxxxx xxxxxxxx xx xxxxxxxx xx xxxxxxxxxx.</p></td>
+<td align="left"><p>**q**</p></td>
+<td align="left"><p>クエリ語句</p></td>
+<td align="left"><p>q = "q=" qval</p>
+<p>qval = whereval / "~"</p>
+<p>例:</p>
+<p>q=mexican%20restaurants</p></td>
+<td align="left"><p>各地のビジネスや業種を検索するための語句。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>**xxx**</p></td>
-<td align="left"><p>Xxxx Xxxxx</p></td>
-<td align="left"><p>xxx = "xxx=" Y*YXXXXX ["." Y*YXXXXX]</p>
-<p>Xxxxxxx:</p>
-x
-<p>xxx=YY.YY</p></td>
-<td align="left"><p>Xxxxxxx xxx xxxx xxxxx xx xxx xxx xxxx. Xxxxx xxxxxx xxx Y-YY xxxxx Y xx xxxxxx xxx xxx xxx xxx.</p></td>
+<td align="left"><p>**lvl**</p></td>
+<td align="left"><p>ズーム レベル</p></td>
+<td align="left"><p>lvl = "lvl=" 1*2DIGIT ["." 1*2DIGIT]</p>
+<p>例:</p>
+l
+<p>lvl=10.50</p></td>
+<td align="left"><p>地図ビューのズーム レベルを定義します。 有効な値は 1 ～ 20 です。1 は、最も縮小された状態で表示します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>**xxx**</p></td>
-<td align="left"><p>Xxxxx</p></td>
-<td align="left"><p>xxx = "xxx=" ("x" / "x"/"Yx")</p>
-<p>Xxxxxxx:</p>
-<p>xxx=x</p></td>
-<td align="left"><p>Xxxxxxx xxx xxx xxxxx. Xxxxx xxxxxx xxx xxxx xxxxxxxxx xxxxxxx:</p>
+<td align="left"><p>**sty**</p></td>
+<td align="left"><p>形式</p></td>
+<td align="left"><p>sty = "sty=" ("a" / "r"/"3d")</p>
+<p>例:</p>
+<p>sty=a</p></td>
+<td align="left"><p>地図の形式を定義します。 このパラメーターの有効な値は次のとおりです。</p>
 <ul>
-<li>**x**: Xxxxxxx xx xxxxxx xxxx xx xxx xxx.</li>
-<li>**x**: Xxxxxxx x xxxx xxxx xx xxx xxx.</li>
-<li>**Yx**: Xxxxxxx x YX xxxx xx xxx xxx. Xxx xx xxxxxxxxxxx xxxx xxx **xx** xxxxxxxxx xxx xxxxxxxxxx xxxx xxx **xxx** xxxxxxxxx.</li>
+<li>**a**: 地図の航空写真を表示します。</li>
+<li>**r**: 地図の道路図を表示します。</li>
+<li>**3d**: 地図を 3D で表示します。 **cp** パラメーターと組み合わせて使います。必要に応じて、**rad** パラメーターと共に使うこともできます。</li>
 </ul>
 <div class="alert">
-> **Xxxx**  Xxxxxxxx xxx **xxx** xxxxxxxxx xxxxxxxx xxx xxxx xxxxxxx xx xxx=x.
+> **注**  **sty** パラメーターを省略すると、sty=r と同じ結果が表示されます。
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>**xxx**</p></td>
-<td align="left"><p>Xxxxxx</p></td>
-<td align="left"><p>xxx = "xxx=" Y*YXXXXX</p>
-<p>Xxxxxxx:</p>
-<p>xxx=YYYY</p></td>
-<td align="left"><p>X xxxxxxxx xxxx xxxx xxxxxxxxx xxx xxxxxxx xxx xxxx. Xxx xxxxxx xxxxx xx xxxxxxxx xx xxxxxx.</p></td>
+<td align="left"><p>**rad**</p></td>
+<td align="left"><p>半径</p></td>
+<td align="left"><p>rad = "rad=" 1*8DIGIT</p>
+<p>例:</p>
+<p>rad=1000</p></td>
+<td align="left"><p>目的の地図ビューを表す円形領域です。 半径の値はメートル単位で指定します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>**xxx**</p></td>
-<td align="left"><p>Xxxxx</p></td>
-<td align="left"><p>xxx = "xxx=" xxxxx</p>
-<p>Xxxxxxx:</p>
-<p>xxx=YY</p></td>
-<td align="left"><p>Xxxxxxxxx xxx xxxxx xxxx xxx xxx xx xxxxxx xx, xxxxx YY xx xxxxxxx xxx xx xxx xxxxxxx (xxxxxxx) xxx Y xx xxxxxxx xxxxxxxx xxxx (xxxxxxx).</p></td>
+<td align="left"><p>**pit**</p></td>
+<td align="left"><p>ピッチ</p></td>
+<td align="left"><p>pit = "pit=" pitch</p>
+<p>例:</p>
+<p>pit=60</p></td>
+<td align="left"><p>地図を表示する角度を指定します。90 は水平方向を見ること (最大) を表し、0 は真下を見下ろすこと (最小) を表します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>**xxx**</p></td>
-<td align="left"><p>Xxxxxxx</p></td>
-<td align="left"><p>xxx = "xxx=" xxxxxxx</p>
-<p>Xxxxxxx:</p>
-<p>xxx=YYY</p></td>
-<td align="left"><p>Xxxxxxxxx xxx xxxxxxxxx xxx xxx xx xxxxxxx xx xxxxxxx, xxxxx Y xx YYY = Xxxxx, YY = Xxxx, YYY = Xxxxx, xxx YYY = Xxxx.</p></td>
+<td align="left"><p>**hdg**</p></td>
+<td align="left"><p>方位</p></td>
+<td align="left"><p>hdg = "hdg=" heading</p>
+<p>例:</p>
+<p>hdg=180</p></td>
+<td align="left"><p>地図の向いている方位を角度で指定します。0 または 360 は北、90 は東、180 は南、270 は西を表します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>**xx**</p></td>
-<td align="left"><p>Xxxxxxxxxx</p></td>
-<td align="left"><p>xx = "xx=" XXX</p>
-<p>Xxxxxxx:</p>
-<p>xx=Y</p></td>
-<td align="left"><p>Xxxxxxxxx xxxx xxxxxx-xxxxx xxxxxxx xx xxxxx xxxx <code>ss=1</code>. Xxxxxxxx xxx **xx** xxxxxxxxx xxxxxxxx xxx xxxx xxxxxx xx <code>ss=0</code>. Xxx xx xxxxxxxxxxx xxxx xxx **xx** xxxxxxxxx xx xxxxxxx xxx xxxxxxxx xx xxx xxxxxx-xxxxx xxxx.</p>
+<td align="left"><p>**ss**</p></td>
+<td align="left"><p>Streetside</p></td>
+<td align="left"><p>ss = "ss=" BIT</p>
+<p>例:</p>
+<p>ss=1</p></td>
+<td align="left"><p>ss=1 の場合は、ストリート レベルの画像が表示されることを示します。 <code>ss=1</code>. **ss** パラメーターを省略すると、ss=0 と同じ結果が表示されます。 <code>ss=0</code>. **cp** パラメーターと組み合わせて使うと、ストリート レベル ビューの場所を指定できます。</p>
 <div class="alert">
-> **Xxxx**  Xxxxxx-xxxxx xxxxxxx xx xxx xxxxxxxxx xx xxx xxxxxxx.
+> **注**  ストリート レベルの画像は、すべての地域で利用できるわけではありません。
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>**xxxx**</p></td>
-<td align="left"><p>Xxxxxxx</p></td>
-<td align="left"><p>xxxx = "xxxx=" XXX</p>
-<p>Xxxxxxx:</p>
-<p>xxxx=Y</p></td>
-<td align="left"><p>Xxxxxxxxx xxxxxxx xxxxxxx xxxxxxxxxxx xx xxxxxxxx xx xxx xxx. Xxxxxxxx xxx xxxx xxxxxxxxx xxxxxxxx xxx xxxx xxxxxxx xx <code>trfc=0</code>.</p>
+<td align="left"><p>**trfc**</p></td>
+<td align="left"><p>交通情報</p></td>
+<td align="left"><p>trfc = "trfc=" BIT</p>
+<p>例:</p>
+<p>trfc=1</p></td>
+<td align="left"><p>交通情報を地図に含めるかどうかを指定します。 trfc パラメーターを省略すると、trfc=0 と同じ結果が表示されます。 <code>trfc=0</code>.</p>
 <div class="alert">
-> **Xxxx**  Xxxxxxx xxxx xx xxx xxxxxxxxx xx xxx xxxxxxx.
+> **注**  交通情報のデータは、すべての地域で利用できるわけではありません。
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="even">
-<td align="left"><p>**xxx**</p></td>
-<td align="left"><p>Xxxxx</p></td>
-<td align="left"><p>xxx = "xxx=" (xxxxxxxx "~" [xxxxxxxx]) / ("~" xxxxxxxx)</p>
-<p>xxxxxxxx = (("xxx." xxxxx ["_" xxxxxxxx]) / ("xxx." xxxxxxxx))</p>
-<p>Xxxxxxxx:</p>
-<p>xxx=xxx.Xxxxxxxx%YYXxxx,%YYXX~xxx.XXX</p>
-<p>xxx=xxx.Xxx%YYXxxxxxxxx%YYXxx,%YYXxxxxxx,%YYXX~xxx.YY.YYYYY_-YYY.YYYY _Xx%YYXxxxxx%YYXxxx</p></td>
-<td align="left"><p>Xxxxxxx xxx xxxxx xxx xxx xx x xxxxx xx xxxx xx xxx xxx, xxxxxxxxx xx x xxxxx (**~**). Xxxx xx xxx xxxxxxxxx xx xxxxxxx xx xxxxxx x xxxxxxxx xxxxx xxxxxxxx xxx xxxxxxxxx (**xx**) xx xx xxxxxxx xxxxxxxxxx (**xxxxx**).</p>
-<p>X xxxxxxxx xxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxx. Xxx xxxxxxx, x xxxxx xxxx xxx xxxxxxxxx xx xxxxxxx xx <code>rtp="A"~"B"</code>.</p>
-<p>Xx'x xxxx xxxxxxxxxx xx xxxxxxx xx xxxxxxxxxx xxxxx. Xxx xxxxxxx, xxx xxx xxxxxx xxxx xxx xxxxx xx x xxxxx xxxx <code>rtp="A"~</code>. Xx xxxx xxxx, xxx xxxxxxx xxxxxxxxxx xxxxx xxxxx xx xxxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx xx xxx **Xxxx:** xxxxx xxx xxx **Xx:** xxxxx xxxx xxx xxxxx.</p>
-<p>Xx xxxx xxx xxx xx x xxxxx xx xxxxxxxxx, xx xxxx <code>rtp=~"B"</code>, xxx xxxxxxx xxxxxxxxxx xxxxx xx xxxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx xx xxx **Xx:** xxxxx. Xx xxxxxxxxx, xxx xxxxxxx xxxxxxxx xx xxx-xxxxxxxxx xx xxx **Xxxx:** xxxxx xxxx xxxxx.</p>
-<p>Xx xxxxx xxxx xx xxxxx xxxx xx xxxxxxxxxx xxxxx xx xxxxx.</p>
-<p>Xxx xx xxxxxxxxxxx xxxx xxx **xxxx** xxxxxxxxx xx xxxxxxx xxx xxxx xx xxxxxxxxxxxxxx (xxxxxxx, xxxxxxx, xx xxxxxxx). Xx **xxxx** xxx'x xxxxxxxxx, xxxxxxxxxx xxxx xx xxxxxxxx xxxxx xxx xxxx'x xxxx xx xxxxxxxxxxxxxx xxxxxxxxxx.</p>
+<td align="left"><p>**rtp**</p></td>
+<td align="left"><p>ルート</p></td>
+<td align="left"><p>rtp = "rtp=" (waypoint "~" [waypoint]) / ("~" waypoint)</p>
+<p>waypoint = (("pos." cpval ["_" whereval]) / ("adr." whereval))</p>
+<p>例:</p>
+<p>rtp=adr.Mountain%20View,%20CA~adr.SFO</p>
+<p>rtp=adr.One%20Microsoft%20Way,%20Redmond,%20WA~pos.45.23423_-122.1232 _My%20Picnic%20Spot</p></td>
+<td align="left"><p>地図上に表示するルートの開始地点と終了地点を、チルダ (**~**) で区切って定義します。 各中間点は、緯度と経度を使った位置 (**cp**) または住所の識別情報 (**where**) を使って定義します。</p>
+<p>完全なルートとは、中間点が 2 つだけ含まれるルートです。 たとえば、2 つの中間点を持つルートは、rtp="A"~"B" のように定義されます。 <code>rtp="A"~"B"</code>.</p>
+<p>不完全なルートを指定することもできます。 たとえば、ルートの開始地点だけを定義する場合は、rtp="A"~ のように指定できます。 <code>rtp="A"~</code>. この場合、自動車ルート案内の入力パネルが表示されると、**[出発地]** フィールドには指定された中間点が表示され、**[目的地]** フィールドにフォーカスが設定されます。</p>
+<p>また、ルートの終了地点だけを定義する場合は、rtp=~"B" のように指定できます。 <code>rtp=~"B"</code>自動車ルート案内のパネルが表示されると、**[目的地]** フィールドには指定された中間点が表示されます。 可能な場合は、**[出発地]** フィールドに現在の場所があらかじめ入力され、フォーカスが設定されます。</p>
+<p>不完全なルートが指定されている場合は、ルートの線は表示されません。</p>
+<p>**mode** パラメーターと組み合わせて使うと、交通手段のモード (自動車、公共交通機関、徒歩) を指定できます。 **mode** が指定されていない場合、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。</p>
 <div class="alert">
-**Xxxx**  X xxxxx xxx xx xxxx xxx x xxxxxxxx xx xxx xxxxxxxx xx xxxxxxxxx xx xxx **xxx** xxxxxxxxx xxxxx. Xxxxxx xxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxxx, xxx xxxxx xxxx xx xxxxxxxxx.
+**注**  **pos** パラメーターの値によって場所が指定されている場合、その場所に対してタイトルを使うことができます。 緯度と経度が表示される代わりに、タイトルが表示されます。
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>**xxxx**</p></td>
-<td align="left"><p>Xxxxx xxxx</p></td>
-<td align="left"><p>xxxx = "xxxx=" ("x" / "x" / "x")</p>
-<p>Xxxxxxx:</p>
-<p>xxxx=x</p></td>
-<td align="left"><p>Xxxxxxx xxx xxxxx xxxx. Xxxxx xxxxxx xxx xxxx xxxxxxxxx xxxxxxx:</p>
+<td align="left"><p>**mode**</p></td>
+<td align="left"><p>ルート モード</p></td>
+<td align="left"><p>mode = "mode=" ("d" / "t" / "w")</p>
+<p>例:</p>
+<p>mode=d</p></td>
+<td align="left"><p>ルート モードを定義します。 このパラメーターの有効な値は次のとおりです。</p>
 <ul>
-<li>**x**: Xxxxxxxx xxxxx xxxxxxxx xxx xxxxxxx xxxxxxxxxx</li>
-<li>**x**: Xxxxxxxx xxxxx xxxxxxxx xxx xxxxxxx xxxxxxxxxx</li>
-<li>**x**: Xxxxxxxx xxxxx xxxxxxxx xxx xxxxxxx xxxxxxxxxx</li>
+<li>**d**: 自動車ルート案内のルートの概要を表示します。</li>
+<li>**t**: 乗り換え案内のルートの概要を表示します。</li>
+<li>**w**: 徒歩ルート案内のルートの概要を表示します。</li>
 </ul>
-<p>Xxx xx xxxxxxxxxxx xxxx xxx **xxx** xxxxxxxxx xxx xxxxx xxxxxxxxxx. Xx **xxxx** xxx'x xxxxxxxxx, xxxxxxxxxx xxxx xx xxxxxxxx xxxxx xxx xxxx'x xxxx xx xxxxxxxxxxxxxx xxxxxxxxxx.</p></td>
+<p>ルート案内の **rtp** パラメーターと組み合わせて使います。 **mode** が指定されていない場合、ルート案内は、ユーザーの交通手段の設定のモードを使って提供されます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>**xxxxxxxxxx**</p></td>
-<td align="left"><p>Xxxxxxxxxx</p></td>
-<td align="left"><p>xxxxxxxxxx = "xxxxxxxxxx="</p>
-<p>Xxxxxxx:</p>
-<p>xxxxxxxxxx=xxxx.Xxxxxx%YYXxxx</p></td>
-<td align="left"><p>Xxxxxxxxxx xx xxxxxxxx xx xx xxxxx xx xxx xxx xxx xxxx.</p>
-<p>Xxxxxxxxx Xxxxxxxx xxx:</p>
+<td align="left"><p>**collection**</p></td>
+<td align="left"><p>コレクション</p></td>
+<td align="left"><p>collection = "collection="</p>
+<p>例:</p>
+<p>collection=name.Custom%20List</p></td>
+<td align="left"><p>地図と一覧に追加されるエンティティのコレクションです。</p>
+<p>サポートされているエンティティは、次のとおりです。</p>
 <ul>
-<li>xxxxx</li>
+<li>point</li>
 </ul>
-<p>Xxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxxx xxxxx xxxx xxxxxx (**~**).</p>
-<p>Xx xxx xxxx xxx xxxxxxx xxxxxxxx x xxxxx, xxxx xxxx xxx xxxxx xx xxxxxxx xx <code>%7E</code>. Xx xxx xxxxxxxxxxx xx Xxxxxx xxxxx xxx Xxxx Xxxxx xxxxxxxxxx, xxx xxxxxxxxxx xxxx xxxxxxx xxx xxxx xxx xxxx.</p></td>
+<p>コレクションを編集する際に複数の項目を含める場合は、各項目をチルダ (**~**) で区切ります。</p>
+<p>指定した項目にチルダが含まれている場合は、そのチルダを %7E としてエンコードしてください。 <code>%7E</code>. 中心点のパラメーターやズーム レベルのパラメーターと共に使わない場合、コレクションによって、最適な地図ビューが表示されます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>**xxxxx**</p></td>
-<td align="left"><p>Xxxxx</p></td>
-<td align="left"><p>xxxxx = "xxxxx." xxxxxxxx_xxxxx_xxxxx_xxxx XXX_xxxxx XXX</p>
-<p>xxxxxxxx = xxxxxxxxxx "_" xxxxxxxxxx</p>
-<p>xxxxx = xxxxxxxx / _</p>
-<p>Xxxxxxx:</p>
-<p>xxxxxxxxxx=xxxxx.YY.YYYYYY_-YY.YYYYYY_Xxx%YYXxxxx</p></td>
-<td align="left"><p>Xxxxxxxxx x xxxxx xx xxx xx xxxxx xxxxxxxx xxx xxxxxxxxx. Xxx xxxxxx, xxx xxxxx xxxxxxxx xxx xxxxxxxx, xxxxxxxxx, xxxxx, xxxxx, xxxx XXX, xxx xxxxx XXX xx xxxxxxx, xxxx xxxxxxxxx xx xx xxxxxxxxxx (**_**):</p>
-<p>Xx xxx xxxx xxx xxxxxxx xxxxxxxx xx xxxxxxxxxx, xxxx xxxx xxx xxxxxxxxxx xx xxxxxx xxxxxxx xx <code>%255F</code>.</p>
-<p>Xxx xxxxxx xx xxx xxxxx xxx xxxxx xxxxxxxxxx xx YYY xxxxx.</p>
-<p>Xx x xxxxx xx xxxxxxx xxxxxxx x xxxx, xxx xxxxx xxxx xx "Xxxxxx xxx."</p></td>
+<td align="left"><p>**point**</p></td>
+<td align="left"><p>ポイント</p></td>
+<td align="left"><p>point = "point." pointval_title_notes_link URL_photo URL</p>
+<p>pointval = degreeslat "_" degreeslon</p>
+<p>title = whereval / _</p>
+<p>例:</p>
+<p>collection=point.40.726966_-74.006076_Pin%20Title</p></td>
+<td align="left"><p>緯度と経度を使って、追加するポイントを指定します。 ポイントの値としては、緯度、経度、タイトル、メモ、リンク URL、表示する写真の URL などを使うことができます。それぞれの値は、アンダースコア (**_**) で区切ります。</p>
+<p>指定した項目にアンダースコアが含まれている場合は、そのアンダースコアを %255F としてダブル エンコードしてください。 <code>%255F</code>.</p>
+<p>タイトルとメモのパラメーターの最大長は 255 文字です。</p>
+<p>名前を指定せずにポイントを定義すると、タイトルが "Custom pin" になります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>**xxxx**</p></td>
-<td align="left"><p>Xxxx</p></td>
-<td align="left"><p>xxxx = "xxxx." xxxxxxxx</p>
-<p>Xxxxxxx:</p>
-<p>xxxxxxxxxx=xxxx.Xxxxx%YYXxxx</p></td>
-<td align="left"><p>Xxxx xx xxx xxxxxxxxxx. Xx x xxxx xx xxx xxxxxxxx xxx xxxxx xx xxxx xxxx xxx xxxxxx xx xxx xxxxxxxxxx, xxx xxxxxxx xxxx xx "Xxxxxx xxxx."</p></td>
+<td align="left"><p>**name**</p></td>
+<td align="left"><p>名前</p></td>
+<td align="left"><p>name = "name." whereval</p>
+<p>例:</p>
+<p>collection=name.Hotel%20List</p></td>
+<td align="left"><p>コレクションの名前です。 名前を指定しない場合、コレクションに複数のエンティティが含まれていると、既定の名前は "Custom pins" になります。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## xx-xxxxx-xx: xxxxxxxxx xxxxxxxxx
+## ms-drive-to: のパラメーター リファレンス
 
 
-Xxx Xxx xx xxxxxx x xxxxxxx xxx xxxx-xx-xxxx xxxxxxx xxxxxxxxxx xxx xxx xxxxxxxxx xxxxxx.
+ターン バイ ターン方式の自動車ルート案内の要求を起動する URI は、次の形式になります。
 
-> **Xxxx**  Xxx xxx’x xxxxxxx xxx xxxxxxxx xxxxx xx xxxx XXX xxxxxx. Xxx xxxxxxxx xxxxx xx xxxxxx xxxxxxx xx xx xxx xxxxxxx xxxxxxxx. Xx xxx xxxx xx xxxxxxx x xxxxxxxx xxxxx xxxxx xxxx xxx xxxxxxx xxxxxxxx, xxx [Xxxxxxx xxxxxxxxxx xxx xxxxxxx](#directions).
+> **注**  この URI スキームでは出発地を指定しません。 常に、現在の場所が出発地であると見なされます。 現在の場所以外の出発地を指定する必要がある場合は、「[ルート案内と交通情報の表示](#directions)」をご覧ください。
 
  
 
-| Xxxxxxxxx | Xxxxxxxxxx | Xxxxxxx | Xxxxxxx |
+| パラメーター | 定義 | 例 | 詳細 |
 |------------|-----------|---------|---------|
-| **xxxxxxxxxxx.xxxxxxxx** | Xxxxxxxxxxx xxxxxxxx | Xxxxxxx: xxxxxxxxxxx.xxxxxxxx=YY.YYYYYYYYYYYYY | Xxx xxxxxxxx xx xxx xxxxxxxxxxx. |
-| **xxxxxxxxxxx.xxxxxxxxx** | Xxxxxxxxxxx xxxxxxxxx | Xxxxxxx: xxxxxxxxxxx.xxxxxxxxx=-YYY.YYYYYYYYYYYY | Xxx xxxxxxxxx xx xxx xxxxxxxxxxx. |
-| **xxxx** | Xxxx xx xxx xxxxxxxxxxx | Xxxxxxx: xxxxxxxxxxx.xxxx=Xxxxxxx, XX | Xxxx xxxx xx xxx xxxxxxxxxxx. Xxx xx xxx xxxx xx xxxxxx xxx Xxx xx xxx **xxxx** xxxxx. |
+| **destination.latitude** | 目的地の緯度 | 例: destination.latitude=47.6451413797194 | 目的地の緯度です。 |
+| **destination.longitude** | 目的地の経度 | 例: destination.longitude=-122.141964733601 | 目的地の経度です。 |
+| **name** | 目的地の名前 | 例: destination.name=Redmond, WA | 目的地の名前です。 URI や **name** の値をエンコードする必要はありません。 |
 
  
 
-## xx-xxxx-xx: xxxxxxxxx xxxxxxxxx
+## ms-walk-to: のパラメーター リファレンス
 
 
-Xxx Xxx xx xxxxxx x xxxxxxx xxx xxxx-xx-xxxx xxxxxxx xxxxxxxxxx xxx xxx xxxxxxxxx xxxxxx.
+ターン バイ ターン方式の徒歩ルート案内の要求を起動する URI は、次の形式になります。
 
-> **Xxxx**  Xxx xxx’x xxxxxxx xxx xxxxxxxx xxxxx xx xxxx XXX xxxxxx. Xxx xxxxxxxx xxxxx xx xxxxxx xxxxxxx xx xx xxx xxxxxxx xxxxxxxx. Xx xxx xxxx xx xxxxxxx x xxxxxxxx xxxxx xxxxx xxxx xxx xxxxxxx xxxxxxxx, xxx [Xxxxxxx xxxxxxxxxx xxx xxxxxxx](#directions).
+> **注**  この URI スキームでは出発地を指定しません。 常に、現在の場所が出発地であると見なされます。 現在の場所以外の出発地を指定する必要がある場合は、「[ルート案内と交通情報の表示](#directions)」をご覧ください。
 
  
 
-| Xxxxxxxxx | Xxxxxxxxxx | Xxxxxxx | Xxxxxxx |
+| パラメーター | 定義 | 例 | 詳細 |
 |-----------|------------|---------|----------|
-| **xxxxxxxxxxx.xxxxxxxx** | Xxxxxxxxxxx xxxxxxxx | Xxxxxxx: xxxxxxxxxxx.xxxxxxxx=YY.YYYYYYYYYYYYY | Xxx xxxxxxxx xx xxx xxxxxxxxxxx. |
-| **xxxxxxxxxxx.xxxxxxxxx** | Xxxxxxxxxxx xxxxxxxxx | Xxxxxxx: xxxxxxxxxxx.xxxxxxxxx=-YYY.YYYYYYYYYYYY | Xxx xxxxxxxxx xx xxx xxxxxxxxxxx. |
-| **xxxx** | Xxxx xx xxx xxxxxxxxxxx | Xxxxxxx: xxxxxxxxxxx.xxxx=Xxxxxxx, XX | Xxxx xxxx xx xxx xxxxxxxxxxx. Xxx xx xxx xxxx xx xxxxxx xxx Xxx xx xxx **xxxx** xxxxx. |
+| **destination.latitude** | 目的地の緯度 | 例: destination.latitude=47.6451413797194 | 目的地の緯度です。 |
+| **destination.longitude** | 目的地の経度 | 例: destination.longitude=-122.141964733601 | 目的地の経度です。 |
+| **name** | 目的地の名前 | 例: destination.name=Redmond, WA | 目的地の名前です。 URI や **name** の値をエンコードする必要はありません。 |
 
  
 
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,45 +1,40 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxx xx xxxxxxx xxx xxxxxxxxx xxxx-xxxx, xxxxxxxxxx xxxxxxxxx xxxxxx xxxxx.
-xxxxx: Xxxxxx xxxxxxxxxx xxxxxxxxx
-xx.xxxxxxx: YYYXYXYY-YYYY-YXXX-XYYX-YXXYXXYXXYXX
-xxxxx: Xxxxxxxxxx xxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: 長い形式の継続的なディクテーション音声入力をキャプチャし、認識する方法について説明します。
+title: 継続的なディクテーションの有効化
+ms.assetid: 383B3E23-1678-4FBB-B36E-6DE2DA9CA9DC
+label: 継続的なディクテーションの有効化
+template: detail.hbs
 ---
 
-# Xxxxxxxxxx xxxxxxxxx
+# 継続的なディクテーション
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxxx xxx xx xxxxxxx xxx xxxxxxxxx xxxx-xxxx, xxxxxxxxxx xxxxxxxxx xxxxxx xxxxx.
+長い形式の継続的なディクテーション音声入力をキャプチャし、認識する方法について説明します。
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**XxxxxxXxxxxxxxxxXxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913896)
--   [**XxxxxxxxxxXxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913913)
-
-
-Xx [Xxxxxx xxxxxxxxxxx](speech-recognition.md), xxx xxxxxxx xxx xx xxxxxxx xxx xxxxxxxxx xxxxxxxxxx xxxxx xxxxxx xxxxx xxxxx xxx [**XxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653244) xx [**XxxxxxxxxXxxxXXXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653245) xxxxxxx xx x [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653226) xxxxxx, xxx xxxxxxx, xxxx xxxxxxxxx x xxxxx xxxxxxx xxxxxxx (XXX) xxxxxxx xx xxxx xxxxxx x xxxxxxxx.
-
-Xxx xxxxxx, xxxxxxxxxx xxxxxx xxxxxxxxxxx xxxxxxxx, xxxx xx xxxxxxxxx xx xxxxx, xxx xxx [**XxxxxxxxxxXxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913913) xxxxxxxx xx x [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653226) xx xxxxxx x [**XxxxxxXxxxxxxxxxXxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913896) xxxxxx.
+-   [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896)
+-   [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913)
 
 
+「[音声認識](speech-recognition.md)」では、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) オブジェクトの [**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) メソッドまたは [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) メソッドを使って、比較的短い音声入力をキャプチャし、認識する方法について説明しました。たとえば、ショート メッセージ サービス (SMS) のメッセージを作成したり、質問したりする場合です。
 
-## <span id="Set_up">
-            </span>
-            <span id="set_up">
-            </span>
-            <span id="SET_UP">
-            </span>Xxx xx
+ディクテーションまたはメールなど、より長い継続的な音声認識セッションの場合は、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) の [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) プロパティを使って [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) オブジェクトを取得します。
 
 
-Xxxx xxx xxxxx x xxx xxxxxxx xx xxxxxx x xxxxxxxxxx xxxxxxxxx xxxxxxx:
 
--   Xx xxxxxxxx xx x [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653226) xxxxxx.
--   X xxxxxxxxx xx x XX xxxxxxxxxx xx xxxxxx xxx XX xxxxxx xxxxxxxxx.
--   X xxx xx xxxxx xxx xxxxxxxxxxx xxxxx xxxxxx xx xxx xxxx.
+## <span id="Set_up"></span><span id="set_up"></span><span id="SET_UP"></span>設定
 
-Xxxx, xx xxxxxxx x [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653226) xxxxxxxx xx x xxxxxxx xxxxx xx xxx xxxx-xxxxxx xxxxx. Xxxx xxx xxxxx xx xxxxx x xxxxxxxxx xxxxxxxxx xx xxx xxxx xxxxxxxxxx xxxxxxxxx xx xxxxxxx xxxxxx x xxxxxx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX) xxxx.
+
+アプリには、継続的なディクテーション セッションを管理するためのオブジェクトがいくつか必要です。
+
+-   1 インスタンスの [**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) オブジェクト。
+-   ディクテーション中の UI を更新するための UI ディスパッチャーへの参照。
+-   ユーザーが発声し、蓄積された単語を追跡する方法。
+
+ここでは、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) インスタンスを、コード ビハインド クラスのプライベート フィールドとして宣言します。 継続的なディクテーションが、1 つの XAML (Extensible Application Markup Language) ページを超えて持続する場合、アプリは、参照を別の場所に格納する必要があります。
 
 ```CSharp
 private SpeechRecognizer speechRecognizer;</code></pre></td>
@@ -48,9 +43,9 @@ private SpeechRecognizer speechRecognizer;</code></pre></td>
 </table>
 ```
 
-Xxxxxx xxxxxxxxx, xxx xxxxxxxxxx xxxxxx xxxxxx xxxx x xxxxxxxxxx xxxxxx. Xxxxxxx x xxxxxxxxxx xxxxxx xxxxxx xxxxxxxx xxxxxx xxx XX xx XXXX, xxxx xxx xxxx xxx x xxxxxxxxxx xx xxxxxx xxx XX xx xxxxxxxx xx xxxxxxxxxxx xxxxxx.
+ディクテーション中に認識エンジンは、バックグラウンド スレッドからイベントを生成します。 バックグラウンド スレッドは、XAML の UI を直接更新できないため、アプリはディスパッチャーを使って、認識イベントに応答して UI を更新する必要があります。
 
-Xxxx, xx xxxxxxx x xxxxxxx xxxxx xxxx xxxx xx xxxxxxxxxxx xxxxx xxxx xxx XX xxxxxxxxxx.
+ここでは、プライベート フィールドを宣言し、それが後で UI ディスパッチャーで初期化されます。
 
 <span codelanguage="CSharp"></span>
 ```CSharp
@@ -70,9 +65,9 @@ Xxxx, xx xxxxxxx x xxxxxxx xxxxx xxxx xxxx xx xxxxxxxxxxx xxxxx xxxx xxx XX xxxx
 private CoreDispatcher dispatcher;
 ```
 
-Xx xxxxx xxxx xxx xxxx xx xxxxxx, xxx xxxx xx xxxxxx xxxxxxxxxxx xxxxxx xxxxxx xx xxx xxxxxx xxxxxxxxxx. Xxxxx xxxxxx xxxxxxx xxx xxxxxxxxxxx xxxxxxx xxx xxxxxx xx xxxx xxxxxxxxxx.
+ユーザーが発声した内容を追跡するには、音声認識エンジンによって生成された認識イベントを処理する必要があります。 これらのイベントは、ユーザーの発声のチャンクを認識した結果を提供します。
 
-Xxxx, xx xxx x [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/system.text.stringbuilder.aspx) xxxxxx xx xxxx xxx xxx xxxxxxxxxxx xxxxxxx xxxxxxxx xxxxxx xxx xxxxxxx. Xxx xxxxxxx xxx xxxxxxxx xx xxx **XxxxxxXxxxxxx** xx xxxx xxx xxxxxxxxx.
+ここでは、[**StringBuilder**](https://msdn.microsoft.com/library/system.text.stringbuilder.aspx) オブジェクトを使って、セッション中に取得したすべての認識結果を保持します。 新しい検索結果は、処理されるに従って **StringBuilder** に追加されます。
 
 ```CSharp
 private StringBuilder dictatedTextBuilder;</code></pre></td>
@@ -81,29 +76,24 @@ private StringBuilder dictatedTextBuilder;</code></pre></td>
 </table>
 ```
 
-## <span id="Initialization">
-            </span>
-            <span id="initialization">
-            </span>
-            <span id="INITIALIZATION">
-            </span>Xxxxxxxxxxxxxx
+## <span id="Initialization"></span><span id="initialization"></span><span id="INITIALIZATION"></span>初期化
 
 
-Xxxxxx xxx xxxxxxxxxxxxxx xx xxxxxxxxxx xxxxxx xxxxxxxxxxx, xxx xxxx:
+継続的な音声認識の初期化時には、次の操作を行う必要があります。
 
--   Xxxxx xxx xxxxxxxxxx xxx xxx XX xxxxxx xx xxx xxxxxx xxx XX xx xxxx xxx xx xxx xxxxxxxxxx xxxxxxxxxxx xxxxx xxxxxxxx.
--   Xxxxxxxxxx xxx xxxxxx xxxxxxxxxx.
--   Xxxxxxx xxx xxxxx-xx xxxxxxxxx xxxxxxx.
-    **Xxxx**   Xxxxxx xxxxxxxxxxx xxxxxxxx xx xxxxx xxx xxxxxxxxxx xx xxxxxx x xxxxxxxxxxxx xxxxxxxxxx. Xx xx xxxxxxxxxx xx xxxxxxxxx, x xxxxxxxxxx xxxxxxxxx xxxxxxx xx xxxx. Xxx [Xxxxxx xxxxxxxxxxx](speech-recognition.md).
+-   連続的な認識のイベント ハンドラーでアプリの UI を更新する場合は、UI スレッドのディスパッチャーを取得します。
+-   音声認識エンジンを初期化します。
+-   組み込みのディクテーション文法をコンパイルします。
+    **注**   音声認識では、少なくとも 1 つの制約を使って、認識できるボキャブラリを定義する必要があります。 制約が指定されていない場合は、定義済みのディクテーション文法が使われます。 「[音声認識](speech-recognition.md)」をご覧ください。
 
      
 
--   Xxx xx xxx xxxxx xxxxxxxxx xxx xxxxxxxxxxx xxxxxx.
+-   認識イベントのイベント リスナーをセットアップします。
 
-Xx xxxxxxxxxx xxxxxx xxxxxxxxxxx xx xxx [**XxXxxxxxxxxXx**](https://msdn.microsoft.com/library/windows/apps/br227508) xxxx xxxxx.
+[
+            **OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) ページ イベントで音声認識を初期化します。
 
-1.  Xxxxxxx xxxxxx xxxxxx xx xxx xxxxxx xxxxxxxxxx xxxxx xx x xxxxxxxxxx xxxxxx, xxxxxx x xxxxxxxxx xx xxx xxxxxxxxxx xxx xxxxxxx xx xxx XX xxxxxx. [
-            **XxXxxxxxxxxXx**](https://msdn.microsoft.com/library/windows/apps/br227508) xx xxxxxx xxxxxxx xx xxx XX xxxxxx.
+1.  音声認識エンジンが生成するイベントはバックグラウンド スレッドで発生するため、UI スレッドを更新するためのディスパッチャーへの参照を作成します。 [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) は、常に UI スレッド上で呼び出されます。
 
     <span codelanguage="CSharp"></span>
 ```    CSharp
@@ -123,7 +113,7 @@ this.dispatcher = CoreWindow.GetForCurrentThread().Dispatcher;</code></pre></td>
     </table>
 ```
 
-2.  Xx xxxx xxxxxxxxxx xxx [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653226) xxxxxxxx.
+2.  その後、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) インスタンスを初期化します。
 
     <span codelanguage="CSharp"></span>
 ```    CSharp
@@ -143,11 +133,11 @@ this.speechRecognizer = new SpeechRecognizer();</code></pre></td>
     </table>
 ```
 
-3.  Xx xxxx xxx xxx xxxxxxx xxx xxxxxxx xxxx xxxxxxx xxx xx xxx xxxxx xxx xxxxxxx xxxx xxx xx xxxxxxxxxx xx xxx [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653226).
+3.  そして、[**SpeechRecognizer**](https://msdn.microsoft.com/library/windows/apps/dn653226) によって認識される語句と単語をすべて定義する文法を追加し、コンパイルします。
 
-    Xx xxx xxx'x xxxxxxx x xxxxxxx xxxxxxxxxx, x xxxxxxxxxx xxxxxxxxx xxxxxxx xx xxxx xx xxxxxxx. Xxxxxxxxx, xxx xxxxxxx xxxxxxx xx xxxx xxx xxxxxxx xxxxxxxxx.
+    文法を明示的に指定しない場合は、既定で定義済みのディクテーション文法が使われます。 通常、一般的なディクテーションには、既定の文法が最適です。
 
-    Xxxx, xx xxxx [**XxxxxxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653240) xxxxxxxxxxx xxxxxxx xxxxxx x xxxxxxx.
+    ここでは、文法を追加せずに、すぐに [**CompileConstraintsAsync**](https://msdn.microsoft.com/library/windows/apps/dn653240) を呼び出します。
 
     <span codelanguage="CSharp"></span>
 ```    CSharp
@@ -165,46 +155,39 @@ SpeechRecognitionCompilationResult result =
       await speechRecognizer.CompileConstraintsAsync();
 ```
 
-## <span id="Handle_recognition_events">
-            </span>
-            <span id="handle_recognition_events">
-            </span>
-            <span id="HANDLE_RECOGNITION_EVENTS">
-            </span>Xxxxxx xxxxxxxxxxx xxxxxx
+## <span id="Handle_recognition_events"></span><span id="handle_recognition_events"></span><span id="HANDLE_RECOGNITION_EVENTS"></span>認識イベントの処理
 
 
-Xxxx, xxx xxx xxxxxxx x xxxxxx, xxxxx xxxxxxxxx xx xxxxxx xx xxxxxxx [**XxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653244) xx [**XxxxxxxxxXxxxXXXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn653245). Xxxxxxx, xx xxxx xx xxxxxxx x xxxxxx, xxxxxxxxxx xxxxxxxxxxx xxxxxxx.
+ここでは、[**RecognizeAsync**](https://msdn.microsoft.com/library/windows/apps/dn653244) または [**RecognizeWithUIAsync**](https://msdn.microsoft.com/library/windows/apps/dn653245) を呼び出して、1 つの短い発声または語句をキャプチャできます。 ただし、このトピックの目的は、より長い継続的な認識セッションをキャプチャすることです。
 
-Xx xx xxxx, xx xxxxxxx xxxxx xxxxxxxxx xx xxx xx xxx xxxxxxxxxx xx xxx xxxx xxxxxx xxx xxxxxx xxxxxxxx xx xxxxx xxx xxxxxxxxx xxxxxx.
+これを行うために、ユーザーが話す間にバックグラウンドで動作するイベント リスナーを指定し、ディクテーション文字列を作成するためのハンドラーを定義します。
 
-Xx xxxx xxx xxx [**XxxxxxxxxxXxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913913) xxxxxxxx xx xxx xxxxxxxxxx xx xxxxxx x [**XxxxxxXxxxxxxxxxXxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913896) xxxxxx xxxx xxxxxxxx xxxxxxx xxx xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxxxxxxxxx xxxxxxx.
+そして、認識エンジンの [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) プロパティを使って、継続的な認識セッションを管理するためのメソッドとイベントを提供する [**SpeechContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913896) オブジェクトを取得します。
 
-Xxx xxxxxx xx xxxxxxxxxx xxx xxxxxxxx:
+特に、次の 2 つのイベントが重要です。
 
--   [
-            **XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913900), xxxxx xxxxxx xxxx xxx xxxxxxxxxx xxx xxxxxxxxx xxxx xxxxxxx.
--   [
-            **Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913899), xxxxx xxxxxx xxxx xxx xxxxxxxxxx xxxxxxxxxxx xxxxxxx xxx xxxxx.
+-   [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900)。これは、認識エンジンがいくつかの結果を生成したときに発生します。
+-   [**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899)。継続的な認識セッションが終了したときに発生します。
 
-Xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913900) xxxxx xx xxxxxx xx xxx xxxx xxxxxx. Xxx xxxxxxxxxx xxxxxxxxxxxx xxxxxxx xx xxx xxxx xxx xxxxxxxxxxxx xxxxxx xx xxxxx xxxx xxxxxx x xxxxx xx xxxxxx xxxxx. Xxx xxxx xxxxxxx xxx xxxxxx xxxxx, xxxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913895) xxxxxxxx xx xxx xxxxx xxxxxxxx, xxx xxxx xxxxxxxxxxx xxxxxx xx xxx xxxxx xxxxxxx, xxxx xx xxxxxxxxx xxx xxxx xx x XxxxxxXxxxxxx xxxxxx.
+[
+            **ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントは、ユーザーが発声すると発生します。 認識エンジンは、ユーザーの発声を聞き続け、音声入力のチャンクを渡すイベントを定期的に生成します。 音声入力は、イベントの引数の [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) プロパティを使って確認し、イベント ハンドラーで適切な処置を行う必要があります。たとえば、StringBuilder オブジェクトにテキストを追加します。
 
-Xx xx xxxxxxxx xx [**XxxxxxXxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631432), xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913895) xxxxxxxx xx xxxxxx xxx xxxxxxxxxxx xxxxxxx xxx xxxx xx xxxxxx xxx xxxxxx xxxxx:
+[
+            **SpeechRecognitionResult**](https://msdn.microsoft.com/library/windows/apps/dn631432) のインスタンスである [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) プロパティは、音声入力を受け入れるかどうかを決定するために役立ちます。
 
--   [
-            **Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631440) xxxxxxxxx xxxxxxx xxx xxxxxxxxxxx xxx xxxxxxxxxx. Xxxxxxxxxxx xxx xxxx xxx x xxxxxxx xx xxxxxxx.
--   [
-            **Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631434) xxxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxx xxxxx.
+-   [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) は、正常に認識できたかどうかを示します。 さまざまな原因により、認識できない場合もあります。
+-   [**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) は、認識エンジンが、正しい単語を理解したことを比較的確信していることを示します。
 
-1.  Xxxx, xx xxxxxxxx xxx xxxxxxx xxx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913900) xxxxxxxxxx xxxxxxxxxxx xxxxx xx xxx [**XxXxxxxxxxxXx**](https://msdn.microsoft.com/library/windows/apps/br227508) xxxx xxxxx.
+1.  ここでは、[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) 継続的認識イベントのハンドラーを [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) ページ イベントに登録します。
 
 ```    CSharp
 speechRecognizer.ContinuousRecognitionSession.ResultGenerated +=
         ContinuousRecognitionSession_ResultGenerated;
 ```
 
-2.  Xx xxxx xxxxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631434) xxxxxxxx. Xx xxx xxxxx xx Xxxxxxxxxx xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631409) xx xxxxxx, xx xxxxxx xxx xxxx xx xxx XxxxxxXxxxxxx. Xx xxxx xxxxxx xxx XX xx xx xxxxxxx xxxxx.
+2.  そして、[**Confidence**](https://msdn.microsoft.com/library/windows/apps/dn631434) プロパティを確認します。 Confidence の値が [**Medium**](https://msdn.microsoft.com/library/windows/apps/dn631409) 以上である場合は、StringBuilder にテキストを追加します。 入力の収集時に UI も更新します。
 
-    **Xxxx**  xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913900) xxxxx xx xxxxxx xx x xxxxxxxxxx xxxxxx xxxx xxxxxx xxxxxx xxx XX xxxxxxxx. Xx x xxxxxxx xxxxx xx xxxxxx xxx XX (xx xxx \[Xxxxxx xxx XXX xxxxxx\] xxxx), xxx xxxx xxxxxxxx xxx xxxxxxx xx xxx XX xxxxxx xxxxxxx xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh750317) xxxxxx xx xxx xxxxxxxxxx.
+    **注**  [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントは、UI を直接更新できないバックグラウンド スレッドで発生します。 (「音声と TTS のサンプル」のように) ハンドラーが UI を更新する必要がある場合は、ディスパッチャーの [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) メソッドで更新を UI スレッドにディスパッチする必要があります。
 
      
 
@@ -235,20 +218,20 @@ private async void ContinuousRecognitionSession_ResultGenerated(
       }
 ```
 
-3.  Xx xxxx xxxxxx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913899) xxxxx, xxxxx xxxxxxxxx xxx xxx xx xxxxxxxxxx xxxxxxxxx.
+3.  その後、[**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) イベントを処理します。これが、継続的なディクテーションの終了を示します。
 
-    Xxx xxxxxxx xxxx xxxx xxx xxxx xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913908) xx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913898) xxxxxxx (xxxxxxxxx xxx xxxx xxxxxxx). Xxx xxxxxxx xxx xxxx xxx xxxx xx xxxxx xxxxxx, xx xxxx xxx xxxx xxx xxxxxxx xxxxxxxx. Xxxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631440) xxxxxxxx xx xxx xxxxx xxxxxxxx xx xxxxxxxxx xxx xxx xxxxxxx xxxxx ([**XxxxxxXxxxxxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631433)).
+    セッションは、[**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) メソッドまたは [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) メソッド (次のセクションを参照) を呼び出すと終了します。 セッションは、エラーが発生したときや、ユーザーが発声を停止したときに終了することもあります。 イベントの引数の [**Status**](https://msdn.microsoft.com/library/windows/apps/dn631440) プロパティを確認して、セッションが終了した理由を特定してください ([**SpeechRecognitionResultStatus**](https://msdn.microsoft.com/library/windows/apps/dn631433))。
 
-    Xxxx, xx xxxxxxxx xxx xxxxxxx xxx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913899) xxxxxxxxxx xxxxxxxxxxx xxxxx xx xxx [**XxXxxxxxxxxXx**](https://msdn.microsoft.com/library/windows/apps/br227508) xxxx xxxxx.
+    ここでは、[**Completed**](https://msdn.microsoft.com/library/windows/apps/dn913899) 継続的認識イベントのハンドラーを [**OnNavigatedTo**](https://msdn.microsoft.com/library/windows/apps/br227508) ページ イベントに登録します。
 
 ```    CSharp
 speechRecognizer.ContinuousRecognitionSession.Completed +=
       ContinuousRecognitionSession_Completed;
 ```
 
-4.  Xxx xxxxx xxxxxxx xxxxxx xxx Xxxxxx xxxxxxxx xx xxxxxxxxx xxxxxxx xxx xxxxxxxxxxx xxx xxxxxxxxxx. Xx xxxx xxxxxxx xxx xxxx xxxxx xxx xxxx xxx xxxxxxx xxxxxxxx. Xxxxx, x [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631433) xx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxxx xx xx xxxxx xxx xxxx xxx xxxxxxxx xxxxxxxx. Xxx xxxxxx xxxxxx xxxx xxxx xx xxxx xxxx xxx x xxxx xxxxxxxxxx.
+4.  イベント ハンドラーは Status プロパティを確認して、正常に認識できたかどうかを判断します。 また、ユーザーが発声を停止した場合の処理も行います。 多くの場合、[**TimeoutExceeded**](https://msdn.microsoft.com/library/windows/apps/dn631433) によって、正常に認識されたと見なされます。これは、ユーザーの発声が終了したことを意味するためです。 快適に使えるように、このケースをコード内で処理する必要があります。
 
-    **Xxxx**  xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913900) xxxxx xx xxxxxx xx x xxxxxxxxxx xxxxxx xxxx xxxxxx xxxxxx xxx XX xxxxxxxx. Xx x xxxxxxx xxxxx xx xxxxxx xxx XX (xx xxx \[Xxxxxx xxx XXX xxxxxx\] xxxx), xxx xxxx xxxxxxxx xxx xxxxxxx xx xxx XX xxxxxx xxxxxxx xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh750317) xxxxxx xx xxx xxxxxxxxxx.
+    **注**  [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントは、UI を直接更新できないバックグラウンド スレッドで発生します。 (「音声と TTS のサンプル」のように) ハンドラーが UI を更新する必要がある場合は、ディスパッチャーの [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) メソッドで更新を UI スレッドにディスパッチする必要があります。
 
      
 
@@ -286,21 +269,16 @@ private async void ContinuousRecognitionSession_Completed(
       }
 ```
 
-## <span id="Provide_ongoing_recognition_feedback">
-            </span>
-            <span id="provide_ongoing_recognition_feedback">
-            </span>
-            <span id="PROVIDE_ONGOING_RECOGNITION_FEEDBACK">
-            </span>Xxxxxxx xxxxxxx xxxxxxxxxxx xxxxxxxx
+## <span id="Provide_ongoing_recognition_feedback"></span><span id="provide_ongoing_recognition_feedback"></span><span id="PROVIDE_ONGOING_RECOGNITION_FEEDBACK"></span>実行中の認識に対するフィードバックの提供
 
 
-Xxxx xxxxxx xxxxxxxx, xxxx xxxxx xxxx xx xxxxxxx xx xxxxx xxxxxxxxxx xxxx xx xxxxx xxxx. Xxxxxxxxx, xxx xxxxxx xxxxxxxxxx xxxxx xxxxx xxxxxxx xx xxxxxxx xxxx-xxxxxxxxxx xxxxxxxxxxx xxxxxxx. Xxx xxxxxxx, xx xxxxxxxxxx, xxx xxxxx "xxxxxx" xxx "xxxx" xxx xxxxxxxxxxxxxxxxx xxxxx xxxx xxxxxxx xxx xx xxxxxxx xxxx xxxxxxxxxxx xxxxx. Xxxxx xxx xxxxxxxxxx xxx xxxx xxxxxxxxxx xxxx x xxxx, xx xxxxx, xxxx xxxx xxxxxxxxxx xxxxxxxxx, xx xxxx xxx xxxxx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913900) xxxxx.
+人が会話する場合は、話の内容を完全に理解するためにコンテキストが必要であることがよくあります。 同様に、信頼性の高い認識結果を提供するために音声認識エンジンにコンテキストが必要である場合がよくあります。 たとえば、"weight" および "wait" という単語は、それ自体だけでは区別できないため、周囲の単語からコンテキストをさらに探り出す必要があります。 認識エンジンは、単語や語句を正しく認識したことを、ある程度確信するまでは、[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントを生成しません。
 
-Xxxx xxx xxxxxx xx x xxxx xxxx xxxxx xxxxxxxxxx xxx xxx xxxx xx xxxx xxxxxxxx xxxxxxxx xxx xx xxxxxxx xxx xxxxxxxx xxxxx xxx xxxxxxxxxx xxx xxxx xxxxxx xxxxxxxxxx xx xxxxx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913900) xxxxx.
+したがって、ユーザーが話し続けても、認識エンジンが [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントを生成できると確信するまでは結果が表示されないため、ユーザーにとって快適とはいえない結果になる場合があります。
 
-Xxxxxx xxx [**XxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913914) xxxxx xx xxxxxxx xxxx xxxxxxxx xxxx xx xxxxxxxxxxxxxx. Xxxx xxxxx xx xxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxxx x xxx xxx xx xxxxxxxxx xxxxxxx xxx xxx xxxx xxxxx xxxxxxxxx. Xxx xxxxx xxxxxxxx xxxxxxxx xx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913911) xxxxxxxx xxxx xxxxxxxx xxx xxxxxxx xxxxxxx. Xxxx xxxxx xx xxx xxxx xx xxxx xxxxxxxx xxxxxxxx xxx xxxxxxxx xxxx xxxx xxxxxxxxxx xx xxxxx xxxxxx. Xxxx xxxxxxxxxx xx xxxx xxx x xxxxxxxxxxx xxxxxx xxx xxxx xxxxxxxxxx, xxxxxxx xxx xxxxxxx **Xxxxxxxxxx** xxxxxxx xxxx xxx xxxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913895) xxxxxxxx xx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913900) xxxxx.
+この不十分な応答性を改善するには、[**HypothesisGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913914) イベントを処理します。 このイベントは、処理中の単語と一致すると思われる新しいセットを認識エンジンが生成するたびに発生します。 イベント引数は、現在一致している内容を含む [**Hypothesis**](https://msdn.microsoft.com/library/windows/apps/dn913911) プロパティを提供します。 話し続けるユーザーに、これらを表示して、処理がまだ続行されていることを知らせます。 認識エンジンが十分に確信し、認識結果が確定されたら、暫定の **Hypothesis** 結果を、[**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントで提供される最終的な [**Result**](https://msdn.microsoft.com/library/windows/apps/dn913895) に置き換えます。
 
-Xxxx, xx xxxxxx xxx xxxxxxxxxxxx xxxx xxx xx xxxxxxxx ("…") xx xxx xxxxxxx xxxxx xx xxx xxxxxx [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209683). Xxx xxxxxxxx xx xxx xxxx xxx xxx xxxxxxx xx xxx xxxxxxxxxx xxx xxxxxxxxx xxx xxxxx xxx xxxxx xxxxxxx xxx xxxxxxxx xxxx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913900) xxxxx.
+ここでは、仮のテキストと省略記号 ("…") を、出力 [**TextBox**](https://msdn.microsoft.com/library/windows/apps/br209683) の現在の値に追加します。 テキスト ボックスの内容は、新しい仮の結果が生成されるたびに更新され、最後に、最終的な結果が [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントから取得されます。
 
 ```CSharp
 private async void SpeechRecognizer_HypothesisGenerated(
@@ -319,17 +297,12 @@ private async void SpeechRecognizer_HypothesisGenerated(
   }
 ```
 
-## <span id="Start_and_stop_recognition">
-            </span>
-            <span id="start_and_stop_recognition">
-            </span>
-            <span id="START_AND_STOP_RECOGNITION">
-            </span>Xxxxx xxx xxxx xxxxxxxxxxx
+## <span id="Start_and_stop_recognition"></span><span id="start_and_stop_recognition"></span><span id="START_AND_STOP_RECOGNITION"></span>認識の開始と停止
 
 
-Xxxxxx xxxxxxxx x xxxxxxxxxxx xxxxxxx, xxxxx xxx xxxxx xx xxx xxxxxx xxxxxxxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913915) xxxxxxxx. Xxx xxxxxx xxxxxxxxxx xxxx xx xx xx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn653227) xxxxx.
+認識セッションを開始する前に、音声認識エンジンの [**State**](https://msdn.microsoft.com/library/windows/apps/dn913915) プロパティの値を確認します。 音声認識エンジンは、[**Idle**](https://msdn.microsoft.com/library/windows/apps/dn653227) 状態である必要があります。
 
-Xxxxx xxxxxxxx xxx xxxxx xx xxx xxxxxx xxxxxxxxxx, xx xxxxx xxx xxxxxxx xx xxxxxxx xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913901) xxxxxx xx xxx xxxxxx xxxxxxxxxx'x [**XxxxxxxxxxXxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913913) xxxxxxxx.
+音声認識エンジンの状態を確認した後、音声認識エンジンの [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) プロパティの [**StartAsync**](https://msdn.microsoft.com/library/windows/apps/dn913901) メソッドを呼び出してセッションを開始します。
 
 ```CSharp
 if (speechRecognizer.State == SpeechRecognizerState.Idle)
@@ -338,14 +311,12 @@ if (speechRecognizer.State == SpeechRecognizerState.Idle)
 }
 ```
 
-Xxxxxxxxxxx xxx xx xxxxxxx xx xxx xxxx:
+認識を停止するには、次の 2 つの方法があります。
 
--   [
-            **XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913908) xxxx xxx xxxxxxx xxxxxxxxxxx xxxxxx xxxxxxxx ([**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913900) xxxxxxxxx xx xx xxxxxx xxxxx xxx xxxxxxx xxxxxxxxxxx xxxxxxxxxx xxx xxxxxxxx).
--   [
-            **XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913898) xxxxxxxxxx xxx xxxxxxxxxxx xxxxxxx xxxxxxxxxxx xxx xxxxxxxx xxx xxxxxxx xxxxxxx.
+-   [**StopAsync**](https://msdn.microsoft.com/library/windows/apps/dn913908) を使うと、保留中のすべての認識イベントが完了します ([**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) は、保留中のすべての操作が完了するまで、引き続き発生します)。
+-   [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) を使うと、すぐに認識セッションが終了し、保留中の結果はすべて破棄されます。
 
-Xxxxx xxxxxxxx xxx xxxxx xx xxx xxxxxx xxxxxxxxxx, xx xxxx xxx xxxxxxx xx xxxxxxx xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913898) xxxxxx xx xxx xxxxxx xxxxxxxxxx'x [**XxxxxxxxxxXxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913913) xxxxxxxx.
+音声認識エンジンの状態を確認したら、音声認識エンジンの [**ContinuousRecognitionSession**](https://msdn.microsoft.com/library/windows/apps/dn913913) プロパティの [**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) メソッドを呼び出してセッションを停止します。
 
 ```CSharp
 if (speechRecognizer.State != SpeechRecognizerState.Idle)
@@ -354,28 +325,32 @@ if (speechRecognizer.State != SpeechRecognizerState.Idle)
 }
 ```
 
-**Xxxx**  
-X [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913900) xxxxx xxx xxxxx xxxxx x xxxx xx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913898).
+**注**  
+[
+            **CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) を呼び出した後に [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントが発生する場合があります。
 
-Xxxxxxx xx xxxxxxxxxxxxxx, x [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913900) xxxxx xxxxx xxxxx xxxxxx xx xxx xxxxx xxxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913898) xx xxxxxx. Xx xx, xxx **XxxxxxXxxxxxxxx** xxxxx xxxxx xxxxx.
+マルチスレッドであるために、[**CancelAsync**](https://msdn.microsoft.com/library/windows/apps/dn913898) を呼び出したときに [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) イベントがスタックに残っている可能性があります。 その場合は、**ResultGenerated** イベントも発生します。
 
-Xx xxx xxx xxx xxxxxxx xxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxx, xxxxxx xxxxxxx xxxxx xxxxxx xx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn913900) xxxxxxx. Xxx xxxxxxx, xxx'x xxxxxx x xxxxx xx xxxxxxxxxxx xx xxxx xxxxxxx xx xxx xxx xxxx xx xxxx xxxx xxx xxxxxx xxx xxxxxxx.
+プライベート フィールドを設定しているときに認識セッションをキャンセルした場合は、その値を常に [**ResultGenerated**](https://msdn.microsoft.com/library/windows/apps/dn913900) ハンドラーで確認してください。 たとえば、セッションをキャンセルしたときにプライベート フィールドを null に設定している場合はハンドラー内でフィールドが初期化されると想定しないでください。
+
+ 
+
+## <span id="related_topics"></span>関連記事
+
+
+* [音声操作](speech-interactions.md)
+
+**サンプル**
+* [音声認識と音声合成のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619897)
+ 
 
  
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
 
-
-* [Xxxxxx xxxxxxxxxxxx](speech-interactions.md)
-
-**Xxxxxxx**
-* [Xxxxxx xxxxxxxxxxx xxx xxxxxx xxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619897)
- 
-
- 
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

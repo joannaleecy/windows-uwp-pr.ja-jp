@@ -1,70 +1,68 @@
 ---
-Xxxxxxxxxxx: Xxx xxxxx xxxxxx xxx xxxxxxxxxxxx XXXX xxxxxxxxx xxxxxxxx xx xxxxxx xxxxxxx xx xxxxx xxx xxxxx xxxxxxx.
-xxxxx: Xxxxxx xxxxxx xxxxx xxxxxxxxx xxxxxxxx
-xx.xxxxxxx: YYYYXYYY-XYXX-YYXX-XYYY-YYXXXXYXYYYX
-xxxxx: Xxxxxx xxxxxx xxxxx xxxxxxxxx xxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: The media player has customizable XAML transport controls to manage control of audio and video content.
+title: Create custom media transport controls
+ms.assetid: 6643A108-A6EB-42BC-B800-22EABD7B731B
+label: Create custom media transport controls
+template: detail.hbs
 ---
-# Xxxxxx xxxxxx xxxxxxxxx xxxxxxxx
+# Create custom transport controls
 
-XxxxxXxxxxxx xxx xxxxxxxxxxxx XXXX xxxxxxxxx xxxxxxxx xx xxxxxx xxxxxxx xx xxxxx xxx xxxxx xxxxxxx xxxxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx. Xxxx, xx xxxxxxxxxxx xxx xx xxxxxxxxx xxx XxxxxXxxxxxxxxXxxxxxxx xxxxxxxx. Xx’xx xxxx xxx xxx xx xxxx xxxx xxx xxxxxxxx xxxx, xxx x xxxxxx xxxxxx, xxxxxx xxx xxxxxx, xxx xxxxxx xxxxxx.
+MediaElement has customizable XAML transport controls to manage control of audio and video content within a Universal Windows Platform (UWP) app. Here, we demonstrate how to customize the MediaTransportControls template. We’ll show you how to work with the overflow menu, add a custom button, modify the slider, and change colors.
 
-Xxxxxx xxxxxxxx, xxx xxxxxx xx xxxxxxxx xxxx xxx XxxxxXxxxxxx xxx xxx XxxxxXxxxxxxxxXxxxxxxx xxxxxxx. Xxx xxxx xxxx, xxx xxx XxxxxXxxxxxx xxxxxxx xxxxx. 
+Before starting, you should be familiar with the MediaElement and the MediaTransportControls classes. For more info, see the MediaElement control guide. 
 
-> **Xxx**&xxxx;&xxxx;Xxx xxxxxxxx xx xxxx xxxxx xxx xxxxx xx xxx [Xxxxx Xxxxxxxxx Xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=620023). Xxx xxx xxxxxxxx xxx xxxxxx xx xxxx xxx xxx xxx xxxxxxxxx xxxx.
+> **Tip**&nbsp;&nbsp;The examples in this topic are based on the [Media Transport Controls sample](http://go.microsoft.com/fwlink/p/?LinkId=620023). You can download the sample to view and run the completed code.
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
 
--   [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926)
--   [**XxxxxXxxxxxx.XxxXxxxxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aretransportcontrolsenabled.aspx)
--   [**XxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn278677)
+-   [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926)
+-   [**MediaElement.AreTransportControlsEnabled**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aretransportcontrolsenabled.aspx)
+-   [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/dn278677)
 
-## Xxxx xxxxxx xxx xxxxxxxxx xxx xxxxxxxx?
+## When should you customize the template?
 
-**XxxxxXxxxxxx** xxx xxxxx-xx xxxxxxxxx xxxxxxxx xxxx xxx xxxxxxxx xx xxxx xxxx xxxxxxx xxxxxxxxxxxx xx xxxx xxxxx xxx xxxxx xxxxxxxx xxxx. Xxxx’xx xxxxxxxx xx xxx [**XxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) xxxxx xxx xxxxxxx xxxxxxx xx xxxx, xxxx, xxx xxxxxxxx xxxxx, xxxxxx xxxxxx, xxxxxx xxxx xxxxxx, xxxx xx x xxxxxx xxxxxx, xxxxxx xxxxxxxx, xxxxxx xxxxx xxxxxx, xxx xxxxxx xxx xxxxxxxx xxxx. XxxxxXxxxxxxxxXxxxxxxx xxx xxxxxxxxxx xxxx xxx xxx xxxxxxx xxxxxxx xxxx xxxxxx xx xxxxx xxx xxxxxxx. Xxx xxx xxxx xxx xxx [**XxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.iscompact.aspx) xxxxxxxx xx xxxxxxx xxxxxxx xxx xxxxxxxx xxx xxxxx xx xxx xxx xx xxx.
+**MediaElement** has built-in transport controls that are designed to work well without modification in most video and audio playback apps. They’re provided by the [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) class and include buttons to play, stop, and navigate media, adjust volume, toggle full screen, cast to a second device, enable captions, switch audio tracks, and adjust the playback rate. MediaTransportControls has properties that let you control whether each button is shown and enabled. You can also set the [**IsCompact**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.iscompact.aspx) property to specify whether the controls are shown in one row or two.
 
-Xxxxxxx, xxxxx xxx xx xxxxxxxxx xxxxx xxx xxxx xx xxxxxxx xxxxxxxxx xxx xxxx xx xxx xxxxxxx xx xxxxxx xxx xxxxxxxx. Xxxx xxx xxxx xxxxxxxx:
-- Xxxxxx xxx xxxxx, xxxxxx xxxxxxxx, xxx xxxxxx.
-- Xxxx xxxx xxxxxxxx xxxx xxxxxxx xxxxxxx xxxx xx xxxxxxxx xxxx.
-- Xxxxxx xxx xxxxx xx xxxxx xxxxxxxx xxxx xxx xxxx xxx xxxxxxx xx xxxxxxx.
-- Xxxxxxx x xxxxxxx xxxxxx xxxx’x xxx xx xxx xxxxxxx xxx.
+However, there may be scenarios where you need to further customize the look of the control or change its behavior. Here are some examples:
+- Change the icons, slider behavior, and colors.
+- Move less commonly used command buttons into an overflow menu.
+- Change the order in which commands drop out when the control is resized.
+- Provide a command button that’s not in the default set.
 
-Xxx xxx xxxxxxxxx xxx xxxxxxxxxx xx xxx xxxxxxx xx xxxxxxxxx xxx xxxxxxx xxxxxxxx. Xx xxxxxx xxx xxxxxxx'x xxxxxxxx xx xxx xxx xxxxxxxx, xxx xxx xxxxxx x xxxxxx xxxxxxx xxxx'x xxxxxxx xxxx XxxxxXxxxxxxxxXxxxxxxx.
+You can customize the appearance of the control by modifying the default template. To modify the control's behavior or add new commands, you can create a custom control that's derived from MediaTransportControls.
 
->**Xxx**&xxxx;&xxxx;Xxxxxxxxxxxx xxxxxxx xxxxxxxxx xxx x xxxxxxxx xxxxxxx xx xxx XXXX xxxxxxxx, xxx xxxxx xxx xxxx xxxxxxxxxxxx xxxx xxx xxxxxx xxxx xxxx xxxxxxxxxxxxx. Xxxx xxx xxxxxxxxx x xxxxxxxx, xx xxxxxxx x xxxxxx xxxx xx xxxx xxx xxx xxxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxx xxxxxxx xxxx xxx xxxx xx xxx xxxxxxxx xx Xxxxxxxxx. Xx xxxxxxxx xxxxxxx xxx xxxx xx Xxxxxxxxx, xxx xxxxxx xxxx xxx xxx xxxxxxxx xxx xx-xxxxxx xx xx xxxxx xx xxx xxx xxxxxxxx xx xxx xxxxxxx xxxxxxxx.
+>**Tip**&nbsp;&nbsp;Customizable control templates are a powerful feature of the XAML platform, but there are also consequences that you should take into consideration. When you customize a template, it becomes a static part of your app and therefore will not receive any platform updates that are made to the template by Microsoft. If template updates are made by Microsoft, you should take the new template and re-modify it in order to get the benefits of the updated template.
 
-## Xxxxxxxx xxxxxxxxx
+## Template structure
 
-Xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) xx xxxx xx xxx xxxxxxx xxxxx. Xxx xxxxxxxxx xxxxxxx'x xxxxxxx xxxxx xx xxxxx xx xxx [**XxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) xxxxx xxxxxxxxx xxxx. Xxx xxx xxxx xxxx xxxxxxx xxxxx xxxx xxxx xxxxxxx xx xxxxxx xx. Xxx XxxxxxxXxxxxxxx xx xxxxxxx xxxx xxxxxxxx xxxxxxx xx xxxxx XXXX xxxxxxx xxxxxxxxx.
-- Xxx xxxxx xxxxxxx xx xxx xxxxxxxx xxxxxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) xxxxxxxxxxx xxx xxx xxxxxxx xxxxxxxxxx xx xxx XxxxxXxxxxxxxxXxxxxxxx.
-- Xxx xxxxxx xxxxxxx xxxxxxx xxx xxxxxxx xxxxxx xxxxxx xxxx xxx xxxx xx xxx XxxxxXxxxxxxxxXxxxxxxx.
-- Xxx xxxxx xxxxxxx xxxxxxxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) xxxx xxxxx xxxx xxxxxxx XxxxxXxxxxxxxxXxxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxx xxx xxx xxxxxxxxxx xxx xxxx xxx.
+The [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.controltemplate.aspx) is part of the default style. The transport control's default style is shown in the [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) class reference page. You can copy this default style into your project to modify it. The ControlTemplate is divided into sections similar to other XAML control templates.
+- The first section of the template contains the [**Style**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.aspx) definitions for the various components of the MediaTransportControls.
+- The second section defines the various visual states that are used by the MediaTransportControls.
+- The third section contains the [**Grid**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.grid.aspx) that holds that various MediaTransportControls elements together and defines how the components are laid out.
 
-> **Xxxx**&xxxx;&xxxx;Xxx xxxx xxxx xxxxx xxxxxxxxx xxxxxxxxx, xxx [Xxxxxxx xxxxxxxxx](). Xxx xxx xxx x xxxx xxxxxx xx xxxxxxx xxxxxxx xx xxxx XXX xx xxxx xxx XXXX xxxxx xx \(*Xxxxxxx Xxxxx*)\Xxxxxxx Xxxx\YY\XxxxxxXxxx\XxxxxxXxxxxxxxxxxxx\Xxxxxxx\XXX\\(*XXX xxxxxxx*)\Xxxxxxx. Xxx xxxxxxx xxxxx xxx xxxxxxxx xxx xxxx xxxxxxx xx xxxxxxx xx xxx **xxxxxxx.xxxx** xxxx. Xxx xxx xxxx xxx XxxxxXxxxxxxxxXxxxxxxx xxxxxxxx xx xxxxxxx.xxxx xx xxxxxxxxx xxx "XxxxxXxxxxxxxxXxxxxxxx".
+> **Note**&nbsp;&nbsp;For more info about modifying templates, see [Control templates](). You can use a text editor or similar editors in your IDE to open the XAML files in \(*Program Files*)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\\(*SDK version*)\Generic. The default style and template for each control is defined in the **generic.xaml** file. You can find the MediaTransportControls template in generic.xaml by searching for "MediaTransportControls".
 
-Xx xxx xxxxxxxxx xxxxxxxx, xxx xxxxx xxx xx xxxxxxxxx xxxxxxx xx xxx xxxx xxxxxxxx xx xxx xxxxxxxxx xxxxxxxx: 
-- [
-            **Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx): xxxxxx x xxxx xx xxxxx xxxxxxx xxxxx xxxxx xxx xxxx xxxxxxxx xxxxxxxx
-- [
-            **XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx): xxxxxxxx xxx xx xxx xxxxxxx.
-Xxx xxxx xxxx, xxx xxx Xxxxxxx xxxxxxx xx xxx XxxxxXxxxxxxxxXxxxxxxx xxxxxxxxx xxxxx. 
+In the following sections, you learn how to customize several of the main elements of the transport controls: 
+- [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx): allows a user to scrub through their media and also displays progress
+- [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx): contains all of the buttons.
+For more info, see the Anatomy section of the MediaTransportControls reference topic. 
 
-## Xxxxxxxxx xxx xxxxxxxxx xxxxxxxx
+## Customize the transport controls
 
-Xx xxx xxxx xx xxxxxx xxxx xxx xxxxxxxxxx xx xxx XxxxxXxxxxxxxxXxxxxxxx, xxx xxx xxxxxx x xxxx xx xxx xxxxxxx xxxxxxx xxxxx xxx xxxxxxxx, xxx xxxxxx xxxx. Xxxxxxx, xx xxx xxxx xxxx xx xxx xx xx xxxxxx xxx xxxxxxxxxxxxx xx xxx xxxxxxx, xxx xxxx xx xxxxxx x xxx xxxxx xxxx xxxxxxx xxxx XxxxxXxxxxxxxxXxxxxxxx.
+If you want to modify only the appearance of the MediaTransportControls, you can create a copy of the default control style and template, and modify that. However, if you also want to add to or modify the functionality of the control, you need to create a new class that derives from MediaTransportControls.
 
-### Xx-xxxxxxxx xxx xxxxxxx
+### Re-template the control
 
-**Xx xxxxxxxxx xxx XxxxxXxxxxxxxxXxxxxxxx xxxxxxx xxxxx xxx xxxxxxxx**
-1. Xxxx xxx xxxxxxx xxxxx xxxx XxxxxXxxxxxxxxXxxxxxxx xxxxxx xxx xxxxxxxxx xxxx x XxxxxxxxXxxxxxxxxx xx xxxx xxxxxxx.
-2. Xxxx xxx Xxxxx xx x:Xxx xxxxx xx xxxxxxxx xx, xxxx xxxx. 
+**To customize the MediaTransportControls default style and template**
+1. Copy the default style from MediaTransportControls styles and templates into a ResourceDictionary in your project.
+2. Give the Style an x:Key value to identify it, like this. 
 ```xaml
 <Style TargetType="MediaTransportControls" x:Key="myTransportControlsStyle">
     <!-- Style content ... -->
 </Style>
 ```
-3. Xxx x XxxxxXxxxxxx xxxx XxxxxXxxxxxxxxXxxxxxxx xx xxxx XX.
-4. Xxx xxx Xxxxx xxxxxxxx xx xxx XxxxxXxxxxxxxxXxxxxxxx xxxxxxx xx xxxx xxxxxx Xxxxx xxxxxxxx, xx xxxxx xxxx. 
+3. Add a MediaElement with MediaTransportControls to your UI.
+4. Set the Style property of the MediaTransportControls element to your custom Style resource, as shown here. 
 ```xaml
 <MediaElement AreTransportControlsEnabled="True">
     <MediaElement.TransportControls>
@@ -73,31 +71,31 @@ Xx xxx xxxx xx xxxxxx xxxx xxx xxxxxxxxxx xx xxx XxxxxXxxxxxxxxXxxxxxxx, xxx xxx
 </MediaElement>
 ```
 
-Xxx xxxx xxxx xxxxx xxxxxxxxx xxxxxx xxx xxxxxxxxx, xxx [Xxxxxxx xxxxxxxx]() xxx [Xxxxxxx xxxxxxxxx]().
+For more info about modifying styles and templates, see [Styling controls]() and [Control templates]().
 
-### Xxxxxx x xxxxxxx xxxxxxx
+### Create a derived control
 
-Xx xxx xx xx xxxxxx xxx xxxxxxxxxxxxx xx xxx xxxxxxxxx xxxxxxxx, xxx xxxx xxxxxx x xxx xxxxx xxxx'x xxxxxxx xxxx XxxxxXxxxxxxxxXxxxxxxx. X xxxxxxx xxxxx xxxxxx `CustomMediaTransportControls` xx xxxxx xx xxx [Xxxxx Xxxxxxxxx Xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=620023) xxx xxx xxxxxxxxx xxxxxxxx xx xxxx xxxx.
+To add to or modify the functionality of the transport controls, you must create a new class that's derived from MediaTransportControls. A derived class called `CustomMediaTransportControls` is shown in the [Media Transport Controls sample](http://go.microsoft.com/fwlink/p/?LinkId=620023) and the remaining examples on this page.
 
-**Xx xxxxxx x xxx xxxxx xxxxxxx xxxx XxxxxXxxxxxxxxXxxxxxxx**
-1. Xxx x xxx xxxxx xxxx xx xxxx xxxxxxx.
-    - Xx Xxxxxx Xxxxxx, xxxxxx Xxxxxxx > Xxx Xxxxx. Xxx Xxx Xxx Xxxx xxxxxx xxxxx.
-    - Xx xxx Xxx Xxx Xxxx xxxxxx, xxxxx x xxxx xxx xxx xxxxx xxxx, xxxx xxxxx Xxx. (Xx xxx Xxxxx Xxxxxxxxx Xxxxxxxx xxxxxx, xxx xxxxx xx xxxxx `CustomMediaTransportControls`.)
-2. Xxxxxx xxx xxxxx xxxx xx xxxxxx xxxx xxx XxxxxXxxxxxxxxXxxxxxxx xxxxx.
+**To create a new class derived from MediaTransportControls**
+1. Add a new class file to your project.
+    - In Visual Studio, select Project > Add Class. The Add New Item dialog opens.
+    - In the Add New Item dialog, enter a name for the class file, then click Add. (In the Media Transport Controls sample, the class is named `CustomMediaTransportControls`.)
+2. Modify the class code to derive from the MediaTransportControls class.
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
 {
 }
 ```
-3. Xxxx xxx xxxxxxx xxxxx xxx [**XxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) xxxx x [XxxxxxxxXxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx) xx xxxx xxxxxxx. Xxxx xx xxx xxxxx xxx xxxxxxxx xxx xxxxxx.
-(Xx xxx Xxxxx Xxxxxxxxx Xxxxxxxx xxxxxx, x xxx xxxxxx xxxxxx "Xxxxxx" xx xxxxxxx, xxx x XxxxxxxxXxxxxxxxxx xxxx xxxxxx xxxxxxx.xxxx xx xxxxx xx xx.)
-4. Xxxxxx xxx [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.targettype.aspx) xx xxx xxxxx xx xxx xxx xxxxxx xxxxxxx xxxx. (Xx xxx xxxxxx, xxx XxxxxxXxxx xx xxxxxxx xx `local:CustomMediaTransportControls`.)
+3. Copy the default style for [**MediaTransportControls**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediatransportcontrols.aspx) into a [ResourceDictionary](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.resourcedictionary.aspx) in your project. This is the style and template you modify.
+(In the Media Transport Controls sample, a new folder called "Themes" is created, and a ResourceDictionary file called generic.xaml is added to it.)
+4. Change the [**TargetType**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.style.targettype.aspx) of the style to the new custom control type. (In the sample, the TargetType is changed to `local:CustomMediaTransportControls`.)
 ```xaml
 xmlns:local="using:CustomMediaTransportControls">
 ...
 <Style TargetType="local:CustomMediaTransportControls">
 ```
-5. Xxx xxx [**XxxxxxxXxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.defaultstylekey.aspx) xx xxxx xxxxxx xxxxx. Xxxx xxxxx xxxx xxxxxx xxxxx xx xxx x Xxxxx xxxx x XxxxxxXxxx xx `local:CustomMediaTransportControls`.
+5. Set the [**DefaultStyleKey**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.defaultstylekey.aspx) of your custom class. This tells your custom class to use a Style with a TargetType of `local:CustomMediaTransportControls`.
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
 {
@@ -107,7 +105,7 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
     }
 }
 ```
-6. Xxx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx) xx xxxx XXXX xxxxxx xxx xxx xxx xxxxxx xxxxxxxxx xxxxxxxx xx xx. Xxx xxxxx xx xxxx xx xxxx xxx XXXx xx xxxx, xxxx, xxxxxxx, xxx xxxxxx xxx xxxxxxx xxxxxxx xxxxx xxxx xxxx x xxxxxxxxxx xxxxxxxx.
+6. Add a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.aspx) to your XAML markup and add the custom transport controls to it. One thing to note is that the APIs to hide, show, disable, and enable the default buttons still work with a customized template.
 ```xaml
 <MediaElement Name="MediaElement1" AreTransportControlsEnabled="True" Source="video.mp4">
     <MediaElement.TransportControls>
@@ -123,19 +121,19 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
     </MediaElement.TransportControls>
 </MediaElement>
 ```
-Xxx xxx xxx xxxxxx xxx xxxxxxx xxxxx xxx xxxxxxxx xx xxxxxx xxx xxxx xx xxxx xxxxxx xxxxxxx, xxx xxx xxxxxxx xxxx xx xxxxxx xxx xxxxxxxx.
+You can now modify the control style and template to update the look of your custom control, and the control code to update its behavior.
 
-### Xxxxxxx xxxx xxx xxxxxxxx xxxx
+### Working with the overflow menu
 
-Xxx xxx xxxx XxxxxXxxxxxxxxXxxxxxxx xxxxxxx xxxxxxx xxxx xx xxxxxxxx xxxx, xx xxxx xxxx xxxxxxxx xxxx xxxxxxxx xxx xxxxxx xxxxx xxx xxxx xxxxx xxxx.
+You can move MediaTransportControls command buttons into an overflow menu, so that less commonly used commands are hidden until the user needs them.
 
-Xx xxx XxxxxXxxxxxxxxXxxxxxxx xxxxxxxx, xxx xxxxxxx xxxxxxx xxx xxxxxxxxx xx x [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx) xxxxxxx. Xxx xxxxxxx xxx xxx xxx xxxxxxx xx xxxxxxx xxx xxxxxxxxx xxxxxxxx. Xxx xxxxxxx xxxxxxxx xxx xxx xxxxxxx xxxx xxxxxx xx xxx xxxxxxx xx xxxxxxx xxx xxx xxxxxx xxxxxxx (xxxxxx xxx xxxxxxx xx xxxx xxx xxxxxx). Xxx xxxxxxxxx xxxxxxxx xxx xxxxx xx xx xxxxxxxx xxxx xxxx xxxxxxx xxxx x xxxx xxxxxx xxx xxxxxxxx (…) xxxxxx. Xxx xxxx xxxx, xxx xxx [Xxx xxxx xxx xxxxxxx xxxx](app-bars.md) xxxxxxx.
+In the MediaTransportControls template, the command buttons are contained in a [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.aspx) element. The command bar has the concept of primary and secondary commands. The primary commands are the buttons that appear in the control by default and are always visible (unless you disable or hide the button). The secondary commands are shown in an overflow menu that appears when a user clicks the ellipsis (…) button. For more info, see the [App bars and command bars](app-bars.md) article.
 
-Xx xxxx xx xxxxxxx xxxx xxx xxxxxxx xxx xxxxxxx xxxxxxxx xx xxx xxxxxxxx xxxx, xxx xxxx xx xxxx xxx XXXX xxxxxxx xxxxxxxx. 
+To move an element from the command bar primary commands to the overflow menu, you need to edit the XAML control template. 
 
-**Xx xxxx x xxxxxxx xx xxx xxxxxxxx xxxx:**
-1. Xx xxx xxxxxxx xxxxxxxx, xxxx xxx XxxxxxxXxx xxxxxxx xxxxx `MediaControlsCommandBar`.
-2. Xxx x [**XxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) xxxxxxx xx xxx XXXX xxx xxx XxxxxxxXxx. Xxx xx xxxxx xxx xxxxxxx xxx xxx xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx). 
+**To move a command to the overflow menu:**
+1. In the control template, find the CommandBar element named `MediaControlsCommandBar`.
+2. Add a [**SecondaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.secondarycommands.aspx) section to the XAML for the CommandBar. Put it after the closing tag for the [**PrimaryCommands**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.commandbar.primarycommands.aspx). 
 ```xaml
 <CommandBar x:Name="MediaControlsCommandBar" ... >  
   <CommandBar.PrimaryCommands>
@@ -156,10 +154,10 @@ Xx xxxx xx xxxxxxx xxxx xxx xxxxxxx xxx xxxxxxx xxxxxxxx xx xxx xxxxxxxx xxxx, x
   </CommandBar.SecondaryCommands>
 </CommandBar>
 ```
-3. Xx xxxxxxxx xxx xxxx xxxx xxxxxxxx, xxx xxx xxxxx xxx XXXX xxx xxx xxxxxxx [**XxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx) xxxxxxx xxxx xxx XxxxxxxXxxxxxxx xx xxx XxxxxxxxxXxxxxxxx. Xx xxxx xxxxxxx, xx xxxx xxx `PlaybackRateButton` xx xxx xxxxxxxx xxxx.
+3. To populate the menu with commands, cut and paste the XAML for the desired [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx) objects from the PrimaryCommands to the SecondaryCommands. In this example, we move the `PlaybackRateButton` to the overflow menu.
 
-4. Xxx x xxxxx xx xxx xxxxxx xxx xxxxxx xxx xxxxxxx xxxxxxxxxxx, xx xxxxx xxxx.
-Xxxxxxx xxx xxxxxxxx xxxx xx xxxxxxxxx xx xxxx xxxxxxx, xxx xxxx xxx x xxxx xxxxx xx xxx xxxxxx xxx xxxx xxxxxx xxx xxxxx xxxx xxxx xxx xxxxxx xxx xxxxx xx xxx xxxxxx. Xxxxxxxxx, xx xxx'x xxxxxx xxxxxxxxx xx xxx xxxxxxxx xxxx.
+4. Add a label to the button and remove the styling information, as shown here.
+Because the overflow menu is comprised of text buttons, you must add a text label to the button and also remove the style that sets the height and width of the button. Otherwise, it won't appear correctly in the overflow menu.
 ```xaml
 <CommandBar.SecondaryCommands>
     <AppBarButton x:Name='PlaybackRateButton'
@@ -168,14 +166,14 @@ Xxxxxxx xxx xxxxxxxx xxxx xx xxxxxxxxx xx xxxx xxxxxxx, xxx xxxx xxx x xxxx xxxx
 </CommandBar.SecondaryCommands>
 ```
 
-> **Xxxxxxxxx**&xxxx;&xxxx;Xxx xxxx xxxxx xxxx xxx xxxxxx xxxxxxx xxx xxxxxx xx xx xxxxx xx xxx xx xx xxx xxxxxxxx xxxx. Xx xxxx xxxxxxx, xxx XxxxxxxxXxxxXxxxxx xxxxxxx xxx'x xxxxxxx xx xxx xxxxxxxx xxxx xxxxxx xxx XxXxxxxxxxXxxxXxxxxxXxxxxxx xxxxxxxx xx xxxx. Xx'x xxx xxxxxxx xxxxxx xxx XxXxxxxxxxXxxxXxxxxxx xxxxxxxx xx xxxx. Xxxxxxx xxxxx xxxxxxxxxx xx xxxxx xx xxx xxxxxxxx xxxxxxx.
+> **Important**&nbsp;&nbsp;You must still make the button visible and enable it in order to use it in the overflow menu. In this example, the PlaybackRateButton element isn't visible in the overflow menu unless the IsPlaybackRateButtonVisible property is true. It's not enabled unless the IsPlaybackRateEnabled property is true. Setting these properties is shown in the previous section.
 
-### Xxxxxx x xxxxxx xxxxxx
+### Adding a custom button
 
-Xxx xxxxxx xxx xxxxx xxxx xx xxxxxxxxx XxxxxXxxxxxxxxXxxxxxxx xx xx xxx x xxxxxx xxxxxxx xx xxx xxxxxxx. Xxxxxxx xxx xxx xx xx x xxxxxxx xxxxxxx xx x xxxxxxxxx xxxxxxx, xxx xxxxxxxxx xxx xxxxxxxx xxx xxxxxxx xxxxxx xxx xxxxxxxxx xxx xxxxxxxx xx xxx xxxx. Xx xxx [Xxxxx Xxxxxxxxx Xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=620023), x "xxxxxx" xxxxxx xx xxxxx xx xxx xxxxxxx xxxxxxxx. 
+One reason you might want to customize MediaTransportControls is to add a custom command to the control. Whether you add it as a primary command or a secondary command, the procedure for creating the command button and modifying its behavior is the same. In the [Media Transport Controls sample](http://go.microsoft.com/fwlink/p/?LinkId=620023), a "rating" button is added to the primary commands. 
 
-**Xx xxx x xxxxxx xxxxxxx xxxxxx**
-1. Xxxxxx xx XxxXxxXxxxxx xxxxxx xxx xxx xx xx xxx XxxxxxxXxx xx xxx xxxxxxx xxxxxxxx. 
+**To add a custom command button**
+1. Create an AppBarButton object and add it to the CommandBar in the control template. 
 ```xaml
 <AppBarButton x:Name="LikeButton" 
               Icon="Like" 
@@ -187,7 +185,7 @@ Xxx xxxxxx xxx xxxxx xxxx xx xxxxxxxxx XxxxxXxxxxxxxxXxxxxxxx xx xx xxx x xxxxxx
     
     You can also customize the icon for the button. For more info, see the [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.appbarbutton.aspx) reference.
 
-2. Xx xxx [**XxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) xxxxxxxx, xxx xxx xxxxxx xxxx xxx xxxxxxxx xxx xxxxxxxx x xxxxxxx xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) xxxxx. Xxxx xxxx xxxx xx xxx `CustomMediaTransportControls` xxxxx. 
+2. In the [**OnApplyTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.frameworkelement.onapplytemplate.aspx) override, get the button from the template and register a handler for its [**Click**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.buttonbase.click.aspx) event. This code goes in the `CustomMediaTransportControls` class. 
 ```csharp
 public sealed class CustomMediaTransportControls :  MediaTransportControls
 {
@@ -205,8 +203,8 @@ public sealed class CustomMediaTransportControls :  MediaTransportControls
 }
 ```
 
-3. Xxx xxxx xx xxx Xxxxx xxxxx xxxxxxx xx xxxxxxx xxx xxxxxx xxxx xxxxxx xxxx xxx xxxxxx xx xxxxxxx.
-Xxxx'x xxx xxxxxxxx xxxx xxx xxx xxxxx.
+3. Add code to the Click event handler to perform the action that occurs when the button is clicked.
+Here's the complete code for the class.
 ```csharp
 public sealed class CustomMediaTransportControls : MediaTransportControls
 {
@@ -237,11 +235,11 @@ public sealed class CustomMediaTransportControls : MediaTransportControls
 }
 ```
 
-### Xxxxxxxxx xxx xxxxxx
+### Modifying the slider
 
-Xxx "xxxx" xxxxxxx xx xxx XxxxxXxxxxxxxxXxxxxxxx xx xxxxxxxx xx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) xxxxxxx. Xxx xxx xxx xxx xxxxxxxxx xx xx xx xxxxxx xxx xxxxxxxxxxx xx xxx xxxx xxxxxxxx. 
+The "seek" control of the MediaTransportControls is provided by a [**Slider**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.slider.aspx) element. One way you can customize it is to change the granularity of the seek behavior. 
 
-Xxx xxxxxxx xxxx xxxxxx xx xxxxxxx xxxx YYY xxxxx, xx xxx xxxx xxxxxxxx xx xxxxxxx xx xxxx xxxx xxxxxxxx. Xxx xxx xxxxxx xxx xxxxxxxxxxx xx xxx xxxx xxxxxx xx xxxxxxx xxx Xxxxxx xxxx xxx XXXX xxxxxx xxxx xx xxxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.mediaopened.aspx) xxxxx xxxxxxx. Xxxx xxxxxxx xxxxx xxx xx xxx [**XxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) xx xxx x xxxxxxxxx xx xxx Xxxxxx, xxxx xxxxxx xxx xxxxxxx xxxx xxxxxxxxx xx xxx xxxxxx xxxx Y% xx Y.Y% (YYYY xxxxx) xx xxx xxxxx xx xxxxxx xxxx YYY xxxxxxx. Xxx XxxxxXxxxxxx xx xxxxx `MediaElement1`.
+The default seek slider is divided into 100 parts, so the seek behavior is limited to that many sections. You can change the granularity of the seek slider by getting the Slider from the XAML visual tree in your [**MediaOpened**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.mediaelement.mediaopened.aspx) event handler. This example shows how to use [**VisualTreeHelper**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.media.visualtreehelper.aspx) to get a reference to the Slider, then change the default step frequency of the slider from 1% to 0.1% (1000 steps) if the media is longer than 120 minutes. The MediaElement is named `MediaElement1`.
 
 ```csharp
 private void MediaElement_MediaOpened(object sender, RoutedEventArgs e)
@@ -256,9 +254,13 @@ private void MediaElement_MediaOpened(object sender, RoutedEventArgs e)
 }
 ```
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
-## Xxxxxxx xxxxxxxx
+## Related articles
 
-- [Xxxxx xxxxxxxx](media-playback.md)
+- [Media playback](media-playback.md)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

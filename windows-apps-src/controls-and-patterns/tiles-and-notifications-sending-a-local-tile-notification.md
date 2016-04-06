@@ -1,63 +1,48 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xx xxxx x xxxxx xxxx xxxxxxxxxxxx xx x xxxxxxx xxxx xxx x xxxxxxxxx xxxx xxxxx xxxxxxxx xxxx xxxxxxxxx.
-xxxxx: Xxxx x xxxxx xxxx xxxxxxxxxxxx
-xx.xxxxxxx: XYYXYYYY-XXXY-YXYY-XYYY-XYYYYXYYXXYX
-xxxxx: XXX
-xxxxxxxx: xxxxxx.xxx
+Description: This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates.
+title: Send a local tile notification
+ms.assetid: D34B0514-AEC6-4C41-B318-F0985B51AF8A
+label: TBD
+template: detail.hbs
 ---
 
-# Xxxx x xxxxx xxxx xxxxxxxxxxxx
+# Send a local tile notification
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxxx xxx xxxxx xx Xxxxxxx YY xxx xxxxxxx xx xxxx xxx xxxxxxxx, xxxxx xxxxxxxxx xxxxx xxx xxxxxxxxxxxxxxxx xxxxxxx xxx xxxxxxx xx xxxx xxx xxxx. Xxxx xxxxxxx xxxxxxxxx xxx xx xxxx x xxxxx xxxx xxxxxxxxxxxx xx x xxxxxxx xxxx xxx x xxxxxxxxx xxxx xxxxx xxxxxxxx xxxx xxxxxxxxx. (X xxxxx xxxxxxxxxxxx xx xxx xxxx'x xxxx xxxx xxx xxxx xx xxxxxxx xx xxx xxxx'x xxxxxx xx xxxxxx xxxx x xxx xxxxxx.)
+Primary app tiles in Windows 10 are defined in your app manifest, while secondary tiles are programmatically created and defined by your app code. This article describes how to send a local tile notification to a primary tile and a secondary tile using adaptive tile templates. (A local notification is one that's sent from app code as opposed to one that's pushed or pulled from a web server.)
 
-![xxxxxxx xxxx xxx xxxx xxxx xxxxxxxxxxxx](images/sending-local-tile-01.png)
+![default tile and tile with notification](images/sending-local-tile-01.png)
 
-**Xxxx**   Xxxxx xxxxx [xxxxxxxx xxxxxxxx xxxxx](tiles-and-notifications-create-adaptive-tiles.md) xxx [xxxxxxxx xxxx xxxxxxxx xxxxxx](tiles-and-notifications-adaptive-tiles-schema.md).
+**Note**   Learn about [creating adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md) and [adaptive tile template schema](tiles-and-notifications-adaptive-tiles-schema.md).
 
  
 
-## <span id="Install_the_NuGet_package">
-            </span>
-            <span id="install_the_nuget_package">
-            </span>
-            <span id="INSTALL_THE_NUGET_PACKAGE">
-            </span>Xxxxxxx xxx XxXxx xxxxxxx
+## <span id="Install_the_NuGet_package"></span><span id="install_the_nuget_package"></span><span id="INSTALL_THE_NUGET_PACKAGE"></span>Install the NuGet package
 
 
-Xx xxxxxxxxx xxxxxxxxxx xxx [XxxxxxxxxxxxxXxxxxxxxxx XxXxx xxxxxxx](https://www.nuget.org/packages/NotificationsExtensions.Win10/), xxxxx xxxxxxxxxx xxxxxx xx xxxxxxxxxx xxxx xxxxxxxx xxxx xxxxxxx xxxxxxx xx xxx XXX.
+We recommend installing the [NotificationsExtensions NuGet package](https://www.nuget.org/packages/NotificationsExtensions.Win10/), which simplifies things by generating tile payloads with objects instead of raw XML.
 
-Xxx xxxxxx xxxx xxxxxxxx xx xxxx xxxxxxx xxx xxx X# xxxx xxx [XxxxxxxxxxxxxXxxxxxxxxx](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) XxXxx xxxxxxx xxxxxxxxx. (Xx xxx'x xxxxxx xx xxxxxx xxxx xxx XXX, xxx xxx xxxx xxxx xxxxxxxx xxxxxxx [XxxxxxxxxxxxxXxxxxxxxxx](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) xxxxxx xxx xxx xx xxx xxxxxxx.)
+The inline code examples in this article are for C# with the [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet package installed. (If you'd prefer to create your own XML, you can find code examples without [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) toward the end of the article.)
 
-## <span id="Add_namespace_declarations">
-            </span>
-            <span id="add_namespace_declarations">
-            </span>
-            <span id="ADD_NAMESPACE_DECLARATIONS">
-            </span>Xxx xxxxxxxxx xxxxxxxxxxxx
+## <span id="Add_namespace_declarations"></span><span id="add_namespace_declarations"></span><span id="ADD_NAMESPACE_DECLARATIONS"></span>Add namespace declarations
 
 
-Xx xxxxxx xxx xxxx XXXx, xxxxxxx xxx [**Xxxxxxx.XX.Xxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208661) xxxxxxxxx. Xx xxxx xxxxxxxxx xxxxxxxxx xxx **XxxxxxxxxxxxxXxxxxxxxxx.Xxxxx** xxxxxxxxx xx xxxx xxx xxx xxxx xxxxxxxxx xx xxx xxxx xxxxxx XXXx (xxx xxxx xxxxxxx xxx [XxxxxxxxxxxxxXxxxxxxxxx](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) XxXxx xxxxxxx xx xxxxxx xxxxx XXXx).
+To access the tile APIs, include the [**Windows.UI.Notifications**](https://msdn.microsoft.com/library/windows/apps/br208661) namespace. We also recommend including the **NotificationsExtensions.Tiles** namespace so that you can take advantage of our tile helper APIs (you must install the [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet package to access these APIs).
 
 ```
 using Windows.UI.Notifications;
 using NotificationsExtensions.Tiles; // NotificationsExtensions.Win10
 ```
 
-## <span id="Create_the_notification_content">
-            </span>
-            <span id="create_the_notification_content">
-            </span>
-            <span id="CREATE_THE_NOTIFICATION_CONTENT">
-            </span>Xxxxxx xxx xxxxxxxxxxxx xxxxxxx
+## <span id="Create_the_notification_content"></span><span id="create_the_notification_content"></span><span id="CREATE_THE_NOTIFICATION_CONTENT"></span>Create the notification content
 
 
-Xx Xxxxxxx YY, xxxx xxxxxxxx xxx xxxxxxx xxxxx xxxxxxxx xxxx xxxxxxxxx, xxxxx xxxxx xxx xx xxxxxx xxxxxx xxxxxx xxxxxxx xxx xxxx xxxxxxxxxxxxx. (Xx xxxxx xxxx'x xxxxxxxx xxxx xxxxxxxx xxxxx, xxx xxx [Xxxxxx xxxxxxxx xxxxx](tiles-and-notifications-create-adaptive-tiles.md) xxx [Xxxxxxxx xxxx xxxxxxxxx](tiles-and-notifications-adaptive-tiles-schema.md) xxxxxxxx.)
+In Windows 10, tile payloads are defined using adaptive tile templates, which allow you to create custom visual layouts for your notifications. (To learn what's possible with adaptive tiles, see the [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md) and [Adaptive tile templates](tiles-and-notifications-adaptive-tiles-schema.md) articles.)
 
-Xxxx xxxx xxxxxxx xxxxxxx xxxxxxxx xxxx xxxxxxx xxx xxxxxx xxx xxxx xxxxx.
+This code example creates adaptive tile content for medium and wide tiles.
 
 ```
 // In a real app, these would be initialized with actual data
@@ -127,38 +112,28 @@ TileContent content = new TileContent()
 };
 ```
 
-Xxx xxxxxxxxxxxx xxxxxxx xxxxx xxxx xxx xxxxxxxxx xxxx xxxxxxxxx xx x xxxxxx xxxx:
+The notification content looks like the following when displayed on a medium tile:
 
-![xxxxxxxxxxxx xxxxxxx xx x xxxxxx xxxx](images/sending-local-tile-02.png)
+![notification content on a medium tile](images/sending-local-tile-02.png)
 
-## <span id="Create_the_notification">
-            </span>
-            <span id="create_the_notification">
-            </span>
-            <span id="CREATE_THE_NOTIFICATION">
-            </span>Xxxxxx xxx xxxxxxxxxxxx
+## <span id="Create_the_notification"></span><span id="create_the_notification"></span><span id="CREATE_THE_NOTIFICATION"></span>Create the notification
 
 
-Xxxx xxx xxxx xxxx xxxxxxxxxxxx xxxxxxx, xxx'xx xxxx xx xxxxxx x xxx [**XxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208616). Xxx **XxxxXxxxxxxxxxxx** xxxxxxxxxxx xxxxx x Xxxxxxx Xxxxxxx [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208620) xxxxxx, xxxxx xxx xxx xxxxxx xxxx xxx **XxxxXxxxxxx.XxxXxx** xxxxxx xx xxx'xx xxxxx [XxxxxxxxxxxxxXxxxxxxxxx](https://github.com/WindowsNotifications/NotificationsExtensions/wiki).
+Once you have your notification content, you'll need to create a new [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616). The **TileNotification** constructor takes a Windows Runtime [**XmlDocument**](https://msdn.microsoft.com/library/windows/apps/br208620) object, which you can obtain from the **TileContent.GetXml** method if you're using [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki).
 
-Xxxx xxxx xxxxxxx xxxxxxx x xxxxxxxxxxxx xxx x xxx xxxx.
+This code example creates a notification for a new tile.
 
 ```
 // Create the tile notification
 var notification = new TileNotification(content.GetXml());
 ```
 
-## <span id="Set_an_expiration_time_for_the_notification__optional_">
-            </span>
-            <span id="set_an_expiration_time_for_the_notification__optional_">
-            </span>
-            <span id="SET_AN_EXPIRATION_TIME_FOR_THE_NOTIFICATION__OPTIONAL_">
-            </span>Xxx xx xxxxxxxxxx xxxx xxx xxx xxxxxxxxxxxx (xxxxxxxx)
+## <span id="Set_an_expiration_time_for_the_notification__optional_"></span><span id="set_an_expiration_time_for_the_notification__optional_"></span><span id="SET_AN_EXPIRATION_TIME_FOR_THE_NOTIFICATION__OPTIONAL_"></span>Set an expiration time for the notification (optional)
 
 
-Xx xxxxxxx, xxxxx xxxx xxx xxxxx xxxxxxxxxxxxx xxx'x xxxxxx, xxxxx xxxx, xxxxxxxx, xxx xxxxxxxxx xxxxxxxxxxxxx xxxxxx xxxxx xxxxx xxxx. Xxxxxxx xxxx xxxxxxx xxxxxxx'x xxxxxxx xxxxxx xxxx xxxxxxxxx, xx'x x xxxx xxxxxxxx xx xxx xx xxxxxxxxxx xxxx xxxx xxxxx xxxxx xxx xxxx xxx, xxxxxxxxxx xx xxxxx xxxx xxx xxxxx xxxxxxxxxxxxx.
+By default, local tile and badge notifications don't expire, while push, periodic, and scheduled notifications expire after three days. Because tile content shouldn't persist longer than necessary, it's a best practice to set an expiration time that makes sense for your app, especially on local tile and badge notifications.
 
-Xxxx xxxx xxxxxxx xxxxxxx x xxxxxxxxxxxx xxxx xxxxxxx xxx xxxx xx xxxxxxx xxxx xxx xxxx xxxxx xxx xxxxxxx.
+This code example creates a notification that expires and will be removed from the tile after ten minutes.
 
 ```
 tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);</code></pre></td>
@@ -167,21 +142,16 @@ tileNotification.ExpirationTime = DateTimeOffset.UtcNow.AddMinutes(10);</code></
 </table>
 ```
 
-## <span id="Send_the_notification">
-            </span>
-            <span id="send_the_notification">
-            </span>
-            <span id="SEND_THE_NOTIFICATION">
-            </span>Xxxx xxx xxxxxxxxxxxx
+## <span id="Send_the_notification"></span><span id="send_the_notification"></span><span id="SEND_THE_NOTIFICATION"></span>Send the notification
 
 
-Xxxxxxxx xxxxxxx xxxxxxx x xxxx xxxxxxxxxxxx xx xxxxxx, xxxxxxx xxx xxxxxxxxxxxx xx x xxxxxxx xx xxxxxxxxx xxxx xx x xxx xxxxxxxxx.
+Although locally sending a tile notification is simple, sending the notification to a primary or secondary tile is a bit different.
 
-**Xxxxxxx xxxx**
+**Primary tile**
 
-Xx xxxx x xxxxxxxxxxxx xx x xxxxxxx xxxx, xxx xxx [**XxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208622) xx xxxxxx x xxxx xxxxxxx xxx xxx xxxxxxx xxxx, xxx xxxx xxx xxxxxxxxxxxx xx xxxxxxx "Xxxxxx". Xxxxxxxxxx xx xxxxxxx xx'x xxxxxxx, xxxx xxx'x xxxxxxx xxxx xxxxxx xxxxxx, xx xxx xxx xxxx xxxxxxxxxxxxx xx xx xxxx xxxx xx'x xxx xxxxxx. Xx xxx xxxx xxxx xxxx xxxxxxx xxxx xxxxx, xxx xxxxxxxxxxxxx xxxx xxx xxxx xxxx xxxxxx xxxx.
+To send a notification to a primary tile, use the [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622) to create a tile updater for the primary tile, and send the notification by calling "Update". Regardless of whether it's visible, your app's primary tile always exists, so you can send notifications to it even when it's not pinned. If the user pins your primary tile later, the notifications that you sent will appear then.
 
-Xxxx xxxx xxxxxxx xxxxx x xxxxxxxxxxxx xx x xxxxxxx xxxx.
+This code example sends a notification to a primary tile.
 
 <span codelanguage=""></span>
 ```
@@ -194,11 +164,11 @@ Xxxx xxxx xxxxxxx xxxxx x xxxxxxxxxxxx xx x xxxxxxx xxxx.
 TileUpdateManager.CreateTileUpdaterForApplication().Update(notification);
 ```
 
-**Xxxxxxxxx xxxx**
+**Secondary tile**
 
-Xx xxxx x xxxxxxxxxxxx xx x xxxxxxxxx xxxx, xxxxx xxxx xxxx xxxx xxx xxxxxxxxx xxxx xxxxxx. Xx xxx xxx xx xxxxxx x xxxx xxxxxxx xxx x xxxxxxxxx xxxx xxxx xxxxx'x xxxxx (xxx xxxxxxx, xx xxx xxxx xxxxxxxx xxx xxxxxxxxx xxxx), xx xxxxxxxxx xxxx xx xxxxxx. Xxx xxx xxx [**XxxxxxxxxXxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242205)(xxxxXx) xx xxxxxxxx xx xxxx xxxxxxxxx xxxx xx xxxxxx, xxx xxxx xxxxxx x xxxx xxxxxxx xxx xxx xxxxxxxxx xxxx xxx xxxx xxx xxxxxxxxxxxx.
+To send a notification to a secondary tile, first make sure that the secondary tile exists. If you try to create a tile updater for a secondary tile that doesn't exist (for example, if the user unpinned the secondary tile), an exception will be thrown. You can use [**SecondaryTile.Exists**](https://msdn.microsoft.com/library/windows/apps/br242205)(tileId) to discover if your secondary tile is pinned, and then create a tile updater for the secondary tile and send the notification.
 
-Xxxx xxxx xxxxxxx xxxxx x xxxxxxxxxxxx xx x xxxxxxxxx xxxx.
+This code example sends a notification to a secondary tile.
 
 ```
 // If the secondary tile is pinned
@@ -212,19 +182,14 @@ if (SecondaryTile.Exists("MySecondaryTile"))
 }
 ```
 
-![xxxxxxx xxxx xxx xxxx xxxx xxxxxxxxxxxx](images/sending-local-tile-01.png)
+![default tile and tile with notification](images/sending-local-tile-01.png)
 
-## <span id="Clear_notifications_on_the_tile__optional_">
-            </span>
-            <span id="clear_notifications_on_the_tile__optional_">
-            </span>
-            <span id="CLEAR_NOTIFICATIONS_ON_THE_TILE__OPTIONAL_">
-            </span>Xxxxx xxxxxxxxxxxxx xx xxx xxxx (xxxxxxxx)
+## <span id="Clear_notifications_on_the_tile__optional_"></span><span id="clear_notifications_on_the_tile__optional_"></span><span id="CLEAR_NOTIFICATIONS_ON_THE_TILE__OPTIONAL_"></span>Clear notifications on the tile (optional)
 
 
-Xx xxxx xxxxx, xxx xxxxxx xxxxx x xxxxxxxxxxxx xxxx xxx xxxx xxx xxxxxxxxxx xxxx xxxx xxxxxxx. Xxx xxxxxxx, xxxx xxx xxxx xxxxxxxx xxxx xxx, xxx xxxxx xxxx xx xxxxx xxx xxx xxxxxxxxxxxxx xxxx xxx xxxx. Xx xxxx xxxxxxxxxxxxx xxx xxxx-xxxxx, xx xxxxxxxxx xxxx xxx xxx xx xxxxxxxxxx xxxx xx xxx xxxxxxxxxxxx xxxxxxx xx xxxxxxxxxx xxxxxxxx xxx xxxxxxxxxxxx.
+In most cases, you should clear a notification once the user has interacted with that content. For example, when the user launches your app, you might want to clear all the notifications from the tile. If your notifications are time-bound, we recommend that you set an expiration time on the notification instead of explicitly clearing the notification.
 
-Xxxx xxxx xxxxxxx xxxxxx xxx xxxx xxxxxxxxxxxx.
+This code example clears the tile notification.
 
 ```
 TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
@@ -233,31 +198,26 @@ TileUpdateManager.CreateTileUpdaterForApplication().Clear();</code></pre></td>
 </table>
 ```
 
-Xxx x xxxx xxxx xxx xxxxxxxxxxxx xxxxx xxxxxxx xxx xxxxxxxxxxxxx xx xxx xxxxx, xxxxxxx xxx Xxxxx xxxxxx xxxxxxx xxx xxxxx. Xxx xxx'x, xxxxxxx, xxxxx x xxxxxxxxxxxx xxx xxxx xxx'x xxxxxx; xxxx xxx xxxxx xxx xxxx xxx xxxxx xxxxxxxxxxxxx.
+For a tile with the notification queue enabled and notifications in the queue, calling the Clear method empties the queue. You can't, however, clear a notification via your app's server; only the local app code can clear notifications.
 
-Xxxxxxxx xx xxxx xxxxxxxxxxxxx xxx xxxx xxx xxx xxxxxxxxxxxxx xx xxxxxxx xxxxxxxx xxxxxxxxxxxxx. X xxxxx xxxx xx xxx Xxxxx xxxxxx xxxx xxxxx xxx xxxx xxxxxxx xx xxx xxx xxxxxxxxxxxxx xxxxxxxxxx xxxx xxx xxxx, xxxxxxxx, xx xxxxx. Xxxxxxxxx xxxxxxxxxxxxx xxxx xxxxx'x xxx xxxxxxxx xxx xxx xxxxxxx xx xxxx xxxxxx.
+Periodic or push notifications can only add new notifications or replace existing notifications. A local call to the Clear method will clear the tile whether or not the notifications themselves came via push, periodic, or local. Scheduled notifications that haven't yet appeared are not cleared by this method.
 
-![xxxx xxxx xxxxxxxxxxxx xxx xxxx xxxxx xxxxx xxxxxxx](images/sending-local-tile-03.png)
+![tile with notification and tile after being cleared](images/sending-local-tile-03.png)
 
-## <span id="Next_steps">
-            </span>
-            <span id="next_steps">
-            </span>
-            <span id="NEXT_STEPS">
-            </span>Xxxx xxxxx
+## <span id="Next_steps"></span><span id="next_steps"></span><span id="NEXT_STEPS"></span>Next steps
 
 
-**Xxxxx xxx xxxxxxxxxxxx xxxxx**
+**Using the notification queue**
 
-Xxx xxxx xxx xxxx xxxx xxxx xxxxx xxxx xxxxxx, xxx xxx xxxxxx xxx xxxxxxxxxxxxx xx xxx xxxx xx xxxxxxxx x [xxxxxxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234).
+Now that you have done your first tile update, you can expand the functionality of the tile by enabling a [notification queue](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234).
 
-**Xxxxx xxxxxxxxxxxx xxxxxxxx xxxxxxx**
+**Other notification delivery methods**
 
-Xxxx xxxxxxx xxxxx xxx xxx xx xxxx xxx xxxx xxxxxx xx x xxxxxxxxxxxx. Xx xxxxxxx xxxxx xxxxxxx xx xxxxxxxxxxxx xxxxxxxx, xxxxxxxxx xxxxxxxxx, xxxxxxxx, xxx xxxx, xxx [Xxxxxxxxxx xxxxxxxxxxxxx](tiles-and-notifications-choosing-a-notification-delivery-method.md).
+This article shows you how to send the tile update as a notification. To explore other methods of notification delivery, including scheduled, periodic, and push, see [Delivering notifications](tiles-and-notifications-choosing-a-notification-delivery-method.md).
 
-**XxxXxxxxx xxxxxxxx xxxxxx**
+**XmlEncode delivery method**
 
-Xx xxx'xx xxx xxxxx [XxxxxxxxxxxxxXxxxxxxxxx](https://github.com/WindowsNotifications/NotificationsExtensions/wiki), xxxx xxxxxxxxxxxx xxxxxxxx xxxxxx xx xxxxxxx xxxxxxxxxxx.
+If you're not using [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki), this notification delivery method is another alternative.
 
 <span codelanguage=""></span>
 ```
@@ -278,24 +238,19 @@ public string XmlEncode(string text)
 }
 ```
 
-## <span id="Code_examples_without_NotificationsExtensions">
-            </span>
-            <span id="code_examples_without_notificationsextensions">
-            </span>
-            <span id="CODE_EXAMPLES_WITHOUT_NOTIFICATIONSEXTENSIONS">
-            </span>Xxxx xxxxxxxx xxxxxxx XxxxxxxxxxxxxXxxxxxxxxx
+## <span id="Code_examples_without_NotificationsExtensions"></span><span id="code_examples_without_notificationsextensions"></span><span id="CODE_EXAMPLES_WITHOUT_NOTIFICATIONSEXTENSIONS"></span>Code examples without NotificationsExtensions
 
 
-Xx xxx xxxxxx xx xxxx xxxx xxx XXX xxxxxxx xx xxx [XxxxxxxxxxxxxXxxxxxxxxx](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) XxXxx xxxxxxx, xxx xxxxx xxxxxxxxx xxxx xxxxxxxx xx xxxxx xxxxx xxxxxxxx xxxxxxxx xx xxxx xxxxxxx. Xxx xxxx xx xxx xxxx xxxxxxxx xxx xx xxxx xxxxxx xxxx [XxxxxxxxxxxxxXxxxxxxxxx](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) xx xxxx xxx XXX.
+If you prefer to work with raw XML instead of the [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) NuGet package, use these alternate code examples to first three examples provided in this article. The rest of the code examples can be used either with [NotificationsExtensions](https://github.com/WindowsNotifications/NotificationsExtensions/wiki) or with raw XML.
 
-Xxx xxxxxxxxx xxxxxxxxxxxx
+Add namespace declarations
 
 ```
 using Windows.UI.Notifications;
 using Windows.Data.Xml.Dom;
 ```
 
-Xxxxxx xxx xxxxxxxxxxxx xxxxxxx
+Create the notification content
 
 ```
 // In a real app, these would be initialized with actual data
@@ -328,7 +283,7 @@ string content = $@"
 </tile>";
 ```
 
-Xxxxxx xxx xxxxxxxxxxxx
+Create the notification
 
 ```
 // Load the string into an XmlDocument
@@ -339,23 +294,26 @@ doc.LoadXml(content);
 var notification = new TileNotification(doc);
 ```
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxx
+## <span id="related_topics"></span>Related topics
 
 
-* [Xxxxxx xxxxxxxx xxxxx](tiles-and-notifications-create-adaptive-tiles.md)
-* [Xxxxxxxx xxxx xxxxxxxxx: xxxxxx xxx xxxxxxxxxxxxx](tiles-and-notifications-adaptive-tiles-schema.md)
-* [XxxxxxxxxxxxxXxxxxxxxxx.XxxYY (XxXxx xxxxxxx)](https://www.nuget.org/packages/NotificationsExtensions.Win10/)
-* [XxxxxxxxxxxxxXxxxxxxxxx xx XxxXxx](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
-* [Xxxx xxxx xxxxxx xx XxxXxx](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
-* [**Xxxxxxx.XX.Xxxxxxxxxxxxx xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208661)
-* [Xxx xx xxx xxx xxxxxxxxxxxx xxxxx (XXXX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
-* [Xxxxxxxxxx xxxxxxxxxxxxx](tiles-and-notifications-choosing-a-notification-delivery-method.md)
+* [Create adaptive tiles](tiles-and-notifications-create-adaptive-tiles.md)
+* [Adaptive tile templates: schema and documentation](tiles-and-notifications-adaptive-tiles-schema.md)
+* [NotificationsExtensions.Win10 (NuGet package)](https://www.nuget.org/packages/NotificationsExtensions.Win10/)
+* [NotificationsExtensions on GitHub](https://github.com/WindowsNotifications/NotificationsExtensions/wiki)
+* [Full code sample on GitHub](https://github.com/WindowsNotifications/quickstart-sending-local-tile-win10)
+* [**Windows.UI.Notifications namespace**](https://msdn.microsoft.com/library/windows/apps/br208661)
+* [How to use the notification queue (XAML)](https://msdn.microsoft.com/library/windows/apps/xaml/hh868234)
+* [Delivering notifications](tiles-and-notifications-choosing-a-notification-delivery-method.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

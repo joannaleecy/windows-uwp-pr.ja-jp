@@ -1,120 +1,120 @@
 ---
-xxxxx: Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X# xxx Xxxxxx Xxxxx
-xxxxxxxxxxx: Xxxxxxxx xxxx xxx .XXX Xxxxxxxxx Y.Y, xxx xxx xxx xxxxxxx xxxx xx xxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxx, xxxxxxxx xx x Xxxxxxx Xxxxxxx xxxxxxxxx.
-xx.xxxxxxx: XYYYYYYY-YYXX-YYXX-XYYX-YYXYXXXYXXYX
+title: Creating Windows Runtime Components in C# and Visual Basic
+description: Starting with the .NET Framework 4.5, you can use managed code to create your own Windows Runtime types, packaged in a Windows Runtime component.
+ms.assetid: A5672966-74DF-40AB-B01E-01E3FCD0AD7A
 ---
 
-# Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X\# xxx Xxxxxx Xxxxx
+# Creating Windows Runtime Components in C# and Visual Basic
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[Xxxx xxxxxxxxxxx xxxxxxx xx xxx-xxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxx xx'x xxxxxxxxxxxx xxxxxxxx. Xxxxxxxxx xxxxx xx xxxxxxxxxx, xxxxxxx xx xxxxxxx, xxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxx.\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-Xxxxxxxx xxxx xxx .XXX Xxxxxxxxx Y.Y, xxx xxx xxx xxxxxxx xxxx xx xxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxx, xxxxxxxx xx x Xxxxxxx Xxxxxxx xxxxxxxxx. Xxx xxx xxx xxxx xxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx X++, XxxxXxxxxx, Xxxxxx Xxxxx, xx X\#. Xxxx xxxxxxx xxxxxxxx xxx xxxxx xxx xxxxxxxx x xxxxxxxxx, xxx xxxxxxxxx xxxx xxxxxxx xx .XXX Xxxxxxxxx xxxxxxx xxx xxx Xxxxxxx Xxxxxxx. Xx xxxxxxx, xxxx xxxxxxx xx xxxxxxxx xx xx xxxxxxxxxxx xx xxx .XXX Xxxxxxxxx xxxxxxxxxx. Xxxxxxx, xxxx xxx xxxxxx x xxxxxxxxx xx xxx xxxx XxxxXxxxxx xx X++, xxx xxxx xx xx xxxxx xx xxxxxxxxxxx xx xxx xxx xxxxx xxxxxxxxx xxxxxxx xxx Xxxxxxx Xxxxxxx.
+Starting with the .NET Framework 4.5, you can use managed code to create your own Windows Runtime types, packaged in a Windows Runtime component. You can use your component in Universal Windows Platform (UWP) apps with C++, JavaScript, Visual Basic, or C#. This article outlines the rules for creating a component, and discusses some aspects of .NET Framework support for the Windows Runtime. In general, that support is designed to be transparent to the .NET Framework programmer. However, when you create a component to use with JavaScript or C++, you need to be aware of differences in the way those languages support the Windows Runtime.
 
-Xx xxx xxx xxxxxxxx x xxxxxxxxx xxx xxx xxxx xx XXX xxxx xxxx Xxxxxx Xxxxx xx X\#, xxx xxx xxxxxxxxx xxxx xxx xxxxxxx XXX xxxxxxxx, xxxxxxxx xxxxx xxx **Xxxxx Xxxxxxx** xxxxxxxx xxxxxxx xx xxx **Xxxxxxx Xxxxxxx Xxxxxxxxx** xxxxxxxx. Xxxxx xxx xxxxx xxxxxxxxxxxx xx x xxxxxx xxxxx xxxxxxx.
+If you are creating a component for use only in UWP apps with Visual Basic or C#, and the component does not contain UWP controls, consider using the **Class Library** template instead of the **Windows Runtime Component** template. There are fewer restrictions on a simple class library.
 
-Xxxx xxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxx:
+This article contains the following sections:
 
-## Xxxxxxxxx xxxxx xx Xxxxxxx Xxxxxxx Xxxxxxxxxx
-
-
-Xxxxxxxxxx, xxx Xxxxxxx Xxxxxxx xxxxx xx xxxx xxxxxxxxx xxx xxx xxx .XXX Xxxxxxxxx xxxxxxxxxxxxx xxxx'x xxxxxxx xx x Xxxxxxxxx Xxxxxxx xxx. (Xxx [.XXX xxx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx) xxxxxxxx xxx xxxx xxxxxxxxxxx.) Xxxxxxxxxx, xxx xxxxxxx xx xxxx xxxxx xxx xxxxxx xxxx Xxxxxxx Xxxxxxx xxxxx xxx xxxxx xxxxxxxxxx xxx xxxxxx xxxxxx. Xxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxxx xx .XXX Xxxxxxxxx xxxxx xxxx xxx xxxxxxx xxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx.
-
--   Xxx xxxxxx, xxxxxxxxxx, xxx xxxxxx xxxxxx xx xxx xxx xxxxxx xxxxx xxx xxxxxxx xx xxxx xxxxxxxxx xxxx xx Xxxxxxx Xxxxxxx xxxxx.
-
-    Xxxx xxxxxxxxxxx xxxxxxxx xxx Xxxxxxx Xxxxxxx xxxxx xxxx xxx xxxxxx xx xxxx xx xxxxx xxxx xxx xxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxxxxx. Xx xxxx xxxxxxxx x xxxxxx xx .XXX Xxxxxxxxx xxxxx. Xxx xxxxxxxxx xx xxxxx xxxxx xx xxxx xx xxx xxxxxxx xxx .XXX Xxxxxxxxx xxxxxxxx xx xxxxxx xxx xxxxxxx xxx xx xxx Xxxxxxx Xxxxxxx xx xxxxxxx xxxx: Xxxx xxxx xxxxxxx xx xxx xxxxxxxx .XXX Xxxxxxxxx xxxxx xxxxxxx xx xxx xxxxxxxxxx Xxxxxxx Xxxxxxx xxxxx. Xxx xxxxxxx, xxx xxx xxx .XXX Xxxxxxxxx xxxxxxxxx xxxxx xxxx xx XxxYY xxx Xxxxxx, xxxxxxx xxxxxxxxxxx xxxxx xxxx xx XxxxXxxxXxxxxx xxx Xxx, xxx xxxx xxxxxxxx xxxx xxxxxxx xxxxxxxxx xxxxx xxxx xx XXxxxxxxxxx&xx;X&xx; (XXxxxxxxxxx(Xx X) xx Xxxxxx Xxxxx) xxx XXxxxxxxxxx&xx;XXxx,XXxxxx&xx;. (Xxxx xxxx xxx xxxx xxxxxxxxx xx xxxxx xxxxxxx xxxxx xxxx xx Xxxxxxx Xxxxxxx xxxxx.) Xxxx xx xxxxxxxxx xx xxx xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxx xxxxx xx xxxxxxx xxxx xxx Xxxxxxx xxxxxxx xxxxx xx xxx Xxxxxxx Xxxxxxx, xxxxx xx xxxx xxxxxxx.
-
--   Xxxxxx xxxxxxx xxx xxxxxxxxxx xxx xxxxxxx xxxxxxx, xxxxxxxxxx, xxx xxxxxx. Xxx xxx xxxxxxx xxxxxxxxx xxx xxxx xxxxxx, xx xxx xxx XxxxxXxxxxxx&xx;X&xx; xxxxxxxx. X xxxxxx xxxxx xx xxxxxxxxx xxxxxx:
-
-    -   Xx xxxxxxx.
-    -   Xxxxxxxxx xx xxxxxxxxx xxxx xx xxx x Xxxxxxx Xxxxxxx xxxxxxxxx. (Xxxxxxx, xxx xxx xxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxx.)
-    -   Xxxxxx xxxx xxxxx xxxx xxx xxx xx xxx Xxxxxxx Xxxxxxx, xxxx xx Xxxxxx.Xxxxxxxxx xxx Xxxxxx.XxxxxXxxx.
--   Xxx xxxxxx xxxxx xxxx xxxx x xxxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxxx, xxx xxx xxxxxxxx xxxx xxxx xxx xxxxx xxxx "Xxxxxxx".
-
-    > **Xxx**  Xx xxxxxxx, Xxxxxx Xxxxxx xxxxxxxx xxxx xxxxxxxxx xxxxx xxxx xxxxx xxx xxxxxxxx xxxx. Xx Xxxxxx Xxxxx, xxx Xxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx xxxxxxxxx xx xxx xxxxx xx xxxx xxxx.
-
--   Xxxxxx xxxxxxxxxx xxx'x xxxx xxx xxxxxxx xxxxx xxxx xxxxxx xxxxxx, xxx xxxxx xxxxxx xxxx xx xxxxx xxxxx xx xxxxxxx.
--   Xxxxxx xxxxxxx xxxx xx **xxxxxx** (**XxxXxxxxxxxxxx** xx Xxxxxx Xxxxx). Xx xxxx xxxxxxxxxxx xxxxx xxxxxxxx xxxxxxxxxxxx, xxx xxx xxxxxx x xxxxxx xxxxxxxxx xxx xxxxxxxxx xxxx xxxxxxxxx xx xxx xxxxxxx xxxx xxxx xx xxxxxxxxxxx.
-
-## Xxxxxxxxx xxxx xxxxxxxxx
+## Declaring types in Windows Runtime Components
 
 
-Xx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx xxx xxxx xxxxxxxxx xxx xxxxx xxxx xxxxxxx xxxx, xxx xxx xxxxx xxxx xx xxx xxxx xxxx.
+Internally, the Windows Runtime types in your component can use any .NET Framework functionality that's allowed in a Universal Windows app. (See [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx) overview for more information.) Externally, the members of your types can expose only Windows Runtime types for their parameters and return values. The following list describes the limitations on .NET Framework types that are exposed from Windows Runtime Components.
 
-Xxxx xxx'xx xxxxxxx xxxx xxxxxxxxx xx xxxx xx x Xxxxxxxxx Xxxxxxx xxx xxxxx X++, xxx xxx xxxxx xxxxxxx xxx xxxxxx xxxx xx xxx xxxx xxxx. Xxx xxxxxxx xx xxxxxx xxxx xxxx.
+-   The fields, parameters, and return values of all the public types and members in your component must be Windows Runtime types.
 
-## **Xx xxxxx xxxx xxxxxx X++ xxxx xxx xxxxxxx xxxx**
+    This restriction includes the Windows Runtime types that you create as well as types that are provided by the Windows Runtime itself. It also includes a number of .NET Framework types. The inclusion of these types is part of the support the .NET Framework provides to enable the natural use of the Windows Runtime in managed code: Your code appears to use familiar .NET Framework types instead of the underlying Windows Runtime types. For example, you can use .NET Framework primitive types such as Int32 and Double, certain fundamental types such as DateTimeOffset and Uri, and some commonly used generic interface types such as IEnumerable&lt;T&gt; (IEnumerable(Of T) in Visual Basic) and IDictionary&lt;TKey,TValue&gt;. (Note that the type arguments of these generic types must be Windows Runtime types.) This is discussed in the sections Passing Windows Runtime types to managed code and Passing managed types to the Windows Runtime, later in this article.
 
-1.  Xxxx xxx xxxxxxxx xxxx xxx xxxx Xxxxxx X++ xxxxxxx, xxx xxxxxx **Xxxxxxxxxx**.
-2.  Xx xxx xxxxxxxx xxxxx, xxxxx **Xxxxxxxxxxxxx Xxxxxxxxxx**, xxxxxx **Xxxxxxxxx**.
-3.  Xxxxxx **Xxxxxxxx Xxxx**, xxx xx xxx xxxx-xxxx xxxx xxx xxxxxx **Xxxxxx Xxxx** xx **Xxxxx (Xxxxxxx xxx Xxxxxx)**. Xxxxxx **XX**.
-4.  Xxx xxxxxxxxxxx xx xxxxxx xxx xxxxxxx xxxx.
+-   Public classes and interfaces can contain methods, properties, and events. You can declare delegates for your events, or use the EventHandler&lt;T&gt; delegate. A public class or interface cannot:
 
-Xxxx xxx'xx xxxxxxx xxxx xxxxxxxxx xx xxxx xx x Xxxxxxxxx Xxxxxxx xxx xxxxx XxxxXxxxxx, xx xxxxxxx xxx xxxxxxxx xx xx XxxxXxxxxx xxxxxxxxx xxxx. Xx Xxxxxx Xxxxxx, xxx xxx'x xxxxx XxxxXxxxxx xxx xxxxxxx xxxx xx xxx xxxx xxxx.
+    -   Be generic.
+    -   Implement an interface that is not a Windows Runtime interface. (However, you can create your own Windows Runtime interfaces and implement them.)
+    -   Derive from types that are not in the Windows Runtime, such as System.Exception and System.EventArgs.
+-   All public types must have a root namespace that matches the assembly name, and the assembly name must not begin with "Windows".
 
-## **Xx xxxxx xxxxxxx xxxx xxxxxxx xx XxxxXxxxxx**
+    > **Tip**  By default, Visual Studio projects have namespace names that match the assembly name. In Visual Basic, the Namespace statement for this default namespace is not shown in your code.
 
-1.  Xxxx xxx xxxxxxxx xxxx xxx xxxx XxxxXxxxxx xxxxxxx, xxx xxxxxx **Xxxxxxxxxx**.
-2.  Xx xxx xxxxxxxx xxxxx, xxxxx **Xxxxxxxxxxxxx Xxxxxxxxxx**, xxxxxx **Xxxxxxxxx**.
-3.  Xxxxxx **Xxxxxxxx Xxxx**, xxx xx xxx xxxx-xxxx xxxx xxx xxxxxx **Xxxxxx Xxxx** xx **Xxxxxxx Xxxx**. Xxxxxx **XX**.
-4.  Xxx xxxxxxxxxxx xx xxxxxxx xxxx xxx xxxxx xx xxxxx.
+-   Public structures can't have any members other than public fields, and those fields must be value types or strings.
+-   Public classes must be **sealed** (**NotInheritable** in Visual Basic). If your programming model requires polymorphism, you can create a public interface and implement that interface on the classes that must be polymorphic.
 
-## Xxxxxxx Xxxxxxx Xxxxxxx xxxxx xx xxxxxxx xxxx
+## Debugging your component
 
 
-Xx xxxxxxxxx xxxxxxxxxx xx xxx xxxxxxx Xxxxxxxxx xxxxx xx Xxxxxxx Xxxxxxx Xxxxxxxxxx, xxxxxxx .XXX Xxxxxxxxx xxxxx xxx xxxxxx xx xxx xxxxxxxxxx xx xxxxxxx xx xxxxxx xxxxxxx. Xxxx xx xxxx xx xxx xxxxxxx xxxx xxx .XXX Xxxxxxxxx xxxxxxxx xx xxxxxx xxx xxxxxxx xxx xx xxx Xxxxxxx Xxxxxxx xx xxxxxxx xxxx. Xx xxxxxxxx xxxxxxxxx xxxxx xxx xxxx xxxxxxx xxx xxxxxxxxxx. Xxxx xxxx xxxxxxxxx xx xxxx xxxx XxxxXxxxxx xx xxxx X++ xxxx, xx'x xxxxxxxxx xx xxxx xxx xxxx .XXX Xxxxxxxxx xxxxx xxxxxx xx xxx xxxxxx. Xxx [Xxxxxxxxxxx: Xxxxxxxx x xxxxxx xxxxxxxxx xx X\# xx Xxxxxx Xxxxx xxx xxxxxxx xx xxxx XxxxXxxxxx](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md) xxx xxxxxxxx xxxx XxxxXxxxxx. Xxxx xxxxxxx xxxxxxxxx xxxxxxxx xxxx xxxxx.
+If both your Universal Windows app and your component are built with managed code, you can debug them at the same time.
 
-Xx xxx .XXX Xxxxxxxxx, xxxxxxxxx xxxxx xxxx xxx XxxYY xxxxxxxxx xxxx xxxx xxxxxx xxxxxxxxxx xxx xxxxxxx, xxxx xx xxx XxxXxxxx xxxxxx. Xx xxxxxxxx, xxxxxxxxx xxxxx xxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxxx xxxx xxxxxx. Xxxx xxx xxxx xxxxx xxxxx xx xxxxxxx xxxx, xxxx xxxxxx xx xx .XXX Xxxxxxxxx xxxxx, xxx xxx xxx xxx xxx xxxxxxxxxx xxx xxxxxxx xx xxx .XXX Xxxxxxxxx xxxxx xx xxx xxxxxxxx xxxxx. Xxx xxxxxxxxx xxxx xxxxxxxxxx xxx xxxxxxxxxxxxx xxxx xxx xxxx xxxxxxxxxxxxx xx xxx XXX:
+When you're testing your component as part of a Universal Windows app using C++, you can debug managed and native code at the same time. The default is native code only.
 
--   Xxx xxx Xxxxxxx Xxxxxxx xxxxxxxxxx XxxYY, XxxYY, Xxxxxx, Xxxxxx, Xxxxxxx, Xxxxxx (xx xxxxxxxxx xxxxxxxxxx xx Xxxxxxx xxxxxxxxxx), Xxxx, XXxxYY, XXxxYY, xxx Xxxx, xxx xxx xxxx xx xxx xxxx xxxx xx xxx Xxxxxx xxxxxxxxx.
--   Xxx XXxxY, xxx Xxxxxx.Xxxx.
--   Xxx XxxxYY, xxx Xxxxxx.Xxxx.
--   Xxx xxx XXxxxxxxxxxx xxxxxxxxx, xxx Xxxxxx.Xxxxxx.
+## **To debug both native C++ code and managed code**
 
-Xx X\# xx Xxxxxx Xxxxx xxxxxxxx x xxxxxxxx xxxxxxx xxx xxx xx xxxxx xxxxx, xxx xxx xxx xxx xxxxxxxx xxxxxxx xxxxxxx.
+1.  Open the shortcut menu for your Visual C++ project, and choose **Properties**.
+2.  In the property pages, under **Configuration Properties**, choose **Debugging**.
+3.  Choose **Debugger Type**, and in the drop-down list box change **Native Only** to **Mixed (Managed and Native)**. Choose **OK**.
+4.  Set breakpoints in native and managed code.
 
-Xx xxxxxxxx xx xxxxxxxxx xxxxx, xxxx xxxxx, xxxxxxxx xxxx Xxxxxxx Xxxxxxx xxxxx xxxxxx xx xxxxxxx xxxx xx xxxxx .XXX Xxxxxxxxx xxxxxxxxxxx. Xxx xxxxxxx, xxxxxxx xxxx XxxxXxxxxx xxxx xxxx xxx Xxxxxxx.Xxxxxxxxxx.Xxx xxxxx, xxx xxx xxxx xx xxxx xx xx x X\# xx Xxxxxx Xxxxx xxxxxx. Xxx xxxxxxxxxx xxxx xx xxxxxxx xxxx xx xxx .XXX Xxxxxxxxx Xxxxxx.Xxx xxxxx, xxx xxxx'x xxx xxxx xx xxx xxx xxx xxxxxx xxxxxxxxx. Xxx xxx xxxx xxxx x Xxxxxxx Xxxxxxx xxxx xxxxxxx xx x .XXX Xxxxxxxxx xxxx, xxxxxxx XxxxxxxXxxxx xx Xxxxxx Xxxxxx xxxxx xxx Xxxxxxx Xxxxxxx xxxx xxxx xxx'xx xxxxxxx xxxxxxx xxxx, xxx xxxxxxxx xxx xxxxxxxxxx .XXX Xxxxxxxxx xxxx. (Xxxxxxx xxx xxx xxxxx xxxx xxx xxxx xxxx. Xxxxxxx, xxxx xxxx xxx Xxxxxxx.Xxxxxxxxxx.XxxxXxxx xxxxxxxxx xxxxxxx xx xxxxxxx xxxx xx Xxxxxx.XxxxXxxxXxxxxx xxx xxx xx Xxxxxx.XxxxXxxx.)
+When you're testing your component as part of a Universal Windows app using JavaScript, by default the solution is in JavaScript debugging mode. In Visual Studio, you can't debug JavaScript and managed code at the same time.
 
-Xxx xxxx xxxxxxxx xxxx xxxxxxxxxx xxxxx, xxx xxxxxxx xx xxxxxxx xxx xxxxxxxxxx xxxx xxx xxxxxxxxxxx xx x Xxxxxxx Xxxxxxx xxxx xxx xxx xxxxxxxxxx xxxx xxx xxxxxxxxxxx xx xxx xxxxxxxxxxxxx .XXX Xxxxxxxxx xxxx. Xx xxxx xxx xxxxx xxxxxxxxx xxxxx, xxx xxxxxxx xxxxxxxxx xxxxx xx xxxxx xxx .XXX Xxxxxxxxx xxxx. Xxxx xxxxx xxxx xxxxxxxxxxx xxxxxxx xxx xxxxx xxx xxxxx xxxxxxx .XXX Xxxxxxxxx xxxx xxxx xxxxxxx. Xxx xxxxxxxxx xxxxx xxxxx xxx xxxx xxxxxx xx xxxxx xxxxxxx xxxxxxxxx xxxxx, xxxxx xxxx xxxxx xxxxxx xxxxx xxx xxxxxxxxx xxxxxxxx. Xxx x xxxxxxxx xxxx xx Xxxxxxx Xxxxxxx xxxxx xxxx xxx .XXX Xxxxxxxxx xxxx, xxx .XXX Xxxxxxxxx xxxxxxxx xx Xxxxxxx Xxxxxxx xxxxx.
+## **To debug managed code instead of JavaScript**
 
-| Xxxxxxx Xxxxxxx                                  | .XXX Xxxxxxxxx                                    |
+1.  Open the shortcut menu for your JavaScript project, and choose **Properties**.
+2.  In the property pages, under **Configuration Properties**, choose **Debugging**.
+3.  Choose **Debugger Type**, and in the drop-down list box change **Script Only** to **Managed Only**. Choose **OK**.
+4.  Set breakpoints in managed code and debug as usual.
+
+## Passing Windows Runtime types to managed code
+
+
+As mentioned previously in the section Declaring types in Windows Runtime Components, certain .NET Framework types can appear in the signatures of members of public classes. This is part of the support that the .NET Framework provides to enable the natural use of the Windows Runtime in managed code. It includes primitive types and some classes and interfaces. When your component is used from JavaScript or from C++ code, it's important to know how your .NET Framework types appear to the caller. See [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md) for examples with JavaScript. This section discusses commonly used types.
+
+In the .NET Framework, primitive types like the Int32 structure have many useful properties and methods, such as the TryParse method. By contrast, primitive types and structures in the Windows Runtime only have fields. When you pass these types to managed code, they appear to be .NET Framework types, and you can use the properties and methods of the .NET Framework types as you normally would. The following list summarizes the substitutions that are made automatically in the IDE:
+
+-   For the Windows Runtime primitives Int32, Int64, Single, Double, Boolean, String (an immutable collection of Unicode characters), Enum, UInt32, UInt64, and Guid, use the type of the same name in the System namespace.
+-   For UInt8, use System.Byte.
+-   For Char16, use System.Char.
+-   For the IInspectable interface, use System.Object.
+
+If C# or Visual Basic provides a language keyword for any of these types, you can use the language keyword instead.
+
+In addition to primitive types, some basic, commonly used Windows Runtime types appear in managed code as their .NET Framework equivalents. For example, suppose your JavaScript code uses the Windows.Foundation.Uri class, and you want to pass it to a C# or Visual Basic method. The equivalent type in managed code is the .NET Framework System.Uri class, and that's the type to use for the method parameter. You can tell when a Windows Runtime type appears as a .NET Framework type, because IntelliSense in Visual Studio hides the Windows Runtime type when you're writing managed code, and presents the equivalent .NET Framework type. (Usually the two types have the same name. However, note that the Windows.Foundation.DateTime structure appears in managed code as System.DateTimeOffset and not as System.DateTime.)
+
+For some commonly used collection types, the mapping is between the interfaces that are implemented by a Windows Runtime type and the interfaces that are implemented by the corresponding .NET Framework type. As with the types mentioned above, you declare parameter types by using the .NET Framework type. This hides some differences between the types and makes writing .NET Framework code more natural. The following table lists the most common of these generic interface types, along with other common class and interface mappings. For a complete list of Windows Runtime types that the .NET Framework maps, see .NET Framework mappings of Windows Runtime types.
+
+| Windows Runtime                                  | .NET Framework                                    |
 |--------------------------------------------------|---------------------------------------------------|
-| XXxxxxxxx&xx;X&xx;                               | XXxxxxxxxxx&xx;X&xx;                              |
-| XXxxxxx&xx;X&xx;                                 | XXxxx&xx;X&xx;                                    |
-| XXxxxxxXxxx&xx;X&xx;                             | XXxxxXxxxXxxx&xx;X&xx;                            |
-| XXxx&xx;X, X&xx;                                 | XXxxxxxxxxx&xx;XXxx, XXxxxx&xx;                   |
-| XXxxXxxx&xx;X, X&xx;                             | XXxxxXxxxXxxxxxxxxx&xx;XXxx, XXxxxx&xx;           |
-| XXxxXxxxxXxxx&xx;X, X&xx;                        | XxxXxxxxXxxx&xx;XXxx, XXxxxx&xx;                  |
-| XXxxxxxxxXxxxxxxx                                | XXxxxxxxxxx                                       |
-| XXxxxxxxxXxxxxx                                  | XXxxx                                             |
-| Xxxxxxx.XX.Xxxx.Xxxx.XXxxxxxXxxxxxxxXxxxxxx      | Xxxxxx.XxxxxxxxxXxxxx.XXxxxxxXxxxxxxxXxxxxxx      |
-| Xxxxxxx.XX.Xxxx.Xxxx.XxxxxxxxXxxxxxxXxxxxXxxxxxx | Xxxxxx.XxxxxxxxxXxxxx.XxxxxxxxXxxxxxxXxxxxXxxxxxx |
-| Xxxxxxx.XX.Xxxx.Xxxx.XxxxxxxxXxxxxxxXxxxxXxxx    | Xxxxxx.XxxxxxxxxXxxxx.XxxxxxxxXxxxxxxXxxxxXxxx    |
+| IIterable&lt;T&gt;                               | IEnumerable&lt;T&gt;                              |
+| IVector&lt;T&gt;                                 | IList&lt;T&gt;                                    |
+| IVectorView&lt;T&gt;                             | IReadOnlyList&lt;T&gt;                            |
+| IMap&lt;K, V&gt;                                 | IDictionary&lt;TKey, TValue&gt;                   |
+| IMapView&lt;K, V&gt;                             | IReadOnlyDictionary&lt;TKey, TValue&gt;           |
+| IKeyValuePair&lt;K, V&gt;                        | KeyValuePair&lt;TKey, TValue&gt;                  |
+| IBindableIterable                                | IEnumerable                                       |
+| IBindableVector                                  | IList                                             |
+| Windows.UI.Xaml.Data.INotifyPropertyChanged      | System.ComponentModel.INotifyPropertyChanged      |
+| Windows.UI.Xaml.Data.PropertyChangedEventHandler | System.ComponentModel.PropertyChangedEventHandler |
+| Windows.UI.Xaml.Data.PropertyChangedEventArgs    | System.ComponentModel.PropertyChangedEventArgs    |
 
  
 
-Xxxx x xxxx xxxxxxxxxx xxxx xxxx xxx xxxxxxxxx, xxx xxx xxx xxx xx xxx xxxxxxxxxx xx xxxxxxxxxx xx x xxxxxxxxx xxxx xx xxxxxx xxxx xx x xxxxxx. Xxx xxxxxxx, xxx xxx xxxx xx xxxxxx x Xxxxxxxxxx&xx;xxx, xxxxxx&xx; (Xxxxxxxxxx(Xx Xxxxxxx, Xxxxxx) xx Xxxxxx Xxxxx) xx XXxxxxxxxxx&xx;xxx, xxxxxx&xx;, XXxxxXxxxXxxxxxxxxx&xx;xxx, xxxxxx&xx;, xx XXxxxxxxxxx&xx;Xxxxxx.Xxxxxxxxxxx.Xxxxxxx.XxxXxxxxXxxx&xx;XXxx, XXxxxx&xx;&xx;.
+When a type implements more than one interface, you can use any of the interfaces it implements as a parameter type or return type of a member. For example, you can pass or return a Dictionary&lt;int, string&gt; (Dictionary(Of Integer, String) in Visual Basic) as IDictionary&lt;int, string&gt;, IReadOnlyDictionary&lt;int, string&gt;, or IEnumerable&lt;System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt;&gt;.
 
-**Xxxxxxxxx**  XxxxXxxxxx xxxx xxx xxxxxxxxx xxxx xxxxxxx xxxxx xx xxx xxxx xx xxxxxxxxxx xxxx x xxxxxxx xxxx xxxxxxxxxx. Xxx xxxxxxx, xx xxx xxxxxx Xxxxxxxxxx&xx;xxx, xxxxxx&xx; xx XxxxXxxxxx xxxx, xx xxxxxxx xx XXxxxxxxxxx&xx;xxx, xxxxxx&xx; xx xxxxxx xxxxx xxxxxxxxx xxx xxxxxxx xx xxx xxxxxx xxxx. Xxxx xxxxx xxxx xx xxx xxxxx xxxxxxxxx xxxxx'x xxxxxxx x xxxxxx xxxx xxxxxxx xx xxxxx xxxxxxxxxx, xxxx xxxxxx xxx'x xxxxxxx xx XxxxXxxxxx.
+**Important**  JavaScript uses the interface that appears first in the list of interfaces that a managed type implements. For example, if you return Dictionary&lt;int, string&gt; to JavaScript code, it appears as IDictionary&lt;int, string&gt; no matter which interface you specify as the return type. This means that if the first interface doesn't include a member that appears on later interfaces, that member isn't visible to JavaScript.
 
-Xx xxx Xxxxxxx Xxxxxxx, XXxx&xx;X, X&xx; xxx XXxxXxxx&xx;X, X&xx; xxx xxxxxxxx xx xxxxx XXxxXxxxxXxxx. Xxxx xxx xxxx xxxx xx xxxxxxx xxxx, xxxx xxxxxx xx XXxxxxxxxxx&xx;XXxx, XXxxxx&xx; xxx XXxxxXxxxXxxxxxxxxx&xx;XXxx, XXxxxx&xx;, xx xxxxxxxxx xxx xxx Xxxxxx.Xxxxxxxxxxx.Xxxxxxx.XxxXxxxxXxxx&xx;XXxx, XXxxxx&xx; xx xxxxxxxxx xxxx.
+In the Windows Runtime, IMap&lt;K, V&gt; and IMapView&lt;K, V&gt; are iterated by using IKeyValuePair. When you pass them to managed code, they appear as IDictionary&lt;TKey, TValue&gt; and IReadOnlyDictionary&lt;TKey, TValue&gt;, so naturally you use System.Collections.Generic.KeyValuePair&lt;TKey, TValue&gt; to enumerate them.
 
-Xxx xxx xxxxxxxxxx xxxxxx xx xxxxxxx xxxx xxxxxxx xxx xxx xxxxx xxxx xxxxxxxxx xxxxx xxxxxxxxxx xxxxxx. Xxx xxxxxxx, xxx XxxxxxxxXxx xxxxx xxxxxxxxxx XXxx&xx;X, X&xx;, xxxxx xxxxxxx xx xxxxxxx xxxx xx XXxxxxxxxxx&xx;XXxx, XXxxxx&xx;. XxxxxxxxXxx xxxxxxx xx xx xx xxxxxxxxxxx XXxxxxxxxxx&xx;XXxx, XXxxxx&xx; xxxxxxx xx XXxx&xx;X, X&xx;, xx xx xxxxxxx xxxx xx xxxxxxx xx xxxx xx Xxx xxxxxx, xxxxx xxxxxxx xxxx xxx Xxx xxxxxx xx .XXX Xxxxxxxxx xxxxxxxxxxxx. Xx xxxxx'x xxxxxx xx xxxx xx Xxxxxx xxxxxx. Xxx xxx xxx xxxx xxxxxxx xx xxx xxxxxxx [Xxxxxxxxxxx: Xxxxxxxx x xxxxxx xxxxxxxxx xx X\# xx Xxxxxx Xxxxx xxx xxxxxxx xx xxxx XxxxXxxxxx](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
+The way interfaces appear in managed code affects the way types that implement these interfaces appear. For example, the PropertySet class implements IMap&lt;K, V&gt;, which appears in managed code as IDictionary&lt;TKey, TValue&gt;. PropertySet appears as if it implemented IDictionary&lt;TKey, TValue&gt; instead of IMap&lt;K, V&gt;, so in managed code it appears to have an Add method, which behaves like the Add method on .NET Framework dictionaries. It doesn't appear to have an Insert method. You can see this example in the article [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
-## Xxxxxxx xxxxxxx xxxxx xx xxx Xxxxxxx Xxxxxxx
-
-
-Xx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx, xxxx Xxxxxxx Xxxxxxx xxxxx xxx xxxxxx xx .XXX Xxxxxxxxx xxxxx xx xxx xxxxxxxxxx xx xxxx xxxxxxxxx'x xxxxxxx, xx xx xxx xxxxxxxxxx xx Xxxxxxx Xxxxxxx xxxxxxx xxxx xxx xxx xxxx xx xxx XXX. Xxxx xxx xxxx .XXX Xxxxxxxxx xxxxx xx xxxxx xxxxxxx xx xxx xxxx xx xxx xxxxxx xxxxxx xx xxxx xxxxxxxxx'x xxxxxxx, xxxx xxxxxx xx xxx xxxx xx xxx xxxxx xxxx xx xxx xxxxxxxxxxxxx Xxxxxxx Xxxxxxx xxxx. Xxx xxxxxxxx xx xxx xxxxxxx xxxx xxx xxxx xxxx xxxx xxxxxxxxx xx xxxxxx xxxx XxxxXxxxxx, xxx xxx "Xxxxxxxxx xxxxxxx xxxxx xxxx xxxx xxxxxxxxx" xxxxxxx xx [Xxxxxxxxxxx: Xxxxxxxx x xxxxxx xxxxxxxxx xx X\# xx Xxxxxx Xxxxx xxx xxxxxxx xx xxxx XxxxXxxxxx](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
-
-## Xxxxxxxxxx xxxxxxx
+## Passing managed types to the Windows Runtime
 
 
-Xx xxx Xxxxxxx Xxxxxxx, xxxxxxx xxx xx xxxxxxxxxx. Xxxxxxx, xx xxx xxxxxxx xxxxxxxx xxxxxxxxx xxxx xxx xxxx xxxxxx xx xxxxxxxxxx, xxx xxxx xxxxx xxx [Xxxxxxx.Xxxxxxxxxx.Xxxxxxxx.XxxxxxxXxxxxxxxXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) xxxxxxxxx xx xxxx xxx xx xxxxx xxxxxxxxx. Xxxx xxxxxxxx xx xxx xxxx xxx xxx xxx xxxx xxxx XxxxXxxxxx. Xxx xxxxxxx, xx xxx xxxxxxxxx xxxx xxx xxxxxxxx xxxx xxxxx xx **xxx** (**Xxxxxxx** xx Xxxxxx Xxxxx) xx xxx xxxxxxx xxxxxxxx.
+As discussed in the previous section, some Windows Runtime types can appear as .NET Framework types in the signatures of your component's members, or in the signatures of Windows Runtime members when you use them in the IDE. When you pass .NET Framework types to these members or use them as the return values of your component's members, they appear to the code on the other side as the corresponding Windows Runtime type. For examples of the effects this can have when your component is called from JavaScript, see the "Returning managed types from your component" section in [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+## Overloaded methods
+
+
+In the Windows Runtime, methods can be overloaded. However, if you declare multiple overloads with the same number of parameters, you must apply the [Windows.Foundation.Metadata.DefaultOverloadAttribute](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) attribute to only one of those overloads. That overload is the only one you can call from JavaScript. For example, in the following code the overload that takes an **int** (**Integer** in Visual Basic) is the default overload.
+
+> [!div class="tabbedCodeSnippets"]
 > ```csharp
 > public string OverloadExample(string s)
 > {
@@ -136,31 +136,31 @@ Xx xxx Xxxxxxx Xxxxxxx, xxxxxxx xxx xx xxxxxxxxxx. Xxxxxxx, xx xxx xxxxxxx xxxxx
 > End Function
 > ```
 
-> **Xxxxxxx**  XxxxXxxxxx xxxxxx xxx xx xxxx xxx xxxxx xx XxxxxxxxXxxxxxx, xxx xxxxxxx xxx xxxxx xx xxx xxxx xxxx xx xxxxxxxx xx xxx xxxxxxxxx. Xxx xxx xxxx XxxxxxxxXxxxxxx xxxx "xxxxx-xxx", "YY", xx YY.Y, xxx xxx xxxxx xxxxxx xxx xxxxxx xx xxx xxxxxxx xxxxxxxx. Xxx xxxxxxx xxxxxxxx xx xxx xxxxxxxx xxxxxxx xxxxxxx Y, YY, xxx YY xxxxxxxxxxxx.
+> **Caution**  JavaScript allows you to pass any value to OverloadExample, and coerces the value to the type that is required by the parameter. You can call OverloadExample with "forty-two", "42", or 42.3, but all those values are passed to the default overload. The default overload in the previous example returns 0, 42, and 42 respectively.
 
-Xxx xxxxxx xxxxx xxx XxxxxxxXxxxxxxxXxxxxxxxx xxxxxxxxx xx xxxxxxxxxxxx. Xxx xxx xxxxxxxxxxxx xx x xxxxx xxxx xxxx xxxxxxxxx xxxxxxx xx xxxxxxxxxx.
+You cannot apply the DefaultOverloadAttribute attribute to constructors. All the constructors in a class must have different numbers of parameters.
 
-## Xxxxxxxxxxxx XXxxxxxxxxx
+## Implementing IStringable
 
 
-Xxxxxxxx xxxx Xxxxxxx Y.Y, xxx Xxxxxxx Xxxxxxx xxxxxxxx xx XXxxxxxxxxx xxxxxxxxx xxxxx xxxxxx xxxxxx, XXxxxxxxxxx.XxXxxxxx, xxxxxxxx xxxxx xxxxxxxxxx xxxxxxx xxxxxxxxxx xx xxxx xxxxxxxx xx Xxxxxx.XxXxxxxx. Xx xxx xx xxxxxx xx xxxxxxxxx XXxxxxxxxxx xx x xxxxxx xxxxxxx xxxx xxxx xx xxxxxxxx xx x Xxxxxxx Xxxxxxx xxxxxxxxx, xxx xxxxxxxxx xxxxxxxxxxxx xxxxx:
+Starting with Windows 8.1, the Windows Runtime includes an IStringable interface whose single method, IStringable.ToString, provides basic formatting support comparable to that provided by Object.ToString. If you do choose to implement IStringable in a public managed type that is exported in a Windows Runtime component, the following restrictions apply:
 
--   Xxx xxx xxxxxx xxx XXxxxxxxxxx xxxxxxxxx xxxx xx x "xxxxx xxxxxxxxxx" xxxxxxxxxxxx, xxxx xx xxx xxxxxxxxx xxxx xx X\#:
+-   You can define the IStringable interface only in a "class implements" relationship, such as the following code in C#:
 
     ```cs
     public class NewClass : IStringable
     ```
 
-    Xx xxx xxxxxxxxx Xxxxxx Xxxxx xxxx:
+    Or the following Visual Basic code:
 
     ```vb
     Public Class NewClass : Implements IStringable
     ```
 
--   Xxx xxxxxx xxxxxxxxx XXxxxxxxxxx xx xx xxxxxxxxx.
--   Xxx xxxxxx xxxxxxx x xxxxxxxxx xx xx xx xxxx XXxxxxxxxxx.
--   XXxxxxxxxxx xxxxxx xx xxx xxxxxx xxxx xx x xxxxxx, xxxxxxxx, xx xxxxx.
--   Xxx xxxxxx xxxx xxxx XXxxxxxxxxx xxxxxxxxxxxxxx xxxx xxxx xxxxxxx xx xxxxx x xxxxxx xxxxxxxxxx xxxx xx xxx xxxxxxxxx:
+-   You cannot implement IStringable on an interface.
+-   You cannot declare a parameter to be of type IStringable.
+-   IStringable cannot be the return type of a method, property, or field.
+-   You cannot hide your IStringable implementation from base classes by using a method definition such as the following:
 
     ```cs
     public class NewClass : IStringable
@@ -172,22 +172,22 @@ Xxxxxxxx xxxx Xxxxxxx Y.Y, xxx Xxxxxxx Xxxxxxx xxxxxxxx xx XXxxxxxxxxx xxxxxxxxx
     }
     ```
 
-    Xxxxxxx, xxx XXxxxxxxxxx.XxXxxxxx xxxxxxxxxxxxxx xxxx xxxxxx xxxxxxxx xxx xxxx xxxxx xxxxxxxxxxxxxx. Xxx xxx xxxx x XxXxxxxx xxxxxxxxxxxxxx xxxx xx xxxxxxxx xx xx x xxxxxxxx xxxxx xxxxx xxxxxxxx.
+    Instead, the IStringable.ToString implementation must always override the base class implementation. You can hide a ToString implementation only by invoking it on a strongly typed class instance.
 
-Xxxx xxxx xxxxx x xxxxxxx xx xxxxxxxxxx, xxxxx xxxx xxxxxx xxxx xx x xxxxxxx xxxx xxxx xxxxxxxxxx XXxxxxxxxxx xx xxxxx xxx XxXxxxxx xxxxxxxxxxxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxxx.
+Note that under a variety of conditions, calls from native code to a managed type that implements IStringable or hides its ToString implementation can produce unexpected behavior.
 
-## Xxxxxxxxxxxx xxxxxxxxxx
+## Asynchronous operations
 
 
-Xx xxxxxxxxx xx xxxxxxxxxxxx xxxxxx xx xxxx xxxxxxxxx, xxx "Xxxxx" xx xxx xxx xx xxx xxxxxx xxxx xxx xxxxxx xxx xx xxx Xxxxxxx Xxxxxxx xxxxxxxxxx xxxx xxxxxxxxx xxxxxxxxxxxx xxxxxxx xx xxxxxxxxxx: XXxxxxXxxxxx, XXxxxxXxxxxxXxxxXxxxxxxx&xx;XXxxxxxxx&xx;, XXxxxxXxxxxxxxx&xx;XXxxxxx&xx;, xx XXxxxxXxxxxxxxxXxxxXxxxxxxx&xx;XXxxxxx, XXxxxxxxx&xx;.
+To implement an asynchronous method in your component, add "Async" to the end of the method name and return one of the Windows Runtime interfaces that represent asynchronous actions or operations: IAsyncAction, IAsyncActionWithProgress&lt;TProgress&gt;, IAsyncOperation&lt;TResult&gt;, or IAsyncOperationWithProgress&lt;TResult, TProgress&gt;.
 
-Xxx xxx xxx .XXX Xxxxxxxxx xxxxx (xxx [Xxxx](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) xxxxx xxx xxxxxxx [Xxxx&xx;XXxxxxx&xx;](https://msdn.microsoft.com/library/dd321424.aspx) xxxxx) xx xxxxxxxxx xxxx xxxxxxxxxxxx xxxxxx. Xxx xxxx xxxxxx x xxxx xxxx xxxxxxxxxx xx xxxxxxx xxxxxxxxx, xxxx xx x xxxx xxxx xx xxxxxxxx xxxx xx xxxxxxxxxxxx xxxxxx xxxxxxx xx X\# xx Xxxxxx Xxxxx, xx x xxxx xxxx xx xxxxxxxx xxxx xxx [Xxxx.Xxx](https://msdn.microsoft.com/library/system.threading.tasks.task.run.aspx) xxxxxx. Xx xxx xxx x xxxxxxxxxxx xx xxxxxx xxx xxxx, xxx xxxx xxxx xxx [Xxxx.Xxxxx](https://msdn.microsoft.com/library/system.threading.tasks.task.start.aspx) xxxxxx xxxxxx xxxxxxxxx xx.
+You can use .NET Framework tasks (the [Task](https://msdn.microsoft.com/library/system.threading.tasks.task.aspx) class and generic [Task&lt;TResult&gt;](https://msdn.microsoft.com/library/dd321424.aspx) class) to implement your asynchronous method. You must return a task that represents an ongoing operation, such as a task that is returned from an asynchronous method written in C# or Visual Basic, or a task that is returned from the [Task.Run](https://msdn.microsoft.com/library/system.threading.tasks.task.run.aspx) method. If you use a constructor to create the task, you must call its [Task.Start](https://msdn.microsoft.com/library/system.threading.tasks.task.start.aspx) method before returning it.
 
-X xxxxxx xxxx xxxx xxxxx (Xxxxx xx Xxxxxx Xxxxx) xxxxxxxx xxx **xxxxx** xxxxxxx (**Xxxxx** xx Xxxxxx Xxxxx). Xx xxx xxxxxx xxxx x xxxxxx xxxx x Xxxxxxx Xxxxxxx xxxxxxxxx, xxxxx xxx **xxxxx** xxxxxxx xx xxx xxxxxxxx xxxx xxx xxxx xx xxx Xxx xxxxxx.
+A method that uses await (Await in Visual Basic) requires the **async** keyword (**Async** in Visual Basic). If you expose such a method from a Windows Runtime component, apply the **async** keyword to the delegate that you pass to the Run method.
 
-Xxx xxxxxxxxxxxx xxxxxxx xxx xxxxxxxxxx xxxx xx xxx xxxxxxx xxxxxxxxxxxx xx xxxxxxxx xxxxxxxxx, xxx xxx xxx xxx [XxxxxxxXxxxxxxXxxxxxXxxxxxxxxx.XxXxxxxXxxxxx](https://msdn.microsoft.com/library/system.windowsruntimesystemextensions.asasyncaction.aspx) xx [XxXxxxxXxxxxxxxx&xx;XXxxxxx&xx;](https://msdn.microsoft.com/library/hh779745.aspx) xxxxxxxxx xxxxxx xx xxxx xxx xxxx xx xxx xxxxxxxxxxx xxxxxxxxx. Xxx xxxxxxx, xxx xxxxxxxxx xxxx xxxxxxxxxx xx xxxxxxxxxxxx xxxxxx xx xxxxx xxx Xxxx.Xxx&xx;XXxxxxx&xx; xxxxxx xx xxxxx x xxxx. Xxx XxXxxxxXxxxxxxxx&xx;XXxxxxx&xx; xxxxxxxxx xxxxxx xxxxxxx xxx xxxx xx x Xxxxxxx Xxxxxxx xxxxxxxxxxxx xxxxxxxxx.
+For asynchronous actions and operations that do not support cancellation or progress reporting, you can use the [WindowsRuntimeSystemExtensions.AsAsyncAction](https://msdn.microsoft.com/library/system.windowsruntimesystemextensions.asasyncaction.aspx) or [AsAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/hh779745.aspx) extension method to wrap the task in the appropriate interface. For example, the following code implements an asynchronous method by using the Task.Run&lt;TResult&gt; method to start a task. The AsAsyncOperation&lt;TResult&gt; extension method returns the task as a Windows Runtime asynchronous operation.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```csharp
 > public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
 > {
@@ -210,7 +210,7 @@ Xxx xxxxxxxxxxxx xxxxxxx xxx xxxxxxxxxx xxxx xx xxx xxxxxxx xxxxxxxxxxxx xx xxxx
 > End Function
 > ```
 
-Xxx xxxxxxxxx XxxxXxxxxx xxxx xxxxx xxx xxx xxxxxx xxxxx xx xxxxxx xx xxxxx x [XxxXX.Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) xxxxxx. Xxx xxxxxxxx xxxx xx xxxxxx xx xxx xxxx xxxxxx xx xxxxxxxx xxxx xxx xxxxxxxxxxxx xxxx xxxxxxxxx. Xxx xxxxxxXxxx xxxxxxxxx xxxxxxxx xxx xxxx xx xxxxxxx xxxx xx xxxxxxxx xx xxx XxxxxxxxXxXxxxxxXxxxx xxxxxx, xxx xxx xxxxxxxx xxxx xxxxxxxx xxxxxxxxxx xx xxxxxxxx.
+The following JavaScript code shows how the method could be called by using a [WinJS.Promise](https://msdn.microsoft.com/library/windows/apps/br211867.aspx) object. The function that is passed to the then method is executed when the asynchronous call completes. The stringList parameter contains the list of strings that is returned by the DownloadAsStringAsync method, and the function does whatever processing is required.
 
 ```javascript
 function asyncExample(id) {
@@ -222,11 +222,11 @@ function asyncExample(id) {
 }
 ```
 
-Xxx xxxxxxxxxxxx xxxxxxx xxx xxxxxxxxxx xxxx xxxxxxx xxxxxxxxxxxx xx xxxxxxxx xxxxxxxxx, xxx xxx [XxxxxXxxx](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) xxxxx xx xxxxxxxx x xxxxxxx xxxx xxx xx xxxx xx xxx xxxxxxxxxxxx xxx xxxxxxxx xxxxxxxxx xxxxxxxx xx xxx xxxx xxxx xxx xxxxxxxxxxxx xxx xxxxxxxx xxxxxxxxx xxxxxxxx xx xxx xxxxxxxxxxx Xxxxxxx Xxxxxxx xxxxxxxxx. Xxx xx xxxxxxx xxxx xxxxxxxx xxxx xxxxxxxxxxxx xxx xxxxxxxx xxxxxxxxx, xxx [Xxxxxxxxxxx: Xxxxxxxx x xxxxxx xxxxxxxxx xx X\# xx Xxxxxx Xxxxx xxx xxxxxxx xx xxxx XxxxXxxxxx](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
+For asynchronous actions and operations that support cancellation or progress reporting, use the [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) class to generate a started task and to hook up the cancellation and progress reporting features of the task with the cancellation and progress reporting features of the appropriate Windows Runtime interface. For an example that supports both cancellation and progress reporting, see [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md).
 
-Xxxx xxxx xxx xxx xxx xxx xxxxxxx xx xxx XxxxxXxxx xxxxx xxxx xx xxxx xxxxxxxxxxxx xxxxxx xxxxx'x xxxxxxx xxxxxxxxxxxx xx xxxxxxxx xxxxxxxxx. Xx xxx xxx x Xxxxxx Xxxxx xxxxxx xxxxxxxx xx x X\# xxxxxxxxx xxxxxx, xxx'x xxxxxx xxxxxxxxxx xxx xxx xxxxx xxx [XXxxxxxxx&xx;X&xx;](https://msdn.microsoft.com/library/hh138298.aspx) xxxxxxxxx. Xx xxx xxx x X\# xxxxxx xxxxxxxx, xxxxxx x xxxxx xxxxxxxxx xxx xxxxxx xx. Xxx xxxxxxxx xxxxxxx, xxxxx xxxx xxx XxXxxxxXxxxxxxxx&xx;XXxxxxx&xx; xxxxxx, xxxxx xxxx xxxx xxxx xxx xxx xxx [XxxxxXxxx.Xxx&xx;XXxxxxx&xx;(Xxxx&xx;XxxxxxxxxxxxXxxxx, Xxxx&xx;XXxxxxx&xx;&xx;](https://msdn.microsoft.com/library/hh779740.aspx)) xxxxxx xxxxxxxx xxxxxxx:
+Note that you can use the methods of the AsyncInfo class even if your asynchronous method doesn't support cancellation or progress reporting. If you use a Visual Basic lambda function or a C# anonymous method, don't supply parameters for the token and [IProgress&lt;T&gt;](https://msdn.microsoft.com/library/hh138298.aspx) interface. If you use a C# lambda function, supply a token parameter but ignore it. The previous example, which used the AsAsyncOperation&lt;TResult&gt; method, looks like this when you use the [AsyncInfo.Run&lt;TResult&gt;(Func&lt;CancellationToken, Task&lt;TResult&gt;&gt;](https://msdn.microsoft.com/library/hh779740.aspx)) method overload instead:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```csharp
 > public static IAsyncOperation<IList<string>> DownloadAsStringsAsync(string id)
 > {
@@ -249,46 +249,50 @@ Xxxx xxxx xxx xxx xxx xxx xxxxxxx xx xxx XxxxxXxxx xxxxx xxxx xx xxxx xxxxxxxxxx
 > End Function
 > ```
 
-Xx xxx xxxxxx xx xxxxxxxxxxxx xxxxxx xxxx xxxxxxxxxx xxxxxxxx xxxxxxxxxxxx xx xxxxxxxx xxxxxxxxx, xxxxxxxx xxxxxx xxxxxxxxx xxxx xxx'x xxxx xxxxxxxxxx xxx x xxxxxxxxxxxx xxxxx xx xxx XXxxxxxxx&xx;X&xx; xxxxxxxxx.
+If you create an asynchronous method that optionally supports cancellation or progress reporting, consider adding overloads that don't have parameters for a cancellation token or the IProgress&lt;T&gt; interface.
 
-## Xxxxxxxx xxxxxxxxxx
-
-
-Xxx xxx xxxxx xxx xxxxxxxxx xxxx xxxx xx xxxxxxxx xx xxx .XXX xxx Xxxxxxx xxxx. Xxx xxx'x xxxxxxx xxxx xxx xxxxxx xxxxxxxxx xxxxx xx x Xxxxxxx Xxxxxxx xxxxxxxxx, xxx xxx xxx xxxxxxx xxx xxxxx xxx-xxxxxx xxxxx.
-
-Xx xxxx xxxxxxxxx xxxxx'x xxxxxx xxx xxxxxxxxx, x xxxxxxxxxxxxx xxxxxxxxx xx xxxxxx xx xxx xxxx xxxx xxxxxx xxxx xxxxxxxxx. Xxx xxx xxx xxxxxxxxx xxxxxxx xx xxx xxxxxx xxxxxxx xx xxx xxx xxx xxxxxxx xxxxxxxx xxxxxxxx xxx Xxxxxxx Xxxxxxx.
-
--   Xx XxxxXxxxxx, xxx xxxxxxxxx xxxxxxx xx xx xxxxxx xx xxxxx xxx xxxxxxxxx xxxxxxx xx xxxxxxxx xx x xxxxx xxxxx. Xxxx xxx xxxxx xxxx xxx xx Xxxxxx Xxxxxx, xxx xxx xxx xxx xxxxxxxx xxxxxxx xxxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxxxx xxxxxx xxx, xxxxxxxxxx xx "XxxXX Xxxxxxxxxxx". Xxx xxx'x xxxxxx xxx xxxxxxxx xxxxxxx xxxx xxxx XxxxXxxxxx xxxx.
-
-    > **Xxx**  Xxxxxxxxx, xxx xxxxx xxxxx xxxxxxxx xxx xxxxxxx xxxxxxxxx xxxx, xxx xx xxx'x xxxxxxxxx xxxxxxx xxx xxxxx xx xxxxxxxx xxx xxxxxxxxx xxxx. Xxxxxxx, xxx xx XXXXXXX xxxxx xx xxxxxxxxx xxxxx xx xxxx xxxxxxx.
-
--   Xx X++, xxx xxxxxxxxx xxxxxxx xx x xxxxxxxx xxxxxxxxx. Xx xxx xxxxxxx xxxxxxxxx'x XXxxxxx xxxxxxxx xxx xx xxxxxx xx xxx XXXXXXX xx x xxxxxxxx xxxxxxxx xxxxxxxxx, xxx xxxxxxxx xxxxxxxxx xx xxxx; xxxxxxxxx, x [Xxxxxxxx::XXXXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh710414.aspx) xxxxxxxxx xx xxxxxx. Xxx xxxxxxx xxxx xx xxx xxxxxxx xxxxxxxxx xx xxx xxxxxxxxx xx X++ xxxx. Xx x xxxxxxxx xxxxxxxx xxxxxxxxx xxx xxxxxx, xxx xxxxxxx xxxxxxx xxxx xxx xxxx xxxxxxxxx xxxx xxxxxxx; xxxxxxxxx, xx xxxxxxx xxxx xxxxxxx. Xxx [Xxxxxxxxxx (X++/XX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699896.aspx).
--   Xx X\# xx Xxxxxx Xxxxx, xxx xxxxxxxxx xx x xxxxxx xxxxxxx xxxxxxxxx.
-
-Xxxx xxx xxxxx xx xxxxxxxxx xxxx xxxx xxxxxxxxx, xxx xxx xxxx xx xxxxxx xxx x XxxxXxxxxx xx X++ xxxxxx xx xxxxxx xxx xxxxxxxxx xx xxxxxxxx x xxx-xxxxxx xxxxxxxxx xxxx xxxxx XXxxxxx xxxxxxxx xxxxx xx xxxxxxxx xx xxxx xxxxxxxxx. Xxx XXXXXXX xx xxxxxxxxx xx x XxxxXxxxxx xxxxxx xxxxxxx xxx xxxxxxxxx xxxxxx'x xxxxxx xxxxxxxx, xxx xx x X++ xxxxxx xxxxxxx xxx [XXXXxxxxxxxx::XXxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh710415.aspx) xxxxxxxx.
-
-> **Xxxx**  Xxx x xxxxxxxx xxxxx xxx xxxx XXXXXXX. X xxxxxxxx xxxxx xx xxxxxxxxxxx xx xxxxxxx, xxx xx xxxxxxxxx xx xxxxxx xx xxx XxxxXxxxxx xx X++ xxxxxx.
-
-## Xxxxxxxxx xxx xxxxxxx xxxxxx
-
-Xxxx xxx xxxxxxx x xxxx xx xxxx xxx xxxx xxx xxxx xxxxx, xxxxxx xxxx Xxxxxx xxxxxxx xx xxxx XxxxxXxxx, xxxxxxx XxxxxXxxx xx xxx x Xxxxxxx Xxxxxxx xxxx. Xxx [XxxxxXxxxxxx&xx;XXxxxxXxxx&xx;](https://msdn.microsoft.com/library/db0etb8x.aspx) xx xxx xxxx xx xxx xxxxx, xxx xxx xxxx xxxxx xxxxxxxx xxxx xx xxx xxxxxxx xxxx xxxxxxxx. Xxxxx xxx xxxxx xxxx xx xxx xxxxx xx x .XXX Xxxxxxxxx xxxxxxxxxxx.
-
-Xxxx xxxx Xxxxxxx Xxxxxxx xxxxxxxxx xx xxxx xxxx XxxxXxxxxx xx X++, xxx xxxxx xxxxxxx xxx Xxxxxxx Xxxxxxx xxxxx xxxxxxx xxxx xxxxx xxxxxxxxx xxxxxx. Xxxx xxx xxx xxx xxxxxxxxx xxxx X\# xx Xxxxxx Xxxxx, xxx xxxxx xxxxxxx xx xx xxxxxxxx .XXX Xxxxxxxxx xxxxx. Xx xxxxxxx xx xxxxxxxx xx [Xxxxxxxxxxx: Xxxxxxxx x xxxxxx xxxxxxxxx xx X\# xx Xxxxxx Xxxxx xxx xxxxxxx xx xxxx XxxxXxxxxx]().
-
-Xx xxx xxxxxxxxx xxxxxx xxxxx xxxxxxxxx (xxxxxxx xx xxxxx xxxx xxx **Xxxxxx** xxxxxxx, xx Xxxxxx Xxxxx), xxx xxxx xxxxxx xxx Xxxxxxx Xxxxxxx xxxxx xxxxxxx xx xxxx xxxxxxxxxxxxxx. Xxx [Xxxxxx xxxxxx xxx xxxxx xxxxxxxxx xx Xxxxxxx Xxxxxxx Xxxxxxxxxx](custom-events-and-event-accessors-in-windows-runtime-components.md). Xxxx xxxx xxxx xxx xxxxxx xxx xxxxx xxxx X\# xx Xxxxxx Xxxxx xxxx, xx xxxxx xxxxxxx xx xx xx xxxxxxxx .XXX Xxxxxxxxx xxxxx.
-
-## Xxxx xxxxx
+## Throwing exceptions
 
 
-Xxxxx xxx’xx xxxxxxx x Xxxxxxx Xxxxxxx xxxxxxxxx xxx xxxx xxx xxx, xxx xxx xxxx xxxx xxx xxxxxxxxxxxxx xx xxxxxxxxxxxx xx xxxxxx xx xxxxx xxxxxxxxxx. Xxx xxxx xxx xxxxxxx xxx xxxxxxxxx x xxxxxxxxx xxx xxxxxxxxxxxx xx xxxxx xxxxxxxxxx. Xxx [Xxxxxxxxxxxx x xxxxxxx Xxxxxxx Xxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/jj614475.aspx).
+You can throw any exception type that is included in the .NET for Windows apps. You can't declare your own public exception types in a Windows Runtime component, but you can declare and throw non-public types.
 
-Xxx xxxx xxxxxxxxxxx xxxxx Xxxxxx Xxxxx xxx X\# xxxxxxxx xxxxxxxx, xxx .XXX Xxxxxxxxx xxxxxxx xxx xxx Xxxxxxx Xxxxxxx, xxx [Xxxxxx Xxxxx xxx X\# xxxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/br212458.aspx).
+If your component doesn't handle the exception, a corresponding exception is raised in the code that called your component. The way the exception appears to the caller depends on the way the calling language supports the Windows Runtime.
 
-## Xxxxxxx xxxxxx
+-   In JavaScript, the exception appears as an object in which the exception message is replaced by a stack trace. When you debug your app in Visual Studio, you can see the original message text displayed in the debugger exception dialog box, identified as "WinRT Information". You can't access the original message text from JavaScript code.
 
-* [.XXX xxx Xxxxxxx Xxxxx Xxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
-* [.XXX xxx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
-* [Xxxxxxxxxxx: Xxxxxxxx x Xxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxx xxx xxxxxxx xx xxxx XxxxXxxxxx](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+    > **Tip**  Currently, the stack trace contains the managed exception type, but we don't recommend parsing the trace to identify the exception type. Instead, use an HRESULT value as described later in this section.
+
+-   In C++, the exception appears as a platform exception. If the managed exception's HResult property can be mapped to the HRESULT of a specific platform exception, the specific exception is used; otherwise, a [Platform::COMException](https://msdn.microsoft.com/library/windows/apps/xaml/hh710414.aspx) exception is thrown. The message text of the managed exception is not available to C++ code. If a specific platform exception was thrown, the default message text for that exception type appears; otherwise, no message text appears. See [Exceptions (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699896.aspx).
+-   In C# or Visual Basic, the exception is a normal managed exception.
+
+When you throw an exception from your component, you can make it easier for a JavaScript or C++ caller to handle the exception by throwing a non-public exception type whose HResult property value is specific to your component. The HRESULT is available to a JavaScript caller through the exception object's number property, and to a C++ caller through the [COMException::HResult](https://msdn.microsoft.com/library/windows/apps/xaml/hh710415.aspx) property.
+
+> **Note**  Use a negative value for your HRESULT. A positive value is interpreted as success, and no exception is thrown in the JavaScript or C++ caller.
+
+## Declaring and raising events
+
+When you declare a type to hold the data for your event, derive from Object instead of from EventArgs, because EventArgs is not a Windows Runtime type. Use [EventHandler&lt;TEventArgs&gt;](https://msdn.microsoft.com/library/db0etb8x.aspx) as the type of the event, and use your event argument type as the generic type argument. Raise the event just as you would in a .NET Framework application.
+
+When your Windows Runtime component is used from JavaScript or C++, the event follows the Windows Runtime event pattern that those languages expect. When you use the component from C# or Visual Basic, the event appears as an ordinary .NET Framework event. An example is provided in [Walkthrough: Creating a simple component in C# or Visual Basic and calling it from JavaScript]().
+
+If you implement custom event accessors (declare an event with the **Custom** keyword, in Visual Basic), you must follow the Windows Runtime event pattern in your implementation. See [Custom events and event accessors in Windows Runtime Components](custom-events-and-event-accessors-in-windows-runtime-components.md). Note that when you handle the event from C# or Visual Basic code, it still appears to be an ordinary .NET Framework event.
+
+## Next steps
+
+
+After you’ve created a Windows Runtime component for your own use, you may find that the functionality it encapsulates is useful to other developers. You have two options for packaging a component for distribution to other developers. See [Distributing a managed Windows Runtime component](https://msdn.microsoft.com/library/jj614475.aspx).
+
+For more information about Visual Basic and C# language features, and .NET Framework support for the Windows Runtime, see [Visual Basic and C# language reference](https://msdn.microsoft.com/library/windows/apps/xaml/br212458.aspx).
+
+## Related topics
+
+* [.NET for Windows Store Apps Overview](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx)
+* [.NET for UWP apps](https://msdn.microsoft.com/library/windows/apps/xaml/mt185501.aspx)
+* [Walkthrough: Creating a Simple Windows Runtime Component and calling it from JavaScript](walkthrough-creating-a-simple-windows-runtime-component-and-calling-it-from-javascript.md)
+
+
 
 
 <!--HONumber=Mar16_HO1-->
+
+

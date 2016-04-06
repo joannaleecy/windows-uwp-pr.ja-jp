@@ -1,17 +1,17 @@
 ---
-xxxxx: Xxxx xxxx XxxxXX XX Y.Y xx XxxxxxYX YY
-xxxxxxxxxxx: Xxxxxxxx xxxxxxxx, xxxxxxxxx, xxx xxxxxxxxxxxx xxx xxxxxxx xx XxxxXX XX Y.Y xxxxxxxx xxxxxxxx xx x XxxxxxYX YY xxx xxx Xxxxxxx Xxxxxxx.
-xx.xxxxxxx: YxYxxYYY-xYYx-YxYx-Yxxx-YYYYxYYxYxYx
+title: Port from OpenGL ES 2.0 to Direct3D 11
+description: Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 graphics pipeline to a Direct3D 11 and the Windows Runtime.
+ms.assetid: 1e1cf668-a15f-0c7b-8daf-3260d27c6d9c
 ---
 
-# Xxxx xxxx XxxxXX XX Y.Y xx XxxxxxYX YY
+# Port from OpenGL ES 2.0 to Direct3D 11
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxxxx xxxxxxxx, xxxxxxxxx, xxx xxxxxxxxxxxx xxx xxxxxxx xx XxxxXX XX Y.Y xxxxxxxx xxxxxxxx xx x XxxxxxYX YY xxx xxx Xxxxxxx Xxxxxxx.
+Includes articles, overviews, and walkthroughs for porting an OpenGL ES 2.0 graphics pipeline to a Direct3D 11 and the Windows Runtime.
 
-> **Xxxx**   Xx xxxxxxxxxxxx xxxx xx xxxxxxx xxxx XxxxXX XX Y.Y xxxxxxx xx xx xxx XXXXX xxx Xxxxxxx Xxxxx. XXXXX xxxxxx xxx xx xxx XxxxXX XX xxxxxxx xx Xxxxxxx xx xxxxxxxxxxx XxxxXX XX XXX xxxxx xx XxxxxxX YY XXX xxxxx. Xxx xxxx xxxxxxxxxxx xxxxx XXXXX, xx xx xxx [XXXXX xxx Xxxxxxx Xxxxx Xxxx](http://go.microsoft.com/fwlink/p/?linkid=618387).
+> **Note**   An intermediate step to porting your OpenGL ES 2.0 project is to use ANGLE for Windows Store. ANGLE allows you to run OpenGL ES content on Windows by translating OpenGL ES API calls to DirectX 11 API calls. For more information about ANGLE, go to the [ANGLE for Windows Store Wiki](http://go.microsoft.com/fwlink/p/?linkid=618387).
 
  
 
@@ -22,38 +22,42 @@ Xxxxxxxx xxxxxxxx, xxxxxxxxx, xxx xxxxxxxxxxxx xxx xxxxxxx xx XxxxXX XX Y.Y xxxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Map OpenGL ES 2.0 to Direct3D 11.1](map-concepts-and-infrastructure.md)</p></td>
-<td align="left"><p>Xxxx xxxxxxxx xxx xxxxxxx xx xxxxxxx xxxx xxxxxxxx xxxxxxxxxxxx xxxx XxxxXX XX Y.Y xx XxxxxxYX xxx xxx xxxxx xxxx, xxxxxxxxxxx xxxxxxxx xxxx xxx xxx xxxxxxxxxxx xxxxxxx xxx XXXx. Xxx xxxxxx xx xxxx xxxxxxx xxxx xxx xxxx xxxx xxxx xxxxxxxx xxx xxx XXX xxxxxxx xxxx xxx xxxx xxxx xxxx xxxxxx xxxx xxxxxxxx xxxxxxxxxx xx XxxxxxYX.</p></td>
+<td align="left"><p>When starting the process of porting your graphics architecture from OpenGL ES 2.0 to Direct3D for the first time, familiarize yourself with the key differences between the APIs. The topics in this section help you plan your port strategy and the API changes that you must make when moving your graphics processing to Direct3D.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Walkthrough sample ports from OpenGL ES 2.0](walkthrough-sample-ports-from-opengl-es-2-0.md)</p></td>
-<td align="left"><p>Xxxx xxx xx xxxxxx xxxxx x xxxxxx xx XxxxXX XX Y.Y xxxxxxxx xxxxxxxx xxxxxxx xxxxxxxxx xx xxxxxxxxx xxxxxxxxxx.</p></td>
+<td align="left"><p>This set of topics walks a number of OpenGL ES 2.0 graphics pipeline porting scenarios of differing complexity.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[OpenGL ES 2.0 to Direct3D 11.1 reference](opengl-es-2-0-to-directx-11-1-reference.md)</p></td>
-<td align="left"><p>Xxx xxxxx xxxxxxxxx xxxxxx xx xxxx xx XXX xxxxxxx xxx xxxxx xxxx xxxxxxx xxxx xxxxxxx xxxx XxxxXX XX Y.Y xx XxxxxxYX YY.</p></td>
+<td align="left"><p>Use these reference topics to look up API mapping and short code samples when porting from OpenGL ES 2.0 to Direct3D 11.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-> **Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

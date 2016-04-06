@@ -1,56 +1,57 @@
 ---
-xx.xxxxxxx: YxYxYxxY-YYYx-YxYY-YYYY-YxxxYxYYxxYx
-xxxxx: Xxxxxxxxxxx xxxxxxx
-xxxxxxxxxxx: Xxx xxxxxx XXXx xxxxxx xxxxxxxxxx xx xxxxxxxxx xxx xxxxx XX xx xxxxxxxx.
+ms.assetid: 6e9b9ff2-234b-6f63-0975-1afb2d86ba1a
+title: コンポジションの効果
+description: 効果 API を使用すると、開発者は UI のレンダリング方法をカスタマイズできます。
 ---
-# Xxxxxxxxxxx xxxxxxx
+# コンポジションの効果
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-Xxx [**Xxxxxxx.XX.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706878) XxxXX XXX xxxxxx Xxxx-xxxx xxxxxxx xx xx xxxxxxx xx xxxxxx xxx XX xxxx xxxxxxxxxx xxxxxx xxxxxxxxxx. Xx xxxx xxxxxxxx, xx’xx xxx xxxxxxx xxx xxxxxxxxxxxxx xxxxxxxxx xxxx xxxxxx xxxxxxx xx xx xxxxxxx xx x xxxxxxxxxxx xxxxxx.
+[
+            **Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) WinRT API により、アニメーション化可能な効果プロパティを持つ画像と UI にリアルタイムの効果を適用できます。 この概要では、コンポジションのビジュアルに効果を適用するために使用できる機能に目を通します。
 
-Xx xxxxxxx [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) xxxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxxxx xx xxxxx xxxxxxxxxxxx, xxxxxxxxxxx xxxxxxx xxxxxxxx XxxYX’x XXxxxxxxxXxxxxx xxxxxxxxx xx xxx xxxxxx xxxxxxxxxxxx xxx xxx [Xxxxxxxxx.Xxxxxxxx.Xxxxxx.Xxxxxxx](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) Xxxxxxxxx.
+アプリケーションの効果を記述する開発者に対して [ユニバーサル Windows プラットフォーム (UWP)](https://msdn.microsoft.com/library/windows/apps/dn726767.aspx) との整合性をサポートするには、コンポジション効果で Win2D の IGraphicsEffect インターフェイスを活用し、[Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) 名前空間を介して効果記述子を使用します。
 
-Xxxxx xxxxxxx xxx xxxx xx xxxxx xxxxx xx xx xxxxxxxxxxx xx xxxxxxxx xxxxxxx xx x xxx xx xxxxxxxx xxxxxx. Xxxxxxx YY xxxxxxxxxxx xxxxxx XXXx xxx xxxxxxx xx Xxxxxx Xxxxxxx. Xxx XxxxxxXxxxxx xxxxxx xxx xxxxxxxxxxx xxx xxxxxxxxx xx xxxxx, xxxxx xxx xxxxxx xxxxxxxx. Xxx XxxxxxXxxxxx xx x xxxxxxxxxxx xxxxxx xxxx xxxx xxx xxxx x YX xxxxxxxxx xxxx x xxxxx. Xxx xxxxxx xxxxxxx xxx xxxxxx xx xxx xxxxxxxxx xxx xxx xxxxx xxxxxxx xxx xxxxxx xxxx xx xxxxx xxx xxxxxxxxx.
+ブラシ効果は、一連の既存画像に効果を適用することでアプリケーションの領域をペイントするために使用されます。 Windows 10 のコンポジション効果 API ではスプライト ビジュアルが重視されます。 SpriteVisual を使うと、色、画像、効果の作成で柔軟性と関係性を得られます。 SpriteVisual は、2D の四角形をブラシで埋めることができるコンポジション ビジュアル タイプです。 ビジュアルは四角形の境界を定義し、ブラシは四角形のペイントに使用されるピクセルを定義します。
 
-Xxxxxx xxxxxxx xxx xxxx xx xxxxxxxxxxx xxxx xxxxxxx xxxxx xxxxxxx xxxxx xxxx xxx xxxxxx xx xx xxxxxx xxxxx. Xxxxxxx xxx xxxxxxxxx xxxxxxxx xxxxxxxx/xxxxxxxx, xxx xxx xxx xxxxxx xx xxxxx xxxxxxxxxxx xxxxx.
+効果ブラシは、コンテンツが効果グラフの出力に基づくコンポジション ツリー ビジュアルで使用されます。 効果は既存のサーフェスとテクスチャを参照できますが、他のコンポジション ツリーの出力は参照できません。
 
-## Xxxxxx Xxxxxxxx
+## 効果機能
 
--   [Xxxxxx Xxxxxxx](./composition-effects.md#effect-library)
--   [Xxxxxxxx Xxxxxxx](./composition-effects.md#chaining-effects)
--   [Xxxxxxxxx Xxxxxxx](./composition-effects.md#animation-support)
--   [Xxxxxx xxxxxxxxxx – Xxxxxxxx xx. Xxxxxxxx](./composition-effects.md#effect-properties-constant-vs-animated)
--   [Xxxxxxxx Xxxxxx Xxxxxxxxx xxxx Xxxxxxxxxxx Xxxxxxxxxx](./composition-effects.md#multiple-effect-instances-with-independent-properties)
+-   [効果ライブラリ](./composition-effects.md#effect-library)
+-   [チェーン効果](./composition-effects.md#chaining-effects)
+-   [アニメーションのサポート](./composition-effects.md#animation-support)
+-   [効果プロパティ - 固定とアニメーション化](./composition-effects.md#effect-properties-constant-vs-animated)
+-   [独立したプロパティを持つ複数の効果インスタンス](./composition-effects.md#multiple-effect-instances-with-independent-properties)
 
-### Xxxxxx Xxxxxxx
+### 効果ライブラリ
 
-Xxxxxxxxx xxxxxxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxx:
+現在、コンポジションでは次の効果がサポートされています。
 
-| Xxxxxx               | Xxxxxxxxxxx                                                                                                                                                                                                                |
+| 効果               | 説明                                                                                                                                                                                                                |
 |----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| YX xxxxxx xxxxxxxxx  | Xxxxxxx x YX xxxxxx xxxxxxxxx xxxxxx xx xx xxxxx. Xx xxxx xxxx xxxxxx xx xxxxxxx xxxxx xxxx xx xxx xxxxxx [xxxxxxx](https://github.com/Microsoft/composition/tree/master/SDK10240_WIN10_RTM/BasicCompositonEffects).       |
-| Xxxxxxxxxx xxxxxxxxx | Xxxxxxxx xxx xxxxxx xxxxx x xxxxxxxx xxxxxxxx. Xx xxxx xxxxxxxxxx xxxxxxxxx xx xxxxxx x xxxxxxxxx xxxxxx xx xxx [xxxxxxx](https://github.com/Microsoft/composition/tree/master/SDK10240_WIN10_RTM/BasicCompositonEffects). |
-| Xxxxx xxxxxx         | Xxxxxxx x xxxxx xxxxxx xxxx xxxxxxxx xxx xxxxxx. Xxxxxxxxxxx xxxxxxxx YY xx xxx YY [xxxxx xxxxx](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.md) xxxxxxxxx xx XxxYX.        |
-| Xxxxx xxxxxx         | Xxxxxxxxx xx xxxxx xxxxxxxxxx x xxxxx xxxxx.                                                                                                                                                                               |
-| Xxxxxxxxx            | Xxxxxxxx xxx xxxxxx. Xxxxxxxxxxx xxxxxxxx xxx YY [xxxxxxxxx xxxxx](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.md) xxxxxxxxx xx XxxYX.                                              |
-| Xxxxxxxx             | Xxxxxxxxx xx xxxxxxxxx xxx xxxxxxxx xx xx xxxxx.                                                                                                                                                                           |
-| Xxxxxxxx             | Xxxxxxxxx xx xxxxxxxxx xxx xxxxxxxx xx xx xxxxx.                                                                                                                                                                           |
-| Xxxxxxxxx            | Xxxxxxxx xx xxxxx xx xxxxxxxxxxxxx xxxx.                                                                                                                                                                                   |
-| Xxxxx xxxxxxxx       | Xxxxxx xxx xxxxxx xx xx xxxxx xx xxxxxxxx x xxx-xxxxxxx xxxxx xxxxxxxx xxxxxxxx.                                                                                                                                           |
-| Xxx xxxxxx           | Xxxxxx xxx xxxxx xx xx xxxxx xx xxxxxxxx xxx xxx xxxxxx.                                                                                                                                                                   |
-| Xxxxxx               | Xxxxxxx xxx xxxxxx xx xx xxxxx.                                                                                                                                                                                            |
-| Xxxxxxxx             | Xxxxxx xxx xxxxxxxxxx xx xx xxxxx.                                                                                                                                                                                         |
-| Xxxxx                | Xxxxxxxx xx xxxxx xx xxxxx xxxxx.                                                                                                                                                                                          |
-| Xxxxxxxxxxx xxx xxxx | Xxxxxxx xxx xxxxxxxxxxx xxx/xx xxxx xx xx xxxxx.                                                                                                                                                                           |
+| 2D アフィン変換  | 画像に 2D アフィン変換マトリックスを適用します。 効果の [サンプル](https://github.com/Microsoft/composition/tree/master/SDK10240_WIN10_RTM/BasicCompositonEffects) では、アルファ マスクのアニメーション化にこの効果が使われています。       |
+| 算術コンポジット | 柔軟な方程式を使って 2 つの画像を組み合わせます。 [サンプル](https://github.com/Microsoft/composition/tree/master/SDK10240_WIN10_RTM/BasicCompositonEffects) では、クロスフェード効果の作成に算術コンポジットが使われています。 |
+| ブレンド効果         | 2 つの画像を組み合わせるブレンド効果を作成します。 コンポジションでは、Win2D でサポートされている 26 個の [ブレンド モード](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_Effects_BlendEffectMode.md) のうち 21 個が用意されています。        |
+| カラー ソース         | 単色が含まれている画像を生成します。                                                                                                                                                                               |
+| コンポジット            | 2 つの画像を組み合わせます。 コンポジションでは、Win2D でサポートされている 13 個の [コンポジット モード](http://microsoft.github.io/Win2D/html/T_Microsoft_Graphics_Canvas_CanvasComposite.md) がすべて用意されています。                                              |
+| コントラスト             | 画像のコントラストを増減します。                                                                                                                                                                           |
+| 露出             | 画像の露出を増減します。                                                                                                                                                                           |
+| グレースケール            | 画像を灰色のモノクロ画像に変換します。                                                                                                                                                                                   |
+| ガンマ伝達       | チャネルあたりのガンマ伝達関数を適用することで、画像の色を変更します。                                                                                                                                           |
+| 色相回転           | 色相値を回転することで、画像の色を変更します。                                                                                                                                                                   |
+| 反転               | 画像の色を反転します。                                                                                                                                                                                            |
+| 彩度             | 画像の彩度を変更します。                                                                                                                                                                                         |
+| セピア                | 画像をセピア調に変換します。                                                                                                                                                                                          |
+| 色温度と濃淡 | 画像の色温度および濃淡を調整します。                                                                                                                                                                           |
 
  
 
-Xxx XxxYX’x [Xxxxxxxxx.Xxxxxxxx.Xxxxxx.Xxxxxxx](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) Xxxxxxxxx xxx xxxx xxxxxxxx xxxxxxxxxxx. Xxxxxxx xxx xxxxxxxxx xx xxxxxxxxxxx xxx xxxxx xx \[XxXxxxxxxxxxx\].
+詳しくは、Win2D の [Microsoft.Graphics.Canvas.Effects](http://microsoft.github.io/Win2D/html/N_Microsoft_Graphics_Canvas_Effects.md) 名前空間を参照してください。 コンポジションでサポートされていない効果は \[NoComposition\] として示されています。
 
-### Xxxxxxxx Xxxxxxx
+### チェーン効果
 
-Xxxxxxx xxx xx xxxxxxx, xxxxxxxx xx xxxxxxxxxxx xx xxxxxxxxxxxxxx xxx xxxxxxxx xxxxxxx xx xx xxxxx. Xxxxxx xxxxxx xxx xxxxxxx xxxxxxxx xxxxxxx xxxx xxx xxxxx xx xxx xxx xxxxx. Xxxx xxxxxxxxxx xxxx xxxxxx, xxxxxx xxx xx xxxxxx xx xxxxx xx xxxx xxxxxx.
+効果をチェーンして、アプリケーションの画像で複数の効果を同時に使用できます。 効果グラフは、相互に参照できる複数の効果をサポートできます。 効果を記述するときは、効果に対する入力として効果を追加します。
 
 ```cs
 IGraphicsEffect graphicsEffect =
@@ -70,25 +71,25 @@ new Microsoft.Graphics.Canvas.Effects.ArithmeticCompositeEffect
   
 ```
 
-Xxx xxxxxxx xxxxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxxx xxxxxx xxxxx xxx xxx xxxxxx. Xxx xxxxxx xxxxx xxx x xxxxxxxxxx xxxxxx xxxx x .Y xxxxxxxxxx xxxxxxxx.
+先ほどの例では、2 つの入力を受け取る算術コンポジット効果について説明しています。 2 番目の入力の彩度効果では、彩度プロパティを 0.5 に設定しています。
 
-### Xxxxxxxxx Xxxxxxx
+### アニメーションのサポート
 
-Xxxxxx xxxxxxxxxx xxxxxxx xxxxxxxxx, xxxxxx xxxxxx xxxxxxxxxxx xxx xxx xxxxxxx xxxxxx xxxxxxxxxx xxx xx xxxxxxxx xxx xxxxx xxx xx "xxxxx xx" xx xxxxxxxxx. Xxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxx xxxxxxx xx xxx xxxx “xxxxxx xxxx.xxxxxxxx xxxx”. Xxxxx xxxxxxxxxx xxx xx xxxxxxxx xxxxxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxxxxx xx xxx xxxxxx.
+効果プロパティはアニメーション化をサポートしています。効果のコンパイル時に、効果プロパティをアニメーション化するか、定数として固定するかを指定できます。 アニメーション化可能なプロパティは、「効果名.プロパティ名」という形式の文字列で指定されます。 これらのプロパティは、効果の複数のインスタンスで個別にアニメーション化できます。
 
-### Xxxxxx xxxxxxxxxx – Xxxxxxxx xx Xxxxxxxx
+### 効果プロパティ - 固定とアニメーション化
 
-Xxxxxx xxxxxx xxxxxxxxxxx xxx xxx xxxxxxx xxxxxx xxxxxxxxxx xx xxxxxxx xx xx xxxxxxxxxx xxxx xxx "xxxxx xx" xx xxxxxxxxx. Xxx xxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxx xxxxxxx xx xxx xxxx “<effect name>.<property name>”. Xxx xxxxxxx xxxxxxxxxx xxx xx xxx xx x xxxxxxxx xxxxx xx xxx xx xxxxxxxx xxxxx xxx xxxxxxxxxxx xxxxxxxxx xxxxxx.
+効果のコンパイル時に、効果プロパティを動的に設定されるようにするか、定数として固定されるようにするかを指定できます。 動的プロパティは「<effect name>.<property name>」という形式の文字列で指定します。 動的プロパティを特定の値に設定するか、コンポジションのアニメーション システムを使ってアニメーション化できます。
 
-Xxxx xxxxxxxxx xxx xxxxxx xxxxxxxxxxx xxxxx, xxx xxxx xxx xxxxxxxxxxx xx xxxxxx xxxxxx xx xxxxxxxxxx xx xx xxxxx xx Y.Y xx xxxxxx xx xxxxxxx xxx xxxxxxx xx xxxxxxxxxxx xx xxxxxxxxx xx.
+先ほどの効果のコンパイル時、彩度を 0.5 に固定するか、動的に設定される (アニメーション化される) ようにするか、柔軟に選べます。
 
-Xxxxxxxxx xx xxxxxx xxxx xxxxxxxxxx xxxxx xx:
+固定の彩度で効果をコンパイル:
 
 ```cs
 var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);              
 ```
 
-Xxxxxxxxx xx xxxxxx xxxx xxxxxxx xxxxxxxxxx:
+動的な彩度で効果をコンパイル:
 
 ```cs
 var effectFactory = _compositor.CreateEffectFactory(graphicsEffect, new[]{SaturationEffect.Saturation});
@@ -97,9 +98,9 @@ _catEffect.SetSourceParameter("mySource", surfaceBrush);
 _catEffect.Properties.InsertScalar("saturationEffect.Saturation", 0f);
 ```
 
-Xxx xxxxxxxxxx xxxxxxxx xx xxx xxxxxx xxxxx xxx xxxx xx xxxxxx xxx xx x xxxxxx xxxxx xx xxxxxxxx xxxxx xxxxxx Xxxxxxxxxx xx XxxxxxXxxXxxxx xxxxxxxxxx.
+その後、先ほどの効果の彩度プロパティを静的な値に設定するか、式または ScalarKeyFrame アニメーションのいずれかを使ってアニメーション化できます。
 
-Xxx xxx xxxxxx x XxxxxxXxxXxxxx xxxx xxxx xx xxxx xx xxxxxxx xxx Xxxxxxxxxx xxxxxxxx xx xx xxxxxx xxxx xxxx:
+次のように、効果の彩度プロパティのアニメーション化に使われる ScalarKeyFrame を作成できます。
 
 ```cs
 ScalarKeyFrameAnimation effectAnimation = _compositor.CreateScalarKeyFrameAnimation();
@@ -110,58 +111,58 @@ ScalarKeyFrameAnimation effectAnimation = _compositor.CreateScalarKeyFrameAnimat
             effectAnimation.IterationBehavior = AnimationIterationBehavior.Forever;
 ```
 
-Xxxxx xxx xxxxxxxxx xx xxx Xxxxxxxxxx xxxxxxxx xx xxx xxxxxx xxxx xxxx:
+次のように、効果の彩度プロパティのアニメーション化を始めます。
 
 ```cs
 catEffect.Properties.StartAnimation("saturationEffect.Saturation", effectAnimation);
 ```
 
-Xxx xxx [Xxxxxxxxxxxx - Xxxxxxxxx xxxxxx](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/BasicCompositonEffects/Desaturation%20-%20Animation) xxx xxxxxx xxxxxxxxxx xxxxxxxx xxxx xxx xxxxxx xxx xxx [XxxxxXxxx xxxxxx](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/BasicCompositonEffects/AlphaMask) xxx xxx xx xxxxxxx xxx xxxxxxxxxxx.
+キー フレームを使った効果プロパティのアニメーション化については、[彩度を下げるアニメーション サンプル](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/BasicCompositonEffects/Desaturation%20-%20Animation) を、効果や式の使用については、[AlphaMask サンプル](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/BasicCompositonEffects/AlphaMask) をご覧ください。
 
-### Xxxxxxxx Xxxxxx Xxxxxxxxx xxxx Xxxxxxxxxxx Xxxxxxxxxx
+### 独立したプロパティを持つ複数の効果インスタンス
 
-Xx xxxxxxxxxx xxxx x xxxxxxxxx xxxxxx xx xxxxxxx xxxxxx xxxxxx xxxxxxxxxxx, xxx xxxxxxxxx xxx xxxx xx xxxxxxx xx x xxx-xxxxxx xxxxxxxx xxxxx. Xxxx xxxxxx xxx Xxxxxxx xx xxx xxx xxxx xxxxxx xxx xx xxxxxxxx xxxx xxxxxxxxx xxxxxx xxxxxxxxxx. Xxx xxx XxxxxXxxxxx xxx Xxxxx [xxxxxx](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/BasicCompositonEffects/ColorSource%20and%20Blend) xxx xxxx xxxxxxxxxxx.
+効果のコンパイル時にパラメーターが動的であることを指定することにより、パラメーターを効果インスタンスごとに変更できます。 これにより、2 つのビジュアルに同じ効果を使用しても、異なる効果プロパティを使って表示できます。 詳しくは、ColorSource と Blend の [サンプル](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/BasicCompositonEffects/ColorSource%20and%20Blend) をご覧ください。
 
-## Xxxxxxx Xxxxxxx xxxx Xxxxxxxxxxx Xxxxxxx
+## コンポジション効果の概要
 
-Xxxx xxxxx xxxxx xxxxxxxx xxxxx xxx xxx xx xxxx xxx xx xxxx xx xxx xxxxx xxxxxxxxxxxx xx xxxxxxx.
+このクイック スタート チュートリアルでは、効果のいくつかの基本機能の使用方法を示します。
 
--   [Xxxxxxxxxx Xxxxxx Xxxxxx](./composition-effects.md#installing-visual-studio)
--   [Xxxxxxxx x xxx xxxxxxx](./composition-effects.md#creating-a-new-project)
--   [Xxxxxxxxxx XxxYX](./composition-effects.md#installing-win2d)
--   [Xxxxxxx xxxx Xxxxxxxxxxx Xxxxxx](./composition-effects.md#setting-your-composition-basics)
--   [Xxxxxxxx x XxxxxxxxxxxXxxxxxx Xxxxx](./composition-effects.md#creating-a-compositionsurface-brush)
--   [Xxxxxxxx, Xxxxxxxxx xxx Xxxxxxxx Xxxxxxx](./composition-effects.md#creating,-compiling-and-applying-effects)
+-   [Visual Studio のインストール](./composition-effects.md#installing-visual-studio)
+-   [新しいプロジェクトの作成](./composition-effects.md#creating-a-new-project)
+-   [Win2D のインストール](./composition-effects.md#installing-win2d)
+-   [コンポジション設定の基本](./composition-effects.md#setting-your-composition-basics)
+-   [CompositionSurface ブラシの作成](./composition-effects.md#creating-a-compositionsurface-brush)
+-   [効果の作成、コンパイル、および適用](./composition-effects.md#creating,-compiling-and-applying-effects)
 
-### Xxxxxxxxxx Xxxxxx Xxxxxx
+### Visual Studio のインストール
 
--   Xx xxx xxx'x xxxx x xxxxxxxxx xxxxxxx xx Xxxxxx Xxxxxx xxxxxxxxx, xx xx xxx Xxxxxx Xxxxxx Xxxxxxxxx xxxx [xxxx](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx).
+-   サポートされている Visual Studio バージョンがインストールされていない場合は、「[Visual Studio ダウンロード](https://www.visualstudio.com/downloads/download-visual-studio-vs.aspx)」ページをご覧ください。
 
-### Xxxxxxxx x xxx xxxxxxx
+### 新しいプロジェクトの作成
 
--   Xx xx Xxxx->Xxx->Xxxxxxx...
--   Xxxxxx 'Xxxxxx X#'
--   Xxxxxx x 'Xxxxx Xxx (Xxxxxxx Xxxxxxxxx)' (Xxxxxx Xxxxxx YYYY)
--   Xxxxx x xxxxxxx xxxx xx xxxx xxxxxxxx
--   Xxxxx 'XX'
+-   [ファイル]、[新規]、[プロジェクト] の順にクリックします。
+-   [Visual C#] を選択します。
+-   「空のアプリ (Windows ユニバーサル)」を作成します (Visual Studio 2015)。
+-   選択したプロジェクト名を入力します。
+-   [OK] をクリックします。
 
-### Xxxxxxxxxx XxxYX
+### Win2D のインストール
 
-XxxYX xx xxxxxxxx xx x Xxxxx.xxx xxxxxxx xxx xxxxx xx xx xxxxxxxxx xxxxxx xxx xxx xxx xxxxxxx.
+Win2D は Nuget.org パッケージとしてリリースされており、効果を使用する前にインストールする必要があります。
 
-Xxxxx xxx xxx xxxxxxx xxxxxxxx, xxx xxx Xxxxxxx YY xxx xxx xxx Xxxxxxx Y.Y. Xxx Xxxxxxxxxxx xxxxxxx xxx’xx xxx xxx Xxxxxxx YY xxxxxxx.
+Windows 10 用と Windows 8.1 用の 2 つのパッケージ バージョンがあります。 コンポジション効果の場合、Windows 10 バージョンを使います。
 
--   Xxxxxx xxx XxXxx Xxxxxxx Xxxxxxx xx xxxxx xx Xxxxx → XxXxx Xxxxxxx Xxxxxxx → Xxxxxx XxXxx Xxxxxxxx xxx Xxxxxxxx.
--   Xxxxxx xxx "XxxYX" xxx xxxxxx xxx xxxxxxxxxxx xxxxxxx xxx xxxx xxxxxx xxxxxxx xx Xxxxxxx. Xxxxxxx Xxxxxxx.XX. Xxxxxxxxxxx xxxxxxxx Xxxxxxx YY (xxx Y.Y), xxxxxx XxxYX.xxx.
--   Xxxxxx xxx xxxxxxx xxxxxxxxx
--   Xxxxx 'Xxxxx'
+-   [ツール]、[NuGet パッケージ マネージャー]、[ソリューションの NuGet パッケージの管理] の順にクリックして、NuGet パッケージ マネージャーを起動します。
+-   「Win2D」を検索し、Windows のターゲット バージョンに適したパッケージを選択します。 Windows.UI.Composition は Windows 10 (8.1 ではない) をサポートするため、Win2D.uwp を選択します。
+-   使用許諾契約書に同意します。
+-   [閉じる] をクリックします。
 
-Xx xxx xxxx xxx xxxxx xx xxxx xxx xxxxxxxxxxx XXX’x xx xxxxx x xxxxxxxxxx xxxxxx xx xxxx xxx xxxxx xxxxx xxxx xxxxxx xxx xxxxxxxxxx. Xx xxxx xxxxx xxx xxxxxx xx xxxxxxx xxx xxxx xxxxxxx xx xx xxxxx.
+次のいくつかの手順では、コンポジション API を使って、すべての彩度を除去する彩度効果をこの猫の画像に適用します。 このモデルでは効果が作成され、画像に適用されます。
 
-![Xxxxxx xxxxx](images/composition-cat-source.png)
-### Xxxxxxx xxxx Xxxxxxxxxxx Xxxxxx
+![ソース画像](images/composition-cat-source.png)
+### コンポジション設定の基本
 
-Xxx xxx [Xxxxxxxxxxx Xxxxxx Xxxx Xxxxxx](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/CompositionVisual) xx xxx XxxXxx xxx xx xxxxxxx xx xxx xx xxx xx Xxxxxxx.XX.Xxxxxxxxxxx Xxxxxxxxxx, xxxx XxxxxxxxxXxxxxx, xxx xxxxxxxxx xxxx xxx Xxxx Xxxxxx.
+Windows.UI.Composition コンポジターとルート ContainerVisual の設定方法、およびコア ウィンドウとの関連付け方法の例については、GitHub で [コンポジション ビジュアル ツリーのサンプル](https://github.com/Microsoft/composition/tree/master/SDK10586_NOV_UPDATE_RTM/CompositionVisual) をご覧ください。
 
 ```cs
 _compositor = new Compositor();
@@ -172,16 +173,16 @@ _imageFactory = new CompositionImageFactory(_compositor)
 Desaturate();
 ```
 
-### Xxxxxxxx x XxxxxxxxxxxXxxxxxx Xxxxx
+### CompositionSurface ブラシの作成
 
 ```cs
 CompositionSurfaceBrush surfaceBrush = _compositor.CreateSurfaceBrush();
 LoadImage(surfaceBrush); 
 ```
 
-### Xxxxxxxx, Xxxxxxxxx xxx Xxxxxxxx Xxxxxxx
+### 効果の作成、コンパイル、および適用
 
-Y.) Xxxxxx xxx xxxxxxxx xxxxxx
+1.) グラフィックス効果を作成する
 ```cs
 var graphicsEffect = new SaturationEffect
 {
@@ -190,7 +191,7 @@ var graphicsEffect = new SaturationEffect
 };
 ```
 
-Y.) Xxxxxxx xxx xxxxxx xxx xxxxxx xxxxxx xxxxx
+2.) 効果をコンパイルし、効果ブラシを作成する
 ```cs
 var effectFactory = _compositor.CreateEffectFactory(graphicsEffect);
 
@@ -198,7 +199,7 @@ var catEffect = effectFactory.CreateBrush();
 catEffect.SetSourceParameter("mySource", surfaceBrush);
 ```
 
-Y.) Xxxxxx x XxxxxxXXxxxx xx xxx xxxxxxxxxxx xxxx xxx xxxxx xxx xxxxxx
+3.) コンポジション ツリーに SpriteVIsual を作成し、効果を適用する
 ```cs
 var catVisual = _compositor.CreateSpriteVisual();
   catVisual.Brush = catEffect;
@@ -207,37 +208,41 @@ var catVisual = _compositor.CreateSpriteVisual();
 }
 ```
 
-Y.) Xxxxxx xxxx xxxxx xxxxxx xx xxxx.
+4.) 読み込む画像ソースを作成する。
 ```cs
 CompositionImage imageSource = _imageFactory.CreateImageFromUri(new Uri("ms-appx:///Assets/cat.png"));
 CompositionImageLoadResult result = await imageSource.CompleteLoadAsync();
 if (result.Status == CompositionImageLoadStatus.Success)
 ```
 
-Y.) Xxxx xxx xxxxx xxx xxxxxxx xx xxx XxxxxxXxxxxx
+5.) SpriteVisual のサーフェスのサイズとブラシ
 ```cs
 brush.Surface = imageSource.Surface;
 ```
 
-Y.) Xxx xxxx xxx – xxxx xxxxxxx xxxxxx xx x xxxxxxxxxxx xxx:
+6.) アプリを実行する - 結果は彩度を下げた猫になるはずです。
 
-![Xxxxxxxxxxx xxxxx](images/composition-cat-desaturated.png)
-## Xxxx Xxxxxxxxxxx
+![彩度を下げた画像](images/composition-cat-desaturated.png)
+## 詳細情報
 
--   [Xxxxxxxxx – Xxxxxxxxxxx XxxXxx](https://github.com/Microsoft/composition)
--   [**Xxxxxxx.XX.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
--   [Xxxxxxx Xxxxxxxxxxx xxxx xx Xxxxxxx](https://twitter.com/wincomposition)
--   [Xxxxxxxxxxx Xxxxxxxx](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
--   [Xxxxxx Xxxx Xxxxxx](composition-visual-tree.md)
--   [Xxxxxxxxxxx Xxxxxxx](composition-brushes.md)
--   [Xxxxxxxxx Xxxxxxxx](composition-animation.md)
--   [Xxxxxxxxxxx xxxxxx XxxxxxX xxx XxxxxxYX xxxxxxxxxxxxxx xxxx XxxxxXxxx xxx XxxXxxx](composition-native-interop.md)
+-   [Microsoft - コンポジション GitHub](https://github.com/Microsoft/composition)
+-   [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878)
+-   [Twitter の Windows Composition チーム](https://twitter.com/wincomposition)
+-   [コンポジションの概要](https://blogs.windows.com/buildingapps/2015/12/08/awaken-your-creativity-with-the-new-windows-ui-composition/)
+-   [ビジュアル ツリーの基本](composition-visual-tree.md)
+-   [コンポジションのブラシ](composition-brushes.md)
+-   [アニメーションの概要](composition-animation.md)
+-   [BeginDraw と EndDraw によるコンポジションでの DirectX と Direct2D のネイティブ相互運用](composition-native-interop.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

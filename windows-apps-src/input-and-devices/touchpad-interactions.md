@@ -1,65 +1,60 @@
 ---
-Xxxxxxxxxxx: Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxxxxx xxx xxxxxxxxxxx xxxx xxxxxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxx xxx xxxxxxxx xxx xxx xxxxxxxxxxxx xxxxxxxxxx xxxxxx xxxxx xxxxxxx.
-xxxxx: Xxxxxxxx xxxxxxxxxxxx
-xx.xxxxxxx: XXXXXYYX-XXYY-YYYY-XYXX-YXYXXYYXYYXX
-xxxxx: Xxxxxxxx xxxxxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touchpad but are functionally consistent across input devices.
+title: Touchpad interactions
+ms.assetid: CEDEA30A-FE94-4553-A7FB-6C1FA44F06AB
+label: Touchpad interactions
+template: detail.hbs
 ---
 
-# Xxxxxxxx xxxxxx xxxxxxxxxx
+# Touchpad design guidelines
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxx xxxx xxx xx xxxx xxxxx xxx xxxxxxxx xxxx xx xxxxxxx x xxxxxxxx. X xxxxxxxx xxxxxxxx xxxx xxxxxxxx xxxxx-xxxxx xxxxx xxxx xxx xxxxxxxxx xxxxx xx x xxxxxxxx xxxxxx, xxxx xx x xxxxx. Xxxx xxxxxxxxxxx xxxxx xxx xxxxxxxx xxxxxx xx xxxx x xxxxx-xxxxxxxxx XX xxx xxx xxxxxxx xxxxxxx xx xxxxxxxxxxxx xxxx.
+Design your app so that users can interact with it through a touchpad. A touchpad combines both indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both a touch-optimized UI and the smaller targets of productivity apps.
 
  
 
-![xxxxxxxx](images/input-patterns/input-touchpad.jpg)
+![touchpad](images/input-patterns/input-touchpad.jpg)
 
 
-Xxxxxxxx xxxxxxxxxxxx xxxxxxx xxxxx xxxxxx:
+Touchpad interactions require three things:
 
--   X xxxxxxxx xxxxxxxx xx x Xxxxxxx Xxxxxxxxx Xxxxxxxx.
+-   A standard touchpad or a Windows Precision Touchpad.
 
-    Xxxxxxxxx xxxxxxxxx xxx xxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxx. Xxxx xxxxxx xxx xxxxxx xx xxxxxx xxxxxxx xxxxxxx xx xxx xxxxxxxx xxxxxxxxxx xxxxxxxx, xxxx xx xxxxxx xxxxxxxx xxx xxxx xxxxxxxxx, xxx x xxxx xxxxxxxxxx xxxxxxxxxx xxxxxx xxxxxxx.
+    Precision touchpads are optimized for Universal Windows Platform (UWP) devices. They enable the system to handle certain aspects of the touchpad experience natively, such as finger tracking and palm detection, for a more consistent experience across devices.
 
--   Xxx xxxxxx xxxxxxx xx xxx xx xxxx xxxxxxx xx xxx xxxxxxxx.
--   Xxxxxxxx xx xxx xxxxx xxxxxxxx (xx xxxx xxxxxxx, xxxxx xx x xxxx xxxxxxxxx).
+-   The direct contact of one or more fingers on the touchpad.
+-   Movement of the touch contacts (or lack thereof, based on a time threshold).
 
-Xxx xxxxx xxxx xxxxxxxx xx xxx xxxxxxxx xxxxxx xxx xx:
+The input data provided by the touchpad sensor can be:
 
--   Xxxxxxxxxxx xx x xxxxxxxx xxxxxxx xxx xxxxxx xxxxxxxxxxxx xx xxx xx xxxx XX xxxxxxxx (xxxx xx xxxxxxx, xxxxxxxx, xxxxxxxx, xx xxxxxx). Xx xxxxxxxx, xxxxxxxxxxx xxxx xx xxxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxx xx xxxxx xxxxxx xxx xx xxxxxxxxxx xxxxxxxx xxxxxxxxxxxx.
--   Xxxxxxxxxx xx xx xxxxxxxxxxx xxxxx xxxxxx, xxxx xx xxxxx xx xxx.
--   Xxxx xx xxxxxxxxxx xx xxxxxx xxxxxxx xx xxxxx xxxxx xxxxxxx, xxxx xx xxxxxxxx xx xxx xxxxxx xxxxx xxxx x xxx.
+-   Interpreted as a physical gesture for direct manipulation of one or more UI elements (such as panning, rotating, resizing, or moving). In contrast, interacting with an element through its properties window or other dialog box is considered indirect manipulation.
+-   Recognized as an alternative input method, such as mouse or pen.
+-   Used to complement or modify aspects of other input methods, such as smudging an ink stroke drawn with a pen.
 
-X xxxxxxxx xxxxxxxx xxxxxxxx xxxxx-xxxxx xxxxx xxxx xxx xxxxxxxxx xxxxx xx x xxxxxxxx xxxxxx, xxxx xx x xxxxx. Xxxx xxxxxxxxxxx xxxxx xxx xxxxxxxx xxxxxx xx xxxx xxxxx-xxxxxxxxx XX xxx xxx xxxxxxxxx xxxxxxx xxxxxxx xx xxxxxxxxxxxx xxxx xxx xxx xxxxxxx xxxxxxxxxxx. Xxxxxxxx xxxx Xxxxxxx Xxxxx xxx xxxxxx xxx xxxxx xxxxx xxx xxx xxxxxxxx xxxxxxx xx xxxxxxx.
+A touchpad combines indirect multi-touch input with the precision input of a pointing device, such as a mouse. This combination makes the touchpad suited to both touch-optimized UI and the typically smaller targets of productivity apps and the desktop environment. Optimize your Windows Store app design for touch input and get touchpad support by default.
 
-Xxxxxxx xx xxx xxxxxxxxxxx xx xxxxxxxxxxx xxxxxxxxxxx xxxxxxxxx xx xxxxxxxxx, xx xxxxxxxxx xxxxx xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208968) xxxxx xx xxxxxxx xxxxx-xxxxx XX xxxxxxxx xx xxxxxxxx xx xxx xxxxx-xx xxxxxxx xxx xxxxx xxxxx. Xxx xxxxxxx, xxx xxxxxxxx xxx xxxx xxxxxxx xx xxx xxxxx xxxx xxxxxxx xxxxx xx xxxxxxx xx xxxx xx xxx xxxxxxx xxx xxxxxxx.
+Because of the convergence of interaction experiences supported by touchpads, we recommend using the [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968) event to provide mouse-style UI commands in addition to the built-in support for touch input. For example, use previous and next buttons to let users flip through pages of content as well as pan through the content.
 
-Xxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxxx xx xxxx xxxxx xxx xxxx xx xxxxxx xxxx xxxx xxx xxxxxxxx xxxxxxxx xxxxx xxxxxxxxxx xxx xxxx xxxxxxx xxxx.
+The gestures and guidelines discussed in this topic can help to ensure that your app supports touchpad input seamlessly and with minimal code.
 
-## <span id="The_touchpad_language">
-            </span>
-            <span id="the_touchpad_language">
-            </span>
-            <span id="THE_TOUCHPAD_LANGUAGE">
-            </span>Xxx xxxxxxxx xxxxxxxx
+## <span id="The_touchpad_language"></span><span id="the_touchpad_language"></span><span id="THE_TOUCHPAD_LANGUAGE"></span>The touchpad language
 
 
-X xxxxxxx xxx xx xxxxxxxx xxxxxxxxxxxx xxx xxxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxx. Xxxxxxxx xxxx xxx xxx xxxxx xxx xxxxx xxxxx xxx xxxx xxxxxxxx xxxxx xxxx xxx xxxx xxxxxxxxx xxxxxxxx xxx xxxx xxxxx, xxxxxxxxxx xxxxx xxxxxxxxxx xxx xxxxxx xxxx xxx xxxxxx xx xxxxx xxx xxx.
+A concise set of touchpad interactions are used consistently throughout the system. Optimize your app for touch and mouse input and this language makes your app feel instantly familiar for your users, increasing their confidence and making your app easier to learn and use.
 
-Xxxxx xxx xxx xxx xxxx Xxxxxxxxx Xxxxxxxx xxxxxxxx xxx xxxxxxxxxxx xxxxxxxxx xxxx xxxx xxx xxx x xxxxxxxx xxxxxxxx. Xxxxx xxx xxxxxx xxxx xxx xxxxxxxxx xxxxxxxx xxxxxxxx xxxxx xxxx Xxxxxxxx &xx; Xxxxxxx &xx; Xxxxx & xxxxxxxx xxx x xxxxxxxx xxxxxxxx xxx x Xxxxxxxxx Xxxxxxxx, xxxxxxxxxxxx.
+Users can set far more Precision Touchpad gestures and interaction behaviors than they can for a standard touchpad. These two images show the different touchpad settings pages from Settings &gt; Devices &gt; Mouse & touchpad for a standard touchpad and a Precision Touchpad, respectively.
 
-![xxxxxxxx xxxxxxxx xxxxxxxx](images/mouse-touchpad-settings-standard.png)
+![standard touchpad settings](images/mouse-touchpad-settings-standard.png)
 
-<sup>Xxxxxxxx\\ xxxxxxxx\\ xxxxxxxx</sup>
+<sup>Standard\\ touchpad\\ settings</sup>
 
-![xxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxx](images/mouse-touchpad-settings-ptp.png)
+![windows precision touchpad settings](images/mouse-touchpad-settings-ptp.png)
 
-<sup>Xxxxxxx\\ Xxxxxxxxx\\ Xxxxxxxx\\ xxxxxxxx</sup>
+<sup>Windows\\ Precision\\ Touchpad\\ settings</sup>
 
-Xxxx xxx xxxx xxxxxxxx xx xxxxxxxx-xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxx xxxxx.
+Here are some examples of touchpad-optimized gestures for performing common tasks.
 
 <table>
 <colgroup>
@@ -68,118 +63,106 @@ Xxxx xxx xxxx xxxxxxxx xx xxxxxxxx-xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxx xxxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Term</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Three-finger_tap"></span><span id="three-finger_tap"></span><span id="THREE-FINGER_TAP"></span>Xxxxx-xxxxxx xxx</p></td>
-<td align="left"><p>Xxxx xxxxxxxxxx xx xxxxxx xxxx <strong>Xxxxxxx</strong> xx xxxx <strong>Xxxxxx Xxxxxx</strong>.</p></td>
+<td align="left"><p><span id="Three-finger_tap"></span><span id="three-finger_tap"></span><span id="THREE-FINGER_TAP"></span>Three-finger tap</p></td>
+<td align="left"><p>User preference to search with <strong>Cortana</strong> or show <strong>Action Center</strong>.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Three_finger_slide"></span><span id="three_finger_slide"></span><span id="THREE_FINGER_SLIDE"></span>Xxxxx xxxxxx xxxxx</p></td>
-<td align="left"><p>Xxxx xxxxxxxxxx xx xxxx xxx xxxxxxx xxxxxxx Xxxx Xxxx, xxxx Xxxxxxx, xx xxxxxx xxxxxxx xxxx xxxx.</p></td>
+<td align="left"><p><span id="Three_finger_slide"></span><span id="three_finger_slide"></span><span id="THREE_FINGER_SLIDE"></span>Three finger slide</p></td>
+<td align="left"><p>User preference to open the virtual desktop Task View, show Desktop, or switch between open apps.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Single_finger_tap_for_primary_action"></span><span id="single_finger_tap_for_primary_action"></span><span id="SINGLE_FINGER_TAP_FOR_PRIMARY_ACTION"></span>Xxxxxx xxxxxx xxx xxx xxxxxxx xxxxxx</p></td>
-<td align="left"><p>Xxx x xxxxxx xxxxxx xx xxx xx xxxxxxx xxx xxxxxx xxx xxxxxxx xxxxxx (xxxx xx xxxxxxxxx xx xxx xx xxxxxxxxx x xxxxxxx).</p></td>
+<td align="left"><p><span id="Single_finger_tap_for_primary_action"></span><span id="single_finger_tap_for_primary_action"></span><span id="SINGLE_FINGER_TAP_FOR_PRIMARY_ACTION"></span>Single finger tap for primary action</p></td>
+<td align="left"><p>Use a single finger to tap an element and invoke its primary action (such as launching an app or executing a command).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Two_finger_tap_to_right-click"></span><span id="two_finger_tap_to_right-click"></span><span id="TWO_FINGER_TAP_TO_RIGHT-CLICK"></span>Xxx xxxxxx xxx xx xxxxx-xxxxx</p></td>
-<td align="left"><p>Xxx xxxx xxx xxxxxxx xxxxxxxxxxxxxx xx xx xxxxxxx xx xxxxxx xx xxx xxxxxxx xxxxxxxxxx xxxxxxxx.</p></td>
+<td align="left"><p><span id="Two_finger_tap_to_right-click"></span><span id="two_finger_tap_to_right-click"></span><span id="TWO_FINGER_TAP_TO_RIGHT-CLICK"></span>Two finger tap to right-click</p></td>
+<td align="left"><p>Tap with two fingers simultaneously on an element to select it and display contextual commands.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Two_finger_slide_to_pan"></span><span id="two_finger_slide_to_pan"></span><span id="TWO_FINGER_SLIDE_TO_PAN"></span>Xxx xxxxxx xxxxx xx xxx</p></td>
-<td align="left"><p>Xxxxx xx xxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxxxx xxx xxx xxxx xx xxxx xxx xxxxxx, xxxxxxx, xx xxxxxxx.</p></td>
+<td align="left"><p><span id="Two_finger_slide_to_pan"></span><span id="two_finger_slide_to_pan"></span><span id="TWO_FINGER_SLIDE_TO_PAN"></span>Two finger slide to pan</p></td>
+<td align="left"><p>Slide is used primarily for panning interactions but can also be used for moving, drawing, or writing.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Pinch_and_stretch_to_zoom"></span><span id="pinch_and_stretch_to_zoom"></span><span id="PINCH_AND_STRETCH_TO_ZOOM"></span>Xxxxx xxx xxxxxxx xx xxxx</p></td>
-<td align="left"><p>Xxx xxxxx xxx xxxxxxx xxxxxxxx xxx xxxxxxxx xxxx xxx xxxxxxxx xxx Xxxxxxxx Xxxx.</p></td>
+<td align="left"><p><span id="Pinch_and_stretch_to_zoom"></span><span id="pinch_and_stretch_to_zoom"></span><span id="PINCH_AND_STRETCH_TO_ZOOM"></span>Pinch and stretch to zoom</p></td>
+<td align="left"><p>The pinch and stretch gestures are commonly used for resizing and Semantic Zoom.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Single_finger_press_and_slide_to_rearrange"></span><span id="single_finger_press_and_slide_to_rearrange"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_REARRANGE"></span>Xxxxxx xxxxxx xxxxx xxx xxxxx xx xxxxxxxxx</p></td>
-<td align="left"><p>Xxxx xx xxxxxxx.</p></td>
+<td align="left"><p><span id="Single_finger_press_and_slide_to_rearrange"></span><span id="single_finger_press_and_slide_to_rearrange"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_REARRANGE"></span>Single finger press and slide to rearrange</p></td>
+<td align="left"><p>Drag an element.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Single_finger_press_and_slide_to_select_text"></span><span id="single_finger_press_and_slide_to_select_text"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_SELECT_TEXT"></span>Xxxxxx xxxxxx xxxxx xxx xxxxx xx xxxxxx xxxx</p></td>
-<td align="left"><p>Xxxxx xxxxxx xxxxxxxxxx xxxx xxx xxxxx xx xxxxxx xx. Xxxxxx-xxx xx xxxxxx x xxxx.</p></td>
+<td align="left"><p><span id="Single_finger_press_and_slide_to_select_text"></span><span id="single_finger_press_and_slide_to_select_text"></span><span id="SINGLE_FINGER_PRESS_AND_SLIDE_TO_SELECT_TEXT"></span>Single finger press and slide to select text</p></td>
+<td align="left"><p>Press within selectable text and slide to select it. Double-tap to select a word.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Left_and_right_click_zone"></span><span id="left_and_right_click_zone"></span><span id="LEFT_AND_RIGHT_CLICK_ZONE"></span>Xxxx xxx xxxxx xxxxx xxxx</p></td>
-<td align="left"><p>Xxxxxxx xxx xxxx xxx xxxxx xxxxxx xxxxxxxxxxxxx xx x xxxxx xxxxxx.</p></td>
+<td align="left"><p><span id="Left_and_right_click_zone"></span><span id="left_and_right_click_zone"></span><span id="LEFT_AND_RIGHT_CLICK_ZONE"></span>Left and right click zone</p></td>
+<td align="left"><p>Emulate the left and right button functionality of a mouse device.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="Hardware">
-            </span>
-            <span id="hardware">
-            </span>
-            <span id="HARDWARE">
-            </span>Xxxxxxxx
+## <span id="Hardware"></span><span id="hardware"></span><span id="HARDWARE"></span>Hardware
 
 
-Xxxxx xxx xxxxx xxxxxx xxxxxxxxxxxx ([**XxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225626)) xx xxxxxxxx xxxx xxxxxxx xx xxxx xxx XX xxx xxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxx. Xx xxxxxxxxx xxxxxxxxx XX xxx xxxx xxxxx xxx xxxxx xxxxx.
+Query the mouse device capabilities ([**MouseCapabilities**](https://msdn.microsoft.com/library/windows/apps/br225626)) to identify what aspects of your app UI the touchpad hardware can access directly. We recommend providing UI for both touch and mouse input.
 
-Xxx xxxx xxxx xxxxx xxxxxxxx xxxxxx xxxxxxxxxxxx, xxx [Xxxxxxxx xxxxx xxxxxxx](identify-input-devices.md).
+For more info about querying device capabilities, see [Identify input devices](identify-input-devices.md).
 
-## <span id="Visual_feedback">
-            </span>
-            <span id="visual_feedback">
-            </span>
-            <span id="VISUAL_FEEDBACK">
-            </span>Xxxxxx xxxxxxxx
+## <span id="Visual_feedback"></span><span id="visual_feedback"></span><span id="VISUAL_FEEDBACK"></span>Visual feedback
 
 
--   Xxxx x xxxxxxxx xxxxxx xx xxxxxxxx (xxxxxxx xxxx xx xxxxx xxxxxx), xxxx xxxxx-xxxxxxxx XX xx xxxxxxxx xxxxxxxxxxxxx xxxxxxx xx xxx xxxxxxx. Xx xxx xxxxxxxx xxxxxx xxxxx'x xxxx xxx x xxxxxxx xxxxxx xx xxxx, xx xx xxx xxxx xxxxxxxxx x xxxxx xxxxxxxxxxx, xxxx xxx xxxxxxxx XX xxxxxxxxx xxxx xxxx. Xxxx xxxxx xxx XX xxxxx xxx xxxxxxxxxxx.
--   Xxx'x xxx xxx xxxxxx xxx xxxxx xxxxxxxx, xxx xxxxxxxx xxxxxxxx xx xxx xxxxxxx xx xxxxxxxxxx (xxx [Xxxxxxx](#Cursors) xxxxx).
--   Xxx'x xxxxxxx xxxxxx xxxxxxxx xx xx xxxxxxx xxxxx'x xxxxxxx xxxxxxxxxxx (xxxx xx xxxxxx xxxx).
--   Xxx'x xxx xxxxx xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxxx. Xxxxxxx xxxxx xxx xxxxxxxx xxxxxxxxxxxx.
--   Xxxxxxx xxxxxx xxxxxxxx xxxxxxxxxxxx xxx xxx xxxxxxxx xxxx xxxxxxxxx xxx xxxx xxxxx xxxxxx.
+-   When a touchpad cursor is detected (through move or hover events), show mouse-specific UI to indicate functionality exposed by the element. If the touchpad cursor doesn't move for a certain amount of time, or if the user initiates a touch interaction, make the touchpad UI gradually fade away. This keeps the UI clean and uncluttered.
+-   Don't use the cursor for hover feedback, the feedback provided by the element is sufficient (see [Cursors](#Cursors) below).
+-   Don't display visual feedback if an element doesn't support interaction (such as static text).
+-   Don't use focus rectangles with touchpad interactions. Reserve these for keyboard interactions.
+-   Display visual feedback concurrently for all elements that represent the same input target.
 
-Xxx xxxx xxxxxxx xxxxxxxx xxxxx xxxxxx xxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465342).
+For more general guidance about visual feedback, see [Guidelines for visual feedback](https://msdn.microsoft.com/library/windows/apps/hh465342).
 
-## <span id="Cursors">
-            </span>
-            <span id="cursors">
-            </span>
-            <span id="CURSORS">
-            </span>Xxxxxxx
+## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>Cursors
 
 
-X xxx xx xxxxxxxx xxxxxxx xx xxxxxxxxx xxx x xxxxxxxx xxxxxxx. Xxxxx xxx xxxx xx xxxxxxxx xxx xxxxxxx xxxxxx xx xx xxxxxxx.
+A set of standard cursors is available for a touchpad pointer. These are used to indicate the primary action of an element.
 
-Xxxx xxxxxxxx xxxxxx xxx x xxxxxxxxxxxxx xxxxxxx xxxxx xxxxxxxxxx xxxx xx. Xxx xxxx xx xx xxx xxx xxxxxxx xxx xxxxxxx xxxxx xxxxxxxxxx xxxx xxx xxxxxxxx xxxxxx xx xxx xxxx. Xxxxxxx Xxxxx xxxx xxxxxxx x xxxxxx xxxxx xxxxxxx xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208273) xxxxxxxx.
+Each standard cursor has a corresponding default image associated with it. The user or an app can replace the default image associated with any standard cursor at any time. Windows Store apps specify a cursor image through the [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) function.
 
-Xx xxx xxxx xx xxxxxxxxx xxx xxxxx xxxxxx:
+If you need to customize the mouse cursor:
 
--   Xxxxxx xxx xxx xxxxx xxxxxx (![xxxxx xxxxxx](images/cursor-arrow.png)) xxx xxxxxxxxx xxxxxxxx. xxx'x xxx xxx xxxxxxxx xxxx xxxxxx (![xxxxxxxx xxxx xxxxxx](images/cursor-pointinghand.png)) xxx xxxxx xx xxxxx xxxxxxxxxxx xxxxxxxx. Xxxxxxx, xxx xxxxx xxxxxxx (xxxxxxxxx xxxxxxx).
--   Xxx xxx xxxx xxxxxx (![xxxx xxxxxx](images/cursor-text.png)) xxx xxxxxxxxxx xxxx.
--   Xxx xxx xxxx xxxxxx (![xxxx xxxxxx](images/cursor-move.png)) xxxx xxxxxx xx xxx xxxxxxx xxxxxx (xxxx xx xxxxxxxx xx xxxxxxxx). Xxx'x xxx xxx xxxx xxxxxx xxx xxxxxxxx xxxxx xxx xxxxxxx xxxxxx xx xxxxxxxxxx (xxxx xx Xxxxx xxxxx).
--   Xxx xxx xxxxxxxxxx, xxxxxxxx xxx xxxxxxxx xxxxxx xxxxxxx (![xxxxxxxx xxxxxx xxxxxx](images/cursor-vertical.png), ![xxxxxxxxxx xxxxxx xxxxxx](images/cursor-horizontal.png), ![xxxxxxxx xxxxxx xxxxxx (xxxxx xxxx, xxxxx xxxxx)](images/cursor-diagonal2.png), ![xxxxxxxx xxxxxx xxxxxx (xxxxx xxxx, xxxxx xxxxx)](images/cursor-diagonal1.png)), xxxx xx xxxxxx xx xxxxxxxxx.
--   Xxx xxx xxxxxxxx xxxx xxxxxxx (![xxxxxxxx xxxx xxxxxx (xxxx)](images/cursor-pan1.png), ![xxxxxxxx xxxx xxxxxx (xxxxxx)](images/cursor-pan2.png)) xxxx xxxxxxx xxxxxxx xxxxxx x xxxxx xxxxxx (xxxx xx x xxx).
+-   Always use the arrow cursor (![arrow cursor](images/cursor-arrow.png)) for clickable elements. don't use the pointing hand cursor (![pointing hand cursor](images/cursor-pointinghand.png)) for links or other interactive elements. Instead, use hover effects (described earlier).
+-   Use the text cursor (![text cursor](images/cursor-text.png)) for selectable text.
+-   Use the move cursor (![move cursor](images/cursor-move.png)) when moving is the primary action (such as dragging or cropping). Don't use the move cursor for elements where the primary action is navigation (such as Start tiles).
+-   Use the horizontal, vertical and diagonal resize cursors (![vertical resize cursor](images/cursor-vertical.png), ![horizontal resize cursor](images/cursor-horizontal.png), ![diagonal resize cursor (lower left, upper right)](images/cursor-diagonal2.png), ![diagonal resize cursor (upper left, lower right)](images/cursor-diagonal1.png)), when an object is resizable.
+-   Use the grasping hand cursors (![grasping hand cursor (open)](images/cursor-pan1.png), ![grasping hand cursor (closed)](images/cursor-pan2.png)) when panning content within a fixed canvas (such as a map).
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>Related articles
 
 
-* [Xxxxxx xxxxxxx xxxxx](handle-pointer-input.md)
-* [Xxxxxxxx xxxxx xxxxxxx](identify-input-devices.md)
-**Xxxxxxx**
-* [Xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Xxx xxxxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Xxxx xxxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Xxxxxxx Xxxxxxx**
-* [Xxxxx: Xxxxxx xxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Xxxxx: XXXX xxxx xxxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XXXX xxxxxxxxx, xxxxxxx, xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Xxxxx: Xxxxxxxx xxx xxxxxxxxxxxxx xxxx XxxxxxxXxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [Handle pointer input](handle-pointer-input.md)
+* [Identify input devices](identify-input-devices.md)
+**Samples**
+* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**Archive Samples**
+* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

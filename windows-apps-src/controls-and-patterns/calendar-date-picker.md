@@ -1,34 +1,34 @@
 ---
-Xxxxxxxxxxx: Xxx xxxxxxxx xxxx xxxxxx xx x xxxx xxxx xxxxxxx xxxx’x xxxxxxxxx xxx xxxxxxx x xxxxxx xxxx xxxx x xxxxxxxx xxxx xxxxx xxxxxxxxxx xxxxxxxxxxx xxxx xxx xxx xx xxx xxxx xx xxxxxxxx xx xxx xxxxxxxx xx xxxxxxxxx.
-xxxxx: Xxxxxxxx xxxx xxxxxx
-xx.xxxxxxx: YxYYYYxY-YYYx-YYYY-xxYY-YxYYxxYYxxYY
-xxxxx: Xxxxxxxx xxxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: カレンダーの日付の選択コントロールは、カレンダーの曜日や埋まり具合などのコンテキスト情報が必要となるカレンダー ビューから単一の日付を選ぶ用途に最適なドロップダウン コントロールです。
+title: カレンダーの日付の選択コントロール
+ms.assetid: 9e0213e0-046a-4906-ba86-0b49be51ca99
+label: カレンダーの日付の選択コントロール
+template: detail.hbs
 ---
 
-# Xxxxxxxx xxxx xxxxxx
+# カレンダーの日付の選択コントロール
 
-Xxx xxxxxxxx xxxx xxxxxx xx x xxxx xxxx xxxxxxx xxxx’x xxxxxxxxx xxx xxxxxxx x xxxxxx xxxx xxxx x xxxxxxxx xxxx xxxxx xxxxxxxxxx xxxxxxxxxxx xxxx xxx xxx xx xxx xxxx xx xxxxxxxx xx xxx xxxxxxxx xx xxxxxxxxx. Xxx xxx xxxxxx xxx xxxxxxxx xx xxxxxxx xxxxxxxxxx xxxxxxx xx xx xxxxx xxxxxxxxx xxxxx.
+カレンダーの日付の選択コントロールは、カレンダーの曜日や埋まり具合などのコンテキスト情報が必要となるカレンダー ビューから単一の日付を選ぶ用途に最適なドロップダウン コントロールです。 追加のコンテキストを提供する場合、または利用可能日を制限する場合は、カレンダーを変更できます。
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**XxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
--   [**Xxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
+-   [**TimePicker クラス**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.aspx)
+-   [**Time プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.timepicker.time.aspx)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
-Xxx x **xxxxxxxx xxxx xxxxxx** xx xxx x xxxx xxxx x xxxxxx xxxx xxxx x xxxxxxxxxx xxxxxxxx xxxx. Xxx xx xxx xxxxxx xxxx xxxxxxxx xx xxxxxxxxxxx xx xxxxxxxxx xxxx.
+## 適切なコントロールの選択
+**カレンダーの日付の選択コントロール**を使うと、ユーザーはコンテキストに沿ったカレンダー ビューから 1 つの日付を選ぶことができます。 予定日や出発日の選択などに使います。
 
-Xx xxx x xxxx xxxx x xxxxx xxxx, xxxx xx x xxxx xx xxxxx, xxxxx xxx xxxxxxx xx xxx xxxxxxxx xx xxx xxxxxxxxx, xxxxxxxx xxxxx x [**xxxx xxxxxx**](date-picker.md).
+ユーザーが誕生日などの既知の日付 (カレンダーのコンテキストとしては重要ではない日) を選べるようにするには、[**日付の選択コントロール**](date-picker.md) を使うことを検討してください。
 
-Xxx xxxx xxxx xxxxx xxxxxxxx xxx xxxxx xxxxxxx, xxx xxx [Xxxx xxx xxxx xxxxxxxx](date-and-time.md) xxxxxxx.
+適切なコントロールの選択について詳しくは、「[日付と時刻コントロール](date-and-time.md)」をご覧ください。
 
-## Xxxxxxxx
+## 例
 
-Xxx xxxxx xxxxx xxxxxxxx xxxxxxxxxxx xxxx xx x xxxx xxx xxx xxxx xxx; xxxxxxxxx, xx xxxxxxxx xxx xxxxxx xxxx. Xxxx xxx xxxx xxxxxxx xxx xxxxx xxxxx, x xxxxxxxx xxxx xxxxxxx xxx xxx xxxx xx xxxx x xxxx xxxxxxxxx. Xxx xxxxxxxx xxxx xxxxxxxx xxxxx XX; xx xxxxx'x xxxx xxxxx XX xxx xx xxx xxx.
+日付が設定されていない場合、エントリ ポイントにはプレースホルダー テキストが表示されます。設定されている場合は、選んだ日付が表示されます。 ユーザーがエントリ ポイントを選ぶと、カレンダー ビューが展開されて、ユーザーが日付を選べるようになります。 カレンダー ビューは他の UI をオーバーレイし、他の UI を別の位置に移動させることはありません。
 
-![Xxxxxxx xx xxxxxxxx xxxx xxxxxx](images/calendar-date-picker-2-views.png)
+![カレンダーの日付の選択コントロールの例](images/calendar-date-picker-2-views.png)
 
-## Xxxxxx x xxxx xxxxxx
+## 日付の選択コントロールの作成
 
 ```xaml
 <CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date"/>
@@ -39,49 +39,54 @@ CalendarDatePicker arrivalCalendarDatePicker = new CalendarDatePicker();
 arrivalCalendarDatePicker.Header = "Arrival date";
 ```
 
-Xxx xxxxxxxxx xxxxxxxx xxxx xxxxxx xxxxx xxxx xxxx:
+結果として、カレンダーの日付の選択コントロールは、次のように表示されます。
 
-![Xxxxxxx xx xxxxxxxx xxxx xxxxxx](images/calendar-date-picker-closed.png)
+![カレンダーの日付の選択コントロールの例](images/calendar-date-picker-closed.png)
 
-Xxx xxxxxxxx xxxx xxxxxx xxx xx xxxxxxxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx) xxx xxxxxxx x xxxx. X xxxxxx xx XxxxxxxxXxxx xxxxxxxxxx, xxxx [**XxXxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted.aspx) xxx [**XxxxxXxxXxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.firstdayofweek.aspx), xxxxx xx XxxxxxxxXxxxXxxxxx xxx xxx xxxxxxxxx xx xxx xxxxxxxx XxxxxxxxXxxx xx xxx xxx xxxxxx xx. 
+カレンダーの日付の選択コントロールの内部には、日付選択用の [**CalendarView**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.aspx) があります。 CalendarDatePicker には [**IsTodayHighlighted**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.istodayhighlighted.aspx) や [**FirstDayOfWeek**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.firstdayofweek.aspx) のような CalendarView プロパティのサブセットが存在し、内部の CalendarView に転送されるため、このサブセットを使って内部の CalendarView を変更できます。 
 
-Xxxxxxx, xxx xxx'x xxxxxx xxx [**XxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) xx xxx xxxxxxxx XxxxxxxxXxxx xx xxxxx xxxxxxxx xxxxxxxxx. Xx xxx xxxx xx xxx x xxxx xxxx xxxxxxxx xxxxx xx xxxx x xxxxxxxx xx xx xxxxxx xxxxxxx, xxxxxxxx xxxxx x xxxxxxxx xxxx xxxxxxx xx x xxxxxxxx xxxx xxxxxx. Xxx xxx [Xxxxxxxx xxxx](calendar-view.md) xxxxxxx xxx xxxx xxxx xx xxx xxx xxx xxxxxx xxx xxxxxxxx xxxxxxx.
+ただし、複数選択を許可するために、内部の CalendarView の [**SelectionMode**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendarview.selectionmode.aspx) を変更することはできません。 ユーザーが複数の日付を選べるようにしたり、カレンダーを常に表示しておく必要がある場合、カレンダーの日付の選択コントロールではなく、カレンダー ビューを使うことを検討してください。 カレンダー表示を変更する方法について詳しくは、「[カレンダー ビュー](calendar-view.md)」をご覧ください。
 
-### Xxxxxxxxx xxxxx
+### 日付の選択
 
-Xxx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx) xxxxxxxx xx xxx xx xxx xxx xxxxxxxx xxxx. Xx xxxxxxx, xxx Xxxx xxxxxxxx xx **xxxx**. Xxxx x xxxx xxxxxxx x xxxx xx xxx xxxxxxxx xxxx, xxxx xxxxxxxx xx xxxxxxx. X xxxx xxx xxxxx xxx xxxx xx xxxxxxxx xxx xxxxxxxx xxxx xx xxx xxxxxxxx xxxx xx xxxxxxxx xx. 
+選んだ日付を取得または設定するには、[**Date**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.date.aspx) プロパティを使います。 既定では、Date プロパティは **null** です。 ユーザーがカレンダー ビューで日付を選ぶと、このプロパティが更新されます。 日付をクリアするには、カレンダー ビュー内で選んだ日付をクリックして選択を解除します。 
 
-Xxx xxx xxx xxx xxxx xx xxxx xxxx xxxx xxxx.
+次のようなコードで日付を設定できます。
 
 ```csharp
 myCalendarDatePicker.Date = new DateTime(1977, 1, 5);
 ```
 
-Xxxx xxx xxx xxx Xxxx xx xxxx, xxx xxxxx xx xxxxxxxxxxx xx xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.mindate.aspx) xxx [**XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.maxdate.aspx) xxxxxxxxxx.
-- Xx **Xxxx** xx xxxxxxx xxxx **XxxXxxx**, xxx xxxxx xx xxx xx **XxxXxxx**.
-- Xx **Xxxx** xx xxxxxxx xxxx **XxxXxxx**, xxx xxxxx xx xxx xx **XxxXxxx**.
+コードで Date を設定するときに、その値は [**MinDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.mindate.aspx) プロパティと [**MaxDate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.maxdate.aspx) プロパティの制約を受けます。
+- **Date** の値が **MinDate** よりも小さい場合、Date の値は **MinDate** に設定されます。
+- **Date** の値が **MaxDate** よりも大きい場合、Date の値は **MaxDate** に設定されます。
 
-Xxx xxx xxxxxx xxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) xxxxx xx xx xxxxxxxx xxxx xxx Xxxx xxxxx xxx xxxxxxx.
+Date 値が変化したときに通知を受け取るには、[**DateChanged**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.datechanged.aspx) イベントを処理します。
 
-> **Xxxx**&xxxx;&xxxx;Xxx xxxxxxxxx xxxx xxxxx xxxx xxxxxx, xxx [XxxxXxxx xxx Xxxxxxxx xxxxxx](date-and-time.md#datetime-and-calendar-values) xx xxx Xxxx xxx xxxx xxxxxxxx xxxxxxx.
+> **注:**&nbsp;日付値の重要な情報については、「日付と時刻コントロール」の「[DateTime と Calendar の値](date-and-time.md#datetime-and-calendar-values)」をご覧ください。
 
-### Xxxxxxx x xxxxxx xxx xxxxxxxxxxx xxxx
+### ヘッダーとプレースホルダー テキストの設定
 
-Xxx xxx xxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.header.aspx) (xx xxxxx) xxx [**XxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.placeholdertext.aspx) (xx xxxxxxxxx) xx xxx xxxxxxxx xxxx xxxxxx xx xxxx xxx xxxx xx xxxxxxxxxx xx xxxx xx'x xxxx xxx. Xx xxxxxxxxx xxx xxxx xx xxx xxxxxx, xxx xxx xxx xxx [**XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.headertemplate.aspx) xxxxxxxx xxxxxxx xx Xxxxxx.
+[
+            **Header**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.header.aspx) (ラベル) と [**PlaceholderText**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.placeholdertext.aspx) (透かし) をカレンダーの日付の選択コントロールに追加すると、ユーザーに用途を示すことができます。 ヘッダーの外観をカスタマイズするには、Header ではなく [**HeaderTemplate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.calendardatepicker.headertemplate.aspx) プロパティを設定します。
 
-Xxx xxxxxxx xxxxxxxxxxx xxxx xx "xxxxxx x xxxx". Xxx xxx xxxxxx xxxx xx xxxxxxx xxx XxxxxxxxxxxXxxx xxxxxxxx xx xx xxxxx xxxxxx, xx xxx xxx xxxxxxx xxxxxx xxxx xx xxxxx xxxx.
+既定のプレースホルダー テキストは、"日付を選択" です。 PlaceholderText プロパティに空の文字列を設定してこのテキストを削除するか、次のようにカスタム テキストを指定することもできます。
 
 ```xaml
 <CalendarDatePicker x:Name="arrivalCalendarDatePicker" Header="Arrival date" PlaceholderText="Choose your arrival date"/>
 ```
 
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxx xxx xxxx xxxxxxxx](date-and-time.md)
-* [Xxxxxxxx xxxx](calendar-view.md)
-* [Xxxx xxxxxx](date-picker.md)
-* [Xxxx xxxxxx](time-picker.md)
+* [日付と時刻コントロール](date-and-time.md)
+* [カレンダー ビュー](calendar-view.md)
+* [日付の選択コントロール](date-picker.md)
+* [時刻の選択コントロール](time-picker.md)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

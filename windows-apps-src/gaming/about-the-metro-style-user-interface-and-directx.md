@@ -1,117 +1,124 @@
 ---
-xxxxx: Xxx xxx xxxxxx xxx XxxxxxX
-xxxxxxxxxxx: Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx XxxxxxX xxxxx xxx'x xxx xxxx xx xxx Xxxxxxx XX xxxx xxxxxxxxx xxxxxxxx xxx xxxxxxx.
-xx.xxxxxxx: YYxYYYYY-YYxY-xYYx-YYYY-YxxYxxYxYYxY
+title: アプリ オブジェクトと DirectX
+description: DirectX を使ったユニバーサル Windows プラットフォーム (UWP) ゲームでは、Windows UI ユーザー インターフェイスの要素とオブジェクトの多くが使われません。
+ms.assetid: 46f92156-29f8-d65e-2587-7ba1de5b48a6
 ---
 
-# Xxx xxx xxxxxx xxx XxxxxxX
+# アプリ オブジェクトと DirectX
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
-Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx XxxxxxX xxxxx xxx'x xxx xxxx xx xxx Xxxxxxx XX xxxx xxxxxxxxx xxxxxxxx xxx xxxxxxx. Xxxxxx, xxxxxxx xxxx xxx xx x xxxxx xxxxx xx xxx Xxxxxxx Xxxxxxx xxxxx, xxxx xxxx xxxxxxxxxxxx xxxx xxx xxxx xxxxxxxxx xxxxxxxxx xx x xxxx xxxxxxxxxxx xxx: xx xxxxxxxxx xxx xxxxxxxxxxxxxx xxxx xxx xxx xxxxxx xxxxxxxx. Xxxxx xxxx xxx xxx xxxx xxxxxxxxxxxxxx xxxxxx, xxx xxx xxx, xx x XxxxxxX xxxxxxxxx, xxx xxxxxxxxxxx xxx xxxx xxxxx xx xxx xxxxxxxxxxx xx xxxx XXX xxx.
+DirectX を使ったユニバーサル Windows プラットフォーム (UWP) ゲームでは、Windows UI ユーザー インターフェイスの要素とオブジェクトの多くが使われません。 逆に、それらのアプリは Windows ランタイム スタックの下位レベルで実行されることから、アプリ オブジェクトに直接アクセスして相互運用するという基本的な方法でユーザー インターフェイス フレームワークと相互運用する必要があります。 ここでは、この相互運用をいつどのように行うかと、DirectX 開発者が UWP アプリの開発でこのモデルを効果的に使う方法を説明します。
 
-## Xxx xxxxxxxxx xxxx xxxx xxxxxxxxx xxxxxxxxxx
+## 重要なコア ユーザー インターフェイスの名前空間
 
 
-Xxxxx, xxx'x xxxx xxx Xxxxxxx Xxxxxxx xxxxxxxxxx xxxx xxx xxxx xxxxxxx (xxxx **xxxxx**) xx xxxx XXX xxx. Xx xxx xxxx xxx xxxxxxx xx x xxx.
+最初に、UWP アプリに (**using** を使って) 必要な Windows ランタイムの名前空間を示します。 後で詳しく説明します。
 
--   [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br205865)
--   [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224766)
--   [**Xxxxxxx.XX.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Xxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241814)
--   [**Xxxxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226021)
+-   [**Windows.ApplicationModel.Core**](https://msdn.microsoft.com/library/windows/apps/br205865)
+-   [**Windows.ApplicationModel.Activation**](https://msdn.microsoft.com/library/windows/apps/br224766)
+-   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
+-   [**Windows.System**](https://msdn.microsoft.com/library/windows/apps/br241814)
+-   [**Windows.Foundation**](https://msdn.microsoft.com/library/windows/apps/br226021)
 
-> **Xxxx**   Xx xxx xxx xxx xxxxxxxxxx x XXX xxx, xxx xxx xxxx xxxxxxxxx xxxxxxxxxx xxxxxxxx xx xxx XxxxXxxxxx- xx XXXX-xxxxxxxx xxxxxxxxx xxx xxxxxxxxxx xxxxxxx xx xxx xxxxx xxxxxxxx xx xxxxx xxxxxxxxxx.
+> **注**   UWP アプリを開発していない場合は、これらの名前空間で提供されている型ではなく、JavaScript または XAML 専用のライブラリと名前空間で提供されているユーザー インターフェイス コンポーネントを使ってください。
 
  
 
-## Xxx Xxxxxxx Xxxxxxx xxx xxxxxx
+## Windows ランタイム アプリ オブジェクト
 
 
-Xx xxxx XXX xxx, xxx xxxx xx xxx x xxxxxx xxx x xxxx xxxxxxxx xxxx xxxxx xxx xxx xxx x xxxx xxx xx xxxxx xxx xxx xxxxxxx xxxx xxxx xxxxx (xxxx xxxxxxx xxxxxxx). Xxx xxx xxxx xxxx xxxx xxxx xxxx xxx xxxxxx-xxxxxxxx xxxxxx xxx xxxx xxxxxxx xxx. Xx xxx xxx xxxxxx xxxxxx xxx xxx xxx xxxxxx, xxxxxxx xx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxx, xxxxxx x xxxx xxxx xxxxxxxxxx [**XXxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700482), xx xx xxx xx xxx xxxxxxxx xxxx xxxxxxx.
+UWP アプリでは、ウィンドウとビュー プロバイダーを取得します。これらはビューの取得元となり、スワップ チェーン (表示バッファー) の接続先となります。 このビューは、実行中のアプリでウィンドウ固有のイベントにフックすることもできます。 アプリ オブジェクトの親ウィンドウ ([**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 型で定義) を取得するには、前のコード スニペットで行ったように、[**IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) を実装する型を作成します。
 
-Xxxx'x xxx xxxxx xxx xx xxxxx xx xxx x xxxxxx xxxxx xxx xxxx xxxx xxxxxxxxx xxxxxxxxx:
+コア ユーザー インターフェイス フレームワークを使ってウィンドウを取得する基本的な手順を次に示します。
 
-1.  Xxxxxx x xxxx xxxx xxxxxxxxxx [**XXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700478). Xxxx xx xxxx xxxx.
+1.  [
+            **IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) を実装する型を作成します。 これがビューになります。
 
-    Xx xxxx xxxx, xxxxxx:
+    この型で次のメソッドを定義します。
 
-    -   Xx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700495) xxxxxx xxxx xxxxx xx xxxxxxxx xx [**XxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br225017) xx x xxxxxxxxx. Xxx xxx xxx xx xxxxxxxx xx xxxx xxxx xx xxxxxxx [**XxxxXxxxxxxxxxx.XxxxxxXxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn297278). Xxx xxx xxxxxx xxxxx xx xxxx xxx xxx xx xxxxxxxx.
-    -   X [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700509) xxxxxx xxxx xxxxx xx xxxxxxxx xx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xx x xxxxxxxxx. Xxx xxx xxx xx xxxxxxxx xx xxxx xxxx xx xxxxxxxxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225019) xxxxxxxx xx xxxx xxx [**XxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br225017) xxxxxxxx.
-    -   X [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/hh700501) xxxxxx xxxx xxxxx x xxxxxx xxx xx xxxxx xxxxx xx xxx xxxx xxxxxxxxx. Xxx xxx xxxxxx xxxxxxxx xxx xxxxx xxxxx xxxxxx xxxx xxx xxxx xxxx xxxxxx. Xxxx xx xxxxx xxx xxx xx xxxxxxxxx. Xxx xxxxxx xxxx xxxxxx xxxxxxxxx xxxx. Xxx xxx xxxxxx xxxxx xx xxxx xxx xxx xx xxxxxxxx.
-    -   X [**Xxx**](https://msdn.microsoft.com/library/windows/apps/hh700505) xxxxxx xxxx xxxxxxxxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxx xxx xxxxxx xxx xxxxxx xxxxx xxxxxxxxxx. Xxx xxx xxxxxx xxxxx xx xxxx xxx xxx'x xxxxxxx xxxxxx.
-    -   Xx [**Xxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700523) xxxxxx xxxx xxxxxx xx xxx xxxxxxxxx xxx xx xx xxx xxxx xx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/hh700501). Xxx xxx xxxxxx xxxxx xxxx xxxxxx xxxx xxx xxx xx xxxxxx.
+    -   [
+            **Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) メソッド。[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) のインスタンスをパラメーターとして使います。 この型のインスタンスを取得するには、[**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278) を呼び出します。 アプリ オブジェクトは、アプリ起動時にこのメソッドを呼び出します。
+    -   [
+            **SetWindow**](https://msdn.microsoft.com/library/windows/apps/hh700509) メソッド。[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) のインスタンスをパラメーターとして使います。 この型のインスタンスを取得するには、新しい [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) インスタンスの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) プロパティにアクセスします。
+    -   [
+            **Load**](https://msdn.microsoft.com/library/windows/apps/hh700501) メソッド。エントリ ポイントの文字列を唯一のパラメーターとして使います。 このメソッドを呼び出すと、アプリ オブジェクトからエントリ ポイントの文字列が提供されます。 ここでリソースをセットアップします。 ここでデバイス リソースを作成します。 アプリ オブジェクトは、アプリ起動時にこのメソッドを呼び出します。
+    -   [
+            **Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) メソッド。[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトをアクティブ化し、ウィンドウ イベント ディスパッチャーを開始します。 アプリ オブジェクトは、アプリのプロセスが開始されたときにこのメソッドを呼び出します。
+    -   [
+            **Uninitialize**](https://msdn.microsoft.com/library/windows/apps/hh700523) メソッド。[**Load**](https://msdn.microsoft.com/library/windows/apps/hh700501)  の呼び出しでセットアップされたリソースをクリーンアップします。 アプリ オブジェクトは、アプリ終了時にこのメソッドを呼び出します。
 
-2.  Xxxxxx x xxxx xxxx xxxxxxxxxx [**XXxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700482). Xxxx xx xxxx xxxx xxxxxxxx.
+2.  [
+            **IFrameworkViewSource**](https://msdn.microsoft.com/library/windows/apps/hh700482) を実装する型を作成します。 これがビュー プロバイダーになります。
 
-    Xx xxxx xxxx, xxxxxx:
+    この型で次のメソッドを定義します。
 
-    -   X xxxxxx xxxxx [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700491) xxxx xxxxxxx xx xxxxxxxx xx xxxx [**XXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700478) xxxxxxxxxxxxxx, xx xxxxxxx xx Xxxx Y.
+    -   [
+            **CreateView**](https://msdn.microsoft.com/library/windows/apps/hh700491) メソッド。手順 1. で作成した [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) 実装のインスタンスを返します。
 
-3.  Xxxx xx xxxxxxxx xx xxx xxxx xxxxxxxx xx [**XxxxXxxxxxxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/hh700469) xxxx **xxxx**.
+3.  ビュー プロバイダーのインスタンスを、**main** から [**CoreApplication.Run**](https://msdn.microsoft.com/library/windows/apps/hh700469) に渡します。
 
-Xxxx xxxxx xxxxxx xx xxxx, xxx'x xxxx xx xxxx xxxxxxx xxx xxxx xx xxxxxx xxxx xxxxxxxx.
+上記の基本事項を踏まえて、このアプローチを拡張するその他のオプションを説明します。
 
-## Xxxx xxxx xxxxxxxxx xxxxx
+## コア ユーザー インターフェイスの型
 
 
-Xxxx xxx xxxxx xxxx xxxx xxxxxxxxx xxxxx xx xxx Xxxxxxx Xxxxxxx xxxx xxx xxxxx xxxx xxxxxxx:
+Windows ランタイムには、他にも次のような便利なコア ユーザー インターフェイスの型があります。
 
--   [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxx.XxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br225017)
--   [**Xxxxxxx.XX.Xxxx.XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225)
--   [**Xxxxxxx.XX.Xxxx.XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208211)
+-   [**Windows.ApplicationModel.Core.CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017)
+-   [**Windows.UI.Core.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
+-   [**Windows.UI.Core.CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)
 
-Xxx xxx xxx xxxxx xxxxx xx xxxxxx xxxx xxx'x xxxx, xxxxxxxxxxxx, xxx xxxx xxxx xxxx xxx xxxxxxxx xx xxx xxx'x xxxxxx xxxxxx, xxx xxxxxx xxx xxxxxx xxxxx xxx xxxx xxxxxx. Xxx xxx xxxxxx'x xxxxxxx xx xx *xxxxxxxxxxx xxxxxx-xxxxxxxx xxxxxxxxx* (XXXX) xxxx xx xxxxxxxx xxx xxxx xxxxxxx xxx xxxxxxxxx.
+これらの型を使って、アプリのビュー、具体的にはアプリの親ウィンドウのコンテンツを描画するビットにアクセスし、そのウィンドウで発生したイベントを処理できます。 アプリ ウィンドウのプロセスは、すべてのコールバックを処理する独立した *アプリケーション シングルスレッド アパートメント* (ASTA) です。
 
-Xxxx xxx'x xxxx xx xxxxxxxxx xx xxx xxxx xxxxxxxx xxx xxxx xxx xxxxxx, xxx xx xxxx xxxxx xxxx xx xxxxxxxxxxx xx x xxxxxxxx xxxxxxxxx xxxxxxx xx xxx xxxxxx xxxxxx, xx xxx xxx'x xxxx xx xxxxxxxxx xx xxxxxxxx. Xxx XxxxxxX, xxx xxxx xx xxxxxxxxx x xxxx xxxx xxxxxxxx, xx xxxxxxxxx xxxxxxxxxx. Xxxxx xx x xxxxxxxx Y-xx-Y xxxxxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx:
+アプリのビューは、アプリ ウィンドウのビュー プロバイダーによって生成され、ほとんどの場合、特定のフレームワーク パッケージまたはシステム自体によって実装されるため、手動で実装する必要はありません。 DirectX の場合は、既に説明したように手動でシン ビュー プロバイダーを実装する必要があります。 次のコンポーネントと動作の間には、明確な一対一の関係があります。
 
--   Xx xxx'x xxxx, xxxxx xx xxxxxxxxxxx xx xxx [**XxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br225017) xxxx, xxx xxxxx xxxxxxx xxx xxxxxx(x) xxx xxxxxxxx xxx xxxxxx.
--   Xx XXXX, xxx xxxxxxxxxxx xx xxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxx xx xxx xxx. Xxx xxxxxx xxxxxx xxxxxxxxx xx XXX XXX-xxxxxxxxxx xxxxx xx xx XXXX.
--   X xxxx xxxxxxxx, xxxxx xxxx xxx xxxxxxx xxxx xxx xxxxxx xx xxxxx xxx xxxxxxxxx.
--   X xxxxxx xxxxxx, xxxxx xx xxxxxxxxxxx xx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxx.
--   Xxxxxxxx xxx xxx xxxxxxxxxx xxxxxx. Xxxx xxxxx xxx xxxxxxx xxxx xxxxxxxx xxxxxxxxxx xxxxxx.
+-   アプリのビュー。[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) 型で表され、ウィンドウを更新するためのメソッドを定義します。
+-   ASTA。その属性で、アプリのスレッド動作を定義します。 ASTA で COM STA 属性型のインスタンスを作成することはできません。
+-   ビュー プロバイダー。これはアプリがシステムから取得するか、手動で実装します。
+-   親ウィンドウ。[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) 型で表されます。
+-   すべてのアクティブ化イベントのソースです。 ビューとウィンドウの両方に、独立したアクティブ化イベントがあります。
 
-Xx xxxxxxx, xxx xxx xxxxxx xxxxxxxx x xxxx xxxxxxxx xxxxxxx. Xx xxxxxxx x xxxx xxxxxxxx xxx xxxxxxxxxxxx x xxxxxx xxxxxx xxx xxx xxx. Xxx xxxx xxxxxxxx xxxxxxx xxx xxx'x xxxx xxx xxx xxxxxx xxxxxx xx xxx xxx. Xxx, xxx'x xxxxxxx xxx xxxxxxxxx xx xxx xxxx xxx xxx xxxxxx xxxxxx.
+要するに、アプリ オブジェクトがビュー プロバイダー ファクトリを提供します。 このファクトリがビュー プロバイダーを作成し、アプリの親ウィンドウをインスタンス化します。 ビュー プロバイダーが、アプリの親ウィンドウに対してアプリのビューを定義します。 次に、ビューと親ウィンドウについて詳しく説明します。
 
-## XxxxXxxxxxxxxxxXxxx xxxxxxxxx xxx xxxxxxxxxx
+## CoreApplicationView の動作とプロパティ
+
+
+[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) は、現在のアプリ ビューを表します。 アプリ ビューは、初期化時にアプリ シングルトンによって作成されますが、アクティブ化されるまでアクティブになりません。 ビューを表示する [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) を取得するには、そのビューの [**CoreApplicationView.CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) プロパティにアクセスします。また、ビューのアクティブ化イベントと非アクティブ化イベントを処理するには、[**CoreApplicationView.Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントにデリゲートを登録します。
+
+## CoreWindow の動作とプロパティ
+
+
+アプリ オブジェクトが初期化されるときに、[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) インスタンスである親ウィンドウが作成され、ビュー プロバイダーに渡されます。 アプリに表示するウィンドウがある場合はそれが表示され、そうでない場合はビューの初期化のみが行われます。
+
+[**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) では、入力および基本のウィンドウ動作専用のイベントを多数提供しています。 これらのイベントを処理するには、イベントに自分専用のデリゲートを登録します。
+
+ウィンドウに使うウィンドウ イベント ディスパッチャーを取得することもできます。そのためには、[**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) のインスタンスを提供する [**CoreWindow.Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br208264) プロパティにアクセスします。
+
+## CoreDispatcher の動作とプロパティ
 
 
 [
-            **XxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br225017) xxxxxxxxxx xxx xxxxxxx xxx xxxx. Xxx xxx xxxxxxxxx xxxxxxx xxx xxx xxxx xxxxxx xxxxxxxxxxxxxx, xxx xxx xxxx xxxxxxx xxxxxxx xxxxx xx xx xxxxxxxxx. Xxx xxx xxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxx xxxxxxxx xxx xxxx xx xxxxxxxxx xxx [**XxxxXxxxxxxxxxxXxxx.XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225019) xxxxxxxx xx xx, xxx xxx xxx xxxxxx xxxxxxxxxx xxx xxxxxxxxxxxx xxxxxx xxx xxx xxxx xx xxxxxxxxxxx xxxxxxxxx xxxx xxx [**XxxxXxxxxxxxxxxXxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225018) xxxxx.
+            **CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) 型のウィンドウに使うイベント ディスパッチのスレッド動作を決定できます。 この型には、ウィンドウ イベント処理を開始する特に重要なメソッド [**CoreDispatcher.ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) があります。 アプリで間違ったオプションを指定してこのメソッドを呼び出すと、さまざまな予期しないイベント処理動作が発生する可能性があります。
 
-## XxxxXxxxxx xxxxxxxxx xxx xxxxxxxxxx
-
-
-Xxx xxxxxx xxxxxx, xxxxx xx x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxxxx, xx xxxxxxx xxx xxxxxx xx xxx xxxx xxxxxxxx xxxx xxx xxx xxxxxx xxxxxxxxxxx. Xx xxx xxx xxx x xxxxxx xx xxxxxxx, xx xxxxxxxx xx; xxxxxxxxx, xx xxxxxx xxxxxxxxxxx xxx xxxx.
-
-[
-            **XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxxxx x xxxxxx xx xxxxxx xxxxxxxx xx xxxxx xxx xxxxx xxxxxx xxxxxxxxx. Xxx xxx xxxxxx xxxxx xxxxxx xx xxxxxxxxxxx xxxx xxx xxxxxxxxx xxxx xxxx.
-
-Xxx xxx xxxx xxxxxx xxx xxxxxx xxxxx xxxxxxxxxx xxx xxx xxxxxx xx xxxxxxxxx xxx [**XxxxXxxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208264) xxxxxxxx, xxxxx xxxxxxxx xx xxxxxxxx xx [**XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208211).
-
-## XxxxXxxxxxxxxx xxxxxxxxx xxx xxxxxxxxxx
-
-
-Xxx xxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxx xx xxxxx xxxxxxxxxxx xxx x xxxxxx xxxx xxx [**XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208211) xxxx. Xx xxxx xxxx, xxxxx'x xxx xxxxxxxxxxxx xxxxxxxxx xxxxxx: xxx [**XxxxXxxxxxxxxx.XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208215) xxxxxx, xxxxx xxxxxx xxxxxx xxxxx xxxxxxxxxx. Xxxxxxx xxxx xxxxxx xxxx xxx xxxxx xxxxxx xxx xxxx xxx xxx xxxx xx xxx xxxxx xx xxxxxxxxxx xxxxx xxxxxxxxxx xxxxxxxxx.
-
-| XxxxXxxxxxxXxxxxxXxxxxx xxxxxx                                                           | Xxxxxxxxxxx                                                                                                                                                                                                                                  |
+| CoreProcessEventsOption のオプション                                                           | 説明                                                                                                                                                                                                                                  |
 |------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**XxxxXxxxxxxXxxxxxXxxxxx.XxxxxxxXxxXxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208217) | Xxxxxxxx xxx xxxxxxxxx xxxxxxxxx xxxxxx xx xxx xxxxx. Xx xx xxxxxx xxx xxxxxxx, xxxx xxx xxx xxxx xxx xxxxx.                                                                                                                                 |
-| [**XxxxXxxxxxxXxxxxxXxxxxx.XxxxxxxXxxXxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208217)     | Xxxxxxxx xxx xxxxx xx xx xx xxxxxxx xx xxx xxxxx. Xx xx xxxxxx xxx xxxxxxx, xxx'x xxxx xxx x xxx xxxxx xx xx xxxxxx xxx xxxxxxx xxxxxx xxxxxxxxxxx.                                                                                          |
-| [**XxxxXxxxxxxXxxxxxXxxxxx.XxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208217)        | Xxxx xxx xxx xxxxxx xxx xxxxxxxx xxx xxxxxxxxx xxxxxx. Xxxxxxxx xxxx xxxxxxxx xxxxx xxx xxxxxx xx xxxxxx xx xxx xxxxxxxxxxx xxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208260) xxxxxx xx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxxxx. |
-| [**XxxxXxxxxxxXxxxxxXxxxxx.XxxxxxxXxxXxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208217)     | Xxxxxxxx xxx xxxxxxxxx xxxxxxxxx xxxxxx xx xxx xxxxx. Xx xx xxxxxx xxx xxxxxxx, xxxxxx xxxxxxxxxxx.                                                                                                                                          |
+| [**CoreProcessEventsOption.ProcessOneAndAllPending**](https://msdn.microsoft.com/library/windows/apps/br208217) | 現在キューに入っているすべてのイベントをディスパッチします。 保留中のイベントがない場合は、次の新しいイベントを待ちます。                                                                                                                                 |
+| [**CoreProcessEventsOption.ProcessOneIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | キュー内で保留中のイベントを 1 つだけディスパッチします。 保留中のイベントがない場合は、新しいイベントの発生を待たずに直ちに制御を返します。                                                                                          |
+| [**CoreProcessEventsOption.ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217)        | 新しいイベントを待ち、発生したイベントをすべてディスパッチします。 この動作を、ウィンドウが閉じられるか、アプリが [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) インスタンスで [**Close**](https://msdn.microsoft.com/library/windows/apps/br208260) メソッドを呼び出すまで継続します。 |
+| [**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217)     | 現在キューに入っているすべてのイベントをディスパッチします。 保留中のイベントがない場合は、直ちに制御を返します。                                                                                                                                          |
 
  
 
-XXX xxxxx XxxxxxX xxxxxx xxx xxx [**XxxxXxxxxxxXxxxxxXxxxxx.XxxxxxxXxxXxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208217) xxxxxx xx xxxxxxx xxxxxxxx xxxxxxxxx xxxx xxxxx xxxxxxxxx xxxxxxxx xxxxxxx.
+DirectX を使った UWP アプリでは、[**CoreProcessEventsOption.ProcessAllIfPresent**](https://msdn.microsoft.com/library/windows/apps/br208217) オプションを使って、グラフィックスの更新を中断する可能性があるブロック動作を防ぐ必要があります。
 
-## XXXX xxxxxxxxxxxxxx xxx XxxxxxX xxxx
+## DirectX 開発者向けの ASTA の考慮事項
 
 
-Xxx xxx xxxxxx xxxx xxxxxxx xxx xxx-xxxx xxxxxxxxxxxxxx xx xxxxXXX xxx XxxxxxX xxx xxxx x xxxxxxxxx xxxxx xxxxxx Xxxxxxxxxxx Xxxxxx-Xxxxxxxx Xxxxxxxxx (XXXX) xx xxxx xxxx xxx’x XX xxxxx. Xx xxx xxx xxxxxxxxxx x XXX xxx XxxxxxX xxx, xxx'xx xxxxxxxx xxxx xxx xxxxxxxxxx xx xx XXXX, xxxxxxx xxx xxxxxx xxx xxxxxxxx xxxx xxxx XXX xxx XxxxxxX xxx xxxx xxx xxx [**Xxxxxxx::Xxxxxx::Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br229642) XXXx, xx xxx [**XxxxXxxxxx::XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208211). (Xxx xxx xxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxx xxx xxx XXXX xx xxxxxxx [**XxxxXxxxxx::XxxXxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701589) xxxx xxxx xxx.)
+DirectX を使った UWP アプリの実行時の形式を定義するアプリ オブジェクトは、アプリケーション シングルスレッド アパートメント (ASTA) というスレッド モデルを使ってアプリの UI ビューをホストします。 DirectX を使った UWP アプリを開発している場合、そのアプリからディスパッチするすべてのスレッドは [**Windows::System::Threading**](https://msdn.microsoft.com/library/windows/apps/br229642) API または [**CoreWindow::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) を使う必要があるので、ASTA のプロパティについては十分に理解していると考えられます (アプリから [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) を呼び出すことで ASTA の [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) オブジェクトを取得できます)。
 
-Xxx xxxx xxxxxxxxx xxxxx xxx xxx xx xx xxxxx xx, xx x xxxxxxxxx xx x XXX XxxxxxX xxx, xx xxxx xxx xxxx xxxxxx xxxx xxx xxxxxx xx xxxxxxxx XXX xxxxxxx xx xxxxxxx **Xxxxxxxx::XXXXxxxxx** xx **xxxx()**.
+DirectX を使った UWP アプリの開発者として、気を付ける必要のある最も重要なことは、**Platform::MTAThread** を **main()** 上で設定して、アプリ スレッドが MTA スレッドをディスパッチできるようにする必要があるということです。
 
 ```cpp
 [Platform::MTAThread]
@@ -123,31 +130,36 @@ int main(Platform::Array<Platform::String^>^)
 }
 ```
 
-Xxxx xxx xxx xxxxxx xxx xxxx XXX XxxxxxX xxx xxxxxxxxx, xx xxxxxxx xxx XXXX xxxx xxxx xx xxxx xxx xxx XX xxxx. Xxx xxx XXXX xxxxxx xxxxx xxxx xxxx xxxx xxxxxxxx xxxxxxx, xx xxxxxx xxx xxxx xxxxxxxx xxx xxxx xxx xxxxxx, xxx xx x xxxxxx, xxxx xxxx xxxxxxxx xxxx xxxx xxx xx xxxx XXXX xxxxxx.
+DirectX を使った UWP アプリのアプリ オブジェクトは、アクティブ化されると、UI ビューに使われる ASTA を作成します。 新しい ASTA スレッドは、ビュー プロバイダー ファクトリを呼び出して、アプリ オブジェクトのビュー プロバイダーを作成します。その結果、ビュー プロバイダー コードがこの ASTA スレッド上で実行されます。
 
-Xxxx, xxx xxxxxx xxxx xxx xxxx xxx xxxx xxx XXXX xxxx xx xx xx XXX. Xx xxxxx xxxx xxx XXX xxxxxxx xxxx xxx xxxx xxx xxx xxxxx xxxxxx xxxxxxxxxx xxxxxx xxx xxxxxx xx x xxxxxxxx.
+また、ASTA から分離するスレッドは MTA にある必要があります。 分離する MTA スレッドには、引き続き再入の問題が発生して、デッドロックとなる可能性があることに注意してください。
 
-Xx xxx'xx xxxxxxx xxxxxxxx xxxx xx xxx xx xxx XXXX xxxxxx, xxxx xxxxx xxxxxxxxxxxxxx xx xxxx:
+ASTA スレッドで実行するために元のコードを移植している場合、これらの考慮事項に注意してください。
 
--   Xxxx xxxxxxxxxx, xxxx xx [**XxXxxxXxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh404144), xxxxxx xxxxxxxxxxx xx xx XXXX xxxx xx xx XXX.
--   Xxx XXX xxxx xxxxx xxxx xxxxxxxx xxxxxxxxxxx xx xx XXXX. Xxx xxx xx xxxxxx xxxxxxx xxxxxxxxx xxxxx xxxxx xx xxxxxxxx xxxx xx xx xxxxxxxx. Xxx xxxxxxx, xxx xxxxxxxxx xxxxxxxx xxxx xxxxxx x xxxxxxxx xxxx xx XXXX (xxx xxxxxxxxxxx xxxxx xxx xxx):
-    1.  Xxx XXXX xxxxx xx XXX xxxxxx xxx xxxxxx xx xxxxxxxxx xxxxxxx XY.
-    2.  Xxxxx, xxx XXXX xxxxx xxx xxxx XXX xxxxxx. Xxx XXX xxxxxx xxxxx XY xxxxxx xx xxxxxxx xx xxx XXXX.
-    3.  XY xxxxxx xxxxx xxx XXXX xx xx'x xxxxxxx xxxxxx xx xxxxxxxxx xxxx. Xxxxxxx, xxx XXX xxxxxx xx xxxxxxx xx xx xxxxx xx xxxx xxx xxxx xx XY.
+-   [
+            **CoWaitForMultipleObjects**](https://msdn.microsoft.com/library/windows/desktop/hh404144) などの待機プリミティブは、STA 内と ASTA 内とで動作が異なります。
+-   COM 呼び出しモーダル ループの動作は ASTA では異なります。 呼び出しの進行中は、無関係な呼び出しを受け取ることができなくなります。 たとえば、次の動作は ASTA からデッドロックを引き起こします (さらに、即座にアプリがクラッシュします)。
+    1.  ASTA が MTA オブジェクトを呼び出し、インターフェイス ポインター P1 を渡します。
+    2.  その後で、ASTA が同じ MTA オブジェクトを呼び出します。 MTA オブジェクトは、ASTA に制御を返す前に P1 を呼び出します。
+    3.  P1 は、無関係な呼び出しがブロックされているため、ASTA に入ることができません。 しかし、MTA スレッドは P1 の呼び出しを試みるのでブロックされます。
 
-    Xxx xxx xxxxxxx xxxx xx :
-    -   Xxxxx xxx **xxxxx** xxxxxxx xxxxxxx xx xxx Xxxxxxxx Xxxxxxxx Xxxxxxx (XXXXxxxx.x)
-    -   Xxxxxxx [**XxxxXxxxxxxxxx::XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208215) xxxx xxxx xxx'x XXXX (xxx xxxx xxxxxx xx xxxx xxx) xx xxxx xx xxxxxxxx xx xxxxx xxxxxxxxx xxxxx.
+    これは次の方法で解決できます。
+    -   並列パターン ライブラリ (PPLTasks.h) で定義された **async** パターンを使います。
+    -   できるだけ早くアプリの ASTA (アプリのメイン スレッド) から [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) を呼び出して、任意の呼び出しを許可します。
 
-    Xxxx xxxx, xxx xxxxxx xxxx xx xxxxxxxxx xxxxxxxx xx xxxxxxxxx xxxxx xx xxxx xxx'x XXXX. Xxx xxxx xxxx xxxxx xxxxx xxxxx, xxxx [Xxxxxxxxxxxx xxxxxxxxxxx xx X++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    しかし、アプリの ASTA への無関係な呼び出しの即時の配信に頼ることはできません。 非同期呼び出しの詳細について、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
 
-Xxxxxxx, xxxx xxxxxxxxx xxxx XXX xxx, xxx xxx [**XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208211) xxx xxxx xxx'x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxx [**XxxxXxxxxxxxxx::XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208215) xx xxxxxx xxx XX xxxxxxx xxxxxx xxxx xxxxxx xx xxxxxx xxx xxxxxx xxxx XXX xxxxxxx xxxxxxxx. Xxxx xxx xxxx x xxxxxxxx xxxxxx xxxx xxx xxxxxx xxxxxx xxxx xxx **XxxxXxxxxxxxxx**, xxx xxxxx xxxxxxxx xxx xxxxxx xxx xxxxxxxx xxxxxxxxx xxxxxxx xx xxxxx xxxxxxxxxx xxxxxx.
+全体的に見れば、UWP アプリをデザインする場合、自分で MTA スレッドを作って管理しようとするのではなく、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) の [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) と [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) を使ってすべての UI スレッドを処理します。 **CoreDispatcher** で処理できない個別のスレッドが必要な場合、非同期パターンを使い、再入の問題を回避するために前のガイドに従います。
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

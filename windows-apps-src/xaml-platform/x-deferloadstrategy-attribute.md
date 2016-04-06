@@ -1,58 +1,58 @@
 ---
-xxxxx: xXxxxxXxxxXxxxxxxx xxxxxxxxx
-xxxxxxxxxxx: xXxxxxXxxxXxxxxxxx xxxxxx xxx xxxxxxxx xx xx xxxxxxx xxx xxx xxxxxxxx, xxxxxxxxxx xxxxxxx xxxx xxx xxxxxxxxxx xxxxxx xxxxx xxxxxxxx. Xxxx xxxxxxx xxxxxxxx xxxx xxxxx YYY xxxxx xx xxx xxxxxx xxxxx.
-xx.xxxxxxx: XYYYYYYX-YYXX-YYYY-XYYY-XYYXXXXYXYXY
+title: xDeferLoadStrategy attribute
+description: xDeferLoadStrategy delays the creation of an element and its children, decreasing startup time but increasing memory usage slightly. Each element affected adds about 600 bytes to the memory usage.
+ms.assetid: E763898E-13FF-4412-B502-B54DBFE2D4E4
 ---
 
-# x:XxxxxXxxxXxxxxxxx xxxxxxxxx
+# x:DeferLoadStrategy attribute
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**x:XxxxxXxxxXxxxxxxx="Xxxx"** xxxxxx xxx xxxxxxxx xx xx xxxxxxx xxx xxx xxxxxxxx, xxxxxxxxxx xxxxxxx xxxx xxx xxxxxxxxxx xxxxxx xxxxx xxxxxxxx. Xxxx xxxxxxx xxxxxxxx xxxx xxxxx YYY xxxxx xx xxx xxxxxx xxxxx. Xxx xxxxxx xxx xxxxxxx xxxx xxx xxxxx, xxx xxxx xxxxxxx xxxx xxx'xx xxxx, xxx xx xxx xxxx xx x xxxxxxx xxxxxx xxxxxxxxx. Xxxxxxxxx xx'x xxxxxxxx xx xxxxxxx xxxx xxxxxxxxx xx xxx xxxxxx xxxx xxxx xxxxxxxxxxx xxxxxxxxx.
+**x:DeferLoadStrategy="Lazy"** delays the creation of an element and its children, decreasing startup time but increasing memory usage slightly. Each element affected adds about 600 bytes to the memory usage. The larger the element tree you defer, the more startup time you'll save, but at the cost of a greater memory footprint. Therefore it's possible to overuse this attribute to the extent that your performance decreases.
 
-## XXXX xxxxxxxxx xxxxx
+## XAML attribute usage
 
 ``` syntax
 <object x:DeferLoadStrategy="Lazy" .../>
 ```
 
-## Xxxxxxx
+## Remarks
 
-Xxx xxxxxxxxxxxx xxx xxxxx **x:XxxxxXxxxXxxxxxxx** xxx:
+The restrictions for using **x:DeferLoadStrategy** are:
 
--   Xxxxxxxx xx [x:Xxxx](x-name-attribute.md) xxxxxxx, xx xxxxx xxxxx xx xx x xxx xx xxxx xxx xxxxxxx xxxxx.
--   Xxxx x [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911) xxx xx xxxxxx xx xxxxxxxx, xxxx xxx xxxxxxxxx xx xxxxx xxxxxxxx xxxx [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn279249).
--   Xxxx xxxxxxxx xxx xxx xx xxxxxxxx xx x [**Xxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page), x [**XxxxXxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol), xxx x [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242348).
--   Xxxxxxxx xx x [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208794) xxxxxx xx xxxxxxxx.
--   Xxxx xxx xxxx xxxx xxxxx XXXX xxxxxx xxxx [**XxxxXxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br228048).
--   Xxxxxx x xxxxxx xxxxxxx xxxx xxxxx xxx xxx xxxxxxxx xxxx xxxx xxx xxxx xxxxxxxx.
+-   Requires an [x:Name](x-name-attribute.md) defined, as there needs to be a way to find the element later.
+-   Only a [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) can be marked as deferred, with the exception of types deriving from [**FlyoutBase**](https://msdn.microsoft.com/library/windows/apps/dn279249).
+-   Root elements can not be deferred in a [**Page**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.page), a [**UserControls**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.usercontrol), nor a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348).
+-   Elements in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) cannot be deferred.
+-   Does not work with loose XAML loaded with [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048).
+-   Moving a parent element will clear out any elements that have not been realized.
 
-Xxxxx xxx xxxxxxx xxxxxxxxx xxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxx:
+There are several different ways to realize the deferred elements:
 
--   Xxxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208715) xxxx xxx xxxx xxxx xxx xxxxxxx xx xxx xxxxxxx.
--   Xxxx [**XxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209416) xxxx xxx xxxx xxxx xxx xxxxxxx xx xxx xxxxxxx.
--   Xx x [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209007), xxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208817) xx **Xxxxxxxxxx** xxxxxxxxx xxxx xx xxxxxxxxx xxx xxxxxxxx xxxxxxx.
--   Xxxxxx xxx xxxxxxxx xxxxxxx xx xxx **Xxxxxxxxxx**.
--   Xxx x xxxxxxx xxxx xx xxxxxxxxx xxx xxxxxxxx xxxxxxx.
--   XXXX: Xxxx xxx xxxxxxxxxxxxx xx xx xxxxxxx xxx xxxxxxx, xx xx xxxxxxx xx xxx XX xxxxxx, xx xx xxxxx xxxxx xxx XX xx xxxxxxx xx xxx xxxx xx xxxxxxx xx xxxx.
+-   Call [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) with the name that was defined on the element.
+-   Call [**GetTemplateChild**](https://msdn.microsoft.com/library/windows/apps/br209416) with the name that was defined on the element.
+-   In a [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), use a [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) or **Storyboard** animation that is targeting the deferred element.
+-   Target the deferred element in any **Storyboard**.
+-   Use a binding that is targeting the deferred element.
+-   NOTE: Once the instantiation of an element has started, it is created on the UI thread, so it could cause the UI to stutter if too much is created at once.
 
-Xxxx x xxxxxxxx xxxxxxx xx xxxxxxx xx xxx xx xxx xxxxxxx xxxxxx xxxxx, xxxxxxx xxxxxx xxxx xxxxxx:
+Once a deferred element is created by any of the methods listed above, several things will happen:
 
--   Xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208723) xxxxx xx xxx xxxxxxx xxxx xxx xxxxxx.
--   Xxx xxxxxxxx xx xxx xxxxxxx xxxx xxx xxxxxxxxx.
--   Xx xxx xxxxxxxxxxx xxx xxxxxxxxxx xx xxxxxxx xxxxxxxx xxxxxx xxxxxxxxxxxxx xx xxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxx xxxxxxx(x), xxx xxxxxxxxxxxx xxxx xx xxxxxx.
+-   The [**Loaded**](https://msdn.microsoft.com/library/windows/apps/br208723) event on the element will get raised.
+-   Any bindings on the element will get evaluated.
+-   If the application has registered to receive property change notifications on the property containing the deferred element(s), the notification will be raised.
 
-Xxx xxx xxxx xxxxxxxx xxxxxxxx, xxxxxxx xxxx xxxx xx xx xxxxxxxx xxxx xxx xxxxx-xxxx xxxxxxx xx.  Xx xxx xxx xx xxxxxxx x xxxxx xxxxxxx xxxxxx xxx xxxxxx xxx xxxx xxxxxxxx, xx xxxxxxxxx xxxx xx xxxxxx.
+You can nest deferred elements, however they have to be realized from the outer-most element in.  If you try to realize a child element before the parent has been realized, an exception will be raised.
 
-Xx xxxxxxx, xxx xxxxxxxxxxxxxx xx xx xxxxx xxxxxx xxxx xxx xxx xxxxxxxx xx xxx xxxxx xxxxx.  X xxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxx xx xx xxxxxxxx xx xx xxxx xxx xxxxxxxx xxxx xxx xxxxx xxxxxxx xxxx xxxxxxxxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208992).  Xxxx xxxxxxxxxx XX (xxxx xx, XX xxxx xx xxxxxxxxx xx xxxx xxxxxxxxxxx) xx x xxxx xxxxx xx xxxx xxx xxxxxxxxx xxxxxxxx.  
+In general, the recommendation is to defer things that are not viewable in the first frame.  A good guideline for finding candidates to be deferred is to look for elements that are being created with collapsed [**Visibility**](https://msdn.microsoft.com/library/windows/apps/br208992).  Also incidental UI (that is, UI that is triggered by user interaction) is a good place to look for deferring elements.  
 
-Xx xxxx xx xxxxxxxxx xxxxxxxx xx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br242878) xxxxxxxx, xx xx xxxx xxxxxxxx xxxx xxxxxxx xxxx, xxx xxxxx xxxx xxxxxxxx xxxx xxxxxxx xxxxxxxxxxx xxxxxxxxx xx xxxx xxx'xx xxxxxxxx.  Xx xxx xxx xxxxxxx xx xxxxxxxx xxxxxxx xxxxxxxxxxx, xxxxxx xxxxx xx xxx [{x:Xxxx} xxxxxx xxxxxxxxx](x-bind-markup-extension.md) xxx [x:Xxxxx xxxxxxxxx](x-phase-attribute.md) xxxxxxxxxxxxx.
+Be wary of deferring elements in a [**ListView**](https://msdn.microsoft.com/library/windows/apps/br242878) scenario, as it will decrease your startup time, but could also decrease your panning performance depending on what you're creating.  If you are looking to increase panning performance, please refer to the [{x:Bind} markup extension](x-bind-markup-extension.md) and [x:Phase attribute](x-phase-attribute.md) documentation.
 
-Xx xxx [x:Xxxxx xxxxxxxxx](x-phase-attribute.md) xx xxxx xx xxxxxxxxxxx xxxx **x:XxxxxXxxxXxxxxxxx** xxxx, xxxx xx xxxxxxx xx xx xxxxxxx xxxx xx xxxxxxxx, xxx xxxxxxxx xxxx xx xxxxxxx xx xx xxx xxxxxxxxx xxx xxxxxxx xxxxx. Xxx xxxxx xxxxxxxxx xxx **x:Xxxxx** xxxx xxx xxxxxx xx xxxxxxx xxx xxxxxxxx xx xxx xxxxxxx. Xxxx x xxxx xxxx xx xxxxxxxx xx xxxx xx xxxxxxx, xxxxxxxx xxxxxxxx xxxx xxxxxx xx xxx xxxx xxx xx xxxxx xxxxxx xxxxxxxx, xxx xxxxxxxx xxxxxxxx (**{x:Xxxx}** xxxxxxxx) xxxx xx xxxxxxxxx xxxxx xxx xxxx xxxxx, xxxxxxxxx xxxxxxx.
+If the [x:Phase attribute](x-phase-attribute.md) is used in conjunction with **x:DeferLoadStrategy** then, when an element or an element tree is realized, the bindings will be applied up to and including the current phase. The phase specified for **x:Phase** will not affect or control the deferral of the element. When a list item is recycled as part of panning, realized elements will behave in the same way as other active elements, and compiled bindings (**{x:Bind}** bindings) will be processed using the same rules, including phasing.
 
-X xxxxxxx xxxxxxxxx xx xx xxxxxxx xxxx xxxxxxxxxxx xxxxxx xxx xxxxx xx xxxx xxxx xxx xxx xxxxxxx xxx xxxxxxxxxxx xxxx xxx xxxx.
+A general guideline is to measure your application before and after to make sure you are getting the performance that you want.
 
-## Xxxxxxx
+## Example
 
 ```xaml
 <Grid x:Name="DeferredGrid" x:DeferLoadStrategy="Lazy">
@@ -80,4 +80,8 @@ private void RealizeElements_Click(object sender, RoutedEventArgs e)
 }
 ```
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

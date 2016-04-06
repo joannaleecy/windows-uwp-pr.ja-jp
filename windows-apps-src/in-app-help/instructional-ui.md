@@ -1,85 +1,78 @@
 ---
-Xxxxxxxxxxx: Xxxxxx xx xxxxxxxxxxxxx xxxx xxxxxxxxx (XX) xxxx xxxxxxx xxxxx xxx xx xxxx xxxx xxxx Xxxxxxx Xxxxx xxx.
-xxxxx: Xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxxxxxx XX
-xx.xxxxxxx: XYYYXYXX-XXYY-YYXY-YXYY-YXXXYYYXYXYY
-xxxxx: Xxxxxxxxxxxxx XX
-xxxxxxxx: xxxxxx.xxx
+Description: Windows ストア アプリを使う方法をユーザーに説明するユーザー インターフェイス (UI) をデザインします。
+title: 説明 UI のデザインのガイドライン
+ms.assetid: D082D4FF-CA09-48C8-9E02-2ECA457B1B37
+label: 説明 UI
+template: detail.hbs
 ---
 
-# Xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxxxxxx XX
+# 説明 UI のデザインのガイドライン
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xxxxxx xx xxxxxxxxxxxxx xxxx xxxxxxxxx (XX) xxxx xxxxxxx xxxxx xxx xx xxxx xxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
+ユニバーサル Windows プラットフォーム (UWP) アプリを使う方法をユーザーに説明するユーザー インターフェイス (UI) をデザインします。
 
-## <span id="Recommendations">
-            </span>
-            <span id="recommendations">
-            </span>
-            <span id="RECOMMENDATIONS">
-            </span>Xxxxxxxxxxxxxxx
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>推奨事項
 
 
--   Xxx xxxxxxxxxxxxx XX xx xxxxxxxxx x xxx xxxx xx xxxx xxxx xxx xxx xx.
--   Xxx xxx xxxx xx xxx xxxxxxxx xx xxxxxxxx xxxxxxx xxxxx xxx xxxx xxx xxx xxxxxxx xxxxx xx xxxxxx.
--   Xxxxxxxxx xxxxxxxxxxxxx XX xxxx xxxxxxxx xxxxx.
--   Xxx'x xxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxxxx XX.
+-   アプリでできることを新しいユーザーに紹介するために説明 UI を使います。
+-   新機能に関するヒントや更新後のアプリの変更点に関する詳細な説明に使います。
+-   説明 UI を特定のタスクと統合します。
+-   アプリケーション UI の操作を妨げないようにします。
 
-## <span id="Additional_usage_guidance">
-            </span>
-            <span id="additional_usage_guidance">
-            </span>
-            <span id="ADDITIONAL_USAGE_GUIDANCE">
-            </span>Xxxxxxxxxx xxxxx xxxxxxxx
+## <span id="Additional_usage_guidance"></span><span id="additional_usage_guidance"></span><span id="ADDITIONAL_USAGE_GUIDANCE"></span>その他の使い方のガイダンス
 
 
-Xx xxxx xxxxxxxxxxxxx, xxx xxxx xxx xx xxxx xxxxx xxxxxxxx xxxx xxxx xxx xx xx xxxxx xxxx xxxx xxxxxx xxxx xxx'x XX. Xx xxx xxx xxxx *xxxxxxxxxxxxx XX* xx xxxxx xx xxxx xxxx xx xxxxxxxx. X xxxxx xxxxxxx xx xxxxx x XX xxxxxxx, xxxx xxxxxx xxxx xx x xxxxxx, xx xxxx x xxxx xxxx xxxx xxxx xx xxx x xxxxx xxxxxxxxxxx xx xxxxxxxx x xxxx.
+状況によっては、ユーザーがアプリを操作できるように、アプリの UI から説明を行うと効果的な場合があります。 この種のガイダンスは、*説明 UI* という用語で表します。 良い例の 1 つとして、タスクを完了するためにタッチ操作を使う必要があるときに、ユーザーに指示するためにインライン テキストやポップアップなどの UI 要素を使うことが挙げられます。
 
-Xxxx xx xxxx xxxx xxxxxxxxxxxxx XX xx xxx x xxxxxxxxxxx xxx xxxxxxxxxx xxxxxx. Xx xxx xxx xx xxx xxxxx xx xxx xx xxxxxxx, xxx xxx xxxxxxx xxx xxxx xx xxxx xxx xxx xxxxxxxx xxx xxxxxxxxxxxxx. Xxxxxx xxxxxx xxxxxxxxxxxxx XX, xxxxxxx xxxxx xxxx xx xxxxxxxxx xxxxx xx xxxx xxx. Xxx Xxxxxxx Xxxxxx xxx xxxx xxxx xxxxx xxxxxxx, xxxxxxxxxx, xxx xxxxxxxx.
+説明 UI はよく練られた設計に代わるものではないことに注意してください。 使用頻度が多すぎる場合、またはコンテキストから逸脱する場合には、アプリのフローが中断され、実効性が低下するおそれがあります。 説明 UI を追加する前に、ユーザーをアプリに導く他の方法を検討してください。 レイアウト、ナビゲーション、コントロールについて詳しくは、「関連トピック」をご覧ください。
 
-Xxxx xxx x xxx xxxxxxxxx xx xxxxx xxxxxxxxxxxxx XX xxx xxxx xxxx xxxxx xxxxx:
+ここでは、説明 UI がユーザーの習得に役立ついくつかの例を示します。
 
--   **Xxxxxxx xxxxx xxxxxxxx xxxxx xxxxxxxxxxxx.** Xxx xxxxxxxxx xxxxxx xxxx xxxxx xxxxxxxxxxxxx XX xxxxxxxx x xxxxxx xxx xx xxx xxxxx xxxxxxxx xx xxx xxxx, Xxx xxx Xxxx.
+-   **ユーザーがタッチ操作を見つけられるようにする。** 次のスクリーン ショットには、Cut the Rope というゲーム内でタッチ ジェスチャを使う方法をプレイヤーに教える説明 UI が示されています。
 
-    ![xxxxxx xxxx xxxx xxxx xxxxxxx xxxxxxxxxxxxx xx xxxxxxx, "xxxxx xxxxxx xx xxx xxx xxxx"](images/in-game-controls-3.png)
+    ![説明 UI のメッセージ ("縄を切るには、縄を横切るようにスライド") が表示されているゲームのスクリーン ショット](images/in-game-controls-3.png)
 
--   **Xxxxxx x xxxxx xxxxx xxxxxxxxxx.** Xxxxxxxx xxxxx xxxxxxxxxxxxx XX xx xxxxxxxxx x xxx xxxx xx xxxx xxxx xxx xxx xx. Xxx xxxxxxx, xxxx Xxxxx Xxxxxxx xxxxxxxx xxx xxx xxxxx xxxx, xxxxxxxxxxxxx XX xxxxxxx xxx xxxx xx xxxxx xxxxxxxx xxxxxx.
+-   **第一印象を良くする。** 新しいユーザーにアプリで可能な処理を紹介するために説明 UI を使うことを考慮してください。 たとえば、ムービー モーメントの初回起動時には、説明 UI で、ユーザーはビデオの作成を始めるように求められます。
 
-    ![xxxxxx xxxxxx xxx xxxxx xxxxxxx xxx](images/instructional-ui-movie.png)
+    ![ムービー モーメント アプリの起動面](images/instructional-ui-movie.png)
 
--   **Xxxxxxx xxxxx xx xxxx xxx xxxx xxxx xx x xxxxxxxxxxx xxxx.** Xx xxx Xxxxxxx Xxxx xxx, x xxxx xx xxx xxxxxx xx xxx Xxxxx xxxxxxx xxxxx xx **Xxxxxxxx** xx xxxxxx xxxxx xxxxxxxx.
+-   **複雑なタスクの次の手順にユーザーを導く。** Windows メール アプリの受信トレイの下のヒントは、以前のメッセージにアクセスできるように、**[設定]** にユーザーを導きます。
 
-    ![xxxxxxx xxxxxx xxxx xx xxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxxxx xx xxxxxxx](images/instructional-ui-mail-inbox.png)
+    ![説明 UI のメッセージが表示された Windows メール アプリのスクリーン ショット (一部)](images/instructional-ui-mail-inbox.png)
 
-    Xxxx xxx xxxx xxxxxx xxx xxxxxxx, xxx xxx'x **Xxxxxxxx** xxxxxx xxxxxxx xx xxx xxxxx xxxx xx xxx xxxxxx, xxxxxxxx xxx xxxx xx xxxxxxxx xxx xxxx. Xxxxx xxxxxx xxxxx xxxx xxx Xxxx xxx xxxxxx xxx xxxxx x xxxx xxxxxx xxx xxxxxxxxxxxxx XX xxxxxxx.
+    ユーザーがメッセージをクリックすると、アプリの**設定**ポップアップが画面の右側に表示され、ユーザーがタスクを実行できるようになります。 次のスクリーン ショットは、ユーザーが説明 UI のメッセージをクリックする前後のメール アプリを示しています。
 
-    | Xxxxxx                                                               | Xxxxx                                                                                                        |
+    | クリック前                                                               | クリック後                                                                                                        |
     |----------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-    | ![xxxxxx xxxx xx xxxxxxx xxxx xxx](images/instructional-ui-mail.png) | ![xxxxxx xxxx xx xxxxxxx xxxx xxx xxxx xx xxxxxxxx xxxxxxxx xxxxxx](images/instructional-ui-mail-flyout.png) |
+    | ![Windows メール アプリのスクリーン ショット](images/instructional-ui-mail.png) | ![設定ポップアップが表示された Windows メール アプリのスクリーン ショット](images/instructional-ui-mail-flyout.png) |
 
      
 
--   **Xxxxxxxxxxx XX xxxxxxx.** Xx xxx xxxx xxxxxxxxxxx XX xxxxxxx xx xxx xxxxxx xxxxxxx xx xxxx xxx, xxxxx xxxxx xxxx xxxx xx xxx xxxxxxxx xx xxxxxxxx xxxxxxx xxxxx xxx xxxx xxx xxx xxxxxxx.
+-   **UI の変更を示す。** 最新バージョンのアプリの UI に大幅な変更が加えられた場合、ユーザーはアプリの新しい機能や変更の詳細についてのヒントを必要とすることが考えられます。
 
-**Xxxxxxxxxx xx xxxxxxxxxxxxx XX xxxxxx**
+**説明 UI の設計原則**
 
--   **Xxxx xx xxxxxx.** Xxxxxxxxx xxx xxxxx xxxxxxx xx x xxxx xxx xxx xxxxxx xxxx xxxxxxxx. Xxxxxxxx xxxxxx x Xxxx xxxxxxx xx xxxx XXX xxx xx xxxxxxx xxxxxxx xxxxxxxx.
--   **Xxxxx xx xxxxxxx.** Xxxxxxxxx xxxxxxxxxxxxx XX xxxx xxx xxxx xx xxxxx x xxxx xxxxxxxx. X xxxx xx xxxx xxxxxx xx xxxxxx x xxxxxxx xxxx xx'x xxxxxxxxxx xxxx xxxx xxxx xx xxxx.
--   **Xxx'x xxxxx xxxxxxxxxxx.** Xxxx xxxx xxxxx xxx xxxxx xxxxxxxx xxxx xxxx xxx xxxxx xxxxxxxxxxxxx XX xx xxxxxxx. Xxxxxxxxxxxxx XX xxxxxx xxxx xxxxx, xxx xxxxx xxxx xx xxxxxxx xx xxx xxx.
--   **Xxxxx, xxxx xxxxxxxxx.** Xxxxxx xxxxxxxxxxxxx XX xx xxxx xx xx'x xx xxxxxx xxxxxxxx xx xxxxx xxx xxxx xx xxxxxxx xx. Xxxx, xx xxxx xxxxx, xxxxx xxxx xxxx xxxxxxxxxxxxx XX xxxxxxxxx xxxx. Xxxxx xxxxxxxxxx xxxxxxxxxx xxx xxxx xxxxxxxxxxxxx XX.
--   **Xxx xxxxxxxxx.** Xxxxxxxxxx xxxxxx xxx x Xxxx xxxxxxx xxx xxxxx xxxxx xxxxx xxxxxxxxxx xxxx xxxx xx xxxx xx xxxxx xxxx xxx. Xxxxxxxx xxx xxxxxxx xx xxxxxx xxxxxxx xxxxxx xxxxxx xxxxxxxxxxxxx XX xx xxxx xxx.
+-   **シンプルな状態を保つ。** 一度に 1 つの基本的な概念を紹介し、可能な限り図を使います。 複雑な機能について説明する場合は、UWP アプリにヘルプ セクションを追加することを検討してください。
+-   **コンテキストの中で説明する。** 説明 UI をタスクに統合します。そうすれば、ユーザーがタスクを完了しやすくなります。 最も必要としているときに紹介された概念は、ユーザーの記憶に残りやすいものです。
+-   **操作を妨げない。** 説明 UI が表示されている間も、アプリを引き続き操作できるようにします。 説明 UI は、ユーザーの邪魔になることなく、有用であることが必要です。
+-   **説明が終わったら消える。** 説明が終わったらすぐに説明 UI が消えるようにするか、ユーザーが終了できるようにします。 また、ほとんどの場合、説明 UI は一度表示されれば十分です。 繰り返し同じ説明 UI を表示することは避けてください。
+-   **控え目に使う。** 設計とヘルプ セクションが練られていれば、アプリを利用するために理解する必要があることを、ユーザーに十分に伝えることができます。 アプリに説明 UI を追加する前に、さまざまな設計オプションを検討してください。
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>関連記事
 
-* [Xxxxxxxxxx xxx xxx xxxx](guidelines-for-app-help.md)
+* [アプリのヘルプのガイドライン](guidelines-for-app-help.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

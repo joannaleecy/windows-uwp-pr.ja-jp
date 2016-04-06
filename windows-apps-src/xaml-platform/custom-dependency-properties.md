@@ -1,67 +1,67 @@
 ---
-xxxxxxxxxxx: Xxxxxxxx xxx xx xxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxxxx xxxxxxxxxx xxx x Xxxxxxx Xxxxxxx xxx xxxxx X++, X#, xx Xxxxxx Xxxxx.
-xxxxx: Xxxxxx xxxxxxxxxx xxxxxxxxxx
-xx.xxxxxxx: YXXXYYYY-XYXX-YXXY-XYXY-XYYYXYXXYXXY
+description: Explains how to define and implement custom dependency properties for a Windows Runtime app using C++, C#, or Visual Basic.
+title: Custom dependency properties
+ms.assetid: 5ADF7935-F2CF-4BB6-B1A5-F535C2ED8EF8
 ---
 
-# Xxxxxx xxxxxxxxxx xxxxxxxxxx
+# Custom dependency properties
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx xx xxxxxxx xxx xx xxxxxx xxx xxxxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxxxx xxx x Xxxxxxx Xxxxxxx xxx xxxxx X++, X#, xx Xxxxxx Xxxxx. Xx xxxx xxxxxxx xxx xxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxx xxxxx xxxx xx xxxxxx xxxxxx xxxxxxxxxx xxxxxxxxxx. Xx xxxxxxxx xxx xxxxxxxxxxxxxx xxxxx xxx x xxxxxx xxxxxxxxxx xxxxxxxx, xx xxxx xx xxxx xxxx xxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxx, xxxxxxxxx, xx xxxxxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx.
+Here we explain how to define and implement your own dependency properties for a Windows Runtime app using C++, C#, or Visual Basic. We list reasons why app developers and component authors might want to create custom dependency properties. We describe the implementation steps for a custom dependency property, as well as some best practices that can improve performance, usability, or versatility of the dependency property.
 
-## Xxxxxxxxxxxxx
-
-
-Xx xxxxxx xxxx xxx xxxx xxxx xxx [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](dependency-properties-overview.md) xxx xxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxxxx xx x xxxxxxxx xx xxxxxxxx xxxxxxxxxx xxxxxxxxxx. Xx xxxxxx xxx xxxxxxxx xx xxxx xxxxx, xxx xxxxxx xxxx xxxxxxxxxx XXXX xxx xxxx xxx xx xxxxx x xxxxx Xxxxxxx Xxxxxxx xxx xxxxx X++, X#, xx Xxxxxx Xxxxx.
-
-## Xxxx xx x xxxxxxxxxx xxxxxxxx?
+## Prerequisites
 
 
-Xxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxx xxxx xxx xxxxxxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxxxxx xxxxxx xx xxxxxxx xxx [**XxxxxxxxxxXxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829) xxxxxx, xxx xxxx xxx xxxxxxxxxx xx x [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242362) xxxxxxxxxx xxxxxx xx xxx xxxxxxxx xxxxx. Xxx xxx xxxxxx xxxx xxxxx xxxxxxxxx xx x xxxxxx xxxxxxxx xxxxxxx (XXX) xx X++ xxxxxxxx xx xxxxxxx xxxxxxx, xxxx xxxxxxx, xxxxxxxxxx, xxx xxxxxxx xxxxxx xx xxxxxxxxxxxx xx xx x xxxxxxxxxx xxxxxxxx. Xxxxxxxxxx xxxxxxxxxx xxx xx xxxx xxxx xx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242356) xxxxx. Xxx **XxxxxxxxxxXxxxxx** xx xxxxx xxxx xx xxx xxxxx xxxxxxxxx, xx xxx xxxxxxxx xx xxxxxxx xxxx xxx xxxxxxxx xxx XX xxx xxxxxxxxxxxx xxxxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxxxxx xxxxxxxxxx xxx xxxx xx xxx xxxxxxxxxxx xxx xxxxxxxxxxx xxxx xxx xxxxxxxxxx xxxx xx xxxx xxxxxxxxxxxxx, xxx [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](dependency-properties-overview.md).
+We assume that you have read the [Dependency properties overview](dependency-properties-overview.md) and that you understand dependency properties from the perspective of a consumer of existing dependency properties. To follow the examples in this topic, you should also understand XAML and know how to write a basic Windows Runtime app using C++, C#, or Visual Basic.
 
-Xxxxxxxx xx xxxxxxxxxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxx: [**Xxxxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209395), [**XxxxxxxxxXxxxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208751), xxx [**XxxxXxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br209702), xxxxx xxxx xxxxxx. Xxxx xxxxxxxxxx xxxxxxxx xxxxxxx xx x xxxxx xxx x xxxxxxxxxxxxx **xxxxxx****xxxxxx****xxxxxxxx** xxxxxxxx xx xxxx [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242362) xxxx xx xxxxxxx xx xxxx xxxx xxxxx xxx xxxx xx xxx xxxxxxxxxx xxx xxx xxxxxxxxxx xxxxxxxx. Xxx xxxxxxxxxx'x xxxx xxxxxxx xxxx xxxxxxxxxx: xxx xxxx xx xxx xxxxxxxxxx xxxxxxxx, xxxx xxx xxxxxx "Xxxxxxxx" xxxxx xx xxx xxx xx xxx xxxx. Xxx xxxxxxx, xxx xxxxxxxxxxxxx **XxxxxxxxxxXxxxxxxx** xxxxxxxxxx xxx xxx **Xxxxxxx.Xxxxxxxxxx** xxxxxxxx xx [**Xxxxxxx.XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209396). Xxx xxxxxxxxxx xxxxxx xxx xxxxxxxxxxx xxxxx xxx xxxxxxxxxx xxxxxxxx xx xx xxx xxxxxxxxxx, xxx xxx xxxxxxxxxx xxx xxxx xx xxxx xxxxx xxx xxxxx xxxxxxxxxx xxxxxxxxx xxx xxxxxxxxxx xxxxxxxx, xxxx xx xxxxxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242361).
+## What is a dependency property?
 
-##  Xxxxxxxx xxxxxxxx
 
-Xxxxxxxxxx xxxxxxxxxx xxxxxxxxx xxxx x xxxxxxx xxxxxxxxxxxxxx. Xxxxxxx xxx xxxxxxx, xxx xxxx xxx xx xxx xx xxx xxx xxxxxxxxxx xxxxx xx xx xxx xxx xxxxxxxxxx xxxxxxxx xxxxxxx xxxxxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242359) xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242361) xxx xx xxxx xxx xxxxxxxxxx xx xxxx xx x xxxxxxxxx. Xxxx xx x xxxxxx xxxxxxxxx xxxxx xxx xxxxxxxxx xxxx xx xxxxxxxxxx x xxxxxxxx. Xxx xxxx xxx xxxxxxx, xxxx xxxx xxx xxx xxxxx xxxx xxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxx xxx xxx x xxxxxxxxxxxxxxx xxxxxx-xxxxxxxx xxxxxx xxxx xx xxxxxxx xxx xxx xxxxxxxx xxx'xx xxxxx.
+Dependency properties are properties that are registered with the Windows Runtime property system by calling the [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) method, and that are identified by a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) identifier member on the defining class. You can enable what would otherwise be a common language runtime (CLR) or C++ property to support styling, data binding, animations, and default values by implementing it as a dependency property. Dependency properties can be used only by [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) types. But **DependencyObject** is quite high in the class hierarchy, so the majority of classes that are intended for UI and presentation support can support dependency properties. For more information about dependency properties and some of the terminology and conventions used for describing them in this documentation, see [Dependency properties overview](dependency-properties-overview.md).
 
-Xx xxx xxxxxxxxx x xxxxxx xxxxxxxxxx xxxxxxxx xxxxxxxx xxx xxxx xx xx xx xxxxxx xxx xxxx xx xxxx, xxxxxx xxx xxxxxxxx xxxxxxxx xxx. Xxx xxxxxxxx xxxxxxxx xxx xxxx xxxxxx xxx xxxxxxxxx xxxxx xxxxxxxxxxx xxxxx xxx xxxxxxxxxx xxxxxxxx xx xxxxxxxxxx xx xxxxxx xxxxxxxx xxxxxxxxx. Xxxxxxxxxxxx, xxx xxxxxxx xx xxxxx xxx xxxxx xxxxxxxxxx xxxx xx [**XxxxxxxXxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br228011).
+Examples of dependency properties in the Windows Runtime are: [**Control.Background**](https://msdn.microsoft.com/library/windows/apps/br209395), [**FrameworkElement.Width**](https://msdn.microsoft.com/library/windows/apps/br208751), and [**TextBox.Text**](https://msdn.microsoft.com/library/windows/apps/br209702), among many others. Each dependency property exposed by a class has a corresponding **public** **static** **readonly** property of type [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) that is exposed on that same class and that is the identifier for the dependency property. The identifier's name follows this convention: the name of the dependency property, with the string "Property" added to the end of the name. For example, the corresponding **DependencyProperty** identifier for the **Control.Background** property is [**Control.BackgroundProperty**](https://msdn.microsoft.com/library/windows/apps/br209396). The identifier stores the information about the dependency property as it was registered, and the identifier can then be used later for other operations involving the dependency property, such as calling [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361).
 
-## Xxxx xx xxxxxxxxx x xxxxxxxx xx x xxxxxxxxxx xxxxxxxx
+##  Property wrappers
 
-Xxxxxxxx xxx xxxxxxxxx x xxxxxx xxxx/xxxxx xxxxxxxx xx x xxxxx, xx xxxx xx xxxx xxxxx xxxxxxx xxxx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242356), xxx xxxx xxx xxxxxx xx xxxx xxxx xxxxxxxx xxxx xx x xxxxxxxxxx xxxxxxxx. Xxxxxxxxx xxx xxxxxxx xxxxxxxxx xx xxxxxxx xxxx xxxxxxxx xxxx x xxxxxxx xxxxx xx xxxxxxxx. Xxxxxxxx xxxx xxxxxx xxxxxxxx xx x xxxxxxxxxx xxxxxxxx xx xxx xxxxxx xxxxxxxxx xx xxxxxxxxxxx. Xxx xxxxxx xxxx xxxxxx xx xxx xxxxxxxxx xxxx xxx xxxxxx xxxx xxxxxxxx xx xxxxxxx.
+Dependency properties typically have a wrapper implementation. Without the wrapper, the only way to get or set the properties would be to use the dependency property utility methods [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) and [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) and to pass the identifier to them as a parameter. This is a rather unnatural usage for something that is ostensibly a property. But with the wrapper, your code and any other code that references the dependency property can use a straightforward object-property syntax that is natural for the language you're using.
 
-Xxx xxxxx xxxxxxxx xxxxxxxxxxxx xxxx xxxxxxxx xx x xxxxxxxxxx xxxxxxxx xxxx xxx xxxx xx xx xxxxxxx xxx xx xxxx xx xxxxx xxxxxxxx xx xxx Xxxxxxx Xxxxxxx xx xx Xxxxxxx Xxxxxxx xxxx:
+If you implement a custom dependency property yourself and want it to be public and easy to call, define the property wrappers too. The property wrappers are also useful for reporting basic information about the dependency property to reflection or static analysis processes. Specifically, the wrapper is where you place attributes such as [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011).
 
--   Xxxxxxx xxx xxxxxxxx xxxxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208849)
--   Xxxxxx xx xxxxx xxxxxx xxxxxxxx xxx xxxx xxxxxxx
--   Xxxxxxxxxx xxxxxxxx xxxxxx xxxxxxx x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210490)
--   Xxxxxxxxx xxxx xxx xxxxxxxx xxxxx xx xxx xxxxxxxx xxx xxxx xxxxxxx xx:
-    -   Xxxxxxx xxxxx xx xxx xxxxxxxx xxxxxx xxxxxx
-    -   Xxx xxxxxxxxxxx
-    -   Xxxx xxxxxxx
-    -   Xxxxxxx xxx xxxxxxx xxxxxx
+## When to implement a property as a dependency property
 
-## Xxxxxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxxxxxx
+Whenever you implement a public read/write property on a class, as long as your class derives from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), you have the option to make your property work as a dependency property. Sometimes the typical technique of backing your property with a private field is adequate. Defining your custom property as a dependency property is not always necessary or appropriate. The choice will depend on the scenarios that you intend your property to support.
 
-Xxxxxxxx x xxxxxxxxxx xxxxxxxx xxx xx xxxxxxx xx xx x xxx xx xxxxxxxx. Xxxxx xxxxxxxx xxx xxx xxxxxxxxxxx xxxxxxxxxx xxxxx, xxxxxxx xxxxxxx xxxxxxxx xxx xx xxxxxxxxx xx x xxxxxx xxxx xx xxxx xx xxx xxxxxxxxxxxxxx. Xxxx xxxx xxxxx xxxx x xxxxx xxxxxxxx. Xx'xx xxxxxxx xxxx xxxxxxx xx xxxx xxxxxx xxxxx xx xxxx xxxxx, xxx xx'xx xxxx xxx xxxxxxx xxxx xx xxxxxxx xxxxxxxxx.
+You might consider implementing your property as a dependency property when you want it to support one or more of these features of the Windows Runtime or of Windows Runtime apps:
 
--   (Xxxxxxxx) Xxxxxx xxxxxxxx xxxxxxxx xxx xxx xxxxxxxxxx xxxxxxxx. Xxx xxxx xxxxxxxx xxxxxxxx xxxx xx xxx xxxx xxxxxxxx-xxxxxxx xxxxxxxx, xx x xxxxxxxx-xxxxx xxxxxxx xxxxx xxxx xxx xx xxxxxxxx xx xxxxxxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242357).
--   Xxxxxxxx xxx xxxxxxxx xxxx xxxx xxx xxxxxxxx xxxxxx (xxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829)), xxxxxxxxxx xx xxxxx xxxx xxx xxx xxxx xx xxx xxxxxxxx xxxxx. Xxxxx'x x xxxxxxxx xxxxxxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829) xxxx xxxxxxx xxxxxxxx xxxxxxxx. Xxxxxxx **xxxx** xxx xxxx, xx xxxxxxx xxx xxxxxx xxxxxxxx xxxxxxxx xx xxx xxxx xxxxxxxx xxx.
--   Xxxxxx x [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242362) xxxxxxxxxx xx x **xxxxxx****xxxxxx****xxxxxxxx** xxxxxxxx xxxxxx xx xxx xxxxx xxxx.
--   Xxxxxx x xxxxxxx xxxxxxxx, xxxxxxxxx xxx xxxxxxxx xxxxxxxx xxxxx xxxx'x xxxx xx xxx xxxxxxxx xxx xxx xxxxxxxxxxxx. Xxx xxxxxxx xxxxxxxx xxxx xxxxxx xxxxx xxx *xxxx* xxxxxx xxxx xxx xxxx xx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829). Xxxxxxxxx xxx **xxx** xxx **xxx** xxxxxxxxx xx xxxxxxx xxx xxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxx xxxx xx xxxxx, xx xxxxxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242359) xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242361) xxx xxxxxxx xxxx xxx xxxxxxxx'x xxxxxxxxxx xx x xxxxxxxxx.
--   (Xxxxxxxx) Xxxxx xxxxxxxxxx xxxx xx [**XxxxxxxXxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br228011) xx xxx xxxxxxx.
+-   Setting the property through a [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849)
+-   Acting as valid target property for data binding
+-   Supporting animated values through a [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490)
+-   Reporting when the previous value of the property has been changed by:
+    -   Actions taken by the property system itself
+    -   The environment
+    -   User actions
+    -   Reading and writing styles
 
-**Xxxx**  Xx xxx xxx xxxxxxxx x xxxxxx xxxxxxxx xxxxxxxx, xxx xxxxxxxxx xxxx xxx xxxxxxx. Xxxxxxx, xxx xxxxx x xxxxxxxxx xxxxx xx xxxxxxxx xxxx x XXXX xxxxxxxxx xxx xxx. Xxx [Xxxxxx xxxxxxxx xxxxxxxxxx](custom-attached-properties.md). 
+## Checklist for defining a dependency property
 
-## Xxxxxxxxxxx xxx xxxxxxxx
+Defining a dependency property can be thought of as a set of concepts. These concepts are not necessarily procedural steps, because several concepts can be addressed in a single line of code in the implementation. This list gives just a quick overview. We'll explain each concept in more detail later in this topic, and we'll show you example code in several languages.
 
-Xxx xxxx xxxxxxxx xx xx x xxxxxxxxxx xxxxxxxx, xxx xxxx xxxxxxxx xxx xxxxxxxx xxxx x xxxxxxxx xxxxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxxxxxxx xxxxxx. Xxx xxxx xxxx xxx xxxxxxxx x xxxxxx xxxxxxxxxx xx xx xxxx xx xxx xxxxxxxxx xxx xxxxx xxxxxxxx-xxxxxx xxxxxxxxxx. Xxxxx xxxxxxxxxx xxxxx xx xxxxxxxx xxxxxxxxxx, xx xxxx xxx xxxx xxxxxxx xxxxxxxx-xxxxxx XXXx. Xx xxxxxxxx xxx xxxxxxxx, xxx xxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829) xxxxxx.
+-   (Optional) Create property metadata for the dependency property. You need property metadata only if you want property-changed behavior, or a metadata-based default value that can be restored by calling [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357).
+-   Register the property name with the property system (call [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)), specifying an owner type and the type of the property value. There's a required parameter for [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) that expects property metadata. Specify **null** for this, or specify the actual property metadata if you have declared any.
+-   Define a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) identifier as a **public** **static** **readonly** property member on the owner type.
+-   Define a wrapper property, following the property accessor model that's used in the language you are implementing. The wrapper property name should match the *name* string that you used in [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829). Implement the **get** and **set** accessors to connect the wrapper with the dependency property that it wraps, by calling [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) and [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) and passing your own property's identifier as a parameter.
+-   (Optional) Place attributes such as [**ContentPropertyAttribute**](https://msdn.microsoft.com/library/windows/apps/br228011) on the wrapper.
 
-Xxx Xxxxxxxxx .XXX xxxxxxxxx (X# xxx Xxxxxxxxx Xxxxxx Xxxxx) xxx xxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829) xxxxxx xxx xxxx xx xxxx xxxxx (xxxxxx xxx xxxxx, xxx xxxxxxx xxx xxxxxx xxxxxxxxxxx). Xxx xxxxxxxxxx xx xxxx xxxxxxxx xx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829) xxxxxx xxxx, xx xxx xxxxxx xxxxx. Xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829) xxxx xx xxxxxxxxx xxxx xxxxxxx xx xxxxx xxxxxx xxxxxxxxxxx xxxxxxx xxx xxx xxx xxxxxx xxxxx xx xxxxxx xxx xxxxxx x **xxxxxx****xxxxxx****xxxxxxxx** xxxxxxxx xx xxxx [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242362) xx xxxx xx xxxx xxxxx. Xxxx xxxxxxxx xxxxxxx xxx xxxxxxxxxx xxx xxxx xxxxxxxxxx xxxxxxxx. Xxxx xxx xxxxxxxx xx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829) xxxx.
+**Note**  If you are defining a custom attached property, you generally omit the wrapper. Instead, you write a different style of accessor that a XAML processor can use. See [Custom attached properties](custom-attached-properties.md). 
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+## Registering the property
+
+For your property to be a dependency property, you must register the property into a property store maintained by the Windows Runtime property system. You must give the property a unique identifier to be used as the qualifier for later property-system operations. These operations might be internal operations, or your own code calling property-system APIs. To register the property, you call the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) method.
+
+For Microsoft .NET languages (C# and Microsoft Visual Basic) you call [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) within the body of your class (inside the class, but outside any member definitions). The identifier is also provided by the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) method call, as the return value. The [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call is typically made outside of other member definitions because you use the return value to assign and create a **public** **static** **readonly** property of type [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) as part of your class. This property becomes the identifier for your dependency property. Here are examples of the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call.
+
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
   "Label",
@@ -78,9 +78,9 @@ Public Shared ReadOnly LabelProperty As DependencyProperty =
       New PropertyMetadata(Nothing))
 ```
 
-**Xxxx**  Xxxxxxxxxxx xxx xxxxxxxxxx xxxxxxxx xx x xxxxx xxxx xx xxx xxxxxxx xxxxxxxxxxxxxx, xxx xxx xxx xxxx xxxxxxxx x xxxxxxxxxx xxxxxxxx xx xxx xxxxx xxxxxx xxxxxxxxxxx. Xxxx xxxxxxxx xxx xxxx xxxxx xx xxx xxxx xxxx xxxx xxx xxxx xx xxxx xx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxx.
+**Note**  Registering the dependency property in a class body is the typical implementation, but you can also register a dependency property in the class static constructor. This approach may make sense if you need more than one line of code to initialize the dependency property.
 
-Xxx X++, xxx xxxx xxxxxxx xxx xxx xxx xxxxx xxx xxxxxxxxxxxxxx xxxxxxx xxx xxxxxx xxx xxx xxxx xxxx. Xxx xxxxxxx xxxxx xx xx xxxxxxx xxx xxxxxxxxxx xxxxxx xx **xxxxxx****xxxxxx** xxxxxxxx xx xxx xxxxxx, xxxx x **xxx** xxxxxxxxxxxxxx xxx xx **xxx**. Xxx **xxx** xxxxxxxxxxxxxx xxxxxx xx x xxxxxxx xxxxx, xxxxx xx xx xxxxxxxxxxxxx [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242362) xxxxxxxx. Xxx xxx xxxx xxxxxxx xxx xxxxxxxx xxx xxx **xxx** xxx **xxx** xxxxxxxxxxxxxxx xx xxx xxxxxxx. Xx xxxx xxxx xxx xxxxxx xxxxxxxx xxxx xxxxxxx xxxxxxxxxxxxxx. Xx xxx xxxxxxx xxxxx Xxxxxxx Xxxxxxx xxxxxxxxxxx, xxxxxxxxx xx xxx xxxxxx xxx. Xxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829) xxxx xx xxx xxxx xxxx, xxxxxx x xxxxxx xxxxxxxx xxxx xxxx xxxx xxx xxxx xxx xxx xxxxxxxxxxx xxx xxxxx xxxx. Xxx xxx xxxxxx xxxxx xx **Xxxxxxxx** xx xxxx xxx xxxxxx xxx xxxxxxxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxx xx xxx xxxxxx, xxxxx xxx xxxxxxxxx xxx xx **xxxxxxx** xx xxx xxxx xxxxx xx xxx xxxxxxxxxxxxxx xxxx.
+For C++, you have options for how you split the implementation between the header and the code file. The typical split is to declare the identifier itself as **public** **static** property in the header, with a **get** implementation but no **set**. The **get** implementation refers to a private field, which is an uninitialized [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) instance. You can also declare the wrappers and the **get** and **set** implementations of the wrapper. In this case the header includes some minimal implementation. If the wrapper needs Windows Runtime attribution, attribute in the header too. Put the [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call in the code file, within a helper function that only gets run when the app initializes the first time. Use the return value of **Register** to fill the static but uninitialized identifiers that you declared in the header, which you initially set to **nullptr** at the root scope of the implementation file.
 
 ```cpp
 //.h file
@@ -123,23 +123,23 @@ void ImageWithLabelControl::RegisterDependencyProperties()
 }
 ```
 
-**Xxxx**  Xxx xxx X++ xxxx, xxx xxxxxx xxx xxx xxxx x xxxxxxx xxxxx xxx x xxxxxx xxxx-xxxx xxxxxxxx xxxx xxxxxxxx xxx [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242362) xx xx xxxx xxxxx xxxxxxx xxx xxx xxxx xxxxxxxxxx xxxxxxxx xxx xxxx xxx xxxxxxxx-xxxxxx xxxxxxx XXXx xxxx xxxxxxx xxx xxxxxxxxxx xx xx xxxxxx. Xx xxx xxxx xxx xxxxxxxxxx xxxxxxx, xxxxxx xxx'x xxx xxxxx xxxxxxx XXXx. Xxxxxxxx xx xxxx XXX xxx xxxxxxxxx xxxxxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242359) xx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242361) xx xxxxxx, [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242357), [**XxxXxxxxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242358), [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br244257), xxx [**Xxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208836). Xxx xxx'x xxx x xxxxxx xxxxx xxx xxxx, xxxxxxx Xxxxxxx Xxxxxxx xxxxxxx xxxxx xxx'x xxxxx xxxxxx xxxx xxxxxxx xxxx xxx xxxxxxxxx xxxxx xxxx **XxxxxxxxxxXxxxxxxx**.
+**Note**  For the C++ code, the reason why you have a private field and a public read-only property that surfaces the [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) is so that other callers who use your dependency property can also use property-system utility APIs that require the identifier to be public. If you keep the identifier private, people can't use these utility APIs. Examples of such API and scenarios include [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) or [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) by choice, [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357), [**GetAnimationBaseValue**](https://msdn.microsoft.com/library/windows/apps/br242358), [**SetBinding**](https://msdn.microsoft.com/library/windows/apps/br244257), and [**Setter.Property**](https://msdn.microsoft.com/library/windows/apps/br208836). You can't use a public field for this, because Windows Runtime compile rules don't allow public data members that use reference types like **DependencyProperty**.
 
-## Xxxxxxxxxx xxxxxxxx xxxx xxxxxxxxxxx
+## Dependency property name conventions
 
-Xxxxx xxx xxxxxx xxxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxx; xxxxxx xxxx xx xxx xxx xxxxxxxxxxx xxxxxxxxxxxxx. Xxx xxxxxxxxxx xxxxxxxx xxxxxx xxx x xxxxx xxxx ("Xxxxx" xx xxx xxxxxxxxx xxxxxxx) xxxx xx xxxxx xx xxx xxxxx xxxxxxxxx xx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829). Xxx xxxx xxxx xx xxxxxx xxxxxx xxxx xxxxxxxxxxx xxxx, xxx xxx xxxxxxxxxx xxxxxxxxxxx xxxx xxxxxxx xx xxx xxxxxxxxx xxxxxxx. Xxxxxxxxxx xxxxxxxxxx xxxxxxxxx xxxxxxx xxxx xxxxx xxx xxxxxxxxxx xx xx xxxx xx xxx xxxxxxxxxxx xxxx xxxxxxx; xxxxx xx xxxxxxxxx xxxxxxxxxx xxxxxx xx xxxxxxxxxx xxxxx.
+There are naming conventions for dependency properties; follow them in all but exceptional circumstances. The dependency property itself has a basic name ("Label" in the preceding example) that is given as the first parameter of [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829). The name must be unique within each registering type, and the uniqueness requirement also applies to any inherited members. Dependency properties inherited through base types are considered to be part of the registering type already; names of inherited properties cannot be registered again.
 
-**Xxxxxxx**  Xxxxxxxx xxx xxxx xxx xxxxxxx xxxx xxx xx xxx xxxxxx xxxxxxxxxx xxxx xx xxxxx xx xxxxxxxxxxx xxx xxxx xxxxxxxx xx xxxxxx, xxx xxxxxxx xxxx xx xx xxxx xx xxx xxxx xxxxxxxxxx xxxxxxxx xx XXXX xxx. Xx xx xxx xx XXXX, xxx xxxxxxxx xxxx xxx xxxxxx xxxx xx x xxxxx XXXX xxxx. Xxx xxxx xxxx, xxx [XXXX xxxxxxxx](xaml-overview.md).
+**Caution**  Although the name you provide here can be any string identifier that is valid in programming for your language of choice, you usually want to be able to set your dependency property in XAML too. To be set in XAML, the property name you choose must be a valid XAML name. For more info, see [XAML overview](xaml-overview.md).
 
-Xxxx xxx xxxxxx xxx xxxxxxxxxx xxxxxxxx, xxxxxxx xxx xxxx xx xxx xxxxxxxx xx xxx xxxxxxxxxx xx xxxx xxx xxxxxx "Xxxxxxxx" ("XxxxxXxxxxxxx", xxx xxxxxxx). Xxxx xxxxxxxx xx xxxx xxxxxxxxxx xxx xxx xxxxxxxxxx xxxxxxxx, xxx xx xx xxxx xx xx xxxxx xxx xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242361) xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242359) xxxxx xxx xxxx xx xxxx xxx xxxxxxxx xxxxxxxx. Xx xx xxxx xxxx xx xxx xxxxxxxx xxxxxx xxx xxxxxxxxxxx xx XXXX xxxxxxxxxx.
+When you create the identifier property, combine the name of the property as you registered it with the suffix "Property" ("LabelProperty", for example). This property is your identifier for the dependency property, and it is used as an input for the [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) and [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) calls you make in your own property wrappers. It is also used by the property system and potentially by XAML processors.
 
-## Xxxxxxxxxxxx xxx xxxxxxx
+## Implementing the wrapper
 
-Xxxx xxxxxxxx xxxxxxx xxxxxx xxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242359) xx xxx **xxx** xxxxxxxxxxxxxx, xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242361) xx xxx **xxx** xxxxxxxxxxxxxx.
+Your property wrapper should call [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) in the **get** implementation, and [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) in the **set** implementation.
 
-**Xxxxxxx**  Xx xxx xxx xxxxxxxxxxx xxxxxxxxxxxxx, xxxx xxxxxxx xxxxxxxxxxxxxxx xxxxxx xxxxxxx xxxx xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242359) xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242361) xxxxxxxxxx. Xxxxxxxxx, xxx'xx xxx xxxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxx xx xxx xxx XXXX xxxxxx xxxx xx xx xxx xxx xxxx. Xxx xxxxxxxxxx, xxx XXXX xxxxxx xxxxxxxx xxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxxxxxxxxx; xxxxxxxx xxxxxxxx, xx xxxx xxx xxxxxxxx xx xxxxxxxxxx xxxxxxxxxx.
+**Caution**  In all but exceptional circumstances, your wrapper implementations should perform only the [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) and [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) operations. Otherwise, you'll get different behavior when your property is set via XAML versus when it is set via code. For efficiency, the XAML parser bypasses wrappers when setting dependency properties; whenever possible, it uses the registry of dependency properties.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 public String Label
 {
@@ -172,24 +172,24 @@ public:
   }
 ```
 
-## Xxxxxxxx xxxxxxxx xxx x xxxxxx xxxxxxxxxx xxxxxxxx
+## Property metadata for a custom dependency property
 
-Xxxx xxxxxxxx xxxxxxxx xx xxxxxxxx xx x xxxxxxxxxx xxxxxxxx, xxx xxxx xxxxxxxx xx xxxxxxx xx xxxx xxxxxxxx xxx xxx xxxxxxxx xx xxx xxxxxxxx-xxxxx xxxx xx xxx xxxxxxxxxx. Xx xxxxxxxx xxxxxxxx, xxx xxx xxxxxxx xxx xxxxxxxxx:
+When property metadata is assigned to a dependency property, the same metadata is applied to that property for any instance of the property-owner type or its subclasses. In property metadata, you can specify two behaviors:
 
--   X xxxxxxx xxxxx xxxx xxx xxxxxxxx xxxxxx xxxxxxx xx xxx xxxxx xx xxx xxxxxxxx.
--   X xxxxxx xxxxxxxx xxxxxx xxxx xx xxxxxxxxxxxxx xxxxxxx xxxxxx xxx xxxxxxxx xxxxxx xxxxxxxx x xxxxxxxx xxxxx xx xxxxxxxx.
+-   A default value that the property system assigns to all cases of the property.
+-   A static callback method that is automatically invoked within the property system whenever a property value is detected.
 
-### Xxxxxxx Xxxxxxxx xxxx xxxxxxxx xxxxxxxx
+### Calling Register with property metadata
 
-Xx xxx xxxxxxxx xxxxxxxx xx xxxxxxx [**XxxxxxxxxxXxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829), xx xxxxxx x xxxx xxxxx xxx xxx *xxxxxxxxXxxxxxxx* xxxxxxxxx. Xx xxxxxx x xxxxxxxxxx xxxxxxxx xx xxxxxxx x xxxxxxx xxxxx xx xxx x xxxxxxxx-xxxxxxx xxxxxxxx, xxx xxxx xxxxxx x [**XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208771) xxxxxxxx xxxx xxxxxxxx xxx xx xxxx xx xxxxx xxxxxxxxxxxx.
+In the previous examples of calling [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829), we passed a null value for the *propertyMetadata* parameter. To enable a dependency property to provide a default value or use a property-changed callback, you must define a [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) instance that provides one or both of these capabilities.
 
-Xxxxxxxxx xxx xxxxxxx x [**XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208771) xx xx xxxxxx-xxxxxxx xxxxxxxx, xxxxxx xxx xxxxxxxxxx xxx [**XxxxxxxxxxXxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829).
+Typically you provide a [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) as an inline-created instance, within the parameters for [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829).
 
-**Xxxx**  Xx xxx xxx xxxxxxxx x [**XxxxxxXxxxxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701812) xxxxxxxxxxxxxx, xxx xxxx xxx xxx xxxxxxx xxxxxx [**XxxxxxxxXxxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702099) xxxxxx xxxx xxxxxxx x [**XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208771) xxxxxxxxxxx xx xxxxxx xxx **XxxxxxxxXxxxxxxx** xxxxxxxx.
+**Note**  If you are defining a [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) implementation, you must use the utility method [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702099) rather than calling a [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) constructor to define the **PropertyMetadata** instance.
 
-Xxxx xxxx xxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxx [**XxxxxxxxxxXxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829) xxxxxxxx xx xxxxxxxxxxx x [**XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208771) xxxxxxxx xxxx x [**XxxxxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208770) xxxxx. Xxx xxxxxxxxxxxxxx xx xxx "XxXxxxxXxxxxxx" xxxxxxxx xxxx xx xxxxx xxxxx xx xxxx xxxxxxx.
+This next example modifies the previously shown [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) examples by referencing a [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) instance with a [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) value. The implementation of the "OnLabelChanged" callback will be shown later in this section.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 public static readonly DependencyProperty LabelProperty = DependencyProperty.Register(
   "Label",
@@ -216,29 +216,29 @@ DependencyProperty^ ImageWithLabelControl::_LabelProperty =
     );
 ```
 
-### Xxxxxxx xxxxx
+### Default value
 
-Xxx xxx xxxxxxx x xxxxxxx xxxxx xxx x xxxxxxxxxx xxxxxxxx xxxx xxxx xxx xxxxxxxx xxxxxx xxxxxxx x xxxxxxxxxx xxxxxxx xxxxx xxxx xx xx xxxxx. Xxxx xxxxx xxx xx xxxxxxxxx xxxx xxx xxxxxxxx xxxxxxx xxxxx xxx xxx xxxx xx xxxx xxxxxxxx.
+You can specify a default value for a dependency property such that the property always returns a particular default value when it is unset. This value can be different than the inherent default value for the type of that property.
 
-Xx x xxxxxxx xxxxx xx xxx xxxxxxxxx, xxx xxxxxxx xxxxx xxx x xxxxxxxxxx xxxxxxxx xx xxxx xxx x xxxxxxxxx xxxx, xx xxx xxxxxxx xx xxx xxxx xxx x xxxxx xxxx xx xxxxxxxx xxxxxxxxx (xxx xxxxxxx, Y xxx xx xxxxxxx xx xx xxxxx xxxxxx xxx x xxxxxx). Xxx xxxx xxxxxx xxx xxxxxxxxxxxx x xxxxxxx xxxxx xx xxxx xxxx xxxxx xx xxxxxxxx xxxx xxx xxxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242357) xx xxx xxxxxxxx. Xxxxxxxxxxxx x xxxxxxx xxxxx xx x xxx-xxxxxxxx xxxxx xxxxx xx xxxx xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxxxx xxxxxx xx xxxxxxxxxxxx, xxxxxxxxxxxx xxx xxxxx xxxxx. Xxxxxxx, xxx xxxxxxxxx xxxxx, xxxx xxxx xxxx xxxxxxxxxxxx x xxxxxxx xxxxx xxxx xxx xxxxxx xx xxxxxxxxxxxxx xxxxxxxxx xxxxxxx. Xxx xxxx xxxx, xxx [Xxxx xxxxxxxxx](#best-practices) xxxxx xx xxxx xxxxx
+If a default value is not specified, the default value for a dependency property is null for a reference type, or the default of the type for a value type or language primitive (for example, 0 for an integer or an empty string for a string). The main reason for establishing a default value is that this value is restored when you call [**ClearValue**](https://msdn.microsoft.com/library/windows/apps/br242357) on the property. Establishing a default value on a per-property basis might be more convenient than establishing default values in constructors, particularly for value types. However, for reference types, make sure that establishing a default value does not create an unintentional singleton pattern. For more info, see [Best practices](#best-practices) later in this topic
 
-**Xxxx**  Xx xxx xxxxxxxx xxxx x xxxxxxx xxxxx xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242371). Xx xxx xx, xx xxxx xxxxxxx xxxxxxxx xxxxxxxxx xxx xxxx xxxx xxxxxxxxxx xxxxxxxxxxxx xxxxxx xxx xxxxxxxx xxxxxx.
+**Note**  Do not register with a default value of [**UnsetValue**](https://msdn.microsoft.com/library/windows/apps/br242371). If you do, it will confuse property consumers and will have unintended consequences within the property system.
 
-### XxxxxxXxxxxxxXxxxxXxxxxxxx
+### CreateDefaultValueCallback
 
-Xx xxxx xxxxxxxxx, xxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxx xxxx xxx xxxx xx xxxx xxxx xxx XX xxxxxx. Xxxx xxxxx xx xxx xxxx xx xxx xxx xxxxxxxx x xxxx xxxxxx xxxx xx xxxx xx xxxxxxxx xxxx, xx x xxxxxxx xxxx xxx xxx xx xxxx xxxx xxx xxx. Xxx xxx xxxxxx xxx xxxxxxxx xx xxx xxxxxx xxxxxxx xxxxxxxxx XX xxxxxxx xx xxxxxxxxx x [**XxxxxxXxxxxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701812) xxxxxxxxxxxxxx xxxxxx xxxx x xxxxxxx xxxxx xxxxxxxx, xxxxx xx xxxx xx xxx xxxxxx xxxx xxxxxxxxxx xxx xxxxxxxx. Xxxxxxxxx x [**XxxxxxXxxxxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701812) xxxxxxx x xxxxxxx xxx xxxxxxx xxxxxx. Xxx xxxxx xxxxxxxx xx **XxxxxxXxxxxxxXxxxxXxxxxxxx** xx xxxxxx xxxxxxxxxx xxxx xxx xxxxxxx XX **XxxxxxXxxxxxxXxxxxXxxxxxxx** xxxxxx xxxx xx xxxxx xxx xxxxxx.
+In some scenarios, you are defining dependency properties for objects that are used on more than one UI thread. This might be the case if you are defining a data object that is used by multiple apps, or a control that you use in more than one app. You can enable the exchange of the object between different UI threads by providing a [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) implementation rather than a default value instance, which is tied to the thread that registered the property. Basically a [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) defines a factory for default values. The value returned by **CreateDefaultValueCallback** is always associated with the current UI **CreateDefaultValueCallback** thread that is using the object.
 
-Xx xxxxxx xxxxxxxx xxxx xxxxxxxxx x [**XxxxxxXxxxxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701812), xxx xxxx xxxx [**XxxxxxxxXxxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702115) xx xxxxxx x xxxxxxxx xxxxxxxx; xxx [**XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208771) xxxxxxxxxxxx xx xxx xxxx x xxxxxxxxx xxxx xxxxxxxx x **XxxxxxXxxxxxxXxxxxXxxxxxxx** xxxxxxxxx.
+To define metadata that specifies a [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812), you must call [**PropertyMetadata.Create**](https://msdn.microsoft.com/library/windows/apps/hh702115) to return a metadata instance; the [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771) constructors do not have a signature that includes a **CreateDefaultValueCallback** parameter.
 
-Xxx xxxxxxx xxxxxxxxxxxxxx xxxxxxx xxx x [**XxxxxxXxxxxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701812) xx xx xxxxxx x xxx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242356) xxxxx, xxx xxx xxxxxxxx xxxxxxxx xxxxx xx xxxx xxxxxxxx xx xxx **XxxxxxxxxxXxxxxx** xx xxx xxxxxxxx xxxxxxx, xxx xxxx xxxxxx xxx xxx xxxxx xx xx **Xxxxxx** xxxxxxxxx xxx xxx xxxxxx xxxxx xx xxx **XxxxxxXxxxxxxXxxxxXxxxxxxx** xxxxxx.
+The typical implementation pattern for a [**CreateDefaultValueCallback**](https://msdn.microsoft.com/library/windows/apps/hh701812) is to create a new [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) class, set the specific property value of each property of the **DependencyObject** to the intended default, and then return the new class as an **Object** reference via the return value of the **CreateDefaultValueCallback** method.
 
-### Xxxxxxxx-xxxxxxx xxxxxxxx xxxxxx
+### Property-changed callback method
 
-Xxx xxx xxxxxx x xxxxxxxx-xxxxxxx xxxxxxxx xxxxxx xx xxxxxx xxxx xxxxxxxx'x xxxxxxxxxxxx xxxx xxxxx xxxxxxxxxx xxxxxxxxxx, xx xx xxx xx xxxxxxxx xxxxxxxx xx xxxxx xx xxxx xxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxx. Xx xxxx xxxxxxxx xx xxxxxxx, xxx xxxxxxxx xxxxxx xxx xxxxxxxxxx xxxx xxxxx xx xx xxxxxxxxx xxxxxxxx xxxxx xxxxxx. Xxxxxxx xxx xxxxxxxx xxxxxx xx xxxxxx, xxx *x* xxxxxxxxx xx xxx xxxxxxxx xx xxxxxxxxx xxxxxxx xx xxxxx xxx xxxxx xxxxxxxx xx xxx xxxxx xxx xxxxxxxx x xxxxxx. X xxxxxxx xxxxxxxxxxxxxx xxxx xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242364) xxxxxxxx xx xxx xxxxx xxxx xxx xxxxxxxxx xxxx xxxxx xx xxxx xxxxxx, xxxxxxx xx xxxxxxxxxx xxxx xxxxx xxxxxx xx xxx xxxxxx xxxxxx xx *x*. Xxxxxxxxxx xxxxxxxxx xx x xxxxxxxx xxxxxx xxx xx xxxxxx xxx xxxxx xxxxxxxx xx **XxxXxxxx**, xx xxxxxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242365), xx xx xxx xxx xxxxx xx x xxxxxxxxxxxx xxxxxxxxxx xxxxxxx xx xxx **XxxXxxxx**.
+You can define a property-changed callback method to define your property's interactions with other dependency properties, or to set an internal property or state of your object whenever the property changes. If your callback is invoked, the property system has determined that there is an effective property value change. Because the callback method is static, the *d* parameter of the callback is important because it tells you which instance of the class has reported a change. A typical implementation uses the [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364) property of the event data and processes that value in some manner, usually by performing some other change on the object passed as *d*. Additional responses to a property change are to reject the value reported by **NewValue**, to restore [**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365), or to set the value to a programmatic constraint applied to the **NewValue**.
 
-Xxxx xxxx xxxxxxx xxxxx x [**XxxxxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208770) xxxxxxxxxxxxxx. Xx xxxxxxxxxx xxx xxxxxx xxx xxx xxxxxxxxxx xx xxx xxxxxxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829) xxxxxxxx, xx xxxx xx xxx xxxxxxxxxxxx xxxxxxxxx xxx xxx [**XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208771). Xxx xxxxxxxx xxxxxxxxx xx xxxx xxxxxxxx xx xxxx xxx xxxxx xxxx xxx x xxxxxxxxxx xxxx-xxxx xxxxxxxx xxxxx "XxxXxxxxXxxxx" (xxxxxxxxxxxxxx xxx xxxxx). Xxxxxxxx xxx "Xxxxx" xxxxxxxx xxxx xxxxxxxxxxx, xxxx xxxxxxxx xxxxxx xx xxxxxxx, xxx xxx xxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxx xxxxx xx xxxxxx xx xxxxxxxxxxxxxxx xxxx xxxxxxx xx xxx xxxxxxxxxx xxxxxxxx.
+This next example shows a [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) implementation. It implements the method you saw referenced in the previous [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) examples, as part of the construction arguments for the [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771). The scenario addressed by this callback is that the class also has a calculated read-only property named "HasLabelValue" (implementation not shown). Whenever the "Label" property gets reevaluated, this callback method is invoked, and the callback enables the dependent calculated value to remain in synchronization with changes to the dependency property.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 private static void OnLabelChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
     ImageWithLabelControl iwlc = d as ImageWithLabelControl; //null checks omitted
@@ -273,11 +273,11 @@ static void OnLabelChanged(DependencyObject^ d, DependencyPropertyChangedEventAr
 }
 ```
 
-### Xxxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxxxxxx
+### Property changed behavior for structures and enumerations
 
-Xx xxx xxxx xx x [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242362) xx xx xxxxxxxxxxx xx x xxxxxxxxx, xxx xxxxxxxx xxx xx xxxxxxx xxxx xx xxx xxxxxxxx xxxxxx xx xxx xxxxxxxxx xx xxx xxxxxxxxxxx xxxxx xxx xxx xxxxxx. Xxxx xx xxxxxxxxx xxxx x xxxxxx xxxxxxxxx xxxx xx x xxxxxx xxxxx xx xxxx xx xxxxxxx xx xxx xxxxx xxxxxxx. Xxxx xx x xxxx xxxxxx xx xxx xxx xxxxx xxxxxxxxxx xx xxxxx xxxxxx xxxx xx xxxx xxxxxxxxxx. Xx xxx xxxx x [**XxxxxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208770) xxxxxx xxx x xxxxxxxx xxxxx xxxx xxxxx xx xx xxxxxxxxxxx xx xxxxxxxxx, xxx xxxx xx xxxxxxx xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242365) xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242364) xx xxxxxxx xxx xxxxxx xxxxxxxx xxx xxxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxx xxxx xxx xxxxxxxxx xx xxx xxx-xxxx xxxxxx. Xx, xx xx xxxx xxxxxxxx xx xxxxxxxxx (xxxxx xxxxx xx xxx xxxx xxx x xxxxxx xxxxxxxxx), xxx xxx xxxx xx xxxxxxx xxx xxxxxxxxxx xxxxxx. Xxx xxxxx xxxxxxxxx xxxxxx xx xx xxxxxxx xx xxx xxxxxx xx xxxx xxx xxxxxx xxxx xxx xxxxxxx.
+If the type of a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/br242362) is an enumeration or a structure, the callback may be invoked even if the internal values of the structure or the enumeration value did not change. This is different from a system primitive such as a string where it only is invoked if the value changed. This is a side effect of box and unbox operations on these values that is done internally. If you have a [**PropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/br208770) method for a property where your value is an enumeration or structure, you need to compare the [**OldValue**](https://msdn.microsoft.com/library/windows/apps/br242365) and [**NewValue**](https://msdn.microsoft.com/library/windows/apps/br242364) by casting the values yourself and using the overloaded comparison operators that are available to the now-cast values. Or, if no such operator is available (which might be the case for a custom structure), you may need to compare the individual values. You would typically choose to do nothing if the result is that the values have not changed.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 private static void OnVisibilityValueChanged(DependencyObject d, DependencyPropertyChangedEventArgs e) {
     if ((Visibility)e.NewValue != (Visibility)e.OldValue)
@@ -306,65 +306,69 @@ static void OnVisibilityValueChanged(DependencyObject^ d, DependencyPropertyChan
 }
 ```
 
-## Xxxx xxxxxxxxx
+## Best practices
 
-Xxxx xxx xxxxxxxxx xxxxxxxxxxxxxx xx xxxx xx xxxx xxxxxxxxx xxxx xx xxx xxxxxx xxxx xxxxxx xxxxxxxxxx xxxxxxxx.
+Keep the following considerations in mind as best practices when as you define your custom dependency property.
 
-### XxxxxxxxxxXxxxxx xxx xxxxxxxxx
+### DependencyObject and threading
 
-Xxx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242356) xxxxxxxxx xxxx xx xxxxxxx xx xxx XX xxxxxx xxxxx xx xxxxxxxxxx xxxx xxx xxxxxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209041) xxxx xx xxxxx xx x Xxxxxxx Xxxxxxx xxx. Xxxxxxxx xxxx **XxxxxxxxxxXxxxxx** xxxx xx xxxxxxx xx xxx xxxx XX xxxxxx, xxx xxxxxxx xxx xx xxxxxxxx xxxxx x xxxxxxxxxx xxxxxxxxx xxxx xxxxx xxxxxxx, xx xxxxxxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br230616).
+All [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) instances must be created on the UI thread which is associated with the current [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) that is shown by a Windows Runtime app. Although each **DependencyObject** must be created on the main UI thread, the objects can be accessed using a dispatcher reference from other threads, by calling [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/br230616).
 
-Xxx xxxxxxxxx xxxxxxx xx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242356) xxx xxxxxxxx xxxxxxx xx xxxxxxxxx xxxxx xxxx xxxx xxxx xxxx xxxx xx xxx XX xxxxxx xxx xxxxxx xx xxxx xxxx xxx xxxxx xx x xxxxxxxxxx xxxxxxxx. Xxxxxxxxx xxxxxx xxx xxxxxxx xx xxxxxxx xx xxxxxxx XX xxxx xxxx xxxxx xxxxxxx xxx xx **xxxxx** xxxxxxxx xxx xxxxxxxxxx xxxxxx xxxxxxx. Xxx xxxxxxxxx xxxx xxx xxxx **XxxxxxxxxxXxxxxx**-xxxxxxx xxxxxxxxx xxxxxx xx xxx xxx xxxxxxxx xxxx xxx **XxxxxxxxxxXxxxxx** xxxxx xxx xxx xxxxxxx xx xxx xxxx xxx xxxx xxxxxxx xx xxxxx xxxxxxxxx xxxxx x **XxxxxxxxxxXxxxxx** xxx'x xxxxxxxxxxx xxxxxxxxxxx.
+The threading aspects of [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) are relevant because it generally means that only code that runs on the UI thread can change or even read the value of a dependency property. Threading issues can usually be avoided in typical UI code that makes correct use of **async** patterns and background worker threads. You typically only run into **DependencyObject**-related threading issues if you are defining your own **DependencyObject** types and you attempt to use them for data sources or other scenarios where a **DependencyObject** isn't necessarily appropriate.
 
-### Xxxxxxxx xxxxxxxxxxxxx xxxxxxxxxx
+### Avoiding unintentional singletons
 
-Xx xxxxxxxxxxxxx xxxxxxxxx xxx xxxxxx xx xxx xxx xxxxxxxxx x xxxxxxxxxx xxxxxxxx xxxx xxxxx x xxxxxxxxx xxxx, xxx xxx xxxx x xxxxxxxxxxx xxx xxxx xxxxxxxxx xxxx xx xxxx xx xxx xxxx xxxx xxxxxxxxxxx xxxx [**XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208771). Xxxx xxxxxxx xx xxxx xxx xxxxxx xx xxx xxxxxxxxxx xxxxxxxx xxxxx xxxx xxx xxxxxxxx xx **XxxxxxxxXxxxxxxx** xxx xxxx xxx xx xxxxx xxx xxxxxx xxxxxxxxx xxxx xxx xxxxxxxxxxx. Xxx xxxxxxxxxxxxx xx xxxx xxxxx xxxx xxxx xxx xxx xxxxxxx xxxx xxxxxxxxxx xxxxxxxx xxxx xxxxxxxxx xx xxxxx xxxxxxx xx xxxx xxx xxxxxxxx xxx'x xxxxxx.
+An unintentional singleton can happen if you are declaring a dependency property that takes a reference type, and you call a constructor for that reference type as part of the code that establishes your [**PropertyMetadata**](https://msdn.microsoft.com/library/windows/apps/br208771). What happens is that all usages of the dependency property share just one instance of **PropertyMetadata** and thus try to share the single reference type you constructed. Any subproperties of that value type that you set through your dependency property then propagate to other objects in ways you probably don't intend.
 
-Xxx xxx xxx xxxxx xxxxxxxxxxxx xx xxx xxxxxxx xxxxxx xxx x xxxxxxxxx-xxxx xxxxxxxxxx xxxxxxxx xx xxx xxxx x xxx-xxxx xxxxx, xxx xx xxxxx xxxx xxxx xxxxx xx xxxxxxxxxx x xxxxx xxxxx xxx xxxxxxxx xx [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](dependency-properties-overview.md). Xx xxxxx xx xxxx xxxxxxxxxxx xx xxx x xxxxxxxx xxx xxxx xxxxxxx, xx xxxx xxxxx xxxxxxxx xxxxxxxxx. Xxxxxxx xxx xx xxxxx x xxxxxxxxx xxxxxxx, xxx xxxxx xxxxxxx x xxxxxx xxxxxxx, xx xx xxxxxx x xxxxxx xxxxxxxx xx xxx xxxxxxxxx xxxx xxxx xxxxxxxx x xxxxxxxx xxxxxxx xxx xxx xxxxxx xx xxxx xxxxx.
+You can use class constructors to set initial values for a reference-type dependency property if you want a non-null value, but be aware that this would be considered a local value for purposes of [Dependency properties overview](dependency-properties-overview.md). It might be more appropriate to use a template for this purpose, if your class supports templates. Another way to avoid a singleton pattern, but still provide a useful default, is to expose a static property on the reference type that provides a suitable default for the values of that class.
 
-### Xxxxxxxxxx-xxxx xxxxxxxxxx xxxxxxxxxx
+### Collection-type dependency properties
 
-Xxxxxxxxxx-xxxx xxxxxxxxxx xxxxxxxxxx xxxx xxxx xxxxxxxxxx xxxxxxxxxxxxxx xxxxxx xx xxxxxxxx.
+Collection-type dependency properties have some additional implementation issues to consider.
 
-Xxxxxxxxxx-xxxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxx xxxx xx xxx Xxxxxxx Xxxxxxx XXX. Xx xxxx xxxxx, xxx xxx xxx xxxxxxxxxxx xxxxx xxx xxxxx xxx x [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242356) xxxxxxxx, xxx xxx xxxxxxxxxx xxxxxxxx xxxxxx xx xxxxxxxxxxx xx x xxxxxxxxxxxx XXX xx X++ xxxxxxxx. Xxxx xx xxxxxxx xxxxxxxxxxx xx xxx xxxxxxxxxxx xxxx xxxx xxxxxxx xxxxxxxxx xxxxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxxx. Xxx xxxxxxx:
+Collection-type dependency properties are relatively rare in the Windows Runtime API. In most cases, you can use collections where the items are a [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356) subclass, but the collection property itself is implemented as a conventional CLR or C++ property. This is because collections do not necessarily suit some typical scenarios where dependency properties are involved. For example:
 
--   Xxx xx xxx xxxxxxxxx xxxxxxx x xxxxxxxxxx.
--   Xxx xx xxx xxxxxxxxx xxxxxxxxxxx xxx xxxxx xx x xxxxxxxxxx xxxx xxxxxx xx x xxxxxxxx.
--   Xxxxxxxx xxxxxxx xx xxxxxxxxxxx xx x xxxxx xxxxxxxx, x xxxxxxxxxx xxxx xxx xxxx xx xx x xxxxxxxxxx xxxxxxxx xx xx x xxxxxxx xxxxxx. Xxx xxxxxxx xxxxxxx, xx xx xxxx xxxxxxx xx xxx xxxxxxxxxx xx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242803) xx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242348) xx xxxxxxx xxxxxxxxxx xxxxx, xx xx xxx xxxx-xxxxx xxxxxxxx. Xxx xxxx xxxx xxxxx xxxxxxx xx xxx xxxx xxxxxxxxxxx, xxx [Xxxx xxxxxxx xx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt210946).
--   Xxxxxxxxxxxxx xxx xxxxxxxxxx xxxxxxx xxx xxxxxx xxxxxxxxx xxxxxxx xxxxxxxxxx xxxx xx **XXxxxxxXxxxxxxxXxxxxxx** xx **XXxxxxxXxxxxxxxxxXxxxxxx**, xx xx xxxxxxxx xxx xxxxxxxxxx xxxx xxxx [**XxxxxxxxxxXxxxxxxxxx**](T:System.Collections.ObjectModel.ObservableCollection%601).
+-   You do not typically animate a collection.
+-   You do not typically prepopulate the items in a collection with styles or a template.
+-   Although binding to collections is a major scenario, a collection does not need to be a dependency property to be a binding source. For binding targets, it is more typical to use subclasses of [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/br242803) or [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/br242348) to support collection items, or to use view-model patterns. For more info about binding to and from collections, see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
+-   Notifications for collection changes are better addressed through interfaces such as **INotifyPropertyChanged** or **INotifyCollectionChanged**, or by deriving the collection type from [**ObservableCollection**](T:System.Collections.ObjectModel.ObservableCollection%601).
 
-Xxxxxxxxxxxx, xxxxxxxxx xxx xxxxxxxxxx-xxxx xxxxxxxxxx xxxxxxxxxx xx xxxxx. Xxx xxxx xxxxx xxxxxxxx xxxxxxx xxxx xxxxxxxx xx xxx xx xxxxxxxxx x xxxxxxxxxx-xxxx xxxxxxxxxx xxxxxxxx.
+Nevertheless, scenarios for collection-type dependency properties do exist. The next three sections provide some guidance on how to implement a collection-type dependency property.
 
-### Xxxxxxxxxxxx xxx xxxxxxxxxx
+### Initializing the collection
 
-Xxxx xxx xxxxxx x xxxxxxxxxx xxxxxxxx, xxx xxx xxxxxxxxx x xxxxxxx xxxxx xx xxxxx xx xxxxxxxxxx xxxxxxxx xxxxxxxx. Xxx xx xxxxxxx xx xxx xxx x xxxxxxxxx xxxxxx xxxxxxxxxx xx xxx xxxxxxx xxxxx. Xxxxxxx, xxx xxxx xxxxxxxxxxxx xxx xxx xxxxxxxxxx xxxxx xx x xxxxxx (xxxxxxxx) xxxxxxxxxx xx xxxx xx xxxxx-xxxxxxxxxxx xxxxx xxx xxx xxxxx xxxxx xx xxx xxxxxxxxxx xxxxxxxx.
+When you create a dependency property, you can establish a default value by means of dependency property metadata. But be careful to not use a singleton static collection as the default value. Instead, you must deliberately set the collection value to a unique (instance) collection as part of class-constructor logic for the owner class of the collection property.
 
-### Xxxxxx xxxxxxxxxxxxx
+### Change notifications
 
-Xxxxxxxx xxx xxxxxxxxxx xx x xxxxxxxxxx xxxxxxxx xxxx xxx xxxxxxxxxxxxx xxxxxxx xxxxxx xxxxxxxxxxxx xxx xxx xxxxx xx xxx xxxxxxxxxx xx xxxxxx xx xxx xxxxxxxx xxxxxx xxxxxxxx xxx "XxxxxxxxXxxxxxx" xxxxxxxx xxxxxx. Xx xxx xxxx xxxxxxxxxxxxx xxx xxxxxxxxxxx xx xxxxxxxxxx xxxxx—xxx xxxxxxx, xxx x xxxx-xxxxxxx xxxxxxxx— xxxxxxxxx xxx **XXxxxxxXxxxxxxxXxxxxxx** xx **XXxxxxxXxxxxxxxxxXxxxxxx** xxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxx xxxxxxx xx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt210946).
+Defining the collection as a dependency property does not automatically provide change notification for the items in the collection by virtue of the property system invoking the "PropertyChanged" callback method. If you want notifications for collections or collection items—for example, for a data-binding scenario— implement the **INotifyPropertyChanged** or **INotifyCollectionChanged** interface. For more info, see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946).
 
-### Xxxxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxxxxxxxx
+### Dependency property security considerations
 
-Xxxxxxx xxxxxxxxxx xxxxxxxxxx xx xxxxxx xxxxxxxxxx. Xxxxxxx xxxxxxxxxx xxxxxxxx xxxxxxxxxxx xx xxxxxx xxxxxx xxxx-xxxx xxxxxxx. Xxxx xx xxx xxxxxxx xx xxxxxxx xxxxx xxxxxx xxxxxx xxxxxxxxx xx x xxxxxxxx (xxxx xx **xxxxxxxxx**), x xxxxxxxxxx xxxxxxxx xxx xxxxxx xx xxxxxxxx xxxxxxx xxx xxxxxxxxxx xx xxxxxxxxxxx xxxx xxx xxxxxxxx-xxxxxx XXXx. Xxxxxxxxx xxx xxxxxxxxxx xxxxxxxx xxxxxxxxxx xx xxxxxxxx xx xxxxxxx xxxx xxx xxxx, xxxxxxx xxxx xxx xxxxxxxx xxxxxx xxxxxx xxxxxxx xxxxxxxx.
+Declare dependency properties as public properties. Declare dependency property identifiers as public static read-only members. Even if you attempt to declare other access levels permitted by a language (such as **protected**), a dependency property can always be accessed through the identifier in combination with the property-system APIs. Declaring the dependency property identifier as internal or private will not work, because then the property system cannot operate properly.
 
-Xxxxxxx xxxxxxxxxx xxx xxxxxx xxxx xxx xxxxxxxxxxx, Xxxxxxxx xxxxxxxxxx xxxxxxx xx xxx xxxxxxxx xxx xx xxxxxxxx xx xxxxxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242359) xx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242361) xxxxxxx. Xx xxxx xxxxxxx xxxxxxxxxx xxxxxx; xxxxxxxxx xxx xxxx xxxx xxxx xxxxxxxx xxxxxx xxx xxxxxxxxxx xxxxxxx xx xxx xxxxxxx xxxxxxxxx xxx xxxx xxxxxxxx xxxxxxx.
+Wrapper properties are really just for convenience, Security mechanisms applied to the wrappers can be bypassed by calling [**GetValue**](https://msdn.microsoft.com/library/windows/apps/br242359) or [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361) instead. So keep wrapper properties public; otherwise you just make your property harder for legitimate callers to use without providing any real security benefit.
 
-Xxx Xxxxxxx Xxxxxxx xxxx xxx xxxxxxx x xxx xx xxxxxxxx x xxxxxx xxxxxxxxxx xxxxxxxx xx xxxx-xxxx.
+The Windows Runtime does not provide a way to register a custom dependency property as read-only.
 
-### Xxxxxxxxxx xxxxxxxxxx xxx xxxxx xxxxxxxxxxxx
+### Dependency properties and class constructors
 
-Xxxxx xx x xxxxxxx xxxxxxxxx xxxx xxxxx xxxxxxxxxxxx xxxxxx xxx xxxx xxxxxxx xxxxxxx. Xxxx xx xxxxxxx xxxxxxxxxxxx xxx xx xxxxxx xx xxxxxxxxxx xxxx xxxxxxxxxxxxxx xx x xxxxxxx xxxxx xxxxxxxxxxx, xxx xxxxxxxx xxx xxxxxxx xxxxxx xxxxxxx xxx xxxxxxxxxxx xxxxx xxxxx xxxx xxx xxxxxx xxxxxxxx xxxxx xxxxxxxxxxx xx xxx xxx xxxxxxxxxx xxxxxxxxxxx. Xxxx xxx xxxxxx xxxx xxx xxxxx xxxx xxxxxxx xxxxxxx xxxx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242356), xxxxxxxx xxxx xxx xxxxxxxx xxxxxx xxxxxx xxxxx xxx xxxxxxx xxxxxxx xxxxxxx xxxxxxxxxx xx xxxx xx xxx xxxxxxxx. Xx xxxxx xxxxxxxxx xxxxxxxx xxxx xxx-xxxx xxxxxxxxxxxxxx, xxx'x xxx xxxxxxxxxx xxxxxxxx xxxxxx xxxxxx xxxxxxxxxxxx xx xxxxxxx.
+There is a general principle that class constructors should not call virtual methods. This is because constructors can be called to accomplish base initialization of a derived class constructor, and entering the virtual method through the constructor might occur when the object instance being constructed is not yet completely initialized. When you derive from any class that already derives from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356), remember that the property system itself calls and exposes virtual methods internally as part of its services. To avoid potential problems with run-time initialization, don't set dependency property values within constructors of classes.
 
-### Xxxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxx xxx X++/XX xxxx
+### Registering the dependency properties for C++/CX apps
 
-Xxx xxxxxxxxxxxxxx xxx xxxxxxxxxxx x xxxxxxxx xx X++/XX xx xxxxxxxx xxxx X#X#, xxxx xxxxxxx xx xxx xxxxxxxxxx xxxx xxxxxx xxx xxxxxxxxxxxxxx xxxx xxx xxxx xxxxxxx xxxxxxxxxxxxxx xx xxx xxxx xxxxx xx xxx xxxxxxxxxxxxxx xxxx xx x xxx xxxxxxxx. (Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX) xxxx xxxxxx xxxxxxxxxxx xxxx xxxx xxx xxxx xxxxx xxxxxxxx xxxx **XxxXxxx**, xxxxxxx X# xxxxxxxxx xxxxxx xxx xxxxxx xxxxxxxxxxxx xx xxxxxxx xxx xxxx xxxxx **XxxXxxx** xxxx xxxx xxxxxx.). Xxx xxxx xxxxxxxx xxxx xx xx xxxxxxx x xxxxxx xxxxxxxx xxxx xxxx xxx xxxx xxxxxxxxxx xxxxxxxx xxxxxxxxxxxx xxx x xxxxx, xxx xxxxxxxx xxx xxxxx. Xxxx xxx xxxx xxxxxx xxxxx xxxx xxx xxxxxxxx, xxx'xx xxxx xx xxxxxxxxx xxx xxxxxx xxxxxxxxxxxx xxxxxxxx xxxx'x xxxxxxx xx xxxx xxxxxx xxxxx xxx xxxx xx xxx. Xxxx xxxx xxxxxx xxxxxxxxxxxx xxxxxxxx xxxx xx xxxx xx xxx [**Xxxxxxxxxxx xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242325) (`App::App()`), xxxxx xx `InitializeComponent`. Xxxx xxxxxxxxxxx xxxx xxxx xxxx xxx xxx xx xxxxxx xxxxxxxxxx xxx xxx xxxxx xxxx, xx xxx'x xxx xxxxx xx x xxxxxxxxx xxx xxxxxxx, xxx xxxxxxx. Xxxx, xx xxxx xx xxx xxxxxxxx X++ xxxxxxxxxxxx xxxxxxx, xxx **xxxxxxx** xxxxx xxxxxx xxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829) xxxx xx xxxxxxxxx: xx'x xxxxxxxxx xxxx xx xxxxxx xx xxx xxxxxxxx xxx xxxxxxxx xxx xxxxxxxx xxxxx. X xxxxxx xxxxxxxxxxxx xxxx xxxxx xxxxxxxx xxxxx xxxx xxx xxxxxxx xxxx x xxxxx xxxxxxx xxx xxxxxxxx xxxx xxxxx xx x xxxxxxxxx. Xxx xxx xxx xxxx xxxxxxxxxxxxxx xxxxxxx xx xxx [XXXX xxxx xxx xxxxxx xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=238581) xx xxx xxxx xx xxx xxxx xxx xxx X++/XX xxxxxxx xx xxx xxxxxx.
+The implementation for registering a property in C++/CX is trickier than C#C#, both because of the separation into header and implementation file and also because initialization at the root scope of the implementation file is a bad practice. (Visual C++ component extensions (C++/CX) puts static initializer code from the root scope directly into **DllMain**, whereas C# compilers assign the static initializers to classes and thus avoid **DllMain** load lock issues.). The best practice here is to declare a helper function that does all your dependency property registration for a class, one function per class. Then for each custom class your app consumes, you'll have to reference the helper registration function that's exposed by each custom class you want to use. Call each helper registration function once as part of the [**Application constructor**](https://msdn.microsoft.com/library/windows/apps/br242325) (`App::App()`), prior to `InitializeComponent`. That constructor only runs when the app is really referenced for the first time, it won't run again if a suspended app resumes, for example. Also, as seen in the previous C++ registration example, the **nullptr** check around each [**Register**](https://msdn.microsoft.com/library/windows/apps/hh701829) call is important: it's insurance that no caller of the function can register the property twice. A second registration call would probably crash your app without such a check because the property name would be a duplicate. You can see this implementation pattern in the [XAML user and custom controls sample](http://go.microsoft.com/fwlink/p/?linkid=238581) if you look at the code for the C++/CX version of the sample.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242356)
-* [**XxxxxxxxxxXxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701829)
-* [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](dependency-properties-overview.md)
-* [XXXX xxxx xxx xxxxxx xxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=238581)
+* [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/br242356)
+* [**DependencyProperty.Register**](https://msdn.microsoft.com/library/windows/apps/hh701829)
+* [Dependency properties overview](dependency-properties-overview.md)
+* [XAML user and custom controls sample](http://go.microsoft.com/fwlink/p/?linkid=238581)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,38 +1,38 @@
 ---
-xx.xxxxxxx: XYYYYYXY-YYYX-YYXY-XXYY-XXYXXYYXYXYY
-xxxxx: Xxx xxx xxxxxxxxxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxx xxx xxxxxxxxxxxxx xx xxxxxxx xx xxxx xxxxxxxx.
+ms.assetid: F90686F5-641A-42D9-BC44-EC6CA11B8A42
+title: Use the accelerometer
+description: Learn how to use the accelerometer to respond to user movement.
 ---
-# Xxx xxx xxxxxxxxxxxxx
+# Use the accelerometer
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Xxxxxxxxx XXXx **
+** Important APIs **
 
--   [**Xxxxxxx.Xxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Xxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225687)
+-   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
+-   [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687)
 
-\[Xxxx xxxxxxxxxxx xxxxxxx xx xxx-xxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxx xx'x xxxxxxxxxxxx xxxxxxxx. Xxxxxxxxx xxxxx xx xxxxxxxxxx, xxxxxxx xx xxxxxxx, xxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxx.\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-Xxxxx xxx xx xxx xxx xxxxxxxxxxxxx xx xxxxxxx xx xxxx xxxxxxxx.
+Learn how to use the accelerometer to respond to user movement.
 
-X xxxxxx xxxx xxx xxxxxx xx x xxxxxx xxxxxx, xxx xxxxxxxxxxxxx, xx xx xxxxx xxxxxx. Xxxxx xxxx xxxxxxxxx xxx xxxx xxx xx xxx xxxx xxx xxxxx; xxx xxxx xxx xxxx xxx xxx xxxxx xxxxx xx xxxxxxx xxxxx xxxxxx.
+A simple game app relies on a single sensor, the accelerometer, as an input device. These apps typically use only one or two axes for input; but they may also use the shake event as another input source.
 
-## Xxxxxxxxxxxxx
+## Prerequisites
 
-Xxx xxxxxx xx xxxxxxxx xxxx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX), Xxxxxxxxx Xxxxxx X#, xxx xxxxxx.
+You should be familiar with Extensible Application Markup Language (XAML), Microsoft Visual C#, and events.
 
-Xxx xxxxxx xx xxxxxxxx xxxx xxx'xx xxxxx xxxx xxxxxxx xx xxxxxxxxxxxxx.
+The device or emulator that you're using must support an accelerometer.
 
-## Xxxxxx x xxxxxx xxxxxxxxxxxxx xxx
+## Create a simple accelerometer app
 
-Xxxx xxxxxxx xx xxxxxxx xxxx xxx xxxxxxxxxxx. Xxx xxxxx xxxxxxxxxx xxxx xxxx xxx xxxxxxx xxx xxxxx xxxxxxxxx xx xxxxxx x xxxxxx xxxxxxxxxxxxx xxxxxxxxxxx xxxx xxxxxxx. Xxx xxxxxxxxx xxxxxxxxxx xxxxxxxx xxx xxx xxx xxxx xxxx xxxxxxx.
+This section is divided into two subsections. The first subsection will take you through the steps necessary to create a simple accelerometer application from scratch. The following subsection explains the app you have just created.
 
-### Xxxxxxxxxxxx
+### Instructions
 
--   Xxxxxx x xxx xxxxxxx, xxxxxxxx x **Xxxxx Xxx (Xxxxxxxxx Xxxxxxx)** xxxx xxx **Xxxxxx X#** xxxxxxx xxxxxxxxx.
+-   Create a new project, choosing a **Blank App (Universal Windows)** from the **Visual C#** project templates.
 
--   Xxxx xxxx xxxxxxx'x XxxxXxxx.xxxx.xx xxxx xxx xxxxxxx xxx xxxxxxxx xxxx xxxx xxx xxxxxxxxx.
+-   Open your project's MainPage.xaml.cs file and replace the existing code with the following.
 
 ```csharp
     using System;
@@ -97,9 +97,9 @@ Xxxx xxxxxxx xx xxxxxxx xxxx xxx xxxxxxxxxxx. Xxx xxxxx xxxxxxxxxx xxxx xxxx xxx
     }
 ```
 
-Xxx'xx xxxx xx xxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx xxxx xxx xxxx xxxx xxxxxxx. Xxx xxxxxxx, xx xxx xxxxxxx x xxxxxxx xxxxx **XxxxxxxxxxxxxXX**, xxx'x xxxxxxx `namespace App1` xxxx `namespace AccelerometerCS`.
+You'll need to rename the namespace in the previous snippet with the name you gave your project. For example, if you created a project named **AccelerometerCS**, you'd replace `namespace App1` with `namespace AccelerometerCS`.
 
--   Xxxx xxx xxxx XxxxXxxx.xxxx xxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxxxxx XXX.
+-   Open the file MainPage.xaml and replace the original contents with the following XML.
 
 ```xml
         <Page
@@ -123,25 +123,25 @@ Xxx'xx xxxx xx xxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx xxxx xxx xx
     </Page>
 ```
 
-Xxx'xx xxxx xx xxxxxxx xxx xxxxx xxxx xx xxx xxxxx xxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx xxxxxxxxx xx xxxx xxx. Xxx xxxxxxx, xx xxx xxxxxxx x xxxxxxx xxxxx **XxxxxxxxxxxxxXX**, xxx'x xxxxxxx `x:Class="App1.MainPage"` xxxx `x:Class="AccelerometerCS.MainPage"`. Xxx xxxxxx xxxx xxxxxxx `xmlns:local="using:App1"` xxxx `xmlns:local="using:AccelerometerCS"`.
+You'll need to replace the first part of the class name in the previous snippet with the namespace of your app. For example, if you created a project named **AccelerometerCS**, you'd replace `x:Class="App1.MainPage"` with `x:Class="AccelerometerCS.MainPage"`. You should also replace `xmlns:local="using:App1"` with `xmlns:local="using:AccelerometerCS"`.
 
--   Xxxxx XY xx xxxxxx **Xxxxx** &xx; **Xxxxx Xxxxxxxxx** xx xxxxx, xxxxxx, xxx xxx xxx xxx.
+-   Press F5 or select **Debug** &gt; **Start Debugging** to build, deploy, and run the app.
 
-Xxxx xxx xxx xx xxxxxxx, xxx xxx xxxxxx xxx xxxxxxxxxxxxx xxxxxx xx xxxxxx xxx xxxxxx xx xxxxx xxx xxxxxxxx xxxxx.
+Once the app is running, you can change the accelerometer values by moving the device or using the emulator tools.
 
--   Xxxx xxx xxx xx xxxxxxxxx xx Xxxxxx Xxxxxx xxx xxxxxxxx Xxxxx+XY xx xxxxxx **Xxxxx** &xx; **Xxxx Xxxxxxxxx** xx xxxx xxx xxx.
+-   Stop the app by returning to Visual Studio and pressing Shift+F5 or select **Debug** &gt; **Stop Debugging** to stop the app.
 
-### Xxxxxxxxxxx
+### Explanation
 
-Xxx xxxxxxxx xxxxxxx xxxxxxxxxxxx xxx xxxxxx xxxx xxx'xx xxxx xx xxxxx xx xxxxx xx xxxxxxxxx xxxxxxxxxxxxx xxxxx xx xxxx xxx.
+The previous example demonstrates how little code you'll need to write in order to integrate accelerometer input in your app.
 
-Xxx xxx xxxxxxxxxxx x xxxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxxxx xx xxx **XxxxXxxx** xxxxxx.
+The app establishes a connection with the default accelerometer in the **MainPage** method.
 
 ```csharp
 _accelerometer = Accelerometer.GetDefault();
 ```
 
-Xxx xxx xxxxxxxxxxx xxx xxxxxx xxxxxxxx xxxxxx xxx **XxxxXxxx** xxxxxx. Xxxx xxxx xxxxxxxxx xxx xxxxxxx xxxxxxxx xxxxxxxxx xx xxx xxxxxx xxx xxxxxxxx xx xx x xxxxxxxxx xxxxxxxx xx YY xxxxxxxxxxxx (xxxxx xxxxxxxxxxxx x YY-Xx xxxxxxx xxxx). Xx xxx xxxxxxx xxxxxxxxx xxxxxxxx xx xxxxxxx xxxx xxx xxxxxxxxx xxxxxxxx, xxx xxxx xxxx xxx xxxxx xx xxx xxxxxxx. Xxxxxxxxx, xx xxxx xxx xxxxx xx xxx xxxxxxxxx xxxxxxxx.
+The app establishes the report interval within the **MainPage** method. This code retrieves the minimum interval supported by the device and compares it to a requested interval of 16 milliseconds (which approximates a 60-Hz refresh rate). If the minimum supported interval is greater than the requested interval, the code sets the value to the minimum. Otherwise, it sets the value to the requested interval.
 
 ```csharp
 uint minReportInterval = _accelerometer.MinimumReportInterval;
@@ -149,22 +149,26 @@ uint reportInterval = minReportInterval > 16 ? minReportInterval : 16;
 _accelerometer.ReportInterval = reportInterval;
 ```
 
-Xxx xxx xxxxxxxxxxxxx xxxx xx xxxxxxxx xx xxx **XxxxxxxXxxxxxx** xxxxxx. Xxxx xxxx xxx xxxxxx xxxxxx xxxxxxxx xxx xxxx xxxx xxx xxxxxx, xx xxxxxx xxx xxxxxx xx xxxx xxx xxxxx xxxx xxxxx xxxxxxx. Xxx xxx xxxxxxxxx xxxx xxxxx xxxxxxx xx xxx xxxxxxxxx xxxx.
+The new accelerometer data is captured in the **ReadingChanged** method. Each time the sensor driver receives new data from the sensor, it passes the values to your app using this event handler. The app registers this event handler on the following line.
 
 ```csharp
 _accelerometer.ReadingChanged += new TypedEventHandler<Accelerometer, 
 AccelerometerReadingChangedEventArgs>(ReadingChanged);
 ```
 
-Xxxxx xxx xxxxxx xxx xxxxxxx xx xxx XxxxXxxxxx xxxxx xx xxx xxxxxxx'x XXXX.
+These new values are written to the TextBlocks found in the project's XAML.
 
 ```xml
 <TextBlock x:Name="txtXAxis" HorizontalAlignment="Left" Height="15" Margin="70,16,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="61" Foreground="#FFF2F2F2"/>
  <TextBlock x:Name="txtYAxis" HorizontalAlignment="Left" Height="15" Margin="70,49,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFF2EEEE"/>
  <TextBlock x:Name="txtZAxis" HorizontalAlignment="Left" Height="15" Margin="70,80,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Width="53" Foreground="#FFFFF8F8"/>
 ```
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxxxxxxxx Xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=241377)
+* [Accelerometer Sample](http://go.microsoft.com/fwlink/p/?linkid=241377)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,64 +1,58 @@
 ---
-Xxxxxxxxxxx: Xxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxxx xxxxxx xxxxxxxxxxxx xxxx xxx xxx xxxxxx xxxxxxx, xxxxxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxx xxx xxxxxxx xxxxxxxxxxx.
-xxxxx: Xxx xxx xxxxxx xxxxxxxxxxxx
-xx.xxxxxxx: YXXYXYXY-YYYY-YYXY-YXXY-YXYYXXXYYXYY
-xxxxx: Xxx xxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Build Universal Windows Platform (UWP) apps that support custom interactions from pen and stylus devices, including digital ink for natural writing and drawing experiences.
+title: Pen and stylus interactions
+ms.assetid: 3DA4F2D2-5405-42A1-9ED9-3A87BCD84C43
+label: Pen and stylus
+template: detail.hbs
 ---
 
-# Xxx xxx xxxxxx xxxxxxxxxxxx
+# Pen and stylus interactions
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxx xxx xxxxx xxxxx xxx xxx xxxxx xxx xxxxxxx xx xxxxxxx.
+Optimize your Universal Windows Platform (UWP) app design for touch input and get basic pen support by default.
 
-Xxx XXX xxx xxx xxxxxxxx, xxxxxxxx xxxx x xxx xxxxxx, xxxxxxxx x xxxxxxx xxx xx xxxxxx xxxxxxxxxxx xxxxx, xxxxxxxx, xxx xxxxxxxxxxx. Xxx xxxxxxxx xxxxxxxx xxxxxxxxx xxx xxxx xxxx xxxxxxxxx xxxxx, xxxxxxxxxx xxx xxxx, xxxxxxxxx xxxx xxxx xx xxx xxxxxxx xx xxx xxxxxx xxxxxx, xxxxxxxx xxx xxx xxxx, xxx xxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx.
+The UWP app ink platform, together with a pen device, provides a natural way to create handwritten notes, drawings, and annotations. The platform supports capturing ink data from digitizer input, generating ink data, rendering that data as ink strokes on the output device, managing the ink data, and performing handwriting recognition.
 
-![xxxxxxxx](images/input-patterns/input-pen.jpg)
-
-
-**Xxxxxxxxx XXXx**
-
--   [**Xxxxxxx.Xxxxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225648)
--   [**Xxxxxxx.XX.Xxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208524)
--   [**Xxxxxxx.XX.Xxxxx.Xxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn958452)
+![touchpad](images/input-patterns/input-pen.jpg)
 
 
-Xx xxxxxxxx xx xxxxxxx xx x [**xxxxxxx xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225633) (xxxxxxx xx xxxxx xxx xxxxx), x xxx/xxxxxx xx xxxxxxxxx xxxxxxxxxx xxxx xxxxxxx xx xxxxxxx xxxxxxxx xx x xxxxxx xxxxx xxxxxxx xxx.
+**Important APIs**
 
-Xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxxxx, xxxxxxxx xxxx x xxx/xxxxxx xxxxxx, xxxxxxxx x xxxxxxx xxx xx xxxxxx xxxxxxx xxxxxxxxxxx xxxxx, xxxxxxxx, xxx xxxxxxxxxxx. Xxx xxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxxxx xxxxx xx xxx xxxx, xxxxxxxxxx xxx xxxx, xxxxxxxx xxx xxxx, xxxxxxxxx xxx xxxx xx xxxxxxx, xxx xxxxxxxxxx xxx xx xxxx xxxxxxx xxxxxxxxxxx xxxxxxxxxxx.
+-   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
+-   [**Windows.UI.Input.Inking**](https://msdn.microsoft.com/library/windows/apps/br208524)
+-   [**Windows.UI.Input.Inking.Core**](https://msdn.microsoft.com/library/windows/apps/dn958452)
 
-Xx xxxxxxxx xx xxxxxxxxx xxx xxxxx xxxxxxxx xxx xxxxxxxx xx xxx xxx xx xxx xxxx xxxxxx xx xxxxx, xxxx xxx xxx xxxx xxxxx xxx xxxxxxx xxx xxxxxxx xxxxxxx xx xxxxxxxx xxxx xxxxxxxxxx x xxxxxx. Xxxx xxxxxxxxxxx, xxxxx xxxx xxxxxxxx xxx xxx xxx xxxxx, xxxx, xxx xxxxxxxx, xxx xxxxx, xxx xxxxxxx (xxxxx xxx, xxxxxxx, xxxxxxxxxxxx, xxx xxxxxxxxx), xxxxxxx xxx xx xxxxxxx xxxx xxxxxxxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxx xx xxxxxxx xx xxxxx xxxx x xxx, xxxxxx, xx xxxxx.
 
-**Xxxx**  Xxxx xxx xxx xxxx xxxxxxx xxx xxxxx xxxx xxxxx xxxxxxx-xxxxx xxxxxxx, xxxxxxxxx xxxxx xxxxxxxxxx xxx xxxxx xxxxxxx.
+In addition to serving as a [**pointer device**](https://msdn.microsoft.com/library/windows/apps/br225633) (similar to mouse and touch), a pen/stylus is typically associated with writing or drawing directly on a screen using digital ink.
+
+The Universal Windows Platform (UWP) ink platform, together with a pen/stylus device, provides a natural way to create digital handwritten notes, drawings, and annotations. The platform supports capturing digitizer input as ink data, generating ink data, managing ink data, rendering ink data as strokes, and converting ink to text through handwriting recognition.
+
+In addition to capturing the basic position and movement of the pen as the user writes or draws, your app can also track and collect the varying amounts of pressure used throughout a stroke. This information, along with settings for pen tip shape, size, and rotation, ink color, and purpose (plain ink, erasing, highlighting, and selecting), enables you to provide user experiences that closely resemble writing or drawing on paper with a pen, pencil, or brush.
+
+**Note**  Your app can also support ink input from other pointer-based devices, including touch digitizers and mouse devices.
 
  
 
-Xxx xxx xxxxxxxx xx xxxx xxxxxxxx. Xx xx xxxxxxxx xx xxxxxxx xxxxxxx xxxxxx xx xxxxxxxxxxxxx, xxxxxxxxx xx xxxx xxxxxxxxxxxx.
+The ink platform is very flexible. It is designed to support various levels of functionality, depending on your requirements.
 
-Xxxxx xxx xxxxx xxxxxxxxxx xx xxx xxx xxxxxxxx:
+There are three components to the ink platform:
 
--   [
-            **XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) - X XXXX XX xxxxxxxx xxxxxxx xxxx, xx xxxxxxx, xxxxxxxx xxx xxxxxxxx xxx xxxxx xxxx x xxx xx xxxxxx xx xxx xxxxxx xx xx xxxxx xxxxxx.
+-   [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) - A XAML UI platform control that, by default, receives and displays all input from a pen as either an ink stroke or an erase stroke.
 
--   [
-            **XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922011) - X xxxx-xxxxxx xxxxxx, xxxxxxxxxxxx xxxxx xxxx xx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxxxx (xxxxxxx xxxxxxx xxx [**XxxXxxxxx.XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xxxxxxxx). Xxxx xxxxxx xxxxxxxx xxx xxxxxxx xxxxxx xxxxxxxxxxxxx xxxxxxx xx xxx **XxxXxxxxx**, xxxxx xxxx x xxxxxxxxxxxxx xxx xx XXXx xxx xxxxxxxxxx xxxxxxxxxxxxx xxx xxxxxxxxxxxxxxx.
+-   [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) - A code-behind object, instantiated along with an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control (exposed through the [**InkCanvas.InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) property). This object provides all default inking functionality exposed by the **InkCanvas**, along with a comprehensive set of APIs for additional customization and personalization.
 
--   [
-            **XXxxXYXXxxxxxxx**](https://msdn.microsoft.com/library/mt147263) - Xxxxxxx xxx xxxxxxxxx xx xxx xxxxxxx xxxx xxx xxxxxxxxxx XxxxxxYX xxxxxx xxxxxxx xx x Xxxxxxxxx Xxxxxxx xxx, xxxxxxx xx xxx xxxxxxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxxxx. Xxxx xxxxxxx xxxx xxxxxxxxxxxxx xx xxx xxxxxx xxxxxxxxxx.
+-   [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) - Enables the rendering of ink strokes onto the designated Direct2D device context of a Universal Windows app, instead of the default [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control. This enables full customization of the inking experience.
 
-## <span id="inkcanvas">
-            </span>
-            <span id="INKCANVAS">
-            </span>Xxxxx xxxxxx xxxx XxxXxxxxx
+## <span id="inkcanvas"></span><span id="INKCANVAS"></span>Basic inking with InkCanvas
 
 
-Xxx xxxxx xxxxxx xxxxxxxxxxxxx, xxxx xxxxx xx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxxxxx xx x xxxx.
+For basic inking functionality, just place an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) anywhere on a page.
 
-Xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxxxxx xxx xxxxx xxxx xxxx x xxx. Xxx xxxxx xx xxxxxx xxxxxxxx xx xx xxx xxxxxx xxxxx xxxxxxx xxxxxxxx xxx xxxxx xxx xxxxxxxxx, xx xxxxxxx xx x xxxxxx xxxxxx (xxxx xxxxx xx xxxx xx xxxxxx xxx xx xxx xxx xxx xxxxxxxx xxxx xx xxxxx xxxxxx).
+The [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) supports ink input only from a pen. The input is either rendered as an ink stroke using default settings for color and thickness, or treated as a stroke eraser (when input is from an eraser tip or the pen tip modified with an erase button).
 
-Xx xxxx xxxxxxx, xx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxxxxx x xxxxxxxxxx xxxxx.
+In this example, an [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) overlays a background image.
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -79,7 +73,7 @@ Xx xxxx xxxxxxx, xx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/a
 </Grid>
 ```
 
-Xxxx xxxxxx xx xxxxxx xxxxx xxx xxx xxxxx xx xxxxxxxx xx xxxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxxxx.
+This series of images shows how pen input is rendered by this [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
 
 <table>
 <colgroup>
@@ -94,36 +88,33 @@ Xxxx xxxxxx xx xxxxxx xxxxx xxx xxx xxxxx xx xxxxxxxx xx xxxx [**XxxXxxxxx**](ht
 <td align="left"><img src="images/ink_basic_3_small.png" alt="The InkCanvas with one stroke erased" /></td>
 </tr>
 <tr class="even">
-<td align="left">Xxx xxxxx [<strong>XxxXxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY) xxxx x xxxxxxxxxx xxxxx.</td>
-<td align="left">Xxx [<strong>XxxXxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY) xxxx xxx xxxxxxx.</td>
-<td align="left">Xxx [<strong>XxxXxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY) xxxx xxx xxxxxx xxxxxx.
-<p>Xxxx xxx xxxxx xxxxxxxx xx xx xxxxxx xxxxxx, xxx x xxxxxxx.</p></td>
+<td align="left">The blank [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535) with a background image.</td>
+<td align="left">The [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535) with ink strokes.</td>
+<td align="left">The [<strong>InkCanvas</strong>](https://msdn.microsoft.com/library/windows/apps/dn858535) with one stroke erased.
+<p>Note how erase operates on an entire stroke, not a portion.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Xxx xxxxxx xxxxxxxxxxxxx xxxxxxxxx xx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxxxx xx xxxxxxxx xx x xxxx-xxxxxx xxxxxx xxxxxx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922011).
+The inking functionality supported by the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control is provided by a code-behind object called the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011).
 
-Xxx xxxxx xxxxxx, xxx xxx'x xxxx xx xxxxxxx xxxxxxxx xxxx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922011). Xxxxxxx, xx xxxxxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxx xx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535), xxx xxxx xxxxxx xxx xxxxxxxxxxxxx **XxxXxxxxxxxx** xxxxxx.
+For basic inking, you don't have to concern yourself with the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011). However, to customize and configure inking behavior on the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535), you must access its corresponding **InkPresenter** object.
 
-## <span id="inkpresenter">
-            </span>
-            <span id="INKPRESENTER">
-            </span>Xxxxx xxxxxxxxxxxxx xxxx XxxXxxxxxxxx
+## <span id="inkpresenter"></span><span id="INKPRESENTER"></span>Basic customization with InkPresenter
 
 
-Xx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922011) xxxxxx xx xxxxxxxxxxxx xxxx xxxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxxxx.
+An [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) object is instantiated with each [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
 
-Xxxxx xxxx xxxxxxxxx xxx xxxxxxx xxxxxx xxxxxxxxx xx xxx xxxxxxxxxxxxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxxxx, xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922011) xxxxxxxx x xxxxxxxxxxxxx xxx xx XXXx xxx xxxxxxxxxx xxxxxx xxxxxxxxxxxxx. Xxxx xxxxxxxx xxxxxx xxxxxxxxxx, xxxxxxxxx xxxxx xxxxxx xxxxx, xxx xxxxxxx xxxxx xx xxxxxxxxx xx xxx xxxxxx xx xxxxxx xx xxx xxx.
+Along with providing all default inking behaviors of its corresponding [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control, the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) provides a comprehensive set of APIs for additional stroke customization. This includes stroke properties, supported input device types, and whether input is processed by the object or passed to the app.
 
-**Xxxx**  
-Xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922011) xxxxxx xx xxxxxxxxxxxx xxxxxxxx. Xxxxxxx, xx xx xxxxxxxx xxxxxxx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xxxxxxxx xx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+**Note**  
+The [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn922011) cannot be instantiated directly. Instead, it is accessed through the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) property of the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
  
 
-Xxxx, xx xxxxxxxxx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xx xxxxxxxxx xxxxx xxxx xxxx xxxx xxx xxx xxxxx xx xxx xxxxxxx. Xx xxxx xxx xxxx xxxxxxx xxx xxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxx xx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+Here, we configure the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) to interpret input data from both pen and mouse as ink strokes. We also set some initial ink stroke attributes used for rendering strokes to the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
 ```CSharp
 public MainPage()
@@ -144,9 +135,9 @@ public MainPage()
 }
 ```
 
-Xxx xxxxxx xxxxxxxxxx xxx xx xxx xxxxxxxxxxx xx xxxxxxxxxxx xxxx xxxxxxxxxxx xx xxx xxxxxxxxxxxx.
+Ink stroke attributes can be set dynamically to accommodate user preferences or app requirements.
 
-Xxxx, xx xxx x xxxx xxxxxx xxxx x xxxx xx xxx xxxxxx.
+Here, we let a user choose from a list of ink colors.
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -179,7 +170,7 @@ Xxxx, xx xxx x xxxx xxxxxx xxxx x xxxx xx xxx xxxxxx.
 </Grid>
 ```
 
-Xx xxxx xxxxxx xxxxxxx xx xxx xxxxxxxx xxxxx xxx xxxxxx xxx xxx xxxxxx xxxxxxxxxx xxxxxxxxxxx.
+We then handle changes to the selected color and update the ink stroke attributes accordingly.
 
 ```CSharp
 // Update ink stroke color for new strokes.
@@ -210,40 +201,37 @@ private void OnPenColorChanged(object sender, SelectionChangedEventArgs e)
 }
 ```
 
-Xxxxx xxxxxx xxxxx xxx xxx xxxxx xx xxxxxxxxx xxx xxxxxxxxxx xx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081).
+These images shows how pen input is processed and customized by the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081).
 
 |                                                                                      |                                                                                          |
 |--------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
-| ![xxx xxxxxxxxx xxxx xxxxxxx xxxxx xxx xxxxxxx](images/ink-basic-custom-1-small.png) | ![xxx xxxxxxxxx xxxx xxxx xxxxxxxx xxx xxx xxxxxxx](images/ink-basic-custom-2-small.png) |
-| Xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxx xxxxxxx xxxxx xxx xxxxxxx.        | Xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxx xxxx xxxxxxxx xxx xxx xxxxxxx.        |
+| ![the inkcanvas with default black ink strokes](images/ink-basic-custom-1-small.png) | ![the inkcanvas with user selected red ink strokes](images/ink-basic-custom-2-small.png) |
+| The [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) with default black ink strokes.        | The [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) with user selected red ink strokes.        |
 
  
 
-Xx xxxxxxx xxxxxxxxxxxxx xxxxxx xxxxxx xxx xxxxxxx, xxxx xx xxxxxx xxxxxxxxx, xxxx xxx xxxx xxxxxxxx xxxxxxxx xxxxx xxx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xx xxxx xxxxxxx xxxxxxxxxxx xxx xxxxxxxx xx xxxx xxx.
+To provide functionality beyond inking and erasing, such as stroke selection, your app must identify specific input for the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) to pass through unprocessed for handling by your app.
 
-## <span id="passthrough">
-            </span>
-            <span id="PASSTHROUGH">
-            </span>Xxxx-xxxxxxx xxxxx xxx xxxxxxxx xxxxxxxxxx
+## <span id="passthrough"></span><span id="PASSTHROUGH"></span>Pass-through input for advanced processing
 
 
-Xx xxxxxxx, [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xxxxxxxxx xxx xxxxx xx xxxxxx xx xxx xxxxxx xx xx xxxxx xxxxxx. Xxxx xxxxxxxx xxxxx xxxxxxxx xx x xxxxxxxxx xxxxxxxx xxxxxxxxxx xxxx xx x xxx xxxxxx xxxxxx, x xxxxx xxxxx xxxxxx, xx xxxxxxx.
+By default, [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) processes all input as either an ink stroke or an erase stroke. This includes input modified by a secondary hardware affordance such as a pen barrel button, a right mouse button, or similar.
 
-Xxxx xxxxx xxxxx xxxxxxxxx xxxxxxxxxxx, xxxxx xxxxxxxxx xxxxxx xxxx xxxxxxxxxx xxxxxxxxxxxxx xx x xxxxxxxx xxxxxxxx.
+When using these secondary affordances, users typically expect some additional functionality or a modified behavior.
 
-Xx xxxx xxxxx, xxx xxxxx xxxx xx xxxxxx xxxxx xxx xxxxxxxxxxxxx xxx xxxx xxxxxxx xxxxxxxxx xxxxxxxxxxx (xxxxxxxxxxxxx xxx xxxxxxx xxxxxxxxxx xxxx xxx xxx xxx), xxxxx xxxxx xxxxxx xxxxx, xx xxxxxxxxxx xxxxxxxxxxxxx, xx xxxxxxxx xxxxxxxx, xxxxx xx x xxxx xxxxxxxxx xx xxxx xxx'x XX.
+In some cases, you might need to expose basic ink functionality for pens without secondary affordances (functionality not usually associated with the pen tip), other input device types, or additional functionality, or modified behavior, based on a user selection in your app's UI.
 
-Xx xxxxxxx xxxx, [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xxx xx xxxxxxxxxx xx xxxxx xxxxxxxx xxxxx xxxxxxxxxxx. Xxxx xxxxxxxxxxx xxxxx xx xxxx xxxxxx xxxxxxx xx xxxx xxx xxx xxxxxxxxxx.
+To support this, [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) can be configured to leave specific input unprocessed. This unprocessed input is then passed through to your app for processing.
 
-Xxx xxxxxxxxx xxxx xxxxxxx xxxxx xxxxxxx xxx xx xxxxxx xxxxxx xxxxxxxxx xxxx xxxxx xx xxxxxxxx xxxx x xxx xxxxxx xxxxxx (xx xxxxx xxxxx xxxxxx).
+The following code example steps through how to enable stroke selection when input is modified with a pen barrel button (or right mouse button).
 
-Xxx xxxx xxxxxxx, xx xxx xxx XxxxXxxx.xxxx xxx XxxxXxxx.xxxx.xx xxxxx xx xxxx xxx xxxx.
+For this example, we use the MainPage.xaml and MainPage.xaml.cs files to host all code.
 
-1.  Xxxxx, xx xxx xx xxx XX xx XxxxXxxx.xxxx.
+1.  First, we set up the UI in MainPage.xaml.
 
-    Xxxx, xx xxx x xxxxxx (xxxxx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535)) xx xxxx xxx xxxxxxxxx xxxxxx. Xxxxx x xxxxxxxx xxxxx xx xxxx xxx xxxxxxxxx xxxxxx xxxxxx xxx **XxxXxxxxx** xxx xxx xxxxxxx xxxxxxxxx.
+    Here, we add a canvas (below the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535)) to draw the selection stroke. Using a separate layer to draw the selection stroke leaves the **InkCanvas** and its content untouched.
 
-    ![xxx xxxxx xxxxxxxxx xxxx xx xxxxxxxxxx xxxxxxxxx xxxxxx](images/ink-unprocessed-1-small.png)
+    ![the blank inkcanvas with an underlying selection canvas](images/ink-unprocessed-1-small.png)
 
 ```    XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -267,7 +255,7 @@ Xxx xxxx xxxxxxx, xx xxx xxx XxxxXxxx.xxxx xxx XxxxXxxx.xxxx.xx xxxxx xx xxxx xx
     </Grid>
 ```
 
-2.  Xx XxxxXxxx.xxxx.xx, xx xxxxxxx x xxxxxx xx xxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxx xx xxxxxxx xx xxx xxxxxxxxx XX. Xxxxxxxxxxxx, xxx xxxxxxxxx xxxxx xxxxxx xxx xxx xxxxxxxx xxxxxxxxx xxxx xxxxxxxxxx xxx xxxxxxxx xxxxxxx.
+2.  In MainPage.xaml.cs, we declare a couple of global variables for keeping references to aspects of the selection UI. Specifically, the selection lasso stroke and the bounding rectangle that highlights the selected strokes.
 
 ```    CSharp
 // Stroke selection tool.
@@ -276,15 +264,15 @@ Xxx xxxx xxxxxxx, xx xxx xxx XxxxXxxx.xxxx xxx XxxxXxxx.xxxx.xx xxxxx xx xxxx xx
     private Rect boundingRect;
 ```
 
-3.  Xxxx, xx xxxxxxxxx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xx xxxxxxxxx xxxxx xxxx xxxx xxxx xxx xxx xxxxx xx xxx xxxxxxx, xxx xxx xxxx xxxxxxx xxx xxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxx xx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535).
+3.  Next, we configure the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) to interpret input data from both pen and mouse as ink strokes, and set some initial ink stroke attributes used for rendering strokes to the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535).
 
-    Xxxx xxxxxxxxxxx, xx xxx xxx [**XxxxxXxxxxxxxxxXxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948764) xxxxxxxx xx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081) xx xxxxxxxx xxxx xxx xxxxxxxx xxxxx xxxxxx xx xxxxxxxxx xx xxx xxx. Xxxxxxxx xxxxx xx xxxxxxxxx xx xxxxxxxxx **XxxxxXxxxxxxxxxXxxxxxxxxxxxx.XxxxxXxxxXxxxxx** x xxxxx xx [**XxxXxxxxXxxxxXxxxXxxxxx.XxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948760).
+    Most importantly, we use the [**InputProcessingConfiguration**](https://msdn.microsoft.com/library/windows/apps/dn948764) property of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081) to indicate that any modified input should be processed by the app. Modified input is specified by assigning **InputProcessingConfiguration.RightDragAction** a value of [**InkInputRightDragAction.LeaveUnprocessed**](https://msdn.microsoft.com/library/windows/apps/dn948760).
 
-    Xx xxxx xxxxxx xxxxxxxxx xxx xxx xxxxxxxxxxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914712), [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914711), xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914713) xxxxxx xxxxxx xxxxxxx xx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081). Xxx xxxxxxxxx xxxxxxxxxxxxx xx xxxxxxxxxxx xx xxx xxxxxxxx xxx xxxxx xxxxxx.
+    We then assign listeners for the unprocessed [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn914712), [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn914711), and [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn914713) events passed through by the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081). All selection functionality is implemented in the handlers for these events.
 
-    Xxxxxxx, xx xxxxxx xxxxxxxxx xxx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914702) xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948767) xxxxxx xx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081). Xx xxx xxx xxxxxxxx xxx xxxxx xxxxxx xx xxxxx xx xxx xxxxxxxxx XX xx x xxx xxxxxx xx xxxxxxx xx xx xxxxxxxx xxxxxx xx xxxxxx.
+    Finally, we assign listeners for the [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702) and [**StrokesErased**](https://msdn.microsoft.com/library/windows/apps/dn948767) events of the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081). We use the handlers for these events to clean up the selection UI if a new stroke is started or an existing stroke is erased.
 
-    ![xxx xxxxxxxxx xxxx xxxxxxx xxxxx xxx xxxxxxx](images/ink-unprocessed-2-small.png)
+    ![the inkcanvas with default black ink strokes](images/ink-unprocessed-2-small.png)
 
 ```    CSharp
 public MainPage()
@@ -329,11 +317,11 @@ public MainPage()
     }
 ```
 
-4.  Xx xxxx xxxxxx xxxxxxxx xxx xxx xxxxxxxxxxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914712), [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914711), xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914713) xxxxxx xxxxxx xxxxxxx xx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn899081).
+4.  We then define handlers for the unprocessed [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/dn914712), [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/dn914711), and [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/dn914713) events passed through by the [**InkPresenter**](https://msdn.microsoft.com/library/windows/apps/dn899081).
 
-    Xxx xxxxxxxxx xxxxxxxxxxxxx xx xxxxxxxxxxx xx xxxxx xxxxxxxx, xxxxxxxxx xxx xxxxx xxxxxx xxx xxx xxxxxxxx xxxxxxxxx.
+    All selection functionality is implemented in these handlers, including the lasso stroke and the bounding rectangle.
 
-    ![xxx xxxxxxxxx xxxxx](images/ink-unprocessed-3-small.png)
+    ![the selection lasso](images/ink-unprocessed-3-small.png)
 
 ```    CSharp
 // Handle unprocessed pointer events from modifed input.
@@ -379,9 +367,9 @@ public MainPage()
     }
 ```
 
-5.  Xx xxxxxxxx xxx XxxxxxxXxxxxxxx xxxxx xxxxxxx, xx xxxxx xxx xxxxxxxxx xxxxx xx xxx xxxxxxx (xxx xxxxx xxxxxx) xxx xxxx xxxx x xxxxxx xxxxxxxx xxxxxxxxx xxxxxx xxx xxx xxxxxxx xxxxxxxxxxx xx xxx xxxxx xxxx.
+5.  To conclude the PointerReleased event handler, we clear the selection layer of all content (the lasso stroke) and then draw a single bounding rectangle around the ink strokes encompassed by the lasso area.
 
-    ![xxx xxxxxxxxx xxxxxxxx xxxx](images/ink-unprocessed-4-small.png)
+    ![the selection bounding rect](images/ink-unprocessed-4-small.png)
 
 ```    CSharp
 // Draw a bounding rectangle, on the selection canvas, encompassing 
@@ -414,9 +402,9 @@ public MainPage()
     }
 ```
 
-6.  Xxxxxxx, xx xxxxxx xxxxxxxx xxx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn914702) xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn948767) XxxXxxxxxxxx xxxxxx.
+6.  Finally, we define handlers for the [**StrokeStarted**](https://msdn.microsoft.com/library/windows/apps/dn914702) and [**StrokesErased**](https://msdn.microsoft.com/library/windows/apps/dn948767) InkPresenter events.
 
-    Xxxxx xxxx xxxx xxxx xxx xxxx xxxxxxx xxxxxxxx xx xxxxx xxx xxxxxxx xxxxxxxxx xxxxxxxx x xxx xxxxxx xx xxxxxxxx.
+    These both just call the same cleanup function to clear the current selection whenever a new stroke is detected.
 
 ```    CSharp
 // Handle new ink or erase strokes to clean up selection UI.
@@ -433,7 +421,7 @@ public MainPage()
     }
 ```
 
-7.  Xxxx'x xxx xxxxxxxx xx xxxxxx xxx xxxxxxxxx XX xxxx xxx xxxxxxxxx xxxxxx xxxx x xxx xxxxxx xx xxxxxxx xx xx xxxxxxxx xxxxxx xx xxxxxx.
+7.  Here's the function to remove all selection UI from the selection canvas when a new stroke is started or an existing stroke is erased.
 
 ```    CSharp
 // Clean up selection UI.
@@ -457,24 +445,21 @@ public MainPage()
     }
 ```
 
-## <span id="iinkd2drenderer">
-            </span>
-            <span id="IINKD2DRENDERER">
-            </span>Xxxxxx xxx xxxxxxxxx
+## <span id="iinkd2drenderer"></span><span id="IINKD2DRENDERER"></span>Custom ink rendering
 
 
-Xx xxxxxxx, xxx xxxxx xx xxxxxxxxx xx x xxx-xxxxxxx xxxxxxxxxx xxxxxx xxx xxxxxxxx "xxx" xx xx xx xxxxx. Xxxx xxx xxxxxx xx xxxxxxxxx (xxx xx xxxxxx xxxxxx, xx xxxxx xxxxxx xxxxxxxx), xxx xxxxxx xx xxxxxxxxx xx xxx XX xxxxxx xxx xxxxxxxx "xxx" xx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxx (xxxxx xxx xxxxxxxxxxx xxxxxxx xxx xxxxxxxxx xxx xxx xxx).
+By default, ink input is processed on a low-latency background thread and rendered "wet" as it is drawn. When the stroke is completed (pen or finger lifted, or mouse button released), the stroke is processed on the UI thread and rendered "dry" to the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) layer (above the application content and replacing the wet ink).
 
-Xxx xxx xxxxxxxx xxxxxxx xxx xx xxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxxx xxx xxxxxx xxxxxxxxxx xx xxxxxx xxxxxx xxx xxx xxxxx.
+The ink platform enables you to override this behavior and completely customize the inking experience by custom drying the ink input.
 
-Xxxxxx xxxxxx xxxxxxxx xx [**XXxxXYXXxxxxxxx**](https://msdn.microsoft.com/library/mt147263) xxxxxx xx xxxxxx xxx xxx xxxxx xxx xxxxxx xx xx xxx XxxxxxYX xxxxxx xxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx xxx, xxxxxxx xx xxx xxxxxxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xxxxxxx.
+Custom drying requires an [**IInkD2DRenderer**](https://msdn.microsoft.com/library/mt147263) object to manage the ink input and render it to the Direct2D device context of your Universal Windows app, instead of the default [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) control.
 
-Xx xxxxxxx [**XxxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn922012) (xxxxxx xxx [**XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn858535) xx xxxxxx), xx xxx xxxxxxx xx [**XxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn903979) xxxxxx xx xxxxxxxxx xxx xx xxx xxxxxx xx xxxxxxxx xxx xx x [**XxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702041) xx [**XxxxxxxXxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702050). Xxx xxxxxxx, xx xxx xxxxxx xxxxx xx xxxxxxxxxx xxx xxxxxxxxxx xxxx xxxxxxxxxxx xxxxxxx xxxxxxx xx xx x xxxxxxxx **XxxXxxxxx** xxxxx.
+By calling [**ActivateCustomDrying**](https://msdn.microsoft.com/library/windows/apps/dn922012) (before the [**InkCanvas**](https://msdn.microsoft.com/library/windows/apps/dn858535) is loaded), an app creates an [**InkSynchronizer**](https://msdn.microsoft.com/library/windows/apps/dn903979) object to customize how an ink stroke is rendered dry to a [**SurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702041) or [**VirtualSurfaceImageSource**](https://msdn.microsoft.com/library/windows/apps/hh702050). For example, an ink stroke could be rasterized and integrated into application content instead of as a separate **InkCanvas** layer.
 
-Xxx x xxxx xxxxxxx xx xxxx xxxxxxxxxxxxx, xxx xxx [Xxxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620314) .
+For a full example of this functionality, see the [Complex ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620314) .
 
 
-## Xxxxx xxxxxxxx xx xxxx xxxxxxx 
+## Other articles in this section 
 <table>
 <colgroup>
 <col width="50%" />
@@ -482,18 +467,18 @@ Xxx x xxxx xxxxxxx xx xxxx xxxxxxxxxxxxx, xxx xxx [Xxxxxxx xxx xxxxxx](http://go
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Recognize ink strokes](convert-ink-to-text.md)</p></td>
-<td align="left"><p>Xxxxxxx xxx xxxxxxx xx xxxx xxxxx xxxxxxxxxxx xxxxxxxxxxx, xx xx xxxxxx xxxxx xxxxxx xxxxxxxxxxx.</p></td>
+<td align="left"><p>Convert ink strokes to text using handwriting recognition, or to shapes using custom recognition.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Store and retrieve ink strokes](save-and-load-ink.md)</p></td>
-<td align="left"><p>Xxxxx xxx xxxxxx xxxx xx x Xxxxxxxx Xxxxxxxxxxx Xxxxxx (XXX) xxxx xxxxx xxxxxxxx Xxx Xxxxxxxxxx Xxxxxx (XXX) xxxxxxxx.</p></td>
+<td align="left"><p>Store ink stroke data in a Graphics Interchange Format (GIF) file using embedded Ink Serialized Format (ISF) metadata.</p></td>
 </tr>
 </tbody>
 </table>
@@ -501,30 +486,33 @@ Xxx x xxxx xxxxxxx xx xxxx xxxxxxxxxxxxx, xxx xxx [Xxxxxxx xxx xxxxxx](http://go
  
 
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>Related articles
 
 
-* [Xxxxxx xxxxxxx xxxxx](handle-pointer-input.md)
-* [Xxxxxxxx xxxxx xxxxxxx](identify-input-devices.md)
-**Xxxxxxx**
-* [Xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620308)
-* [Xxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620312)
-* [Xxxxxxx xxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620314)
-* [Xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Xxx xxxxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Xxxx xxxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Xxxxxxx Xxxxxxx**
-* [Xxxxx: Xxxxxx xxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Xxxxx: XXXX xxxx xxxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XXXX xxxxxxxxx, xxxxxxx, xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Xxxxx: Xxxxxxxx xxx xxxxxxxxxxxxx xxxx XxxxxxxXxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [Handle pointer input](handle-pointer-input.md)
+* [Identify input devices](identify-input-devices.md)
+**Samples**
+* [Ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620308)
+* [Simple ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620312)
+* [Complex ink sample](http://go.microsoft.com/fwlink/p/?LinkID=620314)
+* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**Archive Samples**
+* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

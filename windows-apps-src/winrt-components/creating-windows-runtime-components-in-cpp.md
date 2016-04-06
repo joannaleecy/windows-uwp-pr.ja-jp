@@ -1,49 +1,49 @@
 ---
-xxxxx: Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X++
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxx xxx xx xxx X++ xx xxxxxx x Xxxxxxx Xxxxxxx xxxxxxxxx, xxxxx xx x XXX xxxx'x xxxxxxxx xxxx x Xxxxxxxxx Xxxxxxx xxx xxxx'x xxxxx xx xxxxx XxxxXxxxxx—xx X#, Xxxxxx Xxxxx, xx X++.
-xx.xxxxxxx: XYXYYXXY-XXXX-YYYX-XXYX-YXXYXYXXYYYY
+title: Creating Windows Runtime Components in C++
+description: This article shows how to use C++ to create a Windows Runtime component, which is a DLL that's callable from a Universal Windows app that's built by using JavaScript—or C#, Visual Basic, or C++.
+ms.assetid: F7E06AA2-DCEC-427E-BD5D-9CA2A0ED2612
 ---
 
 
-# Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X++
+# Creating Windows Runtime Components in C++
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[Xxxx xxxxxxxxxxx xxxxxxx xx xxx-xxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxx xx'x xxxxxxxxxxxx xxxxxxxx. Xxxxxxxxx xxxxx xx xxxxxxxxxx, xxxxxxx xx xxxxxxx, xxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxx.\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-Xxxx xxxxxxx xxxxx xxx xx xxx X++ xx xxxxxx x Xxxxxxx Xxxxxxx xxxxxxxxx, xxxxx xx x XXX xxxx'x xxxxxxxx xxxx x Xxxxxxxxx Xxxxxxx xxx xxxx'x xxxxx xx xxxxx XxxxXxxxxx—xx X\#, Xxxxxx Xxxxx, xx X++.
+This article shows how to use C++ to create a Windows Runtime component, which is a DLL that's callable from a Universal Windows app that's built by using JavaScript—or C#, Visual Basic, or C++.
 
-Xxxx xxx xxxxxxx xxxxxxx xxx xxxxxxxx xxxx x xxxxxxxxx:
+Here are several reasons for building such a component:
 
--   Xx xxx xxx xxxxxxxxxxx xxxxxxxxx xx X++ xx xxxxxxx xx xxxxxxxxxxxxxxx xxxxxxxxx xxxxxxxxxx.
+-   To get the performance advantage of C++ in complex or computationally intensive operations.
 
--   Xx xxxxx xxxx xxxx'x xxxxxxx xxxxxxx xxx xxxxxx.
+-   To reuse code that's already written and tested.
 
-Xxxx xxx xxxxx x xxxxxxxx xxxx xxxxxxxx x XxxxXxxxxx xx .XXX xxxxxxx, xxx x Xxxxxxx Xxxxxxx xxxxxxxxx xxxxxxx, xxx XxxxXxxxxx xxxxxxx xxxxx xxx xxx xxxxxxxx XXX xxx xxxxxx xxxx xxx xxxxxxx, xxxxx xxx xxx xxxxx xxxxxxx xx xxx xxxxxxxxx xx xxxxxxxx xx x xxxxxxxx xxxxxx. Xxx xxx xxxx xxxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxx xx xx Xxxxxxxxx XXX. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxx x Xxxxxxxx Xxxxxxxxxxx Xxx](https://msdn.microsoft.com/library/hh768146.aspx).
+When you build a solution that contains a JavaScript or .NET project, and a Windows Runtime component project, the JavaScript project files and the compiled DLL are merged into one package, which you can debug locally in the simulator or remotely on a tethered device. You can also distribute just the component project as an Extension SDK. For more information, see [Creating a Software Development Kit](https://msdn.microsoft.com/library/hh768146.aspx).
 
-Xx xxxxxxx, xxxx xxx xxxx xxxx X++ xxxxxxxxx, xxx xxx xxxxxxx X++ xxxxxxx xxx xxxxx-xx xxxxx, xxxxxx xx xxx xxxxxxxx xxxxxx xxxxxxxxx (XXX) xxxxxxxx xxxxx xxx xxx xxxxxxx xxxx xx xxx xxxx xxxx xx xxxxxxx .xxxxx xxxxxxx. Xxxxx, xxx Xxxxxxx Xxxxxxx xxxxx xxx xxx xxxxxxx xxxxxx xxxx Xxxxxx X++ xxxxxxxx xxx xxxxxxxx xxx xxxxxxxxxxxx xxxxx xxxxx. Xx xxxxxxxx, xx xxxx Xxxxxx X++ xxxx, xxx xxxxx xxxx xx xxxxxxxx xxx xxxxx xx xxxxxxxxx xxxxxx xxxx xxx xx xxxxx xxxx xxxx xxxxxxxxx xxx xxxxxxx xx XxxxXxxxxx, Xxxxxx Xxxxx, xx X\#. Xxx xxxx xxxxxxxxxxx xxxxx xxx xxx Xxxxxx X++ xxxxxx, xxx [Xxxxxx X++ Xxxxxxxx Xxxxxxxxx (X++/XX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
+In general, when you code your C++ component, use the regular C++ library and built-in types, except at the abstract binary interface (ABI) boundary where you are passing data to and from code in another .winmd package. There, use Windows Runtime types and the special syntax that Visual C++ supports for creating and manipulating those types. In addition, in your Visual C++ code, use types such as delegate and event to implement events that can be fired from your component and handled in JavaScript, Visual Basic, or C#. For more information about the new Visual C++ syntax, see [Visual C++ Language Reference (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699871.aspx).
 
-## Xxxxxx xxx xxxxxx xxxxx
-
-
-### XxxxXxxxxx
-
-XxxxXxxxxx xx xxxx-xxxxxxxxx. Xxxxxxxxx, xxx xxxx xxxxxx xxxxx xxxxxx xxxxxxxxxxx:
-
--   Xxxx xxx xxxxxxxxx X++ xxxxxxxxxx xxx xxxxxxx, xxx xxx xxxx xxxxxx xxxx'x xxxx xx xxx X++ xxxx.
--   Xxxx xxx xxxx xxxxxxx, xxx xxxxx xxxxxx xxxx xx xxx xxxxxx xxxx xx xxxxxxxxxxx xx xxx X++ xxxx. Xxx xxxxxxx, x X++ xxxxxx XxxXxxx() xxxx xx xxxxxx xxxx XxxxXxxxxx xx xxxXxxx().
--   Xx xxxxxxxxxxx xxxxx xxxx xxx xxxxxxxxx xxxx xxx'x xxxxxxx XXXXXXX xxxxxxxxxx.
-
-### .XXX
-
-Xxx .XXX xxxxxxxxx xxxxxx xxxxx xxxxxx xxxxxx xxxxx.
-
-## Xxxxxxxxxxxxx xxx xxxxxx
+## Casing and naming rules
 
 
-Xxxx Xxxxxxx Xxxxxxx xxxxx xxx xx xxxxxx xxxxxx xxx XXX xxxxxxxx. Xxx xxxxxxxx xxxx xxxxx xx xxxxx xx xxx xxxxxxxxx xxx x xxxx xxxx xxx::xxxxxxx xx x xxxxxx xxxx xx xxxxxxxxx xx x xxxxxx xxxxxx. Xxx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX) xxxxx-xx xxxxx xxxxxxx xxx xxxxx xxxxxxx xxxx xx xxx xxx xxxxxx, xxx xxxx xxxxx xxxxxxx xxxxxxxxxxx xxxYY, xxxxxYY, xxx xx xx.Xxx xxxx xxxxxxxxxxx, xxx [Xxxx Xxxxxx (X++/XX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
+### JavaScript
+
+JavaScript is case-sensitive. Therefore, you must follow these casing conventions:
+
+-   When you reference C++ namespaces and classes, use the same casing that's used on the C++ side.
+-   When you call methods, use camel casing even if the method name is capitalized on the C++ side. For example, a C++ method GetDate() must be called from JavaScript as getDate().
+-   An activatable class name and namespace name can't contain UNICODE characters.
+
+### .NET
+
+The .NET languages follow their normal casing rules.
+
+## Instantiating the object
+
+
+Only Windows Runtime types can be passed across the ABI boundary. The compiler will raise an error if the component has a type like std::wstring as a return type or parameter in a public method. The Visual C++ component extensions (C++/CX) built-in types include the usual scalars such as int and double, and also their typedef equivalents int32, float64, and so on.For more information, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
 
 ```cpp
 // ref class definition in C++
@@ -73,22 +73,22 @@ var num = nativeObject.LogCalc(21.5);
 ResultText.Text = num.ToString();
 ```
 
-## X++ xxxxx-xx xxxxx, xxxxxxx xxxxx, xxx Xxxxxxx Xxxxxxx xxxxx
+## C++ built-in types, library types, and Windows Runtime types
 
 
-Xx xxxxxxxxxxx xxxxx (xxxx xxxxx xx x xxx xxxxx) xx xxx xxxx xxx xx xxxxxxxxxxxx xxxx xxxxxxx xxxxxxxx xxxx xx XxxxXxxxxx, X\# xx Xxxxxx Xxxxx. Xx xx xxxxxxxxxx xxxx xxxxxxx xxxxxxxx, x xxxxxxxxx xxxx xxxxxxx xx xxxxx xxx xxxxxxxxxxx xxxxx.
+An activatable class (also known as a ref class) is one that can be instantiated from another language such as JavaScript, C# or Visual Basic. To be consumable from another language, a component must contain at least one activatable class.
 
-X Xxxxxxx Xxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxx xxxxxx xxxxxxxxxxx xxxxxxx xx xxxx xx xxxxxxxxxx xxxxxxx xxxx xxx xxxxx xxxx xxxxxxxxxx xx xxx xxxxxxxxx. Xxxxx xxx [XxxXxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.webhosthiddenattribute.aspx) xxxxxxxxx xx X++ xxxxx xxxx xxx xxx xxxxxxxx xx xx xxxxxxx xx XxxxXxxxxx.
+A Windows Runtime component can contain multiple public activatable classes as well as additional classes that are known only internally to the component. Apply the [WebHostHidden](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.webhosthiddenattribute.aspx) attribute to C++ types that are not intended to be visible to JavaScript.
 
-Xxx xxxxxx xxxxxxx xxxx xxxxxx xx xxx xxxx xxxx xxxxxxxxx xxxxx xxx xxx xxxx xxxx xx xxx xxxxxxxxx xxxxxxxx xxxx. Xxx xxxxxxx, x xxxxx xxxx'x xxxxx X.X.X.XxXxxxx xxx xx xxxxxxxxxxxx xxxx xx xx'x xxxxxxx xx x xxxxxxxx xxxx xxxx'x xxxxx X.xxxxx xx X.X.xxxxx xx X.X.X.xxxxx. Xxx xxxx xx xxx XXX xx xxx xxxxxxxx xx xxxxx xxx .xxxxx xxxx xxxx.
+All public classes must reside in the same root namespace which has the same name as the component metadata file. For example, a class that's named A.B.C.MyClass can be instantiated only if it's defined in a metadata file that's named A.winmd or A.B.winmd or A.B.C.winmd. The name of the DLL is not required to match the .winmd file name.
 
-Xxxxxx xxxx xxxxxxx xx xxxxxxxx xx xxx xxxxxxxxx xx xxxxx xxx **xxx** (**Xxx** xx Xxxxxx Xxxxx) xxxxxxx xxxx xx xxx xxx xxxxx.
+Client code creates an instance of the component by using the **new** (**New** in Visual Basic) keyword just as for any class.
 
-Xx xxxxxxxxxxx xxxxx xxxx xx xxxxxxxx xx **xxxxxx xxx xxxxx xxxxxx**. Xxx **xxx xxxxx** xxxxxxx xxxxx xxx xxxxxxxx xx xxxxxx xxx xxxxx xx x Xxxxxxx Xxxxxxx xxxxxxxxxx xxxx, xxx xxx xxxxxx xxxxxxx xxxxxxxxx xxxx xxx xxxxx xxxxxx xx xxxxxxxxx. Xxx Xxxxxxx Xxxxxxx xxxx xxx xxxxxxxxx xxxxxxx x xxxxxxxxxxx xxxxxxxxxxx xxxxx; x xxxxxxx xxxxxxxxxxx xxxxx xxxxxxxx xxxxxxxx xx xxxxxx XXXX xxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxx xxxxxxx xxx xxxxxxx (X++/XX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx).
+An activatable class must be declared as **public ref class sealed**. The **ref class** keyword tells the compiler to create the class as a Windows Runtime compatible type, and the sealed keyword specifies that the class cannot be inherited. The Windows Runtime does not currently support a generalized inheritance model; a limited inheritance model supports creation of custom XAML controls. For more information, see [Ref classes and structs (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh699870.aspx).
 
-Xxx X++, xxx xxx xxxxxxx xxxxxxxxxx xxx xxxxxxx xx xxx xxxxxxx xxxxxxxxx. Xxx [Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) xxxxxxxxx xxxxxxxx X++ xxxxxxx xxxx xxx xxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxxx xxxxxx. Xxxxx xxxxxxx [Xxxxxxxx::Xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) xxxxx xxx [Xxxxxxxx::Xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx) xxxxx. Xxx xxxxxxxx xxxxxxxxxx xxxxx xxxx xx [Xxxxxxxx::Xxxxxxxxxxx::Xxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) xxxxx xxx [Xxxxxxxx::Xxxxxxxxxxx::Xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) xxxxx xxx xxxxxxx xx xxx [Xxxxxxxx::Xxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx) xxxxxxxxx. Xxx xxxxxx xxxxxxxxxx xxxx xxxxx xxxxx xxxxxxxxx xxx xxxxxxx xx [Xxxxxxx::Xxxxxxxxxx::Xxxxxxxxxxx Xxxxxxxxx (X++/XX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx). Xx xx xxxxx xxxxxxxxx xxxxx xxxx xxx xxxxxxxx xx XxxxXxxxxx, X\# xxx Xxxxxx Xxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxx Xxxxxx (X++/XX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
+For C++, all the numeric primitives are defined in the default namespace. The [Platform](https://msdn.microsoft.com/library/windows/apps/xaml/hh710417.aspx) namespace contains C++ classes that are specific to the Windows Runtime type system. These include [Platform::String](https://msdn.microsoft.com/library/windows/apps/xaml/hh755812.aspx) class and [Platform::Object](https://msdn.microsoft.com/library/windows/apps/xaml/hh748265.aspx) class. The concrete collection types such as [Platform::Collections::Map](https://msdn.microsoft.com/library/windows/apps/xaml/hh441508.aspx) class and [Platform::Collections::Vector](https://msdn.microsoft.com/library/windows/apps/xaml/hh441570.aspx) class are defined in the [Platform::Collections](https://msdn.microsoft.com/library/windows/apps/xaml/hh710418.aspx) namespace. The public interfaces that these types implement are defined in [Windows::Foundation::Collections Namespace (C++/CX)](https://msdn.microsoft.com/library/windows/apps/xaml/hh441496.aspx). It is these interface types that are consumed by JavaScript, C# and Visual Basic. For more information, see [Type System (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh755822.aspx).
 
-## Xxxxxx xxxx xxxxxxx x xxxxx xx xxxxx-xx xxxx
+## Method that returns a value of built-in type
 
 ```cpp
     // #include <valarray>
@@ -107,7 +107,7 @@ var num = nativeObject.logCalc(21.5);
 document.getElementById('P2').innerHTML = num;
 ```
 
-## Xxxxxx xxxx xxxxxxx x xxxxxx xxxxx xxxxxx
+## Method that returns a custom value struct
 
 ```cpp
 namespace CppComponent
@@ -134,7 +134,7 @@ namespace CppComponent
 }
 ```
 
-Xx xxxx xxxx-xxxxxxx xxxxx xxxxxxx xxxxxx xxx XXX, xxxxxx x XxxxXxxxxx xxxxxx xxxx xxx xxx xxxx xxxxxxx xx xxx xxxxx xxxxxx xxxx'x xxxxxxx xx X++. Xxx xxx xxxx xxxx xxxx xxxxxx xx xx xxxxxxxx xx x X++ xxxxxx xx xxxx xxx xxxxxx xx xxxxxxxxxx xxxxxxxxx xx xxx X++ xxxx.
+To pass user-defined value structs across the ABI, define a JavaScript object that has the same members as the value struct that's defined in C++. You can then pass that object as an argument to a C++ method so that the object is implicitly converted to the C++ type.
 
 ```javascript
 // Get and set the value struct
@@ -151,9 +151,9 @@ function GetAndSetPlayerData() {
 }
 ```
 
-Xxxxxxx xxxxxxxx xx xx xxxxxx x xxxxx xxxx xxxxxxxxxx XXxxxxxxxXxx (xxx xxxxx).
+Another approach is to define a class that implements IPropertySet (not shown).
 
-Xx xxx .XXX xxxxxxxxx, xxx xxxx xxxxxx x xxxxxxxx xx xxx xxxx xxxx'x xxxxxxx xx xxx X++ xxxxxxxxx.
+In the .NET languages, you just create a variable of the type that's defined in the C++ component.
 
 ```csharp
 private void GetAndSetPlayerData()
@@ -178,10 +178,10 @@ private void GetAndSetPlayerData()
 }
 ```
 
-## Xxxxxxxxxx Xxxxxxx
+## Overloaded Methods
 
 
-X X++ xxxxxx xxx xxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxx, xxx XxxxXxxxxx xxx xxxxxxx xxxxxxx xx xxxxxxxxxxxxx xxxxxxxxxx xxxxxxx. Xxx xxxxxxx, xx xxx xxxx xxx xxxxxxxxxx xxxxxxx xxxxx xxxxxxxxxx:
+A C++ public ref class can contain overloaded methods, but JavaScript has limited ability to differentiate overloaded methods. For example, it can tell the difference between these signatures:
 
 ```cpp
 public ref class NumberClass sealed 
@@ -193,16 +193,16 @@ public:
 };
 ```
 
-Xxx xx xxx’x xxxx xxx xxxxxxxxxx xxxxxxx xxxxx:
+But it can’t tell the difference between these:
 
 ```cpp
 int GetNumber(int i);
 double GetNumber(double d);
 ```
 
-Xx xxxxxxxxx xxxxx, xxx xxx xxxxxx xxxx XxxxXxxxxx xxxxxx xxxxx x xxxxxxxx xxxxxxxx xx xxxxxxxx xxx [Xxxxxxx::Xxxxxxxxxx::Xxxxxxxx::XxxxxxxXxxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) xxxxxxxxx xx xxx xxxxxx xxxxxxxxx xx xxx xxxxxx xxxx.
+In ambiguous cases, you can ensure that JavaScript always calls a specific overload by applying the [Windows::Foundation::Metadata::DefaultOverload](https://msdn.microsoft.com/library/windows/apps/windows.foundation.metadata.defaultoverloadattribute.aspx) attribute to the method signature in the header file.
 
-Xxxx XxxxXxxxxx xxxxxx xxxxx xxx xxxxxxxxxx xxxxxxxx:
+This JavaScript always calls the attributed overload:
 
 ```javascript
 var nativeObject = new CppComponent.NumberClass();
@@ -210,14 +210,14 @@ var num = nativeObject.getNumber(9);
 document.getElementById('P4').innerHTML = num;
 ```
 
-## .XXX
+## .NET
 
 
-Xxx .XXX xxxxxxxxx xxxxxxxxx xxxxxxxxx xx x X++ xxx xxxxx xxxx xx xx xxx .XXX Xxxxxxxxx xxxxx.
+The .NET languages recognize overloads in a C++ ref class just as in any .NET Framework class.
 
-## XxxxXxxx
+## DateTime
 
-Xx xxx Xxxxxxx Xxxxxxx, x [Xxxxxxx::Xxxxxxxxxx::XxxxXxxx](https://msdn.microsoft.com/library/windows/apps/windows.foundation.datetime.aspx) xxxxxx xx xxxx x YY-xxx xxxxxx xxxxxxx xxxx xxxxxxxxxx xxx xxxxxx xx YYY-xxxxxxxxxx xxxxxxxxx xxxxxx xxxxxx xx xxxxx Xxxxxxx Y, YYYY. Xxxxx xxx xx xxxxxxx xx x Xxxxxxx:Xxxxxxxxxx::XxxxXxxx xxxxxx. Xxxxxxx, xxxx xxxxxxxx xxxxxxxx xxx XxxxXxxx xx xxx xxx xxxx xx xxxxxx xx xxxx xxxxxxxx: xxx Xxxx xxxxxx xx XxxxXxxxxx xxx xxx Xxxxxx.XxxxXxxx xxx Xxxxxx.XxxxXxxxXxxxxx xxxxx xx xxx .XXX Xxxxxxxxx.
+In the Windows Runtime, a [Windows::Foundation::DateTime](https://msdn.microsoft.com/library/windows/apps/windows.foundation.datetime.aspx) object is just a 64-bit signed integer that represents the number of 100-nanosecond intervals either before or after January 1, 1601. There are no methods on a Windows:Foundation::DateTime object. Instead, each language projects the DateTime in the way that is native to that language: the Date object in JavaScript and the System.DateTime and System.DateTimeOffset types in the .NET Framework.
 
 ```cpp
 public  ref class MyDateClass sealed
@@ -233,7 +233,7 @@ public:
 };
 ```
 
-Xxxx xxx xxxx x XxxxXxxx xxxxx xxxx X++ xx XxxxXxxxxx, XxxxXxxxxx xxxxxxx xx xx x Xxxx xxxxxx xxx xxxxxxxx xx xx xxxxxxx xx x xxxx-xxxx xxxx xxxxxx.
+When you pass a DateTime value from C++ to JavaScript, JavaScript accepts it as a Date object and displays it by default as a long-form date string.
 
 ```javascript
 function SetAndGetDate() {
@@ -250,7 +250,7 @@ function SetAndGetDate() {
 }
 ```
 
-Xxxx x .XXX xxxxxxxx xxxxxx x Xxxxxx.XxxxXxxx xx x X++ xxxxxxxxx, xxx xxxxxx xxxxxxx xx xx x Xxxxxxx::Xxxxxxxxxx::XxxxXxxx. Xxxx xxx xxxxxxxxx xxxxxx x Xxxxxxx::Xxxxxxxxxx::XxxxXxxx xx x .XXX Xxxxxxxxx xxxxxx, xxx Xxxxxxxxx xxxxxx xxxxxxx xx xx x XxxxXxxxXxxxxx.
+When a .NET language passes a System.DateTime to a C++ component, the method accepts it as a Windows::Foundation::DateTime. When the component passes a Windows::Foundation::DateTime to a .NET Framework method, the Framework method accepts it as a DateTimeOffset.
 
 ```csharp
 private void DateTimeExample()
@@ -270,12 +270,12 @@ private void DateTimeExample()
 }
 ```
 
-## Xxxxxxxxxxx xxx xxxxxx
+## Collections and arrays
 
 
-Xxxxxxxxxxx xxx xxxxxx xxxxxx xxxxxx xxx XXX xxxxxxxx xx xxxxxxx xx Xxxxxxx Xxxxxxx xxxxx xxxx xx Xxxxxxx::Xxxxxxxxxx::Xxxxxxxxxxx::XXxxxxx^ xxx Xxxxxxx::Xxxxxxxxxx::Xxxxxxxxxxx::XXxx^. Xxx xxxxxxx, xx xxx xxxxxx x xxxxxx xx x Xxxxxxxx::Xxxxxxxxxxx::Xxx, xx xxxxxxxxxx xxxxxxxx xx x Xxxxxxx::Xxxxxxxxxx::Xxxxxxxxxxx::XXxx^. Xxx xxxxxxxxxx xxxxxxxxxx xxx xxxxxxx xx x xxxxxxxxx xxxx'x xxxxxxxx xxxx xxx X++ xxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxxxxxxx. XxxxXxxxxx xxx .XXX xxxxxxxxx xxxxxxx xxx xxxxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxxx (X++/XX)](https://msdn.microsoft.com//library/windows/apps/hh700103.aspx) xxx [Xxxxx xxx XxxxxXxxxXxxxx (X++/XX)](https://msdn.microsoft.com/library/windows/apps/hh700131.aspx).
+Collections are always passed across the ABI boundary as handles to Windows Runtime types such as Windows::Foundation::Collections::IVector^ and Windows::Foundation::Collections::IMap^. For example, if you return a handle to a Platform::Collections::Map, it implicitly converts to a Windows::Foundation::Collections::IMap^. The collection interfaces are defined in a namespace that's separate from the C++ classes that provide the concrete implementations. JavaScript and .NET languages consume the interfaces. For more information, see [Collections (C++/CX)](https://msdn.microsoft.com//library/windows/apps/hh700103.aspx) and [Array and WriteOnlyArray (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh700131.aspx).
 
-## Xxxxxxx XXxxxxx
+## Passing IVector
 
 
 ```cpp
@@ -303,7 +303,7 @@ for (var i = 0; i < outVector.length; i++)
 document.getElementById('P6').innerHTML = result;
 ```
 
-Xxx .XXX xxxxxxxxx xxx XXxxxxx&xx;X&xx; xx XXxxx&xx;X&xx;.
+The .NET languages see IVector&lt;T&gt; as IList&lt;T&gt;.
 
 ```csharp
 private void SortListItems()
@@ -324,7 +324,7 @@ private void SortListItems()
 }
 ```
 
-## Xxxxxxx XXxx
+## Passing IMap
 
 
 ```cpp
@@ -351,7 +351,7 @@ var mStr = "Map result:" + outputMap.lookup(1) + outputMap.lookup(2)
 document.getElementById('P7').innerHTML = mStr;
 ```
 
-Xxx .XXX xxxxxxxxx xxx XXxx xxx XXxxxxxxxxx&xx;X, X&xx;.
+The .NET languages see IMap and IDictionary&lt;K, V&gt;.
 
 ```csharp
 private void GetDictionary()
@@ -362,10 +362,10 @@ private void GetDictionary()
 }
 ```
 
-## Xxxxxxxxxx
+## Properties
 
 
-X xxxxxx xxx xxxxx xx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx xxxxxxx xxxxxx xxxx xxxxxxx xx xxxxxxxxxx, xx xxxxx xxx xxxxxxxx xxxxxxx. Xxx xxxxxxx xx xxxxxxxxx xx .XXX Xxxxxxxxx xxxxxxxxxx. X xxxxxxx xxxxxxxx xxxxxxxxx x xxxx xxxxxx xxxxxxx xxx xxxxxxxxxxxxx xx xxxxxxxx. X xxx-xxxxxxx xxxxxxxx xxx xxxxxxxx xxx xxx xxx xxxxxxxxx xxx x xxxxx xxxxxxx xxxxxxxx xxxx'x xxx "xxxxxxx xxxxx" xxx xxx xxxxx. Xx xxxx xxxxxxx, xxx xxxxxxx xxxxxx xxxxxxxx \_xxxxxxxxXXxxxx xx xxx xxxxxxx xxxxx xxx XxxxxxxxX. X xxxxxxxx xxx xxxx xx xxxxx xxxx xxx xxxxx xxxxxxx, xxx x xxxxxx xxx xxx xxxxxxxx xx xxxxxxx xxxx xxxxx.
+A public ref class in Visual C++ component extensions exposes public data members as properties, by using the property keyword. The concept is identical to .NET Framework properties. A trivial property resembles a data member because its functionality is implicit. A non-trivial property has explicit get and set accessors and a named private variable that's the "backing store" for the value. In this example, the private member variable \_propertyAValue is the backing store for PropertyA. A property can fire an event when its value changes, and a client app can register to receive that event.
 
 ```cpp
 //Properties
@@ -412,7 +412,7 @@ nativeObject.propertyB = "What is the meaning of the universe?";
 document.getElementById('P9').innerHTML += nativeObject.propertyB;
 ```
 
-Xxx .XXX xxxxxxxxx xxxxxx xxxxxxxxxx xx x xxxxxx X++ xxxxxx xxxx xx xxxx xxxxx xx x .XXX Xxxxxxxxx xxxxxx.
+The .NET languages access properties on a native C++ object just as they would on a .NET Framework object.
 
 ```csharp
 private void GetAProperty()
@@ -432,22 +432,22 @@ private void GetAProperty()
 }
 ```
 
-## Xxxxxxxxx xxx xxxxxx
+## Delegates and events
 
 
-X xxxxxxxx xx x Xxxxxxx Xxxxxxx xxxx xxxx xxxxxxxxxx x xxxxxxxx xxxxxx. Xxx xxx xxx xxxxxxxxx xx xxxxxxxxxx xxxx xxxxxx, xxxxxxxxx, xxx xxxxxxxxxxxx xxxxxx xxxxx xx xxxxxxx xx xxxxxx xx xx xxxxxxxxx xxxxx. Xxxx x xxxxxxxx xxxxxx, xxx xxxxxxxx xxxxxxxx xxxx-xxxxxx xx xxxxxxxx xxx xxxxxxxx xx xxxxxx xxx xxxxxx xxxx xxx xxxxxxxxx xxxxx xx xxx xxxxxxxx. Xxx xxxxxxxxxxx xx x xxxxxxxx xxxxxxxxx x xxxxxxxx xxxxxxxxx, xxx xxxxxxxxxxxxxx xxxxxxxxx x xxxxx xxxxxxxxxx, xxx xxx xxxxxxxxxx xxxxxxxxx x xxxxxxxx xxxxxxxxxx.
+A delegate is a Windows Runtime type that represents a function object. You can use delegates in connection with events, callbacks, and asynchronous method calls to specify an action to be performed later. Like a function object, the delegate provides type-safety by enabling the compiler to verify the return type and parameter types of the function. The declaration of a delegate resembles a function signature, the implementation resembles a class definition, and the invocation resembles a function invocation.
 
-## Xxxxxx xx xxxxx xxxxxxxx
+## Adding an event listener
 
 
-Xxx xxx xxx xxx xxxxx xxxxxxx xx xxxxxxx x xxxxxx xxxxxx xx x xxxxxxxxx xxxxxxxx xxxx. Xxxxxx xxxx xxxxxxxxxx xx xxx xxxxx xx xxxxx xxx xxxxxxxx xxxxxxxxxx xxxx xxx xxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx.
+You can use the event keyword to declare a public member of a specified delegate type. Client code subscribes to the event by using the standard mechanisms that are provided in the particular language.
 
 ```cpp
 public:
     event SomeHandler^ someEvent;
 ```
 
-Xxxx xxxxxxx xxxx xxx xxxx X++ xxxx xx xxx xxx xxxxxxxx xxxxxxxxxx xxxxxxx.
+This example uses the same C++ code as for the previous properties section.
 
 ```javascript
 function Button_Click() {
@@ -467,7 +467,7 @@ function Button_Click() {
 }
 ```
 
-Xx xxx .XXX xxxxxxxxx, xxxxxxxxxxx xx xx xxxxx xx x X++ xxxxxxxxx xx xxx xxxx xx xxxxxxxxxxx xx xx xxxxx xx x .XXX Xxxxxxxxx xxxxx:
+In the .NET languages, subscribing to an event in a C++ component is the same as subscribing to an event in a .NET Framework class:
 
 ```csharp
 //Subscribe to event and call method that causes it to be fired.
@@ -487,10 +487,10 @@ private void objWithEvent_PropertyChangedEvent(object __param0, int __param1)
 }
 ```
 
-## Xxxxxx xxxxxxxx xxxxx xxxxxxxxx xxx xxx xxxxx
+## Adding multiple event listeners for one event
 
 
-XxxxXxxxxx xxx xx xxxXxxxxXxxxxxxx xxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxx xx xxxxxxxxx xx x xxxxxx xxxxx.
+JavaScript has an addEventListener method that enables multiple handlers to subscribe to a single event.
 
 ```cpp
 public delegate void SomeHandler(Platform::String^ str);
@@ -530,12 +530,12 @@ nativeObject.propertyA = "42";
 nativeObject.fireEvent("The answer is ");
 ```
 
-Xx X\#, xxx xxxxxx xx xxxxx xxxxxxxx xxx xxxxxxxxx xx xxx xxxxx xx xxxxx xxx += xxxxxxxx xx xxxxx xx xxx xxxxxxxx xxxxxxx.
+In C#, any number of event handlers can subscribe to the event by using the += operator as shown in the previous example.
 
-## Xxxxx
+## Enums
 
 
-X Xxxxxxx Xxxxxxx xxxx xx X++ xx xxxxxxxx xx xxxxx xxxxxx xxxxx xxxx; xx xxxxxxxxx x xxxxxx xxxx xx xxxxxxxx X++.
+A Windows Runtime enum in C++ is declared by using public class enum; it resembles a scoped enum in standard C++.
 
 ```cpp
 public enum class Direction {North, South, East, West};
@@ -553,7 +553,7 @@ private:
 };
 ```
 
-Xxxx xxxxxx xxx xxxxxx xxxxxxx X++ xxx XxxxXxxxxx xx xxxxxxxx. Xxx xxx xxxxxxxxxx xxxxxxx x XxxxXxxxxx xxxxxx xxxx xxxxxxxx xxx xxxx xxxxx xxxxxx xx xxx X++ xxxx xxx xxx xx xx xxxxxxx.
+Enum values are passed between C++ and JavaScript as integers. You can optionally declare a JavaScript object that contains the same named values as the C++ enum and use it as follows.
 
 ```javascript
 var Direction = { 0: "North", 1: "South", 2: "East", 3: "West" };
@@ -565,33 +565,37 @@ document.getElementById('P13').innerHTML =
 Direction[curDirection];
 ```
 
-Xxxx X\# xxx Xxxxxx Xxxxx xxxx xxxxxxxx xxxxxxx xxx xxxxx. Xxxxx xxxxxxxxx xxx x X++ xxxxxx xxxx xxxxx xxxx xx xxxx xxxxx xxx x .XXX Xxxxxxxxx xxxx.
+Both C# and Visual Basic have language support for enums. These languages see a C++ public enum class just as they would see a .NET Framework enum.
 
-## Xxxxxxxxxxxx xxxxxxx
-
-
-Xx xxxxxxx xxxxxxxxxxxx xxxxxxx xxxx xxx xxxxxxx xx xxxxx Xxxxxxx Xxxxxxx xxxxxxx, xxx xxx [xxxx Xxxxx (Xxxxxxxxxxx Xxxxxxx)](https://msdn.microsoft.com/library/hh750113.aspx). Xxx xxxx xxxxxxxxxxx, xxx xxx [Xxxx Xxxxxxxxxxx (Xxxxxxxxxxx Xxxxxxx)](https://msdn.microsoft.com/library/dd492427.aspx).
-
-Xx xxxxxxxxx xxxxxxxxxxxx xxxxxxx xx X++, xxx xxx [xxxxxx\_xxxxx](https://msdn.microsoft.com/library/hh750102.aspx) xxxxxxxx xxxx'x xxxxxxx xx xxxxxxxx.x. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxx Xxxxxxxxxxxx Xxxxxxxxxx xx X++ xxx Xxxxxxx Xxxxx Xxxx](https://msdn.microsoft.com/library/vstudio/hh750082.aspx). Xxx xx xxxxxxx, xxx [Xxxxxxxxxxx: Xxxxxxxx x xxxxx Xxxxxxx Xxxxxxx xxxxxxxxx xx X++ xxx xxxxxxx xx xxxx XxxxXxxxxx xx X\#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). Xxx .XXX xxxxxxxxx xxxxxxx X++ xxxxxxxxxxxx xxxxxxx xxxx xx xxxx xxxxx xxx xxxxxxxxxxxx xxxxxx xxxx'x xxxxxxx xx xxx .XXX Xxxxxxxxx.
-
-## Xxxxxxxxxx
+## Asynchronous methods
 
 
-Xxx xxx xxxxx xxx xxxxxxxxx xxxx xxxx'x xxxxxxx xx xxx Xxxxxxx Xxxxxxx. Xxx xxxxxx xxxxxx xxxxxx xxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxxxxxx xxxx. Xxxxxxx, xxx xxx xxxxx XXXXxxxxxxxx xxx xxxxxxx x xxxxxx XXXXXXX xxxx xxx xx xxxxxxxx xx xxx xxxx xxxx xxxxxxx xxx xxxxxxxxx. Xxxxx'x xx xxx xx xxxxxxx x xxxxxx Xxxxxxx xx x XXXXxxxxxxxx.
+To consume asynchronous methods that are exposed by other Windows Runtime objects, use the [task Class (Concurrency Runtime)](https://msdn.microsoft.com/library/hh750113.aspx). For more information, see and [Task Parallelism (Concurrency Runtime)](https://msdn.microsoft.com/library/dd492427.aspx).
 
-## Xxxxxxxxx xxxx
+To implement asynchronous methods in C++, use the [create\_async](https://msdn.microsoft.com/library/hh750102.aspx) function that's defined in ppltasks.h. For more information, see [Creating Asynchronous Operations in C++ for Windows Store Apps](https://msdn.microsoft.com/library/vstudio/hh750082.aspx). For an example, see [Walkthrough: Creating a basic Windows Runtime component in C++ and calling it from JavaScript or C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md). The .NET languages consume C++ asynchronous methods just as they would any asynchronous method that's defined in the .NET Framework.
+
+## Exceptions
 
 
-Xxxx xxx xxxxx x XxxxXxxxxx xxxxxxxx xxxx xxx x xxxxxxxxx XXX, xxx xxx xxx xxx xxxxxxxx xx xxxxxx xxxxxx xxxxxxxx xxxxxxx xxxxxx, xx xxxxxxxx xxxxxxx xxxxxx xxxx xx xxx xxxxxxxxx, xxx xxx xxxx xx xxx xxxx xxxx. Xx xxxxxx xxx xxxxxxx, xxxxxx xxx XxxxXxxxxx xxxxxxx xxxx xx Xxxxxxxx Xxxxxxxx xxx xxxx xxxxxx Xxxxxxxxxx, Xxxxxxxxx, Xxxxxxxx Xxxx.
+You can throw any exception type that's defined by the Windows Runtime. You cannot derive custom types from any Windows Runtime exception type. However, you can throw COMException and provide a custom HRESULT that can be accessed by the code that catches the exception. There's no way to specify a custom Message in a COMException.
 
-Xx xxxx xx xxxxxx xxxxxxxxxxx xxxxxxxxxxxx xx xxx xxxxxxx xxxxxxxx. Xxx xxxxxxx, xx xxx xxx xxxxxxxxxx xx xxxx xx xxxxx xxxx xx xxx xxxx'x Xxxxxxxx xxxxxxx xx xxxxx xxx Xxxxxxx Xxxxxxx XXXx, xx xxxx xx xxxxxx xxx Xxxxxxxx Xxxxxxx xxxxx xxx xx xxx Xxxxxxxxxxxx xxxx xx xxx xxxxxxxx xxxxxxxx.
+## Debugging tips
 
-Xx xxxx XxxxXxxxxx xxxx xxxxx'x xxxx xx xx xxxxxxxxxxx xxx xxxxxx xxxxxxxxxx xx xxxxxxx xx xxx xxxxxxxxx, xxxx xxxx xxxx xx XxxxXxxxxx xxx xxx xxxxx xxxxx xxxxxx. Xxx xxxxxxx, xxx XxxXxxx X++ xxxxxx xxxx xx xxxxxxxxxx xx xxxXxxx xx XxxxXxxxxx.
 
-Xx xxx xxxxxx x X++ Xxxxxxx Xxxxxxx xxxxxxxxx xxxxxxx xxxx x xxxxxxxx, xxx xxxx xxxx xxxxxxxx xxxxxx xxx xxxxxxx xxxxxxxxx xxxx xxx XxxxXxxxxx xxxxxxx. Xxxxxxx xx xx xx xxxxxxxx xxxxxxxxxx xxxxx xx xxxxx xxxxxxxxxx. Xx xxxxxxxxx, xxx xxx xxxx xxx xx xxxxxxxx xxxxxxxxx xx xxx XXX.
+When you debug a JavaScript solution that has a component DLL, you can set the debugger to enable either stepping through script, or stepping through native code in the component, but not both at the same time. To change the setting, select the JavaScript project node in Solution Explorer and then choose Properties, Debugging, Debugger Type.
 
-## Xxxxxxx xxxxxx
+Be sure to select appropriate capabilities in the package designer. For example, if you are attempting to open an image file in the user's Pictures library by using the Windows Runtime APIs, be sure to select the Pictures Library check box in the Capabilities pane of the manifest designer.
 
-* [Xxxxxxxxxxx: Xxxxxxxx x xxxxx Xxxxxxx Xxxxxxx xxxxxxxxx xx X++ xxx xxxxxxx xx xxxx XxxxXxxxxx xx X\#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
+If your JavaScript code doesn't seem to be recognizing the public properties or methods in the component, make sure that in JavaScript you are using camel casing. For example, the LogCalc C++ method must be referenced as logCalc in JavaScript.
+
+If you remove a C++ Windows Runtime component project from a solution, you must also manually remove the project reference from the JavaScript project. Failure to do so prevents subsequent debug or build operations. If necessary, you can then add an assembly reference to the DLL.
+
+## Related topics
+
+* [Walkthrough: Creating a basic Windows Runtime component in C++ and calling it from JavaScript or C#](walkthrough-creating-a-basic-windows-runtime-component-in-cpp-and-calling-it-from-javascript-or-csharp.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

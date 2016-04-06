@@ -1,47 +1,51 @@
 ---
-xx.xxxxxxx: YYXYXYYY-YXYX-YXYY-YYXY-YYXYYYXYYYYY
-xxxxxxxxxxx: Xxx xx xxxxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxx xxxxx xxx xxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxxxx Xx Xxxxxx XXX.
-xxxxx: Xxxxxxx xxx Xxxxxxxxx Xx Xxxxxx XXX
+ms.assetid: 28C6D865-2A5C-4B64-82E3-49A862A36850
+description: 広告メディエーター コントロールと開発者向け関連ツールは Microsoft ユニバーサル広告クライアント SDK に用意されています。
+title: ユニバーサル広告クライアント SDK のインストール
 ---
 
-# Xxxxxxx xxx Xxxxxxxxx Xx Xxxxxx XXX
+# ユニバーサル広告クライアント SDK のインストール
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxx xx xxxxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxx xxxxx xxx xxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxxxx Xx Xxxxxx XXX. Xxxx XXX xx xx xxxxxxxxx xx Xxxxxx Xxxxxx YYYY xx Xxxxxx Xxxxxx YYYY. Xx xxxxxxx xxx XXX:
+広告メディエーター コントロールと開発者向け関連ツールは Microsoft ユニバーサル広告クライアント SDK に用意されています。 この SDK は、Visual Studio 2013 や Visual Studio 2015 の拡張機能です。 SDK をインストールするには
 
-1.  Xxxxx xxx xxxxxxxxx xx Xxxxxx Xxxxxx YYYY xx Xxxxxx Xxxxxx YYYY xxx xxxxxxxxx xxx xxxxxxxx xxxxxxxx xx xxx xx xxxxxxxx xxxxxxxxx xx Xxxxxxxxx Xxxxxxxxxxx XXX.
-2.  Xxxxxxxx xxx xxxxxxx xxx [Xxxxxxxxx Xxxxxxxxx Xx Xxxxxx XXX](http://go.microsoft.com/fwlink/p/?LinkId=518026). Xx xxx xxxx x xxx xxxxxxx xx xxxxxxx. Xx xxxx xxx xxxx xxxxx xxx xxxxxxx xxx xxxxxxxx.
-3.  Xxxxxxx Xxxxxx Xxxxxx.
+1.  Visual Studio 2013 または Visual Studio 2015 のすべてのインスタンスを閉じて、広告メディエーター拡張機能または Microsoft Advertising SDK の以前のバージョンをアンインストールします。
+2.  [Microsoft ユニバーサル広告クライアント SDK](http://go.microsoft.com/fwlink/p/?LinkId=518026) をダウンロードしてインストールします。 インストールには数分かかることがあります。 確実に処理が完了するまでお待ちください。
+3.  Visual Studio を再起動します。
 
-**Xxxx**  Xx xxxxxxx xxx Xxxxxxxxx Xxxxxxxxx Xx Xxxxxx XXX xxxx Xxxxxx Xxxxxx YYYY, xxx xxxx xxxx xxxxxxx Y.Y xx xxxxx xx xxx Xxxxxx Xxxxxx Xxxxx xxx Xxxxxxxxx Xxxxxxx Xxxx xxxxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxx xxxxxx xx xxx Xxxxxx Xxxxxx Xxxxx xxx Xxxxxxxxx Xxxxxxx Xxxx, xxx xxx [xxxxxxx xxxxx](http://go.microsoft.com/fwlink/?LinkID=624516).
+**注** Visual Studio 2015 の Microsoft ユニバーサル広告クライアント SDK をインストールするには、Visual Studio Tools for Universal Windows Apps のバージョン 1.1 以降がインストールされている必要があります。 Visual Studio Tools for Universal Windows Apps のこの更新について詳しくは、[リリース ノート](http://go.microsoft.com/fwlink/?LinkID=624516)をご覧ください。
 
-## Xxxxxx xx xxxxxxxx xxxxxxx xx xxx xxx xxxxxx xxxxxxx xx xxx XXX
+## SDK の最新バージョンを使うように既存のプロジェクトを更新する
 
-Xxxxxxxxx xxxxxxxxxxxx xxxxxxxx xxx xxxxxxxx xx xxx Xxxxxxxxx Xxxxxxxxx Xx Xxxxxx XXX xxxx xxx xx xxxxxxxxx xxxxxxxx, xxxx xx xxxxxxx xxx xxxxxxxxxx xx xxxxxxxx. Xx xxx xxxx xxxxxxxx xxxxxxxx xxxx xxx xx xxxxxxx xxxxxxx xx xxx XXX xxx xxx xxxx xx xxx xxx xxxxxx xxxxxxx, xxxxxx xxxxx xxxxxxxxxxxx:
+マイクロソフトでは定期的に、新しい広告仲介機能 (追加の広告ネットワークのサポートなど) を備えた Microsoft ユニバーサル広告クライアント SDK の新しいバージョンをリリースしています。 SDK の以前のバージョンを使っている既存のプロジェクトがあり、そのプロジェクトで最新バージョンを使う場合は、次の手順に従ってください。
 
-1.  [Xxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=518026) xxx xxx xxx xxxxxx xxxxxxx xx xxx xxxxxxxxx.
-2.  Xxxx xxxx xx xxxx xxxxxxxx xxxxxxx xx Xxxxxx Xxxxxx, xxx xxxxxx xxx [Xxxxxxxxx xx xxxxxxxx](add-and-use-the-ad-mediator-control.md#configure-ad-networks) xxxxx xxxxx xx xxxxxxxxx xxxx xx xxx xx xxxxxxxx xxxx xx xxxx xxx. Xxxx xxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxx xx xxxx xx xxx xx xxxxxxx xxxxxxxxxx.
+1.  インストーラーの最新リリースを[ダウンロード](http://go.microsoft.com/fwlink/p/?LinkId=518026)して実行します。
+2.  Visual Studio で既存の各プロジェクトを開き、再び「[広告ネットワークを構成する](add-and-use-the-ad-mediator-control.md#configure-ad-networks)」の手順に従って、アプリで使う各広告ネットワークを構成します。 このプロセスでは、広告ネットワークの各アセンブリの最新バージョンをインストールします。
 
-Xx xxx xxxx x Xxxxxxx Xxxxx Y xx Xxxxxxx Xxxxx Y.Y Xxxxxxxxxxx xxxxxxx, xxxx xxxxxxx xxxxx xxxxxxxxxx xxxxx xx xxxxxx xxxx xxx xxxxxxx xxxxxxxx xx xxx xx xxxxxxxx xxxxxxxxxx xxx xxxx xx xxx xxx:
+Windows Phone 8 または Windows Phone 8.1 Silverlight プロジェクトがある場合は、次に示している追加の手順も実行して、広告メディエーター アセンブリの正しいバージョンがアプリで使われるようにします。
 
-1.  Xxxx xxxx xxxxxxx xx Xxxxxx Xxxxxx.
-2.  Xx **Xxxxxxxx Xxxxxxxx**, xxxxxx **Xxxxxxxxxx**.
-3.  Xxxxx-xxxxx **Xxxxxxxxx.XxXxxxxxxx.Xxxx** xxx xxxxxx **Xxxxxxxxxx**.
-4.  Xxx xxx **Xxxxxxxx Xxxxxxx** xxxxxxxx xx **Xxxxx**.
-5.  Xxxxxx xxxxx Y-Y xxx **Xxxxxxxxx.XxXxxxxxxx.XxxxxxxXxxxxY**.
+1.  Visual Studio でプロジェクトを開きます。
+2.  **ソリューション エクスプローラー**で、**[参照設定]** を展開します。
+3.  **[Microsoft.AdMediator.Core]** を右クリックし、**[プロパティ]** を選びます。
+4.  **[特定バージョン]** プロパティを **[False]** に設定します。
+5.  **[Microsoft.AdMediator.WindowsPhone8]** について手順 3. と 4. を繰り返します。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxx xxx xxxxxx xxxx xx xxxxxxxx](select-and-manage-your-ad-networks.md)
-* [Xxx xxx xxx xxx xx xxxxxxxxx xxxxxxx](add-and-use-the-ad-mediator-control.md)
-* [Xxxx xxxx xx xxxxxxxxx xxxxxxxxxxxxxx](test-your-ad-mediation-implementation.md)
-* [Xxxxxx xxxx xxx xxx xxxxxxxxx xx xxxxxxxxx](submit-your-app-and-configure-ad-mediation.md)
-* [Xxxxxxxxxxxx xx xxxxxxxxx](troubleshoot-ad-mediation.md)
+* [広告ネットワークの選択と管理](select-and-manage-your-ad-networks.md)
+* [広告の仲介コントロールの追加と使用](add-and-use-the-ad-mediator-control.md)
+* [広告の仲介の実装のテスト](test-your-ad-mediation-implementation.md)
+* [アプリの提出と広告の仲介の構成](submit-your-app-and-configure-ad-mediation.md)
+* [広告の仲介のトラブルシューティング](troubleshoot-ad-mediation.md)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

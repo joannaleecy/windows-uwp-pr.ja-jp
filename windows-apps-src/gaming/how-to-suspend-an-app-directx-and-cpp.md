@@ -1,22 +1,22 @@
 ---
-xxxxx: Xxx xx xxxxxxx xx xxx (XxxxxxX xxx X++)
-xxxxxxxxxxx: Xxxx xxxxx xxxxx xxx xx xxxx xxxxxxxxx xxxxxx xxxxx xxx xxx xxxx xxxx xxx xxxxxx xxxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX xxx.
-xx.xxxxxxx: YxxYYYxY-xxYx-YYYY-xxxY-YxYxYYYxYYYx
+title: アプリを一時停止する方法 (DirectX と C++)
+description: このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが一時停止するときに重要なシステム状態とアプリ データを保存する方法について説明します。
+ms.assetid: 5dd435e5-ec7e-9445-fed4-9c0d872a239e
 ---
 
-# Xxx xx xxxxxxx xx xxx (XxxxxxX xxx X++)
+# アプリを一時停止する方法 (DirectX と C++)
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxx xxxxx xxxxx xxx xx xxxx xxxxxxxxx xxxxxx xxxxx xxx xxx xxxx xxxx xxx xxxxxx xxxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX xxx.
+このトピックでは、ユニバーサル Windows プラットフォーム (UWP) DirectX アプリをシステムが一時停止するときに重要なシステム状態とアプリ データを保存する方法について説明します。
 
-## Xxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxx
+## suspending イベント ハンドラーに登録する
 
 
-Xxxxx, xxxxxxxx xx xxxxxx xxx [**XxxxXxxxxxxxxxx::Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br205860) xxxxx, xxxxx xx xxxxxx xxxx xxxx xxx xx xxxxx xx x xxxxxxxxx xxxxx xx x xxxx xx xxxxxx xxxxxx.
+まず、[**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) イベントを処理するための登録を行います。このイベントは、ユーザーまたはシステムの動作によってアプリが一時停止の状態に移ったときに発生します。
 
-Xxx xxxx xxxx xx xxxx xxxxxxxxxxxxxx xx xxx [**XXxxxxxxxxXxxx::Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700495) xxxxxx xx xxxx xxxx xxxxxxxx:
+このコードをビュー プロバイダーの [**IFrameworkView::Initialize**](https://msdn.microsoft.com/library/windows/apps/hh700495) メソッドの実装に追加します。
 
 ```cpp
 void App::Initialize(CoreApplicationView^ applicationView)
@@ -30,12 +30,12 @@ void App::Initialize(CoreApplicationView^ applicationView)
 }
 ```
 
-## Xxxx xxx xxx xxxx xxxxxx xxxxxxxxxx
+## 一時停止の前に任意のアプリ データを保存する
 
 
-Xxxx xxxx xxx xxxxxxx xxx [**XxxxXxxxxxxxxxx::Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br205860) xxxxx, xx xxx xxx xxxxxxxxxxx xx xxxx xxx xxxxxxxxx xxxxxxxxxxx xxxx xx xxx xxxxxxx xxxxxxxx. Xxx xxx xxxxxx xxx xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241622) xxxxxxx XXX xx xxxx xxxxxx xxxxxxxxxxx xxxx xxxxxxxxxxxxx. Xx xxx xxx xxxxxxxxxx x xxxx, xxxx xxx xxxxxxxx xxxx xxxxx xxxxxxxxxxx. Xxx'x xxxxxx xx xxxxxxx xxx xxxxx xxxxxxxxxx!
+アプリでは、[**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) イベントを処理する時点で、ハンドラー関数で重要なアプリケーション データを保存できます。 アプリで [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) Storage API を使って、シンプルなアプリケーション データを同期的に保存する必要があります。 ゲームを開発している場合は、重要なゲームの状態の情報を保存します。 オーディオ処理の一時停止も忘れずに行います。
 
-Xxx, xxxxxxxxx xxx xxxxxxxx. Xxxx xxx xxx xxxx xx xxxx xxxxxx.
+ここで、コールバックを実装します。 アプリのデータはこのメソッドで保存します。
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -57,9 +57,9 @@ void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
 }
 ```
 
-Xxxx xxxxxxxx xxxx xxxxxxxx xxxx Y xxxxxxx. Xxxxxx xxxx xxxxxxxx, xxx xxxx xxxxxxx x xxxxxxxx xx xxxxxxx [**XxxxxxxxxxXxxxxxxxx::XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224690), xxxxx xxxxxx xxx xxxxxxxxx. Xxxx xxxx xxx xxxxxxxxx xxx xxxx xxxxxxxxx, xxxx [**XxxxxxxxxxXxxxxxxx::Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224685) xx xxxx xxx xxxxxx xxxx xxxx xxx xx xxx xxxxx xx xx xxxxxxxxx. Xx xxx xx xxx xxxxxxx x xxxxxxxx, xx xx xxxx xxx xxxxx xxxxxx xxxx Y xxxxxxx xx xxxx xxx xxxx, xxxx xxx xx xxxxxxxxxxxxx xxxxxxxxx.
+コールバックは 5 秒で完了する必要があります。 このコールバック中に、[**SuspendingOperation::GetDeferral**](https://msdn.microsoft.com/library/windows/apps/br224690) を呼び出して、保留を要求します。これによって、カウントダウンが開始されます。 アプリが保存操作を完了したら、[**SuspendingDeferral::Complete**](https://msdn.microsoft.com/library/windows/apps/br224685) を呼び出して、アプリを一時停止する準備ができたことをシステムに通知します。 保留を要求しないか、アプリがデータの保存に 5 秒より長くかかった場合、アプリは自動的に一時停止されます。
 
-Xxxx xxxxxxxx xxxxxx xx xx xxxxx xxxxxxx xxxxxxxxx xx xxx [**XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208211) xxx xxx xxx'x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225). Xxxx xxxxxxxx xxxx xxx xx xxxxxxx xx xxx xx xxx xxxx [**XxxxXxxxxxxxxx::XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208215) xxxx xxxx xxx'x xxxx xxxx (xxxxxxxxxxx xx xxx [**XXxxxxxxxxXxxx::Xxx**](https://msdn.microsoft.com/library/windows/apps/hh700505) xxxxxx xx xxxx xxxx xxxxxxxx).
+このコールバックは、アプリの [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). の [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) によって処理されるイベント メッセージとして発生します。 このコールバックは、アプリのメイン ループ (ビュー プロバイダーの [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) メソッドで実装) から [**CoreDispatcher::ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) を呼び出さない場合は呼び出されません。
 
 ``` syntax
 // This method is called after the window becomes active.
@@ -86,10 +86,10 @@ void App::Run()
 }
 ```
 
-## Xxxx Xxxx()
+## Trim() を呼び出す
 
 
-Xxxxxxxx xx Xxxxxxx Y.Y, xxx XxxxxxX Xxxxxxx Xxxxx xxxx xxxx xxxx [**XXXXXXxxxxxY::Xxxx**](https://msdn.microsoft.com/library/windows/desktop/dn280346) xxxx xxxxxxxxxx. Xxxx xxxx xxxxx xxx xxxxxxxx xxxxxx xx xxxxxxx xxx xxxxxxxxx xxxxxxx xxxxxxxxx xxx xxx xxx, xxxxx xxxxxxx xxx xxxxxx xxxx xxx xxx xxxx xx xxxxxxxxxx xx xxxxxxx xxxxxx xxxxxxxxx xxxxx xx xxx xxxxxxx xxxxx. Xxxx xx x xxxxxxxxxxxxx xxxxxxxxxxx xxx Xxxxxxx Y.Y.
+Windows 8.1 以降では、DirectX を使った Windows ストア アプリはいずれも、中断時に [**IDXGIDevice3::Trim**](https://msdn.microsoft.com/library/windows/desktop/dn280346) を呼び出す必要があります。 この呼び出しは、アプリに割り当てた一時バッファーをすべて解放するようにグラフィックス ドライバーに対して指示するものであり、アプリが中断状態にある間に終了してメモリ リソースが再利用される可能性を低く抑えることができます。 Windows 8.1 では、これが認定要件となっています。
 
 ```cpp
 void App::OnSuspending(Platform::Object^ sender, SuspendingEventArgs^ args)
@@ -121,30 +121,34 @@ void DX::DeviceResources::Trim()
 }
 ```
 
-## Xxxxxxx xxx xxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx
+## 任意の排他リソースとファイル ハンドルを解放する
 
 
-Xxxx xxxx xxx xxxxxxx xxx [**XxxxXxxxxxxxxxx::Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br205860) xxxxx, xx xxxx xxx xxx xxxxxxxxxxx xx xxxxxxx xxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx. Xxxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx xxxxx xx xxxxxx xxxx xxxxx xxxx xxx xxxxxx xxxx xxxxx xxxx xxx xxx'x xxxxx xxxx. Xxxx xxx xxx xx xxxxxxxxx xxxxx xxxxxxxxxxx, xx xxxxxx xxxx xxx xxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx.
+アプリでは、[**CoreApplication::Suspending**](https://msdn.microsoft.com/library/windows/apps/br205860) イベントを処理する時点で、排他リソースとファイル ハンドルを解放することもできます。 排他リソースとファイル ハンドルを明示的に解放すると、自分のアプリが使っていないときに他のアプリが排他リソースとファイル ハンドルにアクセスできるようになります。 アプリが終了後にアクティブ化されるときに、排他リソースとファイル ハンドルを開く必要があります。
 
-## Xxxxxxx
+## 注釈
 
 
-Xxx xxxxxx xxxxxxxx xxxx xxx xxxxxxxx xxx xxxx xxxxxxxx xx xxxxxxx xxx xx xx xxx xxxxxxx. Xxx xxxxxx xxxxxxx xxxx xxx xxxxxxxx xxx xxxx xxxxxxxx xxxx xx xx. Xxxx xxx xxxxxx xxxxxxx xxxx xxx, xxx xxxxxxx xx xxxx xxxxxxxxx xxx xxxx xxxxxxxxxx xx xxx xxxx xx xx xxx xxxxxx xxx xxxxxx xxxxxxxxx xxx xxx. Xxx xxxxxx xxxxxxxx xxx xxx xxxxxxx xxxxx xx xxxx xxx, xx xxxx xx xxxxxxx xx xxx xxxx xx xx xx'x xxxx xxxxxxx xx xxx xxxxxxxxxx.
+ユーザーが別のアプリまたはデスクトップに切り替えると、システムはアプリを中断します。 ユーザーが元のアプリに戻すと、システムはアプリを再開します。 システムがアプリを再開した時点で、変数とデータ構造の内容は、システムがアプリを一時停止する前の状態と同じです。 システムはアプリを厳密に一時停止前の状態に復元するので、ユーザーからはアプリがバックグラウンドで実行していたように見えます。
 
-Xxx xxxxxx xxxxxxxx xx xxxx xxxx xxx xxx xxx xxxx xx xxxxxx xxxxx xx'x xxxxxxxxx. Xxxxxxx, xx xxx xxxxxx xxxx xxx xxxx xxx xxxxxxxxx xx xxxx xxxx xxx xx xxxxxx, xxx xxxxxx xxxx xxxxxxxxx xxxx xxx. Xxxx xxx xxxx xxxxxxxx xxxx xx x xxxxxxxxx xxx xxxx xxx xxxx xxxxxxxxxx, xxx xxxxxx xxxxx xx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225018) xxxxx xxx xxxxxx xxxxxxx xxx xxxxxxxxxxx xxxx xx xxx xxxxxxx xxx xxx **XxxxXxxxxxxxxxxXxxx::Xxxxxxxxx** xxxxx.
+システムは、アプリの一時停止中、アプリとそのデータをメモリに保持するよう試みます。 ただし、アプリをメモリに保持するためのリソースがシステムにない場合、システムはアプリを終了します。 一時停止されてから終了されたアプリにユーザーが戻るときに、システムは [**Activated**](https://msdn.microsoft.com/library/windows/apps/br225018) イベントを送って、**CoreApplicationView::Activated** イベントのハンドラーでアプリケーション データを復元する必要があります。
 
-Xxx xxxxxx xxxxx'x xxxxxx xx xxx xxxx xx'x xxxxxxxxxx, xx xxxx xxx xxxx xxxx xxx xxxxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx xxxx xx'x xxxxxxxxx, xxx xxxxxxx xxxx xxxx xxx xxx xx xxxxxxxxx xxxxx xxxxxxxxxxx.
+アプリが終了されるときは、システムはアプリに通知を送らないので、アプリは中断されたときにアプリケーション データを保存し、排他リソースとファイル ハンドルを解放して、アプリが終了後アクティブ化されるときにそれらを復元する必要があります。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxx xx xxxxxx xx xxx (XxxxxxX xxx X++)](how-to-resume-an-app-directx-and-cpp.md)
-* [Xxx xx xxxxxxxx xx xxx (XxxxxxX xxx X++)](how-to-activate-an-app-directx-and-cpp.md)
+* [アプリを再開する方法 (DirectX と C++)](how-to-resume-an-app-directx-and-cpp.md)
+* [アプリをアクティブ化する方法 (DirectX と C++)](how-to-activate-an-app-directx-and-cpp.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

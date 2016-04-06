@@ -1,267 +1,156 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxx xx xxxxxx Xxxxxxx xxxx xxxx xxxxxxxx xxx xxxxxxx xxxxx xxxxxxxx, xx x xxxx xxx xxx xxxx xxx'x xxxx xxxxxxxx xx xxx xxxxxxx.
-xxxxx: Xxxxxxx xxxxxxx xxxxxxxx xxxxx xxxxxxxx xx Xxxxxxx
-xx.xxxxxxx: YYYXYYYX-YYYX-YXYX-YYYX-XYYYYXYYYYYY
-xxxxx: Xxxxxxx xxxxxxx xxxxxxxx xxxxx xxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Learn how to extend Cortana with more flexible and natural voice commands, so a user can say your app's name anywhere in the command.
+title: Support natural language voice commands in Cortana
+ms.assetid: 281E068A-336A-4A8D-879A-D8715C817911
+label: Support natural language voice commands
+template: detail.hbs
 ---
 
-# Xxxxxxx xxxxxxx xxxxxxxx xxxxx xxxxxxxx xx Xxxxxxx
+# Support natural language voice commands in Cortana
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxx xxx xx xxxxxx **Xxxxxxx** xxxx xxxx xxxxxxxx xxx xxxxxxx xxxxx xxxxxxxx, xx x xxxx xxx xxx xxxx xxx'x xxxx xxxxxxxx xx xxx xxxxxxx.
+Extend **Cortana** with more flexible and natural voice commands that let a user say your app's name anywhere in the command.
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**Xxxxxxx.XxxxxxxxxxxXxxxx.XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706594)
--   [**Xxxxx Xxxxxxx Xxxxxxxxxx (XXX) xxxxxxxx xxx xxxxxxxxxx xY.Y**](https://msdn.microsoft.com/library/windows/apps/dn706593)
-
-
-Xxxxxxxxx **Xxxxxxx** xxxxxxx xxxxx xxxxxxxx xxxxxxxx xxx xxxx xx xxxxxxxx xxxx xxx xxx xxx xxx xxxxxxxx xxxxxxx xx xxxxxxxx xx xxxxxxx. Xxxx xx xxxxxxxxx xxxxxxxxxxxx xx xxxxxxxxxx xxx xxx xxxx xx xxx xxxxxxxxx xx xxx xxxxx xxxxxxx. Xxx xxxxxxx, "Xxxxxxxxx Xxxxx, xxx x xxx xxxx xx Xxx Xxxxx."
-
-Xxxxxxx, xxxxxxxxxx xxx xxxxxxxxxxx xxxx xxxxxx xxx xxxxxxx xxxxx xxxxx xxxxxxx, xxxxxxx, xx xxx xxxx xxxx xxxxx. Xx xxxx xxxxx, xxxxx xxxx xx xxx xxx xxx xxxx xxxxxxxxx xx xxx xxxxxxx xx xxxx xxxxxxxxxxx xxx xxxxxxx, xxx xxxxx xxxx xxx xxxxxxxxxxx xxxx xxxx xxxxxxxxx xxx xxxxxxxx xxx xxx xxxx. Xxx xxxxxxxx xxxxxxx, "Xxxxxxxxx Xxxxx, xxx x xxx xxxx xx Xxx Xxxxx." xxxxx xx xxxxxxxxx xx "Xxx x xxx Xxxxxxxxx Xxxxx xxxx xx Xxx Xxxxx." xx "Xxx x xxx xxxx xx Xxx Xxxxx xxxxx Xxxxxxxxx Xxxxx."
-
-Xxx xxx xxx xx xxxx xxxxx xxxxxxxx xx xxxxxxx xxx xxx xxxx xx x:
-
--   Xxxxxx - xxxxxx xxx xxxxxxx xxxxxx
--   Xxxxx - xxxxxx xxx xxxxxxx xxxxxx
--   Xxxxxx - xxxxx xxx xxxxxxx xxxxxx
-
-**Xxxxxxxxxxxxx:  **
-
-Xxxx xxxxx xxxxxx xx [Xxxxxx x xxxxxxxxxx xxx xxxx xxxxx xxxxxxxx xx Xxxxxxx](launch-a-background-app-with-voice-commands-in-cortana.md). Xx xxxxxxxx xxxx xx xxxxxxxxxxx xxxxxxxx xxxx x xxxx xxxxxxxx xxx xxxxxxxxxx xxx xxxxx **Xxxxxxxxx Xxxxx**.
-
-Xx xxx'xx xxx xx xxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx, xxxx x xxxx xxxxxxx xxxxx xxxxxx xx xxx xxxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx xxxx.
-
--   [Xxxxxx xxxx xxxxx xxx](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Xxxxx xxxxx xxxxxx xxxx [Xxxxxx xxx xxxxxx xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185584)
-
-**Xxxx xxxxxxxxxx xxxxxxxxxx:  **
-
-Xxx [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233) xxx xxxx xxxxx xxx xx xxxxxxxxx xxxx xxx xxxx **Xxxxxxx** xxx [Xxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121) xxx xxxxxxx xxxx xx xxxxxxxxx x xxxxxx xxx xxxxxxxx xxxxxx-xxxxxxx xxx.
-
-## <span id="Specify_an_AppName_element_in_the_VCD">
-            </span>
-            <span id="specify_an_appname_element_in_the_vcd">
-            </span>
-            <span id="SPECIFY_AN_APPNAME_ELEMENT_IN_THE_VCD">
-            </span>Xxxxxxx xx **XxxXxxx** xxxxxxx xx xxx XXX
+-   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
+-   [**Voice Command Definition (VCD) elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
 
-Xxx **XxxXxxx** xxxxxxx xx xxxx xx xxxxxxx x xxxx-xxxxxxxx xxxx xxx xx xxx xx x xxxxx xxxxxxx.
+Using voice commands to extend Cortana with functionality from your app requires the user to specify both the app and the command or function to execute. This is typically accomplished by announcing the app name at the beginning or the end of the voice command. For example, "Adventure Works, add a new trip to Las Vegas."
+
+However, specifying the application name in this way can sound awkward, stilted, or not even make sense. In many cases, being able to say the app name elsewhere in the command is more comfortable and natural, and helps make the interaction much more intuitive and engaging for the user. Our previous example, "Adventure Works, add a new trip to Las Vegas." could be rephrased as "Add a new Adventure Works trip to Las Vegas." or "Using Adventure Works, add a new trip to Las Vegas."
+
+You can set up your voice commands to support the app name as a:
+
+-   Prefix - before the command phrase
+-   Infix - within the command phrase
+-   Suffix - after the command phrase
+
+**Prerequisites:  **
+
+This topic builds on [Launch a background app with voice commands in Cortana](launch-a-background-app-with-voice-commands-in-cortana.md). We continue here to demonstrate features with a trip planning and management app named **Adventure Works**.
+
+If you're new to developing Universal Windows Platform (UWP) apps, have a look through these topics to get familiar with the technologies discussed here.
+
+-   [Create your first app](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   Learn about events with [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/mt185584)
+
+**User experience guidelines:  **
+
+See [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233) for info about how to integrate your app with **Cortana** and [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121) for helpful tips on designing a useful and engaging speech-enabled app.
+
+## <span id="Specify_an_AppName_element_in_the_VCD"></span><span id="specify_an_appname_element_in_the_vcd"></span><span id="SPECIFY_AN_APPNAME_ELEMENT_IN_THE_VCD"></span>Specify an **AppName** element in the VCD
+
+
+The **AppName** element is used to specify a user-friendly name for an app in a voice command.
 
 ```XML
-<AppName>Adventure Works</AppName></code></pre></td>
-</tr>
-</tbody>
-</table>
+<AppName>Adventure Works</AppName>
 ```
 
-## <span id="Specify_where_the_app_name_can_be_spoken_in_the_voice_command">
-            </span>
-            <span id="specify_where_the_app_name_can_be_spoken_in_the_voice_command">
-            </span>
-            <span id="SPECIFY_WHERE_THE_APP_NAME_CAN_BE_SPOKEN_IN_THE_VOICE_COMMAND">
-            </span>Xxxxxxx xxxxx xxx xxx xxxx xxx xx xxxxxx xx xxx xxxxx xxxxxxx
+## <span id="Specify_where_the_app_name_can_be_spoken_in_the_voice_command"></span><span id="specify_where_the_app_name_can_be_spoken_in_the_voice_command"></span><span id="SPECIFY_WHERE_THE_APP_NAME_CAN_BE_SPOKEN_IN_THE_VOICE_COMMAND"></span>Specify where the app name can be spoken in the voice command
 
 
-Xxx **XxxxxxXxx** xxxxxxx xxx x **XxxxxxxXxxXxxx** xxxxxxxxx xxxx xxxxxxxxx xxxxx xxx xxx xxxx xxx xxxxxx xx xxx xxxxx xxxxxxx. Xxxx xxxxxxxxx xxxxxxxx xxxx xxxxxx.
+The **ListenFor** element has a **RequireAppName** attribute that specifies where the app name can appear in the voice command. This attribute supports four values.
 
-1.  **XxxxxxXxxxxx**
+1.  **BeforePhrase**
 
-    Xxxxxxx.
+    Default.
 
-    Xxxxxxxxx xxxx xxxxx xxxx xxx xxxx xxx xxxx xxxxxx xxx xxxxxxx xxxxxx.
+    Indicates that users must say your app name before the command phrase.
 
-    Xxxx, Xxxxxxx xxxxxxx xxx "Xxxxxxxxx Xxxxx xxxx xx xx xxxx xx Xxx Xxxxx".
+    Here, Cortana listens for "Adventure Works when is my trip to Las Vegas".
 
-    <span codelanguage="XML"></span>
-```    XML
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">XML</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-<ListenFor RequireAppName="BeforePhrase"> when is [my] trip to {destination} </code></pre></td>
-    </tr>
-    </tbody>
-    </table>
+```xml
+<ListenFor RequireAppName="BeforePhrase"> show [my] trip to {destination} </ListenFor>
 ```
 
-2.  **XxxxxXxxxxx**
+2.  **AfterPhrase**
 
-    Xxxxxxxxx xxxx xxxxx xxxx xxx xxxx xxx xxxx xxxxx xxx xxxxxxx xxxxxx.
+    Indicates that users must say your app name after the command phrase.
 
-    X xxxxxxxxx xxxxxx xxxx xx xxxxxxxxxxxxx xxxxxxxxxxxx xx xxxxxxxx xx xxx xxxxxx. Xxxx xxxxxxxx xxxxxxx xxxx xx, "xxxxx", "xxxx "xxx "xx".
+    A localized phrase list of prepositional conjunctions is provided by the system. This includes phrases such as, "using", "with "and "on".
 
-    Xxxx, Xxxxxxx xxxxxxx xxx xxxxxxxx xxxx "Xxxx xx xxxx xxxx xx Xxx Xxxxx xx Xxxxxxxxx Xxxxx" xxx "Xxxx xx xxxx xxxx xx Xxx Xxxxx xxxxx Xxxxxxxxx Xxxxx".
+    Here, Cortana listens for commands like "Show my next trip to Las Vegas on Adventure Works" and "Show my next trip to Las Vegas using Adventure Works".
 
-    <span codelanguage="XML"></span>
-```    XML
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">XML</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-<ListenFor RequireAppName="AfterPhrase">show [my] next trip to {destination} </ListenFor></code></pre></td>
-    </tr>
-    </tbody>
-    </table>
+```xml
+<ListenFor RequireAppName="AfterPhrase">show [my] next trip to {destination} </ListenFor>
 ```
 
-3.  **XxxxxxXxXxxxxXxxxxx**
+3.  **BeforeOrAfterPhrase**
 
-    Xxxxxxxxx xxxx xxxxx xxxx xxx xxxx xxx xxxx xxxxxx xxxxxx xx xxxxx xxx xxxxxxx xxxxxx.
+    Indicates that users must say your app name either before or after the command phrase.
 
-    Xxx xxx xxxxxx xxxxxxx, x xxxxxxxxx xxxxxx xxxx xx xxxxxxxxxxxxx xxxxxxxxxxxx xx xxxxxxxx xx xxx xxxxxx. Xxxx xxxxxxxx xxxxxxx xxxx xx, "xxxxx", "xxxx "xxx "xx".
+    For the suffix version, a localized phrase list of prepositional conjunctions is provided by the system. This includes phrases such as, "using", "with "and "on".
 
-    Xxxx, Xxxxxxx xxxxxxx xxx xxxxxxxx xxxx "Xxxxxxxxx Xxxxx, xxxx xx xxxx xxxx xx Xxx Xxxxx" xx "Xxxx xx xxxx xxxx xx Xxxx Xxxxx xx Xxxxxxxxx xxxxx".
+    Here, Cortana listens for commands like "Adventure Works, show my next trip to Las Vegas" or "Show my next trip to Last Vegas on Adventure works".
 
-    <span codelanguage="XML"></span>
-```    XML
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">XML</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-<ListenFor RequireAppName="BeforeOrAfterPhrase">show [my] next trip to {destination} </ListenFor></code></pre></td>
-    </tr>
-    </tbody>
-    </table>
+``` xml
+<ListenFor RequireAppName="BeforeOrAfterPhrase">show [my] next trip to {destination}</ListenFor>
 ```
 
-4.  **XxxxxxxxxxXxxxxxxxx**
+4.  **ExplicitlySpecified**
 
-    Xxxxxxxxx xxxx xxxxx xxxx xxx xxxx xxx xxxx xxxxxxx xxxxx xxx xxxxxxx xx xxx xxxxxxx xxxxxx. Xxx xxxx xx xxx xxxxxxxx xx xxx xxx xxx xxxx xxxxxx xxxxxx xx xxxxx xxx xxxxxx.
+    Indicates that users must say your app name exactly where you specify in the command phrase. The user is not required to say the app name either before or after the phrase.
 
-    Xxx xxxx xxxxxxxxxx xxxxxxxxx xxxx xxx xxxx xxxxx xxx **{xxxxxxx:XxxXxxx}** xxx.
+    You must explicitly reference your app name using the **{builtin:AppName}** tag.
 
-    Xxxx, Xxxxxxx xxxxxxx xxx xxxxxxxx xxxx "Xxxxxxxxx Xxxxx, xxxx xx xxxx xxxx xx Xxx Xxxxx" xx "Xxxx xx xxxx Xxxxxxxxx Xxxxx xxxx xx Xxx Xxxxx".
+    Here, Cortana listens for commands like "Adventure Works, show my next trip to Las Vegas" or "Show my next Adventure Works trip to Las Vegas".
 
-    <span codelanguage="XML"></span>
-```    XML
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">XML</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-<ListenFor RequireAppName="ExplicitlySpecified">show [my] next {builtin:AppName} trip to {destination} </ListenFor></code></pre></td>
-    </tr>
-    </tbody>
-    </table>
+```xml
+<ListenFor RequireAppName="ExplicitlySpecified">show [my] next {builtin:AppName} trip to {destination} </ListenFor>
 ```
 
-## <span id="Special_cases">
-            </span>
-            <span id="special_cases">
-            </span>
-            <span id="SPECIAL_CASES">
-            </span>Xxxxxxx xxxxx
+## <span id="Special_cases"></span><span id="special_cases"></span><span id="SPECIAL_CASES"></span>Special cases
 
+When you declare a **ListenFor** element where **RequireAppName** is either "AfterPhrase" or "ExplicitlySpecified", you must ensure certain requirements are met:
 
-Xxxx xxx xxxxxxx x **XxxxxxXxx** xxxxxxx xxxxx **XxxxxxxXxxXxxx** xx xxxxxx "XxxxxXxxxxx" xx "XxxxxxxxxxXxxxxxxxx", xxx xxxx xxxxxx xxxxxxx xxxxxxxxxxxx xxx xxx:
+1.  **{builtin:AppName}** must appear once and only once when **RequireAppName** is "ExplicitlySpecified".
 
-1.  **{xxxxxxx:XxxXxxx}** xxxx xxxxxx xxxx xxx xxxx xxxx xxxx **XxxxxxxXxxXxxx** xx "XxxxxxxxxxXxxxxxxxx".
+    With this value, the system cannot infer where the app name can appear in the voice command. You must explicitly specify the location.
 
-    Xxxx xxxx xxxxx, xxx xxxxxx xxxxxx xxxxx xxxxx xxx xxx xxxx xxx xxxxxx xx xxx xxxxx xxxxxxx. Xxx xxxx xxxxxxxxxx xxxxxxx xxx xxxxxxxx.
+2.  You cannot have a voice command begin with a **PhraseTopic** element, which is typically used for large vocabulary speech recognition. At least one word must precede it.
 
-2.  Xxx xxxxxx xxxx x xxxxx xxxxxxx xxxxx xxxx x **XxxxxxXxxxx** xxxxxxx, xxxxx xx xxxxxxxxx xxxx xxx xxxxx xxxxxxxxxx xxxxxx xxxxxxxxxxx. Xx xxxxx xxx xxxx xxxx xxxxxxx xx.
+    This helps to minimize the chance that **Cortana** launches your app if a command contains your app name, or part of it, anywhere in the utterance.
 
-    Xxxx xxxxx xx xxxxxxxx xxx xxxxxx xxxx **Xxxxxxx** xxxxxxxx xxxx xxx xx x xxxxxxx xxxxxxxx xxxx xxx xxxx, xx xxxx xx xx, xxxxxxxx xx xxx xxxxxxxxx.
+    Here is an invalid declaration that could lead to **Cortana** launching the **Adventure Works** app if the user says something like "Show me reviews for Kinect Adventure works".
 
-    Xxxx xx xx xxxxxxx xxxxxxxxxxx xxxx xxxxx xxxx xx **Xxxxxxx** xxxxxxxxx xxx **Xxxxxxxxx Xxxxx** xxx xx xxx xxxx xxxx xxxxxxxxx xxxx "Xxxx xx xxxxxxx xxx Xxxxxx xxxxxxxxx xxxxx".
-
-    <span codelanguage="XML"></span>
-```    XML
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">XML</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-<ListenFor RequireAppName="ExplicitlySpecified">{searchPhrase} {builtin:AppName}</ListenFor></code></pre></td>
-    </tr>
-    </tbody>
-    </table>
+```xml
+<ListenFor RequireAppName="ExplicitlySpecified">{searchPhrase} {builtin:AppName}</ListenFor>
 ```
 
-3.  Xxxxx xxxx xx xx xxxxx xxx xxxxx xx xxx **XxxxxxXxx** xxxxxx xxxxxxx xxxx xxx xxxx xxx xxxxxxxxxx xx **XxxxxxXxxxx** xxxxxxxx.
+3.  There must be at least two words in the **ListenFor** string besides your app name and references to **PhraseTopic** elements.
 
-    Xxxxxxx xx xxxx Y, xxx xxxx xx xxxxxx xxxx xxxxxxxx xxxxxxx xxxxxxxxxx xxxxxxxx xxxxxxx xx xxxxxxxx xxx xxxxxxx xxxx xxx xx xxxxxxxx xxxxxxxxxxxxxxx.
+    Similar to case 2, you need to ensure your commands contain sufficient phonetic content to minimize the chances your app is launched unintentionally.
 
-    Xxxx xxxxx xxx xxx xx xxxx xxxxxxxxxxx xxx xxxx xxxxxxxx xxxxxxx xx xxxx xxxxxxxxxxx xxxx xxx xxx xxxxxxxxxxx xxxxxxxx xxxx xxxx xxxx xxx xxxxxxx “Xxxx Xxxxxx Xxxxxxxxx xxxxx”.
+    This helps you set up your application for best possible success so your application does not get incorrectly launched when user says for example “Find Kinect Adventure works”.
 
-    Xxxx xxx xxxxxxx xxxxxxxxxxxx xxxx xxxxx xxxx xx **Xxxxxxx** xxxxxxxxx xxx **Xxxxxxxxx Xxxxx** xxx xx xxx xxxx xxxx xxxxxxxxx xxxx "Xxx xxxxxxxxx xxxxx" xx "Xxxx Xxxxxx xxxxxxxxx xxxxx".
+    Here are invalid declarations that could lead to **Cortana** launching the **Adventure Works** app if the user says something like "Hey adventure works" or "Find Kinect adventure works".
 
-    <span codelanguage="XML"></span>
-```    XML
-    <colgroup>
-    <col width="100%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">XML</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
+```xml
 <ListenFor RequireAppName="ExplicitlySpecified">Hey {builtin:AppName}</ListenFor>
-    <ListenFor RequireAppName="ExplicitlySpecified">Find {searchPhrase} {builtin:AppName}</ListenFor>
+<ListenFor RequireAppName="ExplicitlySpecified">Find {searchPhrase} {builtin:AppName}</ListenFor>
 ```
 
-## <span id="Remarks">
-            </span>
-            <span id="remarks">
-            </span>
-            <span id="REMARKS">
-            </span>Xxxxxxx
+## <span id="Remarks"></span><span id="remarks"></span><span id="REMARKS"></span>Remarks
+
+Supporting more variation in how a voice command can be uttered by a user in **Cortana** also increases the general usability of your app.
+
+Avoid having "Hey \[app name\]" as your **AppName** or **CommandPrefix**. Users are much more likely to say "Hey Cortana" to invoke Cortana through voice activation, and having "Hey \[app name\]" in the utterance does not sound natural. For example, "Hey Cortana, show my next trip to Las Vegas on Hey Adventure Works".
+
+Consider adding infix/suffix variations to your existing voice commands. As we've shown here, it doesn't require a lot of effort to add an additional attribute to your existing **ListenFor** elements and support suffix variants. It feels a lot more natural to say "Hey Cortana, show my next trip to Las Vegas on Adventure works" than "Hey Cortana, Adventure Works, show my next trip to Las Vegas".
+
+Consider using your app name as a prefix in cases where the voice command conflicts with existing **Cortana** functionality (calling, messaging, and so on). For example, "Adventure Works, message \[travel agent\] about Las Vegas trip".
+
+## <span id="Complete_example"></span><span id="complete_example"></span><span id="COMPLETE_EXAMPLE"></span>Complete example
 
 
-Xxxxxxxxxx xxxx xxxxxxxxx xx xxx x xxxxx xxxxxxx xxx xx xxxxxxx xx x xxxx xx **Xxxxxxx** xxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxx xx xxxx xxx.
+Here is a VCD file that demonstrates various ways to provide more natural language voice commands.
 
-Xxxxx xxxxxx "Xxx \[xxx xxxx\]" xx xxxx **XxxXxxx** xx **XxxxxxxXxxxxx**. Xxxxx xxx xxxx xxxx xxxxxx xx xxx "Xxx Xxxxxxx" xx xxxxxx Xxxxxxx xxxxxxx xxxxx xxxxxxxxxx, xxx xxxxxx "Xxx \[xxx xxxx\]" xx xxx xxxxxxxxx xxxx xxx xxxxx xxxxxxx. Xxx xxxxxxx, "Xxx Xxxxxxx, xxxx xx xxxx xxxx xx Xxx Xxxxx xx Xxx Xxxxxxxxx Xxxxx".
-
-Xxxxxxxx xxxxxx xxxxx/xxxxxx xxxxxxxxxx xx xxxx xxxxxxxx xxxxx xxxxxxxx. Xx xx'xx xxxxx xxxx, xx xxxxx'x xxxxxxx x xxx xx xxxxxx xx xxx xx xxxxxxxxxx xxxxxxxxx xx xxxx xxxxxxxx **XxxxxxXxx** xxxxxxxx xxx xxxxxxx xxxxxx xxxxxxxx. Xx xxxxx x xxx xxxx xxxxxxx xx xxx "Xxx Xxxxxxx, xxxx xx xxxx xxxx xx Xxx Xxxxx xx Xxxxxxxxx xxxxx" xxxx "Xxx Xxxxxxx, Xxxxxxxxx Xxxxx, xxxx xx xxxx xxxx xx Xxx Xxxxx".
-
-Xxxxxxxx xxxxx xxxx xxx xxxx xx x xxxxxx xx xxxxx xxxxx xxx xxxxx xxxxxxx xxxxxxxxx xxxx xxxxxxxx **Xxxxxxx** xxxxxxxxxxxxx (xxxxxxx, xxxxxxxxx, xxx xx xx). Xxx xxxxxxx, "Xxxxxxxxx Xxxxx, xxxxxxx \[xxxxxx xxxxx\] xxxxx Xxx Xxxxx xxxx".
-
-## <span id="Complete_example">
-            </span>
-            <span id="complete_example">
-            </span>
-            <span id="COMPLETE_EXAMPLE">
-            </span>Xxxxxxxx xxxxxxx
-
-
-Xxxx xx x XXX xxxx xxxx xxxxxxxxxxxx xxxxxxx xxxx xx xxxxxxx xxxx xxxxxxx xxxxxxxx xxxxx xxxxxxxx.
-
-**Xxxx**  Xx xx xxxxx xx xxxx xxxxxxxx **XxxxxxXxx** xxxxxxxx, xxxx xxxx x xxxxxxxxx **XxxxxxxXxxXxxx** xxxxxxxxx xxxxx.
+**Note**  It is valid to have multiple **ListenFor** elements, each with a different **RequireAppName** attribute value.
 
  
 
@@ -308,21 +197,20 @@ Xxxx xx x XXX xxxx xxxx xxxxxxxxxxxx xxxxxxx xxxx xx xxxxxxx xxxx xxxxxxx xxxxxx
 </VoiceCommands>
 ```
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>Related articles
 
 
-**Xxxxxxxxxx**
-* [Xxxxxxx xxxxxxxxxxxx](cortana-interactions.md)
-* [Xxxxxx xxxxxx xxxxxxxxxxx xxxxxxxxxxx](define-custom-recognition-constraints.md)
-* [**XXX xxxxxxxx xxx xxxxxxxxxx xY.Y**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+**Developers**
+* [Cortana interactions](cortana-interactions.md)
+* [Define custom recognition constraints](define-custom-recognition-constraints.md)
+* [**VCD elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-**Xxxxxxxxx**
-* [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233)
-* [Xxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121)
+**Designers**
+* [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233)
+* [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
 
-**Xxxxxxx**
-* [Xxxxxxx xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619899)
+**Samples**
+* [Cortana voice command sample](http://go.microsoft.com/fwlink/p/?LinkID=619899)
  
 
  
@@ -330,4 +218,8 @@ Xxxx xx x XXX xxxx xxxx xxxxxxxxxxxx xxxxxxx xxxx xx xxxxxxx xxxx xxxxxxx xxxxxx
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+

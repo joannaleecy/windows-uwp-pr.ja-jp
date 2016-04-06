@@ -1,39 +1,39 @@
 ---
-xx.xxxxxxx: YXYXYYYY-XYYX-YXYY-XXXX-YXXYYXXXYXYY
-xxxxx: Xxxxx xxxx xxxx xxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxx xxxxxxxxx xxxx x Xxxxxxxxx Xxxxxxx xxx. Xxxx xxxxx xxxx xxxxx xxx xx xxxxx xxxxxxxx xxxxx.
+ms.assetid: 9A0F1852-A76B-4F43-ACFC-2CC56AAD1C03
+title: Print from your app
+description: Learn how to print documents from a Universal Windows app. This topic also shows how to print specific pages.
 ---
-# Xxxxx xxxx xxxx xxx
+# Print from your app
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Xxxxxxxxx XXXx **
+** Important APIs **
 
--   [**Xxxxxxx.Xxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226489)
--   [**Xxxxxxx.XX.Xxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243325)
--   [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243314)
+-   [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489)
+-   [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325)
+-   [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314)
 
-Xxxxx xxx xx xxxxx xxxxxxxxx xxxx x Xxxxxxxxx Xxxxxxx xxx. Xxxx xxxxx xxxx xxxxx xxx xx xxxxx xxxxxxxx xxxxx. Xxx xxxx xxxxxxxx xxxxxxx xx xxx xxxxx xxxxxxx XX, xxx [Xxxxxxxxx xxx xxxxx xxxxxxx XX](customize-the-print-preview-ui.md).
+Learn how to print documents from a Universal Windows app. This topic also shows how to print specific pages. For more advanced changes to the print preview UI, see [Customize the print preview UI](customize-the-print-preview-ui.md).
 
-**Xxx**  Xxxx xx xxx xxxxxxxx xx xxxx xxxxx xxx xxxxx xx xxx xxxxx xxxxxx. Xx xxx xxx xxxx xxxx, xxxxxxxx xxx [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619984) xxxx xxx [Xxxxxxx-xxxxxxxxx-xxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=619979) xx XxxXxx.
+**Tip**  Most of the examples in this topic are based on the print sample. To see the full code, download the [Universal Windows Platform (UWP) print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984) from the [Windows-universal-samples repo](http://go.microsoft.com/fwlink/p/?LinkId=619979) on GitHub.
 
-## Xxxxxxxx xxx xxxxxxxx
+## Register for printing
 
-Xxx xxxxx xxxx xx xxx xxxxxxxx xx xxxx xxx xx xx xxxxxxxx xxx xxx Xxxxx xxxxxxxx. Xxxx xxx xxxx xx xxxx xx xxxxx xxxxxx xxxx xxxxx xxx xxxx xxxx xxxxxxxx xx xx xxxx xx xxxxx. Xxxx xxx xxxxxx xxxx xx xxxxxxxxx xx xxx xxxx xxx xx xxxxxxxxxx xxx xxxxxxxx. Xx xxx xxxxxx xx xxxx xxx xxx xxxxxxxxxx xxx xxxxxxxx, xx xxxx xxxxxxxxxx xxx xxxxxxxx xxxx xx xxxxx. Xx xx xx xxxxxxxx xx xxxxxxx xxxxxx, xxx xxxx xxxxxx xxxx xxxxxxxx xxx x xxx Xxxxx xxxxxxxx xxxx xx xxxxx.
+The first step to add printing to your app is to register for the Print contract. Your app must do this on every screen from which you want your customer to be able to print. Only the screen that is displayed to the user can be registered for printing. If one screen of your app has registered for printing, it must unregister for printing when it exits. If it is replaced by another screen, the next screen must register for a new Print contract when it opens.
 
-**Xxx**  Xx xxx xxxx xx xxxxxxx xxxxxxxx xxxx xxxx xxxx xxx xxxx xx xxxx xxx, xxx xxx xxx xxxx xxxxx xxxx xx x xxxxxx xxxxxx xxxxx xxx xxxx xxxx xxx xxxxx xxxxx xx. Xxx xx xxxxxxx xx xxx xx xx xxxx, xxx xxx `PrintHelper` xxxxx xx xxx [XXX xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619984).
+**Tip**  If you need to support printing from more than one page in your app, you can put this print code in a common helper class and have your app pages reuse it. For an example of how to do this, see the `PrintHelper` class in the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984).
 
-Xxxxx, xxxxxxx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226426) xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243314). Xxx **XxxxxXxxxxxx** xxxx xx xx xxx [**Xxxxxxx.Xxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226489) xxxxxxxxx xxxxx xxxx xxxxx xx xxxxxxx xxxxx Xxxxxxx xxxxxxxx xxxxxxxxxxxxx. Xxx **XxxxxXxxxxxxx** xxxx xx xx xxx [**Xxxxxxx.XX.Xxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243325) xxxxxxxxx xxxxx xxxx xxxxx xxxxx xxxx xxxxxxx xxxxxxxxx XXXX xxxxxxx xxx xxxxxxxx. Xxx xxx xxxx xx xxxxxx xx xxxxx xxxx xxxxxxxx xxxx xx xxxxxx xxx xxxxxxxxx **xxxxx** xx **Xxxxxxx** xxxxxxxxxx xx xxxx xxxx.
+First, declare the [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) and [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314). The **PrintManager** type is in the [**Windows.Graphics.Printing**](https://msdn.microsoft.com/library/windows/apps/BR226489) namespace along with types to support other Windows printing functionality. The **PrintDocument** type is in the [**Windows.UI.Xaml.Printing**](https://msdn.microsoft.com/library/windows/apps/BR243325) namespace along with other types that support preparing XAML content for printing. You can make it easier to write your printing code by adding the following **using** or **Imports** statements to your page.
 
 ```csharp
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 ```
 
-Xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243314) xxxxx xx xxxx xx xxxxxx xxxx xx xxx xxxxxxxxxxx xxxxxxx xxx xxx xxx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226426), xxx xx xxxxxxx xxxxxxx xxxxxxxxx xx xxx xxx. Xxxxxx xxxxxxxxxxxx, xxxxxx xxxxxxxxx xx **XxxxxXxxxxxx** xxx **XxxxxXxxxxxxx** xxx xxxxxxxx xxxxxxxx xxx xxxxx xxxxxxxx xxxxxx.
+The [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) class is used to handle much of the interaction between the app and the [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426), but it exposes several callbacks of its own. During registration, create instances of **PrintManager** and **PrintDocument** and register handlers for their printing events.
 
-Xx xxx [XXX xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619984), xxxxxxxxxxxx xx xxxxxxxxx xx xxx `RegisterForPrinting` xxxxxx.
+In the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984), registration is performed by the `RegisterForPrinting` method.
 
 ```csharp
 public virtual void RegisterForPrinting()
@@ -49,7 +49,7 @@ public virtual void RegisterForPrinting()
 }
 ```
 
-Xxxx xxx xxxx xxxx xx x xxxx xxxx xxxxxxxx, xx xxxxxxxxx xxx xxxxxxxxxxxx xxxxxx xxx `OnNavigatedTo` xxxxxx.
+When the user goes to a page that supports, it initiates the registration within the `OnNavigatedTo` method.
 
 ```csharp
 protected override void OnNavigatedTo(NavigationEventArgs e)
@@ -66,7 +66,7 @@ protected override void OnNavigatedTo(NavigationEventArgs e)
 }
 ```
 
-Xxxx xxx xxxx xxxxxx xxx xxxx, xxxxxxxxxx xxx xxxxxxxx xxxxx xxxxxxxx. Xx xxx xxxx x xxxxxxxx-xxxx xxx xxx xxx'x xxxxxxxxxx xxxxxxxx, xx xxxxxxxxx xx xxxxxx xxxx xxx xxxx xxxxxx xxx xxxx xxx xxxx xxxxx xxxx xx xx.
+When the user leaves the page, disconnect the printing event handlers. If you have a multiple-page app and don't disconnect printing, an exception is thrown when the user leaves the page and then comes back to it.
 
 ```csharp
 protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -77,15 +77,15 @@ protected override void OnNavigatedFrom(NavigationEventArgs e)
    }
 }
 ```
-## Xxxxxx x xxxxx xxxxxx
+## Create a print button
 
-Xxx x xxxxx xxxxxx xx xxxx xxx'x xxxxxx xxxxx xxx'x xxxx xx xx xxxxxx. Xxxx xxxx xxxx xx xxxxx'x xxxxxxxxx xxxx xxx xxxxxxx xxxx xxx xxxx xx xxxxx.
+Add a print button to your app's screen where you'd like it to appear. Make sure that it doesn't interfere with the content that you want to print.
 
 ```xml
 <Button x:Name="InvokePrintingButton" Content="Print" Click="OnPrintButtonClick"/>
 ```
 
-Xxxx, xxx xx xxxxx xxxxxxx xx xxxx xxx'x xxxx xx xxxxxx xxx xxxxx xxxxx. Xxx xxx [**XxxxXxxxxXXXxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printmanager.showprintuiasync) xxxxxx xx xxxxx xxxxxxxx xxxx xxxx xxx. **XxxxXxxxxXXXxxxx** xx xx xxxxxxxxxxxx xxxxxx xxxx xxxxxxxx xxx xxxxxxxxxxx xxxxxxxx xxxxxx. Xx xxxxxxxx xxx'x xx xxxxxxxxx xx xxxx xxxx, xxx xxxxxx xxxx xxxxx xx xxxxxxxxx. Xx xxxxxxxxx xxxxxxxx xxxxx xxxxxxxxxx xxx xxxxxxx xxx xxxx xxxx xxxx xxxxxxxx xxx'x xxxxxxx, xx xxxxx xxxx.
+Next, add an event handler to your app's code to handle the click event. Use the [**ShowPrintUIAsync**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printmanager.showprintuiasync) method to start printing from your app. **ShowPrintUIAsync** is an asynchronous method that displays the appropriate printing window. If printing can't be performed at that time, the method will throw an exception. We recommend catching these exceptions and letting the user know when printing can't proceed, as shown here.
 
 ```csharp
 async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
@@ -109,13 +109,13 @@ async private void OnPrintButtonClick(object sender, RoutedEventArgs e)
 }
 ```
 
-Xx xxxx xxxxxxx, x xxxxx xxxxxx xx xxxxxxxxx xx xxx xxxxx xxxxxxx xxx x xxxxxx xxxxx. Xx xxx xxxxxx xxxxxx xx xxxxxxxxx (xxxxxxx xxxxxxxx xxx'x xx xxxxxxxxx xx xxxx xxxx), x [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn633972) xxxxxxx xxxxxxx xxx xxxx xx xxx xxxxxxxxx.
+In this example, a print window is displayed in the event handler for a button click. If the method throws an exception (because printing can't be performed at that time), a [**ContentDialog**](https://msdn.microsoft.com/library/windows/apps/Dn633972) control informs the user of the situation.
 
-## Xxxxxx xxxx xxx'x xxxxxxx
+## Format your app's content
 
-Xxxx **XxxxXxxxxXXXxxxx** xx xxxxxx, xxx [**XxxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206597) xxxxx xx xxxxxx. Xxx **XxxxxXxxxXxxxxxxxx** xxxxx xxxxxxx xxxxx xx xxxx xxxx xxxxxxx x [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR226436) xx xxxxxxx xxx [**XxxxxXxxxXxxxxxx.XxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR226436request_createprinttask) xxxxxx xxx xxxxxx xxx xxxxx xxx xxx xxxxx xxxx xxx xxx xxxx xx x [**XxxxxXxxxXxxxxxXxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtask.source) xxxxxxxx. Xxxxxx xxxx xx xxxx xxxxxxx, xxx **XxxxxXxxxXxxxxxXxxxxxxxxXxxxxxx** xx xxxxxxx xxxxxx. Xxx **XxxxxXxxxXxxxxxXxxxxxxxxXxxxxxx** xxxxxxxx xxx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxx xx xxxxxxxxx xxxxx.
+When **ShowPrintUIAsync** is called, the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event is raised. The **PrintTaskRequested** event handler shown in this step creates a [**PrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436) by calling the [**PrintTaskRequest.CreatePrintTask**](https://msdn.microsoft.com/library/windows/apps/BR226436request_createprinttask) method and passes the title for the print page and the name of a [**PrintTaskSourceRequestedHandler**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.printtask.source) delegate. Notice that in this example, the **PrintTaskSourceRequestedHandler** is defined inline. The **PrintTaskSourceRequestedHandler** provides the formatted content for printing and is described later.
 
-Xx xxxx xxxxxxx, x xxxxxxxxxx xxxxxxx xx xxxx xxxxxxx xx xxxxx xxxxxx. Xx'x x xxxx xxxx xx xxxxxx xxxxxxxxxx xxxxxx xxxxxxx xxxx xxxx xxx xxx xxx xxx xxxx xxxx xx xx xxxxx xxxxxxxx xxx xxxxxxx xxxxxxxx xxxxxxxxx. Xxxxxxxx, xxxx xxx xxxxx xxx xxx xxxxxxxxxx xxxxx xx xxxxxxxx xxxxxxxxxx xxxxx xxx xxx xxxx xx xxxx xxxxx xxx xxxxx xxx xx xxxxxxxxxx.
+In this example, a completion handler is also defined to catch errors. It's a good idea to handle completion events because then your app can let the user know if an error occurred and provide possible solutions. Likewise, your app could use the completion event to indicate subsequent steps for the user to take after the print job is successful.
 
 ```csharp
 protected virtual void PrintTaskRequested(PrintManager sender, PrintTaskRequestedEventArgs e)
@@ -141,11 +141,11 @@ protected virtual void PrintTaskRequested(PrintManager sender, PrintTaskRequeste
 }
 ```
 
-Xxxxx xxx xxxxx xxxx xx xxxxxxx, xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226426) xxxxxxxx x xxxxxxxxxx xx xxxxx xxxxx xx xxxx xx xxx xxxxx xxxxxxx XX xx xxxxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) xxxxx. Xxxx xxxxxxxxxxx xxxx xxx **Xxxxxxxx** xxxxxx xx xxx **XXxxxxXxxxxxxXxxxXxxxxxxxxx** xxxxxxxxx. Xxx xxxxx xxxxxxx xxx xxxxxxx xxxxxx xxxxxxxxxxxx xxxx xx xxxxxx xx xxxx xxxx.
+After the print task is created, the [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) requests a collection of print pages to show in the print preview UI by raising the [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) event. This corresponds with the **Paginate** method of the **IPrintPreviewPageCollection** interface. The event handler you created during registration will be called at this time.
 
-**Xxxxxxxxx**  Xx xxx xxxx xxxxxxx xxxxx xxxxxxxx, xxx xxxxxxxx xxxxx xxxxxxx xxxx xx xxxxxx xxxxx xx xxxxx xxx xx xxxxxx xxx xxxxxxx. Xxx xxx xxxx xxxx xxxxxxxxxx, xx xxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxx xxx xxxxxx xxx xxxxxxx xxx xxxxx xxxxxxxxxxxxxx xxx xxxxxxxxx xxxxxxx xxxx xx'x xxx xxxxxxxxx.
+**Important**  If the user changes print settings, the paginate event handler will be called again to allow you to reflow the content. For the best user experience, we recommend checking the settings before you reflow the content and avoid reinitializing the paginated content when it's not necessary.
 
-Xx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) xxxxx xxxxxxx (xxx `CreatePrintPreviewPages` xxxxxx xx xxx [XXX xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619984)), xxxxxx xxx xxxxx xx xxxx xx xxx xxxxx xxxxxxx XX xxx xx xxxx xx xxx xxxxxxx. Xxx xxxx xxx xxx xx xxxxxxx xxxx xxx'x xxxxxxx xxx xxxxxxxx xx xxxxxxxx xx xxxx xxx xxx xxx xxxxxxx xxx xxxxx. Xxxxx xx xxx [XXX xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619984) xxxxxx xxxx xx xxx xxx xx xxxxxxx xxx xxxxxxx xxx xxxxxxxx.
+In the [**Paginate**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.paginate) event handler (the `CreatePrintPreviewPages` method in the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)), create the pages to show in the print preview UI and to send to the printer. The code you use to prepare your app's content for printing is specific to your app and the content you print. Refer to the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984) source code to see how it formats its content for printing.
 
 ```csharp
 protected virtual void CreatePrintPreviewPages(object sender, PaginateEventArgs e)
@@ -188,9 +188,9 @@ protected virtual void CreatePrintPreviewPages(object sender, PaginateEventArgs 
 }
 ```
 
-Xxxx x xxxxxxxxxx xxxx xx xx xx xxxxx xx xxx xxxxx xxxxxxx xxxxxx, xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226426) xxxxxx xxx [**XxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.getpreviewpage) xxxxx. Xxxx xxxxxxxxxxx xxxx xxx **XxxxXxxx** xxxxxx xx xxx **XXxxxxXxxxxxxXxxxXxxxxxxxxx** xxxxxxxxx. Xxx xxxxx xxxxxxx xxx xxxxxxx xxxxxx xxxxxxxxxxxx xxxx xx xxxxxx xx xxxx xxxx.
+When a particular page is to be shown in the print preview window, the [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) raises the [**GetPreviewPage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.getpreviewpage) event. This corresponds with the **MakePage** method of the **IPrintPreviewPageCollection** interface. The event handler you created during registration will be called at this time.
 
-Xx xxx [**XxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.getpreviewpage) xxxxx xxxxxxx (xxx `GetPrintPreviewPage` xxxxxx xx xxx [XXX xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619984)), xxx xxx xxxxxxxxxxx xxxx xx xxx xxxxx xxxxxxxx.
+In the [**GetPreviewPage**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.getpreviewpage) event handler (the `GetPrintPreviewPage` method in the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)), set the appropriate page on the print document.
 
 ```csharp
 protected virtual void GetPrintPreviewPage(object sender, GetPreviewPageEventArgs e)
@@ -200,9 +200,9 @@ protected virtual void GetPrintPreviewPage(object sender, GetPreviewPageEventArg
 }
 ```
 
-Xxxxxxx, xxxx xxx xxxx xxxxxx xxx xxxxx xxxxxx, xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226426) xxxxxxxx xxx xxxxx xxxxxxxxxx xx xxxxx xx xxxx xx xxx xxxxxxx xx xxxxxxx xxx **XxxxXxxxxxxx** xxxxxx xx xxx **XXxxxxxxxXxxxXxxxxx** xxxxxxxxx. Xx XXXX, xxxx xxxxxx xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) xxxxx. Xxx xxxxx xxxxxxx xxx xxxxxxx xxxxxx xxxxxxxxxxxx xxxx xx xxxxxx xx xxxx xxxx.
+Finally, once the user clicks the print button, the [**PrintManager**](https://msdn.microsoft.com/library/windows/apps/BR226426) requests the final collection of pages to send to the printer by calling the **MakeDocument** method of the **IDocumentPageSource** interface. In XAML, this raises the [**AddPages**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) event. The event handler you created during registration will be called at this time.
 
-Xx xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) xxxxx xxxxxxx (xxx `AddPrintPages` xxxxxx xx xxx [XXX xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619984)), xxx xxxxx xxxx xxx xxxx xxxxxxxxxx xx xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243314) xxxxxx xx xx xxxx xx xxx xxxxxxx. Xx x xxxx xxxxxxxxx xxxxxxxxxx xxxxx xx x xxxxx xx xxxxx xx xxxxx, xxx xxx xxxx xxxxxxxxxxx xxxx xx xxx xxxx xxx xxxxx xxxx xxxx xxxxxxxx xx xxxx xx xxx xxxxxxx.
+In the [**AddPages**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.printing.printdocument.addpages) event handler (the `AddPrintPages` method in the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)), add pages from the page collection to the [**PrintDocument**](https://msdn.microsoft.com/library/windows/apps/BR243314) object to be sent to the printer. If a user specifies particular pages or a range of pages to print, you use that information here to add only the pages that will actually be sent to the printer.
 
 ```csharp
 protected virtual void AddPrintPages(object sender, AddPagesEventArgs e)
@@ -221,27 +221,27 @@ protected virtual void AddPrintPages(object sender, AddPagesEventArgs e)
 }
 ```
 
-## Xxxxxxx xxxxx xxxxxxx
+## Prepare print options
 
-Xxxx xxxxxxx xxxxx xxxxxxx. Xx xx xxxxxxx, xxxx xxxxxxx xxxx xxxxxxxx xxx xx xxx xxx xxxx xxxxx xxxxxx xx xxxxx xxxxxxxx xx xxxxxxxx xxxxx. Xxx xxxx xxxxxxxx xxxxxxx, xxx [Xxxxxxxxx xxx xxxxx xxxxxxx XX](customize-the-print-preview-ui.md).
+Next prepare print options. As an example, this section will describe how to set the page range option to allow printing of specific pages. For more advanced options, see [Customize the print preview UI](customize-the-print-preview-ui.md).
 
-Xxxx xxxx xxxxxxx x xxx xxxxx xxxxxx, xxxxxxx x xxxx xx xxxxxx xxxx xxx xxxxxx xxxxxxxx, xxx xxxx xxxx xxx xxxxxx xx xxx xxxxx xxxxxxx XX. Xxx xxxx xxxxx xxxxxx xxx xxxxx xxxxxxxx:
+This step creates a new print option, defines a list of values that the option supports, and then adds the option to the print preview UI. The page range option has these settings:
 
-| Xxxxxx xxxx          | Xxxxxx | 
+| Option name          | Action | 
 |----------------------|--------|
-| **Xxxxx xxx**        | Xxxxx xxx xxxxx xx xxx xxxxxxxx. |
-| **Xxxxx Xxxxxxxxx**  | Xxxxx xxxx xxx xxxxxxx xxx xxxx xxxxxxxx. | 
-| **Xxxxx Xxxxx**      | Xxxxxxx xx xxxx xxxxxxx xxxx xxxxx xxx xxxx xxx xxxxx xxx xxxxx xx xxxxx. |
+| **Print all**        | Print all pages in the document. |
+| **Print Selection**  | Print only the content the user selected. | 
+| **Print Range**      | Display an edit control into which the user can enter the pages to print. |
  
-Xxxxx, xxxxxx xxx [**XxxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206597) xxxxx xxxxxxx xx xxx xxx xxxx xx xxx x [**XxxxxXxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701256) xxxxxx.
+First, modify the [**PrintTaskRequested**](https://msdn.microsoft.com/library/windows/apps/br206597) event handler to add the code to get a [**PrintTaskOptionDetails**](https://msdn.microsoft.com/library/windows/apps/Hh701256) object.
 
 ```csharp
 PrintTaskOptionDetails printDetailedOptions = PrintTaskOptionDetails.GetFromPrintTaskOptions(printTask.Options);
 ```
 
-Xxxxx xxx xxxx xx xxxxxxx xxxx xxx xxxxx xx xxx xxxxx xxxxxxx XX xxx xxx xxx xxxxxxx xxxx xxx xxxx xx xxxxxxx xxxx xxx xxxx xxxxx xx xxxxx xxxx xxx xxx.
+Clear the list of options that are shown in the print preview UI and add the options that you want to display when the user wants to print from the app.
 
-**Xxxx**  Xxx xxxxxxx xxxxxx xx xxx xxxxx xxxxxxx XX xx xxx xxxx xxxxx xxxx xxx xxxxxxxx, xxxx xxx xxxxx xxxxxx xxxxx xx xxx xxx xx xxx xxxxxx.
+**Note**  The options appear in the print preview UI in the same order they are appended, with the first option shown at the top of the window.
 
 ```csharp
 IList<string> displayedOptions = printDetailedOptions.DisplayedOptions;
@@ -252,7 +252,7 @@ displayedOptions.Add(Windows.Graphics.Printing.StandardPrintTaskOptions.Orientat
 displayedOptions.Add(Windows.Graphics.Printing.StandardPrintTaskOptions.ColorMode);
 ```
 
-Xxxxxx xxx xxx xxxxx xxxxxx xxx xxxxxxxxxx xxx xxxx xx xxxxxx xxxxxx.
+Create the new print option and initialize the list of option values.
 
 ```csharp
 // Create a new list option
@@ -262,7 +262,7 @@ pageFormat.AddItem("PrintSelection", "Print Selection");
 pageFormat.AddItem("PrintRange", "Print Range");
 ```
 
-Xxx xxxx xxxxxx xxxxx xxxxxx xxx xxxxxx xxx xxxxx xxxxxxx. Xxx xxxxxx xxxxxx xx xxxxxxxx xxxx xx xxxx xx xxxxxxx xx xxx xxxxxx xx xxx xxxx xx xxxxxxx. Xxx xxx xxx xxx xx xxxxxxxx xx xxx xxxx, xxxxxx xxxxx xxxxxxx xxx'x xxxx xx xx xxxxx xxxx.
+Add your custom print option and assign the event handler. The custom option is appended last so that it appears at the bottom of the list of options. But you can put it anywhere in the list, custom print options don't need to be added last.
 
 ```csharp
 // Add the custom option to the option list
@@ -275,13 +275,13 @@ PrintCustomTextOptionDetails pageRangeEdit = printDetailedOptions.CreateTextOpti
 printDetailedOptions.OptionChanged += printDetailedOptions_OptionChanged;
 ```
 
-Xxx [**XxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.optiondetails.printtaskoptiondetails.createtextoption) xxxxxx xxxxxxx xxx **Xxxxx** xxxx xxx. Xxxx xx xxxxx xxx xxxx xxxxxx xxx xxxxxxxx xxxxx xxxx xxxx xx xxxxx xxxx xxxx xxxxxx xxx **Xxxxx Xxxxx** xxxxxx.
+The [**CreateTextOption**](https://msdn.microsoft.com/library/windows/apps/windows.graphics.printing.optiondetails.printtaskoptiondetails.createtextoption) method creates the **Range** text box. This is where the user enters the specific pages they want to print when they select the **Print Range** option.
 
-## Xxxxxx xxxxx xxxxxx xxxxxxx
+## Handle print option changes
 
-Xxx **XxxxxxXxxxxxx** xxxxx xxxxxxx xxxx xxx xxxxxx. Xxxxx, xx xxxxx xxx xxxxx xxx xxxx xxxx xxxxx xxx xxx xxxx xxxxx xxxxxxxxx xx xxx xxxx xxxxx xxxxxx xxxx xxx xxxx xxxxxxxx. Xxxxxx, xx xxxxx xxx xxxx xxxxxxx xxxx xxx xxxx xxxxx xxxx xxx xx xxxx xxxx xxxx xx xxxxxxxxxx x xxxxx xxxx xxxxx xxx xxx xxxxxxxx.
+The **OptionChanged** event handler does two things. First, it shows and hides the text edit field for the page range depending on the page range option that the user selected. Second, it tests the text entered into the page range text box to make sure that it represents a valid page range for the document.
 
-Xxxx xxxxxxx xxxxx xxx xxx [XXX xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619984) xxxxxxx xxxxxx xxxxxx.
+This example shows how the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984) handles change events.
 
 ```csharp
 async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, PrintTaskOptionChangedEventArgs args)
@@ -357,22 +357,26 @@ async void printDetailedOptions_OptionChanged(PrintTaskOptionDetails sender, Pri
 }
 ```
 
-**Xxx**  Xxx xxx `GetPagesInRange` xxxxxx xx xxx [XXX xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619984) xxx xxxxxxx xx xxx xx xxxxx xxx xxxx xxxxx xxx xxxx xxxxxx xx xxx Xxxxx xxxx xxx.
+**Tip**  See the `GetPagesInRange` method in the [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984) for details on how to parse the page range the user enters in the Range text box.
 
-## Xxxxxxx xxxxxxxx xxxxx
+## Preview selected pages
 
-Xxx xxx xxxxxx xxxx xxx'x xxxxxxx xxx xxxxxxxx xxxxxxx xx xxx xxxxxx xx xxxx xxx xxx xxx xxxxxxx. Xxx [XXX xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619984) xxxx x xxxxx xxxxxx xxxxx xx xxxxxx xxx xxxxxxx xxx xxxxxxxx.
+How you format your app's content for printing depends on the nature of your app and its content. The [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984) uses a print helper class to format its content for printing.
 
-Xxxx xxxxxxxx x xxxxxx xx xxx xxxxx, xxxxx xxx xxxxxxx xxxx xx xxxx xxx xxxxxxx xx xxx xxxxx xxxxxxx. Xxxxxxxxxx xx xxx xxxxxx xxx xxxxx xx xxxx xxx xxxx xxxxx xx xxx xxxxx xxxxxxx, xxx xxxxxxx xxxxxx xxxx xxxxxxx xxxx xxx xxxxxxxx xxxxx.
+When printing a subset of the pages, there are several ways to show the content in the print preview. Regardless of the method you chose to show the page range in the print preview, the printed output must contain only the selected pages.
 
--   Xxxx xxx xxx xxxxx xx xxx xxxxx xxxxxxx xxxxxxx x xxxx xxxxx xx xxxxxxxxx xx xxx, xxxxxxx xxx xxxx xx xxxx xxxxx xxxxx xxxx xxxxxxxx xx xxxxxxx.
--   Xxxx xxxx xxx xxxxx xxxxxxxx xx xxx xxxx'x xxxx xxxxx xx xxx xxxxx xxxxxxx, xxxxxxxx xxx xxxxxxx xxxxxxxx xxx xxxx xxxxxxx xxx xxxx xxxxx.
--   Xxxx xxx xxx xxxxx xx xxxxx xxxxxxx, xxx xxxx xxx xxx xxxxx xxxx xxx xxx xx xxxx xxxxx xxxxxxxx xx xxx xxxx.
+-   Show all the pages in the print preview whether a page range is specified or not, leaving the user to know which pages will actually be printed.
+-   Show only the pages selected by the user's page range in the print preview, updating the display whenever the user changes the page range.
+-   Show all the pages in print preview, but grey out the pages that are not in page range selected by the user.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxx xxxxxxxxxx xxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Hh868178)
-* [//Xxxxx YYYY xxxxx: Xxxxxxxxxx xxxx xxxx xxxxx xx Xxxxxxx YY](https://channel9.msdn.com/Events/Build/2015/2-94)
-* [XXX xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+* [Design guidelines for printing](https://msdn.microsoft.com/library/windows/apps/Hh868178)
+* [//Build 2015 video: Developing apps that print in Windows 10](https://channel9.msdn.com/Events/Build/2015/2-94)
+* [UWP print sample](http://go.microsoft.com/fwlink/p/?LinkId=619984)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,24 +1,28 @@
 ---
-xx.xxxxxxx: XXYXYYYY-XYYX-YYYX-YXYX-YYYXYXXYYXXY
-xxxxxxxxxxx: Xxxxxx Xxxxxxxxx (XX) xx xx xxxxxx-xxxxxxxxxx xxxxxx xxxx xxxxxxx xxx xx xxxx xxxx xxxxxxxxxx xxxx xxxxx xxxxxx-xxxxxxxx xxxxxxx.
-xxxxx: Xxxxxx xxxxxxxxx Y xxxx XXXxxx xxx X# xxxx
+ms.assetid: BC7E8130-A28A-443C-8D7E-353E7DA33AE3
+description: Entity Framework (EF) は、ドメイン固有のオブジェクトを使ってリレーショナル データを操作できる、オブジェクト リレーショナル マッパーです。
+title: C# アプリでの Entity framework 7 と SQLite
 ---
 
-# Xxxxxx xxxxxxxxx Y xxxx XXXxxx xxx X# xxxx
+# C# アプリでの Entity framework 7 と SQLite
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxxxx Xxxxxxxxx (XX) xx xx xxxxxx-xxxxxxxxxx xxxxxx xxxx xxxxxxx xxx xx xxxx xxxx xxxxxxxxxx xxxx xxxxx xxxxxx-xxxxxxxx xxxxxxx. Xxxx xxxxxxx xxxxxxxx xxx xxx xxx xxx Xxxxxx Xxxxxxxxx Y xxxx x XXXxxx xxxxxxxx xx x Xxxxxxxxx Xxxxxxx xxx.
+Entity Framework (EF) は、ドメイン固有のオブジェクトを使ってリレーショナル データを操作できる、オブジェクト リレーショナル マッパーです。 この記事では、ユニバーサル Windows アプリで SQLite データベースと共に Entity Framework 7 を使う方法について説明します。
 
-Xxxxxxxxxx xxx .XXX xxxxxxxxxx, Xxxxxx Xxxxxxxxx Y xxx xx xxxx xxxx XXXxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xx xxxxx xxx xxxxxxxxxx xxxxxxxxxx xxxx xxxxx xxxxxx xxxxxxxx xxxxxxx. Xxx xxx xxxxxxx XX xxxx xxxx x .XXX xxx xx x XXX xxx xxx xxxxxx xx xxxx xxxx xxxxxxxxxxx xxxxxxx xx xxx xxxxxxxxxx xxxxxx.
+本来 .NET 開発者向けの Entity Framework 7 は、ドメイン固有のオブジェクトを使ってリレーショナル データを格納したり操作したりするために、SQLite と共にユニバーサル Windows プラットフォーム (UWP) で使用できます。 .NET アプリから UWP アプリに EF コードを移行して、接続文字列に対する適切な変更と連携させることができます。
 
-Xxxxxxxxx XX xxxx xxxxxxxx XXXxxx xx XXX. X xxxxxxxx xxxxxxxxxxx xx xxxxxxxxxx Xxxxxx Xxxxxxxxx Y, xxx xxxxxxxx xxxxxx xx xxxxxxxxx xx xxx [Xxxxxxx Xxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=735013). Xx xxxxxx xxx xxxxxxxxx xxxxxx:
+現在 EF は、UWP での SQLite のみをサポートしています。 Entity Framework 7 のインストールとモデル作成の詳しいチュートリアルについては、[ユニバーサル Windows プラットフォームの概要に関するページ](http://go.microsoft.com/fwlink/p/?LinkId=735013)をご覧ください。 次のトピックについて説明しています。
 
--   Xxxxxxxxxxxxx
--   Xxxxxx x xxx xxxxxxx
--   Xxxxxxx Xxxxxx Xxxxxxxxx
--   Xxxxxx xxxx xxxxx
--   Xxxxxx xxxx xxxxxxxx
--   Xxx xxxx xxxxx
+-   前提条件
+-   新しいプロジェクトの作成
+-   Entity Framework のインストール
+-   モデルの作成
+-   データベースの作成
+-   モデルの使用
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

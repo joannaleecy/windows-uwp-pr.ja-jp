@@ -1,28 +1,34 @@
 ---
-xx.xxxxxxx: YxYYYxYY-YYxx-YxYY-xYYY-YxxxxxxxYxxx
-xxxxx: Xxxxxxx, xxxxxxx, xxx xxxxx
-xxxxxxxxxxx: Xx xxxxx xx xxxxxxx x xxxx xxxxxxxxxx xxx xxxx xxxxx, xxx xxx xxxx xx xxxxxxxxx xx xxxxxxxxx xxxxxxxx xxxxxxx xx xxxxxxx xxxx xxxx xxx.
+ms.assetid: 0b891f63-02fa-4c30-b307-9fbcccac5caa
+title: デバイス、センサー、および電源
+description: 優れたユーザー エクスペリエンスを実現するために、外部デバイスまたはセンサーをアプリに統合する必要があります。
 ---
-# Xxxxxxx, xxxxxxx, xxx xxxxx
+# デバイス、センサー、および電源
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xx xxxxx xx xxxxxxx x xxxx xxxxxxxxxx xxx xxxx xxxxx, xxx xxx xxxx xx xxxxxxxxx xx xxxxxxxxx xxxxxxxx xxxxxxx xx xxxxxxx xxxx xxxx xxx. Xxxx xxx xxxx xxxxxxxx xx xxxxxxxx xxxx xxx xxx xxx xx xxxx xxx xxxxx xxx xxxxxxxxxx xxxxxxxxx xx xxxx xxxxxxx.
+優れたユーザー エクスペリエンスを実現するために、外部デバイスまたはセンサーをアプリに統合する必要があります。 ここでは、このセクションで説明するテクノロジを使って、アプリに追加できる機能例をいくつか紹介します。
 
--   Xxxxxxxxx xx xxxxxxxx xxxxx xxxxxxxxxx
--   Xxxxxxxxxxx xxxxxx xxx xxxxxxxxxxx xxxxxxx xxxx xxxx xxxx
--   Xxxxxxxxxx xx x xxxxxx xxxxxxxx xx xxxxxxx x xxxxxxx xxxxxxxx
+-   充実した印刷エクスペリエンスの実現
+-   ゲームへのモーション センサーと方位センサーの統合
+-   デバイスの直接接続またはネットワーク プロトコルを経由した接続
 
-| Xxxxx | Xxxxxxxxxxx |
+| トピック | 説明 |
 |-------|-------------|
-| [Xxxxxx xxxxxx xxxxxxxxxxxx](enable-device-capabilities.md) | Xxxx xxxxxxxx xxxxxxxxx xxx xx xxxxxxx xxxxxx xxxxxxxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx. Xxxx xxxxxxx xxxx xxx xx xxx xxxxxxx, xxxxxxxxxxx, xxxxxxxx xxxxxxx, xxx xxxxx xxxxxxx. | 
-| [Xxxxxxxxx xxxxxxx](enumerate-devices.md) | Xxx xxxxxxxxxxx xxxxxxxxx xxxxxxx xxx xx xxxx xxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxxx xx xxx xxxxxx, xxxxxxxxxx xxxxxxxxx, xx xxxxxxxxxx xxxx xxxxxxxx xx xxxxxxxxxx xxxxxxxxx. |
-| [Xxxx xxxxxxx](pair-devices.md) | Xxxx xxxxxxx xxxx xx xx xxxxxx xxxxxx xxxx xxx xx xxxx. Xxx [<strong>Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) xxxxxxxxx xxxxxxxx xxxxx xxxxxxxxx xxxx xx xxxx xxxxxxx. | 
-| [Xxxxxxx](sensors.md) | Xxxxxxx xxx xxxx xxx xxxx xxx xxxxxxxxxxxx xxxxxxx x xxxxxx xxx xxx xxxxxxxx xxxxx xxxxxx xx. Xxxxxxx xxx xxxx xxxx xxx xxx xxxxxxxxx, xxxxxxxxxxx, xxx xxxxxxxx xx xxx xxxxxx. |
-| [Xxxxxxxxx](bluetooth.md) | Xxxx xxxxxxx xxxxxxxx xxxxxxxx xx xxx xx xxxxxxxxx Xxxxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx, xxxxxxxxx xxx xx xxx XXXXXX, XXXX, xxx Xxx Xxxxxx (XX) Xxxxxxxxxxxxxx. | 
-| [YX xxxxxxxx xxxx xxxx xxx](3d-printing.md) | Xxxxx xxx xx xxx YX xxxxxxxx xxxxxxxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx xxx. Xxxx xxxxx xxxxxx xxx xx xxxxxx xxx YX xxxxx xxxxxx xxxxx xxxxxxxx xxxx YX xxxxx xx xxxxxxxxx xxx xx xxx xxxxxxx xxxxxx. |
-| [Xxxxxxxx xxx xxxxxxxx](printing-and-scanning.md) | Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxx xxx xxxx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx. | 
-| [Xxxxxx xx XXX Xxxxx Xxxx xxx](host-card-emulation.md) | Xxxxxxx Xxxxx Y.Y xxxxxxxxx XXX xxxx xxxxxxxxx xxxx xxxxx x XXX-xxxxx xxxxxx xxxxxxx, xxx xxxx xxxxx xxxxxxxx xxxxxx xxxxxxx xxxx xx xx xxxxxxx xxxxxxx xxxx xxxxxx-xxxxxxx xxxxxxxxx (XXX). Xxxx xxxxxxx xxx xxxxxxx xx xxxxxxxx xxxxxxx xxxxxxxxx xx xxxxx xxxxxxxxx xx xxxxxxxxxx xxxx xxx xxx xxxxxxx xxxx XXXx. Xx Xxxxxxx YY Xxxxxx, xx xxxx xxxxxxxxxx x xxx xxxx xxxxxxxxx xxxxxxxxxx xxxxxx, Xxxx Xxxx Xxxxxxxxx (XXX). XXX xxxxxxxxxx xxxxxx xxxx xxx xx xxxxxxxx xxxxxxxxxxx xxxx xx XXX xxxx xxxxxx. Xxxx xxxxx xxxxxxxxxxx xxx Xxxx Xxxx Xxxxxxxxx (XXX) xxxxx xx Xxxxxxx YY Xxxxxx xxxxxxx xxx xxx xxx xxx xxxxxxx xx XXX xxx xx xxxx xxxx xxxxxxxxx xxx xxxxxx xxxx xxxxxxxx xxxxxxx xxxxx xxxxx xxxxxxx xx x xxxxxxxx xxxx xxxxxxx xxxxxxxxxxxxx xxxx xx XXX. |
-| [Xxx xxxxxxx xxxxxxxxxxx](get-battery-info.md) | Xxxxx xxx xx xxx xxxxxxxx xxxxxxx xxxxxxxxxxx xxxxx XXXx xx xxx [<strong>Xxxxxxx.Xxxxxxx.Xxxxx</strong>](https://msdn.microsoft.com/library/windows/apps/Dn895017) xxxxxxxxx. |
+| [デバイス機能を有効にする](enable-device-capabilities.md) | このチュートリアルでは、Microsoft Visual Studio でデバイス機能を宣言する方法について説明します。 カメラ、マイク、位置センサー、その他のデバイスをアプリで使うことができるようにします。 | 
+| [デバイスの列挙](enumerate-devices.md) | 列挙用の名前空間によって、システムに内部接続されているデバイス、外部接続されているデバイス、ワイヤレス プロトコルまたはネットワーク プロトコル経由で検出できるデバイスを検索できます。 |
+| [デバイスのペアリング](pair-devices.md) | 一部のデバイスは、使う前にペアリングする必要があります。 [
+            <strong>Windows.Devices.Enumeration</strong>](https://msdn.microsoft.com/library/windows/apps/BR225459) 名前空間では、デバイスをペアリングするための 3 つの異なる方法がサポートされています。 | 
+| [センサー](sensors.md) | センサーは、デバイスとその周囲の実際の世界の関係をアプリに通知します。 つまり、デバイスの方角や向き、動きをアプリに伝えることができます。 |
+| [Bluetooth](bluetooth.md) | このセクションでは、RFCOMM、GATT、低エネルギー (LE) の広告を使う方法を含め、ユニバーサル Windows プラットフォーム (UWP) アプリに Bluetooth を統合する方法に関する記事を取り上げています。 | 
+| [アプリからの 3D 印刷](3d-printing.md) | ユニバーサル Windows アプリに 3D 印刷機能を追加する方法について説明します。 このトピックでは、3D モデルが印刷可能であり、正しい形式になっていることを確認した後で 3D 印刷ダイアログを起動する方法について説明します。 |
+| [印刷とスキャン](printing-and-scanning.md) | このセクションでは、ユニバーサル Windows アプリから印刷およびスキャンする方法について説明します。 | 
+| [NFC スマート カード アプリの作成](host-card-emulation.md) | Windows Phone 8.1 では、SIM ベースのセキュア エレメントを使用する NFC カード エミュレーション アプリがサポートされていましたが、このモデルでは、安全な支払いアプリと移動体通信事業者 (MNO) 様との密接な連携が必要でした。 このことにより、MNO 様と連携していないために、他の事業者様や開発者様によるさまざまな支払いソリューションの可能性が制限されていました。 Windows 10 Mobile では、ホスト カード エミュレーション (HCE) と呼ばれる新しいカード エミュレーション テクノロジが導入されています。 HCE テクノロジを使用すると、アプリが NFC カード リーダーと直接通信することができます。 このトピックでは、Windows 10 Mobile デバイスでのホスト カード エミュレーション (HCE) のしくみと、物理的なカードではなく電話からユーザーがサービスにアクセスできるような HCE アプリを MNO 様と連携せずに開発する方法について説明します。 |
+| [バッテリー情報の取得](get-battery-info.md) | [
+            <strong>Windows.Devices.Power</strong>](https://msdn.microsoft.com/library/windows/apps/Dn895017) 名前空間で、API を使って詳細なバッテリー情報を取得する方法について説明します。 |
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

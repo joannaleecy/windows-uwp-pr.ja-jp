@@ -1,72 +1,78 @@
 ---
-xx.xxxxxxx: YYYXYXXY-XXYX-YYYX-YYYX-YYYXXXXXXYYX
-xxxxx: Xxxxxx xxxxxx xxxxxxxxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxxx xxxxxxxxx xxx xx xxxxxxx xxxxxx xxxxxxxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx. Xxxx xxxxxxx xxxx xxx xx xxx xxxxxxx, xxxxxxxxxxx, xxxxxxxx xxxxxxx, xxx xxxxx xxxxxxx.
+ms.assetid: 949D1CE0-DD7D-420E-904D-758FADEBE85A
+title: デバイス機能を有効にする
+description: このチュートリアルでは、Microsoft Visual Studio でデバイス機能を宣言する方法について説明します。 カメラ、マイク、位置センサー、その他のデバイスをアプリで使うことができるようにします。
 ---
-# Xxxxxx xxxxxx xxxxxxxxxxxx
+# デバイス機能を有効にする
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-Xxxx xxxxxxxx xxxxxxxxx xxx xx xxxxxxx xxxxxx xxxxxxxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx. Xxxx xxxxxxx xxxx xxx xx xxx xxxxxxx, xxxxxxxxxxx, xxxxxxxx xxxxxxx, xxx xxxxx xxxxxxx.
-
-## Xxxxxxx xxx xxxxxx xxxxxxxxxxxx xxxx xxx xxxx xxx
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xxxxxxx xxxx xxxxxxx xxx xx xxxxxxx xx xxx xxx xxxxxxx xxxxxxxx xxxx xxx xxx xxxxxxx xxxxx xx xxxxxxx. Xx Xxxxxx Xxxxxx, xxx xxx xxxxxxx xxxx xxxxxxxxxxxx xx xxxxx [Xxxxxxxx Xxxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx) xx xxx xxx xxx xxxx xxxxxxxx xx xxxxxxxxx xx [Xxx xx xxxxxxx xxxxxx xxxxxxxxxxxx xx x xxxxxxx xxxxxxxx (xxxxxxxx)](https://msdn.microsoft.com/library/windows/apps/Dn263092). Xxxx xxxxxxxx xxxxxxx xxx'xx xxxxx Xxxxxxxx Xxxxxxxx.
+このチュートリアルでは、Microsoft Visual Studio でデバイス機能を宣言する方法について説明します。 カメラ、マイク、位置センサー、その他のデバイスをアプリで使うことができるようにします。
 
-**Xxxx**  
-Xxxx xxxxx xx xxxxxxx, xxxx xx xxxxxxxx, xxxxxxxx, xxx xxxxxxx, xxx'x xxxx xx xx xxxxxxxx xx xxx xxx xxxxxxx xxxxxxxx.
+## アプリで使うデバイス機能を指定する
 
--   Xx Xxxxxx Xxxxxx Xxxxxxxx Xxxxxxxx, xxxxxx-xxxxx xxx xxxxxxx xxxxxxxx xxxx, **Xxxxxxx.xxxxxxxxxxxx**.
--   Xxxx xxx **Xxxxxxxxxxxx** xxx.
--   Xxxxxx xxx xxxxxx xxxxxxxxxxxx xxxx xxxx xxx xxxx. Xx xxx xxx'x xxx xxx xxxxxxxxxx xxx'xx xxxxxxx xxx xx Xxxxxxxx Xxxxxxxx, xxx xx xxxxxxxx. Xxx xxxx xxxx, xxx [Xxx xx xxxxxxx xxxxxx xxxxxxxxxxxx xx x xxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Dn263092).
 
-| Xxxxxx Xxxxxxxxxx | Xxxxxxxx Xxxxxxxx | Xxxxxxxxxxx |
+Windows アプリでは、特定の種類のデバイスを使う場合にアプリ パッケージ マニフェストに指定する必要があります。 Visual Studio では、ほとんどの機能を[マニフェスト デザイナー](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx)で宣言できます。また、「[パッケージ マニフェストでデバイス機能を (手動で) 指定する方法](https://msdn.microsoft.com/library/windows/apps/Dn263092)」で説明しているように、機能を手動で追加することもできます。 このチュートリアルでは、マニフェスト デザイナーを使っていることを前提としています。
+
+**注**  
+プリンター、スキャナー、センサーなどのいくつかのデバイスの種類は、アプリ パッケージ マニフェストで宣言する必要はありません。
+
+-   Visual Studio のソリューション エクスプローラーで、パッケージ マニフェスト ファイル **Package.appxmanifest** をダブルクリックします。
+-   **[機能]** タブを開きます。
+-   アプリで使うデバイス機能を選びます。 マニフェスト デザイナーに目的の機能が表示されない場合は、手動で追加します。 詳しくは、「[パッケージ マニフェストでデバイス機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/Dn263092)」をご覧ください。
+
+| デバイス機能 | マニフェスト デザイナー | 説明 |
 |-------------------|-------------------|-------------|    
-| Xxx Xxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxx XxxXxxx-xxxxxxx xxxx xxx xxxxxxx xx x xxxxxxx xx xxxxxxxx xxx xxxxxxxx xxxx xxxx xxxxx. Xxx xxxx xxxx xxxxxx XXXx xx xxx [**Xxxxxxx.Xxxxxxx.XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn894971) xxxxxxxxx xxxx xxx xxxx xxxxxxxxxx. |
-| Xxxxxxx Xxxx Xxxxxxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxx xxxx xx xxxx XXX xxx XXX xxxxxxxx xxxx xxxx xxxx xxxxxxx xx xxx Xxxx Xxxxxx xxx. |
-| Xxxx Xxxxxxx Xxxxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxx xxxx xx xxxx xxx xxxxxx Xxxx Xxxxxxxx. Xx xxxx xxxxxx xxxx xx xxxxx xxxx xxxxxxxx xx xxx xxxxxx xxxx xxxxx. |
-| Xxxx Xxxxxxxxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxx xxxx xx xxxxxxxx xxxx xxxxxxxxxxx. |
-| Xxxxxxxxxx Xxxxxxxxxxxxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxx xxxxxxxxxx xx xxxxxxx xx xxx Xxxxxxx Xxxxx xxxxxx. Xx xxxxxxxx xxx xxxxxxxxxx xx xxxxxxx xx xxxxxxxxxx xxxxxxxx xxxxxxxxx xxxx xxxxxxx xxxxxx xxxxxxxxxxx. Xxxx xxxxxxxxxx xx xxx xxxxxxxxx xxxxxx xxx xxxx xxxx. | 
-| Xxxxxxxx (Xxxxxx) | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxxxx xxxxxxxx xxxxxx xx xxx Xxxxxxxx xxx xxxxxxxx xx xxxxxx xxxxxx xxxx xxxxxxxx xxx xxxxxx xxxxx. Xxx xxxxxxx, Xxxxxxxx xxxxxxxx xxxxx xxx xxxx xxx xxxxxxxxxx xxx xxxxxxx xx xxxxxx. Xxxx xxxx xxxx xxxxxxx Xxxxxxxx xxxxxx xxxxxx xxx xxx xxxxxxxxxx. |
-| Xxxxxxxx (Xxxxxx &xxx; Xxxxxx) | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxx xx xxx Xxxxxxxx xxx xxx xxxxxxxx xx xxxxxx xxxxxx xxxx xxxxxxxx xxx xxxxxx xxxxx. Xxxx xxxxxxxxxx xx x xxxxxxxx xx **Xxxxxxxx (Xxxxxx)**. **Xxxxxxxx (Xxxxxx)** xxxxx'x xxxx xx xx xxxxxxx xx xxxx xxxxxxxxxx xx xxxx xxxxxxx. Xxxxxxx xxxxxx xx xxxxxxxx xxxxx xx xxxxxx xxxxxxx. |
-| Xxxxxxxx| ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxxxx xxxxxx xx xxx xxxxxxx xxxxxxxx. Xxxx xx xxxxxxxx xxxx xxxxxxxxx xxxxxxxx xxxx x XXX xxxxxx xx xxx XX, xx xxxxxxx xxxx xxxxxxxxx xxxxxxx xxxxxxxxxxx. | 
-| Xxxxxxxxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxxxx xxxxxx xx xxx xxxxxxxxxx'x xxxxx xxxx. Xxxx xxxxxx xxx xxx xx xxxxxx xxxx xxxxxxxxx xxxxxxxxxxx. | 
-| Xxxxx Xxxxxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxxxx xxx xxxxxxxxxx xx xxx, xxxxxx, xx xxxxxx xxxxx xx xxx **Xxxxx Xxxxxxx** xxx xxx xxxxx XX xxx **XxxxXxxxx** XXx. | 
-| Xxxxxxx YX | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxxxx xxxxxxxxxxxx xxxxxx xx xxx xxxx'x **YX Xxxxxxx**, xxxxxxxx xxx xxx xx xxxxxxxxx xxx xxxxxx xxx xxxxx xx xxx xxxxxxx xxxxxxx xxxx xxxxxxxxxxx. Xxxx xxxxxxxxxx xx xxxxxxxxx xxxx xx YX xxxx xxx xxxxx xxxx xxxx xx xxxxxx xxx xxxxxx **YX Xxxxxxx** xxxxxxx. | 
-| Xxxxx Xxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxx xxxx xx xxxxxx xxx xx xxx xxxxx xxxxx xx xxx xxxxxx xxx xxxxxxx xxx xxxxxxxxx xxxxxxxxx: xxxxx x xxxx xx xxx xxxxx xxx xxxx xxx xxxxxx xxxxxx xxxxxxx xxxxxxxxx xxx xxxx; xxxxxx xxxx-xxxxxxx xxxxxxxx; xxxxxx xxxx-xxxxxxx xxxxxxxx. Xxxxxx xxx xxxx-xxxxxxxx xxxx xxxxxx xxx xx xxx xxx xxxxx xxx xxxxx xxxx xxx xxxx xxxxxx xxxxxxxxxxx. | 
-| Xxxxxxxx Xxxxxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxxxx xxx xxxxxxxxxx xx xxx, xxxxxx, xx xxxxxx xxxxx xx xxx **Xxxxxxxx Xxxxxxx** xxx xxx xxxxx XX xxx **XxxxXxxxx** XXx. | 
-| Xxxxxxx Xxxxxxxx (Xxxxxx &xxx; Xxxxxx) | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxx xx Xxxxxxxx xxxxxxxx xxxx xxxx xx xxxxxxxxxxxxx xxxxxx xxxxxxxxxx, xx xxxx xxx xxxx xxx xxxxxxxxxx xx xxxxxx xxxx xx xxxx xxxxxxxx. Xxxxxxx xxxxxx xx xxxxxxxx xxxxx xx xxxxxx xxxxxxx. | 
-| Xxxxxxxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxxxx xxx xxxxxxxxxx xx xxxxxxx xx xxxxxxx xx xxxxx xxxxxxxxx xx xxx XX xxx xxxx-xxxxx xxxxxxxxxxxxx (XXX). Xxxx-xxxxx xxxxxxxxx xxx xx xxxx xx xxxx xxxxx xx xxxxxxxxxxx xxxx xx xxx xx xxx xxxxxx xxxxxx. | 
-| Xxxxxxxxx Xxxxxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxxxx xxx xxxxxxxxxx xx xxx, xxxxxx, xx xxxxxx xxxxx xx xxxxxxxxx xxxxxxx xxxxxxx. Xxx xxx xxx xxxx xxxxxx xxx xxxx xxxxx xx xxxxxxxxx xxxxxxx xxxx xxx xxxxxxx xx xxx xxxxxxxx xxxxx xxx **Xxxx Xxxx Xxxxxxxxxxxx** xxxxxxxxxxx. Xxx xxx xxx'x xxxxxx xxxxxxxxx xxxxxxx xx **XxxxXxxxx** XXx. | 
-| Xxxxxx Xxxx Xxxxxxxxxxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxx xxxxxxxxxx xx xxxxxxx xx xxx Xxxxxxx Xxxxx xxxxxx. Xx xxxxxxxx xxx xxxxxxxxxx xx xxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxxx, xxxx xx xxxxx xxxx xxxxxxxxxxxx, xxx xxxxxxxxxx x xxxx'x xxxxxxxx. Xxxx xxxxxxx XXXx xxx xxxxxxx xx xxxxxxx, xxx xxxx xxxx xxxx xxxxxx (xxxxxx xxxx, xxxxxx xxxxxxxxxxx, xxx.). Xxxx xxxxxxxxxx xx xxx xxxxxxxxx xx xxxx xxx xxxxxxxx x xxxxxxx xxxxxxxxxxx xxx x **Xxxxxxxxxxxx** xxxxxxxxxxx. | 
-| Xxxx Xxxxxxx Xxxxxxxxxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxx xxxx xxx xxxxxxx xx xxxxxx xxx xxxx'x xxxx xxx xxxxxxx. Xxxx xxxxxxxxxx xx xxxxxxxx xx xxxxxx xxxx XXXx xx xxx [**Xxxxxxx.Xxxxxx.XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR241881) xxxxxxxxx. | 
-| Xxxxxx Xxxxxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxxxx xxx xxxxxxxxxx xx xxx, xxxxxx, xx xxxxxx xxxxx xx xxx **Xxxxxx Xxxxxxx** xxx xxx xxxxx XX xxx **XxxxXxxxx** XXx. | 
-| XXXX Xxxxxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxx xxxx xx xxxxxx xxx XXXX xxxxxxx XXXx xx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn297266) xxxxxxxxx. | 
-| Xxxxxx | ![Xxxxxxxxx xx Xxxxxxxx Xxxxxxxx](images/ap-tools.png) | Xxxxxxxx xxxxxx xx xxx xxxxx-xx xxxxxx xx xxxxxxxx xxxxxx'x xxxxx xxxx. Xxxx xxxxxx xxx xxx xx xxxxxxx xxxxxxxxx xxx xxxxxx. | 
-| XXX | | Xxxxxxxx xxxxxx xx xxxxxx XXX xxxxxxx. Xxxx xxxxxxxxxx xxxxxxxx xxxxx xxxxxxxx. Xxxx xxxxxxx xx xxx xxxxxxxxx xx Xxxxxxx Xxxxx. | 
-| Xxxxx Xxxxxxxxx Xxxxxx (XXX) | | Xxxxxxxx xxxxxx xx Xxxxx Xxxxxxxxx Xxxxxxx (XXX). Xxxx xxxxxxxxxx xxxxxxxx xxxxx xxxxxxxx. Xxx xxxx xxxx, xxx [Xxx xx xxxxxxx xxxxxx xxxxxxxxxxxx xxx XXX](https://msdn.microsoft.com/library/windows/apps/Dn263091). | 
-| Xxxxxxxxx XXXX | | Xxxxxxxx xxxxxx xx Xxxxxxxxx XX xxxxxxx xxxxxxx x xxxxxxxxxx xx xxxxxxx xxxxxxxx, xxxxxxxx xxxxxxxx, xxxxxxxxxxxxxxx, xxx xxxxxxxxxxx. Xxxx xxxxxxxxxx xxxxxxxx xxxxx xxxxxxxx. Xxx xxxx xxxx, xxx [Xxx xx xxxxxxx xxxxxx xxxxxxxxxxxx xxx Xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Dn263090). | 
-| Xxxxxxxxx XXXXXX |  | Xxxxxxxx xxxxxx xx XXXx xxxx xxxxxxx xxx Xxxxx Xxxx/Xxxxxxxx Xxxx Xxxx (XX/XXX) xxxxxxxxx xxx xxxx xxxx xxxx Xxxxxxx Xxxxx xxx xxxxxx x xxxxxx xxxx xxxxxxxxxx Xxxxxx Xxxx Xxxxxxx (XXX). Xxxx xxxxxxxxxx xxxxxxxx xxxxx xxxxxxxx. Xxx xxxx xxxx, xxx [Xxx xx xxxxxxx xxxxxx xxxxxxxxxxxx xxx Xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Dn263090). |
-| xxxxxXxXxxxxxx |  | Xxxxxxxx xxxxxx xx Xxxxx xx Xxxxxxx (XXX) xxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxx xxxxxxx. Xxxx xxxxxxx xx xxx xxxxxxxxx xx Xxxxxxx Xxxxx. | 
+| All Joyn | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | ネットワーク上の AllJoyn 対応のアプリやデバイスは、相互に検出を行い、対話することができます。 [
+            **Windows.Devices.AllJoyn**](https://msdn.microsoft.com/library/windows/apps/Dn894971) 名前空間の API にアクセスするすべてのアプリは、この機能を使う必要があります。 |
+| ブロックされたチャット メッセージ | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | アプリは、スパム フィルターによってブロックされている SMS メッセージや MMS メッセージを読み取ることができます。 |
+| チャット メッセージ アクセス | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | アプリはテキスト メッセージの読み取りと削除を実行できます。 また、アプリはチャット メッセージをシステム データ ストアに保存できます。 |
+| コード生成 | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | アプリはコードを動的に生成することができます。 |
+| エンタープライズ認証 | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | この機能には Windows ストア ポリシーが適用されます。 ドメイン資格情報を必要とする企業イントラネットのリソースに接続する機能を提供します。 通常、この機能はほとんどのアプリで必要ありません。 | 
+| インターネット (クライアント) | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | インターネットや、公共の場所のネットワーク (空港、喫茶店など) への出力方向のアクセスを提供します。 たとえば、ユーザーがパブリックとして指定したイントラネット ネットワークなどです。 インターネットにアクセスする必要があるほとんどのアプリは、この機能を使います。 |
+| インターネット (クライアントとサーバー) | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | インターネットや、公共の場所のネットワーク (空港、喫茶店など) への入力方向と出力方向のアクセスを提供します。 この機能は、**インターネット (クライアント)** のスーパーセットです。 この機能が有効な場合は、**インターネット (クライアント)** を有効にする必要はありません。 重要なポートへの入力方向のアクセスは常にブロックされます。 |
+| 位置情報| ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | 現在の位置情報にアクセスできるようにします。 これは PC 内の GPS センサーのような専用ハードウェアから取得されるか、利用可能なネットワーク情報から導き出されます。 | 
+| マイク | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | マイクのオーディオ フィードにアクセスできるようにします。 これによって、アプリは接続されたマイクからオーディオを録音できます。 | 
+| 音楽ライブラリ | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | ローカル PC と**ホームグループ**の PC で**音楽ライブラリ**のファイルを追加、変更、削除する機能を提供します。 | 
+| 3D オブジェクト | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | ユーザーの **3D オブジェクト**へのプログラムによるアクセスを提供します。これによって、ユーザーの操作なしで、ライブラリ内のすべてのファイルを列挙してそれらのファイルにアクセスできます。 通常、この機能は、**3D オブジェクト** ライブラリ全体にアクセスする必要がある 3D アプリやゲームで使用されます。 | 
+| 通話 | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | アプリは、デバイスのすべての電話回線にアクセスし、次の機能を実行できます。ユーザーに確認を求めずに、電話での通話を実行してシステムのダイヤラーを表示します。電話回線に関連するメタデータへアクセスします。電話回線に関連するトリガーへアクセスします。 ユーザーが選んだスパム フィルター アプリで、禁止一覧と呼び出し元の情報を設定し、確認することができます。 | 
+| 画像ライブラリ | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | ローカル PC と**ホームグループ**の PC で**画像ライブラリ**のファイルを追加、変更、削除する機能を提供します。 | 
+| プライベート ネットワーク (クライアントとサーバー) | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | 認証済みドメイン コントローラーを備えたイントラネット ネットワーク、またはユーザーがホーム ネットワークや社内ネットワークのどちらかに指定したイントラネット ネットワークへの入力方向と出力方向のアクセスを提供します。 重要なポートへの入力方向のアクセスは常にブロックされます。 | 
+| 近接通信 | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | 近距離通信 (NFC) を使って PC の近くにあるデバイスに接続する機能を提供します。 近距離近接通信は、近くのデバイスのアプリへのファイルの送信やアプリとの通信に使用できます。 | 
+| リムーバブル記憶域 | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | リムーバブル記憶装置においてファイルの追加、変更、削除を行う機能を提供します。 アプリは、**ファイルの種類の関連付け**の宣言でマニフェストに定義されたリムーバブル記憶域内のファイルの種類にのみアクセスできます。 アプリは、**ホームグループ** PC 上のリムーバブル記憶域にはアクセスできません。 | 
+| 共有ユーザー証明書 | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | この機能には Windows ストア ポリシーが適用されます。 ユーザー ID の確認のためにソフトウェア証明書とハードウェア証明書 (スマート カード証明書など) にアクセスする機能を提供します。 関連する API が実行時に呼び出されると、ユーザーは、カードの挿入や証明書の選択などのアクションを実行する必要があります。 **Certificates** 宣言を介してアプリにプライベート証明書を追加する場合、この機能は必要ありません。 | 
+| ユーザー アカウント情報 | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | アプリはユーザーの名前と画像にアクセスできるようになります。 [
+            **Windows.System.UserProfile**](https://msdn.microsoft.com/library/windows/apps/BR241881) 名前空間の一部の API にアクセスする場合は、この機能が必要になります。 | 
+| ビデオ ライブラリ | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | ローカル PC と**ホームグループ**の PC で**ビデオ ライブラリ**のファイルを追加、変更、削除する機能を提供します。 | 
+| VOIP 呼び出し | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | アプリで [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) 名前空間の VOIP 呼び出し API にアクセスできます。 | 
+| Web カメラ | ![マニフェスト デザイナーで利用できます](images/ap-tools.png) | 組み込みのカメラや接続されている Web カメラのビデオ フィードにアクセスできるようにします。 これによって、アプリはスナップショットやムービーをキャプチャできます。 | 
+| USB | | カスタム USB デバイスにアクセスできるようにします。 この機能を使うには、子要素が必要です。 Windows Phone では、この機能はサポートされていません。 | 
+| ヒューマン インターフェイス デバイス (HID) | | ヒューマン インターフェイス デバイス (HID) にアクセスできるようにします。 この機能を使うには、子要素が必要です。 詳しくは、「[HID のデバイス機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/Dn263091)」をご覧ください。 | 
+| Bluetooth GATT | | プライマリ サービス、含まれているサービス、特性、記述子のコレクションを介して Bluetooth LE devices にアクセスできるようにします。 この機能を使うには、子要素が必要です。 詳しくは、「[Bluetooth のデバイス機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/Dn263090)」をご覧ください。 | 
+| Bluetooth RFCOMM |  | Basic Rate/Extended Data Rate (BR/EDR) トランスポートをサポートする API にアクセスできるようにし、Windows ストア アプリが Serial Port Profile (SPP) を実装するデバイスにアクセスできるようにします。 この機能を使うには、子要素が必要です。 詳しくは、「[Bluetooth のデバイス機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/Dn263090)」をご覧ください。 |
+| pointOfService |  | POS (店舗販売時点管理) バー コード スキャナーや磁気ストライプ リーダーにアクセスできるようにします。 Windows Phone では、この機能はサポートされていません。 | 
 
-## Xxx xxx Xxxxxxx Xxxxxxx XXX xxx xxxxxxxxxxxxx xxxx xxxx xxxxxx
+## デバイスとの通信に Windows ランタイム API を使用する
 
-Xxx xxxxxxxxx xxxxx xxxxxxxx xxxx xx xxx xxxxxxxxxxxx xx Xxxxxxx Xxxxxxx XXXx.
+次の表では、上記の機能の一部と Windows ランタイム API を関連付けています。
 
-| Xxxxxx Xxxxxxxxxx        | XXX             | 
+| デバイス機能        | API             | 
 |--------------------------|-----------------|
-| Xxx Xxxx                 | [**Xxxxxxx.Xxxxxxx.XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn894971) | 
-| Xxxxxxx Xxxx Xxxxxxxx    | [**Xxxxxxx.XxxxxxxxxxxXxxxx.XxxxxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn974207) | 
-| Xxxxxxxx                 | Xxx [Xxxx xxx xxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt219699) xxx xxxx xxxxxxxxxxx. | 
-| Xxxxx Xxxx               | [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn297266) | 
-| Xxxx Xxxxxxx Xxxxxxxxxxx | [**Xxxxxxx.Xxxxxx.XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR241881) | 
-| XXXX Xxxxxxx             | [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn297266) | 
-| XXX                      | [**Xxxxxxx.Xxxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/Dn278466) | 
-| XXX                      | [**Xxxxxxx.Xxxxxxx.XxxxxXxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn264174) | 
-| Xxxxxxxxx XXXX           | [**Xxxxxxx.Xxxxxxx.Xxxxxxxxx.XxxxxxxXxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn297685) | 
-| Xxxxxxxxx XXXXXX         | [**Xxxxxxx.Xxxxxxx.Xxxxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn263529) | 
-| Xxxxx xx Xxxxxxx (XXX)   | [**Xxxxxxx.Xxxxxxx.XxxxxXxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn298071) |
+| All Joyn                 | [**Windows.Devices.AllJoyn**](https://msdn.microsoft.com/library/windows/apps/Dn894971) | 
+| ブロックされたチャット メッセージ    | [**Windows.ApplicationModel.CommunicationBlocking**](https://msdn.microsoft.com/library/windows/apps/Dn974207) | 
+| 位置情報                 | 詳しくは、「[マップと位置情報の概要](https://msdn.microsoft.com/library/windows/apps/Mt219699)」をご覧ください。 | 
+| 通話               | [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) | 
+| ユーザー アカウント情報 | [**Windows.System.UserProfile**](https://msdn.microsoft.com/library/windows/apps/BR241881) | 
+| VOIP 呼び出し             | [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) | 
+| USB                      | [**Windows.Devices.Usb**](https://msdn.microsoft.com/library/windows/apps/Dn278466) | 
+| HID                      | [**Windows.Devices.HumanInterfaceDevice**](https://msdn.microsoft.com/library/windows/apps/Dn264174) | 
+| Bluetooth GATT           | [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) | 
+| Bluetooth RFCOMM         | [**Windows.Devices.Bluetooth.Rfcomm**](https://msdn.microsoft.com/library/windows/apps/Dn263529) | 
+| Point of Service (POS)   | [**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) |
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

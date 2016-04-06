@@ -1,136 +1,140 @@
 ---
-xx.xxxxxxx: YYYYYXXX-XYYY-YYYY-YYYY-YYYYXXYYYXXY
-xxxxx: Xxxxxxxxx XXX xxxx
-xxxxxxxxxxx: Xx xxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xx xxxxxxxxxx xx xx xxxxx xxxxx, xxx xxxx xx xxxxxx xx xxxxxxxxxx xxxxxxx xxx xx.
+ms.assetid: 96361CAF-C347-4671-9721-8208CE118CA4
+title: Packaging UWP apps
+description: To sell your Universal Windows Platform (UWP) app or distribute it to other users, you need to create an appxupload package for it.
 ---
-# Xxxxxxxxx XXX xxxx
+# Packaging UWP apps
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xx xxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xx xxxxxxxxxx xx xx xxxxx xxxxx, xxx xxxx xx xxxxxx xx xxxxxxxxxx xxxxxxx xxx xx. Xxxx xxx xxxxxx xxx xxxxxxxxxx, xxxxxxx xxxx xxxxxxx xxxx xx xxxxxxxxx xx xxx xxx xxxxxxx xxx xxxxxxxxxxx. Xxx xxx xxxxxxxxxx xxxx xxx xxxxxxxx xx xxxxxxxxxxx xxx xxxx xxxxxxx xx x xxxxxx. Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxx xx xxxxxxxxxxx, xxxxxxxx xxx xxxxxxx x XXX xxx xxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxxxxxx, xxx [Xxxxxxxx Xxxx xxxx XXXX](http://go.microsoft.com/fwlink/?LinkID=231020).
+To sell your Universal Windows Platform (UWP) app or distribute it to other users, you need to create an appxupload package for it. When you create the appxupload, another appx package will be generated to use for testing and sideloading. You can distribute your app directly by sideloading the appx package to a device. This article describes the process of configuring, creating and testing a UWP app package. For more information about sideloading, see [Sideload Apps with DISM](http://go.microsoft.com/fwlink/?LinkID=231020).
 
-Xxx Xxxxxxx YY, xxx xxxxxxxx xxx xxxxxxx (.xxxxxxxxxx) xxxx xxx xx xxxxxxxx xx xxx Xxxxxxx Xxxxx. Xxxx xxx xx xxxx xxxxxxxxx xx xx xxxxxxxxx xxx xxx xx xxx Xxxxxxx YY xxxxxx. Xxxx xxx xxx xxxxx xx xxxxxx xx xxx xxxxxxx.
+For Windows 10, you generate one package (.appxupload) that can be uploaded to the Windows Store. Your app is then available to be installed and run on any Windows 10 device. Here are the steps to create an app package.
 
-1.  [Xxxxxx xxxxxxxxx xxxx xxx](#before-packaging-your-app). Xxxxxx xxxxx xxxxx xx xxxx xxxx xxxx xxx xx xxxxx xx xx xxxxxxxx xxx xxxxx xxxxxxxxxx.
-2.  [Xxxxxxxxx xx xxx xxxxxxx](#configure-an-app-package). Xxx xxx xxxxxxxx xxxxxxxx xx xxxxxxxxx xxx xxxxxxx. Xxx xxxxxxx, xxx xxxx xxxxxx xxx xxxxxx xxx xxxxxxxxxxxx xxxx xxx xxxxxxxx.
-3.  [Xxxxxx xx xxx xxxxxxx](#create-an-app-package). Xxx xxx xxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx xx xxxxxx xx xxx xxxxxxx xxx xxxx xxxxxxx xxxx xxxxxxx xxxx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx.
-4.  [Xxxxxxxx xxx xxx xxxxxxx](#sideload-your-app-package). Xxxxx xxxxxxxxxxx xxxx xxx xx x xxxxxx, xxx xxx xxxx xxxx xx xxxxx xxxxxxxxx.
+1.  [Before packaging your app](#before-packaging-your-app). Follow these steps to make sure your app is ready to be packaged for store submission.
+2.  [Configure an app package](#configure-an-app-package). Use the manifest designer to configure the package. For example, add tile images and choose the orientations your app supports.
+3.  [Create an app package](#create-an-app-package). Use the wizard in Microsoft Visual Studio to create an app package and then certify your package with the Windows App Certification Kit.
+4.  [Sideload you app package](#sideload-your-app-package). After sideloading your app to a device, you can test that it works correctly.
 
-Xxxxx xxx xxxx xxxxxxxxx xxx xxxxx xxxxx, xxx xxx xxxxx xx xxxx xxxx xxx xx xxx xxxxx. Xx xxx xxxx x xxxx-xx-xxxxxxxx (XXX) xxx, xxxx xxx xxx'x xxxx xx xxxx xxxxxxx xx'x xxx xxxxxxxx xxxxx xxxx, xxx xxx xxxxxxxx xxxx xxx xx xxxxxxx xx xx xxx Xxxxxxx YY xxxxxx.
+After you have completed the steps above, you are ready to sell your app in the store. If you have a line-of-business (LOB) app, that you don't plan to sell because it's for internal users only, you can sideload this app to install it on any Windows 10 device.
 
-## Xxxxxx xxxxxxxxx xxxx xxx
+## Before packaging your app
 
-1.  Xxxx xxxx xxx. Xxxxxx xxx xxxxxxx xxxx xxx xxx xxxxx xxxxxxxxxx, xxxx xxxx xx xxxxx xx xxxxxxxx xx xxx xxxxxx xxxxxxxx xxxx xxx xxxx xx xxxxxxx. Xxxxx xxxxxx xxxxxxxx xxx xxxxxxx xxxxxxx, xxxxxx, Xxxxxxx Xxx, XXXX, XxX xxxxxxx, xx xxxxxx.
-2.  Xxxxxxxx xxxx xxx. Xxx xxx xxxXxxxxx Xxxxxx’x xxxxxxxxx xxx xxxxxxxxx xxxxx xx xxxxxxxx xxx xxxxxxxxxxx xx xxxx XXX xxx. Xxx xxxxxxx, xxx Xxxxxxxx xxxx xxx XX xxxxxxxxxxxxxx, xxx xxxxxx Xxxxx xxxx, xxx XXX Xxxxx xxxx, xxx xxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxx xxxxx, xxx [Xxx xxxxxxxxxx xxxxx xxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/dn957936.aspx).
-3.  Xxxxx .XXX Xxxxxx xxxxxxxxxxxxx (xxx XX xxx X# xxxx). Xxxx xxx XXX, xxxxx xx xxx x xxx xxxxxx xxxxxxxx xxxx xxxx xxxxxxx xxx xxxxxxx xxxxxxxxxxx xx xxxx xxx. Xxxx xxxx xxxxxx, xx xx xxxxxx xxxxxxxxxxx xxxx xxx xxxx xxxx xxx xx xxxx xxxxxxxxxxx xxxxxxxxxxx. Xx xxxxxxx, xxx **Xxxxxxx** xxxxx xxxxxxxxxxxxx xxxxxxx xxx .XXX xxxxxx xxxxxxxxx, xx xx xx xxxxxxxxx xx xxxx xxxx xxx xxxx xxxx **Xxxxxxx** xxxxxxxxxxxxx xxx xxxxx xxxx xxxx xxx xxxxxxx xx xxxxxxxx. Xxxx xxxxxx xxxxxxxxx xxxxxx xxxx xxx xxxxxx xxxx .XXX Xxxxxx xxx xxxxxxxxx xx xxxx xxxxxx [xxxx](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx).
+1.  Test your app. Before you package your app for store submission, make sure it works as expected on all device families that you plan to support. These device families may include desktop, mobile, Surface Hub, XBOX, IoT devices, or others.
+2.  Optimize your app. You can useVisual Studio’s profiling and debugging tools to optimize the performance of your UWP app. For example, the Timeline tool for UI responsiveness, the memory Usage tool, the CPU Usage tool, and more. For more information about these tools, see [Run diagnostic tools without debugging](https://msdn.microsoft.com/library/dn957936.aspx).
+3.  Check .NET Native compatibility (for VB and C# apps). With the UWP, there is now a new native compiler that will improve the runtime performance of your app. With this change, it is highly recommended that you test your app in this compilation environment. By default, the **Release** build configuration enables the .NET native toolchain, so it is important to test your app with this **Release** configuration and check that your app behaves as expected. Some common debugging issues that can happen with .NET Native are explained in more detail [here](http://blogs.msdn.com/b/visualstudioalm/archive/2015/07/29/debugging-net-native-windows-universal-apps.aspx).
 
-## Xxxxxxxxx xx xxx xxxxxxx
+## Configure an app package
 
-Xxx xxx xxxxxxxx xxxx (xxxxxxx.xxxxxxxxxxxx.xxx) xxx xxx xxxxxxxxxx xxx xxxxxxxx xxxx xxx xxxxxxxx xx xxxxxx xxxx xxx xxxxxxx. Xxx xxxxxxx, xxxxxxxxxx xx xxx xxxxxxxx xxxx xxxxxxxx xxx xxxxx xx xxx xx xxx xxxx xx xxxx xxx xxx xxx xxxxxxxxxxxx xxxx xxxx xxx xxxxxxxx xxxx x xxxx xxxxxxx xxx xxxxxx.
+The app manifest file (package.appxmanifest.xml) has the properties and settings that are required to create your app package. For example, properties in the manifest file describe the image to use as the tile of your app and the orientations that your app supports when a user rotates the device.
 
-Xxxxxx Xxxxxx xxx x xxxxxxxx xxxxxxxx xxxx xxxxx xx xxxx xxx xxx xx xxxxxx xxx xxxxxxxx xxxx xxxxxxx xxxxxxx xxx xxx XXX xx xxx xxxx.
+Visual Studio has a manifest designer that makes it easy for you to update the manifest file without editing the raw XML of the file.
 
-Xxxxxx Xxxxxx xxx xxxxxxxxx xxxx xxxxxxx xxxx xxx Xxxxx. Xxxx xxx xx xxxx, xxxx xx xxx xxxxxx xx xxx Xxxxxxxxx xxx xx xxx xxxxxxxx xxxxxxxx xxx xxxxxxxxxxxxx xxxxxxx.
+Visual Studio can associate your package with the Store. When you do this, some of the fields in the Packaging tab of the manifest designer are automatically updated.
 
-**Xxxxxxxxx x xxxxxxx xxxx xxx xxxxxxxx xxxxxxxx**
+**Configure a package with the manifest designer**
 
-1.  Xx **Xxxxxxxx Xxxxxxxx**, xxxxxx xxx xxxxxxx xxxx xx xxxx XXX xxx.
-2.  Xxxxxx-xxxxx xxx **Xxxxxxx.xxxxxxxxxxxx** xxxx. Xx xxx xxxxxxxx xxxx xx xxxxxxx xxxx xx xxx XXX xxxx xxxx, Xxxxxx Xxxxxx xxxxxxx xxx xx xxxxx xxx xxxx.
-3.  Xxx xxx xxx xxxxxx xxx xx xxxxxxxxx xxxx xxx. Xxxx xxx xxxxxxxx xxxxxxxxxxx xxxx xxx xxx xxxxxxxxx xxxxx xxxx xxx xxx xxxxx xx xxxx xxxxxxxxxxx xx xxxxxxxxx.<br/>
+1.  In **Solution Explorer**, expand the project node of your UWP app.
+2.  Double-click the **Package.appxmanifest** file. If the manifest file is already open in the XML code view, Visual Studio prompts you to close the file.
+3.  Now you can decide how to configure your app. Each tab contains information that you can configure about your app and links to more information if necessary.<br/>
     ![](images/packaging-screen1.jpg)
 
-    Xxxxx xxxx xxx xxxx xxx xxx xxxxxx xxxx xxx xxxxxxxx xxx x XXX xxx xx xxx **Xxxxxx Xxxxxx** xxx.
+    Check that you have all the images that are required for a UWP app on the **Visual Assets** tab.
 
-    Xxxx xxx **Xxxxxxxxx** xxx, xxx xxx xxxxx xxxxxxxxxx xxxx. Xxxx xx xxxxx xxx xxx xxxxxx xxxxx xxxxxxxxxxx xx xxx xx xxxx xxxx xxx. Xxx XXX xxxx xxxx xx xxxxxx xxxx x xxxxxxxxxxx. Xx xxxxx xx xxxxxxxx xx xxx xxxxxxx, xxx xxxx xx xxxxx xxx xxxxxxx. Xxx xxxxxxxxxxx xxxx xx xxxxxxxxx xx xxxx xxxxxx xx xxxxx xxx xxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxxxxxx, xxx [Xxxxxx xxxx xxxxxx xxx xxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Dn706236).
+    From the **Packaging** tab, you can enter publishing data. This is where you can choose which certificate to use to sign your app. All UWP apps must be signed with a certificate. In order to sideload an app package, you need to trust the package. The certificate must be installed on that device to trust the package. For more information about sideloading, see [Enable your device for development](https://msdn.microsoft.com/library/windows/apps/Dn706236).
 
-4.  Xxxx xxxx xxxx xxxxx xxx xxxx xxxx xxx xxxxxxxxx xxxxx xxx xxxx xxx.
+4.  Save your file after you have made the necessary edits for your app.
 
-## Xxxxxx xx xxx xxxxxxx
+## Create an app package
 
-Xx xxxxxxxxxx xx xxx xxxxxxx xxx Xxxxx xxx xxxx xxxxxx xx xxxxxxxxxx xxxxxxx. Xxx xxx xx xxxx xx xxxxx xxx **Xxxxxx Xxx Xxxxxxxx** xxxxxx. Xxxxxx xxxxx xxxxx xx xxxxxx x xxxxxxx xxxxxxxx xxx xxxxx xxxxxxxxxx xxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY.
+To distribute an app through the Store you must create an appxupload package. You can do that by using the **Create App Packages** wizard. Follow these steps to create a package suitable for store submission with Microsoft Visual Studio 2015.
 
-**Xx xxxxxx xxxx xxx xxxxxxx**
+**To create your app package**
 
-1.  Xx **Xxxxxxxx Xxxxxxxx**, xxxx xxx xxxxxxxx xxx xxxx XXX xxx xxxxxxx.
-2.  Xxxxx-xxxxx xxx xxxxxxx xxx xxxxxx **Xxxxx**->**Xxxxxx Xxx Xxxxxxxx**. Xx xxxx xxxxxx xx xxxxxxxx xx xxxx xxx xxxxxx xx xxx, xxxxx xxxx xxx xxxxxxx xx x XXX xxxxxxx.<br/>
+1.  In **Solution Explorer**, open the solution for your UWP app project.
+2.  Right-click the project and choose **Store**->**Create App Packages**. If this option is disabled or does not appear at all, check that the project is a UWP project.<br/>
     ![](images/packaging-screen2.jpg)
 
-    Xxx **Xxxxxx Xxx Xxxxxxxx** xxxxxx xxxxxxx.
+    The **Create App Packages** wizard appears.
 
-3.  Xxxxxx Xxx xx xxx xxxxx xxxxxx xxxxxx xx xxx xxxx xx xxxxx xxxxxxxx xx xxxxxx xx xxx Xxxxxxx Xxxxx, xxxx xxxxx Xxxx.<br/>
+3.  Select Yes in the first dialog asking if you want to build packages to upload to the Windows Store, then click Next.<br/>
     ![](images/packaging-screen3.jpg)
 
-    Xx xxx xxxxxx Xx xxxx, Xxxxxx Xxxxxx xxxx xxx xxxxxxxx xxx xxxxxxxx .xxxxxxxxxx xxxxxxx xxx xxxx xxx xxxxx xxxxxxxxxx. Xx xxx xxxx xxxx xx xxxxxxxx xxxx xxx xx xxx xx xx xxxxxxxx xxxxxxx, xxxx xxx xxx xxxxxx xxxx xxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxxxxxx, xxx [Xxxxxx xxxx xxxxxx xxx xxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Dn706236).
+    If you choose No here, Visual Studio will not generate the required .appxupload package you need for store submission. If you only want to sideload your app to run it on internal devices, then you can select this option. For more information about sideloading, see [Enable your device for development](https://msdn.microsoft.com/library/windows/apps/Dn706236).
 
-4.  Xxxx xx xxxx xxxx xxxxxxxxx xxxxxxx xx xxx Xxxxxxx Xxx Xxxxxx. (Xx xxx xxx'x xxxx x xxxxxxxxx xxxxxxx xxx, xxx xxxxxx xxxx xxxx xxx xxxxxx xxx.)
-5.  Xxxxxx xxx xxx xxxx xxx xxxx xxxxxxx, xx xxxxxxx x xxx xxx xx xxx xxxx xxx xxxxxxx xxxxxxxx xxx xxxx xxx Xxxxxxx Xxx Xxxxxx xxxxxx.<br/>
+4.  Sign in with your developer account to the Windows Dev Center. (If you don't have a developer account yet, the wizard will help you create one.)
+5.  Select the app name for your package, or reserve a new one if you have not already reserved one with the Windows Dev Center portal.<br/>
     ![](images/packaging-screen4.jpg)
-6.  Xxxx xxxx xxx xxxxxx xxx xxxxx xxxxxxxxxxxx xxxxxxxxxxxxxx (xYY, xYY, xxx XXX) xx xxx **Xxxxxx xxx Xxxxxxxxx Xxxxxxxx** xxxxxx. Xxxx xxx xxxx xxx xxx xx xxxxxxxx xx xxx xxxxxx xxxxx xx xxxxxxx. Xx xxx **Xxxxxxxx xxx xxxxxx** xxxxxxx, xxxxxx **Xxxxxx**. Xxxx xxxxx xxx xxxxx xxxxxxxxxx xxxxxxx xxxx xxxxxxx xxxxxxx xxx xxxx xxxx xxxx xxx xxxx xx xxxxxx (.xxxxxxxxxx). Xxx xxxxxx xxxxxx xxxx xxxxxxx xxx xxx xxxxxxxxx xxxxxxxx xx xxxxxx xx xxxxxxx xxxx xxxx xxxxxxxxx xxxxxxxxxxxx.<br/>
+6.  Make sure you select all three architecture configurations (x86, x64, and ARM) in the **Select and Configure Packages** dialog. That way your app can be deployed to the widest range of devices. In the **Generate app bundle** listbox, select **Always**. This makes the store submission process much simpler because you will only have one file to upload (.appxupload). The single bundle will contain all the necessary packages to deploy to devices with each processor architecture.<br/>
     ![](images/packaging-screen5.jpg)
-7.  Xx xx x xxxx xxxx xx xxxxxxx xxxx XXX xxxxxx xxxxx xxx xxx xxxx [xxxxx xxxxxxxxx](http://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/) xxxxxxxxxx xxxx xxx Xxxxxxx Xxx Xxxxxx. Xxx xxx xxxxx xxxx xxxxx xxxxxxxxx xxxx xxxxxxx xx xxxxxxxx [Xxxxxxxxx xxxx Xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/Ee416588).
-8.  Xxx xxx xxx xxxxxxxxx xxx xxxxxxx xx xxxxxx xxxx xxxxxxx. Xxxx xxx'xx xxxxx xx xxxxxxx xxxx xxx, xxx'xx xxxxxx xxx xxxxxxxx xxxx xxx xxxxxx xxxxxxxx.
-9.  Xxxxx **Xxxxxx** xx xxxxxxxx xxxx xxxxxxxxxx xxxxxxx.
-10. Xxx xxx xxxx xxx xxxx xxxxxx.<br/>
+7.  It is a good idea to include full PDB symbol files for the best [crash analytics](http://blogs.windows.com/buildingapps/2015/07/13/crash-analysis-in-the-unified-dev-center/) experience from the Windows Dev Center. You can learn more about debugging with symbols by visiting [Debugging with Symbols](https://msdn.microsoft.com/library/windows/desktop/Ee416588).
+8.  Now you can configure the details to create your package. When you're ready to publish your app, you'll upload the packages from the output location.
+9.  Click **Create** to generate your appxupload package.
+10. Now you will see this dialog.<br/>
     ![](images/packaging-screen6.jpg)
 
-    Xxxxxxxx xxxx xxx xxxxxx xxx xxxxxx xx xx xxx Xxxxx xxx xxxxxxxxxxxxx xx x xxxxx xx xxxxxx xxxxxxx. (Xxx xxx xxxx xxxxxxxx xxxxxxx xxxxxx xxx xxxx xxx xxxxxxx xxx xxx xxxxx xxxxxx.)
+    Validate your app before you submit it to the Store for certification on a local or remote machine. (You can only validate release builds for your app package and not debug builds.)
 
-11. Xx xxxxxxxx xxxxxxx, xxxxx xxx **Xxxxx xxxxxxx** xxxxxx xxxxxxxx xxx xxxxx **Xxxxxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx**. Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxx xxxx xxx xxxx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx, xxx [Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx](https://msdn.microsoft.com/library/windows/apps/Mt186449).
+11. To validate locally, leave the **Local machine** option selected and click **Launch Windows App Certification Kit**. For more information about testing your app with the Windows App Certification Kit, see [Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/Mt186449).
 
-    Xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxxxxx xxxxx xxx xxxxx xxx xxx xxxxxxx. Xxx [Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt186450).
+    The Windows App Certification Kit performs tests and shows you the results. See [Windows App Certification Kit tests](https://msdn.microsoft.com/library/windows/apps/mt186450).
 
-    Xx xxx xxxx x xxxxxx Xxxxxxx YY xxxx xxx xxxx xx xxx xxx xxxxxxx, xxx xxxx xxxx xx xxxxxxx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxxxxx xx xxxx xxxxxx. Xxx xxxx xxxxxxx xxxx xxxx xxx xxxxxxx xxxxx xxxxx. Xxxxx xxx'xx xxxx xxxx, xxxx xxx xxx xxxxxx **Xxxxxx xxxxxxx** xxx xxxxx **Xxxxxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx** xx xxxxxxx xx xxx xxxxxx xxxxxx xxx xxx xxx xxxxxxxxxx xxxxx.
+    If you have a remote Windows 10 that you want to use for testing, you will need to install the Windows App Certification Kit manually on that device. The next section will walk you through these steps. After you've done that, then you can select **Remote machine** and click **Launch Windows App Certification Kit** to connect to the remote device and run the validation tests.
 
-12. Xxxxx XXXX xxx xxxxxxxx xxx xxxx xxx xxx xxxxxx, xxx xxx xxxxx xx xxxxxx xx xxx xxxxx. Xxxx xxxx xxx xxxxxx xxx xxxxxxx xxxx. Xx xxx xx xxxxx xx xxx xxxx xxxxxx xx xxxx xxxxxxxx \\\[XxxXxxx\]\\XxxXxxxxxxx xxx xx xxxx xxx xxxx xxx .xxxxxxxxxx xxxx xxxxxxxxx. Xxx xxxx xxxx xx xx xxx xxxx \[XxxXxxx\]\_\[XxxXxxxxxx\]\_xYY\_xYY\_xxx\_xxxxxx.xxxxxxxxxx.
+12. After WACK has finished and your app has passed, you are ready to upload to the store. Make sure you upload the correct file. It can be found in the root folder of your solution \\\[AppName\]\\AppPackages and it will end with the .appxupload file extension. The name will be of the form \[AppName\]\_\[AppVersion\]\_x86\_x64\_arm\_bundle.appxupload.
 
-**Xxxxxxxx xxxx xxx xxxxxxx xx x xxxxxx Xxxxxxx YY xxxxxx**
+**Validate your app package on a remote Windows 10 device**
 
-1.  Xxxxxx xxxx Xxxxxxx YY xxxxxx xxx xxxxxxxxxxx xx xxxxxxxxx xxx [Xxxxxx xxxx xxxxxx xxx xxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Dn706236) xxxxxxxxxxxx.
-    **Xxxxxxxxx**  Xxx xxxxxx xxxxxxxx xxxx xxx xxxxxxx xx x xxxxxx XXX xxxxxx xxx Xxxxxxx YY.
-2.  Xxxxxxxx xxx xxxxxxx xxx xxxxxx xxxxx xxx Xxxxxx Xxxxxx. Xxxxx xxxxx xxx xxxx xx xxx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxxxxx. Xxx xxx xxx xxxx xxxxxxxxxxx xxxxx xxxxx xxxxx xxxxxxxxx xxxxx xx xxxxxxxx xxxx xx xxxxxxxx [Xxx Xxxxxxx Xxxxx xxxx xx x xxxxxx xxxxxxx](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor).
-3.  Xxxxxxxx xxx xxxxxxxx [Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx](http://go.microsoft.com/fwlink/p/?LinkID=309666) xxx xxxx xxxxxxx xx xx xxxx xxxxxx Xxxxxxx YY xxxxxx.
-4.  Xx xxx **Xxxxxxx Xxxxxxxx Xxxxxxxxx** xxxx xx xxx xxxxxx, xxxxxx xxx **Xxxxxx Xxxxxxx** xxxxxx xxxxxx, xxx xxxx xxxxxx xxx xxxxxxxx xxxxxx xxxx xx xxx **Xxxx Xxxxxxxxxx** xxxxxx.
-    **Xxxx**  Xxx **Xxxxxx Xxxxxxx** xxxxxx xxxxxx xx xxxxxxxxx xxxx xx xxx xxxxxxxx xx xxxxx xxx xxxxxxxx xxxxxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxx xxxx xxx xxxx xxx XXXX, xxx [Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx](https://msdn.microsoft.com/library/windows/apps/Mt186449).
-5.  Xxxxxxx x xxxxxx xxxx xxxxxx xxxx xxxxxx, xx xxxxxxx xxx Xxxxxx Xxxx Xxxxxx (XXX) xxxx xx XX xxxxxxx xx x xxxxxx xxxx'x xxxxxxx xx xxxx xxxxxx.
-6.  Xx xxx **Xxxxxxxxxxxxxx Xxxx** xxxx, xxxxxx **Xxxx** xx xxxx xxxxxx xxxxx'x xxxxxxx xxx xx xxx xxxx xx xx xxxxx xxxx Xxxxxxx xxxxxxxxxxx.
-7.  Xxxxxx xxx **Xxxxxx** xxxxxx, xxx xxxx xxxxxx xxx **Xxxxxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx** xxxxxx. Xx xxx xxxxxx xxxxx xxx xxxxxxx xx xxxx xxxxxx, Xxxxxx Xxxxxx xxxxxxxx xx xx xxx xxxx xxxxxxxx xxx xxxxxxxxxx xxxxx. Xxx [Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt186450).
+1.  Enable your Windows 10 device for development by following the [Enable your device for development](https://msdn.microsoft.com/library/windows/apps/Dn706236) instructions.
+    **Important**  You cannot validate your app package on a remote ARM device for Windows 10.
+2.  Download and install the remote tools for Visual Studio. These tools are used to run the Windows App Certification Kit remotely. You can get more information about these tools including where to download them by visiting [Run Windows Store apps on a remote machine](https://msdn.microsoft.com/library/hh441469.aspx#BKMK_Starting_the_Remote_Debugger_Monitor).
+3.  Download the required [Windows App Certification Kit](http://go.microsoft.com/fwlink/p/?LinkID=309666) and then install it on your remote Windows 10 device.
+4.  On the **Package Creation Completed** page of the wizard, choose the **Remote Machine** option button, and then choose the ellipsis button next to the **Test Connection** button.
+    **Note**  The **Remote Machine** option button is available only if you selected at least one solution configuration that supports validation. For more information about testing your app with the WACK, see [Windows App Certification Kit](https://msdn.microsoft.com/library/windows/apps/Mt186449).
+5.  Specify a device form inside your subnet, or provide the Domain Name Server (DNS) name or IP address of a device that's outside of your subnet.
+6.  In the **Authentication Mode** list, choose **None** if your device doesn't require you to log onto it by using your Windows credentials.
+7.  Choose the **Select** button, and then choose the **Launch Windows App Certification Kit** button. If the remote tools are running on that device, Visual Studio connects to it and then performs the validation tests. See [Windows App Certification Kit tests](https://msdn.microsoft.com/library/windows/apps/mt186450).
 
-## Xxxxxxxx xxxx xxx xxxxxxx
+## Sideload your app package
 
-Xxxx XXX xxx xxxxxxxx, xxx xxxxxx xxxxxx xxxxxxx xx xxx xx xxxx xxxxxx xxxx Xxxxxxx xxxx. Xxxxxxxxx, xxx xxxxxxxx xxxxx xxxx xxxx xxx Xxxxx xxx xxxx xx xxx xxxx xxx xxxxxxxxx xx xxxx xxxxxx. Xxx xxx xxx xxxxxxxx xxxx xx xxxx xxxxxx xxxxxxx xxxxxxxxxx xxxx xx xxx Xxxxx. Xxxx xxxx xxx xxxxxxx xxxx xxx xxxx xxxx xxx xxxxx xxx xxx xxxxxxx (.xxxx) xxxx xxx xxxx xxxxxxx. Xx xxx xxxx xx xxx xxxx xxx xxx’x xxxx xx xxxx xx xxx Xxxxx, xxxx x xxxx-xx-xxxxxxxx (XXX) xxx, xxx xxx xxxxxxxx xxxx xxx xx xxxx xxxxx xxxxx xx xxxx xxxxxxx xxx xxx xx.
+With UWP app packages, you cannot simply install an app to your device like Desktop apps. Typically, you download these apps from the Store and that is how they are installed on your device. But you can sideload apps to your device without submitting them to the Store. This lets you install them and test them out using the app package (.appx) that you have created. If you have an app that you don’t want to sell in the Store, like a line-of-business (LOB) app, you can sideload that app so that other users in your company can use it.
 
-Xxx xxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxx xxxx xxx.
+The following list provides requirements for sideloading your app.
 
--   Xxx xxxx [xxxxxx xxxx xxxxxx xxx xxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Dn706236).
--   Xx xxxxxxxx xxxx xxx xx x Xxxxxxx YY Xxxxxx xxxxxx, xxx xxxx xxx xxx [XxxXxxXxxxxxXxx.xxx](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) xxxx.
+-   You must [enable your device for development](https://msdn.microsoft.com/library/windows/apps/Dn706236).
+-   To sideload your app on a Windows 10 Mobile device, you must use the [WinAppDeployCmd.exe](install-universal-windows-apps-with-the-winappdeploycmd-tool.md) tool.
 
-**Xxxxxxxx xx xxx xx x xxxxxxx, xxxxxx, xx xxxxxx**
+**Sideload an app to a desktop, laptop, or tablet**
 
-1.  Xxxx xxx xxxxxxx xxx xxx xxxxxxx xxxx xxx xxxx xx xxxxxxx xx xxx xxxxxx xxxxxx.
+1.  Copy the folders for the version that you want to install to the target device.
 
-    Xx xxx'xx xxxxxxx xx xxx xxxxxx, xxxx xxx xxxx xxxx x xxxxxx xxxxx xx xxx xxxxxxx xxxxxx xxx x \_xxxx xxxxxx. Xxx xxxxxxx xxxxx xxx xxxxxxx (xxxxx xxx xxxxxxx xx xxxxxxx xx Y.Y.Y):
+    If you've created an app bundle, then you will have a folder based on the version number and a \_test folder. For example these two folders (where the version to install is 1.0.2):
 
-    -   X:\\Xxxxxxxx\\XxXxx\\XxXxx\\XxxXxxxxxxx\\XxXxx\_Y.Y.Y.Y
-    -   X:\\Xxxxxxxx\\XxXxx\\XxXxx\\XxxXxxxxxxx\\XxXxx\_Y.Y.Y.Y\_Xxxx
+    -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0
+    -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_Test
 
-    Xx xxx xxx'x xxxx xx xxx xxxxxx, xxxx xxx xxx xxxx xxxx xxx xxxxxx xxx xxx xxxxxxx xxxxxxxxxxxx xxx xxx xxxxxxxxxxxxx xxxx xxxxxx. Xxx xxxxxxx xxxxx xxx xxxxxxx.
+    If you don't have an app bundle, then you can just copy the folder for the correct architecture and the corresponding test folder. For example these two folders.
 
-    -   X:\\Xxxxxxxx\\XxXxx\\XxXxx\\XxxXxxxxxxx\\XxXxx\_Y.Y.Y.Y\_xYY
-    -   X:\\Xxxxxxxx\\XxXxx\\XxXxx\\XxxXxxxxxxx\\XxXxx\_Y.Y.Y.Y\_xYY\_Xxxx
-2.  Xx xxx xxxxxx xxxxxx, xxxxx xx xxxx xxxxxx. Xxx xxxxxxx, X:\\Xxxxxxxx\\XxXxx\\XxXxx\\XxxXxxxxxxx\\XxXxx\_Y.Y.Y.Y\_Xxxx
-3.  Xxxxx-xxxxx xx xxx **Xxx-XxxXxxXxxxxxx.xxY** xxxx, xxxx xxxxxx **Xxx xxxx XxxxxXxxxx** xxx xxxxxx xxx xxxxxxx.<br/>
+    -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_x64
+    -   C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_x64\_Test
+2.  On the target device, opent he test folder. For example, C:\\Projects\\MyApp\\MyApp\\AppPackages\\MyApp\_1.0.2.0\_Test
+3.  Right-click on the **Add-AppDevPackage.ps1** file, then choose **Run with PowerShell** and follow the prompts.<br/>
     ![](images/packaging-screen7.jpg)
 
-    Xxxx xxx xxx xxxxxxx xxx xxxx xxxxxxxxx, xxx xxxx xxx xxxx xxxxxxx xx xxxx XxxxxXxxxx xxxxxx: Xxxx xxx xxx xxxxxxxxxxxx xxxxxxxxx.
+    When the app package has been installed, you will see this message in your PowerShell window: Your app was successfully installed.
 
-    **Xxxx**  Xx xxxx xxx xxxxxxxx xxxx xx x xxxxxx, xxxxx xxx xxxxxx xxxxx xxx xxxx xx xxxxx-xxxxx, xxxx xxxxx x xxxxxxxx xxxxxx xxxxxxx, xxxx xxxx xxxx xxxxxx. Xxx xxxxxxxx xxxx xxxxxxx xxxxx xxx xxxx xxxx xxxxxx.
-4.  Xxxxx xxx Xxxxx xxxxxx xxx xxxx xxxx xxx xxxx xx xxxx xxx xx xxxxxx xx.
+    **Note**  To open the shortcut menu on a tablet, touch the screen where you want to right-click, hold until a complete circle appears, then lift your finger. The shortcut menu appears after you lift your finger.
+4.  Click the Start button and then type the name of your app to launch it.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

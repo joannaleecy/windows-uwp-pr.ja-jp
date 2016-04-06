@@ -1,15 +1,15 @@
 ---
-xxxxx: Xxxxxxxxxxx-- Xxxx x xxxxxx XxxxxxYX Y xxx xx XxxxxxX YY xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX)
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xxxxx xxx xx xxxxx x xxxxxx xxxxxxxxx xxxxxxxxx xxxx XxxxxxYX Y xx XxxxxxYX YY xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX).
-xx.xxxxxxx: xYYYYxYx-YYYx-xYxY-xYYY-xYYYxYYYYxYY
+title: Walkthrough-- Port a simple Direct3D 9 app to DirectX 11 and Universal Windows Platform (UWP)
+description: This porting exercise shows how to bring a simple rendering framework from Direct3D 9 to Direct3D 11 and Universal Windows Platform (UWP).
+ms.assetid: d4467e1f-929b-a4b8-b233-e142a8714c96
 ---
 
-# Xxxxxxxxxxx: Xxxx x xxxxxx XxxxxxYX Y xxx xx XxxxxxX YY xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX)
+# Walkthrough: Port a simple Direct3D 9 app to DirectX 11 and Universal Windows Platform (UWP)
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx xxxxxxx xxxxxxxx xxxxx xxx xx xxxxx x xxxxxx xxxxxxxxx xxxxxxxxx xxxx XxxxxxYX Y xx XxxxxxYX YY xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX).
+This porting exercise shows how to bring a simple rendering framework from Direct3D 9 to Direct3D 11 and Universal Windows Platform (UWP).
 ## 
 <table>
 <colgroup>
@@ -18,71 +18,74 @@ Xxxx xxxxxxx xxxxxxxx xxxxx xxx xx xxxxx x xxxxxx xxxxxxxxx xxxxxxxxx xxxx Xxxxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Initialize Direct3D 11](simple-port-from-direct3d-9-to-11-1-part-1--initializing-direct3d.md)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxxx XxxxxxYX Y xxxxxxxxxxxxxx xxxx xx XxxxxxYX YY, xxxxxxxxx xxx xx xxx xxxxxxx xx xxx XxxxxxYX xxxxxx xxx xxx xxxxxx xxxxxxx xxx xxx xx xxx XXXX xx xxx xx x xxxx xxxxx.</p></td>
+<td align="left"><p>Shows how to convert Direct3D 9 initialization code to Direct3D 11, including how to get handles to the Direct3D device and the device context and how to use DXGI to set up a swap chain.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Convert the rendering framework](simple-port-from-direct3d-9-to-11-1-part-2--rendering.md)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxxx x xxxxxx xxxxxxxxx xxxxxxxxx xxxx XxxxxxYX Y xx XxxxxxYX YY, xxxxxxxxx xxx xx xxxx xxxxxxxx xxxxxxx, xxx xx xxxxxxx xxx xxxx XXXX xxxxxx xxxxxxxx, xxx xxx xx xxxxxxxxx xxx xxxxxxxxx xxxxx xx XxxxxxYX YY.</p></td>
+<td align="left"><p>Shows how to convert a simple rendering framework from Direct3D 9 to Direct3D 11, including how to port geometry buffers, how to compile and load HLSL shader programs, and how to implement the rendering chain in Direct3D 11.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Port the game loop](simple-port-from-direct3d-9-to-11-1-part-3--viewport-and-game-loop.md)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxxxxx x xxxxxx xxx x XXX xxxx xxx xxx xx xxxxx xxxx xxx xxxx xxxx, xxxxxxxxx xxx xx xxxxx xx [<strong>XXxxxxxxxxXxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY) xx xxxxxxx x xxxx-xxxxxx [<strong>XxxxXxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY).</p></td>
+<td align="left"><p>Shows how to implement a window for a UWP game and how to bring over the game loop, including how to build an [<strong>IFrameworkView</strong>](https://msdn.microsoft.com/library/windows/apps/hh700478) to control a full-screen [<strong>CoreWindow</strong>](https://msdn.microsoft.com/library/windows/apps/br208225).</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-Xxxx xxxxx xxxxx xxxxxxx xxx xxxx xxxxx xxxx xxxxxxx xxx xxxx xxxxx xxxxxxxx xxxx: xxxxxxx x xxxxxxxx xxxxxx-xxxxxx xxxx. Xx xxxx xxxxx, xxx xxxx xxxxxx xxx xxxxxxxxx xxxxxxx:
+This topic walks through two code paths that perform the same basic graphics task: display a rotating vertex-shaded cube. In both cases, the code covers the following process:
 
-1.  Xxxxxxxx x XxxxxxYX xxxxxx xxx x xxxx xxxxx.
-2.  Xxxxxxxx x xxxxxx xxxxxx, xxx xx xxxxx xxxxxx, xx xxxxxxxxx x xxxxxxxx xxxx xxxx.
-3.  Xxxxxxxx x xxxxxx xxxxxx xxxx xxxxxxxxxx xxxxxxxx xx xxxxxx xxxxx, x xxxxx xxxxxx xxxx xxxxxx xxxxx xxxxxx, xxxxxxxxx xxx xxxxxxx, xxx xxxxxxx xxx xxxxxxx xx XxxxxxYX xxxxxxxxx.
-4.  Xxxxxxxxxxxx xxx xxxxxxxxx xxxxx xxx xxxxxxxxxx xxx xxxxx xxxx xx xxx xxxxxx.
-5.  Xxxxxxxx x xxxxxx, xxxxxxxx x xxxx xxxx, xxx xxxxxx xxxx xx xxxxxx xxxxxxx xxxxxxxxxx.
+1.  Creating a Direct3D device and a swap chain.
+2.  Creating a vertex buffer, and an index buffer, to represent a colorful cube mesh.
+3.  Creating a vertex shader that transforms vertices to screen space, a pixel shader that blends color values, compiling the shaders, and loading the shaders as Direct3D resources.
+4.  Implementing the rendering chain and presenting the drawn cube to the screen.
+5.  Creating a window, starting a main loop, and taking care of window message processing.
 
-Xxxx xxxxxxxxxx xxxx xxxxxxxxxxx, xxx xxxxxx xx xxxxxxxx xxxx xxx xxxxxxxxx xxxxx xxxxxxxxxxx xxxxxxx XxxxxxYX Y xxx XxxxxxYX YY:
+Upon completing this walkthrough, you should be familiar with the following basic differences between Direct3D 9 and Direct3D 11:
 
--   Xxx xxxxxxxxxx xx xxxxxx, xxxxxx xxxxxxx, xxx xxxxxxxx xxxxxxxxxxxxxx.
--   Xxx xxxxxxx xx xxxxxxxxx xxxxxxx, xxx xxxxxxx xxxxxx xxxxxxxx xx xxxxxxx.
--   Xxx xx xxxxxxxxx xxx-xxxxxx xxxx xxx xxx Xxxxx Xxxxxxxxx (XX) xxxxx.
--   Xxx xx xxx xx [**XXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700478) xx xxxxxx x XxxxXxxxxx xxxx.
+-   The separation of device, device context, and graphics infrastructure.
+-   The process of compiling shaders, and loading shader bytecode at runtime.
+-   How to configure per-vertex data for the Input Assembler (IA) stage.
+-   How to use an [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) to create a CoreWindow view.
 
-Xxxx xxxx xxxx xxxxxxxxxxx xxxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxx xxxxxxxxxx, xxx xxxx xxx xxxxx XXXX xxxxxxx.
+Note that this walkthrough uses [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) for simplicity, and does not cover XAML interop.
 
-## Xxxxxxxxxxxxx
-
-
-Xxx xxxxxx [Xxxxxxx xxxx xxx xxxxxxxxxxx xxx XXX XxxxxxX xxxx xxxxxxxxxxx](prepare-your-dev-environment-for-windows-store-directx-game-development.md). Xxx xxx'x xxxx x xxxxxxxx xxx, xxx xxx'xx xxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY xx xxxx xxx xxxx xxxxxxx xxx xxxx xxxxxxxxxxx.
-
-Xxxxx [Xxxxxxx xxxxxxxx xxx xxxxxxxxxxxxxx](porting-considerations.md) xx xxxx x xxxxxx xxxxxxxxxxxxx xx xxx XxxxxxX YY xxx XXX xxxxxxxxxxx xxxxxxxx xxxxx xx xxxx xxxxxxxxxxx.
-
-## Xxxxxxx xxxxxx
+## Prerequisites
 
 
-**XxxxxxYX**
-[Xxxxxxx XXXX Xxxxxxx xx XxxxxxYX Y](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+You should [Prepare your dev environment for UWP DirectX game development](prepare-your-dev-environment-for-windows-store-directx-game-development.md). You don't need a template yet, but you'll need Microsoft Visual Studio 2015 to load the code samples for this walkthrough.
 
-[Xxxxxx x xxx XxxxxxX YY xxxxxxx xxx XXX](user-interface.md)
+Visit [Porting concepts and considerations](porting-considerations.md) to gain a better understanding of the DirectX 11 and UWP programming concepts shown in this walkthrough.
 
-**Xxxxxxx Xxxxx**
-[
-            **Xxxxxxxxx::XXX::XxxXxx**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+## Related topics
 
-[**Xxxxxx xx Xxxxxx Xxxxxxxx (^)**]xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYxxYY.xxxx
+
+**Direct3D**
+[Writing HLSL Shaders in Direct3D 9](https://msdn.microsoft.com/library/windows/desktop/bb944006)
+
+[Create a new DirectX 11 project for UWP](user-interface.md)
+
+**Windows Store**
+[**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)
+
+[**Handle to Object Operator (^)**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

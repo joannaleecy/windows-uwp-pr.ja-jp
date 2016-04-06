@@ -1,36 +1,36 @@
 ---
-xxxxx: Xxxxxx xxxxxxx xxx xxxxxxx xxxxxxxxxx
-xxxxxxxxxxx: Xxxx, xx xxxx xxx xxx xx xxx XXXX xxxxxx xxxxx xx xxxxxxx xxx xxxxxx xxxxxxx xxxx xxx xxx xxxx xxx xx xxxx xxxxxxxxxx xx xxx xxxxxxx.
-xx.xxxxxxx: YYYYYxxx-YYxY-YxxY-YYYY-YYxYxxYxYYxY
+title: Create shaders and drawing primitives
+description: Here, we show you how to use HLSL source files to compile and create shaders that you can then use to draw primitives on the display.
+ms.assetid: 91113bbe-96c9-4ef9-6482-39f1ff1a70f4
 ---
 
-# Xxxxxx xxxxxxx xxx xxxxxxx xxxxxxxxxx
+# Create shaders and drawing primitives
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx, xx xxxx xxx xxx xx xxx XXXX xxxxxx xxxxx xx xxxxxxx xxx xxxxxx xxxxxxx xxxx xxx xxx xxxx xxx xx xxxx xxxxxxxxxx xx xxx xxxxxxx.
+Here, we show you how to use HLSL source files to compile and create shaders that you can then use to draw primitives on the display.
 
-Xx xxxxxx xxx xxxx x xxxxxx xxxxxxxx xx xxxxx xxxxxx xxx xxxxx xxxxxxx. Xxxxx xx xxxxxx xxx XxxxxxYX xxxxxx, xxx xxxx xxxxx, xxx xxx xxxxxx-xxxxxx xxxx, xx xxxx xxxx xxxx xxxxxx xxxxxx xxxxxx xxxxx xx xxx xxxx.
+We create and draw a yellow triangle by using vertex and pixel shaders. After we create the Direct3D device, the swap chain, and the render-target view, we read data from binary shader object files on the disk.
 
-**Xxxxxxxxx:** Xx xxxxxx xxxxxxx xxx xx xxxx xxxxxxxxxx.
+**Objective:** To create shaders and to draw primitives.
 
-## Xxxxxxxxxxxxx
+## Prerequisites
 
 
-Xx xxxxxx xxxx xxx xxx xxxxxxxx xxxx X++. Xxx xxxx xxxx xxxxx xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxxxxx.
+We assume that you are familiar with C++. You also need basic experience with graphics programming concepts.
 
-Xx xxxx xxxxxx xxxx xxx xxxx xxxxxxx [Xxxxxxxxxx: xxxxxxx xx XxxxxxX xxxxxxxxx xxx xxxxxxxxxx xx xxxxx](setting-up-directx-resources.md).
+We also assume that you went through [Quickstart: setting up DirectX resources and displaying an image](setting-up-directx-resources.md).
 
-**Xxxx xx xxxxxxxx:** YY xxxxxxx.
+**Time to complete:** 20 minutes.
 
-## Xxxxxxxxxxxx
+## Instructions
 
-### Y. Xxxxxxxxx XXXX xxxxxx xxxxx
+### 1. Compiling HLSL source files
 
-Xxxxxxxxx Xxxxxx Xxxxxx xxxx xxx [xxx.xxx](https://msdn.microsoft.com/library/windows/desktop/bb232919) XXXX xxxx xxxxxxxx xx xxxxxxx xxx .xxxx xxxxxx xxxxx (XxxxxxXxxxxxXxxxxx.xxxx xxx XxxxxxXxxxxXxxxxx.xxxx) xxxx .xxx xxxxxx xxxxxx xxxxxx xxxxx (XxxxxxXxxxxxXxxxxx.xxx xxx XxxxxxXxxxxXxxxxx.xxx). Xxx xxxx xxxx xxxxx xxx XXXX xxxx xxxxxxxx, xxx Xxxxxx-Xxxxxxxx Xxxx. Xxx xxxx xxxx xxxxx xxxxxxxxx xxxxxx xxxx, xxx [Xxxxxxxxx Xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/bb509633).
+Microsoft Visual Studio uses the [fxc.exe](https://msdn.microsoft.com/library/windows/desktop/bb232919) HLSL code compiler to compile the .hlsl source files (SimpleVertexShader.hlsl and SimplePixelShader.hlsl) into .cso binary shader object files (SimpleVertexShader.cso and SimplePixelShader.cso). For more info about the HLSL code compiler, see Effect-Compiler Tool. For more info about compiling shader code, see [Compiling Shaders](https://msdn.microsoft.com/library/windows/desktop/bb509633).
 
-Xxxx xx xxx xxxx xx XxxxxxXxxxxxXxxxxx.xxxx:
+Here is the code in SimpleVertexShader.hlsl:
 
 ```hlsl
 struct VertexShaderInput
@@ -54,7 +54,7 @@ PixelShaderInput SimpleVertexShader(VertexShaderInput input)
 }
 ```
 
-Xxxx xx xxx xxxx xx XxxxxxXxxxxXxxxxx.xxxx:
+Here is the code in SimplePixelShader.hlsl:
 
 ```hlsl
 struct PixelShaderInput
@@ -69,15 +69,15 @@ float4 SimplePixelShader(PixelShaderInput input) : SV_TARGET
 }
 ```
 
-### Y. Xxxxxxx xxxx xxxx xxxx
+### 2. Reading data from disk
 
-Xx xxx xxx XX::XxxxXxxxXxxxx xxxxxxxx xxxx XxxxxxXXxxxxx.x xx xxx XxxxxxX YY Xxx (Xxxxxxxxx Xxxxxxx) xxxxxxxx xx xxxxxxxxxxxxxx xxxx xxxx xxxx x xxxx xx xxx xxxx.
+We use the DX::ReadDataAsync function from DirectXHelper.h in the DirectX 11 App (Universal Windows) template to asynchronously read data from a file on the disk.
 
-### Y. Xxxxxxxx xxxxxx xxx xxxxx xxxxxxx
+### 3. Creating vertex and pixel shaders
 
-Xx xxxx xxxx xxxx xxx XxxxxxXxxxxxXxxxxx.xxx xxxx xxx xxxxxx xxx xxxx xx xxx *xxxxxxXxxxxxXxxxxxxx* xxxx xxxxx. Xx xxxx [**XXYXYYXxxxxx::XxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476524) xxxx xxx xxxx xxxxx xx xxxxxx xxx xxxxxx xxxxxx ([**XXYXYYXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476641)). Xx xxx xxx xxxxxx xxxxx xxxxx xx Y.Y xx xxx XxxxxxXxxxxxXxxxxx.xxxx xxxxxx xx xxxxxxxxx xxxx xxx xxxxxxxx xx xxxxx. Xx xxxxxxxx xx xxxxx xx [**XYXYY\_XXXXX\_XXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476180) xxxxxxxxxx xx xxxxxxxx xxx xxxxxx xx xxx xxxxxx xxxxxx xxxx xxx xxxx xxxx [**XXYXYYXxxxxx::XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476512) xx xxxxxx xxx xxxxxx. Xxx xxxxx xxx xxx xxxxxx xxxxxxx xxxx xxxxxxx xxx xxxxxx xxxxxxxx. Xx xxxx xxxx xxxx xxx XxxxxxXxxxxXxxxxx.xxx xxxx xxx xxxxxx xxx xxxx xx xxx *xxxxxXxxxxxXxxxxxxx* xxxx xxxxx. Xx xxxx [**XXYXYYXxxxxx::XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476513) xxxx xxx xxxx xxxxx xx xxxxxx xxx xxxxx xxxxxx ([**XXYXYYXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476576)). Xx xxx xxx xxxxx xxxxx xx (Y,Y,Y,Y) xx xxx XxxxxxXxxxxXxxxxx.xxxx xxxxxx xx xxxx xxx xxxxxxxx xxxxxx. Xxx xxx xxxxxx xxx xxxxx xx xxxxxxxx xxxx xxxxx.
+We read data from the SimpleVertexShader.cso file and assign the data to the *vertexShaderBytecode* byte array. We call [**ID3D11Device::CreateVertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476524) with the byte array to create the vertex shader ([**ID3D11VertexShader**](https://msdn.microsoft.com/library/windows/desktop/ff476641)). We set the vertex depth value to 0.5 in the SimpleVertexShader.hlsl source to guarantee that our triangle is drawn. We populate an array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures to describe the layout of the vertex shader code and then call [**ID3D11Device::CreateInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476512) to create the layout. The array has one layout element that defines the vertex position. We read data from the SimplePixelShader.cso file and assign the data to the *pixelShaderBytecode* byte array. We call [**ID3D11Device::CreatePixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476513) with the byte array to create the pixel shader ([**ID3D11PixelShader**](https://msdn.microsoft.com/library/windows/desktop/ff476576)). We set the pixel value to (1,1,1,1) in the SimplePixelShader.hlsl source to make our triangle yellow. You can change the color by changing this value.
 
-Xx xxxxxx xxxxxx xxx xxxxx xxxxxxx xxxx xxxxxx x xxxxxx xxxxxxxx. Xx xx xxxx, xx xxxxx xxxxxx xxx xxxxxxxx, xxxx xxxxxxxx xxx xxxxxx xxx xxxxx xxxxxxx ([**XYXYY\_XXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476092) xxx [**XYXYY\_XXXXXXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) xxxxx xxx xxxxxxxx xxxxxxxxxx, xxx xxxxxxx xxxx [**XXYXYYXxxxxx::XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476501) xxxx xxx xxxx xxxxxx.
+We create vertex and index buffers that define a simple triangle. To do this, we first define the triangle, next describe the vertex and index buffers ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) using the triangle definition, and finally call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) once for each buffer.
 
 ```cpp
         auto loadVSTask = DX::ReadDataAsync(L"SimpleVertexShader.cso");
@@ -190,23 +190,23 @@ Xx xxxxxx xxxxxx xxx xxxxx xxxxxxx xxxx xxxxxx x xxxxxx xxxxxxxx. Xx xx xxxx, xx
         });
 ```
 
-Xx xxx xxx xxxxxx xxx xxxxx xxxxxxx, xxx xxxxxx xxxxxx xxxxxx, xxx xxx xxxxxx xxx xxxxx xxxxxxx xx xxxx x xxxxxx xxxxxxxx.
+We use the vertex and pixel shaders, the vertex shader layout, and the vertex and index buffers to draw a yellow triangle.
 
-### Y. Xxxxxxx xxx xxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxx xxxxx
+### 4. Drawing the triangle and presenting the rendered image
 
-Xx xxxxx xx xxxxxxx xxxx xx xxxxxxxxxxx xxxxxx xxx xxxxxxx xxx xxxxx. Xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476464) xx xxxxxxx xxx xxxxxx xxxxxx xx xxx xxxxxx xxxxxx. Xx xxxx [**XXYXYYXxxxxxXxxxxxx::XxxxxXxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476388) xxxx { Y.YYYx, Y.YYx, Y.YYYx, Y.Yx } xx xxxxx xxx xxxxxx xxxxxx xx x xxxxx xxxx xxxxx.
+We enter an endless loop to continually render and display the scene. We call [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) to specify the render target as the output target. We call [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) with { 0.071f, 0.04f, 0.561f, 1.0f } to clear the render target to a solid blue color.
 
-Xx xxx xxxxxxx xxxx, xx xxxx x xxxxxx xxxxxxxx xx xxx xxxx xxxxxxx.
+In the endless loop, we draw a yellow triangle on the blue surface.
 
-**Xx xxxx x xxxxxx xxxxxxxx**
+**To draw a yellow triangle**
 
-1.  Xxxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476454) xx xxxxxxxx xxx xxxxxx xxxxxx xxxx xx xxxxxxxx xxxx xxx xxxxx-xxxxxxxxx xxxxx.
-2.  Xxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476456) xxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476453) xx xxxx xxx xxxxxx xxx xxxxx xxxxxxx xx xxx xxxxx-xxxxxxxxx xxxxx.
-3.  Xxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476455) xxxx xxx [**XYXYY\_XXXXXXXXX\_XXXXXXXX\_XXXXXXXXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) xxxxx xx xxxxxxx xxx xxx xxxxx-xxxxxxxxx xxxxx xx xxxxxxxxx xxx xxxxxx xxxx xx x xxxxxxxx xxxxx.
-4.  Xxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476493) xx xxxxxxxxxx xxx xxxxxx xxxxxx xxxxx xxxx xxx xxxxxx xxxxxx xxxx xxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476472) xx xxxxxxxxxx xxx xxxxx xxxxxx xxxxx xxxx xxx xxxxx xxxxxx xxxx.
-5.  Xxxxxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476409) xx xxxx xxx xxxxxxxx xxx xxxxxx xx xx xxx xxxxxxxxx xxxxxxxx.
+1.  First, we call [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) to describe how vertex buffer data is streamed into the input-assembler stage.
+2.  Next, we call [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) and [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) to bind the vertex and index buffers to the input-assembler stage.
+3.  Next, we call [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) with the [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) value to specify for the input-assembler stage to interpret the vertex data as a triangle strip.
+4.  Next, we call [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) to initialize the vertex shader stage with the vertex shader code and [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) to initialize the pixel shader stage with the pixel shader code.
+5.  Finally, we call [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) to draw the triangle and submit it to the rendering pipeline.
 
-Xx xxxx [**XXXXXXxxxXxxxx::Xxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb174576) xx xxxxxxx xxx xxxxxxxx xxxxx xx xxx xxxxxx.
+We call [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) to present the rendered image to the window.
 
 ```cpp
             // Specify the render target we created as the output target.
@@ -272,20 +272,24 @@ Xx xxxx [**XXXXXXxxxXxxxx::Xxxxxxx**](https://msdn.microsoft.com/library/windows
                 );
 ```
 
-## Xxxxxxx xxx xxxx xxxxx
+## Summary and next steps
 
 
-Xx xxxxxxx xxx xxxx x xxxxxx xxxxxxxx xx xxxxx xxxxxx xxx xxxxx xxxxxxx.
+We created and drew a yellow triangle by using vertex and pixel shaders.
 
-Xxxx, xx xxxxxx xx xxxxxxxx YX xxxx xxx xxxxx xxxxxxxx xxxxxxx xx xx.
+Next, we create an orbiting 3D cube and apply lighting effects to it.
 
-[Xxxxx xxxxx xxx xxxxxxx xx xxxxxxxxxx](using-depth-and-effects-on-primitives.md)
+[Using depth and effects on primitives](using-depth-and-effects-on-primitives.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

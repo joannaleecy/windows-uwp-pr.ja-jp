@@ -1,93 +1,98 @@
 ---
-xxxxx: Xxxxxxxxxx xxx xxxxxxxxxx xxxxx
-xxxxxxxxxxx: Xxxxxx xxxx xxx xxxxx xxx xxxxxxxxxxxx xxx xxxxxxx xxxxxxxxxx xxxxx.
-xx.xxxxxxx: YYXXYYYY-YXYY-YYXY-YXYX-XYXXYYYXYYXX
+title: バックグラウンド タスクのガイドライン
+description: アプリがバック グラウンド タスクを実行するための要件を満たしていることを確認します。
+ms.assetid: 18FF1104-1F73-47E1-9C7B-E2AA036C18ED
 ---
 
-# Xxxxxxxxxx xxx xxxxxxxxxx xxxxx
+# バックグラウンド タスクのガイドライン
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください。\]
 
 
-Xxxxxx xxxx xxx xxxxx xxx xxxxxxxxxxxx xxx xxxxxxx xxxxxxxxxx xxxxx.
+アプリがバック グラウンド タスクを実行するための要件を満たしていることを確認します。
 
-## Xxxxxxxxxx xxxx xxxxxxxx
-
-
-Xxxxxxxx xxx xxxxxxxxx xxxxxxxx xxxx xxxxxxxxxx xxxx xxxxxxxxxx xxxx, xxx xxxxxx xxxxxxxxxx xxxx xxx.
-
-**XXX xxxxxx:  **Xxxxxxxxxx xxxxx xxx xxxxxxx xx xxx xxxxxx xx xxxx-xxxxx xxxxx xxxx xxxx xxx xxxxx xx xxxxxxx xxxx. Xxxx xxxxxxxx xxx xxxxxxx xx YY xxxxxxx xx xxxx-xxxxx xxxxx, xxxxx xxxx xxxx xxx xxxxxxx xx xxx xx xx YY xxxxxxx xx xxxxx xx xxxxxxxx xxxxxxxxx xxxxx. Xxxxxxxxxx xxxxx xxxxxx xx xxxxxxxxxxx xx xxxx xxxxxxx xxxx xxx xxxxxxx x xxxxxx xxxx xxxxxxxxxx xxx xxxxxxxxxx xxxx. Xxx [Xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxx](support-your-app-with-background-tasks.md) xxx xxx xxxxxxxx xxxxxxxxxxx xxxxxxx xx xxxxxxxxxx xxxxx.
-
-**Xxxxxx xxxxxxxxxx xxxxx:  **Xxxx xxx xxxxxx xxx x xxxx xx xxxxxxxxxx xxxxxxxxxx xxxxx, xxxxxxxx xxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx, xxx xxxxxx xxxxx xxxxxx xxxxxxxxxxxxx. Xxxx xxxxxxxxxx xxxx xxxxxxx xxxxxx xxxxxx xxxxxxxx, xxxxxxxxxxxx, xxx xxxxxxxxxx. Xxx xxxx xxxx xxx [Xxxxxx x xxxxxxxxx xxxxxxxxxx xxxx](handle-a-cancelled-background-task.md), xxx [Xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx](monitor-background-task-progress-and-completion.md).
-
-**Xxx [**XxxxxxxxxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700499):  **Xx xxxx xxxxxxxxxx xxxx xxxxx xxxx xxxxxxxxxxxx xxxx, xxxx xxxx xx xxx xxxxxxxxx. Xxxxxxxxx xxxx xxxxxxxxxx xxxx xxx xx xxxxxxxxxx xxxxxxxxxxx xxxx xxx [Xxx](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) xxxxxx xxxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md).
-
-Xxxxxxxxxxxxx, xxxxxxx xxx xxxxxxxx, xxx xxx **xxxxx/xxxxx** xx xxxxxxxx xxxxxxxxxxxx xxxxxx xxxxx. Xxxxx xxx xxxxxxxx xxxxx xxx **xxxxx** xxxxxx xxxxx.
-
-**Xxxxxx xxx xxx xxxxxxxx:  **Xxxxxxx xxxx xxxxxxxxxx xxxx xx xxx xxxxxxxxxxx xxxxxxxx, xxxxx xxxx xxx xxxx xx xxxxxxxx xx xx xxxx xxxx. Xxxxxxxxx xxxx xxx xxxx xxx xx xxxx xx xxxxxxxx xxx xxxxxxxxxx xxxx xx xxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx](declare-background-tasks-in-the-application-manifest.md).
-
-**Xxxxxxx xxx xxx xxxxxxx:  **Xx xxxx xxx xxxx xx xxxxxxx, xxxxxx xxx xxxxxxxx x **XxxxxxxxxXxxxxxxx** xxxxxxxxxx xxxx (xxx [**XxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224839)) xx xxxx xxxxxxx xxx xxxxxxx xxxx xxx xx xxxxxxxxx xxxxxxx xxx xxxxxxx xx xxxxxxx xx xxx xxxxxxxxxx.
-
-**Xxxxxxx xx xxxxxxx xxxxxxxxxx xxxxx:  **
-
-> **Xxxxxxxxx**  Xxxxxxxx xx Xxxxxxx YY, xxxx xxx xx xxxxxx xxxxxxxx xx xx xx xxx xxxx xxxxxx xx xxxxx xx xxx xxxxxxxxxx xxxxx.
-
-Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx xxx xxx xxxxxxxxx xxxx xxxxx xxxxxxx xxxxx xxxxxx xx xxx xxxx xxxxxx. Xxxxxxx, xxxx xxxx xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700485) xxxxxx xxxxxxxxxxx xxx xxxx xx xxxxxxxxxx xxxx. Xxxx xxxxxx xxxx xxxxxx [**XxxxxxxxxxXxxxxxXxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700439) xx xxx xxxx xxx xxxxxxxxxx xxxxxx xxxxxxxxxx xxxx xxxxxxxxxxx xxx xxxx xxx xx xxx xxxxxx'x xxxxxxxx.
-## Xxxxxxxxxx xxxx xxxxxxxxx
+## バックグラウンド タスクのガイダンス
 
 
-Xxx xxxxxxxxx xxxxxxxxx xxxxxxx xx xxx xxxxxxxxxx xxxxx.
+バックグラウンド タスクの開発時とアプリの公開前に、次のガイダンスについて検討します。
 
--   Xxxxxxxxx xxxx xxxxxxxxxx xxxx xxxx xxx xxxxxxx xxxxxxx.
--   Xxx xxxxxxxxxx xx xxxx xxxxxx xxxx xxxxxxxxxx xxxx xxxx xxxxxxxxxxxx.
--   Xxxxxx xxxxxxxxxx xxxx xxxxxxxx, xxxxxxxxxx, xxx xxxxxxxxxxxx.
--   Xx xxx xxxxxxx XX xxxxx xxxx xxxxxx, xxxxx, xxx xxxxx xxxxxxx xxxx xxx xxxxxxxxxx xxxx.
--   Xx xxx [Xxx](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) xxxxxx, xxxxxxx xxxxxxxxx xxx xxxx xxxxxxxxxxxx xxxxxx xxxx, xxx xxxxx xxxx xxxx xxx xxxxxx xx xxxx. Xx, xxx xxx xxxxxxxx xxxx **xxxxx/xxxxx**.
--   Xxx xxxxxxxxxx xxxxxxx xx xxxxx xxxx xxxxxxx xxx xxxxxxxxxx xxxx xxx xxx xxx.
--   Xxxxxxx xxxx xxxxxxxxxx xxxx xx xxx xxxxxxxxxxx xxxxxxxx, xxxxx xxxx xxx xxxx xx xxxxxxxx xx xx xxxx xxxx. Xxxx xxxx xxx xxxxx xxxxx xxx xxxxxxx xxxxx xxx xxxxxxx.
--   Xxxxx xxxxxxxxxx xxxxx xxxx xxx xxxxx-xxxxx. Xxxxxxxxxx xxxxx xxx xxxxxxx xx YY xxxxxxx xx xxxx-xxxxx xxxxx.
--   Xx xxx xxxx xx xxxx xxxxxxxxxxx xx xxxxxxxxxx xxxxx.
--   Xx-xxxxxxxx xxxx xxxxxxxxxx xxxxx xxxxxx xxx xxxxxx. Xxxx xxxxxxx xxxx xxxx xxx xxxxxxxxxx xxx xxxxx xxxx xxx xxx xx xxxxxxxx. Xx xxxx xxxxxxxx x xxx xx xxxxxx xxxxxxx xxx xxxx xxx xxxxxxxx xxxx xxx'x xxxxxxxxxx xxxxxxxxx xxxxxxxxxxxx (xx xxx xxxxx xxxxxxxxxxxx xxxxx).
--   Xx xxx xxxxxxx xx Xxxxxxxxxx xxxxxxx xx xxx xxxxxxxx xxxxxx xxx xxx xxxxx x xxxxxxx xxxx xxxxxx xx xxx xx xxx xxxx xxxxxxx xx xxx xxx (xxxx xx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032)).
--   Xxxxx xxx xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxxx. Xx xxxxxxxxxxx, xxxxxxx xx xxxxxxxx xxx xxxxxxxxxx xxxx xxxxx xxxx xxxxxxxxx xxxxxxxxx xxxxxx.
--   Xxx xxx xxxxxx xxxxxxxx xxxxxx xxxxxxx, xx xxx xxxxxx xxxxxxx xxx xx xxxxxx, xxxxxxxxxx xxxxx xxx xx xxxxxxxxxx. Xx xx xxx xx xxxxxx xxxxxxxxx xx xxx xxxxxxxx, xx xxx xxx xxxx xxx xxxxxx xx, xxxx xxx xxxxxxxxxx xxxx xxxx xx xxxxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxx xxxxxxx xxx XxXxxxxxxx xxxxx. Xxxx xxxxx xx xxxxxx xxx xxxx xxxxxxxxxx xx xxx xxx xx xxx xxxxxxxxxx. Xxxx xxxxxxxxxx xxxx xxxxxx xx xxxxxxxx xx xxxxxx xxxx xxxxxxxx.
+**CPU の割り当て:  ** バックグラウンド タスクは、トリガーの種類に基づいて取得するウォールクロック時間の長さによって使用が制限されます。 ほとんどのトリガーは、使用時間がウォールクロック時間で 30 秒に制限されますが、負荷の高いタスクを完了するために最大 10 分実行できるトリガーもあります。 バッテリの寿命を長くし、フォアグラウンド アプリのユーザー エクスペリエンスを高めるため、バックグラウンド タスクは軽量にしてください。 バックグラウンド タスクに適用されるリソースの制約については、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
-## Xxxxxxx: Xxxxxxxxxx xxxx xxxxxxxxx xxx xxxx xxxxxx-xxxxxxx xxxx
+** バックグラウンド タスクを管理する:  ** アプリでは、登録済みのバックグラウンド タスクの一覧を取得し、進行状況ハンドラーと完了ハンドラーを登録して、各イベントを適切に処理する必要があります。 バックグラウンド タスク クラスでは、進行状況、キャンセル、完了を報告する必要があります。 詳しくは、「[取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)」と「[バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)」をご覧ください。
+
+**[**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) を使用する:  ** バックグラウンド タスク クラスで非同期コードを実行する場合は、保留を使ってください。 保留を使わない場合、[Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) メソッドが完了したときに、バックグラウンド タスクが途中で終了する可能性があります。 詳しくは、「[バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)」をご覧ください。
+
+別の方法として、保留を 1 回要求し、**async/await** を使って、非同期メソッドの呼び出しを完了させることもできます。 **await** メソッドを呼び出した後、保留を閉じます。
+
+** アプリケーション マニフェストを更新する:  ** アプリケーション マニフェストで、各バックグラウンド タスクと共に、バックグラウンド タスクで使うトリガーの種類を宣言します。 この宣言がないと、アプリでは実行時にバックグラウンド タスクを登録できません。 詳しくは、「[アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)」をご覧ください。
+
+** アプリの更新を準備する:  ** アプリを更新する場合は、フォアグラウンドでの実行以外のコンテキストで必要となるアプリの更新を実行できるように **ServicingComplete** バックグラウンド タスクを作り、登録します (「[**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839)」をご覧ください)。
+
+** バックグラウンド タスクを実行する要求:  **
+
+> **重要** Windows 10 以降、バック グラウンド タスクを実行するために、アプリをロック画面に配置する必要はなくなりました。
+
+ユニバーサル Windows プラットフォーム (UWP) アプリは、ロック画面にピン留めしなくても、サポートされているすべての種類のタスクを実行できます。 ただし、どの種類のバックグラウンド タスクを登録する場合でも、その前にアプリが [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出す必要があります。 ユーザーがデバイス設定でバックグラウンド タスクに対するアプリのアクセス許可を明示的に拒否した場合、このメソッドは [**BackgroundAccessStatus.Denied**](https://msdn.microsoft.com/library/windows/apps/hh700439) を返します。
+## バックグラウンド タスクのチェック リスト
 
 
-Xxxxxx xxxx xxxxxxxx xxxx xxxxxxxxxx xxxxxxxxxx xxxxx xxx xxxx xxxx xxx xxxxxxx xx xxxxx xx xxx xxxx xxxxxx. Xxxxxx xxx xxxxxxxx xx [Xxxxxxxxxx xxx xxxxxxxxx xxx xxxx xxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/hh465403).
+すべてのバックグラウンド タスクに次のチェック リストが適用されます。
 
--   Xxxx xxxx xxxx xxx xxxxx xx xx xx xxx xxxx xxxxxx xxxxxx xxxxxxxxxx xx xx xxxx xxxxxx-xxxxxxx. Xxx xxxx xxxx xxx [Xxxx xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh779720).
+-   バックグラウンド タスクを適切なトリガーに関連付けます。
+-   条件を追加して、バックグラウンド タスクが適切に実行されるようにします。
+-   バックグラウンド タスクの進行、完了、取り消しを処理します。
+-   バックグラウンド タスクでは、トースト、タイル、バッジの更新以外の UI は表示しません。
+-   [Run](https://msdn.microsoft.com/library/windows/apps/windows.applicationmodel.background.ibackgroundtask.run.aspx) メソッドでは、各非同期メソッド呼び出しに対して保留を要求し、メソッドが終了した時点で閉じます。 または、**async/await** で保留を 1 回使用します。
+-   固定ストレージを使って、バックグラウンド タスクとアプリ間でデータを共有します。
+-   アプリケーション マニフェストで、各バックグラウンド タスクと共に、バックグラウンド タスクで使うトリガーの種類を宣言します。 エントリ ポイントとトリガーの種類が正しいことを確認します。
+-   バックグラウンド タスクの存続期間は短くします。 バックグラウンド タスクに使用できる時間は、ウォールクロック時間で 30 秒間に制限されています。
+-   バックグラウンド タスクでのユーザー操作に依存することはできません。
+-   アプリ起動時にバックグラウンド タスクを再登録します。 これにより、初めてアプリを起動したときにそれらが登録されるようになります。 また、ユーザーがバックグラウンド タスク実行機能を無効にしたかどうかを検出する方法も提供されます (登録に失敗した場合)。
+-   アプリと同じコンテキストで実行する必要があるトリガー ([**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) など) を使う場合を除き、マニフェストでは Executable 要素を指定しないでください。
+-   バックグラウンド タスクの登録エラーを確認します。 必要に応じて、別のパラメーター値でバックグラウンド タスクをもう一度登録してみます。
+-   デスクトップ以外のすべてのデバイス ファミリでは、デバイスのメモリが少なくなった場合、バックグラウンド タスクが終了することがあります。 メモリ不足の例外が検出されないか、検出されてもアプリによって処理されない場合、バックグラウンド タスクは、警告や OnCanceled イベントの発生なしに終了します。 こうすることで、フォアグラウンドのアプリのユーザー エクスペリエンスが保証されます。 バックグラウンド タスクは、このシナリオを処理できるように設計する必要があります。
 
--   Xxxx xxxx xxxx xxx xxxx xxxxx xxxx xxxxxxx xxxxx xx xxx xxxx xxxxxx.
+## Windows: ロック画面対応アプリのバックグラウンド タスクのチェック リスト
 
--   Xxxxxxx x xxxxxxxxxx xxxx xxxxxxxxxx xxxx [**XxxxXxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700543), [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032), xx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224843) xxx xxxxxxx xx xx xxx xxx xxxxxxxx. Xxxx xxxx xxx xxxxx xxxxx xxx xxxxxxx xxxxx xxx xxxxxxx. Xxxx xx xxxxxxxx xxx xxxxxxxxxxxxx, xxx xxxxxxx xxx xxxx xx xxxxx xxx xxx xx xxx xxxx xxxxxx.
 
-**Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+ロック画面に配置できるアプリのバックグラウンド タスクを開発する際は、このガイダンスに従ってください。 また、「[ロック画面のタイルのガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh465403)」のガイダンスにも従ってください。
 
- 
+-   ロック画面対応として開発する前に、アプリをロック画面に配置する必要があるかどうかを確認します。 詳しくは、「[ロック画面の概要](https://msdn.microsoft.com/library/windows/apps/hh779720)」を参照してください。
 
-## Xxxxxxx xxxxxx
+-   ロック画面に配置しなくてもアプリが動作することを確認します。
 
-* [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md)
-* [Xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx](declare-background-tasks-in-the-application-manifest.md)
-* [Xxxxxx x xxxxxxxxx xxxxxxxxxx xxxx](handle-a-cancelled-background-task.md)
-* [Xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx](monitor-background-task-progress-and-completion.md)
-* [Xxxxxxxx x xxxxxxxxxx xxxx](register-a-background-task.md)
-* [Xxxxxxx xx xxxxxx xxxxxx xxxx xxxxxxxxxx xxxxx](respond-to-system-events-with-background-tasks.md)
-* [Xxx xxxxxxxxxx xxx xxxxxxx x xxxxxxxxxx xxxx](set-conditions-for-running-a-background-task.md)
-* [Xxxxxx x xxxx xxxx xxxx x xxxxxxxxxx xxxx](update-a-live-tile-from-a-background-task.md)
-* [Xxx x xxxxxxxxxxx xxxxxxx](use-a-maintenance-trigger.md)
-* [Xxx x xxxxxxxxxx xxxx xx x xxxxx](run-a-background-task-on-a-timer-.md)
-* [Xxxxx x xxxxxxxxxx xxxx](debug-a-background-task.md)
-* [Xxx xx xxxxxxx xxxxxxx, xxxxxx, xxx xxxxxxxxxx xxxxxx xx Xxxxxxx Xxxxx xxxx (xxxx xxxxxxxxx)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+-   [
+            **PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543)、[**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032)、または [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843) で登録されたバックグラウンド タスクを組み込み、このタスクをアプリ マニフェストで宣言します。 エントリ ポイントとトリガーの種類が正しいことを確認します。 これは、認定の際に必要になります。これにより、ユーザーはロック画面にアプリを配置することができます。
+
+**注:**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、「[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください。
 
  
 
+## 関連トピック
+
+* [バックグラウンド タスクの作成と登録](create-and-register-a-background-task.md)
+* [アプリケーション マニフェストでのバックグラウンド タスクの宣言](declare-background-tasks-in-the-application-manifest.md)
+* [取り消されたバックグラウンド タスクの処理](handle-a-cancelled-background-task.md)
+* [バックグラウンド タスクの進捗状況と完了の監視](monitor-background-task-progress-and-completion.md)
+* [バックグラウンド タスクの登録](register-a-background-task.md)
+* [バックグラウンド タスクによるシステム イベントへの応答](respond-to-system-events-with-background-tasks.md)
+* [バックグラウンド タスクを実行するための条件の設定](set-conditions-for-running-a-background-task.md)
+* [バックグラウンド タスクのライブ タイルの更新](update-a-live-tile-from-a-background-task.md)
+* [メンテナンス トリガーの使用](use-a-maintenance-trigger.md)
+* [タイマーでのバックグラウンド タスクの実行](run-a-background-task-on-a-timer-.md)
+* [バックグラウンド タスクのデバッグ](debug-a-background-task.md)
+* [Windows ストア アプリで一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法 (デバッグ時)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+
  
+
+ 
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

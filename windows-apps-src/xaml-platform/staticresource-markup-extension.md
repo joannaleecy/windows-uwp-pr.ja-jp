@@ -1,49 +1,49 @@
 ---
-xxxxxxxxxxx: Xxxxxxxx x xxxxx xxx xxx XXXX xxxxxxxxx xx xxxxxxxxxx x xxxxxxxxx xx xx xxxxxxx xxxxxxx xxxxxxxx. Xxxxxxxxx xxx xxxxxxx xx x XxxxxxxxXxxxxxxxxx, xxx x XxxxxxXxxxxxxx xxxxx xxxxxxxxxx xxx xxx xx xxxx xxxxxxxx xx xxx XxxxxxxxXxxxxxxxxx.
-xxxxx: XxxxxxXxxxxxxx xxxxxx xxxxxxxxx
-xx.xxxxxxx: XYYYYYXY-YYYY-YXXX-YYYY-YYXYYYXXXYYY
+description: Provides a value for any XAML attribute by evaluating a reference to an already defined resource. Resources are defined in a ResourceDictionary, and a StaticResource usage references the key of that resource in the ResourceDictionary.
+title: StaticResource markup extension
+ms.assetid: D50349B5-4588-4EBD-9458-75F629CCC395
 ---
 
-# {XxxxxxXxxxxxxx} xxxxxx xxxxxxxxx
+# {StaticResource} markup extension
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxxxx x xxxxx xxx xxx XXXX xxxxxxxxx xx xxxxxxxxxx x xxxxxxxxx xx xx xxxxxxx xxxxxxx xxxxxxxx. Xxxxxxxxx xxx xxxxxxx xx x [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208794), xxx x **XxxxxxXxxxxxxx** xxxxx xxxxxxxxxx xxx xxx xx xxxx xxxxxxxx xx xxx **XxxxxxxxXxxxxxxxxx**.
+Provides a value for any XAML attribute by evaluating a reference to an already defined resource. Resources are defined in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), and a **StaticResource** usage references the key of that resource in the **ResourceDictionary**.
 
-## XXXX xxxxxxxxx xxxxx
+## XAML attribute usage
 
 ``` syntax
 <object property="{StaticResource key}" .../>
 ```
 
-## XXXX xxxxxx
+## XAML values
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| xxx | Xxx xxx xxx xxx xxxxxxxxx xxxxxxxx. Xxxx xxx xx xxxxxxxxx xxxxxxxx xx xxx [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208794). X xxxxxxxx xxx xxx xx xxx xxxxxx xxxxxxx xx xxx XxxxXxxx Xxxxxxx. |
+| key | The key for the requested resource. This key is initially assigned by the [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). A resource key can be any string defined in the XamlName Grammar. |
 
-## Xxxxxxx
+## Remarks
 
-**XxxxxxXxxxxxxx** xx x xxxxxxxxx xxx xxxxxxxxx xxxxxx xxx x XXXX xxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxx xx x XXXX xxxxxxxx xxxxxxxxxx. Xxxxxx xxxxx xx xxxxxx xx x xxxxxxxx xxxxxxxxxx xxxxxxx xxxx xxx xxxxxxxx xx xx xxxxxx xx xxxxxxxx xxxxxxxx xxxxxx, xx xxxxxxx x XXXX xxxxxxxx xxxxxxxxxx xx xxxx xx x XXXX xxxxxxxxx xx xxxxxxxxx xxxxxxxxx. Xx xxxxxxx xx x XXXX xxxxxxxxx xxxxxxxxx xx xxx xxxxx xxxxxxxxxx xxx x xxxxxxx. Xxxxxxx xxxxxxx xx xxxxxx xxxxxxxx xxxxxxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx.
+**StaticResource** is a technique for obtaining values for a XAML attribute that are defined elsewhere in a XAML resource dictionary. Values might be placed in a resource dictionary because they are intended to be shared by multiple property values, or because a XAML resource dictionary is used as a XAML packaging or factoring technique. An example of a XAML packaging technique is the theme dictionary for a control. Another example is merged resource dictionaries used for resource fallback.
 
-**XxxxxxXxxxxxxx** xxxxx xxx xxxxxxxx, xxxxx xxxxxxxxx xxx xxx xxx xxx xxxxxxxxx xxxxxxxx. X xxxxxxxx xxx xx xxxxxx x xxxxxx xx Xxxxxxx Xxxxxxx XXXX. Xxx xxxx xxxx xx xxx xxx xxxxxxxx xxx xx xxxxxxxxx xxxxxxxxx, xxx [x:Xxx xxxxxxxxx](x-key-attribute.md).
+**StaticResource** takes one argument, which specifies the key for the requested resource. A resource key is always a string in Windows Runtime XAML. For more info on how the resource key is initially specified, see [x:Key attribute](x-key-attribute.md).
 
-Xxx xxxxx xx xxxxx x **XxxxxxXxxxxxxx** xxxxxxxx xx xx xxxx xx x xxxxxxxx xxxxxxxxxx xxx xxx xxxxxxxxx xx xxxx xxxxx. Xxxx xxxxxxx xx xxxxxxx xxx xxxxxxxxx xxx xxx xxxxxxxx xxxx xxxxx xx x xxxxxxxx, xxxxxxx xxxxxx xxxxxxxx xxxxxxxxxxxx xxx xxxx, xxx xx xx. Xxx xxxx xxxx xx xxx xx xxxxxx xxxxxxxxx xxx xxxxxxxx xxx x [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208794), xxxxxxxxx xxxxxx xxxx, xxx [XxxxxxxxXxxxxxxxxx xxx XXXX xxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187273).
+The rules by which a **StaticResource** resolves to an item in a resource dictionary are not described in this topic. That depends on whether the reference and the resource both exist in a template, whether merged resource dictionaries are used, and so on. For more info on how to define resources and properly use a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), including sample code, see [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273).
 
-**Xxxxxxxxx**  
-X **XxxxxxXxxxxxxx** xxxx xxx xxxxxxx xx xxxx x xxxxxxx xxxxxxxxx xx x xxxxxxxx xxxx xx xxxxxxx xxxxxxxxx xxxxxxx xxxxxx xxx XXXX xxxx. Xxxxxxxxxx xx xx xx xx xxx xxxxxxxxx. Xxxx xx xxx xxxxxxx xxxxxxxxx xxxxx'x xxxx, xxxxxx xx xxxx xxx xxxxxxx x xxxxxxxxxxx xxxxxxx. Xxx xxxx xxxxxxx, xxxxxx xxx xxxxxxxxxxx xx xxxx xxxxxxxx xxxxxxxxxxxx xx xxxx xxxxxxx xxxxxxxxxx xxx xxxxxxx.
+**Important**  
+A **StaticResource** must not attempt to make a forward reference to a resource that is defined lexically further within the XAML file. Attempting to do so is not supported. Even if the forward reference doesn't fail, trying to make one carries a performance penalty. For best results, adjust the composition of your resource dictionaries so that forward references are avoided.
 
-Xxxxxxxxxx xx xxxxxxx x **XxxxxxXxxxxxxx** xx x xxx xxxx xxxxxx xxxxxxx xxxxxx x XXXX xxxxx xxxxxxxxx xx xxx xxxx. Xxxxxx xxxxx xxx xxxx xxxxx xxxxxxxx xx xxxxxx.
+Attempting to specify a **StaticResource** to a key that cannot resolve throws a XAML parse exception at run time. Design tools may also offer warnings or errors.
 
-Xx xxx Xxxxxxx Xxxxxxx XXXX xxxxxxxxx xxxxxxxxxxxxxx, xxxxx xx xx xxxxxxx xxxxx xxxxxxxxxxxxxx xxx **XxxxxxXxxxxxxx** xxxxxxxxxxxxx. **XxxxxxXxxxxxxx** xx xxxxxxxxxxx xxx xxx xx XXXX. Xxx xxxxxxx xxxxxxxxxx xx xxxx xx xx xxx xxx xxxxxxxxxx XXX xx x [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208794), xxx xxxxxxx xxxxxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/jj635925) xx [**XxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/jj603139).
+In the Windows Runtime XAML processor implementation, there is no backing class representation for **StaticResource** functionality. **StaticResource** is exclusively for use in XAML. The closest equivalent in code is to use the collection API of a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794), for example calling [**Contains**](https://msdn.microsoft.com/library/windows/apps/jj635925) or [**TryGetValue**](https://msdn.microsoft.com/library/windows/apps/jj603139).
 
-[{XxxxxXxxxxxxx} xxxxxx xxxxxxxxx](themeresource-markup-extension.md) xx x xxxxxxx xxxxxx xxxxxxxxx xxxx xxxxxxxxxx xxxxx xxxxxxxxx xx xxxxxxx xxxxxxxx. Xxx xxxxxxxxxx xx xxxx {XxxxxXxxxxxxx} xxxxxx xxxxxxxxx xxx xxx xxxxxxx xx xxxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx xx xxx xxxxxx xxxxx xxxx'x xxxxxx. Xxx xxxx xxxx xxx [{XxxxxXxxxxxxx} xxxxxx xxxxxxxxx](themeresource-markup-extension.md).
+[{ThemeResource} markup extension](themeresource-markup-extension.md) is a similar markup extension that references named resources in another location. The difference is that {ThemeResource} markup extension has the ability to return different resources depending on the system theme that's active. For more info see [{ThemeResource} markup extension](themeresource-markup-extension.md).
 
-**XxxxxxXxxxxxxx** xx x xxxxxx xxxxxxxxx. Xxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxxxx xxxx xxxxx xx x xxxxxxxxxxx xx xxxxxx xxxxxxxxx xxxxxx xx xx xxxxx xxxx xxxxxxx xxxxxx xx xxxxxxx xxxxx, xxx xxx xxxxxxxxxxx xx xxxx xxxxxx xxxx xxxx xxxxxxx xxxx xxxxxxxxxx xx xxxxxxx xxxxx xx xxxxxxxxxx. Xxx xxxxxx xxxxxxxxxx xx XXXX xxx xxx "\{" xxx "\}" xxxxxxxxxx xx xxxxx xxxxxxxxx xxxxxx, xxxxx xx xxx xxxxxxxxxx xx xxxxx x XXXX xxxxxxxxx xxxxxxxxxx xxxx x xxxxxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxx.
+**StaticResource** is a markup extension. Markup extensions are typically implemented when there is a requirement to escape attribute values to be other than literal values or handler names, and the requirement is more global than just putting type converters on certain types or properties. All markup extensions in XAML use the "\{" and "\}" characters in their attribute syntax, which is the convention by which a XAML processor recognizes that a markup extension must process the attribute.
 
-### Xx xxxxxxx {XxxxxxXxxxxxxx} xxxxx
+### An example {StaticResource} usage
 
-Xxxx xxxxxxx XXXX xx xxxxx xxxx xxx [XXXX xxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226854).
+This example XAML is taken from the [XAML data binding sample](http://go.microsoft.com/fwlink/p/?linkid=226854).
 
 ```xaml
 <StackPanel Margin="5">
@@ -60,23 +60,27 @@ Xxxx xxxxxxx XXXX xx xxxxx xxxx xxx [XXXX xxxx xxxxxxx xxxxxx](http://go.microso
 </StackPanel> 
 ```
 
-Xxxx xxxxxxxxxx xxxxxxx xxxxxxx xx xxxxxx xxxx'x xxxxxx xx x xxxxxx xxxxx, xxx xxxxxxx xx xx x xxxxxxxx xx x [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208794). Xx xx x xxxxx xxxxxxxx, xxxx `local:S2Formatter` xxxxxxx xxxx xxxx xxxx xx **x:Xxx** xxxxxxxxx xxxxx. Xxx xxxxx xx xxx xxxxxxxxx xx xxx xx "XxxxxXxxxxxxxx".
+This particular example creates an object that's backed by a custom class, and creates it as a resource in a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794). To be a valid resource, this `local:S2Formatter` element must also have an **x:Key** attribute value. The value of the attribute is set to "GradeConverter".
 
-Xxx xxxxxxxx xx xxxx xxxxxxxxx xxxx x xxx xxxxxxx xxxx xxx XXXX, xxxxx xxx xxx `{StaticResource GradeConverter}`.
+The resource is then requested just a bit further into the XAML, where you see `{StaticResource GradeConverter}`.
 
-Xxxx xxx xxx {XxxxxxXxxxxxxx} xxxxxx xxxxxxxxx xxxxx xx xxxxxxx x xxxxxxxx xx xxxxxxx xxxxxx xxxxxxxxx [{Xxxxxxx} xxxxxx xxxxxxxxx](binding-markup-extension.md), xx xxxxx'x xxx xxxxxx xxxxxx xxxxxxxxx xxxxxx xxxx. Xxx xxxxx xxx xx xxxxxxxxx xxxxx, xx xxxx xxx xxxxxxxx xx xxxxxxxx xxxxx xxx xxx xx xxxx xx x xxxxx. Xxxx xxxx xxxxxxx xx xxxx xxxxx xx {Xxxxxxx} xxxxxx xxxxxxxxx.
+Note how the {StaticResource} markup extension usage is setting a property of another markup extension [{Binding} markup extension](binding-markup-extension.md), so there's two nested markup extension usages here. The inner one is evaluated first, so that the resource is obtained first and can be used as a value. This same example is also shown in {Binding} markup extension.
 
-## Xxxxxx-xxxx xxxxx xxxxxxx xxx xxx **{XxxxxxXxxxxxxx}** xxxxxx xxxxxxxxx
+## Design-time tools support for the **{StaticResource}** markup extension
 
-Xxxxxxxxx Xxxxxx Xxxxxx YYYY xxx xxxxxxx xxxxxxxx xxx xxxxxx xx xxx Xxxxxxxxx XxxxxxxXxxxx xxxxxxxxx xxxx xxx xxx xxx **{XxxxxxXxxxxxxx}** xxxxxx xxxxxxxxx xx x XXXX xxxx. Xxx xxxxxxx, xx xxxx xx xxx xxxx "{XxxxxxXxxxxxxx", xxx xx xxx xxxxxxxx xxxx xxxx xxx xxxxxxx xxxxxx xxxxx xxx xxxxxxxxx xx xxx XxxxxxxXxxxx xxxxxxxxx. Xx xxxxxxxx xx xxx xxxxxxx xxxxxxxxx xxx'x xxxx xx xxxx xxxxx ([**XxxxxxxxxXxxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208740)) xxx xxx xxxxx ([**Xxxxxxxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242338)), xxx xxxx xxx [XXXX xxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187274), xxx xxxxxxxxx xxxx xxx xxxxxxxxxx xxxx xxxxxxx xx xxxxx.
+Microsoft Visual Studio 2013 can include possible key values in the Microsoft IntelliSense dropdowns when you use the **{StaticResource}** markup extension in a XAML page. For example, as soon as you type "{StaticResource", any of the resource keys from the current lookup scope are displayed in the IntelliSense dropdowns. In addition to the typical resources you'd have at page level ([**FrameworkElement.Resources**](https://msdn.microsoft.com/library/windows/apps/br208740)) and app level ([**Application.Resources**](https://msdn.microsoft.com/library/windows/apps/br242338)), you also see [XAML theme resources](https://msdn.microsoft.com/library/windows/apps/mt187274), and resources from any extensions your project is using.
 
-Xxxx x xxxxxxxx xxx xxxxxx xx xxxx xx xxx **{XxxxxxXxxxxxxx}** xxxxx, xxx **Xx Xx Xxxxxxxxxx** (XYY) xxxxxxx xxx xxxxxxx xxxx xxxxxxxx xxx xxxx xxx xxx xxxxxxxxxx xxxxx xx'x xxxxxxx. Xxx xxx xxxxx xxxxxxxxx, xxxx xxxx xx xxxxxxx.xxxx xxx xxxxxx xxxx.
+Once a resource key exists as part of any **{StaticResource}** usage, the **Go To Definition** (F12) feature can resolve that resource and show you the dictionary where it's defined. For the theme resources, this goes to generic.xaml for design time.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [XxxxxxxxXxxxxxxxxx xxx XXXX xxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187273)
-* [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208794)
-* [x:Xxx xxxxxxxxx](x-key-attribute.md)
-* [{XxxxxXxxxxxxx} xxxxxx xxxxxxxxx](themeresource-markup-extension.md)
+* [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273)
+* [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794)
+* [x:Key attribute](x-key-attribute.md)
+* [{ThemeResource} markup extension](themeresource-markup-extension.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

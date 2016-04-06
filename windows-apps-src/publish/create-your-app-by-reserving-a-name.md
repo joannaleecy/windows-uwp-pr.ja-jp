@@ -1,62 +1,66 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxxxxxx x xxx xxx xx xxxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxx xxx'x xxxx xxxx xx xxxxxx xxxxxxxxxx xxx xxxxxx Xxxxx. Xxxx xxxxx xxxxxxxx xxx xx xxxxxxx xxxxx xxx xxxxxxxx xxxx xxxxxxxxxxx xxx xxxxxxxx x xxxxx xxx xxxx.
-xxxxx: Xxxxxx xxxx xxx xx xxxxxxxxx x xxxx
-xx.xxxxxxx: YXXYYXYX-XXYY-YYYY-YXYY-YXXYYYYXYYYY
+Description: When creating a new app in your Windows Dev Center dashboard, the app's name must be unique throughout the entire Store. This topic explains how to reserve names and includes some suggestions for choosing a great app name.
+title: Create your app by reserving a name
+ms.assetid: 6DC58A9A-DF47-4652-8D13-0AC9289F5950
 ---
 
-# Xxxxxx xxxx xxx xx xxxxxxxxx x xxxx
+# Create your app by reserving a name
 
 
-Xxxx xxxxxxxx x xxx xxx xx xxxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxx xxx'x xxxx xxxx xx xxxxxx xxxxxxxxxx xxx xxxxxx Xxxxx. Xxxx xxxxx xxxxxxxx xxx xx xxxxxxx xxxxx xxx xxxxxxxx xxxx xxxxxxxxxxx xxx [xxxxxxxx x xxxxx xxx xxxx](#choosing-your-app-s-name).
+When creating a new app in your Windows Dev Center dashboard, the app's name must be unique throughout the entire Store. This topic explains how to reserve names and includes some suggestions for [choosing a great app name](#choosing-your-app-s-name).
 
-> **Xxxx**  Xx xxx xxxx x Xxxxxxx Xxxxx xxx xxxx xxx xxxxxxx xxxxxxx, xxx xxx xxxxx xxxxxxxx x xxxx xxx xx, xxx xxx xxxxx xxxxxx xxx xxxxxx xxxx xxx. Xxxxxxx, xx xxxxx xx xxxxxx .xxxx xxxxxxxx xxx xx, xx xx [xxxx xxx xxxxxxxx xxxxxxx](view-app-identity-details.md) xxxxxxxx xx xxxxxxxx .xxxx xxxxxxxx, xxx'xx xxxx xx xxxxxxx x xxxxxx xxxx xx xxxxxxxxx xxx xxxxx xxxxx. Xxxx xxxx xxxxxxxx xxxxxx xxxx xxxx xxxxxxxxx xxxx xxxx xxx xxxxxxxxxx.
+> **Note**  If you have a Windows Phone app that you created earlier, and you never reserved a name for it, you can still manage and submit that app. However, in order to upload .appx packages for it, or to [view app identity details](view-app-identity-details.md) specific to creating .appx packages, you'll need to reserve a unique name by following the steps below. This also prevents anyone else from reserving that name for themselves.
 
-Xxxx xxx [xxxxxx xxxx xxx'x xxxxxxxx](upload-app-packages.md), xxx [**Xxxxxxx/Xxxxxxxxxx/XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn423240) xxxxx xxxx xxxxx xxx xxxx xxxx xxx xxxxxxxx xxx xxxx xxx xx xxx **Xxxxxxxxx**. Xx xxx xxx Xxxxxxxxx Xxxxxx Xxxxxx xx xxxxxx xxxx xxx'x xxxxxxx, xxxx xxxxxxxxx xxxx xx xxxxxx xx xxx xxx.
+When you [upload your app's packages](upload-app-packages.md), the [**Package/Properties/DisplayName**](https://msdn.microsoft.com/library/windows/apps/dn423240) value must match the name that you reserved for your app in the **Dashboard**. If you use Microsoft Visual Studio to create your app's package, this attribute will be filled in for you.
 
-## Xxxxxx xxxx xxx xx xxxxxxxxx x xxx xxxx
-
-
-Xxxxxxxxx x xxxx xx xxx xxxxx xxxx xx xxxxxxxx xx xxx xx xxx xxxxxxxxx. Xxx xxx xx xxxx xxxx xx xxx xxxxx'x xxxxxxx xx xxxxx xxxx xxx xxx. Xx xxxxxxxxx xxxxx xx xx xxxx xx xxxxxxxx, xx xxxx xxxxxx xxxx xxx xxx xxx xxxx.
-
-1.  Xxxx xxx **Xxxxxxxxx xxxxxxxx** xx **Xxx xxxx** xxxx, xxxxx **Xxxxxx x xxx xxx**.
-2.  Xx xxx xxxx xxx, xxxxx xxx xxxx xxxx xxx xxxx xx xxx, xxx xxxx xxxxx xxx **Xxxxx xxxxxxxxxxxx** xxxx. Xx xxx xxxx xx xxxxxxxxx, xxx'xx xxx x xxxxx xxxxx xxxx. (Xx xxx xxxx xxx xxxxxxx xx xxxxxxx xxxxxxxx xx xx xxx xx xxxxxxx xxxxxxxxx, xxx'xx xxx x xxxxxxx xxxx xxx xxxx xx xxx xxxxxxxxx.)
-3.  Xxxxx **Xxxxxxx xxx xxxx**.
-
-Xxx xxxx xx xxx xxxxxxxx xxx xxx xxx xxx xxx xxxxx xxxxxxx xx xxxx [xxxxxxxxxx](app-submissions.md) xxxxxxxx xxx'xx xxxxx.
-
-> **Xxxx**  Xxxxxxx xxxxx xxx xx xxxxxxxx xxx xxx xxxx, xxx xxxxx xxxx xxxx xxx xxx'x xxxxxxx x xxxx, xxxx xxxxxx xxx xxx'x xxx xxx xxxx xxxxxx xx xxxx xxxx xx xxx Xxxxx. Xxxx xx xxxxxxx xxxxxxx xxxxxxx xxxxxxxxx xxx xxxxxxxx xxx xxxx xxx xxxxx xxx xxx xxxx'x xxxxxxxxx xx xxx. Xx xxx xxx xxxxxx xx xxxxxxx x xxxx xxx xxxxx xxx xxxx xxx xxxxxxxxx xx xxxxx xxxxx xxxxx, xx xx xxx xxx xxxxxxx xxx xx xxx Xxxxxxx Xxxxx xxxxx xxxx xxxx, [xxxxxxx Xxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=233777).
-
-Xxxxx xxx xxxxxxx x xxxx, xxx'xx xxxx xxx xxxx xx xxxxxx xxxx xxx. Xx xxx xxx'x xxxxxx xx xxxxxx xxx xxxx, xxx xxxxxxxxxxx xxxx xxxxxx xxx xxxxxxx xxxxxxxxx xxxxx xxx xxxx xxxx xxx xx xxx. Xxx xxx xxxxxxxxx xx xxxxx xx xxx xxx xx xxxxxx xx xxx xxxxx x xxxx xxxxx xxx xxxx xxx xxxxxx.
-
-## Xxxxxxxx xxxx xxx'x xxxx
+## Create your app by reserving a new name
 
 
-Xxxxxxxx xxx xxxxx xxxx xxx xxxx xxx xx xx xxxxxxxxx xxxx. Xxxx x xxxx xxxx xxxx xxxxxxx xxxx xxxxxxxxx' xxxxxxxx xxx xxxx xxxx xx xx xxxxx xxxx xxxxx xxxx xxx. Xxxx xxx xxxx xxxx xxx xxxxxxxx x xxxxx xxx xxxx.
+Reserving a name is the first step in creating an app in the dashboard. You can do this even if you haven't started to build your app yet. We recommend doing it as soon as possible, so that nobody else can use the name.
 
--   **Xxxx xx xxxxx.** Xxx xxxxx xx xxxxxxx xxxx xxx'x xxxx xx xxxxxxx xx xxxx xxxxxx, xx xx xxxxxxx xxxxx xxx xxxxxxxx xxxx xx xxx xxx. Xxxxx xxxx xxx'x xxxx xxx xxxx xx xx YYY xxxxxxxxxx, xxx xxx xx x xxxx xxxx xxxx xxx xxx xxxxxx xx xxxxxxx xx xxxxxxxxx.
+1.  From the **Dashboard overview** or **All apps** page, click **Create a new app**.
+2.  In the text box, enter the name that you want to use, and then click the **Check availability** link. If the name is available, you'll see a green check mark. (If the name you entered is already reserved or in use by another developer, you'll see a message that the name is not available.)
+3.  Click **Reserve app name**.
 
-    > **Xxxx**  Xxx xxxxxx xxxxxx xx xxxxxxxxxx xxxxxxxxx xx xxxxxxx xxxxxxxxx xxx xxxx, xxxxxxxxx xx xxx xxxxxx xxxxxxxx xxx xx xxx xxxxx xx xxxxxxxxxx xxxx xx xxxx xxx'x xxxx. Xxx xxxxxxx, xx xxx Xxxxx XX xxxx xxxx Xxxxxxx xxxx, xxxxx YY "X" xxxxxxxxxx xxxx xxx xx xxx xxxx xxxxx xx YY "X" xxxxxxxxxx. Xxxxxxx xx xxxx xxxxxxxxx, xx xxxx xx xxxx xxxx xxx xxx xxxxxx xxx xxx xxxx xxxxxxx xx xxx xxxxx (xx xxx xxxxxx xx xxxxxxx xxx xxx xxxx), xx xxxxxx xxxxxxx, xxx xxxxxx xxx xxx xxxxxx xxxxxx xxx xxxxxx xxxx xxx. Xxxx xxxxxxxx xxxx xxxxxxxx xx xxxxx xxx xxxxx xxxx xxx. Xxxx xx xxxx xxxx Xxxx-Xxxxx xxxxxxxxxx xxxx xx xx xxxxx xxxx Xxxxx xxxxxxxxxx, xx xxxxx xxxxxxxxxx xxxx xx xxxxxxxxx.
+The name is now reserved for you and you can start working on your [submission](app-submissions.md) whenever you're ready.
 
--   **Xxxxx xxxxxx xxxxxxxxxxxxxxx xxxx xx xxx xxx xx xxx xxxx.** Xx xxx xxxx xxxx xxxxxxxxxxxxxx xxxxxxxx xxxx xx xxxxx xx xxx xxx xx x xxxx, xxxxxxxxx xxxxx xxxx xx, xxxxxxxxxx xx xxx xxxx xx xxxx; xxx xx xxx xxxx xxxxx xxxxxx xx xxxx xxx xxxx xxxx. Xx xxxx xx xxxxxxxxxxx, xxx xxxxxxxxx xxxxx xxx xxx xxxxxx xx xx'x xxxxxx xx xxxxxxxxxxxxx xxx xxx xxxx xxxxxxx.
--   **Xx xxxxxxxx.** Xxxx xxxx xxxx xxx xxxx xx xxxxxxxxxxx xxxxxx xx xxxx xx xxx'x xxxxxx xxxxxxxx xxxx xx xxxxxxxx xxx.
--   **Xxx'x xxx xxxxx xxxxxxxxxxx xx xxxxxx.** Xxxx xxxx xxxx xxx xxxx xxx xxxxxx xx xxx xxx xxxx xxxx xxx xxxxxxx. Xx xxxxxxx xxxx xxx xxxxxxxxxxx xxx xxxx, xxxx xxx xxxxxx xx xxxxxxxxxxxx xxx xxx xxx'x xx xxxx xx xxxx xxxxx xxxx xxxx. Xx xxxx xxxxxxx xxxxx xxxx xxx xxx xxxx xxxxxxxxx, xx xxxx xx xxxxxxx xxxx xxx Xxxxx. Xxx'xx xxxx xxxx xx xxxxxx xxx xxxx xx xxxx xxx, xxx xxx xxxxxxxxx xx xxx xxxx xxxxxxxxxx xxxx xxx xxx xxx xxxxxxx, xxxxxx xxx xxx [xxxxxx xxxx xxx](app-submissions.md) xxx xxxxxxxxxxxxx xxxxx.
+> **Note**  Because names can be reserved for one year, you might find that you can't reserve a name, even though you don't see any apps listed by that name in the Store. This is usually because another developer has reserved the name for their app but hasn't submitted it yet. If you are unable to reserve a name for which you hold the trademark or other legal right, or if you see another app in the Windows Store using that name, [contact Microsoft](http://go.microsoft.com/fwlink/p/?LinkId=233777).
 
-## Xxxxxx xxxxxxxxxx xxx xxxxx
+After you reserve a name, you'll have one year to submit that app. If you don't submit it within the year, the reservation will expire and another developer could use that name for an app. You may encounter an error if you try to submit an app under a name which you have let expire.
+
+## Choosing your app's name
 
 
-Xxx xxx xxxxxx xxxxx xxx xxxx xxxx xx xxx **Xxxxxx xxx xxxxx** xxxx xx xxx **Xxx xxxxxxxxxx** xxxxxxx xxx xxxx xx xxxx xxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx.
+Choosing the right name for your app is an important task. Pick a name that will capture your customers' interest and draw them in to learn more about your app. Here are some tips for choosing a great app name.
 
-Xx xxxx xxxxx, xxx xxx xxxx xx xxxxxxx xxxxxxxx xxxxx xx xxx xxx xxx xxxx xxx, xxxx xx xxxx xxx xxxx xx xxxxx xxxx xxx xx xxxxxxxx xxxxxxxxx xxx xxxx xx xxx xxxxxxxxx xxxxx. Xxx xxxx xxxx xx xxxxxxx xx xxxxxxxxxx xxxx xx xxx xxxx xx xxxxxx xx xxx'x xxxx xxxxxxxxxx.
+-   **Keep it short.** The space to display your app's name is limited in many places, so we suggest using the shortest name as you can. While your app's name can have up to 256 characters, the end of a very long name may not always be visible to customers.
 
-Xx xxxx xxxx, xxx xxx xxxx xxxxxx xxx xxxxx xxxx xxx xxxx xxxxxxxx xxx xx xxxxxx xxxx xx xxx.
+    > **Note**  The actual number of characters displayed in various locations may vary, depending on the length allotted and on the types of characters used in your app's name. For example, in the Segoe UI font that Windows uses, about 30 "I" characters will fit in the same space as 10 "W" characters. Because of this variation, be sure to test your app and verify how its name appears on its tiles (if you choose to overlay the app name), in search results, and within the app itself before you submit your app. Also consider each language in which you offer your app. Keep in mind that East-Asian characters tend to be wider than Latin characters, so fewer characters will be displayed.
 
-Xxx xxxx xxxx, xxx [Xxxxxx xxx xxxxx](manage-app-names.md).
+-   **Avoid adding differentiating info at the end of the name.** If the info that differentiates multiple apps is added to the end of a name, customers might miss it, especially if the name is long; all of the apps could appear to have the same name. If this is unavoidable, use different logos and app images so it's easier to differentiate one app from another.
+-   **Be original.** Make sure your app name is distinctive enough so that it isn't easily confused with an existing app.
+-   **Don't use names trademarked by others.** Make sure that you have the rights to use the name that you reserve. If someone else has trademarked the name, they can report an infringement and you won't be able to keep using that name. If that happens after your app has been published, it will be removed from the Store. You'll then need to change the name of your app, and all instances of the name throughout your app and its content, before you can [submit your app](app-submissions.md) for certification again.
+
+## Manage additional app names
+
+
+You can manage names for your apps on the **Manage app names** page in the **App management** section for each of your apps in the Windows Dev Center dashboard.
+
+In some cases, you may want to reserve multiple names to use for the same app, such as when you want to offer your app in multiple languages and want to use different names. You will need to reserve an additional name if you want to change an app's name completely.
+
+On this page, you can also delete any names that you have reserved but no longer want to use.
+
+For more info, see [Manage app names](manage-app-names.md).
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

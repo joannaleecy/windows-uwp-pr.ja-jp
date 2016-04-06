@@ -1,48 +1,48 @@
 ---
-xxxxx: Xxxxxxxx xxxx xxx XxxxxXxxxxxXxxxxx
-xxxxxxxxxxx: Xxxxxxxx xxxx xxx x xxxxx xxx xxxxxxx xxx xxxxxxx xxx xxxxxxx xxxxxx xxxx xxxxx xx xxxxxxx.
-xx.xxxxxxx: xxYYYxxx-xxYx-xYxY-YYYx-xxxYYYYYYYxx
+title: BasicReaderWriter のコード一式
+description: バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。
+ms.assetid: af968edd-df5c-b8e6-479e-bfa9689380fc
 ---
 
-# Xxxxxxxx xxxx xxx XxxxxXxxxxxXxxxxx
+# BasicReaderWriter のコード一式
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-Xxxxxxxx xxxx xxx x xxxxx xxx xxxxxxx xxx xxxxxxx xxx xxxxxxx xxxxxx xxxx xxxxx xx xxxxxxx. Xxxx xx xxx [XxxxxXxxxxx](complete-code-for-basicloader.md) xxxxx.
+バイナリ データ ファイル全般の読み書きを行うクラスとメソッドのコード一式です。 [BasicLoader](complete-code-for-basicloader.md) クラスで使われます。
 
-Xxxx xxxxx xxxxxxxx xxxxx xxxxxxxx:
+このトピックは次のセクションで構成されます。
 
--   [Xxxxxxxxxxxx](#technologies)
--   [Xxxxxxxxxxxx](#requirements)
--   [Xxxx xxx xxxx (X++)](#view-the-code-c-)
-
-
-## Xxxxxxxx xxxxxxxx
-
-Xxxx xxxxxx xx xxx xxxxxxxxx xxx xxxxxxxx.
+-   [テクノロジ](#technologies)
+-   [必要条件](#requirements)
+-   [コードの表示 (C++)](#view-the-code-c-)
 
 
-## Xxxxxxxxxxxx
+## ダウンロード場所
+
+このサンプルはダウンロードできません。
+
+
+## テクノロジ
 
 |                       |                 |
 |-----------------------|-----------------|
-| Xxxxxxxxxxx xxxxxxxxx | X++             |
-| Xxxxxxxxxxx xxxxxx    | Xxxxxxx Xxxxxxx |
+| プログラミング言語 | C++             |
+| プログラミング モデル    | Windows ランタイム |
 
 
-## Xxxxxxxxxxxx
+## 必要条件
 
-| Xxxxxxx xxxxxxxxx xxxxxx | Xxxxxxx YY                            |
+| サポートされている最小のクライアント | Windows 10                            |
 |--------------------------|---------------------------------------|
-| Xxxxxxx xxxxxxxxx xxxxxx | Xxxxxxx Xxxxxx YYYY Xxxxxxxxx Xxxxxxx |
-| Xxxxxxx xxxxxxxx XXX     |                                       |
+| サポートされている最小のサーバー | Windows Server 2016 Technical Preview |
+| 最低限必要な SDK     |                                       |
 
 
-## Xxxx xxx xxxx (X++)
+## コードの表示 (C++)
 
 
-## XxxxxXxxxxxXxxxxx.x
+## BasicReaderWriter.h
 
 
 ```cpp
@@ -91,7 +91,7 @@ internal:
 };
 ```
 
-## XxxxxXxxxxxXxxxxx.xxx
+## BasicReaderWriter.cpp
 
 
 ```cpp
@@ -263,4 +263,8 @@ task<void> BasicReaderWriter::WriteDataAsync(
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

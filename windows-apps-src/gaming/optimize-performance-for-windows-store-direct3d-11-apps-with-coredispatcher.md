@@ -1,63 +1,63 @@
 ---
-xxxxx: Xxxxxxxx xxxxx xxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX xxxxx
-xxxxxxxxxxx: Xxxxx xxxxxxx xxx xxxxxxxxxxxxx xxxxxx xxx xxxxxxxxxx xx x xxxx, xxx xxxxxxxxxx xx xxx xxxx x xxxx xxxx xxxx xxxxxxxx.
-xx.xxxxxxx: xYYxxYxY-YYYx-YYxx-YYYx-YYxxYYYxxYxY
+title: Optimize input latency for Universal Windows Platform (UWP) DirectX games
+description: Input latency can significantly impact the experience of a game, and optimizing it can make a game feel more polished.
+ms.assetid: e18cd1a8-860f-95fb-098d-29bf424de0c0
 ---
 
-#  Xxxxxxxx xxxxx xxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX xxxxx
+#  Optimize input latency for Universal Windows Platform (UWP) DirectX games
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxx xxxxxxx xxx xxxxxxxxxxxxx xxxxxx xxx xxxxxxxxxx xx x xxxx, xxx xxxxxxxxxx xx xxx xxxx x xxxx xxxx xxxx xxxxxxxx. Xxxxxxxxxxxx, xxxxxx xxxxx xxxxx xxxxxxxxxxxx xxx xxxxxxx xxxxxxx xxxx. Xxxxx xxx xx xxxxxx xxx xxxxx XxxxXxxxxxxxxx xxxxx xxxxx xxxxxxxxxx xxxxxxx xx xxxx xxxx xxxx xxxx xxxxxxx xxxxx xx xxxxxxxx xx xxxxxxxx.
+Input latency can significantly impact the experience of a game, and optimizing it can make a game feel more polished. Additionally, proper input event optimization can improve battery life. Learn how to choose the right CoreDispatcher input event processing options to make sure your game handles input as smoothly as possible.
 
-## Xxxxx xxxxxxx
-
-
-Xxxxx xxxxxxx xx xxx xxxx xx xxxxx xxx xxx xxxxxx xx xxxxxxx xx xxxx xxxxx. Xxx xxxxxxxx xx xxxxx x xxxxxx xx xxxx'x xxxxxxxxx xx xxx xxxxxx, xx xxxx'x xxxxx xxxxxxx xxxxx xxxxxxxx.
-
-Xxxxx xxxxx xxxxx, xxxxxxx xx xxxxx xxxx x xxxxx xxxxxxx, xxxxx xxxxxxx, xx xxxxxxxx, xxxxxxxxx x xxxxxxx xx xx xxxxxxxxx xx xx xxxxx xxxxxxx. Xxxxxx xxxxx xxxxxxxxxx xxx xxxxxx xxxxxxxxxxx xxxxxx xxxxx xxxxxx xx x xxxxxxx xx YYY Xx xxx xxxxxxx, xxxxx xxxxx xxxx xxxx xxx xxxxxxx YYY xxxxxx xx xxxx xxx xxxxxx xxx xxxxxxx (xx xxxxxxxxx). Xxxx xxxx xx xxxxxxx xx xxxxxxxxx xx xxxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxxxx, xx x xxxxxx xxxxxxxxx xxxxx xxxxxx xx xxxx (xxx xxxxxxx, x xxxxxx xxxxx). Xxx xxxxx xxxxxxx xxxxx xxx xxxx xx xxxx xxxxxxx.
-
-Xx'x xxxxxxxxx xx xxxxxxxxxx xxx xxxxx xxxxxxx xxxxxxx xx xxxx xxxx xx xxxx xxxxxx xxx xxxxxxxxx xx x xxx xxxx xx xxxx xxx xxx xxxxxxxx. Xxxxx xx xx xxx xxxxxxxx xxx xxx xxxxx.
-
-## Xxxxx xxxxxxxxxx
+## Input latency
 
 
-Xx xxx xxxxxxx xx xxxxx xxxxxxx, "xxxxx xxxxxxxxxx" xxxxxx xx xxx xxxx x xxxx xxxx xxx XXX. X xxxx xxxx xxxx xxxx XXX xxxxxxxxx xx xxxx xxxxx xxxxxxxxx xxx xxxxxx xxx xxxxxx xxxxxxx xxxx. Xxxx xxxx xxxxx xxxx xxx xxx XXX.
+Input latency is the time it takes for the system to respond to user input. The response is often a change in what's displayed on the screen, or what's heard through audio feedback.
 
-Xx x xxxx xxx xxxx xxx xxxxx xxxxxx xx xxxx xxxx YY xxxxxx xxx xxxxxx (xxxxxxxxx, xxx xxxxxxx xxxxxxxxx xxxxx xx xxxx xxxxxxxx) xxxxxxx xxxxxxxxx xxx xxxx'x xxxxxxxxxx, xx xxxx xx xxxx xxxxx xxxxxxxxx xx xxxxxxx xxxx xxxxx. Xxxx xxxxx xxxx xxxxxx xxx xxxxxx xx xxxxxxxx xx xxxx xxxxx, xx xxxxx xxxxx xxxxxx xxx xxxx xxx xxxx xxxxxxx xxxxxxxxxx xx YY xxxxxx xxx xxxxxx.
+Every input event, whether it comes from a touch pointer, mouse pointer, or keyboard, generates a message to be processed by an event handler. Modern touch digitizers and gaming peripherals report input events at a minimum of 100 Hz per pointer, which means that apps can receive 100 events or more per second per pointer (or keystroke). This rate of updates is amplified if multiple pointers are happening concurrently, or a higher precision input device is used (for example, a gaming mouse). The event message queue can fill up very quickly.
 
-## Xxxxxxxx xxxx xx xxxxxxxx xxx
+It's important to understand the input latency demands of your game so that events are processed in a way that is best for the scenario. There is no one solution for all games.
 
-
-Xxxx xxxxxxxxx x XxxxxxX xxx, xxx xxxx xx xxxx xxxx xxxxxxx. Xxxx xxx xxx xxxx xx xxxxxx YY xxxxxx xxx xxxxxx xx xxxxxxx xxxxxx xxxxxxxxx, xx xxxx xx xxxx xxxx xx xxxxxx xx xxxxxxxx xx xxxxx? Xxxx xx xxxx xx xxxx xxx xxxxxx xxxxxxxx xxxxx xxxxxxx, xx xxx xx xxxxxxxx x xxxxxx xxx xx xxxxx? Xxxx xx xxxxx xxxxxx xx xxx xx xx xxxxxxxxx xxxxx xxxxxxx xxxxx?
-
-Xxx xxxxxxx xx xxxxx xxxxxxxxx xxxx xxxxxx xxxxx xxxx xxx xxxx xxx xx xxx xxxxxxxxx xxxxxxxxx:
-
-1.  Xxxxxx xx xxxxxx. Xxxxx xx xxxx xxxxxxxx xxxx xxxx xx xxxxxx xxx xxxxxx xx xxxxxxxx xx xxxxxxxx xxxxx xx xxxxx. Xxxxx xxxxxxxxxx xx xxxxxxxxx xxxxxxx xxx xxx xxxxx’x xxxxxx xxxxxxxxx xxxxxx xxxxxxxxxx, xxx xxxxx xxxxxxx xx xxx xxxxxxx xxx xxx xxxxxx xxxx xx xxx xxxx xxxxxxx xxx xxxxx. Xxxxx xxxxx xxx xxxx xxxxxxx xxx xxxxxxxx xx xxxx xxxx xxxxx xxxx xxxx xxxx xxxxxxxx.
-2.  Xxxxxx xx xxxxxx xxxx xxxxxxxxx xxxxxxxxxx. Xxxx xxxxxxxx xx xxxxxxx xx xxx xxxxx xxxxxxxx xxxxxx xxxx xxxxxxx xxxxx xx xxxxx xxxx xxxxx xx xxxxxxxxx xxxx xxx’x xxxxxxxxx xx xxxxxxxxxx xxxxx xxxx xxx xxxx. Xxxxx xxxxxxxxxx xx xxxx xxxxxxx xxx xxxx xxxxx’x xxxxxx xxxxxxxxx xxxxxx xxxxxxxxxx, xxx xxxxx xxxxxxx xx xxx xxxxx xxx xxxx xx xxx xxxxxxxxx. Xxxxxxxxxxx xxxxxxxx’x xxxxx xxx xxxxx xxxxx xxxx xxxxxxx xxxx xxxx xxx xxxxxxxx xx xxxx xxxx xxxxx xxxx xxxx xxxx xxxxxxxx.
-3.  Xxxxxx YY xxxxxx xxx xxxxxx. Xx xxxx xxxxxxxx, xxx xxxx xx xxxxxxxxxx xxxxxxxx xxx xxxxxx. Xxxxx xxxxxxxxxx xx xxxx xxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxx xx xxxxxx xxx xxxxxxx xxx xxxxxxx. Xxxxx xxxxxxx xx xxxx xxxxxxx XxxxxxX xxxxxx xxx xxxxxx xxxxx xxxxxxx xx xxxxx xxxxxxxxx. Xxxxx xx xxxxxxxx xxx xxxxxx xxxx xxxxxxx xxxx xxxxxx xx xxx xxxxxxx xxxx xx xxx xxxx xx xxx xxxx. Xxxxx xxxxxx xxxxxxxx, xxxx-xxxx xxxxxxxx xxxxx, xxx xxxxxxx-xxxxx xxxxx xxx xxxxxxxx xx xxxx xxxx xxxxx xxxx xxxx xxxx xxxxxxxx.
-4.  Xxxxxx YY xxxxxx xxx xxxxxx xxx xxxxxxx xxx xxxxxx xxxxxxxx xxxxx xxxxxxx. Xxxxxxx xx xxxxxxxx Y, xxx xxx xx xxxxxxxxxx xxxxxxxx xxx xxxxxx, xx xxxxx xxxxxxxxxx xxxx xx xxxx. Xxx xxxxxxxxxx xx xxxx xxx xxxx xxxxxxxx xx xxxxx xx x xxxxxxxx xxxxxx, xx xxxx xxxxx xxxxxxxxxx xxx’x xxxxxxx xx xxxxxxxxxx xxxxxxxx xx xxx xxxxxxx. Xxxxxx xxxxxxxxxxx xxxxx, xxxxxxxx xxxxx, xx xxxxxx/xxxxxx xxxxx xxxxx xxxx xxxx xxxx xxxxxxxx xxxxxxx xxxx xxxxxxx xxxx xxxxxx xxxxxx xxxxxxxxx xxxxx xxxxx xxxxxxx.
-
-## Xxxxxxxxxxxxxx
+## Power efficiency
 
 
-Xxxx XxxxxxX xxxxx xxx xxxxxx xx xxxx xx xxxxx xx xxx xxxx xxxx. Xxx xxxxx xxxxxxxxx xx xx xxxxxxx xxxxx xxxxx xxxxx xxx xxxx xxxxx xxx xxxx xx xxx:
+In the context of input latency, "power efficiency" refers to how much a game uses the GPU. A game that uses less GPU resources is more power efficient and allows for longer battery life. This also holds true for the CPU.
 
-1.  Xxxxxxx xxxxx
-2.  Xxxxxx xxx xxxx xxxxx
-3.  Xxxx xxx xxxx xxxxxxx
+If a game can draw the whole screen at less than 60 frames per second (currently, the maximum rendering speed on most displays) without degrading the user's experience, it will be more power efficient by drawing less often. Some games only update the screen in response to user input, so those games should not draw the same content repeatedly at 60 frames per second.
 
-Xxxx xxx xxxxxxx xx x XxxxxxX xxxx xx xxxxxxxx xxx xxxxx xx xx xxxxxxxxx xx xxx xxxxxx, xxx xxxx xxxx xxxxx xxxxx xxx XXX xx xxxxx xx xxxxxxx x xxx xxxxx xxxxxx xxxxxx xx xx xxxxxxx xxxxx xxxxx.
-
-Xx’xx xxxx xxx xxxxxxxxxxxxxx xx xxx xxxx xxxx xxx xxxx xx xxx xxxxxxxxx xxxxxxxxx xxxxxxx xx xxxxxxxxx xx x xxxxxx xxxxxx xxxxxx xxxx. Xxx xxxxxxxx xxxxxx, xxxxxxxx, xxx xxxxxxxxx xxxxxxxxx xxxx xxxx xxxxxxxxxxxxxx xxx xxxxx xx x xxxxx xx xxxx xxx xxxxxxxx xxxx xxxx xxx xxx xxxxxxx xxxxx xxx xxxxx xxxxxxxxxx.
-
-## Xxxxxxxx Y: Xxxxxx xx xxxxxx
+## Choosing what to optimize for
 
 
-Xxx xxxxx xxxxxxxxx xx xxx xxxxxx xxxxxx xxxx xxxx xxxxxxx xxx xxxxxx xxxx x xxxx xxxxx x xxxxxx xxxxx. X xxxx xxx xxxxxx xxxx x xxxxxx xxxxx xxxx xxxxx xx xxxx xx xxxx xxxxx xx xxxxxxxxx xx xxx xxxx xxxxxxxx xxx xxxxxxx xxxxxxxxxxx. Xx xxx xxxxxx xxxx, xxx xxxxxx xxxxx xxxx xxxx xx xxx xxxxxxxxxxx xxxx xx xxxxxxxxx xx xxxxxxx.
+When designing a DirectX app, you need to make some choices. Does the app need to render 60 frames per second to present smooth animation, or does it only need to render in response to input? Does it need to have the lowest possible input latency, or can it tolerate a little bit of delay? Will my users expect my app to be judicious about battery usage?
 
-Xxx xxxx xxx x xxxxxx-xxxxxxxx xxxx xxxx xxxxxx xxx [**XXxxxxxxxxXxxx::Xxx**](https://msdn.microsoft.com/library/windows/apps/hh700505) xxxxxx xxxx xxxx **XxxxXxxxxxxXxxxxxXxxxxx::XxxxxxxXxxXxxXxxXxxxxxx**. Xxxxx xxxx xxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxx xxxxxx xx xxx xxxxx. Xx xx xxxxxx xxx xxxxxxx, xxx xxxx xxxx xxxxx xxxxx xxx xxxxxxx.
+The answers to these questions will likely align your app with one of the following scenarios:
+
+1.  Render on demand. Games in this category only need to update the screen in response to specific types of input. Power efficiency is excellent because the app doesn’t render identical frames repeatedly, and input latency is low because the app spends most of its time waiting for input. Board games and news readers are examples of apps that might fall into this category.
+2.  Render on demand with transient animations. This scenario is similar to the first scenario except that certain types of input will start an animation that isn’t dependent on subsequent input from the user. Power efficiency is good because the game doesn’t render identical frames repeatedly, and input latency is low while the game is not animating. Interactive children’s games and board games that animate each move are examples of apps that might fall into this category.
+3.  Render 60 frames per second. In this scenario, the game is constantly updating the screen. Power efficiency is poor because it renders the maximum number of frames the display can present. Input latency is high because DirectX blocks the thread while content is being presented. Doing so prevents the thread from sending more frames to the display than it can show to the user. First person shooters, real-time strategy games, and physics-based games are examples of apps that might fall into this category.
+4.  Render 60 frames per second and achieve the lowest possible input latency. Similar to scenario 3, the app is constantly updating the screen, so power efficiency will be poor. The difference is that the game responds to input on a separate thread, so that input processing isn’t blocked by presenting graphics to the display. Online multiplayer games, fighting games, or rhythm/timing games might fall into this category because they support move inputs within extremely tight event windows.
+
+## Implementation
+
+
+Most DirectX games are driven by what is known as the game loop. The basic algorithm is to perform these steps until the user quits the game or app:
+
+1.  Process input
+2.  Update the game state
+3.  Draw the game content
+
+When the content of a DirectX game is rendered and ready to be presented to the screen, the game loop waits until the GPU is ready to receive a new frame before waking up to process input again.
+
+We’ll show the implementation of the game loop for each of the scenarios mentioned earlier by iterating on a simple jigsaw puzzle game. The decision points, benefits, and tradeoffs discussed with each implementation can serve as a guide to help you optimize your apps for low latency input and power efficiency.
+
+## Scenario 1: Render on demand
+
+
+The first iteration of the jigsaw puzzle game only updates the screen when a user moves a puzzle piece. A user can either drag a puzzle piece into place or snap it into place by selecting it and then touching the correct destination. In the second case, the puzzle piece will jump to the destination with no animation or effects.
+
+The code has a single-threaded game loop within the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method that uses **CoreProcessEventsOption::ProcessOneAndAllPending**. Using this option dispatches all currently available events in the queue. If no events are pending, the game loop waits until one appears.
 
 ``` syntax
 void App::Run()
@@ -83,12 +83,12 @@ void App::Run()
 }
 ```
 
-## Xxxxxxxx Y: Xxxxxx xx xxxxxx xxxx xxxxxxxxx xxxxxxxxxx
+## Scenario 2: Render on demand with transient animations
 
 
-Xx xxx xxxxxx xxxxxxxxx, xxx xxxx xx xxxxxxxx xx xxxx xxxx x xxxx xxxxxxx x xxxxxx xxxxx xxx xxxx xxxxxxx xxx xxxxxxx xxxxxxxxxxx xxx xxxx xxxxx, xx xxxxxxxx xxxxxx xxx xxxxxx xxxxx xx xxxxxxx xxx xxxxxxxxxxx.
+In the second iteration, the game is modified so that when a user selects a puzzle piece and then touches the correct destination for that piece, it animates across the screen until it reaches its destination.
 
-Xx xxxxxx, xxx xxxx xxx x xxxxxx-xxxxxxxx xxxx xxxx xxxx xxxx **XxxxxxxXxxXxxXxxXxxxxxx** xx xxxxxxxx xxxxx xxxxxx xx xxx xxxxx. Xxx xxxxxxxxxx xxx xx xxxx xxxxxx xx xxxxxxxxx, xxx xxxx xxxxxxx xx xxx **XxxxXxxxxxxXxxxxxXxxxxx::XxxxxxxXxxXxXxxxxxx** xx xxxx xx xxxxx’x xxxx xxx xxx xxxxx xxxxxx. Xx xx xxxxxx xxx xxxxxxx, [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208215) xxxxxxx xxxxxxxxxxx xxx xxxxxx xxx xxx xx xxxxxxx xxx xxxx xxxxx xx xxx xxxxxxxxx. Xxxx xxx xxxxxxxxx xx xxxxxxxx, xxx xxxx xxxxxxxx xxxx xx **XxxxxxxXxxXxxXxxXxxxxxx** xx xxxxx xxxxxx xxxxxxx.
+As before, the code has a single-threaded game loop that uses **ProcessOneAndAllPending** to dispatch input events in the queue. The difference now is that during an animation, the loop changes to use **CoreProcessEventsOption::ProcessAllIfPresent** so that it doesn’t wait for new input events. If no events are pending, [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) returns immediately and allows the app to present the next frame in the animation. When the animation is complete, the loop switches back to **ProcessOneAndAllPending** to limit screen updates.
 
 ``` syntax
 void App::Run()
@@ -129,14 +129,14 @@ void App::Run()
 }
 ```
 
-Xx xxxxxxx xxx xxxxxxxxxx xxxxxxx **XxxxxxxXxxXxxXxxXxxxxxx** xxx **XxxxxxxXxxXxXxxxxxx**, xxx xxx xxxx xxxxx xxxxx xx xxxx xx xx’x xxxxxxxxx. Xx xxx xxxxxx xxxxxx xxx, xxx xx xxxx xx xxxxxx x xxx xxxxxx xxxx xxx xx xxxxxx xxxxxx xxx xxxx xxxx xx xxx XxxxXxxxx xxxxx. Xxx xxxxxxxxx xxxxxx xx xxx xxxx xxxx xxxxxx xxxxxxx xx xxx xxxxx xx xxx xxxxxxxxx xx xxxxxxx XxxxXxxxx’x xxx Xxxxxx xxxxxx.
+To support the transition between **ProcessOneAndAllPending** and **ProcessAllIfPresent**, the app must track state to know if it’s animating. In the jigsaw puzzle app, you do this by adding a new method that can be called during the game loop on the GameState class. The animation branch of the game loop drives updates in the state of the animation by calling GameState’s new Update method.
 
-## Xxxxxxxx Y: Xxxxxx YY xxxxxx xxx xxxxxx
+## Scenario 3: Render 60 frames per second
 
 
-Xx xxx xxxxx xxxxxxxxx, xxx xxx xxxxxxxx x xxxxx xxxx xxxxx xxx xxxx xxx xxxx xxxx’xx xxxx xxxxxxx xx xxx xxxxxx. Xxxxxxx xx xxxxxxxx xxx xxxxxxx xxxx xx xx xxx xxxxxxxxxxx, xx xxxx xxxxxx YY xxxxxx xxx xxxxxx xx xxxx xxx xxxxxxx xx xx xxxx.
+In the third iteration, the app displays a timer that shows the user how long they’ve been working on the puzzle. Because it displays the elapsed time up to the millisecond, it must render 60 frames per second to keep the display up to date.
 
-Xx xx xxxxxxxxx Y xxx Y, xxx xxx xxx x xxxxxx-xxxxxxxx xxxx xxxx. Xxx xxxxxxxxxx xxxx xxxx xxxxxxxx xx xxxx xxxxxxx xx’x xxxxxx xxxxxxxxx, xx xx xxxxxx xxxxx xx xxxxx xxxxxxx xx xxx xxxx xxxxx xx xxx xxxx xx xxx xxxxx xxx xxxxxxxxx. Xx x xxxxxx, xx xxx xxxxxxx xx xxx **XxxxxxxXxxXxXxxxxxx** xxx xxxxxxxxxx xxxxxx. Xx xx xxxxxx xxx xxxxxxx, **XxxxxxxXxxxxx** xxxxxxx xxxxxxxxxxx xxx xxxxxxxx xx xxxxxx xxx xxxx xxxxx.
+As in scenarios 1 and 2, the app has a single-threaded game loop. The difference with this scenario is that because it’s always rendering, it no longer needs to track changes in the game state as was done in the first two scenarios. As a result, it can default to use **ProcessAllIfPresent** for processing events. If no events are pending, **ProcessEvents** returns immediately and proceeds to render the next frame.
 
 ``` syntax
 void App::Run()
@@ -165,16 +165,16 @@ void App::Run()
 }
 ```
 
-Xxxx xxxxxxxx xx xxx xxxxxxx xxx xx xxxxx x xxxx xxxxxxx xxxxx’x xx xxxx xx xxxxx xxxxxxxxxx xxxxx xx xxxxxxxxx xxxx xx xxxxxx. Xx xxxxxxxx xxx xxxxxxx xxxxxxxxx xxxxxxxx xxxxx xxxx xxxxxxxxxx xxxxx xxxxxxxxxxxxxx xx x xxxxx xxxxxxxx.
+This approach is the easiest way to write a game because there’s no need to track additional state to determine when to render. It achieves the fastest rendering possible along with reasonable input responsiveness on a timer interval.
 
-Xxxxxxx, xxxx xxxx xx xxxxxxxxxxx xxxxx xxxx x xxxxx. Xxxxxxxxx xx YY xxxxxx xxx xxxxxx xxxx xxxx xxxxx xxxx xxxxxxxxx xx xxxxxx. Xx’x xxxx xx xxx **XxxxxxxXxxXxXxxxxxx** xxxx xxx xxxx xx xxxxxxxx xxxx xx xxxxxxxxx xxxxx xxxxx. Xx xxxx xxxxxxxxx xxxxx xxxxxxx xx xx xxxx xx YY.Y xx xxxxxxx xxx xxx xx xxx xxxxxxxx xxx xxxx xxxx xx xxx xxxxxxx’x xxxx xxxxxxxx xxxxxxx xx xx **XxxxxxxXxxxxx**. Xxxx xxxxx xxxxxx xxxxx xx xxxxxxx xxxxxxx xxx xxxxx xx xxxx xxxxxxxxx xxxx xxx xxxxx (YY Xx).
+However, this ease of development comes with a price. Rendering at 60 frames per second uses more power than rendering on demand. It’s best to use **ProcessAllIfPresent** when the game is changing what is displayed every frame. It also increases input latency by as much as 16.7 ms because the app is now blocking the game loop on the display’s sync interval instead of on **ProcessEvents**. Some input events might be dropped because the queue is only processed once per frame (60 Hz).
 
-## Xxxxxxxx Y: Xxxxxx YY xxxxxx xxx xxxxxx xxx xxxxxxx xxx xxxxxx xxxxxxxx xxxxx xxxxxxx
+## Scenario 4: Render 60 frames per second and achieve the lowest possible input latency
 
 
-Xxxx xxxxx xxx xx xxxx xx xxxxxx xx xxxxxxxxxx xxx xxx xxxxxxxx xx xxxxx xxxxxxx xxxx xx xxxxxxxx Y. Xxxxxxx, xx xxx xxxxx xxxxxxx xx xxxxxxxx xx xxx xxxx’x xxxxxxxxxx xxx xxxxx xx xxxxxx xxxxxxxx, xxxxx xxxx xxxxxx YY xxxxxx xxx xxxxxx xxxx xx xxxxxxx xxxxx xx x xxxxxxxx xxxxxx.
+Some games may be able to ignore or compensate for the increase in input latency seen in scenario 3. However, if low input latency is critical to the game’s experience and sense of player feedback, games that render 60 frames per second need to process input on a separate thread.
 
-Xxx xxxxxx xxxxxxxxx xx xxx xxxxxx xxxxxx xxxx xxxxxx xx xxxxxxxx Y xx xxxxxxxxx xxx xxxxx xxxxxxxxxx xxx xxxxxxxx xxxxxxxxx xxxx xxx xxxx xxxx xxxx xxxxxxxx xxxxxxx. Xxxxxx xxxxxxxx xxxxxxx xxx xxxx xxxxxxx xxxx xxxxx xx xxxxx xxxxxxx xx xxxxxxxx xxxxxx; xxxxxxx, xxx xxxx xxxxxxx xxxx xxxxxxx xx x xxxxxx. Xx xxxxxxxx Y, xxx xxxxx xxxxxx xxxxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208215) xxxx [**XxxxXxxxxxxXxxxxxXxxxxx::XxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208217), xxxxx xxxxx xxx xxx xxxxxx xxx xxxxxxxxxx xxx xxxxxxxxx xxxxxx. Xx xxxxxxxxx xxxx xxxxxxxx xxxxx xxx xxxxxx xx xxxxxx xx xxx xxxx xxxxx [**XxxxXxxxxx::Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208260).
+The fourth iteration of the jigsaw puzzle game builds on scenario 3 by splitting the input processing and graphics rendering from the game loop into separate threads. Having separate threads for each ensures that input is never delayed by graphics output; however, the code becomes more complex as a result. In scenario 4, the input thread calls [**ProcessEvents**](https://msdn.microsoft.com/library/windows/apps/br208215) with [**CoreProcessEventsOption::ProcessUntilQuit**](https://msdn.microsoft.com/library/windows/apps/br208217), which waits for new events and dispatches all available events. It continues this behavior until the window is closed or the game calls [**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260).
 
 ``` syntax
 void App::Run()
@@ -225,32 +225,36 @@ void JigsawPuzzleMain::StartRenderThread()
 }
 ```
 
-Xxx **XxxxxxX YY xxx XXXX Xxx (Xxxxxxxxx Xxxxxxx)** xxxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx YYYY xxxxxx xxx xxxx xxxx xxxx xxxxxxxx xxxxxxx xx x xxxxxxx xxxxxxx. Xx xxxx xxx [**Xxxxxxx::XX::Xxxx::XxxxXxxxxxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298460) xxxxxx xx xxxxx x xxxxxx xxxxxxxxx xx xxxxxxxx xxxxx xxx xxxx xxxxxxx x xxxxxxxxx xxxxxx xxxxxxxxxxx xx xxx XXXX XX xxxxxx. Xxx xxxx xxxxxxx xx xxxxx xxxxxxxxx, xxxx [Xxxxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx xxx XxxxxxX xxxx xxxxxxx xxxx x xxxxxxxx](user-interface.md).
+The **DirectX 11 and XAML App (Universal Windows)** template in Microsoft Visual Studio 2015 splits the game loop into multiple threads in a similar fashion. It uses the [**Windows::UI::Core::CoreIndependentInputSource**](https://msdn.microsoft.com/library/windows/apps/dn298460) object to start a thread dedicated to handling input and also creates a rendering thread independent of the XAML UI thread. For more details on these templates, read [Create a Universal Windows Platform and DirectX game project from a template](user-interface.md).
 
-## Xxxxxxxxxx xxxx xx xxxxxx xxxxx xxxxxxx
+## Additional ways to reduce input latency
 
 
-### Xxx xxxxxxxx xxxx xxxxxx
+### Use waitable swap chains
 
-XxxxxxX xxxxx xxxxxxx xx xxxx xxxxx xx xxxxxxxx xxxx xxx xxxx xxxx xx-xxxxxx. Xx x YY Xx xxxxxxx, xxx xxxxxx xxxxxxxxx xxxxx YY.Y xx (Y xxxxxx/YY xxxxxx). Xxxxxx Y xxxxx xxx xxxxxxxxxxx xxxx xxxxx xxx xxxxxxxx xx xx xxxxx xxxxx xxxxxxxx xx xxx YY.Y xx xxxxxxx xxxxxx (XXxxxx) xxx xx xxx xxxx xxxxxxx YY xxxxxx xxx xxxxxx:
+DirectX games respond to user input by updating what the user sees on-screen. On a 60 Hz display, the screen refreshes every 16.7 ms (1 second/60 frames). Figure 1 shows the approximate life cycle and response to an input event relative to the 16.7 ms refresh signal (VBlank) for an app that renders 60 frames per second:
 
-Xxxxxx Y
+Figure 1
 
-![xxxxxx Y xxxxx xxxxxxx xx xxxxxxx ](images/input-latency1.png)
+![figure 1 input latency in directx ](images/input-latency1.png)
 
-Xx Xxxxxxx Y.Y, XXXX xxxxxxxxxx xxx **XXXX\_XXXX\_XXXXX\_XXXX\_XXXXX\_XXXXXXX\_XXXXXXXX\_XXXXXX** xxxx xxx xxx xxxx xxxxx, xxxxx xxxxxx xxxx xx xxxxxx xxxxxx xxxx xxxxxxx xxxxxxx xxxxxxxxx xxxx xx xxxxxxxxx xxxxxxxxxx xx xxxx xxx Xxxxxxx xxxxx xxxxx. Xxxx xxxxxx xxxxxxx xxxx xxxx xxxx xxx xxxxxxxx xx xx xxxxxxxx xxxx xxxxxx. Xxxxxx Y xxxxx xxx xxxxxxxxxxx xxxx xxxxx xxx xxxxxxxx xx xx xxxxx xxxxx xxxx xxxxx xxxxxxxx xxxx xxxxxx:
+In Windows 8.1, DXGI introduced the **DXGI\_SWAP\_CHAIN\_FLAG\_FRAME\_LATENCY\_WAITABLE\_OBJECT** flag for the swap chain, which allows apps to easily reduce this latency without requiring them to implement heuristics to keep the Present queue empty. Swap chains created with this flag are referred to as waitable swap chains. Figure 2 shows the approximate life cycle and response to an input event when using waitable swap chains:
 
-Xxxxxx Y
+Figure 2
 
-![xxxxxxY xxxxx xxxxxxx xx xxxxxxx xxxxxxxx](images/input-latency2.png)
+![figure2 input latency in directx waitable](images/input-latency2.png)
 
-Xxxx xx xxx xxxx xxxxx xxxxxxxx xx xxxx xxxxx xxx xxxxxxxxxxx xxxxxx xxxxx xxxxxxx xx xxx xxxx xxxxxx xx xxxx xxx xxxxxxx xx xxxxxxxxx xxx xxxxxxxxxx xxxx xxxxx xxxxxx xxx YY.Y xx xxxxxx xxxxxxx xx xxx xxxxxxx’x xxxxxxx xxxx. Xxx xxxxxx xxxxxx xxxxxx xxxx xxxxxxxx xxxx xxxxxx xxx xxxxxxxx xxx Xxxxxxx xxxxx xxxxx xx xxxxxxx:` m_deviceResources->SetMaximumFrameLatency(1);`
+What we see from these diagrams is that games can potentially reduce input latency by two full frames if they are capable of rendering and presenting each frame within the 16.7 ms budget defined by the display’s refresh rate. The jigsaw puzzle sample uses waitable swap chains and controls the Present queue limit by calling:` m_deviceResources->SetMaximumFrameLatency(1);`
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

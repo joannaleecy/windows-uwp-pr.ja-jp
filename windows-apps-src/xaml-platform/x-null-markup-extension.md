@@ -1,33 +1,37 @@
 ---
-xxxxxxxxxxx: Xx XXXX xxxxxx, xxxxxxxxx x xxxx xxxxx xxx x xxxxxxxx.
-xxxxx: xXxxx xxxxxx xxxxxxxxx
-xx.xxxxxxx: XYXYYYYX-YXXX-YXYY-YYYY-YYYXXYYXXYYY
+description: In XAML markup, specifies a null value for a property.
+title: xNull markup extension
+ms.assetid: E6A4038E-4ADA-4E82-9824-582FC16AB037
 ---
 
-# {x:Xxxx} xxxxxx xxxxxxxxx
+# {x:Null} markup extension
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xx XXXX xxxxxx, xxxxxxxxx x **xxxx** xxxxx xxx x xxxxxxxx.
+In XAML markup, specifies a **null** value for a property.
 
-## XXXX xxxxxxxxx xxxxx
+## XAML attribute usage
 
 ``` syntax
 <object property="{x:Null}" .../>
 ```
 
-## Xxxxxxx
+## Remarks
 
-**xxxx** xx xxx xxxx xxxxxxxxx xxxxxxx xxx X# xxx X++. Xxx Xxxxxxxxx Xxxxxx Xxxxx xxxxxxx xxx x xxxx xxxxxxxxx xx **Xxxxxxx**.
+**null** is the null reference keyword for C# and C++. The Microsoft Visual Basic keyword for a null reference is **Nothing**.
 
-Xxx xxxxxxx xxxxxxx xxxxx xxx xxxx xxxxxxx xxxxxxxxxx xxxxxxxxxx, xxx xx xx xxx xxxxxxxxxxx **xxxx**. Xxxxxxx, xxxx xxxxxxxxxx xxxxxxxxxx xxxx xxx xxxxxx **xxxx** xx x xxxxx (xxxxxxx xxxxxxx xxxxxx xx xxxx) xxx xx xxxxx xxxxxxxx xxxxxxxxxxxxxx. Xx xxxx xxxxx, xxxxxxx x XXXX xxxxxxxxx xxxxx xxxx **{x:Xxxx}** xxx xxxxxx xx x xxxxxx xxxxxxxxx.
+The initial default value can vary between dependency properties, and it is not necessarily **null**. Further, many dependency properties will not accept **null** as a value (whether through markup or code) due to their internal implementation. In such cases, setting a XAML attribute value with **{x:Null}** can result in a parser exception.
 
-Xxxx Xxxxxxx Xxxxxxx xxxxx xxx xxxxxxxx. Xx xxxxx xxxxx x xxxxxxxx xxxx xxxx xxx xxxxxxx xxxx **xxxx** xx xxx xxxxxxx, xxx xxxxx xxx **{x:Xxxx}** xx XXXX xx xxx xx xxx **xxxx** xxxxx. Xx xxxxx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX), xxxxxxxx xxxxx xxx xxxxxxxxxxx xx [**Xxxxxxxx::XXxx<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/jj606120.aspx). Xx xxxxx Xxxxxxxxx .XXX xxxxxxxxx, xxxxxxxx xxxxx xxx xxxxxxxxxxx xx [**Xxxxxxxx<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx).
+Some Windows Runtime types are nullable. In cases where a nullable type does not already have **null** as the default, you could use **{x:Null}** in XAML to set to the **null** value. If using Visual C++ component extensions (C++/CX), nullable types are represented as [**Platform::IBox<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/jj606120.aspx). If using Microsoft .NET languages, nullable types are represented as [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx).
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [**Xxxxxxxx<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)
-* [**XXxxxxxxxx<T>**](https://msdn.microsoft.com/library/windows/apps/br225864)
+* [**Nullable<T>**](https://msdn.microsoft.com/library/windows/apps/xaml/b3h38hb0.aspx)
+* [**IReference<T>**](https://msdn.microsoft.com/library/windows/apps/br225864)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

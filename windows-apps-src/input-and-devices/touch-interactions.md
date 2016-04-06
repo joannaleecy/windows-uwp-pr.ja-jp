@@ -1,213 +1,205 @@
 ---
-Xxxxxxxxxxx: Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxxxxx xxx xxxxxxxxxxx xxxx xxxxxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxx xxx xxxxx xxx xxx xxxxxxxxxxxx xxxxxxxxxx xxxxxx xxxxx xxxxxxx.
-xxxxx: Xxxxx xxxxxxxxxxxx
-xx.xxxxxxx: XXYXXXYY-XXYY-YYYY-XYYX-YYYXXYXXXYYX
-xxxxx: Xxxxx xxxxxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Create Universal Windows Platform (UWP) apps with intuitive and distinctive user interaction experiences that are optimized for touch but are functionally consistent across input devices.
+title: Touch interactions
+ms.assetid: DA6EBC88-EB18-4418-A98A-457EA1DEA88A
+label: Touch interactions
+template: detail.hbs
 ---
 
-# Xxxxx xxxxxxxxxxxx
+# Touch interactions
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxx xxxx xxx xxxx xxx xxxxxxxxxxx xxxx xxxxx xxxx xx xxx xxxxxxx xxxxx xxxxxx xx xxxx xxxxx. Xx xxx xxx XXX xxxxxxxx, xxxxxxx xxx xxxxxxxx, xxxxx, xxx xxx/xxxxxx xxxxxxxx xx xxxxxxxxxx xxxxxxxxxxx, xxxxxxx XXX xxxx xxxxxxx xxxx xxx xxxx.
+Design your app with the expectation that touch will be the primary input method of your users. If you use UWP controls, support for touchpad, mouse, and pen/stylus requires no additional programming, because UWP apps provide this for free.
 
-Xxxxxxx, xxxx xx xxxx xxxx x XX xxxxxxxxx xxx xxxxx xx xxx xxxxxx xxxxxxxx xx x xxxxxxxxxxx XX. Xxxx xxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxxx xxxx xxx xxxxxx xx x xxxxxxxxxx xxx xxxxxxxxxxx. Xx xxx xxxx xx x xxxxx-xxxxx XX, xx xx xxxxxxxxx xx xxxxxxxxxx xxx xxxx xxxxxxxxxxx xxxxxxx xxxxx (xxxxxxxxx xxxxxxxx), xxx/xxxxxx, xxxxx, xxx xxxxxxxx xxxxx.
+However, keep in mind that a UI optimized for touch is not always superior to a traditional UI. Both provide advantages and disadvantages that are unique to a technology and application. In the move to a touch-first UI, it is important to understand the core differences between touch (including touchpad), pen/stylus, mouse, and keyboard input.
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**Xxxxxxx.XX.Xxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227994)
--   [**Xxxxxxx.XX.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br208383)
--   [**Xxxxxxx.Xxxxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225648)
+-   [**Windows.UI.Xaml.Input**](https://msdn.microsoft.com/library/windows/apps/br227994)
+-   [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383)
+-   [**Windows.Devices.Input**](https://msdn.microsoft.com/library/windows/apps/br225648)
 
 
 
-Xxxx xxxxxxx xxxx xxxxx-xxxxx xxxxxxx xxxx xxxxxxx xxxxx xxx xx xxxx xxxxxxx (xx xxxxx xxxxxxxx) xx xxxxx. Xxx xxxxx xxxxxxxx, xxx xxxxx xxxxxxxx, xxx xxxxxxxxxxx xx xxxxx xxxxxxxx xxx xxxxxxxxxxxxx xx xxxxxxx xxxxxxx xxxx xxxxxxxxxxxx.
+Many devices have multi-touch screens that support using one or more fingers (or touch contacts) as input. The touch contacts, and their movement, are interpreted as touch gestures and manipulations to support various user interactions.
 
-Xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxx x xxxxxx xx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxx xxxxx xxxxx, xxxxxxxx xxx xx xxxxxx xx xxxxxxxxx xxxxxxxxxx xxxx xxxx xxxxx xxx xxxxxxx xxxx xxxxxxxxxx. Xxxx, xx xxxxx xxx xxxxxx xx xxxxx xxxxx xxxxx xx x XXX xxx.
+The Universal Windows Platform (UWP) includes a number of different mechanisms for handling touch input, enabling you to create an immersive experience that your users can explore with confidence. Here, we cover the basics of using touch input in a UWP app.
 
-Xxxxx xxxxxxxxxxxx xxxxxxx xxxxx xxxxxx:
+Touch interactions require three things:
 
--   X xxxxx-xxxxxxxxx xxxxxxx.
--   Xxx xxxxxx xxxxxxx (xx xxxxxxxxx xx, xx xxx xxxxxxx xxx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxx xxxxxxxxx) xx xxx xx xxxx xxxxxxx xx xxxx xxxxxxx.
--   Xxxxxxxx xx xxx xxxxx xxxxxxxx (xx xxxx xxxxxxx, xxxxx xx x xxxx xxxxxxxxx).
+-   A touch-sensitive display.
+-   The direct contact (or proximity to, if the display has proximity sensors and supports hover detection) of one or more fingers on that display.
+-   Movement of the touch contacts (or lack thereof, based on a time threshold).
 
-Xxx xxxxx xxxx xxxxxxxx xx xxx xxxxx xxxxxx xxx xx:
+The input data provided by the touch sensor can be:
 
--   Xxxxxxxxxxx xx x xxxxxxxx xxxxxxx xxx xxxxxx xxxxxxxxxxxx xx xxx xx xxxx XX xxxxxxxx (xxxx xx xxxxxxx, xxxxxxxx, xxxxxxxx, xx xxxxxx). Xx xxxxxxxx, xxxxxxxxxxx xxxx xx xxxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxx, xxxxxx xxx, xx xxxxx XX xxxxxxxxxx xx xxxxxxxxxx xxxxxxxx xxxxxxxxxxxx.
--   Xxxxxxxxxx xx xx xxxxxxxxxxx xxxxx xxxxxx, xxxx xx xxxxx xx xxx.
--   Xxxx xx xxxxxxxxxx xx xxxxxx xxxxxxx xx xxxxx xxxxx xxxxxxx, xxxx xx xxxxxxxx xx xxx xxxxxx xxxxx xxxx x xxx.
+-   Interpreted as a physical gesture for direct manipulation of one or more UI elements (such as panning, rotating, resizing, or moving). In contrast, interacting with an element through its properties window, dialog box, or other UI affordance is considered indirect manipulation.
+-   Recognized as an alternative input method, such as mouse or pen.
+-   Used to complement or modify aspects of other input methods, such as smudging an ink stroke drawn with a pen.
 
-Xxxxx xxxxx xxxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxxxxxx xx xx xxxxxxx xx xxx xxxxxx. Xxx xxxxxxx xxxxxxxx xxxxxxxxxxx xx xxx xxxxx xxxxxxx xxxxxx xxx xxx xxxx xxxx, xxx xxxxxx xxxxxxxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx xx xxx xxxxx xxxxxxxx, xxxxxxxxx xxxxxxx.
+Touch input typically involves the direct manipulation of an element on the screen. The element responds immediately to any touch contact within its hit test area, and reacts appropriately to any subsequent movement of the touch contacts, including removal.
 
-Xxxxxx xxxxx xxxxxxxx xxx xxxxxxxxxxxx xxxxxx xx xxxxxxxx xxxxxxxxx. Xxxx xxxxxx xx xxxxxxxxx, xxxxxxxxxx, xxx xxxxxxxxxxxx, xxx xxxx xxxxxx xxx xxxxx xxxxxxx xxxx xxx xxxx xxxxxxxxxx.
+Custom touch gestures and interactions should be designed carefully. They should be intuitive, responsive, and discoverable, and they should let users explore your app with confidence.
 
-Xxxxxx xxxx xxx xxxxxxxxxxxxx xx xxxxxxx xxxxxxxxxxxx xxxxxx xxxxx xxxxxxxxx xxxxx xxxxxx xxxx. Xx xxxxxxxxx, xxx xxxx xxxx xx xxxxxxxx xxxxx xxxx, xxxx xx xxxx xxxxx xxx xxxxxxxx xxxxxxxxxxxx, xx XX xxxxxxxxxxx xxx xxxxx xxx xxx.
+Ensure that app functionality is exposed consistently across every supported input device type. If necessary, use some form of indirect input mode, such as text input for keyboard interactions, or UI affordances for mouse and pen.
 
-Xxxxxxxx xxxx xxxxxxxxxxx xxxxx xxxxxxx (xxxx xx xxxxx xxx xxxxxxxx), xxx xxxxxxxx xxx xxxxxxxxx xx xxxx xxxxx. Xxxx xxx xxxxx xxxxx, xxxxxxxx, xxx xxxxxxx xxxxxxxx xxxx xxxxx xxxxx xxx.
+Remember that traditional input devices (such as mouse and keyboard), are familiar and appealing to many users. They can offer speed, accuracy, and tactile feedback that touch might not.
 
-Xxxxxxxxx xxxxxx xxx xxxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxx xxx xxx xxxxx xxxxxxx xxxx xxxxxxx xxx xxxxxx xxxxx xx xxxxxxxxxxxx xxx xxxxxxxxxxx, xxxxxx xx xxx xxxxxxxx xxxxxxxx xxxxxxxx, xxx xxxxxxx xxxx xxxxxxxxx xx xxxx xxx.
+Providing unique and distinctive interaction experiences for all input devices will support the widest range of capabilities and preferences, appeal to the broadest possible audience, and attract more customers to your app.
 
-## Xxxxxxx xxxxx xxxxxxxxxxx xxxxxxxxxxxx
+## Compare touch interaction requirements
 
-Xxx xxxxxxxxx xxxxx xxxxx xxxx xx xxx xxxxxxxxxxx xxxxxxx xxxxx xxxxxxx xxxx xxx xxxxxx xxxxxxxx xxxx xxx xxxxxx xxxxx-xxxxxxxxx XXX xxxx.
+The following table shows some of the differences between input devices that you should consider when you design touch-optimized UWP apps.
 
 <table>
-<tbody><tr><th>Xxxxxx</th><th>Xxxxx xxxxxxxxxxxx</th><th>Xxxxx, xxxxxxxx, xxx/xxxxxx xxxxxxxxxxxx</th><th>Xxxxxxxx</th></tr>
-<tr><td rowspan="3">Xxxxxxxxx</td><td>Xxx xxxxxxx xxxx xx x xxxxxxxxx xx xxxxxxx xxxx x xxxxxx x-x xxxxxxxxxx, xxxxx xxxxxxxxx xxx xxxxxxx xx xxxxxxxxxx xxxxxxx xxxxxxxxxxx.</td><td>Xxx xxxxx xxx xxx/xxxxxx xxxxxx x xxxxxxx x-x xxxxxxxxxx.</td><td>Xxxx xx xxxxx.</td></tr>
-<tr><td>Xxx xxxxx  xx xxx xxxxxxx xxxx xxxxxxx xxxxxxxxxx xxx xxxxxxxx.  </td><td>Xxxxx xxxxxxxxx xxx xxx/xxxxxx xxxxxxx xxxxxx xxxxxxx x-x xxxxxxxxxxx. Xxxxxxxx xxxxx xx xxxxxxxx.</td><td>Xxxx xx xxxxx.</td></tr>
-<tr><td>Xxxxx xx xx xxxxx xxxxxx xx xxxxxx xxxx xxxxxxxxx.</td><td>Xxx xxxxx xxxxxx, xxx/xxxxxx xxxxxx, xxx xxxxxxxx xxxxx xxx xxxxxx xxxx xxxxxxxxx.</td><td>Xxxx xx xxxxx.</td></tr>
-<tr><td rowspan="3">Xxxxx xxxxxxx</td><td>Xxxxxxxxx xxxxxxxxx xxx xxxxxxxxx, xxxxxxx x xxxxxxxx-xxxx xxxxxx xxxx xxx xx xxxx xxxxxxx xx xxxxxxxxx. Xxxx xx xxx xx xxx xxxxxxxxx xx xxxx xxxxxx xxx xxx xxxxxx xx xxxxxx xxxxxxxx xx xxx xxxxxx.</td><td>Xx'x xxxxxx xx xxxxxxx x xxxxxxxx-xxxx xxxxxx xxxx xxx xxxxx xx xxx/xxxxxx xxxxxxx xxx xxxx xxxx xxxxxxxx xxxx xxxxxxx x xxxxxxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxx xx xxx xxxxxx.</td><td>Xxxx xx xxxxx.</td></tr>
-<tr><td>Xxxx xxxxx xx xxx xxxxx xxxxxxx xx x xxxxxxx xxxxxx xxx xx xxxxxxxxx xx xxxxx xxx xx xxxxxx xxxxxxx xxx xxx xxxx'x xxxx xx xxx xxxxxx.</td><td>Xxx xxxxx xxx xxx/xxxxxx xxx xxxxx xxx xxxx xx xxx xxxxxx xxxxx xxx xxxxxxx xxxxxx xx xxxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxx xxxxx. </td><td>Xxxxxx xxxxxxx xxx xxxx xxx xx xx xxxxx.</td></tr>
-<tr><td>Xxxxxxx xxxxx xx xxxxxxxx xx xxx xx xxxx xxxxxxxxxx xx xxx xxxx'x xxxx. Xxxx xx xxxxx xx xxxxxxxxx.</td><td>Xxxxxxxx xxxxx xxxxxxx xx xxx xxxxx  xxxxxxxxx.</td><td>Xxxx xx xxxxx.</td></tr>
-<tr><td>Xxxxxx xxxxx</td><td>Xxxxx xxxx x xxx-xxxxx xxxxx: xxx xxxxx xxxxxxx xx x xxxxxxx xxxxxx  xx xxxxxx xxxxxxx (xx) xx xxx (xxx). Xxxxx xx xx xxxxx xxxxx xxxx xxx xxxxxxx xxxxxxxxxx xxxxxx xxxxxxxx.</td><td>
-<p>X xxxxx, xxx/xxxxxx, xxx xxxxxxxx xxx xxxxxx x xxxxx-xxxxx xxxxx: xx (xxx), xxxx (xx), xxx xxxxx (xxxxx).</p>
-<p>Xxxxx xxxx xxxxx xxxxxxx xxx xxxxx xxxxxxx xxxxxxxx  xxxxxxxxxx xxxx XX xxxxxxxx. Xxxxx xxx xxxxx xxxxxxx  xxx xxxxx xxxxx xxxxxxx xxx xxxxxxxxxxx xxx xxxx xxxx xxxx xxxxxxxxx. 
+<tbody><tr><th>Factor</th><th>Touch interactions</th><th>Mouse, keyboard, pen/stylus interactions</th><th>Touchpad</th></tr>
+<tr><td rowspan="3">Precision</td><td>The contact area of a fingertip is greater than a single x-y coordinate, which increases the chances of unintended command activations.</td><td>The mouse and pen/stylus supply a precise x-y coordinate.</td><td>Same as mouse.</td></tr>
+<tr><td>The shape  of the contact area changes throughout the movement.  </td><td>Mouse movements and pen/stylus strokes supply precise x-y coordinates. Keyboard focus is explicit.</td><td>Same as mouse.</td></tr>
+<tr><td>There is no mouse cursor to assist with targeting.</td><td>The mouse cursor, pen/stylus cursor, and keyboard focus all assist with targeting.</td><td>Same as mouse.</td></tr>
+<tr><td rowspan="3">Human anatomy</td><td>Fingertip movements are imprecise, because a straight-line motion with one or more fingers is difficult. This is due to the curvature of hand joints and the number of joints involved in the motion.</td><td>It's easier to perform a straight-line motion with the mouse or pen/stylus because the hand that controls them travels a shorter physical distance than the cursor on the screen.</td><td>Same as mouse.</td></tr>
+<tr><td>Some areas on the touch surface of a display device can be difficult to reach due to finger posture and the user's grip on the device.</td><td>The mouse and pen/stylus can reach any part of the screen while any control should be accessible by the keyboard through tab order. </td><td>Finger posture and grip can be an issue.</td></tr>
+<tr><td>Objects might be obscured by one or more fingertips or the user's hand. This is known as occlusion.</td><td>Indirect input devices do not cause  occlusion.</td><td>Same as mouse.</td></tr>
+<tr><td>Object state</td><td>Touch uses a two-state model: the touch surface of a display device  is either touched (on) or not (off). There is no hover state that can trigger additional visual feedback.</td><td>
+<p>A mouse, pen/stylus, and keyboard all expose a three-state model: up (off), down (on), and hover (focus).</p>
+<p>Hover lets users explore and learn through tooltips  associated with UI elements. Hover and focus effects  can relay which objects are interactive and also help with targeting. 
 </p>
-</td><td>Xxxx xx xxxxx.</td></tr>
-<tr><td rowspan="2">Xxxx xxxxxxxxxxx</td><td>Xxxxxxxx xxxxx-xxxxx: xxxxxxxx xxxxx xxxxxx (xxxxxxxxxx) xx x xxxxx xxxxxxx.</td><td>Xxxxxxxx x xxxxxx xxxxx xxxxx.</td><td>Xxxx xx xxxxx.</td></tr>
-<tr><td>Xxxxxxxx xxxxxx xxxxxxxxxxxx xx xxxxxxx xxxxxxx xxxxxxxx xxxx xx xxxxxxx, xxxxxxxx, xxxxxxx, xxxxxxxx, xxx xxxxxxxx.</td><td>Xx xxxxxxx xxx xxxxxx xxxxxxxxxxxx xx xxxxx, xxx/xxxxxx, xxx xxxxxxxx xxx xxxxxxxx xxxxx xxxxxxx.</td><td>Xxxx xx xxxxx.</td></tr>
+</td><td>Same as mouse.</td></tr>
+<tr><td rowspan="2">Rich interaction</td><td>Supports multi-touch: multiple input points (fingertips) on a touch surface.</td><td>Supports a single input point.</td><td>Same as touch.</td></tr>
+<tr><td>Supports direct manipulation of objects through gestures such as tapping, dragging, sliding, pinching, and rotating.</td><td>No support for direct manipulation as mouse, pen/stylus, and keyboard are indirect input devices.</td><td>Same as mouse.</td></tr>
 </tbody></table>
 
 
 
-**Xxxx**  
-Xxxxxxxx xxxxx xxx xxx xxx xxxxxxx xx xxxx xxxx YY xxxxx xx xxxxxxxxxx. Xxxxxxxx xxxx xx xxxxx-xxxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxx xx xxxxx XX xxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxx, xxxxx, xxx/xxxxxx, xxx xxxxxxxx xxxxx. XX xxxxxxxx xxxx xxxx xxxx xxxx xx-xxxxxxxx xxx xxx xxxx xxxxxxxxxx xxxxxxxx xx xxxxx xxxxx, xxxxxxx xxxxxxxxxxxx xxx xxxx xxxxxxxxxx xxx xxxxx xxxxx xxxxxxx.
+**Note**  
+Indirect input has had the benefit of more than 25 years of refinement. Features such as hover-triggered tooltips have been designed to solve UI exploration specifically for touchpad, mouse, pen/stylus, and keyboard input. UI features like this have been re-designed for the rich experience provided by touch input, without compromising the user experience for these other devices.
 
  
 
-## Xxx xxxxx xxxxxxxx
+## Use touch feedback
 
-Xxxxxxxxxxx xxxxxx xxxxxxxx xxxxxx xxxxxxxxxxxx xxxx xxxx xxx xxxxx xxxxx xxxxxxxxx, xxxxx, xxx xxxxx xx xxx xxxxx xxxxxxxxxxxx xxx xxxxxxxxxxx xx xxxx xxx xxx xxx Xxxxxxx Y. Xxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxxxxxx, xxxxx xxxxxx xxxxxx, xxxxxxx xxx xxxxx xx xxxxxxx, xxxxxx xxxxxx, xxxx xxxxx xxxxxxxxxx xxx xxxxxx xxx xxxxx xxxxxx, xxx xxxxxxxxx xxxxxxxxxxx.
+Appropriate visual feedback during interactions with your app helps users recognize, learn, and adapt to how their interactions are interpreted by both the app and Windows 8. Visual feedback can indicate successful interactions, relay system status, improve the sense of control, reduce errors, help users understand the system and input device, and encourage interaction.
 
-Xxxxxx xxxxxxxx xx xxxxxxxx xxxx xxx xxxx xxxxxx xx xxxxx xxxxx xxx xxxxxxxxxx xxxx xxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxx xx xxxxxxxx. Xxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxx xxxxx xx xxxxxxxx, xx xxxx xxx xxxx xxxxxxxxxx xxx xxxxxx xxxxxxxxx xxxxx xxxx xxx xxxxxxx xx xxxx xxx xxx xxx xxxxxxxx.
+Visual feedback is critical when the user relies on touch input for activities that require accuracy and precision based on location. Display feedback whenever and wherever touch input is detected, to help the user understand any custom targeting rules that are defined by your app and its controls.
 
 
-## Xxxxxxxxx
+## Targeting
 
-Xxxxxxxxx xx xxxxxxxxx xxxxxxx:
+Targeting is optimized through:
 
--   Xxxxx xxxxxx xxxxx
+-   Touch target sizes
 
-    Xxxxx xxxx xxxxxxxxxx xxxxxx xxxx xxxxxxxxxxxx xxxxxxx x xxxxxxxxxxx XX xxxx xxxxxxxx xxxxxxx xxx xxxxxxxx xxxx xxx xxxx xxx xxxx xx xxxxxx.
+    Clear size guidelines ensure that applications provide a comfortable UI that contains objects and controls that are easy and safe to target.
 
--   Xxxxxxx xxxxxxxx
+-   Contact geometry
 
-    Xxx xxxxxx xxxxxxx xxxx xx xxx xxxxxx xxxxxxxxxx xxx xxxx xxxxxx xxxxxx xxxxxx.
+    The entire contact area of the finger determines the most likely target object.
 
--   Xxxxxxxxx
+-   Scrubbing
 
-    Xxxxx xxxxxx x xxxxx xxx xxxxxx xx-xxxxxxxx xx xxxxxxxx xxx xxxxxx xxxxxxx xxxx (xxx xxxxxxx, xxxxx xxxxxxx). Xxx xxxxxxx xxxx xx xxxxxxxxx xxxx xxx xxxxx xx xxxxxxxx.
+    Items within a group are easily re-targeted by dragging the finger between them (for example, radio buttons). The current item is activated when the touch is released.
 
--   Xxxxxxx
+-   Rocking
 
-    Xxxxxxx xxxxxx xxxxx (xxx xxxxxxx, xxxxxxxxxx) xxx xxxxxx xx-xxxxxxxx xx xxxxxxxx xxx xxxxxx xxxx xxx, xxxxxxx xxxxxxx, xxxxxxx xx xxxx xxx xxxxx xxxx xxx xxxxx. Xxx xx xxxxxxxxx, xxx xxxxxxx xxxx xx xxxxxxxxxx xxxxxxx x xxxxxxx xx xxx xxxxxx xxx xxx xx xxxxxxxxx xxxx xxx xxxxx xx xxxxxxxx.
+    Densely packed items (for example, hyperlinks) are easily re-targeted by pressing the finger down and, without sliding, rocking it back and forth over the items. Due to occlusion, the current item is identified through a tooltip or the status bar and is activated when the touch is released.
 
-## Xxxxxxxx
+## Accuracy
 
-Xxxxxx xxx xxxxxx xxxxxxxxxxxx xx xxxxx:
+Design for sloppy interactions by using:
 
--   Xxxx-xxxxxx xxxx xxx xxxx xx xxxxxx xx xxxx xx xxxxxxx xxxxxxxxx xxxx xxxxx xxxxxxxx xxxx xxxxxxx.
--   Xxxxxxxxxxx "xxxxx" xxxx xxx xxxxxx xxxx xxxxxxxx xx xxxxxxxxxx xxxxxxx, xxxx xxxx xxx xxxx xxxxx xx x xxxxxx xxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxx](guidelines-for-panning.md).
+-   Snap-points that can make it easier to stop at desired locations when users interact with content.
+-   Directional "rails" that can assist with vertical or horizontal panning, even when the hand moves in a slight arc. For more information, see [Guidelines for panning](guidelines-for-panning.md).
 
-## Xxxxxxxxx
+## Occlusion
 
-Xxxxxx xxx xxxx xxxxxxxxx xx xxxxxxx xxxxxxx:
+Finger and hand occlusion is avoided through:
 
--   Xxxx xxx xxxxxxxxxxx xx XX
+-   Size and positioning of UI
 
-    Xxxx XX xxxxxxxx xxx xxxxxx xx xxxx xxxx xxxxxx xx xxxxxxxxxx xxxxxxx xx x xxxxxxxxx xxxxxxx xxxx.
+    Make UI elements big enough so that they cannot be completely covered by a fingertip contact area.
 
-    Xxxxxxxx xxxxx xxx xxx-xxx xxxxx xxx xxxxxxx xxxx xxxxxxxx xxxxxxxx.
+    Position menus and pop-ups above the contact area whenever possible.
 
--   Xxxxxxxx
+-   Tooltips
 
-    Xxxx xxxxxxxx xxxx x xxxx xxxxxxxxx xxxxxx xxxxxxx xx xx xxxxxx. Xxxx xx xxxxxx xxx xxxxxxxxxx xxxxxx xxxxxxxxxxxxx. Xxx xxxx xxx xxxx xxx xxxxxxxxx xxx xxx xxxxxx xx xxxxx xxxxxxxx xxx xxxxxxx.
+    Show tooltips when a user maintains finger contact on an object. This is useful for describing object functionality. The user can drag the fingertip off the object to avoid invoking the tooltip.
 
-    Xxx xxxxx xxxxxxx, xxxxxx xxxxxxxx xx xxxx xxx xxx xxxxxxx xx xxx xxxxxxxxx xxxxxxx xxxx. Xxxx xx xxxxxxx xxx xxxxxxxxx.
+    For small objects, offset tooltips so they are not covered by the fingertip contact area. This is helpful for targeting.
 
--   Xxxxxxx xxx xxxxxxxxx
+-   Handles for precision
 
-    Xxxxx xxxxxxxxx xx xxxxxxxx (xxx xxxxxxx, xxxx xxxxxxxxx), xxxxxxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxx xx xxxxxxx xxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxxxx xxxx xxx xxxxxx (Xxxxxxx Xxxxxxx xxxx)](guidelines-for-textselection.md).
+    Where precision is required (for example, text selection), provide selection handles that are offset to improve accuracy. For more information, see [Guidelines for selecting text and images (Windows Runtime apps)](guidelines-for-textselection.md).
 
-## Xxxxxx
+## Timing
 
-Xxxxx xxxxx xxxx xxxxxxx xx xxxxx xx xxxxxx xxxxxxxxxxxx. Xxxxxx xxxxxxxxxxxx xxxxxxxxx xxx xxxxxx, xxxx-xxxx xxxxxxxx xxxxxxxx xx xx xxxxxx. Xxx xxxxxx xxxxxxxx xx xxx xxxxxxx xxx xxxxx.
+Avoid timed mode changes in favor of direct manipulation. Direct manipulation simulates the direct, real-time physical handling of an object. The object responds as the fingers are moved.
 
-X xxxxx xxxxxxxxxxx, xx xxx xxxxx xxxx, xxxxxx xxxxx x xxxxx xxxxxxxxxxx. Xxxxx xxxxxxxxxxxx xxxxxxxxx xxxxxx xx xxxxxxxxx xxxxxxxxxx xxxx xxxx, xxxxxxxx, xx xxxxx xx xxxxxxxxx xxxx xxxxxxx xx xxxxxxx. Xxxxx xxxxxxxxxxxx xxxx xx xxxxxx xxxxxxxx xxxxx xxx xxxxxx xxxxxxxx xxx xxxxxx.
+A timed interaction, on the other hand, occurs after a touch interaction. Timed interactions typically depend on invisible thresholds like time, distance, or speed to determine what command to perform. Timed interactions have no visual feedback until the system performs the action.
 
-Xxxxxx xxxxxxxxxxxx xxxxxxxx x xxxxxx xx xxxxxxxx xxxx xxxxx xxxxxxxxxxxx:
+Direct manipulation provides a number of benefits over timed interactions:
 
--   Xxxxxxx xxxxxx xxxxxxxx xxxxxx xxxxxxxxxxxx xxxx xxxxx xxxx xxxx xxxxxxx, xxxxxxxxx, xxx xx xxxxxxx.
--   Xxxxxx xxxxxxxxxxxxx xxxx xx xxxxx xx xxxxxxx x xxxxxx xxxxxxx xxxx xxx xxxxxxxxxx—xxxxx xxx xxxxxx xxxx xxxx xxxxxxx xxxxx xxxxxxx xx x xxxxxxx xxx xxxxxxxxx xxxxxx.
--   Xxxxxxxxxxxx xxxx xxxxxxxx xxxxxx xxxxxxx xxx xxxxx xxxx xxxxx xxxxxxxxxxxx xxx xxxx xxxxxxxxx, xxxxxxxxxxxx, xxx xxxxxxxxx. Xxxx xxx'x xxxx xx xxxxxxx xx xxxxxxxx xxxxxxxxxxxx.
--   Xxxxx xxxxxxxxxxxx xxx xx xxxxxxxxx xx xxxxxxx, xx xxxxx xxxx xxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxxxx.
+-   Instant visual feedback during interactions make users feel more engaged, confident, and in control.
+-   Direct manipulations make it safer to explore a system because they are reversible—users can easily step back through their actions in a logical and intuitive manner.
+-   Interactions that directly affect objects and mimic real world interactions are more intuitive, discoverable, and memorable. They don't rely on obscure or abstract interactions.
+-   Timed interactions can be difficult to perform, as users must reach arbitrary and invisible thresholds.
 
-Xx xxxxxxxx, xxx xxxxxxxxx xxx xxxxxxxx xxxxxxxxxxx:
+In addition, the following are strongly recommended:
 
--   Xxxxxxxxxxxxx xxxxxx xxx xx xxxxxxxxxxxxx xx xxx xxxxxx xx xxxxxxx xxxx.
--   Xxxxxxxxxxxx xxxxxx xxxxxxx xxxxxxxx xxxxxxxxxxxxx. Xxx xxxxxxx, xxxxx xx xxxx xxxxx xxxxxxxx xxx xxxxxxx xx xxx.
--   Xxxxxxxxxxxx xxxxxx xxx xx xxxxxxxxxxxxx xx xxxx. Xxx xxxx xxxxxxxxxxx xxxxxx xxxx xxx xxxx xxxxxxx xxxxxxxxxx xx xxx xxxx xxxxx xx xxxxxxx xx. Xxxx-xxxxx xxxxxxxxxxx xxxxxxxxx xxxxxxxxx xxxxxx xxx xxxxx xxx xxxxxxx xxxx xxxx xxx xxxxxxxxx xxxxxx xx xxxxxx xxxxxxxxxxxx xxx xxx xxxxxxxxxx xx xxxxxx xxxxxxxxxxxxxx.
+-   Manipulations should not be distinguished by the number of fingers used.
+-   Interactions should support compound manipulations. For example, pinch to zoom while dragging the fingers to pan.
+-   Interactions should not be distinguished by time. The same interaction should have the same outcome regardless of the time taken to perform it. Time-based activations introduce mandatory delays for users and detract from both the immersive nature of direct manipulation and the perception of system responsiveness.
 
-    **Xxxx**  Xx xxxxxxxxx xx xxxx xx xxxxx xxx xxx xxxxxxxx xxxxx xxxxxxxxxxxx xx xxxxxx xx xxxxxxxx xxx xxxxxxxxxxx (xxx xxxxxxx, xxxxx xxx xxxx).
+    **Note**  An exception to this is where you use specific timed interactions to assist in learning and exploration (for example, press and hold).
 
      
 
--   Xxxxxxxxxxx xxxxxxxxxxxx xxx xxxxxx xxxx xxxx x xxxxx xxxxxx xx xxx xxx xx xxxxxxxx xxxxxxxxxxxx.
+-   Appropriate descriptions and visual cues have a great effect on the use of advanced interactions.
 
 
-## <span id="App_views">
-            </span>
-            <span id="app_views">
-            </span>
-            <span id="APP_VIEWS">
-            </span>Xxx xxxxx
+## <span id="App_views"></span><span id="app_views"></span><span id="APP_VIEWS"></span>App views
 
 
-Xxxxx xxx xxxx xxxxxxxxxxx xxxxxxxxxx xxxxxxx xxx xxx/xxxxxx xxx xxxx xxxxxxxx xx xxxx xxx xxxxx. Xx xxx xxxx xxxxxxxx xxx x xxxx xxxxxxxx xxx xxxxxxxxxxx xxxx xxx xxx xxx xxxxxxx. Xxxxx xxxx xxxxxxx xxxxxxxxx xxxx xx xxxxxxx, xxxxxxx xxxxxxxx xxxxxx, xxx xxxx xxxxxx.
+Tweak the user interaction experience through the pan/scroll and zoom settings of your app views. An app view dictates how a user accesses and manipulates your app and its content. Views also provide behaviors such as inertia, content boundary bounce, and snap points.
 
-Xxx xxx xxxxxx xxxxxxxx xx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209527) xxxxxxx xxxxxxx xxx xxxxx xxxxxxxx xxxxxx x xxxxxx xxxx, xxxx xxx xxxxxxx xx xxx xxxx xxxxx'x xxx xxxxxx xxx xxxxxxxx. X xxxxxx xxxx xxx xx, xxx xxxxxxx, x xxxx xx x xxxxxxxx xx xxxx, xxx xxxxxx xxxxxxxxx xx x xxxxxxxx, x xxxxxxx xx xxxxxxxxx, xx x xxxxx xxxxx.
+Pan and scroll settings of the [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) control dictate how users navigate within a single view, when the content of the view doesn't fit within the viewport. A single view can be, for example, a page of a magazine or book, the folder structure of a computer, a library of documents, or a photo album.
 
-Xxxx xxxxxxxx xxxxx xx xxxx xxxxxxx xxxx (xxxxxxxxx xx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209527) xxxxxxx) xxx xxx [**Xxxxxxxx Xxxx**](https://msdn.microsoft.com/library/windows/apps/hh702601) xxxxxxx. Xxxxxxxx Xxxx xx x xxxxx-xxxxxxxxx xxxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxxxx xxxxx xxxx xx xxxxxxx xxxx xx xxxxxxx xxxxxx x xxxxxx xxxx. Xx xxxxx xx xxxxx xxx xxxxxxxx xxxxx xx xxxxxxxxxxxxxx, xx xxxx xxxxxx. Xxxx xx xxxxxxxxx xx xxxxxxx xxx xxxxxxxxx xxxxxx x xxxxxx xxxx. Xxxxxxx xxx xxxxxxxxx xxx xx xxxx xx xxxxxxxxxxx xxxx Xxxxxxxx Xxxx.
+Zoom settings apply to both optical zoom (supported by the [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/br209527) control) and the [**Semantic Zoom**](https://msdn.microsoft.com/library/windows/apps/hh702601) control. Semantic Zoom is a touch-optimized technique for presenting and navigating large sets of related data or content within a single view. It works by using two distinct modes of classification, or zoom levels. This is analogous to panning and scrolling within a single view. Panning and scrolling can be used in conjunction with Semantic Zoom.
 
-Xxx xxx xxxxx xxx xxxxxx xx xxxxxx xxx xxx/xxxxxx xxx xxxx xxxxxxxxx. Xxxx xxx xxxxxxx x xxxxxxxx xxxxxxxxxxx xxxxxxxxxx xxxx xx xxxxxxxx xxxxxxx xxx xxxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxx.
+Use app views and events to modify the pan/scroll and zoom behaviors. This can provide a smoother interaction experience than is possible through the handling of pointer and gesture events.
 
-Xxx xxxx xxxx xxxxx xxx xxxxx, xxx [Xxxxxxxx, xxxxxxx, xxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt228348).
+For more info about app views, see [Controls, layouts, and text](https://msdn.microsoft.com/library/windows/apps/mt228348).
 
-## <span id="intro_to_touch_input">
-            </span>
-            <span id="INTRO_TO_TOUCH_INPUT">
-            </span>Xxxxxx xxxxx xxxxxxxxxxxx
+## <span id="intro_to_touch_input"></span><span id="INTRO_TO_TOUCH_INPUT"></span>Custom touch interactions
 
 
-Xx xxx xxxxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxx, xxxx xx xxxx xxxx xxxxx xxxxxx xx xxxxxxxxx xxxxxxxxxx xxxxxxxxx xxxxxx xxxxxxxxxxx xxxx xxx XX xxxxxxxx xx xxxx xxx. Xx xxxxxxxxx xxxx xxx xxxxx xxxx xxxxxx xxxxxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxxxxxxxx xx xxxx xxxxxx xxxxxxxxxx xxx xxxxxxxxxxxx. Xxx xxxxxxxx xx xxxxx xxxxxxxxx xxxxxxx xxx xxxx xxxx xxxxxxxxxxx xxxxxxxxxx, xxxxxxxxx xxxxxxxx xxxxxxxxxxxx, xxxxxxxx xxxxxxx xxxxxxx, xxxxxx xxxxxxxx, xxx xxxxxxxxxxxxx. Xxxxxx xxxxxx xxxxxxxxxxxx xxxx xx xxxxx xx x xxxxx, xxxx-xxxxxxx xxxxxxxxxxx xxx xxxxx xxxxxxxxxxxx xxx'x xxxxxxx xxxx xxxxxxxx.
+If you implement your own interaction support, keep in mind that users expect an intuitive experience involving direct interaction with the UI elements in your app. We recommend that you model your custom interactions on the platform control libraries to keep things consistent and discoverable. The controls in these libraries provide the full user interaction experience, including standard interactions, animated physics effects, visual feedback, and accessibility. Create custom interactions only if there is a clear, well-defined requirement and basic interactions don't support your scenario.
 
-Xx xxxxxxx xxxxxxxxxx xxxxx xxxxxxx, xxx xxx xxxxxx xxxxxxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911) xxxxxx. Xxxxx xxxxxx xxx xxxxxxx xxxx xxxxx xxxxxx xx xxxxxxxxxxx.
+To provide customized touch support, you can handle various [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) events. These events are grouped into three levels of abstraction.
 
--   Xxxxxx xxxxxxx xxxxxx xxx xxxxxxxxx xxxxx xx xxxxxxxxxxx xx xxxxxxxx. Xxxxxxx xxxxxx xxxxxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208985), [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208922), [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208984), xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208928).
+-   Static gesture events are triggered after an interaction is complete. Gesture events include [**Tapped**](https://msdn.microsoft.com/library/windows/apps/br208985), [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/br208922), [**RightTapped**](https://msdn.microsoft.com/library/windows/apps/br208984), and [**Holding**](https://msdn.microsoft.com/library/windows/apps/br208928).
 
-    Xxx xxx xxxxxxx xxxxxxx xxxxxx xx xxxxxxxx xxxxxxxx xx xxxxxxx [**XxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208939), [**XxXxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208931), [**XxXxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208937), xxx [**XxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208935) xx **xxxxx**.
+    You can disable gesture events on specific elements by setting [**IsTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208939), [**IsDoubleTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208931), [**IsRightTapEnabled**](https://msdn.microsoft.com/library/windows/apps/br208937), and [**IsHoldingEnabled**](https://msdn.microsoft.com/library/windows/apps/br208935) to **false**.
 
--   Xxxxxxx xxxxxx xxxx xx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208971) xxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208970) xxxxxxx xxx-xxxxx xxxxxxx xxx xxxx xxxxx xxxxxxx, xxxxxxxxx xxxxxxx xxxxxx xxx xxx xxxxxxx xx xxxxxxxxxxx xxxxx xxx xxxxxxx xxxxxx.
+-   Pointer events such as [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) and [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970) provide low-level details for each touch contact, including pointer motion and the ability to distinguish press and release events.
 
-    X xxxxxxx xx x xxxxxxx xxxxx xxxx xxxx x xxxxxxx xxxxx xxxxxxxxx. Xx xxxxxxx xxxxx xxxx, xxxx xx xxxxxx xxxxxxxx, xx xxx xxxxxx xxxxx xxxxxx, xxxxx xxx xx xxxxx, xxxxxxxx, xxxxx, xx xxx.
+    A pointer is a generic input type with a unified event mechanism. It exposes basic info, such as screen position, on the active input source, which can be touch, touchpad, mouse, or pen.
 
--   Xxxxxxxxxxxx xxxxxxx xxxxxx, xxxx xx [**XxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208950), xxxxxxxx xx xxxxxxx xxxxxxxxxxx. Xxxx xxxxx xxxxxx xxxx xxx xxxx xxxxxxx xx xxxxxxx xxx xxxxxxxx xxxxx xxx xxxx xxxxx xxxxx xxxxxx(x), xx xxx xxxxxxxxxxxx xx xxxxxxxx.
+-   Manipulation gesture events, such as [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950), indicate an ongoing interaction. They start firing when the user touches an element and continue until the user lifts their finger(s), or the manipulation is canceled.
 
-    Xxxxxxxxxxxx xxxxxx xxxxxxx xxxxx-xxxxx xxxxxxxxxxxx xxxx xx xxxxxxx, xxxxxxx, xx xxxxxxxx, xxx xxxxxxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxx xxxx xxxx xx xxxxxxxx. Xxx xxxxxxxxxxx xxxxxxxx xx xxx xxxxxxxxxxxx xxxxxx xxxxx'x xxxxxxxx xxx xxxx xx xxx xxxxxxxxxxx xxxx xxx xxxxxxxxx, xxx xxxxxx xxxxxxxx xxxx xxxx xx xxxxxxxx, xxxxxxxxxxx xxxxx, xxx xxxxxxxx. Xxx xxx xxx xxxx xxxxx xxxx xx xxxxxxxxx xxx xxxx xx xxxxxxxxxxx xxxx xxxxxx xx xxxxxxxxx.
+    Manipulation events include multi-touch interactions such as zooming, panning, or rotating, and interactions that use inertia and velocity data such as dragging. The information provided by the manipulation events doesn't identify the form of the interaction that was performed, but rather includes data such as position, translation delta, and velocity. You can use this touch data to determine the type of interaction that should be performed.
 
-Xxxx xx xxx xxxxx xxx xx xxxxx xxxxxxxx xxxxxxxxx xx xxx XXX.
+Here is the basic set of touch gestures supported by the UWP.
 
-| Xxxx           | Xxxx                 | Xxxxxxxxxxx                                                                            |
+| Name           | Type                 | Description                                                                            |
 |----------------|----------------------|----------------------------------------------------------------------------------------|
-| Xxx            | Xxxxxx xxxxxxx       | Xxx xxxxxx xxxxxxx xxx xxxxxx xxx xxxxx xx.                                            |
-| Xxxxx xxx xxxx | Xxxxxx xxxxxxx       | Xxx xxxxxx xxxxxxx xxx xxxxxx xxx xxxxx xx xxxxx.                                      |
-| Xxxxx          | Xxxxxxxxxxxx xxxxxxx | Xxx xx xxxx xxxxxxx xxxxx xxx xxxxxx xxx xxxx xx xxx xxxx xxxxxxxxx.                   |
-| Xxxxx          | Xxxxxxxxxxxx xxxxxxx | Xxx xx xxxx xxxxxxx xxxxx xxx xxxxxx xxx xxxx x xxxxx xxxxxxxx xx xxx xxxx xxxxxxxxx.  |
-| Xxxx           | Xxxxxxxxxxxx xxxxxxx | Xxx xx xxxx xxxxxxx xxxxx xxx xxxxxx xxx xxxx xx x xxxxxxxxx xx xxxxxxx-xxxxxxxxx xxx. |
-| Xxxxx          | Xxxxxxxxxxxx xxxxxxx | Xxx xx xxxx xxxxxxx xxxxx xxx xxxxxx xxx xxxx xxxxxx xxxxxxxx.                         |
-| Xxxxxxx        | Xxxxxxxxxxxx xxxxxxx | Xxx xx xxxx xxxxxxx xxxxx xxx xxxxxx xxx xxxx xxxxxxx xxxxx.                           |
+| Tap            | Static gesture       | One finger touches the screen and lifts up.                                            |
+| Press and hold | Static gesture       | One finger touches the screen and stays in place.                                      |
+| Slide          | Manipulation gesture | One or more fingers touch the screen and move in the same direction.                   |
+| Swipe          | Manipulation gesture | One or more fingers touch the screen and move a short distance in the same direction.  |
+| Turn           | Manipulation gesture | Two or more fingers touch the screen and move in a clockwise or counter-clockwise arc. |
+| Pinch          | Manipulation gesture | Two or more fingers touch the screen and move closer together.                         |
+| Stretch        | Manipulation gesture | Two or more fingers touch the screen and move farther apart.                           |
 
  
 
@@ -215,43 +207,37 @@ Xxxx xx xxx xxxxx xxx xx xxxxx xxxxxxxx xxxxxxxxx xx xxx XXX.
 For more info about gestures, manipulations, and interactions, see [Custom user interactions](custom-user-input-portal.md).
 -->
 
-## <span id="gestures">
-            </span>
-            <span id="GESTURES">
-            </span>Xxxxxxx xxxxxx
+## <span id="gestures"></span><span id="GESTURES"></span>Gesture events
 
 
-Xxx xxxxxxx xxxxx xxxxxxxxxx xxxxxxxx, xxx [Xxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt185406).
+For details about individual controls, see [Controls list](https://msdn.microsoft.com/library/windows/apps/mt185406).
 
-## <span id="using_pointer_events">
-            </span>
-            <span id="USING_POINTER_EVENTS">
-            </span>Xxxxxxx xxxxxx
+## <span id="using_pointer_events"></span><span id="USING_POINTER_EVENTS"></span>Pointer events
 
 
-Xxxxxxx xxxxxx xxx xxxxxx xx x xxxxxxx xx xxxxxx xxxxx xxxxxxx, xxxxxxxxx xxxxx, xxxxxxxx, xxx, xxx xxxxx (xxxx xxxxxxx xxxxxxxxxxx xxxxx xxxxxx.)
+Pointer events are raised by a variety of active input sources, including touch, touchpad, pen, and mouse (they replace traditional mouse events.)
 
-Xxxxxxx xxxxxx xxx xxxxx xx x xxxxxx xxxxx xxxxx (xxxxxx, xxx xxx, xxxxx xxxxxx) xxx xx xxx xxxxxxx xxxxxxxx-xxxxx xxxxxxxxxxxx.
+Pointer events are based on a single input point (finger, pen tip, mouse cursor) and do not support velocity-based interactions.
 
-Xxxx xx x xxxx xx xxxxxxx xxxxxx xxx xxxxx xxxxxxx xxxxx xxxxxxxx.
+Here is a list of pointer events and their related event argument.
 
-| Xxxxx xx xxxxx                                                       | Xxxxxxxxxxx                                                   |
+| Event or class                                                       | Description                                                   |
 |----------------------------------------------------------------------|---------------------------------------------------------------|
-| [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208971)             | Xxxxxx xxxx x xxxxxx xxxxxx xxxxxxx xxx xxxxxx.               |
-| [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208972)           | Xxxxxx xxxx xxxx xxxx xxxxx xxxxxxx xx xxxxxx.                |
-| [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208970)                 | Xxxxxx xxxx xxx xxxxxxx xx xxxxxxx xxxxxx xxx xxxxxx.         |
-| [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208968)             | Xxxxxx xxxx x xxxxxxx xxxxxx xxx xxx xxxx xxxx xx xx xxxxxxx. |
-| [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208969)               | Xxxxxx xxxx x xxxxxxx xxxxx xxx xxx xxxx xxxx xx xx xxxxxxx.  |
-| [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208964)           | Xxxxxx xxxx x xxxxx xxxxxxx xx xxxxxxxxxx xxxx.               |
-| [**XxxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208965)     | Xxxxxx xxxx x xxxxxxx xxxxxxx xx xxxxx xx xxxxxxx xxxxxxx.    |
-| [**XxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208973)   | Xxxxxx xxxx xxx xxxxx xxxxx xx x xxxxx xxxxx xxxxxxx.         |
-| [**XxxxxxxXxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh943076) | Xxxxxxxx xxxx xxx xxx xxxxxxx xxxxxx.                         |
+| [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971)             | Occurs when a single finger touches the screen.               |
+| [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972)           | Occurs when that same touch contact is lifted.                |
+| [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208970)                 | Occurs when the pointer is dragged across the screen.         |
+| [**PointerEntered**](https://msdn.microsoft.com/library/windows/apps/br208968)             | Occurs when a pointer enters the hit test area of an element. |
+| [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969)               | Occurs when a pointer exits the hit test area of an element.  |
+| [**PointerCanceled**](https://msdn.microsoft.com/library/windows/apps/br208964)           | Occurs when a touch contact is abnormally lost.               |
+| [**PointerCaptureLost**](https://msdn.microsoft.com/library/windows/apps/br208965)     | Occurs when a pointer capture is taken by another element.    |
+| [**PointerWheelChanged**](https://msdn.microsoft.com/library/windows/apps/br208973)   | Occurs when the delta value of a mouse wheel changes.         |
+| [**PointerRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh943076) | Provides data for all pointer events.                         |
 
  
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xx xxx xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208971), [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208972), xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208969) xxxxxx xx xxxxxx x xxx xxxxxxxxxxx xx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243371) xxxxxx.
+The following example shows how to use the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972), and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) events to handle a tap interaction on a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) object.
 
-Xxxxx, x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243371) xxxxx `touchRectangle` xx xxxxxxx xx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX).
+First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) named `touchRectangle` is created in Extensible Application Markup Language (XAML).
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -274,7 +260,7 @@ Xxxxx, x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br24337
 </Grid>
 ```
 
-Xxxx, xxxxxxxxx xxx xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208971), [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208972), xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208969) xxxxxx xxx xxxxxxxxx.
+Next, listeners for the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971), [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972), and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) events are specified.
 
 ```ManagedCPlusPlus
 MainPage::MainPage()
@@ -314,7 +300,7 @@ Public Sub New()
 End Sub
 ```
 
-Xxxxxxx, xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208971) xxxxx xxxxxxx xxxxxxxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208718) xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208751) xx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243371), xxxxx xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208972) xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208969) xxxxx xxxxxxxx xxx xxx **Xxxxxx** xxx **Xxxxx** xxxx xx xxxxx xxxxxxxx xxxxxx.
+Finally, the [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208971) event handler increases the [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) of the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371), while the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208972) and [**PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208969) event handlers set the **Height** and **Width** back to their starting values.
 
 ```ManagedCPlusPlus
 // Handler for pointer exited event.
@@ -435,45 +421,42 @@ Private Sub touchRectangle_PointerPressed(sender As Object, e As PointerRoutedEv
 End Sub
 ```
 
-## <span id="using_manipulation_events">
-            </span>
-            <span id="USING_MANIPULATION_EVENTS">
-            </span>Xxxxxxxxxxxx xxxxxx
+## <span id="using_manipulation_events"></span><span id="USING_MANIPULATION_EVENTS"></span>Manipulation events
 
 
-Xxx xxxxxxxxxxxx xxxxxx xx xxx xxxx xx xxxxxxx xxxxxxxx xxxxxx xxxxxxxxxxxx xx xxxx xxx, xx xxxxxxxxxxxx xxxx xxxxxxx xxxxxxxx xxxx.
+Use manipulation events if you need to support multiple finger interactions in your app, or interactions that require velocity data.
 
-Xxx xxx xxx xxxxxxxxxxxx xxxxxx xx xxxxxx xxxxxxxxxxxx xxxx xx xxxx, xxxx, xxx xxxx.
+You can use manipulation events to detect interactions such as drag, zoom, and hold.
 
-Xxxx xx x xxxx xx xxxxxxxxxxxx xxxxxx xxx xxxxxxx xxxxx xxxxxxxxx.
+Here is a list of manipulation events and related event arguments.
 
-| Xxxxx xx xxxxx                                                                                               | Xxxxxxxxxxx                                                                                                                               |
+| Event or class                                                                                               | Description                                                                                                                               |
 |--------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| [**XxxxxxxxxxxxXxxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208951)                                   | Xxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx xx xxxxx xxxxxxx.                                                                                  |
-| [**XxxxxxxxxxxxXxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208950)                                     | Xxxxxx xxxx xx xxxxx xxxxxx xxxxxx x xxxxxxxxxxxx xx xxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911).                                            |
-| [**XxxxxxxxxxxxXxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208946)                                         | Xxxxxx xxxx xxx xxxxx xxxxxx xxxxxxx xxxxxxxx xxxxxx x xxxxxxxxxxxx.                                                                      |
-| [**XxxxxxxxxxxxXxxxxxxXxxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702425)                | Xxxxxx xxxx xxx xxxxx xxxxxx xxxxx xxxxxxx xxxx xxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911) xxxxxx xxxxxx x xxxxxxxxxxxx xxx xxxxxxx xxxxxx. |
-| [**XxxxxxxxxxxxXxxxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208945)                                 | Xxxxxx xxxx x xxxxxxxxxxxx xxx xxxxxxx xx xxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911) xxx xxxxxxxx.                                          |
-| [**XxxxxxxxxxxxXxxxxxxxXxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh702132)               | Xxxxxxxx xxxx xxx xxx [**XxxxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208951) xxxxx.                                         |
-| [**XxxxxxxxxxxxXxxxxxxXxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh702101)                 | Xxxxxxxx xxxx xxx xxx [**XxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208950) xxxxx.                                           |
-| [**XxxxxxxxxxxxXxxxxXxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh702051)                     | Xxxxxxxx xxxx xxx xxx [**XxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208946) xxxxx.                                               |
-| [**XxxxxxxxxxxxXxxxxxxXxxxxxxxXxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh702074) | Xxxxxxxx xxxx xxx xxx [**XxxxxxxxxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208947) xxxxx.                           |
-| [**XxxxxxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242032)                                              | Xxxxxxxxx xxx xxxxx xx xxxxx xxxxxxxxxxxxx xxxxx.                                                                                         |
-| [**XxxxxxxxxxxxXxxxxxxxxXxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh702035)             | Xxxxxxxx xxxx xxx xxx [**XxxxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208945) xxxxx.                                       |
+| [**ManipulationStarting event**](https://msdn.microsoft.com/library/windows/apps/br208951)                                   | Occurs when the manipulation processor is first created.                                                                                  |
+| [**ManipulationStarted event**](https://msdn.microsoft.com/library/windows/apps/br208950)                                     | Occurs when an input device begins a manipulation on the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911).                                            |
+| [**ManipulationDelta event**](https://msdn.microsoft.com/library/windows/apps/br208946)                                         | Occurs when the input device changes position during a manipulation.                                                                      |
+| [**ManipulationInertiaStarting event**](https://msdn.microsoft.com/library/windows/apps/hh702425)                | Occurs when the input device loses contact with the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) object during a manipulation and inertia begins. |
+| [**ManipulationCompleted event**](https://msdn.microsoft.com/library/windows/apps/br208945)                                 | Occurs when a manipulation and inertia on the [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) are complete.                                          |
+| [**ManipulationStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702132)               | Provides data for the [**ManipulationStarting**](https://msdn.microsoft.com/library/windows/apps/br208951) event.                                         |
+| [**ManipulationStartedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702101)                 | Provides data for the [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) event.                                           |
+| [**ManipulationDeltaRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702051)                     | Provides data for the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event.                                               |
+| [**ManipulationInertiaStartingRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702074) | Provides data for the [**ManipulationInertiaStarting**](https://msdn.microsoft.com/library/windows/apps/br208947) event.                           |
+| [**ManipulationVelocities**](https://msdn.microsoft.com/library/windows/apps/br242032)                                              | Describes the speed at which manipulations occur.                                                                                         |
+| [**ManipulationCompletedRoutedEventArgs**](https://msdn.microsoft.com/library/windows/apps/hh702035)             | Provides data for the [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) event.                                       |
 
  
 
-X xxxxxxx xxxxxxxx xx x xxxxxx xx xxxxxxxxxxxx xxxxxx. Xxxx xxxxxxx xxxxxx xxxx x [**XxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208950) xxxxx, xxxx xx xxxx x xxxx xxxxxxx xxx xxxxxx.
+A gesture consists of a series of manipulation events. Each gesture starts with a [**ManipulationStarted**](https://msdn.microsoft.com/library/windows/apps/br208950) event, such as when a user touches the screen.
 
-Xxxx, xxx xx xxxx [**XxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208946) xxxxxx xxx xxxxx. Xxx xxxxxxx, xx xxx xxxxx xxx xxxxxx xxx xxxx xxxx xxxx xxxxxx xxxxxx xxx xxxxxx. Xxxxxxx, x [**XxxxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208945) xxxxx xx xxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxx.
+Next, one or more [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) events are fired. For example, if you touch the screen and then drag your finger across the screen. Finally, a [**ManipulationCompleted**](https://msdn.microsoft.com/library/windows/apps/br208945) event is raised when the interaction finishes.
 
-**Xxxx**  Xx xxx xxx'x xxxx x xxxxx-xxxxxx xxxxxxx, xxx xxx xxxx xxxx xxxxxxxxxxxx xxxxx xxxx xx xxx xxxxxxxxx xxxxx x xxxxx xxx xxxxx xxxxx xxxxxxxxx.
+**Note**  If you don't have a touch-screen monitor, you can test your manipulation event code in the simulator using a mouse and mouse wheel interface.
 
  
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xx xxx xxx [**XxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208946) xxxxxx xx xxxxxx x xxxxx xxxxxxxxxxx xx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243371) xxx xxxx xx xxxxxx xxx xxxxxx.
+The following example shows how to use the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) events to handle a slide interaction on a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) and move it across the screen.
 
-Xxxxx, x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243371) xxxxx `touchRectangle` xx xxxxxxx xx XXXX xxxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208718) xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208751) xx YYY.
+First, a [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) named `touchRectangle` is created in XAML with a [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718) and [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751) of 200.
 
 ```XAML
 <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -499,7 +482,7 @@ Xxxxx, x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br24337
 </Grid>
 ```
 
-Xxxx, x xxxxxx [**XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243027) xxxxx `dragTranslation` xx xxxxxxx xxx xxxxxxxxxxx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243371). X [**XxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208946) xxxxx xxxxxxxx xx xxxxxxxxx xx xxx **Xxxxxxxxx**, xxx `dragTranslation` xx xxxxx xx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208980) xx xxx **Xxxxxxxxx**.
+Next, a global [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) named `dragTranslation` is created for translating the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371). A [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event listener is specified on the **Rectangle**, and `dragTranslation` is added to the [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980) of the **Rectangle**.
 
 ```ManagedCPlusPlus
 // Global translation transform used for changing the position of 
@@ -570,7 +553,7 @@ Public Sub New()
 End Sub
 ```
 
-Xxxxxxx, xx xxx [**XxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208946) xxxxx xxxxxxx, xxx xxxxxxxx xx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243371) xx xxxxxxx xx xxxxx xxx [**XxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243027) xx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702058) xxxxxxxx.
+Finally, in the [**ManipulationDelta**](https://msdn.microsoft.com/library/windows/apps/br208946) event handler, the position of the [**Rectangle**](https://msdn.microsoft.com/library/windows/apps/br243371) is updated by using the [**TranslateTransform**](https://msdn.microsoft.com/library/windows/apps/br243027) on the [**Delta**](https://msdn.microsoft.com/library/windows/apps/hh702058) property.
 
 ```ManagedCPlusPlus
 // Handler for the ManipulationDelta event.
@@ -614,53 +597,46 @@ Private Sub testRectangle_ManipulationDelta(
 End Sub
 ```
 
-## <span id="Routed_events">
-            </span>
-            <span id="routed_events">
-            </span>
-            <span id="ROUTED_EVENTS">
-            </span>Xxxxxx xxxxxx
+## <span id="Routed_events"></span><span id="routed_events"></span><span id="ROUTED_EVENTS"></span>Routed events
 
 
-Xxx xx xxx xxxxxxx xxxxxx, xxxxxxx xxxxxx xxx xxxxxxxxxxxx xxxxxx xxxxxxxxx xxxx xxx xxxxxxxxxxx xx *xxxxxx xxxxxx*. Xxxx xxxxx xxxx xxx xxxxx xxx xxxxxxxxxxx xx xxxxxxx xx xxxxxxx xxxxx xxxx xxx xxx xxxx xxxxxxxxxx xxxxxx xxx xxxxx. Xxxxxxxxxx xxxxxxx xx xx xxxxxx xxxx, xxxx xx xxx xxxxxx xxxxxxxxxx xx x [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911) xx xxx xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br227503) xx xxxx xxx, xxx xxxxxx xx xxxxxx xxxxx xxxxxx xxxx xx xxx xxxxxxxx xxxxxxx xxxx xxx. Xxxxxxxxxx, xxx xxxxxx xxxx xxxx xxxxxx xxx xxxxx xxx xxxx xxx xxxxx xxxxxxx xx xxxx xx xx xxxxxx xxxxxxx xxx xxxxxx xxxxxxx. Xxx xxxx xxxx xxxxx xxx xxxxxx xxxxx xxxxxxx xxx xxx xx xxxxxxx xxx xxx xxxxx xxxxxxxx xxx xxxxxx xxxxxx, xxx [Xxxxxx xxx xxxxxx xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh758286).
+All of the pointer events, gesture events and manipulation events mentioned here are implemented as *routed events*. This means that the event can potentially be handled by objects other than the one that originally raised the event. Successive parents in an object tree, such as the parent containers of a [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) or the root [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) of your app, can choose to handle these events even if the original element does not. Conversely, any object that does handle the event can mark the event handled so that it no longer reaches any parent element. For more info about the routed event concept and how it affects how you write handlers for routed events, see [Events and routed events overview](https://msdn.microsoft.com/library/windows/apps/hh758286).
 
-## <span id="Dos_and_don_ts">
-            </span>
-            <span id="dos_and_don_ts">
-            </span>
-            <span id="DOS_AND_DON_TS">
-            </span>Xxx xxx xxx'xx
+## <span id="Dos_and_don_ts"></span><span id="dos_and_don_ts"></span><span id="DOS_AND_DON_TS"></span>Dos and don'ts
 
 
--   Xxxxxx xxxxxxxxxxxx xxxx xxxxx xxxxxxxxxxx xx xxx xxxxxxx xxxxxxxx xxxxx xxxxxx.
--   Xxxxxxx xxxxxx xxxxxxxx xxx xxxxxxxxxxxx xx xxx xxxxx (xxxxx, xxx, xxxxxx, xxxxx, xxx.)
--   Xxxxxxxx xxxxxxxxx xx xxxxxxxxx xxxxx xxxxxx xxxx, xxxxxxx xxxxxxxx, xxxxxxxxx xxx xxxxxxx.
--   Xxxxxxxx xxxxxxxx xxxxxxx xxx xxx xx xxxx xxxxxx xxx xxxxxxxxxxx "xxxxx".
--   Xxxxxxx xxxxxxxx xxx xxxxxxx xx xxxx xxxxxxx xxxxx xxxxxxxx xxx xxxxxxx xxxxxx XX xxxxx.
--   Xxx'x xxx xxxxx xxxxxxxxxxxx xxxxxxxx xxxxxxxx (xxxxxxx xx xxxxxxxxxxx xxx: xxxxx xxx xxxx).
--   Xxx'x xxx xxx xxxxxx xx xxxxxxx xxxx xx xxxxxxxxxxx xxx xxxxxxxxxxxx xxxxxxxx xxxxxxxx.
+-   Design applications with touch interaction as the primary expected input method.
+-   Provide visual feedback for interactions of all types (touch, pen, stylus, mouse, etc.)
+-   Optimize targeting by adjusting touch target size, contact geometry, scrubbing and rocking.
+-   Optimize accuracy through the use of snap points and directional "rails".
+-   Provide tooltips and handles to help improve touch accuracy for tightly packed UI items.
+-   Don't use timed interactions whenever possible (example of appropriate use: touch and hold).
+-   Don't use the number of fingers used to distinguish the manipulation whenever possible.
 
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>Related articles
 
-* [Xxxxxx xxxxxxx xxxxx](handle-pointer-input.md)
-* [Xxxxxxxx xxxxx xxxxxxx](identify-input-devices.md)
-**Xxxxxxx**
-* [Xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Xxx xxxxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Xxxx xxxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619895)
-**Xxxxxxx Xxxxxxx**
-* [Xxxxx: Xxxxxx xxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Xxxxx: XXXX xxxx xxxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XXXX xxxxxxxxx, xxxxxxx, xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Xxxxx: Xxxxxxxx xxx xxxxxxxxxxxxx xxxx XxxxxxxXxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+* [Handle pointer input](handle-pointer-input.md)
+* [Identify input devices](identify-input-devices.md)
+**Samples**
+* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+**Archive Samples**
+* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

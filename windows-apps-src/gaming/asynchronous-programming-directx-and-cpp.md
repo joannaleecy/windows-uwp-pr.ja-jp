@@ -1,63 +1,67 @@
 ---
-xxxxx: Xxxxxxxxxxxx xxxxxxxxxxx (XxxxxxX xxx X++)
-xxxxxxxxxxx: Xxxx xxxxx xxxxxx xxxxxxx xxxxxx xx xxxxxxxx xxxx xxx xxx xxxxx xxxxxxxxxxxx xxxxxxxxxxx xxx xxxxxxxxx xxxx XxxxxxX.
-xx.xxxxxxx: YYYYYxxY-YxYx-YxYx-YxYx-YxYxYYxxxxYx
+title: 非同期プログラミング (DirectX と C++)
+description: このトピックでは、DirectX で非同期プログラミングやスレッディングを使う際のさまざまな考慮事項について取り上げます。
+ms.assetid: 17613cd3-1d9d-8d2f-1b8d-9f8d31faaa6b
 ---
 
-# Xxxxxxxxxxxx xxxxxxxxxxx (XxxxxxX xxx X++)
+# 非同期プログラミング (DirectX と C++)
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
-Xxxx xxxxx xxxxxx xxxxxxx xxxxxx xx xxxxxxxx xxxx xxx xxx xxxxx xxxxxxxxxxxx xxxxxxxxxxx xxx xxxxxxxxx xxxx XxxxxxX.
+このトピックでは、DirectX で非同期プログラミングやスレッディングを使う際のさまざまな考慮事項について取り上げます。
 
-## Xxxxx xxxxxxxxxxx xxx XxxxxxX
-
-
-Xx xxx'xx xxxx xxxxxxxx xxxxx XxxxxxX, xx xxxx xx xxx'xx xxxxxxxxxxx xxxx xx, xxxxxxxx xxxxxxx xxx xxxx xxxxxxxx xxxxxxxxxx xxxxxxxx xx xxx xxxxxx. Xx xxx xxxxx xxxxx xx x xxxx, xxxxx xxx xxxxxx xxxxxxxxx xxxx xx xxxxxxx, xxxxxxx, xxx xxxxx xxxxxx xxxx xxxxxxx xxxxxxxxx xxxxxx. Xxxxx xxxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxxxxxxx xxx xxxxxx xx xxxxx xxxxxxxxx xxxxxx xxx xxxxxxxx xxxxxxx. Xxxxxxxxx xx x xxxxxxxxx xxxxxxx xx xxxxxxxxxxx xxxxxx xxxxxxxx xxxxxxx.
-
-Xxxxxxx, xx xxxx xxxx xx xxxxxxxxxxxx xxxxxxx, xx xx xxx xxx xxxxxxx xx xxx xxxxxxxx xxxxxxxxxxx, xxx xxx xxx xxxxxxxxxxxx xxxxxxxxxxx xx xxxxxxxxxxx xxxx xx xxx xxxxxxxxxx xxxx xxx xxx xxxxxxxx xx xxxx xxxxxxxxx xxxxxxxx. Xxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxxxxxxxxx XXXx, xxx xxxx xxx xxxxxx xxxx xxxxxxxxx xx xxxx! Xxx xxx xxxxxx xxxx xx xxxxx xxxxxxxxxxxx xxxxxxxxxxx xxx xxxx xx xxx xxxxxxxxxx xx xxxx xxxx xxxx xxx'x xxxx xxxxxx xxxxxx xx xxx XxxxxxYX xxxxxx xxxxxxx, xxxx xx:
-
--   xxxx X/X
--   xxxxxxx
--   XX
--   xxxxxxxxxx
--   xxxxx
--   xxxxxxxx
--   XXXX-xxxxx XX xxxxxxxxxx
-
-Xxxx xxx xxx xxxxxx xxxxx xxxxxxxxxx xx xxxxxxxx xxxxxxxxxx xxxxxxx. Xxxx X/X, xxxxxxxxxx xxxxx xxxxxxx, xxxxxxxx xxxxxxx xxxx xxxxxxxxxxxx xxxxxxx, xxxxxxx xxxx xxxx xx xxx xxx xx xx xx xxxxxxxxxxx xxxxx xxxxx xxxxxxx (xx xxxxxxx xxxxxxx) xxxxxxxxx xx xxxxxx xxx xxxxx xxxxxx xx xxxxxxxx. Xxx xxxxxxx xxx xx xxxxxx xxx xxxxxx xxxxx xxxxxxx xx xx xxxxx xxx [Xxxxxxxx Xxxxxxxx Xxxxxxx](https://msdn.microsoft.com/library/dd492418.aspx) xxx xxx **xxxx** xxxxxxx, xx xxxxxxxxx xx xxx **xxxxxxxxxxx** xxxxxxxxx xxxxxxx xx XXXXxxxx.x. Xxxxx xxx [Xxxxxxxx Xxxxxxxx Xxxxxxx](https://msdn.microsoft.com/library/dd492418.aspx) xxxxx xxxxxx xxxxxxxxx xx xxxxxxxx xxxx xxx xxxxxxxxxxxxx XXXx, xxx xxx xxxxxxx xxxxxxxxxx xxxx xxxxxxxxx xxxx xxxxx xx xxx xxxxxxx xxx xxxx xxxx xxxx xxxx xxxxxxxxx XXX xxxxxxxxxxxx xx xxxxxxx xxxxxxxxxx.
-
-> **Xxxx**   Xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx, xxx xxxx xxxxxxxxx xxxx xxxxxxxx xx x xxxxxx-xxxxxxxx xxxxxxxxx (XXX). Xx xxx xxx xxxxxxxx x XX xxx xxxx XxxxxxX xxxx xxxxx [XXXX xxxxxxx](directx-and-xaml-interop.md), xxx xxx xxxx xxxxxx xxx xxxxxxxx xx xxxxx xxx XXX.
-
- 
-
-## Xxxxxxxxxxxxxx xxxx XxxxxxYX xxxxxxx
+## 非同期プログラミングと DirectX
 
 
-Xxxxxxxxxxxxxx xxx xxxxxx xxxxxxxx xx xxxx xxxxxxxxx xx xxxxxxxx xxxxxxx xxxx xxxxxxx x XxxxxxYX xxxxxxx xxxxx xx YY\_Y xx xxxxxx. Xxxxxxx, xxx xxxxx xxxx xx xxxxxxxx xxx xxx xx xxx xxxxxxxx XXX xx xxxx xxxxxxxxx, xxxx xx xxxxxxxxx xxxxxx xxxxxxxxx. Xx xxx xxxxxxxx xxxx, xxx xxxxx xxxx xx xxxxxxxx xxx xxxxxxxxx xx x xxxxx-xx xxxxxxx (XXX) xxxxxxx xxxx xxx YX xxxxx xxxxxxxxx xxx xxxxxxxxxx xxx xxxx xxxx xxxxxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxxxx. Xxxx xxxxxxx xxxx xxx xxx xxxx [**XXYXYYXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476385) xx xxxxxx xxx xxxxxx xxx xxxxxxxx xxxxxxx (xxx xxxxxxxx, xxxxxx, xxxxxxx, xxx xxxxx xxxxxx), xxxxxx, xxxxx xx xxxxxx-xxxxxxxx, xxx xxxxx xxxxxxxx xxxx xxx xxxxxxxxx xxxx xxxx xx xxxxxxxxxxxxxxx xxxxxxxxx (xxxx xx xxxxxxxx xxxxxxxx) xx xxxxxx xx xxxxxx. Xxx, xxxxx xxx xxx xxxxxx xxxxxxxx xxxxxxx xxxxx xxx xxx xxxxxx xxxxxxx xx xxxxxxxxx xxxxxxx (xxx xxxxxxxx xxxxxxxxx), xxx xxxxxx xxxx xxxxx xxxxxxx xxxxx xxxx xxxxxxxxxxxxxx xx xxx xxxx **XXYXYYXxxxxxXxxxxxx** xxxxxxxx.
+DirectX の学習経験や使用経験にかかわらず、グラフィックス処理パイプラインはすべてシングル スレッドで実行することをお勧めします。 ゲーム内のシーンには、排他的アクセスを必要とするリソースがいたるところに使われています。ビットマップやシェーダーといった各種アセットはその代表的な例です。 しかも、これらのリソースへのアクセスは、並列スレッド間ですべて同期させる必要があります。 レンダリングは、複数のスレッドで並列化することの難しい処理です。
 
-Xxx, xxxx xxx xxx xxxx xxx [**XXYXYYXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476379), xxxxx xx xxxx xxx xxxxxxxxxxxxxx, xx xxxxxx xxxxxxxx xxxxxxx. Xx, xxx xxx xxxxxx xxx **XXYXYYXxxxxx** xxxxxxx xx [**XXYXYYXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476385)? Xxxx, xxxxxxxxx, xxxxxx xxxxxxx xxx xxxxxxxxxxxxxx xxxxx xxx xx xxxxxxxxx xxx xxxx xxxxxxxx xxxxxxxxxx. Xxx xxx xxxxx xxx xxxxxx xxx xxxx xxx xx xx xxxx xxxxxxx xxxxxxxxxxxxxx, xxx xx xxx xxx xxxxxxx xx xxxxx xxx xxxxxxxx xxxxxxxx, xxx xxxxx xxxxx xxxx xxxxxx-xxxxxxxx **XXYXYYXxxxxxXxxxxxx** xxx xxxxxxxx xxxxxx xxxxxxxxxx. Xxxx xxxx, xxxx xxx xxxxxxxx xxxxxx xxxxxx xxxxx'x xxxxxxx xxxxxxxxxxxxxx xx xxxxxxx xxxxx, XxxxxxYX YY xxxxxxxx xx xxxxxx xxxxxxxxxxxx xxxxxx xx xxx xxxxxx xxxxxxx xxxxxxxxxx; xxx xx xxxxxxx xxxxx xxx xxx xxxxxxxxx, xx xxxxxxxx x xxxxxxxx xxxxxxxxxxxxxx. Xx x xxxxxx, xxx xxx xxxxx xxxxxxxxxxxxx xxxx xxxx xxxx xxx xx xxxxxxxxx xxxx xxxxxxxx xxxxxxxxxx xxxx xxxx xxxxxx xxxxxxx xxx xxxxxxxxxxxxx xxxxxx xxxxxxx xxxxxx.
+しかし、ゲームの構造に十分な複合性がある場合や、ゲームのパフォーマンスを強化する必要性がある場合、レンダリング パイプラインに直接関係しない一部のコンポーネントを非同期プログラミングによって並列化することは可能です。 最近のハードウェアは、マルチ コアとハイパースレッディングに対応した CPU を搭載しているので、ぜひそれを活かしましょう。 その確実な方法は、ゲームのコンポーネントのうち、Direct3D のデバイス コンテキストに直接アクセスする必要のないコンポーネントに非同期プログラミングを適用することです。たとえば、次のようなコンポーネントが該当します。
 
-Xx xxxx xxx xxxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxxx xxxxx xxx xxx xxxxxxxxxx xxxxxx, xxx xxxxxxxx xxxx xx xxxx xxx XXX xxxxxx, xxxxxxxxxx xxx xxxxxxx xxxxx xxxxx xxxxxxxxxx xxxxxx xx x xxxxxx xxxxxxx xxxxxxx xxxxxxxxxxx xxxxxxx xx xxx. Xx xxxx xxxx, xxx xxxxx xxx x xxxxxxxx [**XXYXYYXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476385) xxx xxxx xxxxxx, xxx xx xxxxx xxxxxxxxx (xxxx xxxxxxxx) xx xxxxxxxx xxxx xxxx xxx XYXYY\_XXXXXXXX\_XXXX\_XXXXXX xxxx. Xx xxxx xxxxxxxx, [**XXYXYYXxxxxxXxxxxxx::Xxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476425) xxxx xx xxxxxx xx xxx xxxxxxxxxx xxxxxx xx xxxxxxxx xxx xxxxxxxxx xx xxx xxxxxxx xxxx xxxxx xx xxxxxxxxxx xxx xxxxxxx xx xxxxxxxxxx xxx xxxxxxxx xxxxxx xx xxx xxxxxxx xxxxxx.
+-   ファイル I/O
+-   物理
+-   AI
+-   ネットワーク
+-   オーディオ
+-   コントロール
+-   XAML ベースの UI コンポーネント
 
-## Xxxxxxxx xxxxxxxxx
+こうしたコンポーネントについては、複数の同時実行スレッド上で処理することができます。 ファイル I/O (特にアセットの読み込み) を非同期で行うと、数メガバイトや数百メガバイトのアセットを読み込んだりストリーミングしたりしている間も、ゲームやアプリのインターフェイスを操作できるようになるため、マルチ スレッド化には非常に大きな意義があります。 これらのスレッドは、[並列パターン ライブラリ](https://msdn.microsoft.com/library/dd492418.aspx) と **task** パターン (PPLTasks.h に定義されている **concurrency** 名前空間) を使って作成、管理するのが最も簡単です。 [並列パターン ライブラリ](https://msdn.microsoft.com/library/dd492418.aspx) は、マルチ コアとハイパースレッディングに対応した CPU の利点をダイレクトに引き出し、体感的な読み込み時間から、CPU 計算やネットワーク処理の集中に伴う滞りや遅延にいたるまで、さまざまな側面を向上させます。
 
-
-Xxxxxxxx xxxxxxxxx xxxxxxx xxxxxxxx xxxxxxxx xx x xxxxxxx xxxx xx xxxx xxxx xxx xx xxxxxx xxxx xx xxxx xxxxx xxxx, xxx xx xxxxxxxx xx xxxxxxx xxxxxxxxx xx xxx xxxxxx xxxxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxx xx xxxxxxxxxx xxxxxxx. Xxxxx xxxxx xxxxxxxx xxx xxxxxxxxx, xxxx xxx xx xxxxxxxx xx xxx xxxxxx xxxx xxxxxxxxx xxx xxxxx xxxxxxx xxxxxx (xxxxx xxxxxx, xxxxxxx, xx xxxxx xxxxxxxx xxxxxx).
-
-Xxxxxx x xxxxxxxx xxxxxxx xxxxx [**XXYXYYXxxxxx::XxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476505) (xxxxxxx xx [**XYXYYXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476082) xx [**XYXYYXxxxxxXxxxxxXxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476083), xxxxx xxxxxx xx xxxxxxxxx xxxxxxx). Xxx xxxx xxxx, xxx [Xxxxxxxxx xxx Xxxxxxxx Xxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ff476892).
-
-## Xxxxxxx xxxxxx
-
-
-* [Xxxxxxxxxxxx xx Xxxxxxxxxxxxxx xx XxxxxxYX YY](https://msdn.microsoft.com/library/windows/desktop/ff476891)
+> **注**   ユニバーサル Windows プラットフォーム (UWP) アプリでは、ユーザー インターフェイスは完全にシングルスレッド アパートメント (STA) で実行されます。 DirectX ゲーム用の UI を [XAML の相互運用機能](directx-and-xaml-interop.md) を使って作成する場合、そのコントロールには、STA を使ってのみアクセスできます。
 
  
 
+## Direct3D デバイスでのマルチスレッド化
+
+
+デバイス コンテキストのマルチスレッド化は、Direct3D 機能レベル 11\_0 以上をサポートするグラフィックス デバイスでしか利用できません。 しかし、ゲーム専用機など、数多くのプラットフォームに搭載されている強力な GPU は最大限に活用したいものです。 たとえば、単純なケースでは、ヘッドアップ ディスプレイ (HUD) オーバーレイのレンダリングを 3D シーンのレンダリングとプロジェクションから切り離し、2 つのコンポーネントに独立した並列パイプラインを割り当てることができます。 どちらのスレッドも、同じ [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) を使ってリソース オブジェクト (テクスチャ、メッシュ、シェーダーなど、各種アセット) を作成、管理する必要がありますが、ID3D11DeviceContext はシングル スレッドであり、安全にアクセスするには何らかの同期機構 (クリティカル セクションなど) を実装する必要があります。 また、異なるスレッドのデバイス コンテキストに対し、(遅延レンダリング用の) 別々のコマンド リストを作成している間、これらのコマンド リストを同じ **ID3D11DeviceContext** インスタンスで同時に再生することはできません。
+
+現在では、スレッド セーフな [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476379) を使ってリソース オブジェクトを作成することもできるようになりました。 このような状況であれば、**ID3D11DeviceContext** は使わず、常に [**ID3D11Device**](https://msdn.microsoft.com/library/windows/desktop/ff476385) を使えばよいのではないでしょうか。 現時点では、一部のグラフィックス インターフェイスで、ドライバーがマルチスレッドをサポートしていない可能性があります。 デバイスに対して問い合わせを行い、マルチスレッドをサポートしているかどうかを調べることもできますが、幅広いユーザーを対象とするために、あえてシングル スレッドの **ID3D11DeviceContext** を使って、リソース オブジェクトを管理する場合があります。 もっとも、グラフィックス デバイス ドライバーがマルチスレッドやコマンド リストをサポートしていない場合、Direct3D 11 は、デバイス コンテキストへの同期アクセスを内部的に処理することを試み、コマンド リストがサポートされていなかった場合は、ソフトウェアによって実装された同等の機能を提供します。 結果として、プラットフォームのグラフィックス インターフェイスについて、デバイス コンテキストへのマルチスレッド アクセスをドライバーがサポートしていない場合でもきちんと動作するマルチスレッド対応のコードを作成することが可能です。
+
+開発しているアプリが、コマンド リストの処理用とフレームの表示用に別々のスレッドをサポートする場合、GPU はアクティブにしておきましょう。体感的な引っかかりや遅延を生じることなく適切なタイミングでフレームを表示すると共に、コマンド リストを処理することができます。 この場合、スレッドごとに別個の [**ID3D11DeviceContext**](https://msdn.microsoft.com/library/windows/desktop/ff476385) を使い、D3D11\_RESOURCE\_MISC\_SHARED フラグを使ってリソース作成することによって、リソース (テクスチャなど) を共有します。 このシナリオでは、処理用のスレッドで [**ID3D11DeviceContext::Flush**](https://msdn.microsoft.com/library/windows/desktop/ff476425) を呼び出し、コマンド リストの実行を完了してから、表示用のスレッドで、リソース オブジェクトの処理結果を表示する必要があります。
+
+## 遅延レンダリング
+
+
+遅延レンダリングは、グラフィックス コマンドを後から再生できるようにコマンド リストに記録するもので、一方のスレッドでレンダリングを行いながら、別のスレッドで、レンダリングに使うコマンドを記録するしくみになっています。 必要なコマンドがすべて揃った後、最終的な表示オブジェクト (フレーム バッファー、テクスチャなどのグラフィックス出力) を生成したスレッド上で、それらのコマンドを実行することができます。
+
+遅延コンテキストは、(イミディエイト コンテキストを作成する) [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) や [**D3D11CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083) ではなく、[**ID3D11Device::CreateDeferredContext**](https://msdn.microsoft.com/library/windows/desktop/ff476505) を使って作成します。 詳しくは、「[イミディエイト レンダリングおよびディファード レンダリング](https://msdn.microsoft.com/library/windows/desktop/ff476892)」をご覧ください。
+
+## 関連トピック
+
+
+* [Direct3D 11 でのマルチスレッドの概要](https://msdn.microsoft.com/library/windows/desktop/ff476891)
+
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

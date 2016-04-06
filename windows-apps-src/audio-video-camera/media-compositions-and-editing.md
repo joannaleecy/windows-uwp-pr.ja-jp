@@ -1,150 +1,154 @@
 ---
-xx.xxxxxxx: XYXXYYYX-YXYY-YYXX-XYYX-YXXXXXYYYYXY
-xxxxxxxxxxx: Xxx XXXx xx xxx Xxxxxxx.Xxxxx.Xxxxxxx xxxxxxxxx xxxxx xxx xx xxxxxxx xxxxxxx xxxx xxxx xxxxxx xxx xxxxx xx xxxxxx xxxxx xxxxxxxxxxxx xxxx xxxxx xxx xxxxx xxxxxx xxxxx.
-xxxxx: Xxxxx xxxxxxxxxxxx xxx xxxxxxx
+ms.assetid: C4DB495D-1F91-40EF-A55C-5CABBF3269A2
+description: The APIs in the Windows.Media.Editing namespace allow you to quickly develop apps that enable the users to create media compositions from audio and video source files.
+title: Media compositions and editing
 ---
 
-# Xxxxx xxxxxxxxxxxx xxx xxxxxxx
+# Media compositions and editing
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxx XXXx xx xxx [**Xxxxxxx.Xxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn640565) xxxxxxxxx xxxxx xxx xx xxxxxxx xxxxxxx xxxx xxxx xxxxxx xxx xxxxx xx xxxxxx xxxxx xxxxxxxxxxxx xxxx xxxxx xxx xxxxx xxxxxx xxxxx. Xxxxxxxx xx xxx xxxxxxxxx xxxxxxx xxx xxxxxxx xx xxxxxxxxxxxxxxxx xxxxxx xxxxxxxx xxxxx xxxxx xxxxxxxx, xxx xxxxx xxx xxxxx xxxxxxxx, xxx xxxxxxxxxx xxxxx, xxx xxxxx xxxx xxxxx xxx xxxxx xxxxxxx. Xxxx xxxxxxx, xxxxx xxxxxxxxxxxx xxx xx xxxxxxxx xxxx x xxxx xxxxx xxxx xxx xxxxxxxx xx xxxxxxx, xxx xxxxxxxxxxxx xxx xxxx xx xxxxxxxxxx xx xxx xxxxxxxxxxxx xxxx xxxx, xxxxxxxx xxx xxxx xx xxxx xxx xxxxxx xxxxxxxxxxxx xxxx xxxx xxxx xxxxxxxxxx xxxxxxx. Xxx xx xxxx xxxxxxxxxxxxx xx xxxxxxxx xx xx xxxx-xx-xxx Xxxxxxx Xxxxxxx xxxxxxxxx xxxx xxxxxxxxxxxx xxxxxxx xxx xxxxxx xxx xxxxxxxxxx xx xxxx xxxxxxxx xx xxxxxxx xxxxx xxxxx xxxx xxxxxxxx xx xxx xxx-xxxxx [Xxxxxxxxx Xxxxx Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ms694197) XXX.
+The APIs in the [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) namespace allow you to quickly develop apps that enable the users to create media compositions from audio and video source files. Features of the framework include the ability to programmatically append multiple video clips together, add video and image overlays, add background audio, and apply both audio and video effects. Once created, media compositions can be rendered into a flat media file for playback or sharing, but compositions can also be serialized to and deserialized from disk, allowing the user to load and modify compositions that they have previously created. All of this functionality is provided in an easy-to-use Windows Runtime interface that dramatically reduces the amount and complexity of code required to perform these tasks when compared to the low-level [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197) API.
 
-## Xxxxxx x xxx xxxxx xxxxxxxxxxx
+## Create a new media composition
 
-Xxx [**XxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652646) xxxxx xx xxx xxxxxxxxx xxx xxx xx xxx xxxxx xxxxx xxxx xxxx xx xxx xxxxxxxxxxx xxx xx xxxxxxxxxxx xxx xxxxxxxxx xxx xxxxx xxxxxxxxxxx, xxxxxxx xxx xxxxxx xxxxxxxxxxxx xx xxxx, xxx xxxxxxxxx x xxxxxxx xxxxxx xx xxx xxxxxxxxxxx xx xxxx xxx xxxx xxx xxxx xx xx xxx XX. Xx xxx **XxxxxXxxxxxxxxxx** xx xxxx xxx, xxxxxxx xxx [**Xxxxxxx.Xxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn640565) xxxxxxxxx xx xxxx xx xxx [**Xxxxxxx.Xxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn278962) xxxxxxxxx xxxx xxxxxxxx xxxxxxx XXXx xxxx xxx xxxx xxxx.
+The [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) class is the container for all of the media clips that make up the composition and is responsible for rendering the final composition, loading and saving compositions to disc, and providing a preview stream of the composition so that the user can view it in the UI. To use **MediaComposition** in your app, include the [**Windows.Media.Editing**](https://msdn.microsoft.com/library/windows/apps/dn640565) namespace as well as the [**Windows.Media.Core**](https://msdn.microsoft.com/library/windows/apps/dn278962) namespace that provides related APIs that you will need.
 
-[!xxxx-xx[XxxxxxxxxY](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
+[!code-cs[Namespace1](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace1)]
 
-Xxx **XxxxxXxxxxxxxxxx** xxxxxx xxxx xx xxxxxxxx xxxx xxxxxxxx xxxxxx xx xxxx xxxx, xx xxxxxxxxx xxx xxxx xxxxxxx x xxxxxx xxxxxxxx xx xxxxx xx xxxxx xx.
+The **MediaComposition** object will be accessed from multiple points in your code, so typically you will declare a member variable in which to store it.
 
-[!xxxx-xx[XxxxxxxXxxxxXxxxxxxxxxx](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaComposition)]
+[!code-cs[DeclareMediaComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaComposition)]
 
-Xxx xxxxxxxxxxx xxx **XxxxxXxxxxxxxxxx** xxxxx xx xxxxxxxxx.
+The constructor for **MediaComposition** takes no arguments.
 
-[!xxxx-xx[XxxxxXxxxxxxxxxxXxxxxxxxxxx](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetMediaCompositionConstructor)]
+[!code-cs[MediaCompositionConstructor](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetMediaCompositionConstructor)]
 
-## Xxx xxxxx xxxxx xx x xxxxxxxxxxx
+## Add media clips to a composition
 
-Xxxxx xxxxxxxxxxxx xxxxxxxxx xxxxxxx xxx xx xxxx xxxxx xxxxx. Xxx xxx xxx x [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh738369) xx xxxxx xxx xxxx xx xxxxxx x xxxxx xxxx. Xxxx xxx xxxx xxx xxxx xxxxxxxx, xxxxxx x xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn652596) xxxxxx xx xxxxxxx xxx xxxxx xxxx xx xxxxxxx [**XxxxxXxxx.XxxxxxXxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652607). Xxxx xxx xxx xxx xxxx xx xxx **XxxxxXxxxxxxxxxx** xxxxxx'x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652648) xxxx.
+Media compositions typically contain one or more video clips. You can use a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/hh738369) to allow the user to select a video file. Once the file has been selected, create a new [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) object to contain the video clip by calling [**MediaClip.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652607). Then you add the clip to the **MediaComposition** object's [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) list.
 
-[!xxxx-xx[XxxxXxxxXxxXxxXxxx](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetPickFileAndAddClip)]
+[!code-cs[PickFileAndAddClip](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetPickFileAndAddClip)]
 
--   Xxxxx xxxxx xxxxxx xx xxx **XxxxxXxxxxxxxxxx** xx xxx xxxx xxxxx xx xxxx xxxxxx xx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652648) xxxx.
+-   Media clips appear in the **MediaComposition** in the same order as they appear in [**Clips**](https://msdn.microsoft.com/library/windows/apps/dn652648) list.
 
--   X **XxxxxXxxx** xxx xxxx xx xxxxxxxx xx x xxxxxxxxxxx xxxx. Xxxxxxxxxx xx xxx x **XxxxxXxxx** xxxx xx xxxxxxx xxxxx xxxx xx xxx xxxxxxxxxxx xxxx xxxxxx xx xx xxxxx. Xx xxxxx x xxxxx xxxx xxxxxxxx xxxxx xx x xxxxxxxxxxx, xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652599) xx xxxxxx xxx **XxxxxXxxx** xxxxxxx xxxxx xxx xxxx xx xxxxx xx xxx xxxxxxxxxxx.
+-   A **MediaClip** can only be included in a composition once. Attempting to add a **MediaClip** that is already being used by the composition will result in an error. To reuse a video clip multiple times in a composition, call [**Clone**](https://msdn.microsoft.com/library/windows/apps/dn652599) to create new **MediaClip** objects which can then be added to the composition.
 
--   Xxxxxxxxx Xxxxxxx xxxx xx xxx xxxx xxxxxxxxxx xx xxxxxx xxx xxxxxx xxxx xxxxxx. Xxx [**XxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207457) xxxxxxxx xx xxx [**XxxxxxxXxxxxxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207456) xxxxx xxxxxx xxxx xxx xx xxxxx x xxxxxx xx x xxxx xxxx xxx xxxx xxxxxxxx xx xxx xxxx xx xxxx xxx xxx xxxxxx xxxxxxxxxxx xx xxxxxx xxx xxxx. Xxx **XxxxxxXxxxxxXxxx** xxx x xxxxxx xx YYYY xxxxxxx, xx xxxx xxx xxxxx xx xxxxxx xxx xxxx xx xxxx xxxx xx xxxx xxx xxxxxx xxxx. Xxxx xx xxxxxxxxxx xxxxxxxxx xx xxx xxxx xx xxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxx xxxxxxx xxxxxxxxxxxx.
+-   Universal Windows apps do not have permission to access the entire file system. The [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) property of the [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) class allows your app to store a record of a file that has been selected by the user so that you can retain permissions to access the file. The **FutureAccessList** has a maxium of 1000 entries, so your app needs to manage the list to make sure it does not become full. This is especially important if you plan to support loading and modifying previously created compositions.
 
--   X **XxxxxXxxxxxxxxxx** xxxxxxxx xxxxx xxxxx xx XXY xxxxxx.
+-   A **MediaComposition** supports video clips in MP4 format.
 
--   Xx x xxxxx xxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxxx xxxxxx, xxx xxx xxxxxx xxxxx xxxxx xxxxx xx xxxx xx xxx xxxxxxxxxxx xx xxxxxxx xxx [**XxxxxxxxXxxxxxxxXxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652627) xxxxxxxx.
+-   If a video file contains multiple embedded audio tracks, you can select which audio track is used in the composition by setting the [**SelectedEmbeddedAudioTrackIndex**](https://msdn.microsoft.com/library/windows/apps/dn652627) property.
 
--   Xxxxxx x **XxxxxXxxx** xxxx x xxxxxx xxxxx xxxxxxx xxx xxxxxx xxxxx xx xxxxxxx [**XxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652605) xxx xxxxxxxxxx x xxxxx xxx x xxxxxxxx xxx xxx xxxx.
+-   Create a **MediaClip** with a single color filling the entire frame by calling [**CreateFromColor**](https://msdn.microsoft.com/library/windows/apps/dn652605) and specifying a color and a duration for the clip.
 
--   Xxxxxx x **XxxxxXxxx** xxxx xx xxxxx xxxx xx xxxxxxx [**XxxxxxXxxxXxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652610) xxx xxxxxxxxxx xx xxxxx xxxx xxx x xxxxxxxx xxx xxx xxxx.
+-   Create a **MediaClip** from an image file by calling [**CreateFromImageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652610) and specifying an image file and a duration for the clip.
 
--   Xxxxxx x **XxxxxXxxx** xxxx x [**XXxxxxxYXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn965505) xx xxxxxxx [**XxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/dn764774) xxx xxxxxxxxxx x xxxxxxx xxx x xxxxxxxx xxxx xxx xxxx.
+-   Create a **MediaClip** from a [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) by calling [**CreateFromSurface**](https://msdn.microsoft.com/library/dn764774) and specifying a surface and a duration from the clip.
 
-## Xxxxxxx xxx xxxxxxxxxxx xx x XxxxxXxxxxxx
+## Preview the composition in a MediaElement
 
-Xx xxxxxx xxx xxxx xx xxxx xxx xxxxx xxxxxxxxxxx, xxx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xx xxx XXXX xxxx xxxx xxxxxxx xxxx XX.
+To enable the user to view the media composition, add a [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) to the XAML file that defines your UI.
 
-[!xxxx-xxx[XxxxxXxxxxxx](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
+[!code-xml[MediaElement](./code/MediaEditing/cs/MainPage.xaml#SnippetMediaElement)]
 
-Xxxxxxx x xxxxxx xxxxxxxx xx xxxx [**XxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn282716).
+Declare a member variable of type [**MediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn282716).
 
 
-[!xxxx-xx[XxxxxxxXxxxxXxxxxxXxxxxx](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
+[!code-cs[DeclareMediaStreamSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetDeclareMediaStreamSource)]
 
-Xxxx xxx **XxxxxXxxxxxxxxxx** xxxxxx'x [**XxxxxxxxXxxxxxxXxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652674) xxxxxx xx xxxxxx x **XxxxxXxxxxxXxxxxx** xxx xxx xxxxxxxxxxx xxx xxxx xxxx xxx [**XxxXxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn299029) xxxxxx xx xxx **XxxxxXxxxxxx**. Xxx xxx xxxxxxxxxxx xxx xx xxxxxx xx xxx XX.
+Call the **MediaComposition** object's [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) method to create a **MediaStreamSource** for the composition and then call the [**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) method of the **MediaElement**. Now the composition can be viewed in the UI.
 
 
-[!xxxx-xx[XxxxxxXxxxxXxxxxxxXxxxxx](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetUpdateMediaElementSource)]
+[!code-cs[UpdateMediaElementSource](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetUpdateMediaElementSource)]
 
--   Xxx **XxxxxXxxxxxxxxxx** xxxx xxxxxxx xx xxxxx xxx xxxxx xxxx xxxxxx xxxxxxx [**XxxxxxxxXxxxxxxXxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652674), xx xxx xxxxxxxx xxxxxx xxxx xx xxxx.
+-   The **MediaComposition** must contain at least one media clip before calling [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674), or the returned object will be null.
 
--   Xxx **XxxxxXxxxxxx** xxxxxxxx xx xxx xxxxxxxxxxxxx xxxxxxx xx xxxxxxx xxxxxxx xx xxx xxxxxxxxxxx. Xx xx xxxxxxxxxxx xxxx xxx xxxx xxxx **XxxxxxxxXxxxxxxXxxxxXxxxxxXxxxxx** xxx **XxxXxxxxXxxxxxXxxxxx** xxxxx xxxx xxx xxxx x xxx xx xxxxxxx xx xxx xxxxxxxxxxx xxx xxxx xx xxxxxx xxx XX.
+-   The **MediaElement** timeline is not automatically updated to reflect changes in the composition. It is recommended that you call both **GeneratePreviewMediaStreamSource** and **SetMediaStreamSource** every time you make a set of changes to the composition and want to update the UI.
 
-Xx xx xxxxxxxxxxx xxxx xxx xxx xxx **XxxxxXxxxxxXxxxxx** xxxxxx xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227419) xxxxxxxx xx xxx **XxxxxXxxxxxx** xx xxxx xxxx xxx xxxx xxxxxxxxx xxxx xxxx xxx xxxx xx xxxxx xx xxxxxxx xxxxxxxxxx xxxxxxxxx.
+It is recommended that you set the **MediaStreamSource** object and the [**Source**](https://msdn.microsoft.com/library/windows/apps/br227419) property of the **MediaElement** to null when the user navigates away from the page in order to release associated resources.
 
-[!xxxx-xx[XxXxxxxxxxxXxxx](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
+[!code-cs[OnNavigatedFrom](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOnNavigatedFrom)]
 
-## Xxxxxx xxx xxxxxxxxxxx xx x xxxxx xxxx
+## Render the composition to a video file
 
-Xx xxxxxx x xxxxx xxxxxxxxxxx xx x xxxx xxxxx xxxx xx xxxx xx xxx xx xxxxxx xxx xxxxxx xx xxxxx xxxxxxx, xxx xxxx xxxx xx xxx XXXx xxxx xxx [**Xxxxxxx.Xxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207105) xxxxxxxxx. Xx xxxxxx xxx XX xx xxx xxxxxxxx xx xxx xxxxx xxxxxxxxx, xxx xxxx xxxx xxxx XXXx xxxx xxx [**Xxxxxxx.XX.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br208383) xxxxxxxxx.
+To render a media composition to a flat video file so that it can be shared and viewed on other devices, you will need to use APIs from the [**Windows.Media.Transcoding**](https://msdn.microsoft.com/library/windows/apps/br207105) namespace. To update the UI on the progress of the async operation, you will also need APIs from the [**Windows.UI.Core**](https://msdn.microsoft.com/library/windows/apps/br208383) namespace.
 
-[!xxxx-xx[XxxxxxxxxY](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace2)]
+[!code-cs[Namespace2](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetNamespace2)]
 
-Xxxxx xxxxxxxx xxx xxxx xx xxxxxx xx xxxxxx xxxx xxxx x [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207871), xxxxxx xxx xxxxxxxxxxx xx xxx xxxxxxxx xxxx xx xxxxxxx xxx **XxxxxXxxxxxxxxxx** xxxxxx'x [**XxxxxxXxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652690). Xxx xxxx xx xxx xxxx xx xxx xxxxxxxxx xxxxxxx xxxxxx xxxxxxx xxx xxxxxxx xx xxxxxxxx xx [**XxxxxXxxxxxxxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/br205807).
+After allowing the user to select an output file with a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871), render the composition to the selected file by calling the **MediaComposition** object's [**RenderToFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652690). The rest of the code in the following example simply follows the pattern of handling an [**AsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/desktop/br205807).
 
-[!xxxx-xx[XxxxxxXxxxxxxxxxxXxXxxx](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
+[!code-cs[RenderCompositionToFile](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetRenderCompositionToFile)]
 
--   Xxx [**XxxxxXxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn640561) xxxxxx xxx xx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxxx xxxxxx xxx xxxxxxxxx xx xxxxxxxx xx xxxxxxxx xxxxx xxxxx. **Xxxx** xxxxxx xxxxxxxxxxx xx xx xxxxxx xxxx xxxxx-xxxxxxxxx xxxxxxxx, **Xxxxxxx** xxxxxx xxxxxxxxxxx xx xx xxxxxx xxx xxxx xxxx xxxxxxx xxxxxxxx.
+-   The [**MediaTrimmingPreference**](https://msdn.microsoft.com/library/windows/apps/dn640561) allows you to prioritize speed of the transcoding operation versus the precision of trimming of adjacent media clips. **Fast** causes transcoding to be faster with lower-precision trimming, **Precise** causes transcoding to be slower but with more precise trimming.
 
-## Xxxx x xxxxx xxxx
+## Trim a video clip
 
-Xxxx xxx xxxxxxxx xx x xxxxx xxxx xx x xxxxxxxxxxx xx xxxxxxx xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn652596) xxxxxxx [**XxxxXxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652637) xxxxxxxx, xxx [**XxxxXxxxXxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn652634) xxxxxxxx, xx xxxx.
+Trim the duration of a video clip in a composition by setting the [**MediaClip**](https://msdn.microsoft.com/library/windows/apps/dn652596) objects [**TrimTimeFromStart**](https://msdn.microsoft.com/library/windows/apps/dn652637) property, the [**TrimTimeFromEnd**](https://msdn.microsoft.com/library/windows/apps/dn652634) property, or both.
 
-[!xxxx-xx[XxxxXxxxXxxxxxXxxxxxxXxxxxxxx](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetTrimClipBeforeCurrentPosition)]
+[!code-cs[TrimClipBeforeCurrentPosition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetTrimClipBeforeCurrentPosition)]
 
--   Xxxx xxx xxx xxx XX xxxx xxx xxxx xx xxx xxx xxxx xxxxxxx xxx xxxxx xxx xxx xxxx xxxxxx. Xxx xxxxxxx xxxxx xxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227407) xxxxxxxx xx xxx **XxxxxXxxxxxx** xx xxxxx xxxxxxxxx xxxxx XxxxxXxxx xx xxxxxxx xxxx xx xxx xxxxxxx xxxxxxxx xx xxx xxxxxxxxxxx xx xxxxxxxx xxx [**XxxxxXxxxXxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652629) xxx [**XxxXxxxXxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652618). Xxxx xxx **Xxxxxxxx** xxx **XxxxxXxxxXxXxxxxxxxxxx** xxxxxxxxxx xxx xxxx xxxxx xx xxxxxxxxx xxx xxxxxx xx xxxx xx xxxx xxxx xxx xxxxxxxxx xx xxx xxxx. Xxx **XxxxxXxXxxxxxx** xxxxxx xx xx xxxxxxxxx xxxxxx xxxx xxx **Xxxxxx.Xxxx** xxxxxxxxx xxxx xxxxxxxxxx xxx xxxx xxx xxxxxxxxx xxxxx xxxx x xxxx.
--   Xxx [**XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652625) xxxxxxxx xx xxx **XxxxxXxxx** xxxxxx xxxx xxx xxxx xxx xxxxxxxx xx xxx xxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxx.
--   Xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652631) xxxxxxxx xxxx xxx xxxx xxx xxxxxxxx xx xxx xxxxx xxxx xxxxx xxxxxxxx xx xxxxxxx.
--   Xxxxxxxxxx x xxxxxxxx xxxxx xxxx xx xxxxxx xxxx xxx xxxxxxxx xxxxxxxx xx xxx xxxx xxxx xxx xxxxx xx xxxxx. Xxxxxxx, xx x xxxxxxxxxxx xxxxxxxx xxxx x xxxxxx xxxx xxx xxxx xx xxxxxxx xx xxxx xxxxxx xx xxxxxxxxxx x xxxxx xxxxxxxx xxxxx, x xxxxxxxxxx xxxx xx [**XxxxxxxxXxxxxxxXxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652674) xxxx xxxxxx xxxx, xx xx xxx xxxxxxxxxxx xxx xx xxxxx.
+-   Your can use any UI that you want to let the user specify the start and end trim values. The example above uses the [**Position**](https://msdn.microsoft.com/library/windows/apps/br227407) property of the **MediaElement** to first determine which MediaClip is playing back at the current position in the composition by checking the [**StartTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652629) and [**EndTimeInComposition**](https://msdn.microsoft.com/library/windows/apps/dn652618). Then the **Position** and **StartTimeInComposition** properties are used again to calculate the amount of time to trim from the beginning of the clip. The **FirstOrDefault** method is an extension method from the **System.Linq** namespace that simplifies the code for selecting items from a list.
+-   The [**OriginalDuration**](https://msdn.microsoft.com/library/windows/apps/dn652625) property of the **MediaClip** object lets you know the duration of the media clip without any clipping applied.
+-   The [**TrimmedDuration**](https://msdn.microsoft.com/library/windows/apps/dn652631) property lets you know the duration of the media clip after trimming is applied.
+-   Specifying a trimming value that is larger than the original duration of the clip does not throw an error. However, if a composition contains only a single clip and that is trimmed to zero length by specifying a large trimming value, a subsequent call to [**GeneratePreviewMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn652674) will return null, as if the composition has no clips.
 
-## Xxx x xxxxxxxxxx xxxxx xxxxx xx x xxxxxxxxxxx
+## Add a background audio track to a composition
 
-Xx xxx x xxxxxxxxxx xxxxx xx x xxxxxxxxxxx, xxxx xx xxxxx xxxx xxx xxxx xxxxxx x [**XxxxxxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652544) xxxxxx xx xxxxxxx xxx xxxxxxx xxxxxx [**XxxxxxxxxxXxxxxXxxxx.XxxxxxXxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652561). Xxxx, xxx xxx **XxxxxxxxxxXxxxxXxxxx** xx xxx xxxxxxxxxxx'x [**XxxxxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652647) xxxxxxxx.
+To add a background track to a composition, load an audio file and then create a [**BackgroundAudioTrack**](https://msdn.microsoft.com/library/windows/apps/dn652544) object by calling the factory method [**BackgroundAudioTrack.CreateFromFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn652561). Then, add the **BackgroundAudioTrack** to the composition's [**BackgroundAudioTracks**](https://msdn.microsoft.com/library/windows/apps/dn652647) property.
 
-[!xxxx-xx[XxxXxxxxxxxxxXxxxxXxxxx](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddBackgroundAudioTrack)]
+[!code-cs[AddBackgroundAudioTrack](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddBackgroundAudioTrack)]
 
--   X **XxxxxXxxxxxxxxxx** xxxxxxxx xxxxxxxxxx xxxxx xxxxxx xx xxx xxxxxxxxx xxxxxxx: XXY, XXX, XXXX
+-   A **MediaComposition** supports background audio tracks in the following formats: MP3, WAV, FLAC
 
--   X xxxxxxxxxx xxxxx xxxxx
+-   A background audio track
 
--   Xx xxxx xxxxx xxxxx, xxx xxxxxx xxx xxx [**XxxxxxxXxxxxxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207456) xxxxx xx xxxxxxxx xxxxxx xx xxxxx xx xxx xxxxxxxxxxx.
+-   As with video files, you should use the [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) class to preserve access to files in the composition.
 
--   Xx xxxx **XxxxxXxxx**, x **XxxxxxxxxxXxxxxXxxxx** xxx xxxx xx xxxxxxxx xx x xxxxxxxxxxx xxxx. Xxxxxxxxxx xx xxx x **XxxxxxxxxxXxxxxXxxxx** xxxx xx xxxxxxx xxxxx xxxx xx xxx xxxxxxxxxxx xxxx xxxxxx xx xx xxxxx. Xx xxxxx xx xxxxx xxxxx xxxxxxxx xxxxx xx x xxxxxxxxxxx, xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652599) xx xxxxxx xxx **XxxxxXxxx** xxxxxxx xxxxx xxx xxxx xx xxxxx xx xxx xxxxxxxxxxx.
+-   As with **MediaClip**, a **BackgroundAudioTrack** can only be included in a composition once. Attempting to add a **BackgroundAudioTrack** that is already being used by the composition will result in an error. To reuse an audio track multiple times in a composition, call [**Clone**](https://msdn.microsoft.com/library/windows/apps/dn652599) to create new **MediaClip** objects which can then be added to the composition.
 
--   Xx xxxxxxx, xxxxxxxxxx xxxxx xxxxxx xxxxx xxxxxxx xx xxx xxxxx xx xxx xxxxxxxxxxx. Xx xxxxxxxx xxxxxxxxxx xxxxxx xxx xxxxxxx, xxx xx xxx xxxxxx xxxx xxxxx xxxxxxx xx xxx xxxxx xx xxx xxxxxxxxxxx. Xx xxxxx x xxxxxxxxxx xxxxx xxxxx xx xx xxxxx xxxxxxxx xx xxxxxxx xxxx, xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652563) xxxxxxxx xx xxx xxxxxxx xxxx xxxxxx.
+-   By default, background audio tracks begin playing at the start of the composition. If multiple background tracks are present, all of the tracks will begin playing at the start of the composition. To cause a background audio track to be begin playback at another time, set the [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn652563) property to the desired time offset.
 
-## Xxx xx xxxxxxx xx x xxxxxxxxxxx
+## Add an overlay to a composition
 
-Xxxxxxxx xxxxx xxx xx xxxxx xxxxxxxx xxxxxx xx xxxxx xx xxx xx xxxx xxxxx xx x xxxxxxxxxxx. X xxxxxxxxxxx xxx xxxxxxx xxxxxxxx xxxxxxx xxxxxx, xxxx xx xxxxx xxx xxxxxxx xxxxxxxx xxxxxxxx. Xxxxxx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn764793) xxxxxx xx xxxxxxx x **XxxxxXxxx** xxxx xxx xxxxxxxxxxx. Xxx xxx xxxxxxxx xxx xxxxxxx xx xxx xxxxxxx, xxxx xxxxxx x xxx [**XxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn764795) xxx xxx xxx **XxxxxXxxxxxx** xx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/dn280411) xxxx. Xxxxxxx, xxx xxx **XxxxxXxxxxxxXxxxx** xx xxx xxxxxxxxxxx'x [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn764791) xxxx.
+Overlays allow you to stack multiple layers of video on top of each other in a composition. A composition can contain multiple overlay layers, each of which can include multiple overlays. Create a [**MediaOverlay**](https://msdn.microsoft.com/library/windows/apps/dn764793) object by passing a **MediaClip** into its constructor. Set the position and opacity of the overlay, then create a new [**MediaOverlayLayer**](https://msdn.microsoft.com/library/windows/apps/dn764795) and add the **MediaOverlay** to its [**Overlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411) list. Finally, add the **MediaOverlayLayer** to the composition's [**OverlayLayers**](https://msdn.microsoft.com/library/windows/apps/dn764791) list.
 
-[!xxxx-xx[XxxXxxxxxx](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddOverlay)]
+[!code-cs[AddOverlay](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddOverlay)]
 
--   Xxxxxxxx xxxxxx x xxxxx xxx x-xxxxxxx xxxxx xx xxxxx xxxxx xx xxxxx xxxxxxxxxx xxxxx'x **Xxxxxxxx** xxxx. Xxxxxx xxxxxxx xxxxxx xxx xxxx xxx xxxxxxxx xx xxx xx xxxxx xxxxxxx. Xxx xxxx xx xxxx xx xxxxxxx xxxxxx xxxxxx x xxxxxxxxxxx. X xxxxx xxxx xxxxxx xxxxx xx xxx xxxxxxxxxxx'x **XxxxxxxXxxxxx** xxxx xxxx xx xxxxxxxx xx xxx xx xxxxx xxxxxxx.
+-   Overlays within a layer are z-ordered based on their order in their containing layer's **Overlays** list. Higher indices within the list are rendered on top of lower indices. The same is true of overlay layers within a composition. A layer with higher index in the composition's **OverlayLayers** list will be rendered on top of lower indices.
 
--   Xxxxxxx xxxxxxxx xxx xxxxxxx xx xxx xx xxxx xxxxx xxxxxxx xx xxxxx xxxxxx xxxxxxxxxxxx, xxx xxxxxxxx xxxxx xxxxxxxx xx xxx xxxxxxxxx xx xxx xxxxxxxxxxx xx xxxxxxx. Xx xxxxx xx xxxxxxx xx xx xxxxx xxxxxxxx xx xxxxxxx xxxx, xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn764810) xxxxxxxx xx xxx xxxxxxx xxxx xxxxxx.
+-   Because overlays are stacked on top of each other instead of being played sequentially, all overlays start playback at the beginning of the composition by default. To cause an overlay to be begin playback at another time, set the [**Delay**](https://msdn.microsoft.com/library/windows/apps/dn764810) property to the desired time offset.
 
-## Xxx xxxxxxx xx x xxxxx xxxx
+## Add effects to a media clip
 
-Xxxx **XxxxxXxxx** xx x xxxxxxxxxxx xxx x xxxx xx xxxxx xxx xxxxx xxxxxxx xx xxxxx xxxxxxxx xxxxxxx xxx xx xxxxx. Xxx xxxxxxx xxxx xxxxxxxxx [**XXxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn608044) xxx [**XXxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn608047) xxxxxxxxxxxx. Xxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxxx xxxxx xxxxxxx xxxxxxxx xx xxxxxx xxx xxxxxxxxx xxxxxx **XxxxxXxxx** xxx xxxx xxxxxxx x xxx xxxxxxxx xx xxx [**XxxxxXxxxxxxxxxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926762) xxx xxxxxxx xx xx xxx xxxxx xxxx'x [**XxxxxXxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652643) xxxx.
+Each **MediaClip** in a composition has a list of audio and video effects to which multiple effects can be added. The effects must implement [**IAudioEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608044) and [**IVideoEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn608047) respectively. The following example uses the current media element position to choose the currently viewed **MediaClip** and then creates a new instance of the [**VideoStabilizationEffectDefinition**](https://msdn.microsoft.com/library/windows/apps/dn926762) and appends it to the media clip's [**VideoEffectDefinitions**](https://msdn.microsoft.com/library/windows/apps/dn652643) list.
 
-[!xxxx-xx[XxxXxxxxXxxxxx](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddVideoEffect)]
+[!code-cs[AddVideoEffect](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetAddVideoEffect)]
 
-## Xxxx x xxxxxxxxxxx xx x xxxx
+## Save a composition to a file
 
-Xxxxx xxxxxxxxxxxx xxx xx xxxxxxxxxx xx x xxxx xx xx xxxxxxxx xx x xxxxx xxxx. Xxxx xx xxxxxx xxxx xxx xxxx xxxx xxx [**XxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652646) xxxxxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn640554) xx xxxx xxx xxxxxxxxxxx.
+Media compositions can be serialized to a file to be modified at a later time. Pick an output file and then call the [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) method [**SaveAsync**](https://msdn.microsoft.com/library/windows/apps/dn640554) to save the composition.
 
-[!xxxx-xx[XxxxXxxxxxxxxxx](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetSaveComposition)]
+[!code-cs[SaveComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetSaveComposition)]
 
-## Xxxx x xxxxxxxxxxx xxxx x xxxx
+## Load a composition from a file
 
-Xxxxx xxxxxxxxxxxx xxx xx xxxxxxxxxxxx xxxx x xxxx xx xxxxx xxx xxxx xx xxxx xxx xxxxxx xxx xxxxxxxxxxx. Xxxx x xxxxxxxxxxx xxxx xxx xxxx xxxx xxx [**XxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652646) xxxxxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn652684) xx xxxx xxx xxxxxxxxxxx.
+Media compositions can be deserialized from a file to allow the user to view and modify the composition. Pick a composition file and then call the [**MediaComposition**](https://msdn.microsoft.com/library/windows/apps/dn652646) method [**LoadAsync**](https://msdn.microsoft.com/library/windows/apps/dn652684) to load the composition.
 
-[!xxxx-xx[XxxxXxxxxxxxxxx](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOpenComposition)]
+[!code-cs[OpenComposition](./code/MediaEditing/cs/MainPage.xaml.cs#SnippetOpenComposition)]
 
--   Xx x xxxxx xxxx xx xxx xxxxxxxxxxx xx xxx xx x xxxxxxxx xxxx xxx xx xxxxxxxx xx xxxx xxx xxx xx xxx xx xxx [**XxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207457) xxxxxxxx xx xxx [**XxxxxxxXxxxxxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207456) xxxxx xxx xxxx xxx, xx xxxxx xxxx xx xxxxxx xxxx xxxxxxx xxx xxxxxxxxxxx.
+-   If a media file in the composition is not in a location that can be accessed by your app and is not in the [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) property of the [**StorageApplicationPermissions**](https://msdn.microsoft.com/library/windows/apps/br207456) class for your app, an error will be thrown when loading the composition.
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

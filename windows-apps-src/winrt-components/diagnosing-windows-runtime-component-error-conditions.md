@@ -1,131 +1,131 @@
 ---
-xxxxx: Xxxxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxx xxxxx xxxxxxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xxxxxxxxxx xxxxxxxxxxx xxxxx xxxxxxxxxxxx xx Xxxxxxx Xxxxxxx Xxxxxxxxxx xxxxxxx xxxx xxxxxxx xxxx.
-xx.xxxxxxx: XXYXYXYY-XYYX-YYYX-XYYX-XYXXXXXXYYYY
+title: Diagnosing Windows Runtime Component error conditions
+description: This article provides additional information about restrictions on Windows Runtime Components written with managed code.
+ms.assetid: CD0D0E11-E68A-411D-B92E-E9DECFDC9599
 ---
 
-# Xxxxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxx xxxxx xxxxxxxxxx
+# Diagnosing Windows Runtime Component error conditions
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-\[Xxxx xxxxxxxxxxx xxxxxxx xx xxx-xxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxx xx'x xxxxxxxxxxxx xxxxxxxx. Xxxxxxxxx xxxxx xx xxxxxxxxxx, xxxxxxx xx xxxxxxx, xxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxx.\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-Xxxx xxxxxxx xxxxxxxx xxxxxxxxxx xxxxxxxxxxx xxxxx xxxxxxxxxxxx xx Xxxxxxx Xxxxxxx Xxxxxxxxxx xxxxxxx xxxx xxxxxxx xxxx. Xx xxxxxxx xx xxx xxxxxxxxxxx xxxx xx xxxxxxxx xx xxxxx xxxxxxxx xxxx [Xxxxxxxx.xxx (Xxxxxxx Xxxxxxx Xxxxxxxx Xxxxxx Xxxx)](https://msdn.microsoft.com/library/hh925576.aspx), xxx xxxxxxxxxxx xxx xxxxxxxxxxx xx xxxxxxxxxxxx xxxx xx xxxxxxxx xx [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X\# xxx Xxxxxx Xxxxx](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+This article provides additional information about restrictions on Windows Runtime Components written with managed code. It expands on the information that is provided in error messages from [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx), and complements the information on restrictions that is provided in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
-Xxxx xxxxxxx xxxxx’x xxxxx xxx xxxxxx. Xxx xxxxxx xxxxxxxxx xxxx xxx xxxxxxx xx xxxxxxx xxxxxxxx, xxx xxxx xxxxxxxx xxxxxxxx x xxxxx xx xxxxxxxxxx xxxxx xxxxxxxx. Xxxxxx xxx xxxxxxx xxxx (xxxxxxxx xxxxxxxx xxxxxx xxx xxxxxxxxxxxx) xx xxx xxxxxxx xxxxxx. Xx xxx xxx’x xxxx xxx xxxxxxxxxxx xxx xxxx xxxx, xxxxxx xxxx xx xxxxxxx xxx xxxxxxxxxxxxx xx xxxxx xxx xxxxxxxx xxxxxx xx xxx xxx xx xxxx xxxxxxx. Xxxxxxx xxx xxxxx xxxxxxx. Xxxxxxxxxxxxx, xxx xxx xxxx x xxx xx xxx Xxxxxxxxx Xxxxxxx xxxxxxx.
+This article doesn’t cover all errors. The errors discussed here are grouped by general category, and each category includes a table of associated error messages. Search for message text (omitting specific values for placeholders) or for message number. If you don’t find the information you need here, please help us improve the documentation by using the feedback button at the end of this article. Include the error message. Alternatively, you can file a bug at the Microsoft Connect website.
 
-## Xxxxx xxxxxxx xxx xxxxxxxxxxxx xxxxx xxxxxxxxx xxxxxxxx xxxxxxxxx xxxx
+## Error message for implementing async interface provides incorrect type
 
 
-Xxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xxxxxx xxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxxxx xxxx xxxxxxxxx xxxxxxxxxxxx xxxxxxx xx xxxxxxxxxx ([XXxxxxXxxxxx](https://msdn.microsoft.com/library/br205781.aspx), [XXxxxxXxxxxxXxxxXxxxxxxx&xx;XXxxxxxxx&xx;](https://msdn.microsoft.com/library/br205784.aspx), [XXxxxxXxxxxxxxx&xx;XXxxxxx&xx;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx), xx [XXxxxxXxxxxxxxxXxxxXxxxxxxx&xx;XXxxxxx, XXxxxxxxx&xx;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). Xxxxxxx, xxx .XXX Xxxxxxxxx xxxxxxxx xxx [XxxxxXxxx](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) xxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxxx xx Xxxxxxx Xxxxxxx Xxxxxxxxxx. Xxx xxxxx xxxxxxx xxxx Xxxxxxxx.xxx xxxxxxxx xxxx xxx xxx xx xxxxxxxxx xx xxxxx xxxxxxxxx xxxxxxxxxxx xxxxxx xx xxxx xxxxx xx xxx xxxxxx xxxx, XxxxxXxxxXxxxxxx. Xxx .XXX Xxxxxxxxx xx xxxxxx xxxxxxxx xxx XxxxxXxxxXxxxxxx xxxxx.
+Managed Windows Runtime Components cannot implement the Universal Windows Platform (UWP) interfaces that represent asynchronous actions or operations ([IAsyncAction](https://msdn.microsoft.com/library/br205781.aspx), [IAsyncActionWithProgress&lt;TProgress&gt;](https://msdn.microsoft.com/library/br205784.aspx), [IAsyncOperation&lt;TResult&gt;](https://msdn.microsoft.com/library/windows/apps/br206598.aspx), or [IAsyncOperationWithProgress&lt;TResult, TProgress&gt;](https://msdn.microsoft.com/library/windows/apps/br206594.aspx)). Instead, the .NET Framework provides the [AsyncInfo](https://msdn.microsoft.com/library/system.runtime.interopservices.windowsruntime.asyncinfo.aspx) class for generating async operations in Windows Runtime Components. The error message that Winmdexp.exe displays when you try to implement an async interface incorrectly refers to this class by its former name, AsyncInfoFactory. The .NET Framework no longer includes the AsyncInfoFactory class.
 
-| Xxxxx xxxxxx | Xxxxxxx Xxxx                                                                                                                                                                                                                                                          |
+| Error number | Message Text                                                                                                                                                                                                                                                          |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XXXYYYY      | Xxxx '{Y}' xxxxxxxxxx Xxxxxxx Xxxxxxx xxxxx xxxxxxxxx '{Y}'. Xxxxxxx Xxxxxxx xxxxx xxxxxx xxxxxxxxx xxxxx xxxxxxxxxx. Xxxxxx xxx xxx Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxxxxxxXxxxxxx.XxxxxXxxxXxxxxxx xxxxx xx xxxxxxxx xxxxx xxxxxxxxxx xxx xxxxxx xx Xxxxxxx Xxxxxxx. |
+| WME1084      | Type '{0}' implements Windows Runtime async interface '{1}'. Windows Runtime types cannot implement async interfaces. Please use the System.Runtime.InteropServices.WindowsRuntime.AsyncInfoFactory class to generate async operations for export to Windows Runtime. |
 
  
 
-> **Xxxx** Xxx xxxxx xxxxxxxx xxxx xxxxx xx xxx Xxxxxxx Xxxxxxx xxx xx xxx xxxxxxxxxxx. Xxxx xx xxx xxxxxxxx xx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX). Xxx xxxxxxx, Xxxxxxx Xxxxxxx xxxxx xxx xxx xxxxxx XXX xxxxx.
+> **Note** The error messages that refer to the Windows Runtime use an old terminology. This is now referred to as the Universal Windows Platform (UWP). For example, Windows Runtime types are now called UWP types.
 
  
 
-## Xxxxxxx xxxxxxxxxx xx xxxxxxxx.xxx xx Xxxxxx.Xxxxxxx.xxx
+## Missing references to mscorlib.dll or System.Runtime.dll
 
 
-Xxxx xxxxx xxxxxx xxxx xxxx xxx xxx Xxxxxxxx.xxx xxxx xxx xxxxxxx xxxx. Xx xxxxxxxxx xxxx xxx xxx xxx /xxxxxxxxx xxxxxx xx xxxxxxx xxxxxxxxxx xx xxxx xxxxxxxx.xxx xxx Xxxxxx.Xxxxxxx.xxx xxxx xxx .XXX Xxxxxxxxx xxxx xxxxxxxxx xxxxxxxxxx, xxxxx xxx xxxxxxx xx "%XxxxxxxXxxxx(xYY)%\\Xxxxxxxxx Xxxxxxxxxx\\Xxxxxxxxx\\Xxxxxxxxx\\.XXXXxxx\\xY.Y" ("%XxxxxxxXxxxx%\\..." xx x YY-xxx xxxxxxxx).
+This issue occurs only when you use Winmdexp.exe from the command line. We recommend that you use the /reference option to include references to both mscorlib.dll and System.Runtime.dll from the .NET Framework core reference assemblies, which are located in "%ProgramFiles(x86)%\\Reference Assemblies\\Microsoft\\Framework\\.NETCore\\v4.5" ("%ProgramFiles%\\..." on a 32-bit computer).
 
-| Xxxxx xxxxxx | Xxxxxxx Xxxx                                                                                                                                     |
+| Error number | Message Text                                                                                                                                     |
 |--------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| XXXYYYY      | Xx xxxxxxxxx xxx xxxx xx xxxxxxxx.xxx. X xxxxxxxxx xx xxxx xxxxxxxx xxxx xx xxxxxxxx xx xxxxx xx xxxxxx xxxxxxxxx.                               |
-| XXXYYYY      | Xxxxx xxx xxxxxxxxx xxx xxxx xxxxxxxxx xxxxxxxx. Xxxxxx xxxx xxxx xxxxxxxx.xxx xxx Xxxxxx.Xxxxxxx.xxx xx xxxxxxxxxx xxxxx xxx /xxxxxxxxx xxxxxx. |
+| WME1009      | No reference was made to mscorlib.dll. A reference to this metadata file is required in order to export correctly.                               |
+| WME1090      | Could not determine the core reference assembly. Please make sure mscorlib.dll and System.Runtime.dll is referenced using the /reference switch. |
 
  
 
-## Xxxxxxxx xxxxxxxxxxx xx xxx xxxxxxx
+## Operator overloading is not allowed
 
 
-Xx x Xxxxxxx Xxxxxxx Xxxxxxxxx xxxxxxx xx xxxxxxx xxxx, xxx xxxxxx xxxxxx xxxxxxxxxx xxxxxxxxx xx xxxxxx xxxxx.
+In a Windows Runtime Component written in managed code, you cannot expose overloaded operators on public types.
 
-> **Xxxx** Xx xxx xxxxx xxxxxxx, xxx xxxxxxxx xx xxxxxxxxxx xx xxx xxxxxxxx xxxx, xxxx xx xx\_Xxxxxxxx, xx\_Xxxxxxxx, xx\_XxxxxxxxxXx, xx\_Xxxxxxxx (xxxxxxxx xxxxxxxxxx), xxx xx xx.
+> **Note** In the error message, the operator is identified by its metadata name, such as op\_Addition, op\_Multiply, op\_ExclusiveOr, op\_Implicit (implicit conversion), and so on.
 
  
 
-| Xxxxx xxxxxx | Xxxxxxx Xxxx                                                                                          |
+| Error number | Message Text                                                                                          |
 |--------------|-------------------------------------------------------------------------------------------------------|
-| XXXYYYY      | '{Y}' xx xx xxxxxxxx xxxxxxxx. Xxxxxxx xxxxx xxxxxx xxxxxx xxxxxxxx xxxxxxxxx xx xxx Xxxxxxx Xxxxxxx. |
+| WME1087      | '{0}' is an operator overload. Managed types cannot expose operator overloads in the Windows Runtime. |
 
  
 
-## Xxxxxxxxxxxx xx x xxxxx xxxx xxx xxxx xxxxxx xx xxxxxxxxxx
+## Constructors on a class have the same number of parameters
 
 
-Xx xxx XXX, x xxxxx xxx xxxx xxxx xxx xxxxxxxxxxx xxxx x xxxxx xxxxxx xx xxxxxxxxxx; xxx xxxxxxx, xxx xxx'x xxxx xxx xxxxxxxxxxx xxxx xxx x xxxxxx xxxxxxxxx xx xxxx **Xxxxxx** xxx xxxxxxx xxxx xxx x xxxxxx xxxxxxxxx xx xxxx **xxx** (**Xxxxxxx** xx Xxxxxx Xxxxx). Xxx xxxx xxxxxxxxxx xx xx xxx x xxxxxxxxx xxxxxx xx xxxxxxxxxx xxx xxxx xxxxxxxxxxx.
+In the UWP, a class can have only one constructor with a given number of parameters; for example, you can't have one constructor that has a single parameter of type **String** and another that has a single parameter of type **int** (**Integer** in Visual Basic). The only workaround is to use a different number of parameters for each constructor.
 
-| Xxxxx xxxxxx | Xxxxxxx Xxxx                                                                                                                                            |
+| Error number | Message Text                                                                                                                                            |
 |--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XXXYYYY      | Xxxx '{Y}' xxx xxxxxxxx xxxxxxxxxxxx xxxx '{Y}' xxxxxxxx(x). Xxxxxxx Xxxxxxx xxxxx xxxxxx xxxx xxxxxxxx xxxxxxxxxxxx xxxx xxx xxxx xxxxxx xx xxxxxxxxx. |
+| WME1099      | Type '{0}' has multiple constructors with '{1}' argument(s). Windows Runtime types cannot have multiple constructors with the same number of arguments. |
 
  
 
-## Xxxx xxxxxxx x xxxxxxx xxx xxxxxxxxx xxxx xxxx xxx xxxx xxxxxx xx xxxxxxxxxx
+## Must specify a default for overloads that have the same number of parameters
 
 
-Xx xxx XXX, xxxxxxxxxx xxxxxxx xxx xxxx xxx xxxx xxxxxx xx xxxxxxxxxx xxxx xx xxx xxxxxxxx xx xxxxxxxxx xx xxx xxxxxxx xxxxxxxx. Xxx "Xxxxxxxxxx Xxxxxxx" xx [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X\# xxx Xxxxxx Xxxxx](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
+In the UWP, overloaded methods can have the same number of parameters only if one overload is specified as the default overload. See "Overloaded Methods" in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md).
 
-| Xxxxx xxxxxx | Xxxxxxx Xxxx                                                                                                                                                                      |
+| Error number | Message Text                                                                                                                                                                      |
 |--------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XXXYYYY      | Xxxxxxxx {Y}-xxxxxxxxx xxxxxxxxx xx '{Y}.{Y}' xxx xxxxxxxxx xxxx Xxxxxxx.Xxxxxxxxxx.Xxxxxxxx.XxxxxxxXxxxxxxxXxxxxxxxx.                                                            |
-| XXXYYYY      | Xxx {Y}-xxxxxxxxx xxxxxxxxx xx {Y}.{Y} xxxx xxxx xxxxxxx xxx xxxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxxxx xx xxxxxxxxxx xx xxxx Xxxxxxx.Xxxxxxxxxx.Xxxxxxxx.XxxxxxxXxxxxxxxXxxxxxxxx. |
+| WME1059      | Multiple {0}-parameter overloads of '{1}.{2}' are decorated with Windows.Foundation.Metadata.DefaultOverloadAttribute.                                                            |
+| WME1085      | The {0}-parameter overloads of {1}.{2} must have exactly one method specified as the default overload by decorating it with Windows.Foundation.Metadata.DefaultOverloadAttribute. |
 
  
 
-## Xxxxxxxxx xxxxxx xxx xxxxxxx xxxxx xxx xxx xxxxxx xxxx
+## Namespace errors and invalid names for the output file
 
 
-Xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx, xxx xxx xxxxxx xxxxx xx x Xxxxxxx xxxxxxxx (.xxxxx) xxxx xxxx xx xx x xxxxxxxxx xxxx xxxxxx xxx .xxxxx xxxx xxxx, xx xx xxx-xxxxxxxxxx xx xxx xxxx xxxx. Xxx xxxxxxx, xx xxxx Xxxxxx Xxxxxx xxxxxxx xx xxxxx X.X (xxxx xx, xxxx Xxxxxxx Xxxxxxx Xxxxxxxxx xx X.X.xxxxx), xx xxx xxxxxxx xxxxxx xxxxxxx X.X.XxxxxY xxx X.X.X.XxxxxY, xxx xxx X.XxxxxY (XXXYYYY) xx X.XxxxxY (XXXYYYY).
+In the Universal Windows Platform, all the public types in a Windows metadata (.winmd) file must be in a namespace that shares the .winmd file name, or in sub-namespaces of the file name. For example, if your Visual Studio project is named A.B (that is, your Windows Runtime Component is A.B.winmd), it can contain public classes A.B.Class1 and A.B.C.Class2, but not A.Class3 (WME0006) or D.Class4 (WME1044).
 
-> **Xxxx**  Xxxxx xxxxxxxxxxxx xxxxx xxxx xx xxxxxx xxxxx, xxx xx xxxxxxx xxxxx xxxx xx xxxx xxxxxxxxxxxxxx.
-
- 
-
-Xx xxx xxxx xx X.XxxxxY, xxx xxx xxxxxx xxxx XxxxxY xx xxxxxxx xxxxxxxxx xx xxxxxx xxx xxxx xx xxx Xxxxxxx Xxxxxxx Xxxxxxxxx xx X.xxxxx. Xxxxxxxx XXXYYYY xx x xxxxxxx, xxx xxxxxx xxxxx xx xx xx xxxxx. Xx xxx xxxxxxxx xxxxxxx, xxxx xxxx xxxxx X.X.xxxxx xxxx xx xxxxxx xx xxxxxx X.XxxxxY.
-
-Xx xxx xxxx xx X.XxxxxY, xx xxxx xxxx xxx xxxxxxx xxxx X.XxxxxY xxx xxxxxxx xx xxx X.X xxxxxxxxx, xx xxxxxxxx xxx xxxx xx xxx Xxxxxxx Xxxxxxx Xxxxxxxxx xx xxx xx xxxxxx. Xxx xxx xxxxxx xxxx X.XxxxxY xx xxxxxxx xxxxxxxxx, xx xxx xx xx xxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxx.
-
-Xxx xxxx xxxxxx xxx'x xxxxxxxxxxx xxxxxxx xxxxxxxxx xxx xxxxxxxxx, xx xxxxxxxxxx xxxx xxxxxx xx xxxx xxx xxx xxxxxxx (XXXYYYY).
-
-Xxxx xxxxxxxxx xxxx xxxxxxx xx xxxxx xxx **xxxxxx xxxxxx** xxxx (**Xxxxxx XxxXxxxxxxxxxx** xx Xxxxxx Xxxxx). Xx xxx, xxx xxxx xxx XXXYYYY xx XXXYYYY, xxxxxxxxx xx xxxxxxx xxxx xxxxxxxxx xxxxxxxx xxxxxxx xxxxx.
-
-X xxxx xx x Xxxxxxx Xxxxxxx Xxxxxxxxx xxxxxx xxxx x xxxx xxxx xx xxx xxxx xx x xxxxxxxxx (XXXYYYY).
-
-> **Xxxxxxx**  Xx xxx xxxx Xxxxxxxx.xxx xxxxxxxx xxx xxx'x xxx xxx /xxx xxxxxx xx xxxxxxx x xxxx xxx xxxx Xxxxxxx Xxxxxxx Xxxxxxxxx, Xxxxxxxx.xxx xxxxx xx xxxxxxxx x xxxx xxxx xxxxxxxx xxx xxx xxxxxxxxxx xx xxx xxxxxxxxx. Xxxxxxxx xxxxxxxxxx xxx xxxxxx xxx xxxx xx xxxx xxxxxxxxx.
+> **Note**  These restrictions apply only to public types, not to private types used in your implementation.
 
  
 
-| Xxxxx xxxxxx | Xxxxxxx Xxxx                                                                                                                                                                                                                                                                                                                                             |
+In the case of A.Class3, you can either move Class3 to another namespace or change the name of the Windows Runtime Component to A.winmd. Although WME0006 is a warning, you should treat it as an error. In the previous example, code that calls A.B.winmd will be unable to locate A.Class3.
+
+In the case of D.Class4, no file name can contain both D.Class4 and classes in the A.B namespace, so changing the name of the Windows Runtime Component is not an option. You can either move D.Class4 to another namespace, or put it in another Windows Runtime Component.
+
+The file system can't distinguish between uppercase and lowercase, so namespaces that differ by case are not allowed (WME1067).
+
+Your component must contain at least one **public sealed** type (**Public NotInheritable** in Visual Basic). If not, you will get WME1042 or WME1043, depending on whether your component contains private types.
+
+A type in a Windows Runtime Component cannot have a name that is the same as a namespace (WME1068).
+
+> **Caution**  If you call Winmdexp.exe directly and don't use the /out option to specify a name for your Windows Runtime Component, Winmdexp.exe tries to generate a name that includes all the namespaces in the component. Renaming namespaces can change the name of your component.
+
+ 
+
+| Error number | Message Text                                                                                                                                                                                                                                                                                                                                             |
 |--------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XXXYYYY      | '{Y}' xx xxx x xxxxx xxxxx xxxx xxxx xxx xxxx xxxxxxxx. Xxx xxxxx xxxxxx x Xxxxxxx Xxxxxxxx xxxx xxxx xxxxx xx x xxx xxxxxxxxx xx xxx xxxxxxxxx xxxx xx xxxxxxx xx xxx xxxx xxxx. Xxxxx xxxx xx xxx xxxxx xx xxxx x xxx xxxxxxxxx xxxxxx xx xxxxxxx xx xxxxxxx. Xx xxxx xxxxxxxx, xxx xxxxxxxx xxxxxx xxxxxxxxx xxxx xxxxx xxxxx xx x xxxxxxxx xx '{Y}'. |
-| XXXYYYY      | Xxxxx xxxxxx xxxx xxxxxxx xx xxxxx xxx xxxxxx xxxx xxxx xx xxxxxxx xxxxxx x xxxxxxxxx.                                                                                                                                                                                                                                                                   |
-| XXXYYYY      | Xxxxx xxxxxx xxxx xxxxxxx xx xxxxx xxx xxxxxx xxxx xxxx xx xxxxxxx xxxxxx x xxxxxxxxx. Xxx xxxx xxxxx xxxxx xxxxxx xxxxxxxxxx xxx xxxxxxx.                                                                                                                                                                                                               |
-| XXXYYYY      | X xxxxxx xxxx xxx x xxxxxxxxx ('{Y}') xxxx xxxxxx xx xxxxxx xxxxxx xxxx xxxxx xxxxxxxxxx ('{Y}'). Xxx xxxxx xxxxxx x Xxxxxxx Xxxxxxxx xxxx xxxx xxxxx xx x xxx xxxxxxxxx xx xxx xxxxxxxxx xxxx xx xxxxxxx xx xxx xxxx xxxx.                                                                                                                              |
-| XXXYYYY      | Xxxxxxxxx xxxxx xxxxxx xxxxxx xxxx xx xxxx: '{Y}', '{Y}'.                                                                                                                                                                                                                                                                                                |
-| XXXYYYY      | Xxxx '{Y}' xxxxxx xxxx xxx xxxx xxxx xx xxxxxxxxx '{Y}'.                                                                                                                                                                                                                                                                                                 |
+| WME0006      | '{0}' is not a valid winmd file name for this assembly. All types within a Windows Metadata file must exist in a sub namespace of the namespace that is implied by the file name. Types that do not exist in such a sub namespace cannot be located at runtime. In this assembly, the smallest common namespace that could serve as a filename is '{1}'. |
+| WME1042      | Input module must contain at least one public type that is located inside a namespace.                                                                                                                                                                                                                                                                   |
+| WME1043      | Input module must contain at least one public type that is located inside a namespace. The only types found inside namespaces are private.                                                                                                                                                                                                               |
+| WME1044      | A public type has a namespace ('{1}') that shares no common prefix with other namespaces ('{0}'). All types within a Windows Metadata file must exist in a sub namespace of the namespace that is implied by the file name.                                                                                                                              |
+| WME1067      | Namespace names cannot differ only by case: '{0}', '{1}'.                                                                                                                                                                                                                                                                                                |
+| WME1068      | Type '{0}' cannot have the same name as namespace '{1}'.                                                                                                                                                                                                                                                                                                 |
 
  
 
-## Xxxxxxxxx xxxxx xxxx xxxx'x xxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx xxxxx
+## Exporting types that aren't valid Universal Windows Platform types
 
 
-Xxx xxxxxx xxxxxxxxx xx xxxx xxxxxxxxx xxxx xxxxxx xxxx XXX xxxxx. Xxxxxxx, xxx .XXX Xxxxxxxxx xxxxxxxx xxxxxxxx xxx x xxxxxx xx xxxxxxxx xxxx xxxxx xxxx xxx xxxxxxxx xxxxxxxxx xx xxx .XXX Xxxxxxxxx xxx xxx XXX. Xxxx xxxxxxx xxx .XXX Xxxxxxxxx xxxxxxxxx xx xxxx xxxx xxxxxxxx xxxxx xxxxxxx xx xxxxxxxx xxx xxxx. Xxx xxx xxx xxxxx xxxxxx .XXX Xxxxxxxxx xxxxx xx xxx xxxxxx xxxxxxxxx xx xxxx xxxxxxxxx. Xxx "Xxxxxxxxx xxxxx xx Xxxxxxx Xxxxxxx Xxxxxxxxxx" xxx "Xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx xxxxx xx xxxxxxx xxxx" xx [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X\# xxx Xxxxxx Xxxxx](creating-windows-runtime-components-in-csharp-and-visual-basic.md), xxx [.XXX Xxxxxxxxx xxxxxxxx xx Xxxxxxx Xxxxxxx xxxxx](net-framework-mappings-of-windows-runtime-types.md).
+The public interface of your component must expose only UWP types. However, the .NET Framework provides mappings for a number of commonly used types that are slightly different in the .NET Framework and the UWP. This enables the .NET Framework developer to work with familiar types instead of learning new ones. You can use these mapped .NET Framework types in the public interface of your component. See "Declaring types in Windows Runtime Components" and "Passing Universal Windows Platform types to managed code" in [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md), and [.NET Framework mappings of Windows Runtime types](net-framework-mappings-of-windows-runtime-types.md).
 
-Xxxx xx xxxxx xxxxxxxx xxx xxxxxxxxxx. Xxx xxxxxxx, [XXxxx&xx;X&xx;](https://msdn.microsoft.com/library/5y536ey6.aspx) xxxx xx xxx XXX xxxxxxxxx [XXxxxxx&xx;X&xx;](https://msdn.microsoft.com/library/windows/apps/br206631.aspx). Xx xxx xxx Xxxx&xx;xxxxxx&xx; (`List(Of String)` xx Xxxxxx Xxxxx) xxxxxxx xx XXxxx&xx;xxxxxx&xx; xx x xxxxxxxxx xxxx, Xxxxxxxx.xxx xxxxxxxx x xxxx xx xxxxxxxxxxxx xxxx xxxxxxxx xxx xxx xxxxxx xxxxxxxxxx xxxxxxxxxxx xx Xxxx&xx;X&xx;. Xx xxx xxx xxxxxx xxxxxxx xxxxx, xxxx xx Xxxx&xx;Xxxxxxxxxx&xx;xxx, xxxxxx&xx;&xx; (Xxxx(Xx Xxxxxxxxxx(Xx Xxxxxxx, Xxxxxx)) xx Xxxxxx Xxxxx), Xxxxxxxx.xxx xxxxxx xxxxxxx xxx xxxx xxxxx xx xxxxxxx. Xxxxx xxxxx xxx xxxxxx xxxxx xxxx.
+Many of these mappings are interfaces. For example, [IList&lt;T&gt;](https://msdn.microsoft.com/library/5y536ey6.aspx) maps to the UWP interface [IVector&lt;T&gt;](https://msdn.microsoft.com/library/windows/apps/br206631.aspx). If you use List&lt;string&gt; (`List(Of String)` in Visual Basic) instead of IList&lt;string&gt; as a parameter type, Winmdexp.exe provides a list of alternatives that includes all the mapped interfaces implemented by List&lt;T&gt;. If you use nested generic types, such as List&lt;Dictionary&lt;int, string&gt;&gt; (List(Of Dictionary(Of Integer, String)) in Visual Basic), Winmdexp.exe offers choices for each level of nesting. These lists can become quite long.
 
-Xx xxxxxxx, xxx xxxx xxxxxx xx xxx xxxxxxxxx xxxx xx xxxxxxx xx xxx xxxx. Xxx xxxxxxx, xxx Xxxxxxxxxx&xx;xxx, xxxxxx&xx;, xxx xxxx xxxxxx xx xxxx xxxxxx XXxxxxxxxxx&xx;xxx, xxxxxx&xx;.
+In general, the best choice is the interface that is closest to the type. For example, for Dictionary&lt;int, string&gt;, the best choice is most likely IDictionary&lt;int, string&gt;.
 
-> **Xxxxxxxxx**  XxxxXxxxxx xxxx xxx xxxxxxxxx xxxx xxxxxxx xxxxx xx xxx xxxx xx xxxxxxxxxx xxxx x xxxxxxx xxxx xxxxxxxxxx. Xxx xxxxxxx, xx xxx xxxxxx Xxxxxxxxxx&xx;xxx, xxxxxx&xx; xx XxxxXxxxxx xxxx, xx xxxxxxx xx XXxxxxxxxxx&xx;xxx, xxxxxx&xx; xx xxxxxx xxxxx xxxxxxxxx xxx xxxxxxx xx xxx xxxxxx xxxx. Xxxx xxxxx xxxx xx xxx xxxxx xxxxxxxxx xxxxx'x xxxxxxx x xxxxxx xxxx xxxxxxx xx xxxxx xxxxxxxxxx, xxxx xxxxxx xxx'x xxxxxxx xx XxxxXxxxxx.
+> **Important**  JavaScript uses the interface that appears first in the list of interfaces that a managed type implements. For example, if you return Dictionary&lt;int, string&gt; to JavaScript code, it appears as IDictionary&lt;int, string&gt; no matter which interface you specify as the return type. This means that if the first interface doesn't include a member that appears on later interfaces, that member isn't visible to JavaScript.
 
-> **Xxxxxxx**  Xxxxx xxxxx xxx xxx-xxxxxxx [XXxxx](https://msdn.microsoft.com/library/system.collections.ilist.aspx) xxx [XXxxxxxxxxx](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) xxxxxxxxxx xx xxxx xxxxxxxxx xxxx xx xxxx xx XxxxXxxxxx. Xxxxx xxxxxxxxxx xxx xx [XXxxxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) xxx [XXxxxxxxxXxxxxxxx](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx), xxxxxxxxxxxx. Xxxx xxxxxxx xxxxxxx xxx XXXX xxxxxxxx, xxx xxx xxxxxxxxx xx XxxxXxxxxx. XxxxXxxxxx xxxxxx xxx xxx-xxxx xxxxx "Xxx xxxxxxxx 'X' xxx xx xxxxxxx xxxxxxxxx xxx xxxxxx xx xxxxxx."
+> **Caution**  Avoid using the non-generic [IList](https://msdn.microsoft.com/library/system.collections.ilist.aspx) and [IEnumerable](https://msdn.microsoft.com/library/system.collections.ienumerable.aspx) interfaces if your component will be used by JavaScript. These interfaces map to [IBindableVector](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindablevector.aspx) and [IBindableIterator](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.interop.ibindableiterator.aspx), respectively. They support binding for XAML controls, and are invisible to JavaScript. JavaScript issues the run-time error "The function 'X' has an invalid signature and cannot be called."
 
  
 
@@ -136,86 +136,86 @@ Xx xxxxxxx, xxx xxxx xxxxxx xx xxx xxxxxxxxx xxxx xx xxxxxxx xx xxx xxxx. Xxx xx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx xxxxxx</th>
-<th align="left">Xxxxxxx Xxxx</th>
+<th align="left">Error number</th>
+<th align="left">Message Text</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">XXXYYYY</td>
-<td align="left">Xxxxxx '{Y}' xxx xxxxxxxxx '{Y}' xx xxxx '{Y}'. '{Y}' xx xxx x xxxxx Xxxxxxx Xxxxxxx xxxxxxxxx xxxx.</td>
+<td align="left">WME1033</td>
+<td align="left">Method '{0}' has parameter '{1}' of type '{2}'. '{2}' is not a valid Windows Runtime parameter type.</td>
 </tr>
 <tr class="even">
-<td align="left">XXXYYYY</td>
-<td align="left">Xxxxxx '{Y}' xxx x xxxxxxxxx xx xxxx '{Y}' xx xxx xxxxxxxxx. Xxxxxxxx xxxx xxxx xx xxx x xxxxx Xxxxxxx Xxxxxxx xxxx, xx xxxxxxxxxx xxxxxxxxxx xxxx xxx xxxxx Xxxxxxx Xxxxxxx xxxxx. Xxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxxx xx xxx xxx xx xxx xxxxxxxxx xxxxx xxxxxxx: '{Y}'.</td>
+<td align="left">WME1038</td>
+<td align="left">Method '{0}' has a parameter of type '{1}' in its signature. Although this type is not a valid Windows Runtime type, it implements interfaces that are valid Windows Runtime types. Consider changing the method signature to use one of the following types instead: '{2}'.</td>
 </tr>
 <tr class="odd">
-<td align="left">XXXYYYY</td>
-<td align="left"><p>Xxxxxx '{Y}' xxx x xxxxxxxxx xx xxxx '{Y}' xx xxx xxxxxxxxx. Xxxxxxxx xxxx xxxxxxx xxxx xx xxx x xxxxx Xxxxxxx Xxxxxxx xxxx, xxx xxxx xx xxx xxxxxxx xxxxxxxxxx xxxxxxxxx xxxxxxxxxx xxxx xxx xxxxx Xxxxxxx Xxxxxxx xxxxx. {Y}</p>
-> **Xxxx**  Xxx {Y}, Xxxxxxxx.xxx xxxxxxx x xxxx xx xxxxxxxxxxxx, xxxx xx "Xxxxxxxx xxxxxxxx xxx xxxx 'Xxxxxx.Xxxxxxxxxxx.Xxxxxxx.Xxxx&xx;X&xx;' xx xxx xxxxxx xxxxxxxxx xx xxx xx xxx xxxxxxxxx xxxxx xxxxxxx: 'Xxxxxx.Xxxxxxxxxxx.Xxxxxxx.XXxxx&xx;X&xx;, Xxxxxx.Xxxxxxxxxxx.Xxxxxxx.XXxxxXxxxXxxx&xx;X&xx;, Xxxxxx.Xxxxxxxxxxx.Xxxxxxx.XXxxxxxxxxx&xx;X&xx;'."
+<td align="left">WME1039</td>
+<td align="left"><p>Method '{0}' has a parameter of type '{1}' in its signature. Although this generic type is not a valid Windows Runtime type, the type or its generic parameters implement interfaces that are valid Windows Runtime types. {2}</p>
+> **Note**  For {2}, Winmdexp.exe appends a list of alternatives, such as "Consider changing the type 'System.Collections.Generic.List&lt;T&gt;' in the method signature to one of the following types instead: 'System.Collections.Generic.IList&lt;T&gt;, System.Collections.Generic.IReadOnlyList&lt;T&gt;, System.Collections.Generic.IEnumerable&lt;T&gt;'."
 </td>
 </tr>
 <tr class="even">
-<td align="left">XXXYYYY</td>
-<td align="left">Xxxxxx '{Y}' xxx x xxxxxxxxx xx xxxx '{Y}' xx xxx xxxxxxxxx. Xxxxxxx xx xxxxx x xxxxxxx Xxxx xxxx, xxx Xxxxxxx.Xxxxxxxxxx.XXxxxxXxxxxx, Xxxxxxx.Xxxxxxxxxx.XXxxxxXxxxxxxxx, xx xxx xx xxx xxxxx Xxxxxxx Xxxxxxx xxxxx xxxxxxxxxx. Xxx xxxxxxxx .XXX xxxxx xxxxxxx xxxx xxxxxxx xx xxxxx xxxxxxxxxx. Xxxxxx xxx Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxxxxxxXxxxxxx.XxxxxXxxx xxx xxxx xxxxxxxxxxx xxxxx xxxxxxxxxx xxxxxxx xxxx xxxxxxx xx Xxxxxxx Xxxxxxx xxxxx xxxxxxxxxx.</td>
+<td align="left">WME1040</td>
+<td align="left">Method '{0}' has a parameter of type '{1}' in its signature. Instead of using a managed Task type, use Windows.Foundation.IAsyncAction, Windows.Foundation.IAsyncOperation, or one of the other Windows Runtime async interfaces. The standard .NET await pattern also applies to these interfaces. Please see System.Runtime.InteropServices.WindowsRuntime.AsyncInfo for more information about converting managed task objects to Windows Runtime async interfaces.</td>
 </tr>
 </tbody>
 </table>
 
  
 
-## Xxxxxxxxxx xxxx xxxxxxx xxxxxx xx xxxxxxxxxx xxxxx
+## Structures that contain fields of disallowed types
 
 
-Xx xxx XXX, x xxxxxxxxx xxx xxxxxxx xxxx xxxxxx, xxx xxxx xxxxxxxxxx xxx xxxxxxx xxxxxx. Xxxxx xxxxxx xxxx xx xxxxxx. Xxxxx xxxxx xxxxx xxxxxxx xxxxxxxxxxxx, xxxxxxxxxx, xxx xxxxxxxxx xxxxx.
+In the UWP, a structure can contain only fields, and only structures can contain fields. Those fields must be public. Valid field types include enumerations, structures, and primitive types.
 
-| Xxxxx xxxxxx | Xxxxxxx Xxxx                                                                                                                                                                                                                                                            |
+| Error number | Message Text                                                                                                                                                                                                                                                            |
 |--------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XXXYYYY      | Xxxxxxxxx '{Y}' xxx xxxxx '{Y}' xx xxxx '{Y}'. '{Y}' xx xxx x xxxxx Xxxxxxx Xxxxxxx xxxxx xxxx. Xxxx xxxxx xx x Xxxxxxx Xxxxxxx xxxxxxxxx xxx xxxx xx XXxxY, XxxYY, XXxxYY, XxxYY, XXxxYY, XxxYY, XXxxYY, Xxxxxx, Xxxxxx, Xxxxxxx, Xxxxxx, Xxxx, xx xxxxxx x xxxxxxxxx. |
+| WME1060      | Structure '{0}' has field '{1}' of type '{2}'. '{2}' is not a valid Windows Runtime field type. Each field in a Windows Runtime structure can only be UInt8, Int16, UInt16, Int32, UInt32, Int64, UInt64, Single, Double, Boolean, String, Enum, or itself a structure. |
 
  
 
-## Xxxxxxxxxxxx xx xxxxxx xx xxxxxx xxxxxxxxxx
+## Restrictions on arrays in member signatures
 
 
-Xx xxx XXX, xxxxxx xx xxxxxx xxxxxxxxxx xxxx xx xxx-xxxxxxxxxxx xxxx x xxxxx xxxxx xx Y (xxxx). Xxxxxx xxxxx xxxxx xxxx xx `myArray[][]` (`myArray()()` xx Xxxxxx Xxxxx) xxx xxx xxxxxxx.
+In the UWP, arrays in member signatures must be one-dimensional with a lower bound of 0 (zero). Nested array types such as `myArray[][]` (`myArray()()` in Visual Basic) are not allowed.
 
-> **Xxxx** Xxxx xxxxxxxxxxx xxxx xxx xxxxx xx xxxxxx xxx xxx xxxxxxxxxx xx xxxx xxxxxxxxxxxxxx.
+> **Note** This restriction does not apply to arrays you use internally in your implementation.
 
  
 
-| Xxxxx xxxxxx | Xxxxxxx Xxxx                                                                                                                                                     |
+| Error number | Message Text                                                                                                                                                     |
 |--------------|--------------------|
-| XXXYYYY      | Xxxxxx '{Y}' xxx xx xxxxx xx xxxx '{Y}' xxxx xxx-xxxx xxxxx xxxxx xx xxx xxxxxxxxx. Xxxxxx xx Xxxxxxx Xxxxxxx xxxxxx xxxxxxxxxx xxxx xxxx x xxxxx xxxxx xx xxxx. |
-| XXXYYYY      | Xxxxxx '{Y}' xxx x xxxxx-xxxxxxxxxxx xxxxx xx xxxx '{Y}' xx xxx xxxxxxxxx. Xxxxxx xx Xxxxxxx Xxxxxxx xxxxxx xxxxxxxxxx xxxx xx xxx xxxxxxxxxxx.                  |
-| XXXYYYY      | Xxxxxx '{Y}' xxx x xxxxxx xxxxx xx xxxx '{Y}' xx xxx xxxxxxxxx. Xxxxxx xx Xxxxxxx Xxxxxxx xxxxxx xxxxxxxxxx xxxxxx xx xxxxxx.                                    |
+| WME1034      | Method '{0}' has an array of type '{1}' with non-zero lower bound in its signature. Arrays in Windows Runtime method signatures must have a lower bound of zero. |
+| WME1035      | Method '{0}' has a multi-dimensional array of type '{1}' in its signature. Arrays in Windows Runtime method signatures must be one dimensional.                  |
+| WME1036      | Method '{0}' has a nested array of type '{1}' in its signature. Arrays in Windows Runtime method signatures cannot be nested.                                    |
 
  
 
-## Xxxxx xxxxxxxxxx xxxx xxxxxxx xxxxxxx xxxxx xxxxxxxx xxx xxxxxxxx xx xxxxxxxx
+## Array parameters must specify whether array contents are readable or writable
 
 
-Xx xxx XXX, xxxxxxxxxx xxxx xx xxxx-xxxx xx xxxxx-xxxx. Xxxxxxxxxx xxxxxx xx xxxxxx **xxx** (**XxXxx** xxxxxxx xxx [XxxXxxxxxxxx](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) xxxxxxxxx xx Xxxxxx Xxxxx). Xxxx xxxxxxx xx xxx xxxxxxxx xx xxxxxx, xx xxxxx xxxxxxxxxx xxxx xxxxxxxx xxxxxxx xxx xxxxx xxxxxxxx xxx xxxx-xxxx xx xxxxx-xxxx. Xxx xxxxxxxxx xx xxxxx xxx **xxx** xxxxxxxxxx (**XxXxx** xxxxxxxxx xxxx xxx XxxXxxxxxxxx xxxxxxxxx xx Xxxxxx Xxxxx), xxx xxxxx xxxxxxxxxx xxxx xxx xxxxxx xx xxxxx (XxXxx xx Xxxxxx Xxxxx) xxxx xx xxxxxx. Xxx [Xxxxxxx xxxxxx xx x Xxxxxxx Xxxxxxx Xxxxxxxxx](passing-arrays-to-a-windows-runtime-component.md).
+In the UWP, parameters must be read-only or write-only. Parameters cannot be marked **ref** (**ByRef** without the [OutAttribute](https://msdn.microsoft.com/library/system.runtime.interopservices.outattribute.aspx) attribute in Visual Basic). This applies to the contents of arrays, so array parameters must indicate whether the array contents are read-only or write-only. The direction is clear for **out** parameters (**ByRef** parameter with the OutAttribute attribute in Visual Basic), but array parameters that are passed by value (ByVal in Visual Basic) must be marked. See [Passing arrays to a Windows Runtime Component](passing-arrays-to-a-windows-runtime-component.md).
 
-| Xxxxx xxxxxx | Xxxxxxx Xxxx         |
+| Error number | Message Text         |
 |--------------|----------------------|
-| XXXYYYY      | Xxxxxx '{Y}' xxx xxxxxxxxx '{Y}' xxxxx xx xx xxxxx, xxx xxxxx xxx xxxx {Y} xxx {Y}. Xx xxx Xxxxxxx Xxxxxxx, xxx xxxxxxxx xxxxx xxxxxxxxxx xxxx xx xxxxxx xxxxxxxx xx xxxxxxxx. Xxxxxx xxxxxx xxx xx xxx xxxxxxxxxx xxxx '{Y}'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| XXXYYYY      | Xxxxxx '{Y}' xxx xx xxxxxx xxxxxxxxx '{Y}' xxxxx xx xx xxxxx, xxx xxxxx xxx {Y}. Xx xxx Xxxxxxx Xxxxxxx, xxx xxxxxxxx xx xxxxxx xxxxxx xxx xxxxxxxx. Xxxxxx xxxxxx xxx xxxxxxxxx xxxx '{Y}'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| XXXYYYY      | Xxxxxx '{Y}' xxx xxxxxxxxx '{Y}' xxxxx xx xx xxxxx, xxx xxxxx xxx xxxxxx x Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxXxxxxxxxx xx x Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxxXxxxxxxxx. Xx xxx Xxxxxxx Xxxxxxx, xxxxx xxxxxxxxxx xxxx xxxx xxxxxx {Y} xx {Y}. Xxxxxx xxxxxx xxxxx xxxxxxxxxx xx xxxxxxx xxxx xxxx xxx xxxxxxxxxxx Xxxxxxx Xxxxxxx xxxxxxxxx xx xxxxxxxxx.                                                                                                                                                                                                                                                                                                                                                                                          |
-| XXXYYYY      | Xxxxxx '{Y}' xxx xxxxxxxxx '{Y}' xxxxx xx xxx xx xxxxx, xxx xxxxx xxx xxxxxx x {Y} xx x {Y}. Xxxxxxx Xxxxxxx xxxx xxx xxxxxxx xxxxxxx xxx-xxxxx xxxxxxxxxx xxxx {Y} xx {Y}.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| XXXYYYY      | Xxxxxx '{Y}' xxx xxxxxxxxx '{Y}' xxxx x Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxXxxxxxxxx xx Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxxXxxxxxxxx. Xxxxxxx Xxxxxxx xxxx xxx xxxxxxx xxxxxxx xxxxxxxxxx xxxx Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxXxxxxxxxx xx Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxxXxxxxxxxx. Xxxxxx xxxxxxxx xxxxxxxx Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxXxxxxxxxx xxx xxxxxxx Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxxXxxxxxxxx xxxx 'xxx' xxxxxxxx xxxxxxx. Xxxxxx '{Y}' xxx xxxxxxxxx '{Y}' xxxx x Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxXxxxxxxxx xx Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxxXxxxxxxxx. Xxxxxxx Xxxxxxx xxxx xxxxxxxx xxxxxxx XxXxx xxxxxxxxxx xxxx Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxxXxxxxxxxx, xxx xxxx xxx xxxxxxx xxxxx xxxxxx xx xxxxx xxxxxxxxxx. |
-| XXXYYYY      | Xxxxxx '{Y}' xxx xxxxxxxxx '{Y}' xxxxx xx xx xxxxx. Xx xxx Xxxxxxx Xxxxxxx, xxx xxxxxxxx xx xxxxx xxxxxxxxxx xxxx xx xxxxxx xxxxxxxx xx xxxxxxxx. Xxxxxx xxxxx xxxxxx {Y} xx {Y} xx '{Y}'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| WME1101      | Method '{0}' has parameter '{1}' which is an array, and which has both {2} and {3}. In the Windows Runtime, the contents array parameters must be either readable or writable. Please remove one of the attributes from '{1}'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| WME1102      | Method '{0}' has an output parameter '{1}' which is an array, but which has {2}. In the Windows Runtime, the contents of output arrays are writable. Please remove the attribute from '{1}'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| WME1103      | Method '{0}' has parameter '{1}' which is an array, and which has either a System.Runtime.InteropServices.InAttribute or a System.Runtime.InteropServices.OutAttribute. In the Windows Runtime, array parameters must have either {2} or {3}. Please remove these attributes or replace them with the appropriate Windows Runtime attribute if necessary.                                                                                                                                                                                                                                                                                                                                                                                          |
+| WME1104      | Method '{0}' has parameter '{1}' which is not an array, and which has either a {2} or a {3}. Windows Runtime does not support marking non-array parameters with {2} or {3}.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| WME1105      | Method '{0}' has parameter '{1}' with a System.Runtime.InteropServices.InAttribute or System.Runtime.InteropServices.OutAttribute. Windows Runtime does not support marking parameters with System.Runtime.InteropServices.InAttribute or System.Runtime.InteropServices.OutAttribute. Please consider removing System.Runtime.InteropServices.InAttribute and replace System.Runtime.InteropServices.OutAttribute with 'out' modifier instead. Method '{0}' has parameter '{1}' with a System.Runtime.InteropServices.InAttribute or System.Runtime.InteropServices.OutAttribute. Windows Runtime only supports marking ByRef parameters with System.Runtime.InteropServices.OutAttribute, and does not support other usages of those attributes. |
+| WME1106      | Method '{0}' has parameter '{1}' which is an array. In the Windows Runtime, the contents of array parameters must be either readable or writable. Please apply either {2} or {3} to '{1}'.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 
 
-## Xxxxxx xxxx x xxxxxxxxx xxxxx "xxxxx"
+## Member with a parameter named "value"
 
 
-Xx xxx XXX, xxxxxx xxxxxx xxx xxxxxxxxxx xx xx xxxxxx xxxxxxxxxx, xxx xxx xxxxx xx xxxxxxxxxx xxxx xx xxxxxx. Xx xxxxxxx, Xxxxxxxx.xxx xxxxx xxx xxxxxx xxxxx xxx xxxx "xxxxx". Xx xxxx xxxxxx xxx x xxxxxxxxx xxxxx "xxxxx", xxx xxxx xxx xxxxx XXXYYYY. Xxxxx xxx xxx xxxx xx xxxxxxx xxxx:
+In the UWP, return values are considered to be output parameters, and the names of parameters must be unique. By default, Winmdexp.exe gives the return value the name "value". If your method has a parameter named "value", you will get error WME1092. There are two ways to correct this:
 
--   Xxxx xxxx xxxxxxxxx x xxxx xxxxx xxxx "xxxxx" (xx xxxxxxxx xxxxxxxxx, x xxxx xxxxx xxxx "xxxxxxXxxxx").
--   Xxx xxx XxxxxxXxxxxXxxxXxxxxxxxx xxxxxxxxx xx xxxxxx xxx xxxx xx xxx xxxxxx xxxxx, xx xxxxx xxxx:
+-   Give your parameter a name other than "value" (in property accessors, a name other than "returnValue").
+-   Use the ReturnValueNameAttribute attribute to change the name of the return value, as shown here:
 
-    > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+    > [!div class="tabbedCodeSnippets"]
     > ```cs
     > using System.Runtime.InteropServices;
     > using System.Runtime.InteropServices.WindowsRuntime;
@@ -231,18 +231,22 @@ Xx xxx XXX, xxxxxx xxxxxx xxx xxxxxxxxxx xx xx xxxxxx xxxxxxxxxx, xxx xxx xxxxx 
     > <Out> ByRef highValue As Integer) As <ReturnValueName("average")> String
     > ``` 
 
-> **Xxxx**  Xx xxx xxxxxx xxx xxxx xx xxx xxxxxx xxxxx, xxx xxx xxx xxxx xxxxxxxx xxxx xxx xxxx xx xxxxxxx xxxxxxxxx, xxx xxxx xxx xxxxx XXXYYYY.
+> **Note**  If you change the name of the return value, and the new name collides with the name of another parameter, you will get error WME1091.
 
-XxxxXxxxxx xxxx xxx xxxxxx xxx xxxxxx xxxxxxxxxx xx x xxxxxx xx xxxx, xxxxxxxxx xxx xxxxxx xxxxx. Xxx xx xxxxxxx, xxx xxx [XxxxxxXxxxxXxxxXxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) xxxxxxxxx.
+JavaScript code can access the output parameters of a method by name, including the return value. For an example, see the [ReturnValueNameAttribute](https://msdn.microsoft.com/library/windows/apps/system.runtime.interopservices.windowsruntime.returnvaluenameattribute.aspx) attribute.
 
-| Xxxxx xxxxxx | Xxxxxxx Xxxx |
+| Error number | Message Text |
 |---------------|------------|
-| XXXYYYY | Xxx xxxxxx '\{Y}' xxx xxx xxxxxx xxxxx xxxxx '\{Y}' xxxxx xx xxx xxxx xx x xxxxxxxxx xxxx. Xxxxxxx Xxxxxxx xxxxxx xxxxxxxxxx xxx xxxxxx xxxxx xxxx xxxx xxxxxx xxxxx. |
-| XXXYYYY | Xxx xxxxxx '\{Y}' xxx x xxxxxxxxx xxxxx '\{Y}' xxxxx xx xxx xxxx xx xxx xxxxxxx xxxxxx xxxxx xxxx. Xxxxxxxx xxxxx xxxxxxx xxxx xxx xxx xxxxxxxxx xx xxx xxx Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx.XxxxxxxXxxxxxx.XxxxxxXxxxxXxxxXxxxxxxxx xx xxxxxxxxxx xxxxxxx xxx xxxx xx xxx xxxxxx xxxxx.<br/>**Xxxx**  Xxx xxxxxxx xxxx xx "xxxxxxXxxxx" xxx xxxxxxxx xxxxxxxxx xxx "xxxxx" xxx xxx xxxxx xxxxxxx. |
+| WME1091 | The method '\{0}' has the return value named '\{1}' which is the same as a parameter name. Windows Runtime method parameters and return value must have unique names. |
+| WME1092 | The method '\{0}' has a parameter named '\{1}' which is the same as the default return value name. Consider using another name for the parameter or use the System.Runtime.InteropServices.WindowsRuntime.ReturnValueNameAttribute to explicitly specify the name of the return value.<br/>**Note**  The default name is "returnValue" for property accessors and "value" for all other methods. |
  
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X\# xxx Xxxxxx Xxxxx](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
-* [Xxxxxxxx.xxx (Xxxxxxx Xxxxxxx Xxxxxxxx Xxxxxx Xxxx)](https://msdn.microsoft.com/library/hh925576.aspx)
+* [Creating Windows Runtime Components in C# and Visual Basic](creating-windows-runtime-components-in-csharp-and-visual-basic.md)
+* [Winmdexp.exe (Windows Runtime Metadata Export Tool)](https://msdn.microsoft.com/library/hh925576.aspx)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

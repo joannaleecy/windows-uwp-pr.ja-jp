@@ -1,39 +1,46 @@
 ---
-xx.xxxxxxx: YYXXYYXY-XYYY-YYXY-YYXY-YYXXXXXYYYXY
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxx xxx xxxxxxxx xxxxxxx xxxx xxx xx xxxx xxxx XxxxxxXxxxxxx.
-xxxxx: XxxxxxXxxxxxx xxxxxxx xxxxxxxxx
+ms.assetid: 98BD79B3-F420-43C5-98D3-52EBDDB479A0
+description: この記事では、BitmapEncoder で使用できるエンコーディング オプションを示します。
+title: BitmapEncoder オプション リファレンス
 ---
 
-# XxxxxxXxxxxxx xxxxxxx xxxxxxxxx
+# BitmapEncoder オプション リファレンス
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-Xxxx xxxxxxx xxxxx xxx xxxxxxxx xxxxxxx xxxx xxx xx xxxx xxxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226206). Xx xxxxxxxx xxxxxx xx xxxxxxx xx xxx xxxx, xxxxx xx x xxxxxx, xxx x xxxxx xx x xxxxxxxxxx xxxx xxxx ([**Xxxxxxx.Xxxxxxxxxx.XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br225871)). Xxx xxxxxxxxxxx xx xxxxxxx xxxx xxxxxx, xxx [Xxxxxxx](imaging.md).
+この記事では、[**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) で使用できるエンコーディング オプションを示します。 エンコーディング オプションは、対応する名前の文字列と特定のデータ型 ([**Windows.Foundation.PropertyType**](https://msdn.microsoft.com/library/windows/apps/br225871)) の値によって定義されます。 画像の操作について詳しくは、「[イメージング](imaging.md)」をご覧ください。
 
-| Xxxx                    | XxxxxxxxXxxx | Xxxxx xxxxx                                                                                        | Xxxxx xxxxxxx |
+| 名前                    | PropertyType | 使用上の注意                                                                                        | 有効な形式 |
 |-------------------------|--------------|----------------------------------------------------------------------------------------------------|---------------|
-| XxxxxXxxxxxx            | xxxxxx       | Xxxxx xxxxxx xxxx Y xx Y.Y. Xxxxxx xxxxxx xxxxxxxx xxxxxx xxxxxxx.                                 | XXXX, XXXX-XX |
-| XxxxxxxxxxxXxxxxxx      | xxxxxx       | Xxxxx xxxxxx xxxx Y xx Y.Y. Xxxxxx xxxxxx xxxxxxxx x xxxx xxxxxxxxx xxx xxxxxx xxxxxxxxxxx xxxxxx. | XXXX          |
-| Xxxxxxxx                | xxxxxxx      | Xx xxxx xx xxx xx xxxx, xxx XxxxxXxxxxxx xxxxxx xx xxxxxxx.                                        | XXXX-XX       |
-| XxxxxxxxxXxxxxx         | xxxxxxx      | Xxxxxxx xx xxxxxxxxx xxx xxxxx.                                                                    | XXX           |
-| XxxxxxXxxxxx            | xxxxY        | Xxx xxx [**XxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br226389) xxxxxxxxxxx.                                | XXX           |
-| XxxxXxxxxxxxxxxXxxxxx   | xxxxY        | Xxx xxx [**XxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br226399) xxxxxxxxxxx.                    | XXXX          |
-| Xxxxxxxxx               | xxxxYYXxxxx  | Xx xxxxx xx YY xxxxxxxx xxxxxxxxxx xxxxxxxxx xxxxxxxxxxxx xxxxxxxxx.                               | XXXX          |
-| Xxxxxxxxxxx             | xxxxYYXxxxx  | Xx xxxxx xx YY xxxxxxxx xxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxxx xxxxxxxxx.                             | XXXX          |
-| XxxxXXxXxXxxxxxxxxxx    | xxxxY        | Xxx xxx [**XxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br226386) xxxxxxxxxxx.                    | XXXX          |
-| XxxxxxxxXxxY            | xxxxxxx      | Xxxxxxx xx xxxxxxxx xxx xxxxxxxx xx xx XxxY xxxxxxxx xxxxx.                                        | XXXX          |
-| XxxxxxXYXxxxxxYYxxxXXXX | xxxxxxx      | Xxxxxxx xx xxxxxx xx x xxxxxxx Y XXX xxxxx xxxxxxxx xxxxx.                                         | XXX           |
+| ImageQuality            | single       | 有効な値は 0 ～ 1.0 です。 値が大きいほど、画質が高くなります。                                 | JPEG、JPEG-XR |
+| CompressionQuality      | single       | 有効な値は 0 ～ 1.0 です。 値が大きいほど、効率の高い (時間のかかる) 圧縮方式であることを示します。 | TIFF          |
+| Lossless                | boolean      | true に設定すると、ImageQuality オプションが無視されます。                                        | JPEG-XR       |
+| InterlaceOption         | boolean      | 画像をインターレースするかどうかを示します。                                                                    | PNG           |
+| FilterOption            | uint8        | [
+            **PngFilterMode**](https://msdn.microsoft.com/library/windows/apps/br226389) 列挙値を使います。                                | PNG           |
+| TiffCompressionMethod   | uint8        | [
+            **TiffCompressionMode**](https://msdn.microsoft.com/library/windows/apps/br226399) 列挙値を使います。                    | TIFF          |
+| Luminance               | uint32Array  | 輝度の量子化定数を格納する 64 要素の配列です。                               | JPEG          |
+| Chrominance             | uint32Array  | クロミナンスの量子化定数を格納する 64 要素の配列です。                             | JPEG          |
+| JpegYCrCbSubsampling    | uint8        | [
+            **JpegSubsamplingMode**](https://msdn.microsoft.com/library/windows/apps/br226386) 列挙値を使います。                    | JPEG          |
+| SuppressApp0            | boolean      | App0 メタデータ ブロックの作成を抑制するかどうかを示します。                                        | JPEG          |
+| EnableV5Header32bppBGRA | boolean      | アルファをサポートする Version 5 BMP にエンコードするかどうかを示します。                                         | BMP           |
 
  
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxxx](imaging.md)
+* [イメージング](imaging.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,30 +1,30 @@
 ---
-xx.xxxxxxx: XYXYYYYX-YYYY-YYXX-XXYX-XYXYXYXYYXXX
-xxxxx: Xxxxxx x xxxx xxxx xx xxx xxxxxx xxxx
-xxxxxxxxxxx: Xxxxx xxx xx xx xxxx xx x xxxxxxxx xxxxxx xx xxxxxxxxxx x xxxx xxxx xx xxx xxxxxx xxxx.
+ms.assetid: E2A1200C-9583-40FA-AE4D-C9E6F6C32BCF
+title: Submit a work item to the thread pool
+description: Learn how to do work in a separate thread by submitting a work item to the thread pool.
 ---
-# Xxxxxx x xxxx xxxx xx xxx xxxxxx xxxx
+# Submit a work item to the thread pool
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Xxxxxxxxx XXXx **
+** Important APIs **
 
--   [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR230593)
--   [**XXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206580)
+-   [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593)
+-   [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580)
 
-Xxxxx xxx xx xx xxxx xx x xxxxxxxx xxxxxx xx xxxxxxxxxx x xxxx xxxx xx xxx xxxxxx xxxx. Xxx xxxx xx xxxxxxxx x xxxxxxxxxx XX xxxxx xxxxx xxxxxxxxxx xxxx xxxx xxxxx x xxxxxxxxxx xxxxxx xx xxxx, xxx xxx xx xx xxxxxxxx xxxxxxxx xxxxx xx xxxxxxxx.
+Learn how to do work in a separate thread by submitting a work item to the thread pool. Use this to maintain a responsive UI while still completing work that takes a noticeable amount of time, and use it to complete multiple tasks in parallel.
 
-## Xxxxxx xxx xxxxxx xxx xxxx xxxx
+## Create and submit the work item
 
-Xxxxxx x xxxx xxxx xx xxxxxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR230593). Xxxxxx x xxxxxxxx xx xx xxx xxxx (xxx xxx xxx x xxxxxx, xx x xxxxxxxx xxxxxxxx). Xxxx xxxx **XxxXxxxx** xxxxxxx xx [**XXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206580) xxxxxx; xxxxx xxxx xxxxxx xxx xxx xx xxx xxxx xxxx.
+Create a work item by calling [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593). Supply a delegate to do the work (you can use a lambda, or a delegate function). Note that **RunAsync** returns an [**IAsyncAction**](https://msdn.microsoft.com/library/windows/apps/BR206580) object; store this object for use in the next step.
 
-Xxxxx xxxxxxxx xx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR230593) xxx xxxxxxxxx xx xxxx xxx xxx xxxxxxxxxx xxxxxxx xxx xxxxxxxx xx xxx xxxx xxxx, xxx xxxxxxx xxxxxxx xx xxxx xxxxxxxxxxxx xxxx xxxxx xxxx xxxxx.
+Three versions of [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593) are available so that you can optionally specify the priority of the work item, and control whether it runs concurrently with other work items.
 
-**Xxxx**  Xxx [**XxxxXxxxxxxxxx.XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh750317) xx xxxxxx xxx XX xxxxxx xxx xxxx xxxxxxxx xxxx xxx xxxx xxxx.
+**Note**  Use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI thread and show progress from the work item.
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxx x xxxx xxxx xxx xxxxxxxx x xxxxxx xx xx xxx xxxx:
+The following example creates a work item and supplies a lambda to do the work:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ``` cpp
 // The nth prime number to find.
 const unsigned int n = 9999;
@@ -186,17 +186,17 @@ IAsyncAction asyncAction = Windows.System.Threading.ThreadPool.RunAsync(
 m_workItem = asyncAction;
 ```
 
-Xxxxxxxxx xxx xxxx xx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR230593), xxx xxxx xxxx xx xxxxxx xx xxx xxxxxx xxxx xxx xxxx xxxx x xxxxxx xxxxxxx xxxxxxxxx. Xxxxxx xxxx xxxx xxxxx xxx xxxxxxxxxxxxxx xxx xxxx xxx xxx xx xxx xxxxx, xx xxxx xxxx xxxx xxxx xxxxx xxxxxxxx xxxxxxxxxxxxx.
+Following the call to [**RunAsync**](https://msdn.microsoft.com/library/windows/apps/BR230593), the work item is queued by the thread pool and runs when a thread becomes available. Thread pool work items run asynchronously and they can run in any order, so make sure your work items function independently.
 
-Xxxx xxxx xxx xxxx xxxx xxxxxx xxx [**XXxxxxXxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206593) xxxxxxxx, xxx xxxxx xx xxx xxxx xxxx xx xxxxxxxxx.
+Note that the work item checks the [**IAsyncInfo.Status**](https://msdn.microsoft.com/library/windows/apps/BR206593) property, and exits if the work item is cancelled.
 
-## Xxxxxx xxxx xxxx xxxxxxxxxx
+## Handle work item completion
 
-Xxxxxxx x xxxxxxxxxx xxxxxxx xx xxxxxxx xxx [**XXxxxxXxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) xxxxxxxx xx xxx xxxx xxxx. Xxxxxx x xxxxxxxx (xxx xxx xxx x xxxxxx xx x xxxxxxxx xxxxxxxx) xx xxxxxx xxxx xxxx xxxxxxxxxx. Xxx xxxxxxx, xxx [**XxxxXxxxxxxxxx.XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh750317) xx xxxxxx xxx XX xxxxxx xxx xxxx xxx xxxxxx.
+Provide a completion handler by setting the [**IAsyncAction.Completed**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.foundation.iasyncaction.completed.aspx) property of the work item. Supply a delegate (you can use a lambda or a delegate function) to handle work item completion. For example, use [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) to access the UI thread and show the result.
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxx xxx XX xxxx xxx xxxxxx xx xxx xxxx xxxx xxxxxxxxx xx xxxx Y:
+The following example updates the UI with the result of the work item submitted in step 1:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ``` cpp
 asyncAction-&gt;Completed = ref new AsyncActionCompletedHandler(
     \[this, n, nthPrime](IAsyncAction^ asyncInfo, AsyncStatus asyncStatus)
@@ -242,17 +242,21 @@ asyncAction.Completed = new AsyncActionCompletedHandler(
 });
 ```
 
-Xxxx xxxx xxx xxxxxxxxxx xxxxxxx xxxxxx xxxxxxx xxx xxxx xxxx xxx xxxxxxxxx xxxxxx xxxxxxxxxxx x XX xxxxxx.
+Note that the completion handler checks whether the work item was cancelled before dispatching a UI update.
 
-## Xxxxxxx xxx xxxx xxxxx
+## Summary and next steps
 
-Xxx xxx xxxxx xxxx xx xxxxxxxxxxx xxx xxxx xxxx xxxx xxxxxxxxxx xx xxx [Xxxxxxxx x XxxxxxXxxx xxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=328569) xxxxxxx xxx Xxxxxxx Y.Y, xxx xx-xxxxx xxx xxxxxx xxxx xx x xxx\_xxxx Xxxxxxx YY xxx.
+You can learn more by downloading the code from this quickstart in the [Creating a ThreadPool work item sample](http://go.microsoft.com/fwlink/p/?LinkID=328569) written for Windows 8.1, and re-using the source code in a win\_unap Windows 10 app.
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxx x xxxx xxxx xx xxx xxxxxx xxxx](submit-a-work-item-to-the-thread-pool.md)
-* [Xxxx xxxxxxxxx xxx xxxxx xxx xxxxxx xxxx](best-practices-for-using-the-thread-pool.md)
-* [Xxx x xxxxx xx xxxxxx x xxxx xxxx](use-a-timer-to-submit-a-work-item.md)
+* [Submit a work item to the thread pool](submit-a-work-item-to-the-thread-pool.md)
+* [Best practices for using the thread pool](best-practices-for-using-the-thread-pool.md)
+* [Use a timer to submit a work item](use-a-timer-to-submit-a-work-item.md)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,31 +1,30 @@
 ---
-xxxxx: Xxxxxxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxx xxxxxxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxxx xxxx XxxxxxYX.
-xx.xxxxxxx: YxxYYYxY-YYxx-YxxY-YxYY-YYxxYYxYYYYY
+title: Multisampling in Universal Windows Platform (UWP) apps
+description: Learn how to use multisampling in Universal Windows Platform (UWP) apps built with Direct3D.
+ms.assetid: 1cd482b8-32ff-1eb0-4c91-83eb52f08484
 ---
 
-# <span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps">
-            </span> Xxxxxxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx
+# <span id="dev_gaming.multisampling__multi-sample_anti_aliasing__in_windows_store_apps"></span> Multisampling in Universal Windows Platform (UWP) apps
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxx xxx xx xxx xxxxxxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxxx xxxx XxxxxxYX. Xxxxxxxxxxxxx, xxxx xxxxx xx xxxxx-xxxxxx xxxxxxxxxxxx, xx x xxxxxxxx xxxxxxxxx xxxx xx xxxxxx xxx xxxxxxxxxx xx xxxxxxx xxxxx. Xx xxxxx xx xxxxxxx xxxx xxxxxx xxxx xxx xxxxxxxx xx xxx xxxxx xxxxxx xxxxxx, xxxx xxxxxxxxx xxxxxx xx xxxxxxxx xxx xxxxxxxxxx xx x "xxxxxxx" xxxx xx xxxxxxx xxxxxx. Xxx x xxxxxxxx xxxxxxxxxxx xx xxx xxxxxxxxxxxxx xxxxxxxx xxxxx xx XxxxxxYX, xxx [Xxxxxxxxxxx Xxxx-Xxxxxxxx Xxxxxxxxxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/desktop/cc627092#Multisample).
+Learn how to use multisampling in Universal Windows Platform (UWP) apps built with Direct3D. Multisampling, also known as multi-sample antialiasing, is a graphics technique used to reduce the appearance of aliased edges. It works by drawing more pixels than are actually in the final render target, then averaging values to maintain the appearance of a "partial" edge in certain pixels. For a detailed description of how multisampling actually works in Direct3D, see [Multisample Anti-Aliasing Rasterization Rules](https://msdn.microsoft.com/library/windows/desktop/cc627092#Multisample).
 
-## Xxxxxxxxxxxxx xxx xxx xxxx xxxxx xxxx xxxxx
+## Multisampling and the flip model swap chain
 
 
-XXX xxxx xxxx xxx XxxxxxX xxxx xxx xxxx xxxxx xxxx xxxxxx. Xxxx xxxxx xxxx xxxxxx xxx'x xxxxxxx xxxxxxxxxxxxx xxxxxxxx, xxx xxxxxxxxxxxxx xxx xxxxx xx xxxxxxx xx x xxxxxxxxx xxx xx xxxxxxxxx xxx xxxxx xx x xxxxxxxxxxxx xxxxxx xxxxxx xxxx, xxx xxxx xxxxxxxxx xxx xxxxxxxxxxxx xxxxxx xxxxxx xx xxx xxxx xxxxxx xxxxxx xxxxxxxxxx. Xxxx xxxxxxx xxxxxxxx xxx xxxxx xxxxxxxx xx xxx xxxxxxxxxxxxx xx xxxx XXX xxx.
+UWP apps that use DirectX must use flip model swap chains. Flip model swap chains don't support multisampling directly, but multisampling can still be applied in a different way by rendering the scene to a multisampled render target view, and then resolving the multisampled render target to the back buffer before presenting. This article explains the steps required to add multisampling to your UWP app.
 
-### Xxx xx xxx xxxxxxxxxxxxx
+### How to use multisampling
 
-XxxxxxYX xxxxxxx xxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx, xxxxxxx xxxxxx xxxxx xxxxxxxxxxxx, xxx xxxxxxxxx xxxxxxx xxxxxx xxxxxxx xxxx xx xxxxxxxxx xxxx xxxxxxx xxxxxxxxxxxxx. Xxxxxxxx xxxxxxx xxxxx xxxxxxx x xxxxx xxxxx xx xxxxxxx xxx xxxxxx xxxxxx xxxx xxx xxxxxxx xxxxxxxx. Xxxxxxxxxxxxx xxxxxxx xxx xx xxxxxxxxxx xx xxx-xxxx xx xxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxxxxxxxx xxxx xxxxxxxx XXXX xxxxxxx, xxx xxxx xxxxxxxx xxx xxxxxx xxxxxx xxx xxx xxx xxxx xxxx xxxxxxxxx xxxxxx.
+Direct3D feature levels guarantee support for specific, minimum sample count capabilities, and guarantee certain buffer formats will be available that support multisampling. Graphics devices often support a wider range of formats and sample counts than the minimum required. Multisampling support can be determined at run-time by checking feature support for multisampling with specific DXGI formats, and then checking the sample counts you can use with each supported format.
 
-1.  Xxxx [**XXYXYYXxxxxx::XxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476497) xx xxxx xxx xxxxx XXXX xxxxxxx xxx xx xxxx xxxx xxxxxxxxxxxxx. Xxxxxx xxx xxxxxx xxxxxx xxxxxxx xxxx xxxx xxx xxx. Xxxx xxx xxxxxx xxxxxx xxx xxxxxxx xxxxxx xxxx xxx xxx xxxx xxxxxx, xx xxxxx xxx xxxx [**XYXYY\_XXXXXX\_XXXXXXX\_XXXXXXXXXXX\_XXXXXXXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476134) xxx **XYXYY\_XXXXXX\_XXXXXXX\_XXXXXXXXXXX\_XXXXXXX**.
+1.  Call [**ID3D11Device::CheckFeatureSupport**](https://msdn.microsoft.com/library/windows/desktop/ff476497) to find out which DXGI formats can be used with multisampling. Supply the render target formats your game can use. Both the render target and resolve target must use the same format, so check for both [**D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RENDERTARGET**](https://msdn.microsoft.com/library/windows/desktop/ff476134) and **D3D11\_FORMAT\_SUPPORT\_MULTISAMPLE\_RESOLVE**.
 
-    **Xxxxxxx xxxxx Y:  ** Xxxxxxxx xxxxxxx xxxxx Y xxxxxxx [xxxxxxxxx xxxxxxx xxx xxxxxxxxxxxx xxxxxx xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget), xxxxxxx xx xxx xxxxxxxxxx xxx xxxxxxxxxxx xxxxxxx xxxxxxx. Xx xxxx xxxxx xx xxxxxxxxx xxxxxx xxxxxx xx xxx xxx xxxxxxxxxxxxx xxxxxxxxx xxxxxxxxx xx xxxx xxxxx.
+    **Feature level 9:  ** Although feature level 9 devices [guarantee support for multisampled render target formats](https://msdn.microsoft.com/library/windows/desktop/ff471324#MultiSample_RenderTarget), support is not guaranteed for multisample resolve targets. So this check is necessary before trying to use the multisampling technique described in this topic.
 
-    Xxx xxxxxxxxx xxxx xxxxxx xxxxxxxxxxxxx xxxxxxx xxx xxx xxx XXXX\_XXXXXX xxxxxx:
+    The following code checks multisampling support for all the DXGI\_FORMAT values:
 
     ```cpp
     // Determine the format support for multisampling.
@@ -48,9 +47,9 @@ XxxxxxYX xxxxxxx xxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx, xxxxxxx xxxxxx xxxxx xxx
     }
     ```
 
-2.  Xxx xxxx xxxxxxxxx xxxxxx, xxxxx xxx xxxxxx xxxxx xxxxxxx xx xxxxxxx [**XXYXYYXxxxxx::XxxxxXxxxxxxxxxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476499).
+2.  For each supported format, query for sample count support by calling [**ID3D11Device::CheckMultisampleQualityLevels**](https://msdn.microsoft.com/library/windows/desktop/ff476499).
 
-    Xxx xxxxxxxxx xxxx xxxxxx xxxxxx xxxx xxxxxxx xxx xxxxxxxxx XXXX xxxxxxx:
+    The following code checks sample size support for supported DXGI formats:
 
     ```cpp
     // Find available sample sizes for each supported format.
@@ -75,13 +74,13 @@ XxxxxxYX xxxxxxx xxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx, xxxxxxx xxxxxx xxxxx xxx
     }
     ```
 
-    > **Xxxx**   Xxx [**XXYXYYXxxxxxY::XxxxxXxxxxxxxxxxXxxxxxxXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/dn280494) xxxxxxx xx xxx xxxx xx xxxxx xxxxxxxxxxx xxxxxxx xxx xxxxx xxxxxxxx xxxxxxx.
+    > **Note**   Use [**ID3D11Device2::CheckMultisampleQualityLevels1**](https://msdn.microsoft.com/library/windows/desktop/dn280494) instead if you need to check multisample support for tiled resource buffers.
 
      
 
-3.  Xxxxxx x xxxxxx xxx xxxxxx xxxxxx xxxx xxxx xxx xxxxxxx xxxxxx xxxxx. Xxx xxx xxxx XXXX\_XXXXXX, xxxxx, xxx xxxxxx xx xxx xxxx xxxxx, xxx xxxxxxx x xxxxxx xxxxx xxxxxxx xxxx Y xxx xxx x xxxxxxxxxxxx xxxxxxx xxxxxxxxx (**XYXYY\_XXX\_XXXXXXXXX\_XXXXXXXYXXX** xxx xxxxxxx). Xx xxxxxxxxx, xxx xxx xx-xxxxxx xxx xxxx xxxxx xxxx xxx xxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxxxxxxx.
+3.  Create a buffer and render target view with the desired sample count. Use the same DXGI\_FORMAT, width, and height as the swap chain, but specify a sample count greater than 1 and use a multisampled texture dimension (**D3D11\_RTV\_DIMENSION\_TEXTURE2DMS** for example). If necessary, you can re-create the swap chain with new settings that are optimal for multisampling.
 
-    Xxx xxxxxxxxx xxxx xxxxxxx x xxxxxxxxxxxx xxxxxx xxxxxx:
+    The following code creates a multisampled render target:
 
     ```cpp
     float widthMulti = m_d3dRenderTargetSize.Width;
@@ -118,9 +117,9 @@ XxxxxxYX xxxxxxx xxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx, xxxxxxx xxxxxx xxxxx xxx
         );
     ```
 
-4.  Xxx xxxxx xxxxxx xxxx xxxx xxx xxxx xxxxx, xxxxxx, xxxxxx xxxxx, xxx xxxxxxx xxxxxxxxx xx xxxxx xxx xxxxxxxxxxxx xxxxxx xxxxxx.
+4.  The depth buffer must have the same width, height, sample count, and texture dimension to match the multisampled render target.
 
-    Xxx xxxxxxxxx xxxx xxxxxxx x xxxxxxxxxxxx xxxxx xxxxxx:
+    The following code creates a multisampled depth buffer:
 
     ```cpp
     // Create a depth stencil view for use with 3D rendering if needed.
@@ -156,9 +155,9 @@ XxxxxxYX xxxxxxx xxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx, xxxxxxx xxxxxx xxxxx xxx
         );
     ```
 
-5.  Xxx xx x xxxx xxxx xx xxxxxx xxx xxxxxxxx, xxxxxxx xxx xxxxxxxx xxxxx xxx xxxxxx xxxx xxxx xxxxx xxx xxxxxx xxxxxx.
+5.  Now is a good time to create the viewport, because the viewport width and height must also match the render target.
 
-    Xxx xxxxxxxxx xxxx xxxxxxx x xxxxxxxx:
+    The following code creates a viewport:
 
     ```cpp
     // Set the 3D rendering viewport to target the entire window.
@@ -172,9 +171,9 @@ XxxxxxYX xxxxxxx xxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx, xxxxxxx xxxxxx xxxxx xxx
     m_d3dContext->RSSetViewports(1, &m_screenViewport);
     ```
 
-6.  Xxxxxx xxxx xxxxx xx xxx xxxxxxxxxxxx xxxxxx xxxxxx. Xxxx xxxxxxxxx xx xxxxxxxx, xxxx [**XXYXYYXxxxxxXxxxxxx::XxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476474) xxxxxx xxxxxxxxxx xxx xxxxx. Xxxx xxxxxxxxx XxxxxxYX xx xxxxxx xxx xxxxxxxxxxxxx xxxxxxxxx, xxxxxxxxx xxx xxxxx xx xxxx xxxxx xxx xxxxxxx xxx xxxxxxx xxx xxxxxx xx xxx xxxx xxxxxx. Xxx xxxx xxxxxx xxxx xxxxxxxx xxx xxxxx xxxx-xxxxxxx xxxxx xxx xxx xx xxxxxxxxx.
+6.  Render each frame to the multisampled render target. When rendering is complete, call [**ID3D11DeviceContext::ResolveSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476474) before presenting the frame. This instructs Direct3D to peform the multisampling operation, computing the value of each pixel for display and placing the result in the back buffer. The back buffer then contains the final anti-aliased image and can be presented.
 
-    Xxx xxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxxx xxxxxx xxxxxxxxxx xxx xxxxx:
+    The following code resolves the subresource before presenting the frame:
 
     ```cpp
     if (m_sampleSize > 1)
@@ -203,4 +202,8 @@ XxxxxxYX xxxxxxx xxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx, xxxxxxx xxxxxx xxxxx xxx
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

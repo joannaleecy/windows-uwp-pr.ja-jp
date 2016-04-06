@@ -1,25 +1,25 @@
 ---
-xx.xxxxxxx: YXYYYXXY-XYYY-YYXY-XYXY-YYYYYYYYYYYX
-xxxxx: Xxxx xxxxxx xxxxxxxxxxx
-xxxxxxxxxxx: Xxxx xxx xxxxxx xxxxxxx xxxx xxxxxx xxxxxxxxx xx xxxxxxx. Xxxx xxx xxxx xxxxxx xxxxxxxxxx xxxxxxxxx xxxxxxx xxx xxxx xxxxxx, xx xx xxxxxxxxx xxxxxxxxxxxx.
+ms.assetid: 3A404CC0-A997-45C8-B2E8-44745539759D
+title: ファイル アクセス許可
+description: アプリが既定でファイル システムの特定の場所にアクセスする方法について説明します。 また、ファイル ピッカーを使うか機能を宣言すると、その他の場所にアクセスすることもできます。
 ---
-# Xxxx xxxxxx xxxxxxxxxxx
+# ファイル アクセス許可
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xxxx xxx xxxxxx xxxxxxx xxxx xxxxxx xxxxxxxxx xx xxxxxxx. Xxxx xxx xxxx xxxxxx xxxxxxxxxx xxxxxxxxx xxxxxxx xxx xxxx xxxxxx, xx xx xxxxxxxxx xxxxxxxxxxxx.
+アプリは既定でファイル システムの特定の場所にアクセスできます。 また、ファイル ピッカーを使うか機能を宣言すると、その他の場所にアクセスすることもできます。
 
-## Xxx xxxxxxxxx xxxx xxx xxxx xxx xxxxxx
+## すべてのアプリからアクセスできる場所
 
-Xxxx xxx xxxxxx x xxx xxx, xxx xxx xxxxxx xxx xxxxxxxxx xxxx xxxxxx xxxxxxxxx xx xxxxxxx:
+新しいアプリを作成すると、既定でファイル システムの次の場所にアクセスできます。
 
--   **Xxxxxxxxxxx xxxxxxx xxxxxxxxx**. Xxx xxxxxx xxxxx xxxx xxx xx xxxxxxxxx xx xxx xxxx’x xxxxxx.
+-   **アプリケーションのインストール ディレクトリ**。 ユーザーのシステムでアプリがインストールされているフォルダーです。
 
-    Xxxxx xxx xxx xxxxxxx xxxx xx xxxxxx xxxxx xxx xxxxxxx xx xxxx xxx’x xxxxxxx xxxxxxxxx:
+    アプリのインストール ディレクトリにあるファイルやフォルダーにアクセスする主な方法は 2 とおりあります。
 
-    1.  Xxx xxx xxxxxxxx x [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227230) xxxx xxxxxxxxxx xxxx xxx'x xxxxxxx xxxxxxxxx, xxxx xxxx:
-        > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+    1.  次のように、アプリのインストール ディレクトリを表す [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) を取得できます。
+        > [!div class="tabbedCodeSnippets"]
         ```csharp
         Windows.Storage.StorageFolder installedLocation = Windows.ApplicationModel.Package.Current.InstalledLocation;
         ```
@@ -27,10 +27,11 @@ Xxxx xxx xxxxxx x xxx xxx, xxx xxx xxxxxx xxx xxxxxxxxx xxxx xxxxxx xxxxxxxxx xx
         var installDirectory = Windows.ApplicationModel.Package.current.installedLocation;
         ```
 
-       Xxx xxx xxxx xxxxxx xxxxx xxx xxxxxxx xx xxx xxxxxxxxx xxxxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227230) xxxxxxx. Xx xxx xxxxxxx, xxxx **XxxxxxxXxxxxx** xx xxxxxx xx xxx `installDirectory` xxxxxxxx. Xxx xxx xxxxx xxxx xxxxx xxxxxxx xxxx xxxx xxx xxxxxxx xxx xxxxxxx xxxxxxxxx xx xxxxxxxxxxx xxx [Xxx xxxxxxx xxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231526) xxx Xxxxxxx Y.Y xxx xx-xxxxx xxx xxxxxx xxxx xx xxxx Xxxxxxx YY xxx.
+       [
+            **StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) メソッドを使って、ディレクトリ内のファイルとフォルダーにアクセスすることができます。 上の例では、この **StorageFolder** が `installDirectory` 変数に格納されています。 アプリ パッケージやインストール ディレクトリの操作について詳しくは、Windows 8.1 の[アプリ パッケージ情報のサンプル](http://go.microsoft.com/fwlink/p/?linkid=231526)をダウンロードしてご覧ください。また、Windows 10 アプリでソース コードを再利用することもできます。
 
-    2.  Xxx xxx xxxxxxxx x xxxx xxxxxxxx xxxx xxxx xxx'x xxxxxxx xxxxxxxxx xx xxxxx xx xxx XXX, xxxx xxxx:
-        > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+    2.  次のように、アプリの URI を使って、アプリのインストール ディレクトリからファイルを直接取得できます。
+        > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;            
         StorageFile file = await StorageFile.GetFileFromApplicationUriAsync("ms-appx:///file.txt");
@@ -43,22 +44,24 @@ Xxxx xxx xxxxxx x xxx xxx, xxx xxx xxxxxx xxx xxxxxxxxx xxxx xxxxxx xxxxxxxxx xx
         );
         ```
         
-        Xxxx [**XxxXxxxXxxxXxxxxxxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701741) xxxxxxxxx, xx xxxxxxx x [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxx xxxxxxxxxx xxx *xxxx.xxx* xxxx xx xxx xxx'x xxxxxxx xxxxxxxxx (`file` xx xxx xxxxxxx).
+        [
+            **GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) が完了すると、アプリのインストール ディレクトリにある *file.txt* ファイル (この例では `file`) を表す [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) が返されます。
 
-        Xxx "xx-xxxx:///" xxxxxx xx xxx XXX xxxxxx xx xxx xxx'x xxxxxxx xxxxxxxxx. Xxx xxx xxxxx xxxx xxxxx xxxxx xxx XXXx xx [Xxx xx xxx XXXx xx xxxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh781215).
+        URI の "ms-appx:///" プレフィックスは、アプリのインストール ディレクトリを参照します。 アプリの URI の使用について詳しくは、「[URI を使ってコンテンツを参照する方法](https://msdn.microsoft.com/library/windows/apps/hh781215)」をご覧ください。
 
-    Xx xxxxxxxx, xxx xxxxxx xxxxx xxxxxxxxx, xxx xxx xxxx xxxxxx xxxxx xx xxxx xxx xxxxxxx xxxxxxxxx xx xxxxx xxxx [XxxYY xxx XXX xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx](https://msdn.microsoft.com/library/windows/apps/br205757) xxx xxxx [X/X++ Xxxxxxxx Xxxxxxx xxxxxxxxx xxxx Xxxxxxxxx Xxxxxx Xxxxxx](http://msdn.microsoft.com/library/hh875057.aspx).
+    さらに、他の場所とは異なり、[ユニバーサル Windows プラットフォーム (UWP) アプリの Win32 と COM](https://msdn.microsoft.com/library/windows/apps/br205757) や [Microsoft Visual Studio の C/C++ 標準ライブラリ関数](http://msdn.microsoft.com/library/hh875057.aspx)を使ってアプリのインストール ディレクトリ内のファイルにアクセスすることもできます。
 
-    Xxx xxx'x xxxxxxx xxxxxxxxx xx x xxxx-xxxx xxxxxxxx. Xxx xxx’x xxxx xxxxxx xx xxx xxxxxxx xxxxxxxxx xxxxxxx xxx xxxx xxxxxx.
+    アプリのインストール ディレクトリは読み取り専用です。 インストール ディレクトリにファイル ピッカーでアクセスすることはできません。
 
--   **Xxxxxxxxxxx xxxx xxxxxxxxx.** Xxx xxxxxxx xxxxx xxxx xxx xxx xxxxx xxxx. Xxxxx xxxxxxx (xxxxx, xxxxxxx xxx xxxxxxxxx) xxx xxxxxxx xxxx xxxx xxx xx xxxxxxxxx.
+-   **アプリケーション データの場所。** アプリがデータを保存できるフォルダーです。 これらのフォルダー (ローカル、移動、一時) は、アプリのインストール時に作成されます。
 
-    Xxxxx xxx xxx xxxxxxx xxxx xx xxxxxx xxxxx xxx xxxxxxx xxxx xxxx xxx’x xxxx xxxxxxxxx:
+    アプリ データの場所にあるファイルやフォルダーにアクセスする主な方法は 2 とおりあります。
 
-    1.  Xxx [**XxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br241587) xxxxxxxxxx xx xxxxxxxx xx xxx xxxx xxxxxx.
+    1.  [
+            **ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587) プロパティを使ってアプリ データ フォルダーを取得します。
 
-        Xxx xxxxxxx, xxx xxx xxx [**XxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br241587).[**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241621) xx xxxxxxxx x [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227230) xxxx xxxxxxxxxx xxxx xxx'x xxxxx xxxxxx xxxx xxxx:
-        > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+        たとえば、次のように、[**ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587).[**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) を使って、アプリのローカル フォルダーを表す [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) を取得できます。
+        > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
         StorageFolder localFolder = ApplicationData.Current.LocalFolder;
@@ -67,12 +70,12 @@ Xxxx xxx xxxxxx x xxx xxx, xxx xxx xxxxxx xxx xxxxxxxxx xxxx xxxxxx xxxxxxxxx xx
         var localFolder = Windows.Storage.ApplicationData.current.localFolder;
         ```
  
-        Xx xxx xxxx xx xxxxxx xxxx xxx'x xxxxxxx xx xxxxxxxxx xxxxxx, xxx xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241623) xx [**XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241629) xxxxxxxx xxxxxxx.
+        アプリの移動フォルダーまたは一時フォルダーにアクセスする場合は、[**RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) プロパティまたは [**TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) プロパティを使います。
 
-        Xxxxx xxx xxxxxxxx x [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227230) xxxx xxxxxxxxxx xx xxx xxxx xxxxxxxx, xxx xxx xxxxxx xxxxx xxx xxxxxxx xx xxxx xxxxxxxx xx xxxxx **XxxxxxxXxxxxx** xxxxxxx. Xx xxx xxxxxxx, xxxxx **XxxxxxxXxxxxx** xxxxxxx xxx xxxxxx xx xxx `localFolder` xxxxxxxx. Xxx xxx xxxxx xxxx xxxxx xxxxx xxx xxxx xxxxxxxxx xx [Xxxxxxxx xxxxxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/hh465109), xxx xx xxxxxxxxxxx xxx [Xxxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231478) xxx Xxxxxxx Y.Y xxx xx-xxxxx xxx xxxxxx xxxx xx xxxx Xxxxxxx YY xxx.
+        アプリ データの場所を表す [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) を取得したら、**StorageFolder** メソッドを使って、その場所にあるファイルやフォルダーにアクセスできます。 上の例では、これらの **StorageFolder** オブジェクトが `localFolder` 変数に格納されています。 アプリ データの場所の使用について詳しくは、「[アプリケーション データの管理](https://msdn.microsoft.com/library/windows/apps/hh465109)」をご覧ください。また、Windows 8.1 の[アプリケーション データ サンプル](http://go.microsoft.com/fwlink/p/?linkid=231478)をダウンロードしてご覧ください。Windows 10 アプリでソース コードを再利用することもできます。
 
-    2.  Xxx xxxxxxx, xxx xxx xxxxxxxx x xxxx xxxxxxxx xxxx xxxx xxx'x xxxxx xxxxxx xx xxxxx xx xxx XXX, xxxx xxxx:
-        > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+    2.  たとえば、次のように、アプリの URI を使って、アプリのローカル フォルダーからファイルを直接取得できます。
+        > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
         StorageFile file = await StorageFile.GetFileFromApplicationUriAsync("ms-appdata:///local/file.txt");
@@ -85,30 +88,31 @@ Xxxx xxx xxxxxx x xxx xxx, xxx xxx xxxxxx xxx xxxxxxxxx xxxx xxxxxx xxxxxxxxx xx
         );
         ```
 
-        Xxxx [**XxxXxxxXxxxXxxxxxxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701741) xxxxxxxxx, xx xxxxxxx x [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxx xxxxxxxxxx xxx *xxxx.xxx* xxxx xx xxx xxx'x xxxxx xxxxxx (`file` xx xxx xxxxxxx).
+        [
+            **GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) が完了すると、アプリのローカル フォルダーにある *file.txt* ファイル (この例では `file`) を表す [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) が返されます。
 
-        Xxx "xx-xxxxxxx:///xxxxx/" xxxxxx xx xxx XXX xxxxxx xx xxx xxx'x xxxxx xxxxxx. Xx xxxxxx xxxxx xx xxx xxx'x xxxxxxx xx xxxxxxxxx xxxxxxx xxx "xx-xxxxxxx:///xxxxxxx/" xx "xx-xxxxxxx:///xxxxxxxxx/" xxxxxxx. Xxx xxx xxxxx xxxx xxxxx xxxxx xxx XXXx xx [Xxx xx xxxx xxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh781229).
+        URI の "ms-appdata:///local/" プレフィックスは、アプリのローカル フォルダーを参照します。 アプリの移動フォルダーまたは一時フォルダーにあるファイルにアクセスするには、"ms-appdata:///roaming/" または "ms-appdata:///temporary/" を使います。 アプリの URI の使用について詳しくは、「[ファイル リソースを読み込む方法](https://msdn.microsoft.com/library/windows/apps/hh781229)」をご覧ください。
 
-    Xx xxxxxxxx, xxx xxxxxx xxxxx xxxxxxxxx, xxx xxx xxxx xxxxxx xxxxx xx xxxx xxx xxxx xxxxxxxxx xx xxxxx xxxx [XxxYY xxx XXX xxx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/br205757) xxx xxxx X/X++ Xxxxxxxx Xxxxxxx xxxxxxxxx xxxx Xxxxxx Xxxxxx.
+    さらに、他の場所とは異なり、[UWP アプリの Win32 と COM](https://msdn.microsoft.com/library/windows/apps/br205757) や Visual Studio の C/C++ 標準ライブラリ関数を使ってアプリ データの場所にあるファイルにアクセスすることもできます。
 
-    Xxx xxx’x xxxxxx xxx xxxxx, xxxxxxx, xx xxxxxxxxx xxxxxxx xxxxxxx xxx xxxx xxxxxx.
+    ローカル フォルダー、移動フォルダー、一時フォルダーにファイル ピッカーでアクセスすることはできません。
 
--   **Xxxxxxxxx xxxxxxx.** Xxxxxxxxxxxx, xxxx xxx xxx xxxxxx xxxx xx xxx xxxxx xx xxxxxxxxx xxxxxxx xx xxxxxxx. Xxxx xx xx xxxxxx xx xxxx xxx xxxx xxx [XxxxXxxx xxxxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh464906.aspx#autoplay) xx xxxxxx xxxxxxxxxxxxx xxxx xxxxx xxxxxxx x xxxxxx, xxxx x xxxxxx xx XXX xxxxx xxxxx, xx xxxxx xxxxxx. Xxx xxxxx xxxx xxx xxx xxxxxx xxx xxxxxxx xx xxxxxxxx xxxx xxxxx xxxx xxx xxxxxxxxx xxx Xxxx Xxxx Xxxxxxxxxxx xxxxxxxxxxxx xx xxxx xxx xxxxxxxx.
+-   **リムーバブル デバイス。** さらに、接続されているデバイス上の一部のファイルに既定でアクセスできます。 これは、[自動再生拡張機能](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh464906.aspx#autoplay)を使って、ユーザーがデバイス (カメラや USB サム ドライブなど) をシステムに接続したときに自動的に起動されるようにする場合に使うことができます。 アプリでアクセスできるファイルの種類は、アプリ マニフェストのファイルの種類の関連付けの宣言で指定されたものだけに制限されます。
 
-    Xx xxxxxx, xxx xxx xxxx xxxx xxxxxx xx xxxxx xxx xxxxxxx xx x xxxxxxxxx xxxxxx xx xxxxxxx xxx xxxx xxxxxx (xxxxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847) xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207881)) xxx xxxxxxx xxx xxxx xxxx xxxxx xxx xxxxxxx xxx xxxx xxx xx xxxxxx. Xxxxx xxx xx xxx xxx xxxx xxxxxx xx [Xxxx xxxxx xxx xxxxxxx xxxx x xxxxxx](quickstart-using-file-and-folder-pickers.md).
+    もちろん、ファイル ピッカー ([**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) と [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)) を呼び出して、アプリでアクセスするファイルやフォルダーをユーザーが選べるようにすると、リムーバブル デバイス上のファイルやフォルダーにもアクセスできます。 ファイル ピッカーの使い方については、「[ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md)」をご覧ください。
 
-    **Xxxx**  Xxx xxxx xxxx xxxxx xxxxxxxxx xx XX xxxx xxxx x xxxxxx xxx, xxx [Xxxxxx xxx XX xxxx](access-the-sd-card.md).
+    **注**  モバイル アプリから SD カードにアクセスする方法について詳しくは、「[SD カードへのアクセス](access-the-sd-card.md)」をご覧ください。
 
      
 
-## Xxxxxxxxx Xxxxxxx Xxxxx xxxx xxx xxxxxx
+## Windows ストア アプリがアクセスできる場所
 
--   **Xxxx’x Xxxxxxxxx xxxxxx.** Xxx xxxxxx xxxxx xxxxxxxxxx xxxxx xxx xxxxx xx xxxxxxx.
+-   **ユーザーの Downloads フォルダー。** ダウンロードされたファイルが保存される既定のフォルダーです。
 
-    Xx xxxxxxx, xxxx xxx xxx xxxx xxxxxx xxxxx xxx xxxxxxx xx xxx xxxx'x Xxxxxxxxx xxxxxx xxxx xxxx xxx xxxxxxx. Xxxxxxx, xxx xxx xxxx xxxxxx xx xxxxx xxx xxxxxxx xx xxx xxxx'x Xxxxxxxxx xxxxxx xx xxxxxxx x xxxx xxxxxx ([**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847) xx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207881)) xx xxxx xxxxx xxx xxxxxxxx xxx xxxx xxxxx xx xxxxxxx xxx xxxx xxx xx xxxxxx.
+    既定では、ユーザーの Downloads フォルダーにあるファイルやフォルダーについては、そのアプリで作成したものにしかアクセスできません。 ただし、ファイル ピッカー ([**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) または [**FolderPicker**](https://msdn.microsoft.com/library/windows/apps/br207881)) を呼び出して、アプリでアクセスするファイルやフォルダーをユーザーが参照して選べるようにすると、ユーザーの Downloads フォルダーにあるファイルやフォルダーにアクセスできるようになります。
 
-    -   Xxx xxx xxxxxx x xxxx xx xxx xxxx'x Xxxxxxxxx xxxxxx xxxx xxxx:
-        > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+    -   次のように、ユーザーの Downloads フォルダーにファイルを作成できます。
+        > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
         StorageFile newFile = await DownloadsFolder.CreateFileAsync("file.txt");
@@ -121,11 +125,10 @@ Xxxx xxx xxxxxx x xxx xxx, xxx xxx xxxxxx xxx xxxxxxxxx xxxx xxxxxx xxxxxxxxx xx
         );
         ```
  
-        [
-            **XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241632).[**XxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh996761) xx xxxxxxxxxx xx xxxx xxx xxx xxxxxxx xxxx xxx xxxxxx xxxxxx xx xx xxxxx xx xxxxxxx xx xxxxxxxx xxxx xx xxx Xxxxxxxxx xxxxxx xxxx xxx xxx xxxx xxxx. Xxxx xxxxx xxxxxxx xxxxxxxx, xxxx xxxxxx x [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxx xxxxxxxxxx xxx xxxx xxxx xxx xxxxxxx. Xxxx xxxx xx xxxxxx `newFile` xx xxx xxxxxxx.
+        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/hh996761) は、同じ名前のファイルが既に Downloads フォルダーにある場合の処理を指定できるようにオーバーロードされます。 これらのメソッドが完了すると、作成されたファイルを表す [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) が返されます。 上の例では、このファイルの名前は `newFile` です。
 
-    -   Xxx xxx xxxxxx x xxxxxxxxx xx xxx xxxx'x Xxxxxxxxx xxxxxx xxxx xxxx:
-        > [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+    -   次のように、ユーザーの Downloads フォルダーにサブフォルダーを作成できます。
+        > [!div class="tabbedCodeSnippets"]
         ```csharp
         using Windows.Storage;
         StorageFolder newFolder = await DownloadsFolder.CreateFolderAsync("New Folder");
@@ -138,26 +141,29 @@ Xxxx xxx xxxxxx x xxx xxx, xxx xxx xxxxxx xxx xxxxxxxxx xxxx xxxxxx xxxxxxxxx xx
         );
         ```
  
-        [
-            **XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241632).[**XxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh996763) xx xxxxxxxxxx xx xxxx xxx xxx xxxxxxx xxxx xxx xxxxxx xxxxxx xx xx xxxxx xx xxxxxxx xx xxxxxxxx xxxxxxxxx xx xxx Xxxxxxxxx xxxxxx xxxx xxx xxx xxxx xxxx. Xxxx xxxxx xxxxxxx xxxxxxxx, xxxx xxxxxx x [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227230) xxxx xxxxxxxxxx xxx xxxxxxxxx xxxx xxx xxxxxxx. Xxxx xxxx xx xxxxxx `newFolder` xx xxx xxxxxxx.
+        [**DownloadsFolder**](https://msdn.microsoft.com/library/windows/apps/br241632).[**CreateFolderAsync**](https://msdn.microsoft.com/library/windows/apps/hh996763) は、同じ名前のサブフォルダーが既に Downloads フォルダーにある場合の処理を指定できるようにオーバーロードされます。 これらのメソッドが完了すると、作成されたサブフォルダーを表す [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) が返されます。 上の例では、このファイルの名前は `newFolder` です。
 
-    Xx xxx xxxxxx x xxxx xx xxxxxx xx xxx Xxxxxxxxx xxxxxx, xx xxxxxxxxx xxxx xxx xxx xxxx xxxx xx xxxx xxx'x [**XxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207457) xx xxxx xxxx xxx xxx xxxxxxx xxxxxx xxxx xxxx xx xxx xxxxxx.
+    Downloads フォルダーにファイルやフォルダーを作成する場合は、以降に簡単にアクセスできるように、その項目をアプリの [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) に追加することをお勧めします。
 
-## Xxxxxxxxx xxxxxxxxxx xxxxxxxxx
+## その他の場所へのアクセス
 
-Xx xxxxxxxx xx xxx xxxxxxx xxxxxxxxx, xx xxx xxx xxxxxx xxxxxxxxxx xxxxx xxx xxxxxxx xx xxxxxxxxx xxxxxxxxxxxx xx xxx xxx xxxxxxxx (xxx [Xxx xxxxxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt270968)), xx xx xxxxxxx x xxxx xxxxxx xx xxx xxx xxxx xxxx xxxxx xxx xxxxxxx xxx xxx xxx xx xxxxxx (xxx [Xxxx xxxxx xxx xxxxxxx xxxx x xxxxxx](quickstart-using-file-and-folder-pickers.md)).
+アプリで、既定の場所以外にあるファイルやフォルダーにアクセスするには、アプリ マニフェストで機能を宣言するか、ファイル ピッカーを呼び出してアプリでアクセスするファイルやフォルダーをユーザーが選べるようにします。詳しくは、「[アプリ機能の宣言](https://msdn.microsoft.com/library/windows/apps/mt270968)」または「[ピッカーでファイルやフォルダーを開く](quickstart-using-file-and-folder-pickers.md)」をご覧ください。
 
-Xxx xxxxxxxxx xxxxx xxxxx xxxxxxxxxx xxxxxxxxx xxxx xxx xxx xxxxxx xx xxxxxxxxx x xxxxxxxxxx (xx xxxxxxxxxxxx) xxx xxxxx xxx xxxxxxxxxx [**Xxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227346) XXX:
+次の表に、機能の宣言や関連付けられた [**Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/br227346) API の使用によってアクセスできるその他の場所を示します。
 
-| Xxxxxxxx | Xxxxxxxxxx | Xxxxxxx.Xxxxxxx XXX |
+| 場所 | 機能 | Windows.Storage API |
 |----------|------------|---------------------|
-| Xxxxxxxxx | XxxxxxxxxXxxxxxx <br><br>Xxxx: Xxx xxxx xxx Xxxx Xxxx Xxxxxxxxxxxx xx xxxx xxx xxxxxxxx xxxx xxxxxxx xxxxxxxx xxxx xxxxx xxxx xxxx xxx xxx xxxxxx xx xxxx xxxxxxxx. <br><br>Xxx xxxx xxxxxxxxxx xx xxxx xxx:<br>- Xxxxxxxxxxx xxxxx-xxxxxxxx xxxxxxx xxxxxx xx xxxxxxxx XxxXxxxx xxxxxxx xxxxx xxxxx XxxXxxxx XXXx xx Xxxxxxxx XXx<br>- Xxxxx xxxx xxxxx xx xxx xxxx’x XxxXxxxx xxxxxxxxxxxxx xxxxx xxxxxxx | [XxxxxXxxxxxx.XxxxxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/br227152) |
-| Xxxxx     | XxxxxXxxxxxx <br>Xxxx xxx [Xxxxx xxx xxxxxxx xx xxx Xxxxx, Xxxxxxxx, xxx Xxxxxx xxxxxxxxx](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [XxxxxXxxxxxx.XxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/br227155) |    
-| Xxxxxxxx  | XxxxxxxxXxxxxxx<br> Xxxx xxx [Xxxxx xxx xxxxxxx xx xxx Xxxxx, Xxxxxxxx, xxx Xxxxxx xxxxxxxxx](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [XxxxxXxxxxxx.XxxxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/br227156) |  
-| Xxxxxx    | XxxxxxXxxxxxx<br>Xxxx xxx [Xxxxx xxx xxxxxxx xx xxx Xxxxx, Xxxxxxxx, xxx Xxxxxx xxxxxxxxx](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md). | [XxxxxXxxxxxx.XxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/br227159) |   
-| Xxxxxxxxx xxxxxxx  | XxxxxxxxxXxxxxxx <br><br>Xxxx  Xxx xxxx xxx Xxxx Xxxx Xxxxxxxxxxxx xx xxxx xxx xxxxxxxx xxxx xxxxxxx xxxxxxxx xxxx xxxxx xxxx xxxx xxx xxx xxxxxx xx xxxx xxxxxxxx. <br><br>Xxxx xxx [Xxxxxx xxx XX xxxx](access-the-sd-card.md). | [XxxxxXxxxxxx.XxxxxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/br227158) |  
-| Xxxxxxxxx xxxxxxxxx  | Xx xxxxx xxx xx xxx xxxxxxxxx xxxxxxxxxxxx xx xxxxxx. <br>- XxxxxXxxxxxx <br>- XxxxxxxxXxxxxxx <br>- XxxxxxXxxxxxx | [XxxxxXxxxxxx.XxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/br227153) |      
-| Xxxxx xxxxxx xxxxxxx (XXXX) | Xx xxxxx xxx xx xxx xxxxxxxxx xxxxxxxxxxxx xx xxxxxx. <br>- XxxxxXxxxxxx <br>- XxxxxxxxXxxxxxx <br>- XxxxxxXxxxxxx | [XxxxxXxxxxxx.XxxxxXxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/br227154) | 
-| Xxxxxxxxx Xxxxxx Xxxxxxxxxx (XXX) xxxxxxx | X xxxxxxxxxxx xx xxx xxxxxxxxx xxxxxxxxxxxx xx xxxxxx. <br><br>Xxx xxxx xxx xxxx xxxxxxxx xxxxxxxxxx: <br>- XxxxxxxXxxxxxxXxxxxxXxxxxx <br><br>Xxx xx xxxxx xxx xxxxxxxx xxx xxxxxx xxxxxxxx xxxxxxxxxx: <br>- XxxxxxxxXxxxxx <br>- XxxxxxxxXxxxxxXxxxxx <br><br>Xxx, xx xxxxxxxxxx, xxx xxxxxx xxxxxxxxxxx xxxxxxxxxx:<br>- XxxxxxxxxxXxxxxxxxxxxxxx <br><br>Xxxx: Xxx xxxx xxx Xxxx Xxxx Xxxxxxxxxxxx xx xxxx xxx xxxxxxxx xxxx xxxxxxx xxxxxxxx xxxx xxxxx xxxx xxxx xxx xxx xxxxxx xx xxxx xxxxxxxx. | Xxxxxxxx x xxxxxx xxxxx: <br>[XxxxxxxXxxxxx.XxxXxxxxxXxxxXxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>Xxxxxxxx x xxxx xxxxx: <br>[XxxxxxxXxxx.XxxXxxxXxxxXxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/br227206) |
+| ドキュメント | DocumentsLibrary <br><br>注: アプリ マニフェストにファイルの種類の関連付けの宣言を追加して、この場所でアクセスできるファイルの種類を指定する必要があります。 <br><br>この機能は、アプリが次の条件を満たす場合に使います。<br>- 有効な OneDrive URL またはリソース ID を使った、特定の OneDrive コンテンツへのクロスプラットフォーム オフライン アクセスを容易にする<br>- オフライン時に、開いているファイルをユーザーの OneDrive に自動的に保存する | [KnownFolders.DocumentsLibrary](https://msdn.microsoft.com/library/windows/apps/br227152) |
+| ミュージック     | MusicLibrary <br>「[ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)」もご覧ください。 | [KnownFolders.MusicLibrary](https://msdn.microsoft.com/library/windows/apps/br227155) |    
+| ピクチャ  | PicturesLibrary<br> 「[ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)」もご覧ください。 | [KnownFolders.PicturesLibrary](https://msdn.microsoft.com/library/windows/apps/br227156) |  
+| ビデオ    | VideosLibrary<br>「[ミュージック、画像、およびビデオ ライブラリのファイルとフォルダー](quickstart-managing-folders-in-the-music-pictures-and-videos-libraries.md)」もご覧ください。 | [KnownFolders.VideosLibrary](https://msdn.microsoft.com/library/windows/apps/br227159) |   
+| リムーバブル デバイス  | RemovableDevices <br><br>注  アプリ マニフェストにファイルの種類の関連付けの宣言を追加して、この場所でアクセスできるファイルの種類を指定する必要があります。 <br><br>「[SD カードへのアクセス](access-the-sd-card.md)」もご覧ください。 | [KnownFolders.RemovableDevices](https://msdn.microsoft.com/library/windows/apps/br227158) |  
+| ホームグループ ライブラリ  | 次の機能が 1 つ以上必要です。 <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.HomeGroup](https://msdn.microsoft.com/library/windows/apps/br227153) |      
+| メディア サーバー デバイス (DLNA) | 次の機能が 1 つ以上必要です。 <br>- MusicLibrary <br>- PicturesLibrary <br>- VideosLibrary | [KnownFolders.MediaServerDevices](https://msdn.microsoft.com/library/windows/apps/br227154) | 
+| 汎用名前付け規則 (UNC) フォルダー | 次の機能の組み合わせが必要です。 <br><br>ホーム ネットワークと社内ネットワークの機能: <br>- PrivateNetworkClientServer <br><br>インターネットとパブリック ネットワークの 1 つ以上の機能: <br>- InternetClient <br>- InternetClientServer <br><br>ドメイン資格情報の機能 (該当する場合):<br>- EnterpriseAuthentication <br><br>注: アプリ マニフェストにファイルの種類の関連付けの宣言を追加して、この場所でアクセスできるファイルの種類を指定する必要があります。 | フォルダーを取得する場合: <br>[StorageFolder.GetFolderFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227278) <br><br>ファイルを取得する場合: <br>[StorageFile.GetFileFromPathAsync](https://msdn.microsoft.com/library/windows/apps/br227206) |
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

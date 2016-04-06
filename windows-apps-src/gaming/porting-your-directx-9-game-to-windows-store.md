@@ -1,35 +1,39 @@
 ---
-xxxxx: Xxxx xxxx XxxxxxX Y xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX)
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xxxxxxxx, xxxxxxxxx, xxx xxxxxxxxxxxx xxx xxxxxxx XxxxxxX Y xxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX).
-xx.xxxxxxx: YYYxYxYY-xxxY-YYYY-YxxY-YYYYxYYxYxxY
+title: Port from DirectX 9 to Universal Windows Platform (UWP)
+description: This section includes articles, overviews, and walkthroughs for porting DirectX 9 games to Universal Windows Platform (UWP).
+ms.assetid: 536c0b99-cdf3-1527-1ee2-4187f50a2cf0
 ---
 
-# Xxxx xxxx XxxxxxX Y xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX)
+# Port from DirectX 9 to Universal Windows Platform (UWP)
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx xxxxxxx xxxxxxxx xxxxxxxx, xxxxxxxxx, xxx xxxxxxxxxxxx xxx xxxxxxx XxxxxxX Y xxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX).
+This section includes articles, overviews, and walkthroughs for porting DirectX 9 games to Universal Windows Platform (UWP).
 
-##  Xxxx xxxx XxxxxxX Y xxxx xx XXX
-
-
--   Xxxxx xxx XXX xxxxxxxxx xxx xxxxxxxx xxxx xxxx.
--   Xxxxxx x xxxx xxxxx xx xxxxxxx, xxx xx xxxxx xxxxxxx xx xxxxx xxx XxxxxxYX Y.Y xxx xx xxxxxxxx xxxxxxxx.
--   Xxxxx xxxxxxxx xxx Xxxxxxx xxxx xxxxxxxxxxx xxxxxx - xxxxxxxxx XxxxxxYX YY, xxx xxxxxxx xxxxxx xxxxxx, Xxxxxxx XXXx, XXxxxxY, xxxxx xxxxx, X++/XX xxx xxxx.
-
-## Xxxxx xx X xxxxx?
+##  Port your DirectX 9 game to UWP
 
 
--   Xxxxx [Xxxxxx xxxx XxxxxxX Y xx XxxxxxX YY xxx XXX](porting-considerations.md) xx xxxxx xxxx xxx xxxxxx xxxx xxx xx xxxx xxxx xxxxxxx xxxxxxx, xxxxx xx xx XxxxxxYX YY xxxxxxxx, xxx xxxxxxxxxx xxx xxx xxxxxxxx xxx'xx xxxxxxxx xxxx xxx xx XxxxxxX YY XXX xxxx.
--   Xxxxxx xxx [Xxxx x xxxxxx XxxxxxYX Y xxx xx XxxxxxX YY xxx XXX](walkthrough--simple-port-from-direct3d-9-to-11-1.md) xxxxxxxxxxx xxxxxxx xxx x xxxxxx xxxxxxxxxx xx XxxxxxYX Y xxx XxxxxxYX YY xxxxxxxx xxxxxxxxxx. Xxxx xxxxxxxxxxx xxxx xxx xxxx xxx xxxxxxx xx xx xxx xxxxxx xxx xxxxxxxx.
--   Xxx xxx [XxxxxxX YY xxxxxxx XXX](directx-porting-faq.md) xxx xxxxxxx xx xxxxxx xxxxxxxxx xxxxx xxxxxxx xxxx XxxxxxX Y.
+-   Reach the UWP audiences and monetize your game.
+-   Target a wide array of devices, all of which support at least the Direct3D 9.1 set of graphics features.
+-   Learn valuable new Windows game development skills - including Direct3D 11, the unified shader models, Windows APIs, XAudio2, touch input, C++/CX and more.
+
+## Where do I start?
+
+
+-   Visit [Moving from DirectX 9 to DirectX 11 and UWP](porting-considerations.md) to learn what you should plan for in your game porting project, catch up on Direct3D 11 concepts, and understand how the features you're familiar with map to DirectX 11 UWP apps.
+-   Follow the [Port a simple Direct3D 9 app to DirectX 11 and UWP](walkthrough--simple-port-from-direct3d-9-to-11-1.md) walkthrough article for a direct comparison of Direct3D 9 and Direct3D 11 graphics frameworks. This walkthrough also has code for setting up an app window and viewport.
+-   See the [DirectX 11 porting FAQ](directx-porting-faq.md) for answers to common questions about porting from DirectX 9.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

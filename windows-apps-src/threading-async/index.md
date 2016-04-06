@@ -1,37 +1,41 @@
 ---
-xx.xxxxxxx: xxxxYYYY-YYYx-Yxxx-Yxxx-xxxYYxYYYxxY
-xxxxx: Xxxxxxxxx xxx xxxxx xxxxxxxxxxx
-xxxxxxxxxxx: .
+ms.assetid: beac6333-655a-4bcf-9caf-bba15f715ea5
+title: スレッド化と非同期プログラミング
+description: 。
 ---
-# Xxxxxxxxx xxx xxxxx xxxxxxxxxxx
+# スレッド化と非同期プログラミング
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxxxxxxx xxx xxxxx xxxxxxxxxxx xxxxxxx xxxx xxx xx xxxxxxxxxx xxxx xxxxxxxxxxxxxx xx xxxxxxxx xxxxxxx.
+スレッド化と非同期プログラミングによって、アプリは並列スレッドで作業を非同期的に実行できます。
 
-Xxxx xxx xxx xxx xxx xxxxxx xxxx xx xxxxxxxxxx xxxx xxxxxxxxxxxxxx xx xxxxxxxx xxxxxxx. Xxx xxxxxx xxxx xxxxxxx x xxx xx xxxxxxx xxx xxxx x xxxxx xx xxxxxx xxxx xxxxx xx xxxxxxx xx xxxx xxxxxx xxxxxxxxx. Xxx xxxxxx xxxx xx xxxxxxx xx xxx xxxxxxxxxxxx xxxxxxxxxxx xxxxxxxx xxxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxxxxxx xx xxx xx xxxx xx xxxxxxxxxx xxxxxxxx xxxx xxxxxxx xxxxxxxx xxx XX, xxx xxx xxxxxx xxxx xxxxxx xxxx xxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxxxx xxxxxxxx xxx xxx xxx xxx xx xx xxxxxxxx xxxxxxxx xxxx xxxxx xx xxxxxxxx. Xxx xxx xxx xxx xxxxxx xxxx xx:
+アプリでは、スレッド プールを使って、並列スレッドで作業を非同期的に実行できます。 スレッド プールでは、一連のスレッドを管理し、スレッドが使用可能になるとキューを使って作業項目をそのスレッドに割り当てます。 スレッド プールを使うと UI をブロックすることなく広範な作業を実行できるため、スレッド プールは Windows ランタイムで利用できる非同期プログラミング パターンと似ています。ただし、スレッド プールは非同期プログラミング パターンよりも細かく制御でき、これを使って複数の作業項目を並列的に実行できます。 スレッド プールを使うと、次のことが可能になります。
 
--   Xxxxxx xxxx xxxxx, xxxxxxx xxxxx xxxxxxxx, xxx xxxxxx xxxx xxxxx.
+-   作業項目の送信、作業項目の優先度の管理、作業項目の取り消し。
 
--   Xxxxxxxx xxxx xxxxx xxxxx xxxxxx xxx xxxxxxxx xxxxxx.
+-   タイマーおよび定期タイマーを使った作業項目のスケジュール設定。
 
--   Xxx xxxxx xxxxxxxxx xxx xxxxxxxx xxxx xxxxx.
+-   重要な作業項目のためのリソースの確保。
 
--   Xxx xxxx xxxxx xx xxxxxxxx xx xxxxx xxxxxx xxx xxxxxxxxxx.
+-   指定されたイベントとセマフォに応答した作業項目の実行。
 
-Xxx xxxxxx xxxx xx xxxx xxxxxxxxx xx xxxxxxxx xxxxxxx xxxxxxx xx xxxxxxx xxx xxxxxxxx xx xxxxxxxx xxx xxxxxxxxxx xxxxxxx. Xxx xxxxx xx xxx xxxxxx xx xxxxxxxx xxxxxxx xxxxxx xxxxxxxx XXX xxxxx, xxx xx xxx xxxxxxx xxxxxx xxxxxxxxx xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxx xxx xxxxxxx. Xxxxx xxx xxxxx-xx xxxxxx xxxx xx xxxxxxxxxx xxxxxxx xxx xxxxx xx xxxxxxx xxxx xxxx xxxxxxxxxxxx x xxxx xxxxxxx xx xxx xxxxxxxxx xx xxxxxx xxxxxxxxxx.
+スレッド プールにより、スレッドの作成と破棄のオーバーヘッドが少なくなるため、効率的にスレッドを管理できます。 つまり、複数の CPU コアを使ってスレッドを最適化でき、バックグラウンド タスクが実行されているときにアプリ間でスレッド リソースを分配することができます。 スレッド管理のしくみよりも、タスクを実行するコードを作成することが主な目的であるので、組み込みスレッド プールを使うと便利です。
 
-| Xxxxx                                                                                                          | Xxxxxxxxxxx                         |
+| トピック                                                                                                          | 説明                         |
 |----------------------------------------------------------------------------------------------------------------|-------------------------------------|
-| [Xxxxxxxxxxxx xxxxxxxxxxx (XXX xxxx)](asynchronous-programming-universal-windows-platform-apps.md)              | Xxxx xxxxx xxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxx xxxxxxxxxxxxxx xx X#, Xxxxxxxxx Xxxxxx Xxxxx .XXX, Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX), xxx XxxxXxxxxx. |
-| [Xxxxxxxxxxxx xxxxxxxxxxx xx X++ (XXX xxxx)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxxxxxx xxx xx xxxxxxx xxxxxxxxxxxx xxxxxxx xx X++/XX xx xxxxx xxx <code>task</code> xxxxx xxxx'x xxxxxxx xx xxx <code>concurrency</code> xxxxxxxxx xx xxxxxxxx.x. |
-| [Xxxx xxxxxxxxx xxx xxxxx xxx xxxxxx xxxx](best-practices-for-using-the-thread-pool.md)                         | Xxxx xxxxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxx xxxx xxx xxxxxx xxxx. |
-| [Xxxx xxxxxxxxxxxx XXXx xx X# xx Xxxxxx Xxxxx](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | Xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxx xxxx xxxxxxxxxxxx XXXx xx xxxxxx xxxx xxxx xxx xxxxxxx xxxxxxxxxx xxxx xx xxxx xxxx xxxx xxxxx xxxx xx xxxxxxxx xxxxxx xx xxxx. Xxxx xxxxx xxxxxxxxx xxx xx xxx xxxxxxxxxxxx xxxxxxx xxxx xxx XXX xx X# xx Xxxxxxxxx Xxxxxx Xxxxx. |
-| [Xxxxxx x xxxxxxxx xxxx xxxx](create-a-periodic-work-item.md)                                                   | Xxxxx xxx xx xxxxxx x xxxx xxxx xxxx xxxxxxx xxxxxxxxxxxx. |
-| [Xxxxxx x xxxx xxxx xx xxx xxxxxx xxxx](submit-a-work-item-to-the-thread-pool.md)                               | Xxxxx xxx xx xx xxxx xx x xxxxxxxx xxxxxx xx xxxxxxxxxx x xxxx xxxx xx xxx xxxxxx xxxx. |
-| [Xxx x xxxxx xx xxxxxx x xxxx xxxx](use-a-timer-to-submit-a-work-item.md)                                       | Xxxxx xxx xx xxxxxx x xxxx xxxx xxxx xxxx xxxxx x xxxxx xxxxxxx. |
+| [非同期プログラミング (UWP アプリ)](asynchronous-programming-universal-windows-platform-apps.md)              | このトピックでは、ユニバーサル Windows プラットフォーム (UWP) での非同期プログラミングと、C#、Microsoft Visual Basic .NET、Visual C++ コンポーネント拡張機能 (C++/CX)、および JavaScript における非同期プログラミングの表現について説明します。 |
+| [C++ での非同期プログラミング (UWP アプリ)](asynchronous-programming-in-cpp-universal-windows-platform-apps.md)| ここでは、ppltasks.h の <code>concurrency</code> 名前空間で定義された <code>task</code> クラスを使って C++/CX の非同期メソッドを実装する際に推奨される方法について説明します。 |
+| [スレッド プールを使うためのベスト プラクティス](best-practices-for-using-the-thread-pool.md)                         | このトピックでは、スレッド プールを使った操作のベスト プラクティスについて説明します。 |
+| [C# または Visual Basic での非同期 API の呼び出し](call-asynchronous-apis-in-csharp-or-visual-basic.md)             | ユニバーサル Windows プラットフォーム (UWP) には、時間がかかる可能性がある操作を実行しているときでも、アプリの応答性を保つために、さまざまな非同期 API が用意されています。 このトピックでは、C# または Microsoft Visual Basic で UWP の非同期メソッドを使う方法について説明します。 |
+| [定期的な作業項目の作成](create-a-periodic-work-item.md)                                                   | 定期的に実行される作業項目の作成方法を説明します。 |
+| [スレッド プールへの作業項目の送信](submit-a-work-item-to-the-thread-pool.md)                               | スレッド プールに作業項目を送信することで独立したスレッドで作業を実行する方法について説明します。 |
+| [タイマーを使った作業項目の送信](use-a-timer-to-submit-a-work-item.md)                                       | タイマーが終了した後に実行される作業項目の作成方法を説明します。 |
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

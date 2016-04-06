@@ -1,115 +1,119 @@
 ---
-xxxxx: Xxxx xxxx xxxx xxxx XxxxXX XX Y.Y xx XxxxxxYX
-xxxxxxxxxxx: Xx xxx xxx xxxxxxx x xxxx xxxx xxx xXX xx Xxxxxxx xxxxxxxxx, xxx xxxx xxxxxxxx xxxx x xxxxxxxxxxx xxxxxxxxxx xx XxxxXX XX Y.Y.
-xx.xxxxxxx: xYYxYxYx-YYYY-YYYY-xxYY-YYYYYYYYxxYx
+title: OpenGL ES 2.0 から Direct3D への移植の計画
+description: iOS または Android プラットフォームからゲームを移植している場合、OpenGL ES 2.0 に多大な投資をなされてきたものと思われます。
+ms.assetid: a31b8c5a-5577-4142-fc60-53217302ec3a
 ---
 
-# Xxxx xxxx xxxx xxxx XxxxXX XX Y.Y xx XxxxxxYX
+# OpenGL ES 2.0 から Direct3D への移植の計画
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [XxxxxxYX YY](https://msdn.microsoft.com/library/windows/desktop/ff476080)
--   [Xxxxxx X++](https://msdn.microsoft.com/en-us/library/windows/apps/60k1461a.aspx)
+-   [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080)
+-   [Visual C++](https://msdn.microsoft.com/en-us/library/windows/apps/60k1461a.aspx)
 
-Xx xxx xxx xxxxxxx x xxxx xxxx xxx xXX xx Xxxxxxx xxxxxxxxx, xxx xxxx xxxxxxxx xxxx x xxxxxxxxxxx xxxxxxxxxx xx XxxxXX XX Y.Y. Xxxx xxxxxxxxx xx xxxx xxxx xxxxxxxx xxxxxxxx xxxxxxxx xx XxxxxxYX YY xxx xxx Xxxxxxx Xxxxxxx, xxxxx xxx x xxx xxxxxx xxx xxxxxx xxxxxxxx xxxxxx xxx xxxxx.
+iOS または Android プラットフォームからゲームを移植している場合、OpenGL ES 2.0 に多大な投資をなされてきたものと思われます。 グラフィックス パイプラインのコードベースを Direct3D 11 と Windows ランタイムに移す準備をしているときは、開始する前に何点か注意してください。
 
-Xxxx xxxxxxx xxxxxxx xxxxxxx xxxxxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxx xxxxxx XXXx xxx xxxxxxxx xxxxxxx xxx xxx xxxxxx. Xxx'xx xxxx xxxx xxxxxxx x xxx xxxxxx xx xxx xxxx xxxx xxxx xx xxxx xxx xxxxxx xxxx xxxxx.
+ほとんどの移植作業では、通常、最初にコードベースを調べて、2 つのモデル間で共通する API とパターンをマップします。 このトピックを読んで内容を確かめれば、このプロセスが少し楽になるはずです。
 
-Xxxx xxx xxxx xxxxxx xx xx xxxxx xx xxxx xxxxxxx xxxxxxxx xxxx XxxxXX XX Y.Y xx XxxxxxYX YY.
+OpenGL ES 2.0 から Direct3D 11 にグラフィックスを移植する際に注意する必要のある事柄を次に示します。
 
-## Xxxxx xx xxxxxxxx XxxxXX XX Y.Y xxxxxxxxx
-
-
-Xxx xxxxxxx xxxxxx xx xxxx xxxxxxx xxxxxxxxx xxx Xxxxxxx xxxxxxxxxxxxxx xx xxx XxxxXX XX Y.Y xxxxxxxxxxxxx xxxxxxx xx xxx Xxxxxxx Xxxxx. Xxx XxxxXX XX Y.Y xxxx xxxxxxx xxxx xxxxxxxxx xxxxx Xxxxxx Xxxxxx YYYY xxx xxxxx Xxxxxxx X xxxxxx. Xx xxx xxx xxxxxx xxxx xx Xxxxxxxxx-X (xXX) xx Xxxx (Xxxxxxx) xxxxxxxx, xx xxxxx xxxx xxx xxxxxxxx XxxxXX XX Y.Y xxxx xxxxxxx xxx xxx xxx xxxxxxx XXX xxxxxxx xxxxxx xx xxxxxxxxxx. Xxxx xxxxxxxx xxxxx xx xxxx xx xxxxxxxx xxxxxxxx xx xxxxxxxx.
-
-Xxxx xxxxxxxxxxxxx xxxx xxxx xxx Y.Y xxxxxxxxxxxxx XXXx xxx xxx XxxxXX XX xxxx xxx xxxxxxxxx. Xx xxx xxx xxxxxxx xxxx XxxxXX XX Y.Y xx Y.Y, xxxx xxxxxxx xxx xxxxx xxxxx xxxxxx, xxxxxxxx xxxx xx xxx XxxxXX XX Y.Y xxxx xxxxxxxx xxx xxxxxxx xxx xx xxxxxxxxxx.
-
-Xxx XxxxxxYX YY xxxxxxx xx xxxxx xxxxxx xxx Xxxxxxxxx Xxxxxxx X++ xxxx Xxxxxxxxx Xxxxxxxxxx (XX). Xxx xxxx xxxx xx xxxx xxxxxxx xx xxx X++ xxxxxx, xxxx [Xxxxxx X++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx), [Xxxxxxxxx Xxxxxxxxxx xxx Xxxxxxx Xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xey702bw.aspx), xxx [Xxxxx Xxxxxxxxx (X++\\XX)](https://msdn.microsoft.com/library/windows/apps/br212455.aspx).
-
-## Xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxx
+## 特定の OpenGL ES 2.0 プロバイダーに関する注意事項
 
 
-Xxx xxx xx xxxxxxxx xxxxxxxxxx xxxxxxxx xxxxxxxxx xx XxxxXX XX Y.Y xxxxxxx xxxx xx xxx xxxxxxxx xxxxxxxx xx XxxxxxYX Y.Y. Xx xxx xxxx xx xxxx xxxxxxxxx xx xxx xxxx xxxxxxxx xxxxxxxx xxxxxxxx xx XxxxxxYX YY, xxxxxx xxx [XxxxxxYX YY](https://msdn.microsoft.com/library/windows/desktop/ff476080) xxxxxxxxxxxxx xxxx xxxxxxxx xxxx xxxx, xx xxxxxx xxx [Xxxx xxxx XxxxxxX Y xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX)](porting-your-directx-9-game-to-windows-store.md) xxxxxx xxxx xxx'xx xxxx xxxx xxx xxxxxxx xxxxxx.
+このセクションの移植に関するトピックでは、Khronos Group によって作成された OpenGL ES 2.0 仕様の Windows 実装を参照します。 OpenGL ES 2.0 コード サンプルは、いずれも Visual Studio 2012 と基本的な Windows C 構文を使って開発されたものです。 Objective-C (iOS) または Java (Android) コードベースから移植する場合は、用意されている OpenGL ES 2.0 コード サンプルで、類似の API 呼び出し構文またはパラメーターが使われていない可能性があることに注意してください。 このガイダンスでは、できるだけプラットフォームにとらわれずに説明します。
 
-Xx xxxx xxxx xxxxxxx xxxxxxx xxxxxx xxxxxx, xxxxx xxxx x Xxxxxx Xxxxxx XxxxxxYX xxxxxxxx. Xx xxxxxxxx x xxxxx xxxxxxxx xxxxxxx xxxxxxxxxx xxx xxx, xxx xxxxxxxx XXX xxx xxxxxxxx xxxx xxxxxxxxxx xxxxxxxxx xx xxxxxx xxxxxxx xxx XxxxxxYX xxxxxxx xxxxxx.
+このドキュメントでは、OpenGL ES のコードと参照に 2.0 仕様の API のみを使います。 OpenGL ES 1.1 または 3.0 から移植する場合もこのコンテンツは有用ですが、OpenGL ES 2.0 のコード例とコンテキストの一部に馴染みがない可能性があります。
 
-## Xxxxxxxxxx XxxxxxYX xxxxxxx xxxxxx
+これらのトピックの Direct3D 11 のサンプルでは、Microsoft Windows C++ とコンポーネント拡張 (CX) を使います。 このバージョンの C++ の構文について詳しくは、「[Visual C++](https://msdn.microsoft.com/library/windows/apps/60k1461a.aspx)」、「[ランタイム プラットフォーム向けのコンポーネント拡張](https://msdn.microsoft.com/library/windows/apps/xey702bw.aspx)」、「[クイック リファレンス (C++\\CX)](https://msdn.microsoft.com/library/windows/apps/br212455.aspx)」をご覧ください。
 
-
-XxxxxxYX YY xxxxxxxx xxxxxxx xxx xxxxxxxx "xxxxxxx xxxxxx" xxxx Y\_Y (XxxxxxYX Y.Y) xxx YY\_Y. Xxxxx xxxxxxx xxxxxx xxxxxxxx xxx xxxxxxxxxxxx xx xxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxxxx. Xxxxxxxxx, xxxx XxxxXX XX Y.Y xxxxxxxxx xxxxxxx x XxxxxxYX Y.Y (xxxxxxx xxxxx Y\_Y) xxx xx xxxxxxxx.
-
-## Xxxxxx XxxxxxX xxxxxxxx xxxxxxxx xxx XXXx
+## ハードウェア要件とリソースについて
 
 
-| XXX Xxxxxx                                                | Xxxxxxxxxxx                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+OpenGL ES 2.0 でサポートされる一連のグラフィックス処理機能は、Direct3D 9.1 で提供される機能にほぼ対応しています。 Direct3D 11 で提供される高度な機能を利用する場合は、移植の計画段階では [Direct3D 11](https://msdn.microsoft.com/library/windows/desktop/ff476080) のドキュメントを、最初の作業を終えた段階では「[DirectX 9 からユニバーサル Windows プラットフォーム (UWP) への移植](porting-your-directx-9-game-to-windows-store.md)」のトピックをご覧ください。
+
+初期移植作業を簡単にするには、Visual Studio の Direct3D テンプレートを利用してください。 基本的なレンダラーが既に構成されており、ウィンドウの変更と Direct3D 機能レベルに関するリソースの再作成などの UWP アプリ機能がサポートされています。
+
+## Direct3D の機能レベルについて
+
+
+Direct3D 11 は、9\_1 (Direct3D 9.1) から 11\_1 のハードウェア "機能レベル" をサポートしています。 これらの機能レベルは、特定のグラフィックス機能とリソースの可用性を示します。 通常、ほとんどの OpenGL ES 2.0 プラットフォームで Direct3D 9.1 (機能レベル 9\_1) の機能セットがサポートされています。
+
+## DirectX のグラフィックス機能と API の確認
+
+
+| API ファミリ                                                | 説明                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [XXXX](https://msdn.microsoft.com/library/windows/desktop/hh404534)                     | Xxx XxxxxxX Xxxxxxxx Xxxxxxxxxxxxxx (XXXX) xxxxxxxx xx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxx XxxxxxYX. Xx xxxx xxx xxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxxxxx xxxxx xxx [**XXXXXXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb174523) xxx [**XXXXXXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404543) XXX xxxxxxxxxx. Xxx xx xx xxxxxx xxx xxxxxxxxx xxxx xxxxxxx xxx xxxxx xxxxxx xxxxxxxxx. Xxxxxxx, xxx [**XXXXXXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404556) xxxxxxx xxxxxxx xxx xxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxxx, xxxxxxxxx xxx xxxx xxxxx (x xxx xx xxxxx xxxxxxx). Xxxxx XXXX xxxx xxx xxxx xxxxx, xxx [**XXXXXXxxxXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404631) xxxxxxxxx xx xxxx xx xxxxxxx xxxxxx xx xxx xxxxxx. |
-| [XxxxxxYX](https://msdn.microsoft.com/library/windows/desktop/ff476080)       | XxxxxxYX xx xxx xxx xx XXXx xxxx xxxxxxx x xxxxxxx xxxxxxxxxxxxxx xx xxx xxxxxxxx xxxxxxxxx xxx xxxxx xxx xx xxxx xxxxxxxx xxxxx xx. Xxxxxxx YY, xx xxxxxxx xxxxxxxxxx, xxxxxxx-xxxx, xx XxxxXX Y.Y. (XxxxXX XX Y.Y, xx xxx xxxxx xxxx, xx xxxxxxx xx XxxxxxXY, xxxxxxx-xxxx, xxx XxxxXX Y.Y, xxx xxxx XxxxXX Y.Y'x xxxxxxx xxxxxx xxxxxxxx.) Xxxx xx xxx xxxxx xxxxxxx xx xxxx xxxx xxx XXYXYYXxxxxxY xxx XXYXYYXxxxxxXxxxxxxY xxxxxxxxxx xxxxx xxxxxxx xxxxxx xx xxxxxxxxxx xxxxxxxxx xxx xxxxxxxxxxxx, xxx xxx xxxxxxxxx xxxxxxx, xxxxxxxxxxxx.                                                                                                                                          |
-| [XxxxxxYX](https://msdn.microsoft.com/library/windows/desktop/dd370990)                      | XxxxxxYX xxxxxxxx x xxx xx XXXx xxx XXX-xxxxxxxxxxx YX xxxxxxxxx. Xx xxx xx xxxxxxxxxx xxxxxxx xx xxxxxxx xx XxxxXX.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| [XxxxxxXxxxx](https://msdn.microsoft.com/library/windows/desktop/dd368038)            | XxxxxxXxxxx xxxxxxxx x xxx xx XXXx xxx XXX-xxxxxxxxxxx, xxxx-xxxxxxx xxxx xxxxxxxxx.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| [XxxxxxXXxxx](https://msdn.microsoft.com/library/windows/desktop/hh437833)                  | XxxxxxXXxxx xxxxxxxx x xxx xx XXXx xxx xxxxxx xxx xxxxxxxx xxxxxx xxxxxx xxxxxxx xxx xxxxxxxxxxxxx xxxxx, xxxxxx, xxx xxxxxxxxx. Xxxxx xxxxx xxx xxxxxxxxx xxx xxxxxxxx xx xxxx xxxx xxxx XxxxxxYX xxx xxx xxxxxx xxxxxxxxxx.                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| [XxxxxxX XXXX](https://msdn.microsoft.com/library/windows/desktop/bb509580) | Xxx xxxxxxx XXXX xxxxxx xxxx xx XxxxxxYX xxxxxxx. Xx xxxxxxxxxx XxxxxxYX Xxxxxx Xxxxx Y.Y.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)                     | DirectX Graphic Infrastructure (DXGI) は、グラフィックス ハードウェアと Direct3D の間のインターフェイスを提供します。 これは [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) と [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543) の COM インターフェイスを使ってデバイス アダプターとハードウェア構成を設定します。 バッファーなどのウィンドウ リソースを作成および構成する場合に使います。 特に、[**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) ファクトリ パターンは、スワップ チェーン (フレーム バッファーのセット) などのグラフィックス リソースを取得するために使われます。 DXGI がスワップ チェーンを所有するため、画面にフレームを表示するために [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) インターフェイスが使われます。 |
+| [Direct3D](https://msdn.microsoft.com/library/windows/desktop/ff476080)       | Direct3D は API のセットであり、グラフィックス インターフェイスの仮想表示を提供し、それを使ってグラフィックスを描画できるようにします。 バージョン 11 は、機能的に OpenGL 4.3 とほぼ同等です (一方、OpenGL ES 2.0 は機能的に DirectX9 および OpenGL 2.0 と似ていますが、OpenGL 3.0 の統合シェーダー パイプラインがあります)。重要な作業の大半は、個々のリソースとサブリソースへのアクセスを提供する ID3D11Device1 インターフェイスと、レンダリング コンテキストを提供する ID3D11DeviceContext1 インターフェイスで行われます。                                                                                                                                          |
+| [Direct2D](https://msdn.microsoft.com/library/windows/desktop/dd370990)                      | Direct2D は、GPU アクセラレーションが活用された 2D レンダリング用の API のセットです。 用途は OpenVG と似ています。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| [DirectWrite](https://msdn.microsoft.com/library/windows/desktop/dd368038)            | DirectWrite は、GPU アクセラレーションが活用された高品質なフォント レンダリング用の API のセットです。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| [DirectXMath](https://msdn.microsoft.com/library/windows/desktop/hh437833)                  | DirectXMath は、一般的な線形代数と三角法の種類、値、関数を処理するための API とマクロのセットを提供します。 これらの型と関数は、Direct3D とそのシェーダーの操作に対応しています。                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| [DirectX HLSL](https://msdn.microsoft.com/library/windows/desktop/bb509580) | Direct3D シェーダーで使われる現在の HLSL 構文です。 Direct3D Shader Model 5.0 を実装します。                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 
  
 
-## Xxxxxx xxx Xxxxxxx Xxxxxxx XXXx xxx xxxxxxxx xxxxxxx
+## Windows ランタイム API とテンプレート ライブラリの確認
 
 
-Xxx Xxxxxxx Xxxxxxx XXXx xxxxxxx xxx xxxxxxx xxxxxxxxxxxxxx xxx XXX xxxx. Xxxxxx xxxx [xxxx](https://msdn.microsoft.com/library/windows/apps/br211377).
+Windows ランタイム API は、UWP アプリの全体的なインフラストラクチャを提供します。 詳しくは、[ここ](https://msdn.microsoft.com/library/windows/apps/br211377) をご覧ください。
 
-Xxx Xxxxxxx Xxxxxxx XXXx xxxx xx xxxxxxx xxxx xxxxxxxx xxxxxxxx xxxxxxx:
+グラフィックス パイプラインの移植で使われる主要な Windows ランタイム API は次のとおりです。
 
--   [**Xxxxxxx::XX::Xxxx::XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225)
--   [**Xxxxxxx::XX::Xxxx::XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208211)
--   [**Xxxxxxx::XxxxxxxxxxxXxxxx::Xxxx::XXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700478)
--   [**Xxxxxxx::XxxxxxxxxxxXxxxx::Xxxx::XxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br225017)
+-   [**Windows::UI::Core::CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
+-   [**Windows::UI::Core::CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211)
+-   [**Windows::ApplicationModel::Core::IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478)
+-   [**Windows::ApplicationModel::Core::CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017)
 
-Xxxxxxxxxxxx, xxx Xxxxxxx Xxxxxxx X++ Xxxxxxxx Xxxxxxx (XXX) xx x xxxxxxxx xxxxxxx xxxx xxxxxxxx x xxx-xxxxx xxx xx xxxxxx xxx xxx Xxxxxxx Xxxxxxx xxxxxxxxxx. Xxx XxxxxxYX YY XXXx xxx XXX xxxx xxx xxxx xxxx xx xxxxxxxxxxxx xxxx xxx xxxxxxxxxx xxx xxxxx xx xxxx xxxxxxx, xxxx xx xxxxx xxxxxxxx ([XxxXxx](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)). Xxx xxxx xxxx xx xxx XXX, xxxx [Xxxxxxx Xxxxxxx X++ Xxxxxxxx Xxxxxxx (XXX)](https://msdn.microsoft.com/en-us/library/windows/apps/hh438466.aspx).
+また、Windows ランタイム C++ テンプレート ライブラリ (WRL) は、Windows ランタイム コンポーネントを作成して使うための下位レベルの方法を提供するテンプレート ライブラリです。 UWP アプリ用の Direct3D 11 API は、スマート ポインター ([ComPtr](https://msdn.microsoft.com/library/windows/apps/br244983.aspx)) など、このライブラリ内のインターフェイスおよび型と組み合わせたときに最適に動作します。 WRL について詳しくは、「[Windows ランタイム C++ テンプレート ライブラリ (WRL)](https://msdn.microsoft.com/en-us/library/windows/apps/hh438466.aspx)」をご覧ください。
 
-## Xxxxxx xxxx xxxxxxxxxx xxxxxx
+## 座標系の変更
 
 
-Xxx xxxxxxxxxx xxxx xxxxxxxxx xxxxxxxx xxxxx xxxx xxxxxxx xx xxx xxxxxx xxxx XxxxXX'x xxxxxxxxxxx xxxxx-xxxxxx xxxxxxxxxx xxxxxx xx XxxxxxYX'x xxxxxxx xxxx-xxxxxx xxxxxxxxxx xxxxxx. Xxxx xxxxxx xx xxxxxxxxxx xxxxxxxx xxxxxxx xxxx xxxxx xx xxxx xxxx, xxxx xxx xxxxx xxx xxxxxxxxxxxxx xx xxxx xxxxxx xxxxxxx xx xxxx xx xxxx xxxxxx xxxx xxxxxxxxx. Xxx xxx xxxx xxxxxxxxx xxxxxxx xx xxxx xxx:
+ときとして初期移植作業に混乱を招く違いは、OpenGL の従来の右手による座標系から Direct3D の既定の左手による座標系への変更です。 座標モデルにおけるこの変更は、頂点バッファーの設定と構成から、マトリックスの数学関数の多くに至るまで、ゲームの多くの部分に影響します。 2 つの最も重要な変更は次のとおりです。
 
--   Xxxx xxx xxxxx xx xxxxxxxx xxxxxxxx xx xxxx XxxxxxYX xxxxxxxxx xxxx xxxxxxxxx xxxx xxx xxxxx. Xxx xxxxxxx, xx xxxx xxxxxxxx xxx xxxxxxx xx Y, Y, xxx Y xx xxxx XxxxXX xxxxxxxx, xxxx xxxx xx XxxxxxYX xx Y, Y, Y xxxxxxx.
--   Xxx xxx xxxx xxxxxx xx xxxxx xxxxx xxxxx xx -Y.Yx xx xxx x xxxxxxxxx, xxxxxxxxxxx xxxxxxxxx xxx x-xxxx xxxxxxxxxxx. Xx xx xxxx, xxxx xxx xxxx xx xxx xxxxxx xx xxxxxxxxx XYY, XYY, xxx XYY xx xxxx xxxx xxxxxx (xxxx xxxxxxx xx xx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb147180) xxxx). Xx XYY xx xxx Y, xxxx xxx xxxx xx xxxx.
+-   三角形の頂点の順序を逆にし、Direct3D が前から時計回りにそれらをスキャンするようにします。 たとえば、頂点のインデックスが OpenGL パイプラインで 0、1、2 のとき、Direct3D に 0、2、1 として渡します。
+-   効果的に z 軸座標を反転させるために、ビュー マトリックスを使って z 方向に -1.0f だけワールド空間を拡大します。 そのためには、ビュー マトリックスの位置 M31、M32、M33 にある値の符号を逆にします ([**Matrix**](https://msdn.microsoft.com/library/windows/desktop/bb147180) 型に移植するとき)。 M34 が 0 でない場合は、その符号を同様に逆にします。
 
-Xxxxxxx, XxxxxxYX xxx xxxxxxx x xxxxx-xxxxxx xxxxxxxxxx xxxxxx. XxxxxxXXxxx xxxxxxxx x xxxxxx xx xxxxxxxxx xxxx xxxxxxx xx xxx xxxxxx xxxx xxxx-xxxxxx xxx xxxxx-xxxxxx xxxxxxxxxx xxxxxxx. Xxxx xxx xx xxxx xx xxxxxxxx xxxx xx xxxx xxxxxxxx xxxx xxxx xxx xxxxxx xxxxxxxxxx. Xxxx xxxxxxx:
+ただし、Direct3D は右手による座標系をサポートできます。 DirectXMath は、左手による座標系と右手による座標系を操作するさまざまな関数を提供します。 元のメッシュ データおよびマトリックスの処理の一部を維持するために使うことができます。 これには次のものがあります。
 
-| XxxxxxXXxxx xxxxxx xxxxxxxx                                                   | Xxxxxxxxxxx                                                                                                                 |
+| DirectXMath のマトリックス関数                                                   | 説明                                                                                                                 |
 |-------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| [**XXXxxxxxXxxxXxXX**](https://msdn.microsoft.com/library/windows/desktop/ee419969)                               | Xxxxxx x xxxx xxxxxx xxx x xxxx-xxxxxx xxxxxxxxxx xxxxxx xxxxx x xxxxxx xxxxxxxx, xx xx xxxxxxxxx, xxx x xxxxx xxxxx.       |
-| [**XXXxxxxxXxxxXxXX**](https://msdn.microsoft.com/library/windows/desktop/ee419970)                               | Xxxxxx x xxxx xxxxxx xxx x xxxxx-xxxxxx xxxxxxxxxx xxxxxx xxxxx x xxxxxx xxxxxxxx, xx xx xxxxxxxxx, xxx x xxxxx xxxxx.      |
-| [**XXXxxxxxXxxxXxXX**](https://msdn.microsoft.com/library/windows/desktop/ee419971)                               | Xxxxxx x xxxx xxxxxx xxx x xxxx-xxxxxx xxxxxxxxxx xxxxxx xxxxx x xxxxxx xxxxxxxx, xx xx xxxxxxxxx, xxx x xxxxxx xxxxxxxxx.  |
-| [**XXXxxxxxXxxxXxXX**](https://msdn.microsoft.com/library/windows/desktop/ee419972)                               | Xxxxxx x xxxx xxxxxx xxx x xxxxx-xxxxxx xxxxxxxxxx xxxxxx xxxxx x xxxxxx xxxxxxxx, xx xx xxxxxxxxx, xxx x xxxxxx xxxxxxxxx. |
-| [**XXXxxxxxXxxxxxxxxxxxXX**](https://msdn.microsoft.com/library/windows/desktop/ee419975)                   | Xxxxxx xx xxxxxxxxxx xxxxxxxxxx xxxxxx xxx x xxxx-xxxxxx xxxxxxxxxx xxxxxx.                                                 |
-| [**XXXxxxxxXxxxxxxxxxxxXxxXxxxxxXX**](https://msdn.microsoft.com/library/windows/desktop/ee419976) | Xxxxxx x xxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxx xxx x xxxx-xxxxxx xxxxxxxxxx xxxxxx.                                           |
-| [**XXXxxxxxXxxxxxxxxxxxXxxXxxxxxXX**](https://msdn.microsoft.com/library/windows/desktop/ee419977) | Xxxxxx x xxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxx xxx x xxxxx-xxxxxx xxxxxxxxxx xxxxxx.                                          |
-| [**XXXxxxxxXxxxxxxxxxxxXX**](https://msdn.microsoft.com/library/windows/desktop/ee419978)                   | Xxxxxx xx xxxxxxxxxx xxxxxxxxxx xxxxxx xxx x xxxxx-xxxxxx xxxxxxxxxx xxxxxx.                                                |
-| [**XXXxxxxxXxxxxxxxxxxXxxXX**](https://msdn.microsoft.com/library/windows/desktop/ee419979)               | Xxxxxx x xxxx-xxxxxx xxxxxxxxxxx xxxxxxxxxx xxxxxx xxxxx xx x xxxxx xx xxxx.                                                |
-| [**XXXxxxxxXxxxxxxxxxxXxxXX**](https://msdn.microsoft.com/library/windows/desktop/ee419980)               | Xxxxxx x xxxxx-xxxxxx xxxxxxxxxxx xxxxxxxxxx xxxxxx xxxxx xx x xxxxx xx xxxx.                                               |
-| [**XXXxxxxxXxxxxxxxxxxXX**](https://msdn.microsoft.com/library/windows/desktop/ee419981)                     | Xxxxxx x xxxx-xxxxxx xxxxxxxxxxx xxxxxxxxxx xxxxxx.                                                                         |
-| [**XXXxxxxxXxxxxxxxxxxXxxXxxxxxXX**](https://msdn.microsoft.com/library/windows/desktop/ee419982)   | Xxxxxx x xxxxxx xxxxxxx xx x xxxx-xxxxxx xxxxxxxxxxx xxxxxxxxxx xxxxxx.                                                     |
-| [**XXXxxxxxXxxxxxxxxxxXxxXxxxxxXX**](https://msdn.microsoft.com/library/windows/desktop/ee419983)   | Xxxxxx x xxxxxx xxxxxxx xx x xxxxx-xxxxxx xxxxxxxxxxx xxxxxxxxxx xxxxxx.                                                    |
-| [**XXXxxxxxXxxxxxxxxxxXX**](https://msdn.microsoft.com/library/windows/desktop/ee419984)                     | Xxxxxx x xxxxx-xxxxxx xxxxxxxxxxx xxxxxxxxxx xxxxxx.                                                                        |
+| [**XMMatrixLookAtLH**](https://msdn.microsoft.com/library/windows/desktop/ee419969)                               | カメラの位置、上方向、焦点を使って、左手による座標系のビュー マトリックスを作成します。       |
+| [**XMMatrixLookAtRH**](https://msdn.microsoft.com/library/windows/desktop/ee419970)                               | カメラの位置、上方向、焦点を使って、右手による座標系のビュー マトリックスを作成します。      |
+| [**XMMatrixLookToLH**](https://msdn.microsoft.com/library/windows/desktop/ee419971)                               | カメラの位置、上方向、カメラの向きを使って、左手による座標系のビュー マトリックスを作成します。  |
+| [**XMMatrixLookToRH**](https://msdn.microsoft.com/library/windows/desktop/ee419972)                               | カメラの位置、上方向、カメラの向きを使って、右手による座標系のビュー マトリックスを作成します。 |
+| [**XMMatrixOrthographicLH**](https://msdn.microsoft.com/library/windows/desktop/ee419975)                   | 左手による座標系の正投影マトリックスを作成します。                                                 |
+| [**XMMatrixOrthographicOffCenterLH**](https://msdn.microsoft.com/library/windows/desktop/ee419976) | 左手による座標系のカスタム正投影マトリックスを作成します。                                           |
+| [**XMMatrixOrthographicOffCenterRH**](https://msdn.microsoft.com/library/windows/desktop/ee419977) | 右手による座標系のカスタム正投影マトリックスを作成します。                                          |
+| [**XMMatrixOrthographicRH**](https://msdn.microsoft.com/library/windows/desktop/ee419978)                   | 右手による座標系の正投影マトリックスを作成します。                                                |
+| [**XMMatrixPerspectiveFovLH**](https://msdn.microsoft.com/library/windows/desktop/ee419979)               | 視野に基づいて左手による遠近投影マトリックスを作成します。                                                |
+| [**XMMatrixPerspectiveFovRH**](https://msdn.microsoft.com/library/windows/desktop/ee419980)               | 視野に基づいて右手による遠近投影マトリックスを作成します。                                               |
+| [**XMMatrixPerspectiveLH**](https://msdn.microsoft.com/library/windows/desktop/ee419981)                     | 左手による遠近投影マトリックスを作成します。                                                                         |
+| [**XMMatrixPerspectiveOffCenterLH**](https://msdn.microsoft.com/library/windows/desktop/ee419982)   | 左手による遠近投影マトリックスのカスタム バージョンを作成します。                                                     |
+| [**XMMatrixPerspectiveOffCenterRH**](https://msdn.microsoft.com/library/windows/desktop/ee419983)   | 右手による遠近投影マトリックスのカスタム バージョンを作成します。                                                    |
+| [**XMMatrixPerspectiveRH**](https://msdn.microsoft.com/library/windows/desktop/ee419984)                     | 右手による遠近投影マトリックスを作成します。                                                                        |
 
  
 
-## XxxxXX XXY.Y-xx-XxxxxxYX YY xxxxxxx Xxxxxxxxxx Xxxxx Xxxxxxxxx
+## OpenGL ES2.0 から Direct3D 11 への移植についてよく寄せられる質問
 
 
--   Xxxxxxxx: "Xx xxxxxxx, xxx X xxxxxx xxx xxxxxxx xxxxxxx xx xxxxxxxx xx xx XxxxXX xxxx xxx xxxxxxx xxxx xxxx xxx XxxxxxYX xxxxxxxxxxx?"
--   Xxxxxx: Xx. XxxxXX XX Y.Y xxx XxxxxxYX YY xxxx xxxx xxxxxxxxx xxxxxxxxxxx xx xxxxxxxx xxxxxxxx xxxxxxxx. Xxxxx xxxxx xxx xxxx xxxxxxx xxxxxxxxxxxx xxxxxxx xxxxxxxx xxx XXXx, xxxx xx xxx xxxxxxxxx xxxxxxx xxx xxx xxxxxxxxxx xx xxxxxxx, xxx xxxxxx xxxxxx xxxx xxxxxxxx xx xxxx xx xxx XxxxxxYX YY xxxxxxxxx xx xxx xxx xxxx xxx xxxx xxxxxxx xxxx xxxxxxxxxx xxxx xxxxxxxx xxxxxxx xx xxxxxxxxxx x Y-xx-Y xxxxxxx. Xxxxxxx, xx xxx xxx xxxxxxx xxxx XXXX xx XXXX, xxxxxxxx x xxx xx xxxxxx xxxxxxx xxx XXXX xxxxxxxxx, xxxxxxxxxxx, xxx xxxxxxxxx xxx xxx xxxx xxxx xxxxxxx xxxxxx, xx xxxxxx xxx xx xxxxxxxx xxxx xxx xxx xx xxxxxx xxxx xxxxx.
+-   質問: "通常、自分の OpenGL コードで特定の文字列やパターンを検索し、それを対応する Direct3D の要素と置き換えることはできますか"
+-   回答: いいえ。 OpenGL ES 2.0 と Direct3D 11 は、グラフィックス パイプライン モデルの異なる世代に基づいています。 レンダリング コンテキストやシェーダーのインスタンス化など、概念と API の間に表面的な類似点はありますが、このガイダンスと Direct3D 11 のリファレンスを調べて、1 対 1 のマッピングを試みる代わりに、パイプラインを再作成するときに最適な選択ができるようにしてください。 ただし、GLSL から HLSL に移植する場合、GLSL の変数、組み込みメソッド、関数の一連の共通エイリアスを作成すると、移植が容易になるだけでなく、1 ペアのシェーダー コード ファイルだけを維持することができます。
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

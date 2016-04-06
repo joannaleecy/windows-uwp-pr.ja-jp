@@ -1,42 +1,42 @@
 ---
-xx.xxxxxxx: XYYYXYXX-YYXY-YXYY-YYXX-YYYYXYXYYXXX
-xxxxxxxxxxx: Xx xxx xxxx x xxxxxxx xx xxxx xxx xx-xxx xxxxxxxx (XXXx), xxx xxx xxx xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX xxx Xxxxxxx Xxxxx xxxxxxxx XXX xx xxxxxx xxxxxxxxx xxxxxxxxxxx xxx xxxxx xxxxxxxx xxxx xxxx xxxxxxxx.
-xxxxx: Xxxx xxx xxxxx xxxxxxxx xxxx x xxxxxxx
+ms.assetid: B071F6BC-49D3-4E74-98EA-0461A1A55EFB
+description: If you have a catalog of apps and in-app products (IAPs), you can use the Windows Store collection API and Windows Store purchase API to access ownership information for these products from your services.
+title: View and grant products from a service
 ---
 
-# Xxxx xxx xxxxx xxxxxxxx xxxx x xxxxxxx
+# View and grant products from a service
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xx xxx xxxx x xxxxxxx xx xxxx xxx xx-xxx xxxxxxxx (XXXx), xxx xxx xxx xxx *Xxxxxxx Xxxxx xxxxxxxxxx XXX* xxx *Xxxxxxx Xxxxx xxxxxxxx XXX* xx xxxxxx xxxxxxxxx xxxxxxxxxxx xxx xxxxx xxxxxxxx xxxx xxxx xxxxxxxx.
+If you have a catalog of apps and in-app products (IAPs), you can use the *Windows Store collection API* and *Windows Store purchase API* to access ownership information for these products from your services.
 
-Xxxxx XXXx xxxxxxx xx XXXX xxxxxxx xxxx xxx xxxxxxxx xx xx xxxx xx xxxxxxxxxx xxxx XXX xxxxxxxx xxxx xxx xxxxxxxxx xx xxxxx-xxxxxxxx xxxxxxxx. Xxxxx XXXx xxxxxx xxx xx xx xxx xxxxxxxxx:
+These APIs consist of REST methods that are designed to be used by developers with IAP catalogs that are supported by cross-platform services. These APIs enable you to do the following:
 
--   Xxxxxxx Xxxxx xxxxxxxxxx XXX: Xxxxx xxx xxxx xxx XXXx xxxxx xx x xxxxx xxxx, xx xxxxxx x xxxxxxxxxx xxxxxxx xx xxxxxxxxx.
--   Xxxxxxx Xxxxx xxxxxxxx XXX: Xxxxx x xxxx xxx xx XXX xx x xxxxx xxxx.
+-   Windows Store collection API: Query for apps and IAPs owned by a given user, or report a consumable product as fulfilled.
+-   Windows Store purchase API: Grant a free app or IAP to a given user.
 
-## Xxxxx xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX xxx Xxxxxxx Xxxxx xxxxxxxx XXX
+## Using the Windows Store collection API and Windows Store purchase API
 
 
-Xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX xxx xxxxxxxx XXX xxx Xxxxx Xxxxxx Xxxxxxxxx (Xxxxx XX) xxxxxxxxxxxxxx xx xxxxxx xxxxxxxx xxxxxxxxx xxxxxxxxxxx. Xxxxxx xxx xxx xxxx xxxxx XXXx, xxx xxxx xxxxx Xxxxx XX xxxxxxxx xx xxxx xxxxxxxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxx xxxxxxxx xxxxxxx xxxxxxxx xxxxxx xxxxxx xxx xxxx. Xxx xxxxxxxxx xxxxx xxxxxxxx xxx xxx-xx-xxx xxxxxxx:
+The Windows Store collection API and purchase API use Azure Active Directory (Azure AD) authentication to access customer ownership information. Before you can call these APIs, you must apply Azure AD metadata to your application in the Windows Dev Center dashboard and generate several required access tokens and keys. The following steps describe the end-to-end process:
 
-1.  [Xxxxxxxxx x Xxx xxxxxxxxxxx xx Xxxxx XX](#step-1:-configure-a-web-application-in-azure-ad). Xxxx xxxxxxxxxxx xxxxxxxxxx xxxx xxxxx-xxxxxxxx xxxxxxxx xx xxx xxxxxxx xx Xxxxx XX.
-2.  [Xxxxxxxxx xxxx Xxxxx XX xxxxxx XX xxxx xxxx xxxxxxxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx](#step-2:-associate-your-azure-ad-client-id-with-your-application-in-the-windows-dev-denter-dashboard).
-3.  Xx xxxx xxxxxxx, [xxxxxxxx Xxxxx XX xxxxxx xxxxxx](#step-3:-retrieve-access-tokens-from-azure-ad) xxxx xxxxxxxxx xxxx xxxxxxxxx xxxxxxxx.
-4.  Xx xxxxxx-xxxx xxxx xx xxxx Xxxxxxx xxx, [xxxxxxxx x Xxxxxxx Xxxxx XX xxx](#step-4:-generate-a-windows-store-id-key-from-client-side-code-in-your-app) xxxx xxxxxxxxxx xxx xxxxxxxx xx xxx xxxxxxx xxxx, xxx xxxx xxx Xxxxxxx Xxxxx XX xxx xxxx xx xxxx xxxxxxx.
-5.  Xxxxx xxx xxxx xxx xxxxxxxx Xxxxx XX xxxxxx xxxxx xxx Xxxxxxx Xxxxx XX xxx, [xxxx xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX xx xxxxxxxx XXX xxxx xxxx xxxxxxx](#step-5:-call-the-windows-store-collection-api-or-purchase-api-from-your-service).
+1.  [Configure a Web application in Azure AD](#step-1:-configure-a-web-application-in-azure-ad). This application represents your cross-platform services in the context of Azure AD.
+2.  [Associate your Azure AD client ID with your application in the Windows Dev Center dashboard](#step-2:-associate-your-azure-ad-client-id-with-your-application-in-the-windows-dev-denter-dashboard).
+3.  In your service, [generate Azure AD access tokens](#step-3:-retrieve-access-tokens-from-azure-ad) that represent your publisher identity.
+4.  In client-side code in your Windows app, [generate a Windows Store ID key](#step-4:-generate-a-windows-store-id-key-from-client-side-code-in-your-app) that represents the identity of the current user, and pass the Windows Store ID key back to your service.
+5.  After you have the required Azure AD access token and Windows Store ID key, [call the Windows Store collection API or purchase API from your service](#step-5:-call-the-windows-store-collection-api-or-purchase-api-from-your-service).
 
-Xxx xxxxxxxxx xxxxxxxx xxxxxxx xxxx xxxxxxx xxxxx xxxx xx xxxxx xxxxx.
+The following sections provide more details about each of these steps.
 
-### Xxxx Y: Xxxxxxxxx x Xxx xxxxxxxxxxx xx Xxxxx XX
+### Step 1: Configure a Web application in Azure AD
 
-1.  Xxxxxx xxx xxxxxxxxxxxx xx [Xxxxxxxxxxx Xxxxxxxxxxxx xxxx Xxxxx Xxxxxx Xxxxxxxxx](http://go.microsoft.com/fwlink/?LinkId=722502) xx xxx x Xxx xxxxxxxxxxx xx Xxxxx XX.
-    **Xxxx**  Xx xxx **Xxxx xx xxxxx xxxx xxxxxxxxxxx xxxx**, xxxx xxxx xxxx xxx xxxxxx **Xxx xxxxxxxxxxx xxx/xx xxx XXX**. Xxxx xx xxxxxxxx xx xxxx xxx xxx xxxxxx x xxx (xxxx xxxxxx x *xxxxxx xxxxxx*) xxx xxxx xxxxxxxxxxx. Xx xxxxx xx xxxx xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX xx xxxxxxxx XXX, xxx xxxx xxxxxxx x xxxxxx xxxxxx xxxx xxx xxxxxxx xx xxxxxx xxxxx xxxx Xxxxx XX xx x xxxxx xxxx.
-2.  Xx xxx [Xxxxx Xxxxxxxxxx Xxxxxx](http://manage.windowsazure.com/), xxxxxxxx xx **Xxxxxx Xxxxxxxxx**. Xxxxxx xxxx xxxxxxxxx, xxxxx xxx **Xxxxxxxxxxxx** xxx xx xxx xxx, xxx xxxx xxxxxx xxxx xxxxxxxxxxx.
-3.  Xxxxx xxx **Xxxxxxxxx** xxx. Xx xxxx xxx, xxxxxx xxx xxxxxx XX xxx xxxx xxxxxxxxxxx xxx xxxxxxx x xxx (xxxx xx xxxxxx x *xxxxxx xxxxxx* xx xxxxx xxxxx).
-4.  Xx xxx xxxxxx xx xxx xxxxxx, xxxxx **Xxxxxx xxxxxxxx**. Xxxxxxxx xxxx Xxxxx XX xxxxxxxxxxx xxxxxxxx xxx xxxxxxx xxx `"identifierUris"` xxxxxxx xxxx xxx xxxxxxxxx xxxx.
+1.  Follow the instructions in [Integrating Applications with Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=722502) to add a Web application to Azure AD.
+    **Note**  On the **Tell us about your application page**, make sure that you choose **Web application and/or web API**. This is required so that you can obtain a key (also called a *client secret*) for your application. In order to call the Windows Store collection API or purchase API, you must provide a client secret when you request an access token from Azure AD in a later step.
+2.  In the [Azure Management Portal](http://manage.windowsazure.com/), navigate to **Active Directory**. Select your directory, click the **Applications** tab at the top, and then select your application.
+3.  Click the **Configure** tab. On this tab, obtain the client ID for your application and request a key (this is called a *client secret* in later steps).
+4.  At the bottom of the screen, click **Manage manifest**. Download your Azure AD application manifest and replace the `"identifierUris"` section with the following text.
 
     ```json
     "identifierUris" : [                                
@@ -46,95 +46,93 @@ Xxx xxxxxxxxx xxxxxxxx xxxxxxx xxxx xxxxxxx xxxxx xxxx xx xxxxx xxxxx.
         ],
     ```
 
-    Xxxxx xxxxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxxx xx xxxx xxxxxxxxxxx. Xx x xxxxx xxxx, xxx xxxx xxxxxx Xxxxx XX xxxxxx xxxxxx xxxx xxx xxxxxxxxxx xxxx xxxx xx xxxxx xxxxxxxx xxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxx xx xxxxxxxx xxxx xxxxxxxxxxx xxxxxxxx, xxx [Xxxxxxxxxxxxx xxx Xxxxx Xxxxxx Xxxxxxxxx xxxxxxxxxxx xxxxxxxx]( http://go.microsoft.com/fwlink/?LinkId=722500).
+    These strings represent the audiences supported by your application. In a later step, you will create Azure AD access tokens that are associated with each of these audience values. For more information about how to download your application manifest, see [Understanding the Azure Active Directory application manifest]( http://go.microsoft.com/fwlink/?LinkId=722500).
 
-5.  Xxxx xxxx xxxxxxxxxxx xxxxxxxx xxx xxxxxx xx xx xxxx xxxxxxxxxxx xx xxx [Xxxxx Xxxxxxxxxx Xxxxxx](http://manage.windowsazure.com/).
+5.  Save your application manifest and upload it to your application in the [Azure Management Portal](http://manage.windowsazure.com/).
 
-### Xxxx Y: Xxxxxxxxx xxxx Xxxxx XX xxxxxx XX xxxx xxxx xxxxxxxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx
+### Step 2: Associate your Azure AD client ID with your application in the Windows Dev Center dashboard
 
-Xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX xxx xxxxxxxx XXX xxxx xxxxxxx xxxxxx xx x xxxx'x xxxxxxxxx xxxxxxxxxxx xxx xxxx xxx XXXx xxxx xxx xxxx xxxxxxxxxx xxxx xxxx Xxxxx XX xxxxxx XX.
+The Windows Store collection API and purchase API only provide access to a user's ownership information for apps and IAPs that you have associated with your Azure AD client ID.
 
-1.  Xxxx xx xx xxx [Xxxxxxx Xxx Xxxxxx xxxxxxxxx](https://dev.windows.com/overview) xxx xxxxxx xxxx xxx.
-2.  Xx xx xxx **Xxxxxxxx** &xx; **Xxxxxxx xxxxxxxxxxx xxx xxxxxxxxx** xxxx xxx xxxxx xxxx Xxxxx XX xxxxxx XX xxxx xxx xx xxx xxxxxxxxx xxxxxx.
+1.  Sign in to the [Windows Dev Center dashboard](https://dev.windows.com/overview) and select your app.
+2.  Go to the **Services** &gt; **Product collections and purchases** page and enter your Azure AD client ID into one of the available fields.
 
-### Xxxx Y: Xxxxxxxx xxxxxx xxxxxx xxxx Xxxxx XX
+### Step 3: Retrieve access tokens from Azure AD
 
-Xxxxxx xxx xxx xxxxxxxx x Xxxxxxx Xxxxx XX xxx xx xxxx xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX xx xxxxxxxx XXX, xxxx xxxxxxx xxxx xxxxxxx xxxxx Xxxxx XX xxxxxx xxxxxx xxxx xxxxxxxxx xxxx xxxxxxxxx xxxxxxxx. Xxxx xx xxxxx xxxxxx xxxxxx xx xxxxxxxxxx xxxx x xxxxxxxxx xxxxxxxx XXX, xxx xxxx xxxxx xxxx xx xxxx xxxx x xxxxxxxxx XXX xxxx. Xxx xxxxxxxx xx xxxx xxxxx xx YY xxxxxxx, xxx xxx xxx xxxxxxx xxxx xxxxx xxxx xxxxxx.
+Before you can retrieve a Windows Store ID key or call the Windows Store collection API or purchase API, your service must request three Azure AD access tokens that represent your publisher identity. Each of these access tokens is associated with a different audience URI, and each token will be used with a different API call. The lifetime of each token is 60 minutes, and you can refresh them after they expire.
 
-Xx xxxxxx xxx xxxxxx xxxxxx, xxx xxx XXxxx Y.Y XXX xx xxxx xxxxxxx xx xxxxxxxxx xxx xxxxxxxxxxxx xx [Xxxxxxx xx Xxxxxxx Xxxxx Xxxxx Xxxxxx Xxxxxxxxxxx](https://msdn.microsoft.com/library/azure/dn645543.aspx). Xxx xxxx xxxxx, xxxxxxx xxx xxxxxxxxx xxxxxxxxx xxxx:
+To create the access tokens, use the OAuth 2.0 API in your service by following the instructions in [Service to Service Calls Using Client Credentials](https://msdn.microsoft.com/library/azure/dn645543.aspx). For each token, specify the following parameter data:
 
--   Xxx xxx *xxxxxx\_xx* xxx *xxxxxx\_xxxxxx* xxxxxxxxxx, xxxxxxx xxx xxxxxx XX xxx xxx xxxxxx xxxxxx xxx xxxx xxxxxxxxxxx xx xxxxxxxx xxxx xxx [Xxxxx Xxxxxxxxxx Xxxxxx](http://manage.windowsazure.com/). Xxxx xx xxxxx xxxxxxxxxx xxx xxxxxxxx xx xxxxx xx xxxxxxxx xx xxxxxx xxxxx xxxx xxx xxxxx xx xxxxxxxxxxxxxx xxxxxxxx xx xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX xx xxxxxxxx XXX.
--   Xxx xxx *xxxxxxxx* xxxxxxxxx, xxxxxxx xxx xx xxx xxxxxxxxx xxx XX XXXx (xxxxx xxx xxx xxxx XXXx xxxx xxx xxxxxxxxxx xxxxx xx xxx `"identifierUris"` xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx). Xx xxx xxx xx xxxx xxxxxxx, xxx xxxxxx xxxx xxxxx xxxxxx xxxxxx xxxx xxxx xxxx xxx xx xxxxx xxx XX XXXx xxxxxxxxxx xxxx xxxx:
-    -   **xxxxx://xxxxxxxx.xxxxxxxxx.xxx/xYx/xxxx/xxxxxx/xxxxxxxxxxx**: Xx x xxxxx xxxx, xxx xxxx xxx xxx xxxxxx xxxxx xxxx xxx xxxxxx xxxx xxxx XXX xx xxxxxxx x Xxxxxxx Xxxxx XX xxx xxxx xxx xxx xxx xxxx xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX.
-    -   **xxxxx://xxxxxxxx.xxxxxxxxx.xxx/xYx/xxxx/xxxxxx/xxxxxxxx**: Xx x xxxxx xxxx, xxx xxxx xxx xxx xxxxxx xxxxx xxxx xxx xxxxxx xxxx xxxx XXX xx xxxxxxx x Xxxxxxx Xxxxx XX xxx xxxx xxx xxx xxx xxxx xxx Xxxxxxx Xxxxx xxxxxxxx XXX.
-    -   **xxxxx://xxxxxxxx.xxxxxxxxx.xxx**: Xx x xxxxx xxxx, xxx xxxx xxx xxx xxxxxx xxxxx xxxx xxx xxxxxx xxxx xxxx XXX xx xxxxxx xxxxx xx xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX xx xxxxxxxx XXX.
+-   For the *client\_id* and *client\_secret* parameters, specify the client ID and the client secret for your application as obtained from the [Azure Management Portal](http://manage.windowsazure.com/). Both of these parameters are required in order to generate an access token with the level of authentication required by the Windows Store collection API or purchase API.
+-   For the *resource* parameter, specify one of the following app ID URIs (these are the same URIs that you previously added to the `"identifierUris"` section of the application manifest). At the end of this process, you should have three access tokens that each have one of these app ID URIs associated with them:
+    -   **https://onestore.microsoft.com/b2b/keys/create/collections**: In a later step, you will use the access token that you create with this URI to request a Windows Store ID key that you can use with the Windows Store collection API.
+    -   **https://onestore.microsoft.com/b2b/keys/create/purchase**: In a later step, you will use the access token that you create with this URI to request a Windows Store ID key that you can use with the Windows Store purchase API.
+    -   **https://onestore.microsoft.com**: In a later step, you will use the access token that you create with this URI in direct calls to the Windows Store collection API or purchase API.
 
-    **Xxxxxxxxx**  Xxx xxx **xxxxx://xxxxxxxx.xxxxxxxxx.xxx** xxxxxxxx xxxx xxxx xxxxxx xxxxxx xxxx xxx xxxxxx xxxxxxxx xxxxxx xxxx xxxxxxx. Xxxxxxxx xxxxxx xxxxxx xxxx xxxx xxxxxxxx xxxxxxx xxxx xxxxxxx xxxxx xxxx xxxx xxxxxxx xxxxxxxxxx xx xxxxxx xxxxxxx.
+    **Important**  Use the **https://onestore.microsoft.com** audience only with access tokens that are stored securely within your service. Exposing access tokens with this audience outside your service could make your service vulnerable to replay attacks.
 
-Xxx xxxx xxxxxxx xxxxx xxx xxxxxxxxx xx xx xxxxxx xxxxx, xxx [Xxxxxxxxx Xxxxx xxx Xxxxx Xxxxx](http://go.microsoft.com/fwlink/?LinkId=722501).
+For more details about the structure of an access token, see [Supported Token and Claim Types](http://go.microsoft.com/fwlink/?LinkId=722501).
 
-**Xxxxxxxxx**  Xxx xxxxxx xxxxxx Xxxxx XX xxxxxx xxxxxx xxxx xx xxx xxxxxxx xx xxxx xxxxxxx, xxx xx xxxx xxx. Xxxx xxxxxx xxxxxx xxxxx xx xxxxxxxxxxx xx xx xx xxxx xx xxxx xxx.
-
- 
-
-### Xxxx Y: Xxxxxxxx x Xxxxxxx Xxxxx XX xxx xxxx xxxxxx-xxxx xxxx xx xxxx xxx
-
-Xxxxxx xxx xxx xxxx xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX xx xxxxxxxx XXX, xxxx xxxxxxx xxxx xxxxxx x Xxxxxxx Xxxxx XX xxx. Xxxx xx x XXXX Xxx Xxxxx (XXX) xxxx xxxxxxxxxx xxx xxxxxxxx xx xxx xxxx xxxxx xxxxxxx xxxxxxxxx xxxxxxxxxxx xxx xxxx xx xxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxx xxxxxx xx xxxx xxx, xxx [Xxxxxx xx x Xxxxxxx Xxxxx XX xxx](#windowsstorekey).
-
-Xxxxxxxxx, xxx xxxx xxx xx xxxxxx x Xxxxxxx Xxxxx XX xxx xx xx xxxxxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XXX xxxx xxxxxx-xxxx xxxx xx xxxx xxx xx xxxxxxxx xxx xxxxxxxx xx xxx xxxx xxx xx xxxxxxxxx xxxxxx xx xx xxx Xxxxxxx Xxxxx. Xx xxxxxxxx x Xxxxxxx Xxxxx XX xxx:
-
-1.  Xxxx xxx xx xxx xxxxxxxxx xxxxxx xxxxxx xxxx xxxx xxxxxxx xx xxxx xxxxxx xxx:
-    -   Xx xxx x Xxxxxxx Xxxxx XX xxx xxxx xxx xxx xxx xxxx xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX, xxxx xxx Xxxxx XX xxxxxx xxxxx xxxx xxx xxxxxxx xxxx xxx **xxxxx://xxxxxxxx.xxxxxxxxx.xxx/xYx/xxxx/xxxxxx/xxxxxxxxxxx** xxxxxxxx XXX.
-    -   Xx xxx x Xxxxxxx Xxxxx XX xxx xxxx xxx xxx xxx xxxx xxx Xxxxxxx Xxxxx xxxxxxxx XXX, xxxx xxx Xxxxx XX xxxxxx xxxxx xxxx xxx xxxxxxx xxxx xxx **xxxxx://xxxxxxxx.xxxxxxxxx.xxx/xYx/xxxx/xxxxxx/xxxxxxxx** xxxxxxxx XXX.
-
-2.  Xx xxxx xxx xxxx, xxxx xxx xx xxx xxxxxxxxx xxxxxxx xx xxx [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh779765) xxxxx xx xxxxxxxx x Xxxxxxx Xxxxx XX xxx.
-
-    -   [
-            **XxxXxxxxxxxXxxxxxxxxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/mt608674): Xxxx xxxx xxxxxx xx xxx xxxxxx xx xxx xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX.
-    -   [
-            **XxxXxxxxxxxXxxxxxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/mt608675): Xxxx xxxx xxxxxx xx xxx xxxxxx xx xxx xxx Xxxxxxx Xxxxx xxxxxxxx XXX.
-
-    Xxx xxxxxx xxxxxx, xxxx xxxx Xxxxx XX xxxxxx xxxxx xx xxx *xxxxxxxXxxxxx* xxxxxxxxx. Xxx xxx xxxxxxxxxx xxxx xx XX xx xxx *xxxxxxxxxXxxxXx* xxxxxxxxx xxxx xxxxxxxxxx xxx xxxxxxx xxxx xx xxx xxxxxxx xx xxxx xxxxxxxx. Xx xxx xxxxxxxx xxxx XXx xxx xxxx xxxxxxxx, xxx xxx xxx xxxx xxxxxxxxx xx xxxxxxxxx xxxxx xxxx XXx xxxx xxx xxxxx xxx xxxx xx xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX xx xxxxxxxx XXX.
-
-3.  Xxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx x Xxxxxxx Xxxxx XX xxx, xxxx xxx xxx xxxx xx xxxx xxxxxxx.
-
-**Xxxx**  Xxxx Xxxxxxx Xxxxx XX xxx xx xxxxx xxx YY xxxx. Xxxxx x xxx xxxxxxx, xxx xxx [xxxxx xxx xxx](renew-a-windows-store-id-key.md). Xx xxxxxxxxx xxxx xxx xxxxx xxxx Xxxxxxx Xxxxx XX xxxx xxxxxx xxxx xxxxxxxx xxx xxxx.
+**Important**  You should create Azure AD access tokens only in the context of your service, not in your app. Your client secret could be compromised if it is sent to your app.
 
  
 
-### Xxxx Y: Xxxx xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX xx xxxxxxxx XXX xxxx xxxx xxxxxxx
+### Step 4: Generate a Windows Store ID key from client-side code in your app
 
-Xxxxx xxxx xxxxxxx xxx x Xxxxxxx Xxxxx XX xxx xxxx xxxxxxx xx xx xxxxxx x xxxxxxxx xxxx'x xxxxxxx xxxxxxxxx xxxxxxxxxxx, xxxx xxxxxxx xxx xxxx xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX xx xxxxxxxx XXX. Xxx xxx xxxxxxxxxxxx xxxx xxxxx xx xxxx xxxxxxxx:
+Before you can call the Windows Store collection API or purchase API, your service must obtain a Windows Store ID key. This is a JSON Web Token (JWT) that represents the identity of the user whose product ownership information you want to access. For more information about the claims in this key, see [Claims in a Windows Store ID key](#windowsstorekey).
 
--   [Xxxxx xxx xxxxxxxx](query-for-products.md)
--   [Xxxxxx xxxxxxxxxx xxxxxxxx xx xxxxxxxxx](report-consumable-products-as-fulfilled.md)
--   [Xxxxx xxxx xxxxxxxx](grant-free-products.md)
+Currently, the only way to obtain a Windows Store ID key is by calling a Universal Windows Platform (UWP) API from client-side code in your app to retrieve the identity of the user who is currently signed in to the Windows Store. To generate a Windows Store ID key:
 
-Xxx xxxx xxxxxxxx, xxxx xxx xxxxxxxxx xxxxxxxxxxx xx xxx XXX:
+1.  Pass one of the following access tokens from your service to your client app:
+    -   To get a Windows Store ID key that you can use with the Windows Store collection API, pass the Azure AD access token that you created with the **https://onestore.microsoft.com/b2b/keys/create/collections** audience URI.
+    -   To get a Windows Store ID key that you can use with the Windows Store purchase API, pass the Azure AD access token that you created with the **https://onestore.microsoft.com/b2b/keys/create/purchase** audience URI.
 
--   Xxx Xxxxx XX xxxxxx xxxxx xxxx xxx xxxxxxx xxxxxxx xxxx xxx **xxxxx://xxxxxxxx.xxxxxxxxx.xxx** xxxxxxxx XXX. Xxxx xxxxx xxxxxxxxxx xxxx xxxxxxxxx xxxxxxxx. Xxxx xxxx xxxxx xx xxx xxxxxxx xxxxxx.
--   Xxx Xxxxxxx Xxxxx XX xxx xxx xxxxxxxxx xxxx [**XxxXxxxxxxxXxxxxxxxxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/mt608674) xx [**XxxXxxxxxxxXxxxxxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/mt608675) xx xxxx xxx. Xxxx xxx xxxxxxxxxx xxx xxxxxxxx xx xxx xxxx xxxxx xxxxxxx xxxxxxxxx xxxxxxxxxxx xxx xxxx xx xxxxxx.
+2.  In your app code, call one of the following methods of the [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765) class to retrieve a Windows Store ID key.
 
-## Xxxxxx xx x Xxxxxxx Xxxxx XX xxx
+    -   [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674): Call this method if you intend to use the Windows Store collection API.
+    -   [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675): Call this method if you intend to use the Windows Store purchase API.
+
+    For either method, pass your Azure AD access token to the *serviceTicket* parameter. You can optionally pass an ID to the *publisherUserId* parameter that identifies the current user in the context of your services. If you maintain user IDs for your services, you can use this parameter to correlate these user IDs with the calls you make to the Windows Store collection API or purchase API.
+
+3.  After your app successfully retrieves a Windows Store ID key, pass the key back to your service.
+
+**Note**  Each Windows Store ID key is valid for 90 days. After a key expires, you can [renew the key](renew-a-windows-store-id-key.md). We recommend that you renew your Windows Store ID keys rather than creating new ones.
+
+ 
+
+### Step 5: Call the Windows Store collection API or purchase API from your service
+
+After your service has a Windows Store ID key that enables it to access a specific user's product ownership information, your service can call the Windows Store collection API or purchase API. Use the instructions that apply to your scenario:
+
+-   [Query for products](query-for-products.md)
+-   [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
+-   [Grant free products](grant-free-products.md)
+
+For each scenario, pass the following information to the API:
+
+-   The Azure AD access token that you created earlier with the **https://onestore.microsoft.com** audience URI. This token represents your publisher identity. Pass this token in the request header.
+-   The Windows Store ID key you retrieved from [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) or [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) in your app. This key represents the identity of the user whose product ownership information you want to access.
+
+## Claims in a Windows Store ID key
 
 
-X Xxxxxxx Xxxxx XX xxx xx x XXXX Xxx Xxxxx (XXX) xxxx xxxxxxxxxx xxx xxxxxxxx xx xxx xxxx xxxxx xxxxxxx xxxxxxxxx xxxxxxxxxxx xxx xxxx xx xxxxxx. Xxxx xxxxxxx xxxxx XxxxYY, x Xxxxxxx Xxxxx XX xxx xxxxxxxx xxx xxxxxxxxx xxxxxx.
+A Windows Store ID key is a JSON Web Token (JWT) that represents the identity of the user whose product ownership information you want to access. When decoded using Base64, a Windows Store ID key contains the following claims.
 
-| Xxxxx xxxx                                                             | Xxxxxxxxxxx                                                                                                                                                                                                                                                                                                                                                                             |
+| Claim name                                                             | Description                                                                                                                                                                                                                                                                                                                                                                             |
 |------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| xxx                                                                    | Xxxxxxxxxx xxx xxxx xx xxxxx xxx xxx xxx xxxxxx. Xxxx xxxxx xxx xx xxxx xx xxxxxxxxx xxx xxx xx xxx xxxxx. Xxxx xxxxx xx xxxxxxxxx xx xxxxx xxxx.                                                                                                                                                                                                                                       |
-| xxx                                                                    | Xxxxxxxxxx xxx xxxxxx. Xxxx xxx xxx xxxx xxxxx xx xxx *xxx* xxxxx.                                                                                                                                                                                                                                                                                                                      |
-| xxx                                                                    | Xxxxxxxxxx xxx xxxxxxxx. Xxxx xx xxx xx xxx xxxxxxxxx xxxxxx: **xxxxx://xxxxxxxxxxx.xx.xxxxxxxxx.xxx/xY.Y/xxxx** xx **xxxxx://xxxxxxxx.xx.xxxxxxxxx.xxx/xY.Y/xxxx**.                                                                                                                                                                                                                    |
-| xxx                                                                    | Xxxxxxxxxx xxx xxxxxxxxxx xxxx xx xx xxxxx xxxxx xxx xxx xxxx xx xxxxxx xx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx xxxxxx xxx xxxxxxxx xxxx. Xxx xxxxx xx xxxx xxxxx xx xxxxxxxxx xx xxxxx xxxx.                                                                                                                                                                                               |
-| xxx                                                                    | Xxxxxxxxxx xxx xxxx xx xxxxx xxx xxxxx xxxx xx xxxxxxxx xxx xxxxxxxxxx. Xxx xxxxx xx xxxx xxxxx xx xxxxxxxxx xx xxxxx xxxx.                                                                                                                                                                                                                                                             |
-| xxxx://xxxxxxx.xxxxxxxxx.xxx/xxxxxxxxxxx/YYYY/YY/xxxxxx/xxx/xxxxxxXx   | Xxx xxxxxx XX xxxx xxxxxxxxxx xxx xxxxxxxxx.                                                                                                                                                                                                                                                                                                                                            |
-| xxxx://xxxxxxx.xxxxxxxxx.xxx/xxxxxxxxxxx/YYYY/YY/xxxxxx/xxx/xxxxxxx    | Xx xxxxxx xxxxxxx (xxxxxxxxx xxx XxxxYY xxxxxxx) xxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xxxx xxx xxx xx Xxxxxxx Xxxxx xxxxxxxx.                                                                                                                                                                                                                                                     |
-| xxxx://xxxxxxx.xxxxxxxxx.xxx/xxxxxxxxxxx/YYYY/YY/xxxxxx/xxx/xxxxXx     | X xxxx XX xxxx xxxxxxxxxx xxx xxxxxxx xxxx xx xxx xxxxxxx xx xxxx xxxxxxxx. Xxxx xx xxx xxxx xxxxx xxx xxxx xxxx xxx xxxxxxxx *xxxxxxxxxXxxxXx* xxxxxxxxx xx xxx [**XxxXxxxxxxxXxxxxxxxxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/mt608674) xx [**XxxXxxxxxxxXxxxxxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/mt608675) xxxxxx xxxx xxx xxxxxx xxx xxx. |
-| xxxx://xxxxxxx.xxxxxxxxx.xxx/xxxxxxxxxxx/YYYY/YY/xxxxxx/xxx/xxxxxxxXxx | Xxx XXX xxxx xxx xxx xxx xx xxxxx xxx xxx.                                                                                                                                                                                                                                                                                                                                              |
+| iat                                                                    | Identifies the time at which the key was issued. This claim can be used to determine the age of the token. This value is expressed as epoch time.                                                                                                                                                                                                                                       |
+| iss                                                                    | Identifies the issuer. This has the same value as the *aud* claim.                                                                                                                                                                                                                                                                                                                      |
+| aud                                                                    | Identifies the audience. Must be one of the following values: **https://collections.mp.microsoft.com/v6.0/keys** or **https://purchase.mp.microsoft.com/v6.0/keys**.                                                                                                                                                                                                                    |
+| exp                                                                    | Identifies the expiration time on or after which the key will no longer be accepted for processing anything except for renewing keys. The value of this claim is expressed as epoch time.                                                                                                                                                                                               |
+| nbf                                                                    | Identifies the time at which the token will be accepted for processing. The value of this claim is expressed as epoch time.                                                                                                                                                                                                                                                             |
+| http://schemas.microsoft.com/marketplace/2015/08/claims/key/clientId   | The client ID that identifies the developer.                                                                                                                                                                                                                                                                                                                                            |
+| http://schemas.microsoft.com/marketplace/2015/08/claims/key/payload    | An opaque payload (encrypted and Base64 encoded) that contains information that is intended only for use by Windows Store services.                                                                                                                                                                                                                                                     |
+| http://schemas.microsoft.com/marketplace/2015/08/claims/key/userId     | A user ID that identifies the current user in the context of your services. This is the same value you pass into the optional *publisherUserId* parameter of the [**GetCustomerCollectionsIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608674) or [**GetCustomerPurchaseIdAsync**](https://msdn.microsoft.com/library/windows/apps/mt608675) method when you create the key. |
+| http://schemas.microsoft.com/marketplace/2015/08/claims/key/refreshUri | The URI that you can use to renew the key.                                                                                                                                                                                                                                                                                                                                              |
 
  
 
-Xxxx xx xx xxxxxxx xx x xxxxxxx Xxxxxxx Xxxxx XX xxx xxxxxx.
+Here is an example of a decoded Windows Store ID key header.
 
 ```
 { 
@@ -144,7 +142,7 @@ Xxxx xx xx xxxxxxx xx x xxxxxxx Xxxxxxx Xxxxx XX xxx xxxxxx.
 } 
 ```
 
-Xxxx xx xx xxxxxxx xx x xxxxxxx Xxxxxxx Xxxxx XX xxx xxxxx xxx.
+Here is an example of a decoded Windows Store ID key claim set.
 
 ```
 { 
@@ -160,19 +158,23 @@ Xxxx xx xx xxxxxxx xx x xxxxxxx Xxxxxxx Xxxxx XX xxx xxxxx xxx.
 } 
 ```
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxx xxx xxxxxxxx](query-for-products.md)
-* [Xxxxxx xxxxxxxxxx xxxxxxxx xx xxxxxxxxx](report-consumable-products-as-fulfilled.md)
-* [Xxxxx xxxx xxxxxxxx](grant-free-products.md)
-* [Xxxxx x Xxxxxxx Xxxxx XX xxx](renew-a-windows-store-id-key.md)
-* [Xxxxxxxxxxx Xxxxxxxxxxxx xxxx Xxxxx Xxxxxx Xxxxxxxxx](http://go.microsoft.com/fwlink/?LinkId=722502)
-* [Xxxxxxxxxxxxx xxx Xxxxx Xxxxxx Xxxxxxxxx xxxxxxxxxxx xxxxxxxx]( http://go.microsoft.com/fwlink/?LinkId=722500)
-* [Xxxxxxxxx Xxxxx xxx Xxxxx Xxxxx](http://go.microsoft.com/fwlink/?LinkId=722501)
+* [Query for products](query-for-products.md)
+* [Report consumable products as fulfilled](report-consumable-products-as-fulfilled.md)
+* [Grant free products](grant-free-products.md)
+* [Renew a Windows Store ID key](renew-a-windows-store-id-key.md)
+* [Integrating Applications with Azure Active Directory](http://go.microsoft.com/fwlink/?LinkId=722502)
+* [Understanding the Azure Active Directory application manifest]( http://go.microsoft.com/fwlink/?LinkId=722500)
+* [Supported Token and Claim Types](http://go.microsoft.com/fwlink/?LinkId=722501)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

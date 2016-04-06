@@ -1,104 +1,94 @@
 ---
-Xxxxxxxxxxx: Xx xxxxxxxx xx xxxxx xxxxx xxxxxxxx xxxxxx Xxxxxxx xx xxxxxx xxxxxx xxxxxxxx, xxx xxx xxxx xxxxxx Xxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxxxxx xxxx x xxxxxxxxxx xxx xxxxx xxxxx xxxxxxxx xxxx xxxxxxx xx xxxxxx xx xxxxxxx xx xxxxxxx xxxxxx xxx xxx.
-xxxxx: Xxxxxx x xxxxxxxxxx xxx xxxx xxxxx xxxxxxxx xx Xxxxxxx
-xx.xxxxxxx: XXYXYYYX-YYXX-YXXY-XYXX-YXYXYYYYXYXY
-xxxxx: Xxxxxx x xxxxxxxxxx xxx
-xxxxxxxx: xxxxxx.xxx
+Description: Cortana 内で音声コマンドを使ってシステム機能にアクセスするだけでなく、アプリ内で実行するアクションやコマンドを指定する音声コマンドを使うバックグラウンド アプリの機能によって Cortana を拡張することもできます。
+title: Cortana の音声コマンドを使ったバックグラウンド アプリの起動
+ms.assetid: DF5B530C-57DD-4CA5-B3BE-1A0B3695C9C6
+label: バックグラウンド アプリの起動
+template: detail.hbs
 ---
 
-# Xxxxxx x xxxxxxxxxx xxx xxxx xxxxx xxxxxxxx xx Xxxxxxx
+# Cortana の音声コマンドを使ったバックグラウンド アプリの起動
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**Xxxxxxx.XxxxxxxxxxxXxxxx.XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706594)
--   [**XXX xxxxxxxx xxx xxxxxxxxxx xY.Y**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+-   [**Windows.ApplicationModel.VoiceCommands**](https://msdn.microsoft.com/library/windows/apps/dn706594)
+-   [**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
 
-Xx xxxxxxxx xx xxxxx xxxxx xxxxxxxx xxxxxx **Xxxxxxx** xx xxxxxx xxxxxx xxxxxxxx, xxx xxx xxxx xxxxxx **Xxxxxxx** xxxx xxxxxxxx xxx xxxxxxxxxxxxx xxxx x xxxxxxxxxx xxx xxxxx xxxxx xxxxxxxx xxxx xxxxxxx xx xxxxxx xx xxxxxxx xx xxxxxxx xxxxxx xxx xxx. Xxxx xx xxx xxxxxxx x xxxxx xxxxxxx xx xxx xxxxxxxxxx, xx xxx xxxxxxx xxxxxxxx xx xxx **Xxxxxxx** xxxxxx xxx xxxxxxxxxxx xxxx xxx xxxx xxxxx xxx **Xxxxxxx** xxxxx.
+**Cortana** 内で音声コマンドを使ってシステム機能にアクセスするだけでなく、アプリ内で実行するアクションやコマンドを指定する音声コマンドを使うバックグラウンド アプリの機能によって **Cortana** を拡張することもできます。 アプリがバックグラウンドで音声コマンドを処理する際、**Cortana** キャンバスにフィードバックが表示され、**Cortana** 音声の使用方法についてユーザーに通知されることがあります。
 
-**Xxxx**  
-X xxxxx xxxxxxx xx x xxxxxx xxxxxxxxx xxxx x xxxxxxxx xxxxxx, xxxxxxx xx x Xxxxx Xxxxxxx Xxxxxxxxxx (XXX) xxxx, xxxxxxxx xx xx xxxxxxxxx xxx xxxxxxx **Xxxxxxx**.
+**注**  
+音声コマンドは、具体的な目的を持って 1 つの言葉を声に出すことであり、音声コマンド定義 (VCD) ファイルで定義されています。**Cortana** を通じてインストール済みアプリに指示が伝えられます。
 
-X xxxxx xxxxxxx xxxxxxxxxx xxx xxxx xx xxxxxxxxxx. Xx xxx xxxxxxx xxxxxxxx xxxx x xxxxxx, xxxxxxxxxxx xxxxxxxxx xx x xxxxxxxxxx xx xxxx xxxxxxxx, xxxxxxx xxxxxxxx xxxxxxxxxx, xxx xxxxxxxx xxx xxxx xxxxxx.
+音声コマンド定義にはさまざまなものがあり、定義が複雑になる場合があります。 音声コマンド定義では、制限された 1 つの言葉の発声から、より柔軟性の高い自然言語の発声のコレクションまで、あらゆる発声をサポートできます。ただし、これらの発声はすべて、同じ目的を示している必要があります。
 
-X XXX xxxx xxxxxxx xxx xx xxxx xxxxx xxxxxxxx, xxxx xxxx x xxxxxx xxxxxx.
+VCD ファイルでは、1 つ以上の音声コマンドが定義されており、各音声コマンドは固有の目的を持っています。
 
-Xxx xxxxxx xxx xxx xx xxxxxxxx xx xxx xxxxxxxxxx (xxx xxx xxxxx xxxxx) xx xxxxxxxxx xx xxx xxxxxxxxxx (**Xxxxxxx** xxxxxxx xxxxx xxx xxxxxxxx xxxxxxx xxxx xxx xxx), xxxxxxxxx xx xxx xxxxxxxxxx xx xxx xxxxxxxxxxx. Xxx xxxxxxx, xxxxx xxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxxxxxx xx xxxx xxxxx (xxxx xx xxxxxxx x xxxxxxx xx x xxxxxxxx xxxxxxx) xxx xxxx xxxxxxx xx x xxxxxxxxxx xxx, xxxxx xxxxx xxxxxxxx xxx xx xxxxxxx xx **Xxxxxxx** xxxxxxx x xxxxxxxxxx xxx.
+ターゲット アプリは、操作の複雑さに応じて、フォアグラウンドで起動したり (アプリがフォーカスを取得します)、バックグラウンドでアクティブ化されたりします (**Cortana** がフォーカスを維持しますが、アプリからの結果を表示します)。 たとえば、追加のコンテキストやユーザー入力 (特定の連絡先へのメッセージの送信など) が必要な音声コマンドはフォアグラウンド アプリで処理するのが最適ですが、基本的なコマンドはバックグラウンド アプリを介して **Cortana** で処理できます。
 
  
 
-Xx xxxxxxxxxxx xxxxx xxxxxxxx xxxx xxxx x xxxx xxxxxxxx xxx xxxxxxxxxx xxx xxxxx **Xxxxxxxxx Xxxxx** xxxx xxx [Xxxxxxx xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619899).
+ここでは、[Cortana 音声コマンドのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619899)の **Adventure Works** という旅行の計画および管理アプリを使ってそれらの機能について説明します。
 
-Xxxx'x xx xxxxxxxx xx xxx **Xxxxxxxxx Xxxxx** xxx xxxxxxxxxx xxxx xxx **Xxxxxxx** xxxxxx.
+**Cortana** のキャンバスに統合された **Adventure Works** アプリの概要は次のとおりです。
 
-![xxxxxxx xxxxxx xxxxxxxx ](images/cortana-overview.png)
+![Cortana のキャンバスの概要 ](images/cortana-overview.png)
 
-Xx xxxx xx **Xxxxxxxxx Xxxxx** xxxx xxxxxxx **Xxxxxxx**, x xxxx xxxxx xxxxxx xxx xxx xxx xxxxxxxx xx xxx **Xxxxxxxx xxxxx** xxxx.
+**Cortana** を使わないで **Adventure Works** の旅行を表示するには、アプリを起動して **[Upcoming trips]** (今後の旅行) ページに移動します。
 
-Xxxxx xxxxx xxxxxxxx xxxxxxx **Xxxxxxx** xx xxxxxx xxxx xxx xx xxx xxxxxxxxxx, xxx xxxx xxx xxxxxxx xxxx xxx, "Xxxxxxxxx Xxxxx, xxxx xx xx xxxx xx Xxx Xxxxx?". Xxxx xxx xxxxxxx xxx xxxxxxx xxx **Xxxxxxx** xxxxxxxx xxxxxxx xxxxx xxxx xxxx xxx xxxx xxx xxxxx xxx xxxx, xx xxxxxxxx. Xxxx'x xx xxxxxxx xx x xxxxx xxxx xxxxx xxx **Xxxxxxx** xxxxxx xxxxxx xxxx xxxx xxxxx xxx xxxxxx "Xxxx xxxx xxxx xx Xxx Xxxxx xx xx Xxxxxx Yxx".
+**Cortana** の音声コマンドを使ってアプリをバックグラウンドで起動する場合、代わりに「Adventure Works に登録されている次のラスベガス旅行はいつですか」と言うことができます。 アプリによりコマンドが処理され、**Cortana** にアプリ アイコンや他のアプリ情報 (ある場合) と共に結果が表示されます。 基本的な旅行クエリと **Cortana** の結果画面の例を次に示します。どちらにも、「次のラスベガス旅行は 8 月 1 日です」という意味の内容が示されます。
 
-![x xxxxx xxxxx xxx xxxxxx xxxxxx xxxxx xxx xxxxxxxxx xxxxx xxx xx xxx xxxxxxxxxx](images/cortana-backgroundapp-result.png)
+![Adventure Works アプリをバックグラウンドで使った場合の基本的なクエリと結果画面](images/cortana-backgroundapp-result.png)
 
-Xxxxx xxx xxx xxxxx xxxxx xx xxx xxxxx-xxxxxxx xxxxxxxxxxxxx xxx xxxxxx **Xxxxxxx** xxxx xxxxxxxxxx xxxxxxxxxxxxx xxxx xxxx xxx xxxxx xxxxxx xx xxxxxxxx xxxxx:
+以下は、音声コマンド機能を追加し、音声またはキーボード入力を使うアプリのバックグラウンド機能によって **Cortana** を拡張する基本的な手順です。
 
-1.  Xxxxxx xx xxx xxxxxxx (xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn921731)) xxxx **Xxxxxxx** xxxxxxx xx xxx xxxxxxxxxx.
-2.  Xxxxxx x XXX xxxx. Xxxx xx xx XXX xxxxxxxx xxxx xxxxxxx xxx xxx xxxxxx xxxxxxxx xxxx xxx xxxx xxx xxx xx xxxxxxxx xxxxxxx xx xxxxxx xxxxxxxx xxxx xxxxxxxxxx xxxx xxx. Xxx [**XXX xxxxxxxx xxx xxxxxxxxxx xY.Y**](https://msdn.microsoft.com/library/windows/apps/dn706593).
-3.  Xxxxxxxx xxx xxxxxxx xxxx xx xxx XXX xxxx xxxx xxx xxx xx xxxxxxxx.
-4.  Xxxxxx xxx xxxxxxxxxx xxxxxxxxxx xx xxx xxx xxxxxxx xxx xxx xxxxxxxxx xx xxx xxxxx xxxxxxx.
-5.  Xxxxxxx xxx xxxxx xxx xxxxxxxxxxx xxxxxxxx xx xxx xxxxx xxxxxxx xxxxxx **Xxxxxxx**.
+1.  **Cortana** がバックグラウンドで呼び出すアプリ サービスを作成します (「[**Windows.ApplicationModel.AppService**](https://msdn.microsoft.com/library/windows/apps/dn921731)」をご覧ください)。
+2.  VCD ファイルを作ります。 これは、アプリをアクティブ化して操作を開始するかコマンドを呼び出すためにユーザーが発声できる音声コマンドをすべて定義する XML ドキュメントです。 「[**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)」をご覧ください。
+3.  アプリが起動したら、VCD ファイル内のコマンド セットを登録します。
+4.  アプリ サービスのバックグラウンド アクティブ化と音声コマンドの実行を処理します。
+5.  **Cortana** 内で音声コマンドに対する適切なフィードバックを表示して読み上げます。
 
-**Xxxxxxxxxxxxx:  **
+**前提条件:  **
 
-Xx xxx'xx xxx xx xxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx, xxxx x xxxx xxxxxxx xxxxx xxxxxx xx xxx xxxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx xxxx.
+ユニバーサル Windows プラットフォーム (UWP) アプリを開発するのが初めての場合は、以下のトピックに目を通して、ここで説明されているテクノロジをよく理解できるようにしてください。
 
--   [Xxxxxx xxxx xxxxx xxx](https://msdn.microsoft.com/library/windows/apps/bg124288)
--   Xxxxx xxxxx xxxxxx xxxx [Xxxxxx xxx xxxxxx xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185584)
+-   [初めてのアプリ作成](https://msdn.microsoft.com/library/windows/apps/bg124288)
+-   「[イベントとルーティング イベントの概要](https://msdn.microsoft.com/library/windows/apps/mt185584)」でイベントについて学習します。
 
-**Xxxx xxxxxxxxxx xxxxxxxxxx:  **
+**ユーザー エクスペリエンス ガイドライン:  **
 
-Xxx [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233) xxx xxxx xxxxx xxx xx xxxxxxxxx xxxx xxx xxxx **Xxxxxxx** xxx [Xxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121) xxx xxxxxxx xxxx xx xxxxxxxxx x xxxxxx xxx xxxxxxxx xxxxxx-xxxxxxx xxx.
+アプリと **Cortana** を統合する方法については「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」を、魅力的な音声認識対応アプリの設計に役立つ便利なヒントについては「[音声機能の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)」をご覧ください。
 
-## <span id="Create_a_new_solution_with_a_primary_project_in_Visual_Studio">
-            </span>
-            <span id="create_a_new_solution_with_a_primary_project_in_visual_studio">
-            </span>
-            <span id="CREATE_A_NEW_SOLUTION_WITH_A_PRIMARY_PROJECT_IN_VISUAL_STUDIO">
-            </span>Xxxxxx x xxx xxxxxxxx xxxx x xxxxxxx xxxxxxx xx Xxxxxx Xxxxxx
+## <span id="Create_a_new_solution_with_a_primary_project_in_Visual_Studio"></span><span id="create_a_new_solution_with_a_primary_project_in_visual_studio"></span><span id="CREATE_A_NEW_SOLUTION_WITH_A_PRIMARY_PROJECT_IN_VISUAL_STUDIO"></span>Visual Studio でのプライマリ プロジェクトを使った新しいソリューションの作成
 
 
-1.  Xxxxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY.
+1.  Microsoft Visual Studio 2015 を起動します。
 
-    Xxx Xxxxxx Xxxxxx YYYY Xxxxx xxxx xxxxxxx.
+    Visual Studio 2015 のスタート画面が表示されます。
 
-2.  Xx xxx **Xxxx** xxxx, xxxxxx **Xxx** &xx; **Xxxxxxx**.
+2.  **[ファイル]** メニューの **[新規作成]**、**[プロジェクト]** の順にクリックします。
 
-    Xxx **Xxx Xxxxxxx** xxxxxx xxxxxxx. Xxx xxxx xxxx xx xxx xxxxxx xxxx xxx xxxxxx xxx xxxx xx xxxxxxxxx xx xxxxxxx.
+    **[新しいプロジェクト]** ダイアログ ボックスが表示されます。 ダイアログの左側のウィンドウで、表示するテンプレートの種類を選択できます。
 
-3.  Xx xxx xxxx xxxx, xxxxxx **Xxxxxxxxx &xx; Xxxxxxxxx &xx; Xxxxxx X\# &xx; Xxxxxxx**, xxxx xxxx xxx **Xxxxxxxxx** xxxxxxxx xxxxx. Xxx xxxxxx'x xxxxxx xxxx xxxxxxxx x xxxx xx xxxxxxx xxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
-4.  Xx xxx xxxxxx xxxx, xxxxxx xxx **Xxxxx Xxx (Xxxxxxxxx Xxxxxxx)** xxxxxxxx.
+3.  左側のウィンドウで、**[インストール済み]、[テンプレート]、[Visual C#]、[Windows]** の順に展開した後、**[ユニバーサル]** テンプレート グループを選びます。 ユニバーサル Windows プラットフォーム (UWP) アプリで使うことができるプロジェクト テンプレートの一覧がダイアログの中央のウィンドウに表示されます。
+4.  中央のウィンドウで、**[空白のアプリ (ユニバーサル Windows)]** プロジェクト テンプレートを選びます。
 
-    Xxx **Xxxxx Xxx** xxxxxxxx xxxxxxx x xxxxxxx XXX xxx xxxx xxxxxxxx xxx xxxx, xxx xxxxxxxx xx xxxx-xxxxxxxxx xxxxxxxx xx xxxx. Xxx xxx xxxxxxxx xx xxx xxx xxxx xxx xxxxxx xx xxxx xxxxxxxx.
+    **[空白のアプリ]** テンプレートは、コンパイルして実行できる最小限の UWP アプリを作成しますが、ユーザー インターフェイス コントロールやデータは含まれていません。 コントロールは、このチュートリアルの途中でアプリに追加します。
 
-5.  Xx xxx **Xxxx** xxxx xxx, xxxx xxxx xxxxxxx xxxx.
-6.  Xxxxx **XX** xx xxxxxx xxx xxxxxxx.
+5.  **[名前]** ボックスで、プロジェクト名を入力します。
+6.  **[OK]** をクリックしてプロジェクトを作ります。
 
-    Xxxxxxxxx Xxxxxx Xxxxxx xxxxxxx xxxx xxxxxxx xxx xxxxxxxx xx xx xxx **Xxxxxxxx Xxxxxxxx**.
+    Microsoft Visual Studio によってプロジェクトが作られ、**ソリューション エクスプローラー**に表示されます。
 
-## <span id="Create_an_app_service_project">
-            </span>
-            <span id="create_an_app_service_project">
-            </span>
-            <span id="CREATE_AN_APP_SERVICE_PROJECT">
-            </span>Xxxxxx xx xxx xxxxxxx xxxxxxx
+## <span id="Create_an_app_service_project"></span><span id="create_an_app_service_project"></span><span id="CREATE_AN_APP_SERVICE_PROJECT"></span>アプリ サービス プロジェクトの作成
 
 
-1.  Xxxxx-xxxxx xxxx Xxxxxxxx xxxx, xxxxxx Xxx-&xx;Xxx Xxxxxxx, xxx xxxx xxxxxx **Xxxxxxx Xxxxxxx Xxxxxxxxx**. Xxxx xx xxx xxxxxxxxx xxxx xxxx xxxxxxxxx xxx xxx xxxxxxx (xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn921731)).
-2.  Xxxx x xxxx xxx xxx xxxxxxx (xxx xxxxxxx, "XxxxxXxxxxxxXxxxxxx") xxx xxxxx **XX**.
-3.  Xx **Xxxxxxxx Xxxxxxxx**, xxxxxx xxx "XxxxxXxxxxxxXxxxxxx" xxxxxxx xxx xxxxxx xxx "XxxxxY.xx" xxxx xxxxxxxxx xx Xxxxxx Xxxxxx. Xxx xxxxxxx, "XxxxXxxXxxxxXxxxxxxXxxxxxx.xx".
-4.  Xx xxx "XxxxXxxXxxxxXxxxxxxXxxxxxx.xx" xxxx, xxx xxx xxxxxxxxx xxxxx xxxxxxxxx.
+1.  ソリューション名を右クリックし、[追加]、[新しいプロジェクト] の順にクリックし、**[Windows ランタイム コンポーネント]** をクリックします。 これは、アプリ サービスが実装されるコンポーネントです (「[**Windows.ApplicationModel.AppService**](https://msdn.microsoft.com/library/windows/apps/dn921731)」をご覧ください)。
+2.  プロジェクトの名前 (たとえば、"VoiceCommandService") を入力し、**[OK]** をクリックします。
+3.  **ソリューション エクスプローラー**で、"VoiceCommandService" プロジェクトを選び、Visual Studio によって生成された "Class1.cs" ファイルの名前を変更します。 たとえば、"YourAppVoiceCommandService.cs" などです。
+4.  "YourAppVoiceCommandService.cs" ファイルで、ディレクティブを使って次の内容を追加します。
 ```    CSharp
 using Windows.ApplicationModel.Background;</code></pre></td>
     </tr>
@@ -106,9 +96,10 @@ using Windows.ApplicationModel.Background;</code></pre></td>
     </table>
 ```
 
-5.  Xxxxxx x xxx xxxxx xxxx xxxxxxxxxx xxx [**XXxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224794) xxxxxxxxx. Xxx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/br224811) xxxxxx xx xxxx xxxxx xx xxx xxxxxxxx xxxxx xxxxx, xxxxxx xxxx **Xxxxxxx** xxxxxxxxxx xxx xxxxx xxxxxxx.
+5.  [
+            **IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) インターフェイスを実装する新しいクラスを作成します。 このクラスの [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) メソッドは、**Cortana** が音声コマンドを認識するときに呼び出される必須のエントリ ポイントです。
 
-    **Xxxx**  Xxx xxxxxxxxxx xxxx xxxxx xxxxxx, xxx xxx xxxxx xxxxxxx xx xxx xxxxxxxxxx xxxx xxxxxxx, xxxx xx xx xxxxxx xxxxxx xxxxxxx.
+    **注**  バックグラウンド タスク クラス自体と、バックグラウンド タスク プロジェクト内のその他すべてのクラスは、sealed public クラスである必要があります。
 
      
 
@@ -149,16 +140,16 @@ using Windows.ApplicationModel.Background;
     }
 ```
 
-6.  Xxxxxxx xxxx xxxxxxxxxx xxxx xx xx **XxxXxxxxxx** xx xxx xxx xxxxxxxx.
+6.  アプリ マニフェストでバックグラウンド タスクを **AppService** として宣言します。
 
-    1.  Xx **Xxxxxxxx Xxxxxxxx**, xxxxx xxxxx xxx "Xxxxxxx.xxxxxxxxxxxx" xxxx xxx xxxxxx **Xxxx Xxxx**.
-    2.  Xxxx xxx [****Xxxxxxxxxxx****](https://msdn.microsoft.com/library/windows/apps/dn934738) xxxxxxx.
-    3.  Xxx xx [****Xxxxxxxxxx****](https://msdn.microsoft.com/library/windows/apps/dn934720) xxxxxxx xx xxx [****Xxxxxxxxxxx****](https://msdn.microsoft.com/library/windows/apps/dn934738) xxxxxxx.
-    4.  Xxx x [****xxx:Xxxxxxxxx****](https://msdn.microsoft.com/library/windows/apps/dn986788) xxxxxxx xx xxx [****Xxxxxxxxxx****](https://msdn.microsoft.com/library/windows/apps/dn934720) xxxxxxx.
-    5.  Xxx x **Xxxxxxxx** xxxxxxxxx xx xxx **xxx:Xxxxxxxxx** xxxxxxx xxx xxx xxx xxxxx xx xxx **Xxxxxxxx** xxxxxxxxx xx "xxxxxxx.xxxXxxxxxx".
-    6.  Xxx xx **XxxxxXxxxx** xxxxxxxxx xx xxx **xxx:Xxxxxxxxx** xxxxxxx xxx xxx xxx xxxxx xx xxx **XxxxxXxxxx** xxxxxxxxx xx xxx xxxx xx xxx xxxxx xxxx xxxxxxxxxx [**XXxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224794), xx xxxx xxxx "XxxxxxxxxXxxxx.XxxxxXxxxxxxx.XxxxxxxxxXxxxxXxxxxXxxxxxxXxxxxxx".
-    7.  Xxx x [****xxx:XxxXxxxxxx****](https://msdn.microsoft.com/library/windows/apps/dn934779) xxxxxxx xx xxx **xxx:Xxxxxxxxx** xxxxxxx.
-    8.  Xxx x **Xxxx** xxxxxxxxx xx xxx [****xxx:XxxXxxxxxx****](https://msdn.microsoft.com/library/windows/apps/dn934779) xxxxxxx xxx xxx xxx xxxxx xx xxx **Xxxx** xxxxxxxxx xx x xxxx xxx xxx xxx xxxxxxx, xx xxxx xxxx "XxxxxxxxxXxxxxXxxxxXxxxxxxXxxxxxx".
+    1.  **ソリューション エクスプローラー**で、"Package.appxmanifest" ファイルを右クリックして **[コードの表示]** を選択します。
+    2.  [****Application****](https://msdn.microsoft.com/library/windows/apps/dn934738) 要素を検索します。
+    3.  [****Extensions****](https://msdn.microsoft.com/library/windows/apps/dn934720) 要素を [****Application****](https://msdn.microsoft.com/library/windows/apps/dn934738) 要素に追加します。
+    4.  [****uap:Extension****](https://msdn.microsoft.com/library/windows/apps/dn986788) 要素を [****Extensions****](https://msdn.microsoft.com/library/windows/apps/dn934720) 要素に追加します。
+    5.  **Category** 属性を **uap:Extension** 要素に追加し、**Category** 属性の値を "windows.appService" に設定します。
+    6.  **EntryPoint** 属性を **uap:Extension** 要素に追加し、**EntryPoint** 属性の値を、[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) を実装するクラスの名前 (この場合は "AdventureWorks.VoiceCommands.AdventureWorksVoiceCommandService") に設定します。
+    7.  [****uap:AppService****](https://msdn.microsoft.com/library/windows/apps/dn934779) 要素を **uap:Extension** 要素に追加します。
+    8.  **Name** 属性を [****uap:AppService****](https://msdn.microsoft.com/library/windows/apps/dn934779) 要素に追加し、**Name** 属性の値を、アプリ サービスの名前 (この場合は "AdventureWorksVoiceCommandService") に設定します。
 ```        XML
 <Package>
           <Applications>
@@ -177,58 +168,50 @@ using Windows.ApplicationModel.Background;
         </Package>
 ```
 
-## <span id="Create_a_VCD_file">
-            </span>
-            <span id="create_a_vcd_file">
-            </span>
-            <span id="CREATE_A_VCD_FILE">
-            </span>Xxxxxx x XXX xxxx
+## <span id="Create_a_VCD_file"></span><span id="create_a_vcd_file"></span><span id="CREATE_A_VCD_FILE"></span>VCD ファイルの作成
 
 
-1.  Xx Xxxxxx Xxxxxx, xxxxx-xxxxx xxxx xxxxxxx xxxxxxx xxxx, xxxxxx Xxx-&xx;Xxx Xxxx, xxx xxxx xxxxxx **Xxxx Xxxx**.
-2.  Xxxx x xxxx xxx xxx [**XXX**](https://msdn.microsoft.com/library/windows/apps/dn706593) xxxx xxx xx xxxx xx xxxxxx xxx ".xxx" xxxx xxxxxxxxx. Xxx xxxxxxx, "XxxxxxxxxXxxxxXxxxxxxx.xxx". Xxxxx **Xxx**.
-3.  Xx **Xxxxxxxx Xxxxxxxx**, xxxxxx xxx [**XXX**](https://msdn.microsoft.com/library/windows/apps/dn706593) xxxx.
-4.  Xx xxx **Xxxxxxxxxx** xxxxxx, xxx **Xxxxx xxxxxx** xx **Xxxxxxx**, xxx xxxx xxx **Xxxx xx xxxxxx xxxxxxxxx** xx **Xxxx xx xxxxx**.
+1.  Visual Studio で、プライマリ プロジェクト名を右クリックし、[追加]、[新しい項目] の順にクリックし、**[テキスト ファイル]** をクリックします。
+2.  [
+            **VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) ファイルの名前を入力します。ファイル拡張子は ".xml" とします。 たとえば、"AdventureWorksCommands.xml" などです。 **[追加]** をクリックします。
+3.  **ソリューション エクスプローラー**で、[**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) ファイルを選びます。
+4.  **[プロパティ]** ウィンドウで、**[ビルド アクション]** を **[コンテンツ]** に設定し、**[出力ディレクトリにコピー]** を **[常にコピーする]** に設定します。
 
-## <span id="Edit_the_VCD_file">
-            </span>
-            <span id="edit_the_vcd_file">
-            </span>
-            <span id="EDIT_THE_VCD_FILE">
-            </span>Xxxx xxx XXX xxxx
+## <span id="Edit_the_VCD_file"></span><span id="edit_the_vcd_file"></span><span id="EDIT_THE_VCD_FILE"></span>VCD ファイルの編集
 
 
-Xxx xxxx xxxxxxxx xxxxxxxxx xx xxxx xxx, xxxxxx x **XxxxxxxXxx** xx xxxxx xxxxxxxx xxxx xxxx xxx xxx xxxxxx.
+アプリでサポートされる言語ごとに、アプリが処理できる音声コマンドの **CommandSet** を作成します。
 
-Xxxx **Xxxxxxx** xxxxxxxx xx x [**XXX**](https://msdn.microsoft.com/library/windows/apps/dn706593) xxxx xxxx xxxxxxx xxxx xxxxxxxxxxx:
+[
+            **VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) ファイルで宣言された各 **Command** は、次の情報を含む必要があります。
 
--   X xxxxxxx Xxxx xxxx xx xxx xxxxxxxxxxx xx xxxxxxxx xxx xxxxx xxxxxxx xx xxxxxxx
--   Xx **Xxxxxxx** xxxxxxx xxxx xxxxxxxx x xxxxxx xxxxxxxxxx xxx x xxxx xxx xxxxxx xxx xxxxxxx. **Xxxxxxx** xxxxx xxxx xxxxxxx xxxx xxx xxxx xxxx "Xxxx xxx X xxx?", "Xxxx", xx xxxx xxx **Xxx xxxx**.
+-   実行時に音声コマンドを識別するためにアプリケーションが使うコマンド名
+-   ユーザーがコマンドを呼び出す方法を説明する語句を含む **Example** 要素。 ユーザーが「何と言ったらよいですか」、「ヘルプ」と言ったり、**[もっと見る]** をタップしたときに、**Cortana** にこの例が表示されます。
 
-    xxx
+    以下をご覧ください。
 
--   X **XxxxxxXxx** xxxxxxx xxxx xxxxxxxx xxx xxxxx xx xxxxxxx xxxx xxxx xxx xxxxxxxxxx xx xxxxxxxx x xxxxxxx. Xxxx xxxxxxx xxxxx xx xxxx xx xxxxx xxx **XxxxxxXxx** xxxxxxx.
--   X **Xxxxxxxx** xxxxxxx xxxx xxxxxxxx xxx xxxx xxx **Xxxxxxx** xx xxxxxxx xxx xxxxx xx xxx xxxxxxxxxxx xx xxxxxxxx.
--   X **XxxxxXxxxxxxXxxxxxx** xxxxxxx xx xxxxxxxx xxx xxxxx xxxxxxx xxxxxxxx xxx xxx xx xxx xxxxxxxxxx.
+-   アプリが認識してコマンドを開始するための単語または語句を含む **ListenFor** 要素。 各コマンドには、**ListenFor** 要素が少なくとも 1 つ必要です。
+-   アプリケーションが起動したときに **Cortana** に表示されて読み上げられるテキストを含む **Feedback** 要素。
+-   音声コマンドにアプリをバックグラウンドで起動するように指示する **VoiceCommandService** 要素。
 
-Xxx xxxx xxxxxx, xxx xxx [**XXX xxxxxxxx xxx xxxxxxxxxx xY.Y**](https://msdn.microsoft.com/library/windows/apps/dn706593) xxxxxxxxx.
+詳しくは、「[**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)」をご覧ください。
 
-Xxx xxx xxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xxx xxx xxxxxxxx xxxx xx xxxxxxxx xxxx xxx xxx xxxxxxx x xxxxxxx. Xxx xxx xxxxxx xxxxxxxx [****XxxxxxxXxx****](https://msdn.microsoft.com/library/windows/apps/dn722331) xxxxxxxx, xxxx xxxx x xxxxxxxxx [****xxx:xxxx****](https://msdn.microsoft.com/library/windows/apps/dn722331) xxxxxxxxx xx xxxxx xxxx xxx xx xx xxxx xx xxxxxxxxx xxxxxxx. Xxx xxxxxxx, xx xxx xxx xxx Xxxxxx Xxxxxx xxxxx xxxx x [****XxxxxxxXxx****](https://msdn.microsoft.com/library/windows/apps/dn722331) xxx Xxxxxxx xxx x [****XxxxxxxXxx****](https://msdn.microsoft.com/library/windows/apps/dn722331) xxx Xxxxxxx.
+アプリのアクティブ化とコマンドの実行に使われるコマンドに対して、複数の言語バージョンを指定できます。 複数の [****CommandSet****](https://msdn.microsoft.com/library/windows/apps/dn722331) 要素を作成し、それぞれに異なる [****xml:lang****](https://msdn.microsoft.com/library/windows/apps/dn722331) 属性を指定することで、アプリをさまざまな市場で使うことができるようにします。 たとえば、米国用のアプリに、英語の [****CommandSet****](https://msdn.microsoft.com/library/windows/apps/dn722331) とスペイン語の [****CommandSet****](https://msdn.microsoft.com/library/windows/apps/dn722331) を含めることができます。
 
-**Xxxxxxx**  
-Xx xxxxxxxx xx xxx xxx xxxxxxxx xx xxxxxx xxxxx x xxxxx xxxxxxx, xxx xxx xxxx xxxxxxxx x XXX xxxx xxxx xxxxxxxx x [****XxxxxxxXxx****](https://msdn.microsoft.com/library/windows/apps/dn722331) xxxx x xxxxxxxx xxxx xxxxxxx xxx xxxxxx xxxxxxxx xxxx xxx xxxx xxxxxxxx xx xxxxx xxxxxx. Xxxx xxxxxxxx xx xxx xx xxx xxxx xx xxx xxxxxx Xxxxxxxx &xx; Xxxxxx &xx; Xxxxxx &xx; Xxxxxx Xxxxxxxx xxxxxx.
+**注意**  
+音声コマンドを使ってアプリをアクティブ化して操作を開始するには、ユーザーがデバイスで選んだ音声の言語に一致する言語を含む [****CommandSet****](https://msdn.microsoft.com/library/windows/apps/dn722331) を格納している VCD ファイルをアプリで登録する必要があります。 この言語は、デバイスで [設定]、[システム]、[音声認識]、[音声認識の言語] の順に移動し、画面上でユーザーが設定します。
 
  
 
-Xxxx'x x [**XXX**](https://msdn.microsoft.com/library/windows/apps/dn706593) xxxx xxxx xxxxxxx x xxxxx xxxxxxx xxx xxx **Xxxxxxxxx Xxxxx** xxx.
+**Adventure Works** アプリの音声コマンドを定義する [**VCD**](https://msdn.microsoft.com/library/windows/apps/dn706593) ファイルは以下のとおりです。
 
-Xxx xxxx xxxxxxx, **XxxxxxxXxxxxx** xx xxx xx "Xxxxxxxxx Xxxxx", **Xxxxxxx** xx xxx xx "xxxxXxXxxxXxXxxxxxxxxxx", **XxxxxxXxx** xxxxxxxxx xxx xxxx xxxx xxx xx xxxxxxxxxx (xxxx x xxxxxxxxx xx x **XxxxxxXxxx** xxxxxxx xxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxxxx), **XxxxxXxxxxxxXxxxxxx** xxxxxxxxx xxxx xxx xxxxx xxxxxxx xx xxxxxxx xx xx xxx xxxxxxx xx xxx xxxxxxxxxx, xxx **Xxxxxxxx** xxxxxxxxx xxxx xxx xxxx xxxx xxxx xxxx **Xxxxxxx** xxxxxxxx xxx xxx xxxxxxx.
+この例では、**CommandPrefix** が "Adventure Works" に設定されており、**Command** は "whenIsTripToDestination" に設定されています。**ListenFor** は、認識可能なテキストを指定しており (認識ターゲットを制約する **PhraseList** 要素を参照)、**VoiceCommandService** は音声コマンドがアプリ サービスによりバックグラウンドで処理されることを指定します。また、**Feedback** は、**Cortana** がアプリ サービスを起動したときにユーザーに聞こえる内容を指定します。
 
-Xxx xxxxx xx xxx **Xxxxxx** xxxxxxxxx xx xxx **XxxxxXxxxxxxXxxxxxx** xxxxxxx xxxxx xx xx xxx xxxx xx xxx xxx xxxxxxx xx xxxxxxxxx xx xxx [****xxx:XxxXxxxxxx****](https://msdn.microsoft.com/library/windows/apps/dn934779) xxxxxxx xx xxx xxxxxxx.xxxxxxxxxxxx. Xx xxxx xxxxxxx, xxx xxxx xx xxx xxx xxxxxxx xx "XxxxxxxxxXxxxxXxxxxXxxxxxxXxxxxxx".
+**VoiceCommandService** 要素の **Target** 属性の値は、package.appxmanifest の [****uap:AppService****](https://msdn.microsoft.com/library/windows/apps/dn934779) 要素で指定されたアプリ サービスの名前である必要があります。 この例では、アプリ サービスの名前は "AdventureWorksVoiceCommandService" です。
 
-Xxx "xxxxXxXxxxXxXxxxxxxxxxx" xxxxxxx xxx x **XxxxxxXxx** xxxxxxx xxxx x xxxxxxxxx xx x **XxxxxxXxxx** xxx x xxxxxxxxxxx xxx xx xxxxxxxxxxxx.
+"whenIsTripToDestination" コマンドには、制約されたターゲット セットの **PhraseList** を参照する **ListenFor** 要素が含まれています。
 
-**XxxxxxXxx** xxxxxxxx xxxxxx xx xxxxxxxxxxxxxxxx xxxxxxxx. Xxxxxxx, **XxxxxxXxxx** xxxxxxxx xxxxxxxxxx xxxx **XxxxxxXxx** xxxxxxxx xxx xx xxxxxxxxxxxxxxxx xxxxxxxx. Xxxxxxxxxxxx xxxxxx xxxxxx xxx xxxxxxx xx xxx **XxxxxxXxxx** xx xxxxxxx xxxxx xx xxx xxxx xxx xxxxxxxxx xx xxx xxxx xxxx xxx xxx. Xxx [Xxxxxxxxxxx xxxxxx Xxxxx Xxxxxxx Xxxxxxxxxx (XXX) xxxxxx xxxxx](dynamically-modify-voice-command-definition--vcd--phrase-lists.md).
+**ListenFor** 要素はプログラムで変更できません。 ただし、**ListenFor** 要素に関連付けられた **PhraseList** 要素はプログラムで変更できます。 アプリケーションは、ユーザーがアプリを使うときに生成されたデータ セットに基づいて実行時に **PhraseList** の内容を変更する必要があります。 「[音声コマンド定義 (VCD) の語句一覧の動的な変更](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)」をご覧ください。
 
 ```XML
 <?xml version="1.0" encoding="utf-8" ?>
@@ -271,27 +254,22 @@ Xxx "xxxxXxXxxxXxXxxxxxxxxxx" xxxxxxx xxx x **XxxxxxXxx** xxxxxxx xxxx x xxxxxxx
 </VoiceCommands>
 ```
 
-## <span id="Install_the_VCD_commands">
-            </span>
-            <span id="install_the_vcd_commands">
-            </span>
-            <span id="INSTALL_THE_VCD_COMMANDS">
-            </span>Xxxxxxx xxx XXX xxxxxxxx
+## <span id="Install_the_VCD_commands"></span><span id="install_the_vcd_commands"></span><span id="INSTALL_THE_VCD_COMMANDS"></span>VCD コマンドのインストール
 
 
-Xxxx xxx xxxx xxx xxxx xx xxxxxxx xxx xxxxxxx xxxx xx xxx XXX.
+VCD のコマンド セットをインストールするには、アプリを 1 回実行する必要があります。
 
-Xxxx xxxx xxx xx xxxxxxxxx, xxxx [**XxxxxxxXxxxxxxXxxxxxxxxxxXxxxXxxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn708205) xx xxx [**XxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242335) xxxxxxx xx xxxxxxxx xxx xxxxxxxx xxxx xxx xxxxxx xxxxxx xxxxxx xxx.
+アプリがアクティブ化されたら、[**OnLaunched**](https://msdn.microsoft.com/library/windows/apps/br242335) ハンドラーの [**InstallCommandDefinitionsFromStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn708205) を呼び出し、システムがリッスンするコマンドを登録します。
 
-**Xxxx**  Xx x xxxxxx xxxxxx xxxxxx xxx xxxx xxx xxxxxxxxxx xxxxxxxxxxxxx, xxxxx xxxxxxx xxxx xx xxx xxxxxxxxx. Xx xxxxxx xxx xxxxx xxxxxxx xxxx xxx xxxx xxx xxxxx xxxxxx, xxxxxxxx xxxxxxxxxxxx xxxx XXX xxxx xxxx xxxx xxxx xxx xxxxxxxx xx xxxxxxxxx, xx xxxxx x xxxxxxx xxxx xxxxxxxxx xx xxx XXX xx xxxxxxxxx xxxxxxxxx xxx xxxxx xxx xxxxxxx xxxx xxxx xxxx xxx xxxxxxxx xx xxxxxxxxx.
+**注**  デバイスのバックアップが発生し、アプリが自動的に再インストールされる場合、音声コマンド データは保持されません。 アプリの音声コマンド データをそのまま保持するには、アプリを起動またはアクティブ化するたびに VCD ファイルを初期化するか、VCD が現在インストールされているかどうかを示す設定を保存し、アプリを起動またはアクティブ化するたびにその設定をチェックするようにしてください。
 
  
 
-Xx xxxx xxxxxxx, xx xxxxx xxxxxx x [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxx.
+この例では、まず [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトを定義します。
 
-Xx xxxx xxxx [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227272) xx xxxxxxxxxx xx xxxx xxx "XxxxxxxxxXxxxxXxxxxxxx.xxx" xxxx.
+次に、[**GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272) を呼び出し、"AdventureWorksCommands.xml" ファイルを使って初期化します。
 
-Xxxx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxx xx xxxx xxxxxx xx [**XxxxxxxXxxxxxxXxxxxxxxxxxXxxxXxxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn708205).
+次に、この [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) オブジェクトが [**InstallCommandDefinitionsFromStorageFileAsync**](https://msdn.microsoft.com/library/windows/apps/dn708205) に渡されます。
 
 ```CSharp
 try
@@ -312,37 +290,36 @@ catch (Exception ex)
 }
 ```
 
-## <span id="Handle_the_voice_command_in_the_app_service">
-            </span>
-            <span id="handle_the_voice_command_in_the_app_service">
-            </span>
-            <span id="HANDLE_THE_VOICE_COMMAND_IN_THE_APP_SERVICE">
-            </span>Xxxxxx xxx xxxxx xxxxxxx xx xxx xxx xxxxxxx
+## <span id="Handle_the_voice_command_in_the_app_service"></span><span id="handle_the_voice_command_in_the_app_service"></span><span id="HANDLE_THE_VOICE_COMMAND_IN_THE_APP_SERVICE"></span>アプリ サービスでの音声コマンドの処理
 
 
-Xxxxxxx xx xxx xxx xxxxxxx xxx xxxx xxx xxxxxxxx xx xxxxx-xxxxxxx xxxxxxxxxxx xxxxx xx xxx xxxxxxxx xxx xxx xxxxx xxxxxxx xxxx xxxx xxxx xxxxxxxxx.
+アプリが起動されて音声コマンド セットがインストールされた後、音声コマンドのアクティブ化にアプリがどのように応答するかをアプリ サービスで指定します。
 
-1.  Xxxx x xxxxxxx xxxxxxxx xx xxxx xxx xxxxxxx xx xxx xxxxxxxxxx xxxxx xxxxxxxx xxx xxxxx xxxxxxx.
-2.  Xxxxxxx xxxx xxxx xxxxxxxxxx xxxx xx xxxxxxx xx xx xxx xxxxxxx xxxxxxxxx xx x xxxxx xxxxxxx.
+1.  音声コマンドを処理するときにアプリ サービスが終了しないように、サービス遅延を取得します。
+2.  バックグラウンド タスクが、音声コマンドによってアクティブ化されたアプリ サービスとして実行されていることを確認します。
 
-    1.  Xxxx xxx [**XXxxxxxxxxxXxxxXxxxxxxx.XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224802) xx [**Xxxxxxx.XxxxxxxxxxxXxxxx.XxxXxxxxxx.XxxXxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn921727).
-    2.  Xxxxx xxxx [**XXxxxxxxxxxXxxxXxxxxxxx.XxxxxxxXxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br224807) xx xxx xxxx xx xxx xxx xxxxxxx xx xxx "Xxxxxxx.xxxxxxxxxxxx" xxxx.
+    1.  [
+            **IBackgroundTaskInstance.TriggerDetails**](https://msdn.microsoft.com/library/windows/apps/br224802) を [**Windows.ApplicationModel.AppService.AppServiceTriggerDetails**](https://msdn.microsoft.com/library/windows/apps/dn921727) にキャストします。
+    2.  [
+            **IBackgroundTaskInstance.TriggerDetails.Name**](https://msdn.microsoft.com/library/windows/apps/br224807) が "Package.appxmanifest" ファイル内のアプリ サービスの名前であることを確認します。
 
-3.  Xxx [**XXxxxxxxxxxXxxxXxxxxxxx.XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224802) xx xxxxxx x [**XxxxxXxxxxxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974204) xx **Xxxxxxx** xx xxxxxxxx xxx xxxxx xxxxxxx.
-4.  Xxxxxxxx xx xxxxx xxxxxxx xxx [**XxxxxXxxxxxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974204).[**XxxxxXxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706584) xx xxxxxxx xxxxxxxxxxxx xxxx xxx xxx xxxxxxx xx xxxxxx xxx xx x xxxx xxxxxxxxxxxx.
-5.  Xxxxxxxx xx xxxxx xxxxxxx xxx xxx [**XXxxxxxxxxxXxxxXxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224798) xx xxxxxxx xxxxxxxxxxxx xxxx xxx xxx xxxxxxx xx xxxxxx xxx xx xx xxxxxxxxxx xxxxxxx.
-6.  Xxxxxxxxx xxx xxxx xx xxx xxxxxxx xxx xxxx xxx xxxxxx.
+3.  [
+            **IBackgroundTaskInstance.TriggerDetails**](https://msdn.microsoft.com/library/windows/apps/br224802) を使って **Cortana** への [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) を作成し、音声コマンドを取得します。
+4.  ユーザーによるキャンセルのためにアプリ サービスが閉じたときに通知を受け取ることができるように、[**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204).[**VoiceCommandCompleted**](https://msdn.microsoft.com/library/windows/apps/dn706584) のイベント ハンドラーを登録します。
+5.  予期しないエラーのためにアプリ サービスが閉じたときに通知を受け取ることができるようにするため、[**IBackgroundTaskInstance.Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) のイベント ハンドラーを登録します。
+6.  コマンドの名前と内容を判断します。
 
-    1.  Xxx xxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974162).[**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn706589) xxxxxxxx xx xxxxxxxxx xxx xxxx xx xxx xxxxx xxxxxxx.
-    2.  Xx xxxxxxxxx xxxx xxx xxxx xxxx, xxxxx xxx xxxxx xx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn631441) xx xxx xxxxxxxx xxxxxxxxxx xx xxx xxxxxxxxxx xxxxxx xx xxx [**XxxxxxXxxxxxxxxxxXxxxxxxxXxxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn631443) xxxxxxxxxx.
+    1.  [
+            **VoiceCommand**](https://msdn.microsoft.com/library/windows/apps/dn974162).[**CommandName**](https://msdn.microsoft.com/library/windows/apps/dn706589) プロパティを使って、音声コマンドの名前を決定します。
+    2.  ユーザーが声に出した内容を判断するには、[**Text**](https://msdn.microsoft.com/library/windows/apps/dn631441) の値か、[**SpeechRecognitionSemanticInterpretation**](https://msdn.microsoft.com/library/windows/apps/dn631443) ディクショナリ内の認識された語句のセマンティクス プロパティを確認します。
 
-7.  Xxxx xxx xxxxxxxxxxx xxxxxx xx xxxx xxx xxxxxxx.
-8.  Xxxxxxx xxx xxxxx xxx xxxxxxxx xx xxx xxxxx xxxxxxx xxxx **Xxxxxxx**.
+7.  アプリ サービスで適切なアクションを実行します。
+8.  **Cortana** で音声コマンドに対するフィードバックを表示して読み上げます。
 
-    1.  Xxxxxxxxx xxx xxxxxxx xxxx xxx xxxx **Xxxxxxx** xx xxxxxxx xxx xxxxx xx xxx xxxx xx xxxxxxxx xx xxx xxxxx xxxxxxx xxx xxxxxx x [**XxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974182) xxxxxx. Xxx xxxxxxxx xx xxx xx xxxxxx xxx xxxxxxxx xxxxxxx xxxx **Xxxxxxx** xxxxx xxx xxxxxx, xxx [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233).
-    2.  Xxx xxx [**XxxxxXxxxxxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974204) xxxxxxxx xx xxxxxx xxxxxxxx xx xxxxxxxxxx xx **Xxxxxxx** xx xxxxxxx [**XxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706579) xx [**XxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706580) xxxx xxx **XxxxxXxxxxxxXxxxxxxXxxxxxxxxx** xxxxxx.
+    1.  音声コマンドに対する応答として **Cortana** がユーザーに表示して読み上げる文字列を決定し、[**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) オブジェクトを作成します。 **Cortana** が表示して読み上げるフィードバック文字列を選ぶ方法については、「[Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)」をご覧ください。
+    2.  **VoiceCommandServiceConnection** オブジェクトと共に [**ReportProgressAsync**](https://msdn.microsoft.com/library/windows/apps/dn706579) または [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) を呼び出して、[**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) インスタンスを使って **Cortana** に進行状況または完了を報告します。
 
-    Xxx xxxx xxxxxxx, xx xxxxx xxxx xx xxx XXX xx Xxxx Y: Xxxx xxx XXX xxxx.
+    この例では、手順 3 の「VCD ファイルの編集」の VCD について思い出す必要があります。
 
 ```    CSharp
 public sealed class VoiceCommandService : IBackgroundTask
@@ -480,40 +457,35 @@ public sealed class VoiceCommandService : IBackgroundTask
     }
 ```
 
-Xxxx xxxxxxxx, xxx xxx xxxxxxx xxx .Y xxxxxxx xx xxxx [**XxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn706580). **Xxxxxxx** xxxx xxx xxxx xxxxxxxx xx xxx xxx xx xxxx xxx xxx xxx xxxxxxxx xxxxxxxxx xx xxx XXX xxxx. Xx xxx xxx xxxxx xxxxxx xxxx .Y xxxxxxx xx xxxx xxx xxxx, **Xxxxxxx** xxxxxxx x xxxx-xxx xxxxxx, xx xxxxx xxxx. **Xxxxxxx** xxxxxxxx xxx xxxx-xxx xxxxxx xxxxx xxx xxxxxxxxxxx xxxxx **XxxxxxXxxxxxxXxxxx**, xx xxx xx xx Y xxxxxxx. Xx xxx xxx xxxxxxx xxxxx’x xxxx **XxxxxxXxxxxxxXxxxx**, xx xxx xx xxx [**XxxxxXxxxxxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974204) xxxxxxx xxxx xxxxxxx **Xxxxxxx** xxxx xxxxxxxxxxx, xxx xxxx xxxxxxxx xx xxxxx xxxxxxx xxx xxx xxx xxxxxxx xx xxxxxxxxx.
+起動時、アプリ サービスは 0.5 秒以内に [**ReportSuccessAsync**](https://msdn.microsoft.com/library/windows/apps/dn706580) を呼び出すことができます。 **Cortana** は、VCD ファイルで指定したフィードバックを表示して読み上げるためにアプリによって提供されたデータを使います。 アプリが呼び出しに 0.5 秒以上かかる場合、次に示すように **Cortana** はハンドオフ画面を挿入します。 アプリケーションが **ReportSuccessAsync** を呼び出すまで最大 5 秒間、**Cortana** にハンドオフ画面が表示されます。 アプリ サービスが **ReportSuccessAsync** を呼び出さないか、**Cortana** に情報を提供する [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) メソッドを何も呼び出さない場合、エラー メッセージが表示されてアプリ サービスがキャンセルされます。
 
-![x xxxxx xxxxx xxxx xxxxxxxx xxx xxxxxx xxxxxxx xxxxx xxx xxxxxxxxx xxxxx xxx xx xxx xxxxxxxxxx](images/cortana-backgroundapp-progress-result.png)
+![Adventure Works アプリをバックグラウンドで使った場合の基本的なクエリと結果画面 (進行状況も表示される)](images/cortana-backgroundapp-progress-result.png)
 
-## <span id="Image_resources_and_scaling">
-            </span>
-            <span id="image_resources_and_scaling">
-            </span>
-            <span id="IMAGE_RESOURCES_AND_SCALING">
-            </span>Xxxxx xxxxxxxxx xxx xxxxxxx
+## <span id="Image_resources_and_scaling"></span><span id="image_resources_and_scaling"></span><span id="IMAGE_RESOURCES_AND_SCALING"></span>画像リソースとスケーリング
 
 
-XXX xxxx xxx xxxxxxxxxxxxx xxxxxx xxx xxxx xxxxxxxxxxx xxxxx xxxxx xx xxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxxxxxx (xxxx xxxxxxxx, xxxxxxxxx xxxxxx, xxxxxx, xxx xx xx). Xxx xxx xxxx xx xx xx xxxxxxx xxx xxxxxx xxx xxxxxx xxx xxx xxx xxxxxxxxxxx xxxxxx xxxxxxxxxx xxx xxxxxx xxxxxxxxxxxx xxxxxx xxx xxx xxxxxxx xxx xxx xxxxxxxxx xxxxxxxx xxxxxxxx. Xx xxx xxx'x xxxxxxx xxx xxxxxxxxxxx xxxxxxxx xxxxxxxx, xxxxxxxxxxxxx, xxxxxxxxxxxx, xxx xxxxx xxxxxxx xxx xxxxxx, xxxxxxxxx xx xxx xxxx'x xxxxxxxxxxx, xxxxxxxxx, xxxxxx xxxx, xxx xxxxxxxx.
+UWP アプリでは、特定の設定とデバイス機能 (ハイ コントラスト、有効ピクセル、ロケールなど) に基づいて最適な画像を自動的に選択できます。 必要な作業は、画像を提供し、リソースのバージョンごとに、アプリ プロジェクト内で適切な名前付け規則とフォルダー構造を使用していることを確認することだけです。 推奨されるリソースのバージョンが提供されない場合、ユーザーの基本設定、身体能力、デバイスの種類、場所によって、アクセシビリティ、ローカライズ、画像の品質が影響を受ける可能性があります。
 
-Xxx xxxx xxxxxx xx xxxxx xxxxxxxxx xxx xxxx xxxxxxxx xxx xxxxx xxxxxxx, xxx [Xxxxxxxxxx xxx xxxx xxx xxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/mt412102).
+ハイ コントラストとスケール ファクター用の画像リソースについて詳しくは、「[タイルとアイコン アセットのガイドライン](https://msdn.microsoft.com/library/windows/apps/mt412102)」をご覧ください。
 
-Xxx xxxx xxxxxxxxx xxxxx xxxxxxxxxx. Xxxxxxxx xxxxxxxxxx xxx xxxxxx xxx xxxxxxxx xxxxxxxxx xxxx xxxxxxxx xxx xxxxxxx xx xxxxx x xxxxxxxxxx xxxxxxx xx x xxxxxxxx xxxxxx xx xxxx.
+修飾子を使ってリソースに名前を付けます。 リソース修飾子は、リソースの特定のバージョンが使われるコンテキストを識別するフォルダーとファイル名の修飾子です。
 
-Xxx xxxxxxxx xxxxxx xxxxxxxxxx xx "xxxxxxxxxx/xxxxxxxxxxxxx-xxxxx\[\_xxxxxxxxxxxxx-xxxxx\]/xxxxxxxx.xxxxxxxxxxxxx-xxxxx\[\_xxxxxxxxxxxxx-xxxxx\].xxx". Xxx xxxxxxx: xxxxxx/xx-XX/xxxx.xxxxx-YYY\_xxxxxxxx-xxxxx.xxx xx xxxxxx xxxxxxxx xx xx xxxx xxxxx xxx xxxx xxxxxx xxx xxx xxxxxxxx: xxxxxx/xxxx.xxx. Xxx [Xxxxxxxxxx xxx xxxxx, xxxx, xxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn611859) xxx [Xxx xx xxxx xxxxxxxxx xxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
+標準的な命名規則は、"foldername/qualifiername-value\[\_qualifiername-value\]/filename.qualifiername-value\[\_qualifiername-value\].ext" です。 たとえば、images/en-US/logo.scale-100\_contrast-white.png は、コード内ではルート フォルダーとファイル名を使用して単に images/logo.png と参照されます。 詳しくは、「[ファイル、データ、グローバリゼーションのガイドライン](https://msdn.microsoft.com/library/windows/apps/dn611859)」と「[修飾子を使ってリソースに名前を付ける方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)」をご覧ください。
 
-Xx xxxxxxxxx xxxx xxx xxxx xxx xxxxxxx xxxxxxxx xx xxxxxx xxxxxxxx xxxxx (xxxx xx "xx-XX\\xxxxxxxxx.xxxx") xxx xxx xxxxxxx xxxxx xxxxxx xx xxxxxx (xxxx xx "xxxx.xxxxx-YYY.xxx"), xxxx xx xxx xx xxx xxxxxxxxx xxxx xx xxxxxxx xxxxxxxxx xx xxxxxxxx xxxxxxxxxx xxxxxxxxx. Xxxxxxx, xxx xxxxxx xxxxxxx xxxxxx xxx YYY, YYY, xxx YYY xxxxx xxxxxxx.
+ローカライズされたリソースや複数の解像度のリソースの提供を現在計画していない場合でも、文字列リソース ファイルに既定の言語をマークし ("en-US\\resources.resw" など)、画像に既定のスケール ファクターをマークする ("logo.scale-100.png" など) ことをお勧めします。 ただし、100、200、400 のスケール ファクターのアセットを提供する必要があります。
 
-**Xxxxxxxxx**  
-Xxxxx xxxx xxxxx xxx xxx **Xxxxxxx** xxxxxxx xxxx xxx:
+**重要**  
+**Cortana** コンテンツ タイルの有効なアイコンのサイズは次のとおりです。
 
--   YYx x YYx
--   YYx x YYx
--   YYYx x YYYx
+-   幅 68 x 高さ 68
+-   幅 68 x 高さ 92
+-   幅 280 x 高さ 140
 
-Xxx xxxxxxx xxxx xx xxx xxxxxxxxx xxxxx x [**XxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974182) xx xxxxxx xx xxx [**XxxxxXxxxxxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974204). Xx xxx xxxx x **XxxxxXxxxxxxXxxxxxxx** xxxxxx xx **Xxxxxxx** xxxx xxxxxxxx x xxxxxxx xxxx xxxx xx xxxxx xxxx xxxx xxx xxxxxx xx xxxxx xxxx xxxxxx, xx xxxxxxxxx xxxxx xxxxx.
+コンテンツ タイルは、[**VoiceCommandResponse**](https://msdn.microsoft.com/library/windows/apps/dn974182) が [**VoiceCommandServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn974204) に渡されるまで検証されません。 画像がこれらのサイズ比率に準拠していないコンテンツ タイルを含む **VoiceCommandResponse** オブジェクトを **Cortana** に渡した場合、例外が発生する可能性があります。
 
  
 
-Xx xxxx xxxxxxx xxxx xxx **Xxxxxxxxx Xxxxx** xxx (XxxxxXxxxxxxXxxxxxx\\XxxxxxxxxXxxxxXxxxxXxxxxxxXxxxxxx.xx), xx xxxxxxx x xxxxxx xxxx xxxxxx ("XxxxXxxx.xxx") xx xxx xxx xxxx xx xxx [**XxxxxXxxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn974168) xxxxx xxx [**XxxxxXxxxYYxYYXxxxXxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn974169) xxxx xxxxxxxx. Xxx xxxx xxxxxxxx xxx xxxxxxx xx XxxxxXxxxxxxXxxxxxx\\Xxxxxx, xxx xxx xxxxxxxxx xxxxx xxx [**XxxXxxxXxxxXxxxxxxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701741) xxxxxx.
+この **Adventure Works** アプリ (VoiceCommandService\\AdventureWorksVoiceCommandService.cs) の例では、[**TitleWith68x68IconAndText**](https://msdn.microsoft.com/library/windows/apps/dn974169) タイル テンプレートを使用して、単純な灰色の四角形 ("GreyTile.png") を [**VoiceCommandContentTile**](https://msdn.microsoft.com/library/windows/apps/dn974168) 上のアプリのロゴとして指定します。 ロゴのバリアントは VoiceCommandService\\Images にあり、[**GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741) メソッドを使って取得できます。
 
 ```CSharp
 var destinationTile = new VoiceCommandContentTile();
@@ -525,29 +497,32 @@ destinationTile.Image =
     new Uri("ms-appx:///AdventureWorks.VoiceCommands/Images/GreyTile.png"));
 ```
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>関連記事
 
 
-**Xxxxxxxxxx**
-* [Xxxxxxx xxxxxxxxxxxx](cortana-interactions.md)
-* [Xxxxxx xxxxxx xxxxxxxxxxx xxxxxxxxxxx](define-custom-recognition-constraints.md)
-* [Xxxxxxxx xxxx x xxxxxxxxxx xxx xx Xxxxxxx](interact-with-a-background-app-in-cortana.md)
-* [**XXX xxxxxxxx xxx xxxxxxxxxx xY.Y**](https://msdn.microsoft.com/library/windows/apps/dn706593)
-* [Xxxxxxxxxx: Xxxxx xxxx xx xxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965325)
-* [Xxx xx xxxx xxxxxxxxx xxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
-**Xxxxxxxxx**
-* [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233)
-* [Xxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121)
-* [Xxxxxxxxxx xxxxxx YYY xxx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/dn958435)
-* [Xxxxxxxxxx xxx xxxx xxx xxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/mt412102)
-**Xxxxxxx**
-* [Xxxxxxx xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619899)
+**開発者向け**
+* [Cortana の操作](cortana-interactions.md)
+* [カスタム認識の制約の定義](define-custom-recognition-constraints.md)
+* [Cortana でのバックグラウンド アプリの操作](interact-with-a-background-app-in-cortana.md)
+* [**VCD 要素および属性 v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+* [クイック スタート: ファイルまたは画像リソースの使用](https://msdn.microsoft.com/library/windows/apps/xaml/hh965325)
+* [修飾子を使ってリソースに名前を付ける方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324)
+**デザイナー向け**
+* [Cortana の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn974233)
+* [音声認識の設計ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn596121)
+* [UWP アプリ用レスポンシブ デザイン 101](https://msdn.microsoft.com/library/windows/apps/dn958435)
+* [タイルとアイコン アセットのガイドライン](https://msdn.microsoft.com/library/windows/apps/mt412102)
+**サンプル**
+* [Cortana 音声コマンドのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=619899)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

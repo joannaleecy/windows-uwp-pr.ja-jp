@@ -1,43 +1,43 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxx x XxxxXxxxXxx xxxxxxx xx xxxxx xxx xxxx xxxx xxxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxx xxxx, xxxxxxxxxx, xxx xxxxxx. Xxx xxx xxxx x XxxxXxxxXxx xxxx-xxxx xx xxxxxxx xxx XxXxxxXxxx xxxxxxxx xx xxxx.
-xxxxx: XxxxXxxxXxx
-xx.xxxxxxx: YXXXYXXX-YXYY-YYYX-YXYY-YYYYXXXXYYYY
-xxxxx: Xxxx xxxx xxx
-xxxxxxxx: xxxxxx.xxx
+Description: You can use a RichEditBox control to enter and edit rich text documents that contain formatted text, hyperlinks, and images. You can make a RichEditBox read-only by setting its IsReadOnly property to true.
+title: RichEditBox
+ms.assetid: 4AFC0DFA-3B89-434D-9F86-4309CCFF7839
+label: Rich edit box
+template: detail.hbs
 ---
-# Xxxx xxxx xxx
-Xxx xxx xxx x XxxxXxxxXxx xxxxxxx xx xxxxx xxx xxxx xxxx xxxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxx xxxx, xxxxxxxxxx, xxx xxxxxx. Xxx xxx xxxx x XxxxXxxxXxx xxxx-xxxx xx xxxxxxx xxx XxXxxxXxxx xxxxxxxx xx **xxxx**.
+# Rich edit box
+You can use a RichEditBox control to enter and edit rich text documents that contain formatted text, hyperlinks, and images. You can make a RichEditBox read-only by setting its IsReadOnly property to **true**.
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
 
--   [**XxxxXxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)
--   [**Xxxxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)
--   [**XxXxxxXxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)
--   [**XxXxxxxXxxxxXxxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)
+-   [**RichEditBox class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.aspx)
+-   [**Document property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx)
+-   [**IsReadOnly property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isreadonly.aspx)
+-   [**IsSpellCheckEnabled property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
+## Is this the right control?
 
-Xxx x **XxxxXxxxXxx** xx xxxxxxx xxx xxxx xxxx xxxxx. Xxx xxx'x xxx x XxxxXxxxXxx xx xxx xxxx xxxxx xxxx xxx xxx xxx xxx xxx xxx xxxxx xxxxxxxx xxxx xxxxx xxxxx. Xxxxxx, xxx xxx xx xx xxxx xxxx xxxx xxxxx xxxx xxx xxxxxxxx xxxx xxxx xxx. Xxx xxxxxxxxx xxxx xxxx xxxxxxx xxxx x XxxxXxxxXxx xx x .xxx xxxx.
--   Xx xxx xxxxxxx xxxxxxx xx xxx xxxxx-xxxx xxxx xxx xx xxx xxxxxxxx xxxxxxxxx (xxxx xx xxxx xxxxxxx xx xxx xxxxxxxx xx xx xxxxx xxxxxxx), xxx xxxxx xxxxxxxxx xxxxxxx xxxx xxxx, xxx x xxxx xxxx xxx.
--   Xx xxx xxxx xxxxx xx xx xxxx xx xxxxxx xxxxx xxxx, xxx x xxxx xxxx xxx.
--   Xxxx xxxxxxxxx xxxx xxxx xxxx xxxx xx xxxxxxxx xxx xxx xxxxxxxxxxx xx xxxxx, xxx x xxxxx xxxx xxxxx xxxxxxx.
--   Xxx xxx xxxxx xxxxxxxxx, xxx x xxxxx xxxx xxxxx xxxxxxx.
+Use a **RichEditBox** to display and edit text files. You don't use a RichEditBox to get user input into you app the way you use other standard text input boxes. Rather, you use it to work with text files that are separate from your app. You typically save text entered into a RichEditBox to a .rtf file.
+-   If the primary purpose of the multi-line text box is for creating documents (such as blog entries or the contents of an email message), and those documents require rich text, use a rich text box.
+-   If you want users to be able to format their text, use a rich text box.
+-   When capturing text that will only be consumed and not redisplayed to users, use a plain text input control.
+-   For all other scenarios, use a plain text input control.
 
-Xxx xxxx xxxx xxxxx xxxxxxxx xxx xxxxx xxxx xxxxxxx, xxx xxx [Xxxx xxxxxxxx](text-controls.md) xxxxxxx.
+For more info about choosing the right text control, see the [Text controls](text-controls.md) article.
 
-## Xxxxxxxx
+## Examples
 
-Xxxx xxxx xxxx xxx xxx x xxxx xxxx xxxxxxxx xxxx xx xx. Xxx xxxxxxxxxx xxx xxxx xxxxxxx xxxx'x xxxx xx xxx xxxx xxxx xxx, xxx xxx xxxxxx xxxxxxx xx xxxxx x xxxxxxx xxx xx xxxxxxx xxxxxxx xxx xxxxxxxxx xxxxx xxxxxxx.
+This rich edit box has a rich text document open in it. The formatting and file buttons aren't part of the rich edit box, but you should provide at least a minimal set of styling buttons and implement their actions.
 
-![X xxxx xxxx xxx xxxx xx xxxx xxxxxxxx](images/rich-edit-box.png)
+![A rich text box with an open document](images/rich-edit-box.png)
 
-## Xxxxxx x xxxx xxxx xxx
+## Create a rich edit box
 
-Xx xxxxxxx, xxx XxxxXxxxXxx xxxxxxxx xxxxx xxxxxxxx. Xx xxxxxxx xxx xxxxx xxxxxxx, xxx xxx [XxXxxxxXxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) xxxxxxxx xx **xxxxx**. Xxx xxxx xxxx, xxx Xxxxxxxxxx xxx xxxxxxxxx xxx xxxxx xxxxxxxx.
+By default, the RichEditBox supports spell checking. To disable the spell checker, set the [IsSpellCheckEnabled](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.isspellcheckenabled.aspx) property to **false**. For more info, see Guidelines and checklist for spell checking.
 
-Xxx xxx xxx [Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) xxxxxxxx xx xxx XxxxXxxxXxx xx xxx xxx xxxxxxx. Xxx xxxxxxx xx x XxxxXxxxXxx xx x [Xxxxxxx.XX.Xxxx.XXxxxXxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx) xxxxxx, xxxxxx xxx XxxxXxxxXxxxx xxxxxxx, xxxxx xxxx [Xxxxxxx.XX.Xxxx.Xxxxxxxxx.Xxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) xxxxxxx xx xxx xxxxxxx. Xxx XXxxxXxxxxxxx xxxxxxxxx xxxxxxxx x xxx xx xxxx xxx xxxx xxx xxxxxxxx xx x xxxxxx, xxxxxxxx xxxx xxxxxx, xxx xxx xxxxxx xxxxxxxxx, xxxx xxx xxxx xxxxxxx, xxx xxxxxxx xxxxxxxxxx xxxxxxxxxx, xxx xx xx.
+You use the [Document](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.richeditbox.document.aspx) property of the RichEditBox to get its content. The content of a RichEditBox is a [Windows.UI.Text.ITextDocument](https://msdn.microsoft.com/library/windows/apps/xaml/bb774052.aspx) object, unlike the RichTextBlock control, which uses [Windows.UI.Xaml.Documents.Block](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.documents.block.aspx) objects as its content. The ITextDocument interface provides a way to load and save the document to a stream, retrieve text ranges, get the active selection, undo and redo changes, set default formatting attributes, and so on.
 
-Xxxx xxxxxxx xxxxx xxx xx xxxx, xxxx, xxx xxxx x Xxxx Xxxx Xxxxxx (.xxx) xxxx xx x XxxxXxxxXxx.
+This example shows how to edit, load, and save a Rich Text Format (.rtf) file in a RichEditBox.
 
 ```xaml
 <RelativePanel Margin="20" HorizontalAlignment="Stretch">
@@ -176,39 +176,43 @@ private void UnderlineButton_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-## Xxxxxx xxx xxxxx xxxxxxxx xxx xxxx xxxx xxxxxxx
+## Choose the right keyboard for your text control
 
-Xx xxxx xxxxx xx xxxxx xxxx xxxxx xxx xxxxx xxxxxxxx, xx Xxxx Xxxxx Xxxxx (XXX), xxx xxx xxx xxx xxxxx xxxxx xx xxx xxxx xxxxxxx xx xxxxx xxx xxxx xx xxxx xxx xxxx xx xxxxxxxx xx xxxxx. Xxx xxxxxxx xxxxxxxx xxxxxx xx xxxxxxx xxxxxxxxxxx xxx xxxxxxx xxxx xxxx xxxx xxxxxxxxx.
+To help users to enter data using the touch keyboard, or Soft Input Panel (SIP), you can set the input scope of the text control to match the kind of data the user is expected to enter. The default keyboard layout is usually appropriate for working with rich text documents.
 
-Xxx xxxx xxxx xxxxx xxx xx xxx xxxxx xxxxxx, xxx [Xxx xxxxx xxxxx xx xxxxxx xxx xxxxx xxxxxxxx]().
+For more info about how to use input scopes, see [Use input scope to change the touch keyboard]().
 
-## Xxxxxxxxxxxxxxx
+## Recommendations
 
--   Xxxx xxx xxxxxx x xxxx xxxx xxx, xxxxxxx xxxxxxx xxxxxxx xxx xxxxxxxxx xxxxx xxxxxxx.
--   Xxx x xxxx xxxx'x xxxxxxxxxx xxxx xxx xxxxx xx xxxx xxx.
--   Xxxx xxx xxxxxx xx xxx xxxx xxxxxxx xxxx xxxxxx xx xxxxxxxxxxx xxxxxxx xxxxxxx.
--   Xxx'x xxx xxxx xxxx xxxxx xxxxxxxx xxxx xx xxxxxx xxxxx xxxxx xxxx.
--   Xxx'x xxx x xxxxx-xxxx xxxx xxx xxxx xxxxx xxxx xxxx x xxxxxx xxxx.
--   Xxx'x xxx x xxxx xxxx xxxxxxx xx x xxxxx xxxx xxxxxxx xx xxxxxxxx.
-
-
-
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
-
-## Xxxxxxx xxxxxxxx
-
-[Xxxx xxxxxxxx](text-controls.md)
-
-**Xxx xxxxxxxxx**
-- [Xxxxxxxxxx xxx xxxxx xxxxxxxx](spell-checking-and-prediction.md)
-- [Xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465231)
-- [Xxxxxxxxxx xxx xxxx xxxxx](text-controls.md)
-
-**Xxx xxxxxxxxxx (XXXX)**
-- [**XxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209683)
-- [**Xxxxxxx.XX.Xxxx.Xxxxxxxx XxxxxxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227519)
+-   When you create a rich text box, provide styling buttons and implement their actions.
+-   Use a font that's consistent with the style of your app.
+-   Make the height of the text control tall enough to accommodate typical entries.
+-   Don't let your text input controls grow in height while users type.
+-   Don't use a multi-line text box when users only need a single line.
+-   Don't use a rich text control if a plain text control is adequate.
 
 
-**Xxx xxxxxxxxxx (xxxxx)**
-- [Xxxxxx.Xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+
+\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+
+## Related articles
+
+[Text controls](text-controls.md)
+
+**For designers**
+- [Guidelines for spell checking](spell-checking-and-prediction.md)
+- [Adding search](https://msdn.microsoft.com/library/windows/apps/hh465231)
+- [Guidelines for text input](text-controls.md)
+
+**For developers (XAML)**
+- [**TextBox class**](https://msdn.microsoft.com/library/windows/apps/br209683)
+- [**Windows.UI.Xaml.Controls PasswordBox class**](https://msdn.microsoft.com/library/windows/apps/br227519)
+
+
+**For developers (other)**
+- [String.Length property](https://msdn.microsoft.com/library/system.string.length(v=vs.110).aspx)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,32 +1,32 @@
 ---
-xx.xxxxxxx: XYXYYXXX-XXYX-YYYY-XXXY-YYXXYYYYXYXX
-xxxxx: Xxxx xxxxxxx xxxxxxxx
-xxxxxxxxxxx: Xxxx xxxxx xxxxx xxx xxx xx xxxx x xxxxxxx (xx xxxxx XX xxxxxxx) xx x xxxxxx xxxx xx xxxx xx xxxxx xxxxxxx xx x xxxxxxxxxx xx xxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
+ms.assetid: A9D54DEC-CD1B-4043-ADE4-32CD4977D1BF
+title: Data binding overview
+description: This topic shows you how to bind a control (or other UI element) to a single item or bind an items control to a collection of items in a Universal Windows Platform (UWP) app.
 ---
-Xxxx xxxxxxx xxxxxxxx
+Data binding overview
 =====================
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxx xxxxx xxx xxx xx xxxx x xxxxxxx (xx xxxxx XX xxxxxxx) xx x xxxxxx xxxx xx xxxx xx xxxxx xxxxxxx xx x xxxxxxxxxx xx xxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx. Xx xxxxxxxx, xx xxxx xxx xx xxxxxxx xxx xxxxxxxxx xx xxxxx, xxxxxxxxx x xxxxxxx xxxx xxxxx xx x xxxxxxxxx, xxx xxxxxxx xxxx xxx xxxxxxx. Xxx xxxx xxxxxxxx xxxx, xxx [Xxxx xxxxxxx xx xxxxx](data-binding-in-depth.md).
+This topic shows you how to bind a control (or other UI element) to a single item or bind an items control to a collection of items in a Universal Windows Platform (UWP) app. In addition, we show how to control the rendering of items, implement a details view based on a selection, and convert data for display. For more detailed info, see [Data binding in depth](data-binding-in-depth.md).
 
-Xxxxxxxxxxxxx
+Prerequisites
 -------------------------------------------------------------------------------------------------------------
 
-Xxxx xxxxx xxxxxxx xxxx xxx xxxx xxx xx xxxxxx x xxxxx XXX xxx. Xxx xxxxxxxxxxxx xx xxxxxxxx xxxx xxxxx XXX xxx, xxx [Xxxxxx xxxx xxxxx XXX xxx xxxxx X# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/Hh974581).
+This topic assumes that you know how to create a basic UWP app. For instructions on creating your first UWP app, see [Create your first UWP app using C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/Hh974581).
 
-Xxxxxx xxx xxxxxxx
+Create the project
 ---------------------------------------------------------------------------------------------------------------------------------
 
-Xxxxxx x xxx **Xxxxx Xxxxxxxxxxx (Xxxxxxx Xxxxxxxxx)** xxxxxxx. Xxxx xx "Xxxxxxxxxx".
+Create a new **Blank Application (Windows Universal)** project. Name it "Quickstart".
 
-Xxxxxxx xx x xxxxxx xxxx
+Binding to a single item
 ---------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Xxxxx xxxxxxx xxxxxxxx xx x xxxxxxx xxxxxx xxx x xxxxxxx xxxxxx. Xxxxxxxxx, xxx xxxxxx xx x xxxxxxxx xx x xxxxxxx xx xxxxx XX xxxxxxx, xxx xxx xxxxxx xx x xxxxxxxx xx x xxxxx xxxxxxxx (x xxxx xxxxx, xx x xxxx xxxxx). Xxxx xxxxxxx xxxxx xxx xx xxxx x xxxxxxx xx x xxxxxx xxxx. Xxx xxxxxx xx xxx **Xxxx** xxxxxxxx xx x **XxxxXxxxx**. Xxx xxxxxx xx xx xxxxxxxx xx x xxxxxx xxxxx xxxxx **Xxxxxxxxx** xxxx xxxxxxxxxx xx xxxxx xxxxxxxxx. Xxx'x xxxx xx xxx xxxxx xxxxx.
+Every binding consists of a binding target and a binding source. Typically, the target is a property of a control or other UI element, and the source is a property of a class instance (a data model, or a view model). This example shows how to bind a control to a single item. The target is the **Text** property of a **TextBlock**. The source is an instance of a simple class named **Recording** that represents an audio recording. Let's look at the class first.
 
-Xxx x xxx xxxxx xx xxxx xxxxxxx, xxxx xx Xxxxxxxxx.xx (xx xxx'xx xxxxx X#), xxx xxx xxxx xxxx xx xx.
+Add a new class to your project, name it Recording.cs (if you're using C#), and add this code to it.
 
 ``` csharp
 namespace Quickstart
@@ -134,7 +134,7 @@ namespace Quickstart
 }
 ```
 
-Xxxx, xxxxxx xxx xxxxxxx xxxxxx xxxxx xxxx xxx xxxxx xxxx xxxxxxxxxx xxxx xxxx xx xxxxxx. Xx xx xxxx xx xxxxxx x xxxxxxxx xx xxxx **XxxxxxxxxXxxxXxxxx** xx **XxxxXxxx**.
+Next, expose the binding source class from the class that represents your page of markup. We do that by adding a property of type **RecordingViewModel** to **MainPage**.
 
 ``` csharp
 namespace Quickstart
@@ -175,7 +175,7 @@ namespace Quickstart
 }
 ```
 
-Xxx xxxx xxxxx xx xx xxxx x **XxxxXxxxx** xx xxx **XxxxXxxxx.XxxxxxxXxxxxxxxx.XxxXxxxx** xxxxxxxx.
+The last piece is to bind a **TextBlock** to the **ViewModel.DefaultRecording.OneLiner** property.
 
 ``` xml
 <Page x:Class="Quickstart.MainPage" ... >
@@ -187,16 +187,16 @@ Xxx xxxx xxxxx xx xx xxxx x **XxxxXxxxx** xx xxx **XxxxXxxxx.XxxxxxxXxxxxxxxx.Xx
 </Page>
 ```
 
-Xxxx'x xxx xxxxxx.
+Here's the result.
 
-![Xxxxxxx x xxxxxxxxx](images/xaml-databinding0.png)
+![Binding a textblock](images/xaml-databinding0.png)
 
-Xxxxxxx xx x xxxxxxxxxx xx xxxxx
+Binding to a collection of items
 ------------------------------------------------------------------------------------------------------------------
 
-X xxxxxx xxxxxxxx xx xx xxxx xx x xxxxxxxxxx xx xxxxxxxx xxxxxxx. Xx X# xxx Xxxxxx Xxxxx, xxx xxxxxxx [**XxxxxxxxxxXxxxxxxxxx&xx;X&xx;**](T:System.Collections.ObjectModel.ObservableCollection%601) xxxxx xx x xxxx xxxxxxxxxx xxxxxx xxx xxxx xxxxxxx, xxxxxxx xx xxxxxxxxxx xxx [**XXxxxxxXxxxxxxxXxxxxxx**](T:System.ComponentModel.INotifyPropertyChanged) xxx [**XXxxxxxXxxxxxxxxxXxxxxxx**](T:System.Collections.Specialized.INotifyCollectionChanged) xxxxxxxxxx. Xxxxx xxxxxxxxxx xxxxxxx xxxxxx xxxxxxxxxxxx xx xxxxxxxx xxxx xxxxx xxx xxxxx xx xxxxxxx xx x xxxxxxxx xx xxx xxxx xxxxxx xxxxxxx. Xx xxx xxxx xxxx xxxxx xxxxxxxx xx xxxxxx xxxx xxxxxxx xx xxxxxxxxxx xx xxxxxxx xx xxx xxxxxxxxxx, xxx xxxxxxxx xxxxxx xxxxxx xxxx xxxxxxxxx **XXxxxxxXxxxxxxxXxxxxxx**. Xxx xxxx xxxx, xxx [Xxxx xxxxxxx xx xxxxx](data-binding-in-depth.md).
+A common scenario is to bind to a collection of business objects. In C# and Visual Basic, the generic [**ObservableCollection&lt;T&gt;**](T:System.Collections.ObjectModel.ObservableCollection%601) class is a good collection choice for data binding, because it implements the [**INotifyPropertyChanged**](T:System.ComponentModel.INotifyPropertyChanged) and [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged) interfaces. These interfaces provide change notification to bindings when items are added or removed or a property of the list itself changes. If you want your bound controls to update with changes to properties of objects in the collection, the business object should also implement **INotifyPropertyChanged**. For more info, see [Data binding in depth](data-binding-in-depth.md).
 
-Xxxx xxxx xxxxxxx xxxxx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) xx x xxxxxxxxxx xx `Recording` xxxxxxx. Xxx'x xxxxx xx xxxxxx xxx xxxxxxxxxx xx xxx xxxx xxxxx. Xxxx xxx xxxxx xxx xxxxxxx xx xxx **XxxxxxxxxXxxxXxxxx** xxxxx.
+This next example binds a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) to a collection of `Recording` objects. Let's start by adding the collection to our view model. Just add these new members to the **RecordingViewModel** class.
 
 ``` csharp
     public class RecordingViewModel
@@ -279,11 +279,11 @@ And then bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/B
 </Page>
 ```
 
-Xx xxxxx'x xxx xxxxxxxx x xxxx xxxxxxxx xxx xxx **Xxxxxxxxx** xxxxx, xx xxx xxxx xxx XX xxxxxxxxx xxx xx xx xx xxxx [**XxXxxxxx**](M:System.Object.ToString) xxx xxxx xxxx xx xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878). Xxx xxxxxxx xxxxxxxxxxxxxx xx **XxXxxxxx** xx xx xxxxxx xxx xxxx xxxx.
+We haven't yet provided a data template for the **Recording** class, so the best the UI framework can do is to call [**ToString**](M:System.Object.ToString) for each item in the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). The default implementation of **ToString** is to return the type name.
 
-![Xxxxxxx x xxxx xxxx](images/xaml-databinding1.png)
+![Binding a list view](images/xaml-databinding1.png)
 
-Xx xxxxxx xxxx xx xxx xxxxxx xxxxxxxx [**XxXxxxxx**](M:System.Object.ToString) xx xxxxxx xxx xxxxx xx **XxxXxxxXxxxxxx**, xx xx xxx xxxxxxx x xxxx xxxxxxxx. Xxx xxxx xxxxxxxx xxxxxx xx xxxx xxxxxx xxx xxxxxxxx xxxx xxxxxxxx. Xxx xxxxxxx x xxxx xxxxxxxx xx xxxxx xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209369) xxxxxxxx xx x xxxxxxx xxxxxxx xx xxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242830) xxxxxxxx xx xx xxxxx xxxxxxx. Xxxx xxx xxx xxxx xx xxxxx xxxxxx x xxxx xxxxxxxx xxx **Xxxxxxxxx** xxxxxxxx xxxx xx xxxxxxxxxxxx xx xxx xxxxxx.
+To remedy this we can either override [**ToString**](M:System.Object.ToString) to return the value of **OneLineSummary**, or we can provide a data template. The data template option is more common and arguably more flexible. You specify a data template by using the [**ContentTemplate**](https://msdn.microsoft.com/library/windows/apps/BR209369) property of a content control or the [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242830) property of an items control. Here are two ways we could design a data template for **Recording** together with an illustration of the result.
 
 ``` xml
     <ListView ItemsSource="{x:Bind ViewModel.Recordings}"
@@ -315,20 +315,20 @@ Xx xxxxxx xxxx xx xxx xxxxxx xxxxxxxx [**XxXxxxxx**](M:System.Object.ToString) x
     </ListView>
 ```
 
-![Xxxxxxx x xxxx xxxx](images/xaml-databinding3.png)
+![Binding a list view](images/xaml-databinding3.png)
 
-Xxx xxxx xxxxxxxxxxx xxxxx XXXX xxxxxx, xxx [Xxxxxx x XX xxxx XXXX](https://msdn.microsoft.com/library/windows/apps/Mt228349). Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxx xxxxxx, xxx [Xxxxxx xxxxxxx xxxx XXXX](https://msdn.microsoft.com/library/windows/apps/Mt228350).
+For more information about XAML syntax, see [Create a UI with XAML](https://msdn.microsoft.com/library/windows/apps/Mt228349). For more information about control layout, see [Define layouts with XAML](https://msdn.microsoft.com/library/windows/apps/Mt228350).
 
-Xxxxxx x xxxxxxx xxxx
+Adding a details view
 -----------------------------------------------------------------------------------------------------
 
-Xxx xxx xxxxxx xx xxxxxxx xxx xxx xxxxxxx xx **Xxxxxxxxx** xxxxxxx xx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) xxxxx. Xxx xxxx xxxxx xx x xxx xx xxxxx. Xxxxxxx, xxx xxx xxxx xxxx xxxxxx xxxx xx xxx xxxx xx xxxxxxxx xx xxx xxxx, xxxx xxx xxxx xxxxx x xxxxxxxxx, xxx xxx xxxxxxx xxx xxx xxxxxxx xx xxx xxxxxxxx xxxx xx x xxxxxxxx xxxxx xx XX xxxxx xx xxx xxxxxxx xxxx. Xxxx xxxxxxxxxxx xx xxxx xxxxx xx x xxxxxx/xxxxxxx xxxx, xx x xxxx/xxxxxxx xxxx.
+You can choose to display all the details of **Recording** objects in [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) items. But that takes up a lot of space. Instead, you can show just enough data in the item to identify it and then, when the user makes a selection, you can display all the details of the selected item in a separate piece of UI known as the details view. This arrangement is also known as a master/details view, or a list/details view.
 
-Xxxxx xxx xxx xxxx xx xx xxxxx xxxx. Xxx xxx xxxx xxx xxxxxxx xxxx xx xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR209770) xxxxxxxx xx xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878). Xx xxx xxx xxx x [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209833): xxxx xxxx xxx **XxxxXxxx** xxx xxx xxxxxxx xxxx xx xxx **XxxxxxxxxxXxxxXxxxxx** (xxxxx xxxx xxxx xxxx xx xxx xxxxxxxxx-xxxxxxxx xxxx xxx xxx). Xxxx xxxxxxxxxx xxx xxxxx xxxxx, xxx xxxx xxxx xxxx xxx xxxx xxxxxxx xxxxx xx xxx xxxxxxxxxxxx.
+There are two ways to go about this. You can bind the details view to the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) property of the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878). Or you can use a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833): bind both the **ListView** and the details view to the **CollectionViewSource** (which will take care of the currently-selected item for you). Both techniques are shown below, and they both give the same results shown in the illustration.
 
-**Xxxx**  Xx xxx xx xxxx xxxxx xx'xx xxxx xxxx xxx [{x:Xxxx} xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204783), xxx xxxx xx xxx xxxxxxxxxx xx'xx xxxx xxxxx xxxxxxx xxx xxxx xxxxxxxx (xxx xxxx xxxxxxxxxx) [{Xxxxxxx} xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204782).
+**Note**  So far in this topic we've only used the [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783), but both of the techniques we'll show below require the more flexible (but less performant) [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782).
 
-Xxxxx, xxxx'x xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR209770) xxxxxxxxx. Xx xxx'xx xxxxx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX) xxxx, xxxxxxx xx'xx xx xxxxx [{Xxxxxxx}](https://msdn.microsoft.com/library/windows/apps/Mt204782), xxx'xx xxxx xx xxx xxx [**XxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701872) xxxxxxxxx xx xxx **Xxxxxxxxx** xxxxx.
+First, here's the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) technique. If you're using Visual C++ component extensions (C++/CX) then, because we'll be using [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), you'll need to add the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) attribute to the **Recording** class.
 
 ``` cpp
     [Windows::UI::Xaml::Data::Bindable]
@@ -338,7 +338,7 @@ Xxxxx, xxxx'x xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/
     };
 ```
 
-Xxx xxxx xxxxx xxxxxx xxxxxxxxx xx xx xxx xxxxxx.
+The only other change necessary is to the markup.
 
 ``` xml
 <Page x:Class="Quickstart.MainPage" ... >
@@ -367,7 +367,7 @@ Xxx xxxx xxxxx xxxxxx xxxxxxxxx xx xx xxx xxxxxx.
 </Page>
 ```
 
-Xxx xxx [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209833) xxxxxxxxx, xxxxx xxx x **XxxxxxxxxxXxxxXxxxxx** xx x xxxx xxxxxxxx.
+For the [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) technique, first add a **CollectionViewSource** as a page resource.
 
 ``` xml
     <Page.Resources>
@@ -375,7 +375,7 @@ Xxx xxx [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/ap
     </Page.Resources>
 ```
 
-Xxx xxxx xxxxxx xxx xxxxxxxx xx xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) (xxxxx xx xxxxxx xxxxx xx xx xxxxx) xxx xx xxx xxxxxxx xxxx xx xxx xxx [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209833). Xxxx xxxx xx xxxxxxx xxx xxxxxxx xxxx xxxxxxxx xx xxx **XxxxxxxxxxXxxxXxxxxx**, xxx'xx xxxxxxxx xxxx xxx xxxx xx xxxx xx xxx xxxxxxx xxxx xx xxxxxxxx xxxxx xxx xxxx xxxxxx xx xxxxx xx xxx xxxxxxxxxx xxxxxx. Xxxxx'x xx xxxx xx xxxxxxx xxx **XxxxxxxXxxx** xxxxxxxx xx xxx xxxx xxx xxx xxxxxxx, xxxxxxxx xxx xxx xx xxxx xx xxxxx'x xxx xxxxxxxxx).
+And then adjust the bindings on the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) (which no longer needs to be named) and on the details view to use the [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833). Note that by binding the details view directly to the **CollectionViewSource**, you're implying that you want to bind to the current item in bindings where the path cannot be found on the collection itself. There's no need to specify the **CurrentItem** property as the path for the binding, although you can do that if there's any ambiguity).
 
 ``` xml
     ...
@@ -388,16 +388,16 @@ Xxx xxxx xxxxxx xxx xxxxxxxx xx xxx [**XxxxXxxx**](https://msdn.microsoft.com/li
     ...
 ```
 
-Xxx xxxx'x xxx xxxxxxxxx xxxxxx xx xxxx xxxx.
+And here's the identical result in each case.
 
-![Xxxxxxx x xxxx xxxx](images/xaml-databinding4.png)
+![Binding a list view](images/xaml-databinding4.png)
 
-Xxxxxxxxxx xx xxxxxxxxxx xxxx xxxxxx xxx xxxxxxx
+Formatting or converting data values for display
 --------------------------------------------------------------------------------------------------------------------------------------------
 
-Xxxxx xx xxx xxxxx xxxxx xxxx xxx xxxxxxxxx xxxxx. Xxx **XxxxxxxXxxxXxxx** xxxxxxxx xx xxx xxxx x xxxx, xx'x x [**XxxxXxxx**](T:System.DateTime), xx xx'x xxxxx xxxxxxxxx xxxx xxxx xxxxxxxxx xxxx xx xxxx. Xxx xxxxxxxx xx xx xxx x xxxxxx xxxxxxxx xx xxx **Xxxxxxxxx** xxxxx xxxx xxxxxxx `this.ReleaseDateTime.ToString("d")`. Xxxxxx xxxx xxxxxxxx **XxxxxxxXxxx** xxxxx xxxxxxxx xxxx xx xxxxxxx x xxxx, xxx x xxxx-xxx-xxxx. Xxxxxx xx **XxxxxxxXxxxXxXxxxxx** xxxxx xxxxxxx xxxxxxxx xxxx xx xxxxxxx x xxxxxx.
+There is one small issue with the rendering above. The **ReleaseDateTime** property is not just a date, it's a [**DateTime**](T:System.DateTime), so it's being displayed with more precision than we need. One solution is to add a string property to the **Recording** class that returns `this.ReleaseDateTime.ToString("d")`. Naming that property **ReleaseDate** would indicate that it returns a date, not a date-and-time. Naming it **ReleaseDateAsString** would further indicate that it returns a string.
 
-X xxxx xxxxxxxx xxxxxxxx xx xx xxx xxxxxxxxx xxxxx xx x xxxxx xxxxxxxxx. Xxxx'x xx xxxxxxx xx xxx xx xxxxxx xxxx xxx xxxxx xxxxxxxxx. Xxx xxxx xxxx xx xxxx Xxxxxxxxx.xx xxxxxx xxxx xxxx.
+A more flexible solution is to use something known as a value converter. Here's an example of how to author your own value converter. Add this code to your Recording.cs source code file.
 
 ``` csharp
 public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
@@ -428,7 +428,7 @@ public class StringFormatter : Windows.UI.Xaml.Data.IValueConverter
 }
 ```
 
-Xxx xx xxx xxx xx xxxxxxxx xx **XxxxxxXxxxxxxxx** xx x xxxx xxxxxxxx xxx xxx xx xx xxx xxxxxxx. Xx xxxx xxx xxxxxx xxxxxx xxxx xxx xxxxxxxxx xxxx xxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxxxxx.
+Now we can add an instance of **StringFormatter** as a page resource and use it in our binding. We pass the format string into the converter from markup for ultimate formatting flexibility.
 
 ``` xml
     <Page.Resources>
@@ -437,15 +437,19 @@ Xxx xx xxx xxx xx xxxxxxxx xx **XxxxxxXxxxxxxxx** xx x xxxx xxxxxxxx xxx xxx xx 
     ...
 
     <TextBlock Text="{Binding ReleaseDateTime,
-        Converter={StaticResource StringFormatterValueConverter}
+        Converter={StaticResource StringFormatterValueConverter},
         ConverterParameter=Released: \{0:d\}}"/>
 
     ...
 ```
 
-Xxxx'x xxx xxxxxx.
+Here's the result.
 
-![xxxxxxxxxx x xxxx xxxx xxxxxx xxxxxxxxxx](images/xaml-databinding5.png)
+![displaying a date with custom formatting](images/xaml-databinding5.png)
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+

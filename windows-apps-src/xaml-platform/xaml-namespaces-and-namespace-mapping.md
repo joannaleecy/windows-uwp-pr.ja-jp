@@ -1,109 +1,113 @@
 ---
-xxxxxxxxxxx: Xxxx xxxxx xxxxxxxx xxx XXX/XXXX xxxxxxxxx (xxxxx) xxxxxxxx xx xxxxx xx xxx xxxx xxxxxxx xx xxxx XXXX xxxxx. Xx xxxx xxxxxxxxx xxx xx xxxxxxx xxxxxxx xxxxxxxx xxx xxxxxx xxxxx xxx xxxxxxxxxx.
-xxxxx: XXXX xxxxxxxxxx xxx xxxxxxxxx xxxxxxx
-xx.xxxxxxx: XYYXXXYY-XYYY-YYXX-YYYY-XXYXXYYYYXYX
+description: This topic explains the XML/XAML namespace (xmlns) mappings as found in the root element of most XAML files. It also describes how to produce similar mappings for custom types and assemblies.
+title: XAML namespaces and namespace mapping
+ms.assetid: A19DFF78-E692-47AE-8221-AB5EA9470E8B
 ---
 
-# XXXX xxxxxxxxxx xxx xxxxxxxxx xxxxxxx
+# XAML namespaces and namespace mapping
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx xxxxx xxxxxxxx xxx XXX/XXXX xxxxxxxxx (**xxxxx**) xxxxxxxx xx xxxxx xx xxx xxxx xxxxxxx xx xxxx XXXX xxxxx. Xx xxxx xxxxxxxxx xxx xx xxxxxxx xxxxxxx xxxxxxxx xxx xxxxxx xxxxx xxx xxxxxxxxxx.
+This topic explains the XML/XAML namespace (**xmlns**) mappings as found in the root element of most XAML files. It also describes how to produce similar mappings for custom types and assemblies.
 
-## Xxx XXXX xxxxxxxxxx xxxxxx xx xxxx xxxxxxxxxx xxx xxxx xxxxxxxxx
+## How XAML namespaces relate to code definition and type libraries
 
-Xxxx xx xxx xxxxxxx xxxxxxx xxx xxx xxx xxxxxxxxxxx xx Xxxxxxx Xxxxxxx xxx xxxxxxxxxxx, XXXX xx xxxx xx xxxxxxx xxxxxxx, xxxxxxxxxx xx xxxxx xxxxxxx, xxx xxxxxx-xxxxxxxx xxxxxxxxxxxxx xxxxxxxxx xx xxxxxxxxxxx. Xxx xxxxxxx xxx xxxxxxx xx XXXX xxx xxxxxx xx xxxx xxxxxxxxx xx xxxxx xxxxxxxxxxxxxxx xxxx xxx xxxxxxx xx xxxxx xxxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx. Xxxxx xxxxxxxxx xxxxx xx:
+Both in its general purpose and for its application to Windows Runtime app programming, XAML is used to declare objects, properties of those objects, and object-property relationships expressed as hierarchies. The objects you declare in XAML are backed by type libraries or other representations that are defined by other programming techniques and languages. These libraries might be:
 
--   Xxx xxxxx-xx xxx xx xxxxxxx xxx xxx Xxxxxxx Xxxxxxx. Xxxx xx x xxxxx xxx xx xxxxxxx, xxx xxxxxxxxx xxxxx xxxxxxx xxxx XXXX xxxx xxxxxxxx xxxx-xxxxxxx xxx xxxxxxxxxx xxxxx.
--   Xxxxxxxxxxx xxxxxxxxx xxxx xxx xxxxxxxx xxxxxx xx Xxxxxxxxx xx xx xxxxx xxxxxxx.
--   Xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxx xx x xxxxx-xxxxx xxxxxxx xxxx xxxx xxx xxxxxxxxxxxx xxx xxxx xxxxxxx xxxxxxxxxxxxx.
--   Xxxx xxx xxxxxxx, xxxxx xx xxxx xx xxxx xxxxxxx xxx xxxxx xxxxx xxxx xx xxx xx xxxx xxxx xxxx xxxxxxxxxxx.
+-   The built-in set of objects for the Windows Runtime. This is a fixed set of objects, and accessing these objects from XAML uses internal type-mapping and activation logic.
+-   Distributed libraries that are provided either by Microsoft or by third parties.
+-   Libraries that represent the definition of a third-party control that your app incorporates and your package redistributes.
+-   Your own library, which is part of your project and which holds some or all of your user code definitions.
 
-Xxxxxxx xxxx xxxx xx xxxxxxxxxx xxxx xxxxxxxxxx XXXX xxxxxxxxx xxxxxxxxxxx. XXXX xxxxxxxxxx xxxx xx xxx Xxxxxxx Xxxxxxx xxx xxxxxxxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxx xxxx xxxxxxxxxx xx xxx xx x xxxxxx XXXX xxxxxxxxx. Xxxx xxxxxxx xxx xxxxxxx xx x XXXX xxxxxxxxxx xxxx xxxxxx x xxxxxx xxxxxxxxxxx xxxxxxxxx xx xxxxxxxxxx. X XXXX xxxxxxxxxx xxx xx xxxxx xxxxxxxxx—xxx xxxxxxx, xxxx xx xxx XXXX xxxxxxxxxx xxx Xxxxxxx Xxxxxxx xxxx xx xxxx xxxxxxxxx xxxxxxxxxxx x xxxxxx XXXX xxxxxxxxxx. X XXXX xxxxxxxxxx xx xxxx xxxxxxxxxx: xxx xxxxxx xx xx xxxxxx xxxxx xx xxx xxxxxxx xxxx xxxxxxxxxxx, xxxxxx xxxx xx xxxxxxx xxx xxxxx xx xxxx xxxxxxxxxx xxxx xxx xxxxxxx xxxx xx xxxxxx xxxxxxxxx xxxxxxx xxx xxx XXXX xxxxxxxxxx.
+Backing type info is associated with particular XAML namespace definitions. XAML frameworks such as the Windows Runtime can aggregate multiple assemblies and multiple code namespaces to map to a single XAML namespace. This enables the concept of a XAML vocabulary that covers a larger programming framework or technology. A XAML vocabulary can be quite extensive—for example, most of the XAML documented for Windows Runtime apps in this reference constitutes a single XAML vocabulary. A XAML vocabulary is also extensible: you extend it by adding types to the backing code definitions, making sure to include the types in code namespaces that are already used as mapped namespace sources for the XAML vocabulary.
 
-X XXXX xxxxxxxxx xxx xxxx xx xxxxx xxx xxxxxxx xxxx xxx xxxxxxx xxxxxxxxxx xxxxxxxxxx xxxx xxxx XXXX xxxxxxxxx xxxx xx xxxxxxx x xxx-xxxx xxxxxx xxxxxxxxxxxxxx. Xxxx xx xxx XXXX xx xxxxxx xx x xxx xx xxxxxxxxx xxx xxxxxxxx xxxxxxxxxxx xx xxxxxx-xxxxxxxxxxxx xxxxxxxx, xxx xxx XXXX xx xxxx xx x XX xxxxxxxxxx xxxxxxxxx xxx x Xxxxxxx Xxxxx xxx.
+A XAML processor can look up types and members from the backing assemblies associated with that XAML namespace when it creates a run-time object representation. This is why XAML is useful as a way to formalize and exchange definitions of object-construction behavior, and why XAML is used as a UI definition technique for a Windows Store app.
 
-## XXXX xxxxxxxxxx xx xxxxxxx XXXX xxxxxx xxxxx
+## XAML namespaces in typical XAML markup usage
 
-X XXXX xxxx xxxxxx xxxxxx xxxxxxxx x xxxxxxx XXXX xxxxxxxxx xx xxx xxxx xxxxxxx. Xxx xxxxxxx XXXX xxxxxxxxx xxxxxxx xxxxx xxxxxxxx xxx xxx xxxxxxx xxxxxxx xxxxxxxxxx xxxx xx x xxxxxx. Xxx xxxxxxx, xx xxx xxxxxxx xx xxxxxxx `<Balloon />`, x XXXX xxxxxx xxxx xxxxxx xxxx xx xxxxxxx **Xxxxxxx** xxxxxx xxx xx xxxxx xx xxx xxxxxxx XXXX xxxxxxxxx. Xx xxxxxxxx, xx **Xxxxxxx** xx xxx xx xxx xxxxxxx xxxxxxx XXXX xxxxxxxxx, xxx xxxx xxxxxxx xxxxxxx xxxx xxxxxxx xxxx xxxx x xxxxxx, xxx xxxxxxx `<party:Balloon />`. Xxx xxxxxx xxxxxxxxx xxxx xxx xxxxxxx xxxxxx xx x xxxxxxxxx XXXX xxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxx, xxx xxx xxxx xxx x XXXX xxxxxxxxx xx xxx xxxxxx **xxxxx** xxxxxx xxx xxx xxx xxxx xxxxxxx. XXXX xxxxxxxxxx xxxxx xx xxx xxxxxxxx xxxxxxx xx xxxxx xxxx xxx xxxxxxxx, xxx xxxx xx xxx xxxxxxx xxxx xx xxxxxxxxx xx xxxx xxxxxxx xx xxx XXXX xxxxxxxxx. Xxx xxxx xxxxxx, XXXX xxxxxxxxxx xxx xxxxxx xxxxxx xxxxxxxx xx xxxx xxxxxxxx xx x XXXX xxxx xx xxxx xxxxxxxxx xx xxxx xxxxxxxxxxx.
+A XAML file almost always declares a default XAML namespace in its root element. The default XAML namespace defines which elements you can declare without qualifying them by a prefix. For example, if you declare an element `<Balloon />`, a XAML parser will expect that an element **Balloon** exists and is valid in the default XAML namespace. In contrast, if **Balloon** is not in the defined default XAML namespace, you must instead qualify that element name with a prefix, for example `<party:Balloon />`. The prefix indicates that the element exists in a different XAML namespace than the default namespace, and you must map a XAML namespace to the prefix **party** before you can use this element. XAML namespaces apply to the specific element on which they are declared, and also to any element that is contained by that element in the XAML structure. For this reason, XAML namespaces are almost always declared on root elements of a XAML file to take advantage of this inheritance.
 
-## Xxx xxxxxxx xxx XXXX xxxxxxxx XXXX xxxxxxxxx xxxxxxxxxxxx
+## The default and XAML language XAML namespace declarations
 
-Xxxxxx xxx xxxx xxxxxxx xx xxxx XXXX xxxxx, xxxxx xxx xxx **xxxxx** xxxxxxxxxxxx. Xxx xxxxx xxxxxxxxxxx xxxx x XXXX xxxxxxxxx xx xxx xxxxxxx: `xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"`
+Within the root element of most XAML files, there are two **xmlns** declarations. The first declaration maps a XAML namespace as the default: `xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"`
 
-Xxxx xx xxx xxxx XXXX xxxxxxxxx xxxxxxxxxx xxxx xx xxxxxxx xxxxxxxxxxx Xxxxxxxxx xxxxxxxxxxxx xxxx xxxx xxx XXXX xx x XX xxxxxxxxxx xxxxxx xxxxxx. Xxx xxx xx xxx xxxx xxxxxxxxxx xx xxxxxxxxxx, xxx xx xxxxxxx xxxx xxx xxxxxxx xxxxxxxxxx xxxxxxx XX xx x Xxxxxxx Xxxxxxx xxx xxxxx X++, X#, xx Xxxxxx Xxxxx.
+This is the same XAML namespace identifier used in several predecessor Microsoft technologies that also use XAML as a UI definition markup format. The use of the same identifier is deliberate, and is helpful when you migrate previously defined UI to a Windows Runtime app using C++, C#, or Visual Basic.
 
-Xxx xxxxxx xxxxxxxxxxx xxxx x xxxxxxxx XXXX xxxxxxxxx xxx xxx XXXX-xxxxxxx xxxxxxxx xxxxxxxx, xxxxxxx xx (xxxxxxxxx) xx xxx "x:" xxxxxx: `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`
+The second declaration maps a separate XAML namespace for the XAML-defined language elements, mapping it (typically) to the "x:" prefix: `xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"`
 
-Xxxx **xxxxx** xxxxx, xxx xxx "x:" xxxxxx xx xx xxxxxx xx, xx xxxx xxxxxxxxx xx xxx xxxxxxxxxxx xxxx xx xxxxxxx xxxxxxxxxxx Xxxxxxxxx xxxxxxxxxxxx xxxx xxx XXXX.
+This **xmlns** value, and the "x:" prefix it is mapped to, is also identical to the definitions used in several predecessor Microsoft technologies that use XAML.
 
-Xxx xxxxxxxxxxxx xxxxxxx xxxxx xxxxxxxxxxxx xx xxxx XXXX xx x xxxxxxxx xxxxxxxxxx, xxx xxx Xxxxxxx Xxxxxxx xx xxx xxxxxxxxxxxxxx xxxx xxxx XXXX xx x xxxxxxxx xxx xxxxxxx x xxxxxxxx xxxxxxxxxx xxxxx xxx xxxxx xxx xxxxxxxxxx xx XXXX.
+The relationship between these declarations is that XAML is a language definition, and the Windows Runtime is one implementation that uses XAML as a language and defines a specific vocabulary where its types are referenced in XAML.
 
-Xxx XXXX xxxxxxxx xxxxxxxxx xxxxxxx xxxxxxxx xxxxxxxx, xxx xxxx xx xxxxx xxxxxx xx xxxxxxxxxx xxxxxxx XXXX xxxxxxxxx xxxxxxxxxxxxxxx xxxxxxx xxxxxxx xxx XXXX xxxxxxxxx. Xxx "x:" xxxxxxx xxxxxxxxxx xxx xxx XXXX xxxxxxxx XXXX xxxxxxxxx xx xxxxxxxx xx xxxxxxx xxxxxxxxx, xxxxxx xxxx, xxx xxx xxxxxxxxxxxxx xxx xxxxxxxx xxxxxxxx. Xxx XXXX xxxxxxxx xxxxxxxxx xxxxxxx xxxxxxx xxxxxxxx xxxx xxxxxxxx xxxx xxx xxxxxxxxx xxxx xxx xxxxx Xxxxxxx Xxxxxxx xxxx xxxxx X++, X#, xx Xxxxxx Xxxxx. Xxx xxxxxxx, xx xxxx xxx xxxx-xxxxxx xx x XXXX xxxx xxxxxxx x xxxxxxx xxxxx, xxx xxxx xxxx xxxx xxxxx xx xxx [x:Xxxxx xxxxxxxxx](x-class-attribute.md) xx xxx xxxx xxxxxxx xx xxx xxxxxxxx XXXX xxxx. Xx, xxx xxxxxxx xx xxxxxxx xx x XXXX xxxx xx x xxxxx xxxxxxxx xx x [XxxxxxxxXxxxxxxxxx xxx XXXX xxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187273) xxxx xxxx xxx [x:Xxx xxxxxxxxx](x-key-attribute.md) xxx xx xxx xxxxxx xxxxxxx xx xxxxxxxx.
+The XAML language specifies certain language elements, and each of these should be accessible through XAML processor implementations working against the XAML namespace. The "x:" mapping convention for the XAML language XAML namespace is followed by project templates, sample code, and the documentation for language features. The XAML language namespace defines several commonly used features that are necessary even for basic Windows Runtime apps using C++, C#, or Visual Basic. For example, to join any code-behind to a XAML file through a partial class, you must name that class as the [x:Class attribute](x-class-attribute.md) in the root element of the relevant XAML file. Or, any element as defined in a XAML page as a keyed resource in a [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273) must have the [x:Key attribute](x-key-attribute.md) set on the object element in question.
 
-## Xxxxx XXXX xxxxxxxxxx
+## Other XAML namespaces
 
-Xx xxxxxxxx xx xxx xxxxxxx xxxxxxxxx xxx xxx XXXX xxxxxxxx XXXX xxxxxxxxx "x:", xxx xxx xxxx xxx xxxxx xxxxxx XXXX xxxxxxxxxx xx xxx xxxxxxx xxxxxxx XXXX xxx xxxx xx xxxxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx.
+In addition to the default namespace and the XAML language XAML namespace "x:", you may also see other mapped XAML namespaces in the initial default XAML for apps as generated by Microsoft Visual Studio.
 
-### **x: (xxxx://xxxxxxx.xxxxxxxxx.xxx/xxxxxxxxxx/xxxxx/YYYY)**
+### **d: (http://schemas.microsoft.com/expression/blend/2008)**
 
-Xxx "x:" XXXX xxxxxxxxx xx xxxxxxxx xxx xxxxxxxx xxxxxxx, xxxxxxxxxxxx xxxxxxxx xxxxxxx xx xxx XXXX xxxxxx xxxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx. Xxx" x:" XXXX xxxxxxxxx xxxxxxx xxxxxxxx xx xxxxxx-xxxx xxxxxxxxxx xx XXXX xxxxxxxx. Xxxxx xxxxxxxx xxxxxxxxxx xxxxxx xxxx xxx xxxxxx xxxxxxx xx xxx XXXX xxxxxxx. Xxx xxxxxxxx xxxxxxxxxx xxx xxxxxxx xxxx xxx xxxx XXXX xx xxxxxx xx xxx Xxxxxxx Xxxxxxx XXXX xxxxxx xxxx xx xxx xxxx. Xxxxxxxxx, xxx xxxxxxxx xxxxxxxxxx xxx xxxxx xx xxx XXXX xxxxxxx, xxx xx xxxxxxxx xxxxx xxx xxxx xxxxxxx xxxxxxxxx xxxxx xxxxxxxx x xxxxxxxx xxxxxxxxx xxxxxxxx xx xxxxxxxxxxx. Xx xxxxxxxxxx, xxxx xx xxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxx xx xxxxxxx x xxxxxx xxxxxxxxxx xxx xxxxxxxxxxx xxxx xxxx xxxxxxxx xxx xxxx xxxxxxx xxxxx xxx xxx xxxxxxxxxx XXXX xxx xxxx xxxx xxx xxxx xxxxxxx.
+The "d:" XAML namespace is intended for designer support, specifically designer support in the XAML design surfaces of Microsoft Visual Studio. The" d:" XAML namespace enables designer or design-time attributes on XAML elements. These designer attributes affect only the design aspects of how XAML behaves. The designer attributes are ignored when the same XAML is loaded by the Windows Runtime XAML parser when an app runs. Generally, the designer attributes are valid on any XAML element, but in practice there are only certain scenarios where applying a designer attribute yourself is appropriate. In particular, many of the designer attributes are intended to provide a better experience for interacting with data contexts and data sources while you are developing XAML and code that use data binding.
 
--   **x:XxxxxxXxxxxx xxx x:XxxxxxXxxxx xxxxxxxxxx:** Xxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxx xx xxx xxxx xx x XXXX xxxx xxxx Xxxxxx Xxxxxx xx xxxxxxx XXXX xxxxxxxx xxxxxxx xxxxxxx xxx xxx. Xxx xxxxxxx, xxxxx xxxxxxxxxx xxx xxx xx xxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227647) xxxx xx xxx XXXX xxxx xx xxxxxxx xx xxx xxx x xxx **XxxxXxxxxxx** xx xxxx xxx xxxxxxx. Xxxxx xxxxxxxxxx xxxx xx xxxxxx xx xxxxxx xxx xxxxxxxxxxx xx xxx XXXX xxxxxxx, xx xxxx xxx xxxx xxxx xxxxxxxxxxxx xx xxx xxxxxx xxxxxxxxxxx xxxx xxxxx xxxxx xxxx xxxx XXXX xxxxxxx xx xxxx xxx x xxxxxxx xxxxxxxx xx xxxxx xxxx xx x xxxxxx XX xxxx.
+-   **d:DesignHeight and d:DesignWidth attributes:** These attributes are sometimes applied to the root of a XAML file that Visual Studio or another XAML designer surface creates for you. For example, these attributes are set on the [**UserControl**](https://msdn.microsoft.com/library/windows/apps/br227647) root of the XAML that is created if you add a new **UserControl** to your app project. These attributes make it easier to design the composition of the XAML content, so that you have some anticipation of the layout constraints that might exist once that XAML content is used for a control instance or other part of a larger UI page.
 
-   **Xxxx**  Xx xxx xxx xxxxxxxxx XXXX xxxx Xxxxxxxxx Xxxxxxxxxxx xxx xxxxx xxxx xxxxx xxxxxxxxxx xx xxxx xxxxxxxx xxxx xxxxxxxxx xx xxxxxx XX xxxx. Xxx xxxxx xxxx xx xxxxxx xxx xxxxxxxxxx xx xxxx xxxx. Xxxxx xxxxxxxx xx xxx XXXX xxxxxxxxx xxxx xx xxx xxxxxxxxx xxx xxxxxxxx xxxx xxxxxx xxx xxxxxxxxx xxxx xxxxxxx xxxx xxxxxx xxxxxxx xxx xxxx xxxxxx xxxx xxxx xx x xxxxx xxxx xxxx xxxxxx xxxxx **x:XxxxxxXxxxxx** xxx **x:XxxxxxXxxxx**.
+   **Note**  If you are migrating XAML from Microsoft Silverlight you might have these attributes on root elements that represent an entire UI page. You might want to remove the attributes in this case. Other features of the XAML designers such as the simulator are probably more useful for designing page layouts that handle scaling and view states well than is a fixed size page layout using **d:DesignHeight** and **d:DesignWidth**.
 
--   **x:XxxxXxxxxxx xxxxxxxxx:** Xxx xxx xxx xxxx xxxxxxxxx xx x xxxx xxxx xx x xxxxxxx xx xxxxxxxx xxx xxxxxxxx xx xxxxxxxxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208713) xxxx xxxxxx xxxxxxxxx xxx.
--   **x:XxxxxxXxxxxx xxxxxxxxx:** Xxxxxxxxx x xxxxxx-xxxx xxxx xxxxxx xxx x [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209833), xxxxxxxxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209835).
--   **x:XxxxxxXxxxxxxx xxx x:XxxxxxXxxx xxxxxx xxxxxxxxxx:** Xxxxx xxxxxx xxxxxxxxxx xxx xxxx xx xxxxxxx xxx xxxxxx-xxxx xxxx xxxxxxxxx xxx xxxxxx **x:XxxxXxxxxxx** xx **x:XxxxxxXxxxxx**. Xx xxx'x xxxxx xxxxxxxx xxx xx xxx xxxxxx-xxxx xxxx xxxxxxxxx xxxx. Xxx xxxx xxxx, xxx [Xxxxxx-Xxxx Xxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=272504). Xxx xxxx xxxxx xxxxxxxx, xxx [Xxxxxx xxxx xx xxx xxxxxx xxxxxxx, xxx xxx xxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt517866).
+-   **d:DataContext attribute:** You can set this attribute on a page root or a control to override any explicit or inherited [**DataContext**](https://msdn.microsoft.com/library/windows/apps/br208713) that object otherwise has.
+-   **d:DesignSource attribute:** Specifies a design-time data source for a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833), overriding [**Source**](https://msdn.microsoft.com/library/windows/apps/br209835).
+-   **d:DesignInstance and d:DesignData markup extensions:** These markup extensions are used to provide the design-time data resources for either **d:DataContext** or **d:DesignSource**. We won't fully document how to use design-time data resources here. For more info, see [Design-Time Attributes](http://go.microsoft.com/fwlink/p/?LinkId=272504). For some usage examples, see [Sample data on the design surface, and for prototyping](https://msdn.microsoft.com/library/windows/apps/mt517866).
 
-### **xx: (xxxx://xxxxxxx.xxxxxxxxxxxxxx.xxx/xxxxxx-xxxxxxxxxxxxx/YYYY) **
+### **mc: (http://schemas.openxmlformats.org/markup-compatibility/2006) **
 
-" xx:" xxxxxxxxx xxx xxxxxxxx x xxxxxx xxxxxxxxxxxxx xxxx xxx xxxxxxx XXXX. Xxxxxxxxx, xxx "x:" xxxxxx xx xxxxxxxxxx xxxx xxx xxxxxxxxx **xx:Xxxxxxxxx**. Xxxx xxxxxxxxx xxxxxxx xxx-xxxx XXXX xxxxxxx xx xxxxxx xxx xxxxxx xxxxxxxxxx xx "x:".
+" mc:" indicates and supports a markup compatibility mode for reading XAML. Typically, the "d:" prefix is associated with the attribute **mc:Ignorable**. This technique enables run-time XAML parsers to ignore the design attributes in "d:".
 
-### **xxxxx:** xxx **xxxxxx:**
+### **local:** and **common:**
 
-"xxxxx:" xx x xxxxxx xxxx xx xxxxx xxxxxx xxx xxx xxxxxx xxx XXXX xxxxx xxx x xxxxxxxxx Xxxxxxx Xxxxx xxx xxxxxxx. Xx'x xxxxxx xx xxxxx xx xxx xxxx xxxxxxxxx xxxx'x xxxxxxx xx xxxxxxx xxx [x:Xxxxx xxxxxxxxx](x-class-attribute.md) xxx xxxx xxx xxx xxx XXXX xxxxx xxxxxxxxx xxx.xxxx. Xx xxxx xx xxx xxxxxx xxx xxxxxx xxxxxxx xxx xxxx xx xxx xx XXXX xx xxxx xxxx xxxxxxxxx, xxx xxx xxx xxx **xxxxx:** xxxxxx xx xxxxx xx xxxx xxxxxx xxxxx xx XXXX. X xxxxxxx xxxxxx xxxx xxxxx xxxx x xxxxxxxxx Xxxxxxx Xxxxx xxx xxxxxxx xx **xxxxxx:**. Xxxx xxxxxx xxxxxx xx x xxxxxx "Xxxxxx" xxxxxxxxx xxxx xxxxxxxx xxxxxxx xxxxxxx xxxx xx xxxxxxxxxx xxx xxxxxxxx, xxx xxx xxx xxxx xxx xxxxxxxxxxx xx xxx Xxxxxx xxxxxx xx xxx **Xxxxxxxx Xxxxxxxx** xxxx.
+"local:" is a prefix that is often mapped for you within the XAML pages for a templated Windows Store app project. It's mapped to refer to the same namespace that's created to contain the [x:Class attribute](x-class-attribute.md) and code for all the XAML files including app.xaml. So long as you define any custom classes you want to use in XAML in this same namespace, you can use the **local:** prefix to refer to your custom types in XAML. A related prefix that comes from a templated Windows Store app project is **common:**. This prefix refers to a nested "Common" namespace that contains utility classes such as converters and commands, and you can find the definitions in the Common folder in the **Solution Explorer** view.
 
-### **xxx:**
+### **vsm:**
 
-Xx xxx xxx. "xxx:" xx x xxxxxx xxxx xx xxxxxxxxx xxxx xx xxxxx XXXX xxxxxxxxx xxxxxxxx xxxx xxxxx Xxxxxxxxx xxxxxxxxxxxx. Xxx xxxxxxxxx xxxxxxxxxx xxxxxxxxx x xxxxxx xxxxxxxxx xxxxxxx xxxxx. Xxx xxxxxx xxxxxx XXXX xxxxxxxxx xxxxxxxxxxx xxx "xxx:" xx xxx XXXX xxx xxx xxx xxx Xxxxxxx Xxxxxxx, xxx xxxxxx xxx xxxxxx xxxxxx xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209007), [**XxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209014) xxx xxxxxxx xxxxxxx xx xxx xxx xxxxxxx XXXX xxxxxxxxx xxxxxxx. Xxx xxxx xxxx xx XXXX xxxxxxxxx, xxx [Xxxxxxxxx Xxxxxxxxxxx xx XXX XXXX/xxxx xx x Xxxxxxx Xxxxxxx xxx](https://msdn.microsoft.com/library/windows/apps/br229571).
+Do not use. "vsm:" is a prefix that is sometimes seen in older XAML templates imported from other Microsoft technologies. The namespace originally addressed a legacy namespace tooling issue. You should delete XAML namespace definitions for "vsm:" in any XAML you use for the Windows Runtime, and change any prefix usages for [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007), [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) and related objects to use the default XAML namespace instead. For more info on XAML migration, see [Migrating Silverlight or WPF XAML/code to a Windows Runtime app](https://msdn.microsoft.com/library/windows/apps/br229571).
 
-## Xxxxxxx xxxxxx xxxxx xx XXXX xxxxxxxxxx xxx xxxxxxxx
+## Mapping custom types to XAML namespaces and prefixes
 
-Xxx xxx xxx x XXXX xxxxxxxxx xx xxxx xxx xxx xxx XXXX xx xxxxxx xxxx xxx xxxxxx xxxxx. Xx xxxxx xxxxx, xxx xxx xxxxxxx x xxxx xxxxxxxxx xx xx xxxxxx xx x xxxx xxxxxxxxxxxxxx xxxx xxxxxxx xxx xxxxxx xxxx, xxx xxxxxxxxx xx x XXXX xxxxxxxxx xxxxx xxxx x xxxxxx xxx xxxxx. Xxxxxx xxxxx xxx XXXX xxx xx xxxxxxx xxxxxx xx x Xxxxxxxxx .XXX xxxxxxxx (X# xx Xxxxxxxxx Xxxxxx Xxxxx) xx xx X++. Xxx xxxxxxx xx xxxx xx xxxxxxxx xx **xxxxx** xxxxxx. Xxx xxxxxxx, `xmlns:myTypes` xxxxxxx x xxx XXXX xxxxxxxxx xxxx xx xxxxxxxx xx xxxxxxxxx xxx xxxxxx xxxx xxx xxxxx `myTypes:`.
+You can map a XAML namespace so that you can use XAML to access your own custom types. In other words, you are mapping a code namespace as it exists in a code representation that defines the custom type, and assigning it a XAML namespace along with a prefix for usage. Custom types for XAML can be defined either in a Microsoft .NET language (C# or Microsoft Visual Basic) or in C++. The mapping is made by defining an **xmlns** prefix. For example, `xmlns:myTypes` defines a new XAML namespace that is accessed by prefixing all usages with the token `myTypes:`.
 
-Xx **xxxxx** xxxxxxxxxx xxxxxxxx x xxxxx xx xxxx xx xxx xxxxxx xxxxxx. Xxx xxxxx xx x xxxxxx xxxx xxxx xxxxxx xxxxxxxxx xxxxx, xxxxxxxxx xx xxxxx xxxx. X xxxxxx XXX xxxxxxxxxx xx xx xxxxxxxxx xxx XXX xxxxxxxxx xxxx x Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX), xx xxxx xxxxx xx x xxxxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxxxxxxxx. Xxx xxxx xxx xxxx xxxxxxxxxx xxx xxx xxxxxxx XXXX xxxxxxxxx xxx xxx XXXX xxxxxxxx XXXX xxxxxxxxx, xx xxxx xx xxx xxxx xxxxxx-xxxx XXXX xxxxxxxxxx xxxx xxx xxxx xx Xxxxxxx Xxxxxxx XXXX. Xxx xxx x XXXX xxxxxxxxx xxxx xxxx xxxxxx xxxxx, xxxxxxx xx xxxxxxxxxx x XXX, xxx xxxxx xxx xxxxxx xxxxxxxxxx xxxx xxx xxxxx "xxxxx:". Xxxxxxxxx xxx "xxxxx:" xxxxx, xxx xxxx xxxx xxx xxxx xxxxxxxxx.
+An **xmlns** definition includes a value as well as the prefix naming. The value is a string that goes inside quotation marks, following an equal sign. A common XML convention is to associate the XML namespace with a Uniform Resource Identifier (URI), so that there is a convention for uniqueness and identification. You also see this convention for the default XAML namespace and the XAML language XAML namespace, as well as for some lesser-used XAML namespaces that are used by Windows Runtime XAML. But for a XAML namespace that maps custom types, instead of specifying a URI, you begin the prefix definition with the token "using:". Following the "using:" token, you then name the code namespace.
 
-Xxx xxxxxxx, xx xxx x "xxxxxxY" xxxxxx xxxx xxxxxxx xxx xx xxxxxxxxx x "XxxxxxXxxxxxx" xxxxxxxxx, xxx xxx xxxxxxx xxxx xxxx xxxxxxxxx xx xxxxxxxx xx xxxxxx xxxxxxxx xx XXXX, xxxx XXXX xxxx xxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxx xx xxx xxxx xxxxxxx: `xmlns:custom1="using:CustomClasses"`
+For example, to map a "custom1" prefix that enables you to reference a "CustomClasses" namespace, and use classes from that namespace or assembly as object elements in XAML, your XAML page should include the following mapping on the root element: `xmlns:custom1="using:CustomClasses"`
 
-Xxxxxxx xxxxxxx xx xxx xxxx xxxx xxxxx xx xxx xxxx xx xx xxxxxx. Xxx xxxxxxx, xxx xxx'x xxxx xxxxxxxx xx xxxxxxxxx xxx xxxxx xxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxx xxxxxx xxxx xxx XXXX XX xxxxxxxxxx xx xxxx xxxx. Xxxx, xxxx xx xxx xxxxxxxx XXXX xxxxx xxxx Xxxxxx Xxxxxx xxxxxxxxx xxxxxxxx xxx x Xxxxxxx Xxxxxxx xxx xxxxx X++, X#, xx Xxxxxx Xxxxx xxxxxxx xxx x "xxxxx:" xxxxxx, xxxxx xxxxxxxxxx xxx xxxxxxx-xxxxxxxxx xxxxxxx xxxxxxxxx xxx xxx xxxxxxxxx xxxx xx xxxxxxx xxxxx xxxxxxxxxxx.
+Partial classes of the same page scope do not need to be mapped. For example, you don't need prefixes to reference any event handlers that you defined for handling events from the XAML UI definition of your page. Also, many of the starting XAML pages from Visual Studio generated projects for a Windows Runtime app using C++, C#, or Visual Basic already map a "local:" prefix, which references the project-specified default namespace and the namespace used by partial class definitions.
 
-### XXX xxxxxxxx xxxxx
+### CLR language rules
 
-Xx xxx xxx xxxxxxx xxxx xxxxxxx xxxx xx x .XXX xxxxxxxx (X# xx Xxxxxxxxx Xxxxxx Xxxxx), xxx xxxxx xx xxxxx xxxxxxxxxxx xxxx xxx x xxx (".") xx xxxx xx xxxxxxxxx xxxxx xx xxxxxx x xxxxxxxxxx xxxxxxxxx xx xxxx xxxxxxxxxx. Xx xxxx xxxxxxxxx xxxxxxxxxx xxxxxxxx x xxx, xxx xxx xxxxxx xx xxxx xx xxx xxxxx xxx xxxxxxx xxxxx xxx "xxxxx:" xxxxx.
+If you are writing your backing code in a .NET language (C# or Microsoft Visual Basic), you might be using conventions that use a dot (".") as part of namespace names to create a conceptual hierarchy of code namespaces. If your namespace definition contains a dot, the dot should be part of the value you specify after the "using:" token.
 
-Xx xxxx xxxx-xxxxxx xxxx xx xxxx xxxxxxxxxx xxxx xx x X++ xxxx, xxxxx xxx xxxxxxx xxxxxxxxxxx xxxx xxxxx xxxxxx xxx xxxxxx xxxxxxxx xxxxxxx (XXX) xxxxxxxx xxxx, xx xxxx xxxxx xx xx xxxxxxxxxx xx xxx XXXX xxxxxx. Xx xxx xxxxxxx xxxxxx xxxxxxxxxx xx X++, xxx xxxxxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxx xxxxxxxxx xxxxxxx xxxxxx xx "." xxxxxx xxxx "::" xxxx xxx xxxxxxx xxx xxxxx xxxx xxxxxxx xxx "xxxxx:" xxxxx.
+If your code-behind file or code definition file is a C++ file, there are certain conventions that still follow the common language runtime (CLR) language form, so that there is no difference in the XAML syntax. If you declare nested namespaces in C++, the separator between the successive nested namespace strings should be "." rather than "::" when you specify the value that follows the "using:" token.
 
-Xxx'x xxx xxxxxx xxxxx (xxxx xx xxxxxxx xx xxxxxxxxxxx xxxxxx x xxxxx) xxxx xxx xxxxxx xxxx xxxx xxx xxx xxxx XXXX. Xxxxxx xxxxx xxx'x xx xxxxxxxxx. Xxxxx'x xx xxx xxx xxx XXXX xxxxxx xx xxxxxxxxxxx xxxx x xxx xx xxxx xx xxx xxxxxx xxxx xxxx xxxxxx xxxx xxxx xx xxx xxxxxxxxx xxxx.
+Don't use nested types (such as nesting an enumeration within a class) when you define your code for use with XAML. Nested types can't be evaluated. There's no way for the XAML parser to distinguish that a dot is part of the nested type name rather than part of the namespace name.
 
-## Xxxxxx xxxxx xxx xxxxxxxxxx
+## Custom types and assemblies
 
-Xxx xxxx xx xxx xxxxxxxx xxxx xxxxxxx xxx xxxxxxx xxxxx xxx x XXXX xxxxxxxxx xx xxx xxxxxxxxx xx xxx xxxxxxx. Xxx xxxxx xxx xxxxx xxxxxxxxxx xxx xxxxxxxxx xx xxxxxxxxxx xx xxx xxx-xxxxxxxxxx xxxxx xxx xx xxxx xx xxxxx xxx xxxxxxxxxx xxx xxxxxxxx xxxxxxxxxx. Xxxxxxx xxx xxxxxxxx xxxx xxx xxxx xxxxxxxx xx x xxxx-xxxxxxxxxx xxxxxx xxx XXXX xx x xxxxxxxxx xxxxxxxx xx xxxxxxx xxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxx Xxxxxxx Xxxxxxx xxxxxxxxxx xx X# xxx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx).
+The name of the assembly that defines the backing types for a XAML namespace is not specified in the mapping. The logic for which assemblies are available is controlled at the app-definition level and is part of basic app deployment and security principles. Declare any assembly that you want included as a code-definition source for XAML as a dependent assembly in project settings. For more info, see [Creating Windows Runtime components in C# and Visual Basic](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx).
 
-Xx xxx xxx xxxxxxxxxxx xxxxxx xxxxx xxxx xxx xxxxxxx xxx'x xxxxxxxxxxx xxxxxxxxxx xx xxxx xxxxxxxxxxx, xxxxx xxxxx xxx xxxxxxxxx xxxxxxx xxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxxxxxxx, xxx xxx xxxxx xxxx xxx xxx xxxx xxxxxxxxx xxxx xxxxxxxx xxxxx xxxxx. X xxxxxx xxxxxxxxxx xx xx xxx xxx xxxxxx "xxxxx" xxx xxx xxxxxxx xxxx xxxxxxxxx xx xxx xxxxx XXXX xxxx. Xxxx xxxxxxxxxx xx xxxxx xxxxxxxx xx xxxxxxxx xxxxxxx xxxxxxxxx xxx XXXX xxxxxxxx.
+If you are referencing custom types from the primary app's application definition or page definitions, those types are available without further dependent assembly configuration, but you still must map the code namespace that contains those types. A common convention is to map the prefix "local" for the default code namespace of any given XAML page. This convention is often included in starting project templates for XAML projects.
 
-## Xxxxxxxx xxxxxxxxxx
+## Attached properties
 
-Xx xxx xxx xxxxxxxxxxx xxxxxxxx xxxxxxxxxx, xxx xxxxx-xxxx xxxxxxx xx xxx xxxxxxxx xxxxxxxx xxxx xxxx xxxxxx xx xx xxx xxxxxxx XXXX xxxxxxxxx xx xx xxxxxxxx. Xx'x xxxx xx xxxxxx xxxxxxxxxx xxxxxxxxxx xxxx xxxxx xxxxxxxx xxx xxxx xx xxx xxxx xxxxx xx'x xxxxxxxxx xxxxxxxx, xxxxxxxxxxxx xxx x xxxxxx xxxxxxxx xxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxx xxxxxxxx xxxxxxxxxx](custom-attached-properties.md).
+If you are referencing attached properties, the owner-type portion of the attached property name must either be in the default XAML namespace or be prefixed. It's rare to prefix attributes separately from their elements but this is one case where it's sometimes required, particularly for a custom attached property. For more info, see [Custom attached properties](custom-attached-properties.md).
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [XXXX xxxxxxxx](xaml-overview.md)
-* [XXXX xxxxxx xxxxx](xaml-syntax-guide.md)
-* [Xxxxxxxx Xxxxxxx Xxxxxxx xxxxxxxxxx xx X# xxx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
-* [X#, XX, xxx X++ xxxxxxx xxxxxxxxx xxx Xxxxxxx Xxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/hh768232)
-* [Xxxxxxxxx Xxxxxxxxxxx xx XXX XXXX/xxxx xx x Xxxxxxx Xxxxxxx xxx](https://msdn.microsoft.com/library/windows/apps/br229571)
+* [XAML overview](xaml-overview.md)
+* [XAML syntax guide](xaml-syntax-guide.md)
+* [Creating Windows Runtime components in C# and Visual Basic](https://msdn.microsoft.com/library/windows/apps/xaml/hh441572.aspx)
+* [C#, VB, and C++ project templates for Windows Runtime apps](https://msdn.microsoft.com/library/windows/apps/hh768232)
+* [Migrating Silverlight or WPF XAML/code to a Windows Runtime app](https://msdn.microsoft.com/library/windows/apps/br229571)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

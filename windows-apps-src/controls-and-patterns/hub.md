@@ -1,115 +1,119 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxxxxxx xxxx x xxxxxxxxxxxx xxxxxxxxxx xxxxxxx xx xxxxxxx xxxx xxxx x xxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxxx.
-xxxxx: Xxx xxxxxxxx
-xx.xxxxxxx: XYYYYYYY-YYXY-YXYX-YXXY-YYYXYYXYYXXY
-xxxxx: Xxx
-xxxxxxxx: xxxxxx.xxx
+Description: ハブ コントロールは、階層型ナビゲーション パターンを使って、リレーショナル情報アーキテクチャを使ったアプリをサポートします。
+title: ハブ コントロール
+ms.assetid: F1319960-63C6-4A8B-8DA1-451D59A01AC2
+label: ハブ
+template: detail.hbs
 ---
-# Xxx xxxxxxx/xxxxxxx
+# ハブ コントロール/パターン
 
 
-X xxx xxxxxxx xxxx xxx xxxxxxxx xxx xxxxxxx xxxx xxxxxxxx, xxx xxxxxxx, xxxxxxxx xx xxxxxxxxxx. Xxxxxxxx xx x xxx xxx xxxxx xx xx xxxxxxxxx xx x xxxxxxxxx xxxxx, xxx xxx xxxxx xx xxx xxxxxxxx xxxxx xxx xxxx xxxxxxxx xxxxxxxxxxx.
+ハブ コントロールを使うと、アプリのコンテンツを、関連した別個のセクションやカテゴリに整理できます。 ハブのセクションは、優先順に走査するためのものであり、さらに細かいエクスペリエンスにする出発点として使うことができます。
 
-![Xxxxxxx xx x xxx](images/hub_example_tablet.png)
+![ハブの例](images/hub_example_tablet.png)
 
-Xxxxxxx xx x xxx xxx xx xxxxxxxxx xx x xxxxxx xxxxxxx xxxx xxxx xxxxxx xxxxx xx xxx x xxxxxxx xx xxxx'x xxx, xxxx'x xxxxxxxxx, xxx xxxx'x xxxxxxxx. Xxxx xxxxxxxxx xxxx x xxxx xxxxxx, xxxxx xxxxxxxx xxxxxxx xxxxxxxx xxxx xxx x xxxxxxx xxxxxx.
+ハブのコンテンツはパンする堅牢なビューに表示でき、新しい情報、入手可能な項目、関連する項目がひとめでわかります。 ハブには通常ページ ヘッダーがありますが、複数の各コンテンツ セクションにはセクション ヘッダーがあります。
 
-Xxx xxx xxxxxxx xxx xxxxxxx xxxxxxxx xxxx xxxx xx xxxx xxxx xxx xxxxxxxx x xxxxxxx xxxxxxxxxx xxxxxxx.
+ハブ コントロールには、コンテンツのナビゲーション パターンを構築するのに適したいくつかの機能があります。
 
--   **Xxxxxx xxxxxxxxxx**
+-   **視覚的なナビゲーション**
 
-    X xxx xxxxxx xxxxxxx xx xx xxxxxxxxx xx x xxxxxxx, xxxxx, xxxx-xx-xxxx xxxxx.
+    ハブを使うと、多様性のある簡潔なスキャンしやすい配列にコンテンツを表示できます。
 
--   **Xxxxxxxxxxxxxx**
+-   **分類**
 
-    Xxxx xxx xxxxxxx xxxxxx xxx xxx xxxxxxx xx xx xxxxxxxx xx x xxxxxxx xxxxx.
+    各ハブ セクションでは、コンテンツを論理的な順序に配置できます。
 
--   **Xxxxx xxxxxxx xxxxx**
+-   **混在したコンテンツの種類**
 
-    Xxxx xxxxx xxxxxxx xxxxx, xxxxxxxx xxxxx xxxxx xxx xxxxxx xxx xxxxxx. X xxx xxxxxx xxxx xxxxxxx xxxx xx xx xxxxxxxx xxx xxxxxx xxxx xxx xx xxxx xxx xxxxxxx.
+    コンテンツの種類が混在する場合、資産の可変サイズと比率は共通です。 ハブを使うと、コンテンツの各種類を一意なものにし、各ハブ セクションに整然と配置できます。
 
--   **Xxxxxxxx xxxx xxx xxxxxxx xxxxxx**
+-   **ページとコンテンツの可変幅**
 
-    Xxxxx x xxxxxxxxx xxxxx, xxx xxx xxxxxx xxx xxxxxxxxxxx xx xxx xxxxxxx xxxxxx. Xxxx xx xxxxx xxx xxxxxxx xx xxxxxxxxx xxxxxx, xxx xxxxxx x xxxxx-xx-xxxx xxxxxx xx xxxxx xx xxxxxx xxxxxxx xxxx.
+    パノラマ モデルであるハブでは、セクション幅を調整できます。 これは異なる深度のあるコンテンツに役立ち、また項目数が少なくても多くても同様に適切に書式設定できます。
 
--   **Xxxxxxxx xxxxxxxxxxxx**
+-   **柔軟なアーキテクチャ**
 
-    Xx xxx'x xxxxxx xx xxxx xxxx xxx xxxxxxxxxxxx xxxxxxx, xxx xxx xxx xxx xxxxxxx xxxxxxx xxxx x xxx xxxxxxx xxxxxxx.
+    アプリのアーキテクチャを浅く維持する場合、すべてのチャネル コンテンツをハブ セクションの概要に収めることができます。
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">重要な API</span>
 
--   [**Xxx xxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/dn251843)
--   [**XxxXxxxxxx xxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/dn251845)
--   [**Xxx xxxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/dn255137)
+-   [**Hub クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn251843)
+-   [**HubSection クラス (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn251845)
+-   [**Hub オブジェクト (HTML)**](https://msdn.microsoft.com/library/windows/apps/dn255137)
 
 
-## Xx xxxx xxx xxxxx xxxxxxx?
+## 適切なコントロールの選択
 
-Xxx xxx xxxxxxx xxxxx xxxx xxx xxxxxxxxxx xxxxx xxxxxxx xx xxxxxxx xxxx xx xxxxxxxx xx x xxxxxxxxx. Xxxx xxxxxxxxxx xxx xxxxxxxx xxx xxxxxxxxx xx xxx xxxxxxx, xxxxxx xxxx xxxxxx xxx xxxxxxxxxx xxxxx xx x xxxxx xx x xxxxx xxxxxxxxxx.
+ハブ コントロールは、階層に配置された大量のコンテンツを表示する場合に適してします。 ハブは、新しいコンテンツの閲覧と検出の優先順位を設定し、ストアやメディア コレクション内の項目を表示する際に役立ちます。
 
-X xxx xx xxxx xxx xx xxxxxxx xxxxxxxxxx xxxxxxxx xxx xxx xxx; xx xxxxx xxxx xxxxx xxxxxxxxxx xxxxxxxx xxx xxx xxxxx xxxxxxxxxx xxxxxxxx, xxx xxx [Xxxxxxxxxx xxxxxx xxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx](https://msdn.microsoft.com/library/windows/apps/dn958438).
+ハブは、いくつかある利用可能なナビゲーション要素の 1 つです。ナビゲーション パターンと他のナビゲーション要素について詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリのナビゲーション デザインの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)」をご覧ください。
 
-## Xxx xxxxxxxxxxxx
+## ハブのアーキテクチャ
 
-Xxx xxx xxxxxxx xxx x xxxxxxxxxxxx xxxxxxxxxx xxxxxxx xxxx xxxxxxx xxxx xxxx x xxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxxx. X xxx xxxxxxxx xx xxxxxxxxx xxxxxxxxxx xx xxxxxxx, xxxx xx xxxxx xxxx xx xxx xxx'x xxxxxxx xxxxx. Xxxxxxx xxxxx xxx xx xxxxxxxxx xx xxx xxxx xxxx xxxx xxxxxxxxxx xxx xxxxxxxx xxx xxxxxxx xxxx xxx xxxxxxx xxxxxxxx.
+ハブ コントロールには、リレーショナル情報アーキテクチャを使ったアプリをサポートする階層型ナビゲーション パターンがあります。 ハブはさまざまなカテゴリのコンテンツで構成され、それぞれがアプリのセクション ページに対応付けられています。 セクション ページは、シナリオとセクションに含まれるコンテンツが最適に表現されるような形で表示できます。
 
-![xxxxxxxxx xx x xxxxxxxxxxxx Xxxx xxxx Xxxxxxx xxx](images/navigation_diagram_food_with_friends_app_new.png)
+![階層型の Food with Friends アプリのワイヤーフレーム](images/navigation_diagram_food_with_friends_app_new.png)
 
-## Xxxxxxx xxx xxxxxxx/xxxxxxxxx
+## レイアウトとパン/スクロール
 
-Xxxxx xxx x xxxxxx xx xxxx xx xxx xxx xxx xxxxxxxx xxxxxxx xx x xxx; xxxx xx xxxx xxxx xxxxxxx xxxxx xx x xxx xxxxxx xxx xx x xxxxxxxxx xxxxxxxxxxxxx xx xxx xxxxxxxxx xx xxxxx xxx xxx xxxxxxx.
+コンテンツをハブに配置して移動する方法はたくさんあります。ハブのコンテンツ リストが常にハブのスクロール方向に対して垂直にパンされる点だけ確認してください。
 
-**Xxxxxxxxxx xxxxxxx**
+**水平方向のパン**
 
-![Xxxxxxx xx x xxxxxxxxxxxx xxxxxxx xxx](images/controls_hub_horizontal_pan.png)
-**Xxxxxxxx xxxxxxx**
+![水平方向にパンするハブの例](images/controls_hub_horizontal_pan.png)
+**垂直方向のパン**
 
-![Xxxxxxx xx x xxxxxxxxxx xxxxxxx xxx](images/controls_hub_vertical_pan.png)
-**Xxxxxxxxxx xxxxxxx xxxx xxxxxxxxxx xxxxxxxxx xxxx/xxxx**
+![垂直方向にパンするハブの例](images/controls_hub_vertical_pan.png)
+**垂直方向のリストとグリッドのスクロールによる水平方向のパン**
 
-![Xxxxxxx xx x xxxxxxxxxxxx xxxxxxx xxx xxxx x xxxxxxxxxx xxxxxxxxx xxxx](images/controls_hub_horizontal_vertical_scroll.png)
-**Xxxxxxxx xxxxxxx xxxx xxxxxxxxxxxx xxxxxxxxx xxxx/xxxx**
+![垂直方向のリストのスクロールによる水平方向にパンするハブの例](images/controls_hub_horizontal_vertical_scroll.png)
+**水平方向のリストとグリッドのスクロールによる垂直方向のパン**
 
-![Xxxxxxx xx x xxxxxxxxxxxx xxxxxxx xxx](images/controls_hub_vertical_horizontal_scroll.png)
+![水平方向にパンするハブの例](images/controls_hub_vertical_horizontal_scroll.png)
 
-## Xxxxxxxx
+## 例
 
-Xxx xxx xxxxxxxx x xxxxx xxxx xx xxxxxx xxxxxxxxxxx. Xxxx xxxx xxx xxxxxx xxxx xxxx xxxx x xxxx xxxxxxx xx xxxxxxxxxx xxx xxxxxxxx xxxx xxxxxxxxxxx. Xxx xxx xxx x xxxx xxxxx xx xxxxxxx xxxxxxx xxx xxx xxxxx xxxxx; x xxxxx xxxxx xxx xxx xxxx xxx xx xxxxxxx xxxx xxxxxxxxxx xxx xxxxxxxxxxxx xxxxxxx xxxxxx xxx xxxxxx xx xxxxxxxx. Xxxx xx xx xxxxxxx xx x xxxxxx xxxx xxxxx xxx xxx xxxx xxxxx xxx xx xxxxxxx xxx xxxxxxxxx, xxxxxxxx, xxx xxxxxx xxxxx.
+ハブは、設計上の大きな柔軟性を備えています。 そのため、魅力的で視覚に訴えるさまざまなエクスペリエンスを提供するアプリを設計できます。 最初のグループには、ヒーロー画像やコンテンツ セクションを使うことができます。ヒーローには、最も強調したい内容を失うことなく垂直方向と水平方向にトリミングできる大きい画像を使ってください。 次の例は、1 つのヒーロー画像と、その画像を横長、縦長、狭い幅で表示するためにトリミングする方法を示しています。
 
-![xxxx xxxxx xxxxxxx xxx xxxxxxxxx xxxxxx xxxxx](images/hub_hero_cropped2.png)
+![さまざまなウィンドウ サイズに合わせてトリミングされたヒーロー画像](images/hub_hero_cropped2.png)
 
-Xx xxxxxx xxxxxxx, xxx xxx xxxxxxx xx xxxxxxx xx x xxxx.
+モバイル デバイスでは、一度に 1 つのハブ セクションを表示できます。
 
-![Xxxxxxx xx x xxx xxxxxxx xx x xxxxx xxxxxx](images/phone_hub_example.png)
+![小型画面上のハブ パターンの例](images/phone_hub_example.png)
 
-## Xxxxxxxxxxxxxxx
+## 推奨事項
 
--   Xx xxx xxxxx xxxx xxxx xxxxx'x xxxx xxxxxxx xx x xxx xxxxxxx, xx xxxxxxxxx xxxxxxxx xxx xxxxxxx xx xxxx x xxxxxxx xxxxxx xx xx xxxxx.
--   Xxxxx xx xxx xxxxx xx xxxx xxx, xxx xxx xxx xxxxxxx xxx xxxxxxxx xx xxx xxx xxxxxxx, xxxx xxxx xxx xxxxxxxx xxx xxx xxxxxxxxxx xxxxxxx. Xxx xxxxxxx, xxx xxxxxxx xxxxx xxxxxxx x xxxxxx xx xxxxx xxx xxxxxxxx, xxxxx xxxxxxx xxxxx xx x xxxxxxxxxx xxx xxxxxxxxxx. X xxxx xxx xxx xxxxxxx xxxxx xxxxxxxx xxxxx xxx xxxxxxx xxxxxxx xxxxx xxxx xxx xxx xxxxxxx.
--   Xxxxxx xxxxxxx xxxxxxxxxxx xxxxxx xx xxx xxxx xxx xx xxxxxxxxxxx xxxxxxxxx xxxxxx xxxxx.
--   Xx xxx xxxx xxxx xxx xxxxxxxx, xxxxxxxx xxxxxx xxxxxxxx xxxx. Xxxx xxxx xxxxx xx xxxxxx xx xxxx xxxxxxxx xxxx xxx xxx xx xxxxxxx xx x xxxxxx xxxxx.
--   Xx xxxxxxxxx xxx xxxxxx xx xxxx xx x xxx xxxxxxx xxxx xx xxxxxxx xxx; xxxxxxx, xxx xxx xxx xxxxxxxxxxx xxxxxxx xx xxxxxxxx xx xxxxxxx xxx xxxxxxx xx xxxx.
--   Xxx xxx xx x xxxxxxxx xxxxx xxx xx xxxxx xx xx xxxxxxxxxx xx xxx xxx xxxxx xx xxxx xxx. Xxx xxx xxxxxx xxx xxxxxxxxx xxxxxxx xx x xxx:
-    -   Xxxxxx xx xxxxxxxx
-    -   Xxxx xx xxxxxxx xx xxxx xxxxxxx
-    -   Xxxxxxxxx xxx xxxxx xx xxxxxxxx
-    -   Xxxx xx xxxxxxxx
-    -   Xxxxxxx xxxxxxx xxxxxxxx
-    -   Xxxxxxx xxxxxxx x xxxxxxx xxx xxx xxx xx xxxxxx xx xxx xxx
-    -   Xxxx xxxxx xxx xxxx xx xxxxxxx xxx xxxxxxx
-    -   Xxxxx xx xxx xxxxxxxxxx, xxxxxxxx, xxxxxxx xxxxxxx, xxx xxxxxxx xxxxxxx
+-   ハブ セクションに他のコンテンツがあることがユーザーにわかるように、一定量のコンテンツが見えるようにコンテンツをクリッピングすることをお勧めします。
+-   アプリの必要に基づいて、ハブ コントロールに複数のハブ セクションを追加し、各セクションに独自の機能目的を持たせることができます。 たとえば、あるセクションには一連のリンクとコントロールを含め、別のセクションはサムネイルのリポジトリとすることができます。 ユーザーは、ハブ コントロールに組み込まれているジェスチャのサポートを使って、これらのセクション間をパンすることができます。
+-   さまざまなウィンドウ サイズに対応できるように、コンテンツを動的に再配置するのが最適です。
+-   多くのハブ セクションがある場合は、ハブにセマンティック ズームを追加することを検討します。 これには、アプリが狭い幅に合わせてサイズ変更されたときにセクションを見つけやすくなるという利点もあります。
+-   ハブ セクション内の項目から別のハブに移動することはお勧めしません。代わりに、対話型ヘッダーを使って別のセクションまたはページに移動します。
+-   ハブを基盤として使って、アプリの必要に合わせてカスタマイズできます。 ハブの次の機能を変更できます。
+    -   セクションの数
+    -   各セクションのコンテンツの種類
+    -   セクションの配置と順序
+    -   セクションのサイズ
+    -   セクションとセクションの間隔
+    -   セクションとハブの上端または下端の間隔
+    -   ヘッダーとコンテンツのテキストのスタイルとサイズ
+    -   背景、セクション、セクション ヘッダー、セクション コンテンツの色
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx XXX xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、UWP アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## Xxxxxxx xxxxxxxx
+## 関連記事
 -----------------------------------------------
 
-**Xxx xxxxxxxxx**
-- [Xxxxxxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/dn958438)
+**デザイナー向け**
+- [ナビゲーションの基本](https://msdn.microsoft.com/library/windows/apps/dn958438)
 
-**Xxx xxxxxxxxxx (XXXX)**
-- [Xxxxxxxxxxxx xxxxxxxxxx, xxxxx xx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/dn440585)
-- [**Xxxxxxx.XX.Xxxx.Xxxxxxxx Xxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn251843)
-- [XXXX Xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=310072)
-- [Xxxxx x xxx](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
+**開発者向け (XAML)**
+- [階層型のナビゲーションの概要](https://msdn.microsoft.com/library/windows/apps/xaml/dn440585)
+- [**Windows.UI.Xaml.Controls Hub クラス**](https://msdn.microsoft.com/library/windows/apps/dn251843)
+- [XAML ハブ コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkID=310072)
+- [ハブの使用](https://msdn.microsoft.com/library/windows/apps/xaml/dn308518)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

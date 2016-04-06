@@ -1,15 +1,15 @@
 ---
-xxxxx: Xxxxxxx xxxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxx xxxxx xxx xx xxxxxxx xxxxxxx xx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
-xx.xxxxxxx: XXYYYXYY-YYYX-YYYX-XYXY-XYYYYYYXXYYY
+title: バッファーの比較
+description: 次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでバッファーを比較する方法を示しています。
+ms.assetid: CB086E51-544A-470D-B7C8-C055271CD615
 ---
 
-# Xxxxxxx xxxxxxx
+# バッファーの比較
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-Xxxx xxxxxxx xxxx xxxxx xxx xx xxxxxxx xxxxxxx xx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
+次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリでバッファーを比較する方法を示しています。
 
 ```cs
 public void CompareBuffers()
@@ -51,4 +51,8 @@ public void CompareBuffers()
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

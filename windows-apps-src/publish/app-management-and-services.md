@@ -1,76 +1,80 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxxxxx xxx xxxx xxxxxxx xxxxxxx xx xxxx xx xxxx xxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxx xxxxxxxxx xxxxxxxx xxxx xx xxxx xxxxxxxxxxxxx xxx Xxxx.
-xxxxx: Xxx xxxxxxxxxx xxx xxxxxxxx
-xx.xxxxxxx: YYXXYXXY-YXYX-YYYY-YXXY-XXYYYXYYYXXX
+Description: Windows デベロッパー センター ダッシュボードで各アプリに関連する詳細を管理および表示し、プッシュ通知やマップなどのサービスを構成できます。
+title: アプリの管理とサービス
+ms.assetid: 99DA2BC1-9B5D-4746-8BC0-EC723D516EEF
 ---
 
-# Xxx xxxxxxxxxx xxx xxxxxxxx
+# アプリの管理とサービス
 
-Xxx xxx xxxxxx xxx xxxx xxxxxxx xxxxxxx xx xxxx xx xxxx xxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxx xxxxxxxxx xxxxxxxx xxxx xx xxxx xxxxxxxxxxxxx xxx Xxxx.
+Windows デベロッパー センター ダッシュボードで各アプリに関連する詳細を管理および表示し、プッシュ通知やマップなどのサービスを構成できます。
 
-Xxxx xxxxxxx xxxx xx xxx xx xxxx xxxxxxxxx, xxx'xx xxx xxxxxxxx xx xxx xxxx xxxxxxxxxx xxxx xxx Xxxxxxxx xxx Xxx xxxxxxxxxx. Xxx xxx xxxxxx xxxxx xxxxxxxx xx xxxxxx xxx xxxxxxxxxxxxx xxxxxxxxx xxxxx.
+ダッシュボードでアプリの操作するとき、左側のナビゲーション メニューにサービスとアプリ管理のセクションが表示されます。 これらのセクションを展開すると、次の機能にアクセスできます。
 
-## Xxxxxxxx
+## サービス
 
-Xxx **Xxxxxxxx** xxxxxxx xxxx xxx xxxxxx xxxxxxx xxxxx xx xxxx xxxxxxxxxxxxx xxx xxx xxxxxxxx.
+**[サービス]** セクションでは、特定の種類のプッシュ通知サービスとマップ サービスを管理できます。
 
-### Xxxx xxxxxxxxxxxxx
+### プッシュ通知
 
-Xxxxxxxxx xx xxxx xxx'x xxxxxxx xxxx xxx xxx xxxxxxxx xxxxxxxxxxxx, xxx xxx xxx xxx xx xxx xxxxxxxxx xxxxxxx xxx xxxx xxxxxxxxxxxxx:
+アプリのパッケージの種類とその具体的な要件に応じて、プッシュ通知では次のいずれかのオプションを使うことができます。
 
--   **Xxxxxxx Xxxx Xxxxxxxxxxxx Xxxxxxxx (XXX)** xxxx xxx xxxx xxxxx, xxxx, xxxxx, xxx xxx xxxxxxx xxxx xxxx xxx xxxxx xxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxx Xxxx Xxxxxxxxxxxx Xxxxxxxx (XXX) xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187203).
+-   **Windows プッシュ通知サービス (WNS)** を使うと、独自のクラウド サービスからトースト更新、タイル更新、バッジ更新、直接更新を送ることができます。 詳しくは、「[Windows プッシュ通知サービス (WNS) の概要](https://msdn.microsoft.com/library/windows/apps/mt187203)」をご覧ください。
 
--   **Xxxxxxxxx Xxxxx Xxxxxx Xxxxxxxx** xxxx xxx xxxx xxxx xxxxxxxxxxxxx, xxxxxxxxxxxx xxx xxxxxx xxx xxxxx, xxx xxxxx xxx xxxx xx xxx xxxxx. Xxx xxxx xxxx, xxx xxx [Xxxxxx Xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=221116).
+-   **Microsoft Azure Mobile Services** を使うと、プッシュ通知の送信や、アプリ ユーザーの認証や管理、クラウドでのアプリ データの保存をすることができます。 詳しくは、[モバイル サービスに関するドキュメント](http://go.microsoft.com/fwlink/p/?LinkId=221116) をご覧ください。
 
--   **Xxxxxxxxx Xxxx Xxxxxxxxxxxxx Xxxxxxx (XXXX)** xxx xx xxxx xxxx xxxx .xxx xxxxxxxx xxx Xxxxxxx Xxxxx. Xxx xxx xxxx x xxxxxxx xxxxxx xx xxxxxxxxxxxxxxx xxxxxxxxxxxxx xxxxxxx xxxxx xxx xxxxxxxxxxxxx xxxx, xxxxxxxx xx xxxxxxxxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxxx xx xxxxx xxxxxxxxxx xxxxxx. Xx xxx'xx xxxxx XXXX, xxx'xx xxxx xx xxxxxx x xxxxxxxxxxx xx xxx xxxxx xxxxxxxx xx xxx **Xxxx xxxxxxxxxxxxx** xxxx. Xxx xxxx xxxx, xxx [Xxxxxxx xx xx xxxxxxxxxxxxx xxx xxxxxxx xx xxxx xxxx xxxxxxxxxxxxx xxx Xxxxxxx Xxxxx Y](http://go.microsoft.com/fwlink/p/?LinkId=528736).
+-   **Microsoft プッシュ通知サービス (MPNS)** は、Windows Phone の .xap パッケージと一緒に使うことができます。 ここで構成を行わなくても、認証されていない通知を限られた数送信することができますが、制限が減らないように認証済みの通知を使うことをお勧めします。 MPNS を使っている場合、**[プッシュ通知]** のフィールドに証明書をアップロードする必要があります。 詳しくは、[Windows Phone 8 のプッシュ通知を送信するように認証済み Web サービスを設定する](http://go.microsoft.com/fwlink/p/?LinkId=528736)」をご覧ください。
 
-### Xxxx
+### マップ
 
-Xx xxx xxx xxxxxxxx xx xxxx xxx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx, xxx xxxx x xxx xxxxxxx xxxxxxxxxxx XX xxx x xxxxx xx xxxxxxx xx xxxx xxx'x xxxx. Xxx xxx xxx xxxx xxxxx xx xxx **Xxxx** xxxx xx xxx **Xxxxxxxx** xxxxxxx.
+Windows Phone 8.1 以前を対象としたアプリでマップ サービスを使うには、アプリのコードに含めるマップ サービス アプリケーション ID とトークンが必要です。 **[マップ]** ページの **[サービス]** セクションでこのトークンを取得できます。
 
-> **Xxxx**  Xx xxx xxx xxxxxxxx xx xxxx xxxxxxxxx xxxxx xxxxxxxxx xxxxxxx, xxxxx xxx [Xxxx Xxxx Xxx Xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=614880). Xxx [Xxxxxxx x xxxx xxxxxxxxxxxxxx xxx](https://msdn.microsoft.com/library/windows/apps/mt219694) xxx xxxx xxxx.
+> **注**  他のオペレーティング システムを対象としたアプリでマップ サービスを使うには、[Bing Maps デベロッパー センター](http://go.microsoft.com/fwlink/p/?LinkId=614880) にアクセスしてください。 詳しくは、「[マップ認証キーの要求](https://msdn.microsoft.com/library/windows/apps/mt219694)」をご覧ください。
 
-Xxx xxxx xxxx, xxx [Xxx xxx xxxxxxxx](use-map-services.md).
+詳しくは、「[マップ サービスの使用](use-map-services.md)」をご覧ください。
 
-### Xxxxxxx xxxxxxxxxxx xxx xxxxxxxxx
+### 製品のコレクションと購入
 
-Xx xxx xxx Xxxxxxx Xxxxx xxxxxxxxxx XXX xxx xxx Xxxxxxx Xxxxx xxxxxxxx XXX xx xxxxxx xxxxxxxxx xxxxxxxxxxx xxx xxxx xxx XXXx, xxx xxxx xx xxxxx xxx xxxxxxxxxx Xxxxx XX xxxxxx XXx xxxx. Xxxx xxxx xx xxx xxxx xx xx YY xxxxx xxx xxxxx xxxxxxx xx xxxx xxxxxx.
+Windows ストア コレクション API と Windows ストア購入 API を使用してアプリと IAP の所有者情報にアクセスするには、関連する Azure AD クライアント ID をここに入力する必要があります。 これらの変更が有効になるまで最大で 16 時間かかることに注意してください。
 
-Xxx xxxx xxxx, xxx [Xxxx xxx xxxxx xxxxxxxx xxxx x xxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt609002).
+詳しくは、「[サービスからの製品の表示と許可](https://msdn.microsoft.com/library/windows/apps/mt609002)」をご覧ください。
 
-## Xxx xxxxxxxxxx
+## アプリ管理
 
-Xxx **Xxx xxxxxxxxxx** xxxxxxx xxxx xxx xxxx xxxxxxxx xxx xxxxxxx xxxxxxx xxx xxxxxx xxxx xxx'x xxxxx.
+**[アプリ管理]** セクションでは、ID とパッケージの詳細を表示し、アプリの名前を管理できます。
 
-### Xxx xxxxxxxx
+### アプリ ID
 
-Xxxx xxxx xxxxx xxx xxxxxxx xxxxxxx xx xxxx xxx'x xxxxxx xxxxxxxx xxxxxx xxx Xxxxx, xxxxxxxxx xxx XXX(x) xx xxxx xx xxxx xxx'x xxxxxxx.
+このページには、アプリの内容へのリンクの URL など、ストア内のアプリの一意の ID に関連する詳細情報が表示されます。
 
-Xxx xxxx xxxx, xxx [Xxxx xxx xxxxxxxx xxxxxxx](view-app-identity-details.md).
+詳しくは、「[アプリ ID の詳細の表示](view-app-identity-details.md)」をご覧ください。
 
-### Xxxxxx xxx xxxxx
+### アプリ名の管理
 
-Xxxx xx xxxxx xxx xxx xxxx xxx xx xxx xxxxx xxxx xxx'xx xxxxxxxx xxx xxxx xxx. Xxx xxx xxxxxxx xxxxxxxxxx xxxxx xxxx, xx xxxxxx xxxxx xxx'xx xx xxxxxx xxxxx.
+ここでは、アプリのために予約したすべての名前を確認できます。 追加の名前の予約や、使わなくなったの名前の削除は、ここで行うことができます。
 
-Xxx xxxx xxxx, xxx [Xxxxxx xxx xxxxx](manage-app-names.md).
+詳しくは、「[アプリ名の管理](manage-app-names.md)」をご覧ください。
 
-### Xxxxxxx xxxxxxxx
+### 現在のパッケージ
 
-Xxxx xxxx xxxx xxx xxxx xxxxxxx xxxxxxx xx xxx xx xxxx xxxxxxxxx xxxxxxxx.
+このページでは、公開されたすべてのパッケージに関連する詳しい情報を確認することができます。
 
-> **Xxxx**  Xxx xxx'x xxx xxx xxxx xxxx xxxxx xxxxx xxxx xxx xxx xxxx xxxxxxxxx.
+> **注**  ここには、アプリが公開されるまで、情報は表示されません。
 
-Xxx xxxx, xxxxxxx, xxx xxxxxxxxxxxx xx xxxx xxxxxxx xx xxxxx. Xxxxx **Xxxxxxx** xx xxxx xxxxxxxxxx xxxx xxxx xx xxxxxxxxx xxxxxxxx, xxx xxxxxxxxxxxx, xxx xxxx xxxxx.
+各パッケージの名前、バージョン、およびアーキテクチャが表示されます。 **[詳細]** をクリックすると、サポートされる言語、アプリの機能、ファイル サイズなどの詳しい情報が表示されます。
 
-Xxx xxxxx xxxx xxx xxx xxx xxxx xxxxxxx xxx xxxxxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxxxx xxxxxx xxx xxxxx xxxxxxx. Xxx xxxxxxx, xx xxx'xx xxxxx [Xxxxxxx xx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt219691) xxxx xxxx xxxxxxx, xxx'xx xxxx x xxxx xx xxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx xxxx.
+パッケージごとに表示される実際の情報は、対象となるオペレーティング システムとその他の要因によって異なることがあります。 たとえば、[Windows 広告仲介](https://msdn.microsoft.com/library/windows/apps/mt219691) をパッケージに追加した場合、そのパッケージの仲介を構成するためのリンクがここに表示されます。
 
-Xxxxxxxxxx xxxx XXX xxxxxxxxxxx xxx xxxx [xxxxxxxx xxxxxxxxxx xxxxxxxx](generate-preinstall-packages-for-oems.md) xxxx xxx **Xxxxxxx xxxxxxxx** xxxx.
+OEM アクセス許可を持つ開発者は、**[現在のパッケージ]** ページから [プレインストール パッケージを生成](generate-preinstall-packages-for-oems.md) することもできます。
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,51 +1,41 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxx xxxxx xx xxxx xxxxxxxxxx xx xxxxxxx xxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxx xx xxxx xxx xx xxxxxxxx xxxxxxx.
-xxxxx: Xxxx xxxxxxxx xxxxx xxx xx xxx
-xx.xxxxxxx: XXXYYYYX-XXXX-YYXX-XYXX-YYYYXYYYYXYY
-xxxxx: Xxxx xxxxxxxx xxxxx xxx xx xxx
-xxxxxxxx: xxxxxx.xxx
+Description: Help your users be more productive by letting them view multiple independent parts of your app in separate windows.
+title: Show multiple views for an app
+ms.assetid: BAF9956F-FAAF-47FB-A7DB-8557D2548D88
+label: Show multiple views for an app
+template: detail.hbs
 ---
 
-# Xxxx xxxxxxxx xxxxx xxx xx xxx
+# Show multiple views for an app
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxx xxx xxxx xxxx xxxxx xx xxxx xxxxxxxxxx xx xxxxxxx xxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxx xx xxxx xxx xx xxxxxxxx xxxxxxx. X xxxxxxx xxxxxxx xx xx x-xxxx xxx xxxxx xxx xxxx XX xxxxx xxx xxxx xx xxxxxx xxx x xxxxxxx xx xxx xxxxxxxx x-xxxx. Xxx xxxxx xxx xxxx xxxx xxxxxxxx xx xxxxxxxx xxxxxxx xxx xxxx xxxx xxxx-xx-xxxx.
+You can help your users be more productive by letting them view multiple independent parts of your app in separate windows. A typical example is an e-mail app where the main UI shows the list of emails and a preview of the selected e-mail. But users can also open messages in separate windows and view them side-by-side.
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxxxxxxxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn281094)
--   [**XxxxxxXxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn297278)
+-   [**ApplicationViewSwitcher**](https://msdn.microsoft.com/library/windows/apps/dn281094)
+-   [**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278)
 
-Xxxx xxx xxxxxx xxxxxxxx xxxxxxx xxx xx xxx, xxxx xxxxxx xxxxxxx xxxxxxxxxxxxx. Xxx xxxxxxx xxxxx xxxx xxxxxx xxxxxxxxxx. Xxxxx xxx xxxx, xxxxxx, xxxx, xxx xxxx xxx xxxxxxx xxxxxxxxxxxxx xxx xxx xxxxxx xxxxxxx xxx xxxxxxx xx xx xxxx xxxx xxxxxxxx xxxx. Xxxx xxxxxx xxxxxxxx xx xxx xxx xxxxxx.
+When you create multiple windows for an app, each window behaves independently. The taskbar shows each window separately. Users can move, resize, show, and hide app windows independently and can switch between app windows as if they were separate apps. Each window operates in its own thread.
 
-## <span id="What_is_a_view_">
-            </span>
-            <span id="what_is_a_view_">
-            </span>
-            <span id="WHAT_IS_A_VIEW_">
-            </span>Xxxx xx x xxxx?
+## <span id="What_is_a_view_"></span><span id="what_is_a_view_"></span><span id="WHAT_IS_A_VIEW_"></span>What is a view?
 
 
-Xx xxx xxxx xx xxx Y:Y xxxxxxx xx x xxxxxx xxx x xxxxxx xxxx xxx xxx xxxx xx xxxxxxx xxxxxxx. Xx'x xxxxxxxxxxx xx x [**XxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br225017) xxxxxx.
+An app view is the 1:1 pairing of a thread and a window that the app uses to display content. It's represented by a [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) object.
 
-Xxxxx xxx xxxxxxx xx xxx [**XxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225016) xxxxxx. Xxx xxxx [**XxxxXxxxxxxxxxx.XxxxxxXxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn297278) xx xxxxxx x[**XxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br225017) xxxxxx. Xxx **XxxxXxxxxxxxxxxXxxx** xxxxxx xxxxxxxx x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxx x [**XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208211) (xxxxxx xx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225019) xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn433264) xxxxxxxxxx). Xxx xxx xxxxx xx xxx **XxxxXxxxxxxxxxxXxxx** xx xxx xxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxx xx xxxxxxxx xxxx xxx xxxx Xxxxxxx xxxxxx.
+Views are managed by the [**CoreApplication**](https://msdn.microsoft.com/library/windows/apps/br225016) object. You call [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278) to create a[**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017) object. The **CoreApplicationView** brings together a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) and a [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/br208211) (stored in the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br225019) and [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/dn433264) properties). You can think of the **CoreApplicationView** as the object that the Windows Runtime uses to interact with the core Windows system.
 
-Xxx xxxxxxxxx xxx’x xxxx xxxxxxxx xxxx xxx [**XxxxXxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br225017). Xxxxxxx, xxx Xxxxxxx Xxxxxxx xxxxxxxx xxx [**XxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh701658) xxxxx xx xxx [**Xxxxxxx.XX.XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242295) xxxxxxxxx. Xxxx xxxxx xxxxxxxx xxxxxxxxxx, xxxxxxx, xxx xxxxxx xxxx xxx xxx xxxx xxxx xxx xxxxxxxxx xxxx xxx xxxxxxxxx xxxxxx. Xx xxxx xxxx xx **XxxxxxxxxxxXxxx**, xxxx xxx xxxxxx [**XxxxxxxxxxxXxxx.XxxXxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh701672) xxxxxx, xxxxx xxxx xx **XxxxxxxxxxxXxxx** xxxxxxxx xxxx xx xxx xxxxxxx **XxxxXxxxxxxxxxxXxxx**’x xxxxxx.
+You typically don’t work directly with the [**CoreApplicationView**](https://msdn.microsoft.com/library/windows/apps/br225017). Instead, the Windows Runtime provides the [**ApplicationView**](https://msdn.microsoft.com/library/windows/apps/hh701658) class in the [**Windows.UI.ViewManagement**](https://msdn.microsoft.com/library/windows/apps/br242295) namespace. This class provides properties, methods, and events that you use when your app interacts with the windowing system. To work with an **ApplicationView**, call the static [**ApplicationView.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh701672) method, which gets an **ApplicationView** instance tied to the current **CoreApplicationView**’s thread.
 
-Xxxxxxxx, xxx XXXX xxxxxxxxx xxxxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxx xx x [**Xxxxxxx.XX.XXXX.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209041) xxxxxx. Xx x XXXX xxx, xxx xxxxxxxxx xxxxxxxx xxxx xxx **Xxxxxx** xxxxxx xxxxxx xxxx xxxxxxx xxxxxxxx xxxx xxx **XxxxXxxxxx**.
+Likewise, the XAML framework wraps the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object in a [**Windows.UI.XAML.Window**](https://msdn.microsoft.com/library/windows/apps/br209041) object. In a XAML app, you typically interact with the **Window** object rather than working directly with the **CoreWindow**.
 
-## <span id="Show_a_new_view">
-            </span>
-            <span id="show_a_new_view">
-            </span>
-            <span id="SHOW_A_NEW_VIEW">
-            </span>Xxxx x xxx xxxx
+## <span id="Show_a_new_view"></span><span id="show_a_new_view"></span><span id="SHOW_A_NEW_VIEW"></span>Show a new view
 
 
-Xxxxxx xx xx xxxxxxx, xxx'x xxxx xx xxx xxxxx xx xxxxxx x xxx xxxx. Xxxx, xxx xxx xxxx xx xxxxxxxx xx xxxxxxxx xx x xxxxxx xxxxx.
+Before we go further, let's look at the steps to create a new view. Here, the new view is launched in response to a button click.
 
 ```CSharp
 private async void Button_Click(object sender, RoutedEventArgs e)
@@ -66,9 +56,9 @@ private async void Button_Click(object sender, RoutedEventArgs e)
 }
 ```
 
-**Xx xxxx x xxx xxxx**
+**To show a new view**
 
-1.  Xxxx [**XxxxXxxxxxxxxxx.XxxxxxXxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn297291) xx xxxxxx x xxx xxxxxx xxx xxxxxx xxx xxx xxxx xxxxxxx.
+1.  Call [**CoreApplication.CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297291) to create a new window and thread for the view content.
 
 ```    CSharp
 CoreApplicationView newView = CoreApplication.CreateNewView();</code></pre></td>
@@ -77,9 +67,9 @@ CoreApplicationView newView = CoreApplication.CreateNewView();</code></pre></td>
     </table>
 ```
 
-2.  Xxxxx xxx [**Xx**](https://msdn.microsoft.com/library/windows/apps/dn281120) xx xxx xxx xxxx. Xxx xxx xxxx xx xxxx xxx xxxx xxxxx.
+2.  Track the [**Id**](https://msdn.microsoft.com/library/windows/apps/dn281120) of the new view. You use this to show the view later.
 
-    Xxx xxxxx xxxx xx xxxxxxxx xxxxxxxx xxxx xxxxxxxxxxxxxx xxxx xxxx xxx xx xxxx xxxx xxxxxxxx xxx xxxxx xxx xxxxxx. Xxx xxx `ViewLifetimeControl` xxxxx xx xxx [XxxxxxxxXxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=620574) xxx xx xxxxxxx.
+    You might want to consider building some infrastructure into your app to help with tracking the views you create. See the `ViewLifetimeControl` class in the [MultipleViews sample](http://go.microsoft.com/fwlink/p/?LinkId=620574) for an example.
 
     <span codelanguage="CSharp"></span>
 ```    CSharp
@@ -99,15 +89,15 @@ int newViewId = 0;</code></pre></td>
     </table>
 ```
 
-3.  Xx xxx xxx xxxxxx, xxxxxxxx xxx xxxxxx.
+3.  On the new thread, populate the window.
 
-    Xxx xxx xxx [**XxxxXxxxxxxxxx.XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh750317) xxxxxx xx xxxxxxxx xxxx xx xxx XX xxxxxx xxx xxx xxx xxxx. Xxx xxx x [xxxxxx xxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=389615) xx xxxx x xxxxxxxx xx xx xxxxxxxx xx xxx **XxxXxxxx** xxxxxx. Xxx xxxx xxx xx xx xxx xxxxxx xxxxxxxx xxxxxxx xx xxx xxx xxxx'x xxxxxx.
+    You use the [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/hh750317) method to schedule work on the UI thread for the new view. You use a [lambda expression](http://go.microsoft.com/fwlink/p/?LinkId=389615) to pass a function as an argument to the **RunAsync** method. The work you do in the lambda function happens on the new view's thread.
 
-    Xx XXXX, xxx xxxxxxxxx xxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242682) xx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209041)'x [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209051) xxxxxxxx, xxxx xxxxxxxx xxx **Xxxxx** xx x XXXX [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br227503) xxxxx xxx'xx xxxxxxx xxxx xxx xxxxxxx. Xxx xxxx xxxx, xxx [Xxxx-xx-xxxx xxxxxxxxxx xxxxxxx xxx xxxxx](peer-to-peer-navigation-between-two-pages.md).
+    In XAML, you typically add a [**Frame**](https://msdn.microsoft.com/library/windows/apps/br242682) to the [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041)'s [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) property, then navigate the **Frame** to a XAML [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503) where you've defined your app content. For more info, see [Peer-to-peer navigation between two pages](peer-to-peer-navigation-between-two-pages.md).
 
-    Xxxxx xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209041) xx xxxxxxxxx, xxx xxxx xxxx xxx **Xxxxxx**'x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209046) xxxxxx xx xxxxx xx xxxx xxx **Xxxxxx** xxxxx. Xxxx xxxx xxxxxxx xx xxx xxx xxxx'x xxxxxx, xx xxx xxx **Xxxxxx** xx xxxxxxxxx.
+    After the new [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) is populated, you must call the **Window**'s [**Activate**](https://msdn.microsoft.com/library/windows/apps/br209046) method in order to show the **Window** later. This work happens on the new view's thread, so the new **Window** is activated.
 
-    Xxxxxxx, xxx xxx xxx xxxx'x [**Xx**](https://msdn.microsoft.com/library/windows/apps/dn281120) xxxx xxx xxx xx xxxx xxx xxxx xxxxx. Xxxxx, xxxx xxxx xx xx xxx xxx xxxx'x xxxxxx, xx [**XxxxxxxxxxxXxxx.XxxXxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh701672) xxxx xxx **Xx** xx xxx xxx xxxx.
+    Finally, get the new view's [**Id**](https://msdn.microsoft.com/library/windows/apps/dn281120) that you use to show the view later. Again, this work is on the new view's thread, so [**ApplicationView.GetForCurrentView**](https://msdn.microsoft.com/library/windows/apps/hh701672) gets the **Id** of the new view.
 
     <span codelanguage="CSharp"></span>
 ```    CSharp
@@ -133,9 +123,9 @@ await newView.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
     });
 ```
 
-4.  Xxxx xxx xxx xxxx xx xxxxxxx [**XxxxxxxxxxxXxxxXxxxxxxx.XxxXxxxXxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn281101).
+4.  Show the new view by calling [**ApplicationViewSwitcher.TryShowAsStandaloneAsync**](https://msdn.microsoft.com/library/windows/apps/dn281101).
 
-    Xxxxx xxx xxxxxx x xxx xxxx, xxx xxx xxxx xx xx x xxx xxxxxx xx xxxxxxx xxx [**XxxxxxxxxxxXxxxXxxxxxxx.XxxXxxxXxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn281101) xxxxxx. Xxx *xxxxXx* xxxxxxxxx xxx xxxx xxxxxx xx xx xxxxxxx xxxx xxxxxxxx xxxxxxxxxx xxxx xx xxx xxxxx xx xxxx xxx. Xxx xxxxxxxx xxx xxxx [**Xx**](https://msdn.microsoft.com/library/windows/apps/dn281120) xx xxxxx xxxxxx xxx **XxxxxxxxxxxXxxx.Xx** xxxxxxxx xx xxx [**XxxxxxxxxxxXxxx.XxxXxxxxxxxxxxXxxxXxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn281109) xxxxxx.
+    After you create a new view, you can show it in a new window by calling the [**ApplicationViewSwitcher.TryShowAsStandaloneAsync**](https://msdn.microsoft.com/library/windows/apps/dn281101) method. The *viewId* parameter for this method is an integer that uniquely identifies each of the views in your app. You retrieve the view [**Id**](https://msdn.microsoft.com/library/windows/apps/dn281120) by using either the **ApplicationView.Id** property or the [**ApplicationView.GetApplicationViewIdForWindow**](https://msdn.microsoft.com/library/windows/apps/dn281109) method.
 
 ```    CSharp
 bool viewShown = await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewId);</code></pre></td>
@@ -144,41 +134,26 @@ bool viewShown = await ApplicationViewSwitcher.TryShowAsStandaloneAsync(newViewI
     </table>
 ```
 
-## <span id="The_main_view">
-            </span>
-            <span id="the_main_view">
-            </span>
-            <span id="THE_MAIN_VIEW">
-            </span>Xxx xxxx xxxx
+## <span id="The_main_view"></span><span id="the_main_view"></span><span id="THE_MAIN_VIEW"></span>The main view
 
 
-Xxx xxxxx xxxx xxxx’x xxxxxxx xxxx xxxx xxx xxxxxx xx xxxxxx xxx *xxxx xxxx*. Xxxx xxxx xx xxxxxx xx xxx [**XxxxXxxxxxxxxxx.XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700465) xxxxxxxx, xxx xxx [**XxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700452) xxxxxxxx xx xxxx. Xxx xxx’x xxxxxx xxxx xxxx; xx’x xxxxxxx xx xxx xxx. Xxx xxxx xxxx'x xxxxxx xxxxxx xx xxx xxxxxxx xxx xxx xxx, xxx xxx xxx xxxxxxxxxx xxxxxx xxx xxxxxxxxx xx xxxx xxxxxx.
+The first view that’s created when your app starts is called the *main view*. This view is stored in the [**CoreApplication.MainView**](https://msdn.microsoft.com/library/windows/apps/hh700465) property, and its [**IsMain**](https://msdn.microsoft.com/library/windows/apps/hh700452) property is true. You don’t create this view; it’s created by the app. The main view's thread serves as the manager for the app, and all app activation events are delivered on this thread.
 
-Xx xxxxxxxxx xxxxx xxx xxxx, xxx xxxx xxxx’x xxxxxx xxx xx xxxxxx – xxx xxxxxxx, xx xxxxxxxx xxx xxxxx (x) xxxxxx xx xxx xxxxxx xxxxx xxx - xxx xxx xxxxxx xxxxxxx xxxxxx. Xxxxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209049) xx xxx xxxx xxxx’x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209041) xxxxxx xx **XxxxxxxXxxxxxxxxXxxxxxxxx** xx xxxxx. (Xxx [**Xxxxxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br242327) xx xxxxx xxxx xxx.) Xx xxx xxxx xxxx’x xxxxxx xx xxxxxxxxxx, xxx xxx xxxxxx.
+If secondary views are open, the main view’s window can be hidden – for example, by clicking the close (x) button in the window title bar - but its thread remains active. Calling [**Close**](https://msdn.microsoft.com/library/windows/apps/br209049) on the main view’s [**Window**](https://msdn.microsoft.com/library/windows/apps/br209041) causes an **InvalidOperationException** to occur. (Use [**Application.Exit**](https://msdn.microsoft.com/library/windows/apps/br242327) to close your app.) If the main view’s thread is terminated, the app closes.
 
-## <span id="Secondary_views">
-            </span>
-            <span id="secondary_views">
-            </span>
-            <span id="SECONDARY_VIEWS">
-            </span>Xxxxxxxxx xxxxx
+## <span id="Secondary_views"></span><span id="secondary_views"></span><span id="SECONDARY_VIEWS"></span>Secondary views
 
 
-Xxxxx xxxxx, xxxxxxxxx xxx xxxxx xxxx xxx xxxxxx xx xxxxxxx [**XxxxxxXxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn297278) xx xxxx xxx xxxx, xxx xxxxxxxxx xxxxx. Xxxx xxx xxxx xxxx xxx xxxxxxxxx xxxxx xxx xxxxxx xx xxx [**XxxxXxxxxxxxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br205861) xxxxxxxxxx. Xxxxxxxxx, xxx xxxxxx xxxxxxxxx xxxxx xx xxxxxxxx xx x xxxx xxxxxx. Xx xxxx xxxxxxxxx, xxx xxxxxx xxxxxxx xxxxxxxxx xxxxx xxx xxxx xxx.
+Other views, including all views that you create by calling [**CreateNewView**](https://msdn.microsoft.com/library/windows/apps/dn297278) in your app code, are secondary views. Both the main view and secondary views are stored in the [**CoreApplication.Views**](https://msdn.microsoft.com/library/windows/apps/br205861) collection. Typically, you create secondary views in response to a user action. In some instances, the system creates secondary views for your app.
 
-**Xxxx**  Xxx xxx xxx xxx Xxxxxxx *xxxxxxxx xxxxxx* xxxxxxx xx xxx xx xxx xx [xxxxx xxxx](https://technet.microsoft.com/library/mt219050.aspx). Xxxx xxx xx xxxx, xxx xxxxxx xxxxxxx x xxxxxxxxx xxxx xx xxxxxxx xxxx xxx XX xxxxx xxx xxxx xxxxxx. Xxx-xxxxxxx xxxxxxxxx xxxxx xxx xxx xxxxxxx, xx xx xxx xxx xx xxxx xxxx xxx xxxxxxxxx xxxx xx xxxxx xxxx, xx xxxxxxxxx xx xxxxxx.
+**Note**  You can use the Windows *assigned access* feature to run an app in [kiosk mode](https://technet.microsoft.com/library/mt219050.aspx). When you do this, the system creates a secondary view to present your app UI above the lock screen. App-created secondary views are not allowed, so if you try to show your own secondary view in kiosk mode, an exception is thrown.
 
  
 
-## <span id="Switch_from_one_view_to_another">
-            </span>
-            <span id="switch_from_one_view_to_another">
-            </span>
-            <span id="SWITCH_FROM_ONE_VIEW_TO_ANOTHER">
-            </span>Xxxxxx xxxx xxx xxxx xx xxxxxxx
+## <span id="Switch_from_one_view_to_another"></span><span id="switch_from_one_view_to_another"></span><span id="SWITCH_FROM_ONE_VIEW_TO_ANOTHER"></span>Switch from one view to another
 
 
-Xxx xxxx xxxxxxx x xxx xxx xxx xxxx xx xxxxxxxx xxxx x xxxxxxxxx xxxxxx xxxx xx xxx xxxx xxxxxx. Xx xx xxxx, xxx xxx [**XxxxxxxxxxxXxxxXxxxxxxx.XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn281097) xxxxxx. Xxx xxxx xxxx xxxxxx xxxx xxx xxxxxx xx xxx xxxxxx xxx'xx xxxxxxxxx xxxx xxx xxxx xxx xxxx XX xx xxx xxxxxx xxx'xx xxxxxxxxx xx.
+You must provide a way for the user to navigate from a secondary window back to the main window. To do this, use the [**ApplicationViewSwitcher.SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097) method. You call this method from the thread of the window you're switching from and pass the view ID of the window you're switching to.
 
 <span codelanguage="CSharp"></span>
 ```CSharp
@@ -198,13 +173,17 @@ await ApplicationViewSwitcher.SwitchAsync(viewIdToShow);</code></pre></td>
 </table>
 ```
 
-Xxxx xxx xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn281097), xxx xxx xxxxxx xx xxx xxxx xx xxxxx xxx xxxxxxx xxxxxx xxx xxxxxx xx xxxx xxx xxxxxxx xx xxxxxxxxxx xxx xxxxx xx [**XxxxxxxxxxxXxxxXxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn281105).
+When you use [**SwitchAsync**](https://msdn.microsoft.com/library/windows/apps/dn281097), you can choose if you want to close the initial window and remove it from the taskbar by specifying the value of [**ApplicationViewSwitchingOptions**](https://msdn.microsoft.com/library/windows/apps/dn281105).
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

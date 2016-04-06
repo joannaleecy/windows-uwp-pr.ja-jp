@@ -1,34 +1,34 @@
 ---
-xxxxx: Xxxxxx xxx xxxx xxxxxx
-xxxxxxxxxxx: Xxxxxxxxxxxxxxx! Xx xxxx xxxxx, xxx xxxxxxxxxx xxx xxx xxxxxxxxxx xx x xxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX YX xxxx.
-xx.xxxxxxx: xYYYYxYY-YYYx-Yxxx-YYYY-xYxxYxxYYYYx
-xxxxxxxx: ["XxxxxxX, XXXX"]
+title: Extend the game sample
+description: Congratulations! At this point, you understand the key components of a basic Universal Windows Platform (UWP) DirectX 3D game.
+ms.assetid: a1432c45-569e-7ecd-4098-f5ad6da9327e
+keywords: ["DirectX, XAML"]
 ---
 
-# Xxxxxx xxx xxxx xxxxxx
+# Extend the game sample
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxxxxxxxxxxx! Xx xxxx xxxxx, xxx xxxxxxxxxx xxx xxx xxxxxxxxxx xx x xxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XxxxxxX YX xxxx. Xxx xxx xxx xx xxx xxxxxxxxx xxx x xxxx, xxxxxxxxx xxx xxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxx, xxx xxxxxxxxx x xxxxx xxxx xxxx. Xxx xxx xxxx xxxxxx x xxxxx xxxx xxxxxxxxx xxxxxxx, xxx xxxxxxxxxxx xxxxxx xxx xxxxxxxx. Xxx'xx xx xxxx xxx xx xxxxxxxx x xxxx xx xxxx xxx, xxx xxxx xxx xxxx xxxxxxxxx xx xxxxxxx xxxx xxxxxxxxx xx XxxxxxX xxxx xxxxxxxxxxx.
+Congratulations! At this point, you understand the key components of a basic Universal Windows Platform (UWP) DirectX 3D game. You can set up the framework for a game, including the view provider and rendering pipeline, and implement a basic game loop. You can also create a basic user interface overlay, and incorporate sounds and controls. You're on your way to creating a game of your own, and here are some resources to further your knowledge of DirectX game development.
 
--   [XxxxxxX Xxxxxxxx xxx Xxxxxx](https://msdn.microsoft.com/library/windows/desktop/ee663274)
--   [XxxxxxYX YY Xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ff476345)
--   [XxxxxxYX YY Xxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ff476147)
+-   [DirectX Graphics and Gaming](https://msdn.microsoft.com/library/windows/desktop/ee663274)
+-   [Direct3D 11 Overview](https://msdn.microsoft.com/library/windows/desktop/ff476345)
+-   [Direct3D 11 Reference](https://msdn.microsoft.com/library/windows/desktop/ff476147)
 
-## Xxxxxxxxx xxx xxxx xxxxxx: xxxxx XXXX xxx xxx xxxxxxx
+## Extending the game sample: using XAML for the overlay
 
 
-Xxx xxxxxxxxxxx xxxx xx xxxx'x xxxxxxx xx xxxxx xx xxx xxx xx XXXX xxxxxxx xx XxxxxxYX xxx xxx xxxxxxx. XXXX xxx xxxx xxxxxxxx xxxx XxxxxxYX xxx xxxxxxx xxxx xxxxxxxxx xxxxxxxx, xxx xxx xxxx xxxxxxxxx xxx xx xxxx xx xxxxx xxxxxxxxxxxxx xxx Xxxxxxx YY xxxx xxx xxxx xxxx xxxx XxxxxxX xxxx xxxx xxxxxxxxxx. Xxxx xx xxx xxxxxx xxxxxxxx, xxxxxx, xxx xxxxxxxxx xxxx xxxxxx x XXX xxx xxx xxxxxxx xxxxxxxxxx xxxx xxx XXXX xxxxx, xxxxxx xx xxx xxxx xxxx xxx x xxxx xxxxxxxxx xx xxxxxxxxx. Xx xxxx xxx xxxx xxxxxx xxx x xxxxxxxxxxx xxxx xxxxxxxxx, xxxxxxxx xxxxx XXXX xxxxxxx xx XxxxxxYX.
+One alternative that we didn't discuss in depth is the use of XAML instead of Direct2D for the overlay. XAML has many benefits over Direct2D for drawing user interface elements, and the most important one is that it makes incorporating the Windows 10 look and feel into your DirectX game more convenient. Many of the common elements, styles, and behaviors that define a UWP app are tightly integrated into the XAML model, making it far less work for a game developer to implement. If your own game design has a complicated user interface, consider using XAML instead of Direct2D.
 
-Xx, xxxx xx xxx xxxxxxxxxx xxxxxxx xxx xxxxxxxxxxxxxx xx x xxxx xxxxxxxxx xxxx XxxxxxYX, xxx xxxxxxxxxxxx xxxx xxxx xxxxxxxxx xxxx XXXX?
+So, what is the difference between the implementation of a user interface with Direct2D, and implementing that same interface with XAML?
 
--   Xxx xxxxxx xxx xxxxxxx xx x XXXX xxxx, \*.xxxx, xxxxxx xxxx xx x xxxxxxxxxx xx XxxxxxYX xxxxxxxxxx xxx XxxxxxXxxxx xxxxxxx xxxxxxxx xxxxxx xxx xxxxxxx xx x XxxxxxYX xxxxxx xxxxxx. Xx xxx xxxxxxxxxx XXXX, xxx'xx xxxx xx xxxx xxxxxx xx xxxxxx xxx xxxxxxxxx xxxx xxxxxxxxxxx xxxxxxxx, xxxxxxxxxx xx xxx xxx Xxxxxx Xxxxxx'x XXXX xxxxxxx xxxxx.
--   Xxx xxxx xxxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxxxxxx xxxxxxxx xxxx xxx xxxx xx xxx Xxxxxxx Xxxxxxx XXXX XXXx, xxxxxxxxx [**Xxxxxxx::XX::Xxxx**](https://msdn.microsoft.com/library/windows/apps/br209045) xxx [**Xxxxxxx::XX::Xxxx::Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227716). Xxx xxxx xxxx xxxxxxx xxx xxxxxxxx xx xxx XXXX xxxx xxxxxxxxx xxxxxxxx xx xxxxxxx xx x xxxxxxxxxx xxxx, Xxxx.xxxx.xxx.
--   XXXX, xx x xxxxxxx xxxxxxxxxx Xxxxxxx Xxxxxxx xxxxxxxxx, xxxxxxxxx xxxxxxx xxxxxx xxx xxxx xxxxx xxxxxx xxxxxx, xxxxxxxxxxxx xxx xxxxxxx xxxxxxxxxxx, xx xxx xxx'x xxxx xx xxxxxxxx xxxxxxx xxx xx xxxxxx xxx xxxxxxx'x xxxxxxxxxx.
--   Xxx xxxx xxxxx xx xxx xxxxxxxx xxxxxxxx xx x [**Xxxxxxx::XX::Xxxx::XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxx, xx xx xxxxx xxx xxx'x xxxx xx xx xxxx. Xxxxxxx, x XxxxxxX xxx xxxx xxxxxxxxxxxx XXXX xxxxxxxxxx x xxxx xxxxx xxxx x xxx [**XxxxXxxxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702626) xxxxxx xx xxxxxxxxxxx. Xxx **XxxxXxxxxXxxxxxxxxxXxxxx** xxxxxx xx xxx xx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209051) xxxxxxxx xx xxx xxxxxxx xxxxxx xxxxxx xxxxxxx xx xxxxxx xx xxx xxx xxxxxxxxx, xxx xxx xxxxxx xx xxxxxx xx **XxxxxxYXXxxx::Xxxxxxxxxx** xx x **XxxxXxxxxx** xxxxxx.
+-   You define the overlay in a XAML file, \*.xaml, rather than as a collection of Direct2D primitives and DirectWrite strings manually placed and written to a Direct2D target buffer. If you understand XAML, you'll find it much easier to create and configure more complicated overlays, especially if you use Visual Studio's XAML editing tools.
+-   The user interface elements come from standardized elements that are part of the Windows Runtime XAML APIs, including [**Windows::UI::Xaml**](https://msdn.microsoft.com/library/windows/apps/br209045) and [**Windows::UI::Xaml::Controls**](https://msdn.microsoft.com/library/windows/apps/br227716). The code that handles the behavior of the XAML user interface elements is defined in a codebehind file, Main.xaml.cpp.
+-   XAML, as a tightly integrated Windows Runtime component, naturally handles resize and view state change events, transforming the overlay accordingly, so you don't have to manually specify how to redraw the overlay's components.
+-   The swap chain is not directly attached to a [**Windows::UI::Core::CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object, or at least you don't have to do this. Instead, a DirectX app that incorporates XAML associates a swap chain when a new [**SwapChainBackgroundPanel**](https://msdn.microsoft.com/library/windows/apps/hh702626) object is constructed. The **SwapChainBackgroundPanel** object is set as the [**Content**](https://msdn.microsoft.com/library/windows/apps/br209051) property of the current window object created at launch by the app singleton, and the window is passed to **Simple3DGame::Initialize** as a **CoreWindow** object.
 
-Xxx xxxxxxx xxx XXXX xxx xxx **XxxxXxxxxXxxxxxxxxxXxxxx** xxxx xxxx xx **Xxxx.xxx.xxxx** xxxx:
+You declare the XAML for the **SwapChainBackgroundPanel** like this in **Main.app.xaml** file:
 
 ```xaml
 <Page
@@ -139,7 +139,7 @@ void App::OnLaunched(LaunchActivatedEventArgs^ /* args */)
 }
 ```
 
-Xx xxxxxx xxx xxxxxxxxxx xxxx xxxxx xx xxx [**XxxxXxxxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702626) xxxxx xxxxxxxx xxxxxxx xx xxxx XXXX, xxx xxxx xxxxxx x xxxxxxx xx xxx xxxxxxxxxx xxxxxx [**XXxxxXxxxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848326) xxxxxxxxx xxxxxxxxxxxxxx xxx xxxx [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh848327) xx xx, xxxxxxx xx xxxx xxxxxxxxxx xxxx xxxxx. Xxxx x xxxxxx xxxxxxx xxxx **XxxxxxXXxxx::XxxxxxXxxxxxXxxxXxxxxxxxxXxxxxxxxx** xxxxxxxxxxxx xxx XxxxxxX/XXXX xxxxxxx:
+To attach the configured swap chain to the [**SwapChainBackgroundPanel**](https://msdn.microsoft.com/library/windows/apps/hh702626) panel instance defined by your XAML, you must obtain a pointer to the underlying native [**ISwapChainBackgroundPanel**](https://msdn.microsoft.com/library/windows/desktop/hh848326) interface implementation and call [**SetSwapChain**](https://msdn.microsoft.com/library/windows/desktop/hh848327) on it, passing it your configured swap chain. From a method derived from **DirectXBase::CreateWindowSizeDependentResources** specifically for DirectX/XAML interop:
 
 ```cpp
         ComPtr<IDXGIDevice1> dxgiDevice;
@@ -183,16 +183,16 @@ Xx xxxxxx xxx xxxxxxxxxx xxxx xxxxx xx xxx [**XxxxXxxxxXxxxxxxxxxXxxxx**](https:
             );
 ```
 
-Xxx xxxx xxxx xxxxx xxxx xxxxxxx, xxx [XxxxxxX xxx XXXX xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh825871).
+For more info about this process, see [DirectX and XAML interop](https://msdn.microsoft.com/library/windows/apps/hh825871).
 
-## Xxxxxxxx xxxx xxx xxx XXXX xxxx xxxxxx XXXX xxxxxxxxxxx
+## Complete code for the XAML game sample XAML codebehinds
 
 
-Xxxx'x xxx xxxxxxxx xxxx xxx xxx xxxxxxxxxxx xxxxx xx xxx XXXX xxxxxxx xx xxx XxxxxxYX YY.Y xxxxxxxx xxxx xxxxxx.
+Here's the complete code for the codebehinds found in the XAML version of the Direct3D 11.1 shooting game sample.
 
-(Xxxxxx xxx xxxxxxx xx xxx xxxx xxxxxx xxxxxxxxx xx xxx xxxx xx xxxxx xxxxxx, xxx XXXX xxxxxxx xxxxxxx xxx xxxxxxxxx xx xxx **Xxx.xxxx.xxx** xxx **XxxxXxxx.xxxx.xxx** xxxxx, xxxxxxx xx **XxxxxxXXxx.xxx** xxx **XxxxXxxxXxxxxxx.xxx**, xxxxxxxxxxxx.)
+(Unlike the version of the game sample discussed in the rest of these topics, the XAML version defines its framework in the **App.xaml.cpp** and **MainPage.xaml.cpp** files, instead of **DirectXApp.cpp** and **GameInfoOverlay.cpp**, respectively.)
 
-Xxx.xxxx.x
+App.xaml.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -312,7 +312,7 @@ namespace Simple3DGameXaml
 }
 ```
 
-Xxx.xxxx.xxx
+App.xaml.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -861,7 +861,7 @@ void App::ResetGame()
 }
 ```
 
-XxxxXxxx.xxxx
+MainPage.xaml
 
 ```xaml
 <SwapChainBackgroundPanel
@@ -1220,7 +1220,7 @@ XxxxXxxx.xxxx
 </SwapChainBackgroundPanel>
 ```
 
-XxxxXxxx.xxxx.x
+MainPage.xaml.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -1273,7 +1273,7 @@ namespace Simple3DGameXaml
 }
 ```
 
-Xxxx.xxxx.xxx xxxxxxxxxx
+Main.xaml.cpp codebehind
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -1503,13 +1503,17 @@ void MainPage::OnResetButtonClicked(Object^ sender, RoutedEventArgs^ args)
 //----------------------------------------------------------------------
 ```
 
-Xx xxxxxxxx x xxxxxxx xx xxx xxxxxx xxxx xxxx xxxx XXXX xxx xxx xxxxxxx, xx xx xxx [XxxxxxYX xxxxxxxx xxxx xxxxxx (XXXX)](http://go.microsoft.com/fwlink/p/?linkid=241418).
+To download a version of the sample game that uses XAML for the overlay, go to the [Direct3D shooting game sample (XAML)](http://go.microsoft.com/fwlink/p/?linkid=241418).
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

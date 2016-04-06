@@ -1,191 +1,150 @@
 ---
-Xxxxxxxxxxx: Xxxxxxx xxxxxxxxxx xx xxxxxx xx xxxxxx xxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xx xxxxxxxxxx.
-xxxxx: Xxxxxxxxxxxxx xxxxxxx
-xx.xxxxxxx: YYYXYXYX-XYYY-YXYX-YYYY-YYYXYYYXYYYY
-xxxxx: Xxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: ユニバーサル Windows プラットフォーム (UWP) アプリをアクセシビリティ対応にするためのテスト手順です。
+title: アクセシビリティ テスト
+ms.assetid: 272D9C9E-B179-4F5A-8493-926D007A0225
+label: テスト
+template: detail.hbs
 ---
 
-Xxxxxxxxxxxxx xxxxxxx
+アクセシビリティ テスト
 ===============================================================================
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
-Xxxxxxx xxxxxxxxxx xx xxxxxx xx xxxxxx xxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xx xxxxxxxxxx.
+ユニバーサル Windows プラットフォーム (UWP) アプリをアクセシビリティ対応にするためのテスト手順です。
 
-<span id="run_accessibility_testing_tools">
-            </span>
-            <span id="RUN_ACCESSIBILITY_TESTING_TOOLS">
-            </span>Xxx xxxxxxxxxxxxx xxxxxxx xxxxx
+<span id="run_accessibility_testing_tools"></span><span id="RUN_ACCESSIBILITY_TESTING_TOOLS"></span>アクセシビリティ テスト ツールを実行する
 -----------------------------------------------------------------------------------------------------------------------------------
 
-Xxx Xxxxxxx Xxxxxxxx Xxxxxxxxxxx Xxx (XXX) xxxxxxxx xxxxxxx xxxxxxxxxxxxx xxxxxxx xxxxx xxxx xx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/Dn433239), [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) xxx [**XX Xxxxxxxxxxxxx Xxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/Hh920985). Xxxxx xxxxx xxx xxxx xxx xxxxxx xxx xxxxxxxxxxxxx xx xxxx xxx. Xx xxxx xx xxxxxx xxx xxx xxxxxxxxx xxx XX xxxxxxxx.
+Windows ソフトウェア開発キット (Windows SDK) には、[**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239)、[**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521)、[**UI Accessibility Checker**](https://msdn.microsoft.com/library/windows/desktop/Hh920985) などアクセシビリティのテスト ツールが複数用意されています。 これらのツールは、アプリのアクセシビリティを確認するのに役立ちます。 アプリのすべてのシナリオと UI 要素を確認してください。
 
-Xxx xxx xxxxxx xxx xxxxxxxxxxxxx xxxxxxx xxxxx xxxxxx xxxx x Xxxxxxxxx Xxxxxx Xxxxxx xxxxxxx xxxxxx xx xxxx xxx Xxxxxxx XXX xxxxx xxxxxx (xxx xxx xxxxxxxxxxxx xx xxxxx xxx Xxxxxxx XXX xx xxxxxxxxx xx xxxx xxxxxxxxxxx xxxxxxx).
+アクセシビリティ テスト ツールは、Microsoft Visual Studio のコマンド プロンプト、または Windows SDK のツール フォルダー (開発コンピューター上の Windows SDK のインストール ディレクトリの bin サブディレクトリ) から起動できます。
 
-### <span id="AccScope">
-            </span>
-            <span id="accscope">
-            </span>
-            <span id="ACCSCOPE">
-            </span>
-            **XxxXxxxx**
+### <span id="AccScope"></span><span id="accscope"></span><span id="ACCSCOPE"></span>**AccScope**
 
-Xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) xxxx xxxxxxx xxxxxxxxxx xxx xxxxxxx xx xxxxxxxx xxx xxxxxxxxxxxxx xx xxxxx xxx xxxxxx xxx xxx'x xxxxxxxxxxx xxx xxxxxx, xxxxxxxxxxx xx xxxxxxx xxxxxxxxx xxxxxx, xxxxxx xxxx xx xxx xxxx xxxxxxx xxxxxx xx xx xxx'x xxxxxxxxxxx xxxxx. Xx'x xxxxxxxxxxxx xxxxxxxx xxx xxxxxxx Xxxxxxxx xxxxxxxxxxxxx xxxxxxxxx xxxx xxxx xxx.
+開発者やテスト担当者は、[**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) ツールを使って、アプリ開発サイクルの遅い段階のテスト フェーズではなく、アプリの開発フェーズ、設計フェーズ、場合によってはより早い段階のプロトタイプ フェーズで、アプリのアクセシビリティを評価できます。 このツールは、特にアプリのナレーター アクセシビリティ シナリオのテストを意図しています。
 
-### <span id="inspect">
-            </span>
-            <span id="INSPECT">
-            </span>
-            **Xxxxxxx**
+### <span id="inspect"></span><span id="INSPECT"></span>**Inspect**
 
-[
-            **Xxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) xxxxxxx xxx xx xxxxxx xxx XX xxxxxxx xxx xxxx xxx xxxxxxxxxxxxx xxxx. Xxx xxx xxxx Xxxxxxxxx XX Xxxxxxxxxx xxxxxxxxxx xxx xxxxxxx xxxxxxxx xxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx xx xxx XX Xxxxxxxxxx xxxx. Xxx **Xxxxxxx** xx xxx xxxxxxx xxx XX xx xxxxxx xxx xxxxxxxxxxxxx xxxxxxxxxx xxx xxxxxxx xx XX Xxxxxxxxxx. Xx xxxx xxxxx xxx xxxxxxxxxx xxxx xxxx xxx XX Xxxxxxxxxx xxxxxxx xxxx xx xxxxxxx xxxxxxxxxxx xxx xxxxxxx XXXX xxxxxxxx. Xx xxxxx xxxxx xxx xxxxxxxxxx xxxx xxxx xxxxxxxx xxxxxx xxxx xxx xxxx xxx xx xxxx XXXX xxxxxx, xx [**XxxxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209081) xxxxxxxx xxxxxxxxxx.
+[**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) を使うと、任意の UI 要素を選んで、そのアクセシビリティ データを表示できます。 Microsoft UI オートメーションのプロパティと制御パターンを表示し、UI オートメーション ツリー内のオートメーション要素のナビゲーション構造をテストできます。 UI の開発時に **Inspect** を使って、アクセシビリティ属性が UI オートメーションでどのように現れるか確認します。 属性は、既定の XAML コントロールに既に実装されている UI オートメーション サポートのものである場合や、 [
+            **AutomationProperties**](https://msdn.microsoft.com/library/windows/apps/BR209081) 添付プロパティとして、XAML マークアップで設定した特定の値のものである場合があります。
 
-Xxx xxxxxxxxx xxxxx xxxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) xxxx xxxxxxxx xxx XX Xxxxxxxxxx xxxxxxxxxx xx xxx **Xxxx** xxxx xxxxxxx xx Xxxxxxx.
+次の図は、メモ帳の **[編集]** メニュー要素の UI オートメーション プロパティを照会する [**Inspect**](https://msdn.microsoft.com/library/windows/desktop/Dd318521) ツールを示しています。
 
-![Xxxxxx xxxx xx xxx Xxxxxxx xxxx.](./images/inspect.png)
+![Inspect ツールのスクリーン ショット。](./images/inspect.png)
 
-### <span id="ui_accessibility_checker">
-            </span>
-            <span id="UI_ACCESSIBILITY_CHECKER">
-            </span>
-            **XX Xxxxxxxxxxxxx Xxxxxxx**
+### <span id="ui_accessibility_checker"></span><span id="UI_ACCESSIBILITY_CHECKER"></span>**UI Accessibility Checker**
 
-**XX Xxxxxxxxxxxxx Xxxxxxx (XxxXxxxxxx)** xxxxx xxx xxxxxxxx xxxxxxxxxxxxx xxxxxxxx xx xxx xxxx. Xxxx xxxx XX xx xxxxxxxx xxx xxxxxxxxxx, xxx **XxxXxxxxxx** xx xxxx xxxxxxxxx xxxxxxxxx, xxxxxx xxx xxxxxxxxxxx xx xxxxxxx xxxxxxxxxxxxx xxxxxxxxxxx, xxx xxxxxxxx xxxxxxx xxxxxx. Xxx xxx xxx **XxxXxxxxxx** xx XX xx xxxxxxx xxxx xxxx. Xx xxx xxx XX xxxx xxxx, xxxx xxx **XxxXxxxxxx** xxxxxxxxx xx xxx Xxxxxxx XXX xxx xxxxxxxxx, xxx xxxxxxxxxx.xxx, xxx xxxxx xxx **Xxxx** xxxx.
+**UI Accessibility Checker (AccChecker)** は、実行時にアクセシビリティの問題を検出するのに役立ちます。 UI が完成したら、**AccChecker** を使って、さまざまなシナリオをテストし、実行時のアクセシビリティ情報が正しいことを確認して、実行時の問題を検出します。 **AccChecker** は UI モードまたはコマンド ライン モードで実行できます。 UI モード ツールを実行するには、Windows ソフトウェア開発キット (Windows SDK) の bin ディレクトリの **AccChecker** ディレクトリを開き、acccheckui.exe を実行し、**[ヘルプ]** メニューをクリックしてください。
 
-### <span id="ui_automation_verify">
-            </span>
-            <span id="UI_AUTOMATION_VERIFY">
-            </span>
-            **XX Xxxxxxxxxx Xxxxxx**
+### <span id="ui_automation_verify"></span><span id="UI_AUTOMATION_VERIFY"></span>**UI Automation Verify**
 
-**XX Xxxxxxxxxx Xxxxxx (XXX Xxxxxx)** xx xx xxxxxxxxx xxxxxxx xxx xxxxxxxxxxxx xxxxxxxxx xxx XX Xxxxxxxxxx xxxxxxxxxxxxxxx. **XXX Xxxxxx** xxx xxxxxxxxx xxxx xxx xxxx xxxx xxx xxxxxxx xxxxxxx, xxxxxxxxx xxxxxxx xx xxxx xxxxxx xx XX Xxxxxxxxxx xxxxxxxxx. Xx xxx **XXX Xxxxxx**, xxx XxxxxxXXXXxxxxxXxxxxx.xxx xxxx xxx XXXXxxxxx xxxxxxxxxxxx.
+**UI Automation Verify (UIA Verify)** は、UI オートメーション実装のテストと検証を自動で行うフレームワークです。 **UIA Verify** は、テスト コードに統合することができ、UI オートメーション シナリオの定期的な自動テストやスポット チェックを行うことができます。 **UIA Verify** を実行するには、UIAVerify サブディレクトリから VisualUIAVerifyNative.exe を実行します。
 
-### <span id="accessible_event_watcher">
-            </span>
-            <span id="ACCESSIBLE_EVENT_WATCHER">
-            </span>
-            **Xxxxxxxxxx Xxxxx Xxxxxxx**
+### <span id="accessible_event_watcher"></span><span id="ACCESSIBLE_EVENT_WATCHER"></span>**Accessible Event Watcher**
 
-[
-            **Xxxxxxxxxx Xxxxx Xxxxxxx (XxxXxxxx)**](https://msdn.microsoft.com/library/windows/desktop/Dd317979) xxxxx xxxxxxx xx xxx'x XX xxxxxxxx xxxx xxxxxx XX Xxxxxxxxxx xxx Xxxxxxxxx Xxxxxx Xxxxxxxxxxxxx xxxxxx xxxx XX xxxxxxx xxxxx. Xxxxxxx xx xxx XX xxx xxxxx xxxx xxx xxxxx xxxxxxx, xx xxxx x XX xxxxxxx xx xxxxxxx, xxxxxxxx, xx xxx x xxxxx xx xxxxxxxx xxxxxx.
+[**Accessible Event Watcher (AccEvent)**](https://msdn.microsoft.com/library/windows/desktop/Dd317979) は、UI の変更が発生した場合に、アプリの UI 要素が UI オートメーションと Microsoft Active Accessibility の適切なイベントを発生させるかどうかをテストします。 UI の変更は、フォーカスが移動したときや、UI 要素の呼び出しまたは選択が行われたとき、状態またはプロパティが変更された場合に発生することがあります。
 
-**Xxxx**  Xxxx xxxxxxxxxxxxx xxxxxxx xxxxx xxxxxxxxx xx xxx xxxxxxxxxxxxx xxx xx x XX, xxx xx x xxxxx. Xxx xxx xxx xxxx xx xxx xxxxx xxxxx xxxxxxxxxx xxx xxxxx xx xxxxxxxx, xxx xxxx xx xxxxx xxxxx xxx'x xxxxxx xxx XX Xxxxxxxxxx xxxx xxxxxx xxx xxxxxxxx.
+**注**  ドキュメントで説明したほとんどのアクセシビリティ テスト ツールは、PC で動作し、電話では動作しません。 一部のツールは開発中にエミュレーターを使って実行できますが、それらのツールのほとんどはエミュレーターで UI オートメーション ツリーを表示できません。
 
  
 
-<span id="test_keyboard_accessibility">
-            </span>
-            <span id="TEST_KEYBOARD_ACCESSIBILITY">
-            </span>Xxxx xxxxxxxx xxxxxxxxxxxxx
+<span id="test_keyboard_accessibility"></span><span id="TEST_KEYBOARD_ACCESSIBILITY"></span>キーボード アクセシビリティをテストする
 -----------------------------------------------------------------------------------------------------------------------
 
-Xxx xxxx xxx xx xxxx xxxx xxxxxxxx xxxxxxxxxxxxx xx xx xxxxxx xxxx xxxxx xx xxx xxx Xx-Xxxxxx Xxxxxxxx xx xxx xxx xxxxx x xxxxxx xxxxxx. Xxxx xxxxxxxx xxxxxxxxxxxxx xxxxxxxxxx xx xxxxx xxx Xxx xxx. Xxx xxxxxx xx xxxx xx xxxxx xxxxxxx xxx xxxxxxxxxxx XX xxxxxxxx xx xxxxx Xxx xxx. Xxx xxxxxxxxx XX xxxxxxxx, xxxxxx xxxx xxx xxx xxxxxxxx xxxxx xxx xxxxx xx xxxxxxxx xx xxxxx xxx xxxxx xxxx. Xxx xxxxxxx, xxx xxxxxx xx xxxx xx xxxxxxxx xxxxx xx xxxxx xxxxx xxxxxxxx xxxx. Xxxxxxx, xxxx xxxx xxxx xxx xxx xxxxxx xxx xxxxxxxxxxx XX xxxxxxxx xxxx xxx xxxxxxxx xxxx xxxxx xxxxxxxx xxxx xxxxx, xxxxxxxxx xx xxxxx xxx Xxxxx xx Xxxxxxxx xxx.
+キーボード アクセシビリティをテストするには、マウスを取り外す (タブレット デバイスを使っている場合は、スクリーン キーボードを使う) ことが最も良い方法です。 キーボード アクセシビリティのナビゲーションをテストするには、Tab キーを使います。 すべての対話型 UI 要素に Tab キーで移動できる必要があります。 コンポジット UI 要素については、方向キーを使って要素の部分間を移動できることを確認します。 たとえば、キーボードのキーを使って項目の一覧間を移動できる必要があります。 さらに、すべての対話型 UI 要素を、フォーカスがあるときにキーボードで実行できる (通常は Enter キーまたは Space キーを使う) ことを確認します。
 
-<span id="verify_the_contrast_ratio_of_visible_text">
-            </span>
-            <span id="VERIFY_THE_CONTRAST_RATIO_OF_VISIBLE_TEXT">
-            </span>Xxxxxx xxx xxxxxxxx xxxxx xx xxxxxxx xxxx
+<span id="verify_the_contrast_ratio_of_visible_text"></span><span id="VERIFY_THE_CONTRAST_RATIO_OF_VISIBLE_TEXT"></span>表示テキストのコントラスト比を確認する
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Xxx xxxxx xxxxxxxx xxxxx xx xxxxxx xxxx xxx xxxxxxx xxxx xxxxxxxx xxxxx xx xxxxxxxxxx. Xxx xxxxxxxxxx xxxxxxx xxxxxxxx XX xxxxxxxx, xxx xxxxx xx xxxxxxxxxx xxxx xxxx xxxxx’x xxxxxx xxx xxxxxxxxxxx xxx xxx xx xxxxxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxx. Xxx [Xxxxxxxxxx xxxx xxxxxxxxxxxx](accessible-text-requirements.md) xxx xxxx xxxxxxxxxxx xx xxxxxxxx xxxxx xxx xxxxxxxxxx. Xxx [Xxxxxxxxxx xxx XXXX Y.Y XYY (Xxxxxxxxx xxxxxxx)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources) xxx xxxxx xxxx xxx xxxx xxxxxxxx xxxxxx.
+色コントラスト ツールを使って、表示テキストのコントラスト比が適切であることを検証します。 ただし、非アクティブな UI 要素や、何も情報を伝えず、意味を変えることなく再配置できるロゴまたは装飾テキストは、例外です。 コントラスト比と例外について詳しくは、「[アクセシビリティに対応したテキストの要件](accessible-text-requirements.md)」をご覧ください。 コントラスト比をテストできるツールについては、[Techniques for WCAG 2.0 の G18 (リソース セクション)](http://www.w3.org/TR/WCAG20-TECHS/G18.html#G18-resources) をご覧ください。
 
-**Xxxx**  Xxxx xx xxx xxxxx xxxxxx xx Xxxxxxxxxx xxx XXXX Y.Y XYY xxx'x xx xxxx xxxxxxxxxxxxx xxxx x Xxxxxxx Xxxxx xxx. Xxx xxx xxxx xx xxxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxx xxxxxxxx xx xxx xxxx, xxxx xxxxxx xxxxxxxx xx xxx XX xxx xxxx xxx xxx xxxxxxxx xxxxx xxxx xxxx xxx xxxxxx xxxxxxx xxxxx, xx xxx xxx xxxx xxxxx xxxxxxx xxxxxx xxxxxx xxxxx xx xx xxxxx xxxxxxx xxxxxxx xxxxxx xxxx xxxxx xxxx xxxxx xx xxxxxx xx xxx xxx.
+**注**  Techniques for WCAG 2.0 の G18 にリストされたツールのいくつかは、Windows ストア アプリで対話的に使うことができません。 場合によっては、前景と背景の色の値を手動でツールに入力する必要があります。またアプリ UI の画面をキャプチャした後、そのキャプチャ画像に対してコントラスト比ツールを実行することが必要になる場合もあります。また、画像編集プログラムでソース ビットマップ ファイルを開いている間 (その画像がアプリによって読み込まれているときではなく) にツールを実行することが必要になる場合もあります。
 
  
 
-<span id="verify_your_app_in_high_contrast">
-            </span>
-            <span id="VERIFY_YOUR_APP_IN_HIGH_CONTRAST">
-            </span>Xxxxxx xxxx xxx xx xxxx xxxxxxxx
+<span id="verify_your_app_in_high_contrast"></span><span id="VERIFY_YOUR_APP_IN_HIGH_CONTRAST"></span>アプリをハイ コントラストで確認する
 --------------------------------------------------------------------------------------------------------------------------------------
 
-Xxx xxxx xxx xxxxx x xxxx-xxxxxxxx xxxxx xx xxxxxx xx xxxxxx xxxx xxx xxx XX xxxxxxxx xxxxxxx xxxxxxxxx. Xxx xxxx xxxxxx xx xxxxxxxx, xxx xxx xxxxxx xxxxxx xx xxxxx. Xxxxxx xxx XXXX xxxxx-xxxxxxxxxx xxxxxxxxx xx xxxxxxx xxxxxxxxx xx xxxxxxx xxx xxxxx xxxxxx xxxx xxxx xxxx xxxxxxxx. Xx xxxxx xxxxx xxxxxxxxx xxxx-xxxxxxxx xxxxxx xxx xxx xxxxxx xxxx xxxxxx xx xxxxxxxx (xxxx xx xxxx xxxxx xxxxx), xxxxxxx xxxxxxxx xxxxxxxx xx xxx xxxx x xxxx-xxxxxxxx xxxxx xx xxxxxx.
+ハイ コントラスト テーマがアクティブになっている状態でアプリを使って、すべての UI 要素が適切に表示されることを確認します。 すべてのテキストを読み取ることができ、すべての画像がクリアに表示されている必要があります。 XAML テーマ ディクショナリのリソースまたはコントロール テンプレートを調整し、コントロールが原因であるテーマの問題があれば修正します。 ハイ コントラストの重大な問題の原因がテーマまたはコントロール (イメージ ファイルなど) でない場合は、ハイ コントラスト テーマがアクティブになっているときに使う別のバージョンを用意します。
 
-<span id="verify_your_app_with_make_everything_on_your_screen_bigger">
-            </span>
-            <span id="VERIFY_YOUR_APP_WITH_MAKE_EVERYTHING_ON_YOUR_SCREEN_BIGGER">
-            </span>Xxxxxx xxxx xxx xxxx xxxxxxx xxxxxxxx
+<span id="verify_your_app_with_make_everything_on_your_screen_bigger"></span><span id="VERIFY_YOUR_APP_WITH_MAKE_EVERYTHING_ON_YOUR_SCREEN_BIGGER"></span>アプリの表示設定を確認する
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Xxx xxx xxxxxx xxxxxxx xxxxxxx xxxx xxxxxx xxx xxxxxxx'x xxxx xxx xxxx (xxx) xxxxx, xxx xxxxxx xxxx xxxx xxx XX xxxxxx xxxxxxxxx xxxx xxx xxx xxxxx xxxxxxx. (Xxxx xxxxx xxxxxx xxx xxxxxx xx xx xxxxxxxxxxxxx xxxxxx, xx'x xxxxxxxxx xxxx **Xxxx xx Xxxxxx** xx xxxx xx xxxxxxx xxxxxxxxxx.) Xx xxx xxxx xxx xxxxxx, xxxxxx xxx [Xxxxxxxxxx xxx xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/Dn611863) xxx xxxxxxx xxxxxxxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxx xxxxxxx.
+ディスプレイの 1 インチあたりのドット数 (dpi) の値を調整するシステム ディスプレイ オプションを使い、DPI の値の変更に合わせてアプリの UI が正常に拡大縮小されることを確認します (一部のユーザーはアクセシビリティ対応オプションとして DPI の値を変更します。これは、**[コンピューターの簡単操作]** からだけでなく各種の表示プロパティでも設定できます)。問題が見つかった場合は、[レイアウトとスケーリングのガイドライン](https://msdn.microsoft.com/library/windows/apps/Dn611863) に従い、さまざまなスケール ファクター用のリソースを追加します。
 
-<span id="verify_main_app_scenarios_by_using_narrator">
-            </span>
-            <span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR">
-            </span>Xxxxxx xxxx xxx xxxxxxxxx xx xxxxx Xxxxxxxx
+<span id="verify_main_app_scenarios_by_using_narrator"></span><span id="VERIFY_MAIN_APP_SCENARIOS_BY_USING_NARRATOR"></span>ナレーターでアプリの主要なシナリオを確認する
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Xxx Xxxxxxxx xx xxxx xxx xxxxxx xxxxxxx xxxxxxxxxx xxx xxxx xxx xx xxxxxxxxxx xxx xxxxxxxxx xxxxx:
+ナレーターを使ってアプリの画面の読み上げをテストするには、以下の手順を実行します。
 
-**Xxx xxxxx xxxxx xx xxxx xxxx xxx xxxxx Xxxxxxxx xxxx x xxxxx xxx xxxxxxxx:**
+**次の手順に従って、マウスとキーボードでナレーターを使ってアプリをテストします。**
 
-1.  Xxxxx Xxxxxxxx xx xxxxxxxx Xxxxxxx xxxx xxx + Xxxxx.
-2.  Xxxxxxxx xxxx xxx xxxx xxx xxxxxxxx xx xxxxx xxx Xxx xxx, xxx xxxxx xxxx, xxx xxx Xxxx Xxxx + xxxxx xxxx.
-3.  Xx xxx xxxxxxxx xxxx xxx, xxxxxx xx Xxxxxxxx xxxxx xxx xxxxxxxx xx xxxx XX xxx xxxxxx xxx xxxxxxxxx:
-    -   Xxx xxxx xxxxxxx, xxxxxx xxxx Xxxxxxxx xxxxx xxx xxxxxxx xxxxxxx. Xxxx xxxxxx xxxx Xxxxxxxx xxxxx xxxx xxxxxxx'x xxxx, xxx xxxxxxxxxx xxxxx (xxxxxxx, xxxxxxxx, xxx xx xx), xxx xxx xxxxxxx xxxx (xxxxxx, xxxxx xxx, xxxx xxxx, xxx xx xx).
-    -   Xx xxx xxxxxxx xx xxxxxxxxxxx, xxxxxx xxxx xxx xxx xxx Xxxxxxxx xx xxxxxx xxx xxxxxx xx xxxxxxxx Xxxx Xxxx + Xxxxxxxx.
-    -   Xxx xxxx xxxxx, xxxxxx xxxx Xxxxxxxx xxxxxxxxx xxxxx xxx xxxxx xxxx, xxx xxxxx xxxxxxxxxxx (xx xxxxxxxxx), xxx xxx xxx xxx xxxxxx xxxxxxxx.
+1.  Windows ロゴ キーと Enter キーを同時に押して、ナレーターを起動します。
+2.  キーボードを使ってアプリ内を移動するには、Tab キーと方向キーを使うか、CapsLock キーを押しながら方向キーを使います。
+3.  アプリ内を移動しながら、ナレーターが UI 要素を読み上げるのを聞き取り、次の点を確かめます。
+    -   コントロールごとに、すべての表示コンテンツがナレーターによって読み上げられるのを確かめます。 また、各コントロールの名前、該当する状態 (オン、選択済みなど)、種類 (ボタン、チェック ボックス、一覧項目など) がナレーターによって読み上げられるのを確かめます。
+    -   要素が対話型である場合は、CapsLock キーを押しながら Space キーを押すことにより、操作を起動するためにナレーターを使用できることを確認します。
+    -   表ごとに、表の名前、説明 (存在する場合)、行見出しと列見出しがナレーターによって正しく読み上げられるのを確かめます。
 
-4.  Xxxxx Xxxx Xxxx + Xxxxx xx xxxxxx xxxx xxx xxx xxxxxx xxxx xxx xx xxxx xxxxxxxx xxxxxx xx xxx xxxxxx xxxx, xxx xxxx xxx xxxxxxx xxxxx xxx xxxxxxxxx xxx xxxxxxxx.
-5.  Xxxx xxx xxxx xxxxxxx xxx xxx xx xxxxxxxxxx xxxx xxx xxxxxxxxx xx xxxxx xxxx xxx xxxxxxxx xxx Xxxxxxxx. Xx xxx xxx xxxx xxxx xx Xxxxxxxx xxxxxxxx xxx xxxxxxxxx, xxxxx Xxxx Xxxx + XY.
+4.  CapsLock キーと Enter キーを同時に押すことでアプリを検索し、すべてのコントロールが検索一覧に表示されることとコントロール名がローカライズされて読み取り可能であることを確かめます。
+5.  モニターをオフにし、キーボードとナレーターのみを使ってアプリの主要なシナリオを実行できることを確かめます。 ナレーターのすべてのコマンドとショートカットの一覧を表示するには、CapsLock キーを押しながら F1 キーを押します。
 
-**Xxx xxxxx xxxxx xx xxxx xxxx xxx xxxxx Xxxxxxxx'x xxxxx xxxx:**
+**次の手順に従って、ナレーターのタッチ モードを使ってアプリをテストします。**
 
-**Xxxx**  Xxxxxxxx xxxxxxxxxxxxx xxxxxx xxxxx xxxx xx xxxxxxx xxxx xxxxxxx Y+ xxxxxxxx. Xxxxxxxx xxxxx'x xxxxxxx xxxxx-xxxxxxx xxxxxxxxx xx xxxxx-xxxxx xxxxxxxxxx xx xxx xxxxxxx xxxxxx.
+**注**  4 つ以上のコンタクトをサポートするデバイスの場合、ナレーターは自動的にタッチ モードに移行します。 ナレーターは、マルチモニターや主要画面でのマルチタッチ デジタイザーをサポートしません。
 
  
 
-1.  Xxx xxxxxxxx xxxx xxx XX xxx xxxxxxx xxx xxxxxx.
+1.  UI を操作し、レイアウトを確かめます。
 
-    -   **Xxxxxxxx xxxxxxx xxx XX xx xxxxx xxxxxx-xxxxxx xxxxx xxxxxxxx.** Xxx xxxx xx xxxxx xxxxxx xx xxxx xxxxxxx xxxxx, xxx xx xx xxxx xxxxxx xx xxxxxx xxx xxxxxxxx xx xxxxx xxxxx xxxxxxxxx. Xxxxxxxxxx xxxxxxx xxx xxxxx, xxxxx, xxxxxx, xxxxxxx, xxx xx xx. Xxxxxxxxxx xxxx xxxxxx-xxxxxx xxxxx xxxxxxxx xx xxxxxxx xx xxxxxxxxxx xxxx Xxxx Xxxx + Xxxxx.
-    -   **Xxx xxx xxxxxxxx xx xxxxxxxx xxxxxxx xxxxxxxxx xxxxxxxx.** X xxxxx-xxxxxx xxxxx xx xxx xxxxx xx xxxx xx xxx xxxx xx xxxxxxxxxx xxxx Xxx xxx Xxxxx + Xxx xx x xxxxxxxx.
-    -   **Xxxxxxxxx xxxxxxxxxxx xxx XX xxxx x xxxxxx xxxxxx.** Xxxx x xxxxxx xxxxxx xx xxx xxxx, xx xxxx xxx xxxxx, xx xxxx Xxxxxxxx xxxx xxx xxxxx xxxxx xxxx xxxxxx. Xxx xxx xxx xxx xxxxx xx xx xxxxxxxxxxx xxxxxxx xx xxxx xxx xxxx xxx-xxxxxxx xxxxx xx xxxxxxxx x xxxxxx xxxxxx.
-    -   **Xxxx xxx xxxxxx xxxxxx xxx xxx xxx xxxxxxxx xxxx x xxxxx xxxxxx xxxxx xx**. Xxxx xx xxxxxxxxxx xx xxxxx Xxxx Xxxx + X.
+    -   **指 1 本のスワイプ ジェスチャを使って、UI を操作します。** 項目間を移動するには左右のスワイプを使い、項目のカテゴリを変更するには上下のスワイプを使います。 カテゴリには、すべての項目、リンク、表、見出しなどがあります。 指 1 本のスワイプ ジェスチャは、CapsLock キーと方向キーを使った操作と似ています。
+    -   **タブ ジェスチャを使って、フォーカス可能な要素を移動します。** 3 本指を使った左右へのスワイプは、Tab キーおよび Shift キー + Tab キーを使った操作と似ています。
+    -   **指 1 本を使って UI を空間的に調査します。** 1 本の指を上下左右にドラッグして、ナレーターに指の下の項目を読み上げさせます。 代わりにマウスを使うこともできます。マウスでも 1 本指でのドラッグと同じヒット テスト ロジックを使っているためです。
+    -   **3 本指で上方向へスワイプすることで、ウィンドウ全体とウィンドウの全内容を読み上げます**。 これは、CapsLock キーを押しながら W キーを押すのと同じです。
 
-    Xx xxxxx xx xxxxxxxxx XX xxxx xxx xxxxxx xxxxx, xxx xxx xxxx xx xxxxxxxxxxxxx xxxxx.
+    重要な UI にアクセスできない場合、アクセシビリティに問題が存在する可能性があります。
 
-2.  Xxxxxxxx xxxx x xxxxxxx xx xxxx xxx xxxxxxx xxx xxxxxxxxx xxxxxxx, xxx xxx xxxxxxxxx xxxxxxxx.
+2.  コントロールを操作して、プライマリ操作、セカンダリ操作、スクロール動作をテストします。
 
-    Xxxxxxx xxxxxxx xxxxxxx xxxxxx xxxx xxxxxxxxxx x xxxxxx, xxxxxxx x xxxx xxxxx, xxx xxxxxxx xxxxx xx xxx xxxxxxx. Xxxxxxxxx xxxxxxx xxxxxxx xxxxxxx xxxx xx xxxxxxxxx x xxxx xxxx xx xxxxxxxxx x xxxxxx xxxx xxxxxx xxxxxxxx xxxxxxx.
+    プライマリ操作には、ボタンのアクティブ化、テキスト キャレットの配置、コントロールへのフォーカスの設定などが含まれます。 セカンダリ操作には、一覧項目の選択、オプションが複数あるボタンの展開などの操作が含まれます。
 
-    -   Xx xxxx x xxxxxxx xxxxxx: Xxxxxx xxx, xx xxxxx xxxx xxx xxxxxx xxx xxx xxxx xxxxxxx.
-    -   Xx xxxx x xxxxxxxxx xxxxxx: Xxxxxx xxx, xx xxxxx xxxx xxx xxxxxx xxx xxxxxx xxx xxxx xxxxxxx.
-    -   Xx xxxx xxxxxxxxx xxxxxxxx: Xxx xxx-xxxxxx xxxxxx xx xxxxxx xx xxx xxxxxxx xxxxxxxxx.
+    -   プライマリ操作のテスト: ダブルタップするか、指で押しながら別の指でタップします。
+    -   セカンダリ操作のテスト: トリプルタップするか、指で押しながら別の指でダブルタップします。
+    -   スクロール操作のテスト: 2 本指でスワイプし、目的の方向にスクロールします。
 
-    Xxxx xxxxxxxx xxxxxxx xxxxxxxxxx xxxxxxx. Xx xxxxxxx xxx xxxx xxxx, xxxxx x xxxxxx xxxx-xxxxxx xxx.
+    一部のコントロールには、その他の操作も用意されています。 すべての一覧を表示するには、4 本指で 1 回タップします。
 
-    Xx x xxxxxxx xxxxxxxx xx xxx xxxxx xx xxxxxxxx xxx xxxx xxx xxxxxxx xx x xxxxxxx xx xxxxxxxxx xxxxx xxxxxxxxxxx, xxx xxxxxxx xxxxx xxxx xx xxxxxxxxx xxxxxxxxxx [XX Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/Ee684009) xxxxxxx xxxxxxxx.
+    マウスまたはキーボードに応答し、プライマリ タッチ操作またはセカンダリ タッチ操作に応答しないコントロールの場合、新しい [UI オートメーション](https://msdn.microsoft.com/library/windows/desktop/Ee684009) コントロール パターンを実装する必要があります。
 
-Xxx xxxxxx xxxx xxxxxxxx xxxxx xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) xxxx xx xxxx Xxxxxxxx xxxxxxxxxxxxx xxxxxxxxx xxxx xxxx xxx. Xxx [**XxxXxxxx xxxx xxxxx**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) xxxxxxxxx xxx xx xxxxxxxxx **XxxXxxxx** xx xxxx Xxxxxxxx xxxxxxxxx.
+また、[**AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) ツールを使ってアプリのナレーター アクセシビリティ シナリオをテストすることも検討してください。 「[**AccScope ツール トピック**](https://msdn.microsoft.com/library/windows/desktop/Dn433239)」では、ナレーター シナリオをテストするための **AccScope** の構成方法について説明しています。
 
-<span id="Examine_the_UI_Automation_representation_for_your_app">
-            </span>
-            <span id="examine_the_ui_automation_representation_for_your_app">
-            </span>
-            <span id="EXAMINE_THE_UI_AUTOMATION_REPRESENTATION_FOR_YOUR_APP">
-            </span>Xxxxxxx xxx XX Xxxxxxxxxx xxxxxxxxxxxxxx xxx xxxx xxx
+<span id="Examine_the_UI_Automation_representation_for_your_app"></span><span id="examine_the_ui_automation_representation_for_your_app"></span><span id="EXAMINE_THE_UI_AUTOMATION_REPRESENTATION_FOR_YOUR_APP"></span>アプリの UI オートメーションの表現を確認します。
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-Xxxxxxx xx xxx XX Xxxxxxxxxx xxxxxxx xxxxx xxxxxxxxx xxxxxxxxxx xxxxxxx x xxx xx xxxx xxxx xxx xx x xxx xxxx xxxxxxxxxxxx xxxx xxx xxxxxxxx xxxx xxx xxx xxxxx xxxx, xxx xxxxxxx xxxxxxxxxx xxx xxx xx x xxxxxxxxx xx XX Xxxxxxxxxx xxxxxxxx. Xxxx xx xxx XX Xxxxxxxxxx xxxxxxx, xxxxxx xxxxxxxxx xxxxxxxxxxxx, xxxx xx xxxxxxxxxxx xxxx xxxx xxx xx xxxxxxxxxxxxx xxxxxxxxx.
+前述したいくつかの UI オートメーション テスト ツールでは、アプリがどのように見えるかを緩慢に考慮するのではなく、UI オートメーション要素の構造としてアプリを表現する方法についてアプリを確認する手段を提供しています。 この方法によって、UI オートメーション クライアント (主に支援技術) がアクセシビリティのシナリオでアプリを操作します。
 
-Xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) xxxx xxxxxxxx x xxxxxxxxxxxx xxxxxxxxxxx xxxx xx xxxx xxx xxxxxxx xxx xxx xxx xxx XX Xxxxxxxxxx xxxxxxxx xxxxxx xx x xxxxxx xxxxxxxxxxxxxx xx xx x xxxx. Xx xxx xxx xxx xxxxxxxxxxxxx, xxx xxx xxxxx xxxx xxxx xxx xxxxx xx x xxx xxxx xxx'xx xx xxxx xx xxxxxxxxx xxxx xxx xxxxxx xxxxxxxxxx xx xxxx xxx'x XX. Xxx xxx xxxx xxxx xxx xxxxxxxxxxxxx xx xxxx xxxxxxxx XX xxxxxxxxxx xxxxxx xxx'xx xxxxxxxx xxx xxx xxxxx xx xxx XX, xxxxxx xxxx xxxx xxxx xxx xxxxxx xxxxxxxxxxx xxx xxxxxxxxxxxxx-xxxxxxxx xxxxxxxxxx xxx xxxx xxx xx xx xxxxxxx.
+[
+            **AccScope**](https://msdn.microsoft.com/library/windows/desktop/Dn433239) ツールでは、視覚的な表現またはリストのいずれかとして UI オートメーション要素を表示できるので、アプリについて特に興味深いビューが得られます。 視覚エフェクトを使うと、アプリの UI の視覚的な外観に関連するように各部にドリルダウンできます。 すべてのロジックを UI に割り当てる前に、最初期の UI プロトタイプのアクセシビリティをテストすることさえ可能であり、アプリの視覚的な対話操作とアクセシビリティ シナリオのナビゲーションについて双方のバランスを確認できます。
 
-Xxx xxxxxx xxxx xxx xxx xxxx xx xxxxxxx xxxxx xxx xxxxxxxx xxxxxxxxx xx xxx XX Xxxxxxxxxx xxxxxxx xxxx xxxx xxx xxx'x xxxx xx xxxxxx xxxxx. Xx xxx xxxx xxxxxxxx xxx xxxx xx xxxx xxxx xxx xxxx, xx xxxxxxxxxx xx xxxxx xxx xxxxxxxx xxxxxxx, xxx xxx xxx xxx [**XxxxxxxxxxXxxxxxxxxx.XxxxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR209081_accessibilityview) XXXX xxxxxxxx xxxxxxxx xx xxxxxx xxx XXXX xxxxxxxx xxxxxx xx xxxxxxxxxxxxx xxxxx. Xxxxx xxx'xx xxxxxx xx xxx xxxxx xxxxxxxxxxxxx xxxxx, xxxx xx xxxx x xxxx xxxxxxxxxxx xx xxxxxxx xxxx xxx xxxxxxxxx xx xxxxxxx xxxxxxxxxx xx xxxxxxx xx xxxxx xxxx xx xxxx xxxx xxxxx xxx xxxxx xxxx xx xxx xxxxx xxxx xxx xxxxxxxxxxx xxx xxxxxxx xx xxx xxxxxxx xxxx.
+テスト可能な側面の 1 つとして、表示したくない要素が UI オートメーション要素ビューに表示されるかどうかがあります。 ビューから除外したい要素、または反対に欠落する要素が見つかった場合に、アクセシビリティ ビューで XAML コントロールの表示を調整するために [**AutomationProperties.AccessibilityView XAML**](https://msdn.microsoft.com/library/windows/apps/BR209081_accessibilityview) 添付プロパティを使用できます。 基本的なアクセシビリティ ビューを確認した後、コントロール ビューに公開される対話型の各部分にユーザーがアクセスできるかどうかについて、方向キーによって使用可能なタブ シーケンスまたは空間的なナビゲーションを再確認することもお勧めします。
 
-Xxxxxxx xxxxxx
+関連トピック
 -----------------------------------------------
 
-* [Xxxxxxxxxxxxx](accessibility.md)
-* [Xxxxxxxxx xx xxxxx](practices-to-avoid.md)
-* [XX Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
-* [Xxxxxxxxxxxxx xx Xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=320802)
+* [アクセシビリティ](accessibility.md)
+* [避ける事項](practices-to-avoid.md)
+* [UI オートメーション](https://msdn.microsoft.com/library/windows/desktop/Ee684009)
+* [Windows のアクセシビリティ](http://go.microsoft.com/fwlink/p/?LinkId=320802)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

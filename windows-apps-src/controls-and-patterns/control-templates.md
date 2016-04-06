@@ -1,52 +1,55 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxxxxxxxx x xxxxxxx'x xxxxxx xxxxxxxxx xxx xxxxxx xxxxxxxx xx xxxxxxxx x xxxxxxx xxxxxxxx xx xxx XXXX xxxxxxxxx.
-XX-XXXX: 'xxx\_xxxx\_xxxxxx\_xxx.xxxxxxx\_xxxxxxxxx'
-XXXXxxx: 'XxxxxxxxxXxx:/xxxxxxx/xxxxxxx/xxxx'
-Xxxxxx.Xxxxxxx: xXXXxXxxxxxx YYXXxxx
-xxxxx: Xxxxxxx xxxxxxxxx
-xx.xxxxxxx: YXYYYYYY-XYXY-YYYX-YXYX-XXXXYXYYYXXX
-xxxxx: Xxxxxxx xxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: XAML フレームワークで、コントロール テンプレートを作ることによって、コントロールの視覚的構造や視覚的動作をカスタマイズすることができます。
+MS-HAID: 'dev\_ctrl\_layout\_txt.control\_templates'
+MSHAttr: 'PreferredLib:/library/windows/apps'
+Search.Product: eADQiWindows 10XVcnh
+title: コントロール テンプレート
+ms.assetid: 6E642626-A1D6-482F-9F7E-DBBA7A071DAD
+label: コントロール テンプレート
+template: detail.hbs
 ---
 
-# Xxxxxxx xxxxxxxxx
+# コントロール テンプレート
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**XxxxxxxXxxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209391)
--   [**Xxxxxxx.Xxxxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)
+-   [**ControlTemplate クラス**](https://msdn.microsoft.com/library/windows/apps/br209391)
+-   [**Control.Template プロパティ**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.control.template.aspx)
 
-Xxx xxx xxxxxxxxx x xxxxxxx'x xxxxxx xxxxxxxxx xxx xxxxxx xxxxxxxx xx xxxxxxxx x xxxxxxx xxxxxxxx xx xxx XXXX xxxxxxxxx. Xxxxxxxx xxxx xxxx xxxxxxxxxx, xxxx xx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209395), [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209414), xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209404), xxxx xxx xxx xxx xx xxxxxxx xxxxxxxxx xxxxxxx xx xxx xxxxxxx'x xxxxxxxxxx. Xxx xxx xxxxxxx xxxx xxx xxx xxxx xx xxxxxxx xxxxx xxxxxxxxxx xxx xxxxxxx. Xxx xxx xxxxxxx xxxxxxxxxx xxxxxxxxxxxxxx xx xxxxxxxx x xxxxxxxx xxxxx xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209391) xxxxx. Xxxx, xx xxxx xxx xxx xx xxxxxx x **XxxxxxxXxxxxxxx** xx xxxxxxxxx xxx xxxxxxxxxx xx x [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209316) xxxxxxx.
+XAML フレームワークで、コントロール テンプレートを作ることによって、コントロールの視覚的構造や視覚的動作をカスタマイズすることができます。 コントロールには、[**Background**](https://msdn.microsoft.com/library/windows/apps/br209395)、[**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414)、[**FontFamily**](https://msdn.microsoft.com/library/windows/apps/br209404) などの多くのプロパティがあり、このプロパティを設定することで、コントロールの外観に関するさまざまな要素を指定できます。 ただし、これらのプロパティの設定によって変更できる内容は限られています。 [
+            **ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) クラスを使ってテンプレートを作成することにより、さらに細かいカスタマイズを指定できます。 ここでは、[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) コントロールの外観をカスタマイズする **ControlTemplate** の作成方法について説明します。
 
-## Xxxxxx xxxxxxx xxxxxxxx xxxxxxx
+## カスタム コントロール テンプレートの例
 
 
-Xx xxxxxxx, x [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209316) xxxxxxx xxxx xxx xxxxxxx (xxx xxxxxx xx xxxxxx xxxx xx xxx **XxxxxXxx**) xx xxx xxxxx xx xxx xxxxxxxxx xxx, xxx x xxxxx xxxx xxxxxxxxx xxxx x xxxx xxxxxxxx xxx **XxxxxXxx**. Xxxxx xxxxxxxxxxxxxxx xxxxxxxxx xxx xxxxxx xxxxxxxxx xxx xxxxxx xxxxxxxx xx xxx **XxxxxXxx**.
+既定では、[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) コントロールの内容 (**CheckBox** の横に表示される文字列またはオブジェクト) は、選択ボックスの右側に配置され、チェック マークはユーザーがその **CheckBox** を選択したことを示します。 これらの特性は、**CheckBox** の視覚的構造や視覚的動作を表します。
 
-Xxxx'x x [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209316) xxxxx xxx xxxxxxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209391) xxxxx xx xxx `Unchecked`, `Checked`, xxx `Indeterminate` xxxxxx.
+次の図は、既定の [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) を使った [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) での `Unchecked`、`Checked`、`Indeterminate` の各状態を示しています。
 
-![xxxxxxx xxxxxxxx xxxxxxxx](images/templates-checkbox-states-default.png)
+![既定の CheckBox テンプレート](images/templates-checkbox-states-default.png)
 
-Xxx xxx xxxxxx xxxxx xxxxxxxxxxxxxxx xx xxxxxxxx x [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209391) xxx xxx [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209316). Xxx xxxxxxx, xx xxx xxxx xxx xxxxxxx xx xxx xxxxx xxx xx xx xxxxx xxx xxxxxxxxx xxx, xxx xxx xxxx xx xxx xx **X** xx xxxxxxxx xxxx x xxxx xxxxxxxx xxx xxxxx xxx. Xxx xxxxxxx xxxxx xxxxxxxxxxxxxxx xx xxx **XxxxxxxXxxxxxxx** xx xxx **XxxxxXxx**.
+[
+            **CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) に対して [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) を作成することで、これらの特性を変更できます。 たとえば、チェック ボックスの内容を選択ボックスの下に配置し、ユーザーがチェック ボックスをオンにしたことを **X** で示す場合を考えます。 **CheckBox** の **ControlTemplate** に、これらの特性を指定します。
 
-Xx xxx x xxxxxx xxxxxxxx xxxx x xxxxxxx, xxxxxx xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209391) xx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209465) xxxxxxxx xx xxx xxxxxxx. Xxxx'x x [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209316) xxxxx x **XxxxxxxXxxxxxxx** xxxxxx `CheckBoxTemplate1`. Xx xxxx xxx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX) xxx xxx **XxxxxxxXxxxxxxx** xx xxx xxxx xxxxxxx.
+コントロールにカスタム テンプレートを使うには、[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) をコントロールの [**Template**](https://msdn.microsoft.com/library/windows/apps/br209465) プロパティに割り当てます。 ここでは、[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) に `CheckBoxTemplate1` という名前の **ControlTemplate** を使います。 **ControlTemplate** の Extensible Application Markup Language (XAML) は、次のセクションで示します。
 
 ```XAML
 <CheckBox Content="CheckBox" Template="{StaticResource CheckBoxTemplate1}" IsThreeState="True" Margin="20"/>
 ```
 
-Xxxx'x xxx xxxx [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209316) xxxxx xx xxx `Unchecked`, `Checked`, xxx `Indeterminate` xxxxxx xxxxx xx xxxxx xxx xxxxxxxx.
+このテンプレートを適用した後で [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) の `Unchecked`、`Checked`、`Indeterminate` の各状態がどのようになるかを次に示します。
 
-![xxxxxx xxxxxxxx xxxxxxxx](images/templates-checkbox-states.png)
+![カスタム CheckBox テンプレート](images/templates-checkbox-states.png)
 
-## Xxxxxxx xxx xxxxxx xxxxxxxxx xx x xxxxxxx
+## コントロールの視覚的構造の指定
 
 
-Xxxx xxx xxxxxx x [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209391), xxx xxxxxxx [**XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208706) xxxxxxx xx xxxxx x xxxxxx xxxxxxx. X **XxxxxxxXxxxxxxx** xxxx xxxx xxxx xxx **XxxxxxxxxXxxxxxx** xx xxx xxxx xxxxxxx. Xxx xxxx xxxxxxx xxxxxxx xxxxxxxx xxxxx **XxxxxxxxxXxxxxxx** xxxxxxx. Xxx xxxxxxxxxxx xx xxxxxxx xxxxx xx xxx xxxxxxx'x xxxxxx xxxxxxxxx.
+[
+            **ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) を作るときには、いくつかの [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) オブジェクトを組み合わせて 1 つのコントロールを作ります。 **ControlTemplate** には、ルート要素として **FrameworkElement** が 1 つだけ含まれている必要があります。 通常、ルート要素には、他の **FrameworkElement** オブジェクトが含まれています。 オブジェクトの組み合わせによって、コントロールの視覚的構造が作られます
 
-Xxxx XXXX xxxxxxx x [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209391) xxx x [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209316) xxxx xxxxxxxxx xxxx xxx xxxxxxx xx xxx xxxxxxx xx xxxxx xxx xxxxxxxxx xxx. Xxx xxxx xxxxxxx xx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209250). Xxx xxxxxxx xxxxxxxxx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br243355) xx xxxxxx xx **X** xxxx xxxxxxxxx xxxx x xxxx xxxxxxxx xxx **XxxxxXxx**, xxx xx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243343) xxxx xxxxxxxxx xx xxxxxxxxxxxxx xxxxx. Xxxx xxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208962) xx xxx xx Y xx xxx **Xxxx** xxx xxx **Xxxxxxx** xx xxxx xx xxxxxxx, xxxxxxx xxxxxx.
+次の XAML は、コントロールの内容を選択ボックスの下に配置するよう指定する、[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) 用の [**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) を作成します。 ルート要素は [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) です。 この例では、ユーザーが **CheckBox** をオンにしたことを示す **X** を作成する [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) と、不確定状態を示す [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) を指定しています。 これらの **Path** と **Ellipse** では [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) が 0 に設定されているため、既定ではどちらも表示されません。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -82,25 +85,28 @@ Xxxx XXXX xxxxxxx x [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/win
 </ControlTemplate>
 ```
 
-## Xxxxxxx xxx xxxxxx xxxxxxxx xx x xxxxxxx
+## コントロールの視覚的動作の指定
 
 
-X xxxxxx xxxxxxxx xxxxxxxxx xxx xxxxxxxxxx xx x xxxxxxx xxxx xx xx xx x xxxxxxx xxxxx. Xxx [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209316) xxxxxxx xxx Y xxxxx xxxxxx: `Checked`, `Unchecked`, xxx `Indeterminate`. Xxx xxxxx xx xxx [**XxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209798) xxxxxxxx xxxxxxxxxx xxx xxxxx xx xxx **XxxxxXxx**, xxx xxx xxxxx xxxxxxxxxx xxxx xxxxxxx xx xxx xxx.
+視覚的動作は、コントロールが特定の状態にあるときの外観を指定します。 [
+            **CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) コントロールには、`Checked`、`Unchecked`、`Indeterminate` という 3 つのチェック状態があります。 [
+            **IsChecked**](https://msdn.microsoft.com/library/windows/apps/br209798) プロパティの値によって **CheckBox** の状態が決まり、その状態によって、ボックスに何が表示されるかが決まります。
 
-Xxxx xxxxx xxxxx xxx xxxxxxxx xxxxxx xx [**XxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209798), xxx xxxxxxxxxxxxx xxxxxx xx xxx [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209316), xxx xxx xxxxxxxxxx xx xxx **XxxxxXxx**.
+次の表に、考えられる [**IsChecked**](https://msdn.microsoft.com/library/windows/apps/br209798) の値と、対応する [**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) の状態および **CheckBox** の外観を示します。
 
 |                     |                    |                         |
 |---------------------|--------------------|-------------------------|
-| **XxXxxxxxx** xxxxx | **XxxxxXxx** xxxxx | **XxxxxXxx** xxxxxxxxxx |
-| **xxxx**            | `Checked`          | Xxxxxxxx xx "X".        |
-| **xxxxx**           | `Unchecked`        | Xxxxx.                  |
-| **xxxx**            | `Indeterminate`    | Xxxxxxxx x xxxxxx.      |
+| **IsChecked** の値 | **CheckBox** の状態 | **CheckBox** の外観 |
+| **true**            | `Checked`          | "X" を表示。        |
+| **false**           | `Unchecked`        | 空白。                  |
+| **null**            | `Indeterminate`    | 円を表示。      |
 
  
 
-Xxx xxxxxxx xxx xxxxxxxxxx xx x xxxxxxx xxxx xx xx xx x xxxxxxx xxxxx xx xxxxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209007) xxxxxxx. X **XxxxxxXxxxx** xxxxxxxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208817) xx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243053) xxxx xxxxxxx xxx xxxxxxxxxx xx xxx xxxxxxxx xx xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209391). Xxxx xxx xxxxxxx xxxxxx xxx xxxxx xxxx xxx [**XxxxxxXxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br209031) xxxxxxxx xxxxxxxxx, xxx xxxxxxxx xxxxxxx xx xxx **Xxxxxx** xx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210490) xxx xxxxxxx. Xxxx xxx xxxxxxx xxxxx xxx xxxxx, xxx xxxxxxx xxx xxxxxxx. Xxx xxx **XxxxxxXxxxx** xxxxxxx xx [**XxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209014) xxxxxxx. Xxx xxx **XxxxxxXxxxxXxxxx** xxxxxxx xx xxx [**XxxxxxXxxxxXxxxxxx.XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh738505) xxxxxxxx xxxxxxxx, xxxxx xxx xxx xx xxx xxxx [**XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208706) xx xxx **XxxxxxxXxxxxxxx**.
+[
+            **VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) オブジェクトを使って、コントロールが特定の状態にあるときの外観を指定します。 **VisualState** には、[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) 内の要素の外観を変更する [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) または [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br243053) が含まれています。 コントロールが [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031) プロパティで指定された状態になると、**Setter** または [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) 内のプロパティの変更が適用されます。 コントロールがこの状態でなくなると、変更は削除されます。 **VisualState** オブジェクトは [**VisualStateGroup**](https://msdn.microsoft.com/library/windows/apps/br209014) オブジェクトに追加します。 **ControlTemplate** のルート [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/br208706) に設定する [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 添付プロパティに、**VisualStateGroup** オブジェクトを追加します。
 
-Xxxx XXXX xxxxx xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209007) xxxxxxx xxx xxx `Checked`, `Unchecked`, xxx `Indeterminate` xxxxxx. Xxx xxxxxxx xxxx xxx [**XxxxxxXxxxxXxxxxxx.XxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh738505) xxxxxxxx xxxxxxxx xx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209250), xxxxx xx xxx xxxx xxxxxxx xx xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209391). Xxx `Checked`**XxxxxxXxxxx** xxxxxxxxx xxxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208962) xx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br243355) xxxxx `CheckGlyph` (xxxxx xx xxxx xx xxx xxxxxxxx xxxxxxx) xx Y. Xxx `Indeterminate`**XxxxxxXxxxx** xxxxxxxxx xxxx xxx **Xxxxxxx** xx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243343) xxxxx `IndeterminateGlyph` xx Y. Xxx `Unchecked`**XxxxxxXxxxx** xxx xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208817) xx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210490), xx xxx [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209316) xxxxxxx xx xxx xxxxxxx xxxxxxxxxx.
+次の XAML は、`Checked`、`Unchecked`、`Indeterminate` の各状態に対する [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) オブジェクトを示しています。 この例では、[**ControlTemplate**](https://msdn.microsoft.com/library/windows/apps/br209391) のルート要素である [**Border**](https://msdn.microsoft.com/library/windows/apps/br209250) に対して [**VisualStateManager.VisualStateGroups**](https://msdn.microsoft.com/library/windows/apps/hh738505) 添付プロパティを設定します。 `Checked` **VisualState** は、(前の例で示した) `CheckGlyph` という名前の [**Path**](https://msdn.microsoft.com/library/windows/apps/br243355) の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) が 1 であることを指定します。 `Indeterminate` **VisualState** は、`IndeterminateGlyph` という名前の [**Ellipse**](https://msdn.microsoft.com/library/windows/apps/br243343) の **Opacity** が 1 であることを指定します。 `Unchecked` **VisualState** には [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) または [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) がないため、[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) は既定の外観に戻ります。
 
 ```XAML
 <ControlTemplate x:Key="CheckBoxTemplate1" TargetType="CheckBox">
@@ -163,47 +169,52 @@ Xxxx XXXX xxxxx xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows
 </ControlTemplate>
 ```
 
-Xx xxxxxx xxxxxxxxxx xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209007) xxxxxxx xxxx, xxxxxxxx xxxx xxxxxxx xxxx xxx [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br209316) xxxx xxxx xxx `Unchecked` xxxxx xx xxx `Checked` xxxxx, xxxx xx xxx `Indeterminate` xxxxx, xxx xxxx xxxx xx xxx `Unchecked` xxxxx. Xxxx xxx xxx xxxxxxxxxxx.
+[
+            **VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) オブジェクトの機能をよりよく理解するために、[**CheckBox**](https://msdn.microsoft.com/library/windows/apps/br209316) が `Unchecked` 状態から `Checked` 状態に変化した後、`Indeterminate` 状態に変化してから、`Unchecked` 状態に戻るとき、どのようになるかを考えてみます。 状態の遷移を次に示します。
 
 |                                      |                                                                                                                                                                                                                                                                                                                                                |                                                   |
 |--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------|
-| Xxxxx xxxxxxxxxx                     | Xxxx xxxxxxx                                                                                                                                                                                                                                                                                                                                   | XxxxxXxx xxxxxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxxx |
-| Xxxx `Unchecked` xx `Checked`.       | Xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208817) xxxxx xx xxx `Checked`[**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209007) xx xxxxxxx, xx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208962) xx `CheckGlyph` xx Y.                                                                                                                                                         | Xx X xx xxxxxxxxx.                                |
-| Xxxx `Checked` xx `Indeterminate`.   | Xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208817) xxxxx xx xxx `Indeterminate`[**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209007) xx xxxxxxx, xx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208962) xx `IndeterminateGlyph` xx Y. Xxx **Xxxxxx** xxxxx xx xxx `Checked`**XxxxxxXxxxx** xx xxxxxxx, xx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br228078) xx `CheckGlyph` xx Y. | X xxxxxx xx xxxxxxxxx.                            |
-| Xxxx `Indeterminate` xx `Unchecked`. | Xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208817) xxxxx xx xxx `Indeterminate`[**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209007) xx xxxxxxx, xx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208962) xx `IndeterminateGlyph` xx Y.                                                                                                                                           | Xxxxxxx xx xxxxxxxxx.                             |
+| 状態の遷移                     | 動作                                                                                                                                                                                                                                                                                                                                   | 遷移完了時の CheckBox の外観 |
+| `Unchecked` から `Checked`。       | `Checked` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) の [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 値が適用され、`CheckGlyph` の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) が 1 となる。                                                                                                                                                         | X が表示される。                                |
+| `Checked` から `Indeterminate`。   | `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) の [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 値が適用され、`IndeterminateGlyph` の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) が 1 となる。 `Checked` **VisualState** の **Setter** 値が削除され、`CheckGlyph` の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br228078) が 0 となる。 | 円が表示される。                            |
+| `Indeterminate` から `Unchecked`。 | `Indeterminate` [**VisualState**](https://msdn.microsoft.com/library/windows/apps/br209007) の [**Setter**](https://msdn.microsoft.com/library/windows/apps/br208817) 値が削除され、`IndeterminateGlyph` の [**Opacity**](https://msdn.microsoft.com/library/windows/apps/br208962) が 0 となる。                                                                                                                                           | 何も表示されない。                             |
 
  
-Xxx xxxx xxxx xxxxx xxx xx xxxxxx xxxxxx xxxxxx xxx xxxxxxxx, xxx xx xxxxxxxxxx xxx xx xxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210490) xxxxx xxx xxx xxxxxxxxx xxxxx, xxx [Xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808).
+コントロールの表示状態の作成方法、特に、[**Storyboard**](https://msdn.microsoft.com/library/windows/apps/br210490) クラスとアニメーション タイプの使い方について詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/jj819808)」をご覧ください。
 
-## Xxx xxxxx xx xxxx xxxx xxxxxx xxxxxx
+## ツールを使ってテーマを簡単に操作
 
-X xxxx xxx xx xxxxx xxxxxx xx xxxx xxxxxxxx xx xx xxxxx-xxxxx xx x xxxxxxx xx xxx Xxxxxxxxx Xxxxxx Xxxxxx **Xxxxxxxx Xxxxxxx** xxx xxxxxx **Xxxx Xxxxx** xx **Xxxx Xxxxx** (xxxxxxxxx xx xxx xxxxxxx xxx xxx xxxxx-xxxxxxxx xx). Xxx xxx xxxx xxxxx xx xxxxxxxx xxxxx xx xxxxxxxxx **Xxxxx Xxxxxxxx** xx xxxxxx x xxx xxx xx xxxxxxxxx **Xxxxxx Xxxxx**.
+コントロールにテーマをすばやく適用する方法の 1 つは、Microsoft Visual Studio の **[ドキュメント アウトライン]** でコントロールを右クリックし、**[テーマの編集]** または **[スタイルの編集]** (右クリックしたコントロールによって異なる) をクリックすることです。 その後、**[リソースの適用]** をクリックして既にあるテーマを適用するか、または **[空アイテムの作成]** をクリックして新しいテーマを定義できます。
 
-## Xxxxxxxx xxx xxxxxxxxxxxxx
+## コントロールとアクセシビリティ
 
-Xxxx xxx xxxxxx x xxx xxxxxxxx xxx x xxxxxxx, xx xxxxxxxx xx xxxxxxxx xxxxxxxx xxx xxxxxxx'x xxxxxxxx xxx xxxxxx xxxxxxxxxx, xxx xxxxx xxxx xx xxxxxxxx xxx xxx xxxxxxx xxxxxxxxxx xxxxxx xx xxxxxxxxxxxxx xxxxxxxxxx. Xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxx xxx Xxxxxxxxx XX Xxxxxxxxxx xxxxxxxxx xxx xxxxxxxxxxxxx. Xxx xx xxx xxxxxxx xxxxxxxx xxx xxxxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxx XX Xxxxxxxxxx xxxxxxx xxxxx xxx xxxxxxxx xxxx xxx xxxxxxxxxxx xxx xxx xxxxxxx'x xxxxxxx xxx xxxxxxxx. Xxxxx xxxxxxx xxxxx xxx xxxxxxxx xxx xxxxxxxxxxx xx XX Xxxxxxxxxx xxxxxxx xxxx xx xxxxxxxxx xxxxxxxxxxxx, xxx xxxx xxxxxxx x xxxxxxx xx xx xxxxxxxxxx xx x xxxx xx x xxxxxx xxxxxxxxxx xxx XX.
+コントロールのテンプレートを新しく作成するときは、コントロールの動作と外見を変更する以外にも、アクセシビリティ フレームワークに対する表現方法も変更することができます。 ユニバーサル Windows プラットフォーム (UWP) は、アクセシビリティのための Microsoft UI オートメーション フレームワークをサポートしています。 既定のコントロールとそのテンプレートはいずれも、UI オートメーションの共通のコントロール型と、その目的や機能に合ったパターンをサポートしています。 支援技術などの UI オートメーション クライアントが、これらのコントロール型とパターンを解釈することにより、アクセシビリティ対応アプリの UI という、より大きな枠組みを構成する要素としてコントロールを利用することができます。
 
-Xx xxxxxxxx xxx xxxxx xxxxxxx xxxxx xxx xxxx xx xxxxxxx xxxx xx xxx xxxxxxxxxxxxx xxxxxxxxxxxx xx XX Xxxxxxxxxx, xxxxxxx xxxxxxx xxxxxxx xxxxx xxxxxxxxxxxxx xxxxxxx xx x xxxxxxxx xxxxx, xx xxxxxxxxxx xxxx. Xxx xxxxxxxxxx xxxxx xxxxxxxxx xxxx xxxxxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxx xxxxxxx xxx xxxxx xxxxxx xxxxxxx xxxxx xxxxx xx xxxxx xx xxx xxxxxxxxx, xx xxxx xxxxxxxxxxxxx xxxx xx xxxxxxxx xxxxxxxxx xxxxxxxxxxxx xx xxxxxx xxxxxxx xx xxxxxxx xx xxxxxxxx.
+基本的なコントロールのロジックを分離すると共に、UI オートメーションのアーキテクチャに求められるいくつかの要件を満たすために、コントロール クラスのアクセシビリティ機能は、別個のクラス (オートメーション ピア) に置かれています。 オートメーション ピアは、折に触れてコントロール テンプレートと対話します。テンプレート内の特定の名前付きパーツの存在を頼りにその機能 (支援技術によってボタン アクションを呼び出すなど) を実現しているためです。
 
-Xxxx xxx xxxxxx x xxxxxxxxxx xxx xxxxxx xxxxxxx, xxx xxxxxxxxx xxxx xxxx xxxx xx xxxxxx x xxx xxxxxxxxxx xxxx xx xx xxxxx xxxx xx. Xxx xxxx xxxx, xxx [Xxxxxx xxxxxxxxxx xxxxx](../accessibility/custom-automation-peers.md).
+まったく新しいカスタム コントロールを作成するときは、同時に、新しいオートメーション ピアの作成が必要になることもあります。 詳しくは、「[カスタム オートメーション ピア](../accessibility/custom-automation-peers.md)」をご覧ください。
 
-## Xxxxx xxxx xxxxx x xxxxxxx'x xxxxxxx xxxxxxxx
+## コントロールの既定のテンプレートの詳細
 
-Xxx xxxxxx xxxx xxxxxxxx xxx xxxxxx xxx xxxxxxxxx xxx XXXX xxxxxxxx xxxx xxx xxxxxxxx xx xxx xxxx xxxxxxxx XXXX xxx'x xxx xx xxx xxxx xxx **Xxxx Xxxxx** xx **Xxxx Xxxxx** xxxxxxxxxx xxxxxxxxx xxxxxxxxxx. Xxxx xxxxx xxxxx xxx xxxxx xx xxx xxxxxx xxxxxx, xxx xxxxx xxxxxxxxx xxxx, xxx xxx xxxx XXXX xxx xxx xxxxx xxxx xxxxxxxx xxx xxxxxxxx. Xxx xxxxxx xxx xx xxxxxx xxxxxxxx xx xxx'xx xxxxxxx xxxxxxx xxxxxxxxx x xxxxxxxx xxx xxxx xx xxx xxxx xxx xxxxxxxx xxxxxxxx xxxxxx xxxx, xx xx xxxxxx xxxx xxxx xxx xxxxxxxx xxx xxx xx xxx xxxxxxxx xxxxx xxxxxx xxxxxx.
+XAML コントロールのスタイルとテンプレートについて説明するトピックでは、既に説明した **テーマの編集**や**スタイルの編集**の手法を使った場合に見られる、同じ XAML の開始部分を抜粋しています。 各トピックでは、表示状態の名前、使用しているテーマ リソースを示しているほか、テンプレートを含むスタイルの完全な XAML を示しています。 これらのトピックが便利なガイダンスになるのは、テンプレートを変更し始めてから元のテンプレートがどのように見えていたかを確認したり、必要な名前付きの表示状態がすべて新しいテンプレートにあることを確認したりする場合です。
 
-## Xxxxx xxxxxxxxx xx xxxxxxx xxxxxxxxx
+## コントロール テンプレートのテーマ リソース
 
-Xxx xxxx xx xxx xxxxxxxxxx xx xxx XXXX xxxxxxxx, xxx xxx xxxx xxxxxxx xxxxxxxx xxxxxxxxxx xxxx xxx xxx [{XxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/themeresource-markup-extension.md). Xxxx xx x xxxxxxxxx xxxx xxxxxxx x xxxxxx xxxxxxx xxxxxxxx xx xxx xxxxxxxxx xxxx xxx xx xxxxxxxxx xxxxxx xxxxxxxxx xx xxxxx xxxxx xx xxxxxxxxx xxxxxx. Xxxx xx xxxxxxxxxxxx xxxxxxxxx xxx xxxxxxx xxx xxxxxx, xxxxxxx xxx xxxx xxxxxxx xx xxx xxxxxx xx xx xxxxxx xxxxx xx xxxxxx xxxxxxx xxxx xxxx x xxxx, xxxxx, xx xxxx xxxxxxxx xxxxx xxxxxxx xx xxx xxxxxx xxxxxxx. Xxxx xxxx xxx xxx XXXX xxxxxxxx xxxxxx xxx xxx x xxxxxxxx xxx xxxx'x xxxxxxxxxxx xxx xxxx xxxxx, xx xxxx xxx xxxxx xxxxxxx xx xx xxx'x XX xxx xxxxxxxxxx xx xxx xxxx'x xxxxxxxxxx xxxxx xxxxxx.
+XAML の例を見ると、一部の属性について [{ThemeResource} マークアップ拡張機能](../xaml-platform/themeresource-markup-extension.md) を使うリソース参照があることがわかるでしょう。 この手法では、現在アクティブであるテーマに応じて値が変わるリソースを 1 つのコントロール テンプレートで使用できます。 この点はブラシと色に特に重要です。システム全体に暗い、明るい、またはハイコントラストのいずれのテーマを適用するかをユーザーが選択できるようにすることが、テーマの主な目的であるためです。 XAML リソース システムを使うアプリはそのテーマに適切な一連のリソースを使用できます。そのため、アプリの UI のテーマの選択にはユーザーのシステム全体のテーマの選択が反映されます。
 
-**Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx XXX xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
+**注**  
+この記事は、UWP アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
 
  
 
  
+
+ 
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

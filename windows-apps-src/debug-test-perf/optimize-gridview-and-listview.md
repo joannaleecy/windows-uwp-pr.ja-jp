@@ -1,43 +1,42 @@
 ---
-xx.xxxxxxx: YYXXYYXY-YXYY-YYYY-XYYY-YXXYXYYYYXYY
-xxxxx: XxxxXxxx xxx XxxxXxxx XX xxxxxxxxxxxx
-xxxxxxxxxxx: Xxxxxxx XxxxXxxx xxx XxxxXxxx xxxxxxxxxxx xxx xxxxxxx xxxx xxxxxxx XX xxxxxxxxxxxxxx, xxxxxxx xxxxxxxxx, xxx xxxxxxxxxxx xxxxxxxx xx xxxxx.
+ms.assetid: 26DF15E8-2C05-4174-A714-7DF2E8273D32
+title: ListView and GridView UI optimization
+description: Improve ListView and GridView performance and startup time through UI virtualization, element reduction, and progressive updating of items.
 ---
-# XxxxXxxx xxx XxxxXxxx XX xxxxxxxxxxxx
+# ListView and GridView UI optimization
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Xxxx**  
-Xxx xxxx xxxxxxx, xxx xxx //xxxxx/ xxxxxxx [Xxxxxxxxxxxx Xxxxxxxx Xxxxxxxxxxx xxxx Xxxxx Xxxxxxxx xxxx Xxxxx Xxxxxxx xx Xxxx xx XxxxXxxx xxx XxxxXxxx](https://channel9.msdn.com/events/build/2013/3-158).
+**Note**  
+For more details, see the //build/ session [Dramatically Increase Performance when Users Interact with Large Amounts of Data in GridView and ListView](https://channel9.msdn.com/events/build/2013/3-158).
 
-Xxxxxxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242705) xxxxxxxxxxx xxx xxxxxxx xxxx xxxxxxx XX xxxxxxxxxxxxxx, xxxxxxx xxxxxxxxx, xxx xxxxxxxxxxx xxxxxxxx xx xxxxx. Xxx xxxx xxxxxxxxxxxxxx xxxxxxxxxx, xxx [XxxxXxxx xxx XxxxXxxx xxxx xxxxxxxxxxxxxx](listview-and-gridview-data-optimization.md).
+Improve [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) performance and startup time through UI virtualization, element reduction, and progressive updating of items. For data virtualization techniques, see [ListView and GridView data virtualization](listview-and-gridview-data-optimization.md).
 
-## Xxx xxx xxxxxxx xx xxxxxxxxxx xxxxxxxxxxx
+## Two key factors in collection performance
 
-Xxxxxxxxxxxx xxxxxxxxxxx xx x xxxxxx xxxxxxxx. X xxxxx xxxxxx xxx xxxxxxxxxxx xx xxxxxx, x xxxxxx xxx xxxxxxxxxxx xx xxxxxxxx/xxxxx/xxxxxxx, xxx x xxxxxxxx xxx xxx xxxxxxxxxxx xx xxxxxxxx. Xxxx xxxxx xxxxx xxxx xxx xxx xx xx xxxx xxxx xxx xxxxxxxxx xx xxxxxxxxxxxx xxxxxxxxxxx.
+Manipulating collections is a common scenario. A photo viewer has collections of photos, a reader has collections of articles/books/stories, and a shopping app has collections of products. This topic shows what you can do to make your app efficient at manipulating collections.
 
-Xxxxx xxx xxx xxx xxxxxxx xx xxxxxxxxxxx xxxx xx xxxxx xx xxxxxxxxxxx: xxx xx xxx xxxx xxxxx xx xxx XX xxxxxx xxxxxxxx xxxxx; xxx xxxxx xx xxx xxxxxx xxxx xx xxxx xxx xxx xxxx xxx xxx xxx XX xxxxxxxx xxxx xx xxxxxx xxxx xxxx.
+There are two key factors in performance when it comes to collections: one is the time spent by the UI thread creating items; the other is the memory used by both the raw data set and the UI elements used to render that data.
 
-Xxx xxxxxx xxxxxxx/xxxxxxxxx, xx'x xxxxx xxxx xxx XX xxxxxx xx xx xxxxxxxxx xxx xxxxx xxx xx xxxxxxxxxxxxx, xxxx-xxxxxxx, xxx xxxxxx xxx xxxxx.
+For smooth panning/scrolling, it's vital that the UI thread do an efficient and smart job of instantiating, data-binding, and laying out items.
 
-## XX xxxxxxxxxxxxxx
+## UI virtualization
 
-XX xxxxxxxxxxxxxx xx xxx xxxx xxxxxxxxx xxxxxxxxxxx xxx xxx xxxx. Xxxx xxxxx xxxx XX xxxxxxxx xxxxxxxxxxxx xxx xxxxx xxx xxxxxxx xx xxxxxx. Xxx xx xxxxx xxxxxxx xxxxx xx x YYYY-xxxx xxxxxxxxxx, xx xxxxx xx x xxxxx xx xxxxxxxxx xx xxxxxx xxx XX xxx xxx xxx xxxxx xx xxx xxxx xxxx, xxxxxxx xxxx xxx'x xxx xx xxxxxxxxx xx xxx xxxx xxxx. [
-            **XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242705) (xxx xxxxx xxxxxxxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242803)-xxxxxxx xxxxxxxx) xxxxxxx XX xxxxxxxxxxxxxx xxx xxx. Xxxx xxxxx xxx xxxxx xx xxxxx xxxxxxxx xxxx xxxx (x xxx xxxxx xxxx), xxx xxxxxxxxx xxxxxxxxx xxx XX xxx xxx xxxxx xxx xxxxxx xxxx. Xxxx xx'x xxxxxxxx xxxx xxx xxxxx xxxx xx xxxxx xxxxx, xxx xxxxxxxxx xx-xxxxxx xxx xxxxxx.
+UI virtualization is the most important improvement you can make. This means that UI elements representing the items are created on demand. For an items control bound to a 1000-item collection, it would be a waste of resources to create the UI for all the items at the same time, because they can't all be displayed at the same time. [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) (and other standard [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803)-derived controls) perform UI virtualization for you. When items are close to being scrolled into view (a few pages away), the framework generates the UI for the items and caches them. When it's unlikely that the items will be shown again, the framework re-claims the memory.
 
-Xx xxx xxxxxxx x xxxxxx xxxxx xxxxx xxxxxxxx (xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemspanel)) xxxx xxxx xxxx xxx xxx x xxxxxxxxxxxx xxxxx xxxx xx [**XxxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn298849) xxx [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn298795). Xx xxx xxx [**XxxxxxxxXxxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR227651), [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR227717), xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209635), xxxx xxx xxxx xxx xxx xxxxxxxxxxxxxx.
+If you provide a custom items panel template (see [**ItemsPanel**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemspanel)) then make sure you use a virtualizing panel such as [**ItemsWrapGrid**](https://msdn.microsoft.com/library/windows/apps/Dn298849) and [**ItemsStackPanel**](https://msdn.microsoft.com/library/windows/apps/Dn298795). If you use [**VariableSizedWrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227651), [**WrapGrid**](https://msdn.microsoft.com/library/windows/apps/BR227717), or [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635), then you will not get virtualization.
 
-Xxx xxxxxxx xx x xxxxxxxx xx xxxxxxxx xx XX xxxxxxxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxx xxxxxx xxx xxxxxxxx xxxx xxx xxxxxx xx xx xxxxx. Xx xxxxxxx, xxx xxxxxxxx xx xx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242803) xx xxx xxxxxx xx xxx xxxxxxx xxxxxxx. Xxx xxxxxxx, xxx xxxxxxxx xx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) xx xxx xxxxx xxx xxxxxx xx xxx **XxxxXxxx** xxxxxxx. Xxxx xxxxxx xxxxx xxxxx xxxxxxxx xxxxxxxxx xxxxx, xxxxxxxx xxxxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209527) xxx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704), xxxx xxxx-xxxxx xxxx xx xxxxxxx. Xxxx x xxxxxxxxxxx **XxxxxXxxxxxx** xx xxxxxx xx x xxxxx xxxx xxxx, xx xxxxx xxxxxx xxxx xx xxxxxxx xxx xx xxx xxxxx, xxxxx xxxxxxx xxxxxxxxxxxxxx. Xxxxxxx xxxxxxxxxxxxxx xx xxxxxxx x xxxxx xxx xxxxxx xx xxx **XxxxxXxxxxxx**.
+The concept of a viewport is critical to UI virtualization because the framework must create the elements that are likely to be shown. In general, the viewport of an [**ItemsControl**](https://msdn.microsoft.com/library/windows/apps/BR242803) is the extent of the logical control. For example, the viewport of a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) is the width and height of the **ListView** element. Some panels allow child elements unlimited space, examples being [**ScrollViewer**](https://msdn.microsoft.com/library/windows/apps/BR209527) and a [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), with auto-sized rows or columns. When a virtualized **ItemsControl** is placed in a panel like that, it takes enough room to display all of its items, which defeats virtualization. Restore virtualization by setting a width and height on the **ItemsControl**.
 
-## Xxxxxxx xxxxxxxxx xxx xxxx
+## Element reduction per item
 
-Xxxx xxx xxxxxx xx XX xxxxxxxx xxxx xx xxxxxx xxxx xxxxx xx x xxxxxxxxxx xxxxxxx.
+Keep the number of UI elements used to render your items to a reasonable minimum.
 
-Xxxx xx xxxxx xxxxxxx xx xxxxx xxxxx, xxx xxx xxxxxxxx xxxxxx xx xxxxxx x xxxxxxxx xxxx xx xxxxx xxx xxxxxxx. Xxxx, xx xxxxx xxxxxxxx xxx xxxxxxxx, xxx xxxxxxxxx xxxxxxx xxx XX xxxxxxxx xx xxxxxx xxxx xxxxxxxxx xxxx xxx xxxxx xxxx xxxxxxx. Xxxxxxxxxx xxx xxxxxxxxxx xx xxx xxxxxx xxxxxx xxxxxxxxx xxxx xxx xx xxxxxx xxx xx xxxx xxxxx xx xxx XX xxxxxx, xxxxxxxxx xxxxxxxxxxxxxx xxxxxxxxxx xxxxx xxxxxxx/xxxxxxxxx. Xxx xxxxxxxxx xx xxxxxxxx xxx xxx xxxx xxxxxxxx (xxx [**XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemtemplate)) xxx xxx xxxxxxx xxxxxxxx xx x [**XxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878item) xx x [**XxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242705item) (xxx xxxx xxxxxxx xxxxxxxx, xx [**XxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemcontainerstyle)). Xxx xxxxxxx xx xxxx x xxxxx xxxxxxxxx xx xxxxxxx xxxxx xx xxxxxxxxxx xx xxx xxxxxx xx xxxxx xxxxxxxxx.
+When an items control is first shown, all the elements needed to render a viewport full of items are created. Also, as items approach the viewport, the framework updates the UI elements in cached item templates with the bound data objects. Minimizing the complexity of the markup inside templates pays off in memory and in time spent on the UI thread, improving responsiveness especially while panning/scrolling. The templates in question are the item template (see [**ItemTemplate**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemtemplate)) and the control template of a [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item) or a [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item) (the item control template, or [**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemcontainerstyle)). The benefit of even a small reduction in element count is multiplied by the number of items displayed.
 
-Xxx xxxxxxxx xx xxxxxxx xxxxxxxxx, xxx [Xxxxxxxx xxxx XXXX xxxxxx](optimize-xaml-loading.md).
+For examples of element reduction, see [Optimize your XAML markup](optimize-xaml-loading.md).
 
-Xxx xxxxxxx xxxxxxx xxxxxxxxx xxx [**XxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878item) xxx [**XxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242705item) xxxxxxx x [**XxxxXxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn298500) xxx x [**XxxxXxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn279298) xxxxxxx, xxxxxxxxxxxx. Xxxx xx xxxxx xxxxxxxxxx xx x xxxxxx xxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxxx xxxxxxx xxx xxxxx, xxxxxxxxx, xxx xxxxx xxxxxx xxxxxx. Xx xxx xxxxxxx xxxx xxxxxx xxxx xxxxxxx xxxxxxxxx ([**XxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemcontainerstyle)), xx xx xx xxxxxx xxx xxxx x xxxx xx xx xxxx xxxxxxx xxxxxxxx, xxxx xx xxxxxxxxx xxx xxx x **XxxxXxxxXxxxXxxxxxxxx** xx x **XxxxXxxxXxxxXxxxxxxxx** xxxxxxx xxxxx xxxxxxxx xxxx xxxx xxx xxxxxxx xxxxxxx xxxxxxx xxxxxxxxxxx xxx xxxxxxxxxxxxxxx xx xxx xxxxxxxx xx xxxxx. Xxx xxxxxxxxx xxxxx xxxxxxxxxx xx xxxxxxx xxxxxxxxxx xx xxxx. Xxx xxxxxxx, xxxx'x xxxxxx xxxx xxxxxxx xxx xxxxx xxxx xxxx xxxxxxx xx xxxxxxx xxxx xx xxxx xx xxxxxxxx, xxx xxxxxxx xxx xxxxxxxxxx xxxxx xx xxx xxxxxxxx xxxx xx xxxxxx.
+The default control templates for [**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item) and [**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item) contain a [**ListViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/Dn298500) and a [**GridViewItemPresenter**](https://msdn.microsoft.com/library/windows/apps/Dn279298) element, respectively. Each of these presenters is a single optimized element that displays complex visuals for focus, selection, and other visual states. If you already have custom item control templates ([**ItemContainerStyle**](https://msdn.microsoft.com/library/windows/apps/BR242803-itemcontainerstyle)), or if in future you edit a copy of an item control template, then we recommend you use a **ListViewItemPresenter** or a **GridViewItemPresenter** because those elements will give you optimum balance between performance and customizability in the majority of cases. You customize these presenters by setting properties on them. For example, here's markup that removes the check mark that appears by default when an item is selected, and changes the background color of the selected item to orange.
 
 ```xml
 ...
@@ -58,25 +57,25 @@ Xxx xxxxxxx xxxxxxx xxxxxxxxx xxx [**XxxxXxxxXxxx**](https://msdn.microsoft.com/
 <!-- ... -->
 ```
 
-Xxxxx xxx xxxxx YY xxxxxxxxxx xxxx xxxx-xxxxxxxxxx xxxxx xxxxxxx xx [**XxxxxxxxxXxxxxXxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn298500-selectioncheckmarkvisualenabled) xxx [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn298500-selectedbackground). Xxxxxx xxx xxxxxxxxx xxxxx xxxxx xxx xx xx xxxxxxxxxxxx xxxxxx xxx xxxx xxx xxxx, xxx xxx xxxx x xxxx xx xxx `ListViewItemExpanded` xx `GridViewItemExpanded` xxxxxxx xxxxxxxx xxxxxxx. Xxxxx xxx xx xxxxx xx `\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml`. Xx xxxxx xxxx xxxxx xxxxx xxxxxxxxx xxxxx xxxxxxx xxxx xxxxxxxxxxx xxx xxx xxxxxxxx xx xxxxxxxxxxxxx.
+There are about 25 properties with self-describing names similar to [**SelectionCheckMarkVisualEnabled**](https://msdn.microsoft.com/library/windows/apps/Dn298500-selectioncheckmarkvisualenabled) and [**SelectedBackground**](https://msdn.microsoft.com/library/windows/apps/Dn298500-selectedbackground). Should the presenter types prove not to be customizable enough for your use case, you can edit a copy of the `ListViewItemExpanded` or `GridViewItemExpanded` control template instead. These can be found in `\Program Files (x86)\Windows Kits\10\DesignTime\CommonConfiguration\Neutral\UAP\<version>\Generic\generic.xaml`. Be aware that using these templates means trading some performance for the increase in customization.
 
-## Xxxxxx XxxxXxxx xxx XxxxXxxx xxxxx xxxxxxxxxxxxx
+## Update ListView and GridView items progressively
 
-Xx xxx'xx xxxxx xxxx xxxxxxxxxxxxxx xxxx xxx xxx xxxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242705) xxxxxxxxxxxxxx xxxx xx xxxxxxxxxxx xxx xxxxxxx xx xxxxxx xxxxxxxxx XX xxxxxxxx xxx xxx xxxxx xxxxx xxxxx (xxxx)xxxxxx. Xxx xxxxxxxxx xxxxxxxx xxx xxxx xxxxxxxxxxxxx xxxxxxxx xxxx xxxxxx XX xx xxxx xxxxx.
+If you're using data virtualization then you can keep [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) responsiveness high by configuring the control to render temporary UI elements for the items still being (down)loaded. The temporary elements are then progressively replaced with actual UI as data loads.
 
-Xxxx—xx xxxxxx xxxxx xxx'xx xxxxxxx xxxx xxxx (xxxxx xxxx, xxxxxxx, xx xxxxx)—x xxxx xxx xxx/xxxxxx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) xx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242705) xx xxxxxxx xxxx xx'x xxx xxxxxxxx xx xxxxxx xxxx xxxx xxxx xxxx xxxxxxxx xxxxx xxxxxxxxxx xxxxxx xxxxxxx/xxxxxxxxx. Xx xxxxxxxx xxxxxx xxxxxxx/xxxxxxxxx xxx xxx xxxxxx xx xxxxxx xx xxxx xx xxxxxxxx xxxxxx xx xxxxxxxx xx xxxxx xxxxxxxxxxxx.
+Also—no matter where you're loading data from (local disk, network, or cloud)—a user can pan/scroll a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) or [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) so rapidly that it's not possible to render each item with full fidelity while preserving smooth panning/scrolling. To preserve smooth panning/scrolling you can choose to render an item in multiple phases in addition to using placeholders.
 
-Xx xxxxxxx xx xxxxx xxxxxxxxxx xx xxxxx xxxx xx xxxxx-xxxxxxx xxxx: xxxx xxxxxx xxx xxx xx xxx xxxxxx xxxx xxxx xxxxxx xxx xxxxxxxxx, xxx xxxx xxx xxxxx xxx/xxxxxx xxx xxxxxxxx xxxx xxx xxxxxxxxxx. Xx, xxx x "xxxxx" xxxx, xxx xxxxx xxxx xxx xxxxx xx xxx xxxxx xxxxx, xxx xxxxxx xx xxx xxxxxx xxxxx, xxx xx xxxxx xx xxx xxxxxx xx xxx xxxxx xxxxx. Xxx xxxx xxxx xxx xxxx xxxxxxxxx xxxx xxxxx xxxx xxxx xx xxxxx xx xxxxxxxx, xxx xxxx xxxxx xxxx'xx xxxx xx xxxx xxxxxx xx xxxx. Xxxx xxx xxxx xxxxxxxxx xxxx xx xxxxxx-xx xx xxxx xxxxxx. Xxxx xxx xxx xxxxxxxx xxxxxxxx xxx xxx xxx xx xxxxxxxxx xxxxx xxxxxxxxxx.
+An example of these techniques is often seen in photo-viewing apps: even though not all of the images have been loaded and displayed, the user can still pan/scroll and interact with the collection. Or, for a "movie" item, you could show the title in the first phase, the rating in the second phase, and an image of the poster in the third phase. The user sees the most important data about each item as early as possible, and that means they're able to take action at once. Then the less important info is filled-in as time allows. Here are the platform features you can use to implement these techniques.
 
-### Xxxxxxxxxxxx
+### Placeholders
 
-Xxx xxxxxxxxx xxxxxxxxxxx xxxxxxx xxxxxxx xx xx xx xxxxxxx, xxx xx'x xxxxxxxxxx xxxx xxx [**XxxxxXxxxxxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878base-showsscrollingplaceholders) xxxxxxxx. Xxxxxx xxxx xxxxxxx/xxxxxxxxx, xxxx xxxxxxx xxxxx xxx xxxx x xxxxxx xxxx xxxx xxxxx xxx xxxx xxxxx xxx xx xxxxx xxxxxxx xxxxx xxxx xxxxxxxxxx xxxxxxxxxx. Xx xxx xxx xxx xx xxx xxxxxxxxxx xxxxx xxxx xxx xxx xxx **XxxxxXxxxxxxxxXxxxxxxxxxxx** xx xxxxx xx xxx xxxxxx xxx xx xxxx xxx xxxxxx xxxxxx xxxxxxxxxxxx.
+The temporary placeholder visuals feature is on by default, and it's controlled with the [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/BR242878base-showsscrollingplaceholders) property. During fast panning/scrolling, this feature gives the user a visual hint that there are more items yet to fully display while also preserving smoothness. If you use one of the techniques below then you can set **ShowsScrollingPlaceholders** to false if you prefer not to have the system render placeholders.
 
-**Xxxxxxxxxxx xxxx xxxxxxxx xxxxxxx xxxxx x:Xxxxx**
+**Progressive data template updates using x:Phase**
 
-Xxxx'x xxx xx xxx xxx [x:Xxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204790) xxxx [{x:Xxxx}](https://msdn.microsoft.com/library/windows/apps/Mt204783) xxxxxxxx xx xxxxxxxxx xxxxxxxxxxx xxxx xxxxxxxx xxxxxxx.
+Here's how to use the [x:Phase attribute](https://msdn.microsoft.com/library/windows/apps/Mt204790) with [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) bindings to implement progressive data template updates.
 
-1.  Xxxx'x xxxx xxx xxxxxxx xxxxxx xxxxx xxxx (xxxx xx xxx xxxx xxxxxx xxxx xx'xx xxxx xx).
+1.  Here's what the binding source looks like (this is the data source that we'll bind to).
 
     ```csharp
 namespace LotsOfItems
@@ -107,7 +106,7 @@ namespace LotsOfItems
         }
     }
     ```
-2.  Xxxx'x xxx xxxxxx xxxx `DeferMainPage.xaml` xxxxxxxx. Xxx xxxx xxxx xxxxxxxx xx xxxx xxxxxxxx xxxx xxxxxxxx xxxxx xx xxx **Xxxxx**, **Xxxxxxxx**, xxx **Xxxxxxxxxxx** xxxxxxxxxx xx xxx **XxXxxx** xxxxx. Xxxx xxxx **x:Xxxxx** xxxxxxxx xx Y. Xxxx, xxxxx xxxx xx xxxxxxxxx xxxxxxxx xxxx xxxx xxx xxxxx xxxxxxx. Xxxx xxx xxxxxxxx xxxxxxx xxxx xx xxxx xxxxx xxx xxxx xxxxxxx xxx xxx xxx xxxxx xxx xx xx xxxxx xxx xxx xxxxxx xxxx xxxx xxxxxxxxx.
+2.  Here's the markup that `DeferMainPage.xaml` contains. The grid view contains an item template with elements bound to the **Title**, **Subtitle**, and **Description** properties of the **MyItem** class. Note that **x:Phase** defaults to 0. Here, items will be initially rendered with just the title visible. Then the subtitle element will be data bound and made visible for all the items and so on until all the phases have been processed.
     ```xml
     <Page
         x:Class="LotsOfItems.DeferMainPage"
@@ -134,15 +133,15 @@ namespace LotsOfItems
     </Page>
     ```
 
-3.  Xx xxx xxx xxx xxx xxx xxx xxx/xxxxxx xxxxxxx xxxxxxx xxx xxxx xxxx xxxx xxx'xx xxxxxx xxxx xx xxxx xxx xxxx xxxxxxx xx xxx xxxxxx, xx xxxxx xx xx xxxxxxxx xx x xxxx xxxx xxxxxxxxx (xxxxxx xx xxx [**XxxxxXxxxxxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878base-showsscrollingplaceholders) xxxxxxxx xxxxxxxxxx xx **xxxx**), xxxx xxx xxxxx xxxxxxx, xxxxxxxx xx xxxxxxxx, xxxxxxxx xx xxxxxxxxxxx.
+3.  If you run the app now and pan/scroll quickly through the grid view then you'll notice that as each new item appears on the screen, at first it is rendered as a dark gray rectangle (thanks to the [**ShowsScrollingPlaceholders**](https://msdn.microsoft.com/library/windows/apps/BR242878base-showsscrollingplaceholders) property defaulting to **true**), then the title appears, followed by subtitle, followed by description.
 
-**Xxxxxxxxxxx xxxx xxxxxxxx xxxxxxx xxxxx XxxxxxxxxXxxxxxxXxxxxxxx**
+**Progressive data template updates using ContainerContentChanging**
 
-Xxx xxxxxxx xxxxxxxx xxx xxx [**XxxxxxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878base-containercontentchanging) xxxxx xx xx xxx **Xxxxxxx** xx xxxx xxxxxxxx xxxx xxx’x xxxx xx xx xxxxxxxxxxx xxxxxxx. Xxxx xxxxxxxx xxx xxxxxxxx, xxxx xxxx xxxxxx xxxxx xxx xxxxxx xx xx xxxx xx xxxx xxxxx xxxxxxxx xxxxx xx'xx xxxxxxx xxxxx xxxxxx xxxx xxx xxx xxxx xxxx. Xx xxx xxx **Xxxxx** xxxxxxxx xx xxx xxxxx xxxxxxxxx xx xxxxxxxxx xxxxx xxxxxxxx xx xxxxxx xxx xxxx. Xx xxxxxxxxxx xxxxxx xxx xxxxxx, xx xxxxxxxx x xxxxxxxx.
+The general strategy for the [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/BR242878base-containercontentchanging) event is to use **Opacity** to hide elements that don’t need to be immediately visible. When elements are recycled, they will retain their old values so we want to hide those elements until we've updated those values from the new data item. We use the **Phase** property on the event arguments to determine which elements to update and show. If additional phases are needed, we register a callback.
 
-1.  Xx'xx xxx xxx xxxx xxxxxxx xxxxxx xx xxx **x:Xxxxx**.
+1.  We'll use the same binding source as for **x:Phase**.
 
-2.  Xxxx'x xxx xxxxxx xxxx `MainPage.xaml` xxxxxxxx. Xxx xxxx xxxx xxxxxxxx x xxxxxxx xx xxx [**XxxxxxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878base-containercontentchanging) xxxxx, xxx xx xxxxxxxx xx xxxx xxxxxxxx xxxx xxxxxxxx xxxx xx xxxxxxx xxx **Xxxxx**, **Xxxxxxxx**, xxx **Xxxxxxxxxxx** xxxxxxxxxx xx xxx **XxXxxx** xxxxx. Xx xxx xxx xxxxxxx xxxxxxxxxxx xxxxxxxx xx xxxxx **XxxxxxxxxXxxxxxxXxxxxxxx**, xx xxx'x xxx xxxxxxxx xx xxx xxxxxx xxx xx xxxxxxx xxxxxx xxxxxx xxxxxxxxxxxxxxxx. Xxx xxxxxxxxx xxxx xx xxx xxxxxxx xxxxxxxxxx xxx xxxxx, xxxxx xx xxxxxxxx xx xx xx xxxxx Y.
+2.  Here's the markup that `MainPage.xaml` contains. The grid view declares a handler to its [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/BR242878base-containercontentchanging) event, and it contains an item template with elements used to display the **Title**, **Subtitle**, and **Description** properties of the **MyItem** class. To get the maximum performance benefits of using **ContainerContentChanging**, we don't use bindings in the markup but we instead assign values programmatically. The exception here is the element displaying the title, which we consider to be in phase 0.
     ```xml
     <Page
         x:Class="LotsOfItems.MainPage"
@@ -168,7 +167,7 @@ Xxx xxxxxxx xxxxxxxx xxx xxx [**XxxxxxxxxXxxxxxxXxxxxxxx**](https://msdn.microso
         </Grid>
     </Page>
     ```
-3.  Xxxxxx, xxxx'x xxx xxxxxxxxxxxxxx xx xxx [**XxxxxxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878base-containercontentchanging) xxxxx xxxxxxx. Xxxx xxxx xxxx xxxxx xxx xx xxx x xxxxxxxx xx xxxx **XxxxxxxxxXxxxXxxxx** xx **XxxxXxxx** xx xxxxxx xxx xxxxxxx xxxxxx xxxxx xxxx xxx xxxxx xxxx xxxxxxxxxx xxx xxxx xx xxxxxx. Xx xxxx xx xxx xxx'x xxxx xxx [{Xxxxxxx}](https://msdn.microsoft.com/library/windows/apps/Mt204782) xxxxxxxx xx xxxx xxxx xxxxxxxx, xxxx xxxx xxx xxxxx xxxxxxxxx xxxxxx xx xxxxxxx xx xxx xxxxx xxxxx xx xxx xxxxxxx xx xxxx xx xxx xxxx xxxx xx xxxxx'x xxx x xxxx xxxxxxx.
+3.  Lastly, here's the implementation of the [**ContainerContentChanging**](https://msdn.microsoft.com/library/windows/apps/BR242878base-containercontentchanging) event handler. This code also shows how we add a property of type **RecordingViewModel** to **MainPage** to expose the binding source class from the class that represents our page of markup. As long as you don't have any [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) bindings in your data template, then mark the event arguments object as handled in the first phase of the handler to hint to the item that it needn't set a data context.
     ```csharp
     namespace LotsOfItems
     {
@@ -233,17 +232,15 @@ Xxx xxxxxxx xxxxxxxx xxx xxx [**XxxxxxxxxXxxxxxxXxxxxxxx**](https://msdn.microso
     }
     ```
 
-4.  Xx xxx xxx xxx xxx xxx xxx xxx/xxxxxx xxxxxxx xxxxxxx xxx xxxx xxxx xxxx xxx'xx xxx xxx xxxx xxxxxxxx xx xxx xx xxx **x:Xxxxx**.
+4.  If you run the app now and pan/scroll quickly through the grid view then you'll see the same behavior as for as for **x:Phase**.
 
-## Xxxxxxxxx-xxxxxxxxx xxxx xxxxxxxxxxxxx xxxxxxxxxxx
+## Container-recycling with heterogeneous collections
 
-Xx xxxx xxxxxxxxxxxx, xxx xxxx xx xxxx xxxxxxxxx XX xxx xxxxxxxxx xxxxx xx xxxx xxxxxx x xxxxxxxxxx. Xxxx xxx xxxxxx x xxxxxxxxx xxxxx xx xx xxxxxxxxxx xxx xxxxxxxxxxxx xxxxxx xx xxxxx/xxxxxxx xxx xxxxxx xxxxxxxx xxxx xx xxxxxxx xxx xxxxx. Xxxxxxxxxx xxx xxxxxx xxxxxxxx xxx xx xxxx xxxxxx xxxxxxx xxxxxx xxxx xx xxx xxxxxxxxxxx xxxx xxxxxxxx xx xxxxxxxxxxxxxx. Xxxxxxx, x xxxxxx xxxxxxxx xxx xxxxx xxxxxxxxxxxx xxxxxx xx xxxxx xxx xxxxxxxx. Xxxxxxxxxx xxxx x xxxxxx xx xxxxxxx xxxxxxxxx xx xxxxx xxxxxxxx: xxx [**XxxxxxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosingitemcontainer) xxxxx, xx xx xxxx xxxxxxxx xxxxxxxx. Xxx **XxxxxxxxXxxxXxxxxxxxx** xxxxx xx xxx xxxx xxxxxxxxxx xxxxxxxx.
+In some applications, you need to have different UI for different types of item within a collection. This can create a situation where it is impossible for virtualizing panels to reuse/recycle the visual elements used to display the items. Recreating the visual elements for an item during panning undoes many of the performance wins provided by virtualization. However, a little planning can allow virtualizing panels to reuse the elements. Developers have a couple of options depending on their scenario: the [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosingitemcontainer) event, or an item template selector. The **ChoosingItemContainer** event is the most performant approach.
 
-**Xxx XxxxxxxxXxxxXxxxxxxxx xxxxx**
+**The ChoosingItemContainer event**
 
-[
-            **XxxxxxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosingitemcontainer) xx xx xxxxx xxxx xxxxxx xxx xx xxxxxxx xx xxxx ([**XxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878item)/[**XxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242705item)) xx xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242705) xxxxxxxx x xxx xxxx xx xxxxxx xxxxxx xxxxx-xx xx xxxxxxxxx. Xxx xxx xxxxxx x xxxxxxxxx xxxxx xx xxx xxxx xx xxxx xxxx xxx xxxxxxxxx xxxx xxxxxxx (xxxxx xx xxx xxxxxxx xxxxx). **XxxxxxxxXxxxXxxxxxxxx** xx xxx xxxx xxxxxxxxxx xxx xx xxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxx xxxxx. Xxxxxxxxx xxxxxxx xx xxxxxxxxx xxxx xxx xx xxxxxxxx xxxxx **XxxxxxxxXxxxXxxxxxxxx**. Xxx xxxxxxx, xx xxx xxxx xxxx xxxxxxxxx xxxxxxxx, xxxx xxx xxxxxxxx xxxxxxxxx xx xxxxx xx xxxxxxxxx xxxx xxxxx xxxx xxx xxxxxx, xxxx XxxxxxxxXxxxXxxxxxxxx xxxxxx xxx xxx xxxx xx xxxxxx xxxxx xx xxx xxxxxx xxxxxx xxx xxxx xx xxxx xx xxxxxxxxxxx xxxxxx xx xxxxxxxx xxxxxx xxx xxxxxxxxx xxx xxxxxxxxx. [
-            **XxxxxxxxXxxxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosinggroupheadercontainer) xxxxxxxx xxx xxxx xxxxxxxxxxxxx xxx xxxxx xxxxxxx.
+[**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosingitemcontainer) is an event that allows you to provide an item ([**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item)/[**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item)) to the [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878)/[**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) whenever a new item is needed during start-up or recycling. You can create a container based on the type of data item the container will display (shown in the example below). **ChoosingItemContainer** is the most performant way to use different data templates for different items. Container caching is something that can be achieved using **ChoosingItemContainer**. For example, if you have five different template, with one template occurring an order of magnitude more often than the others, then ChoosingItemContainer allows you not only to create items at the ratios needed but also to keep an appropriate number of elements cached and available for recycling. [**ChoosingGroupHeaderContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosinggroupheadercontainer) provides the same functionality for group headers.
 
 ```csharp
 // Example shows how to use ChoosingItemContainer to return the correct
@@ -305,14 +302,18 @@ private void lst-ChoosingItemContainer
 }
 ```
 
-**Xxxx xxxxxxxx xxxxxxxx**
+**Item template selector**
 
-Xx xxxx xxxxxxxx xxxxxxxx ([**XxxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209469)) xxxxxx xx xxx xx xxxxxx x xxxxxxxxx xxxx xxxxxxxx xx xxxxxxx xxxxx xx xxx xxxx xx xxx xxxx xxxx xxxx xxxx xx xxxxxxxxx. Xxxx xxxxx xxxxxxxxxxx xxxx xxxxxxxxxx, xxx xx xxxxx XX xxxxxxxxxxxxxx xxxx xxxxxxxxx xxxxxxx xxx xxxxx xxxx xxxxxxxx xxx xx xxxxxx xxx xxxxx xxxx xxxx.
+An item template selector ([**DataTemplateSelector**](https://msdn.microsoft.com/library/windows/apps/BR209469)) allows an app to return a different item template at runtime based on the type of the data item that will be displayed. This makes development more productive, but it makes UI virtualization more difficult because not every item template can be reused for every data item.
 
-Xxxx xxxxxxxxx xx xxxx ([**XxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878item)/[**XxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242705item)), xxx xxxxxxxxx xxxx xxxxxx xxxxxxx xxx xxxxx xxxx xxx xxxxxxxxx xxx xxx xx xxx xxxxxxx xxxxx (xxx xxxxxxx xxxxx xx x xxxxx xx xxxxx xxxx xxx xxx xxxxxxxxx xxxxx xxxx xx xxxxxxx xxxx) xxxx xx xxxx xxxxxxxx xxxx xxxx xxxxx xxx xxx xxxxxxx xx xxx xxxxxxx xxxx xxxx. Xx xxxxx xxx xx xxxxx xx xxx xxxxxxx xxxxx xxxx xxx xxxxxxxxxxx xxxx xxxxxxxx xxxx x xxx xxxx xx xxxxxxx, xxx xxx xxxxxxxxxxx xxxx xxxxxxxx xx xxxxxxxxxxxx xxx xx. Xx, xx xxxxx xxxx, xxx xxxxxxx xxxxx xxxxxxxx xx xxxx xxxx xxx xxxxxxxxxxx xxxx xxxxxxxx xxxx xxxx xxxx xx xxxxxxx xxxx xxx xxxxxxx xxxxx xxx xx xxxx xxx xxx xxxxxxx xxxx xxxx. Xx xxxx xxxxxxxx xxxxxxxx xxxxx xx xxxxxxxxxx xxxxx xxxx x xxxxx xxxxxx xx xxxx xxxxxxxxx xxx xxxx xxx xxxxx xx x xxxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxx xx xxxxx xxxx xxx xxxxxxxxx xxxx xxxxxxxxx.
+When recycling an item ([**ListViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242878item)/[**GridViewItem**](https://msdn.microsoft.com/library/windows/apps/BR242705item)), the framework must decide whether the items that are available for use in the recycle queue (the recycle queue is a cache of items that are not currently being used to display data) have an item template that will match the one desired by the current data item. If there are no items in the recycle queue with the appropriate item template then a new item is created, and the appropriate item template is instantiated for it. If, on other hand, the recycle queue contains an item with the appropriate item template then that item is removed from the recycle queue and is used for the current data item. An item template selector works in situations where only a small number of item templates are used and there is a flat distribution throughout the collection of items that use different item templates.
 
-Xxxx xxxxx xx xx xxxxxx xxxxxxxxxxxx xx xxxxx xxxx xxx xxxxxxxxx xxxx xxxxxxxxx xxxx xxx xxxx xxxxxxxxx xxxx xxxxxx xxxx xx xx xxxxxxx xxxxxx xxxxxxx, xxx xxxx xxxxxxx xxxx xx xxx xxxxx xxxxxxxx xx xxxxxxxxxxxxxx. Xxxxxxxxxxxx, xx xxxx xxxxxxxx xxxxxxxx xxxx xxxxxxxxx xxxx xxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxx xxxxxxx x xxxxxxxxxx xxxxxxxxx xxx xx xxxxxx xxx xxx xxxxxxx xxxx xxxx. Xx xxx xxxxxx xxxxxxxxx xxxxxxxx xxxxxxx xxxx xxxx xx xxxxxxxxxxx xxx xxx xxxx xx xxxx xxxxxxxx xxxxxxxx xxxxxx xxxxx xxx xx xxxx xxx. Xx xxxx xxxxxxxxxx xx xxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxx xx xxxxxxxxx xxx xxxx xxxx xxxx (xxxxxxxx xxx) xx xxx xxxx. Xxxx xx xxxxx xx xxx xxxxx xxx'xx xxxxxx xxx xxx xxxx xxxxxxxxxx xx xxxx xxxxxxxxxxx, xxx xxxxxxxx xxxxxxx xxxxx [**XxxxxxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosingitemcontainer) (xx xxx xxxxx xxxxxxxx) xx xxxxxxxxxx.
+When there is an uneven distribution of items that use different item templates then new item templates will likely need to be created during panning, and this negates many of the gains provided by virtualization. Additionally, an item template selector only considers five possible candidates when evaluating whether a particular container can be reused for the current data item. So you should carefully consider whether your data is appropriate for use with an item template selector before using one in your app. If your collection is mostly homogeneous then the selector is returning the same type most (possibly all) of the time. Just be aware of the price you're paying for the rare exceptions to that homegeneity, and consider whether using [**ChoosingItemContainer**](https://msdn.microsoft.com/library/windows/apps/BR242878base-choosingitemcontainer) (or two items controls) is preferable.
 
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

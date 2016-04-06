@@ -1,58 +1,64 @@
 ---
-xx.xxxxxxx: XXYYXYYX-XYYY-YYYY-XXXX-XYXYXXYXXYYX
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xx xxx xxxxxxxx xx xxxxxxxx xxxxxxxxx xxxxxxxxxx xxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xxxx xxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxx xx Xxxx Xxxx Xxxxxxxxx (XXX) xxx Xxxxxxx Xxxxxxxxx xxxx XXXX (XXXX) xxxxxxx.
-xxxxx: Xxxxxxxx Xxxxxxxxx
+ms.assetid: AE98C22B-A071-4206-ABBB-C0F0FB7EF33C
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリにアダプティブ ストリーミング マルチメディア コンテンツの再生を追加する方法について説明します。 現在、この機能では、HTTP ライブ ストリーミング (HLS) と Dynamic Adaptive Streaming over HTTP (DASH) コンテンツの再生がサポートされています。
+title: アダプティブ ストリーミング
 ---
 
-# Xxxxxxxx Xxxxxxxxx
+# アダプティブ ストリーミング
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxx xxxxxxxx xx xxxxxxxx xxxxxxxxx xxxxxxxxxx xxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xxxx xxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxx xx Xxxx Xxxx Xxxxxxxxx (XXX) xxx Xxxxxxx Xxxxxxxxx xxxx XXXX (XXXX) xxxxxxx.
+この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリにアダプティブ ストリーミング マルチメディア コンテンツの再生を追加する方法について説明します。 現在、この機能では、HTTP ライブ ストリーミング (HLS) と Dynamic Adaptive Streaming over HTTP (DASH) コンテンツの再生がサポートされています。
 
-## Xxxxxx xxxxxxxx xxxxxxxxx xxxx XxxxxXxxxxxx
+## MediaElement を使った簡単なアダプティブ ストリーミング
 
-Xx xxxxxxx xxxxxxxx xxxxxxxxx xxxxxxxxxx xx x XXXX-xxxxx xxx, xxx x [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242926) xxxxxxx xx xxxx xxxx.
+XAML ベースのアプリでアダプティブ ストリーミング マルチメディアを表示するには、ページに [**MediaElement**](https://msdn.microsoft.com/library/windows/apps/br242926) コントロールを追加します。
 
-[!xxxx-xxx[XxxxxXxxxxxxXXXX](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml#SnippetMediaElementXAML)]
+[!code-xml[MediaElementXAML](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml#SnippetMediaElementXAML)]
 
-Xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227420) xxxxxxxx xx xxx **XxxxxXxxxxxx** xx xxx XXX xx x XXXX xx XXX xxxxxxxx xxxx.
+**MediaElement** の [**Source**](https://msdn.microsoft.com/library/windows/apps/br227420) プロパティを、DASH や HLS のマニフェスト ファイルの URI に設定します。
 
-[!xxxx-xx[XxxxxxxxXxxxxx](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetManifestSource)]
+[!code-cs[ManifestSource](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetManifestSource)]
 
-## Xxxxxxxx xxxxxxxxx xxxx XxxxxxxxXxxxxXxxxxx
+## AdaptiveMediaSource を使ったアダプティブ ストリーミング
 
-Xx xxxx xxx xxxxxxxx xxxx xxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxxx, xxxx xx xxxxxxxxx xxxxxx XXXX xxxxxxx, xxxxxxxxxx xxx xxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxx, xx xxxxxxxxx xxx xxxxxx xxxx xxxxxxxxx xxxx xxx xxxxxx xxxxxxxx xxxxxxxx xx xxx xxxxxxxx xxxxxx, xxx xxx [**XxxxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn946912) xxxxxx.
+アプリで、より高度なアダプティブ ストリーミング機能 (カスタム HTTP ヘッダーの指定、現在のダウンロードや再生のビットレートの監視、アダプティブ ストリーミングのビットレートをシステムで切り替えるタイミングを決定する比率の調整など) を必要とする場合は、[**AdaptiveMediaSource**](https://msdn.microsoft.com/library/windows/apps/dn946912) オブジェクトを使います。
 
-Xxx xxxxxxxx xxxxxxxxx XXXx xxx xxxxx xx xxx [**Xxxxxxx.Xxxxx.Xxxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn931279) xxxxxxxxx.
+アダプティブ ストリーミング API は、[**Windows.Media.Streaming.Adaptive**](https://msdn.microsoft.com/library/windows/apps/dn931279) 名前空間にあります。
 
-[!xxxx-xx[XxxxxxxxXxxxxxxxxXxxxx](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetAdaptiveStreamingUsing)]
+[!code-cs[AdaptiveStreamingUsing](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetAdaptiveStreamingUsing)]
 
-Xxxxxxxxxx xxx **XxxxxxxxXxxxxXxxxxx** xxxx xxx XXX xx xx xxxxxxxx xxxxxxxxx xxxxxxxx xxxx xx xxxxxxx [**XxxxxxXxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn931261). Xxx [**XxxxxxxxXxxxxXxxxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn946917) xxxxx xxxxxxxx xxxx xxxx xxxxxx xxxx xxx xxxx xx xxx xxxxx xxxxxx xxx xxxxxxx xxxxxxxxxxxx. Xx xx, xxx xxx xxx xxx xxxxxx xx xxx xxxxxx xxxxxx xxx xxxx **XxxxxXxxxxxx** xx xxxxxxx [**XxxXxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn299029). Xx xxxx xxxxxxx, xxx [**XxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn931257) xxxxxxxx xx xxxxxxx xx xxxxxxxxx xxx xxxxxxx xxxxxxxxx xxxxxxx xxx xxxx xxxxxx, xxx xxxx xxxx xxxxx xx xxx xx xxx xxxxxx xxxxxxx. Xxxx xxxxxxx xxxx xxxxxxxxx xxxxxxxx xxx xxx [**XxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn931272), [**XxxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn931269), xxx [**XxxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn931278) xxxxxx xxxxx xxx xxxxxxxxx xxxxx xx xxxx xxxxxxx.
+[
+            **CreateFromUriAsync**](https://msdn.microsoft.com/library/windows/apps/dn931261) を呼び出し、アダプティブ ストリーミング マニフェスト ファイルの URI で、**AdaptiveMediaSource** を初期化します。 このメソッドから返される [**AdaptiveMediaSourceCreationStatus**](https://msdn.microsoft.com/library/windows/apps/dn946917) の値を利用して、メディア ソースが正しく作成されたかどうかを確認できます。 正しく作成された場合、[**SetMediaStreamSource**](https://msdn.microsoft.com/library/windows/apps/dn299029) を呼び出すことにより、オブジェクトを **MediaElement** のストリーム ソースとして設定できます。 この例では、[**AvailableBitrates**](https://msdn.microsoft.com/library/windows/apps/dn931257) プロパティを照会することによって、このストリームで利用できる最大ビットレートを特定し、その値が初期ビットレートとして設定されます。 またこの例では、[**DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272) イベント、[**DownloadBitrateChanged**](https://msdn.microsoft.com/library/windows/apps/dn931269) イベント、および [**PlaybackBitrateChanged**](https://msdn.microsoft.com/library/windows/apps/dn931278) イベントのハンドラーも登録します。これらのイベントについては、この記事の後半で説明します。
 
-[!xxxx-xx[XxxxxxxxxxXXX](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetInitializeAMS)]
+[!code-cs[InitializeAMS](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetInitializeAMS)]
 
-Xx xxx xxxx xx xxx xxxxxx XXXX xxxxxxx xxx xxxxxxx xxx xxxxxxxx xxxx, xxx xxx xxxxxx xx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298639) xxxxxx, xxx xxx xxxxxxx xxxxxxx, xxx xxxx xxxx xxx xxxxxx xxxx xxx xxxxxxxx xx **XxxxxxXxxxXxxXxxxx**.
+マニフェスト ファイルを取得するためにカスタム HTTP ヘッダーを設定する場合は、[**HttpClient**](https://msdn.microsoft.com/library/windows/apps/dn298639) オブジェクトを作成し、目的のヘッダーを設定してから、そのオブジェクトを **CreateFromUriAsync** のオーバーロードに渡すことができます。
 
-[!xxxx-xx[XxxxxxxxxxXXXXxxxXxxxXxxxxx](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetInitializeAMSWithHttpClient)]
+[!code-cs[InitializeAMSWithHttpClient](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetInitializeAMSWithHttpClient)]
 
-Xxx [**XxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn931272) xxxxx xx xxxxxx xxxx xxx xxxxxx xx xxxxx xx xxxxxxxx x xxxxxxxx xxxx xxx xxxxxx. Xxx [**XxxxxxxxXxxxxXxxxxxXxxxxxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn946935) xxxxxx xxxx xxx xxxxx xxxxxxx xxxxxxx xxxxxxxxxx xxxx xxxxxxx xxxxxxxxxxx xxxxx xxx xxxxxxxx xxxxx xxxxxxxxx xxxx xx xxx xxxx xxx XXX xx xxx xxxxxxxx.
+[
+            **DownloadRequested**](https://msdn.microsoft.com/library/windows/apps/dn931272) イベントは、システムがサーバーからリソースを取得しようとするときに発生します。 イベント ハンドラーに渡される [**AdaptiveMediaSourceDownloadRequestedEventArgs**](https://msdn.microsoft.com/library/windows/apps/dn946935) によって、要求されているリソースに関する情報 (リソースの種類や URI など) を提供するプロパティが公開されます。
 
-Xxx xxx xxx xxx **XxxxxxxxXxxxxxxxx** xxxxx xxxxxxx xx xxxxxx xxx xxxxxxxx xxxxxxx xx xxxxxxxx xxx xxxxxxxxxx xx xxx [**XxxxxxxxXxxxxXxxxxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn946942) xxxxxx xxxxxxxx xx xxx xxxxx xxxx. Xx xxx xxxxxxx xxxxx, xxx XXX xxxx xxxxx xxx xxxxxxxx xxxx xx xxxxxxxxx xx xxxxxxxx xx xxxxxxxx xxx [**XxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn931250) xxxxxxxxxx xx xxx xxxxxx xxxxxx.
+**DownloadRequested** イベント ハンドラーを使って、リソース要求を変更することができます。この場合、イベント引数によって提供される [**AdaptiveMediaSourceDownloadResult**](https://msdn.microsoft.com/library/windows/apps/dn946942) オブジェクトのプロパティを更新します。 次の例では、結果オブジェクトの [**ResourceUri**](https://msdn.microsoft.com/library/windows/apps/dn931250) プロパティを更新して、リソースの取得元となる URI を変更します。
 
-Xxx xxx xxxxxxxx xxx xxxxxxx xx xxx xxxxxxxxx xxxxxxxx xx xxxxxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn946943) xx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn931249) xxxxxxxxxx xx xxx xxxxxx xxxxxx. Xx xxx xxxxxxx xxxxx, xxx xxxxxxxx xx xxx xxxxxxxx xxxxxxxx xxx xxxxxxxx xx xxxxxxx xxx **Xxxxxx** xxxxxxxx. Xxxx xxxx xx xxx xxx xxxxxxxx xxx xxxxxxxx xxxxxxx xxxx xxxx xxxx xx xxxxxxxx xxxxxxxxxxxxxx, xxxx xx xxxxxxxxxx xxxx xxxx x xxxxxx xxxxxx xx xxxxxxxxxxxx xxxx xxxxxxxxxxxxxx, xxx xxxx xxxx [**XxxxxxxxXxxxxXxxxxxXxxxxxxxXxxxxxxxxXxxxxXxxx.XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn946936) xx xxx x xxxxxxxx xxx xxxx xxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn946934) xxxx xxx xxxxxxxxx xx xxxxxxxx xx xxxxxx xxx xxxxxx xxxx xxx xxxxxxxx xxxxxxx xxxxxxxxx xxx xxxxxxxx.
+結果オブジェクトの [**Buffer**](https://msdn.microsoft.com/library/windows/apps/dn946943) プロパティや [**InputStream**](https://msdn.microsoft.com/library/windows/apps/dn931249) プロパティを設定することによって、要求したリソースの内容を置き換えることができます。 次の例では、**Buffer** プロパティを設定することによって、マニフェスト リソースの内容が置き換わります。 非同期的に取得したデータを使ってリソース要求を更新する場合は (リモート サーバーや非同期ユーザー認証からデータを取得する場合など)、[**AdaptiveMediaSourceDownloadRequestedEventArgs.GetDeferral**](https://msdn.microsoft.com/library/windows/apps/dn946936) を呼び出して遅延を取得する必要があります。その後、操作が完了して、ダウンロード要求操作が継続可能なことをシステムに通知するときに、[**Complete**](https://msdn.microsoft.com/library/windows/apps/dn946934) を呼び出してください。
 
-[!xxxx-xx[XXXXxxxxxxxXxxxxxxxx](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetAMSDownloadRequested)]
+[!code-cs[AMSDownloadRequested](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetAMSDownloadRequested)]
 
-Xxx **XxxxxxxxXxxxxXxxxxx** xxxxxx xxxxxxxx xxxxxx xxxx xxxxx xxx xx xxxxx xxxx xxx xxxxxxxx xx xxxxxxxx xxxxxxxx xxxxxx. Xx xxxx xxxxxxx, xxx xxxxxxx xxxxxxxx xxx xxxxxx xxxxxxx xx xxx XX. Xxxx xxxx xxx xxx xxxxxx xxx xxxxxx xxxx xxxxxxxxx xxxx xxx xxxxxx xxxxxxxx xxxxxxxx xx xxx xxxxxxxx xxxxxx. Xxx xxxx xxxxxxxxxxx, xxx xxx [**XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/mt628697) xxxxxxxx.
+**AdaptiveMediaSource** オブジェクトは、ダウンロードや再生のビットレートが変わったときに対応できるようにするイベントを提供します。 この例では、現在のビットレートが UI で簡単に更新されます。 また、アダプティブ ストリーミングのビットレートをシステムで切り替えるタイミングを決定する比率を変更できることに注意してください。 詳しくは、[**AdvancedSettings**](https://msdn.microsoft.com/library/windows/apps/mt628697) プロパティをご覧ください。
 
-[!xxxx-xx[XXXXxxxxxxXxxxxx](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetAMSBitrateEvents)]
+[!code-cs[AMSBitrateEvents](./code/AdaptiveStreaming_Win10/cs/MainPage.xaml.cs#SnippetAMSBitrateEvents)]
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

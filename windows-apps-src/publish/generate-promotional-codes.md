@@ -1,130 +1,134 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxxxxxxx xxxxxxxxxxx xxxxx xxx xx xxx xx xx-xxx xxxxxxx (XXX) xxxx xxx xxxx xxxxxxxxx xx xxx Xxxxxxx Xxxxx.
-xxxxx: Xxxxxxxx xxxxxxxxxxx xxxxx
-xx.xxxxxxx: YXYYYYYY-YYXX-YXYY-XYXY-YYXYYYYXYYYY
+Description: Windows ストアで公開しているアプリまたはアプリ内製品 (IAP) のプロモーション コードを生成できます。
+title: プロモーション コードを生成する
+ms.assetid: 9B632266-64EC-4D62-A4C4-55B6643D8750
 ---
 
-# Xxxxxxxx xxxxxxxxxxx xxxxx
+# プロモーション コードを生成する
 
 
-Xxx xxx xxxxxxxx xxxxxxxxxxx xxxxx xxx xx xxx xx xx-xxx xxxxxxx (XXX) xxxx xxx xxxx xxxxxxxxx xx xxx Xxxxxxx Xxxxx. Xxxxxxxxxxx xxxxx xxx xx xxxx xxx xx xxxx xxxxxxxxxxx xxxxx xxxx xxxxxx xx xxxx xxx xx XXX. Xxx xxxxx xxxx xxx xxxxxxxxxxx xxxxx xx xxxxxxx xxxxxxxx xxxxxxx xxxxxxxxx xx xxxxxx xxxxx xxxx xxxxxx xx xxxx xxx xx XXX, xx xxx [xxxx xxxxxxx](beta-testing-and-targeted-distribution.md) xxxx Xxxxxxx YY.
+Windows ストアで公開しているアプリまたはアプリ内製品 (IAP) のプロモーション コードを生成できます。 プロモーション コードは、影響力を持つユーザーにアプリまたは IAP への無料アクセスを提供する簡単な方法です。 また、アプリや IAP への無料アクセスをユーザーに提供する顧客サービスのシナリオに対応するため、または Windows 10 の[ベータ テスト](beta-testing-and-targeted-distribution.md)のために、プロモーション コードを使うこともできます。
 
-Xxxx xxxxxxxxxxx xxxx xxx x xxxxxxxxxxxxx xxxxxx xxxxxxxxxx XXX xxxx xxx xxx xxxxxxxxxx xx x xxxx. Xxx xxxx xxx xxxxxx xxxxx xxx XXX xx xxxxxx xxx xxxx xxx xxxxxxx xxxx xxx xx XXX xxxx xxx Xxxxxxx Xxxxx.
+各プロモーション コードには、ユーザーに配布可能な引き換え用の一意の URL が含まれています。 ユーザーはこの URL をクリックするだけでプロモーション コードを引き換えることができ、アプリまたは IAP を Windows ストアからインストールできます。
 
-Xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxx xxx:
+Windows デベロッパー センター ダッシュボードで次のことを実行できます。
 
--   Xxxxx x xxx xx xxxxxxxxxxx xxxxx xxx xxxx xxx.
--   Xxxxxxxx x xxxxxxxxx xxxxxxxxxxx xxxxx xxxxx.
--   Xxxxxx xxxxxxxxxxx xxxx xxxxx xxx xxxx xxxx, xxxxxxxxx:
-    -   Xxxxxxxxx xx xxxxxxxxxxx xxxx xxxxxx xxx xxx xxxx xxxx (xx xxx **Xxxxxxxxx xxxxxxxx** xxxx) xxx xxx xxxx xxx xxxxxxxxxxxx (xx xxx **Xxx xxxxxxxx** xxxx xxx xxxx xxx).
-    -   X xxxxxxxx xxxxxxx xx xxxxxxxxxxx xxxx xxxxxx xxx xxxx xxx (xx xxx **Xxxxxxxxxxx xxxxx** xxxx xxx xxxx xxx).
+-   アプリのプロモーション コードのセットを注文する。
+-   処理されたプロモーション コードの注文書をダウンロードする。
+-   アプリのプロモーション コードの使用状況を確認する。
+    -   すべてのアプリ (**[ダッシュボード概要]** ページ) およびアプリごと (各アプリの **[アプリの概要]** ページ) のプロモーション コードの注文の要約。
+    -   各アプリのプロモーション コードの注文の詳しい要約 (各アプリの **[プロモーション コード]** ページ)。
 
-> **Xxxx**  Xxx xxx xxxxxxxx xxxxxxxxxxx xxxxx xxxx xx xxx xxxx xxxxxxxx xxx **Xxxx xxxx xxx xxx xxxxxxx xxxxxxxxxxx. Xxxxxxxxx xxxx x xxxxxxxxxxx xxxx xxx xxxxx xxxxxxxx xx xx Xxxxxxx YY xxxxxxx** xxxxxx xx xxx [Xxxxxxx xxx xxxxxxxxxxxx](set-app-pricing-and-availability.md) xxxxxxxxx xxxx xxx xxxx xxx. Xxxx xxx xxxx xxxx xxx xxxxx xxxxxxxxxx xxxxx xx xxx [xxx xxxxxxxxxxxxx xxxxxxx](the-app-certification-process.md) xxxxxx xxxxx xxx xxxxxx x xxxxxxxxxxx xxxx xx xxxxxxx xx.
+> **注**  プロモーション コードは、アプリの [[価格と使用可能状況]](set-app-pricing-and-availability.md) ダッシュボード ページで **[このアプリを非表示にして取得できないようにします。プロモーション コードを持つユーザーは、Windows 10 デバイスで引き続きダウンロードできます]** オプションを選択している場合でも生成できます。 ユーザーがプロモーション コードを利用してアプリをインストールするには、アプリが[アプリの認定プロセス](the-app-certification-process.md)の最終的な公開フェーズに合格する必要があります。
 
-## Xxxxxxxxxxx xxxx xxxxxxxx
-
-
-Xx xxxxx xx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxxx xxxxx:
-
--   Xxx xxx xxxxxxxx xxxxxxxxxxx xxxxx xxx xxx xxx xx XXX xxxx xxx xxxxxxxxx xx xxx Xxxxxxx Xxxxx. Xxxxx xxx xxxxxx xxx xxxxx xx xxx xxxxxxxx xx Xxxxxxx xxxx xxx xxxxxxxxx xx xxxx xxx xx XXX.
--   Xxxxxxxxxxx xxxxx xxxxxx Y xxxxxx xxxxx xxx xxxx xxx xxxxx xxxx.
--   Xxx xxxx xx xxxx xxxx xx XXXx, xxx xxx xxxxxxxx xx xx YYY xxxxxxxxxxx xxxxx xxxxx Y xxxxxx. Xxx Y xxxxx xxxxxx xxxxxx xxxx xxx xxxxx xxxxxxxxxxx xxxx xxxxx xx xxxxxxxxx.
--   Xxx xxxx xxxxxx xxx xxxxxxxxxxxx xxxxxxx xx xxx [Xxx Xxxxxxxxx Xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh694058), xxxxxxxxx xxxxxxx **Yx. Xxxxxxxxxxx Xxxxx**.
-
-## Xxxxx xxxxxxxxxxx xxxxx
+## プロモーション コードのポリシー
 
 
-Xx xxxxx xxxxxxxxxxx xxxxx xxx xx xxx xx XXX xxxx xxx xxxxxxxxx xx xxx Xxxxxxx Xxxxx:
+プロモーション コードの次のポリシーに注意してください。
 
-1.  Xx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xx xxx xx xxx xxxxxxxxx:
-    -   Xx xxx **Xxx xxxxxxxx** xxxx xxx xxxx xxx, xxxxxx xxx **Xxxxxxxxxxx xxxxx** xxxxxxx xxx xxxxx **Xxxxx xxxxx**.
-    -   Xx xxx xxxxxxxxx xxxx xxx xxxx xxx, xx xxx xxxx xxxxxxxxxx xxxx, xxxxxx **Xxxxxxxxxxxx** xxx xxxxx **Xxxxxxxxxxx xxxxx**. Xx xxx **Xxxxxxxxxxx xxxxx** xxxx, xxxxx **Xxxxx xxxxx**.
+-   Windows ストアに公開したすべてのアプリまたは IAP のプロモーション コードを生成できます。 ユーザーは、アプリまたは IAP がサポートしている任意のバージョンの Windows でコードを利用できます。
+-   プロモーション コードは注文した日の 6 か月後に期限切れになります。
+-   各アプリまたは IAP について、6 か月ごとに最大 250 のプロモーション コードを生成できます。 6 か月の期間は、最初のプロモーション コードの注文が送られたときに始まります。
+-   「[アプリ開発者契約書](https://msdn.microsoft.com/library/windows/apps/hh694058)」で規定されている要件に従う必要があります (セクション 3k「**プロモーション コード**」を含む)。
 
-2.  Xx xxx **Xxx xxxxxxxxxxx xxxxx xxxxx** xxxx, xxxxx xxx xxxxxxxxx:
-    -   Xxxxxx xxx xxx xx XXX xxx xxxxx xxx xxxx xx xxxxxxxx xxxxx.
-    -   Xxxxxxx x xxxx xxx xxx xxxxx. Xxx xxx xxx xxxx xxxx xx xxxxxxxxxxxxx xxxxxxx xxxxxxxxx xxxxxx xx xxxxx xxxx xxxxxxxxx xxxx xxxxxxxxxxx xxxx xxxxx xxxx.
-    -   Xxxxxxx xxx xxxxxxxx xx xxxxx xx xxxxx.
-
-3.  Xxxxx **Xxxxx xxxxx**. Xxx xxxxx xx xxxxxxxxx xxx xxx xxxxxxxxx xxxxxxxxx xxx xx xxx **Xxxxxxxxxxx xxxxx** xxxx, xxxxx xxx xxx xxxxx xx xxxxxx xx **Xxxxxxx** xx xxx xxxxxxx xxxxx xx xxxxxxxxxxx xxxx xxxxxx.
-
-Xxxxxxxxxxx xxxxx xxx xxxxxxx xxxxxxxxx xxx xxxxxxxx xxxxxx YY xxxxxxx xx xxxxxxx xxx xxxxx, xxxxxxxx xxxx xxxxxx xxx xxxx xxxxxx xx xxxxxxx. Xxxxx xxxx xxxxx xx xxxxxxxxx xxx xxx xxxxx xxx xxxxxxxxx xxx xxxxxxxx, xxx xxxxx xxxxxx xxxxxxx xx **Xxxxxxxxx**.
-
-## Xxxxxxxx xxx xxxxxxxxxx xxxxxxxxxxx xxxxx
+## プロモーション コードの注文
 
 
-Xx xxxxxxxx x xxxxxxxxx xxxxxxxxxxx xxxxx xxxxx xxx xxxxxxxxxx xxx xxxxx xx xxxxx xx xxxx xxx:
+Windows ストアに公開したアプリまたは IAP のプロモーション コードを注文するには、次の手順を実行します。
 
-1.  Xx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxxxxx xx xxx **Xxxxxxxxxxx xxxxx** xxxx xxx xxxx xxx (xxxxxx **Xxxxxxxxxxxx** xxx xxxxx **Xxxxxxxxxxx xxxxx**).
-2.  Xxxxxxx xxxx xxxx xxxxx'x xxxxxx xx **Xxxxxxxxx**. Xxxxx xxx **Xxxxxxxx** xxxx xxx xxxx xxxxx xxx xxxx xxx xxxxxxxx xxxx xx xxxx xxxxxxxx. Xxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxx xxxx xxxxxxxxxxx xxxxx xxxxx xx xxx-xxxxxxxxx xxxxx (XXX) xxxxxx.
-3.  Xxxx xxx XXX xxxx xx xxx xxxxxx xx xxxx xxxxxx. Xxx xxx xxxx xxxxxxxxxx, xxxx xxx XXX xxxx xx xx xxxxxxxxxxx xxxx xxx xxxxxxx xxx xxxx xx x xxxxxxx xxxxxxxxx, xxxx xx Xxxxxxxxx Xxxxx. Xxxxxxx, xxx xxx xxxxxxxxxxxxx xxxx xxx xxxx xx xxx xxxx xxxxxx.
+1.  Windows デベロッパー センター ダッシュボードで、次のいずれかの操作を実行します。
+    -   アプリの **[アプリの概要]** ページで、**[プロモーション コード]** セクションの **[注文コード]** をクリックします。
+    -   アプリのいずれかのダッシュボード ページで、左側のナビゲーション メニューの **[収益化]** を展開して **[プロモーション コード]** をクリックします。 **[プロモーション コード]** ページで、**[注文コード]** をクリックします。
 
-    Xxx xxxx xxxxxxxx xxx xxxxxxxxx xxxxxxx xx xxxx xxx xxxx xxxx:
+2.  **[新しいプロモーション コードの注文]** ページで、次を入力します。
+    -   コードを生成するアプリまたは IAP を選びます。
+    -   注文の名前を指定します。 この名前は、プロモーション コードの利用状況データを確認するときに、異なるコードの注文を区別するために使うことができます。
+    -   注文するコードの数量を指定します。
 
-    -   **Xxxxxxx xxxx**: Xxx xxxx xx xxx xxx xx XXX xxxx xxx xxxx xx xxxxxxxxxx xxxx.
-    -   **Xxxxx xxxx**: Xxx xxxx xx xxx xxxxx xx xxxxx xxxx xxxx xxx xxxxxxxxx.
-    -   **Xxxxxxxxxxx xxxx**: Xxx xxxx xxxxxx. Xxxx xx x YxY xxxxxx xx xxxxxxxxxxxx xxxxxxxxxx xxxxxxxxx xx xxxxxxx. Xxx xxxxxxx:
+3.  **[注文コード]** をクリックします。 注文が送られ、ダッシュボードの **[プロモーション コード]** ページに移動します。このページのプロモーション コードの注文の要約テーブルに、新しい注文が **[保留中]** と表示されます。
 
-        XXYXX-XYXXX-YXXXY-YXXXX-YYXYX
+プロモーション コードは、通常注文してから 60 分以内にダウンロード可能になりますが、一部の注文では処理により長い時間がかかる場合があります。 注文が処理されてコードがダウンロード可能になると、注文状況が **[使用可能]** に変わります。
 
-    -   **Xxxxxxxxxx XXX**: Xxx XXX xxxx x xxxx xxx xxx xx xxxxxx xxx xxxx xxx xxxxxxx xxxx xxx xx XXX. Xxx XXX xxx xxx xxxxxxxxx xxxxxx:
-
-        xxxxx://xxxxxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxx?xxxxxxx=&xx;xxxxxxxxxxx_xxxx>
-
-    -   **Xxxxx xxxx**: Xxx xxxx xxx xxxxxx xxx xxxxx xxx xxxx xxxx.
-    -   **Xxxxxx xxxx**: Xxx xxxx xxxx xxxx xxxxxxx.
-    -   **Xxxx XX**: X xxxxxx XX xxx xxxx xxxx.
-    -   **Xxxxx XX**: X xxxxxx XX xxx xxx xxxxx xx xxxxx xxxx xxxx xxx xxxxxxxxx.
-    -   **Xxxxx xx**: Xx xxxxx xxxxx xxxx xxx xxx xxxx xxxx x xxxxx xxxx xxxxxxxxxx xxx xxxx xxx xxxx xxx xxxx xx.
-
-4.  Xxxxxxxxxx xxx xxxxxxxxxx XXXx xx xxxx xxxxx xxx xxx xxxxxxxxxxxxx xxxxxx xxx xxxxxx (xxx xxxxxxx, xxxxx, XXX xxxxxxx, xx xxxxxxx xxxxx). Xx xxxxxxxxx xxxx xxxx xxxxxxxxxxxxx xxxxxxxx xxx xxxxxxxxx:
-    -   Xx xxxxxxxxxxx xx xxxxx xxx xx XXX xxx xxxxxxxxxxx xxxx xx xxx, xxx xxxxxxxxxx x xxxxxxxxxxx xx xxx xxx xxxx xx xxxxxxxxx xxx xxxx.
-    -   Xxx xxxxxxxxxx XXX xxx xxx xxxx.
-    -   Xxxxxxxxxxxx xxxx xxxxx xxx xxxx xx xxxxx xxx xxxxxxxxxx XXX, xxx xx xxxxx xxxxx Xxxxxxxxx xxxxxxx, xxx xxxxxx xxx xxxxxxxxxxxx xx xxxxxxxx xxx xxxxxxx xxxx xxx.
-
-## Xxxx xxxxxxxxxx xxxx xxxxxxxxxx
+## プロモーション コードのダウンロードと配布
 
 
-Xxxxx xxx xxxxxxxxxx x xxxxxxxxxx XXX xx x xxxx, xxx xxxxxxxxx xxxxx xxxxxxxx xxx xxxxxxxxxx xxx xxxx xxxx xxxxxx xx xxxxxx xxxx xxx.
+処理されたプロモーション コードの注文書をダウンロードし、アプリのユーザーにコードを配布するには、次の手順を実行します。
 
-1.  Xxx xxxx xxxxxx xxx xxxxxxxxxx XXX.
+1.  Windows デベロッパー センター ダッシュボードでアプリの **[プロモーション コード]** ページに戻ります (**[収益化]** を展開して **[プロモーション コード]** をクリックします)。
+2.  注文の状況が **[使用可能]** であることを確認します。 注文の **[ダウンロード]** リンクをクリックし、提供されたファイルをコンピューターに保存します。 このファイルには、タブ区切り値 (TSV) の形式で、プロモーション コードの注文に関する情報が含まれています。
+3.  TSV ファイルを好みのエディターで開きます。 最適なエクスペリエンスのためには、Microsoft Excel のように、表形式でデータを表示できるアプリケーションで TSV ファイルを開きますが、 代わりに任意のテキスト エディターでファイルを開くこともできます。
 
-    Xxx xxxxxxx xxxxx xx xx xxxxxxxxxxxxx **Xxxxxx xxxx xxxx** xxxx xx <https://account.microsoft.com/billing/redeem>. Xxxx xxxx xxxxxxxx x xxxxxxxxxxx xx xxx xxx xxx xxxx xx xxxxx xx xxxxxx.
+    ファイルにはコードごとに、次の列から成るデータが含まれています。
 
-2.  Xxx xxxx xxxxxx **Xxxxxx.**
+    -   **[製品名]**: このコードが関連付けられているアプリまたは IAP の名前。
+    -   **[注文名]**: コードが処理された注文の名前。
+    -   **[プロモーション コード]**: コードそのものです。 ハイフンで区切られた英数字の 5 x 5 の文字列です。 例:
 
-    Xxx xxxxxxx xxxxxxxxx xx x **Xxxxx xxx** xxxx xxxx x **Xxx*****&xx;xxxx xxx xxxx&xx;*** xxxx.
+        DM3GY-M2GYM-6YMW6-4QHHT-23W2Z
 
-    > **Xxxx**  Xxxxx xxxx xxxxxxx xx xxxxx xx xxxx xxxx xx xxxx xxx xx xxx xxx xxxxxxxxx.
+    -   **[購入 URL]**: ユーザーがコードを引き換えてアプリまたは IAP をインストールするために使う URL。 この URL は、次の形式になります。
 
-3.  Xxx xxxx xxxxxx **Xxx*****&xx;xxxx xxx xxxx&xx;***.
+        https://account.microsoft.com/billing/redeem?mstoken=&lt;promotional_code>
 
-4.  Xx xxx xxxx xx xx x xxxxxxxx xxxx xxx Xxxxxxx Xxxxx xxx Xxxxxxx YY xx Xxxxxxx Y.Y xxxxxxxxx, xxx Xxxxxxx Xxxxx xxxxx xx xxx xxxxxxxx xxxx xxx xxx xxx. Xxx xxxx xxx xxxxx **Xxxxxxx** xx xxxxxxx xxx xxx xxx xx xxxxxx.
+    -   **[発注日]**: このコードを注文した日。
+    -   **[有効期限]**: このコードの有効期限が切れる日。
+    -   **[コード ID]**: このコードの一意の ID。
+    -   **[注文 ID]**: このコードが処理された注文の一意の ID。
+    -   **[指定]**: コードを提供したユーザーを識別する値を入力できる空のフィールド。
 
-    Xx xxx xxxx xx xx x xxxxxxxx xx xxxxxx xxxx xxxx xxx xxxx xxx Xxxxxxx Xxxxx xxxxxxxxx, xxx xxxxxxx xxxxx xx xxx Xxxxxxx Xxxxx xxx xxxx xxx xxx xxx. Xxx xxxx xxx xxxxx **Xxxxxxx** xx xxxxxxx xxx xxx xxx xx xxxxxx.
+4.  引き換え用の URL を任意の通信手段でユーザーに配布します (メール、SMS メッセージ、印刷されたカードなど)。 次の内容を伝えることをお勧めします。
+    -   どのアプリまたは IAP 用のプロモーション コードであるかについての説明、およびこのコードがユーザーに送られた理由についての説明 (任意)。
+    -   コードの引き換え用 URL。
+    -   ユーザーが引き換え用 URL にアクセスし、Microsoft アカウントでログインし、アプリをダウンロードしてインストールするための操作方法。
 
-    > **Xxxx**  Xx xxxx xxxxx xxx xxx xxxx xxxxx xxxxxxx x **Xxx** xxxxxx xxxxxxx xx **Xxxxxxx**, xxxx xxxxxx xxx xxx xxx xxxxxxxxxxxx xxxxxxxx xxx xxx xxxxxxxxxxx xxxx. Xxx xxxx xxx xxxxx **Xxx** xx xxxxxxx xxx xxx xxx xx xxxxxx.
-
-## Xxxxxx xxxx xxxxxxxxxxx xxxxx
+## コード利用のユーザー エクスペリエンス
 
 
-Xxxxx xxx xxxxxxx xxxxxxxxx xxxx xx xxxxxx xxxx xxxxxxxxxxx xxxx xxxxx.
+引き換え用の URL をユーザーに配布した後、ユーザーはアプリに引き換えるために次の手順を実行します。
 
--   Xx xxxxxx x xxxxxxx xx xxxxxxxxxxx xxxx xxxxxx xxx xxx xxxx xxxx, xxxxx xxx **Xxxxxxxxx xxxxxxxx** xxxx xxx xxxxxx xxx **Xxxxxxxxxxx xxxxx** xxxxxxx xx xxxx xxxx. Xxxx xxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxxxxx xxxxx xxx xxx xxxx xxxx, xxx xxxxx xxxxxx xx xxxxxxxx xxxxxxxxxxx xxxxx xxx xxx xxxx xxxx, xxx xxx xxxxx xxxxxx xx xxxxxxxxxxx xxxx xxxxxx xxx xxxx xxxxxx xxx xxx xxxx xxxx.
--   Xx xxxxxx x xxxxxxx xx xxxxxxxxxxx xxxx xxxxxx xxx x xxxxxxxx xxx, xxxxxxxx xx xxx **Xxx xxxxxxxx** xxxx xxx xxx xxx xxx xxxxxx xxx **Xxxxxxxxxxx xxxxx** xxxxxxx xx xxxx xxxx. Xxxx xxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxxxxx xxxxx xxx xxx xxx, xxx xxxxx xxxxxx xx xxxxxxxx xxxxxxxxxxx xxxxx xxx xxx xxx, xxx xxx xxxxx xxxxxx xx xxxxxxxxxxx xxxx xxxxxx xxx xxxx xxxxxx xxx xxx xxx.
--   Xx xxxxxx x xxxxxxxx xxxxxxx xx xxxxxxxxxxx xxxx xxxxxx xxx x xxxxxxxx xxx, xxxxxxxx xx xxx **Xxxxxxxxxxx xxxxx** xxxx xxx xxxx xxx (xxxxxx **Xxxxxxxxxxxx** xxx xxxxx **Xxxxxxxxxxx xxxxx**). Xxx xxx xxxxxx xxx xxxxxxxxx xxxxxxx xxx xxx xxxxxxx xxx xxxxxxxx xxxxxxxxxxx xxxxx xxx xxx xxx:
-    -   Xxxxx xxxx
-    -   Xxx xx XXX xxxx
-    -   Xxxxx xxxx
-    -   Xxxxxx xxxx
-    -   Xxxxxx
+1.  ユーザーは引き換え用の URL をクリックします。
 
-Xxx xxx xxxx xxxxxxxx xx xxxxxx xxxxx xxxx xxxx xxxxx.
+    ブラウザーが開き、**[コードの適用]** ページ (<https://account.microsoft.com/billing/redeem>) が表示されます。 このページには、ユーザーが引き換えるアプリの説明が表示されます。
+
+2.  ユーザーは **[使用]** をクリックします。
+
+    ブラウザーが、**[***&lt;アプリ名&gt;*** を入手する]** リンクを含む **[ありがとうございました]** ページに移動します。
+
+    > **注**  アプリがまだ公開されていない場合、ユーザーはこの手順でエラーを受け取ります。
+
+3.  ユーザーが **[***&lt;アプリ名&gt;*** を入手する]** をクリックします。
+
+4.  ユーザーが Windows 10 または Windows 8.1 用の Windows ストアがインストールされているコンピューターを使っている場合、Windows ストアによってアプリの概要ページが開きます。 ユーザーは **[インストール]** をクリックして無料でアプリをインストールできます。
+
+    ユーザーが Windows ストアがインストールされていないコンピューターまたはデバイスを使っている場合、ブラウザーによって Windows ストアのアプリ用の Web ページが開きます。 ユーザーは **[インストール]** をクリックして無料でアプリをインストールできます。
+
+    > **注**  プロモーション コードをアプリに正常に引き換えたにもかかわらず、アプリのページに **[インストール]** ボタンではなく **[購入]** ボタンが表示されることがあります。 ユーザーは **[購入]** をクリックして無料でアプリをインストールできます。
+
+## プロモーション コードの確認
+
+
+プロモーション コードの使用状況を確認するいくつかの方法があります。
+
+-   すべてのアプリのプロモーション コードの注文の要約を確認するには、**[ダッシュボード概要]** ページにアクセスして **[プロモーション コード]** セクションを探します。 このセクションでは、すべてのアプリの残りのアクティブ プロモーション コード数、すべてのアプリの引き換えられたプロモーション コードの合計数、すべてのアプリの発注したプロモーション コード注文の合計数が表示されます。
+-   特定のアプリのプロモーション コードの注文の要約を確認するには、そのアプリの **[アプリの概要]** ページに移動して **[プロモーション コード]** セクションを探します。 このセクションでは、アプリの残りのアクティブ プロモーション コード数、アプリの引き換えられたプロモーション コードの合計数、アプリの発注したプロモーション コード注文の合計数が表示されます。
+-   特定のアプリのプロモーション コードの注文について詳しい要約を確認するには、そのアプリの **[プロモーション コード]** ページに移動します (**[収益化]** を展開して **[プロモーション コード]** をクリックします)。 アプリのすべての有効および非アクティブなプロモーション コードについて、次の詳しい情報を確認できます。
+    -   注文名
+    -   アプリまたは IAP 名
+    -   発注日
+    -   有効期限
+    -   状態
+
+この表からアクティブな注文をダウンロードすることもできます。
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

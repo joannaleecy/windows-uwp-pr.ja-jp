@@ -1,29 +1,29 @@
 ---
-xxxxx: Xxxx xxxxx xxxxxxx xxx xxxxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxx xxxxxx xxxx xxxxxx xxx xxxxxx xxxxxxxxx xx xxxxxx xxxxxxx, xxx xxx xxxxxxx xxxx xxxxxx (xxxx xxxxxxxxx) xx xxxxxxxx xxx xxxxxx xxxxxxx.
-xx.xxxxxxx: YxYxYxYY-xxxY-xxxx-YYxx-xxxYxYxxYYxY
+title: Swap chain scaling and overlays
+description: Learn how to create scaled swap chains for faster rendering on mobile devices, and use overlay swap chains (when available) to increase the visual quality.
+ms.assetid: 3e4d2d19-cac3-eebc-52dd-daa7a7bc30d1
 ---
 
-# Xxxx xxxxx xxxxxxx xxx xxxxxxxx
+# Swap chain scaling and overlays
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxx xxx xx xxxxxx xxxxxx xxxx xxxxxx xxx xxxxxx xxxxxxxxx xx xxxxxx xxxxxxx, xxx xxx xxxxxxx xxxx xxxxxx (xxxx xxxxxxxxx) xx xxxxxxxx xxx xxxxxx xxxxxxx.
+Learn how to create scaled swap chains for faster rendering on mobile devices, and use overlay swap chains (when available) to increase the visual quality.
 
-## Xxxx xxxxxx xx XxxxxxX YY.Y
-
-
-XxxxxxYX YY.Y xxxxxx xxx xx xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxx xxxxxx xxxx xxx xxxxxx xx xxxx xxx-xxxxxx (xxxxxxx) xxxxxxxxxxx, xxxxxxxx xxxxxx xxxx xxxxx. XxxxxxYX YY.Y xxxx xxxxxxxx XXXx xxx xxxxxxxxx xxxx xxxxxxxx xxxxxxxx xx xxxx xxx xxx xxxxxxx x XX xx xxxxxxx xxxx xxxxx xx xxxxxx xxxxxxxxxx. Xxxx xxxxxx xxxx xxxx xx xxxx XX xx xxxx xxxxxx xxxxxxxxxx xxxxx xxxxxxxxxxx x xxxx xxxxxxxxx, xxxxxxx xxxxxx xxx xxxx xxx xx xxxxxx xxxxxxx xxx xxxx XXX xxxxxxxx (xxxx xx YYYY xx YYYY). Xxxx xxxxxxx xxxxxxxx xxx xx xxx xxxxxxxxxxx xxxx xxxxxx.
-
-XxxxxxYX YY.Y xxxx xxxxxxxxxx x xxx xxxxxxx xxx xxxxxxx xxxxxxx xxxx xxxx xxxxx xxxx xxxxxx. Xxx [Xxxxxx xxxxxxx xxxx XXXX Y.Y xxxx xxxxxx](reduce-latency-with-dxgi-1-3-swap-chains.md).
-
-## Xxx xxxx xxxxx xxxxxxx
+## Swap chains in DirectX 11.2
 
 
-Xxxx xxxx xxxx xx xxxxxxx xx xxxxxxxxx xxxxxxxx - xx xxxxxxxx xxxxxxxxx xxx xxxxx xxxxxxx - xx xxx xx xxxxxxxxxx xx xxxxxx xxxx-xxxx xxxx xxxxxxx xx x xxxxx xxxxxxxxxx xxxx xxx xxxxxxx xx xxxxxxxx xxxxxxx xx. Xx xx xxxx, xxx xxxx xxxxx xxxx xx xxxx xxx xxxxxxxxx xxxx xxxxxxx xxxx xx xxxxxxx xxxx xxx xxxxxx xxxxxxxxxx, xx x xxxxxxxxx xx xxx xxxxxxxxx xxxx xx xxxx.
+Direct3D 11.2 allows you to create Universal Windows Platform (UWP) apps with swap chains that are scaled up from non-native (reduced) resolutions, enabling faster fill rates. Direct3D 11.2 also includes APIs for rendering with hardware overlays so that you can present a UI in another swap chain at native resolution. This allows your game to draw UI at full native resolution while maintaining a high framerate, thereby making the best use of mobile devices and high DPI displays (such as 3840 by 2160). This article explains how to use overlapping swap chains.
 
-1.  Xxxxx, xxxxxx x xxxx xxxxx xx xxxx xxxxxx xxxxxxxxxx.
+Direct3D 11.2 also introduces a new feature for reduced latency with flip model swap chains. See [Reduce latency with DXGI 1.3 swap chains](reduce-latency-with-dxgi-1-3-swap-chains.md).
+
+## Use swap chain scaling
+
+
+When your game is running on downlevel hardware - or hardware optimized for power savings - it can be beneficial to render real-time game content at a lower resolution than the display is natively capable of. To do this, the swap chain that is used for rendering game content must be smaller than the native resolution, or a subregion of the swapchain must be used.
+
+1.  First, create a swap chain at full native resolution.
 
     ```cpp
     DXGI_SWAP_CHAIN_DESC1 swapChainDesc = {0};
@@ -72,9 +72,9 @@ Xxxx xxxx xxxx xx xxxxxxx xx xxxxxxxxx xxxxxxxx - xx xxxxxxxx xxxxxxxxx xxx xxxx
         );
     ```
 
-2.  Xxxx, xxxxxx x xxxxxxxxx xx xxx xxxx xxxxx xx xxxxx xx xx xxxxxxx xxx xxxxxx xxxx xx x xxxxxxx xxxxxxxxxx.
+2.  Then, choose a subregion of the swap chain to scale up by setting the source size to a reduced resolution.
 
-    Xxx XX Xxxxxxxxxx Xxxx Xxxxxx xxxxxx xxxxxxxxxx x xxxxxxx xxxx xxxxx xx x xxxxxxxxxx:
+    The DX Foreground Swap Chains sample calculates a reduced size based on a percentage:
 
     ```cpp
     m_d3dRenderSizePercentage = percentage;
@@ -91,7 +91,7 @@ Xxxx xxxx xxxx xx xxxxxxx xx xxxxxxxxx xxxxxxxx - xx xxxxxxxx xxxxxxxxx xxx xxxx
         );
     ```
 
-3.  Xxxxxx x xxxxxxxx xx xxxxx xxx xxxxxxxxx xx xxx xxxx xxxxx.
+3.  Create a viewport to match the subregion of the swap chain.
 
     ```cpp
     // In Direct3D, change the Viewport to match the region of the swap
@@ -106,16 +106,16 @@ Xxxx xxxx xxxx xx xxxxxxx xx xxxxxxxxx xxxxxxxx - xx xxxxxxxx xxxxxxxxx xxx xxxx
     m_d3dContext->RSSetViewports(1, &m_screenViewport);
     ```
 
-4.  Xx XxxxxxYX xx xxxxx xxxx, xxx xxxxxxxx xxxxxxxxx xxxxx xx xx xxxxxxxx xx xxxxxxxxxx xxx xxx xxxxxx xxxxxx.
+4.  If Direct2D is being used, the rotation transform needs to be adjusted to compensate for the source region.
 
-## Xxxxxx x xxxxxxxx xxxxxxx xxxx xxxxx xxx XX xxxxxxxx
+## Create a hardware overlay swap chain for UI elements
 
 
-Xxxx xxxxx xxxx xxxxx xxxxxxx, xxxxx xx xx xxxxxxxx xxxxxxxxxxxx xx xxxx xxx XX xx xxxx xxxxxx xxxx, xxxxxxxxxxx xxxxxx xx xxxxxx xxx xxxxxx xx xxx. Xx xxxxxxx xxxx xxxxxxxx xxxxxxx xxx xxxxxxx xxxx xxxxxx, xxxx xxxxxxx xx xxxxxxxxxx xxxxxxxx xx xxxxxxxxx xxx XX xx xxxxxx xxxxxxxxxx xx x xxxx xxxxx xxxx'x xxxxxxxx xxxx xxx xxxx-xxxx xxxx xxxxxxx. Xxxx xxxx xxxx xxxxxxxxx xxxxxxx xxxx xx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxx xxxxxx - xx xxxxxx xx xxxx xxxx XXXX xxxxxxx.
+When using swap chain scaling, there is an inherent disadvantage in that the UI is also scaled down, potentially making it blurry and harder to use. On devices with hardware support for overlay swap chains, this problem is alleviated entirely by rendering the UI at native resolution in a swap chain that's separate from the real-time game content. Note that this technique applies only to [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) swap chains - it cannot be used with XAML interop.
 
-Xxx xxx xxxxxxxxx xxxxx xx xxxxxx x xxxxxxxxxx xxxx xxxxx xxxx xxxx xxxxxxxx xxxxxxx xxxxxxxxxx. Xxxxx xxxxx xxx xxxxxxxxx xxxxx xxxxx xxxxxxxx x xxxx xxxxx xxx xxxx-xxxx xxxx xxxxxxx xx xxxxxxxxx xxxxx.
+Use the following steps to create a foreground swap chain that uses hardware overlay capability. These steps are performed after first creating a swap chain for real-time game content as described above.
 
-1.  Xxxxx, xxxxxxxxx xxxxxxx xxx XXXX xxxxxxx xxxxxxxx xxxxxxxx. Xxx xxx XXXX xxxxxx xxxxxxx xxxx xxx xxxx xxxxx:
+1.  First, determine whether the DXGI adapter supports overlays. Get the DXGI output adapter from the swap chain:
 
     ```cpp
     ComPtr<IDXGIAdapter> outputDxgiAdapter;
@@ -134,21 +134,21 @@ Xxx xxx xxxxxxxxx xxxxx xx xxxxxx x xxxxxxxxxx xxxx xxxxx xxxx xxxx xxxxxxxx xxx
         );
     ```
 
-    Xxx XXXX xxxxxxx xxxxxxxx xxxxxxxx xx xxx xxxxxx xxxxxxx xxxxxxx Xxxx xxx [**XxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/dn280411).
+    The DXGI adapter supports overlays if the output adapter returns True for [**SupportsOverlays**](https://msdn.microsoft.com/library/windows/desktop/dn280411).
 
     ```cpp
     m_overlaySupportExists = dxgiOutput2->SupportsOverlays() ? true : false;
     ```
     
-    > **Xxxx**   Xx xxx XXXX xxxxxxx xxxxxxxx xxxxxxxx, xxxxxxxx xx xxx xxxx xxxx. Xx xxx xxxxxx xxxx xxx xxxxxxx xxxxxxxx, xxxxxxxxx xxxx xxxxxxxx xxxx xxxxxx xxxx xxx xx xxxxxxxxx. Xxxxxxx, xxxxxx xxx XX xx xxxxxxx xxxxxxxxxx xx xxx xxxx xxxx xxxxx xx xxxx-xxxx xxxx xxxxxxx.
+    > **Note**   If the DXGI adapter supports overlays, continue to the next step. If the device does not support overlays, rendering with multiple swap chains will not be efficient. Instead, render the UI at reduced resolution in the same swap chain as real-time game content.
 
      
 
-2.  Xxxxxx xxx xxxxxxxxxx xxxx xxxxx xxxx [**XXXXXXxxxxxxY::XxxxxxXxxxXxxxxXxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh404559). Xxx xxxxxxxxx xxxxxxx xxxx xx xxx xx xxx [**XXXX\_XXXX\_XXXXX\_XXXXY**](https://msdn.microsoft.com/library/windows/desktop/hh404528) xxxxxxxx xx xxx *xXxxx* xxxxxxxxx:
+2.  Create the foreground swap chain with [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559). The following options must be set in the [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) supplied to the *pDesc* parameter:
 
-    -   Xxxxxxx xxx [**XXXX\_XXXX\_XXXXX\_XXXX\_XXXXXXXXXX\_XXXXX**](https://msdn.microsoft.com/library/windows/desktop/bb173076) xxxx xxxxx xxxx xx xxxxxxxx x xxxxxxxxxx xxxx xxxxx.
-    -   Xxx xxx [**XXXX\_XXXXX\_XXXX\_XXXXXXXXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/hh404496) xxxxx xxxx xxxx. Xxxxxxxxxx xxxx xxxxxx xxx xxxxxx xxxxxxxxxxxxx.
-    -   Xxx xxx [**XXXX\_XXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/hh404526) xxxx. Xxxxxxxxxx xxxx xxxxxx xxxxxx xxx xx xxxxxx xxxxxxxxxx.
+    -   Specify the [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) swap chain flag to indicate a foreground swap chain.
+    -   Use the [**DXGI\_ALPHA\_MODE\_PREMULTIPLIED**](https://msdn.microsoft.com/library/windows/desktop/hh404496) alpha mode flag. Foreground swap chains are always premultiplied.
+    -   Set the [**DXGI\_SCALING\_NONE**](https://msdn.microsoft.com/library/windows/desktop/hh404526) flag. Foreground swap chains always run at native resolution.
 
     ```cpp
      foregroundSwapChainDesc.Flags = DXGI_SWAP_CHAIN_FLAG_FOREGROUND_LAYER;
@@ -156,7 +156,7 @@ Xxx xxx xxxxxxxxx xxxxx xx xxxxxx x xxxxxxxxxx xxxx xxxxx xxxx xxxx xxxxxxxx xxx
      foregroundSwapChainDesc.AlphaMode = DXGI_ALPHA_MODE_PREMULTIPLIED; // Foreground swap chain alpha values must be premultiplied.
     ```
 
-    > **Xxxx**   Xxx xxx [**XXXX\_XXXX\_XXXXX\_XXXX\_XXXXXXXXXX\_XXXXX**](https://msdn.microsoft.com/library/windows/desktop/bb173076) xxxxx xxxxx xxxx xxx xxxx xxxxx xx xxxxxxx.
+    > **Note**   Set the [**DXGI\_SWAP\_CHAIN\_FLAG\_FOREGROUND\_LAYER**](https://msdn.microsoft.com/library/windows/desktop/bb173076) again every time the swap chain is resized.
 
      ```cpp
     HRESULT hr = m_foregroundSwapChain->ResizeBuffers(
@@ -168,7 +168,7 @@ Xxx xxx xxxxxxxxx xxxxx xx xxxxxx x xxxxxxxxxx xxxx xxxxx xxxx xxxx xxxxxxxx xxx
         );
     ```
 
-3.  Xxxx xxx xxxx xxxxxx xxx xxxxx xxxx, xxxxxxxx xxx xxxxxxx xxxxx xxxxxxx xx Y xx xxxx xxx XXXX xxxxxxx xxx xxxx xx xxxxxxx xxxx xxxx xxxxxx xxxxxxxxxxxxxx (xxxxxx xxx xxxx XXxxx xxxxxxxx).
+3.  When two swap chains are being used, increase the maximum frame latency to 2 so that the DXGI adapter has time to present both swap chains simultaneously (within the same VSync interval).
 
     ```cpp
     // Create a render target view of the foreground swap chain's back buffer.
@@ -189,15 +189,15 @@ Xxx xxx xxxxxxxxx xxxxx xx xxxxxx x xxxxxxxxxx xxxx xxxxx xxxx xxxx xxxxxxxx xxx
     }
     ```
 
-4.  Xxxxxxxxxx xxxx xxxxxx xxxxxx xxx xxxxxxxxxxxxx xxxxx. Xxxx xxxxx'x xxxxx xxxxxx xxx xxxxxxxx xx xx xxxxxxx xxxxxxxxxx xx xxx xxxxx xxxxx xxxxxx xxx xxxxx xx xxxxxxxxx. Xxx xxxxxxx, x YYY% xxxxx XXXX xxxxx xx YY% xxxxx xx xxx xx (Y.Y, Y.Y, Y.Y, Y.Y).
+4.  Foreground swap chains always use premultiplied alpha. Each pixel's color values are expected to be already multiplied by the alpha value before the frame is presented. For example, a 100% white BGRA pixel at 50% alpha is set to (0.5, 0.5, 0.5, 0.5).
 
-    Xxx xxxxx xxxxxxxxxxxxxxxxx xxxx xxx xx xxxx xx xxx xxxxxx-xxxxxx xxxxx xx xxxxxxxx xx xxx xxxxx xxxxx (xxx [**XXYXYYXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) xxxx xxx [**XYXYY\_XXXXXX\_XXXXXX\_XXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476200) xxxxxxxxx'x **XxxXxxxx** xxxxx xxx xx **XYXYY\_XXX\_XXXXX**. Xxxxxx xxxx xxx-xxxxxxxxxx xxxxx xxxxxx xxx xxxx xx xxxx.
+    The alpha premultiplication step can be done in the output-merger stage by applying an app blend state (see [**ID3D11BlendState**](https://msdn.microsoft.com/library/windows/desktop/ff476349)) with the [**D3D11\_RENDER\_TARGET\_BLEND\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476200) structure's **SrcBlend** field set to **D3D11\_SRC\_ALPHA**. Assets with pre-multiplied alpha values can also be used.
 
-    Xx xxx xxxxx xxxxxxxxxxxxxxxxx xxxx xx xxx xxxx, xxxxxx xx xxx xxxxxxxxxx xxxx xxxxx xxxx xx xxxxxxxx xxxx xxxxxxxx.
+    If the alpha premultiplication step is not done, colors on the foreground swap chain will be brighter than expected.
 
-5.  Xxxxxxxxx xx xxxxxxx xxx xxxxxxxxxx xxxx xxxxx xxx xxxxxxx, xxx XxxxxxYX xxxxxxx xxxxxxx xxx XX xxxxxxxx xxxxx xxxx xx xxxxxxxxxx xxxx xxx xxxxxxxxxx xxxx xxxxx.
+5.  Depending on whether the foreground swap chain was created, the Direct2D drawing surface for UI elements might need be associated with the foreground swap chain.
 
-    Xxxxxxxx xxxxxx xxxxxx xxxxx:
+    Creating render target views:
 
     ```cpp
     // Create a render target view of the foreground swap chain's back buffer.
@@ -218,7 +218,7 @@ Xxx xxx xxxxxxxxx xxxxx xx xxxxxx x xxxxxxxxxx xxxx xxxxx xxxx xxxx xxxxxxxx xxx
     }
     ```
 
-    Xxxxxxxx xxx XxxxxxYX xxxxxxx xxxxxxx:
+    Creating the Direct2D drawing surface:
 
     ```cpp
     if (m_foregroundSwapChain)
@@ -273,7 +273,7 @@ Xxx xxx xxxxxxxxx xxxxx xx xxxxxx x xxxxxxxxxx xxxx xxxxx xxxx xxxx xxxxxxxx xxx
         );
     ```
 
-6.  Xxxxxxx xxx xxxxxxxxxx xxxx xxxxx xxxxxxxx xxxx xxx xxxxxx xxxx xxxxx xxxx xxx xxxx-xxxx xxxx xxxxxxx. Xxxxx xxxxx xxxxxxx xxx xxx xx Y xxx xxxx xxxx xxxxxx, XXXX xxx xxxxxxx xxxx xxxx xxxxxx xxx xxxx XXxxx xxxxxxxx.
+6.  Present the foreground swap chain together with the scaled swap chain used for real-time game content. Since frame latency was set to 2 for both swap chains, DXGI can present them both within the same VSync interval.
 
     ```cpp
     // Present the contents of the swap chain to the screen.
@@ -321,4 +321,8 @@ Xxx xxx xxxxxxxxx xxxxx xx xxxxxx x xxxxxxxxxx xxxx xxxxx xxxx xxxx xxxxxxxx xxx
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

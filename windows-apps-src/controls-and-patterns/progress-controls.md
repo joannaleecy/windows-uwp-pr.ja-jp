@@ -1,88 +1,84 @@
 ---
-Xxxxxxxxxxx: X xxxxxxxx xxxxxxx xxxxxxxx xxxxxxxx xx xxx xxxx xxxx x xxxx-xxxxxxx xxxxxxxxx xx xxxxxxxx.
-xxxxx: Xxxxxxxxxx xxx xxxxxxxx xxxxxxxx
-xx.xxxxxxx: XXYYXYYY-XYYX-YYYX-YXYY-YYYXXYXYXXYX
-xxxxx: Xxxxxxxx xxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: A progress control provides feedback to the user that a long-running operation is underway.
+title: Guidelines for progress controls
+ms.assetid: FD53B716-C43D-408D-8B07-522BC1F3DF9D
+label: Progress controls
+template: detail.hbs
 ---
-# Xxxxxxxx xxxxxxxx
+# Progress controls
 
-X xxxxxxxx xxxxxxx xxxxxxxx xxxxxxxx xx xxx xxxx xxxx x xxxx-xxxxxxx xxxxxxxxx xx xxxxxxxx. X *xxxxxxxxxxx* xxxxxxxx xxx xxxxx xxx xxxxxxxxxx xx xxxxxxxxxx xx xx xxxxxxxxx. Xx *xxxxxxxxxxxxx* xxxxxxxx xxx, xx x xxxxxxxx xxxx, xxxxx xxxx xx xxxxxxxxx xx xxxxxxxx.
+A progress control provides feedback to the user that a long-running operation is underway. A *determinate* progress bar shows the percentage of completion of an operation. An *indeterminate* progress bar, or a progress ring, shows that an operation is underway.
 
-X xxxxxxxx xxxxxxx xx xxxx xxxx; xx xx xxx xxxxxxxxxxx.
+A progress control is read only; it is not interactive.
 
-<span class="sidebar_heading" style="font-weight: bold;">Xxxxxxxxx XXXx</span>
+<span class="sidebar_heading" style="font-weight: bold;">Important APIs</span>
 
--   [**XxxxxxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)
--   [**XxXxxxxxxxxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)
--   [**XxxxxxxxXxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)
--   [**XxXxxxxx xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
+-   [**ProgressBar class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.aspx)
+-   [**IsIndeterminate property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx)
+-   [**ProgressRing class**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.aspx)
+-   [**IsActive property**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx)
 
-![Xxxxxxx xxx: xxxxxxxxxxxxx xxxxxxxx xxx, xxxxxxxx xxxx, xxx xxxxxxxxxxx xxxxxxxx xxx](images/ProgressBar.png)
+![Windows app: indeterminate progress bar, progress ring, and determinate progress bar](images/ProgressBar.png)
 
-Xxxxxxx xxx: xxxxxxxxxxxxx xxxxxxxx xxx, xxxxxxxx xxxx, xxx xxxxxxxxxxx xxxxxxxx xxx
+Windows app: indeterminate progress bar, progress ring, and determinate progress bar
 
-![Xxxxxxx Xxxxx xxx: xxxxxx xxx xxxxxxxx xxxxxxxxx xxx xxxxxxxx xxxx](images/wp_progress_bar.png)
+![Windows Phone app: status bar progress indicator and progress bars](images/wp_progress_bar.png)
 
-Xxxxxxx Xxxxx xxx: xxxxxx xxx xxxxxxxx xxxxxxxxx xxx xxxxxxxx xxxx
+Windows Phone app: status bar progress indicator and progress bars
 
-## Xxxxxxxx
+## Examples
 
-Xxxx'x xx xxxxxxx xx x xxxxxxxx xxxx xxxxxxx xx x xxxxxx xxxxxx.
+Here's an example of a progress ring control on a splash screen.
 
-![X xxxxxxxxxx xxxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxx xxxx xxxxxxx](images/ProgressBar_Standard.png)
+![A screenshot that illustrates the standard progress ring control](images/ProgressBar_Standard.png)
 
-X xxxxxxxx xxx xx xxxx x xxxx xxxxxxxxx xx xxxxx xx xxxxxxxx. X xxxxxxxx xxx xxxx xxx x xxxxx xxxxx xxxxxxxxxxx xx xxx xxxxxxxx xx xxx xxxx: xxx xxx’x xxxxx xx xxx xxxx xxxxxxxx; xxx xxxxxx xxxxx xxxxxxxxx xxxx xxxxxxxx xx xxxxxx.
+A progress bar is also a good indicator of state or position. A progress bar used for a music track corresponds to the timeline of the song: the bar’s value is the song position; the paused state indicates that playback is paused.
 
-![Xxxx Xxxxx xxx xxxxxxxx x xxxxxxxx xxx xxxx xxxxxxx x xxxx](images/ProgressBar_MusicTimeline.png)
+![Xbox Music app displays a progress bar when playing a song](images/ProgressBar_MusicTimeline.png)
 
-## Xx xxxx xxx xxxxx xxxxxxx?
+## Is this the right control?
 
-Xx'x xxx xxxxxx xxxxxxxxx xx xxxx x xxxxxxxx xxxxxxx. Xxxxxxxxx x xxxx'x xxxxxxxx xx xxxxxxx xxxxxx xx xxx xxx xx xxx xxxx xxxxxxxxx xx xxxxxxx xxxx xxxxxxx x xxxxxxxx xxxxxxx xxxxx xx xxxxxxxxxxx. Xxxx xxx xxxx xxxxxx xx xxxxxxxx xxxx xxxxxxxxxxx xxxxxxx xxx xxxxxx xxxx x xxxxxxxx xxxxxxx.
+It's not always necessary to show a progress control. Sometimes a task's progress is obvious enough on its own or the task completes so quickly that showing a progress control would be distracting. Here are some points to consider when determining whether you should show a progress control.
 
--   **Xxxx xxx xxxxxxxxx xxxx xxxx xxxx xxx xxxxxxx xx xxxxxxxx?**
+-   **Does the operation take more than two seconds to complete?**
 
-    Xx xx, xxxx x xxxxxxxx xxxxxxx xx xxxx xx xxx xxxxxxxxx xxxxxx. Xx xx xxxxxxxxx xxxxx xxxx xxxx xxx xxxxxxx xx xxxxxxxx xxxx xx xxx xxxx, xxx xxxxxxxxx xxxxxxxxx xx xxxxx xxx xxxxxxx, xxxx YYYxx xxxxxx xxxxxxx xxx xxxxxxx xx xxxxx xxxxxxxxxx.
+    If so, show a progress control as soon as the operation starts. If an operation takes more than two seconds to complete most of the time, but sometimes completes in under two seconds, wait 500ms before showing the control to avoid flickering.
 
--   **Xx xxx xxxxxxxxx xxxxxxx xxx xxx xxxx xx xxxxxxxx x xxxx?**
+-   **Is the operation waiting for the user to complete a task?**
 
-    Xx xx, xxx'x xxx x xxxxxxxx xxx. Xxxxxxxx xxxx xxx xxx xxxxxxxx xxxxxxxx, xxx xxxx xxxxxxxx.
+    If so, don't use a progress bar. Progress bars are for computer progress, not user progress.
 
--   **Xxxx xxx xxxx xxxx xx xxxx xxxx xxxxxxxxx xx xxxxxxxxx?**
+-   **Does the user need to know that something is happening?**
 
-    Xxx xxxxxxx, xx xxx xxx xx xxxxxxxxxxx xxxxxxxxx xx xxx xxxxxxxxxx xxx xxx xxxx xxxx’x xxxxxxxx xxx xxxxxxxx, xxx xxxx xxxxx’x xxxx xx xxxx xxxxx xx.
+    For example, if the app is downloading something in the background and the user didn’t initiate the download, the user doesn’t need to know about it.
 
--   **Xx xxx xxxxxxxxx x xxxxxxxxxx xxxxxxxx xxxx xxxxx'x xxxxx xxxx xxxxxxxx xxx xx xx xxxxxxx (xxx xxxxx xxxx) xxxxxxxx xx xxx xxxx?**
+-   **Is the operation a background activity that doesn't block user activity and is of minimal (but still some) interest to the user?**
 
-    Xxx xxxx xxx xxxxxxxx xxxx xxxx xxx xx xxxxxxxxxx xxxxx xxxx xxx'x xxxx xx xx xxxxxxx xxx xxx xxxx, xxx xxx xxxxx xxxx xx xxxx xxx xxxxxx.
+    Use text and ellipses when your app is performing tasks that don't have to be visible all the time, but you still need to show the status.
 
-    ![Xxxxxxx xx xxxx xx x xxxxxxxx xxxxxxxxx](images/textprogress.png)
+    ![Example of text as a progress indicator](images/textprogress.png)
 
-    Xxx xxx xxxxxxxx xx xxxxxxxx xxxx xxx xxxx xx xxxxxxx. Xx xxxxx xxx xxxxxxxx xxxxx xx xxxxx, xxx xxx xxxxxxxx xxx xxxxxx xx xxxxxxxxx xxxxx. Xxxx xxx xxxxx xxxxxxxx, xxxxxxx xxx xxxxxxxxx.
+    Use the ellipses to indicate that the task is ongoing. If there are multiple tasks or items, you can indicate the number of remaining tasks. When all tasks complete, dismiss the indicator.
 
--   **Xxx xxx xxx xxx xxxxxxx xxxx xxx xxxxxxxxx xx xxxxxxxxx xxxxxxxx?**
+-   **Can you use the content from the operation to visualize progress?**
 
-    Xx xx, xxx'x xxxx x xxxxxxxx xxxxxxx. Xxx xxxxxxx, xxxx xxxxxxxxxx /xxx/xxxxxx xxxxxx xxxx xxx xxxx, /xxx/xxxxxx xxxxxx xx xxx xxxxxx xxx-xx-xxx xx xxxx xxx xxxxxx. Xxxxxxxxxx x xxxxxxxx xxxxxxx xxxxx xxxxxxx xx xxxxxxx; xx xxxxx xxxx xxxxxxx xxx XX.
+    If so, don't show a progress control. For example, when displaying /src/assets loaded from the disk, /src/assets appear on the screen one-by-one as they are loaded. Displaying a progress control would provide no benefit; it would just clutter the UI.
 
--   **Xxx xxx xxxxxxxxx, xxxxxxxxxx, xxx xxxx xx xxx xxxxx xxxx xx xxxxxxxx xxxxx xxx xxxxxxxxx xx xxxxxxxxxxx?**
+-   **Can you determine, relatively, how much of the total work is complete while the operation is progressing?**
 
-    Xx xx, xxx x xxxxxxxxxxx xxxxxxxx xxx, xxxxxxxxxx xxx xxxxxxxxxx xxxx xxxxx xxx xxxx. Xxx xx xxxxxxxxxxxxx xxxxxxxx xxx xx xxxx xxxxxxxxx. Xxxx xx xxx xxx xxxx xxxxx xx xxxx xxxxxxxxx xx xxxxxxxxx, xxxx’x xxxxx xxxxxxx.
+    If so, use a determinate progress bar, especially for operations that block the user. Use an indeterminate progress bar or ring otherwise. Even if all the user knows is that something is happening, that’s still helpful.
 
-## Xxxxxx x xxxxxxxxxxx xxxxxxxx xxxxxxx
+## Create a determinate progress control
 
-X xxxxxxxxxxx xxxxxxxx xxx xxxxx xxx xxxx xxxxxxxx xxx xxx xxx xxxx. Xx xxxx xxxxxxxxxx , xxx xxx xxxxx xx. Xx xxx xxx xxxxxxxx xxxxxxxxx xxxxxx xx xxxx xx xxxx, xxxxx, xxxxx, xx xxxx xxxxx xxxxxxxxxxxx xxxxx xx xxxxxxx, xxx x xxxxxxxxxxx xxxxxxxx xxx.
+A determinate progress bar shows how much progress the app has made. As work progresses , the bar fills up. If you can estimate remaining amount of work in time, bytes, files, or some other quantifiable units of measure, use a determinate progress bar.
 
-Xxx xxxxxxxx xxx xxxxxxxx xxxxxxx xxxxxxxxxx xxx xxxxxxx xxx xxxxxxxxxxx xxxxxxxx:
-- [
-            **XxXxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx): Xxxxxxxxx xxxxxxx xxx xxxxxxxx xxx xx xxxxxxxxxxxxx. Xxx xx **xxxxx** xx xxxxxx x xxxxxxxxxxx xxxxxxxx xxx.
-- [
-            **Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.minimum.aspx): Xxx xxxxx xx xxx xxxxx xxxxx. Xxx xxxxxxx xx Y.Y.
-- [
-            **Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.maximum.aspx): Xxx xxx xx xxx xxxxx xxxxx. Xxx xxxxxxx xx Y.Y. 
-- [
-            **Xxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.value.aspx): X xxxxxx xxxx xxxxxxxxx xxx xxxxxxx xxxxxxxx. Xx xxx'xx xxxxxxx xxx xxxxxxxx xx x xxxx xxxxxxxx, xxxx xxxxx xxxxx xx xxx xxxxxx xx xxxxx xxxxxxxxxx (xxx xxxx xxx xxx Xxxxxxx xx xxx xxxxx xxxxxx xx xxxxx xx xxxxxxxx).
+The progress bar provides several properties for setting and determining progress:
+- [**IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx): Specifies whether the progress bar is indeterminate. Set to **false** to create a determinate progress bar.
+- [**Minimum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.minimum.aspx): The start of the value range. The default is 0.0.
+- [**Maximum**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.maximum.aspx): The end of the vlaue range. The default is 1.0. 
+- [**Value**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.primitives.rangebase.value.aspx): A number that specifies the current progress. If you're showing the progress of a file download, this value might be the number of bytes downloaded (and then you set Maximum to the total number of bytes to download).
  
-Xxx xxxxxxxxx xxxxxxx xxxxx x xxxxx-xxxxx xxxxxxxxxxx xxxxxxxx xxx. 
+The following example shows a value-based determinate progress bar. 
 
 ```xaml
 <ProgressBar IsIndeterminate="False" Maximum="100" Width="200"/>
@@ -98,13 +94,13 @@ progressBar1.Width = 200;
 stackPanel1.Children.Add(progressBar1);
 ```
 
-Xxx xxx'x xxxxxxxxx xxxxxxx xxx xxxxx xx x xxxxxxxx xxx xx xxxxxx. Xxxxxxx, xxx xxx xxxxxxxxxx xxxx xx xxxx xxxxxxx xx xxxxxx xxx xxxxx xx xxx xxxxxxxx xxx xx x xxxxxxxx xx xxxx xxxxxxxxx xx xxxxxxxx. Xxx xxxxxxx, xx xxxx xxxxxxxx xxx xxxxxxxxx xxx xxxx xxxxx xxxx xxxx xxxxxxxxxx, xxx xxxxxx xxx xxxxx xxxx xxxx xxxxxxx xxxx xx xxxxxxxxxx.
+You don't typically specify the value of a progress bar in markup. Instead, you use procedural code or data binding to update the value of the progress bar as a response to some indicator of progress. For example, if your progress bar indicates how many files have been downloaded, you update the value each time another file is downloaded.
 
-## Xxxxxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxxx
+## Create an indeterminate progress control
 
-Xxxx xxx xxx'x xxxxxxxx xxx xxxx xxxx xxxxxxx xx xxxxxx x xxxx xxx xxx xxxx xxxxx'x xxxxx xxxx xxxxxxxxxxx, xxx xx xxxxxxxxxxxxx xxxxxxxx xxx xx xxxxxxxx xxxx. Xxxxxxx xx xxxxxxx x xxx xxxx xxxxx xx xx xxxxxxxx xxxxxxxxx, xx xxxxxxxxxxxxx xxxxxxxx xxx xxxxx xx xxxxxxxxx xx xxxx xxxxxx xxxx xxxx xx xxxxx. Xx xxxxxxxxxxxxx xxxxxxxx xxxx xxxxx xx xxxxxxxx xxxxxxxx xx xxxx xxxxxx xx x xxxxxx. 
+When you can't estimate how much work remains to finish a task and the task doesn't block user interaction, use an indeterminate progress bar or progress ring. Instead of showing a bar that fills up as progress completes, an indeterminate progress bar shows an animation of dots moving from left to right. An indeterminate progress ring shows an animated sequence of dots moving in a circle. 
 
-Xx xxxx x xxxxxxx xxx xxxxxxxxxxxxx, xxx xxx [**XxXxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx) xxxxxxxx xx **xxxx**.
+To make a progess bar indeterminate, set its [**IsIndeterminate**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressbar.isindeterminate.aspx) property to **true**.
 
 ```xaml
 <ProgressBar IsIndeterminate="True" Width="200"/>
@@ -119,7 +115,7 @@ progressBar1.Width = 200;
 stackPanel1.Children.Add(progressBar1);
 ```
 
-Xx xxxx x xxxxxxxx xxxx xx xxxx xxx, xxx xxx [**XxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx) xxxxxxxx xx **xxxx**.
+To show a progress ring in your app, set its [**IsActive**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.ui.xaml.controls.progressring.isactive.aspx) property to **true**.
 
 ```xaml
 <ProgressRing IsActive="True"/>
@@ -133,166 +129,170 @@ progressRing1.IsActive = true;
 stackPanel1.Children.Add(progressRing1);
 ```
 
-## Xxxxxxxxxxxxxxx
+## Recommendations
 
--   Xxx xxx xxxxxxxxxxx xxxxxxxx xxx xxxx x xxxx xx xxxxxxxxxxx, xxxx xx xxxx xx xxx x xxxx-xxxxxxx xxxxxxxx xx x xxxxxxxxxxx xxx. Xxx xxxxxxx, xx xxx xxx xxxxxxxx xxxxxxxxx xxxxxx xx xxxx xx xxxx, xxxxx, xxxxx, xx xxxx xxxxx xxxxxxxxxxxx xxxxx xx xxxxxxx, xxx x xxxxxxxxxxx xxxxxxxx xxx. Xxxx xxx xxxx xxxxxxxx xx xxxxxxxxxxx xxxxx:
+-   Use the determinate progress bar when a task is determinate, that is when it has a well-defined duration or a predictable end. For example, if you can estimate remaining amount of work in time, bytes, files, or some other quantifiable units of measure, use a determinate progress bar. Here are some examples of determinate tasks:
 
-    -   Xxx xxx xx xxxxxxxxxxx x YYYx xxxxx xxx xxx xxxxxxxx YYYx xx xxx.
-    -   Xxx xxx xx xxxxxxxxxx x YY xxxxxx xxxxxxxxxxxxx xxx Y xxxxxxx xxxx xxxxxxx.
+    -   The app is downloading a 500k photo and has received 100k so far.
+    -   The app is displaying a 15 second advertisement and 2 seconds have elapsed.
 
-    ![Xxxxxxx xx x xxxxxxxxxxx xxxxxxxx xxx](images/progress_determinate_bar.png)
+    ![Example of a determinate progress bar](images/progress_determinate_bar.png)
 
--   Xxx xxx xxxxxxxxxxxxx xxxxxxxx xxxx xxx xxxxx xxxx xxx xxx xxxxxxxxxxx xxx xxx xxxxx (xxxxx xxxx xxxxxxxxxxx).
+-   Use the indeterminate progress ring for tasks that are not determinate and are modal (block user interaction).
 
-    ![Xxxxxxx xx x xxxxxxxx xxxx](images/progress_ring.png)
+    ![Example of a progress ring](images/progress_ring.png)
 
--   Xxx xxx xxxxxxxxxxxxx xxxxxxxx xxx xxx xxxxx xxxx xxx xxx xxxxxxxxxxx xxxx xxx xxx-xxxxx (xxx'x xxxxx xxxx xxxxxxxxxxx).
+-   Use the indeterminate progress bar for tasks that are not determinate that are non-modal (don't block user interaction).
 
-    ![Xxxxxxx xx xx xxxxxxxxxxxxx xxxxxxxx xxx](images/progress_indeterminate_bar.png)
+    ![Example of an indeterminate progress bar](images/progress_indeterminate_bar.png)
 
--   Xxxxx xxxxxxxxx xxxxx xxxxx xx xxx-xxxxx xx xxx xxxxx xxxxx xxxxx xxxx xxxx Y xxxxxxx. Xxxx xxxxx xxxxx xxxxxxxxxxx xxxxx xxxx xxxxxxxx xxx xxxx xxxx, xxx xxxx xxx xxxx xxx xxxxx xxxxxxxxxxx xxxx xxx xxx xxxxx. Xxx xxxxxxx, xxxx xxx xxxx xxxxxxxx x xxxxxx xxxxx, xxxxxxxxxxx xx xxxxxxx xxxxx xxx xxxxx xxxxxx xx xxxxxxxxx. Xxxxx xxxxx xxxx xx xxxxx xx xxx-xxxxx xxx xxx xxx xxxxxxxxxxxxx xxxxxxxx xxx xxxxx xx xxxxx xxxxx xxxxx xxxx xxxx Y xxxxxxx. Xx xxxxx xxxxx xxx xxxx xxxx xxxx Y xxxxxxx, xxx xxx xxxxxxxxxxxxx xxxxxxxx xxxx xxx xxx xxxxx xxxxx xx xxx xxxx, xxx xxx xxx xxxxxxxxxxxxx xxxxxxxx xxx xxx xxx xxx-xxxxx xxxxx.
--   Xxxxxxxx xxxxxxxxx x xxx xx xxxxxx xx xxxxx xxx xxxxxxxxx xxxx xx xx xxxxxxxx, xxxxxxxxxxxx xxxx xxx xxxx xx xxxxxxx xxxxxxxx xxx xxxxxxxxxx xx xxx xxxxxxxxx xxx xxx x xxxx xxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx xxx xxxx xx xxx.
--   Xxx'x xxx xxx "xxxx xxxxxx" xx xxxxxxxx xxxxxxxx, xxxxxxx xxxxx xxx xxx xxxxx xx xxxxxxxx xxxx xxx xxxxxx xxx'x xxx xx, xxx xxxxx xxxxx xxx xxx xxxxx xxx'x xxxx xxx xxxx xx xxxxxxxxx xxxxxxxx (xxx xxxxxx xxx xxx xxxxxxxx xxxxxxx).
--   Xxxx x xxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxx xxxxxxx xxxxx. Xx xxxxx xxx xxxxxxxx xxxxxxx xxxxx xx xxx xxxxxx xxxx xxx xxx xxxxxxxxxxxxxx xxxxxxxxxx xxxx xxxx xx xxxxxxxx, xxx'x xxxx xxxxxxxx xxxxxxxx xxxxxxxx. Xxxxxxx, xxxx xxx xxxx xxxx xxxx xxx xxxx xxxx xxxxxxxxx. Xxx xxxxxxx, xx xxx xxx xxxxxxxxx xxxxxxxx xxxxxx, xxxx x xxxxxx xxxxxxxx xxxxxxx, xxxxxxx xx xxxxxxx xxx xxx xxxxx xxxxx.
--   Xxx'x xxxxxx xxx xxxxxxxx xx xxxx xx xxx xxxxxxxx xxxxxxx xxxxx xxx xxxx xx xxxxxxx.
+-   Treat partially modal tasks as non-modal if the modal state lasts less than 2 seconds. Some tasks block interaction until some progress has been made, and then the user can start interacting with the app again. For example, when the user performs a search query, interaction is blocked until the first result is displayed. Treat tasks such as these as non-modal and use the indeterminate progress bar style if modal state lasts less than 2 seconds. If modal state can last more than 2 seconds, use the indeterminate progress ring for the modal phase of the task, and use the indeterminate progress bar for the non-modal phase.
+-   Consider providing a way to cancel or pause the operation that is in progress, particularly when the user is blocked awaiting the completion of the operation and has a good idea of how much longer the operation has left to run.
+-   Don't use the "wait cursor" to indicate activity, because users who use touch to interact with the system won't see it, and those users who use mouse don't need two ways to visualize activity (the cursor and the progress control).
+-   Show a single progress control for multiple active related tasks. If there are multiple related items on the screen that are all simultaneously performing some kind of activity, don't show multiple progress controls. Instead, show one that ends when the last task completes. For example, if the app downloads multiple photos, show a single progress control, instead of showing one for every photo.
+-   Don't change the location or size of the progress control while the task is running.
 
-### Xxxxxxxxxx xxx xxxxxxxxxxx xxxxx
+### Guidelines for determinate tasks
 
--   Xx xxx xxxxxxxxx xx xxxxx (xxxxxx xxxx xxxxxxxxxxx), xxx xxxxx xxxxxx xxxx YY xxxxxxx, xxxxxxx x xxx xx xxxxxx xx. Xxx xxxxxx xx xxxxxx xxxxxx xx xxxxxxxxx xxxx xxx xxxxxxxxx xxxxxx.
--   Xxxxx xxxxxxxx xxxxxxx xxxxxx. Xxxxx xxxxxxxxxx xxxxx xxxxxxxx xxxxxxxxx xx xxxx YY% xxx xxxx xxxxx xxx x xxxx xxxxxx xx xxxx. Xxx xxxx xx xxxxx xx xxxxxxxx xxxxxxx xxx xxx, xxx xxxx xx xxxx. Xxxxx xxxxxxx xxxxx, xxxx xx xxxx Y% xx YY%.
--   Xxxxx xxxxxxx xxxxxxxx xx YYY%, xxxx xxxxx xxx xxxxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxx xxxxxx xxxxxx xx.
--   Xx xxxx xxxx xx xxxxxxx (xx x xxxx xx xx xxxxxxxx xxxxxxxxx), xxx x xxxx xxx xxxxxx xx, xxxxxxxx xxxxxxxx xxxx xxxxxxxx xx xxxxxx. Xx XxxxXxxxxx xxxx, xxx xx xxxx xx xxxxx xxx xxx-xxxxxx XXX xxxxx. Xx X\#/X++/XX xxxx, xxx xx xxxx xx xxxxxxx xxx XxxxXxxxxx xxxxxxxx xx xxxx. Xxxxxxx xxxxxx xxxx xxxxx xxx xxxxxxxx xxx xxxx xxxxx xxx xxxx xxxx'x xxxxx xx.
--   Xx xxx xxxx xx xxxxxxx xxx xxx’x xx xxxxxxx xx xxx xx xx xxxxxxxxx xxxx xxxxxxx, xxxxxxxx xxxxxxxx xxxx xxxxx'x xx xxxxx. Xx XxxxXxxxxx xxxx, xxx xx xxxx xx xxxxx xxx xxx-xxxxx XXX xxxxx. Xx X\#/X++/XX xxxx, xxx xx xxxx xx xxxxxxx xxx XxxxXxxxx xxxxxxxx xx xxxx. Xxxxxxx xxx xxxxxx xxxx (xxxxxxxxxx xxx xxx) xxxx x xxxxxxx xxxx xxxxx xxx xxxx xxxx xxxxxxxx xxx xxx xx xxx xxx xxxxx (xx xxxxxxxx).
--   Xx xxxx xxxx (xx xxxxxx) xx xxxxxx xxxxxx xxx xxx xxxxxxx xxxxxxxxxxx xxxxxxxx, xxx xxx xxxxxxxxxxxxx xxx xxxxx, xxx xxxx xxxxxx xx xxx xxxxxxxxxxx xxx. Xxx xxxxxxx, xx xxx xxxxx xxxx xx x xxxxxxxx xxxx xx xxxxxxxxxx xx x xxxxxx, xxx xxx’x xxxxxxxx xxx xxxx xxxx xxxxx. Xxxxx xxx xxxxxxxxxx xx xxxxxxxxxxx, xxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxx xx xxxx xxx xxxxxxxx xxxxxxxx. Xxxx xxx xxxxxxxx xxx xx xxxxxxx xxx xxxx xxxxx, xxx xx xxx xxxx xxxx xxxxx xxx xxxxxx.
+-   If the operation is modal (blocks user interaction), and takes longer than 10 seconds, provide a way to cancel it. The option to cancel should be available when the operation begins.
+-   Space progress updates evenly. Avoid situations where progress increases to over 80% and then stops for a long period of time. You want to speed up progress towards the end, not slow it down. Avoid drastic jumps, such as from 0% to 90%.
+-   After setting progress to 100%, wait until the determinate progress bar finishes animating before hiding it.
+-   If your task is stopped (by a user or an external condition), but a user can resume it, visually indicate that progress is paused. In JavaScript apps, you do this by using the win-paused CSS style. In C\#/C++/VB apps, you do this by setting the ShowPaused property to true. Provide status text under the progress bar that tells the user what's going on.
+-   If the task is stopped and can’t be resumed or has to be restarted from scratch, visually indicate that there's an error. In JavaScript apps, you do this by using the win-error CSS style. In C\#/C++/VB apps, you do this by setting the ShowError property to true. Replace the status text (underneath the bar) with a message that tells the user what happened and how to fix the issue (if possible).
+-   If some time (or action) is needed before you can provide determinate progress, use the indeterminate bar first, and then switch to the determinate bar. For example, if the first step of a download task is connecting to a server, you can’t estimate how long that takes. After the connection is established, switch to the determinate progress bar to show the download progress. Keep the progress bar in exactly the same place, and of the same size after the switch.
 
-    ![Xxxxxxxx xxxx xx xxxxxxxxxxxxx xx x xxxxxxxxxxx xxxxxxxx xxx](images/progress_changing.png)
+    ![Changing from an indeterminate to a determinate progress bar](images/progress_changing.png)
 
--   Xx xxx xxxx x xxxx xx xxxxx, xxxx xx x xxxx xx xxxxxxxx, xxx xxxxxxx xxxxxxx xxx xxxxxxxx xx xxxxxxxxx xx xxxxx xx xxxx xxxx (xxxx xx xxxxxxxxxx x xxxxxx xxx xxx xx xxx xxxxxxxx), xxxx x xxxxxxxxxxx xxxxxxxx xxx xxxx xx xxx xxxx.
+-   If you have a list of items, such as a list of printers, and certain actions can initiate an operation on items in that list (such as installing a driver for one of the printers), show a determinate progress bar next to the item.
 
-    Xxxx xxx xxxxxxx (xxxxx) xx xxx xxxx xxxxx xxx xxxxxxxx xxx xxx xxxxxx xxxxxxxxxx. Xxx’x xxxxxxx xxxxxx xxxx xx xxxx'x xxxxxxxxx xx xxxxxxx. Xxxxx xxx xxxx xxxxxxxxx, xxxx xxx xxxxxxxx xxx. Xxx xxx xxxxxx xxxx xx xxxxxxxxxxx xxx xxx xxxxx xx xx xxxx.
+    Show the subject (label) of the task above the progress bar and status underneath. Don’t provide status text if what's happening is obvious. After the task completes, hide the progress bar. Use the status text to communicate the new state of an item.
 
-    ![Xxxxxxx xxxxxx xxxxxxxx xxxx xxxxxx](images/progress_multiplebars.png)
+    ![Showing inline progress with status](images/progress_multiplebars.png)
 
--   Xx xxxx x xxxx xx xxxxx, xxxxx xxx xxxxxxx xx x xxxx xx xxxxx xxx xxx xxx xxxxxx xx x xxxxxx. Xxxx xxxxxxxx xxxx xxx xxx xxxxx, xxxx xxxxx xxxx xxx xxxxxxx.
+-   To show a list of tasks, align the content in a grid so users can see the status at a glance. Show progress bars for all items, even those that are pending.
 
-    Xxxxxxx xxx xxxxxxx xx xxxx xxxx xx xx xxxx xxxxxxx xxxxxxxxxx, xxxxxx xxxxxxxxxx xxxx xxx xxxx xxxx xxxx xxxxxxxx.
+    Because the purpose of this list is to show ongoing operations, remove operations from the list when they complete.
 
-    ![Xxxxxxxxxx xxxxxxxx xxxxxxxx xxxx](images/progress_bar_multiple.png)
+    ![Displaying multiple progress bars](images/progress_bar_multiple.png)
 
--   Xx x xxxx xxxxxxxxx x xxxx xxxx xxx xxx xxx xxx xx xxxxxx xxxx xxxxxxxxxxx, xxxx xxx xxxxxxxx xxxxxxx xx xxx xxx xxx.
+-   If a user initiated a task from the app bar and it blocks user interaction, show the progress control in the app bar.
 
-    Xx xx'x xxxxx xxxx xxx xxxxxxxx xxx xx xxxxxxx xxxxxxxx xxx, xxx xxx xxxxx xxxxxxxx xxx xx xxx xxx xx xxx xxx xxx xxx xxxx xxx xxxxx xxx xxxxxx; xxxxxxxxx, xxxxxxx x xxxxx xxx xxxxxx xxxx.
+    If it's clear what the progress bar is showing progress for, you can align progress bar to the top of the app bar and omit the label and status; otherwise, provide a label and status text.
 
-    Xxxxxxx xxxxxxxxxxx xxxxxx xxx xxxx xx xxxxxxxxx xxxxxxxx xx xxx xxx xxx xxx xxxxxxxx xxxxx xx xxx xxxxxxx xxxx.
+    Disable interaction during the task by disabling controls in the app bar and ignoring input in the content area.
 
--   Xxx’x xxxxxxxxx xxxxxxxx. Xxxxxx xxxxxxxxx xxx xxxxxxxx xxxxx. Xx xxx xxxx xx xxxxxxx xx xxxxxx, xxxx xxx xxxxxxxx xx xxxxxxxx xx xxx xxxxx xxxx xxxxxxxx xx xxx xxxxx xxxxxx.
--   Xxx’x xxxxxxx xxxxxxxx (xxxx YYY% xx Y%), xxxxxx xx’x xxxxxxx xx xxx xxxx xxxx x xxxxxxx xxxx xx xxxx xx xxx xxx xxxx xxx. Xxx xxxxxxx, xxxxxxx x xxxx xxx xxx xxxxx: xxxxxxxxxxx xxxx xxxx, xxx xxxx xxxxxxxxxx xxx xxxxxxxxxx xxx xxxx. Xxxxx xxx xxxxxxxx xx xxxxxxxx, xxxxx xxx xxxxxxxx xxx xx Y% xxx xxxxx xxxxxxx xxx xxxx xxxxxxxxxx xxxxxxxx. Xx xx’x xxxxxxx xx xxxxx xxxx xxxxx xxx xxxxxxxx xxxxx xx x xxxx, xxxxxxxx xxx xxxxx xxxx x xxxxxx Y-YYY% xxxxx xxx xxxxxx xxxxxx xxxx xx xxx xxxx xxxx xxx xxxx xx xxx xxxx.
+-   Don’t decrement progress. Always increment the progress value. If you need to reverse an action, show the progress of reversal as you would show progress of any other action.
+-   Don’t restart progress (from 100% to 0%), unless it’s obvious to the user that a current step or task is not the last one. For example, suppose a task has two parts: downloading some data, and then processing and displaying the data. After the download is complete, reset the progress bar to 0% and begin showing the data processing progress. If it’s unclear to users that there are multiple steps in a task, collapse the tasks into a single 0-100% scale and update status text as you move from one task to the next.
 
-### Xxxxxxxxxx xxx xxxxx, xxxxxxxxxxxxx xxxxx xxxx xxx xxx xxxxxxxx xxxx
+### Guidelines for modal, indeterminate tasks that use the progress ring
 
--   Xxxxxxx xxx xxxxxxxx xxxx xx xxx xxxxxxx xx xxx xxxxxx: xxxx xx xxxx xxx xxxxxxxx xxxxx xxx xxxx xxxxxxxxx xxx xxxxxx xx xxxxx xxx xxxxxxxxx xxxx xxxx xxxxxxx.
--   Xxxxxxx xxxxxx xxxx xx xxx xxxxx xx xxx xxxxxxxx xxxx.
--   Xxxx xxx xxxxxxxx xxxx xxx xxxx xxxxx xx xxx xxxxxx xxxx.
--   Xxxxxxx xxxxxxxx xxxx xxxx xxxxxxx’x xxxxxxxx xxxx xxxxx xxx xxxx xx xxxxxxx.
--   Xx xxx xxxx xxxxxxx xx xx xxxxx, xxxx xxx xxxxxxxx xxxxxxxxx xxx xxxxxx xxxx xxx xxxxxxx xx xxxxx xxxxxxx xx xxxxx xxxxx.
--   Xx x xxxxxx, xx xx xxxxxxxxx xxxx xxxxxxxx xxxxxx xxx xxxx xx xxx xxxx xxxxxx, xxxxx xxx xxxxxxxx xxxx xxxx xxxxx xxx xxxxxx xxxx, xxxx-xxxxxxx xxxx xxx xxxxxxx xx xxx xxxxxx.
+-   Display the progress ring in the context of the action: show it near the location where the user initiated the action or where the resulting data will display.
+-   Provide status text to the right of the progress ring.
+-   Make the progress ring the same color as its status text.
+-   Disable controls that user shouldn’t interact with while the task is running.
+-   If the task results in an error, hide the progress indicator and status text and display an error message in their place.
+-   In a dialog, if an operation must complete before you move to the next screen, place the progress ring just above the button area, left-aligned with the content of the dialog.
 
-    ![Xxxxxxxx xx x xxxxxx](images/prog_ring_dialog.png)
+    ![Progress in a dialog](images/prog_ring_dialog.png)
 
--   Xx xx xxx xxxxxx xxxx xxxxx-xxxxxxx xxxxxxxx, xxxxx xxx xxxxxxxx xxxx xx xxx xxxx xx xxxx xxxxx xxx xxxxxxx xxxx xxxxxx xxx xxxxxx. Xxxx-xxxxx xxx xxxxxxxx xxxx xxxx xxxxxxx xxxxxxx.
+-   In an app window with right-aligned controls, place the progress ring to the left or just above the control that caused the action. Left-align the progress ring with related content.
 
-    ![Xxxxxxx xxxxxxxx xx xx xxx xxxxxx xxxx xxxxx-xxxxxxx xxxxxxxx](images/prog_right_aligned_controls.png)
+    ![Showing progress in an app window with right-aligned controls](images/prog_right_aligned_controls.png)
 
--   Xx xx xxx xxxxxx xxxx xxxx-xxxxxxx xxxxxxxx, xxxxx xxx xxxxxxxx xxxx xx xxx xxxxx xx xxxx xxxxx xxx xxxxxxx xxxx xxxxxx xxx xxxxxx.
+-   In an app window with left-aligned controls, place the progress ring to the right or just under the control that caused the action.
 
-    ![X xxxxxxxx xxxx xxxx xxxx-xxxxxxx xxxxxxxx](images/prog_left_aligned_1.png)
+    ![A progress ring with left-aligned controls](images/prog_left_aligned_1.png)
 
-    ![X xxxxxxxx xxxx xxxxx xxxx-xxxxxxx xxxxxxxx](images/prog_left_aligned_2.png)
+    ![A progress ring below left-aligned controls](images/prog_left_aligned_2.png)
 
--   Xx xxx xxx xxxxxxx xxxxxxxx xxxxx, xxxxx xxx xxxxxxxx xxxx xxx xxxxxx xxxx xxxxxxxxxx xxx xxxxx xx xxx xxxx. Xx xx xxxxx xxxxxx, xxxxxxx xxx xxxxxxxx xxxx xxx xxxxxx xxxx xxxxx xxxx.
+-   If you are showing multiple items, place the progress ring and status text underneath the title of the item. If an error occurs, replace the progress ring and status with error text.
 
-    ![X xxxxxxxx xxxx xx x xxxx xx xxxxxxxx xxxxx](images/prog_ring_multiple.png)
+    ![A progress ring in a list of multiple items](images/prog_ring_multiple.png)
 
-### Xxxxxxxxxx xxx xxx-xxxxx, xxxxxxxxxxxxx xxxxx xxxx xxx xxx xxxxxxxx xxx
+### Guidelines for non-modal, indeterminate tasks that use the progress bar
 
--   Xx xxx xxxx xxxxxxxx xx x xxxxxx, xxxxx xxx xxxxxxxxxxxxx xxxxxxxx xxx xx xxx xxx xx xxx xxxxxx xxx xxx xxx xxxxx xx xxxx xx xxxxx xxx xxxxxx xxxxxx. Xxxx xxxxxxxxx xxxxxxxxx xxxxxxxxxxx xxx xxxxx xxxxxxxxxxxx xxxxxxx xxxxxxxx. Xxx'x xxxx xxx xxxxxx x xxxxx, xxxxxxx x xxxxx xxxxxxxx xxx xxxx xxxxxxx xxx xxxxxxxx xxx xx xxx xxx xx xxx xxxxxx.
+-   If you show progress in a flyout, place the indeterminate progress bar at the top of the flyout and set its width so that it spans the entire flyout. This placement minimizes distraction but still communicates ongoing activity. Don't give the flyout a title, because a title prevents you from placing the progress bar at the top of the flyout.
 
-    ![Xx xxxxxxxxxxxxx xxxxxxxx xxx xx x xxxxxx](images/prog_flyout_indeterminate_bar.png)
+    ![An indeterminate progress bar in a flyout](images/prog_flyout_indeterminate_bar.png)
 
--   Xx xxx xxxx xxxxxxxx xx xx xxx xxxxxx, xxxxx xxx xxxxxxxxxxxxx xxxxxxxx xxx xx xxx xxx xx xxx xxx xxxxxx, xxxxxxxx xxx xxxxxx xxxxxx.
+-   If you show progress in an app window, place the indeterminate progress bar at the top of the app window, spanning the entire window.
 
-    ![X xxxxxxxx xxx xx xxx xxx xx xx xxx xxxxxx](images/prog_indeterminate_bar_app_window.png)
+    ![A progress bar at the top of an app window](images/prog_indeterminate_bar_app_window.png)
 
-### Xxxxxxxxxx xxx xxxxxx xxxx
+### Guidelines for status text
 
--   Xxxx xxx xxx xxx xxxxxxxxxxx xxxxxxxx xxx, xxx’x xxxx xxx xxxxxxxx xxxxxxxxxx xx xxx xxxxxx xxxx. Xxx xxxxxxx xxxxxxx xxxxxxxx xxxx xxxx.
--   Xx xxx xxx xxxx xx xxxxxxxx xxxxxxxx xxxxxxx x xxxxxxxx xxxxxxx, xxx xxxxxxxx xx xxxxxx xxxx xxx xxxxxxxx xx xxxxxxx.
--   Xx xxx xxx x xxxxxxxx xxxxxxx, xxx'x xxx xxxxxxxx xx xxxx xxxxxx xxxx, xxxxxxx xxx xxxxxxxx xxxxxxx xxxxxxx xxxxxxxxx xxxx xxx xxxxxxxxx xx xxxxxxx.
+-   When you use the determinate progress bar, don’t show the progress percentage in the status text. The control already provides that info.
+-   If you use text to indicate activity without a progress control, use ellipsis to convey that the activity is ongoing.
+-   If you use a progress control, don't use ellipsis in your status text, because the progress control already indicates that the operation is ongoing.
 
-### Xxxxxxxxxx xxx xxxxxxxxxx xxx xxxxxx
+### Guidelines for appearance and layout
 
--   X xxxxxxxxxxx xxxxxxxx xxx xxxxxxx xx x xxxxxxx xxx xxxx xxxxx xx xxxx x xxxx xxxxxxxxxx xxx. Xxx xxxxxxxxxx xx xxx xxxxx xxxxxx xxxx xx xxxxxxx xxxxxxxxx, xxxxxxxxxx, xxx xxxx xx xxx xxxxxxxxx xx xxxxxxxx.
--   Xx xxxxxxxxxxxxx xxxxxxxx xxx xx xxxx xx xxxx xx xxxxxxxxxxx xxxxxx xxxxxxx xxxx.
--   Xxxxxx xxx xxxxxxxx xxxxxxx'x xxxxxxxx xxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxx.
+-   A determinate progress bar appears as a colored bar that grows to fill a gray background bar. The proportion of the total length that is colored indicates, relatively, how much of the operation is complete.
+-   An indeterminate progress bar or ring is made of continually moving colored dots.
+-   Choose the progress control's location and prominence based on its importance.
 
-    Xxxxxxxxx xxxxxxxx xxxxxxxx xxx xxxxx xx x xxxx-xx-xxxxxx, xxxxxxx xxx xxxx xx xxxxxx x xxxxxxx xxxxxxxxx xxxxx xxx xxxxxx xxx xxxx xxx xxxx. Xxxx xxxxx-xx Xxxxxxx Xxxxx xxxx xxx x xxxxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxx xx xxx xxxxxx xxx xxxxxxxxx xxxxx. Xxx xxx xx xxxx, xxx, xxx xxxxxxxxx xx xx xx xxxxxxxxxxx xx xxxxxxxxxxxxx.
+    Important progress controls can serve as a call-to-action, telling the user to resume a certain operation after the system has done its work. Some built-in Windows Phone apps use a status bar progress indicator at the top of the screen for important cases. You can do this, too, and configure it to be determinate or indeterminate.
 
-    Xxxxx xxxx xxx xxxx xxxxxxxx, xxxx xx xxxxxx xxxxxxxxxxx, xxxxxx xxxxxxx xxx xxx xxxxxxxxxx xx xxx xxxx.
+    Cases that are less critical, such as during downloading, appear smaller and are restricted to one view.
 
--   Xxx x xxxxx xx xxxx xxx xxxxxxxx xxxxx, xx xx xxxxxxxx xxx xxxxxxx xxxxxx xxxxx, xx xx xxxxxxxx xxxx xxx xxxxxxxxx xxx xxxx xxxxxxxxxxx. X xxxxx xx xxxxxxxx, xxx xx xxxxxx xxxxxxxxx xx.
+-   Use a label to show the progress value, or to describe the process taking place, or to indicate that the operation has been interrupted. A label is optional, but we highly recommend it.
 
-    Xx xxxxxxxx xxx xxxxxxx xxxxxx xxxxx, xxx x xxxxxx (xx –xxx xxxx), x.x. ‘xxxxxxxxxx’, ‘xxxxxxxxxxx’, xx ‘xxxxxxx’.
+    To describe the process taking place, use a gerund (an –ing verb), e.g. ‘connecting’, ‘downloading’, or ‘sending’.
 
-    Xx xxxxxxxx xxxx xxxxxxxx xx xxxxxx xx xxx xxxxxxxxxxx xx xxxxxxxxx, xxx xxxx xxxxxxxxxxx, x.x. ‘xxxxxx’, ‘xxxxxxxx xxxxxx’, xx ‘xxxxxxxx’.
+    To indicate that progress is paused or has encountered an exception, use past participles, e.g. ‘paused’, ‘download failed’, or ‘canceled’.
 
--   Xxxxxxxxxxx xxxxxxxx xxx xxxx xxxxx xxx xxxxxx
+-   Determinate progress bar with label and status
 
-    ![X xxxxxxxxxxx xxxxxxxx xxx xxxx x xxxxx xxx xxxxxx xxxxxxxxxxx](images/progress_bar_determinate_redline.png)
+    ![A determinate progress bar with a lable and status information](images/progress_bar_determinate_redline.png)
 
--   Xxxxxxxx xxxxxxxx xxxx
+-   Multiple progress bars
 
-    ![Xxxxxxxxxxx xxxxxx xxx xxxxxxxx xxxxxxxx xxxx](images/progress_bar_multi_redline.png)
+    ![Recommended layout for multiple progress bars](images/progress_bar_multi_redline.png)
 
--   Xxxxxxxxxxxxx xxxxxxxx xxxx xxxx xxxxxx xxxx
+-   Indeterminate progress ring with status text
 
-    ![Xxxxxx xxx xxxxxxxxxxxxx xxxxxxxx xxxx xxxx xxxxxx xxxx](images/progress_ring_status_text.png)
+    ![Layout for indeterminate progress ring with status text](images/progress_ring_status_text.png)
 
--   Xxxxxxxxxxxxx xxxxxxxx xxx
+-   Indeterminate progress bar
 
-    ![Xxxxxx xxx xxxxxxxxxxxxx xxxxxxxx xxx](images/progress_indeterminate_bar_redline.png)
+    ![Layout for indeterminate progress bar](images/progress_indeterminate_bar_redline.png)
 
-## Xxxxxxxxxx xxxxx xxxxxxxx
+## Additional usage guidance
 
-### Xxxxxxxx xxxx xxx xxxxxxxx x xxxxxxxx xxxxx
+### Decision tree for choosing a progress style
 
--   **Xxxx xxx xxxx xxxx xx xxxx xxxx xxxxxxxxx xx xxxxxxxxx?**
+-   **Does the user need to know that something is happening?**
 
-    Xx xxx xxxxxx xx xx, xxx'x xxxx x xxxxxxxx xxxxxxx.
+    If the answer is no, don't show a progress control.
 
--   **Xx xxxx xxxxx xxx xxxx xxxx xx xxxx xxxx xx xxxxxxxx xxx xxxx xxxxxxxxx?**
-    -   **Xxx:****Xxxx xxx xxxx xxxx xxxx xxxx xxx xxxxxxx xx xxxxxxxx?**
-        -   **Xxx:** Xxx x xxxxxxxxxxx xxxxxxxx xxx. Xxx xxxxx xxxx xxxx xxxxxx xxxx YY xxxxxxx, xxxxxxx x xxx xx xxxxxx xxx xxxx.
-        -   **Xx:** Xxx'x xxxx x xxxxxxxx xxxxxxx.
+-   **Is info about how much time it will take to complete the task available?**
+    -   **Yes:** **Does the task take more than two seconds to complete?**
+        -   **Yes:** Use a determinate progress bar. For tasks that take longer than 10 seconds, provide a way to cancel the task.
+        -   **No:** Don't show a progress control.
 
-    -   **Xx:****Xxx xxxxx xxxxxxx xxxx xxxxxxxxxxx xxxx xxx XX xxxxx xxx xxxx xx xxxxxxxx?**
-        -   **Xxx:****Xx xxxx xxxx xxxx xx x xxxxx-xxxx xxxxxxx xxxxx xxx xxxx xxxxx xx xxxx xxxxxxxx xxxxxxx xx xxx xxxxxxxxx?**
-            -   **Xxx:** Xxx xx xxxxxxxxxxxxx xxxxxxxx xxxx xxxx xxxxxx xxxx xxxxxxxxxxxx xxxxxxxx xx xxx xxxxxx.
-            -   **Xx:** Xxx xx xxxxxxxxxxxxx xxxxxxxx xxxx xxxxxxx xxxx xx xxx xxxxxx xx xxx xxxxxx.
-        -   **Xx:****Xx xxxx x xxxxxxx xxxxxxxx?**
-            -   **Xxx:****Xx xxxxxxxx xxxxxxx xx x xxxxxx, xxxxxxxx xxxxxxx xx xxx XX?**
-                -   **Xxx:** Xxx xx xxxxxx xxxxxxxxxxxxx xxxxxxxx xxxx xxxx xxxxxx xxxx xxxx xx xxx xxxxxxx XX xxxxxxx.
-                -   **Xx:****Xx x xxxxx xxxxxx xx xxxx xxxxx xxxxxx xxxx x xxxx?**
-                    -   **Xxx:** Xxx xxx xxxxxxxxxxxxx xxxxxxxx xxx xx xxx xxx xxxx xxxxxxxxxxxx xx xxxxxxxxx xxxxxxxx xxxxxxx.
-                    -   **Xx:** Xxx xxx xxxxxxxxxxxxx xxxxxxxx xxx xx xxx xxx xx xxx xxxxxx xx xxxxxxx.
-            -   **Xx:** Xxx xxxxxx xxxx xx xx xxxxx xxxxxx xx xxx xxxxxx.
+    -   **No:** **Are users blocked from interacting with the UI until the task is complete?**
+        -   **Yes:** **Is this task part of a multi-step process where the user needs to know specific details of the operation?**
+            -   **Yes:** Use an indeterminate progress ring with status text horizontally centered in the screen.
+            -   **No:** Use an indeterminate progress ring without text in the center of the screen.
+        -   **No:** **Is this a primary activity?**
+            -   **Yes:** **Is progress related to a single, specific element in the UI?**
+                -   **Yes:** Use an inline indeterminate progress ring with status text next to its related UI element.
+                -   **No:** **Is a large amount of data being loaded into a list?**
+                    -   **Yes:** Use the indeterminate progress bar at the top with placeholders to represent incoming content.
+                    -   **No:** Use the indeterminate progress bar at the top of the screen or surface.
+            -   **No:** Use status text in an upper corner of the screen.
 
-## Xxxxxxx xxxxxxxx
+## Related articles
 
 
-- [**XxxxxxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227529)
-- [**XxxxxxxxXxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227538)
+- [**ProgressBar class**](https://msdn.microsoft.com/library/windows/apps/br227529)
+- [**ProgressRing class**](https://msdn.microsoft.com/library/windows/apps/br227538)
 
-**Xxx xxxxxxxxxx (XXXX)**
-- [Xxxxxx xxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
-- [Xxx xx xxxxxx x xxxxxx xxxxxxxxxxxxx xxxxxxxx xxx xxx Xxxxxxx Xxxxx](http://go.microsoft.com/fwlink/p/?LinkID=392426)
+**For developers (XAML)**
+- [Adding progress controls](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)
+- [How to create a custom indeterminate progress bar for Windows Phone](http://go.microsoft.com/fwlink/p/?LinkID=392426)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,108 +1,108 @@
 ---
-xxxxx: Xxxxxx Xxxx xxxxxxxxxxx xxxxxxxxx
-xxxxxxxxxxx: Xxx xxxxxxxxx xx x XxxxxxX Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxxx xxxx xxxx xx x xxxxxxxxxxx xxxxxxx xxxxxxxxxxx.
-xx.xxxxxxx: YYYYxYxY-YYYx-Yxxx-xYYY-YYxxYxYYYYYY
+title: Marble Maze のアプリケーション構造
+description: DirectX ユニバーサル Windows プラットフォーム (UWP) アプリの構造は、従来のデスクトップ アプリケーションとは異なります。
+ms.assetid: 6080f0d3-478a-8bbe-d064-73fd3d432074
 ---
 
-# Xxxxxx Xxxx xxxxxxxxxxx xxxxxxxxx
+# Marble Maze のアプリケーション構造
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xxx xxxxxxxxx xx x XxxxxxX Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxxx xxxx xxxx xx x xxxxxxxxxxx xxxxxxx xxxxxxxxxxx. Xxxxxxx xx xxxxxxx xxxx xxxxxx xxxxx xxxx xx **XXXX** xxx xxxxxxxxx xxxx xx **XxxxxxXxxxxx**, xxx Xxxxxxx Xxxxxxx xxxxxxxx xxxxxxxxxx xxxx xx [**Xxxxxxx::XX::Xxxx::XXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208296) xx xxxx xxx xxx xxxxxxx XXX xxxx xx x xxxx xxxxxx, xxxxxx-xxxxxxxx xxxxxx. Xxxx xxxxxxx xx xxx xxxxxxxxxxxxx xxxxx xxx xxx Xxxxxx Xxxx xxxxxxxxxxx xxxx xx xxxxxxxxxx.
+DirectX ユニバーサル Windows プラットフォーム (UWP) アプリの構造は、従来のデスクトップ アプリケーションとは異なります。 **HWND** などのハンドル型や **CreateWindow** などの関数は使いません。それよりも新しい、オブジェクト指向に沿った方法で UWP アプリを開発できるように、[**Windows::UI::Core::ICoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208296) をはじめとするインターフェイスが Windows ランタイムには用意されています。 ドキュメントのこのセクションでは、Marble Maze アプリケーションのコードがどのように構成されているかを示します。
 
-> **Xxxx**   Xxx xxxxxx xxxx xxxx xxxxxxxxxxx xx xxxx xxxxxxxx xx xxxxx xx xxx [XxxxxxX Xxxxxx Xxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/?LinkId=624011).
+> **注**   このドキュメントに対応するサンプル コードは、[DirectX Marble Maze ゲームのサンプルに関するページ](http://go.microsoft.com/fwlink/?LinkId=624011)にあります。
 
  
 ## 
-Xxxx xxx xxxx xx xxx xxx xxxxxx xxxx xxxx xxxxxxxx xxxxxxxxx xxx xxxx xxx xxxxxxxxx xxxx xxxx xxxx:
+このドキュメントでは、ゲーム コードを構成する際に重要となるいくつかの事柄について説明します。取り上げる内容は次のとおりです。
 
--   Xx xxx xxxxxxxxxxxxxx xxxxx, xxx xx xxxxxxx xxx xxxxxxx xxxxxxxxxx xxxx xxxx xxxx xxxx. Xxxx xxxx xxxx-xxxxxxxx xxxxxxxxx.
--   XXX xxxx xxxx xxxxx xxxxxxxxxx xxxxxx xxxxxx Y xxxxxxx xx xxxxxx. Xxxxxxxxx, xxxx xxxx xxxxxxxxx xxxxxxxxx xxxx xxx xxxx xxxx xxx. Xxxxx xxxxxx xxxx xxxxx xxxxxxxxx xx xxx xxxxxxxxxx xxx xxxxxxx x xxxxxxxx xxxxxx.
--   Xx xxx xxxx xxxx, xxxxxxx xx Xxxxxxx xxxxxx, xxxx xxxx xxxxx, xxxxxx xxxxx xxxxxxx, xxx xxxxxx xxx xxxxx.
--   Xxx xxxxx xxxxxxxx xx xxxxxxx xx xxxxxx xxxxxx. (Xxxxx xxxxxxx xxx xxxxxx xxxxxxxx xxxx xxxxxxx Xxxxxxx xxxxxxxxxxxx.)
--   Xxx x xxxxx xxxxxxx xx xxxxxxx xxx xxxx xxx xxxxx xx xxx xxxx xxxxx.
+-   初期化フェーズでは、ゲームで使うランタイムとライブラリ コンポーネントをセットアップします。 また、ゲーム固有のリソースを読み込みます。
+-   UWP アプリは、起動から 5 秒以内にイベントの処理を開始する必要があります。 そのため、アプリを読み込むときは、主要なリソースだけを読み込みます。 大きなリソースはバックグラウンドで読み込んで、進行状況画面を表示する必要があります。
+-   ゲーム ループでは、Windows イベントへの応答、ユーザー入力の読み取り、シーン オブジェクトの更新、シーンの表示を行います。
+-   イベント ハンドラーを使って、ウィンドウのイベントに応答します。 これは、デスクトップ Windows アプリケーションからのウィンドウ メッセージに代わるものです。
+-   ステート マシンを使って、ゲーム ロジックのフローと順序を制御します。
 
-##  Xxxx xxxxxxxxxxxx
+##  ファイルの構成
 
 
-Xxxx xx xxx xxxxxxxxxx xx Xxxxxx Xxxx xxx xx xxxxxx xxxx xxx xxxx xxxx xxxxxx xx xx xxxxxxxxxxxx. Xxx xxxx xxx xxxx, xxx xxx xxxxx xxx xxxxxxxxxxxx xxx xxxxx xxxx xxxxx xxxxx xxxxxxx. Xxx xxxxxxxxx xxxxx xxxxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxx xxxx xxxxx.
+Marble Maze の一部のコンポーネントは、変更なしで、またはわずかな変更だけで、任意のゲームに再利用できます。 独自のゲームを開発する際には、これらのファイルから得られたアイデアや構造を応用できます。 次の表は、重要なソース コード ファイルについて簡単に説明しています。
 
-| Xxxxx                                      | Xxxxxxxxxxx                                                                                                                                                                          |
+| ファイル                                      | 説明                                                                                                                                                                          |
 |--------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxx.x, Xxxxx.xxx                         | Xxxxxxx xxx **Xxxxx** xxxxx, xxxxx xxxxxxx xxxxx xxxxxxxxx.                                                                                                                          |
-| XxxxxXxxxxx.x, XxxxxXxxxxx.xxx             | Xxxxxxx xxx **XxxxxXxxxxx** xxxxx, xxxxx xxxxxxxx xxxxxxx xxxxxxx xxxx xxxx xxx xxxx xxxxxxxx, xxxxxx, xxx xxxxxxx.                                                                  |
-| XxxxxXxxx.x                                | Xxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxx xxxx xxx xxxx xxxx xxxxxx xxx xxxxxx xxxx xxx xxxxxxxxxxxx. Xxxx xx xxxxx xxxxxxxxx xxx xxxxxxxxxx xxxx XXXX xxxxxx xxxxx.                     |
-| XxxxxXxxxxxXxxxxx.x, XxxxxXxxxxxXxxxxx.xxx | Xxxxxxx xxx **XxxxxXxxxxxXxxxxx** xxxxx, xxxxx xxxx xxx Xxxxxxx Xxxxxxx xx xxxx xxx xxxxx xxxx xxxx xx x XXX xxx.                                                                    |
-| XxxxxXxxxxx.x, XxxxxXxxxxx.xxx             | Xxxxxxx xxx **XxxxxXxxxxx** xxxxx, xxxxx xxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxxx xxxxx xxxxxx xxxx xx xxxxx xxx xxxxxxx. (Xxxxx xxxxx xxx xxx xxxx xx xxx Xxxxxx Xxxx xxxxxxxxxxxxxx). |
-| XxxxxXxxxx.x, XxxxxXxxxx.xxx               | Xxxxxxx xxx **XxxxxXxxxx** xxxxx, xxxxx xxxxxxxx xx xxxx xxx xx xxx xxxxx xxx xxxxxxx xxxxx.                                                                                         |
-| Xxxxxx.x, Xxxxxx.xxx                       | Xxxxxxx xxx **Xxxxxx** xxxxx, xxxxx xxxxxxxx xxx xxxxxxxx xxx xxxxxxxxxxx xx x xxxxxx.                                                                                               |
-| Xxxxxxxxx.x, Xxxxxxxxx.xxx                 | Xxxxxxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxx xxx xxxxx xxxxxxx, xxxx xx xxx xxxx.                                                                                                       |
-| XXXXxxxxxxXxxxxx.x, XXXXxxxxxxXxxxxx.xxx   | Xxxxxxx xxx **XxxxxxXXXXxxxxxxXxxxXxxxxx** xxxxxxxx, xxxxx xxxxx xxxxxxxx xxxx xxx xx .xxx xxxxxx xxxx x xxxxxx xxxxxx.                                                              |
-| XxxxxxXXxx.x, XxxxxxXXxx.xxx               | Xxxxxxx xxx **XxxxxxXXxx** xxx **XxxxxxXXxxXxxxxx** xxxxxxx, xxxxx xxxxxxxxxxx xxx xxxx (xxxxxx, xxxxxx, xxx xxxxxx) xx xxx xxx.                                                     |
-| XxxxxxXXxxx.x, XxxxxxXXxxx.xxx             | Xxxxxxx xxx **XxxxxxXXxxx** xxxxx, xxxxx xxxxxxxx xxxxxxxxxxxxxx xxxx xx xxxxxx xx xxxx XxxxxxX XXX xxxx.                                                                            |
-| XxxxxxXXxxxxx.x                            | Xxxxxxx xxxxxxx xxxxxxxxx xxxx xxx xx xxxx xx XxxxxxX XXX xxxx.                                                                                                                      |
-| XxxxXxxxxx.x, XxxxXxxxxx.xxx               | Xxxxxxx xxx **XxxxXxxxxx** xxxxx, xxxxx xxxxxxxx x xxxxxxx xxxxxx xxxxxx xxx xxxxxxxxxxxxxx.                                                                                         |
-| XxxxxxXxxx.x, XxxxxxXxxx.xxx               | Xxxxxxx xxx **XxxxxxXxxx** xxxxx, xxxxx xxxxxxx xxxx-xxxxxxxx xxxxxxxxx xxx xxxxxxx xxxx xx xxx xxxx xxxxx.                                                                          |
-| XxxxxXxxxxxxx.x, XxxxxXxxxxxxx.xxx         | Xxxxxxx xxx **XxxxxXxxxxxxx** xxxxx, xxxxx xxxx Xxxxx Xxxxxxxxxx xx xxxx xxx xxxx xxxxxx xxxxx xxxxxxxxx.                                                                            |
-| XxxxxxxxxxXxxxx.x, XxxxxxxxxxXxxxx.xxx     | Xxxxxxx xxx **XxxxxxxxxxXxxxx** xxxxx, xxxxx xxxxx xxx xxxxxx xxxxxxxxx xxxx xxxxx xxxx xxx xx x xxxxxxx xxxxx.                                                                      |
-| Xxxxxxx.x, Xxxxxxx.xxx                     | Xxxxxxx xxx **Xxxxxxx** xxxxx, xxxxx xxxxxxxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxx xxx xxxxxx xxx xxx xxxx.                                                                              |
-| Xxxxxxxxxx.x                               | Xxxxxxx xxxxxxxxx xxxxx xxxx xxx xxxx xx xxx xxxx.                                                                                                                                   |
-| XxxxxxXxxxxxx.x, XxxxxxXxxxxxx.xxx         | Xxxxxxx xxx **XxxxxxXxxxxxx** xxxxx, xxxxx xxxxxxxx xxxxxx Y-X xxx xxxx-xxxxxxxxx xxxx xxx xxxxxxxxxx.                                                                               |
-| XXXXxxx.x, XXXXxxx.xxx                     | Xxxxxxx xxx **XXXXxxx** xxxxx, xxxxx xxxxx xxx xxxxxxx xxxxxx xxxx xxx xx XXX Xxxx (.xxxxxxx) xxxxxx.                                                                                |
-| XxxxXxxxxxxxx.x, XxxxXxxxxxxxx.xxx         | Xxxxxxx xxxxxxxxxxxxx xxxx'x xxxxxxx xx xxx xxxx xxxxxxxxx, xxxx xx xxx xxxx xxxxxx xxx xxx xxxx xxxxx xxxxx.                                                                        |
+| Audio.h、Audio.cpp                         | オーディオ リソースを管理する **Audio** クラスを定義しています。                                                                                                                          |
+| BasicLoader.h、BasicLoader.cpp             | テクスチャ、メッシュ、シェーダーの読み込みに役立つユーティリティ メソッドを提供する **BasicLoader** クラスを定義しています。                                                                  |
+| BasicMath.h                                | ベクターやマトリックスのデータと計算の操作に役立つ構造と関数を定義しています。 これらの関数の多くは、HLSL シェーダーの種類と互換性があります。                     |
+| BasicReaderWriter.h、BasicReaderWriter.cpp | UWP アプリのファイル データの読み取りと書き込みのために Windows ランタイムを使う **BasicReaderWriter** クラスを定義しています。                                                                    |
+| BasicShapes.h、BasicShapes.cpp             | 立方体や球体などの基本的な図形を作るためのユーティリティ メソッドを提供する **BasicShapes** クラスを定義しています。 これらのファイルは、Marble Maze の実装では使われません。 |
+| BasicTimer.h、BasicTimer.cpp               | 合計時間と経過時間を簡単に取得できるようにする **BasicTimer** クラスを定義しています。                                                                                         |
+| Camera.h、Camera.cpp                       | カメラの位置と向きを保持する **Camera** クラスを定義しています。                                                                                               |
+| Collision.h、Collision.cpp                 | 大理石と、迷路などの他のオブジェクトとの衝突情報を管理します。                                                                                                       |
+| DDSTextureLoader.h、DDSTextureLoader.cpp   | メモリ バッファーから .dds 形式のテクスチャを読み込む **CreateDDSTextureFromMemory** 関数を定義しています。                                                              |
+| DirectXApp.h、DirectXApp.cpp               | アプリのビュー (ウィンドウ、スレッド、イベント) をカプセル化する **DirectXApp** クラスと **DirectXAppSource** クラスを定義しています。                                                     |
+| DirectXBase.h、DirectXBase.cpp             | 多くの DirectX UWP アプリに共通するインフラストラクチャを提供する **DirectXBase** クラスを定義しています。                                                                            |
+| DirectXSample.h                            | DirectX UWP アプリで使えるユーティリティ関数を定義しています。                                                                                                                      |
+| LoadScreen.h、LoadScreen.cpp               | アプリの初期化時に読み込み画面を表示する **LoadScreen** クラスを定義しています。                                                                                         |
+| MarbleMaze.h、MarbleMaze.cpp               | ゲーム固有のリソースを管理し、ゲーム ロジックの多くを定義する **MarbleMaze** クラスを定義しています。                                                                          |
+| MediaStreamer.h、MediaStreamer.cpp         | メディア ファンデーションを使ってゲームによるオーディオ リソースの管理を補助する **MediaStreamer** クラスを定義しています。                                                                            |
+| PersistentState.h、PersistentState.cpp     | バッキング ストアとの間でプリミティブ データ型の読み取りと書き込みを行う **PersistentState** クラスを定義しています。                                                                      |
+| Physics.h、Physics.cpp                     | 大理石と迷路間の物理シミュレーションを実装する **Physics** クラスを定義しています。                                                                              |
+| Primitives.h                               | ゲームで使われる幾何学型を定義しています。                                                                                                                                   |
+| SampleOverlay.h、SampleOverlay.cpp         | 一般的な 2-D とユーザー インターフェイスのデータと操作を提供する **SampleOverlay** クラスを定義しています。                                                                               |
+| SDKMesh.h、SDKMesh.cpp                     | SDK メッシュ (.sdkmesh) 形式のメッシュを読み込んで表示する **SDKMesh** クラスを定義しています。                                                                                |
+| UserInterface.h、UserInterface.cpp         | メニュー システムやハイ スコア表などのユーザー インターフェイスに関連する機能を定義しています。                                                                        |
 
  
 
-##  Xxxxxx-xxxx xxxxxx xxx-xxxx xxxxxxxx xxxxxxx
+##  設計時と実行時のリソース形式
 
 
-Xxxx xxx xxx, xxx xxx-xxxx xxxxxxx xxxxxxx xx xxxxxx-xxxx xxxxxxx xx xxxx xxxxxxxxxxx xxxx xxxx xxxxxxxxx.
+できれば、より効率的にゲームのリソースを読み込むために、設計時形式ではなく実行時形式を使います。
 
-X *xxxxxx-xxxx* xxxxxx xx xxx xxxxxx xxx xxx xxxx xxx xxxxxx xxxx xxxxxxxx. Xxxxxxxxx, Y-X xxxxxxxxx xxxx xxxx xxxxxx-xxxx xxxxxxx. Xxxx xxxxxx-xxxx xxxxxxx xxx xxxx xxxx-xxxxx xx xxxx xxx xxx xxxxxx xxxx xx xxx xxxx-xxxxx xxxxxx. Xxxxxx-xxxx xxxxxxx xxx xx xxxxxxx xxx xxxxxxx xxxx xxxxxxxxxxx xxxx xxxx xxxx xxxxxxxx. X *xxx-xxxx* xxxxxx xx xxx xxxxxx xxxxxx xxxx xx xxxx xx xxxx xxxx. Xxx-xxxx xxxxxxx xxx xxxxxxxxx xxxx xxxxxxx xxx xxxx xxxxxxxxx xx xxxx xxxx xxx xxxxxxxxxxxxx xxxxxx-xxxx xxxxxxx. Xxxx xx xxx xxx xxxxxxxx xx xxxxx xxx xxx-xxxx xxxxxx xx xxx xxxx.
+*設計時*形式は、リソースを設計するときに使う形式です。 通常、3-D デザイナーは設計時形式で作業します。 一部の設計時形式はテキスト ベースであり、任意のテキスト ベース エディターで変更できます。 設計時形式は冗長で、ゲームが必要とするよりも多くの情報を持っている場合があります。 *実行時*形式は、ゲームが読み取るバイナリ形式です。 実行時形式は通常、対応する設計時形式よりもコンパクトで、効率的に読み込むことができます。 そのため、ゲームの大多数は実行時に実行時アセットを使います。
 
-Xxxxxxxx xxxx xxxx xxx xxxxxxxx xxxx x xxxxxx-xxxx xxxxxx, xxxxx xxx xxxxxxx xxxxxxxx xx xxxxx x xxxxxxxx xxx-xxxx xxxxxx. Xxxxxxx xxx-xxxx xxxxxxx xxx xxxxx xxxx xxxxxxx, xxxx xxxxxxx xxxx xxxx xxxxx xxx xxxxxxx xxxx xxxx xx xxxxxxxx xxxx x xxxxxxx. Xxxx, xxx-xxxx xxxxxxx xxx xxxxx xxxxxxxxxxx xx xxxxxx-xxxxxx xxxx xxxxxxxxxx. Xxxxxxxxx, xxxx xxx xx xxxxxx xxxx xxxxxx xxxx xxxxxx xxxx, xxx xxxxxxx, xx XXX-xxxxx xxxx xxxx. Xxxxxxx, xxxxxxx xxxxxxxx xxx-xxxx xxxxxxx xxx xxxxxxxxx xxxxxx-xxxxxxx, xxxx xxx xxxx xxxxxxxxx xxx xxx xxx-xxxx xx xxxxxx.
+ゲームは設計時形式を直接読み取れますが、別の実行時形式を使うことには、いくつかの利点があります。 実行時形式は多くの場合、よりコンパクトであり、必要なディスク領域が少なく、ネットワークでの転送にかかる時間も短くなります。 また、実行時形式は通常、メモリ マップ データ構造として表されます。 そのため、XML ベースのテキスト ファイルなどよりも大幅に速くメモリに読み込むことができます。 さらに、個別の実行時形式は通常はバイナリ形式でエンコードされており、エンド ユーザーによる変更がより難しくなっています。
 
-XXXX xxxxxxx xxx xxx xxxxxxx xx xxxxxxxxx xxxx xxx xxxxxxxxx xxxxxx-xxxx xxx xxx-xxxx xxxxxxx. Xxxxxx Xxxx xxxx .xxxx xx xxx xxxxxx-xxxx xxxxxx, xxx .xxx xx xxx xxx-xxxx xxxxxx. X .xxxx xxxx xxxxx xxxxxx xxxx xxx xxx xxxxxx; x .xxx xxxx xxxxx xxx xxxxxxxxxxxxx xxxxxx xxxx xxxx. Xxxx xxx xxxxxxx .xxxx xxxxx xxxxxxx xxx xxxxxxx .xxx xxxxx xxxx xxxx xxxx, xxx xxxxx xxx xxxx xx xxxxxxx XXXX xxxxxx xxxxx xx xxxx xxxx xxxx xxxx xxxx xxxxx.
+HLSL シェーダーは、設計時と実行時で異なる形式を使うリソースの 1 例です。 Marble Maze は、設計時形式として .hlsl、実行時形式として .cso を使います。 .hlsl ファイルはシェーダーのソース コードを保持します。.cso ファイルは対応するシェーダーのバイト コードを保持します。 オフラインで .hlsl ファイルを変換してゲームに .cso ファイルを渡すと、ゲームの読み込み時に HLSL ソース ファイルをバイト コードに変換する必要がなくなります。
 
-Xxx xxxxxxxxxxxxx xxxxxxx, xxx Xxxxxx Xxxx xxxxxxx xxxxxxxx xxxx xxx xxxxxx-xxxx xxxxxx xxx xxx xxx-xxxx xxxxxx xxx xxxx xxxxxxxxx, xxx xxx xxxx xxxx xx xxxxxxxx xxx xxxxxx-xxxx xxxxxxx xx xxx xxxxxx xxxxxxx xxx xxxx xxx xxxx xxxxxxx xxx xxx xxxxxxx xxxx xx xxx-xxxx xxxxxxx xxxx xxx xxxx xxxx. Xxxx xxxxxxxxxxxxx xxxxx xxx xx xxxxxxx xxx xxxxxx-xxxx xxxxxxx xx xxx xxx-xxxx xxxxxxx.
+教育的な理由で、Marble Maze プロジェクトには多くのリソースの設計時形式と実行時形式の両方が含まれていますが、ゲームのソース プロジェクトで保持する必要があるのは設計時形式だけです。実行時形式には、必要になったときに変換します。 このドキュメントでは、設計時形式を実行時形式に変換する方法について説明しています。
 
-##  Xxxxxxxxxxx xxxx xxxxx
-
-
-Xxxxxx Xxxx xxxxxxx xxx xxxx xxxxx xx x xxxxxxx XXX xxx. Xxx xxxx xxxx xxxxx xxx xxxx xxxxx xx x XXX xxx, xxx [Xxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt243287).
-
-Xxxx x XXX xxxx xxxxxxxxxxx, xx xxxxxxxxx xxxxxxxxxxx xxxxxxx xxxxxxxxxx xxxx xx XxxxxxYX, XxxxxxYX, xxx xxx xxxxx, xxxxx, xx xxxxxxx xxxxxxxxx xxxx xx xxxx. Xx xxxx xxxxx xxxx-xxxxxxxx xxxxxxxxx xxxx xxx xxxxxxxx xxxxxx xxx xxxx xxxxxx. Xxxx xxxxxxxxxxxxxx xxxxxx xxx xxxx xxxxxx x xxxx xxxxxxx.
-
-Xxxxx xxxxxxxxxxxxxx, xxxxx xxxxxxxxx xxx xxx *xxxx xxxx*. Xx xxxx xxxx, xxxxx xxxxxxxxx xxxxxxx xxxx xxxxxxx: xxxxxxx Xxxxxxx xxxxxx, xxxxxxx xxxxx, xxxxxx xxxxx xxxxxxx, xxx xxxxxx xxx xxxxx. Xxxx xxx xxxx xxxxxxx xxx xxxxx, xx xxx xxxxx xxx xxxxxxx xxxxx xxxxx xx xxx xxxxx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxx, xxxx xx xxxxxx xxxxxxxxxx. Xxx xxxx xxx xxxx xxxxxxx xxxxx xxxxxxxxxx xxxx xx xxxxxxx xxxxx xxxxxxx xx xxxxxxx xxxx xxxx xxx xxxxxxx. Xxxx xxx xxxx xxxxxxx xxx xxxxx, xx xxxxxxxx xxx xxxxxxx xxxxx xx xxx xxxxx xxx xxxxx xx xx xxx xxxxxxx xxxxxx. Xxx xxxxxxxxx xxxxxxxx xxxxxxxx xxxxx xxxxxxxxxx xx xxxxxxx xxxxxx.
-
-##  Xxxxxx xx xxx xxxxxxxx
+##  アプリケーション ライフ サイクル
 
 
-Xxx *XxxxxxX YY Xxx (Xxxxxxxxx Xxxxxxx)* xxxxxxxx xxxxxxx x xxxx xxxxxx xxxx xxx xxx xxxxxx xx xxxx XxxxxxYX. Xxx xxxxxxxx xxxx xxxxxxxx xxx **XxxxxxXxxxxxxxx** xxxxx xxxx xxxxxxx xxx xx xxx XxxxxxYX xxxxxx xxxxxxxxx xxxxxx xxx xxxxxxxxx YX xxxxxxx xx x XXX xxx. Xxx **XxxXxxx** xxxxx xxxxxxx xxx **XxxxxxXxxx** xxxxx xxxxxx, xxxxxx xxx xxxxxxx xx xxxxxxxxx, xxxxx xx xxxxxx xxx xxxxx, xxx xxxxx xxx **XxxxxxXxxx** xxxxxx xxxxxx xxxx xxxxx. Xxx **XxxxxxXxxxxxXxxxXxxxxxxxxXxxxxxxxx**, Xxxxxx, xxx Xxxxxx xxxxxxx xxx xxxx xxxxx xxxx xxx xxxxxxxxxxxxx xxxxxxx xx xxx **XxxxxxXxxx** xxxxx. Xxx xxxxxxxxx xxxxxxx xxxxx xxxxx xxx **XxxXxxx** xxxxxxxxxxx xxxxxxx xxx **XxxxxxXxxx** xxxxx xxxxxx. Xxx xxxxxx xxxxxxxxx xxxxx xx xxxxxx xx xxx xxxxx xx xx xxx xxx xxx XxxxxxYX xxxxxxx xxx xxxxxxxxx.
+Marble Maze は、一般的な UWP アプリのライフ サイクルに従っています。 UWP アプリのライフ サイクルについて詳しくは、「[アプリのライフサイクル](https://msdn.microsoft.com/library/windows/apps/mt243287)」をご覧ください。
+
+UWP ゲームの初期化時には、通常、Direct3D、Direct2D などのランタイム コンポーネントと、ゲームで使われる入力、オーディオ、または物理ライブラリが初期化されます。 また、ゲームを開始する前に必要なゲーム固有のリソースも読み込まれます。 この初期化は、ゲーム セッション中に 1 回行われます。
+
+初期化後、ゲームは通常、*ゲーム ループ*を実行します。 このループでは、ゲームは通常、4 つの操作を実行します。それらは、Windows イベントの処理、入力の収集、シーン オブジェクトの更新、シーンの表示です。 ゲームがシーンを更新するときに、現在の入力状態をシーン オブジェクトに適用し、オブジェクトの衝突などの物理的なイベントをシミュレートすることができます。 また、効果音の再生やネットワーク経由のデータ送信など、その他のアクティビティも実行できます。 ゲームがシーンを表示するときに、シーンの現在の状態がキャプチャされ、ディスプレイ デバイスに描画されます。 以降のセクションでは、これらのアクティビティについてさらに詳しく説明します。
+
+##  テンプレートへの追加
+
+
+*DirectX 11 アプリ (ユニバーサル Windows)* テンプレートは、Direct3D を使ってレンダリング先となるコア ウィンドウを作成します。 また、テンプレートには、UWP アプリで 3D コンテンツをレンダリングする際に必要な Direct3D デバイス リソースをすべて作成する **DeviceResources** クラスも含まれています。 **AppMain** クラスは、**MarbleMaze** クラス オブジェクトを作成し、リソースの読み込みを開始し、ループしてタイマーを更新し、フレームごとに **MarbleMaze** レンダリング メソッドを呼び出します。 このクラスの **CreateWindowSizeDependentResources**、Update、Render の各メソッドは、**MarbleMaze** クラスの対応するメソッドを呼び出します。 次の例は、**AppMain** コンストラクターが **MarbleMaze** クラス オブジェクトを作成する箇所を示しています。 Direct3D オブジェクトを使ってレンダリングできるように、デバイス リソース クラスが渡されます。
 
 ```cpp
     m_marbleMaze = std::unique_ptr<MarbleMaze>(new MarbleMaze(m_deviceResources));
     m_marbleMaze->CreateWindowSizeDependentResources();
 ```
 
-Xxx **XxxXxxx** xxxxx xxxx xxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxxx xxx xxx xxxx. Xxx xxx xxxx xxxxxxx xxx xxxx xxxxxx. Xxx **XxxxxxXXxxx** xxxxxxxxxxx xxxx xx xxx xxxxx xxxxxxxx, xxxxxxx xxx **XxxxxxXxxxxxxxx** xxxxx, xxx xxxxxxx xxx **XxxXxxx** xxxxx.
+**AppMain** クラスは、ゲームのリソースの遅延読み込みも開始します。 詳しくは、次のセクションをご覧ください。 **DirectXPage** コンストラクターは、イベント ハンドラーを設定し、**DeviceResources** クラスを作成し、**AppMain** クラスを作成します。
 
-Xxxx xxx xxxxxxxx xxx xxxxx xxxxxx xxx xxxxxx, xxxx xxxx xxx xxxxx xx xxx **XxxxxxXxxx** xxxxx.
+これらのイベントのハンドラーが呼び出されると、入力が **MarbleMaze** クラスに渡されます。
 
-## Xxxxxxx xxxx xxxxxx xx xxx xxxxxxxxxx
+## バックグラウンドでのゲーム アセットの読み込み
 
 
-Xx xxxxxx xxxx xxxx xxxx xxx xxxxxxx xx xxxxxx xxxxxx xxxxxx Y xxxxxxx xxxxx xx xx xxxxxxxx, xx xxxxxxxxx xxxx xxx xxxx xxxx xxxx xxxxxx xxxxxxxxxxxxxx, xx xx xxx xxxxxxxxxx. Xx xxxxxx xxxx xx xxx xxxxxxxxxx, xxxx xxxx xxx xxxxxxx xx xxxxxx xxxxxx.
+起動後 5 秒以内にゲームがウィンドウ イベントに応答できるようにするために、ゲーム アセットは非同期的に、またはバックグラウンドで読み込むことをお勧めします。 バックグラウンドでのアセットの読み込み中、ゲームはウィンドウ イベントに応答できます。
 
-> **Xxxx**  Xxx xxx xxxx xxxxxxx xxx xxxx xxxx xxxx xx xx xxxxx, xxx xxxxx xxx xxxxxxxxx xxxxxx xx xxxxxxxx xxxxxxx xx xxx xxxxxxxxxx. Xx xxx xxxx xxxxxxx xx xxxxxx xxxx xxx xxxx xxxxxx xxx xxxxxxxxx xxx xxxxxx, xxx xxx xxxxxxxx xxxx xxxxx xxxxxxxxx xxx xxxxxxxxxx xx xxxx xx xxxxxxxxxx x xxxxxxxx xxx, xxx xxxxxxx.
+> **注**  また、準備ができたらメイン メニューを表示することもでき、残りのアセットをバックグラウンドで読み込み続けることができます。 すべてのリソースが読み込まれる前にユーザーがメニューのオプションを選択した場合は、進行状況バーを表示するなどして、シーン リソースが読み込み中であることを示すことができます。
 
  
 
-Xxxx xx xxxx xxxx xxxxxxxx xxxxxxxxxx xxx xxxx xxxxxx, xx xx xxxx xxxxxxxx xx xxxx xxxx xxxxxxxxxxxxxx xxx xxx xxxxxxx. Xxx xxxxxx xx xxxx xx xx xxxxxxxxx xx xxxxxxxxx xxxx xxx xx xxxx xxxxxxxxx xxxx xxxx xxxxxxx xx xxx xxxxxxx xxx xxx xxxxxxxxxxxxxx. Xxxx, xx xxxxxxxxxxxxx xxxxxxxxxxxx xxxxxxx xxxxx, xxxx xxxx xx xxxxx xx xxxxx xx xxx xxx xxxxxxxxxxxxx.
+ゲームに含まれているゲーム アセットが比較的少ない場合でも、非同期的に読み込むことをお勧めします。これには 2 つの理由があります。 1 つの理由は、すべてのデバイスとすべての構成ですべてのリソースをすばやく読み込めることを保証することが難しいことです。 また、非同期的な読み込みを早期に組み込むことによって、機能の追加による規模の拡大にもコードが対応できるようになります。
 
-Xxxxxxxxxxxx xxxxx xxxxxxx xxxxxx xxxx xxx **XxxXxxx::Xxxx** xxxxxx. Xxxx xxxxxx xxxx xxx [**xxxx Xxxxx (Xxxxxxxxxxx Xxxxxxx)**](https://msdn.microsoft.com/library/windows/apps/hh750113.aspx) xxxxx xx xxxx xxxx xxxxxx xx xxx xxxxxxxxxx.
+非同期のアセット読み込みは、**AppMain::Load** メソッドで始まります。 このメソッドは、[**task クラス (同時実行ランタイム)**](https://msdn.microsoft.com/library/windows/apps/hh750113.aspx) クラスを使って、バックグラウンドでゲーム アセットを読み込みます。
 
 ```cpp
     task<void>([=]()
@@ -112,22 +112,22 @@ Xxxxxxxxxxxx xxxxx xxxxxxx xxxxxx xxxx xxx **XxxXxxx::Xxxx** xxxxxx. Xxxx xxxxxx
 
 ```
 
-Xxx **XxxxxxXxxx** xxxxx xxxxxxx xxx *x\_xxxxxxxxXxxxxxxxxXxxxx* xxxx xx xxxxxxxx xxxx xxxxxxxxxxxx xxxxxxx xx xxxxxxxx. Xxx **XxxxxxXxxx::XxxxXxxxxxxxXxxxxxxxx** xxxxxx xxxxx xxx xxxx xxxxxxxxx xxx xxxx xxxx xxxx xxxx. Xxx xxxxxx (**XxxxxxXxxx::Xxxxxx**) xxx xxxxxx (**XxxxxxXxxx::Xxxxxx**) xxxxxx xx xxx xxx xxxxx xxxx xxxx. Xxxx xxxx xxxx xx xxx, xxx xxxx xxxxxxxxx xx xxxxxx. Xx xxx xxxx xx xxx xxx xxx, xxx xxxx xxxxx xxx xxxxxxx xxxxxx.
+**MarbleMaze** クラスは、非同期読み込みが完了したことを示す *m\_deferredResourcesReady* フラグを定義します。 **MarbleMaze::LoadDeferredResources** メソッドは、ゲーム リソースを読み込んで、このフラグを設定します。 アプリの更新 (**MarbleMaze::Update**) フェーズとレンダリング (**MarbleMaze::Render**) フェーズでは、このフラグを確認します。 このフラグが設定されると、ゲームは通常どおりに続行されます。 フラグがまだ設定されていない場合、ゲームは読み込み画面を表示します。
 
-Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxxxxxxx xxxxxxxxxxx xxx XXX xxxx, xxx [Xxxxxxxxxxxx xxxxxxxxxxx xx X++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+UWP アプリの非同期プログラミングについて詳しくは、「[C++ での非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187334)」をご覧ください。
 
->> > **Xxx**   Xx xxx’xx xxxxxxx xxxx xxxx xxxx xx xxxx xx x Xxxxxxx Xxxxxxx X++ Xxxxxxx (xx xxxxx xxxxx, x XXX), xxxxxxxx xxxxxxx xx xxxx [Xxxxxxxx Xxxxxxxxxxxx Xxxxxxxxxx xx X++ xxx Xxxxxxx Xxxxx Xxxx](https://msdn.microsoft.com/library/windows/apps/hh750113.aspx) xx xxxxx xxx xx xxxxxx xxxxxxxxxxxx xxxxxxxxxx xxxx xxx xx xxxxxxxx xx xxxx xxx xxxxx xxxxxxxxx.
+>> > **ヒント**   Windows ランタイム C++ ライブラリの一部であるゲーム コード (つまり DLL) を記述している場合は、アプリとその他のライブラリで使える非同期操作を作る方法を学ぶために「[C++ における Windows ストア アプリ用の非同期操作の作成](https://msdn.microsoft.com/library/windows/apps/hh750113.aspx)」を読むことを検討してください。
 
  
 
-## Xxx xxxx xxxx
+## ゲーム ループ
 
 
-Xxx **XxxxxxXxxx::XxXxxxxxxxx** xxxxxx xxxx xxx xxxx xxxx xxxx. Xxxx xxxxxx xx xxxxxx xxxxx xxxxx.
+**DirectPage::OnRendering** メソッドはメイン ゲーム ループを実行します。 このメソッドはフレームごとに呼び出されます。
 
-Xx xxxx xxxxxxxx xxxx xxx xxxxxx xxxx xxxx xxxx-xxxxxxxx xxxx, xx xxxxxxxxxxx xxx **XxxxxxXXxx::Xxx** xxxxxx xx xxxxxxx xxxxxx xxx xxxxxx xxxxx xx xxx **XxxxxxXxxx** xxxxxx. Xxx **XxxxxxXxxx::XxXxxxxxxxx** xxxxxx xxxx xxxxxxx xxx xxxx xxxxx, xxxxx xx xxxx xxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxx.
+ゲーム固有のコードからビューとウィンドウのコードを分離しやすくするために、**DirectXApp::Run** メソッドの実装では更新とレンダリングの呼び出しが **MarbleMaze** オブジェクトに転送されています。 **DirectPage::OnRendering** メソッドでは、アニメーションや物理シミュレーションで使われるゲーム タイマーも定義されています。
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx **XxxxxxXxxx::XxXxxxxxxxx** xxxxxx, xxxxx xxxxxxxx xxx xxxx xxxx xxxx. Xxx xxxx xxxx xxxxxxx xxx xxxxx xxxx xxx xxxxx xxxx xxxxxxxxx, xxx xxxx xxxxxxx xxx xxxxxxx xxx xxxxx. Xxxx xxxx xxxxx xxxx xxxx xxxxxxx xx xxxx xxxxxxxx xxxx xxx xxxxxx xx xxxxxxx.
+次の例は、メイン ゲーム ループが含まれている **DirectPage::OnRendering** メソッドを示しています。 ゲーム ループは合計時間とフレーム時間の変数を更新し、シーンの更新とレンダリングを行います。 これにより、ウィンドウが表示されているときにだけコンテンツがレンダリングされることも保証されます。
 
 ```cpp
 
@@ -145,12 +145,12 @@ void DirectXPage::OnRendering(Object^ sender, Object^ args)
 }
 ```
 
-## Xxx xxxxx xxxxxxx
+## ステート マシン
 
 
-Xxxxx xxxxxxxxx xxxxxxx x *xxxxx xxxxxxx* (xxxx xxxxx xx x *xxxxxx xxxxx xxxxxxx*, xx XXX) xx xxxxxxx xxx xxxx xxx xxxxx xx xxx xxxx xxxxx. X xxxxx xxxxxxx xxxxxxxx x xxxxx xxxxxx xx xxxxxx xxx xxx xxxxxxx xx xxxxxxxxxx xxxxx xxxx. X xxxxx xxxxxxx xxxxxxxxx xxxxxx xxxx xx *xxxxxxx* xxxxx, xxxxxxxxxxx xx xxx xx xxxx *xxxxxxxxxxxx* xxxxxx, xxx xxxxxxxx xxxx xx x *xxxxxxxx* xxxxx.
+ゲームは通常、ゲーム ロジックのフローと順序を制御するために、*ステート マシン* (*有限ステート マシン*、FSM とも呼ばれます) を備えています。 ステート マシンには、特定の数の状態と、状態間を遷移する機能が含まれています。 通常、ステート マシンは*初期*状態から始まり、1 つ以上の*中間*状態に遷移し、*終端*状態で終了します。
 
-X xxxx xxxx xxxxx xxxx x xxxxx xxxxxxx xx xxxx xx xxx xxxxxxx xxx xxxxx xxxx xx xxxxxxxx xx xxx xxxxxxx xxxx xxxxx. Xxxxxx Xxxx xxxxxxx xxx **XxxxXxxxx** xxxxxxxxxxx, xxxxx xxxxxxx xxxx xxxxxxxx xxxxx xx xxx xxxx.
+ゲーム ループでは多くの場合、現在のゲームの状態に固有のロジックを実行できるように、ステート マシンを使います。 Marble Maze では、ゲームの各状態を定義する **GameState** 列挙が定義されています。
 
 ```cpp
 enum class GameState
@@ -165,9 +165,9 @@ enum class GameState
 };
 ```
 
-Xxx **XxxxXxxx** xxxxx, xxx xxxxxxx, xxxxxxx xxxx xxx xxxx xxxx xxxxxxx, xxx xxxx xxx xxxx xx xxx xxxxxx. Xxxxxxxxxx, xxx **XxXxxxXxxxxx** xxxxx xxxxxxx xxxx xxx xxxx xx xxxxxx, xxx xxxx xxx xxxx xxxx xxx xxxxxx. Xxx **XxxxxxXxxx** xxxxx xxxxxxx xxx **x\_xxxxXxxxx** xxxxxx xxxxxxxx xx xxxx xxx xxxxxx xxxx xxxxx.
+たとえば、**MainMenu** 状態は、メイン メニューが表示され、ゲームがアクティブでないと定義されています。 反対に、**InGameActive** 状態は、ゲームがアクティブで、メニューが表示されていないと定義されています。 **MarbleMaze** クラスは、アクティブなゲームの状態を保持するために、**m\_gameState** メンバー変数を定義しています。
 
-Xxx **XxxxxxXxxx::Xxxxxx** xxx **XxxxxxXxxx::Xxxxxx** xxxxxxx xxx xxx xxxxxx xxxxxxxxx xx xxxxxxx xxxxx xxx xxx xxxxxxx xxxxx. Xxx xxxxxxxxx xxxxxxx xxxxx xxxx xxxx xxxxxx xxxxxxxxx xxxxx xxxx xxxx xxx xxx **XxxxxxXxxx::Xxxxxx** xxxxxx (xxxxxxx xxx xxxxxxx xx xxxxxxxxxx xxx xxxxxxxxx).
+**MarbleMaze::Update** メソッドと **MarbleMaze::Render** メソッドは、現在の状態のロジックを実行するために、switch ステートメントを使います。 次の例は、**MarbleMaze::Update** メソッドでのこの switch ステートメントがどのようなものかを示しています (構造をわかりやすく示すために、細部は削除されています)。
 
 ```cpp
 switch (m_gameState)
@@ -190,27 +190,27 @@ case GameState::InGamePaused:
 }
 ```
 
-Xxxx xxxx xxxxx xx xxxxxxxxx xxxxxxx xx x xxxxxxxx xxxx xxxxx, xx xxxxxxxxx xx xx xxxx xxxxxxxxxxxxx.
+ゲーム ロジックまたはレンダリングが特定のゲーム状態に依存する場合、このドキュメントではそれを強調して示しています。
 
-## Xxxxxxxx xxx xxx xxxxxx xxxxxx
+## アプリとウィンドウのイベントの処理
 
 
-Xxx Xxxxxxx Xxxxxxx xxxxxxxx xx xxxxxx-xxxxxxxx xxxxx-xxxxxxxx xxxxxx xx xxxx xxx xxx xxxx xxxxxx xxxxxx Xxxxxxx xxxxxxxx. Xx xxxxxxx xx xxxxx xx xx xxxxxxxxxxx, xxx xxxx xxxxxxx xx xxxxx xxxxxxx, xx xxxxx-xxxxxxxx xxxxxx, xxxx xxxxxxxx xx xxx xxxxx. Xxx xxxx xxxx xxxxxxxx xxx xxxxx xxxxxxx xxxx xxx xxxxx xxxxxx. Xxxx xxxxxxx xx xxxxx xxxxxxxx xx xx xxxxx xxxxxx.
+Windows ランタイムには、Windows メッセージをより簡単に管理できるようにするために、オブジェクト指向のイベント処理システムが用意されています。 アプリケーションのイベントを使うには、イベントに応答するイベント ハンドラーまたはイベント処理メソッドを準備する必要があります。 また、イベント ハンドラーをイベント ソースに登録する必要もあります。 このプロセスは、一般に、イベントの関連付けと呼ばれます。
 
-### Xxxxxxxxxx xxxxxxx, xxxxxx, xxx xxxxxxx
+### 中断、再開、再起動の処理
 
-Xxxxxx Xxxx xx xxxxxxxxx xxxx xxx xxxx xxxxxxxx xxxx xxxx xx xx xxxx Xxxxxxx xxxxxx x xxx xxxxx xxxxx. Xxx xxxx xx xxxxxxx xxxx xxx xxxx xxxxx xx xx xxx xxxxxxxxxx xx xxxx Xxxxxxx xxxxx xxx xx x xxx xxxxx xxxxx. Xxxxxxxxx, xxx xxx'x xxxxx xxxx. Xxxxxxx xxx xxxxxxxxx xxx xxx xxxx xx'x xx xxx xxxxxxxxx xxxxx xxx Xxxxxxx xxxxxxxx xxx xxxxxxxxx, xxxx xx xxxxxx, xxxx xxx xxx xx xxxxx. Xxxxxxx xxxxxxxx xx xxx xxxx xx xx xxxxx xx xx xxxxxxxxx xx xxxxxxx, xxx xx xxxxx'x xxxxxx xxx xxx xxxx xx'x xxxxx xx xx xxxxxxxxxx. Xxxxxxxxx, xxxx xxx xxxx xx xxxx xx xxxx—xx xxx xxxxx xxxx Xxxxxxx xxxxxxxx xxxx xxx xxxx xx xx xxxxx xx xx xxxxxxxxx—xxx xxxx xxxx xxxxx xx xxxxxxxx xx xxxxxxx xxx xxxxxxx xxxx xxxxx xxxx xxx xxx xx xxxxxxxxx. Xx xxxx xxx xxx xxxxxxxxxxx xxxx xxxxx xxxx xx xxxxxxxxx xx xxxx, xxx xxx xxxx xxxx xx xxxx xxxxx xxxxxxxxx, xxxx xxxxxx xxxx xxx xxxxxxxx xxx xxxxxxx xxxxxxxxxxxx. Xxxxxx Xxxx xxxxxxxx xx xxxxxxx xxx xxxxxx xxxxxxxxxxxxx xxx xxx xxxxxxx:
+ユーザーがアプリを切り替えた場合、または Windows が低電力状態に切り替わった場合は、Marble Maze を中断できます。 ゲームは、ユーザーがフォアグラウンドにゲームを移行した場合、または Windows が低電力状態から復帰した場合に再開されます。 通常は、アプリを閉じません。 アプリが中断状態にあり、アプリが使っているメモリなどのリソースを Windows が必要とする場合、Windows はアプリを終了できます。 アプリが中断または再開されるときに、Windows はアプリに通知しますが、終了されるときには通知しません。 そのため、アプリが中断されることを Windows がアプリに通知した時点で、アプリが再起動されるときに現在のユーザー状態を復元するために必要なすべてのデータをアプリが保存できる必要があります。 保存の負荷が高い特別なユーザー状態がアプリにある場合は、アプリが中断通知を受信する前であっても、状態を定期的に保存する必要があります。 Marble Maze は、次の 2 つの理由で、中断と再開の通知に応答します。
 
-1.  Xxxx xxx xxx xx xxxxxxxxx, xxx xxxx xxxxx xxx xxxxxxx xxxx xxxxx xxx xxxxxx xxxxx xxxxxxxx. Xxxx xxx xxx xx xxxxxxx, xxx xxxx xxxxxxx xxxxx xxxxxxxx.
-2.  Xxxx xxx xxx xx xxxxxx xxx xxxxx xxxxxxxxx, xxx xxxx xxxxxxx xxxx xxx xxxxxxxx xxxxx.
+1.  アプリが一時停止されるときに、ゲームは現在のゲーム状態を保存し、オーディオの再生を一時停止します。 アプリが再開されるときに、ゲームはオーディオ再生を再開します。
+2.  アプリが閉じられ、後で再起動されるとき、ゲームは前の状態から再開します。
 
-Xxxxxx Xxxx xxxxxxxx xxx xxxxxxxxx xxxxx xx xxxxxxx xxxxxxx xxx xxxxxx:
+Marble Maze は、中断と再開をサポートするために、次のタスクを実行します。
 
--   Xx xxxxx xxx xxxxx xx xxxxxxxxxx xxxxxxx xx xxx xxxxxx xx xxx xxxx, xxxx xx xxxx xxx xxxx xxxxxxx x xxxxxxxxxx.
--   Xx xxxxxxxx xx xxxxxxx xxxxxxxxxxxxx xx xxxxxx xxx xxxxx xx xxxxxxxxxx xxxxxxx.
--   Xx xxxxxxxx xx xxxxxx xxxxxxxxxxxxx xx xxxxxxx xxx xxxxx xxxx xxxxxxxxxx xxxxxxx. Xx xxxx xxxxx xxx xxxxxxxx xxxxx xxxxxx xxxxxxx.
+-   ユーザーがチェックポイントに達したときのような、ゲームの重要なポイントで、状態を固定ストレージに保存します。
+-   中断の通知に対応して、状態を固定ストレージに保存します。
+-   再開の通知に対応して、状態を固定ストレージから読み込みます。 起動中に、以前の状態も読み込みます。
 
-Xx xxxxxxx xxxxxxx xxx xxxxxx, Xxxxxx Xxxx xxxxxxx xxx **XxxxxxxxxxXxxxx** xxxxx. (Xxx XxxxxxxxxxXxxxx.x xxx XxxxxxxxxxXxxxx.xxx). Xxxx xxxxx xxxx xxx [**Xxxxxxx::Xxxxxxxxxx::Xxxxxxxxxxx::XXxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br226054) xxxxxxxxx xx xxxx xxx xxxxx xxxxxxxxxx. Xxx **XxxxxxxxxxXxxxx** xxxxx xxxxxxxx xxxxxxx xxxx xxxx xxx xxxxx xxxxxxxxx xxxx xxxxx (xxxx xx **xxxx**, **xxx**, **xxxxx**, [**XXXXXXXY**](https://msdn.microsoft.com/library/windows/desktop/ee419475), xxx [**Xxxxxxxx::Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh755812.aspx)), xxxx xxx xx x xxxxxxx xxxxx.
+中断と再開をサポートするために、Marble Maze は **PersistentState** クラスを定義しています。 PersistentState.h と PersistentState.cpp をご覧ください。 このクラスは、プロパティの読み取りと書き込みに [**Windows::Foundation::Collections::IPropertySet**](https://msdn.microsoft.com/library/windows/apps/br226054) インターフェイスを使います。 **PersistentState** クラスには、バッキング ストアとの間でプリミティブ データ型 (**bool**、**int**、**float**、[**XMFLOAT3**](https://msdn.microsoft.com/library/windows/desktop/ee419475)、[**Platform::String**](https://msdn.microsoft.com/library/windows/apps/hh755812.aspx) など) の読み取りと書き込みを行うメソッドが用意されています。
 
 ```cpp
 ref class PersistentState
@@ -239,18 +239,18 @@ private:
 };
 ```
 
-Xxx **XxxxxxXxxx** xxxxx xxxxx x **XxxxxxxxxxXxxxx** xxxxxx. Xxx **XxxxxxXxxx** xxxxxxxxxxx xxxxxxxxxxx xxxx xxxxxx xxx xxxxxxxx xxx xxxxx xxxxxxxxxxx xxxx xxxxx xx xxx xxxxxxx xxxx xxxxx.
+**MarbleMaze** クラスは **PersistentState** オブジェクトを保持しています。 **MarbleMaze** コンストラクターは、このオブジェクトを初期化し、ローカル アプリケーション データ ストアをバッキング データ ストアとして提供します。
 
 ```cpp
 m_persistentState = ref new PersistentState();
 m_persistentState->Initialize(ApplicationData::Current->LocalSettings->Values, "MarbleMaze");
 ```
 
-Xxxxxx Xxxx xxxxx xxx xxxxx xxxx xxx xxxxxx xxxxxx xxxx x xxxxxxxxxx xx xxx xxxx (xx xxx **XxxxxxXxxx::Xxxxxx** xxxxxx), xxx xxxx xxx xxxxxx xxxxx xxxxx (xx xxx **XxxxxxXxxx::XxXxxxxXxxxxx** xxxxxx). Xx xxxx xxxx xxxxx x xxxxx xxxxxx xx xxxxx xxxx, xx xxxxxxxxx xxxx xxx xxxxxxxxxxxx xxxx xxxxx xx xxxxxxxxxx xxxxxxx xx x xxxxxxx xxxxxx xxxxxxx xxx xxxx xxxx x xxx xxxxxxx xx xxxxxxx xx xxx xxxxxxx xxxxxxxxxxxx. Xxxxxxxxx, xxxx xxxx xxx xxxxxxxx x xxxxxxx xxxxxxxxxxxx, xx xxxx xxx xx xxxx xxx xxxxx xxxx xxxx xxx xxxxxxx.
+Marble Maze は、大理石がチェックポイントやゴールを通過したときに **MarbleMaze::Update** メソッドで状態を保存し、ウィンドウからフォーカスが移動されたときに **MarbleMaze::OnFocusChange** メソッドで状態を保存します。 中断の通知に対処できる時間は数秒しかないので、ゲームが大量の状態データを保持する場合は、同様の方法でときどき状態を固定ストレージに保存することをお勧めします。 そうすれば、アプリが中断通知を受け取ったときに、変更があった状態データだけを保存すれば済みます。
 
-Xx xxxxxxx xx xxxxxxx xxx xxxxxx xxxxxxxxxxxxx, xxx **XxxxxxXXxxx** xxxxx xxxxxxx xxx **XxxxXxxxxxxxXxxxx** xxx **XxxxXxxxxxxxXxxxx** xxxxxxx xxxx xxx xxxxxx xx xxxxxxx xxx xxxxxx. Xxx **XxxxxxXxxx::XxXxxxxxxxxx** xxxxxx xxxxxxx xxx xxxxxxx xxxxx xxx xxx **XxxxxxXxxx::XxXxxxxxxx** xxxxxx xxxxxxx xxx xxxxxx xxxxx.
+中断と再開の通知に応答するために、**DirectXPage** クラスは、中断時と再開時に呼び出される **SaveInternalState** メソッドと **LoadInternalState** メソッドを定義します。 **MarbleMaze::OnSuspending** メソッドは中断イベントを処理し、**MarbleMaze::OnResuming** メソッドは再開イベントを処理します。
 
-Xxx **XxxxxxXxxx::XxXxxxxxxxxx** xxxxxx xxxxx xxxx xxxxx xxx xxxxxxxx xxxxx.
+**MarbleMaze::OnSuspending** メソッドはゲーム状態を保存し、オーディオを一時停止します。
 
 ```cpp
 void MarbleMaze::OnSuspending()
@@ -260,7 +260,7 @@ void MarbleMaze::OnSuspending()
 }
 ```
 
-Xxx **XxxxxxXxxx::XxxxXxxxx** xxxxxx xxxxx xxxx xxxxx xxxxxx xxxx xx xxx xxxxxxx xxxxxxxx xxx xxxxxxxx xx xxx xxxxxx, xxx xxxx xxxxxx xxxxxxxxxx, xxx xxx xxxx-xxxxx xxxxx.
+**MarbleMaze::SaveState** メソッドは、大理石の現在位置と速度、最新のチェックポイント、ハイ スコア表など、ゲームの状態の値を保存します。
 
 ```cpp
 void MarbleMaze::SaveState()
@@ -289,11 +289,11 @@ void MarbleMaze::SaveState()
 }
 ```
 
-Xxxx xxx xxxx xxxxxxx, xx xxxx xxx xx xxxxxx xxxxx. Xx xxxxx'x xxxx xx xxxx xxxxx xxxx xxxxxxxxxx xxxxxxx xxxxxxx xxx xxxxx xx xxxxxxx xxxxxx xx xxxxxx.
+ゲームの再開時に必要なのは、オーディオの再開だけです。 状態は既にメモリに読み込まれているので、固定ストレージから状態を読み込む必要はありません。
 
-Xxx xxx xxxx xxxxxxxx xxx xxxxxxx xxxxx xx xxxxxxxxx xx xxx xxxxxxxx [Xxxxxx xxxxx xx xxx Xxxxxx Xxxx xxxxxx](adding-audio-to-the-marble-maze-sample.md).
+オーディオの一時停止と再開の方法は、ドキュメント「[Marble Maze のサンプルへのオーディオの追加](adding-audio-to-the-marble-maze-sample.md)」で説明されています。
 
-Xx xxxxxxx xxxxxxx, xxx **XxxxxxXxxx::Xxxxxxxxxx** xxxxxx, xxxxx xx xxxxxx xxxxxx xxxxxxx, xxxxx xxx **XxxxxxXxxx::XxxxXxxxx** xxxxxx. Xxx **XxxxxxXxxx::XxxxXxxxx** xxxxxx xxxxx xxx xxxxxxx xxx xxxxx xx xxx xxxx xxxxxxx. Xxxx xxxxxx xxxx xxxx xxx xxxxxxx xxxx xxxxx xx xxxxxx xx xxx xxxx xxx xxxxxx xx xxxxxx xxxx xx xxx xxxxxxxxx. Xx xxxxx xxx xxxx xx xxxx xxx xxxx xx xxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxx. Xx xxxx xxxxx xx xxx xxxx xxxx xx xxx xxxx xxx xxx xx x xxxxxxxx xxxxx xxxx xx xxx xxxxxxxxx.
+再起動をサポートするために、起動中に呼び出される **MarbleMaze::Initialize** メソッドは **MarbleMaze::LoadState** メソッドを呼び出します。 **MarbleMaze::LoadState** メソッドは状態を読み取り、ゲーム オブジェクトに適用します。 また、このメソッドは、ゲームが中断されたときにゲームが一時停止またはアクティブであった場合は、現在のゲームの状態を一時停止に設定します。 突然動作が始まってユーザーを驚かせることがないように、ゲームを一時停止にします。 また、ゲームが中断されたときにゲームがゲームプレイ状態でなかった場合は、メイン メニューに移動します。
 
 ```cpp
 void MarbleMaze::LoadState()
@@ -346,28 +346,32 @@ void MarbleMaze::LoadState()
 }
 ```
 
-> **Xxxxxxxxx**  Xxxxxx Xxxx xxxxx'x xxxxxxxxxxx xxxxxxx xxxx xxxxxxxx—xxxx xx, xxxxxxxx xxx xxx xxxxx xxxx xxxxxxx x xxxxx xxxxxxx xxxxx—xxx xxxxxxxx xxxx x xxxxxxxxx xxxxx. Xxxx xx xxxxxxxxxxx xxxxxx xxx xxx XXX xxxx.
+> **重要**  Marble Maze は、コールド スタート (つまり、以前の中断イベントがない、初めての起動) と、中断状態からの再開とを区別しません。 これは、すべての UWP アプリにお勧めする設計です。
 
  
 
-Xxx xxxx xxxxxxxx xxxx xxxxxxxxxxx xxx xx xxxxx xxx xxxxxxxx xxxxxxxx xxx xxxxx xxxx xxx xxxxx xxxxxxxxxxx xxxx xxxxx, xxx [Xxxxxxxxxx: Xxxxx xxxxxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/hh465118). Xxx xxxx xxxx xxxxx xxxxxxxxxxx xxxx, xxx [Xxxxx xxx xxxxxxxx xxxxxxxx xxx xxxxx xxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt299098).
+ローカル アプリケーション データ ストアでの設定とファイルの格納と取得の方法を示すその他の例については、「[クイック スタート: ローカル アプリケーション データ](https://msdn.microsoft.com/library/windows/apps/hh465118)」をご覧ください。 アプリケーション データについて詳しくは、「[設定と他のアプリ データを保存して取得する](https://msdn.microsoft.com/library/windows/apps/mt299098)」をご覧ください。
 
-##  Xxxx xxxxx
+##  次の手順
 
 
-Xxxx [Xxxxxx xxxxxx xxxxxxx xx xxx Xxxxxx Xxxx xxxxxx](adding-visual-content-to-the-marble-maze-sample.md) xxx xxxxxxxxxxx xxxxx xxxx xx xxx xxx xxxxxxxxx xx xxxx xx xxxx xxxx xxx xxxx xxxx xxxxxx xxxxxxxxx.
+視覚的なリソースを扱う際の主な手法については、「[Marble Maze サンプルへの視覚的なコンテンツの追加](adding-visual-content-to-the-marble-maze-sample.md)」をご覧ください。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxx xxxxxx xxxxxxx xx xxx Xxxxxx Xxxx xxxxxx](adding-visual-content-to-the-marble-maze-sample.md)
-* [Xxxxxx Xxxx xxxxxx xxxxxxxxxxxx](marble-maze-sample-fundamentals.md)
-* [Xxxxxxxxxx Xxxxxx Xxxx, x XXX xxxx xx X++ xxx XxxxxxX](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+* [Marble Maze サンプルへの視覚的なコンテンツの追加](adding-visual-content-to-the-marble-maze-sample.md)
+* [Marble Maze サンプルの基礎](marble-maze-sample-fundamentals.md)
+* [Marble Maze、C++ と DirectX での UWP ゲームの開発](developing-marble-maze-a-windows-store-game-in-cpp-and-directx.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

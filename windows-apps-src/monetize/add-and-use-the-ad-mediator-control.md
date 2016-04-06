@@ -1,36 +1,36 @@
 ---
-xx.xxxxxxx: YXYYXXXY-XXYY-YXYX-XXXX-YXYYXXXXYYXY
-xxxxxxxxxxx: Xxxxx xxx xxxxxxx xxx Xxxxxxxxx Xxxxxxxxx Xx Xxxxxx XXX, xxxxxx xxx xxxxxxxxxxxx xx xxxx xxxxx xx xxx xxx xx xxxxxxxx xxxxxxx xx xxxx xxx.
-xxxxx: Xxx xxx xxx xxx xx xxxxxxxx xxxxxxx
+ms.assetid: 3C03FDD8-FA61-4E7B-BDCA-3C29DFEA20E4
+description: Microsoft ユニバーサル広告クライアント SDK をインストールした後、このトピックの手順に従って、アプリで広告メディエーター コントロールを使います。
+title: 広告メディエーター コントロールの追加と使用
 ---
 
-# Xxx xxx xxx xxx xx xxxxxxxx xxxxxxx
+# 広告メディエーター コントロールの追加と使用
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
-Xxxxx xxx [xxxxxxx xxx Xxxxxxxxx Xxxxxxxxx Xx Xxxxxx XXX](install-the-microsoft-universal-ad-client-sdk.md), xxxxxx xxx xxxxxxxxxxxx xx xxxx xxxxx xx xxx xxx xx xxxxxxxx xxxxxxx xx xxxx xxx. Xxx x xxxx xx xxx xx xxxxxxxx xxx xxxxxxx xxxxx xxxxxxxxx xxxxxxxxx xx xx xxxxxxxxx, xxx [Xxxxxx xxx xxxxxx xxxx xx xxxxxxxx](select-and-manage-your-ad-networks.md).
+[Microsoft ユニバーサル広告クライアント SDK をインストール](install-the-microsoft-universal-ad-client-sdk.md) した後、このトピックの手順に従って、アプリで広告メディエーター コントロールを使います。 広告仲介で現在サポートされている広告ネットワークとプロジェクトの種類の一覧については、「[広告ネットワークの選択と管理](select-and-manage-your-ad-networks.md)」をご覧ください。
 
-## Xxx xxx xx xxxxxxxx xxxxxxx xx xxxx xxxxxxx
+## プロジェクトに広告メディエーター コントロールを追加する
 
 
-Xx xxx xx xxxxxxxx xx xxx xx xxxxxxxx xxxxxxx xx xxxx xxxxxxx:
+プロジェクトに広告メディエーター コントロールを追加するには:
 
-1.  Xx Xxxxxx Xxxxxx, xxxx xxxx xxxxxxx.
-2.  Xx xxx'xx xxxxxx xx xxxxxxxxx xx xx xxx xxxxx xx xxxxxxx xxxxxxxxxx xxxx xxx xx xxx [xx xxxxxxxx](select-and-manage-your-ad-networks.md) xxxxxxxxx xx xx xxxxxxxxx, xxxxxx xxx xxxxxxxx xx xxxxxxxxxxxxxx xxx xxx xx xxx xxxxxxxxxx xxxxxx xxxxxxxxxx.
-3.  Xx **Xxxxxxxx Xxxxxxxx**, xxxxxx xxx xxxx xx xxxx xxx xxxxx xxx xxxx xx xxxx xxx xxx xxxx xxxxxx-xxxxx xxx xxxx xx xxxx xx xx xxx xxxxxxxx.
-4.  Xxxx xxx **Xxxxxxx**, xxxx x xxx **XxXxxxxxxxXxxxxxx** xxxx xxx xxxxxxxx (xx xxxx xx xxxx xxx xxxxxxx xxxx xxx xxxxxxxx, xxx xxxx xxxx XXXX xxxx). Xxxxxxxx xxx xxxxxxx xx xxx xxxxxxxx xxxxx xxx'x xxxx xxxx xxx xx xxxxxxx. Xxx xxx xxx xxxxxxxx xxxxxxxx xx xxx xxxx xx xxxxxxx xxx xx xxxx xxxx xxx xxxx xx xxxx xxx.
+1.  Visual Studio で、プロジェクトを開きます。
+2.  広告の仲介によってサポートされているいずれかの [広告ネットワーク](select-and-manage-your-ad-networks.md) で既に収益を得ているアプリに広告の仲介を追加する場合は、事前に既存の広告の実装とそのすべての参照を削除してください。
+3.  **ソリューション エクスプローラー**で、広告を表示するページを見つけ、ダブルクリックして、デザイナーで開きます。
+4.  **[ツールボックス]** から新しい **AdMediatorControl** をデザイナーにドラッグします (必ず XAML コードではなくデザイナーにコントロールをドラッグしてください)。 広告を表示する場所にコントロールを配置します。 アプリの複数の領域に広告を表示する場合は、複数のコントロールを追加できます。
 
-    Xxx **XxXxxxxxxxXxxxxxx** xx xxxxxxx xx xxx xxxxxxxxx **Xxxxxxx** xxxxxxxxx:
+    **AdMediatorControl** は、**ツールボックス**の次の場所にあります。
 
-    -   Xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxx, xxx xxx **XxXxxxxxxxXxxxxxx** xxxxx xxx **XxXxxxxxxx Xxxxxxxxx** xxxxxxx.
-    -   Xx x Xxxxxxx Y.Y xx Xxxxxxx Xxxxx Y.Y xxxxxxx xxxxx X# xx Xxxxxx Xxxxx xxxx XXXX, xxx xxx **XxXxxxxxxxXxxxxxx** xxxxx xxx **XxXxxxxxxx** xxxxxxx.
-    -   Xx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxxx, xxx xxx **XxXxxxxxxxXxxxxxx** xxxxx xxx **Xxx Xxxxxxx Xxxxx Xxxxxxxx** xxxxxxx.
+    -   ユニバーサル Windows プラットフォーム (UWP) プロジェクトでは、**[AdMediator Universal]** セクションの **[AdMediatorControl]** を使います。
+    -   C# または Visual Basic と XAML を使った Windows 8.1 または Windows Phone 8.1 プロジェクトでは、**[AdMediator]** セクションの **[AdMediatorControl]** を使います。
+    -   Windows Phone Silverlight プロジェクトでは、**[すべての Windows Phone コントロール]** セクションの **[AdMediatorControl]** を使います。
 
-    **Xxxx**  Xxxx xxx xxxx xxx **XxXxxxxxxxXxxxxxx** xxxxxxx xx xxx xxxxxxxx xxx xxx xxxxx xxxx xx x XXX, Xxxxxxx Y.Y, xx Xxxxxxx Xxxxx Y.Y xxxxxxx xxxxx X# xx Xxxxxx Xxxxx xxxx XXXX, Xxxxxx Xxxxxx xxxx xxx xxxxxxxx xx xxxxxxxx xxxxxxxx xxxxxxxxx xx xxxx xxxxxxx, xxx xxx xxxxxxx xxx'x xxxxx xx xxx xxxxxxxx xxx. Xx xxx xxx xxxxxxx, xxxxx XX xx xxx xxxxxxx xxxxxxxxx xx Xxxxxx Xxxxxx, xxxx xxxxxxx xxxxxxx xxx xxx xxxxxxxx xx xxxxxxx, xxx xxxx xxxx xxx xxxxxxx xxxx xx xxx xxxxxxxx xxxxx. Xx xxx xxxxx xxx'x xxxxxxxxxxxx xxx xxx xxxxxxx xx xxx xxxxxxxx, xxxx xxxx xxxx xxxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxxxxx xxxxxxxxxxxx xxx xxxx xxx (xxx xxxxxxx, **xYY**) xxxxxx xxxx **Xxx XXX**. Xxx xxxxxxx xxxxxx xx xxxxx xx xxx xxxxxxxx xx xxx xxxxxxx xxxxxxx **Xxx XXX** xxx xxx xxxxx xxxxxxxx.
+    **注**  C# または Visual Basic と XAML を使った UWP、Windows 8.1、または Windows Phone 8.1 プロジェクトで、最初に **AdMediatorControl** コントロールをデザイナーにドラッグしたときに、Visual Studio によって、必要な広告メディエーター アセンブリ参照がプロジェクトに追加されますが、コントロールはまだデザイナーに追加されていません。 コントロールを追加するには、Visual Studio によって表示されるメッセージで [OK] をクリックし、デザイナーが更新されるまで数秒待ちます。その後、もう一度コントロールをデザイナーにドラッグします。 それでもコントロールをデザイナーに正常に追加できない場合は、プロジェクトのターゲットが **[Any CPU]** (任意の CPU) ではなく、アプリに該当するプロセッサ アーキテクチャ (たとえば、**[x86]**) であることを確認します。 プロジェクトのビルド プラットフォームのターゲットを **[Any CPU]** (任意の CPU) にしている場合、このコントロールをデザイナーに追加できません。
 
-5.  Xxxxxx Xxxxxx xxxx xx xx xxxxxxxx xxxxxxxx xxxxxxxxx xx xxxx xxxxxxx xxx xxxxxxx XXXX xxx xxx xx xxxxxxxx xxxxxxx xxxx xxx xxxxxxx xxxx, xxxxxxxxx x xxxxxx XX xxx x xxxx xxx xxx xxxxxxx. Xxx xxxxxxxx xxxxxxxxx xxx xxx XXXX xxxxxx xxxxxxxxx xx xxxx xxxxxx xxxxxxxx. Xxx xxxxxxx, xxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxx xxxxxxxx xxxx xx **Xxxxxxxxx.XxXxxxxxxx.Xxxxxxxxx**, xxx xxx xxxxxxxxx XXXX xx xxxxxxx xx xxx xxxxxxxxx xxxxxxx.
+5.  Visual Studio で、プロジェクトに広告メディエーター アセンブリ参照を追加し、現在のページに広告メディエーター コントロールの XAML (コントロールの一意の ID と名前など) を挿入します。 アセンブリ参照と XAML はターゲット プラットフォームによって異なります。 たとえば、ユニバーサル Windows プラットフォーム (UWP) アプリの場合、アセンブリ名は **Microsoft.AdMediator.Universal** であり、生成される XAML は次の例のようになります。
 
     ```xml
     // Code that gets added to the XAML page header
@@ -43,126 +43,126 @@ Xx xxx xx xxxxxxxx xx xxx xx xxxxxxxx xxxxxxx xx xxxx xxxxxxx:
          VerticalAlignment="Top" Width="300"/>
     ```
 
-    Xxx **Xxxx** xxxxxxx xxxxx xxx xx xxxxxxxx xxx xxxxxxxx xxxxxxx xx xxxx xxx xxxx xxx xxxxxxxxx xxxx xx xxxxxxxxx. Xxx xxx xxxxxx xxxx xx xxxxxxxx xxx’x xxxx, xxx xx xxxx xxx xx xxxxxx xx xxxxxxxxx xxx **Xx** xxxxxxx. Xxxx **Xx** xxxx xx xxxxxx xxx xxxx xxxxxxx xxxxxx xxxx xxx.
+    **Name** 要素は、広告の仲介を構成するときにアプリ内の特定のコントロールを識別するのに便利です。 これは任意の名前に変更できますが、**Id** 要素は決して変更または複製しないでください。 この **Id** は、アプリ内のコントロールごとに一意である必要があります。
 
-6.  Xxxxxx xxx xxxx xxx xxxxxxxx xx xxx xxxxxxx xx xxxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxx xxxx xxx xxxxxxxx](#adjust-size-and-position).
+6.  必要に応じてコントロールのサイズと位置を調整します。 詳しくは、「[サイズと位置の調整](#adjust-size-and-position)」をご覧ください。
 
-## Xxxxxxxxx xx xxxxxxxx
+## 広告ネットワークを構成する
 
-Xxxxx xxx’xx xxxxx xxx xxx xxxxxxxx xxx’x xxxx, xxx’xx xxxxx xx xxxxxxxxx xxx xx xxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxxx.
+必要なすべてのコントロールを追加した後、接続済みサービスから広告ネットワークを構成できます。
 
-**Xxxxxxxxx**  Xx xxx xxx xx xxxxxxxxxx XxXxxxxxxxXxxxxxx xxxxx, xxx’xx xxxx xx xxxxxxxxx xx xxxxxxx Xxxxxxxxx Xxxxxxxx xxxxx. Xxxxxxxxx, xxx xxx xxxxxxx xxxx xxx xx xxxx xx xxx xx xxxxxxxxx.
+**重要**  後で別の AdMediatorControl を追加した場合は、接続済みサービスからもう一度構成する必要があります。 そうしないと、新しいコントロールで広告の仲介を使用できません。
 
-Xx xxxxxxxxx xxx xx xxxxxxxx:
+広告ネットワークを構成するには、次のように操作します。
 
-1.  Xxxxx-xxxxx xxx xxxx xx xxx xxxxxxx xx Xxxxxxxx Xxxxxxxx, xxxxx **Xxx**, xxx xxxx xxxxx **Xxxxxxxxx Xxxxxxx…** xx xxxxxx xxx **Xxx Xxxxxxxxx Xxxxxxx** xxxxxx (Xxxxxx Xxxxxx YYYY) xx **Xxxxxxxx Xxxxxxx** xxxxxx (Xxxxxx Xxxxxx YYYY).
-2.  Xx xxx xxx xxxxx Xxxxxx Xxxxxx YYYY, xxxxx **Xx Xxxxxxxx** xxx xxxx xxxxx **Xxxxxxxxx** xx xxxx xxx **Xx Xxxxxxxx** xxxxxx. Xx xxx xxx xxxxx Xxxxxx Xxxxxx YYYY, xxxxxx xxxxx **Xx Xxxxxxxx** xx xxx xxxx xxxx xx xxx **Xxxxxxxx Xxxxxxx**.
+1.  ソリューション エクスプローラーでプロジェクトの名前を右クリックし、**[追加]** をクリックします。次に **[接続済みサービス]** をクリックして **[接続済みサービスの追加]** ウィンドウ (Visual Studio 2015) または **[サービス マネージャー]** ウィンドウ (Visual Studio 2013) を表示します。
+2.  Visual Studio 2015 を使っている場合は、**[広告メディエーター]** をクリックし、**[構成]** をクリックして **[広告メディエーター]** ウィンドウを開きます。 Visual Studio 2013 を使っている場合は、**[サービス マネージャー]** の左側のウィンドウで、**[広告メディエーター]** をクリックします。
 
-    Xxx XxXxxxxxxx.xxxxxx xxxx xx xxxxx xx xxxx xxxxxxx. Xxxx xxxx xx xxxxx xxxxxxx xx xxxxxxx xxxxxxxxxxxxx xxxxxxxx xxx xxxxx xxxxxxx xx xxxx xxxxxxx.
+    AdMediator.config ファイルがプロジェクトに追加されます。 このファイルは、最初の広告ネットワーク構成の設定がプロジェクトでローカルに保存される場所です。
 
-3.  Xx xxx **Xx Xxxxxxxx** (Xxxxxx Xxxxxx YYYY) xx **Xxxxxxxx Xxxxxxx** (Xxxxxx Xxxxxx YYYY) xxxxxx, xxxxx **Xxxxxx xx xxxxxxxx**, xxxxxx xxx xx xxxxxxxx xxx xxxx xx xxx, xxx xxxxx **XX** xx xxx **Xxxxxx xx xxxxxxxx** xxxxxx.
+3.  **[広告メディエーター]** ウィンドウ (Visual Studio 2015) または **[サービス マネージャー]** ウィンドウ (Visual Studio 2013) で、**[広告ネットワークの選択]** を選び、使用する広告ネットワークを選んで、**[広告ネットワークの選択]** ウィンドウで **[OK]** をクリックします。
 
-    **Xxx**  Xx’x x xxxx xxxx xx xxx xxx xxx xxxxxxxx xxxx xxx xxxx xxxxxxxx xxxx, xxxx xx xxx xxx’x xxxx xx xxx xxx xx xxxx xx xxxx xxx xxxxx xxxx. Xxxxx xxx xxx xx xxxxxxxxx, xxx'xx xx xxxx xxxxxxxxx xxx xxxxx xxxx xxxxxxx xx xxxx xx Xxx Xxxxxx (xx xxxxx xx xxx x xxxxxxx xxx xxxx'x xxxxxx) xxxxxxx xxxxxx xx xxxx xxxx xxxxxxx xxx xxxxxxxx xxx xxx.
+    **ヒント**  アプリですぐにすべての機能を使う予定がない場合でも、アカウントがあるすべてのネットワークを追加することをお勧めします。 アプリ公開後は、コードを変更してアプリを再申請しなくても、デベロッパー センターで各広告ネットワークの利用頻度を構成 (または、使ったことがない広告ネットワークの使用を開始) できます。
 
-    Xxxxxx Xxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxx xxx xxx xxxxxxxx xx xxxxxxxx xxx xxxx xxxxx xxxxxxxx xxxxxxxxxx xx xxxx xxxxxxx. Xxxxx xxxx xxxxxxx xx xxxxxxxx, xxxxx **XX** xx xxx **Xxxxxxxx Xxxxxx** xxxxxx xxx.
+    Visual Studio により、選択されている広告ネットワークに必要なアセンブリが取得され、それらのアセンブリ参照がプロジェクトに追加されます。 このプロセスが完了したら、**[フェッチの状態]** ダイアログ ボックスの **[OK]** をクリックします。
 
-4.  Xx xxx **Xx Xxxxxxxx** (Xxxxxx Xxxxxx YYYY) xx **Xxxxxxxx Xxxxxxx** (Xxxxxx Xxxxxx YYYY) xxxxxx, xxxxxxxxxx xxxxxx xxxx xxxxxxx xxx xxxxx **Xxxxxxxxx** xx xxxxx xxx xxxxxxxxxxxxx xxxxxxxxxxx xxx xxxx xxxxxxx xx xxx xxxxx xxxxxxx xxx xxx. Xxxx xxxxxxxxxxx xx xxxxx xx xxx XxXxxxxxxx.xxxxxx xxxx xx xxxx xxxxxxx. Xxx'xx xx xxxx xx xxxxxx xxxx xxxxxxxxxxx xxxx xxx xxxxxxxxx xx xxxxxxx xxxxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxxx xxx xxx xxxxxxxxxxx xx xxxxxxxxx](submit-your-app-and-configure-ad-mediation.md).
-    **Xxxx**  Xx xxx xx xxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxx xxxxxx xxxx xxxx, xx xxxxxxxxx xxxx xxxxxxxxxxxxx xxx xxxx xxxxxxxxxxxxx xxxxxx xxxx xxx xxx xxxx xxx xx xxxx xxxxxxxxxxx xxxxxxxx (xxx XXX xxx Xxxxxxx Y.Y XXXX xxxx) xx xx xxx xxxxxxxx xx xxxxxx (xxx Xxxxxxx Xxxxx xxxx).
+4.  **[広告メディエーター]** ウィンドウ (Visual Studio 2015) または **[サービス マネージャー]** ウィンドウ (Visual Studio 2013) で、オプションで各ネットワークを選び、**[構成]** をクリックして、アプリのテスト中に使う各ネットワークの構成情報を入力します。 この情報は、プロジェクトの AdMediator.config ファイルに保存されます。 この情報は、Windows デベロッパー センター ダッシュボードで広告ネットワークの動作を構成するときに変更できます。 詳しくは、「[アプリの提出と広告の仲介の構成](submit-your-app-and-configure-ad-mediation.md)」をご覧ください。
+    **注**  開発用のコンピューター上 (UWP および Windows 8.1 XAML アプリ) またはエミュレーターやデバイス上 (Windows Phone アプリ) でアプリを実行するときに、この手順で構成情報を入力しなかった場合、広告の仲介では自動的にテスト用の構成値が使われます。
 
-5.  Xx xxx **Xx Xxxxxxxx** (Xxxxxx Xxxxxx YYYY) xx **Xxxxxxxx Xxxxxxx** (Xxxxxx Xxxxxx YYYY) xxxxxx, xxxxxxx xxxx xxxx xx xxxxxxx xxx xxxx xxxxxxxx xxxxx **Xxxxxxx**. Xxxxx **XX** xx xxxxxx xxx xxxxxxx xx xxxx xxxxxxx.
+5.  **[広告メディエーター]** (Visual Studio 2015) または **[サービス マネージャー]** (Visual Studio 2013) ウィンドウで、選択した各広告ネットワークが **[フェッチ: 完了]** と表示されていることを確認します。 **[OK]** をクリックして、プロジェクトへの変更内容を送信します。
 
-**Xxxx**   Xx xxx xxxxx xxxxxxx xx x xxxxx xxxxxxx xx xxx Xxxxxxxxx Xxxxxxxxx Xx Xxxxxx XXX, xxx’xx xxxx xx xxxxxx **Xxxxxxxxx Xxxxxxxx** xxxxx xx xxxxxx xxx xxxxxxxxxxxxx xxxxxxx xx xxxxxxx XXXx xxx xxxxxxxxx xxxxxxx.
+**注**   後で Microsoft ユニバーサル広告クライアント SDK の新しいバージョンにアップグレードする場合は、**[接続済みサービス]** を再起動する必要があります。それにより、自動的に取得された広告ネットワークの DLL がすべて正しく更新されます。
 
-### Xxxxxxx xxxxxxxx xxxxxxxxxxxx
+### 必要な機能を宣言する
 
-Xxxx xx xxxxxxx xxx xxxxxxx xxxxxxx xxx xxxxxxxxxxxx. Xxxxx xxx xxxxx xx xxxx xxxxxxxx xx xxx **Xx Xxxxxxxx** (xxx Xxxxxx Xxxxxx YYYY) xx **Xxxxxxxx Xxxxxxx** (xxx Xxxxxx Xxxxxx YYYY) xxxxxx. Xx xxxx xx xxxxxxx xxx xx xxx xxxxxxxx xxxxxxxxxxxx xx xxxx xxx'x xxxxxxxx xx xxxx xxx xxx xxx xxxxxxxx xxxxxxxxx.
+各広告ネットワークには、特定のアプリ機能が必要な場合があります。 そのような機能は各プロバイダーによって **[広告メディエーター]** (Visual Studio 2015 用) または **[サービス マネージャー]** (Visual Studio 2013 用) ウィンドウに表示されます。 広告を適切に表示できるように、必要なすべての機能をアプリのマニフェストで宣言してください。
 
-Xxx xxxxxxxxx xxxxxxxxxx xxxxx xxx xxxxxxxx xxxxxxxxxxxx xxx xxxxxxx xx xxxxxxxx xx x Xxxxxxx Y.Y xx Xxxxxxx Xxxxx Y.Y XXXX xxx.
+次のスクリーンショットは、Windows 8.1 または Windows Phone 8.1 XAML アプリの複数の広告ネットワークに必要な機能を示しています。
 
-![xxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxxx](images/ad-med-8.jpg)
+![すべての参照が取得済みと表示されているサービス マネージャー](images/ad-med-8.jpg)
 
-Xxx xxxxxxxxx xxxxxxxxxx xxxxx xxx xxxxxxxx xxxxxxxxxxxx xxx xxxxxxx xx xxxxxxxx xx x Xxxxxxx Xxxxx Y.Y Xxxxxxxxxxx xxx.
+次のスクリーンショットは、Windows Phone 8.1 Silverlight アプリの複数の広告ネットワークに必要な機能を示しています。
 
-![xxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxxx](images/ad-med-6.jpg)
-### Xxxxx xx xxxxxxx XXXx xxxxxxxx
+![すべての参照が取得済みと表示されているサービス マネージャー](images/ad-med-6.jpg)
+### 広告ネットワークの DLL を手動で取得する
 
-Xx xxxx xxxxx, xxx xxx xxx xxxx xxxxxxx XXXx xxxx xxx xxxxxxx. Xx xxxx xxxx, xxx'xx xxxx xx xxx xxxx xxxxxxxx. Xxx xxxxx xx xxxxxxxx xxxxxxxxxx xxxxxxxxxx, xxx [Xxxxxxxxx xxx xxxxxxxx xxxx xx xxxxxxxx](select-and-manage-your-ad-networks.md).
+場合によっては、特定の DLL が取得されなかったことが示される可能性があります。 この場合、それらを手動で追加する必要があります。 個別のアセンブリをダウンロードするリンクを確認するには、「[広告ネットワークの選択と管理](select-and-manage-your-ad-networks.md)」をご覧ください。
 
-**Xxxx**  Xxxx xxxxxx XXXx xxxxxxxx, xxx xxx xxx xx xxxxx xxxxxxx xxxxxx "X xxxxxxxxx xx x xxxxxx xxxxxxx xx xxxxxxxxxxxx xxxxxxxx xxxxxx xx xxxxx xx xxx xxxxxxx." Xx xxxxxxx xxxx xxxxx, xxxxx-xxxxx xxx XXX xx Xxxxxxxx xxx xxxx xxxxxx **Xxxxxxxxxx**. Xx xxx Xxxxxxxx xxxxxxx, xxxxx **Xxxxxxx**.
+**注**  DLL を手動で追加するときに、"より新しいバージョンのアセンブリまたは互換性のないアセンブリへの参照は、プロジェクトに追加できません" というエラー メッセージが表示される場合があります。 このエラーを解決するには、エクスプローラーで DLL を右クリックし、**[プロパティ]** をクリックします。 [セキュリティ] セクションで、**[ブロックの解除]** をクリックします。
 
-![xxxxxxx xxxxxx xxx xxxxxxxxx xxxxx xxxxxxx](images/ad-med-4.png)
-## Xxxxxx xxxx xxx xxxxxxxx
+![エラー メッセージを解決するための [ブロックの解除] ボタン](images/ad-med-4.png)
+## サイズと位置を調整する
 
-Xxx xxx xxxxxxxxx xxx xxxx xxx xxxxxxxx xx xxx xx xxxxxxxx xxxxxxx xx xxx xxxxxxxx xx xx xxxx XXXX xxxx. Xxxx xxxx xxxx xxxx xxxx xxxx xx xxxxx xxxxxx xx xxx xxx xxx xxx xxx'xx xx xxxxxxxxxx xxxx xxxx xx xxxxxxxx. Xxxx xx xxxxxxxx xxx xxx xxxxx xx xx xx xxxx xxxxxx xxxx xxx xxxxxx xxxx xxx'x xxxxx xxxxxx xxx xxx xx xx xxxxxxx xx xxxx. Xx xxx xx xxxx xx xxxxx xxxx xx xxxxxx xxxx xxx xxxxxxx xxxx, xxx xxx xxxxxx xxx xxxxxx xxxx xx xxxxxxxxxxx xxxx xxxxxxx xx.
+デザイナーまたは XAML コードでは、広告メディエーター コントロールのサイズと位置を構成できます。 このサイズが、広告ネットワークから表示するすべての広告を表示できる十分な大きさであることを確認してください。 キャンバス サイズが広告全体を表示できる十分な大きさでないことが検出されると、一部の広告ネットワークから広告が表示されない可能性があります。 広告ユニットのいずれかが既定のサイズより大きくなる場合は、最大の大きさの広告に合わせてキャンバスのサイズを調整できます。
 
-Xxxx xxx xxxx xxx xxxxxxx xx xxx xxxxxxxx, xxx xxxxxxx xxxxxxx xxxxx xxx:
+コントロールをデザイナーにドラッグした場合の既定のコントロールのサイズは次のとおりです。
 
--   XXX xxx Xxxxxxx Y.Y XXXX: YYY xxxxx x YYY xxxxxx.
--   Xxxxxxx Xxxxx Y.Y XXXX: YYY xxxxx x YY xxxxxx.
--   Xxxxxxx Xxxxx Y xxx Xxxxxxx Xxxxx Y.Y Xxxxxxxxxxx: YYY xxxxx x YY xxxxxx.
+-   UWP および Windows 8.1 XAML: 幅 300 x 高さ 250
+-   Windows Phone 8.1 XAML: 幅 400 x 高さ 67
+-   Windows Phone 8 および Windows Phone 8.1 Silverlight: 幅 480 x 高さ 80
 
-Xxx xxx xxxxxxxx xxx xxxxxxx xx xxxxx xxxxx xxx **Xxxxx** xxx **Xxxxxx** xxxxxxxx xxxxxxxxxx, xx xxxxx xxxxx.
+次に示すように、オプションの **Width** パラメーターと **Height** パラメーターを使って既定の広告サイズを上書きできます。
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Width"] = 400;
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Height"] = 80;
 ```
 
-Xxx xxx xxxx xxxxxxx xxx xxxx xxxxxxx xx xxxxxxxxxx xx xxxxxxxxxxx x xxxxxxx xx xxxxx xxx xxxxxxxxxx xxxxxxxxx xx xxxx xxx'x xxxxx. Xxx xxxx xx xxxxxxxx, xxx xxx xxx xxxxxxxx xxxxxxxxxx xx xxxx xxxxxxxxxxx. Xxx xxxxxxx, xx xxxxx xxx xxxx Xxxxxxxxx Xxxxxxxxxxx xx xxx xxxxxx xxxx:
+アプリのニーズに応じてさまざまなサイズと配置に対応できるように、各コントロールを配置する方法を指定することもできます。 一部の広告ネットワークについては、オプションのパラメーターを使って調整できます。 Microsoft Advertising の広告を左下に配置する例を次に示します。
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["HorizontalAlignment"] = HorizontalAlignment.Left;
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["VerticalAlignment"] = VerticalAlignment.Bottom;
 ```
 
-### Xxxxxxxxx xx xxxxx xxx Xxxxxxxxx Xxxxxxxxxxx
+### Microsoft Advertising 用にサポートされる広告サイズ
 
-Xxxxxxxxx Xxxxxxxxxxx xxxx xxxxxxxx xxx xx xxx xxxxxxxxx xxxxxxxx xxxxx xxxxxxxxxxx xx xxx Xxxxxxxxxxx Xxxxxxxxxxx Xxxxxx (XXX) xxx xxxx xxxxxxx xx xxx xxxxxxxxx xxxxxxxxx.
+Microsoft Advertising は、次のプラットフォームで実行されるアプリについて、Interactive Advertising Bureau (IAB) が推奨する次の標準サイズの広告のみをサポートします。
 
--   Xxxxxxx YY xxx Xxxxxxx Y.Y:
-    -   YYY x YYY
-    -   YYY x YYY (Xxxx xxxx xxxx xxx xxx xxx xxxxxxxxx xx xxxx xxxx. Xx xxxxxxxxx xxxxx xxxxx xxxxx xx xxxxxxxx xxx xxxx xxxx xxx xXXX.)
-    -   YYY x YYY
-    -   YYY x YYY
-    -   YYY x YY
--   Xxxxxxx YY Xxxxxx, Xxxxxxx Xxxxx Y.Y xxx Xxxxxxx Xxxxx Y:
-    -   YYY x YY
-    -   YYY x YY
-    -   YYY x YY
-    -   YYY x YYY
+-   Windows 10 と Windows 8.1:
+    -   160 x 600
+    -   250 x 250 (このサイズで使える広告はほとんどありません。 フィル レートと eCPM を最大化するには他のサイズを使うことをお勧めします)
+    -   300 x 250
+    -   300 x 600
+    -   728 x 90
+-   Windows 10 Mobile、Windows Phone 8.1、Windows Phone 8:
+    -   300 x 50
+    -   320 x 50
+    -   480 x 80
+    -   640 x 100
 
-Xxx xxxxx xxxx xx xxxxxxx xx xx xxxxxxxx xxxxxxx xxxx xxxx xxxxx'x xxxxx xxx xx xxx xx xxxxx xxxxxxxxx xx Xxxxxxxxx Xxxxxxxxxxx (xxx xxxxxxx, xxx xxxxx xxxx xx xx xxxx xx x xxxxxxxxx xxxx xx x xxxxxx xxx xxx xxxx xxx'x XX, xx xx xxx xxx xxxx xxxxxxxxx xxxxx xx xxxxxxxx xxxx xxxxxxx xxxxx xx xxxxx). Xx xx xxxx, xxxxxxx xxx xxxxx xxxxxxx xxxx xxx xxxx xx xxx xxxxxxxx xx xx xxxx XXXX xxxx, xxx xxxx xxxxxx xxx **Xxxxx** xxx **Xxxxxx** xxxxxxxx xxxxxxxxxx xxx Xxxxxxxxx Xxxxxxxxxxx xx xxx xxxxxxx xxxxxxxxx xxxx xxxx xxxx xxx xxxxxx xxx xxxxxx xx xxx xxxxxxx. Xxx xxxxxxx xxxx xxxxxxx xx xxx xxxxx xxxx xxx xxxxxxx xx xxx xxxxxxxx, xxx Xxxxxxxxx Xxxxxxxxxxx xxxx xxxxx xxx xxxx xxxxx xxx xxxx xxx xxxxxxx xxxxx xxx **Xxxxx** xxx **Xxxxxx** xxxxxxxx xxxxxxxxxx.
+指定したい広告メディエーター コントロールのサイズが、Microsoft Advertising がサポートする広告サイズのいずれにも該当しない場合があります (たとえば、異なるサイズの方がアプリの UI により適している場合や、上記以外の広告サイズをサポートする他の広告ネットワークをターゲットにしている場合などに、こうした状況が発生します)。 他のサイズを指定するには、希望する正確なコントロール サイズをデザイナーまたは XAML コードに指定し、Microsoft Advertising のオプション パラメーター **Width** および **Height** に対してコントロールの境界内に収まる、サポート対象の最も近いサイズを割り当てます。 コントロールはデザイナーで指定した正確なサイズで表示されますが、Microsoft Advertising はオプション パラメーター **Width** および **Height** を使って指定したサイズに適合する広告を提供します。
 
-Xxx xxxxxxx, xx xxx xxxx x XXX xxx xxx xxx xxxx xxxx xx xxxxxxxx xxxxxxx xx xxxxxxx xx YYY x YYY, xxx xxx xxxxxxx xx YYY x YYY xx xxx xxxxxxxx xx xx xxxx XXXX xxxx. Xxxx, xxxxxx xxx **Xxxxx** xxxxxxxx xxxxxxxxx xx YYY xxx xxx **Xxxxxx** xxxxxxxx xxxxxxxxx xx YYY xxx Xxxxxxxxx Xxxxxxxxxxx, xx xxxxx xx xxx xxxxxxxxx xxxx.
+たとえば、UWP アプリがあり、広告メディエーター コントロールを 300 x 300 サイズで表示する場合、デザイナーまたは XAML コードでコントロールを 300 x 300 に設定します。 その後、次のコードに示すように、Microsoft Advertising のオプション パラメーター **Width** に 300、**Height** に 250 を割り当てます。
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["Width"] = 300;
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["Height"] = 250;
 ```
 
-Xx xxxxxx xxxx xxxx xxxx xxxxxxxx xxx xxxxxxxxxx xxxx Xxxxxxxxx Xxxxxxxxxxx, [xxxx xxxx xx xxxxxxxxx xxxxxxxxxxxxxx](test-your-ad-mediation-implementation.md) xxx xxxx xxxx xxxx xxxx xxx xxxx Xxxxxxxxx Xxxxxxxxxxx xxx xxxxxxxxx.
+サイズ設定が Microsoft Advertising と互換性があることを検証するには、[広告の仲介の実装をテスト](test-your-ad-mediation-implementation.md) して、Microsoft Advertising のテスト広告が表示されることを確認します。
 
-## Xxxxx, xxxxxx, xxx xxxxxxx xx xxxxxxxxx
+## 広告の仲介の一時停止、再開、無効化
 
-Xx xxx’x xxxx xx xxxxx xx xxxxxxxxx xxx xxx xxxxx xxxxxx xx xxxx xxxxxx xxx xxx xxxxxxx, xxx xxx XxXxxxxxxxXxxxxxx.Xxxxx() xxxxxx. Xxxx xxxx xxxx xxx xx xxxx, xxx xxxx xxxxxx xx xxxx xxxxxxxx xxxxxxx xxxxx xxx xxxxxx xxxxxxxxx xx xxxxxxx xxx XxXxxxxxxxXxxxxxx.Xxxxxx() xxxxxx.
+アプリの実行中に、指定した任意の時間だけ広告の仲介を一時停止するには、AdMediatorControl.Pause() メソッドを使います。 その場合、AdMediatorControl.Resume() メソッドを呼び出して仲介を再開するまで、最新の広告が継続して表示されることに注意してください。
 
-Xx xxxxxxx xxx xx xxxxxxxx xxxxxxxxxx, xxx xxx XxXxxxxxxxXxxxxxx.Xxxxxxx() xxxxxx. Xxxx xxxx xxxxxx xxx xxx xxxx xxx xxxxxxx, xxx xx xxxx xxxxxxxx xxx xxxxxx xxxxxxxxx xx xxx xxxxxxxx. Xxx xxx xxxx XxXxxxxxxxXxxxxxx.Xxxxxx() xx xxxxxx xxxxxxxxx, xxx xxxx xxxx xxxxxxx xxxx xxxx xx xxxxxx xxxx xxxxx xxxxx xx xxxxxxxxx xxx xxxx xxxxxxxx.
+広告メディエーターを完全に無効にするには、AdMediatorControl.Disable() メソッドを使います。 このメソッドを使うと、表示されているすべての広告が削除され、メディエーターのメモリ使用量を最小限に抑えることができます。 AdMediatorControl.Resume() を呼び出して仲介を再開できますが、仲介を無効にしていた後では起動時間が通常より遅くなることに注意してください。
 
-## Xxx xxxxxxxx
+## タイムアウトを設定する
 
-Xxx xxx xxxxxxx xxx xxxxxx xx xxxxxxx (xxxx Y-YY) xxx xxxxx xx xxxxxxxxx xxxxxx xxxx xxxxx xxxxxxxxxx xx xx xxxx xxxx xx xxxxxxx xxxxxx xxxxxxxxxx xxxx xxxxxxx xxx xxxxxx x xxxxxxx xx xxxxxxx xxxxxxx xxxxxxx. Xx xxxxxxx, xxx xxxxxxx xxx xxx xx xxxxxxxx xx YY xxxxxxx.
+広告の仲介から広告ネットワークに広告を要求した後、その要求を破棄して別のネットワークへの要求を実行するまでの待機時間を秒数 (2 ～ 60) で指定できます。 既定では、すべての広告ネットワークのタイムアウトは 15 秒間です。
 
-Xxx xxxx xxxxx xxxxx xxx xx xxxxxxx x xxxxxxx xxxxxxxx xxx Xxxxxxxxx Xxxxxxxxxxx. Xxx xxx xxxxxx xxx xxxxxxxxx xxx xxxxxxxx xx xxxxxx.
+次のコードは、Microsoft Advertising のタイムアウト時間を指定する方法を示しています。 必要に応じてタイムアウト時間とネットワークを変更できます。
 
 ```CSharp
 myAdMediatorControl.AdSdkTimeouts[AdSdkNames.MicrosoftAdvertising] = TimeSpan.FromSeconds(10); 
 ```
 
-**Xxxx**  Xxx xxx xxxxxxxxxxxxx xxx xxx xxxxxxx xxxxx xx xxx **Xxxxxxxx xxxx xxx** xxxx xx xxx Xxx Xxxxxx xxxxxxxxx. Xx xxx xxx xxx xxxxxxx xx xxxx xxx xx xxx xxxxxxxxx, xxxx xxxxx xxx xxx xx xxxx xxxxxxxxx xxx xxxxxxxxx xxxxx.
+**注**  代わりに、デベロッパー センター ダッシュボードの **[広告で収入を増やす]** ページでもタイムアウト値を設定できます。 コードとダッシュボードでタイムアウトを設定している場合は、コードで設定したその値がダッシュボードの値よりも優先されます。
 
-## Xxxxx xxxxxxxx
+## イベント処理
 
-Xxxxxx xxxx xx xxx xxxxxx xxx xxxxxxx xx xxxxxxxxx xxxxxx xxx xxxx xxxx xxxxxxxxxxxxxxx. Xxx xxxx xxxxxx xxxxx xxxx xxxxx xxxxxxxx xxx xxxxxxxx xxxxxx xxxx x xxxxxxx.
+イベントをログに記録して広告の仲介のエラーをキャプチャするコードを追加すると、トラブルシューティングに役立ちます。 次のコード例は、コントロールから特定のイベントのイベント ハンドラーを追加します。
 
 ```CSharp
 // add this during initialization of your app
@@ -196,11 +196,11 @@ void AdMediator_Bottom_AdError(object sender, Microsoft.AdMediator.Core.Events.A
 }
 ```
 
-## Xxxxxx xxxxxxxxx xxxxxxxxxx xxxx xx xxxxxxxx
+## 広告ネットワークのハンドルされない例外を処理する
 
-**Xxxx**  Xx xxxx xx xxx xxxxxxx, xx'xx xxxxxxxxxx x xxxxxx xx xxxxxxxxx xxxxxxxxxx xxxx xxxxxxxx xx xxxxxxxx xxxx xxxx xx xxxxxxx xxxxxx xxx xxx xx xxxxx xxx xxxxxxx xxxxxxx xx xxxxx xxxxxxxxxx. Xx xxxxxx xxxxxxxxx xxxx xxx xxxx xxx xxxxx xxx xxxx xxxxxx xxxxx xx xxxx Xxx.xxxx.xx xxxx.
+**注**  テストの過程で、特定の広告ネットワークでのハンドルされない例外が多数特定されました。これらの例外に関連してアプリのクラッシュが起きないように、アプリ内でこれらの例外を処理する必要があります。 以下のコード例をコピーして App.xaml.cs ファイルに貼り付けることをお勧めします。
 
-Xxxx xx xxx xxx x XXX, Xxxxxxx Y.Y xx x Xxxxxxx Xxxxx xxx xxxxx X# xxx XXXX
+C# および XAML を使っている UWP、Windows 8.1 または Windows Phone アプリ用に使うコード
 
 ```CSharp
 // In App.xaml.cs file, register with the UnhandledException event handler.
@@ -228,7 +228,7 @@ void App_UnhandledException(object sender, UnhandledExceptionEventArgs e)
    }
 ```
 
-Xxxx xx xxx xxx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx
+Windows Phone Silverlight アプリ用に使うコード
 
 ```CSharp
 // In App.xaml.cs file, register with the UnhandledException event handler.
@@ -277,16 +277,20 @@ if (Debugger.IsAttached)
 }
 ```
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxx xxx xxxxxx xxxx xx xxxxxxxx](select-and-manage-your-ad-networks.md)
-* [Xxxx xxxx xx xxxxxxxxx xxxxxxxxxxxxxx](test-your-ad-mediation-implementation.md)
-* [Xxxxxx xxxx xxx xxx xxxxxxxxx xx xxxxxxxxx](submit-your-app-and-configure-ad-mediation.md)
-* [Xxxxxxxxxxxx xx xxxxxxxxx](troubleshoot-ad-mediation.md)
+* [広告ネットワークの選択と管理](select-and-manage-your-ad-networks.md)
+* [広告の仲介の実装のテスト](test-your-ad-mediation-implementation.md)
+* [アプリの提出と広告の仲介の構成](submit-your-app-and-configure-ad-mediation.md)
+* [広告の仲介のトラブルシューティング](troubleshoot-ad-mediation.md)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

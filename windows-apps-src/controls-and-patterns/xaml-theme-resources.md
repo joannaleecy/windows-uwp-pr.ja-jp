@@ -1,168 +1,168 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxxxxxxxx xx XXXX xxx x xxx xx xxxxxxxxx xxxx xxxxx xxxxxxxxx xxxxxx xxxxxxxxx xx xxxxx xxxxxx xxxxx xx xxxxxx.
-XX-XXXX: 'xxx\_xxxx\_xxxxxx\_xxx.xxxx\_xxxxx\_xxxxxxxxx'
-XXXXxxx: 'XxxxxxxxxXxx:/xxxxxxx/xxxxxxx/xxxx'
-Xxxxxx.Xxxxxxx: xXXXxXxxxxxx YYXXxxx
-xxxxx: XXXX xxxxx xxxxxxxxx
-xx.xxxxxxx: YYXYYXXX-XYXY-YYXY-XXXX-XXYXXXXXXYYX
-xxxxx: XXXX xxxxx xxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Theme resources in XAML are a set of resources that apply different values depending on which system theme is active.
+MS-HAID: 'dev\_ctrl\_layout\_txt.xaml\_theme\_resources'
+MSHAttr: 'PreferredLib:/library/windows/apps'
+Search.Product: eADQiWindows 10XVcnh
+title: XAML theme resources
+ms.assetid: 41B87DBF-E7A2-44E9-BEBA-AF6EEBABB81B
+label: XAML theme resources
+template: detail.hbs
 ---
 
-# XXXX xxxxx xxxxxxxxx
+# XAML theme resources
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxx xxxxxxxxx xx XXXX xxx x xxx xx xxxxxxxxx xxxx xxxxx xxxxxxxxx xxxxxx xxxxxxxxx xx xxxxx xxxxxx xxxxx xx xxxxxx. Xxxxx xxx Y xxxxxx xxxx xxx XXXX xxxxxxxxx xxxxxxxx: "Xxxxx", "Xxxx", xxx "XxxxXxxxxxxx".
+Theme resources in XAML are a set of resources that apply different values depending on which system theme is active. There are 3 themes that the XAML framework supports: "Light", "Dark", and "HighContrast".
 
-**Xxxxxxxxxxxxx**
+**Prerequisites**
 
-Xxxx xxxxx xxxxxxx xxxx xxx xxxx xxxx [XxxxxxxxXxxxxxxxxx xxx XXXX xxxxxxxx xxxxxxxxxx](resourcedictionary-and-xaml-resource-references.md).
+This topic assumes that you have read [ResourceDictionary and XAML resource references](resourcedictionary-and-xaml-resource-references.md).
 
-## Xxx xxxxx xxxxxxxxx xxxxxx xxxx xxxxxx xxxxxxxxx
+## How theme resources differ from static resources
 
-Xxxxx xxx xxx XXXX xxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxx x XXXX xxxxxxxx xxxx xx xxxxxxxx XXXX xxxxxxxx xxxxxxxxxx: [{XxxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/staticresource-markup-extension.md) xxx [{XxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/themeresource-markup-extension.md).
+There are two XAML markup extensions that can reference a XAML resource from an existing XAML resource dictionary: [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) and [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md).
 
-Xxxxxxxxxx xx x [{XxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/themeresource-markup-extension.md) xxxxxx xxxx xxx xxx xxxxx xxx xxxxxxxxxxxx xxxx xxxx xxx xxxxx xxxxxxx xx xxxxxxx. Xxxx xx xxxxxxxxx xxx xxxxxx xx xxx xxxx xxxxxxxx xxxxx xxxxxx xxxxxxxx xx xxxx x xxxxxxxxxxxx xxxxxx xxxxxx xxx xxx xxxx xxxxxx xxx xxxxxxx xxxxx.
+Evaluation of a [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) occurs when the app loads and subsequently each time the theme changes at runtime. This is typically the result of the user changing their device settings or from a programmatic change within the app that alters its current theme.
 
-Xx xxxxxxxx, x [{XxxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/staticresource-markup-extension.md) xx xxxxxxxxx xxxx xxxx xxx XXXX xx xxxxx xxxxxx xx xxx xxx. Xx xxxx xxx xxxxxx. Xx’x xxxxxxx xx x xxxx xxx xxxxxxx xx xxxx XXXX xxxx xxx xxxxxx xxxxxxx xxxxx xx xxx xxxxxx.
+In contrast, a [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) is evaluated only when the XAML is first loaded by the app. It does not update. It’s similar to a find and replace in your XAML with the actual runtime value at app launch.
 
-## Xxxxx xxxxxxxxx xxx xxxxx xxxx xxx xx xxx xxxxxxxx xxxxxxxxxx xxxxxxxxx
+## Theme resources and where they fit in the resource dictionary structure
 
 
-Xxxx xxxxx xxxxxxxx xx xxxx xx xxx XXXX xxxx xxxxxxxxxxxxxx.xxxx. Xxx xxxxxx xxxxxxxx, xxxxxxxxxxxxxx.xxxx xx xxxxxxxxx xx xxx \\(Xxxxxxx Xxxxx)\\Xxxxxxx Xxxx\\YY\\XxxxxxXxxx\\XxxxxxXxxxxxxxxxxxx\\Xxxxxxx\\XXX\\&xx;XXX xxxxxxx&xx;\\Xxxxxxx xxxxxx xxxx x Xxxxxxx Xxxxxxxx Xxxxxxxxxxx Xxx (XXX) xxxxxxxxxxxx. Xxx xxxxxxxx xxxxxxxxxxxx xx xxxxxxxxxxxxxx.xxxx xxx xxxx xxxxxxxxxx xx xxxxxxx.xxxx xx xxx xxxx xxxxxxxxx.
+Each theme resource is part of the XAML file themeresources.xaml. For design purposes, themeresources.xaml is available in the \\(Program Files)\\Windows Kits\\10\\DesignTime\\CommonConfiguration\\Neutral\\UAP\\&lt;SDK version&gt;\\Generic folder from a Windows Software Development Kit (SDK) installation. The resource dictionaries in themeresources.xaml are also reproduced in generic.xaml in the same directory.
 
-> **Xxxx**&xxxx;&xxxx;Xxx Xxxxxxx Xxxxxxx xxxxx'x xxx xxxxx xxxxxxxx xxxxx xxx xxxxxxx xxxxxx. Xxxx'x xxx xxxx xxx xxxxxxxxxxxx xx x XxxxxxXxxx xxxxxx, xxx xxxx xxxx'x xxxxxx xxxx xxxx xx xxxxxxx. Xxxxxxx, xxxxx xxxxxxxx xxxxxxxxxxxx xxxxx xx xxxxxx xx xxxx xx xxx Xxxxxxx Xxxxxxx xxxxxx, xxx xxxx xxx'x XXXX xxxxxxxx xxxxxxxxxx xx xxxxx xxxxxxxxx (xx xxxxxx xxxxxxxxx) xxxxxxx xxxxx xx xxxxxxx.
+> **Note**&nbsp;&nbsp;The Windows Runtime doesn't use these physical files for runtime lookup. That's why they are specifically in a DesignTime folder, and they aren't copied into apps by default. Instead, these resource dictionaries exist in memory as part of the Windows Runtime itself, and your app's XAML resource references to theme resources (or system resources) resolve there at runtime.
 
- ## Xxxxxxxxxx xxx xxxxx xxxxx xxxxxxxxx
+ ## Guidelines for using theme resources
 
-Xxxxxx xxxxx xxxxxxxxxx xxxx xxx xxxxxx xxx xxxxxxx xxxx xxx xxxxxx xxxxx xxxxxxxxx.
+Follow these guidelines when you define and consume your own custom theme resources.
 
-XX:
+DO:
 
--   Xxxxxxx xxxxx xxxxxxxxxxxx xxx xxxx "Xxxxx" xxx "Xxxx" xx xxxxxxxx xx xxxx "XxxxXxxxxxxx" xxxxxxxxxx. Xxxxxxxx xxx xxx xxxxxx x [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208794) xxxx "Xxxxxxx" xx xxx xxx, xx’x xxxxxxxxx xx xx xxxxxxxx xxx xxxxxxx xxx "Xxxxx", "Xxxx", xxx "XxxxXxxxxxxx".
--   Xxx xxx [{XxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/themeresource-markup-extension.md) xx: Xxxxxx, Xxxxxxx, Xxxxxxx xxxxxxxxx, Xxxxxxxx xxxxxxx, xxx Xxxxxxxxxx.
+-   Specify theme dictionaries for both "Light" and "Dark" in addition to your "HighContrast" dictionary. Although you can create a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) with "Default" as the key, it’s preferred to be explicit and instead use "Light", "Dark", and "HighContrast".
+-   Use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) in: Styles, Setters, Control templates, Property setters, and Animations.
 
-XX XXX:
+DO NOT:
 
--   Xxx xxx [{XxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/themeresource-markup-extension.md) xx xxxx xxxxxxxx xxxxxxxxxxx xxxxxx xxxx [**XxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208807). Xxx [{XxxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/staticresource-markup-extension.md) xxxxxxx.
+-   Use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) in your resource definitions inside your [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807). Use [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) instead.
 
-    XXXXXXXXX: xx xx xxxxxxx xx xxx xxx [{XxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/themeresource-markup-extension.md) xx xxxxxxxxx xxxxxxxxx xxxx xxx xxxxxxxx xx xxx xxx xxxxx xx xxxx [**XxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208807). Xxxxxxxx xx xxxxx xxxxxxxxx xxx xxxxxx xxxxx xxxxxxxxx xxxx `SystemAccentColor`, xx xxxxxx xxxxx xxxxxxxxx, xxxxx xxx xxxxxxxxx xxxxxxxx xxxx "XxxxxxXxxxx" xxxx `SystemColorButtonFaceColor`.
+    EXCEPTION: it is alright to use the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) to reference resources that are agnostic to the app theme in your [**ThemeDictionaries**](https://msdn.microsoft.com/library/windows/apps/br208807). Examples of these resources are accent color resources like `SystemAccentColor`, or system color resources, which are typically prefixed with "SystemColor" like `SystemColorButtonFaceColor`.
 
-**Xxxxxxx**  Xx xxx xxx’x xxxxxx xxxxx xxxxxxxxxx, xxx xxxxx xxx xxxxxxxxxx xxxxxxxx xxxxxxx xx xxxxxx xx xxxx xxx. Xxx xxxx xxxx, xxx xxx [Xxxxxxxxxxxxxxx xxxxx xxxxxxxxx](#troubleshooting_theme_resources) xxxxxxx.
+**Caution**  If you don’t follow these guidelines, you might see unexpected behavior related to themes in your app. For more info, see the [Troubleshooting theme resources](#troubleshooting_theme_resources) section.
  
 
-## Xxx XXXX xxxxx xxxx xxx xxxxx-xxxxxxxxx xxxxxxx
+## The XAML color ramp and theme-dependent brushes
 
-Xxx xxxxxxxx xxx xx xxxxxx xxx "Xxxxx", "Xxxx", xxx "XxxxXxxxxxxx" xxxxxx xxxx xx xxx *Xxxxxxx xxxxx xxxx* xx XXXX. Xxxxxxx xxx xxxx xx xxxxxx xxx xxxxxx xxxxxx, xx xxxxx x xxxxxx xxxxx xx xxxx xxx XXXX xxxxxxxx, xx’x xxxxxxxxx xx xxxxxxxxxx xxx xxx xxxxx xxxxxxxxx xxx xxxxxxxxxx.
+The combined set of colors for "Light", "Dark", and "HighContrast" themes make up the *Windows color ramp* in XAML. Whether you want to modify the system themes, or apply a system theme to your own XAML elements, it’s important to understand how the color resources are structured.
 
-### Xxxxx xxx Xxxx xxxxx xxxxxx
+### Light and Dark theme colors
 
-Xxx XXXX xxxxxxxxx xxxxxxxx x xxx xx xxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/hh673723) xxxxxxxxx xxxx xxxxxx xxxx xxx xxxxxxxx xxx xxx "Xxxxx" xxx "Xxxx" xxxxxx. Xxx xxxx xxx xxx xx xxxxxxxxx xxxxx xxxxxx xxx xxxxxx xxxxxx: `System[Simple Light/Dark Name]Color`.
+The XAML framework provides a set of named [**Color**](https://msdn.microsoft.com/library/windows/apps/hh673723) resources with values that are tailored for the "Light" and "Dark" themes. The keys you use to reference these follow the naming format: `System[Simple Light/Dark Name]Color`.
 
-Xxxx xxxxx xxxxx xxx xxx, xxxxxx xxxx, xxx xxxxxx xxxxxxxxxxxxxx xx xxx xxxxx (xxxxx xxx \#xxxxxxxx xxxxxx) xxx xxx "Xxxxx" xxx "Xxxx" xxxxxxxxx xxxxxxxx xx xxx XXXX xxxxxxxxx. Xxx xxx xx xxxx xx xxxxxxxxx xxx xxxxxxxx xx xx xxx. Xxx "Xxxxxx xxxxx/xxxx xxxx" xx xxxx xx xxxx xx xxx xxxxx xxxxxx xxxxxxxxxx xxxx xx xxxxxxx xxxxx.
+This table lists the key, simple name, and string representation of the color (using the \#aarrggbb format) for the "Light" and "Dark" resources provided by the XAML framework. The key is used to reference the resource in an app. The "Simple light/dark name" is used as part of the brush naming convention that we explain later.
 
-| Xxx                             | Xxxxxx xxxxx/xxxx xxxx | Xxxxx      | Xxxx       |
+| Key                             | Simple light/dark name | Light      | Dark       |
 |---------------------------------|------------------------|------------|------------|
-| XxxxxxXxxXxxxXxxxx              | XxxXxxx                | \#XXXXXXXX | \#XXYYYYYY |
-| XxxxxxXxxXxxXxxxx               | XxxXxx                 | \#YYXXXXXX | \#YYYYYYYY |
-| XxxxxxXxxXxxxxxXxxxx            | XxxXxxxxx              | \#YYXXXXXX | \#YYYYYYYY |
-| XxxxxxXxxXxxxxxXxxxXxxxx        | XxxXxxxxxXxxx          | \#XXXXXXXX | \#XXYYYYYY |
-| XxxxxxXxxXxxxxxXxxXxxxx         | XxxXxxxxxXxx           | \#YYXXXXXX | \#YYYYYYYY |
-| XxxxxxXxxxXxxxXxxxx             | XxxxXxxx               | \#XXYYYYYY | \#XXXXXXXX |
-| XxxxxxXxxxXxxXxxxx              | XxxxXxx                | \#YYYYYYYY | \#YYXXXXXX |
-| XxxxxxXxxxXxxxxxXxxxx           | XxxxXxxxxx             | \#YYYYYYYY | \#YYXXXXXX |
-| XxxxxxXxxxXxxxxxXxxxXxxxx       | XxxxXxxxxxXxxx         | \#XXYYYYYY | \#XXXXXXXX |
-| XxxxxxXxxxXxxxxxXxxXxxxx        | XxxxXxxxxxXxx          | \#YYYYYYYY | \#YYXXXXXX |
-| XxxxxxXxxxxxXxxXxxXxxxx         | XxxxxxXxxXxx           | \#XXYYYYYY | \#XXXYXYXY |
-| XxxxxxXxxxxxXxxxxXxxxXxxxx      | XxxxxxXxxxxXxxx        | \#XXYYYYYY | \#XXYYYYYY |
-| XxxxxxXxxxxxXxxxxXxxXxxxx       | XxxxxxXxxxxXxx         | \#YYYYYYYY | \#YYYYYYYY |
-| XxxxxxXxxxxxXxxxxXxxxxxXxxXxxxx | XxxxxxXxxxxXxxxxxXxx   | \#YYYYYYYY | \#YYYYYYYY |
-| XxxxxxXxxxxxXxxxxXxxxxxXxxxx    | XxxxxxXxxxxXxxxxx      | \#XXYYYYYY | \#XXYYYYYY |
-| XxxxxxXxxxxxXxxxxxxxXxxxXxxxx   | XxxxxxXxxxxxxxXxxx     | \#XXXXXXXX | \#XXYYYYYY |
-| XxxxxxXxxxxxXxxxxxxxXxxXxxxx    | XxxxxxXxxxxxxxXxx      | \#XXYXYXYX | \#XXYYYYYY |
-| XxxxxxXxxxxxXxxxXxxxx           | XxxxxxXxxx             | \#XXXXXXXX | \#XXYYYYYY |
-| XxxxxxXxxxxxXxxXxxxx            | XxxxxxXxx              | \#XXXYXYXY | \#XXYYYYYY |
-| XxxxxxXxxxxxXxxxxxXxxxx         | XxxxxxXxxxxx           | \#XXXYXYXY | \#XXYXYXYX |
-| XxxxxxXxxxxxXxxxxxXxxXxxxx      | XxxxxxXxxxxxXxx        | \#XXXYXYXY | \#XXYXYXYX |
-| XxxxxxXxxxxxXxxxxXxxxx          | XxxxxxXxxxx            | \#XXXXXXXX | \#XXXXXXXX |
-| XxxxxxXxxxXxxXxxxx              | XxxxXxx                | \#YYYYYYYY | \#YYXXXXXX |
-| XxxxxxXxxxXxxxxxXxxxx           | XxxxXxxxxx             | \#YYYYYYYY | \#YYXXXXXX |
+| SystemAltHighColor              | AltHigh                | \#FFFFFFFF | \#FF000000 |
+| SystemAltLowColor               | AltLow                 | \#33FFFFFF | \#33000000 |
+| SystemAltMediumColor            | AltMedium              | \#99FFFFFF | \#99000000 |
+| SystemAltMediumHighColor        | AltMediumHigh          | \#CCFFFFFF | \#CC000000 |
+| SystemAltMediumLowColor         | AltMediumLow           | \#66FFFFFF | \#66000000 |
+| SystemBaseHighColor             | BaseHigh               | \#FF000000 | \#FFFFFFFF |
+| SystemBaseLowColor              | BaseLow                | \#33000000 | \#33FFFFFF |
+| SystemBaseMediumColor           | BaseMedium             | \#99000000 | \#99FFFFFF |
+| SystemBaseMediumHighColor       | BaseMediumHigh         | \#CC000000 | \#CCFFFFFF |
+| SystemBaseMediumLowColor        | BaseMediumLow          | \#66000000 | \#66FFFFFF |
+| SystemChromeAltLowColor         | ChromeAltLow           | \#FF171717 | \#FFF2F2F2 |
+| SystemChromeBlackHighColor      | ChromeBlackHigh        | \#FF000000 | \#FF000000 |
+| SystemChromeBlackLowColor       | ChromeBlackLow         | \#33000000 | \#33000000 |
+| SystemChromeBlackMediumLowColor | ChromeBlackMediumLow   | \#66000000 | \#66000000 |
+| SystemChromeBlackMediumColor    | ChromeBlackMedium      | \#CC000000 | \#CC000000 |
+| SystemChromeDisabledHighColor   | ChromeDisabledHigh     | \#FFCCCCCC | \#FF333333 |
+| SystemChromeDisabledLowColor    | ChromeDisabledLow      | \#FF7A7A7A | \#FF858585 |
+| SystemChromeHighColor           | ChromeHigh             | \#FFCCCCCC | \#FF767676 |
+| SystemChromeLowColor            | ChromeLow              | \#FFF2F2F2 | \#FF171717 |
+| SystemChromeMediumColor         | ChromeMedium           | \#FFE6E6E6 | \#FF1F1F1F |
+| SystemChromeMediumLowColor      | ChromeMediumLow        | \#FFF2F2F2 | \#FF2B2B2B |
+| SystemChromeWhiteColor          | ChromeWhite            | \#FFFFFFFF | \#FFFFFFFF |
+| SystemListLowColor              | ListLow                | \#19000000 | \#19FFFFFF |
+| SystemListMediumColor           | ListMedium             | \#33000000 | \#33FFFFFF |
 
 
-### Xxxxxxx xxxxxx xxxx-xxxxxxxx xxxxxx
+### Windows system high-contrast colors
 
-Xx xxxxxxxx xx xxx xxx xx xxxxxxxxx xxxxxxxx xx xxx XXXX xxxxxxxxx, xxxxx'x x xxx xx xxxxx xxxxxx xxxxxxx xxxx xxx Xxxxxxx xxxxxx xxxxxxx. Xxxxx xxxxxx xxx xxx xxxxxxxx xx xxx Xxxxxxx Xxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xxxxxxx, xxxx xx xxx XXXX [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br228076) xxxxxxxxx xxxxxxx xxxxx xxxxxx xxxx xxx xxxxxx xx xxxxxxxxx (xxx xxx xxx xx xxxxxxx) xxxxx xxx "XxxxXxxxxxxx" xxxxx. Xxx XXXX xxxxxxxxx xxxxxxxx xxxxx xxxxxx-xxxx xxxxxx xx xxxxx xxxxxxxxx. Xxx xxxx xxxxxx xxx xxxxxx xxxxxx: `SystemColor[name]Color`.
+In addition to the set of resources provided by the XAML framework, there's a set of color values derived from the Windows system palette. These colors are not specific to the Windows Runtime or Universal Windows Platform (UWP) apps. However, many of the XAML [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) resources consume these colors when the system is operating (and the app is running) using the "HighContrast" theme. The XAML framework provides these system-wide colors as keyed resources. The keys follow the naming format: `SystemColor[name]Color`.
 
-Xxxx xxxxx xxxxx xxx xxxxxx-xxxx xxxxxx xxxx XXXX xxxxxxxx xx xxxxxxxx xxxxxxx xxxxxxx xxxx xxx Xxxxxxx xxxxxx xxxxxxx. Xxx "Xxxx xx Xxxxxx xxxx" xxxxxx xxxxx xxx xxxxx xx xxxxxxx xx xxx Xxxxxxx xxxxxxxx XX. Xxx "Xxxxxx XxxxXxxxxxxx xxxx" xxxxxx xx x xxx xxxx xxxxxxxxxxx xx xxx xxx xxxxx xx xxxxxxx xxxxxx xxx XXXX xxxxxx xxxxxxxx. Xx'x xxxx xx xxxx xx xxx xxxxx xxxxxx xxxxxxxxxx xxxx xx xxxxxxx xxxxx. Xxx "Xxxxxxx xxxxxxx" xxxxxx xxxxx xxx xxxxxx xxx'x xxx xx xxx xxxxxx xx xxx xxxxxxx xx xxxx xxxxxxxx xx xxx.
+This table lists the system-wide colors that XAML provides as resource objects derived from the Windows system palette. The "Ease of Access name" column shows how color is labeled in the Windows settings UI. The "Simple HighContrast name" column is a one word description of how the color is applied across the XAML common controls. It's used as part of the brush naming convention that we explain later. The "Initial default" column shows the values you'd get if the system is not running in high contrast at all.
 
-| Xxx                           | Xxxx xx Xxxxxx xxxx            | Xxxxxx XxxxXxxxxxxx xxxx | Xxxxxxx xxxxxxx |
+| Key                           | Ease of Access name            | Simple HighContrast name | Initial default |
 |-------------------------------|--------------------------------|--------------------------|-----------------|
-| XxxxxxXxxxxXxxxxxXxxxXxxxx    | **Xxxxxx Xxxx** (xxxxxxxxxx)   | Xxxxxxxxxx               | \#XXXYXYXY      |
-| XxxxxxXxxxxXxxxxxXxxxXxxxx    | **Xxxxxx Xxxx** (xxxxxxxxxx)   | Xxxxxxxxxx               | \#XXYYYYYY      |
-| XxxxxxXxxxxXxxxXxxxXxxxx      | **Xxxxxxxx Xxxx**              | Xxxxxxxx                 | \#XXYXYXYX      |
-| XxxxxxXxxxxXxxxxxxxxXxxxx     | **Xxxxxxxx Xxxx** (xxxxxxxxxx) | Xxxxxxxxx                | \#XXYYYYXX      |
-| XxxxxxXxxxxXxxxxxxxxXxxxXxxxx | **Xxxxxxxx Xxxx** (xxxxxxxxxx) | XxxxxxxxxXxx             | \#XXXXXXXX      |
-| XxxxxxXxxxxXxxxxxxxXxxxx      | **Xxxxxxxxxx**                 | Xxxxxxxxx                | \#XXYYYYXX      |
-| XxxxxxXxxxxXxxxxxXxxxx        | **Xxxxxxxxxx**                 | XxxxXxxxxxxxxx           | \#XXXXXXXX      |
-| XxxxxxXxxxxXxxxxxXxxxXxxxx    | **Xxxx**                       | XxxxXxxx                 | \#XXYYYYYY      |
+| SystemColorButtonFaceColor    | **Button Text** (background)   | Background               | \#FFF0F0F0      |
+| SystemColorButtonTextColor    | **Button Text** (foreground)   | Foreground               | \#FF000000      |
+| SystemColorGrayTextColor      | **Disabled Text**              | Disabled                 | \#FF6D6D6D      |
+| SystemColorHighlightColor     | **Selected Text** (background) | Highlight                | \#FF3399FF      |
+| SystemColorHighlightTextColor | **Selected Text** (foreground) | HighlightAlt             | \#FFFFFFFF      |
+| SystemColorHotlightColor      | **Hyperlinks**                 | Hyperlink                | \#FF0066CC      |
+| SystemColorWindowColor        | **Background**                 | PageBackground           | \#FFFFFFFF      |
+| SystemColorWindowTextColor    | **Text**                       | PageText                 | \#FF000000      |
 
 
-Xxxxxxx xxxxxxxx xxxxxxxxx xxxx-xxxxxxxx xxxxxx, xxx xxxxxxx xxx xxxx xx xxx xxx xxxxxxxx xxxxxx xx xxx xxxxx xxxx-xxxxxxxx xxxxxxxx xxxxxxx xxx Xxxx xx Xxxxxx Xxxxxx, xx xxxxx xxxx. Xxxxxxxxx, xx'x xxx xxxxxxxx xx xxxxxxx x xxxxxxxxxx xxxx xx xxxx-xxxxxxxx xxxxx xxxxxx.
+Windows provides different high-contrast themes, and enables the user to set the specific colors to for their high-contrast settings through the Ease of Access Center, as shown here. Therefore, it's not possible to provide a definitive list of high-contrast color values.
 
-![Xxx Xxxxxxx xxxx xxxxxxxx xxxxxxxx XX](images/high-contrast-settings.png)
+![The Windows high contrast settings UI](images/high-contrast-settings.png)
 
-Xxx xxxx xxxx xxxxx xxxxxxxxxx xxxx-xxxxxxxx xxxxxx, xxx [Xxxx-xxxxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/mt244346).
+For more info about supporting high-contrast themes, see [High-contrast themes](https://msdn.microsoft.com/library/windows/apps/mt244346).
 
-### Xxxxxx xxxxxx xxxxx
+### System accent color
 
-Xx xxxxxxxx xx xxx xxxxxx xxxx-xxxxxxxx xxxxx xxxxxx, xxx xxxxxx xxxxxx xxxxx xx xxxxxxxx xx x xxxxxxx xxxxx xxxxxxxx xxxxx xxx xxx `SystemAccentColor`. Xx xxxxxxx, xxxx xxxxxxxx xxxx xxx xxxxx xxxx xxx xxxx xxx xxxxxxxxx xx xxx xxxxxx xxxxx xx xxx Xxxxxxx xxxxxxxxxxxxxxx xxxxxxxx.
+In addition to the system high-contrast theme colors, the system accent color is provided as a special color resource using the key `SystemAccentColor`. At runtime, this resource gets the color that the user has specified as the accent color in the Windows personalization settings.
 
-> **Xxxx**&xxxx;&xxxx;Xx’x xxxxxxxx xx xxxxxxxx xxx xxxxxx xxxxx xxxxxxxxx xxx xxxx-xxxxxxxx xxxxx xxx xxxxxx xxxxx xx xxxxxxxx xxxxxxxxx xxxx xxx xxxx xxxxx, xxx xx’x x xxxx xxxxxxxx xx xxxxxxx xxx xxxx’x xxxxx xxxxxxx, xxxxxxxxxx xxx xxxx-xxxxxxxx xxxxxxxx.
+> **Note**&nbsp;&nbsp;It’s possible to override the system color resources for high-contrast color and accent color by creating resources with the same names, but it’s a best practice to respect the user’s color choices, especially for high-contrast settings.
 
-### Xxxxx-xxxxxxxxx xxxxxxx
+### Theme-dependent brushes
 
-Xxx xxxxx xxxxxxxxx xxxxx xx xxx xxxxxxxxx xxxxxxxx xxx xxxx xx xxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242963) xxxxxxxx xx [**XxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242962) xxxxxxxxx xx xxx xxxxxx xxxxx xxxxxxxx xxxxxxxxxxxx. Xxx xxx xxx xxxxx xxxxxxxxx xx xxxxx xxx xxxxx xx XXXX xxxxxxxx. Xxx xxxx xxx xxx xxxxx xxxxxxxxx xxxxxx xxx xxxxxx xxxxxx: `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. Xxx xxxxxxx, `SystemControlBackroundAltHighBrush`.
+The color resources shown in the preceding sections are used to set the [**Color**](https://msdn.microsoft.com/library/windows/apps/br242963) property of [**SolidColorBrush**](https://msdn.microsoft.com/library/windows/apps/br242962) resources in the system theme resource dictionaries. You use the brush resources to apply the color to XAML elements. The keys for the brush resources follow the naming format: `SystemControl[Simple HighContrast name][Simple light/dark name]Brush`. For example, `SystemControlBackroundAltHighBrush`.
 
-Xxx’x xxxx xx xxx xxx xxxxx xxxxx xxx xxxx xxxxx xx xxxxxxxxxx xx xxx-xxxx. Xx xxx "Xxxxx" xxx "Xxxx" xxxxxxxx xxxxxxxxxxxx, xxxx xxxxx xx xxxxxxx xxxx xxxx:
+Let’s look at how the color value for this brush is determined at run-time. In the "Light" and "Dark" resource dictionaries, this brush is defined like this:
 
 `<SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush" Color="{StaticResource SystemAltHighColor}"/>`
 
-Xx xxx "XxxxXxxxxxxx" xxxxxxxx xxxxxxxxxx, xxxx xxxxx xx xxxxxxx xxxx xxxx:
+In the "HighContrast" resource dictionary, this brush is defined like this:
 
 `<SolidColorBrush x:Key="SystemControlBackgroundAltHighBrush" Color="{ThemeResource SystemColorButtonFaceColor}"/>`
 
-Xxxx xxxx xxxxx xx xxxxxxx xx x XXXX xxxxxxx, xxx xxxxx xx xxxxxxxxxx xx xxx-xxxx xx xxx xxxxxxx xxxxx, xx xxxxx xx xxxx xxxxx.
+When this brush is applied to a XAML element, its color is determined at run-time by the current theme, as shown in this table.
 
-| Xxxxx        | Xxxxx xxxxxx xxxx | Xxxxx xxxxxxxx             | Xxxxxxx xxxxx                                              |
+| Theme        | Color simple name | Color resource             | Runtime value                                              |
 |--------------|-------------------|----------------------------|------------------------------------------------------------|
-| Xxxxx        | XxxXxxx           | XxxxxxXxxXxxxXxxxx         | \#XXXXXXXX                                                 |
-| Xxxx         | XxxXxxx           | XxxxxxXxxXxxxXxxxx         | \#XXYYYYYY                                                 |
-| XxxxXxxxxxxx | Xxxxxxxxxx        | XxxxxxXxxxxXxxxxxXxxxXxxxx | Xxx xxxxx xxxxxxxxx xx xxxxxxxx xxx xxx xxxxxx xxxxxxxxxx. |
+| Light        | AltHigh           | SystemAltHighColor         | \#FFFFFFFF                                                 |
+| Dark         | AltHigh           | SystemAltHighColor         | \#FF000000                                                 |
+| HighContrast | Background        | SystemColorButtonFaceColor | The color specified in settings for the button background. |
 
-Xxx xxx xxx xxx `SystemControl[Simple HighContrast name][Simple light/dark name]Brush` xxxxxx xxxxxx xx xxxxxxxxx xxxxx xxxxx xx xxxxx xx xxxx xxx XXXX xxxxxxxx. 
+You can use the `SystemControl[Simple HighContrast name][Simple light/dark name]Brush` naming scheme to determine which brush to apply to your own XAML elements. 
 
 <!--
 For many examples of how the brushes are used in the XAML control templates, see the [Default control styles and templates](default-control-styles-and-templates.md).
 -->
 
-> **Xxxx**&xxxx;&xxxx;Xxx xxxxx xxxxxxxxxxx xx \[*Xxxxxx XxxxXxxxxxxx xxxx*\]\[*Xxxxxx xxxxx/xxxx xxxx*\] xx xxxxxxxx xx x xxxxx xxxxxxxx.
+> **Note**&nbsp;&nbsp;Not every combination of \[*Simple HighContrast name*\]\[*Simple light/dark name*\] is provided as a brush resource.
 
-## Xxx XXXX xxxx xxxx
+## The XAML type ramp
 
-Xxx xxxxxxxxxxxxxx.xxxx xxxx xxxxxxx xxxxxxx xxxxxxxxx xxxx xxxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208849) xxxx xxx xxx xxxxx xx xxxx xxxxxxxxxx xx xxxx XX, xxxxxxxxxxxx xxx xxxxxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652) xx [**XxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227565). Xxxxx xxx xxx xxx xxxxxxx xxxxxxxx xxxxxx. Xxxx xxx xxxxxxxx xx xxxx xx xxxxxx xxx xxx xx xxxxxx XXXX XX xxxxxxxxxxx xxxx xxxxx xxx *Xxxxxxx xxxx xxxx* xxxxxxxxxx xx [Xxxxxxxxxx xxx xxxxx](https://msdn.microsoft.com/library/windows/apps/hh700394).
+The themeresources.xaml file defines several resources that define a [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) that you can apply to text containers in your UI, specifically for either [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) or [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565). These are not the default implicit styles. They are provided to make it easier for you to create XAML UI definitions that match the *Windows type ramp* documented in [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394).
 
-Xxxxx xxxxxx xxx xxx xxxx xxxxxxxxxx xxxx xxx xxxx xxxxxxx xx xxx xxxxx xxxx xxxxxxxxx. Xx xxx xxxx xxxxxx xxxxxxx xxxx xx xxxxxxxx xx xxx xxxx, xxx xxxxxxxxxx xx xxx xxxx xxxxxxxx xxxxxx xxx xxxxxxxxx, xxxx xx xx x [**Xxx**](https://msdn.microsoft.com/library/windows/apps/br209959) xx [**XxxxXxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209668) xx xx x [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br244503) xx [**XxxxXxxxXxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br244347).
+These styles are for text attributes that you want applied to the whole text container. If you want styles applied just to sections of the text, set attributes on the text elements within the container, such as on a [**Run**](https://msdn.microsoft.com/library/windows/apps/br209959) in [**TextBlock.Inlines**](https://msdn.microsoft.com/library/windows/apps/br209668) or on a [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503) in [**RichTextBlock.Blocks**](https://msdn.microsoft.com/library/windows/apps/br244347).
 
-Xxx xxxxxx xxxx xxxx xxxx xxxx xxxxxxx xx x [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652):
+The styles look like this when applied to a [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652):
 
-![xxxx xxxxx xxxxxx](images/text-block-type-ramp.png)
+![text block styles](images/text-block-type-ramp.png)
 
-### XxxxXxxxXxxxxXxxxx
+### BaseTextBlockStyle
 
-**XxxxxxXxxx**: [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652)
+**TargetType**: [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652)
 
-Xxxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxx xxx xxxxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652) xxxxxxxxx xxxxxx.
+Supplies the common properties for all the other [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) container styles.
 
 ```XAML
 <!-- Usage -->
@@ -180,7 +180,7 @@ Xxxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxx xxx xxxxx [**XxxxXxxxx**](https://msdn.mi
 </Style>
 ```
 
-### XxxxxxXxxxXxxxxXxxxx
+### HeaderTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -195,7 +195,7 @@ Xxxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxx xxx xxxxx [**XxxxXxxxx**](https://msdn.mi
 </Style>
 ```
 
-### XxxxxxxxxXxxxXxxxxXxxxx
+### SubheaderTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -210,7 +210,7 @@ Xxxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxx xxx xxxxx [**XxxxXxxxx**](https://msdn.mi
 </Style>
 ```
 
-### XxxxxXxxxXxxxxXxxxx
+### TitleTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -225,7 +225,7 @@ Xxxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxx xxx xxxxx [**XxxxXxxxx**](https://msdn.mi
 </Style>
 ```
 
-### XxxxxxxxXxxxXxxxxXxxxx
+### SubtitleTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -240,7 +240,7 @@ Xxxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxx xxx xxxxx [**XxxxXxxxx**](https://msdn.mi
 </Style>
 ```
 
-### XxxxXxxxXxxxxXxxxx
+### BodyTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -254,7 +254,7 @@ Xxxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxx xxx xxxxx [**XxxxXxxxx**](https://msdn.mi
 </Style>
 ```
 
-### XxxxxxxXxxxXxxxxXxxxx
+### CaptionTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -268,11 +268,11 @@ Xxxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxx xxx xxxxx [**XxxxXxxxx**](https://msdn.mi
 </Style>
 ```
 
-### XxxxXxxxXxxxXxxxxXxxxx
+### BaseRichTextBlockStyle
 
-**XxxxxxXxxx**: [**XxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227565)
+**TargetType**: [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565)
 
-Xxxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxx xxx xxxxx [**XxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227565) xxxxxxxxx xxxxxx.
+Supplies the common properties for all the other [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) container styles.
 
 ```XAML
 <!-- Usage -->
@@ -293,7 +293,7 @@ Xxxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxx xxx xxxxx [**XxxxXxxxXxxxx**](https://msd
 </Style>
 ```
 
-### XxxxXxxxXxxxXxxxxXxxxx
+### BodyRichTextBlockStyle
 
 ```XAML
 <!-- Usage -->
@@ -307,71 +307,71 @@ Xxxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxx xxx xxxxx [**XxxxXxxxXxxxx**](https://msd
 </Style>
 ```
 
-> **Xxxx**&xxxx;&xxxx;  Xxx [**XxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227565) xxxxxx xxx'x xxxx xxx xxx xxxx xxxx xxxxxx xxxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209652) xxxx, xxxxxx xxxxxxx xxx xxxxx-xxxxx xxxxxxxx xxxxxx xxxxx xxx **XxxxXxxxXxxxx** xxxxx xx xxxxxx xx xxx xxxxxxxxxx xx xxx xxxxxxxxxx xxxx xxxxxxxx. Xxxx, xxxxxxx [**XxxxXxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br209676) xxxxx xxx XXXX xxxxxxx xxxxxxxx xxxxxxxxxx x xxxxxxxxx xxxxx xxxxx xx xx xxxx xxxxxxx xx xxxxx xxx xxxx xxx'x xxxx xx xxxxx xxx xxxxxxxxx. Xxxx xxx'x xx xxxxx xxx **XxxxXxxxXxxxx** xxxxxxx xxx xxxx xxxxxxx xxxxxx xxx xx xx xx xxxxxxxx xxxx xxxxxxxx xxxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br244503), xxxxx xx xxxxx xxx xxxxx xxxxx XXXX xxxxxx xxx xxxx xxxxxx, xxxx xxxxxxxxx xxx xxxxxxx xxxx xxxx xxxxxxxxxxx.
+> **Note**&nbsp;&nbsp;  The [**RichTextBlock**](https://msdn.microsoft.com/library/windows/apps/br227565) styles don't have all the text ramp styles that [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/br209652) does, mainly because the block-based document object model for **RichTextBlock** makes it easier to set attributes on the individual text elements. Also, setting [**TextBlock.Text**](https://msdn.microsoft.com/library/windows/apps/br209676) using the XAML content property introduces a situation where there is no text element to style and thus you'd have to style the container. That isn't an issue for **RichTextBlock** because its text content always has to be in specific text elements like [**Paragraph**](https://msdn.microsoft.com/library/windows/apps/br244503), which is where you might apply XAML styles for page header, page subheader and similar text ramp definitions.
 
-## Xxxxxxxxxxxxx Xxxxx xxxxxx
+## Miscellaneous Named styles
 
-Xxxxx'x xx xxxxxxxxxx xxx xx xxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208849) xxxxxxxxxxx xxx xxx xxxxx xx xxxxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265) xxxxxxxxxxx xxxx xxx xxxxxxx xxxxxxxx xxxxx.
+There's an additional set of keyed [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) definitions you can apply to style a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) differently than its default implicit style.
 
-### XxxxXxxxxXxxxxxXxxxx
+### TextBlockButtonStyle
 
-**XxxxxxXxxx**: [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227736)
+**TargetType**: [**ButtonBase**](https://msdn.microsoft.com/library/windows/apps/br227736)
 
-Xxxxx xxxx xxxxx xx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265) xxxx xxx xxxx xx xxxx xxxx xxxx x xxxx xxx xxxxx xx xxxx xxxxxx. Xxx xxxx xx xxxxxx xxxxx xxx xxxxxxx xxxxxx xxxxx xx xxxxxxxxxxx xx xx xxxxxxxxxxx xxx xxx xxxxx xxxxxxxxxx xxxx xxxx xxxx xxx xxxx. Xxxxxx xxx xxxxxxxx xxxxx xx x [**XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242739), xxx **XxxxXxxxxXxxxxxXxxxx** xxxx xxx xxxxxxxxx xxx xxxx.
+Apply this style to a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) when you need to show text that a user can click to take action. The text is styled using the current accent color to distinguish it as interactive and has focus rectangles that work well for text. Unlike the implicit style of a [**HyperlinkButton**](https://msdn.microsoft.com/library/windows/apps/br242739), the **TextBlockButtonStyle** does not underline the text.
 
-Xxx xxxxxxxx xxxx xxxxxx xxx xxxxxxxxx xxxx xx xxx **XxxxxxXxxxxxxXxxxxxxxxXxxxXxxxxxXxxxx** (xxx "XxxxxxxXxxx" xxxxx), **XxxxxxXxxxxxxXxxxxxxxxXxxxXxxxxxXxxXxxxx** (xxx "Xxxxxxx" xxxxx) xxx **XxxxxxXxxxxxxXxxxxxxxXxxxXxxXxxxx** (xxx "Xxxxxxxx" xxxxx).
+The template also styles the presented text to use **SystemControlHyperlinkBaseMediumBrush** (for "PointerOver" state), **SystemControlHighlightBaseMediumLowBrush** (for "Pressed" state) and **SystemControlDisabledBaseLowBrush** (for "Disabled" state).
 
-Xxxx'x x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265) xxxx xxx **XxxxXxxxxXxxxxxXxxxx** xxxxxxxx xxxxxxx xx xx.
+Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) with the **TextBlockButtonStyle** resource applied to it.
 
 ```XAML
 <Button Content="Clickable text" Style="{ThemeResource TextBlockButtonStyle}" 
         Click="Button_Click"/>
 ```
 
-Xx xxxxx xxxx xxxx:
+It looks like this:
 
-![X xxxxxx xxxxxx xx xxxx xxxx xxxx](images/styles-textblock-button-style.png)
+![A button styled to look like text](images/styles-textblock-button-style.png)
 
-### XxxxxxxxxxXxxxXxxxxxXxxxxxXxxxx
+### NavigationBackButtonNormalStyle
 
-**XxxxxxXxxx**: [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-Xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208849) xxxxxxxx x xxxxxxxx xxxxxxxx xxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265) xxxx xxx xx xxx xxxxxxxxxx xxxx xxxxxx xxx x xxxxxxxxxx xxx. Xx xxxxxxxx xxxxx xxxxxxxx xxxxxxxxxx xxxx xxxx xxxx xxxxxx xxx xxx Xxxxx XXXY Xxxxxx xxxxxx xxxx, xx xxx xxxxxx xxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn252842) xxxxx xx xxx xxxxxxx xxxxxx xxxx xxxx. Xxx xxxxxxx xxxxxxxxxx xxx YY x YY xxxxxx. Xx xxxxxx xxx xxxxxxx xxx xxx xxxxxx xxxxxxxxxx xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208718), [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208751), [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br209406), xxx xxxxx xxxxxxxxxx xx xxxx **Xxxxxx** xx xxxxxx x xxxxxxx xxxxx xxxxx [**XxxxxXx**](https://msdn.microsoft.com/library/windows/apps/br208852).
+This [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. It includes theme resource references that make this button use the Segoe MDL2 Assets symbol font, so you should use a [**Symbol**](https://msdn.microsoft.com/library/windows/apps/dn252842) value as the content rather than text. The default dimensions are 40 x 40 pixels. To tailor the styling you can either explicitly set the [**Height**](https://msdn.microsoft.com/library/windows/apps/br208718), [**Width**](https://msdn.microsoft.com/library/windows/apps/br208751), [**FontSize**](https://msdn.microsoft.com/library/windows/apps/br209406), and other properties on your **Button** or create a derived style using [**BasedOn**](https://msdn.microsoft.com/library/windows/apps/br208852).
 
-Xxxx'x x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265) xxxx xxx **XxxxxxxxxxXxxxXxxxxxXxxxxxXxxxx** xxxxxxxx xxxxxxx xx xx.
+Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) with the **NavigationBackButtonNormalStyle** resource applied to it.
 
 ```XAML
 <Button Content="&amp;#xE830;" Style="{ThemeResource NavigationBackButtonNormalStyle}" 
         Click="Button_Click"/>
 ```
 
-Xx xxxxx xxxx xxxx:
+It looks like this:
 
-![X xxxxxx xxxxxx xx x xxxx xxxxxx](images/styles-back-button-normal.png)
+![A button styled as a back button](images/styles-back-button-normal.png)
 
-### XxxxxxxxxxXxxxXxxxxxXxxxxXxxxx
+### NavigationBackButtonSmallStyle
 
-**XxxxxxXxxx**: [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265)
+**TargetType**: [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265)
 
-Xxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208849) xxxxxxxx x xxxxxxxx xxxxxxxx xxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265) xxxx xxx xx xxx xxxxxxxxxx xxxx xxxxxx xxx x xxxxxxxxxx xxx. Xx'x xxxxxxx xx **XxxxxxxxxxXxxxXxxxxxXxxxxxXxxxx**, xxx xxx xxxxxxxxxx xxx YY xx YY xxxxxx.
+This [**Style**](https://msdn.microsoft.com/library/windows/apps/br208849) provides a complete template for a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) that can be the navigation back button for a navigation app. It's similar to **NavigationBackButtonNormalStyle**, but its dimensions are 30 by 30 pixels.
 
-Xxxx'x x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265) xxxx xxx **XxxxxxxxxxXxxxXxxxxxXxxxxXxxxx** xxxxxxxx xxxxxxx xx xx.
+Here's a [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) with the **NavigationBackButtonSmallStyle** resource applied to it.
 
 ```XAML
 <Button Content="&amp;#xE830;" Style="{ThemeResource NavigationBackButtonSmallStyle}" 
         Click="Button_Click"/>
 ```
 
-## Xxxxxxxxxxxxxxx xxxxx xxxxxxxxx
+## Troubleshooting theme resources
 
 
-Xx xxx xxx’x xxxxxx xxx [xxxxxxxxxx xxx xxxxx xxxxx xxxxxxxxx](#guidelines_for_using_theme_resources), xxx xxxxx xxx xxxxxxxxxx xxxxxxxx xxxxxxx xx xxxxxx xx xxxx xxx.
+If you don’t follow the [guidelines for using theme resources](#guidelines_for_using_theme_resources), you might see unexpected behavior related to themes in your app.
 
-Xxx xxxxxxx, xxxx xxx xxxx x xxxxx-xxxxxx xxxxxx, xxxxx xx xxxx xxxx-xxxxxx xxx xxxx xxxxxx xx xx xxxx xxxx xx xxx xxxxx xxxxx. Xx xx xxx xxxxxxxx xx x xxxxx-xxxxxx xxxx xxx xxxx xxxxxxxx xxxx, xxx xxxxxxxx xxxx-xxxxxx xxxx (xx xxxxx xx xx) xxx xxxxx xx xxxxxx xx xx xx xxx xxxxx xxxxx.
+For example, when you open a light-themed flyout, parts of your dark-themed app also change as if they were in the light theme. Or if you navigate to a light-themed page and then navigate back, the original dark-themed page (or parts of it) now looks as though it is in the light theme.
 
-Xxxxxxxxx, xxxxx xxxxx xx xxxxxx xxxxx xxxx xxx xxxxxxx x "Xxxxxxx" xxxxx xxx x "XxxxXxxxxxxx" xxxxx xx xxxxxxx xxxx-xxxxxxxx xxxxxxxxx, xxx xxxx xxx xxxx "Xxxxx" xxx "Xxxx" xxxxxx xx xxxxxxxxx xxxxx xx xxxx xxx.
+Typically, these types of issues occur when you provide a "Default" theme and a "HighContrast" theme to support high-contrast scenarios, and then use both "Light" and "Dark" themes in different parts of your app.
 
-Xxx xxxxxxx, xxxxxxxx xxxx xxxxx xxxxxxxxxx xxxxxxxxxx:
+For example, consider this theme dictionary definition:
 
 ```XAML
 <!-- DO NOT USE. THIS XAML DEMONSTRATES AN ERROR. -->
@@ -387,11 +387,11 @@ Xxx xxxxxxx, xxxxxxxx xxxx xxxxx xxxxxxxxxx xxxxxxxxxx:
 </ResourceDictionary>
 ```
 
-Xxxxxxxxxxx, xxxx xxxxx xxxxxxx. Xxx xxxx xx xxxxxx xxx xxxxx xxxxxxx xx xx `myBrush` xxxx xx xxxx-xxxxxxxx, xxx xxxx xxx xx xxxx-xxxxxxxx, xxx xxxx xx xxx [{XxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/themeresource-markup-extension.md) xx xxxx xxxx xxxx `myBrush` xxxxxx xx xxx xxxxx xxxxx xxx xxxx xxxxx. Xx xxxx xxx xxxxx xxx [**XxxxxxxxxXxxxxxx.XxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298515) xxx xx xxxxxxxx xxxxxx xxx xxxxxx xxxx, xxxx xxxx xxxxxxxxx xxxx xx xxxxxxxx. Xxxxxxx, xxx xxx xxxx xxxxxxxx xx xxxx xxx xx xxxx xx xxx xxxxx xx xx-xxxxx xxxxxxxxx xxxxx xx xxxx xxxxxx xxxx.
+Intuitively, this looks correct. You want to change the color pointed to by `myBrush` when in high-contrast, but when not in high-contrast, you rely on the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) to make sure that `myBrush` points to the right color for your theme. If your app never has [**FrameworkElement.RequestedTheme**](https://msdn.microsoft.com/library/windows/apps/dn298515) set on elements within its visual tree, this will typically work as expected. However, you run into problems in your app as soon as you start to re-theme different parts of your visual tree.
 
-Xxx xxxxxxx xxxxxx xxxxxxx xxxxxxx xxx xxxxxx xxxxxxxxx, xxxxxx xxxx xxxxx XXXX xxxxx. Xx xxx xxxx Y xxxxxxxx xx XXXX xxx-xxxxx xxxx xxxxxxxxx xxxxxx xxxx xxxxxxxxx xxx xxxx xxxxx xxxxxxxx, xxxx xx xxx xxxxxxxxx xxxxx xxxx xxx-xxxx xx xxxxxx xxx [{XxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/themeresource-markup-extension.md) xxxxxxxxxxx, xxxxxxx xx xxx xxxxxx xxxxx xxxxxxxx xxx xxxxxxxxx xx xxx xxxxx xxx-xxxx, xxxxx xx xxx xxxx xxxxxxxx xxxxxx.
+The problem occurs because brushes are shared resources, unlike most other XAML types. If you have 2 elements in XAML sub-trees with different themes that reference the same brush resource, then as the framework walks each sub-tree to update its [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) expressions, changes to the shared brush resource are reflected in the other sub-tree, which is not your intended result.
 
-Xx xxx xxxx, xxxxxxx xxx "Xxxxxxx" xxxxxxxxxx xxxx xxxxxxxx xxxxx xxxxxxxxxxxx xxx xxxx "Xxxxx" xxx "Xxxx" xxxxxx xx xxxxxxxx xx "XxxxXxxxxxxx":
+To fix this, replace the "Default" dictionary with separate theme dictionaries for both "Light" and "Dark" themes in addition to "HighContrast":
 
 ```XAML
 <!-- DO NOT USE. THIS XAML DEMONSTRATES AN ERROR. -->
@@ -410,13 +410,13 @@ Xx xxx xxxx, xxxxxxx xxx "Xxxxxxx" xxxxxxxxxx xxxx xxxxxxxx xxxxx xxxxxxxxxxxx x
 </ResourceDictionary>
 ```
 
-Xxxxxxx, xxxxxxxx xxxxx xxxxx xx xxx xx xxxxx xxxxxxxxx xxx xxxxxxxxxx xx xxxxxxxxx xxxxxxxxxx xxxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209414). Xxxx xxxxxx xxxxxxx xxxxxxxx xxxxx xxxxxxx xxx xxxxxxxxxx xxxxx xx xx xxxxxxx xxxxx xxx [{XxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/themeresource-markup-extension.md), xxx xxxx xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxx xx xxxxx xxxxxxxx, xx xxxxxxxx x xxxxxx xxxxxxxxx xx xxx xxxxxxxx xxxx xxx xxxxxxxx xx xxx {XxxxxXxxxxxxx} xxxxxx xxxxxxxxx xxxxxxxxxx. Xxxx xxxxxx xxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxxx xxxxx xxxxxxx xx xx xxxxx xxxx xxxxxxx'x xxxxxx xxxx. Xx xx-xxxxxxxxx xxx {XxxxxXxxxxxxx} xxxxxx xxxxxxxxx xxxxxxxxxx xx xxx x xxx xxxxx xxxxxxxx xxx xxxxx’x xxx xxxxxxxxx xxxx xxxxxxxxx xxxx xx xxx xxxxxxxx xx xxxx xxxxxxx; xxxx xxxxxxx xxxxx, xxxx xx xxxxxx xxx xxxx xxxxxxx xxxx.
+However, problems still occur if any of these resources are referenced in inherited properties like [**Foreground**](https://msdn.microsoft.com/library/windows/apps/br209414). Your custom control template might specify the foreground color of an element using the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md), but when the framework propagates the inherited value to child elements, it provides a direct reference to the resource that was resolved by the {ThemeResource} markup extension expression. This causes problems when the framework processes theme changes as it walks your control's visual tree. It re-evaluates the {ThemeResource} markup extension expression to get a new brush resource but doesn’t yet propagate this reference down to the children of your control; this happens later, such as during the next measure pass.
 
-Xx x xxxxxx, xxxxx xxxxxxx xxx xxxxxxx xxxxxx xxxx xx xxxxxxxx xx x xxxxx xxxxxx, xxx xxxxxxxxx xxxxx xxx xxxxxxxx xxx xxxxxxx xxx [{XxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/themeresource-markup-extension.md) xxxxxxxxxxx xxx xx xxxx, xx xx xxxxxxx xxx xx xxxxx xxxxxxxxxx. Xxxx xx xxxxx xxx xxxxxxx xxxxxx; xxx xxxxxxxxx xxxxx xxx xxxxx xxxxxxxx xxx xxxxxxx xx xxxxxxxxx xxx xxxxx xxxxx x {XxxxxXxxxxxxx} xxxxxx xxxxxxxxx, xx'x xx-xxxxxxxxx.
+As a result, after walking the control visual tree in response to a theme change, the framework walks the children and updates any [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) expressions set on them, or on objects set on their properties. This is where the problem occurs; the framework walks the brush resource and because it specifies its color using a {ThemeResource} markup extension, it's re-evaluated.
 
-Xx xxxx xxxxx, xxx xxxxxxxxx xxxxxxx xx xxxx xxxxxxxx xxxx xxxxx xxxxxxxxxx xxxxxxx xx xxx xxx x xxxxxxxx xxxx xxx xxxxxxxxxx xxxx xxx xxx xxxxx xxx xxxx xxxxxxx xxxxxxxxxx.
+At this point, the framework appears to have polluted your theme dictionary because it now has a resource from one dictionary that has its color set from another dictionary.
 
-Xx xxx xxxx xxxxxxx, xxx xxx [{XxxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/staticresource-markup-extension.md) xxxxxxx xx [{XxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/themeresource-markup-extension.md). Xxxx xxx xxxxxxxxxx xxxxxxx, xxx xxxxx xxxxxxxxxxxx xxxx xxxx xxxx:
+To fix this problem, use the [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md) instead of [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md). With the guidelines applied, the theme dictionaries look like this:
 
 ```XAML
 <ResourceDictionary>
@@ -434,8 +434,12 @@ Xx xxx xxxx xxxxxxx, xxx xxx [{XxxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platfor
 </ResourceDictionary>
 ```
 
-Xxxxxx xxxx xxx [{XxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/themeresource-markup-extension.md) xx xxxxx xxxx xx xxx "XxxxXxxxxxxx" xxxxxxxxxx xxxxxxx xx [{XxxxxxXxxxxxxx} xxxxxx xxxxxxxxx](../xaml-platform/staticresource-markup-extension.md). Xxxx xxxxxxxxx xxxxx xxxxx xxx xxxxxxxxx xxxxx xxxxxxx xx xxx xxxxxxxxxx. Xxxx xx xxx xxxxx xxxxxx xxxx xxx xxxx xxx xxx "XxxxXxxxxxxx" xxxxx xxx xxxxx xxxxx xxxxxxx xxxx xxx xxxxxxxx xxxxxxxxxx xx xxx xxxxxx, xxx xxxxxxx xx XXXX xx x xxxxxxxxx-xxxxx xxxxxxxx (xxxxx xxxxxxxx xxxx ‘XxxxxxXxxxx’ xx xxx xxxx). Xxx xxxxxx xxxxxxx xxx xxxx xx xxx xxx xxxxxxxx xxxxxx xxxx xxxxxx xx xxxx xxx xxxxx xxxx xxxxxxxx xxxxxxxx xxxxxxx xxx Xxxx xx Xxxxxx Xxxxxx. Xxxxx xxxxx xxxxxxx xxx xxxxxxx xx xxx xxxxxxxxx-xxxxx xxxxxxxxx. Xxx XXXX xxxxxxxxx xxxx xxx xxxx xxxxx xxxxxxx xxxxx xx xxxx xxxxxx xxxxx xxxxxxx xxxx xx xxxxxxx xxxx’xx xxxxxxx xx xxx xxxxxx xxxxx. Xxxx xx xxx xxx {XxxxxXxxxxxxx} xxxxxx xxxxxxxxx xx xxxx xxxx.
+Notice that the [{ThemeResource} markup extension](../xaml-platform/themeresource-markup-extension.md) is still used in the "HighContrast" dictionary instead of [{StaticResource} markup extension](../xaml-platform/staticresource-markup-extension.md). This situation falls under the exception given earlier in the guidelines. Most of the brush values that are used for the "HighContrast" theme are using color choices that are globally controlled by the system, but exposed to XAML as a specially-named resource (those prefixed with ‘SystemColor’ in the name). The system enables the user to set the specific colors that should be used for their high contrast settings through the Ease of Access Center. Those color choices are applied to the specially-named resources. The XAML framework uses the same theme changed event to also update these brushes when it detects they’ve changed at the system level. This is why the {ThemeResource} markup extension is used here.
 
-> **Xxxx**&xxxx;&xxxx;  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Note**&nbsp;&nbsp;  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+
+
 <!--HONumber=Mar16_HO1-->
+
+

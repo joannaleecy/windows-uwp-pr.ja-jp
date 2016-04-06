@@ -1,59 +1,63 @@
 ---
-Xxxxxxxxxxx: Xxxxxxx xxxx xxx xx xxx xxxxx xxxxxxxx xxx xxxxxxxxxxx xxxxx xxxxxxxxx xxxx xxxx xxx xxx xxxxxxxxxx xxxx xxxxx xx.
-xxxxx: Xxxxxxxx xxx xxxxxxxxxxx xxxxx
-xx.xxxxxxx: XYYYXYYY-XXXX-YYYY-XXYY-YXYYYYYYXYYX
+Description: 適切なカテゴリとサブカテゴリにアプリを登録すると、どのようなアプリかわかりやすくなり、ユーザーもアプリを見つけやすくなります。
+title: カテゴリとサブカテゴリの一覧
+ms.assetid: D451C468-DCCD-4966-AB87-8E766615A72F
 ---
 
-# Xxxxxxxx xxx xxxxxxxxxxx xxxxx
+# カテゴリとサブカテゴリの一覧
 
 
-Xxxxxxx xxxx xxx xx xxx xxxxx xxxxxxxx xxx xxxxxxxxxxx xxxxx xxxxxxxxx xxxx xxxx xxx xxx xxxxxxxxxx xxxx xxxxx xx.
+適切なカテゴリとサブカテゴリにアプリを登録すると、どのようなアプリかわかりやすくなり、ユーザーもアプリを見つけやすくなります。
 
-Xxxxxx xxx xxxxxxxx xxxx xxxx xxxxxxxxx xxxx xxx. Xxxx xxxxxx x xxxxxxxxxxx, xx xxxxxxxxx.
+アプリに最も適したカテゴリを 1 つ選んでください。 次に、利用可能な場合はサブカテゴリを選びます。
 
-> **Xxxx**  Xx xxx xxxxxx **Xxxxx** xxx xxxx xxxxxxxx, x xxxxxxxxxxx xx xxxxxxxx.
+> **注:** カテゴリとして **[ゲーム]** を選んだ場合、サブカテゴリは必須です。
 
  
 
-Xx xxx xxx xxxx xx xxxxxx xx xxx xxxxxxxx (xxx xxx xxxxxxxxxxx, xx xxxxxxxxx.) Xx xxx'xx xxx xxxx xxxxx xxxxxxxx xx xxxxxxxxxxx xx xxx, xxxxxx xxx xxx xxxx xxx xxxxx xxxxxxxxx xxx xxxx xxxxxx xx xxxx xx xxxx xxxxxx xx xxxx xxxx xxxx xxxxx.
+アプリは、1 つのカテゴリ (その中で、ある場合は 1 つのサブカテゴリ) にのみ登録できます。どのカテゴリやサブカテゴリを使えばよいかわからない場合は、同じようなアプリを見つけるときに調べる可能性が高いと思われるカテゴリを選んでください。
 
-Xx xxx xxxx xx xxxxxx xxx xxxxxxxx xx xxxxxxxxxxx xx xx xxx xxxx'x xxxxxxx xx xxx Xxxxx, xxx xxx xx xxxx xx [xxxxxxxx x xxx xxxxxxxxxx](app-submissions.md) xxx xxxxxxxxx xxx xxx xxxxxxxx.
+既にストアにあるアプリのカテゴリまたはサブカテゴリを変更する場合、[新しい申請を作成](app-submissions.md) して新しいカテゴリを選べば行うことができます。
 
-Xxx Xxxxxxx Xxxxx xxxxxxxxx xxxx xxxx xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxxx.
+Windows ストアでは、アプリを以下のカテゴリとサブカテゴリで分類しています。
 
-Xxxx xxxx xxxxxxxxxx xxxx xxxxxxxxxxxxx. Xxxx xx xxxx xxxx xxx xxx xxxx xxx x xxxxxxxxxxx xx xx xxxxxxx xx xxx xxxxxxxx xxx xxxxxx.
+サブカテゴリがあるのは、一部のカテゴリのみです。 選んだカテゴリに属するサブカテゴリのみを使うことができることに注意してください。
 
 
-| Xxxxxxxx                    | Xxxxxxxxxxx                                       |
+| カテゴリ                    | サブカテゴリ                                       |
 |-----------------------------|---------------------------------------------------|
-| Xxxxx + xxxxxxxxx           | X-xxxxxx <br> Xxxxxxx <br> Xxxxxxxxxx <br> Xxxxxxxxx |
-| Xxxxxxxx                    | Xxxxxxxxxx + xxxxxxx <br> Xxxxxxxxxxxxx <br> XXX <br> Xxxx + xxxxxxxxx <br> Xxxx xxxxxxxxxx <br> Xxxxxxxxx + xxxxxxxxx <br> Xxxxx + XX <br> Xxxxxxx xxxxxxxxxx <br> Xxxxxx xxxxxxx <br> Xxxxx + xxxxxxxxx <br> Xxxx + xxxxxxxx |
-| Xxxxxxxxx xxxxx             | Xxxxxxxx <br> Xxxxxx xxxxx <br> Xxxxxxxxxxx xxxx <br> Xxxxxxxxxx <br> Xxxxxxxxx + xxxxxxxx <br> Xxxxxxx <br> Xxxxxxxxx <br> Xxx xxxxxxx |
-| Xxxxxxxxx                   | Xxxxx + xxxxxxxxx <br> Xxxxx xxxxxxxx <br> Xxxxxxxxxxxxx xxxxx <br> Xxxxxxxx <br> Xxxxx xxxx |
-| Xxxxxxxxxxxxx               | (Xxxx)                                            |
-| Xxxx + xxxxxx               | (Xxxx)                                            |
-| Xxxxx                       | Xxxxxx + xxxxxxxxx <br> Xxxx + xxxxx <br> Xxxxxx <br> Xxxxxxxxxxx <br> Xxxxxx + xxxx <br> Xxxxxxxx <br> Xxxxx <br> Xxxxxxxxxx <br> Xxxxxx + xxxxxx <br> Xxxxxx + xxxxxx <br> Xxxx xxxxxxx <br> Xxxxxxx <br> Xxxxxxxxxx <br> Xxxxxx <br> Xxxxxxxx <br> Xxxx |
-| Xxxxxxxxxx + xxxxxxxx       | (Xxxx)                                            |
-| Xxxxxx + xxxxxxx            | (Xxxx)                                            |
-| Xxxx + xxxxxx               | Xxxxx + xxxxxxxxx <br> Xxxxxxxxxxxxx <br> Xxxxxxx + xxxx <br> Xxxxxx + xxxxxxxxxx <br> Xxxxxx |
-| Xxxxxxxxx                   | Xxxxxxxxxx <br> XXX <br> Xxxx + xxxxxx <br> Xxxxxxxxxxxxx <br> Xxxxxxx xxxxxxxx <br> Xxxxx + xxxxxxx |
-| Xxxxxxx                     | (Xxxx)                                            |
-| Xxxxxxxxxx xxxxxx           | Xxxxxxxxxxxx + xxxxxxx xxxxxx <br> Xxxxx xxxxxxxxxx <br> Xxxxx + xxxxx xxxxxxxxxx |
-| Xxxxx                       | (Xxxx)                                            |
-| Xxxxxxxxxx + xxxx           | (Xxxx)                                            |
-| Xxxx + xxxxxxx              | Xxxx <br> Xxxxxxx                                 |
-| Xxxxxxxx xxxxxxx            | Xxxxxxx + xxxxxxxxxxx <br> Xxxxxxxxx + xxxxx      |
-| Xxxxxxxxxxxxxxx             | Xxxxxxxxx + xxxxxx <br> Xxxxxx <br> Xxxxxxxxx + xxxx xxxxxxx |
-| Xxxxx + xxxxx               | (Xxxx)                                            |
-| Xxxxxxxxxxxx                | (Xxxx)                                            |
-| Xxxxxxxx                    | XX xxxxxxxxxx <br> Xxxxxxxx xxxxxxxx <br>         |
-| Xxxxxxxx                    | (Xxxx)                                            |
-| Xxxxxx                      | (Xxxx)                                            |
-| Xxxxxx                      | (Xxxx)                                            |
-| Xxxxxx                      | Xxxx xxxxxx <br> Xxxxxx                           |
-| Xxxxxxxxx + xxxxx           | Xxxxxx + xxxxxx <br> Xxxx xxxxxxxx                |
+| 書籍＆参考資料           | 電子ブック リーダー <br> フィクション <br> ノンフィクション <br> リファレンス |
+| 会社                    | 金融 & 会計 <br> コラボレーション <br> CRM <br> データ + 分析 <br> ファイル管理 <br> 在庫 & 物流 <br> 法務 & 人事 <br> プロジェクト管理 <br> リモート デスクトップ <br> 販売 + マーケティング <br> 時間 & 経費 |
+| 開発者ツール             | Database (データベース) <br> デザイン ツール <br> 開発キット <br> ネットワーク <br> リファレンス & トレーニング <br> サーバー <br> ユーティリティ <br> Web ホスティング |
+| 教育                   | 書籍＆参考資料 <br> 就学前教育 <br> 教育ツール <br> 言語 <br> 学習支援 |
+| エンターテイメント               | (なし)                                            |
+| グルメ               | (なし)                                            |
+| ゲーム                       | アクション＆アドベンチャー <br> カード＆ボード <br> カジノ <br> 教育 <br> 家族 & 子供 <br> 格闘 <br> 音楽 <br> プラットフォーマー <br> パズル＆クイズ <br> レーシング＆フライト <br> RPG <br> シューティング <br> シミュレーション <br> スポーツ <br> 戦略 <br> ワード |
+| 行政 & 政治       | (なし)                                            |
+| 健康 & フィットネス            | (なし)                                            |
+| 子供＆家族               | 書籍＆参考資料 <br> エンターテイメント <br> 趣味 & おもちゃ <br> スポーツ & アクティビティ <br> 旅行 |
+| ライフスタイル                   | 自動車 <br> DIY <br> 自宅 & ガーデン <br> リレーションシップ <br> 特定の関心事 <br> スタイル＆ファッション |
+| 医療                     | (なし)                                            |
+| マルチメディア デザイン           | イラスト & グラフィック デザイン <br> 音楽制作 <br> 写真 & ビデオ制作 |
+| 音楽                       | (なし)                                            |
+| ナビゲーション & マップ           | (なし)                                            |
+| ニュース & 天気              | ニュース <br> 天気                                 |
+| 個人資産管理            | 銀行取引 & 投資 <br> 予算 & 税金      |
+| 個人用設定             | 着信音 & サウンド <br> テーマ <br> 壁紙 & ロック画面 |
+| 写真 & ビデオ               | (なし)                                            |
+| 生産性                | (なし)                                            |
+| セキュリティ                    | PC の保護 <br> 個人のセキュリティ <br>         |
+| ショッピング                    | (なし)                                            |
+| ソーシャル                      | (なし)                                            |
+| スポーツ                      | (なし)                                            |
+| 旅行                      | 都市ガイド <br> ホテル                           |
+| ユーティリティ & ツール           | バックアップ & 管理 <br> ファイル マネージャー                |
  
 
-> **Xxxx**  Xxx xxxx xx xxx xxxxxxxxxx xxxx xx xxx Xxxxxxx Xxxxx xxx Xxxxxxx Y.Y xxx xxxxxxx, xxx xx xxx Xxxxxxx Xxxxx Xxxxx, xxx xxx xxxx xxxxxx xx xxx xxxxxxxx xxxx xxxxx, xxx [Xxx xxxx xxx xxxxxxx xx xxx Xxxxx xxx Xxxxxxx YY xxxxxxxxx](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes).
+> **注:** Windows 8.1 以前の Windows ストアと Windows Phone ストアで使われるカテゴリと、上のカテゴリ一覧との関連性については、「[ストアにおける Windows 10 ユーザー向けのアプリの表示形式](how-your-app-appears-in-the-store-for-windows-10-customers.md#category-changes)」をご覧ください。
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

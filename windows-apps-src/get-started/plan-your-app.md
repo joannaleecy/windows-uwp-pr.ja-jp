@@ -1,233 +1,237 @@
 ---
-xxxxx: Xxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx
-xxxxxxxxxxx: Xx Xxxxxxxxx xxxxxx xxxxx, xxx xxxxxxx xxx xxxxxxxx xxxx xxxxxxxx xx xxxx xxxxxxxx xxxxxx--xxxxxxx, xxxxxxxxx, xxxxxxxx, xxxxxx, xxx xxxxxxxxx. Xx xxxxxxxxx xxx xx xxxxx x xxxxxxx xxxxxxx xxx xxxx xxx xxxxxx xxx xxxxxxxxxxx xxx xxx xxxxx xx xxxxx.
-xx.xxxxxxx: YXYYYYXX-YXYY-YYYY-YXYX-YYXYYXYYXYYY
+title: Plan your Universal Windows Platform (UWP) app
+description: On Microsoft design teams, our process for creating apps consists of five distinct stages--concept, structure, dynamics, visual, and prototype. We encourage you to adopt a similar process and have fun making new experiences for the world to enjoy.
+ms.assetid: 9A5189CD-3B97-4967-8E7D-36D25F04F244
 ---
 
-#  Xxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx
+#  Plan your Universal Windows Platform (UWP) app
 
-Xx Xxxxxxxxx xxxxxx xxxxx, xxx xxxxxxx xxx xxxxxxxx xxxx xxxxxxxx xx xxxx xxxxxxxx xxxxxx: xxxxxxx, xxxxxxxxx, xxxxxxxx, xxxxxx, xxx xxxxxxxxx. Xx xxxxxxxxx xxx xx xxxxx x xxxxxxx xxxxxxx xxx xxxx xxx xxxxxx xxx xxxxxxxxxxx xxx xxx xxxxx xx xxxxx.
+On Microsoft design teams, our process for creating apps consists of five distinct stages: concept, structure, dynamics, visual, and prototype. We encourage you to adopt a similar process and have fun making new experiences for the world to enjoy.
 
-## Xxxxxxx
+## Concept
 
-**Xxxxx xxxx xxx**
+**Focus your app**
 
-Xxxx xxxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx, xxx xxxxxx xxxxxxxxx xxx xxxx xxxx xxxx xxx xxxx xx xxx xxx xx'x xxx, xxx xxxx xxxx xxxx xxx xxxx xx xxxxx xx. Xx xxx xxxx xx xxxxx xxxxx xxx xx x xxxxxx xxxxxxx xxxx xxxxxxxx x xxxxx xxxxxxxxxx.
+When planning your Universal Windows Platform (UWP) app, you should determine not only what your app will do and who it's for, but also what your app will be great at. At the core of every great app is a strong concept that provides a solid foundation.
 
-Xxx xxx xxxx xx xxxxxx x xxxxx xxx. Xxxxxxxx xxxxx xxx xxxxxxx xxxxx xxxx xxxx, xxxx, xxx xxxxx xxxxx xxxxxx, xxx’xx xxxxxxx xxxx xxxx xxxx xx xxxxxx xxxxxxxx, xxxxxxx xxxx xxxxxx xxxxxxx xxx xxxxxx, xxx xxxx xxx xxxxxx xxxx. Xxxxx, xxxx, xxx xxx xxxxxx xxxx xxx xxxx xxx xxx xx xx xxxxx xx, xxx xxx xxx xxxxx xxxxxxxxxx xxxxx xx xxxxx xxx xxxxxxx xxx xxxx xx xxx xxxxxx xxxxxxx.
+Say you want to create a photo app. Thinking about the reasons users work with, save, and share their photos, you’ll realize that they want to relive memories, connect with others through the photos, and keep the photos safe. These, then, are the things that you want the app to be great at, and you use these experience goals to guide you through the rest of the design process.
 
-**Xxxx'x xxxx xxx xxxxx?** Xxxxx xxxx x xxxxx xxxxxxx xxx xxxx xxx xx xxx xxxxxx xxxx xxx xxxx xx xxxx xxxxx xx xxxx xxxx xxx.
+**What's your app about?** Start with a broad concept and list all of the things that you want to help users do with your app.
 
-Xxx xxxxxxx, xxxxxxx xxx xxxx xx xxxxx xx xxx xxxx xxxxx xxxxxx xxxx xxxxx xxxxx. Xxxx xxx xxxx xxxxx xxx xxxxx xxxxxx xxx xx xxx xxxx xx x xxxxxx:
+For example, suppose you want to build an app that helps people plan their trips. Here are some ideas you might sketch out on the back of a napkin:
 
--   Xxx xxxx xx xxx xxx xxxxxx xx xx xxxxxxxxx, xxx xxxx xxxx xxxx xxx xx xxx xxxx.
--   Xxxx xxx xxxxx xxxxxxx xxxxxx xxxxxxxxx xxxxx xxx'xx xx x xxxx.
--   Xxx xxxxxx xxxxxxx xxxxxx xxxxxxxx xxx xxxxxxxxx xxxxx xx xxxx-xx xxxxxxxxxx xxx xxxx-xxx xxxxxxxxxxx.
--   Xxx xxxxxx xxxxxxx xxxxxxx xxx xx xxxxx xxxxxx xx xxxxx xxxx xxxxxxx xxx xxxxxx.
--   Xxx xxxxxxxxxxx xxxxxxxxxxxx xxxxx xx xxxxxx xxxxxx.
--   Xxxx x xxxxxxxxxxxx xxxx xx xxxxx xxx xxxxxxxxxxx, xxxxx, xxx xxxxxxxxxx xxxxxx xxxx xxxxxxxxxxx.
+-   Get maps of all the places on an itinerary, and take them with you on the trip.
+-   Find out about special events happening while you're in a city.
+-   Let travel buddies create separate but shareable lists of must-do activities and must-see attractions.
+-   Let travel buddies compile all of their photos to share with friends and family.
+-   Get recommended destinations based on flight prices.
+-   Find a consolidated list of deals for restaurants, shops, and activities around your destination.
 
-![x xxxxxx xxx x xxxxxx xxx](images/ux-triptracker-tab-phone-700.png)
+![a design for a travel app](images/ux-triptracker-tab-phone-700.png)
 
-**Xxxx'x xxxx xxx xxxxx xx?** Xxxx x xxxx xxxx xxx xxxx xx xxxx xxxx xx xxxxx xx xxx xx x xxxxxxxxxx xxxxxxxx xxxxxx xxxxx xxx xx xxx. Xxxxxxxxx xxxxxxxx xx xxxx xxx xxxx xx xxxx x xxxxxx xxxxxxxx xxxx xxx xxxx xx xxxxx xx. Xx xxx xxxxxxx, xxx xxxxx xxxxx xxx xxxx xxxx xxxxx, xxx xxxxxx "xx" xx xxxx xx xxxxxxx xx xxxxxx x xxxxxx xxxxxxxx xxxxx.
+**What's your app great at?** Take a step back and look at your list of ideas to see if a particular scenario really jumps out at you. Challenge yourself to trim the list to just a single scenario that you want to focus on. In the process, you might cross off many good ideas, but saying "no" to them is crucial to making a single scenario great.
 
-Xxxxx xxx xxxxxx x xxxxxx xxxxxxxx, xxxxxx xxx xxx xxxxx xxxxxxx xx xx xxxxxxx xxxxxx xxxx xxxx xxx xx xxxxx xx xx xxxxxxx xx xxxx xx xxx xxxxxxxx. Xxx xxxxxxx:
+After you choose a single scenario, decide how you would explain to an average person what your app is great at by writing it down in one sentence. For example:
 
--   Xx xxxxxx xxx xx xxxxx xx xxxxxxx xxxxxxx xxxxxx xxxxxxxxxxx xxxxxxxxxxxxxxx xxx xxxxx xxxxx.
--   Xx xxxxxxx xxx xx xxxxx xx xxxxxxx xxxxxxx xxxxx xxxxx xxxxxxx xxxxxxxx xxx xxxxx xxxxx xxxxxxxxxxxx xxxx xxxx xxxxx.
--   Xx xxxxxxx xxx xx xxxxx xx xxxxxxx xxxxxxxx xxxxxxxxxx xxxxx xxxxxx xxxxxxx xxxxxxxx xx xxxx xxxxx xxxx xx xxxxxxxxx x xxxxxxxx.
+-   My travel app is great at helping friends create itineraries collaboratively for group trips.
+-   My workout app is great at letting friends track their workout progress and share their achievements with each other.
+-   My grocery app is great at helping families coordinate their weekly grocery shopping so they never miss or duplicate a purchase.
 
-![x xxxxxx xxx x xxxxxxxxxxxxx xxxx](images/ux-collaboration-tabphone-700.png)
+![a design for a collaboration tool](images/ux-collaboration-tabphone-700.png)
 
-Xxxx xx xxxx xxx'x "xxxxx xx" xxxxxxxxx, xxx xx xxx xxxxx xxxx xxxxxx xxxxxxxxx xxx xxxxxxxxx xxxx xxx xxxx xx xxx xxxxx xxxx xxx. Xxxxx xx xxx xxxxxxxxx xxx xxxx xxxxx xx xxxxxxxxxx xx xxxx xxx, xxx xx xxxxxxx xxx xx xxxx xxxx xxxx x xxxxxxx xxxx. Xx xxxxxx xx xxxxx xxxx xxxx xxxxx xxxx xx xxxx xx xx, xx xxxxxxx xx xxxx xxxx xxx xxxx xx xxxx xx xx.
+This is your app's "great at" statement, and it can guide many design decisions and tradeoffs that you make as you build your app. Focus on the scenarios you want users to experience in your app, and be careful not to turn this into a feature list. It should be about what your users will be able to do, as opposed to what your app will be able to do.
 
-**Xxx xxxxxx xxxxxx**
+**The design funnel**
 
-Xx’x xxxx xxxxxxxx—xxxxxx xxxxxxx xx xx xxxx xxx xxxx—xx xx xxxxx xxx xxxxxxx xx, xxxxxxx xxxx xxxxxx xx xxxxx x xxxx xxxx xxxxxxxxxx. Xxx xxx’x xxx xxx xx xxxx xxx xxxx xxxxxxx xxxxxxxxxxx xxxx xxxxx xxxxx. Xx’x xxxxxxx xxxx xxx’xx xx xxxxxxx xx xxxxx xxxx xxx xxxx xxx’xx xxxxxxx xxxxxxxx xx xxxxxxxxxx xx xxx xxxxxxxx xxxxxx xx xxx xxx xxxxx. Xx xxxx xxx’x xxxxxxx xx xxxx xxxxx xxxx xxxxxxx xx xxx xxxxxxx! Xxxx, xxx xxxxxx xxxxxx xx x xxxxxxxxx xx xxxx xxxxxxx xxxx xxxx xxxxx xx xxxxx xx xxxxxxxx.
+It’s very tempting—having thought of an idea you like—to go ahead and develop it, perhaps even taking it quite a ways into production. But let’s say you do that and then another interesting idea comes along. It’s natural that you’ll be tempted to stick with the idea you’ve already invested in regardless of the relative merits of the two ideas. If only you’d thought of that other idea earlier in the process! Well, the design funnel is a technique to help uncover your best ideas as early as possible.
 
-Xxx xxxx "xxxxxx" xxxxx xxxx xxx xxxxx. Xx xxx xxxx xxx xx xxx xxxxxx, xxxx xxxxx xx xx xxx xxxx xxx xx xxxxxxxx xx x xxxx xxx-xxxxxxxx xxxxxx xxxxxxxx (x xxxxxx, xxxxxxx, xx x xxxxxxxxx xx xxxx). Xx xxxx xxxxxxxxxx xx xxxxx xxxxxxx xxxxxxx xxxxxx xxx xxxxxx xxx xx xxx xxxxxx, xxx xxxxxx xx xxxxx xx xxxxxxx xxxx xxxxx xxx xxxxxxxx xx xxx xxxxxxxxx xxxxxxxxxxxx xxx xxxxx xxxxxxxxx. Xxxx xxxxxxxx xxxxxx xxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxxx xx xxxxx xxx xxxx xxxxxxx xxxxxxx, xx xx xxxxxx x xxxxxxxxxx xxxxxxxx xxxx xx "xx xxxx xxxxxx, xx xxxxxxxxx?". *Xxx xx xxxx xxxx xxx xxxxxx xxxx xxxx xxxx xxxx*. Xxxx xxxxx xxxx xxxx xx xxx xxxxxxx xx xxx xxxx xxxx, xxx xxx’xx xx xxxx xxxx xxxx xxxxxxx xxx xxx’x xx xxxxxxxx xx xxxx xxx xxxx xxxx xxx xxxxxxxxx xx xxxxx xxx xxxx. Xxxxx xxxx xxxxxxx xx xxxx xxxxxxx xxxx xxx xxxxxx xxxx xxxxxxx xxxxxxxxxxxx xxxx-xxxxxxxx xxxxxxxxxx. Xx xxx xxx, xxx’xx xxxx x xxxxxx xxxxxx xxxxxxxx xxxx xxxxxxxxxx xxx xxxxxxx xxxx. Xxxx xx xxx xxxx xxxx xxx xxxxxxx xx xxx xxxxxx, xxx xxxxxx xxxxxxx xx xxxx xxxxx xxxxx. Xxx xxxx xxxx xxxxxxxx xxx xxxx xxx xxx xxxxx.
+The term "funnel" comes from its shape. At the wide end of the funnel, many ideas go in and each one is realized as a very low-fidelity design artifact (a sketch, perhaps, or a paragraph of text). As this collection of ideas travels through toward the narrow end of the funnel, the number of ideas is trimmed down while the fidelity of the artifacts representing the ideas increases. Each artifact should capture only the information necessary to judge one idea against another, or to answer a particular question such as "is this usable, or intuitive?". *Put no more time and effort into each than that*. Some ideas will fall by the wayside as you test them, and you’ll be okay with that because you won’t be invested in them any more than was necessary to judge the idea. Ideas that survive to move further into the funnel will receive successively high-fidelity treatments. In the end, you’ll have a single design artifact that represents the winning idea. This is the idea that won because of its merits, not merely because it came along first. You will have designed the best app you could.
 
-## Xxxxxxxxx
+## Structure
 
 
-**Xxxxxxxxxxxx xxxxx xxxxxxxxxx xxxxxx**
+**Organization makes everything easier**
 
-![xxxxxxxxxxxx xxxxx xxxxxxxxxx xxxxxx](images/ux-vision-and-process-organization.png)
+![organization makes everything easier](images/ux-vision-and-process-organization.png)
 
-Xxxx xxx'xx xxxxx xxxx xxxx xxxxxxx, xxx'xx xxxxx xxx xxx xxxx xxxxx—xxxxxxxx xxxx xxx'x xxxxxxxxx. Xxxxxxxxxxx xxxxxxxxxxxx (XX) xxxxx xxxx xxxxxxx xxx xxxxxxxxxx xxxxxxxxx xx xxxxx. Xx xxxxx xxxxxx xxxx xxx'x xxxxxxxxxxxx xxxxx xxx, xxxxxxxxxx, xxxx xxx'x xxxxxxxx. Xx xxxxxxxx xxx xxxx xxxxxxx xxxx xx xxxxxxxxx—xxx xxx xxxx xxxxx xxxx xxxxxxxx xxxx xxxxxxx—xxx xxx xxx x xxxxxx xxxx xx xxx xxxxx xxxx xxxxxxxxxx xxxx xxx.
+When you're happy with your concept, you're ready for the next stage—creating your app's blueprint. Information architecture (IA) gives your content the structural integrity it needs. It helps define your app's navigational model and, ultimately, your app's identity. By planning how your content will be organized—and how your users will discover that content—you can get a better idea of how users will experience your app.
 
-Xxxx XX xxx xxxx xxxxxxxxxxx xxxx xxxxxxxxx, xxx xx xxxxx xxx xxxxxxxx xxx xxx xxxxxxx xx xxxxx xxxx. Xxx [Xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=268089) xxx, xxx xxxxxxx, xxxxxxxx xxxxxxxx xxxx x xxx xxxx xxxxxxxx xxxxxx xx xxx xxxx'x xxxxxxx, xxxxx, xxxx, xxx xxxxx. Xxx xxxxxxxxxx xx xxxxxxx, xx xxxxx xxx xxx xxx xxxxx xxxxxxxxxx xxxxxxx. Xxxxxx xxxxxx xx xxx xxx xxxxx xx xxxx xxxxxxxx xxxxx.
+Good IA not only facilitates user scenarios, but it helps you envision the key screens to start with. The [Audible](http://go.microsoft.com/fwlink/p/?LinkID=268089) app, for example, launches directly into a hub that provides access to the user's library, store, news, and stats. The experience is focused, so users can get and enjoy audiobooks quickly. Deeper levels of the app focus on more specific tasks.
 
-Xxx xxxxxxx xxxxxxxxxx, xxx [Xxxxxxxxxx xxxxxx xxxxxx](../layout/navigation-basics.md).
+For related guidelines, see [Navigation design basics](../layout/navigation-basics.md).
 
-## Xxxxxxxx
+## Dynamics
 
-**Xxxxxxx xxxx xxxxxxx**
+**Execute your concept**
 
-Xx xxx xxxxxxx xxxxx xx xxxxx xxxxxxxx xxxx xxx'x xxxxxxx, xxx xxxxxxxx xxxxx xx xxx xxxxx xxxxxxxxx xxxx xxxxxxx. Xxxx xxx xx xxxxxxxxxxxx xx xxxx xxxx, xxxx xx xxxxx xxxxxxxxxx xx xxxxxx xxx xxxx xxxx xxxxx (xxx xxx xxx xxxx xxx xxxxx xx xxx xxxx xxxxxx xxx xxx xx xxxxxxx xxxxx xxxxx), xxx xxxxxxxx xxxxx xxx xxxxx xxx xxx xxxxx xxxx xxxxxxxxxx xxxx xxx'x XX. Xxxxxxxxxx xxx x xxxxx, xxx-xxxxxxxx xxxx xx xxxx xxx xxxx xxxxxxxx xxxxxxxxx xxxxx xxxx xxx'x xxxx xxxx.
+If the concept stage is about defining your app's purpose, the dynamics stage is all about executing that purpose. This can be accomplished in many ways, such as using wireframes to sketch out your page flows (how you get from one place to the next within the app to achieve their goals), and thinking about the voice and the words used throughout your app's UI. Wireframes are a quick, low-fidelity tool to help you make critical decisions about your app's user flow.
 
-Xxxx xxx xxxx xxxxxx xx xxxxxxx xxxx xx xxxx "xxxxx xx" xxxxxxxxx, xxx xxxxxx xxxx xxxxx xxxxxxx xxxx xxxxxx xxxxxxxx xxxx xxx xxxx xx xxxxx xx. Xxxxx xxxx xxxx xxxxx xxxx xxx xxxx xx xxxxx, xxx xxxxxxx xxxxxxx xxxxxx. Xxxxx xxxxxxxx xx x xxxxxx-xx-xxxxxx xxxxx—xxx xxxx xxx xx xx xxx'xx xxxxx xx xxx xxx xxxxx xxxx. Xxxx xxx xxxxxxxx xxxx xxxxxxxxx xxx xxxxx xxx xxxxxx, xxx'xx xxxx xxxxxx xxxxxxx xxxx xxxx xxxx xxxxxxx xxxx xx xxxxxxxxxxx xxxxxx xxxxxxx. Xxxxxxxx xxx xxxx xxxxx xxxxxx. Xxx xxxxx xxxxxx xxxxxxxxxxxx xxxx xxxxxxxxx xxxxxxxx xxx xxxx xx xxx xxxx xxx xxxx xx xxx xxxx.
+Your app flow should be tightly tied to your "great at" statement, and should help users achieve that single scenario that you want to light up. Great apps have flows that are easy to learn, and require minimal effort. Start thinking on a screen-to-screen level—see your app as if you're using it for the first time. When you pinpoint user scenarios for pages you create, you'll give people exactly what they want without lots of unnecessary screen touches. Dynamics are also about motion. The right motion capabilities will determine fluidity and ease of use from one page to the next.
 
-Xxxxxx xxxxxxxxxx xx xxxx xxxx xxxx xxxx:
+Common techniques to help with this step:
 
--   Xxxxxxx xxx xxxx: Xxxx xxxxx xxxxx, xxxx xxxxx xxxx?
--   Xxxxxxxxxx xxx xxxx: Xxx xxxxxx xxxxx xxxx xxxxxxx xxxx XX xx xxxxxxxx xxx xxxx?
--   Xxxxxxxxx: Xxx xxx xxx xxxx xxxx x xxxxx xxxxxxxxx.
+-   Outline the flow: What comes first, what comes next?
+-   Storyboard the flow: How should users move through your UI to complete the flow?
+-   Prototype: Try out the flow with a quick prototype.
 
-**Xxxx xxxxxx xxxxx xx xxxx xx xx?** Xxx xxxxxxx, xxx xxxxxx xxx xx "xxxxx xx xxxxxxx xxxxxxx xxxxxxxxxxxxxxx xxxxxx xxxxxxxxxxx xxx xxxxx xxxxx." Xxx'x xxxx xxx xxxxx xxxx xx xxxx xx xxxxxx:
+**What should users be able to do?** For example, the travel app is "great at helping friends collaboratively create itineraries for group trips." Let's list the flows that we want to enable:
 
--   Xxxxxx x xxxx xxxx xxxxxxx xxxxxxxxxxx.
--   Xxxxxx xxxxxxx xx xxxx x xxxx.
--   Xxxx x xxxxxx'x xxxx.
--   Xxx xxxxxxxxxxx xxxxxxxxxxx xx xxxxx xxxxxxxxx.
--   Xxx xxxxxxxxxxxx xxx xxxxxxxxxx xx xxxxx.
--   Xxxx xxx xxxxxxx xx xxxxxxxxxxxx xxx xxxxxxxxxx xxxx xxxxxxx xxxxx.
--   Xxxxx xxxxxxxxxxx xxx xxxxxxx xxx xxxxxxxx xx xxxxxx.
+-   Create a trip with general information.
+-   Invite friends to join a trip.
+-   Join a friend's trip.
+-   See itineraries recommended by other travelers.
+-   Add destinations and activities to trips.
+-   Edit and comment on destinations and activities that friends added.
+-   Share itineraries for friends and families to follow.
 
-## Xxxxxx
+## Visual
 
-**Xxxxx xxxxxxx xxxxx**
+**Speak without words**
 
-![x xxxxxx xxx x xxxxxxxx xxxxxxx xxx](images/ux-cocktailcreator-tab-phone.png)
+![a design for a cocktail creator app](images/ux-cocktailcreator-tab-phone.png)
 
-Xxxx xxx'xx xxxxxxxxxxx xxx xxxxxxxx xx xxxx xxx, xxx xxx xxxx xxxx xxx xxxxx xxxx xxx xxxxx xxxxxx xxxxxx. Xxxxx xxxxxxx xxxxxx xxx xxxx xxx xxxx xxx xxxxx, xxx xxx xx xxxxx xxx xxxxx xxxxx xxxxxxx xxxxxxxxx xxx xxxxxx. Xxxx xxxxxx xx xxxxx xxxxxxx, xxxx, xxx xxxxxxx xxx xxxx x xxx xxxxxxxx xx xxxx xxxxxx xxxxxxxx.
+Once you've established the dynamics of your app, you can make your app shine with the right visual polish. Great visuals define not only how your app looks, but how it feels and comes alive through animation and motion. Your choice of color palette, icon, and artwork are just a few examples of this visual language.
 
-Xxx xxxx xxxx xxxxx xxx xxxxxx xxxxxxxx, xx xxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxx xxxx xxxx xxxx xxx. Xxx xxx xxxxxxx xxxxx xxx xxxx xxx xxxx; xxx'x xxx xxx xxxx xxxxxxx xxxx xxxxxxx.
+All apps have their own unique identity, so explore the visual directions you can take with your app. Let the content guide the look and feel; don't let the look dictate your content.
 
-## Xxxxxxxxx
+## Prototype
 
-**Xxxxxx xxxx xxxxxxxxxxx**
+**Refine your masterpiece**
 
-Xxxxxxxxxxx xx x xxxxx xx xxx *xxxxxx xxxxxx*—x xxxxxxxxx xx xxxxxx xxxxx xxxxxxx—xx xxxxx xxx xxxxxxxx xxxxxxxxxxxx xxxx xxxx xxxxxxxx xxxx xxxxxxxxx xxxx xxxx x xxxxxx, xxx xxxx xxxxxxxxxxx xxxx x xxxxxxxx xxx. X xxxxxxxxx xxxxx xx x xxxx xx xxxx-xxxxx xxxxxxx xxxxx xx x xxxx. Xxx xxxxxx xxxxxxx xxx xxxx xxxxx xxxxxxx xx xxxx xxxx xxx xxxx xx xxxxxxx xxxxxxxxx xxxxxxx xxxx, xx xxxxxxxx xx xxxxxxxxxx xxxxxxx xxxxxx xx XX xx xxx xxxxx, xx xxxxxxxx x xxxxxxx xxx. Xx, x xxxxxxxxx xxxxx xx x xxxx xxxxxx xxx xxxx xxxxxxxxx xxxx xxxxxxxxx, xxxxxxxx xxx xxxxxxxx xxxxxx xx x xxxxxx xxx xxxxxx xxx xxxxx xxxxxxx. Xx xxxx xxxxx, xxxx xxxxx xxxxx xx xxxxxx xxxx xxxxx xxx xxxx xxxx xxxx xx xxxxxx xx xxxxxxx. Xxxx xxxxxxxxxxx xxxxx xx xxxx xxx, xxxx xxx xxxx xx xxxxxx xxx xxxxxx xxx xxxxxxxxxx xxxx xxxx xx xxx xxxx.
+Prototyping is a stage in the *design funnel*—a technique we talked about earlier—at which the artifact representing your idea develops into something more than a sketch, but less complicated than a complete app. A prototype might be a flow of hand-drawn screens shown to a user. The person running the test might respond to cues from the user by placing different screens down, or sticking or unsticking smaller pieces of UI on the pages, to simulate a running app. Or, a prototype might be a very simple app that simulates some workflows, provided the operator sticks to a script and pushes the right buttons. At this stage, your ideas begin to really come alive and your hard work is tested in earnest. When prototyping areas of your app, take the time to sculpt and refine the components that need it the most.
 
-Xx xxx xxxxxxxxxx, xx xxx'x xxxxxx xxxxxx: Xxxxxx xxxxx xxxx xx xx xxxxxxxxx xxxxxxx. Xx xxxxxxxxx xxxx xxx xxxxxxxxx xxxxx xxx xxxxx. Xxxx xxx xxxxxxxx xxxxxxxx, xxx xxxx xxxx xxx xxx xxxxxxx xx xxxxxxxxx xxxxx xxx xxxxx.
+To new developers, we can't stress enough: Making great apps is an iterative process. We recommend that you prototype early and often. Like any creative endeavor, the best apps are the product of intensive trial and error.
 
-## Xxxxxx xxxx xxxxxxxx xx xxxxxxx
+## Decide what features to include
 
-Xxxx xxx xxxx xxxx xxxx xxxxx xxxx xxx xxx xxx xxx xxxx xxxx xxx xxxxx, xxx xxx xxxx xx xxx xxxxxxxx xxxxx xx xxxx xxxxxxx. Xxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxxxxx xxxxxxxx xxxx xxxx xxx'x xxxxx. Xx xxxx xx xxxxxx xxx [xxxx xxxxxxxxxx (XX) xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465424.aspx) xxx xxxx xxxxxxx.
+When you know what your users want and how you can help them get there, you can look at the specific tools in your toolbox. Explore the Universal Windows Platform (UWP) and associate features with your app's needs. Be sure to follow the [user experience (UX) guidelines](https://msdn.microsoft.com/library/windows/apps/hh465424.aspx) for each feature.
 <!--need URL for landing page -->
 
-Xxxxxx xxxxxxxxxx:
+Common techniques:
 
--   Xxxxxxxx xxxxxxxx: Xxxx xxx xxxx xxxxxxxx xxx xxxxxxxx xxxxxx xxx xxx xxx xxx xxx xxxx.
--   Xxxxxxxxxxx xxxxxxxx: Xxxxxxx xxxx xxxxx xxxx xxxxxxxx.
--   Xxxxxxxxx: Xxxxxxxx xxx xxxxxxxx xx xxxxxx xxxx xxxx xx xxxx xxx xxxx.
+-   Platform research: Find out what features the platform offers and how you can use them.
+-   Association diagrams: Connect your flows with features.
+-   Prototype: Exercise the features to ensure that they do what you need.
 
-**Xxx xxxxxxxxx**  Xxxx xxx xxx xxxxxxxxxxx xx xxx xxxxxxxxx xxxx xxxxxx xxxxx, xxxxx-xxx, xxxxx-xxxxxxx xxxx xxxxx.
+**App contracts**  Your app can participate in app contracts that enable broad, cross-app, cross-feature user flows.
 
--   **Xxxxx**  Xxx xxxx xxxxx xxxxx xxxxxxx xxxx xxxx xxx xxxx xxxxx xxxxxx xxxxxxx xxxxx xxxx, xxx xxxxxxx xxxxxxxxx xxxxxxx xxxx xxxxx xxxxxx xxx xxxx, xxx.
--   **Xxxx Xx**  Xxx xxxx xxxxx xxxxx xxxxx, xxxxx, xx xxxxxx xxxxxxxx xxxx xxxx xxx xx xxxxx xxxxxxx xx xxxxx xxxx xxxxxxx.
--   **Xxxx xxxxxx xxx xxxx xxxxxx xxxxxxxxxx**   Xxx xxxx xxxxx xxxx xxx xxxx xxxxx xxxxx xxxx xxx xxxxx xxxx xxxxxx, xxxxxxxxx xxxxxxx xxxxxxx, XxxxXxxxx, xx xxxx xxxxx xxxx. Xxx xxx xxxx xxxxxxx x xxxx xxxxxx xxxxxxxxx xx xxxxx xxxx xxx xxxx xxxx xxx'x xxxxxxx.
+-   **Share**  Let your users share content from your app with other people through other apps, and receive shareable content from other people and apps, too.
+-   **Play To**  Let your users enjoy audio, video, or images streamed from your app to other devices in their home network.
+-   **File picker and file picker extensions**   Let your users load and save their files from the local file system, connected storage devices, HomeGroup, or even other apps. You can also provide a file picker extension so other apps can load your app's content.
 
-Xxx xxxx xxxx, xxx [App contracts and extensions](https://msdn.microsoft.com/library/windows/apps/hh464906).
+For more info, see [App contracts and extensions](https://msdn.microsoft.com/library/windows/apps/hh464906).
 <!-- Win 8 page. Should have replacement. -->
 
-**Xxxxxxxxx xxxxx, xxxx xxxxxxx, xxx xxxxxxxx xxxxxxxxxxxxxx**  Xxxxxxx xxxx xxxxx xx xxxxxx xxx xxxx xxx xx xxx xxxxxxxxx. Xxx xxxx xxxx xxx XX xx xxxxx xx xxx xxxxxx, xxxxx xxx xxxxx xxxx, xx xxx xxxxxxxxxxx, xx xxx xxxxxxxx xxxxxxxxxxxxx, xxx xx xxxxxxxx xxxxxxxxxxxx xxx xxxx xxxxxxx xx xxx xx.
+**Different views, form factors, and hardware configurations**  Windows puts users in charge and your app in the forefront. You want your app UI to shine on any device, using any input mode, in any orientation, in any hardware configuration, and in whatever circumstance the user decides to use it.
 
-**Xxxxx xxxxx**  Xxxxxxx xxxxxxxx x xxxxxx xxx xxxxxxxxxxx xxxxx xxxxxxxxxx xxxx xxxx xxxx xxxx xxxxxx xxxxxxx xxxxx xxxxxxxxxxxxx.
+**Touch first**  Windows provides a unique and distinctive touch experience that does more than simply emulate mouse functionality.
 
-Xxx xxxxxxx, xxxxxxxx xxxx xx x xxxxx-xxxxxxxxx xxx xx xxxxxxxx xxxxxxx x xxxxx xxx xx xxxxxxx. Xxxxx xxx xxx xx xxxxxx xxxxxxx xxxxxxxxxx xx xxxxxxx, xxx xxxx xxxx xx xx xxxxx xxxxxxxxxx xx xxxx xxxx xxx xxxx xxxxxxxx xxxxxxxxxxx. Xxx xxx xxx xxxx xx xxxxxxx xxxx xxxxxxx xx x xxxx xxxxxxx, xxxxxx, xxx xxxxxxxxxxx xxx xxxx xxxx xxxxxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxxxx xxxx xxxx.
+For example, semantic zoom is a touch-optimized way to navigate through a large set of content. Users can pan or scroll through categories of content, and then zoom in on those categories to view more and more detailed information. You can use this to present your content in a more tactile, visual, and informative way than with traditional navigation and layout patterns like tabs.
 
-Xx xxxxxx, xxx xxx xxxx xxxxxxxxx xx x xxxxxx xx xxxxx xxxxxxxxxxxx, xxxx xxxxxx, xxx, xxxxx, xxx xxxxxx. Xxxxx xxxx xxxxx [Xxxxx xxx xxxxx xxxx xxxxxxxxxxxx](../input-and-devices/input-primer.md).
+Of course, you can take advantage of a number of touch interactions, like rotate, pan, swipe, and others. Learn more about [Touch and other user interactions](../input-and-devices/input-primer.md).
 
-**Xxxxxxxx xxx xxxxx**  Xx xxxx xxxx xxx xxxxx xxxxx xxx xxxxxxx xxxxx xxxx xxxxx xxxxxxxx xxxxxxxxxxx:
+**Engaging and fresh**  Be sure your app feels fresh and engages users with these standard experiences:
 
--   **Xxxxxxxxxx**  Xxx xxx xxxxxxx xx xxxxxxxxxx xx xxxx xxxx xxx xxxx xxx xxxxx xxx xxxx xxxxx. Xxxx xxxxx xxxxxxxxxx xxxxxxx xxxxxxx xxx xxx xxxxxxxxxxx xxxxxxxx xxxx xxxxxx xxxxxxxxxxx. Xxxxx xxxx xxxxx [xxxxxxxxx xxxx XX](../graphics/animations-overview.md).
--   **Xxxxx xxxxxxxxxxxxx**  Xxx xxxx xxxxx xxxx xxxxx xxxx-xxxxxxxxx xx xxxxxxxxxx xxxxxxxx xxxxxxx xxxxxxx xxxxx xxxxxxxxxxxxx, xxx xxxxxx xxxx xxxx xx xxxx xxx xxxx xxxx xxxx xxx xx xxxxxx. Xxxxx xxxx xxxxx [xxxxx, xxxxxx, xxx xxxxx xxxxxxxxxxxxx](../controls-and-patterns/tiles-badges-notifications.md).
--   **Xxx xxxxx**  Xxxxxxx xxxxx xxx xxxxxxxx xxxxxxx xx xxxxxx xxxxx xxxx xxxx xxxx xxx. Xxxxx'x xxxx xxxx xxxxx xxxx xx xxx xxxx xxxxxxx. Xxxxx xxxx xxxxx [xxx xxxxx](../controls-and-patterns/tiles-and-notifications-creating-tiles.md).
+-   **Animations**  Use our library of animations to make your app fast and fluid for your users. Help users understand context changes and tie experiences together with visual transitions. Learn more about [animating your UI](../graphics/animations-overview.md).
+-   **Toast notifications**  Let your users know about time-sensitive or personally relevant content through toast notifications, and invite them back to your app even when your app is closed. Learn more about [tiles, badges, and toast notifications](../controls-and-patterns/tiles-badges-notifications.md).
+-   **App tiles**  Provide fresh and relevant updates to entice users back into your app. There's more info about this in the next section. Learn more about [app tiles](../controls-and-patterns/tiles-and-notifications-creating-tiles.md).
 
-**Xxxxxxxxxxxxxxx**
+**Personalization**
 
--   **Xxxxxxxx**  Xxx xxxx xxxxx xxxxxx xxx xxxxxxxxxx xxxx xxxx xx xxxxxx xxx xxxxxxxx. Xxxxxxxxxxx xxx xx xxxx xxxxxxxx xx xxx xxxxxx, xxx xxxx xxxxx xxx xxxxxxxxx xxxx xxx xxxxxxx x xxxxxx xxxxxxxxx xxxx xxxx xxx xxxxxxx xxxxxxxx xxxx. Xxxxx xxxx xxxxx [Xxxxxx xxx xxxxxxxx](../app-settings/app-settings-and-data.md).
--   **Xxxxxxx**  Xxxxxx x xxxxxxxxxx xxxxxxxxxx xxxxxx xxxxxxx xx xxxxxxx xxxx xxxx xxxx xxxxx xxxx xx x xxxx xxxxx xxxxx xxxx xxxx xxx xxx xxxxxxxxx xxx XX xxxx xxxx xxxx xxxxx, xxxxxxxxxx xx xxx xxxxxx xxxx'xx xxxxx. Xxxx xx xxxx xx xxx xxxx xxx xxxxxxxx—xxxxx xxxxxxx xxxxxx XX, xxxxx xxxx XX, xxxxx xxxxxxxx xxxxxx, xxx xxxxx xxxx xxxxxxx—xx xxxxxxxxxxx xxxxxxxx xxx xxxxxx xxxx xxxxxxx. Xxxxx xxxx xxxxx [Xxxxxxxx xxxxxxxxxxx xxxx](../app-settings/store-and-retrieve-app-data.md) xxx xxx [Xxxxxxxxxx xxx xxxxxxx xxxxxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/hh465094).
--   **Xxxx xxxxx**   Xxxx xxxx xxx xxxx xxxxxxxx xx xxxx xxxxx xx xxxxxxx xxxxx xxxx xxxx xxxxx, xx xxx xxx xxxxx xxx xxxxxxx xxxx xxxx xxx xx xxxxx xxxxxxxx xxxx xxxxxxxxxx Xxxxxxx.
+-   **Settings**  Let your users create the experience they want by saving app settings. Consolidate all of your settings on one screen, and then users can configure your app through a common mechanism that they are already familiar with. Learn more about [Adding app settings](../app-settings/app-settings-and-data.md).
+-   **Roaming**  Create a continuous experience across devices by roaming data that lets users pick up a task right where they left off and preserves the UX they care most about, regardless of the device they're using. Make it easy to use your app anywhere—their kitchen family PC, their work PC, their personal tablet, and other form factors—by maintaining settings and states with roaming. Learn more about [Managing application data](../app-settings/store-and-retrieve-app-data.md) and see [Guidelines for roaming application data](https://msdn.microsoft.com/library/windows/apps/hh465094).
+-   **User tiles**   Make your app more personal to your users by loading their user tile image, or let the users set content from your app as their personal tile throughout Windows.
 
-**Xxxxxx xxxxxxxxxxxx**  Xx xxxx xxxx xxx xxxxx xxxx xxxxxxxxx xx xxx xxxxxxxxxxxx xx xxxxx'x xxxxxxx.
+**Device capabilities**  Be sure your app takes full advantage of the capabilities of today's devices.
 
--   **Xxxxxxxxx xxxxxxxx**  Xxx xxxx xxxxx xxxxxxx xxxxxxx xxxx xxxxx xxxxx xxx xxx xxxxxxxxxx xx xxxxx xxxxxxxxx, xx xxxxxxxxxx xxxxxxx xxx xxxxxxx xxxxxxxx (xxxxxxxxxxx xxxxx). Xxxxx xxxx xxxxx [xxxxxxxxx xxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465229).
--   **Xxxxxxx xxx xxxxxxxx xxxxxxx xxxxxxx**  Xxxxxxx xxxx xxxxx xx xxxxx xxxxx-xx xx xxxxxxx-xx xxxxxxx xxx xxxxxxxx xxx xxxxxxxxxxxx, xxxxxxxxx xxxxx, xxxxxx xxxxxxx xxxx, xxxxxxxxxxx xxx xxxxx xxxxxx xxxx, xx xxxxxxxx xxxxxxxx xxxx xxx xx xxxxx xx. Xxxxx xxxx xxxxx [Xxxxxxxxx xxxxxxx xx xxxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465189).
--   **Xxxxxxxxxxxxxx xxx xxxxx xxxxxxx**     Xxxxxxx xxxx xxxx x xxxxxx xx xxxxxxx xxxxxxxx. Xxxx xxx xxx xxx xx xxxxxxxx xxx xxxxxxx xxxxx xx xxxxxxx xxxxx, xxxxxx xxx XX xx xxx xxxx xxxxxxx xxx xxxxxxx, xx xxxxx xx xxx xxxxxxxx xxxxxxxx. Xxxxx xxxx xxxxx [xxxxxxx](../devices-sensors/sensors.md).
--   **Xxxxxxxxxxx**  Xxx xxxxxxxxxxx xxxxxxxxxxx xxxx xxxxxxxx xxx xxxx xx xxxx xxxxxxxxxxx xxxxxxx xx xxxx xxxx xxxxx xxx xxxxxx, xxxx xxxxx xxxxxxxx xx x xxx, xx xxx xxxxxxx xxxxx xxxxxx xxxxxx, xxxxxxxxxx, xxx xxxxxxxxxxxx. Xxxxx xxxx xxxxx [xxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465139).
+-   **Proximity gestures**  Let your users connect devices with other users who are physically in close proximity, by physically tapping the devices together (multiplayer games). Learn more about [proximity and tapping](https://msdn.microsoft.com/library/windows/apps/hh465229).
+-   **Cameras and external storage devices**  Connect your users to their built-in or plugged-in cameras for chatting and conferencing, recording vlogs, taking profile pics, documenting the world around them, or whatever activity your app is great at. Learn more about [Accessing content on removable storage](https://msdn.microsoft.com/library/windows/apps/hh465189).
+-   **Accelerometers and other sensors**     Devices come with a number of sensors nowadays. Your app can dim or brighten the display based on ambient light, reflow the UI if the user rotates the display, or react to any physical movement. Learn more about [sensors](../devices-sensors/sensors.md).
+-   **Geolocation**  Use geolocation information from standard web data or from geolocation sensors to help your users get around, find their position on a map, or get notices about nearby people, activities, and destinations. Learn more about [geolocation](https://msdn.microsoft.com/library/windows/apps/hh465139).
 
-Xxx'x xxxxxxxx xxx xxxxxx xxx xxxxxxx xxxxx. Xx xx xxxxx xx xxxxxxx xxxxxxx xxxxxxxxxxxxxxx xxxxxx xxxxxxxxxxx xxx xxxxx xxxxx, xxx xxxxx xxx xxxx xx xxxxx xxxxxxxx, xxxx xx xxxx x xxx:
+Let's consider the travel app example again. To be great at helping friends collaboratively create itineraries for group trips, you could use some of these features, just to name a few:
 
--   Xxxxx: Xxxxx xxxxx xxxxxxxx xxxxx xxx xxxxx xxxxxxxxxxx xx xxxxxxxx xxxxxx xxxxxxxx xx xxxxx xxx xxx-xxxx xxxxxxxxxx xxxx xxxxx xxxxxxx xxx xxxxxxxx.
--   Xxxxxx: Xxxxx xxxxxx xxx xxx xxxx xxxxxxxxxx xx xxxxxxxxxxxx xxxx xxxxxx' xxxxxx xx xxxxxx xxxxxxxxxxx xxxx xxxx xxx xxxxxxx xx xxxxx xxx xxxxx.
--   Xxxxxxxxxxxxx: Xxxxx xxx xxxxxxxx xxxx xxxxxx xxxxxxxxxx xxxxxx xxxxx xxxxxxxxxxx.
--   Xxxxxxxx: Xxxxx xxxxxxxxx xxx xxx xx xxxxx xxxxxxxxxx, xxxx xxxxx xxxx xxxxxx xxxxx xx xxxxxxxxxxxxx xx xxxxx xxxxxx xxxxxx xxx xxxxxxx xx xxxxxx xxx xxxxx' xxxxxxxxxxx.
--   Xxxxxxxx xxxx: Xxxxx xxxxxxxx xxxxxxx xxx xxxxxxxx xx xxxxx xxxxxxxxx xxx xxxx xx xx xxx xxxxxxx xxxxxxx xx xxx xxxx xxxx xx xxxxxxxxxx xxxx'xx xxxxxxx.
--   Xxxx xxxxx: Xxxxx xxxxxx xxx xxxxxxx xxxx xxxx xx xxxxxx xxxx xxxx xxxxx xxxxx xxxx xxxx xxxxxxx.
+-   Share: Users share upcoming trips and their itineraries to multiple social networks to share the pre-trip excitement with their friends and families.
+-   Search: Users search for and find activities or destinations from others' shared or public itineraries that they can include in their own trips.
+-   Notifications: Users are notified when travel companions update their itineraries.
+-   Settings: Users configure the app to their preference, like which trip should bring up notifications or which social groups are allowed to search the users' itineraries.
+-   Semantic zoom: Users navigate through the timeline of their itinerary and zoom in to see greater details of the long list of activities they've planned.
+-   User tiles: Users choose the picture they want to appear when they share their trip with friends.
 
-## Xxxxxx xxx xx xxxxxxxx xxxx xxx
+## Decide how to monetize your app
 
-Xxx xxxx x xxx xx xxxxxxx xxx xxxxxxx xxxxx xxxx xxxx xxx. Xx xxx xxxxxx xx xxx xx-xxx xxx xx xxxxx, xxx'xx xxxx xx xxxxxx xxxx XX xx xxxxxxx xxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxx xxx xxxxxxxxxxxx](../monetize/index.md).
+You have a lot of options for earning money from your app. If you decide to use in-app ads or sales, you'll want to design your UI to support that. For more information, see [Plan for monetization](../monetize/index.md).
 
-## Xxxxxx xxx XX xxx xxxx xxx
+## Design the UX for your app
 
-Xxxx xx xxxxx xxxxxxx xxx xxxxxx xxxxx. Xxx xxxx xxx xxxx xxxx xxxx xxx xx xxxxx xx, xxx xxx'xx xxxxxxx xxx xxx xxxxx xxxx xxx xxxx xx xxxxxxx, xxx xxx xxxxx xx xxxxx xxxxx xxx xxxxxxxxxxxx xx xxxx xxxxxxxxxx (XX) xxxxxx.
+This is about getting the basics right. Now that you know what your app is great at, and you've figured out the flows that you want to support, you can start to think about the fundamentals of user experience (UX) design.
 
-**Xxx xxxxxx xxx xxxxxxxx XX xxxxxxx?**   Xxxx xxx xxxxxxx xxx xx xxxxxxxxx xxxx xxxx xxxx xx xxxxxxxxx xx xxxxxxxxxxx. Xxxx xxx xxxxxx xx xxx xxx-xxxxx xxxxxxxx xx xxxx xxxxxxx xxxxxx xxxxx xxx xxxxx xx xxxx "xxxxx xx" xxxxxxxxx.
+**How should you organize UI content?**   Most app content can be organized into some form of groupings or hierarchies. What you choose as the top-level grouping of your content should match the focus of your "great at" statement.
 
-Xx xxx xxx xxxxxx xxx xx xx xxxxxxx, xxxxx xxx xxxxxxxx xxxx xx xxxxx xxxxxxxxxxx. Xx xxx xxxxx xx xxx xxx xx xxxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxxx, xxx xxxxx xxxxx xxxx xxxxx xx xxxxxxxx, xxxx xxxxxxxxx, xxx xx xxx xxx, xx xxxxxxxx xxxxxxxx. Xxxxxxx, xxxxxxx xxx xxxxx xx xxx xxx xx xxxxxxxx xxxxx xxxx xxxxxxx, xx xxxxx xxxx xxxxx xx xxxxxxxx xxxxxxxxxxx xxxxx xx xxxxxx xxxxxxx, xxxx xxxxxx, xxxxxxx, xx xxxx.
+To use the travel app as an example, there are multiple ways to group itineraries. If the focus of the app is discovering interesting destinations, you might group them based on interest, like adventure, fun in the sun, or romantic getaways. However, because the focus of the app is planning trips with friends, it makes more sense to organize itineraries based on social circles, like family, friends, or work.
 
-Xxxxxxxx xxx xxx xxxx xx xxxxx xxxx xxxxxxx xxxxx xxx xxxxxx xxxx xxxxx xx xxxxx xxx xxxx xx xxxx xxx. Xxx XX xxxxxx xxx xxxx xxxx.
+Choosing how you want to group your content helps you decide what pages or views you need in your app. See UI basics for more info.
 
-**Xxx xxxxxx xxx xxxxxxx XX xxxxxxx?** Xxxxx xxx'xx xxxxxxx xxx xx xxxxxxxx xxxx XX, xxx xxx xxxxxx XX xxxxx xxxx xxxxxxx xxx xxxx XX xxxx xxxxx xxx xxxxxxxxx xx xxxx xxxx. Xx xxx xxxxxxxx, xxx xxxx xx xxxx xxxx xxxx xxxx xxxx xxx xxxxxxxx xxxxx xxx xxxxxxxx xxxx xxx xx xxxxxxx xx xxxxxxxx. Xx xx xxxx, xxxxxx xxxx xxxxx xx xxxx XX xxxx xx xx xxxxxxxxx xxxxx, xxx xxxx xxxx xxxx xxxxx xxxxx xxx xxxxxxxx xxxxxx xxx xxxxx xxxx xxxxxxxx xxx xxxxxxxxxxx xxxxx.
+**How should you present UI content?** After you've decided how to organize your UI, you can define UX goals that specify how your UI gets built and presented to your user. In any scenario, you want to make sure that your user can continue using and enjoying your app as quickly as possible. To do this, decide what parts of your UI need to be presented first, and make sure that those parts are complete before you spend time building the noncritical parts.
 
-Xx xxx xxxxxx xxx, xxxxxxxx xxx xxxxx xxxxx xxx xxxx xxxx xxxx xx xx xx xxx xxx xx xxxx x xxxxxxxx xxxx xxxxxxxxx. Xx xxxxxxx xxxx xxxx xx xxxx xx xxxxxxxx, xxx xxxxxx xxxx xxx xxxx xx xxxxx xxxxx, xxxxx x **XxxxXxxx** xxxxxxx.
+In the travel app, probably the first thing the user will want to do in the app is find a specific trip itinerary. To present this info as fast as possible, you should show the list of trips first, using a **ListView** control.
 
-![x xxxxxx xxx xxx xxxxxxxxx xxxxxxxx xx x xxxxxx xxx](images/ux-app-travel-cc-a-1-180.png)
+![a design for the itinerary selector in a travel app](images/ux-app-travel-cc-a-1-180.png)
 
-Xxxxx xxxxxxx xxx xxxxx xxxx, xxx xxxxx xxxxx xxxxxxx xxxxx xxxxxxxx, xxxx x xxxx xxxx xx xxxxx xxxxxxx' xxxxx.
+After showing the trips list, you could start loading other features, like a news feed of their friends' trips.
 
-**Xxxx XX xxxxxxxx xxx xxxxxxxx xx xxx xxxx?**   Xxxxxx xxx xxxxx xxxx xxx xxxxxxxxxx xxxxxxx. Xxx xxxx xxxx, xxxxxx x xxxxx xxxxxxx xx xxx xxxxx xxxxx xxxx.
+**What UI surfaces and commands do you need?**   Review the flows that you identified earlier. For each flow, create a rough outline of the steps users take.
 
-Xxx'x xxxx xx xxx "Xxxxx xxxxxxxxxxx xxx xxxxxxx xxx xxxxxxxx xx xxxxxx" xxxx. Xx'xx xxxxxx xxxx xxx xxxx xxx xxxxxxx xxxxxxx x xxxx. Xxxxxxx x xxxx xxxxxxxxx xxxxx xxxxxxx xxxxx xxxxx:
+Let's look at the "Share itineraries for friends and families to follow" flow. We'll assume that the user has already created a trip. Sharing a trip itinerary might require these steps:
 
-1.  Xxx xxxx xxxxx xxx xxx xxx xxxx x xxxx xx xxxxx xxx xxxxxxx.
-2.  Xxx xxxx xxxx xx xxx xxxx xxx xxxxx xx xxxxx.
-3.  Xxx xxxxxxx xx xxx xxxx xxxxxx xx xxxxxx.
-4.  Xxx xxxx xxxxxxxx xxxx XX xx xxxxxxxx xxxxxxx.
-5.  Xxx xxxx xxxxxxx xx xxxxxx xxx xxxxx xxxxxxx xx xxxx xx xxx xxxxxx xxx xxxxx xx xxxxx xxx xxxx xxxx.
-6.  Xxx xxxx xxxxxxxx xxxx XX xx xxxxxxxx xxxxxxx.
-7.  Xxxx xxx xxxxxxx xxx xxxx xxxxxxx xxxx xxx xxxx xx xxxxxx xxx xxx xxxxxx xxx xxxx xxxx.
+1.  The user opens the app and sees a list of trips she created.
+2.  The user taps on the trip she wants to share.
+3.  The details of the trip appear on screen.
+4.  The user accesses some UI to initiate sharing.
+5.  The user selects or enters the email address or name of the friend she wants to share the trip with.
+6.  The user accesses some UI to finalize sharing.
+7.  Your app updates the trip details with the list of people she has shared her trip with.
 
-Xxxxxx xxxx xxxxxxx, xxx xxxxx xx xxx xxxx XX xxx xxxx xx xxxxxx xxx xxx xxxxxxxxxx xxxxxxx xxx xxxx xx xxxxxx xxx (xxxx xxxxxxxx x xxxxxxxx xxxxx xxxxxxxxxxx xxx xxxxxxx xxx xxxx'x xxxxx xxxx xxx xxx). Xxx xxxx xxx xxxxx xxxxxxxxxxx xxxxxxxxxxx xxxxx. Xxxxxxx xxx xxxx xxxxx'x xxxxxxxx xxxx xx xxx xxx xxxxxxx xx xxx xxxx xxxxxx xxxxxxx, xxx xxxxxxx. Xxx xxxxxxx xxx xxxx, xxx xxxxxx xx xxx.
+During this process, you begin to see what UI you need to create and the additional details you need to figure out (like drafting a standard email boilerplate for friends who aren't using your app yet). You also can start eliminating unnecessary steps. Perhaps the user doesn't actually need to see the details of the trip before sharing, for example. The cleaner the flow, the easier to use.
 
-Xxx xxxx xxxxxxx xx xxx xx xxx xxxxxxxxx xxxxxxxx, xxxx x xxxx xx <!--[Command design basics](../layout/commanding-basics.md)-->.
+For more details on how to use different surfaces, take a look at <!--[Command design basics](../layout/commanding-basics.md)-->.
 
-**Xxxx xxxxxx xxx xxxx xxxx xxxx?** Xxxx xxx xxxx xxxxxxx xxx xxxxx xxxx xxxx xxxx xxxx, xxx xxx xxxx xxxx xxxx xxxx xxxxxxxxxxx xxxxx. Xxx xxxx xxxx, xxx [Xxxx xxx xxxxxxxxxxx](../debug-test-perf/planning-and-measuring-performance.md).
+**What should the flow feel like?** When you have defined the steps your user will take, you can turn that flow into performance goals. For more info, see [Plan for performance](../debug-test-perf/planning-and-measuring-performance.md).
 
-**Xxx xxxxxx xxx xxxxxxxx xxxxxxxx?**  Xxx xxxx xxxxxxx xx xxx xxxx xxxxx xx xxxxxxxx xxxxxxxxx xxxxxxxx xxxx xxx xxxx xx xxxxxx xxx. Xxxx xxxxx xxxxx xxxxx xx xxx xxxxx xxxxxxxx xx xxxx xxx.
+**How should you organize commands?**  Use your outline of the flow steps to identify potential commands that you need to design for. Then think about where to use those commands in your app.
 
--   **Xxxxxx xxx xx xxx xxx xxxxxxx.**  Xxxxxxxx xxxxxxxx, xxx xxxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxx xx xxx xxx'x xxxxxx, xxxxxx xxxx xxxxxx xxxxxxxx xxxx xxx xx xxx xxxxxxx. Xxx xxxxxxx, xx xxx xxxxxx xxx, xxx xxxxx xxxxxxxxx xxxxx xxxxxxxxx xx xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xx x xxxx xx xxx xxxxxx, xxxxxx xxxx xx xxxxxxxxx xxx xxxxxxxx xxx xxxxx Xx xx Xxxx xxxxxxx xxxxxxx.
--   **Xx xxx xxx'x xxx xxx xxxxxxx.** Xxxxx xxxxxxxx xx xxx xx xxxxx XX xxxxxxxx xx xxx xxx xxx xxxx xx xxx xxx xxxxxxx:
+-   **Always try to use the content.**  Whenever possible, let users directly manipulate the content on the app's canvas, rather than adding commands that act on the content. For example, in the travel app, let users rearrange their itinerary by dragging and dropping activities in a list on the canvas, rather than by selecting the activity and using Up or Down command buttons.
+-   **If you can't use the content.** Place commands on one of these UI surfaces if you are not able to use the content:
 
-    -   Xx xxx [xxxxxxx xxx](https://msdn.microsoft.com/library/windows/apps/hh465302): Xxx xxxxxx xxx xxxx xxxxxxxx xx xxx xxxxxxx xxx, xxxxx xx xxxxxxx xxxxxx xxxxx xxx xxxx xxxx xx xxxx xx xxxxxxx.
-    -   Xx xxx xxx'x xxxxxx: Xx xxx xxxx xx xx x xxxx xx xxxx xxxx xxx x xxxxxx xxxxxxx, xxx xxx xxxxxxx xxxxxxxx xxx xxxx xxxxxxx xxxxxxxx xx xxx xxxxxx. Xxxxx xxxxxx xx xxxx xxx xx xxxxx xxxxxxxx.
-    -   Xx x [xxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/hh465308): Xxx xxx xxx xxxxxxx xxxxx xxx xxxxxxxxx xxxxxxx (xxxx xx xxx, xxxx, xxx xxxxx), xx xxx xxxxxxxx xxxx xxxxx xx xxxxxxx xxxx xxxxxx xx xxxxxxxx (xxxx xxxxxx x xxxx xxx xx x xxxxxxxx xx x xxx).
+    -   In the [command bar](https://msdn.microsoft.com/library/windows/apps/hh465302): You should put most commands on the command bar, which is usually hidden until the user taps to make it visible.
+    -   On the app's canvas: If the user is on a page or view that has a single purpose, you can provide commands for that purpose directly on the canvas. There should be very few of these commands.
+    -   In a [context menu](https://msdn.microsoft.com/library/windows/apps/hh465308): You can use context menus for clipboard actions (such as cut, copy, and paste), or for commands that apply to content that cannot be selected (like adding a push pin to a location on a map).
 
-**Xxxxxx xxx xx xxx xxx xxxx xxx xx xxxx xxxx.**  Xxxxxxx xxxxxxxx xxxxxxxxx xxx xxxxxxxx xxxxxxxxxxxx xxx xxxxxxxx xxxxxxxx xxxx xx xxx xxxxx, xxxx xxxx xxxxxx xx x xxxxxxx xxxxx. Xxx xxxx xxxx xxx xx xxxx xxx xxxx xxxxx xx xxx xxxx, xx xxx xxxxxx, xx xxxxxx xxxxxxxxxxx. Xxxx xxxxx xxx xxxx xx xxxx xxx xxxxxx xx xxxx XX xxxxxxxx xxx xxxxxxxxx xxxxx xxx xxxxx. Xxxx xxx xx xxxx, xxxx xxx XX xxxxxxx xxxxxxx xx xxxx xxxx xxxx'x xxxxx xxx xxxxxxxxxxx.
+**Decide how to lay out your app in each view.**  Windows supports landscape and portrait orientations and supports resizing apps to any width, from full screen to a minimum width. You want your app to look and work great at any size, on any screen, in either orientation. This means you need to plan the layout of your UI elements for different sizes and views. When you do this, your app UI changes fluidly to meet your user's needs and preferences.
 
-![xx xxx xxxxxx xxxxxxx xxx xx xxx](images/ux-budgettracker1-md-notablet.png)
+![pc and mobile designs for an app](images/ux-budgettracker1-md-notablet.png)
 
-Xxx xxxx xxxx xx xxxxxxxxx xxx xxxxxxxxx xxxxxx xxxxx, xxx <!--[Responsive design 101](designing-in-effective-pixels.md)-->.
+For more info on designing for different screen sizes, see <!--[Responsive design 101](designing-in-effective-pixels.md)-->.
 
-## Xxxx x xxxx xxxxx xxxxxxxxxx
+## Make a good first impression
 
-Xxxxx xxxxx xxxx xxx xxxx xxxxx xx xxxxx, xxxx, xx xx xxxx xxxx xxxxx xxxxxx xxxx xxx. Xxxxx xxxx xx xxxx "xxxxx xx" xxxxxxxxx. Xxxx xxxxxx xxx xxx'x xxx x xxxxxx xx xxxxxxxxxx xxxx xxxx xxxxx xxxx xxxx xxx xx xxxxx xx, xxx xxx xxxxxx xxx xxxxxxx xx xxxx xxxx xxx xxxx xxxx xxxxx xxxxxxxxxx. Xxxx xxxxxxxxx xx xxxxx:
+Think about what you want users to think, feel, or do when they first launch your app. Refer back to your "great at" statement. Even though you won't get a chance to personally tell your users what your app is great at, you can convey the message to them when you make your first impression. Take advantage of these:
 
-**Xxxx xxx xxxxxxxxxxxxx**    Xxx xxxx xx xxx xxxx xx xxxx xxx. Xxxxx xxx xxxx xxxxx xxxx xx x xxxx'x Xxxxx xxxxxx, xxxx xxxx xxxx xxx xxxx xxxx xx xxxxxx xxxx xxx? Xx xxxx xxxx xxxx xxxxxxxxxx xxxx xxx'x xxxxx xxx xxxxx xxxx xxx xxx xx xxxxx xx. Xxx xxxx xxxxxxxxxxxxx xx xxxx xxx xxxx xxxxxx xxxx xxxxx xxx xxxxxxxx, xxxxxxxx xxx xxxx xxxx xx xxxx xxx xxxxx xxx xxxxx.
+**Tile and notifications**    The tile is the face of your app. Among the many other apps on a user's Start screen, what will make the user want to launch your app? Be sure your tile highlights your app's brand and shows what the app is great at. Use tile notifications so your app will always feel fresh and relevant, bringing the user back to your app again and again.
 
-**Xxxxxx xxxxxx**  Xxx xxxxxx xxxxxx xxxxxx xxxx xx xxxx xx xxxxxxxx, xxx xxxxxx xx xxx xxxxxx xxxx xx xxxx xx xxx xxxx xx xxxxxxxxxx xxxx xxx xxxxx. Xxxx xxx xxxx xx xxx xxxxxx xxxxxx xxxxxx xxxxxxx xxxx xxx'x xxxxxxxxxxx.
+**Splash screen**  The splash screen should load as fast as possible, and remain on the screen only as long as you need to initialize your app state. What you show on the splash screen should express your app's personality.
 
-**Xxxxx xxxxxx**  Xxxxxx xxxxx xxxx xx xxx xxxx xxxxxxx, xxx xx xx xxxxx xxxxxxx, xx xxx xxxxx xxx xxxxxxx, xxxx xxxx xxxx xxx? Xxx xx xxxxxxxxxxx xxx xxxxx xx xxxx xxx xxxxxx xxxxxx xxxxx xxx xxxxxxxxxxx. Xxxxxxxx xxxxxxx xxxxxx xxxxxxx xx xxxxxx xxx xxxx xxxxxx xxx xxxxxxxxxx xxxx xxxx xxx xxxx xxxxxx xxx xxx xxxx xx xxxxxx.
+**First launch**  Before users sign up for your service, log in to their account, or add their own content, what will they see? Try to demonstrate the value of your app before asking users for information. Consider showing sample content so people can look around and understand what your app does before you ask them to commit.
 
-**Xxxx xxxx**  Xxx xxxx xxxx xx xxxxx xxx xxxxx xxxxx xxxx xxxx xxxx xxxxxx xxxx xxx. Xxx xxxxxxx xxxx xxxxxx xxxx x xxxxx xxxxx, xxx xxxxxxxxxxx xxxxxxxx xxxx xxxx xxx xx xxxxxxxx xx xx. Xxxx xxxx xxxx xxxxx xx xxx xxxxx xxx xxxxx xxxx xxxxxx xxxx xxxxxxx xxx xxxx xx xxxx xxx. Xxxxx xx xxxxxxxxxxx xxxxxxxxxxxx xx xxx xxxxxxx xxxx, xxx xxx xx xxxxxxxxxxxxxxx.
+**Home page**  The home page is where you bring users each time they launch your app. The content here should have a clear focus, and immediately showcase what your app is tailored to do. Make this page great at one thing and trust that people will explore the rest of your app. Focus on eliminating distractions on the landing page, and not on discoverability.
 
-## Xxxxxxxx xxxx xxxxxx
+## Validate your design
 
-Xxxxxx xxx xxx xxx xxx xxxx xxxxxxxxxx xxxx xxx, xxx xxxxxx xxxxxxxx xxxx xxxxxx xx xxxxxxxxx xxxxxxx xxxxxxxxxx, xxxx xxxxxxxxxxx, xxx xxxxxxxxxxxx xx xxxxx xxxxxx xx xxxxxx xx xxxxx. Xxxx xxxxxxx xxx x xxx xx XX xxxxxxxxxx xx xxxx xxx xxxxxx xxxx xxx, xxx x xxx xx Xxxxx xxxxxxxxxxxx xxxx xxx xxxx xxxx xx xxxxxxx xxxx xxx xx xxx Xxxxxxx Xxxxx. Xxx xxx xxx [xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx](https://dev.windows.com/develop/app-certification-kit) xx xxxx xxx xxxxxxxxx xxxxxxxxxx xxxx Xxxxx xxxxxxxxxxxx. Xxx xxx xxxx xxx xxx xxxxxxxxxxx xxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx xx xxxx xxxx xxxx xxx'xx xxxxxx xxxx xxxxx x xxxxx xxxxxxxxxx xx xxxxx xxxxxxxx.
+Before you get too far into developing your app, you should validate your design or prototype against guidelines, user impressions, and requirements to avoid having to rework it later. Each feature has a set of UX guidelines to help you polish your app, and a set of Store requirements that you must meet to publish your app in the Windows Store. You can use [the Windows App Certification Kit](https://dev.windows.com/develop/app-certification-kit) to test for technical compliance with Store requirements. You can also use the performance tools in Microsoft Visual Studio to make sure that you're giving your users a great experience in every scenario.
 
-Xxx xxx [xxxxxxxx XX xxxxxxxxxx xxx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/hh465424) xx xxxx xxxxxxx xx xxxxxxxxx xxxxxxxx. Xxx xxx [Xxxxxx Xxxxxx xxxxxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx) xx xxxxxxx xxx xxxxxxxxxxx xx xxxx xx xxxx xxx'x xxxxxxxxx.
+Use the [detailed UX guidelines for UWP apps](https://msdn.microsoft.com/library/windows/apps/hh465424) to stay focused on important features. Use the [Visual Studio performance tools](https://msdn.microsoft.com/library/windows/apps/hh696636.aspx) to analyze the performance of each of your app's scenarios.
+
+
 <!--HONumber=Mar16_HO1-->
+
+

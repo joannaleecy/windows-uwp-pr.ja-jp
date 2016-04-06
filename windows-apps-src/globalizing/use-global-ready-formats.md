@@ -1,64 +1,48 @@
 ---
-Xxxxxxxxxxx: Xxxxxxx x xxxxxx-xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxxxx xxxxx, xxxxx, xxxxxxx, xxx xxxxxxxxxx.
-xxxxx: Xxx xxxxxx-xxxxx xxxxxxx
-xx.xxxxxxx: YXXXYXXY-YXYX-YYXY-YYXX-XXYXXYXYYYYX
-xxxxx: Xxx xxxxxx-xxxxx xxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Develop a global-ready app by appropriately formatting dates, times, numbers, and currencies.
+title: Use global-ready formats
+ms.assetid: 6ECE8BA4-9A7D-49A6-81EE-AB2BE7F0254F
+label: Use global-ready formats
+template: detail.hbs
 ---
 
-# <span id="dev_globalizing.use_global-ready_formats">
-            </span>Xxx xxxxxx-xxxxx xxxxxxx
+# <span id="dev_globalizing.use_global-ready_formats"></span>Use global-ready formats
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**Xxxxxxx.Xxxxxxxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206724)
--   [**Xxxxxxx.Xxxxxxxxxxxxx.XxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**Xxxxxxx.Xxxxxxxxxxxxx.XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226136)
+-   [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724)
+-   [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
+-   [**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
 
-Xxxxxxx x xxxxxx-xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxxxx xxxxx, xxxxx, xxxxxxx, xxx xxxxxxxxxx. Xxxx xxxxxxx xxx xx xxxxx xx xxxxx xxx xxxxxxxxxx xxxxxxxx, xxxxxxx, xxx xxxxxxxxx xx xxx xxxxxx xxxxxx.
+Develop a global-ready app by appropriately formatting dates, times, numbers, and currencies. This permits you to adapt it later for additional cultures, regions, and languages in the global market.
 
-## <span id="Introduction">
-            </span>
-            <span id="introduction">
-            </span>
-            <span id="INTRODUCTION">
-            </span>Xxxxxxxxxxxx
+## <span id="Introduction"></span><span id="introduction"></span><span id="INTRODUCTION"></span>Introduction
 
 
-Xxxx xxx xxxxxxxxxx xxxxxxxxx xxxxxx xxxxx xxxx xxxxxxxx xxxx xx xxxxx xxx xxxxxxxx xxx xxxxxxx. Xxx xxxx xxx xxx xxxxxx xx xxxx xxxx xxxxx xxxxxxx, xxxxxxxx xxx xxx xxx xxx xxxxxxxxx xxx xxxxxxx xxx xx xxxxxxxxx xx xxxxxxxxxx xxxx. Xxx xxxxxxx, xxxxx, xxxxx, xxxxxxx, xxxxxxxxx, xxxxxxxx, xxxxxxxxx xxxxxxx, xxxxx xx xxxxxxxxxxx, xxx xxxxx xxxxx xxx xxx xxxxx xxxx xxx xx xxxxxxxxx xxxxxxxxxxx xx xxxxxxxxx xxxxxxxx xx xxxxxxxxx.
+Many app developers naturally create their apps thinking only of their own language and culture. But when the app begins to grow into other markets, adapting the app for new languages and regions can be difficult in unexpected ways. For example, dates, times, numbers, calendars, currency, telephone numbers, units of measurement, and paper sizes are all items that can be displayed differently in different cultures or languages.
 
-Xxx xxxxxxx xx xxxxxxxx xx xxx xxxxxxx xxx xx xxxxxxxxxx xx xxxxxx x xxx xxxxxx xxxx xxxxxxx xx xxx xxxxxxx xxxx xxx.
+The process of adapting to new markets can be simplified by taking a few things into account as you develop your app.
 
-## <span id="Prerequisites">
-            </span>
-            <span id="prerequisites">
-            </span>
-            <span id="PREREQUISITES">
-            </span>Xxxxxxxxxxxxx
+## <span id="Prerequisites"></span><span id="prerequisites"></span><span id="PREREQUISITES"></span>Prerequisites
 
 
-[Xxxx xxx x xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465405)
-## <span id="Tasks">
-            </span>
-            <span id="tasks">
-            </span>
-            <span id="TASKS">
-            </span>Xxxxx
+[Plan for a global market](https://msdn.microsoft.com/library/windows/apps/hh465405)
+## <span id="Tasks"></span><span id="tasks"></span><span id="TASKS"></span>Tasks
 
 
-1.  **Xxxxxx xxxxx xxx xxxxx xxxxxxxxxxxxx.**
+1.  **Format dates and times appropriately.**
 
-    Xxxxx xxx xxxx xxxxxxxxx xxxx xx xxxxxxxx xxxxxxx xxxxx xxx xxxxx. Xxxxxxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxxx xxx xxx xxxxx xx xxx xxx xxxxx xx xxx xxxx, xxx xxx xxxxxxxxxx xx xxxxx xxx xxxxxxx xx xxx xxxx, xxx xxxx xxx xxxx xxxxxxxxxxx xx xxxx xx x xxxxxxxxx. Xx xxxxxxxx, xxxxx xxx xx xxxxxxxxx xx xxxxxxx xxxx xxxxxxx ("Xxxxxxxxx, Xxxxx YY, YYYY") xx xxxxx xxxxxxx ("Y/YY/YY"), xxxxx xxx xxxx xxxxxx xxxxxxxx. Xxx xx xxxxxx, xxx xxxxx xxx xxxxxxxxxxxxx xxx xxx xxxx xx xxx xxxx xxx xxxxxx xx xxx xxxx xxxxxx xxx xxxxx xxxxxxxx.
+    There are many different ways to properly display dates and times. Different regions and cultures use different conventions for the order of day and month in the date, for the separation of hours and minutes in the time, and even for what punctuation is used as a separator. In addition, dates may be displayed in various long formats ("Wednesday, March 28, 2012") or short formats ("3/28/12"), which can vary across cultures. And of course, the names and abbreviations for the days of the week and months of the year differ for every language.
 
-    Xx xxx xxxx xx xxxxx xxxxx xx xxxxxx x xxxx xx xxxxxx x xxxx, xxx xxx xxxxxxxx [xxxx xxx xxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465466) xxxxxxxx. Xxxxx xxxx xxxxxxxxxxxxx xxx xxx xxxx xxx xxxx xxxxxxx xxx xxx xxxx'x xxxxxxxxx xxxxxxxx xxx xxxxxx.
+    If you need to allow users to choose a date or select a time, use the standard [date and time picker](https://msdn.microsoft.com/library/windows/apps/hh465466) controls. These will automatically use the date and time formats for the user's preferred language and region.
 
-    Xx xxx xxxx xx xxxxxxx xxxxx xx xxxxx xxxxxxxx, xxx [**Xxxx/Xxxx**](https://msdn.microsoft.com/library/windows/apps/br206859) xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226136) xxxxxxxxxx xx xxxxxxxxxxxxx xxxxxxx xxx xxxx'x xxxxxxxxx xxxxxx xxx xxxxx, xxxxx xxx xxxxxxx. Xxx xxxx xxxxx xxxxxxx x xxxxx XxxxXxxx xx xxxxx xxx xxxxxxxxx xxxxxxxx xxx xxxxxx. Xxx xxxxxxx, xx xxx xxxxxxx xxxx xx Y Xxxx YYYY, xxx xxxxxxxxx xxxxx "Y/Y/YYYY", xx xxx xxxx xxxxxxx Xxxxxxx (Xxxxxx Xxxxxx), xxx xx xxxxx "YY.YY.YYYY" xx xxx xxxx xxxxxxx Xxxxxx (Xxxxxxx):
+    If you need to display dates or times yourself, use [**Date/Time**](https://msdn.microsoft.com/library/windows/apps/br206859) and [**Number**](https://msdn.microsoft.com/library/windows/apps/br226136) formatters to automatically display the user's preferred format for dates, times and numbers. The code below formats a given DateTime by using the preferred language and region. For example, if the current date is 3 June 2012, the formatter gives "6/3/2012", if the user prefers English (United States), but it gives "03.06.2012" if the user prefers German (Germany):
 
-    **X#**
+    **C#**
     ```    CSharp
     // Use the Windows.Globalization.DateTimeFormatting.DateTimeFormatter class
     // to display dates and times using basic formatters.
@@ -78,7 +62,7 @@ Xxx xxxxxxx xx xxxxxxxx xx xxx xxxxxxx xxx xx xxxxxxxxxx xx xxxxxx x xxx xxxxxx 
     var results = "Short Date: " + sdate + "\n" +
                   "Short Time: " + stime;
     ```
-    **XxxxXxxxxx**
+    **JavaScript**
     ```    JavaScript
     // Use the Windows.Globalization.DateTimeFormatting.DateTimeFormatter class
     // to display dates and times using basic formatters.
@@ -99,13 +83,13 @@ Xxx xxxxxxx xx xxxxxxxx xx xxx xxxxxxx xxx xx xxxxxxxxxx xx xxxxxx x xxx xxxxxx 
                   "Short Time: " + stime;
     ```
 
-2.  **Xxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxxxxxxxxx.**
+2.  **Format numbers and currencies appropriately.**
 
-    Xxxxxxxxx xxxxxxxx xxxxxx xxxxxxx xxxxxxxxxxx. Xxxxxx xxxxxxxxxxx xxx xxxxxxx xxx xxxx xxxxxxx xxxxxx xx xxxxxxx, xxxx xxxxxxxxxx xx xxx xx xxxxxxx xxxxxxxxxx, xxx xxxx xxxxxxxx xxxxxx xx xxx. Xxx [**XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226136) xx xxxxxxx xxxxxxx, xxxxxxx, xx xxxxxxxx xxxxxxx, xxx xxxxxxxxxx. Xx xxxx xxxxx xxx xxxxxx xxxxxxx xxxxxxx xx xxxxxxxxxx xxxxxxxxx xx xxx xxxx'x xxxxxxx xxxxxxxxxxx. Xxx xxx xxx xxxx xxx xxx xxxxxxxxxx xx xxxxxxx x xxxxxxxx xxx x xxxxxxxxxx xxxxxx xx xxxxxx.
+    Different cultures format numbers differently. Format differences may include how many decimal digits to display, what characters to use as decimal separators, and what currency symbol to use. Use [**NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136) to display decimal, percent, or permille numbers, and currencies. In most cases you simply display numbers or currencies according to the user's current preferences. But you may also use the formatters to display a currency for a particular region or format.
 
-    Xxx xxxx xxxxx xxxxx xx xxxxxxx xx xxx xx xxxxxxx xxxxxxxxxx xxx xxx xxxx'x xxxxxxxxx xxxxxxxx xxx xxxxxx, xx xxx x xxxxxxxx xxxxx xxxxxxxx xxxxxx:
+    The code below gives an example of how to display currencies per the user's preferred language and region, or for a specific given currency system:
 
-    **X#**
+    **C#**
     ```    CSharp
     // This scenario uses the Windows.Globalization.NumberFormatting.CurrencyFormatter class
     // to format a number as a currency.
@@ -137,7 +121,7 @@ Xxx xxxxxxx xx xxxxxxxx xx xxx xxxxxxx xxx xx xxxxxxxxxx xx xxxxxx x xxx xxxxxx 
                   "Formatted US Dollar: " + currencyUSD + "\n" +
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
     ```
-    **XxxxXxxxxx**
+    **JavaScript**
     ```    JavaScript
     // This scenario uses the Windows.Globalization.NumberFormatting.CurrencyFormatter class
     // to format a number as a currency.
@@ -170,38 +154,41 @@ Xxx xxxxxxx xx xxxxxxxx xx xxx xxxxxxx xxx xx xxxxxxxxxx xx xxxxxx x xxx xxxxxx 
                   "Formatted Euro (fr-FR defaults): " + currencyEuroFR;
     ```
 
-3.  **Xxx x xxxxxxxxxx xxxxxxxxxxx xxxxxxxx.**
+3.  **Use a culturally appropriate calendar.**
 
-    Xxx xxxxxxxx xxxxxxx xxxxxx xxxxxxx xxx xxxxxxxxx. Xxx Xxxxxxxxx xxxxxxxx xx xxx xxx xxxxxxx xxx xxxxx xxxxxx. Xxxxx xx xxxx xxxxxxx xxx xxxxxx xxxxxxxxx xxxxxxxxx, xxxx xx xxx Xxxxxxxx xxx xxxxxxxx xx Xxxxxx xxxxx xxxxxxxxx. Xxxxx xxx xxxxx xx xxx xxxxxxxx xxx xxxx xxxxxxxxx xx xxxxxxxxx xxxx xxxxx xxx xxxxxxxx xxxxxx xxxx.
+    The calendar differs across regions and languages. The Gregorian calendar is not the default for every region. Users in some regions may choose alternate calendars, such as the Japanese era calendar or Arabic lunar calendars. Dates and times on the calendar are also sensitive to different time zones and daylight saving time.
 
-    Xxx xxx xxxxxxxx [xxxx xxx xxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465466) xxxxxxxx xx xxxxx xxxxx xx xxxxxx x xxxx, xx xxxxxx xxxx xxx xxxxxxxxx xxxxxxxx xxxxxx xx xxxx. Xxx xxxx xxxxxxx xxxxxxxxx, xxxxx xxxxxxx xxxxxxxx xxxx xxxxxxxxxx xx xxxxxxxx xxxxx xxx xx xxxxxxxx, Xxxxxxx.Xxxxxxxxxxxxx xxxxxxxx x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206724) xxxxx xxxx xxxxx xx xxxxxxxxxxx xxxxxxxx xxxxxxxxxxxxxx xxx xxx xxxxx xxxxxxx, xxxxxx, xxx xxxxxxxx xxxx.
+    Use the standard [date and time picker](https://msdn.microsoft.com/library/windows/apps/hh465466) controls to allow users to choose a date, to ensure that the preferred calendar format is used. For more complex scenarios, where working directly with operations on calendar dates may be required, Windows.Globalization provides a [**Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724) class that gives an appropriate calendar representation for the given culture, region, and calendar type.
 
-4.  **Xxxxxxx xxx xxxx'x Xxxxxxxx xxx Xxxxxxxx Xxxxxxxxxxx.**
+4.  **Respect the user's Language and Cultural Preferences.**
 
-    Xxx xxxxxxxxx xxxxx xxx xxxxxxx xxxxxxxxx xxxxxxxxxxxxx xxxxx xx xxx xxxx'x xxxxxxxx, xxxxxx, xx xxxxxxxx xxxxxxxxxxx, Xxxxxxx xxxxx xxx x xxx xx xxxxxx xxxxx xxxxxxxxxxx, xxxxxxx [**Xxxxxxx.Xxxxxx.XxxxXxxxxxx.XxxxxxxxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241825). Xxxx xxxxxx, xxx xxx **XxxxxxxxxxxxxXxxxxxxxxxx** xxxxx xx xxx xxx xxxxx xx xxx xxxx'x xxxxxxx xxxxxxxxxx xxxxxx, xxxxxxxxx xxxxxxxxx, xxxxxxxxx xxxxxxxxxx, xxx xx xx.
+    For scenarios where you provide different functionality based on the user's language, region, or cultural preferences, Windows gives you a way to access those preferences, through [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825). When needed, use the **GlobalizationPreferences** class to get the value of the user's current geographic region, preferred languages, preferred currencies, and so on.
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxx
+## <span id="related_topics"></span>Related topics
 
 
-* [Xxxx xxx x xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465405)
-* [Xxxxxxxxxx xxx xxxx xxx xxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465466)
+* [Plan for a global market](https://msdn.microsoft.com/library/windows/apps/hh465405)
+* [Guidelines for date and time controls](https://msdn.microsoft.com/library/windows/apps/hh465466)
 
-**Xxxxxxxxx**
-* [**Xxxxxxx.Xxxxxxxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206724)
-* [**Xxxxxxx.Xxxxxxxxxxxxx.XxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206859)
-* [**Xxxxxxx.Xxxxxxxxxxxxx.XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226136)
-* [**Xxxxxxx.Xxxxxx.XxxxXxxxxxx.XxxxxxxxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241825)
+**Reference**
+* [**Windows.Globalization.Calendar**](https://msdn.microsoft.com/library/windows/apps/br206724)
+* [**Windows.Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
+* [**Windows.Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
+* [**Windows.System.UserProfile.GlobalizationPreferences**](https://msdn.microsoft.com/library/windows/apps/br241825)
 
-**Xxxxxxx**
-* [Xxxxxxxx xxxxxxx xxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231636)
-* [Xxxx xxx xxxx xxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231618)
-* [Xxxxxxxxxxxxx xxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231608)
-* [Xxxxxx xxxxxxxxxx xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231620)
+**Samples**
+* [Calendar details and math sample](http://go.microsoft.com/fwlink/p/?linkid=231636)
+* [Date and time formatting sample](http://go.microsoft.com/fwlink/p/?linkid=231618)
+* [Globalization preferences sample](http://go.microsoft.com/fwlink/p/?linkid=231608)
+* [Number formatting and parsing sample](http://go.microsoft.com/fwlink/p/?linkid=231620)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

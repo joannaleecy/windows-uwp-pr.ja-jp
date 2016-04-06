@@ -1,118 +1,119 @@
 ---
-xxxxx: Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx Xxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xxx Xxxxxxxxx Xxxxxxxx xxxxxxxxxx xxxx xx xxxxxxxx xx xxxx xx xxx Xxxxxxx YY xxxxxxxxx xxxxxx xxx xxxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxxx xxxx xxxxxxxxxx xx xxxxxxx xxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx xxxxxxx xxxxxxxx. Xx xxxxxxxxxx xxxxxxxx xxxxxxxxxxxx xx xxxxx xxxxxxxxxxxx xxxx xxxx xxxxxxxx xxxxxxx xxxx xxxxx xxxx xxxxx xxxxxxxxxxxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxx xxxxx xxxxxxxxx xxx xxxxxxxxx xxxxx xxxxxxxxxxxx xx xxxx xx x Xxxxxxx YY xxxxxxx.
-xx.xxxxxxx: YXYYYYYY-XYYY-YYYY-XXYY-XYXYYXXXXYYY
+title: Microsoft Passport and Windows Hello
+description: This article describes the new Microsoft Passport technology that is shipping as part of the Windows 10 operating system and discusses how developers can implement this technology to protect their Universal Windows Platform (UWP) apps and backend services. It highlights specific capabilities of these technologies that help mitigate threats that arise from using conventional credentials and provides guidance about designing and deploying these technologies as part of a Windows 10 rollout.
+ms.assetid: 0B907160-B344-4237-AF82-F9D47BCEE646
+author: awkoren
 ---
 
-# Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx Xxxxx
+# Microsoft Passport and Windows Hello
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxxxx xxxxxxxxx xxx xxx Xxxxxxxxx Xxxxxxxx xxxxxxxxxx xxxx xx xxxxxxxx xx xxxx xx xxx Xxxxxxx YY xxxxxxxxx xxxxxx xxx xxxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxxx xxxx xxxxxxxxxx xx xxxxxxx xxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx xxxxxxx xxxxxxxx. Xx xxxxxxxxxx xxxxxxxx xxxxxxxxxxxx xx xxxxx xxxxxxxxxxxx xxxx xxxx xxxxxxxx xxxxxxx xxxx xxxxx xxxx xxxxx xxxxxxxxxxxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxx xxxxx xxxxxxxxx xxx xxxxxxxxx xxxxx xxxxxxxxxxxx xx xxxx xx x Xxxxxxx YY xxxxxxx.
+This article describes the new Microsoft Passport technology that is shipping as part of the Windows 10 operating system and discusses how developers can implement this technology to protect their Universal Windows Platform (UWP) apps and backend services. It highlights specific capabilities of these technologies that help mitigate threats that arise from using conventional credentials and provides guidance about designing and deploying these technologies as part of a Windows 10 rollout.
 
-Xxxx xxxx xxxx xxxxxxx xxxxxxx xx xxx xxxxxxxxxxx. Xxx xxxxxxxxxxx xx xxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxx xxxxxxx xx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx Xxxxx, xxx xxx [Xxxxxxxxx Xxxxxxxx Xxxxx xx XxxxXxx](https://technet.microsoft.com/library/mt589441.aspx).
+Note that this article focuses on app development. For information on the architecture and implementation details of Microsoft Passport and Windows Hello, see the [Microsoft Passport Guide on TechNet](https://technet.microsoft.com/library/mt589441.aspx).
 
-Xxx x xxxxxxxx xxxx xxxxxx, xxx xxx [Xxxxxxxxx Xxxxxxxx xxxx xxxxxx xx XxxXxx](http://go.microsoft.com/fwlink/?LinkID=717812).
+For a complete code sample, see the [Microsoft Passport code sample on GitHub](http://go.microsoft.com/fwlink/?LinkID=717812).
 
-Xxx x xxxx-xx-xxxx xxxxxxxxxxx xx xxxxxxxx x XXX xxx xxxxx Xxxxxxxxx Xxxxxxxx xxx xxx xxxxxxx xxxxxxxxxxxxxx xxxxxxx, xxx xxx [Xxxxxxxxx Xxxxxxxx xxxxx xxx](microsoft-passport-login.md) xxx [Xxxxxxxxx Xxxxxxxx xxxxx xxxxxxx](microsoft-passport-login-auth-service.md) xxxxxxxx.
+For a step-by-step walkthrough on creating a UWP app using Microsoft Passport and the backing authentication service, see the [Microsoft Passport login app](microsoft-passport-login.md) and [Microsoft Passport login service](microsoft-passport-login-auth-service.md) articles.
 
-## Y Xxxxxxxxxxxx
-
-
-X xxxxxxxxxxx xxxxxxxxxx xxxxx xxxxxxxxxxx xxxxxxxx xx xxxx x xxxxxx xxx xxxxxxxx xxx xx xxxxx xx. Xxxxxxxxxxx x xxxx xxxxxx xxx xxxxxx xx xxxxxx xxxxxxx xxx xxxx xx xxxxxxxxxx xxxxxxxxxxxxx (x xxxxxxx xxxxx xx xxxxxxxxxxxxxx), xxx xxxx xxxxxx xxxx x xxxxxxxx xxxxxxxxxxxxx xxxx xxxxxx xx xxxx xx xx (xxxxxxxxxxxxx). Xxx xxxxxxxxxxxx xxxxxxxx xx xxxxxxxx xxxxxxx xxxxxxxx xxxxxxxxxx xxx xxxxx xxxxxx xx xxxx xxxxxxxxxxx xxx xxxxxx xxxxxxxxxxxxxx xxx xxxxxxxxxxxxx xxxxxxxxx, xxxxx xxxxx xxxx xxxxx xxxxxxx xxxxxx xx xxxxxxxx, xxxx-xxxxxxx xxxxxxxxx xx xxx xxxxx xxx xxxxx xxxxxxxx. Xxx xxx-xxxxx xxxxx xxxx xxxxxxxxxxxxxx xxx xxxxxxx "xxxxxxxxx xxx xxxx, xxxxxxxxx xxx xxxx, xx xxxxxxxxx xxx xxx" xxxxxx xxxxxxxxxx xxx xxxxx: x xxxxxxxx xxxxxxxx xx xx xxxxxxxxxxxxxx xxxxxx xxx xx xxxxxx, xx xxxxxx xxx xxxxx xxx xxxxxxxx xxx xxxxxxxxxxx xxx xxxx xxx xxxx xx.
-
-## Y.Y Xxxxxxxx xxxx xxxxxxxxxxx xxxxxxxxxxx
+## 1 Introduction
 
 
-Xxxx xxxxx xxx xxx-YYYYx, xxxx Xxxxxxxx Xxxxxxó xxx xxx xxxx xx xxx Xxxxxxxxxxxxx Xxxxxxxxx xx Xxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxx xx xxx xxxxxxxx, xxxxx xxx xxxxxxxxxxxxxx xxxx xxx xx xxxx xxxx xxx xxx xx xxxxxxxxx xxx xxxx xxxxxxxxxxxxxx xxx xxxxxxxxxxxxx. Xxxx xxxx, xxx xxxxx xx xxx xxx xxx xxxxxxxx xxxxxxx xxx xxx xxx xxxxxxxx xxxxxxxx (xxxx xxxxxx xxxxxxx xxx xxxxxxx, xxx xxxxxxx), xxx xx xxx xxxxx xxxxx xxxx xxx xxxxxxxx. Xxxxxxxxx xxx xxxx xx xxxxx xxx xxxx xxx xxxx xx xxxxx. Xx xxxxxxxx, xxxxxxxxxxxxxx xxxxxx xxx xxxxxx xxxx xxxxxxxx, xxx xxxxx xxxx x xxxx xxxx xxxxxxxxx xxxxxxxxxxx xxx xxxxxxxx.
+A fundamental assumption about information security is that a system can identify who is using it. Identifying a user allows the system to decide whether the user is identified appropriately (a process known as authentication), and then decide what a properly authenticated user should be able to do (authorization). The overwhelming majority of computer systems deployed throughout the world depend on user credentials for making authentication and authorization decisions, which means that these systems depend on reusable, user-created passwords as the basis for their security. The oft-cited maxim that authentication can involve "something you know, something you have, or something you are" neatly highlights the issue: a reusable password is an authentication factor all by itself, so anyone who knows the password can impersonate the user who owns it.
 
-## Y.Y.Y Xxxxxxxxxx xxxxx
-
-
-Xxx xxxxxxx xxxx xx xxxxxxxxx xx xxxxxx: xx xxxxxxxx xxx xxxxx xxxx xxxxxx. Xxxxx xxxxx x xxxxxxxx xx xxxxxxx, xxxxxxxxx, xx xxxxxx xx xxxxxxxxxx. Xxx xxxxxxx, xx xxxxxxxx xxx xxxxx x xxxxxxxxxx xx xxxxxxxxx xx xxxxxx xxxx xx xxxxxxxxxxxxxx xxxxxx xx xxxxxxxxxxxxx xx xxxxxxx xxxxxxx xx xx xxxxxxxxxxx xxxxxx, xx xxxxxxxxxx xxxxxxx xx xx xxxxxxxxxxx xx xx x xxxxxx, xx xxxxxxx xxxx xxxxxxxxxx xx x xxxxxx, xx xx xxxxxxxx xx xxx xxxxx xxxxxxxxxx x xxxx xxxxx. Xxxxx xxx xxxx xxx xxxx xxxxxx xxxxxx xxxxxxx.
-
-Xxxxxxx xxxxxxx xxxx xx xxxx xx xxxxxxxxxx xxxxxx, xx xxxxx xx xxxxxxxx xxxxxxxx x xxxxx xxxxxxxxxx xx xxxxxxxxxxxxx xx xx xxxxxxxx xxxxxxx, xxx xxxx xxxxxxx xx xxxxx xx xxxxxxxxxxx x xxxxx xxxx. Xxxx xxxxxxxxxxxxxx xxxxxxxxx (xxxxxxxxx Xxxxxxxx xxx XXxxx) xxxxxxx xxxxxxx xxxxxx xxxxxxx xx xxxxxxxxx x xxxx xxxxx xx xxx xxxxxxxxxx xxxxxxxx xxxxxxx, xxx xxxx xxxxxx xxxx xxxxxxxx xxx xxxxx xxxx xxx xxxxxxxxxxxxxx xxxxxx xxxxxx, xxx xxx xxxxxxxx xxxx xxx xxxx xxxxxxxx xx xxx xxx xxxxxx xx xxx xxxxx xxxxx.
-
-## Y.Y.Y Xxxxxxxxxx xxxxx
+## 1.1 Problems with traditional credentials
 
 
+Ever since the mid-1960s, when Fernando Corbató and his team at the Massachusetts Institute of Technology championed the introduction of the password, users and administrators have had to deal with the use of passwords for user authentication and authorization. Over time, the state of the art for password storage and use has advanced somewhat (with secure hashing and salting, for example), but we are still faced with two problems. Passwords are easy to clone and they are easy to steal. In addition, implementation faults may render them insecure, and users have a hard time balancing convenience and security.
+
+## 1.1.1 Credential theft
 
 
-Xxx xxxxxx xxxxxxxx xx xxxxx xx xxxxx xxxxxxx xx xxx xxxxxxxx xxxxx x xxx xxxxxxx xxxxx. Xx xxxxxxxx xxx xxxxxxxxxxxx xxxxxxxx x xxxxxxxx–xxxxxxxx xxxx xxxx x xxxxxxxxxxx xxxxxx xxx xxxx xxx xxxx xxxx xxxx xx xxxxx xxxxxxx. Xxxx xxxxxx xxxxx xxxxxxxxxxxx xxxxx xx xxxxx xxxxxxxxx xx xxxxxxxxxxx xxxx x xxxxxxxxxxx xxxxxx xxxx xxxxx xxxxxxx. Xxx xxx xx xxxxx xxxxxxxxx xx xxxxxxxxx xxxxx xx xxxxxxxxxx xxxxxxxx xxxx xx xxxx xxxxxxx xxxxx xx xxxx xxxxx.
+The biggest risk of passwords is simple: an attacker can steal them easily. Every place a password is entered, processed, or stored is vulnerable. For example, an attacker can steal a collection of passwords or hashes from an authentication server by eavesdropping on network traffic to an application server, by implanting malware in an application or on a device, by logging user keystrokes on a device, or by watching to see which characters a user types. These are just the most common attack methods.
 
-## Y.Y Xxxxxxx xxxxxxxxxx xxxxxxxx
+Another related risk is that of credential replay, in which an attacker captures a valid credential by eavesdropping on an insecure network, and then replays it later to impersonate a valid user. Most authentication protocols (including Kerberos and OAuth) protect against replay attacks by including a time stamp in the credential exchange process, but that tactic only protects the token that the authentication system issues, not the password that the user provides to get the ticket in the first place.
 
-
-Xxxxxxx xxx xxxxxxxx xxxx xxxxxxxxx xxxx xx xxxxxx. Xxxxxxxxxx xxxxxxxx xxxxxxxx xxxxx xxxx xxx xx xx; xxxxx xxx xxxx xxxxxxx, xxxxx, xx xxxxx xxxx xxxxxxxxx. Xxxxxxxx xxxx xxxxxxxxx xx xxxxxxxx xxx xxxxxxxxxxxxxx xxxxxxxx, xxxxxxxxx xxxxx xxxx xxx xxxxxxxxx xxx xxxxxxx xxxxxx.
-
-Xxxxxxxxx Xxxxxxxx xxxxxxxx xxxxxxxxx xxxx xxxxxx xxx-xxxxxx xxxxxxxxxxxxxx (YXX) xx xxxxxxxxx xxxxxxxx xxxxxxxxxxx xxx xx xxxxxxxx x xxxxxx-xxxxxxxx xxxxxxxxxx xxxx x xxxxxxxxx xx XXX-xxxxx xxxx xxxxxxx xxxxxxxx. 
-
-## Y Xxxx xx Xxxxxxxxx Xxxxxxxx?
+## 1.1.2 Credential reuse
 
 
-## Y.Y Xxxx xx Xxxxxxx Xxxxx?
 
 
-Xxxxxxx Xxxxx xx xxx xxxx Xxxxxxxxx xxx xxxxx xx xxx xxx xxxxxxxxx xxxx-xx xxxxxx xxxxx xxxx Xxxxxxx YY. Xxxxxxx xx xx xxxxx xxxxxxxx xxxx xxx xxxxxxxxx xxxxxx, Xxxxxxx Xxxxx xxxxxx xxxx xx xxxxxxxxxxx xxxxxxxxxxxxxx xx xxxxxx xxxxx’ xxxxxxx. Xxxxxxxxxxxxxx xxxxxxx xxxx xxx xxxx xxxxxxxx xxx xx xxx xxxxxx xxxxxxxxx xxxxxxxxxx xx xxxxxx xxx xxxxxx-xxxxxxxx Xxxxxxxxx Xxxxxxxx xxxxxxxxxxx, xxxxx xxxxx xxxx xx xxxxxxxx xxx xxxxxx xxx xxxxxx xxx’x xxx xx xx xx xxxxxx xxxx xxxxxxxx xxx xxx XXX. Xxx Xxxxxxx xxxxxx xxxxxxxxxx xxxxx xxxxxxxx xxxxxxxxx xxxx xx xxx xxxxxx. Xx xxxxx Xxxxxxx Xxxxx xx xxxxxx x xxxxxx, xxx xxxxxxxxxx xxxx xxxxx xxxxxx xx xxx xx xxx xx xxx Xxxxxxx xxxxxxxxxx, xxxx, xxxx, xxxxxxxx, xxx xxxxxxxx.
+The common approach of using an email address as the username makes a bad problem worse. An attacker who successfully recovers a username–password pair from a compromised system can then try that same pair on other systems. This tactic works surprisingly often to allow attackers to springboard from a compromised system into other systems. The use of email addresses as usernames leads to additional problems that we will explore later in this guide.
 
-Xxx Xxxxxxx Xxxxx xxxxxxxxxxxxx xx xxxxx xx x Xxxxx. X Xxxxx xx xxxxxx xx xxx xxxxxxxxxxx xx xx xxxxxxxxxx xxxxxx xxx x xxxxxxxx xxxx. Xx xxxx xxx xxxx xxxxxx xxxxxxx, xx xxx xxxxxx xxxx x xxxxxx xx xxxxxxx xxx, xxx xxxxxx xxxxxx xx xxxxxxxxx xxxx x xxxxxx. Xx xxxxxxxx xxxxx xxxxx x xxxxxx, xxxx xxxx xxxxx xx xxx xx xxx xx xxx xxx xxxxxxx. Xxxxx xxxxxxx xxxx x xxxxxx Xxxxx xxx xxxx xxxxxx. Xxx xxx xxxxx xx x Xxxxx xx x xxxxx xxx xxx xxx xx xxxxxx (xx xxxxxxx) x xxxxxx xxxxxxxxxx. Xxx Xxxxx xxxxxx xxxx xxx xxxxxxxxxxxx xxx xx xx xxx xx xxxxxxx, xxx xx xxxxxxxx xxxxxxxxxxx xxxx xxx. Xx xxxxx xxxxx, xxx Xxxxx xx xxx x xxxx xxxxxxxxxx xxx xx xx x xxxxxx xxxxxx xxx Xxxxxxxxx Xxxxxxxx.
-
-## Y.Y Xxxx xx Xxxxxxxxx Xxxxxxxx?
+## 1.2 Solving credential problems
 
 
-Xxxxxxx Xxxxx xxxxxxxx x xxxxxx xxx xxx x xxxxxx xx xxxxxxxxx xx xxxxxxxxxx xxxx, xxxxx xxxxxxxxx xxx xxxxx xxxx xx xxx xxxx xxxxxxx x xxxx xxx x xxxxxxxxx xxxxxxx xx xxxx xxxx. Xxxxx xxx xxxxxx xxx xxxxxxxxxx xxx xxxx, xx xxxxx xxxx xxxxxxxxxxxx xxx xxxx xxxxxx xxxxxxxxxxx xxxxxxx xx xxxxx xxxxxx xx x xxxxxxxxx xxxxxxxx. Xxxxxxxxx Xxxxxxxx xxxxxxxx xxxxxx YXX xxxx xx xxxxx xxxxxxxxxx xxxx Xxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxxxx xxxx xxx xxxxxxxxxxx xx x xxxxxxxx xxxxxx, xxx x xxxxxxxxx xxxxxxx xx XXX.
+Solving the problems that passwords pose is tricky. Tightening password policies alone will not do it; users may just recycle, share, or write down passwords. Although user education is critical for authentication security, education alone does not eliminate the problem either.
 
-Xxxxxxxxx Xxxxxxxx xx xxx xxxx x xxxxxxxxxxx xxx xxxxxxxxxxx YXX xxxxxxx, xxxxxx. Xx xx xxxxxxxxxxxx xxxxxxx xx xxxxx xxxxx: xxxxxxxxxxxxxx xx xxxxxxxxx xx xxxxx xxxxxxxxxxxxx xxxxxxxxxx xxxxxxx xx xxxxxx xxxxxxxxxxx, xxx xxx xxxx’x xxx xxxxxxxx xx xxxxxx xxxxxx xxxxxx-xxxxxxxxx xxxxxxxx. Xxxxxxxxx Xxxxxxxx xxxx xxx xxxxxxx xxx xxxxx xxxxxxxxxxxxxx xxxxxxxxxx xxxxxxxx xxx xxxxx xxxx xxxxxxxxxx, xxxxxx. Xx xxxxxxxxxx, xxx xx xxx xxxx x Xxxxxx Xxx Xxxxxxxxxxxxxx (XXX) xx xxxxxx xxxxxxxxxxxx, xx xxx xx xxx xxxxxxxxx xxxx xxx. Xxxxxxxxx Xxxxxxxx xxxxxxxx xxx xxxxx xxxxxxxxxx xx xxxxx xxxxx—xxxxxxxxxx xxxxxxxxxxx xxx xxxxxxx xxxxx xxxxx xxx xxxxxx xxxxxxxx xxx xxxxxxxx xxxxx xxxxx—xxxxxxx xxx xx xxxxx xxxxxxxxx.
+Microsoft Passport replaces passwords with strong two-factor authentication (2FA) by verifying existing credentials and by creating a device-specific credential that a biometric or PIN-based user gesture protects. 
 
-## Y.Y Xxx Xxxxxxxxx Xxxxxxxx xxxxx
-
-
-Xxxx xxx xxxx xxxx xx Xxxxxxxxx Xxxxxxxx xx xxx xx xxx xxxxxxx, Xxxxxxxxx Xxxxxxxx xxxxxxxxx x xxx xxxxxx–xxxxxxx xxx xxxx xx xxx xxxxxx. Xxx XXX xxxxxxxxx xxx xxxxxxxx xxxx xxxxxxx xxx. Xx xxx xxxxxx xxxx xxx xxxx x XXX, xxx xxxxxxx xxx xx xxxxxxxxx xxx xxxxxxxxx xx xxxxxxxx. Xx xxxxxxxx XXX-xxxxxxx xxxxxxx xxxxxxxx x xxxxx xx xxxx xxxx xxxx xxx xx xxxx xx xxxxxx xxxx x xxx xx xxxxx xx XXX. Xxxx xxxxxxxxxxx xxxxxxxxxxx xxx xx xxxx xx xxxx xxxxxxxx xx xxxxxx xx xxx xxxx xx xxxxxxx x xxxxxxxxx xxxxxxxxxxxxx xxxxx xxx xxxxxxx.
-
-Xx xxxxxx Xxxxxxxxx Xxxxxxxx xx x xxxxxx, xxx xxxx xxxx xxxx xxxxxx xxxxx Xxxxx Xxxxxx Xxxxxxxxx xxxxxxx xx Xxxxxxxxx Xxxxxxx xxxxxxxxx xx Xxxxxxx xxxxxxxx.
-
-## Y.Y.Y Xxx xxxx xxx xxxxxxxxx
+## 2 What is Microsoft Passport?
 
 
-Xxx xxxx xxx xxxxxxxx xx xxxxxxxxx, xx xxxx xx xxxxxxxxx xxxxxxx xxxxxx. Xxx xxxx xxxxxx xxx xx xx xxxx xx xxxxxxx xxxxxxxxxxx xxxxxxxx. Xxxxx xx x xxxx xxxxxxx xx xxxxx xxxxxxxx xxxxxxxx xxxxxxx (XXXx) xx xxxxxxxx, xxxxx, xxx xxxxxxx xxxx xxx xxxxxxxx-xxxxxxxx xxxxxxxxxxxx. Xxxxx xxxxx xxx x xxxxxxx xxxx xx XXX, xx xxx xxxxxxx xxxx xxx xxxxxxxxx xxxx xxx Xxxxxxx Xxxxxxxxx Xxxxx XXX xxxxxxxx. Xxxxxxxx xxxxxxxx, xxx Xxxxxxxxx Xxxxxxxx xxxxxxxxxxxxxx xxxxx xxxxxxxxx xx xxxxxxx XXX xxxxxxxx xx xxxxxxxx, xxxxx, xxx xxxxxxx xxxx. Xxxxxxx, Xxxxxxxxx Xxxxxxxx xxx Xxxxxxxxx Xxxxxxxx xxx Xxxx xx xxx xxxxxxx xx xxxxxxx XXX.
-
-Xxxxxxxx xxxxxxxx, Xxxxxxxxx xxxxxxxxxx xxx xxx xx XXX xxxxxxxx. Xxx XXX xxxxxxxx xxxxxxx x xxxxxxx xx xxxxx xxx xxxxxxxxx xxxxxxx, xxxxxxxxx XXX xxxxx-xxxxx xxxxxxx. Xxx XXX xxxxxxxx xx xxxxxxxxxx xxxxx xx xxxxxxxxxx xxxxx xx xxxxxxx xxxxxxx xx xxxx. Xxxx xxx XXX xxx xxxxxx xxx xxx xxxxxxxx, xxx xxxx xxxx xxxxx xxx XXX. Xxxxxxxxx xxx XXX xxxxx xxxx xxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx xxxx xxx xxx xxx xxxxxxxx xxxx xx xxxxxxx.
-
-## Y.Y.Y Xxxxxxxxxxxxxx
+## 2.1 What is Windows Hello?
 
 
-Xxxx x xxxx xxxxx xx xxxxxx xxxxxxxxx xxx xxxxxxxx, xxx xxxxxxxxxxxxxx xxxxxxx xxxxxx xxxx xxx xxxx xxxxxxxx x XXX xx xxxxxxxxx xxxxxxx xx xxxxxx xxx xxxxxx, x xxxxxxx xxxxxxxxx xxxxxx "xxxxxxxxx xxx xxx".
+Windows Hello is the name Microsoft has given to the new biometric sign-in system built into Windows 10. Because it is built directly into the operating system, Windows Hello allows face or fingerprint identification to unlock users’ devices. Authentication happens when the user supplies his or her unique biometric identifier to access the device-specific Microsoft Passport credentials, which means that an attacker who steals the device can’t log on to it unless that attacker has the PIN. The Windows secure credential store protects biometric data on the device. By using Windows Hello to unlock a device, the authorized user gains access to all of his or her Windows experience, apps, data, websites, and services.
 
-Xx xxxxxxxxxxx xxx xxxxx xxx xxx xxxx xxxx xxxxxxx xxxxxxxxxxx, xxx xxx xxxxxxx xxxx xxx xxx xxxx xxxx xxxxxxx xxxx. Xxxxx xxxx xxx xxxx xx xxxx xxxxxxxx xxxx xxx xxxx xx xxx xxxxxxxx xxxxxxxx xx XXX, xxxxxxx xxxxxx xx xxxxxxxxx xxxxxxxxx. Xxxxxxxxxxxx xxx xxx xxxxxxxx XXXx xx xxxxxxx xxxxxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxxxx xxxxxxx. Xxxxxx xxxxxxx xxxxx XXXx xxxx xxxxxxx xxxxxxxx xxxxxxxxxx xxxxxxx x xxxx xxxxxxx, xxx xxx xxx xxxxxxxx xx xxx xxxxxxx xx xxx xxxxxxxxxx xxxxxxxxxxx. Xxxxxx, xxx xxxxxxxxxxx xxxx xxx x xxxxxxxx xxxxxx xxxx xxxxxxx x xxxxx xx xxxx, xxx xxx Xxxxxxxxx Xxxxxxxx xxxxx xxxxxxx xxx xxxxxx xxxx xxx xxxxxxx xxx xxxxxxx.
+The Windows Hello authenticator is known as a Hello. A Hello is unique to the combination of an individual device and a specific user. It does not roam across devices, is not shared with a server or calling app, and cannot easily be extracted from a device. If multiple users share a device, each user needs to set up his or her own account. Every account gets a unique Hello for that device. You can think of a Hello as a token you can use to unlock (or release) a stored credential. The Hello itself does not authenticate you to an app or service, but it releases credentials that can. In other words, the Hello is not a user credential but it is a second factor for Microsoft Passport.
 
-## Y.Y Xxxxxxx xxxxx xx xxxxxxxxx Xxxxxxxx
-
-
-Xxx xxxx xx xxxx x xxxxx xxxxxxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx Xxxxx xxxx, xxx xx xxxx x xxxx xx xxx xx xxxxxxxxx xxxx xx xxx xxx xxxxxxxxxxxx. Xxxx xx xx xxxx xxxxx: Xxxx xx xxx xxxxxxx xxxxx xxx XXXx, xx xxx xxxxxxx xxxxx xxx Xxxxxxxxx Xxxxxxxx XXXx. Xx xxxx xxxxxx, xxxxx xxx xx XXXx xxx Xxxxxxx Xxxxx.
-
-Xxxxx xxx xxxxxxxxx xxxxxxxxx xx xxx xxxxxxxxx xxxxx Xxxxxxxxx Xxxxxxxx. Xxx xxxxxxx, xxxx xxxxxxx xx xx xxxx xxx xx x xxxxxx. Xxx xxxxx xxxxxx xxxxxxxx xxxxx xx xx xxxxxxxxxxxx xxxxxxx x xxxxxxx. Xxxxxxx xx xxxxx x xxxxx xxxx xxx xxxxxxxx, xxx xxxx xx xxxxx Xxxxxxxxx Xxxxxxxx. Xx xxx xxxxxxxxx xxxxxxxx, xx xxxx xxxxxxx xxxxxxxxxxxx x xxxxxx xx xxxxxxxxx xxxxxxxxx, xxxxxxxxx xxx xx xxxxxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxx Xxxxxxxxx Xxxxxxxx, xxx xxx xx xxxxxxx xxxx xx xxxxxxxx xxxxxxxx/xxxxxxxx xxxxxx xx x Xxxxxxxxx Xxxxxxxx xxxxxx.
-
-Xxxxxxx, xx xxxxx xxxx xxx Xxxxxxxxx Xxxxxxxx XXXx xxxxxxx xxx xxx xx xxx Xxxxxxx YY XXX xxxx xxxxxxx xxx xxxxxxxxx xxxxxx xxx xxx xxxx xx xxxx xx. Xx xxxxx xxxxx, xxx YY.Y.YYYYY Xxxxxxx XXX xxxx xx xxxx xxx xxxx xxxx xxxx xx xxxxxxxx xx Xxxxxxx YY xxx xxx YY.Y.YYYYY xxxx xx xxxx xxx xxxx xxxx xxxx xx xxxxxxxx xx Xxxxxxx YY, xxxxxxx YYYY.
-
-## Y Xxxxxxxxxxxx Xxxxxxxxx Xxxxxxxx
+## 2.2 What is Microsoft Passport?
 
 
-Xx xxxx xxxxxxx, xx xxxxx xxxx x xxxxxxxxxx xxxxxxxx xxxx xx xxxxxxxx xxxxxxxxxxxxxx xxxxxx, xxx xx xxxxxxx xxx xx xxxxxxxxx Xxxxxxxxx Xxxxxxxx.
+Windows Hello provides a robust way for a device to recognize an individual user, which addresses the first part of the path between a user and a requested service or data item. After the device has recognized the user, it still must authenticate the user before determining whether to grant access to a requested resource. Microsoft Passport provides strong 2FA that is fully integrated into Windows and replaces reusable passwords with the combination of a specific device, and a biometric gesture or PIN.
 
-Xxx xxxx xxxxxxx xxxxxx xxx xx xxxxxxx xxxx xx xxxxxxxx xxxxxxxx/xxxxxxxx xxxxxx. Xxxxxxx, xxxx xx xxxx xxxxxxx xxxxxxxxx xxx xxxx, xxx xxx xxxx xx xxxx xxxxxxx xxxx xxx xx xxx x xxxxx xxxxxxxxxxxxx xx xxx xxxxxxx xxx xxx xxxx xxxxxxxx.
+Microsoft Passport is not just a replacement for traditional 2FA systems, though. It is conceptually similar to smart cards: authentication is performed by using cryptographic primitives instead of string comparisons, and the user’s key material is secure inside tamper-resistant hardware. Microsoft Passport does not require the extra infrastructure components required for smart card deployment, either. In particular, you do not need a Public Key Infrastructure (PKI) to manage certificates, if you do not currently have one. Microsoft Passport combines the major advantages of smart cards—deployment flexibility for virtual smart cards and robust security for physical smart cards—without any of their drawbacks.
 
-## Y.Y Xxxxxxxxx xxx xxxxx
+## 2.3 How Microsoft Passport works
 
 
-Xx xxxxx xxxx x xxxxx xxx xxxxxxx xxxx xxxx xxx Xxxxxxxxx Xxxxxxxx, xxx x xxxxxxxxxxxx xxx xxxx xxx xx xxxxx xx xxxx xx xx x xxx xxxxxx.
+When the user sets up Microsoft Passport on his or her machine, Microsoft Passport generates a new public–private key pair on the device. The TPM generates and protects this private key. If the device does not have a TPM, the private key is encrypted and protected by software. In addition TPM-enabled devices generate a block of data that that can be used to attest that a key is bound to TPM. This attestation information can be used in your solution to decide if the user is granted a different authorization level for example.
 
-Xxx xxxxx xxxx xx xx xxxxxx xxxx xxx xxxx xx xxxx xx xxx Xxxxxxxx. Xxx xxx xxxxxxxx xxxx xxxxxxxx xxx xxxxxxx xxxxxxxxxxxx xx xxxx xxxx xx xxx xxxxxx xxxx XX xxxx. Xx xxx xxx xxxxxxxxxx xxx xxxx xxx xxx xxx xxxxxxx Xxxxxxxxx Xxxxxxxx, xx xxxxxxx xxx xxxx xx xxx xxxx xx xxxxxx xxxxx xxx xxx.
+To enable Microsoft Passport on a device, the user must have either their Azure Active Directory account or Microsoft Account connected in Windows settings.
 
-Xx xxxxxx Xxxxxxxxx Xxxxxxxx, xxx xxxx xxxx xxxxx xx xxx xx x XXX xx Xxxxxxx xxxxxxxx, xxxxxx xxx xxxx xxx xx xx xxxxxx xxx Xxx xx Xxx Xxxxxxxxxx (XXXX).
+## 2.3.1 How keys are protected
 
-Xxx xxxxxxxxx xxxxx xx xxxx xxxx x xxxxxx xxx xx xxxxx xx xxx xxxx xx xxx xx xxx Xxxxxxxxx Xxxxxxxx.
+
+Any time key material is generated, it must be protected against attack. The most robust way to do this is through specialized hardware. There is a long history of using hardware security modules (HSMs) to generate, store, and process keys for security-critical applications. Smart cards are a special type of HSM, as are devices that are compliant with the Trusted Computing Group TPM standard. Wherever possible, the Microsoft Passport implementation takes advantage of onboard TPM hardware to generate, store, and process keys. However, Microsoft Passport and Microsoft Passport for Work do not require an onboard TPM.
+
+Whenever feasible, Microsoft recommends the use of TPM hardware. The TPM protects against a variety of known and potential attacks, including PIN brute-force attacks. The TPM provides an additional layer of protection after an account lockout as well. When the TPM has locked the key material, the user must reset the PIN. Resetting the PIN means that all keys and certificates encrypted with the old key material will be removed.
+
+## 2.3.2 Authentication
+
+
+When a user wants to access protected key material, the authentication process begins with the user entering a PIN or biometric gesture to unlock the device, a process sometimes called "releasing the key".
+
+An application can never use the keys from another application, nor can someone ever use the keys from another user. These keys are used to sign requests that are sent to the identity provider or IDP, seeking access to specified resources. Applications can use specific APIs to request operations that require key material for particular actions. Access through these APIs does require explicit validation through a user gesture, and the key material is not exposed to the requesting application. Rather, the application asks for a specific action like signing a piece of data, and the Microsoft Passport layer handles the actual work and returns the results.
+
+## 2.4 Getting ready to implement Passport
+
+
+Now that we have a basic understanding of how Microsoft Passport and Windows Hello work, let us take a look at how to implement them in our own applications. Just to be very clear: When we are talking about the APIs, we are talking about the Microsoft Passport APIs. At this moment, there are no APIs for Windows Hello.
+
+There are different scenarios we can implement using Microsoft Passport. For example, just logging on to your app on a device. The other common scenario would be to authenticate against a service. Instead of using a logon name and password, you will be using Microsoft Passport. In the following chapters, we will discuss implementing a couple of different scenarios, including how to authenticate against your services with Microsoft Passport, and how to convert from an existing username/password system to a Microsoft Passport system.
+
+Finally, be aware that the Microsoft Passport APIs require the use of the Windows 10 SDK that matches the operating system the app will be used on. In other words, the 10.0.10240 Windows SDK must be used for apps that will be deployed to Windows 10 and the 10.0.10586 must be used for apps that will be deployed to Windows 10, version 1511.
+
+## 3 Implementing Microsoft Passport
+
+
+In this chapter, we begin with a greenfield scenario with no existing authentication system, and we explain how to implement Microsoft Passport.
+
+The next section covers how to migrate from an existing username/password system. However, even if that chapter interests you more, you may want to look through this one to get a basic understanding of the process and the code required.
+
+## 3.1 Enrolling new users
+
+
+We begin with a brand new service that will use Microsoft Passport, and a hypothetical new user who is ready to sign up on a new device.
+
+The first step is to verify that the user is able to use Passport. The app verifies user settings and machine capabilities to make sure it can create user ID keys. If the app determines the user has not yet enabled Microsoft Passport, it prompts the user to set this up before using the app.
+
+To enable Microsoft Passport, the user just needs to set up a PIN in Windows settings, unless the user set it up during the Out of Box Experience (OOBE).
+
+The following lines of code show a simple way to check if the user is set up for Microsoft Passport.
 
 ```cs
 var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
@@ -123,34 +124,34 @@ if (!keyCredentialAvailable)
 }
 ```
 
-Xxx xxxx xxxx xx xx xxx xxx xxxx xxx xxxxxxxxxxx xx xxxx xx xxxx xxxx xxxxxxx. Xxx xxx xxxxxx xx xxx xxx xxxx xxx xxxxx xxxx, xxxx xxxx, xxxxx xxxxxxx, xxx x xxxxxx xxxxxxxx. Xxx xxxxx xxx xxx xxxxx xxxxxxx xx xxx xxxxxx xxxxxxxxxx; xx xx xx xx xxx.
+The next step is to ask the user for information to sign up with your service. You may choose to ask the user for first name, last name, email address, and a unique username. You could use the email address as the unique identifier; it is up to you.
 
-Xx xxxx xxxxxxxx, xx xxx xxx xxxxx xxxxxxx xx xxx xxxxxx xxxxxxxxxx xxx xxx xxxx. Xxxx xxx xxxx xxxxx xx, xxx xxxxxx xxxxxxxx xxxxxxx x xxxxxxxxxx xxxxx xx xxxxxx xxx xxxxxxx xx xxxxx. Xxxx xxxxx xxx x xxxxxxxxx xx xxxxx xxx xxxxxxx xx xxxxxxxxx.
+In this scenario, we use the email address as the unique identifier for the user. Once the user signs up, you should consider sending a validation email to ensure the address is valid. This gives you a mechanism to reset the account if necessary.
 
-Xx xxx xxxx xxx xxx xx xxx xx xxx XXX, xxx xxx xxxxxxx xxx xxxx’x [**XxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn973029). Xxx xxx xxxx xxxx xxx xxxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxx xx xxxxxxx xxxxxxxxxxxxx xxxxx xxxx xxx xxx xx xxxxxxxxx xx xxx XXX. Xxx xxxxxxxxx xxxxxx xxx, xxx xxxxxxxxxx xxx xxxxxxxxxxx, xx xxxx xx xxx xxxxxxx xxxxxx xx xxxxxxxx xxx xxxxxx xxxxx xxxx. Xxxxx xxx xxxx xxxxxxxxx xx xxxxx xxxxxx xxxx xx xxxxxx.
+If the user has set up his or her PIN, the app creates the user’s [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029). The app also gets the optional key attestation information to acquire cryptographic proof that the key is generated on the TPM. The generated public key, and optionally the attestation, is sent to the backend server to register the device being used. Every key pair generated on every device will be unique.
 
-Xxx xxxx xx xxxxxx xxx [**XxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn973029) xxxxx xxxx xxxx:
+The code to create the [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) looks like this:
 
 ```cs
 var keyCreationResult = await KeyCredentialManager
     .RequestCreateAsync(AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-Xxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn973048) xx xxx xxxx xxxx xxxxxxx xxx xxxxxx xxx xxxxxxx xxx. Xx xxx xxxxxx xxx xxx xxxxx XXX xxxx, xxx XXXx xxxx xxxxxxx xxx XXX xxxx xx xxxxxx xxx xxxxxxx xxx xxxxxx xxx xxx xxxxx xxx xxxxxx; xx xxxxx xx xx XXX xxxx xxxxxxxxx, xxx XX xxxx xxxxxx xxx xxx xxxx xx xxxx. Xxxxx xx xx xxx xxx xxx xxx xx xxxxxx xxx xxxxxxx xxxxxxx xxxx xxxxxxxx. Xxxx xx xxx xxxxxxxx xx xxx xxx xxxxx xx xxxx xxx xxxxxxxxx Xxxxxxxxxxx xxxxxxxxxxx. (Xxx xxx xxxx xxxxxxx xxx xxxx xxxxxxxxxxx xxxxx xxxxxxxxxxx.)
+The [**RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/dn973048) is the part that creates the public and private key. If the device has the right TPM chip, the APIs will request the TPM chip to create the private and public key and store the result; if there is no TPM chip available, the OS will create the key pair in code. There is no way for the app to access the created private keys directly. Part of the creation of the key pairs is also the resulting Attestation information. (See the next section for more information about attestation.)
 
-Xxxxx xxx xxx xxxx xxx xxxxxxxxxxx xxxxxxxxxxx xxx xxxxxxx xx xxx xxxxxx, xxx xxxxxx xxx, xxx xxxxxxxx xxxxxxxxxxx xxxxxxxxxxx, xxx xxx xxxxxx xxxxxxxxxx (xxxx xx xxx xxxxx xxxxxxx) xxxx xx xx xxxx xx xxx xxxxxxx xxxxxxxxxxxx xxxxxxx xxx xxxxxx xx xxx xxxxxxx.
+After the key pair and attestation information are created on the device, the public key, the optional attestation information, and the unique identifier (such as the email address) need to be sent to the backend registration service and stored in the backend.
 
-Xx xxxxx xxx xxxx xx xxxxxx xxx xxx xx xxxxxxxx xxxxxxx, xxx xxxxxxx xxxxxxx xxxxx xx xx xxxx xx xxxxx xxxxxxxx xxxx xxx xxx xxxx xxxx. Xxxxxxx xxxxx xxx xx xxxxxx xxx xxxxx xxxxxx, xx xxxx xxxxx xxx xxxxx xxxx xxxxxxxxx xx xxx xxxx xxxx. X xxxxxx xxxxxxxxxx xx xxxx xx xxxx xxxxxxxx xxx xxxxxx xxxx xxxx xxxxxxxxxxxxxx xxxxx. Xx xxxx xxxxx xxxx xx xxxx xxxxxx xx xxx xxxx xxxxxxx.
+To allow the user to access the app on multiple devices, the backend service needs to be able to store multiple keys for the same user. Because every key is unique for every device, we will store all these keys connected to the same user. A device identifier is used to help optimize the server part when authenticating users. We talk about this in more detail in the next chapter.
 
-X xxxxxx xxxxxxxx xxxxxx xx xxxxx xxxx xxxxxxxxxxx xx xxx xxxxxxx xxxxx xxxx xxxx xxxx:
+A sample database schema to store this information at the backend might look like this:
 
-![xxxxxxxx xxxxxx xxxxxxxx xxxxxx](images/passport-db.png)
+![passport sample database schema](images/passport-db.png)
 
-Xxx xxxxxxxxxxxx xxxxx xxxxx xxxx xxxx xxxx:
+The registration logic might look like this:
 
-![xxxxxxxx xxxxxxxxxxxx xxxxx](images/passport-registration.png)
+![passport registration logic](images/passport-registration.png)
 
-Xxx xxxxxxxxxxxx xxxxxxxxxxx xxx xxxxxxx xxx xx xxxxxx xxxxxxx x xxx xxxx xxxxxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxx xx xxxx xxxxxx xxxxxxxx. Xxx xxxxxxx, xx xxxx xxx xxxxxxxx x xxxxxxx xxxxxxx xxxx xx xxx xxx xxxxxxx, xxx xxxxx xxxx xx xxxxxxx xxxxx xx xxxxxxxx xxx xxxxx xxxxxx xx xxxx xx xxx xxxx-xx xxxxxxx. Xxxx xxx xxx xxxxxxxxxx xxx xxx, xxx xxxxxx xxx xx xxxx xxxx xxxx xx xxxxxx xx xxx xxxxxxx xxx xxxx xx xxxxxxxx xxx xxxx xxxx xxx xxxx xxxx xxx xxxxxxx.
+The registration information you collect may of course include a lot more identifying information than we include in this simple scenario. For example, if your app accesses a secured service such as one for banking, you would need to request proof of identity and other things as part of the sign-up process. Once all the conditions are met, the public key of this user will be stored in the backend and used to validate the next time the user uses the service.
 
 ```cs
 using System;
@@ -208,35 +209,35 @@ static async void RegisterUser(string AccountId)
 }
 ```
 
-## Y.Y.Y Xxxxxxxxxxx
+## 3.1.1 Attestation
 
 
-Xxxx xxxxxxxx xxx xxx xxxx, xxxxx xx xxxx xx xxxxxx xx xxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxx, xxxxx xx xxxxxxxxx xx xxx XXX xxxx. Xxxx xxxxxxxx xxxxxxxxxxx xxx xx xxxx xx xxx xxxxxx xx xxxx xx xxx xxxx-xx xxxxxxx. XXX xxx xxxxxxxxxxx xx x xxxxxxxx xxxx xxxxxxxxxxxxxxxxx xxxxxx xxxx x xxx xx XXX-xxxxx. Xxxx xxxx xx xxxxxxxxxxx xxx xx xxxx xx xxxxxxxxx xxxx x xxxxxxx xxxxxxxxxxxxx xxxxxxxxx xxxxxxxx xx xxx XXX xx x xxxxxxxxxx xxxxxxxx.
+When creating the key pair, there is also an option to request the attestation information, which is generated by the TPM chip. This optional information can be sent to the server as part of the sign-up process. TPM key attestation is a protocol that cryptographically proves that a key is TPM-bound. This type of attestation can be used to guarantee that a certain cryptographic operation occurred in the TPM of a particular computer.
 
-Xxxx xx xxxxxxxx xxx xxxxxxxxx XXX xxx, xxx xxxxxxxxxxx xxxxxxxxx, xxx xxx XXX xxxxxxxxxxx, xxx xxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxx:
+When it receives the generated RSA key, the attestation statement, and the AIK certificate, the server verifies the following conditions:
 
--   Xxx XXX xxxxxxxxxxx xxxxxxxxx xx xxxxx.
--   Xxx XXX xxxxxxxxxxx xxxxxx xx xx x xxxxxxx xxxx.
--   Xxx XXX xxxxxxxxxxx xxx xxx xxxxx xx xxxxxxx xxx XXX XXX "Y.YY.YYY.Y.Y" (xxxxxxxx xxxx xx "Xxxxxxxxxxx Xxxxxxxx Xxx Xxxxxxxxxxx").
--   Xxx XXX xxxxxxxxxxx xx xxxx xxxxx.
--   Xxx xxxxxxx XX xxxxxxxxxxxx xx xxx xxxxx xxx xxxx-xxxxx xxx xxx xxxxxxx.
--   Xxx xxxxxxxxxxx xxxxxxxxx xx xxxxxx xxxxxxxxx.
--   Xxx xxxxxxxxx xx [**XxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298288) xxxx xxxx xx XXX xxxxxx xxx.
--   Xxx xxxxxx xxx xxxxxxxx xx xxx [**XxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn298288) xxxx xxxxxxx xxx xxxxxx XXX xxx xxxx xxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxx.
+-   The AIK certificate signature is valid.
+-   The AIK certificate chains up to a trusted root.
+-   The AIK certificate and its chain is enabled for EKU OID "2.23.133.8.3" (friendly name is "Attestation Identity Key Certificate").
+-   The AIK certificate is time valid.
+-   All issuing CA certificates in the chain are time-valid and not revoked.
+-   The attestation statement is formed correctly.
+-   The signature on [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob uses an AIK public key.
+-   The public key included in the [**KeyAttestation**](https://msdn.microsoft.com/library/windows/apps/dn298288) blob matches the public RSA key that client sent alongside the attestation statement.
 
-Xxxx xxx xxxxx xxxxxx xxx xxxx x xxxxxxxxx xxxxxxxxxxxxx xxxxx, xxxxxxxxx xx xxxxx xxxxxxxxxx. Xxx xxxxxxxx, xx xxx xx xxxxx xxxxxx xxxx, xx xxxxx xxx xxxxxx xxx xxxx xx xx xxxxx xxxxx xxxx xxx xxxx xxx xx.
+Your app might assign the user a different authorization level, depending on these conditions. For instance, if one of these checks fail, it might not enroll the user or it might limit what the user can do.
 
-## Y.Y Xxxxxxx xx xxxx Xxxxxxxxx Xxxxxxxx
-
-
-Xxxx xxx xxxx xx xxxxxxxx xx xxxx xxxxxx, xx xx xxx xxx xxx xxx xxx. Xxxxxxxxx xx xxx xxxxxxxx, xxx xxx xxx xxxxx xx xxxxxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxx xxx xx xxxx xxx xxxx xx xxxxxxxxxxxx xxxx xxxx xxxxx xxxxx xxxx xxxxxxx xxxxxxxx.
-
-## Y.Y Xxxxx xxx xxxx xx xxxx xx xxxxx
+## 3.2 Logging on with Microsoft Passport
 
 
-Xxx xxxx xxxxxxxxx, xxx xxx xxxx xxx xxxx xx xxxxx xx xx xxx xx xxx xxxxxx xxx xx xxxxxxxxx xxxxxx xx, xxxxxx xxxxxxxxx xxx xxx xx xxxxxxxxx xxxxxx xxxxxxxxxx x xxxxxxx xxxxxx xxxxxx xx xxxx xxx. Xxx xxxxxxx, xxxxxx x xxxxxxx xxx xxxxx xxx xxxxxxxx xxxxx xxxxxxx xx xxx xxxxxx, xxx xxxx xx xxxx xxxx xx xx xxx xxxx, xxxxxx xxxx xxxxxxx xxx xxxxx x xxxxxx-xx xxxxxx, xxxxxxxxxx xx xxxxxxx x xxxxxxxxxxx. Xxx xxx xxxxx xxx xxxx xx xxxx xx xxxxx xx xxxx xxx xx xxxxx xxx [**XxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279134) xxxxx. Xxx xxxxxxxxx xxxx xx xxxx xxxx xxxxx xxx xxxx xx xxxxx xxxxx xxxxxxxxxxx.
+Once the user is enrolled in your system, he or she can use the app. Depending on the scenario, you can ask users to authenticate before they can start using the app or just ask them to authenticate once they start using your backend services.
 
-Xxx xxxxxxxxx xxxx xx xxxx xxxx xxxxx xxx xxxx xx xxxxx xxxxx xxxxxxxxxxx.
+## 3.3 Force the user to sign in again
+
+
+For some scenarios, you may want the user to prove he or she is the person who is currently signed in, before accessing the app or sometimes before performing a certain action inside of your app. For example, before a banking app sends the transfer money command to the server, you want to make sure it is the user, rather than someone who found a logged-in device, attempting to perform a transaction. You can force the user to sign in again in your app by using the [**UserConsentVerifier**](https://msdn.microsoft.com/library/windows/apps/dn279134) class. The following line of code will force the user to enter their credentials.
+
+The following line of code will force the user to enter their credentials.
 
 ```cs
 UserConsentVerificationResult consentResult = await UserConsentVerifier.RequestVerificationAsync("userMessage");
@@ -246,22 +247,22 @@ if (consentResult.Equals(UserConsentVerificationResult.Verified))
 }
 ```
 
-Xx xxxxxx, xxx xxx xxxx xxx xxx xxxxxxxxx xxxxxxxx xxxxxxxxx xxxx xxx xxxxxx, xxxxx xxxxxxxx x xxxx xx xxxxx xxx xx xxx XXX xxxx xx xxxxxxxxx xxxxxxxxxxx. Xx xxxxxxx xx xxx xxxxxxxx xxx xx x xxxxxxxxx xxxx xx xxxxxxxxx. Xxxx xxxxxxxxx xx xxxxxxxxx xx xxx xxxxxxxxx xxxxxxx.
+Of course, you can also use the challenge response mechanism from the server, which requires a user to enter his or her PIN code or biometric credentials. It depends on the scenario you as a developer need to implement. This mechanism is described in the following section.
 
-## Y.Y Xxxxxxxxxxxxxx xx xxx xxxxxxx
+## 3.4 Authentication at the backend
 
 
-Xxxx xxx xxx xxxxxxxx xx xxxxxx x xxxxxxxxx xxxxxxx xxxxxxx, xxx xxxxxxx xxxxx x xxxxxxxxx xx xxx xxx. Xxx xxx xxxx xxx xxxxxxx xxx xxxx xxx xxxx xx xxxx xxx xxxxxxxxx xxx xxxxx xx xxxx xx xxx xxxxxx. Xxxxx xxx xxxxxx xxx xxxxxx xxx xxxxxx xxx xxx xxxx xxxx, xx xxxx xxxxxxxx xxxxxx XXXx xx xxxx xxxx xxx xxxxxxx xxx xxxxxx xxxxxx xxxx xxx xxxxxxx xxxxxxx xxx. Xx xxx xxxxxx, xxx xxxxxxx xx xxxx xx xxx Xxxxxxxxx Xxxxxxxx XXXx; xxx xxxxxxxxx xxxx xxxxx xxxx xxxxxx xx xxx xxxx’x xxxxxxx xxx.
+When the app attempts to access a protected backend service, the service sends a challenge to the app. The app uses the private key from the user to sign the challenge and sends it back to the server. Since the server has stored the public key for that user, it uses standard crypto APIs to make sure the message was indeed signed with the correct private key. On the client, the signing is done by the Microsoft Passport APIs; the developer will never have access to any user’s private key.
 
-Xx xxxxxxxx xx xxxxxxxx xxx xxxx, xxx xxxxxxx xxx xxxx xxxxx xxx xxx xxxxxxxxxxx xxx xxxxxxx xx xxxxx xxx xxx xxxxxxxxxxx xxxxxxx xx xxx xxx xxxx xxx xxxxxx xx xxx xxxxxx. Xxx xxxxxxx, xxxx xxx xxxxxx xxxx XXX xx xxxxxxx xxx xxxx, xx xx xxxx xxxxxx xxxx xxxxxxx xxxxxxx xxx xxxx xxxxxxx XXX. Xxx xxxxxxx xxxxx xxxxx xxxxxx, xxx xxxxxxx, xxxx xxx xxxx xx xxxx xxxxxxx xx xxxxxxxx x xxxxxxx xxxxxx xx xxxxx xxxx xx XXX xx xxxx xx xxxxxx xxx xxxxx.
+In addition to checking the keys, the service can also check the key attestation and discern if there are any limitations invoked on how the keys are stored on the device. For example, when the device uses TPM to protect the keys, it is more secure than devices storing the keys without TPM. The backend logic could decide, for example, that the user is only allowed to transfer a certain amount of money when no TPM is used to reduce the risks.
 
-Xxxxxxxxxxx xx xxxx xxxxxxxxx xxx xxxxxxx xxxx x XXX xxxx xxxx’x xxxxxxx Y.Y xx xxxxxx. Xxxxxxxxx, xxx xxxx xx xxxx xxxx xxxxxxx xxxx xxxx xxxxxxxxxxx xxxxx xxx xx xxxxxxxxx xx xxxxx xxxxxx.
+Attestation is only available for devices with a TPM chip that’s version 2.0 or higher. Therefore, you need to take into account that this information might not be available on every device.
 
-Xxx xxxxxx xxxxxxxx xxxxx xxxx xxxx xxx xxxxxxxxx xxxxx:
+The client workflow might look like the following chart:
 
-![xxxxxxxx xxxxxx xxxxxxxx](images/passport-client-workflow.png)
+![passport client workflow](images/passport-client-workflow.png)
 
-Xxxx xxx xxx xxxxx xxx xxxxxxx xx xxx xxxxxxx, xxx xxxxxx xxxxx x xxxxxxxxx. Xxx xxxxxxxxx xx xxxxxx xxxx xxx xxxxxxxxx xxxx:
+When the app calls the service on the backend, the server sends a challenge. The challenge is signed with the following code:
 
 ```cs
 var openKeyResult = await KeyCredentialManager.OpenAsync(AccountId);
@@ -283,17 +284,17 @@ if (openKeyResult.Status == KeyCredentialStatus.Success)
 }
 ```
 
-Xxx xxxxx xxxx, [**XxxXxxxxxxxxxXxxxxxx.XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn973046), xxxx xxx xxx XX xx xxxx xxx xxx xxxxxx. Xx xxxx xx xxxx xxxxxxxxxxxx, xxx xxx xxxx xxx xxxxxxxxx xxxxxxx xxxx xxx [**XxxXxxxxxxxxx.XxxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn973058) xxxxxx xxxx xxxxxxx xxx XX xx xxxxxxx xxx xxxx’x XXX xx xxxxxxxxxx xxxxxxx Xxxxxxx Xxxxx. Xx xx xxxx xxxx xxx xxxxxxxxx xxxx xxxxxx xx xxx xxxxxxx xxx xx xxx xxxx. Xxxx xx xxx xxxx xxxxxx xxxxxxx xxx XXXx.
+The first line, [**KeyCredentialManager.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn973046), will ask the OS to open the key handle. If that is done successfully, you can sign the challenge message with the [**KeyCredential.RequestSignAsync**](https://msdn.microsoft.com/library/windows/apps/dn973058) method will trigger the OS to request the user’s PIN or biometrics through Windows Hello. At no time will the developer have access to the private key of the user. This is all kept secure through the APIs.
 
-Xxx XXXx xxxxxxx xxx XX xx xxxx xxx xxxxxxxxx xxxx xxx xxxxxxx xxx. Xxx xxxxxx xxxx xxxx xxx xxxx xxx x XXX xxxx xx x xxxxxxxxxx xxxxxxxxx xxxxx. Xxxx xxx xxxxxxx xxxxxxxxxxx xx xxxxxxx, xxx xxxxxx xxx xxx xxx XXX xxxx xx xxxxxxx xxx xxxxxxxxxxxxx xxxxxxxxx xxx xxxx xxx xxxxxxxxx. (Xx xxx xxx xxxxxxxx xxxxxxxx xxxxxxxx, xx xx XXX xx xxxxxxxxx). Xxx xxxxxx xxxx xxxx xxx xxxxxx xxxxxxxxx xxxx xx xxx xxxxxx.
+The APIs request the OS to sign the challenge with the private key. The system then asks the user for a PIN code or a configured biometric logon. When the correct information is entered, the system can ask the TPM chip to perform the cryptographic functions and sign the challenge. (Or use the fallback software solution, if no TPM is available). The client must send the signed challenge back to the server.
 
-X xxxxx xxxxxxxxx–xxxxxxxx xxxx xx xxxxx xx xxxx xxxxxxxx xxxxxxx:
+A basic challenge–response flow is shown in this sequence diagram:
 
-![xxxxxxxx xxxxxxxxx xxxxxxxx](images/passport-challenge-response.png)
+![passport challenge response](images/passport-challenge-response.png)
 
-Xxxx, xxx xxxxxx xxxx xxxxxxxx xxx xxxxxxxxx. Xxxx xxx xxxxxxx xxx xxxxxx xxx xxx xxxx xx xx xxx xxxxxx xx xxx xxx xxxxxx xxxxxxxxxx, xx xx xx xx XXX.Y-xxxxxxx xxxxxxXxxXxxx xxxx.Xx xxx xxxx xx xxx [Xxxxxxxxx Xxxxxxxx xxxx xxxxxx xx XxxXxx](http://go.microsoft.com/fwlink/?LinkID=717812), xxx xxxx xxx xxxxx xxx xxxxxx xxxxxxx xx xxxx XxxxxYY xxxxxxxxx xx xxxxxxxxx xxx XXX.Y-xxxxxxx xxxx xx x XXX xxxx, xxxxx xx xxxx xxxxxxxx xxxx. Xxx xxxx xxxxxxxx xxx xxxxxx xxx xxxxxxxxx, xxxxx xx XXX, xxx xxx XXX xxxxxx xxx.
+Next, the server must validate the signature. When you request the public key and send it to the server to use for future validation, it is in an ASN.1-encoded publicKeyInfo blob.If you look at the [Microsoft Passport code sample on GitHub](http://go.microsoft.com/fwlink/?LinkID=717812), you will see there are helper classes to wrap Crypt32 functions to translate the ASN.1-encoded blob to a CNG blob, which is more commonly used. The blob contains the public key algorithm, which is RSA, and the RSA public key.
 
-Xxxx xxx xxxx xxx XXX xxxx, xxx xxxx xx xxxxxxxx xxx xxxxxx xxxxxxxxx xxxxxxx xxx xxxxxx xxx xx xxx xxxx. Xxxxx xxxxxxxx xxxx xxx xx xxx xxx xxxxxx xx xxxxxxx xxxxxxxxxx, xxxxx xx xx xxxxxxx xxx xx xxxxxxxxx xxxx xxxxx. Xx xxx xxxxx XXXYYY xx xxx xxxx xxxxxxxxx xxx XxxxY xxx XxxxxxxxxXxxxxxx, xx xxxx xxxx xxxx’x xxxx xxx xxx xxxx xxx xxxxxxxx xxx xxxxxx xxxxxxxx xxxx xxx xxxxxx. Xxxxx, xxxxx xx xxx xxxxxx xxx x xxx xx xx xx xx xxxx xxxxxx xx .XXX Y.Y, xxx xx xxxxxxx xx xxxx xxxx xxxxxxxxx xxxx xxxx:
+Once you have the CNG blob, you need to validate the signed challenge against the public key of the user. Since everyone uses his or her own system or backend technology, there is no generic way to implement this logic. We are using SHA256 as the hash algorithm and Pkcs1 for SignaturePadding, so make sure that’s what you use when you validate the signed response from the client. Again, refer to the sample for a way to do it on your server in .NET 4.6, but in general it will look something like this:
 
 ```cs
 using (RSACng pubKey = new RSACng(publicKey))
@@ -302,9 +303,9 @@ using (RSACng pubKey = new RSACng(publicKey))
 }
 ```
 
-Xx xxxx xxx xxxxxx xxxxxx xxx, xxxxx xx xx XXX xxx. Xx xxxxxxxx xxx xxxxxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxx xxx xxx xx xxxx xxxxxx xxx, xx xxxxxxxxx xxx xxxx. Xx xxx xxxx xx xxxxxxxxxxxxx, xxx xxx xxx xxxx xxx xxxxxxx xxxxxxxx xx xxxxxx.
+We read the stored public key, which is an RSA key. We validate the signed challenge message with the public key and if this checks out, we authorize the user. If the user is authenticated, the app can call the backend services as normal.
 
-Xxx xxxxxxxx xxxx xxxxx xxxx xxxxxxxxx xxxx xxx xxxxxxxxx:
+The complete code might look something like the following:
 
 ```cs
 using System;
@@ -348,105 +349,106 @@ static async Task<IBuffer> GetAuthenticationMessageAsync(IBuffer message, String
 }
 ```
 
-Xxxxxxxxxxxx xxx xxxxxxx xxxxxxxxx–xxxxxxxx xxxxxxxxx xx xxxxxxx xxx xxxxx xx xxxx xxxxxxxx, xxx xxxx xxxxx xx xxxxxxxxx xxxx xxxxxxxx xxxxxxxxx xx xxxxx xx xxxxxxxxxxxx xxxxxx x xxxxxx xxxxxxxxx xx xxxxxxx xxxxxx xxxx xxxxxx xxxxxxx xx xxx-xx-xxx-xxxxxx xxxxxxx.
+Implementing the correct challenge–response mechanism is outside the scope of this document, but this topic is something that requires attention in order to successfully create a secure mechanism to prevent things like replay attacks or man-in-the-middle attacks.
 
-## Y.Y Xxxxxxxxx xxxxxxx xxxxxx
+## 3.5 Enrolling another device
 
 
-Xxxxxxxx, xx xx xxxxxx xxx xxxxx xx xxxx xxxxxxxx xxxxxxx xxxx xxx xxxx xxxx xxxxxxxxx. Xxx xxxx xxxx xxxx xxxx xxxxx Xxxxxxxxx Xxxxxxxx xxxx xxxxxxxx xxxxxxx?
+Nowadays, it is common for users to have multiple devices with the same apps installed. How does this work when using Microsoft Passport with multiple devices?
 
-Xxxx xxxxx Xxxxxxxxx Xxxxxxxx xxxxx xxxxxx xxxx xxxxxx x xxxxxx xxxxxxx xxx xxxxxx xxx xxx. Xxxx xxxxx xxxx xx xxx xxxx x xxxx xx xx xxxx xx xxx xxxxxxxx xxxxxxx, xxxx xxxxxxx xxxx xx xxxx xx xxxxx xxxxxxxx xxxxxx xxxx xxxx xxxx xxxx. Xxxxx xx xxx xxxxxxxx xxxxxxx xx xxxxxxx Y.Y xxx xx xxxxxxx xx xxx xxxxx xxxxxxxxx.
+When using Microsoft Passport every device will create a unique private and public key set. This means that if you want a user to be able to use multiple devices, your backend must be able to store multiple public keys from this user. Refer to the database diagram in section 2.1 for an example of the table structure.
 
-Xxxxxxxxxxx xxxxxxx xxxxxx xx xxxxxx xxx xxxx xx xxxxxxxxxxx x xxxx xxx xxx xxxxx xxxx. Xxx xxxxx xxxx xx xx xxxx xxx xxxx xxxxxxxxxxx xxx xxxx xxx xxxxxx xx xxxxxx xxx xxxx xx xx xxx xxxxxx xx xx. Xxx xxx xx xx xxxx xxx xxx-xxxxxx xxxxxxxxxxxxxx xxxxxxxxx xxxx xx xxxx xxxxx. Xxxxx xxx xxxxxxx xxxx xx xxxxxxxxxx xxxx xx x xxxxxx xxx. Xx xxx xxxxxxx xx xxxx xxxxxxxx.
+Registering another device is almost the same as registering a user for the first time. You still need to be sure the user registering for this new device is really the user he or she claims to be. You can do so with any two-factor authentication mechanism that is used today. There are several ways to accomplish this in a secure way. It all depends on your scenario.
 
-Xxx xxxxxxx, xx xxx xxxxx xxx xxxxx xxxx xxx xxxxxxxx xxx xxx xxx xxxx xx xxxxxxxxxxxx xxx xxxx xxx xxx xxxx xx xxx xxx xx xxxxx xxxxxxxxxxxx xxxxxxx xxxx XXX xx xxxxx. Xx xxx xxx’x xxxx x xxxxx xxxx xxx xxxxxxxx, xxx xxx xxxx xxx xxx xx xxx xxxxxxx xxxxxxxxxx xxxxxxx xxx xxxx x xxxxxxxxxxxx xx xxx xxx xx xxxx xxxxxx. Xxx XXX xxxxxxxxxxxxx xxx xx xx xxxxxxx xx xxxx. Xx xxxxx, xxx xxxxxx xxx x xxxxxx YXX xxxxxxxxx xx xxxxxxxx xxxxx xxxxxxx xxx xxx xxxx.
+For example, if you still use login name and password you can use that to authenticate the user and ask them to use one of their verification methods like SMS or email. If you don’t have a login name and password, you can also use one of the already registered devices and send a notification to the app on that device. The MSA authenticator app is an example of this. In short, you should use a common 2FA mechanism to register extra devices for the user.
 
-Xxx xxxx xx xxxxxxxx xxx xxx xxxxxx xx xxxxxxx xxx xxxx xx xxxxxxxxxxx xxx xxxx xxx xxx xxxxx xxxx (xxxx xxxxxx xxx xxx).
+The code to register the new device is exactly the same as registering the user for the first time (from within the app).
 
 ```cs
 var keyCreationResult = await KeyCredentialManager.RequestCreateAsync(
     AccountId, KeyCredentialCreationOption.ReplaceExisting);
 ```
 
-Xx xxxx xx xxxxxx xxx xxx xxxx xx xxxxxxxxx xxxxx xxxxxxx xxx xxxxxxxxxx, xxx xxx xxxxxx xx xxxx xxx xxxxxx xxxx xx xxxxxxx xxxxxxxxxx xx xxxx xx xxx xxxxxxxxxxxx. Xxxx xx xxxx xxxxxx, xxx xxxxxxx, xx xxx xxxx xx xxxxxxxxx x xxxxxxx xx xxxx xxxxxxx xxxxx xxxxx xxx xxxxxxxxxx xxxxxxx xxxx x xxxxxx xx xxxx.
+To make it easier for the user to recognize which devices are registered, you can choose to send the device name or another identifier as part of the registration. This is also useful, for example, if you want to implement a service on your backend where users can unregister devices when a device is lost.
 
-## Y.Y Xxxxx xxxxxxxx xxxxxxxx xx xxxx xxx
+## 3.6 Using multiple accounts in your app
 
 
-Xx xxxxxxxx xx xxxxxxxxxx xxxxxxxx xxxxxxx xxx x xxxxxx xxxxxxx, xx xx xxxx xxxxxx xx xxxxxxx xxxxxxxx xxxxxxxx xx x xxxxxx xxx. Xxx xxxxxxx, xxxxx xxx xxx xxxxxxxxxx xx xxxxxxxx Xxxxxxx xxxxxxxx xxxx xxxxxx xxxx xxx. Xxxx Xxxxxxxxx Xxxxxxxx, xxx xxx xxxxxx xxxxxxxx xxx xxxxx xxx xxxxxxx xxxxxxxx xxxxxxxx xxxxxx xxxx xxx.
+In addition to supporting multiple devices for a single account, it is also common to support multiple accounts in a single app. For example, maybe you are connecting to multiple Twitter accounts from within your app. With Microsoft Passport, you can create multiple key pairs and support multiple accounts inside your app.
 
-Xxx xxx xx xxxxx xxxx xx xxxxxxx xxx xxxxxxxx xx xxxxxx xxxxxxxxxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx xx xxxxxxxx xxxxxxx. Xxxxxxxxx, xxxxx xxxx xxx xxxxxx x xxx xxxxxxx, xxx xxxxx xxx xxxxxxx XX xx xxxxxxxx xxxxxxx.
+One way of doing this is keeping the username or unique identifier described in the previous chapter in isolated storage. Therefore, every time you create a new account, you store the account ID in isolated storage.
 
-Xx xxx xxx XX, xxx xxxxx xxx xxxx xx xxxxxx xxxxxx xxx xx xxx xxxxxxxxxx xxxxxxx xxxxxxxx xx xxxx xx xxxx x xxx xxx. Xxx xxxx xx xxxxxxxx x xxx xxxxxxx xx xxx xxxx xx xxxxxxxxx xxxxxx. Xxxxxxxx xx xxxxxxx xx x xxxxxx xx xxxxxxx xxx xxxxxx xxxxxxxx xx xxx xxxxxx. Xxxx xxx xxxx xxxxxxx xx xxxxxxx, xxx xxx xxxxxxx XX xx xxx xx xxx xxxx xx xxxx xxx:
+In the app UI, you allow the user to either choose one of the previously created accounts or sign up with a new one. The flow of creating a new account is the same as described before. Choosing an account is a matter of listing the stored accounts on the screen. Once the user selects an account, use the account ID to log on the user in your app:
 
 ```cs
 var openKeyResult = await KeyCredentialManager.OpenAsync(AccountId);
 ```
 
-Xxx xxxx xx xxx xxxx xx xxx xxxx xx xxxxxxxxx xxxxxxx. Xx xx xxxxx, xxx xxxxx xxxxxxxx xxx xxxxxxxxx xx xxx xxxx XXX xx xxxxxxxxx xxxxxxx xxxxx xx xxxx xxxxxxxx xxxx xxx xxxxx xxxx xx x xxxxxx xxxxxx xxxx xxx xxxx Xxxxxxx Xxxxxxx.
+The rest of the flow is the same as described earlier. To be clear, all these accounts are protected by the same PIN or biometric gesture since in this scenario they are being used on a single device with the same Windows Account.
 
-## Y Xxxxxxxxx xx Xxxxxxxx Xxxxxx xx Xxxxxxxxx Xxxxxxxx
+## 4 Migrating an Existing System to Microsoft Passport
 
 
-Xx xxxx xxxxx xxxxxxx, xx xxxx xxxxxxx xx xxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx xxx xxx xxxxxxx xxxxxx xxxx xxxx x xxxxxxxx xxxx xxxxxx xxx xxxxxxxx xxx xxxxxx xxxxxxxx. Xxxxx xxxx xxxxxxx xxxxxxxxxxx xxxx xxx xxxx xxxx xxx xxx xxxxxx xxx xxx xxxx xxxx xxx xxxxxxx xxxxxx xxxxxxx xxx xxxxxxxxxxxxxx xxxxxxxxx.
+In this short section, we will address an existing Universal Windows Platform app and backend system that uses a database that stores the username and hashed password. These apps collect credentials from the user when the app starts and use them when the backend system returns the authentication challenge.
 
-Xxxx, xx xxxx xxxxxxxx xxxx xxxxxx xxxx xx xx xxxxxxx xx xxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxxx xxxx.
+Here, we will describe what pieces need to be changed or replaced to make Microsoft Passport work.
 
-Xx xxxx xxxxxxx xxxxxxxxx xxxx xx xxx xxxxxxxxxx xx xxx xxxxxxx xxxxxxxx. Xxxxxx Xxxxxxxxx Xxxxxxxx xx xxxx xxxxxxxx xxxxxx xxxxxxxx xxxxxx x xxxxxx xx xxxxxxxxx xxxxx xx xxx xxxxxxxxxxxx xxx xxxxxxxxxxxxxx xxxx xx xxxx xxxx.
+We have already described most of the techniques in the earlier chapters. Adding Microsoft Passport to your existing system involves adding a couple of different flows in the registration and authentication part of your code.
 
-Xxx xxxxxxxx xx xx xxx xxx xxxx xxxxxx xxxx xx xxxxxxx. Xxxxx xxx xxxx xxxx xx xx xxx xxx xxx xxx xxxxxx xxxx xxx xxx xxx XX xxx xxxxxxx xx xxxxxxxxxx Xxxxxxxxx Xxxxxxxx, xxx xxx xxx xxx xxxx xx xx xx xxx xxxxx xx xxxxxxx xxxxxxxxxxx xx xxx xxxx xxxxxx xxx xxxx xxxxxx xxxxxx. Xxx xxx xxx xxx xxxxxxxxx xxxx xx xxxxx xxxxxxx xxx xxxx xx xxxxxxx xx xxxxx Xxxxxxxxx Xxxxxxxx.
+One approach is to let the user choose when to upgrade. After the user logs on to the app and you detect that the app and OS are capable of supporting Microsoft Passport, you can ask the user if he or she wants to upgrade credentials to use this modern and more secure system. You can use the following code to check whether the user is capable of using Microsoft Passport.
 
 ```cs
 var keyCredentialAvailable = await KeyCredentialManager.IsSupportedAsync();
 ```
 
-Xxx XX xxxxx xxxx xxxxxxxxx xxxx xxxx:
+The UI might look something like this:
 
-![xxxxxxxx xx](images/passport-ui.png)
+![passport ui](images/passport-ui.png)
 
-Xx xxx xxxx xxxxxx xx xxxxx xxxxx Xxxxxxxxx Xxxxxxxx, xxx xxxxxx xxx [**XxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn973029) xxxxxxxxx xxxxxx. Xxx xxxxxxx xxxxxxxxxxxx xxxxxx xxxx xxx xxxxxx xxx xxx xxxxxxxx xxxxxxxxxxx xxxxxxxxx xx xxx xxxxxxxx. Xxxxxxx xxx xxxx xx xxxxxxx xxxxxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxx, xxx xxxxxx xxx xxxx xxx xxx xxxxxxxxxxx xx xxx xxxxxxx xxxx xxxxxxxxxxx xx xxx xxxxxxxx. Xxx xxxxxxxx xxxxx xxxxx xx xxx xxxx xx xxx xxxxxxx xxxxxxxxx xxxxxxx.
+If the user elects to start using Microsoft Passport, you create the [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029) described before. The backend registration server adds the public key and optional attestation statement to the database. Because the user is already authenticated with username and password, the server can link the new credentials to the current user information in the database. The database model could be the same as the example described earlier.
 
-Xx xxx xxx xxx xxxx xx xxxxxx xxx xxxxx [**XxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn973029), xx xxxxxx xxx xxxx XX xx xxxxxxxx xxxxxxx xx xxx xxxx xxx xxxx xxxx xxxxxxx xxxx xxx xxxx xxxx xxx xxx xx xxxxxxx xxxxx. Xxxx xxxx xxxxx xx, xxx xxxx xxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxxx xx xxxxxxx xxxxxxxx.
+If the app was able to create the users [**KeyCredential**](https://msdn.microsoft.com/library/windows/apps/dn973029), it stores the user ID in isolated storage so the user can pick this account from the list once the app is started again. From this point on, the flow exactly follows the examples described in earlier chapters.
 
-Xxx xxxxx xxxx xx xxxxxxxxx xx x xxxx Xxxxxxxxx Xxxxxxxx xxxxxxxx xx xxxxxxxxx xxx xxxxx xxxx xxx xxxxxxxx xxxxxx xx xxx xxx xxx xxxxxxxx xxx xxxxxx xxxxxx xxxxxxxxx xxxx xxxx xxxxxxxx.
+The final step in migrating to a full Microsoft Passport scenario is disabling the logon name and password option in the app and removing the stored hashed passwords from your database.
 
-## Y Xxxxxxx
-
-
-Xxxxxxx YY xxxxxxxxxx x xxxxxx xxxxx xx xxxxxxxx xxxx xx xxxx xxxxxx xx xxx xxxx xxxxxxxx. Xxxxxxx Xxxxx xxxxxxxx x xxx xxxxxxxxx xxxx-xx xxxxxx xxxx xxxxxxxxxx xxx xxxx xxx xxxxxxxx xxxxxxx xxxxxxx xx xxxxxxxxxx xxxxxx xxxxxxxxxxxxxx. Xxxxxxxxx Xxxxxxxx xxxxx xxxx Xxxxxxx Xxxxx xx xxxxxxx xxxxxxxx xxxxxx xx xxxx xxx xxxxxxxxxxxx xxxx xxx xxxxx xx xxxxxxxx xx xxxx xxxxxxx xxx xxxxxxx xxxxxxxx xxxxxx. Xx xxxxxxxx, x xxxxxxx xxxxx xx xxxxxxxx xx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxx xx xxxxxxxxxxx xxxxxxxx xxxx xxx xxxxxxxxxxxx.
-
-Xx x xxxxxxxxx, xxx xxx xxx xxxx xxxxxxxx xx xxxxxx xxx xxxxxxxxxx xx xxxxx xxxxxxxxxxxx xx xxxxxx xxx xxxxxx xxxxxxxxxxxxxx xx xxxx Xxxxxxx YY xxxxxxxx xx xxxxxxx xxxx xxx xxxxxxx xxxxxxxx. Xxx xxxx xxxxxxxx xx xxxxxxx xxx xxxx xx xxxxxxxxxx. Xxxxxxx YY xxxx xxx xxxxx xxxxxxx.
-
-Xxxxxxxx xxxxxxxxxxxxxx xxxxxxx xxxxx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx Xxxxx xx xxxxxxx xx xxxx xxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxxxxx xxxxxx. Xxx xxxxxxxxxx xxxxxxxxxx xx xxxxxxxx xxx xxxxxxxxxx. Xx xxxxxxxxxx xxxxxxxxxxxxxx xx xxxxxx xx xxxxxx Xxxxxxx YY xxxxxxxx. Xxxx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxxxx Xxxxx xxxxx xx xx xxx xxxxxxxxx xxxxxx, Xxxxxxx YY xxxxxx xxx xxxx xxxxxx xxxxxxxx xx xxx xxxxxxxxxxxxxx xxxxxxxx xxxxxx xxx xxxxxx xxxxxxxxx.
-
-Xxxxxxx xxxxxxxxxxxx! Xxx xxxx xxxx xxx Xxxxxxxx x xxxxx xxxxx!
-
-## Y Xxxxxxxxx
+## 5 Summary
 
 
-### Y.Y Xxxxxxxx xxx xxxxxx xxxx
+Windows 10 introduces a higher level of security that is also simple to put into practice. Windows Hello provides a new biometric sign-in system that recognizes the user and actively defeats efforts to circumvent proper identification. Microsoft Passport works with Windows Hello to deliver multiple layers of keys and certificates that can never be revealed or used outside the trusted platform module. In addition, a further layer of security is available through the optional use of attestation identity keys and certificates.
 
--   [Xxxxxxx Xxxxx xxxxxxxx](http://windows.microsoft.com/windows-10/getstarted-what-is-hello)
--   [Xxxxxxxxxxxxxx xxxxxxx xxx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx Xxxxx](https://msdn.microsoft.com/library/mt589441)
--   [Xxxxxxxxx Xxxxxxxx xxxx xxxxxx xx XxxXxx](http://go.microsoft.com/fwlink/?LinkID=717812)
+As a developer, you can use this guidance on design and deployment of these technologies to easily add secure authentication to your Windows 10 rollouts to protect apps and backend services. The code required is minimal and easy to understand. Windows 10 does the heavy lifting.
 
-### Y.Y Xxxxxxxxxxx
+Flexible implementation options allow Microsoft Passport and Windows Hello to replace or work alongside your existing authentication system. The deployment experience is painless and economical. No additional infrastructure is needed to deploy Windows 10 security. With Microsoft Passport and Microsoft Hello built in to the operating system, Windows 10 offers the most secure solution to the authentication problems facing the modern developer.
+
+Mission accomplished! You just made the Internet a safer place!
+
+## 6 Resources
+
+
+### 6.1 Articles and sample code
+
+-   [Windows Hello overview](http://windows.microsoft.com/windows-10/getstarted-what-is-hello)
+-   [Implementation details for Microsoft Passport and Windows Hello](https://msdn.microsoft.com/library/mt589441)
+-   [Microsoft Passport code sample on GitHub](http://go.microsoft.com/fwlink/?LinkID=717812)
+
+### 6.2 Terminology
 
 |                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 |---------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XXX                 | Xx xxxxxxxxxxx xxxxxxxx xxx xx xxxx xx xxxxxxx xxxx x xxxxxxxxxxxxx xxxxx (XXX xxx xxxxxxxxxxx) xx xxxxxxx xxx xxxxxxxxxx xx xxx xxx-xxxxxxxxxx xxx xxx xxxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxxx xx xxx xxxxxxx xxxxx xxx xxxxxxxxxxxx. Xxx xxxxxxxxx xxxxxxxxx xx xxxxxx xx “xxxxxxxxxxx xxxxxxxxx.” Xxxxx xxx xxxxxxxxx xx xxxxxxx xxxxx xxx XXX xxxxxxx xxx—xxxxx xxx xxxx xx xxxx xx xxx XXX xxxx xxxxxxx xx—xxx xxxxxxx xxxxx xxx xxxxx xxxx xxx xxxxxxxx xxx xx xxxxx xxx-xxxxxxxxxx xxx xxxxxx xx xxxx xxxxxxx xxxx XXX. |
-| XXX Xxxxxxxxxxx     | Xx XXX xxxxxxxxxxx xx xxxx xx xxxxxx xx xxx xxxxxxxx xx xx XXX xxxxxx x XXX. Xx xx xxxx xxxx xx xxxxxx xxxx xxxxx xxxx xxxxxxxxx xx xxx XXX xxxxxxxxxx xxxx xxxx xxxxxxxxxx XXX.                                                                                                                                                                                                                                                                                                                                              |
-| XXX                 | Xx XXX xx xx xxxxxxxx xxxxxxxx. Xx xxxxxxx xx xxx XXX xxxxx xx Xxxxxxxxx xxx Xxxxxxxxx Xxxxxxxx. Xxxxx xxxx xx xxxxxxxxxxx xxxxx xx xxxxxxxxxxxx xxxx xx XXX, xx xxx xxxx xxx XXX XXX.                                                                                                                                                                                                                                                                                                                                        |
-| XXX                 | Xxxxxx xxx xxxxxxxxxxxxxx xx xxxxxxxx xxxx xx xxxxx xx xx xxxxxxxxxxx xxxxxx xx xx xxxxxxxxxxxx xxxxxx xxx xxxxx xxxxxxxxxxx xxx xxxxxxxx xxxx, xxxxxxxx xxxx, xxx.                                                                                                                                                                                                                                                                                                                                                           |
-| XXX                 | Xxx xxxxxxx xxxxxxxx xxxxxx xxx xx xxxx xx xxxxxx xxxxxxxxxxxxx xxxxxx/xxxxxxx xxx xxxxx xx xxxx x xxx xxxx xxx xxxxxxx xxx xxx xxxxx xx xxxxxxxx xx xxxx xxxxxxx xxx XXX (xxxx xx, xxx xxx xx xxx-xxxxxxxxxx).                                                                                                                                                                                                                                                                                                               |
-| XXX Xxx Xxxxxxxxxxx | X xxxxxxxx xxxx xxxxxxxxxxxxxxxxx xxxxxx xxxx x xxx xx XXX-xxxxx. Xxxx xxxx xx xxxxxxxxxxx xxx xx xxxx xx xxxxxxxxx xxxx x xxxxxxx xxxxxxxxxxxxx xxxxxxxxx xxxxxxxx xx xxx XXX xx x xxxxxxxxxx xxxxxxxx                                                                                                                                                                                                                                                                                                                       |
+| AIK                 | An attestation identity key is used to provide such a cryptographic proof (TPM key attestation) by signing the properties of the non-migratable key and providing the properties and signature to the relying party for verification. The resulting signature is called an “attestation statement.” Since the signature is created using the AIK private key—which can only be used in the TPM that created it—the relying party can trust that the attested key is truly non-migratable and cannot be used outside that TPM. |
+| AIK Certificate     | An AIK certificate is used to attest to the presence of an AIK within a TPM. It is also used to attest that other keys certified by the AIK originated from that particular TPM.                                                                                                                                                                                                                                                                                                                                              |
+| IDP                 | An IDP is an identity provider. An example is the IDP build by Microsoft for Microsoft Accounts. Every time an application needs to authenticate with an MSA, it can call the MSA IDP.                                                                                                                                                                                                                                                                                                                                        |
+| PKI                 | Public key infrastructure is commonly used to point to an environment hosted by an organization itself and being responsible for creating keys, revoking keys, etc.                                                                                                                                                                                                                                                                                                                                                           |
+| TPM                 | The trusted platform module can be used to create cryptographic public/private key pairs in such a way that the private key can never be revealed or used outside the TPM (that is, the key is non-migratable).                                                                                                                                                                                                                                                                                                               |
+| TPM Key Attestation | A protocol that cryptographically proves that a key is TPM-bound. This type of attestation can be used to guarantee that a certain cryptographic operation occurred in the TPM of a particular computer                                                                                                                                                                                                                                                                                                                       |
 
  
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxxxx Xxxxxxxx xxxxx xxx](microsoft-passport-login.md)
-* [Xxxxxxxxx Xxxxxxxx xxxxx xxxxxxx](microsoft-passport-login-auth-service.md)
+* [Microsoft Passport login app](microsoft-passport-login.md)
+* [Microsoft Passport login service](microsoft-passport-login-auth-service.md)
+
+<!--HONumber=Mar16_HO5-->
 
 
-<!--HONumber=Mar16_HO1-->

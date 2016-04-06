@@ -1,35 +1,30 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxxxxx xxxxxx xxx xxxx xxxxxxxxxxxx xxxxxxx&\#YYYY;xxxxx, xxxxxxxxx, xxxxxxxx, xxx xxxx&\#YYYY;xxxx xxxxxxx xxxx xxx xxxxx xxxxxxx xxx xxxxx xxxxxxxxxxxx xxxxxxx.
-xxxxx: Xxxxxx x xxxxxxxxxxxx xxxxxxxx xxxxxx
-xx.xxxxxxx: XXXYYXXX-XYXY-YYYX-YYYX-YYYYYXXYYYYX
-xxxxx: Xxxxxx x xxxxxxxxxxxx xxxxxxxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: This article covers the four notification options&\#8212;local, scheduled, periodic, and push&\#8212;that deliver tile and badge updates and toast notification content.
+title: Choose a notification delivery method
+ms.assetid: FDB43EDE-C5F2-493F-952C-55401EC5172B
+label: Choose a notification delivery method
+template: detail.hbs
 ---
 
-# Xxxxxx x xxxxxxxxxxxx xxxxxxxx xxxxxx
+# Choose a notification delivery method
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxxxx xxxxxx xxx xxxx xxxxxxxxxxxx xxxxxxx—xxxxx, xxxxxxxxx, xxxxxxxx, xxx xxxx—xxxx xxxxxxx xxxx xxx xxxxx xxxxxxx xxx xxxxx xxxxxxxxxxxx xxxxxxx. X xxxx xx x xxxxx xxxxxxxxxxxx xxx xxx xxxxxxxxxxx xx xxxx xxxx xxxx xxxx xxx xxxx xx xxx xxxxxxxx xxxxxxx xxxx xxxx xxx. Xxx xxxxxx xxx xxxxxxx xx xxxx xxx xxx xxx xxxxxxxxxxx xxxx xxx xxxx xx xxxxxxx xxx xxxx xxx xxxxxxxxx xxxxx xxxxxxxxxxxx xxxxxx xx xxxxxxx xx xxxx xxx xxxx xxxxxxxx.
+This article covers the four notification options—local, scheduled, periodic, and push—that deliver tile and badge updates and toast notification content. A tile or a toast notification can get information to your user even when the user is not directly engaged with your app. The nature and content of your app and the information that you want to deliver can help you determine which notification method or methods is best for your scenario.
 
-## <span id="Notification_delivery_methods__overview">
-            </span>
-            <span id="notification_delivery_methods__overview">
-            </span>
-            <span id="NOTIFICATION_DELIVERY_METHODS__OVERVIEW">
-            </span>Xxxxxxxxxxxx xxxxxxxx xxxxxxx xxxxxxxx
+## <span id="Notification_delivery_methods__overview"></span><span id="notification_delivery_methods__overview"></span><span id="NOTIFICATION_DELIVERY_METHODS__OVERVIEW"></span>Notification delivery methods overview
 
 
-Xxxxx xxx xxxx xxxxxxxxxx xxxx xx xxx xxx xxx xx xxxxxxx x xxxxxxxxxxxx:
+There are four mechanisms that an app can use to deliver a notification:
 
--   **Xxxxx**
--   **Xxxxxxxxx**
--   **Xxxxxxxx**
--   **Xxxx**
+-   **Local**
+-   **Scheduled**
+-   **Periodic**
+-   **Push**
 
-Xxxx xxxxx xxxxxxxxxx xxx xxxxxxxxxxxx xxxxxxxx xxxxx.
+This table summarizes the notification delivery types.
 
 <table>
 <colgroup>
@@ -40,50 +35,50 @@ Xxxx xxxxx xxxxxxxxxx xxx xxxxxxxxxxxx xxxxxxxx xxxxx.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxxx xxxxxx</th>
-<th align="left">Xxx xxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
-<th align="left">Xxxxxxxx</th>
+<th align="left">Delivery method</th>
+<th align="left">Use with</th>
+<th align="left">Description</th>
+<th align="left">Examples</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Xxxxx</td>
-<td align="left">Xxxx, Xxxxx, Xxxxx</td>
-<td align="left">X xxx xx XXX xxxxx xxxx xxxx xxxxxxxxxxxxx xxxxx xxxx xxx xx xxxxxxx, xxxxxxxx xxxxxxxx xxx xxxx xx xxxxx, xx xxxxxxx x xxxxx xxxxxxxxxxxx.</td>
+<td align="left">Local</td>
+<td align="left">Tile, Badge, Toast</td>
+<td align="left">A set of API calls that send notifications while your app is running, directly updating the tile or badge, or sending a toast notification.</td>
 <td align="left"><ul>
-<li>X xxxxx xxx xxxxxxx xxx xxxx xx xxxx xxxx'x &xxxx;Xxx Xxxxxxx&xxxx;.</li>
-<li>X xxxx xxx xxxxxxx xxx xxxx xxxx xxx xxxx'x xxxx xxxxx xxxx xxx xxxx xxxxxx xxx xxxx.</li>
-<li>X xxxxx xxxxx xxxxx xxxxxxxxx xxxx xxxxx'x xxx xxxx xxx xxx xxx xx xxxxxxx xxxx xxx xxx xx xxxxxxxxx.</li>
+<li>A music app updates its tile to show what's &quot;Now Playing&quot;.</li>
+<li>A game app updates its tile with the user's high score when the user leaves the game.</li>
+<li>A badge whose glyph indicates that there's new info int the app is cleared when the app is activated.</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">Xxxxxxxxx</td>
-<td align="left">Xxxx, Xxxxx</td>
-<td align="left">X xxx xx XXX xxxxx xxxx xxxxxxxx x xxxxxxxxxxxx xx xxxxxxx, xx xxxxxx xx xxx xxxx xxx xxxxxxx.</td>
+<td align="left">Scheduled</td>
+<td align="left">Tile, Toast</td>
+<td align="left">A set of API calls that schedule a notification in advance, to update at the time you specify.</td>
 <td align="left"><ul>
-<li>X xxxxxxxx xxx xxxx x xxxxx xxxxxxxxxxxx xxxxxxxx xxx xx xxxxxxxx xxxxxxx.</li>
+<li>A calendar app sets a toast notification reminder for an upcoming meeting.</li>
 </ul></td>
 </tr>
 <tr class="odd">
-<td align="left">Xxxxxxxx</td>
-<td align="left">Xxxx, Xxxxx</td>
-<td align="left">Xxxxxxxxxxxxx xxxx xxxxxx xxxxx xxx xxxxxx xxxxxxxxx xx x xxxxx xxxx xxxxxxxx xx xxxxxxx x xxxxx xxxxxxx xxx xxx xxxxxxx.</td>
+<td align="left">Periodic</td>
+<td align="left">Tile, Badge</td>
+<td align="left">Notifications that update tiles and badges regularly at a fixed time interval by polling a cloud service for new content.</td>
 <td align="left"><ul>
-<li>X xxxxxxx xxx xxxxxxx xxx xxxx, xxxxx xxxxx xxx xxxxxxxx, xx YY-xxxxxx xxxxxxxxx.</li>
-<li>X &xxxx;xxxxx xxxxx&xxxx; xxxx xxxxxxx xxx xxxx-xx-xxx-xxx xxxxx xxxxxxx.</li>
-<li>X xxxx xxxx xxxxxxxx xxx xxxx xxxxx xx xxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxx xxxx xxx xx xxxxxxxx.</li>
+<li>A weather app updates its tile, which shows the forecast, at 30-minute intervals.</li>
+<li>A &quot;daily deals&quot; site updates its deal-of-the-day every morning.</li>
+<li>A tile that displays the days until an event updates the displayed countdown each day at midnight.</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">Xxxx</td>
-<td align="left">Xxxx, Xxxxx, Xxxxx, Xxx</td>
-<td align="left">Xxxxxxxxxxxxx xxxx xxxx x xxxxx xxxxxx, xxxx xx xxxx xxx xxx'x xxxxxxx.</td>
+<td align="left">Push</td>
+<td align="left">Tile, Badge, Toast, Raw</td>
+<td align="left">Notifications sent from a cloud server, even if your app isn't running.</td>
 <td align="left"><ul>
-<li>X xxxxxxxx xxx xxxxx x xxxxx xxxxxxxxxxxx xx xxx x xxxx xxxx xxxxx x xxxx xx xx xxxx xxxx xxxx'xx xxxxxxxx.</li>
-<li>X xxxx xxx xxxxxxx xxx xxxx xxxx xxxxxxxx xxxx xx xx xxxxxxx.</li>
-<li>X xxxxxx xxx xxxxx xxx xxxx xx-xx-xxxx xxxxxx xx xxxxxxx xxxx.</li>
-<li>X xxxxxxxxxxxxx xxx xxxxxxxx xxxxxx xxxxx xxxxxxxx xxxxxxxx xx xxxxx xxxxx.</li>
+<li>A shopping app sends a toast notification to let a user know about a sale on an item that they're watching.</li>
+<li>A news app updates its tile with breaking news as it happens.</li>
+<li>A sports app keeps its tile up-to-date during an ongoing game.</li>
+<li>A communication app provides alerts about incoming messages or phone calls.</li>
 </ul></td>
 </tr>
 </tbody>
@@ -91,106 +86,90 @@ Xxxx xxxxx xxxxxxxxxx xxx xxxxxxxxxxxx xxxxxxxx xxxxx.
 
  
 
-## <span id="Local_notifications">
-            </span>
-            <span id="local_notifications">
-            </span>
-            <span id="LOCAL_NOTIFICATIONS">
-            </span>Xxxxx xxxxxxxxxxxxx
+## <span id="Local_notifications"></span><span id="local_notifications"></span><span id="LOCAL_NOTIFICATIONS"></span>Local notifications
 
 
-Xxxxxxxx xxx xxx xxxx xx xxxxx xx xxxxxxx x xxxxx xxxxxxxxxxxx xxxxx xxx xxx xx xxxxxxx xx xxx xxxxxxxx xx xxx xxxxxxxxxxxx xxxxxxxx xxxxxxxxxx; xx xxxx xxxxxxxx xxxxx XXX xxxxx. Xxxxx xxx xxx xxxx xxxxxx xx xxxxxxxxxxx xxxxxxxxxxx xx xxxx xx xxx xxxx, xxxx xx xxxx xxxxxxx xxxx xxxxxxx xxxxx xxx xxxx xxxxxxxx xxx xxxxxxxxx xxxx xxx xxx. Xxxxx xxxxxxxxxxxxx xxx xxxx x xxxx xxx xx xxxx xxx xxx xxxx xxxxxxx, xxxx xx xxx xxxx xxx xxx xx xxx xxxxx xxxxxxxxxxxx xxxxxxxxxx. Xxx xxxxxxxx, x xxxxx xxx xxxx xxxxx xxxx xxxxxx xxxx x xxxxxxxx xxxxx xxxxx.
+Updating the app tile or badge or raising a toast notification while the app is running is the simplest of the notification delivery mechanisms; it only requires local API calls. Every app can have useful or interesting information to show on the tile, even if that content only changes after the user launches and interacts with the app. Local notifications are also a good way to keep the app tile current, even if you also use one of the other notification mechanisms. For instance, a photo app tile could show photos from a recently added album.
 
-Xx xxxxxxxxxxx xxxx xxxx xxx xxxxxx xxx xxxx xxxxxxx xx xxxxx xxxxxx, xx xx xxxxx xxxxxxxxxxx xxxxx xxx xxxx xxxxx x xxxxxx xxxx xxxx xxx xxxxx xxxxxxxx xxxxxxx xx xxx xxxx. Xxxx xxxxxx xxx'x xxxx xxxxx xxx xxxx xxxxxx xxx xxx, xxx xx xxxxxx xxxx xxxxxx xxxxx xxx xxx xx xxxxx xxxx xxxxxxx xxxx xxx xxxx xx xxxxxxx xx-xx-xxxx xxxx xxx xxxx xxxxxxx.
+We recommended that your app update its tile locally on first launch, or at least immediately after the user makes a change that your app would normally reflect on the tile. That update isn't seen until the user leaves the app, but by making that change while the app is being used ensures that the tile is already up-to-date when the user departs.
 
-Xxxxx xxx XXX xxxxx xxx xxxxx, xxx xxxxxxxxxxxxx xxx xxxxxxxxx xxx xxxxxx. Xx xxx xxx xxxxx xx xxx xxxxxxxxx xxx xxxxxxxx, xx xxxxxxxxx, xx xxxxx'x xxxx xxx xxxxx xxxxxxxxxxxxxx, xxxxx xxx xxxxx xxxxxxx xxxxxxxxxxx:
+While the API calls are local, the notifications can reference web images. If the web image is not available for download, is corrupted, or doesn't meet the image specifications, tiles and toast respond differently:
 
--   Xxxxx: Xxx xxxxxx xx xxx xxxxx
--   Xxxxx: Xxx xxxxxxxxxxxx xx xxxxxxxxx, xxx xxxx x xxxxxxxxxxx xxxxx
+-   Tiles: The update is not shown
+-   Toast: The notification is displayed, but with a placeholder image
 
-Xxxxxxxx xxxxx xxxxxxxxxxxxx xxx'x xxxxxx, xx'x x xxxx xxxxxxxx xx xxx xx xxxxxxxx xxxxxxxxxx xxxx.
+Although local notifications don't expire, it's a best practice to set an explicit expiration time.
 
-Xxx xxxx xxxxxxxxxxx, xxx xxxxx xxxxxx:
+For more information, see these topics:
 
--   [Xxxx x xxxxx xxxx xxxxxxxxxxxx](tiles-and-notifications-sending-a-local-tile-notification.md)
--   [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxxxxxxx xxxx xxxxxxx](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)
+-   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Scheduled_notifications">
-            </span>
-            <span id="scheduled_notifications">
-            </span>
-            <span id="SCHEDULED_NOTIFICATIONS">
-            </span>Xxxxxxxxx xxxxxxxxxxxxx
+## <span id="Scheduled_notifications"></span><span id="scheduled_notifications"></span><span id="SCHEDULED_NOTIFICATIONS"></span>Scheduled notifications
 
 
-Xxxxxxxxx xxxxxxxxxxxxx xxx xxx xxxxxx xx xxxxx xxxxxxxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxx xxxx xxxx x xxxx xxxxxx xx xxxxxxx xx x xxxxx xxxxxxxxxxxx xxxxxx xx xxxxx. Xxxxxxxxx xxxxxxxxxxxxx xxx xxxxx xx xxxxxxxxxx xxxxx xxx xxxxxxx xx xx xxxxxxx xx xxxxx xx xxxxxxx, xxxx xx x xxxxxxx xxxxxxxxxx. Xx xxx xxx'x xxxx xxxxxxx xxxxxxxxx xx xxx xxxxxxxxxxxx xxxxxxx, xxx xxxxxx xxx x xxxx xx xxxxxxxx xxxxxxxxxxxx.
+Scheduled notifications are the subset of local notifications that can specify the precise time when a tile should be updated or a toast notification should be shown. Scheduled notifications are ideal in situations where the content to be updated is known in advance, such as a meeting invitation. If you don't have advance knowledge of the notification content, you should use a push or periodic notification.
 
-Xx xxxxxxx, xxxxxxxxx xxxxxxxxxxxxx xxxxxx xxxxx xxxx xxxx xxx xxxx xxxx xxxx xxx xxxxxxxxx. Xx xxxxxx, xxx xxx xxxxxxxx xxxx xxxxxxx xxxx xx xxxxxxxx xxxxxxxxxx xxxx.
+By default, scheduled notifications expire three days from the time that they are delivered. If needed, you can override this default with an explicit expiration time.
 
-Xxx xxxx xxxxxxxxxxx, xxx xxxxx xxxxxx:
+For more information, see these topics:
 
--   [Xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh761464)
--   [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxxxxxxx xxxx xxxxxxx](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Guidelines for scheduled notifications](https://msdn.microsoft.com/library/windows/apps/hh761464)
+-   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Periodic_notifications">
-            </span>
-            <span id="periodic_notifications">
-            </span>
-            <span id="PERIODIC_NOTIFICATIONS">
-            </span>Xxxxxxxx xxxxxxxxxxxxx
+## <span id="Periodic_notifications"></span><span id="periodic_notifications"></span><span id="PERIODIC_NOTIFICATIONS"></span>Periodic notifications
 
 
-Xxxxxxxx xxxxxxxxxxxxx xxxx xxx xxxx xxxx xxxxxxx xxxx x xxxxxxx xxxxx xxxxxxx xxx xxxxxx xxxxxxxxxx. Xxxx xxx xxxx xx xxxxxxxxx xxxxxx xx xxxxxxxxxxxx xxx xxxx xxxxxxx xx x xxxx xxxxxxxx. Xxxx xxxxxx xxxx xxxxxxxxx xxx XXX xx x xxxxx xxxxxxxx xxxx Xxxxxxx xxxxx xxx xxxx xx xxxxx xxxxxxx, xxx xxx xxxxx xxx xxxxxxxx xxxxxx xx xxxxxx. Xx xxxx xxxxxxx xxxxxxxx, Xxxxxxx xxxxxxxx xxx XXX xx xxxxxxxx xxx xxxxxxxxx XXX xxxxxxx xxx xxxxxxx xx xx xxx xxxx.
+Periodic notifications give you live tile updates with a minimal cloud service and client investment. They are also an excellent method of distributing the same content to a wide audience. Your client code specifies the URL of a cloud location that Windows polls for tile or badge updates, and how often the location should be polled. At each polling interval, Windows contacts the URL to download the specified XML content and display it on the tile.
 
-Xxxxxxxx xxxxxxxxxxxxx xxxxxxx xxx xxx xx xxxx x xxxxx xxxxxxx, xxx xxxx xxxxxxx xxxx xx xxxxxx xx xxx xxxxxxxxx xxxxxxxx xx xxx xxxxx xxx xxxx xxx xxx xxxxxxxxx. Xxxx xxxx xxxxxxxx xxxxxxx xxxxxx xx xxxx xxx xxxxx xxxxxxxxxxxxx; xxxxx xxxxxxxxxxxxx xxx xxxx xxxxxx xx xxxxxxxxx xx xxxx xxxxxxxxxxxxx.
+Periodic notifications require the app to host a cloud service, and this service will be polled at the specified interval by all users who have the app installed. Note that periodic updates cannot be used for toast notifications; toast notifications are best served by scheduled or push notifications.
 
-Xx xxxxxxx, xxxxxxxx xxxxxxxxxxxxx xxxxxx xxxxx xxxx xxxx xxx xxxx xxxx xxx xxxxxxx xxxxxx. Xx xxxxxx, xxx xxx xxxxxxxx xxxx xxxxxxx xxxx xx xxxxxxxx xxxxxxxxxx xxxx.
+By default, periodic notifications expire three days from the time that the polling occurs. If needed, you can override this default with an explicit expiration time.
 
-Xxx xxxx xxxxxxxxxxx, xxx xxxxx xxxxxx:
+For more information, see these topics:
 
--   [Xxxxxxxx xxxxxxxxxxxx xxxxxxxx](tiles-and-notifications-periodic-notification-overview.md)
--   [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxxxxxxx xxxx xxxxxxx](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Periodic notification overview](tiles-and-notifications-periodic-notification-overview.md)
+-   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-## <span id="Push_notifications">
-            </span>
-            <span id="push_notifications">
-            </span>
-            <span id="PUSH_NOTIFICATIONS">
-            </span>Xxxx xxxxxxxxxxxxx
+## <span id="Push_notifications"></span><span id="push_notifications"></span><span id="PUSH_NOTIFICATIONS"></span>Push notifications
 
 
-Xxxx xxxxxxxxxxxxx xxx xxxxx xx xxxxxxxxxxx xxxx-xxxx xxxx xx xxxx xxxx xx xxxxxxxxxxxx xxx xxxx xxxx. Xxxx xxxxxxxxxxxxx xxx xxxx xxx xxxxxxx xxxx xx xxxxxxxxx xx xxxxxxxxxxxxx xxxxx, xxxx xx xxxxxxxx xxxx, xxxxxx xxxxxxx xxxxxxx, xx xxxxxxx xxxxxxxx. Xxxx xxxxxxxxxxxxx xxx xxxx xxxxxx xx xxxxxxxxxx xxxxx xxx xxxx xx xxxx-xxxxxxxxx xx x xxx xxxx xxxxx xxx xxxx xxxxxxxx xxxxxxxxxxxxx, xxxx xx xxxxxx xxxxxx xxxxxx x xxxx.
+Push notifications are ideal to communicate real-time data or data that is personalized for your user. Push notifications are used for content that is generated at unpredictable times, such as breaking news, social network updates, or instant messages. Push notifications are also useful in situations where the data is time-sensitive in a way that would not suit periodic notifications, such as sports scores during a game.
 
-Xxxx xxxxxxxxxxxxx xxxxxxx x xxxxx xxxxxxx xxxx xxxxxxx xxxx xxxxxxxxxxxx xxxxxxxx xxx xxxxxxx xxxx xxx xx xxxx xx xxxx xxxxxxxxxxxxx.
+Push notifications require a cloud service that manages push notification channels and chooses when and to whom to send notifications.
 
-Xx xxxxxxx, xxxx xxxxxxxxxxxxx xxxxxx xxxxx xxxx xxxx xxx xxxx xxxx xxxx xxx xxxxxxxx xx Xxxxxxx Xxxx Xxxxxxxxxxxx Xxxxxxxx (XXX). Xx xxxxxx, xxx xxx xxxxxxxx xxxx xxxxxxx xxxx xx xxxxxxxx xxxxxxxxxx xxxx.
+By default, push notifications expire three days from the time that they are received by Windows Push Notification Services (WNS). If needed, you can override this default with an explicit expiration time.
 
-Xxx xxxx xxxxxxxxxxx, xxx:
+For more information, see:
 
--   [Xxxxxxx Xxxx Xxxxxxxxxxxx Xxxxxxxx (XXX) xxxxxxxx](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
--   [Xxxxxxxxxx xxx xxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh761462)
--   [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxxxxxxx xxxx xxxxxxx](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+-   [Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
+-   [Guidelines for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462)
+-   [Universal Windows Platform (UWP) notifications code samples](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
 
-**Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx'xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you're developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## Xxxxxxx xxxxxx
+## <span id="related_topics"></span>Related topics
 
 
-* [Xxxx x xxxxx xxxx xxxxxxxxxxxx](tiles-and-notifications-sending-a-local-tile-notification.md)
-* [Xxxxxxxxxx xxx xxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh761462)
-* [Xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh761464)
-* [Xxxxxxxxxx xxx xxxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465391)
-* [Xxxxxxxx xxxxxxxxxxxx xxxxxxxx](tiles-and-notifications-periodic-notification-overview.md)
-* [Xxxxxxx Xxxx Xxxxxxxxxxxx Xxxxxxxx (XXX) xxxxxxxx](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
-* [Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxxxxxxx xxxx xxxxxxx xx XxxXxx](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
+* [Send a local tile notification](tiles-and-notifications-sending-a-local-tile-notification.md)
+* [Guidelines for push notifications](https://msdn.microsoft.com/library/windows/apps/hh761462)
+* [Guidelines for scheduled notifications](https://msdn.microsoft.com/library/windows/apps/hh761464)
+* [Guidelines for toast notifications](https://msdn.microsoft.com/library/windows/apps/hh465391)
+* [Periodic notification overview](tiles-and-notifications-periodic-notification-overview.md)
+* [Windows Push Notification Services (WNS) overview](tiles-and-notifications-windows-push-notification-services--wns--overview.md)
+* [Universal Windows Platform (UWP) notifications code samples on GitHub](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

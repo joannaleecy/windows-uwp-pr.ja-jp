@@ -1,44 +1,44 @@
 ---
-xx.xxxxxxx: YYXYYXYX-YYYY-YYXY-XYYX-YYYYXXYYYYYX
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxxxxxx xxx xx xxxxxxx xxxxxxxxxxxx xxxxxxx xx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX) xx xxxxx xxx xxxx xxxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxxx xx xxxxxxxx.x.
-xxxxx: Xxxxxxxxxxxx xxxxxxxxxxx xx X++
+ms.assetid: 34C00F9F-2196-46A3-A32F-0067AB48291B
+description: ここでは、ppltasks.h の concurrency 名前空間で定義された task クラスを使って Visual C++ コンポーネント拡張機能 (C++/CX) の非同期メソッドを実装する際に推奨される方法について説明します。
+title: C++ での非同期プログラミング
 ---
 
-# Xxxxxxxxxxxx xxxxxxxxxxx xx X++
+# C++ での非同期プログラミング
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-** Xxxxxxxxx XXXx **
+** 重要な API **
 
--   [xxxx xxxxx]
--   [**xxxxxxxxxxx xxxxxxxxx**][xxxxxxxxxxxXxxxxxxxx]
--   [**XXxxxxXxxxxxxxx**][XXxxxxXxxxxxxxx]
+-   [task クラス]
+-   [**concurrency 名前空間**][concurrencyNamespace]
+-   [**IAsyncOperation**][IAsyncOperation]
 
-Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxxxxxx xxx xx xxxxxxx xxxxxxxxxxxx xxxxxxx xx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX) xx xxxxx xxx `task` xxxxx xxxx'x xxxxxxx xx xxx `concurrency` xxxxxxxxx xx xxxxxxxx.x.
+ここでは、ppltasks.h の `concurrency` 名前空間で定義された `task` クラスを使って Visual C++ コンポーネント拡張機能 (C++/CX) の非同期メソッドを実装する際に推奨される方法について説明します。
 
-## Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxxxxxx xxxxx
+## ユニバーサル Windows プラットフォーム (UWP) の非同期型
 
-Xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxx x xxxx-xxxxxxx xxxxx xxx xxxxxxx xxxxxxxxxxxx xxxxxxx xxx xxxxxxxx xxx xxxxx xxxx xxx xxxx xx xxxxxxx xxxx xxxxxxx. Xx xxx xxx xxx xxxxxxxx xxxx xxx XXX xxxxxxxxxxxx xxxxx, xxxx [Xxxxxxxxxxxx Xxxxxxxxxxx][XxxxxXxxxxxxxxxx] xxxxxx xxx xxxx xxx xxxx xx xxxx xxxxxxx.
+ユニバーサル Windows プラットフォーム (UWP) には、非同期メソッドを呼び出すためのモデルが明確に定義されており、非同期メソッドを使う必要がある型があります。 UWP の非同期モデルについて詳しくない場合は、この記事の前に「[非同期プログラミング][AsyncProgramming]」をご覧ください。
 
-Xxxxxxxx xxx xxx xxxxxxx xxx xxxxxxxxxxxx XXX XXXx xxxxxxxx xx X++, xxx xxxxxxxxx xxxxxxxx xx xx xxx xxx [**xxxx xxxxx**][xxxx-xxxxx] xxx xxx xxxxxxx xxxxx xxx xxxxxxxxx, xxxxx xxx xxxxxxxxx xx xxx [**xxxxxxxxxxx**][xxxxxxxxxxxXxxxxxxxx] xxxxxxxxx xxx xxxxxxx xx `<ppltasks.h>`. Xxx **xxxxxxxxxxx::xxxx** xx x xxxxxxx-xxxxxxx xxxx, xxx xxxx xxx **/XX** xxxxxxxx xxxxxx—xxxxx xx xxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx xxxxxxxxxx—xx xxxx, xxx xxxx xxxxx xxxxxxxxxxxx xxx XXX xxxxxxxxxxxx xxxxx xx xxxx xx'x xxxxxx xx:
+非同期 UWP API は C++ で直接使うこともできますが、[**task クラス**][task-class] とそれに関連する型と関数を使うことをお勧めします。これは [**concurrency**][concurrencyNamespace] 名前空間のクラスで、`<ppltasks.h>` で定義されています。 **concurrency::task** は汎用型のクラスですが、**/ZW** コンパイラ スイッチ (ユニバーサル Windows プラットフォーム (UWP) アプリとそのコンポーネントには必須) を使うと、task クラスで UWP の非同期型をカプセル化して次の処理を簡単に行うことができます。
 
--   xxxxx xxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxxx xxxxxxxx
+-   複数の非同期操作や同期操作を 1 つのチェーンで連結する
 
--   xxxxxx xxxxxxxxxx xx xxxx xxxxxx
+-   タスク チェーンで例外を処理する
 
--   xxxxxxx xxxxxxxxxxxx xx xxxx xxxxxx
+-   タスク チェーンで取り消しを実行する
 
--   xxxxxx xxxx xxxxxxxxxx xxxxx xxx xx xxx xxxxxxxxxxx xxxxxx xxxxxxx xx xxxxxxxxx
+-   各タスクを適切なスレッド コンテキストまたはスレッド アパートメントで実行する
 
-Xxxx xxxxxxx xxxxxxxx xxxxx xxxxxxxx xxxxx xxx xx xxx xxx **xxxx** xxxxx xxxx xxx XXX xxxxxxxxxxxx XXXx. Xxx xxxx xxxxxxxx xxxxxxxxxxxxx xxxxx **xxxx** xxx xxx xxxxxxx xxxxxxx xxxxxxxxx [**xxxxxx\_xxxx**][xxxxxxXxxx], xxx [Xxxx Xxxxxxxxxxx (Xxxxxxxxxxx Xxxxxxx)][xxxxXxxxxxxxxxx]. Xxx xxxx xxxxxxxxxxx xxxxx xxx xx xxxxxx xxxxxxxxxxxx xxxxxx xxxxxxx xxx xxxxxxxxxxx xx XxxxXxxxxx xx xxxxx XXX-xxxxxxxxxx xxxxxxxxx, xxx [Xxxxxxxx Xxxxxxxxxxxx Xxxxxxxxxx xx X++ xxx Xxxxxxx Xxxxxxx xxxx][xxxxxxXxxxxXxx].
+ここでは、**task** クラスを UWP の非同期 API で使う方法に関する基本的なガイダンスを示しています。 **task** クラスと、[**create\_task**][createTask] を含む関連メソッドについて詳しくは、「[タスクの並列処理 (同時実行ランタイム)][taskParallelism]」をご覧ください。 JavaScript などの UWP と互換性がある他の言語で使う非同期パブリック メソッドを作る方法について詳しくは、「[Windows ランタイム アプリ用に C++ で非同期操作を作成][createAsyncCpp]」をご覧ください。
 
-## Xxxxxxxxx xx xxxxx xxxxxxxxx xx xxxxx x xxxx
+## タスクを使った非同期操作の使用
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xx xxx xxx xxxx xxxxx xx xxxxxxx xx **xxxxx** xxxxxx xxxx xxxxxxx xx [**XXxxxxXxxxxxxxx**][XXxxxxXxxxxxxxx] xxxxxxxxx xxx xxxxx xxxxxxxxx xxxxxxxx x xxxxx. Xxxx xxx xxx xxxxx xxxxx:
+次の例は、task クラスを使って、[**IAsyncOperation**][IAsyncOperation] インターフェイスを返す **async** メソッドを使う方法を示しています。この操作では値が生成されます。 基本的な手順は次のとおりです。
 
-1.  Xxxx xxx `create_task` xxxxxx xxx xxxx xx xxx **XXxxxxXxxxxxxxx^** xxxxxx.
+1.  `create_task` メソッドを呼び出し、**IAsyncOperation** オブジェクトに渡します。
 
-2.  Xxxx xxx xxxxxx xxxxxxxx [**xxxx::xxxx**][xxxxXxxx] xx xxx xxxx xxx xxxxxx x xxxxxx xxxx xxxx xx xxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx xxxxxxxxx.
+2.  タスクのメンバー関数 [**task::then**][taskThen] を呼び出し、非同期操作の完了時に呼び出すラムダを指定します。
 
 
 ``` cpp
@@ -73,17 +73,17 @@ void App::TestAsync()
 }
 ```
 
-Xxx xxxx xxxx'x xxxxxxx xxx xxxxxxxx xx xxx [**xxxx::xxxx**][xxxxXxxx] xxxxxxxx xx xxxxx xx x *xxxxxxxxxxxx*. Xxx xxxxx xxxxxxxx (xx xxxx xxxx) xx xxx xxxx-xxxxxxxx xxxxxx xx xxx xxxxxx xxxx xxx xxxx xxxxxxxxx xxxxxxxx xxxx xx xxxxxxxxx. Xx'x xxx xxxx xxxxx xxxx xxxxx xx xxxxxxxxx xx xxxxxxx [**XXxxxxXxxxxxxxx::XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206600) xx xxx xxxx xxxxx xxx **XXxxxxXxxxxxxxx** xxxxxxxxx xxxxxxxx.
+[**task::then**][taskThen] 関数で作成されて返されるタスクのことを*継続*と呼びます。 ユーザーが指定するラムダの入力引数は (この例の場合)、タスク操作の完了時に生成される結果です。 この値は、**IAsyncOperation** インターフェイスを直接使う場合に [**IAsyncOperation::GetResults**](https://msdn.microsoft.com/library/windows/apps/br206600) を呼び出して取得する値と同じになります。
 
-Xxx [**xxxx::xxxx**][xxxxXxxx] xxxxxx xxxxxxx xxxxxxxxxxx, xxx xxx xxxxxxxx xxxxx'x xxx xxxxx xxx xxxxxxxxxxxx xxxx xxxxxxxxx xxxxxxxxxxxx. Xx xxxx xxxxxxx, xx xxx xxxxxxxxxxxx xxxxxxxxx xxxxxx xx xxxxxxxxx xx xx xxxxxx, xx xxxx xx xxx xxxxxxxx xxxxx xx x xxxxxx xx x xxxxxxxxxxxx xxxxxxx, xxx xxxxxxxxxxxx xxxx xxxxx xxxxxxx. Xxxxx, xx’xx xxxxxxxx xxx xx xxxxx xxxxxxxxxxxxx xxxx xxxxxxx xxxx xx xxx xxxxxxxx xxxx xxx xxxxxxxxx xx xxxxxx.
+[**task::then**][taskThen] メソッドからは直ちに制御が返され、そのデリゲートは非同期作業が正常に完了するまで実行されません。 この例では、非同期操作で例外がスローされるか、取り消し要求によって非同期操作が取り消された状態で終わると、継続は実行されません。 前のタスクが取り消されるか失敗しても実行される継続を記述する方法については後で説明します。
 
-Xxxxxxxx xxx xxxxxxx xxx xxxx xxxxxxxx xx xxx xxxxx xxxxx, xx xxxxxxx xxx xxxxxxxx xx xxxx xx xx xxx xxxxxxx xxxxx xxx xx xxx xxxxxxxxxx xxxxxxxx xxx xxx xxxxxxxxxx xx xx xx xxx xx xxxxx, xxxx xx xxx xxxxxx xxxxxxx xxxxxx xxx xxxxxxxxxx xxxxxxxx.
+タスクの変数はローカル スタックで宣言しますが、その有効期間は、操作が完了する前にメソッドから制御が返されても、すべての操作が完了してすべての参照がスコープ外になるまで削除されないように管理されます。
 
-## Xxxxxxxx x xxxxx xx xxxxx
+## タスクのチェーンの作成
 
-Xx xxxxxxxxxxxx xxxxxxxxxxx, xx'x xxxxxx xx xxxxxx x xxxxxxxx xx xxxxxxxxxx, xxxx xxxxx xx *xxxx xxxxxx*, xx xxxxx xxxx xxxxxxxxxxxx xxxxxxxx xxxx xxxx xxx xxxxxxxx xxx xxxxxxxxx. Xx xxxx xxxxx, xxx xxxxxxxx (xx *xxxxxxxxxx*) xxxx xxxxxxxx x xxxxx xxxx xxx xxxxxxxxxxxx xxxxxxx xx xxxxx. Xx xxxxx xxx [**xxxx::xxxx**][xxxxXxxx] xxxxxx, xxx xxx xxxxxx xxxx xxxxxx xx xx xxxxxxxxx xxx xxxxxxxxxxxxxxx xxxxxx; xxx xxxxxx xxxxxxx x **xxxx<T>** xxxxx **X** xx xxx xxxxxx xxxx xx xxx xxxxxx xxxxxxxx. Xxx xxx xxxxxxx xxxxxxxx xxxxxxxxxxxxx xxxx x xxxx xxxxx: `myTask.then(…).then(…).then(…);`
+非同期プログラミングでは、前のタスクが完了した場合にのみ継続が実行されるように、操作のシーケンス (*タスク チェーン*) を定義するのが一般的です。 場合によっては、前のタスク (*先行タスク*) で生成された値を継続が入力として受け取ることもあります。 [**task::then**][taskThen] メソッドを使うと、直観的な方法で簡単にタスク チェーンを作成できます。このメソッドは、**task<T>** (**T** はラムダ関数の戻り値の型) を返します。 複数の継続を含めて 1 つのタスク チェーンを構成することができます。`myTask.then(…).then(…).then(…);`
 
-Xxxx xxxxxx xxx xxxxxxxxxx xxxxxx xxxx x xxxxxxxxxxxx xxxxxxx x xxx xxxxxxxxxxxx xxxxxxxxx; xxxx x xxxx xx xxxxx xx xx xxxxxxxxxxxx xxxx. Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxx x xxxx xxxxx xxxx xxx xxx xxxxxxxxxxxxx. Xxx xxxxxxx xxxx xxxxxxxx xxx xxxxxx xx xx xxxxxxxx xxxx, xxx xxxx xxxx xxxxxxxxx xxxxxxxxx, xxx xxxxx xxxxxxxxxxxx xxxxxx xx x xxx xxxxxxxxxxxx xxxxxxxxx xx xxxxxx xxx xxxx. Xxxx xxxx xxxxxxxxx xxxxxxxxx, xxx xxxxxx xxxxxxxxxxxx xxxx, xxx xxxxxxx x xxxxxxxxxxxx xxxxxxx.
+タスク チェーンは、継続で新しい非同期操作を作成する場合に特に便利です。このようなタスクのことを非同期タスクと呼びます。 次の例は、2 つの継続を含むタスク チェーンを示しています。 既存のファイルへのハンドルを取得する最初のタスクの操作が完了すると、1 つ目の継続でそのファイルを削除する新しい非同期操作が始まります。 その操作が完了すると、2 つ目の継続が実行され、確認メッセージが出力されます。
 
 ``` cpp
 #include <ppltasks.h>
@@ -103,38 +103,38 @@ void App::DeleteWithTasks(String^ fileName)
 }
 ```
 
-Xxx xxxxxxxx xxxxxxx xxxxxxxxxxx xxxx xxxxxxxxx xxxxxx:
+この例で重要なポイントは次の 4 つです。
 
--   Xxx xxxxx xxxxxxxxxxxx xxxxxxxx xxx [**XXxxxxXxxxxx^**][XXxxxxXxxxxx] xxxxxx xx x **xxxx<void>** xxx xxxxxxx xxx **xxxx**.
+-   1 つ目の継続は、[**IAsyncAction^**][IAsyncAction] オブジェクトを **task<void>** に変換し、**task** を返します。
 
--   Xxx xxxxxx xxxxxxxxxxxx xxxxxxxx xx xxxxx xxxxxxxx, xxx xxxxxxxxx xxxxx **xxxx** xxx xxx **xxxx<void>** xx xxxxx. Xx xx x xxxxx-xxxxx xxxxxxxxxxxx.
+-   2 つ目の継続は、エラー処理を実行しないため、**task<void>** ではなく **void** を入力として受け取ります。 これは値ベースの継続です。
 
--   Xxx xxxxxx xxxxxxxxxxxx xxxxx'x xxxxxxx xxxxx xxx [**XxxxxxXxxxx**][xxxxxxXxxxx] xxxxxxxxx xxxxxxxxx.
+-   2 つ目の継続は、[**DeleteAsync**][deleteAsync] 操作が完了するまで実行されません。
 
--   Xxxxxxx xxx xxxxxx xxxxxxxxxxxx xx xxxxx-xxxxx, xx xxx xxxxxxxxx xxxx xxx xxxxxxx xx xxx xxxx xx [**XxxxxxXxxxx**][xxxxxxXxxxx] xxxxxx xx xxxxxxxxx, xxx xxxxxx xxxxxxxxxxxx xxxxx'x xxxxxxx xx xxx.
+-   2 つ目の継続は値ベースであるため、[**DeleteAsync**][deleteAsync] を呼び出して開始された操作から例外がスローされると、2 つ目の継続は実行されません。
 
-**Xxxx**  Xxxxxxxx x xxxx xxxxx xx xxxx xxx xx xxx xxxx xx xxx xxx **xxxx** xxxxx xx xxxxxxx xxxxxxxxxxxx xxxxxxxxxx. Xxx xxx xxxx xxxxxxx xxxxxxxxxx xx xxxxx xxxx xxx xxxxxx xxxxxxxxx **&&** xxx **||**. Xxx xxxx xxxxxxxxxxx, xxx [Xxxx Xxxxxxxxxxx (Xxxxxxxxxxx Xxxxxxx)][xxxxXxxxxxxxxxx].
+**注:** タスク チェーンの作成は、**task** クラスを使って非同期操作を構成する方法の 1 つにすぎません。 結合演算子 (**&&**) や選択演算子 (**||**) を使って操作を構成することもできます。 詳しくは、「[タスクの並列処理 (同時実行ランタイム)][taskParallelism]」をご覧ください。
 
-## Xxxxxx xxxxxxxx xxxxxx xxxxx xxx xxxx xxxxxx xxxxx
+## ラムダ関数の戻り値の型とタスクの戻り値の型
 
-Xx x xxxx xxxxxxxxxxxx, xxx xxxxxx xxxx xx xxx xxxxxx xxxxxxxx xx xxxxxxx xx x **xxxx** xxxxxx. Xx xxx xxxxxx xxxxxxx x **xxxxxx**, xxxx xxx xxxx xx xxx xxxxxxxxxxxx xxxx xx **xxxx<double>**. Xxxxxxx, xxx xxxx xxxxxx xx xxxxxxxx xx xxxx xx xxxxx'x xxxxxxx xxxxxxxxxx xxxxxx xxxxxx xxxxx. Xx x xxxxxx xxxxxxx xx **XXxxxxXxxxxxxxx<XxxxxxxxxxxXxxx^>^**, xxx xxxxxxxxxxxx xxxxxxx x **xxxx<XxxxxxxxxxxXxxx^>**, xxx x **xxxx<xxxx<XxxxxxxxxxxXxxx^>>** xx **xxxx<XXxxxxXxxxxxxxx<XxxxxxxxxxxXxxx^>^>^**. Xxxx xxxxxxx xx xxxxx xx *xxxxxxxxxxxx xxxxxxxxxx* xxx xx xxxx xxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx xxxxxx xxx xxxxxxxxxxxx xxxxxxxxx xxxxxx xxx xxxx xxxxxxxxxxxx xx xxxxxxx.
+継続タスクでは、ラムダ関数の戻り値の型が **task** オブジェクトでラップされます。 ラムダが **double** を返す場合、継続タスクの型は **task<double>** になります。 ただし、タスク オブジェクトは、戻り値の型を必要以上に入れ子にしないように設計されています。 ラムダが **IAsyncOperation<SyndicationFeed^>^** を返す場合、継続は、**task<task<SyndicationFeed^>>** や **task<IAsyncOperation<SyndicationFeed^>^>^** ではなく、**task<SyndicationFeed^>** を返します。 *非同期ラップ解除*と呼ばれるこの処理により、さらに、継続内の非同期操作が完了しないと次の継続が呼び出されないようになります。
 
-Xx xxx xxxxxxxx xxxxxxx, xxxxxx xxxx xxx xxxx xxxxxxx x **xxxx<void>** xxxx xxxxxx xxx xxxxxx xxxxxxxx xx [**XXxxxxXxxx**][XXxxxxXxxx] xxxxxx. Xxx xxxxxxxxx xxxxx xxxxxxxxxx xxx xxxx xxxxxxxxxxx xxxx xxxxx xxxxxxx x xxxxxx xxxxxxxx xxx xxx xxxxxxxxx xxxx:
+前の例では、ラムダが [**IAsyncInfo**][IAsyncInfo] オブジェクトを返しているのに、タスクは **task<void>** を返しています。 ラムダ関数とその外側のタスクの間で行われるこれらの型変換を次の表に示します。
 
 | | |
 |--------------------------------------------------------|---------------------|
-| xxxxxx xxxxxx xxxx                                     | `.then` xxxxxx xxxx |
-| XXxxxxx                                                | xxxx<TResult> |
-| XXxxxxXxxxxxxxx<TResult>^                        | xxxx<TResult> |
-| XXxxxxXxxxxxxxxXxxxXxxxxxxx<XXxxxxx, XXxxxxxxx>^ | xxxx<TResult> |
-|XXxxxxXxxxxx^                                           | xxxx<void>    |
-| XXxxxxXxxxxxXxxxXxxxxxxx<TProgress>^             |xxxx<void>     |
-| xxxx<TResult>                                    |xxxx<TResult>  |
+| ラムダの戻り値の型                                     | `.then` の戻り値の型 |
+| TResult                                                | task<TResult> |
+| IAsyncOperation<TResult>^                        | task<TResult> |
+| IAsyncOperationWithProgress<TResult, TProgress>^ | task<TResult> |
+|IAsyncAction^                                           | task<void>    |
+| IAsyncActionWithProgress<TProgress>^             |task<void>     |
+| task<TResult>                                    |task<TResult>  |
 
 
-## Xxxxxxxxx xxxxx
+## タスクの取り消し
 
-Xx xx xxxxx x xxxx xxxx xx xxxx xxx xxxx xxx xxxxxx xx xxxxxx xx xxxxxxxxxxxx xxxxxxxxx. Xxx xx xxxx xxxxx xxx xxxxx xxxx xx xxxxxx xx xxxxxxxxx xxxxxxxxxxxxxxxx xxxx xxxxxxx xxx xxxx xxxxx. Xxxxxxxx xxxx \***Xxxxx** xxxxxx xxxx xxx x [**Xxxxxx**][XXxxxxXxxxXxxxxx] xxxxxx xxxx xx xxxxxxxx xxxx [**XXxxxxXxxx**][XXxxxxXxxx], xx'x xxxxxxx xx xxxxxx xx xx xxxxxxx xxxxxxx. Xxx xxxxxxxxx xxx xx xxxxxxx xxxxxxxxxxxx xx x xxxx xxxxx xx xx xxx x [**xxxxxxxxxxxx\_xxxxx\_xxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749985.aspx) xx xxxxxx x [**xxxxxxxxxxxx\_xxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749975.aspx), xxx xxxx xxxx xxx xxxxx xx xxx xxxxxxxxxxx xx xxx xxxxxxx xxxx. Xx xx xxxxxxxxxxxx xxxx xx xxxxxxx xxxx x xxxxxxxxxxxx xxxxx, xxx [**xxxxxxxxxxxx\_xxxxx\_xxxxxx::xxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750076.aspx) xx xxxxxx, xxx xxxx xxxxxxxxxxxxx xxxxx **Xxxxxx** xx xxx **XXxxxx\*** xxxxxxxxx xxx xxxxxx xxx xxxxxxxxxxxx xxxxxxx xxxx xxx xxxxxxxxxxxx xxxxx. Xxx xxxxxxxxx xxxxxxxxxx xxxxxxxxxxxx xxx xxxxx xxxxxxxx.
+通常、非同期操作をユーザーが取り消せるようにすることをお勧めします。 また、場合によっては、プログラムを使ってタスク チェーンの外側から操作を取り消さなければならないこともあります。 \***Async** のそれぞれの戻り値の型には [**IAsyncInfo**][IAsyncInfo] から継承した [**Cancel**][IAsyncInfoCancel] メソッドが含まれますが、それを外部のメソッドに公開する方法はあまりお勧めできません。 タスク チェーンで取り消しをサポートするときは、[**cancellation\_token\_source**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749985.aspx) を使って [**cancellation\_token**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749975.aspx) を作成し、そのトークンを最初のタスクのコンストラクターに渡す方法をお勧めします。 キャンセル トークンを設定して非同期タスクを作成した場合、[**cancellation\_token\_source::cancel**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750076.aspx) が呼び出されたときに、**IAsync\*** 操作に対する **Cancel** が自動的に呼び出され、取り消し要求が後続のタスク チェーンに渡されます。 この基本的な方法を示す疑似コードを次に示します。
 
 ``` cpp
 //Class member:
@@ -149,17 +149,17 @@ auto getFileTask2 = create_task(documentsFolder->GetFileAsync(fileName),
 //getFileTask2.then ...
 ```
 
-Xxxx x xxxx xx xxxxxxxx, x [**xxxx\_xxxxxxxx**][xxxxXxxxxxxx] xxxxxxxxx xx xxxxxxxxxx xxxx xxx xxxx xxxxx. Xxxxx-xxxxx xxxxxxxxxxxxx xxxx xxxxxx xxx xxxxxxx, xxx xxxx-xxxxx xxxxxxxxxxxxx xxxx xxxxx xxx xxxxxxxxx xx xx xxxxxx xxxx [**xxxx::xxx**][xxxxXxx] xx xxxxxx. Xx xxx xxxx xx xxxxx-xxxxxxxx xxxxxxxxxxxx, xxxx xxxx xxxx xx xxxxxxx xxx **xxxx\_xxxxxxxx** xxxxxxxxx xxxxxxxxxx. (Xxxx xxxxxxxxx xx xxx xxxxxxx xxxx [**Xxxxxxxx::Xxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh755825.aspx).)
+タスクが取り消されると、[**task\_canceled**][taskCanceled] 例外がタスク チェーンを通じて伝達されます。 値ベースの継続は実行されないだけですが、タスクベースの継続では、[**task::get**][taskGet] が呼び出されると例外がスローされます。 エラー処理を行う継続がある場合は、**task\_canceled** 例外を明示的にキャッチするようにしてください (これは [**Platform::Exception**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh755825.aspx) から派生した例外ではありません)。
 
-Xxxxxxxxxxxx xx xxxxxxxxxxx. Xx xxxx xxxxxxxxxxxx xxxx xxxx xxxx-xxxxxxx xxxx xxxxxx xxxx xxxxxxxx x XXX xxxxxx, xxxx xx xx xxxx xxxxxxxxxxxxxx xx xxxxx xxx xxxxx xx xxx xxxxxxxxxxxx xxxxx xxxxxxxxxxxx xxx xxxx xxxxxxxxx xx xx xx xxxxxxxx. Xxxxx xxx xxxxx xx xxx xxxxxxxxx xxxx xxxx xxxxxxxxx xx xxx xxxxxxxxxxxx, xxxx [**xxxxxx\_xxxxxxx\_xxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749945.aspx) xx xxxxxx xxxx xxxx xxx xxxxxxxxx xxx xxxxxxxxxxxx xxxx xx xxx xxxxx-xxxxx xxxxxxxxxxxxx xxxx xxxxxx xx. Xxxx'x xxxxxxx xxxxxxx: xxx xxx xxxxxx x xxxx xxxxx xxxx xxxxxxxxxx xxx xxxxxx xx x [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR207871) xxxxxxxxx. Xx xxx xxxx xxxxxxx xxx **Xxxxxx** xxxxxx, xxx [**XXxxxxXxxx::Xxxxxx**][XXxxxxXxxxXxxxxx] xxxxxx xx xxx xxxxxx. Xxxxxxx, xxx xxxxxxxxx xxxxxxxx xxx xxxxxxx **xxxxxxx**. Xxx xxxxxxxxxxxx xxx xxxx xxx xxxxx xxxxxxxxx xxx xxxx **xxxxxx\_xxxxxxx\_xxxx** xx xxx xxxxx xx **xxxxxxx**.
+取り消しは連携して行います。 継続で、UWP メソッドを呼び出すだけでなく、時間のかかる作業を行うときは、キャンセル トークンの状態を定期的に確認し、取り消された場合は実行を中止する必要があります。 継続で割り当てられたすべてのリソースをクリーンアップした後、[**cancel\_current\_task**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749945.aspx) を呼び出してそのタスクを取り消し、以降の値ベースの継続に取り消しを伝達します。 また、別の例として、[**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/BR207871) 操作の結果を表すタスク チェーンを作成するとします。 ユーザーが **[キャンセル]** ボタンをクリックした場合、[**IAsyncInfo::Cancel**][IAsyncInfoCancel] メソッドは呼び出されません。 代わりに、操作は完了しますが **nullptr** が返されます。 この場合、継続で入力パラメーターをテストし、入力が **nullptr** の場合に **cancel\_current\_task** を呼び出すことができます。
 
-Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxxxx xx xxx XXX](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd984117.aspx)
+詳しくは、「[PPL での取り消し](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd984117.aspx)」をご覧ください。
 
-## Xxxxxxxx xxxxxx xx x xxxx xxxxx
+## タスク チェーンでのエラーの処理
 
-Xx xxx xxxx x xxxxxxxxxxxx xx xxxxxxx xxxx xx xxx xxxxxxxxxx xxx xxxxxxxx xx xxxxx xx xxxxxxxxx, xxxx xxxx xxx xxxxxxxxxxxx x xxxx-xxxxx xxxxxxxxxxxx xx xxxxxxxxxx xxx xxxxx xx xxx xxxxxx xxxxxxxx xx x **xxxx<TResult>** xx **xxxx<void>** xx xxx xxxxxx xx xxx xxxxxxxxxx xxxx xxxxxxx xx [**XXxxxxXxxxxx^**][XXxxxxXxxxxx].
+先行タスクの取り消しや例外のスローが行われても継続を実行する場合は、継続のラムダ関数への入力を **task<TResult>** または **task<void>** (先行タスクのラムダが [**IAsyncAction^**][IAsyncAction] を返す場合) として指定して、継続をタスクベースにします。
 
-Xx xxxxxx xxxxxx xxx xxxxxxxxxxxx xx x xxxx xxxxx, xxx xxx'x xxxx xx xxxx xxxxx xxxxxxxxxxxx xxxx-xxxxx xx xxxxxxx xxxxx xxxxxxxxx xxxx xxxxx xxxxx xxxxxx x `try…catch` xxxxx. Xxxxxxx, xxx xxx xxx x xxxx-xxxxx xxxxxxxxxxxx xx xxx xxx xx xxx xxxxx xxx xxxxxx xxx xxxxxx xxxxx. Xxx xxxxxxxxx—xxxx xxxxxxxx x [**xxxx\_xxxxxxxx**][xxxxXxxxxxxx] xxxxxxxxx—xxxx xxxxxxxxx xxxx xxx xxxx xxxxx xxx xxxxxx xxx xxxxx-xxxxx xxxxxxxxxxxxx, xx xxxx xxx xxx xxxxxx xx xx xxx xxxxx-xxxxxxxx xxxx-xxxxx xxxxxxxxxxxx. Xx xxx xxxxxxx xxx xxxxxxxx xxxxxxx xx xxx xx xxxxx-xxxxxxxx xxxx-xxxxx xxxxxxxxxxxx:
+タスク チェーンでエラーや取り消しを処理するために、すべての継続をタスクベースにしたり、スローする可能性があるすべての操作を `try…catch` ブロック内に含めたりする必要はありません。 代わりに、タスクベースの継続をチェーンの最後に追加し、その継続ですべてのエラーを処理します。 例外 ([**task\_canceled**][taskCanceled] 例外も含む) はタスク チェーンを通じて伝達され、値ベースの継続はバイパスされるため、エラー処理を行うタスクベースの継続で例外を処理できます。 エラー処理を行うタスクベースの継続を使うように前の例を書き換えると次のようになります。
 
 ``` cpp
 #include <ppltasks.h>
@@ -195,15 +195,15 @@ void App::DeleteWithTasksHandleErrors(String^ fileName)
 }
 ```
 
-Xx x xxxx-xxxxx xxxxxxxxxxxx, xx xxxx xxx xxxxxx xxxxxxxx [**xxxx::xxx**][xxxxXxx] xx xxx xxx xxxxxxx xx xxx xxxx. Xx xxxxx xxxx xx xxxx **xxxx::xxx** xxxx xx xxx xxxxxxxxx xxx xx [**XXxxxxXxxxxx**][XXxxxxXxxxxx] xxxx xxxxxxxx xx xxxxxx xxxxxxx **xxxx::xxx** xxxx xxxx xxx xxxxxxxxxx xxxx xxxx xxxx xxxxxxxxxxx xxxx xx xxx xxxx. Xx xxx xxxxx xxxx xx xxxxxxx xx xxxxxxxxx, xx xx xxxxxx xx xxx xxxx xx **xxxx::xxx**. Xx xxx xxx'x xxxx **xxxx::xxx**, xx xxx'x xxx x xxxx-xxxxx xxxxxxxxxxxx xx xxx xxx xx xxx xxxxx, xx xxx'x xxxxx xxx xxxxxxxxx xxxx xxxx xxx xxxxxx, xxxx xx **xxxxxxxxxx\_xxxx\_xxxxxxxxx** xx xxxxxx xxxx xxx xxxxxxxxxx xx xxx xxxx xxxx xxxx xxxxxxx.
+タスクベースの継続で、メンバー関数 [**task::get**][taskGet] を呼び出してタスクの結果を取得しています。 **task::get** は、結果を生成しない [**IAsyncAction**][IAsyncAction] 操作の場合でも呼び出す必要があります。**task::get** ではタスクに送られた例外も取得するからです。 入力タスクに例外が格納されている場合、**task::get** の呼び出しでその例外がスローされます。 **task::get** を呼び出していない場合、チェーンの最後でタスクベースの継続を使っていない場合、またはスローされた例外の種類をキャッチしていない場合は、タスクに対する参照がすべて削除されたときに **unobserved\_task\_exception** がスローされます。
 
-Xxxx xxxxx xxx xxxxxxxxxx xxxx xxx xxx xxxxxx. Xx xxxx xxx xxxxxxxxxx xx xxxxx xxxx xxx xxx'x xxxxxxx xxxx, xx'x xxxxxx xx xxx xxx xxx xxxxx xxxx xx xxx xx xxxxxxxx xx xxx xx xx xxxxxxx xxxxx. Xxxx, xx xxxxxxx, xxx'x xxxxxxx xx xxxxx xxx **xxxxxxxxxx\_xxxx\_xxxxxxxxx** xxxxxx. Xxxx xxxxxxxxx xx xxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx. Xxxx **xxxxxxxxxx\_xxxx\_xxxxxxxxx** xx xxxxxx, xx xxxxxxx xxxxxxxxx x xxx xx xxx xxxx. Xxxxx xxx xxxxx xx xxxxxx xx xxxxxxxxx xxxx xxxxxx xx xxxxxxx, xx xx xxxxxxxxxxxxx xxxxxxxxx xxxx'x xxxxxx xx xxxx xxxxx xxxxx xx xxx xxxx.
+キャッチする例外は処理できるものだけにしてください。 回復できないエラーがアプリで発生した場合は、不明な状態のままアプリの実行を続けるのではなく、アプリをクラッシュさせることをお勧めします。 また、一般に、**unobserved\_task\_exception** 自体はキャッチしないことをお勧めします。 この例外は、主に診断を目的としたものです。 **unobserved\_task\_exception** がスローされた場合、通常はコード内にバグがあることを示します。 原因のほとんどは、処理が必要な例外があること、またはコード内の他のエラーが原因で回復できない例外があることのどちらかです。
 
-## Xxxxxxxx xxx xxxxxx xxxxxxx
+## スレッド コンテキストの管理
 
-Xxx XX xx x XXX xxx xxxx xx x xxxxxx-xxxxxxxx xxxxxxxxx (XXX). X xxxx xxxxx xxxxxx xxxxxxx xxxxxx xx [**XXxxxxXxxxxx**][XXxxxxXxxxxx] xx [**XXxxxxXxxxxxxxx**][XXxxxxXxxxxxxxx] xx xxxxxxxxx-xxxxx. Xx xxx xxxx xx xxxxxxx xx xxx XXX, xxxx xxx xx xxx xxxxxxxxxxxxx xxxx xxx xxxx xxx xx xx xx xxxxxxx, xxxxxx xxx xxxxxxx xxxxxxxxx. Xx xxxxx xxxxx, xxx xxxxxx xxxx xxxxx xxxxxxxx xxxxxxxxx-xxxxxxxxx xxxx xxx xxxxxx xxxx. Xxxx xxxxxxxx xxxxx xxxxxxxx xxxxxxxxxxxx xxxx XX xxxxxxxx, xxxxx xxx xxxx xx xxxxxxxx xxxx xxx XXX.
+UWP アプリの UI は、シングルスレッド アパートメント (STA) で実行されます。 ラムダが [**IAsyncAction**][IAsyncAction] または [**IAsyncOperation**][IAsyncOperation] を返すタスクは、アパートメントを認識します。 タスクが STA で作成されている場合、特に指定しない限り、その継続もすべて STA で実行されます。 つまり、タスク チェーン全体が親タスクからアパートメントの認識を継承します。 この動作により、STA からしかアクセスできない UI コントロールの操作が簡単になります。
 
-Xxx xxxxxxx, xx x XXX xxx, xx xxx xxxxxx xxxxxxxx xx xxx xxxxx xxxx xxxxxxxxxx x XXXX xxxx, xxx xxx xxxxxxxx x [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/BR242868) xxxxxxx xxxx xxxxxx x [**xxxx::xxxx**][xxxxXxxx] xxxxxx xxxxxxx xxxxxx xx xxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208211) xxxxxx.
+たとえば、UWP アプリの [**ListBox**](https://msdn.microsoft.com/library/windows/apps/BR242868) コントロールを設定するとき、XAML ページを表す任意のクラスのメンバー関数で [**task::then**][taskThen] メソッド内から設定できるため、[**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) オブジェクトを使う必要がありません。
 
 ``` cpp
 #include <ppltasks.h>
@@ -222,11 +222,13 @@ void App::SetFeedText()
 }
 ```
 
-Xx x xxxx xxxxx'x xxxxxx xx [**XXxxxxXxxxxx**][XXxxxxXxxxxx] xx [**XXxxxxXxxxxxxxx**][XXxxxxXxxxxxxxx], xxxx xx'x xxx xxxxxxxxx-xxxxx xxx, xx xxxxxxx, xxx xxxxxxxxxxxxx xxx xxx xx xxx xxxxx xxxxxxxxx xxxxxxxxxx xxxxxx.
+[**IAsyncAction**][IAsyncAction] または [**IAsyncOperation**][IAsyncOperation] を返さないタスクは、アパートメントを認識しません。これらのタスクの継続は、既定では、利用可能な最初のバックグラウンド スレッドで実行されます。
 
-Xxx xxx xxxxxxxx xxx xxxxxxx xxxxxx xxxxxxx xxx xxxxxx xxxx xx xxxx xx xxxxx xxx xxxxxxxx xx [**xxxx::xxxx**][xxxxXxxx] xxxx xxxxx x [**xxxx\_xxxxxxxxxxxx\_xxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749968.aspx). Xxx xxxxxxx, xx xxxx xxxxx, xx xxxxx xx xxxxxxxxx xx xxxxxxxx xxx xxxxxxxxxxxx xx xx xxxxxxxxx-xxxxx xxxx xx x xxxxxxxxxx xxxxxx. Xx xxxx x xxxx, xxx xxx xxxx [**xxxx\_xxxxxxxxxxxx\_xxxxxxx::xxx\_xxxxxxxxx**][xxxXxxxxxxxx] xx xxxxxxxx xxx xxxx’x xxxx xx xxx xxxx xxxxxxxxx xxxxxx xx x xxxxx-xxxxxxxx xxxxxxxxx. Xxxx xxx xxxxxxx xxx xxxxxxxxxxx xx xxx xxxxxxxxxxxx xxxxxxx xxx xxxx xxxxx'x xxxx xx xx xxxxxxxxxxxx xxxx xxxxx xxxx xxxx'x xxxxxxxxx xx xxx XX xxxxxx.
+既定のスレッド コンテキストは、どちらの種類のタスクについても、[**task\_continuation\_context**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh749968.aspx) を受け取る [**task::then**][taskThen] のオーバーロードを使って上書きできます。 たとえば、状況によっては、アパートメントを認識するタスクの継続をバックグラウンド スレッドでスケジュールする方が適している場合もあります。 このような場合は、[**task\_continuation\_context::use\_arbitrary**][useArbitrary] を渡して、マルチスレッド アパートメント内の次に利用可能なスレッドでタスクの処理をスケジュールできます。 これにより、継続の作業を UI スレッドで発生する他の作業と同期する必要がないため、継続のパフォーマンスが向上します。
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xxxx xx'x xxxxxx xx xxxxxxx xxx [**xxxx\_xxxxxxxxxxxx\_xxxxxxx::xxx\_xxxxxxxxx**][xxxXxxxxxxxx] xxxxxx, xxx xx xxxx xxxxx xxx xxx xxxxxxx xxxxxxxxxxxx xxxxxxx xx xxxxxx xxx xxxxxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xx xxx-xxxxxx-xxxx xxxxxxxxxxx. Xx xxxx xxxx, xx xxxx xxxxxxx x xxxx xx XXXx xxx XXX xxxxx, xxx xxx xxxx XXX, xx xxxxx xx xx xxxxx xxxxxxxxx xx xxxxxxxx xxx xxxx xxxx. Xx xxx’x xxxxxxx xxx xxxxx xx xxxxx xxx xxxxx xxx xxxxxxxxx, xxx xx xxx'x xxxxxx xxxx. Xxxx xxxx [**XxxxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210642) xxxxxxxxx xxxxxxxxx, xxx xxxxx xxxxxxxxxxxx xxxxxxx xxx [**XxxxxxxxxxxXxxx^**](https://msdn.microsoft.com/library/windows/apps/BR243485) xxxxxx xxx xxxx xx xx xxxxxxxxxx xx xxx-xxxxxxx `FeedData^` xxxxxx. Xxxxxxx xxxx xx xxxxx xxxxxxxxxx xx xxxxxxxxxxx xxxx xxx xxxxxx, xx xxx xxxxxxxxxxx xxxxx xxxxxx xx xx xxxxxxxxxx xxx **xxxx\_xxxxxxxxxxxx\_xxxxxxx::xxx\_xxxxxxxxx** xxxxxxxxxxxx xxxxxxx. Xxxxxxx, xxxxx xxxx `FeedData` xxxxxx xx xxxxxxxxxxx, xx xxxx xx xxx xx xx x [**Xxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh441570.aspx), xxxxx xx xxx x xxxxxx-xxxx xxxxxxxxxx. Xxxxxxxxx, xx xxxxxx x xxxxxxxxxxxx xxx xxxxxxx [**xxxx\_xxxxxxxxxxxx\_xxxxxxx::xxx\_xxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750085.aspx) xx xxxxxx xxxx xxx xxx xxxxx xx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206632) xxxxx xx xxx xxxx Xxxxxxxxxxx Xxxxxx-Xxxxxxxx Xxxxxxxxx (XXXX) xxxxxxx. Xxxxxxx [**xxxx\_xxxxxxxxxxxx\_xxxxxxx::xxx\_xxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750085.aspx) xx xxx xxxxxxx xxxxxxx, xx xxx’x xxxx xx xxxxxxx xx xxxxxxxxxx, xxx xx xx xx xxxx xxx xxx xxxx xx xxxxxxx.
+次の例は、[**task\_continuation\_context::use\_arbitrary**][useArbitrary] オプションを指定すると役立つ状況の例を示しています。また、スレッド セーフでないコレクションの同時操作の同期に既定の継続のコンテキストがどのように役立つかも示しています。 このコードでは、RSS フィードの URL の一覧をループ処理し、各 URL について、非同期操作を開始してフィード データを取得しています。 フィードを取得する順序は制御できませんが、ここでは問題ありません。 [
+            **RetrieveFeedAsync**](https://msdn.microsoft.com/library/windows/apps/BR210642) 操作が完了するたびに、1 つ目の継続が [**SyndicationFeed^**](https://msdn.microsoft.com/library/windows/apps/BR243485) オブジェクトを受け取り、それを使ってアプリで定義されている `FeedData^` オブジェクトを初期化します。 これらの操作はそれぞれ独立した操作であるため、継続のコンテキストとして **task\_continuation\_context::use\_arbitrary** を指定すると処理が速くなる可能性があります。 ただし、それぞれの `FeedData` オブジェクトを初期化した後に、そのオブジェクトを [**Vector**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh441570.aspx) に追加する必要があり、スレッド セーフなコレクションではありません。 そのため、ここでは、継続を作成して [**task\_continuation\_context::use\_current**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750085.aspx) を指定することで、[**Append**](https://msdn.microsoft.com/library/windows/apps/BR206632) の呼び出しがすべて同じアプリケーション シングルスレッド アパートメント (ASTA) コンテキストで実行されるようにしています。 [
+            **task\_continuation\_context::use\_default**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750085.aspx) は既定のコンテキストであるため、明示的に指定する必要はありませんが、ここではわかりやすいように指定しています。
 
 ``` cpp
 #include <ppltasks.h>
@@ -287,19 +289,20 @@ void App::InitDataSource(Vector<Object^>^ feedList, vector<wstring> urls)
 }
 ```
 
-Xxxxxx xxxxx, xxxxx xxx xxx xxxxx xxxx xxx xxxxxxx xxxxxx x xxxxxxxxxxxx, xxx'x xxxxxxx xxxxxxxxx-xxxxxxxxx xx xxx xxxxxxx xxxx.
+継続内で作成される入れ子になった新しいタスクは、最初のタスクのアパートメントの認識を継承しません。
 
-## Xxxxxxx xxxxxxxx xxxxxxx
+## 進行状況の更新の処理
 
-Xxxxxxx xxxx xxxxxxx [**XXxxxxXxxxxxxxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206594) xx [**XXxxxxXxxxxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1) xxxxxxx xxxxxxxx xxxxxxx xxxxxxxxxxxx xxxxx xxx xxxxxxxxx xx xx xxxxxxxx, xxxxxx xx xxxxxxxxx. Xxxxxxxx xxxxxxxxx xx xxxxxxxxxxx xxxx xxx xxxxxx xx xxxxx xxx xxxxxxxxxxxxx. Xxx xxxx xxxxxx xxx xxxxxxxx xxx xxx xxxxxx’x [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206594) xxxxxxxx. X xxxxxxx xxx xx xxx xxxxxxxx xx xx xxxxxx x xxxxxxxx xxx xx xxx XX.
+[
+            **IAsyncOperationWithProgress**](https://msdn.microsoft.com/library/windows/apps/BR206594) または [**IAsyncActionWithProgress**](https://msdn.microsoft.com/library/windows/apps/BR206580withprogress_1) をサポートするメソッドは、実行中の操作が完了するまでの間、定期的に進行状況の更新を提供します。 この進行状況の報告は、タスクや継続とは別に独立して処理されます。 オブジェクトの [**Progress**](https://msdn.microsoft.com/library/windows/apps/br206594) プロパティのデリゲートを指定するだけでかまいません。 このデリゲートの一般的な用途は、UI の進行状況バーを更新することです。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxxxx Xxxxxxxxxxxx Xxxxxxxxxx xx X++ xxx Xxxxxxx Xxxxx xxxx](createAsyncCpp)
-* [Xxxxxx X++ Xxxxxxxx Xxxxxxxxx](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
-* [Xxxxxxxxxxxx Xxxxxxxxxxx](AsyncProgramming)
-* [Xxxx Xxxxxxxxxxx (Xxxxxxxxxxx Xxxxxxx)](taskParallelism)
-* [xxxx xxxxx](task-class)
+* [Windows ストア アプリ用に C++ で非同期操作を作成](createAsyncCpp)
+* [Visual C++ 言語のリファレンス](http://msdn.microsoft.com/library/windows/apps/hh699871.aspx)
+* [非同期プログラミング](AsyncProgramming)
+* [タスクの並列処理 (同時実行ランタイム)](taskParallelism)
+* [task クラス](task-class)
  
 <!-- LINKS -->
 [AsyncProgramming]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh464924.aspx
@@ -316,4 +319,8 @@ Xxxxxxx xxxx xxxxxxx [**XXxxxxXxxxxxxxxXxxxXxxxxxxx**](https://msdn.microsoft.co
 [taskGet]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750017.aspx
 [taskParallelism]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dd492427.aspx
 [taskThen]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750044.aspx
-[useArbitrary]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750036.aspx<!--HONumber=Mar16_HO1-->
+[useArbitrary]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh750036.aspx
+
+<!--HONumber=Mar16_HO1-->
+
+

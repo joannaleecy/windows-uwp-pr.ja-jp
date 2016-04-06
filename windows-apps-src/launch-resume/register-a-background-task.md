@@ -1,39 +1,39 @@
 ---
-xxxxx: Xxxxxxxx x xxxxxxxxxx xxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxx x xxxxxxxx xxxx xxx xx xx-xxxx xx xxxxxx xxxxxxxx xxxx xxxxxxxxxx xxxxx.
-xx.xxxxxxx: YXYXXXXY-XYYY-YYXY-XYXX-YXXYYXYXXXYX
+title: Register a background task
+description: Learn how to create a function that can be re-used to safely register most background tasks.
+ms.assetid: 8B1CADC5-F630-48B8-B3CE-5AB62E3DFB0D
 ---
 
-# Xxxxxxxx x xxxxxxxxxx xxxx
+# Register a background task
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxxxxxxxXxxxXxxxxxxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br224786)
--   [**XxxxxxxxxxXxxxXxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**XxxxxxXxxxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br224834)
+-   [**BackgroundTaskRegistration class**](https://msdn.microsoft.com/library/windows/apps/br224786)
+-   [**BackgroundTaskBuilder class**](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [**SystemCondition class**](https://msdn.microsoft.com/library/windows/apps/br224834)
 
-Xxxxx xxx xx xxxxxx x xxxxxxxx xxxx xxx xx xx-xxxx xx xxxxxx xxxxxxxx xxxx xxxxxxxxxx xxxxx.
+Learn how to create a function that can be re-used to safely register most background tasks.
 
-Xxxx xxxxx xxxxxxx xxxx xxx xxxxxxx xxxx x xxxxxxxxxx xxxx xxxx xxxxx xx xx xxxxxxxxxx. (Xxx [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md) xxx xxxxxxxxxxx xxxxx xxx xx xxxxx x xxxxxxxxxx xxxx).
+This topic assumes that you already have a background task that needs to be registered. (See [Create and register a background task](create-and-register-a-background-task.md) for information about how to write a background task).
 
-Xxxx xxxxx xxxxx xxxxxxx x xxxxxxx xxxxxxxx xxxx xxxxxxxxx xxxxxxxxxx xxxxx. Xxxx xxxxxxx xxxxxxxx xxxxxx xxx xxxxxxxx xxxxxxxxxxxxx xxxxx xxxxxx xxxxxxxxxxx xxx xxxx xxxxxxxx xxxxx xx xxxxx xxxxxxxx xxxx xxxxxxxx xxxxxxxxxxxxx, xxx xx xxx xxxxx x xxxxxx xxxxxxxxx xx xxx xxxxxxxxxx xxxx. Xxx xxxxxxxxxxx xxxxxxxx x xxxxxxxx, xxxxxxx xxxxxxx xx xxxx xxxxxxx xxxxxxxx.
+This topic walks through a utility function that registers background tasks. This utility function checks for existing registrations first before registering the task multiple times to avoid problems with multiple registrations, and it can apply a system condition to the background task. The walkthrough includes a complete, working example of this utility function.
 
-**Xxxx**  
+**Note**  
 
-Xxxxxxxxx Xxxxxxx xxxx xxxx xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700485) xxxxxx xxxxxxxxxxx xxx xx xxx xxxxxxxxxx xxxxxxx xxxxx.
+Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
 
-Xx xxxxxx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxx xxx xxxxxxx xx xxxxxx, xxx xxxx xxxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700471) xxx xxxx xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700485) xxxx xxxx xxx xxxxxxxx xxxxx xxxxx xxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxxxxx xxxxx](guidelines-for-background-tasks.md).
+To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
-## Xxxxxx xxx xxxxxx xxxxxxxxx xxx xxxxxx xxxx
+## Define the method signature and return type
 
 
-Xxxx xxxxxx xxxxx xx xxx xxxx xxxxx xxxxx, xxxx xxxx, x xxx-xxxxxxxxxxx xxxxxxxxxx xxxx xxxxxxx, xxx (xxxxxxxxxx) x [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224834) xxx xxx xxxxxxxxxx xxxx. Xxxx xxxxxx xxxxxxx x [**XxxxxxxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224786) xxxxxx.
+This method takes in the task entry point, task name, a pre-constructed background task trigger, and (optionally) a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) for the background task. This method returns a [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) object.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 > public static BackgroundTaskRegistration RegisterBackgroundTask(
 >                                                 string taskEntryPoint, 
@@ -59,18 +59,18 @@ Xxxx xxxxxx xxxxx xx xxx xxxx xxxxx xxxxx, xxxx xxxx, x xxx-xxxxxxxxxxx xxxxxxxx
 > }
 > ```
 
-## Xxxxx xxx xxxxxxxx xxxxxxxxxxxxx
+## Check for existing registrations
 
 
-Xxxxx xxxxxxx xxx xxxx xx xxxxxxx xxxxxxxxxx. Xx'x xxxxxxxxx xx xxxxx xxxx xxxxxxx xx x xxxx xx xxxxxxxxxx xxxxxxxx xxxxx, xx xxxx xxx xxxx xxxx xxxx xxxxxxxx xx’x xxxxxxxxx; xxxx xxx xxx xxxxxx XXX xxx xxx xxxxx xxxxxxxxxx xxxxxxxx.
+Check whether the task is already registered. It's important to check this because if a task is registered multiple times, it will run more than once whenever it’s triggered; this can use excess CPU and may cause unexpected behavior.
 
-Xxx xxx xxxxx xxx xxxxxxxx xxxxxxxxxxxxx xx xxxxxxxx xxx [**XxxxxxxxxxXxxxXxxxxxxxxxxx.XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224787) xxxxxxxx xxx xxxxxxxxx xx xxx xxxxxx. Xxxxx xxx xxxx xx xxxx xxxxxxxx – xx xx xxxxxxx xxx xxxx xx xxx xxxx xxx’xx xxxxxxxxxxx, xxxx xxxxx xxx xx xxx xxxx xxx xxx x xxxx xxxxxxxx xx xxxx xxxx xxxx xxx xxxxxx x xxxxxxxxx xxxx xx xxx xxxx xxxx.
+You can check for existing registrations by querying the [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) property and iterating on the result. Check the name of each instance – if it matches the name of the task you’re registering, then break out of the loop and set a flag variable so that your code can choose a different path in the next step.
 
-> **Xxxx**  Xxx xxxxxxxxxx xxxx xxxxx xxxx xxx xxxxxx xx xxxx xxx. Xxxxxx xxxx xxxxxxxxxx xxxx xxx x xxxxxx xxxx.
+> **Note**  Use background task names that are unique to your app. Ensure each background task has a unique name.
 
-Xxx xxxxxxxxx xxxx xxxxxxxxx x xxxxxxxxxx xxxx xxxxx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224838) xx xxxxxxx xx xxx xxxx xxxx:
+The following code registers a background task using the [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) we created in the last step:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 > public static BackgroundTaskRegistration RegisterBackgroundTask(
 >                                                 string taskEntryPoint, 
@@ -132,18 +132,18 @@ Xxx xxxxxxxxx xxxx xxxxxxxxx x xxxxxxxxxx xxxx xxxxx xxx [**XxxxxxXxxxxxx**](htt
 > }
 > ```
 
-## Xxxxxxxx xxx xxxxxxxxxx xxxx (xx xxxxxx xxx xxxxxxxx xxxxxxxxxxxx)
+## Register the background task (or return the existing registration)
 
 
-Xxxxx xx xxx xx xxx xxxx xxx xxxxx xx xxx xxxx xx xxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxxxxx. Xx xx, xxxxxx xxxx xxxxxxxx xx xxx xxxx.
+Check to see if the task was found in the list of existing background task registrations. If so, return that instance of the task.
 
-Xxxx, xxxxxxxx xxx xxxx xxxxx x xxx [**XxxxxxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768) xxxxxx. Xxxx xxxx xxxxxx xxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxx xx xxxx, xxx xx xxx, xxx xxx xxxxxxxxx xx xxx xxxxxxxxxxxx xxxxxx. Xxxxxx xxx [**XxxxxxxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224786) xxxxxxxx xx xxx [**XxxxxxxxxxXxxxXxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224772) xxxxxx.
+Then, register the task using a new [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object. This code should check whether the condition parameter is null, and if not, add the condition to the registration object. Return the [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) returned by the [**BackgroundTaskBuilder.Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method.
 
-> **Xxxx**  Xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xx xxx xxxx xx xxxxxxxxxxxx. Xx xxxxx xx xxxxxxxx xx xxx xx xxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxxx. Xxxxxx xxxx xxxx xxx xxxxxxxxxx xxxxxxx xxxxxxxxx xxxxx xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxx - xx xxxxxxx xxxx xxx xxxxxxx xx xxxxxx x xxxxx xxxxxxxxxxxx xxxxxx xxxxx xxxxxxxxxx xx xxxxxxxx x xxxx, xx xxx xxxxx.
+> **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
 
-Xxx xxxxxxxxx xxxxxxx xxxxxx xxxxxxx xxx xxxxxxxx xxxx, xx xxxx xxxx xxxx xxxxxxxxx xxx xxxxxxxxxx xxxx (xxxxxxxxx xxx xxxxxxxx xxxxxx xxxxxxxxx xx xxxxxxx):
+The following example either returns the existing task, or adds code that registers the background task (including the optional system condition if present):
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 > public static BackgroundTaskRegistration RegisterBackgroundTask(
 >                                                 string taskEntryPoint, 
@@ -241,12 +241,12 @@ Xxx xxxxxxxxx xxxxxxx xxxxxx xxxxxxx xxx xxxxxxxx xxxx, xx xxxx xxxx xxxx xxxxxx
 > }
 > ```
 
-## Xxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxxxx xxxxxxxx
+## Complete background task registration utility function
 
 
-Xxxx xxxxxxx xxxxx xxx xxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxxxxx. Xxxx xxxxxxxx xxx xx xxxx xx xxxxxxxx xxxx xxxxxxxxxx xxxxx, xxxx xxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxxxx xxxxx.
+This example shows the completed background task registration function. This function can be used to register most background tasks, with the exception of networking background tasks.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 > //
 > // Register a background task with the specified taskEntryPoint, name, trigger,
@@ -361,34 +361,38 @@ Xxxx xxxxxxx xxxxx xxx xxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxxxxx. Xxxx xxx
 > }
 > ```
 
-> **Xxxx**  Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
-## Xxxxxxx xxxxxx
+## Related topics
 
 
 ****
 
-* [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md)
-* [Xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx](declare-background-tasks-in-the-application-manifest.md)
-* [Xxxxxx x xxxxxxxxx xxxxxxxxxx xxxx](handle-a-cancelled-background-task.md)
-* [Xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx](monitor-background-task-progress-and-completion.md)
-* [Xxxxxxx xx xxxxxx xxxxxx xxxx xxxxxxxxxx xxxxx](respond-to-system-events-with-background-tasks.md)
-* [Xxx xxxxxxxxxx xxx xxxxxxx x xxxxxxxxxx xxxx](set-conditions-for-running-a-background-task.md)
-* [Xxxxxx x xxxx xxxx xxxx x xxxxxxxxxx xxxx](update-a-live-tile-from-a-background-task.md)
-* [Xxx x xxxxxxxxxxx xxxxxxx](use-a-maintenance-trigger.md)
-* [Xxx x xxxxxxxxxx xxxx xx x xxxxx](run-a-background-task-on-a-timer-.md)
-* [Xxxxxxxxxx xxx xxxxxxxxxx xxxxx](guidelines-for-background-tasks.md)
+* [Create and register a background task](create-and-register-a-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
 
 ****
 
-* [Xxxxx x xxxxxxxxxx xxxx](debug-a-background-task.md)
-* [Xxx xx xxxxxxx xxxxxxx, xxxxxx, xxx xxxxxxxxxx xxxxxx xx Xxxxxxx Xxxxx xxxx (xxxx xxxxxxxxx)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Debug a background task](debug-a-background-task.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,101 +1,101 @@
 ---
-xx.xxxxxxx: YYXYYYXX-XYYX-YXYY-YYYX-YXYXXYXYYXXX
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxxx xxxx XxxxXxxxx Xxx xxx xx xxxxxxx xxx xxxxxxx xxxx xxxx xxx xxxxxxxx Xxxxxxx Y.Y xxxxxxx xx xxx Xxxxxxx YY xxxxxxx.
-xxxxx: XxxxXxxxx Xxxxxxxxx Xxxxx Xxxxxxxxx
+ms.assetid: 79C284CA-C53A-4C24-807E-6D4CE1A29BFA
+description: This section describes how to modify your PlayReady Web app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.
+title: PlayReady Encrypted Media Extension
 ---
 
-# XxxxXxxxx Xxxxxxxxx Xxxxx Xxxxxxxxx
+# PlayReady Encrypted Media Extension
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxxxxx xxxx XxxxXxxxx Xxx xxx xx xxxxxxx xxx xxxxxxx xxxx xxxx xxx xxxxxxxx Xxxxxxx Y.Y xxxxxxx xx xxx Xxxxxxx YY xxxxxxx.
+This section describes how to modify your PlayReady Web app to support the changes made from the previous Windows 8.1 version to the Windows 10 version.
 
-Xxxxx XxxxXxxxx xxxxx xxxxxxxx xx Xxxxxxxx Xxxxxxxx xxxxxxx xxxxxxxxxx xx xxxxxx Xxx xxxx xxxxxxx xx xxxxxxxxx XxxxXxxxx xxxxxxx xx xxx xxxx xxxxx xxxxxxxxx xxx xxxxxx xxxxx xxxxxxx xx xxx xxxxxxx xxxxxxxx. Xxxx xxxxxxx xxxxxxxxx xxx xx xxx XxxxXxxxx xxxxx xxxxxxxx xx xxxx xxxxxxxx Xxx xxxx xxxxx xxxx XXXXY xxx XxxxXxxxxx.
+Using PlayReady media elements in Internet Explorer enables developers to create Web apps capable of providing PlayReady content to the user while enforcing the access rules defined by the content provider. This section describes how to add PlayReady media elements to your existing Web apps using only HTML5 and JavaScript.
 
-## Xxxx'x Xxx xx XxxxXxxxx Xxxxxxxxx Xxxxx Xxxxxxxxx
+## What's New in PlayReady Encrypted Media Extension
 
-Xxxx xxxxxxx xxxxxxxx x xxxx xx xxxxxxx xxxx xx xxx XxxxXxxxx Xxxxxxxxx Xxxxx Xxxxxxxxx xx xxxxxx XxxxXxxxx xxxxxxx xxxxxxxxxx xx Xxxxxxx YY.
+This section provides a list of changes made to the PlayReady Encrypted Media Extension to enable PlayReady content protection on Windows 10.
 
-Xxx xxxxxxxxx xxxx xxxxxxxxx xxx xxx xxxxxxxx xxx xxxxxxx xxxx xx XxxxXxxxx Xxxxxxxxx Xxxxx Xxxxxxxxx xxx Xxxxxxx YY:
+The following list describes the new features and changes made to PlayReady Encrypted Media Extension for Windows 10:
 
--   Xxxxx xxxxxxxx xxxxxxx xxxxxx xxxxxxxxxx (XXX).
+-   Added hardware digital rights management (DRM).
 
-    Xxxxxxxx-xxxxx xxxxxxx xxxxxxxxxx xxxxxxx xxxxxxx xxxxxx xxxxxxxx xx xxxx xxxxxxxxxx (XX) xxx xxxxx-xxxx xxxxxxxxxx (XXX) xxxxxxx xx xxxxxxxx xxxxxx xxxxxxxxx. Xxx xxxxxxxx (xxxxxxxxx xxxxxxx xxxx, xxxxxxx xxxx, xxx xxx xxxxx xxx xxxxxxxx xxxx xx xxxxxx xx xxxxxx xxxx xxxx), xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxx xxxxx xxxxxxx xxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxx xxxxxxxx.
+    Hardware-based content protection support enables secure playback of high definition (HD) and ultra-high definition (UHD) content on multiple device platforms. Key material (including private keys, content keys, and any other key material used to derive or unlock said keys), and decrypted compressed and uncompressed video samples are protected by leveraging hardware security.
 
--   Xxxxxxxx xxxxxxxxx xxxxxxxxxxx xx xxx-xxxxxxxxxx xxxxxxxx.
--   Xxxxxxxx xxxxxxxxxxx xx xxxxxxxx xxxxxxxx xx xxx xxxxxxx.
+-   Provides proactive acquisition of non-persistent licenses.
+-   Provides acquisition of multiple licenses in one message.
 
-    Xxx xxx xxxxxx xxx x XxxxXxxxx xxxxxx xxxx xxxxxxxx xxx xxxxxxxxxxx (XxxXXx) xx xx Xxxxxxx Y.Y, xx xxx [xxxxxxx xxxxxxxxxx xxxxx xxxx (XXXXxxx)](https://go.microsoft.com/fwlink/p/?LinkID=626819) xxxx xxxxxxxx XxxXXx.
+    You can either use a PlayReady object with multiple key identifiers (KeyIDs) as in Windows 8.1, or use [content decryption model data (CDMData)](https://go.microsoft.com/fwlink/p/?LinkID=626819) with multiple KeyIDs.
 
-    **Xxxx**  Xx Xxxxxxx YY, xxxxxxxx xxx xxxxxxxxxxx xxx xxxxxxxxx xxxxx &xx;XxxXX&xx; xx XXXXxxx.
+    **Note**  In Windows 10, multiple key identifiers are supported under &lt;KeyID&gt; in CDMData.
 
      
 
--   Xxxxx xxxx xxxx xxxxxxxxxx xxxxxxx, xx xxxxxxx xxxxxxxx xxxxxxx (XXX).
+-   Added real time expiration support, or limited duration license (LDL).
 
-    Xxxxxxxx xxx xxxxxxx xx xxx xxxx-xxxx xxxxxxxxxx xx xxxxxxxx.
+    Provides the ability to set real-time expiration on licenses.
 
--   Xxxxx XXXX Xxxx Y (xxxxxxx Y.Y) xxxxxx xxxxxxx.
--   Xxxxxxxx xx xxx xxxxxxxx xx xx xxxxxx.
--   Xxxxx xxxxxx xxxx.
+-   Added HDCP Type 1 (version 2.2) policy support.
+-   Miracast is now implicit as an output.
+-   Added secure stop.
 
-    Xxxxxx xxxx xxxxxxxx xxx xxxxx xxx x XxxxXxxxx xxxxxx xx xxxxxxxxxxx xxxxxx xx x xxxxx xxxxxxxxx xxxxxxx xxxx xxxxx xxxxxxxx xxx xxxxxxx xxx xxx xxxxx xxxxx xx xxxxxxx.
+    Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content.
 
--   Xxxxx xxxxx xxx xxxxx xxxxxxx xxxxxxxxxx.
+-   Added audio and video license separation.
 
-    Xxxxxxxx xxxxxx xxxxxxx xxxxx xxxx xxxxx xxxxxxx xx xxxxx; xxxxxxxx xxxx xxxxxx xxxxxxx xxxxxxxxxx. Xxxxxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxx xxxx xxx xxxxx xxx xxxxxx xxxxxx.
+    Separate tracks prevent video from being decoded as audio; enabling more robust content protection. Emerging standards are requiring separate keys for audio and visual tracks.
 
--   Xxxxx XxxXxxXxxxxx.
+-   Added MaxResDecode.
 
-    Xxxx xxxxxxx xxx xxxxx xx xxxxx xxxxxxxx xx xxxxxxx xx x xxxxxxx xxxxxxxxxx xxxx xxxx xx xxxxxxxxxx xx x xxxx xxxxxxx xxx (xxx xxx x xxxxxxx). Xx xxxxxxxx xxxxx xxxxx xxxxxxxx xxxxxx xxxxx xxx xxxxxxx xxxx x xxxxxx xxx.
+    This feature was added to limit playback of content to a maximum resolution even when in possession of a more capable key (but not a license). It supports cases where multiple stream sizes are encoded with a single key.
 
-## Xxxxxxxxx Xxxxx Xxxxxxxxx Xxxxxxx xx XxxxXxxxx
+## Encrypted Media Extension Support in PlayReady
 
-Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxx xx xxx XYX Xxxxxxxxx Xxxxx Xxxxxxxxx xxxxxxxxx xx XxxxXxxxx.
+This section describes the version of the W3C Encrypted Media Extension supported by PlayReady.
 
-XxxxXxxxx xxx Xxx Xxxx xx xxxxxxxxx xxxxx xx xxx [XYX Xxxxxxxxx Xxxxx Xxxxxxxxx (XXX) xxxxx xx Xxx YY, YYYY](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/). Xxxx xxxxxxx xxxx xx xxxxxxx xx xxx xxxxxxx XXX xxxxxxxxxxxxx xx xxxxxx xxxxxxxx xx Xxxxxxx.
+PlayReady for Web Apps is currently bound to the [W3C Encrypted Media Extension (EME) draft of May 10, 2013](http://www.w3.org/TR/2013/WD-encrypted-media-20130510/). This support will be changed to the updated EME specification in future versions of Windows.
 
-## Xxx Xxxxxxxx XXX
+## Use Hardware DRM
 
-Xxxx xxxxxxx xxxxxxxxx xxx xxxx xxx xxx xxx xxx XxxxXxxxx xxxxxxxx XXX, xxx xxx xx xxxxxxx xxxxxxxx XXX xx xxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxxx xx.
+This section describes how your web app can use PlayReady hardware DRM, and how to disable hardware DRM if the protected content does not support it.
 
-Xx xxx XxxxXxxxx xxxxxxxx XXX, xxxx XxxxXxxxxx xxx xxx xxxxxx xxx xxx **xxXxxxXxxxxxxxx** XXX xxxxxx xxxx x xxx xxxxxx xxxxxxxxxx xx `com.microsoft.playready.hardware` xx xxxxx xxx XxxxXxxxx xxxxxxxx XXX xxxxxxx xxxx xxx xxxxxxx.
+To use PlayReady hardware DRM, your JavaScript web app should use the **isTypeSupported** EME method with a key system identifier of `com.microsoft.playready.hardware` to query for PlayReady hardware DRM support from the browser.
 
-Xxxxxxxxxxxx, xxxx xxxxxxx xx xxx xxxxxxxxx xx xxxxxxxx XXX. Xxxxxxxx xxxxxxx xx xxxxx xxxxxxxxx xx xxxxxxxx XXX; xx xxx xxxx xx xxxx xxxxxxxx xxxxxxx, xxx xxxx xxx xxx xx xxxxxxxx XXX. Xxxx xxxxxxxx XXX xxxx xxxxxxx XXXX xxx xxxx xxxx xxx; xx xxx xxxx xx xxxx XXXX xxxxxxx xxx xxxxxxxx XXX xxxxx’x xxxxxxx xx, xxx xxxx xxxx xx xxx xxx xx xxxx.
+Occasionally, some content is not supported in hardware DRM. Cocktail content is never supported in hardware DRM; if you want to play cocktail content, you must opt out of hardware DRM. Some hardware DRM will support HEVC and some will not; if you want to play HEVC content and hardware DRM doesn’t support it, you will want to opt out as well.
 
-**Xxxx**  Xx xxxxxxxxx xxxxxxx XXXX xxxxxxx xx xxxxxxxxx, xxxxx xxxxxxxxxxxxx `com.microsoft.playready`, xxx xxx [**XxxxXxxxxXxxxxxx.XxxxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986441) xxxxxx.
+**Note**  To determine whether HEVC content is supported, after instantiating `com.microsoft.playready`, use the [**PlayReadyStatics.CheckSupportedHardware**](https://msdn.microsoft.com/library/windows/apps/dn986441) method.
 
  
 
-## Xxx Xxxxxx Xxxx xx xxxx Xxx Xxx
+## Add Secure Stop to your Web App
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxx xxxxxx xxxx xx xxxx xxx xxx.
+This section describes how to add secure stop to your web app.
 
-Xxxxxx xxxx xxxxxxxx xxx xxxxx xxx x XxxxXxxxx xxxxxx xx xxxxxxxxxxx xxxxxx xx x xxxxx xxxxxxxxx xxxxxxx xxxx xxxxx xxxxxxxx xxx xxxxxxx xxx xxx xxxxx xxxxx xx xxxxxxx. Xxxx xxxxxxxxxx xxxxxxx xxxx xxxxx xxxxxxxxx xxxxxxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxx xxxxxxxxx xx xxxxx xxxxxxxxxxx xx xxxxxxxxx xxxxxxx xxx x xxxxx xxxxxxx.
+Secure stop provides the means for a PlayReady device to confidently assert to a media streaming service that media playback has stopped for any given piece of content. This capability ensures your media streaming services provide accurate enforcement and reporting of usage limitations on different devices for a given account.
 
-Xxxxx xxx xxx xxxxxxx xxxxxxxxx xxx xxxxxxx x xxxxxx xxxx xxxxxxxxx:
+There are two primary scenarios for sending a secure stop challenge:
 
--   Xxxx xxx xxxxx xxxxxxxxxxxx xxxxx xxxxxxx xxx xx xxxxxxx xxx xxxxxxx xx xxxx xxx xxxx xxxxxxx xxx xxxxx xxxxxxxxxxxx xxxxxxxxx xx xxx xxxxxx.
--   Xxxx xxx xxxxxxxx xxxxxxx xxxx xxxxxxxxxxxx (xxx xxxxxxx, xxx xx x xxxxxx xx xxx xxxxx). Xxx xxx xxxx xxxx xx xxxxx, xxxxxx xx xxxxxxx xx xxxxxxxx, xxx xxx xxxxxxxxxxx xxxxxx xxxx xxxxxxxx xxx xxxx xxxxxxxxx(x) xxxxxxxx xxxx xxx xxxxx xxxxx xxxxxxxx.
+-   When the media presentation stops because end of content was reached or when the user stopped the media presentation somewhere in the middle.
+-   When the previous session ends unexpectedly (for example, due to a system or app crash). The app will need to query, either at startup or shutdown, for any outstanding secure stop sessions and send challenge(s) separate from any other media playback.
 
-Xxx xxxxxxxxx xxxxxxxxxx xxxxxxxx xxx xx xxx xx xxxxxx xxxx xxx xxxxxxx xxxxxxxxx.
+The following procedures describe how to set up secure stop for various scenarios.
 
-Xx xxx xx xxxxxx xxxx xxx x xxxxxx xxx xx x xxxxxxxxxxxx:
+To set up secure stop for a normal end of a presentation:
 
-1.  Xxxxxxxx xxx **xxXxxxx** xxxxx xxxxxx xxxxxxxx xxxxxx.
-2.  Xxx **xxXxxxx** xxxxx xxxxxxx xxxxx xx xxxx `removeAttribute(“src”)` xxxx xxx xxxxx/xxxxx xxxxxxx xxxxxx xx xxx xxx xxxxxx xx **XXXX** xxxxx xxxx xxxxxxx xxx xxxxx xxxxxxxxxx xx xxxx xxxx xxx xxxxxxxx, xxxxxxx xxx xxxxxxxxx(x), xxx xxx xxx xxxx xxxxx.
-3.  Xxx xxx xxxxx xxx xxxxxx xxxx XXX xxxxxxx xxxxxx xxx xxxxxxx xx xxxx xxx xxxxxx xxxx xxxxxxxxx xx xxx xxxxxx xx xxxxxx xxx xxxxxxxx xxx xxxxxxx xx xxxx xxxx, xxx xx xxx xx xxxx xxxxx xx xxxx.
+1.  Register the **onEnded** event before playback starts.
+2.  The **onEnded** event handler needs to call `removeAttribute(“src”)` from the video/audio element object to set the source to **NULL** which will trigger the media foundation to tear down the topology, destroy the decryptor(s), and set the stop state.
+3.  You can start the secure stop CDM session inside the handler to send the secure stop challenge to the server to notify the playback has stopped at this time, but it can be done later as well.
 
-Xx xxx xx xxxxxx xxxx xx xxx xxxx xxxxxxxxx xxxx xxxx xxx xxxx xx xxxxxx xxxx xxx xxx xx xxxxxxx:
+To set up secure stop if the user navigates away from the page or closes down the tab or browser:
 
--   Xx xxx xxxxxx xx xxxxxxxx xx xxxxxx xxx xxxx xxxxx; xx xxxx xx xxxxxxxx xxx xxx.
+-   No app action is required to record the stop state; it will be recorded for you.
 
-Xx xxx xx xxxxxx xxxx xxx xxxxxx xxxx xxxxxxxx xx xxxx xxxxxxx (xxxx xx xxxxxx xxxxxxxxxx xxxxxxx xx xxxxxxxx x xxx xxxxxxxxxxxx xxxxxx xxx xxxxxxx xxxxxxxxxxxx xxxxxxxxx):
+To set up secure stop for custom page controls or user actions (such as custom navigation buttons or starting a new presentation before the current presentation completed):
 
--   Xxxx xxxxxx xxxx xxxxxx xxxxxx, xxx xxx xxxxx xx xxx xxx xxxxxx xx **XXXX** xxxxx xxxx xxxxxxx xxx xxxxx xxxxxxxxxx xx xxxx xxxx xxx xxxxxxxx, xxxxxxx xxx xxxxxxxxx(x), xxx xxx xxx xxxx xxxxx.
+-   When custom user action occurs, the app needs to set the source to **NULL** which will trigger the media foundation to tear down the topology, destroy the decryptor(s), and set the stop state.
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xxx xx xxx xxxxxx xxxx xx xxxx xxx xxx:
+The following example demonstrates how to use secure stop in your web app:
 
 ``` syntax
 // JavaScript source code
@@ -254,13 +254,13 @@ function formatSecureStopCDMData(encodedSessionId, customData, encodedPublisherC
 }
 ```
 
-**Xxxx**  Xxx xxxxxx xxxx xxxx’x `<SessionID>B64 encoded session ID</SessionID>` xx xxx xxxxxx xxxxx xxx xx xx xxxxxxxx (\*), xxxxx xx x xxxx xxxx xxx xxx xxx xxxxxx xxxx xxxxxxxx xxxxxxxx. Xxxx xx, xxx **XxxxxxxXX** xxx xxx xx x xxxxxxxx xxxxxxx, xx x xxxx xxxx (\*) xx xxxxxx xxx xxx xxxxxx xxxx xxxxxxxx.
+**Note**  The secure stop data’s `<SessionID>B64 encoded session ID</SessionID>` in the sample above can be an asterisk (\*), which is a wild card for all the secure stop sessions recorded. That is, the **SessionID** tag can be a specific session, or a wild card (\*) to select all the secure stop sessions.
 
-## Xxxxxxxxxxx Xxxxxxxxxxxxxx xxx Xxxxxxxxx Xxxxx Xxxxxxxxx
+## Programming Considerations for Encrypted Media Extension
 
-Xxxx xxxxxxx xxxxx xxx xxxxxxxxxxx xxxxxxxxxxxxxx xxxx xxx xxxxxx xxxx xxxx xxxxxxx xxxx xxxxxxxx xxxx XxxxXxxxx-xxxxxxx xxx xxx xxx Xxxxxxx YY.
+This section lists the programming considerations that you should take into account when creating your PlayReady-enabled web app for Windows 10.
 
-Xxx **XXXxxxxXxxx** xxx **XXXxxxxXxxXxxxxxx** xxxxxxx xxxxxxx xx xxxx xxx xxxx xx xxxx xxxxx xxxxx xxxx xxx xxxxxx. Xxx xxx xx xxxxxxxx xxxxx xxxxxxx xxxx xxxxx xx xx xxxxxx xxxx xx xxxxxx xxxxxxxxx (xxx xxxxxxxxx xxxxx xxxxxx xxx xx xxxxx xxx xxxxxxx xx xxxxxxx xxxxxxxxxx xx xxxxxxxx xx x xxxxx xxxxxxxx xxxxxx xx x xxxxxxxx). Xxx xxxxxxx, xxx xxxxxxxxx xxxxxx xxxxxxx xxx xxxxxxxxx *x\_xxXxxxxXxxx* xxx *x\_xxxxxXxxXxxxxxx* xx xxxxxx xxxxxxxxx, xxxxx xxx xxxx xxxxxxxx xx xxx **XXXxxxxXxxx** xxx **XXXxxxxXxxXxxxxxx** xxxxxxx xx xxx xxxxxxxx.
+The **MSMediaKeys** and **MSMediaKeySession** objects created by your app must be kept alive until your app closes. One way of ensuring these objects stay alive is to assign them as global variables (the variables would become out of scope and subject to garbage collection if declared as a local variable inside of a function). For example, the following sample assigns the variables *g\_msMediaKeys* and *g\_mediaKeySession* as global variables, which are then assigned to the **MSMediaKeys** and **MSMediaKeySession** objects in the function.
 
 ``` syntax
 var g_msMediaKeys;
@@ -288,13 +288,17 @@ function foo() {
 }
 ```
 
-Xxxxx xx xxx [xxxxxx xxxxxxxxxxxx](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738) xxx xxxx xxxxxxxxxxx.
+Refer to the [sample applications](https://code.msdn.microsoft.com/windowsapps/PlayReady-samples-for-124a3738) for more information.
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

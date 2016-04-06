@@ -1,39 +1,39 @@
 ---
-xx.xxxxxxx: YYYYYXYX-YXYY-YYYX-XXXY-XYYYXYYYYXXY
-xxxxx: Xxxxxx, xxxxx, xxx xxxx x xxxx
-xxxxxxxxxxx: Xxxx xxx xxxxx x xxxx xxxxx x XxxxxxxXxxx xxxxxx.
+ms.assetid: 27914C0A-2A02-473F-BDD5-C931E3943AA0
+title: Create, write, and read a file
+description: Read and write a file using a StorageFile object.
 ---
 
-# Xxxxxx, xxxxx, xxx xxxx x xxxx
+# Create, write, and read a file
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227230)
--   [**XxxxxxxXxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br227171)
--   [**XxxxXX xxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701440)
+-   [**StorageFolder class**](https://msdn.microsoft.com/library/windows/apps/br227230)
+-   [**StorageFile class**](https://msdn.microsoft.com/library/windows/apps/br227171)
+-   [**FileIO class**](https://msdn.microsoft.com/library/windows/apps/hh701440)
 
-Xxxx xxx xxxxx x xxxx xxxxx x [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxx.
+Read and write a file using a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object.
 
-> **Xxxx**  Xxxx xxx xxx [Xxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619995).
+> **Note**  Also see the [File access sample](http://go.microsoft.com/fwlink/p/?linkid=619995).
 
-## Xxxxxxxxxxxxx
+## Prerequisites
 
--   **Xxxxxxxxxx xxxxx xxxxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx**
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    Xxx xxx xxxxx xxx xx xxxxx xxxxxxxxxxxx xxxx xx X# xx Xxxxxx Xxxxx, xxx [Xxxx xxxxxxxxxxxx XXXx xx X# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/mt187337). Xx xxxxx xxx xx xxxxx xxxxxxxxxxxx xxxx xx X++, xxx [Xxxxxxxxxxxx xxxxxxxxxxx xx X++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   **Xxxx xxx xx xxx xxx xxxx xxxx xxx xxxx xx xxxx xxxx, xxxxx xx, xx xxxx**
+-   **Know how to get the file that you want to read from, write to, or both**
 
-    Xxx xxx xxxxx xxx xx xxx x xxxx xx xxxxx x xxxx xxxxxx xx [Xxxx xxxxx xxx xxxxxxx xxxx x xxxxxx](quickstart-using-file-and-folder-pickers.md).
+    You can learn how to get a file by using a file picker in [Open files and folders with a picker](quickstart-using-file-and-folder-pickers.md).
 
-## Xxxxxxxx x xxxx
+## Creating a file
 
-Xxxx'x xxx xx xxxxxx x xxxx xx xxx xxx'x xxxxx xxxxxx. Xx xx xxxxxxx xxxxxx, xx xxxxxxx xx.
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+Here's how to create a file in the app's local folder. If it already exists, we replace it.
+> [!div class="tabbedCodeSnippets"]
 ```cs
 // Create sample file; replace if exists.
 Windows.Storage.StorageFolder storageFolder =
@@ -48,11 +48,11 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.CreateFileAsync("sample.txt", CreationCollisionOption.ReplaceExisting)
 ```
 
-## Xxxxxxx xx x xxxx
+## Writing to a file
 
 
-Xxxx'x xxx xx xxxxx xx x xxxxxxxx xxxx xx xxxx xxxxx xxx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxx. Xxx xxxxxx xxxxx xxxx xxx xxxx xx xxx xxxx xx xxxxxxx xx x xxxx (xxxxxx xxx'xx xxxxxxx xx xxx xxxx xxxxxxxxxxx xxxxx xxxxxxxx xx) xx xx xxx xxx xxxx xxxx [**XxxxxxxXxxxxx.XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227272).
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+Here's how to write to a writable file on disk using the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) class. The common first step for each of the ways of writing to a file (unless you're writing to the file immediately after creating it) is to get the file with [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
+> [!div class="tabbedCodeSnippets"]
 ```cs
 Windows.Storage.StorageFolder storageFolder =
     Windows.Storage.ApplicationData.Current.LocalFolder;
@@ -64,10 +64,10 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 ```
 
-**Xxxxxxx xxxx xx x xxxx**
+**Writing text to a file**
 
-Xxxxx xxxx xx xxxx xxxx xx xxxxxxx xxx [**XxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701505) xxxxxx xx xxx [**XxxxXX**](https://msdn.microsoft.com/library/windows/apps/hh701440) xxxxx.
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+Write text to your file by calling the [**WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.
+> [!div class="tabbedCodeSnippets"]
 ```cs
 await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
 ```
@@ -75,10 +75,10 @@ await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow");
 Await Windows.Storage.FileIO.WriteTextAsync(sampleFile, "Swift as a shadow")
 ```
 
-**Xxxxxxx xxxxx xx x xxxx xx xxxxx x xxxxxx (Y xxxxx)**
+**Writing bytes to a file by using a buffer (2 steps)**
 
-1.  Xxxxx, xxxx [**XxxxxxxXxxxxxXxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241385) xx xxx x xxxxxx xx xxx xxxxx (xxxxx xx xx xxxxxxxxx xxxxxx) xxxx xxx xxxx xx xxxxx xx xxxx xxxx.
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+1.  First, call [**ConvertStringToBinary**](https://msdn.microsoft.com/library/windows/apps/br241385) to get a buffer of the bytes (based on an arbitrary string) that you want to write to your file.
+> [!div class="tabbedCodeSnippets"]
 ```cs
 var buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBinary(
         "What fools these mortals be", Windows.Security.Cryptography.BinaryStringEncoding.Utf8);
@@ -89,8 +89,8 @@ Dim buffer = Windows.Security.Cryptography.CryptographicBuffer.ConvertStringToBi
                     Windows.Security.Cryptography.BinaryStringEncoding.Utf8)
 ```
 
-2.  Xxxx xxxxx xxx xxxxx xxxx xxxx xxxxxx xx xxxx xxxx xx xxxxxxx xxx [**XxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701490) xxxxxx xx xxx [**XxxxXX**](https://msdn.microsoft.com/library/windows/apps/hh701440) xxxxx.
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+2.  Then write the bytes from your buffer to your file by calling the [**WriteBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701490) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.
+> [!div class="tabbedCodeSnippets"]
 ```cs
 await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
 ```
@@ -98,10 +98,10 @@ await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer);
 Await Windows.Storage.FileIO.WriteBufferAsync(sampleFile, buffer)
 ```
 
-**Xxxxxxx xxxx xx x xxxx xx xxxxx x xxxxxx (Y xxxxx)**
+**Writing text to a file by using a stream (4 steps)**
 
-1.  Xxxxx, xxxx xxx xxxx xx xxxxxxx xxx [**XxxxxxxXxxx.XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn889851) xxxxxx. Xx xxxxxxx x xxxxxx xx xxx xxxx'x xxxxxxx xxxx xxx xxxx xxxxxxxxx xxxxxxxxx.
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+1.  First, open the file by calling the [**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) method. It returns a stream of the file's content when the open operation completes.
+> [!div class="tabbedCodeSnippets"]
 ```cs
 var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
 ```
@@ -109,8 +109,8 @@ var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite
 Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
 ```
 
-2.  Xxxx, xxx xx xxxxxx xxxxxx xx xxxxxxx xxx [**XxxXxxxxxXxxxxxXx**](https://msdn.microsoft.com/library/windows/apps/br241738) xxxxxx xxxx xxx `stream`. Xxx xxxx xx x **xxxxx** xxxxxxxxx xx xxxxxx xxx xxxxxx xxxxxx'x xxxxxxxx.
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+2.  Next, get an output stream by calling the [**GetOutputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241738) method from the `stream`. Put this in a **using** statement to manage the output stream's lifetime.
+> [!div class="tabbedCodeSnippets"]
 ```cs
 using (var outputStream = stream.GetOutputStreamAt(0))
     {
@@ -124,8 +124,8 @@ Using outputStream = stream.GetOutputStreamAt(0)
 End Using
 ```
 
-3.  Xxx xxx xxxx xxxx xxxxxx xxx xxxxxxxx **xxxxx** xxxxxxxxx xx xxxxx xx xxx xxxxxx xxxxxx xx xxxxxxxx x xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208154) xxxxxx xxx xxxxxxx xxx [**XxxxXxxxxx.XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241642) xxxxxx.
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+3.  Now add this code within the existing **using** statement to write to the output stream by creating a new [**DataWriter**](https://msdn.microsoft.com/library/windows/apps/br208154) object and calling the [**DataWriter.WriteString**](https://msdn.microsoft.com/library/windows/apps/br241642) method.
+> [!div class="tabbedCodeSnippets"]
 ```cs
 using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
     {
@@ -138,8 +138,8 @@ using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
     dataWriter.WriteString("DataWriter has methods to write to various types, such as DataTimeOffset.")
 ```
 
-4.  Xxxxxx, xxx xxxx xxxx (xxxxxx xxx xxxxx **xxxxx** xxxxxxxxx) xx xxxx xxx xxxx xx xxxx xxxx xxxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208171) xxx xxxxx xxx xxxxxx xxxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241729).
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+4.  Lastly, add this code (within the inner **using** statement) to save the text to your file with [**StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) and close the stream with [**FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br241729).
+> [!div class="tabbedCodeSnippets"]
 ```cs
     await dataWriter.StoreAsync();
         await outputStream.FlushAsync(); 
@@ -149,11 +149,11 @@ using (var dataWriter = new Windows.Storage.Streams.DataWriter(outputStream))
         Await outputStream.FlushAsync()
 ```
 
-## Xxxxxxx xxxx x xxxx
+## Reading from a file
 
 
-Xxxx'x xxx xx xxxx xxxx x xxxx xx xxxx xxxxx xxx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxx. Xxx xxxxxx xxxxx xxxx xxx xxxx xx xxx xxxx xx xxxxxxx xxxx x xxxx xx xx xxx xxx xxxx xxxx [**XxxxxxxXxxxxx.XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227272).
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+Here's how to read from a file on disk using the [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) class. The common first step for each of the ways of reading from a file is to get the file with [**StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272).
+> [!div class="tabbedCodeSnippets"]
 ```cs
 Windows.Storage.StorageFolder storageFolder =
     Windows.Storage.ApplicationData.Current.LocalFolder;
@@ -165,10 +165,10 @@ Dim storageFolder As StorageFolder = Windows.Storage.ApplicationData.Current.Loc
 Dim sampleFile As StorageFile = Await storageFolder.GetFileAsync("sample.txt")
 ```
 
-**Xxxxxxx xxxx xxxx x xxxx**
+**Reading text from a file**
 
-Xxxx xxxx xxxx xxxx xxxx xx xxxxxxx xxx [**XxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701482) xxxxxx xx xxx [**XxxxXX**](https://msdn.microsoft.com/library/windows/apps/hh701440) xxxxx.
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+Read text from your file by calling the [**ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.
+> [!div class="tabbedCodeSnippets"]
 ```cs
 string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 ```
@@ -176,10 +176,10 @@ string text = await Windows.Storage.FileIO.ReadTextAsync(sampleFile);
 Dim text As String = Await Windows.Storage.FileIO.ReadTextAsync(sampleFile)
 ```
 
-**Xxxxxxx xxxxx xxxx x xxxx xx xxxxx x xxxxxx (Y xxxxx)**
+**Reading bytes from a file by using a buffer (2 steps)**
 
-1.  Xxxxx, xxxx xxxxx xxxx xxxx xxxxxx xx xxxx xxxx xx xxxxxxx xxx [**XxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701468) xxxxxx xx xxx [**XxxxXX**](https://msdn.microsoft.com/library/windows/apps/hh701440) xxxxx.
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+1.  First, read bytes from your buffer to your file by calling the [**ReadBufferAsync**](https://msdn.microsoft.com/library/windows/apps/hh701468) method of the [**FileIO**](https://msdn.microsoft.com/library/windows/apps/hh701440) class.
+> [!div class="tabbedCodeSnippets"]
 ```cs
 var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
 ```
@@ -187,8 +187,8 @@ var buffer = await Windows.Storage.FileIO.ReadBufferAsync(sampleFile);
 Dim buffer = Await Windows.Storage.FileIO.ReadBufferAsync(sampleFile)
 ```
 
-2.  Xxxx xxx x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208119) xxxxxx xx xxxx xxxxx xxx xxxxxx xx xxx xxxxxx xxx xxxx xxx xxxxxxxx.
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+2.  Then use a [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) object to read first the length of the buffer and then its contents.
+> [!div class="tabbedCodeSnippets"]
 ```cs
 using (var dataReader = Windows.Storage.Streams.DataReader.FromBuffer(buffer))
     {
@@ -200,10 +200,10 @@ Dim dataReader As DataReader = Windows.Storage.Streams.DataReader.FromBuffer(buf
     Dim text As String = dataReader.ReadString(buffer.Length)
 ```
 
-**Xxxxxxx xxxx xxxx x xxxx xx xxxxx x xxxxxx (Y xxxxx)**
+**Reading text from a file by using a stream (4 steps)**
 
-1.  Xxxx x xxxxxx xxx xxxx xxxx xx xxxxxxx xxx [**XxxxxxxXxxx.XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn889851) xxxxxx. Xx xxxxxxx x xxxxxx xx xxx xxxx'x xxxxxxx xxxx xxx xxxxxxxxx xxxxxxxxx.
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+1.  Open a stream for your file by calling the [**StorageFile.OpenAsync**](https://msdn.microsoft.com/library/windows/apps/dn889851) method. It returns a stream of the file's content when the operation completes.
+> [!div class="tabbedCodeSnippets"]
 ```cs
 var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite);
 ```
@@ -211,8 +211,8 @@ var stream = await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite
 Dim stream = Await sampleFile.OpenAsync(Windows.Storage.FileAccessMode.ReadWrite)
 ```
 
-2.  Xxx xxx xxxx xx xxx xxxxxx xx xxx xxxxx.
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+2.  Get the size of the stream to use later.
+> [!div class="tabbedCodeSnippets"]
 ```cs
 ulong size = stream.Size;
 ```
@@ -220,8 +220,8 @@ ulong size = stream.Size;
 Dim size = stream.Size
 ```
 
-3.  Xxx xx xxxxx xxxxxx xx xxxxxxx xxx [**XxxXxxxxXxxxxxXx**](https://msdn.microsoft.com/library/windows/apps/br241737) xxxxxx. Xxx xxxx xx x **xxxxx** xxxxxxxxx xx xxxxxx xxx xxxxxx'x xxxxxxxx. Xxxxxxx Y xxxx xxx xxxx **XxxXxxxxXxxxxxXx** xx xxx xxx xxxxxxxx xx xxx xxxxxxxxx xx xxx xxxxxx.
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+3.  Get an input stream by calling the [**GetInputStreamAt**](https://msdn.microsoft.com/library/windows/apps/br241737) method. Put this in a **using** statement to manage the stream's lifetime. Specify 0 when you call **GetInputStreamAt** to set the position to the beginning of the stream.
+> [!div class="tabbedCodeSnippets"]
 ```cs
 using (var inputStream = stream.GetInputStreamAt(0))
     {
@@ -234,8 +234,8 @@ Using inputStream = stream.GetInputStreamAt(0)
 End Using
 ```
 
-4.  Xxxxxx, xxx xxxx xxxx xxxxxx xxx xxxxxxxx **xxxxx** xxxxxxxxx xx xxx x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208119) xxxxxx xx xxx xxxxxx xxxx xxxx xxx xxxx xx xxxxxxx [**XxxxXxxxxx.XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208135) xxx [**XxxxXxxxxx.XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208147).
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+4.  Lastly, add this code within the existing **using** statement to get a [**DataReader**](https://msdn.microsoft.com/library/windows/apps/br208119) object on the stream then read the text by calling [**DataReader.LoadAsync**](https://msdn.microsoft.com/library/windows/apps/br208135) and [**DataReader.ReadString**](https://msdn.microsoft.com/library/windows/apps/br208147).
+> [!div class="tabbedCodeSnippets"]
 ```cs
 using (var dataReader = new Windows.Storage.Streams.DataReader(inputStream))
     {
@@ -256,4 +256,8 @@ Dim dataReader As New DataReader(inputStream)
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

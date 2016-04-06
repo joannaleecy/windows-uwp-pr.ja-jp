@@ -1,43 +1,43 @@
 ---
-xx.xxxxxxx: YXXXXYYX-YYXY-YXYX-XYXY-XYXYYYXXXYYY
-xxxxx: Xxxx x xxxx xxxx x xxxxxx
-xxxxxxxxxxx: Xxx XxxxXxxxXxxxxx xx xxx xxxxx xxxxxxx xxx xxxx xxx xxxxxxxx xxxxx xxxx xxxx xxxx xxx xx xxxx x xxxx.
+ms.assetid: 8BDDE64A-77D2-4F9D-A1A0-E4C634BCD890
+title: Save a file with a picker
+description: Use FileSavePicker to let users specify the name and location where they want your app to save a file.
 ---
 
-# Xxxx x xxxx xxxx x xxxxxx
+# Save a file with a picker
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207871)
--   [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171)
+-   [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871)
+-   [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171)
 
-Xxx [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207871) xx xxx xxxxx xxxxxxx xxx xxxx xxx xxxxxxxx xxxxx xxxx xxxx xxxx xxx xx xxxx x xxxx.
+Use [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) to let users specify the name and location where they want your app to save a file.
 
-> **Xxxx**  Xxxx xxx xxx [Xxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619994).
+> **Note**  Also see the [File picker sample](http://go.microsoft.com/fwlink/p/?linkid=619994).
 
  
 
-## Xxxxxxxxxxxxx
+## Prerequisites
 
 
--   **Xxxxxxxxxx xxxxx xxxxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx**
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    Xxx xxx xxxxx xxx xx xxxxx xxxxxxxxxxxx xxxx xx X# xx Xxxxxx Xxxxx, xxx [Xxxx xxxxxxxxxxxx XXXx xx X# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/mt187337). Xx xxxxx xxx xx xxxxx xxxxxxxxxxxx xxxx xx X++, xxx [Xxxxxxxxxxxx xxxxxxxxxxx xx X++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   **Xxxxxx xxxxxxxxxxx xx xxx xxxxxxxx**
+-   **Access permissions to the location**
 
-    Xxx [Xxxx xxxxxx xxxxxxxxxxx](file-access-permissions.md).
+    See [File access permissions](file-access-permissions.md).
 
-## XxxxXxxxXxxxxx: xxxx-xx-xxxx
+## FileSavePicker: step-by-step
 
 
-Xxx x [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207871) xx xxxx xxxx xxxxx xxx xxxxxxx xxx xxxx, xxxx, xxx xxxxxxxx xx x xxxx xx xxxx. Xxxxxx, xxxxxxxxx, xxx xxxx x xxxx xxxxxx xxxxxx, xxx xxxx xxxx xxxx xxx xxx xxxxxxxx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxx xxxx xxxxxxxxxx xxx xxxx xxxxxx.
+Use a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) so that your users can specify the name, type, and location of a file to save. Create, customize, and show a file picker object, and then save data via the returned [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object that represents the file picked.
 
-1.  **Xxxxxx xxx xxxxxxxxx xxx XxxxXxxxXxxxxx**
+1.  **Create and customize the FileSavePicker**
 
 ```cs
 var savePicker = new Windows.Storage.Pickers.FileSavePicker();
@@ -49,24 +49,24 @@ savePicker.FileTypeChoices.Add("Plain Text", new List<string>() { ".txt" });
 savePicker.SuggestedFileName = "New Document";
 ```
 
-Xxx xxxxxxxxxx xx xxx xxxx xxxxxx xxxxxx xxxx xxx xxxxxxxx xx xxxx xxxxx xxx xxxx xxx. Xxx xxxxxxxxxx xx xxxx xxx xxxxxx xxx xx xxxxxxxxx xxx xxxx xxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxxxx xxx xxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465182).
+Set properties on the file picker object that are relevant to your users and your app. For guidelines to help you decide how to customize the file picker, see [Guidelines and checklist for file pickers](https://msdn.microsoft.com/library/windows/apps/hh465182).
 
-Xxxx xxxxxxx xxxx xxxxx xxxxxxxxxx: [**XxxxxxxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207880), [**XxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207875) xxx [**XxxxxxxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207878).
+This example sets three properties: [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880), [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) and [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878).
 
-> **Xxxx**[**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207871) xxxxxxx xxxxxxx xxx xxxx xxxxxx xxxxx xxx [**XxxxxxXxxxXxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br207891).
+> **Note**  [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) objects display the file picker using the [**PickerViewMode.List**](https://msdn.microsoft.com/library/windows/apps/br207891).
 
      
-- Xxxxxxx xxx xxxx xx xxxxxx x xxxxxxxx xx xxxx xxxx, xxx xxxxxx xxxx [**XxxxxxxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207880) xx xxx xxx'x xxxxx xxxxxx xx xxxxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241621). Xxx [**XxxxxxxxxXxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207854) xx x xxxxxxxx xxxxxxxxxxx xxx xxx xxxx xx xxxx xxxxx xxxxx, xxx xxxxxxx Xxxxx, Xxxxxxxx, Xxxxxx, xx Xxxxxxxxx. Xxxx xxx xxxxx xxxxxxxx, xxx xxxx xxx xxxxxxxx xx xxxxx xxxxxxxxx.
+- Because our user is saving a document or text file, the sample sets [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207880) to the app's local folder by using [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621). Set [**SuggestedStartLocation**](https://msdn.microsoft.com/library/windows/apps/br207854) to a location appropriate for the type of file being saved, for example Music, Pictures, Videos, or Documents. From the start location, the user can navigate to other locations.
  
-- Xxxxxxx xx xxxx xx xxxx xxxx xxx xxx xxx xxxx xxx xxxx xxxxx xx xx xxxxx, xx xxx [**XxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207875) xx xxxxxxx xxxx xxxxx xxxx xxx xxxxxx xxxxxxxx (Xxxxxxxxx Xxxx xxxxxxxxx xxx xxxx xxxxx). Xxxx xxxx xxx xxx xxxx xxxxx xxxx xxx xxxxxxx xxx xxxxxxxxx xx xxxx xxx. Xxxxx xxxx xx xxxx xx xxxx xxxxx xxxx xx xxx xx xxx xxxx xxxxx xxx xxxxxxx. Xxxx xxx xxxx xxxxxx xxx xxxx xxxx xx xxxxxxxxx xxxxxxx xx xxx xxxx xxxxx xxxx xxx xxxxxxxxx. Xxx xxxxx xxxx xxxx xxxxxx xx xxx xxxx xxxx xx xxxxxxxx xx xxxxxxx: xx xxxxxxx xxxx, xxx xxx [**XxxxxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207873) xxxxxxxx.
+- Because we want to make sure our app can open the file after it is saved, we use [**FileTypeChoices**](https://msdn.microsoft.com/library/windows/apps/br207875) to specify file types that the sample supports (Microsoft Word documents and text files). Make sure all the file types that you specify are supported by your app. Users will be able to save their file as any of the file types you specify. They can also change the file type by selecting another of the file types that you specified. The first file type choice in the list will be selected by default: to control that, set the [**DefaultFileExtension**](https://msdn.microsoft.com/library/windows/apps/br207873) property.
 
-> **Xxxx**  Xxx xxxx xxxxxx xxxx xxxx xxx xxxxxxxxx xxxxxxxx xxxx xxxx xx xxxxxx xxxxx xxxxx xx xxxxxxxx, xx xxxx xxxx xxxx xxxxx xxxx xxxxx xxx xxxxxxxx xxxxx xxxxx xxx xxxxxxxxx xx xxx xxxx.
+> **Note**  The file picker also uses the currently selected file type to filter which files it displays, so that only file types that match the selected files types are displayed to the user.
 
-- Xx xxxx xxx xxxx xxxx xxxxxx, xxx xxxxxxx xxxx x [**XxxxxxxxxXxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207878). Xxxx xxxx xxxxxxxxx xxxx xxxx xxxxxxxx xx xxx xxxx xxxxx xxxxx. Xxx xxxxxxx, xxxx Xxxx, xxx xxx xxxxxxx xxx xxxxxxxx xxxx xxxx xx xxxxx xx xxx, xx xxx xxxxx xxxx xx x xxxxxxxx xx xxx xxxx xx xxxxxx x xxxx xxxx xxxx xxx xxx xxxx x xxxx.
+- To save the user some typing, the example sets a [**SuggestedFileName**](https://msdn.microsoft.com/library/windows/apps/br207878). Make your suggested file name relevant to the file being saved. For example, like Word, you can suggest the existing file name if there is one, or the first line of a document if the user is saving a file that does not yet have a name.
 
-2.  **Xxxx xxx XxxxXxxxXxxxxx xxx xxxx xx xxx xxxxxx xxxx**
+2.  **Show the FileSavePicker and save to the picked file**
 
-    Xxxxxxx xxx xxxx xxxxxx xx xxxxxxx [**XxxxXxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br207876). Xxxxx xxx xxxx xxxxxxxxx xxx xxxx, xxxx xxxx, xxx xxxxxxxx, xxx xxxxxxxx xx xxxx xxx xxxx, **XxxxXxxxXxxxXxxxx** xxxxxxx x [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxx xxxx xxxxxxxxxx xxx xxxxx xxxx. Xxx xxx xxxxxxx xxx xxxxxxx xxxx xxxx xxx xxxx xxx xxxx xxxx xxx xxxxx xxxxxx xx xx.
+    Display the file picker by calling [**PickSaveFileAsync**](https://msdn.microsoft.com/library/windows/apps/br207876). After the user specifies the name, file type, and location, and confirms to save the file, **PickSaveFileAsync** returns a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object that represents the saved file. You can capture and process this file now that you have read and write access to it.
 
 ```cs
 Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
@@ -97,9 +97,9 @@ Windows.Storage.StorageFile file = await savePicker.PickSaveFileAsync();
     }
 ```
 
-Xxx xxxxxxx xxxxxx xxxx xxx xxxx xx xxxxx xxx xxxxxx xxx xxx xxxx xxxx xxxx xx. Xxxx xxx [Xxxxxxxx, xxxxxxx, xxx xxxxxxx x xxxx](quickstart-reading-and-writing-files.md).
+The example checks that the file is valid and writes its own file name into it. Also see [Creating, writing, and reading a file](quickstart-reading-and-writing-files.md).
 
-**Xxx**  Xxx xxxxxx xxxxxx xxxxx xxx xxxxx xxxx xx xxxx xxxx xx xx xxxxx xxxxxx xxx xxxxxxx xxx xxxxx xxxxxxxxxx. Xxxx, xxx xxx xxxx xxxxxxx xx xxx xxxx xx xxxxxxxxxxx xxx xxxx xxx, xxx xxxxxxx xxxxxxxxxxx xxxxxxxx xx xxx xxxxxx xxxx xx xxx xxxxx.
+**Tip**  You should always check the saved file to make sure it is valid before you perform any other processing. Then, you can save content to the file as appropriate for your app, and provide appropriate behavior if the picked file is not valid.
 
      
 
@@ -110,4 +110,8 @@ Xxx xxxxxxx xxxxxx xxxx xxx xxxx xx xxxxx xxx xxxxxx xxx xxx xxxx xxxx xxxx xx. 
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

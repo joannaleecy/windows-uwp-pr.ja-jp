@@ -1,92 +1,93 @@
 ---
-Xxxxxxxxxxx: Xxx Xxxxxxx xxx xxxxxxxxxxxx xxxx xx xxx xxx xxxxxxxxxx xxxxxxx xxxx xxx xxxxxxxxx xxx xxxx xxxx xxx xxxx xxxx, xxxxxxx xxx'xx xxxxx x xxxx xxxxx, xxx xxx, xxxx, xxx xxxxx xx xxxx xx xxxxxxxxx xx xxxxxxxxx.
-xxxxx: Xxx xxx xxxxxxx xxx xxxxxxxxxxxx
-xx.xxxxxxx: YYXXYXYY-XXYY-YYXX-YYYY-XXXYXXYYYYYY
+Description: The Pricing and availability page of the app submission process lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers.
+title: Set app pricing and availability
+ms.assetid: 37BE7C25-AA74-43CD-8969-CBA3BD481575
 ---
 
-# Xxx xxx xxxxxxx xxx xxxxxxxxxxxx
+# Set app pricing and availability
 
 
-Xxx **Xxxxxxx xxx xxxxxxxxxxxx** xxxx xx xxx [xxx xxxxxxxxxx xxxxxxx](app-submissions.md) xxxx xxx xxxxxxxxx xxx xxxx xxxx xxx xxxx xxxx, xxxxxxx xxx'xx xxxxx x xxxx xxxxx, xxx xxx, xxxx, xxx xxxxx xx xxxx xx xxxxxxxxx xx xxxxxxxxx. Xxxx, xx'xx xxxx xxxxxxx xxx xxxxxxx xx xxxx xxxx xxx xxxx xxx xxxxxx xxxxxxxx xxxx xxxxxxxx xxxx xxxxxxxxxxx.
+The **Pricing and availability** page of the [app submission process](app-submissions.md) lets you determine how much your app will cost, whether you'll offer a free trial, and how, when, and where it will be available to customers. Here, we'll walk through the options on this page and what you should consider when entering this information.
 
-## Xxxx xxxxx
-
-
-Xxx xxxxx xxxx xx xxxx xxxx xxxx xxx xxxxxx x xxxx xxxxx xxx xxxx xxx. Xxx xxx xxxxxx xx xxxxx xx xxx xxxx, xx xxx xxx xxxxxx xxx xx xxx xxxxxxxxx xxxxx xxxxx. Xxxxxxxxxx x xxxx xxxxx xx xxxxxxxx xx xxxxx xx xxxxxx xxxx xxx.
-
-Xxx xxxx xxxx, xxx [Xxxxxx xxxxxxx xxx xxxxxx xxxxxxxxx](define-pricing-and-market-selection.md).
-
-## Xxxx xxxxx
+## Base price
 
 
-Xxxx xxxxxxxxxx xxxxxx xx xxxxx xxxxxxxxx xx xxx xxx xxxxx xxx xxx xxxx xxxxx xxx xxxxx xxxxxxxxxxxxx xxxxxxxx xx xxx Xxxxx. Xx xxxxxxx, xx xxx xxxx xxx xx xxxxxxxxx xx x xxxx xxxxx, xxx xx xxx'x xxxx xx xxxxx xxx, xxxxxx x xxxxx xxxx xxx **Xxxx xxxxx** xxxxxxxx.
+The first item on this page lets you select a base price for your app. You can choose to offer it for free, or you can select one of the available price tiers. Specifying a base price is required in order to submit your app.
 
-Xxxxxx **Xxxxx xxxxx xxxxxxx** xx xxx xxxxxxxxx xxxxxx xxxx xxx xxx xxxx xxxxxxxxxxxx. Xxx'xx xxxx xx xxxxxxxxx xxxx xx xxxxxxxx xxx xxxx xxxxxxx, xx xxxx xxxx xx xxx xxxx xx [xxxxxxx xx xxxxx xxxxxxxx xx xxx xxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt219685).
+For more info, see [Define pricing and market selection](define-pricing-and-market-selection.md).
 
-Xxx xxxx xxxx xxx xxxxxx xx xxxxxx x xxxx-xxxxxxx xxxxx xx **Y xxx**, **Y xxxx**, **YY xxxx**, xx **YY xxxx**. Xxx xxx xxxxx xxxxx xxxxxxxx xxxxxx xxx xxxxx xxxxxx, xx xxx xxx xxx xxxxxxxxx xxxxxx xxx xxxx xxxxxxxxxxxxx xxxxxx xxxx xxxxxx xx xxxx.
-
-> **Xxxx**  Xxxx-xxxxxxx xxxxxx xxx xxx xxxxx xx xxxxxxxxx xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx.
-
-## Xxxxxxx xxx xxxxxx xxxxxx
+## Free trial
 
 
-Xx xxxxxxx, xxxx xxx xxxx xx xxxxxx xx xxx xxxxxxxx xxxxxxx xx xxx xxxx xxxxx. Xxx xxx xxxxxx xxxxx xxxxxxxx xx xxxxxxx xx xxxxxxx xxxxxxxx xxxxxxx, xxx xxxxxx xxx xxx'x xxxxx xx xxx xxxxxx xx xxxxx xxx xxxxx xx, xx xxx **Xxxxxxx xxx xxxxxx xxxxxx** xxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxx xxxxxxx xxx xxxxxx xxxxxxxxx](define-pricing-and-market-selection.md).
+Many developers choose to allow customers to try out their app for free using the trial functionality provided by the Store. By default, an app will not be available as a free trial, but if you'd like to offer one, select a value from the **Free trial** dropdown.
 
-## Xxxx xxxxxxx
+Choose **Trial never expires** to let customers access your app for free indefinitely. You'll want to encourage them to purchase the full version, so make sure to add code to [exclude or limit features in the trial version](https://msdn.microsoft.com/library/windows/apps/mt219685).
 
+You also have the option to select a time-limited trial of **1 day**, **7 days**, **15 days**, or **30 days**. You can still limit features during the trial period, or you can let customers access the full functionality during that period of time.
 
-Xx xxx xxxx xx xxxxx xxxx xxx xx x xxxxxxx xxxxx xxx x xxxxxxx xxxxxx xx xxxx, xxx xxx xxxxxx xxx xxxxxxxx x xxxx. Xxx xxxx xxxx, xxx [Xxx xxxx xxx XXXx xx xxxx](put-apps-and-iaps-on-sale.md).
+> **Note**  Time-limited trials are not shown to customers on Windows Phone 8.1 and earlier.
 
-## Xxxxxxxxxxxx xxx xxxxxxxxxx
-
-
-Xxx **Xxxxxxxxxxxx xxx xxxxxxxxxx** xxxxxxx xxxxxx xxx xx xxx xxxxxxxxxxxx xx xxx xxxx xxx xxx xx xxxxxxxxxx xxx xxxxxxxx.
-
-Xxx xxxxxxx xxxxxxx xx **Xxxx xxxx xxx xxxxxxxxx xx xxx Xxxxx**. Xxxx xxxxx xxxx xxxx xxx xxxx xx xxxxxx xx xxx Xxxxx xxx xxxxxxxxx xx xxxx xxx xxx xxx'x xxxxxx xxxx xxx/xx xx xxxxx xxxxxxx, xxxxxxxxx xxxxxxxxx, xxxxxxxx, xxx xxxxxxxxx xx xxxxxxx xxxxx.
-
-Xx xxx xxxx xx xxxx xxxx xxx xx xxx Xxxxx xxx xxxxx xxxx xx xxxxxxxxx xx xxxxxxx xxxxxx, xxxxxx xxx xx xxx xxxxxxxxx xxxxxxx xx xxxxx xxxx xxx'x xxxxxxxxxxxx. Xxxx xxxx xxxxxxxxx xx Xxxxxxx Y xxx Xxxxxxx Y.Y xxx'x xx xxxx xx xxx xxx xxx xx xxx xx xxx xxxxxx xxx xx xxxxx xxxxxxx.
-
--   **Xxxx xxxx xxx xxx xxxxxxx xxxxxxxxxxx. Xxxxxxxxx xxxx x xxxxxxxxxxx xxxx xxx xxxxx xxxxxxxx xx xx Xxxxxxx YY xxxxxxx**: Xx xxxxxxxxx xxx xxxx xxxx xxx xx xxx Xxxxx xxx xxxxxxxxx xx xxxxxxxx, xxx xxx xxx [xxxxxxxx xxxxxxxxxxx xxxxx](generate-promotional-codes.md) xx xxxxxxxxxx xx xxxxxxxx xxxxxx xx Xxxxxxx YY. Xxxx xxx xxx xxx xxxx xxx xxxx xx xxx xxxx xxx xxx xxxx, xxxx xxxxxx xxx xxxx'x xxxxxxxx xx xx xxx xxxxx xxxxxxxxx
--   **Xxxx xxxx xxx xx xxx Xxxxx. Xxxxxxxxx xxxx x xxxxxx xxxx xx xxx xxx’x xxxxxxx xxx xxxxx xxxxxxxx xx, xxxxxx xx Xxxxxxx Y xxx Xxxxxxx Y.Y**: Xx xxxxxxxxx xxx xxxx xxxx xxx xx xxx Xxxxx xxx xxxxxxxxx xx xxxxxxxx, xxx xxx xxxxxxxx xxxx xxx xxxxxx xxxx xx xxxx xxx'x xxxxxxx xxx xxxxxxxx xxxx xxx xx xxxxxxx xxxxxxx Xxxxxxx YY xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx.
--   **Xxxx xxxx xxx xxx xxxx xx xxxxxxxxx xxxx xx xxx xxxxxx xxx xxxxxxx xxxxx, xxx xxx xxxxxxxx xxxx xxx xx Xxxxxxx Xxxxx Y.x xxxxxxx. X xxxxxxxxxxx xxxx xxx xx xxxx xx xxxxxxxx xxxx xxx xx Xxxxxxx YY xxxxxxx**: Xx xxxxxxxxx xxx xxxx xxxx xxx xx xxx Xxxxx xxx xxxxxxxxx xx xxxxxxxx, xxx xxxx xxx Xxxxxxx Xxxxx Y.x xxxxxxxxx xxxxx xxxxx xxxxxxxxx (xxxxxxxxxx xxxx xxxxx Xxxxxxxxx xxxxxxxx) xxxx xxx xxxxx xx xxx xxx (xxxxxxxxx xx xxxxxxxxxx) xxx xxxxxxxx xxxx xxx xx xxxxx xxx xxxxxx xxxx xx xxx xxxxxxx. Xxx xxx xxxx [xxxxxxxx xxxxxxxxxxx xxxxx](generate-promotional-codes.md) xx xxxxxxxxxx xx xxxxxxxx xxxxxx xx Xxxxxxx YY. Xxxx xxxxxx xx xxxxx xxxx xxx [xxxx xxxxxxx](beta-testing-and-targeted-distribution.md) xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx. Xxxx xxxx xxxx xxxxxx xxx xxxx xx xxxxxxxx xx xxx xxxx xxxxx xxxxxxxxxx xxxxxxxxx xxx xxx xxxx xxx **Xxxxxxxxxxxx xxx xxxxxxxxxx** xxxxxx xxx xx **Xxxxxx xxx xxxx xxxx xxx xx xxx Xxxxx**.
-
-> **Xxxx**  Xx xxxxxxxxxx xxxx xxxxxxxx xx xxx xx xxx xxxxxxxxx, xxxxx **Xxxx xxx xxxxxxxxxxx** xxxx xxx Xxx xxxxxxxx xxxx. Xxxxx xxx xxxxxxx xxxx xxx xxxx xx xxxx xxx xxx xxxxxxxxxxx, xxxxxx x xxx xxxxx xx xxxx xx xxxxxx xx xxxxxxx xx xxx Xxxxx, xxx xx xxx xxxxxxxxx xxxx xx xxxx xx xxx xx xxx xxx xxxxxx. Xxxx xxxxxx xxxx xxxxxxxx xxx xx xxx xxxxxxx xxx xxxx xxxxxx xxxx: xx xxx'x xx xxxxxxxxx xx xxx xxxxxxxxx xx xxx. Xx xxxx xx xxxxxxxxx xx xxx xxxxxxxxx xxxxx, xxx xxx xxxxx **Xxxx xxx xxxxxxxxx** xxxx xxx Xxx xxxxxxxx xxxx xx xxx xxxx. Xxx xxxx xxxx, xxx [Xxxxxxxx xx xxx xxxx xxx Xxxxx](guidance-for-app-package-management.md#removing-an-app-from-the-store).
-
-## Xxxxxxx YY xxxxxx xxxxxxxx
+## Markets and custom prices
 
 
-Xx xxxxxxx, xx xxxx xxx xxxxxxxxxxxx xx xxxx xxx xxxxxxxxx xx xxxxx xxxx xx Xxxxxxx YY xxxxxx xxxx xxx xxx xx. (Xx xxxx xxxxxxx xxx'x xxx xx x xxxxxxx xxxxxx xxxx, xx xxx'x xxxxx xx xxx xxxxxxxx xx xxxx xxxx xx xxxxxx.)
+By default, your app will be listed in all possible markets at its base price. You can change these settings to include or exclude specific markets, and change the app's price in any market in which you offer it, in the **Markets and custom prices** section. For more info, see [Define pricing and market selection](define-pricing-and-market-selection.md).
 
-Xx xxxxxxxxx xxxxxxx xxx xxxxx xxxxxxx xxxx xxxxxx xxx xxxx x xxxxxxxx xxxxxx xx xxxxx xxx xxxxx xx Xxxxxxx YY xxxxxxx xxxxx xxx xxxxxxx xxxx xxx. Xxx xxxxxxx, xxx xxx xxxx xxxxxxx Xxxxxxx Xxxxxxxxx xxxxxxxx, xxx xxx xxxx xxxx xxx xxxxx xxxx xx xxxx xxxx xxxxxx xxxx xxx xxx xx xxxxxx xxxxxxx. Xx xxxxxxx xxx xxxxxxxxx xxxx xxxxxxxxxxx xxx xxx xx Xxxxxxx YY xxxxxx xxxxxxx, xxx xxx xxxxxxx xxx **Xxxxxx** xxxxxxxx xxxx. Xxxx xx xxx xxxxx xxxxxx xxx'xx xxxxx xx xxxxx xx xx xxxxxxxxx xx Xxxxxxx YY xxxxxx xxxxxxx, xxx xxx xxxxxx x xxx xxxxxxxxxx xxxx xxx **Xxxxxx** xxx xxxxxxx.
-
-> **Xxxxxxxxx**  Xx xxxxxxxxxx xxxxxxx x xxxxxxx Xxxxxxx YY xxxxxx xxxxxx xxxx xxxxxxx xxxx xxx, xxx xxxx xx xxxxxx xxx [**XxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986903) xxxxxxx xx xxxx xxxx xxxxxxxx xx xxxxxx xxxx xxx xxxxxx xxxxxx xxxx xxx xxxx xx xxxxxxx (x.x., **Xxxxxxx.Xxxxxx** xx **Xxxxxxx.Xxxxxxx**), xxxxxx xxxx xxxxxxx xx xx xxx **Xxxxxxx.Xxxxxxxxx** xxxxx (xxx xxx xxxxxxxxx xxxxxx xxxxxx) xxxx Xxxxxxxxx Xxxxxx Xxxxxx xxxxxxxx xx xxx xxxx xxxxxxxx xx xxxxxxx.
-
-Xxxx xxxx xxx xxxxxxxxxx xxx xxxx xx xxxx xxxxxxx xxxx xxxxx xx xxx xx xxxx xxx’x xxxxxxxx, xxxxxxxxxx xx xxx XX xxxxxxx xxxx xxxxxx (Xxxxxxx YY, Xxxxxxx Y.x, Xxxxxxx Xxxxx Y.x, xxx.). Xxxxxxx, xxxx xxxxxx xxxxxxxxxxxx xxxx xxx xxxxxxxxx xxx xxx xxxxx Xxxxxxx YY xxxxxxx (xxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x xxxxxxx).
-
-Xx'x xxxx xxxxxxxxx xx xx xxxxx xxxx xxxxxxxxxx xxx xxxx xxxx xxxxx xx xxx xxxxxxxxxxxx xxxx. Xxxxxx xxx xxxxxxx xxx xxxx xxx xxx xxxxxxxx xx xxx xx xxx xxxx xxx xxx xxxxxxx xxx xxxxxx, xxxx xx xxx xxxxxx xxxx xxxxxx xxxxxx xxxx. Xxxx xxxxxxx xxxx xx xxxxxxxxx xxx xxxxxxxx xxxx xxx xxxxxx xxxxxxxxx xx Xxxxxxx YY. Xxx xxxxxxx, xx xxx xxxx x xxxxxxxxx xxx xxxx Xxxxxxx Xxxxx Y.Y xxxxxxxx, xxx xxx xxxxx xxx x Xxxxxxx YY (XXX) xxxxxxx xx xxx xxxx xxx xxxx xxxxxxx xxx xxxxxxxxx xxxxxx xxxxxx, Xxxxxxx YY xxxxxx xxxxxxxxx xxx xxx xxxx Xxxxxxx Xxxxx Y.Y xxxxxxx xxxx xx xxxxxxx xx xxxxxx xx xxxx Xxxxxxx YY (XXX) xxxxxxx, xxxx xx xxx'xx xxxxxxxxx xxx xxx xxx **Xxxxxx** (xxxxx xxxx xx xxx x xxx xxxxxxxxxxx, xxx xx xxxxxx). Xxxxxxx, xx xxx xxx'x xxxxxxx xxx Xxxxxxx YY (XXX) xxxxxxx xxxx xxxxxxx xxx xxxxxxxxx xx xxxxxx xxxxxx xxxxxx, xxxx Xxxxxxx YY xxxxxx xxxxxxxxx xxxx xxxxxx xx xxx Xxxxxxx Xxxxx Y.Y xxxxxxx.
-
-Xxx xxxx xxxx xxxxx xxxxxx xxxxxxxx, xxx [Xxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx](https://msdn.microsoft.com/library/windows/apps/dn894631) xxx [**XxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn986903).
-
-> **Xxxx**  Xxx'xx xxxx xxx x xxxxxxxx xxxxx xxx xxx xxxxxxxx xxxxxxx xxx xxxx xx xxxxx Xxxxxxxxx xx xxxx xxx xxx xxxxxxxxx xx xxxxxx Xxxxxxx YY xxxxxx xxxxxxxx. Xx xxxxxxxxx xxxxxxx xxxx xxx xxxxxxx xx xxxx xxxx xxx xxx xx xxxxxxxxx xx xxxx xxxxxxxxx xxxxxxxxx xx xxx xxxxxx xxxxxxxx xxx xxxxxxxxxx.
-
-## Xxxxxxxxxxxxxx xxxxxxxxx
+## Sale pricing
 
 
-Xx xxxxxxx, xxxx xxx xxx xx xxxxxxx xx xxxxxxxxxxxxx xx xxxxxxxx xx xxxxxx. Xxx xxx xxxxxxxx xxxxxxx xxx xxx xxxx xxx xxx xx xxxxxxx xx xxxx xxxxxxx.
+If you want to offer your app at a reduced price for a limited period of time, you can create and schedule a sale. For more info, see [Put apps and IAPs on sale](put-apps-and-iaps-on-sale.md).
 
-Xxx xxxx xxxx, xxx [Xxxxxxxxxxxxxx xxxxxxxxx xxxxxxx](organizational-licensing.md).
-
-## Xxxxxxx xxxx
+## Distribution and visibility
 
 
-Xxx xxx xxxxxxxx xxxx xxxx xxx (xx xxxxxx) xxxx xx xxxxxxxxx xx xxxxxxxx xx xxxxxx xx xxx **Xxxxxxx xxxx** xxxxxxx.
+The **Distribution and visibility** section allows you to set restrictions on how your app can be discovered and acquired.
 
--   Xxxxxx **Xxxxxxx xxxx xxxxxxxxxx xx xxxx xx xx xxxxxx xxxxxxxxxxxxx** xx xxxx xxxx xxxxxxxxxx xxxxxxxxx xx xxx Xxxxx xx xxxx xx xxxxxxxx.
--   Xxxxxx **Xxxxxxx xxxx xxxxxxxxxx xxxxxxxx** xx xxx xxx'x xxxx xxxx xxxxxxxxxx xx xx xxxxxxxxx xxxxx xxx xxxxxxxx xxxx xx xxxxxx xx. Xxx xxx xx xxxx xxxx xxx xxxxxxxxxxxxx xxxxxx xxxx xx xxxxxxxx **Xxxxxxx xxx**, xx xx xxxxxxxxx x xxxxxxxx xxxx xx xxxxxxxxx xxxxx.
--   Xxxxxx **Xx xxxxxx xxxx \[xxxx\]** xx xxxxxx xxxx xxx xxxxxxxxxx xx xxx xxxxxxxxx xxxxx x xxxxxxx xxxx. Xxxx xxxx xxxxxx, xxxx xxxxxxxxxx xxxx xx xxxxxxxx xx xxxx xx xxxxxxxx xx xx xxxxx xxx xxxx xxx xxxxxxx. Xxx xxxx xxxx xx xx xxxxx YY xxxxx xx xxx xxxxxx. Xxxxx xxxx xxx xxxx, xxx xxx xxxx xxxxxxx xxx xxxx xx xxxxx xxx xxxxxxxxxx xxxxxx xxxxx xx xx xxxxxxxxx.
-    > **Xxxx**  Xxxxxx xxxxxx xxxxxxxxxxxxx xx xxxxxxxxxx xxxxx xxxxx xxx xxxxxx xxxxxxx xxxx xx xx xxxxx xxxx xxx xxxx xxx xxxxxxx. Xxx Xxxxxxx Xxxxx xxxxxx xxxxxxxxx xxxx xxxx xxx (xx xxxxxx) xxxx xx xxxxxxxxx xx x xxxxxxxx xxxx.
+The default setting is **Make this app available in the Store**. This means that your app will be listed in the Store for customers to find via the app's direct link and/or by other methods, including searching, browsing, and inclusion in curated lists.
 
-Xxx xxx xxxx xxxxxx xxx xxxxxxx xxxx xxxxx xxxxxxxxxx xxxx xxx, xx xxxx xx xx xxxx’x xxxxxxx xxx **Xxxxxxx** xxxx xxx.
+If you want to hide your app in the Store but still make it available to certain people, select one of the following options to limit your app's availability. Note that customers on Windows 8 and Windows 8.1 won't be able to get the app at all if you choose any of these options.
+
+-   **Hide this app and prevent acquisition. Customers with a promotional code can still download it on Windows 10 devices**: No customers can find your app in the Store via searching or browsing, but you can [generate promotional codes](generate-promotional-codes.md) to distribute to specific people on Windows 10. They can use the link and code to get your app for free, even though you aren't offering it to any other customers
+-   **Hide this app in the Store. Customers with a direct link to the app’s listing can still download it, except on Windows 8 and Windows 8.1**: No customers can find your app in the Store via searching or browsing, but any customer with the direct link to your app's listing can download your app on devices running Windows 10 or Windows Phone 8.1 and earlier.
+-   **Hide this app and make it available only to the people you specify below, who can download this app on Windows Phone 8.x devices. A promotional code may be used to download this app on Windows 10 devices**: No customers can find your app in the Store via searching or browsing, and only the Windows Phone 8.x customers whose email addresses (associated with their Microsoft accounts) that you enter in the box (separated by semicolons) can download your app by using the direct link to its listing. You can also [generate promotional codes](generate-promotional-codes.md) to distribute to specific people on Windows 10. This option is often used for [beta testing](beta-testing-and-targeted-distribution.md) on Windows Phone 8.1 and earlier. Note that this option can only be selected if you have never previously published the app with the **Distribution and visibility** option set to **Anyone can find your app in the Store**.
+
+> **Note**  To completely stop offering an app to new customers, click **Make app unavailable** from the App overview page. After you confirm that you want to make the app unavailable, within a few hours it will no longer be visible in the Store, and no new customers will be able to get it via any method. This action will override any of the options you have chosen here: it won't be available to new customers at all. To make it available to new customers again, you can click **Make app available** from the App overview page at any time. For more info, see [Removing an app from the Store](guidance-for-app-package-management.md#removing-an-app-from-the-store).
+
+## Windows 10 device families
+
+This section lets you indicate which types of Windows 10 devices customers can use to acquire your app. (If your package won't run on a certain device type, we won't offer it for download to that type of device.)
+
+> **Important**  To completely prevent a certain Windows 10 device family from getting your app, you need to update the [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903) element in your appx manifest to target only the device family that you want to support (i.e., **Windows.Mobile** or **Windows.Desktop**), rather than leaving it as the **Windows.Universal** value (for the universal device family) that Microsoft Visual Studio includes in the appx manifest by default.
+
+By default, the boxes for **Mobile** and **Desktop** will be checked. We recommend leaving these boxes checked unless you have a specific reason to limit the types of Windows 10 devices which can acquire your app. For example, you may have created Windows Universal packages, but you know that you still need to test some issues with the app on mobile devices. To prevent new customers from downloading the app on Windows 10 mobile devices, you can uncheck the **Mobile** checkbox here. Then if you later decide you're ready to offer it to customers on Windows 10 mobile devices, you can create a new submission with the **Mobile** box checked.
+
+If you have tested your app to ensure that it runs appropriately on Microsoft HoloLens, you can also check the **Holographic** box to offer the app to HoloLens customers. For more about building, testing, and publishing holographic apps, see the [Windows Holographic Development Overview](http://dev.windows.com/holographic/development_overview).
+
+Note that the selections you make in this section will apply to all of your app’s packages, regardless of the OS version they target (Windows 10, Windows 8.x, Windows Phone 8.x, etc.). However, they affect availability only for customers who are using Windows 10 devices (and not Windows 8.x or Windows Phone 8.x devices).
+
+It's also important to be aware that selections you make here apply to new acquisitions only. Anyone who already has your app can continue to use it and will get any updates you submit, even if you remove that device family here. This applies even to customers who acquired your app before upgrading to Windows 10. For example, if you have a published app with Windows Phone 8.1 packages, and you later add a Windows 10 (UWP) package to the same app that targets the universal device family, Windows 10 mobile customers who had your Windows Phone 8.1 package will be offered an update to this Windows 10 (UWP) package, even if you've unchecked the box for **Mobile** (since this is not a new acquisition, but an update). However, if you don't provide any Windows 10 (UWP) package that targets the universal or mobile device family, your Windows 10 mobile customers will remain on the Windows Phone 8.1 package.
+
+For more info about device families, see [Guide to Universal Windows Platform (UWP) apps](https://msdn.microsoft.com/library/windows/apps/dn894631) and [**TargetDeviceFamily**](https://msdn.microsoft.com/library/windows/apps/dn986903).
+
+> **Note**  You'll also see a checkbox where you can indicate whether you want to allow Microsoft to make the app available to future Windows 10 device families. We recommend keeping this box checked so that your app can be available to more potential customers as new device families are introduced.
+
+## Organizational licensing
+
+
+By default, your app may be offered to organizations to purchase in volume. You can indicate whether and how your app can be offered in this section.
+
+For more info, see [Organizational licensing options](organizational-licensing.md).
+
+## Publish date
+
+
+You can indicate when your app (or update) will be published by choosing an option in the **Publish date** section.
+
+-   Choose **Publish this submission as soon as it passes certification** to make this submission available in the Store as soon as possible.
+-   Choose **Publish this submission manually** if you don't want your submission to be published until you indicate that it should be. You can do this from the certification status page by clicking **Publish now**, or by selecting a specific date as described below.
+-   Choose **No sooner than \[date\]** to ensure that the submission is not published until a certain date. With this option, your submission will be released as soon as possible on or after the date you specify. The date must be at least 24 hours in the future. Along with the date, you can also specify the time at which the submission should begin to be published.
+    > **Note**  Delays during certification or publishing could cause the actual release date to be later than the date you request. The Windows Store cannot guarantee that your app (or update) will be available on a specific date.
+
+You can also change the release date after submitting your app, as long as it hasn’t entered the **Publish** step yet.
  
 
  
@@ -94,4 +95,8 @@ Xxx xxx xxxx xxxxxx xxx xxxxxxx xxxx xxxxx xxxxxxxxxx xxxx xxx, xx xxxx xx xx xx
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO5-->
+
+

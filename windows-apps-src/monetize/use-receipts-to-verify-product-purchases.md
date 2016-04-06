@@ -1,28 +1,28 @@
 ---
-xx.xxxxxxx: XYYYXXXX-YXXX-YYYX-YYXX-XXXYXXXYYYYY
-xxxxxxxxxxx: Xxxx Xxxxxxx Xxxxx xxxxxxxxxxx xxxx xxxxxxx xx x xxxxxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxx x xxxxxxxxxxx xxxxxxx.
-xxxxx: Xxx xxxxxxxx xx xxxxxx xxxxxxx xxxxxxxxx
+ms.assetid: E322DFFE-8EEC-499D-87BC-EDA5CFC27551
+description: Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt.
+title: Use receipts to verify product purchases
 ---
 
-# Xxx xxxxxxxx xx xxxxxx xxxxxxx xxxxxxxxx
+# Use receipts to verify product purchases
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh779765)
--   [**XxxxxxxXxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh779766)
+-   [**CurrentApp**](https://msdn.microsoft.com/library/windows/apps/hh779765)
+-   [**CurrentAppSimulator**](https://msdn.microsoft.com/library/windows/apps/hh779766)
 
-Xxxx Xxxxxxx Xxxxx xxxxxxxxxxx xxxx xxxxxxx xx x xxxxxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxx x xxxxxxxxxxx xxxxxxx. Xxxx xxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxxxxxx xxxx xx xxx xxxxxxxx.
+Each Windows Store transaction that results in a successful product purchase can optionally return a transaction receipt. This receipts provides information about the listed product and monetary cost to the customer.
 
-Xxxxxx xxxxxx xx xxxx xxxxxxxxxxx xxxxxxxx xxxxxxxxx xxxxx xxxx xxx xxxxx xx xxxxxx xxxx x xxxx xxxxxxxxx xxxx xxx, xx xxx xxxx xx-xxx xxxxxxx xxxxxxxxx xxxx xxx Xxxxxxx Xxxxx. Xxx xxxxxxx, xxxxxxx x xxxx xxxx xxxxxx xxxxxxxxxx xxxxxxx. Xx xxx xxxx xxx xxxxxxxxx xxx xxxx xxxxxxx xxxxx xx xxxx xx xx x xxxxxxxxx xxxxxx, xxx xxxx xx xxxxxx xxxx xxx xxxx xxxxxxx xxxx xxx xxxxxxx. Xxxx'x xxx.
+Having access to this information supports scenarios where your app needs to verify that a user purchased your app, or has made in-app product purchases from the Windows Store. For example, imagine a game that offers downloaded content. If the user who purchased the game content wants to play it on a different device, you need to verify that the user already owns the content. Here's how.
 
-## Xxxxxxxxxx x xxxxxxx
+## Requesting a receipt
 
 
-Xxx **Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxx** xxxxxxxxx xxxxxxxx xxx xxxx xx xxxxxxx x xxxxxxx: xx xxxxx xxx [**XxxxxxxXxx.XxxxxxxXxxxxxxXxxxxxxxXxxxx | xxxxxxxXxxxxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn263381) xx [**XxxxxxxXxx.XxxxxxxXxxXxxxxxxxXxxxx | xxxxxxxXxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh967813) xxxxxx xxx xxxxx xxx *xxxxxxxXxxxxxx* xxxxxxxxx, xx xx xxxxxxx xxx [**XxxxxxxXxx.XxxXxxXxxxxxxXxxxx | xxxXxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh967811) xxxxxx. Xx xxx xxxxxxx xxxxx xxxxxxxxx xxxx xxxx.
+The **Windows.ApplicationModel.Store** namespace supports two ways of getting a receipt: by using the [**CurrentApp.RequestProductPurchaseAsync | requestProductPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/dn263381) or [**CurrentApp.RequestAppPurchaseAsync | requestAppPurchaseAsync**](https://msdn.microsoft.com/library/windows/apps/hh967813) method and using the *includeReceipt* parameter, or by calling the [**CurrentApp.GetAppReceiptAsync | getAppReceiptAsync**](https://msdn.microsoft.com/library/windows/apps/hh967811) method. An app receipt looks something like this.
 
 ```XML
 <Receipt Version="1.0" ReceiptDate="2012-08-30T23:10:05Z" CertificateId="b809e47cd0110a4db043b3f73e83acd917fe1336" ReceiptDeviceId="4e362949-acc3-fe3a-e71b-89893eb4f528">
@@ -45,7 +45,7 @@ Xxx **Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxx** xxxxxxxxx xxxxxxxx xxx xxxx xx xxxxxxx x 
 </Receipt>
 ```
 
-X xxxxxxx xxxxxxx xxxxx xxxx xxxx.
+A product receipt looks like this.
 
 ```XML
 <Receipt Version="1.0" ReceiptDate="2012-08-30T23:08:52Z" CertificateId="b809e47cd0110a4db043b3f73e83acd917fe1336" ReceiptDeviceId="4e362949-acc3-fe3a-e71b-89893eb4f528">
@@ -67,12 +67,12 @@ X xxxxxxx xxxxxxx xxxxx xxxx xxxx.
 </Receipt>
 ```
 
-Xxx xxx xxx xxxxxx xx xxxxx xxxxxxx xxxxxxxx xx xxxx xxxx xxxxxxxxxx xxxx.
+You can use either of these receipt examples to test your validation code.
 
-## Xxxxxxxxxx x xxxxxxx
+## Validating a receipt
 
 
-Xxxxx xxx xxx x xxxxxxx, xxx xxxx xxxx xxxx-xxx xxxxxx (x xxx xxxxxxx xx xxxxxxxxx xxxxxxx) xx xxxxxxxx xx. Xxxx'x x .XXX Xxxxxxxxx xxxxxxx xx xxxx xxxxxxxxxx xxxxxxx.
+After you get a receipt, you need your back-end system (a web service or something similar) to validate it. Here's a .NET Framework example of that validation process.
 
 ```CSharp
 using System;
@@ -236,4 +236,8 @@ namespace ReceiptVerificationSample
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

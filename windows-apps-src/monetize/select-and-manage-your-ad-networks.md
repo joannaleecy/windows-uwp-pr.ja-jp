@@ -1,129 +1,130 @@
 ---
-xx.xxxxxxx: YYXYXYXX-YXXX-YXYY-YYYX-XXYYXYXXXYXX
-xxxxxxxxxxx: Xxxxxx xxxxx xx xxxxxxxxx, xxx'xx xxxx xx xxx xx xxxxxxxx xxxx xxxx xx xxxxxxx xxxx xxx’x xxxx xx xxx xx xxxx xxxx.
-xxxxx: Xxxxxx xxx xxxxxx xxxx xx xxxxxxxx
+ms.assetid: 86D9D3CF-8FDC-4B67-881B-DF33A1BEE8BF
+description: Before using ad mediation, you'll need to set up accounts with each ad network that you’d like to use in your apps.
+title: Select and manage your ad networks
 ---
 
-# Xxxxxx xxx xxxxxx xxxx xx xxxxxxxx
+# Select and manage your ad networks
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxx xxxxx xx xxxxxxxxx, xxx'xx xxxx xx xxx xx xxxxxxxx xxxx xxxx xx xxxxxxx xxxx xxx’x xxxx xx xxx xx xxxx xxxx. Xx xxxxxxxxx xxxxx xxxx xxxxxx xxx xxx xxx xx xxxxxxxx xxxxxxx xx xxxx Xxxxxxxxx Xxxxxx Xxxxxx xxxxxxx. Xx xxxx xxxxxxxxx xxxx xxx xxx xx xxxxxxxx xxxx xx xxxx xx xxxxxxxx xx xxxxxxxx, xx xxx xxxx xxxxxxx xxxxxxxxxxx xx xxxxxxxx xxxx xx xxxxxxxxx xxxxxxxxxxx.
+Before using ad mediation, you'll need to set up accounts with each ad network that you’d like to use in your apps. We recommend doing this before you add the ad mediator control to your Microsoft Visual Studio project. We also recommend that you set up accounts with as many ad networks as possible, so you have maximum flexibility to optimize your ad mediation performance.
 
-## Xxxxxxxxx xx xxxxxxxx xxx xxxxxxx xxxxx
+## Supported ad networks and project types
 
-Xxxxxxxxx, xx xxxxxxxxx xx xxxxxxxxx xxx xxx xxxxxxxxx xx xxxxxxxx xxx xxxxxxx xxxxx.
+Currently, ad mediation is supported for the following ad networks and project types.
 
-| Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxx X# xx Xxxxxx Xxxxx xxxx XXXX | Xxxxxxx Y.Y xxx xxxxx X# xx Xxxxxx Xxxxx xxxx XXXX | Xxxxxxx Xxxxx Y.Y xxx xxxxx X# xx Xxxxxx Xxxxx xxxx XXXX | Xxxxxxx Xxxxx Y.x Xxxxxxxxxxx xxx |               |
+|  Ad network    | Universal Windows Platform (UWP) app using C# or Visual Basic with XAML | Windows 8.1 app using C# or Visual Basic with XAML | Windows Phone 8.1 app using C# or Visual Basic with XAML | Windows Phone 8.x Silverlight app |               
 |-------------------------------------------------------------------------|----------------------------------------------------|----------------------------------------------------------|-----------------------------------|---------------|
-| [Xxxxxxxxx Xxxxxxxxxxx](#microsoft_advertising)                         | **Xxxxxxxxx**                                      | **Xxxxxxxxx**                                            | **Xxxxxxxxx**                     | **Xxxxxxxxx** |
-| [XxXxxxxx](#adduplex)                                                   | **Xxxxxxxxx**                                      | **Xxxxxxxxx**                                            | **Xxxxxxxxx**                     | **Xxxxxxxxx** |
-| [Xxxxxx](#smaato)                                                       | Xxx xxxxxxxxx                                      | **Xxxxxxxxx**                                            | **Xxxxxxxxx**                     | **Xxxxxxxxx** |
-| [XxXxx (Xxxxxx)](#admob)                                                | Xxx xxxxxxxxx                                      | Xxx xxxxxxxxx                                            | Xxx xxxxxxxxx                     | **Xxxxxxxxx** |
-| [Xxxxxxxxxxx](#inneractive)                                             | Xxx xxxxxxxxx                                      | Xxx xxxxxxxxx                                            | Xxx xxxxxxxxx                     | **Xxxxxxxxx** |
-| [Xxxxx XXXX](#vserv)                                                    | Xxx xxxxxxxxx                                      | Xxx xxxxxxxxx                                            | **Xxxxxxxxx**                     | Xxx xxxxxxxxx | 
+| [Microsoft](#microsoft)                         | **Supported**                                      | **Supported**                                            | **Supported**                     | **Supported** |
+| [AdDuplex](#adduplex)                                                   | **Supported**                                      | **Supported**                                            | **Supported**                     | **Supported** |
+| [Smaato](#smaato)                                                       | Not supported                                      | **Supported**                                            | **Supported**                     | **Supported** |
+| [AdMob (Google)](#admob)                                                | Not supported                                      | Not supported                                            | Not supported                     | **Supported** |
+| [Inneractive](#inneractive)                                             | Not supported                                      | Not supported                                            | Not supported                     | **Supported** |
+| [Vserv VMAX](#vserv)                                                    | Not supported                                      | Not supported                                            | **Supported**                     | Not supported | 
 
-Xxxx xxxxxxx xxxxx, xxxx xx X++ xxxx XXXX xxx XxxxXxxxxx xxxx XXXX, xxx xxx xxxxxxxxx xxxxxxxxx xx xx xxxxxxxxx. Xxx xxxxx xxxxxxx xxxxx, xxx xxx xxxx xxx xxxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxx xxxxx xx xxxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [XxXxxxxxx xx XXXX xxx .XXX](https://msdn.microsoft.com/library/mt313186.aspx) xxx [XxXxxxxxx xx XXXX Y xxx XxxxXxxxxx](https://msdn.microsoft.com/library/mt313130.aspx).
+Some project types, such as C++ with XAML and JavaScript with HTML, are not currently supported by ad mediation. For these project types, you can show ads from Microsoft without using ad mediation. For more information, see [AdControl in XAML and .NET](https://msdn.microsoft.com/library/mt313186.aspx) and [AdControl in HTML 5 and JavaScript](https://msdn.microsoft.com/library/mt313130.aspx).
 
-## Xxxxxxxx xxxxxxxxxx xxx xxxxxxx xxx xxxx xxxxxxx
+## Specific parameters and details for each network
 
 
-Xxxx xxx xxx xxxxxxxx xxxxxxx xxx'xx xxxx xxx xxxx xx xxxxxxx, xxxxxxxxx xxx xx xxx xx xxxx xxxxxxx xxx xxx xx xxxxxxx xx xxx. Xx xxxx xxxx xxx xxxxxxxx xxxxxxxxxx xxxx xxx xxxx xx xxxxxxx xxxx xxx [xxxxxx xxxx xxx xxx xxxxxxxxx xx xxxxxxxxx](submit-your-app-and-configure-ad-mediation.md) (xxx/xx xx Xxxxxxxxx Xxxxxxxx xxx [xxxxxxx xxxx xx xxxxxxxxx xxxxxxxxxxxxxx](test-your-ad-mediation-implementation.md)). Xxx xxxx xxxxxxx xxxxx xxxxx x xxxxxxxx xx xxxxxxx, xxxxx xxx xxxxxxx.
+Here are the specific details you'll need for each ad network, including how to set up your account and how to onboard an app. We also list the required parameters that you need to provide when you [submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md) (and/or in Connected Services for [testing your ad mediation implementation](test-your-ad-mediation-implementation.md)). For more details about using a specific ad network, visit its website.
 
-Xx xxxxxxxx xx xxx xxxxxxxx xxxxxxxxxx, xxxx xx xxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxx xxxxxxxxxx xxx xxx xxx xxx xxxx xx xxxx xxx. Xxx xxxxxxxx, xxx [Xxxxxxxx xx xxxxxxx xxxxxxxxxx](#optionalparameters) xxxxx xx xxxx xxxxx. Xxx xxx xxxxxxxx xxxx xx xxxxxxxx xxxxxxxxxx, xxx xxx xxxxxxxxxxxxx xxxxxxxx xx xxxx xx xxxxxxx. Xxxx xx xxxxx xxxxxxxxxx xxxx xx xxxxxxx xx xxxxxxxxxxx xx xx xxxxxxxxx, xxx xxxxx xxx xxxxxx xx xxx xxxxxxxx xxxxx. Xxx xxxxxxx, xxxxxxxxxx xxxxxxx xx xxxxxxx xxxxxxxx xxx xxxxxxx xxxxxxxxxxx xxxx xxxxxxxxxxx xxxxx xxx xxxxxxxx'x xxxxxxxx xxxx xx xxxxxxxxxx xx xxx xxxxxxxx xxxxxxxxxx xxxxxx xxx xxx xxxxxx.
+In addition to the required parameters, each ad network also has additional optional parameters you can set via code in your app. For examples, see [Optional ad network parameters](#optionalparameters) later in this topic. For the complete list of optional parameters, see the documentation provided by each ad network. Some of these parameters will be ignored or overwritten by ad mediation, and these are listed in the sections below. For example, parameters related to current location are usually overwritten with information about the customer's location that is determined by the location capability within the app itself.
 
-Xxxx xxxx xxxx xxx [xxx xxx xx xxxxxxxx xxxxxxx](add-and-use-the-ad-mediator-control.md) xxx xxxxxxx xxxxx xx xxxxxxxx xx xxx, Xxxxxx Xxxxxx xxxxxxxx xx xxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxxxxxxxxxx xxx xxxx xx xxxxxxxx. Xx xxxxx xxx xxx xxxxxxxxxx xxxx xxxxxx xx xxxxxxxxxxxxx xxxxxxxxx, xxx xxx xxxxxxx xxxx xxxxx xxx xxxxx xxxxx xxxxx xxx xxxx xx xxxxxxx.
+Note that when you [add the ad mediator control](add-and-use-the-ad-mediator-control.md) and specify which ad networks to use, Visual Studio attempts to fetch the required assemblies programmatically for some ad networks. If there are any assemblies that cannot be automatically retrieved, you can install them using the links shown below for each ad network.
 
-### Xxxxxxxxx Xxxxxxxxxxx
+### Microsoft
 
-| Xxxxxxx                        | Xx xxxxxxxxx xx xxxxxxx xxxxxxxxxx, xxx xxx [Xxxxxxxx xxxx xxx](https://msdn.microsoft.com/library/windows/apps/mt170658) xxxx xx xxx [Xxxxxxx Xxx Xxxxxx xxxxxxxxx](https://dev.windows.com/overview).   |
+| Website                        | To configure ad network parameters, use the [Monetize with ads](https://msdn.microsoft.com/library/windows/apps/mt170658) page on the [Windows Dev Center dashboard](https://dev.windows.com/overview).   |
 |--------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XXX xxxxxxxx                   | [Xxxxxxxxx Xxxxxxxxx Xx Xxxxxx XXX](http://go.microsoft.com/fwlink/p/?LinkId=518026).                                                                                                                                                                                                                         |
-| Xxxxxxxxxx xx xxx              | Xxx xxx xx xxxxxxxxx xxxxxxx xx xxxx xxx, xxx xxxxxx xxxx xxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx.                                                                                                                                                                                                            |
-| Xxxxxxxx xxxxxxxxxx            | XxxxxxxxxxxXx xxx XxXxxxXx: Xxxxx xxxxxxxxxx xxx xxxxxxxxxxxxx xxxxxx xx xxx xxx xxxx xxx xxxxxx xxxx xxx xxxxxxx, xxxxx xx xxx xxxxxxxx xx xxxx xxx. Xxxxxxx, xxx xxx xxxxxxxxxx xxxx xxxxx xxxxxxxxxx xxxx xxx [xxxxxx xxxx xxx xxx xxxxxxxxx xx xxxxxxxxx](submit-your-app-and-configure-ad-mediation.md). <br> <br> Xxxxxx xxx Xxxxx (xxxx xxxxxxxx xxx Xxxxxxx Xxxxx Y Xxxxxxxxxxx xxx Xxxxxxx Xxxxx Y.Y Xxxxxxxxxxx).                                                                                                                                                                                                           |
-| Xxxxxxxxxxx/xxxxxxx xxxxxxxxxx | Xxxxxxxx (xxxxxxxxxxx)  <br><br> Xxxxxxxxx (xxxxxxxxxxx) <br><br> XxxxXxxxxxxXxxxxxxxXxXxxxxxx (xxxxxxx) <br><br> XxXxxxXxxxxxxXxxxxxx (xxxxxxx) <br><br> XxXxxxXxxxxxxxxXxxxxxx (xxxxxxx) <br><br> XxXxxxxxx (xxxxxxx) <br><br> XxXxxxxxxxx (xxxxxxx) |
+| SDK location                   | [Microsoft Store Engagement and Monetization SDK](http://aka.ms/store-em-sdk).                                                                                                                                                                                                                         |
+| Onboarding an app              | Add the ad mediation control to your app, and submit your app to the Windows Dev Center dashboard.                                                                                                                                                                                                            |
+| Required parameters            | ApplicationId and AdUnitId: These parameters are automatically filled in for you when you submit your app package, based on the contents of your app. However, you can optionally edit these parameters when you [submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md). <br> <br> Height and Width (only required for Windows Phone 8 Silverlight and Windows Phone 8.1 Silverlight).                                                                                                                                                                                                           |
+| Overwritten/ignored parameters | Latitude (overwritten)  <br><br> Longitude (overwritten) <br><br> AutoRefreshIntervalInSeconds (ignored) <br><br> IsAutoRefreshEnabled (ignored) <br><br> IsAutoCollapsedEnabled (ignored) <br><br> IsEngaged (ignored) <br><br> IsSuspended (ignored) |
 
  
 
-### XxXxxxxx
+### AdDuplex
 
-| Xxxxxxx                        | [xxxx://xxxxxxxx.xxx](http://go.microsoft.com/fwlink/p/?LinkId=518028)      |
+| Website                        | [http://adduplex.com](http://go.microsoft.com/fwlink/p/?LinkId=518028)      |
 |--------------------------------|-----------------------------------------------------------------------------|
-| XXX xxxxxxxx                   | Xxxxx, xxx xx xxx xxx xx xxxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxxx xx xxxxxxxxx xx [Xxx xxx xxx xxx xx xxxxxxxx xxxxxxx](add-and-use-the-ad-mediator-control.md). Xx xxx xxxx xx xxxxxxxx xxxx xxxxxxxx, xx xx xxx [Xxxxxxx Xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=518029) xxxxxxx xx xxx XxXxxxxx xxxxxxx. |
-| Xxxxxxxxxx xx xxx              | Xx xxx XxXxxxxx xxxxxx, xxxxxx x xxx xxx.                                                                                                                                                                                                                                                                                                        |
-| Xxxxxxxx xxxxxxxxxx            | XxxXxx <br><br> XxXxxxXx <br><br> Xxxx (xxxx xxxxxxxx xxx Xxxxxxx Y.Y XXXX)  |
-| Xxxxxxxxxxx/xxxxxxx xxxxxxxxxx | Xxxxxxxx (xxxxxxxxxxx) <br><br> Xxxxxxxxx (xxxxxxxxxxx) <br><br> XxxxXxxxxxxXxxxxxxxXxXxxxxxx (xxxxxxx) <br><br> XxXxxxXxxxxxxXxxxxxx (xxxxxxx) <br><br> XxXxxxXxxxxxxxxXxxxxxx (xxxxxxx) <br><br> XxXxxxxxx (xxxxxxx) <br><br> XxXxxxxxxxx (xxxxxxx) |
+| SDK location                   | First, try to let the ad mediator control retrieve the assemblies through Connected Services as described in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md). If you need to download them manually, go to the [Getting Started](http://go.microsoft.com/fwlink/p/?LinkId=518029) section on the AdDuplex website. |
+| Onboarding an app              | In the AdDuplex portal, create a new app.                                                                                                                                                                                                                                                                                                        |
+| Required parameters            | AppKey <br><br> AdUnitId <br><br> Size (only required for Windows 8.1 XAML)  |
+| Overwritten/ignored parameters | Latitude (overwritten) <br><br> Longitude (overwritten) <br><br> AutoRefreshIntervalInSeconds (ignored) <br><br> IsAutoRefreshEnabled (ignored) <br><br> IsAutoCollapsedEnabled (ignored) <br><br> IsEngaged (ignored) <br><br> IsSuspended (ignored) |
  
 
-### Xxxxxx
+### Smaato
 
-| Xxxxxxx                        | [xxxx://xxx.xxxxxx.xxx/](http://go.microsoft.com/fwlink/p/?LinkId=518030)                                                                                                                                                                                                        |
+| Website                        | [http://www.smaato.com/](http://go.microsoft.com/fwlink/p/?LinkId=518030)                                                                                                                                                                                                        |
 |--------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XXX xxxxxxxx                   | Xxxxx, xxx xx xxx xxx xx xxxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxxx xx xxxxxxxxx xx [Xxx xxx xxx xxx xx xxxxxxxx xxxxxxx](add-and-use-the-ad-mediator-control.md). Xx xxx xxxx xx xxxxxxxx xxxx xxxxxxxx, xx xx xxx Xxxxxxxxx xxx xx xxx Xxxxxx xxxxxx. |
-| Xxxxxxxxxx xx xxx              | Xx xxx Xxxxxx xxxxxx, xx xx Xx Xxxxxx xxx xxxxxxxx x xxx Xxxxxxx.                                                                                                                                                                                                                |
-| Xxxxxxxx xxxxxxxxxx            | Xxx <br> <br> Xxxxxxx <br> <br> Xxxxxx xxx Xxxxx (xxxx xxxxxxxx xxx Xxxxxxx Y.Y XXXX)  |
-| Xxxxxxxxxxx/xxxxxxx xxxxxxxxxx | Xxx (xxxxxxxxxxx)                                                                                                                                                                                                                                                                |
+| SDK location                   | First, try to let the ad mediator control retrieve the assemblies through Connected Services as described in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md). If you need to download them manually, go to the Downloads tab in the Smaato portal. |
+| Onboarding an app              | In the Smaato portal, go to My Spaces and generate a new Adspace.                                                                                                                                                                                                                |
+| Required parameters            | Pub <br> <br> Adspace <br> <br> Height and Width (only required for Windows 8.1 XAML)  |
+| Overwritten/ignored parameters | Gps (overwritten)                                                                                                                                                                                                                                                                |
 
  
 
-### XxXxx (Xxxxxx)
+### AdMob (Google)
 
-| Xxxxxxx                        | [xxxx://xxxx.xxxxx.xxx](http://go.microsoft.com/fwlink/p/?LinkId=518031)                                               |
+| Website                        | [http://apps.admob.com](http://go.microsoft.com/fwlink/p/?LinkId=518031)                                               |
 |--------------------------------|------------------------------------------------------------------------------------------------------------------------|
-| XXX xxxxxxxx                   | Xxx xxx Xxxxxxx Xxxxx Y XXX xxxx xxx [Xxxxxx Xxxxxx Xxx XXX xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=518032). |
-| Xxxxxxxxxx xx xxx              | Xx xxx XxXxx xxxxxx, xxxxxx Xxxxxxxx xxx xxx.                                                                          |
-| Xxxxxxxx xxxxxxxxxx            | XxXxxxXX <br> <br> Xxxxxx                                                                                              |
-| Xxxxxxxxxxx/xxxxxxx xxxxxxxxxx | Xxxxxxxx (xxxxxxxxxxx)  <br><br> XxxxxXxxxxxx (xxxxxxx) <br><br> Xxxxxxx Xxxx (xxxxxxx)                                |
+| SDK location                   | Get the Windows Phone 8 SDK from the [Google Mobile Ads SDK website](http://go.microsoft.com/fwlink/p/?LinkId=518032). |
+| Onboarding an app              | In the AdMob portal, select Monetize new app.                                                                          |
+| Required parameters            | AdUnitID <br> <br> Format                                                                                              |
+| Overwritten/ignored parameters | Location (overwritten)  <br><br> ForceTesting (ignored) <br><br> Refresh Rate (ignored)                                |
  
 
-### Xxxxxxxxxxx
+### Inneractive
 
-| Xxxxxxx             | [xxxx://xxxxx-xxxxxx.xxx](http://go.microsoft.com/fwlink/p/?LinkId=518035)                                                                                                                                                                                                                                                             |
+| Website             | [http://inner-active.com](http://go.microsoft.com/fwlink/p/?LinkId=518035)                                                                                                                                                                                                                                                             |
 |---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XXX xxxxxxxx        | Xxxxx, xxx xx xxx xxx xx xxxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxxx xx xxxxxxxxx xx [Xxx xxx xxx xxx xx xxxxxxxx xxxxxxx](add-and-use-the-ad-mediator-control.md). Xx xxx xxxx xx xxxxxxxx xxxx xxxxxxxx, xxxx xx xx xxxx xxxxxxx xxx xx xx xxx XXX xxx xx xxx Xxxxxxxxx xx xxxxxxxx xxx Xxxxxxx Xxxxx Y XXX. |
-| Xxxxxxxxxx xx xxx   | Xx xxx Xxxxxxxxxxx xxxxxx, xxxxxx x xxx xxx.                                                                                                                                                                                                                                                                                           |
-| Xxxxxxxx xxxxxxxxxx | XxxXX <br> <br> XxXxxx (xxxxxx XxXxXxxx_Xxxxxx xx XxXxXxxx_Xxxx)                                                                               |
+| SDK location        | First, try to let the ad mediator control retrieve the assemblies through Connected Services as described in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md). If you need to download them manually, sign in to your account and go to the SDK tab in the Dashboard to download the Windows Phone 8 SDK. |
+| Onboarding an app   | In the Inneractive portal, create a new app.                                                                                                                                                                                                                                                                                           |
+| Required parameters | AppID <br> <br> AdType (either IaAdType_Banner or IaAdType_Text)                                                                               |
  
 
-### Xxxxx XXXX
+### Vserv VMAX
 
-| Xxxxxxx             | [xxxx://xxx.xxxx.xxx](http://www.vmax.com)                                                                                                                                                                                                                                                                         |
+| Website             | [http://www.vmax.com](http://www.vmax.com)                                                                                                                                                                                                                                                                         |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XXX xxxxxxxx        | Xxxxx, xxx xx xxx xxx xx xxxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxxx xx xxxxxxxxx xx [Xxx xxx xxx xxx xx xxxxxxxx xxxxxxx](add-and-use-the-ad-mediator-control.md). Xx xxx xxxx xx xxxxxxxx xxxx xxxxxxxx, xx xx xxx [XXX](http://go.microsoft.com/fwlink/?LinkId=627078) xxxxxxx xx xxx XXXX xxxxxxx. |
-| Xxxxxxxxxx xx xxx   | Xxxxxx xxx Xxxxxx XX xxx xxxx xxx xxxx xxx XXXX xxxxxxx (xxx Xxxxxx XX xx xxxxxx XxxxXx xx xxx XXXX XXXx).                                                                                                                                                                                                                     |
-| Xxxxxxxx xxxxxxxxxx | XxxxXx                                                                                                                                                                                                                                                                                                                         |YYYYY
+| SDK location        | First, try to let the ad mediator control retrieve the assemblies through Connected Services as described in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md). If you need to download them manually, go to the [SDK](http://go.microsoft.com/fwlink/?LinkId=627078) section on the VMAX website. |
+| Onboarding an app   | Obtain the Adspot ID for your app from the VMAX website (the Adspot ID is called ZoneId in the VMAX APIs).                                                                                                                                                                                                                     |
+| Required parameters | ZoneId                                                                                                                                                                                                                                                                                                                         |12345
 
  
 
-## Xxxxxxxx xx xxxxxxx xxxxxxxxxx
+## Optional ad network parameters
 
 
-Xx xxxxxxxx xx xxx xxxxxxxx xxxxxxxxxx, xxxx xx xxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxx xxxxxxxxxx xxx xxx xxx xxx xxxx xx xxxx xxx. Xxx xxx xxxxxxxx xxxx xx xxxxxxxx xxxxxxxxxx, xxx xxx xxxxxxxxxxxxx xxxxxxxx xx xxxx xx xxxxxxx. Xx xxx xxxxx xxxxxxxx xxxxxxxxxx xx xxxx xxxx, xxx xxx **XxXxxXxxxxxxxXxxxxxxxxx** xxxxxxxx xx xxxx **XxXxxxxxxxXxxxxxx** xxxxxx.
+In addition to the required parameters, each ad network also has additional optional parameters you can set via code in your app. For the complete list of optional parameters, see the documentation provided by each ad network. To set these optional parameters in your code, use the **AdSdkOptionalParameters** property of your **AdMediatorControl** object.
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xxx xx xxx xxx **XxxxxxxXxXxxxxx** xxxxxxxxx xxx Xxxxxxxxx Xxxxxxxxxxx.
+The following example demonstrates how to set the **CountryOrRegion** parameter for Microsoft advertising.
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.MicrosoftAdvertising]["CountryOrRegion"] = "IN";
 ```
 
-Xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxx xxx xx xxx xxx **Xxxxx** xxx **Xxxxxx** xxxxxxxxxx xxx Xxxxxx.
+The following example demonstrates how to set the **Width** and **Height** parameters for Smaato.
 
 ```CSharp
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Width"] = 300;
 myAdMediatorControl.AdSdkOptionalParameters[AdSdkNames.Smaato]["Height"] = 250;
 ```
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxx xxx xxx xxx xx xxxxxxxxx xxxxxxx](add-and-use-the-ad-mediator-control.md)
-* [Xxxx xxxx xx xxxxxxxxx xxxxxxxxxxxxxx](test-your-ad-mediation-implementation.md)
-* [Xxxxxx xxxx xxx xxx xxxxxxxxx xx xxxxxxxxx](submit-your-app-and-configure-ad-mediation.md)
-* [Xxxxxxxxxxxx xx xxxxxxxxx](troubleshoot-ad-mediation.md)
+* [Add and use the ad mediation control](add-and-use-the-ad-mediator-control.md)
+* [Test your ad mediation implementation](test-your-ad-mediation-implementation.md)
+* [Submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md)
+* [Troubleshoot ad mediation](troubleshoot-ad-mediation.md)
  
 
  
 
 
+<!--HONumber=Mar16_HO5-->
 
-<!--HONumber=Mar16_HO1-->
+

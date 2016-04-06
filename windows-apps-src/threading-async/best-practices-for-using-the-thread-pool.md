@@ -1,52 +1,57 @@
 ---
-xx.xxxxxxx: YYXXYXYX-YXYX-YYXX-XYYY-XYXYYYYYYYYY
-xxxxx: Xxxx xxxxxxxxx xxx xxxxx xxx xxxxxx xxxx
-xxxxxxxxxxx: Xxxx xxxxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxx xxxx xxx xxxxxx xxxx.
+ms.assetid: 95CF7F3D-9E3A-40AC-A083-D8A375272181
+title: スレッド プールを使うためのベスト プラクティス
+description: このトピックでは、スレッド プールを使った操作のベスト プラクティスについて説明します。
 ---
-# Xxxx xxxxxxxxx xxx xxxxx xxx xxxxxx xxxx
+# スレッド プールを使うためのベスト プラクティス
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-Xxxx xxxxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxx xxxx xxx xxxxxx xxxx.
-
-## Xx'x
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
--   Xxx xxx xxxxxx xxxx xx xx xxxxxxxx xxxx xx xxxx xxx.
+このトピックでは、スレッド プールを使った操作のベスト プラクティスについて説明します。
 
--   Xxx xxxx xxxxx xx xxxxxxxxxx xxxxxxxx xxxxx xxxxxxx xxxxxxxx xxx XX xxxxxx.
-
--   Xxxxxx xxxx xxxxx xxxx xxx xxxxx-xxxxx xxx xxxxxxxxxxx. Xxxx xxxxx xxx xxxxxxxxxxxxxx xxx xxxx xxx xx xxxxxxxxx xx xxx xxxx xx xxx xxxxx xxxx xxx xxxxx.
-
--   Xxxxxxxx xxxxxxx xx xxx XX xxxxxx xxxx xxx [**Xxxxxxx.XX.Xxxx.XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208211).
-
--   Xxx [**XxxxxxXxxxXxxxx.XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh967921) xxxxxxx xx xxx **Xxxxx** xxxxxxxx.
-
--   Xxx xxx xxxxxx xxxx xxxxxxx xx xxxxxxxx xxxx xxx xxxxxx xxxxxxxxxx xxxxxx. Xxx xxxxxx xxxx xxxx xx xxx XX xxxxx xxxx xxxxxxxx xxxxxxxxxx xxx xx xxxxxxxxx xx xxxxxxxxxxx xxxxx xxxxxxxxx xx xxxxxx xxxxxxxxx xxx xxxxxxxx xxxxxx xxx xxxxxxx xxx xxxxxx xxx xxxxxx.
-
--   Xx X++, xxxxxx xxxx xxxx xxxx xxxxxxxxx xxx xxx xxxxx xxxxxxxxx xxxxx (X++ xxxxxxxxx xxx xxxxx xx xxxxxxx).
-
--   Xxx xxx-xxxxxxxxx xxxx xxxxx xxxx xxx xxx'x xxxxxxxx x xxxxxxxx xxxxxxxxxx xxxxxxx xx xxxx xx xxx.
-
-## Xxxx'x
+## 推奨
 
 
--   Xxx'x xxxxxx xxxxxxxx xxxxxx xxxx x *xxxxxx* xxxxx xx &xx;Y xxxxxxxxxxx (xxxxxxxxx Y). Xxxx xxxx xxxxx xxx xxxx xxxx xx xxxxxx xx x xxxxxx-xxxx xxxxx.
+-   スレッド プールを使って、アプリの並列処理を実行します。
 
--   Xxx'x xxxxxx xxxxxxxx xxxx xxxxx xxxx xxxx xxxxxx xx xxxxxxxx xxxx xxx xxxxxx xx xxxx xxx xxxxxxxxx xx xxx *xxxxxx* xxxxxxxxx.
+-   作業項目を使って、UI スレッドをブロックせずに広範なタスクを実行します。
 
--   Xxx'x xxx xx xxxx XX xxxxxxx (xxxxx xxxx xxxxxx xxx xxxxxxxxxxxxx) xxxx x xxxx xxxx xxxxxxxxxx xxxx x xxxxxxxxxx xxxx. Xxxxxxx, xxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx - xxx xxxxxxx, [**XXxxxxxxxxxXxxxXxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR224800).
+-   有効期間が短く独立した作業項目を作成します。 作業項目は非同期に実行され、キューから任意の順番でプールに送ることができます。
 
--   Xxxx xxx xxx xxxx-xxxx xxxxxxxx xxxx xxx xxx **xxxxx** xxxxxxx, xx xxxxx xxxx xxx xxxxxx xxxx xxxx xxxx xxx xx xxx xx xxx xxxxxxxx xxxxx xxxxxx xxx xx xxx xxxx xx xxx xxxxxxx xxx xxxxxxxx. Xxxx xxxxxxxxx xx **xxxxx** xxxxxxx xxxxxx xxx xxxxxxx xxx xxxxxxx xxxxx xxx xxxx xxxx xxx xxxx xxx xx xxx xxxxxxxx xxxxx.
+-   [
+            **Windows.UI.Core.CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) を使って更新を UI スレッドにディスパッチします。
 
--   Xxx'x xxx xx xxx x xxx-xxxxxxxxx xxxx xxxx xxxx xxxx xxxx xxxxxxx xxxxxxxxxxxxxx xx. [Xxxxxx x xxxxxxxx xxxx xxxx](create-a-periodic-work-item.md)
+-   **Sleep** 関数ではなく [**ThreadPoolTimer.CreateTimer**](https://msdn.microsoft.com/library/windows/apps/Hh967921) 関数を使います。
 
-## Xxxxxxx xxxxxx
+-   独自のスレッド管理システムを作成するのではなく、スレッド プールを使います。 スレッド プールは、OS レベルで高度な機能を使って実行され、プロセス内およびシステム全体のデバイス リソースとアクティビティに従って動的にスケーリングされるように最適化されています。
+
+-   C++ の場合、作業項目委任でアジャイル スレッド モデルを使うようにします (C++ 委任は既定でアジャイルです)。
+
+-   使用の時点でリソース割り当ての失敗を許容できない場合は、あらかじめ割り当てられた作業項目を使用します。
+
+## 非推奨
 
 
-* [Xxxxxx x xxxxxxxx xxxx xxxx](create-a-periodic-work-item.md)
-* [Xxxxxx x xxxx xxxx xx xxx xxxxxx xxxx](submit-a-work-item-to-the-thread-pool.md)
-* [Xxx x xxxxx xx xxxxxx x xxxx xxxx](use-a-timer-to-submit-a-work-item.md)
+-   *period* の値が 1 ミリ秒未満 (0 秒を含む) の定期タイマーを作成しないでください。 この場合、作業項目は 1 回限りのタイマーとして動作します。
+
+-   *period* パラメーターで指定した時間よりも完了までに時間がかかる定期的な作業項目を送信しないでください。
+
+-   バックグラウンド タスクからディスパッチされている作業項目から、UI 更新 (トーストと通知を除く) を送信しないでください。 代わりに、バックグラウンド タスクの進行ハンドラーと完了ハンドラー ([**IBackgroundTaskInstance.Progress**](https://msdn.microsoft.com/library/windows/apps/BR224800) など) を使います。
+
+-   **async** キーワードを使用する作業項目ハンドラーを使用する場合は、ハンドラーのすべてのコードの実行が完了する前にスレッド プール作業項目が完了状態に設定される可能性があることに注意してください。 ハンドラー内の **await** キーワードに続くコードは、作業項目が完了状態に設定された後で実行される可能性があります。
+
+-   あらかじめ割り当てられた作業項目を複数回実行する場合は、1 回実行するたびに再初期化してください。 [定期的な作業項目の作成](create-a-periodic-work-item.md)
+
+## 関連トピック
+
+
+* [定期的な作業項目の作成](create-a-periodic-work-item.md)
+* [スレッド プールへの作業項目の送信](submit-a-work-item-to-the-thread-pool.md)
+* [タイマーを使った作業項目の送信](use-a-timer-to-submit-a-work-item.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

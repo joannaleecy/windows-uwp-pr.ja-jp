@@ -1,45 +1,49 @@
 ---
-Xxxxxxxxxxx: Xxx Xxx xxxxxxx xxxx xx xxx Xxx xxxxxxxxxx xxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxx xxxxx xxxx xxx xx xx xxx xxxxxxx xxx xxxxxxxxxxx xxx xxxxxxx xxxx xxx Xxxxxxxxxxxxx Xxx Xxxxxxx Xxxxxxxxx (XXXX).
-xxxxx: Xxx xxxxxxx
-xx.xxxxxxx: XYYYXYYY-YYYX-YYYY-YYYY-XYXXYYYXXYYY
+description: アプリの申請プロセスの [年齢区分] ページでは、アプリに関する情報を提供して、International Age Ratings Coalition (IARC) から適切な年齢区分を受け取ることができるようにすることができます。
+title: 年齢区分
+ms.assetid: B501A773-517B-4158-8364-C1BE630DC512
 ---
 
-# Xxx xxxxxxx
+# 年齢区分
 
-Xxx **Xxx xxxxxxx** xxxx xx xxx [Xxx xxxxxxxxxx xxxxxxx](app-submissions.md) xxxx xxx xxxxxxx xxxxxxxxxxx xxxxx xxxx xxx xx xx xxx xxxxxxx xxx xxxxxxxxxxx xxx xxxxxxx xxxx xxx [Xxxxxxxxxxxxx Xxx Xxxxxxx Xxxxxxxxx (XXXX)](http://go.microsoft.com/fwlink/p/?LinkId=716854). Xxxxx xxxxxxx xxx xxxxx xxx xxxxxxxxxxx xx xxx xxxxxxx xx xxx xxx xxx xxx xxxxxxxx, xxxxxx xxxx xxx xxx xx xxx xxxxxx xxxxxxxx xxx xxxx xxx.
+[アプリの申請プロセス](app-submissions.md) の **[年齢区分]** ページでは、アプリに関する情報を提供して、[International Age Ratings Coalition (IARC)](http://go.microsoft.com/fwlink/p/?LinkId=716854) から適切な年齢区分を受け取ることができるようにすることができます。 これらの区分は、アプリの対象ユーザーの年齢ではなく、アプリのコンテンツとメタデータの適合性に関連します。
 
-## Xxxxxxxxx xxx xxx xxxxxxx xxxxxxxxxxxxx
+## 年齢区分についての質問表への回答
 
-Xxx xxxxx xxxx xxx xxxxxx xx xxx (xx xxx xxxxx xxxx xxx xxxxxx xx xxx xxxx xxx xxxxxxxxx xxxxx xxx xxxxx xxx xxxxxx xxxxxxx), xxx xxxx xx xxxxxxxx xx xxxx x xxxxxxxx-xxxxxx xxxxxxxxxxxxx xx xxxxxxxxx xxxx xxx’x xxx xxxxxx.
+初めてアプリを申請するときに (または、以前の年齢区分プロセスを使用して公開されたアプリを更新するときに)、アプリの年齢区分を決定するための複数選択肢の質問表が表示されます。
 
-> **Xxxxxxxxx**  Xx xxx xxxx xxxxxxx xxxxx xxx xxxxxxxxxxxxx xxx xxxx xxx xx xxxxxxx xxxxxxxxxx xxx xxxx xx XXXX xxxxxx XX, xxx xxx xxxxxx xxx xxxxxx xx xxxxxxx xx xxxx xxxx xxxxxx XX. Xx'xx xxx xxxx XX xx xxxxxxxxx xxx xxxxxxxx xxxxxxx xxxx xxxx xxx xx xxx Xxxxxxx Xxxxx.
+> **重要**  別の店舗で既に質問表に回答していて、IARC の年齢区分 ID を持っている場合、マイクロソフトに年齢区分 ID を提供するオプションを選ぶことができます。 その ID を使って、Windows ストアのアプリに既存の年齢区分を関連付けます。
 
-Xxx xxx xxxxxxxx xx xxxxxx xxx xxxxxxxxx xxxxxxxxxx. Xx xxxx xx xxxx xxxxxxx, xx xxxxx xxxx xxxxxxxxx xxxxxxx xxxx xxx xxxxx xxxxxxx xxxx XXXX. Xxxxx xxx xxxxxxxx xxx xxxxxxxxxxxxx, XXXX xxxx xxxxxx xxx xxxxxxx xxxxx xx xxxx xxxxxxxxx. Xx’xx xxx xxxxx xxxxxxx xxxx xxxxxxxxxx xxxx xxx xx xxxxxxxxx xx xxxxxxxxx xxxxxxx. Xxx xxxx xxxx xxxxxxx xx xxxxx xxxx XXXX xxxx xxxx xxxxx xxx xxx’x xxxxxxx.
+正確に質問に回答する必要があります。 このプロセスの一環として、発行者の表示名とメール アドレスを IARC と共有します。 質問票に記入すると、IARC は回答に基づく年齢区分を割り当てます。 さまざまな市場の顧客にアプリを表示するときに、これらの区分を使います。 また、アプリの区分についての情報が記載されたメールを IARC から受信します。
 
-Xxx xxxxx xxxxxxxx xxxx xxx xx xxxxxx xxx xxxxxxxx xxxx xxxx xxxxxxxxx xxxx xxx (xxx xxx xxxxxxxx). Xxxx xxx xxxx x xxxxxxxxx, xxx xxxx xxx xxxxxxxxxx xxxxxxxxx. Xxx xxxxxxxx xxxxxxxxx xxx xxx xxxx xxxx xxxxx xx xxxx xxxxxxxx xxxxxxx. Xx xxx xxxx x xxxxxxx, xxx xxx xxxxx xxx xxxxxxxxxxxxx xxxxx xx xxxxxxx xxx xxxxx xxxxxxx.
+最初の質問では、アプリ (およびそのメタデータ) の説明として最適なカテゴリを選択します。 選択すると、他の質問が表示されます。 表示される個別の質問は、前の回答によって異なります。 間違えた場合は、正しい回答を指定するために質問表をもう一度やり直すことができます。
 
-Xxxx xxx xxxx xxxxxxxxx xxxxxxxxx xxx xxxxxxxxx, xxxxx **Xxxx xxx xxxxxxxx**. Xxx’xx xxxx xxx xxx xx xxx xxx’x xxxxxxxx xxxxxxx, xxx xxx xxxxxxxx xxxx xxxx xxxxxxxxxx. Xxx xxx xxxx xxxxx **Xxxx** xx xxxxxx xxx xxxxxxxxxxxxx.
+質問への回答が完了したら、**[保存して生成]** をクリックします。 アプリに割り当てられている区分がすべて表示され、申請を続行できます。 **[編集]** をクリックして質問表に再度回答することもできます。
 
-Xxx xxxx xxxx xxx xxxxxx xxxx xxx, xxx’xx xxx xxx xx xxx xxx’x xxxxxxxx xxxxxxx xx xxxx xxxx. Xxx xxx xxxx xxxxx **Xxxx** xx xxx xxxx xx xxxxxx xxx xxxxxxxxxxxxx. Xx xxxx xx xxxxxx xxx xxxxxxxxxxxxx xx xxx xxxxxxx xx xxxx xxx xxx xxxxxxx xx x xxx xxxx xxxxxxxx xxx xx xxxxxx xxx xx xxxx xxxxxxx. XXXX xxx xxxx xxxxxx xxx xxxxxxxxx xxxx xxxx xx xxxx. Xx xxxx xxxxxxx, xxx xxx xx xxxxxxxx xx xxxxxx xxx xxxxxxxxxxxxx xxxx xxx xxxxxx xx xxxxxx.
+次回アプリを更新するとき、このページにはアプリに割り当てられたすべての年齢区分が表示されます。 質問票に再度回答する場合は、**[編集]** をクリックすることもできます。 いずれかの回答の調整が必要になるようなアプリのコンテンツの変更を行った場合は、必ずもう一度質問票に回答してください。 また、質問は IARC により随時更新される可能性があります。 この場合、更新を申請するときに、もう一度質問表に回答するように求めるメッセージが表示されます。
 
-> **Xxxx**  Xxxxx Xxxxxx xxx xxxxxxxx xxxxx xxxx xxxxxxxxx xx Xxxxx Xxxxx xx xx xxxxx xxxxxxx xxx Xxxxx Xxxxx [Xxxx Xxxxxx Xxxxx](http://go.microsoft.com/fwlink/p/?LinkId=228256). Xx xxxx xxx xx x xxxx, xxx xx xxx xxxx xx xxxxx xx xx Xxxxx Xxxxx, xxx xxxx xxxx xxx xxxx xxxxxxxxxx xxxxxxx xxx xxxxxx xxxx xxxxxx xxxxxxxxxxx. Xxxx xxxx xx xxxx xxx xx xxx x xxxx, xx xx xxx xxx'x xxxx xx xxxxx xx xx Xxxxx Xxxxx, xxx xxx xxxxx xxxx xxxxxxx xxxxx.
+> **注**  韓国の法律により、韓国で入手可能なゲームは韓国の [Game Rating Board](http://go.microsoft.com/fwlink/p/?LinkId=228256) の評価を受ける必要があります。 アプリがゲームであり、そのアプリを韓国で提供する場合は、この追加セクションに入力し、評価証明書をアップロードする必要があります。 アプリがゲームではない場合や、そのアプリを韓国で提供しない場合は、このセクションは空白のままでかまいません。
 
-## Xxxxxxxxx xxxxxxx xx xxxxxxx xxxxxxxxxxxxxxx
+## 区分、または拒否された分類に対する要請
 
-Xx xxx xxxx xxxxxxxxx xxxxx xxx xxx xxxxxxx xxxx xxx xxxxxxxx, xx xxxx xx xxxxxx xxxx, xxx xxx xxxxxxx XXXX xxx xxx xxxx xxxx xxxxxxx xx xxx xxxxxx xxxxxxxxxxx xxxxx xxxx xxx xxxx xxxxxxx xxxxx xxxx xxx xxx xxxx xxxxxxxxx.
+アプリが受け取った年齢区分に関する質問がある場合、または年齢区分を要請する場合は、アプリの公開後に受信する評価証明書メールに表示されているリンクを使用して IARC に問い合わせることができます。
 
-Xx xxxx xxxxx, xxx xxxxxx xxx xxxx xxx xxx xxxxx xx xx xx xxxxxxxxxx xx xxxxxxxxxxxxx xxx x xxxxxxxxxx xxxxxxx xx xxxxxx. Xx xxxx xxxxxx, xxx xxxx xxx x xxxxxxx xxxxxxxxxx xxx xxxxxx(x) xx xxxxx xxxx xxx xxx’x xx xxxxxxx. Xx xxx xxxxxxxx xxxx xxxx xxxxxxxxxxxxxx, xxx xxx xxxxxxx xx xxxxxx xxxxx xxx xxxx xxxx xxxxxxx xx xxx xxxxxx xxxxxxxxxxx xxxxx xxxx xxx xxxx xxxxxxx xxxx XXXX.
+場合によっては、アプリの評価により、特定の国または地域では不適切として分類される可能性があります。 この場合、その市場ではアプリを提供できないことを示すメッセージが表示されます。 この分類に同意しない場合は、IARC から受信する評価証明書メールに表示されているリンクを使用して要請することができます。
 
-## Xxxxxxxx Xxxxxxx Xxxxx xxx xxxxxxx
+## 前の Windows ストアの年齢区分
 
 
-Xxxxxxxxxx, xxxxxxxxxx xxxxxxxxx xxx xxx xxxxxx xxx xxxxx xxx xxxxxx xxxx xxxxxx xxx xxxxxxxxxxxxx. Xxxxx, xxxx xxx xxxxxxxx Xxxxxxx Xxxxx xxx xxxxxxx xxxxxxxxx:
+以前は、質問表に回答するのではなく、開発者がアプリの年齢区分を指定していました。 以下に、以前の Windows ストアの年齢区分の詳細を示します。
 
-| Xxx xxxxxx                           | Xxxxxxxxxxx                            |
+| 年齢区分                           | 説明                            |
 |--------------------------------------|----------------------------------------|
-| Y+ (Xxxxxxxx xxx xxxxx xxxxxxxx)     | Xxxxx xxxx xxxxxxx xxxxxxx xxxxxxxx xxx xxxxx xxxxxxxx. Xxxxx xxx xx xxxxxxx xxxxx xxxxxxxx xx xxx-xxxxxxxxx, xxxxxxx xxxx. Xxxxxxxxxx xxxxxx xxx xxxxxxxx xx xx xxxxxxxxxx xxxx xxxx xxxx xxxxxxxxxx. Xxxxx xxxxxx xx xx xxxxxxx xxxx xxxxx xx xxxxxxxxxxx, xxx xxxxx xxxxxx xx xx xxxxxx xx xxxxxxxxxx xx xxxxxx xx xxxxxxxx xxxxxxxx. Xxxx xxxx xxxx xxx xxxxxx xxxx xxxxxx xxxxxx xxxxxxxx xxxx xxxxx xxxxxx xxxxxxx xx xxxxxxxxxxxxx xxxxxxxxxx xxx xxxxx xxxxxxxx, xxxx xx xxxxxxxxxxxx xxxxxx xxxxxxx xx xxxxxxxxxxx (xxxx xx xxxx xxxxxxxxx xxxxx xxx YY+ xxxxxxx xxxxxxxx).            |
-| Y+ (Xxxxxxxx xxx xxxx Y xxx xxxxx)   | Xxxx xxxx xxxx xxx xxxxxx xxxx xxx xxxx xxxxxxxx xx xxx Y+ xxxxxxxxxxxx, xxxxxx xxxxx xxxx xxx xxxxxxx xxxxxxx xxxx xxxxx xxxxxxxx x xxxxxxx xxxxxxxx xxx xxx xxxxxxx xxxxxxx xxxxxx, xx xxxx xx xxx xxxxxx xxxxx'x xxxxx xx xxxxxx xxxxxxxx. Xxxx xxxxxx xxxxxx xxxx xx xxxx xxx xxxx xxxxx xxx xxxxxxx xx xxxxxxxx xxx xxxxxxxx.                                                                                   |
-| YY+ (Xxxxxxxx xxx xxxx YY xxx xxxxx) | Xxxx xxxx xxxx xxx xxxxxx xxx xxxxxxx xxxxxxxxx xxxxxx xx x xxx-xxxxxx xxxxxx, xxxxxxxx xxxxxxx xxxxxxxx xxxxxxx xxx-xxxxxxxxx xxxxxxxxxx, xx xxx-xxxxxxx xxxxxxxx xxxxxxx xxxxxxxxx xxxxx xx xxxxxx xxxxxxxxxx. Xxxx xxx xxxxxx xxxxx xxxx xxxxxxx xxxxxxxxx, xxx xxx xx x xxxxxx xxxxxx. Xxxx, xxxx xxxx xxxx xxx xxxxxx xx xxxxxx xxx xxxxx xxx xxxxxxxxxxxx: (x) xxxxxx xx xxxxxx xxxxxx xxxxxxxx, xx (xx) xxxxxxx xx xxxxxxxx xxxx xxxx xxxxx xxxxxxx, xxxxxxxxx xxxxx xxxxxx xx xxxxxx xxxxxxxxxxxxx. (Xxx xxxx xxxxxxxx xx xx xxxxxxxxxx xxxxxxxxxx, xxxx xxx xxxx xxxxxxx xxxxxxxx xxxxxxx xxxxxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxxxx xx xxx xxxx xxxxxxx xxxxxxxx, xxx xxx xxxx xxxxxxxx xxxxx xxx xxxxxxx xxxxx xxxxxxxxxxxxx xx xxx [Xxxxx xxx xxxxxxxxxxxxx](notes-for-certification.md).) |
-| YY+ (Xxxxxxxx xxx xxxx YY xxx xxxxx) | Xxxx xxxx xxxx xxx xxxxxx xxx xxxxxx xxxxxxxxx xxxxxxxx xxxx xxxxxxx xxxxx, xxx xxxx xxx xxxxxx xxxxxx xxxxxxxx. Xxxx xxx xxxx xxxxxxx xxxx xx xxxxxxx xxx xxx xxxxxxxx xxxxxxxxxx, xxx xxxx xxxxxxxxx xxxx xxxxx xx xxxxxxx xx x YY+ xxx, xxxxxx xxx xxxxxx xxxx xxx xx xxx Xxxxx Xxxxxxxx.                                                                                                                           |
-| YY+ (Xxxxxxxx xxx xxxxxx)            | Xxxxx xxxx xxxx xxx xxxxxx xxx xxxxxxx xxxxxxx, xxxxx xx xxxxxxxx xxxxxxxx, xxxxx xx xxxx xxxxx xx xxxx xxxxxxxx xxx xx xxxxx xxxxxxxx. Xxx xxxxxxx xxxx xxxx xxx [xxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn764944) xxxxxxxx.                                                                                                                                                            |
+| 3+ (幼児対象)     | これらのアプリには、児童に適したコンテンツが含まれます。 非現実的で漫画的な最小限の滑稽な暴力を含めることができます。 キャラクターを、現実の世界の人物に似せることはできません。また、現実の人物と関連付けることもできません。 子供を怖がらせる内容、裸体、性的行為または犯罪行為への言及を含めることはできません。 この年齢区分のアプリでは、幼児に適さないコンテンツや機能にアクセスする可能性がある機能を有効にすることはできません。たとえば、非管理下での情報のオンライン共有機能 (年齢区分 12+ の箇所で説明) などがこれに該当します。            |
+| 7+ (7 歳以上対象)   | この年齢区分のアプリには、全年齢対象のアプリケーションとほぼ同じ条件が課せられますが、より幼い子供でなければ怖がらないような内容や、性的行為を表さない部分的な裸体は許されます。 この年齢区分は、児童に適切なコンテンツのアプリにのみ適用されます。                                                                                   |
+| 12+ (12 歳以上対象) | この区分のアプリの場合、いくぶん露出箇所が多い性的でない裸体を含めることができます。また、非現実的な登場人物に対する多少の写実的な暴力や、現実的な人間や動物に対する非写実的な暴力が許されます。 この年齢区分には、性的でない限り、粗野な言葉も含めることができます。 また、この年齢区分以上を対象とするアプリでは、非管理下で (i) オンライン ソーシャル ネットワークへのアクセスや、(ii) 他のゲーム プレーヤーやオンライン上の知り合いを含むサード パーティとの個人情報の共有を提供することが許されます。 (管理下にあると見なされるためには、共有機能を使う際に保護者の許可が必要になる、保護者による制限機能をアプリに含める必要があり、[Notes for certification](notes-for-certification.md) (認定を求めるにあたってのコメント) にそれを明記し、機能について説明する必要があります。) |
+| 16+ (16 歳以上対象) | この年齢区分のアプリでは、最低限の流血を伴う現実的な暴力や、性的行為の表現が許されます。 ストアのポリシーに示された限度内で、薬物やたばこの使用、犯罪行為などを描くことができ、12 歳以上対象のアプリよりも粗野な言葉づかいの制限が緩和されます。                                                                                                                           |
+| 18+ (成人対象)            | この年齢区分のゲームには、成人利用者のみを対象にした、激しい、不快な、または具体的な暴力表現、血液や流血の表現を含めることができます。 すべてのコンテンツは、[コンテンツ ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944) の基準を満たしている必要があります。                                                                                                                                                            |
+
+
 <!--HONumber=Mar16_HO1-->
+
+

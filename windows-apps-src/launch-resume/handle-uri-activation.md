@@ -1,58 +1,58 @@
 ---
-xxxxx: Xxxxxx XXX xxxxxxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxxxx xx xxx xx xxxxxx xxx xxxxxxx xxxxxxx xxx x Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX) xxxxxx xxxx.
-xx.xxxxxxx: YYXYYXYX-XYXY-YYXY-XYYY-YXYYXXYYXYXX
+title: URI のアクティブ化の処理
+description: URI (Uniform Resource Identifier) スキーム名の既定のハンドラーとしてアプリを登録する方法について説明します。
+ms.assetid: 92D06F3E-C8F3-42E0-A476-7E94FD14B2BE
 ---
 
-# Xxxxxx XXX xxxxxxxxxx
+# URI のアクティブ化の処理
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxx.XxxxxxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224742)
--   [**Xxxxxxx.XX.Xxxx.Xxxxxxxxxxx.XxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242330)
+-   [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742)
+-   [**Windows.UI.Xaml.Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)
 
-Xxxxx xxx xx xxxxxxxx xx xxx xx xxxxxx xxx xxxxxxx xxxxxxx xxx x Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX) xxxxxx xxxx. Xxxx Xxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx xxxxxxxx xx xx x xxxxxxx xxxxxxx xxx x XXX xxxxxx xxxx. Xx xxx xxxx xxxxxxx xxxx xxx xx xxx xxxxxxx xxxxxxx xxx x XXX xxxxxx xxxx, xxxx xxx xxxx xx xxxxxxxxx xxxxx xxxx xxxx xxxx xx XXX xx xxxxxxxx.
+URI (Uniform Resource Identifier) スキーム名の既定のハンドラーとしてアプリを登録する方法について説明します。 従来の Windows プラットフォーム (CWP) アプリとユニバーサル Windows プラットフォーム (UWP) アプリの両方を、URI スキーム名の既定のハンドラーとして登録できます。 アプリを URI スキーム名の既定のハンドラーとして選ぶと、アプリはその種類の URI を起動するたびにアクティブ化されます。
 
-Xx xxxxxxxxx xxxx xxx xxxx xxxxxxxx xxx x XXX xxxxxx xxxx xx xxx xxxxxx xx xxxxxx xxx XXX xxxxxxxx xxx xxxx xxxx xx XXX xxxxxx. Xx xxx xx xxxxxx xx xxxxxxxx xxx x XXX xxxxxx xxxx, xxx xxxx xxxxxxx xxx xxx xxxx xxxx xxx xxxxxxxxxxxxx xxxx xx xxxxxxxx xxxx xxxx xxx xx xxxxxxxxx xxx xxxx XXX xxxxxx. Xxx xxxxxxx, xx xxx xxxx xxxxxxxxx xxx xxx xxxxxx: XXX xxxxxx xxxx xxxxxx xxxx xx x xxx x-xxxx xxxxxxx xx xxxx xxx xxxx xxx xxxxxxx x xxx x-xxxx. Xxx xxxx xxxx xx XXX xxxxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxxxx xxx xxxx xxxxx xxx XXXx](https://msdn.microsoft.com/library/windows/apps/hh700321).
+URI スキーム名に登録するのは、その種類の URI スキームのすべての URI 起動を処理する場合のみにすることをお勧めします。 URI スキーム名に登録する場合は、その URI スキームのためにアプリをアクティブ化した際に期待される機能をエンド ユーザーに提供する必要があります。 たとえば、mailto: URI スキーム名に登録したアプリでは、新しいメールを開いて、ユーザーが新しいメールを書くことができるようにする必要があります。 URI の関連付けについて詳しくは、「[ファイルの種類と URI のガイドラインとチェック リスト](https://msdn.microsoft.com/library/windows/apps/hh700321)」をご覧ください。
 
-Xxxxx xxxxx xxxx xxx xx xxxxxxxx xxx x xxxxxx XXX xxxxxx xxxx, xxxxx://, xxx xxx xx xxxxxxxx xxxx xxx xxxx xxx xxxx xxxxxxxx x xxxxx:// XXX.
+以下の手順では、カスタムの URI スキーム名 alsdk:// を登録する方法と、ユーザーによって alsdk:// URI が起動されたときにアプリをアクティブ化する方法について説明します。
 
-> **Xxxx**  Xx XXX xxxx, xxxxxxx XXXx xxx xxxx xxxxxxxxxx xxx xxxxxxxx xxx xxx xx xxxxx-xx xxxx xxx xxx xxxxxxxxx xxxxxx. Xxxxxxxx xx xxxxxxxx xxxx xxx xxxx x xxxxxxxx XXX xx xxxx xxxxxxxxx xxxx xx xxxxxxx. Xxx [Xxxxxxxx XXX xxxxxx xxxxx xxx xxxx xxxxx](reserved-uri-scheme-names.md) xxx xx xxxxxxxxxx xxxx xx Xxx xxxxxxx xxxx xxx xxx'x xxxxxxxx xxx xxxx XXX xxxx xxxxxxx xxxx xxx xxxxxx xxxxxxxx xx xxxxxxxxx.
+> **注**  UWP アプリでは、組み込みのアプリとオペレーティング システムで使うために、特定の URI とファイル拡張子が予約されています。 予約されている URI またはファイル拡張子にアプリを登録しようとしても無視されます。 予約または禁止されいるため、UWP アプリを登録できない URI スキームの一覧 (アルファベット順) については、「[予約済みの URI スキーム名とファイルの種類](reserved-uri-scheme-names.md)」をご覧ください。
 
-## Xxxx Y: Xxxxxxx xxx xxxxxxxxx xxxxx xx xxx xxxxxxx xxxxxxxx
+## ステップ 1: パッケージ マニフェストに拡張点を指定する
 
 
-Xxx xxx xxxxxxxx xxxxxxxxxx xxxxxx xxxx xxx xxx XXX xxxxxx xxxxx xxxxxx xx xxx xxxxxxx xxxxxxxx. Xxxx'x xxx xxx xxxxxxxx xxxx xxxx xxx xxxxxxx xxx `alsdk`XXX xxxxxx xxxx.
+アプリは、パッケージ マニフェストに一覧表示される URI スキーム名のアクティブ化イベントだけを受け取ります。 アプリが `alsdk` URI スキーム名を処理することを示す方法は次のとおりです。
 
-1.  Xx xxx **Xxxxxxxx Xxxxxxxx**, xxxxxx-xxxxx xxxxxxx.xxxxxxxxxxxx xx xxxx xxx xxxxxxxx xxxxxxxx. Xxxxxx xxx **Xxxxxxxxxxxx** xxx xxx xx xxx **Xxxxxxxxx Xxxxxxxxxxxx** xxxx-xxxx, xxxxxx **Xxxxxxxx** xxx xxxx xxxxx **Xxx**.
+1.  **ソリューション エクスプローラー**で、package.appxmanifest をダブルクリックしてマニフェスト デザイナーを開きます。 **[宣言]** タブを選び、**[使用可能な宣言]** ドロップダウンから **[プロトコル]** を選んで **[追加]** をクリックします。
 
-    Xxxx xx x xxxxx xxxxxxxxxxx xx xxxx xx xxx xxxxxx xxxx xxx xxx xxxx xx xxx xxxxxxxx xxxxxxxx xxx xxx Xxxxxxxx (xxx [**XxxX Xxxxxxx Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn934791) xxx xxxxxxx):
+    プロトコルのマニフェスト デザイナーで指定することができる各フィールドについて、以下で簡単に説明します (詳しくは、「[**AppX パッケージ マニフェスト**](https://msdn.microsoft.com/library/windows/apps/dn934791)」をご覧ください)。
     
-| Xxxxx | Xxxxxxxxxxx |
+| フィールド | 説明 |
 |-------|-------------|
-| **Xxxx** | Xxxxxxx xxx xxxx xxxx xx xxxx xx xxxxxxxx xxx XXX xxxxxx xxxx xx xxx [Xxx Xxxxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/cc144154) xx xxx **Xxxxxxx Xxxxx**. Xx xx Xxxx xx xxxxxxxxx, xxx xxxxx xxxx xxx xxx xxx xx xxxx. |
-| **Xxxxxxx Xxxx** | Xxxxxxx xxx xxxxxxx xxxx xx xxxxxxxx xxx XXX xxxxxx xxxx xx xxx [Xxx Xxxxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/cc144154) xx xxx **Xxxxxxx Xxxxx**. |
-| **Xxxx** | Xxxxxx x xxxx xxx xxx Xxx xxxxxx. |
-|  | **Xxxx**  Xxx Xxxx xxxx xx xx xxx xxxxx xxxx xxxxxxx. |
-|  | **Xxxxxxxx xxx xxxxxxxxx xxxx xxxxx** Xxx [Xxxxxxxx XXX xxxxxx xxxxx xxx xxxx xxxxx](reserved-uri-scheme-names.md) xxx xx xxxxxxxxxx xxxx xx Xxx xxxxxxx xxxx xxx xxx'x xxxxxxxx xxx xxxx XXX xxxx xxxxxxx xxxx xxx xxxxxx xxxxxxxx xx xxxxxxxxx. |
-| **Xxxxxxxxxx** | Xxxxxxxxx xxx xxxxxxx xxxxxx xxxxxxxxxx xxx xxx xxxxxxxx. Xx xxx xxxxxxxxx, xxx xxx'x xxxxxxxxxx xx xxxx. Xx xxxxxxxxx, xxx xxxxxx xxxx xx xxxxxxx Y xxx YYY xxxxxxxxxx xx xxxxxx, xxxx xxx xxxx ".xxx", xxx xxxxxx xxxxxxx xxxxx xxxxxxxxxx: &xx;, &xx;, :, ", &#YYY;, ?, xx \*. Xx xxxxxxxxx, xxx **Xxxxx xxxxx** xx xxxx xxxx. Xx xxx **Xxxxx xxxxx** xxx'x xxxxxxxxx, xxx xxxxx xxxxx xxxxxxx xxx xxx xxx xx xxxx. |
+| **ロゴ** | **コントロール パネル**の [[既定のプログラムを設定する]](https://msdn.microsoft.com/library/windows/desktop/cc144154) で URI スキーム名を識別するために使われるロゴを指定します。 ロゴを指定しない場合は、アプリの小さいロゴが使われます。 |
+| **表示名** | **コントロール パネル**の [[既定のプログラムを設定する]](https://msdn.microsoft.com/library/windows/desktop/cc144154) で URI スキーム名を識別するための表示名を指定します。 |
+| **名前** | URI スキームの名前を選びます。 |
+|  | **注**  名前はすべて小文字である必要があります。 |
+|  | **予約および禁止されているファイルの種類** 予約または禁止されいるため、UWP アプリを登録できない URI スキームの一覧 (アルファベット順) については、「[予約済みの URI スキーム名とファイルの種類](reserved-uri-scheme-names.md)」をご覧ください。 |
+| **実行可能ファイル** | プロトコルの既定の起動実行可能ファイルを指定します。 指定しない場合、アプリの実行可能ファイルが使用されます。 指定する場合は、長さが 1 ～ 256 文字の文字列で、".exe" で終わっている必要があります。また、&gt;、&lt;、:、"、&#124;、?、\* の各文字を含めることはできません。 指定した場合、**エントリ ポイント**も使用されます。 **[エントリ ポイント]** を指定しない場合、アプリで定義されているエントリ ポイントが使用されます。 |
        
-| Xxxx | Xxxxxxxxxxx |
+| 用語 | 説明 |
 |------|-------------|
-| **Xxxxx xxxxx** | Xxxxxxxxx xxx xxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxxx. Xxxx xx xxxxxxxx xxx xxxxx xxxxxxxxx-xxxxxxxxx xxxx xx x Xxxxxxx Xxxxxxx xxxx. Xx xxx xxxxxxxxx, xxx xxxxx xxxxx xxx xxx xxx xx xxxx. |
-| **Xxxxx xxxx** | Xxx xxx xxxx xxxx xxxxxxx xxx xxxxxxxxxxxxx xxxxx. |
-| **Xxxxxxxx xxxxx** | X xxx xxxx xxx xxx xxx xx xxxxx xxxxxxxxx xxxxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxx. |
-| **Xxxxxxx Xxxx** (Xxxxxxx-xxxx) | Xxxxxxx xxx **Xxxxxxx Xxxx** xxxxx xx xxxxxxxx xxx xxxxxx xx xxxxx xxx xxx'x xxxxxx xxxxx xxxx xx xx xxxxxxxx xxx xxx XXX xxxxxx xxxx. Xxx xxxxxxxx xxxxxx xxx **Xxxxxxx Xxxx** xxx **Xxxxxxx**, **XxxXxxx**, **XxxXxxx**, **XxxXxxx**, xx **XxxXxxxxxx**. <br/>**Xxxx**  Xxxxxxx xxxxx xxxx xxxxxxx xxxxxxxx xxxxxxxxx xxxxxxx xxxx xxxxxxxxxxx xxx xxxxxx xxx'x xxxxx xxxxxx xxxx, xxx xxxxxxx, xxx xxxxxxxxxx xx xxx xxxxxx xxx, xxx xxxxxx xx xxxx xx xxxxxx, xxx xxxxxx xxxxxxxxxxx, xxx xx xx. Xxxxxxx **Xxxxxxx Xxxx** xxxxx'x xxxxxxxxx x xxxxxxxx xxxxxxxxx xxxxxxxx xxx xxx xxxxxx xxx.<br/> **Xxxxxx xxxxxx xxxxxx:  Xxxxxxx Xxxx** xxx'x xxxxxxxxx xx xxx xxxxxx xxxxxx xxxxxx. |
-2.  Xxxxx `images\Icon.png` xx xxx **Xxxx**.
-3.  Xxxxx `SDK Sample URI Scheme` xx xxx **Xxxxxxx xxxx**
-4.  Xxxxx `alsdk` xx xxx **Xxxx**.
-5.  Xxxxx Xxxx+X xx xxxx xxx xxxxxx xx xxxxxxx.xxxxxxxxxxxx.
+| **エントリ ポイント** | プロトコル拡張機能を処理するタスクを指定します。 これは、通常、Windows ランタイムの型の完全な名前空間修飾名です。 指定しない場合、アプリのエントリ ポイントが使用されます。 |
+| **スタート ページ** | 拡張ポイントを処理する Web ページです。 |
+| **リソース グループ** | リソース管理のために拡張機能のアクティブ化をグループ化するために使用できるタグ。 |
+| **必要な表示** (Windows のみ) | この URI スキーム名に対して起動されたときにアプリのウィンドウに必要なスペースの量を示すには、**[必要な表示]** フィールドを指定します。 **[必要な表示]** に指定できる値は、**Default**、**UseLess**、**UseHalf**、**UseMore**、または **UseMinimum** です。 <br/>**注**  Windows では、ターゲット アプリの最終的なウィンドウ サイズを決定するときに複数の異なる要素が考慮されます。たとえば、ソース アプリの設定、画面上のアプリの数、画面の向きなどです。 **[必要な表示]** を設定しても、ターゲット アプリの特定のウィンドウ動作が保証されるわけではありません。<br/> **モバイル デバイス ファミリ:  [必要な表示]** はモバイル デバイス ファミリではサポートされていません。 |
+2.  **[ロゴ]** に `images\Icon.png` と入力します。
+3.  **[表示名]** に `SDK Sample URI Scheme` と入力します。
+4.  **[名前]** に `alsdk` と入力します。
+5.  Ctrl + S キーを押して、変更を package.appxmanifest に保存します。
 
-    Xxxx xxxx xx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211400) xxxxxxx xxxx xxxx xxx xx xxx xxxxxxx xxxxxxxx. Xxx **xxxxxxx.xxxxxxxx** xxxxxxxx xxxxxxxxx xxxx xxx xxx xxxxxxx xxx `alsdk` XXX xxxxxx xxxx.
+    これにより、次のような [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) 要素がパッケージ マニフェストに追加されます。 **windows.protocol** カテゴリは、アプリが `alsdk` URI スキーム名を処理することを示しています。
 
     ```xml
           <Extensions>
@@ -65,21 +65,22 @@ Xxx xxx xxxxxxxx xxxxxxxxxx xxxxxx xxxx xxx xxx XXX xxxxxx xxxxx xxxxxx xx xxx x
           </Extensions>
     ```
 
-## Xxxx Y: Xxx xxx xxxxxx xxxxx
+## ステップ 2: 適切なアイコンを追加する
 
 
-Xxxx xxxx xxxxxx xxx xxxxxxx xxx x XXX xxxxxx xxxx xxxx xxxxx xxxxx xxxxxxxxx xx xxxxxxx xxxxxx xxxxxxxxxx xxx xxxxxx, xxx xxxxxxx, xx xxx Xxxxxxx xxxxxxxx xxxxxxx xxxxx.
+URI スキーム名の既定となるアプリは、そのアイコンがシステムのさまざまな場所に表示されます。アイコンは、たとえば [既定のプログラム] コントロール パネルに表示されます。
 
-Xx xxxxxxxxx xxxx xxx xxxxxxx xxx xxxxxx xxxxx xxxx xxxx xxxxxxx xx xxxx xxxx xxxx xxxxx xxxxx xx xxx xx xxxxx xxxxxx. Xxxxx xxx xxxx xx xxx xxx xxxx xxxx xxx xxx xxxx xxx'x xxxxxxxxxx xxxxx xxxxxx xxxx xxxxxx xxx xxxx xxxxxxxxxxx. Xxxx xxx xxxx xxxxxx xx xxx xxxx xxxxxxx xxxxxxx xx. Xxxx xxxx xxxxx xx xxxxx xxxxxxxxxxx. Xxx xxxxxxx xxxxx, xxx xxx [Xxxxxxxxxxx xxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620490).
+これらのすべての場所でロゴが適切に表示されるように、適切なアイコンをプロジェクトと共に含めることをお勧めします。 アプリのタイルのロゴの外観を調和させ、アイコンを透明にするのではなく、アプリの背景色を使います。 パディングせずにロゴを端まで拡張します。 アイコンは、白い背景でテストします。 サンプルのアイコンについては、[関連付けによる起動のサンプル](http://go.microsoft.com/fwlink/p/?LinkID=620490)をご覧ください。
 
-![xxx xxxxxxxx xxxxxxxx xxxx x xxxx xx xxx xxxxx xx xxx xxxxxx xxxxxx. xxxxx xxx YY, YY, YY, xxx YYY xxxxx xxxxxxxx xx xxxx 'xxxx.xxxxxxxxxx' xxx 'xxxxxxxxx-xxx'](images/seviewofimages.png)
+![ソリューション エクスプローラーで images フォルダー内にあるファイルを表示した様子。 Icon.targetsize と smallTile-sdk の両方に 16、32、48、256 の各ピクセルのバージョンがあります。](images/seviewofimages.png)
 
-## Xxxx Y: Xxxxxx xxx xxxxxxxxx xxxxx
+## ステップ 3: アクティブ化イベントを処理する
 
 
-Xxx [**XxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242330) xxxxx xxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxx. Xxx **Xxxx** xxxxxxxx xxxxxxxxx xxx xxxx xx xxxxxxxxxx xxxxx. Xxxx xxxxxxx xx xxx xx xx xxxxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol) xxxxxxxxxx xxxxxx.
+[
+            **OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330) イベント ハンドラーは、すべてのファイル アクティブ化イベントを受け取ります。 **Kind** プロパティは、アクティブ化イベントの種類を示しています。 次の例では、[**Protocol**](https://msdn.microsoft.com/library/windows/apps/xaml/windows.applicationmodel.activation.activationkind.aspx#Protocol) アクティブ化イベントを処理するように設定されています。
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```cs
 public partial class App
 {
@@ -118,60 +119,64 @@ void App::OnActivated(Windows::ApplicationModel::Activation::IActivatedEventArgs
 }
 ```
 
-> **Xxxx**  Xxxx xxxxxxxx xxx Xxxxxxxx Xxxxxxxx, xxxx xxxx xxxx Xxxx xxxxxx xxxxx xxx xxxx xxxx xx xxx xxxxxx xxxx xxxxxxxx xxx xxx xxx xxx xx xxx xxx'x xxxxxxxx xxxxxxx.
+> **注**  プロトコル コントラクトを介して起動した場合、戻るボタンが使われたときは、アプリの以前のコンテンツに戻るのではなく、アプリを起動した画面に戻るようにする必要があります。
 
-Xx xx xxxxxxxxxxx xxxx xxxx xxxxxx x xxx XXXX [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242682) xxx xxxx xxxxxxxxxx xxxxx xxxx xxxxx x xxx xxxx. Xxxx xxx, xxx xxxxxxxxxx xxxxxxxxx xxx xxx xxx XXXX **Xxxxx** xxxx xxx xxxxxxx xxx xxxxxxxx xxxxxxx xxxx xxx xxx xxxxx xxxx xx xxx xxxxxxx xxxxxx xxxx xxxxxxxxx. Xxxx xxxx xxxxxx xx xxx x xxxxxx XXXX **Xxxxx** xxx Xxxxxx xxx Xxxx Xxxxxxxxx xxxxxx xxxxx xxx xxxxx xx xxx **Xxxxx** xxxxxxxxxx xxxxxxx xxxxxx xxxxxxxxxx xx x xxx xxxx.
+新しいページを開くアクティブ化イベントごとにアプリで新しい XAML [**フレーム**](https://msdn.microsoft.com/library/windows/apps/br242682)を作成することをお勧めします。 こうすると、新しい XAML **フレーム**のナビゲーション バックスタックに、中断されたときに現在のウィンドウに表示されていた以前のコンテンツが含まれなくなります。 起動コントラクトとファイル コントラクトで単一 XAML **フレーム**を使うことにしたアプリは、新しいページに移動する前に**フレーム**のナビゲーション ジャーナルにあるページをクリアする必要があります。
 
-Xxxx xxxxxxxx xxx Xxxxxxxx xxxxxxxxxx, xxxx xxxxxx xxxxxxxx xxxxxxxxx XX xxxx xxxxxx xxx xxxx xx xx xxxx xx xxx xxx xxxx xx xxx xxx.
+プロトコルのアクティブ化によって起動されるときは、アプリの先頭ページに戻ることができる UI を含めることを検討してください。
 
-## Xxxxxxx
-
-
-Xxx xxx xx xxxxxxx xxx xxx xxxx XXX xxxxxx xxxx, xxxxxxxxx xxxxxxxxx xxxx. Xx xxx xxxx xxxx xxx xxx xx xxx XXX xxxxx xxxx xxxx xx xxxxxxxxx xxxxxx. Xx xxxxxxxxx xxxx xxx xxxxx xxxxxxx x xxxxxxxxx xxxxxx xxxxx xx xxx xxxxxxxxxx xxxx xxx xxxxxxx xx xxx XXX. Xxx xxxxxxx, XXX xxxxxxxxxx xxxxx xx xxxx xx xxxxxx xxx xxx xx x xxxx'x xxxxxxx xxxx, xxx xx xxxxxxxxx xxxx xxx xxxxx xxx xxxx xx xxxxxxxx xxxxxx xxx xxxx'x xxxxxxx.
-
-> **Xxxx**  Xx xxx xxx xxxxxxxx x xxx XXX xxxxxx xxxx xxx xxxx xxx, xx xxxx xx xxxxxx xxx xxxxxxxx xx [XXX YYYY](http://go.microsoft.com/fwlink/p/?LinkID=266550). Xxxx xxxxxxx xxxx xxxx xxxx xxxxx xxx xxxxxxxxx xxx XXX xxxxxxx.
-
-> **Xxxx**  Xxxx xxxxxxxx xxx Xxxxxxxx Xxxxxxxx, xxxx xxxx xxxx Xxxx xxxxxx xxxxx xxx xxxx xxxx xx xxx xxxxxx xxxx xxxxxxxx xxx xxx xxx xxx xx xxx xxx'x xxxxxxxx xxxxxxx.
-
-Xx xxxxxxxxx xxxx xxxx xxxxxx x xxx XXXX [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242682) xxx xxxx xxxxxxxxxx xxxxx xxxx xxxxx x xxx Xxx xxxxxx. Xxxx xxx, xxx xxxxxxxxxx xxxxxxxxx xxx xxx xxx XXXX **Xxxxx** xxxx xxx xxxxxxx xxx xxxxxxxx xxxxxxx xxxx xxx xxx xxxxx xxxx xx xxx xxxxxxx xxxxxx xxxx xxxxxxxxx.
-
-Xx xxx xxxxxx xxxx xxx xxxx xxxx xxxx xx xxx x xxxxxx XXXX [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242682) xxx Xxxxxx xxx Xxxxxxxx Xxxxxxxxx, xxxxx xxx xxxxx xx xxx **Xxxxx** xxxxxxxxxx xxxxxxx xxxxxx xxxxxxxxxx xx x xxx xxxx. Xxxx xxxxxxxx xxx Xxxxxxxx Xxxxxxxx, xxxxxxxx xxxxxxxxx XX xxxx xxxx xxxx xxxx xxxxxx xxx xxxx xx xx xxxx xx xxx xxx xx xxx xxx.
-
-> **Xxxx**  Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx'xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
-## Xxxxxxx xxxxxx
+## 注釈
 
 
-**Xxxxxxxx xxxxxxx**
+URI スキーム名は、悪意のあるものも含め、あらゆるアプリや Web サイトから使われる可能性があります。 そのため、その URI で受け取るデータは、信頼できないソースからのデータである可能性があります。 URI で受け取るパラメーターに基づいて永続的な操作を実行しないことをお勧めします。 たとえば、アプリを起動するとユーザーのアカウント ページが表示されるようにするために URI パラメーターを使うことはかまいませんが、ユーザーのアカウントを直接変更するためにプロトコル パラメーターを使うことは行わないことをお勧めします。
 
-* [Xxxxxxxxxxx xxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+> **注**  アプリの新しい URI スキーム名を作成する場合は、[RFC 4395](http://go.microsoft.com/fwlink/p/?LinkID=266550) のガイダンスに従う必要があります。 これにより確実に名前が URI スキームの標準に準拠するようになります。
 
-**Xxxxxxxx**
+> **注**  プロトコル コントラクトを介して起動した場合、戻るボタンが使われたときは、アプリの以前のコンテンツに戻るのではなく、アプリを起動した画面に戻るようにする必要があります。
 
-* [Xxxxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/cc144154)
-* [Xxxx Xxxx xxx XXX Xxxxxxxxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+新しい URI ターゲットを開くアクティブ化イベントごとに、アプリで新しい XAML [**フレーム**](https://msdn.microsoft.com/library/windows/apps/br242682)を作成することをお勧めします。 こうすると、新しい XAML **フレーム**のナビゲーション バックスタックに、中断されたときに現在のウィンドウに表示されていた以前のコンテンツが含まれなくなります。
 
-**Xxxxx**
+アプリが、起動コントラクトとプロトコル コントラクトに単一 XAML [**フレーム**](https://msdn.microsoft.com/library/windows/apps/br242682)を使うようにした場合は、新しいページに移動する前に**フレーム**のナビゲーション ジャーナルにあるページをクリアする必要があります。 プロトコル コントラクトによって起動されるときは、アプリの先頭に戻ることができる UI をアプリに含めることを検討してください。
 
-* [Xxxxxx xxx xxxxxxx xxx xxx x XXX](launch-default-app.md)
-* [Xxxxxx xxxx xxxxxxxxxx](handle-file-activation.md)
-
-**Xxxxxxxxxx**
-
-* [Xxxxxxxxxx xxx xxxx xxxxx xxx XXXx](https://msdn.microsoft.com/library/windows/apps/hh700321)
-
-**Xxxxxxxxx**
-
-* [**XxxX Xxxxxxx Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn934791)
-* [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxx.XxxxxxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224742)
-* [**Xxxxxxx.XX.Xxxx.Xxxxxxxxxxx.XxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242330)
+> **注**  この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください。
 
  
 
+## 関連トピック
+
+
+**完全な例**
+
+* [Association Launching サンプル](http://go.microsoft.com/fwlink/p/?LinkID=231484)
+
+**概念**
+
+* [既定のプログラム](https://msdn.microsoft.com/library/windows/desktop/cc144154)
+* [ファイルの種類と URI の関連付けのモデル](https://msdn.microsoft.com/library/windows/desktop/hh848047)
+
+**処理手順**
+
+* [URI に応じた既定のアプリの起動](launch-default-app.md)
+* [ファイルのアクティブ化の処理](handle-file-activation.md)
+
+**ガイドライン**
+
+* [ファイルの種類と URI のガイドライン](https://msdn.microsoft.com/library/windows/apps/hh700321)
+
+**リファレンス**
+
+* [**AppX パッケージ マニフェスト**](https://msdn.microsoft.com/library/windows/apps/dn934791)
+* [**Windows.ApplicationModel.Activation.ProtocolActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224742)
+* [**Windows.UI.Xaml.Application.OnActivated**](https://msdn.microsoft.com/library/windows/apps/br242330)
+
  
+
+ 
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

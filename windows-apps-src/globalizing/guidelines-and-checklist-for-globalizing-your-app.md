@@ -1,36 +1,33 @@
 ---
-Xxxxxxxxxxx: Xxxxxx xxxxx xxxx xxxxxxxxx xxxx xxxxxxxxxxx xxxx xxxx xxx x xxxxx xxxxxxxx xxx xxxx xxxxxxxxxx xxxx xxxx xxx x xxxxxxxx xxxxxx.
-Xxxxxx.Xxxxxxxxxx.XxxxxXX: YYY
-xxxxx: Xxxxxxxxxx xxx xxxxxxxxxxxxx xxx xxxxxxxxxxxx
-xx.xxxxxxx: YYYYXXYX-XXXY-YXXY-YYYX-XYXXYYYXXXYY
-xxxxx: Xx'x xxx xxx'xx
-xxxxxxxx: xxxxxx.xxx
+Description: 広範なユーザー向けにアプリをグローバル化したり、特定の市場を対象にアプリをローカライズするときは、次のベスト プラクティスに従ってください。
+Search.Refinement.TopicID: 180
+title: グローバリゼーションとローカライズのガイドライン
+ms.assetid: 0342DC3F-DDD1-4DD4-872E-A4EC340CAE79
+label: 推奨と非推奨
+template: detail.hbs
 ---
 
-# Xxxxxxxxxxxxx xxx xxxxxxxxxxxx xx'x xxx xxx'xx
+# グローバリゼーションとローカライズの推奨と非推奨
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください。\]
 
 
-**Xxxxxxxxx XXXx**
+**重要な API**
 
--   [**Xxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206813)
--   [**Xxxxxxxxxxxxx.XxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226136)
--   [**Xxxxxxxxxxxxx.XxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206859)
--   [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206022)
--   [**Xxxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225039)
+-   [**グローバリゼーション**](https://msdn.microsoft.com/library/windows/apps/br206813)
+-   [**Globalization.NumberFormatting**](https://msdn.microsoft.com/library/windows/apps/br226136)
+-   [**Globalization.DateTimeFormatting**](https://msdn.microsoft.com/library/windows/apps/br206859)
+-   [**リソース**](https://msdn.microsoft.com/library/windows/apps/br206022)
+-   [**Resources.Core**](https://msdn.microsoft.com/library/windows/apps/br225039)
 
-Xxxxxx xxxxx xxxx xxxxxxxxx xxxx xxxxxxxxxxx xxxx xxxx xxx x xxxxx xxxxxxxx xxx xxxx xxxxxxxxxx xxxx xxxx xxx x xxxxxxxx xxxxxx.
+広範なユーザー向けにアプリをグローバル化したり、特定の市場を対象にアプリをローカライズするときは、次のベスト プラクティスに従ってください。
 
 
 
-## <span id="guidelines_for_internationalization">
-            </span>
-            <span id="GUIDELINES_FOR_INTERNATIONALIZATION">
-            </span>Xxxxxxxxxxxxx
+## <span id="guidelines_for_internationalization"></span><span id="GUIDELINES_FOR_INTERNATIONALIZATION"></span>グローバリゼーション
 
-Xxxxxxx xxxx xxx xx xxxxxx xxxxx xx xxxxxxxxx xxxxxxx xx xxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxx xxx xxxxxx xxx xxxx XX, xxxxx [**Xxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206813) XXXx xx xxxxxx xxx xxxx, xxx xxxxxxxx xxxxxxxxxxx xxxxx xx xxxxxxxx xx xxxxxxxx.
+グローバル化に適した UI の用語と画像が選択され、[**Globalization**](https://msdn.microsoft.com/library/windows/apps/br206813) API を使ってアプリ データがフォーマットされ、場所や言語に基づく前提のない、異なる市場に簡単に適応できるアプリを準備します。
 
 <table>
 <colgroup>
@@ -39,75 +36,72 @@ Xxxxxxx xxxx xxx xx xxxxxx xxxxx xx xxxxxxxxx xxxxxxx xx xxxxxxxx xxxxxxxx xxxxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxxxxxxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">推奨事項</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Xxx xxx xxxxxxx xxxxxxx xxx xxxxxxx, xxxxx, xxxxx, xxxxxxxxx, xxx xxxxx xxxxxxx.</p></td>
-<td align="left"><p>Xxx xxxxxxxxxx xxxx xxx xxxxxxx, xxxxx, xxxxx, xxx xxxxx xxxxx xx xxxx xxxxxx xxxxxxx xxxxxxxx, xxxxxxx, xxxxxxxxx, xxx xxxxxxx. Xx xxx'xx xxxxxxxxxx xxxxxxx, xxxxx, xxxxx, xx xxxxx xxxx, xxx [<strong>Xxxxxxxxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY) XXXx xx xxx xxx xxxxxx xxxxxxxxxxx xxx x xxxxxxxxxx xxxxxxxx.</p></td>
+<td align="left"><p>数値、日付、時刻、住所、電話番号には正しい形式を使う。</p></td>
+<td align="left"><p>数値、日付、時刻などのデータに使われる形式は、カルチャ、地域、言語、市場により異なります。 数値、日付、時刻、またはその他のデータを表示している場合は、[<strong>グローバリゼーション</strong>](https://msdn.microsoft.com/library/windows/apps/br206813) API を使用して、特定のユーザーに適した形式を取得します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Xxxxxxx xxxxxxxxxxxxx xxxxx xxxxx.</p></td>
-<td align="left"><p>Xxx xxxx xxxxxx xxxxx xxxxx xxxxxx xxxxxxx xxxxxxxxx, xx xx xxx xxxxxxx xxxxxxxx xxxx xxxxxx xx xxxxx xxxx, xxxx xxxxxxxx, xx xxxx xx xxxxxxx xxx xxxx xxxxxx xxxxxxxxxxxxx xxxxx.</p></td>
+<td align="left"><p>国際的な用紙サイズをサポートする。</p></td>
+<td align="left"><p>最も一般的な用紙サイズは国によって異なるため、用紙サイズによって変化する機能 (印刷など) を含める場合には、必ず一般的な国際サイズをサポートし、テストしてください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Xxxxxxx xxxxxxxxxxxxx xxxxx xx xxxxxxxxxxx xxx xxxxxxxxxx.</p></td>
-<td align="left"><p>Xxxxxxxxx xxxxx xxx xxxxxx xxx xxxx xx xxxxxxxxx xxxxxxxxx, xxxxxxxx xxx xxxx xxxxxxx xxx xxx xxxxxx xxxxxx xxx xxx xxxxxxxx xxxxxx. Xx xxx xxxx xxxx xxxxxxxxxxxx, xxxx xxxxxx, xxxxxxxxxxx, xx xxxx, xxx xxx xxxxxxx xxxxxx xxxxxxxxxxx xx xxxxx xxx [<strong>XxxxxxxxxxXxXxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY) xxxxxxxx.</p></td>
+<td align="left"><p>国際的な計測単位と通貨をサポートする。</p></td>
+<td align="left"><p>使われる単位と尺度は国によって異なりますが、最も使われているのはメートル法とヤード ポンド法です。 長さ、温度、範囲などの計測を扱う場合は、[<strong>CurrenciesInUse</strong>](https://msdn.microsoft.com/library/windows/apps/br206793) プロパティを使用して、正しいシステム計測を取得します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Xxxxxxx xxxx xxx xxxxx xxxxxxxxx.</p></td>
-<td align="left"><p>Xxx xxxxx xxxx, xxxx xxxx, xxx xxxxxxxxx xx xxxx xxxxxx xxxxxxx xxxxxxxxx xxxxxxx.</p>
-<p>Xxx xxxx xxxx, xxx [<strong>Xxxxxx xxxxxx xxx xxxxx, xxx xxxxxxx XXX</strong>](xxxxxx-xxxxxx-xxx-xxxxx--xxx-xxxxxxx-xxx.xx).</p></td>
+<td align="left"><p>テキストとフォントを正しく表示する。</p></td>
+<td align="left"><p>テキストに適したフォント、フォント サイズ、方向は、市場によって異なります。</p>
+<p>詳細については、「[<strong>レイアウトとフォントを調整し、RTL をサポートする</strong>](adjust-layout-and-fonts--and-support-rtl.md)」をご覧ください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Xxx Xxxxxxx xxx xxxxxxxxx xxxxxxxx.</p></td>
-<td align="left"><p>Xx xxxxxxx, xxxxxx xxxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx xxx Xxxxxxx xxxxxxxxx xxxxxxxx xxx xxx xxxxxxxxx. Xx xxx'xx xxxxx x xxxxxxxxx xxxxxx, xx xxxx xx xxxx xxxxxx xxxxx xx xxx xxxxxxxxxxx Xxxxxxx xxxxxxxxx xxxxxxxxx. Xxx Xxxxxxx Xxxxxxx XXXx xxxxxx XXX-YY xxxxxxx xxxxxxx.</p></td>
+<td align="left"><p>文字エンコードに Unicode を使う。</p></td>
+<td align="left"><p>既定では、最近のバージョンの Microsoft Visual Studio は、すべてのドキュメントに Unicode 文字エンコードを使います。 別のエディターを使っている場合は、適切な Unicode 文字エンコードでソース ファイルが保存されるようにしてください。 Windows ランタイム API はどれも、UTF-16 エンコードの文字列を返します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Xxxxxx xxx xxxxxxxx xx xxxxx.</p></td>
-<td align="left"><p>Xxxx xxxx xxx xxxx xxxxx xxx xxxx xxxxx, xxxxxx xxx xxxxxxxx xx xxxxx. Xxxx xxxxxxx xxxx xxxx xxx xxxxx xx xxxxxxxxx xxxxx xx'x xxxxxxxxx xx xxx xxxx xxxx xxx xxxxxxxxxxx xxxxxxxxxx. Xxx xxx [<strong>XxxxxxxXxxxxXxxxxxXxxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY) xxxxxxxx xx xxx xxx xxxxxxx xxxxx xxxxxxxx.</p></td>
+<td align="left"><p>入力の言語を記録する。</p></td>
+<td align="left"><p>アプリがユーザーにテキスト入力を求めるときに、入力の言語が記録されるようにします。 こうすると、その入力が後で表示されるときに適切な書式設定でユーザーに提示されます。 [<strong>CurrentInputMethodLanguage</strong>](https://msdn.microsoft.com/library/windows/apps/hh700658) プロパティを使用して、現在の入力言語を取得します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Xxx'x xxx xxxxxxxx xx xxxxxx x xxxx'x xxxxxxxx, xxx xxx'x xxx xxxxxxxx xx xxxxxx x xxxx'x xxxxxxxx.</p></td>
-<td align="left"><p>Xx Xxxxxxx, xxx xxxx'x xxxxxxxx xxx xxxxxxxx xxx xxxxxxxx xxxxxxxx. X xxxx xxx xxxxx x xxxxxxxxxx xxxxxxxx xxxxxxx xx x xxxxxxxx, xxxx xx-xx xxx Xxxxxxx xx xxxxxx xx Xxxxx Xxxxxxx, xxx xxx xxxx xxx xx xx xx xxxxxxxx xxxxxxxxx xxxxxxx xx xxxxxx. Xxxxxxxx xxxxxxx xxxx xxxx xxxxxxx xxxxxxxxx xxxxx xxx xxxx'x xxxxxxxx, xxxx xxx XX xxxx, xx xxxxxxxx, xxxx xxx xxxxxxxxx xxxxxx.</p>
-<p>Xxx xxxx xxxx, xxx [<strong>Xxxxxx xxxxxxxx xxx xxxxxx</strong>](xxxxxx-xxxxxxxx-xxx-xxxxxx.xx).</p></td>
+<td align="left"><p>言語からユーザーの位置を想定する、または位置からユーザーの言語を想定することはしない。</p></td>
+<td align="left"><p>Windows では、ユーザーの言語と位置は別の概念です。 特定の地理的な言語バリアント (en-gb (英国で話される英語) など) を話しても、住んでいる国または地域はまったく異なる場合があります。 UI テキストなどのためにアプリがユーザーの言語について認識する必要があるか、ライセンス問題などのためにアプリがユーザーの位置について認識する必要があるかを検討してください。</p>
+<p>詳細については、「[<strong>言語と地域を管理する</strong>](manage-language-and-region.md)」をご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Xxx'x xxx xxxxxxxxxxxxxx xxx xxxxxxxxx.</p></td>
-<td align="left"><p>Xxxxxxxx xxxx'x xxxxxxxx xx x xxxxxxxxxxx xxxxx, xxxx xx xxxxxxx xxx xxx, xxx xx xxxx xx xxxxxxxxxx xx xxxxxxxxx, xxxxxxx xxxx xxxxxx xx xxxx xxxxxxxxxxx xxxxx xxx xxxx xxxxxxxx. Xxxxxxxxx, xxxxxxxxx xxxxx xxxx xxxxx xx xxx xxxxxx xxx xxxx xxxxxxx xx xxxxxxx xxxx. Xxx xxxxxxx, x &xxxx;xxxxxxxx&xxxx; xxxxx xxxxxxxxx xxxxxxxx xx xxxxx xxx xxx xxxx xx xxxxxx xxxxxxx, xxx xxxxx xxx xxxx’x xxxx xx xxxx xxxxxxx xxx’x xxxxxxxxxx xxx xxxxxxxxx. Xx xxx xxxx xx xxxxxxxx xxxx xxx xxx xxx xxx xx xxxxxxxx xxxxx xx xxxx, xx xxxx xxxx xxx xxxxxxxxxx xxxxxxx xx xxxxxxxxxx xxx xxxxxxx xxx xxxxx xx xx xxxxxxxxxx.</p></td>
+<td align="left"><p>俗語や比喩を使わない。</p></td>
+<td align="left"><p>一部のカルチャや年齢などの集団にしか伝わらない言葉は、その集団の人しか使わないので、理解や翻訳が難しい場合があります。 同様に、比喩も人によって伝わったり伝わらなかったりします。 たとえば、&quot;ブルーバード&quot; はスキーをする人には伝わりますが、スキーをしない人には伝わりません。 アプリをローカライズしてくだけた表現を使うことを計画している場合は、ローカライズ担当者に翻訳対象の意味と口調を十分に説明してください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Xxx'x xxx xxxxxxxxx xxxxxx, xxxxxxxxxxxxx, xx xxxxxxxx.</p></td>
-<td align="left"><p>Xxxxxxxxx xxxxxxxx xx xxxx xxxxxx xx xx xxxxxxxxxx xx xxx-xxxxxxxxx xxxxxxxxx xx xxxxxx xxxx xxxxx xxxxxxxx xx xxxxxxx, xxx xx'x xxxxxxxxx xx xxxxxxxxx. Xxxxxx xxx'x xxx xxxxx xxxxx xx xxxxx xx xxxxxxxx xxxxxxxxxxxxx. Xxxxxxxxx xxxxxxxx xxxxx xxxxxxx xx xxxxx xxxxxxxx xx xxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxx. Xx xxxxx, xxxx xxxxx xx xx xxxxxxxxx, xxx xxx xxxxxx xxxxxxx xxxxxxx xx xx xxx-xxxxxxxxx.</p></td>
+<td align="left"><p>専門的な用語、省略形、略語を使わない。</p></td>
+<td align="left"><p>専門用語は、専門知識のないユーザーや他のカルチャまたは地域の人々には意図が伝わりにくく、翻訳も困難です。 このような言葉は日常会話では使われません。 専門用語は、ハードウェアとソフトウェアの問題を特定するため、エラー メッセージ内でよく使われます。 専門用語が必要な場合があるかもしれませんが、普通の言葉に置き換えることが望まれます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Xxx'x xxx xxxxxx xxxx xxxxx xx xxxxxxxxx.</p></td>
-<td align="left"><p>Xxxxxx xxxx xxxxx xx xxxxxxxxxxx xx xxxx xxx xxxxxxx xxx xx xxxxxxxxx xx xxxxxxxxxxxxxx xx xxxxx xxxxxxxx. Xxxxx xxx xx xxxxxxxxx xxxxxxx, xxxxxxx, xx xxxxx xxxxxxxxxxxx xxxx xxx xxxxxxxxxx xxxx xxxxxxxx xxxxx xx xxxxxxxxx xxxxxxxxx.</p></td>
+<td align="left"><p>不快感を与えかねない画像を使わない。</p></td>
+<td align="left"><p>自分が所属するカルチャでは妥当な画像でも、別のカルチャでは不快感を与えたり、誤って解釈されたりすることがあります。 宗教的なシンボル、動物、国旗や政治運動に関連付けられる色の組み合わせなどは避けてください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Xxxxx xxxxxxxxx xxxxxxx xx xxxx xx xxxx xxxxxxxxx xx xxxxxxx.</p></td>
-<td align="left"><p>Xxxx xxx xxxxxxx xxxxxxxxxxxxx xxxxxxxx xx xxxxxxxx xxxxxxxxxx, xxx xxxx'xx x xxxxxxxx xxxxxx xx xxxxxxxxx xxxxxxx. Xx xxxxxxx xxxx xxx XX xxxx xxx xxxxxxxxx x xxxxxx xxxxxx xx xx xx x &xxxx;xxxxxxx/xxxxxx&xxxx;. Xxxxxxx x xxxxxxxx xxxxxxxxx xx x xxxx xxxxxxx &xxxx;Xxxxxxxxx&xxxx;, xxxx xx xx xxxxxxx xxxx, xxxxx xxx xxx xx xxxxxxx.</p></td>
+<td align="left"><p>地図や、地域についての言及では、政治的侵害を避ける。</p></td>
+<td align="left"><p>地図には論争の的になっている地域や国境が含まれている可能性があり、それらはしばしば政治的な侵害のきっかけになります。 国家の選択に使う UI は、必ず &quot;国/地域&quot; という名称にしてください。 (住所フォームなどで) &quot;国&quot; という名称の一覧に領有権未決の領域を含めると、トラブルになりかねません。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Xxx'x xxx xxxxxx xxxxxxxxxx xx xxxxxx xx xxxxxxx xxxxxxxx xxxx.</p></td>
-<td align="left"><p>XXX-YY xxxxxxxx xxxx xxx xxxxxxx. Xxxxx xxx x xxxxxx xx xxxxxx xxxx xxxxxxxxx xxxxxxxx xxxx, xxxxxxxxx xxxxxx xxxx xxxxxxxx xxxxxx xxxxxxxxxxx, xxxxxx xxxx, xxx xxxxxxxx xxxxxxxx xxxxxxxx. Xxx xxxxxxxx xxxxxxxxxx xxxxxx xx Xxxxxxx xxxxx xxxx xx xxxxxxxx xxx xxx. Xxx xxx xxxxxxx x xxx xx xxxxxxxxx xx xxx xxxxxxxxx, xxx xxx xxxxxx xxxxxxx xxx xxxxxxxxxxx xxx xxx xxx xxxx xxx xxx xxx.</p>
-<p>Xxx xxxx xx xxxxxxxx xxxxxxxxxx, xxx [<strong>Xxxxxxxx xxx xxxxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxxx/xxYYYYYY).</p></td>
+<td align="left"><p>言語タグを比較する目的で文字列比較を単独で使わない。</p></td>
+<td align="left"><p>BCP-47 言語タグは複雑です。 言語タグの比較では、スクリプト情報、前のタグ、複数の地域バリアントの対応付けに伴う問題など、多数の問題が発生します。 Windows のリソース管理システムでは、対応付けが自動的に行われます。 開発者はどの言語で作られたリソース セットでも指定でき、システムがユーザーとアプリのために適切なものを選びます。</p>
+<p>リソース管理の詳細については、「[<strong>アプリ リソースの定義</strong>](https://msdn.microsoft.com/library/windows/apps/xaml/hh965321)」をご覧ください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Xxx'x xxxxxx xxxx xxxxxxx xx xxxxxx xxxxxxxxxx.</p></td>
-<td align="left"><p>Xxx xxxxxxxxx xxxx xxx'x xxx Xxxxx xxxxxx, xxxxxxx xx xxxxx xx xxxxxx xxxx xxxxxxxxxxxxx, xxxxxx xx xxx xxxxxxx, xxx xxxxx xxxxxxx. Xxxx xxxxxxxxx xxxx xxx Xxxxx xxxxxx xxx'x xxxxxx xxx xxxxxxxxxx xxxxxxx. Xxx xxxxxxx, xx xxxx xxxxxxxx, x xxxxx xxxx xxxxx xxx xx xxxxxx xxxxxxxxxxxxxx. Xxx xxxxxx xxx xxxxxx xxxxxxx xxx xxx, xxx xx xxx xxxxxx xxxx xxx xxxxxxx xxxxxxxxx, xx xxxx xx xxxx xxxx xxxxxxx xxx xxxxxxx xxxxxxx xxxx xx xxxx xxxxxx xxxxxxx.</p></td>
+<td align="left"><p>並べ替えが常にアルファベット順で行われると想定しない。</p></td>
+<td align="left"><p>ラテン文字を使わない言語の場合、並べ替えは発音、ペン ストロークの数などの要素に基づいて行われます。 ラテン文字を使う言語でも、常にアルファベット順の並べ替えを行うわけではありません。 たとえば、一部のカルチャでは電話帳はアルファベット順では並んでいない場合があります。 システムによって並べ替えが自動的に行われますが、自分で独自の並べ替えアルゴリズムを作る場合は、必ず、アプリの対象市場で使われている並べ替え方法を考慮してください。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="guidelines_for_localization">
-            </span>
-            <span id="GUIDELINES_FOR_LOCALIZATION">
-            </span>Xxxxxxxxxxxx
+## <span id="guidelines_for_localization"></span><span id="GUIDELINES_FOR_LOCALIZATION"></span>ローカライズ
 
 <table>
 <colgroup>
@@ -116,80 +110,83 @@ Xxxxxxx xxxx xxx xx xxxxxx xxxxx xx xxxxxxxxx xxxxxxx xx xxxxxxxx xxxxxxxx xxxxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxxxxxxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">推奨事項</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Xxxxxxxx xxxxxxxxx xxxx xx XX xxxxxxx xxx xxxxxx xxxx xxxx.</p></td>
-<td align="left"><p>Xxxxxx xxxx xxxx xx xxxx xxxxxxxxx, xxxx xxxxxxx xxx xxxxxx, xxx xxxxxxxxx xxxx xxxx xxxx. Xxxx xxxxxxx xxxx xx xx xxxxxxxxxxxxx xxxxxxxxxx, xxxxxxxxx, xxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxx xxxxxxx, xxxxxxxxxxxxx xxxxxxx, xxx x xxxxxx xx xxxxx xxxx xxx xxxxxxx xxxxxxxx.</p>
-<p>Xxxxxxxx xxxxxx xxxxxxxxx xxxx xxxx xxx'x xxxx xx xxxxxx x xxxxxx xxxxxxxx-xxxxxxxxxxx xxxxxxxx. Xxxxxx xxxxxxxx xxxxxxx xxxx xxx xxxx xxx xxxxxx, xxx xxxxx xxxx xxxx x xxxxxxxx xxxx, xxxx x XxxX xx XxxXXXX xxxx.</p>
-<p>Xxx xxx xxxxxxxx xxxxxxxxxxxxxx xx Xxxxxxx xx xxxxxx xxx xxxxxxxxx xx xxx xxxx xxxxxxxxxxx xxxxxxxxx xx xxxxx xxx xxxx'x xxxxxxx xxxxxxxxxxx.</p></td>
+<td align="left"><p>UI 文字列や画像などのリソースをコードから分離する。</p></td>
+<td align="left"><p>アプリは、文字列や画像などのリソースがコードから分離されるように設計してください。 こうすることで、さまざまなスケール ファクター、アクセシビリティ オプション、ユーザーとコンピューターに関する多くのコンテキストに対して、それらの保守、ローカライズ、カスタマイズを個別に行うことができます。</p>
+<p>文字列リソースはアプリのコードから分離し、言語に依存しない単一のコードベースを作ってください。 文字列は、常にアプリのコードやマークアップから分離し、リソース ファイル (ResW や ResJSON ファイルなど) に入れてください。</p>
+<p>Windows のリソース インフラストラクチャを使って、ユーザーの実行時環境に最適なリソースが選ばれるように処理してください。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Xxxxxxx xxxxx xxxxxxxxxxx xxxxxxxx xxxxx.</p></td>
-<td align="left"><p>Xxxx xxxxx xxxxx xxxx xxxxxxx xxxxxxxxxxxx, xxxx xxxxxx xxxx xxxxxxx xxxx xx xx xxxxxxxxxx xx xxxx xxxx xx xx xxxxxxx xxx xx xxxxxxxx xxxxxxxxxxx, xxx xxxxx xxxx xx xxxxxxx xxxxxx xxxx xxxxxxxx xxxxx.</p></td>
+<td align="left"><p>他のローカライズ可能なリソース ファイルを分離する。</p></td>
+<td align="left"><p>ローカライズが必要な他のファイル (翻訳するテキストを含んだ画像やカルチャ上の配慮のために変更が必要な画像など) は、言語名でタグ化されたフォルダーに入れてください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Xxx xxxx xxxxxxx xxxxxxxx, xxx xxxx xxx xx xxxx xxxxxxxxx, xxxx xxx xxxx xx xxxx xxxxxxx xxxxxxxx.</p></td>
-<td align="left"><p>Xxxxxx xxx xxx xxxxxxx xxxxxxxx xxx xxxx xxxx xxxxxxxxxxxxx xx xxx xxx xxxxxxxx (xxxxxxx.xxxxxxxxxxxx). Xxx xxxxxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxx xxxx'x xxxx xxxx xxx xxxx xxxxx'x xxxxx xxx xx xxx xxxxxxxxx xxxxxxxxx xx xxx xxx. Xxxx xxxxxxx xxxxxxxx xxxxxxxxx, xxx xxxxxxx xx-xx/Xxxx.xxx, xxxx xxxxx xxxxxxxx, xx xxx xxxxxx xxx xxxx xxxxx xxxxxxxx xxx xxxxxxxx xx xx xxx xxx xx'x xxxx xx xxxxxxxxxx xxxxxxxxxx.</p></td>
+<td align="left"><p>既定の言語を設定し、既定の言語で作られているものも含め、すべてのリソースをマークする。</p></td>
+<td align="left"><p>常に、アプリ マニフェスト (package.appxmanifest) で、アプリの既定の言語を適切に設定します。 アプリでサポートされる言語のどれもユーザーが話さない場合、使われる言語は既定の言語によって決定されます。 既定の言語リソースをその言語でマークしてください (例: en-us/Logo.png)。こうすることで、システムはリソースで使われている言語と、個々の状況でそのリソースがどのように使われるかを判断できます。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Xxxxxxxxx xxx xxxxxxxxx xx xxxx xxx xxxx xxxxxxx xxxxxxxxxxxx.</p></td>
-<td align="left"><p>Xxxx xxxxx xx xxxxxx xx xxxx xxx xx xx xx xxxxxxxxx xxx xxxxx xxxxxxx? Xxxx xxxxxxx xxxxxxx xxxxxxxxxxx xxxx xxxxx xxxxxxxxx. Xxxxxx xxx xxxx xx xx xxxxxxx xxx xxxxx xxxxxxxx. Xxxxxxxx xxx xxxxxxxxxxxx xxxxxxx xxxxx xxxxxxxxx xxxx xxxx xxx xxxx, xxxx xxxxx xx xxxxx.</p></td>
+<td align="left"><p>ローカライズが必要なアプリ リソースを特定する。</p></td>
+<td align="left"><p>他の市場向けにアプリをローカライズすることになった場合には、何を変更する必要があるでしょうか。 テキスト文字列を他の言語に翻訳する必要があります。 他のカルチャに合わせて画像を変更する必要がある場合もあります。 アプリが使う他のリソース (オーディオやビデオなど) にローカライズがどのような影響を与えるかを考慮してください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Xxx xxxxxxxx xxxxxxxxxxx xx xxx xxxx xxx xxxxxx xx xxxxx xx xxxxxxxxx.</p></td>
-<td align="left"><p>Xxxxxxx xx xxxxxx xxxxxx xxxxxxxx xx xxxxxxxx xxxx xxxxx xxx xxxxxx xx xxxx xxxxxx, xxx xxxxxxxxxx xx xxx xxxxxxxxx. Xx xxxx xx xxx xxxxxx xxxxxxxxxxx xxx xxxx xxxxxxxx. Xxx xxxx xxxx, xxx [<strong>Xxx xx xxxx xxxxxxxxx xxxxx xxxxxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xx-xx/xxxxxxx/xxxxxxx/xxxx/xxxx/XxYYYYYY).</p>
-<p>Xxxxxx xxx xxxxxx xxxx xxxx xxxx xxx xxxxxx xxxxxxx xxx xx xxxxxx xx xxx x xxxxxxxxx xxx xx xxxxxxxxxx. Xxxxxxxxx xxx xxxxxxxx xx xxxx xxx xxxxxxx xxxxxxxxx xxx xx xxxxxx.</p></td>
+<td align="left"><p>リソースを参照するには、コードとマークアップでリソース識別子を使ってください。</p></td>
+<td align="left"><p>文字列リテラル、または画像の特定のファイル名をマークアップに含めるのではなく、リソースの参照を利用してください。 必ず、リソースごとに一意の識別子を使ってください。 詳細については、「[<strong>修飾子を使用してリソースに名前をつける方法</strong>](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/Hh965324)」をご覧ください。</p>
+<p>システムが変更されて、異なるセットの修飾子の使用が始まるときに発生するイベントをリッスンします。 正しいリソースが読み込まれるようにドキュメントを再処理します。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Xxxxxx xxxx xxxx xx xxxxxxxx.</p></td>
-<td align="left"><p>Xxxxxxxx xxxx xxxxxxx xxxxxxxxxxx, xxxxx xxxx xxxx xxx xxxxxx xxxx xxxxxxxxxx. Xx xxx xxxx xxx xxxxxx xxxxxxx, xxxx xxxx xxxxx-xxxxx (xxxxxxx xxxxxxxx xxx xxxxxx xx xxx Xxxxxxx xxxxxx) xx xxxxxxxxxxx xxxxxxxxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxxx. Xxxxx xxxx xxx xx xxxxxxx xxxxx xxxxxxxxx xxx x xxxx xxxxxxxxx. Xx xxxxxxxxxxx xxxxxxxxx xxxxxxxxx, xxxxxx xxxx xxxx xxxxxx xxxxxx xx xxxxxxxxxxxxx YY% xxxxxx xxxx xxxx xxx xxxxx xxxx xxx xxx Xxxxxxx xxxxxxxx. Xxx xxxxxx xxxxx xxxxxxx, xxxx xx xxxxxx xxxxx, xxx xxx xxxxx xx xxxx xx YYY% xxxx xxxxx. Xx xxxxxxxx, xxxxxxxx xxxxxxxxx xxxxxxx xxx xxxx-xxxxxxxx xx x xxxxxxx xxxx xxxxx xxxx xxxxx xx xxxxxxx xxxx xxxxxx.</p></td>
+<td align="left"><p>テキスト サイズを拡大できるようにする。</p></td>
+<td align="left"><p>翻訳されるとテキスト サイズが大きくなる可能性があるため、テキスト バッファーは動的に割り当ててください。 静的なバッファーを使う必要がある場合は、(英語文字列の長さを倍にするなどの方法で) それらを特大サイズにし、文字列が翻訳された時点で起きる可能性がある拡大に対応してください。 ユーザー インターフェイスに利用可能な領域が制限されることもあります。 ローカライズされた言語に対応するには、文字列の長さが、日本語に必要となりそうな長さよりも約 40% 長くします。 単一の語句のように非常に短い文字列の場合、必要領域が約 300% も増える可能性があります。 さらに、コントロール内で複数行のサポートとテキストの折り返しを有効にすると、各文字列を表示するための領域を増やすことができます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Xxxxxxx xxxxxxxxx.</p></td>
-<td align="left"><p>Xxxx xxxxxxxxx xxx xxxxxxx xxxxx xxx xx xxxx-xx-xxxxx, xx xx Xxxxxxx, xx xxxxx-xx-xxxx (XXX), xx xx Xxxxxx xx Xxxxxx. Xx xxx xxx xxxxxxxxxx xxxx xxxxxxx xxxx xxxxxxxxx xxxx xxx x xxxxxxxxx xxxxxxx xxxxx xxxx xxxx xxx, xx xxxx xxxx xxx xxxxxx xx xxxx XX xxxxxxxx xxxxxxxx xxxxxxxxx. Xxxx xxxxx xxxx xx xxxx xxxxxxx, XX xxxxxxxxxx xxxxxxx, xxx xxxxxx xxx xxxx xx xx xxxxxxxx.</p>
-<p>Xxx xxxx xxxx, xxx [<strong>Xxxxxx xxxxxx xxx xxxxx, xxx xxxxxxx XXX</strong>](xxxxxx-xxxxxx-xxx-xxxxx--xxx-xxxxxxx-xxx.xx).</p></td>
+<td align="left"><p>左右反転をサポートする。</p></td>
+<td align="left"><p>テキストの配置と読み取りは、英語のように左から右の順にも、アラビア語やヘブライ語のように右から左の順 (RTL) にも行うことができます。 読み取り順が自国語とは異なる言語に製品をローカライズする場合は、UI 要素のレイアウトが左右反転をサポートする必要があります。 戻るボタン、UI 切り替え効果、画像などのアイテムですら、左右反転が必要になることがあります。</p>
+<p>詳細については、「[<strong>レイアウトとフォントを調整し、RTL をサポートする</strong>](adjust-layout-and-fonts--and-support-rtl.md)」をご覧ください。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Xxxxxxx xxxxxxx.</p></td>
-<td align="left"><p>Xxxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxxx, xxx xxxx xxx xxxxxxx xxxx xxxx xx xx xxxxxxxxxx xxx xxxxxxxx xx xxxxxxxxxx. Xxxx-xxxxxxxxxxxx xx x xxxxxx xxxxxx xx xxxxxxxx.</p></td>
+<td align="left"><p>文字列にコメントする。</p></td>
+<td align="left"><p>文字列に適切にコメントを入れ、翻訳が必要な文字列だけをローカライズ担当者に提供してください。 過剰なローカライズは、よく問題を引き起こします。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Xxx xxxxx xxxxxxx.</p></td>
-<td align="left"><p>Xxxxxxx xxxxxxx xxx xxxxxx xx xxxxxxxxx xxx xxxxxx xxxxxxxxxxx xxxxxxxxx. Xxxxxxxxxxx xxxxxxxxx xxxxx xxxxx xxxxxxx xxx xxxx xxxxxx xxx'x xxxx xx xxx xxxxxxxxx xxxxx.</p>
-<p>Xxxxxxx xxxxxx xxxx YYYY xxxxxxxxxx xxx xxx xx xxxxxxxxx xx xxxx xxxxxxxxxxxx xxxxx, xx xxxx xxxxxx xxxxxx xx YYYY xx xxxx.</p></td>
+<td align="left"><p>短い文字列を使う。</p></td>
+<td align="left"><p>文字列を短くすると翻訳が簡単になり、翻訳データを再使用できます。 翻訳データを再使用すると、同じ文字列はローカライズ担当者に再び送られることがないため、コストを節約できます。</p>
+<p>8,192 文字を超える文字列は、一部のローカライズ ツールではサポートされない可能性があります。このため、文字列は 4,000 文字以内に抑えてください。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Xxxxxxx xxxxxxx xxxx xxxxxxx xx xxxxxx xxxxxxxx.</p></td>
-<td align="left"><p>Xxxxxxx xxxxxxx xxxx xxxxxxx xx xxxxxx xxxxxxxx, xxxxxxx xx xxxxxxxx xxx xxxxxxxx xxxx xxxxxxxxxx xxxxx, xxxxxxx xxx xxxxxxxxxxx xx xxxxx xxx xxxxxx xx xxxxx xxxxxxxx xx x xxxxxxxx. Xxxx, xxx'x xxxxxx xxxx x xxxxxx xxxx xxxxxxxx xxxxxxxxxx xxxx xxxx xxxxx xxxxxxxxxx xx xxx xxxx xxxxx xxx xxxxx xxxxxxxx.</p></td>
+<td align="left"><p>文全体が入った文字列を提供する。</p></td>
+<td align="left"><p>単語の訳は文におけるその位置によって変化する可能性があるため、文を個々の単語に分割せず、文全体が入った文字列を提供してください。 1 つのフレーズが複数のパラメーターから構成される場合、どの言語でもパラメーターの順序は変わらないと想定してはなりません。</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p>Xxxxxxxx xxxxx xxx xxxxx xxxxx xxx xxxxxxxxxxxx.</p></td>
-<td align="left"><p>Xxxxxx xxxxxxxxxxxx xxxxx xx xxxxxxxx xxx xx xxxx xx xxxxxx xx xxxxxx xx xxxxx xxxxx. Xx xxx'xx xxxxxxxxxx xx x xxxxxxxx xxxx x xxxxxxxxx xxxxxxx xxxxxxxxx xxxx xxxx xxx, xxxxx xxxxxxxxxxx xxxxxx xxx xxxxxxx xxxx xx xxxxxx xx xxxxxxx xxxxxxxxx.</p></td>
+<td align="left"><p>画像ファイルとオーディオ ファイルをローカライズ用に最適化する。</p></td>
+<td align="left"><p>画像内にテキストを入れることやオーディオ ファイルに音声を入れることを避けると、ローカライズ コストが抑えられます。 読み取り順が自国語とは異なる言語にローカライズする場合は、左右対称の画像や効果を使うと左右反転をサポートしやすくなります。</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Xxx'x xx-xxx xxxxxxx xx xxxxxxxxx xxxxxxxx.</p></td>
-<td align="left"><p>Xxx'x xx-xxx xxxxxxx xx xxxxxxxxx xxxxxxxx, xxxxxxx xxxx xxxxxx xxxxx xxxx &xxxx;xx&xxxx; xxx &xxxx;xxx&xxxx; xxx xx xxxxxxxxxx xxxxxxxxxxx, xxxxxxxxx xx xxx xxxxxxx.</p></td>
+<td align="left"><p>文字列は異なるコンテキストで再使用しない。</p></td>
+<td align="left"><p>文字列は異なるコンテキストで再使用してはなりません。&quot;オン&quot; や &quot;オフ&quot; などの簡単な語句でも、コンテキストに基づいて別の翻訳がなされる可能性があります。</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>関連記事
 
 
-**Xxxxxxx**
-* [Xxxxxxxxxxx xxxxxxxxx xxx xxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=254478)
-* [Xxxxxxxxxxxxx xxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231608)
+**サンプル**
+* [アプリ リソースとローカライズのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=254478)
+* [グローバリゼーション設定サンプルに関するページ](http://go.microsoft.com/fwlink/p/?linkid=231608)
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

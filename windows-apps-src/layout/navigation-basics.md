@@ -1,44 +1,39 @@
 ---
-Xxxxxxxxxxx: Xxxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xx xxxxx xx x xxxxxxxx xxxxx xx xxxxxxxxxx xxxxxxxxxx, xxxxxxxxxx xxxxxxxx, xxx xxxxxx-xxxxx xxxxxxxx.
-xxxxx: Xxxxxxxxxx xxxxxx xxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx
-xx.xxxxxxx: XYYXYYXX-XXXX-YYYX-XYXY-YXYXYYXYYYYY
-xxxxx: Xxxxxxxxxx xxxxxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features.
+title: Navigation design basics for Universal Windows Platform (UWP) apps
+ms.assetid: B65D33BA-AAFE-434D-B6D5-1A0C49F59664
+label: Navigation design basics
+template: detail.hbs
 ---
 
-#  Xxxxxxxxxx xxxxxx xxxxxx xxx XXX xxxx
+#  Navigation design basics for UWP apps
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xx xxxxx xx x xxxxxxxx xxxxx xx xxxxxxxxxx xxxxxxxxxx, xxxxxxxxxx xxxxxxxx, xxx xxxxxx-xxxxx xxxxxxxx. Xxxxxxxx, xxxx xxxxxx x xxxxxxx xx xxxxxxxxx xxxx xxxxxxxxxxx xxx xxxxxx xxxxxxx xxxx, xxxxx, xxx xxxxxxx.
+Navigation in Universal Windows Platform (UWP) apps is based on a flexible model of navigation structures, navigation elements, and system-level features. Together, they enable a variety of intuitive user experiences for moving between apps, pages, and content.
 
-Xx xxxx xxxxx, xxx xxxxx xx xxxx xx xxx xxx xx xxxx xxx'x xxxxxxx xxx xxxxxxxxxxxxx xxxx x xxxxxx xxxx xxxxxxx xxxxxxxxx xxx xxxx xx xx xxxxxxxx xxxx xxxx xxx xx xxxxxxxx xxxxxxx xxxx xxxxxxx. Xxxxxxx, xxx xxxxxxxx xx xxxx xxxxxxxxx xxxx xxxxxxxx xxxxx xx xxxxxxx xxx xxxxxxxxxxxxx xxxx xxxxx xx xxxxxxx, xxxxxx, xxx xxxxxxxx. Xxxx xx xxx xxx xxxx xxxx xxx xxxx, xxx xxxx xx xxxxxxx xxx xxxxx xxxxxxxxxx xxxxxxxxxx.
+In some cases, you might be able to fit all of your app's content and functionality onto a single page without requiring the user to do anything more than pan to navigate through that content. However, the majority of apps typically have multiple pages of content and functionality with which to explore, engage, and interact. When an app has more than one page, you need to provide the right navigation experience.
 
-Xx xx xxxxxxxxxx xxx xxxx xxxxx xx xxxxx, xxxxx-xxxx xxxxxxxxxx xxxxxxxxxxx xx XXX xxxx xxxxxxx (xxxxxxxxx xx xxxxxx xxxxx):
+To be successful and make sense to users, multi-page navigation experiences in UWP apps include (described in detail later):
 
--   **Xxx xxxxx xxxxxxxxxx xxxxxxxxx**
+-   **The right navigation structure**
 
-    Xxxxxxxx x xxxxxxxxxx xxxxxxxxx xxxx xxxxx xxxxx xx xxx xxxx xx xxxxxxx xx xxxxxxxx xx xxxxxxxxx xxxxxxxxxx xxxxxxxxxx.
+    Building a navigation structure that makes sense to the user is crucial to creating an intuitive navigation experience.
 
--   **Xxxxxxxxxx xxxxxxxxxx xxxxxxxx** xxxx xxxxxxx xxx xxxxxx xxxxxxxxx.
+-   **Compatible navigation elements** that support the chosen structure.
 
-    Xxxxxxxxxx xxxxxxxx xxx xxxx xxx xxxx xxx xx xxx xxxxxxx xxxx xxxx xxx xxx xxxx xxx xxxxx xxxx xxxxx xxxx xxx xxxxxx xxx xxx. Xxxxxxx, xxxx xxxx xxxx xx xxxxx xxxx xxxxx xx xxxx xxx xxxxxxx xx xxxxxxxxxx xxxxxxxx, xx xx'x xxxxxxxxx xx xxx xxx xxxxxxxxxx xxxxxxxx xxxx xxx xxxxx xxx xxxx xxx'x xxxxxxxxx.
+    Navigation elements can help the user get to the content they want and can also let users know where they are within the app. However, they also take up space that could be used for content or commanding elements, so it's important to use the navigation elements that are right for your app's structure.
 
--   **Xxxxxxxxxxx xxxxxxxxx xx xxxxxx-xxxxx xxxxxxxxxx xxxxxxxx (xxxx xx Xxxx)**
+-   **Appropriate responses to system-level navigation features (such as Back)**
 
-    Xx xxxxxxx x xxxxxxxxxx xxxxxxxxxx xxxx xxxxx xxxxxxxxx, xxxxxxx xx xxxxxx-xxxxx xxxxxxxxxx xxxxxxxx xx xxxxxxxxxxx xxxx.
+    To provide a consistent experience that feels intuitive, respond to system-level navigation features in predictable ways.
 
-## <span id="Build_the_right_navigation_structure">
-            </span>
-            <span id="build_the_right_navigation_structure">
-            </span>
-            <span id="BUILD_THE_RIGHT_NAVIGATION_STRUCTURE">
-            </span>Xxxxx xxx xxxxx xxxxxxxxxx xxxxxxxxx
+## <span id="Build_the_right_navigation_structure"></span><span id="build_the_right_navigation_structure"></span><span id="BUILD_THE_RIGHT_NAVIGATION_STRUCTURE"></span>Build the right navigation structure
 
 
-Xxx'x xxxx xx xx xxx xx x xxxxxxxxxx xx xxxxxx xx xxxxx, xxxx xxxx xxxx xxxxxxxxxx x xxxxxx xxx xx xxxxxxx xx xxxxxxxxxxxxx. Xxx xxxxxxx, x xxxxx xxx xxxxx xxxx x xxxx xxx xxxxxx xxxxxx, x xxxx xxx xxxxx xxxxxxx, xxx xxxxxxx xxxx xxx xxxxxxxx xxxx xxxxx xxxxxxx. Xxx xxx xxx xxxxxxx xxxxx xxxxx xxxx xxxxxx xxxxxxx xxx xxx'x xxxxxxxxxx xxxxxxxxx. Xxxxx xxx xxx xxxxxx xxxx xx xxxxxxx x xxxxx xx xxxxx:
+Let's look at an app as a collection of groups of pages, with each page containing a unique set of content or functionality. For example, a photo app might have a page for taking photos, a page for image editing, and another page for managing your image library. The way you arrange these pages into groups defines the app's navigation structure. There are two common ways to arrange a group of pages:
 
 <table>
 <colgroup>
@@ -47,8 +42,8 @@ Xxx'x xxxx xx xx xxx xx x xxxxxxxxxx xx xxxxxx xx xxxxx, xxxx xxxx xxxx xxxxxxxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xx x xxxxxxxxx</th>
-<th align="left">Xx xxxxx</th>
+<th align="left">In a hierarchy</th>
+<th align="left">As peers</th>
 </tr>
 </thead>
 <tbody>
@@ -57,19 +52,19 @@ Xxx'x xxxx xx xx xxx xx x xxxxxxxxxx xx xxxxxx xx xxxxx, xxxx xxxx xxxx xxxxxxxx
 <td align="left"><p><img src="images/nav/nav-pages-peer.png" alt="Pages arranged as peers" /></p></td>
 </tr>
 <tr class="even">
-<td align="left"><p>Xxxxx xxx xxxxxxxxx xxxx x xxxx-xxxx xxxxxxxxx. Xxxx xxxxx xxxx xxx xxxx xxx xxxxxx, xxx x xxxxxx xxx xxxx xxx xx xxxx xxxxx xxxxx. Xx xxxxx x xxxxx xxxx, xxx xxxxxx xxxxxxx xxx xxxxxx.</p></td>
-<td align="left"><p>Xxxxx xxxxx xxxx-xx-xxxx. Xxx xxx xx xxxx xxx xxxx xx xxxxxxx xx xxx xxxxx.</p></td>
+<td align="left"><p>Pages are organized into a tree-like structure. Each child page has only one parent, but a parent can have one or more child pages. To reach a child page, you travel through the parent.</p></td>
+<td align="left"><p>Pages exist side-by-side. You can go from one page to another in any order.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-X xxxxxxx xxx xxxx xxx xxxx xxxxxxxxxxxx, xxxx xxxx xxxxxxxx xxxxx xxxxxxxx xx xxxxx xxx xxxx xxxxxxxx xxxxx xxxxxxxx xxxx xxxxxxxxxxx.
+A typical app will use both arrangements, with some portions being arranged as peers and some portions being arranged into hierarchies.
 
-![xx xxx xxxx x xxxxxx xxxxxxxxx](images/nav/nav-hybridstructure.png.png)
+![an app with a hybrid structure](images/nav/nav-hybridstructure.png.png)
 
-Xx, xxxx xxxxxx xxx xxxxxxx xxxxx xxxx xxxxxxxxxxx xxx xxxx xxx xxxxxx xxxxxxx xxxx xx xxxxx? Xx xxxxxx xxxx xxxxxxxx xx xxxx xxxxxxxx xxx xxxxxx xx xxxxx xx xxx xxxxx, xxxxxxx xxx xxxxx xxxxxx xx xxxxxxxxx xx x xxxxxxxxxx xxxxx, xxx xxx xxxxxxxxxxxx xxxxxxx xxx xxxxx. Xx xxxxxxx, xxxxxxx xxxxxxxxxx xxx xxxxxx xx xxxxxxxxxx xxx xxxxxx xx xxxxxxxx, xxx xxxxxxxxx xx'x xxxxxxxxxxx xx xxxx x xxxx xxxxxxxxx.
+So, when should you arrange pages into hierarchies and when you should arrange them as peers? To answer that question we must consider the number of pages in the group, whether the pages should be traversed in a particular order, and the relationship between the pages. In general, flatter structures are easier to understand and faster to navigate, but sometimes it's appropriate to have a deep hierarchy.
 
 <table>
 <colgroup>
@@ -78,19 +73,19 @@ Xx, xxxx xxxxxx xxx xxxxxxx xxxxx xxxx xxxxxxxxxxx xxx xxxx xxx xxxxxx xxxxxxx x
 </colgroup>
 <tbody>
 <tr class="odd">
-<td align="left"><p>Xx xxxxxxxxx xxxxx x xxxxxxxxxxxx xxxxxxxxxxxx xxxx</p>
+<td align="left"><p>We recommend using a hierarchical relationship when</p>
 <ul>
-<li><p>Xxx xxxxxx xxx xxxx xx xxxxxxxx xxx xxxxx xx x xxxxxxxx xxxxx. Xxxxxxx xxx xxxxxxxxx xx xxxxxxx xxxx xxxxx.</p></li>
-<li><p>Xxxxx xx x xxxxx xxxxxx-xxxxx xxxxxxxxxxxx xxxxxxx xxx xx xxx xxxxx xxx xxx xxxxx xxxxx xx xxx xxxxx.</p></li>
-<li><p>Xx xxxxx xxx xxxx xxxx Y xxxxx xx xxx xxxxx.</p>
-<p>Xxxx xxxxx xxx xxxx xxxx Y xxxxx xx xxx xxxxx, xx xxxxx xx xxxxxxxxx xxx xxxxx xx xxxxxxxxxx xxx xxx xxxxx xxx xxxxxx xx xx xxxxxxxxxx xxxxx xxxxxxx xxxxxxxx xxxxxx xxx xxxxx. Xx xxx xxx'x xxxxx xxxx'x xx xxxxx xxx xxxx xxx, xx xxxxx xxx xxxx xxx xxxxx xxxxx. Xxxxxxxxx, xxxxxxxx xxxxx x xxxxxxxxxxxx xxxxxxxxx xx xxxxx xxx xxxxx xxxx xxx xx xxxx xxxxxxx xxxxxx. (X xxx xxxxxxx xxx xxxx xxx xxxxx xxxxx xxxx xxxxxxxxxx.)</p></li>
+<li><p>You expect the user to traverse the pages in a specific order. Arrange the hierarchy to enforce that order.</p></li>
+<li><p>There is a clear parent-child relationship between one of the pages and the other pages in the group.</p></li>
+<li><p>If there are more than 7 pages in the group.</p>
+<p>When there are more than 7 pages in the group, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups. (A hub control can help you group pages into categories.)</p></li>
 </ul></td>
-<td align="left"><p>Xx xxxxxxxxx xxxxx x xxxx xxxxxxxxxxxx xxxx</p>
+<td align="left"><p>We recommend using a peer relationship when</p>
 <ul>
-<li>Xxx xxxxx xxx xx xxxxxx xx xxx xxxxx.</li>
-<li>Xxx xxxxx xxx xxxxxxx xxxxxxxx xxxx xxxx xxxxx xxx xxx'x xxxx xx xxxxxxx xxxxxx/xxxxx xxxxxxxxxxxx.</li>
-<li><p>Xxxxx xxx xxxxx xxxx Y xxxxx xx xxx xxxxx.</p>
-<p>Xxxx xxxxx xxx xxxx xxxx Y xxxxx xx xxx xxxxx, xx xxxxx xx xxxxxxxxx xxx xxxxx xx xxxxxxxxxx xxx xxx xxxxx xxx xxxxxx xx xx xxxxxxxxxx xxxxx xxxxxxx xxxxxxxx xxxxxx xxx xxxxx. Xx xxx xxx'x xxxxx xxxx'x xx xxxxx xxx xxxx xxx, xx xxxxx xxx xxxx xxx xxxxx xxxxx. Xxxxxxxxx, xxxxxxxx xxxxx x xxxxxxxxxxxx xxxxxxxxx xx xxxxx xxx xxxxx xxxx xxx xx xxxx xxxxxxx xxxxxx. (X xxx xxxxxxx xxx xxxx xxx xxxxx xxxxx xxxx xxxxxxxxxx.)</p></li>
+<li>The pages can be viewed in any order.</li>
+<li>The pages are clearly distinct from each other and don't have an obvious parent/child relationship.</li>
+<li><p>There are fewer than 8 pages in the group.</p>
+<p>When there are more than 7 pages in the group, it might be difficult for users to understand how the pages are unique or to understand their current location within the group. If you don't think that's an issue for your app, go ahead and make the pages peers. Otherwise, consider using a hierarchical structure to break the pages into two or more smaller groups. (A hub control can help you group pages into categories.)</p></li>
 </ul></td>
 </tr>
 </tbody>
@@ -98,28 +93,18 @@ Xx, xxxx xxxxxx xxx xxxxxxx xxxxx xxxx xxxxxxxxxxx xxx xxxx xxx xxxxxx xxxxxxx x
 
  
 
-## <span id="Use_the_right_navigation_elements">
-            </span>
-            <span id="use_the_right_navigation_elements">
-            </span>
-            <span id="USE_THE_RIGHT_NAVIGATION_ELEMENTS">
-            </span>Xxx xxx xxxxx xxxxxxxxxx xxxxxxxx
+## <span id="Use_the_right_navigation_elements"></span><span id="use_the_right_navigation_elements"></span><span id="USE_THE_RIGHT_NAVIGATION_ELEMENTS"></span>Use the right navigation elements
 
 
-Xxxxxxxxxx xxxxxxxx xxx xxxxxxx xxx xxxxxxxx: xxxx xxxx xxx xxxx xxx xx xxx xxxxxxx xxxx xxxx, xxx xxxx xxxxxxxx xxxx xxx xxxxx xxxx xxxxx xxxx xxx xxxxxx xxx xxx. Xxxxxxx, xxxx xxxx xxxx xx xxxxx xxxx xxx xxx xxxxx xxx xxx xxxxxxx xx xxxxxxxxxx xxxxxxxx, xx xx'x xxxxxxxxx xx xxx xxx xxxxxxxxxx xxxxxxxx xxxx xxx xxxx xxxxx xxx xxxx xxx'x xxxxxxxxx.
+Navigation elements can provide two services: they help the user get to the content they want, and some elements also let users know where they are within the app. However, they also take up space that the app could use for content or commanding elements, so it's important to use the navigation elements that are just right for your app's structure.
 
-### <span id="Peer-to-peer_navigation_elements">
-            </span>
-            <span id="peer-to-peer_navigation_elements">
-            </span>
-            <span id="PEER-TO-PEER_NAVIGATION_ELEMENTS">
-            </span>Xxxx-xx-xxxx xxxxxxxxxx xxxxxxxx
+### <span id="Peer-to-peer_navigation_elements"></span><span id="peer-to-peer_navigation_elements"></span><span id="PEER-TO-PEER_NAVIGATION_ELEMENTS"></span>Peer-to-peer navigation elements
 
-Xxxx-xx-xxxx xxxxxxxxxx xxxxxxxx xxxxxx xxxxxxxxxx xxxxxxx xxxxx xx xxx xxxx xxxxx xx xxx xxxx xxxxxxx.
+Peer-to-peer navigation elements enable navigation between pages in the same level of the same subtree.
 
-![xxxx xx xxxx xxxxxxxxxx](images/nav/nav-lateralmovement.png)
+![peer to peer navigation](images/nav/nav-lateralmovement.png)
 
-Xxx xxxx-xx-xxxx xxxxxxxxxx, xx xxxxxxxxx xxxxx xxxx xx x xxxxxxxxxx xxxx.
+For peer-to-peer navigation, we recommend using tabs or a navigation pane.
 
 <table>
 <colgroup>
@@ -128,35 +113,35 @@ Xxx xxxx-xx-xxxx xxxxxxxxxx, xx xxxxxxxxx xxxxx xxxx xx x xxxxxxxxxx xxxx.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxxxxx xxxxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Navigation element</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Tabs and pivot](../controls-and-patterns/tabs-pivot.md)</p>
 <p><img src="images/nav/nav-tabs-sm-300.png" alt="Tab-based navigation" /></p></td>
-<td align="left">Xxxxxxxx x xxxxxxxxxx xxxx xx xxxxx xx xxxxx xx xxx xxxx xxxxx.
-<p>Xxx xxxx/xxxxxx xxxx:</p>
+<td align="left">Displays a persistent list of links to pages at the same level.
+<p>Use tabs/pivots when:</p>
 <ul>
-<li><p>Xxxxx xxx Y-Y xxxxx.</p>
-<p>(Xxx xxx xxx xxxx/xxxxxx xxxx xxxxx xxx xxxx xxxx Y xxxxx, xxx xx xxxxx xx xxxxxxxxx xx xxx xxx xxx xxxx/xxxxxx xx xxx xxxxxx.)</p></li>
-<li>Xxx xxxxxx xxxxx xx xxxxxx xxxxxxx xxxxx xxxxxxxxxx.</li>
+<li><p>There are 2-5 pages.</p>
+<p>(You can use tabs/pivots when there are more than 5 pages, but it might be difficult to fit all the tabs/pivots on the screen.)</p></li>
+<li>You expect users to switch between pages frequently.</li>
 </ul>
-<p>Xxxx xxxxxx xxx x xxxxxxxxxx-xxxxxxx xxx xxxx xxxx/xxxxxx:</p>
+<p>This design for a restaurant-finding app uses tabs/pivots:</p>
 <p><img src="images/food-truck-finder/uap-foodtruck-tabletphone-sbs-sm-400.png" alt="Example of an app using tabs/pivots pattern" /></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Nav pane](../controls-and-patterns/nav-pane.md)</p>
 <p><img src="images/nav/nav-navpane-4page-thumb.png" alt="A navigation pane" /></p></td>
-<td align="left">Xxxxxxxx x xxxx xx xxxxx xx xxx-xxxxx xxxxx.
-<p>Xxx x xxxxxxxxxx xxxx xxxx:</p>
+<td align="left">Displays a list of links to top-level pages.
+<p>Use a navigation pane when:</p>
 <ul>
-<li>Xxx xxx'x xxxxxx xxxxx xx xxxxxx xxxxxxx xxxxx xxxxxxxxxx.</li>
-<li>Xxx xxxx xx xxxxxxxx xxxxx xx xxx xxxxxxx xx xxxxxxx xxxx xxxxxxxxxx xxxxxxxxxx.</li>
-<li>Xxx xxxxx xxxxx xx xxx xxx xxxxx.</li>
+<li>You don't expect users to switch between pages frequently.</li>
+<li>You want to conserve space at the expense of slowing down navigation operations.</li>
+<li>The pages exist at the top level.</li>
 </ul>
-<p>Xxxx xxxxxx xxx x xxxxx xxxx xxx xxxxxxxx x xxx xxxx:</p>
+<p>This design for a smart home app features a nav pane:</p>
 <p><img src="images/smart-home/uap-smarthome-tabletphone-sbs-sm-400.png" alt="Example of an app that uses a nav pane pattern" /></p>
 <p></p></td>
 </tr>
@@ -165,24 +150,19 @@ Xxx xxxx-xx-xxxx xxxxxxxxxx, xx xxxxxxxxx xxxxx xxxx xx x xxxxxxxxxx xxxx.
 
  
 
-Xx xxxx xxxxxxxxxx xxxxxxxxx xxx xxxxxxxx xxxxxx, xx xxxxxxxxx xxxx xxxx-xx-xxxx xxxxxxxxxx xxxxxxxx xxxx xxxx xx xxx xxxxx xxxxxx xxxxx xxxxxxx xxxxxxx. Xxxxxxxx xxx xxxxxxxxx xxxxxxxxxxxx, xxxxx xxxxx x xxxxxxxxxx xxxxxxxxx xxxx xxx xxxxx xxxxxx:
+If your navigation structure has multiple levels, we recommend that peer-to-peer navigation elements only link to the peers within their current subtree. Consider the following illustration, which shows a navigation structure that has three levels:
 
-![xx xxx xxxx xxx xxxxxxxx](images/nav/nav-subtrees.png)
--   Xxx xxxxx Y, xxx xxxx-xx-xxxx xxxxxxxxxx xxxxxxx xxxxxx xxxxxxx xxxxxx xx xxxxx X, X, X, xxx X.
--   Xx xxxxx Y, xxx xxxx-xx-xxxx xxxxxxxxxx xxxxxxxx xxx xxx XY xxxxx xxxxxx xxxx xxxx xx xxx xxxxx XY xxxxx. Xxxx xxxxxx xxx xxxx xx xxxxx Y xxxxx xx xxx X xxxxxxx.
+![an app with two subtrees](images/nav/nav-subtrees.png)
+-   For level 1, the peer-to-peer navigation element should provide access to pages A, B, C, and D.
+-   At level 2, the peer-to-peer navigation elements for the A2 pages should only link to the other A2 pages. They should not link to level 2 pages in the C subtree.
 
-![xx xxx xxxx xxx xxxxxxxx](images/nav/nav-subtrees2.png)
+![an app with two subtrees](images/nav/nav-subtrees2.png)
 
-### <span id="Hierarchical_navigation_elements">
-            </span>
-            <span id="hierarchical_navigation_elements">
-            </span>
-            <span id="HIERARCHICAL_NAVIGATION_ELEMENTS">
-            </span>Xxxxxxxxxxxx xxxxxxxxxx xxxxxxxx
+### <span id="Hierarchical_navigation_elements"></span><span id="hierarchical_navigation_elements"></span><span id="HIERARCHICAL_NAVIGATION_ELEMENTS"></span>Hierarchical navigation elements
 
-Xxxxxxxxxxxx xxxxxxxxxx xxxxxxxx xxxxxxx xxxxxxxxxx xxxxxxx x xxxxxx xxxx xxx xxx xxxxx xxxxx.
+Hierarchical navigation elements provide navigation between a parent page and its child pages.
 
-![xxxxxxxxxxx xxxxxxxxxx](images/nav/nav-verticalmovement.png)
+![hiearchical navigation](images/nav/nav-verticalmovement.png)
 
 <table>
 <colgroup>
@@ -191,33 +171,33 @@ Xxxxxxxxxxxx xxxxxxxxxx xxxxxxxx xxxxxxx xxxxxxxxxx xxxxxxx x xxxxxx xxxx xxx xx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxxxxx xxxxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Navigation element</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Hub](../controls-and-patterns/hub.md)</p>
 <p><img src="images/higsecone-hub-thumb.png" alt="Hub" /></p></td>
-<td align="left">X xxx xx x xxxxxxx xxxx xx xxxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxxxx/xxxxxxxxx xx xxx xxxxx xxxxx. Xxxxxx xxx xxxxxxxxxx xxxx xx xxxx, xx xxxxxxxx xxxxxxxxxx xx xxxxx xxxxx xxxxx xxxxxxx xxxxx xxx xxxxxxx xxxxxxx xxxxxxxx xx xxx xxxx xxxxxx.
-<p>Xxx x xxx xxxx:</p>
+<td align="left">A hub is a special type of navigation control that provides previews/summaries of its child pages. Unlike the navigation pane or tabs, it provides navigation to these child pages through links and section headers embedded in the page itself.
+<p>Use a hub when:</p>
 <ul>
-<li>Xxx xxxxxx xxxx xxxxx xxxxx xxxx xx xxxx xxxx xx xxx xxxxxxx xx xxx xxxxx xxxxx xxxxxxx xxxxxx xx xxxxxxxx xx xxxx xxx.</li>
+<li>You expect that users would want to view some of the content of the child pages without having to navigate to each one.</li>
 </ul>
-<p>Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxxxxxx, xxxxx xxxxx xxxx xxxx xxxxxx xxx xxxxx, xxxx-xxxxxx, xxx xxxxxxxx xxxx.</p>
+<p>Hubs promote discovery and exploration, which makes them well suited for media, news-reader, and shopping apps.</p>
 <p></p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Master/details](../controls-and-patterns/master-details.md)</p>
 <p><img src="images/higsecone-masterdetail-thumb.png" alt="Master/details" /></p></td>
-<td align="left">Xxxxxxxx x xxxx (xxxxxx xxxx) xx xxxx xxxxxxxxx. Xxxxxxxxx xx xxxx xxxxxxxx xxx xxxxxxxxxxxxx xxxxx xxxx xx xxx xxxxxxx xxxxxxx.
-<p>Xxx xxx Xxxxxx/xxxxxxx xxxxxxx xxxx:</p>
+<td align="left">Displays a list (master view) of item summaries. Selecting an item displays its corresponding items page in the details section.
+<p>Use the Master/details element when:</p>
 <ul>
-<li>Xxx xxxxxx xxxxx xx xxxxxx xxxxxxx xxxxx xxxxx xxxxxxxxxx.</li>
-<li>Xxx xxxx xx xxxxxx xxx xxxx xx xxxxxxx xxxx-xxxxx xxxxxxxxxx, xxxx xx xxxxxxxx xx xxxxxxx, xx xxxxxxxxxx xxxxx xx xxxxxx xx xxxxx, xxx xxxx xxxx xx xxxxxx xxx xxxx xx xxxx xx xxxxxx xxx xxxxxxx xxx xxxx xxxx.</li>
+<li>You expect users to switch between child items frequently.</li>
+<li>You want to enable the user to perform high-level operations, such as deleting or sorting, on individual items or groups of items, and also want to enable the user to view or update the details for each item.</li>
 </ul>
-<p>Xxxxxx/xxxxxxx xxxxxxxx xxx xxxx xxxxxx xxx xxxxx xxxxxxx, xxxxxxx xxxxx, xxx xxxx xxxxx.</p>
-<p>Xxxx xxxxxx xxx x xxxxx-xxxxxxxx xxx xxxxx xxx xx x xxxxxx/xxxxxxx xxxxxxx:</p>
+<p>Master/details elements are well suited for email inboxes, contact lists, and data entry.</p>
+<p>This design for a stock-tracking app makes use of a master/details pattern:</p>
 <p><img src="images/stock-tracker/uap-finance-tabletphone-sbs-sm.png" alt="Example of a stock trading app that has a master/details pattern" /></p></td>
 </tr>
 </tbody>
@@ -225,12 +205,7 @@ Xxxxxxxxxxxx xxxxxxxxxx xxxxxxxx xxxxxxx xxxxxxxxxx xxxxxxx x xxxxxx xxxx xxx xx
 
  
 
-### <span id="Historical_navigation_elements">
-            </span>
-            <span id="historical_navigation_elements">
-            </span>
-            <span id="HISTORICAL_NAVIGATION_ELEMENTS">
-            </span>Xxxxxxxxxx xxxxxxxxxx xxxxxxxx
+### <span id="Historical_navigation_elements"></span><span id="historical_navigation_elements"></span><span id="HISTORICAL_NAVIGATION_ELEMENTS"></span>Historical navigation elements
 
 <table>
 <colgroup>
@@ -239,26 +214,21 @@ Xxxxxxxxxxxx xxxxxxxxxx xxxxxxxx xxxxxxx xxxxxxxxxx xxxxxxx x xxxxxx xxxx xxx xx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxxxxx xxxxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Navigation element</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Xxxx</td>
-<td align="left"><p>Xxxx xxx xxxx xxxxxxxx xxx xxxxxxxxxx xxxxxxx xxxxxx xx xxx xxx, xxxxxxxxx xx xxx xxxxxx, xxxx xxx xx xxx. Xxx xxxx xxxx, xxx xxx [Make your app work well with system-level navigation features](#backnavigation) xxxxxxx xxxx xxxxxxx xxxxx xx xxxx xxxxxxx.</p></td>
+<td align="left">Back</td>
+<td align="left"><p>Lets the user traverse the navigation history within an app and, depending on the device, from app to app. For more info, see the [Make your app work well with system-level navigation features](#backnavigation) section that appears later in this article.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <span id="Content-embedded_navigation_elements">
-            </span>
-            <span id="content-embedded_navigation_elements">
-            </span>
-            <span id="CONTENT-EMBEDDED_NAVIGATION_ELEMENTS">
-            </span>Xxxxxxx-xxxxxxxx xxxxxxxxxx xxxxxxxx
+### <span id="Content-embedded_navigation_elements"></span><span id="content-embedded_navigation_elements"></span><span id="CONTENT-EMBEDDED_NAVIGATION_ELEMENTS"></span>Content-embedded navigation elements
 
 <table>
 <colgroup>
@@ -267,37 +237,36 @@ Xxxxxxxxxxxx xxxxxxxxxx xxxxxxxx xxxxxxx xxxxxxxxxx xxxxxxx x xxxxxx xxxx xxx xx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxxxxx xxxxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Navigation element</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Xxxxxxxxxx xxx xxxxxxx</td>
-<td align="left"><p>Xxxxxxx-xxxxxxxx xxxxxxxxxx xxxxxxxx xxxxxx xx x xxxx'x xxxxxxx. Xxxxxx xxxxx xxxxxxxxxx xxxxxxxx, xxxxx xxxxxx xx xxxxxxxxxx xxxxxx xxx xxxx'x xxxxx xx xxxxxxx, xxxxxxx-xxxxxxxx xxxxxxxxxx xxxxxxxx xxx xxxxxx xxxx xxxx xx xxxx.</p></td>
+<td align="left">Hyperlinks and buttons</td>
+<td align="left"><p>Content-embedded navigation elements appear in a page's content. Unlike other navigation elements, which should be consistent across the page's group or subtree, content-embedded navigation elements are unique from page to page.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### <span id="Combining_navigation_elements">
-            </span>
-            <span id="combining_navigation_elements">
-            </span>
-            <span id="COMBINING_NAVIGATION_ELEMENTS">
-            </span>Xxxxxxxxx xxxxxxxxxx xxxxxxxx
+### <span id="Combining_navigation_elements"></span><span id="combining_navigation_elements"></span><span id="COMBINING_NAVIGATION_ELEMENTS"></span>Combining navigation elements
 
-Xxx xxx xxxxxxx xxxxxxxxxx xxxxxxxx xx xxxxxx x xxxxxxxxxx xxxxxxxxxx xxxx'x xxxxx xxx xxxx xxx. Xxx xxxxxxx, xxxx xxx xxxxx xxx x xxx xxxx xx xxxxxxx xxxxxx xx xxx-xxxxx xxxxx xxx xxxx xx xxxxxxx xxxxxx xx xxxxxx-xxxxx xxxxx.
+You can combine navigation elements to create a navigation experience that's right for your app. For example, your app might use a nav pane to provide access to top-level pages and tabs to provide access to second-level pages.
 
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx XXX xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[This article contains information that is specific to UWP apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
 
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

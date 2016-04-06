@@ -1,65 +1,65 @@
 ---
-xx.xxxxxxx: XYXYYYXY-YYYY-YXYX-XYYY-YYXYYXYYYYXY
-xxxxx: Xxxxxx xxxxxxxxxxx
-xxxxxxxxxxx: Xxxxxx xxxx xxxx xxx Xxxxxxxxxxxxx, Xxxxxxxxx, Xxxxxxx, Xxxxxxxxxxxx, xxx XxxxxxxxxxxXxxxxx xxxxxxx xx xxxxxxx xx xxxxx xxxxxxxxx xxxx. Xxxxx xxxx xxx xxxxxxx xx xxx xxxxxx'x xxxxxxxxx xxxxxxxxxxx xxx xxxxxx xxxx xxx xxxxxx xx xxx xxxx xxxxx xx.
+ms.assetid: B4A550E7-1639-4C9A-A229-31E22B1415E7
+title: Sensor orientation
+description: Sensor data from the Accelerometer, Gyrometer, Compass, Inclinometer, and OrientationSensor classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it.
 ---
-# Xxxxxx xxxxxxxxxxx
+# Sensor orientation
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-** Xxxxxxxxx XXXx **
+** Important APIs **
 
--   [**Xxxxxxx.Xxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Xxxxxxx.Xxxxxxx.Xxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
+-   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
+-   [**Windows.Devices.Sensors.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
 
-Xxxxxx xxxx xxxx xxx [**Xxxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225687), [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225718), [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225705), [**Xxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225766), xxx [**XxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206371) xxxxxxx xx xxxxxxx xx xxxxx xxxxxxxxx xxxx. Xxxxx xxxx xxx xxxxxxx xx xxx xxxxxx'x xxxxxxxxx xxxxxxxxxxx xxx xxxxxx xxxx xxx xxxxxx xx xxx xxxx xxxxx xx. Xx xxxx xxx xxxxxxxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxx xx xxxxxxxxxxx xxx xxxxxx xx xxx xxxx xxxxxxx xx, xxx xxxx xxxxxx xxxx xxxxxx xxxx xxx xxx xxxxxxxx xxxxxx xxxxx xx.
+Sensor data from the [**Accelerometer**](https://msdn.microsoft.com/library/windows/apps/BR225687), [**Gyrometer**](https://msdn.microsoft.com/library/windows/apps/BR225718), [**Compass**](https://msdn.microsoft.com/library/windows/apps/BR225705), [**Inclinometer**](https://msdn.microsoft.com/library/windows/apps/BR225766), and [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) classes is defined by their reference axes. These axes are defined by the device's landscape orientation and rotate with the device as the user turns it. If your app supports automatic rotation and reorients itself to accommodate the device as the user rotates it, you must adjust your sensor data for the rotation before using it.
 
-## Xxxxxxx xxxxxxxxxxx xx xxxxxx xxxxxxxxxxx
+## Display orientation vs device orientation
 
-Xx xxxxx xx xxxxxxxxxx xxx xxxxxxxxx xxxx xxx xxxxxxx, xxx xxxx xx xxxxxxxxxxx xxxxxxx xxxxxxxxxxx xxxx xxxxxx xxxxxxxxxxx. Xxxxxxx xxxxxxxxxxx xx xxx xxxxxxxxx xxxx xxx xxxxxx xxx xxxxxxxxx xx xxx xxxxxx xxxxxxx xxxxxx xxxxxxxxxxx xx xxx xxxxxxxx xxxxxxxxxxx xx xxx xxxxxx. Xx xxx xxxxxxxxx xxxxxxx, xxxx xxx xxxxxx xxx xxxxxxx xxxxxxxxxxx xxx xx **Xxxxxxxxx**.
+In order to understand the reference axes for sensors, you need to distinguish display orientation from device orientation. Display orientation is the direction text and images are displayed on the screen whereas device orientation is the physical positioning of the device. In the following picture, both the device and display orientation are in **Landscape**.
 
-![Xxxxxxx xxx xxxxxx xxxxxxxxxxx xx Xxxxxxxxx](images/accelerometer-axis-orientation-landscape-with-text.png)
+![Display and device orientation in Landscape](images/accelerometer-axis-orientation-landscape-with-text.png)
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxxx xxx xxxxxxx xxx xxxxxx xxxxxxxxxxx xx **XxxxxxxxxXxxxxxx**.
+The following picture shows both the display and device orientation in **LandscapeFlipped**.
 
-![Xxxxxxx xxx xxxxxx xxxxxxxxxxx xx XxxxxxxxxXxxxxxx](images/accelerometer-axis-orientation-landscape-180-with-text.png)
+![Display and device orientation in LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text.png)
 
-Xxx xxxx xxxxxxx xxxxx xxx xxxxxxx xxxxxxxxxxx xx Xxxxxxxxx xxxxx xxx xxxxxx xxxxxxxxxxx xx XxxxxxxxxXxxxxxx.
+The next picture shows the display orientation in Landscape while the device orientation is LandscapeFlipped.
 
-![Xxxxxxx xxxxxxxxxxx xx Xxxxxxxxx xxxxx xxx xxxxxx xxxxxxxxxxx xx XxxxxxxxxXxxxxxx](images/accelerometer-axis-orientation-landscape-180-with-text-inverted.png)
+![Display orientation in Landscape while the device orientation is LandscapeFlipped](images/accelerometer-axis-orientation-landscape-180-with-text-inverted.png)
 
-Xxx xxx xxxxx xxx xxxxxxxxxxx xxxxxx xxxxxxx xxx [**XxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn264258) xxxxx xx xxxxx xxx [**XxxXxxXxxxxxxXxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) xxxxxx xxxx xxx [**XxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx) xxxxxxxx. Xxxx xxx xxx xxxxxx xxxxx xx xxxxxxxxx xxxxxxx xxx [**XxxxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226142) xxxxxxxxxxx. Xxxxxxxx xxxx xxx xxxxx xxxxxxxxxxx xxx xxxxxxx, xxx xxxx xx xxxxxxx x xxxxxxxxxx xx xxx xxxxxxxxx xxxx xx xxxx xxxxxxxxxxx.
+You can query the orientation values through the [**DisplayInformation**](https://msdn.microsoft.com/library/windows/apps/Dn264258) class by using the [**GetForCurrentView**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.getforcurrentview.aspx) method with the [**CurrentOrientation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.graphics.display.displayinformation.currentorientation.aspx) property. Then you can create logic by comparing against the [**DisplayOrientations**](https://msdn.microsoft.com/library/windows/apps/BR226142) enumeration. Remember that for every orientation you support, you have to support a conversion of the reference axes to that orientation.
 
-## Xxxxxxxxx-xxxxx xx xxxxxxxx-xxxxx xxxxxxx
+## Landscape-first vs portrait-first devices
 
-Xxxxxxxxxxxxx xxxxxxx xxxx xxxxxxxxx-xxxxx xxx xxxxxxxx-xxxxx xxxxxxx. Xxxx xxxxxxxxxxxxx xxxxxxxxx xxxxxxxxxx xxxx xxxxxxx, xxxx xx xx xx x xxxxxxx xxx xxxxxxxxxx xxx xx xxxx xxx xxxxxxx xxxxxxx xxxxxx xxx xxxx xxxxxxxxx xxxxx. Xxx xxxxxxxxx xxxxx xxxxx xxx xxxxxx xxxx xxx xxxx xxxxxxxxx-xxxxx xxx xxxxxxxx xxxxx xxxxxxx.
+Manufacturers produce both landscape-first and portrait-first devices. When manufacturers integrate components into devices, they do so in a unified and consistent way so that all devices operate within the same reference frame. The following table shows the sensor axes for both landscape-first and portrait first devices.
 
-| Xxxxxxxxxxx | Xxxxxxxxx-xxxxx | Xxxxxxxx-xxxxx |
+| Orientation | Landscape-first | Portrait-first |
 |-------------|-----------------|----------------|
-| **Xxxxxxxxx** | ![Xxxxxxxxx-xxxxx xxxxxx xx Xxxxxxxxx xxxxxxxxxxx](images/accelerometer-axis-orientation-landscape.png) | ![Xxxxxxxx-xxxxx xxxxxx xx Xxxxxxxxx xxxxxxxxxxx](images/accelerometer-axis-orientation-portrait-270.png) |
-| **Xxxxxxxx** | ![Xxxxxxxxx-xxxxx xxxxxx xx Xxxxxxxx xxxxxxxxxxx](images/accelerometer-axis-orientation-landscape-90.png) | ![Xxxxxxxx-xxxxx xxxxxx xx Xxxxxxxx xxxxxxxxxxx](images/accelerometer-axis-orientation-portrait.png) |
-| **XxxxxxxxxXxxxxxx ** | ![Xxxxxxxxx-xxxxx xxxxxx xx XxxxxxxxxXxxxxxx xxxxxxxxxxx](images/accelerometer-axis-orientation-landscape-180.png) | ![Xxxxxxxx-xxxxx xxxxxx xx XxxxxxxxxXxxxxxx xxxxxxxxxxx](images/accelerometer-axis-orientation-portrait-90.png) | 
-| **XxxxxxxxXxxxxxx** | ![Xxxxxxxxx-xxxxx xxxxxx xx XxxxxxxxXxxxxxx xxxxxxxxxxx](images/accelerometer-axis-orientation-landscape-270.png)| ![Xxxxxxxx-xxxxx xxxxxx xx XxxxxxxxXxxxxxx xxxxxxxxxxx](images/accelerometer-axis-orientation-portrait-180.png) |
+| **Landscape** | ![Landscape-first device in Landscape orientation](images/accelerometer-axis-orientation-landscape.png) | ![Portrait-first device in Landscape orientation](images/accelerometer-axis-orientation-portrait-270.png) |
+| **Portrait** | ![Landscape-first device in Portrait orientation](images/accelerometer-axis-orientation-landscape-90.png) | ![Portrait-first device in Portrait orientation](images/accelerometer-axis-orientation-portrait.png) |
+| **LandscapeFlipped ** | ![Landscape-first device in LandscapeFlipped orientation](images/accelerometer-axis-orientation-landscape-180.png) | ![Portrait-first device in LandscapeFlipped orientation](images/accelerometer-axis-orientation-portrait-90.png) | 
+| **PortraitFlipped** | ![Landscape-first device in PortraitFlipped orientation](images/accelerometer-axis-orientation-landscape-270.png)| ![Portrait-first device in PortraitFlipped orientation](images/accelerometer-axis-orientation-portrait-180.png) |
 
-## Xxxxxxx xxxxxxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxx
+## Devices broadcasting display and headless devices
 
-Xxxx xxxxxxx xxxx xxx xxxxxxx xx xxxxxxxxx xxx xxxxxxx xx xxxxxxx xxxxxx. Xxx xxxxxxx, xxx xxxxx xxxx x xxxxxx xxx xxxxxxxxx xxx xxxxxxx xx x xxxxxxxxx xxxx xxxx xx xx xxxxxxxxx xxxxxxxxxxx. Xx xxxx xxxxxxxx, xx xx xxxxxxxxx xx xxxx xx xxxx xxxx xxx xxxxxx xxxxxxxxxxx xx xxxxx xx xxx xxxxxxxx xxxxxx, xxx xxx xxx xxxxxxxxxx xxx xxxxxxx. Xx xx xxxxxxxxxxxxx xxxxx xxxxxx xxxx xxx xxx xxxxxx.
+Some devices have the ability to broadcast the display to another device. For example, you could take a tablet and broadcast the display to a projector that will be in landscape orientation. In this scenario, it is important to keep in mind that the device orientation is based on the original device, not the one presenting the display. So an accelerometer would report data for the tablet.
 
-Xxxxxxxxxxx, xxxx xxxxxxx xx xxx xxxx x xxxxxxx. Xxxx xxxxx xxxxxxx, xxx xxxxxxx xxxxxxxxxxx xxx xxxxx xxxxxxx xx xxxxxxxx.
+Furthermore, some devices do not have a display. With these devices, the default orientation for these devices is portrait.
 
-## Xxxxxxx xxxxxxxxxxx xxx xxxxxxx xxxxxxx
+## Display orientation and compass heading
 
 
-Xxxxxxx xxxxxxx xxxxxxx xxxx xxx xxxxxxxxx xxxx xxx xx xx xxxxxxx xxxx xxx xxxxxx xxxxxxxxxxx. Xxx xxxxxxxxxx xxxxx xx xxx xxxx xxxxx (xxxxxx xxx xxxx xx xxxxxx xxxxx).
+Compass heading depends upon the reference axes and so it changes with the device orientation. You compensate based on the this table (assume the user is facing north).
 
-| Xxxxxxx xxxxxxxxxxx | Xxxxxxxxx xxxx xxx xxxxxxx xxxxxxx | XXX xxxxxxx xxxxxxx xxxx xxxxxx xxxxx | Xxxxxxx xxxxxxx xxxxxxxxxxxx | 
+| Display orientation | Reference axis for compass heading | API compass heading when facing north | Compass heading compensation | 
 |---------------------|------------------------------------|---------------------------------------|------------------------------|
-| Xxxxxxxxx           | -X | Y   | Xxxxxxx               |
-| Xxxxxxxx            |  X | YY  | (Xxxxxxx + YYY) % YYY | 
-| XxxxxxxxxXxxxxxx    |  X | YYY | (Xxxxxxx + YYY) % YYY |
-| XxxxxxxxXxxxxxx     |  X | YYY | (Xxxxxxx + YY) % YYY  |
+| Landscape           | -Z | 0   | Heading               |
+| Portrait            |  Y | 90  | (Heading + 270) % 360 | 
+| LandscapeFlipped    |  Z | 180 | (Heading + 180) % 360 |
+| PortraitFlipped     |  Y | 270 | (Heading + 90) % 360  |
 
-Xxxxxx xxx xxxxxxx xxxxxxx xx xxxxx xx xxx xxxxx xx xxxxx xx xxxxxxxxx xxxxxxx xxx xxxxxxx. Xxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxxxxx xxx xx xx xxxx.
+Modify the compass heading as shown in the table in order to correctly display the heading. The following code snippet demonstrates how to do this.
 
 ```csharp
 private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
@@ -94,18 +94,18 @@ private void ReadingChanged(object sender, CompassReadingChangedEventArgs e)
 }
 ```
 
-## Xxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxxxxxx xxx xxxxxxxxx
+## Display orientation with the accelerometer and gyrometer
 
-Xxxx xxxxx xxxxxxxx xxxxxxxxxxxxx xxx xxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxx.
+This table converts accelerometer and gyrometer data for display orientation.
 
-| Xxxxxxxxx xxxx        |  X |  X | X |
+| Reference axes        |  X |  Y | Z |
 |-----------------------|----|----|---|
-| **Xxxxxxxxx**         |  X |  X | X |
-| **Xxxxxxxx**          |  X | -X | X |
-| **XxxxxxxxxXxxxxxx**  | -X | -X | X |
-| **XxxxxxxxXxxxxxx**   | -X |  X | X |
+| **Landscape**         |  X |  Y | Z |
+| **Portrait**          |  Y | -X | Z |
+| **LandscapeFlipped**  | -X | -Y | Z |
+| **PortraitFlipped**   | -Y |  X | Z |
 
-Xxx xxxxxxxxx xxxx xxxxxxx xxxxxxx xxxxx xxxxxxxxxxx xx xxx xxxxxxxxx.
+The following code example applies these conversions to the gyrometer.
 
 ```csharp
 private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
@@ -148,21 +148,25 @@ private void ReadingChanged(object sender, GyrometerReadingChangedEventArgs e)
 }
 ```
 
-## Xxxxxxx xxxxxxxxxxx xxx xxxxxx xxxxxxxxxxx
+## Display orientation and device orientation
 
-Xxx [**XxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206371) xxxx xxxx xx xxxxxxx xx x xxxxxxxxx xxx. Xxxxx xx xxxxx xxxxxxxxx xxxxxxxxxxxx xx xxxxxxxxx xxxxxxxxxxxxxxxx xx xxx X xxxx, xx xx xxxx xx xxxxxxx xxx xxxxxxxx xx xxx xxxx xxx xxxx’x xxxxxxxxxxx. Xxx xxxxxxxxxx xxxx, xx xxx xxx Xxxxx’x xxxxxxx xx xxxxxx x xxxxxxxx xxxx x xxxxxxxxx xxxxxxxxxx, xxx xx xxx xxxx xxx x xxxxxxxxx xxxxxxxx xxxxxx.
+The [**OrientationSensor**](https://msdn.microsoft.com/library/windows/apps/BR206371) data must be changed in a different way. Think of these different orientations as rotations counterclockwise to the Z axis, so we need to reverse the rotation to get back the user’s orientation. For quaternion data, we can use Euler’s formula to define a rotation with a reference quaternion, and we can also use a reference rotation matrix.
 
-![Xxxxx'x xxxxxxx](images/eulers-formula.png)
-Xx xxx xxx xxxxxxxx xxxxxxxxxxx xxx xxxx, xxxxxxxx xxx xxxxxxxxx xxxxxx xxxxxxx xxx xxxxxxxx xxxxxx. Xxxx xxxx xxxx xxxx xx xxx xxxxxxxxxxx.
+![Euler's formula](images/eulers-formula.png)
+To get the relative orientation you want, multiply the reference object against the absolute object. Note that this math is not commutative.
 
-![Xxxxxxxx xxx xxxxxxxxx xxxxxx xxxxxxx xxx xxxxxxxx xxxxxx](images/orientation-formula.png)
-Xx xxx xxxxxxxxx xxxxxxxxxx, xxx xxxxxxxx xxxxxx xx xxxxxxxx xx xxx xxxxxx xxxx.
+![Multiply the reference object against the absolute object](images/orientation-formula.png)
+In the preceding expression, the absolute object is returned by the sensor data.
 
-| Xxxxxxx xxxxxxxxxxx  | Xxxxxxxxxxxxxxxx xxxxxxxx xxxxxx X | Xxxxxxxxx xxxxxxxxxx (xxxxxxx xxxxxxxx) | Xxxxxxxxx xxxxxxxx xxxxxx (xxxxxxx xxxxxxxx) | 
+| Display orientation  | Counterclockwise rotation around Z | Reference quaternion (reverse rotation) | Reference rotation matrix (reverse rotation) | 
 |----------------------|------------------------------------|-----------------------------------------|----------------------------------------------|
-| **Xxxxxxxxx**        | Y                                  | Y + Yx + Yx + Yx                        | \[Y Y Y<br/> Y Y Y<br/> Y Y Y\]               |
-| **Xxxxxxxx**         | YY                                 | xxx(-YY⁰) + (x + x + x)*xxx(-YY⁰)       | \[Y Y Y<br/>-Y Y Y<br/>Y Y Y]              |
-| **XxxxxxxxxXxxxxxx** | YYY                                | Y - x - x - x                           | \[Y Y Y<br/> Y Y Y<br/> Y Y Y]               |
-| **XxxxxxxxXxxxxxx**  | YYY                                | xxx(-YYY⁰) + (x + x + x)*xxx(-YYY⁰)     | \[Y -Y Y<br/> Y  Y Y<br/> Y  Y Y]             |
+| **Landscape**        | 0                                  | 1 + 0i + 0j + 0k                        | \[1 0 0<br/> 0 1 0<br/> 0 0 1\]               |
+| **Portrait**         | 90                                 | cos(-45⁰) + (i + j + k)*sin(-45⁰)       | \[0 1 0<br/>-1 0 0<br/>0 0 1]              |
+| **LandscapeFlipped** | 180                                | 0 - i - j - k                           | \[1 0 0<br/> 0 1 0<br/> 0 0 1]               |
+| **PortraitFlipped**  | 270                                | cos(-135⁰) + (i + j + k)*sin(-135⁰)     | \[0 -1 0<br/> 1  0 0<br/> 0  0 1]             |
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

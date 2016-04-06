@@ -1,108 +1,108 @@
 ---
-xx.xxxxxxx: YXYYXYXX-YYXY-YYYY-XYYY-XYXYYYYYXYXX
-xxxxx: Xxxxxxxxx xxx xxxxx xxxxx xxx xxxxxxx
-xxxxxxxxxxx: Xxxxxx xxxxx xxx xxxxxxx xx xxxxxx x xxxxxx, xxxxxxx, xxxxxx, xx xxxxxxx xxxxxxxx. Xxx xxx xxxx xxxxx xxx xxxxx xxx xxxxxxx xx x xxxxxxxx xx xxxxxxxxxxxx xxxx xxx xxxxxx xxxxxxx.
+ms.assetid: 4C59D5AC-58F7-4863-A884-E9E54228A5AD
+title: Enumerate and query files and folders
+description: Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.
 ---
-# Xxxxxxxxx xxx xxxxx xxxxx xxx xxxxxxx
+# Enumerate and query files and folders
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxx xxxxx xxx xxxxxxx xx xxxxxx x xxxxxx, xxxxxxx, xxxxxx, xx xxxxxxx xxxxxxxx. Xxx xxx xxxx xxxxx xxx xxxxx xxx xxxxxxx xx x xxxxxxxx xx xxxxxxxxxxxx xxxx xxx xxxxxx xxxxxxx.
+Access files and folders in either a folder, library, device, or network location. You can also query the files and folders in a location by constructing file and folder queries.
 
-**Xxxx**  Xxxx xxx xxx [Xxxxxx xxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619993).
+**Note**  Also see the [Folder enumeration sample](http://go.microsoft.com/fwlink/p/?linkid=619993).
 
  
-## Xxxxxxxxxxxxx
+## Prerequisites
 
--   **Xxxxxxxxxx xxxxx xxxxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx**
+-   **Understand async programming for Universal Windows Platform (UWP) apps**
 
-    Xxx xxx xxxxx xxx xx xxxxx xxxxxxxxxxxx xxxx xx X# xx Xxxxxx Xxxxx, xxx [Xxxx xxxxxxxxxxxx XXXx xx X# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/mt187337). Xx xxxxx xxx xx xxxxx xxxxxxxxxxxx xxxx xx X++, xxx [Xxxxxxxxxxxx xxxxxxxxxxx xx X++](https://msdn.microsoft.com/library/windows/apps/mt187334).
+    You can learn how to write asynchronous apps in C# or Visual Basic, see [Call asynchronous APIs in C# or Visual Basic](https://msdn.microsoft.com/library/windows/apps/mt187337). To learn how to write asynchronous apps in C++, see [Asynchronous programming in C++](https://msdn.microsoft.com/library/windows/apps/mt187334).
 
--   **Xxxxxx xxxxxxxxxxx xx xxx xxxxxxxx**
+-   **Access permissions to the location**
 
-    Xxx xxxxxxx, xxx xxxx xx xxxxx xxxxxxxx xxxxxxx xxx **xxxxxxxxXxxxxxx** xxxxxxxxxx, xxx xxxx xxxxxxxx xxx xxxxxxx x xxxxxxxxx xxxxxxxxxx xx xx xxxxxxxxxx xx xxx. Xx xxxxx xxxx, xxx [Xxxx xxxxxx xxxxxxxxxxx](file-access-permissions.md).
+    For example, the code in these examples require the **picturesLibrary** capability, but your location may require a different capability or no capability at all. To learn more, see [File access permissions](file-access-permissions.md).
 
-## Xxxxxxxxx xxxxx xxx xxxxxxx xx x xxxxxxxx
+## Enumerate files and folders in a location
 
-> **Xxxx**  Xxxxxxxx xx xxxxxxx xxx **xxxxxxxxXxxxxxx** xxxxxxxxxx.
+> **Note**  Remember to declare the **picturesLibrary** capability.
 
-Xx xxxx xxxxxxx xx xxxxx xxx xxx [**XxxxxxxXxxxxx.XxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227276) xxxxxx xx xxx xxx xxx xxxxx xx xxx xxxx xxxxxx xx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227156) (xxx xx xxxxxxxxxx) xxx xxxx xxx xxxx xx xxxx xxxx. Xxxx, xx xxx xxx [**XxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227280) xxxxxx xx xxx xxx xxx xxxxxxxxxx xx xxx **XxxxxxxxXxxxxxx** xxx xxxx xxx xxxx xx xxxx xxxxxxxxx.
+In this example we first use the [**StorageFolder.GetFilesAsync**](https://msdn.microsoft.com/library/windows/apps/br227276) method to get all the files in the root folder of the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (not in subfolders) and list the name of each file. Next, we use the [**GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br227280) method to get all the subfolders in the **PicturesLibrary** and list the name of each subfolder.
 
 <!--BUGBUG: IAsyncOperation<IVectorView<StorageFolder^>^>^  causes build to flake out-->
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"] 
+> [!div class="tabbedCodeSnippets"] 
 > ```cpp
 > //#include <ppltasks.h>
-> //#xxxxxxx <string>
-> //#xxxxxxx <memory>
-> xxxxx xxxxxxxxx Xxxxxxx::Xxxxxxx;
-> xxxxx xxxxxxxxx Xxxxxxxx::Xxxxxxxxxxs;
-> xxxxx xxxxxxxxx xxxxxxxxnxx;
-> xxxxx xxxxxxxxx xxx;
+> //#include <string>
+> //#include <memory>
+> using namespace Windows::Storage;
+> using namespace Platform::Collections;
+> using namespace concurrency;
+> using namespace std;
 > 
-> // Xx xxxx xx xxxxxxx xxx Xxxxxxxx Xxxxxx xxxxxxxxxx xx xxx xxxxxxxxxxxx xxxx.
-> XxxxxxxXxxxxx^ xxxxxxxxXxxxxx = XxxxxXxxxxxx::XxxxxxxxXxxxxxx;
+> // Be sure to specify the Pictures Folder capability in the appxmanifext file.
+> StorageFolder^ picturesFolder = KnownFolders::PicturesLibrary;
 > 
-> // Xxx x xxxxxx_xxx xx xxxx xxx xxxxxx xxxxx xx xxxxxx
-> // xxxxx xxx xxxx xxxx xx xxxxxxxe.
-> xxxx xxxxxxXxxxxx = xxxx_xxared<wstring>();
-> *xxxxxxXxxxxx += X"Xxxxx:\x";
+> // Use a shared_ptr so that the string stays in memory
+> // until the last task is complete.
+> auto outputString = make_shared<wstring>();
+> *outputString += L"Files:\n";
 > 
-> // Xxx x xxxx-xxxx xxxxxx xx xxx xxxx xxxxxxx
-> // xxx xxxx xx xx xxx xxxxxxxxxxxn. 
-> xxxxxx_xxxx(xxxxxxxxXxxxxx->XxxXxxxxXxxxc())        
->     // xxxxxxXxxxxx xx xxxxxxxx xx xxxxx, xxxxx xxxxxxx a copy 
->     // xx xxx xxxxxx_xxx xxx xxxxxxxxxx xxx xxxxxxxxe couxx.
->     .xxxx ([xxxxxxXxxxxx] (XXectorView\<StorageFile^>^ xxxxx)
+> // Get a read-only vector of the file objects
+> // and pass it to the continuation. 
+> create_task(picturesFolder->GetFilesAsync())        
+>     // outputString is captured by value, which creates a copy 
+>     // of the shared_ptr and increments its reference count.
+>     .then ([outputString] (IVectorView\<StorageFile^>^ files)
 > {        
->     xxx ( xxxxxxxx xxx x = Y ; x < xxxxx->Xxxx; x++)
+>     for ( unsigned int i = 0 ; i < files->Size; i++)
 >     {
->         *xxxxxxXxxxxx += xxxxx->XxxXx(x)->Xxxx->Xxxx();
->         *xxxxxxXxxxxx += X"\x";
+>         *outputString += files->GetAt(i)->Name->Data();
+>         *outputString += L"\n";
 >     }
 > })
->     // Xx xxxx xx xxxxxxxxxx xxxxx xxx xxxxxx xxpe 
->     // xxxx: -> XXxxxxXxxxxtion<...>
+>     // We need to explicitly state the return type 
+>     // here: -> IAsyncOperation<...>
 >     .then([picturesFolder]() -> IAsyncOperation\<IVectorView\<StorageFolder^>^>^ 
 > {
->     xxxxxx xxxxxxxxXxxxxx->XxxXxxxxxxXxxxx();
+>     return picturesFolder->GetFoldersAsync();
 > })
->     // Xxxxxxx "xxxx" xx xxxxxx x_XxxxxxXxxxXxxxx xxxx xxxxxx xxx xambda.
->     .xxxx([xxxx, xxxxxxXxxxxx](XXxxtorView\<StorageFolder^>^ xxxxxxx)
+>     // Capture "this" to access m_OutputTextBlock from within the lambda.
+>     .then([this, outputString](IVectorView\<StorageFolder^>^ folders)
 > {        
->     *xxxxxxXxxxxx += X"Xxxxxxx:\x";
+>     *outputString += L"Folders:\n";
 > 
->     xxx ( xxxxxxxx xxx x = Y; x < xxxxxxx->Xxxx; x++)
+>     for ( unsigned int i = 0; i < folders->Size; i++)
 >     {
->         *xxxxxxXxxxxx += xxxxxxx->XxxXx(x)->Xxxx->Xxxx();
->         *xxxxxxXxxxxx += X"\x";
+>         *outputString += folders->GetAt(i)->Name->Data();
+>         *outputString += L"\n";
 >     }
 > 
->     // Xxxxxx x_XxxxxxXxxxXxxxx xx x XxxxXxxxx xxxxxxx xx xxx XXXX.
->     x_XxxxxxXxxxXxxxx->Xxxx = xxx xxx Xxxxxx((*xxxxxxXxxxxx).x_xxx());
+>     // Assume m_OutputTextBlock is a TextBlock defined in the XAML.
+>     m_OutputTextBlock->Text = ref new String((*outputString).c_str());
 > });
 > ```
 > ```cs
 > StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
 > StringBuilder outputText = new StringBuilder();
 > 
-> IReadOnlyList<StorageFile> xxxxXxxx = 
->     xxxxx xxxxxxxxXxxxxx.XxxXxxxxXxxxx();
+> IReadOnlyList<StorageFile> fileList = 
+>     await picturesFolder.GetFilesAsync();
 > 
-> xxxxxxXxxx.XxxxxxXxxx("Xxxxx:");
-> xxxxxxx (XxxxxxxXxxx xxxx xx xxxxXxxt)
+> outputText.AppendLine("Files:");
+> foreach (StorageFile file in fileList)
 > {
->     xxxxxxXxxx.Xxxxxx(xxxx.Xxxx + "\x");
+>     outputText.Append(file.Name + "\n");
 > }
 > 
-> XXxxxXxxxXxxx<StorageFolder> xxxxxxXxxx = 
->     xxxxx xxxxxxxxXxxxxx.XxxXxxxxxxXxxxx();
+> IReadOnlyList<StorageFolder> folderList = 
+>     await picturesFolder.GetFoldersAsync();
 >            
-> xxxxxxXxxx.XxxxxxXxxx("Xxxxxxx:");
-> xxxxxxx (XxxxxxxXxxxxx xxxxxx xx xxxxxxXxxt)
+> outputText.AppendLine("Folders:");
+> foreach (StorageFolder folder in folderList)
 > {
->     xxxxxxXxxx.Xxxxxx(xxxxxx.XxxxxxxXxxx + "\n");
+>     outputText.Append(folder.DisplayName + "\n");
 > }
 > ```
 > ```vb
@@ -131,32 +131,32 @@ Xx xxxx xxxxxxx xx xxxxx xxx xxx [**XxxxxxxXxxxxx.XxxXxxxxXxxxx**](https://msdn.
 > ```
 
 
-> **Xxxx**  Xx X\# xx Xxxxxx Xxxxx, xxxxxxxx xx xxx xxx **xxxxx** xxxxxxx xx xxx xxxxxx xxxxxxxxxxx xx xxx xxxxxx xx xxxxx xxx xxx xxx **xxxxx** xxxxxxxx.
+> **Note**  In C# or Visual Basic, remember to put the **async** keyword in the method declaration of any method in which you use the **await** operator.
  
 
-Xxxxxxxxxxxxx, xxx xxx xxx xxx [**XxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227286) xxxxxx xx xxx xxx xxxxx (xxxx xxxxx xxx xxxxxxxxxx) xx x xxxxxxxxxx xxxxxxxx. Xxx xxxxxxxxx xxxxxxx xxxx xxx **XxxXxxxxXxxxx** xxxxxx xx xxx xxx xxxxx xxx xxxxxxxxxx xx xxx xxxx xxxxxx xx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227156) (xxx xx xxxxxxxxxx). Xxxx xxx xxxxxxx xxxxx xxx xxxx xx xxxx xxxx xxx xxxxxxxxx. Xx xxx xxxx xx x xxxxxxxxx, xxx xxxxxxx xxxxxxx `"folder"` xx xxx xxxx.
+Alternatively, you can use the [**GetItemsAsync**](https://msdn.microsoft.com/library/windows/apps/br227286) method to get all items (both files and subfolders) in a particular location. The following example uses the **GetItemsAsync** method to get all files and subfolders in the root folder of the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) (not in subfolders). Then the example lists the name of each file and subfolder. If the item is a subfolder, the example appends `"folder"` to the name.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"] 
+> [!div class="tabbedCodeSnippets"] 
 > ```cpp
 > // See previous example for comments, namespace and #include info.
 > StorageFolder^ picturesFolder = KnownFolders::PicturesLibrary;
 > auto outputString = make_shared<wstring>();
 > 
-> xxxxxx_xxxx(xxxxxxxxXxxxxx->XxxXxxxxXxxxx())        
->     .xxxx ([xxxx, xxxxxxXxxxxx] (XXxxxxxXxew<IStorageItem^>^ xxxxx)
+> create_task(picturesFolder->GetItemsAsync())        
+>     .then ([this, outputString] (IVectorView<IStorageItem^>^ items)
 > {        
->     xxx ( xxxxxxxx xxx x = Y ; x < xxxxx->Xxxx; x++)
+>     for ( unsigned int i = 0 ; i < items->Size; i++)
 >     {
->         *xxxxxxXxxxxx += xxxxx->XxxXx(x)->Xxxx->Xxxx();
->         xx(xxxxx->XxxXx(x)->XxXxXxxx(XxxxxxxXxxxXxxxx::Xxxxxx))
+>         *outputString += items->GetAt(i)->Name->Data();
+>         if(items->GetAt(i)->IsOfType(StorageItemTypes::Folder))
 >         {
->             *xxxxxxXxxxxx += X"  xxxxxx\x";
+>             *outputString += L"  folder\n";
 >         }
->         xxxx
+>         else
 >         {
->             *xxxxxxXxxxxx += X"\x";
+>             *outputString += L"\n";
 >         }
->         x_XxxxxxXxxxXxxxx->Xxxx = xxx xxx Xxxxxx((*xxxxxxXxxxxx).x_xxx());
+>         m_OutputTextBlock->Text = ref new String((*outputString).c_str());
 >     }
 > });
 > ```
@@ -164,91 +164,91 @@ Xxxxxxxxxxxxx, xxx xxx xxx xxx [**XxxXxxxxXxxxx**](https://msdn.microsoft.com/li
 > StorageFolder picturesFolder = KnownFolders.PicturesLibrary;
 > StringBuilder outputText = new StringBuilder();
 > 
-> IReadOnlyList<IStorageItem> xxxxxXxxx = 
->     xxxxx xxxxxxxxXxxxxx.XxxXxxxxXxxxx();
+> IReadOnlyList<IStorageItem> itemsList = 
+>     await picturesFolder.GetItemsAsync();
 > 
-> xxxxxxx (xxx xxxx xx xxxxxXxxx)
+> foreach (var item in itemsList)
 > {
->     xx (xxxx xx XxxxxxxXxxder)
+>     if (item is StorageFolder)
 >     {
->         xxxxxxXxxx.Xxxxxx(xxxx.Xxxx + " xxxxxx\x");
+>         outputText.Append(item.Name + " folder\n");
 > 
 >     }
->     xxxx
+>     else
 >     {
->         xxxxxxXxxx.Xxxxxx(xxxx.Xxxx + "\x");
+>         outputText.Append(item.Name + "\n");
 > 
 >     }
 > }
 > ```
-> ```xx
-> Xxx xxxxxxxxXxxxxx Xx XxxxxxxXxxxxx = XxxxxXxxxxxx.XxxxxxxxXxxxxxx
-> Xxx xxxxxxXxxx Xx Xxx XxxxxxXxxxxxx
+> ```vb
+> Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
+> Dim outputText As New StringBuilder
 > 
-> Xxx xxxxxXxxx Xx XXxxxXxxxXxxx(Xx XXxxxxxxXxxx) =
->     Xxxxx xxxxxxxxXxxxxx.XxxXxxxxXxxxx()
+> Dim itemsList As IReadOnlyList(Of IStorageItem) =
+>     Await picturesFolder.GetItemsAsync()
 > 
-> Xxx Xxxx xxxx Xx xxxxxXxxx
+> For Each item In itemsList
 > 
->     Xx XxxxXx xxxx Xx XxxxxxxXxxxxx Xxxx
+>     If TypeOf item Is StorageFolder Then
 > 
->         xxxxxxXxxx.Xxxxxx(xxxx.Xxxx & " xxxxxx" & xxXx)
+>         outputText.Append(item.Name & " folder" & vbLf)
 > 
->     Xxxx
+>     Else
 > 
->         xxxxxxXxxx.Xxxxxx(xxxx.Xxxx & xxXx)
+>         outputText.Append(item.Name & vbLf)
 > 
->     Xxx Xx
+>     End If
 > 
-> Xxxx xxxx
+> Next item
 > ```
 
-## Xxxxx xxxxx xx x xxxxxxxx xxx xxxxxxxxx xxxxxxxx xxxxx
+## Query files in a location and enumerate matching files
 
-Xx xxxx xxxxxxx xx xxxxx xxx xxx xxx xxxxx xx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227156) xxxxxxx xx xxx xxxxx, xxx xxxx xxxx xxx xxxxxxx xxxxxxxx xxxx xxxxxxxxxx. Xxxxx, xx xxxx [**XxxxxxxXxxxxx.XxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227262) xxx xxxx xxx [**XxxxxxXxxxxxXxxxx.XxxxxXxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br207957) xxxxx xx xxx xxxxxx. Xxxx xxxxx xx x [**XxxxxxxXxxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208066) xxxxxx.
+In this example we query for all the files in the [**PicturesLibrary**](https://msdn.microsoft.com/library/windows/apps/br227156) grouped by the month, and this time the example recurses into subfolders. First, we call [**StorageFolder.CreateFolderQuery**](https://msdn.microsoft.com/library/windows/apps/br227262) and pass the [**CommonFolderQuery.GroupByMonth**](https://msdn.microsoft.com/library/windows/apps/br207957) value to the method. That gives us a [**StorageFolderQueryResult**](https://msdn.microsoft.com/library/windows/apps/br208066) object.
 
-Xxxx xx xxxx [**XxxxxxxXxxxxxXxxxxXxxxxx.XxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208074) xxxxx xxxxxxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227230) xxxxxxx xxxxxxxxxxxx xxxxxxx xxxxxxx. Xx xxxx xxxx xx'xx xxxxxxxx xx xxxxx, xx xxx xxxxxxx xxxxxxx xxxx xxxxxxxxx x xxxxx xx xxxxx xxxx xxx xxxx xxxxx.
+Next we call [**StorageFolderQueryResult.GetFoldersAsync**](https://msdn.microsoft.com/library/windows/apps/br208074) which returns [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) objects representing virtual folders. In this case we're grouping by month, so the virtual folders each represent a group of files with the same month.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"] 
+> [!div class="tabbedCodeSnippets"] 
 > ```cpp
 > //#include <ppltasks.h>
-> //#xxxxxxx <string>
-> //#xxxxxxx <memory>
-> xxxxx xxxxxxxxx Xxxxxxx::Xxxxxxx;
-> xxxxx xxxxxxxxx Xxxxxxx::Xxxxxxx::Xxxxxh;
-> xxxxx xxxxxxxxx xxxxxxxxnxx;
-> xxxxx xxxxxxxxx Xxxxxxxx::Xxxxxxtxxxx;
-> xxxxx xxxxxxxxx Xxxxxxx::Xxxxxxxxxx::Xxxxexxxxxx;
-> xxxxx xxxxxxxxx xxx;
+> //#include <string>
+> //#include <memory>
+> using namespace Windows::Storage;
+> using namespace Windows::Storage::Search;
+> using namespace concurrency;
+> using namespace Platform::Collections;
+> using namespace Windows::Foundation::Collections;
+> using namespace std;
 > 
-> XxxxxxxXxxxxx^ xxxxxxxxXxxxxx = XxxxxXxxxxxx::XxxxxxxxXxxxxxx;
+> StorageFolder^ picturesFolder = KnownFolders::PicturesLibrary;
 > 
-> XxxxxxxXxxxxxXxxxxXxxxxx^ xxxxxXxxxxx = 
->     xxxxxxxxXxxxxx->XxxxxxXxxxxxXxxxx(XxxxxxXxxxxxXxxxx::XxxxxXxXxxxx);
+> StorageFolderQueryResult^ queryResult = 
+>     picturesFolder->CreateFolderQuery(CommonFolderQuery::GroupByMonth);
 > 
-> // Xxx xxxxxx_xxx xx xxxx xxxxxxXxxxxx xxxxxxx xx xxxxxx
-> // xxxxx xxx xxxx xxxxxxxxx, xxxxx xx xxxxx xxx xxxxxxxx xxxx xxx xx xxxxe.
-> xxxx xxxxxxXxxxxx = xxx::xxxx_xxared<wstring>();
+> // Use shared_ptr so that outputString remains in memory
+> // until the task completes, which is after the function goes out of scope.
+> auto outputString = std::make_shared<wstring>();
 > 
-> xxxxxx_xxxx( xxxxxXxxxxx->XxxXxxxxxxXxxxx()).xxxx([xxxx, xxxxxxXxxxxx] (XXxxxxxXxxx<StorageFolder^>^ xxxx) 
+> create_task( queryResult->GetFoldersAsync()).then([this, outputString] (IVectorView<StorageFolder^>^ view) 
 > {        
->     xxx ( xxxxxxxx xxx x = Y; x < xxxx->Xxxx; x++)
+>     for ( unsigned int i = 0; i < view->Size; i++)
 >     {
->         create_task(view->GetAt(i)->GetFilesAsync()).then([this, i, view, outputString](IVectorView<StorageFile^>^ xxxxx)
+>         create_task(view->GetAt(i)->GetFilesAsync()).then([this, i, view, outputString](IVectorView<StorageFile^>^ files)
 >         {
->             *xxxxxxXxxxxx += xxxx->XxxXx(x)->Xxxx->Xxxx();
->             *xxxxxxXxxxxx += X"(";
->             *xxxxxxXxxxxx += xx_xxxxxxx(xxxxx->Xxxx);
->             *xxxxxxXxxxxx += X")\x\x";
->             xxx (xxxxxxxx xxx x = Y; x < xxxxx->Xxxx; x++)
+>             *outputString += view->GetAt(i)->Name->Data();
+>             *outputString += L"(";
+>             *outputString += to_wstring(files->Size);
+>             *outputString += L")\r\n";
+>             for (unsigned int j = 0; j < files->Size; j++)
 >             {
->                 *xxxxxxXxxxxx += X"     ";
->                 *xxxxxxXxxxxx += xxxxx->XxxXx(x)->Xxxx->Xxxx();
->                 *xxxxxxXxxxxx += X"\x\x";
+>                 *outputString += L"     ";
+>                 *outputString += files->GetAt(j)->Name->Data();
+>                 *outputString += L"\r\n";
 >             }
->         }).xxxx([xxxx, xxxxxxXxxxxx]()
+>         }).then([this, outputString]()
 >         {
->             x_XxxxxxXxxxXxxxx->Xxxx = xxx xxx Xxxxxx((*xxxxxxXxxxxx).x_xxx());
+>             m_OutputTextBlock->Text = ref new String((*outputString).c_str());
 >         });
 >     }    
 > });
@@ -259,54 +259,54 @@ Xxxx xx xxxx [**XxxxxxxXxxxxxXxxxxXxxxxx.XxxXxxxxxxXxxxx**](https://msdn.microso
 > StorageFolderQueryResult queryResult = 
 >     picturesFolder.CreateFolderQuery(CommonFolderQuery.GroupByMonth);
 >         
-> IReadOnlyList<StorageFolder> xxxxxxXxxx = 
->     xxxxx xxxxxXxxxxx.XxxXxxxxxxXxxxx();
+> IReadOnlyList<StorageFolder> folderList = 
+>     await queryResult.GetFoldersAsync();
 > 
-> XxxxxxXxxxxxx xxxxxxXxxx = xxx XxxxxxXxxxxxx();
+> StringBuilder outputText = new StringBuilder();
 > 
-> xxxxxxx (XxxxxxxXxxxxx xxxxxx xx xxxxxxXxxx)
+> foreach (StorageFolder folder in folderList)
 > {
->     XXxxxXxxxList<StorageFile> xxxxXxxx = xxxxx xxxxxx.XxxXxxxxXxxxx();
+>     IReadOnlyList<StorageFile> fileList = await folder.GetFilesAsync();
 > 
->     // Xxxxx xxx xxxxx xxx xxxxxx xx xxxxx xx xxxx xxxxx.
->     xxxxxxXxxx.XxxxxxXxxx(xxxxxx.Xxxx + " (" + xxxxXxxx.Xxxxx + ")");
+>     // Print the month and number of files in this group.
+>     outputText.AppendLine(folder.Name + " (" + fileList.Count + ")");
 > 
->     xxxxxxx (XxxxxxxXxxx xxxx xx xxxxXxxx)
+>     foreach (StorageFile file in fileList)
 >     {
->         // Xxxxx xxx xxxx xx xxx xxxx.
->         xxxxxxXxxx.XxxxxxXxxx("   " + xxxx.Xxxx);
+>         // Print the name of the file.
+>         outputText.AppendLine("   " + file.Name);
 >     }
 > }
 > ```
-> ```xx
-> Xxx xxxxxxxxXxxxxx Xx XxxxxxxXxxxxx = XxxxxXxxxxxx.XxxxxxxxXxxxxxx
-> Xxx xxxxxxXxxx Xx Xxx XxxxxxXxxxxxx
+> ```vb
+> Dim picturesFolder As StorageFolder = KnownFolders.PicturesLibrary
+> Dim outputText As New StringBuilder
 > 
-> Xxx xxxxxXxxxxx Xx XxxxxxxXxxxxxXxxxxXxxxxx =
->     xxxxxxxxXxxxxx.XxxxxxXxxxxxXxxxx(XxxxxxXxxxxxXxxxx.XxxxxXxXxxxx)
+> Dim queryResult As StorageFolderQueryResult =
+>     picturesFolder.CreateFolderQuery(CommonFolderQuery.GroupByMonth)
 > 
-> Xxx xxxxxxXxxx Xx XXxxxXxxxXxxx(Xx XxxxxxxXxxxxx) =
->     Xxxxx xxxxxXxxxxx.XxxXxxxxxxXxxxx()
+> Dim folderList As IReadOnlyList(Of StorageFolder) =
+>     Await queryResult.GetFoldersAsync()
 > 
-> Xxx Xxxx xxxxxx Xx XxxxxxxXxxxxx Xx xxxxxxXxxx
+> For Each folder As StorageFolder In folderList
 > 
->     Xxx xxxxXxxx Xx XXxxxXxxxXxxx(Xx XxxxxxxXxxx) =
->         Xxxxx xxxxxx.XxxXxxxxXxxxx()
+>     Dim fileList As IReadOnlyList(Of StorageFile) =
+>         Await folder.GetFilesAsync()
 > 
->     ' Xxxxx xxx xxxxx xxx xxxxxx xx xxxxx xx xxxx xxxxx.
->     xxxxxxXxxx.XxxxxxXxxx(xxxxxx.Xxxx & " (" & xxxxXxxx.Xxxxx & ")")
+>     ' Print the month and number of files in this group.
+>     outputText.AppendLine(folder.Name & " (" & fileList.Count & ")")
 > 
->     Xxx Xxxx xxxx Xx XxxxxxxXxxx Xx xxxxXxxx
+>     For Each file As StorageFile In fileList
 > 
->         ' Xxxxx xxx xxxx xx xxx xxxx.
->         xxxxxxXxxx.XxxxxxXxxx("   " & xxxx.Xxxx)
+>         ' Print the name of the file.
+>         outputText.AppendLine("   " & file.Name)
 > 
->     Xxxx xxxx
+>     Next file
 > 
-> Xxxx xxxxxx
+> Next folder
 > ```
 
-Xxx xxxxxx xx xxx xxxxxxx xxxxx xxxxxxx xx xxx xxxxxxxxx.
+The output of the example looks similar to the following.
 
 ``` syntax
 July ‎2015 (2)
@@ -317,4 +317,8 @@ July ‎2015 (2)
    MyImage2.png
 ```
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

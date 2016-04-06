@@ -1,30 +1,30 @@
 ---
-xxxxxxxxxxx: Xxxxxxxx xxxxxxxxxx xxxxxx xxxxxxxx xxx xxxxxx xx xxx xxxxxxxxxxxx xxxxxx xxxx xxxx-xxxxxx xx xxxxxxx xxxx.
-xxxxx: xXxxx xxxxxxxxx
-xx.xxxxxxx: YXXYXYXX-YYYX-YYYY-XYXX-XXXYYXYXYXYX
+description: Uniquely identifies object elements for access to the instantiated object from code-behind or general code.
+title: xName attribute
+ms.assetid: 4FF1F3ED-903A-4305-B2BD-DCD29E0C9E6D
 ---
 
-# x:Xxxx xxxxxxxxx
+# x:Name attribute
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxxxx xxxxxxxxxx xxxxxx xxxxxxxx xxx xxxxxx xx xxx xxxxxxxxxxxx xxxxxx xxxx xxxx-xxxxxx xx xxxxxxx xxxx. Xxxx xxxxxxx xx x xxxxxxx xxxxxxxxxxx xxxxx, **x:Xxxx** xxx xx xxxxxxxxxx xxxxxxxxxx xx xxx xxxxxxxx xxxxxxx xx xxxxxx xxxxxxxxx, xx xxxxxxxx xx x xxxxxxxxxxx.
+Uniquely identifies object elements for access to the instantiated object from code-behind or general code. Once applied to a backing programming model, **x:Name** can be considered equivalent to the variable holding an object reference, as returned by a constructor.
 
-## XXXX xxxxxxxxx xxxxx
+## XAML attribute usage
 
 ``` syntax
 <object x:Name="XAMLNameValue".../>
 ```
 
-## XXXX xxxxxx
+## XAML values
 
-| Xxxx | Xxxxxxxxxxx |
+| Term | Description |
 |------|-------------|
-| XXXXXxxxXxxxx | X xxxxxx xxxx xxxxxxxx xx xxx xxxxxxxxxxxx xx xxx XxxxXxxx xxxxxxx. |
+| XAMLNameValue | A string that conforms to the restrictions of the XamlName grammar. |
 
-##  XxxxXxxx xxxxxxx
+##  XamlName grammar
 
-Xxx xxxxxxxxx xx xxx xxxxxxxxx xxxxxxx xxx x xxxxxx xxxx xx xxxx xx x xxx xx xxxx XXXX xxxxxxxxxxxxxx:
+The following is the normative grammar for a string that is used as a key in this XAML implementation:
 
 ``` syntax
 XamlName ::= NameStartChar (NameChar)*
@@ -35,32 +35,36 @@ DecimalDigit ::= '0'-'9'
 CombiningCharacter::= none
 ```
 
--   Xxxxxxxxxx xxx xxxxxxxxxx xx xxx xxxxx XXXXX xxxxx, xxx xxxx xxxxxxxxxxxx xx Xxxxx xxxxxxxx xxxxxxxxx xxx xxxxxxxxx xxxxxxx, xxxxxx, xxx xxx xxxxxxxxxx (\_) xxxxxxxxx.
--   Xxx Xxxxxxx xxxxxxxxx xxxxx xx xxx xxxxxxxxx.
--   X xxxx xxxxxx xxxxx xxxx x xxxxx. Xxxx xxxx xxxxxxxxxxxxxxx xxxxxxx xx xxxxxxxxxx (\_) xx x xxxxxx xx xxx xxxx xxxxxxxx x xxxxx xx xxx xxxxxxx xxxxxxxxx, xx xxx xxxx xxxxxxxxxxxxx **x:Xxxx** xxxxxx xxxxx xx xxxxx xxxxxx xxxx xxxxxxx xxxxxx.
+-   Characters are restricted to the lower ASCII range, and more specifically to Roman alphabet uppercase and lowercase letters, digits, and the underscore (\_) character.
+-   The Unicode character range is not supported.
+-   A name cannot begin with a digit. Some tool implementations prepend an underscore (\_) to a string if the user supplies a digit as the initial character, or the tool autogenerates **x:Name** values based on other values that contain digits.
 
-## Xxxxxxx
+## Remarks
 
-Xxx xxxxxxxxx **x:Xxxx** xxxxxxx xxx xxxx xx x xxxxx xxxx xx xxxxxxx xx xxx xxxxxxxxxx xxxx xxxx XXXX xx xxxxxxxxx, xxx xxxx xxxxx xxxxx x xxxxxxxxx xx xxx xxxxxx. Xxx xxxxxxx xx xxxxxxxx xxxx xxxxx xx xxxxxxxxx xx xxx XXXxxxx xxxxxx xxxxx, xxxxx xxxx xxx xxxxxxxxxxx xxx xxxxxxx xxx xxxxxxx xxxxxxx xxx x XXXX xxxx xxx xxx xxxx-xxxxxx. Xxxx xxxxxxxx xx xxx xxxxxxxxxxx XXXX-xxxxxxxx xxxxxxxxx; xx xx xxx xxxxxxxxxx xxxxxxxxxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxxxxx xxx XXXX xxxxxxx xx xxx **x:Xxxx** xx xxx xxxxxxxxxxx xxx xxxxxxxxxxx xxxxxx.
+The specified **x:Name** becomes the name of a field that is created in the underlying code when XAML is processed, and that field holds a reference to the object. The process of creating this field is performed by the MSBuild target steps, which also are responsible for joining the partial classes for a XAML file and its code-behind. This behavior is not necessarily XAML-language specified; it is the particular implementation that Universal Windows Platform (UWP) programming for XAML applies to use **x:Name** in its programming and application models.
 
-Xxxx xxxxxxx **x:Xxxx** xxxx xx xxxxxx xxxxxx x XXXX xxxxxxxxx. Xxxxxxxxx, x XXXX xxxxxxxxx xx xxxxxxx xx xxx xxxx xxxxxxx xxxxx xx x xxxxxx xxxx xxx xxxxxxxx xxx xxxxxxxx xxxxx xxxx xxxxxxx xx x xxxxxx XXXX xxxx. Xxxxxxxxxx XXXX xxxxxxxxxx xxx xxxxxxx xx xxx xxxxxxx xxxxxxxx xx xxxx xxxxxxxx xxxx xx xxxxxxx xx xxxx xxxx. Xx xxx xxxx, xxxxxxx XXXX xxxxxxxxx xx xxxxxxx xxx xxx xxxx xx xxx xxxxxx xxxx xxxx xx xxxxxxx xxxx xx xxxxxxx xxxxxxx xxxxxxxx, xxx xxxx xx xxxxxx xxxxx xxxxxxx xxxx x xxxx xx [**XxxxXxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br228048). Xxx xxxx xxxx, xxx [XXXX xxxxxxxxxx](xaml-namescopes.md).
+Each defined **x:Name** must be unique within a XAML namescope. Generally, a XAML namescope is defined at the root element level of a loaded page and contains all elements under that element in a single XAML page. Additional XAML namescopes are defined by any control template or data template that is defined on that page. At run time, another XAML namescope is created for the root of the object tree that is created from an applied control template, and also by object trees created from a call to [**XamlReader.Load**](https://msdn.microsoft.com/library/windows/apps/br228048). For more info, see [XAML namescopes](xaml-namescopes.md).
 
-Xxxxxx xxxxx xxxxx xxxxxxxxxxxx **x:Xxxx** xxxxxx xxx xxxxxxxx xxxx xxxx xxx xxxxxxxxxx xx xxx xxxxxx xxxxxxx. Xxx xxxxxxxxxxxxxx xxxxxx xxxxxx xxxxxxxxx xx xxxxx xxxxxxxx xxx xxx xxxxx, xxx x xxxxxxx xxxxxx xx xx xxxxxxxx x xxxxxx xxxx xxxxxx xxxx xxx xxxxx xxxx xxxx xxxxx xxx xxxxxxx, xxxxxxxx xx xx xxxxxxxxx xxxxxxx. Xxx xxxxxxx, xx xxx xxxxxxxxx xxx xxxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209265) xxxxxxx xx xxx xxxxxxxx, xxx xxxxx xxx xxxx xx xxx XXXX xxxx xxxxxxx xxx xxx **x:Xxxx** xxxxxxxxx xxxxx xx "XxxxxxY".
+Design tools often autogenerate **x:Name** values for elements when they are introduced to the design surface. The autogeneration scheme varies depending on which designer you are using, but a typical scheme is to generate a string that starts with the class name that backs the element, followed by an advancing integer. For example, if you introduce the first [**Button**](https://msdn.microsoft.com/library/windows/apps/br209265) element to the designer, you might see that in the XAML this element has the **x:Name** attribute value of "Button1".
 
-**x:Xxxx** xxxxxx xx xxx xx XXXX xxxxxxxx xxxxxxx xxxxxx, xx xx xxxx xxxxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br242361). **x:Xxxx** xxx xxxx xx xxx xxxxx XXXX xxxxxxxxx xxxxxx xx xxxxxxxx.
+**x:Name** cannot be set in XAML property element syntax, or in code using [**SetValue**](https://msdn.microsoft.com/library/windows/apps/br242361). **x:Name** can only be set using XAML attribute syntax on elements.
 
-**Xxxx**  Xxxxxxxxxxxx xxx X++/XX xxxx, x xxxxxxx xxxxx xxx xx **x:Xxxx** xxxxxxxxx xx xxx xxxxxxx xxx xxx xxxx xxxxxxx xx x XXXX xxxx xx xxxx. Xx xxx xxxx xx xxxxxxxxx xxx xxxx xxxxxx xxxx X++ xxxx-xxxxxx, xxx xxxxx XXXx xx xxxx xxxxxxxxx. Xxx xxxxxxx xxx xxx xxxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208715) xxx x xxxxx xxxxx xxxxx xxxxxxx xxx xxxx xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208739).
+**Note**  Specifically for C++/CX apps, a backing field for an **x:Name** reference is not created for the root element of a XAML file or page. If you need to reference the root object from C++ code-behind, use other APIs or tree traversal. For example you can call [**FindName**](https://msdn.microsoft.com/library/windows/apps/br208715) for a known named child element and then call [**Parent**](https://msdn.microsoft.com/library/windows/apps/br208739).
 
-### x:Xxxx xxx xxxxx Xxxx xxxxxxxxxx
+### x:Name and other Name properties
 
-Xxxx xxxxx xxxx xx XXX XXXX xxxx xxxx x xxxxxxxx xxxxx **Xxxx**. Xxx xxxxxxx, [**XxxxxxxxxXxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br208735) xxx [**XxxxXxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/hh702125).
+Some types used in UWP XAML also have a property named **Name**. For example, [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) and [**TextElement.Name**](https://msdn.microsoft.com/library/windows/apps/hh702125).
 
-Xx **Xxxx** xx xxxxxxxxx xx x xxxxxxxx xxxxxxxx xx xx xxxxxxx, **Xxxx** xxx **x:Xxxx** xxx xx xxxx xxxxxxxxxxxxxxx xx XXXX, xxx xx xxxxx xxxxxxx xx xxxx xxxxxxxxxx xxx xxxxxxxxx xx xxx xxxx xxxxxxx. Xxxxx xxx xxxx xxxxx xxxxx xxxxx'x x **Xxxx** xxxxxxxx xxx xx'x xxxx-xxxx (xxxx [**XxxxxxXxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br209031)). Xx xxxx'x xxx xxxx xxx xxxxxx xxx **x:Xxxx** xx xxxx xxxx xxxxxxx xx xxx XXXX xxx xxx xxxx-xxxx **Xxxx** xxxxxx xxx xxxx xxxx-xxxxxx xxxx xxxxxxxx.
+If **Name** is available as a settable property on an element, **Name** and **x:Name** can be used interchangeably in XAML, but an error results if both attributes are specified on the same element. There are also cases where there's a **Name** property but it's read-only (like [**VisualState.Name**](https://msdn.microsoft.com/library/windows/apps/br209031)). If that's the case you always use **x:Name** to name that element in the XAML and the read-only **Name** exists for some less-common code scenario.
 
-**Xxxx**[**XxxxxxxxxXxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br208735) xxxxxxxxx xxxxxx xxx xx xxxx xx x xxx xx xxxxxx xxxxxx xxxxxxxxxx xxx xx **x:Xxxx**, xxxxxxxx xxxxx xxx xxxx xxxxxxxxx xxxx xxx xxxxxxxxxx xx xxxx xxxxxxx xxxx. Xx xxxxxxx xxxxxxxxx, xxx xxxxxxxx xxx xxxxxxxxxx xx XXXX xxxxxxxxxx xx x XXXX xxxxxxxxx xxxxxxxxx. Xxxxxxxxx **XxxxxxxxxXxxxxxx.Xxxx** xx xxx xxxx xxx xxxxxx xx xx xxxxxxxxxxxx XXXX xxxxxxxxx / xxxxxxx xxxxx xxxxxx xxxxxxxxx, xxxxx xx xxxx xx xxxx xxxxx xx xx xxxx xxxx-xxxxxx.
+**Note**  [**FrameworkElement.Name**](https://msdn.microsoft.com/library/windows/apps/br208735) generally should not be used as a way to change values originally set by **x:Name**, although there are some scenarios that are exceptions to that general rule. In typical scenarios, the creation and definition of XAML namescopes is a XAML processor operation. Modifying **FrameworkElement.Name** at run time can result in an inconsistent XAML namescope / private field naming alignment, which is hard to keep track of in your code-behind.
 
-### x:Xxxx xxx x:Xxx
+### x:Name and x:Key
 
-**x:Xxxx** xxx xx xxxxxxx xx xx xxxxxxxxx xx xxxxxxxx xxxxxx x [**XxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208794) xx xxx xx x xxxxxxxxxx xxx xxx [x:Xxx xxxxxxxxx](x-key-attribute.md). (Xxxxxxxx xx'x x xxxx xxxx xxx xxxxxxxx xx x **XxxxxxxxXxxxxxxxxx** xxxx xxxx xx x:Xxx xxxxxxxxx.) Xxxx xx xxxxxx xxx [Xxxxxxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187354). Xxx xxxx xxxx, xxx xxxxxxx xx [XxxxxxxxXxxxxxxxxx xxx XXXX xxxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187273).
+**x:Name** can be applied as an attribute to elements within a [**ResourceDictionary**](https://msdn.microsoft.com/library/windows/apps/br208794) to act as a substitute for the [x:Key attribute](x-key-attribute.md). (Normally it's a rule that all elements in a **ResourceDictionary** must have an x:Key attribute.) This is common for [Storyboarded animations](https://msdn.microsoft.com/library/windows/apps/mt187354). For more info, see section of [ResourceDictionary and XAML resource references](https://msdn.microsoft.com/library/windows/apps/mt187273).
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

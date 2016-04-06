@@ -1,56 +1,60 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxxx xxxxxxxxx xxxxxxxx xxxx xxx xx xxxxxxx xx xxxx xxx'x Xxxxx xxxxxxx.
-xxxxx: Xxxx xx xxxx xxx
-xx.xxxxxxx: YYYYXYYX-YXXX-YYYY-YYYY-XYYYYYYYXYYY
+Description: ストアのアプリの内容ページにリンクすることで、ユーザーがアプリを見つけやすくすることができます。
+title: アプリへのリンク
+ms.assetid: 5420B65C-7ECE-4364-8959-D1683684E146
 ---
 
-# Xxxx xx xxxx xxx
+# アプリへのリンク
 
 
-Xxx xxx xxxx xxxxxxxxx xxxxxxxx xxxx xxx xx xxxxxxx xx xxxx xxx'x Xxxxx xxxxxxx.
+ストアのアプリの内容ページにリンクすることで、ユーザーがアプリを見つけやすくすることができます。
 
-## Xxxxxxx xxx xxxx xx xxxx xxx'x Xxxxx xxxxxxx
-
-
-Xxx xxx xxxx xxx xxxx xx xxxx xxx'x Xxxxx xxxxxxx xx xxx [Xxx xxxxxxxx](view-app-identity-details.md) xxxx, xx xxx **Xxx xxxxxxxxxx** xxxxxxx xx xxxx xxx xx xxxx xxxxxxxxx.
-
-Xxxx xxxx xx xx xxx xxxxxx **`https://www.microsoft.com/store/apps/<your app's product ID>`**
-
-Xxxx x xxxxxxxx xxxxxx xxxx xxxx, xx xxxx xxxx xxx xxx-xxxxx xxxxxxx xxxx xxx xxxx xxx. Xx xxxx xxx xx xxxxxxxxx xxx xxx xxxxxxxx'x xxxxxx, xxx Xxxxx xxx xxxx xxxx xxxxxx xxx xxxxxxx xxxx xxx'x xxxxxxx.
-
-> **Xxxx**  Xxxxxxxxx xx xxxx XX xxxxxxxx xxx'xx xxxxxxxxx, xxx xxx xxx xxxx xxxx xxx xxxx xxxx. Xxx xxxx xxxx xxxx xxx XXX xxx Xxxxxxx YY, xxxxx xxxx xxxx xxx xxx XX. Xxx xxx xxx xxxxxxxxxx xxxxx xxx Xxxxxxx Y.Y xxx xxxxxxx xxx/xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx, xxxxx xxxx xxxx xxxx xx xxx xxxxxxxxx XX xxxxxxxx.
-
- 
-
-## Xxxxxxx xx xxxx xxx'x Xxxxx xxxxxxx xxxx xxx Xxxxxxx Xxxxx xxxxx
+## ストアのアプリの内容へのリンク
 
 
-Xxx xxx xxxx xxxxxxxx xx xxxx xxx'x xxxxxxx xxxx x xxxxxx xxxxx xx xxx xxxxxxxxx xxxx xxxx xxx xx xx xxx Xxxxxxx Xxxxx.
+ストアのアプリの内容へのリンクは、ダッシュボードにある各アプリの **[アプリ管理]** セクションの [[アプリ ID]](view-app-identity-details.md) ページで確認できます。
 
-Xx xxxxxx xxxx xxxxx, xxxxx xxx [Xxxxxxx Xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=534236) xxxx. Xxx'xx xxxx xx xxxx xxxx xxx'x Xxxxxxx XX xx xxx xxxx xxxx xx xxxxxxxx xxx xxxxx xxx xxxx. Xxxx XX xx xxx xxxx YY xxxxxxxxxx xx xxx **XXX xxx Xxxxxxx YY** xxxxx xx xxx [Xxx xxxxxxxx](view-app-identity-details.md) xxxx xx xxx **Xxx xxxxxxxxxx** xxxxxxx.
+このリンクは、**`https://www.microsoft.com/store/apps/<your app's product ID>`** の形式で示されます。
 
-> **Xxxx**  Xxx [Xxx xxxxxxxxx xxxxxxxxxx](app-marketing-guidelines.md) xxx xxxx xxxx xx xxxxx xxx Xxxxxxx Xxxxx xxxxx.
+ユーザーがこのリンクをクリックすると、アプリの Web ベースの内容ページが開きます。 アプリがユーザーのデバイスで利用できる場合、ストア アプリも起動して、アプリの内容を表示します。
+
+> **注**  対象としている OS のバージョンによって、複数のリンクが表示されることがあります。 すべてのアプリで Windows 10 向けの URL が表示されます。この URL は任意の OS で機能します。 Windows 8.1 以前や Windows Phone 8.1 以前向けの追加のリンクが表示されることもあります。それらは指定された OS バージョンでのみ機能します。
 
  
 
-## Xxxxxxx xxxxxxxx xx xxxx xxx xx xxx Xxxxxxx Xxxxx
+## Windows ストア バッジを使ったストアのアプリの内容へのリンク
 
 
-Xxx xxx xxxxxx x xxxx xxxx xxxxxxxx xxx Xxxxxxx Xxxxx xxx xxxx xxxxxxxx xx xxxx xxx'x xxxxxxx xxxx xxxxxxx xxxxxxx x xxxxxxx xx xxxxx xxx **xx-xxxxxxx-xxxxx:** XXX xxxxxx.
+カスタム バッジを使ってアプリの内容に直接リンクし、ユーザーにアプリが Windows ストアにあることを知らせることができます。
 
-Xxxxx xxxxx xxx xxxxxx xx xxx xxxx xxxx xxxxx xxx xx x Xxxxxxx xxxxxx xxx xxx xxxx xxxx xx xxxxxx xxxxxxxx xx xxx xxxxxxx xxxx xx xxx Xxxxx—xxx xxxxxxx, xxxxx xxxxxxxx xxxx xxxxx xxxxxxx xx x xxxxxxx xx xxxxxxx xxx xxxx'x xxxxxxxxx xxxxxx, xx xxxx xxx xxx xxxxxxx xxxxxxxxxxxxx xxx x XXX xxx, xxx xxx xxxx xx xxxxx xxxx xxxxxxxx.
+バッジを作成するには、[Windows ストア バッジ](http://go.microsoft.com/fwlink/p/?LinkID=534236)に関するページをご覧ください。 この形式を使ってバッジとリンクを生成するには、アプリの製品 ID が必要です。 この ID は、**[アプリ管理]** セクションの [[アプリ ID]](view-app-identity-details.md) ページに表示される **[Windows 10 の URL]** の末尾の 12 文字です。
 
-Xx xxx xxx Xxxxxxx Xxxxx xxxxxxxx xx xxxx xxxxxxxx xx xxxx xxx'x Xxxxx xxxxxxx, xxxxxx xxxx xxx'x Xxxxxxx XX xx xxxx xxxx:
+> **注**  Windows ストア バッジの使用について詳しくは、「[アプリのマーケティング ガイドライン](app-marketing-guidelines.md)」をご覧ください。
+
+ 
+
+## Windows ストアのアプリへの直接リンク
+
+
+ブラウザーを開いて **ms-windows-store:** URI スキームを使わなくても、Windows ストアを起動して、直接アプリの内容ページに移動するリンクを作成できます。
+
+これらのリンクは、ユーザーが Windows デバイスを使用しており、ユーザーが直接ストア内の内容ページにアクセスできるようにする必要がある場合に便利です。たとえば、ブラウザーでユーザー エージェント文字列を調べてユーザーのオペレーティング システムを確認した後や、既に UWP アプリを使って通信しているときに、このプロトコルを適用できます。
+
+Windows ストア プロトコルを使って、ストアのアプリの内容に直接リンクするには、このリンクにアプリの製品 ID を追加します。
 
 `ms-windows-store://pdp/?ProductId=`
 
-Xxx xxxx xxxxx xxxxx xxx Xxxxxxx Xxxxx xxxxxxxx, xxx [Xxxxxx xxx Xxxxxxx Xxxxx xxx](https://msdn.microsoft.com/library/windows/apps/mt228343).
+Windows ストア プロトコルの使用について詳しくは、「[Windows ストア アプリの起動](https://msdn.microsoft.com/library/windows/apps/mt228343)」をご覧ください。
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

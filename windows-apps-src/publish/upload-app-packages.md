@@ -1,47 +1,49 @@
 ---
-Xxxxxxxxxxx: Xxx Xxxxxxxx xxxx xx xxxxx xxx xxxxxx xxx xx xxx xxxxxxx xxxxx (.xxx, .xxxx, .xxxxxxxxxx, xxx/xx .xxxxxxxxxx) xxx xxx xxx xxxx xxx'xx xxxxxxxxxx. Xxx xxx xxxxxx xxxxxxxx xxx xxx xxxxxxxxx xxxxxx xxxx xxxx xxx xxxxxxx xx xxxx xxxx.
-xxxxx: Xxxxxx xxx xxxxxxxx
-xx.xxxxxxx: XYXXYYYX-YXXX-YXXY-XYYX-YXYYXXXYXXYY
+Description: The Packages page is where you upload all of the package files (.xap, .appx, .appxupload, and/or .appxbundle) for the app that you're submitting. You can upload packages for any operating system that your app targets in this step.
+title: Upload app packages
+ms.assetid: B1BB810D-3EAA-4FB5-B03C-1F01AFB2DE36
 ---
 
-# Xxxxxx xxx xxxxxxxx
+# Upload app packages
 
 
-Xxx **Xxxxxxxx** xxxx xx xxxxx xxx xxxxxx xxx xx xxx xxxxxxx xxxxx (.xxx, .xxxx, .xxxxxxxxxx, xxx/xx .xxxxxxxxxx) xxx xxx xxx xxxx xxx'xx xxxxxxxxxx. Xxx xxx xxxxxx xxxxxxxx xxx xxx xxxxxxxxx xxxxxx xxxx xxxx xxx xxxxxxx xx xxxx xxxx. Xxxx x xxxxxxxx xxxxxxxxx xxxx xxx, xxx Xxxxx xxxx xxxx xxxxxxx xxx xx xxxx xxx'x xxxxxxxxx xxxxxxxx xxx xxxx xxxxxxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxx xxx xxxxxxx xxxx xxxxx xxxx xxx xxxxx xxxxxx.
+The **Packages** page is where you upload all of the package files (.xap, .appx, .appxupload, and/or .appxbundle) for the app that you're submitting. You can upload packages for any operating system that your app targets in this step. When a customer downloads your app, the Store will look through all of your app's available packages and will automatically provide each customer with the package that works best for their device.
 
-Xxx xxxxxxx xxxxx xxxx x xxxxxxx xxxxxxxx xxx xxx xx xxxx xx xxxxxxxxxx, xxx [Xxx xxxxxxx xxxxxxxxxxxx](app-package-requirements.md). Xxx'xx xxxx xxxx xx xxxxx xxxxx [xxx xxxxxxx xxxxxxx xxx xxxxxx xxxxx xxxxxxxx xxx xxxxxxxxx xx xxxxxxxx xxxxxxxxx](package-version-numbering.md), xxx [xxx xxxxxxxx xxx xxxxxxxxxxx xx xxxxxxxxx xxxxxxxxx xxxxxxx](guidance-for-app-package-management.md).
+For details about what a package includes and how it must be structured, see [App package requirements](app-package-requirements.md). You'll also want to learn about [how version numbers may impact which packages are delivered to specific customers](package-version-numbering.md), and [how packages are distributed to different operating systems](guidance-for-app-package-management.md).
 
-## Xxxxxxxxx xxxxxxxx xx xxxx xxxxxxxxxx
-
-
-Xx xxxxxx xxxxxxxx, xxxx xxxx xxxx xxx xxxxxx xxxxx xx xxxxx xx xxxxxx xxxx xxxxx. Xxx **Xxxxxxxx** xxxx xxxx xxx xxx xxxxxx .xxx, .xxxx, .xxxxxxxxxx, xxx/xx .xxxxxxxxxx xxxxx.
-
-> **Xxxx**  Xxx Xxxxxxx YY, xxx xxxxxx xxxxxx xxxxxx xxx .xxxxxxxxxx xxxx xxxx, xxx xxx .xxxx xx .xxxxxxxxxx. Xxx xxxx xxxx xxxxx xxxxxxxxx XXX xxxx xxx xxx Xxxxx, xxx [Xxxxxxxxx Xxxxxxxxx Xxxxxxx xxxx xxx Xxxxxxx YY](../packaging/packaging-uwp-apps.md).
-
-Xx xx xxxxxx xxxxxx xxxx xxxx xxxxxxxx xxxxx xxxxxxxxxx xxxx, xxx'xx xxxx xx xxxxxx xxx xxxxxxx, xxx xxx xxxxx, xxx xxxx xxx xxxxxxxxx xx xxxxx. Xxx xxxx xxxx, xxx [Xxxxxxx xxxxxxx xxxxxx xxxxxx](resolve-package-upload-errors.md).
-
-Xxx xxx xxxx xxx xxxxxxxx xx xxx xxx xxxx xxxxx xxxxxx xxxx xxx xxxxx xxxxxxxx xxx xxx'x xxxxx xxx xxxx xxxxxxxxxx xxxx xxxx xxxxxxxxxx.
-
-## Xxxxxxx xxxxxxx
+## Uploading packages to your submission
 
 
-Xxxxx xxxx xxxxxxxx xxxx xxxx xxxxxxxxxxxx xxxxxxxx, xx'xx xxxx xxxx, xxxxxxx xx xxxxxx xxxxxxxxx xxxxxx. Xxx xxxx, xxxxxxx, xxx xxxxxxxxxxxx xx xxx xxxxxxx xxxx xx xxxxxxxxx. Xxx xxxx xxxx xxxx xx xxx xxxxxxxxx xxxxxxxxx, xxx xxxxxxxxxxxx, xxx xxxx xxxx xxx xxxx xxxxxxx, xxxxx **Xxxxxxx**.
+To upload packages, drag them into the upload field or click to browse your files. The **Packages** page will let you upload .xap, .appx, .appxupload, and/or .appxbundle files.
 
-Xx xxx xxx xxxxx [Xxxxxxx xx xxxxxxxxx](../monetize/use-ad-mediation-to-maximize-revenue.md), xxx'xx xxxx xxx x xxxx xx xxxxxxxxx xx xxxxxxxxx xxx xxxx xxxxxxx.
+If you have created any [package flights](package-flights.md) for your app, you’ll see a drop-down with the option to copy packages from one of your package flights. Select the package flight that has the packages you want to pull in. You can then select any or all of its packages to include in this submission.
 
-Xx xxx xxxx xx xxxxxx x xxxxxxx xxxx xxxx xxxxxxxxxx, xxxxx xxx **Xxxxxx** xxxx xx xxx xxxxxx xx xxxx xxxxxxx'x **Xxxxxxx** xxxxxxx.
+> **Important**  For Windows 10, you should always upload the .appxupload file here, not the .appx or .appxbundle. For more info about packaging UWP apps for the Store, see [Packaging Universal Windows apps for Windows 10](../packaging/packaging-uwp-apps.md).
 
-## Xxxxxxxx xxxxxxxxx xxxxxxxx
+If we detect issues with your packages while validating them, you'll need to remove the package, fix the issue, and then try uploading it again. For more info, see [Resolve package upload errors](resolve-package-upload-errors.md).
 
+You may also see warnings to let you know about issues that may cause problems but won't block you from continuing with your submission.
 
-Xx xx xxxxxx xxxx xxx xx xxxx xx xxxx xxxxxxxx xx xxxxxxxxx, xx'xx xxxxxxx x xxxxxxx xxxxxxxxxx xxxx xxx xxxxxx xxx xxxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxxxx. Xxxxx xxxx xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxxxxx xxxxxxxx, xxx xxx xxx xxx xxxxxxxxx xxxxxx-xxxxxxxxx xxxxxxxx xxxx xxxxxxx xxx xxxx xxx xx xxxxxxxxx. Xx xxxx xxxx, xx xxxxxxxxx xxxxx xxxx xxx xxx xxxxxxxxx xxxxxxx, xxxxxxx xxx xxx xxxx x xxxxxx (xxxxxx-xxxxxxxxx) xxxxxxx xx xxxxxxx xxxxx xxxxxxxxx.
-
-Xxxx xx xxxxxx xxxx xxx xxxx xxxxxxxxx xxxxxxxx, xx'xx xxxxxxx xx xxxxxx xx xxxxxx xxx xx xxx xxxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxxxx xxxxxxxxxxxxx. Xxx xxx xxxx xxxxxx xxxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxxxxxx xx xxx xxxxxx.
-
-## Xxxxxxxx xxxx Xxxxxx Xxxxxx Xxxxxxxxxxx Xxxxxxxx
+## Package details
 
 
-Xx xxxxxxxxx xxxx xxx xxx [Xxxxxx Xxxxxx Xxxxxxxxxxx Xxxxxxxx](http://go.microsoft.com/fwlink/?LinkId=615086) xx xxxx xxxxxxxx (xx xxxxxx xx xx xxxxxxxx xxx xxx xxx “Xxxx xxxxxxxxx xx xxx Xxxxxxx Xxx Xxxxxx” xxxx xxxxxxxx xxxx xxxxxxx) xx xxxx xx xxx xxxxxxx xxx xxxx [xxx xxxxx xxxxxxxxx xxxxxxx](usage-report.md). Xx xxx xxxx’x xxxxxxxxx Xxxxxxxxxxx Xxxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx, xxxx xx xxxxxx xxxx x xxxxxxx xxxxxxxx xx, xx'xx xxxxxxx x xxxxxxx xxxxxxxxxx xxxx xx xxxxxxxxxx xxxx xxxxxxx, xxx xxxxx xx xxxxxx xxx xxxxx xxxxxxxxx xxxxx xxxx xxxxxxxxx xxxxxxx. Xxx xxx xxxxxxx xxx xxxxx xxxxxxxxx xx xxx xxxx xx xxxx **Xxxxxxx xxxxxxxx**.
+After your packages have been successfully uploaded, we'll list them, grouped by target operating system. The name, version, and architecture of the package will be displayed. For more info such as the supported languages, app capabilities, and file size for each package, click **Details**.
+
+If you are using [Windows ad mediation](../monetize/use-ad-mediation-to-maximize-revenue.md), you'll also see a link to configure ad mediation for each package.
+
+If you need to remove a package from your submission, click the **Remove** link at the bottom of each package's **Details** section.
+
+## Removing redundant packages
+
+
+If we detect that one or more of your packages is redundant, we'll display a warning suggesting that you remove the redundant packages from this submission. Often this happens when you have previously uploaded packages, and now you are providing higher-versioned packages that support the same set of customers. In this case, no customers would ever get the redundant package, because you now have a better (higher-versioned) package to support these customers.
+
+When we detect that you have redundant packages, we'll provide an option to remove all of the redundant packages from this submission automatically. You can also remove packages from the submission individually if you prefer.
+
+## Packages with Visual Studio Application Insights
+
+
+We recommend that you use [Visual Studio Application Insights](http://go.microsoft.com/fwlink/?LinkId=615086) in your packages (or enable it by checking the box for “Show telemetry in the Windows Dev Center” when building your package) so that we can provide you with [app usage telemetry details](usage-report.md). If you didn’t configure Application Insights in Microsoft Visual Studio, when we detect that a package includes it, we'll display a message confirming that by submitting your package, you agree to enable app usage telemetry about your developer account. You can disable app usage telemetry at any time in your **Account settings**.
 
  
 
@@ -50,4 +52,8 @@ Xx xxxxxxxxx xxxx xxx xxx [Xxxxxx Xxxxxx Xxxxxxxxxxx Xxxxxxxx](http://go.microso
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO5-->
+
+

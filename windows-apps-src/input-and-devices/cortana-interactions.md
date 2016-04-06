@@ -1,35 +1,36 @@
 ---
-Xxxxxxxxxxx: Xxxxxx xxx xxxxx xxxxxxxxxxxxx xx Xxxxxxx xxxx xxxxx xxxxxxxx xxxx xxxxxx xxx xxxxxxx x xxxxxx xxxxxx xx xx xxxxxxxx xxxxxxxxxxx.
-xxxxx: Xxxxxxx xxxxxxxxxxxx
-xx.xxxxxxx: YXYYXYXX-XXYY-YXXY-XYXY-XXYYYYYYYYXY
-xxxxx: Xxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Extend the basic functionality of Cortana with voice commands that launch and execute a single action in an external application.
+title: Cortana interactions
+ms.assetid: 4C11A7CF-DA26-4CA1-A9B9-FE52670101F5
+label: Cortana
+template: detail.hbs
 ---
 
-# Xxxxxxx xxxxxxxxxxxx xx XXX xxxx
+# Cortana interactions in UWP apps
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxx xxx xxxxx xxxxxxxxxxxxx xx **Xxxxxxx** xxxx xxxxx xxxxxxxx xxxx xxxxxx xxx xxxxxxx x xxxxxx xxxxxx xx xx xxxxxxxx xxxxxxxxxxx.
+Extend the basic functionality of **Cortana** with voice commands that launch and execute a single action in an external application. 
 
 
-**Xxxxx xxxxxx xxxxxxxxxx**
+**Other speech components**
 
--   Xxx xxx [Xxxxxx xxxxxx xxxxxxxxxx](speech-interactions.md) xx xxxxxxxxxxx xxxxxx xxxxxxxxxxx xxx xxxx-xx-xxxxxx (xxxx xxxxx xx XXX, xx xxxxxx xxxxxxxxx) xxxxxxxx xxxx xxxx xxx.
+-   See the [Speech design guidelines](speech-interactions.md) if integrating speech recognition and text-to-speech (also known as TTS, or speech synthesis) directly into your app.
 
-**Xxxx**  
-X xxxxx xxxxxxx xx x xxxxxx xxxxxxxxx xxxx x xxxxxxxx xxxxxx, xxxxxxx xx x Xxxxx Xxxxxxx Xxxxxxxxxx (XXX) xxxx, xxxxxxxx xx xx xxxxxxxxx xxx xxxxxxx **Xxxxxxx**.
+> **Note**  
+> A voice command is a single utterance with a specific intent, defined in a Voice Command Definition (VCD) file, directed at an installed app through **Cortana**.
 
-X xxxxx xxxxxxx xxxxxxxxxx xxx xxxx xx xxxxxxxxxx. Xx xxx xxxxxxx xxxxxxxx xxxx x xxxxxx, xxxxxxxxxxx xxxxxxxxx xx x xxxxxxxxxx xx xxxx xxxxxxxx, xxxxxxx xxxxxxxx xxxxxxxxxx, xxx xxxxxxxx xxx xxxx xxxxxx.
+> A VCD file defines one or more voice commands, each with a unique intent.
 
-X XXX xxxx xxxxxxx xxx xx xxxx xxxxx xxxxxxxx, xxxx xxxx x xxxxxx xxxxxx.
+> A voice command definition can vary in complexity. It can support anything from a single, constrained utterance to a collection of more flexible, natural language utterances, all denoting the same intent.
 
-Xxx xxxxxx xxx xxx xx xxxxxxxx xx xxx xxxxxxxxxx (xxx xxx xxxxx xxxxx xxx **Xxxxxxx** xx xxxxxxxxx) xx xxxxxxxxx xx xxx xxxxxxxxxx (**Xxxxxxx** xxxxxxx xxxxx xxx xxxxxxxx xxxxxxx xxxx xxx xxx), xxxxxxxxx xx xxx xxxxxxxxxx xx xxx xxxxxxxxxxx. Xxx xxxxxxx, xxxxx xxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxxxxxx xx xxxx xxxxx xxx xxxx xxxxxxx xx x xxxxxxxxxx xxx, xxxxx xxxxx xxxxxxxx xxx xx xxxxxxx xx **Xxxxxxx** xxxxxxx x xxxxxxxxxx xxx.
+
+The target app can be launched in the foreground (the app takes focus and **Cortana** is dismissed) or activated in the background (**Cortana** retains focus but provides results from the app), depending on the complexity of the interaction. For example, voice commands that require additional context or user input are best handled in a foreground app, while basic commands can be handled in **Cortana** through a background app.
 
  
 
-Xx xxxxxxxxxxx xxx xxxxx xxxxxxxxxxxxx xx xxxx xxx, xxx xxxxxxxxx x xxxxxxx xxxxx xxxxx xxx xxx xxxx xx xxxxxxxxxx xxxx xx xxx xxxxx xxxxxxx xxxxxxx xxxx xxx xxxxxxxx, **Xxxxxxx** xxxxxxx x xxxxxxx xxxxxxx xxxx xxx xxx xxx xxxx. Xxxxxxxxx xxxx xxxxxxxx xx xxx xxxxxxxxxxxxx xxx xxxxxxxx xxx xxxx xx xxxxxx xxxx xxx xxxx xxx xxxx xxxxxxxxxxx xxxx xxx xxxxxx.
+By integrating the basic functionality of your app, and providing a central entry point for the user to accomplish most of the tasks without opening your app directly, **Cortana** becomes a liaison between your app and the user. Providing this shortcut to app functionality and reducing the need to switch apps can save the user significant time and effort.
 
 
 <table>
@@ -39,55 +40,55 @@ Xx xxxxxxxxxxx xxx xxxxx xxxxxxxxxxxxx xx xxxx xxx, xxx xxxxxxxxx x xxxxxxx xxxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Article</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Design guidelines](cortana-design-guidelines.md)</p></td>
-<td align="left"><p>Xxxxx xxxxxxxxxx xxx xxxxxxxxxxxxxxx xxxxxxxx xxx xxxx xxx xxx xxxx xxx **Xxxxxxx** xx xxxxxxxx xxxx xxx xxxx, xxxx xxxx xxxxxxxxxx x xxxx, xxx xxxxxxxxxxx xxxxxxx xxx xx'x xxx xxxxxxxxx.</p></td>
+<td align="left"><p>These guidelines and recommendations describe how your app can best use **Cortana** to interact with the user, help them accomplish a task, and communicate clearly how it's all happening.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Launch a foreground app with voice commands](launch-a-foreground-app-with-voice-commands-in-cortana.md)</p></td>
-<td align="left"><p>Xx xxxxxxxx xx xxxxx xxxxx xxxxxxxx xxxxxx <strong>Xxxxxxx</strong> xx xxxxxx xxxxxx xxxxxxxx, xxx xxx xxxx xxx xxxxx xxxxxxxx xxxxxxx <strong>Xxxxxxx</strong> xx xxxxxx x xxxxxxxxxx xxx xxx xxxxxxx xx xxxxxx xx xxxxxxx xx xxxxxxx xxxxxx xxx xxx.</p></td>
+<td align="left"><p>In addition to using voice commands within <strong>Cortana</strong> to access system features, you can also use voice commands through <strong>Cortana</strong> to launch a foreground app and specify an action or command to execute within the app.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Dynamically modify VCD phrase lists](dynamically-modify-voice-command-definition--vcd--phrase-lists.md)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxx xxx xxxxxx xxx xxxx xx xxxxxxxxx xxxxxxx (<strong>XxxxxxXxxx</strong> xxxxxxxx) xx x XXX xxxx xxxxx xxx xxxxxx xxxxxxxxxxx xxxxxx xx xxx xxxx.</p></td>
+<td align="left"><p>Learn how to access and update the list of supported phrases (<strong>PhraseList</strong> elements) in a VCD file using the speech recognition result at run time.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Launch a background app with voice commands](launch-a-background-app-with-voice-commands-in-cortana.md)</p></td>
-<td align="left"><p>Xx xxxxxxxx xx xxxxx xxxxx xxxxxxxx xxxxxx <strong>Xxxxxxx</strong> xx xxxxxx xxxxxx xxxxxxxx, xxx xxx xxxx xxxxxx <strong>Xxxxxxx</strong> xxxx xxxxxxxx xxx xxxxxxxxxxxxx xxxx x xxxxxxxxxx xxx xxxxx xxxxx xxxxxxxx xxxx xxxxxxx xx xxxxxx xx xxxxxxx xx xxxxxxx xxxxxx xxx xxx.</p></td>
+<td align="left"><p>In addition to using voice commands within <strong>Cortana</strong> to access system features, you can also extend <strong>Cortana</strong> with features and functionality from a background app using voice commands that specify an action or command to execute within the app.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Interact with a background app](interact-with-a-background-app-in-cortana.md)</p></td>
-<td align="left"><p>Xxxxx xxx x xxxx xxx xxxxxxxx xxxx x xxxxxxxxxx xxx xxxxxxx xxx <strong>Xxxxxxx</strong> xxxxx xxx xxxxxx xxxxxx xxx xxxxxxxxx xx x xxxxx xxxxxxx.</p></td>
+<td align="left"><p>Learn how a user can interact with a background app through the <strong>Cortana</strong> voice and canvas during the execution of a voice command.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Deep link to a background app](deep-link-into-your-app-from-cortana.md)</p></td>
-<td align="left"><p>Xxxxxxx xxxx xxxxx xxxx xxx xxxxxxxxxx xxx xxxxxxx xx <strong>Xxxxxxx</strong> xx xxxxxx xxx xxx xx xxx xxxxxxxxxx xx x xxxxxxxx xxxxx xx xxxxxxx.</p></td>
+<td align="left"><p>Provide deep links from the background app service in <strong>Cortana</strong> to launch the app to the foreground in a specific state or context.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Support natural language voice commands](support-natural-language-voice-commands-in-cortana.md)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxx <strong>Xxxxxxx</strong> xxxx xxxx xxxxxxxx xxx xxxxxxx xxxxx xxxxxxxx, xx x xxxx xxx xxx xxxx xxx'x xxxx xxxxxxxx xx xxx xxxxxxx.</p></td>
+<td align="left"><p>Learn how to extend <strong>Cortana</strong> with more flexible and natural voice commands, so a user can say your app's name anywhere in the command.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
+## <span id="related_topics"></span>Related articles
 
 
-* [
-            **XXX xxxxxxxx xxx xxxxxxxxxx xY.Y**](https://msdn.microsoft.com/library/windows/apps/dn706593)
-**Xxxxxxxxx**
-* [Xxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn596121)
-* [Xxxxxxx xxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn974233)
-**Xxxxxxx**
-* [Xxxxxxx xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619899)
+* [**VCD elements and attributes v1.2**](https://msdn.microsoft.com/library/windows/apps/dn706593)
+
+**Designers**
+* [Speech design guidelines](https://msdn.microsoft.com/library/windows/apps/dn596121)
+* [Cortana design guidelines](https://msdn.microsoft.com/library/windows/apps/dn974233)
+
+**Samples**
+* [Cortana voice command sample](http://go.microsoft.com/fwlink/p/?LinkID=619899)
  
 
  
@@ -95,4 +96,8 @@ Xx xxxxxxxxxxx xxx xxxxx xxxxxxxxxxxxx xx xxxx xxx, xxx xxxxxxxxx x xxxxxxx xxxx
 
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+

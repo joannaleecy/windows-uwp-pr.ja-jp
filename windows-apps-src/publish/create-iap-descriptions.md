@@ -1,45 +1,49 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxxxxxxxx xx XXX, xxx xxxx xxx xxxxx xx x xxxx xxxx xx xxxxxxxxx xx xxxx xxx'x xxxxxxxxx.
-xxxxx: Xxxxxx XXX xxxxxxxxxxxx
-xx.xxxxxxx: YYYYYYYY-XYYX-YXYY-XYYY-YYYYXXXXYYXY
+Description: When submitting an IAP, the info you enter in s step will be displayed to your app's customers.
+title: Create IAP descriptions
+ms.assetid: 07178278-A18A-4F73-A660-0047DAAE49B5
 ---
 
-# Xxxxxx XXX xxxxxxxxxxxx
+# Create IAP descriptions
 
 
-Xxxx xxxxxxxxxx xx XXX, xxx xxxx xxx xxxxx xx **Xxxxxxxxxxxx** xxxx xxxx xx xxxxxxxxx xx xxxx xxx'x xxxxxxxxx. Xxxx xxxx xx xxxxxxxx xxx xxxxxxxxxxx xxxxxxxxx xx xxxxx xx xxxxxxxxx xxxx XXX xxxxxxxxxx xx x xxx xxxx xxxxx xx xxxxxxxxx xx xxxxxxxxx. Xxx xxx xxxxxxxxx xxx xxxxxxxxxxx xxx xxxx xxxxxxxx xx xxxxx xxx xxxxx xxxx xxx.
+When submitting an IAP, the info you enter in **Descriptions** step will be displayed to your app's customers. Make sure to consider the description carefully in order to represent your IAP accurately in a way that makes it appealing to customers. You can customize the description for each language in which you offer your app.
 
-## Xxxxxxxxx
-
-
-Xxxxxx xxx xxx xxxxx xxxxxxxxxxx xxxx, xxx xxxx xx xxxxxxx xxx xx xxxx [xxxxxxxxx](supported-languages.md). Xx xxxxxxxxx xxxxxxxxx xxxxxxxxxxxx xxx xxxxx xxxxxxxx xxxx xxx xxxxxxxx.
-
-Xxxxx xxx **Xxxxxxxxxxxx** xxxxxxx xx xxxx XXX’x xxxxxxxxxx, xxxxx **Xxx xxxxxxxxx**. Xxxxxx xxx xx xxxx xxxxxxxxx xxxx xxx xxxx xxx xxxx xxxxx Xxxx xx xxx xxxxxx xx xxx xxxx.
-
-Xxx’xx xxxx xxx xxxxx xxxxxxxxx xxxxxx xx xxx **Xxx xxxxxxxxx** xxxxxxx. Xxxxx xxx xxxxxxxx xxxx xx xxxxxxx xxxxxxxxxxx xxxx xxx xxxx xxxxxxxx.
-
-Xxx xxx xxx xxxxxxxxxx xxxxxxxxx xxxxx xx xxxxxxxx **Xxx xxxxxxxxx** xxxxx.
-
-## Xxxxx
+## Languages
 
 
-Xxxx xx xxx xxxx xxxx xxxxxxxxx xxxx xxx xxx xxxx XXX. Xxxxx x xxxx xx xx xx YYY xxxxxxxxxx.
+Before you can enter description info, you need to specify one or more [languages](supported-languages.md). We recommend providing descriptions for every language your app supports.
 
-## Xxxxxxxxxxx
+Under the **Descriptions** section of your IAP’s submission, click **Add languages**. Choose one or more languages from the list and then click Save at the bottom of the page.
+
+You’ll then see these languages listed in the **Add languages** section. Click the language name to provide description info for that language.
+
+You can add additional languages later by clicking **Add languages** again.
+
+## Title
 
 
-Xx xxx'x xxxx xx xxxxxxx xxxx xxxx xxxx xxxx x xxxxx, xxx xxx xxxxx xx xx YYY xxxxxxxxxx xxxx. Xxxx xxxxx xx xxxxxxxx.
+This is the name your customers will see for this IAP. Enter a name of up to 100 characters.
 
-## Xxxx
+## Description
 
 
-Xxx xxxx xxxx xxx xxxxxx xx xxxxxxx xx xxxxx xxxx xxx xx xxxxxxxxx xxxx xxx xxxx xxxx xxx xxxxxxx. Xxxx xxxx xxxx xx x .xxx xxxx xxxx xxxxxxxx xxxxxxx YYY x YYY xxxxxx.
+If you'd like to display more info than just a title, you can enter up to 200 characters here. This field is optional.
+
+## Icon
+
+
+You also have the option to provide an image that may be displayed when the user buys the product. This icon must be a .png file that measures exactly 300 x 300 pixels.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

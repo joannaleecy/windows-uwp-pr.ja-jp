@@ -1,49 +1,61 @@
 ---
-Xxxxxxxxxxx: Xx xxxx xxx xxxx xx xxxxxxxxx xx xxxxxxxx xxxxxx xx xxxxx xxxxxxxxxxxx xxx xxxx Xxxxxxxxx Xxxxxxxxxxx, xxx xxx Xxxxxxxxxxxx &xx; Xxxxxxxx xxxx xxx xxxx xx xxxxxx xxxx xxx xx xxx.
-xxxxx: Xxxxxxxx xxxx xxx
-xx.xxxxxxx: YYYYYXXY-YYYX-YXYX-YYXY-YYXYYYYXXXXY
+Description: If your app uses ad mediation or displays banner or video interstitial ads from Microsoft Advertising, use the Monetization &gt; Monetize with ads page to manage your use of ads.
+title: Monetize with ads
+ms.assetid: 09970DE3-461A-4E2A-88E3-68F2399BBCC8
 ---
 
-# Xxxxxxxx xxxx xxx
+# Monetize with ads
 
 
-Xx xxxx xxx xxxx xx xxxxxxxxx xx xxxxxxxx xxxxxx xx xxxxx xxxxxxxxxxxx xxx xxxx Xxxxxxxxx Xxxxxxxxxxx, xxx xxx **Xxxxxxxxxxxx** &xx; **Xxxxxxxx xxxx xxx** xxxx xx xxxxxx xxxx xxx xx xxx.
+If your app uses an **AdMediatorControl**, **AdControl**, or **InterstitialAd** control to display banner or video interstitial ads, use the **Monetization** &gt; **Monetize with ads** page to manage your use of ads.
 
-## Xxxxxxx xx xxxxxxxxx
-
-
-Xx xxxx xxx xxxx xx xxxxxxxxx, xxx xxxx xxxxxxx xx xxxxxxxxx xxxx xxxxxxxxx xxxxxxxx xxx xxx xxxxxxxx xxxxxxxxxx xxx xxxx xx xxx xx xxxxxxxx xxxx xx xxxx xxx. Xxx xxxx xxxxxxxxxxx xxxxx xxx xxxxxxx xx xxxx xxxxxxx, xxx [Xxxxxx xxxx xxx xxx xxxxxxxxx xx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt219689).
-
-Xx xxxxxxxxx xxxx xxx xxxxxxxx xxxx xx-xxx xxxxxxxxxxx xxxxxxx xx xxxxxxxxx xxxxxx xx xxxxxxxx xxxx xxxxxxxx xx xxxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xx xxxxxxxxx, xxx [Xxx xx xxxxxxxxx xx xxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt219691).
-
-## XXXXX xxxxxxxxxx
+## Windows ad mediation
 
 
-Xxx xxxxxxxx xx xxx Xxxxxxxx'x Xxxxxx Xxxxxxx Xxxxxxxxxx Xxx (“XXXXX”), xxx xxxx xxxxxx Xxxxxxxxx xx xxxx xxx xx xxxxxxxx xx xxxxxxxx xxxxx xxx xxx xx YY. Xx xxx xxx Xxx Xxxxxx xx xxxxxxxx xx Xxxxxxxxx xxxx xxxx xxx xx xxxxxxxx xx xxxxxxxx xxxxx xxx xxx xx YY, Xxxxxxxxx xxxx xxxx xxxxx xx xxxxxxx xxx xxxxxxxxxx xxxxxxxxxxx xxxxxxxx xxxx xxxxxxxxxx xxxxxxxxxxx xxxx xxxx xxx. Xx xxxx xxx xx xxxxxxxx xx xxxxxxxx xxxxx xxx xxx xx YY, xxx xxxx xxxxxxx xxxxxxxxxxx xxxxx XXXXX.
+If your app uses ad mediation, use this section to configure your mediation settings and add required parameters for each of the ad networks used by your app. For more information about the options in this section, see [Submit your app and configure ad mediation](https://msdn.microsoft.com/library/windows/apps/mt219689).
 
-Xxx xxxx xxxxxxxxxxx xx xxxx xxxxxxxxxxx xxxxx XXXXX, xxxxxx xxx [xxxx xxxx](http://go.microsoft.com/fwlink/p/?linkid=536558).
+Ad mediation lets you optimize your in-app advertising revenue by mediating banner ad requests from multiple ad networks. For more information about ad mediation, see [Use ad mediation to maximize revenue](https://msdn.microsoft.com/library/windows/apps/mt219691).
 
-## Xxxxxxxxx Xxxxxxxxxxx xx xxxxx
+## COPPA compliance
 
+For purposes of the Children's Online Privacy Protection Act (“COPPA”), you must notify Microsoft if your app is directed at children under the age of 13. If you use Dev Center to indicate to Microsoft that your app is directed at children under the age of 13, Microsoft will take steps to disable its behavioral advertising services when delivering advertising into your app. If your app is directed at children under the age of 13, you have certain obligations under COPPA.
 
-Xxx xxxx xxxxxxx xx xxxxxx x Xxxxxxxxx Xxxxxxxxxxx xx xxxx. Xxx xxxx xxxx xx xxxxxx xx xxxxx xx xxx xxxxxxxxx xxxxxxxxx:
+For more information on your obligations under COPPA, please see [this page](http://go.microsoft.com/fwlink/p/?linkid=536558).
 
--   Xxxx xxx xxxxx xxxxxx xxx xxxx Xxxxxxxxx Xxxxxxxxxxx xx xxxxx xx [XxXxxxxxx](https://msdn.microsoft.com/library/mt313154.aspx) xxxxxx.
--   Xxxx xxx xxxxx xxxxx xxxxxxxxxxxx xxx xxxx Xxxxxxxxx Xxxxxxxxxxx xx xxxxx xx [XxxxxxxxxxxxXx](https://msdn.microsoft.com/library/mt313189.aspx) xxxxxx.
+## Microsoft affiliate ads
 
-Xx xxxxxx xx xx xxxx xxx xxxxx xxxxxxxxx:
+Check the box in this section if you want to show Microsoft affiliate ads in your app. If you check this box, ads for products in the Store, including music, games, movies, apps, hardware and software, will be served to your app when no ads from other ad networks are available. When users click the ads and bus products in the Store within a given attribution window, you will earn a commission on approved purchases.
 
-1.  Xxxx xxx xx xxxx.
-2.  Xxxxxx xxx xx xxxx xxxx (**Xxxxxx** xx **Xxxxx xxxxxxxxxxxx**).
-3.  Xxxxxx xxx xxxxxx xxxx (**Xxxxxx** xx **XX/Xxxxxx**).
-4.  Xxxxx **Xxxxxx xx xxxx**.
+If you change this selection, you do not need to republish your app for the changes to take effect. For more information about Microsoft affiliate ads, see [About affiliate ads](about-affiliate-ads.md).
 
-Xxxx xx xxxxx xxxxxx xx x xxxxx xx xxx xxxxxx xx xxxx xxxxxxx. Xxx xxxx xx xxxx xxx xxxx xxx xx **Xxxxxxxxxxx XX** xxx xx **Xx xxxx XX**. Xx xxxx xxx xx xxxx xxx, xxx'xx xxxx xx xxx xxxxx xxxxxx xx xxxx xxxx:
+> **Note**  If your app uses ad mediation (that is, it uses an **AdMediatorControl** to display ads), your app can show affiliate ads only if your ad mediation settings are configured to show ads from Microsoft.
 
--   Xx xxxx xxx xxxxx xxxxxx xxx, xxxxxx xxxxx xxxxxx xx xxx [XxxxxxxxxxxXx](https://msdn.microsoft.com/library/mt313174.aspx) xxx [XxXxxxXx](https://msdn.microsoft.com/library/mt313171.aspx) xxxxxxxxxx xx xxxx [XxXxxxxxx](https://msdn.microsoft.com/library/mt313154.aspx) xxxxxx.
--   Xx xxxx xxx xxxxx xxxxx xxxxxxxxxxxx xxx, xxxx xxxxx xxxxxx xx xxx [XxxxxxxXx](https://msdn.microsoft.com/library/mt313192.aspx) xxxxxx xx xxxx [XxxxxxxxxxxxXx](https://msdn.microsoft.com/library/mt313189.aspx) xxxxxx.
+## Community ads
 
-> **Xxxx**  Xx xxxx xxx xxxx xx xxxxxxxxx xx xxxx xxxxxx xxx xxxx Xxxxxxxxx Xxxxxxxxxxx (xxxx xx, xx xxxx xx **XxXxxxxxxxXxxxxxx** xxxxxx), xxx xx xxx xxxx xx xxxxxxx xx xxxxx. Xx xxxx xxxxxxxx, Xxxxxxxxx Xxxxxxxxxxx xx xxxxx xxx xxxxxxxxxxxxx xxxxxxxxx xxx xxx.
+Check the box in this section if you want to cross-promote your app with apps from other developers. If you check this box and then [create a community ad campaign](create-an-ad-campaign-for-your-app.md), your app will show ads for apps published by other developers who also create community ad campaigns, and ads for their apps will show in your app. Community ads are free, and they are shown only when no ads from other ad networks are available.
+
+If you change this selection, you do not need to republish your app for the changes to take effect. For more information about community ads, see [About community ads](about-community-ads.md).
+
+## Microsoft Advertising ad units
+
+Use this section to create a Microsoft Advertising ad unit. You only need to create ad units in the following scenarios:
+
+-   Your app shows banner ads from Microsoft Advertising by using an [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object.
+-   Your app shows video interstitial ads from Microsoft Advertising by using an [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object.
+
+To create an ad unit for these scenarios:
+
+1.  Name the ad unit.
+2.  Select the ad unit type (**Banner** or **Video interstitial**).
+3.  Select the device type (**Mobile** or **PC/Tablet**).
+4.  Click **Create ad unit**.
+
+Your ad units appear in a table at the bottom of this section. For each ad unit you will see an **Application ID** and an **Ad unit ID**. To show ads in your app, you'll need to use these values in your code:
+
+-   If your app shows banner ads, assign these values to the [ApplicationId](https://msdn.microsoft.com/library/mt313174.aspx) and [AdUnitId](https://msdn.microsoft.com/library/mt313171.aspx) properties of your [AdControl](https://msdn.microsoft.com/library/mt313154.aspx) object.
+-   If your app shows video interstitial ads, pass these values to the [RequestAd](https://msdn.microsoft.com/library/mt313192.aspx) method of your [InterstitialAd](https://msdn.microsoft.com/library/mt313189.aspx) object.
+
+> **Note**  If your app uses ad mediation to show banner ads from Microsoft Advertising (that is, it uses an **AdMediatorControl** object), you do not need to request ad units. In this scenario, Microsoft Advertising ad units are automatically generated for you.
 
  
 
@@ -52,6 +64,6 @@ Xxxx xx xxxxx xxxxxx xx x xxxxx xx xxx xxxxxx xx xxxx xxxxxxx. Xxx xxxx xx xxxx 
  
 
 
+<!--HONumber=Mar16_HO5-->
 
 
-<!--HONumber=Mar16_HO1-->

@@ -1,90 +1,94 @@
 ---
-xx.xxxxxxx: YXYYYYYX-YYYY-YXXY-YXXY-YYXXYXYXYYYX
-xxxxx: XXXxxx xxxxxxxxx
-xxxxxxxxxxx: XXXxxx xx x xxxxxx-xxxx, xxxxxxxx xxxxxxxx xxxxxx. Xxxx xxxxxxx xxxxxxxx xxx xx xxx xxx XXXxxx xxxxxxx xxxxxxxx xx xxx XXX, xxxxxxx xxxx xxx XXXxxx xxxxxxx xx x Xxxxxxxxx Xxxxxxx xxx, xx xxxxx xx xxxx xxx xxxxxx.
+ms.assetid: 5A47301A-2291-4FC8-8BA7-55DB2A5C653F
+title: SQLite databases
+description: SQLite is a server-less, embedded database engine. This article explains how to use the SQLite library included in the SDK, package your own SQLite library in a Universal Windows app, or build it from the source.
 ---
-# XXXxxx xxxxxxxxx
+# SQLite databases
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-XXXxxx xx x xxxxxx-xxxx, xxxxxxxx xxxxxxxx xxxxxx. Xxxx xxxxxxx xxxxxxxx xxx xx xxx xxx XXXxxx xxxxxxx xxxxxxxx xx xxx XXX, xxxxxxx xxxx xxx XXXxxx xxxxxxx xx x Xxxxxxxxx Xxxxxxx xxx, xx xxxxx xx xxxx xxx xxxxxx.
+SQLite is a server-less, embedded database engine. This article explains how to use the SQLite library included in the SDK, package your own SQLite library in a Universal Windows app, or build it from the source.
 
-## Xxxx XXXxxx xx xxx xxxx xx xxx xx
+## What SQLite is and when to use it
 
-XXXxxx xx xx xxxx xxxxxx, xxxxxxxx, xxxxxx-xxxx xxxxxxxx. Xxxx xxx xxxxx xx xxx xxxxxxx xx xxx xxxxxxxx xxxxxx xxxx xxxxxxxxxx xxx xxxx xxxxxxx xx xxxx xxxxxxxxx xxx xxxxxxx. Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxx xxx xxxxxxxxxx XXXxxx xxx xxxxx xxxxxxx xxxxxx xxx Xxxxxxx YY xxxxxx xxxxxxxx.
+SQLite is an open source, embedded, server-less database. Over the years it has emerged as the dominant device side technology for data storage on many platforms and devices. Universal Windows Platform (UWP) supports and recommends SQLite for local storage across all Windows 10 device families.
 
-XXXxxx xx xxxx xxxxxx xxx xxxxx xxxx, xxxxxxxx xxxxxxxxxxxx xxx Xxxxxxx YY XxX Xxxx (XxX Xxxx), xxx xx x xxxxx xxx xxxxxxxxxx xxxxxxxxx xxxxxxxx xxxxxx (XXXX) xxxx. Xx xxxx xxxxxxx xxxx xxxxx xxxx xxxxxx xxxxx xxxxxx xxxx xxxxxx xxxxx xxxxxxxxxx xxxxxx, xx x xxx xxxx xxxxx—xxxxxxxxx xxxxxxxx xxx xxxx xxxx.
+SQLite is best suited for phone apps, embedded applications for Windows 10 IoT Core (IoT Core), and as a cache for enterprise relations database server (RDBS) data. It will satisfy most local data access needs unless they entail heavy concurrent writes, or a big data scale—scenarios unlikely for most apps.
 
-Xx xxxxx xxxxxxxx xxx xxxxxx xxxxxxxxxxxx, XXXxxx xxx xxxx xx xxxx xx x xxxx xxxxxx xx xxxxx xxxxxxxxxx xx xxxxx xxxxxx, xxxx xx xxxxxx xx x xxxx, xxxx xxx xx xxxxxxxxxx xx-xx xxxx x xxx xxxxxx.
+In media playback and gaming applications, SQLite can also be used as a file format to store catalogues or other assets, such as levels of a game, that can be downloaded as-is from a web server.
 
-## Xxxxxx XXXxxx xx x XXX xxx xxxxxxx
+## Adding SQLite to a UWP app project
 
-Xxxxx xxx xxxxx xxxx xx xxxxxx XXXxxx xx x XXX xxxxxxx.
+There are three ways of adding SQLite to a UWP project.
 
-1.  [Xxxxx xxx XXX XXXxxx](#using-the-sdk-sqlite)
-2.  [Xxxxxxxxx XXXxxx xx xxx Xxx Xxxxxxx](#including-sqlite-in-the-app-package)
-3.  [Xxxxxxxx XXXxxx xxxx xxxxxx xx Xxxxxx Xxxxxx](#building-sqlite-from-source-in-visual-studio)
+1.  [Using the SDK SQLite](#using-the-sdk-sqlite)
+2.  [Including SQLite in the App Package](#including-sqlite-in-the-app-package)
+3.  [Building SQLite from source in Visual Studio](#building-sqlite-from-source-in-visual-studio)
 
-### Xxxxx xxx XXX XXXxxx
+### Using the SDK SQLite
 
-Xxx xxx xxxx xx xxx xxx XXXxxx xxxxxxx xxxxxxxx xx xxx XXX XXX xx xxxxxx xxx xxxx xx xxxx xxxxxxxxxxx xxxxxxx, xxx xxxx xx xxx xxxxxxxx xx xxxxxx xxx xxxxxxx xxxxxxxxxxxx. Xxxxx xxx XXX XXXxxx xxxxx xxxx xxxx xx xxxxxxxxxxx xxxxxxxxxx xxxx xx xxxxxx xxxxxx xxxxx xxxxx xxx XXXxxx xxxxxxx xx xxxxxx xxxxxx xx xxxxxxx xx xxxxxx xx xxxxxx xxx xxx xx xxxxxx xxxxxxxxxx.
+You may wish to use the SQLite library included in the UWP SDK to reduce the size of your application package, and rely on the platform to update the library periodically. Using the SDK SQLite might also lead to performance advantages such as faster launch times given the SQLite library is highly likely to already be loaded in memory for use by system components.
 
-Xx xxxxxxxxx xxx XXX XXXxxx, xxxxxxx xxx xxxxxxxxx xxxxxx xx xxxx xxxxxxx. Xxx xxxxxx xxxx xxxxxxxx xxx xxxxxxx xx XXXxxx xxxxxxxxx xx xxx xxxxxxxx.
+To reference the SDK SQLite, include the following header in your project. The header also contains the version of SQLite supported in the platform.
 
 `#include <winsqlite/winsqlite3.h>`
 
-Xxxxxxxxx xxx xxxxxxx xx xxxx xx xxxxxxxxxY.xxx. Xx **Xxxxxxxx Xxxxxxxx**, xxxxx-xxxxx xxxx xxxxxxx xxx xxxxxx **Xxxxxxxxxx** &xx; **Xxxxxx** &xx; **Xxxxx**, xxxx xxx xxxxxxxxxY.xxx xx **Xxxxxxxxxx Xxxxxxxxxxxx**.
+Configure the project to link to winsqlite3.lib. In **Solution Explorer**, right-click your project and select **Properties** &gt; **Linker** &gt; **Input**, then add winsqlite3.lib to **Additional Dependencies**.
 
-### Y. Xxxxxxxxx XXXxxx xx xxx Xxx Xxxxxxx
+### 2. Including SQLite in the App Package
 
-Xxxxxxxxx, xxx xxxxx xxxx xx xxxxxxx xxxx xxx xxxxxxx xxxxxxx xx xxxxx xxx XXX xxxxxxx, xxx xxxxxxx, xxx xxxxx xxxx xx xxx x xxxxxxxxxx xxxxxxx xx xx xx xxxx xxxxx-xxxxxxxx xxxxxxx xxxx xx xxxxxxxxx xxxx xxx xxxxxxx xx XXXxxx xxxxxxxx xx xxx XXX.
+Sometimes, you might wish to package your own library instead of using the SDK version, for example, you might wish to use a particular version of it in your cross-platform clients that is different from the version of SQLite included in the SDK.
 
-Xxxxxxx xxx XXXxxx xxxxxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx Xxxxxx Xxxxxx xxxxxxxxx xxxxxxxxx xxxx XXXxxx.xxx, xx xxxxxxx xxx Xxxxxxxxxx xxx Xxxxxxx xxxx.
+Install the SQLite library on the Universal Windows Platform Visual Studio extension available from SQLite.org, or through the Extensions and Updates tool.
 
-![Xxxxxxxxxx xxx Xxxxxxx xxxxxx](./images/extensions-and-updates.png)
+![Extensions and Updates screen](./images/extensions-and-updates.png)
 
-Xxxx xxx xxxxxxxxx xx xxxxxxxxx, xxxxxxxxx xxx xxxxxxxxx xxxxxx xxxx xx xxxx xxxx.
+Once the extension is installed, reference the following header file in your code.
 
 `#include <sqlite3.h>`
 
-### Y. Xxxxxxxx XXXxxx xxxx xxxxxx xx Xxxxxx Xxxxxx
+### 3. Building SQLite from source in Visual Studio
 
-Xxxxxxxxx xxx xxxxx xxxx xx xxxxxxx xxxx xxx XXXxxx xxxxxx xx xxx [xxxxxxx xxxxxxxx xxxxxxx](http://www.sqlite.org/compile.html) xx xxxxxx xxx xxxx xxxx, xxxxxxxxxxx xxxx xxx xxxxxxx, xx xxxxxx xxx xxxxxxx xxx xx xxxx xxxxxxxxxxx. XXXxxx xxxxxxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxxxxx, xxxxxxx xxxxxxx xxxxxxxxx xxxxxx, xxxxxxx xxxx xxxxxx, xxxxxxxxxxx xxxxxxxxx xxxxxxxxxxxxxxx, xxxxxxxx xxxxxxxx xxxxxxxx xxxxxx xxx, xxxxxxxxx xxxxxxxx xxxxxxxx xxxxxx xx, xxxxxxxx xxxxxxxx, xxxxxxxx xxxxxxxx xxx xxxxxxxxx, xxx xxxxxxxx xxxxxx xxxxxxxxxx xxxxxxxx xx Xxxxxxx.
+Sometimes you might wish to compile your own SQLite binary to use [various compiler options](http://www.sqlite.org/compile.html) to reduce the file size, performance tune the library, or tailor the feature set to your application. SQLite provides options for platform configuration, setting default parameter values, setting size limits, controlling operating characteristics, enabling features normally turned off, disabling features normally turned on, omitting features, enabling analysis and debugging, and managing memory allocation behavior on Windows.
 
-*Xxxxxx xxxxxx xx x Xxxxxx Xxxxxx xxxxxxx*
+*Adding source to a Visual Studio project*
 
-Xxx XXXxxx xxxxxx xxxx xx xxxxxxxxx xxx xxxxxxxx xx xxx [XXXxxx.xxx xxxxxxxx xxxx](https://www.sqlite.org/download.html). Xxx xxxx xxxx xx xxx Xxxxxx Xxxxxx xxxxxxx xx xxx xxxxxxxxxxx xxx xxxx xx xxx XXXxxx xx.
+The SQLite source code is available for download at the [SQLite.org download page](https://www.sqlite.org/download.html). Add this file to the Visual Studio project of the application you wish to use SQLite in.
 
-*Xxxxxxxxx Xxxxxxxxxxxxx*
+*Configure Preprocessors*
 
-Xxxxxx xxx XXXXXX\_XX\_XXXXX xxx XXXXXX\_XXX=\_\_xxxxxxxx(xxxxxxxxx) xx xxxxxxxx xx xxx xxxxx [xxxxxxx xxxx xxxxxxx](http://www.sqlite.org/compile.html).
+Always use SQLITE\_OS\_WINRT and SQLITE\_API=\_\_declspec(dllexport) in addition to any other [compile time options](http://www.sqlite.org/compile.html).
 
-![XXXxxx Xxxxxxxx Xxxxx xxxxxx](./images/property-pages.png)
+![SQLite Property Pages screen](./images/property-pages.png)
 
-## Xxxxxxxx x XXXxxx Xxxxxxxx
+## Managing a SQLite Database
 
-XXXxxx xxxxxxxxx xxx xx xxxxxxx, xxxxxxx, xxx xxxxxxx xxxx xxx XXXxxx X XXXx. Xxxxxxx xx xxx XXXxxx X XXX xxx xx xxxxx xx xxx XXXxxx.xxx [Xxxxxxxxxxxx Xx Xxx XXXxxx X/X++ Xxxxxxxxx](http://www.sqlite.org/cintro.html) xxxx.
+SQLite databases can be created, updated, and deleted with the SQLite C APIs. Details of the SQLite C API can be found at the SQLite.org [Introduction To The SQLite C/C++ Interface](http://www.sqlite.org/cintro.html) page.
 
-Xx xxxx xxxxx xxxxxxxxxxxxx xx xxx XXXxxx xxxxx, xxxx xxxxxxxxx xxxx xxx xxxx xxxx xx xxx XXX xxxxxxxx xxxxx xx xx xxxxxxxx XXX xxxxxxxxxx. Xxxxx xxx xxx xxxxxxx xx xxxx xx xxxx:
+To gain sound understanding of how SQLite works, work backwards from the main task of the SQL database which is to evaluate SQL statements. There are two objects to keep in mind:
 
--   [Xxx xxxxxxxx xxxxxxxxxx xxxxxx](https://www.sqlite.org/c3ref/sqlite3.html)
--   [Xxx xxxxxxxx xxxxxxxxx xxxxxx](https://www.sqlite.org/c3ref/stmt.html)
+-   [The database connection handle](https://www.sqlite.org/c3ref/sqlite3.html)
+-   [The prepared statement object](https://www.sqlite.org/c3ref/stmt.html)
 
-Xxxxx xxx xxx xxxxxxxxxx xx xxxxxxx xxxxxxxx xxxxxxxxxx xx xxxxx xxxxxxx:
+There are six interfaces to perform database operations on these objects:
 
--   [xxxxxxY\_xxxx()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/open.html)
--   [xxxxxxY\_xxxxxxx()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/prepare.html)
--   [xxxxxxY\_xxxx()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/step.html)
--   [xxxxxxY\_xxxxxx()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/column_blob.html)
--   [xxxxxxY\_xxxxxxxx()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/finalize.html)
--   [xxxxxxY\_xxxxx()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/close.html)
+-   [sqlite3\_open()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/open.html)
+-   [sqlite3\_prepare()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/prepare.html)
+-   [sqlite3\_step()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/step.html)
+-   [sqlite3\_column()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/column_blob.html)
+-   [sqlite3\_finalize()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/finalize.html)
+-   [sqlite3\_close()](https://web.archive.org/web/20141228070025/http:/www.sqlite.org/c3ref/close.html)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

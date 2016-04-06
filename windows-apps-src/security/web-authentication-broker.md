@@ -1,34 +1,35 @@
 ---
-xxxxx: Xxx xxxxxxxxxxxxxx xxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xxx xx xxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xx xx xxxxxx xxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxxxxxxxx xxxxxxxxx xxxx XxxxXX xx XXxxx, xxxx xx Xxxxxxxx, Xxxxxxx, Xxxxxx, Xxxxxxxxx, xxx xx xx.
-xx.xxxxxxx: YYXYYYYY-YYYY-YYXY-XYYY-XXXXYYYYYXYY
+title: Web authentication broker
+description: This article explains how to connect your Universal Windows Platform (UWP) app to an online identity provider that uses authentication protocols like OpenID or OAuth, such as Facebook, Twitter, Flickr, Instagram, and so on.
+ms.assetid: 05F06961-1768-44A7-B185-BCDB74488F85
+author: awkoren
 ---
 
-# Xxx xxxxxxxxxxxxxx xxxxxx
+# Web authentication broker
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxxxx xxxxxxxx xxx xx xxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xx xx xxxxxx xxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxxxxxxxx xxxxxxxxx xxxx XxxxXX xx XXxxx, xxxx xx Xxxxxxxx, Xxxxxxx, Xxxxxx, Xxxxxxxxx, xxx xx xx. Xxx [**XxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br212066) xxxxxx xxxxx x xxxxxxx xx xxx xxxxxx xxxxxxxx xxxxxxxx xxx xxxx xxxx xx xxxxxx xxxxx xxxx xxxxxxxxx xxx xxxxxxxx xxxxxxxxx xx xxxxx xxx xxx xxx xxxxxx.
+This article explains how to connect your Universal Windows Platform (UWP) app to an online identity provider that uses authentication protocols like OpenID or OAuth, such as Facebook, Twitter, Flickr, Instagram, and so on. The [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) method sends a request to the online identity provider and gets back an access token that describes the provider resources to which the app has access.
 
-**Xxxx**  Xxx x xxxxxxxx, xxxxxxx xxxx xxxxxx, xxxxx xxx [XxxXxxxxxxxxxxxxxXxxxxx xxxx xx XxxXxx](http://go.microsoft.com/fwlink/p/?LinkId=620622).
+**Note**  For a complete, working code sample, clone the [WebAuthenticationBroker repo on GitHub](http://go.microsoft.com/fwlink/p/?LinkId=620622).
 
  
 
-## Xxxxxxxx xxxx xxx xxxx xxxx xxxxxx xxxxxxxx
+## Register your app with your online provider
 
 
-Xxx xxxx xxxxxxxx xxxx xxx xxxx xxx xxxxxx xxxxxxxx xxxxxxxx xx xxxxx xxx xxxx xx xxxxxxx. Xxx xxx xxxx xxx xxx xx xxxxxxxx xxxx xxx xxxx xxx xxxxxxxx xxxxxxxx. Xxxxx xxxxxxxxxxx, xxx xxxxxx xxxxxxxx xxxxxxxxx xxxxx xxx xx Xx xx xxxxxx xxx xxx xxxx xxx.
+You must register your app with the online identity provider to which you want to connect. You can find out how to register your app from the identity provider. After registering, the online provider typically gives you an Id or secret key for your app.
 
-## Xxxxx xxx xxxxxxxxxxxxxx xxxxxxx XXX
+## Build the authentication request URI
 
 
-Xxx xxxxxxx XXX xxxxxxxx xx xxx xxxxxxx xxxxx xxx xxxx xxx xxxxxxxxxxxxxx xxxxxxx xx xxxx xxxxxx xxxxxxxx xxxxxxxx xxxx xxxxx xxxxxxxx xxxxxxxxxxx, xxxx xx xx xxx XX xx xxxxxx, x xxxxxxxx XXX xxxxx xxx xxxx xx xxxx xxxxx xxxxxxxxxx xxxxxxxxxxxxxx, xxx xxx xxxxxxxx xxxxxxxx xxxx. Xxx xxx xxxx xxx xxxx xxxx xxxxxxxx xxxx xxxxxxxxxx xxx xxxxxxxx.
+The request URI consists of the address where you send the authentication request to your online provider appended with other required information, such as an app ID or secret, a redirect URI where the user is sent after completing authentication, and the expected response type. You can find out from your provider what parameters are required.
 
-Xxx xxxxxxx XXX xx xxxx xx xxx *xxxxxxxXxx* xxxxxxxxx xx xxx [**XxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br212066) xxxxxx. Xx xxxx xx x xxxxxx xxxxxxx (xx xxxx xxxxx xxxx xxxxx://)
+The request URI is sent as the *requestUri* parameter of the [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) method. It must be a secure address (it must start with https://)
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xx xxxxx xxx xxxxxxx XXX.
+The following example shows how to build the request URI.
 
 ```cs
 string startURL = "https://<providerendpoint>?client_id=<clientid>&amp;scope=<scopes>&amp;response_type=token";
@@ -38,10 +39,10 @@ System.Uri startURI = new System.Uri(startURL);
 System.Uri endURI = new System.Uri(endURL);
 ```
 
-## Xxxxxxx xx xxx xxxxxx xxxxxxxx
+## Connect to the online provider
 
 
-Xxx xxxx xxx [**XxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br212066) xxxxxx xx xxxxxxx xx xxx xxxxxx xxxxxxxx xxxxxxxx xxx xxx xx xxxxxx xxxxx. Xxx xxxxxx xxxxx xxx XXX xxxxxxxxxxx xx xxx xxxxxxxx xxxx xx xxx *xxxxxxxXxx* xxxxxxxxx, xxx x XXX xx xxxxx xxx xxxx xxx xxxx xx xx xxxxxxxxxx xx xxx *xxxxxxxxXxx* xxxxxxxxx.
+You call the [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066) method to connect to the online identity provider and get an access token. The method takes the URI constructed in the previous step as the *requestUri* parameter, and a URI to which you want the user to be redirected as the *callbackUri* parameter.
 
 ```cs
 string result;
@@ -77,14 +78,14 @@ catch (Exception ex)
 }
 ```
 
-Xx xxxxxxxx xx [**XxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br212066), xxx [**Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/br227044) xxxxxxxxx xxxxxxxx xx [**XxxxxxxxxxxxXxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn632425) xxxxxx. Xx xxx xxxx xxxx xxxxxx. Xx xx xxxxxxxx xxx xxxx xxxxxxxxx Xxxxxxx Xxxxx Y.Y xxxx xxx xx xxxxxxxxxx xxxxxxxx xxxx Xxxxxxx YY.
+In addition to [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212066), the [**Windows.Security.Authentication.Web**](https://msdn.microsoft.com/library/windows/apps/br227044) namespace contains an [**AuthenticateAndContinue**](https://msdn.microsoft.com/library/windows/apps/dn632425) method. Do not call this method. It is designed for apps targeting Windows Phone 8.1 only and is deprecated starting with Windows 10.
 
-## Xxxxxxxxxx xxxx xxxxxx xxxx-xx (XXX).
+## Connecting with single sign-on (SSO).
 
 
-Xx xxxxxxx, Xxx xxxxxxxxxxxxxx xxxxxx xxxx xxx xxxxx xxxxxxx xx xxxxxxx. Xxxxxxx xx xxxx, xxxx xx xxx xxx xxxx xxxxxxxxx xxxx xxxx xxxx xx xxxx xxxxxx xx (xxx xxxxxxx, xx xxxxxxxxx x xxxxx xxx xx xxx xxxxxxxx'x xxxxx xxxxxx), xxxx xxxx xxxx xx xxxxx xxxx xxxx xxxx xxxx xx xxxxxx xxxxxxxxx xxx xxxx xxxxxxxx. Xx xxxxx xxxx XXX, xxxx xxxxxx xxxxxxxx xxxxxxxx xxxx xxxx xxxxxxx XXX xxx Xxx xxxxxxxxxxxxxx xxxxxx, xxx xxxx xxx xxxx xxxx xxx xxxxxxxx xx [**XxxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br212068) xxxx xxxx xxx xxxx x *xxxxxxxxXxx* xxxxxxxxx.
+By default, Web authentication broker does not allow cookies to persist. Because of this, even if the app user indicates that they want to stay logged in (for example, by selecting a check box in the provider's login dialog), they will have to login each time they want to access resources for that provider. To login with SSO, your online identity provider must have enabled SSO for Web authentication broker, and your app must call the overload of [**AuthenticateAsync**](https://msdn.microsoft.com/library/windows/apps/br212068) that does not take a *callbackUri* parameter.
 
-Xx xxxxxxx XXX, xxx xxxxxx xxxxxxxx xxxx xxxxx xxx xx xxxxxxxx x xxxxxxxx XXX xx xxx xxxx `ms-app://`*xxxXXX*, xxxxx *xxxXXX* xx xxx XXX xxx xxxx xxx. Xxx xxx xxxx xxxx xxx'x XXX xxxx xxx xxx xxxxxxxxx xxxx xxx xxxx xxx, xx xx xxxxxxx xxx [**XxxXxxxxxxXxxxxxxxxxxXxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/br212069) xxxxxx.
+To support SSO, the online provider must allow you to register a redirect URI in the form `ms-app://`*appSID*, where *appSID* is the SID for your app. You can find your app's SID from the app developer page for your app, or by calling the [**GetCurrentApplicationCallbackUri**](https://msdn.microsoft.com/library/windows/apps/br212069) method.
 
 ```cs
 string result;
@@ -119,40 +120,40 @@ catch (Exception ex)
 }
 ```
 
-## Xxxxxxxxx
+## Debugging
 
 
-Xxxxx xxx xxxxxxx xxxx xx xxxxxxxxxxxx xxx xxx xxxxxxxxxxxxxx xxxxxx XXXx, xxxxxxxxx xxxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxx xxx xxxxxxxx xxx xxxxxxxxx xxxxx Xxxxxxx.
+There are several ways to troubleshoot the web authentication broker APIs, including reviewing operational logs and reviewing web requests and responses using Fiddler.
 
-### Xxxxxxxxxxx xxxx
+### Operational logs
 
-Xxxxx xxx xxx xxxxxxxxx xxxx xx xxx xxxxxxx xx xxxxx xxx xxxxxxxxxxx xxxx. Xxxxx xx x xxxxxxxxx xxxxx xxx xxxxxxx Xxxxxxxxx-Xxxxxxx-XxxXxxx\\Xxxxxxxxxxx xxxx xxxxxx xxxxxxx xxxxxxxxxx xx xxxxxxxxxx xxx xxxxx xxx xxxxx xxx xxxxx xxxxxxxxx xx xxx Xxx xxxxxxxxxxxxxx xxxxxx. Xx xxxxxx xx, xxxxxx xxxxxxxx.xxx xxx xxxxxx Xxxxxxxxxxx xxx xxxxx xxx Xxxxxxxxxxx xxx Xxxxxxxx\\Xxxxxxxxx\\Xxxxxxx\\XxxXxxx. Xxxx, xxx Xxx xxxxxxxxxxxxxx xxxxxx xxxxxxx x xxxxxx xxxxxx xx xxx xxxx xxxxx xxxxxx xx xxxxxxxx xxxxxx xx xxx xxx xxxxxx. Xxx xxxxxx xx "XXXxxxXxxx/Y.Y". Xxxx xxxx xxx xxxxxxx xxxxxx xxx xxxxxx xx xxx xxxxxx, xx xxx xxxxxx xxx xx xxxxxx xx xxxx xxxxxxx xxxxxx xx xxxx xxxx. Xx xxxxxxx xx xxx xxxx xxxx xxxxx xxxxxx, xxxxxxxx xx xxxx xxxxxxxxx xxxxx, xx xx xxxxxxx.
+Often you can determine what is not working by using the operational logs. There is a dedicated event log channel Microsoft-Windows-WebAuth\\Operational that allows website developers to understand how their web pages are being processed by the Web authentication broker. To enable it, launch eventvwr.exe and enable Operational log under the Application and Services\\Microsoft\\Windows\\WebAuth. Also, the Web authentication broker appends a unique string to the user agent string to identify itself on the web server. The string is "MSAuthHost/1.0". Note that the version number may change in the future, so you should not to depend on that version number in your code. An example of the full user agent string, followed by full debugging steps, is as follows.
 
 `User-Agent: Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Win64; x64; Trident/6.0; MSAuthHost/1.0)`
 
-1.  Xxxxxx xxxxxxxxxxx xxxx.
-2.  Xxx Xxxxxxx xxxxxx xxxxxxxxxxx. ![xxxxx xxxxxx xxxxxxxxxx xxx xxxxxxx xxxxxxxxxxx xxxx](images/wab-event-viewer-1.png)
-3.  Xxx xxxxxxxxx xxxx xxxxxxx xxx xx xxxx xx xxxxxxxxxx xxx xxxxxxxx xx Xxx xxxxxxxxxxxxxx xxxxxx xx xxxxxxx xxxxxx. Xx xxxx xxxx, xxxxx xxx xxxxxxx:
-    -   Xxxxxxxxxx Xxxxx: Xxxx xxxx xxx XxxxXxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxxxxx xxxxx xxx xxxxx xxx xxxxxxxxxxx XXXx.
-    -   ![xxxxxxxxxxx xxx xxxxxxx xx xxxxxxxxxx xxxxx](images/wab-event-viewer-2.png)
-    -   Xxxxxxxxxx Xxxxxxxx: Xxxx xxx xxxxxxxxxx xx xxxxxxx x xxx xxxx.
-    -   Xxxx Xxx: Xxxx xxxx x xxxx-xxx xx xxxxxxxxxxx xxxxxxxxx xxx xxxxxxx.
-    -   Xxxxxxxxxx Xxxxxxxxx: Xxxxxxxxxx xxxxxxxxxx xx xxx xxxx.
-    -   Xxxxxxxxxx Xxxxx: XxxxXxxx xxxxxxxxxx x xxxxxxxxxx xxxxx xx x XXX xxxxxxxxx XxxxXxxxxxXxxx.
-    -   Xxxxxxxxxx Xxx: Xxxxxxxxxxx XXX xx xxxxxxxxxxx.
+1.  Enable operational logs.
+2.  Run Contoso social application. ![event viewer displaying the webauth operational logs](images/wab-event-viewer-1.png)
+3.  The generated logs entries can be used to understand the behavior of Web authentication broker in greater detail. In this case, these can include:
+    -   Navigation Start: Logs when the AuthHost is started and contains information about the start and termination URLs.
+    -   ![illustrates the details of navigation start](images/wab-event-viewer-2.png)
+    -   Navigation Complete: Logs the completion of loading a web page.
+    -   Meta Tag: Logs when a meta-tag is encountered including the details.
+    -   Navigation Terminate: Navigation terminated by the user.
+    -   Navigation Error: AuthHost encounters a navigation error at a URL including HttpStatusCode.
+    -   Navigation End: Terminating URL is encountered.
 
-### Xxxxxxx
+### Fiddler
 
-Xxx Xxxxxxx xxx xxxxxxxx xxx xx xxxx xxxx xxxx.
+The Fiddler web debugger can be used with apps.
 
-1.  Xxxxx xxx XxxxXxxx xxxx xx xxx xxx xxx xxxxxxxxx xx xxxx xx xxx xxxxxxx xxxxxxx xxxxxxxxxx, xxx xxxx xxx x xxxxxxxx xxx: Xxxxxxx Xxxxxxxx Xxxxxx Xxxxxxx Y.YY
+1.  Since the AuthHost runs in its own app container to give it the private network capability, you must set a registry key: Windows Registry Editor Version 5.00
 
-    **XXXX\_XXXXX\_XXXXXXX**\\**XXXXXXXX**\\**Xxxxxxxxx**\\**Xxxxxxx XX**\\**XxxxxxxXxxxxxx**\\**Xxxxx Xxxx Xxxxxxxxx Xxxxxxx**\\**xxxxxxxx.xxx**\\**XxxxxxXxxxxxxXxxxxxx** = YYYYYYYY
+    **HKEY\_LOCAL\_MACHINE**\\**SOFTWARE**\\**Microsoft**\\**Windows NT**\\**CurrentVersion**\\**Image File Execution Options**\\**authhost.exe**\\**EnablePrivateNetwork** = 00000001
 
                          Data type  
                          DWORD
 
-2.  Xxx x xxxx xxx xxx XxxxXxxx xx xxxx xx xxxx xx xxxxxxxxxx xxx xxxxxxxx xxxxxxx.
+2.  Add a rule for the AuthHost as this is what is generating the outbound traffic.
     ```syntax
     CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.windows.authhost.a.p_8wekyb3d8bbwe
     CheckNetIsolation.exe LoopbackExempt -a -n=microsoft.windows.authhost.sso.p_8wekyb3d8bbwe
@@ -170,13 +171,8 @@ Xxx Xxxxxxx xxx xxxxxxxx xxx xx xxxx xxxx xxxx.
         SID:  S-1-15-2-3506084497-1208594716-3384433646-2514033508-1838198150-1980605558-3480344935
     ```
 
-3.  Xxx x xxxxxxxx xxxx xxx xxxxxxxx xxxxxxx xx Xxxxxxx.
+3.  Add a firewall rule for incoming traffic to Fiddler.
 
- 
-
- 
+<!--HONumber=Mar16_HO5-->
 
 
-
-
-<!--HONumber=Mar16_HO1-->

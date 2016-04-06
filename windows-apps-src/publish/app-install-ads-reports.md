@@ -1,65 +1,69 @@
 ---
-xxxxx: Xxx xxxxxxx xxx xxxxxx
-xx.xxxxxxx: YXYYYYXY-YYYY-YXXX-YYYX-XYYYYYXYXXXX
-xxxxxxxxxxx: 
+title: アプリのインストールの広告レポート
+ms.assetid: 8C5907A6-8059-4CAF-951F-C97301A5EEDF
+description: 
 ---
 
-# Xxx xxxxxxx xxx xxxxxx
+# アプリのインストールの広告レポート
 
-Xxxxx xxx xxx xxxx xx xxx xx xxx **Xxx xxxxxxx xxx xxxxxxx** xxxx xx Xxx Xxxxxx:
+デベロッパー センターの **[App install ads reports] (アプリのインストールの広告レポート)** ページにアクセスするには、2 つの方法があります。
 
--   Xxxx xxx xxxx xxxxxxxxxx xxxx xx xxxx xxx'x xxxx, xxxxx **Xxxxxxxxx** &xx; **Xxx xxxxxxx xxx**.
--   Xxxx xxx xxxx xxxxxxxxxx xxxx xx xxxx xxx'x xxxx, xxxxx **Xxxxxxxxxxxx** &xx; **Xxxxxxx xxxx xxx**, xxx xxxx xxxxx x xxxxxxxx'x **Xxxxxx** xxxx.
+-   アプリのページの左のナビゲーション メニューで、**[分析]** &gt; **[App install ads] (アプリのインストールの広告) **の順にクリックします。
+-   アプリのページの左のナビゲーション メニューで、**[収益化]** &gt; **[アプリの販売促進]** の順にクリックし、キャンペーンの **[レポート]** リンクをクリックします。
 
-Xxxx xxx'xx xxx xxx xxxxxxxx: **Xx xxxxxxxxxxx** xxx **Xxxxxxx xxxxxxx xxxxxxx**.
+ここには、**[広告のパフォーマンス]** と **[Account billing history] (アカウントの支払い履歴)** の 2 つのセクションが表示されます。
 
-## Xx xxxxxxxxxxx
+## 広告のパフォーマンス
 
-Xxxx, xxxxxxxxxxx xxxxxxx xxx xxxxxxxxx xx xxxxx xxxxxxx xx x xxxxx, xxxx xxx xxxxxxxx xxxxxx xx xxx x-xxxx xxx xxxx xx xxx x-xxxx. Xxx xxxxxxx xxxxxx xxxxx Xxxxxxxxxxx. Xxxxx xxx xxx xxxxxxx xx xxxx xxxx xxx xxxxx xxxxxxxxxxx xxxxxxx. Xxx xxxxxxx xxxxxxx xxxx xxx:
+ここでは、パフォーマンスのメトリックは、グラフにプロットされた線で表示され、選択したメトリックが y 軸に、時間が x 軸に表示されます。 既定のレポートにインプレッション数が示されます。 その他のパフォーマンス メトリックのデータを表示するには、タブ ヘッダーをクリックします。 ここで追跡されるメトリックは次のとおりです。
 
--   **Xxxxxxxxxxx**: Xxx xxxxxx xx xxxxx xxxx xx xxx xxxx xxxxx.
--   **Xxxxxx**: Xxx xxxxxx xx xxxxx xxxxxxx xxxxxxx xx xxxx xx.
--   **Xxxxxxxx**: Xxx xxxxxx xx xxxxx xxxxxxx xxxxxxx xx xxxx xx xxx xxxx xxxxxxxxx xxxx xxx. Xxx xxxxx xxx xxxx xxxxxxxxxxx xx xxxxxxx xxxxxxxx.
+-   **[インプレッション数]**: 広告が表示された回数。
+-   **[クリック数]**: 広告がユーザーによってクリックされた回数。
+-   **[インストール数]**: 広告がユーザーによってクリックされてアプリがインストールされた回数。 インストールの追跡について詳しくは、以下をご覧ください。
 
-Xxx xxx xxxxxxx xxxxxxxxxxx xxxx xxx xx xx xxxx xxxxxxxxx xx xxxxxxxxx xx x xxxx. Xxxxx **Xxxx xxxxxxxxx** xx xxxxxx xxxxx xxxxxxxxx xx xxxxxxx. Xxx xxx xxxx xxxxx xxx xxxxx xxxxxx xx x xxxxxxxxx xxxxxxxx xx xxxxxx xx.
+一度に最大 4 つの異なる広告キャンペーンのパフォーマンス データを表示できます。 **[More campaigns] (その他のキャンペーン)** をクリックして、表示するキャンペーンを選びます。 表示されているキャンペーンの横にあるマイナス記号をクリックして、そのキャンペーンを削除することもできます。
 
-### Xxxx xx xxxxxxx xxxxxxxx?
+### インストールの追跡とは
 
-Xxxxxxx xx xxxxxxx xx xxxxxxxx xxxxxxx **Xxxxxxx xxxx xxx** xx Xxx Xxxxxx xxxxxxxx xxxx-xxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxxx xx xxxxxxxxx xxxxx xxxx. Xx xxxxxxxxxxx xxx xxxxx xx xxxxx xxx xxx xxxx xxxxxx xx xx xxxxxxxxxx xx xxx xxx, xxx xxx xxxxx xxxxx xx xxx xx xxx xxxxxxx xxx xxx xxxx xxx Xxxxx. Xxxxx xxxxx, xx xxx xxxx xx xxxxxxxxxxx xxxxxxx xxxxxxxx xxxx xxxx xxx xxxxxx xx xx xx xxxxxxxx xxxxxx xxxxxxxx xxxx xxxx xxxx xxxxx xxxxxxx.
+デベロッパー センターで **[アプリの販売促進]** を通じてインストール広告キャンペーンを実行すると、アプリの宣伝を試みている開発者は、必要な公開範囲を拡大することができます。 広告インプレッションは、アプリに関心を持っている可能性が最も高いと思われるユーザーに表示され、ユーザーは広告をクリックして、ストアからアプリをインストールします。 これまでは、広告キャンペーンの結果行われたインストールと、その他のソースに由来するインストールを区別するのは困難でした。
 
-Xx xxxx xxx xxxxxxx Xxxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxx xxxx xxxx xxxxxxxxxx xxx xxxx xxxxxxxx xxxx xxxx xxxxxx xx xxxxxxx xxx xx xxxxxxxx. Xxxx xxxx xxxxxxxxxx xxxxxxxxx xxxx xxx x xxxxxx xxxxxxx xx xxx xx xxxxxxxx, xxx xxxx xxx xxxxxxx xxxxxxxxx xxxx xxxxx xxxxxxx.
+現在では、広告キャンペーンを実行して獲得したインストール数を開発者がわかるようにする、アプリのインストール キャンペーンのインストール レポートが有効になりました。 これは、広告キャンペーンの直接的な結果として発生したダウンロード数のみを表しており、他のソースからのダウンロードは含まれません。
 
-Xx xxxxxxxxxx xxxxxxxx xxx xxxxx xx xxxxxxxxx, xxxxxxxxxx xxx xxxxxxx xxx xxxx xxxxxx xx xxxxxxxxxx xxxx xxx xxxxx xxxxx xx xxxxxxxxx xxxxx xxxx. Xx xxxx xxxxx xx xxxxxxxxx xxx xxxx xx xxxxxxxxx x xxx xxxx xxxx xxx xxxxxxxx xxxxx xx xxxxx.
+開発者は、広告キャンペーンのインストールを監視することで、アプリの宣伝に費やした費用について真の投資効果を測定できます。 また、新しいユーザーを取得するコストと、ユーザーの生涯にわたる価値を比較することもできます。
 
-### Xxx xxx xxxxxxxx xxxxxxxx?
+### インストールの測定方法
 
-**Xxxxxxx xxxx xxx** xx xxxxxxxxx xxxxxxx xx xxxxxxxxxxx xxxxxx xxxxx xxxx. Xxxxx xxx xxx xxxxxxx xx xxx xx xxx xxxxxx xx xxxxxxx xxx xxx xx xxx xx xxx xxxx: xx xxxxxxxx xxx xx xx xxxxx xx xxxxxxx xxx xx xxxxxxxxxx.
+**[アプリの販売促進]** 広告キャンペーンにより、他のアプリ内で広告が表示されます。 広告が表示されたユーザーは、広告をクリックするか、表示された広告を見たことにより、アプリをインストールする可能性があります。
 
-Xx x xxxx xx xxxxx xx xx xxx xx xx xxx xxxxxxxx xxx xxx xxxxxx YY xxxxx -- xx xxxxxx xxxxxxxx xxx xx, xx xxxxxxxx xxxxx xx xxx Xxxxx xxxx xx xxx xxx -- xxxx xxxxxxx xx xxxxxxxxxx xx xxx xxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxx.
+ユーザーに広告が表示され、広告をクリックするかアプリのストア ページに直接移動して 24 時間以内にアプリをインストールした場合、そのインストールは、インプレッションを提供したキャンペーンに基づいて行われたと見なされます。
 
-Xx xxxxxxx xx xxxxxxx xx xxx Xxxxx -- xxxxxx xxxxx, xxxxxx, xxx XX -- xxxxx xx xxx xxxx xxx xxxxxxxxx xxx xxx. Xxx xxxxxxxxxxx xxxxxx xxxxxx xxxxx xxx xxx xxx xx xxx xx xxx xxxx xxxxxxxxxxx xx xxxxxxxxx xxx xxxxx xxx xxxxxx xxx xx xxxx xxx xxxxx xxx xxxxxxxxx xxx xxx. Xx xxxxx xxx xxx xxx xxxxxxx xx xx xxxxxxx, x xxx xxxxxxxxxxxx xxxx xx xxx:
+インストールは、電話、タブレット、PC 間で、アプリをインストールしたユーザーに基づいて、ストアで追跡されます。 広告エンジンは広告を表示したユーザーを追跡し、この情報を使って、広告を表示したユーザーを、アプリをインストールしたユーザーに関連付けます。 アプリのインストールをカウントするためには、いくつかの要件を満たす必要があります。
 
-1.  Xxx xxxx xxx xxx xxxxx xxx xx xxxxxxxxx.
-2.  Xxx xxxx xx xxxxxx xx xx x Xxxxxxxxx xxxxxxx.
-3.  Xxx xxxx xxxxx [XXXXX](http://go.microsoft.com/fwlink?LinkId=536558) xxxxxxxxxxxx (xxxxx xxxx xxx’x xxxx XXXXX xxxxxxxxxxxx xxxxxx xx xxxxxxx).
+1.  ユーザーは対象から除外されるように設定していない。
+2.  ユーザーは Microsoft アカウントにログインしている。
+3.  ユーザーは [COPPA](http://go.microsoft.com/fwlink?LinkId=536558) 要件を満たしている (COPPA 要件を満たしていないユーザーを追跡することはできません)。
 
-Xx x xxxxxx, xx xx xxxxxxxx xxx xxx xxxxxxx xxxxxxxx xxx *xxxxxxxxxxx* xxx xxxxxx xxxxxx xx xxxxxxxx xxxxxxxxx xx x **Xxxxxxx xxxx xxx** xxxxxxxx. Xxxxxx xxxx xxxx xxx xxxxx xxxxxx xx xxxxxxxxx xxx xx xxx xx xxxxxxxx xx xxx **Xxxxxxxxxxxx** xxxxxx xx Xxx Xxxxxx.
+この結果、アプリのインストールの追跡で、**アプリの販売促進**キャンペーンによって生成された実際のインストール数が、*少なく報告される*可能性があります。 アプリのダウンロードの合計数は、デベロッパー センターの **[取得]** レポートで表示されます。
 
-## Xxxxxxx xxxxxxx xxxxxxx
+## アカウントの支払い履歴
 
-Xxxx xxx xxx xxx xxx xx xxx xxxxxxxxxxxx xxxxxxxxxx xxxx xxxx xxxxxxx. Xxx xxxx xxxxxxxxxxx, xx xxxx xxx **Xxxxxxxxxxx xxxx**, xxx xxxxxxxxxxx **Xxxxxxxx xxxx**, xxx **Xxxxxxx xxxxxxxxxx** xxxxxxx, xxx xxx **Xxxxx xxxxxx** xx xxx xxxxxx.
+ここでは、アカウントに関連付けられたすべてのトランザクションを表示できます。 トランザクションごとに、**[Transaction date] (トランザクションの日付)**、適切な **[キャンペーン名]**、料金の **[支払い方法]**、料金の **[合計金額]** が表示されます。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxx xx xx xxxxxxxx xxx xxxx xxx](create-an-ad-campaign-for-your-app.md)
-* [Xxxxxxxx xxxx xx xxxxxxxx](managing-your-ad-campaign.md)
-* [Xxxxx xxxxx xxx](about-house-ads.md)
-* [Xxxxxx xxxxxxxxx](common-questions.md)
+* [アプリ向けの広告キャンペーンの作成](create-an-ad-campaign-for-your-app.md)
+* [広告キャンペーンの管理](managing-your-ad-campaign.md)
+* [自社広告について](about-house-ads.md)
+* [よく寄せられる質問](common-questions.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,28 +1,28 @@
 ---
-xxxxx: Xxxxxx xxx xxxxxxx xx xxx xxxxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxx xxx xxxxxxx xxxxxxxx xx xxxxx XXX xxxx, xxx xxx xx xxxxxxx xxxxx xxxxxxxx.
-xx.xxxxxxx: YXYYXYXY-XYXX-YXXY-YYXX-XYYYXYYYXYXY
+title: アプリ サービスの作成と利用
+description: 他の UWP アプリにサービスを提供できるユニバーサル Windows プラットフォーム (UWP) アプリを作成する方法と、それらのサービスを利用する方法について説明します。
+ms.assetid: 6E48B8B6-D3BF-4AE2-85FB-D463C448C9D3
 ---
 
-# Xxxxxx xxx xxxxxxx xx xxx xxxxxxx
+# アプリ サービスの作成と利用
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xxxxx xxx xx xxxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxx xxx xxxxxxx xxxxxxxx xx xxxxx XXX xxxx, xxx xxx xx xxxxxxx xxxxx xxxxxxxx.
+他の UWP アプリにサービスを提供できるユニバーサル Windows プラットフォーム (UWP) アプリを作成する方法と、それらのサービスを利用する方法について説明します。
 
-## Xxxxxx x xxx xxx xxxxxxx xxxxxxxx xxxxxxx
-
-
-Xx xxxx xxx-xx, xx'xx xxxxxx xxxxxxxxxx xx xxx xxxxxxxx xxx xxxxxxxxxx.
-
--   Xx Xxxxxxxxx Xxxxxx Xxxxxx YYYY, xxxxxx x xxx XXX xxx xxxxxxx xxx xxxx xx XxxXxxxxxxXxxxxxxx. (Xx xxx **Xxx Xxxxxxx** xxxxxx xxx, xxxxxx **Xxxxxxxxx &xx; Xxxxx Xxxxxxxxx &xx; Xxxxxx X\# &xx; Xxxxxxx &xx; Xxxxxxx Xxxxxxxxx &xx; Xxxxx xxx (Xxxxxxx Xxxxxxxxx)**). Xxxx xxxx xx xxx xxx xxxx xxxxxxxx xxx xxx xxxxxxx.
-
-## Xxx xx xxx xxxxxxx xxxxxxxxx xx xxxxxxx.xxxxxxxxxxxx
+## 新しいアプリ サービス プロバイダー プロジェクトの作成
 
 
-Xx xxx XxxXxxxxxxXxxxxxxx xxxxxxx'x Xxxxxxx.xxxxxxxxxxxx xxxx, xxx xxx xxxxxxxxx XxxXxxxxxx xxxxxxxxx xx xxx **&xx;Xxxxxxxxxxx&xx;** xxxxxxx. Xxxx xxxxxxx xxxxxxxxxx xxx `com.Microsoft.Inventory` xxxxxxx xxx xx xxxx xxxxxxxxxx xxxx xxx xx xx xxx xxxxxxx xxxxxxxx. Xxx xxxxxx xxxxxxx xxxx xx xxxxxxxxxxx xx x xxxxxxxxxx xxxx. Xxx xxx xxxxxxx xxx xxxxxxx xxx xxxxxxx xx xxxxx xxxx. Xx xxxxxxxxx xxxxx x xxxxxxx xxxxxx xxxx xxxxx xxx xxx xxxxxxx xxxx.
+このトピックでは、わかりやすくするためにすべてを 1 つのソリューションで作成します。
+
+-   Microsoft Visual Studio 2015 で、新しい UWP アプリ プロジェクトを作成し、これに AppServiceProvider という名前を付けます。 (**[新しいプロジェクト]** ダイアログ ボックスで、**[テンプレート] &gt; [他の言語] &gt; [Visual C\#] &gt; [Windows] &gt; [Windows ユニバーサル] &gt; [空のアプリケーション (Windows ユニバーサル)]** の順にクリックします)。 これは、アプリ サービスを提供するアプリです。
+
+## package.appxmanifest に、アプリ サービスの拡張機能を追加します。
+
+
+AppServiceProvider プロジェクトの Package.appxmanifest ファイルで、次の AppService 拡張機能を **&lt;Application&gt;** 要素に追加します。 この例では、`com.Microsoft.Inventory` サービスをアドバタイズし、このアプリをアプリ サービス プロバイダーとして識別します。 実際のサービスは、バックグラウンド タスクとして実装されます。 アプリ サービスのアプリは、サービスを他のアプリに公開します。 サービス名には逆のドメイン名スタイルを使うことをお勧めします。
 
 ``` syntax
 ... 
@@ -40,23 +40,23 @@ Xx xxx XxxXxxxxxxXxxxxxxx xxxxxxx'x Xxxxxxx.xxxxxxxxxxxx xxxx, xxx xxx xxxxxxxxx
 </Applications>
 ```
 
-Xxx **Xxxxxxxx** xxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxxx xx xx xxx xxxxxxx xxxxxxxx.
+**Category** 属性は、このアプリケーションをアプリ サービス プロバイダーとして識別します。
 
-Xxx **XxxxxXxxxx** xxxxxxxxx xxxxxxxxxx xxx xxxxx xxxx xxxxxxxxxx xxx xxxxxxx, xxxxx xx'xx xxxxxxxxx xxxx.
+**EntryPoint** 属性は、サービスを実装するクラスを識別します。これについては、次に実装します。
 
-## Xxxxxx xxx xxx xxxxxxx
+## アプリ サービスの作成
 
 
-1.  Xx xxx xxxxxxx xx xxxxxxxxxxx xx x xxxxxxxxxx xxxx. Xxxx xxxxxxx x xxxxxxxxxx xxxxxxxxxxx xx xxxxxx xx xxx xxxxxxx xx xxxxxxx xxxxxxxxxxx xx xxxxxxx xxxxx xxxxxx xxx xxxxxx. Xxx x xxx Xxxxxxx Xxxxxxx Xxxxxxxxx xxxxxxx xx xxx xxxxxxxx (**Xxxx &xx; Xxx &xx; Xxx Xxxxxxx**) xxxxx XxXxxXxxxxxx. (Xx xxx **Xxx Xxx Xxxxxxx** xxxxxx xxx, xxxxxx **Xxxxxxxxx &xx; Xxxxx Xxxxxxxxx &xx; Xxxxxx X\# &xx; Xxxxxxx &xx; Xxxxxxx Xxxxxxxxx &xx; Xxxxxxx Xxxxxxx Xxxxxxxxx (Xxxxxxx Xxxxxxxxx)**
-2.  Xx xxx XxxXxxxxxxXxxxxxxx xxxxxxx, xxx x xxxxxxxxx xx xxx XxXxxXxxxxxx xxxxxxx.
-3.  Xx xxx XxxxxXxxxxxx xxxxxxx, xxx xxx xxxxxxxxx **xxxxx** xxxxxxxxxx xx xxx xxx xx XxxxxY.xx:
+1.  アプリ サービスは、バックグラウンド タスクとして実装されます。 これにより、フォアグラウンド アプリケーションは、背後でタスクを実行する、別のアプリケーションのアプリ サービスを呼び出すことができます。 MyAppService という名前の新しい Windows ランタイム コンポーネント プロジェクトをソリューションに追加 (**[ファイル] &gt; [追加] &gt; [新しいプロジェクト]**) します。 (**[新しいプロジェクトの追加]** ダイアログ ボックスで、**[インストール済み] &gt; [他の言語] &gt; [Visual C#] &gt; [Windows] &gt; [Windows ユニバーサル] &gt; [Windows ランタイム コンポーネント (Windows ユニバーサル)]** の順に選びます)。
+2.  AppServiceProvider プロジェクトで、MyAppService プロジェクトへの参照を追加します。
+3.  MyappService プロジェクトで、Class1.cs の上部に、次の **using** ステートメントを追加します。
     ```cs
     using Windows.ApplicationModel.AppService;
     using Windows.ApplicationModel.Background;
     using Windows.Foundation.Collections;
     ```
 
-4.  Xxxxxxx xxx xxxx xxxx xxx **XxxxxY** xxxx x xxx xxxxxxxxxx xxxx xxxxx xxxxx **Xxxxxxxxx**:
+4.  **Class1** のスタブ コードを、**Inventory** という名前の新しいバックグラウンド タスク クラスに置き換えます。
 
     ```cs
     public sealed class Inventory : IBackgroundTask
@@ -92,16 +92,16 @@ Xxx **XxxxxXxxxx** xxxxxxxxx xxxxxxxxxx xxx xxxxx xxxx xxxxxxxxxx xxx xxxxxxx, x
     }
     ```
 
-    Xxxx xxxxx xx xxxxx xxx xxx xxxxxxx xxxx xx xxx xxxx.
+    このクラスは、アプリ サービスが作業を実行する場所です。
 
-    **Xxx()** xx xxxxxx xxxx xxx xxxxxxxxxx xxxx xx xxxxxxx. Xxxxxxx xxxxxxxxxx xxxxx xxx xxxxxxxxxx xxxxx **Xxx** xxxxxxxxx, xxx xxxx xxxxx x xxxxxxxx xx xxxx xxx xxxxxxxxxx xxxx xxxx xxxx xx xx xxxxx xxxxxxxx.
+    バックグラウンド タスクが作成されると、**Run()** が呼び出されます。 バックグラウンド タスクは **Run** が完了すると終了するため、バックグラウンド タスクが要求に引き続き対応できるように、コードは保留されます。
 
-    **XxXxxxXxxxxxxx()** xx xxxxxx xxxx xxx xxxx xx xxxxxxxx. Xxx xxxx xx xxxxxxxxx xxxx xxx xxxxxx xxx xxxxxxxx xxx [**XxxXxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn921704), xxx xxxxxx xxx xx xxxxxxxxx, xxx XX xx xxxx xxxx xx xxxxxx, xx xxx XX xxxx xxx xx xxxxxxxxx xx xxx xxx xxxx.
+    タスクが取り消されると、**OnTaskCanceled()** が呼び出されます。 タスクが取り消されるのは、クライアント アプリが [**AppServiceConnection**](https://msdn.microsoft.com/library/windows/apps/dn921704) を破棄したとき、クライアント アプリが中断されたとき、OS がシャットダウンまたはスリープ状態になったとき、または OS がリソース不足になりタスクを実行できなくなったときです。
 
-## Xxxxx xxx xxxx xxx xxx xxx xxxxxxx
+## アプリ サービスのコードを記述する
 
 
-**XxXxxxxxxxxXxxxxxxx()** xx xxxxx xxx xxxx xxx xxx xxx xxxxxxx xxxx. Xxxxxxx xxx xxxx **XxXxxxxxxxxXxxxxxxx()** xx XxXxxXxxxxxx'x XxxxxY.xx xxxx xxx xxxx xxxx xxxx xxxxxxx. Xxxx xxxx xxxx xx xxxxx xxx xx xxxxxxxxx xxxx xxx xxxxxx xx, xxxxx xxxx x xxxxxxx xxxxxx, xx xxx xxxxxxx xx xxxxxxxx xxx xxxx xxx xxx xxxxx xx xxx xxxxxxxxx xxxxxxxxx xxxx. Xxxxx xxxxxxxx xxxx xxx xxxx xxxxxxx xxx xxxxxxx.
+**OnRequestedReceived()** は、アプリ サービスのコードが配置される場所です。 MyAppService の Class1.cs のスタブ **OnRequestedReceived()** を、次の例のコードに置き換えます。 このコードは、インベントリの項目のインデックスを取得し、コマンド文字列と共にサービスに渡して、指定したインベントリ項目の名前と価格を取得します。 エラー処理コードは、簡略にするために削除されています。
 
 ```cs
 private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequestReceivedEventArgs args)
@@ -153,37 +153,39 @@ private async void OnRequestReceived(AppServiceConnection sender, AppServiceRequ
 }
 ```
 
-Xxxx xxxx **XxXxxxxxxxxXxxxxxxx()** xx **xxxxx** xxxxxxx xx xxxx xx xxxxxxxxx xxxxxx xxxx xx [**XxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn921722) xx xxxx xxxxxxx.
+**OnRequestedReceived()** が **async** であることに注意してください。この例では、[**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) への待機可能なメソッド呼び出しを行うためです。
 
-X xxxxxxxx xx xxxxx xx xxxx xxx xxxxxxx xxx xxx **xxxxx** xxxxxxx xx xxx XxXxxxxxxXxxxxxxx xxxxxxx. Xx xxxxxxx xxxx xxx xxxx xx XxXxxxxxxXxxxxxxx xxxx xxx xxxxxxxx xxxxx xx xx xxxx xxxxxxxxxx xxx xxxxxxx. [
-            **XxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn921722) xx xxxx xx xxxx x xxxxxxxx xxxxxxxxx xxx xxxxxxxxxx. **XxxxXxxxxxxxXxxxx** xxxx xxx xxxxxx xxx xxxxxxxxxx xx xxx xxxx. Xx xx xxx xxxxxxxxxx xx xxx xxxxxxxx xxxx xxxxxxx xx [**XxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn921712) xxxx XxXxxxxxxXxxxxxxx xxx xxxxxxxxx.
+保留が行われるのは、サービスが OnRequestReceived ハンドラーで **async** メソッドを使用できるようにするためです。 これにより、OnRequestReceived への呼び出しは、メッセージの処理が完了するまで完了しません。 [**SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) は、完了と共に応答を送信するために使われます。 **SendResponseAsync** は、呼び出しの完了時に通知しません。 OnRequestReceived が完了したことを [**SendMessageAsync**](https://msdn.microsoft.com/library/windows/apps/dn921712) に通知するのは、保留の完了時です。
 
-Xxx xxxxxxxx xxx x [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn636131) xx xxxxxxxx xxxxxxxxxxx. Xxx xxxx xx xxx xxxx xxx xxx xxxx xx xxxx xxxxxxx xx xxxxxx xxxxxxxxx. Xxxxx xxx xx xxxxxxxxxx xxxx xxx xxx xx xxx xx xxxx **XxxxxXxx**. Xxx xxxx xxxxxxxxx xxxxx xxx xxxxxx xxx xxxx xxx xx xxxxxx xxx xxxxxxxx xxx xxxx xxx xxxxxxx. Xxx xxxxxx xxxx xx xxxxxxx xxxx xxxx xxxxxxxx xx xxxx. Xx xxxx xxxxxxx, xx xxxx xxxxxx x xxx xxxxx "Xxxxxxx" xxxx xxx x xxxxx xxxx xxxxxxxxx xxxxxxx xx xxxx xxx xxx xxxxxxx xx xxxxxxx xxx xxxx xx xxx xxxxxxxxx xxxx xx xxx xxxxx. Xxx xxxxx xx xxx xxxxxxxxx xxxx xx xxxxxx xxxxx xxx "XX" xxx. Xxx xxxxxx xxxxx xx xxxxxx xxxxx xxx "Xxxxxx" xxx.
+アプリ サービスは [**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) を使って情報を交換します。 渡すことができるデータのサイズは、システム リソースによってのみ制限されます。 **ValueSet** で使うことができる定義済みのキーはありません。 アプリ サービスのプロトコルの定義に使うキーの値を決定する必要があります。 呼び出し元は、そのプロトコルを念頭に置いて記述する必要があります。 この例では、アプリ サービスがインベントリ項目またはその価格の名前を提供するかどうかを示す値を持つ、"Command" という名前のキーを選びました。 インベントリ名のインデックスは、"ID" キーに保存されています。 戻り値は "Result" キーに保存されます。
 
-Xx [**XxxXxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn921703) xxxx xx xxxxxxxx xx xxx xxxxxx xx xxxxxxxx xxxxxxx xxx xxxx xx xxx xxx xxxxxxx xxxxxxxxx xx xxxxxx. Xx xxxxxxx xx xxx xxx xxxx xx xxx xxx xxxxxxx xxxxx xxxx xx xx xxx XX xxxxxx xxx xxxxxxx xxxxxxxx, xxxxxxxxx xxx xxxxxxxx, xxx xx xxxxx. Xxx xxx xxxxxx xxxxxxxxxx xxxxx xxxxxxxxxxx xxx xxx [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn636131). Xx xxxx xxxxxxx, xx xxx x xxx xxxxx "Xxxxxx" xx xxxxxx xxxx xxxxxxxx xxxxx xxxxxxxxxxx xx xxx xxxxxx.
+[
+            **AppServiceClosedStatus**](https://msdn.microsoft.com/library/windows/apps/dn921703) 列挙体が呼び出し元に返され、アプリ サービスの呼び出した成功したか失敗したかを示します。 アプリ サービスへの呼び出しが失敗する例として、OS がサービスのエンドポイントを中止した、リソースが超過したなどがあります。 [
+            **ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) を通じて、さらにエラー情報を取得することができます。 この例では、"Status" という名前のキーを使って、より詳細なエラー情報を呼び出し元に返します。
 
-Xxx xxxx xx [**XxxxXxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn921722) xxxxxxx xxx [**XxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn636131) xx xxx xxxxxx.
+[
+            **SendResponseAsync**](https://msdn.microsoft.com/library/windows/apps/dn921722) の呼び出しからは、[**ValueSet**](https://msdn.microsoft.com/library/windows/apps/dn636131) が呼び出し元に返されます。
 
-## Xxxxxx xxx xxxxxxx xxx xxx xxx xxx xxxxxxx xxxxxx xxxx
-
-
-Xxx xxx xxxxxxx xxxxxxxx xxx xxxx xx xxxxxxxx xxxxxx xxx xxx xxxx xx xxxx x xxxxxx. Xxx xxxx xxxx xxxx xxx xxxxxxx xxxxxx xxxx xx xxx xxx xxxxxxx xxx xx xxxxx xx xxxx xx.
-
--   Xxx xxx xx xxx xxx xxxxxxx xxxxxx xxxx xx xxx xxx xxxxxxx xxxxxxxxxxx xx xx xxxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxx.Xxxxxxx.Xx.XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224670) xxxx xxxxxx xxx **XxxXxxxxxxXxxxxxxx** xxxxxxx (xxx xxxxxxx, xxxx `public App()` xx Xxx.xxxx.xx) xxx xxxx xxx xxxxxx. Xx xxx XxxXxxxxxxXxxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx, xxx xx xx xxx xxxxxxx xxxxxxx xx xxx Xxxxxxxx Xxxxxxxx xxxxxx xxx xxx xxx xxxxxxx.
--   Xxxxxxx xxx xx xxx xxx xxxxxxx xxxxxx xxxx xx xx xxxxxx xxx xxxxxxxx (**Xxxxx &xx; Xxxxxx xxxxxxxx**) xxx xxxx xxx xxxx xxxxxxx xxxx xx xxx xxxxxx xxxxxx (**Xxxx &xx; Xxxxxx**). Xxx xxxx xxxxxx xxx xxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxx xx xxx xxxxxx xxxxxx xx xxxxxx xxx xxxxxxx xxxx. Xxx xxxxxxx, xx xxx xxxx xxxxxxx xxxx xxxxxxxx xx xxx xxxxxx xxxxxx xxx "YxxYYYYx-YxxY-YxYY-xxxY-YYxYYxYxxYxY\_Y.Y.Y.Y\_xYY\_\_xxYxxYYxxYYxx", xxx xxxxx xxxxxxx "Y.Y.Y.Y\_xYY\_\_" xxxxxxx "YxxYYYYx-YxxY-YxYY-xxxY-YYxYYxYxxYxY\_xxYxxYYxxYYxx" xx xxx xxxxxxx xxxxxx xxxx.
-
-## Xxxxx x xxxxxx xx xxxx xxx xxx xxxxxxx
+## サービス アプリを展開して、パッケージ ファミリ名を取得する
 
 
-1.  Xxx x xxx xxxxx Xxxxxxx Xxxxxxxxx xxx xxxxxxx xx xxx xxxxxxxx (**Xxxx &xx; Xxx &xx; Xxx Xxxxxxx**) xxxxx XxxxxxXxx. (Xx xxx **Xxx Xxx Xxxxxxx** xxxxxx xxx, xxxxxx **Xxxxxxxxx &xx; Xxxxx xxxxxxxxx &xx; Xxxxxx X\# &xx; Xxxxxxx &xx; Xxxxxxx Xxxxxxxxx &xx; Xxxxx Xxx (Xxxxxxx Xxxxxxxxx)**).
-2.  Xx xxx XxxxxxXxx xxxxxxx, xxx xxx xxxxxxxxx **xxxxx** xxxxxxxxx xx xxx xxx xx XxxxXxxx.xxxx.xx:
+クライアントから呼び出す前に、アプリ サービス プロバイダーのアプリを展開する必要があります。 これを呼び出すには、アプリ サービスのアプリのパッケージ ファミリ名も必要になります。
+
+-   アプリ サービスのアプリのパッケージ ファミリ名を取得する 1 つの方法は、**AppServiceProvider** プロジェクト内から (たとえば、App.xaml.cs の `public App()` から) [**Windows.ApplicationModel.Package.Current.Id.FamilyName**](https://msdn.microsoft.com/library/windows/apps/br224670) を呼び出し、結果をメモします。 Microsoft Visual Studio で AppServiceProvider を実行するには、ソリューション エクスプローラー ウィンドウで、スタートアップ プロジェクトとして設定し、プロジェクトを実行します。
+-   パッケージ ファミリ名を取得する別の方法として、ソリューションを配置し (**[ビルド] &gt; [ソリューションの配置]**)、出力ウィンドウで完全なパッケージ名をメモします (**[表示] &gt; [出力]**)。 パッケージ名を派生するには、出力ウィンドウの文字列からプラットフォーム情報を削除する必要があります。 たとえば、完全なパッケージ名が出力ウィンドウで "9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_1.0.0.0\_x86\_\_yd7nk54bq29ra" と報告された場合、"1.0.0.0\_x86\_\_" を削除し、"9fe3058b-3de0-4e05-bea7-84a06f0ee4f0\_yd7nk54bq29ra" がパッケージ ファミリ名となります。
+
+## アプリ サービスを呼び出すクライアントを作成する
+
+
+1.  ClientApp という名前の新しい空の Windows ユニバーサル アプリ プロジェクトをソリューションに追加 (**[ファイル] &gt; [追加] &gt; [新しいプロジェクト]**) します。 (**[新しいプロジェクトの追加]** ダイアログ ボックスで、**[インストール済み] &gt; [他の言語] &gt; [Visual C\#] &gt; [Windows] &gt; [Windows ユニバーサル] &gt; [空のアプリ (Windows ユニバーサル)]** の順に選びます)。
+2.  ClientApp プロジェクトで、MainPage.xaml.cs の上部に、次の **using** ステートメントを追加します。
     ```cs
     >using Windows.ApplicationModel.AppService;
     ```
 
-3.  Xxx x xxxx xxx xxx x xxxxxx xx XxxxXxxx.xxxx.
-4.  Xxx x xxxxxx xxxxx xxxxxxx xxx xxx xxxxxx xxx xxx xxx xxxxxxx **xxxxx** xx xxx xxxxxx xxxxxxx'x xxxxxxxxx.
-5.  Xxxxxxx xxx xxxx xx xxxx xxxxxx xxxxx xxxxxxx xxxx xxx xxxxxxxxx xxxx. Xx xxxx xx xxxxxxx xxx `inventoryService` xxxxx xxxxxxxxxxx.
+3.  テキスト ボックスとボタンを MainPage.xaml に追加します。
+4.  ボタンのクリック ハンドラーを追加し、ボタン ハンドラーの署名にキーワード **async** を追加します。
+5.  ボタンのクリック ハンドラーのスタブを、次のコードで置き換えます。 必ず、`inventoryService` フィールドの宣言を含めます。
 
    ```cs
    private AppServiceConnection inventoryService;
@@ -375,15 +377,19 @@ namespace MyAppService
 }
 ```
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
 
-* [Xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxx](support-your-app-with-background-tasks.md)
+* [バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)
+
+ 
 
  
 
- 
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

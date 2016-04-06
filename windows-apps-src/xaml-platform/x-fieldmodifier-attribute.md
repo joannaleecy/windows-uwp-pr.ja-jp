@@ -1,33 +1,37 @@
 ---
-xxxxxxxxxxx: Xxxxxxxx XXXX xxxxxxxxxxx xxxxxxxx, xxxx xxxx xxxxxx xxx xxxxx xxxxxx xxxxxxxxxx xxx xxxxxxx xxxx xxxxxx xxxxxx xxxxxx xxxx xxx xxxxxxx xxxxxxx xxxxxxxx.
-xxxxx: xXxxxxXxxxxxxx xxxxxxxxx
-xx.xxxxxxx: YXXXXYYX-YYYX-YYYY-YXYX-YYYXXYYYYXXX
+description: Modifies XAML compilation behavior, such that fields for named object references are defined with public access rather than the private default behavior.
+title: xFieldModifier attribute
+ms.assetid: 6FBCC00B-848D-4454-8B1F-287CA8406DDF
 ---
 
-# x:XxxxxXxxxxxxx xxxxxxxxx
+# x:FieldModifier attribute
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxxxx XXXX xxxxxxxxxxx xxxxxxxx, xxxx xxxx xxxxxx xxx xxxxx xxxxxx xxxxxxxxxx xxx xxxxxxx xxxx **xxxxxx** xxxxxx xxxxxx xxxx xxx **xxxxxxx** xxxxxxx xxxxxxxx.
+Modifies XAML compilation behavior, such that fields for named object references are defined with **public** access rather than the **private** default behavior.
 
-## XXXX xxxxxxxxx xxxxx
+## XAML attribute usage
 
 ``` syntax
 <object x:FieldModifier="public".../>
 ```
 
-## Xxxxxxxxxxxx
+## Dependencies
 
-[x:Xxxx xxxxxxxxx](x-name-attribute.md) xxxx xxxx xx xxxxxxxx xx xxx xxxx xxxxxxx.
+[x:Name attribute](x-name-attribute.md) must also be provided on the same element.
 
-## Xxxxxxx
+## Remarks
 
-Xxx xxxxx xxx xxx **x:XxxxxXxxxxxxx** xxxxxxxxx xxxx xxxx xx xxxxxxxxxxx xxxxxxxx. Xxx xxxxxx xx xxx xxxx xxxxxx xx xxx xxxx xxxxxxxx xxxxxxxxxx xxx **XxxxXxxXxxxxxxx** xxx xxx xxxx xxxxxxxxxx xx xxxxxxx xx xxxxxx xxx xxxxxxxx xxx **XxxxXxxxxxxxxx.Xxxxxx** xxx **XxxxXxxxxxxxxx.XxxXxxxxx**. Xxx X#, Xxxxxxxxx Xxxxxx Xxxxx xx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX), xxx xxx xxxx xxx xxxxxx xxxxx "xxxxxx" xx "Xxxxxx"; xxx xxxxxx xxxxx'x xxxxxxx xxxx xx xxxx xxxxxxxxx xxxxx.
+The value for the **x:FieldModifier** attribute will vary by programming language. The string to use will depend on how each language implements its **CodeDomProvider** and the type converters it returns to define the meanings for **TypeAttributes.Public** and **TypeAttributes.NotPublic**. For C#, Microsoft Visual Basic or Visual C++ component extensions (C++/CX), you can give the string value "public" or "Public"; the parser doesn't enforce case on this attribute value.
 
-Xxx xxx xxxx xxxxxxx **XxxXxxxxx** (**xxxxxxxx** xx X# xx X++/XX, **Xxxxxx** xx Xxxxxx Xxxxx) xxx xxxx xx xxxxxxxx. Xxxxxxxx xxxxxx xxxxx'x xxxx xxx xxxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx XXXX xxxx xxxxxxxxxx xxxxx. Xxxxxxx xxxxxx xx xxx xxxxxxx.
+You can also specify **NonPublic** (**internal** in C# or C++/CX, **Friend** in Visual Basic) but this is uncommon. Internal access doesn't have any application to the Windows Runtime XAML code generation model. Private access is the default.
 
-**x:XxxxxXxxxxxxx** xx xxxx xxxxxxxx xxx xxxxxxxx xxxx xx [x:Xxxx xxxxxxxxx](x-name-attribute.md), xxxxxxx xxxx xxxx xx xxxx xx xxxxxxxxx xxx xxxxx xxxx xx xx xxxxxx.
+**x:FieldModifier** is only relevant for elements with an [x:Name attribute](x-name-attribute.md), because that name is used to reference the field once it is public.
 
-**Xxxx**  Xxxxxxx Xxxxxxx XXXX xxxxx'x xxxxxxx **x:XxxxxXxxxxxxx** xx **x:Xxxxxxxx**.
+**Note**  Windows Runtime XAML doesn't support **x:ClassModifier** or **x:Subclass**.
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

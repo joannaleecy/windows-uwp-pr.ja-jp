@@ -1,135 +1,139 @@
 ---
-xx.xxxxxxx: XYXYXYYX-YYYY-YXYY-XYXX-YXYYYYYYXYYY
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxx xxx xxx xx xxx xxx XxxxxXxxxxxxxxxXxxxxxx xxx x xxxxxxxxxx xxxx xx xxxxxxx xxxxx xxxxx xx xxx xxxxxxxxxx.
-xxxxx: Xxxxxxx xxxxx xxxxx xx xxx xxxxxxxxxx
+ms.assetid: B5E3A66D-0453-4D95-A3DB-8E650540A300
+description: This article shows you how to use the MediaProcessingTrigger and a background task to process media files in the background.
+title: Process media files in the background
 ---
 
-# Xxxxxxx xxxxx xxxxx xx xxx xxxxxxxxxx
+# Process media files in the background
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xxxxxxx xxxxx xxx xxx xx xxx xxx [**XxxxxXxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn806005) xxx x xxxxxxxxxx xxxx xx xxxxxxx xxxxx xxxxx xx xxx xxxxxxxxxx.
+This article shows you how to use the [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) and a background task to process media files in the background.
 
-Xxx xxxxxxx xxx xxxxxxxxx xx xxxx xxxxxxx xxxxxx xxx xxxx xx xxxxxx xx xxxxx xxxxx xxxx xx xxxxxxxxx xxx xxxxxxx xx xxxxxx xxxx xxx xxx xxxxxxxxxxx xxxxxx. Xxxx, x xxxxxxxxxx xxxx xx xxxxxxxx xx xxxxxxx xxx xxxxxxxxxxx xxxxxxxxx. Xxx [**XxxxxXxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn806005) xx xxxxxxxx xx xxxxxxx xxxx xxxxxxxxx xxxxx xxxxxxxxxx xxxxxxxxx xxxxxxx xxxxxxxxxxx, xxxxxxxxx xxxxxxxxx xxxxx xxxxxxxxxxxx xx xxxx xxx xxxxxxxxx xxxxxxxxx xxxxx xxxxx xxxxx xxxxxxxxxx xx xxxxxxxx.
+The example app described in this article allows the user to select an input media file to transcode and specify an output file for the transcoding result. Then, a background task is launched to perform the transcoding operation. The [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) is intended to support many different media processing scenarios besides transcoding, including rendering media compositions to disk and uploading processed media files after processing is complete.
 
-Xxx xxxx xxxxxxxx xxxxxxxxxxx xx xxx xxxxxxxxx Xxxxxxxxx Xxxxxxx xxx xxxxxxxx xxxxxxxx xx xxxx xxxxxx, xxx:
+For more detailed information on the different Universal Windows app features utilized in this sample, see:
 
--   [Xxxxxxxxx xxxxx xxxxx](transcode-media-files.md)
--   [Xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt227652)
--   [Xxxxx xxxxxx xxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185606)
+-   [Transcode media files](transcode-media-files.md)
+-   [Launching resuming and background tasks](https://msdn.microsoft.com/library/windows/apps/mt227652)
+-   [Tiles badges and notifications](https://msdn.microsoft.com/library/windows/apps/mt185606)
 
-## Xxxxxx x xxxxx xxxxxxxxxx xxxxxxxxxx xxxx
+## Create a media processing background task
 
-Xx xxx x xxxxxxxxxx xxxx xx xxxx xxxxxxxx xxxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx, Xxxxx x xxxx xxx xxxx xxxx
+To add a background task to your existing solution in Microsoft Visual Studio, Enter a name for your comp
 
-1.  Xxxx xxx **Xxxx** xxxx, xxxxxx **Xxx** xxx xxxx **Xxx Xxxxxxx...**.
-2.  Xxxxxx xxx xxxxxxx xxxx **Xxxxxxx Xxxxxxx Xxxxxxxxx (Xxxxxxxxx Xxxxxxx)**.
-3.  Xxxxx x xxxx xxx xxxx xxx xxxxxxxxx xxxxxxx. Xxxx xxxxxxx xxxx xxx xxxxxxx xxxx **XxxxxXxxxxxxxxxXxxxxxxxxxXxxx**.
-4.  Xxxxx XX.
+1.  From the **File** menu, select **Add** and then **New Project...**.
+2.  Select the project type **Windows Runtime Component (Universal Windows)**.
+3.  Enter a name for your new component project. This example uses the project name **MediaProcessingBackgroundTask**.
+4.  Click OK.
 
-Xx **Xxxxxxxx Xxxxxxxx**, xxxxx-xxxxx xxx xxxx xxx xxx "XxxxxY.xx" xxxx xxxx xx xxxxxxx xx xxxxxxx xxx xxxxxx **Xxxxxx**. Xxxxxx xxx xxxx xx "XxxxxXxxxxxxxxxXxxx.xx". Xxxx Xxxxxx Xxxxxx xxxx xx xxx xxxx xx xxxxxx xxx xx xxx xxxxxxxxxx xx xxxx xxxxx, xxxxx **Xxx**.
+In **Solution Explorer**, right-click the icon for the "Class1.cs" file that is created by default and select **Rename**. Rename the file to "MediaProcessingTask.cs". When Visual Studio asks if you want to rename all of the references to this class, click **Yes**.
 
-Xx xxx xxxxxxx xxxxx xxxx, xxx xxx xxxxxxxxx **xxxxx** xxxxxxxxxx xx xxxxxxx xxxxx xxxxxxxxxx xx xxxx xxxxxxx.
+In the renamed class file, add the following **using** directives to include these namespaces in your project.
                                   
-[!xxxx-xx[XxxxxxxxxxXxxxx](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundUsing)]
+[!code-cs[BackgroundUsing](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundUsing)]
 
-Xxxxxx xxxx xxxxx xxxxxxxxxxx xx xxxx xxxx xxxxx xxxxxxx xxxx [**XXxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224794).
+Update your class declaration to make your class inherit from [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794).
 
-[!xxxx-xx[XxxxxxxxxxXxxxx](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundClass)]
+[!code-cs[BackgroundClass](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundClass)]
 
-Xxx xxx xxxxxxxxx xxxxxx xxxxxxxxx xx xxxx xxxxx:
+Add the following member variables to your class:
 
--   Xx [**XXxxxxxxxxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224797) xxxx xxxx xx xxxx xx xxxxxx xxx xxxxxxxxxx xxx xxxx xxx xxxxxxxx xx xxx xxxxxxxxxx xxxx.
--   X [**XxxxxxxxxxXxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700499) xxxx xxxxx xxx xxxxxx xxxx xxxxxxxx xxxx xxxx xxxxxxxxxx xxxx xxxxx xxxxx xxxxxxxxxxx xx xxxxx xxxxxxxxx xxxxxxxxxxxxxx.
--   X **XxxxxxxxxxxxXxxxxXxxxxx** xxxxxx xxxx xxx xx xxxx xx xxxxxx xxx xxxxxxxxxxxx xxxxxxxxxxx xxxxxxxxx.
--   Xxx [**XxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207080) xxxxxx xxxx xxxx xx xxxx xx xxxxxxxxx xxxxx xxxxx.
+-   An [**IBackgroundTaskInstance**](https://msdn.microsoft.com/library/windows/apps/br224797) that will be used to update the foreground app with the progress of the background task.
+-   A [**BackgroundTaskDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700499) that keeps the system from shutting down your background task while media transcoding is being performed asynchronously.
+-   A **CancellationTokenSource** object that can be used to cancel the asynchronous transcoding operation.
+-   The [**MediaTranscoder**](https://msdn.microsoft.com/library/windows/apps/br207080) object that will be used to transcode media files.
 
-[!xxxx-xx[XxxxxxxxxxXxxxxxx](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
+[!code-cs[BackgroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetBackgroundMembers)]
 
-Xxx xxxxxx xxxxx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/br224811) xxxxxx xx x xxxxxxxxxx xxxx xxxx xxx xxxx xx xxxxxxxx. Xxx xxx [**XXxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224794) xxxxxx xxxxxx xxxx xxx xxxxxx xx xxx xxxxxxxxxxxxx xxxxxx xxxxxxxx. Xxxxxxxx x xxxxxxx xxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224798) xxxxx, xxxxx xxxx xx xxxxxx xx xxx xxxxxx xxxxx xx xxxx xxxx xxx xxxxxxxxxx xxxx. Xxxx, xxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224800) xxxxxxxx xx xxxx.
+The system calls [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method of a background task when the task is launched. Set the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) object passed into the method to the corresponding member variable. Register a handler for the [**Canceled**](https://msdn.microsoft.com/library/windows/apps/br224798) event, which will be raised if the system needs to shut down the background task. Then, set the [**Progress**](https://msdn.microsoft.com/library/windows/apps/br224800) property to zero.
 
-Xxxx, xxxx xxx xxxxxxxxxx xxxx xxxxxx'x [**XxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700507) xxxxxx xx xxxxxx x xxxxxxxx. Xxxx xxxxx xxx xxxxxx xxx xx xxxx xxxx xxxx xxxx xxxxxxx xxx xxx xxxxxxxxxx xxxxxxxxxxxx xxxxxxxxxx.
+Next, call the background task object's [**GetDeferral**](https://msdn.microsoft.com/library/windows/apps/hh700507) method to obtain a deferral. This tells the system not to shut down your task because you are performing asynchronous operations.
 
-Xxxx, xxxx xxx xxxxxx xxxxxx **XxxxxxxxxXxxxXxxxx**, xxxxx xx xxxxxxx xx xxx xxxx xxxxxxx. Xx xxxx xxxxxxxxx xxxxxxxxxxxx, x xxxxxx xxxxxx xx xxxxxx xx xxxxxx x xxxxx xxxxxxxxxxxx xx xxxxx xxx xxxx xxxx xxxxxxxxxxx xx xxxxxxxx.
+Next, call the helper method **TranscodeFileAsync**, which is defined in the next section. If that completes successfully, a helper method is called to launch a toast notification to alert the user that transcoding is complete.
 
-Xx xxx xxx xx xxx **Xxx** xxxxxx, xxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700504) xx xxx xxxxxxxx xxxxxx xx xxx xxx xxxxxx xxxx xxxx xxxx xxxxxxxxxx xxxx xx xxxxxxxx xxx xxx xx xxxxxxxxxx.
+At the end of the **Run** method, call [**Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) on the deferral object to let the system know that your background task is complete and can be terminated.
 
-[!xxxx-xx[Xxx](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetRun)]
+[!code-cs[Run](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetRun)]
 
-Xx xxx **XxxxxxxxxXxxxXxxxx** xxxxxx xxxxxx, xxx xxxx xxxxx xxx xxx xxxxx xxx xxxxxx xxxxx xxx xxx xxxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxx xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241622) xxx xxxx xxx. Xxxxx xxxxxx xxxx xx xxx xx xxxx xxxxxxxxxx xxx. Xxxxxx x [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxx xxx xxx xxxxx xxx xxxxxx xxxxx xxx xxxx xxxxxx xx xxxxxxxx xxxxxxx xx xxx xxx xxxxxxxxxxx.
+In the **TranscodeFileAsync** helper method, the file names for the input and output files for the transcoding operations are retrieved from the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) for your app. These values will be set by your foreground app. Create a [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) object for the input and output files and then create an encoding profile to use for transcoding.
 
-Xxxx [**XxxxxxxXxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700936), xxxxxxx xx xxx xxxxx xxxx, xxxxxx xxxx, xxx xxxxxxxx xxxxxxx. Xxx [**XxxxxxxXxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700941) xxxxxx xxxxxxxx xxxx xxxx xxxx xxxx xxx xxxx xx xxxxxxxxxxx xxx xx xxxxxxxxx. Xx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700942) xxxxxxxx xx xxxx, xxxx [**XxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700946) xx xxxxxxx xxx xxxxxxxxxxx xxxxxxxxx.
+Call [**PrepareFileTranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700936), passing in the input file, output file, and encoding profile. The [**PrepareTranscodeResult**](https://msdn.microsoft.com/library/windows/apps/hh700941) object returned from this call lets you know if transcoding can be performed. If the [**CanTranscode**](https://msdn.microsoft.com/library/windows/apps/hh700942) property is true, call [**TranscodeAsync**](https://msdn.microsoft.com/library/windows/apps/hh700946) to perform the transcoding operation.
 
-Xxx **XxXxxx** xxxxxx xxxxxxx xxx xx xxxxx xxx xxxxxxxx xxx xxxxxxxxxxxx xxxxxxxxx xx xxxxxx xx. Xxxxxx x xxx **Xxxxxxxx** xxxxxx, xxxxxxxxxx xxx xxxxx xx xxxxxxxx xxx xxxxxx xxx xxx xxxx xx xxx xxxxxx xxxx xxxx xx xxxxxx xx xxxxxx xxx xx xxx xxxxxxx xxxxxxxx xx xxx xxxx. Xxxx xxx **Xxxxxxxx** xxxxxx xxxx xxx **XxXxxx** xxxxxx xxxxx xxxx xxx xxxxxxxxxxxx xxxxx xxxx xxxxxx xxx xx xxxxxx xxx xxxx.
+The **AsTask** method enables you to track the progress the asynchronous operation or cancel it. Create a new **Progress** object, specifying the units of progress you desire and the name of the method that will be called to notify you of the current progress of the task. Pass the **Progress** object into the **AsTask** method along with the cancellation token that allows you to cancel the task.
 
-[!xxxx-xx[XxxxxxxxxXxxxXxxxx](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetTranscodeFileAsync)]
+[!code-cs[TranscodeFileAsync](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetTranscodeFileAsync)]
 
-Xx xxx xxxxxx xxx xxxx xx xxxxxx xxx Xxxxxxxx xxxxxx xx xxx xxxxxxxx xxxx, **Xxxxxxxx**, xxx xxx xxxxxxxx xx xxx xxxxxxxxxx xxxx xxxxxxxx. Xxxx xxxx xxxx xxx xxxxxxxx xx xxx xxxxxxxxxx xxx, xx xx xx xxxxxxx.
+In the method you used to create the Progress object in the previous step, **Progress**, set the progress of the background task instance. This will pass the progress to the foreground app, if it is running.
 
-[!xxxx-xx[Xxxxxxxx](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetProgress)]
+[!code-cs[Progress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetProgress)]
 
-Xxx **XxxxXxxxxXxxxxxxxxxxx** xxxxxx xxxxxx xxxxxxx x xxx xxxxx xxxxxxxxxxxx xx xxxxxxx x xxxxxxxx XXX xxxxxxxx xxx x xxxxx xxxx xxxx xxx xxxx xxxxxxx. Xxx xxxx xxxxxxx xx xxx xxxxx XXX xx xxx xxx xxxx x xxx [**XxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208641) xxxxxx xx xxxxxxx xxxx xxx XXX xxxxxxxx. Xxxxxxx, xxx xxxxx xx xxxxx xx xxx xxxx xx xxxxxxx [**XxxxxXxxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br208659).
+The **SendToastNotification** helper method creates a new toast notification by getting a template XML document for a toast that only has text content. The text element of the toast XML is set and then a new [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641) object is created from the XML document. Finally, the toast is shown to the user by calling [**ToastNotifier.Show**](https://msdn.microsoft.com/library/windows/apps/br208659).
 
-[!xxxx-xx[XxxxXxxxxXxxxxxxxxxxx](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetSendToastNotification)]
+[!code-cs[SendToastNotification](./code/MediaProcessingTriggerWin10/cs/MediaProcessingBackgroundTask/MediaProcessingTask.cs#SnippetSendToastNotification)]
 
-## Xxxxxxxx xxx xxxxxx xxx xxxxxxxxxx xxxx
+## Register and launch the background task
 
-Xxxxxx xxx xxx xxxxxx xxx xxxxxxxxxx xxxx xxxx xxxx xxxxxxxxxx xxx, xxx xxxx xxxxxx xxxx xxxxxxxxxx xxx'x Xxxxxxx.xxxxxxxxxxx xxxx xx xxx xxx xxxxxx xxxx xxxx xxxx xxx xxxx x xxxxxxxxxx xxxx.
+Before you can launch the background task from your foreground app, you must update your foreground app's Package.appmanifest file to let the system know that your app uses a background task.
 
-1.  Xx **Xxxxxxxx Xxxxxxxx**, xxxxxx-xxxxx xxx Xxxxxxx.xxxxxxxxxxx xxxx xxxx xx xxxx xxx xxxxxxxx xxxxxx.
-2.  Xxxxxx xxx **Xxxxxxxxxxxx** xxx.
-3.  Xxxx **Xxxxxxxxx Xxxxxxxxxxxx**, xxxxxx **Xxxxxxxxxx Xxxxx** xxx xxxxx **Xxx**.
-4.  Xxxxx **Xxxxxxxxx Xxxxxxxxxxxx** xxxx xxxx xxxx xxx **Xxxxxxxxxx Xxxxx** xxxx xx xxxxxxxx. Xxxxx **Xxxxxxxxxx**, xxxxxx xxx xxxxxxxx xxx **Xxxxx xxxxxxxxxx**.
-5.  Xx xxx **Xxxxx Xxxxx** xxxx xxx, xxxxxxx xxx xxxxxxxxx xxx xxxxx xxxx xxx xxxx xxxxxxxxxx xxxx, xxxxxxxxx xx x xxxxxx. Xxx xxxx xxxxxxx, xxx xxxxx xx:
+1.  In **Solution Explorer**, double-click the Package.appmanifest file icon to open the manifest editor.
+2.  Select the **Declarations** tab.
+3.  From **Available Declarations**, select **Background Tasks** and click **Add**.
+4.  Under **Supported Declarations** make sure that the **Background Tasks** item is selected. Under **Properties**, select the checkbox for **Media processing**.
+5.  In the **Entry Point** text box, specify the namespace and class name for your background test, separated by a period. For this example, the entry is:
    ```csharp
    MediaProcessingBackgroundTask.MediaProcessingTask
    ```
-Xxxx, xxx xxxx xx xxx x xxxxxxxxx xx xxxx xxxxxxxxxx xxxx xx xxxx xxxxxxxxxx xxx.
-1.  Xx **Xxxxxxxx Xxxxxxxx**, xxxxx xxxx xxxxxxxxxx xxx xxxxxxx, xxxxx-xxxxx xxx **Xxxxxxxxxx** xxxxxx xxx xxxxxx **Xxx Xxxxxxxxx...**.
-2.  Xxxxxx xxx **Xxxxxxxx** xxxx xxx xxxxxx **Xxxxxxxx**.
-3.  Xxxxx xxx xxx xxxx xx xxxx xxxxxxxxxx xxxx xxxxxxx xxx xxxxx **XX**.
+Next, you need to add a reference to your background task to your foreground app.
+1.  In **Solution Explorer**, under your foreground app project, right-click the **References** folder and select **Add Reference...**.
+2.  Expand the **Projects** node and select **Solution**.
+3.  Check the box next to your background task project and click **OK**.
 
-Xxx xxxx xx xxx xxxx xx xxxx xxxxxxx xxxxxx xx xxxxx xx xxxx xxxxxxxxxx xxx. Xxxxx, xxx xxxx xxxx xx xxx xxx xxxxxxxxx xxxxxxxxxx xx xxxx xxxxxxx.
+The rest of the code in this example should be added to your foreground app. First, you will need to add the following namespaces to your project.
 
-[!xxxx-xx[XxxxxxxxxxXxxxx](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundUsing)]
+[!code-cs[ForegroundUsing](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundUsing)]
 
-Xxxx, xxx xxx xxxxxxxxx xxxxxx xxxxxxxxx xxxx xxx xxxxxx xx xxxxxxxx xxx xxxxxxxxxx xxxx.
+Next, add the following member variables that are needed to register the background task.
 
-[!xxxx-xx[XxxxxxxxxxXxxxxxx](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundMembers)]
+[!code-cs[ForegroundMembers](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetForegroundMembers)]
 
-Xxx **XxxxXxxxxXxXxxxxxxxx** xxxxxx xxxxxx xxxx x [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847) xxx x [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207871) xx xxxx xxx xxxxx xxx xxxxxx xxxxx xxx xxxxxxxxxxx. Xxx xxxx xxx xxxxxx xxxxx xx x xxxxxxxx xxxx xxxx xxx xxxx xxx xxxx xxxxxx xx. Xx xxxx xxxx xxxx xxxxxxxxxx xxxx xxx xxxx xxx xxxxx, xxx xxxx xx xxx [**XxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br207457) xxx xxxx xxx.
+The **PickFilesToTranscode** helper method uses a [**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) and a [**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) to open the input and output files for transcoding. The user may select files in a location that your app does not have access to. To make sure your background task can open the files, add them to the [**FutureAccessList**](https://msdn.microsoft.com/library/windows/apps/br207457) for your app.
 
-Xxxxxxx, xxx xxxxxxx xxx xxx xxxxx xxx xxxxxx xxxx xxxxx xx xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241622) xxx xxxx xxx. Xxx xxxxxxxxxx xxxx xxxxxxxxx xxx xxxx xxxxx xxxx xxxx xxxxxxxx.
+Finally, set entries for the input and output file names in the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) for your app. The background task retrieves the file names from this location.
 
-[!xxxx-xx[XxxxXxxxxXxXxxxxxxxx](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetPickFilesToTranscode)]
+[!code-cs[PickFilesToTranscode](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetPickFilesToTranscode)]
 
-Xx xxxxxxxx xxx xxxxxxxxxx xxxx, xxxxxx x xxx [**XxxxxXxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn806005) xxx x xxx [**XxxxxxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768). Xxx xxx xxxx xx xxx xxxxxxxxxx xxxx xxxxxxx xx xxxx xxx xxx xxxxxxxx xx xxxxx. Xxx xxx [**XxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224774) xx xxx xxxx xxxxxxxxx xxx xxxxx xxxx xxxxxx xxx xxxx xx xxx xxxxxxxx xxxx. Xxx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn641725) xxxxxxxx xx xxx **XxxxxXxxxxxxxxxXxxxxxx** xxxxxxxx.
+To register the background task, create a new [**MediaProcessingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn806005) and a new [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Set the name of the background task builder so that you can identify it later. Set the [**TaskEntryPoint**](https://msdn.microsoft.com/library/windows/apps/br224774) to the same namespace and class name string you used in the manifest file. Set the [**Trigger**](https://msdn.microsoft.com/library/windows/apps/dn641725) property to the **MediaProcessingTrigger** instance.
 
-Xxxxxx xxxxxxxxxxx xxx xxxx, xxxx xxxx xxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxx xx xxxxxxx xxxxxxx xxx [**XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224787) xxxxxxxxxx xxx xxxxxxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br229870) xx xxx xxxxx xxxx xxxx xxx xxxx xxx xxxxxxxxx xx xxx [**XxxxxxxxxxXxxxXxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/br224771) xxxxxxxx.
+Before registering the task, make sure you unregister any previously registered tasks by looping through the [**AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) collection and calling [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229870) on any tasks that have the name you specified in the [**BackgroundTaskBuilder.Name**](https://msdn.microsoft.com/library/windows/apps/br224771) property.
 
-Xxxxxxxx xxx xxxxxxxxxx xxxx xx xxxxxxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224772). Xxxxxxxx xxxxxxxx xxx xxx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224788) xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224808) xxxxxx.
+Register the background task by calling [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772). Register handlers for the [**Completed**](https://msdn.microsoft.com/library/windows/apps/br224788) and [**Progress**](https://msdn.microsoft.com/library/windows/apps/br224808) events.
 
-[!xxxx-xx[XxxxxxxxXxxxxxxxxxXxxx](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
+[!code-cs[RegisterBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetRegisterBackgroundTask)]
 
-Xxxxxx xxx xxxxxxxxxx xxxx xx xxxxxxx xxx **XxxxxXxxxxxxxxxXxxxxxx** xxxxxx'x [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn765071) xxxxxx. Xxx [**XxxxxXxxxxxxxxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn806007) xxxxxx xxxxxxxx xx xxxx xxxxxx xxxx xxx xxxx xxxxxxx xxx xxxxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxxxx, xxx xx xxx, xxxx xxx xxxx xxx xxx xxxxxxxxxx xxxx xxxx'x xxxxxxxx.
+Launch the background task by calling the **MediaProcessingTrigger** object's [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn765071) method. The [**MediaProcessingTriggerResult**](https://msdn.microsoft.com/library/windows/apps/dn806007) object returned by this method lets you know whether the background task was started successfully, and if not, lets you know why the background task wasn't launched.
 
-[!xxxx-xx[XxxxxxXxxxxxxxxxXxxx](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
+[!code-cs[LaunchBackgroundTask](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetLaunchBackgroundTask)]
 
-Xxx **XxXxxxxxxx** xxxxx xxxxxxx xx xxxxxx xxxx xxx xxxxxxxxxx xxxx xxxxxxx xxx xxxxxxxx xx xxx xxxxxxxxx. Xxx xxx xxx xxxx xxxxxxxxxxx xx xxxxxx xxxx XX xxxx xxxxxxxx xxxxxxxxxxx.
+The **OnProgress** event handler is called when the background task updates the progress of the operation. You can use this opportunity to update your UI with progress information.
 
-[!xxxx-xx[XxXxxxxxxx](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnProgress)]
+[!code-cs[OnProgress](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnProgress)]
 
-Xxx **XxXxxxxxxxx** xxxxx xxxxxxx xx xxxxxx xxxx xxx xxxxxxxxxx xxxx xxx xxxxxxxx xxxxxxx. Xxxx xx xxxxxxx xxxxxxxxxxx xx xxxxxx xxxx XX xx xxxx xxxxxx xxxxxxxxxxx xx xxx xxxx.
+The **OnCompleted** event handler is called when the background task has finished running. This is another opportunity to update your UI to give status information to the user.
 
-[!xxxx-xx[XxXxxxxxxxx](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnCompleted)]
+[!code-cs[OnCompleted](./code/MediaProcessingTriggerWin10/cs/MediaProcessingTriggerWin10/MainPage.xaml.cs#SnippetOnCompleted)]
 
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

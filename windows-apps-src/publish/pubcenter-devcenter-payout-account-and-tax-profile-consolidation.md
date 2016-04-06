@@ -1,85 +1,89 @@
 ---
-Xxxxxxxxxxx: Xx xxx xxx xxxxxxxxxx xxx xx x xxxXxxxxx xxxxxx xxxxxxx xxx xxxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxx, xxxx xxxxxxx xxxx xx xxxxxx xx xxxx xxx xxxxxxxx xx xx Xxxxx Yxx, YYYY. Xxxx xxxxxxxx xxxx xxx xx xxxx xxxxxxx xxxx Xxx Xxxxxx xxxxxx xxxxxxx.
-xxxxx: xxxXxxxxx-XxxXxxxxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxxxxxx
-xx.xxxxxxx: YXXYYXYX-YXXY-YYYY-XYYY-XYYYYYXYYYXX
+Description: If you had previously set up a pubCenter payout account for your Microsoft Advertising earnings, that account will no longer be used for payments as of April 1st, 2016. Your payments will now be made through your Dev Center payout account.
+title: pubCenter-DevCenter payout account and tax profile consolidation
+ms.assetid: 1EC55E2F-2BC5-4982-A569-A59082A808EC
 ---
 
-# xxxXxxxxx-XxxXxxxxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxxxxxx
+# pubCenter-DevCenter payout account and tax profile consolidation
 
 
-Xx xxx xxx xxxxxxxxxx xxx xx x xxxXxxxxx xxxxxx xxxxxxx xxx xxxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxx, xxxx xxxxxxx xxxx xx xxxxxx xx xxxx xxx xxxxxxxx xx xx Xxxxx Yxx, YYYY. Xxxx xxxxxxxx xxxx xxx xx xxxx xxxxxxx xxxx Xxx Xxxxxx xxxxxx xxxxxxx.
+If you had previously set up a pubCenter payout account for your Microsoft Advertising earnings, that account will no longer be used for payments as of April 1st, 2016. Your payments will now be made through your Dev Center payout account.
 
-Xx xxxxxx xxx xxxxxxxx xxx xxx xxxxxxxxx xx xxxx, xxxxxx xxxx xx xx xxxx Xxx Xxxxxx xxxxxxxxx xxxxxx Xxxxx YY, YYYY, xxx xxxxxxx xxxx xxxx [xxxxxx xxxxxxx xxx xxx xxxxxxx](setting-up-your-payout-account-and-tax-forms.md) xxx xxx xx xxxxxxxxx xxx xxx xx xx xxxx.
+To ensure any payments due are submitted on time, please sign in to your Dev Center dashboard before March 31, 2016, and confirm that your [payout account and tax profile](setting-up-your-payout-account-and-tax-forms.md) are set up correctly and are up to date.
 
-> **Xxxxxxxxx**  Xx xxx xxxx xxxxx xxx xx xxxx xxxxxx xxxxxxx xx xxx xxxxxxx xx Xxx Xxxxxx, xxx’xx xxxx xx xx xxxx xxxxxx Xxxxx YY, YYYY. Xxx xxxx xxxx, xxx [Xxxxxxx xx xxxx xxxxxx xxxxxxx xxx xxx xxxxx](setting-up-your-payout-account-and-tax-forms.md).
+> **Important**  If you have never set up your payout account or tax profile in Dev Center, you’ll need to do that before March 31, 2016. For more info, see [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md).
 
-Xxx xxxx xxxx xxxxx xxxxxxxx xx Xxx Xxxxxx, xxx [Xxxxxx xxxxxxx](payout-summary.md). Xxx xxxx xxxxx xxxxxxxxxx xxxx xxx xxxxxxx xx xxxxxxxxx xxxxxxxxx xxx xxxxxxx, xxx [Xxxxxxxxx xxxxxxx xxx xxx-xxxxxxxxxx xxxxxxx](account-types-locations-and-fees.md#account_markets).
+For more info about payments in Dev Center, see [Payout summary](payout-summary.md). For info about currencies used for payouts in different countries and regions, see [Developer account and app-submission markets](account-types-locations-and-fees.md#account_markets).
 
-Xx xxxx xxxxxxx xxxxxxxxx xxx XXX xxxxx xxx xxxx xxxx xxxxx xxxxxxxx xxxxxxxxx.
+We also suggest reviewing the FAQ below for more info about specific scenarios.
 
-## Xxxxxxxxxx xxxxx xxxxxxxxx
+## Frequently asked questions
 
 
-### Xxxx xxxxxxx xxxx xx xxxx xxx xx Xxxxx YYYY xxxxxx?
+### What account will be used for my March 2016 payout?
 
-Xx Xxxxx YYYY, xx xxxx xxxxx xxx xxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxxx xxx xxx xx xx xxxXxxxxx. Xxxx xxxx xx xxx xxxx xxxx xx xxx xxxx xxxxxxxxxxx. Xxxxxxxx xx Xxxxx Yxx, YYYY, xxxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxx xxxx xx xxxx xx xxx XxxXxx xx Xxxx xxxxxxx xxxx xxx xxx xx xx Xxx Xxxxxx.
+In March 2016, we will still use the payout account and tax profile that you set up in pubCenter. This will be the last time we use this information. Starting on April 1st, 2016, your Microsoft Advertising earnings will be paid to the PayPal or Bank account that you set up in Dev Center.
 
-### X xxxx xx xxxXxxxxx xxx XxxXxxxxx xxxxxxxx xxxxxxxxxx xxxx xxx xxxx Xxxxxxxxx xxxxxxx xx xxx xxxx xxxxxx/xxxxxxx. Xxx xxxx X xxxxxxx xx xxxxx?
+### I have my pubCenter and DevCenter accounts registered with the same Microsoft account in the same region/country. How will I receive my money?
 
-Xxxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxx xxxx xx xxxx xx xxxx xxx xxxxxx xxxxxxx (XxxXxx xx xxxx xxxxxxx) xxxx xxx xxx xx xx Xxx Xxxxxx.
+Your Microsoft Advertising earnings will be paid to your the payout account (PayPal or bank account) that you set up in Dev Center.
 
-### X xxxx xx xxxXxxxxx xxx XxxXxxxxx xxxxxxxx xxxxxxxxxx xxxx xxx xxxx Xxxxxxxxx Xxxxxxx xxx xx xxxxxxxxx xxxxxxx/xxxxxxxxx. Xxx xxxx X xxxxxxx xx xxxxx?
+### I have my pubCenter and DevCenter accounts registered with the same Microsoft Account but in different regions/countries. How will I receive my money?
 
-Xxxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxx xxxx xx xxxx xx xxx xxxxxx xxxxxxx (XxxXxx xx xxxx xxxxxxx) xxxx xxx xxx xx xx Xxx Xxxxxx. Xxx xxxxxx xxxxxx xxxx xx xxxxxxxxx xx xxx xxxxxxxx xx xxxx Xxx Xxxxxx xxxxxxx xxxxxxx xx xxxxxx.
+Your Microsoft Advertising earnings will be paid to the payout account (PayPal or bank account) that you set up in Dev Center. The payout amount will be converted to the currency of your Dev Center account country or region.
 
-### X xxxx xxxxxxxx xxxxxx xx xxxXxxxxx xxxxxxxx xx xx XxxXxxxxx xxxxxxxx. Xxxxx xxxx X xxxxxxx xx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxx?
+### I have manually linked my pubCenter accounts to my DevCenter accounts. Where will I receive my Microsoft Advertising earnings?
 
-Xxx xxxx xxxxxxx x xxxxxx xxxxxx xxx xxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxx xxxx xxx xxxx xxxxxx xxxXxxxxx xxxxxxxx xx xxx xxxxxx xxxxxxx (XxxXxx xx xxxx xxxxxxx) xxxx xxx xxx xx xx Xxx Xxxxxx. Xxx xxxxxx xxxxxx xxxx xx xxxxxxxxx xx xxx xxxxxxxx xx xxxx Xxx Xxxxxx xxxxxxx xxxxxxx xx xxxxxx.
+You will receive a single payout for the Microsoft Advertising earnings from all your linked pubCenter accounts in the payout account (PayPal or bank account) that you set up in Dev Center. The payout amount will be converted to the currency of your Dev Center account country or region.
 
-### X xxx xxxxxxxx xxxXxxxxx xxxxxxxx xxxxxxxxxx xxxx xxx xxxx xxxxxxxxx. Xxx xxxx X xxxxxxx xx xxxxxxxx xxx xxx xxxxx xxxxxxxx?
+### I had multiple pubCenter accounts registered with the same publisher. How will I receive my earnings for all these accounts?
 
-Xxx xxxx xxxxxxx x xxxxxx xxxxxx xxx xxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxx xxxx xxx xxxx xxxxxx xxxXxxxxx xxxxxxxx xx xxx xxxxxx xxxxxxx (XxxXxx xx xxxx xxxxxxx) xxxx xxx xxx xx xx Xxx Xxxxxx. Xxx xxxxxx xxxxxx xxxx xx xxxxxxxxx xx xxx xxxxxxxx xx xxxx Xxx Xxxxxx xxxxxxx xxxxxxx xx xxxxxx.
+You will receive a single payout for the Microsoft Advertising earnings from all your linked pubCenter accounts in the payout account (PayPal or bank account) that you set up in Dev Center. The payout amount will be converted to the currency of your Dev Center account country or region.
 
-### X xxx xxxxxxxx xxxXxxxxx xxxxxxxx xxxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxx xx xxxXxxxxx. Xxx xx X xxxx xxx xxx xxx xxxxxxx xx XxxXxxxxx?
+### I had multiple pubCenter accounts registered with different tax profiles in pubCenter. Why do I only see one tax profile in DevCenter?
 
-Xxxx XxxXxxxxx xxxxxxx xxx x xxxxxx xxx xxxxxxx xxxx xxxx xx xxxx xxx xxx xxxx xxxxxxx. Xxxxx [Xxxxxxx xx xxxx xxxxxx xxxxxxx xxx xxx xxxxx](setting-up-your-payout-account-and-tax-forms.md) xx xxxxx xxxxx xxxxxxx xx xxx xxxxxxxx xxxx xxxxxxx xxx xxx xxxxxxxxxxx xx Xxx Xxxxxx.
+Your DevCenter account has a single tax profile that will be used for all your payouts. Visit [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md) to learn about setting up and managing your payment and tax information in Dev Center.
 
-### Xxx xxx xx xxxxxx xxxxxxxxx xx x xxxxxxxxx xxxxxxxx?
+### Why was my payout converted to a different currency?
 
-Xxxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxx xxxx xx xxxxxxxxx xxx xxxx xx xxx xxxxxx xxxxxxx (XxxXxx xx xxxx xxxxxxx) xxxx xxx xxx xx xx Xxx Xxxxxx . Xx xxxx xxxXxxxxx xxxxxxx xxxxxxx xxx xxx xxxxx xxxx Xxx Xxxxxx xxxxxxx xxxxxxx, xxx xxxx xx xxxx xx xxx xxxxxxxx xxxxxxxxxx xxxx xxxx Xxx Xxxxxx xxxxxxx xxxxxxx.
+Your Microsoft Advertising earnings will be converted and paid to the payout account (PayPal or bank account) that you set up in Dev Center . If your pubCenter account country did not match your Dev Center account country, you will be paid in the currency associated with your Dev Center account country.
 
-### Xxx xxx xx xxxxxx xxxx xx x xxxxxxxxx XxxXxx xx xxxx xxxxxxx?
+### Why was my payout sent to a different PayPal or bank account?
 
-Xxxx xxx xxxxxx xx xxx xxx xxx xx xxxxxxxxx xxxxxx xxxxxxxx (XxxXxx xx xxxx xxxxxxxx) xx Xxx Xxxxxx xxx xxxXxxxxx. Xx xx Xxxxx Yxx, YYYY, xxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxx xxxx xx xxxx xx xxx xxxxxx xxxxxxx xxxx xxx xxx xx xx Xxx Xxxxxx.
+This can happen if you had set up different payout accounts (PayPal or bank accounts) in Dev Center and pubCenter. As of April 1st, 2016, all Microsoft Advertising payouts will be made to the payout account that you set up in Dev Center.
 
-### Xxx xxxx’x X xxxxxxx xx Xxxxxxxxx Xxxxxxxxxxx xxxxxx xxxx xxxxx?
+### Why didn’t I receive my Microsoft Advertising payout this month?
 
-Xxxx xx xxxxxxx xxx xx xxx xx xxxx xx xxx xxxxxxxxx xxxxxxx:
+This is usually due to one or more of the following reasons:
 
--   Xxxx [xxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxx](setting-up-your-payout-account-and-tax-forms.md) xxxx xxx xxx xx xxxxxxxxx xx Xxx Xxxxxx.
--   Xxxx xxxXxxxxx xxxxxxx xxx xxx xxxx [xxxxxx xx xxxx Xxx Xxxxxx xxxxxxx](pubcenter-dev-center-integration.md).
+-   Your [payout account and tax profile details](setting-up-your-payout-account-and-tax-forms.md) were not set up correctly in Dev Center.
+-   Your pubCenter account has not been [linked to your Dev Center account](pubcenter-dev-center-integration.md).
 
-### Xxx xxx X xxxxx xxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxxx xxxx xx xxxx xxx xxxxxx xx XxxXxxxxx?
+### How can I check the payout account and tax profile that will be used for payout in DevCenter?
 
-Xxxxx [Xxxxxxx xx xxxx xxxxxx xxxxxxx xxx xxx xxxxx](setting-up-your-payout-account-and-tax-forms.md) xx xxxxx xxx xx xxxx (xxx xxxx xx xxxxxxxxx) xxxx xxxxxxx xxx xxx xxxxxxxxxxx xx Xxx Xxxxxx.
+Visit [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md) to learn how to view (and edit if necessary) your payment and tax information in Dev Center.
 
-### X xxxxx xxx xx xxx xxxxxxx xxx xxxxxx xxxxxxx xxxxxxxxxxx xx xxxXxxxxx. Xxxx xxxxx xx xxxx xxx xx xxxxxx?
+### I still see my tax profile and payout account information in pubCenter. Will these be used for my payout?
 
-Xx, xxxx xxxXxxxxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxxxx xxxx xx xxxxxx xx xxxx xxx xxxxxxxx xxxxxxxx Xxxxx Yxx, YYYY. Xxxxx [Xxxxxxx xx xxxx xxxxxx xxxxxxx xxx xxx xxxxx](setting-up-your-payout-account-and-tax-forms.md) xx xxxxx xxx xx xxx xx xxx xxxxxx xxxx xxxxxxx xxx xxx xxxxxxxxxxx xx Xxx Xxxxxx.
+No, your pubCenter payout account and tax profile information will no longer be used for payments starting April 1st, 2016. Visit [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md) to learn how to set up and manage your payment and tax information in Dev Center.
 
-### Xxx X xxxxx xxxxxx xx xxx xxxxxxx xxx xxxxxx xxxxxxx xxxxxxxxxxx xx xxxXxxxxx?
+### Can I still manage my tax profile and payout account information in pubCenter?
 
-Xx, xxxx xxxXxxxxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxxxx xxxx xx xxxxxx xx xxxx xxx xxxxxxxx xx xx Xxxxx Yxx, YYYY. Xxxxx [Xxxxxxx xx xxxx xxxxxx xxxxxxx xxx xxx xxxxx](setting-up-your-payout-account-and-tax-forms.md) xx xxxxx xxx xx xxx xx xxx xxxxxx xxxx xxxxxxx xxx xxx xxxxxxxxxxx xx Xxx Xxxxxx.
+No, your pubCenter payout account and tax profile information will no longer be used for payments as of April 1st, 2016. Visit [Setting up your payout account and tax forms](setting-up-your-payout-account-and-tax-forms.md) to learn how to set up and manage your payment and tax information in Dev Center.
 
-### Xx X xxxx xxxx xxxx xx xxxxxxx, xxxx xx X xxxxxxx?
+### If I need help with my payouts, whom do I contact?
 
-Xxx xxx xxxxxxxxx xx xxxxxxxxx, xxxxxx xxxx x [xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=733342).
+For any questions or inquiries, please open a [support ticket](http://go.microsoft.com/fwlink/p/?LinkId=733342).
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

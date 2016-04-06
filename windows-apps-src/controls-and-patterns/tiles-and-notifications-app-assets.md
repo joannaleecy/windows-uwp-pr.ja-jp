@@ -1,232 +1,202 @@
 ---
-Xxxxxxxxxxx: Xxx xxxx xxxxxx, xxxxx xxxxxx xx x xxxxxxx xx xxxxx xxxxxxxxxx xxx Xxxxxxx YY xxxxxxxxx xxxxxx, xxx xxx xxxxxxx xxxxx xxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
-xxxxx: Xxxx xxx xxxx xxxxxx
-xx.xxxxxxx: XYXXYYXY-YXXX-YYYX-YYYY-YYXXYYYYYYXY
-xxxxx: Xxxx xxx xxxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: App icon assets, which appear in a variety of forms throughout the Windows 10 operating system, are the calling cards for your Universal Windows Platform (UWP) app.
+title: Tile and icon assets
+ms.assetid: D6CE21E5-2CFA-404F-8679-36AA522206C7
+label: Tile and icon assets
+template: detail.hbs
 ---
 
-# Xxxxxxxxxx xxx xxxx xxx xxxx xxxxxx
+# Guidelines for tile and icon assets
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxx xxxx xxxxxx, xxxxx xxxxxx xx x xxxxxxx xx xxxxx xxxxxxxxxx xxx Xxxxxxx YY xxxxxxxxx xxxxxx, xxx xxx xxxxxxx xxxxx xxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx. Xxxxx xxxxxxxxxx xxxxxx xxxxx xxx xxxx xxxxxx xxxxxx xx xxx xxxxxx, xxx xxxxxxx xx-xxxxx xxxxxx xxxx xx xxx xx xxxxxx xxx xxxx xxxxxxxx xxxxx.
+App icon assets, which appear in a variety of forms throughout the Windows 10 operating system, are the calling cards for your Universal Windows Platform (UWP) app. These guidelines detail where app icon assets appear in the system, and provide in-depth design tips on how to create the most polished icons.
 
-![xxxxxxx YY xxxxx xxx xxxxx](images/assetguidance01.jpg)
+![windows 10 start and tiles](images/assetguidance01.jpg)
 
-## <span id="Adaptive_scaling">
-            </span>
-            <span id="adaptive_scaling">
-            </span>
-            <span id="ADAPTIVE_SCALING">
-            </span>Xxxxxxxx xxxxxxx
+## <span id="Adaptive_scaling"></span><span id="adaptive_scaling"></span><span id="ADAPTIVE_SCALING"></span>Adaptive scaling
 
 
-Xxxxx, x xxxxx xxxxxxxx xx xxxxxxxx xxxxxxx xx xxxxxx xxxxxxxxxx xxx xxxxxxx xxxxx xxxx xxxxxx. Xxxxxxx YY xxxxxxxxxx xx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx xxxxx. Xx xxxxxxxx xx xxxxxxx xxxxxx xxxxxxx, xxxxx xx x xxxxxxx xxx xx xxxxx xxxxxxx xxxx xxxxxxxx x xxxxxxxxxx xxxx xxx XX xxxxxxxx xxxxxx x xxxxxxx xx xxxxxx xxxxx xxx xxxxxxx xxxxxxxxxxx. Xxx xxxxx xxxxxxx xxx xxxx xxxxxxxxxx xxxx xxx xxxxx xxxxxxx xx xxxxx xxxxxxxxx xxxxxxx xxxx xx xXX xxx Xxxxxxx, xxxxx xxxxx xx xxxxxx xx xxxxx xxxxxx xxxxxxx xxxxx xxxxxxxxx.
+First, a brief overview on adaptive scaling to better understand how scaling works with assets. Windows 10 introduces an evolution of the existing scaling model. In addition to scaling vector content, there is a unified set of scale factors that provides a consistent size for UI elements across a variety of screen sizes and display resolutions. The scale factors are also compatible with the scale factors of other operating systems such as iOS and Android, which makes it easier to share assets between these platforms.
 
-Xxx Xxxxx xxxxx xxx xxxxxx xx xxxxxxxx xxxxx xx xxxx xx xxx XXX xx xxx xxxxxx. Xxxx xxx xxxxxx xxxx xxxx xxxxx xxx xxxxxx xxx xxxxxxxxxx.
+The Store picks the assets to download based in part of the DPI of the device. Only the assets that best match the device are downloaded.
 
-## <span id="Tile_elements">
-            </span>
-            <span id="tile_elements">
-            </span>
-            <span id="TILE_ELEMENTS">
-            </span>Xxxx xxxxxxxx
+## <span id="Tile_elements"></span><span id="tile_elements"></span><span id="TILE_ELEMENTS"></span>Tile elements
 
 
-Xxx xxxxx xxxxxxxxxx xx x Xxxxx xxxx xxxxxxx xx x xxxx xxxxx, xx xxxx, x xxxxxxxx xxx, xxxxxxx, xxx xx xxx xxxxx:
+The basic components of a Start tile consist of a back plate, an icon, a branding bar, margins, and an app title:
 
-![xxxxxxxxx xx xxxx xxxxxxxx](images/assetguidance02.png)
+![breakdown of tile elements](images/assetguidance02.png)
 
-Xxx xxxxxxxx xxx xx xxx xxxxxx xx x xxxx xx xxxxx xxx xxx xxxx, xxxxxxx, xxx xxxxxxx (xx xxxx) xxxxxx:
+The branding bar at the bottom of a tile is where the app name, badging, and counter (if used) appear:
 
-![xxxxxxxx xxx xx xxxx](images/assetguidance03.png)
+![branding bar in tile](images/assetguidance03.png)
 
-Xxx xxxxxx xx xxx xxxxxxxx xxx xx xxxxx xx xxx xxxxx xxxxxx xx xxx xxxxxx xx xxxxx xx xxxxxxx:
+The height of the branding bar is based on the scale factor of the device on which it appears:
 
-| Xxxxx xxxxxx | Xxxxxx |
+| Scale factor | Pixels |
 |--------------|--------|
-| YYY%         | YY     |
-| YYY%         | YY     |
-| YYY%         | YY     |
-| YYY%         | YY     |
-| YYY%         | YYY    |
+| 100%         | 32     |
+| 125%         | 40     |
+| 150%         | 48     |
+| 200%         | 64     |
+| 400%         | 128    |
 
  
 
-Xxx xxxxxx xxxx xxxx xxxxxxx xxx xxxxxx xx xxxxxxxx. Xxxx xxxxxxx xxxxxxx xxxxxx xxx xxxxxxx, xx xxxx xx xxxx xxxxxxx:
+The system sets tile margins and cannot be modified. Most content appears inside the margins, as seen in this example:
 
-![xxxx xxxxxxx](images/assetguidance04.png)
+![tile margins](images/assetguidance04.png)
 
-Xxxxxx xxxxx xx xxxxx xx xxx xxxxx xxxxxx xx xxx xxxxxx xx xxxxx xx xxxxxxx:
+Margin width is based on the scale factor of the device on which it appears:
 
-| Xxxxx xxxxxx | Xxxxxx |
+| Scale factor | Pixels |
 |--------------|--------|
-| YYY%         | Y      |
-| YYY%         | YY     |
-| YYY%         | YY     |
-| YYY%         | YY     |
-| YYY%         | YY     |
+| 100%         | 8      |
+| 125%         | 10     |
+| 150%         | 12     |
+| 200%         | 16     |
+| 400%         | 32     |
 
  
 
-## <span id="Tile_assets">
-            </span>
-            <span id="tile_assets">
-            </span>
-            <span id="TILE_ASSETS">
-            </span>Xxxx xxxxxx
+## <span id="Tile_assets"></span><span id="tile_assets"></span><span id="TILE_ASSETS"></span>Tile assets
 
 
-Xxxx xxxx xxxxx xx xxx xxxx xxxx xx xxx xxxx xx xxxxx xx xx xxxxxx. Xxx xxx xxxxx xxxx xxx'x xxxxx xxxx xxx xxxxxxxxx xxxxxxxxxxxxxxx xx xx xxxxx:
+Each tile asset is the same size as the tile on which it is placed. You can brand your app's tiles with two different representations of an asset:
 
-1. Xx xxxx xx xxxx xxxxxxxx xxxx xxxxxxx. Xxxx xxxx xxx xxxx xxxxx xxxxx xxxx xxxxxxx:
+1. An icon or logo centered with padding. This lets the back plate color show through:
 
-![xxxx xxx xxxx xxxxx](images/assetguidance05.png)
+![tile and back plate](images/assetguidance05.png)
 
-2. X xxxx-xxxxx, xxxxxxx xxxx xxxxxxx xxxxxxx:
+2. A full-bleed, branded tile without padding:
 
-![xxxx xxxxxxx xxxx xxxxx](images/assetguidance06.png)
+![tile showing full bleed](images/assetguidance06.png)
 
-Xxx xxxxxxxxxxx xxxxxx xxxxxxx, xxxx xxxx xxxx (xxxxx, xxxxxx, xxxx, xxx xxxxx) xxx xxx xxx xxxxxx xxxxxxxxxxxx. Xx xxxxx xx xxxxxxx x xxxxxxxxxx xxxx xxxxxxxxx xxxxxx xxxxx, xx xxxxxxxxx x xxx xxxxx xxxxxxx xxxxxxxxxx xxx xxx xxxxxxxxx xxxx xxxxx. Xxx xxxx xxxxx xxx xxx xxxxxx xxxxxxxx xxxxxxxxx xxxxxxxxxx xxx xxxxx xxxxxxxxx xxx xx xxxx. Xxxxxxxx xxxxx xxx'x xxxxxx xxx xxxxxx xxx xxxxxxxxx, xxx xxxxxx xxxxxx xx xx xxxx xxxxxx xx xxxxxxx xxxxxxxxxx xx xxx xxxxxxxx xxxxxxxx.
+For consistency across devices, each tile size (small, medium, wide, and large) has its own sizing relationship. In order to achieve a consistent icon placement across tiles, we recommend a few basic padding guidelines for the following tile sizes. The area where the two purple overlays intersect represents the ideal footprint for an icon. Although icons won't always fit inside the footprint, the visual volume of an icon should be roughly equivalent to the provided examples.
 
-Xxxxx xxxx xxxxxx:
+Small tile sizing:
 
-![xxxxx xxxx xxxxxx xxxxxxx](images/assetguidance07a.png)
+![small tile sizing example](images/assetguidance07a.png)
 
-Xxxxxx xxxx xxxxxx:
+Medium tile sizing:
 
-![xxxxxx xxxx xxxxxx xxxxxxx](images/assetguidance07b.png)
+![medium tile sizing example](images/assetguidance07b.png)
 
-Xxxx xxxx xxxxxx:
+Wide tile sizing:
 
-![xxxx xxxx xxxxxx xxxxxxx](images/assetguidance07c.png)
+![wide tile sizing example](images/assetguidance07c.png)
 
-Xxxxx xxxx xxxxxx:
+Large tile sizing:
 
-![xxxxx xxxx xxxxxx xxxxxxx](images/assetguidance07d.png)
+![large tile sizing example](images/assetguidance07d.png)
 
-Xx xxxx xxxxxxx, xxx xxxx xx xxx xxxxx xxx xxx xxxx:
+In this example, the icon is too large for the tile:
 
-![xxxx xxx xxx xxx xxxx](images/assetguidance08a.png)
+![icon too big for tile](images/assetguidance08a.png)
 
-Xx xxxx xxxxxxx, xxx xxxx xx xxx xxxxx xxx xxx xxxx:
+In this example, the icon is too small for the tile:
 
-![xxxx xxx xxxxx xxx xxxx](images/assetguidance08b.png)
+![icon too small for tile](images/assetguidance08b.png)
 
-Xxx xxxxxxxxx xxxxxxx xxxxxx xxx xxxxxxx xxx xxxxxxxxxxxx xx xxxxxxxxxx xxxxxxxx xxxxx.
+The following padding ratios are optimal for horizontally or vertically oriented icons.
 
-Xxx xxxxx xxxxx, xxxxx xxx xxxx xxxxx xxx xxxxxx xx YY% xx xxx xxxx xxxx:
+For small tiles, limit the icon width and height to 66% of the tile size:
 
-![xxxxx xxxx xxxxxx xxxxxx](images/assetguidance09.png)
+![small tile sizing ratios](images/assetguidance09.png)
 
-Xxx xxxxxx xxxxx, xxxxx xxx xxxx xxxxx xx YY% xxx xxxxxx xx YY% xx xxxx xxxx. Xxxx xxxxxxxx xxxxxxxxxxx xx xxxxxxxx xx xxx xxxxxxxx xxx:
+For medium tiles, limit the icon width to 66% and height to 50% of tile size. This prevents overlapping of elements in the branding bar:
 
-![xxxxxx xxxx xxxxxx xxxxxx](images/assetguidance10.png)
+![medium tile sizing ratios](images/assetguidance10.png)
 
-Xxx xxxx xxxxx, xxxxx xxx xxxx xxxxx xx YY% xxx xxxxxx xx YY% xx xxxx xxxx. Xxxx xxxxxxxx xxxxxxxxxxx xx xxxxxxxx xx xxx xxxxxxxx xxx:
+For wide tiles, limit the icon width to 66% and height to 50% of tile size. This prevents overlapping of elements in the branding bar:
 
-![xxxx xxxx xxxxxx xxxxxx](images/assetguidance11.png)
+![wide tile sizing ratios](images/assetguidance11.png)
 
-Xxx xxxxx xxxxx, xxxxx xxx xxxx xxxxx xxx xxxxxx xx YY% xx xxxx xxxx:
+For large tiles, limit the icon width and height to 50% of tile size:
 
-![xxxxx xxxx xxxx xxxxxx](images/assetguidance12.png)
+![large tile size ratios](images/assetguidance12.png)
 
-Xxxx xxxxx xxx xxxxxxxx xx xx xxxxxxxxxxxx xx xxxxxxxxxx xxxxxxxx, xxxxx xxxxxx xxxx xxxx xxxxxxx xxxxxx xxxx xxxxxxx xxxx xxxx xxxxxxx xxxxxxxx xxxxxx xxx xxxxxx xxxxxxxxxx. Xxxxx xxxx xxxxxx xx xx xxxxxxxx xxx xx xxxxxxxx xx xxx xxxx. Xx xxxx xxxx, xxxxx xx xx xxxx xxx xxxx xxxxxxx xxx xxxxxxxxxxx xxxxxxxxx, xxxxxxxx xx xxxxxxxx xxx xxxx xxxxxx xxxxxx xx x xxxxxxxx xxxxxx xxxx:
+Some icons are designed to be horizontally or vertically oriented, while others have more complex shapes that prevent them from fitting squarely within the target dimensions. Icons that appear to be centered can be weighted to one side. In this case, parts of an icon may hang outside the recommended footprint, provided it occupies the same visual weight as a squarely fitted icon:
 
-![xxxxx xxxxxxxx xxxxx](images/assetguidance13.png)
+![three centered icons](images/assetguidance13.png)
 
-Xxxx xxxx-xxxxx xxxxxx, xxxx xxxx xxxxxxx xxxxxxxx xxxx xxxxxxxx xxxxxx xxx xxxxxxx xxx xxxxx xx xxx xxxxx. Xxxxxxxx xxxxxxx xx xx xxxxx YY% xx xxx xxxxxx xx xxxxx xx xxx xxxx. Xxxx xxxxxxxxxx xxxxxxxxxx xxxxxx xxx xxxxx xx xxx xxxxxxx xx xxx xxxxxxxx xxxx xxxxx:
+With full-bleed assets, take into account elements that interact within the margins and edges of the tiles. Maintain margins of at least 16% of the height or width of the tile. This percentage represents double the width of the margins at the smallest tile sizes:
 
-![xxxx-xxxxx xxxx xxxx xxxxxxx](images/assetguidance14.png)
+![full-bleed tile with margins](images/assetguidance14.png)
 
-Xx xxxx xxxxxxx, xxxxxxx xxx xxx xxxxx:
+In this example, margins are too tight:
 
-![xxxx xxxxx xxxx xxxx xxxxxxx xxxx xxx xxx xxxxx](images/assetguidance15.png)
+![full bleed tile with margins that are too small](images/assetguidance15.png)
 
-## <span id="Tile_assets_in_list_views">
-            </span>
-            <span id="tile_assets_in_list_views">
-            </span>
-            <span id="TILE_ASSETS_IN_LIST_VIEWS">
-            </span>Xxxx xxxxxx xx xxxx xxxxx
+## <span id="Tile_assets_in_list_views"></span><span id="tile_assets_in_list_views"></span><span id="TILE_ASSETS_IN_LIST_VIEWS"></span>Tile assets in list views
 
 
-Xxxxx xxx xxxx xxxxxx xx x xxxx xxxx. Xxxxxx xxxxxxxxxx xxx xxxx xxxxxx xxxx xxxxxx xx xxxx xxxxx xxx x xxx xxxxxxxxx xxxx xxxx xxxxxx xxxxxxxxxx xxxxxxxx. Xxxx xxxxxxx xxxxxxx xxxxx xxxxxx xxxxxxxxx.
+Tiles can also appear in a list view. Sizing guidelines for tile assets that appear in list views are a bit different than tile assets previously outlined. This section details those sizing specifics.
 
-![xxxx xxxxxx xx x xxxx xxxx](images/assetguidance16.png)
+![tile assets in a list view](images/assetguidance16.png)
 
-Xxxxx xxxx xxxxx xxx xxxxxx xx YY% xx xxx xxxx xxxx:
+Limit icon width and height to 75% of the tile size:
 
-![xxxxxx xx xxxx xx xxxx xxxx xxxx](images/assetguidance17.png)
+![sizing of icon of list view tile](images/assetguidance17.png)
 
-Xxx xxxxxxxx xxx xxxxxxxxxx xxxx xxxxxxx, xxxxx xxxxx xxx xxxxxx xx YY% xx xxx xxxx xxxx:
+For vertical and horizontal icon formats, limit width and height to 75% of the tile size:
 
-![xxxxxx xx xxxx xx xxxx xxxx xxxx](images/assetguidance18.png)
+![sizing of icon of list view tile](images/assetguidance18.png)
 
-Xxx xxxx xxxxx xxxxxxx xx xxxxxxxxx xxxxx xxxxxxxx, xxxxxxxx xxxxxxx xx xx xxxxx YY.Y%:
+For full bleed artwork of important brand elements, maintain margins of at least 12.5%:
 
-![xxxx-xxxxx xxxxxxx xx xxxx xxxx xxxx](images/assetguidance19.png)
+![full-bleed artwork in list view tile](images/assetguidance19.png)
 
-Xx xxxx xxxxxxx, xxx xxxx xx xxx xxx xxxxxx xxx xxxx:
+In this example, the icon is too big inside its tile:
 
-![xxxx xxxx xx xxx xxx xxx xxxx](images/assetguidance20a.png)
+![icon that is too big for tile](images/assetguidance20a.png)
 
-Xx xxxx xxxxxxx, xxx xxxx xx xxx xxxxx xxxxxx xxx xxxx:
+In this example, the icon is too small inside its tile:
 
-![xxxx xxxx xx xxx xxxxx xxx xxxx](images/assetguidance20b.png)
+![icon that is too small for tile](images/assetguidance20b.png)
 
-## <span id="Target-based_assets">
-            </span>
-            <span id="target-based_assets">
-            </span>
-            <span id="TARGET-BASED_ASSETS">
-            </span>Xxxxxx-xxxxx xxxxxx
+## <span id="Target-based_assets"></span><span id="target-based_assets"></span><span id="TARGET-BASED_ASSETS"></span>Target-based assets
 
 
-Xxxxxx-xxxxx xxxxxx xxx xxx xxxxx xxx xxxxx xxxx xxxxxx xx xxx Xxxxxxx xxxxxxx, xxxx xxxx, XXX+XXX, xxxx-xxxxxx, xxx xxx xxxxx-xxxxx xxxxxx xx Xxxxx xxxxx. Xxx xxx'x xxxx xx xxx xxxxxxx xx xxxxx xxxxxx; Xxxxxxx xxxx xxxxxxx xx xxxxxx. Xxxxx xxxxxx xxxxxx xxxxxxx xxx x xxxxxxx xxxxxxxxx xx YY xxxxxx. Xxxx'x xx xxxxxxx xx xxxxx xxxxxx xx xxxx xxxxxx xx xxxxx xx xxx Xxxxxxx xxxxxxx:
+Target-based assets are for icons and tiles that appear on the Windows taskbar, task view, ALT+TAB, snap-assist, and the lower-right corner of Start tiles. You don't have to add padding to these assets; Windows adds padding if needed. These assets should account for a minimum footprint of 16 pixels. Here's an example of these assets as they appear in icons on the Windows taskbar:
 
-![xxxxxx xx xxxxxxx xxxxxxx](images/assetguidance21.png)
+![assets in windows taskbar](images/assetguidance21.png)
 
-Xxxxxxxx xxxxx XX xxxx xxx x xxxxxx-xxxxx xxxxx xx xxx xx x xxxxxxx xxxxxxxxx xx xxxxxxx, xxx xxx xxx x xxxxxx-xxxxx xxxxxxxx xxxxx xx xxxx. Xxxxxxxx xxxxxx xxxxxx xx xxxxxxx xxxx xxx xxxxxxxxxxx xxxx xxxx xxx xxxxxx xx xxxxxxx xxxxxxxxxx xxxxxx:
+Although these UI will use a target-based asset on top of a colored backplate by default, you may use a target-based unplated asset as well. Unplated assets should be created with the possibility that they may appear on various background colors:
 
-![xxxxxxxx xxx xxxxxx xxxxxx](images/assetguidance22.png)
+![unplated and plated assets](images/assetguidance22.png)
 
-Xxxxx xxx xxxx xxxxxxxxxxxxxxx xxx xxxxxx-xxxxx xxxxxx, xx YYY% xxxxx:
+These are size recommendations for target-based assets, at 100% scale:
 
-![xxxxxx-xxxxx xxxxx xxxxxx xx YYY% xxxxx](images/assetguidance23.png)
+![target-based asset sizing at 100% scale](images/assetguidance23.png)
 
-**Xxxxxx xxxxxxxx xxx xxxxxx**
+**Iconic template app assets**
 
-Xxx xxxxxx xxxxxxxx (xxxx xxxxx xx xxx "XxxxXxxxXxxxx" xxxxxxxx) xxxx xxx xxxxxxx x xxxxx xxxxx xx xxx xxxxxx xx xxx xxxx. Xxxxxxx YY xxxxxxxx xxx xxxxxxxx xx xxxx xxxxx xxx xxxxxx/xxxxxxx. (Xxxxx xxxxx xxxxxxxx xxxxxx xxxxx xx xxx [Xxxxxxx xxxx xxxxxxxxx xxxxxxx](tiles-and-notifications-special-tile-templates-catalog.md).)
+The iconic template (also known as the "IconWithBadge" template) lets you display a small image in the center of the tile. Windows 10 supports the template on both phone and tablet/desktop. (Learn about creating iconic tiles in the [Special tile templates article](tiles-and-notifications-special-tile-templates-catalog.md).)
 
-Xxxx xxxx xxx xxx xxxxxx xxxxxxxx, xxxx xx Xxxxxxxxx, Xxxxx, xxx Xxxxx, xxxx xxxxxx-xxxxx xxxxxx xxxx xxx xxxxxxx x xxxxx (xxxx xxx xxxx xxxxxxx). Xx xxxx xxxxx xxxxxx-xxxxx xxxxxx, xx xxxxxxx xx xxxxxx. Xxxxxx xxxxxx xxxx'x xxxx xx xxx xxx xxxxxxxx, xxx xxx xxxx xx x xxxx xxxx xxxxxxx. Xxxxxx xxx xxxxxx xx xxx xxx xxxxxxxx xxxxxx x Y:Y xxxxx xxxxxxxxx:
+Apps that use the iconic template, such as Messaging, Phone, and Store, have target-based assets that can feature a badge (with the live counter). As with other target-based assets, no padding is needed. Iconic assets aren't part of the app manifest, but are part of a live tile payload. Assets are scaled to fit and centered within a 3:2 ratio container:
 
-![xxxxxx xxx xxxxxx xxxx xxx xxxxxxx xxxxx](images/assetguidance24.png)
+![sizing for assets with and without badge](images/assetguidance24.png)
 
-Xxx xxxxxx xxxxxx, xxxxxxxxx xxxxxxxxx xxxxxx xxx xxxxxxxxx xxxxxx:
+For square assets, automatic centering within the container occurs:
 
-![xxxxxx xxxxx xxxxxx, xxxx xxx xxxxxxx xxxxx](images/assetguidance25.png)
+![square asset sizing, with and without badge](images/assetguidance25.png)
 
-Xxx xxx-xxxxxx xxxxxx, xxxxxxxxx xxxxxxxxxx/xxxxxxxx xxxxxxxxx xxx xxxxxxxx xx xxx xxxxx/xxxxxx xx xxx xxxxxxxxx xxxxxx:
+For non-square assets, automatic horizontal/vertical centering and snapping to the width/height of the container occurs:
 
-![xxx-xxxxxx xxxxx xxxxxx, xxxx xxx xxxxxxx xxxxx](images/assetguidance26a.png)
+![non-square asset sizing, with and without badge](images/assetguidance26a.png)
 
-![xxx-xxxxxx xxxxx xxxxxx, xxxx xxx xxxxxxx xxxxx](images/assetguidance26b.png)
+![non-square asset sizing, with and without badge](images/assetguidance26b.png)
 
-## <span id="Splash_screen_assets">
-            </span>
-            <span id="splash_screen_assets">
-            </span>
-            <span id="SPLASH_SCREEN_ASSETS">
-            </span>Xxxxxx xxxxxx xxxxxx
+## <span id="Splash_screen_assets"></span><span id="splash_screen_assets"></span><span id="SPLASH_SCREEN_ASSETS"></span>Splash screen assets
 
 
-Xxx xxxxxx xxxxxx xxxxx xxx xx xxxxx xxxxxx xx x xxxxxx xxxx xx xx xxxxx xxxx xx xx x xxxxxxxx. Xx xxxxx x xxxxxxxx xxxxxxxxx, xxx xxx xxxxxx xxxxxx xx xxxxxxxxx xxxxxx xx xxxx Xxxxxxx xxx xxxxxx xxx xxxx xxxx xxx xxx xxxxxx xxx xxxxxx xxxxxxxxxx. Xxx xxx xxxx xxxxxx xxxx xxxxxxxx xxxxxx xxx xxxxxxxxxxxxx xxx xxxxxxxxx xxxxxx xx xxxxx xxxxxxxxx XX xxxxxxxxx.
+The splash screen image can be given either as a direct path to an image file or as a resource. By using a resource reference, you can supply images of different scales so that Windows can choose the best size for the device and screen resolution. You can also supply high contrast images for accessibility and localized images to match different UI languages.
 
-Xx xxx xxxx "Xxxxxxx.xxxxxxxxxxxx" xx x xxxx xxxxxx, xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211467) xxxxxxx xxxxxxx xx x xxxxx xx xxx [**XxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211471) xxxxxxx. Xxx xxxxxxx xxxxxx xxxxxx xxxxxx xx xxx xxxxxxxx xxxx xxxxx xxxx xxxx xx x xxxx xxxxxx:
+If you open "Package.appxmanifest" in a text editor, the [**SplashScreen**](https://msdn.microsoft.com/library/windows/apps/br211467) element appears as a child of the [**VisualElements**](https://msdn.microsoft.com/library/windows/apps/br211471) element. The default splash screen markup in the manifest file looks like this in a text editor:
 
 ```XML
 <uap:SplashScreen Image="Assets\SplashScreen.png" /></code></pre></td>
@@ -235,187 +205,184 @@ Xx xxx xxxx "Xxxxxxx.xxxxxxxxxxxx" xx x xxxx xxxxxx, xxx [**XxxxxxXxxxxx**](http
 </table>
 ```
 
-Xxx xxxxxx xxxxxx xxxxx xx xxxxxxxx xx xxxxxxxxx xxxxxx xx xxxxxxx xx:
+The splash screen asset is centered by whichever device it appears on:
 
-![xxxxxx xx xxxxxx xxxxxx xxxxx](images/assetguidance27.png)
+![sizing of splash screen asset](images/assetguidance27.png)
 
-## <span id="High-contrast_assets">
-            </span>
-            <span id="high-contrast_assets">
-            </span>
-            <span id="HIGH-CONTRAST_ASSETS">
-            </span>Xxxx-xxxxxxxx xxxxxx
+## <span id="High-contrast_assets"></span><span id="high-contrast_assets"></span><span id="HIGH-CONTRAST_ASSETS"></span>High-contrast assets
 
 
-Xxxx-xxxxxxxx xxxx xxxxx xxx xx xxxxxxxx xxxx xx xxxxxx xxx xxxx-xxxxxxxx xxxxx (xxxxx xxxxxxxxxx xxxx xxxxx xxxx) xxx xxxx-xxxxxxxx xxxxx (xxxxx xxxxxxxxxx xxxx xxxxx xxxx). Xx xxx xxx'x xxxxxxx xxxx-xxxxxxxx xxxxxx xxx xxxx xxx, xxxxxxxx xxxxxx xxxx xx xxxx.
+High-contrast mode makes use of separate sets of assets for high-contrast white (white background with black text) and high-contrast black (black background with white text). If you don't provide high-contrast assets for your app, standard assets will be used.
 
-Xx xxxx xxx'x xxxxxxxx xxxxxx xxxxxxx xx xxxxxxxxxx xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xx x xxxxx-xxx-xxxxx xxxxxxxxxx, xxxx xxxx xxx xxxxxx xxxx xx xxxxx xxxxxxxxxxxx xx xxxx-xxxxxxxx xxxx. Xx xxxx xxxxxxxx xxxxxx xxx'x xxxxxx xx xxxxxxxxxx xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xx x xxxxx-xxx-xxxxx xxxxxxxxxx, xxxxxxxx xxxxxxxxxxxx xxxxxxxxx xxxx-xxxxxxxx xxxxxx. Xxxxx xxxxxxxx xxxxxxxxxx xxx xxx xxxxx xx xxxx-xxxxxxxx xxxxxx:
+If your app's standard assets provide an acceptable viewing experience when rendered on a black-and-white background, then your app should look at least satisfactory in high-contrast mode. If your standard assets don't afford an acceptable viewing experience when rendered on a black-and-white background, consider specifically including high-contrast assets. These examples illustrate the two types of high-contrast assets:
 
-![xxxx-xxxxxxxx xxxxx xxxxx xxxxxxxx](images/assetguidance28.png)
+![high-contrast ratio asset examples](images/assetguidance28.png)
 
-Xx xxx xxxxxx xx xxxxxxx xxxx-xxxxxxxx xxxxxx, xxx xxxx xx xxxxxxx xxxx xxxx—xxxx xxxxx-xx-xxxxx xxx xxxxx-xx-xxxxx. Xxxx xxxxxxxxx xxxxx xxxxxx xx xxxx xxxxxxx, xxx xxxxx xxxxxx x "xxxxxxxx-xxxxx" xxxxxx xxx xxxxx-xx-xxxxx xxxxxx, xxx x "xxxxxxxx-xxxxx" xxxxxx xxx xxxxx-xx-xxxxx xxxxxx.
+If you decide to provide high-contrast assets, you need to include both sets—both white-on-black and black-on-white. When including these assets in your package, you could create a "contrast-black" folder for white-on-black assets, and a "contrast-white" folder for black-on-white assets.
 
-## <span id="Asset_size_tables">
-            </span>
-            <span id="asset_size_tables">
-            </span>
-            <span id="ASSET_SIZE_TABLES">
-            </span>Xxxxx xxxx xxxxxx
+## <span id="Asset_size_tables"></span><span id="asset_size_tables"></span><span id="ASSET_SIZE_TABLES"></span>Asset size tables
 
 
-Xx x xxxx xxxxxxx, xx xxxxxxxx xxxxxxxxx xxxx xxx xxxxxxx xxxxxx xxx xxx YYY, YYY, xxx YYY xxxxx xxxxxxx. Xxxxxxxxx xxxxxx xxx xxx xxxxx xxxxxxx xxxx xxxxxxx xxx xxxxxxx xxxx xxxxxxxxxx.
+At a bare minimum, we strongly recommend that you provide assets for the 100, 200, and 400 scale factors. Providing assets for all scale factors will provide the optimal user experience.
 
-**Xxxxx-xxxxx xxxxxx**
+**Scale-based assets**
 
-| Xxxxxxxx             | Xxxxxxx xxxx      | Xx YYY% xxxxx | Xx YYY% xxxxx | Xx YYY% xxxxx | Xx YYY% xxxxx | Xx YYY% xxxxx |
+| Category             | Element name      | At 100% scale | At 125% scale | At 150% scale | At 200% scale | At 400% scale |
 |----------------------|-------------------|---------------|---------------|---------------|---------------|---------------|
-| Xxxxx                | XxxxxxYYxYYXxxx   | YYxYY         | YYxYY         | YYYxYYY       | YYYxYYY       | YYYxYYY       |
-| Xxxxxx               | XxxxxxYYYxYYYXxxx | YYYxYYY       | YYYxYYY       | YYYxYYY       | YYYxYYY       | YYYxYYY       |
-| Xxxx                 | XxxxxxYYYxYYYXxxx | YYYxYYY       | YYYxYYY       | YYYxYYY       | YYYxYYY       | YYYYxYYY      |
-| Xxxxx (xxxxxxx xxxx) | XxxxxxYYYxYYYXxxx | YYYxYYY       | YYYxYYY       | YYYxYYY       | YYYxYYY       | YYYYxYYYY     |
-| Xxx xxxx (xxxx)      | XxxxxxYYxYYXxxx   | YYxYY         | YYxYY         | YYxYY         | YYxYY         | YYYxYYY       |
+| Small                | Square71x71Logo   | 71x71         | 89x89         | 107x107       | 142x142       | 284x284       |
+| Medium               | Square150x150Logo | 150x150       | 188x188       | 225x225       | 300x300       | 600x600       |
+| Wide                 | Square310x150Logo | 310x150       | 388x188       | 465x225       | 620x300       | 1240x600      |
+| Large (desktop only) | Square310x310Logo | 310x310       | 388x388       | 465x465       | 620x620       | 1240x1240     |
+| App list (icon)      | Square44x44Logo   | 44x44         | 55x55         | 66x66         | 88x88         | 176x176       |
 
  
 
-**Xxxx xxxx xxxxxxxx xxx xxxxx-xxxxx xxxxxx**
+**File name examples for scale-based assets**
 
-| Xxxxxxxx             | Xxxxxxx xxxx      | Xx YYY% xxxxx                  | Xx YYY% xxxxx                  | Xx YYY% xxxxx                  |
+| Category             | Element name      | At 100% scale                  | At 125% scale                  | At 150% scale                  |
 |----------------------|-------------------|--------------------------------|--------------------------------|--------------------------------|
-| Xxxxx                | XxxxxxYYxYYXxxx   | XxxXxxxXxxxxXxxx.xxxxx-YYY.xxx | XxxXxxxXxxxxXxxx.xxxxx-YYY.xxx | XxxXxxxXxxxxXxxx.xxxxx-YYY.xxx |
-| Xxxxxx               | XxxxxxYYYxYYYXxxx | XxxXxxxXxxXxxx.xxxxx-YYY.xxx   | XxxXxxxXxxXxxx.xxxxx-YYY.xxx   | XxxXxxxXxxXxxx.xxxxx-YYY.xxx   |
-| Xxxx                 | XxxxxxYYYxYYYXxxx | XxxXxxxXxxxXxxx.xxxxx-YYY.xxx  | XxxXxxxXxxxXxxx.xxxxx-YYY.xxx  | XxxXxxxXxxxXxxx.xxxxx-YYY.xxx  |
-| Xxxxx (xxxxxxx xxxx) | XxxxxxYYYxYYYXxxx | XxxXxxxXxxxxXxxx.xxxxx-YYY.xxx | XxxXxxxXxxxxXxxx.xxxxx-YYY.xxx | XxxXxxxXxxxxXxxx.xxxxx-YYY.xxx |
-| Xxx xxxx (xxxx)      | XxxxxxYYxYYXxxx   | XxxXxxxXxxxxXxxx.xxxxx-YYY.xxx | XxxXxxxXxxxxXxxx.xxxxx-YYY.xxx | XxxXxxxXxxxxXxxx.xxxxx-YYY.xxx |
+| Small                | Square71x71Logo   | AppNameSmallTile.scale-100.png | AppNameSmallTile.scale-125.png | AppNameSmallTile.scale-150.png |
+| Medium               | Square150x150Logo | AppNameMedTile.scale-100.png   | AppNameMedTile.scale-125.png   | AppNameMedTile.scale-150.png   |
+| Wide                 | Square310x150Logo | AppNameWideTile.scale-100.png  | AppNameWideTile.scale-125.png  | AppNameWideTile.scale-150.png  |
+| Large (desktop only) | Square310x310Logo | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
+| App list (icon)      | Square44x44Logo   | AppNameLargeTile.scale-100.png | AppNameLargeTile.scale-125.png | AppNameLargeTile.scale-150.png |
 
  
 
-| Xxxxxxxx             | Xxxxxxx xxxx      | Xx YYY% xxxxx                  | Xx YYY% xxxxx                  |
+| Category             | Element name      | At 200% scale                  | At 400% scale                  |
 |----------------------|-------------------|--------------------------------|--------------------------------|
-| Xxxxx                | XxxxxxYYxYYXxxx   | XxxXxxxXxxxxXxxx.xxxxx-YYY.xxx | XxxXxxxXxxxxXxxx.xxxxx-YYY.xxx |
-| Xxxxxx               | XxxxxxYYYxYYYXxxx | XxxXxxxXxxXxxx.xxxxx-YYY.xxx   | XxxXxxxXxxXxxx.xxxxx-YYY.xxx   |
-| Xxxx                 | XxxxxxYYYxYYYXxxx | XxxXxxxXxxxXxxx.xxxxx-YYY.xxx  | XxxXxxxXxxxXxxx.xxxxx-YYY.xxx  |
-| Xxxxx (xxxxxxx xxxx) | XxxxxxYYYxYYYXxxx | XxxXxxxXxxxxXxxx.xxxxx-YYY.xxx | XxxXxxxXxxxxXxxx.xxxxx-YYY.xxx |
-| Xxx xxxx (xxxx)      | XxxxxxYYxYYXxxx   | XxxXxxxXxxxxXxxx.xxxxx-YYY.xxx | XxxXxxxXxxxxXxxx.xxxxx-YYY.xxx |
+| Small                | Square71x71Logo   | AppNameSmallTile.scale-200.png | AppNameSmallTile.scale-400.png |
+| Medium               | Square150x150Logo | AppNameMedTile.scale-200.png   | AppNameMedTile.scale-400.png   |
+| Wide                 | Square310x150Logo | AppNameWideTile.scale-200.png  | AppNameWideTile.scale-400.png  |
+| Large (desktop only) | Square310x310Logo | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
+| App list (icon)      | Square44x44Logo   | AppNameLargeTile.scale-200.png | AppNameLargeTile.scale-400.png |
 
  
 
-**Xxxxxx-xxxxx xxxxxx**
+**Target-based assets**
 
-Xxxxxx-xxxxx xxxxxx xxx xxxx xxxxxx xxxxxxxx xxxxx xxxxxxx. Xxx xxxxxxx xxxx xxx xxxxxx-xxxxx xxxxxx xx **XxxxxxYYxYYXxxx**. Xx xxxxxxxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxx xx x xxxx xxxxxxx:
+Target-based assets are used across multiple scale factors. The element name for target-based assets is **Square44x44Logo**. We strongly recommend submitting the following assets as a bare minimum:
 
-YYxYY, YYxYY, YYxYY, YYxYY, YYYxYYY
+16x16, 24x24, 32x32, 48x48, 256x256
 
-Xxx xxxxxxxxx xxxxx xxxxx xxx xxxxxx-xxxxx xxxxx xxxxx xxx xxxxxxxxxxxxx xxxx xxxx xxxxxxxx:
+The following table lists all target-based asset sizes and corresponding file name examples:
 
-| Xxxxx xxxx | Xxxx xxxx xxxxxxx                 |
+| Asset size | File name example                 |
 |------------|-----------------------------------|
-| YYxYY\*    | XxxXxxxXxxXxxx.xxxxxxxxxx-YY.xxx  |
-| YYxYY\*    | XxxXxxxXxxXxxx.xxxxxxxxxx-YY.xxx  |
-| YYxYY\*    | XxxXxxxXxxXxxx.xxxxxxxxxx-YY.xxx  |
-| YYxYY\*    | XxxXxxxXxxXxxx.xxxxxxxxxx-YY.xxx  |
-| YYYxYYY\*  | XxxXxxxXxxXxxx.xxxxxxxxxx-YYY.xxx |
-| YYxYY      | XxxXxxxXxxXxxx.xxxxxxxxxx-YY.xxx  |
-| YYxYY      | XxxXxxxXxxXxxx.xxxxxxxxxx-YY.xxx  |
-| YYxYY      | XxxXxxxXxxXxxx.xxxxxxxxxx-YY.xxx  |
-| YYxYY      | XxxXxxxXxxXxxx.xxxxxxxxxx-YY.xxx  |
-| YYxYY      | XxxXxxxXxxXxxx.xxxxxxxxxx-YY.xxx  |
-| YYxYY      | XxxXxxxXxxXxxx.xxxxxxxxxx-YY.xxx  |
-| YYxYY      | XxxXxxxXxxXxxx.xxxxxxxxxx-YY.xxx  |
-| YYxYY      | XxxXxxxXxxXxxx.xxxxxxxxxx-YY.xxx  |
-| YYxYY      | XxxXxxxXxxXxxx.xxxxxxxxxx-YY.xxx  |
+| 16x16\*    | AppNameAppList.targetsize-16.png  |
+| 24x24\*    | AppNameAppList.targetsize-24.png  |
+| 32x32\*    | AppNameAppList.targetsize-32.png  |
+| 48x48\*    | AppNameAppList.targetsize-48.png  |
+| 256x256\*  | AppNameAppList.targetsize-256.png |
+| 20x20      | AppNameAppList.targetsize-20.png  |
+| 30x30      | AppNameAppList.targetsize-30.png  |
+| 36x36      | AppNameAppList.targetsize-36.png  |
+| 40x40      | AppNameAppList.targetsize-40.png  |
+| 60x60      | AppNameAppList.targetsize-60.png  |
+| 64x64      | AppNameAppList.targetsize-64.png  |
+| 72x72      | AppNameAppList.targetsize-72.png  |
+| 80x80      | AppNameAppList.targetsize-80.png  |
+| 96x96      | AppNameAppList.targetsize-96.png  |
 
  
 
-\* Xxxxxx xxxxx xxxxx xxxxx xx x xxxxxxxx
+\* Submit these asset sizes as a baseline
 
-## <span id="Asset_types">
-            </span>
-            <span id="asset_types">
-            </span>
-            <span id="ASSET_TYPES">
-            </span>Xxxxx xxxxx
+## <span id="Asset_types"></span><span id="asset_types"></span><span id="ASSET_TYPES"></span>Asset types
 
 
-Xxxxxx xxxx xxx xxx xxxxx xxxxx, xxxxx xxxx, xxx xxxxxxxxxxx xxxx xxxxx.
+Listed here are all asset types, their uses, and recommended file names.
 
-**Xxxx xxxxxx**
+**Tile assets**
 
--   Xxxxxxxx xxxxxx xxx xxxxxxxxx xxxx xx xxx Xxxxx xx xxxxxxxx xxxx xxx.
--   Xxxx xxxx xxxxxx: \*Xxxx.xxxxx-\*.XXX
--   Xxxxxxxx xxxx: Xxxxx XXX xxx
--   Xxxx:
-    -   Xxxxxxx Xxxxx xxxxx (xxxxxxx xxx xxxxxx)
-    -   Xxxxxx xxxxxx (xxxxxxx xxx xxxxxx)
-    -   Xxxx xxxxxxxx (xxxxxx)
-    -   Xxxxx xxxxxx (xxxxxx)
-    -   Xxxxxx (xxxxxx)
-    -   Xxxxx
+-   Centered assets are generally used on the Start to showcase your app.
+-   File name format: \*Tile.scale-\*.PNG
+-   Impacted apps: Every UWP app
+-   Uses:
+    -   Default Start tiles (desktop and mobile)
+    -   Action center (desktop and mobile)
+    -   Task switcher (mobile)
+    -   Share picker (mobile)
+    -   Picker (mobile)
+    -   Store
 
-**Xxxxxxxx xxxx xxxxxx xxxx xxxxx**
+**Scalable list assets with plate**
 
--   Xxxxx xxxxxx xxx xxxx xx xxxxxxxx xxxx xxxxxxx xxxxx xxxxxxx. Xxxxxx xxxxxx xxx xxxxxx xx xxx xxxxxx xx xxxx xxxx xxxxx xxx xxxxxxxxxx xxxxx xx xxx xxx xxxxxxxx xxxx.
--   Xxxx xxxx xxxxxx: \*XxxXxxx.xxxxx-\*.XXX
--   Xxxxxxxx xxxx: Xxxxx XXX xxx
--   Xxxx:
-    -   Xxxxx xxx xxxx xxxx (xxxxxxx)
-    -   Xxxxx xxxx-xxxxxxxxxx xxxx xxxx (xxxxxxx)
-    -   Xxxx xxxxxxx (xxxxxxx)
-    -   Xxxxxxx xxxxxx xxxxxxx
-    -   Xxxxx xxx xxxx xxxx (xxxxxx)
-    -   Xxxxxxxx
+-   These assets are used on surfaces that request scale factors. Assets either get plated by the system or come with their own background color if the app includes that.
+-   File name format: \*AppList.scale-\*.PNG
+-   Impacted apps: Every UWP app
+-   Uses:
+    -   Start all apps list (desktop)
+    -   Start most-frequently used list (desktop)
+    -   Task manager (desktop)
+    -   Cortana search results
+    -   Start all apps list (mobile)
+    -   Settings
 
-**Xxxxxx-xxxx xxxx xxxxxx xxxx xxxxx**
+**Target-size list assets with plate**
 
--   Xxxxx xxx xxxxx xxxxx xxxxx xxxx xxx'x xxxxx xxxx xxxxxxxx. Xxxxxx xxxx xxx xxxxxx xxxxxxxxxxx. Xxxxxx xxx xxxxxxx xx xxx xxxxxx.
--   Xxxx xxxx xxxxxx: \*XxxXxxx.xxxxxxxxxx-\*.XXX
--   Xxxxxxxx xxxx: Xxxxx XXX xxx
--   Xxxx:
-    -   Xxxxx xxxx xxxx (xxxxxxx)
-    -   Xxxxx xxxxx xxxxxx xx xxxx (xxxxxxx)
-    -   Xxxxxxxxx (xxxxxxx)
-    -   Xxxxxxx Xxxxx (xxxxxxx)
+-   These are fixed asset sizes that don't scale with plateaus. Mostly used for legacy experiences. Assets are checked by the system.
+-   File name format: \*AppList.targetsize-\*.PNG
+-   Impacted apps: Every UWP app
+-   Uses:
+    -   Start jump list (desktop)
+    -   Start lower corner of tile (desktop)
+    -   Shortcuts (desktop)
+    -   Control Panel (desktop)
 
-**Xxxxxx-xxxx xxxx xxxxxx xxxxxxx xxxxx**
+**Target-size list assets without plate**
 
--   Xxxxx xxx xxxxxx xxxx xxx'x xxx xxxxxx xx xxxxxx xx xxx xxxxxx.
--   Xxxx xxxx xxxxxx: \*XxxXxxx.xxxxxxxxxx-\*\_xxxxxxx-xxxxxxxx.XXX
--   Xxxxxxxx xxxx: Xxxxx XXX xxx
--   Xxxx:
-    -   Xxxxxxx xxx xxxxxxx xxxxxxxxx (xxxxxxx)
-    -   Xxxxxxx xxxxxxxx
-    -   Xxxx xxxx
-    -   XXX+XXX
+-   These are assets that don't get plated or scaled by the system.
+-   File name format: \*AppList.targetsize-\*\_altform-unplated.PNG
+-   Impacted apps: Every UWP app
+-   Uses:
+    -   Taskbar and taskbar thumbnail (desktop)
+    -   Taskbar jumplist
+    -   Task view
+    -   ALT+TAB
 
-**Xxxx xxxxxxxxx xxxxxx**
+**File extension assets**
 
--   Xxxxx xxx xxxxxx xxxxxxxx xx xxxx xxxxxxxxxx. Xxxx xxxxxx xxxx xx XxxYY-xxxxx xxxx xxxxxxxxxxx xxxxx xx Xxxx Xxxxxxxx xxx xxxx xx xxxxx-xxxxxxxx. Xxxxxx xx xxxxxxxxx xx xxxxxxx xxx xxxxxx xxxxxxxxx.
--   Xxxx xxxx xxxxxx: \*XxxxXxxxxxxxxx.xxxxxxxxxx-\*.XXX
--   Xxxxxxxx xxxx: Xxxxx, Xxxxx, Xxxxxx, Xxxxxxxxx Xxxx, Xxxxxxxxx Xxxxxx
--   Xxxx:
-    -   Xxxx Xxxxxxxx
-    -   Xxxxxxx
-    -   Xxxxxxx XX xxxxxxxx (xxxxxxx)
+-   These are assets specific to file extensions. They appear next to Win32-style file association icons in File Explorer and must be theme-agnostic. Sizing is different on desktop and mobile platforms.
+-   File name format: \*LogoExtensions.targetsize-\*.PNG
+-   Impacted apps: Music, Video, Photos, Microsoft Edge, Microsoft Office
+-   Uses:
+    -   File Explorer
+    -   Cortana
+    -   Various UI surfaces (desktop)
 
-**Xxxxxx xxxxxx**
+**Splash screen**
 
--   Xxx xxxxx xxxx xxxxxxx xx xxxx xxx'x xxxxxx xxxxxx. Xxxxxxxxxxxxx xxxxxx xx xxxx xxxxxxx xxx xxxxxx xxxxxxxxx.
--   Xxxx xxxx xxxxxx: \*XxxxxxXxxxxx.xxxxxx-YYY.XXX
--   Xxxxxxxx xxxx: Xxxxx XXX xxx
--   Xxxx:
-    -   Xxx'x xxxxxx xxxxxx
+-   The asset that appears on your app's splash screen. Automatically scales on both desktop and mobile platforms.
+-   File name format: \*SplashScreen.screen-100.PNG
+-   Impacted apps: Every UWP app
+-   Uses:
+    -   App's splash screen
 
-**Xxxxxx xxxx xxxxxx**
+**Iconic tile assets**
 
--   Xxxxx xxx xxxxxx xxx xxxx xxxx xxxx xxx xx xxx xxxxxx xxxxxxxx.
--   Xxxx xxxx xxxxxx: Xxx xxxxxxxxxx
--   Xxxxxxxx xxxx: Xxxxxxxxx, Xxxxx, Xxxxx, xxxx
--   Xxxx:
-    -   Xxxxxx xxxx
+-   These are assets for apps that make use of the iconic template.
+-   File name format: Not applicable
+-   Impacted apps: Messaging, Phone, Store, more
+-   Uses:
+    -   Iconic tile
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[This article contains information that is specific to Universal Windows Platform (UWP) apps and Windows 10. For Windows 8.1 guidance, please download the [Windows 8.1 guidelines PDF](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
 
-## Xxxxxxx xxxxxx
+## <span id="related_topics"></span>Related topics
 
-* [Xxxxxxx xxxx xxxxxxxxx](tiles-and-notifications-special-tile-templates-catalog.md)
+
+
+* [Special tile templates](tiles-and-notifications-special-tile-templates-catalog.md)
+ 
+
+ 
+
+
+
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

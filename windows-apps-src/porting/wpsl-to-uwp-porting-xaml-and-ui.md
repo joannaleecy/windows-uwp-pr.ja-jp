@@ -1,42 +1,42 @@
 ---
-xxxxxxxxxxx: Xxx xxxxxxxx xx xxxxxxxx XX xx xxx xxxx xx xxxxxxxxxxx XXXX xxxxxx xxxxxxxxxx xxxxxxxxx xxxx xxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
-xxxxx: Xxxxxxx Xxxxxxx Xxxxx Xxxxxxxxxxx XXXX xxx XX xx XXX
-xx.xxxxxxx: YYxxxxYY-YxxY-YYxY-YYxx-YYYxxxxxxxxx
+description: The practice of defining UI in the form of declarative XAML markup translates extremely well from Windows Phone Silverlight to Universal Windows Platform (UWP) apps.
+title: Porting Windows Phone Silverlight XAML and UI to UWP
+ms.assetid: 49aade74-5dc6-46a5-89ef-316dbeabbebe
 ---
 
-#  Xxxxxxx Xxxxxxx Xxxxx Xxxxxxxxxxx XXXX xxx XX xx XXX
+#  Porting Windows Phone Silverlight XAML and UI to UWP
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
-
-
-Xxx xxxxxxxx xxxxx xxx [Xxxxxxxxxxxxxxx](wpsl-to-uwp-troubleshooting.md).
-
-Xxx xxxxxxxx xx xxxxxxxx XX xx xxx xxxx xx xxxxxxxxxxx XXXX xxxxxx xxxxxxxxxx xxxxxxxxx xxxx xxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xxx'xx xxxx xxxx xxxxx xxxxxxxx xx xxxx xxxxxx xxx xxxxxxxxxx xxxx xxx'xx xxxxxxx xxxxxx Xxxxxxxx xxx xxxxxxxxxx, xxxxxxx xxxx xxxxxxx xxxx xxxxx, xxx xxxxxxx "xxx-xxxxxxxxx" xx "xxxxx". Xxxx xx xxx xxxxxxxxxx xxxx xx xxxx xxxxxxxxxxxx xxxxx—xxxx xxxxxx, xxx xxxx xxxx xxxxxxxxxxx XX xxxxxxxx—xxxx xxxx xx xxxxxxxxxxxxxxx xx xxxx.
-
-## X xxxxx xxxx xx xxx XXXX xxxxxx
-
-Xxx xxxxxxxx xxxxx xxxxxx xxx xxx xx xxxx xxxx XXXX xxx xxxx-xxxxxx xxxxx xxxx xxxx xxx Xxxxxxx YY Xxxxxx Xxxxxx xxxxxxx. Xxx xx xxx xxxxx xxxxxx xxx xxxxx xxxxxx xxxxxxxxxxx xx xxx Xxxxxx Xxxxxx XXXX xxxxxxxx xx xxxx xxx `PhoneApplicationPage` xxxxxxx xx xxx xxxx xx xxxx XXXX xxxx xx xxx xxxxx xxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxx. Xx xxx xxxxxxxx xxxxx, xxx xxxxx x xxxx xx xxx XXXX xxxxx xxxx Xxxxxx Xxxxxx xxxxxxxxx xxxx xx xxxxxxx xxx Xxxxxxx YY xxxxxxx. Xx xxx xxxx xxxx xxxxxxx xx XxxxXxxx.xxxx, xxx'xx xxx xxxx xx xxx xxxx xx xxx xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br227503), xxxxx xx xx xxx [**Xxxxxxx.XX.Xxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227716) xxxxxxxxx. Xx, xxx xxx xxxxxx xxx `<phone:PhoneApplicationPage>` xxxxxxxx xx `<Page>` (xxx'x xxxxxx xxxxxxxx xxxxxxx xxxxxx) xxx xxx xxx xxxxxx xxx `xmlns:phone` xxxxxxxxxxx.
-
-Xxx x xxxx xxxxxxx xxxxxxxx xx xxxxxxx xxx XXX xxxx xxxx xxxxxxxxxxx xx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxxx, xxx xxx xxxxx xx [Xxxxxxxxx xxx xxxxx xxxxxxxx](wpsl-to-uwp-namespace-and-class-mappings.md).
-
-## XXXX xxxxxxxxx xxxxxx xxxxxxxxxxxx
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xx xxx xxx xxxxxxxxx xx xxxxxx xxxxx xx xxxx xxxxx—xxxxxxx x xxxx xxxxx xxxxxxxx xx x xxxxx xxxxxxxxx—xxxx xxx xxxx xxxx XXXX xxxxxxxxx xxxxxx xxxxxxxxxxxx xx xxxx XXXX xxxxxx. Xxx xxxxxx xx xxxxx xxxxxxx xxxxxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxx XXX. Xxxx xxx xxxx xxxxxxxx:
+The previous topic was [Troubleshooting](wpsl-to-uwp-troubleshooting.md).
+
+The practice of defining UI in the form of declarative XAML markup translates extremely well from Windows Phone Silverlight to Universal Windows Platform (UWP) apps. You'll find that large sections of your markup are compatible once you've updated system Resource key references, changed some element type names, and changed "clr-namespace" to "using". Much of the imperative code in your presentation layer—view models, and code that manipulates UI elements—will also be straightforward to port.
+
+## A first look at the XAML markup
+
+The previous topic showed you how to copy your XAML and code-behind files into your new Windows 10 Visual Studio project. One of the first issues you might notice highlighted in the Visual Studio XAML designer is that the `PhoneApplicationPage` element at the root of your XAML file is not valid for a Universal Windows Platform (UWP) project. In the previous topic, you saved a copy of the XAML files that Visual Studio generated when it created the Windows 10 project. If you open that version of MainPage.xaml, you'll see that at the root is the type [**Page**](https://msdn.microsoft.com/library/windows/apps/br227503), which is in the [**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) namespace. So, you can change all `<phone:PhoneApplicationPage>` elements to `<Page>` (don't forget property element syntax) and you can delete the `xmlns:phone` declaration.
+
+For a more general approach to finding the UWP type that corresponds to a Windows Phone Silverlight type, you can refer to [Namespace and class mappings](wpsl-to-uwp-namespace-and-class-mappings.md).
+
+## XAML namespace prefix declarations
+
+
+If you use instances of custom types in your views—perhaps a view model instance or a value converter—then you will have XAML namespace prefix declarations in your XAML markup. The syntax of these differs between Windows Phone Silverlight and the UWP. Here are some examples:
 
 ```xaml
     xmlns:ContosoTradingCore="clr-namespace:ContosoTradingCore;assembly=ContosoTradingCore"
     xmlns:ContosoTradingLocal="clr-namespace:ContosoTradingLocal"
 ```
 
-Xxxxxx "xxx-xxxxxxxxx" xx "xxxxx" xxx xxxxxx xxx xxxxxxxx xxxxx xxx xxxx-xxxxx (xxx xxxxxxxx xxxx xx xxxxxxxx). Xxx xxxxxx xxxxx xxxx xxxx:
+Change "clr-namespace" to "using" and delete any assembly token and semi-colon (the assembly will be inferred). The result looks like this:
 
 ```xaml
     xmlns:ContosoTradingCore="using:ContosoTradingCore"
     xmlns:ContosoTradingLocal="using:ContosoTradingLocal"
 ```
 
-Xxx xxx xxxx x xxxxxxxx xxxxx xxxx xx xxxxxxx xx xxx xxxxxx:
+You may have a resource whose type is defined by the system:
 
 ```xaml
     xmlns:System="clr-namespace:System;assembly=mscorlib"
@@ -44,7 +44,7 @@ Xxx xxx xxxx x xxxxxxxx xxxxx xxxx xx xxxxxxx xx xxx xxxxxx:
     <System:Double x:Key="FontSizeLarge">40</System:Double>
 ```
 
-Xx xxx XXX, xxxx xxx "Xxxxxx" xxxxxx xxxxxxxxxxx xxx xxx xxx (xxxxxxx xxxxxxxx) "x" xxxxxx xxxxxxx:
+In the UWP, omit the "System" prefix declaration and use the (already declared) "x" prefix instead:
 
 ```xaml
     <x:Double x:Key="FontSizeLarge">40</x:Double></code></pre></td>
@@ -53,10 +53,10 @@ Xx xxx XXX, xxxx xxx "Xxxxxx" xxxxxx xxxxxxxxxxx xxx xxx xxx (xxxxxxx xxxxxxxx) 
 </table>
 ```
 
-## Xxxxxxxxxx xxxx
+## Imperative code
 
 
-Xxxx xxxx xxxxxx xxx xxx xxxxx xxxxx xxxxx'x xxxxxxxxxx xxxx xxxx xxxxxxxxxx XX xxxxx. Xxxxxxx xxxxx xx xxx xxxx-xxxxxx xxxxx xxxx xxxxxxxx xxxxxxxxxx XX xxxxxxxx. Xxx xxxxxxx, xxx xxxxx xxxx xxxx x xxxx xx xxxx xxxx xxxx xxx xxxxx'x xxxxxxx xxx:
+Your view models are one place where there's imperative code that references UI types. Another place is any code-behind files that directly manipulate UI elements. For example, you might find that a line of code like this one doesn't compile yet:
 
 
 ```csharp
@@ -76,35 +76,35 @@ Xxxx xxxx xxxxxx xxx xxx xxxxx xxxxx xxxxx'x xxxxxxxxxx xxxx xxxx xxxxxxxxxx XX 
 </table>
 ```
 
-**XxxxxxXxxxx** xx xx xxx **Xxxxxx.Xxxxxxx.Xxxxx.Xxxxxxx** xxxxxxxxx xx Xxxxxxx Xxxxx Xxxxxxxxxxx, xxx x xxxxx xxxxxxxxx xx xxx xxxx xxxx xxxxxx **XxxxxxXxxxx** xx xx xxxx xxxxxxx xxxxxxxxx xxxxxxxxxxxxx xx xx xxx xxxxxxx xxxxx. Xx x xxxx xxxx xxxx, xxx xxx xxxxx-xxxxx xxx xxxx xxxx (**XxxxxxXxxxx**) xx Xxxxxx Xxxxxx xxx xxx xxx **Xxxxxxx** xxxxxxx xx xxx xxxxxxx xxxx xx xxx x xxx xxxxxxxxx xxxxxxxxx xx xxx xxxx. Xx xxxx xxxx, xxx [**Xxxxxxx.XX.Xxxx.Xxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243258) xxxxxxxxx xx xxxxx, xxxxx xx xxxxx xxx xxxx xxxxx xx xxx XXX. Xxx xxx xxxxxx xxx **Xxxxxx.Xxxxxxx.Xxxxx.Xxxxxxx** xxxxx xxxxxxxxx, xxx xxxx xxxx xx xxx xx xxxxx xx xxxx xxxx xxxx xxxx xx xxx xxxxxxx xxxxx. Xxxx xxx'xx xxxx, xxx'xx xxxx xxxxxxx xxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxxxxxx.
+**BitmapImage** is in the **System.Windows.Media.Imaging** namespace in Windows Phone Silverlight, and a using directive in the same file allows **BitmapImage** to be used without namespace qualification as in the snippet above. In a case like this, you can right-click the type name (**BitmapImage**) in Visual Studio and use the **Resolve** command on the context menu to add a new namespace directive to the file. In this case, the [**Windows.UI.Xaml.Media.Imaging**](https://msdn.microsoft.com/library/windows/apps/br243258) namespace is added, which is where the type lives in the UWP. You can remove the **System.Windows.Media.Imaging** using directive, and that will be all it takes to port code like that in the snippet above. When you're done, you'll have removed all Windows Phone Silverlight namespaces.
 
-Xx xxxxxx xxxxx xxxx xxxx, xxxxx xxx'xx xxxxxxx xxx xxxxx xx xx xxx xxxxxxxxx xx xxx xxxx xxxxx xx x xxx xxx, xxx xxx xxx Xxxxxx Xxxxxx'x **Xxxx xxx Xxxxxxx** xxxxxxx xx xxxx xxxx xxxxxxx xx xxxx xxxxxx xxxx. Xxx **Xxxxxxx** xxxxxxx xx x xxxxx xxx xx xxxxxxxxxxx x xxxx'x xxx xxxxxxxxx. Xx xxxxxxx xxxxxxx, xxx xxx xxxxxxx xxx "Xxxxxx.Xxxxxxx" xxxx "Xxxxxxx.XX.Xxxx". Xxxx xxxx xxxxxxxxxxx xxxx xxx xxxxx xxxxxxxxxx xxx xxx xxxxx-xxxxxxxxx xxxx xxxxx xxxx xxxxx xx xxxx xxxxxxxxx.
+In simple cases like this, where you're mapping the types in an old namespace to the same types in a new one, you can use Visual Studio's **Find and Replace** command to make bulk changes to your source code. The **Resolve** command is a great way of discovering a type's new namespace. As another example, you can replace all "System.Windows" with "Windows.UI.Xaml". That will essentially port all using directives and all fully-qualified type names that refer to that namespace.
 
-Xxxx xxx xxx xxx xxxxx xxxxxxxxxx xxx xxxxxxx xxx xxx xxx xxxx xxxxx, xxx xxx xxx Xxxxxx Xxxxxx'x **Xxxxxxxx Xxxxxx** xxxxxxx xx xxxx xxxx xxxxxxxxxx xxx xxxxxx xxxxxx xxxx.
+Once all the old using directives are removed and the new ones added, you can use Visual Studio's **Organize Usings** command to sort your directives and remove unused ones.
 
-Xxxxxxxxx, xxxxxx xxxxxxxxxx xxxx xxxx xx xx xxxxx xx xxxxxxxx x xxxxxxxxx'x xxxx. Xxxxx xxxxx, xxx xxxx xxxx xx xxx XXX XXXx xxxxxxx xx .XXX XXXx xxx Xxxxxxx Xxxxx xxxx. Xx xxxxxxxx xxxxx XXXx xxx xxxxxxxxx, xxx xxx xxxx xx xxxx xxxxxxx xxxxx xx xxxxxxxxxxx xxxx [.XXX xxx Xxxxxxx Xxxxx xxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx) xxx xxx [Xxxxxxx Xxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/br211377).
+Sometimes, fixing imperative code will be as minor as changing a parameter's type. Other times, you will need to use UWP APIs instead of .NET APIs for Windows Store apps. To identify which APIs are supported, use the rest of this porting guide in combination with [.NET for Windows Store apps overview](https://msdn.microsoft.com/library/windows/apps/xaml/br230302.aspx) and the [Windows Runtime reference](https://msdn.microsoft.com/library/windows/apps/br211377).
 
-Xxx, xx xxx xxxx xxxx xx xxx xx xxx xxxxx xxxxx xxxx xxxxxxx xxxxxx, xxx xxx xxxxxxx xx xxxx xxx xxx xxx-xxxxxxxxx xxxx. Xxxx xxxxxxx, xxx xxxxx xx x xxxx, xxx xxxxx xx xxx xxxxxxxxx xxxxxx xx xxxx xxxxxxx (xxx xxx xxxxxxxx xxxxx: [Xxxxxxxxxxxxxxx](wpsl-to-uwp-troubleshooting.md)), xxxxx xxx xxxxx xxx xxxxxxx xxxxxx xxx xxxxxx-xxx xxx xxxx xxxx xx xxxxxxxx.
+And, if you just want to get to the stage where your project builds, you can comment or stub out any non-essential code. Then iterate, one issue at a time, and refer to the following topics in this section (and the previous topic: [Troubleshooting](wpsl-to-uwp-troubleshooting.md)), until any build and runtime issues are ironed-out and your port is complete.
 
-## Xxxxxxxx/xxxxxxxxxx XX
+## Adaptive/responsive UI
 
-Xxxxxxx xxxx Xxxxxxx YY xxx xxx xxx xx x xxxxxxxxxxx xxxx xxxxx xx xxxxxxx—xxxx xxxx xxx xxx xxxxxx xxxx xxx xxxxxxxxxx—xxx'xx xxxx xx xx xxxxxx xxx xxxxxxx xxxxx xx xxxx xxxx xxx xxx xxx'xx xxxx xx xxxxxx xxxx XX xx xxxx xxx xxxx xx xxxxx xxxxxxx. Xxx xxx xxx xxx xxxxxxxx Xxxxxx Xxxxx Xxxxxxx xxxxxxx xx xxxxxxxxxxx xxxxxx xxxxxx xxxx xxx xx xxxxxx xxxxxx xx xxxxxxxx, xxx xx xxxxxxx xx xxx xx xx xxxx xx xxxxx xx xxx xxxxxxx [Xxxxxxxx XX](wpsl-to-uwp-case-study-bookstore2.md#adaptive-ui) xx xxx XxxxxxxxxY xxxx xxxxx xxxxx.
+Because your Windows 10 app can run on a potentially wide range of devices—each with its own screen size and resolution—you'll want to go beyond the minimal steps to port your app and you'll want to tailor your UI to look its best on those devices. You can use the adaptive Visual State Manager feature to dynamically detect window size and to change layout in response, and an example of how to do that is shown in the section [Adaptive UI](wpsl-to-uwp-case-study-bookstore2.md#adaptive-ui) in the Bookstore2 case study topic.
 
-## Xxxxxx xxx Xxxxxxxxx
+## Alarms and Reminders
 
-Xxxx xxxxx xxx **Xxxxx** xx **Xxxxxxxx** xxxxxxx xxxxxx xx xxxxxx xx xxx xxx [**XxxxxxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768) xxxxx xx xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx, xxx xxxxxxx x xxxxx xx xxx xxxxxxxx xxxx. Xxx [Xxxxxxxxxx xxxxxxxxxx](wpsl-to-uwp-business-and-data.md#background-processing) xxx [Xxxxxx](#toasts).
+Code using the **Alarm** or **Reminder** classes should be ported to use the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) class to create and register a background task, and display a toast at the relevant time. See [Background processing](wpsl-to-uwp-business-and-data.md#background-processing) and [Toasts](#toasts).
 
-## Xxxxxxxxx
+## Animation
 
-Xx x xxxxxxxxx xxxxxxxxxxx xx xxxxxxxx xxxxxxxxxx xxx xxxx/xx xxxxxxxxxx, xxx XXX xxxxxxxxx xxxxxxx xx xxxxxxxxx xx XXX xxxx. Xxxxx xxxxxxxxxx xxxx xxxx xxxxxxxx xxx xxxxx xx xxx xxxxxxxx, xx xxxx xxxxx, xxx xx xxxx xxxx xxx xxxxxx xx xxxxxxxxxx xxxx Xxxxxxx xx xxx xxxxx-xx xxxx xx. Xxx [Xxxxxxxxxx: Xxxxxxxxx xxxx XX xxxxx xxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703).
+As a preferred alternative to keyframe animations and from/to animations, the UWP animation library is available to UWP apps. These animations have been designed and tuned to run smoothly, to look great, and to make your app appear as integrated with Windows as the built-in apps do. See [Quickstart: Animating your UI using library animations](https://msdn.microsoft.com/library/windows/apps/xaml/hh452703).
 
-Xx xxx xx xxx xxxxxxxx xxxxxxxxxx xx xxxx/xx xxxxxxxxxx xx xxxx XXX xxxx, xxxx xxx xxx xxxx xx xxxxxxxxxx xxx xxxxxxxxxxx xxxxxxx xxxxxxxxxxx xxx xxxxxxxxx xxxxxxxxxx xxxx xxx xxx xxxxxxxx xxx xxxxxxxxxx. Xxx [Xxxxxxxx xxxxxxxxxx xxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt204774). Xxxxxxxxxx xxxx xxx xx xxx XX xxxxxx (xxxx xxxx xxxxxxx xxxxxx xxxxxxxxxx, xxx xxxxxxx) xxx xxxxx xx xxxxxxxxx xxxxxxxxxx, xxx xxxx xxx xx xxx xxx xxxxxxxx, xxxx xxxx xxxx xx xxxxxx xxxxxx xxx xx xxx xx xxx xxxxxx. Xxx xxx xxxxxx xx-xxxxxx xxxx xx xxxxxxx xxxxxxxxx xxxxxxxxxx, xxxx xx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208980), xxxxxxx xxxxxx xxxx xxxxxxxxxxx. Xx xxx xxx xxx `EnableDependentAnimation="True"` xx xxx xxxxxxxxx xxxxxxx xx xxxxx xx xxxxxxx xxxx xxxxxxxxx xx xxx xx xxxxxxxxx xxxx xxxxxx xx xxxxxxxxxx xx xxx xxxxxxxx. Xx xxx xxx Xxxxx xxx Xxxxxx Xxxxxx xx xxxxxx xxx xxxxxxxxxx, xxxx xxxx xxxxxxxx xxxx xx xxx xxx xxx xxxxx xxxxxxxxx.
+If you do use keyframe animations or from/to animations in your UWP apps, then you may want to understand the distinction between independent and dependent animations that the new platform has introduced. See [Optimize animations and media](https://msdn.microsoft.com/library/windows/apps/mt204774). Animations that run on the UI thread (ones that animate layout properties, for example) are known as dependent animations, and when run on the new platform, they will have no effect unless you do one of two things. You can either re-target them to animate different properties, such as [**RenderTransform**](https://msdn.microsoft.com/library/windows/apps/br208980), thereby making them independent. Or you can set `EnableDependentAnimation="True"` on the animation element in order to confirm your intention to run an animation that cannot be guaranteed to run smoothly. If you use Blend for Visual Studio to author new animations, then that property will be set for you where necessary.
 
-## Xxxx xxxxxx xxxxxxxx
+## Back button handling
 
-Xx x Xxxxxxx YY xxx, xxx xxx xxx x xxxxxx xxxxxxxx xx xxxxxxxx xxx xxxx xxxxxx xxx xx xxxx xxxx xx xxx xxxxxxx. Xx xxxxxx xxxxxxx, xxx xxxxxx xx xxxxxxxx xxx xxx xx x xxxxxxxxxx xxxxxx xx xxx xxxxxx, xx xx x xxxxxx xx xxx xxxxx. Xx x xxxxxxx xxxxxx, xxx xxx x xxxxxx xx xxxx xxx'x xxxxxx xxxxxxxx xxxx-xxxxxxxxxx xx xxxxxxxx xxxxxx xxx xxx, xxx xxxx xxxxxxx xx xxx xxxxx xxx xxx xxxxxxxx xxxx xx xx xxx xxxx xxx xxx Xxxxxx xxxx. Xxx xxxx xxxxxx xxxxx xx x xxxxxxxxx xxxxxxx xxxxxx xxx xxxxxx xxxxxxxx, xxx xxxxxxx xxxxxxxxxxx xx xxxxxxxx xx xx xxxxxxxx xxxxx xxx xxxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn893596) xxxxx.
+In a Windows 10 app, you can use a single approach to handling the back button and it will work on all devices. On mobile devices, the button is provided for you as a capacitive button on the device, or as a button in the shell. On a desktop device, you add a button to your app's chrome whenever back-navigation is possible within the app, and this appears in the title bar for windowed apps or in the task bar for Tablet mode. The back button event is a universal concept across all device families, and buttons implemented in hardware or in software raise the same [**BackRequested**](https://msdn.microsoft.com/library/windows/apps/dn893596) event.
 
-Xxx xxxxxxx xxxxx xxxxx xxx xxx xxxxxx xxxxxxxx xxx xx xx xxxx xxx xxxxx xxxxx xxx xxxx xxxxxxxxxx xxxxxxx xx xxx xxxxx, xxx xxxxx xxx xxxxx'x xxxxxxx xxxxxxxxxx (xxx xxxxxxx, xx xxxx xxxxx xxxxxxx xxxxxxx).
+The example below works for all device families and it is good for cases where the same processing applies to all pages, and where you needn't confirm navigation (for example, to warn about unsaved changes).
 
 ```csharp
    // app.xaml.cs
@@ -146,36 +146,36 @@ Xxx xxxxxxx xxxxx xxxxx xxx xxx xxxxxx xxxxxxxx xxx xx xx xxxx xxx xxxxx xxxxx x
     }
 ```
 
-Xxxxx'x xxxx x xxxxxx xxxxxxxx xxx xxx xxxxxx xxxxxxxx xxx xxxxxxxxxxxxxxxx xxxxxxx xxx xxx.
+There's also a single approach for all device families for programmatically exiting the app.
 
 ```csharp
    Windows.UI.Xaml.Application.Current.Exit();
 ```
 
-## Xxxxxxx, xxx xxxxxxxx xxxxxxxx xxxx {x:Xxxx}
+## Binding, and compiled bindings with {x:Bind}
 
-Xxx xxxxx xx xxxxxxx xxxxxxxx:
+The topic of binding includes:
 
--   Xxxxxxx x XX xxxxxxx xx "xxxx" (xxxx xx, xx xxx xxxxxxxxxx xxx xxxxxxxx xx x xxxx xxxxx)
--   Xxxxxxx x XX xxxxxxx xx xxxxxxx XX xxxxxxx
--   Xxxxxxx x xxxx xxxxx xxxx xx xxxxxxxxxx (xxxx xx, xx xxxxxx xxxxxxxxxxxxx xxxx x xxxxxxxx xxxxx xxxxxxx xxx xxxx xxx xxxxxxxxxxxx xx x xxxxxxx xxxxxxx)
+-   Binding a UI element to "data" (that is, to the properties and commands of a view model)
+-   Binding a UI element to another UI element
+-   Writing a view model that is observable (that is, it raises notifications when a property value changes and when the availability of a command changes)
 
-Xxx xx xxxxx xxxxxxx xxx xxxxxxx xxxxx xxxxxxxxx, xxx xxxxx xxx xxxxxxxxx xxxxxxxxxxx. Xxx xxxxxxx, **Xxxxxx.Xxxxxxx.Xxxx.Xxxxxxx** xxxx xx [**Xxxxxxx.XX.Xxxx.Xxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209820), **Xxxxxx.XxxxxxxxxXxxxx.XXxxxxxXxxxxxxxXxxxxxx** xxxx xx [**Xxxxxxx.XX.Xxxx.Xxxx.XXxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209899), xxx **Xxxxxx.Xxxxxxxxxxx.Xxxxxxxxxxx.XXxxxxxXxxxxxxxXxxxxxx** xxxx xx [**Xxxxxxx.XX.Xxxx.Xxxxxxx.XXxxxxxXxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh702001).
+All of these aspects are largely still supported, but there are namespace differences. For example, **System.Windows.Data.Binding** maps to [**Windows.UI.Xaml.Data.Binding**](https://msdn.microsoft.com/library/windows/apps/br209820), **System.ComponentModel.INotifyPropertyChanged** maps to [**Windows.UI.Xaml.Data.INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/br209899), and **System.Collections.Specialized.INotifyPropertyChanged** maps to [**Windows.UI.Xaml.Interop.INotifyCollectionChanged**](https://msdn.microsoft.com/library/windows/apps/hh702001).
 
-Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxxx xxx xxx xxx xxxxxxx xxx'x xx xxxxx xxxx xxxx xxx xx x XXX xxx. Xxx xxx xxxx xxxxxxxxxx xxxx xxxx xxxxxxxxxx xxxx xxx xxx xxx xxx xxxxxxx, xxxxx xxxx xx xxxxxxxxxx xxx xxxxxxxxx xxxxxxx, xxx xxxxxxx xxxxx xxxxxx. Xx xx, xxx xxx xxxx xxx xxxxxx xx xxxx xxxx xxxxxxxxxx xxxx xx xxxxxxxxx xx xxxx xxxxxxxxxxx xxxxxx xxxxx xx xxxxxxxxxx xxx xxxxxxxx, xxx xxxx xxxxxx xxxxxxxx xxxxxxxxxx, xxxx xxxxxx xxxx xxx xxxxxxxxxxxxx xxxxx xxx xxxx xxxxxxxxxxxx. Xxx xxx xxx Xxxxxx Xxxxxx xx Xxxxx xxx Xxxxxx Xxxxxx xx xxxx xxx xxxxx XXX xxx xxx xxxxxxx xxxx xxxx xxx xxxxx XXXX xxxxxxx. Xxxx xxxx xx x XXX xxx xxx xxxx xxxxx xxx xxx xxx [**XxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/dn279427) xxx [**XxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn279244).
+Windows Phone Silverlight app bars and app bar buttons can't be bound like they can in a UWP app. You may have imperative code that constructs your app bar and its buttons, binds them to properties and localized strings, and handles their events. If so, you now have the option to port that imperative code by replacing it with declarative markup bound to properties and commands, and with static resource references, thus making your app incrementally safer and more maintainable. You can use Visual Studio or Blend for Visual Studio to bind and style UWP app bar buttons just like any other XAML element. Note that in a UWP app the type names you use are [**CommandBar**](https://msdn.microsoft.com/library/windows/apps/dn279427) and [**AppBarButton**](https://msdn.microsoft.com/library/windows/apps/dn279244).
 
-Xxx xxxxxxx-xxxxxxx xxxxxxxx xx XXX xxxx xxxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxxxxx:
+The binding-related features of UWP apps currently have the following limitations:
 
--   Xxxxx xx xx xxxxx-xx xxxxxxx xxx xxxx-xxxxx xxxxxxxxxx xxx xxx [**XXxxxXxxxxXxxx**](T:System.ComponentModel.IDataErrorInfo) xxx [**XXxxxxxXxxxXxxxxXxxx**](T:System.ComponentModel.INotifyDataErrorInfo) xxxxxxxxxx.
--   Xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209820) xxxxx xxxx xxx xxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxx xx Xxxxxxx Xxxxx Xxxxxxxxxxx. Xxxxxxx, xxx xxx xxxxx xxxxxxxxx [**XXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209903) xx xxxxxxx xxxxxx xxxxxxxxxx.
--   Xxx [**XXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209903) xxxxxxx xxxx xxxxxxxx xxxxxxx xx xxxxxxxxxx xxxxxxx xx [**XxxxxxxXxxx**](T:System.Globalization.CultureInfo) xxxxxxx.
--   Xxx [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209833) xxxxx xxxx xxx xxxxxxx xxxxx-xx xxxxxxx xxx xxxxxxx xxx xxxxxxxxx, xxx xxxxxxxx xxxxx xxxxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxx xxxxxxx xx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt210946) xxx xxx [Xxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226854).
+-   There is no built-in support for data-entry validation and the [**IDataErrorInfo**](T:System.ComponentModel.IDataErrorInfo) and [**INotifyDataErrorInfo**](T:System.ComponentModel.INotifyDataErrorInfo) interfaces.
+-   The [**Binding**](https://msdn.microsoft.com/library/windows/apps/br209820) class does not include the extended formatting properties available in Windows Phone Silverlight. However, you can still implement [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) to provide custom formatting.
+-   The [**IValueConverter**](https://msdn.microsoft.com/library/windows/apps/br209903) methods take language strings as parameters instead of [**CultureInfo**](T:System.Globalization.CultureInfo) objects.
+-   The [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/br209833) class does not provide built-in support for sorting and filtering, and grouping works differently. For more info, see [Data binding in depth](https://msdn.microsoft.com/library/windows/apps/mt210946) and the [Data binding sample](http://go.microsoft.com/fwlink/p/?linkid=226854).
 
-Xxxxxxxx xxx xxxx xxxxxxx xxxxxxxx xxx xxxxx xxxxxxx xxxxxxxxx, Xxxxxxx YY xxxxxx xxx xxxxxx xx x xxx xxx xxxx xxxxxxxxxx xxxxxxx xxxxxxxxx xxxxxx xxxxxxxx xxxxxxxx, xxxxx xxx xxx {x:Xxxx} xxxxxx xxxxxxxxx. Xxx [Xxxx Xxxxxxx: Xxxxx Xxxx Xxxx' Xxxxxxxxxxx Xxxxxxx Xxx Xxxxxxxxxxxx xx XXXX Xxxx Xxxxxxx](http://channel9.msdn.com/Events/Build/2015/3-635), xxx xxx [x:Xxxx Xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619989).
+Although the same binding features are still largely supported, Windows 10 offers the option of a new and more performant binding mechanism called compiled bindings, which use the {x:Bind} markup extension. See [Data Binding: Boost Your Apps' Performance Through New Enhancements to XAML Data Binding](http://channel9.msdn.com/Events/Build/2015/3-635), and the [x:Bind Sample](http://go.microsoft.com/fwlink/p/?linkid=619989).
 
-## Xxxxxxx xx Xxxxx xx x xxxx xxxxx
+## Binding an Image to a view model
 
-Xxx xxx xxxx xxx [**Xxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242760) xxxxxxxx xx xxx xxxxxxxx xx x xxxx xxxxx xxxx'x xx xxxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210107). Xxxx'x x xxxxxxx xxxxxxxxxxxxxx xx xxxx x xxxxxxxx xx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx:
+You can bind the [**Image.Source**](https://msdn.microsoft.com/library/windows/apps/br242760) property to any property of a view model that's of type [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/br210107). Here's a typical implementation of such a property in a Windows Phone Silverlight app:
 
 ```csharp
 <colgroup>
@@ -192,58 +192,58 @@ Xxx xxx xxxx xxx [**Xxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/a
     return new BitmapImage(new Uri(this.CoverImagePath, UriKind.Relative));
 ```
 
-Xx x XXX xxx, xxx xxx xxx xx-xxxx [XXX xxxxxx](https://msdn.microsoft.com/library/windows/apps/jj655406). Xx xxxx xxx xxx xxxx xxx xxxx xx xxxx xxxx xxx xxxx, xxx xxx xxx x xxxxxxxxx xxxxxxxx xx xxx **Xxxxxx.Xxx** xxxxxxxxxxx xx xxx xxx xx-xxxx XXX xxxxxx xx x xxxx XXX xxx xxxxxx xxx xxxx xx xxx xxxx xxxx xxxx. Xxxx xxxx:
+In a UWP app, you use the ms-appx [URI scheme](https://msdn.microsoft.com/library/windows/apps/jj655406). So that you can keep the rest of your code the same, you can use a different overload of the **System.Uri** constructor to put the ms-appx URI scheme in a base URI and append the rest of the path onto that. Like this:
 
 ```csharp
     // this.BookCoverImagePath contains a path of the form "/Assets/CoverImages/one.png".
     return new BitmapImage(new Uri(new Uri("ms-appx://"), this.CoverImagePath));
 ```
 
-Xxxx xxx, xxx xxxx xx xxx xxxx xxxxx, xxx xxxx xxxxxx xx xxx xxxxx xxxx xxxxxxxx, xxx xxx xxxxxxxx xx xxx XXXX xxxxxx, xxx xxx xxxx xxxxxxx xxx xxxx.
+That way, the rest of the view model, the path values in the image path property, and the bindings in the XAML markup, can all stay exactly the same.
 
-## Xxxxxxxx, xxx xxxxxxx xxxxxx/xxxxxxxxx
+## Controls, and control styles/templates
 
-Xxxxxxx Xxxxx Xxxxxxxxxxx xxxx xxx xxxxxxxx xxxxxxx xx xxx **Xxxxxxxxx.Xxxxx.Xxxxxxxx** xxxxxxxxx xxx xxx **Xxxxxx.Xxxxxxx.Xxxxxxxx** xxxxxxxxx. XXXX XXX xxxx xxx xxxxxxxx xxxxxxx xx xxx [**Xxxxxxx.XX.Xxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227716) xxxxxxxxx. Xxx xxxxxxxxxxxx xxx xxxxxx xx XXXX xxxxxxxx xx xxx XXX xx xxxxxxxxx xxx xxxx xx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxxxx. Xxx, xxxx xxxxxxx xxxx xxxx xxxx xx xxxxxxx xxx xxx xx xxxxxxxxx xxxxxxxx xxx xx xxxxx xxxx xxxx Xxxxxxx xxxx. Xxxx xxx xxxxxxxx xxxxxxxx.
+Windows Phone Silverlight apps use controls defined in the **Microsoft.Phone.Controls** namespace and the **System.Windows.Controls** namespace. XAML UWP apps use controls defined in the [**Windows.UI.Xaml.Controls**](https://msdn.microsoft.com/library/windows/apps/br227716) namespace. The architecture and design of XAML controls in the UWP is virtually the same as Windows Phone Silverlight controls. But, some changes have been made to improve the set of available controls and to unify them with Windows apps. Here are specific examples.
 
-| Xxxxxxx xxxx | Xxxxxx |
+| Control name | Change |
 |--------------|--------|
-| XxxxxxxxxxxXxx | Xxx [Xxxx.XxxXxxXxx](https://msdn.microsoft.com/library/windows/apps/hh702575) xxxxxxxx. |
-| XxxxxxxxxxxXxxXxxxXxxxxx | Xxx XXX xxxxxxxxxx xx xxx [Xxxxx](https://msdn.microsoft.com/library/windows/apps/dn279538) xxxxxxxx. XxxxxxxXxxxxxxx xx xxx xxxxxxx xxxxxxxx xx XxxxxxxXxx. Xxx XXXX xxxxxx xxxxxxxxxx xx xxxxxxx'x xxxxx xxx xx xxx xxxxx xx xxx xxxxxxx xxxxxxxx. |
-| XxxxxxxxxxxXxxXxxxXxxx | Xxx XXX xxxxxxxxxx xx xxx [XxxXxxXxxxxx.Xxxxx](https://msdn.microsoft.com/library/windows/apps/dn279261) xxx xx xxx xxxx xxxx xxxx. |
-| XxxxxxxXxxx (xx xxx Xxxxxxx Xxxxx Xxxxxxx) | Xxx x xxxxxx xxxxxxxxx xxx-xxx, xxx [Xxxxxx](https://msdn.microsoft.com/library/windows/apps/dn279496). |
-| XxxxxxxXxxxXxxxxx.XxxxXxxxxx xxxxx | Xxxxxxxxxx xxxx xxx XXX xxxxxxxxx xxxxxxx xxx xxxxx xxxx xxx xxxxxxx Xxxxxx xx xxx xxxxxx xxxxxxxx. Xxx xxx [Xxxxxxxxx xxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/jj649432). |
-| XxxxXxxxXxxxxxxx xxxx xxxxxxx xxxx | Xxx Xxxxxxx Xxxxx Xxxxxxxxxxx XxxxXxxxXxxxxxxx xxxxxxxxx xx xxx xxxx, xxxxx xxx xx xxxx xx xxxxxxx. Xxxxx, xx xx xxxx xx xxxxxxx xxxx xxxx xx xxxxxxx xx x xxx, xxx xxxxxxx, x xxxx xx xxxxx xxxxxxx xx xxxxxxx xxxxxx. Xxxxxx, xx xx xxxx xx "xxxx" xxxxxxx xxx xxxxxxxx xxxxx: xxx xxxxxxx xxxx xx xxxxx (xxx xxxxxxx, xxxxx), xxx x xxxx xx xxxx xxx xxxxx xxxx xxxxxxxxxx (xxx xxxxxxx, xxxxxxx xxxxxxx). Xxxx xxx XXX, xxx xxx xxxxxxx xxxxxxx xxxx xxxx xxx [Xxxxxxxxxx xxx xxxx xxx xxxx xxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt186889). |
-| XxxxXxxxXxxxxxxx xxxx xxxx xxxx | Xxx xxxxxxxxxxx xxxxxxx, xx xxx xxxx xx xxxx xxxx xxxxx, xx xxxxxxxxxxx XxxxXxxxXxxxxxxx xxxxxxx xx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxxx xxx xxxx xxx xxxx, xxx-xxxxxxx xxxx. Xx x XXX xxx, [XxxxXxxx](https://msdn.microsoft.com/library/windows/apps/br242705) xxx xxxxxxxxx xxx xxxx xxxxx xx xxxxx xxxxxxx xx xxx xxx xxxx xxx xxxxxxxx xx xxxxxxxx. |
-| Xxxxxxxx | Xxx Xxxxxxx Xxxxx Xxxxxxxxxxx Xxxxxxxx xxxxxxx xxxx xx xxx [Xxxxxxxxxx xxx xxx xxxxxxxx xx Xxxxxxx Xxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/dn449149) xxx Xxxxxxxxxx xxx xxx xxx xxxxxxx. <br/> Xxxx xxxx x Xxxxxxxx xxxxxxx xxxxx xxxxxx xxxx xxx xxxx xxxxxxx xx xxx xxxxx, xxx xxx xxxxxxxxxx xxxxx xxxxx xx xxxxxxxx xxxxxxxx xx xxx xxxxxxxx. [Xxx](https://msdn.microsoft.com/library/windows/apps/dn251843) xxxxxxxx xx xxx xxxx xxxxxx, xxx xxxxxxxx xx xxx xxxx. |
-| Xxxxx | Xxx XXX xxxxxxxxxx xx xxx Xxxxxxx Xxxxx Xxxxxxxxxxx Xxxxx xxxxxxx xx [Xxxxxxx.XX.Xxxx.Xxxxxxxx.Xxxxx](https://msdn.microsoft.com/library/windows/apps/dn608241). Xx xx xxxxxxxxx xxx xxx xxxxxx xxxxxxxx. |
+| ApplicationBar | The [Page.TopAppBar](https://msdn.microsoft.com/library/windows/apps/hh702575) property. |
+| ApplicationBarIconButton | The UWP equivalent is the [Glyph](https://msdn.microsoft.com/library/windows/apps/dn279538) property. PrimaryCommands is the content property of CommandBar. The XAML parser interprets an element's inner xml as the value of its content property. |
+| ApplicationBarMenuItem | The UWP equivalent is the [AppBarButton.Label](https://msdn.microsoft.com/library/windows/apps/dn279261) set to the menu item text. |
+| ContextMenu (in the Windows Phone Toolkit) | For a single selection fly-out, use [Flyout](https://msdn.microsoft.com/library/windows/apps/dn279496). |
+| ControlTiltEffect.TiltEffect class | Animations from the UWP animation library are built into the default Styles of the common controls. See the [Animating pointer actions](https://msdn.microsoft.com/library/windows/apps/xaml/jj649432). |
+| LongListSelector with grouped data | The Windows Phone Silverlight LongListSelector functions in two ways, which can be used in concert. First, it is able to display data that is grouped by a key, for example, a list of names grouped by initial letter. Second, it is able to "zoom" between two semantic views: the grouped list of items (for example, names), and a list of just the group keys themselves (for example, initial letters). With the UWP, you can display grouped data with the [Guidelines for list and grid view controls](https://msdn.microsoft.com/library/windows/apps/mt186889). |
+| LongListSelector with flat data | For performance reasons, in the case of very long lists, we recommended LongListSelector instead of a Windows Phone Silverlight list box even for flat, non-grouped data. In a UWP app, [GridView](https://msdn.microsoft.com/library/windows/apps/br242705) are preferred for long lists of items whether or not the data are amenable to grouping. |
+| Panorama | The Windows Phone Silverlight Panorama control maps to the [Guidelines for hub controls in Windows Store apps](https://msdn.microsoft.com/library/windows/apps/dn449149) and Guidelines for the hub control. <br/> Note that a Panorama control wraps around from the last section to the first, and its background image moves in parallax relative to the sections. [Hub](https://msdn.microsoft.com/library/windows/apps/dn251843) sections do not wrap around, and parallax is not used. |
+| Pivot | The UWP equivalent of the Windows Phone Silverlight Pivot control is [Windows.UI.Xaml.Controls.Pivot](https://msdn.microsoft.com/library/windows/apps/dn608241). It is available for all device families. |
 
-**Xxxx**   Xxx XxxxxxxXxxx xxxxxx xxxxx xx xxxxxxxx xx xxxxxx xxxxxx/xxxxxxxxx xx Xxxxxxx YY xxxx, xxx xxx xx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxx. Xxxxx xxx xxxxx xxxxxxx xxx xxxx xxxxxxxx xxxxxx xxxxxx/xxxxxxxxx xxx xxx xx xxxxxxxxxxx xxx Xxxxxxx YY xxxx, xxxxxxxxx xxxxxx xxxxxxxx xxxx xxx xxx xxxxx, xxxxxxx xx xxx xxxx xx xxxxxx xxxxxx xxxx, xxx xxxxxxxxxxx xxxxxxxxxxxx xxxx xx xxx Xxxxxxx YY xxxxxxx xxxxxx/xxxxxxxxx. Xx xxxxxxxxx xxxx xxx xxxx x xxxxx xxxx xx x xxxxxxx'x xxxxxxx xxxxxxxx xxx Xxxxxxx YY xxx xxxx xx-xxxxx xxxx xxxxx xxx xxxxxxxx xxxxxxxxxxxxx xx xxxx.
+**Note**   The PointerOver visual state is relevant in custom styles/templates in Windows 10 apps, but not in Windows Phone Silverlight apps. There are other reasons why your existing custom styles/templates may not be appropriate for Windows 10 apps, including system resource keys you are using, changes to the sets of visual states used, and performance improvements made to the Windows 10 default styles/templates. We recommend that you edit a fresh copy of a control's default template for Windows 10 and then re-apply your style and template customization to that.
 
-Xxx xxxx xxxx xx XXX xxxxxxxx, xxx [Xxxxxxxx xx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185405), [Xxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt185406), xxx [Xxxxxxxxxx xxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn611856).
+For more info on UWP controls, see [Controls by function](https://msdn.microsoft.com/library/windows/apps/mt185405), [Controls list](https://msdn.microsoft.com/library/windows/apps/mt185406), and [Guidelines for controls](https://msdn.microsoft.com/library/windows/apps/dn611856).
 
-##  Xxxxxx xxxxxxxx xx Xxxxxxx YY
+##  Design language in Windows 10
 
-Xxxxx xxx xxxx xxxxxxxxxxx xx xxxxxx xxxxxxxx xxxxxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxx xxx Xxxxxxx YY xxxx. Xxx xxx xxx xxxxxxx, xxx [Xxxxxx](http://dev.windows.com/design). Xxxxxxx xxx xxxxxx xxxxxxxx xxxxxxx, xxx xxxxxx xxxxxxxxxx xxxxxx xxxxxxxxxx: xx xxxxxxxxx xx xxxxxx xxx xxxxxx xxxxxx xxx xxxxxxxxxx xxxxxxx xxxxxxxx xx xxxxxxx xxx xxxxxx, xxxxxxxx xxxxxxxx xxxxxx xxxxxxxx, xxx xxxxxxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxx; xxx xxxxxx xxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxx; xxxxxx xx x xxxx; xxx xxxxx xxxx xxxxxxxxxxx xx xxxx xxxx xxxxx xxxxxxxxxx.
+There are some differences in design language between Windows Phone Silverlight apps and Windows 10 apps. For all the details, see [Design](http://dev.windows.com/design). Despite the design language changes, our design principles remain consistent: be attentive to detail but always strive for simplicity through focusing on content not chrome, fiercely reducing visual elements, and remaining authentic to the digital domain; use visual hierarchy especially with typography; design on a grid; and bring your experiences to life with fluid animations.
 
-## Xxxxxxxxxxxx xxx xxxxxxxxxxxxx
+## Localization and globalization
 
-Xxx xxxxxxxxx xxxxxxx, xxx xxx xx-xxx xxx .xxxx xxxx xxxx xxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxxx xx xxxx XXX xxx xxxxxxx. Xxxx xxx xxxx xxxx, xxx xx xx xxx xxxxxxx, xxx xxxxxx xx xx Xxxxxxxxx.xxxx xx xxxx xxx xxxxxx xxxxxxxxx xxxx xxxx xx xx xxxxxxx. Xxx **Xxxxx Xxxxxx** xx **XXXXxxxxxxx** xxx **Xxxx xx Xxxxxx Xxxxxxxxx** xx **Xx xxx xxxx**. Xxx xxx xxxx xxx xxx xxxxxxx xx xxxxxx xx xxxxxxxxxx xxx **x:Xxx** xxxxxxxxx xx xxxx XXXX xxxxxxxx. Xxx [Xxxxxxxxxx: Xxxxx xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
+For localized strings, you can re-use the .resx file from your Windows Phone Silverlight project in your UWP app project. Copy the file over, add it to the project, and rename it to Resources.resw so that the lookup mechanism will find it by default. Set **Build Action** to **PRIResource** and **Copy to Output Directory** to **Do not copy**. You can then use the strings in markup by specifying the **x:Uid** attribute on your XAML elements. See [Quickstart: Using string resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965329).
 
-Xxxxxxx Xxxxx Xxxxxxxxxxx xxxx xxx xxx **XxxxxxxXxxx** xxxxx xx xxxx xxxxxxxxx xx xxx. XXX xxxx xxx XXX (Xxxxxx Xxxxxxxx Xxxxxxxxxx), xxxxx xxxxxxx xxx xxxxxxx xxxxxxx xx xxx xxxxxxxxx (xxxxxxxxxxxx, xxxxx, xxx xxxxx) xxxx xx xxxxxxx xxx xx xxx Xxxxxx Xxxxxx xxxxxx xxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxx, xxxx, xxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn611859).
+Windows Phone Silverlight apps use the **CultureInfo** class to help globalize an app. UWP apps use MRT (Modern Resource Technology), which enables the dynamic loading of app resources (localization, scale, and theme) both at runtime and in the Visual Studio design surface. For more information, see [Guidelines for files, data, and globalization](https://msdn.microsoft.com/library/windows/apps/dn611859).
 
-Xxx [**XxxxxxxxXxxxxxx.XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206071) xxxxx xxxxxxxxx xxx xx xxxx xxxxxx xxxxxx-xxxxxxxx xxxxxxxxx xxxxx xx xxx xxxxxx xxxxxx xxxxxxxx xxxxxxxxx xxxxxx.
+The [**ResourceContext.QualifierValues**](https://msdn.microsoft.com/library/windows/apps/br206071) topic describes how to load device family-specific resources based on the device family resource selection factor.
 
-## Xxxxx xxx xxxxxxxx
+## Media and graphics
 
-Xx xxx xxxx xxxxx XXX xxxxx xxx xxxxxxxx, xxxx xx xxxx xxxx xxx Xxxxxxx xxxxxx xxxxxxxxxx xxxxxxxxx x xxxxxx xxxxxxxxx xx xxxxxxxx xxxxxxxxxxx, xxxxxxxxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxx. Xxxxxxx xxxxxx xx xxxxxxxx xx xxxxx xxx xxxxx xxxxxxx, xxxxxxxxxx, xxx xxxxxx. Xx xxxx xxx xxxxxxx xxx xxxx xxxxxxxxxx, xxxx xx xxxx xxxx xxxx xxxx xxx xxxxx-xx xxxx.
+As you read about UWP media and graphics, bear in mind that the Windows design principles encourage a fierce reduction of anything superfluous, including graphical complexity and clutter. Windows design is typified by clean and clear visuals, typography, and motion. If your app follows the same principles, then it will seem more like the built-in apps.
 
-Xxxxxxx Xxxxx Xxxxxxxxxxx xxx x **XxxxxxXxxxxxxxXxxxx** xxxx xxxxx xx xxx xxxxxxx xx xxx XXX, xxxxxxxx xxxxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br228076) xxxxx xxx. Xx xxxx xxxxx, xxx xxxx xx xxxx xx xxx x xxxxxxx xxxxxx xxxx x xxxxxx. Xxxx xxxx xxx xxx [xxxxxx x xxxxxx xxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/desktop/dd756679) xxxx XxxxxxYX xx x [Xxxxxxxxx XxxxxxX](https://msdn.microsoft.com/library/windows/desktop/ee663274) xxx XXXX X++ XXX.
+Windows Phone Silverlight has a **RadialGradientBrush** type which is not present in the UWP, although other [**Brush**](https://msdn.microsoft.com/library/windows/apps/br228076) types are. In some cases, you will be able to get a similar effect with a bitmap. Note that you can [create a radial gradient brush](https://msdn.microsoft.com/library/windows/desktop/dd756679) with Direct2D in a [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) and XAML C++ UWP.
 
-Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxx **Xxxxxx.Xxxxxxx.XXXxxxxxx.XxxxxxxXxxx** xxxxxxxx, xxx xxxx xxxxxxxx xx xxx x xxxxxx xx xxx XXX [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911) xxxx. Xx xxxx xxxxx, xxx xxxx xx xxxx xx xxx x xxxxxxx xxxxxx xxxx x xxxxxx. Xxx xxx xxx [xxxxxx xx xxxxxxx xxxx](https://msdn.microsoft.com/library/windows/desktop/ee329947) xxxx XxxxxxYX xx x [Xxxxxxxxx XxxxxxX](https://msdn.microsoft.com/library/windows/desktop/ee663274) xxx XXXX X++ XXX xxx. Xxx, x xxxxxx xxx xxxx xxx **XxxxxxxXxxx** xx xx xxx x xxxxxx xxxxxx xxxx xxxxxx xx xxxx xxxxx xxx xxxx xxxxxx. Xxx xxxxxx xxxxxxxx, xxx xxx xxx xxxxx-xxxxx xxxxxx xxxxxxx (xxxx xx xxx xxx xxxxxx xxxxxxxxxxx xxxxx). Xxx, xx xxxx x xxxxx-xxxxx xxxxxx (xxxx xx xxx xxxxx xxxxx xxxxxxxxxxx xxxxx), xxxxxxxx x xxxxxxxxx xxxxxxxx.
+Windows Phone Silverlight has the **System.Windows.UIElement.OpacityMask** property, but that property is not a member of the UWP [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) type. In some cases, you will be able to get a similar effect with a bitmap. And you can [create an opacity mask](https://msdn.microsoft.com/library/windows/desktop/ee329947) with Direct2D in a [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) and XAML C++ UWP app. But, a common use case for **OpacityMask** is to use a single bitmap that adapts to both light and dark themes. For vector graphics, you can use theme-aware system brushes (such as the pie charts illustrated below). But, to make a theme-aware bitmap (such as the check marks illustrated below), requires a different approach.
 
-![x xxxxx-xxxxx xxxxxx](images/wpsl-to-uwp-case-studies/wpsl-to-uwp-theme-aware-bitmap.png)
+![a theme-aware bitmap](images/wpsl-to-uwp-case-studies/wpsl-to-uwp-theme-aware-bitmap.png)
 
-Xx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx, xxx xxxxxxxxx xx xx xxx xx xxxxx xxxx (xx xxx xxxx xx x xxxxxx) xx xxx **XxxxxxxXxxx** xxx x **Xxxxxxxxx** xxxxxx xxxx xxx xxxxxxxxxx xxxxx:
+In a Windows Phone Silverlight app, the technique is to use an alpha mask (in the form of a bitmap) as the **OpacityMask** for a **Rectangle** filled with the foreground brush:
 
 ```xaml
     <Rectangle Fill="{StaticResource PhoneForegroundBrush}" Width="26" Height="26">
@@ -253,7 +253,7 @@ Xx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx, xxx xxxxxxxxx xx xx xxx xx xxxxx xxxx (xx xx
     </Rectangle>
 ```
 
-Xxx xxxx xxxxxxxxxxxxxxx xxx xx xxxx xxxx xx x XXX xxx xx xx xxx x [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/dn279306), xxxx xxxx:
+The most straightforward way to port this to a UWP app is to use a [**BitmapIcon**](https://msdn.microsoft.com/library/windows/apps/dn279306), like this:
 
 ```xaml
     <BitmapIcon UriSource="Assets/winrt_check.png" Width="21" Height="21"/></code></pre></td>
@@ -262,9 +262,9 @@ Xxx xxxx xxxxxxxxxxxxxxx xxx xx xxxx xxxx xx x XXX xxx xx xx xxx x [**XxxxxxXxxx
 </table>
 ```
 
-Xxxx, xxxxx\_xxxxx.xxx xx xx xxxxx xxxx xx xxx xxxx xx x xxxxxx xxxx xx xxxx\_xxxxx.xxx xx, xxx xx xxxxx xxxx xxxx xx xxx xxxx xxxx. Xxxxxxx, xxx xxx xxxx xx xxxxxxx xxxxxxx xxxxxxxxx xxxxx xx xxxxx\_xxxxx.xxx xx xx xxxx xxx xxxxxxxxx xxxxxxx xxxxxxx. Xxx xxxx xxxx xx xxxx, xxx xxx xx xxxxxxxxxxx xx xxx xxxxxxx xx xxx **Xxxxx** xxx **Xxxxxx** xxxxxx, xxx [Xxxx/xxxxxxxxx xxxxxx, xxxxxxx xxxxxxxx, xxx xxxxx xxxxxxx](#view-effective-pixels-viewing-distance-and-scale-factors) xx xxxx xxxxx.
+Here, winrt\_check.png is an alpha mask in the form of a bitmap just as wpsl\_check.png is, and it could very well be the same file. However, you may want to provide several different sizes of winrt\_check.png to be used for different scaling factors. For more info on that, and for an explanation of the changes to the **Width** and **Height** values, see [View/effective pixels, viewing distance, and scale factors](#view-effective-pixels-viewing-distance-and-scale-factors) in this topic.
 
-X xxxx xxxxxxx xxxxxxxx, xxxxx xx xxxxxxxxxxx xx xxxxx xxx xxxxxxxxxxx xxxxxxx xxx xxxxx xxx xxxx xxxxx xxxx xx x xxxxxx, xx xx xxx xxx xxxxx xxxxxx—xxx xxxx x xxxx xxxxxxxxxx (xxx xxxxx xxxxx) xxx xxx xxxx x xxxxx xxxxxxxxxx (xxx xxxx xxxxx). Xxx xxxxxxx xxxxxxx xxxxx xxx xx xxxx xxxx xxx xx xxxxxx xxxxxx, xxx [Xxx xx xxxx xxxxxxxxx xxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324). Xxxx x xxx xx xxxxx xxxxx xxx xxxxxxxxx xxxxx, xxx xxx xxxxx xx xxxx xx xxx xxxxxxxx, xxxxx xxxxx xxxx xxxx, xxxx xxxx:
+A more general approach, which is appropriate if there are differences between the light and dark theme form of a bitmap, is to use two image assets—one with a dark foreground (for light theme) and one with a light foreground (for dark theme). For further details about how to name this set of bitmap assets, see [How to name resources using qualifiers](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324). Once a set of image files are correctly named, you can refer to them in the abstract, using their root name, like this:
 
 ```xaml
 <colgroup>
@@ -283,7 +283,7 @@ X xxxx xxxxxxx xxxxxxxx, xxxxx xx xxxxxxxxxxx xx xxxxx xxx xxxxxxxxxxx xxxxxxx x
 </table>
 ```
 
-Xx Xxxxxxx Xxxxx Xxxxxxxxxxx, xxx **XXXxxxxxx.Xxxx** xxxxxxxx xxx xx xxx xxxxx xxxx xxx xxx xxxxxxx xxxx x **Xxxxxxxx** xxx xx xxxxxxxxx xxxxxxxxxx xx XXXX xxxxxx xx xxx **XxxxxxXxxxxxxx** xxxx-xxxxxxxx. Xx xxx XXX, xxx xxxx xx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br208919) xxxxxxxx xx [**XxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210259), xx xxx xxx xxxx xxxx x xxxxxxxxxxx xxxxxx. Xxxxxxxx x xxxxxxxxx xx xx xxxxxxx xxxxx xxxx-xxxxxxxx xxxxx xx xxx xxxxxxxxxx. Xx, xx xxxx x xxxxxxxx xxxxxx xx xxxxxx, xxxxxxx xxx **Xxxx** xxxxxxxxx xxxxxx xxx xxxx xx xxxx xxxxxxxx xxxxxxx xxxxxx xxxxxxx xx xxx xxxxxxxxx:
+In Windows Phone Silverlight, the **UIElement.Clip** property can be any shape that you can express with a **Geometry** and is typically serialized in XAML markup in the **StreamGeometry** mini-language. In the UWP, the type of the [**Clip**](https://msdn.microsoft.com/library/windows/apps/br208919) property is [**RectangleGeometry**](https://msdn.microsoft.com/library/windows/apps/br210259), so you can only clip a rectangular region. Allowing a rectangle to be defined using mini-language would be too permissive. So, to port a clipping region in markup, replace the **Clip** attribute syntax and make it into property element syntax similar to the following:
 
 ```xaml
     <UIElement.Clip>
@@ -291,17 +291,17 @@ Xx Xxxxxxx Xxxxx Xxxxxxxxxxx, xxx **XXXxxxxxx.Xxxx** xxxxxxxx xxx xx xxx xxxxx x
     </UIElement.Clip>
 ```
 
-Xxxx xxxx xxx xxx [xxx xxxxxxxxx xxxxxxxx xx x xxxx xx x xxxxx](https://msdn.microsoft.com/library/windows/desktop/dd756654) xxxx XxxxxxYX xx x [Xxxxxxxxx XxxxxxX](https://msdn.microsoft.com/library/windows/desktop/ee663274) xxx XXXX X++ XXX xxx.
+Note that you can [use arbitrary geometry as a mask in a layer](https://msdn.microsoft.com/library/windows/desktop/dd756654) with Direct2D in a [Microsoft DirectX](https://msdn.microsoft.com/library/windows/desktop/ee663274) and XAML C++ UWP app.
 
-## Xxxxxxxxxx
+## Navigation
 
-Xxxx xxx xxxxxxxx xx x xxxx xx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx, xxx xxx x Xxxxxxx Xxxxxxxx Xxxxxxxxxx (XXX) xxxxxxxxxx xxxxxx:
+When you navigate to a page in a Windows Phone Silverlight app, you use a Uniform Resource Identifier (URI) addressing scheme:
 
 ```csharp
     NavigationService.Navigate(new Uri("/AnotherPage.xaml", UriKind.Relative)/*, navigationState*/);</code></pre></td>
 ```
 
-Xx x XXX xxx, xxx xxxx xxx [**Xxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242694) xxxxxx xxx xxxxxxx xxx xxxx xx xxx xxxxxxxxxxx xxxx (xx xxxxxxx xx xxx **x:Xxxxx** xxxxxxxxx xx xxx xxxx'x XXXX xxxxxx xxxxxxxxxx):
+In a UWP app, you call the [**Frame.Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) method and specify the type of the destination page (as defined by the **x:Class** attribute of the page's XAML markup definition):
 
 
 ```csharp
@@ -313,48 +313,48 @@ Xx x XXX xxx, xxx xxxx xxx [**Xxxxx.Xxxxxxxx**](https://msdn.microsoft.com/libra
     rootFrame.Navigate(typeof(AnotherPage)/*, parameter*/);
 ```
 
-Xxx xxxxxx xxx xxxxxxx xxxx xxx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xx XXXxxXxxxxxxx.xxx:
+You define the startup page for a Windows Phone Silverlight app in WMAppManifest.xml:
 
 ```xml
     <DefaultTask Name="_default" NavigationPage="MainPage.xaml" />
 ```
 
-Xx x XXX xxx, xxx xxx xxxxxxxxxx xxxx xx xxxxxx xxx xxxxxxx xxxx. Xxxx'x xxxx xxxx xxxx Xxx.xxxx.xx xxxx xxxxxxxxxxx xxx:
+In a UWP app, you use imperative code to define the startup page. Here's some code from App.xaml.cs that illustrates how:
 
 ```csharp
     if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))</code></pre></td>
 ```
 
-XXX xxxxxxx xxx xxxxxxxx xxxxxxxxxx xxx XXX xxxxxxxxxx xxxxxxxxxx, xxx xx xxxx xxx xxx xxxxxxxxxx xx XXX xxxxxxxxxx, xxxxx xx xxx xxxxx xx XXXx. XXX xxxxxxx xxxxxx xx xxxxxxxx xx xxx xxxxxx-xxxxx xxxxxx xx xxxxxxxxxxx x xxxxxx xxxx xxxx x XXX xxxxxx, xxxxx xxxxx xx xxxxxxxxx xxx xxxxxxxxxxxxxxx xxxxxx xxxxxx xxx xxxx xxxx xx x xxxxxxxxx xxxxxx xxx xxxxx xx x xxxxxxxxx xxxxxxxx xxxx. XXX xxxx xxx xxxx-xxxxx xxxxxxxxxx, xxxxx xx xxxxxxxx-xxxxx xxx xxxxxxxx-xxxxxxx, xxx xxxx xxx xxxx xxx xxxxxxx xxxx XXX xxxxxxx xxxxxx. Xxx xxx xxxx xxx xxxxxxxx xxxxxxxxxx xx xx xxxx xxxxx xxxx xxxxxxx xx xxx xxxxxx xxxx xx xxxx xxx xxxx xxx xxxxx x xxxxxxxxxx xxxxxxxx xx xxx xxxxxxx xx xx xxxxxxxx xxxx xxxx, xx xxxxxxxxx xxxxxxxxx. Xxx xxxx xxxx xxx xx xxxxxxxx xx xxxxxxx x xxxxxxxxxx xxxxxxxxx xxxx xxx xxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242694) xxxxxx.
+URI mapping and fragment navigation are URI navigation techniques, and so they are not applicable to UWP navigation, which is not based on URIs. URI mapping exists in response to the weakly-typed nature of identifying a target page with a URI string, which leads to fragility and maintainability issues should the page move to a different folder and hence to a different relative path. UWP apps use type-based navigation, which is strongly-typed and compiler-checked, and does not have the problem that URI mapping solves. The use case for fragment navigation is to pass along some context to the target page so that the page can cause a particular fragment of its content to be scrolled into view, or otherwise displayed. The same goal can be achieved by passing a navigation parameter when you call the [**Navigate**](https://msdn.microsoft.com/library/windows/apps/br242694) method.
 
-Xxx xxxx xxxx, xxx [Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187344).
+For more info, see [Navigation](https://msdn.microsoft.com/library/windows/apps/mt187344).
 
-## Xxxxxxxx xxx xxxxxxxxx
+## Resource key reference
 
-Xxx xxxxxx xxxxxxxx xxx xxxxxxx xxx Xxxxxxx YY xxx xxxxxxxxxxxx xxxxxxx xxxxxx xxxxxx xxxx xxxxxxx, xxx xxxx xxxxxx xxxxxxxx xxxx xxxx xxxx xxxxxxx xx xxxxxxx. Xxx XXXX xxxxxx xxxxxx xx Xxxxxx Xxxxxx xxxxxxxxxx xxxxxxxxxx xx xxxxxxxx xxxx xxxx xxx'x xx xxxxxxxx. Xxx xxxxxxx, xxx XXXX xxxxxx xxxxxx xxxx xxxxxxxxx x xxxxxxxxx xx xxx xxxxx xxx `PhoneTextNormalStyle` xxxx x xxx xxxxxxxx. Xx xxxx xxx'x xxxxxxxxx, xxxx xxx xxx xxxx xxxxxxxxxxx xxxxxxxxx xxxx xxx xxx xx xxxxxx xx xx xxx xxxxxxxx xx xxxxxx. Xx, xx'x xxxxxxxxx xx xxxxxx xx XXXX xxxxxx xxxxxxxxxxx. Xxx xxx xxxx xxxx Xxxxxx Xxxxxx xx xx x xxxxx xxxx xxx xxxxxxxx xxxx xxxxxx.
+The design language has evolved for Windows 10 and consequently certain system styles have changed, and many system resource keys have been removed or renamed. The XAML markup editor in Visual Studio highlights references to resource keys that can't be resolved. For example, the XAML markup editor will underline a reference to the style key `PhoneTextNormalStyle` with a red squiggle. If that isn't corrected, then the app will immediately terminate when you try to deploy it to the emulator or device. So, it's important to attend to XAML markup correctness. And you will find Visual Studio to be a great tool for catching such issues.
 
-Xxxx, xxx [Xxxx](#text), xxxxx.
+Also, see [Text](#text), below.
 
-## Xxxxxx xxx (xxxxxx xxxx)
+## Status bar (system tray)
 
-Xxx xxxxxx xxxx (xxx xx XXXX xxxxxx xxxx `shell:SystemTray.IsVisible`) xx xxx xxxxxx xxx xxxxxx xxx, xxx xx xx xxxxx xx xxxxxxx. Xxx xxx xxxxxxx xxx xxxxxxxxxx xx xxxxxxxxxx xxxx xx xxxxxxx xxx [**Xxxxxxx.XX.XxxxXxxxxxxxxx.XxxxxxXxx.XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn610343) xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn610339) xxxxxxx.
+The system tray (set in XAML markup with `shell:SystemTray.IsVisible`) is now called the status bar, and it is shown by default. You can control its visibility in imperative code by calling the [**Windows.UI.ViewManagement.StatusBar.ShowAsync**](https://msdn.microsoft.com/library/windows/apps/dn610343) and [**HideAsync**](https://msdn.microsoft.com/library/windows/apps/dn610339) methods.
 
-## Xxxx
+## Text
 
-Xxxx (xx xxxxxxxxxx) xx xx xxxxxxxxx xxxxxx xx x XXX xxx xxx, xxxxx xxxxxxx, xxx xxx xxxx xx xxxxxxx xxx xxxxxx xxxxxxx xx xxxx xxxxx xx xxxx xxxx xxx xx xxxxxxx xxxx xxx xxx xxxxxx xxxxxxxx. Xxx xxxxx xxxxxxxxxxxxx xx xxxx xxx XXX **XxxxXxxxx** xxxxxx xxxxxx xxxx xxx xxxxxxxxx. Xxxx xxx xxxx xxxx xxxxxxxxxx xx xxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxx xxx xxxx. Xxxxxxxxxxxxx, xxx xxx xxxxxx xxxx xxx xxxxxxxxx xxxxxx xxx xxxx xxx xxxxxxxxxx xxxx xxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxx xxxxxx xxxx xxxxx.
+Text (or typography) is an important aspect of a UWP app and, while porting, you may want to revisit the visual designs of your views so that they are in harmony with the new design language. Use these illustrations to find the UWP **TextBlock** system styles that are available. Find the ones that correspond to the Windows Phone Silverlight styles you used. Alternatively, you can create your own universal styles and copy the properties from the Windows Phone Silverlight system styles into those.
 
-![xxxxxx xxxxxxxxx xxxxxx xxx xxxxxxx YY xxxx](images/label-uwp10stylegallery.png)
-Xxxxxx XxxxXxxxx xxxxxx xxx Xxxxxxx YY xxxx
+![system textblock styles for windows 10 apps](images/label-uwp10stylegallery.png)
+System TextBlock styles for Windows 10 apps
 
-Xx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx, xxx xxxxxxx xxxx xxxxxx xx Xxxxx XX. Xx x Xxxxxxx YY xxx, xxx xxxxxxx xxxx xxxxxx xx Xxxxx XX. Xx x xxxxxx, xxxx xxxxxxx xx xxxx xxx xxx xxxx xxxxxxxxx. Xx xxx xxxx xx xxxxxxxxx xxx xxxx xx xxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxx, xxx xxx xxx xxxx xxx xxxxxxx xxxxx xxxxxxxxxx xxxx xx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209671) xxx [**XxxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br244362). Xxx xxxx xxxx, xxx [Xxxxxxxxxx xxx xxxxx](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) xxx [Xxxxxx XXX xxxx](http://dev.windows.com/design).
+In a Windows Phone Silverlight app, the default font family is Segoe WP. In a Windows 10 app, the default font family is Segoe UI. As a result, font metrics in your app may look different. If you want to reproduce the look of your Windows Phone Silverlight text, you can set your own metrics using properties such as [**LineHeight**](https://msdn.microsoft.com/library/windows/apps/br209671) and [**LineStackingStrategy**](https://msdn.microsoft.com/library/windows/apps/br244362). For more info, see [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394.aspx) and [Design UWP apps](http://dev.windows.com/design).
 
-## Xxxxx xxxxxxx
+## Theme changes
 
-Xxx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx, xxx xxxxxxx xxxxx xx xxxx xx xxxxxxx. Xxx Xxxxxxx YY xxxxxxx, xxx xxxxxxx xxxxx xxx xxxxxxx, xxx xxx xxx xxxxxxx xxx xxxxx xxxx xx xxxxxxxxx x xxxxxxxxx xxxxx xx Xxx.xxxx. Xxx xxxxxxx, xx xxx x xxxx xxxxx xx xxx xxxxxxx, xxx `RequestedTheme="Dark"` xx xxx xxxx Xxxxxxxxxxx xxxxxxx.
+For a Windows Phone Silverlight app, the default theme is dark by default. For Windows 10 devices, the default theme has changed, but you can control the theme used by declaring a requested theme in App.xaml. For example, to use a dark theme on all devices, add `RequestedTheme="Dark"` to the root Application element.
 
-## Xxxxx
+## Tiles
 
-Xxxxx xxx XXX xxxx xxxx xxxxxxxxx xxxxxxx xx Xxxx Xxxxx xxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxx, xxxxxxxx xxxxx xxx xxxx xxxxxxxxxxx. Xxx xxxxxxx, xxxx xxxx xxxxx xxx **Xxxxxxxxx.Xxxxx.Xxxxx.XxxxxXxxx.Xxxxxx** xxxxxx xx xxxxxx xxxxxxxxx xxxxx xxxxxx xx xxxxxx xx xxxx [**XxxxxxxxxXxxx.XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br230606). Xxxx xx x xxxxxx-xxx-xxxxx xxxxxxx, xxxxx xxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxxx:
+Tiles for UWP apps have behaviors similar to Live Tiles for Windows Phone Silverlight apps, although there are some differences. For example, code that calls the **Microsoft.Phone.Shell.ShellTile.Create** method to create secondary tiles should be ported to call [**SecondaryTile.RequestCreateAsync**](https://msdn.microsoft.com/library/windows/apps/br230606). Here is a before-and-after example, first the Windows Phone Silverlight version:
 
 
 ```csharp
@@ -370,7 +370,7 @@ Xxxxx xxx XXX xxxx xxxx xxxxxxxxx xxxxxxx xx Xxxx Xxxxx xxx Xxxxxxx Xxxxx Xxxxxx
     ShellTile.Create(this.selectedBookSku.NavigationUri, tileData, true);
 ```
 
-Xxx xxx XXX xxxxxxxxxx:
+And the UWP equivalent:
 
 ```csharp
     var tile = new SecondaryTile(
@@ -383,51 +383,55 @@ Xxx xxx XXX xxxxxxxxxx:
     await tile.RequestCreateAsync();
 ```
 
-Xxxx xxxx xxxxxxx x xxxx xxxx xxx **Xxxxxxxxx.Xxxxx.Xxxxx.XxxxxXxxx.Xxxxxx** xxxxxx, xx xxx **Xxxxxxxxx.Xxxxx.Xxxxx.XxxxxXxxxXxxxxxxx** xxxxx, xxxxxx xx xxxxxx xx xxx xxx [**XxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208622), [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208628), [**XxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208616), xxx/xx [**XxxxxxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701637) xxxxxxx.
+Code that updates a tile with the **Microsoft.Phone.Shell.ShellTile.Update** method, or the **Microsoft.Phone.Shell.ShellTileSchedule** class, should be ported to use the [**TileUpdateManager**](https://msdn.microsoft.com/library/windows/apps/br208622), [**TileUpdater**](https://msdn.microsoft.com/library/windows/apps/br208628), [**TileNotification**](https://msdn.microsoft.com/library/windows/apps/br208616), and/or [**ScheduledTileNotification**](https://msdn.microsoft.com/library/windows/apps/hh701637) classes.
 
-Xxx xxxx xxxx xx xxxxx, xxxxxx, xxxxxx, xxxxxxx, xxx xxxxxxxxxxxxx, xxx [Xxxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260) xxx [Xxxxxxx xxxx xxxxx, xxxxxx, xxx xxxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259). Xxx xxxxxxxxx xxxxx xxxxx xx xxxxxx xxxxxx xxxx xxx XXX Xxxxx, xxx [Xxxx xxx xxxxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh781198).
+For more info on tiles, toasts, badges, banners, and notifications, see [Creating tiles](https://msdn.microsoft.com/library/windows/apps/xaml/hh868260) and [Working with tiles, badges, and toast notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259). For specifics about sizes of visual assets used for UWP Tiles, see [Tile and toast visual assets](https://msdn.microsoft.com/library/windows/apps/hh781198).
 
-## Xxxxxx
+## Toasts
 
-Xxxx xxxx xxxxxxxx x xxxxx xxxx xxx **Xxxxxxxxx.Xxxxx.Xxxxx.XxxxxXxxxx** xxxxx xxxxxx xx xxxxxx xx xxx xxx [**XxxxxXxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208642), [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208653), [**XxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208641), xxx/xx [**XxxxxxxxxXxxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208607) xxxxxxx. Xxxx xxxx xx xxxxxx xxxxxxx, xxx xxxxxxxx-xxxxxx xxxx xxx "xxxxx" xx "xxxxxx".
+Code that displays a toast with the **Microsoft.Phone.Shell.ShellToast** class should be ported to use the [**ToastNotificationManager**](https://msdn.microsoft.com/library/windows/apps/br208642), [**ToastNotifier**](https://msdn.microsoft.com/library/windows/apps/br208653), [**ToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208641), and/or [**ScheduledToastNotification**](https://msdn.microsoft.com/library/windows/apps/br208607) classes. Note that on mobile devices, the consumer-facing term for "toast" is "banner".
 
-Xxx [Xxxxxxx xxxx xxxxx, xxxxxx, xxx xxxxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259).
+See [Working with tiles, badges, and toast notifications](https://msdn.microsoft.com/library/windows/apps/xaml/hh868259).
 
-## Xxxx/xxxxxxxxx xxxxxx, xxxxxxx xxxxxxxx, xxx xxxxx xxxxxxx
+## View/effective pixels, viewing distance, and scale factors
 
-Xxxxxxx Xxxxx Xxxxxxxxxxx xxxx xxx Xxxxxxx YY xxxx xxxxxx xx xxx xxx xxxx xxxxxxxx xxx xxxx xxx xxxxxx xx XX xxxxxxxx xxxx xxxx xxx xxxxxx xxxxxxxx xxxx xxx xxxxxxxxxx xx xxxxxxx. X Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxxx xxxx xxxxxx xx xx xxxx. Xxxx Xxxxxxx YY, xxx xxxxxxx xx xxxx xxxxxx xxx xxxx xxxxxxx xxxx xxxx xx xxxxxxxxx xxxxxx. Xxxx'x xx xxxxxxxxxxx xx xxxx xxxx, xxxx xx xxxxx, xxx xxx xxxxx xxxxx xx xxxxxx.
+Windows Phone Silverlight apps and Windows 10 apps differ in the way they abstract the size and layout of UI elements away from the actual physical size and resolution of devices. A Windows Phone Silverlight app uses view pixels to do this. With Windows 10, the concept of view pixels has been refined into that of effective pixels. Here's an explanation of that term, what it means, and the extra value it offers.
 
-Xxx xxxx "xxxxxxxxxx" xxxxxx xx x xxxxxxx xx xxxxx xxxxxxx xxx xxx, xx xx xxxxxxxx xxxxxxx, xxxxx xxxxx. "Xxxxxxxxx xxxxxxxxxx" xx xxx xxx xxx xxxxxxxx xxxxxx xxxx xxxxxxx xx xxxxx xx xxxxx xxxxxxx xx xxx xxx xxxxx xxxxxxxxxxx xx xxxxxxx xxxxxxxx xxx xxx xxxxxxxx xxxxx xxxx xx xxx xxxxxx (xxxxx xxxxxxx xxxxx xxx xxxxxxxxxx xx xxxxxxxx xxxxx xxxx). Xxxxxxxxx xxxxxxxxxx xx x xxxx xxxxxx xx xxxxx xx xxxxxxxxxx xxxxxx xxxxxxx xx xx xxxx-xxxxxxx. Xx xxxxxxxxxxxxx xxx xxx xxxxxxx, xxx xxxxxxxxxxx xxx xxxx xx XX xxxxxxxx, xxx xxx xxxx xxx xxxx'x xxxxxxxxxx x xxxx xxx.
+The term "resolution" refers to a measure of pixel density and not, as is commonly thought, pixel count. "Effective resolution" is the way the physical pixels that compose an image or glyph resolve to the eye given differences in viewing distance and the physical pixel size of the device (pixel density being the reciprocal of physical pixel size). Effective resolution is a good metric to build an experience around because it is user-centric. By understanding all the factors, and controlling the size of UI elements, you can make the user's experience a good one.
 
-Xx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx, xxx xxxxx xxxxxxx xxx xxxxxxx YYY xxxx xxxxxx xxxx, xxxxxxx xxxxxxxxx, xx xxxxxx xxx xxxx xxxxxxxx xxxxxx xxx xxxxxx xxx, xxx xxxx xxx xxxxx xxxxxxx xx xxxxxxxx xxxx xx. Xxxx xxxxx xxxx xx **Xxxxx** xxxxxxx xxxx `Width="48"` xxxx xx xxxxxxx xxx xxxxx xx xxx xxxxx xx xxx xxxxxx xx xxx xxxxx xxxx xxx xxx xxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxx.
+To a Windows Phone Silverlight app, all phone screens are exactly 480 view pixels wide, without exception, no matter how many physical pixels the screen has, nor what its pixel density or physical size is. This means that an **Image** element with `Width="48"` will be exactly one tenth of the width of the screen of any phone that can run the Windows Phone Silverlight app.
 
-Xx x Xxxxxxx YY xxx, xx xx *xxx* xxx xxxx xxxx xxx xxxxxxx xxx xxxx xxxxx xxxxxx xx xxxxxxxxx xxxxxx xxxx. Xxxx'x xxxxxxxx xxxxxxx, xxxxx xxx xxxx xxxxx xx xxxxxxx xxxx x XXX xxx xxx xxx xx. Xxxxxxxxx xxxxxxx xxx x xxxxxxxxx xxxxxx xx xxxxxxxxx xxxxxx xxxx, xxxxxxx xxxx YYY xxx xxx xxx xxxxxxxx xxxxxxx, xx YYYY xxx xxx x xxxxxx-xxxxx xxxxxxx, xxx xxx xxxxxx xx xxxx xxxxxx xxxxxx. Xxx xxx xxxx xx xx xx xxxxxxxx xx xxx xxxx-xxxxx xxxxxxxx xxx xxxxxxx xxxxxx xxxxxx xx xxx xxxxxx xxxx. Xxxxx xxxx xxxx xx xxxx xxxxx xxxxx xxx'xx xxx xxx xxxxxxxxxx xx xxxx XX xxxxxxxx xx x xxxxx xxxx xx XXXX xxxxxx. X xxxxx xxxxxx xx xxxxxxxxxxxxx xxxxxxx xx xxxx xxx xxxxxxxxx xx xxxx xxxxxx xx xxxx xx xxx xxx xxxxxxx xxxxxxxx xxxx xx xxx xxxx. Xxx xxxx xxxxx xxxxxx xxxxxx xx xxxx xxx XX xxxxxxx xxxx x xxxxx xxxx xxxxxxxxxx x xxxx-xx-xxxx xxxxxxxx-xxxxx xxxxx (xxx xxxxxxx) xxxxxx xx xxx xxxx xxxxxx x xxxx xxxxxxx xx xxxxxx xxxxx. Xxx xxxxxxxx xxxx xxxxxxx xxxxxx xxxx XX xxx'x xxxxxx xxxxxxxxx xxxxx xx xxxxxxxxx xxxxxxx, xx xxxx xxxxxxx xx xxxx'x xxxxxxxxx xx xxx xxx xxxxxxxxxxx xxxxxx xx xxxxxxx xxxx xxx xxxxxxxxx xxxxx.
+To a Windows 10 app, it is *not* the case that all devices are some fixed number of effective pixels wide. That's probably obvious, given the wide range of devices that a UWP app can run on. Different devices are a different number of effective pixels wide, ranging from 320 epx for the smallest devices, to 1024 epx for a modest-sized monitor, and far beyond to much higher widths. All you have to do is continue to use auto-sized elements and dynamic layout panels as you always have. There will also be some cases where you'll set the properties of your UI elements to a fixed size in XAML markup. A scale factor is automatically applied to your app depending on what device it runs on and the display settings made by the user. And that scale factor serves to keep any UI element with a fixed size presenting a more-or-less constant-sized touch (and reading) target to the user across a wide variety of screen sizes. And together with dynamic layout your UI won't merely optically scale on different devices, it will instead do what's necessary to fit the appropriate amount of content into the available space.
 
-Xxxxxxx YYY xxx xxxxxxxx xxx xxxxx xxxxx xx xxxx xxxxxx xxx x xxxxx-xxxxx xxxxxx, xxx xxxx xxxxx xx xxx xxxxxxxxx xxxxxxx xx xxxxxxxxx xxxxxx, x xxxx xx xxxxx xx xx xxxxxxxx xxx xxxxxxxxx xx xxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxx xxxxxx xx x xxxxxx xx Y.Y.
+Because 480 was formerly the fixed width in view pixels for a phone-sized screen, and that value is now typically smaller in effective pixels, a rule of thumb is to multiply any dimension in your Windows Phone Silverlight app markup by a factor of 0.8.
 
-Xx xxxx xxxx xxx xxx xxx xxxx xxxxxxxxxx xxxxxx xxx xxxxxxxx, xx xxxxxxxxx xxxx xxx xxxxxx xxxx xxxxxx xxxxx xx x xxxxx xx xxxxx, xxxx xxxxxxxx xxx x xxxxxxxxxx xxxxx xxxxxx. Xxxxxxxxx xxxxxx xx YYY%-xxxxx, YYY%-xxxxx, xxx YYY%-xxxxx (xx xxxx xxxxxxxx xxxxx) xxxx xxxx xxx xxxxxxxxx xxxxxxx xx xxxx xxxxx xx xxx xxx xxxxxxxxxxxx xxxxx xxxxxxx.
+So that your app has the best experience across all displays, we recommend that you create each bitmap asset in a range of sizes, each suitable for a particular scale factor. Providing assets at 100%-scale, 200%-scale, and 400%-scale (in that priority order) will give you excellent results in most cases at all the intermediate scale factors.
 
-**Xxxx**  Xx, xxx xxxxxxxx xxxxxx, xxx xxxxxx xxxxxx xxxxxx xx xxxx xxxx xxx xxxx, xxxx xxxxxx YYY%-xxxxx xxxxxx. Xx Xxxxxxxxx Xxxxxx Xxxxxx, xxx xxxxxxx xxxxxxx xxxxxxxx xxx XXX xxxx xxxxxxxx xxxxxxxx xxxxxx (xxxx xxxxxx xxx xxxxx) xx xxxx xxx xxxx, xxx xxxx xxx xxx YYY%-xxxxx. Xxxx xxxxxxxxx xxxxxx xxx xxxx xxx xxx, xxxxxx xxx xxxxxxxx xx xxxx xxxxxxx xxx xxxxxxx YYY%, YYY%, xxx YYY% xxxxx, xxx xxx xxxxx xxxxx.
+**Note**  If, for whatever reason, you cannot create assets in more than one size, then create 100%-scale assets. In Microsoft Visual Studio, the default project template for UWP apps provides branding assets (tile images and logos) in only one size, but they are not 100%-scale. When authoring assets for your own app, follow the guidance in this section and provide 100%, 200%, and 400% sizes, and use asset packs.
 
-Xx xxx xxxx xxxxxxxxx xxxxxxx, xxxx xxx xxx xxxx xx xxxxxxx xxxx xxxxxx xx xxxx xxxx xxxxx. Xx xxx'xx xxxxxxxx xxxx xxxxxx xxx, xxxx xx'x xxxxxxxxxx xxxx xx xxxxxxxx xxxx-xxxxxxx xxxxxx xx xxx xxxxx xxxxxx.
+If you have intricate artwork, then you may want to provide your assets in even more sizes. If you're starting with vector art, then it's relatively easy to generate high-quality assets at any scale factor.
 
-Xx xxx'x xxxxxxxxx xxxx xxx xxx xx xxxxxxx xxx xx xxx xxxxx xxxxxxx, xxx xxx xxxx xxxx xx xxxxx xxxxxxx xxx Xxxxxxx YY xxxx xx YYY%, YYY%, YYY%, YYY%, YYY%, YYY%, xxx YYY%. Xx xxx xxxxxxx xxxx, xxx Xxxxx xxxx xxxx xxx xxxxxxx-xxxxx xxxxx(x) xxx xxxx xxxxxx, xxx xxxx xxxxx xxxxxx xxxx xx xxxxxxxxxx. Xxx Xxxxx xxxxxxx xxx xxxxxx xx xxxxxxxx xxxxx xx xxx XXX xx xxx xxxxxx.
+We don't recommend that you try to support all of the scale factors, but the full list of scale factors for Windows 10 apps is 100%, 125%, 150%, 200%, 250%, 300%, and 400%. If you provide them, the Store will pick the correct-sized asset(s) for each device, and only those assets will be downloaded. The Store selects the assets to download based on the DPI of the device.
 
-Xxx xxxx xxxx, xxx [Xxxxxxxxxx xxxxxx YYY xxx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/dn958435).
+For more info, see [Responsive design 101 for UWP apps](https://msdn.microsoft.com/library/windows/apps/dn958435).
 
-## Xxxxxx xxxx
+## Window size
 
-Xx xxxx XXX xxx, xxx xxx xxxxxxx x xxxxxxx xxxx (xxxx xxxxx xxx xxxxxx) xxxx xxxxxxxxxx xxxx. Xxx xxxxxxx xxxxxxx xxxx xx YYYxYYYxxx, xxx xxxx'x xxxx xxx xxxxxxxx xxxxxxx xxxx xxxxxxxx. Xxx xxxxxxx xxxxxxx xxxx xxxxxxxx xx YYYxYYYxxx.
+In your UWP app, you can specify a minimum size (both width and height) with imperative code. The default minimum size is 500x320epx, and that's also the smallest minimum size accepted. The largest minimum size accepted is 500x500epx.
 
 ```csharp
    Windows.UI.ViewManagement.ApplicationView.GetForCurrentView().SetPreferredMinSize
         (new Size { Width = 500, Height = 500 });
 ```
 
-Xxx xxxx xxxxx xx [Xxxxxxx xxx X/X, xxxxxx, xxx xxx xxxxx](wpsl-to-uwp-input-and-sensors.md).
+The next topic is [Porting for I/O, device, and app model](wpsl-to-uwp-input-and-sensors.md).
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxxxx xxx xxxxx xxxxxxxx](wpsl-to-uwp-namespace-and-class-mappings.md)
+* [Namespace and class mappings](wpsl-to-uwp-namespace-and-class-mappings.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

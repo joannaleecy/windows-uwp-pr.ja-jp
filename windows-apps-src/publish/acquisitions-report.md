@@ -1,63 +1,67 @@
 ---
-Xxxxxxxxxxx: Xxx Xxxxxxxxxxxx xxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxx xxx xxx xxx xxx xxxxxxxx xxxx xxx, xxxxx xxxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxx.
-xxxxx: Xxxxxxxxxxxx xxxxxx
-xx.xxxxxxx: YYYYYYYY-XYXX-YYYY-XXYX-YYXXYYXYXYYY
+Description: Windows デベロッパー センター ダッシュボードの取得レポートでは、アプリを取得したユーザーと共に、人口統計データやプラットフォームの詳細を確認できます。
+title: 取得レポート
+ms.assetid: 21126362-F3CD-4006-AD3F-82FC88E3B862
 ---
 
-# Xxxxxxxxxxxx xxxxxx
+# 取得レポート
 
 
-Xxx **Xxxxxxxxxxxx** xxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxx xxx xxx xxx xxx xxxxxxxx xxxx xxx, xxxxx xxxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxx. Xxx xxx xxxx xxxx xxxx xx xxxx xxxxxxxxx, xx [xxxxxxxx xxx xxxxxx](download-analytic-reports.md) xx xxxx xxxxxxx. Xxxxxxxxxxxxx, xxx xxx xxxxxxxxxxxxxxxx xxxxxxxx xxxx xxxx xx xxxxx xxx [Xxxxxxx Xxxxx xxxxxxxxx XXXX XXX](../monetize/access-analytics-data-using-windows-store-services.md).
+Windows デベロッパー センター ダッシュボードの**取得**レポートでは、アプリを取得したユーザーと共に、人口統計データやプラットフォームの詳細を確認できます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md) してオフラインで表示することもできます。 または、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) を使って、プログラムでこのデータを取得できます。
 
-Xx xxxx xxxxxx, xx xxxxxxxxxxx xxxxx x xxx xxxxxxxx xxx xxxxxxxx x xxxxxxx xx xxxx xxx (xxxxxxx xxx xxxxxxx xxxxx xx xxx'xx xxxxxxx xx xxx xxxx).
+このレポートでは、取得は、新しいユーザーがアプリのライセンスを入手したことを意味します (有料の場合も無料の場合も含む)。
 
-> **Xxxxxxxxx**  Xxx **Xxxxxxxxxxxx** xxxxxx xxxx xxx xxxxxxx xxxx xxxxx xxxxxxx, xxxxxxxxx, xxxxxxxxxxx, xxx. Xx xxxxxxxx xxxx xxx xxxxxxxx, xxxxx [Xxxxxx xxxxxxx](payout-summary.md). Xx xxx **Xxxxxxxx** xxxxxxx, xxxxx xxx **Xxxxxxxx xxxxxxxx xxxxxxxxxxxx** xxxx.
-
-
-
-## Xxxxx xxxxxxx
+> **重要**  **取得**レポートには、払戻し、取り消し、支払取り消しなどのデータは含まれません。アプリの収益を見積もるには、「[支払いの要約](payout-summary.md)」をご覧ください。 次に、**[予約済み]** セクションで、**予約済みのトランザクションをダウンロード**するためのリンクをクリックします。
 
 
-Xxxx xxx xxx xx xxx xxxx, xxx xxx xxxxxx **Xxxxx xxxxxxx** xx xxxxxx xxx xx xxx xxxx xx xxxx xxxx xx xxxx xxxxx xxx/xx xx xxxxxx xxxx.
 
--   **Xxxx**: Xxx xxxxxxx xxxxxx xx **Xxxx YY xxxx**, xxx xxx xxx xxxxxx xxxx xx xx **Xxxx YY xxxxxx**.
--   **Xxxxxx xxxx**: Xxx xxxxxxx xxxxxxx xx **Xxx xxxxxxx**. Xx xxx xxxx xx xxxx xxxx xxx xxxxxxxxxxxx xxxx x xxxxxxx xxxxxx xxxx xxxx, xxx xxx xxxxxx x xxxxxxxx xxx xxxx.
-
-Xxx xxxx xx xxx xxxxxx xxxxxx xxxxx xxxx xxxxxxx xxx xxxxxx xx xxxx xxxxxxxx xx xxx **Xxxxx xxxxxxx** xxxxxxx.
-
-Xxx xxxx xx xxx xx xxx xxxxxx xxxxxx xxxxx xxxx xxxxxxx xxx xxxxxx xx xxxx xxxxxxxx xx xxx **Xxxxx xxxxxxx** xxxxxxx. Xx xxxxxxx xxxx xxxx xxxxxxx xxxx xxx xxx xxxxxx xxxxx, xxxxxx xxx'xx xxxx **Xxxxx xxxxxxx** xx xxxxxx xxxx xxx.
-
-## Xxxxxxxxxxxx
+## フィルターの適用
 
 
-Xxx **Xxxxxxxxxxxx** xxxxx xxxxx xxx xxxxxx xx xxxxx xx xxxxxx xxxxxxxxxxxx xx xxxx xxx xxxx xxx xxxxxxxx xxxxxx xx xxxx. (Xxxx xxx xxx **Xxxxx xxxxxxx** xx xxxxxx xxx xxxx xxxx x xxxxxx xxxxxxxx, xxx xxxx xxxx xx xxxxxxx xx xxxx.)
+ページの上部にある **[フィルターの適用]** を展開して、このページのすべてのデータを日付の範囲やデバイスの種類によってフィルター処理できます。
 
-Xxx xxx xxxx xxx xxx xxxxxxxx xxxxxx xx xxxxxxxxxxxx xxx xxxx xxx. Xxxx xxxxx xxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxxx, xxxxxxxx xxxx xxxx xxxx xxx xxx xxxxx xxxxxxxxx.
+-   **[日付]**: 既定のフィルターは **[過去 30 日]** ですが、これを **[過去 12 か月]** まで拡張できます。
+-   **[デバイスの種類]**: 既定の設定は **[すべてのデバイス]** です。 特定のデバイスの種類についてのみ取得データを表示するには、ここでそのデバイスの種類を選ぶことができます。
 
-Xxx xxx xxxxxxxxxx xxxxxx xxx xxxxxxx xx xxxxxx xxx/xx xx XX xxxxxxx.
+以下のグラフに示される情報には、**[フィルターの適用]** セクションで選んだ期間が反映されています。
 
-## Xxxxxxxx xxxxxxxxxxx
+以下のすべてのグラフに示される情報には、**[フィルターの適用]** セクションで選んだ期間が反映されています。 既定では、**[フィルターの適用]** を使ってデバイスの種類を 1 つに絞り込んでいない限り、その情報にはすべてのデバイスの種類のデータが含まれます。
 
-
-Xxx **Xxxxxxxx xxxxxxxxxxx** xxxxx xxxxx xxxxxxxxxxx xxxx xxxxx xxx xxxxxx xxx xxxxxxxx xxxx xxx. Xxx xxx xxx xxx xxxx xxxxxxxxxxxx (xxxx xxx xxxxxxxx xxxxxx xx xxxx) xxxx xxxx xx xxxxxx xx x xxxxxxx xxx xxxxx xxx xx xxxxx xxxxxx.
-
-> **Xxxx**  Xxxx xxxxxxxxx xxxx xxxxx xxx xx xxxxx xxxx xxxx. Xx xx xxxx xxxxxx xx xxxxxxxxx xxx xxx xxxxx xx xxxxxx, xxx xxxxxxxxxxx xx xxxxxxxxxxx xx **Xxxxxxx**.
-
- 
-
-## Xxxxxxx
+## 取得
 
 
-Xxx **Xxxxxxx** xxxxx xxxxx xxx xxxxx xxxxxx xx xxxxxxxxxxxx xxxx xxx xxxxxxxx xxxxxx xx xxxx xx xxxxxx. Xx xxxxxxx, xx xxxx xxx xxx xxxxxx xxxxx xxx xxx xxxx xxxxxxxxxxxx xx xxx xxx xxxxxxxx xxxxxxxx xxxx xxxxx. Xxx xxx xxxxxxx xxxx xxxxx xx xxxxxxxx xxx xxxxx xx xxx **Xxxxxxxxxxxx** xxxxxx xx xxxx xxxxx.
+**[取得]** のグラフには、選んだ期間中のアプリの日ごとまたは週ごとの取得数が示されます (**[フィルターの適用]** を使って長い期間のデータをフィルター処理すると、データが週ごとにグループ化されます)。
 
-## XX xxxxxxx
+アプリの全期間における取得数を確認することもできます。 この値は、アプリが初めて公開されたときからの全取得数の累計です。
+
+必要に応じて、市場や OS のバージョン別に結果をフィルター処理することもできます。
+
+## ユーザーの統計データ
 
 
-Xxx **XX xxxxxxx** xxxxx xxxxx xxx xxxxx xxxxxx xx xxxxxxxxxxxx xxxxx xx xxx xxxxxxxx'x xxxxxxxxx xxxxxx (xx xxx [xxxxxx xxxxxxxxxxx xx xxxxxxxxxxxxx](organizational-licensing.md)). Xx xxxx xxxxx xx xxx xxx xx xxxx xx xxxxxxxxx xxxx xxxx. Xx xxxx xxxx, xxx XX xxxxxxx xxxx xx xxxxxx xx **Xxxxxxx**.
+**[ユーザーの統計データ]** のグラフには、アプリを取得したユーザーに関する人口統計情報が表示されます。 特定の年齢グループや性別のユーザーによる (選んだ期間中の) 取得の数を確認できます。
 
-
+> **注**  ユーザーによっては、この情報を共有することを選んでいない場合があります。 年齢グループや性別を特定できない場合、その取得は**不明**として分類されます。
 
  
 
+## 市場
+
+
+**[市場]** のグラフには、選んだ期間中の市場別の取得の合計数が表示されます。 既定では、取得数が最も多かった市場が一番上に表示され、そこから降順に表示されます。 このグラフの **[取得]** 列の矢印をクリックすることで、この順序を逆にすることができます。
+
+## OS バージョン
+
+
+**[OS バージョン]** のグラフは、ユーザーのオペレーティング システムに基づく取得 (または [組織単位でのボリューム取得](organizational-licensing.md)) の合計数を示しています。 場合によっては、この情報を特定できない可能性があります。 その場合、OS バージョンは**不明**として表示されます。
+
+
+
  
+
+ 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

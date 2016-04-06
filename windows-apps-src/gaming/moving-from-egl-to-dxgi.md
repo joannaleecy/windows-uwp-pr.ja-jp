@@ -1,79 +1,79 @@
 ---
-xxxxx: Xxxxxxx XXX xxxx xx XXXX xxx XxxxxxYX
-xxxxxxxxxxx: Xxx XxxxxxX Xxxxxxxx Xxxxxxxxx (XXXX) xxx xxxxxxx XxxxxxYX XXXx xxxxx xxx xxxx xxxx xx XXX. Xxxx xxxxx xxxxx xxx xxxxxxxxxx XXXX xxx XxxxxxYX YY xxxx xxx xxxxxxxxxxx xx XXX.
-xx.xxxxxxx: YYxYxxxY-xxYx-xxxY-xxxY-YYxYYYYYYxYx
+title: Compare EGL code to DXGI and Direct3D
+description: The DirectX Graphics Interface (DXGI) and several Direct3D APIs serve the same role as EGL. This topic helps you understand DXGI and Direct3D 11 from the perspective of EGL.
+ms.assetid: 90f5ecf1-dd5d-fea3-bed8-57a228898d2a
 ---
 
-# Xxxxxxx XXX xxxx xx XXXX xxx XxxxxxYX
+# Compare EGL code to DXGI and Direct3D
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XXYXYYXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
--   [**XXYXYYXxxxxxXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404598)
--   [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225)
+-   [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575)
+-   [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598)
+-   [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225)
 
-Xxx XxxxxxX Xxxxxxxx Xxxxxxxxx (XXXX) xxx xxxxxxx XxxxxxYX XXXx xxxxx xxx xxxx xxxx xx XXX. Xxxx xxxxx xxxxx xxx xxxxxxxxxx XXXX xxx XxxxxxYX YY xxxx xxx xxxxxxxxxxx xx XXX.
+The DirectX Graphics Interface (DXGI) and several Direct3D APIs serve the same role as EGL. This topic helps you understand DXGI and Direct3D 11 from the perspective of EGL.
 
-XXXX xxx XxxxxxYX, xxxx XXX, xxxxxxx xxxxxxx xx xxxxxxxxx xxxxxxxx xxxxxxxxx, xxxxxx x xxxxxxxxx xxxxxxx xxx xxxx xxxxxxx xx xxxx xxxx, xxx xx xxxxxxx xxx xxxxxxx xx x xxxxxx. Xxxxxxx, XXXX xxx XxxxxxYX xxxx xxxxx x xxx xxxx xxxxxxx, xxx xxxxxxx xxxx xxxxxx xx xxx xx xxxxxxxxx xxxx xxxxxxx xxxx XXX.
+DXGI and Direct3D, like EGL, provide methods to configure graphics resources, obtain a rendering context for your shaders to draw into, and to display the results in a window. However, DXGI and Direct3D have quite a few more options, and require more effort to set up correctly when porting from EGL.
 
-> **Xxxx**   Xxxx xxxxxxxx xx xxxxx xxx xxx Xxxxxxx Xxxxx'x xxxx xxxxxxxxxxxxx xxx XXX Y.Y, xxxxx xxxx: [Xxxxxxx Xxxxxx Xxxxxxxx Xxxxxxxx Xxxxxxxxx (XXX Xxxxxxx Y.Y - Xxxxx Y, YYYY) \[XXX\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Xxxxxxxxxxx xx xxxxxx xxxxxxxx xx xxxxx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxx xxx xxx xxxxxxx xx xxxx xxxxxxxx.
+> **Note**   This guidance is based off the Khronos Group's open specification for EGL 1.4, found here: [Khronos Native Platform Graphics Interface (EGL Version 1.4 - April 6, 2011) \[PDF\]](http://www.khronos.org/registry/egl/specs/eglspec.1.4.20110406.pdf). Differences in syntax specific to other platforms and development languages are not covered in this guidance.
 
  
 
-## Xxx xxxx XXXX xxx XxxxxxYX xxxxxxx?
+## How does DXGI and Direct3D compare?
 
 
-Xxx xxx xxxxxxxxx xx XXX xxxx XXXX xxx XxxxxxYX xx xxxx xx xx xxxxxxxxxx xxxxxx xx xxxxx xxxxxxx xx x xxxxxx xxxxxxx. Xxxx xx xxxxxxx XxxxXX XX Y.Y—xxx xxxxxxxxx XXX—xx x xxxxxxxxxxxxx xxxxxxxxxxx xx xxxxxxxx xxxxxxxx xxxxxxxxx, xxxxxxx XXXX xxx XxxxxxYX xxx x xxxxxx xxxxxxxxx xxxx xxxxxxxx xxxxxx xxxxxxx xxxx xxxxxxx xx. Xxxx xxxxx xxxx Xxxxxxxxx xxxx xxxxxxxxx x xxx xx XXXx xxxx xxxxxx xxx xxxxxxxx xxxxxxxx xxx xx xxxxxx xxxxxxxx, xxxxxx xxxx xxxxxxxx xx x xxxxxxxxxx xxxxxx xxxxxxx xx x xxxxxxxx xxxxxx, xx xx xxxxxxxxx xxxxxx-xxxxxxxx xxxxx xxxxxxxx xxxx xxxxxxx XXXx. Xx xxx xxxxx xxxx, XxxxxxYX xxxxxxxx x xxxxxx xxx xx XXXx xxxx xxxxx x xxxx xxxxx xxxxx xx xxxxxxxx xxxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxx, xxx xxxxx xxxx xxxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxx.
+The big advantage of EGL over DXGI and Direct3D is that it is relatively simple to start drawing to a window surface. This is because OpenGL ES 2.0—and therefore EGL—is a specification implemented by multiple platform providers, whereas DXGI and Direct3D are a single reference that hardware vendor drivers must conform to. This means that Microsoft must implement a set of APIs that enable the broadest possible set of vendor features, rather than focusing on a functional subset offered by a specific vendor, or by combining vendor-specific setup commands into simpler APIs. On the other hand, Direct3D provides a single set of APIs that cover a very broad range of graphics hardware platforms and feature levels, and offer more flexibility for developers experienced with the platform.
 
-Xxxx XXX, XXXX xxx XxxxxxYX xxxxxxx XXXx xxx xxx xxxxxxxxx xxxxxxxxx:
+Like EGL, DXGI and Direct3D provide APIs for the following behaviors:
 
--   Xxxxxxxxx, xxx xxxxxxx xxx xxxxxxx xx x xxxxx xxxxxx (xxxxxx x "xxxx xxxxx" xx XXXX).
--   Xxxxxxxxxxx xxx xxxxx xxxxxx xxxx x XX xxxxxx.
--   Xxxxxxxxx xxx xxxxxxxxxxx xxxxxxxxx xxxxxxxx xx xxxxx xx xxxx.
--   Xxxxxxx xxxxxxxx xx xxx xxxxxxxx xxxxxxxx xxx x xxxxxxxx xxxxxxxxx xxxxxxx.
--   Xxxxxxxx xxx xxxxxxxx xxxxxx xxxxxxxxx, xxx xxxxxxxxxxx xxxx xxxx x xxxxxxxxx xxxxxxx.
--   Xxxxxxxxx xx xxxxxxxx xxxxxx xxxxxxx (xxxx xx xxxxxxxx).
--   Xxxxxxxx xxx xxxxxx'x xxxxxxx xxxxxxx xxxx xxx xxxxxxx xx xxxxxxxxx xxxx xxx xxxxxxxx xxxxxxxxx.
+-   Obtaining, and reading and writing to a frame buffer (called a "swap chain" in DXGI).
+-   Associating the frame buffer with a UI window.
+-   Obtaining and configuring rendering contexts in which to draw.
+-   Issuing commands to the graphics pipeline for a specific rendering context.
+-   Creating and managing shader resources, and associating them with a rendering content.
+-   Rendering to specific render targets (such as textures).
+-   Updating the window's display surface with the results of rendering with the graphics resources.
 
-Xx xxx xxx xxxxx XxxxxxYX xxxxxxx xxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxx, xxxxx xxx xxx XxxxxxX YY Xxx (Xxxxxxxxx Xxxxxxx) xxxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx YYYY. Xxx xxxx xxxxxxxxx xxxxx xx xx xxxxxxxx x xxxx xxxxxxxx xxx xxxxxxx xx xxx XxxxxxYX YY xxxxxxxx xxxxxxxxxxxxxx xxx xxxxxxxxxxx xxxxx xxxxxxxxx xx xx, xx xxxx xx xxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxxxx xxxx xx xxxxxx xxxxxxxx.
+To see the basic Direct3D process for configuring the graphics pipeline, check out the DirectX 11 App (Universal Windows) template in Microsoft Visual Studio 2015. The base rendering class in it provides a good baseline for setting up the Direct3D 11 graphics infrastructure and configuring basic resources on it, as well as supporting Universal Windows Platform (UWP) app features such as screen rotation.
 
-XXX xxx xxxx xxx XXXx xxxxxxxx xx XxxxxxYX YY, xxx xxxxxxxxxx xxx xxxxxx xxx xx x xxxxxxxxx xx xxx xxxx'x xxxxxxxx xxxx xxx xxxxxx xxx xxxxxx xxxxxxxxxx xx xxx xxxxxxxx. Xxxx'x x xxxxxx xxxxxxxx xx xxxx xxx xxx xxxxxxxx.
+EGL has very few APIs relative to Direct3D 11, and navigating the latter can be a challenge if you aren't familiar with the naming and jargon particular to the platform. Here's a simple overview to help you get oriented.
 
-Xxxxx, xxxxxx xxx xxxxx XXX xxxxxx xx XxxxxxYX xxxxxxxxx xxxxxxx:
+First, review the basic EGL object to Direct3D interface mapping:
 
-| XXX xxxxxxxxxxx | Xxxxxxx XxxxxxYX xxxxxxxxxxxxxx                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| EGL abstraction | Similar Direct3D representation                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 |-----------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **XXXXxxxxxx**  | Xx XxxxxxYX (xxx XXX xxxx), xxx xxxxxxx xxxxxx xx xxxxxxxx xxxxxxx xxx [**Xxxxxxx::XX::XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) XXX (xx xxx **XXxxxXxxxxxXxxxxxx** xxxxxxxxx xxxx xxxxxxx xxx XXXX). Xxx xxxxxxx xxx xxxxxxxx xxxxxxxxxxxxx xxx xxx xxxx xxx [**XXXXXXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb174523) xxx [**XXXXXXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404543) XXX xxxxxxxxxx, xxxxxxxxxxxx.                                                                                                                                                                                                                                                           |
-| **XXXXxxxxxx**  | Xx XxxxxxYX, xxx xxxxxxx xxx xxxxx xxxxxx xxxxxxxxx (xxxxxxx xx xxxxxxxxx) xxx xxxxxxx xxx xxxxxxxxxx xx xxxxxxxx XXXX xxxxxxxxxx, xxxxxxxxx [**XXXXXXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404556) (x xxxxxxx xxxxxxx xxxxxxxxxxxxxx xxxx xx xxxxxxx XXXX xxxxxxxxx xxxx xx xxx[**XXXXXXxxxXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404631) (xxxxxxx xxxxxxx). Xxx [**XXYXYYXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404575) xxxx xxxxxxxxxx xxx xxxxxxxx xxxxxx xxx xxx xxxxxxxxx, xx xxxxxxxx xxxx [**XYXYYXxxxxx::XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476082). Xxx xxxxxx xxxxxxx, xxx xxx [**XXYXYYXxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476582) xxxxxxxxx. |
-| **XXXXxxxxxx**  | Xx XxxxxxYX, xxx xxxxxxxxx xxx xxxxx xxxxxxxx xx xxx xxxxxxxx xxxxxxxx xxxx xxx [**XXYXYYXxxxxxXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404598) xxxxxxxxx.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| **XXXXxxxxx**   | Xx XxxxxxYX YY, xxx xxxxxx xxx xxxxxxxxx xxxxxxxx xxxxxxxxx xxxx xx x xxxxxxx, xxxxxxxx, xxxxxxxx xxx xxxxxxx xxxx xxxxxxx xx xxx [**XXYXYYXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404575) xxxxxxxxx.                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| **EGLDisplay**  | In Direct3D (for UWP apps), the display handle is obtained through the [**Windows::UI::CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) API (or the **ICoreWindowInterop** interface that exposes the HWND). The adapter and hardware configuration are set with the [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) and [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/hh404543) COM interfaces, respectively.                                                                                                                                                                                                                                                           |
+| **EGLSurface**  | In Direct3D, the buffers and other window resources (visible or offscreen) are created and configured by specific DXGI interfaces, including [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) (a factory pattern implementation used to acquire DXGI resources such as the[**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) (display buffers). The [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) that represents the graphics device and its resources, is acquired with [**D3D11Device::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082). For render targets, use the [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) interface. |
+| **EGLContext**  | In Direct3D, you configure and issue commands to the graphics pipeline with the [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) interface.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **EGLConfig**   | In Direct3D 11, you create and configure graphics resources such as a buffers, textures, stencils and shaders with methods on the [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) interface.                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
  
 
-Xxx, xxxx'x xxx xxxx xxxxx xxxxxxx xxx xxxxxxx xx x xxxxxx xxxxxxxx xxxxxxx, xxxxxxxxx xxx xxxxxxx xx XXXX xxx XxxxxxYX xxx x XXX xxx.
+Now, here's the most basic process for setting up a simple graphics display, resources and context in DXGI and Direct3D for a UWP app.
 
-1.  Xxxxxx x xxxxxx xx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxx xxx xxx xxx'x xxxx XX xxxxxx xx xxxxxxx [**XxxxXxxxxx::XxxXxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701589).
-2.  Xxx XXX xxxx, xxxxxxx x xxxx xxxxx xxxx xxx [**XXXXXXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404537) xxxx [**XXXXXXxxxxxxY::XxxxxxXxxxXxxxxXxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/hh404559), xxx xxxx xx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxxxxx xxx xxxxxxxx xx xxxx Y. Xxx xxxx xxx xx [**XXXXXXxxxXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404631) xxxxxxxx xx xxxxxx. Xxxxx xx xx xxxx xxxxxxxx xxxxxx xxx xxx xxxxxxxxx xxxxxx.
-3.  Xxxxxx [**XXYXYYXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404575) xxx [**XXYXYYXxxxxxXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404598) xxxxxxxxx xx xxxxxxx xxx [**XYXYYXxxxxx::XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476082) xxxxxx. Xxxxx xxxx xx xxxx xxxxxxxx xxxxxx xx xxxx.
-4.  Xxxxxx xxxxxxx, xxxxxxxx, xxx xxxxx xxxxxxxxx xxxxx xxxxxxx xx xxxx xxxxxxxx'x [**XXYXYYXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404575) xxxxxx.
-5.  Xxxxxx xxxxxxx, xxx xxxxxxx xxx xxxxxx xxx xxxxxxxx xxxxxx xxxxx xxxxxxx xx xxxx xxxxxxxx'x [**XXYXYYXxxxxxXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404598) xxxxxx.
-6.  Xxxx xxx xxxxxxxx xxx xxxxxxxx xxx x xxxxx xx xxxxx xx xxx xxxx xxxxxx, xxxxxxx xx xx xxx xxxxxx xxxx [**XXXXXXxxxXxxxxY::XxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
+1.  Obtain a handle to the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object for the app's core UI thread by calling [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589).
+2.  For UWP apps, acquire a swap chain from the [**IDXGIAdapter2**](https://msdn.microsoft.com/library/windows/desktop/hh404537) with [**IDXGIFactory2::CreateSwapChainForCoreWindow**](https://msdn.microsoft.com/library/windows/desktop/hh404559), and pass it the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) reference you obtained in step 1. You will get an [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) instance in return. Scope it to your renderer object and its rendering thread.
+3.  Obtain [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) and [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) instances by calling the [**D3D11Device::CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) method. Scope them to your renderer object as well.
+4.  Create shaders, textures, and other resources using methods on your renderer's [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) object.
+5.  Define buffers, run shaders and manage the pipeline stages using methods on your renderer's [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) object.
+6.  When the pipeline has executed and a frame is drawn to the back buffer, present it to the screen with [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797).
 
-Xx xxxxxxx xxxx xxxxxxx xx xxxx xxxxxx, xxxxxx [Xxxxxxx xxxxxxx xxxx XxxxxxX xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/hh309467). Xxx xxxx xx xxxx xxxxxxx xxxxxx xxxx xx xxx xxxxxx xxxxx xxx xxxxx xxxxxxxx xxxxxxxx xxxxx xxx xxxxxxxxxx.
-> **Xxxx**   Xxxxxxx Xxxxxxx xxxx xxxx xxxxxxxxx XXXx xxx xxxxxxxxx x XxxxxxYX xxxx xxxxx, xxxx xx [**XYXYYXxxxxx::XxxxxxXxxxxxXxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476083), xxx xx xxx xxx x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxx.
+To examine this process in more detail, review [Getting started with DirectX graphics](https://msdn.microsoft.com/library/windows/desktop/hh309467). The rest of this article covers many of the common steps for basic graphics pipeline setup and management.
+> **Note**   Windows Desktop apps have different APIs for obtaining a Direct3D swap chain, such as [**D3D11Device::CreateDeviceAndSwapChain**](https://msdn.microsoft.com/library/windows/desktop/ff476083), and do not use a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object.
 
  
 
-## Xxxxxxxxx x xxxxxx xxx xxxxxxx
+## Obtaining a window for display
 
 
-Xx xxxx xxxxxxx, xxxXxxXxxxxxx xx xxxxxx xx XXXX xxx x xxxxxx xxxxxxxx xxxxxxxx xx xxx Xxxxxxxxx Xxxxxxx xxxxxxxx. Xxxxx xxxxxxxxx, xxxx xx Xxxxx'x xXX (Xxxxx) xxx Xxxxxx'x Xxxxxxx, xxxx xxxxxxxxx xxxxxxx xx xxxxxxxxxx xx xxxxxx xxxxxxxxx, xxx xxx xxxx xxxxxxxxx xxxxxxx xxxxxx xxxxxxxxxx. Xxxxx xxxxxxxxx x xxxxxxx, xxx xxxxxxxxxx xx, xxx xxx xxxxxxxxx xxxxxxxxxxxxx, xxx xxxxxx x xxxxxxx xxxx x xxxx xxxxxx xxx xxx xxxx xxxx.
+In this example, eglGetDisplay is passed an HWND for a window resource specific to the Microsoft Windows platform. Other platforms, such as Apple's iOS (Cocoa) and Google's Android, have different handles or references to window resources, and may have different calling syntax altogether. After obtaining a display, you initialize it, set the preferred configuration, and create a surface with a back buffer you can draw into.
 
-Xxxxxxxxx x xxxxxxx xxx xxxxxxxxxxx xx xxxx XXX..
+Obtaining a display and configuring it with EGL..
 
 ``` syntax
 // Obtain an EGL display object.
@@ -109,17 +109,17 @@ if (surface == EGL_NO_SURFACE)
 }
 ```
 
-Xx XxxxxxYX, x XXX xxx'x xxxx xxxxxx xx xxxxxxxxxxx xx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxx, xxxxx xxx xx xxxxxxxx xxxx xxx xxx xxxxxx xx xxxxxxx [**XxxxXxxxxx::XxxXxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701589) xx xxxx xx xxx xxxxxxxxxxxxxx xxxxxxx xx xxx "xxxx xxxxxxxx" xxx xxxxxxxxx xxx XxxxxxYX. (Xx xxx xxx xxxxx XxxxxxYX-XXXX xxxxxxx, xxx xxx xxx XXXX xxxxxxxxx'x xxxx xxxxxxxx.) Xxx xxxxxxx xxx xxxxxxxx x XxxxxxYX xxxx xxxxxxxx xx xxxxxxx xx [Xxx xx xxx xx xxxx xxx xx xxxxxxx x xxxx](https://msdn.microsoft.com/library/windows/apps/hh465077).
+In Direct3D, a UWP app's main window is represented by the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) object, which can be obtained from the app object by calling [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) as part of the initialization process of the "view provider" you construct for Direct3D. (If you are using Direct3D-XAML interop, you use the XAML framework's view provider.) The process for creating a Direct3D view provider is covered in [How to set up your app to display a view](https://msdn.microsoft.com/library/windows/apps/hh465077).
 
-Xxxxxxxxx x XxxxXxxxxx xxx XxxxxxYX.
+Obtaining a CoreWindow for Direct3D.
 
 ``` syntax
 CoreWindow::GetForCurrentThread();
 ```
 
-Xxxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225) xxxxxxxxx xx xxxxxxxx, xxx xxxxxx xxxx xx xxxxxxxxx, xxxxx xxxxxxxx xxx **Xxx** xxxxxx xx xxxx xxxx xxxxxx xxx xxxxxx xxxxxx xxxxx xxxxxxxxxx. Xxxxx xxxx, xxxxxx xx [**XXYXYYXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404575) xxx xx [**XXYXYYXxxxxxXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404598), xxx xxx xxxx xx xxx xxx xxxxxxxxxx [**XXXXXXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/ff471331) xxx [**XXXXXXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb174523) xx xxx xxx xxxxxx xx [**XXXXXXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404556) xxxxxx xx xxxxxx x xxxx xxxxx xxxxxxxx xxxxx xx xxxx [**XXXX\_XXXX\_XXXXX\_XXXXY**](https://msdn.microsoft.com/library/windows/desktop/hh404528) xxxxxxxxxxxxx.
+Once the [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225) reference is obtained, the window must be activated, which executes the **Run** method of your main object and begins window event processing. After that, create an [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) and an [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598), and use them to get the underlying [**IDXGIDevice1**](https://msdn.microsoft.com/library/windows/desktop/ff471331) and [**IDXGIAdapter**](https://msdn.microsoft.com/library/windows/desktop/bb174523) so you can obtain an [**IDXGIFactory2**](https://msdn.microsoft.com/library/windows/desktop/hh404556) object to create a swap chain resource based on your [**DXGI\_SWAP\_CHAIN\_DESC1**](https://msdn.microsoft.com/library/windows/desktop/hh404528) configuration.
 
-Xxxxxxxxxxx xxx xxxxxxx xxx XXXX xxxx xxxxx xx xxx XxxxXxxxxx xxx XxxxxxYX.
+Configuring and setting the DXGI swap chain on the CoreWindow for Direct3D.
 
 ``` syntax
 // Called when the CoreWindow object is created (or re-created).
@@ -168,11 +168,11 @@ void SimpleDirect3DApp::SetWindow(CoreWindow^ window)
 }
 ```
 
-Xxxx xxx [**XXXXXXxxxXxxxxY::XxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh446797) xxxxxx xxxxx xxx xxxxxxx x xxxxx xx xxxxx xx xxxxxxx xx.
+Call the [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797) method after you prepare a frame in order to display it.
 
-Xxxx xxxx xx XxxxxxYX YY, xxxxx xxx'x xx xxxxxxxxxxx xxxxxxxxx xx XXXXxxxxxx. (Xxxxx xx [**XXXXXXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/ff471343), xxx xx xx xxxx xxxxxxxxxxx.) Xxx xxxxxxx xxxxxxxxxx xxxxxxxxxxxxx xx xxx [**XXYXYYXxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476582) xxxxxx xxxx xx xxx xx xxxxxx x xxxxxxx ([**XXYXYYXxxxxxxYX**](https://msdn.microsoft.com/library/windows/desktop/ff476635)) xx xxx xxxx xxxxxx xxxx xxx xxxxxx xxxxxxxx xxxx xxxx xxxx.
+Note that in Direct3D 11, there isn't an abstraction identical to EGLSurface. (There is [**IDXGISurface1**](https://msdn.microsoft.com/library/windows/desktop/ff471343), but it is used differently.) The closest conceptual approximation is the [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) object that we use to assign a texture ([**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635)) as the back buffer that our shader pipeline will draw into.
 
-Xxxxxxx xx xxx xxxx xxxxxx xxx xxx xxxx xxxxx xx XxxxxxYX YY
+Setting up the back buffer for the swap chain in Direct3D 11
 
 ``` syntax
 ComPtr<ID3D11RenderTargetView>    m_d3dRenderTargetViewWin; // scoped to renderer object
@@ -189,7 +189,7 @@ m_d3dDevice->CreateRenderTargetView(
     &m_d3dRenderTargetViewWin);
 ```
 
-X xxxx xxxxxxxx xx xx xxxx xxxx xxxx xxxxxxxx xxx xxxxxx xx xxxxxxx xx xxxxxxx xxxx. Xxxxxx xxxxxxxxx, xxx xxx xxxxxx xxxxxx xxxx xxxx [**XXYXYYXxxxxxXxxxxxxY::XXXxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476464) xxxxxx xxxxxxx xx xxx xxxxx xxxxxxxxxxxx xxxx xxxxxx xxxxxxx xx xxxxxxx.
+A good practice is to call this code whenever the window is created or changes size. During rendering, set the render target view with [**ID3D11DeviceContext1::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) before setting up any other subresources like vertex buffers or shaders.
 
 ``` syntax
 // Set the render target for the draw operation.
@@ -199,23 +199,23 @@ m_d3dContext->OMSetRenderTargets(
         nullptr);
 ```
 
-## Xxxxxxxx x xxxxxxxxx xxxxxxx
+## Creating a rendering context
 
 
-Xx XXX Y.Y, x "xxxxxxx" xxxxxxxxxx x xxx xx xxxxxx xxxxxxxxx. Xxxxxxxxx, xxx xxxxxxxxx x "xxxxxxx" xxx xxx xxxxxxx xx xxxxxxxxx x xxx xx xxxxxxxxxx xx xxx xxxxxxx xxxxxx xxx xxxxxxx x xxxxxxx xx xxxxxx. Xxx xxxxxx x xxxxxxx xxx xxxxxxxxxx xxx xxxxxxxx xx xxx xxxxxxx xx xxxxxxxx xxxx xxxxxxx xxx xxxxxxx xx xx xxx xxxxxxx xxx xxx xxxxxxx.
+In EGL 1.4, a "display" represents a set of window resources. Typically, you configure a "surface" for the display by supplying a set of attributes to the display object and getting a surface in return. You create a context for displaying the contents of the surface by creating that context and binding it to the surface and the display.
 
-Xxx xxxx xxxx xxxxxxx xxxxx xxxxxxx xx xxxx:
+The call flow usually looks similar to this:
 
--   Xxxx xxxXxxXxxxxxx xxxx xxx xxxxxx xx x xxxxxxx xx xxxxxx xxxxxxxx xxx xxxxxx x xxxxxxx xxxxxx.
--   Xxxxxxxxxx xxx xxxxxxx xxxx xxxXxxxxxxxxx.
--   Xxxxxx xxx xxxxxxxxx xxxxxxx xxxxxxxxxxxxx xxx xxxxxx xxx xxxx xxxXxxXxxxxxx xxx xxxXxxxxxXxxxxx.
--   Xxxxxx x xxxxxx xxxxxxx xxxx xxxXxxxxxXxxxxxXxxxxxx.
--   Xxxxxx x xxxxxxx xxxxxxx xxx xxxxxxx xxxx xxxXxxxxxXxxxxxx.
--   Xxxx xxx xxxxxxx xxxxxxx xx xxx xxxxxxx xxx xxx xxxxxxx xxxx xxxXxxxXxxxxxx.
+-   Call eglGetDisplay with the handle to a display or window resource and obtain a display object.
+-   Initialize the display with eglInitialize.
+-   Obtain the available display configuration and select one with eglGetConfigs and eglChooseConfig.
+-   Create a window surface with eglCreateWindowSurface.
+-   Create a display context for drawing with eglCreateContext.
+-   Bind the display context to the display and the surface with eglMakeCurrent.
 
-x xxx xxxxxxxx xxxxxxx, xx xxxxxxx xxx XXXXxxxxxx xxx xxx XXXXxxxxxx, xxx xxx xx xxx xxx XXXXxxxxxx xx xxxxxx x xxxxxxx xxx xxxxxxxxx xxxx xxxxxxx xxxx xxx xxxxxxx, xxxxx xxx xxxxxxxxxx XXXXxxxxxx xx xxxxxxxxxxxx xxx xxxxxx.
+n the previous section, we created the EGLDisplay and the EGLSurface, and now we use the EGLDisplay to create a context and associate that context with the display, using the configured EGLSurface to parameterize the output.
 
-Xxxxxxxxx x xxxxxxxxx xxxxxxx xxxx XXX Y.Y
+Obtaining a rendering context with EGL 1.4
 
 ```cpp
 // Configure your EGLDisplay and obtain an EGLSurface here ...
@@ -235,11 +235,11 @@ if (!eglMakeCurrent(display, surface, surface, context))
 }
 ```
 
-X xxxxxxxxx xxxxxxx xx XxxxxxYX YY xx xxxxxxxxxxx xx xx [**XXYXYYXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404575) xxxxxx, xxxxx xxxxxxxxxx xxx xxxxxxx xxx xxxxxx xxx xx xxxxxx XxxxxxYX xxxxxxxxx xxxx xx xxxxxxx xxx xxxxxxx; xxx xx xxx [**XXYXYYXxxxxxXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404598) xxxxxx, xxxxx xxxxxx xxx xx xxxxxx xxx xxxxxxxx xxxxxxxx xxx xxxxxxx xxx xxxxxxx.
+A rendering context in Direct3D 11 is represented by an [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) object, which represents the adapter and allows you to create Direct3D resources such as buffers and shaders; and by the [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) object, which allows you to manage the graphics pipeline and execute the shaders.
 
-Xx xxxxx xx XxxxxxYX xxxxxxx xxxxxx! Xxxxx xxx xxxx xx xxxxxxx xxxxx XxxxxxYX xxxxxxxx xxxxxxxxx, xxxx XxxxxxX Y.Y xx XxxxxxX YY. Xxxx xxxxxxxxx xxxx xxx xxx xxxxx xxxxxxxx xxxxxxxx, xxxx xx xxxxxxx, xxxx xxxx xxxxxx xx XxxxxxX Y.Y xxxxxxxx, xxx xxxxx xxxxxxxxx xxxxxxxx xxxxxxxx xxxxx xx xxxx Y.Y xxxxxxx YY.
+Be aware of Direct3D feature levels! These are used to support older Direct3D hardware platforms, from DirectX 9.1 to DirectX 11. Many platforms that use low power graphics hardware, such as tablets, only have access to DirectX 9.1 features, and older supported graphics hardware could be from 9.1 through 11.
 
-Xxxxxxxx x xxxxxxxxx xxxxxxx xxxx XXXX xxx XxxxxxYX
+Creating a rendering context with DXGI and Direct3D
 
 ```cpp
 
@@ -277,12 +277,12 @@ D3D11CreateDevice(
 );
 ```
 
-## Xxxxxxx xxxx x xxxxxxx xx xxxxxx xxxxxxxx
+## Drawing into a texture or pixmap resource
 
 
-Xx xxxx xxxx x xxxxxxx xxxx XxxxXX XX Y.Y, xxxxxxxxx x xxxxx xxxxxx, xx XXxxxxx. Xxxxx xxx xxxxxxxxxxxx x xxxxxxxxx xxx xxxxxx xx XXXXxxxxxx xxx xx xxx xxx xxxxxx xx xxxx x xxxxxxxxx xxxxxxx xxx xxxxxxx xxx xxxxxx xxxxxxxx xx xxxx xxxx xxx xxxxxxx.
+To draw into a texture with OpenGL ES 2.0, configure a pixel buffer, or PBuffer. After you successfully a configure and create an EGLSurface for it you can supply it with a rendering context and execute the shader pipeline to draw into the texture.
 
-Xxxx xxxx x xxxxx xxxxxx xxxx XxxxXX XX Y.Y
+Draw into a pixel buffer with OpenGL ES 2.0
 
 ``` syntax
 // Create a pixel buffer surface to draw into
@@ -298,9 +298,9 @@ eglChooseConfig(eglDsplay, pBufConfigAttrs, &pBufConfig, 1, &totalpBufAttrs);
 EGLSurface pBuffer = eglCreatePbufferSurface(eglDisplay, pBufConfig, EGL_TEXTURE_RGBA); 
 ```
 
-Xx XxxxxxYX YY, xxx xxxxxx xx [**XXYXYYXxxxxxxYX**](https://msdn.microsoft.com/library/windows/desktop/ff476635) xxxxxxxx xxx xxxxx xx x xxxxxx xxxxxx. Xxxxxxxxx xxx xxxxxx xxxxxx xxxxx [**XYXYY\_XXXXXX\_XXXXXX\_XXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476201). Xxxx xxx xxxx xxx [**XXYXYYXxxxxxXxxxxxx::Xxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476407) xxxxxx(xx x xxxxxxx Xxxx\* xxxxxxxxx xx xxx xxxxxx xxxxxxx) xxxxx xxxx xxxxxx xxxxxx, xxx xxxxxxx xxx xxxxx xxxx x xxxxxxx.
+In Direct3D 11, you create an [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635) resource and makei it a render target. Configure the render target using [**D3D11\_RENDER\_TARGET\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476201). When you call the [**ID3D11DeviceContext::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407) method(or a similar Draw\* operation on the device context) using this render target, the results are drawn into a texture.
 
-Xxxx xxxx x xxxxxxx xxxx XxxxxxYX YY
+Draw into a texture with Direct3D 11
 
 ``` syntax
 ComPtr<ID3D11Texture2D> renderTarget1;
@@ -322,14 +322,14 @@ m_d3dContext->OMSetRenderTargets(
         nullptr);
 ```
 
-Xxxx xxxxxxx xxx xx xxxxxx xx x xxxxxx xx xx xx xxxxxxxxxx xxxx xx [**XXYXYYXxxxxxXxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476628).
+This texture can be passed to a shader if it is associated with an [**ID3D11ShaderResourceView**](https://msdn.microsoft.com/library/windows/desktop/ff476628).
 
-## Xxxxxxx xx xxx xxxxxx
+## Drawing to the screen
 
 
-Xxxx xxx xxxx xxxx xxxx XXXXxxxxxx xx xxxxxxxxx xxxx xxxxxxx xxx xxxxxx xxxx xxxx, xxx xxx xxx xxxxxxx xxxxx xx xx xxx xxxx xxx xxxxxxx xx xxx xxxx xxxxxx xxxx xxXxxxXxxxxxxx. Xxx xxxxxxx xxx xxxx xxxxxx xx xxxxxxx xxxXxxxXxxxxxx.
+Once you have used your EGLContext to configure your buffers and update your data, you run the shaders bound to it and draw the results to the back buffer with glDrawElements. You display the back buffer by calling eglSwapBuffers.
 
-Xxxx XX XX Y.Y: Xxxxxxx xx xxx xxxxxx.
+Open GL ES 2.0: Drawing to the screen.
 
 ``` syntax
 glDrawElements(GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
@@ -337,9 +337,9 @@ glDrawElements(GL_TRIANGLES, renderer->numIndices, GL_UNSIGNED_INT, 0);
 eglSwapBuffers(drawContext->eglDisplay, drawContext->eglSurface);
 ```
 
-Xx XxxxxxYX YY, xxx xxxxxxxxx xxxx xxxxxxx xxx xxxx xxxxxxx xxxx xxxx [**XXXXXXxxxXxxxx::XxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh446797). Xxxx xxx xxxx xxx xx xxx [**XXYXYYXxxxxxXxxxxxxY::Xxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476407)\* xxxxxxx xx xxx xxx xxxxxxx xxx xxxx xxx xxxxxxx xx x xxxxxx xxxxxx xxxxxxxxxx xx xxx xxxx xxxxxx xxx xxx xxxx xxxxx. Xxxxx xxxx, xxx xxxxxx xxxxxxx xxx xxxx xxxxxx xx xxx xxxxxxx xx xxxxxxx **XXXXXXxxxXxxxx::XxxxxxxY**.
+In Direct3D 11, you configure your buffers and bind shaders with your [**IDXGISwapChain::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797). Then you call one of the [**ID3D11DeviceContext1::Draw**](https://msdn.microsoft.com/library/windows/desktop/ff476407)\* methods to run the shaders and draw the results to a render target configured as the back buffer for the swap chain. After that, you simply present the back buffer to the display by calling **IDXGISwapChain::Present1**.
 
-XxxxxxYX YY: Xxxxxxx xx xxx xxxxxx.
+Direct3D 11: Drawing to the screen.
 
 ``` syntax
 
@@ -353,59 +353,63 @@ m_d3dContext->DrawIndexed(
 m_swapChainCoreWindow->Present1(1, 0, &parameters);
 ```
 
-## Xxxxxxxxx xxxxxxxx xxxxxxxxx
+## Releasing graphics resources
 
 
-Xx XXX, xxx xxxxxxx xxx xxxxxx xxxxxxxxx xx xxxxxxx xxx XXXXxxxxxx xx xxxXxxxxxxxx.
+In EGL, you release the window resources by passing the EGLDisplay to eglTerminate.
 
-Xxxxxxxxxxx x xxxxxxx xxxx XXX Y.Y
+Terminating a display with EGL 1.4
 
 ```cpp
 EGLBoolean eglTerminate(eglDisplay);
 ```
 
-Xx x XXX xxx, xxx xxx xxxxx xxx XxxxXxxxxx xxxx [**XxxxXxxxxx::Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br208260), xxxxxxxx xxxx xxx xxxx xx xxxx xxx xxxxxxxxx XX xxxxxxx. Xxx xxxxxxx XX xxxxxx xxx xxx xxxxxxxxxx XxxxXxxxxx xxxxxx xx xxxxxx; xxxxxx, xxxx xxx xxxxxxx xx xxx xxxxxxxxx xxxxxx. Xxxxxxx, xxxx x xxxxxxxxx XxxxXxxxxx xx xxxxxx, xxx [**XxxxXxxxxx::Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208261) xxxxx xx xxxxxx.
+In a UWP app, you can close the CoreWindow with [**CoreWindow::Close**](https://msdn.microsoft.com/library/windows/apps/br208260), although this can only be used for secondary UI windows. The primary UI thread and its associated CoreWindow cannot be closed; rather, they are expired by the operating system. However, when a secondary CoreWindow is closed, the [**CoreWindow::Closed**](https://msdn.microsoft.com/library/windows/apps/br208261) event is raised.
 
-## XXX Xxxxxxxxx xxxxxxx xxx XXX xx XxxxxxYX YY
+## API Reference mapping for EGL to Direct3D 11
 
 
-| XXX XXX                          | Xxxxxxx XxxxxxYX YY XXX xx xxxxxxxx                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| EGL API                          | Similar Direct3D 11 API or behavior                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 |----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| xxxXxxxXXX                       | X/X.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| xxxXxxxXxxXxxxx                  | Xxxx [**XXYXYYXxxxxx::XxxxxxXxxxxxxYX**](https://msdn.microsoft.com/library/windows/desktop/ff476521) xx xxx x YX xxxxxxx.                                                                                                                                                                                                                                                                                                                                                                                          |
-| xxxXxxxxxXxxxxx                  | XxxxxxYX xxxx xxx xxxxxx x xxx xx xxxxxxx xxxxx xxxxxx xxxxxxxxxxxxxx. Xxx xxxx xxxxx'x xxxxxxxxxxxxx                                                                                                                                                                                                                                                                                                                                                                                           |
-| xxxXxxxXxxxxxx                   | Xx xxxx x xxxxxx xxxx, xxxx [**XXYXYYXxxxxxXxxxxxx::XxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476393). Xx xxxx x xxxxxxxx, xxxx [**XXYXXxxxxxXXxxxxx::XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476392).                                                                                                                                                                                                                                                      |
-| xxxXxxxxxXxxxxxx                 | Xxxxxx x XxxxxxYX xxxxxx xxxxxxx xx xxxxxxx [**XYXYYXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476082), xxxxx xxxxxxx xxxx x xxxxxx xx x XxxxxxYX xxxxxx xxx x xxxxxxx XxxxxxYX xxxxxxxxx xxxxxxx ([**XXYXYYXxxxxxXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404598) xxxxxx). Xxx xxx xxxx xxxxxx x XxxxxxYX xxxxxxxx xxxxxxx xx xxxxxxx [**XXYXYYXxxxxxY::XxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/dn280495) xx xxx xxxxxxxx [**XXYXYYXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404575) xxxxxx. |
-| xxxXxxxxxXxxxxxxXxxxXxxxxxXxxxxx | Xxx xxxxxxx xxx xxxx xxx xxxxxxx xx x XxxxxxYX xxxxxxxxxxx, xxxx xx xx [**XXYXYYXxxxxxxYX**](https://msdn.microsoft.com/library/windows/desktop/ff476635). Xxxx xxxx xxx xx xxxxxxx xxxxxxxxxx xxxxxxxxxxx xxxx xxxx x xxxxxxx xxxx xx [**XXYXYYXxxxxxXxxxxxxY:XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476392).                                                                                                                                                                                                     |
-| xxxXxxxxxXxxxxxxXxxxxxx          | Xx xxxxxx x XxxxxxYX xxxxxx xxxx xx xxxx xxxxx, xxxx xxx xxxxxx [**XYXYYXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476082) xxxxxx. Xxx x XxxxxxYX xxxxxx xxxxxx xxxx, xxxx [**XXYXYYXxxxxx::XxxxxxXxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476517).                                                                                                                                                                                                                               |
-| xxxXxxxxxXxxxxxXxxxxxx           | Xx xxxxxx x XxxxxxYX xxxxxx xxxx xx xxxx xxxxx, xxxx xxx xxxxxx [**XYXYYXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476082) xxxxxx. Xxx x XxxxxxYX xxxxxx xxxxxx xxxx, xxxx [**XXYXYYXxxxxx::XxxxxxXxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476517).                                                                                                                                                                                                                               |
-| xxxXxxxxxXxxxxxXxxxxxx           | Xxxxxx xx [**XXXXXXxxxXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404631) (xxx xxx xxxxxxx xxxxxxx) xxx xx [**XXYXYYXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404575) (x xxxxxxx xxxxxxxxx xxx xxx xxxxxxxx xxxxxx xxx xxx xxxxxxxxx). Xxx xxx **XXYXYYXxxxxxY** xx xxxxxx xx [**XXYXYYXxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476582) xxxx xxx xxx xxx xx xxxxxx xxx xxxxx xxxxxx xxx xxxxxx xx xxx **XXXXXXxxxXxxxxY**.                                                                                         |
-| xxxXxxxxxxXxxxxxx                | X/X. Xxx [**XXYXYYXxxxxxXxxxxxx::XxxxxxxXxxxY**](https://msdn.microsoft.com/library/windows/desktop/jj247573) xx xxx xxx xx x xxxxxx xxxxxx xxxx. Xx xxxxx xxx xxxxxx [**XXYXYYXxxxxxXxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404598), xxx xxx xxxxxxxx xx xxxx xxx xxxx xxx xxx xxxxxxxx xx xxxxxxx xxx xxxxxxxxx. Xxx xxxxxx xxxxxxx xxx xxxxxx xxxxxxx xxxxxxxx.                                                                                                                                                |
-| xxxXxxxxxxXxxxxxx                | X/X. Xxxxxxxx xxxxxxxxx xxx xxxxxxx xx xxxx xxx XXX xxx'x XxxxXxxxxx xx xxxxxx xx xxx xxxxxxxx.                                                                                                                                                                                                                                                                                                                                                                                                 |
-| xxxXxxXxxxxxxXxxxxxx             | Xxxx [**XxxxXxxxxx::XxxXxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701589) xx xxx x xxxxxxxxx xx xxx xxxxxxx xxxx xxx xxxxxx.                                                                                                                                                                                                                                                                                                                                                         |
-| xxxXxxXxxxxxxXxxxxxx             | Xxxx xx xxx xxxxxxx [**XXYXYYXxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476582). Xxxxxxxxx, xxxx xx xxxxxx xx xxxx xxxxxxxx xxxxxx.                                                                                                                                                                                                                                                                                                                                                         |
-| xxxXxxXxxxx                      | Xxxxxx xxx xxxxxxxx xx XXXXXXXx xxxxxxxx xx xxxx xxxxxxx xx XxxxxxX xxxxxxxxxx. Xx xxx xxxxxx xxxx xxx xxxxxx xx XXXXXXX, xxxx [**XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/desktop/ms679360). Xx xxxxxxx x xxxxxx xxxxx xxxx xx XXXXXXX xxxxx, xxx xxx [**XXXXXXX\_XXXX\_XXXYY**](https://msdn.microsoft.com/library/windows/desktop/ms680746) xxxxx.                                                                                                                                                                                                  |
-| xxxXxxxxxxxxx                    | Xxxx [**XxxxXxxxxx::XxxXxxXxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701589) xx xxx x xxxxxxxxx xx xxx xxxxxxx xxxx xxx xxxxxx.                                                                                                                                                                                                                                                                                                                                                         |
-| xxxXxxxXxxxxxx                   | Xxx x xxxxxx xxxxxx xxx xxxxxxx xx xxx xxxxxxx xxxxxxx xxxx [**XXYXYYXxxxxxXxxxxxxY::XXXxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476464).                                                                                                                                                                                                                                                                                                                                  |
-| xxxXxxxxXxxxxxx                  | X/X. Xxxxxxx, xxx xxx xxxxxxx xxxxxxxxx xxxxxxx xxxx xx [**XXYXYYXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404575) xxxxxxxx, xx xxxx xx xxxx xxxxxxxxxxxxx xxxx. (Xxx xxx xxxx xxx xxx xxxx xx xxxxxxxxx xxxxxxx.)                                                                                                                                                                                                                                                                                           |
-| xxxXxxxxXxxxxxx                  | X/X. Xxxxxxx, xxx xxx xxxxxxx xxxx xxxxx xxxxxxxxx xxx xxx xxxxxxx xxxxxxxx xxxxxxxx xxxx xxxxxxx xx xx [**XXYXYYXxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404575) xxxxxxxx. (Xxx xxx xxxx xxx xxx xxxx xx xxxxxxxxx xxxxxxx.)                                                                                                                                                                                                                                                                               |
-| xxxXxxxxxxXxxXxxxx               | X/X.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| xxxXxxxxxxXxxxxx                 | Xxx xxxxxxx XXX xxxxxxxxxxxxxx, xxxx [Xxxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ff476891).                                                                                                                                                                                                                                                                                                                                                                              |
-| xxxXxxxxxxXxxxxx                 | Xxx [**XYXYY\_XXXXXX\_XXXXXX\_XXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476201) xx xxxxxxxxx x XxxxxxYX xxxxxx xxxxxx xxxx,                                                                                                                                                                                                                                                                                                                                                               |
-| xxxXxxxXxxxxxx                   | Xxx [**XXXXXXxxxXxxxxY::XxxxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh446797).                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| xxxXxxxXxxxxxxx                  | Xxx [**XXXXXXxxxXxxxxY**](https://msdn.microsoft.com/library/windows/desktop/hh404631).                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| xxxXxxxxxxxx                     | Xxx XxxxXxxxxx xxxx xx xxxxxxx xxx xxxxxx xx xxx xxxxxxxx xxxxxxxx xx xxxxxxx xx xxx xxxxxxxxx xxxxxx.                                                                                                                                                                                                                                                                                                                                                                                          |
-| xxxXxxxXxxxxx                    | Xxx xxxxxx xxxxxxxx, xxx XXXXXXxxxxXxxxx. Xxx xxxxxxx XXX xxxxxxxxxxxxxx, xxxx [Xxxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ff476891).                                                                                                                                                                                                                                                                                                                                    |
-| xxxXxxxXX                        | Xxx xxxxxx xxxxxxxx, xxx XXXXXXxxxxXxxxx. Xxx xxxxxxx XXX xxxxxxxxxxxxxx, xxxx [Xxxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ff476891).                                                                                                                                                                                                                                                                                                                                    |
-| xxxXxxxXxxxxx                    | Xxx xxxxxx xxxxxxxx, xxx XXXXXXxxxxXxxxx. Xxx xxxxxxx XXX xxxxxxxxxxxxxx, xxxx [Xxxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ff476891).                                                                                                                                                                                                                                                                                                                                    |
+| eglBindAPI                       | N/A.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| eglBindTexImage                  | Call [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) to set a 2D texture.                                                                                                                                                                                                                                                                                                                                                                                          |
+| eglChooseConfig                  | Direct3D does not supply a set of default frame buffer configurations. The swap chain's configuration                                                                                                                                                                                                                                                                                                                                                                                           |
+| eglCopyBuffers                   | To copy a buffer data, call [**ID3D11DeviceContext::CopyStructureCount**](https://msdn.microsoft.com/library/windows/desktop/ff476393). To copy a resource, call [**ID3DDeviceCOntext::CopyResource**](https://msdn.microsoft.com/library/windows/desktop/ff476392).                                                                                                                                                                                                                                                      |
+| eglCreateContext                 | Create a Direct3D device context by calling [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082), which returns both a handle to a Direct3D device and a default Direct3D immediate context ([**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598) object). You can also create a Direct3D deferred context by calling [**ID3D11Device2::CreateDeferredContext**](https://msdn.microsoft.com/library/windows/desktop/dn280495) on the returned [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) object. |
+| eglCreatePbufferFromClientBuffer | All buffers are read and written as a Direct3D subresource, such as an [**ID3D11Texture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476635). Copy from one to another compatible subresource type with a methods such as [**ID3D11DeviceContext1:CopyResource**](https://msdn.microsoft.com/library/windows/desktop/ff476392).                                                                                                                                                                                                     |
+| eglCreatePbufferSurface          | To create a Direct3D device with no swap chain, call the static [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) method. For a Direct3D render target view, call [**ID3D11Device::CreateRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476517).                                                                                                                                                                                                                               |
+| eglCreatePixmapSurface           | To create a Direct3D device with no swap chain, call the static [**D3D11CreateDevice**](https://msdn.microsoft.com/library/windows/desktop/ff476082) method. For a Direct3D render target view, call [**ID3D11Device::CreateRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476517).                                                                                                                                                                                                                               |
+| eglCreateWindowSurface           | Ontain an [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631) (for the display buffers) and an [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) (a virtual interface for the graphics device and its resources). Use the **ID3D11Device1** to define an [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582) that you can use to create the frame buffer you supply to the **IDXGISwapChain1**.                                                                                         |
+| eglDestroyContext                | N/A. Use [**ID3D11DeviceContext::DiscardView1**](https://msdn.microsoft.com/library/windows/desktop/jj247573) to get rid of a render target view. To close the parent [**ID3D11DeviceContext1**](https://msdn.microsoft.com/library/windows/desktop/hh404598), set the instance to null and wait for the platform to reclaim its resources. You cannot destroy the device context directly.                                                                                                                                                |
+| eglDestroySurface                | N/A. Graphics resources are cleaned up when the UWP app's CoreWindow is closed by the platform.                                                                                                                                                                                                                                                                                                                                                                                                 |
+| eglGetCurrentDisplay             | Call [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) to get a reference to the current main app window.                                                                                                                                                                                                                                                                                                                                                         |
+| eglGetCurrentSurface             | This is the current [**ID3D11RenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476582). Typically, this is scoped to your renderer object.                                                                                                                                                                                                                                                                                                                                                         |
+| eglGetError                      | Errors are obtained as HRESULTs returned by most methods on DirectX interfaces. If the method does not return an HRESULT, call [**GetLastError**](https://msdn.microsoft.com/library/windows/desktop/ms679360). To convert a system error into an HRESULT value, use the [**HRESULT\_FROM\_WIN32**](https://msdn.microsoft.com/library/windows/desktop/ms680746) macro.                                                                                                                                                                                                  |
+| eglInitialize                    | Call [**CoreWindow::GetForCurrentThread**](https://msdn.microsoft.com/library/windows/apps/hh701589) to get a reference to the current main app window.                                                                                                                                                                                                                                                                                                                                                         |
+| eglMakeCurrent                   | Set a render target for drawing on the current context with [**ID3D11DeviceContext1::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464).                                                                                                                                                                                                                                                                                                                                  |
+| eglQueryContext                  | N/A. However, you may acquire rendering targets from an [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) instance, as well as some configuration data. (See the link for the list of available methods.)                                                                                                                                                                                                                                                                                           |
+| eglQuerySurface                  | N/A. However, you may acquire data about viewports and the current graphics hardware from methods on an [**ID3D11Device1**](https://msdn.microsoft.com/library/windows/desktop/hh404575) instance. (See the link for the list of available methods.)                                                                                                                                                                                                                                                                               |
+| eglReleaseTexImage               | N/A.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| eglReleaseThread                 | For general GPU multithreading, read [Multithreading](https://msdn.microsoft.com/library/windows/desktop/ff476891).                                                                                                                                                                                                                                                                                                                                                                              |
+| eglSurfaceAttrib                 | Use [**D3D11\_RENDER\_TARGET\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476201) to configure a Direct3D render target view,                                                                                                                                                                                                                                                                                                                                                               |
+| eglSwapBuffers                   | Use [**IDXGISwapChain1::Present1**](https://msdn.microsoft.com/library/windows/desktop/hh446797).                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| eglSwapInterval                  | See [**IDXGISwapChain1**](https://msdn.microsoft.com/library/windows/desktop/hh404631).                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| eglTerminate                     | The CoreWindow used to display the output of the graphics pipeline is managed by the operating system.                                                                                                                                                                                                                                                                                                                                                                                          |
+| eglWaitClient                    | For shared surfaces, use IDXGIKeyedMutex. For general GPU multithreading, read [Multithreading](https://msdn.microsoft.com/library/windows/desktop/ff476891).                                                                                                                                                                                                                                                                                                                                    |
+| eglWaitGL                        | For shared surfaces, use IDXGIKeyedMutex. For general GPU multithreading, read [Multithreading](https://msdn.microsoft.com/library/windows/desktop/ff476891).                                                                                                                                                                                                                                                                                                                                    |
+| eglWaitNative                    | For shared surfaces, use IDXGIKeyedMutex. For general GPU multithreading, read [Multithreading](https://msdn.microsoft.com/library/windows/desktop/ff476891).                                                                                                                                                                                                                                                                                                                                    |
 
  
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

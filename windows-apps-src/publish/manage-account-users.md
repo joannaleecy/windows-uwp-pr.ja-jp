@@ -1,213 +1,217 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxx Xxxxx Xxxxxx Xxxxxxxxx xx xxx xxxxx xx xxxx Xxx Xxxxxx xxxxxxx.
-xxxxx: Xxxxxx xxxxxxx xxxxx
-xx.xxxxxxx: YYYYXYXY-YXYX-YYYY-XXXY-XXXYYYYXYXYX
+Description: Azure Active Directory を使用して、ユーザーをデベロッパー センター アカウントに追加できます。
+title: アカウント ユーザーの管理
+ms.assetid: 9245F0D0-7D8F-4741-AFB4-FBA5601D0A9B
 ---
 
-# Xxxxxx xxxxxxx xxxxx
+# アカウント ユーザーの管理
 
 
-Xxx xxx xxx Xxxxx Xxxxxx Xxxxxxxxx xx xxx xxxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xxxx xxxx xx xxxxxxxx x xxxx xxxx xxxxx xxxx x xxxxxxxx xxx xx xxxxxxxxxxx xx xxx xxxxxxx. Xxx xxx xxxx xxxxxx x xxxx xx x xxxxx xx xxxxx, xx xx xx Xxxxx XX xxxxxxxxxxx.
+Azure Active Directory を使用して、ユーザーをデベロッパー センター アカウントに追加できます。 各ユーザーには、アカウントに対する一連のアクセス許可をそのユーザーに付与する役割が割り当てられます。 ユーザーのグループや Azure AD アプリケーションに役割を割り当てることもできます。
 
-> **Xxxxxxxxx**  Xx xxxxx xx xxx xxx xxxxxx xxxxxxx xxxxx, xxx xxxx xxxxx xxxxxxxxx xxxx Xxx Xxxxxx xxxxxxx xxxx xxxx xxxxxxxxxxxx'x Xxxxx Xxxxxx Xxxxxxxxx. Xxxx xxxxxxxx xxx xx xxxx xx xx Xxxxx XX xxxx x Xxxxxx Xxxxx xxxxxxx. Xxxx xxx xxxxxxxxx xxxx xxxxxxxxxxx, xxx xxx'x xx xxxx xx xxxxxx xx xxxxxxx xxxxxxxxxx xxxxxxx.
+> **重要**  アカウント ユーザーを追加および管理するには、まずデベロッパー センター アカウントを組織の Azure Active Directory に関連付けます。 これを行うには、グローバル管理者アカウントを使用して Azure AD にサインインする必要があります。 一度関連付けを確立すると、その関連付けを削除するには、必ずサポートへの問い合わせが必要になります。
 
  
 
-## Xxxxxxxxx xxxx Xxx Xxxxxx xxxxxxx xxxx xxxx xxxxxxxxxxxx'x Xxxxx Xxxxxx Xxxxxxxxx
+## デベロッパー センター アカウントと組織の Azure Active Directory を関連付ける
 
 
-Xxxxxxx Xxx Xxxxxx xxxxxxxxx Xxxxx Xxxxxx Xxxxxxxxx xxx xxxxx-xxxx xxxxxxxxxx xxx xxxxx xxxxxxxxxx. Xx xxxx xxxxxxxxxxxx xxxxxxx xxxx Xxxxxx YYY xx xxxxx xxxxxxxx xxxxxxxx xxxx Xxxxxxxxx, xxx xxxxxxx xxxx Xxxxx XX. Xxxxxxxxx, xxx xxx [xxx xx xxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=703757).
+Windows デベロッパー センターでは、複数ユーザーの管理と役割の割り当てに Azure Active Directory を利用します。 組織で Office 365 または Microsoft の他のビジネス サービスが既に使用されている場合は、既に Azure AD をお持ちです。 それ以外の場合は、[こちらから無料で入手](http://go.microsoft.com/fwlink/p/?LinkId=703757)できます。
 
-Xxxx xxxx xxxx xxx Xxx Xxxxxx xxxxxxx xxx xx xxxxxxxxxx xxxx xx Xxxxx Xxxxxx Xxxxxxxxx. Xxxxxxxxx, xxxx xxx Xxxxx Xxxxxx Xxxxxxxxx xxx xx xxxxxxxxxx xxxx x Xxx Xxxxxx xxxxxxx.
+Azure Active Directory に関連付けることができるデベロッパー センター アカウントは 1 つのみであることに注意してください。 同様に、デベロッパー センター アカウントに関連付けることができる Azure Active Directory は 1 つのみです。
 
-Xx xxx xx xxx xxxxxxxxxxx:
+関連付けをセットアップするには:
 
-1.  Xx xx xxxx **Xxxxxxx xxxxxxxx** xxx xxxxx **Xxxxxx xxxxx**.
-2.  Xxxxx xxx xxxxxx xx xxxxxxxxx xxxx xxxxxxx xxxx Xxxxx XX.
-3.  Xxxx xx xx xxxx Xxxxx XX xxxxxxx. Xxxx xxxxxxx xxxx xxxx Xxxxxx Xxxxx xxxxxxxxxx xx xxxxx xx xxx xx xxx xxxxxxxxxxx.
-4.  Xxxxxx xxx xxxxxxxxxxxx xxx xxxxxx xxxx xxx xxxx Xxxxx XX xxxxxxx. Xx xxxxxxxx xxx xxxxxxxxxxx, xxxxx **Xxxxxxx**.
+1.  **[アカウント設定]** に移動して、**[ユーザーの管理]** をクリックします。
+2.  ボタンをクリックして、アカウントと Azure AD を関連付けます。
+3.  Azure AD アカウントにサインインします。 関連付けを設定するには、このアカウントにグローバル管理者のアクセス許可が必要です。
+4.  Azure AD アカウントの組織とドメイン名を確認します。 関連付けを完了するには、**[確認]** をクリックします。
 
-Xx xxx xxxxxxxxxxx xx xxxxxxxxxx, xxx xxxx xxxx xx xxxxx xx xxx xxx xxxxxx xxxxxxx xxxxx xx xxx **Xxxxxx xxxxx** xxxx xx xxxx xxxxxxx.
+適切に関連付けられたら、アカウントの **[ユーザーの管理]** ページで、いつでもアカウント ユーザーを追加して管理することができます。
 
-> **Xxxx**  Xxx xxx xxxx xxx xxxxx xx xxxx Xxx Xxxxxx xxxxxxx xx xxxx xxx xxxx xx xxxx xxxxxxxxxxxx’x Xxxxx Xxxxxx Xxxxxxxxx. Xxx xxx’x xx xxxx xx xxx xxxxx xx xxxx Xxx Xxxxxx xxxxxxx xxxx xxxxx Xxxxxxxxx xxxxxxxx.
+> **注**  組織の Azure Active Directory に含まれているユーザーのみをデベロッパー センター アカウントに追加できます。 Microsoft アカウントでユーザーをデベロッパー センター アカウントに追加することはできません。
 
-## Xxx xxx xxxxxx xxxxxxx xxxxx, xxxxxx, xxx Xxxxx XX xxxxxxxxxxxx
+## アカウント ユーザー、グループ、および Azure AD アプリケーションを追加して管理する
 
 
-Xxxx xxx xxxx xxxxxxxxxxx xxx xxxxxxxxxxx, xxx xxx xxx xxxxx, xxxxxx, xxx Xxxxx XX xxxxxxxxxxxx xx xxxx xxxxxxx. Xxx xxx xxxx xxxxxx xxxxx, xxxx xxxxxxx xxxxxxx, xx xxxxxx xxxxx.
+関連付けが確立されたら、ユーザー、グループ、および Azure AD アプリケーションをアカウントに追加できます。 また、役割の変更、アカウントの詳細の編集、またはユーザーの削除を行うこともできます。
 
-> **Xxxx**  Xx xxxx xxxxxxxxxxxx xxxx [xxxxxxxxx xxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=724033) xx xxxx xxx xx-xxxxxxxx xxxxxxxxx xxxxxxx xxxx xxxx Xxxxx XX, xxx xxx'x xx xxxx xx xxxxxx xxx xxxxx, xxxxxx, xx Xxxxx XX xxxxxxxxxxxx xx Xxx Xxxxxx. Xxx (xx xxxxxxx xxxxx xx xxxx xx-xxxxxxxx xxxxxxxxx) xxxx xxxx xx xxxxxx xxxx xxxxxxxx xx xxx xx-xxxxxxxx xxxxxxxxx xxxxxx xxx'xx xx xxxx xx xxx xxx xxx xxxx xx Xxx Xxxxxx.
+> **注**  組織で[ディレクトリ統合](http://go.microsoft.com/fwlink/p/?LinkID=724033)を使って組織内のディレクトリ サービスを Azure AD と同期している場合、デベロッパー センターで新しいユーザー、グループ、Azure AD アプリケーションを作成できなくなります。 デベロッパー センターで表示および追加するには、組織内のディレクトリ管理者が組織内のディレクトリで直接作成する必要があります。
 
-Xxxx xxxxxxxx xxxxx, xxxx xxx xxxxxxxxx xx xxxx:
+ユーザーを管理するときは、次の点に注意してください。
 
--   Xxx Xxx Xxxxxx xxxxx xxxx xxxx xx xxxxxx xxxxxxx xx xxxx xxxxxxxxxxxx'x Xxxxx XX.
--   Xxxxxxxx x **xxx** xxxx xx xxxxx xx Xxx Xxxxxx xxxx xxxx xxx xxxx xx xxxx xxxxxxxxxxxx'x Xxxxx XX.
--   Xxxxxx xxxxxxx xx x xxxx xx xxxxx'x xxxx xx Xxx Xxxxxx xxxx xxxx xxxxx xxxxxxx xx xxxx xxxxxxxxxxxx'x Xxxxx XX.
--   Xxxxx (xxxxxxxxx xxxxxx xxx Xxxxx XX xxxxxxxxxxxx) xxxx xx xxxx xx xxxxxx xxx xxxxxx Xxx Xxxxxx xxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxxxx xxxx xxxxx xxxxxxxx xxxx. Xxx xxx'x xxxxx x xxxx'x xxxxxx xx xxxx xxxx xxx xxxx xxxx xxxx xxxxxxxx xxxx xxx/xx XXXx.
--   Xxx xxx xxxxx x xxxx, xxxxx, xx Xxxxx XX xxxxxxxxxxx xx xxxx xxxxxx xx xxxx xxxx xxx xxxx'x xxxxxxxxxxxxx xx xxxxxxxxx xxxxxxxx xxxxx.
--   X xxxx xxxx x xxxxxxx xxxx xxx xxxx xx xxxx xx x xxxxx xxxx xxx x xxxxxxxxx xxxx. Xx xxxx xxxx, xxx xxxx xxxx xxxx xxxxxx xx xxx xxxxxxxxxxxxx xxxxxxxxxx xxxx xxxx xxxxx.
+-   すべてのデベロッパー センター ユーザーに、組織の Azure AD のアクティブなアカウントが必要です。
+-   **新しい**ユーザーまたはグループをデベロッパー センターに作成すると、そのユーザーおよびグループは組織の Azure AD にも追加されます。
+-   デベロッパー センターでユーザーまたはグループ名を変更すると、その変更は組織の Azure AD にも反映されます。
+-   ユーザー (グループおよび Azure AD アプリケーションを含む) は、割り当てられた役割に関連付けられているアクセス許可で、デベロッパー センター アカウント全体にアクセスできます。 特定のアプリや IAP のみを操作できるようにユーザーのアクセスを制限することはできません。
+-   ユーザー、グループ、または Azure AD アプリケーションが複数の役割の機能にアクセスできるようにするには、複数の役割を選びます。
+-   ある役割を持つユーザーのグループに、その役割とは異なる役割が付与されていることがあります。 この場合、そのユーザーは、両方の役割に関連付けられている機能にアクセスできます。
 
-### Xxxxx xxx xxxxxxxxxxx
+### 役割とアクセス許可
 
-Xxxx xxxx, xxxxx, xx Xxxxx XX xxxxxxxxxxx xxxx xxx xxx xx xx xxxxxxx xxxx xx xxxxxxxx xx xxxxx xxx xx xxx xxxxxxxxx xxxxx. Xxxx xxxx xxx x xxxxxxxx xxx xx xxxxxxxxxxx xx xxxxx xx xxxxxxx xxxxxxx xxxxxxxxx xxxxxx xxx xxxxxxx.
+アカウントに追加するユーザー、グループ、または Azure AD アプリケーションそれぞれに、少なくとも次の役割のいずれかを割り当てる必要があります。 各役割には、アカウント内で特定の機能を実行するための特定のアクセス許可セットが付与されています。
 
-> **Xxxx**  Xxx xxxxx xx xxx xxxxxxx xx xxx xxxxxx xxx xxxxx xxxxxxx xx xxxx x Xxxxxxxxx xxxxxxx (xxxxxx xxxx xxx xxxxx xxxxx xxxxxxx Xxxxx XX). Xxxx xxxxxxx xxxxx xx xxx xxxx xxxxxx xxxx xxxxxxxx xxxxxx xx xxx xxxxxxx, xxxxxxxxx xxx xxxxxxx xx xxxxxx xxxx, xxxxxx xxx xxxx xxx xxxxxxx xxxxx, xxx xxxxxx xxx xxxxxxxxx xxx xxxxxxx xxxxxxxx. Xxx Xxxxxxxxx xxxxxxx xxxx xxx xxxx xx xxxxxx xxx xxxxxxx xxxx xx xxxx xxxx xxxxxxxx xxx xxxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx.
+> **注**  アカウントの所有者は、最初に Microsoft アカウントでそのアカウントを作成したユーザーです (Azure AD によって追加されたユーザーではありません)。 このアカウント所有者のみが、アカウントに完全にアクセスして、アプリを削除したり、すべてのアカウント ユーザーを作成および編集したり、すべての財務およびアカウント設定を変更したりできます。 Microsoft Visual Studio でアプリ パッケージを作成する場合、アカウントの作成に使用した Microsoft アカウントを使用する必要があります。
 
-| Xxxx                 | Xxxxxxxxxxx              |
+| 役割                 | 説明              |
 |----------------------|--------------------------|
-| Xxxxxxx              | Xxx xxxxxxxx xxxxxx xx xxx xxxxxxx, xxxxxx xxx xxxxxxxx xxx xxx xxxxxx xxxxxxxx. Xxxx xxxxxxxx xxxxxxxx xxxxx xx Xxx Xxxxxx, xxx xxxx xxxx xxx xxxxxxx xx xxxxxx xxx xxxxxx xxxxx xx xxxxxxxxx xx xxx xxxxxxx'x xxxxxxxxxx xx Xxxxx XX. Xxxx xx, xx x xxxx xx xxxxxxxx xxx Xxxxxxx xxxx, xxx xxxx xxx xxxx xxxxx xxxxxxxxxxx xx xxx xxxxxxxxxxxx'x Xxxxx XX, xxxx xxxx xxx xx xxxx xx xxxxxx xxx xxxxx xx xxxxxx xxxxx xxxx xxx xxxxxxxxx (xxx xxxx xxx xxxxxx x xxxx'x Xxx Xxxxxx xxxx). |
-| Xxxxxxxxx            | Xxx xxxxxx xxxxxxxx xxx xxxxxx xxxx xxx XXXx, xxx xxx xxxx xxx [Xxxxx xxxxxx](usage-report.md) xxx xxxxxxxxx xxxxxxx. Xxx’x xxxx xxxxxxxxx xxxx xx xxxxxxx xxxxxxxx.                                                                                                                                                                                                                                                                                                                     |
-| Xxxxxxxx Xxxxxxxxxxx | Xxx xxxxxx xxxxxxxxx xxxx, xxx xxx xxx xxxxxxx xxxxxxx. Xxx’x xxxxxx xx xxxxxx xxx xxxx xxx XXXx xx xxxxxx xxxxxxx xxxxxxxx.                                                                                                                                                                                                                                                                                                                                                              |
-| Xxxxxxx Xxxxxxxxxxx  | Xxx xxxx [xxxxxx xxxxxxx](payout-summary.md). Xxx’x xxxx xxx xxxxxxx xx xxxx, XXXx, xx xxxxxxx xxxxxxxx.                                                                                                                                                                                                                                                                                                                                                                                 |
-| Xxxxxxxx             | Xxx [xxxxxxx xx xxxxxxxx xxxxxxx](respond-to-customer-reviews.md) xxx xxxx xxx-xxxxxxxxx [xxxxxxxx xxxxxxx](analytics.md). Xxx’x xxxx xxx xxxxxxx xx xxxx, XXXx, xx xxxxxxx xxxxxxxx.                                                                                                                                                                                                                                                                                                            |
+| マネージャー              | アカウントに完全にアクセスできます (税金と支払いの設定の変更を除く)。 これにはデベロッパー センターでのユーザーの管理が含まれますが、ユーザーの作成および削除については、Azure AD でのアカウントのアクセス許可に依存することに注意してください。 つまり、ユーザーにマネージャーの役割が割り当てられていても、組織の Azure AD の管理者権限がなければ、そのユーザーは、新しいユーザーを作成したり、ディレクトリからユーザーを削除したりできません (ただし、ユーザーのデベロッパー センターの役割を変更することはできます)。 |
+| 開発者            | パッケージをアップロードし、アプリおよび IAP を申請できます。また、[使用状況レポート](usage-report.md)で統計情報の詳細を確認できます。 財務情報やアカウントの設定を表示することはできません。                                                                                                                                                                                                                                                                                                                     |
+| 経営担当者 | 財務情報にアクセスし、価格の詳細を設定できます。 新しいアプリや IAP を作成または申請したり、アカウント設定を変更したりすることはできません。                                                                                                                                                                                                                                                                                                                                                              |
+| 財務担当者  | [支払いレポート](payout-summary.md)を表示できます。 アプリ、IAP、またはアカウント設定を変更することはできません。                                                                                                                                                                                                                                                                                                                                                                                 |
+| マーケター             | [顧客のレビューに返信](respond-to-customer-reviews.md)したり、非財務[分析レポート](analytics.md)を表示したりできます。 アプリ、IAP、またはアカウント設定を変更することはできません。                                                                                                                                                                                                                                                                                                            |
 
-> **Xxxx**  Xxxxx xxxx xxx Xxxxxxx xx Xxxxxxxxx xxxx xxx xxxxxx xxxx xxxxxxx xxx xxxxxxxxx. Xxxxxxx, xxxx xxxxxxxx xxx xxxxxxxx xx Xxxxxx Xxxxxx, xxx Xxxxxxxxx xxxxxxx xxxx xx xxxx xxx xxxxxxxxx xxxxxxx xxxx xx xxxx, xxxxxx xxxx xx Xxxxx XX xxxxxxx.
+> **注**  マネージャーまたは開発者の役割を持つユーザーは、ダッシュボードを使ってアプリを申請できます。 ただし、Visual Studio でアプリ パッケージを作成するときは、Azure AD アカウントではなく、開発者アカウントを開設するために使用した Microsoft アカウントを使用する必要があります。
 
-### Xxx xxx xxxxxx xxxxxxx xxxxx
+### アカウント ユーザーを追加して管理する
 
-Xx xxxxxxxx xxxxx xxxx xxx xxxx xx xxx xx xxxx Xxx Xxxxxx xxxxxxx xxx xxxxxx xxxx x xxxx, xxxxx **Xxx xxxxx**.
+デベロッパー センター アカウントに追加するユーザーを特定し、そのユーザーに役割を割り当てるには、**[ユーザーの追加]** をクリックします。
 
-Xxx xxx xxx xxx xx xxxx xxxxx xxxx xxxx xxxxxxxxxxxx'x xxxxxxxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xxxx xxxx xxxx xxx xxx xxxx xxxx xxx xxxx xx xxx xxxx xxxx, xxx xxxx xxxxxx xxx xxxx xxxx. Xx xxx xxxx xx xxx xxxxx xxx xxxxxx xxxx xxxxxxxxx xxxxx, xxxxxx xxx xxxxx xxxxx xxx xxxx xxxx.
+組織のディレクトリから 1 人以上のユーザーをデベロッパー センター アカウントに追加できます。 複数のユーザーを同時に追加する場合は、同じ役割を割り当てる必要があることに注意してください。 役割の異なるユーザーを追加する必要がある場合は、役割ごとに次の手順を繰り返します。
 
-**Xxx xxxxx xxxx xxxx xxxxxxxxxxxx'x xxxxxxxxx**
+**組織のディレクトリからユーザーを追加する**
 
-1.  Xxxx xxx **Xxxxxx xxxxx** xxxx, xxxxx **Xxx xxxxx**.
-2.  Xxxxxx xxx xx xxxx xxxxx xxxx xxx xxxx xxxx xxxxxxx. Xxx xxx xxx xxx xxxxxx xxx xx xxxxxx xxx xxxxxxxx xxxxx.
-3.  Xxxx xxx xxx xxxxxxxx xxxxxxxxx xxxxx, xxxxx **Xxx xxxxxxxx**.
-4.  Xx xxx **Xxxxx** xxxxxxx, xxxxxx xxx xx xxxx xxxxx xx xxxxxx xx xxxx xxx xx xxxxx.
-5.  Xxxxx **Xxxx**.
+1.  **[ユーザーの管理]** ページで、**[ユーザーの追加]** をクリックします。
+2.  表示された一覧から 1 人以上のユーザーを選びます。 検索ボックスを使うと、特定のユーザーを検索できます。
+3.  ユーザーを選んだら、**[選択内容の追加]** をクリックします。
+4.  **[役割]** セクションで 1 つ以上の役割を選んで、この一連のユーザーに割り当てます。
+5.  **[保存]** をクリックします。
 
-Xx xxx xxxx xx xxxxx Xxx Xxxxxx xxxxxx xx x xxxxx xxx xxxx xxxxxxx, xxx xxx xxxxxx xxx xx xxx **Xxxxxx xxxxx** xxxxxxx. Xxxx xxxx xxxx xxxx xxxxxx x xxx xxxxxxx xx xxxx xxxxxxxxxxxx'x xxxxxxxxx, xxx xxxx xx xxxx Xxx Xxxxxx xxxxxxx.
+デベロッパー センターへのアクセスを新しいユーザー アカウントに許可する必要がある場合は、**[ユーザーの管理]** セクションでそのアカウントを作成します。 これにより、デベロッパー センター アカウントだけでなく、組織のディレクトリにも新しいアカウントが作成されることに注意してください。
 
-**Xxxxxx x xxx xxxx xxxxxxx**
+**新しいユーザー アカウントを作成する**
 
-1.  Xxxx xxx **Xxxxxx xxxxx** xxxx, xxxxx **Xxx xxxxx**.
-2.  Xx xxx xxxx xxxx, xxxxx **Xxx xxxx**.
-3.  Xxxxx xxx xxxxx xxxx, xxxx xxxx, xxx xxxxxxxx xxx xxx xxx xxxx.
-4.  Xx xxx **Xxxxx** xxxxxxx, xxxxxx xxx xx xxxx xxxxx xx xxxxxx xx xxx xxx xxxx.
-5.  Xx xxx **Xxxxx xxxxxxxxxx** xxxxxxx, xxxxxx xxx xxxxxx xx xxxxx xxx xxxx xxx xxx xxxx xx xxxxxx.
-6.  Xxxxx **Xxxx**.
-7.  Xx xxx xxxxxxxxxxxx xxxx, xxx'xx xxx xxxxx xxxx xxx xxx xxx xxxx, xxxxxxxxx x xxxxxxxxx xxxxxxxx. Xx xxxx xx xxxx xxxx xxxx xxx xxxxxxx xx xx xxx xxx xxxx, xx xxx xxx'x xx xxxx xx xxxxxx xxx xxxxxxxxx xxxxxxxx xxxxx xxx xxxxx xxxx xxxx.
+1.  **[ユーザーの管理]** ページで、**[ユーザーの追加]** をクリックします。
+2.  次のページで、**[新しいユーザー]** をクリックします。
+3.  新しいユーザーの姓、名、およびユーザー名を入力します。
+4.  **[役割]** セクションで 1 つ以上の役割を選んで、新しいユーザーに割り当てます。
+5.  **[グループ メンバーシップ]** セクションで、新しいユーザーを追加するグループを選びます。
+6.  **[保存]** をクリックします。
+7.  確認ページに、一時的なパスワードなどの新しいユーザーのログイン情報が表示されます。 必ずこの情報をメモして、新しいユーザーに提供してください。このページを閉じると、一時的なパスワードにはアクセスできなくなります。
 
-Xxx xxx xxxx xxxxxxx xx xxxx xxxxxxxx xxxx xxx'xx xxxxx xx xxxx Xxx Xxxxxx xxxxxxx xx xxx **Xxxxxx xxxxx** xxxxxxx. Xxxx xxxx xxxxxxx xx xxx xxxx'x xxxx xx xxxxx xxxxxxxxxx xxxx xx xxxxxxxxx xx xxxx xxxxxxxxxxxx'x xxxxxxxxx, xxx xxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xxxxxxx xxxx xx x xxxx'x xxxx xxxx xxxx xxxxxx xxxxx Xxx Xxxxxx xxxxxx.
+デベロッパー センター アカウントに追加したユーザー アカウントは、**[ユーザーの管理]** セクションで変更できます。 ユーザーの名前またはグループのメンバーシップへの変更は、デベロッパー センター アカウントだけでなく、組織のディレクトリにも反映されることに注意してください。 ユーザーの役割に対する変更は、デベロッパー センターのアクセスにのみ影響します。
 
-**Xxxx x xxxx xxxxxxx**
+**ユーザー アカウントを編集する**
 
-1.  Xxxx xxx **Xxxxxx xxxxx** xxxx, xxxxx xxx xxxx xx xxx xxxx xxxxxxx xxxx xxx xxxx xx xxxx.
-2.  Xxxx xxx xx xxx xxxxxxxxx xxxxxxx:
-    -   Xxxx xxx xxxx'x xxxxx xxxx, xxxx xxxx, xx xxxxxxxx. Xxxxxxxx, xxxxx xxxxxxx xxxx xx xxxx xx xxxx xxxxxxxxxxxx'x xxxxxxxxx.
-    -   Xx xxx **Xxxxx** xxxxxxx, xxxxxx xx xxxxxxxx xxx xxxx(x) xxxx xxx xxxx xx xxx xx xxxxxx xxx xxxx xxxx.
-    -   Xx xxx **Xxxxx xxxxxxxxxx** xxxxxxx, xxxxxx xx xxxxxxxx xxx xxxxx(x) xxxx xxx xxxx xxx xxxx xx xxxx xx xx xxxxxxx xxxx. Xxxxxxxx, xxxxx xxxxxxx xxxx xx xxxx xx xxxx xxxxxxxxxxxx'x xxxxxxxxx.
+1.  **[ユーザーの管理]** ページで、編集するユーザー アカウントの名前をクリックします。
+2.  次の変更のいずれかを行います。
+    -   ユーザーの姓、名、またはユーザー名を編集します。 この変更は組織のディレクトリで行われることに注意してください。
+    -   **[役割]** セクションで、このユーザーに対して追加する役割を選ぶか、削除する役割を選択解除します。
+    -   **[グループ メンバーシップ]** セクションで、ユーザーを追加または削除するグループを選ぶか、選択を解除します。 この変更は組織のディレクトリで行われることに注意してください。
 
-3.  Xxxxx **Xxxx**.
+3.  **[保存]** をクリックします。
 
-Xx xxx xxxx xx xxxxxx x xxxxxxxx xxx x xxxx xxxxxxx xxxx xxx'xx xxxxx xx xxxx Xxx Xxxxxx xxxxxxx, xxx xxx xx xx xx xxx **Xxxxxx xxxxx** xxxxxxx. Xxxx xxxx xxxx xxxx xxxxxx xxx xxxx'x xxxxxxxxx xxxxxxxx, xxx xxxx xxx xxxxxxxx xxx xxxxx Xxx Xxxxxx xxxxxx.
+デベロッパー センター アカウントに追加したユーザー アカウントのパスワードを変更する必要がある場合、その変更は **[ユーザーの管理]** セクションで行います。 これにより、デベロッパー センター アクセスのパスワードだけでなく、ユーザーのディレクトリ パスワードが変更されることに注意してください。
 
-**Xxxxxxxx x xxxx'x xxxxxxxxx xxxxxxxx**
+**ユーザーのディレクトリ パスワードを変更する**
 
-1.  Xxxx xxx **Xxxxxx xxxxx** xxxx, xxxxx xxx xxxx xx xxx xxxx xxxxxxx xxxx xxx xxxx xx xxxx.
-2.  Xxxxx xxx **Xxxxx xxxxxxxx** xxxxxx xx xxx xxxxxx xx xxx xxxx.
-3.  X xxxxxxxxxxxx xxxx xxxx xxxxxx xxxxxxx xxx xxxxx xxxx xxx xxx xxxx, xxxxxxxxx x xxxxxxxxx xxxxxxxx.
-  > **Xxxxxxxxx**  Xx xxxx xx xxxxx xx xxxx xxxx xxxx xxx xxxxxxx xx xx xxx xxxx, xx xxx xxx'x xx xxxx xx xxxxxx xxx xxxxxxxxx xxxxxxxx xxxxx xxx xxxxx xxxx xxxx.
+1.  **[ユーザーの管理]** ページで、編集するユーザー アカウントの名前をクリックします。
+2.  ページの下部にある **[パスワードのリセット]** をクリックします。
+3.  確認ページが表示され、一時的なパスワードなどのユーザーのログイン情報が通知されます。
+  > **重要**  必ずこの情報を印刷またはコピーして、ユーザーに提供してください。このページを閉じると、一時的なパスワードにはアクセスできなくなります。
 
-### Xxx xxx xxxxxx xxxxxx
+### グループを追加して管理する
 
-Xxxx xxx xxx x xxxxx xxxx xxxx xxxxxxxxxxxx'x xxxxxxxxx xx xxxx Xxx Xxxxxx xxxxxxx, xxxxx xxxx xxx xx x xxxxxx xx xxxx xxxxx xxxx xx xxxx xx xxxxxx xx, xxxx xxx xxxxxxxxxxx xxxxxxxxxx xxxx xxx xxxxx'x xxxxxxxx xxxx. Xxxx xx xxxx xxxx xxx xxxxxxx xxxx xx xxxxxx (xxxxxxxxx xxxxx xxxx xx xxxxxxxxxx) xxxx xx xxxxxxxxx xx xxxx xxxxxxxxxxxx'x xxxxxxxxx.
+組織のディレクトリのグループをデベロッパー センター アカウントに追加すると、そのグループのメンバーであるすべてのユーザーが、グループに割り当てられた役割に関連付けられていたアクセス許可を使って、そのアカウントにアクセスできるようになります。 グループ (名前またはメンバーシップを含む) に対するすべての変更が、組織のディレクトリに反映されることに注意してください。
 
-Xxxx xxxx xxxx xxx xxx xxxx xxxx xxx xxxxx xx xxx xxxx xxxx, xxx xxxx xxxxxx xxx xxxx xxxx. Xx xxx xxxx xx xxx xxxxxx xxx xxxxxx xxxx xxxxxxxxx xxxxx, xxxxxx xxx xxxxx xxxxx xxx xxxx xxxx.
+複数のグループを同時に追加する場合は、同じ役割を割り当てる必要があることに注意してください。 役割の異なるグループを追加する必要がある場合は、役割ごとに次の手順を繰り返します。
 
-**Xxx xxxxxx xxxx xxxx xxxxxxxxxxxx'x xxxxxxxxx**
+**組織のディレクトリからグループを追加する**
 
-1.  Xxxx xxx **Xxxxxx xxxxx** xxxx, xxxxx **Xxx xxxxxx**.
-2.  Xxxxxx xxx xx xxxx xxxxxx xxxx xxx xxxx xxxx xxxxxxx. Xxx xxx xxx xxx xxxxxx xxx xx xxxxxx xxx xxxxxxxx xxxxxx.
-3.  Xxxx xxx xxx xxxxxxxx xxxxxxxxx xxxxxx, xxxxx **Xxx xxxxxxxx**.
-4.  Xx xxx **Xxxxx** xxxxxxx, xxxxxx xxx xx xxxx xxxxx xx xxxxxx xx xxxx xxx xx xxxxxx.
-5.  Xxxxx **Xxxx**.
+1.  **[ユーザーの管理]** ページで、**[グループの追加]** をクリックします。
+2.  表示された一覧から 1 つ以上のグループを選びます。 検索ボックスを使うと、特定のグループを検索できます。
+3.  グループを選んだら、**[選択内容の追加]** をクリックします。
+4.  **[役割]** セクションで 1 つ以上の役割を選んで、この一連のグループに割り当てます。
+5.  **[保存]** をクリックします。
 
-Xx xxx xxxx xx xxxxx Xxx Xxxxxx xxxxxx xx x xxxxx xxx xxxxx, xxx xxx xxxxxx x xxx xxxxx xx xxx **Xxxxxx xxxxx** xxxxxxx. Xxxx xxxx xxx xxx xxxxx xxxx xx xxxxxxx xx xxxx xxxxxxxxxxxx'x xxxxxxxxx, xxx xxxx xx xxxx Xxx Xxxxxx xxxxxxx.
+デベロッパー センター アクセスを新しいグループに付与する必要がある場合は、**[ユーザーの管理]** セクションで新しいグループを作成します。 新しいグループは、デベロッパー センター アカウントだけでなく、組織のディレクトリにも作成されることに注意してください。
 
-**Xxxxxx x xxx xxxxx xxxxxxx**
+**新しいグループ アカウントを作成する**
 
-1.  Xxxx xxx **Xxxxxx xxxxx** xxxx, xxxxx **Xxx xxxxxx**.
-2.  Xx xxx xxxx xxxx, xxxxx **Xxx xxxxx**.
-3.  Xxxxx xxx xxxxxxx xxxx xxx xxx xxx xxxxx.
-4.  Xxxxxx xxx xx xxxx xxxxx xx xxxxxx xx xxx xxx xxxxx. Xxx xxxxxxx xx xxx xxxxx xxxx xx xxxx xx xxxxxx xxxx Xxx Xxxxxx xxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxxxx xxxx xxxx xxxx
-5.  Xxxxxx xxx xx xxxx xxxxx xxxx xxx xxxx xxxx xxxxxxx. Xxx xxx xxx xxx xxxxxx xxx xx xxxxxx xxx xxxxxxxx xxxxx.
-6.  Xxxx xxx xxx xxxxxxxx xxxxxxxxx xxxxx, xxxxx **Xxx xxxxxxxx**.
-7.  Xxxxx **Xxxx**.
+1.  **[ユーザーの管理]** ページで、**[グループの追加]** をクリックします。
+2.  次のページで、**[新しいグループ]** をクリックします。
+3.  新しいグループの表示名を入力します。
+4.  1 つ以上の役割を選んで、新しいグループに割り当てます。 グループのすべてのメンバーが、その役割に関連付けられているアクセス許可で、デベロッパー センター アカウントにアクセスできるようになります。
+5.  表示された一覧から 1 人以上のユーザーを選びます。 検索ボックスを使うと、特定のユーザーを検索できます。
+6.  ユーザーを選んだら、**[選択内容の追加]** をクリックします。
+7.  **[保存]** をクリックします。
 
-Xxx xxx xxxx xxxxxxx xx xxxxx xxxxxxxx xxxx xxx'xx xxxxx xx xxxx Xxx Xxxxxx xxxxxxx xx xxx **Xxxxxx xxxxx** xxxxxxx. Xxxx xxxx xxxxxxx xx xxx xxxxx'x xxxx xxx xxxxxxxxxx xxxx xx xxxxxxxxx xx xxxx xxxxxxxxxxxx'x xxxxxxxxx, xxx xxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xxxxxxx xxxx xx x xxxxx'x xxxx xxxx xxxx xxxxxx xxxx xxxxx'x Xxx Xxxxxx xxxxxx.
+デベロッパー センター アカウントに追加したグループ アカウントは、**[ユーザーの管理]** セクションで変更できます。 グループの名前およびメンバーシップへの変更は、デベロッパー センター アカウントだけでなく、組織のディレクトリにも反映されることに注意してください。 グループの役割に対する変更は、グループのデベロッパー センターへのアクセスにのみ影響します。
 
-**Xxxx x xxxxx xxxxxxx**
+**グループ アカウントを編集する**
 
-1.  Xxxx xxx **Xxxxxx xxxxx** xxxx, xxxxx xxx xxxx xx xxx xxxxx xxxxxxx xxxx xxx xxxx xx xxxx.
-2.  Xx xxxxxx xxxxx xxxx, xxxx xxx xxxxxxx xxxxxxx xx xxx xxxxx'x xxxx. Xxxxxxxx, xxxxx xxxxxxx xxxx xx xxxx xx xxxx xxxxxxxxxxxx'x xxxxxxxxx.
-3.  Xx xxxxxx xxx xxxxx xxxx, xxxxxx xx xxxxxxxx xxx xxxx(x) xxxx xxx xxxx xx xxxxx xx xxx xxxxx.
-4.  Xxxxx **Xxxx**.
+1.  **[ユーザーの管理]** ページで、編集するグループ アカウントの名前をクリックします。
+2.  グループ情報を変更するには、グループの名前に必要な変更を加えます。 この変更は組織のディレクトリで行われることに注意してください。
+3.  グループの役割を変更するには、グループに適用する役割を選ぶか、選択を解除します。
+4.  **[保存]** をクリックします。
 
-### Xxx xxx xxxxxx Xxxxx XX xxxxxxxxxxxx
+### Azure AD アプリケーションを追加して管理する
 
-Xxx xxx xxxxx xxxxxxxxxxxx xx xxxxxxxx xxxx xxx xxxx xx xxxx xxxxxxxxxxxx'x Xxxxx XX xx xxxxxx xxxx Xxx Xxxxxx xxxxxxx.
+組織の Azure AD に含まれているアプリケーションやサービスがデベロッパー センター アカウントにアクセスできるようにすることができます。
 
-Xxxx xxxx xxxx xxx xxx xxxx xxxx xxx Xxxxx XX xxxxxxxxxxx xx xxx xxxx xxxx, xxx xxxx xxxxxx xxx xxxx xxxx. Xx xxx xxxx xx xxx xxxxxx xxx xxxxxx xxxx xxxxxxxxx xxxxx, xxxxxx xxx xxxxx xxxxx xxx xxxx xxxx.
+複数の Azure AD アプリケーションを同時に追加する場合は、同じ役割を割り当てる必要があることに注意してください。 役割の異なるグループを追加する必要がある場合は、役割ごとに次の手順を繰り返します。
 
-**Xxx Xxxxx XX xxxxxxxxxxxx xxxx xxxx xxxxxxxxxxxx'x xxxxxxxxx**
+**組織のディレクトリから Azure AD アプリケーションを追加する**
 
-1.  Xxxx xxx **Xxxxxx xxxxx** xxxx, xxxxx **Xxx Xxxxx XX xxxxxxxxxxxx**.
-2.  Xxxxxx xxx xx xxxx Xxxxx XX xxxxxxxxxxxx xxxx xxx xxxx xxxx xxxxxxx. Xxx xxx xxx xxx xxxxxx xxx xx xxxxxx xxx xxxxxxxx Xxxxx XX xxxxxxxxxxxx.
-3.  Xxxx xxx xxx xxxxxxxx xxxxxxxxx Xxxxx XX xxxxxxxxxxxx, xxxxx **Xxx xxxxxxxx**.
-4.  Xx xxx **Xxxxx** xxxxxxx, xxxxxx xxx xx xxxx xxxxx xx xxxxxx xx xxxx xxx xx Xxxxx XX xxxxxxxxxxxx.
-5.  Xxxxx **Xxxx**.
+1.  **[ユーザーの管理]** ページで、**[Azure AD アプリケーションの追加]** をクリックします。
+2.  表示された一覧から 1 つ以上の Azure AD アプリケーションを選びます。 検索ボックスを使うと、特定の Azure AD アプリケーションを検索できます。
+3.  Azure AD アプリケーションを選んだら、**[選択内容の追加]** をクリックします。
+4.  **[役割]** セクションで 1 つ以上の役割を選んで、この一連の Azure AD アプリケーションに割り当てます。
+5.  **[保存]** をクリックします。
 
-Xx xxx xxxx xx xxxxx Xxx Xxxxxx xxxxxx xx x xxxxx xxx Xxxxx XX xxxxxxxxxxx xxxxxxx, xxx xxx xxxxxx xxx xx xxx **Xxxxxx xxxxx** xxxxxxx. Xxxx xxxx xxxx xxxx xxxxxx x xxx xxxxxxx xx xxxx xxxxxxxxxxxx'x xxxxxxxxx, xxx xxxx xx xxxx Xxx Xxxxxx xxxxxxx.
+デベロッパー センターへのアクセスを新しい Azure AD アプリケーション アカウントに許可する必要がある場合は、**[ユーザーの管理]** セクションでそのアカウントを作成します。 これにより、デベロッパー センター アカウントだけでなく、組織のディレクトリにも新しいアカウントが作成されることに注意してください。
 
-**Xxxxxx x xxx Xxxxx XX xxxxxxxxxxx**
+**新しい Azure AD アプリケーションを作成する**
 
-1.  Xxxx xxx **Xxxxxx xxxxx** xxxx, xxxxx **Xxx Xxxxx XX xxxxxxxxxxxx**.
-2.  Xx xxx xxxx xxxx, xxxxx **Xxx Xxxxx XX xxxxxxxxxxx**.
-3.  Xxxxx xxx **Xxxxx XXX** xxx xxx xxx Xxxxx XX xxxxxxxxxxx. Xxxx xx xxx XXX xxxxx xxxxx xxx xxxx xx xxx xxx xxxx Xxxxx XX xxxxxxxxxxx (xxxxxxxxx xxxx xxxxx xx xxx Xxx XXX xx Xxxx-Xx XXX). Xxx **Xxxxx XXX** xxx'x xx xxxxxx xxxx YYY xxxxxxxxxx.
-4.  Xxxxx xxx **Xxx XX XXX** xxx xxx xxx Xxxxx XX xxxxxxxxxxx. Xxxx xx x xxxxxxx xxxxxxxxxx xxx xxx Xxxxx XX xxxxxxxxxxx xxxx xx xxxxxxxxx xxxx xx xxxxx x xxxxxx xxxx-xx xxxxxxx xx Xxxxx XX. Xxxx xxxx xxx **Xxx XX XXX** xxxx xx xxxxxx xxx xxxx Xxxxx XX xxxxxxxxxxx xx xxxx xxxxxxxxx, xxx xx xxx'x xx xxxxxx xxxx YYY xxxxxxxxxx.
-5.  Xx xxx **Xxxxx** xxxxxxx, xxxxxx xxx xx xxxx xxxxx xx xxxxxx xx xxx xxx Xxxxx XX xxxxxxxxxxx
-6.  Xxxxx **Xxxx**.
+1.  **[ユーザーの管理]** ページで、**[Azure AD アプリケーションの追加]** をクリックします。
+2.  次のページで、**[新しい Azure AD アプリケーション]** をクリックします。
+3.  新しい Azure AD アプリケーションの **[応答 URL]** を入力します。 これは、ユーザーがサインインして、Azure AD アプリケーションを使うことができるようになる URL です ("アプリ URL" や "サインオン URL" と呼ばれる場合もあります)。 **[応答 URL]** は、256 文字までにする必要があります。
+4.  新しい Azure AD アプリケーションの **[アプリ ID URI]** を入力します。 これは、Azure AD アプリケーションの論理識別子であり、シングル サインオン要求を Azure AD に送るときに提供されます。 **[アプリ ID URI]** は、ディレクトリ内の各 Azure AD アプリケーションで一意の値する必要があります。またこの URI は、256 文字までにする必要があります。
+5.  **[役割]** セクションで 1 つ以上の役割を選び、新しい Azure AD アプリケーションに割り当てます。
+6.  **[保存]** をクリックします。
 
-Xxx xxx xxxx xxxxxxx xx Xxxxx XX xxxxxxxxxxxx xxxx xxx'xx xxxxx xx xxxx Xxx Xxxxxx xxxxxxx xx xxx **Xxxxxx xxxxx** xxxxxxx. Xxxx xxxx xxxxxxx xx xxx Xxxxx XXX xxx Xxx XX XXX xxxx xx xxxxxxxxx xx xxxx xxxxxxxxxxxx'x xxxxxxxxx, xxx xxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xxxx xxxxxxx xxxx xxxx xxxxxx xxx Xxxxx XX xxxxxxxxxxx'x xxxxxxxxxxx xxxxxx Xxx Xxxxxx.
+デベロッパー センター アカウントに追加した Azure AD アプリケーションは、**[ユーザーの管理]** セクションで変更できます。 応答 URL やアプリ ID URI への変更は、デベロッパー センター アカウントだけでなく、組織のディレクトリにも反映されることに注意してください。 役割の変更は、デベロッパー センターにおける Azure AD アプリケーションのアクセス許可にのみ影響します。
 
-**Xxxx xx Xxxxx XX xxxxxxxxxxx**
+**Azure AD アプリケーションを編集する**
 
-1.  Xxxx xxx **Xxxxxx xxxxx** xxxx, xxxxx xxx xxxx xx xxx Xxxxx XX xxxxxxxxxxx xxxxxxx xxxx xxx xxxx xx xxxx.
-2.  Xx xxxxxx xxx **Xxxxx XXX** xx **Xxx XX XXX**, xxxxx xxx xxx xxxxxx xxxx. Xxxxxxxx, xxxxx xxxxxxx xxxx xx xxxx xx xxxx xxxxxxxxxxxx'x xxxxxxxxx.
-3.  Xx xxxxxx xxx Xxxxx XX xxxxxxxxxxx'x xxxx, xxxxxx xx xxxxxxxx xxx xxxx(x) xxxx xxx xxxx xx xxxxx.
-4.  Xxxxx **Xxxx**.
+1.  **[ユーザーの管理]** ページで、編集する Azure AD アプリケーション アカウントの名前をクリックします。
+2.  **[応答 URL]** や **[アプリ ID URI]** を変更するには、新しい値を入力します。 この変更は組織のディレクトリで行われることに注意してください。
+3.  Azure AD アプリケーションの役割を変更するには、適用する役割を選ぶか、選択を解除します。
+4.  **[保存]** をクリックします。
 
-Xx xxxx Xxxxx XX xxxxxxxxxxx xxxxx xxx xxxxxx xxxx xx Xxxxxxxxx Xxxxx XX, xx xxxx xxxx x xxx. Xxx xxx xxxxxx xxxx xxx xx Xxxxx XX xxxxxxxxxxx xx xxxxxxx xxx xxxx xx Xxx Xxxxxx. Xxx xxx xxxx xxxxxx xxxx xxxx xxx xx xxxxxx xxxxxx.
+Azure AD アプリケーションが Microsoft Azure AD でデータの読み取りや書き込みを行う場合は、キーが必要になります。 Azure AD アプリケーションのキーを作成するには、デベロッパー センターで Azure AD アプリケーションの情報を編集します。 また、不要になったキーを削除することもできます。
 
-**Xxxxxx xxxx xxx xx Xxxxx XX xxxxxxxxxxx**
+**Azure AD アプリケーションのキーを管理する**
 
-1.  Xxxx xxx **Xxxxxx xxxxx** xxxx, xxxxx xxx xxxx xx xxx Xxxxx XX xxxxxxxxxxx.
+1.  **[ユーザーの管理]** ページで、Azure AD アプリケーションの名前をクリックします。
 
-    > **Xxx**  Xxxx xxx xxxxx xxx xxxx xx xxx Xxxxx XX xxxxxxxxxxx, xxx'xx xxx xxx xx xxx xxxxxx xxxx xxx xxx Xxxxx XX xxxxxxxxxxx, xxxxxxxxx xxx xxxx xx xxxxx xxx xxx xxx xxxxxxx xxx xxxx xx xxxx xxxxxx. Xx xxxxxx x xxx xxxx xx xx xxxxxx xxxxxx, xxxxx **Xxxxxx**.
+    > **ヒント**  Azure AD アプリケーションの名前をクリックすると、その Azure AD アプリケーションのアクティブ キーがすべて表示されます。また、キーが作成された日付やキーの有効期限が切れる日付も表示されます。 不要になったキーを削除するには、**[削除]** をクリックします。
 
-2.  Xx xxx x xxx xxx, xxxxx **Xxx xxx xxx**.
+2.  新しいキーを追加するには、**[新しいキーの追加]** をクリックします。
 
-3.  Xxx xxxx xxx x xxxxxx xxxxxxx xxx **Xxxxxx XX** xxx **Xxx** xxxxxx.
+3.  **[クライアント ID]** と **[キー]** の値を示す画面が表示されます。
 
-    > **Xxxxxxxxx**  Xx xxxx xx xxxxx xx xxxx xxxx xxxx, xx xxx xxx'x xx xxxx xx xxxxxx xx xxxxx xxxxx xxx xxxxx xxxx xxxx.
+    > **重要**  必ずこの情報を印刷またはコピーしてください。このページを閉じると、この情報にはアクセスできなくなります。
 
-4.  Xx xxx xxxx xx xxxxxx xxxx xxxx, xxxxx **Xxx xxxxxxx xxx**.
+4.  追加のキーを作成する場合は、**[別のキーの追加]** をクリックします。
 
-### Xxxxxxxx xxxxx, xxxxxx, xxx Xxxxx XX xxxxxxxxxxxx
+### ユーザー、グループ、および Azure AD アプリケーションを削除する
 
-Xx xxxxxx x xxxx, xxxxx, xx Xxxxx XX xxxxxxxxxxx xxxx xxxx Xxx Xxxxxx xxxxxxx, xxxxx xxx **Xxxxxx** xxxx xxxx xxxxxxx xx xxxxx xxxx xx xxx **Xxxxxx xxxxx** xxxx. Xxxxx xxxxxxxxxx xxxx xxx xxxx xx xxxxxx xx, xxxx xxxx, xxxxx, xx Xxxxx XX xxxxxxxxxxx xxxx xx xxxxxx xx xxxx xx xxxxxx xx xxxx Xxx Xxxxxx xxxxxxx (xxxxxx xxx xxx xx xxxxx xxxxx).
+ユーザー、グループ、または Azure AD アプリケーションをデベロッパー センター アカウントから削除するには、**[ユーザーの管理]** ページで、削除するユーザー、グループ、または Azure AD アプリケーションの名前の横に表示される **[削除]** をクリックします。 削除を確認した後は、そのユーザー、グループ、または Azure AD アプリケーションは、デベロッパー センター アカウントにアクセスできなくなります (後で追加する場合を除く)。
 
-> **Xxxx**  Xxxxxxxx x xxxx, xxxxx, xx Xxxxx XX xxxxxxxxxxx xxxxx xxxx xx xxxx xx xxxxxx xxxx xxxxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xx xxxx xxx xxxxxx xxx xxxx, xxxxx, xx Xxxxx XX xxxxxxxxxxx xxxx xxxx xxxxxxxxxxxx'x xxxxxxxxx.
-
- 
+> **注**  削除したユーザー、グループ、または Azure AD アプリケーションは、デベロッパー センター アカウントにアクセスできなくなります。 この操作により、組織のディレクトリからユーザー、グループ、または Azure AD アプリケーションが削除されることはありません。
 
  
 
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

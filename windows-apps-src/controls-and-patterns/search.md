@@ -1,248 +1,222 @@
 ---
-Xxxxxxxxxxx: Xxxxxx xx xxx xx xxx xxx xxxx xxxxx xxx xxxx xxxxxxx xx xxxx xxx. Xxx xxxxxxxx xx xxxx xxxxxxx xxxxxx xxxxxxxx xx xxx xxxxxx xxxxxxxxxx, xxxxxx xxxxxx, xxxxxxxxxxxxxx, xxx xxxxxxxx xx xxxxxx xx xxxxxxx.
-xxxxx: Xxxxxx xxx xxxx-xx-xxxx
-xx.xxxxxxx: XYYYXXXY-XYXX-YYYY-YYYY-XYYYXYYYYXYY
-xxxxx: Xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Search is one of the top ways users can find content in your app. The guidance in this article covers elements of the search experience, search scopes, implementation, and examples of search in context.
+title: Search and find-in-page
+ms.assetid: C328FAA3-F6AE-4970-8372-B413F1290C39
+label: Search
+template: detail.hbs
 ---
 
-# Xxxxxx xxx xxxx-xx-xxxx
+# Search and find-in-page
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxXxxxxxxXxx xxxxx (XXXX)**](https://msdn.microsoft.com/library/windows/apps/dn633874)
+-   [**AutoSuggestBox class (XAML)**](https://msdn.microsoft.com/library/windows/apps/dn633874)
 
-Xxxxxx xx xxx xx xxx xxx xxxx xxxxx xxx xxxx xxxxxxx xx xxxx xxx. Xxx xxxxxxxx xx xxxx xxxxxxx xxxxxx xxxxxxxx xx xxx xxxxxx xxxxxxxxxx, xxxxxx xxxxxx, xxxxxxxxxxxxxx, xxx xxxxxxxx xx xxxxxx xx xxxxxxx.
+Search is one of the top ways users can find content in your app. The guidance in this article covers elements of the search experience, search scopes, implementation, and examples of search in context.
 
-## <span id="Elements_of_the_search_experience">
-            </span>
-            <span id="elements_of_the_search_experience">
-            </span>
-            <span id="ELEMENTS_OF_THE_SEARCH_EXPERIENCE">
-            </span>Xxxxxxxx xx xxx xxxxxx xxxxxxxxxx
+## <span id="Elements_of_the_search_experience"></span><span id="elements_of_the_search_experience"></span><span id="ELEMENTS_OF_THE_SEARCH_EXPERIENCE"></span>Elements of the search experience
 
 
-**Xxxxx.**  Xxxx xx xxx xxxx xxxxxx xxxx xx xxxxxx xxxxx xxx xx xxx xxxxx xx xxxx xxxxxxxx. Xxxxx xxxxxx xxxxx xxxxx xxxxxxx xxxxx xxx xxxxxx, xxx xxxxx xxxxxxxxx xxxxxxx xxx xxxxxxx xx xxxxxxxxx xxxx xxxxxx xxxxxxxx xxx xxx xxxxxxx xxxxxxxxxx xxxxxxxx xx xxxxxx XX xxxxxx xxx xxx.
+**Input.**  Text is the most common mode of search input and is the focus of this guidance. Other common input modes include voice and camera, but these typically require the ability to interface with device hardware and may require additional controls or custom UI within the app.
 
-**Xxxx xxxxx.**  Xxxx xxx xxxx xxx xxxxxxxxx xxx xxxxx xxxxx, xxx xxxxxx xxx xxxx xxx xxxxxxx xxxx, xxx xxx xxxxxxx xxxx'x xxxxxx x "xxxx xxxxx xxxxxx." Xxx xxxx xxxxx xxxxxx xxxx xxxxxxxx xxxxxx xx xxx xxx xxxxxx, xx xxxx [xxxx-xxxxxxx](auto-suggest-box.md) xxxxxxxx xxxx xxxxxxx xxxx xxx xxxx xxxxxx xx xxxxx xxxxx xxxxx. Xxxxxx xxxxxx xxxxxxx, xxxxxxxx xxxxxxxx, xxxxxxxxxx xxxxxx xxxxxxxxxxx, xxxxx xxx xxxx xxx xxx xxxx xxxxxxxxxx xxx xxx xxxx xxxxx xxxxx.
+**Zero input.**  Once the user has activated the input field, but before the user has entered text, you can display what's called a "zero input canvas." The zero input canvas will commonly appear in the app canvas, so that [auto-suggest](auto-suggest-box.md) replaces this content when the user begins to input their query. Recent search history, trending searches, contextual search suggestions, hints and tips are all good candidates for the zero input state.
 
-![xxxxxxx xx xxxxxxx xx x xxxx xxxxx xxxxxx](images/search-cortana-example.png)
+![example of cortana on a zero input canvas](images/search-cortana-example.png)
 
  
 
-**Xxxxx xxxxxxxxxxx/xxxx-xxxxxxx.**  Xxxxx xxxxxxxxxxx xxxxxxxx xxxx xxxxx xxxxxxx xx xxxx xx xxx xxxx xxxxxx xx xxxxx xxxxx. Xx xxx xxxx xxxxxx x xxxxx xxxxxx, xxxx xxx xxxxxxxx xxxx x xxxxxxxxxxxx xxxxxxx xxx xx xxxxx xxxxxxxxxxx xx xxxxxxxxxxxxxx xxxxxxx xx xxxx xxxx xxxxxxxx xxx xxxxx xxxxxxx xxx xxxxxxxxx xx xxxxxxxxx xxxxx. Xxxx xxxxxxxx xx xxxxx xxxxxxxxxxx xx xxxxx xxxx xxx [xxxx-xxxxxxx xxxxxxx](auto-suggest-box.md), xxx xx xxxx x xxx xx xxxx xxx xxxx xxxxxx xxx xxxxxx (xxxx x xxxxxxxxxx xx x xxxxxx xxxx). Xxx xxxxxxxx xxxxxxx xx xxxx xxxxx xx xxx xxx.
+**Query formulation/auto-suggest.**  Query formulation replaces zero input content as soon as the user begins to enter input. As the user enters a query string, they are provided with a continuously updated set of query suggestions or disambiguation options to help them expedite the input process and formulate an effective query. This behavior of query suggestions is built into the [auto-suggest control](auto-suggest-box.md), and is also a way to show the icon inside the search (like a microphone or a commit icon). Any behavior outside of this falls to the app.
 
-![xxxxxxx xx xxxxx/xxxxxxxxxxx xxxx-xxxxxxx](images/search-autosuggest-example.png)
-
- 
-
-**Xxxxxxx xxx.**  Xxxxxx xxxxxxx xxxxxxxx xxxxxx xxxxxxxx xxxxx xxx xxxxxx xxxxx xxxxx. Xxxxx xxxx xxx'x x xxxxxxxxxxx, xxx xxxxxxxxxxxxx xx xxxxx xxx xxxxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxx xxxx xxxx xxxxxxxxx xxxxxx xx xxxx xxx xxxxxxxx xxxxx xx xxxxx x xxx xxxxx. Xxxx xxxxxxxxxx xxx xx xxxxxxx xxxxxxxxxxxx xx xxxxxxxxx xxx xxxx xxxx xxxx xxx xxxxx xxxx xxxxxxx xxx xxxxxxx xxx.
-
-Xxx xxxxxx xx xxxxxx xxxxxxxxx xxxxxx xx xxxx xxxx xxx xxxxxxxx xxxxx xxx xxxxx x xxx xxxxx xx xx xxxxxxxxx xxx xxxxxxxx xxxxx xxxx xxx xxxxx xx xxxxxxxxxxx. Xxxx xxx, xxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxx, xxx xxx xxxxxx xx xxxxxxxxxx xx xxxx xxx xxxx xxx xxxxxxxx x xxxxxx xx xxxx xx xxxxxx xxx xxxxxxxx xxxxxx.
-
-Xxx xxxxxxx xxx xxx xxxxxx xx xxx xxxx xxxx xxxx xxxxxxxxxxxx xxx xxxxxxx. X [xxxx xxxx](lists.md) xxxxxxxx x xxxx xxxx xx xxxxxxxxxxx xxx xx xxxx-xxxxxx xx xxxx xxxxxxxx. X xxxx xxxx xxxxx xxxx xxx xxxxxx xx xxxxx xxxxx, xxx x xxx xxx xx xxxx xx xxxxxxxxxxx xxxxxxx xxxxxxxxxxxx.
-
-## <span id="Search_scopes">
-            </span>
-            <span id="search_scopes">
-            </span>
-            <span id="SEARCH_SCOPES">
-            </span>Xxxxxx xxxxxx
-
-
-Xxxxxx xx x xxxxxx xxxxxxx, xxx xxxxx xxxx xxxxxxxxx xxxxxx XX xx xxx xxxxx xxx xxxxxx xxxx xxxx. Xxxxxxxx xxxxxx xxxxx xxxxxx xxxx xx xx xxxxxxxxx xxxxxxxxxx, xxxx xxx xxxxxxx xxxxxx xx xxxxxxx xxxx xxxxx xxxx xxxxx (xxx xx xxxxxx xxxxxxxx) xx xxxxxx (x xxxx'x xxxxxxx xxxx). Xxx xxxxxx xxxxx xxxxx xxxxxx xx xxxxxxxxxx xxxxxxx xxx xxxxxxx xxxxx xxxxxxxx.
-
-Xxxx xxxxxx xxxxxx xxxxxx xxxxxxx:
-
-**Xxxxxx** xxx **xxxxxxxxxx/xxxxxx.**  Xxxxxx xxxxxx xxxxxxxx xxxxxxx xx xxxxx xxx xxxxx xxxxxxx. Xxxxxx xxxxxxx xxxxxxx XXXx, xxxxxxxxx, xxxxx, xxxxxxx, xxxx, xxx xxxx.
-
-**Xxx.**  Xxxxxx x xxx xxxxx. Xxxxxxx xxxxxxx xxxxx, xxxxxxxx, xxx xxxxxxx.
-
-**Xx xxxxx.**  Xxxxxx xxxxxx xxxxxx(x), xxxxx, xxxxxx xxxxxx, xxx xxxx. Xxxxxxx xxx xxxxxx, xxx xxx xxxxxxxxxxx xx xxx xxxxxxxxxx xx xxxx xxxxxxx(x).
-
-Xxx xxxx xxxx xx xxxxxxxxxxx xxxxxx xxxxx. Xxxxxxxx xxxxxxx:
-
-"Xxxxxx Xxxxxxx xxx xxx Xxx"
-
-"Xxxxxx xxxxxxxx xxxx"
-
-"Xxxxxx xxxxxxx"
-
-"Xxxxxx xxxxxxxx"
-
-"Xxxxxx xxx x xxxxx"
-
-![xxxxxxx xx xxxxxx xxxx xxxx](images/search-windowsandweb.png)
+![example of query/formulation auto-suggest](images/search-autosuggest-example.png)
 
  
 
-Xx xxxxxxxxxxx xxxxxxxxxxxxx xxx xxxxx xx x xxxxxx xxxxx xxxxx, xxx xxx xxxx xx xxxxxx xxxx xxx xxxx xxxxxxxxxxx xxxx xx xxx xx xxx xxxxxxxxxxxx xx xxx xxxxxx xxx xxx xxxxxxxxxx xxx xxxxxx xxx xxxxxxxxxxx xx xxxxxxxxxxx.
+**Results set.**  Search results commonly appear directly under the search input field. While this isn't a requirement, the juxtaposition of input and results maintains context and provides the user with immediate access to edit the previous query or enter a new query. This connection can be further communicated by replacing the hint text with the query that created the results set.
 
-## <span id="Implementation">
-            </span>
-            <span id="implementation">
-            </span>
-            <span id="IMPLEMENTATION">
-            </span>Xxxxxxxxxxxxxx
+One method to enable efficient access to both edit the previous query and enter a new query is to highlight the previous query when the field is reactivated. This way, any keystroke will replace the previous string, but the string is maintained so that the user can position a cursor to edit or append the previous string.
 
+The results set can appear in any form that best communicates the content. A [list view](lists.md) provides a good deal of flexibility and is well-suited to most searches. A grid view works well for images or other media, and a map can be used to communicate spatial distribution.
 
-Xxx xxxx xxxx, xx'x xxxx xx xxxx x xxxx xxxxx xxxxx xx xxx xxxxxx xxxxx xxxxx, xxxxx xxxxxxxx x xxxxxxxxx xxxxxx xxxxxxxxx. Xx xxxxxxxx, xxxx xxxx xxxxx xxxx xxxxxxxxxxxxxxx xxx xxxxxxxxxxxxx xxx xxxxxx xxxxx. Xxxx xxxxxx xx x xxxx xxxxxxxxx xxxxxx, xx xxxx xxxxx xx xxxxxxxxxxx, xxx xxxxxx xxxx xxx xxxxx xx xx xxxxx xxxxx xxxxxxx xxx xxxxxxxxxxxx xxxxx xxxxx. Xxxx xxxxxxxxxx xx xx xxxx, xx xxxx xxxx xxxxx'x xxxx xxx x xxxxx xxxxxx xxx, xx xxxx xx xxx xxxxx xxxxxxxx.
-
-Xxxxxx xxxxxxxx xxxxxx xxxx:
-
-![xxxxxxx xx x xxxxxx xxxx xxx xxxxxxxxx xxxxxx xxx](images/search-icon-collapsed.png)
-
- 
-
-Xxxxx xxxxxxxx xxxxxx xxxx:
-
-![xxxxxxx xx x xxxxxx xxxx xxx xxxxxxxx xxxxxx xxx](images/search-icon-expanded.png)
-
- 
-
-Xxxxxx xxxxxx xxxx x xxxxx-xxxxxxxx xxxxxxxxxx xxxxx xxxxx xxx xxx xxxxx xxxxx. Xxx xxxxx xx xxx xx Xxxxx XX Xxxxxx, xxx xxxxxxxxx xxxx YxXYYYY, xxx xxxxxxx xx YY xxx xxxx xxxx.
-
-Xxx xxxxxx xxxxx xxxxx xxx xx xxxxxx xx x xxxxxx xx xxxxxxxxx xxxxx, xxx xxx xxxxxxxxx xxxxxxxxxxxx xxxx xxxxxx xxxxx xxx xxxxxxx. Xxxxxxxx xxxx xxxxxx xxxxxxx xxxx xxxxxx xx xxxxxxxxxx xx xxxxxxxx xx xxx xxx xxx xxxxxxxxx xxxxxxx xxxxxx xxx-xxxxx xxx xxxxxx, xxxx xx xxxxxx xxxxxxx xxxx xx xxxxxxxxxx.
-
-Xx xxx xxxxxx xxxxx xxxxxxx xxxx xxxxxx xx xxxxxxxxxx, xxx xxxxxxxxx xxxx xxxxxxxxx xx xxxx xxxxxxxx xxxxxxxxxx xxxx xxx xxxxxxx xx xx xxxxxxxx, xxxx xx xx x xxxxxx, xx x xxxx xxxxxx, xx xxxxxx xxxxxxxxxx xxxxxxx xxxx. Xx xxx xxxxx, xxx xxxxxxxxxx xxxxxxx xxxxxx xxxxx xxx xxxxxxx xx xxxxxxxx xxxxxxx xxxxxx xx xxxxxxxx xxxxx.
-
-Xx xxx xxxx xx xxxxxxxxxx xxxxx, xx'x xxxxxxx xx xxxxxx xxxx xxxxxx xxxxx xx xxxxxxx. Xx xxxxxxxxx xxxxxx xxx xxxxxx xxxxx xxxxxx xxx xxxx xxxxxxx xxxxxx xxxxxx xx.
-
-Xxxx xxxxx xxx xxxxx xxxxxxxxxxx xxxxxxxxxxxxx xx xxxxxxxx xxx xxxxxxxxxx/xxxxxx xxxxxxxx xx xxxxx xxx xxxx xxxx xx xxxxxxxx xx xxxx-xxxx xx xxxx xxxxx. Xxxxxxxxxx xxxxxxx xxxxx xxxxx xxxxx xxxxxxxxxx xxxxxxxxxxx xxx xx xxxxxxxxx, xxxx xx xxxxx xxxxxxxxx xxxxxxx (xx:&xx;xxxxx xxxxxx&xx;, xxxx: &xx;xxxxx xxxxxx&xx;, xxxxxxx: &xx;xxxxx xxxxxx&xx;, xxx xx xx).
-
-## <span id="examples">
-            </span>
-            <span id="EXAMPLES">
-            </span>Xxxxxxx
+## <span id="Search_scopes"></span><span id="search_scopes"></span><span id="SEARCH_SCOPES"></span>Search scopes
 
 
-Xxx xxxxxxxx xx xxxx xxxxxxx xxxx xxxxxx xxxxxx xx xxxxxxx.
+Search is a common feature, and users will encounter search UI in the shell and within many apps. Although search entry points tend to be similarly visualized, they can provide access to results that range from broad (web or device searches) to narrow (a user's contact list). The search entry point should be juxtaposed against the content being searched.
 
-Xxxxxx xx xx xxxxxx xx xxx Xxxxxxx xxxx xxx:
+Some common search scopes include:
 
-![xx xxxxxxx xx xxxxxx xx xx xxxxxx xx xxx xxxxxxx xxxx xxx](images/search-toolbar-action.png)
+**Global** and **contextual/refine.**  Search across multiple sources of cloud and local content. Varied results include URLs, documents, media, actions, apps, and more.
+
+**Web.**  Search a web index. Results include pages, entities, and answers.
+
+**My stuff.**  Search across device(s), cloud, social graphs, and more. Results are varied, but are constrained by the connection to user account(s).
+
+Use hint text to communicate search scope. Examples include:
+
+"Search Windows and the Web"
+
+"Search contacts list"
+
+"Search mailbox"
+
+"Search settings"
+
+"Search for a place"
+
+![example of search hint text](images/search-windowsandweb.png)
 
  
 
-Xxxxxx xx xx xxxxx xx xxx xxx xxxxxx:
+By effectively communicating the scope of a search input point, you can help to ensure that the user expectation will be met by the capabilities of the search you are performing and reduce the possibility of frustration.
 
-![xxxxxxx xx xxxxxx xx xx xxx xxxxxx](images/search-canvas-contacts.png)
-
- 
-
-Xxxxxx xx x xxxxxxxxxx xxxx:
-
-![xxxxxxx xx xxxxxx xx x xxxxxxxxxx xxxx](images/search-navmenu.png)
-
- 
-
-Xxxxxx xxxxxx xx xxxx xxxxxxxx xxx xxxxx xxxxx xxxxxx xx xxxxxxxxxxxx xxxxxxxx xx xx xxxxxx xxxxxxxxxx:
-
-![xxxxxxx xx xxxxxx xxxxxx](images/patterns-search-results-desktop.png)
-
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
-
-## Xxxxxxxxxx xxx xxxx-xx-xxxx
+## <span id="Implementation"></span><span id="implementation"></span><span id="IMPLEMENTATION"></span>Implementation
 
 
-Xxxx-xx-xxxx xxxxxxx xxxxx xx xxxx xxxx xxxxxxx xx xxx xxxxxxx xxxx xx xxxx. Xxxxxxxx xxxxxxx, xxxxxxx, xxx xxxxxxxx xxx xxx xxxx xxxxxxx xxxx xxxx xxxxxxx xxxx-xx-xxxx.
+For most apps, it's best to have a text input field as the search entry point, which provides a prominent visual footprint. In addition, hint text helps with discoverability and communicating the search scope. When search is a more secondary action, or when space is constrained, the search icon can serve as an entry point without the accompanying input field. When visualized as an icon, be sure that there's room for a modal search box, as seen in the below examples.
 
-## <span id="Recommendations">
-            </span>
-            <span id="recommendations">
-            </span>
-            <span id="RECOMMENDATIONS">
-            </span>Xxxxxxxxxxxxxxx
+Before clicking search icon:
 
-
--   Xxxxx x xxxxxxx xxx xx xxxx xxx xxxx xxxx-xx-xxxx xxxxxxxxxxxxx xx xxx xxx xxxx xxxxxx xxx xx-xxxx xxxx. Xxx xxxxxxxxx xxxxxxx, xxx xxx Xxxxxxxx xxxxxxx.
-
-    -   Xxxx xxxx xxxxxxx xxxx-xx-xxxx xxxxxx xxxx xxx xxxxxxxxx xxxxxxxx xx x xxxxxxx xxx.
-    -   Xx xxxx xxx xxxxxxxx x xxx xx xxxxxxxxxxxxx xxxxxx xxxx-xx-xxxx, xxx xxx xxxxxxx x **Xxxx** xxxxxx xx xxx xxx-xxxxx xxxxxxx xxx xx xx xxxxx xxxxx xx xxxxxxx xxxxxxx xxx xxxx xxxxxxxx xxx xx xxxx xxxx-xx-xxxx xxxxxxxx.
-    -   Xxx xxxx-xx-xxxx xxxxxxx xxx xxxxxx xxxxxx xxxxxxx xxxx xxx xxxx xx xxxxxxxxxxx xxxx xxx xxxxx xxxxxxxx. Xxx xxxxx xxxxxxxx xxxxxxx xxxx x xxxx xxxx xxx xxxxx xxx. Xxx xxxx-xx-xxxx xxxxxxx xxx xxxxxx xxxx xx, xx xx'x xxx xxxxxxxx xx xxx xxxxx xxxxxxxx.
-
-    -   Xxxx-xx-xxxx xxxxxx xxxxxx xxxxxxxxx xxxxx xxx xxxx xxxxxxxxx xxxx xxx xxxx. Xxxxx xxxx xx xxxxxxxx xxxx xxx xx-xxxx xxxx xxxxx xxxxx xxxx-xx-xxxx. Xxx xxxxxxx, xxxxx xxx xxxx xx xxxx xx xx xxx xx x xxxxxxxx xx xxx xxx xxxx xx xxxx xxx xxxx. Xxxx xxx xxxx xxxxxx xxxxx xxxx-xx-xxxx, xxx xxxxxxx xxx xxxxxx xxxxxx xxxxxxxxx xxxx x **Xxxxx** xxxxxx xx xxxx xxxx-xx-xxxx.
-
-    -   Xxxxxx xxx xxxxxxxx xxxxxxxx (XXXX+X). Xxxxxxxxx xxx xxxxxxxx xxxxxxxx XXXX+X xx xxxxxx xxx xxxx xx xxxxxx xxx xxxx-xx-xxxx xxxxxxx xxx xxxxxxx.
-
-    -   Xxxxxxx xxx xxxxxx xx xxxx-xx-xxxx xxxxxxxxxxxxx. Xxxxx xxx xxx XX xxxxxxxx xxxx xxx xxxx xx xxxxx xx xxxxxxxxx xxxx-xx-xxxx:
-
-        -   Xxxxx xxx
-        -   Xxxxxxxx xxx Xxxx xxxxxxx
-        -   X xxxxx xxxxx
-        -   Xxxxx (xxxxxxx-xxxx)
-    -   Xxx xxxx xxxxxx xxxxxxxxx xxxxxxx xxx xxxxxx xx xxxx xxx xxxx xxxxx xx xxxxxx. Xxxxx xxx xxxx xxxxxxx xxxxxxx xxx xxxxxxxx xx xxxxx xxx **Xxxxxxxx** xxx **Xxxx** xxxxxxx xxx xx xxxxx xxxxxx xxxx xx xxxxxx xxxxxxxxxxxx xxxx xxxxx.
-
-    -   Xxxx-xxx-xxxxxxx xxxxxxxxxxxxx xxxxxx xxxx xxxxxxxxx xxx xxxxx xxxx-xx-xxxx xxxxxxxxxxxxx. Xxx xxxx xxxx xxxx xxxx-xxx-xxxxxxx, xxxxxx xxxx xxxx-xx-xxxx xxxxx'x xxxxxxxxx xxxx xxxx-xxx-xxxxxxx xxxxxxxxxxxxx.
-
--   Xxxxxxx x xxxxx xxxxxxx xx xxxxxxxx xx xxx xxxx xxx xxxxxx xx xxxx xxxxxxx xxxxx xxx xx xxx xxxx.
--   Xxxxxx xxx xxxxxxxx xxxxxxxx (XXXX+X).
-
-## <span id="Examples">
-            </span>
-            <span id="examples">
-            </span>
-            <span id="EXAMPLES">
-            </span>Xxxxxxxx
-
-
-Xxxxxxx xx xxxx xxx xx xxxxxx xxx xxxx-xx-xxxx xxxxxxx. Xx xxxx xxxxxxx xx x xxxxxx XX, "Xxxx xx xxxx" xxxxxxx xxxxx xxx "Xxx xx..." xxxxxxxx xx xx xxxxxxxxxx xxxx:
-
-![xxxx-xx-xxxx xxxxxxx Y](images/findinpage-01.png)
+![example of a search icon and collapsed search box](images/search-icon-collapsed.png)
 
  
 
-Xxxxx xxxxxxxxx xxxx-xx-xxxx, xxx xxxx xxxxxx x xxxxxx xxxx. Xxxx xxxxxxxxxxx xxx xxxxxx xxxx x xxxxxx xxxx xx xxxxx xxxxxxx:
+After clicking search icon:
 
-![xxxx-xx-xxxx xxxxxxx Y](images/findinpage-02.png)
-
- 
-
-Xx xxxxx xxx'x x xxxx xxxxx xx xxx xxxxxx, x "Xx xxxxxxx" xxxx xxxxxx xxxxxx xxxxxx xx xxx xxxxxxx xxx:
-
-![xxxx-xx-xxxx xxxxxxx Y](images/findinpage-03.png)
+![example of a search icon and expanded search box](images/search-icon-expanded.png)
 
  
 
-Xx xxxxx xx x xxxx xxxxx xx xxx xxxxxx, xxx xxxxx xxxx xxxxxx xx xxxxxxxxxxx xx x xxxxxxxx xxxxx, xxxx xxxxxxxxxx xxxxxxx xx x xxxx xxxxxx xxxx xx xxxx xxxx xxxxx xxxxxxx, xx xxxx xx xxxx xxxxxxx:
+Search always uses a right-pointing magnifying glass glyph for the entry point. The glyph to use is Segoe UI Symbol, hex character code 0xE0094, and usually at 15 epx font size.
 
-![xxxx-xx-xxxx xxxxxxx Y](images/findinpage-04.png)
+The search entry point can be placed in a number of different areas, and its placement communicates both search scope and context. Searches that gather results from across an experience or external to the app are typically located within top-level app chrome, such as global command bars or navigation.
+
+As the search scope becomes more narrow or contextual, the placement will typically be more directly associated with the content to be searched, such as on a canvas, as a list header, or within contextual command bars. In all cases, the connection between search input and results or filtered content should be visually clear.
+
+In the case of scrollable lists, it's helpful to always have search input be visible. We recommend making the search input sticky and have content scroll behind it.
+
+Zero input and query formulation functionality is optional for contextual/refine searches in which the list will be filtered in real-time by user input. Exceptions include cases where query formatting suggestions may be available, such as inbox filtering options (to:&lt;input string&gt;, from: &lt;input string&gt;, subject: &lt;input string&gt;, and so on).
+
+## <span id="examples"></span><span id="EXAMPLES"></span>Example
+
+
+The examples in this section show search placed in context.
+
+Search as an action in the Windows tool bar:
+
+![an example of search as an action in the windows tool bar](images/search-toolbar-action.png)
 
  
 
-Xxxx-xx-xxxx xxx x xxxxx xxxxxxx:
+Search as an input on the app canvas:
 
-![xxxxxxx xx xxxx-xx-xxxx xxxxxx xxxxxxx](images/findinpage-counter.png)
+![example of search on an app canvas](images/search-canvas-contacts.png)
+
+ 
+
+Search in a navigation pane:
+
+![example of search in a navigation menu](images/search-navmenu.png)
+
+ 
+
+Inline search is best reserved for cases where search is infrequently accessed or is highly contextual:
+
+![example of inline search](images/patterns-search-results-desktop.png)
+
+
+## Guidelines for find-in-page
+
+
+Find-in-page enables users to find text matches in the current body of text. Document viewers, readers, and browsers are the most typical apps that provide find-in-page.
+
+## <span id="Recommendations"></span><span id="recommendations"></span><span id="RECOMMENDATIONS"></span>Recommendations
+
+
+-   Place a command bar in your app with find-in-page functionality to let the user search for on-page text. For placement details, see the Examples section.
+
+    -   Apps that provide find-in-page should have all necessary controls in a command bar.
+    -   If your app includes a lot of functionality beyond find-in-page, you can provide a **Find** button in the top-level command bar as an entry point to another command bar that contains all of your find-in-page controls.
+    -   The find-in-page command bar should remain visible when the user is interacting with the touch keyboard. The touch keyboard appears when a user taps the input box. The find-in-page command bar should move up, so it's not obscured by the touch keyboard.
+
+    -   Find-in-page should remain available while the user interacts with the view. Users need to interact with the in-view text while using find-in-page. For example, users may want to zoom in or out of a document or pan the view to read the text. Once the user starts using find-in-page, the command bar should remain available with a **Close** button to exit find-in-page.
+
+    -   Enable the keyboard shortcut (CTRL+F). Implement the keyboard shortcut CTRL+F to enable the user to invoke the find-in-page command bar quickly.
+
+    -   Include the basics of find-in-page functionality. These are the UI elements that you need in order to implement find-in-page:
+
+        -   Input box
+        -   Previous and Next buttons
+        -   A match count
+        -   Close (desktop-only)
+    -   The view should highlight matches and scroll to show the next match on screen. Users can move quickly through the document by using the **Previous** and **Next** buttons and by using scroll bars or direct manipulation with touch.
+
+    -   Find-and-replace functionality should work alongside the basic find-in-page functionality. For apps that have find-and-replace, ensure that find-in-page doesn't interfere with find-and-replace functionality.
+
+-   Include a match counter to indicate to the user the number of text matches there are on the page.
+-   Enable the keyboard shortcut (CTRL+F).
+
+## <span id="Examples"></span><span id="examples"></span><span id="EXAMPLES"></span>Examples
+
+
+Provide an easy way to access the find-in-page feature. In this example on a mobile UI, "Find on page" appears after two "Add to..." commands in an expandable menu:
+
+![find-on-page example 1](images/findinpage-01.png)
+
+ 
+
+After selecting find-in-page, the user enters a search term. Text suggestions can appear when a search term is being entered:
+
+![find-on-page example 2](images/findinpage-02.png)
+
+ 
+
+If there isn't a text match in the search, a "No results" text string should appear in the results box:
+
+![find-on-page example 3](images/findinpage-03.png)
+
+ 
+
+If there is a text match in the search, the first term should be highlighted in a distinct color, with succeeding matches in a more subtle tone of that same color palette, as seen in this example:
+
+![find-on-page example 4](images/findinpage-04.png)
+
+ 
+
+Find-in-page has a match counter:
+
+![example of find-in-page search counter](images/findinpage-counter.png)
 
 
 
 
 ## <span id="implementing_find_in_page"></span><span id="IMPLEMENTING_FIND_IN_PAGE"></span>
 
-**Xxxxxxxxxxxx xxxx-xx-xxxx**
+**Implementing find-in-page**
 
--   Xxxxxxxx xxxxxxx, xxxxxxx, xxx xxxxxxxx xxx xxx xxxxxxxxx xxx xxxxx xx xxxxxxx xxxx-xx-xxxx, xxx xxxxxx xxx xxxx xx xxxx x xxxx xxxxxx xxxxxxx/xxxxxxx xxxxxxxxxx.
--   Xxxx-xx-xxxx xxxxxxxxxxxxx xx xxxxxxxxx xxx xxxxxx xx xxxxxxx xx x xxxxxxx xxx.
+-   Document viewers, readers, and browsers are the likeliest app types to provide find-in-page, and enable the user to have a full screen viewing/reading experience.
+-   Find-in-page functionality is secondary and should be located in a command bar.
 
-Xxx xxxx xxxx xxxxx xxxxxx xxxxxxxx xx xxxx xxxxxxx xxx, xxx [Xxxxxxx xxx](app-bars.md).
-
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+For more info about adding commands to your command bar, see [Command bar](app-bars.md).
 
 
-## Xxxxxxx xxxxxx
 
-* [**Xxxx-xxxxxxx xxx**](auto-suggest-box.md)
+## <span id="related_topics"></span>Related articles
 
+* [**Auto-suggest box**](auto-suggest-box.md)
+
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

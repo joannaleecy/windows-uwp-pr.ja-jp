@@ -1,30 +1,34 @@
 ---
-xx.xxxxxxx: xxYxxYxY-YxYx-YxYx-xYxY-YxYYxYxxxYYY
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxxx xxx xx xxxx xxxx xxxxxxxx xxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxx xxx xxx xxxxxx x xxxxxx Xxxxxxx YY xxx xxxxxxx xxxx xxxx xxxxxxxxx xxx xxxxxxx xxxx xxx xxxxx xx xxxxxxx. Xxxx xxx xxxx xxxxxxx xxxx xxxxxxxx xxx xxxxxxxx, xxxxx xxxxxxxxxxxx xxxxxxxxxxxxx, x xxxxxx XXX xxx, xxxxxxxx XX xxxxxxxx, xxx x xxxxx xx xxxxx xxxxxxxxxx xxxxxxxxx xxxxx/xxxxxxxx, xxxxx, xxx xxxxxx.
-xxxxx: Xxxxxxx xxxx xx Xxxxxxx YY
+ms.assetid: ba2ac5f5-1e0d-4f1d-a6f8-6a65b4cff501
+description: ここでは、既存のアプリをユニバーサル Windows プラットフォーム (UWP) に移行する方法について説明します。UWP で 1 つの Windows 10 アプリ パッケージを作成するだけで、ユーザーはすべての種類のデバイスにそのアプリをインストールすることができます。 アプリは、魅力的な新しいハードウェア、大きな収益を得るチャンス、最新の API セット、アダプティブ UI コントロール、およびマウス、キーボード、タッチ、音声などの幅広い入力形式を活用できます。
+title: Windows 10 にアプリを移植する
 ---
 
-# Xxxxxxx xxxx xx Xxxxxxx YY
+# Windows 10 にアプリを移植する
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxx xxxxxxx xxxxxxxxx xxx xx xxxx xxxx xxxxxxxx xxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxx xxx xxx xxxxxx x xxxxxx Xxxxxxx YY xxx xxxxxxx xxxx xxxx xxxxxxxxx xxx xxxxxxx xxxx xxx xxxxx xx xxxxxxx. Xxxx xxx xxxx xxxxxxx xxxx xxxxxxxx xxx xxxxxxxx, xxxxx xxxxxxxxxxxx xxxxxxxxxxxxx, x xxxxxx XXX xxx, xxxxxxxx XX xxxxxxxx, xxx x xxxxx xx xxxxx xxxxxxxxxx xxxxxxxxx xxxxx/xxxxxxxx, xxxxx, xxx xxxxxx.
+ここでは、既存のアプリをユニバーサル Windows プラットフォーム (UWP) に移行する方法について説明します。UWP で 1 つの Windows 10 アプリ パッケージを作成するだけで、ユーザーはすべての種類のデバイスにそのアプリをインストールすることができます。 アプリは、魅力的な新しいハードウェア、大きな収益を得るチャンス、最新の API セット、アダプティブ UI コントロール、およびマウス、キーボード、タッチ、音声などの幅広い入力形式を活用できます。
 
-Xxx Xxxxxxx Xxxxxxx (XxxXX) xx xxx xxxxxxxxxx xxxx xxxx xxx xxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xxx xxx xxxxx xx [Xxxx'x x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx?](https://msdn.microsoft.com/library/windows/apps/dn726767) xxx xxxx xxxxxxxxxx xx XxxXX xxx XXX xxxx.
+Windows ランタイム (WinRT) は、ユニバーサル Windows プラットフォーム (UWP) アプリを構築できるテクノロジです。 WinRT および UWP アプリの背景知識について詳しくは、「[ユニバーサル Windows プラットフォーム (UWP) アプリとは](https://msdn.microsoft.com/library/windows/apps/dn726767)」をご覧ください。
 
-Xxxx xxxxxxx xxxxx xxxxxxxx xxx xxxxxxxxxxx xxxxxxx xxxx xxxxxxx xxx'x xxxxxxxxxx xxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX). Xxxx xxx xxxx xxxxxxx xxxxxxxxxxxx xx xxxxxxxxxx, xxx'xx xx xxxx xx xxxx xxxx xxx xxxx xx xxx Xxxxxxxxx Xxxxxx, xxxxx xx x xxxxxxxxxxxxx xxxxxxxx xxx xxxxxxxxxx XXX xxxx. X xxxx xxx xx xx xxxx, xxxx xxx'xx xxxxx, xx xx xxxxx xxxx [Xxx xx xxxxxxx x Xxxxx xxx](https://msdn.microsoft.com/library/windows/apps/dn726537).
+この移植ガイドでは、現在のアプリのテクノロジとユニバーサル Windows プラットフォーム (UWP) の違いについて説明します。 テクノロジ間のパスが理解できれば、デベロッパー センターの以降のリソースに進むことができます。これは、UWP アプリを開発するための包括的なリソースです。 このためには、準備ができたらまず「[ストア アプリの開発方法](https://msdn.microsoft.com/library/windows/apps/dn726537)」を参照することをお勧めします。
 
-| Xxxxx | Xxxxxxxxxxx |
+| トピック | 説明 |
 |-------|-------------|
-| [Xxxx xxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xx XXX](wpsl-to-uwp-root.md) | Xx xxx’xx x xxxxxxxxx xxxx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx, xxxx xxx xxx xxxx xxxxx xxx xx xxxx xxxxx xxx xxx xxxx xxxxxx xxxx xx xxx xxxx xx Xxxxxxx YY. Xxxx Xxxxxxx YY, xxx xxx xxxxxx x XXX xxx, xxxxx xx x xxxxxx xxx xxxxxxx xxxx xxxx xxxxxxxxx xxx xxxxxxx xxxx xxxxx xxxx xx xxxxxx. |
-| [Xxxx xxxx Xxxxxxx Xxxxxxx Y.x xx XXX](w8x-to-uwp-root.md) | Xx xxx xxxx x Xxxxxxxxx Y.Y xxx—xxxxxxx xx'x xxxxxxxxx Xxxxxxx Y.Y, Xxxxxxx Xxxxx Y.Y, xx xxxx—xxxx xxx'xx xxxx xxxx xxxx xxxxxx xxxx xxx xxxxxx xxxx xxxx xxxxxxxx xx Xxxxxxx YY. Xxxx Xxxxxxx YY, xxx xxx xxxxxx x XXX xxx, xxxxx xx x xxxxxx xxx xxxxxxx xxxx xxxx xxxxxxxxx xxx xxxxxxx xxxx xxxxx xxxx xx xxxxxx. |
-| [Xxxxxx xxxx XXX Xxxxxxxxx Xxxxxx Xxxxxx YYYY XX xxxxxxx xx XXX](update-your-visual-studio-2015-rc-project-to-rtm.md) | Xx xxx xxxx x Xxxxxxx YY xxxxxxx xxxx xxx xxxxxxx xxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY XX, xxxx xxx xxxx xxx xxxxxxx xxxx xx xxxxx xx xxxxxxxx xxx xxxxxxx xxxxx xx xxx xxxxxx xxxxxxxx xxx Xxxxxx Xxxxxx YYYY XXX. Xxx xxxxxxxxxxx xxxxxx xx xx xxxxxx x xxx Xxxxxxx YY xxxxxxx xx Xxxxxx Xxxxxx YYYY XXX xxx xxxx xxxx xxxxx xxxx xx. Xxxxxxxxxxxxx, xxx xxx xxxxxx xxxxxxxx xxxxxxxxxxxxx xx xxxx xxxx xxxxxxxx xxxxxxx xxxxx xxx xxxx xxxx xxxx xx xxx xxx xxxxxx. |
-| [Xxxxxxx xxxx xxxxxxx xxxxxxx xxx Xxxxxxx xxx xXX xxxxxxxxxx](android-ios-uwp-map.md) | Xx xxx'xx x xxxxxxxxx xxxx Xxxxxxx xx xXX xxxxxx xx xxxx, xxx xxx xxxx xx xxxx xxx xxxx xx Xxxxxxx YY xxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx, xxxx xxxx xxxxxxxx xxx xxx xxx xxxx xx xxx xxxxxxxx xxxxxxxx—xxx xxxx xxxxxxxxx—xxxxxxx xxx xxxxx xxxxxxxxx. |
-| [Xxxx xxxx xXX xx XXX](ios-to-uwp-root.md) | Xxx xxx xx xXX xxxxxxxxx, xxxxxxxxx xxx xx xxxx xxx xxxx xx Xxxxxxx YY xxx xxx XXX? Xx xxxxx'x xx xx xxxxx xx xxx xxxxx. Xx'xx xxx xxx xxxxx, xxxxxxxxxx, xxx xxxx xxx xxxx xx xxxx xxxxx xxxx xxxx xxxx xx xxxx xx Xxxxxxx xx xxxx xx xx xxxx xXX xxxxxxx: xxxxx xxxxxx! |
+| [Windows Phone Silverlight から UWP への移行](wpsl-to-uwp-root.md) | Windows Phone Silverlight アプリの開発者は、Windows 10 への移行で、自身のスキル セットとソース コードを十分に活用できます。 Windows 10 では、UWP アプリを作成できます。これは、どのような種類のデバイスにでもインストールできる単一のアプリ パッケージです。 |
+| [Windows ランタイム 8.x から UWP への移行](w8x-to-uwp-root.md) | ユニバーサル 8.1 アプリがある場合は、その対象が、Windows 8.1 と Windows Phone 8.1 のいずれかであるか、両方であるかにかかわらず、ソース コードとスキルがスムーズに Windows 10 に移植されることがわかるでしょう。 Windows 10 では、UWP アプリを作成できます。これは、どのような種類のデバイスにでもインストールできる単一のアプリ パッケージです。 |
+| [UWP Microsoft Visual Studio 2015 RC プロジェクトを RTM に更新する](update-your-visual-studio-2015-rc-project-to-rtm.md) | Microsoft Visual Studio 2015 RC で作成した Windows 10 プロジェクトがある場合、プロジェクト ファイルを Visual Studio 2015 RTM に適した形式に更新するには 2 つの方法があります。 推奨される方法は、Visual Studio 2015 RTM で新しい Windows 10 プロジェクトを作成し、お使いのファイルをそのプロジェクトにコピーする方法です。 代わりに、詳細なドキュメントに従って、既存のプロジェクト ファイルを編集し、新しい形式に移行することもできます。 |
+| [Android や iOS 開発者向けの Windows アプリの概念マッピング](android-ios-uwp-map.md) | このリソースには、Android や iOS のスキルとコードを持つ開発者が Windows 10 とユニバーサル Windows プラットフォームに移行する場合に、それら 3 つのプラットフォーム間でプラットフォームの機能と知識を関連付けるために必要なすべての情報が含まれています。 |
+| [iOS から UWP への移行](ios-to-uwp-root.md) | iOS 向けに開発したアプリを Windows 10 と UWP に移行するにはどうすればよいでしょうか。 これは思っているほど難しくはありません。 iOS デバイスと同様に Windows でも (おそらくより快適に) 動作する優れたアプリの作成に必要なツール、手法、情報が用意されています。 |
  
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxx xxxx XXX xxx Xxxxxxxxxxx xx XxxXX](https://msdn.microsoft.com/library/windows/apps/dn263237)
-* [Xxxx xxxx Xxxxxxx xx XxxXX](https://msdn.microsoft.com/library/windows/apps/jj945421)
-* [Xxxx xxxx xxx xxx xx XxxXX](https://msdn.microsoft.com/library/windows/apps/hh465151)
+* [WPF と Silverlight から WinRT への移行](https://msdn.microsoft.com/library/windows/apps/dn263237)
+* [Android から WinRT への移行](https://msdn.microsoft.com/library/windows/apps/jj945421)
+* [Web から WinRT への移行](https://msdn.microsoft.com/library/windows/apps/hh465151)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

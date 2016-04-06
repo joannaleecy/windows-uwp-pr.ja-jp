@@ -1,42 +1,39 @@
 ---
-Xxxxxxxxxxx: Xxxxxxxx xxx xxxxxxxxxxx xxxxx xxxxxxxxxxxxx xxx xxx xxxxxx xxxxxxxx xxx-xx xxxxxxxxxxxxx xxxx xxxx xxxxxxx, xxxxxxxx xxxxxx xxxxxx, xxx xxxxxxxx xxxx xxxxxxxxxxx.
-xxxxx: Xxxxxxxx xxx xxxxxxxxxxx xxxxx xxxxxxxxxxxxx
-xx.xxxxxxx: YXXXYYXX-YYXY-YYYX-YXXY-XYXXYXXXYXYY
-xxxxx: Xxxxxxxx xxx xxxxxxxxxxx xxxxx xxxxxxxxxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.
+title: Adaptive and interactive toast notifications
+ms.assetid: 1FCE66AF-34B4-436A-9FC9-D0CF4BDA5A01
+label: Adaptive and interactive toast notifications
+template: detail.hbs
 ---
 
-# Xxxxxxxx xxx xxxxxxxxxxx xxxxx xxxxxxxxxxxxx
+# Adaptive and interactive toast notifications
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxxxx xxx xxxxxxxxxxx xxxxx xxxxxxxxxxxxx xxx xxx xxxxxx xxxxxxxx xxx-xx xxxxxxxxxxxxx xxxx xxxx xxxxxxx, xxxxxxxx xxxxxx xxxxxx, xxx xxxxxxxx xxxx xxxxxxxxxxx.
+Adaptive and interactive toast notifications let you create flexible pop-up notifications with more content, optional inline images, and optional user interaction.
 
-Xxx xxxxxxxx xxx xxxxxxxxxxx xxxxx xxxxxxxxxxxxx xxxxx xxx xxxxx xxxxxxx xxxx xxx xxxxxx xxxxx xxxxxxxx xxxxxxx:
+The adaptive and interactive toast notifications model has these updates over the legacy toast template catalog:
 
--   Xxx xxxxxx xx xxxxxxx xxxxxxx xxx xxxxxx xx xxx xxxxxxxxxxxxx.
--   Xxxxx xxxxxxxxx xxxxxxxxxx xxxxx xxx xxx xxxx xxxxx xxxxxxxxxxxx xxx xxx xxxx xxxxxx.
--   Xxx xxxxxx xx xxxxxx x xxxxxxxxxxxx xxx xxxxxxx xxxxxxxxx, xxxxxxxxx xxxxxx, xxxxxxxxx, xxx xxxxxxxx xxxxx.
+-   The option to include buttons and inputs on the notifications.
+-   Three different activation types for the main toast notification and for each action.
+-   The option to create a notification for certain scenarios, including alarms, reminders, and incoming calls.
 
-**Xxxx**   Xx xxx xxx xxxxxx xxxxxxxxx xxxx Xxxxxxx Y.Y xxx Xxxxxxx Xxxxx Y.Y, xxx xxx [xxxxxx xxxxx xxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh761494).
+**Note**   To see the legacy templates from Windows 8.1 and Windows Phone 8.1, see the [legacy toast template catalog](https://msdn.microsoft.com/library/windows/apps/hh761494).
 
  
 
-## <span id="toast_structure">
-            </span>
-            <span id="TOAST_STRUCTURE">
-            </span>Xxxxx xxxxxxxxxxxx xxxxxxxxx
+## <span id="toast_structure"></span><span id="TOAST_STRUCTURE"></span>Toast notification structure
 
 
-Xxxxx xxxxxxxxxxxxx xxx xxxxxxxxxxx xxxxx XXX, xxxxx xxxxx xxxxxxxxx xxxxxxx xxxxx xxx xxxxxxxx:
+Toast notifications are constructed using XML, which would typically contain these key elements:
 
--   &xx;xxxxxx&xx; xxxxxx xxx xxxxxxx xxxxxxxxx xxx xxx xxxxx xx xxxxxxxx xxx, xxxxxxxxx xxxx xxx xxxxxx
--   &xx;xxxxxxx&xx; xxxxxxxx xxxxxxx/xxxxxx xxx xxxxxxxxx xxxxx xx xxx xxxxxx xxx xxxxxxxxxxxx
--   &xx;xxxxx&xx; xxxxxxxxx xxx xxxxx xxxxxx xxxx xxx xxxxxxxxxxxx xxxx
+-   &lt;visual&gt; covers the content available for the users to visually see, including text and images
+-   &lt;actions&gt; contains buttons/inputs the developer wants to add inside the notification
+-   &lt;audio&gt; specifies the sound played when the notification pops
 
-Xxxx'x x xxxx xxxxxxx:
+Here's a code example:
 
 ```XML
 <toast launch="app-defined-string">
@@ -55,91 +52,68 @@ Xxxx'x x xxxx xxxxxxx:
 </toast>
 ```
 
-Xxx x xxxxxx xxxxxxxxxxxxxx xx xxx xxxxxxxxx:
+And a visual representation of the structure:
 
-![xxxxx xxxxxxxxxxxx xxxxxxxxx](images/adaptivetoasts-structure.jpg)
+![toast notification structure](images/adaptivetoasts-structure.jpg)
 
-### <span id="Visual">
-            </span>
-            <span id="visual">
-            </span>
-            <span id="VISUAL">
-            </span>Xxxxxx
+### <span id="Visual"></span><span id="visual"></span><span id="VISUAL"></span>Visual
 
-Xxxxxx xxx xxxxxx xxxxxxx, xxx xxxx xxxx xxxxxxx xxx xxxxxxx xxxxxxx xxxx xxxxxxxx xxx xxxxxx xxxxxxx xx xxx xxxxx.
+Inside the visual element, you must have exactly one binding element that contains the visual content of the toast.
 
-Xxxx xxxxxxxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxxxxx xxxxxxxx xxxxxxxxx xxxx xxx xxxxx xx xxxxxxxxx xxxx xxxxx. Xxxxx xxxxxxxxxxxxx, xxxxxxx, xxxx xxxx xxx xxxxxxxx xxxx: **XxxxxXxxxxxx**. Xxxxxx xxxx xxx xxx xxxxxxxx xxxx xxxxx:
+Tile notifications in Universal Windows Platform (UWP) apps support multiple templates that are based on different tile sizes. Toast notifications, however, have only one template name: **ToastGeneric**. Having just the one template name means:
 
--   Xxx xxx xxxxxx xxx xxxxx xxxxxxx, xxxx xx xxxxxx xxxxxxx xxxx xx xxxx, xxxxxx xx xxxxxx xxxxx, xx xxxxxxxx xxx xxxxxxxxx xxxxx xxxx xxxxxxxxxx xxx xxx xxxx xx xxxxxxxxx xxxx, xxx xx xxx xx xxxxx xxxxxx xxxxxxx xxxxxxxx xxxxx xxxxxxxx xxx xxxxxx xxxxxxxx xx xxxxxxxx xx xxxxxxx xxxxxxx xxx xx x xxxxxxxx xxxxxxx xxx xxxxxxxx xxxx xxx xxx xxxxxxx.
--   Xxx xxx xxx xxx xxxx xxxx xx xxxxxxxxx xxx xxxx xxxxxxx xxx xxx **xxxxx xxxxxxxxxxxx** xxxx xxxxxxx xx xxxxxxx xx xxxxxxxxx xxxxx xx Xxxxxxxxx Xxxxxxx xxxxxxx, xxxxxxxxx xxxxxx, xxxxxxx, XXx, xxx Xxxx Xxx. Xxxx xx xxxxx xxxxxxx xxxx xxxxxx xxx xxxxxxxxxxxx xxx xxxxxxx xx xx xxx xxxx xxxxx xxxxx XX xxxxxxxx xxxx xxx xxxxxxxxxxx xxxxxx xxxxxxxxxxx xxx xxxxxxxxxxx xxxxx.
+-   You can change the toast content, such as adding another line of text, adding an inline image, or changing the thumbnail image from displaying the app icon to something else, and do any of these things without worrying about changing the entire template or creating an invalid payload due to a mismatch between the template name and the content.
+-   You can use the same code to construct the same payload for the **toast notification** that targets to deliver to different types of Microsoft Windows devices, including phones, tablets, PCs, and Xbox One. Each of these devices will accept the notification and display it to the user under their UI policies with the appropriate visual affordances and interaction model.
 
-Xxx xxx xxxxxxxxxx xxxxxxxxx xx xxx xxxxxx xxxxxxx xxx xxx xxxxx xxxxxxxx, xxx xxx Xxxxxx xxxxxxx xxxxx. Xxx xxxx xxxxxxxx, xxx xxx XXX xxxxxxxx xxxxxxx xxxxx.
+For all attributes supported in the visual section and its child elements, see the Schema section below. For more examples, see the XML examples section below.
 
-### <span id="Actions">
-            </span>
-            <span id="actions">
-            </span>
-            <span id="ACTIONS">
-            </span>Xxxxxxx
+### <span id="Actions"></span><span id="actions"></span><span id="ACTIONS"></span>Actions
 
-Xx XXX xxxx, xxx xxx xxx xxxxxxx xxx xxxxx xxxxxx xx xxxx xxxxx xxxxxxxxxxxxx, xxxxx xxxx xxxxx xx xxxx xxxxxxx xx xxx xxx. Xxxxx xxxxxxx xxx xxxxxxxxx xxxxx xxx &xx;xxxxxxx&xx; xxxxxxx, xx xxxxx xxxxx xxx xxx xxxxx xxxx xxx xxx xxxxxxx:
+In UWP apps, you can add buttons and other inputs to your toast notifications, which lets users do more outside of the app. These actions are specified under the &lt;actions&gt; element, of which there are two types that you can specify:
 
--   &xx;xxxxxx&xx; Xxxx xxxxxxx xx x xxxxxx xx xxxxxxx xxx xxxxxx xxxxxxx. Xxx xxx xxxxxxx xx xx xxxx xxxxxx xx xxxxxx xxxxxxx xxxxxx x xxxxx xxxxxxxxxxxx.
--   &xx;xxxxx&xx; Xxxx xxxxxx xxxxx xx xxxxxxx xxxxx, xxxx xx xxxxx xxxxxxxx xx x xxxxxxx, xx xxxxxxxxx xx xxxxxx xxxx x xxxx-xxxx xxxx.
+-   &lt;action&gt; This appears as a button on desktop and mobile devices. You can specify up to five custom or system actions inside a toast notification.
+-   &lt;input&gt; This allows users to provide input, such as quick replying to a message, or selecting an option from a drop-down menu.
 
-Xxxx &xx;xxxxxx&xx; xxx &xx;xxxxx&xx; xxx xxxxxxxx xxxxxx xxx Xxxxxxx xxxxxx xx xxxxxxx. Xxx xxxxxxx, xx xxxxxx xx xxxxxxx xxxxxxx, xx &xx;xxxxxx&xx; xx x xxxx xx x xxxxxx xx xxxxx xx xxx/xxxxx. X xxxx &xx;xxxxx&xx; xx x xxx xx xxxxx xxxxx xxx xxxxx xxxx xxxxx xxxxxx x xxxxxxxx xxxxxxxx xx xx xx-xxxxxx xxxxxxxx. Xxxxx xxxxxxxx xxxx xxxx xxxxx xx xxxxxx xxxxxxxxxxx xxxxxxxxx, xxxx xx xx xxxxxx xxxxxxxxx xx xxxxx xx x xxxx xxxxx xxxxx xx xxxxxxxxx.
+Both &lt;action&gt; and &lt;input&gt; are adaptive within the Windows family of devices. For example, on mobile or desktop devices, an &lt;action&gt; to a user is a button on which to tap/click. A text &lt;input&gt; is a box in which users can input text using either a physical keyboard or an on-screen keyboard. These elements will also adapt to future interaction scenarios, such as an action announced by voice or a text input taken by dictation.
 
-Xxxx xx xxxxxx xx xxxxx xx xxx xxxx, xxx xxx xx xxx xx xxx xxxxxxxxx xx xxxxxxxxxx xxx [**XxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/dn408447) xxxxxxxxx xxxxxx xxx &xx;xxxxxx&xx; xxxxxxx:
+When an action is taken by the user, you can do one of the following by specifying the [**ActivationType**](https://msdn.microsoft.com/library/windows/desktop/dn408447) attribute inside the &lt;action&gt; element:
 
--   Xxxxxxxxxx xxx xxx xx xxx xxxxxxxxxx, xxxx xx xxxxxx-xxxxxxxx xxxxxxxx xxxx xxx xx xxxx xx xxxxxxxx xx x xxxxxxxx xxxx/xxxxxxx.
--   Xxxxxxxxxx xxx xxx'x xxxxxxxxxx xxxx xxxxxxx xxxxxxxxx xxx xxxx.
--   Xxxxxxxxxx xxxxxxx xxx xxx xxxxxxxx xxxxxx.
--   Xxxxxxx x xxxxxx xxxxxx xx xxxxxxx. Xxx xxxxxxx xxxxxxxxx xxxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxxx xxxxx/xxxxxxxx, xxxxx xxxx xx xxxxxxx xxxxxxxxx xx x xxxxxxx xxxxx.
+-   Activating the app in the foreground, with an action-specific argument that can be used to navigate to a specific page/context.
+-   Activating the app's background task without affecting the user.
+-   Activating another app via protocol launch.
+-   Specify a system action to perform. The current available system actions are snoozing and dismissing scheduled alarm/reminder, which will be further explained in a section below.
 
-Xxx xxx xxxxxxxxxx xxxxxxxxx xx xxx xxxxxx xxxxxxx xxx xxx xxxxx xxxxxxxx, xxx xxx Xxxxxx xxxxxxx xxxxx. Xxx xxxx xxxxxxxx, xxx xxx XXX xxxxxxxx xxxxxxx xxxxx.
+For all attributes supported in the visual section and its child elements, see the Schema section below. For more examples, see the XML examples section below.
 
-### <span id="Audio">
-            </span>
-            <span id="audio">
-            </span>
-            <span id="AUDIO">
-            </span>Xxxxx
+### <span id="Audio"></span><span id="audio"></span><span id="AUDIO"></span>Audio
 
-Xxxxxx xxxxxx xxxx'x xxxxxxxxx xxxxxxxxx xx XXX xxxx xxxx xxxxxx xxx xxxxxxx xxxxxxxx; xxxxxxx, xxx xxx xxxxxx xxxx xxx xxxx xx xx-xxxxxxxxxxxxxx xxx xxxx xxx xx xxxxxxx. XXX xxxx xx xxxxxx xxxxxxxxx xxxxxxx xxxx xx-xxxxxxxxxxxxxx, xxxxx xxxx xxxxxx xxxxxx xx xxxxx xxxxxxx:
+Custom sounds aren't currently supported on UWP apps that target the desktop platform; instead, you can choose from the list of ms-winsoundevents for your app on desktop. UWP apps on mobile platforms support both ms-winsoundevents, along with custom sounds in these formats:
 
--   xx-xxxx:///
--   xx-xxxxxxx:///
+-   ms-appx:///
+-   ms-appdata:///
 
-Xxx xxx [xxxxx xxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/br230842) xxx xxxxxxxxxxx xx xxxxx xx xxxxx xxxxxxxxxxxxx, xxxxx xxxxxxxx x xxxxxxxx xxxx xx xx-xxxxxxxxxxxxxx.
+See the [audio schema page](https://msdn.microsoft.com/library/windows/apps/br230842) for information on audio in toast notifications, which includes a complete list of ms-winsoundevents.
 
-## <span id="Alarms__reminders__and_incoming_calls">
-            </span>
-            <span id="alarms__reminders__and_incoming_calls">
-            </span>
-            <span id="ALARMS__REMINDERS__AND_INCOMING_CALLS">
-            </span>Xxxxxx, xxxxxxxxx, xxx xxxxxxxx xxxxx
+## <span id="Alarms__reminders__and_incoming_calls"></span><span id="alarms__reminders__and_incoming_calls"></span><span id="ALARMS__REMINDERS__AND_INCOMING_CALLS"></span>Alarms, reminders, and incoming calls
 
 
-Xxx xxx xxx xxxxx xxxxxxxxxxxxx xxx xxxxxx, xxxxxxxxx, xxx xxxxxxxx xxxxx. Xxxxx xxxxxxx xxxxxx xxxx xx xxxxxxxxxx xxxx'x xxxxxxxxxx xxxx xxxxxxxx xxxxxx, xxxxxx xxxxxxx xxxxxx xxxxxxx xxxx xxxxxx, xxxxxxxx-xxxxx XX xxx xxxxxxxx:
+You can use toast notifications for alarms, reminders, and incoming calls. These special toasts have an appearance that's consistent with standard toasts, though special toasts feature some custom, scenario-based UI and patterns:
 
--   X xxxxxxxx xxxxx xxxxxxxxxxxx xxxx xxxx xx xxxxxx xxxxx xxx xxxx xxxxxxxxx xx xx xxxxx xxxxxx. Xx Xxxxxxx Xxxxxx, xxx xxxxxxxx xxxxx xxxxxxxxxxxxx xxxx xxxx xxxx xx xxx-xxxxxxxx.
--   Xx xxxxxxxx xx xxxxxxx xxx xxxxx xxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxxxx, xxxxx xxxxxxxxxxxxx xxxx xxxxxxxxxxxxx xxxx xxxxxxx xxxxx.
--   Xxxxxxxx xxxx xxxxxxxxxxxxx xxx xxxxxxxxx xxxx xxxxxx xx Xxxxxxx Xxxxxx xxxxxxx. Xxxx xx xxxx xx xxxxxxxxxx xxx xxxxxxxx xxxxxxxxx xxxxxx xxx xxxx xxxxxxx xx x xxxxx xxxxxxxxxxxx – &xx;xxxxx&xx;:
-    &xx;xxxxx xxxxxxxx=" { xxxxxxx | xxxxx | xxxxxxxx | xxxxxxxxXxxx } " &xx;
+-   A reminder toast notification will stay on screen until the user dismisses it or takes action. On Windows Mobile, the reminder toast notifications will also show up pre-expanded.
+-   In addition to sharing the above behaviors with reminder notifications, alarm notifications also automatically play looping audio.
+-   Incoming call notifications are displayed full screen on Windows Mobile devices. This is done by specifying the scenario attribute inside the root element of a toast notification – &lt;toast&gt;:
+    &lt;toast scenario=" { default | alarm | reminder | incomingCall } " &gt;
 
-## <span id="xml_examples">
-            </span>
-            <span id="XML_EXAMPLES">
-            </span>XXX xxxxxxxx
+## <span id="xml_examples"></span><span id="XML_EXAMPLES"></span>XML examples
 
 
-**Xxxx**  Xxx xxxxx xxxxxxxxxxxx xxxxxxxxxxx xxx xxxxx xxxxxxxx xxxx xxxxx xxxx xx xxx xx xxxxxxx. Xx xxxxxx xxxxxxx, x xxxxx xxxxxxxxxxxx xxx xx xxxxxxxxx xxxx xx xxxx xx, xxxx x xxxxxxx xx xxx xxxxxx xx xxx xxxxx xx xxxxxx xx.
+**Note**  The toast notification screenshots for these examples were taken from an app on desktop. On mobile devices, a toast notification may be collapsed when it pops up, with a grabber at the bottom of the toast to expand it.
 
  
 
-**Xxxxxxxxxxxx xxxx xxxx xxxxxx xxxxxxxx**
+**Notification with rich visual contents**
 
-Xxxx xxxxxxx xxxxx xxx xxx xxx xxxx xxxxxxxx xxxxx xx xxxx, xx xxxxxxxx xxxxx xxxxx xx xxxxxxxx xxx xxxxxxxxxxx xxxx, xxx xx xxxxxxxx xxxxxx xxxxx xxxxxxxxx.
+This example shows how you can have multiple lines of text, an optional small image to override the application logo, and an optional inline image thumbnail.
 
 ```XML
 <toast launch="app-defined-string">
@@ -155,13 +129,13 @@ Xxxx xxxxxxx xxxxx xxx xxx xxx xxxx xxxxxxxx xxxxx xx xxxx, xx xxxxxxxx xxxxx xx
 </toast>
 ```
 
-![xxxxxxxxxxxx xxxx xxxx xxxxxx xxxxxxxx](images/adaptivetoasts-xmlsample01.png)
+![notification with rich visual contents](images/adaptivetoasts-xmlsample01.png)
 
  
 
-**Xxxxxxxxxxxx xxxx xxxxxxx, xxxxxxx Y**
+**Notification with actions, example 1**
 
-Xxxx xxxxxxx xxxxx...
+This example shows...
 
 ```XML
 <toast launch="app-defined-string">
@@ -179,13 +153,13 @@ Xxxx xxxxxxx xxxxx...
 </toast>
 ```
 
-![xxxxxxxxxxxx xxxx xxxxxxx, xxxxxxx Y](images/adaptivetoasts-xmlsample02.png)
+![notification with actions, example 1](images/adaptivetoasts-xmlsample02.png)
 
  
 
-**Xxxxxxxxxxxx xxxx xxxxxxx, xxxxxxx Y**
+**Notification with actions, example 2**
 
-Xxxx xxxxxxx xxxxx...
+This example shows...
 
 ```XML
 <toast launch="app-defined-string">
@@ -204,13 +178,13 @@ Xxxx xxxxxxx xxxxx...
 </toast>
 ```
 
-![xxxxxxxxxxxx xxxx xxxxxxx, xxxxxxx Y](images/adaptivetoasts-xmlsample03.png)
+![notification with actions, example 2](images/adaptivetoasts-xmlsample03.png)
 
  
 
-**Xxxxxxxxxxxx xxxx xxxx xxxxx xxx xxxxxxx, xxxxxxx Y**
+**Notification with text input and actions, example 1**
 
-Xxxx xxxxxxx xxxxx...
+This example shows...
 
 ```XML
 <toast launch="developer-defined-string">
@@ -229,13 +203,13 @@ Xxxx xxxxxxx xxxxx...
 </toast>
 ```
 
-![xxxxxxxxxxxx xxxx xxxx xxx xxxxx xxxxxxx](images/adaptivetoasts-xmlsample04.png)
+![notification with text and input actions](images/adaptivetoasts-xmlsample04.png)
 
  
 
-**Xxxxxxxxxxxx xxxx xxxx xxxxx xxx xxxxxxx, xxxxxxx Y**
+**Notification with text input and actions, example 2**
 
-Xxxx xxxxxxx xxxxx...
+This example shows...
 
 ```XML
 <toast launch="developer-defined-string">
@@ -253,13 +227,13 @@ Xxxx xxxxxxx xxxxx...
 </toast>
 ```
 
-![xxxxxxxxxxxx xxxx xxxx xxxxx xxx xxxxxxx](images/adaptivetoasts-xmlsample05.png)
+![notification with text input and actions](images/adaptivetoasts-xmlsample05.png)
 
  
 
-**Xxxxxxxxxxxx xxxx xxxxxxxxx xxxxx xxx xxxxxxx**
+**Notification with selection input and actions**
 
-Xxxx xxxxxxx xxxxx...
+This example shows...
 
 ```XML
 <toast launch="developer-defined-string">
@@ -282,13 +256,13 @@ Xxxx xxxxxxx xxxxx...
 </toast>
 ```
 
-![xxxxxxxxxxxx xxxx xxxxxxxxx xxxxx xxx xxxxxxx](images/adaptivetoasts-xmlsample06.png)
+![notification with selection input and actions](images/adaptivetoasts-xmlsample06.png)
 
  
 
-**Xxxxxxxx xxxxxxxxxxxx**
+**Reminder notification**
 
-Xxxx xxxxxxx xxxxx...
+This example shows...
 
 ```XML
 <toast scenario="reminder" launch="developer-pre-defined-string">
@@ -308,25 +282,20 @@ Xxxx xxxxxxx xxxxx...
 </toast>
 ```
 
-![xxxxxxxx xxxxxxxxxxxx](images/adaptivetoasts-xmlsample07.png)
+![reminder notification](images/adaptivetoasts-xmlsample07.png)
 
  
 
-## <span id="Activation_samples">
-            </span>
-            <span id="activation_samples">
-            </span>
-            <span id="ACTIVATION_SAMPLES">
-            </span>Xxxxxxxxxx xxxxxxx
+## <span id="Activation_samples"></span><span id="activation_samples"></span><span id="ACTIVATION_SAMPLES"></span>Activation samples
 
 
-Xxxx xxxxxxxxx xxxxx, xxx xxxx xxx xxxxxxx xx xxx xxxxx xxx xxxxxxx xx xxxxxxxxxx xxxx xx xxxxxxxxx xxxx. Xxx xxxxx xxxxxx xxxx xxxx xxx xxx xx xxxxxx xxxxxxxxx xxxx xx xxxxxxxxxxx xxxx xxx xxxxx xxxx xxx/xx xxxxx xxxxxxx.
+Like mentioned above, the body and actions in the toast are capable of activating apps in different ways. The below sample will show you how to handle different type of activations from the toast body and/or toast actions.
 
-**Xxxxxxxxxx**
+**Foreground**
 
-Xx xxxx xxxxxxxx, xx xxx xxxx xxxxxxxxxx xxxxxxxxxx xx xxxxxxx xx xx xxxxxx xxxxxx xx xxxxxxxxxx xxxxx xxxxxxxxxxxx xx xxxxxxxxx xxx xxx xxx xxxxxxxxxx xx xxx xxxxxxx xxxxxxx.
+In this scenario, an app uses foreground activation to respond to an action inside an actionable toast notification by launching the app and navigating to the correct content.
 
-Xxxxxxxxxx xxxx xxxxx xxxxxxxxxxxxx xxxx xx xxxxxx XxXxxxxxxx(). Xx Xxxxxxx YY, xxxxx xxx xxx xxx xxxxxxxxxx xxxx xxx xxxx xxxxxx XxXxxxxxxxx().
+Activation from toast notifications used to invoke OnLaunched(). In Windows 10, toast has its own activation kind and will invoke OnActivated().
 
 ```
 async protected override void OnActivated(IActivatedEventArgs args)
@@ -345,9 +314,9 @@ async protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-**Xxxxxxxxxx**
+**Background**
 
-Xx xxxx xxxxxxxx, xx xxx xxxx x xxxxxxxxxx xxxx xx xxxxxx xx xxxxxx xxxxxx xx xxxxxxxxxxx xxxxx xxxxxxxxxxxx. Xxx xxxxx xxxx xxxxx xxx xx xxxxxxx xxxx xxxxxxxxxx xxxx xxx xxxxxxxx xxxxx xxxxxxxxxxx xxxxxx xxxx xxx xxxxxxxx, xxx xxx xx xxx xxxxxxxxx xxxx xxx xxxxxx xxx xxxx xxxxxx xxxx xxx xxxxxxx xxx xxxxxxx.
+In this scenario, an app uses a background task to handle an action inside an interactive toast notification. The below code shows how to declare this background task for handling toast activations inside your app manifest, and how to get arguments from the action and user inputs when the buttons are clicked.
 
 ```
 <!-- Manifest Declaration -->
@@ -379,15 +348,10 @@ namespace ToastNotificationTask
 }
 ```
 
-## <span id="Schemas___visual__and__audio_">
-            </span>
-            <span id="schemas___visual__and__audio_">
-            </span>
-            <span id="SCHEMAS___VISUAL__AND__AUDIO_">
-            </span>Xxxxxxx: &xx;xxxxxx&xx; xxx &xx;xxxxx&xx;
+## <span id="Schemas___visual__and__audio_"></span><span id="schemas___visual__and__audio_"></span><span id="SCHEMAS___VISUAL__AND__AUDIO_"></span>Schemas: &lt;visual&gt; and &lt;audio&gt;
 
 
-Xx xxx xxxxxxxxx xxxxxxx, x "?" xxxxxx xxxxx xxxx xx xxxxxxxxx xx xxxxxxxx.
+In the following schemas, a "?" suffix means that an attribute is optional.
 
 ```
 <toast launch? duration? activationType? scenario? >
@@ -404,135 +368,130 @@ Xx xxx xxxxxxxxx xxxxxxx, x "?" xxxxxx xxxxx xxxx xx xxxxxxxxx xx xxxxxxxx.
 </toast>
 ```
 
-**Xxxxxxxxxx xx &xx;xxxxx&xx;**
+**Attributes in &lt;toast&gt;**
 
-xxxxxx?
+launch?
 
--   xxxxxx? = xxxxxx
--   Xxxx xx xx xxxxxxxx xxxxxxxxx.
--   X xxxxxx xxxx xx xxxxxx xx xxx xxxxxxxxxxx xxxx xx xx xxxxxxxxx xx xxx xxxxx.
--   Xxxxxxxxx xx xxx xxxxx xx xxxxxxxxxxXxxx, xxxx xxxxx xxx xx xxxxxxxx xx xxx xxx xx xxx xxxxxxxxxx, xxxxxx xxx xxxxxxxxxx xxxx, xx xx xxxxxxx xxx xxxx'x xxxxxxxx xxxxxxxx xxxx xxx xxxxxxxx xxx.
--   Xxx xxxxxx xxx xxxxxxxx xx xxxx xxxxxx xxx xxxxxxx xx xxx xxx xxx xxx xxx xxx.
--   Xxxx xxx xxxx xxxx xx xxxxxx xxx xxxxx xx xxxxxx xxx xxxxxxxxxx xxx, xxx xxxxxx xxxxxx xxxxxxxx xxx xxxxxxx xx xxx xxx xxxx xxxxxx xx xx xxxx xxx xxxx x xxxx xxxxxxxx xx xxx xxxxx xxxxxxx, xxxxxx xxxx xxxxxxxxx xx xxx xxxxxxx xxx.
--   Xx xxx xxxxxxxxxx xx xxxxxxxx xxxxxxx xxxx xxxxxxx xx xx xxxxxx, xxxxxxx xx xxx xxxx xx xxx xxxxx, xxx xxxxxxxxx xxxxxxxxx xxxx xxx "xxxxxxxxx" xxx-xxxxxxx xx xxxx &xx;xxxxxx&xx; xxx, xxxxxxx xx "xxxxxx" xxx-xxxxxxx xx xxx &xx;xxxxx&xx; xxx.
+-   launch? = string
+-   This is an optional attribute.
+-   A string that is passed to the application when it is activated by the toast.
+-   Depending on the value of activationType, this value can be received by the app in the foreground, inside the background task, or by another app that's protocol launched from the original app.
+-   The format and contents of this string are defined by the app for its own use.
+-   When the user taps or clicks the toast to launch its associated app, the launch string provides the context to the app that allows it to show the user a view relevant to the toast content, rather than launching in its default way.
+-   If the activation is happened because user clicked on an action, instead of the body of the toast, the developer retrieves back the "arguments" pre-defined in that &lt;action&gt; tag, instead of "launch" pre-defined in the &lt;toast&gt; tag.
 
-xxxxxxxx?
+duration?
 
--   xxxxxxxx? = "xxxxx|xxxx"
--   Xxxx xx xx xxxxxxxx xxxxxxxxx. Xxxxxxx xxxxx xx "xxxxx".
--   Xxxx xx xxxx xxxx xxx xxxxxxxx xxxxxxxxx xxx xxxXxxxxx. Xxx xxx'x xxxx xxxx xxx xxx xxxxx xxxxxxxx xxxxxxx.
--   Xx xxx'x xxxxxxxxx xxxxx xxxx xxxxxxxx.
+-   duration? = "short|long"
+-   This is an optional attribute. Default value is "short".
+-   This is only here for specific scenarios and appCompat. You don't need this for the alarm scenario anymore.
+-   We don't recommend using this property.
 
-xxxxxxxxxxXxxx?
+activationType?
 
--   xxxxxxxxxxXxxx? = "xxxxxxxxxx | xxxxxxxxxx | xxxxxxxx | xxxxxx"
--   Xxxx xx xx xxxxxxxx xxxxxxxxx.
--   Xxx xxxxxxx xxxxx xx "xxxxxxxxxx".
+-   activationType? = "foreground | background | protocol | system"
+-   This is an optional attribute.
+-   The default value is "foreground".
 
-xxxxxxxx?
+scenario?
 
--   xxxxxxxx? = "xxxxxxx | xxxxx | xxxxxxxx | xxxxxxxxXxxx"
--   Xxxx xx xx xxxxxxxx xxxxxxxxx, xxxxxxx xxxxx xx "xxxxxxx".
--   Xxx xx xxx xxxx xxxx xxxxxx xxxx xxxxxxxx xx xx xxx xx xxxxx, xxxxxxxx, xx xxxxxxxx xxxx.
--   Xx xxx xxx xxxx xxxx xxx xxxxxxx xxxx xxxxxxxxxxxx xxxxxxxxxx xx xxxxxx.
+-   scenario? = "default | alarm | reminder | incomingCall"
+-   This is an optional attribute, default value is "default".
+-   You do not need this unless your scenario is to pop an alarm, reminder, or incoming call.
+-   Do not use this just for keeping your notification persistent on screen.
 
-**Xxxxxxxxxx xx &xx;xxxxxx&xx;**
+**Attributes in &lt;visual&gt;**
 
-xxxxxxx?
+version?
 
--   xxxxxxx? = xxxXxxxxxxxXxxxxxx
--   Xxxx xxxxxxxxx xxx'x xxxxxxxxx xxxxxxx xxxxxxxxxx xxxx xx xxxxxxxxxx xx &xx;xxxxxx&xx;. Xxxx xxxxx xxx x xxx xxxxxxxxxx xxxxx xxxx xxx'xx xxxxxxx xxxx x xxxxxx xxxxxxxxx, xx xxxxxx.
+-   version? = nonNegativeInteger
+-   This attribute isn't necessary because versioning will be deprecated on &lt;visual&gt;. Stay tuned for a new versioning model that you'll specify from a higher hierarchy, if needed.
 
-xxxx?
+lang?
 
--   Xxx [xxxx xxxxxxx xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br230847) xxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxxx.
+-   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
 
-xxxxXxx?
+baseUri?
 
--   Xxx [xxxx xxxxxxx xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br230847) xxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxxx.
+-   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
 
-xxxXxxxxXxxxx?
+addImageQuery?
 
--   Xxx [xxxx xxxxxxx xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br230847) xxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxxx.
+-   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
 
-**Xxxxxxxxxx xx &xx;xxxxxxx&xx;**
+**Attributes in &lt;binding&gt;**
 
-xxxxxxxx?
+template?
 
--   \[Xxxxxxxxx\] xxxxxxxx? = "XxxxxXxxxxxx"
--   Xx xxx xxx xxxxx xxx xx xxx xxx xxxxxxxx xxx xxxxxxxxxxx xxxxxxxxxxxx xxxxxxxx, xxxxxx xxxx xxxx xxx xxxxx xxxxx "XxxxxXxxxxxx" xxxxxxxx xxxxxxx xx xxx xxxxxx xxxxxxxx.
--   Xxxxx xxx xxxxxx xxxxxxxxx xxxx xxx xxx xxxxxxx xxxxx xxxx xxx, xxx xxxx xx xxx xxx xxxxxxxx xxx xxxx, xxx xx xxxxxx xxxxxxxxx xxxx xxxx xxxxxxxx xxxxxxx.
+-   \[Important\] template? = "ToastGeneric"
+-   If you are using any of the new adaptive and interactive notification features, please make sure you start using "ToastGeneric" template instead of the legacy template.
+-   Using the legacy templates with the new actions might work now, but that is not the intended use case, and we cannot guarantee that will continue working.
 
-xxxx?
+lang?
 
--   Xxx [xxxx xxxxxxx xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br230847) xxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxxx.
+-   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
 
-xxxxXxx?
+baseUri?
 
--   Xxx [xxxx xxxxxxx xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br230847) xxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxxx.
+-   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
 
-xxxXxxxxXxxxx?
+addImageQuery?
 
--   Xxx [xxxx xxxxxxx xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br230847) xxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxxx.
+-   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
 
-**Xxxxxxxxxx xx &xx;xxxx&xx;**
+**Attributes in &lt;text&gt;**
 
-xxxx?
+lang?
 
--   Xxx [xxxx xxxxxxx xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br230847) xxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxxx.
+-   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230847) for details on this optional attribute.
 
-**Xxxxxxxxxx xx &xx;xxxxx&xx;**
+**Attributes in &lt;image&gt;**
 
-xxx
+src
 
--   Xxx [xxxx xxxxxxx xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br230844) xxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxxx.
+-   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230844) for details on this required attribute.
 
-xxxxxxxxx?
+placement?
 
--   xxxxxxxxx? = "xxxxxx" | "xxxXxxxXxxxxxxx"
--   Xxxx xxxxxxxxx xx xxxxxxxx.
--   Xxxx xxxxxxxxx xxxxx xxxx xxxxx xxxx xx xxxxxxxxx.
--   "xxxxxx" xxxxx xxxxxx xxx xxxxx xxxx, xxxxx xxx xxxx; "xxxXxxxXxxxxxxx" xxxxx xxxxxxx xxx xxxxxxxxxxx xxxx (xxxx xxxxx xx xx xxx xxx xxxx xxxxxx xx xxx xxxxx).
--   Xxx xxx xxxx xx xx xxx xxxxx xxx xxxx xxxxxxxxx xxxxx.
+-   placement? = "inline" | "appLogoOverride"
+-   This attribute is optional.
+-   This specifies where this image will be displayed.
+-   "inline" means inside the toast body, below the text; "appLogoOverride" means replace the application icon (that shows up on the top left corner of the toast).
+-   You can have up to one image for each placement value.
 
-xxx?
+alt?
 
--   Xxx [xxxx xxxxxxx xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br230844) xxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxxx.
+-   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230844) for details on this optional attribute.
 
-xxxXxxxxXxxxx?
+addImageQuery?
 
--   Xxx [xxxx xxxxxxx xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br230844) xxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxxx.
+-   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230844) for details on this optional attribute.
 
-xxxx-xxxx?
+hint-crop?
 
--   xxxx-xxxx? = "xxxx" | "xxxxxx"
--   Xxxx xxxxxxxxx xx xxxxxxxx.
--   "xxxx" xx xxx xxxxxxx xxxxx xxxxx xxxxx xx xxxxxxxx.
--   "xxxxxx" xxxxx xxx xxxxx xx x xxxxxxxx xxxxx. Xxx xxxx xxx xxxxxxx xxxxxx xx x xxxxxxx, xxxxxx xx x xxxxxx, xxx xx xx.
+-   hint-crop? = "none" | "circle"
+-   This attribute is optional.
+-   "none" is the default value which means no cropping.
+-   "circle" crops the image to a circular shape. Use this for profile images of a contact, images of a person, and so on.
 
-**Xxxxxxxxxx xx &xx;xxxxx&xx;**
+**Attributes in &lt;audio&gt;**
 
-xxx?
+src?
 
--   Xxx [xxxx xxxxxxx xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br230842) xxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxxx.
+-   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230842) for details on this optional attribute.
 
-xxxx?
+loop?
 
--   Xxx [xxxx xxxxxxx xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br230842) xxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxxx.
+-   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230842) for details on this optional attribute.
 
-xxxxxx?
+silent?
 
--   Xxx [xxxx xxxxxxx xxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/br230842) xxx xxxxxxx xx xxxx xxxxxxxx xxxxxxxxx.
+-   See [this element schema article](https://msdn.microsoft.com/library/windows/apps/br230842) for details on this optional attribute.
 
-## <span id="Schemas___action_">
-            </span>
-            <span id="schemas___action_">
-            </span>
-            <span id="SCHEMAS___ACTION_">
-            </span>Xxxxxxx: &xx;xxxxxx&xx;
+## <span id="Schemas___action_"></span><span id="schemas___action_"></span><span id="SCHEMAS___ACTION_"></span>Schemas: &lt;action&gt;
 
 
-Xx xxx xxxxxxxxx xxxxxxx, x "?" xxxxxx xxxxx xxxx xx xxxxxxxxx xx xxxxxxxx.
+In the following schemas, a "?" suffix means that an attribute is optional.
 
 ```
 <toast>
@@ -548,90 +507,85 @@ Xx xxx xxxxxxxxx xxxxxxx, x "?" xxxxxx xxxxx xxxx xx xxxxxxxxx xx xxxxxxxx.
 </toast>
 ```
 
-**Xxxxxxxxxx xx &xx;xxxxx&xx;**
+**Attributes in &lt;input&gt;**
 
-xx
+id
 
--   xx = xxxxxx
--   Xxxx xxxxxxxxx xx xxxxxxxx.
--   Xxx xx xxxxxxxxx xx xxxxxxxx xxx xx xxxx xx xxxxxxxxxx xx xxxxxxxx xxxx xxxxxx xxxx xxx xxx xx xxxxxxxxx (xx xxx xxxxxxxxxx xx xxxxxxxxxx).
+-   id = string
+-   This attribute is required.
+-   The id attribute is required and is used by developers to retrieve user inputs once the app is activated (in the foreground or background).
 
-xxxx
+type
 
--   xxxx = "xxxx | xxxxxxxxx"
--   Xxxx xxxxxxxxx xx xxxxxxxx.
--   Xx xx xxxx xx xxxxxxx x xxxx xxxxx xx xxxxx xxxx x xxxx xx xxx-xxxxxxx xxxxxxxxxx.
--   Xx xxxxxx xxx xxxxxxx, xxxx xx xx xxxxxxx xxxxxxx xxx xxxx x xxxxxxx xxxxx xx x xxxxxxx xxxxx.
+-   type = "text | selection"
+-   This attribute is required.
+-   It is used to specify a text input or input from a list of pre-defined selections.
+-   On mobile and desktop, this is to specify whether you want a textbox input or a listbox input.
 
-xxxxx?
+title?
 
--   xxxxx? = xxxxxx
--   Xxx xxxxx xxxxxxxxx xx xxxxxxxx xxx xx xxx xxxxxxxxxx xx xxxxxxx x xxxxx xxx xxx xxxxx xxx xxxxxx xx xxxxxx xxxx xxxxx xx xxxxxxxxxx.
--   Xxx xxxxxx xxx xxxxxxx, xxxx xxxxx xxxx xx xxxxxxxxx xxxxx xxx xxxxx.
+-   title? = string
+-   The title attribute is optional and is for developers to specify a title for the input for shells to render when there is affordance.
+-   For mobile and desktop, this title will be displayed above the input.
 
-xxxxxXxxxxxXxxxxxx?
+placeHolderContent?
 
--   xxxxxXxxxxxXxxxxxx? = xxxxxx
--   Xxx xxxxxXxxxxxXxxxxxx xxxxxxxxx xx xxxxxxxx xxx xx xxx xxxx-xxx xxxx xxxx xxx xxxx xxxxx xxxx. Xxxx xxxxxxxxx xx xxxxxxx xxxx xxx xxxxx xxxx xx xxx "xxxx".
+-   placeHolderContent? = string
+-   The placeHolderContent attribute is optional and is the grey-out hint text for text input type. This attribute is ignored when the input type is not "text".
 
-xxxxxxxXxxxx?
+defaultInput?
 
--   xxxxxxxXxxxx? = xxxxxx
--   Xxx xxxxxxxXxxxx xxxxxxxxx xx xxxxxxxx xxx xx xxxx xx xxxxxxx x xxxxxxx xxxxx xxxxx.
--   Xx xxx xxxxx xxxx xx "xxxx", xxxx xxxx xx xxxxxxx xx x xxxxxx xxxxx.
--   Xx xxx xxxxx xxxx xx "xxxxxxxxx", xxxx xx xxxxxxxx xx xx xxx xx xx xxx xx xxx xxxxxxxxx xxxxxxxxxx xxxxxx xxxx xxxxx'x xxxxxxxx.
+-   defaultInput? = string
+-   The defaultInput attribute is optional and is used to provide a default input value.
+-   If the input type is "text", this will be treated as a string input.
+-   If the input type is "selection", this is expected to be the id of one of the available selections inside this input's elements.
 
-**Xxxxxxxxxx xx &xx;xxxxxxxxx&xx;**
+**Attributes in &lt;selection&gt;**
 
-xx
+id
 
--   Xxxx xxxxxxxxx xx xxxxxxxx. Xx'x xxxx xx xxxxxxxx xxxx xxxxxxxxxx. Xxx xx xx xxxxxxxx xx xxxx xxx.
+-   This attribute is required. It's used to identify user selections. The id is returned to your app.
 
-xxxxxxx
+content
 
--   Xxxx xxxxxxxxx xx xxxxxxxx. Xx xxxxxxxx xxx xxxxxx xx xxxxxxx xxx xxxx xxxxxxxxx xxxxxxx.
+-   This attribute is required. It provides the string to display for this selection element.
 
-**Xxxxxxxxxx xx &xx;xxxxxx&xx;**
+**Attributes in &lt;action&gt;**
 
-xxxxxxx
+content
 
--   xxxxxxx = xxxxxx
--   Xxx xxxxxxx xxxxxxxxx xx xxxxxxxx. Xx xxxxxxxx xxx xxxx xxxxxx xxxxxxxxx xx xxx xxxxxx.
+-   content = string
+-   The content attribute is required. It provides the text string displayed on the button.
 
-xxxxxxxxx
+arguments
 
--   xxxxxxxxx = xxxxxx
--   Xxx xxxxxxxxx xxxxxxxxx xx xxxxxxxx. Xx xxxxxxxxx xxx xxx-xxxxxxx xxxx xxxx xxx xxx xxx xxxxx xxxxxxxx xxxx xx xx xxxxxxxxx xxxx xxxx xxxxxx xxxx xxxxxx.
+-   arguments = string
+-   The arguments attribute it required. It describes the app-defined data that the app can later retrieve once it is activated from user taking this action.
 
-xxxxxxxxxxXxxx?
+activationType?
 
--   xxxxxxxxxxXxxx? = "xxxxxxxxxx | xxxxxxxxxx | xxxxxxxx | xxxxxx"
--   Xxx xxxxxxxxxxXxxx xxxxxxxxx xx xxxxxxxx xxx xxx xxxxxxx xxxxx xx "xxxxxxxxxx".
--   Xx xxxxxxxxx xxx xxxx xx xxxxxxxxxx xxxx xxxxxx xxxx xxxxx: xxxxxxxxxx, xxxxxxxxxx, xx xxxxxxxxx xxxxxxx xxx xxx xxxxxxxx xxxxxx, xx xxxxxxxx x xxxxxx xxxxxx.
+-   activationType? = "foreground | background | protocol | system"
+-   The activationType attribute is optional and its default value is "foreground".
+-   It describes the kind of activation this action will cause: foreground, background, or launching another app via protocol launch, or invoking a system action.
 
-xxxxxXxx?
+imageUri?
 
--   xxxxxXxx? = xxxxxx
--   xxxxxXxx xx xxxxxxxx xxx xx xxxx xx xxxxxxx xx xxxxx xxxx xxx xxxx xxxxxx xx xxxxxxx xxxxxx xxx xxxxxx xxxxx xxxx xxx xxxx xxxxxxx.
+-   imageUri? = string
+-   imageUri is optional and is used to provide an image icon for this action to display inside the button alone with the text content.
 
-xxxx-xxxxxXx
+hint-inputId
 
--   xxxx-xxxxxXx = xxxxxx
--   Xxx xxxx-xxxxxXx xxxxxxxxx xx xxxxxxxx. Xx'x xxxxxxxxxxxx xxxx xxx xxx xxxxx xxxxx xxxxxxxx.
--   Xxx xxxxx xxxxx xx xx xxx xx xx xxx xxxxx xxxxxxx xxxxxxx xx xx xxxxxxxxxx xxxx.
--   Xx xxxxxx xxx xxxxxxx, xxxx xxxx xxx xxx xxxxxx xxxxx xxxx xx xxx xxxxx xxx.
+-   hint-inputId = string
+-   The hint-inpudId attribute is required. It's specifically used for the quick reply scenario.
+-   The value needs to be the id of the input element desired to be associated with.
+-   In mobile and desktop, this will put the button right next to the input box.
 
-## <span id="Attributes_for_system-handled_actions">
-            </span>
-            <span id="attributes_for_system-handled_actions">
-            </span>
-            <span id="ATTRIBUTES_FOR_SYSTEM-HANDLED_ACTIONS">
-            </span>Xxxxxxxxxx xxx xxxxxx-xxxxxxx xxxxxxx
+## <span id="Attributes_for_system-handled_actions"></span><span id="attributes_for_system-handled_actions"></span><span id="ATTRIBUTES_FOR_SYSTEM-HANDLED_ACTIONS"></span>Attributes for system-handled actions
 
 
-Xxx xxxxxx xxx xxxxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxxxxx xxxxxxxxxxxxx xx xxx xxx'x xxxx xxxx xxx xx xxxxxx xxx xxxxxxxx/xxxxxxxxxxxx xx xxxxxxxxxxxxx xx x xxxxxxxxxx xxxx. Xxxxxx-xxxxxxx xxxxxxx xxx xx xxxxxxxx (xx xxxxxxxxxxxx xxxxxxxxx), xxx xx xxx'x xxxxxxxxx xxxxxxxxxxxx x xxxxxx xxxxxx xxxxxxx x xxxxxxx xxxxxx.
+The system can handle actions for snoozing and dismissing notifications if you don't want your app to handle the snoozing/rescheduling of notifications as a background task. System-handled actions can be combined (or individually specified), but we don't recommend implementing a snooze action without a dismiss action.
 
-Xxxxxx xxxxxxxx xxxxx: XxxxxxXxxXxxxxxx
+System commands combo: SnoozeAndDismiss
 
 ```
 <toast>
@@ -642,7 +596,7 @@ Xxxxxx xxxxxxxx xxxxx: XxxxxxXxxXxxxxxx
 </toast>
 ```
 
-Xxxxxxxxxx xxxxxx-xxxxxxx xxxxxxx
+Individual system-handled actions
 
 ```
 <toast>
@@ -663,27 +617,31 @@ Xxxxxxxxxx xxxxxx-xxxxxxx xxxxxxx
 </toast>
 ```
 
-Xx xxxxxxxxx xxxxxxxxxx xxxxxx xxx xxxxxxx xxxxxxx, xx xxx xxxxxxxxx:
+To construct individual snooze and dismiss actions, do the following:
 
--   Xxxxxxx xxxxxxxxxxXxxx = "xxxxxx"
--   Xxxxxxx xxxxxxxxx = "xxxxxx" | "xxxxxxx"
--   Xxxxxxx xxxxxxx:
-    -   Xx xxx xxxx xxxxxxxxx xxxxxxx xx "xxxxxx" xxx "xxxxxxx" xx xx xxxxxxxxx xx xxx xxxxxxx, xxxxxxx xxxxxxx xx xx xx xxxxx xxxxxx: &xx;xxxxxx xxxxxxx = ""/&xx;
-    -   Xx xxx xxxx x xxxxxxxxxx xxxxxx, xxxx xxxxxxx xxx xxxxx: &xx;xxxxxx xxxxxxx="Xxxxxx xx xxxxx" /&xx;
--   Xxxxxxx xxxxx:
-    -   Xx xxx xxx'x xxxx xxx xxxx xx xxxxxx x xxxxxx xxxxxxxx xxx xxxxxxx xxxx xxxx xxxx xxxxxxxxxxxx xx xxxxxx xxxx xxxx xxx x xxxxxx-xxxxxxx xxxx xxxxxxxx (xxxx xx xxxxxxxxxx xxxxxx xxx XX), xxxx xxx'x xxxxxxxxx xxx &xx;xxxxx&xx; xx xxx.
-    -   Xx xxx xxxx xx xxxxxxx xxxxxx xxxxxxxx xxxxxxxxxx:
-        -   Xxxxxxx xxxx-xxxxxXx xx xxx xxxxxx xxxxxx
-        -   Xxxxx xxx xx xx xxx xxxxx xxxx xxx xxxx-xxxxxXx xx xxx xxxxxx xxxxxx: &xx;xxxxx xx="xxxxxxXxxx"&xx;&xx;/xxxxx&xx;&xx;xxxxxx xxxx-xxxxxXx="xxxxxxXxxx"/&xx;
-        -   Xxxxxxx xxxxxxxxx xx xx xx x xxxXxxxxxxxXxxxxxx xxxxx xxxxxxxxxx xxxxxx xxxxxxxx xx xxxxxxx: &xx;xxxxxxxxx xx="YYY" /&xx; xxxxx xxxxxxxx xxx Y xxxxx
-        -   Xxxx xxxx xxxx xxx xxxxx xx xxxxxxxXxxxx xx &xx;xxxxx&xx; xxxxxxx xxxx xxx xx xxx xxx xx xxx &xx;xxxxxxxxx&xx; xxxxxxxx xxxxxxxx
-        -   Xxxxxxx xx xx (xxx xx xxxx xxxx) Y &xx;xxxxxxxxx&xx; xxxxxx
+-   Specify activationType = "system"
+-   Specify arguments = "snooze" | "dismiss"
+-   Specify content:
+    -   If you want localized strings of "snooze" and "dismiss" to be displayed on the actions, specify content to be an empty string: &lt;action content = ""/&gt;
+    -   If you want a customized string, just provide its value: &lt;action content="Remind me later" /&gt;
+-   Specify input:
+    -   If you don't want the user to select a snooze interval and instead just want your notification to snooze only once for a system-defined time interval (that is consistent across the OS), then don't construct any &lt;input&gt; at all.
+    -   If you want to provide snooze interval selections:
+        -   Specify hint-inputId in the snooze action
+        -   Match the id of the input with the hint-inputId of the snooze action: &lt;input id="snoozeTime"&gt;&lt;/input&gt;&lt;action hint-inputId="snoozeTime"/&gt;
+        -   Specify selection id to be a nonNegativeInteger which represents snooze interval in minutes: &lt;selection id="240" /&gt; means snoozing for 4 hours
+        -   Make sure that the value of defaultInput in &lt;input&gt; matches with one of the ids of the &lt;selection&gt; children elements
+        -   Provide up to (but no more than) 5 &lt;selection&gt; values
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

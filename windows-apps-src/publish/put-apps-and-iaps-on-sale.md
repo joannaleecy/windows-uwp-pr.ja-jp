@@ -1,65 +1,69 @@
 ---
-Xxxxxxxxxxx: Xxx xxx xxxxxxx xxxx xxx xx xx-xxx xxxxxxx (XXX) xx xxx Xxxxxxx Xxxxx xx xxxxxxx xx xx xxxx xxx x xxxxxxx xxxx.
-xxxxx: Xxx xxxx xxx XXXx xx xxxx
-xx.xxxxxxx: YYXXXYYY-YXXX-YXYY-XYXY-YXYYXYYYYYYY
+Description: You can promote your app or in-app product (IAP) in the Windows Store by putting it on sale for a limited time.
+title: Put apps and IAPs on sale
+ms.assetid: 71ABA960-0CDC-4E35-A1C8-1D34B6673817
 ---
 
-# Xxx xxxx xxx XXXx xx xxxx
+# Put apps and IAPs on sale
 
 
-Xxx xxx xxxxxxx xxxx xxx xx xx-xxx xxxxxxx (XXX) xx xxx Xxxxxxx Xxxxx xx xxxxxxx xx xx xxxx xxx x xxxxxxx xxxx.
+You can promote your app or in-app product (IAP) in the Windows Store by putting it on sale for a limited time.
 
-Xxxx xxx xxxxxxxx x xxxx xx xxxxxxxxxxx xxxxx xxx xxxxx xx xxxx xxx xx XXX, xxxxxxxxx xxxxxxx xxxx Xxxxx xxxxxxx xxxx xxx xxxx xxx xxxxx xxx xxxx xxxxxxx, xxx xxxx'xx xx xxxx xx xxxxxxxx xx xx xxx xxxxx xxxxx xxxxxx xxx xxxx xxxxxx xxxx xxx xxxx xxxxxxxx. Xx xxx xxxxx xxx xxxxx xx **Xxxx**, xxxx xxx xxxxxxxx xx xxxxxxx xxxxxx xx xxx xxxxxx xxx xxxx xxxxxx.
+When you schedule a sale to temporarily lower the price of your app or IAP, customers viewing your Store listing will see that the price has been reduced, and they'll be able to purchase it at the lower price during the time period that you have selected. If you lower the price to **Free**, they can download it without paying at all during the sale period.
 
-> **Xxxx**  Xxxx xxxxxxx xx xxxx xxxxx xx xxxx xxxxxxxxx xx Xxxxxxx YY. Xx xxxxx xxxxxxxxx xxxxxxx, xxxxxxxxx xxxx xxx xxx xxxxxxx xxxxx xxx xxxx xxx xx XXX. Xxx xxx xxxxxx xxxxxx x xxxxx xx xxxxxxxx x xxxxxxxxx xxxxx xxxx xx x xxx xxxxxxxxxx, xxx xx xxxx xxx xx xxxxxxxxx xx x xxxxxxx-xxxx xxxx.
+> **Note**  Sale pricing is only shown to your customers on Windows 10. On other operating systems, customers will see the regular price for your app or IAP. You can always change a price by choosing a different price tier in a new submission, but it will not be displayed as a limited-time sale.
 
-## Xxxxxxxxxx x xxxx
-
-
-Xxxxx xxx xxxxxxxxx xx xxxx xx xxx xxxxxxxxxx xxx xx xxx xx XXX. Xx xxx xxxx xx xxxxxxxx x xxxx xxx xx xxx xx XXX xxxx xxx xxxxxxx xxxx xxxxxxxxx, xxx'xx xxxx xx xxxxxx x xxx xxxxxxxxxx, xxxx xx xxxx xx xxx xxxx xxxxxx xxx xxxx xx xxxx.
-
-**Xx xxxxxxxx x xxxx**
-
-1.  Xx xxx **Xxxxxxx xxx xxxxxxxxxxxx** xxxx xx xx xx-xxxxxxxx xxx xx XXX xxxxxxxxxx, xx xx xxx **Xxxx xxxxxxx** xxxxxxx.
-2.  Xxxxx **Xxx xxxx**.
-3.  Xxxxx xxx xxxx xxx xxxx xxx xxx xxxxx xxx xxx xx xxx xxxx xxxxxx. Xxx xxxxx xxxxx xxx xx XXX.
-
-   > **Xxxx**  Xxx XXX xxxxx, xxx xxx'x xxxxxxxx xxxxx xxxx xxxxxxx xxxx xxxx xxxxx.
-
-4.  Xxxxxx xxxx xxxx xxxxx xxxx xxx xxxx-xxxx xxxx. Xxx xxx xxxx xxx xxxxx, xxxxxxxxx **Xxxx**.
-5.  Xx xxx'x xxxx xx xxxxx xxxxxx xxxxxx xxx xxxx xxxx, xxxxx **Xxxx xxxxxx xxxxxx xxxxxxx xxxxxxx**. Xxx xxx xxx xxxxxx xxxx xxxxxx xxx xxxxxx (xx xxxxxxx xxxxxxxx xxxxxxx xxxx xxx xxxx) xxxx. Xxx xxxx xxxx, xxx [Xxxxxx xxxxxxx xxx xxxxxx xxxxxxxxx](define-pricing-and-market-selection.md).
-
-    > **Xxxx**  Xxxxxx xxxxxxxxxx xxxx xxx xxxx xx xxx **Xxxx xxxxxxx** xxxxxxx xxxx xxx xxxxxx xxx xxxxxxx xx xxxxx xxx xxx xx xxxxxxx; xxxxx xxxxxxxxxx xxxx xxxxxxxxx xxxxxxx x xxxx xxxxx xx xxxxxxx, xxx xx xxxxx xxxxxxx. Xx xxx xxx xxxx xxxxxxx xxx x xxxxxx xx xxxxx xxxx xxx xx xxx xxxxxxxxx, xxxx xxx'x xxxxx xxx xxx xx xxxxxx xxxxxxxxx xx xxxx xxxxxx.
-
-6.  Xxxxx **Xxxx** xx xxxx xxx xxxxxxxxx xxxx.
-7.  Xxxxx **Xxxx** xx xxx xxxxxx xx xxx **Xxxxxxx xxx xxxxxxxxxxxx** xxxx, xxxx xxxxx **Xxxxxx xx xxx Xxxxx** xxxx xxx xxxxxxxxxx xxxxxxxx.
-
-> **Xxxx**  Xx'x xxxxxxxx xx xxxxxx x xxxxx xxxx xxxx xx xxxxxx xxxx xxxx xxx'x xxxx xxxxx. Xxxxxxx, xxxx xxxxxxx xxxx xxxx xx xxxxx xx xxxxxxxxx xx xxx xxxx xxxxx xx xxxxx xxxx xxx xxxxxxx xxxxx xx xxx xxx xx xxxx xxxxxx. Xxxxxxxxx x xxxxx xxxx xx xxxxxx xxxx xxxx xxx'x xxxx xxxxx xxxxx xx xxxxxxxxxxx xxx xxxx xxxx xx xxx'xx xxxxxxx xxx xxxxxx xxxxxx xx xxxxxxx xxxxxxx xxxx xxx xxxxxx xxxx xxxx xxx'x xxxx xxxxx, xxx xxx xxxx xx xxxxxxxxxxx xxxxx xxx xxxxx xx xxxxx xxxxxxx (xxx xxx xxxx xxxxx xx xxxxx xxxxxx xxxx xxx xxx'x xxxx xxxxx). Xx xxxx xxxxxxxxxx xxxxx xxxxxx xx xxx xxxxx xx xxx xxx xxxxx xxxxxx xx x xxxxxxx xxxxxx, xx xxx'x xxxx xxxx (xxxxxx) xxxxx xx xxxxxxxxx xx xxxx xxxxxx; xxxx xxxx xxxxxxxx xx xxx xxx xxx xx xxx xxxxxxxx (xxxxx) xxxxx. Xx'xx xxxx xxxx xxxxxxxxx xxx xxxxxx xxxxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxxx xxxxxxxxxxx xxxxx xxxx xxxxxxxxx xxxxxx.
-
-## Xxxxxxxx xx xxxxxxxxx x xxxxxxxxx xxxx
+## Scheduling a sale
 
 
-Xx xxxxxx xx xxxxxx x xxxx xxxx xxx'xx xxxxxxxxxx xxxxxxxxx xxx xx xxx xx XXX, xxx'xx xxxx xx xxxxxx x xxx xxxxxxxxxx xxx xxxxxx xx xx xxx Xxxxx.
+Sales are scheduled as part of the submission for an app or IAP. If you want to schedule a sale for an app or IAP that has already been published, you'll need to create a new submission, even if that is the only change you want to make.
 
-**Xx xxxx x xxxxxxxxx xxxx**
+**To schedule a sale**
 
-1.  Xx xxx **Xxxxxxx xxx xxxxxxxxxxxx** xxxx xx xx xx-xxxxxxxx xxx xx XXX xxxxxxxxxx, xx xx xxx **Xxxx xxxxxxx** xxxxxxx.
-2.  Xxxx xxx xxxx xxxx xxx xxxx xx xxxxxx, xxxx xxxxx xxx xxxxx xx xxxx xxx xxxx.
-3.  Xxxx xxxx xxxxxxx xxx xxxx xxxxx **Xxxx**.
-4.  Xxxxx **Xxxx** xx xxx xxxxxx xx xxx **Xxxxxxx xxx xxxxxxxxxxxx** xxxx, xxxx xxxxx **Xxxxxx xx xxx Xxxxx** xxxx xxx xxxxxxxxxx xxxxxxxx.
+1.  On the **Pricing and availability** page of an in-progress app or IAP submission, go to the **Sale pricing** section.
+2.  Click **New sale**.
+3.  Enter the date and time for the start and end of the sale period. The times shown are in UTC.
 
-Xxxxx xxxx xxxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxxxxxx xxxxxxx, xxx xxxxxxx xxxx xxxx xxxxxx (xxxx xx xxx xxxx xxx xxxxxxx xxxxxxx).
+   > **Note**  For IAP sales, you can't schedule sales that overlap with each other.
 
-> **Xxx**  Xxx xxx xxxxx x xxxxxxxxx xxxx xx x xxx xxxxxxxxxx xx xxxxxxx xxx xxxxx xxx xxx xxxxx. Xxxx xx xxxxxxxxxx xxxxxx xx xxx’xx xxxxxxxxxx x xxxx xxxx xxxxxxxxxxx xxxxxx xxxxxx xxxxxxx.
+4.  Choose your sale price from the drop-down list. You can pick any price, including **Free**.
+5.  If you'd like to enter custom prices for this sale, click **Show custom market pricing options**. You can set custom sale prices per market (or exclude specific markets from the sale) here. For more info, see [Define pricing and market selection](define-pricing-and-market-selection.md).
+
+    > **Note**  Market selections that you make in the **Sale pricing** section will not affect the markets in which the app is offered; these selections only determine whether a sale price is offered, and in which markets. If you set sale pricing for a market in which your app is not available, this won't cause the app to become available in that market.
+
+6.  Click **Done** to save the scheduled sale.
+7.  Click **Save** at the bottom of the **Pricing and availability** page, then click **Submit to the Store** from the submission overview.
+
+> **Note**  It's possible to select a price tier that is higher than your app's base price. However, sale pricing will only be shown to customers if the sale price is lower than the regular price of the app in that market. Selecting a price that is higher than your app's base price might be appropriate for your sale if you've already set custom prices in certain markets that are higher than your app's base price, and you want to temporarily lower the price in those markets (but the sale price is still higher than the app's base price). If your selections would result in the price of the app being raised in a certain market, we won't show that (higher) price to customers in that market; they will continue to see the app at its previous (lower) price. We'll also show customers the lowest price available if you schedule separate overlapping sales with different prices.
+
+## Changing or canceling a scheduled sale
+
+
+To revise or cancel a sale that you've previously scheduled for an app or IAP, you'll need to create a new submission and submit it to the Store.
+
+**To edit a scheduled sale**
+
+1.  On the **Pricing and availability** page of an in-progress app or IAP submission, go to the **Sale pricing** section.
+2.  Find the sale that you want to update, then click its price to edit the sale.
+3.  Make your changes and then click **Done**.
+4.  Click **Save** at the bottom of the **Pricing and availability** page, then click **Submit to the Store** from the submission overview.
+
+After your submission goes through the certification process, the changes will take effect (even if the sale had already started).
+
+> **Tip**  You can reuse a completed sale in a new submission by editing its start and end dates. This is especially useful if you’ve configured a sale with complicated custom market pricing.
  
-**Xx xxxxxx x xxxxxxxxx xxxx**
+**To cancel a scheduled sale**
 
-1.  Xx xxx **Xxxxxxx xxx xxxxxxxxxxxx** xxxx xx xx xx-xxxxxxxx xxx xx XXX xxxxxxxxxx, xx xx xxx **Xxxx xxxxxxx** xxxxxxx.
-2.  Xxxx xxx xxxx xxxx xxx xxxx xx xxxxxx xxx xxxxx **Xxxxxx** xx xxxxxx xx.
-3.  Xxxxx **Xxxx** xx xxx xxxxxx xx xxx **Xxxxxxx xxx xxxxxxxxxxxx** xxxx, xxxx xxxxx **Xxxxxx xx xxx Xxxxx** xxxx xxx xxxxxxxxxx xxxxxxxx.
+1.  On the **Pricing and availability** page of an in-progress app or IAP submission, go to the **Sale pricing** section.
+2.  Find the sale that you want to cancel and click **Delete** to remove it.
+3.  Click **Save** at the bottom of the **Pricing and availability** page, then click **Submit to the Store** from the submission overview.
 
-Xx xxxx xx xxx xxxx xxxx'x xxxxxxx xx xxx xxxx xxx xxxxxxxxxx xxxxxxxxx xxx xxxxxxxxxxxxx xxxxxxx, xxx xxxxxxx xxxx xxx'x xxx xx xxx. Xx xxx xxxxxx x xxxx xxxx xxx xxxxxxx xxxxx, xxx xxxx xxxx xxxxxx xx xxxxxxx xxxx xxxx **Xxxxxxx xxx xxxxxxxxxxxx** xxxx.
+As long as the sale hasn't started by the time the submission completes the certification process, the deleted sale won't run at all. If you delete a sale that has already ended, the sale will simply be removed from your **Pricing and availability** page.
 
-> **Xxxxxxxxx**   Xxxxx xxxxxxxxx xxx xxx xxx xxxxxxxxx xxx xxxx xxxx xxxxxxx xxxx xxx'x Xxxxx xxxxxxx, xx xxx'x xxxxxxxxx xxxxxxxx x xxxx xxxxx xx'x xxxxxxx. Xx xxx xxxxxx x xxxx xxxx xx xxxxxxx xx xxxxxxxx, xxx xxxx xxxx xxx xxxx xxx xxxxxxxxxx xxxxxxxxx xxx xxxxxxxxxxxxx xxxxxxx, xxxxx xxx xx xxxxxxxxxxx xx xxxx xxxxxxxxx xxxxxxxxx.
+> **Important**   Since customers can see the scheduled end date when viewing your app's Store listing, we don't recommend deleting a sale after it's started. If you delete a sale that is already in progress, the sale will end when the submission completes the certification process, which can be frustrating to your potential customers.
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

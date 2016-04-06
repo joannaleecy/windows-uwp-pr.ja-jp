@@ -1,27 +1,31 @@
 ---
-Xxxxxxxxxxx: Xx xxx xxx xxxxxxxx xx xxxx xxx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx, xxx xxxx x xxx xxxxxxx xxxxxxxxxxx XX xxx x xxxxx xx xxxxxxx xx xxxx xxx'x xxxx. Xxx xxx xxx xxxx xxxxx xx xxx Xxx Xxxxxx xxxxxxxxx xx xxx Xxxx xxxx xx xxx Xxxxxxxx xxxxxxx.
-xxxxx: Xxx xxx xxxxxxxx
-xx.xxxxxxx: XYXXYXYY-XYYX-YXYY-XYYX-XYYYXXYYXXXX
+Description: To use map services in apps for Windows Phone 8.1 and earlier, you need a map service application ID and a token to include in your app's code. You can get this token in the Dev Center dashboard on the Maps page in the Services section.
+title: Use map services
+ms.assetid: E5EE6B56-B86F-4D62-B16A-F023FE98EFAB
 ---
 
-# Xxx xxx xxxxxxxx
+# Use map services
 
 
-Xx xxx xxx xxxxxxxx xx xxxx xxx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx, xxx xxxx x xxx xxxxxxx xxxxxxxxxxx XX xxx x xxxxx xx xxxxxxx xx xxxx xxx'x xxxx. Xxx xxx xxx xxxx xxxxx xx xxx Xxx Xxxxxx xxxxxxxxx xx xxx **Xxxx** xxxx xx xxx **Xxxxxxxx** xxxxxxx.
+To use map services in apps for Windows Phone 8.1 and earlier, you need a map service application ID and a token to include in your app's code. You can get this token in the Dev Center dashboard on the **Maps** page in the **Services** section.
 
-> **Xxxx**  Xx xxx xxx xxxxxxxx xx xxxx xxxxxxxxx xxxxx xxxxxxxxx xxxxxxx, xxxxx xxx [Xxxx Xxxx Xxx Xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=614880). Xxx [Xxxxxxx x xxxx xxxxxxxxxxxxxx xxx](https://msdn.microsoft.com/library/windows/apps/mt219694) xxx xxxx xxxx.
+> **Note**  To use map services in apps targeting other operating systems, visit the [Bing Maps Dev Center](http://go.microsoft.com/fwlink/p/?LinkId=614880). See [Request a maps authentication key](https://msdn.microsoft.com/library/windows/apps/mt219694) for more info.
 
-Xxxx xxx'xx [xxxxxxxx xxxx xxx'x xxxx](create-your-app-by-reserving-a-name.md), xxxx xxx xxx **Xxxxxxxx** xxxxxxx xx xxx xxxx xxxxxxxxxx xxxx xxx xxxxxx xx xx xxxx xxx **Xxxx** xxxx. Xxxx xxx xxxxx **Xxx xxxxx**, xxx **XxxxxxxxxxxXX** xxx **XxxxxxxxxxxxxxXxxxx** xxxx xx xxxxxxxxx xxx xxxx xxxxxx xx xxxx xxxx.
+Once you've [reserved your app's name](create-your-app-by-reserving-a-name.md), look for the **Services** section in the left navigation menu and expand it to show the **Maps** page. When you click **Get token**, the **ApplicationID** and **AuthenticationToken** will be generated and will appear on this page.
 
-> **Xxxx**  Xxx xxx’x xxxx xx xxxxxx xxxxxxxxxx xxxx xxx xx xxxx xxxx. Xxxxx xxx xxxxxxx x xxxxx xxx XX, xxxx xxxx xxxx xx xxxxx xx xxxx xxxx. Xxx xxx xxxxxx xx xxxx xxxx xx xxx xxxx xx xxxxxx xxxx xxxx.
+> **Note**  You don’t have to finish submitting your app at this time. After you request a token and ID, this info will be saved on this page. You can return to this page at any time to access this info.
 
-Xxx'xx xxxx xxxx xx xxxx xxxx xx xxx xxx **XxxxxxxxxxxXX** xxx **XxxxxxxxxxxxxxXxxxx** xx xxxx xxxx xxxxxx xxx xxxxxxx xxx xxxxxx xxxx xxx. Xxx xxxx xxxx, xxx [Xxx xx xxx x Xxx xxxxxxx xx x xxxx (Xxxxxxx Xxxxx Y.Y)](http://go.microsoft.com/fwlink/p/?LinkId=614882).
+You'll also need to make sure to add the **ApplicationID** and **AuthenticationToken** to your code before you package and submit your app. For more info, see [How to add a Map control to a page (Windows Phone 8.1)](http://go.microsoft.com/fwlink/p/?LinkId=614882).
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

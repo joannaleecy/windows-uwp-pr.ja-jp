@@ -1,37 +1,41 @@
 ---
-xxxxxxxxxxx: Xx xxx xxxx x Xxxxxxx YY xxxxxxx xxxx xxx xxxxxxx xxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY XX, xxxx xxx xxxx xxx xxxxxxx xxxx xx xxxxx xx xxxxxxxx xxx xxxxxxx xxxxx xx xxx xxxxxx xxxxxxxx xxx Xxxxxx Xxxxxx YYYY XXX.
-xxxxx: Xxxxxx xxxx XXX Xxxxxxxxx Xxxxxx Xxxxxx YYYY XX xxxxxxx xx XXX
-xx.xxxxxxx: YYYXYYXX-YYXX-YXYX-XYYY-YYYXYYYXYYXX
+description: If you have a Windows 10 project that you created with Microsoft Visual Studio 2015 RC, then you have two options when it comes to updating the project files to the format suitable for Visual Studio 2015 RTM.
+title: Update your UWP Microsoft Visual Studio 2015 RC project to RTM
+ms.assetid: 104E36CE-36DE-4E9C-A944-711C200B44EF
 ---
 
-# Xxxxxx xxxx XXX Xxxxxxxxx Xxxxxx Xxxxxx YYYY XX xxxxxxx xx XXX
+# Update your UWP Microsoft Visual Studio 2015 RC project to RTM
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xx xxx xxxx x Xxxxxxx YY xxxxxxx xxxx xxx xxxxxxx xxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY XX, xxxx xxx xxxx xxx xxxxxxx xxxx xx xxxxx xx xxxxxxxx xxx xxxxxxx xxxxx xx xxx xxxxxx xxxxxxxx xxx Xxxxxx Xxxxxx YYYY XXX. Xxx xxxxxxxxxxx xxxxxx xx xx xxxxxx x xxx Xxxxxxx YY xxxxxxx xx Xxxxxx Xxxxxx YYYY XXX xxx xxxx xxxx xxxxx xxxx xx. Xxxxxxxxxxxxx, xxx xxx xxxxxx xxxxxxxx xxxxxxxxxxxxx xx xxxx xxxx xxxxxxxx xxxxxxx xxxxx xxx xxxx xxxx xxxx xx xxx xxx xxxxxx.
+If you have a Windows 10 project that you created with Microsoft Visual Studio 2015 RC, then you have two options when it comes to updating the project files to the format suitable for Visual Studio 2015 RTM. The recommended method is to create a new Windows 10 project in Visual Studio 2015 RTM and copy your files into it. Alternatively, you can follow advanced documentation to edit your existing project files and move them over to the new format.
 
-## Xxxx xxx xxx xxxx xxx xxxx x Xxxxxxx YYXxxxxx Xxxxxx YYYY XX xxxxxxx xx Xxxxxx Xxxxxx YYYY XXX
+## What you see when you open a Windows 10Visual Studio 2015 RC project in Visual Studio 2015 RTM
 
-Xxxx xxx xxxx x Xxxxxxx YYXxxxxx Xxxxxx YYYY XX xxxxxxx xx Xxxxxx Xxxxxx YYYY XXX, xxx'xx xxx xx "xxxxxx xxxxxxxx" xxxxxxx xx **Xxxxxxxx Xxxxxxxx**.
+When you open a Windows 10Visual Studio 2015 RC project in Visual Studio 2015 RTM, you'll see an "update required" message in **Solution Explorer**.
 
-![xxxxxx xxxxxxxx](images/vsrc-to-rtm/solution-explorer.png)
+![update required](images/vsrc-to-rtm/solution-explorer.png)
 
-Xx xxx xxxxxx xxx xxxxxxx xxxx xxx xxx xxxxxxx xx **Xxxxxxxx Xxxxxxxx** xxx xxxxxx **Xxxxxx Xxxxxxx**, xxxx xxx'xx xxx xxxx xxxxxx.
+If you access the context menu for the project in **Solution Explorer** and choose **Reload Project**, then you'll see this dialog.
 
-![xxxxxx xxxxxx xxxxxx xxxxxxxx](images/vsrc-to-rtm/reload-project.png)
+![visual studio update required](images/vsrc-to-rtm/reload-project.png)
 
-## Xxxxxx x xxx xxxxxxx xxx xxxx xxxxx xxxx xx
+## Create a new project and copy files into it
 
-1.  Xxxxxx Xxxxxx Xxxxxx YYYY XXX xxx xxxxxx x xxx Xxxxx Xxxxxxxxxxx (Xxxxxxx Xxxxxxxxx) xxxxxxx. Xxxxxxxx xxxx, xx xxxxxxx, xxxx xxx xxxxxxx xxxxxx xx xxx xxxxxxx (xx xxxx xxxx) xxxx xxxxxxx xxx Xxxxxxxxx xxxxxx xxxxxx. Xxxxxx xxxx xx xxx'xx xxxxxxxxx xxx xx xxxx xxxxxxxx xxxxxx xxxxxxxx.
-2.  Xx xxxx Xxxxxx Xxxxxx YYYY XX xxxxxxx, xxxxxxxx xxx xx xxx xxxxxx xxxx xxxxx xxx xxxxxx xxxxx xxxxx xxxx xxx xxxx xx xxxx xxxx. Xxxxx Xxxx Xxxxxxxx, xxxx xxxx xxxxxx, xxxx xxxxxx, xxxxxx xxxxxx, Xxxxxxxx Xxxxxxxxxxxx, xxxxxx xxxxxxxxx, xxx xxxxxxxx xxxx xxxx xxx xxxx (xxxxxxxxx XxxxxxxxXxxx.xx), xx xxxx xxx xxxxxxx. Xxxx xx xxxxxx xxx-xxxxxxx xx xxxx xx xxxxxxxxx.
-3.  Xxxx xxxxx (xxx xxxxxxx, XxxxXxxx.xxxx xxx XxxxXxxx.xxxx.xx) xxxx xxx xxx xxxxxxx, xxx. Xxxxx, xxxxxx xxx xxx-xxxxxxx xx xxxxxxxxx, xxx xxxxxx xxx xxxxxxxx xxxxx xxxx xxx xxxxxxx. Xxx, xxxxxx xxx xxxx-xxxxx xx xxxxxx x xxxx xxxx Xxxxxx Xxxxxx xxxxxxxxx, xxxx x xxxx xxxxxxx xx xxx xx xxxxxx xx xxxxx xx xx xxxxx.
-4.  Xx **Xxxxxxxx Xxxxxxxx**, xxxx xxxx **Xxxx Xxx Xxxxx** xx xxxxxxx xx. Xxxxxx xxx xxxxx xxxx xxx xxxxxx, xxxxx-xxxxx xxxx, xxx xxxxx **Xxxxxxx Xx Xxxxxxx**. Xxxx xxxx xxxxxxxxxxxxx xxxxxxx xxxxx xxxxxxxxxx xxxxxxx. Xxx xxx xxxx xxxxxx **Xxxx Xxx Xxxxx** xxx xx xxx xxxx. Xx xxxxxxxxxxx xxxxxxxx, xx xxx xxxxxx, xx xx xxx xxx **Xxx Xxxxxxxx Xxxx** xxxxxxx, xxxxxx xxxxxxx xxx xxxxxxxxx xxx-xxxxxxx xx xxx Xxxxxx Xxxxxx **Xxxxxxxx Xxxxxxxx**. Xxxxxx-xxxxx xxxx xxxx xxxxxx xxxxxx xxxx **Xxxxx Xxxxxx** xxx xx **Xxxxxxx** xxx **Xxxx xx Xxxxxx Xxxxxxxxx** xxx xx **Xx xxx xxxx**.
-5.  Xxx xxxxxxxxxx xx xxx xxxxxxxxx XXXx xxxx xxx xxxxxxxxxx xx xxxx XX xxxxxxx, xxx xxxx xxx xxxxxxx xxxx xxxx xxxx xxxxxxxx Xxxxxxx.xxxxxxxxxxxx (xxx xxxxxxx, xxx xxxxxxxxxxxx xxxx xxx xxxxxxxx) xx xxx xxx xx xxx xxx XXX xxxxxxx.
+1.  Launch Visual Studio 2015 RTM and create a new Blank Application (Windows Universal) project. Remember that, by default, your new project builds an app package (an appx file) that targets the Universal device family. Change that if you're targeting one or more specific device families.
+2.  In your Visual Studio 2015 RC project, identify all of the source code files and visual asset files that you want to copy over. Using File Explorer, copy data models, view models, visual assets, Resource Dictionaries, folder structure, and anything else that you need (including AssemblyInfo.cs), to your new project. Copy or create sub-folders on disk as necessary.
+3.  Copy views (for example, MainPage.xaml and MainPage.xaml.cs) into the new project, too. Again, create new sub-folders as necessary, and remove the existing views from the project. But, before you over-write or remove a view that Visual Studio generated, keep a copy because it may be useful to refer to it later.
+4.  In **Solution Explorer**, make sure **Show All Files** is toggled on. Select the files that you copied, right-click them, and click **Include In Project**. This will automatically include their containing folders. You can then toggle **Show All Files** off if you like. An alternative workflow, if you prefer, is to use the **Add Existing Item** command, having created any necessary sub-folders in the Visual Studio **Solution Explorer**. Double-check that your visual assets have **Build Action** set to **Content** and **Copy to Output Directory** set to **Do not copy**.
+5.  Add references to any extension SDKs that you referenced in your RC project, and copy any changes over from your previous Package.appxmanifest (for example, any capabilities that you declared) to the one in the new RTM project.
 
-## Xxxxxxxx: Xxxx xxxx xxxxxxxx xxxxxxx xxxxx
+## Advanced: Edit your existing project files
 
-Xxx xxxxxxxxxxx xxxxxxxxxx xxxxxxx xxx Xxxxxxx YY xxxxxxx xxxxxx xx Xxxxxx Xxxxxx YYYY XX xxx Xxxxxx Xxxxxx YYYY XXX xx xxxx xxx XXX xxxxxx xxxx [XxXxx](http://docs.nuget.org/) xxxxxxx Y. Xxxx xxxx xxxxxxxxxx xx xxxx xx xxx xxxxxx xx xxxxxxxx xxxxxx xxxx xxxxxxx.
+One significant difference between the Windows 10 project format of Visual Studio 2015 RC and Visual Studio 2015 RTM is that the RTM format uses [NuGet](http://docs.nuget.org/) version 3. Bear this difference in mind if you intend to manually update your project.
 
-Xx xxx xx xxxx xx xxxxxxxx xxxxxx xxxx xxxxxxx, xx xx xxx'xx xxxxxxxxxx xx xxxxxxx xxx xxxxxxxxxxx xxxxxxx xxx xxxxxxx xxxxxxx xx Xxxxxx Xxxxxx YYYY XX xxx Xxxxxx Xxxxxx YYYY XXX, xxxx xxx [Xxxxxxx xxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX)](http://msdn.microsoft.com/library/mt148501.aspx).
+If you do want to manually update your project, or if you're interested in knowing the differences between the project formats of Visual Studio 2015 RC and Visual Studio 2015 RTM, then see [Migrate apps to the Universal Windows Platform (UWP)](http://msdn.microsoft.com/library/mt148501.aspx).
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

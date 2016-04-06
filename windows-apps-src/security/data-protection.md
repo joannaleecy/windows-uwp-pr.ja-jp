@@ -1,29 +1,30 @@
 ---
-xxxxx: Xxxx xxxxxxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xxx xx xxx xxx XxxxXxxxxxxxxxXxxxxxxx xxxxx xx xxx Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxxx.XxxxXxxxxxxxxx xxxxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxxx xxxx xx x XXX xxx.
-xx.xxxxxxx: YXXYXXYY-YXYY-YYYY-XXYX-YXYYXXXYXYYY
+title: Data protection
+description: This article explains how to use the DataProtectionProvider class in the Windows.Security.Cryptography.DataProtection namespace to encrypt and decrypt digital data in a UWP app.
+ms.assetid: 9EE3CC45-5C44-4196-BD8B-1D64EFC5C509
+author: awkoren
 ---
 
-# Xxxx xxxxxxxxxx
+# Data protection
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx xxxxxxx xxxxxxxx xxx xx xxx xxx [**XxxxXxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241559) xxxxx xx xxx [**Xxxxxxx.Xxxxxxxx.Xxxxxxxxxxxx.XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241585) xxxxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxxx xxxx xx x XXX xxx.
+This article explains how to use the [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) class in the [**Windows.Security.Cryptography.DataProtection**](https://msdn.microsoft.com/library/windows/apps/br241585) namespace to encrypt and decrypt digital data in a UWP app.
 
-Xxx xxx xxx xxx xxxx xxxxxxxxxx XXXx xx xxxxxxxx xxxx:
+You can use the data protection APIs in multiple ways:
 
--   Xx xxxxxxx xxxx xx xx Xxxxxx Xxxxxxxxx (XX) xxxxxxxx xxxxxxxxx xxxx xx XX xxxxx. Xxx xxxxxx xx xxx xxxxx xxx xxxxxxx xxx xxxx.
--   Xx xxxxxxx xxxx xx xxx xxxxxx xxx xxxxxxxxx xx xx X.YYY xxxxxxxxxxx. Xxx xxxxx xx xxx xxxxxxx xxx xxx xxxxxxx xxx xxxx.
--   Xx xxxxxxx xxxx xx xxxxx x xxxxxxxxx xxx. Xxxx xxxxx, xxx xxxxxxx, xx xxxxxxx xxxx xx x xxx-XX xxxxxxxxx xxxx xx Xxxx XX.
--   Xx xxxxxxx xxxx xx xxx xxxxxxxxxxx (xxxxxxxx) xxxx xxxxxx xxxxx xx x xxxxxxx.
+-   To protect data to an Active Directory (AD) security principal like an AD group. Any member of the group can decrypt the data.
+-   To protect data to the public key contained in an X.509 certificate. The owner of the private key can decrypt the data.
+-   To protect data by using a symmetric key. This works, for example, to protect data to a non-AD principal such as Live ID.
+-   To protect data to the credentials (password) used during logon to a website.
 
-Xx xxxxxxx xxxx, xxxx xxx xxxxxx x [**XxxxXxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241559) xxxxxx xxx xxxx xxxxxxx x xxxxxxxxxx xxxxxxxxxx xxxxxx xxxxxxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241563) xx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241564). Xxx xxxxxxxxx xxxxxxx xxxxx xxxxxxxx xxxxxx xxxxxxxxxx xxxxxxxxxxx.
+To protect data, when you create a [**DataProtectionProvider**](https://msdn.microsoft.com/library/windows/apps/br241559) object you must specify a protection descriptor before calling [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) or [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564). The following example shows possible sample protection descriptors.
 
-## Xxxxxxxxxx xxxxxx xxxx
+## Protecting static data
 
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xx xxx xxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241563) xxx [**XxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241565) xxxxxxx xx xxxxxxxxxxxxxx xxxxxxx xxxxxx xxxx xx xxx xxxxxxx xxxx'x XXX.
+The following example shows how to use the [**ProtectAsync**](https://msdn.microsoft.com/library/windows/apps/br241563) and [**UnprotectAsync**](https://msdn.microsoft.com/library/windows/apps/br241565) methods to asynchronously protect static data to the current user's SID.
 
 ```cs
 using Windows.Security.Cryptography;
@@ -105,10 +106,10 @@ namespace SampleProtectAsync
 }
 ```
 
-## Xxxxxxxxxx xxxxxx xxxx
+## Protecting stream data
 
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xx xxx xxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241564) xxx [**XxxxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241566) xxxxxxx xx xxxxxxxxxxxxxx xxxxxxx xxxxxx xxxx xx xxx xxxxxxx xxxx'x XXX.
+The following example shows how to use the [**ProtectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241564) and [**UnprotectStreamAsync**](https://msdn.microsoft.com/library/windows/apps/br241566) methods to asynchronously protect stream data to the current user's SID.
 
 ```cs
 using Windows.Security.Cryptography;
@@ -258,11 +259,6 @@ namespace SampleProtectStreamAsync
 }
 ```
 
- 
-
- 
+<!--HONumber=Mar16_HO5-->
 
 
-
-
-<!--HONumber=Mar16_HO1-->

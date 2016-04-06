@@ -1,88 +1,91 @@
 ---
-xx.xxxxxxx: XYYYYXXX-YYYX-YYXX-YYYY-XXYYYYYXYYXX
-xxxxx: Xxxxxxxx xxxxxxx/xxxxxx
-xxxxxxxxxxx: Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxxxxxx xxxxx xxx xx xxx xxxxxxx xxxxxxxx xxxxxx xx xxxxxx xxxxxxxxxxx xxxxx xxxxxxxxxx xx xxxxxxxxxxx.
+ms.assetid: E1943DCE-833F-48AE-8402-CD48765B24FC
+title: Optimize suspend/resume
+description: Create Universal Windows Platform (UWP) apps that streamline their use of the process lifetime system to resume efficiently after suspension or termination.
 ---
-# Xxxxxxxx xxxxxxx/xxxxxx
+# Optimize suspend/resume
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxxxxxx xxxxx xxx xx xxx xxxxxxx xxxxxxxx xxxxxx xx xxxxxx xxxxxxxxxxx xxxxx xxxxxxxxxx xx xxxxxxxxxxx.
+Create Universal Windows Platform (UWP) apps that streamline their use of the process lifetime system to resume efficiently after suspension or termination.
 
-## Xxxxxx
+## Launch
 
-Xxxx xxxxxxxxxxxx xx xxx xxxxxxxxx xxxxxxx/xxxxxxxxx, xxxxx xx xxx xx x xxxx xxxx xxx xxxxxxx. Xx xx, xxxxxxxx xxxxxxxxx xx xxx xxxx xxxxxxx xxxx xx xxx xxx xxxxxxx xx xxxxxxx xxx xxxx xxxxx xxxx. Xxxx xxxx xxxx xxxxxx xx xxxxxx xxxxxxx.
+When reactivating an app following suspend/terminate, check to see if a long time has elapsed. If so, consider returning to the main landing page of the app instead of showing the user stale data. This will also result in faster startup.
 
-Xxxxxx xxxxxxxxxx, xxxxxx xxxxx xxx XxxxxxxxXxxxxxxxxXxxxx xx xxx xxxxx xxxx xxxxxxxxx (xxx xxxxxxx, xxx xxxxxxxx xxxxxxxxxxx xxxxx XxxxxxXxxxxxxxxXxxxxXxxx.XxxxxxxxXxxxxxxxxXxxxx). Xx xxx xxxxx xx XxxxxxXxXxxx xx XxxXxxxxxx, xxx’x xxxxx xxxx xxxxxxxxx xxxxxxxxxx xxxxx xxxxx. Xx xxxx xxxx, xxx xxxxx xxxxx xx xx xxxxxxx x xxxxx xxxxxxxxxx – xxx xx xxxx xxxxxx xx xxxxxx xxxxxxx.
+During activation, always check the PreviousExecutionState of the event args parameter (for example, for launched activations check LaunchActivatedEventArgs.PreviousExecutionState). If the value is ClosedByUser or NotRunning, don’t waste time restoring previously saved state. In this case, the right thing is to provide a fresh experience – and it will result in faster startup.
 
-Xxxxxxx xx xxxxxxx xxxxxxxxx xxxxxxxxxx xxxxx xxxxx, xxxxxxxx xxxx xxxxx xx xxxx xxxxx, xxx xxxx xxxxxxxxx xx xx xxxxxx. Xxx xxxxxxx, xxxxxxxx x xxxxxxxxx xxxxx xxxx xxx xxx xxxxxxxxxx xxxxxxxxx, xxxxx xxxxx xxx Y xxxxx, xxx xxx xxxx xxxxxxxxxx. Xxxx xxxxxxxx, xx xxx xxxxxx xx xxxxxx xxx xxxx xx xxx Yxx xxxx, xx xxx xxxxxxx xxxxxxx xxx xxxxx xxx xxx xxxxx Y xxxxx. Xxxxxxx, xxxx xx xx xxxx xxxxx xxx xxxx xxx xx xxxx xxx xxxx xxx xxxx xx.
+Instead of eagerly restoring previously saved state, consider keep track of that state, and only restoring it on demand. For example, consider a situation where your app was previously suspended, saved state for 3 pages, and was then terminated. Upon relaunch, if you decide to return the user to the 3rd page, do not eagerly restore the state for the first 2 pages. Instead, hold on to this state and only use it once you know you need it.
 
-## Xxxxx xxxxxxx
+## While running
 
-Xx x xxxx xxxxxxxx, xxx’x xxxx xxx xxx xxxxxxx xxxxx xxx xxxx xxxxxxx x xxxxx xxxxxx xx xxxxx. Xxxxxxx, xxxx xxxxxxxxxxx xxxxxx xxxxxxxxxxxxx xxxxxxx xxxxxxx xxxxxxx xx xxxxx xx xx xxxx. Xxxx xx xxxxxxxxxx xxxxxxxxx xxx xxxxx xxxx xxxx xxx xx xxxx xx xxxxxxx xxx xx xxxx xxxxxx xxxxxxx xx xxxx xxx xx xxxx xxxxxxxxxx xx xxxx.
+As a best practice, don’t wait for the suspend event and then persist a large amount of state. Instead, your application should incrementally persist smaller amounts of state as it runs. This is especially important for large apps that are at risk of running out of time during suspend if they try to save everything at once.
 
-Xxxxxxx, xxx xxxx xx xxxx x xxxx xxxxxxx xxxxxxx xxxxxxxxxxx xxxxxx xxx xxxxxxxxxxx xx xxxx xxx xxxxx xxxxxxx. X xxxx xxxxxxxx xx xx xxxxxxxxxxxxx xxxx xxxxx xx xxx xxxx xxxx xxx xxxxxxx (xxx xxxxxxxxx xxxxx xx xx xxxxx) – xxx xxx xxx xxxxxxx xxxxx xx xxxxxxxx xxxx xxxx xxxx (xxxxx xx xxxxxx xxxx xxxxxx xxx xxxx xx xxxxxxxxx xxx xxxxxx xxxxx xx xxx xx xxxxxx xxxx xx xxxx).
+However, you need to find a good balance between incremental saving and performance of your app while running. A good tradeoff is to incrementally keep track of the data that has changed (and therefore needs to be saved) – and use the suspend event to actually save that data (which is faster than saving all data or examining the entire state of app to decide what to save).
 
-Xxx’x xxx xxx xxxxxx Xxxxxxxxx xx XxxxxxxxxxXxxxxxx xxxxxx xx xxxxxx xxxx xx xxxx xxxxx. Xxxx xxx xxxx xxxxxxxx xxxx xxxx xxxx xxx, xxx xxxxxx xx xxxxxxxxxxx, xxx xxx xxxxxx xxxxx x xxxxx xxxxxx xx xxxx (xxxxx YY xxxxxxx) xxxxxx xxxxxxxxxx xxx xxx. Xxxx xx xx xxxx x xxxx xxxxxxxxxx xxxxxxxxxx xx xxxx xxx xxxx xxxxxxxx xxxx xx xxxx xxx xxxxxxx. Xxxx xxx xxx xxxxxxx xxxxx xxxxxx xxxxxxx xxxxxxx xxxxx.
+Don’t use the window Activated or VisibilityChanged events to decide when to save state. When the user switches away from your app, the window is deactivated, but the system waits a short amount of time (about 10 seconds) before suspending the app. This is to give a more responsive experience in case the user switches back to your app rapidly. Wait for the suspend event before running suspend logic.
 
-## Xxxxxxx
+## Suspend
 
-Xxxxxx xxxxxxx, xxxxxx xxx xxxxxxxxx xx xxxx xxx. Xx xxxx xxx xxxx xxxx xxxxxx xxxxx xxxxxxxxx, xxx xxxxxxx xxxxxx xxxx xx xxxx xxxxxxxxxx xxx xxxxx xxxxxxxxx xxxx (xxxxxxxxx xxxxx) xxxx xx xxxxxxxxxx. Xxxxxxx, xxxxxxx xxxx xxxx xxx xxxx xxx xxxxxx xxxxxxx: xxx’x xxxxxx xxxxxxxxx xx xxxx xxxx xxxxxx xxxxx xxxx xxxxxxxxxxxx xxxxx xxxx xxx xxxxxxx xxxx xx xxxx xxxx xxxxxx.
+During suspend, reduce the footprint of your app. If your app uses less memory while suspended, the overall system will be more responsive and fewer suspended apps (including yours) will be terminated. However, balance this with the need for snappy resumes: don’t reduce footprint so much that resume slows down considerably while your app reloads lots of data into memory.
 
-Xxx xxxxxxx xxxx, xxx xxxxxx xxxx xxx x xxxxxxx xxxxxxxxxx xxxx xxxxx xxx xxx’x xxxxxxx xxxxxxxx xxxxxxxx. Xxxx xxxx xx xxxx xxxxxxxxx xx xxxx xx xxxxxxxxx xxxxxxxxxx xx xxxxxxx xxxx xxxx xxxx xxxxxx xxx xxx’x xxxxxxxxx xxxxx xxxxxxxxx.
+For managed apps, the system will run a garbage collection pass after the app’s suspend handlers complete. Make sure to take advantage of this by releasing references to objects that will help reduce the app’s footprint while suspended.
 
-Xxxxxxx, xxxx xxx xxxx xxxxxx xxxx xxxxxxx xxxxx xx xxxx xxxx Y xxxxxx. Xxx xxxxxx xxx xxx xxxxxxx, xxx xxxxxx – xxxx xxxx xxxxxx xx x xxxxxxxx xxxx xxxxxxxxxx xxx xxxxx xxxx xxx xxxxx xx xxx xxxxxx. Xx xxx xxxx, xxxx xxxxxxx xxxxx xxx xxxx xx xx Y xxxxxxx xx xxxxxxx xxxxxxx xx YY xxxxxxx xx xxxxxx xxxxxxx. Xx xxxxx xxxxx xxx xxxxxxxx, xxxx xxx xxxx xx xxxxxxxx xxxxxxxxxx. Xxx xxx’x xxxx xxxx xx xxxxxx – xxxxxxx xx xx xxxx, xxxx xxx xxxx xxxxxxxx xxxx xx xxxx xxx, x xxx xxxxxxx xxxx xx xxxxxxxx xxx xxx xxxxxxxxxx xxxx xxxx xxxx xxxxxx xxxxxxxx xx xxxxxxxx x xxxxxxxxx xxx.
+Ideally, your app will finish with suspend logic in less than 1 second. The faster you can suspend, the better – that will result in a snappier user experience for other apps and parts of the system. If you must, your suspend logic can take up to 5 seconds on desktop devices or 10 seconds on mobile devices. If those times are exceeded, your app will be abruptly terminated. You don’t want this to happen – because if it does, when the user switches back to your app, a new process will be launched and the experience will feel much slower compared to resuming a suspended app.
 
-## Xxxxxx
+## Resume
 
-Xxxx xxxx xxx’x xxxx xx xx xxxxxxxx xxxxxxx xxxx xxxxxxx, xx xxxxxxxxx xxx xxx’x xxxxxx xxxx xxxxx. Xxxx xxxx xxx xxxxxx xx xxxxxxx xxxxxxxxxxx xxxx xxxx xxxxxx xxxxxx xxxxxxx, xx xx xxxxxxx xxxx xxxx xxx xx xxxxx. Xxxxxxx xx xxxxx xxxx xxxx xx xxxx xxxxxxx, xxxxxx xxxx xxx xx xxxxxxxx xxxxx xxxxxxxxxx xx xxxxxx. Xxxx xxxx xxxxxx xx x xxxxxx xxxxxxxxxx xxxx xxx xxxx xxxxxxxx xxxx xx x xxxxxxxxx xxx, xxx xxxxxxx xxxx xxx’xx xxxx xxxxx xxxx xxx xxxx xxxxxx xxxxx.
+Most apps don’t need to do anything special when resumed, so typically you won’t handle this event. Some apps use resume to restore connections that were closed during suspend, or to refresh data that may be stale. Instead of doing this kind of work eagerly, design your app to initiate these activities on demand. This will result in a faster experience when the user switches back to a suspended app, and ensures that you’re only doing work the user really needs.
 
-## Xxxxx xxxxxxxxxxx xxxxxxxxxxx
+## Avoid unnecessary termination
 
-Xxx XXX xxxxxxx xxxxxxxx xxxxxx xxx xxxxxxx xx xxxxxxxxx xx xxx xxx x xxxxxxx xx xxxxxxx. Xxxx xxxxxxx xx xxxxxxxx xx xxxxxxx xxxxxx xx xxx xx xxx xxxxx xx xxx xx xxxxxx xx xxx xxxxxxxxx xx xxxxxxxxxx. Xxxx xxxx xxxx, xxx xxxx xxx’x xx xxxxx xxxx xxx xxx xxxx xxxxxxx xxxxxxx. Xxxx xxx x xxx xxxxxx xxxx xxxx XXX xxx xxx xxx xx xxxx xxx xxxxxx xxxxxxxxxx xxxxxxxxxxx xx xx xxx’x xxxxxxxx.
+The UWP process lifetime system can suspend or terminate an app for a variety of reasons. This process is designed to quickly return an app to the state it was in before it was suspended or terminated. When done well, the user won’t be aware that the app ever stopped running. Here are a few tricks that your UWP app can use to help the system streamline transitions in an app’s lifetime.
 
-Xx xxx xxx xx xxxxxxxxx xxxx xxx xxxx xxxxx xx xx xxx xxxxxxxxxx xx xxxx xxx xxxxxx xxxxxx x xxx xxxxx xxxxx. Xxxx xxx xxx xx xxxxx xxxxxxxxx, xx xxxxxx xxx xxxxxxxxxx xxxxx xxx xxx xx xx Y xxxxxxx xx xxxx xxx xxxx. Xx xxx xxx'x xxxxxxxxxx xxxxx xxxxxxx xxxxx'x xxxxxxxx xxxxxx Y xxxxxxx, xxx xxxxxx xxxxxxx xxx xxx xxx xxxxxxx xxxxxxxxxx xxx xxxxxxxxxx xx. X xxxxxxxxxx xxx xxx xx xx xxxxxxx xxx xxxx xxxxxxx xxxxxxx xxxxx xxxxxxx xx xxxxx xxxxxxxxxxx xxxxxx xxxx xxxxxx xxxx x xxxx xxxxxxxx xx xx.
+An app can be suspended when the user moves it to the background or when the system enters a low power state. When the app is being suspended, it raises the suspending event and has up to 5 seconds to save its data. If the app's suspending event handler doesn't complete within 5 seconds, the system assumes the app has stopped responding and terminates it. A terminated app has to go through the long startup process again instead of being immediately loaded into memory when a user switches to it.
 
-### Xxxxxxxxx xxxx xxxx xxxxxxxxx
+### Serialize only when necessary
 
-Xxxx xxxx xxxxxxxxx xxx xxxxx xxxx xx xxxxxxxxxx. Xx xxx xxxx xxxx xx xxxxx x xxxxx xxxxxx xx xxx xxxxxxxx xxxx, xxxxxxx, xxx xxxxxx xxx xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR241622) xxxxx xxxxxxx xx xxxxxxxxxxx xxx xxxx. Xxx xxxxxxxxxxxxx xxx xxxxxx xxxxxxx xx xxxx xxx xxx xxx-xxxxxxxx xxxx.
+Many apps serialize all their data on suspension. If you only need to store a small amount of app settings data, however, you should use the [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622) store instead of serializing the data. Use serialization for larger amounts of data and for non-settings data.
 
-Xxxx xxx xx xxxxxxxxx xxxx xxxx, xxx xxxxxx xxxxx xxxxxxxxxxxxx xx xx xxxx'x xxxxxxx. Xx xxxxx xxxxx xxxx xx xxxxxxxxx xxx xxxx xxx xxxx, xxxx xxxxx xxxx xx xxxx xxx xxxxxxxxxxx xx xxxx xxx xxx xx xxxxxxxxx xxxxx. Xxxxxxx, xx xxxxxxxxx xxxx xxx xxx xxxxxxxxx xx xxx xxxxx xxx xxxxxxxx xxxxxxx, xxx xx xx, xxxxxxxxx xxx xxxxxxxxxxx xxxx xxx xxxx xxxx xxxxxxx. X xxxx xxx xx xxxxxx xxxx xxxx xxxxxxx xx xx xxxxxxxxxxxx xxxxxxxxx xxxx xx xxx xxxxxxxxxx xxxxx xx xxxxxxx. Xxxx xxx xxx xxxx xxxxxxxxx, xxxxxxxxxx xxxx xxxxx xx xx xxxxxxxxxx xx xxxxxxxxxx xxx xxxxxxx xxxx xxxxx xx xxxxx xx xx xxxx xx xx xxx xx xxx xxxxxxxx xxxxxxx.
+When you do serialize your data, you should avoid reserializing if it hasn't changed. It takes extra time to serialize and save the data, plus extra time to read and deserialize it when the app is activated again. Instead, we recommend that the app determine if its state has actually changed, and if so, serialize and deserialize only the data that changed. A good way to ensure that this happens is to periodically serialize data in the background after it changes. When you use this technique, everything that needs to be serialized at suspension has already been saved so there is no work to do and an app suspends quickly.
 
-### Xxxxxxxxxxx xxxx xx X# xxx Xxxxxx Xxxxx
+### Serializing data in C# and Visual Basic
 
-Xxx xxxxxxxxx xxxxxxx xx xxxxxxxxxxxxx xxxxxxxxxx xxx .XXX xxxx xxx xxx [**Xxxxxx.Xxx.Xxxxxxxxxxxxx.XxxXxxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx), [**Xxxxxx.Xxxxxxx.Xxxxxxxxxxxxx.XxxxXxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx), xxx [**Xxxxxx.Xxxxxxx.Xxxxxxxxxxxxx.Xxxx.XxxxXxxxxxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.json.datacontractjsonserializer.aspx) xxxxxxx.
+The available choices of serialization technology for .NET apps are the [**System.Xml.Serialization.XmlSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx), [**System.Runtime.Serialization.DataContractSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx), and [**System.Runtime.Serialization.Json.DataContractJsonSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.json.datacontractjsonserializer.aspx) classes.
 
-Xxxx x xxxxxxxxxxx xxxxxxxxxxx, xx xxxxxxxxx xxxxx xxx [**XxxXxxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx) xxxxx. Xxx **XxxXxxxxxxxxx** xxx xxx xxxxxx xxxxxxxxxxxxx xxx xxxxxxxxxxxxxxx xxxxx, xxx xxxxxxxxx x xxx xxxxxx xxxxxxxxx. Xxx **XxxXxxxxxxxxx** xxx xxx xxxxxxxxxxxx xx xxx .XXX xxxxxxxxx; xxxx xxxxx xxxx xxxxxxxx xxxx xxx xxxxx xxxxxxxxxxxxx xxxxxxxxxxxx, xxxxx xxxxxxx xxxx xx xx xxxxxx xxxx xxxx xxx xx xxx xxx **XxxXxxxxxxxxx**.
+From a performance perspective, we recommend using the [**XmlSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.xml.serialization.xmlserializer.aspx) class. The **XmlSerializer** has the lowest serialization and deserialization times, and maintains a low memory footprint. The **XmlSerializer** has few dependencies on the .NET framework; this means that compared with the other serialization technologies, fewer modules need to be loaded into your app to use the **XmlSerializer**.
 
-[
-            **XxxxXxxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) xxxxx xx xxxxxx xx xxxxxxxxx xxxxxx xxxxxxx, xxxxxxxx xx xxx x xxxxxx xxxxxxxxxxx xxxxxx xxxx **XxxXxxxxxxxxx**. Xx xxx xxxx xxxxxx xxxxxxxxxxx, xxxxxxxx xxxxxxxxx. Xx xxxxxxx, xxx xxxxxx xxx xxxx xxxx xxxx xxx xxxxxxxxxx, xxx xxx xxxxxx xxxxxx **XxxXxxxxxxxxx** xxxxxx xxx xxxx xxx xxxxxxxx xx xxxxxxx xxxxxxxxxx.
+[**DataContractSerializer**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.runtime.serialization.datacontractserializer.aspx) makes it easier to serialize custom classes, although it has a larger performance impact than **XmlSerializer**. If you need better performance, consider switching. In general, you should not load more than one serializer, and you should prefer **XmlSerializer** unless you need the features of another serializer.
 
-### Xxxxxx xxxxxx xxxxxxxxx
+### Reduce memory footprint
 
-Xxx xxxxxx xxxxx xx xxxx xx xxxx xxxxxxxxx xxxx xx xxxxxx xx xxxxxxxx xx xxxx xxxxx xxx xxxxxxx xxx xxxxxxxx xxxxxx xxxxxxx xxxx. Xxxx xx xxx xx xxxxxxxxx xxx xxxxx xx xxx xxxxxx'x xxxxxx, xx xxx xxxxxxx xx xxxxxxx xx xxx xxxxxxxxxx xxx xxx xxxx xx xxxxxxxx xxxx, xxxxxxx xxxxxx xx xxxxxxx x xxxxxx xxxxxx xx xxxxxxx x xxxxxxx xxxx xxxxxxxxx. Xx xxxxx xxxx'x xxxxxx xxxxxxxxx xx xxxx xx xxx xx xxxxxx, xxx xxx xx xxxxxxxxxx. Xxxx xxxxx xxxxxx xxxxxxxxxx xxxxxxxxx xxx xxx xxxxxxx:
+The system tries to keep as many suspended apps in memory as possible so that users can quickly and reliably switch between them. When an app is suspended and stays in the system's memory, it can quickly be brought to the foreground for the user to interact with, without having to display a splash screen or perform a lengthy load operation. If there aren't enough resources to keep an app in memory, the app is terminated. This makes memory management important for two reasons:
 
--   Xxxxxxx xx xxxx xxxxxx xx xxxxxxxx xx xxxxxxxxxx xxxxxxxxx xxx xxxxxxx xxxx xxxx xxx xx xxxxxxxxxx xxxxxxx xx xxxx xx xxxxxxxxx xxxxx xx’x xxxxxxxxx.
--   Xxxxxxxx xxx xxxxxxx xxxxxx xx xxxxxx xxxx xxx xxxx xxxxxxx xxx xxxxxxx xxxx xxxxx xxxx xxx xxxxxxxxxx xxxxx xxxx xxx xxxxxxxxx.
+-   Freeing as much memory as possible at suspension minimizes the chances that your app is terminated because of lack of resources while it’s suspended.
+-   Reducing the overall amount of memory your app uses reduces the chances that other apps are terminated while they are suspended.
 
-### Xxxxxxx xxxxxxxxx
+### Release resources
 
-Xxxxxxx xxxxxxx, xxxx xx xxxxx xxx xxxxxxx, xxxxxx x xxxxx xxxxxx xx xxxxxx. Xx xxxxxxxxx xxxx xxxxxx xxxxxxxxxx, xx xxx xxxxxxx xxxxxxx xx xxxxx xxxxxxx xxx xxxxxxxx xxxx xxxx xxxxxx. Xxxx xx xxxx x xxxx xxxx xx xxxxx xxx xxxxxx xxxx xxx’x xx xxxxx xxxx xxx xxx xx xxxxxxx. Xx xxxxxxxxxx xxxx xxx XXXX xxxxxxxxx xxxx xx xxxx xxxxxx xxx X# xxx Xxxxxx Xxxxx xxxx xx xxxxxxx xxxxxxxxxx xx xx xx xxxxxxxxx. Xxxx xxxxxxx xxx xxxxxxx xx xxxxxx xxxxxxxxxx xx xxx xxxx xxx xxxxxxxx.
+Certain objects, such as files and devices, occupy a large amount of memory. We recommend that during suspension, an app release handles to these objects and recreate them when needed. This is also a good time to purge any caches that won’t be valid when the app is resumed. An additional step the XAML framework runs on your behalf for C# and Visual Basic apps is garbage collection if it is necessary. This ensures any objects no longer referenced in app code are released.
 
-## Xxxxxx xxxxxxx
+## Resume quickly
 
-X xxxxxxxxx xxx xxx xx xxxxxxx xxxx xxx xxxx xxxxx xx xx xxx xxxxxxxxxx xx xxxx xxx xxxxxx xxxxx xxx xx x xxx xxxxx xxxxx. Xxxx xx xxx xx xxxxxxx xxxx xxx xxxxxxxxx xxxxx, xx xxxxxxxxx xxxx xxxxx xx xxx xxxx xx xxx xxxxxxxxx. Xx xxx xxxx xx xxxx xxxxxxx xx xxx xxxxxx xx xxxxxx, xxxx xx xxx xxx xxx xxxxxxxxx xxx x xxxx xxxxxx xx xxxx.
+A suspended app can be resumed when the user moves it to the foreground or when the system comes out of a low power state. When an app is resumed from the suspended state, it continues from where it was when it was suspended. No app data is lost because it was stored in memory, even if the app was suspended for a long period of time.
 
-Xxxx xxxx xxx'x xxxx xx xxxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR205859) xxxxx. Xxxx xxxx xxx xx xxxxxxx, xxxxxxxxx xxx xxxxxxx xxxx xxx xxxxx xxxx xxxxx xxxx xxx xxxx xxx xxx xxx xxxxxxxxx. Xxxxxx xxx **Xxxxxxxx** xxxxx xxxx xx xxx xxxx xx xxxxxx xxxx xx xxxxxxx xxxx xxxxx xxxx xxxxxxx xxxxxxx xxx xxxx xxxx xxx xxx xxxxxxxxx xxx xxxx xx xxx xxxxxxx xxxx xx: xxxxxxx (xxx xxxxxxx, xxxxxx xxxx xxxx), xxxxxxx xxxxxxxxxxx xxxx xxx xxxx xxxx xxxxx, xx xx xxx xxxx xx xxxxxxxxx xxxxxx xx x xxxxxx (xxx xxxxxxx, x xxxxxx).
+Most apps don't need to handle the [**Resuming**](https://msdn.microsoft.com/library/windows/apps/BR205859) event. When your app is resumed, variables and objects have the exact same state they had when the app was suspended. Handle the **Resuming** event only if you need to update data or objects that might have changed between the time your app was suspended and when it was resumed such as: content (for example, update feed data), network connections that may have gone stale, or if you need to reacquire access to a device (for example, a webcam).
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxxxxx xxx xxx xxxxxxx xxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/Hh465088)
+* [Guidelines for app suspend and resume](https://msdn.microsoft.com/library/windows/apps/Hh465088)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

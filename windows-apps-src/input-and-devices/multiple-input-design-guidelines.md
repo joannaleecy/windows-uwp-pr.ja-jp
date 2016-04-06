@@ -1,64 +1,48 @@
 ---
-Xxxxxxxxxxx: Xxxx xx xxxxxx xxx x xxxxxxxxxxx xx xxxxx xxx xxxxxxx xxxx xxxxxxxxxxxxx xxxx xxxx xxxxx, xxxxxxxx xxxxx xxx xxxxx xx xxxxx xxx xxxx xx xxxxxx xxxx xxxxxxxxxxx xxxx xx xxx.
-xxxxx: Xxxxxxxx xxxxxx xxxxxx xxxxxxxxxx
-xx.xxxxxxx: YYXXYYYY-YYYX-YYYX-XYYY-XYYXXYYXYXYY
-xxxxx: Xxxxxxxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Just as people use a combination of voice and gesture when communicating with each other, multiple types and modes of input can also be useful when interacting with an app.
+title: Multiple inputs design guidelines
+ms.assetid: 03EB5388-080F-467C-B272-C92BE00F2C69
+label: Multiple inputs
+template: detail.hbs
 ---
 
-# Xxxxxxxx xxxxxx
+# Multiple inputs
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxx xx xxxxxx xxx x xxxxxxxxxxx xx xxxxx xxx xxxxxxx xxxx xxxxxxxxxxxxx xxxx xxxx xxxxx, xxxxxxxx xxxxx xxx xxxxx xx xxxxx xxx xxxx xx xxxxxx xxxx xxxxxxxxxxx xxxx xx xxx.
+Just as people use a combination of voice and gesture when communicating with each other, multiple types and modes of input can also be useful when interacting with an app.
 
 
-Xx xxxxxxxxxxx xx xxxx xxxxx xxx xxxxxxx xx xxxxxxxx, xx xxxxxxxxx xxxx xxx xxxxxx xxxx xxxx xx xxxx xxxx xx xxxx xxxxx xxxxx xx xxxxxxxx (xxxxxxx, xxxxxx, xxxxx, xxxxxxxx, xxxxx, xxx xxxxxxxx). Xxxxx xx xxxx xxxxxxxx xxxxxxxxxxx, xxxxxxxxx, xxx xxxxxxxxxxxxx.
+To accommodate as many users and devices as possible, we recommend that you design your apps to work with as many input types as possible (gesture, speech, touch, touchpad, mouse, and keyboard). Doing so will maximize flexibility, usability, and accessibility.
 
-Xx xxxxx, xxxxxxxx xxx xxxxxxx xxxxxxxxx xx xxxxx xxxx xxx xxxxxxx xxxxx. Xxx xx xx xxxxxxxxxx xxxxxxxxxx xxxx xxx, xxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx xxxxxxx xxxxx-xx xxxxxxx xxx xxxxxxxx xxxxx xxxxx.
+To begin, consider the various scenarios in which your app handles input. Try to be consistent throughout your app, and remember that the platform controls provide built-in support for multiple input types.
 
--   Xxx xxxxx xxxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxx xxxxxxxx xxxxx xxxxxxx?
--   Xxx xxx xxxxx xxxxxxx xxxxxxxxx xx xxx xxxxx? Xxxx xxxxxxx xxxxxxxx? Xx xxxxxxxx xxxxx xx xxxxxxxxxxxxx?
--   Xxxx xxx xxxxx xxxxxx xxxx xxxxxxxx?
+-   Can users interact with the application through multiple input devices?
+-   Are all input methods supported at all times? With certain controls? At specific times or circumstances?
+-   Does one input method take priority?
 
-## <span id="Single__or_exclusive_-mode_interactions_">
-            </span>
-            <span id="single__or_exclusive_-mode_interactions_">
-            </span>
-            <span id="SINGLE__OR_EXCLUSIVE_-MODE_INTERACTIONS_">
-            </span>Xxxxxx (xx xxxxxxxxx)-xxxx xxxxxxxxxxxx
+## <span id="Single__or_exclusive_-mode_interactions_"></span><span id="single__or_exclusive_-mode_interactions_"></span><span id="SINGLE__OR_EXCLUSIVE_-MODE_INTERACTIONS_"></span>Single (or exclusive)-mode interactions
 
 
-Xxxx xxxxxx-xxxx xxxxxxxxxxxx, xxxxxxxx xxxxx xxxxx xxx xxxxxxxxx, xxx xxxx xxx xxx xx xxxx xxx xxxxxx. Xxx xxxxxxx, xxxxxx xxxxxxxxxxx xxx xxxxxxxx, xxx xxxxxxxx xxx xxxxxxxxxx; xx, xxxx xxxxx xxxxx xxxxx xx xxxxxxxx, xxxxxxxxx xx xxxxxxxxx.
+With single-mode interactions, multiple input types are supported, but only one can be used per action. For example, speech recognition for commands, and gestures for navigation; or, text entry using touch or gestures, depending on proximity.
 
-## <span id="Multimodal_interactions">
-            </span>
-            <span id="multimodal_interactions">
-            </span>
-            <span id="MULTIMODAL_INTERACTIONS">
-            </span>Xxxxxxxxxx xxxxxxxxxxxx
+## <span id="Multimodal_interactions"></span><span id="multimodal_interactions"></span><span id="MULTIMODAL_INTERACTIONS"></span>Multimodal interactions
 
 
-Xxxx xxxxxxxxxx xxxxxxxxxxxx, xxxxxxxx xxxxx xxxxxxx xx xxxxxxxx xxx xxxx xx xxxxxxxx x xxxxxx xxxxxx.
+With multimodal interactions, multiple input methods in sequence are used to complete a single action.
 
-<span id="Speech___gesture">
-            </span>
-            <span id="speech___gesture">
-            </span>
-            <span id="SPEECH___GESTURE">
-            </span>Xxxxxx + xxxxxxx  
-Xxx xxxx xxxxxx xx x xxxxxxx, xxx xxxx xxxx “Xxx xx xxxx.”
+<span id="Speech___gesture"></span><span id="speech___gesture"></span><span id="SPEECH___GESTURE"></span>Speech + gesture  
+The user points to a product, and then says “Add to cart.”
 
-<span id="Speech___touch">
-            </span>
-            <span id="speech___touch">
-            </span>
-            <span id="SPEECH___TOUCH">
-            </span>Xxxxxx + xxxxx  
-Xxx xxxx xxxxxxx x xxxxx xxxxx xxxxx xxx xxxx, xxx xxxx xxxx “Xxxx xxxxx.”
+<span id="Speech___touch"></span><span id="speech___touch"></span><span id="SPEECH___TOUCH"></span>Speech + touch  
+The user selects a photo using press and hold, and then says “Send photo.”
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

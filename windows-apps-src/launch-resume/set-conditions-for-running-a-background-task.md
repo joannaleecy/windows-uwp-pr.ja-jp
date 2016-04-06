@@ -1,41 +1,41 @@
 ---
-xxxxx: Xxx xxxxxxxxxx xxx xxxxxxx x xxxxxxxxxx xxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxx xxxxxxxxxx xxxx xxxxxxx xxxx xxxx xxxxxxxxxx xxxx xxxx xxx.
-xx.xxxxxxx: YYXXXXYX-XXYX-YYXX-XYYX-YYYXXYXXYYYY
+title: Set conditions for running a background task
+description: Learn how to set conditions that control when your background task will run.
+ms.assetid: 10ABAC9F-AA8C-41AC-A29D-871CD9AD9471
 ---
 
-# Xxx xxxxxxxxxx xxx xxxxxxx x xxxxxxxxxx xxxx
+# Set conditions for running a background task
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224834)
--   [**XxxxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224835)
--   [**XxxxxxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834)
+-   [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835)
+-   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
 
-Xxxxx xxx xx xxx xxxxxxxxxx xxxx xxxxxxx xxxx xxxx xxxxxxxxxx xxxx xxxx xxx.
+Learn how to set conditions that control when your background task will run.
 
-Xxxxxxxxx, xxxxxxxxxx xxxxx xxxxxxx xxxxxxx xxxxxxxxxx xx xx xxx, xx xxxxxxxx xx xxx xxxxx xxxx xxxxxxxx xxx xxxx, xx xxxx xxx xxxxxxxxxx xxxx xxx xxxxxxx. Xxx xxx xxxxxxx xxx xx xxxx xx xxx xxxxxxxxxx xxxxxxxxx xx [**XxxxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224835) xxxx xxxxxxxxxxx xxxx xxxxxxxxxx xxxx. Xxx xxxxxxxxx xxxx xx xxxxxxx xxxxx xxx xxxxxxx xxx xxxx xxxxx; xxx xxxxxxxxxx xxxx xxxx xx xxxxxx, xxx xx xxxx xxx xxx xxxxx xxx xxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxxx.
+Sometimes, background tasks require certain conditions to be met, in addition to the event that triggers the task, so that the background task can succeed. You can specify one or more of the conditions specified by [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) when registering your background task. The condition will be checked after the trigger has been fired; the background task will be queued, but it will not run until all the required conditions are satisfied.
 
-Xxxxxxx xxxxxxxxxx xx xxxxxxxxxx xxxxx xxxxx xxxxxxx xxxx xxx XXX xxxxxxx xx xxxxxxxxxx xxxxx xxxx xxxxxxx xxxxxxxxxxxxx. Xxx xxxxxxx, xx xxxx xxxxxxxxxx xxxx xxxx xx x xxxxx xxx xxxxxxxx Xxxxxxxx xxxxxxxxxxxx, xxx xxx **XxxxxxxxXxxxxxxxx** xxxxxxxxx xx xxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768) xxxxxx xxxxxxxxxxx xxx xxxx. Xxxx xxxx xxxx xxxxxxx xxx xxxx xxxx xxxxx xxxxxx xxxxxxxxx xxx xxxxxxx xxxx xxxxxxxxxxxxx xx xxxxxxx xx xxx xxxx xxx xxxxx xxx xxxxxxx xxx xxx Xxxxxxxx xx xxxxxxxxx.
+Putting conditions on background tasks saves battery life and CPU runtime by preventing tasks from running unnecessarily. For example, if your background task runs on a timer and requires Internet connectivity, add the **InternetAvailable** condition to the [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) before registering the task. This will help prevent the task from using system resources and battery life unnecessarily by letting it run when the timer has elapsed and the Internet is available.
 
-**Xxxx**  Xx xx xxxxxxxx xx xxxxxxx xxxxxxxx xxxxxxxxxx xx xxxxxxx XxxXxxxxxxxx xxxxxxxx xxxxx xx xxx xxxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768). Xxxx xxxx xxx xx xxx xxxxxxxxxxx xxxxxxxxxx, xxxx xx **XxxxXxxxxxx** xxx **XxxxXxxXxxxxxx**.
+**Note**  It is possible to combine multiple conditions by calling AddCondition multiple times on the same [**TaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768). Take care not to add conflicting conditions, such as **UserPresent** and **UserNotPresent**.
 
  
 
-## Xxxxxx x XxxxxxXxxxxxxxx xxxxxx
+## Create a SystemCondition object
 
 
-Xxxx xxxxx xxxxxxx xxxx xxx xxxx x xxxxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxxx xxxx xxx, xxx xxxx xxxx xxx xxxxxxx xxxxxxxx xxxx xxxx xxxxxxx x [**XxxxxxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768) xxxxxx xxxxx **xxxxXxxxxxx**
+This topic assumes that you have a background task already associated with your app, and that your app already includes code that creates a [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object named **taskBuilder**
 
-Xxxxxx xxxxxx xxx xxxxxxxxx, xxxxxx x [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224834) xxxxxx xxxxxxxxxxxx xxx xxxxxxxxx xxxx xxxx xx xx xxxxxx xxx x xxxxxxxxxx xxxx xx xxx. Xx xxx xxxxxxxxxxx, xxxxxxx xxx xxxxxxxxx xxxx xxxx xx xxx xx xxxxxxxxx x [**XxxxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224835) xxxxxxxxxxx xxxxx.
+Before adding the condition, create a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object representing the condition that must be in effect for a background task to run. In the constructor, specify the condition that must be met by providing a [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) enumeration value.
 
-Xxx xxxxxxxxx xxxx xxxxxxx x [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224834) xxxxxx xxxxxxxxxx Xxxxxxxx xxxxxxxxxxxx xx xxx xxxxxxxxxxx xxxxxxxxxxx:
+The following code creates a [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object specifying Internet availability as the conditional requirement:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 > SystemCondition internetCondition = new SystemCondition(SystemConditionType.InternetAvailable);
 > ```
@@ -43,14 +43,14 @@ Xxx xxxxxxxxx xxxx xxxxxxx x [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/li
 > SystemCondition ^ internetCondition = ref new SystemCondition(SystemConditionType::InternetAvailable);
 > ```
 
-## Xxx xxx XxxxxxXxxxxxxxx xxxxxx xx xxxx xxxxxxxxxx xxxx
+## Add the SystemCondition object to your background task
 
 
-Xx xxx xxx xxxxxxxxx, xxxx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224769) xxxxxx xx xxx [**XxxxxxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768) xxxxxx, xxx xxxx xx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224834) xxxxxx.
+To add the condition, call the [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) method on the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object, and pass it the [**SystemCondition**](https://msdn.microsoft.com/library/windows/apps/br224834) object.
 
-Xxx xxxxxxxxx xxxx xxxxxxxxx xxx XxxxxxxxXxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxx xxxx xxx XxxxXxxxxxx:
+The following code registers the InternetAvailable background task condition with the TaskBuilder:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 > taskBuilder.AddCondition(internetCondition);
 > ```
@@ -58,14 +58,14 @@ Xxx xxxxxxxxx xxxx xxxxxxxxx xxx XxxxxxxxXxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxx xxx
 > taskBuilder->AddCondition(internetCondition);
 > ```
 
-## Xxxxxxxx xxxx xxxxxxxxxx xxxx
+## Register your background task
 
 
-Xxx xxx xxx xxxxxxxx xxxx xxxxxxxxxx xxxx xxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224772) xxxxxx, xxx xxx xxxx xxxx xxx xxxxx xxxxx xxx xxxxxxxxx xxxxxxxxx xx xxx.
+Now you can register your background task with the [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method, and the task will not start until the specified condition is met.
 
-Xxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxx xxx xxxxxx xxx xxxxxxxxx XxxxxxxxxxXxxxXxxxxxxxxxxx xxxxxx:
+The following code registers the task and stores the resulting BackgroundTaskRegistration object:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 > BackgroundTaskRegistration task = taskBuilder.Register();
 > ```
@@ -73,22 +73,22 @@ Xxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxx xxx xxxxxx xxx xxxxxxxxx XxxxxxxxxxXxxxXxx
 > BackgroundTaskRegistration ^ task = taskBuilder->Register();
 > ```
 
-> **Xxxx**  Xxxxxxxxx Xxxxxxx xxxx xxxx xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700485) xxxxxx xxxxxxxxxxx xxx xx xxx xxxxxxxxxx xxxxxxx xxxxx.
+> **Note**  Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
 
-Xx xxxxxx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxx xxx xxxxxxx xx xxxxxx, xxx xxxx xxxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700471) xxx xxxx xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700485) xxxx xxxx xxx xxxxxxxx xxxxx xxxxx xxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxxxxx xxxxx](guidelines-for-background-tasks.md).
+To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
-> **Xxxx**  Xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xx xxx xxxx xx xxxxxxxxxxxx. Xx xxxxx xx xxxxxxxx xx xxx xx xxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxxx. Xxxxxx xxxx xxxx xxx xxxxxxxxxx xxxxxxx xxxxxxxxx xxxxx xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxx - xx xxxxxxx xxxx xxx xxxxxxx xx xxxxxx x xxxxx xxxxxxxxxxxx xxxxxx xxxxx xxxxxxxxxx xx xxxxxxxx x xxxx, xx xxx xxxxx.
+> **Note**  Background task registration parameters are validated at the time of registration. An error is returned if any of the registration parameters are invalid. Ensure that your app gracefully handles scenarios where background task registration fails - if instead your app depends on having a valid registration object after attempting to register a task, it may crash.
 
-## Xxxxx xxxxxxxx xxxxxxxxxx xx xxxx xxxxxxxxxx xxxx
+## Place multiple conditions on your background task
 
-Xx xxx xxxxxxxx xxxxxxxxxx, xxxx xxx xxxxx xxxxxxxx xxxxx xx xxx [**XxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224769) xxxxxx. Xxxxx xxxxx xxxx xxxx xxxxxx xxxx xxxxxxxxxxxx xx xx xxxxxxxxx.
+To add multiple conditions, your app makes multiple calls to the [**AddCondition**](https://msdn.microsoft.com/library/windows/apps/br224769) method. These calls must come before task registration to be effective.
 
-> **Xxxx**  Xxxx xxxx xxx xx xxx xxxxxxxxxxx xxxxxxxxxx xx x xxxxxxxxxx xxxx.
+> **Note**  Take care not to add conflicting conditions to a background task.
  
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxxxxxxx xxxxxxxxxx xx xxx xxxxxxx xx xxxxxxxx xxx xxxxxxxxxxx x xxxxxxxxxx xxxx:
+The following snippet shows multiple conditions in the context of creating and registering a background task:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```cs
 > // 
 > // Set up the background task.
@@ -184,4 +184,8 @@ Xxx xxxxxxxxx xxxxxxx xxxxx xxxxxxxx xxxxxxxxxx xx xxx xxxxxxx xx xxxxxxxx xxx x
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

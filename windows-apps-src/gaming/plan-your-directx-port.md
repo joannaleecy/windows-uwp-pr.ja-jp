@@ -1,63 +1,67 @@
 ---
-xxxxx: Xxxx xxxx XxxxxxX xxxx
-xxxxxxxxxxx: Xxxx xxxx xxxx xxxxxxx xxxxxxx xxxx XxxxxxX Y xx XxxxxxX YY xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX)-- xxxxxxx xxxx xxxxxxxx xxxx, xxx xxx xxxx xxxx xx xxx Xxxxxxx Xxxxxxx xxxxxxxxxxx.
-xx.xxxxxxx: YxYxYYxx-YxYY-xxYY-YYxY-YxYxYxxYYYYY
+title: Plan your DirectX port
+description: Plan your game porting project from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP)-- upgrade your graphics code, and put your game in the Windows Runtime environment.
+ms.assetid: 3c0c33ca-5d15-ae12-33f8-9b5d8da08155
 ---
 
-# Xxxx xxxx XxxxxxX xxxx
+# Plan your DirectX port
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Xxxxxxx**
+**Summary**
 
--   Xxxx xxxx XxxxxxX xxxx
--   [Xxxxxxxxx xxxxxxx xxxx XxxxxxYX Y xx XxxxxxYX YY](understand-direct3d-11-1-concepts.md)
--   [Xxxxxxx xxxxxxx](feature-mapping.md)
-
-
-Xxxx xxxx xxxx xxxxxxx xxxxxxx xxxx XxxxxxX Y xx XxxxxxX YY xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX): xxxxxxx xxxx xxxxxxxx xxxx, xxx xxx xxxx xxxx xx xxx Xxxxxxx Xxxxxxx xxxxxxxxxxx.
-
-## Xxxx xx xxxx xxxxxxxx xxxx
+-   Plan your DirectX port
+-   [Important changes from Direct3D 9 to Direct3D 11](understand-direct3d-11-1-concepts.md)
+-   [Feature mapping](feature-mapping.md)
 
 
-Xxxxxx xxx xxxxx xxxxxxx xxxx xxxx xx XXX, xx'x xxxxxxxxx xx xxxxxx xxxx xxxx xxxx xxxx xxx xxxx xxx xxxxxxxxx xxxx XxxxxxYX Y. Xxxxxx xxxx xxxx xxxx xxxxx'x xxxx xxx xxxxxxxx xx xxx xxxxx xxxxxxxx xxxxxxxx. Xxx x xxxxxxxx xxxx xx xxxxxxxxxx xxxxxxxx, xxxxxxxxx xxxxx xxxxxxxx xxxxxxxxxxxxx, xxx [Xxxxxxxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/cc308047).
+Plan your game porting project from DirectX 9 to DirectX 11 and Universal Windows Platform (UWP): upgrade your graphics code, and put your game in the Windows Runtime environment.
 
-Xxxxxxxxx xxxx XxxxxxYX Y xx XxxxxxYX YY xx xxxx xxxx x xxxxxx-xxx-xxxxxxx xxxxxx. Xxx xxxx xx xxxx xxx xxxxxxxxxx xxxxxxx xxx XxxxxxYX xxxxxx, xxxxxx xxxxxxx, xxx xxxxxxxx xxxxxxxxxxxxxx, xxx xxxxx xxxxx xxxxx xxxxxxxxx xxxxxxx xxxxx XxxxxxYX Y. Xxx xxx xxxxx xxxx xxxxxxx xx xxxxxxx xxx xxxxx xxxxxx xx xxxx xxxxxxx.
-
-Xxx xxxx xxxxxxx xxx XYXX xxx XXXX xxxxxx xxxxxxxxx xxxx xxxx xxx xxxxxx xxxxxxxxx, xx xxxx xxxxxxxxx xxxxx. Xxx xxx [Xxxxxxx xxxxxxx](feature-mapping.md) xxxxxxx xxx xxxx xxxx.
-
-> **Xxxx**   Xxx xxx xxx xxx [XxxxxxX Xxxx Xxx](http://go.microsoft.com/fwlink/p/?LinkID=248929) xx [XxxxxxXXxx](http://go.microsoft.com/fwlink/p/?LinkID=248926) xx xxxxxxx xxxx xxxxxxxxxxxxx xxxx xxx xxxxxxxx xxxxxxxx xx XYXX xxx XXXX.
-
- 
-
-Xxxxxxx xxxxxxx xx xxxxxxxx xxxxxxxx xxxxxx xx xxxxxxxx xx XXXX xxxxx xxxxxx xxxxx Y xxxxx Y\_Y xx Y\_Y xxxxxxxxxxxxx, xxx xxxxxxx xxxxxxx xxx xxx Xxxxxxx xxxxxxx xxxx xxxx xx xx xxxxxxx xx x xxxx xxxxxx xxxxxxx xx XXXX xxxxxx. Xxx xxx [Xxxxxxx xxxxxxx](feature-mapping.md) xxxxxxx xxx xxxx xxxx.
-
-Xxx xxxxxxxx xxxx xxx xxxxxxxxx [XxxxxxYX xxxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/desktop/ff476876). Xxxxxxx xxxxxx xxxxxxxx x xxxx xxxxx xx xxxxx xxxxxxxx xx xxxxxxxx xxxx xx xxxxx xxxxxxxxxxxxx. Xxxx xxx xxxxxxx xxxxxxxxxxx xx xxxxxxxx xx XxxxxxYX, xxxx Y.Y xxxxxxx YY.Y. Xxx xxxxxxx xxxxxx xxx xxx XxxxxxX YY XXX.
-
-## Xxxx xx xxxx XxxYY XX xxxx xx XxxxXxxxxx
+## Plan to port graphics code
 
 
-XXX xxxx xxx xx x xxxxxx xxxxxxx xxx xx xxx xxxxxxxxx, xxxxxx x [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208225). Xxxx xxxx xxxxxxxx xxx xxxxxx xx xxxxxxxxxx xxxx [**XXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700478), xxxxx xxxxxxxx xxxx xxxxxxxxxxxxxx xxxxxxx xxxx x xxxxxxx xxxxxx. Xxxx xxxx'x xxxx xxxx xxxx xx xx xxx [**XXxxxxxxxxXxxx::Xxx**](https://msdn.microsoft.com/library/windows/apps/hh700505) xxxxxx.
+Before you begin porting your game to UWP, it's important to ensure that your game does not have any holdovers from Direct3D 8. Ensure that your game doesn't have any remnants of the fixed function pipeline. For a complete list of deprecated features, including fixed pipeline functionality, see [Deprecated Features](https://msdn.microsoft.com/library/windows/desktop/cc308047).
 
-Xxx xxxxxxxxx xx x XXX xxx xx xxxx xxxxxxxxx xxxx x xxxxxxx xxx. Xxx'xx xxxx xx xxxx xxx xxxx xxxxx, xxxxxxx xxxx x xxxxxxx xxxxx xxxxxxx xxxx xxx xxxx xxx x xxxxxxx xxxxxx xx xxxx xx xxxx xxxxxxx xxxx, xxx xxx xxxx xx xxxx xxxx xxx xxxxxx xxx xxx xxxx xx xxxxx xxxx xxxx xxxxx xxxx xxxx xxxx xxx xxxxxxx. Xxxxx xxxxxx xxxx xxxx xxxxx xxxxxx xx xxxxxxxx x xxxxxxxxxx xxxxxxxx xxxxxxxxxx xxxx xxxxxx, xxx xxx xx xxxxx xxxx xxx xxxx xxxxx xxxxxx xxxxxxxxx xx xxxxx xxx xxxx xx xxxxxxx. Xxxx xxxx xxxx xxxxxxxxxxx xxxx xx xxxx xxxx xxxxx xxxx xxx xxxx xxxxxxx xxxx x xxxxxxxxxx xxxxx.
+Upgrading from Direct3D 9 to Direct3D 11 is more than a search-and-replace change. You need to know the difference between the Direct3D device, device context, and graphics infrastructure, and learn about other important changes since Direct3D 9. You can start this process by reading the other topics in this section.
 
-[XxxxxxXXxxx](https://msdn.microsoft.com/library/windows/desktop/ee415571) xxx xx xxxx xx x xxxxxxxxxxx xxx XYXXXxxx xxx XXXXxxx, xxx xx xxx xxxx xx xxxxx xx xxx xxxx x xxxx xxxxxxx. XxxxxxXXxxx xxx xxxx, xxxxxxxx xxxx xxxxx, xxx xxxxx xxxx xxx xxxxxxx xxx xxxxxx xxx xxx xxxx xxxxxxx.
+You must replace the D3DX and DXUT helper libraries with your own helper libraries, or with community tools. See the [Feature mapping](feature-mapping.md) section for more info.
 
-Xxxxxx xxxxxxxxx xxxx xx xxx [Xxxxxxxxxxx XXX](https://msdn.microsoft.com/library/windows/desktop/dd405529) xxxx xxxx xxxxxxxx xx xxxxxxx XXX xxxxxxxxxx. Xx xxxx xxxx xxxx xxxxxxxxxxx XXXx, xxx xxx xxxx xxxxx xxxx xx XxxxxxX YY xxx XXX.
-
-Xxx xxxxxxxxx xxx xxxx xxxxxxx xxx xxx X++ xxxxxxxx xxxx xxx xxxxx xxx xx xxxxxxxx xxxx xxx. Xxx xxxxxxx, xxxxxxxxxxxx xxxxxxx xxx xxxx xxxx [**xxxxxx xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dd293608.aspx) xx xxxx XxxxxxYX xxxxxxxxx xxxxxxx xxxxxxxx xxx XX xxxxxx.
-
-Xxxxx xxx xxx xxxxxxxx xxx'xx xxx xxxxx:
-
--   Xxxxxxx xxxxxxxxxx ([**^**]xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYxxYY.xxxx) xxx [**xxxxxxx xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (xxx xxxxxxx) xxx x xxxxxxxxxxx xxxx xx xxx Xxxxxxx Xxxxxxx. Xxx xxxx xxxx xx xxx xxxxxxx xxx xxxxxxx xx xxxxxxxxx xxxx Xxxxxxx Xxxxxxx xxxxxxxxxx, xxx xxxxxxx [**XXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/hh700478) (xxxx xx xxxx xx xxx xxxxxxxxxxx).
--   Xxxx xxxxxxx xxxx XxxxxxYX YY XXX xxxxxxxxxx, xxx xxx [**Xxxxxxxxx::XXX::XxxXxx**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) xxxxxxxx xxxx xx xxxx XXX xxxxxxxx xxxxxx xx xxx.
+> **Note**   You can use the [DirectX Tool Kit](http://go.microsoft.com/fwlink/p/?LinkID=248929) or [DirectXTex](http://go.microsoft.com/fwlink/p/?LinkID=248926) to replace some functionality that was formerly provided by D3DX and DXUT.
 
  
 
+Shaders written in assembly language should be upgraded to HLSL using shader model 4 level 9\_1 or 9\_3 functionality, and shaders written for the Effects library will need to be updated to a more recent version of HLSL syntax. See the [Feature mapping](feature-mapping.md) section for more info.
+
+Get familiar with the different [Direct3D feature levels](https://msdn.microsoft.com/library/windows/desktop/ff476876). Feature levels classify a wide range of video hardware by defining sets of known functionality. Each set roughly corresponds to versions of Direct3D, from 9.1 through 11.2. All feature levels use the DirectX 11 API.
+
+## Plan to port Win32 UI code to CoreWindow
+
+
+UWP apps run in a window created for an app container, called a [**CoreWindow**](https://msdn.microsoft.com/library/windows/apps/br208225). Your game controls the window by inheriting from [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478), which requires less implementation details than a desktop window. Your game's main loop will be in the [**IFrameworkView::Run**](https://msdn.microsoft.com/library/windows/apps/hh700505) method.
+
+The lifecycle of a UWP app is very different from a desktop app. You'll need to save the game often, because when a suspend event happens your app only has a limited amount of time to stop running code, and you want to make sure the player can get back to where they were right away when your app resumes. Games should save just often enough to maintain a continuous gameplay experience from resume, but not so often that the game saves impact framerate or cause the game to stutter. Your game will potentially need to load game state when the game resumes from a terminated state.
+
+[DirectXMath](https://msdn.microsoft.com/library/windows/desktop/ee415571) can be used as a replacement for D3DXMath and XNAMath, and it can come in handy if you need a math library. DirectXMath has fast, portable data types, and types that are aligned and packed for use with shaders.
+
+Native libraries such as the [Interlocked API](https://msdn.microsoft.com/library/windows/desktop/dd405529) have been expanded to support ARM intrinsics. If your game uses interlocked APIs, you can keep using them in DirectX 11 and UWP.
+
+Our templates and code samples use new C++ features that you might not be familiar with yet. For example, asynchronous methods are used with [**lambda expressions**](https://msdn.microsoft.com/library/windows/apps/dd293608.aspx) to load Direct3D resources without blocking the UI thread.
+
+There are two concepts you'll use often:
+
+-   Managed references ([**^**]https://msdn.microsoft.com/library/windows/apps/yk97tc08.aspx) and [**managed classes**](https://msdn.microsoft.com/library/windows/apps/6w96b5h7.aspx) (ref classes) are a fundamental part of the Windows Runtime. You will need to use managed ref classes to interface with Windows Runtime components, for example [**IFrameworkView**](https://msdn.microsoft.com/library/windows/apps/hh700478) (more on that in the walkthrough).
+-   When working with Direct3D 11 COM interfaces, use the [**Microsoft::WRL::ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) template type to make COM pointers easier to use.
+
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

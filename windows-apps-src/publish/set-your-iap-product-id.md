@@ -1,32 +1,36 @@
 ---
-Xxxxxxxxxxx: Xxx xxxxx xxxx xx xxxxxxxxxx xx XXX (xx-xxx xxxxxxx) xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx.
-xxxxx: Xxx xxxx XXX xxxxxxx XX
-xx.xxxxxxx: YYYYYXYX-YYXY-YXXX-XYYY-YYYXXYXXYXYX
+Description: The first step in submitting an IAP (in-app product) in the Windows Dev Center dashboard.
+title: Set your IAP product ID
+ms.assetid: 59497B0F-82F0-4CEE-B628-040EF9ED8D3D
 ---
 
-# Xxx xxxx XXX xxxxxxx XX
+# Set your IAP product ID
 
 
-Xxx xxxxx xxxx xx xxxxxxxxxx xx XXX (xx-xxx xxxxxxx) xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx. Xxxx xx xxx xxxx xxxxxxxxxx xxxx xxx xxxx xxxx xx xxxxxxxxx xx [xxxx xxx'x xxxx xx xxxx xxx XXX](https://msdn.microsoft.com/library/windows/apps/mt219684).
+The first step in submitting an IAP (in-app product) in the Windows Dev Center dashboard. This is the same identifier that you will need to reference in [your app's code to call the IAP](https://msdn.microsoft.com/library/windows/apps/mt219684).
 
-Xx XXX xxxx xx xxxxxxxxxx xxxx xx xxx xxxx xxx'xx xxxxxxx xx xxx xxxxxxxxx xxxxxxx (xxxx xx xxx xxxxx'x xxxxxxxxx xx xxx). Xxx xxx xxxx xxx xxxxxx xx **Xxxxxx x xxx XXX** xx xxxxxx xxxx xxx'x **Xxxxxxxx** xxxx xx xxx **XXXx** xxxx.
+An IAP must be associated with an app that you've created in the dashboard already (even if you haven't submitted it yet). You can find the button to **Create a new IAP** on either your app's **Overview** page or its **IAPs** page.
 
-Xxxx xxx'xx xxxxxxx xxx xxxxxx, xxx'xx xxx xxx **Xxxxxx XXX** xxxx. Xxxx, xxx'xx xxxx xx xxx xxxxxx xxxxxxx XX xxxx xxx'xx xxx xx xxxxx xx xxx xxxxx xx xxxx xxxx.
+Once you've clicked the button, you'll see the **Create IAP** page. Here, you'll type in the unique product ID that you'll use to refer to the offer in your code.
 
-Xxxx xxx x xxx xxxxxx xx xxxx xx xxxx xxxx xxxxxxxx x xxxxxxx XX:
+Here are a few things to keep in mind when choosing a product ID:
 
--   Xxxxxxxxx xxx'x xxx xxxx xxxxxxx XX. (Xxxxx, xxx xxx xxxxx x [xxxxx xxx xxxxxxxxxxx](create-iap-descriptions.md) xx xx xxxxxxxxx xx xxxxxxxxx.)
--   Xxx xxx’x xxxxxx xx xxxxxx xx XXX'x xxxxxxx XX xxxxx xx'x xxxx xxxxxxxxx.
--   X xxxxxxx XX xxx'x xx xxxx xxxx YYY xxxxxxxxxx xx xxxxxx.
--   X xxxxxxx XX xxxxxx xxxxxxx xxx xx xxx xxxxxxxxx xxxxxxxxxx: **&xx; &xx; \* % & : \\ ? + ,**
--   Xx xxxxx xxxx XXX xx xxx xxxxxxx, xxx xxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxxx, xxxxxxx, xxx/xx xxxxxxxxxxx. Xx xxx xxx xxx xxxxx xxxxx xx xxxxxxxxxx, xxx XXX xxxx xxx xx xxxxxxxxx xxx xxxxxxxx xx xxxxxxxxx xxxxxxx Xxxxxxx Xxxxx Y.Y xx xxxxxxx.
--   X xxxxxxx XX xxxxx'x xxxx xx xx xxxxxx xxxxxx xxx Xxxxxxx Xxxxx, xxx xx xxxx xx xxxxxx xx xxxx xxxxxxxxx xxxxxxx.
+-   Customers won't see this product ID. (Later, you can enter a [title and description](create-iap-descriptions.md) to be displayed to customers.)
+-   You can’t change or delete an IAP's product ID after it's been published.
+-   A product ID can't be more than 100 characters in length.
+-   A product ID cannot include any of the following characters: **&lt; &gt; \* % & : \\ ? + ,**
+-   To offer your IAP on all devices, you must only use alphanumeric characters, periods, and/or underscores. If you use any other types of characters, the IAP will not be available for purchase to customers running Windows Phone 8.1 or earlier.
+-   A product ID doesn't have to be unique within the Windows Store, but it must be unique to your developer account.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

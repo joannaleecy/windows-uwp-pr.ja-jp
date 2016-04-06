@@ -1,48 +1,48 @@
 ---
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xxx xx xxx xxxxxxxx xxx xxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
-xxxxx: Xxxx xxx xxxx
-xx.xxxxxxx: XYYXXYXY-YYYY-YYYY-XYYY-YXYXYYYXYXYX
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリにドラッグ アンド ドロップを追加する方法について説明します。
+title: ドラッグ アンド ドロップ
+ms.assetid: A15ED2F5-1649-4601-A761-0F6C707A8B7E
 ---
-# Xxxx xxx xxxx
+# ドラッグ アンド ドロップ
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
 
-Xxxx xxxxxxx xxxxxxxx xxx xx xxx xxxxxxxx xxx xxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx. Xxxx xxx xxxx xx x xxxxxxx, xxxxxxx xxx xx xxxxxxxxxxx xxxx xxxxxxx xxxx xx xxxxxx xxx xxxxx. Xxxx xxxxxxxxxxx, xxxx xxx xxxx xxxxx xxxxxxxxxx xx xxx xxxxxxxxxx, xxxxxxxxx xxx-xx-xxx, xxx-xx-xxxxxxx, xxx xxxxxxx-xx xxx.
+この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリにドラッグ アンド ドロップを追加する方法について説明します。 ドラッグ アンド ドロップは、画像やファイルなどのコンテンツを操作するための従来からある自然な方法です。 ドラッグ アンド ドロップを実装すると、アプリ間、アプリからデスクトップ、デスクトップからアプリなど、すべての方向でシームレスに機能します。
 
-## Xxx xxxxx xxxxx
+## 有効な領域を設定する
 
-Xxx xxx [**XxxxxXxxx**][XxxxxXxxx] xxx [**XxxXxxx**][XxxXxxx] xxxxxxxxxx xx xxxxxxxxx xxx xxxxx xx xxxx xxx xxxxx xxx xxxxxxxx xxx xxxxxxxx.
+[**AllowDrop**][AllowDrop] プロパティと [**CanDrag**][CanDrag] プロパティを使うと、ドラッグ アンド ドロップの操作に有効なアプリ内の領域を指定できます。
 
-Xxx xxxxxx xxxxx xxxxx xxx xx xxx x xxxxxxxx xxxx xx xxx xxx xx x xxxxx xxx xxxxxxxx xxxxx xxx [**XxxxxXxxx**][XxxxxXxxx] xx XXXX. Xx x xxxx xxxxx xx xxxx xxxxxxxxx xxxx, xxx xxxxxx xxx'x xxx xxxx. Xx xxx xxxx xxxxx xx xx xxxx xx xxxx xxxxx xxxxxxxx xx xxxx xxx, xxx xxx xxxxxx xxxxxxxxxx xx x xxxx xxxxxx.
+次のマークアップは、XAML で [**AllowDrop**][AllowDrop] を使って、アプリの特定の領域をドロップ操作に有効な領域として設定する方法を示しています。 ユーザーが他の場所へのドロップを試みても、許可されません。 アプリ内のすべての領域でユーザーが項目をドロップできるようにする場合は、背景全体をドロップ先として設定します。
 
-[!xxxx-xxx[Xxxx](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
+[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDropArea)]
 
-Xxxx xxxxxxxx, xxx'xx xxxxxxx xxxx xx xx xxxxxxxx xxxxx xxxx'x xxxxxxxxx. Xxxxx xxxx xxxx xx xxxx xxxxxxx xxxxx, xxxx xxxxxxxx, xxx xxxxxxxxxx xx xxxx xxx. Xxxx'x xxx xx xxx [**XxxXxxx**][XxxXxxx] xxxxx XXXX.
+ドラッグ操作では通常、どの項目がドラッグ可能であるか指定しておく必要があります。 ユーザーがドラッグしようとするのは、アプリ内のすべてではなく、画像など特定の項目です。 XAML を使って [**CanDrag**][CanDrag] を設定する方法を次に示します。
 
-[!xxxx-xxx[Xxxx](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
+[!code-xml[Main](./code/drag_drop/cs/MainPage.xaml#SnippetDragArea)]
 
-Xxx xxx'x xxxx xx xx xxx xxxxx xxxx xx xxxxx xxxxxxxx, xxxxxx xxx xxxx xx xxxxxxxxx xxx XX (xxxxx xx xxxxxxx xxxxx xx xxxx xxxxxxx). Xxxxxxxx xxxxxxxx x xxx xxxx xxxxx.
+UI のカスタマイズを行う場合 (これについては、この記事で扱います) を除き、他には何もしなくてもドラッグ操作を有効にできます。 ドロップ操作には、あといくつかの手順が必要です。
 
-## Xxxxxx xxx XxxxXxxx xxxxx
+## DragOver イベントを処理する
 
-Xxx [**XxxxXxxx**][XxxxXxxx] xxxxx xxxxx xxxx x xxxx xxx xxxxxxx xx xxxx xxxx xxxx xxx, xxx xxx xxx xxxxxxx xx. Xx xxxx xxxxxxx, xxx xxxx xx xxxxxxx xxxx xxxx xx xxxxxxxxxx xxxx xxx xxxxxxxx xxxxx xxx [**XxxxXxxxxXxxx.XxxxxxxxXxxxxxxxx**][XxxxxxxxXxxxxxxxx] xxxxxxxx. Xxxx xx xxx xxxx xxxxxx.
+[**DragOver**][DragOver] イベントは、ユーザーがアプリに項目をドラッグし、まだドロップしていないときに発生します。 このハンドラーでは、[**DragEventArgs.AcceptedOperation**][AcceptedOperation] プロパティを使用して、アプリでどのような操作をサポートするか指定する必要があります。 最も一般的な操作はコピーです。
 
-[!xxxx-xx[Xxxx](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
+[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOver)]
 
-## Xxxxxxx xxx Xxxx xxxxx
+## Drop イベントを処理する
 
-Xxx [**Xxxx**][Xxxx] xxxxx xxxxxx xxxx xxx xxxx xxxxxxxx xxxxx xx x xxxxx xxxx xxxx. Xxxxxxx xxxx xxxxx xxx [**XxxxXxxxxXxxx.XxxxXxxx**][XxxxXxxx] xxxxxxxx.
+[**Drop**][Drop] イベントは、有効なドロップ領域内でユーザーが項目を解放したときに発生します。 これらの処理には [**DragEventArgs.DataView**][DataView] プロパティを使います。
 
-Xxx xxxxxxxxxx xx xxx xxxxxxx xxxxx, xx'xx xxxxxx xxx xxxx xxxxxxx x xxxxxx xxxxx xxx xxxxxx. Xx xxxxxxx, xxxxx xxx xxxx xxxxxxxx xxxxx xx xxxxxxx xxxxxxx xxxxxxxxxxxxxx. Xxxx xxx xxxxxx xxxxxx xxxx xxxxxxxxxxx xx xxxxxxxx xxxx xxxxx xx xxxxx xxxx xxxxxxx xxx xxxxxxxxxx xxxx xxxxxxxxxxx, xxx xxxxxxxxx xxx xxxx xx xxxx'xx xxxxxx xx xx xxxxxxxxx xxxx xxx xxx'x xxxxxxx.
+次の例では、わかりやすくするために、ユーザーが単一の写真をドロップしたとします。 実際には、ユーザーがさまざまな形式の複数の項目を同時にドロップすることもあります。 アプリでは、このような可能性にも対応できるようにしておく必要があります。そのためには、ドロップされたファイルの種類をチェックし、種類に応じた処理を実行します。また、サポートしていない動作が行われた場合は、それをユーザーに通知します。
 
-[!xxxx-xx[Xxxx](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]
+[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_Drop)]
 
-## Xxxxxxxxx xxx XX
+## UI をカスタマイズする
 
-Xxx xxxxxx xxxxxxxx x xxxxxxx XX xxx xxxxxxxx xxx xxxxxxxx. Xxxxxxx, xxx xxx xxxx xxxxxx xx xxxxxxxxx xxxxxxx xxxxx xx xxx XX xx xxxxxxx xxxxxx xxxxxxxx xxx xxxxxx, xx xx xxxxxx xxx xx xxxx x XX xx xxx. Xx xxxxxxxxx xxx XX, xxx xxx [**XxxxXXXxxxxxxx**][XxxxXxXxxxxxxx] xxxxxxxx xx xxx [**XxxxXxxx**][XxxxXxxx] xxxxx xxxxxxx.
+システムでは、ドラッグ アンド ドロップ用に既定の UI が提供されています。 ただし、カスタムのキャプションやグリフを設定して UI のさまざまな部分をカスタマイズすることも、UI をまったく表示しないこともできます。 UI をカスタマイズするには、[**DragOver**][DragOver] イベント ハンドラーの [**DragUIOverride**][DragUiOverride] プロパティを使います。
 
-[!xxxx-xx[Xxxx](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
+[!code-cs[Main](./code/drag_drop/cs/MainPage.xaml.cs#SnippetGrid_DragOverCustom)]
 
  <!-- LINKS -->
 [AllowDrop]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.uielement.allowdrop.aspx
@@ -53,4 +53,8 @@ Xxx xxxxxx xxxxxxxx x xxxxxxx XX xxx xxxxxxxx xxx xxxxxxxx. Xxxxxxx, xxx xxx xxx
 [DragUiOverride]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.drageventargs.draguioverride.aspx
 [Drop]: https://msdn.microsoft.com/en-us/library/windows/apps/xaml/windows.ui.xaml.uielement.drop.aspx 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

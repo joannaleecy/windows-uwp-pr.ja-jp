@@ -1,39 +1,43 @@
 ---
-xxxxxxxxxxx: Xxx xxxx xxxxxxx Xxx xxxxxxxx xx xxxxxxx xxxx xxx Xxxxxxx.
-xxxxx: Xxxxxxx xx xxxx Xxx xxxx Xxxxxxx YY
-xx.xxxxxxx: YXYYYYYY-YXXY-YYYX-XYYY-XXYYXYYYXYYY
+description: Use your current Mac computer to develop apps for Windows.
+title: Setting up your Mac with Windows 10
+ms.assetid: 6D520610-5DE0-476E-A792-AA57E002D309
 ---
 
-# Xxxxxxx xx xxxx Xxx xxxx Xxxxxxx YY
+# Setting up your Mac with Windows 10
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxx xxxx xxxxxxx Xxx xxxxxxxx xx xxxxxxx xxxx xxx Xxxxxxx.
+Use your current Mac computer to develop apps for Windows.
 
-## Xxx Xxxxxxx xx xxxx Xxx xxx xxx Xxxxxx Xxxxxx
+## Run Windows on your Mac and use Visual Studio
 
-Xxx xxx xxxxx xx xxxxx xxxxxxxxxx Xxxxxxxxx Xxxxxxx xxxx, xxx xxx xxx'x xxxx x XX xxxxx? Xxxx'x xxxx — xxx xxx xxx xxxx Xxx! Xxxx xxxxxxx xxxxx-xxxxx xxxxxxxxx xxxx Xxxxx Xxxx Xxxx, Xxxxxx XxxxxxxXxx, XXxxxx Xxxxxx, xxx Xxxxxxxxx Xxxxxxx, xxx xxx xxxxxxx Xxxxxxx YY xxx Xxxxxxxxx Xxxxxx Xxxxxx xx xxxx Xxxxx xxxxxxxx.
+Are you ready to start developing Universal Windows apps, but you don't have a PC handy? That's okay — you can use your Mac! With popular third-party solutions like Apple Boot Camp, Oracle VirtualBox, VMware Fusion, and Parallels Desktop, you can install Windows 10 and Microsoft Visual Studio on your Apple computer.
 
-**Xxxx**  Xxx xxxx xxxx x Xxxxxxx YY xxxxxxxx xxxxx xx xxxx xx XXX xxxxx xxxxx. Xx xxx xxx x XXXX Xxxxxxxxxx, xxx xxx xxxxxxxx xxx xxxxxxx xxxxx xxxx xxx XXXX Xxxxxxxxxx Xxxxxxxxx xxxxxx. Xx xxx xxxx'x x xxxxxxxxxx, xxx xxxxxxxxx xxx xx xxxxxxxxx xxxx xxx [Xxxxxxx Xxxxx](http://apps.microsoft.com/windows/app). Xxx xxx xxxx xxxxxxxx xx xxxx [xxxx xxxxxxxx](http://go.microsoft.com/fwlink/?LinkId=623906), xxxxx xx xxxxxx xx xxx xxx xxxxxxx xxxxxxx Xxxxxxx xxx xxxx xx xxxxxxx.
+**Note**  You will need a Windows 10 bootable image on disk or USB flash drive. If you are a MSDN Subscriber, you can download the install image from the MSDN Subscriber Downloads center. If you aren't a subscriber, the installer can be purchased from the [Windows Store](http://apps.microsoft.com/windows/app). You can also download it from [this location](http://go.microsoft.com/fwlink/?LinkId=623906), which is useful if you are already running Windows and wish to upgrade.
 
-Xxxx xxx xxxx Xxxxxxx xxxxxxx, xxx xxx xxxx xxxxxxx Xxxxxx Xxxxxx YYYY xxxx [Xxxxxxxxx xxxxxxxxx xxx Xxxxxxx YY](http://go.microsoft.com/fwlink/p/?LinkId=302144) xxx xxxxx xxxxxxx xxxx!
+Once you have Windows running, you can then install Visual Studio 2015 from [Developer downloads for Windows 10](http://go.microsoft.com/fwlink/p/?LinkId=302144) and start writing apps!
 
-**Xxxx**  Xx xxx xxxx xx xxx xxx Xxxxxx Xxxxxx xxxxxx xxxxxxxxx, xxx **xxxx** xxxxxxx x YY-xxx (xYY) xxxxxxx xx Xxxxxxx YY Xxx xx xxxxxx. Xxxxxxxxxxxxx, xxxx xxxxx Xxxx xxxxxx xxx YY-xxx Xxxxxxx. Xxxxxx xxxxx xxxx Xxxxx xx xxxx xxxxxxxx xx xxxxxxxxxx xx xxxx[Xxxxx xxxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkID=397959).
+**Note**  If you plan to use the Visual Studio device emulators, you **must** install a 64-bit (x64) version of Windows 10 Pro or better. Unfortunately, some older Macs cannot run 64-bit Windows. Please check with Apple if your hardware is compatible on this[Apple support page](http://go.microsoft.com/fwlink/p/?LinkID=397959).
 
-## Xxxxx Xxxx Xxxx
+## Apple Boot Camp
 
-Xxx Xxxx Xxxx Xxxxxxxxx xxx xx xxx-xxxxxxxxx xx xxxxx xxxxxx Xxx, xxx xxxxxxxxx xx xxxx xxxx xxx xxxxxxx xxx xxxxxxx xx xxxxxxxxxx Xxxxxxx YY. Xxx xxx xxxx xx x xxxx xx Xxxxxxx (xxxx xxx xxxxxxx xxxxxx xxxxx) xxx xx xxxxx YY Xx xx xxxx xxxx xxxxx. Xxxx xxxxxxxxx, xxx xxx xxxxxx xx xxxx xxxx Xxx XXX xx Xxxxxxx YY. Xxx xxxx xxxx, xxx Xxxxx'x [Xxxx Xxxx xxxxxxxxxxxx xxxx](http://go.microsoft.com/fwlink/?LinkId=623912).
+The Boot Camp Assistant app is pre-installed on every recent Mac, and launching it will walk you through the process of installing Windows 10. All you need is a copy of Windows (from the sources listed above) and at least 30 Gb of free disk space. Once installed, you can choose to boot into Mac OSX or Windows 10. For more info, see Apple's [Boot Camp instructions page](http://go.microsoft.com/fwlink/?LinkId=623912).
 
-## Xxxxxxxxx Xxxxxxx
+## Parallels Desktop
 
-Xxxxx Xxxxxxxxx Xxxxxxx YY, xxx xxx xxx Xxxxxxx xxxx xxxx-xx-xxxx xxxx xxxxxxxx Xxx xxxxxxxxxxxx, xxxxxxxxx Xxxxxx Xxxxxx xxx Xxxxxxx. X xxx xxxxxxx xx xxxxxxxxx xxxx xxxxxxxx xxxxx xxxxxxxx xxx xxxxxxxxxx, xxxxxxxxx xxxxxxxx xxxxxxxxx, xxx xxxxxxx xxx Xxxxxx xxx Xxxxxxx. Xxx xxxx xxxx, xxx x xxxx xxxxx xxxxxxx, xxx [Xxxxxxxxx Xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=281827).
+Using Parallels Desktop 11, you can run Windows apps side-by-side with existing Mac applications, including Visual Studio and Cortana. A pro version is available that includes extra features for developers, including improved debugging, and support for Docker and Jenkins. For more info, and a free trial version, see [Parallels Desktop](http://go.microsoft.com/fwlink/p/?LinkId=281827).
 
-## XXXxxx Xxxxxx
+## VMWare Fusion
 
-Xxxxxx Y xxxx XXXxxx xxxx xxx xxx xxx Xxxxxx Xxxxxx xxxxx xx xxxx Xxx xxxxxxx. X xxx xxxxxxx xx xxxxxxxxx xx xxxxx xxxxxxxxxx xxxx xxxx xxxxxxxx xxxxxxxx xxxx xx xXxxxxx xxxxxxx. Xxx xxxx xxxx, xxx x xxxx xxxxx xxxxxxx, xxx [XXxxxx Xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=281826).
+Fusion 8 from VMWare will let you run Visual Studio right on your Mac desktop. A pro version is available to offer developers some more advanced features such as vSphere support. For more info, and a free trial version, see [VMware Fusion](http://go.microsoft.com/fwlink/p/?LinkId=281826).
 
-## Xxxxxx XxxxxxxXxx
+## Oracle VirtualBox
 
-XxxxxxxXxx xx x xxxx xxxxxxxxxxx xxx xxxxxxx xxxxxxx xxxxxxxx xx xxxx xxxxxxxx, xxx xx xxxxxxxx xxxxxxx Xxxxxxx xx Xxx. Xx xx x xx-xxxxxx xxxxxx, xxx xxx xxxxx xx xxxxxxxxx. Xxx xxxx xxxx, xxx [XxxxxxxXxx](http://go.microsoft.com/fwlink/p/?LinkId=280599).
+VirtualBox is a free application for running virtual machines on your computer, and it supports running Windows on Mac. It is a no-frills option, but the price is appealing. For more info, see [VirtualBox](http://go.microsoft.com/fwlink/p/?LinkId=280599).
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

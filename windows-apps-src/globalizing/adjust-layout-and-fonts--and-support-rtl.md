@@ -1,91 +1,81 @@
 ---
-Description: Xxxxxxxxxxx: Xxxxxxx xxxx xxx xx xxxxxxx xxx xxxxxxx xxx xxxxx xx xxxxxxxx xxxxxxxxx, xxxxxxxxx XXX (xxxxx-xx-xxxx) xxxx xxxxxxxxx.
-title: xxxxx: Xxxxxx xxxxxx xxx xxxxx, xxx xxxxxxx XXX
+Description: description: RTL (右から左) のテキストの方向を含め、複数の言語のレイアウトやフォントをサポートするアプリを開発します。
+title: title: レイアウトやフォントの調整と RTL のサポート
 ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 label: Adjust layout and fonts, and support RTL
 template: detail.hbs
 ---
 
-# xx.xxxxxxx: XYYYYXYY-YYYX-YYXY-XYXY-XYXYXXXYYXXY
+# ms.assetid: F2522B07-017D-40F1-B3C8-C4D0DFD03AC3
 
 
-xxxxx: Xxxxxx xxxxxx xxx xxxxx, xxx xxxxxxx XXX xxxxxxxx: xxxxxx.xxx
+label: レイアウトやフォントの調整と RTL のサポート template: detail.hbs
 
 
-Xxxxxx xxxxxx xxx xxxxx, xxx xxxxxxx XXX
+レイアウトやフォントの調整と RTL のサポート
 
-## \[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY.
+## \[ Windows 10 の UWP アプリ向けに更新。
 
 
-Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \] Xxxxxxx xxxx xxx xx xxxxxxx xxx xxxxxxx xxx xxxxx xx xxxxxxxx xxxxxxxxx, xxxxxxxxx XXX (xxxxx-xx-xxxx) xxxx xxxxxxxxx. <span id="Layout_guidelines">
-            </span>
-            <span id="layout_guidelines">
-            </span>
-            <span id="LAYOUT_GUIDELINES">
-            </span>Xxxxxx xxxxxxxxxx
+Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \] RTL (右から左) のテキストの方向を含め、複数の言語のレイアウトやフォントをサポートするアプリを開発します。 <span id="Layout_guidelines"></span><span id="layout_guidelines"></span><span id="LAYOUT_GUIDELINES"></span>レイアウトのガイドライン
 
-Xxxx xxxxxxxxx, xxxx xx Xxxxxx xxx Xxxxxxx, xxxxxxx xxxx xxxxx xxxx Xxxxxxx xxx xxxxx xxxx. Xxx xxxxx xxx xxxx xxxxxxxxx, xxxx xx Xxxxxxxx, xxxxxxx xxxx xxxxxx.
+ドイツ語やフィンランド語など、一部の言語ではテキストに英語より多くのスペースが必要です。 日本語などのいくつかの言語のフォントでは高さが必要です。
 
-### Xxx xxxx xxxxxxxxx, xxxx xx Xxxxxx xxx Xxxxxx, xxxxxxx xxxx xxxx xxxxxx xxx xxx xxxxxx xxxx xx xx xxxxx-xx-xxxx (XXX) xxxxxxx xxxxx.
+### アラビア語やヘブライ語などの一部の言語では、テキスト レイアウトとアプリ レイアウトを読む方向に合わせて右から左 (RTL) にする必要があります。
 
-Xxx xxxxxxxx xxxxxx xxxxxxxxxx xxxxxxx xx xxxxxxxx xxxxxxxxxxx, xxxxx xxxxxx, xx xxxxx xxxxxxx.
+絶対配置、固定幅、固定高ではなく、可変レイアウト メカニズムを使ってください。
 
 ```XAML
 <TextBlock x:Uid="Block1">
 ```
 
-Xxxx xxxxxxxxx, xxxxxxxxxx XX xxxxxxxx xxx xx xxxxxxxx xxxxx xx xxxxxxxx.
+必要があれば、言語に応じて特定の UI 要素を調整できます。
 
-<span id="XAML">
-            </span>
-            <span id="xaml">
-            </span>XXXX
+<span id="XAML"></span><span id="xaml"></span>XAML
 
-Xxxxxxx x **Xxx** xxx xx xxxxxxx: Xxxxxx xxxx xxxx xxx'x XxxX xxxx xxx x xxxxxxxx xxx XxxxxY.Xxxxx, xxxxx xxx xxx xxx xxx xxxx xxxxxxxx xxxx xxx xxxxxxxx xxxx.
+要素に **Uid** を指定します。 アプリの ResW ファイルには、ローカライズする言語ごとに設定できる Block1.Width のリソースを含めるようにします。
 
-Xxx Xxxxxxx Xxxxx xxxx xxxxx X++, X\#, xx Xxxxxx Xxxxx, xxx xxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208716) xxxxxxxx, xxxx xxxxxxxxxxx xxxxxxx xxx xxxxxxx, xx xxxxxx xxxxxxxxxxxx xxx xxxxx xxxxxx xxxxxxxxxx.
+C++、C\#、または Visual Basic を使った Windows ストア アプリの場合、左右対称のパディング、余白と共に [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) プロパティを使い、他のレイアウト方向のローカライズを有効にできます。
 
 ```XAML
 <Page x:Uid="MainPage">
 ```
 
-XXXX xxxxxx xxxxxxxx xxxx xx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br242704) xxxxx xxx xxxx xxxxxxxxxxxxx xxxx xxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208716) xxxxxxxx.
+[
+            **Grid**](https://msdn.microsoft.com/library/windows/apps/br242704) などの XAML レイアウト コントロールは、[**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) プロパティを使って自動的に拡大縮小と反転を行います。
 
-### Xxxxxx xxxx xxx **XxxxXxxxxxxxx** xxxxxxxx xx xxxx xxx xx x xxxxxxxx xxx xxxxxxxxxx.
+### アプリ内に、独自の **FlowDirection** プロパティをローカライズ担当者用のリソースとして表示します。
 
-Xxxxxxx x **Xxx** xxx xxx xxxx xxxx xx xxxx xxx: Xxxxxx xxxx xxxx xxx'x **XxxX** xxxx xxx x xxxxxxxx xxx XxxxXxxx.XxxxXxxxxxxxx, xxxxx xxx xxx xxx xxx xxxx xxxxxxxx xxxx xxx xxxxxxxx xxxx.
+アプリのメイン ページには **Uid** を指定します。 アプリの **ResW** ファイルには、ローカライズする言語ごとに設定できる MainPage.FlowDirection のリソースを含めるようにします。
 
-<span id="HTML">
-            </span>
-            <span id="html">
-            </span>XXXX Xxx Xxxxxxx Xxxxx xxxx xxxxx XxxxXxxxxx, xxx [Xxxxxxxxx Xxxxx Xxxxxx (XXX)](https://msdn.microsoft.com/library/ms531209) xxxxxx xxxxxxxxxx xxxx xx [-xx-xxxx](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#g_section) xxx [–xx-xxx](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#f_section).
+<span id="HTML"></span><span id="html"></span>HTML JavaScript を使った Windows ストア アプリの場合は、[-ms-grid](https://msdn.microsoft.com/library/ms531209) や [– ms-box](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#g_section) などの [カスケード スタイル シート (CSS)](https://msdn.microsoft.com/en-us/library/windows/apps/hh465453.aspx#f_section) レイアウト メカニズムを使ってください。
 
-**Xxx xxxxxxxxxxx xxxxxxx xxx xxxxxxx xx xxxxxx xxxxxxxxxxxx xxx xxxxxxx xxxxxx xxxxxxxxxx.**
+**さまざまなレイアウト方向のローカライズには、左右対称のパディングと余白を使います。**
 ```CSS
 .item:-ms-lang(de, fi) { width: 350px; }
 ```
 
-Xxxx xxx xxx xxxx xxx xxx [**:-xx-xxxx()**](https://msdn.microsoft.com/library/cc848867) xxxxxx-xxxxx xxxxxxxx xx xxxxxx XXX xxxxxxxxxx xxxx xx xxxxx xx xxxxxxxxxx xxxxxxxx xxxxx xx xxx xxxxxxxx xx xxx xxx. Xx xxxxxx xxxx, xxx Xxx Xxxx xxxx xxx xxxx xxxxxxx'x **xxxx** xxxxxxxxx xx xxx xxx xxxxxxxx.
+このほか、アプリの言語に応じて [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 擬似クラス セレクターを使って特定の要素の幅などの CSS プロパティを調整できます。 アプリ ホスティング プロセスは、これを有効にするためにルート要素の **lang** 属性をアプリ言語に設定します。
 
-**XXX**
+**CSS**
 ```CSS
 body:-ms-lang(ar,he…) { direction: rtl;}
 ```
 
-Xxxxxxx Xxxxx xxxx xxxxx XxxxXxxxxx xxxx xxx xxx xx-xxxxx.xxx xx xx-xxxx.xxx xxxxx xxxxxx xxxx xxxxx xxxx xxxxxx xxxxxxxxx xxx xxxxxxxxxxxxx, xxxxx xx xxx xxx xxxxxxxx.
+JavaScript を使った Windows ストア アプリで ui-light.css または ui-dark.css スタイル シートを使うと、アプリ言語に応じて本文レイアウトの方向が自動的に設定されます。
 
-Xxx xxxxxxxxx XXX xx xx xx-xxxxx xxx xx-xxxx.xxx, xxx xxx xxx'x xxxx xx xxxxx xx xxxxxxxx. XXX
+ui-light.css と ui-dark.css では次の CSS が用意されているため、開発者自身で記述する必要はありません。 CSS
 
-Xxxx xxxxx xxxx xxxx xxx xxxxxxx xxx xxx xxxxxxxxx xxxx xxx xxxxxx xxxx x xxxxx-xx-xxxx xxxxxxxx. Xxxx [XxxXX.XX](https://msdn.microsoft.com/library/windows/apps/br229782) xxxxxxxx, xxxx xxx xxx xxx xxx [**:-xx-xxxx()**](https://msdn.microsoft.com/library/cc848867) xxxxxx-xxxxx xxxxxxxx xx xxxxxx xxxxxxxx XXX xxxxxxxxxx, xxxx xx **xxxxxx** xxx **xxxxxxx**.
+つまり、システムで RTL (右から左) 言語が使われる場合、ほとんどのアプリ レイアウトは正しく設定されます。 [WinJS.UI](https://msdn.microsoft.com/library/windows/apps/br229782) コントロールと同様に、アプリで [**:-ms-lang()**](https://msdn.microsoft.com/library/cc848867) 擬似クラス セレクターを使って、**margin** や **padding** などの物理的な CSS プロパティを調整できます。
 
-Xxx xxx'x xxxx xx xxxxxx xxxxxxx XXX xxxxxxxxxx xxxx xxx xxxxxxxx xxxx xx **xxxxx** xxx **xxxxxx**.
+**after** や **before** などのキーワードを使う論理的な CSS プロパティを調整する必要はありません。
 
-## Xxx'x xxx xxx **xxxxx** xxxxxxxx xx xxxxxxxxx xx XXXX.
+## HTML では **align** プロパティまたは属性を使わないでください。
 
 
-### Xxxxxxx, xxx xxx **xxxxxxxxx** xxxxxxxx xx xxxxxxx xxxxxxxxx xx xxxxxxxxxx xxxxxxxxxx.
+### 代わりに、**direction** プロパティを使って個々のコンポーネントの配置を制御できます。
 
-Xxx xxx [**xxxxxxx-xxxx**](https://msdn.microsoft.com/library/ms531187) xxxxxxxx xx xxxxxxx xxxxxxxx xxxx xxxxxxx xx XXX.
+CSS での垂直テキスト レイアウトのサポートには、[**writing-mode**](https://msdn.microsoft.com/library/ms531187) プロパティを使ってください。
 
 ```XAML
 <!-- en-US\localized.xaml -->
@@ -95,50 +85,35 @@ Xxx xxx [**xxxxxxx-xxxx**](https://msdn.microsoft.com/library/ms531187) xxxxxxxx
 <Image ... FlowDirection="RightToLeft" />
 ```
 
-### <span id="Mirroring_images">
-            </span>
-            <span id="mirroring_images">
-            </span>
-            <span id="MIRRORING_IMAGES">
-            </span>Xxxxxxxxx xxxxxx
+### <span id="Mirroring_images"></span><span id="mirroring_images"></span><span id="MIRRORING_IMAGES"></span>画像の左右反転
 
-<span id="XAML">
-            </span>
-            <span id="xaml">
-            </span>XXXX
+<span id="XAML"></span><span id="xaml"></span>XAML
 
 ```CSS
 .mirrorable { transform: scaleX(-1); }
 ```
 
-Xx xxxx xxx xxx xxxxxx xxxx xxxx xx xxxxxxxx (xxxx xx, xxx xxxx xxxxx xxx xx xxxxxxx) xxx XXX, xxx xxx xxxxx xxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208716) xxxxxxxx: <span id="HTML">
-            </span>
-            <span id="html">
-            </span>XXXX Xx xxxx xxx xxx xxxxxx xxxx xxxx xx xxxxxxxx (xxxx xx, xxx xxxx xxxxx xxx xx xxxxxxx) xxx XXX, xxx xxx xxx XXX xxxxxxxxxx xx xxxxxx xxxx xxxxxx xx xxxxxxxxx xxxx xx xxxxxx x .xxxxxxxxxx xxxxx xx xxxx xxxxxxxx xxx xxxxxx xxx xxxxxxxxx XXX xxxxx:
+RTL に対応するために左右反転が必要な画像がアプリに含まれる (つまり、同じ画像を反転できる) 場合は、次のように [**FlowDirection**](https://msdn.microsoft.com/library/windows/apps/br208716) プロパティを適用できます。 <span id="HTML"></span><span id="html"></span>HTML RTL に対応するため左右反転が必要な画像がアプリに含まれる (つまり、同じ画像を反転できる) 場合には、レンダリング時に CSS 変換を使って要素に .mirrorable クラスを追加して、次の CSS クラスを追加することにより、画像の左右反転を行ってください。
 
-## **Xxx xxxx XXXX xxx XXXX:** Xx xxxx xxx xxxxxxxx x xxxxxxxxx xxxxx xx xxxx xxx xxxxx xxxxxxxxx, xxx xxx xxx xxx xxxxxxxx xxxxxxxxxx xxxxxx xxxx xxx [xxxxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324).
+## **XAML と HTML の両方:** 画像を正しく反転させるためにアプリで別の画像が必要な場合は、[layoutdir 修飾子](https://msdn.microsoft.com/library/windows/apps/xaml/hh965324) を指定してリソース管理システムを使うことができます。
 
 
-Xxx xxxxxx xxxxxxx xx xxxxx xxxxx xxxx.xxxxxxxxx-xxx.xxx xxxx xxx [xxxxxxxxxxx xxxxxxxx](manage-language-and-region.md) xx xxx xx xx XXX xxxxxxxx. Xxxx xxxxxxxx xxx xx xxxxxxxxx xxxx xxxx xxxx xx xxx xxxxx xx xxxxxxx, xxx xxxxxxx xxxx xxx'x.
+[アプリケーション言語](manage-language-and-region.md) が RTL 言語に設定されている場合、システムは file.layoutdir-rtl.png という名前が付いた画像を選びます。 画像の一部を反転させ、他の部分は反転させないという場合には、この方法が必要になることもあります。
 
-### <span id="Fonts">
-            </span>
-            <span id="fonts">
-            </span>
-            <span id="FONTS">
-            </span>Xxxxx
+### <span id="Fonts"></span><span id="fonts"></span><span id="FONTS"></span>フォント
 
-**Xxx xxxx XXXX xxx XXXX:** Xxx xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br206864) xxxx-xxxxxxx XXXx xxx xxxxxxxxxxxx xxxxxx xx xxx xxxxxxxxxxx xxxx xxxxxx, xxxx, xxxxxx, xxx xxxxx xxx x xxxxxxxxxx xxxxxxxx. Xxx **XxxxxxxxXxxx** xxxxxx xxxxxxxx xxxxxx xx xxx xxxxxxx xxxx xxxx xxx xxxxxxx xxxxxxxxxx xx xxxxxxx xxxxxxxxx XX xxxxxxx, xxxxxxxxxxxxx, xxxx xxxx, xxx xxxx-xxxxxxxx xxxxxxxx xxxx xxxxx.
+**XAML と HTML の両方:** 特定言語の推奨フォント ファミリ、サイズ、太さ、スタイルにプログラムを使ってアクセスする場合は、[**LanguageFont**](https://msdn.microsoft.com/library/windows/apps/br206864) フォント マッピング API を使ってください。 **LanguageFont** オブジェクトを使うと、コンテンツのさまざまなカテゴリ (UI ヘッダー、通知、本文のテキスト、ユーザー自身で編集できるドキュメント本文のフォントなど) の正しいフォント情報にアクセスできます。
 
-<span id="HTML">
-            </span>
-            <span id="html">
-            </span>XXXX Xxxxxxx Xxxxx xxxx xxxxx XxxxXxxxxx xxxx xxx xxx xx-xxxxx.xxx xx xx-xxxx.xxx xxxxx xxxxxx xxxx xxxxx xxxx xxx xxxxxxxxxxxxx xx xxx xxxx xxxxxxxxxxx xxxx, xxxxx xx xxx xxx xxxxxxxx.
+<span id="HTML"></span><span id="html"></span>HTML JavaScript を使った Windows ストア アプリで ui-light.css または ui-dark.css スタイル シートを使うと、アプリ言語に応じてフォント セットが自動的に最も適切なフォントに設定されます。
 
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO4-->
+
+

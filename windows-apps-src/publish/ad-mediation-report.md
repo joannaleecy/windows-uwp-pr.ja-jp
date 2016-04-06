@@ -1,63 +1,67 @@
 ---
-Xxxxxxxxxxx: Xxx Xx xxxxxxxxx xxxxxx xxxx xxx xxx xxxx xxxxxxxxx xxxx xxxx xxx xxx xxxxxxxxxx xxxx xxxxx xxx xxx xx xxxxxxxx xxx'xx xxxxx.
-xxxxx: Xx xxxxxxxxx xxxxxx
-xx.xxxxxxx: YYXYYYYY-XYXY-YXYY-YXYX-XYYXXXYYXXXY
+description: 広告仲介レポートでは、有効なフィル レートと、使っている広告ネットワークの対応するフィル レートを確認できます。
+title: 広告仲介レポート
+ms.assetid: 18A33928-B9F2-4F76-9A9C-F01FEE42FEA1
 ---
 
-# Xx xxxxxxxxx xxxxxx
+# 広告仲介レポート
 
 
-Xxx **Xx xxxxxxxxx** xxxxxx xxxx xxx xxx xxxx xxxxxxxxx xxxx xxxx xxx xxx xxxxxxxxxx xxxx xxxxx xxx xxx xx xxxxxxxx xxx'xx xxxxx. Xx xxxx xxxxx xxx xxxxxxxx xxxxx xx xxxx xx xxxx xxxxxxxxx xxxxxxxxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxx xxxxxx xxxxxxxx xx xx xxxxxxxx xxx xxx xxxxxxxx. Xxx xxx xxxx xxxx xxxx xx xxxx xxxxxxxxx, xx [xxxxxxxx xxx xxxxxx](download-analytic-reports.md) xx xxxx xxxxxxx.
+**広告仲介**レポートでは、有効なフィル レートと、使っている広告ネットワークの対応するフィル レートを確認できます。 さらに、メディエーション構成ごとの導入率や、広告ネットワークとメディエーターによって報告されたエラーも表示されます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md) してオフラインで表示することもできます。
 
-**Xxxxxxxxx**  Xxx **Xx xxxxxxxxx** xxxxxx xxxx xxxxxxxx xxxx xx xxx xxx xxxxx [Xxxxxxx xx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359) xx xxxx xxx.
-
- 
-
-## Xxxx xxxxxxx
-
-
-Xxxx xxx xxx xx xxx xxxx, xxx xxx xxxxxx **Xxxx xxxxxxx** xx xxxxxx xxx xx xxx xxxx xx xxxx xxxx xx xxxx xxxxx xxx/xx xx xxxxxx.
-
--   **Xxxx**: Xxx xxxxxxx xxxxxx xx **Xxxx YY xxxx**, xxx xxx xxx xxxxxx xxxx xx xx **Xxxx YY xxxxxx**.
--   **Xxxxxx**: Xxx xxxxxxx xxxxxxx xx **Xxx xxxxxxx**. Xxx xxx xxxxxx x xxxxxxxx xxxxxx xx xxx xxxx xxxx xxxx xx xxxx xxxx xxxxxxx xxxx xxxxxxxxx xx xxxx xxxxxx.
--   **Xxxxxxxx**: Xxx xxxxxxx xxxxxxx xx **Xxx xxxxxxxxx**. Xx xxxx xxx xxxxxxx xxxxxxxx xxxxxxxxx, xxx xxx xxxxxx x xxxxxxxx xxxxxxxx.
-
-Xxx xxxx xx xxx xx xxx xxxxxx xxxxxx xxxxx xxxx xxxxxxx xxx xxxxxx xx xxxx xxxxxxxx xx **Xxxx xxxxxxx**. Xx xxxxxxx xxxx xxxx xxxxxxx xxxx xxxx xxx xx xxx xxxxxxx xxx xxxxxxxxx xx xxxxx xxxx xxx xx xxxxxx, xxxxxx xxx'xx xxxx xxx **Xxxx xxxxxxx** xx xxxxxxx x xxxxxxxx xxxxxx xxx/xx xxxxxxxx.
-
-## Xx xxxxxxxxx xxxxxxxxxxx
-
-
-Xxx **Xx xxxxxxxxx xxxxxxxxxxx** xxxxx xxxxx xxx xxxxxxx xxxxx xxxx xxxx xxxx xxx xxxxxxxx xxxxxx xx xxxx. Xxxx xx xxx xxxxxxx xxxx xxxx xxxxxx xxx xxxx xxxxxxxx, xxxxxxxxxx xx xxxx xxxxxxxxx xxxxxxxxxxxxx xx xxx xxxxx xxxxxxxxx xx xxxxxxxx xxxx xxxxxx.
-
-Xxx xxx xxxxx xxx **Xxxxxxxxx xxxxxxxx** xxxxxxx xx xxx xxx xxxxxxx xxxxxx xx xxxxxxxxxx xxxxxxxxx xxxxxxxx, xx xxxxx **Xxx xxxxxxxxx** xx xxx xxx xxxxxxx xxxxx xxxxxx xx xxx xxxxxxxxx.
-
-## Xx xxxxxxxx xxxx xxxxx
-
-
-Xxx **Xx xxxxxxxx xxxx xxxxx** xxxxx xxxxx xxx xxxxxxx xxxx xxxx xx xxxx xx xxxx xx xxxxxxxx xxxx xxx xxxxxxxx xxxxxx xx xxxx.
-
-Xxxx xxx xxxx xx xxxxxxx xx xxxxx xxxxxxxx xx xxxx xxx xxxxxxx xxxx xx xxxxxxx'x xxxxxxxxxxx.
-
-## Xxxxxx xxxxx xxx xxxxxxxxx xxxxxxxxxxxxx
-
-
-Xxx **Xxxxxx xxxxx xxx xxxxxxxxx xxxxxxxxxxxxx** xxxxx xxxxx xxx xxxxx xxxxxx xx xxxxxx xxxxx xxx xxxxxxxx xxxx xxxxxxx xx xxxx xxxxxxxxx xxxxxxxxxxxxx xxxx xxx xxxxxxxx xxxxxx xx xxxx.
-
-## Xxxxxx xx xx xxxxxxx
-
-
-Xxx **Xxxxxx xx xx xxxxxxx** xxxxx xxxxx xxx xxxxx xxxxxx xx xxxxxxxx xxx xxxxxx xxx xxxx xx xxxx xx xxxxxxxx, xxxxx xxxx xxx xxxxxxxxxx xx xxxxxxxx xxxx xxxxxxxx xx xx xxxxx.
-
-## Xxxxxx xx xxxx
-
-
-Xxx **Xxxxxx xx xxxx** xxxxx xxxxx xxx xxxxxxxx xxxxxx xxxxxxxxxxx xx xxxx xx xxxxxxx. Xx xxxx xxxxx xxx xxxxxxxxxx xx xxxxx xxxxxx xxx xxxx xxxxxxx xxxx x xxxxxxxx xxxxx xxxxxxxxxx, xx xxx xxx xxx xx xxxx xx xxxxx xxxxxx xxx xxxxxx xx xxxxxxxxxx xxx xx xxxxxxx.
+**重要**  **広告仲介**レポートには、アプリの [Windows 広告仲介](https://msdn.microsoft.com/library/windows/apps/xaml/dn864359) を使っている場合のみデータが表示されます。
 
  
 
+## ページ フィルター
+
+
+ページの上部にある **[ページ フィルター]** を展開して、このページのすべてのデータを日付の範囲や市場によってフィルター処理できます。
+
+-   **[日付]**: 既定のフィルターは **[過去 30 日]** ですが、これを **[過去 12 か月]** まで拡張できます。
+-   **[市場]**: 既定の設定は **[すべての市場]** です。 このページに特定の市場のユーザーからの評価のみを表示する場合は、特定の市場を選ぶことができます。
+-   **[プラットフォーム]**: 既定の設定は **[すべてのプラットフォーム]** です。 アプリが複数のプラットフォームを対象としている場合、特定のプラットフォームを選択できます。
+
+次に挙げているすべてのグラフに表示される情報には、**[ページ フィルター]** で選んだ期間が反映されます。 既定では、**[ページ フィルター]** を使用して特定の市場やプラットフォームを指定している場合を除き、アプリが一覧に表示されているすべての市場およびプラットフォームからのデータが含まれます。
+
+## 広告仲介のパフォーマンス
+
+
+**広告仲介のパフォーマンス** グラフには、選んだ期間の平均合計フィル レートが表示されます。 これは、メディエーション構成や、さまざまな広告ネットワークが呼び出された頻度に関係なく、すべてのユーザー セッションの平均フィル レートです。
+
+**[メディエーション要求]** 見出しをクリックすると、個々のメディエーション要求の平均数が表示され、**[配信された広告数]** をクリックすると配信された広告の平均合計数が表示されます。
+
+## 広告プロバイダー フィル レート
+
+
+**広告プロバイダーのフィル レート** グラフには、選んだ期間における各広告ネットワークの平均フィル レートが表示されます。
+
+各広告ネットワークの情報は、各広告ネットワークのパフォーマンスを比較できるように一緒に表示されます。
+
+## メディエーション構成ごとの固有ユーザー
+
+
+**メディエーション構成ごとの固有ユーザー数**グラフには、選んだ期間におけるメディエーション構成の各バージョンを受信した固有ユーザーの合計数が表示されます。
+
+## 広告ネットワーク別エラー数
+
+
+**広告ネットワーク別エラー数**グラフには、各広告ネットワークの要求とエラーの合計数に加えて、エラーになった要求の割合が表示されます。
+
+## 種類別エラー数
+
+
+**種類別エラー数**グラフには、各広告ネットワークで発生した特定のエラーが表示されます。 特定のエラーが示すそのネットワークの合計エラー数の割合も表示されるため、広告ネットワークごとに頻繁に発生するエラーを知ることができます。
+
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

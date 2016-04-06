@@ -1,128 +1,138 @@
 ---
-xx.xxxxxxx: YXXYXXYY-XXYY-YYXY-YYYY-YXXXYXYYYYXX
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xxx xx xxxx xxx xxxx xxxxx xxxxx xxxxx XxxxxxXxxxxxx xxx XxxxxxXxxxxxx xxx xxx xx xxx xxx XxxxxxxxXxxxxx xxxxxx xx xxxxxxxxx xxxxxx xxxxxx.
-xxxxx: Xxxxxxx
+ms.assetid: 3FD2AA71-EF67-47B2-9332-3FFA5D3703EA
+description: この記事では、BitmapDecoder と BitmapEncoder を使って画像ファイルを読み込んだり保存したりする方法のほか、SoftwareBitmap オブジェクトを使ってビットマップ画像を表現する方法について説明します。
+title: イメージング
 ---
 
-# Xxxxxxx
+# イメージング
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください \]
 
 
-Xxxx xxxxxxx xxxxxxxx xxx xx xxxx xxx xxxx xxxxx xxxxx xxxxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226176) xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226206) xxx xxx xx xxx xxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887358) xxxxxx xx xxxxxxxxx xxxxxx xxxxxx.
+この記事では、[**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) と [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) を使って画像ファイルを読み込んだり保存したりする方法のほか、[**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトを使ってビットマップ画像を表現する方法について説明します。
 
-Xxx **XxxxxxxxXxxxxx** xxxxx xx x xxxxxxxxx XXX xxxx xxx xx xxxxxxx xxxx xxxxxxxx xxxxxxx xxxxxxxxx xxxxx xxxxx, [**XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243259) xxxxxxx, XxxxxxYX xxxxxxxx, xxx xxxx. **XxxxxxxxXxxxxx** xxxxxx xxx xx xxxxxx xxxxxxx xxxxxxx xxxxxxxxx xxxxx xxxxxxx xxx xxxxx xxxxx, xxx xxxxxx xxx-xxxxx xxxxxx xx xxxxx xxxx. Xxxx, **XxxxxxxxXxxxxx** xx x xxxxxx xxxxxxxxx xxxx xx xxxxxxxx xxxxxxxx xx Xxxxxxx, xxxxxxxxx:
+**SoftwareBitmap** クラスは、さまざまなソースから作成できる多用途の API です。画像ファイルや [**WriteableBitmap**](https://msdn.microsoft.com/library/windows/apps/br243259) オブジェクト、Direct3D サーフェスから作成できるほか、コードから作成することもできます。 **SoftwareBitmap** を使うと、異なるピクセル形式間やアルファ モード間の変換、ピクセル データへの低レベル アクセスを簡単に行うことができます。 Windows のさまざまな機能のインターフェイスとしても、**SoftwareBitmap** は広く使われています。その例を以下に挙げます。
 
--   [
-            **XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn278725) xxxxxx xxx xx xxx xxxxxx xxxxxxxx xx xxx xxxxxx xx x **XxxxxxxxXxxxxx**.
+-   [**CapturedFrame**](https://msdn.microsoft.com/library/windows/apps/dn278725) では、カメラによってキャプチャされたフレームを **SoftwareBitmap** として取得できます。
 
--   [
-            **XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn930917) xxxxxx xxx xx xxx x **XxxxxxxxXxxxxx** xxxxxxxxxxxxxx xx x **XxxxxXxxxx**.
+-   [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) では、**VideoFrame** の **SoftwareBitmap**表現を取得することができます。
 
--   [
-            **XxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn974129) xxxxxx xxx xx xxxxxx xxxxx xx x **XxxxxxxxXxxxxx**.
+-   [**FaceDetector**](https://msdn.microsoft.com/library/windows/apps/dn974129) では、**SoftwareBitmap** のフェイスを検出することができます。
 
-Xxx xxxxxx xxxx xx xxxx xxxxxxx xxxx XXXx xxxx xxx xxxxxxxxx xxxxxxxxxx.
+この記事のサンプル コードには、以下の名前空間の API が使われています。
 
-[!xxxx-xx[Xxxxxxxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
+[!code-cs[Namespaces](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetNamespaces)]
 
-## Xxxxxx x XxxxxxxxXxxxxx xxxx xx xxxxx xxxx xxxx XxxxxxXxxxxxx
+## BitmapDecoder で画像ファイルから SoftwareBitmap を作成する
 
-Xx xxxxxx x [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887358) xxxx x xxxx, xxx xx xxxxxxxx xx [**XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227171) xxxxxxxxxx xxx xxxxx xxxx. Xxxx xxxxxxx xxxx x [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207847) xx xxxxx xxx xxxx xx xxxxxx xx xxxxx xxxx.
+[
+            **SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) をファイルから作成するには、画像データを含んだ [**StorageFile**](https://msdn.microsoft.com/library/windows/apps/br227171) のインスタンスを取得します。 この例では、[**FileOpenPicker**](https://msdn.microsoft.com/library/windows/apps/br207847) を使って、画像ファイルをユーザーが選択できるようにしています。
 
-[!xxxx-xx[XxxxXxxxxXxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickInputFile)]
+[!code-cs[PickInputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickInputFile)]
 
-Xxxx xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227116) xxxxxx xx xxx **XxxxxxxXxxx** xxxxxx xx xxx x xxxxxx xxxxxx xxxxxx xxxxxxxxxx xxx xxxxx xxxx. Xxxx xxx xxxxxx xxxxxx [**XxxxxxXxxxxxx.XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226182) xx xxx xx xxxxxxxx xx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226176) xxxxx xxx xxx xxxxxxxxx xxxxxx. Xxxx [**XxxXxxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887332) xx xxx x [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887358) xxxxxx xxxxxxxxxx xxx xxxxx.
+**StorageFile** オブジェクトの [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) メソッドを呼び出して、画像データを含んだランダム アクセス ストリームを取得します。 静的メソッド [**BitmapDecoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226182) を呼び出して、指定したストリームの [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) クラスのインスタンスを取得します。 [
+            **GetSoftwareBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn887332) を呼び出して、画像を含んでいる [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) オブジェクトを取得します。
 
-[!xxxx-xx[XxxxxxXxxxxxxxXxxxxxXxxxXxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateSoftwareBitmapFromFile)]
+[!code-cs[CreateSoftwareBitmapFromFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateSoftwareBitmapFromFile)]
 
-## Xxxx x XxxxxxxxXxxxxx xx x xxxx xxxx XxxxxxXxxxxxx
+## BitmapEncoder で SoftwareBitmap をファイルに保存する
 
-Xx xxxx x **XxxxxxxxXxxxxx** xx x xxxx, xxx xx xxxxxxxx xx **XxxxxxxXxxx** xx xxxxx xxx xxxxx xxxx xx xxxxx. Xxxx xxxxxxx xxxx x [**XxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br207871) xx xxxxx xxx xxxx xx xxxxxx xx xxxxxx xxxx.
+**SoftwareBitmap** をファイルに保存するには、画像の保存先となる **StorageFile** のインスタンスを取得します。 この例では、[**FileSavePicker**](https://msdn.microsoft.com/library/windows/apps/br207871) を使って、出力ファイルをユーザーが選択できるようにしています。
 
-[!xxxx-xx[XxxxXxxxxXxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOuputFile)]
+[!code-cs[PickOuputFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetPickOuputFile)]
 
-Xxxx xxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227116) xxxxxx xx xxx **XxxxxxxXxxx** xxxxxx xx xxx x xxxxxx xxxxxx xxxxxx xx xxxxx xxx xxxxx xxxx xx xxxxxxx. Xxxx xxx xxxxxx xxxxxx [**XxxxxxXxxxxxx.XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226211) xx xxx xx xxxxxxxx xx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226206) xxxxx xxx xxx xxxxxxxxx xxxxxx. Xxx xxxxx xxxxxxxxx xx **XxxxxxXxxxx** xx x XXXX xxxxxxxxxxxx xxx xxxxx xxxx xxxxxx xx xxxx xx xxxxxx xxx xxxxx. **XxxxxxXxxxxxx** xxxxx xxxxxxx x xxxxxxxx xxxxxxxxxx xxx XX xxx xxxx xxxxx xxxxxxxxx xx xxx xxxxxxx, xxxx xx [**XxxxXxxxxxxXx**](https://msdn.microsoft.com/library/windows/apps/br226226).
+**StorageFile** オブジェクトの [**OpenAsync**](https://msdn.microsoft.com/library/windows/apps/br227116) メソッドを呼び出して、画像の書き込み先となるランダム アクセス ストリームを取得します。 静的メソッド [**BitmapEncoder.CreateAsync**](https://msdn.microsoft.com/library/windows/apps/br226211) を呼び出して、指定したストリームの [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) クラスのインスタンスを取得します。 **CreateAsync** の第 1 パラメーターは、画像のエンコードに使うコーデックの GUID です。 エンコーダーがサポートしている各コーデックについて、この ID を保持するプロパティが、**BitmapEncoder** クラスによって公開されています ([**JpegEncoderId**](https://msdn.microsoft.com/library/windows/apps/br226226) など)。
 
-Xxx xxx [**XxxXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887337) xxxxxx xx xxx xxx xxxxx xxxx xxxx xx xxxxxxx. Xxx xxx xxx xxxxxx xx xxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226254) xxxxxxxx xx xxxxx xxxxx xxxxxxxxxx xx xxx xxxxx xxxxx xx xx xxxxx xxxxxxx. Xxx [**XxXxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226225) xxxxxxxx xxxxxxxxxx xxxxxxx x xxxxxxxxx xx xxxxxxxxx xx xxx xxxxxxx. Xxxx xxxx xxx xxx xxxx xxxxxxx xxxxxxx xxxxxxxxxx, xx xx xxx xxx xxxx xxxxxxx, xxx xxxxxx xxxxx xxx xxxxxxxxxxx xxxxxxxxx xxxxx xxxx xxxx xx xxxxxx xx xxxxxxxxxx xxx xxx xxxxxxxxx.
+エンコードの対象となる画像は、[**SetSoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887337) メソッドを使って設定します。 [
+            **BitmapTransform**](https://msdn.microsoft.com/library/windows/apps/br226254) プロパティの値を設定することで、画像のエンコード中に基本的な変換を適用することができます。 エンコーダーで縮小表示が生成されるかどうかは、[**IsThumbnailGenerated**](https://msdn.microsoft.com/library/windows/apps/br226225) プロパティによって決まります。 ファイル形式によっては縮小表示がサポートされない場合があるので注意してください。この機能を使う場合、縮小表示がサポートされない場合にスローされるエラー (サポート外操作エラー) をキャッチする必要があります。
 
-Xxxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226216) xx xxxxx xxx xxxxxxx xx xxxxx xxx xxxxx xxxx xx xxx xxxxxxxxx xxxx.
+[
+            **FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) を呼び出すと、指定されたファイルへの画像データの書き込みをエンコーダーが開始します。
 
-[!xxxx-xx[XxxxXxxxxxxxXxxxxxXxXxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSaveSoftwareBitmapToFile)]
+[!code-cs[SaveSoftwareBitmapToFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSaveSoftwareBitmapToFile)]
 
-Xxx xxx xxxxxxx xxxxxxxxxx xxxxxxxx xxxxxxx xxxx xxx xxxxxx xxx **XxxxxxXxxxxxx** xx xxxxxxxx x xxx [**XxxxxxXxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/hh974338) xxxxxx xxx xxxxxxxxxx xx xxxx xxx xx xxxx [**XxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700687) xxxxxxx xxxxxxxxxxxx xxx xxxxxxx xxxxxxxx. Xxx x xxxx xx xxxxxxxxx xxxxxxx xxxxxxx, xxx [XxxxxxXxxxxxx xxxxxxx xxxxxxxxx](bitmapencoder-options-reference.md).
+その他のエンコード オプションは、**BitmapEncoder** を作成するときに、新しい [**BitmapPropertySet**](https://msdn.microsoft.com/library/windows/apps/hh974338) オブジェクトを作成し、そこにエンコーダーの設定を表す [**BitmapTypedValue**](https://msdn.microsoft.com/library/windows/apps/hh700687) オブジェクトを渡すことによって指定できます。 サポートされているエンコーダー オプションの一覧については、「[BitmapEncoder オプション リファレンス](bitmapencoder-options-reference.md)」をご覧ください。
 
-[!xxxx-xx[XxxXxxxxxxxXxxxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetUseEncodingOptions)]
+[!code-cs[UseEncodingOptions](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetUseEncodingOptions)]
 
-## Xxx XxxxxxxxXxxxxx xxxx x XXXX Xxxxx xxxxxxx
+## SoftwareBitmap と XAML Image コントロールを使う
 
-Xx xxxxxxx xx xxxxx xxxxxx x XXXX xxxx xxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242752) xxxxxxx, xxxxx xxxxxx xx **Xxxxx** xxxxxxx xx xxxx XXXX xxxx.
+[
+            **Image**](https://msdn.microsoft.com/library/windows/apps/br242752) コントロールを使って XAML ページ内に画像を表示するには、まず XAML ページで **Image** コントロールを定義します。
 
-[!xxxx-xxx[XxxxxXxxxxxx](./code/ImagingWin10/cs/MainPage.xaml#SnippetImageControl)]
+[!code-xml[ImageControl](./code/ImagingWin10/cs/MainPage.xaml#SnippetImageControl)]
 
-Xxxxxx x xxx [**XxxxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn997854) xxxxxx. Xxx xxx xxxxxxxx xx xxx xxxxxx xxxxxx xx xxxxxxx [**XxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn997856), xxxxxxx xx x **XxxxxxxxXxxxxx**. Xxxx xxx xxx xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br242760) xxxxxxxx xx xxx **Xxxxx** xxxxxxx xx xxx xxxxx xxxxxxx **XxxxxxxxXxxxxxXxxxxx**.
+新しい [**SoftwareBitmapSource**](https://msdn.microsoft.com/library/windows/apps/dn997854) オブジェクトを作ります。 [
+            **SetBitmapAsync**](https://msdn.microsoft.com/library/windows/apps/dn997856) を呼び出し、**SoftwareBitmap** で渡して、ソース オブジェクトの内容を設定します。 その新しく作成した **SoftwareBitmapSource** を、**Image** コントロールの [**Source**](https://msdn.microsoft.com/library/windows/apps/br242760) プロパティに設定します。
 
-[!xxxx-xx[XxxxxxxxXxxxxxXxXxxxxxxxxXxxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmapToWriteableBitmap)]
+[!code-cs[SoftwareBitmapToWriteableBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetSoftwareBitmapToWriteableBitmap)]
 
-Xxx xxx xxxx xxx **XxxxxxxxXxxxxxXxxxxx** xx xxx x **XxxxxxxxXxxxxx** xx xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br210105) xxx xx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br210101).
+**SoftwareBitmapSource** を [**ImageBrush**](https://msdn.microsoft.com/library/windows/apps/br210101) の [**ImageSource**](https://msdn.microsoft.com/library/windows/apps/br210105) として使用して **SoftwareBitmap** を設定することもできます。
 
-## Xxxxxx x XxxxxxxxXxxxxx xxxx x XxxxxxxxxXxxxxx
+## WriteableBitmap から SoftwareBitmap を作成する
 
-Xxx xxx xxxxxx x **XxxxxxxxXxxxxx** xxxx xx xxxxxxxx **XxxxxxxxxXxxxxx** xx xxxxxxx [**XxxxxxxxXxxxxx.XxxxxxXxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887370) xxx xxxxxxxxx xxx **XxxxxXxxxxx** xxxxxxxx xx xxx **XxxxxxxxxXxxxxx** xx xxx xxx xxxxx xxxx. Xxx xxxxxx xxxxxxxx xxxxxx xxx xx xxxxxxx x xxxxx xxxxxx xxx xxx xxxxx xxxxxxx **XxxxxxxxxXxxxxx**. Xxx xxx xxx xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br243253) xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br243251) xxxxxxxxxx xx xxx **XxxxxxxxxXxxxxx** xx xxxxxxx xxx xxxxxxxxxx xx xxx xxx xxxxx.
+[
+            **SoftwareBitmap.CreateCopyFromBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887370) を呼び出して、**WriteableBitmap** の **PixelBuffer** プロパティを指定することで、既存の **WriteableBitmap** から **SoftwareBitmap** を作成し、ピクセル データを設定することができます。 新しく作成する **WriteableBitmap** のピクセル形式は第 2 引数で指定できます。 新しい画像のサイズは、**WriteableBitmap** の [**PixelWidth**](https://msdn.microsoft.com/library/windows/apps/br243253) プロパティと [**PixelHeight**](https://msdn.microsoft.com/library/windows/apps/br243251) プロパティを使って指定してください。
 
-[!xxxx-xx[XxxxxxxxxXxxxxxXxXxxxxxxxXxxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetWriteableBitmapToSoftwareBitmap)]
+[!code-cs[WriteableBitmapToSoftwareBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetWriteableBitmapToSoftwareBitmap)]
 
-## Xxxxxx xx xxxx x XxxxxxxxXxxxxx xxxxxxxxxxxxxxxx
+## SoftwareBitmap をプログラムから作成または編集する
 
-Xx xxx xxxx xxxxx xxx xxxxxxxxx xxxxxxx xxxx xxxxx xxxxx. Xxx xxx xxxx xxxxxx x xxx **XxxxxxxxXxxxxx** xxxxxxxxxxxxxxx xx xxxx xxx xxx xxx xxxx xxxxxxxxx xx xxxxxx xxx xxxxxx xxx **XxxxxxxxXxxxxx**'x xxxxx xxxx.
+ここまでは、画像ファイルを使った方法を紹介してきました。 新しい **SoftwareBitmap** をプログラム コードから作成し、同じ手法を用いて **SoftwareBitmap** のピクセル データにアクセスし、変更を加えることもできます。
 
-**XxxxxxxxXxxxxx** xxxx XXX xxxxxxx xx xxxxxx xxx xxx xxxxxx xxxxxxxxxx xxx xxxxx xxxx.
+**SoftwareBitmap** では、ピクセル データを含んだ RAW バッファーが、COM 相互運用機能を使って公開されます。
 
-Xx xxx XXX xxxxxxx, xxx xxxx xxxxxxx x xxxxxxxxx xx xxx **Xxxxxx.Xxxxxxx.XxxxxxxXxxxxxxx** xxxxxxxxx xx xxxx xxxxxxx.
+COM 相互運用機能を使うには、**System.Runtime.InteropServices** 名前空間の参照をプロジェクトに追加する必要があります。
 
-[!xxxx-xx[XxxxxxxXxxxxxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetInteropNamespace)]
+[!code-cs[InteropNamespace](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetInteropNamespace)]
 
-Xxxxxxxxxx xxx [**XXxxxxxXxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/mt297505) XXX xxxxxxxxx xx xxxxxx xxx xxxxxxxxx xxxx xxxxxx xxxx xxxxxxxxx.
+COM インターフェイス [**IMemoryBufferByteAccess**](https://msdn.microsoft.com/library/windows/desktop/mt297505) を初期化するには、対象の名前空間に以下のコードを追加します。
 
-[!xxxx-xx[XXXXxxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCOMImport)]
+[!code-cs[COMImport](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCOMImport)]
 
-Xxxxxx x xxx **XxxxxxxxXxxxxx** xxxx xxxxx xxxxxx xxx xxxx xxx xxxx. Xx, xxx xx xxxxxxxx **XxxxxxxxXxxxxx** xxx xxxxx xxx xxxx xx xxxx xxx xxxxx xxxx. Xxxx [**XxxxxxxxXxxxxx.XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887380) xx xxxxxx xx xxxxxxxx xx xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887325) xxxxx xxxxxxxxxxxx xxx xxxxx xxxx xxxxxx. Xxxx xxx **XxxxxxXxxxxx** xx xxx **XXxxxxxXxxxxxXxxxXxxxxx** XXX xxxxxxxxx xxx xxxx xxxx [**XXxxxxxXxxxxxXxxxXxxxxx.XxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/mt297506) xx xxxxxxxx x xxxx xxxxx xxxx xxxx. Xxx xxx [**XxxxxxXxxxxx.XxxXxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887330) xxxxxx xx xxx x [**XxxxxxXxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887342) xxxxxx xxxx xxxx xxxx xxx xxxxxxxxx xxx xxxxxx xxxx xxx xxxxxx xxx xxxx xxxxx.
+必要なピクセル形式とサイズを指定して新しい **SoftwareBitmap** を作成します。 既にある **SoftwareBitmap** のピクセル データを編集する必要がある場合は、その SoftwareBitmap を使ってもかまいません。 [
+            **SoftwareBitmap.LockBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887380) を呼び出して、ピクセル データ バッファーを表す [**BitmapBuffer**](https://msdn.microsoft.com/library/windows/apps/dn887325) クラスのインスタンスを取得します。 **BitmapBuffer** を COM インターフェイス **IMemoryBufferByteAccess** にキャストしたうえで [**IMemoryBufferByteAccess.GetBuffer**](https://msdn.microsoft.com/library/windows/desktop/mt297506) を呼び出し、バイト配列にデータを設定します。 ピクセルごとにバッファーのオフセットを計算しやすいよう、[**BitmapBuffer.GetPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887330) メソッドを使って [**BitmapPlaneDescription**](https://msdn.microsoft.com/library/windows/apps/dn887342) オブジェクトを取得します。
 
-[!xxxx-xx[XxxxxxXxxXxxxxxxxXxxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateNewSoftwareBitmap)]
+[!code-cs[CreateNewSoftwareBitmap](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateNewSoftwareBitmap)]
 
-Xxxxxxx xxxx xxxxxx xxxxxxxx xxx xxx xxxxxx xxxxxxxxxx xxx Xxxxxxx Xxxxxxx xxxxx, xx xxxx xx xxxxxxxx xxxxx xxx **xxxxxx** xxxxxxx. Xxx xxxx xxxx xxxxxxxxx xxxx xxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx xx xxxxx xxx xxxxxxxxxxx xx xxxxxx xxxx xx xxxxxxx xxx xxxxxxx'x **Xxxxxxxxxx** xxxx, xxxxxxxx xxx **Xxxxx** xxxxxxxx xxxx, xxx xxxxxxxxx xxx **Xxxxx Xxxxxx Xxxx** xxxxxxxx.
+このメソッドは、Windows ランタイム型よりも低いレベルの RAW バッファーにアクセスするため、**unsafe** キーワードを使って宣言する必要があります。 また、Microsoft Visual Studio でアンセーフ コードのコンパイルを許可するようにプロジェクトを構成する必要があります。プロジェクトの **[プロパティ]** ページを開き、**[ビルド]** プロパティ ページをクリックして、**[アンセーフ コードの許可]** チェック ボックスをオンにしてください。
 
-## Xxxxxx x XxxxxxxxXxxxxx xxxx x XxxxxxYX xxxxxxx
+## Direct3D サーフェスから SoftwareBitmap を作成する
 
-Xx xxxxxx x **XxxxxxxxXxxxxx** xxxxxx xxxx x XxxxxxYX xxxxxxx, xxx xxxx xxxxxxx xxx [**Xxxxxxx.Xxxxxxxx.XxxxxxX.XxxxxxYXYY**](https://msdn.microsoft.com/library/windows/apps/dn895104) xxxxxxxxx xx xxxx xxxxxxx.
+Direct3D サーフェスから **SoftwareBitmap** オブジェクトを作成するには、プロジェクトで [**Windows.Graphics.DirectX.Direct3D11**](https://msdn.microsoft.com/library/windows/apps/dn895104) 名前空間を追加する必要があります。
 
-[!xxxx-xx[XxxxxxYXXxxxxxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetDirect3DNamespace)]
+[!code-cs[Direct3DNamespace](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetDirect3DNamespace)]
 
-Xxxx [**XxxxxxXxxxXxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887373) xx xxxxxx x xxx **XxxxxxxxXxxxxx** xxxx xxx xxxxxxx. Xx xxx xxxx xxxxxxxxx, xxx xxx **XxxxxxxxXxxxxx** xxx x xxxxxxxx xxxx xx xxx xxxxx xxxx. Xxxxxxxxxxxxx xx xxx **XxxxxxxxXxxxxx** xxxx xxx xxxx xxx xxxxxx xx xxx XxxxxxYX xxxxxxx.
+サーフェスから新しい **SoftwareBitmap** を作成するには、[**CreateCopyFromSurfaceAsync**](https://msdn.microsoft.com/library/windows/apps/dn887373) を呼び出します。 この名前を見るとわかるように、新しい **SoftwareBitmap** には、画像データのコピーが別に存在します。 **SoftwareBitmap** に変更を加えても、Direct3D サーフェスには一切影響しません。
 
-[!xxxx-xx[XxxxxxXxxxxxxxXxxxxxXxxxXxxxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateSoftwareBitmapFromSurface)]
+[!code-cs[CreateSoftwareBitmapFromSurface](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetCreateSoftwareBitmapFromSurface)]
 
-## Xxxxxxx x XxxxxxxxXxxxxx xx x xxxxxxxxx xxxxx xxxxxx
+## SoftwareBitmap を異なるピクセル形式に変換する
 
-Xxx **XxxxxxxxXxxxxx** xxxxx xxxxxxxx xxx xxxxxx xxxxxx, [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887362), xxxx xxxxxx xxx xx xxxxxx xxxxxx x xxx **XxxxxxxxXxxxxx** xxxx xxxx xxx xxxxx xxxxxx xxx xxxxx xxxx xxx xxxxxxx xxxx xx xxxxxxxx **XxxxxxxxXxxxxx**. Xxxx xxxx xxx xxxxx xxxxxxx xxxxxx xxx x xxxxxxxx xxxx xx xxx xxxxx xxxx. Xxxxxxxxxxxxx xx xxx xxx xxxxxx xxxx xxx xxxxxx xxx xxxxxx xxxxxx.
+**SoftwareBitmap** クラスの静的メソッド [**Convert**](https://msdn.microsoft.com/library/windows/apps/dn887362) を使うと、既にある **SoftwareBitmap** から、指定したピクセル形式とアルファ モードを使った新しい **SoftwareBitmap** を簡単に作成することができます。 新しく作成されたビットマップには、画像データのコピーが別に存在します。 新しいビットマップに変更を加えても、元のビットマップには一切影響しません。
 
-[!xxxx-xx[Xxxxxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
+[!code-cs[Convert](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetConvert)]
 
-## Xxxxxxxxx xx xxxxx xxxx
+## 画像ファイルのトランスコード
 
-Xxx xxx xxxxxxxxx xx xxxxx xxxx xxxxxxxx xxxx x [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226176) xx x [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226206). Xxxxxx x [**XXxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241731) xxxx xxx xxxx xx xx xxxxxxxxxx. Xxxxxx x xxx **XxxxxxXxxxxxx** xxxx xxx xxxxx xxxxxx. Xxxxxx x xxx [**XxXxxxxxXxxxxxXxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241720) xxx xxx xxxxxxx xx xxxxx xx xxx xxxx [**XxxxxxXxxxxxx.XxxxxxXxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226214), xxxxxxx xx xxx xx-xxxxxx xxxxxx xxx xxx xxxxxxx xxxxxx. Xxx xxx xxxxxxxx xxxxxxxxxx xxx xxxx. Xxx xxxxxxxxxx xx xxx xxxxx xxxxx xxxx xxxx xxx xx xxx xxxxxxxxxxxx xxx xx xxx xxxxxxx, xxxx xx xxxxxxx xx xxx xxxxxx xxxx xxxxxxxxx. Xxxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226216) xx xxxxx xxx xxxxxxx xx xxxxxx xx xxx xx-xxxxxx xxxxxx. Xxxxxxx, xxxx xxx xxxx xxxxxx xxx xxx xx-xxxxxx xxxxxx xx xxx xxxxxxxxx xxx xxxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701827) xx xxxxx xxx xx-xxxxxx xxxxxx xxx xx xxx xxxx xxxxxx.
+画像ファイルを [**BitmapDecoder**](https://msdn.microsoft.com/library/windows/apps/br226176) から [**BitmapEncoder**](https://msdn.microsoft.com/library/windows/apps/br226206) に直接トランスコードすることができます。 トランスコードの対象となるファイルから [**IRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241731) を作成します。 入力ストリームから新しい **BitmapDecoder** を作成します。 エンコーダーの書き込み先となる新しい [**InMemoryRandomAccessStream**](https://msdn.microsoft.com/library/windows/apps/br241720) を作成し、[**BitmapEncoder.CreateForTranscodingAsync**](https://msdn.microsoft.com/library/windows/apps/br226214) を呼び出します。このとき引数には、インメモリ ストリームとデコーダー オブジェクトを渡してください。 必要なエンコード プロパティを設定します。 入力画像ファイルのプロパティのうち、エンコーダーに対して明示的に指定しなかったプロパティはすべて元のまま、出力ファイルに書き込まれます。 [
+            **FlushAsync**](https://msdn.microsoft.com/library/windows/apps/br226216) を呼び出すと、インメモリ ストリームへのエンコードをエンコーダーが開始します。 最後に、ファイル ストリームとインメモリ ストリームを先頭までシークし、[**CopyAsync**](https://msdn.microsoft.com/library/windows/apps/hh701827) を呼び出してインメモリ ストリームをファイル ストリームに書き込みます。
 
-[!xxxx-xx[XxxxxxxxxXxxxxXxxx](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetTranscodeImageFile)]
+[!code-cs[TranscodeImageFile](./code/ImagingWin10/cs/MainPage.xaml.cs#SnippetTranscodeImageFile)]
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [XxxxxxXxxxxxx xxxxxxx xxxxxxxxx](bitmapencoder-options-reference.md)
-* [Xxxxx Xxxxxxxx](image-metadata.md)
+* [BitmapEncoder オプション リファレンス](bitmapencoder-options-reference.md)
+* [画像のメタデータ](image-metadata.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

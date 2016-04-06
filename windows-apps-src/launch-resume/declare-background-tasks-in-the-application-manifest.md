@@ -1,32 +1,32 @@
 ---
-xxxxx: Xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx
-xxxxxxxxxxx: Xxxxxx xxx xxx xx xxxxxxxxxx xxxxx xx xxxxxxxxx xxxx xx xxxxxxxxxx xx xxx xxx xxxxxxxx.
-xx.xxxxxxx: YXYXXYXY-YXYY-YYYY-YYYY-YYYYYXYYXYYY
+title: Declare background tasks in the application manifest
+description: Enable the use of background tasks by declaring them as extensions in the app manifest.
+ms.assetid: 6B4DD3F8-3C24-4692-9084-40999A37A200
 ---
 
-# Xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx
+# Declare background tasks in the application manifest
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxxxxxxxXxxxx Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224847)
+-   [**BackgroundTasks Schema**](https://msdn.microsoft.com/library/windows/apps/br224794)
+-   [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
 
-Xxxxxx xxx xxx xx xxxxxxxxxx xxxxx xx xxxxxxxxx xxxx xx xxxxxxxxxx xx xxx xxx xxxxxxxx.
+Enable the use of background tasks by declaring them as extensions in the app manifest.
 
-Xxxxxxxxxx xxxxx xxx xx xxxxxxxx xx xxx xxx xxxxxxxx xx xxxx xxxx xxx xxxx xxx xx xxxx xx xxxxxxxx xxxx (xx xxxxxxxxx xxxx xx xxxxxx). Xxxxxxxxxxxx, xxxxxxxxxx xxxxx xxxx xx xxxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xx xxxx xxxxxxxxxxxxx.
+Background tasks but be declared in the app manifest or else your app will not be able to register them (an exception will be thrown). Additionally, background tasks must be declared in the application manifest to pass certification.
 
-Xxxx xxxxx xxxxxxx xxx xxxx x xxxxxxx xxx xx xxxx xxxxxxxxxx xxxx xxxxxxx, xxx xxxx xxxx xxx xxxxxxxxx xxxx xxxxxxxxxx xxxx xx xxx xx xxxxxxxx xx xx xxxxx xxx xxxxxxx.
+This topic assumes you have a created one or more background task classes, and that your app registers each background task to run in response to at least one trigger.
 
-## Xxx Xxxxxxxxxx Xxxxxxxx
+## Add Extensions Manually
 
 
-Xxxx xxx xxxxxxxxxxx xxxxxxxx (Xxxxxxx.xxxxxxxxxxxx) xxx xx xx xxx Xxxxxxxxxxx xxxxxxx. Xxxxxx xx Xxxxxxxxxx xxxxxxx (xx xxx xxxxx'x xxxxxxx xxxxx).
+Open the application manifest (Package.appxmanifest) and go to the Application element. Create an Extensions element (if one doesn't already exist).
 
-Xxx xxxxxxxxx xxxxxxx xx xxxxx xxxx xxx [xxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=618666):
+The following snippet is taken from the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666):
 
 ```xml
 <Application Id="App"
@@ -47,12 +47,12 @@ Xxx xxxxxxxxx xxxxxxx xx xxxxx xxxx xxx [xxxxxxxxxx xxxx xxxxxx](http://go.micro
  </Application>
 ```
 
-## Xxx x Xxxxxxxxxx Xxxx Xxxxxxxxx
+## Add a Background Task Extension
 
 
-Xxxxxxx xxxx xxxxx xxxxxxxxxx xxxx.
+Declare your first background task.
 
-Xxxx xxxx xxxx xxxx xxx Xxxxxxxxxx xxxxxxx (xxx xxxx xxx xxxxxxxxxx xx xxx xxxxxxxxx xxxxx).
+Copy this code into the Extensions element (you will add attributes in the following steps).
 
 ```xml
       <Extensions>
@@ -64,9 +64,9 @@ Xxxx xxxx xxxx xxxx xxx Xxxxxxxxxx xxxxxxx (xxx xxxx xxx xxxxxxxxxx xx xxx xxxxx
       </Extensions>
 ```
 
-1.  Xxxxxx xxx XxxxxXxxxx xxxxxxxxx xx xxxx xxx xxxx xxxxxx xxxx xx xxxx xxxx xx xxx xxxxx xxxxx xxxx xxxxxxxxxxx xxxx xxxxxxxxxx xxxx (**xxxxxxxxx.xxxxxxxxx**).
+1.  Change the EntryPoint attribute to have the same string used by your code as the entry point when registering your background task (**namespace.classname**).
 
-    Xx xxxx xxxxxxx, xxx xxxxx xxxxx xx XxxxxxxXxxxxxxxxxXxxxXxxxXxxxx.XxxxxxxXxxxxxxxxxXxxxXxxxxXxxx:
+    In this example, the entry point is ExampleBackgroundTaskNameSpace.ExampleBackgroundTaskClassName:
 
     ```xml
           <Extensions>
@@ -78,11 +78,11 @@ Xxxx xxxx xxxx xxxx xxx Xxxxxxxxxx xxxxxxx (xxx xxxx xxx xxxxxxxxxx xx xxx xxxxx
           </Extensions>
     ```
 
-2.  Xxxxxx xxx xxxx xx Xxxx Xxxx xxxxxxxxx xx xxxxxxxx xxx xxxx xx xxxx xxxxxxxxxxxx xxxx xxxx xxxx xxxxxxxxxx xxxx. Xx xxx xxxxxxxxxx xxxx xx xxxxxxxxxx xxxx xxxxxxxx xxxxxxx xxxxx, xxx xxxxxxxxxx Xxxx xxxxxxxx xxx Xxxx xxxxxxxxxx xxx xxxx xxx.
+2.  Change the list of Task Type attribute to indicate the type of task registration used with this background task. If the background task is registered with multiple trigger types, add additional Task elements and Type attributes for each one.
 
-    **Xxxx**  Xxxx xxxx xx xxxx xxxx xx xxx xxxxxxx xxxxx xxx'xx xxxxx, xx xxx xxxxxxxxxx xxxx xxxx xxx xxxxxxxx xxxx xxx xxxxxxxxxx xxxxxxx xxxxx (xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224772) xxxxxx xxxx xxxx xxx xxxxx xx xxxxxxxxx).
+    **Note**  Make sure to list each of the trigger types you're using, or the background task will not register with the undeclared trigger types (the [**Register**](https://msdn.microsoft.com/library/windows/apps/br224772) method will fail and throw an exception).
 
-    Xxxx xxxxxxx xxxxxxx xxxxxxxxx xxx xxx xx xxxxxx xxxxx xxxxxxxx xxx xxxx xxxxxxxxxxxxx:
+    This snippet example indicates the use of system event triggers and push notifications:
 
     ```xml
                 <Extension Category="windows.backgroundTasks" EntryPoint="Tasks.BackgroundTaskClass">
@@ -141,16 +141,20 @@ The following example is the complete Application element from the [background t
 </Applications>
 ```
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxx x xxxxxxxxxx xxxx](debug-a-background-task.md)
-* [Xxxxxxxx x xxxxxxxxxx xxxx](register-a-background-task.md)
-* [Xxxxxxxxxx xxx xxxxxxxxxx xxxxx](guidelines-for-background-tasks.md)
+* [Debug a background task](debug-a-background-task.md)
+* [Register a background task](register-a-background-task.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+
+ 
 
  
 
- 
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

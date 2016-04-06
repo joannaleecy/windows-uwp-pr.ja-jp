@@ -1,75 +1,79 @@
 ---
-xxxxx: Xxx x xxxxxx xxxxxx
-xxxxxxxxxxx: Xxx xxxx xxx'x xxxxxx xxxxxx xxxxx xxx xxxxxxxxxx xxxxx xxxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY.
-xx.xxxxxxx: YYXYYYYY-YXXY-YYYY-YXYY-YYYXYYYXYXYY
+title: スプラッシュ画面の追加
+description: Microsoft Visual Studio 2015 を使ってアプリのスプラッシュ画面の画像と背景色を設定します。
+ms.assetid: 41F53046-8AB7-4782-9E90-964D744B7D66
 ---
 
-# Xxx x xxxxxx xxxxxx
+# スプラッシュ画面の追加
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
-Xxx xxxx xxx'x xxxxxx xxxxxx xxxxx xxx xxxxxxxxxx xxxxx xxxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY.
+Microsoft Visual Studio 2015 を使ってアプリのスプラッシュ画面の画像と背景色を設定します。
 
-## Xxx xxx xxxxxx xxxxxx xxxxx xxx xxxxxxxxxx xxxxx xx Xxxxxx Xxxxxx YYYY
+## Visual Studio 2015 でスプラッシュ画面の画像と背景色を設定する
 
 
-Xxxx xxx xxx x Xxxxxx Xxxxxx YYYY xxxxxxxx xx xxxxxx xxxx xxx, x xxxxxxx xxxxx xx xxxxx xx xxxx xxxxxxx xxx xxx xx xxx xxxxxx xxxxxx xxxxx. Xxx xxxxxxxxxx xxxxx xxx xxxx xxxxxx xxxxxx xxxxxxxx xx x xxxxx xxxx. Xx xxx xxxx xx xxxxxx xxx xxxxxxx xxxxx xx xxxxx xx xxxx xxx'x xxxxxx xxxxxx, xxxxxx xxxxx xxxxx:
+Visual Studio 2015 テンプレートを使ってアプリを作成すると、既定の画像がプロジェクトに追加され、スプラッシュ画面の画像として設定されます。 スプラッシュ画面の既定の背景色は既定で薄い灰色に設定されます。 アプリのスプラッシュ画面の既定の画像や色を変更する場合は、次の手順を実行します。
 
-1.  Xxxx xxxx xxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxxx xx Xxxxxx Xxxxxx YYYY.
-2.  Xxxx **Xxxxxxxx Xxxxxxxx**, xxxx xxx "Xxxxxxx.xxxxxxxxxxxx" xxxx. Xxx xxx xxxx xxxx xxxx xxxx xxxx xxx xxxx xxx xx xxxxxxxx **Xxxxxxx** &xx; **Xxxxx** &xx; **Xxxx Xxx Xxxxxxxx**.
-3.  Xxxx xxx **Xxxxxx Xxxxxx** xxx xxx xxxxxx **Xxxxxx Xxxxxx** xxxx xxx **Xxx Xxxxx Xxxxxx** xxxx xx xxx xxxx xxxx xx xxx "Xxxxxxx.xxxxxxxxxxxx" xxxxxx. Xx xxx'xx xxxxxxxx xxxx xxxxxx xxxxxx xxx xxx xxxxx xxxx, xxx'xx xxx xxx "Xxxxxx\\XxxxxxXxxxxx.xxx" xxxx xx xxx **Xxxxxx Xxxxxx** xxxxx.
+1.  Visual Studio 2015 で既にあるユニバーサル Windows プラットフォーム (UWP) アプリ プロジェクトを開きます。
+2.  **ソリューション エクスプ ローラー**から "Package.appxmanifest" ファイルを開きます。 メニュー バーから **[プロジェクト]** &gt; **[ストア]** &gt; **[アプリケーション マニフェストの編集]** の順に選んで、このファイルを開くこともできます。
+3.  **[ビジュアル資産]** タブを開き、[Package.appxmanifest] ウィンドウの左側にある **[すべてのイメージ資産]** ウィンドウから **[スプラッシュ画面]** を選びます。 初めてスプラッシュ画面を変更する場合は、**[スプラッシュ画面]** に "Assets\\SplashScreen.png" というパスが表示されます。
 
-    Xxx xxxxxxxxx xxxxxx xxxx xxxxx xxx "Xxxxxxx.xxxxxxxxxxxx" xxxxxx xx Xxxxxx Xxxxxx YYYY. Xxxxxxxxx xx xxx xxxx xx xxxxxxx, xxx xxxx xxx x xxxxxxxx xxxxxxxxx xxx xx xxxxxx xxxxxx.
+    次のスクリーン ショットは、Visual Studio 2015 での [Package.appxmanifest] ウィンドウを示しています。 プロジェクトの種類に応じて、表示されるビジュアル資産が若干異なります。
 
-    ![x xxxxxx xxxx xx xxx "xxxxxxx.xxxxxxxxxxxx" xxxxxx xx xxxxxx xxxxxx YYYY](images/appmanifest.png)
+    ![Visual Studio 2013 で表示される [package.appxmanifest] ウィンドウのスクリーン ショット](images/appmanifest.png)
 
-    Xx xxx xxxx "Xxxxxxx.xxxxxxxxxxxx" xx x xxxx xxxxxx, xxx [**XxxxxxXxxxxx xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211467) xxxxxxx xx x xxxxx xx xxx [**XxxxxxXxxxxxxx xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211471). Xxx xxxxxxx xxxxxx xxxxxx xxxxxx xx xxx xxxxxxxx xxxx xxxxx xxxx xxxx xx x xxxx xxxxxx:
+    テキスト エディターで "Package.appxmanifest" を開くと、[**VisualElements 要素**](https://msdn.microsoft.com/library/windows/apps/br211471) の子として [**SplashScreen 要素**](https://msdn.microsoft.com/library/windows/apps/br211467) が表示されます。 マニフェスト ファイル内の既定のスプラッシュ画面のマークアップはテキスト エディターで次のようになります。
 
     ```xaml
     <uap:SplashScreen Image="Assets\SplashScreen.png" />
     ```
 
-4.  Xx xxxxxx x xxx xxxxxx xxxxxx xxxxx xxx x XXX xxx, xxxxx xxx xxxxxx xxxx xx xxxxxxxx xxxx xxxxxxx xxxx xx xxx **YYYY x YYY xx** xxxxx xxxxx **Xxxxxx Xxxxxx**. Xxxxxx xxx YYYY x YYY xxxxx xxxxx (.xxx, .xxx, xx .xxxx) xxx'x xxxx xx xxx xxx xxxx xxxxxx xxxxxx xxxxx.
+4.  UWP アプリ用の新しいスプラッシュ画面の画像を選ぶには、**[スケーリングされた資産]** で **[1240 x 600 px]** ラベルの横にある省略記号のボタンをクリックします。 スプラッシュ画面の画像に使う 1240 × 600 ピクセルの画像 (.png、.jpg、または .jpeg) を選びます。
 
-    **Xxxxxxxxx**  Xxx xxxxxx xxxxxx xxxxx xxx xxxxxx xxxx xx YYY x YYY xxxxxx xxxxx x Yx xxxxxxx xxxxxx. Xxxx, xxxx xxxxxxxxx xxxx xxxxxx xxxxxx, xxxx xxxx xx xx xxxxxxx xxxx xxx xxxxxx, xxx xxxxxxxx. Xx xxxx xxx xxxx xxx xxxxxx xxxx x xxxxxx xxxxxx xxx x Xxxxxxx Xxxxx Xxxxx xxx xxxx.
-
-     
-
-5.  Xx xxxxxx x xxx xxxxxx xxxxxx xxxxx xxx x Xxxxxxx Xxxxx Xxxxx xxx, xxxxx xxx xxxxxx xxxx xx xxxxxxxx xxxx xxxxxxx xxxx xx xxx **YYYY x YYYY xx** xxxxx xxxxx **Xxxxxx Xxxxxx**. Xxxxxx xxx YYYY x YYYY xxxxx xxxxx (.xxx, .xxx, xx .xxxx) xxx'x xxxx xx xxx xxx xxxx xxxxxx xxxxxx xxxxx.
-
-    **Xxxxxxxxx**  Xxx xxxxxx xxxxxx xxxxx xxx xxxxxx xxxx xx YYYY x YYYY xxxxxx xxxxx xx xxx xxxxxxx xxxx xxx x Y.Yx xxxxxxx xxxxxx. Xx xxxx xx xxx xxxx xxxxx xxx xxxxxxx xxxx xx xxxx xx xxxxxx xxxx xxx Y.Yx xxx Yx xxxxxxx xxxxxxx.
+    **重要**  選択するスプラッシュ画面の画像は、等倍のスケール ファクターを使った 620 x 300 ピクセルの画像である必要があります。 また、スプラッシュ画面を設計するときは、画面より小さく、中央に表示されることに注意してください。 Windows Phone ストア アプリのスプラッシュ画面のように画面全体に表示されるわけではありません。
 
      
 
-6.  Xx xxx **Xxxxxxxxxx Xxxxx** xxxxx xx xxx **Xxxxxx Xxxxxx** xxxxxxx, xxx xxx xxxxxxxxxx xxxxx xxxxxxxxx xxxx xxxx xxxxxx xxxxxx xxxxx. Xxx xxx xxxxx xxxxxx xxx xxxx xx x xxxxx xx '\#' xxx xxx xxx xxxxx xx x xxxxx. Xxx x xxxx xx xxx xxxxx xx xxxxxxxxx xxxxxx, xxx [**XxxxxxXxxxxx xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211467).
+5.  新しい Windows Phone ストア アプリ用スプラッシュ画面の画像を選ぶには、**[スケーリングされた資産]** で **[1152 x 1920 px]** ラベルの横にある省略記号のボタンをクリックします。 スプラッシュ画面の画像に使う 1152 × 1920 ピクセルの画像 (.png、.jpg、または .jpeg) を選びます。
 
-    Xxxxxxx x xxxxxxxxxx xxxxx xxx xxxx xxxxxx xxxxxx xx xxxxxxxx. Xx xxx xxx'x xxxxxxx x xxxxx xxx x XXX xxx, xxx xxxxxx xxxxxx xxxxxxxxxx xxxxx xxxxxxxx xx x xxxxx xxxx (xxx xxxxx \#YYYYYY). Xxxx xx xxx xxxx xxxxx xx xxx xxxxxxx **Xxxx** xxxxxxxxxx xxxxx (xxx xxx **Xxxxxxxxxx Xxxxx** xxxxx xx xxx **Xxxx Xxxxxx xxx Xxxxx** xxxxxxx xx xxx **Xxxxxx Xxxxxx** xxx). Xx xxx xxx'x xxxxxxx x xxxxx xxx x Xxxxxxx Xxxxx, xx xxx xx xx "xxxxxxxxxxx", xxxx xxx xxxxxx xxxxxx xxxxxxxxxx xxxxx xxxx xx xxxxxxxxxxx.
+    **重要**  選んだスプラッシュ画面の画像は、2.4 倍のスケール ファクターに適したサイズである 1152 x 1920 ピクセルである必要があります。 提供する資産がこれだけである場合は、1.4 倍と等倍の倍率にスケール ダウンされます。
 
-## Xxxxxxx xxx xxxx xxxxx
+     
+
+6.  **[スプラッシュ画面]** セクションの **[背景色]** で、スプラッシュ画面の画像と共に表示される背景色を設定します。 色の名前を指定することも、'\#' と色を表す 16 進数を指定することもできます。 利用可能な色の名前の一覧については、「[**SplashScreen 要素**](https://msdn.microsoft.com/library/windows/apps/br211467)」をご覧ください。
+
+    スプラッシュ画面の背景色の設定は省略できます。 UWP アプリの色を指定しない場合は、スプラッシュ画面の背景色が既定で、薄い灰色 (16 進数 \#464646) に設定されます。 これは、**[タイル]** の既定の背景色 (**[ビジュアル資産]** タブの **[タイル イメージとロゴ]** セクションの **[背景色]** を参照) と同じ色です。 Windows Phone の色を指定しないか、「透明」に設定した場合は、スプラッシュ画面の背景色が透明になります。
+
+## 要約と次のステップ
 
 
-Xx xxxx xxx xxxxx x xxxxx xx xxxx, xxxxxxxx xxxxxx xx xxxxxxxx xxxxxx xxxxxx. Xxx xxxx-xx-xxxx xxxxxxxx, xxxx [Xxxxxx x xxxxxxxxxx xxxxxx xxxxxx](create-a-customized-splash-screen.md).
+アプリの読み込みに時間がかかる場合は、追加スプラッシュ画面の追加を検討してください。 手順については、「[カスタマイズしたスプラッシュ画面の作成](create-a-customized-splash-screen.md)」をご覧ください。
 
-**Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
-## Xxxxxxx xxxxxx
-
-* [Xxxxxx x xxxxxxxxxx xxxxxx xxxxxx](create-a-customized-splash-screen.md)
-
-**Xxxxxxxxx**
-
-* [**Xxxxxxx xxxxxxxx xxxxxx xxxxxxxxx: XxxxxxXxxxxx xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211467)
-* [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxx.XxxxxxXxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br224763)
+**注**  
+この記事は、ユニバーサル Windows プラットフォーム (UWP) アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
 
  
 
+## 関連トピック
+
+* [カスタマイズしたスプラッシュ スクリーンの作成](create-a-customized-splash-screen.md)
+
+**リファレンス**
+
+* [**パッケージ マニフェスト スキーマ リファレンス: SplashScreen 要素**](https://msdn.microsoft.com/library/windows/apps/br211467)
+* [**Windows.ApplicationModel.Activation.SplashScreen クラス**](https://msdn.microsoft.com/library/windows/apps/br224763)
+
  
+
+ 
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

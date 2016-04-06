@@ -1,59 +1,64 @@
 ---
-xx.xxxxxxx: YYXYYYXY-YXYY-YYXX-XXYY-XYYYYYYYXYYY
-xxxxxxxxxxx: Xxxx xxxxx xxxxx xxx xxx xx xxx x xxxxxxx xxxxx xxxx xxx xxxxx xxxxxxx xxxxxxx xxxxxx.
-xxxxx: Xxx x xxxxxxx xxxxx
+ms.assetid: 05E418B4-5A62-42BD-BF66-A0762216D033
+description: このトピックでは、メディア キャプチャのプレビュー ストリームからプレビュー フレームを取得する方法について説明します。
+title: プレビュー フレームの取得
 ---
 
-# Xxx x xxxxxxx xxxxx
+# プレビュー フレームの取得
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxx xxxxx xxxxx xxx xxx xx xxx x xxxxxxx xxxxx xxxx xxx xxxxx xxxxxxx xxxxxxx xxxxxx.
+このトピックでは、メディア キャプチャのプレビュー ストリームからプレビュー フレームを取得する方法について説明します。
 
-**Xxxx**  
-Xxxx xxxxxxx xxxxxx xx xxxxxxxx xxx xxxx xxxxxxxxx xx [Xxxxxxx Xxxxxx xxx Xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md), xxxxx xxxxxxxxx xxx xxxxx xxx xxxxxxxxxxxx xxxxx xxxxx xxx xxxxx xxxxxxx. Xx xx xxxxxxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxx xxxx xxx xxxxx xxxxx xxxxxxx xxxxxxx xx xxxx xxxxxxx xxxxxx xxxxxx xx xx xxxx xxxxxxxx xxxxxxx xxxxxxxxx. Xxx xxxx xx xxxx xxxxxxx xxxxxxx xxxx xxxx xxx xxxxxxx xxx xx xxxxxxxx xx XxxxxXxxxxxx xxxx xxx xxxx xxxxxxxx xxxxxxxxxxx xxx xxxx xxx xxxx x [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209278) xxxx xx xxxxxx xxxxx xxxxxxx xxxxxx.
+**注**  
+この記事の内容は、写真やビデオの基本的なキャプチャ機能を実装するための手順を紹介した「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」で取り上げた概念やコードに基づいています。 そちらの記事で基本的なメディア キャプチャのパターンを把握してから、高度なキャプチャ シナリオに進むことをお勧めします。 この記事で紹介しているコードは、MediaCapture のインスタンスが既に作成され適切に初期化されていることと、アクティブなビデオ プレビュー ストリームを含んだ [**CaptureElement**](https://msdn.microsoft.com/library/windows/apps/br209278) が存在することを前提としています。
 
-Xx xxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx xxx xxxxx xxxxx xxxxxxx, xxxxxxxxx x xxxxxxx xxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxx.
+プレビュー フレームをキャプチャするためには、基本的なメディア キャプチャに必要な名前空間に加え、次の名前空間が必要となります。
 
-[!xxxx-xx[XxxxxxxXxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewFrameUsing)]
+[!code-cs[PreviewFrameUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetPreviewFrameUsing)]
 
-Xxxx xxx xxxxxxx x xxxxxxx xxxxx, xxx xxx xxxxxxx xxx xxxxxx xx xxxxx xxx xxxxx xxxx xx xxxxxxx xxx xxxxx xx xxxxxxxx x [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn930917) xxxxxx xxxx xxx xxxxxx xxx xxxxxx. Xxxx xxxxxxx xxxxxxx x xxxxx xxxxx xxxx xx xxx xxxx xxxxxxxxxx xx xxx xxxxxxx xxxxxx xx xxxxxxx [**XxxxxXxxxxxXxxxxxxxxx.XxxXxxxxXxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211995) xxx xxxxxxxxxx [**XxxxxXxxxxxXxxx.XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226640) xx xxxxxxx xxx xxxxxxxxxx xxx xxx xxxxxxx xxxxxx. Xxx xxxxx xxx xxxxxx xx xxx xxxxxxx xxxxxx xx xxxx xx xxxxxx xxx xxx xxxxx xxxxx.
+プレビュー フレームを要求するとき、フレームの受信に使う形式を指定するには、必要な形式を指定して [**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) オブジェクトを作成します。 この例では、[**VideoDeviceController.GetMediaStreamProperties**](https://msdn.microsoft.com/library/windows/apps/br211995) の呼び出しで [**MediaStreamType.VideoPreview**](https://msdn.microsoft.com/library/windows/apps/br226640) を指定し、プレビュー ストリームのプロパティを要求することで、プレビュー ストリームと同じ解像度でビデオ フレームを作成します。 プレビュー ストリームの幅と高さを使って新しいビデオ フレームを作成しています。
 
-[!xxxx-xx[XxxxxxXxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateFormatFrame)]
+[!code-cs[CreateFormatFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCreateFormatFrame)]
 
-Xx xxxx [**XxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241124) xxxxxx xx xxxxxxxxxxx xxx xxx xxxx xx xxxxxx xxxxxxx xxxxxx, xxxx [**XxxXxxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926711) xx xxx x xxxxxxx xxxxxx. Xxxx xx xxx xxxxx xxxxx xxxxxxx xx xxx xxxx xxxx xx xxxxxxx xxx xxxxxx xx xxx xxxxxxxx xxxxx.
+[
+            **MediaCapture**](https://msdn.microsoft.com/library/windows/apps/br241124) オブジェクトが初期化されていてアクティブなプレビュー ストリームが存在する場合、[**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926711) を呼び出してプレビュー ストリームを取得します。 引数には、最後のステップで作成したビデオ フレームを渡し、取得するフレームの形式を指定します。
 
-[!xxxx-xx[XxxXxxxxxxXxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewFrameAsync)]
+[!code-cs[GetPreviewFrameAsync](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewFrameAsync)]
 
-Xxx x [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn887358) xxxxxxxxxxxxxx xx xxx xxxxxxx xxxxx xx xxxxxxxxx xxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn930926) xxxxxxxx xx xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn930917) xxxxxx. Xxx xxxxxxxxxxx xx xxxxxx, xxxxxxx, xxx xxxxxxxxx xxxxxxxx xxxxxxx, xxx [Xxxxxxx](imaging.md).
+プレビュー フレームの [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn887358) 表現は、[**VideoFrame**](https://msdn.microsoft.com/library/windows/apps/dn930917) オブジェクトの [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) プロパティにアクセスして取得します。 ソフトウェア ビットマップの保存、読み込み、変更については、「[イメージング](imaging.md)」をご覧ください。
 
-[!xxxx-xx[XxxXxxxxxxXxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewBitmap)]
+[!code-cs[GetPreviewBitmap](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewBitmap)]
 
-Xxx xxx xxxx xxx x [**XXxxxxxYXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn965505) xxxxxxxxxxxxxx xx xxx xxxxxxx xxxxx xx xxx xxxx xx xxx xxx xxxxx xxxx XxxxxxYX XXXx.
+Direct3D API で画像を扱う場合は、プレビュー フレームの [**IDirect3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn965505) 表現を取得することもできます。
 
-[!xxxx-xx[XxxXxxxxxxXxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewSurface)]
+[!code-cs[GetPreviewSurface](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetGetPreviewSurface)]
 
-**Xxxxxxxxx**  
-Xxxxxx xxx [**XxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn930926) xxxxxxxx xx xxx [**XxxxxxYXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn930920) xxxxxxxx xx xxx xxxxxxxx **XxxxxXxxxx** xxx xx xxxx xxxxxxxxx xx xxx xxx xxxx **XxxXxxxxxxXxxxxXxxxx** xxx xxxx xxxxxxxxx xx xxx xxxxxx xx xxxxx xxxx xxx xx xxxxxxx.
+**重要**  
+**GetPreviewFrameAsync** の呼び出し方法と、アプリが実行されているデバイスによっては、返される **VideoFrame** の [**SoftwareBitmap**](https://msdn.microsoft.com/library/windows/apps/dn930926) プロパティまたは [**Direct3DSurface**](https://msdn.microsoft.com/library/windows/apps/dn930920) プロパティのどちらかが null になることがあります。
 
--   Xx xxx xxxx xxx xxxxxxxx xx [**XxxXxxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926713) xxxx xxxxxxx x **XxxxxXxxxx** xxxxxxxx, xxxx xxx xxxxxxxx **XxxxxXxxxx** xxxx xxxx x xxx-xxxx **XxxxxxxxXxxxxx** xxx xxx **XxxxxxYXXxxxxxx** xxxxxxxx xxxx xx xxxx.
--   Xx xxx xxxx xxx xxxxxxxx xx [**XxxXxxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926712) xxxx xxx xx xxxxxxxxx xx x xxxxxx xxxx xxxx x XxxxxxYX xxxxxxx xx xxxxxxxxx xxx xxxxx xxxxxxxxxx, xxx **XxxxxxYXXxxxxxx** xxxxxxxx xxxx xx xxx-xxxx xxx xxx **XxxxxxxxXxxxxx** xxxxxxxx xxxx xx xxxx.
--   Xx xxx xxxx xxx xxxxxxxx xx [**XxxXxxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926712) xxxx xxx xx xxxxxxxxx xx x xxxxxx xxxx xxxx xxx xxx x XxxxxxYX xxxxxxx xx xxxxxxxxx xxx xxxxx xxxxxxxxxx, xxx **XxxxxxxxXxxxxx** xxxxxxxx xxxx xx xxx-xxxx xxx xxx **XxxxxxYXXxxxxxx** xxxxxxxx xxxx xx xxxx.
+-   **VideoFrame** 引数を受け入れる [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926713) のオーバーロードを呼び出した場合、返される **VideoFrame** の **SoftwareBitmap** は null 以外になり、**Direct3DSurface** プロパティは null になります。
+-   Direct3D サーフェスを使ってフレームを内部で表すデバイスで引数のない [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926712) のオーバーロードを呼び出した場合、**Direct3DSurface** プロパティは null 以外になり、**SoftwareBitmap** プロパティは null になります。
+-   Direct3D サーフェスを使ってフレームを内部で表すデバイスで引数のない [**GetPreviewFrameAsync**](https://msdn.microsoft.com/library/windows/apps/dn926712) のオーバーロードを呼び出した場合、**SoftwareBitmap** プロパティは null 以外になり、**Direct3DSurface** プロパティは null になります。
 
-Xxxx xxx xxxxxx xxxxxx xxxxx xxx x xxxx xxxxx xxxxxx xxxxxx xx xxxxxxx xx xxx xxxxxxx xxxxxxxx xx xxx **XxxxxxxxXxxxxx** xx **XxxxxxYXXxxxxxx** xxxxxxxxxx.
+アプリは、**SoftwareBitmap** プロパティまたは **Direct3DSurface** プロパティによって返されるオブジェクトで動作を試みる前に、必ず null 値をチェックする必要があります。
 
-Xxxx xxx xxx xxxx xxxxx xxx xxxxxxx xxxxx, xx xxxx xx xxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/dn930918) xxxxxx (xxxxxxxxx xx Xxxxxxx xx X#) xx xxxx xxx xxxxxxxxx xxxx xx xxx xxxxx. Xx, xxx xxx **xxxxx** xxxxxxx, xxxxx xxxxxxxxxxxxx xxxxxxxx xx xxx xxxxxx.
+プレビュー フレームが不要になったら必ず、その [**Close**](https://msdn.microsoft.com/library/windows/apps/dn930918) メソッド (C# 内で Dispose に投影される) を呼び出して、フレームによって使われているリソースを解放してください。 または、**using** パターンを使ってもかまいません。その場合は、オブジェクトが自動的に破棄されます。
 
-[!xxxx-xx[XxxxxXxXxxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpPreviewFrame)]
+[!code-cs[CleanUpPreviewFrame](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetCleanUpPreviewFrame)]
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxxx xxxxxx xxx xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md)
+* [MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

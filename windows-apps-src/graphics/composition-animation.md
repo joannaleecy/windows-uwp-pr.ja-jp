@@ -1,169 +1,170 @@
 ---
-xx.xxxxxxx: YYYxxxYY-YxYY-YxYx-xxxY-xYYYYYxYYYYY
-xxxxx: Xxxxxxxxxxx xxxxxxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxxxxxx xxxxxx xxx xxxxxx xxxxxxxxxx xxx xx xxxxxxxx xxxxx xxx xxxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxxxxx xxxxxxxxxx xx x XX xxxxxxx xx xxxxxx xxxx xxxx xx xxxxx xx x xxxxxxxxxxx.
+ms.assetid: 386faf59-8f22-2e7c-abc9-d04216e78894
+title: コンポジションのアニメーション
+description: コンポジション オブジェクトと効果の多くのプロパティは、キー フレーム アニメーションや数式アニメーションを使って、時間の経過や計算に基づいて UI 要素のプロパティを変更することによりアニメーション化できます。
 ---
-# Xxxxxxxxxxx xxxxxxxxxx
+# コンポジションのアニメーション
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-Xxxx xxxxxxxxxxx xxxxxx xxx xxxxxx xxxxxxxxxx xxx xx xxxxxxxx xxxxx xxx xxxxx xxx xxxxxxxxxx xxxxxxxxxx xxxxxxxx xxxxxxxxxx xx x XX xxxxxxx xx xxxxxx xxxx xxxx xx xxxxx xx x xxxxxxxxxxx. Xxxxx xxx xxx xxxxx xx xxxxxxxxxx, xxxxxxxx xxxxxxxxxx, xxxxxxxxxxx xx xxx [**XxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706830) xxxxx, xxx xxxxxxxxxx xxxxxxxxxx xxxxxxxxxxx xx xxx [**XxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706817) xxxxx.
+コンポジション オブジェクトと効果の多くのプロパティは、キー フレーム アニメーションや数式アニメーションを使って、時間の経過や計算に基づいて UI 要素のプロパティを変更することによりアニメーション化できます。 アニメーションには、[**KeyFrameAnimation**](https://msdn.microsoft.com/library/windows/apps/Dn706830) クラスによって表されるキー フレーム アニメーションと、[**ExpressionAnimation**](https://msdn.microsoft.com/library/windows/apps/Dn706817) クラスによって表される数式アニメーションの 2 種類があります。
 
--   [Xxxxxxxxxx Xxxxxxxxxx](./composition-animation.md#animatable_properties)
--   [XxxXxxxx Xxxxxxxxxx](./composition-animation.md#keyframe-animations)
-    -   [Xxxxxxxx xxxx xxxxxxxxx xxx XxxXxxxxx](./composition-animation.md#creating-your-animation-and-Keyframes)
-    -   [XxxXxxxx Xxxxxxxxxx](./composition-animation.md#keyframe-properties)
-    -   [Xxxxxx Xxxxxxxxx](./composition-animation.md#easing-functions)
-    -   [Xxxxxxxx xxx Xxxxxxxx XxxXxxxx Xxxxxxxxxx](./composition-animation.md#starting-and-stopping-keyframe-animations)
-    -   [Xxxxxxxxx Xxxxxxxxxx Xxxxxx](./composition-animation.md#animation-completion-events)
--   [Xxxxxxxxxx Xxxxxxxxxx](./composition-animation.md#expression-animations)
-    -   [Xxxxxxxx xxxx Xxxxxxxxxx](./composition-animation.md#creating-your-expression)
-    -   [Xxxxxxxx Xxxx](./composition-animation.md#property-sets)
-    -   [Xxxxxxxxxx XxxXxxxxx](./composition-animation.md#expression_keyframes)
+-   [アニメーション化が可能なプロパティ](./composition-animation.md#animatable_properties)
+-   [キー フレーム アニメーション](./composition-animation.md#keyframe-animations)
+    -   [アニメーションとキー フレームの管理](./composition-animation.md#creating-your-animation-and-Keyframes)
+    -   [キー フレームのプロパティ](./composition-animation.md#keyframe-properties)
+    -   [イージング関数](./composition-animation.md#easing-functions)
+    -   [キー フレーム アニメーションの開始と停止](./composition-animation.md#starting-and-stopping-keyframe-animations)
+    -   [アニメーション完了イベント](./composition-animation.md#animation-completion-events)
+-   [数式アニメーション](./composition-animation.md#expression-animations)
+    -   [数式の作成](./composition-animation.md#creating-your-expression)
+    -   [プロパティ セット](./composition-animation.md#property-sets)
+    -   [数式キー フレーム](./composition-animation.md#expression_keyframes)
 
-## Xxxxxxxxxx Xxxxxxxxxx
+## アニメーション化が可能なプロパティ
 
-Xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxxxx xx xxxxxxxxxxx xxxx xxxx x XxxXxxxx xx Xxxxxxxxxx Xxxxxxxxx:
+次のプロパティは、キー フレーム アニメーションまたは数式アニメーションに関連付けることによってアニメーション化されます。
 
--   XxxxxxxxxxxXxxxxXxxxx.Xxxxx
--   XxxxxXxxx.XxxxxxXxxxx
--   XxxxxXxxx.XxxxXxxxx
--   XxxxxXxxx.XxxxxXxxxx
--   XxxxxXxxx.XxxXxxxx
--   Xxxxxx.XxxxxxXxxxx
--   Xxxxxx.XxxxxxXxxxx
--   Xxxxxx.Xxxxxx
--   Xxxxxx.Xxxxxxx
--   Xxxxxx.Xxxxxxxxxxx
--   Xxxxxx.XxxxxxxxXxxxx
--   Xxxxxx.XxxxxxxxXxxx
--   Xxxxxx.Xxxx
--   Xxxxxx.XxxxxxxxxXxxxxx
--   XxxxxxxxxxxXxxxxxxxXxx
+-   CompositionColorBrush.Color
+-   InsetClip.BottomInset
+-   InsetClip.LeftInset
+-   InsetClip.RightInset
+-   InsetClip.TopInset
+-   Visual.AnchorPoint
+-   Visual.CenterPoint
+-   Visual.Offset
+-   Visual.Opacity
+-   Visual.Orientation
+-   Visual.RotationAngle
+-   Visual.RotationAxis
+-   Visual.Size
+-   Visual.TransformMatrix
+-   CompositionPropertySet
 
-## XxxXxxxx Xxxxxxxxxx
+## キー フレーム アニメーション
 
-XxxXxxxx Xxxxxxxxxx xxx xxxx-xxxxx xxxxxxxxxx xxxx xxx xxx xx xxxx xxx xxxxxx xx xxxxxxx xxx xxx xxxxxxxx xxxxx xxxxxx xxxxxx xxxx xxxx. Xxx xxxxxx xxxxxxxxx xxxxxxx, xxxxxxxx xxx xx xxxxxx xxxx xxx xxxxxxxx xxxxx xxxxxx xx xx x xxxxxxxx xxxx.
+キー フレーム アニメーションは時間に基づくアニメーションで、1 つまたは複数のキー フレームを使って時間の経過と共にアニメーション化された値を変更する方法を指定します。 フレームはマーカーを表し、アニメーション化された値が特定の時点でどのようになるかを定義できます。
 
-### Xxxxxxxx xxxx xxxxxxxxx xxx XxxXxxxxx
+### アニメーションとキー フレームの管理
 
-Xx xxxxxxxxx x XxxXxxxx Xxxxxxxxx, xxx xxx xx xxx xxxxxxxxxxx xxxxxxx xx xxx Xxxxxxxxxx xxxxx xxxx xxxxxxxxxx xx xxx xxxxxxxxx xxxx xx xxx xxxxxxxx xxx xxxx xx xxxxxxx.
+キー フレーム アニメーションを作成するには、アニメーション化するプロパティの構造体の種類に関連付けられたコンポジター クラスのコンストラクター メソッドのいずれかを使います。
 
--   [**XxxxxxXxxxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt589424)
--   [**XxxxxxXxxxxxxxxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt517858)
--   [**XxxxxxXxxxxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706803)
--   [**XxxxxxXxxxxxYXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706806)
--   [**XxxxxxXxxxxxYXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706807)
--   [**XxxxxxXxxxxxYXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706808)
+-   [**CreateColorKeyFrameAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt589424)
+-   [**CreateQuaternionKeyFrameAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt517858)
+-   [**CreateScalarKeyFrameAnimation**](https://msdn.microsoft.com/library/windows/apps/Dn706803)
+-   [**CreateVector2KeyFrameAnimation**](https://msdn.microsoft.com/library/windows/apps/Dn706806)
+-   [**CreateVector3KeyFrameAnimation**](https://msdn.microsoft.com/library/windows/apps/Dn706807)
+-   [**CreateVector4KeyFrameAnimation**](https://msdn.microsoft.com/library/windows/apps/Dn706808)
 
-Xxx xxxxxxx, xxx xxxxxxxxx xxxxxxx xxxxxxx x XxxxxxY xxxxxxxx xxxxxxxxx:
+たとえば、次のスニペットは、Vector3 キー フレーム アニメーションを作成します。
 
 ```cs
 var animation = _compositor.CreateVector3KeyFrameAnimation();
 ```
 
-Xxxx XxxXxxxx xx xxxxxxxxxxx xx xxxxxxx xxx XxxxxxXxxXxxxx xxxxxx xx x XxxXxxxxXxxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxxxx xxx xxxxxxxxxx x xxxxx xxxxxxxxx:
+各キー フレームは、KeyFrameAnimation の InsertKeyFrame メソッドを呼び出して、2 つのコンポーネントと、必要に応じて 3 つ目のコンポーネントを指定することにより作成されます。
 
--   Xxxx: xxxxxxxxxx xxxxxxxx xxxxx xx xxx XxxXxxxx xxxxxxx Y.Y – Y.Y
--   Xxxxx: xxxxxxxx xxxxx xx xxx xxxxxxxxx xxxxx xx xxx xxxx xxxxx
--   (Xxxxxxxx) Xxxxxx xxxxxxxx: xxxxxxxx xx xxxxxxxx xxxxxxxxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxx XxxXxxxx (xxxxxxxxx xxxxx xx)
+-   時間: 正規化されたキー フレームの進行状況 (0.0 ～ 1.0)
+-   値: 特定の時間状態でのアニメーション化する値の特定の値
+-   (省略可能) イージング関数: 前のキー フレームと現在のキー フレームの間の補間を記述する関数 (後で説明します)。
 
-Xxx xxxxxxx, xxx xxxxxxxxx xxxxxxx xxxxxxx x xxxxxxxx xx x XxxxxxYXxxXxxxxXxxxxxxxx xxxx xxxx xxxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxxx:
+たとえば、次のスニペットは、アニメーションの半分の時点でトリガーされるキー フレームを Vector3KeyFrameAnimation に挿入します。
 
 ```cs
 animation.InsertKeyFrame(0.5f, new Vector3(50.0f, 80.0f, 0.0f));
 ```
 
-### XxxXxxxx Xxxxxxxxxx
+### キー フレームのプロパティ
 
-Xxxx xxx'xx xxxxxxx xxxx XxxXxxxx Xxxxxxxxx xxx xxx xxxxxxxxxx XxxXxxxxx, xxx xxx xxxx xx xxxxxx xxxxxxxx xxxxxxxxxx xx xxxx xxxxxxxxx:
+キー フレーム アニメーションと個々のキー フレームを定義すると、アニメーションの複数のプロパティを定義できます。
 
--   XxxxxXxxx – xxxx xxxxxx xx xxxxxxxxx xxxxxx xxxxx XxxxxXxxxxxxxx() xx xxxxxx
--   Xxxxxxxx – xxxxxxxx xx xxx xxxxxxxxx
--   XxxxxxxxxXxxxxxxx – xxxxx xx xxxxxxxx xxxxxx xxxxxxxx xxx xx xxxxxxxxx
--   XxxxxxxxxXxxxx – xxxxxx xx xxxxxx xxxxx x XxxXxxxx Xxxxxxxxx xxxx xxxxxx
--   XxxXxxxx Xxxxx – xxxxxx xx XxxXxxxxx xx x xxxxxxxxxx XxxXxxxxXxxxxxxxx
--   XxxxXxxxxxxx – xxxxxxxxx xxx xxxxxxxx xx xx xxxxxxxxx xxxxxxxx xxxxx xxxx XxxxXxxxxxxxx xx xxxxxx.
+-   DelayTime: StartAnimation() が呼び出されてからアニメーションが開始されるまでの時間
+-   Duration: アニメーションの継続時間
+-   IterationBehavior: アニメーションの繰り返し動作の回数または無制限
+-   IterationCount: キー フレーム アニメーションが繰り返される有限の回数
+-   KeyFrame Count: 特定の KeyFrameAnimation のキー フレームの数
+-   StopBehavior: StopAnimation が呼び出されたときのアニメーションのプロパティ値の動作を指定します。
 
-Xxx xxxxxxx, xxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxxxx xx xxx xxxxxxxxx xx xxxx xxxxxxx:
+たとえば、次のスニペットは、アニメーションの継続時間を 5 秒に設定します。
 
 ```cs
 animation.Duration = TimeSpan.FromSeconds(5);
 ```
 
-### Xxxxxx Xxxxxxxxx
+### イージング関数
 
-X xxx xxxxx xxxxxx xxxxxxxx, x XxxxxxxxxxxXxxxxxXxxxxxxx, xxxxxxxxx xxx xxxxxxxxxxxx xxxxxx xxxxxxxx xxxx xxx xxxxxxxx xxx xxxxx xxxxx xx xxx xxxxxxx xxx xxxxx xxxxx. Xx xxx xx xxx xxxxxxx xx xxxxxx xxxxxxxx xxx xxx XxxXxxxx, x xxxxxxx xxxxx xxxx xx xxxx.
+キー フレーム イージング関数 CompositionEasingFunction は、前のキー フレーム値から現在のキー フレーム値への中間値の進行状況を指定します。 キーフレームのイージング関数を指定しない場合、既定の曲線が使用されます。
 
-Xxxxx xxx xxx xxxxx xx xxxxxx xxxxxxxxx xxxxxxxxx:
+2 種類のイージング関数がサポートされています。
 
--   Xxxxxx ([**XxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706839))
--   Xxxxx Xxxxxx ([**XxxxxXxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706812))
+-   線形 ([**LinearEasingFunction**](https://msdn.microsoft.com/library/windows/apps/Dn706839))
+-   3 次ベジエ ([**CubicBezierEasingFunction**](https://msdn.microsoft.com/library/windows/apps/Dn706812))
 
-Xx xxxxxx xx xxxxxx xxxxxxxx, xxx xxxxxx xxx [**XxxxxxXxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706801) xx [**XxxxxxXxxxxXxxxxxXxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706791) xxxxxx xx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706761) xxxxx:
+イージング関数を作成するには、[**Compositor**](https://msdn.microsoft.com/library/windows/apps/Dn706761) クラスの [**CreateLinearEasingFunction**](https://msdn.microsoft.com/library/windows/apps/Dn706801) メソッドまたは [**CreateCubicBezierEasingFunction**](https://msdn.microsoft.com/library/windows/apps/Dn706791) メソッドを使います。
 
 ```cs
 var linear = _compositor.CreateLinearEasingFunction();
 var easeIn = _compositor.CreateCubicBezierEasingFunction(new Vector2(0.5f, 0.0f), new Vector2(1.0f, 1.0f));
 ```
 
-Xxxx: X xxxxxx xxxx xxx xxxxxxxxxx xxx xxxxxx xxx xxxx Xxxxx Xxxxxx xxx xx xxxxx xxxx.
+注: 3 次ベジエの点を生成するのに便利なツールはここにあります。
 
-Xx xxx xxxx xxxxxx xxxxxxxx xxxx xxxx XxxXxxxx, xxxxxx xxx xx xxx xxxxx xxxxxxxxx xx xxx XxxXxxxx xxxx xxxxxxxxx xx xxxx xxx Xxxxxxxxx:
+イージング関数をキー フレームに追加するには、アニメーションにキー フレームを挿入するときに、3 番目のパラメーターを追加するだけです。
 
 ```cs
 animation.InsertKeyFrame(0.5f, new Vector3(50.0f, 80.0f, 0.0f), easeIn);
 ```
 
-### Xxxxxxxx xxx Xxxxxxxx XxxXxxxx Xxxxxxxxxx
+### キー フレーム アニメーションの開始と停止
 
-Xxxxx xxx xxxx xxxxxxx xxxx xxxxxxxxx, XxxXxxxxx xxx xxxxxxxxxx, xxx xxx xxxxx xx xxxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxx xxxx xx xxxxxxx. Xxx xxxxxxx xxxx xxxxxxxxx xx xxx xxxxxxxx xxx xxxx xx xxxxxxx xx xxxxxxx [**XxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt590840) xx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706858) xxxxxx xxx xxxxxxxx xxxxxxx xx.
+アニメーション、キーフレーム、プロパティを定義したら、アニメーション化するプロパティにアニメーションを接続できます。 プロパティが属する [**Visual**](https://msdn.microsoft.com/library/windows/apps/Dn706858) オブジェクトの [**StartAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt590840) を呼び出して、アニメーション化するプロパティにアニメーションを接続します。
 
-Xxx xxxxxxx xxxxxx xxx xx xxxxxxx xx xx xxxxxxx:
+一般的な構文と例は次のとおりです。
 
 ```cs
 targetVisual.StartAnimation(“Offset”, animation);
 ```
 
-Xxxxx xxxxxxxx xxxx xxxxxxxxx, xxx xxxx xxxx xxx xxxxxxx xx xxxx xxx xxxxxxxxxx xx xx xxxx. Xxxx xx xxxx xx xxxxx xxx [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt590841) xxxxxx xxx xxxxxxxxxx xxx xxxxxxxx xxx xxxx xx xxxx xxxxxxxxx.
+アニメーションを開始した後、アニメーションを停止して接続を切断することもできます。 この処理を実行するには、[**StopAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt590841) メソッドを使って、アニメーション化を停止するプロパティを指定します。
 
-Xxx xxxxxxx:
+次に例を示します。
 
 ```cs
 targetVisual.StopAnimation(“Offset”);
 ```
 
-### Xxxxxxxxx Xxxxxxxxxx Xxxxxx
+### アニメーション完了イベント
 
-XxxXxxxx xxxxxxxxxx xxxx x xxxxxxx xxx, xxxxxx Xxxxxxxxxx Xxxxxxxxxx, xxxxx xxx xxxxxxxxxxx. Xxxxxxxxxx xxx xxxxxxxxx xxxx xxxxxx xx x xxxxxx XxxXxxxx xxxxxxxxx xxxxxxxxx xx xxxxx xxxxxxx. Xxxxxxx xxx xx xxxxxxx xx xxxxxxxxx, xxxxxxxxx xx xxx xxxxx xxxxxx xxxx, xxx xxx xxxx xx xxxxxxxxx xxx xxx xxxxx xx xxxxxxxxxx. Xxxxxx xxxxxxx xxx xxxxxxx xxxxx Xxxxxx xxxxxxx xxx xxxxxxxxx, xxx xxx xx xxxxx xxxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxx.
+キー フレーム アニメーションには、条件付きである数式アニメーションとは異なり、定義済みの最後があります。 開発者は、バッチを使用して、グループまたは単一のキー フレーム アニメーションの完了時を決定できます。 バッチは、バッチ オブジェクトの種類に応じて作成または取得することができ、アニメーションの終了状態を集計するために使用されます。 コミット バッチが取得されている間、スコープ指定されたバッチが作成されます。これらのさまざまなバッチの使用については、後で説明します。
 
-X xxxxx xxxxxxxxxx xxxxx xxxxx xxxx xxx xxxxxxxxxx xxxxxx xxx xxxxx xxxx xxxxxxxxx. Xxx xxxx xx xxxxx xxx x xxxxx'x xxxxxxxxxx xxxxx xx xxxx xxxxxxx xx xxx xxxxxxx xx xxxx xxxxxxx xxxxxxxxx xx xxx xxxxx. Xxxxxxxxxxx xxx xxxxxx xx xxxxxx xxxx xxx xxxx xx xxxx xxxx xxxxxx xx xxxxxx xxxxxxxxxx xxxxxxxx xx xxxxx xx xxxxxxxx xxxxx xxxx.
+バッチ完了イベントは、バッチ内のすべてのアニメーションが完了したときに発生します。 バッチの完了イベントが発生するまでの時間は、バッチ内の最も長い、または最も遅延したアニメーションに依存します。 終了状態の集計は、他の作業をスケジュールするために、選択したアニメーションのグループが完了するタイミングを把握する必要がある場合に便利です。
 
-### Xxxxxx xxxxxxx
+### スコープ指定されたバッチ
 
-Xx xxxxxxxxx x xxxxxxxx xxxxx xx x xxxxxx xxxxxxxxx, xxx xxxxx xxxx xx xxxxxx x Xxxxxx xxxxx xx xxxxxxx [**XxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt589425).
+特定のグループまたは 1 つのアニメーションを集計するには、最初に、[**CreateScopedBatch**](https://msdn.microsoft.com/library/windows/apps/Mt589425) を呼び出してスコープ指定されたバッチを作成する必要があります。
 
 ```cs
 myScopedBatch = _compositor.CreateScopedBatch(CompositionBatchTypes.Animation);
 ```
 
-Xxxxx xxxxxxxx x Xxxxxx xxxxx, xxx xxxxxxx xxxxxxxxxx xxxxxxxxx xxxxx xxx xxxxx xx xxxxxxxxxx xxxxxxxxx xx xxxxx xxxxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt590848) xx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/Mt590844).
+スコープ指定されたバッチを作成した後、開始されたすべてのアニメーションは、[**Suspend**](https://msdn.microsoft.com/library/windows/apps/Mt590848) または [**End**](https://msdn.microsoft.com/library/windows/apps/Mt590844) を使って、明示的に中断または停止されるまで集計されます。
 
-Xxxxxxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt590848) xxxxx xxxxxxxxxxx xxxxxxxxx xxx xxxxxx xxxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt590847) xx xxxxxx. Xxxx xxxxxx xxx xx xxxxxxxxxx xxxxxxx xxxxxxx xxxx x xxxxx xxxxx.
+[
+            **Suspend**](https://msdn.microsoft.com/library/windows/apps/Mt590848) を呼び出すと、[**Resume**](https://msdn.microsoft.com/library/windows/apps/Mt590847) が呼び出されるまで、アニメーションの終了状態の集計は停止します。 これにより、特定のバッチから明示的にコンテンツを除外することができます。
 
 ```cs
 myScopedBatch.Suspend();
 ```
 
-Xx xxxxx xx xxxxxxxx xxxx xxxxx xxx xxxx xxxx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/Mt590844). Xxxxxxx xx Xxx xxxx, xxx xxxxx xxxx xxxxxx xxxx xxxxxxx-xxxxxxxxxx xxxxxxx.
+バッチを完了するには、[**End**](https://msdn.microsoft.com/library/windows/apps/Mt590844) を呼び出す必要があります。 End を呼び出さない場合、バッチは開いたまま、オブジェクトの収集を継続します。
 
 ```cs
 myScopedBatch.End();
 ```
 
-Xx xxx xxxx xx xxxx xxxx x xxxxxx xxxxxxxxx xxxx, xxx xxxx xx xxxxxx x Xxxxxx xxxxx, xxxxx xxx xxxxxxxxx xxx xxx xxx xxxxx.
+1 つのアニメーションが終了するタイミングを知る必要がある場合は、スコープ指定されたバッチを作成し、アニメーションを開始して、バッチを終了する必要があります。
 
-Xxx xxxxxxx:
+次に例を示します。
 
 ```cs
 myScopedBatch = _compositor.CreateScopedBatch(CompositionBatchTypes.Animation);
@@ -171,123 +172,124 @@ Visual.StartAnimation(“Opacity”, myAnimation);
 myScopedBatch.End();
 ```
 
-### Xxxxxx xxxxxxx
+### コミット バッチ
 
-X xxxxxx xxxxx xx x xxxxx xxxx xx xxxxxxxxxx xxxxxxx xxxxxx xxx xxxxxx xxxxx. Xxx xxxxxxx Xxxxxx xxxxx xxx xx xxxxxxxxx xx xxxxxxx [**XxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt589430) xx xxx xxxx xxxxxx xxx xxxxxx xxxxx. Xxx xxxxxx xxxxx xx xxxxxxx xx xxx xxxx xxxxxxx xxxxxxx xxxx xxx xxxxxxxxxx. Xxxxxxx xxx xxxxxx xxxxx xxx xxxxxx xx xxxxx xx xxxxxxx xxx xxxxxxx xxx xxxx xxxx xx xxx xxxxxx. Xxxxxx xx xxx xxxxxxx xxxx xxxxxxx xxxxxx. Xxx Xxxxxx xxxxx xxxx xxxxxxxxx xxx xxxxxxx xxxxxx xxx xxxxxx xxxxx, xxxxx xxxxxx xxx xxxxx XxxXxxxxxXxxxx xxx xxxxxx. Xxxxx xx xxxx xxx Xxxxxx xxxxx xxx xxxxxx xxxxx xxx xxx xx xxx xxxx xx xxxxxxxxxx xxxx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/Mt590844) xx xxx xxxxxx xxxxx.
+コミット バッチとは、コミットのサイクル中に暗黙的に作成されるバッチです。 現在のコミット バッチは、コミット サイクル中にいつでも [**GetCommitBatch**](https://msdn.microsoft.com/library/windows/apps/Mt589430) を呼び出すことによって取得できます。 コミット サイクルは、コンポジターからの更新間の時間として定義されています。 更新は、システムが、変更を処理してビットを画面に描画する準備ができるまでキューに配置されます。 タイトルはコミットが発生するタイミングを制御しません。 コミット バッチは、GetCommitBatch が呼び出される前と後の、コミット サイクル内のすべてのオブジェクトを集計します。 コミット サイクルごとにコミット バッチは 1 つだけ存在し、コミット バッチで [**End**](https://msdn.microsoft.com/library/windows/apps/Mt590844) を明示的に呼び出す必要はありません。
 
 ```cs
 myCommitBatch = _compositor.GetCommitBatch(CompositionBatchTypes.Animation);
 ```
 
-### Xxxxx xxxxxx
+### バッチの状態
 
-Xx xxxxxxxxx xx x xxxxx xx xxxx xx xxxxxxxxxxx xxxxxxxxxx xxx xxx xxx xxx **XxXxxxxx** xxxxxxxx. Xx xxx **XxXxxxx** xxxxxxxx xxxxxx xxxx, xxx xxxxxx xxx xx xxxxxxxxx xx xxxx xxxxxxxx xxxxx. Xxxxxx xxxxxxx xxx “xxxxx” xxxx xxxx xxxx xxxx xxxxxxxxxx xxxxx xx xxxxxxx xxx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/Mt590844) xxxxxx. Xxxxxx xxxxxxx xxx xxxxx xxxx xxx xxxxxxx xxxxxx xxxxx xxx xxxxx.
+バッチがアニメーションを集計できるかどうかを判断するには、**IsActive** プロパティを使います。 **IsEnded** プロパティが true を返す場合、その特定のバッチにアニメーションを追加することはできません。 スコープ指定されたバッチが "終了済み" になるのは、[**End**](https://msdn.microsoft.com/library/windows/apps/Mt590844) メソッドを呼び出して、バッチを明示的に終了した場合です。 現在のコミット サイクルが終了したときに、コミット バッチは終了します。
 
-## Xxxxxxxxxx Xxxxxxxxxx
+## 数式アニメーション
 
-Xxxxxxxxxx Xxxxxxxxxx xxx xxxxxxxxxx xxxx xxx x xxxxxxxxxxxx xxxxxxxxxx xx xxxxxxx xxx xxx xxxxxxxx xxxxx xxxxxx xx xxxxxxxxxx xxx xxxx xxxxx. Xxx xxxxxxxxxx xxxxxxxx xxxxxx xxx xxxxxxxxx xxxxxxxxxx xxxx xxxxx xxxxxxxxxxx xxxxxxx. Xxxxxx XxxXxxxx Xxxxxxxxxx, Xxxxxxxxxxx xxx xxx xxxx-xxxxx xxx xxx xxxxxxxxx xxxx xxxxx (xx xxxxxxxxx). Xxxxxxxxxxx xxx xx xxxxxx xx xxxxxxxx xxxx xxxxxxx xxxx xxxxxxxxxxx xxxx xxx xx xxxxxxxxx xx xxx Xxxxxxxxxxx xxxxxx, xxx xxxxxxx xxxxxx xxxxxxx xxx xxxxxxxx.
+数式アニメーションでは、数式を使って、各フレームのアニメーション化された値を計算する方法を指定します。 式言語自体で、他のコンポジション オブジェクトからプロパティを参照できます。 キー フレーム アニメーションとは異なり、数式は時間ベースではなく、各フレームで処理されます (必要な場合)。 数式は、固定のヘッダーや視差など、合成エンジンによって処理できるをさらに複雑なユーザー エクスペリエンスを記述するのに便利です。
 
-### Xxxxxxxx xxxx Xxxxxxxxxx
+### 数式の作成
 
-Xx xxxxxx xxxx xxxxxxxxxx, xxx xxxx [**XxxxxxXxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt187002) xx xxxx Xxxxxxxxxx xxxxxx xxx xxxxxxxxxx xxx xxxxxxxxxx xxx xxxx xx xxx:
+数式を作成するには、コンポジター オブジェクトで [**CreateExpressionAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt187002) を呼び出し、使用する数式を指定します。
 
 ```cs
 var expression = _compositor.CreateExpressionAnimation(“INSERT_EXPRESSION_STRING”)
 ```
 
-### Xxxxxxxxx, Xxxxxxxxxx xxx Xxxxxxxxxxxxx
+### 演算子、優先順位、結合性
 
-Xxx Xxxxxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxx xxx xxxxxxx xx xxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxxx xx xxxxxxx xx xxx X# Xxxxxxxx Xxxxxxxxxxxxx:
+式言語は次の演算子をサポートしており、演算子の優先順位と結合性は C# 言語の仕様での定義に準拠します。
 
--   Xxxxx (-)
--   Xxxxxxxxxxxxxx (\* /)
--   Xxxxxxxx (- +)
+-   単項 (-)
+-   乗算 (\* /)
+-   加算 (- +)
 
-Xxx Xxxxxxxxxx xxxxxxxx xxxx xxxxxxxx xxx xxxxxxx xx xxx-xxxxxxxxx xxxx xxxxxxxxxx. Xxxxx xxxxxx-xxxxxx (x.x) xxxxxxxxx xxx xxxx xxxxxxxxx xx “xxxxxxxxx” xxxxx (Xxxxxx xxx Xxxxxxxx). Xxx xxxxxxx:
+式言語では、コンポーネントごとの数学演算の概念もサポートしています。 これらのメンバー アクセス (x.y) 演算子は、"プリミティブ" 型 (ベクターやマトリックス) についてのみサポートされます。 次に例を示します。
 
 ```cs
 Offset.x + 5.0
 ```
 
-### Xxxxxxxx Xxxxxxxxxx
+### プロパティのパラメーター
 
-Xxx xx xxx xxxxxxxx xxxxxxxxxx xx xxx Xxxxxxxxxx xxxxxxxx xx xxxxx xxxx xxx xxxxxxxxxx xx xxxxxxxxx xx xxx xxxxxxxxxx. Xxx xxxxxxxxxx xxxxxx xxx xxxxxxx xxxxxxxxxx xxxxx xxx xxxxxxxx xxxx xxxxxx x xxxxxxxx xxxxx xx xxx xxxxxxxxxx xx xxxxxxx xxxxxx'x xxxxxxxx xxxxx xxxx xxxxxxxxxx. Xxx xxxxxxx:
+式言語の強力なコンポーネントの 1 つは、式内の変数としてパラメーターを使用できることです。 式文字列には、計算時に定数値に置き換えられるか、別のオブジェクトのプロパティ値を参照するパラメーターを含めることができます。 次に例を示します。
 
 ```cs
 ChildVisual.Offset.X / ParentVisual.Offset.Y
 ```
 
-Xx xxxx xxxxxxx XxxxxXxxxxx xxx XxxxxxXxxxxx xxx xxxxxxxxxx xxxx xxxxxxxxx xxx xxxxxx xxxxxxxx xx xxx xxxxxxx. Xxx xxxxxx xxxxxxxxxx xxxxx xxx **Xxx\*Xxxxxxxxx** xxxxxxx xx xxx [**XxxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706708) xxxxx:
+この例では ChildOffset と ParentOffset は、2 つの視覚効果のオフセット プロパティを表すパラメーターです。 [
+            **CompositionAnimation**](https://msdn.microsoft.com/library/windows/apps/Dn706708) クラスの **Set\*Parameter** メソッドを使ってパラメーターを定義します。
 
--   Xx xxxxxx x xxxxxx xxxxxxxxx xxx xxx [**XxxXxxxxxYXxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionanimation.setvector2parameter.aspx), [**XxxXxxxxxYXxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionanimation.setvector3parameter.aspx), xx [**XxxXxxxxxYXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionanimation.setvector4parameter).
--   Xx xxxxxx x xxxxxx xxxxxxxxx xxx xxx [**XxxXxxxxxYxYXxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionanimation.setmatrix3x2parameter.aspx), xx [**XxxXxxxxxYxYXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionanimation.setmatrix4x4parameter).
--   xx xxxxxx x xxxxxx xxxxxxxxx xxx xxx [**XxxXxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionanimation.setscalarparameter).
--   Xx xxxxxx x xxxxx xxxxxxxxx xxx xxx [**XxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionanimation.setcolorparameter).
--   Xx xxxxxx x xxxxxxxxxx xxxxxxxxx xxx xxx [**XxxXxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionanimation.setquaternionparameter).
--   Xx xxxxxx x xxxxxxxxx xxxxxxxxx xxx xxx [**XxxXxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionanimation.setreferenceparameter).
+-   ベクター パラメーターを作成するには、[**SetVector2Parameter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionanimation.setvector2parameter.aspx)、[**SetVector3Parameter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionanimation.setvector3parameter.aspx)、または [**SetVector4Parameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionanimation.setvector4parameter) を使います。
+-   マトリックス パラメーターを作成するには、[**SetMatrix3x2Parameter**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.composition.compositionanimation.setmatrix3x2parameter.aspx) または [**SetMatrix4x4Parameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionanimation.setmatrix4x4parameter) を使います。
+-   スカラー パラメーターを作成するには、[**SetScalarParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionanimation.setscalarparameter) を使います。
+-   カラー パラメーターを作成するには、[**SetColorParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionanimation.setcolorparameter) を使います。
+-   四元数パラメーターを作成するには、[**SetQuaternionParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionanimation.setquaternionparameter) を使います。
+-   参照パラメーターを作成するには、[**SetReferenceParameter**](https://msdn.microsoft.com/library/windows/apps/windows.ui.composition.compositionanimation.setreferenceparameter) を使います。
 
-Xx xxx Xxxxxxxxxx Xxxxxx xxxxx, xx xxxxx xxxx xx xxxxxx xxx xxxxxxxxxx xx xxxxxx xxx xxx Xxxxxxx:
+上記の式文字列では、2 つの視覚効果を定義する 2 つのパラメーターを作成する必要があります。
 
 ```cs
 Expression.SetReferenceParameter(“ChildVisual”, childVisual);
 Expression.SetReferenceParameter(“ParentVisual”, parentVisual);
 ```
 
-### Xxxxxxxxxx Xxxxxx Xxxxxxxxx
+### 式ヘルパー関数
 
-Xx xxxxxxxx xx xxxxxx xxxxxx xx xxxxxxxxx xxx xxxxxxxx xxxxxxxxxx, xxx xxxx xxxx xxxxxx xx xxx xxxx xxxxxx xxxxxxxx xxxxxxx xx xxx xxxxxxxxxx xxxxxxxx. Xxx xxx xxxx xxx xxxx xxxx xx xxxxxx xxxxxxxxx xx xxx xxxxxxx xxxxxxx xx xxx [**XxxxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706817) xxxxx, xxx xxxx xxx x xxx:
+演算子とプロパティ パラメーターにアクセスすることに加え、式言語のヘルパー関数ライブラリ全体にもアクセスできます。 ヘルパー関数の完全な一覧は、[**ExpressionAnimation**](https://msdn.microsoft.com/library/windows/apps/Dn706817) クラスの「注釈」セクションに記載されていますが、ここではいくつかを示します。
 
--   Xxx (Xxxxxx xxxxxY, Xxxxxx xxxxxY)
--   Xxxxx (XxxxxxY xxxxx, Xxxxxx xxxxxx)
--   Xxxxxxxxx(XxxxxxY xxxxx, Xxxxxx YxY xxxxxx)
+-   Max (Scalar value1, Scalar value2)
+-   Scale (Vector3 value, Scalar factor)
+-   Transform(Vector2 value, Matrix 3x2 matrix)
 
-Xxxx’x x xxxx xxxxxxx xxxxxxxxxx xxxxxx xxxxxxx xxxx xxxx xxx Xxxxx xxxxxx xxxxxxxx:
+Clamp ヘルパー関数を使用するより複雑な式文字列の例を次に示します。
 
 ```cs
 Clamp((scroller.Offset.y * -1.0) – container.Offset.y, 0, container.Size.y – header.Size.y)
 ```
 
-### Xxxxxxxx xxx xxxxxxxx xxxx Xxxxxxxxxx Xxxxxxxxx
+### 数式アニメーションの開始と停止
 
-Xx xxxxx xxx xxxx xxxx Xxxxxxxxxx Xxxxxxxxxx, xxx xxx xxx xxxx xxxxxxxxx ([**XxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt590840), [**XxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt590841)) xx xxx xx xxxx XxxXxxxx Xxxxxxxxxx. Xxxx: Xxxxxxxxxx Xxxxxxxxxx xxxx xxxxxxxx xx xxx xxxxx xxxx xxx xxxxxxx xxxxx **XxxxXxxxxxxxx** – xxxxxx XxxXxxxx Xxxxxxxxxx, xxxx xx xxx xxxx x xxxxxx xxxxxxxx.
+数式アニメーションを開始および停止するには、キー フレーム アニメーションの場合と同じ関数 ([**StartAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt590840)、[**StopAnimation**](https://msdn.microsoft.com/library/windows/apps/Mt590841)) を使います。 注: 数式アニメーションは、キー フレーム アニメーションとは異なり、**StopAnimation** を使って停止するまで引き続き実行されます。数式アニメーションには限定された継続時間はありません。
 
-### Xxxxxxxx Xxxx
+### プロパティ セット
 
-Xx xxxxxxxx xx xxxxx xxxx xx xxxxxxxxx xxxxxxxxxx xx xxxxx Xxxxxxxxxxx xxxxxxx, xxx xxxx xxxx xxx xxxxxxx xx xxxxxx xxx xxxxx xxxxxxxx xxxxxx xx xxxx xxx xxxx xxx xx xxxx xxxxxx xxxxxxxx xxxxxxxxxx. Xxxxxxxx xxxx xxx xxxxxxxxxxx xx xxx [**XxxxxxxxxxxXxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/Dn706772) xxxxx. Xxxxxxxx xxxx xxxxx xxx xx xxxxxx x xxxxxxxx xxxx x xxxxx xxx xxxxxxxxx xx xxxxx xx xx xxxxxxxxxx xx xxxx xxxx xx xx xx xxx xxxxxx xx x XxxXxxxx Xxxxxxxxx.
+他のコンポジション オブジェクトのプロパティを参照できるだけでなく、複数のアニメーションで使うことができる独自のプロパティ値を作成して保存することもできます。 プロパティ セットは、[**CompositionPropertySet**](https://msdn.microsoft.com/library/windows/apps/Dn706772) クラスによって表されます。 プロパティ セットでは、値を持つプロパティを作成し、後で式で参照したり、キー フレーム アニメーションのターゲットとしてをフックすることもできます。
 
-Xx xxxxxx x xxxxxxxx xxx, xxx xxx [**XxxxxxXxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/Dn706802) xxxxxx xx xxx Xxxxxxxxxx xxxxx. Xxx xxxxxxx:
+プロパティ セットを作成するには、コンポジター クラスの [**CreatePropertySet**](https://msdn.microsoft.com/library/windows/apps/Dn706802) メソッドを使います。 次に例を示します。
 
 ```cs
 _sharedProperties = _compositor.CreatePropertySet();
 ```
 
-Xxxx xxx’xx xxxxxxx xxxx xxxxxxxx xxx, xxx xxx xxx x xxxxxxxx xxx xxxxx xx xx xxxxx xxx xx xxx **Xxxxxx\*** xxxxxxx xx [**XxxxxxxxxxxXxxxxxxxXxx**](https://msdn.microsoft.com/library/windows/apps/Dn706772). Xxx xxxxxxx:
+プロパティ セットを作成したら、[**CompositionPropertySet**](https://msdn.microsoft.com/library/windows/apps/Dn706772) の **Insert\*** メソッドの 1 つを使ってプロパティと値を追加できます。 次に例を示します。
 
 ```cs
 _sharedProperties.InsertVector3(“NewOffset”, offset);
 ```
 
-Xxxxx xxx'xx xxxxxxx xxxx xxxxxxxxxx xxxxxxxxx, xxx xxx xxxxxxxxx xxxxxxxxxx xxxx xxx xxxxxxxx xxx xx xxx xxxxxxxxxx xxxxxx xxxx xxx xxx xx x xxxxxxxxx xxxxxxxxx. Xxx xxxxxxx:
+数式アニメーションを作成した後、参照パラメーターを使って式文字列内のプロパティ セットからプロパティを参照できます。 次に例を示します。
 
 ```cs
 var expression = _compositor.CreateExpressionAnimation(“sharedProperties.NewOffset”);
 expression.SetReferenceParameter(“sharedProperties”, _sharedProperties);
 ```
 
-### Xxxxxxxxxx XxxXxxxxx
+### 数式キー フレーム
 
-Xxxxxxx xx xxxx xxxxxxxx, xx xxxxxxxxx xxx xxx xxxxxx XxxXxxxx Xxxxxxxxxx xxx xxxxx xxxxxxxxxx XxxXxxxxx. Xx xxxxxxxx xx xxxxxx xxx xxxxxxxxxxx XxxXxxxx xxxx x xxxxxxxxxx xxxx xxx xxxxx xxxxxxxxx, xxx xxx xxxx xxxx xx xxxxxx xxxxxxxxxx XxxXxxxxx.
+このドキュメントで、キー フレーム アニメーションとそれぞれのキーフレームを作成する方法について既に説明しました。 正規化された時間と値のコンポーネントによる従来のキー フレームを作成するだけでなく、数式キー フレームを定義することもできます。
 
-Xxxxxxx xx xxxxxxxx xx xxxxxxxx xxxxx xxx x xxxxxxxxxx xxxx xx xxx XxxXxxxx, xx xxx xxxx xx xxx xxx xxxxxxxxxx xxxxxx xx xxxxxxxx xxx xxx xxxxx xxxxxx xx xxxxxxxxxx xx xxxx xxxxxxxxxx xxxxx xx xxx XxxXxxxx xxxxxxxx. Xxx xxx xxxx xx xxx xxx xxxxx xxxxxxxxxx XxxXxxxxx xxxx xxxxx XxxXxxxxx xx xxxx XxxXxxxx Xxxxxxxxx.
+キー フレーム内の特定の時点の明示的な値を定義する代わりに、式の構文を使って、キー フレームのタイムラインのこの特定の時点で、どのように値を計算するかを記述できます。 キー フレーム アニメーション内で数式キー フレームと基本的なキー フレームを混在および調和させることができます。
 
-### Xxxxxxxxxxxx Xxxxxxxxxx XxxXxxxxx
+### 数式キー フレームの作成
 
-Xxxxxxx xx xxxxxxxxxxx XxxXxxxxx, xxxxxxxxxx XxxXxxxxx xxx xxxxxxxxxxx xx xxxxxxxxxx Y xxxxxxxxxx:
+従来のキー フレームと同様に、数式キー フレームは次の 2 つのコンポーネントを指定して作成します。
 
--   Xxxx: xxxxxxxxxx xxxx xxxxx xx xxx XxxXxxxx xxxxxxx Y.Y – Y.Y
--   Xxxxx: Xxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxxx xxx xxx xxxxx xxxxxx xx xxxxxxxxxx
+-   時間: 正規化されたキー フレームの時間の状態 (0.0 ～ 1.0)
+-   値: 値の計算方法を記述するために使う式文字列
 
-Xxx xxxxxxx, xxx xxxxxxxxx xxxxxxx xxxx x xxxxxxxxxxx xx xxxx xxxxxxx xxx xxxxxxxxxx XxxXxxxxx:
+たとえば、次のスニペットは、通常のキー フレームと数式キー フレームの両方の組み合わせを使用します。
 
 ```cs
 var animation = _compositor.CreateScalarKeyFrameAnimation();
@@ -295,43 +297,43 @@ animation.InsertExpressionKeyFrame(0.25, “VisualBOffset.X / VisualAOffset.Y”
 animation.InsertKeyFrame(1.00f, 0.8f);
 ```
 
-### Xxxxx xxxxxxx xxx xxxxxxxx xxxxxx
+### 現在値と開始値の使用
 
-Xx xxx xxxxxxxxxx xxxxxxxx, xx xx xxxxxxxx xx xxxxxxxxx xxxx xxx xxxxxxx xxx xxx xxxxxxxx xxxxx xx xx xxxxxxxxx. Xxxxx xxxxxx xxx xxx-xxxxx xx xxx xxxxxxxxxx xxxxxxxx xxxx “xxxx”:
+式言語では、アニメーションの現在値と開始値の両方を参照できます。 式言語では、これらの値に "this" というプレフィックスが付けられます。
 
--   xxxx.XxxxxxxXxxxx
--   xxxx.XxxxxxxxXxxxx
+-   this.CurrentValue
+-   this.StartingValue
 
-Xx xxxxxxx xx xxxxx xxxxx xx xx Xxxxxxxxxx XxxXxxxx:
+数式キー フレームでこれらを使う例を次に示します。
 
 ```cs
 animation.InsertExpressionKeyFrame(0.0f, “this.CurrentValue + delta”);
 ```
 
-### Xxxxxxxxxxx Xxxxxxxxxxx
+### 条件式
 
-Xx xxxxxxxx xx xxxxxxxxxx xxxxx xxxxxxxxxxxx xxxxxxxxxxx, xxx xxx xxxx xxxxxx x xxxxxxxxxxx xxxxxxxxxx xxxxx x xxxxxxx xxxxxxxx:
+基本的な数学式をサポートするだけでなく、3 項演算子を使って条件式を定義することもできます。
 
 ```cs
 (condition ? first_expression : second_expression)
 ```
 
-Xxxxxx xxx xxxxxxxxxxx xxxxxxxxxx, xxx xxxxxxxxx xxxxxxxxxxx xxxxxxxxx xxx xxxxxxxxx xx xxx xxxxxxxxx xxxxxxxxx:
+式自体では、条件ステートメントで次の条件演算子がサポートされています。
 
--   Xxxxxx (==)
--   Xxx Xxxxxx (!=)
--   Xxxx xxxx (<)
--   Xxxx xxxx xx xxxxx xx (<=)
--   Xxxxx xxxx (>)
--   Xxxxx xxxx xx xxxxx xx (>=)
+-   等しい (==)
+-   等しくない (!=)
+-   より小さい (<)
+-   以下 (<=)
+-   より大きい (>)
+-   以上 (>=)
 
-Xxxxxxx, xxx xxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxx xx xxxxxxxxx xx xxxxxxxxx xx xxx xxxxxxxxx xxxxxxxxx:
+最後に、条件ステートメント内の演算子や関数として次の要素がサポートされています。
 
--   Xxx: ! / Xxx(xxxxY)
--   Xxx: && / Xxx(xxxxY, xxxxY)
--   Xx: || / Xx(xxxxY, xxxxY)
+-   Not: ! / Not(bool1)
+-   And: && / And(bool1, bool2)
+-   Or: || / Or(bool1, bool2)
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xx xxxxxxx xx xxxxx xxxxxxxxxxxx xx xx xxxxxxxxxx:
+次のスニペットは、式の中で条件を使う例を示しています。
 
 ```cs
 var expression = _compositor.CreateExpressionAnimation(“target.Offset.x > 50 ? 0.0f +   (target.Offset.x / parent.Offset.x) : 1.0f”);
@@ -344,4 +346,8 @@ var expression = _compositor.CreateExpressionAnimation(“target.Offset.x > 50 ?
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

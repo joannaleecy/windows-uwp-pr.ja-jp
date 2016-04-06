@@ -1,35 +1,36 @@
 ---
-xxxxx: Xxxxxx x Xxxxxxxxx Xxxxxxxx xxxxx xxxxxxx
-xxxxxxxxxxx: Xxxx xx Xxxx Y xx x xxxxxxxx xxxxxxxxxxx xx xxx xx xxx Xxxxxxxxx Xxxxxxxx xx xx xxxxxxxxxxx xx xxxxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxxxxx xxxxxxx xx Xxxxxxx YY XXX (Xxxxxxxxx Xxxxxxx xxxxxxxx) xxxx.
-xx.xxxxxxx: XXXYXXYX-XYXY-YXXY-YYXX-YYYYXYXXXYXY
+title: Create a Microsoft Passport login service
+description: This is Part 2 of a complete walkthrough on how to use Microsoft Passport as an alternative to traditional username and password authentication systems in Windows 10 UWP (Universal Windows platform) apps.
+ms.assetid: ECC9EF3D-E0A1-4BC4-94FA-3215E6CFF0E4
+author: awkoren
 ---
 
-# Xxxxxx x Xxxxxxxxx Xxxxxxxx xxxxx xxxxxxx
+# Create a Microsoft Passport login service
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-\[Xxxx xxxxxxxxxxx xxxxxxx xx xxx-xxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxx xx'x xxxxxxxxxxxx xxxxxxxx. Xxxxxxxxx xxxxx xx xxxxxxxxxx, xxxxxxx xx xxxxxxx, xxxx xxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxx.\]
+\[Some information relates to pre-released product which may be substantially modified before it's commercially released. Microsoft makes no warranties, express or implied, with respect to the information provided here.\]
 
-Xxxx xx Xxxx Y xx x xxxxxxxx xxxxxxxxxxx xx xxx xx xxx Xxxxxxxxx Xxxxxxxx xx xx xxxxxxxxxxx xx xxxxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxxxxx xxxxxxx xx Xxxxxxx YY XXX (Xxxxxxxxx Xxxxxxx xxxxxxxx) xxxx. Xxxx xxxxxxx xxxxx xx xxxxx Xxxx Y, [Xxxxxxxxx Xxxxxxxx xxxxx xxx](microsoft-passport-login.md), xxxx xxx xxx xxxxxxx xxx xxxxxxxxxxxxx xx xxxxxxxxxxx xxx xxx xxx xxxxxxxxx Xxxxxxxxx Xxxxxxxx xxxx xxxx xxxxxxxx xxxxxxxxxxx.
+This is Part 2 of a complete walkthrough on how to use Microsoft Passport as an alternative to traditional username and password authentication systems in Windows 10 UWP (Universal Windows platform) apps. This article picks up where Part 1, [Microsoft Passport login app](microsoft-passport-login.md), left off and extends the functionality to demonstrate how you can integrate Microsoft Passport into your existing application.
 
-Xx xxxxx xx xxxxx xxxx xxxxxxx, xxx'xx xxxx xxxx xxxxxxxxxx xxxx X#, xxx XXXX. Xxx'xx xxxx xxxx xx xx xxxxx Xxxxxx Xxxxxx YYYY (Xxxxxxxxx Xxxxxxx xx xxxxxxx) xx x Xxxxxxx YY xxxxxxx.
+In order to build this project, you'll need some experience with C#, and XAML. You'll also need to be using Visual Studio 2015 (Community Edition or greater) on a Windows 10 machine.
 
-## Xxxxxxxx Y: Xxxxxx Xxxx Xxxxx
+## Exercise 1: Server Side Logic
 
 
-Xx xxxx xxxxxxxx xxx xxxx xx xxxxxxxx xxxx xxx Xxxxxxxx xxxxxxxxxxx xxxxx xx xxx xxxxx xxx xxx xxxxxxxx x xxxxx xxxx xxxxxx xxx xxxxxxxx. Xxxx xxxxx xx xxx xx xxxxxxxx xx xxxxx xxx Xxxxxxxxx Xxxxxxxx xxxxx xx xxxxxxxxxx xxxx xx xxxxxxxx xxxxxx. Xx xxxxx x xxxx xxxxxx xxx xxxx xxxxxxxx x xxx xx xxxxxxxxx xxxxx xx xxxxxxxxxx. Xx xxxx xxx xxxxxxxxxxxx xxx xxxx xxxx xx xxxxxxx xxx xxxx xxxxxxx xxxx xxx xxxx xxxxxxxx xxx xxxxxxxxx.
+In this exercise you will be starting with the Passport application built in the first lab and creating a local mock server and database. This hands on lab is designed to teach how Microsoft Passport could be integrated into an existing system. By using a mock server and mock database a lot of unrelated setup is eliminated. In your own applications you will need to replace the mock objects with the real services and databases.
 
--   Xx xxxxx, xxxx xx xxx XxxxxxxxXxxxx xxxxxxxx xxxx xxx xxxxx Xxxxxxxx Xxxxx Xx Xxx.
--   Xxx xxxx xxxxx xx xxxxxxxxxxxx xxx xxxx xxxxxx xxx xxxx xxxxxxxx. Xxxxxx x xxx xxxxxx xxxxxx "XxxxXxxxxxx". Xx xxxxxxxx xxxxxxxx xxxxx xxxxx xx xxx xxxxxxxx "XxxxxxxxXxxxx (Xxxxxxxxx Xxxxxxx)" xxx xxxxxx Xxx > Xxx Xxxxxx.
--   Xxxxxx XxxxXxxxxxx xxx XxxxxxxxXxxxxxx xxxxxxx xxxx xxxx xxx xx xxxxxx xxx xxxx xx xx xxxxx xx xxx xxxx xxxxxxxx. Xxx XxxxXxxxxxx xxxx xx xxxxxxx xx xxx xxxx xxxxx xxxxxxxxxxx xx x xxxxxxxxxxx xxxxxxxxxxxxxx xxxxxx. Xxxxx xxxxx xx xxx XxxxXxxxxxx xxxxxx xxx xxx x xxx xxxxx xxxxxx "XxxxXxxxxxx.xx."
+-   To begin, open up the PassportLogin solution from the first Passport Hands On Lab.
+-   You will start by implementing the mock server and mock database. Create a new folder called "AuthService". In solution explorer right click on the solution "PassportLogin (Universal Windows)" and select Add > New Folder.
+-   Create UserAccount and PassportDevices classes that will act as models for data to be saved in the mock database. The UserAccount will be similar to the user model implemented on a traditional authentication server. Right click on the AuthService folder and add a new class called "UserAccount.cs."
 
     ![](images/passport-auth-1.png)
 
     ![](images/passport-auth-2.png)
 
--   Xxxxxx xxx xxxxx xxxxxxxxxx xx xx xxxxxx xxx xxxx xxx xxx xxxxxxxxx xxxxxx xxxxxxxxxx. Xxx xxxx xxxx xxx xxxxxxxxx xxxxxxxxx.
+-   Change the class definition to be public and then add the following public properties. You will need the following reference.
 
     ```cs
     using System.ComponentModel.DataAnnotations;
@@ -48,9 +49,9 @@ Xx xxxx xxxxxxxx xxx xxxx xx xxxxxxxx xxxx xxx Xxxxxxxx xxxxxxxxxxx xxxxx xx xxx
     }
     ```
 
-    Xxx xxx xxxx xxxxxxx xxx xxxxxxxxx xxx xxxx xx XxxxxxxxXxxxxxx. Xxxx xx x xxxxxxxxxxxx xxx xxxx xxxx xx xxxx xx xx xxxxxxxx xxxx xxxxx xx xxxx xxxxxxx xxxxxxxxxxxxxx. Xxx xxxx xx XxxxxxxxXxxxxxx xxxx xxxxxxx x xxxxxxXX, xxx xxxxxx xxx xxxx xxxx Xxxxxxxxx Xxxxxxxx, xxx x [**XxxXxxxxxxxxxXxxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn973034). Xxx xxxx xxxxx xx xxx xxx xxxx xxxx xx xxxxxxxxx xxx xxxXxxxxxxxxxxXxxxxx xx xxxx xxx xxxx xxxxxxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxxxx xxxx xxxx x XXX (Xxxxxxx Xxxxxxxx Xxxxxxx) xxxx. Xxx **XxxXxxxxxxxxxXxxxxxxxxxxXxxxxx** xx x xxxxxxxxxxx xx xxxxxxxx xxxxxxxxxx xxx xxxxx xxxx xx xx xxxxx xx xxxxx xx xxxx xxx xxxx xxxx xxxx x xxxxxxxx.
+    You may have noticed the commented out list of PassportDevices. This is a modification you will need to make to an existing user model in your current implementation. The list of PassportDevices will contain a deviceID, the public key made from Microsoft Passport, and a [**KeyCredentialAttestationResult**](https://msdn.microsoft.com/library/windows/apps/dn973034). For this hands on lab you will need to implement the keyAttestationResult as they are only provided by Microsoft Passport on devices that have a TPM (Trusted Platform Modules) chip. The **KeyCredentialAttestationResult** is a combination of multiple properties and would need to be split in order to save and load them with a database.
 
--   Xxxxxx x xxx xxxxx xx xxx XxxxXxxxxxx xxxxxx xxxxxx "XxxxxxxxXxxxxx.xx". Xxxx xx xxx xxxxx xxx xxx xxxxxxxx xxxxxxx xx xxxxxxxxx xxxxx. Xxxxxx xxx xxxxx xxxxxxxxxx xx xx xxxxxx xxx xxx xxx xxxxxxxxx xxxxxxxxxx.
+-   Create a new class in the AuthService folder called "PassportDevice.cs". This is the model for the passport devices as discussed above. Change the class definition to be public and add the following properties.
 
     ```cs
     namespace PassportLogin.AuthService
@@ -69,7 +70,7 @@ Xx xxxx xxxxxxxx xxx xxxx xx xxxxxxxx xxxx xxx Xxxxxxxx xxxxxxxxxxx xxxxx xx xxx
     }
     ```
 
--   Xxxxxx xx xx XxxxXxxxxxx.xx xxx xxxxxxxxx xxx xxxx xx Xxxxxxxx xxxxxxx.
+-   Return to in UserAccount.cs and uncomment the list of Passport devices.
 
     ```cs
     using System.Collections.Generic;
@@ -88,8 +89,8 @@ Xx xxxx xxxxxxxx xxx xxxx xx xxxxxxxx xxxx xxx Xxxxxxxx xxxxxxxxxxx xxxxx xx xxx
     }
     ```
 
--   Xxxx xxx xxxxx xxx xxx XxxxXxxxxxx xxx xxx XxxxxxxxXxxxxx xxxxxxx, xxx xxxx xx xxxxxx xxxxxxx xxx xxxxx xx xxx XxxxXxxxxxx xxxx xxxx xxx xx xxx xxxx xxxxxxxx. Xx xxxx xx x xxxx xxxxxxxx xxxx xxxxx xxx xxxx xx xxxxxx xxx xxxxxxx x xxxx xx xxxx xxxxxxxx xxxxxxx. Xx xxx xxxx xxxxx xxxx xxxxx xx xxxx xxxxxxxx xxxxxxxxxxxxxx. Xxxxxx x xxx xxxxx xx XxxxXxxxxxx xxxxxx "XxxxXxxxx.xx". Xxxxxx xxx xxxxx xxxxxxxxxx xx xxxxxx.
--   Xx xxx xxxx xxxxx xxxx xxxx xxx xxxx x xxxx xx xxxx xxxxxxxx xxxxxxx xxx xxx xxxxxxxxx xxx xxxxx xx xxxx xxx xxxx xxxx xxxx xxxxx xx XxxXxxxxxxxxx. Xxx xxxx xxxx xxxx xx xxxxxxxx xxx xxxxxxxx xxx xxxx xxxxxxxx. Xx XxxxXxxxx.xx xxxxxxxxx xxx xxxxxxxxx:
+-   With the model for the UserAccount and the PassportDevice created, you need to create another new class in the AuthService that will act as the mock database. As this is a mock database from where you will be saving and loading a list of user accounts locally. In the real world this would be your database implementation. Create a new class in AuthService called "MockStore.cs". Change the class definition to public.
+-   As the mock store will save and load a list of user accounts locally you can implement the logic to save and load that list using an XmlSerializer. You will also need to remember the filename and save location. In MockStore.cs implement the following:
 -   
 
     ```cs
@@ -180,7 +181,7 @@ Xx xxxx xxxxxxxx xxx xxxx xx xxxxxxxx xxxx xxx Xxxxxxxx xxxxxxxxxxx xxxxx xx xxx
     }
     ```
 
--   Xx xxx xxxx xxxxxx xxx xxx xxxx xxxxxxx xxxx xx XxxxxxxxxxXxxxxxXxxxXxxxxxxx xxxxxx xxx xxxxxxxxx xxx. Xxx xxxx xxxx xx xxxxxx xxxx xxxxxx xx xxx XxxxXxxxx.xx. Xxxx xxxxxx xxxx xxxxxxxx xxx xxxx xxxxxxxx xxxx xx xxxx x xxxxx xxx xxxx xxxxx. Xx xxx xxxx xxxxx xxx xxxx xxxxxxxx xxxxx xxxxxxx xx xxxxxxxxx. Xx xxxx xxxx xxx xxxx xxxx xx xxxxxxxx x xxxxxxxxxxx xxxx xxxx xxxxxxxxxx xxx xxxx xxxx xxx xxxx xxxx.
+-   In the load method you may have noticed that an InitializeSampleUserAccounts method was commented out. You will need to create this method in the MockStore.cs. This method will populate the user accounts list so that a login can take place. In the real world the user database would already be populated. In this step you will also be creating a constructor that will initialise the user list and call load.
 
     ```cs
     namespace PassportLogin.AuthService
@@ -219,7 +220,7 @@ Xx xxxx xxxxxxxx xxx xxxx xx xxxxxxxx xxxx xxx Xxxxxxxx xxxxxxxxxxx xxxxx xx xxx
     }
     ```
 
--   Xxx xxxx xxx XxxxxxxxxXxxxxxXxxxXxxxxxxx xxxxxx xxxxxx xxxxxxxxx xxx xxxxxx xxxx xx xxx XxxxXxxxxxxXxxxXxxxx xxxxxx.
+-   Now that the InitalizeSampleUserAccounts method exists uncomment the method call in the LoadAccountListAsync method.
 
     ```cs
     private async void LoadAccountListAsync()
@@ -243,7 +244,7 @@ Xx xxxx xxxxxxxx xxx xxxx xx xxxxxxxx xxxx xxx Xxxxxxxx xxxxxxxxxxx xxxxx xx xxx
     }
     ```
 
--   Xxx xxxx xxxxxxxx xxxx xx xxxx xxxxx xxx xxx xx xxxxx xxx xxxxxx. Xxxxx xxxxx xx xxx xxxxxxxxxxx xxxx xxxx xx xxxx xxxxxx xx xxxx xxxx xx xxxxx xxxx xxxx xx xx xxxx xxxxxxx xx xxxxxxxx xxxx xxxx. Xxxxxxxxxx xxx XxxxxxxxxxXxxxxxXxxxXxxxxxxx xxxxxx, xxx xxx xxxxxxxxx xxx xxxxxxx. Xxxx xxxx xxxxx xxx xx xxx x xxxxxx, x xxxxxx xxxx, x xxxx xx xxxxx xxx x xxxxxxxx Xxxxxxxx xxxxxx, xxx xxxx xxx xxx xxxxxx xxx xxx xxx xxxx xx x xxxxxxxx xxxxxx.
+-   The user accounts list in mock store can now be saved and loaded. Other parts of the application will need to have access to this list so there will need to be some methods to retrieve this data. Underneath the InitializeSampleUserAccounts method, add the following get methods. They will allow you to get a userid, a single user, a list of users for a specific Passport device, and also get the public key for the user on a specific device.
 
     ```cs
     public Guid GetUserId(string username)
@@ -293,7 +294,7 @@ Xx xxxx xxxxxxxx xxx xxxx xx xxxxxxxx xxxx xxx Xxxxxxxx xxxxxxxxxxx xxxxx xx xxx
     }
     ```
 
--   Xxx xxxx xxxxxxx xx xxxxxxxxx xxxx xxxxxx xxxxxx xxxxxxxxxx xx xxx xxxxxxx, xxxxxx xxxxxxx, xxx xxxx xxxxxx xxxxxx. Xxxxxx xxxxxx xx xxxxxx xx Xxxxxxxxx Xxxxxxxx xx xxxxxx xxxxxxxx. Xxx xxxx xxxxxx xx xxxxx xxx xxx xx, x xxx xxxxxx xxx xxxxxxx xxx xxxx xxxx xx xxxxxxx xx Xxxxxxxxx Xxxxxxxx. Xx xx xxxx xxxxxx x xxxxxxxxx xxxxxxxx xxx xxxx xxxxxx xxx xxxx xx xx, xxx xxxx xxxxx xx xxx xxx’x xxxx xx xxxxxxxx xxx xxxxx xxxxxxxxx xxx xxxxxx xxxx. Xxx xxx xxxxxxxxx xxxxxxx xxxx xxx XxxxXxxxx.xx
+-   The next methods to implement will handle simple operations to add account, remove account, and also remove device. Remove device is needed as Microsoft Passport is device specific. For each device to which you log in, a new public and private key pair will be created by Microsoft Passport. It is like having a different password for each device you sign in on, the only thing is you don’t need to remember all those passwords the server does. Add the following methods into the MockStore.cs
 
     ```cs
     public UserAccount AddAccount(string username)
@@ -356,7 +357,7 @@ Xx xxxx xxxxxxxx xxx xxxx xx xxxxxxxx xxxx xxx Xxxxxxxx xxxxxxxxxxx xxxxx xx xxx
     }
     ```
 
--   Xx xxx XxxxXxxxx xxxxx xxx x xxxxxx xxxx xxxx xxx Xxxxxxxx xxxxxxx xxxxxxxxxxx xx xx xxxxxxxx XxxxXxxxxxx. Xxxx xxxxxx xxxx xx xxxxxx XxxxxxxxXxxxxxXxxxxxx xxx xxxx xxxx xxxxxxxxxx xx xxxxxxxx xxx xxxx, xxx xxx Xxxxxxxx xxxxxxx. Xxx XxxXxxxxxxxxxxXxxxxx xxx xxxx xxxxxxxxx xxx xxxx xxxxxxxx x XxxxxxxxXxxxxx, xx x xxxx xxxxx xxxxxxxxxxx xxx xxxxx xxxxxxx xxxx.
+-   In the MockStore class add a method that will add Passport related information to an existing UserAccount. This method will be called PassportUpdateDetails and will take parameters to identify the user, and the Passport details. The KeyAttestationResult has been commented out when creating a PassportDevice, in a real world application you would require this.
 
    ```cs
    using Windows.Security.Credentials;
@@ -1175,5 +1176,6 @@ We have left as an exercise for you the details of how you will implement the au
 * [Microsoft Passport and Windows Hello](microsoft-passport.md)
 * [Microsoft Passport login app](microsoft-passport-login.md)
 
+<!--HONumber=Mar16_HO5-->
 
-<!--HONumber=Mar16_HO1-->
+

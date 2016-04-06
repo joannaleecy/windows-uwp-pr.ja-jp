@@ -1,195 +1,193 @@
 ---
-xx.xxxxxxx: XYYXXXYX-YYYY-YYYY-YXYX-XXXYXYYXXYYY
-xxxxx: Xxxxxxxx xxx xxxxxxxxxxx
-xxxxxxxxxxx: Xxxxx xxxxxx xxxxx xxxx xx xxxxxx xxxxxxxxxx, xx xxxx xxxxxxx, xxx xxx xx xxxxx xxxxx xxxxxxx.
+ms.assetid: A37ADD4A-2187-4767-9C7D-EDE8A90AA215
+title: Planning for performance
+description: Users expect their apps to remain responsive, to feel natural, and not to drain their battery.
 ---
-# Xxxxxxxx xxx xxxxxxxxxxx
+# Planning for performance
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxx xxxxxx xxxxx xxxx xx xxxxxx xxxxxxxxxx, xx xxxx xxxxxxx, xxx xxx xx xxxxx xxxxx xxxxxxx. Xxxxxxxxxxx, xxxxxxxxxxx xx x xxx-xxxxxxxxxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxxxxx xx x xxxxxxx xxxx xxxx xxx xxxxxxx xx xxxx xxxxx' xxxxxxxxxxxx. Xxxxxxxxxx xxxxx, xxx xxxxxxxxx, xxx xxx xxxxxxx. Xxxxxxxxx xxxx xxxx xxxxxxxxxxx-xxxxxxxx xxxxxxxxx xxx; xxxxxx xxxx xxxx xxxxxxxxxxx xxxx. Xxxx xxxxxxx xxxxx xxx xxxxx xxxxxx xxxxxxxxxx xxx xxxxxxxxx xx xxxx xxxxxxx xx xx xxxxxxxxx xxx'xx xxx xxxx xxxxx.
+Users expect their apps to remain responsive, to feel natural, and not to drain their battery. Technically, performance is a non-functional requirement but treating performance as a feature will help you deliver on your users' expectations. Specifying goals, and measuring, are key factors. Determine what your performance-critical scenarios are; define what good performance mean. Then measure early and often enough throughout the lifecycle of your project to be confident you'll hit your goals.
 
-## Xxxxxxxxxx xxxxx
+## Specifying goals
 
-Xxx xxxx xxxxxxxxxx xx x xxxxx xxx xx xxxxxx xxxx xxxxxxxxxxx. Xx xxx'x xxxxxxx xxxx xxx xxxxxxxxx x xxxx'x xxxxxxxxxx xx xxx xxxxxxxxxxx. X xxxx xxxxx xxxxxxxx xx xxx xxxxxx xxxx xx xxxx xxxx xxx xxxxxx xx xx xxxxxxxxx, xxxx xxxx Y xxxxxxx xx xx xxxx, xxx xxxxxxx xxxx Y xxxxxxx xx xx xxxx.
+The user experience is a basic way to define good performance. An app's startup time can influence a user's perception of its performance. A user might consider an app launch time of less than one second to be excellent, less than 5 seconds to be good, and greater than 5 seconds to be poor.
 
-Xxxxx xxxxxxx xxxx x xxxx xxxxxxx xxxxxx xx xxxx xxxxxxxxxx, xxx xxxxxxx xxxxxx. Xxx xxxxxxx xx xx xxx xxxxx xxxxxxxxxx xxxxx xxxxxx xxxxxxxxx xx xxxxxxxx xxxx xxxx xxx xxxxxx xx xxxxxx xxxx xx xxx xxxxxx xxx. Xx'x x xxxxxxx xxxx xxxx xxxx xxxxxx xxxxx xxxxxxxx xxx xxxxxxxxxx xxx xxx xxxx xx xxx xxxxxx, xx xxxxxx x xxxx xx xxxxxx xxxxxxxxxxx xx xxxxxxxxxx. Xxxx xxxx xxxxxxxxxxxxx xxx xxxxx xxxx xx xxxx xxx xx xxxxxxxxx xx xxxxx: xxxxx, xxxxxx, xx xxxxx. Xxxxxxxxxxxx xxxxxx xxxxxxxxxxx xxxx xxxxxxxxx xx xxxx xxxxxxxxxx. Xxx xxxxxxx, xxx xxxxx xxxx x xxxxx xxx xxxx xxxxx'x xxx x xxx xx xxxxx xx xxxxxxx xxxx xxxx YYYXX xx xxxxxx.
+Other metrics have a less obvious impact on user experience, for example memory. The chances of an app being terminated while either suspended or inactive rise with the amount of memory used by the active app. It's a general rule that high memory usage degrades the experience for all apps on the system, so having a goal on memory consumption is reasonable. Take into consideration the rough size of your app as perceived by users: small, medium, or large. Expectations around performance will correlate to this perception. For example, you might want a small app that doesn't use a lot of media to consume less than 100MB of memory.
 
-Xx'x xxxxxx xx xxx xx xxxxxxx xxxx, xxx xxxx xxxxxx xx xxxxx, xxxx xxx xx xxxx x xxxx xx xxx. Xxxx xxx'x xxxxxxxxxxx xxxxx xxxxxx xx xxxxxxxx xxx xxxxxxxxxx xxx xxxx xxxxxx xxxx xxxx xxxxx xxxxxxxxxx: xxx xxxx xx xxxxx xxxxx, xx xxx xxx, xx xxxxxxxx xxxxx (xxxx); xxx xxxx xxx xxxxxxxxxx xxxx xxxxx xxx xxx xxxxxxx xxxxxx xx xxxxxxxx xx xxxx xxxxxxxxxxx (xxxxxxxx); xxx xxx xxxx xxx xxx xxxxxxxxx xxxxxx xxxxxxxxx, xxxxxxxxx xxxxxxx xxxxx (xxxxxxxxxx).
+It's better to set an initial goal, and then revise it later, than not to have a goal at all. Your app's performance goals should be specific and measurable and they should fall into three categories: how long it takes users, or the app, to complete tasks (time); the rate and continuity with which the app redraws itself in response to user interaction (fluidity); and how well the app conserves system resources, including battery power (efficiency).
 
-## Xxxx
+## Time
 
-Xxxxx xx xxx xxxxxxxxxx xxxxxx xx xxxxxxx xxxx (*xxxxxxxxxxx xxxxxxx*) xx xxxxx xxx xxxxx xx xxxxxxxx xxxxx xxxxx xx xxxx xxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxxx x xxxxx, x xxxxxxxxx xxxx xxxxxxxxx, xxx xxxxx xxx xxxxxxx xxxxxxxxx. Xxxx xxx xxxx xxxxxxxxxxx.
+Think of the acceptable ranges of elapsed time (*interaction classes*) it takes for users to complete their tasks in your app. For each interaction class assign a label, a perceived user sentiment, and ideal and maximum durations. Here are some suggestions.
 
-| Xxxxxxxxxxx xxxxx xxxxx | Xxxx xxxxxxxxxx                 | Xxxxx            | Xxxxxxx          | Xxxxxxxx                                                                     |
+| Interaction class label | User perception                 | Ideal            | Maximum          | Examples                                                                     |
 |-------------------------|---------------------------------|------------------|------------------|------------------------------------------------------------------------------|
-| Xxxx                    | Xxxxxxxxx xxxxxxxxxx xxxxx      | YYY xxxxxxxxxxxx | YYY xxxxxxxxxxxx | Xxxxx xx xxx xxx xxx; xxxxx x xxxxxx (xxxxx xxxxxxxx)                        |
-| Xxxxxxx                 | Xxxxx, xxx xxx xxxx             | YYY xxxxxxxxxxxx | YYY xxxxxxxxxxxx | Xxxxxx; xxxxxxxx xxxx                                                        |
-| Xxxxxxxxxx              | Xxx xxxxx, xxx xxxxx xxxxxxxxxx | YYY xxxxxxxxxxxx | Y xxxxxx         | Xxxxxxxx xx x xxxxxxxxx xxxx; xxxxxx xxx xxx xxxx x xxxxxxxxx xxxxx          |
-| Xxxxxx                  | Xxxxxxxxxxx xxxxxxxxxx          | Y xxxxxx         | Y xxxxxxx        | Xxxxxx xxx xxx xxx xxx xxxxx xxxx xx xxxxx xx xxx xxxx xxxxxxxxxx xxxxxxxxxx |
-| Xxxxxxxxxx              | Xx xxxxxx xxxxx xxxxxxxxxx      | YYY xxxxxxxxxxxx | Y xxxxxxx        | Xxxxxxxx x xxxx xxxx xxx Xxxxxxxx                                            |
-| Xxxxxxx                 | Xxxx; xxxx xxxxx xxxxxx xxxx    | YYY xxxxxxxxxxxx | YY xxxxxxx       | Xxxxxxx xxxxxxxx xxxx xxxx xxx Xxxxx                                         |
+| Fast                    | Minimally noticeable delay      | 100 milliseconds | 200 milliseconds | Bring up the app bar; press a button (first response)                        |
+| Typical                 | Quick, but not fast             | 300 milliseconds | 500 milliseconds | Resize; semantic zoom                                                        |
+| Responsive              | Not quick, but feels responsive | 500 milliseconds | 1 second         | Navigate to a different page; resume the app from a suspended state          |
+| Launch                  | Competitive experience          | 1 second         | 3 seconds        | Launch the app for the first time or after it has been previously terminated |
+| Continuous              | No longer feels responsive      | 500 milliseconds | 5 seconds        | Download a file from the Internet                                            |
+| Captive                 | Long; user could switch away    | 500 milliseconds | 10 seconds       | Install multiple apps from the Store                                         |
 
  
 
-Xxx xxx xxx xxxxxx xxxxxxxxxxx xxxxxxx xx xxxx xxx'x xxxxxxxxxxx xxxxxxxxx. Xxx xxx xxxxxx xxx xxx'x xxxxx-xx-xxxx xxxxxxxxx, x xxxxxxx xx xxx xxxx xxxxxxxxxx, xxx xx xxxxxxxxxxx xxxxx xx xxxx xxxxxxxx. Xxxx xxx xxxx xxxxxxxxxxx xxx xx xxxxxxx xxxx xxx xxxxxx xxx.
+You can now assign interaction classes to your app's performance scenarios. You can assign the app's point-in-time reference, a portion of the user experience, and an interaction class to each scenario. Here are some suggestions for an example food and dining app.
 
 
 <!-- DHALE: used HTML table here b/c WDCML src used rowspans -->
 <table>
-<tr><th>Xxxxxxxx</th><th>Xxxx xxxxx</th><th>Xxxx xxxxxxxxxx</th><th>Xxxxxxxxxxx xxxxx</th></tr>
-<tr><td rowspan="3">Xxxxxxxx xx xxxxxx xxxx </td><td>Xxxxx xxxxxxxx</td><td>Xxxx xxxxxxxxxx xxxxxxxxx xxxxxxx</td><td>Xxxx (YYY-YYY xxxxxxxxxxxx)</td></tr>
-<tr><td>Xxxxxxxxxx</td><td>Xxxxxxxxxxx xxxx xxxxxx; xx xxxxxx</td><td>Xxxxxxxxxx (YYY xxxxxxxxxxxx - Y xxxxxx)</td></tr>
-<tr><td>Xxxxxxx xxxxxxxx</td><td>Xxx xxxxxxx xxxxxx; xxxxxx xxxxx</td><td>Xxxxxxxxxx (YYY xxxxxxxxxxxx - Y xxxxxxx)</td></tr>
-<tr><td rowspan="2">Xxxxxx xxx xxxxxx</td><td>Xxxxx xxxxxxxx</td><td>Xxxxxx xxxxxx xxxxxxx</td><td>Xxxx (YYY - YYY xxxxxxxxxxxx)</td></tr>
-<tr><td>Xxxxxxx xxxxxxxx</td><td>Xxxx xx xxxxx xxxxxx xxxxxx xxxxx</td><td>Xxxxxxx (YYY - YYY xxxxxxxxxxxx)</td></tr>
+<tr><th>Scenario</th><th>Time point</th><th>User experience</th><th>Interaction class</th></tr>
+<tr><td rowspan="3">Navigate to recipe page </td><td>First response</td><td>Page transition animation started</td><td>Fast (100-200 milliseconds)</td></tr>
+<tr><td>Responsive</td><td>Ingredients list loaded; no images</td><td>Responsive (500 milliseconds - 1 second)</td></tr>
+<tr><td>Visible complete</td><td>All content loaded; images shown</td><td>Continuous (500 milliseconds - 5 seconds)</td></tr>
+<tr><td rowspan="2">Search for recipe</td><td>First response</td><td>Search button clicked</td><td>Fast (100 - 200 milliseconds)</td></tr>
+<tr><td>Visible complete</td><td>List of local recipe titles shown</td><td>Typical (300 - 500 milliseconds)</td></tr>
 </table>
 
-Xx xxx'xx xxxxxxxxxx xxxx xxxxxxx xxxx xxxx xxxxxxxx xxxxxxx xxxxxxxxx xxxxx. Xx xxx xxxx xx xxxxxxx xxxxxxx xxxxx xxx xxxxxxx? Xx xx xxxxxxxxxx xxxxxxx xxxxx xxx xxxxxxx, xxxxx xxx xxxxx, xx xxxx xxxx x xxx xx xxxxxxxxxx xxxx xxxxxxxxxx?
+If you're displaying live content then also consider content freshness goals. Is the goal to refresh content every few seconds? Or is refreshing content every few minutes, every few hours, or even once a day an acceptable user experience?
 
-Xxxx xxxx xxxxx xxxxxxxxx, xxx xxx xxx xxxxxx xxxx xx xxxx, xxxxxxx, xxx xxxxxxxx xxxx xxx.
+With your goals specified, you are now better able to test, analyze, and optimize your app.
 
-## Xxxxxxxx
+## Fluidity
 
-Xxxxxxxx xxxxxxxxxx xxxxxxxx xxxxx xxx xxxx xxx xxxxx xxxxxxx:
+Specific measurable fluidity goals for your app might include:
 
--   Xx xxxxxx xxxxxx xxxxx-xxx-xxxxxx (xxxxxxxx).
--   Xxxxxxxxxx xxxxxx xx YY xxxxxx xxx xxxxxx (XXX).
--   Xxxx x xxxx xxxx/xxxxxxx, xxx xxx xxxxxxxx Y-Y xxxxx xx xxxxxxx xxx xxxxxx.
+-   No screen redraw stops-and-starts (glitches).
+-   Animations render at 60 frames per second (FPS).
+-   When a user pans/scrolls, the app presents 3-6 pages of content per second.
 
-## Xxxxxxxxxx
+## Efficiency
 
-Xxxxxxxx xxxxxxxxxx xxxxxxxxxx xxxxx xxx xxxx xxx xxxxx xxxxxxx:
+Specific measurable efficiency goals for your app might include:
 
--   Xxx xxxx xxx'x xxxxxxx, XXX xxxxxxxxxx xx xx xx xxxxx *X* xxx xxxxxx xxxxx xx XX xx xx xx xxxxx *X* xx xxx xxxxx.
--   Xxxx xxx xxx xx xxxxxxxx, *X* xxx *X* xxx xxxx xxx xxxx xxx'x xxxxxxx.
--   Xxxx xxx xxx xx xxxx xxxxxxxx xxx *X* xxxxx xx xxxxxxx xxxxx; xxxx xxxx xxx xx xxxxxxxx, xxx xxxxxx xxxxxxx xxx xxxxxx xxx *X* xxxxx.
+-   For your app's process, CPU percentage is at or below *N* and memory usage in MB is at or below *M* at all times.
+-   When the app is inactive, *N* and *M* are zero for your app's process.
+-   Your app can be used actively for *X* hours on battery power; when your app is inactive, the device retains its charge for *Y* hours.
 
-## Xxxxxx xxxx xxx xxx xxxxxxxxxxx
+## Design your app for performance
 
-Xxx xxx xxx xxx xxxx xxxxxxxxxxx xxxxx xx xxxxxxxxx xxxx xxx'x xxxxxx. Xxxxx xxx xxxxxxx xxxx xxx xxxxxx xxx, xxxxx xxx xxxx xxxxxxxxx xx xxx xxxxxx xxxx, xxx xxxxx xxxxxx xx [update items incrementally](optimize-gridview-and-listview.md#update-items-incrementally) xx xxxx xxx xxxxxx'x xxxx xx xxxxxxxx xxxxx, xxxxxxxxxx xxx xxxxxxxxxxx xx xxxxxxxx, xxx xxxxxxxxxx xxxxxx xx xxxxxxxx xxxxxxx. Xxxx xxxxxxxxx xxxxxxxxxxxxxx xxx x xxxxx XX xxxxx xxxxxxx/xxxxxxxxx, xxxx xxx xxxx xxxxxxxx xxxxxxxxx xxxxxx xxxxx xxxxx xxx xxxxxxxxxxx xxxxx xx x xxxx xxxx xxxxx xxx XX xxxxxx xx xxxxx xx. Xxxx xxx xxxx xxxxx xxxxxxx xx xxxxxxxx.
+You can now use your performance goals to influence your app's design. Using the example food and dining app, after the user navigates to the recipe page, you might choose to [update items incrementally](optimize-gridview-and-listview.md#update-items-incrementally) so that the recipe's name is rendered first, displaying the ingredients is deferred, and displaying images is deferred further. This maintains responsiveness and a fluid UI while panning/scrolling, with the full fidelity rendering taking place after the interaction slows to a pace that allow the UI thread to catch up. Here are some other aspects to consider.
 
-**XX**
+**UI**
 
--   Xxxxxxxx xxxxx xxx xxxx xxxx xxx xxxxxx xxxxxxxxxx xxx xxxx xxxx xx xxxx xxx'x XX (xxxxxxxxxx xxx xxxxxxx xxxx) xx [optimizing your XAML markup](optimize-xaml-loading.md). Xx x xxxxxxxx, xxxxx xxxxxxx XX xxx xxxx xxxxx xx'x xxxxxx.
--   Xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242705), xxxx xxx xxx xxxxx xxx xxxx xxxx xxx xxx xx xxxx [ListView and GridView optimization techniques](optimize-gridview-and-listview.md) xx xxx xxx.
--   Xxxxxxx XX xx xxx xxxx xx xxxxxx, xxxxx xxx xxxxxxxxx xxx xxxx xxx xx-xxx xx xxxxxx, xxxxxx xxxx xxxxxxxxxxxx xx xxxxxxxxxxxx xx xxxx.
--   Xxxxxxxx XX xxxxxxxx xxxxx xxx xxxx xxxxx xxxx. Xxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208992) xxxxxxxx.
--   Xxxxxx xxxxx xxxxxxxxxxx xxx xxxxxxxxxx xx xxxxxxxxxxxx xxxxxxxxxx. Xxx xxxx xxxx, xxx [Animations overview](https://msdn.microsoft.com/library/windows/apps/Mt187350). Xxxxxxxx xxxx xxxxxxxxxxxx xxxxxxxxxx xxxxxxx xxxxxxxx xxxxxxx xx xxx xxxxxx, xxx xxxx xxx XXX xxx xxxxxxxx xxxxxxxx xxxxxx. Xx xxxxxxxx xxx xxxxxxx, xxx'x xxxx xxxxxxxxxx xxxxxxx xx xxx xxxx xx xxx xxxxxxxxxxx xxxx xxx xxx.
--   Xxxxxx xxx xxxx xxxxxx xx xxxxxx xx x xxxx xxxx xx xxxxxxxxxxx xxx xxx xxxx xx xxxxx xxx xxx xxxxxxxxxx xx, xxxxx xxx [**XxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227210) xxxxxx.
+-   Maximize parse and load time and memory efficiency for each page of your app's UI (especially the initial page) by [optimizing your XAML markup](optimize-xaml-loading.md). In a nutshell, defer loading UI and code until it's needed.
+-   For [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) and [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705), make all the items the same size and use as many [ListView and GridView optimization techniques](optimize-gridview-and-listview.md) as you can.
+-   Declare UI in the form of markup, which the framework can load and re-use in chunks, rather than constructing it imperatively in code.
+-   Collapse UI elements until the user needs them. See the [**Visibility**](https://msdn.microsoft.com/library/windows/apps/BR208992) property.
+-   Prefer theme transitions and animations to storyboarded animations. For more info, see [Animations overview](https://msdn.microsoft.com/library/windows/apps/Mt187350). Remember that storyboarded animations require constant updates to the screen, and keep the CPU and graphics pipeline active. To preserve the battery, don't have animations running if the user is not interacting with the app.
+-   Images you load should be loaded at a size that is appropriate for the view in which you are presenting it, using the [**GetThumbnailAsync**](https://msdn.microsoft.com/library/windows/apps/BR227210) method.
 
-**XXX, xxxxxx, xxx xxxxx**
+**CPU, memory, and power**
 
--   Xxxxxxxx xxxxx-xxxxxxxx xxxx xx xxx xx xxxxx-xxxxxxxx xxxxxxx xxx/xx xxxxx. Xxx [Asynchronous programming](https://msdn.microsoft.com/library/windows/apps/Mt187335), xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209054) xxxxxxxx, xxx xxx [**XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208211) xxxxx.
--   Xxxxxxxx xxxx xxx'x xxxxxx xxxxxxxxx xx xxxxxxxxx xxxxxxxxx xxxxxxxxx (xxxx xx xxxxx) xx xxxxxxx.
--   Xxxxxxxx xxxx xxxx'x xxxxxxx xxx.
--   Xxxxx xxxxxx xxxxx xx xxxxxxxxxxxxx xxxxx xxxxxxxx xxx xxxxxxxxxxxxx XX xxxxxxxx xxxxxxxx xxxxxxxx.
--   Xxx xxx xxxx xx xxx xxxxxxx, xx xxxxxxxxxxxx xxxx xxx xxxxx xxx xxxx xxx xxxx, xxxxx x xxxxxx, xx xxxxxxxx xxxx xx xxx XXX xxxx xx xx xxxx.
+-   Schedule lower-priority work to run on lower-priority threads and/or cores. See [Asynchronous programming](https://msdn.microsoft.com/library/windows/apps/Mt187335), the [**Dispatcher**](https://msdn.microsoft.com/library/windows/apps/BR209054) property, and the [**CoreDispatcher**](https://msdn.microsoft.com/library/windows/apps/BR208211) class.
+-   Minimize your app's memory footprint by releasing expensive resources (such as media) on suspend.
+-   Minimize your code's working set.
+-   Avoid memory leaks by unregistering event handlers and dereferencing UI elements whenever possible.
+-   For the sake of the battery, be conservative with how often you poll for data, query a sensor, or schedule work on the CPU when it is idle.
 
-**Xxxx xxxxxx**
+**Data access**
 
--   Xx xxxxxxxx, xxxxxxxx xxxxxxx. Xxx xxxxxxxxx xxxxxxxxxxx, xxx xxx [**XxxxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn279042) xxxxx. Xxx xxxxxx xxxxxxxxxxx, xxx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR224847) xxxxxxxxx xxx xxx [**XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh700517) xxxxx.
--   Xx xxxxxxxx, xxxxx xxxxxxx xxxx'x xxxxxxxxx xx xxxxxx. Xxx xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR241621) xxx [**XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR241622) xxxxxxxxxx.
--   Xxx xxxxx xxxxxx, xxxx x xxxxxxxxxxx XX xx xxxxxxx xx xxxxxxxx xxxx xxxxxxxxx xxxx xxx xxx xx xxxxx xxxxxxx xxxxxxx. Xxxxxxxxxx xxxx xxxxxxxxxxx xx xxxx xxxxxxx xx x xxx xxxx xx xxx xxxxxxx xx xxx xxxx. Xxx xxxxxxx, xxx'x xxxxxx xxx xxxxxxxx xx xxxxxxx xxxxx xxx xxxx'x xxxxxx xx xxxxx xxxxxxx xx xxx xxx xxxxx xxxx xxxxxxx.
+-   If possible, prefetch content. For automatic prefetching, see the [**ContentPrefetcher**](https://msdn.microsoft.com/library/windows/apps/Dn279042) class. For manual prefetching, see the [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/BR224847) namespace and the [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/Hh700517) class.
+-   If possible, cache content that's expensive to access. See the [**LocalFolder**](https://msdn.microsoft.com/library/windows/apps/BR241621) and [**LocalSettings**](https://msdn.microsoft.com/library/windows/apps/BR241622) properties.
+-   For cache misses, show a placeholder UI as quickly as possible that indicates that the app is still loading content. Transition from placeholder to live content in a way that is not jarring to the user. For example, don't change the position of content under the user's finger or mouse pointer as the app loads live content.
 
-**Xxx xxxxxx xxx xxxxxx**
+**App launch and resume**
 
--   Xxxxx xxx xxx'x xxxxxx xxxxxx, xxx xxx'x xxxxxx xxx xxx'x xxxxxx xxxxxx xxxxxx xxxxxxxxx. Xxx xxxxxxx, xxx [Creating a fast and fluid app launch experience](http://go.microsoft.com/fwlink/p/?LinkId=317595) xxx [Display a splash screen for more time](https://msdn.microsoft.com/library/windows/apps/Mt187309).
--   Xxxxxxx xxxxxxxxxx xxxx xxxxx xxxxxxxxxxx xxxxx xxx xxxxxx xxxxxx xx xxxxxxxxx, xx xxxxx xxxx xxxx xxxx xx x xxxxxxxxxx xx xxxxx xx xxx xxxxxx xxxx.
+-   Defer the app's splash screen, and don't extend the app's splash screen unless necessary. For details, see [Creating a fast and fluid app launch experience](http://go.microsoft.com/fwlink/p/?LinkId=317595) and [Display a splash screen for more time](https://msdn.microsoft.com/library/windows/apps/Mt187309).
+-   Disable animations that occur immediately after the splash screen is dismissed, as these will only lead to a perception of delay in app launch time.
 
-**Xxxxxxxx XX, xxx xxxxxxxxxxx**
+**Adaptive UI, and orientation**
 
--   Xxx xxx [**XxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209021) xxxxx.
--   Xxxxxxxx xxxx xxxxxxxx xxxx xxxxxxxxxxx, xxxxxxxxx xxxxxxxxx xxx xxxx xxxxx xxxxx—xxxx xxx xxx xxxxxxx YYY xxx YYY xxxxxxxxxxxx xx xxxxxxxx xxxx xxxxxx xxx xxxx xxxx xxxx xxx'x XX xx x xxxxxxx xxxxx.
+-   Use the [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) class.
+-   Complete only required work immediately, deferring intensive app work until later—your app has between 200 and 800 milliseconds to complete work before the user sees your app's UI in a cropped state.
 
-Xxxx xxxx xxxxxxxxxxx-xxxxxxx xxxxxxx xx xxxxx, xxx xxx xxxxx xxxxxx xxxx xxx.
+With your performance-related designs in place, you can start coding your app.
 
-## Xxxxxxxxxx xxx xxxxxxxxxxx
+## Instrument for performance
 
-Xx xxx xxxx, xxx xxxx xxxx xxxx xxxxxxxx xxx xxxxxx xx xxxxxxx xxxxxx xxxxx xxxx xxx xxxx. Xxxxx, xxxx xxx'xx xxxxxxx xxxx xxx, xxx xxx xxx xxxxxxxxx xxxxx xxxx xx Xxxxxxx Xxxxxxxxxxx Xxxxxxxx xxx Xxxxxxx Xxxxxxxxxxx Xxxxxxxx (xxxx xxx xxxxxxxx xx xxx [Windows Performance Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh162945.aspx)) xx xxxxxx xxx xxxx x xxxxxx xxxxx xxxx xxx'x xxxxxxxxxxx. Xx xxxx xxxxxx, xxx xxx xxxx xxx xxxxx xxxxxxxx xxx xxxxxx xx xxxx xxx xxxx xxxxxx xxxxxxx xxx xxxxxx'x xxxxxxx.
+As you code, add code that logs messages and events at certain points while your app runs. Later, when you're testing your app, you can use profiling tools such as Windows Performance Recorder and Windows Performance Analyzer (both are included in the [Windows Performance Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh162945.aspx)) to create and view a report about your app's performance. In this report, you can look for these messages and events to help you more easily analyze the report's results.
 
-Xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxx xxxxxxx XXXx, xxxxxx xx [Event Tracing for Windows (ETW)](https://msdn.microsoft.com/library/windows/desktop/Bb968803), xxxx xxxxxxxx xxxxx x xxxx xxxxx xxxxxxx xxx xxxxxxx xxxxxxxx. Xxx XXXx, xxxxx xxx xxxx xx xxx [**Xxxxxxx.Xxxxxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206677) xxxxxxxxx, xxxxxxx xxx [**XxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn264138), [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn264195), [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn264202), xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn264217) xxxxxxx.
+The Universal Windows Platform (UWP) provides logging APIs, backed by [Event Tracing for Windows (ETW)](https://msdn.microsoft.com/library/windows/desktop/Bb968803), that together offer a rich event logging and tracing solution. The APIs, which are part of the [**Windows.Foundation.Diagnostics**](https://msdn.microsoft.com/library/windows/apps/BR206677) namespace, include the [**FileLoggingSession**](https://msdn.microsoft.com/library/windows/apps/Dn264138), [**LoggingActivity**](https://msdn.microsoft.com/library/windows/apps/Dn264195), [**LoggingChannel**](https://msdn.microsoft.com/library/windows/apps/Dn264202), and [**LoggingSession**](https://msdn.microsoft.com/library/windows/apps/Dn264217) classes.
 
-Xx xxx x xxxxxxx xx xxx xxxxxx xx x xxxxxxxx xxxxx xxxxx xxx xxx xx xxxxxxx, xxxxxx x **XxxxxxxXxxxxxx** xxxxxx, xxx xxxx xxxx xxx xxxxxx'x [**XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn264202-logmessage) xxxxxx, xxxx xxxx.
+To log a message in the report at a specific point while the app is running, create a **LoggingChannel** object, and then call the object's [**LogMessage**](https://msdn.microsoft.com/library/windows/apps/Dn264202-logmessage) method, like this.
 
-```xxxxxx
-// xxxxx Xxxxxxx.Xxxxxxxxxx.Xxxxxxxxxxx;
+```csharp
+// using Windows.Foundation.Diagnostics;
 // ...
 
-XxxxxxxXxxxxxx xxXxxxxxxXxxxxxx = xxx XxxxxxxXxxxxxx(&xxxx;XxXxxxxxxXxxxxxx&xxxx;);
+LoggingChannel myLoggingChannel = new LoggingChannel(&quot;MyLoggingChannel&quot;);
 
-xxXxxxxxxXxxxxxx.XxxXxxxxxx(XxxxxxxXxxxx.Xxxxxxxxxxx, &xxxx;Xxxx' x xx xxxxxx xxxxxxx.&xxxx;);
-
-// ...
-```
-
-Xx xxx xxxxx xxx xxxx xxxxxx xx xxx xxxxxx xxxx x xxxxxx xx xxxx xxxxx xxx xxx xx xxxxxxx, xxxxxx x **XxxxxxxXxxxxxxx** xxxxxx, xxx xxxx xxxx xxx xxxxxx'x [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn264195-loggingactivity) xxxxxxxxxxx, xxxx xxxx.
-
-```xxxxxx
-// xxxxx Xxxxxxx.Xxxxxxxxxx.Xxxxxxxxxxx;
-// ...
-
-XxxxxxxXxxxxxxx xxXxxxxxxXxxxxxxx;
-
-// xxXxxxxxxXxxxxxx xx xxxxxxx xxx xxxxxxxxxxx xx xxx xxxxxxxx xxxx xxxxxxx.
-xxxxx (xxXxxxxxxXxxxxxxx = xxx XxxxxxxXxxxxxxx(&xxxx;XxXxxxxxxXxxxxxxx&xxxx;), xxXxxxxxxXxxxxxx))
-{   // Xxxxx xxxx xxxxxxx xxxxxxxx xxxxxx, x xxxxx xxxxx xx xxxxxx.
-    
-    // Xxx xxxx xxxx xx xx xxxxxxxxx xx xxxxxxxx.
-    
-}   // Xxxxx xxxx xxxxxxx xxxxxxxx xxxx, xx xxx xxxxx xx xxxxxx.
+myLoggingChannel.LogMessage(LoggingLevel.Information, &quot;Here' s my logged message.&quot;);
 
 // ...
 ```
 
-Xxxx xxx xxx [Logging sample](http://go.microsoft.com/fwlink/p/?LinkId=529576).
+To log start and stop events in the report over a period of time while the app is running, create a **LoggingActivity** object, and then call the object's [**LoggingActivity**](https://msdn.microsoft.com/library/windows/apps/Dn264195-loggingactivity) constructor, like this.
 
-Xxxx xxxx xxx xxxxxxxxxxxx, xxx xxx xxxx xxx xxxxxxx xxxx xxx'x xxxxxxxxxxx.
+```csharp
+// using Windows.Foundation.Diagnostics;
+// ...
 
-## Xxxx xxx xxxxxxx xxxxxxx xxxxxxxxxxx xxxxx
+LoggingActivity myLoggingActivity;
 
-Xxxx xx xxxx xxxxxxxxxxx xxxx xx xx xxxxxx xxx xxxxxx xxxxxx xxxxxxxxxxx xxxxx xxx'xx xxxxxxx xxxxxxxxxxx. Xxxx xxxxxx xxxxxxxxx xxxxxxxx xxxxxxxxx xx xxxxxxx xxx'xx xxxxxxxxx xxxxxx xxxxxxxxxxx, xxxxxxxxxxx, xx xxxxxxxxxx. Xxxxxxxxx xxxxxxxxxxx xxxxxx xxx xxxxx xxxxxx xx xxxxxxxxxxx xxx xx xxxxxxxxxxxx xxxxxxxx, xx xx xxxxxxxxx xxxx xxx xx xx xx xxxx xx xxx xxxx xxxx xxxx xxxx xxxxxxxxxx xxxx. Xxxxx xxxxxxxxxxxx xxxx xxx x xxxx xxxx xx xxxxx xxx xxxxxxxxx xxxxx xxx xx xxxx xxx, xxx xxxxxx xxxxxx xxxxxxxxx. Xxxx xxxxxxx xx xxxx xxxxxxxxxx xxx xxxxxxx xxxx. Xx'x xxxxxxxxx xxxxxxxx xx xxxxxx xxxxxxx xxxxx xxxx xxxxxxx. Xxxxxxxxx xxxxxxxxxxx xxxx xx xxx xxxxxxx xxxxx xxx xxxxxx xx xxxx-xxxxxx xxxxx xxx xxxx xxxxxxxxxxx.
+// myLoggingChannel is defined and initialized in the previous code example.
+using (myLoggingActivity = new LoggingActivity(&quot;MyLoggingActivity&quot;), myLoggingChannel))
+{   // After this logging activity starts, a start event is logged.
+    
+    // Add code here to do something of interest.
+    
+}   // After this logging activity ends, an end event is logged.
 
-Xxx xxxxx xxxxxxxxxx xxx xxxxx xx xxxx xxx xxxx xxx xxxxxx xx xxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxx.
+// ...
+```
 
--   Xxxx xxxxxxx x xxxx xxxxxxx xx xxxxxxxx xxxxxxxxxxxxxx xxxxxxxxx xxx-xx-xxx xxx xxxxxxx XXx, xxxxxxx, xxxxxxxxxx, xxx xxxxxxx xxx xxxxx xxxxxx xxxxxxx.
--   Xxxx xxxxxxx x xxxx xxxxxxx xx xxxxxx xxxxx. Xxxxx xxxxx xxxxxx xxxxx xxx xxxx xxxx xxxx xxxxxxx, xxxxxxxx xx xxx xx xxxx xxxxx xxxxxxx xxx xxxxxxxxxx xxxxxx xxxxxxxxxxx.
--   Xxxxxxxxx xx xxxx xxxxxxx xxxxxxxxx xx xxx xxx.
-    -   Xxxx xxx xxxxxxxxxx xxxx xx xxx xxxxxxx xxxxxx. Xx xx xxxx, xx Xxxxxxx, xxxxxx **Xxxxxxxx** xxxx xxx Xxxxx xxxx &xx; **Xxxxxxxxxxxxxxx** &xx; **Xxxx xxxxxx**. Xxxxxx xxxx xxxxxx xxx xxx xxxxxx **Xxxx**.
-    -   Xxxxxxx xxxx xxx xx xxxxxx xxxx xx xxxxxxxx xx xx xxxxxxx xxxxxxxxxxxxx xxxxxx xxxxxxxxx xx xx xxx xxxxxxx xxxxxx.
-    -   Xx xxxxxx xxxx xxxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxx xxx xxxxxxxxxxx xx xxx xxxxxxx xxxxxx, xxxxxxx xx xxxxxxxx xxx xxxx xxx xx xx xxxxxxxx. Xx Xxxxxxx, xx xxx Xxxxx xxxx xxxxxx xxx **Xxxxxxxx xxx Xxxxxxxxxxx**. Xx xxx **Xxxxxxxxxxx** xxxx, xxxxx **Xxxxxxxxx Xxxxxxxxxxx**, xxxxxx **Xxxxx xxxxxxxxxxx** xxx xxxx xxx xxx xxxxxx xx xxxxxx xxxx **Xxxxxxxxxxx xx xxxxxxxx**.
-    -   Xxx xxx xxx xxxxxxxx xxxxx xx xxxx xxxxxxxxx xxxxxx xxxxxxx xxxxxxxxx xxx xxxx xxxxxx xxxxxxxxxx xxxxxxxxxxxx.
--   Xxxx xxx xxxxxxx xxxxx xxxxxxxxxxxx. Xxxx xxxxx' xxxxxx xxxxx xxxx xxxxxxxxxxxxx xxxx xxxxx xxxx xxxx xxxxxxxxxxx xxxxxxx. Xxxxxxx xxx xxxxxxxx xxxx xxx-xxxxx xxxxxxx, xxxx xx xxxxxx xxxxxxx, xx xxxx. Xxxx xxxx xxx xx xxx xxxxxxxx xxxxxx xxxxxx xxxx xxxxxxx xxxx xx xxxxx xxxxxxx. Xx x xxxxxxxxx, xxxxxx xxxx x xxx xxxxx xxxxxx xxxx xx xxxxx x xxxxxxx xxx xxxxx xx x xxxxxxx xxxxxxxx, xxx xxx xxxx xxxxx xxxxxxxxxxx.
--   Xxx x xxxxxxxxxxx xx xxxxx xxxx Xxxxxxxxx Xxxxxx Xxxxxx xxx Xxxxxxx Xxxxxxxxxxx Xxxxxxxx xx xxxxxxx xxx xxxxxxxxxxx. Xxxxxx Xxxxxx xx xxxxxxxx xx xxxxxxx xxx-xxxxxxx xxxxxxxx, xxxx xx xxxxxx xxxx xxxxxxx. Xxxxxxx Xxxxxxxxxxx Xxxxxxxx xx xxxxxxxx xx xxxxxxx xxxxxx-xxxxxxx xxxxxxxx, xxxx xx xxxxxxxxx xxxxxx xxxx, xxxx xxxxx xxxxx xxxxxxxxxxxx xxxxxx, xxx xxxx xxxxx xxxx xxxxx/xxxxxx (X/X) xxx xxxxxxxx xxxxxxxxxx xxxx (XXX) xxxx. Xxxx xxxxx xxxxxxx xxxxx xxxxxxx xxx xxxxxx, xxx xxx xxxxxx xxxxxx xxx xxxx-xxxxxx xxxxxx.
--   Xxxxxx xxx xxxxxx xxxx xxx xx xxx Xxxxx xxx xxxxxxxxxxxxx, xx xxxx xx xxxxxxxxxxx xxxx xxxx xxxx xxxxx xxx xxxxxxxxxxx-xxxxxxx xxxx xxxxx xx xxxxxxxxx xx xxx "Xxxxxxxxxxx xxxxx" xxxxxxx xx [Windows App Certification Kit tests](windows-app-certification-kit-tests.md) xxx xx xxx "Xxxxxxxxxxx xxx xxxxxxxxx" xxxxxxx xx [Windows Store app test cases](https://msdn.microsoft.com/library/windows/apps/Dn275879).
+Also see the [Logging sample](http://go.microsoft.com/fwlink/p/?LinkId=529576).
 
-Xxx xxxx xxxx, xxx xxxxx xxxxxxxxx xxx xxxxxxxxx xxxxx.
+With your app instrumented, you can test and measure your app's performance.
 
--   [
-            Windows Performance Analyzer](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh448170.aspx)
-            
--   [
-            Windows Performance Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh162945.aspx)
-            
--   [
-            Analyze performance using Visual Studio diagnostic tools](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh696636.aspx)
-            
--   Xxx //xxxxx/ xxxxxxx [XAML Performance](https://channel9.msdn.com/Events/Build/2015/3-698)
--   Xxx //xxxxx/ xxxxxxx [New XAML Tools in Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697)
+## Test and measure against performance goals
 
-## Xxxxxxx xx xxx xxxxxxxxxxx xxxx xxxxxxx
+Part of your performance plan is to define the points during development where you'll measure performance. This serves different purposes depending on whether you're measuring during prototyping, development, or deployment. Measuring performance during the early stages of prototyping can be tremendously valuable, so we recommend that you do so as soon as you have code that does meaningful work. Early measurements give you a good idea of where the important costs are in your app, and inform design decisions. This results in high performing and scaling apps. It's generally costlier to change designs later than earlier. Measuring performance late in the product cycle can result in last-minute hacks and poor performance.
 
-Xxxxx xxx xxxxxxx xxxx xxxxxxxxxxx xxxx xxxxxxx, xxxxxxxxx xx xxx xxxxxxx xxx xxxxxx, xxx xxxxxxx:
+Use these techniques and tools to test how your app stacks up against your original performance goals.
 
--   Xxxxxx xxx xxxxxx xxx xx xxxx xxx xxxxxx xxxxxxxxx, xx xxxxxxxx xxxx xxxx?
--   Xxxxxx xxx xxx, xxxxxx, xx xxxxxx xxx xx xxx xxxxxxxxxxxxxxx xx xxx xxxx?
--   Xxxxxx xxx xxxxxx xxx xx xxxx xxxxxxxxxxx xxxxx?
+-   Test against a wide variety of hardware configurations including all-in-one and desktop PCs, laptops, ultrabooks, and tablets and other mobile devices.
+-   Test against a wide variety of screen sizes. While wider screen sizes can show much more content, bringing in all of that extra content can negatively impact performance.
+-   Eliminate as many testing variables as you can.
+    -   Turn off background apps on the testing device. To do this, in Windows, select **Settings** from the Start menu &gt; **Personalization** &gt; **Lock screen**. Select each active app and select **None**.
+    -   Compile your app to native code by building it in release configuration before deploying it to the testing device.
+    -   To ensure that automatic maintenance does not affect the performance of the testing device, trigger it manually and wait for it to complete. In Windows, in the Start menu search for **Security and Maintenance**. In the **Maintenance** area, under **Automatic Maintenance**, select **Start maintenance** and wait for the status to change from **Maintenance in progress**.
+    -   Run the app multiple times to help eliminate random testing variables and help ensure consistent measurements.
+-   Test for reduced power availability. Your users' device might have significantly less power than your development machine. Windows was designed with low-power devices, such as mobile devices, in mind. Apps that run on the platform should ensure they perform well on these devices. As a heuristic, expect that a low power device runs at about a quarter the speed of a desktop computer, and set your goals accordingly.
+-   Use a combination of tools like Microsoft Visual Studio and Windows Performance Analyzer to measure app performance. Visual Studio is designed to provide app-focused analysis, such as source code linking. Windows Performance Analyzer is designed to provide system-focused analysis, such as providing system info, info about touch manipulation events, and info about disk input/output (I/O) and graphics processing unit (GPU) cost. Both tools provide trace capture and export, and can reopen shared and post-mortem traces.
+-   Before you submit your app to the Store for certification, be sure to incorporate into your test plans the performance-related test cases as described in the "Performance tests" section of [Windows App Certification Kit tests](windows-app-certification-kit-tests.md) and in the "Performance and stability" section of [Windows Store app test cases](https://msdn.microsoft.com/library/windows/apps/Dn275879).
 
-Xx xxx xxxxxxx xxx xxxxxx, xxxx xxxx xxx xxxx xx xxxx xx xxxxxxxxxxxxx xx xxxxxxx xxx xxxxxx.
+For more info, see these resources and profiling tools.
 
-## Xxxxxxxxxx
+-   [Windows Performance Analyzer](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh448170.aspx)
+-   [Windows Performance Toolkit](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh162945.aspx)
+-   [Analyze performance using Visual Studio diagnostic tools](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh696636.aspx)
+-   The //build/ session [XAML Performance](https://channel9.msdn.com/Events/Build/2015/3-698)
+-   The //build/ session [New XAML Tools in Visual Studio 2015](https://channel9.msdn.com/Events/Build/2015/2-697)
 
-Xxxxxxxx xxxx xxx xxxxxxxxxxx-xxxxxxxx xxxx xxxxx xx xxxx xxx: xxxxx xxxxx xxxx xxxx xx xxxxx. Xxxxxxxxx xxxx xxxx xxx xxxxx. Xxxxx, xxxxx xx x xxxxx-xxx xxxxxxx xxxxxxxx xxxxxxxx xxxx xxxxxxx xxxx xxxxxx xxxxxxxxx xxx xxxxxxx xxxx xxxx xxxxxxxx xx xxx xxxxxxx xxxxxxxxxxxx. Xx xx xxxxxxxxx xxxxxx xx xxxxxxxxxx xxxxxxxxx xxxxxxxxxxxx xxx xxxx xxxxxxxx xxxxxx xx xxxxx xxxxx xxxxxxxxxxx xx xxx x xxxxxxx.
+## Respond to the performance test results
+
+After you analyze your performance test results, determine if any changes are needed, for example:
+
+-   Should you change any of your app design decisions, or optimize your code?
+-   Should you add, remove, or change any of the instrumentation in the code?
+-   Should you revise any of your performance goals?
+
+If any changes are needed, make them and then go back to instrumenting or testing and repeat.
+
+## Optimizing
+
+Optimize only the performance-critical code paths in your app: those where most time is spent. Profiling will tell you which. Often, there is a trade-off between creating software that follows good design practices and writing code that performs at the highest optimization. It is generally better to prioritize developer productivity and good software design in areas where performance is not a concern.
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

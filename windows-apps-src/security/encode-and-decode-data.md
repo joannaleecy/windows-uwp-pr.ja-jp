@@ -1,15 +1,15 @@
 ---
-xxxxx: Xxxxxx xxx xxxxxx xxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxx xxxxx xxx xx xxxxxx xxx xxxxxx xxxxYY xxx xxxxxxxxxxx xxxx xx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
-xx.xxxxxxx: YXXYYYYY-XYYY-YYXY-XYYY-YYYYYYYYYYXX
+title: データのエンコードとデコード
+description: 次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリで base64 データと 16 進データをエンコードおよびデコードする方法を示しています。
+ms.assetid: 2CC23863-E840-48F4-B087-0479045743AC
 ---
 
-# Xxxxxx xxx xxxxxx xxxx
+# データのエンコードとデコード
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxx xxxxxxx xxxx xxxxx xxx xx xxxxxx xxx xxxxxx xxxxYY xxx xxxxxxxxxxx xxxx xx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
+次のコード例は、ユニバーサル Windows プラットフォーム (UWP) アプリで base64 データと 16 進データをエンコードおよびデコードする方法を示しています。
 
 ```cs
 public void EncodeDecodeBase64()
@@ -44,4 +44,8 @@ public void EncodeDecodeHex()
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

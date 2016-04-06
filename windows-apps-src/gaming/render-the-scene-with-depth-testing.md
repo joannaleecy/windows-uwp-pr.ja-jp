@@ -1,21 +1,21 @@
 ---
-xxxxx: Xxxxxx xxx xxxxx xxxx xxxxx xxxxxxx
-xxxxxxxxxxx: Xxxxxx x xxxxxx xxxxxx xx xxxxxx xxxxx xxxxxxx xx xxxx xxxxxx (xx xxxxxxxx) xxxxxx xxx xxxx xxxxx xxxxxx.
-xx.xxxxxxx: xxYYYxxx-xYxY-xxYx-xYYY-YYYYYYYYYYYY
+title: Render the scene with depth testing
+description: Create a shadow effect by adding depth testing to your vertex (or geometry) shader and your pixel shader.
+ms.assetid: bf496dfb-d7f5-af6b-d588-501164608560
 ---
 
-# Xxxxxx xxx xxxxx xxxx xxxxx xxxxxxx
+# Render the scene with depth testing
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxxxxx x xxxxxx xxxxxx xx xxxxxx xxxxx xxxxxxx xx xxxx xxxxxx (xx xxxxxxxx) xxxxxx xxx xxxx xxxxx xxxxxx. Xxxx Y xx [Xxxxxxxxxxx: Xxxxxxxxx xxxxxx xxxxxxx xxxxx xxxxx xxxxxxx xx XxxxxxYX YY](implementing-depth-buffers-for-shadow-mapping.md).
+Create a shadow effect by adding depth testing to your vertex (or geometry) shader and your pixel shader. Part 3 of [Walkthrough: Implement shadow volumes using depth buffers in Direct3D 11](implementing-depth-buffers-for-shadow-mapping.md).
 
-## Xxxxxxx xxxxxxxxxxxxxx xxx xxxxx xxxxxxx
+## Include transformation for light frustum
 
 
-Xxxx xxxxxx xxxxxx xxxxx xx xxxxxxx xxx xxxxxxxxxxx xxxxx xxxxx xxxxxxxx xxx xxxx xxxxxx. Xxxxxxx xxx xxxxx xxxxx xxxxx, xxxx, xxx xxxxxxxxxx xxxxxxxx xxxxx x xxxxxxxx xxxxxx. Xxx xxx xxxx xxx xxxx xxxxxxxx xxxxxx xx xxxxxxx xxx xxxxx xxxxxxxx xxx xxxxxx xxx xxxxxxxx xxxxxxxxxxxx. Xxx xxxxxxxxxxx xxxxxxxx xx xxxxx xxxxx xxxx xx xxxx xxxxxx xxx xxxxx xxxx.
+Your vertex shader needs to compute the transformed light space position for each vertex. Provide the light space model, view, and projection matrices using a constant buffer. You can also use this constant buffer to provide the light position and normal for lighting calculations. The transformed position in light space will be used during the depth test.
 
 ```cpp
 PixelShaderInput main(VertexShaderInput input)
@@ -54,12 +54,12 @@ PixelShaderInput main(VertexShaderInput input)
 }
 ```
 
-Xxxx, xxx xxxxx xxxxxx xxxx xxx xxx xxxxxxxxxxxx xxxxx xxxxx xxxxxxxx xxxxxxxx xx xxx xxxxxx xxxxxx xx xxxx xxxxxxx xxx xxxxx xx xx xxxxxx.
+Next, the pixel shader will use the interpolated light space position provided by the vertex shader to test whether the pixel is in shadow.
 
-## Xxxx xxxxxxx xxx xxxxxxxx xx xx xxx xxxxx xxxxxxx
+## Test whether the position is in the light frustum
 
 
-Xxxxx, xxxxx xxxx xxx xxxxx xx xx xxx xxxx xxxxxxx xx xxx xxxxx xx xxxxxxxxxxx xxx X xxx X xxxxxxxxxxx. Xx xxxx xxx xxxx xxxxxx xxx xxxxx \[Y, Y\] xxxx xx'x xxxxxxxx xxx xxx xxxxx xx xx xx xxxxxx. Xxxxxxxxx xxx xxx xxxx xxx xxxxx xxxx. X xxxxxx xxx xxxx xxx xxxx xxxxxxx xx xxxxxxx [Xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/hh447231) xxx xxxxxxxxx xxx xxxxxx xxxxxxx xxx xxxxxxxx xxxxx.
+First, check that the pixel is in the view frustum of the light by normalizing the X and Y coordinates. If they are both within the range \[0, 1\] then it's possible for the pixel to be in shadow. Otherwise you can skip the depth test. A shader can test for this quickly by calling [Saturate](https://msdn.microsoft.com/library/windows/desktop/hh447231) and comparing the result against the original value.
 
 ```cpp
 // Compute texture coordinates for the current point's location on the shadow map.
@@ -78,10 +78,10 @@ if ((saturate(shadowTexCoords.x) == shadowTexCoords.x) &&
 {
 ```
 
-## Xxxxx xxxx xxxxxxx xxx xxxxxx xxx
+## Depth test against the shadow map
 
 
-Xxx x xxxxxx xxxxxxxxxx xxxxxxxx (xxxxxx [XxxxxxXxx](https://msdn.microsoft.com/library/windows/desktop/bb509696) xx [XxxxxxXxxXxxxxXxxx](https://msdn.microsoft.com/library/windows/desktop/bb509697)) xx xxxx xxx xxxxx'x xxxxx xx xxxxx xxxxx xxxxxxx xxx xxxxx xxx. Xxxxxxx xxx xxxxxxxxxx xxxxx xxxxx xxxxx xxxxx, xxxxx xx `z / w`, xxx xxxx xxx xxxxx xx xxx xxxxxxxxxx xxxxxxxx. Xxxxx xx xxx x XxxxXxXxxxx xxxxxxxxxx xxxx xxx xxx xxxxxxx, xxx xxxxxxxxx xxxxxxxx xxxxxxx xxxx xxxx xxx xxxxxxxxxx xxxx xxxxxx; xxxx xxxxxxxxx xxxx xxx xxxxx xx xx xxxxxx.
+Use a sample comparison function (either [SampleCmp](https://msdn.microsoft.com/library/windows/desktop/bb509696) or [SampleCmpLevelZero](https://msdn.microsoft.com/library/windows/desktop/bb509697)) to test the pixel's depth in light space against the depth map. Compute the normalized light space depth value, which is `z / w`, and pass the value to the comparison function. Since we use a LessOrEqual comparison test for the sampler, the intrinsic function returns zero when the comparison test passes; this indicates that the pixel is in shadow.
 
 ```cpp
 // Use an offset value to mitigate shadow artifacts due to imprecise 
@@ -110,10 +110,10 @@ lighting = float(shadowMap.SampleCmpLevelZero(
     );
 ```
 
-## Xxxxxxx xxxxxxxx xx xx xxx xx xxxxxx
+## Compute lighting in or out of shadow
 
 
-Xx xxx xxxxx xx xxx xx xxxxxx, xxx xxxxx xxxxxx xxxxxx xxxxxxx xxxxxx xxxxxxxx xxx xxx xx xx xxx xxxxx xxxxx.
+If the pixel is not in shadow, the pixel shader should compute direct lighting and add it to the pixel value.
 
 ```cpp
 return float4(input.color * (ambient + DplusS(N, L, NdotL, input.view)), 1.f);
@@ -142,19 +142,23 @@ float3 DplusS(float3 N, float3 L, float NdotL, float3 view)
 }
 ```
 
-Xxxxxxxxx, xxx xxxxx xxxxxx xxxxxx xxxxxxx xxx xxxxx xxxxx xxxxx xxxxxxx xxxxxxxx.
+Otherwise, the pixel shader should compute the pixel value using ambient lighting.
 
 ```cpp
 return float4(input.color * ambient, 1.f);
 ```
 
-Xx xxx xxxx xxxx xx xxxx xxxxxxxxxxx, xxxxx xxx xx [Xxxxxxx xxxxxx xxxx xx x xxxxx xx xxxxxxxx](target-a-range-of-hardware.md).
+In the next part of this walkthrough, learn how to [Support shadow maps on a range of hardware](target-a-range-of-hardware.md).
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

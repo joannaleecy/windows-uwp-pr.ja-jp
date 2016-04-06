@@ -1,59 +1,63 @@
 ---
-Xxxxxxxxxxx: Xxx Xxxxxx xxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxx xxx xxx xxxx xxxxxxx xx xxx xxxxxxxxxxx xxx xxxxxxx xx xxxx xxx, xxxxxxxxx xxxxxxx xxx xxxxxxxxxxxx xxxxxx.
-xxxxx: Xxxxxx xxxxxx
-xx.xxxxxxx: YXYYYYYY-YXYY-YXYY-YYXY-YYYXYXYYYYYX
+Description: Windows デベロッパー センター ダッシュボードの状態レポートによって、クラッシュや応答停止イベントなど、アプリの品質とパフォーマンスに関連するデータを取得できます。
+title: 状態レポート
+ms.assetid: 4F671543-1E91-4E59-88A3-638E3E64539A
 ---
 
-# Xxxxxx xxxxxx
+# 状態レポート
 
 
-Xxx **Xxxxxx** xxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxx xxx xxx xxxx xxxxxxx xx xxx xxxxxxxxxxx xxx xxxxxxx xx xxxx xxx, xxxxxxxxx xxxxxxx xxx xxxxxxxxxxxx xxxxxx. Xxx xxx xxxx xxxx xxxx xx xxxx xxxxxxxxx, xx [xxxxxxxx xxx xxxxxx](download-analytic-reports.md) xx xxxx xxxxxxx. Xxxxx xxxxxxxxxx, xxx xxx xxxx xxxxx xxxxxx xxx xxxxxxx xxxxxxxxx. Xxxxxxxxxxxxx, xxx xxx xxxxxxxxxxxxxxxx xxxxxxxx xxxx xxxx xx xxxxx xxx [Xxxxxxx Xxxxx xxxxxxxxx XXXX XXX](../monetize/access-analytics-data-using-windows-store-services.md).
+Windows デベロッパー センター ダッシュボードの**状態**レポートによって、クラッシュや応答停止イベントなど、アプリの品質とパフォーマンスに関連するデータを取得できます。 このデータは、ダッシュボードで表示することも、[レポートをダウンロード](download-analytic-reports.md)してオフラインで表示することもできます。 該当する場合、さらにデバッグのスタック トレースを表示できます。 または、[Windows ストア分析 REST API](../monetize/access-analytics-data-using-windows-store-services.md) を使って、プログラムでこのデータを取得できます。
 
-> **Xxxx**  Xx xxx xxx xxxxxxxxxx xxxxxxxxx xxxx xxx xxxxxx xxxxxxxxxxx xxxx xx xxx xxxxxxx xxxxxxxxxx, xxx xxx xxxxxx xx xxxxxxxxx xxxxxx xx xxxxxxx xxx xxxxxx xxxxxxxx xxxx. Xxxx xx xxxxxxx xx xxx xxxx xx xxxxxxx xxxx xxxx xx xxxx xxxxxx xx xxxx xxx x xxxx xxxxxxxx xxxxxxx.
+> **注**  以前にアプリを公開して、以前のダッシュボードでパフォーマンス データを表示した場合、ここで報告されるクラッシュやイベントの数が増加することがあります。 これは、このレポートにより多くのデータを含めて、詳細を把握できるようにするためです。
 
-## Xxxxx xxxxxxx
-
-
-Xxxx xxx xxx xx xxx xxxx, xxx xxx xxxxxx **Xxxxx xxxxxxx** xx xxxxxx xxx xx xxx xxxx xx xxxx xxxx xx xxxx xxxxx xxx/xx xx xxxxxxx xxxxxxx.
-
--   **Xxxx**: Xxx xxxxxxx xxxxxx xx **Xxxx YY xxxxx**, xxx xxx xxx xxxxxx xxxx xx xx **Xxxx Y xxxxxx**.
--   **Xxxxxxx xxxxxxx**: Xxx xxxxxxx xxxxxxx xx **Xxx xxxxxxxx**. Xx xxxx xxx xxxxxxxx xxxx xxxx xxx xxxxxxx xxxxxxx, xxx xxx xxxxxx x xxxxxxxx xxx.
-
-Xxx xxxx xx xxx xx xxx xxxxxx xxxxxx xxxxx xxxx xxxxxxx xxx xxxxxx xx xxxx xxxxxxxx xx xxx **Xxxxx xxxxxxx** xxxxxxx. Xx xxxxxxx xxxx xxxx xxxxxxx xxxx xxx xxx xx xxxx xxxxxxx xxxxxxxx, xxxxxx xxx'xx xxxx xxx **Xxxxx xxxxxxx** xx xxxxxx xxxx xxx.
-
-## Xxxxx xxxxxxx xxx xxxxxx
+## フィルターの適用
 
 
-Xxx **Xxxxx xxxxxxx xxx xxxxxx** xxxxx xxxxx xxx xxxxxx xx xxxxx xxxxxxx xxx xxxxxx xxxx xxxxxxxxx xxxxxxxxxxx xxxx xxxxx xxxx xxx xxxxxx xxx xxxxxxxx xxxxxx xx xxxx. Xxxx xxxx xx xxxxx xxxx xxxx xxx xxxxxxxxxxx xx xxxxxxx xxxxxxxxxx: xxxxxxx, xxxxx, XxxxXxxxxx xxxxxxxxxx, xx xxxxxx xxxxxxxx.
+ページの上部にある **[フィルターの適用]** を展開して、このページのすべてのデータを日付の範囲やパッケージのバージョンによってフィルター処理できます。
 
-Xxx xxx xxxxxxxxxx xxxxxx xxx xxxxxxx xx xxxxxx xxx/xx xx XX xxxxxxx.
+-   **[日付]**: 既定のフィルターは **[過去 72 時間]** ですが、これを **[過去 6 か月]** まで拡張できます。
+-   **[パッケージ バージョン]**: 既定の設定は **[すべてのバージョン]** です。 アプリに複数のパッケージ バージョンが含まれる場合、特定のバージョンを選ぶことができます。
 
-## Xxxxx xxx xxxxx xxxxxxxxx
+以下のすべてのグラフに示される情報は、**[フィルターの適用]** で選んだ期間を反映しています。 既定では、**[フィルターの適用]** を使ってパッケージ バージョンを 1 つに絞り込んでいない限り、その情報にはすべてのパッケージ バージョンのデータが含まれます。
 
-
-Xxx **Xxxxx xxx xxxxx xxxxxxxxx** xxxxx xxxx xxx xxx xxxxxx xxxx xxxxx xxxxxxxx xxxxxxx xxxxxxx xx xxx xxxxxxxxx' xxxxxxxxxxxxxx xxxx x xxxxx xx xxxxxxxxxxxx xxxxx xxxxxxxx. Xxxxx xxx xxxxxxx xxxxxxxx xx xxx xxxxxxx xxxxx:
-
--   XX xxxxxxx
--   Xxxxxx xxxx
--   Xxxxxx (XX)
--   Xxxx xxxxxxx (XX)
--   XXX xxxxx (XXx)
-
-Xxx xxx xxxxxxxxxx xxxxxx xxx xxxxxxx xx **Xxxxx xxxx**: xxxxxxx, xxxxx, XxxxXxxxxx xxxxxxxxxx, xx xxxxxx xxxxxxxx. (Xxx xxxxxxx xxxxxxx xx xx xxxx xxx xxxxx xxxxx.)
-
-## Xxxxxx
+## クラッシュとイベントの合計
 
 
-Xxx **Xxxxxx** xxxxx xxxxx xxx xxxxx xxxxxx xx xxxxxxx xxx xxxxxx xxxx xxx xxxxxxxx xxxxxx xx xxxx xx xxxxxx. Xx xxxxxxx, xx xxxx xxx xxx xxxxxx xxxxx xxx xxx xxxx xxxxxxxxxxxx xx xxx xxx xxxxxxxx xxxxxxxx xxxx xxxxx. Xxx xxx xxxxxxx xxxx xxxxx xx xxxxxxxx xxx xxxxx xx xxx **Xxxxxxx** xxxxxx xx xxxx xxxxx.
+**[クラッシュとイベントの合計]** のグラフには、選んだ期間中にユーザーがアプリを使用したときに発生した 1 日のクラッシュとイベントの数が表示されます。 各アプリで発生した各種のイベント (クラッシュ、ハング、JavaScript の例外、メモリ エラー) は個別に追跡されます。
 
-## Xxxxxxx xxx
+必要に応じて、市場や OS のバージョン別に結果をフィルター処理することもできます。
+
+## クラッシュとイベントの詳細
 
 
-Xx xxx xxxx xxxxxxxx XXX xxxxxx xxxxx, xxx **Xxxxxxx xxx** xxxxx xxxx xxxx xxxxxxx xxxxxxx xx xxxxxxxxxxx xx xxxxxxxx xxxxxxx, xxxxxxxxx xxx xxxxx xxxxxx xx xxxxxxx xxx xxx xxxxxxx xxxxx xxxxxx xx xxxxxxx xxx xxxxxx.
+**[クラッシュとイベントの詳細]** では、クラッシュや応答停止イベントが発生したときの、ユーザーの構成に関連する特定の詳細を追跡するグラフを表示できます。 セクションの見出しをクリックすると、以下の詳細が表示されます。
 
-Xxxx xxxx xx xxxxx xx x xxxxxxxxxx xx xxxx xxxxx xxxxxx. Xxxx xxx xxx xx xxx xxxxx, xx'xx xxxxxxxx xxxx xxxxxxxxxx xx xxxxxx xxx xxxxxxx xx xxxxxxx xxxx xxxx.
+-   OS バージョン
+-   デバイスの種類
+-   メモリ (MB)
+-   大容量記憶装置 (GB)
+-   CPU 速度 (GHz)
+
+必要に応じて、**[クラッシュの種類]** (クラッシュ、ハング、JavaScript の例外、メモリ エラー) 別に結果をフィルター処理することもできます (既定の設定では、すべての種類のクラッシュが表示されます)。
+
+## 市場
+
+
+**[市場]** のグラフには、選んだ期間中に発生した市場別のクラッシュとイベントの合計数が表示されます。 既定では、取得数が最も多かった市場が一番上に表示され、そこから降順に表示されます。 このグラフの **[クラッシュ]** 列の矢印をクリックすることで、この順序を逆にすることができます。
+
+## エラー ログ
+
+
+PDB シンボル ファイルを追加した場合、**[エラー ログ]** のグラフには、特定のシンボルの発生に関連する詳細が表示されます。たとえば、シンボルごとのクラッシュの合計数や、クラッシュの 1 日の平均数などです。
+
+この情報は、イベントの合計に対する割合に基づいています。 このグラフの上部に、このデータを提供するためにサンプリングされたイベントの割合が示されます。
+
+ 
 
  
 
- 
+
 <!--HONumber=Mar16_HO1-->
+
+

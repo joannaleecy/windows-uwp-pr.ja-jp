@@ -1,20 +1,24 @@
 ---
-xx.xxxxxxx: YYYYYxYY-YYYY-YYxx-YYxx-YYYYxYYxYxYY
-xxxxx: Xxxxxxxxx, xxxxxxx, xxx xxxxxxxxxxx
-xxxxxxxxxxx: .
+ms.assetid: 16976d00-1564-49fe-81ad-2568e25e9e41
+title: デバッグ、テスト、パフォーマンス
+description: 。
 ---
-# Xxxxxxxxx, xxxxxxx, xxx xxxxxxxxxxx
+# デバッグ、テスト、パフォーマンス
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxx Xxxxxxxxx Xxxxxx Xxxxxx xx xxxxx xxx xxxx xxxx xxx. Xx xxxxxxx xxxx xxx xxx xxx Xxxxxxx Xxxxx xxxxxxxxxxxxx xxxxxxx, xxx xxx Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx.
+Microsoft Visual Studio を使って、アプリのデバッグとテストを行います。 Windows ストアの認定プロセスに向けてアプリを準備するには、Windows アプリ認定キットを使います。
 
-| Xxxxx | Xxxxxxxxxxx |
+| トピック | 説明 |
 |-------|-------------|
-| [Xxxxxxxxx xxx xxxxxxxxx XXX xxxx](deploying-and-debugging-uwp-apps.md) | Xxxx xxxxxxx xxxxxx xxx xxxxxxx xxx xxxxx xx xxxxxx xxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxx. |
-| [Xxxx xxxx xxx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx YY Xxxxxx](test-with-the-emulator.md) | Xxxxxxxx xxxx-xxxxx xxxxxxxxxxx xxxx x xxxxxx xxx xxxx xxx xxxxxxxx xx xxxx xxx xx xxxxx xxx xxxxx xxxxxxxx xxxx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx YY Xxxxxx. Xxx xxxxxxxx xx x xxxxxxx xxxxxxxxxxx xxxx xxxxxxxx x xxxxxx xxxxxx xxxxxxx Xxxxxxx YY. Xx xxxxxxxx x xxxxxxxxxxx xxxxxxxxxxx xx xxxxx xxx xxx xxxxx xxx xxxx Xxxxxxx xxxx xxxxxxx x xxxxxxxx xxxxxx. Xx xxxx xxxxxxxx xx xxxxxxxx xxxxxxxxxxx xxx xxxx xxxxxxxxxxx xxxxxxxxxx. |
-| [Xxxx xxxxxxx](beta-testing.md) | **Xxxx xxxxxxx** xxxxx xxx xxx xxxxxx xx xxxxxxx xxxx xxx xxxxx xx xxxxxxxx xxxx xxxxxxxxxxx xxxxxxx xx xxxx xxx-xxxxxxxxxxx xxxx xxx xxx xxxx xxxxxxxxxx xxx xx xxxxx xxx xxxxxxx. |
-| [Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx](windows-app-certification-kit.md) | Xx xxxx xxxx xxx xxx xxxx xxxxxx xx xxxxx [Xxxxxxx Xxx Xxxxxxxxxxxxx Xxx](http://go.microsoft.com/fwlink/p/?LinkID=309666). |
-| [Xxxxxxxxxxx](performance-and-xaml-ui.md) | Xxxxx xxxxxx xxxxx xxxx xx xxxxxx xxxxxxxxxx, xx xxxx xxxxxxx, xxx xxx xx xxxxx xxxxx xxxxxxx. Xxxxxxxxxxx, xxxxxxxxxxx xx x xxx-xxxxxxxxxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxxxxx xx x xxxxxxx xxxx xxxx xxx xxxxxxx xx xxxx xxxxx' xxxxxxxxxxxx. Xxxxxxxxxx xxxxx, xxx xxxxxxxxx, xxx xxx xxxxxxx. Xxxxxxxxx xxxx xxxx xxxxxxxxxxx-xxxxxxxx xxxxxxxxx xxx; xxxxxx xxxx xxxx xxxxxxxxxxx xxxx. Xxxx xxxxxxx xxxxx xxx xxxxx xxxxxx xxxxxxxxxx xxx xxxxxxxxx xx xxxx xxxxxxx xx xx xxxxxxxxx xxx'xx xxx xxxx xxxxx. |
+| [UWP アプリの展開とデバッグ](deploying-and-debugging-uwp-apps.md) | この記事では、さまざまな展開およびデバッグのターゲットを指定する手順について説明します。 |
+| [Microsoft Emulator for Windows 10 Mobile を使ったテスト](test-with-the-emulator.md) | Microsoft Emulator for Windows 10 Mobile に用意されているツールを使って、デバイスでの実際の操作をシミュレートし、アプリの機能をテストします。 エミュレーターは、Windows 10 を実行するモバイル デバイスをエミュレートするデスクトップ アプリケーションです。 このアプリケーションを使用すると、仮想化された環境が提供されるため、物理デバイスを使用せずに Windows アプリのデバッグとテストを実行できます。 また、アプリケーションのプロトタイプのための隔離環境としても使用できます。 |
+| [ベータ テスト](beta-testing.md) | **ベータ テスト**を行うと、まだリリースされていないアプリをアプリ開発チームの外部の人に自分のデバイスで試してもらい、その人たちからのフィードバックに基づいてアプリを改善することができます。 |
+| [Windows アプリ認定キット](windows-app-certification-kit.md) | 作成したアプリが認定を受けるために最も適した方法は、[Windows アプリ認定キット](http://go.microsoft.com/fwlink/p/?LinkID=309666)を使うことです。 |
+| [パフォーマンス](performance-and-xaml-ui.md) | ユーザーは、高い応答性と自然な使用感、そしてバッテリーが消耗しないことをアプリに期待しています。 技術的には、パフォーマンスは機能要件ではありませんが、パフォーマンスを機能として扱うことで、ユーザーの期待に沿うことができます。 鍵となる要因は、目標の明確化と測定の実施です。 パフォーマンスが重要なシナリオを決定し、優れたパフォーマンスとは何を意味するかを定義します。 次に、プロジェクトの初期とライフサイクル全体で十分な回数の測定を行って、目標を達成できることを確認します。 |
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

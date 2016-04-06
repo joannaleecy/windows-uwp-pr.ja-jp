@@ -1,67 +1,71 @@
 ---
-xxxxxxxxxxx: Xxxxxxx xxxx xxxxx x xxxxxx xxxx-xxx-xxxx xxxxxx XXx, xxxxxx xxxxxxx, xxx xxxx xxxxx xxxxx xx xxxxxxx. Xxx xxxx xxxxxxxxx, xxxxx, xxx xxxxxxxxxxx xxxxxxxx xxx xxxx xxxxxxx, xxx x xxxx xxxxxx xxxxxxx xxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxx.
-xxxxx: Xxxxxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xx XXX xxx xxxx xxxxxx xxx XX
-xx.xxxxxxx: YYYYYYYY-xxYx-YYYx-xxYx-YYxYxxxYxxxx
+description: Windows apps share a common look-and-feel across PCs, mobile devices, and many other kinds of devices. The user interface, input, and interaction patterns are very similar, and a user moving between devices will welcome the familiar experience.
+title: Porting Windows Phone Silverlight to UWP for form factor and UX
+ms.assetid: 96244516-dd2c-494d-ab5a-14b7dcd2edbd
 ---
 
-#  Xxxxxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xx XXX xxx xxxx xxxxxx xxx XX
+#  Porting Windows Phone Silverlight to UWP for form factor and UX
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxx xxxxxxxx xxxxx xxx [Xxxxxxx xxxxxxxx xxx xxxx xxxxxx](wpsl-to-uwp-business-and-data.md).
+The previous topic was [Porting business and data layers](wpsl-to-uwp-business-and-data.md).
 
-Xxxxxxx xxxx xxxxx x xxxxxx xxxx-xxx-xxxx xxxxxx XXx, xxxxxx xxxxxxx, xxx xxxx xxxxx xxxxx xx xxxxxxx. Xxx xxxx xxxxxxxxx, xxxxx, xxx xxxxxxxxxxx xxxxxxxx xxx xxxx xxxxxxx, xxx x xxxx xxxxxx xxxxxxx xxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxx. Xxxxxxxxxxx xxxxxxx xxxxxxx xxxx xx xxxxxxxx xxxx, xxxxxxx xxxxxxxxxxx, xxx xxxxxxxxx xxxxx xxxxxxxxxx xxxxxx xxxx xxx xxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xx xxxxxxxx xx Xxxxxxx YY. Xxx xxxx xxxx xx xxxx xxxx xx xxx xxxxx xxxxxxx xx xxxxxxx xxx xxx xx xxx xxxxxx xxxxx xxxxx xxxxxxxx xxxx xx xxxxxxxxx xxxxxx.
+Windows apps share a common look-and-feel across PCs, mobile devices, and many other kinds of devices. The user interface, input, and interaction patterns are very similar, and a user moving between devices will welcome the familiar experience. Differences between devices such as physical size, default orientation, and effective pixel resolution factor into the way a Universal Windows Platform (UWP) app is rendered by Windows 10. The good news is that much of the heavy lifting is handled for you by the system using smart concepts such as effective pixels.
 
-## Xxxxxxxxx xxxx xxxxxxx xxx xxxx xxxxxxxxxx
+## Different form factors and user experience
 
-Xxxxxxxxx xxxxxxx xxxx xxxxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxxxx, xx x xxxxxxx xx xxxxxx xxxxxx. Xxx xxxx xxx xxxxxx xxxxxxx xx xxx xxxxxxxxx, xxxx, xxx xxxxxx xx xxxx XXX xxx xxxxx? Xxx xxx xxx xxxxxxx xxxxx xx xxxx xx xxxxx xxx xxxxxxxx xxxxx? Xxx xxxx xx xxx xxxx xxxxxxxx xxxxx xx xxxxxxxxx-xxxxx xxxxxxx xxxx xxxxxxxxx xxxxxxx xxxxxxxxx, xxx xxx x xxxxxxx xxxx xx x xxxxx-xxxxx xxxxx xxxxxx xx xxxxxxxxx xxxxx xxxxxxxxx *xxx* xxxx xxx xxxxxxx xxxxxxxx xx xxxxxxxxx xxxxxxxxx? Xxx xxxxxxxxx xxxxxxxx xxxxxxx xxx xxxxxx xxx xxxx xx xxxx.
+Different devices have multiple possible portrait and landscape resolutions, in a variety of aspect ratios. How will the visual aspects of its interface, text, and assets of your UWP app scale? How can you support touch as well as mouse and keyboard input? And with an app that supports touch on different-sized devices with different viewing distances, how can a control both be a right-sized touch target at different pixel densities *and* have its content readable at different distances? The following sections address the things you need to know.
 
-## Xxxx xx xxx xxxx xx x xxxxxx, xxxxxx?
+## What is the size of a screen, really?
 
-Xxx xxxxx xxxxxx xx xxxx xx'x xxxxxxxxxx, xxxxxxx xx xxxxxxx xxx xxxx xx xxx xxxxxxxxx xxxx xx xxx xxxxxxx xxx xxxx xx xxx xxx xxxx xxxx xx xxx xxx. Xxx xxxxxxxxxxxx xxxxx xxxx xx xxxx xx xxx xxxxxxxxx xx xxx xxxxx xx xxx xxxx, xxx xxxx'x xxxxxxxxx xxxx xxxxxxxxxx xx xxxx xxxx xx xx xxx xxxx.
+The short answer is that it's subjective, because it depends not only on the objective size of the display but also on how far away from it you are. The subjectivity means that we have to put ourselves in the shoes of the user, and that's something that developers of good apps do in any case.
 
-Xxxxxxxxxxx, x xxxxxx xx xxxxxxxx xx xxxxx xx xxxxxx, xxx xxxxxxxx (xxx) xxxxxx. Xxxxxxx xxxx xx xxxxx xxxxxxx xxxx xxx xxxx xxx xxxx xxxxxx xxx xxxx xx xxxx. Xxxx'x xxx xxxxx xxxxxxx, xxxx xxxxx xx XXX (xxxx xxx xxxx), xxxx xxxxx xx XXX (xxxxxx xxx xxxx). Xxx xxx xxxxxxxxxx xx xxx XXX xx xxx xxxxxxxx xxxx xx xxx xxxxxx xx x xxxxxxxx xx xx xxxx. Xxxxx xxxxxxx xx xxxx xxxxx xx *xxxxxxxxxx*, xxxxxxxx xxxx xxxx xx xxxxx xxxx xxxxxxx xx xxxx xxxxx xxxxx.
+Objectively, a screen is measured in units of inches, and physical (raw) pixels. Knowing both of those metrics lets you know how many pixels fit into an inch. That's the pixel density, also known as DPI (dots per inch), also known as PPI (pixels per inch). And the reciprocal of the DPI is the physical size of the pixels as a fraction of an inch. Pixel density is also known as *resolution*, although that term is often used loosely to mean pixel count.
 
-Xx xxxxxxx xxxxxxxx xxxxxxxxx, xxx xxxxx xxxxxxxxx xxxxxxx *xxxx* xxxxxxx, xxx xxxx xxxxxxx xxxx xxx xxxxxx'x *xxxxxxxxx xxxx*, xxx xxx *xxxxxxxxx xxxxxxxxxx*. Xxxx xxxxx xx xxxxxxx xxxx xxxxxxx xx xxxx xxx; xxxx xxxxxx xxxx xxxx XX xxxxxxx xxx xxxx, xxx xxxxxxxx xxxx xxx [Xxxxxxx Xxx](http://www.microsoft.com/microsoft-surface-hub) xxxxxxx xxx XXx. Xx xxxxxxxxxx, xxxxxxx xxxx xx xxx xxxxxxxxxxx xxxxxx xxxx xxxxxxx xxxxxxxx. Xxxx xxx xxx xxxxx xx xxxx XX xxxxxxxx, xxx xxx xxxxxxx xxxxx xxxxx xx xxxxx xxxxxx xxxxxxxxx xxxxxx (xxx). Xxx Xxxxxxx YY xxxx xxxx xxxx xxxxxxx XXX, xxx xxx xxxxxxx xxxxxxx xxxxxxxx xxxx x xxxxxx, xx xxxxxxxxx xxx xxxx xxxx xx xxxx XX xxxxxxxx xx xxxxxxxx xxxxxx xx xxxx xxx xxxx xxxxxxx xxxxxxxxxx. Xxx [Xxxx/xxxxxxxxx xxxxxx, xxxxxxx xxxxxxxx, xxx xxxxx xxxxxxx](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels).
+As viewing distance increases, all those objective metrics *seem* smaller, and they resolve into the screen's *effective size*, and its *effective resolution*. Your phone is usually held closest to your eye; your tablet then your PC monitor are next, and furthest away are [Surface Hub](http://www.microsoft.com/microsoft-surface-hub) devices and TVs. To compensate, devices tend to get objectively larger with viewing distance. When you set sizes on your UI elements, you are setting those sizes in units called effective pixels (epx). And Windows 10 will take into account DPI, and the typical viewing distance from a device, to calculate the best size of your UI elements in physical pixels to give the best viewing experience. See [View/effective pixels, viewing distance, and scale factors](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels).
 
-Xxxx xx, xx xxxxxxxxx xxxx xxx xxxx xxxx xxx xxxx xxxx xxxxxxxxx xxxxxxx xx xxxx xxx xxx xxxxxxx xxxx xxxxxxxxxx xxx xxxxxxxx.
+Even so, we recommend that you test your app with many different devices so that you can confirm each experience for yourself.
 
-## Xxxxx xxxxxxxxxx xxx xxxxxxx xxxxxxxxxx
+## Touch resolution and viewing resolution
 
-Xxxxxxxxxxx (XX xxxxxxx) xxxx xx xx xxx xxxxx xxxx xx xxxxx. Xx, x xxxxx xxxxxx xxxxx xx xxxx-xx-xxxx xxxxxx xxx xxxxxxxx xxxx xxxxxx xxxxxxxxx xxxxxxx xxxx xxxxx xxxx xxxxxxxxx xxxxx xxxxxxxxx. Xxxxxxxxx xxxxxx xxxx xxx xxx xxxx, xxx: xxxx'xx xxxxxx xx xxxxxxxxx xxxxxxx—xxxxxx xxxxx xxxxxxx xxxx xxxxxxx—xx xxxxx xx xxxxxxx x xxxx-xx-xxxx xxxxxxxx xxxxxxxx xxxx xxxx'x xxxxx xxx xxxxx xxxxxxx.
+Affordances (UI widgets) need to be the right size to touch. So, a touch target needs to more-or-less retain its physical size across different devices that might have different pixel densities. Effective pixels help you out here, too: they're scaled on different devices—taking pixel density into account—in order to achieve a more-or-less constant physical size that's ideal for touch targets.
 
-Xxxx xxxxx xx xx xxx xxxxx xxxx xx xxxx (YY xxxxx xxxx xx x YY xxxx xxxxxxx xxxxxxxx xx x xxxx xxxx xx xxxxx), xxx xx xxxxx xxxxx xx xx xxx xxxxx xxxx xxx xxxxxxxxx xxxxxxxxxx, xxx xxx xxxxxxx xxxxxxxx. Xx xxxxxxxxx xxxxxxx, xxxx xxxx xxxxxxxxx xxxxx xxxxxxx xxxxx XX xxxxxxxx xxxxx-xxxxx xxx xxxxxxxx. Xxxx xxx xxxxx xxxxxx-xxxxx xxxxxxxx xxxxx xxxxxxxxxxxxx, xxx xxxx xxxx. Xxxxxx (xxxxxx)-xxxxx xxxxxxxx xxx xxxx xxxxxx xxxxxxxxxxxxx xx xxx xxxxxxxxx xxxxxxxx xx xxxxx xx x xxxxxx, xxxxx xxxx. Xxx, xx'x xxxxxxxxxx xxx xxx xxxxxxxxx xx xxxxxxx xxxx xxxxx xx x xxxxx xx xxxxx xx xxxx xxx xxxxxxxxxxx xxx xxx x xxxxxx xxxxxx'x xxxxxxx xxxxxx xxx xx xxxxxxxxxxxxx xxxxxx. Xxx xxxx xxxx xx xxxx, xxx [Xxxx/xxxxxxxxx xxxxxx, xxxxxxx xxxxxxxx, xxx xxxxx xxxxxxx](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels).
+Text needs to be the right size to read (12 point text at a 20 inch viewing distance is a good rule of thumb), and an image needs to be the right size and effective resolution, for the viewing distance. On different devices, that same effective pixel scaling keeps UI elements right-sized and readable. Text and other vector-based graphics scale automatically, and very well. Raster (bitmap)-based graphics are also scaled automatically if the developer provides an asset in a single, large size. But, it's preferable for the developer to provide each asset in a range of sizes so that the appropriate one for a target device's scaling factor can be automatically loaded. For more info on that, see [View/effective pixels, viewing distance, and scale factors](wpsl-to-uwp-porting-xaml-and-ui.md#effective-pixels).
 
-## Xxxxxx, xxx xxxxxxxx Xxxxxx Xxxxx Xxxxxxx
+## Layout, and adaptive Visual State Manager
 
-Xx'xx xxxxxxxxx xxx xxxxxxx xxxxxxxx xx x xxxxxxxxxx xxxxxxxxxxxxx xx xxxxxx xxxx. Xxx, xxx'x xxxxx xxxxx xxx xxxxxx xx xxxx xxx, xxx xxx xx xxxx xxx xx xxxxx xxxxxx xxxx-xxxxxx xxxx xx'x xxxxxxxxx. Xxxxxxxx xxxx xxxx xxxx x xxxx xxxxxx xxx xxxx xxx xxxxxxxx xx xxx xx x xxxxxx xxxxxx xxxxxx. Xxxx xxxxxx xxxx xxxx xxxx xxxx xx x xxxxxx xxxxxx?
+We've described the factors involved in a meaningful understanding of screen size. Now, let's think about the layout of your app, and how to make use of extra screen real-estate when it's available. Consider this page from a very simple app that was designed to run on a narrow mobile device. What should this page look like on a larger screen?
 
-![xxx xxxxxx xxxxxxx xxxxx xxxxx xxx](images/wpsl-to-uwp-case-studies/c01-04-uni-phone-app-ported.png)
+![the ported windows phone store app](images/wpsl-to-uwp-case-studies/c01-04-uni-phone-app-ported.png)
 
-Xxx xxxxxx xxxxxxx xx xxxxxxxxxxx xx xxxxxxxx-xxxx xxxxxxxxxxx xxxxxxx xxxx'x xxx xxxx xxxxxx xxxxx xxx xxx xxxx xxxx; xxx xx'x xx xxx xxxx xxx x xxxx xx xxxx, xxxxx xx xxxx xxxx xx x xxxxxx xxxxxx xx xxxxxx xxxxxxx. Xxx, XX xxx xxxxxx xxxxxxx xxx xxxxx xx xxxxxx xxxxxxxxxxx, xx xxxx xxxxxx xxxxxx xxxxxxxxxx xxxxx xxxx xx xxxxxxxxxxx xxxxxxxxxx xx xxxxxx xxxxxxx.
+The mobile version is constrained to portrait-only orientation because that's the best aspect ratio for the book list; and we'd do the same for a page of text, which is best kept to a single column on mobile devices. But, PC and tablet screens are large in either orientation, so that mobile device constraint seems like an unnecessary limitation on larger devices.
 
-Xxxxxxxxx xxxxxxx xxx xxx xx xxxx xxxx xxx xxxxxx xxxxxxx, xxxx xxxxxx, xxxxx'x xxxx xxxxxxxxx xx xxx xxxxxx xxx xxx xxxxxxxxxx xxxxx, xxx xxxx xxxxx'x xxxxx xxx xxxx xxxx. Xx xxxxxx xx xxxxxxxx xx xxxxxxx xxxx xxxxxxx, xxxxxx xxxx xxx xxxx xxxxxxx xxxxxx. Xxxx xx x xxxxxxx, xx xxxxx xxxx xxxx xxxx xxxx xx xxxxxxx. Xx xxxxx xxx xxxxx xxxxx xx xxxxxxx xxxxxxxxx xxxxxxx, xxxx xx xxx, xx xx xxxxx xxxxxx xxx xxxx xxx xxxx x xxxx xxxx xxx xxxx xx xxxx xxxxx xxxx xxxxxxxx xxxxxxx, xxxx xx xxx, xx xxx xxx xxxxx xxxx xxx. Xxx [Xxxxxxxxxx xxx xxxx xxx xxxx xxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt186889).
+Optically zooming the app to look like the mobile version, just bigger, doesn't take advantage of the device and its additional space, and that doesn't serve the user well. We should be thinking of showing more content, rather than the same content bigger. Even on a phablet, we could show some more rows of content. We could use extra space to display different content, such as ads, or we could change the list box into a list view and have it wrap items into multiple columns, when it can, to use the space that way. See [Guidelines for list and grid view controls](https://msdn.microsoft.com/library/windows/apps/mt186889).
 
-Xx xxxxxxxx xx xxx xxxxxxxx xxxx xx xxxx xxxx xxx xxxx xxxx, xxxx xx xxx xxxxxxxxxxx xxxxxx xxxxx xxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xxxx xxxxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX). Xxx xxxxxxx, [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br209267), [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br242704), xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br209635). Xxxxxxx xxxx xx xxx XX xxxx xxxx xxxxx xxxxx xxxxxx xx xxxxxxxxxxxxxxx, xxx xxxxxx xxxx xxx xxxx xx xxxxxxxx xxx xxxxxxx xxxxxx xxxxxxxxxxxx xx xxxxx xxxxxx xxxxxx xx xxxxxxxxxxxxx xxxxxx xxx xx-xxx xxx xx xxxxxxx xx xxxxxxxxx xxxxx.
+In addition to new controls such as list view and grid view, most of the established layout types from Windows Phone Silverlight have equivalents in the Universal Windows Platform (UWP). For example, [**Canvas**](https://msdn.microsoft.com/library/windows/apps/br209267), [**Grid**](https://msdn.microsoft.com/library/windows/apps/br242704), and [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/br209635). Porting much of the UI that uses these types should be straightforward, but always look for ways to leverage the dynamic layout capabilities of these layout panels to automatically resize and re-lay out on devices of different sizes.
 
-Xxxxx xxxxxx xxx xxxxxxx xxxxxx xxxxx xxxx xxx xxxxxx xxxxxxxx xxx xxxxxx xxxxxx, xx xxx xxx x xxx Xxxxxxx YY xxxxxxx xxxxxx [Xxxxxxxx Xxxxxx Xxxxx Xxxxxxx](wpsl-to-uwp-porting-xaml-and-ui.md#adaptive-ui).
+Going beyond the dynamic layout built into the system controls and layout panels, we can use a new Windows 10 feature called [Adaptive Visual State Manager](wpsl-to-uwp-porting-xaml-and-ui.md#adaptive-ui).
 
-## Xxxxx xxxxxxxxxx
+## Input modalities
 
-X Xxxxxxx Xxxxx Xxxxxxxxxxx xxxxxxxxx xx xxxxx-xxxxxxxx. Xxx xxxx xxxxxx xxx'x xxxxxxxxx xxxxxx xx xxxxxx xxxx xxxxxxx xxxxx, xxx xxx xxx xxxxxx xx xxxxxxx xxxxx xxxxx xxxxxxxxxx xx xxxxxxxx, xxxx xx xxxxx xxx xxxxxxxx. Xx xxx XXX, xxxxx, xxx, xxx xxxxx xxxxx xxx xxxxxxx xx *xxxxxxx xxxxx*. Xxx xxxx xxxx, xxx [Xxxxxx xxxxxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/mt404610), xxx [Xxxxxxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185607).
+A Windows Phone Silverlight interface is touch-specific. And your ported app's interface should of course also support touch, but you can choose to support other input modalities in addition, such as mouse and keyboard. In the UWP, mouse, pen, and touch input are unified as *pointer input*. For more info, see [Handle pointer input](https://msdn.microsoft.com/library/windows/apps/mt404610), and [Keyboard interactions](https://msdn.microsoft.com/library/windows/apps/mt185607).
 
-## Xxxxxxxxxx xxxxxx xxx xxxx xx-xxx
+## Maximizing markup and code re-use
 
-Xxxxx xxxx xx xxx [xxxxxxxxxx xxxxxx xxx xxxx xxxxx](wpsl-to-uwp-porting-to-a-uwp-project.md#markup-and-code-reuse) xxxx xxx xxxxxxxxxx xx xxxxxxx xxxx XX xx xxxxxx xxxxxxx xxxx x xxxx xxxxx xx xxxx xxxxxxx.
+Refer back to the [maximizing markup and code reuse](wpsl-to-uwp-porting-to-a-uwp-project.md#markup-and-code-reuse) list for techniques on sharing your UI to target devices with a wide range of form factors.
 
-## Xxxx xxxx xxx xxxxxx xxxxxxxxxx
+## More info and design guidelines
 
--   [Xxxxxx XXX xxxx](http://dev.windows.com/design)
--   [Xxxxxxxxxx xxx xxxxx](https://msdn.microsoft.com/library/windows/apps/hh700394)
--   [Xxxx xxx xxxxxxxxx xxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn958435)
+-   [Design UWP apps](http://dev.windows.com/design)
+-   [Guidelines for fonts](https://msdn.microsoft.com/library/windows/apps/hh700394)
+-   [Plan for different form factors](https://msdn.microsoft.com/library/windows/apps/dn958435)
 
-## Xxxxxxx xxxxxx
+## Related topics
 
-* [Xxxxxxxxx xxx xxxxx xxxxxxxx](wpsl-to-uwp-namespace-and-class-mappings.md)
+* [Namespace and class mappings](wpsl-to-uwp-namespace-and-class-mappings.md)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

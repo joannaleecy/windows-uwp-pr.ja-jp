@@ -1,59 +1,59 @@
 ---
-xx.xxxxxxx: YYXYXYXY-YXXX-YYYY-XYYX-YXYYYXYYYYYY
-xxxxx: Xxxx xxxxxxx xx xxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xx x xxx xxx xxxx xxx'x XX xx xxxxxxx xxxx, xxx xxxxxxxxxx xx xxxx xx xxxx xxxx xxxx xxxx.
+ms.assetid: 41E1B4F1-6CAF-4128-A61A-4E400B149011
+title: Data binding in depth
+description: Data binding is a way for your app's UI to display data, and optionally to stay in sync with that data.
 ---
-# Xxxx xxxxxxx xx xxxxx
+# Data binding in depth
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-** Xxxxxxxxx XXXx **
+** Important APIs **
 
--   [**Xxxxxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209820)
--   [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208713)
--   [**XXxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209899)
+-   [**Binding class**](https://msdn.microsoft.com/library/windows/apps/BR209820)
+-   [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713)
+-   [**INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899)
 
-**Xxxx**  Xxxx xxxxx xxxxxxxxx xxxx xxxxxxx xxxxxxxx xx xxxxxx. Xxx x xxxxx, xxxxxxxxx xxxxxxxxxxxx, xxx [Xxxx xxxxxxx xxxxxxxx](data-binding-quickstart.md).
+**Note**  This topic describes data binding features in detail. For a short, practical introduction, see [Data binding overview](data-binding-quickstart.md).
 
  
 
-Xxxx xxxxxxx xx x xxx xxx xxxx xxx'x XX xx xxxxxxx xxxx, xxx xxxxxxxxxx xx xxxx xx xxxx xxxx xxxx xxxx. Xxxx xxxxxxx xxxxxx xxx xx xxxxxxxx xxx xxxxxxx xx xxxx xxxx xxx xxxxxxx xx XX, xxx xxxx xxxxxxx xx x xxxxxxx xxxxxxxxxx xxxxx xx xxxx xx xxxxxx xxxxxxxxxxx, xxxxxxxxxxx, xxx xxxxxxxxxxxxxxx xx xxxx xxx.
+Data binding is a way for your app's UI to display data, and optionally to stay in sync with that data. Data binding allows you to separate the concern of data from the concern of UI, and that results in a simpler conceptual model as well as better readability, testability, and maintainability of your app.
 
-Xxx xxx xxx xxxx xxxxxxx xx xxxxxx xxxxxxx xxxxxx xxxx x xxxx xxxxxx xxxx xxx XX xx xxxxx xxxxx, xxx xxx xx xxxxxxx xx xxxxxxx xx xxxxx xxxxxx. Xxxx xx xxxxxx xxx-xxxx xxxxxxx, xxx xx xxxxx xxxx xxx xxxx xxxxx xxxxxx xxx'x xxxxxx xxxxxx xxx-xxxx. Xxxxxxxxxxxx, xxx xxx xxxxxx xx "xxxxxxx" xxx xxxxxx xxx xx xxxxxx xxx XX xxxx xxxx xxxxxx. Xxxx xx xxxxxx xxx-xxx xxxxxxx, xxx xx xxxxx xxxx xxx xxxx-xxxx xxxx. Xxxxxxxxxx, xxx xxx xxxxxx xx xxxx xxxxxxx xxx xxxxxx, xx xxxx xxxxxxx xxxx xxx xxxx xxxxx xx xxxxxx xx xxx XX xxx xxxxxxxxxxxxx xxxxxx xxxx xxxx xxx xxxx xxxxxx. Xxxx xx xxxxxx xxx-xxx xxxxxxx, xxx xx xxxxx xxxx xxx xxxx-xxxxx xxxx. Xxxx xxx xxxx xxxxxxxx.
+You can use data binding to simply display values from a data source when the UI is first shown, but not to respond to changes in those values. This is called one-time binding, and it works well for data whose values don't change during run-time. Additionally, you can choose to "observe" the values and to update the UI when they change. This is called one-way binding, and it works well for read-only data. Ultimately, you can choose to both observe and update, so that changes that the user makes to values in the UI are automatically pushed back into the data source. This is called two-way binding, and it works well for read-write data. Here are some examples.
 
--   Xxx xxxxx xxx xxx-xxxx xxxxxxx xx xxxx xx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242752) xx xxx xxxxxxx xxxx'x xxxxx.
--   Xxx xxxxx xxx xxx-xxx xxxxxxx xx xxxx x [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) xx x xxxxxxxxxx xx xxxx-xxxx xxxx xxxxxxxx xxxxxxx xx xxxxxxxxx xxxxxxx.
--   Xxx xxxxx xxx xxx-xxx xxxxxxx xx xxxx x [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/BR209683) xx x xxxxxxxx'x xxxx xx x xxxx.
+-   You could use one-time binding to bind an [**Image**](https://msdn.microsoft.com/library/windows/apps/BR242752) to the current user's photo.
+-   You could use one-way binding to bind a [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) to a collection of real-time news articles grouped by newspaper section.
+-   You could use two-way binding to bind a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) to a customer's name in a form.
 
-Xxxxx xxx xxx xxxxx xx xxxxxxx, xxx xxxx'xx xxxx xxxxxxxxx xxxxxxxx xx XX xxxxxx. Xxx xxx xxxxxx xx xxx xxxxxx xxx [{x:Xxxx} xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204783) xx xxx [{Xxxxxxx} xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204782). Xxx xxx xxx xxxx xxx x xxxxxxx xx xxx xxx xx xxx xxxx xxx—xxxx xx xxx xxxx XX xxxxxxx. {x:Xxxx} xx xxx xxx Xxxxxxx YY xxx xx xxx xxxxxx xxxxxxxxxxx. {Xxxxxxx} xxx xxxx xxxxxxxx. Xxx xxx xxxxxxx xxxxxxxxx xx xxxx xxxxx xxxxx xx xxxx xxxxx xx xxxxxxx xxxxxx xx xxxxxxxxxx xxx xxxxxxxxx.
+There are two kinds of binding, and they're both typically declared in UI markup. You can choose to use either the [{x:Bind} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204783) or the [{Binding} markup extension](https://msdn.microsoft.com/library/windows/apps/Mt204782). And you can even use a mixture of the two in the same app—even on the same UI element. {x:Bind} is new for Windows 10 and it has better performance. {Binding} has more features. All the details described in this topic apply to both kinds of binding unless we explicitly say otherwise.
 
-**Xxxxxx xxxx xxxx xxxxxxxxxxx {x:Xxxx}**
+**Sample apps that demonstrate {x:Bind}**
 
--   [{x:Xxxx} xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619989).
--   [XxxxXxxx](https://github.com/Microsoft/Windows-appsample-quizgame).
--   [XXXX XX Xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619992).
+-   [{x:Bind} sample](http://go.microsoft.com/fwlink/p/?linkid=619989).
+-   [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame).
+-   [XAML UI Basics sample](http://go.microsoft.com/fwlink/p/?linkid=619992).
 
-**Xxxxxx xxxx xxxx xxxxxxxxxxx {Xxxxxxx}**
+**Sample apps that demonstrate {Binding}**
 
--   Xxxxxxxx xxx [XxxxxxxxxY](http://go.microsoft.com/fwlink/?linkid=532950) xxx.
--   Xxxxxxxx xxx [XxxxxxxxxY](http://go.microsoft.com/fwlink/?linkid=532952) xxx.
+-   Download the [Bookstore1](http://go.microsoft.com/fwlink/?linkid=532950) app.
+-   Download the [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) app.
 
-Xxxxx xxxxxxx xxxxxxxx xxxxx xxxxxx
+Every binding involves these pieces
 ------------------------------------
 
--   X *xxxxxxx xxxxxx*. Xxxx xx xxx xxxxxx xx xxx xxxx xxx xxx xxxxxxx, xxx xx xxx xx xx xxxxxxxx xx xxx xxxxx xxxx xxx xxxxxxx xxxxx xxxxxx xxx xxxx xx xxxxxxx xx xxxx XX.
--   X *xxxxxxx xxxxxx*. Xxxx xx x [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242362) xx xxx [**XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208706) xx xxxx XX xxxx xxxxxxxx xxx xxxx.
--   X *xxxxxxx xxxxxx*. Xxxx xx xxx xxxxx xxxx xxxxxxxxx xxxx xxxxxx xxxx xxx xxxxxx xx xxx xxxxxx, xxx xxxxxxxxxx xxxx xxx xxxxxx xxxx xx xxx xxxxxx. Xxx xxxxxxx xxxxxx xx xxxxxxx xx XXXX xxxx xxxx xxxx xxxx [{x:Xxxx}](https://msdn.microsoft.com/library/windows/apps/Mt204783) xx [{Xxxxxxx}](https://msdn.microsoft.com/library/windows/apps/Mt204782) xxxxxx xxxxxxxxx.
+-   A *binding source*. This is the source of the data for the binding, and it can be an instance of any class that has members whose values you want to display in your UI.
+-   A *binding target*. This is a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362) of the [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) in your UI that displays the data.
+-   A *binding object*. This is the piece that transfers data values from the source to the target, and optionally from the target back to the source. The binding object is created at XAML load time from your [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) or [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) markup extension.
 
-Xx xxx xxxxxxxxx xxxxxxxx, xx'xx xxxx x xxxxxx xxxx xx xxx xxxxxxx xxxxxx, xxx xxxxxxx xxxxxx, xxx xxx xxxxxxx xxxxxx. Xxx xx'xx xxxx xxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xx xxxxxxx x xxxxxx'x xxxxxxx xx x xxxxxx xxxxxxxx xxxxx **XxxxXxxxxxXxxx**, xxxxx xxxxxxx xx x xxxxx xxxxx **XxxxXxxxXxxxx**.
+In the following sections, we'll take a closer look at the binding source, the binding target, and the binding object. And we'll link the sections together with the example of binding a button's content to a string property named **NextButtonText**, which belongs to a class named **HostViewModel**.
 
-Xxxxxxx xxxxxx
+Binding source
 --------------
 
-Xxxx'x x xxxx xxxxxxxxxxx xxxxxxxxxxxxxx xx x xxxxx xxxx xx xxxxx xxx xx x xxxxxxx xxxxxx.
+Here's a very rudimentary implementation of a class that we could use as a binding source.
 
-**Xxxx**  Xx xxx'xx xxxxx [{Xxxxxxx}](https://msdn.microsoft.com/library/windows/apps/Mt204782) xxxx Xxxxxx X++ xxxxxxxxx xxxxxxxxxx (X++/XX) xxxx xxx'xx xxxx xx xxx xxx [**XxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701872) xxxxxxxxx xx xxxx xxxxxxx xxxxxx xxxxx. Xx xxx'xx xxxxx [{x:Xxxx}](https://msdn.microsoft.com/library/windows/apps/Mt204783) xxxx xxx xxx'x xxxx xxxx xxxxxxxxx. Xxx [Xxxxxx x xxxxxxx xxxx](data-binding-quickstart.md#adding-a-details-view) xxx x xxxx xxxxxxx.
+**Note**  If you're using [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) with Visual C++ component extensions (C++/CX) then you'll need to add the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) attribute to your binding source class. If you're using [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) then you don't need that attribute. See [Adding a details view](data-binding-quickstart.md#adding-a-details-view) for a code snippet.
 
 ```csharp
 public class HostViewModel
@@ -67,13 +67,13 @@ public class HostViewModel
 }
 ```
 
-Xxxx xxxxxxxxxxxxxx xx **XxxxXxxxXxxxx**, xxx xxx xxxxxxxx **XxxxXxxxxxXxxx**, xxx xxxx xxxxxxxxxxx xxx xxx-xxxx xxxxxxx. Xxx xxx-xxx xxx xxx-xxx xxxxxxxx xxx xxxxxxxxx xxxxxx, xxx xx xxxxx xxxxx xx xxxxxxx xxx XX xxxxxxxxxxxxx xxxxxxx xx xxxxxxxx xx xxxxxxx xx xxx xxxx xxxxxx xx xxx xxxxxxx xxxxxx. Xx xxxxx xxx xxxxx xxxxx xx xxxxxxx xx xxxx xxxxxxxxx, xxx xxxx xx xxxx xxxx xxxxxxx xxxxxx "xxxxxxxxxx" xx xxx xxxxxxx xxxxxx. Xx xx xxx xxxxxxx, xx xx xxxx xx xxx-xxx xx xxx-xxx xxxx xx xxx **XxxxXxxxxxXxxx** xxxxxxxx, xxxx xxx xxxxxxx xxxx xxxxxx xx xxx-xxxx xx xxx xxxxx xx xxxx xxxxxxxx xxxx xx xx xxxx xxxxxxxxxx xx xxx xxxxxxx xxxxxx.
+That implementation of **HostViewModel**, and its property **NextButtonText**, are only appropriate for one-time binding. But one-way and two-way bindings are extremely common, and in those kinds of binding the UI automatically updates in response to changes in the data values of the binding source. In order for those kinds of binding to work correctly, you need to make your binding source "observable" to the binding object. So in our example, if we want to one-way or two-way bind to the **NextButtonText** property, then any changes that happen at run-time to the value of that property need to be made observable to the binding object.
 
-Xxx xxx xx xxxxx xxxx xx xx xxxxxx xxx xxxxx xxxx xxxxxxxxxx xxxx xxxxxxx xxxxxx xxxx [**XxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242356), xxx xxxxxx x xxxx xxxxx xxxxxxx x [**XxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242362). Xxxx'x xxx x [**XxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208706) xxxxxxx xxxxxxxxxx. **XxxxxxxxxXxxxxxxx** xxx xxxx xxxxxxx xxxxxxx xxxxx xxx xx xxx xxx.
+One way of doing that is to derive the class that represents your binding source from [**DependencyObject**](https://msdn.microsoft.com/library/windows/apps/BR242356), and expose a data value through a [**DependencyProperty**](https://msdn.microsoft.com/library/windows/apps/BR242362). That's how a [**FrameworkElement**](https://msdn.microsoft.com/library/windows/apps/BR208706) becomes observable. **FrameworkElements** are good binding sources right out of the box.
 
-X xxxx xxxxxxxxxxx xxx xx xxxxxx x xxxxx xxxxxxxxxx—xxx x xxxxxxxxx xxx xxx xxxxxxx xxxx xxxxxxx xxxx x xxxx xxxxx—xx xx xxxxxxxxx [**Xxxxxx.XxxxxxxxxXxxxx.XXxxxxxXxxxxxxxXxxxxxx**](T:System.ComponentModel.INotifyPropertyChanged). Xxxx xxxxxx xxxx xxxxxxxx xxxxxxxxxxxx x xxxxxx xxxxx xxxxx **XxxxxxxxXxxxxxx**. Xx xxxxxxx xxxxx **XxxxXxxxXxxxx** xx xxxxx.
+A more lightweight way of making a class observable—and a necessary one for classes that already have a base class—is to implement [**System.ComponentModel.INotifyPropertyChanged**](T:System.ComponentModel.INotifyPropertyChanged). This really just involves implementing a single event named **PropertyChanged**. An example using **HostViewModel** is below.
 
-**Xxxx**  Xxx X++/XX, xxx xxxxxxxxx [**Xxxxxxx::XX::Xxxx::Xxxx::XXxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209899), xxx xxx xxxxxxx xxxxxx xxxxx xxxx xxxxxx xxxx xxx [**XxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701872) xx xxxxxxxxx [**XXxxxxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209878).
+**Note**  For C++/CX, you implement [**Windows::UI::Xaml::Data::INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899), and the binding source class must either have the [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) or implement [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).
 
 ``` csharp
 public class HostViewModel : INotifyPropertyChanged
@@ -105,9 +105,9 @@ public class HostViewModel : INotifyPropertyChanged
 }
 ```
 
-Xxx xxx **XxxxXxxxxxXxxx** xxxxxxxx xx xxxxxxxxxx. Xxxx xxx xxxxxx x xxx-xxx xx x xxx-xxx xxxxxxx xx xxxx xxxxxxxx (xx'xx xxxx xxx xxxxx), xxx xxxxxxxxx xxxxxxx xxxxxx xxxxxxxxxx xx xxx **XxxxxxxxXxxxxxx** xxxxx. Xxxx xxxx xxxxx xx xxxxxx, xxx xxxxxxx xxxxxx'x xxxxxxx xxxxxxxx xx xxxxxxxx xxxxxxxxxx xxx xxxx xx xxx xxxxxxxx xxxx xxx xxxxxxx. Xxxx'x xxx xxx xxxxxxx xxxxxx xxxxx xxxxx xxxxxxxx'x xxxxx xx xx xxx xxxx xxxxx.
+Now the **NextButtonText** property is observable. When you author a one-way or a two-way binding to that property (we'll show how later), the resulting binding object subscribes to the **PropertyChanged** event. When that event is raised, the binding object's handler receives an argument containing the name of the property that has changed. That's how the binding object knows which property's value to go and read again.
 
-Xx xxxx xxx xxx'x xxxx xx xxxxxxxxx xxx xxxxxxx xxxxx xxxxx xxxxxxxx xxxxx, xxx xxx xxxx xxxxxx xxxx xxx **XxxxxxxxXxxx** xxxx xxxxx xxxx xxx'xx xxxx xx xxx [XxxxXxxx](https://github.com/Microsoft/Windows-appsample-quizgame) xxxxxx (xx xxx "Xxxxxx" xxxxxx). Xxxx'x xx xxxxxxx xx xxx xxxx xxxxx.
+So that you don't have to implement the pattern shown above multiple times, you can just derive from the **BindableBase** bass class that you'll find in the [QuizGame](https://github.com/Microsoft/Windows-appsample-quizgame) sample (in the "Common" folder). Here's an example of how that looks.
 
 ``` csharp
 public class HostViewModel : BindableBase
@@ -127,37 +127,35 @@ public class HostViewModel : BindableBase
 }
 ```
 
-Xxxxxxx xxx **XxxxxxxxXxxxxxx** xxxxx xxxx xx xxxxxxxx xx [**Xxxxxx.Xxxxx**](T:System.String) xx **xxxx** xxxxxxxxx xxxx xxx xxx-xxxxxxx xxxxxxxxxx xx xxx xxxxxx xxxxxx xx xx-xxxx. Xxx xxx xxxxx xxx xxxxx xx xxxxxxxx xxxx xxxxxxx xxxxxxxxxx xx xxx xxxxxx xxxx xxxxxxx xx xxxxx xx xxxxxxxx xx "Xxxx\[*xxxxxxx*\]" xxx xxxxxxxx xxxxxxxx (xxxxx *xxxxxxx* xx xxx xxxxx xxxxx), xx x xxxxx xx "Xxxx\[\]" xxx xxx xxxxxxxx.
+Raising the **PropertyChanged** event with an argument of [**String.Empty**](T:System.String) or **null** indicates that all non-indexer properties on the object should be re-read. You can raise the event to indicate that indexer properties on the object have changed by using an argument of "Item\[*indexer*\]" for specific indexers (where *indexer* is the index value), or a value of "Item\[\]" for all indexers.
 
-X xxxxxxx xxxxxx xxx xx xxxxxxx xxxxxx xx x xxxxxx xxxxxx xxxxx xxxxxxxxxx xxxxxxx xxxx, xx xx x xxxxxxxxxx xx xxxxxxx. Xx X# xxx Xxxxxx Xxxxx xxxx, xxx xxx xxx-xxxx xxxx xx xx xxxxxx xxxx xxxxxxxxxx [**Xxxx(Xx X)**](T:System.Collections.Generic.List%601) xx xxxxxxx x xxxxxxxxxx xxxx xxxx xxx xxxxxx xx xxx-xxxx. Xxx xx xxxxxxxxxx xxxxxxxxxx (xxxxxxxxx xxxx xxxxx xxx xxxxx xx xxx xxxxxxx xxxx xxx xxxxxxxxxx), xxx-xxx xxxx xx [**XxxxxxxxxxXxxxxxxxxx(Xx X)**](T:System.Collections.ObjectModel.ObservableCollection%601) xxxxxxx. Xx X++ xxxx, xxx xxx xxxx xx [**Xxxxxx&xx;X&xx;**](https://msdn.microsoft.com/en-us/library/dn858385.aspx) xxx xxxx xxxxxxxxxx xxx xxx-xxxxxxxxxx xxxxxxxxxxx. Xx xxxx xx xxxx xxx xxxxxxxxxx xxxxxxx, xxx xxx xxxxxxxx xx xxx xxxxxxxxx xxxxx.
+A binding source can be treated either as a single object whose properties contain data, or as a collection of objects. In C# and Visual Basic code, you can one-time bind to an object that implements [**List(Of T)**](T:System.Collections.Generic.List%601) to display a collection that does not change at run-time. For an observable collection (observing when items are added to and removed from the collection), one-way bind to [**ObservableCollection(Of T)**](T:System.Collections.ObjectModel.ObservableCollection%601) instead. In C++ code, you can bind to [**Vector&lt;T&gt;**](https://msdn.microsoft.com/en-us/library/dn858385.aspx) for both observable and non-observable collections. To bind to your own collection classes, use the guidance in the following table.
 
-| Xxxxxxxx                                                        | X# xxx XX (XXX)                                                                                                                                                                                                                                                                                                                                                                                                                   | X++/XX                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Scenario                                                        | C# and VB (CLR)                                                                                                                                                                                                                                                                                                                                                                                                                   | C++/CX                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 |-----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxx xx xx xxxxxx.                                              | Xxx xx xxx xxxxxx.                                                                                                                                                                                                                                                                                                                                                                                                                 | Xxxxxx xxxx xxxx [**XxxxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701872) xx xxxxxxxxx [**XXxxxxxXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209878).                                                                                                                                                                                                                                                                                                             |
-| Xxx xxxxxxxx xxxxxx xxxxxxx xxxx x xxxxx xxxxxx.                | Xxxxxx xxxx xxxxxxxxx [**Xxxxxx.XxxxxxxxxXxxxx. XXxxxxxXxxxxxxxXxxxxxx**](T:System.ComponentModel.INotifyPropertyChanged).                                                                                                                                                                                                                                                                                                         | Xxxxxx xxxx xxxxxxxxx [**Xxxxxxx.XX.Xxxx.Xxxx. XXxxxxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209899).                                                                                                                                                                                                                                                                                                                                                           |
-| Xxxx xx x xxxxxxxxxx.                                           | [**Xxxx(Xx X)**](T:System.Collections.Generic.List%601)                                                                                                                                                                                                                                                                                                                                                                            | [**Xxxxxxxx::Xxxxxxxxxxx::Xxxxxx&xx;X&xx;**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh441570.aspx)                                                                                                                                                                                                                                                                                                                                                                                         |
-| Xxx xxxxxxxxxx xxxxxx xxxxxxx xxxx x xxxxx xxxxxxxxxx.          | [**XxxxxxxxxxXxxxxxxxxx(Xx X)**](T:System.Collections.ObjectModel.ObservableCollection%601)                                                                                                                                                                                                                                                                                                                                        | [**Xxxxxxxx::Xxxxxxxxxxx::Xxxxxx&xx;X&xx;**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh441570.aspx)                                                                                                                                                                                                                                                                                                                                                                                         |
-| Xxxxxxxxx x xxxxxxxxxx xxxx xxxxxxxx xxxxxxx.                   | Xxxxxx [**Xxxx(Xx X)**](T:System.Collections.Generic.List%601) xx xxxxxxxxx [**XXxxx**](T:System.Collections.IList), [**XXxxx**](T:System.Collections.Generic.IList%601)(Xx [**Xxxxxx**](T:System.Object)), [**XXxxxxxxxxx**](T:System.Collections.IEnumerable), xx [**XXxxxxxxxxx**](T:System.Collections.Generic.IEnumerable%601)(Xx **Xxxxxx**). Xxxxxxx xx xxxxxxx **XXxxx(Xx X)** xxx **XXxxxxxxxxx(Xx X)** xx xxx xxxxxxxxx. | Xxxxxxxxx [**XXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701979), [**XXxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701957), [**XXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206631)&xx;[**Xxxxxx**](T:System.Object)^&xx;, [**XXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226024)&xx;**Xxxxxx**^&xx;, **XXxxxxx**&xx;[**XXxxxxxxxxxx**](https://msdn.microsoft.com/library/BR205821)\*&xx;, xx **XXxxxxxxx**&xx;**XXxxxxxxxxxx**\*&xx;. Xxxxxxx xx xxxxxxx **XXxxxxx&xx;X&xx;** xxx **XXxxxxxxx&xx;X&xx;** xx xxx xxxxxxxxx. |
-| Xxxxxxxxx x xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxx xxxxxx xxxxxxx. | Xxxxxx [**XxxxxxxxxxXxxxxxxxxx(Xx X)**](T:System.Collections.ObjectModel.ObservableCollection%601) xx xxxxxxxxx (xxx-xxxxxxx) [**XXxxx**](T:System.Collections.IList) xxx [**XXxxxxxXxxxxxxxxxXxxxxxx**](T:System.Collections.Specialized.INotifyCollectionChanged).                                                                                                                                                               | Xxxxxxxxx [**XXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701979) xxx [**XXxxxxxxxXxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701974).                                                                                                                                                                                                                                                                                                                       |
-| Xxxxxxxxx x xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxxxx.       | Xxxxxx [**XxxxxxxxxxXxxxxxxxxx(Xx X)**](T:System.Collections.ObjectModel.ObservableCollection%601) xx xxxxxxxxx (xxx-xxxxxxx) [**XXxxx**](T:System.Collections.IList) xxx [**XXxxxxxXxxxxxxxxxXxxxxxx**](T:System.Collections.Specialized.INotifyCollectionChanged). Xxxxxxxxxxxx, xxxxxxxxx [**XXxxxxxxXxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701916).                                                          | Xxxxxxxxx [**XXxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701979), [**XXxxxxxxxXxxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701974), xxx [**XXxxxxxxXxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701916).                                                                                                                                                                                                                                         |
+| Bind to an object.                                              | Can be any object.                                                                                                                                                                                                                                                                                                                                                                                                                 | Object must have [**BindableAttribute**](https://msdn.microsoft.com/library/windows/apps/Hh701872) or implement [**ICustomPropertyProvider**](https://msdn.microsoft.com/library/windows/apps/BR209878).                                                                                                                                                                                                                                                                                                             |
+| Get property change updates from a bound object.                | Object must implement [**System.ComponentModel. INotifyPropertyChanged**](T:System.ComponentModel.INotifyPropertyChanged).                                                                                                                                                                                                                                                                                                         | Object must implement [**Windows.UI.Xaml.Data. INotifyPropertyChanged**](https://msdn.microsoft.com/library/windows/apps/BR209899).                                                                                                                                                                                                                                                                                                                                                           |
+| Bind to a collection.                                           | [**List(Of T)**](T:System.Collections.Generic.List%601)                                                                                                                                                                                                                                                                                                                                                                            | [**Platform::Collections::Vector&lt;T&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh441570.aspx)                                                                                                                                                                                                                                                                                                                                                                                         |
+| Get collection change updates from a bound collection.          | [**ObservableCollection(Of T)**](T:System.Collections.ObjectModel.ObservableCollection%601)                                                                                                                                                                                                                                                                                                                                        | [**Platform::Collections::Vector&lt;T&gt;**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/hh441570.aspx)                                                                                                                                                                                                                                                                                                                                                                                         |
+| Implement a collection that supports binding.                   | Extend [**List(Of T)**](T:System.Collections.Generic.List%601) or implement [**IList**](T:System.Collections.IList), [**IList**](T:System.Collections.Generic.IList%601)(Of [**Object**](T:System.Object)), [**IEnumerable**](T:System.Collections.IEnumerable), or [**IEnumerable**](T:System.Collections.Generic.IEnumerable%601)(Of **Object**). Binding to generic **IList(Of T)** and **IEnumerable(Of T)** is not supported. | Implement [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979), [**IBindableIterable**](https://msdn.microsoft.com/library/windows/apps/Hh701957), [**IVector**](https://msdn.microsoft.com/library/windows/apps/BR206631)&lt;[**Object**](T:System.Object)^&gt;, [**IIterable**](https://msdn.microsoft.com/library/windows/apps/BR226024)&lt;**Object**^&gt;, **IVector**&lt;[**IInspectable**](https://msdn.microsoft.com/library/BR205821)\*&gt;, or **IIterable**&lt;**IInspectable**\*&gt;. Binding to generic **IVector&lt;T&gt;** and **IIterable&lt;T&gt;** is not supported. |
+| Implement a collection that supports collection change updates. | Extend [**ObservableCollection(Of T)**](T:System.Collections.ObjectModel.ObservableCollection%601) or implement (non-generic) [**IList**](T:System.Collections.IList) and [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged).                                                                                                                                                               | Implement [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979) and [**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974).                                                                                                                                                                                                                                                                                                                       |
+| Implement a collection that supports incremental loading.       | Extend [**ObservableCollection(Of T)**](T:System.Collections.ObjectModel.ObservableCollection%601) or implement (non-generic) [**IList**](T:System.Collections.IList) and [**INotifyCollectionChanged**](T:System.Collections.Specialized.INotifyCollectionChanged). Additionally, implement [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916).                                                          | Implement [**IBindableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701979), [**IBindableObservableVector**](https://msdn.microsoft.com/library/windows/apps/Hh701974), and [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916).                                                                                                                                                                                                                                         |
 
  
-Xxx xxx xxxx xxxx xxxxxxxx xx xxxxxxxxxxx xxxxx xxxx xxxxxxx, xxx xxxxx xxxxxxx xxxx xxxxxxxxxxx, xx xxxxx xxxxxxxxxxx xxxxxxx. Xxx xxxxxxx, xxx xxx xxxx xxxx xxxxxxxx xx Xxxx xxxxx xxxxx xxxxxxx xxxxxxx xxxxxx xx xxxx xxx xxx xxxxxxx xx xxxx. Xxxxxxx, xxx xxxx xxxx xxxx xxxxxxx xxxxxxxxxxx, xxx xxxx xxxxxxxxxx xxxxxxx xx xxxxxx. Xx xxxxxxx xxxxxxxxxxx xxxxxxx, xxx xxxx xxxxxxxxx [**XXxxxxxxXxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701916) xx x xxxx xxxxxx xxxx xxxxxxxx xxxxxxxxxx xxxxxx xxxxxxxxxxxx. Xxxx xxx xxxx xxxxxxx xxxxxx xxxxxxxx xxxx xxxx, xxxx xxxx xxxxxx xxxx xxxx xxx xxxxxxxxxxx xxxxxxxx, xxxxxxxxx xxx xxxxxxx, xxx xxxx xxxx xxx xxxxxxxxxxx xxxxxxxxxxxxx xx xxxxx xx xxxxxx xxx XX.
+You can bind list controls to arbitrarily large data sources, and still achieve high performance, by using incremental loading. For example, you can bind list controls to Bing image query results without having to load all the results at once. Instead, you load only some results immediately, and load additional results as needed. To support incremental loading, you must implement [**ISupportIncrementalLoading**](https://msdn.microsoft.com/library/windows/apps/Hh701916) on a data source that supports collection change notification. When the data binding engine requests more data, your data source must make the appropriate requests, integrate the results, and then send the appropriate notifications in order to update the UI.
 
-Xxxxxxx xxxxxx
+Binding target
 --------------
 
-Xx xxx xxx xxxxxxxx xxxxx, xxx **Xxxxxx.Xxxxxxx** xxxxxxxx xx xxx xxxxxxx xxxxxx, xxx xxx xxxxx xx xxx xx x xxxxxx xxxxxxxxx xxxxx xxxxxxxx xxx xxxxxxx xxxxxx. Xxxxx [{x:Xxxx}](https://msdn.microsoft.com/library/windows/apps/Mt204783) xx xxxxx, xxx xxxx [{Xxxxxxx}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Xxxxxxxxx xxxxxxxx xx xxxxxx xx xxx xxxxxx xxxx (xx'x xxxxxxxxxx, xxxxxxxx, xxx xxxxxxxx). Xxx xxx xxx xxxxx xxxxxx xxx xxxxxxxxxxxx (xxxxxxxxxxxxxxxx) xxxxxx xx xxxxxxxx xx xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209820) xxxxx xxxxxxx xx xxx xxxx xx.
+In the two examples below, the **Button.Content** property is the binding target, and its value is set to a markup extension which declares the binding object. First [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) is shown, and then [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782). Declaring bindings in markup is the common case (it's convenient, readable, and toolable). But you can avoid markup and imperatively (programmatically) create an instance of the [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) class instead if you need to.
 
 <!-- XAML lang specifier not yet supported in OP. Using XML for now. -->
 ``` xml
 <Button Content="{x:Bind ...}" ... />
-            
 ```
 
 ``` xml
 <Button Content="{Binding ...}" ... />
-            
 ```
 
 Binding object declared using {x:Bind}
@@ -181,7 +179,7 @@ namespace QuizGame.View
 }
 ```
 
-Xxxx xxxx, xx xxx xxx xxxx x xxxxxx xxxx xx xxx xxxxxx xxxx xxxxxxxx xxx xxxxxxx xxxxxx. Xxx xxxxxxx xxxxx xxxx xxx xxxx **Xxxxxx.Xxxxxxx** xxxxxxx xxxxxx xx xxxx xx xxx "Xxxxxxx xxxxxx" xxxxxxx xxxxxxx, xxx xxxxx xx xxxxx xxxxx xx xxx **XxxxXxxxXxxxx.XxxxXxxxxxXxxx** xxxxxxxx.
+That done, we can now take a closer look at the markup that declares the binding object. The example below uses the same **Button.Content** binding target we used in the "Binding target" section earlier, and shows it being bound to the **HostViewModel.NextButtonText** property.
 
 ``` xml
 <Page x:Class="QuizGame.View.HostView" ... >
@@ -212,18 +210,18 @@ Inside a [**DataTemplate**](https://msdn.microsoft.com/library/windows/apps/BR24
 
 Consider for example that you have a type named SampleDataGroup, which implements a string property named Title. And you have a property MainPage.SampleDataGroupAsObject, which is of type object but which actually returns an instance of SampleDataGroup. The binding `<TextBlock Text="{x:Bind SampleDataGroupAsObject.Title}"/>` will result in a compile error because the Title property is not found on the type object. The remedy for this is to add a cast to your Path syntax like this: `<TextBlock Text="{x:Bind SampleDataGroupAsObject.(data:SampleDataGroup.Title)}"/>`. Here's another example where Element is declared as object but is actually a TextBlock: `<TextBlock Text="{x:Bind Element.Text}"/>`. And a cast remedies the issue: `<TextBlock Text="{x:Bind Element.(TextBlock.Text)}"/>`.
 
-**Xx xxxx xxxx xxxxx xxxxxxxxxxxxxx**
+**If your data loads asynchronously**
 
-Xxxx xx xxxxxxx **{x:Xxxx}** xx xxxxxxxxx xx xxxxxxx-xxxx xx xxx xxxxxxx xxxxxxx xxx xxxx xxxxx. Xxxxx xxxxx xxx xx xxxxx xx xxxx `obj` xxxxxx, xxxx xxxxx xxxx (xxx X#) `<view name>.x.xx`. The generated code includes a handler for your page's [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706-loading) event, and that handler calls the **Initialize** method on a generated class that represent's your page's bindings. **Initialize** in turn calls **Update** to begin moving data between the binding source and the target. **Loading** is raised just before the first measure pass of the page or user control. So if your data is loaded asynchronously it may not be ready by the time **Initialize** is called. So, after you've loaded data, you can force one-time bindings to be initialized by calling `xxxx->Xxxxxxxx->Xxxxxx();`. Xx xxx xxxx xxxx xxx-xxxx xxxxxxxx xxx xxxxxxxxxxxxxx-xxxxxx xxxx xxxx xx’x xxxx xxxxxxx xx xxxxxxxxxx xxxx xxxx xxx xxxx xx xx xx xxxx xxx-xxx xxxxxxxx xxx xx xxxxxx xxx xxxxxxx. Xx xxxx xxxx xxxx xxx xxxxxxx xxxx-xxxxxxx xxxxxxx, xxx xx xx'x xxxxxx xx xx xxxxxxx xx xxxx xx x xxxxxxxx xxxxxx, xxxx xxx xxx xxxx xxxx xxxxxxxx xxx-xxxx, xxx xxxxx x xxxxxx xxxxxx xx xxx xxxx xxxx x xxxx xx **Xxxxxx**.
+Code to support **{x:Bind}** is generated at compile-time in the partial classes for your pages. These files can be found in your `obj` folder, with names like (for C#) `<view name>.g.cs`. The generated code includes a handler for your page's [**Loading**](https://msdn.microsoft.com/library/windows/apps/BR208706-loading) event, and that handler calls the **Initialize** method on a generated class that represent's your page's bindings. **Initialize** in turn calls **Update** to begin moving data between the binding source and the target. **Loading** is raised just before the first measure pass of the page or user control. So if your data is loaded asynchronously it may not be ready by the time **Initialize** is called. So, after you've loaded data, you can force one-time bindings to be initialized by calling `this->Bindings->Update();`. If you only need one-time bindings for asynchronously-loaded data then it’s much cheaper to initialize them this way than it is to have one-way bindings and to listen for changes. If your data does not undergo fine-grained changes, and if it's likely to be updated as part of a specific action, then you can make your bindings one-time, and force a manual update at any time with a call to **Update**.
 
-**Xxxxxxxxxxx**
+**Limitations**
 
-**{x:Xxxx}** xx xxx xxxxxx xx xxxx-xxxxx xxxxxxxxx, xxxx xx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxxx xx x XXXX xxxxxx, xxx xxxx xxxxxx xxxxx xx x xxxx xxxx xx xxxxxx xxxxx xx xxxxxxx xxxxxxx xx xxxxxxxx xxxxx ("xx xx xxxxx, xxxxx, xxx xxxxxx xxxx x xxxx xxxx xx'x x xxxx"). Xxxx xxxx xxxxxx, x xxxxxxx xx xxx Xxx xxxxxxxx xxxxx xx xxxxxxx xxxxxxxxx xxxx x Xxxxxx xx x Xxxx xxxxxx. Xxx xxxxx xxxxxxxxx, xxx **{Xxxxxxx}**.
+**{x:Bind}** is not suited to late-bound scenarios, such as navigating the dictionary structure of a JSON object, nor duck typing which is a weak form of typing based on lexical matches on property names ("if it walks, swims, and quacks like a duck then it's a duck"). With duck typing, a binding to the Age property would be equally satisfied with a Person or a Wine object. For these scenarios, use **{Binding}**.
 
-Xxxxxxx xxxxxx xxxxxxxx xxxxx {Xxxxxxx}
+Binding object declared using {Binding}
 ---------------------------------------
 
-[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) xxxxxxx, xx xxxxxxx, xxxx xxx'xx xxxxxxx xx xxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208713) xx xxxx xxxxxx xxxx. Xx xx'xx xxx xxx **XxxxXxxxxxx** xx xxx xxxx xx xx xx xxxxxxxx xx xxx xxxxxxx xxxxxx xxxxx (xx xxxx **XxxxXxxxXxxxx** xx xxxx xxxx). Xxx xxxxxxx xxxxx xxxxx xxx xxxxxx xxxx xxxxxxxx xxx xxxxxxx xxxxxx. Xx xxx xxx xxxx **Xxxxxx.Xxxxxxx** xxxxxxx xxxxxx xx xxxx xx xxx "Xxxxxxx xxxxxx" xxxxxxx xxxxxxx, xxx xx xxxx xx xxx **XxxxXxxxXxxxx.XxxxXxxxxxXxxx** xxxxxxxx.
+[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) assumes, by default, that you're binding to the [**DataContext**](https://msdn.microsoft.com/library/windows/apps/BR208713) of your markup page. So we'll set the **DataContext** of our page to be an instance of our binding source class (of type **HostViewModel** in this case). The example below shows the markup that declares the binding object. We use the same **Button.Content** binding target we used in the "Binding target" section earlier, and we bind to the **HostViewModel.NextButtonText** property.
 
 ``` xml
 <Page xmlns:viewmodel="using:QuizGame.ViewModel" ... >
@@ -340,7 +338,7 @@ Public Class DateToStringConverter
 End Class
 ```
 
-Xxx xxxx'x xxx xxx xxxxxxx xxxx xxxxx xxxxxxxxx xx xxxx xxxxxxx xxxxxx xxxxxx.
+And here's how you consume that value converter in your binding object markup.
 
 ``` xml
 <UserControl.Resources>
@@ -404,7 +402,7 @@ namespace ExampleNamespace
 }
 ```
 
-XxxxXxxx.xxxx
+MainPage.xaml
 
 ``` xml
 <Page x:Class="ExampleNamespace.MainPage"
@@ -435,7 +433,7 @@ Event binding and ICommand
     }
 ```
 
-Xxx xxx xxxx xxxx x xxxxxx'x **Xxxxx** xxxxx xx x xxxxxx xx xxx **Xxxxx** xxxxxx xxxxxxxx xx xxx **XxxxXxxxx** xxxxxxxx xxxx xxxx. Xxxx xxxx xx xxxx xxxx xxx xxxxxx'x **XxXxxxxxx** xxxxxxxx xx xxxxxxx xxxxxx xx xxx xxxx **Xxxxx**.
+You can then bind a button's **Click** event to a method on the **Frame** object returned by the **RootFrame** property like this. Note that we also bind the button's **IsEnabled** property to another member of the same **Frame**.
 
 ``` xml
     <AppBarButton Icon="Forward" IsCompact="True"
@@ -474,22 +472,22 @@ You can use the APIs in the [**Windows.Storage**](https://msdn.microsoft.com/lib
         }
 ```
 
-Xxx xxxx xxxxxxxxx xxx xxxx xxxxxxxx xx xxxxxx x xxxx-xxxx xxxx xx xxxx xxx xxxxxx xxxx. Xxx xxx xxxxxx xxx-xxx xxxxxxxx xx xxx xxxx xxx xxxxxx xxxxxxxxxx, xxx xxxxxxx xx xxx xxxxx xxxx x xxxx xx x xxxxx xxxx. Xxxxxxx, xxx xxxxxxx xxx xxx xxxxxxxxx xxxxx xxx xxxx xxx xxxxxxxxxxx **XxxxXxxxxxxxxxXxxxx** xxxxxx (xxx xxxxxxx, [**XxxxxXxxxxxxxxx.XxxxXxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR207760)). Xxx xxxxxx xxxxxx xxxxxxx xxxx xxx xxxx xxxxx xxxxx xxxxxxx xxxx xxxxxxxx x xxxxxxxxx xxxxx.
+You will typically use this approach to create a read-only view of file and folder info. You can create two-way bindings to the file and folder properties, for example to let users rate a song in a music view. However, any changes are not persisted until you call the appropriate **SavePropertiesAsync** method (for example, [**MusicProperties.SavePropertiesAsync**](https://msdn.microsoft.com/library/windows/apps/BR207760)). You should commit changes when the item loses focus because this triggers a selection reset.
 
-Xxxx xxxx xxx-xxx xxxxxxx xxxxx xxxx xxxxxxxxx xxxxx xxxx xxxx xxxxxxx xxxxxxxxx, xxxx xx Xxxxx. Xxx xxx xxxxxxxxx xxxxxxx x xxxxxxxx xx xxxxxxx xx xxxxxxx xxx [**XxxxxxXxxxxxxxxxx.XxxXxxxxxxXxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR207627) xxxxxx.
+Note that two-way binding using this technique works only with indexed locations, such as Music. You can determine whether a location is indexed by calling the [**FolderInformation.GetIndexedStateAsync**](https://msdn.microsoft.com/library/windows/apps/BR207627) method.
 
-Xxxx xxxx xxxx x xxxxxxxxxxx xxxxxx xxx xxxxxx **xxxx** xxx xxxx xxxxx xxxxxx xx xxxxxxxxx xxxxx xxxxx. Xxx xxxxxxx, xxx xxxxxx xxxxx xxx **xxxx** xxxxxx xxx xxx xxx [**XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR209770) xxxxx xx x xxxx xxxxxxx xxxxx xx x xxxxxxxxxxx xxxxxx, xx xxx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209768) xxxxxxx.
+Note also that a virtualized vector can return **null** for some items before it populates their value. For example, you should check for **null** before you use the [**SelectedItem**](https://msdn.microsoft.com/library/windows/apps/BR209770) value of a list control bound to a virtualized vector, or use [**SelectedIndex**](https://msdn.microsoft.com/library/windows/apps/BR209768) instead.
 
-Xxxxxxx xx xxxx xxxxxxx xx x xxx
+Binding to data grouped by a key
 --------------------------------
 
-Xx xxx xxxx x xxxx xxxxxxxxxx xx xxxxx—xxxxx, xxx xxxxxxx, xxxxxxxxxxx xx x **XxxxXxx** xxxxx—xxx xxx xxxxx xxx xxxxx xx xxxxx x xxxxxx xxxxxxxx xx x xxx—xxx **XxxxXxx.XxxxxxXxxx** xxxxxxxx, xxx xxxxxxx—xxxx xxx xxxxxx xx xxxxxx xxxxxxx xxxx. Xxxx xxx xxxxx xxxx, xx xx xx xxxxxx x xxxx xxxxxxxxxx. Xxxxxxx xxxx xx x xxxxxxxxxx xx xxxxx xxxxxxx, xxxxx xxxx xxxxx xxxxxx xxx x) x xxx xxx x) x xxxxxxxxxx xx xxxxx xxxxx xxxxxxxx xxxxxxx xxxx xxx. Xx xxxx xxx xxxxx xxxxxxx xxxxx, xxx xxxxxx xx xxxxxxxx xxx xxxxx xx xxxxxx xxxx xxxxxxx xx x xxxxxxxxxx xx xxxxxx xxxx xxxxxx xxxxx xxxx xxxxx xxx x) x xxx, xxxxx xx xx xxxxxx xxxx, xxx x) x xxxxxxxxxx xx xxx **XxxxXxx**x xxxxx **XxxxxxXxxx** xxxxxxxx xxxxxxx xxx xxxxx'x xxx.
+If you take a flat collection of items—books, for example, represented by a **BookSku** class—and you group the items by using a common property as a key—the **BookSku.AuthorName** property, for example—then the result is called grouped data. When you group data, it is no longer a flat collection. Grouped data is a collection of group objects, where each group object has a) a key and b) a collection of items whose property matches that key. To take the books example again, the result of grouping the books by author name results in a collection of author name groups where each group has a) a key, which is an author name, and b) a collection of the **BookSku**s whose **AuthorName** property matches the group's key.
 
-Xx xxxxxxx, xx xxxxxxx x xxxxxxxxxx, xxx xxxx xxx [**XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242828) xx xx xxxxx xxxxxxx (xxxx xx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242878) xx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242705)) xxxxxxxx xx x xxxxxxxx xxxx xxxxxxx x xxxxxxxxxx. Xx xxxx'x x xxxx xxxxxxxxxx xx xxxxx xxxx xxx xxx'x xxxx xx xx xxxxxxxx xxxxxxx. Xxx xx xx'x x xxxxxxxxxx xx xxxxx xxxxxxx (xx xx xx xxxx xxxxxxx xx xxxxxxx xxxx) xxxx xxx xxxx xxx xxxxxxxx xx xx xxxxxxxxxxxx xxxxxx xxxxxx x [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209833) xxxxx xxxx xxxxxxx xxx xxxxx xxxxxxx xxx xxx xxxxxxx xxxxxx. Xxx xxxx xxx **XxxxxxxxxxXxxxXxxxxx** xx xxx xxxxxxxx xxxx xxxxxxx xxxxxxx xxxx, xxx xxx xxxx xxx xxxxx xxxxxxx xx xxx **XxxxxxxxxxXxxxXxxxxx**. Xx xxxxx xxxxx-xxx xx x **XxxxxxxxxxXxxxXxxxxx** xx xxxx xx xxxxx xxxxx xx xxx xxxxxxx xxxx, xx xxx xxx xxxx xxxx xxxx xxx xxxxx xxxxxxx xx xxxx xx xxxxxxx xxxx xxx xx xxx xxxx **XxxxxxxxxxXxxxXxxxxx**. Xxx xxx xxxx xxxxxx xxx xxxxxxx xxxx xxxxxxxxxxxxxxxx xxxxxxx xxx [**XXxxxxxxxxxXxxx.XxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR209857) xxxxxxxx xx xxx xxxxxx xxxxxxxx xx xxx [**XxxxxxxxxxXxxxXxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR209833-view) xxxxxxxx.
+In general, to display a collection, you bind the [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) of an items control (such as [**ListView**](https://msdn.microsoft.com/library/windows/apps/BR242878) or [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705)) directly to a property that returns a collection. If that's a flat collection of items then you don't need to do anything special. But if it's a collection of group objects (as it is when binding to grouped data) then you need the services of an intermediary object called a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) which sits between the items control and the binding source. You bind the **CollectionViewSource** to the property that returns grouped data, and you bind the items control to the **CollectionViewSource**. An extra value-add of a **CollectionViewSource** is that it keeps track of the current item, so you can keep more than one items control in sync by binding them all to the same **CollectionViewSource**. You can also access the current item programmatically through the [**ICollectionView.CurrentItem**](https://msdn.microsoft.com/library/windows/apps/BR209857) property of the object returned by the [**CollectionViewSource.View**](https://msdn.microsoft.com/library/windows/apps/BR209833-view) property.
 
-Xx xxxxxxxx xxx xxxxxxxx xxxxxxxx xx x [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209833), xxx [**XxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209833-issourcegrouped) xx **xxxx**. Xxxxxxx xxx xxxx xxxx xx xxx xxx [**XxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR209833-itemspath) xxxxxxxx xxxxxxx xx xxxxxxx xxx xxx xxxxxx xxxx xxxxx xxxxxxx. Xxxxx xxx xxx xxxx xx xxxxxx x xxxxx xxxxxx: xxx "xx-x-xxxxx" xxxxxxx, xxx xxx "xxx-x-xxxxx" xxxxxxx. Xx xxx "xx-x-xxxxx" xxxxxxx, xxx xxxxx xxxxxx xxxxxxx xxxx x xxxxxxxxxx xxxx (xxx xxxxxxx, **Xxxx&xx;X&xx;**), xx xxx xxxxx xxxxxx xxxxxxxx xx xxxxxx xxx xxxxx xx xxxxx. Xxxx xxxx xxxxxxx xxx xx xxx xxxx xx xxx **XxxxxXxxx**. Xx xxx "xxx-x-xxxxx" xxxxxxx, xxx xxxxx xxxxxx xxx xxx xx xxxx xxxxxxxxxx xx x xxxxxxxxxx xxxx (xxxx xx **Xxxx&xx;X&xx;**), xx xxx xxxxx "xxx x" xxxxx xx xxxxx xx xxx xxxx xx x xxxxxxxx (xx xxxxxxx xxxxxx xx xxxxx xx xxx xxxx xx xxxxxxx xxxxxxxxxx). Xxxx xxxx xxxxxxx xxx xxxx xx xxx **XxxxxXxxx** xx xxx xxxx xx xxx xxxxxxxx xxxx xxxxxxxx xxx xxxxx xx xxxxx.
+To activate the grouping facility of a [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833), set [**IsSourceGrouped**](https://msdn.microsoft.com/library/windows/apps/BR209833-issourcegrouped) to **true**. Whether you also need to set the [**ItemsPath**](https://msdn.microsoft.com/library/windows/apps/BR209833-itemspath) property depends on exactly how you author your group objects. There are two ways to author a group object: the "is-a-group" pattern, and the "has-a-group" pattern. In the "is-a-group" pattern, the group object derives from a collection type (for example, **List&lt;T&gt;**), so the group object actually is itself the group of items. With this pattern you do not need to set **ItemsPath**. In the "has-a-group" pattern, the group object has one or more properties of a collection type (such as **List&lt;T&gt;**), so the group "has a" group of items in the form of a property (or several groups of items in the form of several properties). With this pattern you need to set **ItemsPath** to the name of the property that contains the group of items.
 
-Xxx xxxxxxx xxxxx xxxxxxxxxxx xxx "xxx-x-xxxxx" xxxxxxx. Xxx xxxx xxxxx xxx x xxxxxxxx xxxxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208713), xxxxx xxxxxxx xx xxxxxxxx xx xxx xxxx xxxxx. Xxx [**XxxxxxxxxxXxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209833) xxxxx xx xxx **Xxxxxxx** xxxxxxxx xx xxx xxxx xxxxx (**Xxxxxxx** xx xxx xxxxxxxxxx xx xxxxx xxxxxxx) xxx xxxx xxxxxxxxx xxxx xx'x xxx **Xxxxxx.XxxxXxxx** xxxxxxxx xxxx xxxxxxxx xxx xxxxxxx xxxxx. Xxxxxxx, xxx [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR242705) xx xxxxx xx xxx **XxxxxxxxxxXxxxXxxxxx**, xxx xxx xxx xxxxx xxxxx xxxxxxx xx xxxx xx xxx xxxxxx xxx xxxxx xx xxxxxx.
+The example below illustrates the "has-a-group" pattern. The page class has a property named [**ViewModel**](https://msdn.microsoft.com/library/windows/apps/BR208713), which returns an instance of our view model. The [**CollectionViewSource**](https://msdn.microsoft.com/library/windows/apps/BR209833) binds to the **Authors** property of the view model (**Authors** is the collection of group objects) and also specifies that it's the **Author.BookSkus** property that contains the grouped items. Finally, the [**GridView**](https://msdn.microsoft.com/library/windows/apps/BR242705) is bound to the **CollectionViewSource**, and has its group style defined so that it can render the items in groups.
 
 ``` csharp
     <Page.Resources>
@@ -512,28 +510,28 @@ Xxx xxxxxxx xxxxx xxxxxxxxxxx xxx "xxx-x-xxxxx" xxxxxxx. Xxx xxxx xxxxx xxx x xx
 
 Note that the [**ItemsSource**](https://msdn.microsoft.com/library/windows/apps/BR242828) must use [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) (and not [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)) because it needs to set the **Source** property to a resource. To see the above example in the context of the complete app, download the [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) sample app. Unlike the markup shown above, [Bookstore2](http://go.microsoft.com/fwlink/?linkid=532952) uses {Binding} exclusively.
 
-You can implement the "is-a-group" pattern in one of two ways. One way is to author your own group class. Derive the class from **List&lt;T&gt;** (where *T* is the type of the items). For example, `public class Author : List<BookSku>`. Xxx xxxxxx xxx xx xx xxx x [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) xxxxxxxxxx xx xxxxxxxxxxx xxxxxx xxxxx xxxxxxx (xxx x xxxxx xxxxx) xxxx xxxx xxxxxxxx xxxxxx xx xxx **XxxxXxx** xxxxx. Xxxx xxxxxxxx—xxxxxxxxxxx xxxx x xxxx xxxx xx xxxxx xxx xxxxxxxx xxxx xxxxxxxx xx xxx xxx—xx xxxxxxx xx xx xxx xxxx xxxxxxxx xxxx xxxx x xxxxx xxxxxxx. Xxx xxx xxx xxxxxxxxxxx xx xxxxx xxxxx xx xxxxxx xx xx xxxxx (xxx xxxxxxx) xxxxxxx xxxxxxx xxxxxxx xxxxx xxxxxxx xxxx xx **Xxxxxx** xxx **Xxxxx**.
+You can implement the "is-a-group" pattern in one of two ways. One way is to author your own group class. Derive the class from **List&lt;T&gt;** (where *T* is the type of the items). For example, `public class Author : List<BookSku>`. The second way is to use a [LINQ](http://msdn.microsoft.com/library/bb397926.aspx) expression to dynamically create group objects (and a group class) from like property values of the **BookSku** items. This approach—maintaining only a flat list of items and grouping them together on the fly—is typical of an app that accesses data from a cloud service. You get the flexibility to group books by author or by genre (for example) without needing special group classes such as **Author** and **Genre**.
 
-Xxx xxxxxxx xxxxx xxxxxxxxxxx xxx "xx-x-xxxxx" xxxxxxx xxxxx [LINQ](http://msdn.microsoft.com/library/bb397926.aspx). Xxxx xxxx xx xxxxx xxxxx xx xxxxx, xxxxxxxxx xxxx xxx xxxxx xxxx xx xxx xxxxx xxxxxxx. Xxxx xx xxxxxxxxx xx xxx "Xxx" xxxxxxxx xxxx xx xxxxxxxxx xx xxx xxxxx [**Xxx**](P:System.Linq.IGrouping%602.Key) xxxxx.
+The example below illustrates the "is-a-group" pattern using [LINQ](http://msdn.microsoft.com/library/bb397926.aspx). This time we group books by genre, displayed with the genre name in the group headers. This is indicated by the "Key" property path in reference to the group [**Key**](P:System.Linq.IGrouping%602.Key) value.
 
 ``` csharp
     using System.Linq;
 
     ...
 
-    private IOrderedEnumerable<IGrouping<string, BookSku>> xxxxxx;
+    private IOrderedEnumerable<IGrouping<string, BookSku>> genres;
 
-    public IOrderedEnumerable<IGrouping<string, BookSku>> Xxxxxx
+    public IOrderedEnumerable<IGrouping<string, BookSku>> Genres
     {
-        xxx
+        get
         {
-            xx (xxxx.xxxxxx == xxxx)
+            if (this.genres == null)
             {
-                xxxx.xxxxxx = xxxx xxxx xx xxxx.xxxxXxxx
-                xxxxx xxxx xx xxxx.xxxxx xxxx xxx
-                xxxxxxx xxx.Xxx xxxxxx xxx;
+                this.genres = from book in this.bookSkus
+                group book by book.genre into grp
+                orderby grp.Key select grp;
             }
-            xxxxxx xxxx.xxxxxx;
+            return this.genres;
         }
     }
 ```
@@ -575,19 +573,18 @@ Diagnosing and debugging data binding problems
 
 Your binding markup contains the names of properties (and, for C#, sometimes fields and methods). So when you rename a property, you'll also need to change any binding that references it. Forgetting to do that leads to a typical example of a data binding bug, and your app either won't compile or won't run correctly.
 
-The binding objects created by [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) and [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) are largely functionally equivalent. But {x:Bind} has type information for the binding source, and it generates source code at compile-time. With {x:Bind} you get the same kind of problem detection that you get with the rest of your code. That includes compile-time validation of your binding expressions, and debugging by setting breakpoints in the source code generated as the partial class for your page. These classes can be found in the files in your `obj` folder, with names like (for C#) `<view name>.x.xx`). Xx xxx xxxx x xxxxxxx xxxx x xxxxxxx xxxx xxxx xx **Xxxxx Xx Xxxxxxxxx Xxxxxxxxxx** xx xxx Xxxxxxxxx Xxxxxx Xxxxxx xxxxxxxx. Xxx xxxxxxxx xxxx xxxxx xxxxxxxxx xx xxxx xxxxx, xxx xxx xxx xxxx xxxxx xxxx xxx xxxx xxxxx. Xxx xxxx xxxxxxxxx xx {x:Xxxx} xxxxxxx xxx xxxx xxxxxxx xxx xxxx xxxx xx xxx xxxxx xx xxxxxxx xxxxxx xxxxx, xxx xxx xxx xxx xxx xxxx xx xxx **Xxxx Xxxxx** xxxxxx xx xxxx xxxxxxxxx xxx xxxxxxxx xx xxxxx xxxx xxx xx xx xxx xxxxxxx.
+The binding objects created by [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) and [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) are largely functionally equivalent. But {x:Bind} has type information for the binding source, and it generates source code at compile-time. With {x:Bind} you get the same kind of problem detection that you get with the rest of your code. That includes compile-time validation of your binding expressions, and debugging by setting breakpoints in the source code generated as the partial class for your page. These classes can be found in the files in your `obj` folder, with names like (for C#) `<view name>.g.cs`). If you have a problem with a binding then turn on **Break On Unhandled Exceptions** in the Microsoft Visual Studio debugger. The debugger will break execution at that point, and you can then debug what has gone wrong. The code generated by {x:Bind} follows the same pattern for each part of the graph of binding source nodes, and you can use the info in the **Call Stack** window to help determine the sequence of calls that led up to the problem.
 
-[
-            {Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) xxxx xxx xxxx xxxx xxxxxxxxxxx xxx xxx xxxxxxx xxxxxx. Xxx xxxx xxx xxx xxxx xxx xxxx xxx xxxxxxxx xxxxxxxx, xxx xxxxxxx xxxxxx xxxxxx xx xxx **Xxxxxx** xxxxxx xx Xxxxxx Xxxxxx.
+[{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782) does not have type information for the binding source. But when you run your app with the debugger attached, any binding errors appear in the **Output** window in Visual Studio.
 
-Xxxxxxxx xxxxxxxx xx xxxx
+Creating bindings in code
 -------------------------
 
-**Xxxx**  Xxxx xxxxxxx xxxx xxxxxxx xx [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), xxxxxxx xxx xxx'x xxxxxx [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) xxxxxxxx xx xxxx. Xxxxxxx, xxxx xx xxx xxxx xxxxxxxx xx {x:Xxxx} xxx xx xxxxxxxx xxxx [**XxxxxxxxxxXxxxxxxx.XxxxxxxxXxxxxxxxXxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242356-registerpropertychangedcallback), xxxxx xxxxxxx xxx xx xxxxxxxx xxx xxxxxx xxxxxxxxxxxxx xx xxx xxxxxxxxxx xxxxxxxx.
+**Note**  This section only applies to [{Binding}](https://msdn.microsoft.com/library/windows/apps/Mt204782), because you can't create [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783) bindings in code. However, some of the same benefits of {x:Bind} can be achieved with [**DependencyProperty.RegisterPropertyChangedCallback**](https://msdn.microsoft.com/library/windows/apps/BR242356-registerpropertychangedcallback), which enables you to register for change notifications on any dependency property.
 
-Xxx xxx xxxx xxxxxxx XX xxxxxxxx xx xxxx xxxxx xxxxxxxxxx xxxx xxxxxxx xx XXXX. Xx xx xxxx, xxxxxx x xxx [**Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209820) xxxxxx, xxx xxx xxxxxxxxxxx xxxxxxxxxx, xxxx xxxx [**XxxxxxxxxXxxxxxx.XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208706-setbinding) xx [**XxxxxxxXxxxxxxxxx.XxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209820operations-setbinding). Xxxxxxxx xxxxxxxx xxxxxxxxxxxxxxxx xx xxxxxx xxxx xxx xxxx xx xxxxxx xxx xxxxxxx xxxxxxxx xxxxxx xx xxx-xxxx xx xxxxx x xxxxxx xxxxxxx xxxxx xxxxxxxx xxxxxxxx. Xxxx, xxxxxxx, xxxx xxx xxxxxx xxxxxx xxx xxxxxxx xxxxxxxx xxxxxx xxxxx xxx xxxx **XxxXxxxxxx**.
+You can also connect UI elements to data using procedural code instead of XAML. To do this, create a new [**Binding**](https://msdn.microsoft.com/library/windows/apps/BR209820) object, set the appropriate properties, then call [**FrameworkElement.SetBinding**](https://msdn.microsoft.com/library/windows/apps/BR208706-setbinding) or [**BindingOperations.SetBinding**](https://msdn.microsoft.com/library/windows/apps/BR209820operations-setbinding). Creating bindings programmatically is useful when you want to choose the binding property values at run-time or share a single binding among multiple controls. Note, however, that you cannot change the binding property values after you call **SetBinding**.
 
-Xxx xxxxxxxxx xxxxxxx xxxxx xxx xx xxxxxxxxx x xxxxxxx xx xxxx.
+The following example shows how to implement a binding in code.
 
 ``` xml
 <TextBox x:Name="MyTextBox" Text="Text"/>
@@ -625,26 +622,30 @@ Dim binding As New Binding() With {.Path = New PropertyPath("Brush1")}
 MyTextBox.SetBinding(TextBox.ForegroundProperty, binding)
 ```
 
-{x:Xxxx} xxx {Xxxxxxx} xxxxxxx xxxxxxxxxx
+{x:Bind} and {Binding} feature comparison
 ------------------------------------------
 
-| Xxxxxxx | {x:Xxxx} | {Xxxxxxx} | Xxxxx |
+| Feature | {x:Bind} | {Binding} | Notes |
 |---------|----------|-----------|-------|
-| Xxxx xx xxx xxxxxxx xxxxxxxx | `{x:Bind a.b.c}` | `{Binding a.b.c}` | | 
-| Xxxx xxxxxxxx | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | Xx x:Xxxx, Xxxx xx xxxxxx xx xxx Xxxx xx xxxxxxx, xxx xxx XxxxXxxxxxx. | 
-| Xxxxxxx | `{x:Bind Groups[2].Title}` | `{Binding Groups[2].Title}` | Xxxxx xx xxx xxxxxxxxx xxxx xx xxx xxxxxxxxxx. Xxxx xxxxxxx-xxxxx xxxxxxx xxx xxxxxxxxx. | 
-| Xxxxxxxx xxxxxxxxxx | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | Xxxxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxx xxxxxxxxxxx. Xx xxx xxxxxxxx xx xxx xxxxxxxx xx x XXXX xxxxxxxxx, xxxx xxxxxx xx xxxx xx xxx xxxxxxxxx, xxxxx xxxxxx xx xxxxxx xx x xxxx xxxxxxxxx xx xxx xxxx xx xxx xxxxxxxx. | 
-| Xxxxxxx | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | Xxx xxxxxx< | Xxxxx xxx xxxxxxxxx xxxxx xxxxxxxxxxx. Xx xxx xxxxxxxx xx xxx xxxxxxxx xx x XXXX xxxxxxxxx, xxxx xxxxxx xx xxxx xx xxx xxxxxxxxx, xxxxx xxxxxx xx xxxxxx xx x xxxx xxxxxxxxx xx xxx xxxx xx xxx xxxxxxxx. | 
-| Xxxxxxxxx | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}}` | Xxxxxxxxxx xxxx xx xxxxxxxx xx xxx xxxx xx xxx Xxxx/XxxxxxxxXxxxxxxxxx, xx xx Xxx.xxxx. | 
-| XxxxxxxxxXxxxxxxxx, XxxxxxxxxXxxxxxxx | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | Xxxxxxxxxx xxxx xx xxxxxxxx xx xxx xxxx xx xxx Xxxx/XxxxxxxxXxxxxxxxxx, xx xx Xxx.xxxx. | 
-| XxxxxxXxxxXxxxx | `{x:Bind Name, TargetNullValue=0}` | `{Binding Name, TargetNullValue=0}` | Xxxx xxxx xxx xxxx xx xxx xxxxxxx xxxxxxxxxx xx xxxx. Xxx xxxxxx xxxxxx xxx x xxxxxx xxxxx. | 
-| XxxxxxxxXxxxx | `{x:Bind Name, FallbackValue='empty'}` | `{Binding Name, FallbackValue='empty'}` | Xxxx xxxx xxx xxxx xx xxx xxxx xxx xxx xxxxxxx (xxxxxx xxx xxx xxxx) xx xxxx. | 
-| XxxxxxxXxxx | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | Xxxx {x:Xxxx} xxx'xx xxxxxxx xx x xxxxx; Xxxx xx xxxxxx xx xxx Xxxx xx xxxxxxx, xx xxx xxxxx xxxxxxx xxx xx xxxxxxxx xxx xxx xxxxx. | 
-| XxxxxxxxXxxxxx: Xxxx | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | With {x:Bind}, name the element and use its name in Path. | 
-| RelativeSource: TemplatedParent | Not supported | `{Xxxxxxx <path>, XxxxxxxxXxxxxx={XxxxxxxxXxxxxx XxxxxxxxxXxxxxx}}` | Xxxxxxx xxxxxxxx xxxxxxx xxx xx xxxx xx xxxxxxx xxxxxxxxx xxx xxxx xxxx. Xxx xxx XxxxxxxxxXxxxxx xxxxx xxx xxxx xx xxx x xxxxxxxxx, xx x xxx-xxx xxxxxxx.< | 
-| Xxxxxx | Xxx xxxxxxxxx | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | For {x:Bind} use a property or a static path instead. | 
-| Mode | `{x:Xxxx Xxxx, Xxxx=XxxXxx}` | `{Xxxxxxx Xxxx, Xxxx=XxxXxx}` | Mode can be OneTime, OneWay, or TwoWay. {x:Bind} defaults to OneTime; {Binding} defaults to OneWay. | 
-| UpdateSourceTrigger | Not supported | `<Binding UpdateSourceTrigger="[Default | PropertyChanged | Explicit]"/>` | {x:Xxxx} xxxx XxxxxxxxXxxxxxx xxxxxxxx xxx xxx xxxxx xxxxxx XxxxXxx.Xxxx xxxxx xx xxxxx xxx xxxx xxxxx xx xxxxxx xxx xxxxxx. | 
+| Path is the default property | `{x:Bind a.b.c}` | `{Binding a.b.c}` | | 
+| Path property | `{x:Bind Path=a.b.c}` | `{Binding Path=a.b.c}` | In x:Bind, Path is rooted at the Page by default, not the DataContext. | 
+| Indexer | `{x:Bind Groups[2].Title}` | `{Binding Groups[2].Title}` | Binds to the specified item in the collection. Only integer-based indexes are supported. | 
+| Attached properties | `{x:Bind Button22.(Grid.Row)}` | `{Binding Button22.(Grid.Row)}` | Attached properties are specified using parentheses. If the property is not declared in a XAML namespace, then prefix it with an xml namespace, which should be mapped to a code namespace at the head of the document. | 
+| Casting | `{x:Bind groups[0].(data:SampleDataGroup.Title)}` | Not needed< | Casts are specified using parentheses. If the property is not declared in a XAML namespace, then prefix it with an xml namespace, which should be mapped to a code namespace at the head of the document. | 
+| Converter | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}}` | Converters must be declared at the root of the Page/ResourceDictionary, or in App.xaml. | 
+| ConverterParameter, ConverterLanguage | `{x:Bind IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | `{Binding IsShown, Converter={StaticResource BoolToVisibility}, ConverterParameter=One, ConverterLanguage=fr-fr}` | Converters must be declared at the root of the Page/ResourceDictionary, or in App.xaml. | 
+| TargetNullValue | `{x:Bind Name, TargetNullValue=0}` | `{Binding Name, TargetNullValue=0}` | Used when the leaf of the binding expression is null. Use single quotes for a string value. | 
+| FallbackValue | `{x:Bind Name, FallbackValue='empty'}` | `{Binding Name, FallbackValue='empty'}` | Used when any part of the path for the binding (except for the leaf) is null. | 
+| ElementName | `{x:Bind slider1.Value}` | `{Binding Value, ElementName=slider1}` | With {x:Bind} you're binding to a field; Path is rooted at the Page by default, so any named element can be accessed via its field. | 
+| RelativeSource: Self | `<Rectangle x:Name="rect1" Width="200" Height="{x:Bind rect1.Width}" ... />` | `<Rectangle Width="200" Height="{Binding Width, RelativeSource={RelativeSource Self}}" ... />` | With {x:Bind}, name the element and use its name in Path. | 
+| RelativeSource: TemplatedParent | Not supported | `{Binding <path>, RelativeSource={RelativeSource TemplatedParent}}` | Regular template binding can be used in control templates for most uses. But use TemplatedParent where you need to use a converter, or a two-way binding.< | 
+| Source | Not supported | `<ListView ItemsSource="{Binding Orders, Source={StaticResource MyData}}"/>` | For {x:Bind} use a property or a static path instead. | 
+| Mode | `{x:Bind Name, Mode=OneWay}` | `{Binding Name, Mode=TwoWay}` | Mode can be OneTime, OneWay, or TwoWay. {x:Bind} defaults to OneTime; {Binding} defaults to OneWay. | 
+| UpdateSourceTrigger | Not supported | `<Binding UpdateSourceTrigger="[Default | PropertyChanged | Explicit]"/>` | {x:Bind} uses PropertyChanged behavior for all cases except TextBox.Text where it waits for lost focus to update the source. | 
+
+
 
 
 <!--HONumber=Mar16_HO1-->
+
+

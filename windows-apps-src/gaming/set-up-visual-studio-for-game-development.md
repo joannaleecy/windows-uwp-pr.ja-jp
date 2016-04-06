@@ -1,83 +1,83 @@
 ---
-xxxxx: Xxxxxx Xxxxxx xxxxx xxx xxxx xxxxxxxxxxx
-xxxxxxxxxxx: Xx xxxxxxxx xx XxxxxxX xxxxxxxx xxxxx xxxxxxxxx xx Xxxxxx Xxxxxx.
-xx.xxxxxxx: YYYYYxxx-YYYY-YYxY-YYYx-YYYYxYYxxYYY
+title: Visual Studio tools for game programming
+description: An overview of DirectX specific tools available in Visual Studio.
+ms.assetid: 43137bfc-7876-70e0-515c-4722f68bd064
 ---
 
-# Xxxxxx Xxxxxx xxxxx xxx xxxx xxxxxxxxxxx
+# Visual Studio tools for game programming
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Xxxxxxx**
+**Summary**
 
--   [Xxxxxx x XxxxxxX xxxx xxxxxxx xxxx x xxxxxxxx](user-interface.md)
--   Xxxxxx Xxxxxx xxxxx xxx XxxxxxX xxxx xxxxxxxxxxx
-
-
-Xx xxx xxx Xxxxxx Xxxxxx Xxxxxxxx xx xxxxxxx XxxxxxX xxxx, xxxxx xxx xxxxxxxxxx xxxxx xxxxxxxxx xxx xxxxxxxx, xxxxxxx, xxxxxxxxxx, xxx xxxxxxxxx xxxxx, xxxxx, xxx xxxxxx xxxxxxxxx. Xxxxx xxx xxxx xxxxx xxxx xxx xxx xxx xx xxxxxxx xxxxxxxxx xx xxxxx xxxx xxx xxxxx XxxxxxX xxxxxxxx xxxx.
-
-Xxxx xxxxx xxxxx xx xxxxxxxx xx xxxxx xxxxxxxx xxxxx.
-
-## Xxxxx Xxxxxx
+-   [Create a DirectX game project from a template](user-interface.md)
+-   Visual Studio tools for DirectX game programming
 
 
-Xxx xxx Xxxxx Xxxxxx xx xxxx xxxx xxx xxxxx xx xxxx xxxxxxx xxx xxxxx xxxxxxx xxxx XxxxxxX xxxx. Xxx Xxxxx Xxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxx.
+If you use Visual Studio Ultimate to develop DirectX apps, there are additional tools available for creating, editing, previewing, and exporting image, model, and shader resources. There are also tools that you can use to convert resources at build time and debug DirectX graphics code.
 
--   .xxx
--   .xxx, .xxxx, .xxx, .xxxx
--   .xxx
--   .xxx
--   .xxx
--   .xxx
--   .xxx, .xxxx
--   .xxx
+This topic gives an overview of these graphics tools.
 
-Xxxxxx [xxxxx xxxxxxxxxxxxx xxxxx](#custom) xx xxxxxxx xxxxx xx .xxx xxxxx xx xxxxx xxxx.
-
-Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxx xxxx Xxxxxxxx xxx Xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx).
-
-> **Xxxx**  Xxx Xxxxx Xxxxxx xx xxx xxxxxxxx xx xx x xxxxxxxxxxx xxx x xxxx xxxxxxx xxxxx xxxxxxx xxx, xxx xx xxxxxxxxxxx xxx xxxx xxxxxx xxxxxxx xxx xxxxxxx xxxxxxxxx.
-
- 
-
-## Xxxxx Xxxxxx
+## Image Editor
 
 
-Xxx xxx xxx xxx Xxxxx Xxxxxx xx xxxxxx xxxxx YX xxxxxx xxxx xxxxxxx, xx xx xxxx xxx xxxxxx xxxx-xxxxxxx YX xxxxxx xxxx xxxx-xxxxxxxx YX xxxxxxxx xxxxx. Xxx Xxxxx Xxxxxx xxxxxxxx xxxxxxx YX xxxxx xxxxxxx xxxx xxx xxxx xx XxxxxxX xxx xxxxxxxxxxx. Xxx xxx xxxxxx [xxxxx xxxxxxxxxxxxx xxxxx](#custom) xx xxxxxxx xxxxx xx .xxx xxxxx xx xxxxx xxxx.
+Use the Image Editor to work with the kinds of rich texture and image formats that DirectX uses. The Image Editor supports the following formats.
 
--   .xxx
--   .xxx
--   .xxx
+-   .png
+-   .jpg, .jpeg, .jpe, .jfif
+-   .dds
+-   .gif
+-   .bmp
+-   .dib
+-   .tif, .tiff
+-   .tga
 
-Xxxx'x x xxxxxxxxxx xx x xxxxx xx xxx xxxxxx xxxx xxxxxxxx xxxxxxx.
+Create [build customization files](#custom) to convert these to .dds files at build time.
 
-![xxxxxx](images/modeleditor.png)
+For more information, see [Working with Textures and Images](https://msdn.microsoft.com/library/windows/apps/hh873119.aspx).
 
-Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxx xxxx Y-X Xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx).
-
-> **Xxxx**  Xxx Xxxxx Xxxxxx xx xxx xxxxxxxx xx xx x xxxxxxxxxxx xxx x xxxx xxxxxxx xxxxx xxxxxxx xxx, xxx xx xxxxxxxxxxx xxx xxxx xxxxxx xxxxxxx xxx xxxxxxx xxxxxxxxx.
+> **Note**  The Image Editor is not intended to be a replacement for a full feature image editing app, but is appropriate for many simple viewing and editing scenarios.
 
  
 
-## Xxxxxx Xxxxxxxx
+## Model Editor
 
 
-Xxx xxx Xxxxxx Xxxxxxxx xx xxxxxx xxxxxx xxxxxx xxxxxxx xxx xxxx xxxx xx xxx xxxx xx xxx xxx'x xxxx XXXX xxxxxxxxxxx.
+You can use the Model Editor to create basic 3D models from scratch, or to view and modify more-complex 3D models from full-featured 3D modeling tools. The Model Editor supports several 3D model formats that are used in DirectX app development. You can create [build customization files](#custom) to convert these to .cmo files at build time.
 
-Xxx xxxxxx x xxxxxx xxxxxxxx xx x xxxxx. Xxxx xxxx xxxxxxxx x xxxxxxx xx xxx xxxxxx xx xx xxxx xxxxxxxxx. Xxxx'x xx xxxxxxx xxxx xxxxxxx Xxxxxxx xxxxxxxx xxxx x xxxxxx xxxxxxx.
+-   .fbx
+-   .dae
+-   .obj
 
-![xxxxxx xxxxxx xxxxx](images/shaderdesigner.png)
+Here's a screenshot of a model in the editor with lighting applied.
 
-Xxx xxx Xxxxxx Xxxxxx xx xxxxxx, xxxx, xxx xxxx xxxxxxx xx xxx .xxxx xxxxxx. Xx xxxx xxxxxxx xxx xxxxxxxxx xxxxxxx.
+![teapot](images/modeleditor.png)
 
--   .xxxx (xxxxxx xxxx)
--   .xxx (xxxxxxxx)
--   .x (XXXX xxxxxxxx xxxxx)
+For more information, see [Working with 3-D Models](https://msdn.microsoft.com/library/windows/apps/hh873114.aspx).
 
-Xxxxxx [xxxxx xxxxxxxxxxxxx xxxxx](#custom) xx xxxxxxx xxx xx xxxxx xxxxxxx xx .xxx xxxxx xx xxxxx xxxx.
+> **Note**  The Model Editor is not intended to be a replacement for a full feature model editing app, but is appropriate for many simple viewing and editing scenarios.
 
-Xxxx xx x xxxxxxx xx XXXX xxxx xxxx xx xxxxxxxx xx xxx Xxxxxx Xxxxxx. Xxxx xx xxxx xxx xxxx xxx xxx Xxxxxxx xxxxxxxx xxxx.
+ 
+
+## Shader Designer
+
+
+Use the Shader Designer to create custom visual effects for your game or app even if you don't know HLSL programming.
+
+You create a shader visually as a graph. Each node displays a preview of the output up to that operation. Here's an example that applies Lambert lighting with a sphere preview.
+
+![visual shader graph](images/shaderdesigner.png)
+
+Use the Shader Editor to design, edit, and save shaders in the .dgsl format. It also exports the following formats.
+
+-   .hlsl (source code)
+-   .cso (bytecode)
+-   .h (HLSL bytecode array)
+
+Create [build customization files](#custom) to convert any of these formats to .cso files at build time.
+
+Here is a portion of HLSL code that is exported by the Shader Editor. This is only the code for the Lambert lighting node.
 
 ```hlsl
 //
@@ -101,47 +101,51 @@ float3 LambertLighting(
 }
 ```
 
-Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxx xxxx Xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh873117.aspx).
+For more information, see [Working with Shaders](https://msdn.microsoft.com/library/windows/apps/hh873117.aspx).
 
-## Xxxxx xxxxxxxxxxxxxx xxx YX xxxxxx
-
-
-Xxx xxx xxx xxxxx xxxxxxxxxxxxxx xx xxxx xxxxxxx xx xxxx Xxxxxx Xxxxxx xxxxxxxx xxxxxxxxx xx xxxxxx xxxxxxx. Xxxxx xxxx, xxx xxx xxxx xxx xxxxxx xxxx xxxx xxx xxx xxx xxxx xx xxxxxxxx xxx xxxxxxx XxxxxxX xxxxxxxxx xxxx xxxx xxx xxxxx xx xxx xxxxx XxxxxxX xxx.
-
-Xx xxx x xxxxx xxxxxxxxxxxxx, xxx xxxxx-xxxxx xx xxx xxxxxxx xx xxx **Xxxxxxxx Xxxxxxxx** xxx xxxxxx **Xxxxx Xxxxxxxxxxxxxx...**. Xxx xxx xxx xxx xxxxxxxxx xxxxx xx xxxxx xxxxxxxxxxxxxx xx xxxx xxxxxxx.
-
--   Xxxxx Xxxxxxx Xxxxxxxx xxxxx xxxxx xxxxx xx xxxxx xxx xxxxxxx XxxxxxXxxx Xxxxxxx (.xxx) xxxxx.
--   Xxxx Xxxxxxx Xxxxxxxx xxxxx xxxx xxxxx (xxxx xx .xxx) xxx xxxxxxx .xxx xxxx xxxxx.
--   Xxxxxx Xxxxxxx Xxxxxxxx xxxxx Xxxxxx Xxxxxx Xxxxx (.xxxx) xxxx xxx Xxxxxx Xxxxxx Xxxxxx Xxxxxx xxx xxxxxxx x Xxxxxxxx Xxxxxx Xxxxxx (.xxx) xxxx.
-
-Xxx xxxx xxxxxxxxxxx, xxx [Xxxxx Y-X Xxxxxx xx Xxxx Xxxx xx Xxx](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx).
-
-## Xxxxxxxxx XxxxxxX xxxxxxxx
+## Build customizations for 3D assets
 
 
-Xxxxxx Xxxxxx xxxxxxxx xxxxxxxx-xxxxxxxx xxxxxxxxx xxxxx. Xxx xxxxx xxxxx xx xxxxx xxxxxx xxxx:
+You can add build customizations to your project so that Visual Studio converts resources to usable formats. After that, you can load the assets into your app and use them by creating and filling DirectX resources just like you would in any other DirectX app.
 
--   Xxx xxxxxxxx xxxxxxxx.
--   Xxx xxxxx xxxx xxxxx.
--   Xxx xxxxxx xxxxx.
--   Xxx xxxxxx xxxxx.
--   Xxxxxx xxxx.
--   Xxxxxxxxxxxxx xx xxxxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxxx.
--   XxxxxxX xxxxxxx xxxxxxxxxxxxx.
--   Xxxxxxx XxxxxxYX xxxxxxx.
--   Xxxxxxxxx xxxxxx xxx XXX xxxxxxxxxxxx.
+To add a build customization, you right-click on the project in the **Solution Explorer** and select **Build Customizations...**. You can add the following types of build customizations to your project.
 
-Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxx XxxxxxX Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
+-   Image Content Pipeline takes image files as input and outputs DirectDraw Surface (.dds) files.
+-   Mesh Content Pipeline takes mesh files (such as .fbx) and outputs .cmo mesh files.
+-   Shader Content Pipeline takes Visual Shader Graph (.dgsl) from the Visual Studio Shader Editor and outputs a Compiled Shader Output (.cso) file.
 
-> **Xxxx**  Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+For more information, see [Using 3-D Assets in Your Game or App](https://msdn.microsoft.com/library/windows/apps/hh972446.aspx).
 
- 
+## Debugging DirectX graphics
+
+
+Visual Studio provides graphics-specific debugging tools. Use these tools to debug things like:
+
+-   The graphics pipeline.
+-   The event call stack.
+-   The object table.
+-   The device state.
+-   Shader bugs.
+-   Uninitialized or incorrect constant buffers and parameters.
+-   DirectX version compatibility.
+-   Limited Direct2D support.
+-   Operating system and SDK requirements.
+
+For more information, see [Debugging DirectX Graphics](https://msdn.microsoft.com/library/windows/apps/hh315751.aspx).
+
+> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

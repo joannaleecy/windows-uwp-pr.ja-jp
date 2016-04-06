@@ -1,79 +1,57 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxx xx xxxxx xxx xxxxxxxx xxxxx, xxxxxxx, xxx xxxxxxxxx xxx xxxx.
-xxxxx: Xxxxx xxx xxxxxxxx xxxxxxxx xxx xxxxx xxx xxxx
-xx.xxxxxxx: YYYYYXYY-YYYX-YYYX-YYYY-XYXXYXXYXYXX
-xxxxx: Xxx xxxxxxxx xxx xxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Learn how to store and retrieve local, roaming, and temporary app data.
+title: Store and retrieve settings and other app data
+ms.assetid: 41676A02-325A-455E-8565-C9EC0BC3A8FE
+label: App settings and data
+template: detail.hbs
 ---
 
-# Xxxxx xxx xxxxxxxx xxxxxxxx xxx xxxxx xxx xxxx
+# Store and retrieve settings and other app data
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-*Xxx xxxx* xx xxxxxxx xxxx xxxx xx xxxxxxxx xx x xxxxxxxxxx xxx. Xx xxxxxxxx xxxxxxx xxxxx, xxxx xxxxxxxxxxx, xxx xxxxx xxxxxxxx. Xxx xxxx xx xxxxxxxxx xxxx *xxxx xxxx*, xxxx xxxx xxx xxxx xxxxxxx xxx xxxxxxx xxxx xxxxx xx xxx. Xxxx xxxx xxxxxxxx xxxxxxxx xx xxxxx xxxxx, xxxxx xx xxxxxxxxxxxxx xxxxxxxxxxx, xx xxxxxxxx xxxxxxx xxxxxxx xxxxxxx xxxxxxx xx xxx xxxx. Xxxx xxxx xxx xx xxxxxx xx xxxxxxxxxx xx xxxx xxxx xxx xxx. Xxxxx, xxxx xx xxxx xxxx xxx xxxx xxxxx xx xxxxxxxxxx xx xxxxxxxx xx xx xxxxxx xxxxxxxxxxx xx xxx xxx xxxxxx, xxxx xx x xxxxxxxx.
+*App data* is mutable data that is specific to a particular app. It includes runtime state, user preferences, and other settings. App data is different from *user data*, data that the user creates and manages when using an app. User data includes document or media files, email or communication transcripts, or database records holding content created by the user. User data may be useful or meaningful to more than one app. Often, this is data that the user wants to manipulate or transmit as an entity independent of the app itself, such as a document.
 
-**Xxxxxxxxx xxxx xxxxx xxx xxxx:  **Xxx xxxxxxxx xx xxx xxx xxxx xx xxxx xx xxx xxxxxxxx xx xxx xxx. Xx xxx xxx xx xxxxxxx, xxx xx xxx xxx xxxx xxxx xx xxxx xx x xxxxxxxxxxx. Xxx'x xxx xxx xxxx xx xxxxx xxxx xxxx xx xxxxxxxx xxxx xxxxx xxxxx xxxxxxxx xx xxxxxxxx xxx xxxxxxxxxxxxx. Xx xxxxxxxxx xxxx xxx xxxx'x xxxxxxxxx xxx Xxxxxxxxx XxxXxxxx xx xxxx xx xxxxx xxxx xxxx xx xxxxxxxxxxx. Xxx xxxx xx xxxxx xxx xxxxxxx xxx-xxxxxxxx xxxx xxxxxxxxxxx, xxxxxxxx, xxx xxxxxxxxx.
+**Important note about app data:  **The lifetime of the app data is tied to the lifetime of the app. If the app is removed, all of the app data will be lost as a consequence. Don't use app data to store user data or anything that users might perceive as valuable and irreplaceable. We recommend that the user's libraries and Microsoft OneDrive be used to store this sort of information. App data is ideal for storing app-specific user preferences, settings, and favorites.
 
-## <span id="Types_of_app_data">
-            </span>
-            <span id="types_of_app_data">
-            </span>
-            <span id="TYPES_OF_APP_DATA">
-            </span>Xxxxx xx xxx xxxx
+## <span id="Types_of_app_data"></span><span id="types_of_app_data"></span><span id="TYPES_OF_APP_DATA"></span>Types of app data
 
 
-Xxxxx xxx xxx xxxxx xx xxx xxxx: xxxxxxxx xxx xxxxx.
+There are two types of app data: settings and files.
 
--   **Xxxxxxxx**
+-   **Settings**
 
-    Xxx xxxxxxxx xx xxxxx xxxx xxxxxxxxxxx xxx xxxxxxxxxxx xxxxx xxxx. Xxx xxx xxxx XXX xxxxxxx xxx xx xxxxxx xxxxxx xxx xxxxxxxx xxxxxxxx (xx'xx xxxx xxx xxxx xxxxxxxx xxxxx xx xxxx xxxxxxx).
+    Use settings to store user preferences and application state info. The app data API enables you to easily create and retrieve settings (we'll show you some examples later in this article).
 
-    Xxxx xxx xxxx xxxxx xxx xxx xxx xxx xxx xxxxxxxx:
+    Here are data types you can use for app settings:
 
-    -   **XXxxY**, **XxxYY**, **XXxxYY**, **XxxYY**, **XXxxYY**, **XxxYY**, **XXxxYY**, **Xxxxxx**, **Xxxxxx**
-    -   **Xxxxxxx**
-    -   **XxxxYY**, **Xxxxxx**
-    -   [
-            **XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br206576), [**XxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br225996)
-    -   **XXXX**, [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/br225870), [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225995), [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/br225994)
-    -   [
-            **XxxxxxxxxxxXxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241588): X xxx xx xxxxxxx xxx xxxxxxxx xxxx xxxx xx xxxxxxxxxx xxx xxxxxxxxxxxx xxxxxxxxxx. Xxx xxxxxxxxx xxxxxxxx xx xxxxxx xxxxxx xxxxxx xxxxxxx xx xxxxxxxxxxxxxx xxxxxxxx. Xxx xxxxxx xxxxxxx xxx xxxxxxxxx xx xxxxxxxxx xxxxxxxx xxxxxx xxxxxxxxxx xxxxxx xxx xxxxxxx. Xxxxxxxxx xxxxxxxx xxx xxxxxxxxx xxx xxxxx xxxxxxx xx xxxx, xxx xxxxxxxxxxx xxx xx xxxx xx xxx xxx xxxx xxx xxxxx xxxx xxxx.
--   **Xxxxx**
+    -   **UInt8**, **Int16**, **UInt16**, **Int32**, **UInt32**, **Int64**, **UInt64**, **Single**, **Double**
+    -   **Boolean**
+    -   **Char16**, **String**
+    -   [**DateTime**](https://msdn.microsoft.com/library/windows/apps/br206576), [**TimeSpan**](https://msdn.microsoft.com/library/windows/apps/br225996)
+    -   **GUID**, [**Point**](https://msdn.microsoft.com/library/windows/apps/br225870), [**Size**](https://msdn.microsoft.com/library/windows/apps/br225995), [**Rect**](https://msdn.microsoft.com/library/windows/apps/br225994)
+    -   [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588): A set of related app settings that must be serialized and deserialized atomically. Use composite settings to easily handle atomic updates of interdependent settings. The system ensures the integrity of composite settings during concurrent access and roaming. Composite settings are optimized for small amounts of data, and performance can be poor if you use them for large data sets.
+-   **Files**
 
-    Xxx xxxxx xx xxxxx xxxxxx xxxx xx xx xxxxxx xxxx xxx, xxxxxxxxxx xxxxxxxxxx xxxxx.
+    Use files to store binary data or to enable your own, customized serialized types.
 
-## <span id="Storing_app_data_in_the_app_data_stores">
-            </span>
-            <span id="storing_app_data_in_the_app_data_stores">
-            </span>
-            <span id="STORING_APP_DATA_IN_THE_APP_DATA_STORES">
-            </span>Xxxxxxx xxx xxxx xx xxx xxx xxxx xxxxxx
+## <span id="Storing_app_data_in_the_app_data_stores"></span><span id="storing_app_data_in_the_app_data_stores"></span><span id="STORING_APP_DATA_IN_THE_APP_DATA_STORES"></span>Storing app data in the app data stores
 
 
-Xxxx xx xxx xx xxxxxxxxx, xxx xxxxxx xxxxx xx xxx xxx xxx-xxxx xxxx xxxxxx xxx xxxxxxxx xxx xxxxx. Xxx xxx'x xxxx xx xxxx xxxxx xx xxx xxxx xxxx xxxxxx, xxxxxxx xxx xxxxxx xx xxxxxxxxxxx xxx xxxxxxxx xxx xxxxxxxx xxxxxxx, xxxxxxxx xxxx xxx xxxx xx xxxx xxxxxxxx xxxx xxxxx xxxx xxx xxxxx xxxxx. Xxx xxxxxx xxxx xxxxxxxxx xxx xxxxxxxx xx xxxxx xxxx xxxxxx xxxx xxx xxxx xxxxxxxx xx xxxxxx xx xxxx xxx xxx xxxxxxx xxx xxxxxxxx xx xxxxx xxxx xxxxxx xxxxxxxxxx xxx xxxxxxx xxxx xxxx xxx xx xxxxxxxxxxx.
+When an app is installed, the system gives it its own per-user data stores for settings and files. You don't need to know where or how this data exists, because the system is responsible for managing the physical storage, ensuring that the data is kept isolated from other apps and other users. The system also preserves the contents of these data stores when the user installs an update to your app and removes the contents of these data stores completely and cleanly when your app is uninstalled.
 
-Xxxxxx xxx xxx xxxx xxxxx, xxxx xxx xxx xxxxxx-xxxxxxx xxxx xxxxxxxxxxx: xxx xxx xxxxx xxxxx, xxx xxx xxxxxxx xxxxx, xxx xxx xxx xxxxxxxxx xxxxx. Xxxx xxx xxx xxx xxx xxxxx xxx xxx xxxxxxxxxx xx xxxx xx xxxxx xxxx xxxxxxxxxxx.
+Within its app data store, each app has system-defined root directories: one for local files, one for roaming files, and one for temporary files. Your app can add new files and new containers to each of these root directories.
 
-## <span id="Local_app_data">
-            </span>
-            <span id="local_app_data">
-            </span>
-            <span id="LOCAL_APP_DATA">
-            </span>Xxxxx xxx xxxx
+## <span id="Local_app_data"></span><span id="local_app_data"></span><span id="LOCAL_APP_DATA"></span>Local app data
 
 
-Xxxxx xxx xxxx xxxxxx xx xxxx xxx xxx xxxxxxxxxxx xxxx xxxxx xx xx xxxxxxxxx xxxxxxx xxx xxxxxxxx xxx xx xxx xxxxxxxx xxx xxxxxxx xxx xxxx. Xxxx xxxx xx xxx xxxxxxxxxx xx xxxxx xxxxxxx xxxxxx xx xxxxxx xxxx xx xxxx. Xxxxx xx xx xxxxxxx xxxx xxxxxxxxxxx xx xxxxx xxxx xxxxxx. Xxx xxx xxxxx xxx xxxx xxxxx xxx xxxx xxxx xx xxxx xxx xxxx xxxxx xx xxxx xxx xxx xxxxx xxxx xxxx.
+Local app data should be used for any information that needs to be preserved between app sessions and is not suitable for roaming app data. Data that is not applicable on other devices should be stored here as well. There is no general size restriction on local data stored. Use the local app data store for data that it does not make sense to roam and for large data sets.
 
-### <span id="Retrieve_the_local_app_data_store">
-            </span>
-            <span id="retrieve_the_local_app_data_store">
-            </span>
-            <span id="RETRIEVE_THE_LOCAL_APP_DATA_STORE">
-            </span>Xxxxxxxx xxx xxxxx xxx xxxx xxxxx
+### <span id="Retrieve_the_local_app_data_store"></span><span id="retrieve_the_local_app_data_store"></span><span id="RETRIEVE_THE_LOCAL_APP_DATA_STORE"></span>Retrieve the local app data store
 
-Xxxxxx xxx xxx xxxx xx xxxxx xxxxx xxx xxxx, xxx xxxx xxxxxxxx xxx xxxxx xxx xxxx xxxxx. Xx xxxxxxxx xxx xxxxx xxx xxxx xxxxx, xxx xxx [**XxxxxxxxxxxXxxx.XxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241622) xxxxxxxx xx xxx xxx xxx'x xxxxx xxxxxxxx xx xx [**XxxxxxxxxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241599) xxxxxx. Xxx xxx [**XxxxxxxxxxxXxxx.XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241621) xxxxxxxx xx xxx xxx xxxxx xx x [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br227230) xxxxxx. Xxx xxx [**XxxxxxxxxxxXxxx.XxxxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn633825) xxxxxxxx xx xxx xxx xxxxxx xx xxx xxxxx xxx xxxx xxxxx xxxxx xxx xxx xxxx xxxxx xxxx xxx xxx xxxxxxxx xx xxxxxx xxx xxxxxxx.
+Before you can read or write local app data, you must retrieve the local app data store. To retrieve the local app data store, use the [**ApplicationData.LocalSettings**](https://msdn.microsoft.com/library/windows/apps/br241622) property to get the app's local settings as an [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) object. Use the [**ApplicationData.LocalFolder**](https://msdn.microsoft.com/library/windows/apps/br241621) property to get the files in a [**StorageFolder**](https://msdn.microsoft.com/library/windows/apps/br227230) object. Use the [**ApplicationData.LocalCacheFolder**](https://msdn.microsoft.com/library/windows/apps/dn633825) property to get the folder in the local app data store where you can save files that are not included in backup and restore.
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -82,14 +60,9 @@ Windows.Storage.StorageFolder localFolder =
     Windows.Storage.ApplicationData.Current.LocalFolder;
 ```
 
-### <span id="Create_and_retrieve_a_simple_local_setting">
-            </span>
-            <span id="create_and_retrieve_a_simple_local_setting">
-            </span>
-            <span id="CREATE_AND_RETRIEVE_A_SIMPLE_LOCAL_SETTING">
-            </span>Xxxxxx xxx xxxxxxxx x xxxxxx xxxxx xxxxxxx
+### <span id="Create_and_retrieve_a_simple_local_setting"></span><span id="create_and_retrieve_a_simple_local_setting"></span><span id="CREATE_AND_RETRIEVE_A_SIMPLE_LOCAL_SETTING"></span>Create and retrieve a simple local setting
 
-Xx xxxxxx xx xxxxx x xxxxxxx, xxx xxx [**XxxxxxxxxxxXxxxXxxxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241615) xxxxxxxx xx xxxxxx xxx xxxxxxxx xx xxx `localSettings` xxxxxxxxx xx xxx xx xxx xxxxxxxx xxxx. Xxxx xxxxxxx xxxxxxx x xxxxxxx xxxxx `exampleSetting`.
+To create or write a setting, use the [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) property to access the settings in the `localSettings` container we got in the previous step. This example creates a setting named `exampleSetting`.
 
 ```CSharp
 // Simple setting
@@ -97,21 +70,16 @@ Xx xxxxxx xx xxxxx x xxxxxxx, xxx xxx [**XxxxxxxxxxxXxxxXxxxxxxxx.Xxxxxx**](http
 localSettings.Values["exampleSetting"] = "Hello Windows";
 ```
 
-Xx xxxxxxxx xxx xxxxxxx, xxx xxx xxx xxxx [**XxxxxxxxxxxXxxxXxxxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241615) xxxxxxxx xxxx xxx xxxx xx xxxxxx xxx xxxxxxx. Xxxx xxxxxxx xxxxx xxx xx xxxxxxxx xxx xxxxxxx xx xxxx xxxxxxx.
+To retrieve the setting, you use the same [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) property that you used to create the setting. This example shows how to retrieve the setting we just created.
 
 ```CSharp
 // Simple setting
 Object value = localSettings.Values["exampleSetting"];
 ```
 
-### <span id="Create_and_retrieve_a_local_composite_value">
-            </span>
-            <span id="create_and_retrieve_a_local_composite_value">
-            </span>
-            <span id="CREATE_AND_RETRIEVE_A_LOCAL_COMPOSITE_VALUE">
-            </span>Xxxxxx xxx xxxxxxxx x xxxxx xxxxxxxxx xxxxx
+### <span id="Create_and_retrieve_a_local_composite_value"></span><span id="create_and_retrieve_a_local_composite_value"></span><span id="CREATE_AND_RETRIEVE_A_LOCAL_COMPOSITE_VALUE"></span>Create and retrieve a local composite value
 
-Xx xxxxxx xx xxxxx x xxxxxxxxx xxxxx, xxxxxx xx [**XxxxxxxxxxxXxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241588) xxxxxx. Xxxx xxxxxxx xxxxxxx x xxxxxxxxx xxxxxxx xxxxx `exampleCompositeSetting` xxx xxxx xx xx xxx `localSettings` xxxxxxxxx.
+To create or write a composite value, create an [**ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588) object. This example creates a composite setting named `exampleCompositeSetting` and adds it to the `localSettings` container.
 
 ```CSharp
 // Composite setting
@@ -124,7 +92,7 @@ composite["strVal"] = "string";
 localSettings.Values["exampleCompositeSetting"] = composite;
 ```
 
-Xxxx xxxxxxx xxxxx xxx xx xxxxxxxx xxx xxxxxxxxx xxxxx xx xxxx xxxxxxx.
+This example shows how to retrieve the composite value we just created.
 
 ```CSharp
 // Composite setting
@@ -142,14 +110,9 @@ else
 }
 ```
 
-### <span id="Create_and_read_a_local_file">
-            </span>
-            <span id="create_and_read_a_local_file">
-            </span>
-            <span id="CREATE_AND_READ_A_LOCAL_FILE">
-            </span>Xxxxxx xxx xxxx x xxxxx xxxx
+### <span id="Create_and_read_a_local_file"></span><span id="create_and_read_a_local_file"></span><span id="CREATE_AND_READ_A_LOCAL_FILE"></span>Create and read a local file
 
-Xx xxxxxx xxx xxxxxx x xxxx xx xxx xxxxx xxx xxxx xxxxx, xxx xxx xxxx XXXx, xxxx xx [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxxxx.XxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227249) xxx [**Xxxxxxx.Xxxxxxx.XxxxXX.XxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701505). Xxxx xxxxxxx xxxxxxx x xxxx xxxxx `dataFile.txt` xx xxx `localFolder` xxxxxxxxx xxx xxxxxx xxx xxxxxxx xxxx xxx xxxx xx xxx xxxx. Xxx **XxxxxxxXxxxxxxx** xxxxx xxxx xxx [**XxxxxxxxXxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241631) xxxxxxxxxxx xxxxxxxxx xx xxxxxxx xxx xxxx xx xx xxxxxxx xxxxxx.
+To create and update a file in the local app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) and [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). This example creates a file named `dataFile.txt` in the `localFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) enumeration indicates to replace the file if it already exists.
 
 ```CSharp
 async void WriteTimestamp()
@@ -163,7 +126,7 @@ async void WriteTimestamp()
 }
 ```
 
-Xx xxxx xxx xxxx x xxxx xx xxx xxxxx xxx xxxx xxxxx, xxx xxx xxxx XXXx, xxxx xx [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxxxx.XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxx.XxxXxxxXxxxXxxxxxxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701741), xxx [**Xxxxxxx.Xxxxxxx.XxxxXX.XxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701482). Xxxx xxxxxxx xxxxx xxx `dataFile.txt` xxxx xxxxxxx xx xxx xxxxxxxx xxxx xxx xxxxx xxx xxxx xxxx xxx xxxx. Xxx xxxxxxx xx xxxxxxx xxxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxx, xxx [Xxx xx xxxx xxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
+To open and read a file in the local app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741), and [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). This example opens the `dataFile.txt` file created in the previous step and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
 
 ```CSharp
 async void ReadTimestamp()
@@ -181,107 +144,67 @@ async void ReadTimestamp()
 }
 ```
 
-## <span id="Roaming_data">
-            </span>
-            <span id="roaming_data">
-            </span>
-            <span id="ROAMING_DATA">
-            </span>Xxxxxxx xxxx
+## <span id="Roaming_data"></span><span id="roaming_data"></span><span id="ROAMING_DATA"></span>Roaming data
 
 
-Xx xxx xxx xxxxxxx xxxx xx xxxx xxx, xxxx xxxxx xxx xxxxxx xxxx xxxx xxx'x xxx xxxx xx xxxx xxxxxx xxxxxxxx xxxxxxx. Xx x xxxx xxxxxxxx xxxx xxx xx xxxxxxxx xxxxxxx, xxx XX xxxxx xxx xxx xxxx xx xxxx, xxxxxxxx xxx xxxxxx xx xxxxx xxxx xxxx xxx xxxx xxxxx xx xx xxx xxxx xxx xx xxxxx xxxxxx xxxxxx. Xxxxxxx xxxx xxxxxxx xxxx xxxxx xx xxxxxxxx x xxxx, xxxx xx xxxxxxxxx x xxxx, xxxxx xxxxx xxxx xxxx xxx xxxx xx x xxxxxxxxx xxxxxx. Xxx XX xxxxxxxxxx xxxxxxx xxxx xx xxx xxxxx xxxx xx xx xxxxxxx, xxx xxxxxxxxxxxx xxx xxxx xx xxx xxxxx xxxxxxx xx xxxxx xxx xxx xx xxxxxxxxx.
+If you use roaming data in your app, your users can easily keep your app's app data in sync across multiple devices. If a user installs your app on multiple devices, the OS keeps the app data in sync, reducing the amount of setup work that the user needs to do for your app on their second device. Roaming also enables your users to continue a task, such as composing a list, right where they left off even on a different device. The OS replicates roaming data to the cloud when it is updated, and synchronizes the data to the other devices on which the app is installed.
 
-Xxx XX xxxxxx xxx xxxx xx xxx xxx xxxx xxxx xxxx xxx xxx xxxx. Xxx [**XxxxxxxxxxxXxxx.XxxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241625). Xx xxx xxx xxxx xxxx xxxxx, xxxx xx xxx xxx'x xxx xxxx xxxx xx xxxxxxxxxx xx xxx xxxxx xxxxx xxx xxx'x xxxxx xxxxxx xxx xxxx xx xxxx xxxx xxx xxxxx xxxxx. Xxx xxxx xxxxxx, xx xx x xxxx xxxxxxxx xx xxx xxxxxxx xxxx xxxx xxx xxxx xxxxxxxxxxx, xxxxx, xxx xxxxx xxxx xxxxx.
+The OS limits the size of the app data that each app may roam. See [**ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625). If the app hits this limit, none of the app's app data will be replicated to the cloud until the app's total roamed app data is less than the limit again. For this reason, it is a best practice to use roaming data only for user preferences, links, and small data files.
 
-Xxxxxxx xxxx xxx xx xxx xx xxxxxxxxx xx xxx xxxxx xx xxxx xx xx xx xxxxxxxx xx xxx xxxx xxxx xxxx xxxxxx xxxxxx xxx xxxxxxxx xxxx xxxxxxxx. Xx xxx xxxx xxxx xxx xxx xx xxx xxx xxxxxx xxxx xxxx xxxx xxxxxxxx, xxx xxxxxxx xxxx xx xxxxxxx xxxx xxx xxxxx. Xx x xxxx xxxxxxxxxx xx xxx, xxx xxxxxxx xxxx xxx'x xxxxxxxxxxxxx xxxxxxx xxxx xxx xxxxx, xx'x xxxxxxxxx. Xx xxx xxxx xxxxxxxxxx xxx xxx xxxxxx xxx xxxx xxxxxxxx, xxx xxxxxxx xxxx xx xxxxxxxxxxxx xxxx xxx xxxxx.
+Roaming data for an app is available in the cloud as long as it is accessed by the user from some device within the required time interval. If the user does not run an app for longer than this time interval, its roaming data is removed from the cloud. If a user uninstalls an app, its roaming data isn't automatically removed from the cloud, it's preserved. If the user reinstalls the app within the time interval, the roaming data is synchronized from the cloud.
 
-### Xxxxxxx xxxx xx'x xxx xxx'xx
+### Roaming data do's and don'ts
 
--   Xxx xxxxxxx xxx xxxx xxxxxxxxxxx xxx xxxxxxxxxxxxxx, xxxxx, xxx xxxxx xxxx xxxxx. Xxx xxxxxxx, xxx xxxxxxx xx xxxxxxxx x xxxx'x xxxxxxxxxx xxxxx xxxxxxxxxx xxxxxx xxx xxxxxxx.
--   Xxx xxxxxxx xx xxx xxxxx xxxxxxxx x xxxx xxxxxx xxxxxxx. Xxx xxxxxxx, xxxx xxx xxxx xxxx xxx xxxxxxxx xx xx xxxxxxx xxxxx xx xxx xxxx xxxxxxxx xxxxxx xxxx xx x xxxxxx xxx.
--   Xxxxxx xxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241620) xxxxx xx xxxxxxxx xxx xxxx. Xxxx xxxxx xxxxxx xxxx xxx xxxx xxx xxxx xxxxxxxx xxxxxxx xxxx xxx xxxxx.
--   Xxxx xxxxxxxxxx xx xxxxxxx xxxxxx xxxx xxx xxxx. Xxx xxxxxxx, xxxx x XXX xxxxxx xxxx xxx xxxxxxx xx xx xxxxxx xxxxxxx.
--   Xxx xxxxxxxxx, xxxx xxxxxxxx xxxxxxxx, xxx xxx *XxxxXxxxxxxx* xxxxxxx xxxxxxxxxx xxxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241624).
--   Xxx'x xxxx xxx xxxx xxxx xx xxxxxxxx xx x xxxxxx. Xxxx xxxx xx xxxx xxxxxxxxx xxxxxxx, xxxx xx x xxxx xxxx xx x xxxxx xxxx xxxxxxxx. Xx xxx xx xxxxxx xx xxxx xxxxx xxxxxxxxxxx, xxxx xxxx xxxx xxx xxx xxx xxxxxxx xx xxx xxxx xxx'x xxxxx xx xxx xxxxxxxxx xxxxxx.
--   Xxx'x xxxx xxxxx xxxx xx xxx xxxx. Xxxxx'x x xxxxx xx xxx xxxxxx xx xxx xxxx xx xxx xxx xxxx; xxx [**XxxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241625) xxxxxxxx xx xxx xxxx xxxxxxx. Xx xx xxx xxxx xxxx xxxxx, xx xxxx xxx xxxx xxxxx xxx xxxx xx xxx xxx xxxx xxxxx xx xxxxxx xxxxxxx xxx xxxxx. Xxxx xxx xxxxxx xxxx xxx, xxxxxxxx xxx xx xxx x xxxxx xx xxxxxx xxxx xx xx xx xxx xxxxxx xxx xxxxx. Xxx xxxxxxx, xx xxxxxx x xxxx xxxxx xxxxxxxx YYXX xxxx, xxx xxx xxxxx xxxx xxxxx xxx xxxx xxxxx xx xx YY xxxxx.
--   Xxx'x xxx xxxxxxx xxx xxxx xxxx xxxxxx xx xxxxxxx xxxxxxx. Xxxxxxx xxxxx'x xxxxxxxxx xx xxxxxxx xxxx; xxxxxxx xxxxx xx xxxxxxxxxxxxx xxxxxxx xx x xxxx xx xxxxxxx xx xx x xxxx xxxxxxx xxxxxxx. Xxxxxx xxxx xxxx XX xxxxx'x xxxxxx xx xxxxxxx xxxxxxx.
--   Xxx'x xxxx xxxxxxxxxx xxxxxxxx xxxx. Xxx xxxxxxx, xx xxxx xxx xxxxxx xxxxxxxxxx xxxxxxxx xxxx, xxxx xx xxx xxxxxxxx xx x xxxx xx xxxxxx, xxx'x xxxxx xxxx xx xxxxxxx xxx xxxx. Xxxxxxx, xxxx x xxxx xxxxxxxx xxxxxxxxxxxxxx xxxx xxxxx xxxxxxxx x xxxx xxxx xxxxxxxxxx, xxxx xxx xxxxxxxxx xxxxxxx xxxx.
+-   Use roaming for user preferences and customizations, links, and small data files. For example, use roaming to preserve a user's background color preference across all devices.
+-   Use roaming to let users continue a task across devices. For example, roam app data like the contents of an drafted email or the most recently viewed page in a reader app.
+-   Handle the [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) event by updating app data. This event occurs when app data has just finished syncing from the cloud.
+-   Roam references to content rather than raw data. For example, roam a URL rather than the content of an online article.
+-   For important, time critical settings, use the *HighPriority* setting associated with [**RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624).
+-   Don't roam app data that is specific to a device. Some info is only pertinent locally, such as a path name to a local file resource. If you do decide to roam local information, make sure that the app can recover if the info isn't valid on the secondary device.
+-   Don't roam large sets of app data. There's a limit to the amount of app data an app may roam; use [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) property to get this maximum. If an app hits this limit, no data can roam until the size of the app data store no longer exceeds the limit. When you design your app, consider how to put a bound on larger data so as to not exceed the limit. For example, if saving a game state requires 10KB each, the app might only allow the user store up to 10 games.
+-   Don't use roaming for data that relies on instant syncing. Windows doesn't guarantee an instant sync; roaming could be significantly delayed if a user is offline or on a high latency network. Ensure that your UI doesn't depend on instant syncing.
+-   Don't use roam frequently changing data. For example, if your app tracks frequently changing info, such as the position in a song by second, don't store this as roaming app data. Instead, pick a less frequent representation that still provides a good user experience, like the currently playing song.
 
-### <span id="Roaming_pre-requisites">
-            </span>
-            <span id="roaming_pre-requisites">
-            </span>
-            <span id="ROAMING_PRE-REQUISITES">
-            </span>Xxxxxxx xxx-xxxxxxxxxx
+### <span id="Roaming_pre-requisites"></span><span id="roaming_pre-requisites"></span><span id="ROAMING_PRE-REQUISITES"></span>Roaming pre-requisites
 
-Xxx xxxx xxx xxxxxxx xxxx xxxxxxx xxx xxxx xx xxxx xxx x Xxxxxxxxx xxxxxxx xx xxx xx xx xxxxx xxxxxx. Xxxxxxx, xxxxx xxx xxxxx xxxxxx xxxxxxxxxxxxxx xxx xxxxxx xxx xxxxxxx xxx xxxx xx x xxxxxx xx xxx xxxx. Xx x xxxx xxxxxxx xxx xx xxx x Xxxxxxxxx xxxxxxx xx xxxxxxxx xxxxxxx xxxx xxxxxxxxxxxx, xxx xxxx xxxxx xx xxxx xx xxx xxxx xxx, xxx xxx xxxx xx xxxxx xx xxxx xxxxxx.
+Any user can benefit from roaming app data if they use a Microsoft account to log on to their device. However, users and group policy administrators can switch off roaming app data on a device at any time. If a user chooses not to use a Microsoft account or disables roaming data capabilities, she will still be able to use your app, but app data be local to each device.
 
-Xxxx xxxxxx xx xxx [**XxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227081) xxxx xxxx xxxxxxxxxx xx x xxxx xxx xxxx x xxxxxx “xxxxxxx”. Xx x xxxxxx xxx'x xxxxxxx, xxxx xxxxxxx xx xxxx xxxxx xxxx xxx xxxx.
+Data stored in the [**PasswordVault**](https://msdn.microsoft.com/library/windows/apps/br227081) will only transition if a user has made a device “trusted”. If a device isn't trusted, data secured in this vault will not roam.
 
-### <span id="Conflict_resolution">
-            </span>
-            <span id="conflict_resolution">
-            </span>
-            <span id="CONFLICT_RESOLUTION">
-            </span>Xxxxxxxx xxxxxxxxxx
+### <span id="Conflict_resolution"></span><span id="conflict_resolution"></span><span id="CONFLICT_RESOLUTION"></span>Conflict resolution
 
-Xxxxxxx xxx xxxx xx xxx xxxxxxxx xxx xxxxxxxxxxxx xxx xx xxxx xxxx xxx xxxxxx xx x xxxx. Xx x xxxxxxxx xxxxxx xxxxxx xxxxxxxxxxxxxxx xxxxxxx x xxxxxxxxxx xxxx xxxx xxx xxxxxxx xx xxx xxxxxxx, xxx xxxxxx xxxx xxxxxx xxxxx xxx xxxxx xxxx xxx xxxxxxx xxxx. Xxxx xxxxxxx xxxx xxx xxx xxxxxxxx xxx xxxx xx-xx-xxxx xxxxxxxxxxx. Xx xxx xxxx xxxx xx x xxxxxxx xxxxxxxxx, xxxxxxxx xxxxxxxxxx xxxx xxxxx xxxxx xx xxx xxxxx xx xxx xxxxxxx xxxx, xxxxx xxxxx xxxx xxx xxxxxxxxx xxxx xxx xxxxxx xxxxxx xxxx xx xxxxxxxxxxxx.
+Roaming app data is not intended for simultaneous use on more than one device at a time. If a conflict arises during synchronization because a particular data unit was changed on two devices, the system will always favor the value that was written last. This ensures that the app utilizes the most up-to-date information. If the data unit is a setting composite, conflict resolution will still occur on the level of the setting unit, which means that the composite with the latest change will be synchronized.
 
-### <span id="When_to_write_data">
-            </span>
-            <span id="when_to_write_data">
-            </span>
-            <span id="WHEN_TO_WRITE_DATA">
-            </span>Xxxx xx xxxxx xxxx
+### <span id="When_to_write_data"></span><span id="when_to_write_data"></span><span id="WHEN_TO_WRITE_DATA"></span>When to write data
 
-Xxxxxxxxx xx xxx xxxxxxxx xxxxxxxx xx xxx xxxxxxx, xxxx xxxxxx xx xxxxxxx xx xxxxxxxxx xxxxx. Xxxxxxxxxxxx xx xxxxxx xxxxxxxx xxx xxxx xxxxxx xx xxxxxxx xxxxxxxxxxx. Xxxxxxx, xxx xxxx xxxx xxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxx xxxxxxxxxxxx xx xxxxxxx xxxxxxxxx (xxxx xx xxxx xxxxx Y xxxxxxx), xx xxxx xx xxxx xxx xxx xx xxxxxxxxx. Xxx xxxxxxx, x xxxxx xxx xxxxx xxxxx xxx “xxxxxxx xxxx” xxxxxxxx xxxxxxxx x xxx xxxx xxxxxx xx xxxx, xxxxxxx, xxx xxxxxx xxxxxxxx xx xxx xxxx xxxxxx xxxx xx xxxxxxx xx xxxxxxx.
+Depending on the expected lifetime of the setting, data should be written at different times. Infrequently or slowly changing app data should be written immediately. However, app data that changes frequently should only be written periodically at regular intervals (such as once every 5 minutes), as well as when the app is suspended. For example, a music app might write the “current song” settings whenever a new song starts to play, however, the actual position in the song should only be written on suspend.
 
-### <span id="Excessive_usage_protection">
-            </span>
-            <span id="excessive_usage_protection">
-            </span>
-            <span id="EXCESSIVE_USAGE_PROTECTION">
-            </span>Xxxxxxxxx xxxxx xxxxxxxxxx
+### <span id="Excessive_usage_protection"></span><span id="excessive_usage_protection"></span><span id="EXCESSIVE_USAGE_PROTECTION"></span>Excessive usage protection
 
-Xxx xxxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxxxxx xx xxxxx xx xxxxx xxxxxxxxxxxxx xxx xx xxxxxxxxx. Xx xxx xxxx xxxx xxx xxxxxxxxxx xx xxxxxxxx, xx xx xxxxxx xxxx xxx xxxxxx xxx xxxx xxxxxxxxxxx xxxxxxxxxx. Xxxxxxx xxx xxxx xxxx xxxx xxxxxxx xxxxxxx xxxx xxxxxxxxx xxxxxxxxxxxxx xxx xx xxxxxx xx xxxxxxxx.
+The system has various protection mechanisms in place to avoid inappropriate use of resources. If app data does not transition as expected, it is likely that the device has been temporarily restricted. Waiting for some time will usually resolve this situation automatically and no action is required.
 
-### <span id="Versioning">
-            </span>
-            <span id="versioning">
-            </span>
-            <span id="VERSIONING">
-            </span>Xxxxxxxxxx
+### <span id="Versioning"></span><span id="versioning"></span><span id="VERSIONING"></span>Versioning
 
-Xxx xxxx xxx xxxxxxx xxxxxxxxxx xx xxxxxxx xxxx xxx xxxx xxxxxxxxx xx xxxxxxx. Xxx xxxxxxx xxxxxx xx xxxxxxxxx xxxx xxx xxx xxxxxxx xxx xxx xx xxx xx xxxx. Xxxxxxxx xxx xxxxxxxx, xx xx xxxxxx xxxxxxxxxxx xxxx xxx xxx xxxxxxxxxx xxxxxxx xxxxxxx, xxxxx xxxxxxxxxxx xxxxxxxxxxxxx (xxxxxxxxx xxxx xxxx)xxxxx xxxxx xx xxx xxx xx xxxxxxxxxx xx x xxxxx xxxx xxxxxxx xxxxxx xxxx xxxxxxxxxx xxxxx xxxx.
+App data can utilize versioning to upgrade from one data structure to another. The version number is different from the app version and can be set at will. Although not enforced, it is highly recommended that you use increasing version numbers, since undesirable complications (including data loss)could occur if you try to transition to a lower data version number that represents newer data.
 
-Xxx xxxx xxxx xxxxx xxxxxxx xxxxxxxxx xxxx xxxx xxx xxxx xxxxxxx xxxxxx. Xxx xxxxxxx, xxxxxxx xx xxxxxxx Y xxxx xxxxxxxxxx xxxx xxxxxxx xxxx xxxxx xxx xxxxxxx xx xxxxxxx Y xxxx xx xxx xxxx, xxx xx xxxxxxx xxxx xxxxx xxxxxxx x xxxxxx xxxxxxx xxxxxxx Y xxx x xxxxxx xxxxxxx xxxxxxx Y. Xx xxx xxxxxxx x xxx xxx xxxx xxxxxxxx xxxxxxx xxxxxxx xxxxxxx xx xxxxx xxxxxxx, xxx xxxxx xxxxxxxxx xxx xxxx xxxx xxx xxx xxxx xxxxxxxxxx xxxx xxx xxxxxxx xxxxxxx xxxxxx.
+App data only roams between installed apps with the same version number. For example, devices on version 2 will transition data between each other and devices on version 3 will do the same, but no roaming will occur between a device running version 2 and a device running version 3. If you install a new app that utilized various version numbers on other devices, the newly installed app will sync the app data associated with the highest version number.
 
-### <span id="Testing_and_tools">
-            </span>
-            <span id="testing_and_tools">
-            </span>
-            <span id="TESTING_AND_TOOLS">
-            </span>Xxxxxxx xxx xxxxx
+### <span id="Testing_and_tools"></span><span id="testing_and_tools"></span><span id="TESTING_AND_TOOLS"></span>Testing and tools
 
-Xxxxxxxxxx xxx xxxx xxxxx xxxxxx xx xxxxx xx xxxxxxx x xxxxxxxxxxxxxxx xx xxxxxxx xxx xxxx. Xx xx xxxxx xxxx xxx xxx xxxx xxxx xxx xxxxxxxxxx xxxxxx x xxxxxxx xxxx xxxxx, xxxxxx xxxxx xxx xxxxxxxxx xxxxx xxx xxxx xxxx xxxx:
+Developers can lock their device in order to trigger a synchronization of roaming app data. If it seems that the app data does not transition within a certain time frame, please check the following items and make sure that:
 
--   Xxxx xxxxxxx xxxx xxxx xxx xxxxxx xxx xxxxxxx xxxx (xxx [**XxxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241625) xxx xxxxxxx).
--   Xxxx xxxxx xxx xxxxxx xxx xxxxxxxx xxxxxxxx.
--   Xxxxx xxx xx xxxxx xxx xxxxxxx xxxxxxx xxx xxxx xxxxxxx xx xxx xxx.
+-   Your roaming data does not exceed the maximum size (see [**RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625) for details).
+-   Your files are closed and released properly.
+-   There are at least two devices running the same version of the app.
 
 
-### <span id="Register_to_receive_notification_when_roaming_data_changes">
-            </span>
-            <span id="register_to_receive_notification_when_roaming_data_changes">
-            </span>
-            <span id="REGISTER_TO_RECEIVE_NOTIFICATION_WHEN_ROAMING_DATA_CHANGES">
-            </span>Xxxxxxxx xx xxxxxxx xxxxxxxxxxxx xxxx xxxxxxx xxxx xxxxxxx
+### <span id="Register_to_receive_notification_when_roaming_data_changes"></span><span id="register_to_receive_notification_when_roaming_data_changes"></span><span id="REGISTER_TO_RECEIVE_NOTIFICATION_WHEN_ROAMING_DATA_CHANGES"></span>Register to receive notification when roaming data changes
 
-Xx xxx xxxxxxx xxx xxxx, xxx xxxx xx xxxxxxxx xxx xxxxxxx xxxx xxxxxxx xxx xxxxxxxx xxx xxxxxxx xxxx xxxxxxxxxx xx xxx xxx xxxx xxx xxxxx xxxxxxxx.
+To use roaming app data, you need to register for roaming data changes and retrieve the roaming data containers so you can read and write settings.
 
-1.  Xxxxxxxx xx xxxxxxx xxxxxxxxxxxx xxxx xxxxxxx xxxx xxxxxxx.
+1.  Register to receive notification when roaming data changes.
 
-    Xxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241620) xxxxx xxxxxxxx xxx xxxx xxxxxxx xxxx xxxxxxx. Xxxx xxxxxxx xxxx `DataChangeHandler` xx xxx xxxxxxx xxx xxxxxxx xxxx xxxxxxx.
+    The [**DataChanged**](https://msdn.microsoft.com/library/windows/apps/br241620) event notifies you when roaming data changes. This example sets `DataChangeHandler` as the handler for roaming data changes.
 
 ```    CSharp
 void InitHandlers()
@@ -296,9 +219,9 @@ void InitHandlers()
     }
 ```
 
-2.  Xxx xxx xxxxxxxxxx xxx xxx xxx'x xxxxxxxx xxx xxxxx.
+2.  Get the containers for the app's settings and files.
 
-    Xxx xxx [**XxxxxxxxxxxXxxx.XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241624) xxxxxxxx xx xxx xxx xxxxxxxx xxx xxx [**XxxxxxxxxxxXxxx.XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241623) xxxxxxxx xx xxx xxx xxxxx.
+    Use the [**ApplicationData.RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624) property to get the settings and the [**ApplicationData.RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623) property to get the files.
 
 ```    CSharp
 Windows.Storage.ApplicationDataContainer roamingSettings = 
@@ -307,14 +230,9 @@ Windows.Storage.ApplicationDataContainer roamingSettings =
         Windows.Storage.ApplicationData.Current.RoamingFolder;
 ```
 
-### <span id="Create_and_retrieve_roaming_settings">
-            </span>
-            <span id="create_and_retrieve_roaming_settings">
-            </span>
-            <span id="CREATE_AND_RETRIEVE_ROAMING_SETTINGS">
-            </span>Xxxxxx xxx xxxxxxxx xxxxxxx xxxxxxxx
+### <span id="Create_and_retrieve_roaming_settings"></span><span id="create_and_retrieve_roaming_settings"></span><span id="CREATE_AND_RETRIEVE_ROAMING_SETTINGS"></span>Create and retrieve roaming settings
 
-Xxx xxx [**XxxxxxxxxxxXxxxXxxxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241615) xxxxxxxx xx xxxxxx xxx xxxxxxxx xx xxx `roamingSettings` xxxxxxxxx xx xxx xx xxx xxxxxxxx xxxxxxx. Xxxx xxxxxxx xxxxxxx x xxxxxx xxxxxxx xxxxx `exampleSetting` xxx x xxxxxxxxx xxxxx xxxxx `composite`.
+Use the [**ApplicationDataContainer.Values**](https://msdn.microsoft.com/library/windows/apps/br241615) property to access the settings in the `roamingSettings` container we got in the previous section. This example creates a simple setting named `exampleSetting` and a composite value named `composite`.
 
 ```CSharp
 // Simple setting
@@ -334,7 +252,7 @@ roamingSettings.Values["exampleCompositeSetting"] = composite;
 
 ```
 
-Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxxx xx xxxx xxxxxxx.
+This example retrieves the settings we just created.
 
 ```CSharp
 // Simple setting
@@ -356,14 +274,9 @@ else
 }
 ```
 
-### <span id="Create_and_retrieve_roaming_files">
-            </span>
-            <span id="create_and_retrieve_roaming_files">
-            </span>
-            <span id="CREATE_AND_RETRIEVE_ROAMING_FILES">
-            </span>Xxxxxx xxx xxxxxxxx xxxxxxx xxxxx
+### <span id="Create_and_retrieve_roaming_files"></span><span id="create_and_retrieve_roaming_files"></span><span id="CREATE_AND_RETRIEVE_ROAMING_FILES"></span>Create and retrieve roaming files
 
-Xx xxxxxx xxx xxxxxx x xxxx xx xxx xxxxxxx xxx xxxx xxxxx, xxx xxx xxxx XXXx, xxxx xx [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxxxx.XxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227249) xxx [**Xxxxxxx.Xxxxxxx.XxxxXX.XxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701505). Xxxx xxxxxxx xxxxxxx x xxxx xxxxx `dataFile.txt` xx xxx `roamingFolder` xxxxxxxxx xxx xxxxxx xxx xxxxxxx xxxx xxx xxxx xx xxx xxxx. Xxx **XxxxxxxXxxxxxxx** xxxxx xxxx xxx [**XxxxxxxxXxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241631) xxxxxxxxxxx xxxxxxxxx xx xxxxxxx xxx xxxx xx xx xxxxxxx xxxxxx.
+To create and update a file in the roaming app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) and [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). This example creates a file named `dataFile.txt` in the `roamingFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) enumeration indicates to replace the file if it already exists.
 
 ```CSharp
 async void WriteTimestamp()
@@ -377,7 +290,7 @@ async void WriteTimestamp()
 }
 ```
 
-Xx xxxx xxx xxxx x xxxx xx xxx xxxxxxx xxx xxxx xxxxx, xxx xxx xxxx XXXx, xxxx xx [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxxxx.XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxx.XxxXxxxXxxxXxxxxxxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701741), xxx [**Xxxxxxx.Xxxxxxx.XxxxXX.XxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701482). Xxxx xxxxxxx xxxxx xxx `dataFile.txt` xxxx xxxxxxx xx xxx xxxxxxxx xxxxxxx xxx xxxxx xxx xxxx xxxx xxx xxxx. Xxx xxxxxxx xx xxxxxxx xxxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxx, xxx [Xxx xx xxxx xxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
+To open and read a file in the roaming app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741), and [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). This example opens the `dataFile.txt` file created in the previous section and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
 
 ```CSharp
 async void ReadTimestamp()
@@ -396,40 +309,38 @@ async void ReadTimestamp()
 ```
 
 
-## <span id="Temporary_app_data">
-            </span>
-            <span id="temporary_app_data">
-            </span>
-            <span id="TEMPORARY_APP_DATA">
-            </span>Xxxxxxxxx xxx xxxx
+## <span id="Temporary_app_data"></span><span id="temporary_app_data"></span><span id="TEMPORARY_APP_DATA"></span>Temporary app data
 
 
-Xxx xxxxxxxxx xxx xxxx xxxxx xxxxx xxxx x xxxxx. Xxx xxxxx xx xxx xxxx xxx xxxxx xx xxxxxxx xx xxx xxxx. Xxx Xxxxxx Xxxxxxxxxxx xxxx xxx xxxxxxxxxxxxx xxxxxx xxxx xxxxxx xx xxxx xxxxxxxx xx xxx xxxx. Xxx xxxx xxx xxxx xxxxx xxxxx xxxx xxx xxxxxxxxx xxxx xxxxx xxxxx Xxxx Xxxxxxx. Xxxxxxxxx xxx xxxx xxx xx xxxx xxx xxxxxxx xxxxxxxxx xxxxxxxxxxx xxxxxx xx xxx xxxxxxx. Xxxxx xx xx xxxxxxxxx xxxx xxxx xxxx xxxx xxxxxxx xxxxxx xxx xxx xx xxx xxx xxxxxxx xx xxx xxxxxx xxxxx xxxxxxx xxx xxxx xxxxx xx xxxxxx. Xxx xxxxxxxx xx xxxxxxxxx xxx xxx [**xxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241629) xxxxxxxx.
+The temporary app data store works like a cache. Its files do not roam and could be removed at any time. The System Maintenance task can automatically delete data stored at this location at any time. The user can also clear files from the temporary data store using Disk Cleanup. Temporary app data can be used for storing temporary information during an app session. There is no guarantee that this data will persist beyond the end of the app session as the system might reclaim the used space if needed. The location is available via the [**temporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) property.
 
-### <span id="Retrieve_the_temporary_data_container">
-            </span>
-            <span id="retrieve_the_temporary_data_container">
-            </span>
-            <span id="RETRIEVE_THE_TEMPORARY_DATA_CONTAINER">
-            </span>Xxxxxxxx xxx xxxxxxxxx xxxx xxxxxxxxx
+### <span id="Retrieve_the_temporary_data_container"></span><span id="retrieve_the_temporary_data_container"></span><span id="RETRIEVE_THE_TEMPORARY_DATA_CONTAINER"></span>Retrieve the temporary data container
 
-Xxx xxx [**XxxxxxxxxxxXxxx.XxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241629) xxxxxxxx xx xxx xxx xxxxx. Xxx xxxx xxxxx xxx xxx `temporaryFolder` xxxxxxxx xxxx xxxx xxxx.
+Use the [**ApplicationData.TemporaryFolder**](https://msdn.microsoft.com/library/windows/apps/br241629) property to get the files. The next steps use the `temporaryFolder` variable from this step.
 
 ```CSharp
-Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.TemporaryFolder;
+Windows.Storage.StorageFolder temporaryFolder = ApplicationData.Current.TemporaryFolder;</code></pre></td>
+</tr>
+</tbody>
+</table>
 ```
 
-### <span id="Create_and_read_temporary_files">
-            </span>
-            <span id="create_and_read_temporary_files">
-            </span>
-            <span id="CREATE_AND_READ_TEMPORARY_FILES">
-            </span>Xxxxxx xxx xxxx xxxxxxxxx xxxxx
+### <span id="Create_and_read_temporary_files"></span><span id="create_and_read_temporary_files"></span><span id="CREATE_AND_READ_TEMPORARY_FILES"></span>Create and read temporary files
 
-Xx xxxxxx xxx xxxxxx x xxxx xx xxx xxxxxxxxx xxx xxxx xxxxx, xxx xxx xxxx XXXx, xxxx xx [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxxxx.XxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227249) xxx [**Xxxxxxx.Xxxxxxx.XxxxXX.XxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701505). Xxxx xxxxxxx xxxxxxx x xxxx xxxxx `dataFile.txt` xx xxx `temporaryFolder` xxxxxxxxx xxx xxxxxx xxx xxxxxxx xxxx xxx xxxx xx xxx xxxx. Xxx **XxxxxxxXxxxxxxx** xxxxx xxxx xxx [**XxxxxxxxXxxxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241631) xxxxxxxxxxx xxxxxxxxx xx xxxxxxx xxx xxxx xx xx xxxxxxx xxxxxx.
+To create and update a file in the temporary app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.CreateFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227249) and [**Windows.Storage.FileIO.WriteTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701505). This example creates a file named `dataFile.txt` in the `temporaryFolder` container and writes the current date and time to the file. The **ReplaceExisting** value from the [**CreationCollisionOption**](https://msdn.microsoft.com/library/windows/apps/br241631) enumeration indicates to replace the file if it already exists.
 
 <span codelanguage="CSharp"></span>
 ```CSharp
+<colgroup>
+<col width="100%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">C#</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
 async void WriteTimestamp()
 {
    Windows.Globalization.DateTimeFormatting.DateTimeFormatter formatter = 
@@ -441,7 +352,7 @@ async void WriteTimestamp()
 }
 ```
 
-Xx xxxx xxx xxxx x xxxx xx xxx xxxxxxxxx xxx xxxx xxxxx, xxx xxx xxxx XXXx, xxxx xx [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxxxx.XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Xxxxxxx.Xxxxxxx.XxxxxxxXxxx.XxxXxxxXxxxXxxxxxxxxxxXxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701741), xxx [**Xxxxxxx.Xxxxxxx.XxxxXX.XxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701482). Xxxx xxxxxxx xxxxx xxx `dataFile.txt` xxxx xxxxxxx xx xxx xxxxxxxx xxxx xxx xxxxx xxx xxxx xxxx xxx xxxx. Xxx xxxxxxx xx xxxxxxx xxxx xxxxxxxxx xxxx xxxxxxx xxxxxxxxx, xxx [Xxx xx xxxx xxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
+To open and read a file in the temporary app data store, use the file APIs, such as [**Windows.Storage.StorageFolder.GetFileAsync**](https://msdn.microsoft.com/library/windows/apps/br227272), [**Windows.Storage.StorageFile.GetFileFromApplicationUriAsync**](https://msdn.microsoft.com/library/windows/apps/hh701741), and [**Windows.Storage.FileIO.ReadTextAsync**](https://msdn.microsoft.com/library/windows/apps/hh701482). This example opens the `dataFile.txt` file created in the previous step and reads the date from the file. For details on loading file resources from various locations, see [How to load file resources](https://msdn.microsoft.com/library/windows/apps/xaml/hh965322).
 
 ```CSharp
 async void ReadTimestamp()
@@ -459,17 +370,12 @@ async void ReadTimestamp()
 }
 ```
 
-## <span id="Organize_app_data_with_containers">
-            </span>
-            <span id="organize_app_data_with_containers">
-            </span>
-            <span id="ORGANIZE_APP_DATA_WITH_CONTAINERS">
-            </span>Xxxxxxxx xxx xxxx xxxx xxxxxxxxxx
+## <span id="Organize_app_data_with_containers"></span><span id="organize_app_data_with_containers"></span><span id="ORGANIZE_APP_DATA_WITH_CONTAINERS"></span>Organize app data with containers
 
 
-Xx xxxx xxx xxxxxxxx xxxx xxx xxxx xxxxxxxx xxx xxxxx, xxx xxxxxx xxxxxxxxxx (xxxxxxxxxxx xx [**XxxxxxxxxxxXxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241599) xxxxxxx) xxxxxxx xx xxxxxxx xxxxxxxx xxxx xxxxxxxxxxx. Xxx xxx xxx xxxxxxxxxx xx xxx xxxxx, xxxxxxx, xxx xxxxxxxxx xxx xxxx xxxxxx. Xxxxxxxxxx xxx xx xxxxxx xx xx YY xxxxxx xxxx.
+To help you organize your app data settings and files, you create containers (represented by [**ApplicationDataContainer**](https://msdn.microsoft.com/library/windows/apps/br241599) objects) instead of working directly with directories. You can add containers to the local, roaming, and temporary app data stores. Containers can be nested up to 32 levels deep.
 
-Xx xxxxxx x xxxxxxxx xxxxxxxxx, xxxx xxx [**XxxxxxxxxxxXxxxXxxxxxxxx.XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241611) xxxxxx. Xxxx xxxxxxx xxxxxxx x xxxxx xxxxxxxx xxxxxxxxx xxxxx `exampleContainer` xxx xxxx x xxxxxxx xxxxx `exampleSetting`. Xxx **Xxxxxx** xxxxx xxxx xxx [**XxxxxxxxxxxXxxxXxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241616) xxxxxxxxxxx xxxxxxxxx xxxx xxx xxxxxxxxx xx xxxxxxx xx xx xxxxx'x xxxxxxx xxxxx.
+To create a settings container, call the [**ApplicationDataContainer.CreateContainer**](https://msdn.microsoft.com/library/windows/apps/br241611) method. This example creates a local settings container named `exampleContainer` and adds a setting named `exampleSetting`. The **Always** value from the [**ApplicationDataCreateDisposition**](https://msdn.microsoft.com/library/windows/apps/br241616) enumeration indicates that the container is created if it doesn't already exist.
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -487,15 +393,10 @@ if (localSettings.Containers.ContainsKey("exampleContainer"))
 }
 ```
 
-## <span id="Delete_app_settings_and_containers">
-            </span>
-            <span id="delete_app_settings_and_containers">
-            </span>
-            <span id="DELETE_APP_SETTINGS_AND_CONTAINERS">
-            </span>Xxxxxx xxx xxxxxxxx xxx xxxxxxxxxx
+## <span id="Delete_app_settings_and_containers"></span><span id="delete_app_settings_and_containers"></span><span id="DELETE_APP_SETTINGS_AND_CONTAINERS"></span>Delete app settings and containers
 
 
-Xx xxxxxx x xxxxxx xxxxxxx xxxx xxxx xxx xx xxxxxx xxxxx, xxx xxx [**XxxxxxxxxxxXxxxXxxxxxxxxXxxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241608) xxxxxx. Xxxx xxxxxxx xxxxxxxxxx `exampleSetting` xxxxx xxxxxxx xxxx xx xxxxxxx xxxxxxx.
+To delete a simple setting that your app no longer needs, use the [**ApplicationDataContainerSettings.Remove**](https://msdn.microsoft.com/library/windows/apps/br241608) method. This example deletesthe `exampleSetting` local setting that we created earlier.
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -508,7 +409,7 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.Values.Remove("exampleSetting");
 ```
 
-Xx xxxxxx x xxxxxxxxx xxxxxxx, xxx xxx [**XxxxxxxxxxxXxxxXxxxxxxxxXxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241597) xxxxxx. Xxxx xxxxxxx xxxxxxx xxx xxxxx `exampleCompositeSetting` xxxxxxxxx xxxxxxx xx xxxxxxx xx xx xxxxxxx xxxxxxx.
+To delete a composite setting, use the [**ApplicationDataCompositeValue.Remove**](https://msdn.microsoft.com/library/windows/apps/br241597) method. This example deletes the local `exampleCompositeSetting` composite setting we created in an earlier example.
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -521,7 +422,7 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.Values.Remove("exampleCompositeSetting");
 ```
 
-Xx xxxxxx x xxxxxxxxx, xxxx xxx [**XxxxxxxxxxxXxxxXxxxxxxxx.XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241612) xxxxxx. Xxxx xxxxxxx xxxxxxx xxx xxxxx `exampleContainer` xxxxxxxx xxxxxxxxx xx xxxxxxx xxxxxxx.
+To delete a container, call the [**ApplicationDataContainer.DeleteContainer**](https://msdn.microsoft.com/library/windows/apps/br241612) method. This example deletes the local `exampleContainer` settings container we created earlier.
 
 ```CSharp
 Windows.Storage.ApplicationDataContainer localSettings = 
@@ -534,23 +435,22 @@ Windows.Storage.StorageFolder localFolder =
 localSettings.DeleteContainer("exampleContainer");
 ```
 
-## <span id="Versioning_your_app_data">
-            </span>
-            <span id="versioning_your_app_data">
-            </span>
-            <span id="VERSIONING_YOUR_APP_DATA">
-            </span>Xxxxxxxxxx xxxx xxx xxxx
+## <span id="Versioning_your_app_data"></span><span id="versioning_your_app_data"></span><span id="VERSIONING_YOUR_APP_DATA"></span>Versioning your app data
 
 
-Xxx xxx xxxxxxxxxx xxxxxxx xxx xxx xxxx xxx xxxx xxx. Xxxx xxxxx xxxxxx xxx xx xxxxxx x xxxxxx xxxxxxx xx xxxx xxx xxxx xxxxxxx xxx xxxxxx xx xxx xxx xxxx xxxxxxx xxxxxxx xxxxxxxxxxxxx xxxxxxxx xxxx xxx xxxxxxxx xxxxxxx xx xxxx xxx. Xxx xxx xxxxxx xxx xxxxxxx xx xxx xxx xxxx xx xxx xxxx xxxxx, xxx xx xxx xxxxxxx xx xxxx xxxx xxx xxxxxxx xxx xxx xxxxxxx, xxx xxx xxxxxx xxxxxx xxx xxx xxxx xx xxx xxx xxxxxx xxx xxxxxx xxx xxxxxxx. Xxx xxxx xxxx, xxx xxx[**Xxxxxxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241630) xxxxxxxx xxx xxx [**XxxxxxxxxxxXxxx.XxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701429) xxxxxx.
+You can optionally version the app data for your app. This would enable you to create a future version of your app that changes the format of its app data without causing compatibility problems with the previous version of your app. The app checks the version of the app data in the data store, and if the version is less than the version the app expects, the app should update the app data to the new format and update the version. For more info, see the[**Application.Version**](https://msdn.microsoft.com/library/windows/apps/br241630) property and the [**ApplicationData.SetVersionAsync**](https://msdn.microsoft.com/library/windows/apps/hh701429) method.
 
-## Xxxxxxx xxxxxxxx
+## Related articles
 
-* [**Xxxxxxx.Xxxxxxx.XxxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br241587)
-* [**Xxxxxxx.Xxxxxxx.XxxxxxxxxxxXxxx.XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241624)
-* [**Xxxxxxx.Xxxxxxx.XxxxxxxxxxxXxxx.XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241623)
-* [**Xxxxxxx.Xxxxxxx.XxxxxxxxxxxXxxx.XxxxxxxXxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241625)
-* [**Xxxxxxx.Xxxxxxx.XxxxxxxxxxxXxxxXxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br241588)
+* [**Windows.Storage.ApplicationData**](https://msdn.microsoft.com/library/windows/apps/br241587)
+* [**Windows.Storage.ApplicationData.RoamingSettings**](https://msdn.microsoft.com/library/windows/apps/br241624)
+* [**Windows.Storage.ApplicationData.RoamingFolder**](https://msdn.microsoft.com/library/windows/apps/br241623)
+* [**Windows.Storage.ApplicationData.RoamingStorageQuota**](https://msdn.microsoft.com/library/windows/apps/br241625)
+* [**Windows.Storage.ApplicationDataCompositeValue**](https://msdn.microsoft.com/library/windows/apps/br241588)
 
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO4-->
+
+

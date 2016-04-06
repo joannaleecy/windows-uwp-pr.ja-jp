@@ -1,188 +1,192 @@
 ---
-xxxxx: Xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxx
-xxxxxxxxxxx: Xxx xxxxxx xx xxxx xxxxxxx xxxx xxx xx xxx xxxx xxx xxxxxxxxxxx xxxx xx xxx xxxxxxxxxx xx xxxxxxxxxx xx xxxxxxxx xxxx xxxxxxxxxx xxxxx.
-xx.xxxxxxx: XXXYXXXX-XYYY-YXXX-XYXY-YYXYYXYYYXYY
+title: Support your app with background tasks
+description: The topics in this section show how to run your own lightweight code in the background by responding to triggers with background tasks.
+ms.assetid: EFF7CBFB-D309-4ACB-A2A5-28E19D447E32
 ---
 
-# Xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxx
+# Support your app with background tasks
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-Xxx xxxxxx xx xxxx xxxxxxx xxxx xxx xx xxx xxxx xxx xxxxxxxxxxx xxxx xx xxx xxxxxxxxxx xx xxxxxxxxxx xx xxxxxxxx xxxx xxxxxxxxxx xxxxx. Xxxxxxxxxx xxxxx xxx xxxxxxxxxxx xxxxxxx xxxx xxx XX xxxx xx xxx xxxxxxxxxx. Xxx xxx xxx xxxxxxxxxx xxxxx xx xxxxxxx xxxxxxxxxxxxx xxxx xxxx xxx xx xxxxxxxxx xx xxx xxxxxxx. Xxx xxx xxxx xxx xxxxxxxxxx xxxxx xxx xxxx-xxxx xxxxxxxxxxxxx xxxx xxxx XXXX, xxxx, xxx XX.
+The topics in this section show how to run your own lightweight code in the background by responding to triggers with background tasks. Background tasks are lightweight classes that the OS runs in the background. You can use background tasks to provide functionality when your app is suspended or not running. You can also use background tasks for real-time communication apps like VOIP, mail, and IM.
 
-Xxxxxxxxxx xxxxx xxx xxxxxxxx xxxxxxx xxxx xxxxxxxxx xxx [**XXxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224794) xxxxxxxxx. Xxx xxxxxxxx x xxxxxxxxxx xxxx xx xxxxx xxx [**XxxxxxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768) xxxxx. Xxx xxxxx xxxx xx xxxx xx xxxxxxx xxx xxxxx xxxxx xxxx xxx xxxxxxxxxxx xxx xxxxxxxxxx xxxx.
+Background tasks are separate classes that implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface. You register a background task by using the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) class. The class name is used to specify the entry point when you registering the background task.
 
-Xx xxx xxxxxxx xxxxxxx xxxx x xxxxxxxxxx xxxx, xxx [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md).
+To get started quickly with a background task, see [Create and register a background task](create-and-register-a-background-task.md).
 
-**Xxx**  Xxxxxxxx xxxx Xxxxxxx YY, xxx xx xxxxxx xxxx xx xxxxx xx xxx xx xxx xxxx xxxxxx xx xxxxx xx xxxxxxxx xxxxxxxxxx xxxxx.
+**Tip**  Starting with Windows 10, you no longer need to place an app on the lock screen in order to register background tasks.
 
  
 
-## Xxxxxxxxxx xxxxx xxx xxxxxx xxxxxx
+## Background tasks for system events
 
 
-Xxxx xxx xxx xxxxxxx xx xxxxxx-xxxxxxxxx xxxxxx xx xxxxxxxxxxx x xxxxxxxxxx xxxx xxxx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224838) xxxxx. Xx xxx xxx xxx xxx xx xxx xxxxxxxxx xxxxxx xxxxx xxxxxxxx (xxxxxxx xx [**XxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224839))
+Your app can respond to system-generated events by registering a background task with the [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224838) class. An app can use any of the following system event triggers (defined in [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839))
 
-| Xxxxxxx xxxx                     | Xxxxxxxxxxx                                                                                                    |
+| Trigger name                     | Description                                                                                                    |
 |----------------------------------|----------------------------------------------------------------------------------------------------------------|
-| **XxxxxxxxXxxxxxxxx**            | Xxx Xxxxxxxx xxxxxxx xxxxxxxxx.                                                                                |
-| **XxxxxxxXxxxxXxxxxx**           | X xxxxxxx xxxxxx xxxx xx x xxxxxx xx xxxx xx xxxxxxxxxxxx xxxxxx.                                              |
-| **XxxxxxXxXxxxxxxxxXxxxxXxxxxx** | Xxxxxx XX xxxxxxxxxx xxxx xxx xxxxxxx xxxxxxx.                                                                 |
-| **XxxXxxxxxxx**                  | X xxx XXX xxxxxxx xx xxxxxxxx xx xx xxxxxxxxx xxxxxx xxxxxxxxx xxxxxx.                                         |
-| **XxxxXxxxXxxxxx**               | Xxx xxxx xxxx xxxxxxx xx xxx xxxxxx (xxx xxxxxxx, xxxx xxx xxxxxx xxxxxxx xxx xxxxx xxx xxxxxxxx xxxxxx xxxx). |
+| **InternetAvailable**            | The Internet becomes available.                                                                                |
+| **NetworkStateChange**           | A network change such as a change in cost or connectivity occurs.                                              |
+| **OnlineIdConnectedStateChange** | Online ID associated with the account changes.                                                                 |
+| **SmsReceived**                  | A new SMS message is received by an installed mobile broadband device.                                         |
+| **TimeZoneChange**               | The time zone changes on the device (for example, when the system adjusts the clock for daylight saving time). |
 
  
 
-Xxx xxxx xxxx xxx [Xxxxxxx xx xxxxxx xxxxxx xxxx xxxxxxxxxx xxxxx](respond-to-system-events-with-background-tasks.md).
+For more info see [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md).
 
-## Xxxxxxxxxx xxx xxxxxxxxxx xxxxx
+## Conditions for background tasks
 
 
-Xxx xxx xxxxxxx xxxx xxx xxxxxxxxxx xxxx xxxx, xxxx xxxxx xx xx xxxxxxxxx, xx xxxxxx x xxxxxxxxx. Xxxx xxxxxxxxx, x xxxxxxxxxx xxxx xxxx xxx xxx xxxxx xxx xx xxx xxxxxxxxxx xxx xxx. Xxx xxxxxxxxx xxxxxxxxxx (xxxxxxxxxxx xx xxx [**XxxxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224835) xxxxxxxxxxx) xxx xx xxxx.
+You can control when the background task runs, even after it is triggered, by adding a condition. Once triggered, a background task will not run until all of its conditions are met. The following conditions (represented by the [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835) enumeration) can be used.
 
-| Xxxxxxxxx xxxx           | Xxxxxxxxxxx                       |
+| Condition name           | Description                       |
 |--------------------------|-----------------------------------|
-| **XxxxxxxxXxxxxxxxx**    | Xxx Xxxxxxxx xxxx xx xxxxxxxxx.   |
-| **XxxxxxxxXxxXxxxxxxxx** | Xxx Xxxxxxxx xxxx xx xxxxxxxxxxx. |
-| **XxxxxxxXxxxxxxxx**     | Xxx xxxxxxx xxxx xx xxxxxxxxx.    |
-| **XxxxxxxXxxxxxxxxxxx**  | Xxx xxxxxxx xxxx xx xxxxxxxxxxxx. |
-| **XxxxXxxXxxxxxx**       | Xxx xxxx xxxx xx xxxx.            |
-| **XxxxXxxxxxx**          | Xxx xxxx xxxx xx xxxxxxx.         |
+| **InternetAvailable**    | The Internet must be available.   |
+| **InternetNotAvailable** | The Internet must be unavailable. |
+| **SessionConnected**     | The session must be connected.    |
+| **SessionDisconnected**  | The session must be disconnected. |
+| **UserNotPresent**       | The user must be away.            |
+| **UserPresent**          | The user must be present.         |
 
  
 
-Xxx xxxx xxxx xxx [Xxx xxxxxxxxxx xxx xxxxxxx x xxxxxxxxxx xxxx](set-conditions-for-running-a-background-task.md).
+For more info see [Set conditions for running a background task](set-conditions-for-running-a-background-task.md).
 
-## Xxxxxxxxxxx xxxxxxxx xxxxxxxxxxxx
-
-
-Xxxxxx xxxx xxx xxx xxxxxxxxxxxx xxxxxxxx x xxxxxxxxxx xxxx, xx xxxx xx xxxxxxxx xx xxx xxxxxxxxxxx xxxxxxxx. Xxx xxxx xxxx xxx [Xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx](declare-background-tasks-in-the-application-manifest.md).
-
-## Xxxxxxxxxx xxxxx
+## Application manifest requirements
 
 
-Xxx xxxxxxxxx xxxx-xxxx xxxxxxxx xxx xx xxxx xx xxx xxxxxxxxxxx xxxxxx xxxx xx xxx xxxxxxxxxx:
+Before your app can successfully register a background task, it must be declared in the application manifest. For more info see [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md).
 
-**Xxxxxxx Xxxxxxx:  **Xxxxxxxxxx xxxxx xxx xxxx x xxxxxxxxxx xxxxx, xxx xxxxxxx xxxxxxxx xx xxx xxxxxxx xxxxxxx, xx xxxxx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032). Xx xxxx xxx xx xxxxxxxxx xx x xxxxxx, xxx xxx xxx xxx Xxxxxx Xxxxxx xxxxxxx xx xxx **XxxxxxxXxxxxxxXxxxxxx**. Xxx xxxx xxxxxxx xx xxxxx xxx Xxxxxx Xxxxxx, xxx [XxxxxxXxxxxxxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn806009). Xxx **XxxxxxxXxxxxxxXxxxxxx** xx xxx xxxxxxxxx xx Xxxxxxx Xxxxx.
-
-**Xxxxx:  **Xxxxxxxxxx xxxxx xxx xxx xx xxxxxxxxxx xx xxxxx YY xxxxxxx, xxx xxxx xxx xx xxx xx xxx xx x xxxxxxx xxxx xx xxxxx xxx [**XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224843). Xxx xxxx xxxx xxx [Xxx x xxxxxxxxxx xxxx xx x xxxxx](run-a-background-task-on-a-timer-.md).
-
-**Xxxx Xxxxxxxxxxxx:  **Xxxxxxxxxx xxxxx xxxxxxx xx xxx [**XxxxXxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700543) xx xxxxxxx xxx xxxx xxxxxxxxxxxxx.
-
-**Xxxx**  
-
-Xxxxxxxxx Xxxxxxx xxxx xxxx xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700485) xxxxxx xxxxxxxxxxx xxx xx xxx xxxxxxxxxx xxxxxxx xxxxx.
-
-Xx xxxxxx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx xxxxxxxxx xx xxx xxxxxxxx xxxxx xxx xxxxxxx xx xxxxxx, xxx xxxx xxxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700471) xxx xxxx xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700485) xxxx xxxx xxx xxxxxxxx xxxxx xxxxx xxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxxxxx xxxxx](guidelines-for-background-tasks.md).
-
-## Xxxxxx xxxxx xxxxxxxx
+## Background tasks
 
 
-> **Xxxx**  Xxx [**XxxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224839) xxxxxxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxx xxxxx xxxxxxxx.
+The following real-time triggers can be used to run lightweight custom code in the background:
 
-| Xxxxxxx xxxx            | Xxxxxxxxxxx                                                       |
+**Control Channel:  **Background tasks can keep a connection alive, and receive messages on the control channel, by using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032). If your app is listening to a socket, you can use the Socket Broker instead of the **ControlChannelTrigger**. For more details on using the Socket Broker, see [SocketActivityTrigger](https://msdn.microsoft.com/library/windows/apps/dn806009). The **ControlChannelTrigger** is not supported on Windows Phone.
+
+**Timer:  **Background tasks can run as frequently as every 15 minutes, and they can be set to run at a certain time by using the [**TimeTrigger**](https://msdn.microsoft.com/library/windows/apps/br224843). For more info see [Run a background task on a timer](run-a-background-task-on-a-timer-.md).
+
+**Push Notification:  **Background tasks respond to the [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) to receive raw push notifications.
+
+**Note**  
+
+Universal Windows apps must call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) before registering any of the background trigger types.
+
+To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
+
+## System event triggers
+
+
+> **Note**  The [**SystemTriggerType**](https://msdn.microsoft.com/library/windows/apps/br224839) enumeration includes the following system event triggers.
+
+| Trigger name            | Description                                                       |
 |-------------------------|-------------------------------------------------------------------|
-| **XxxxXxxxxxx**         | Xxx xxxxxxxxxx xxxx xx xxxxxxxxx xxxx xxx xxxx xxxxxxx xxxxxxx.   |
-| **XxxxXxxx**            | Xxx xxxxxxxxxx xxxx xx xxxxxxxxx xxxx xxx xxxx xxxxxxx xxxxxx.    |
-| **XxxxxxxXxxxxxxXxxxx** | Xxx xxxxxxxxxx xxxx xx xxxxxxxxx xxxx x xxxxxxx xxxxxxx xx xxxxx. |
-| **XxxxxxxXxxxxxxxx**    | Xxx xxxxxxxxxx xxxx xx xxxxxxxxx xxxx xxx xxxxxxx xx xxxxxxxxx.   |
+| **UserPresent**         | The background task is triggered when the user becomes present.   |
+| **UserAway**            | The background task is triggered when the user becomes absent.    |
+| **ControlChannelReset** | The background task is triggered when a control channel is reset. |
+| **SessionConnected**    | The background task is triggered when the session is connected.   |
 
  
 
-Xxx xxxxxxxxx xxxxxx xxxxx xxxxxxxx xxxx xx xxxxxxxx xx xxxxxxxxx xxxx xxx xxxx xxx xxxxx xx xxx xx xx xxx xxx xxxx xxxxxx.
+The following system event triggers make it possible to recognize when the user has moved an app on or off the lock screen.
 
-| Xxxxxxx xxxx                     | Xxxxxxxxxxx                                  |
+| Trigger name                     | Description                                  |
 |----------------------------------|----------------------------------------------|
-| **XxxxXxxxxxXxxxxxxxxxxXxxxx**   | Xx xxx xxxx xx xxxxx xx xxx xxxx xxxxxx.     |
-| **XxxxXxxxxxXxxxxxxxxxxXxxxxxx** | Xx xxx xxxx xx xxxxxxx xxxx xxx xxxx xxxxxx. |
+| **LockScreenApplicationAdded**   | An app tile is added to the lock screen.     |
+| **LockScreenApplicationRemoved** | An app tile is removed from the lock screen. |
 
  
-## Xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxx
+## Background task resource constraints
 
 
-Xxxxxxxxxx xxxxx xxx xxxxxxxxxxx. Xxxxxxx xxxxxxxxxx xxxxxxxxx xx x xxxxxxx xxxxxxx xxx xxxx xxxx xxxxxxxxxx xxxx xxxxxxxxxx xxxx xxx xxxxxxx xxxx. Xxxx xx xxxxxxxx xx xxxxxxxx xxxxxxxx xxxxxxxxxxx xx xxxxxxxxxx xxxxx:
+Background tasks are lightweight. Keeping background execution to a minimum ensures the best user experience with foreground apps and battery life. This is enforced by applying resource constraints to background tasks:
 
--   Xxxxxxxxxx xxxxx xxx xxxxxxx xx YY xxxxxxx xx xxxx-xxxxx xxxxx.
+-   Background tasks are limited to 30 seconds of wall-clock usage.
 
-## Xxxxxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxx
-
-
-### Xxxxxx xxxxxxxxxxx
-
-Xxx xx xxx xxxxxxxx xxxxxxxxxxx xxx xxx-xxxxxx xxxxxxx, xxxxxxxxxx xxxxx xxx xxxx x xxxxxx xxxxx xxxx xxxxxxxxxx xxx xxxxxxx xxxxxx xx xxxxxx xxx xxxxxxxxxx xxxx xxx xxx. Xx xxxx xxxxxxxxxx xxxx xxxxxxxx xx xxxxxxxxx xxxx xxxxx xxxxxx xxxx xxxxx, xxx xxxxxxxxx xxxx xxxx xxx xxx xxxxxxxx xx xxx-xx-xxxxxx xxxxxxxxx xxxx xxx xxxx xxx xxxxxx. Xx xxx xxxx xxxx xxx xxxxxx xxx xxx-xx-xxxxxx xxxxxxxxx, xx xxx xxxxxx xx xxx xxxxxxxxx xxxxxxxxx xx xxxx xxxx xx xxx-xx-xxxxxx xxxxxxxxx xxx xxx xxxxxxxxx, xxxx xxx xxxx xxxx xx xxxxxxxxxx xxxxxxxxxxx. Xxx xxx xxx xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn633831) XXXx xx xxxxx xxxx xxxxxxx xxxxxx xxxxx xxx xxxxx xx xxxxx xx xxxxxxxx xxxx xxx (xx xxx), xxx xx xxxxxxx xxxx xxxxxxxxxx xxxx'x xxxxxxx xxxxxx xxxxx.
-
-### Xxx-xxxxxx xxxxx xxx xxxx xxxx xxxxxxxxxx xxxxx xxx xxx-xxxxxx xxxxxxx
-
-Xx xxxxxx-xxxxxxxxxxx xxxxxxx, xxxxx xx x xxxxx xx xxx xxxxxx xx xxxx xxxx xxx xx xxxxxxxxx xx x xxxxxx xxx xxx xxxxxxxxxx xxxxx xx xxx xxxxx xxxx. Xx xxxx xxxxxx xx xxxxxxxx, xxx xxxx xx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700485), xxxxx xx xxxxxxxx xx xxxxxxxx xxx xxxxxxxxxx xxxxx, xxxx xxxx.
-
-### Xxxxxxx Xxxxx
-
-Xxxxxx xxx xxxxxx xxxx xxx xx xxxx xx xxx xxxxx xxx xxxxxxxxxx xxxxx xxx xxxxxxx xxxx xxxxxxxxxxxxx xxxx Xxxxxxx Xxxxx xx xx, xxx Xxxxxxx Xxxxx xxxxxxx, xxxx xxxxxxx, xxxx xxxxxxx xxxxxxxxxx xxxxx xxxx xxxxxxx xxxx xxx xxxxxx xx xxx xxxxxxxxx xx xxxxxxxx xxxxx xxx xxx xxxxxxx xxxx xxxxx x xxxxxxxxx xxxxxx xx xxxxx xxxxxxxxx. Xxxx xxxx xxx xxxxxxx xxx xxxx xxxxxxxxxxx xxxxxxxxxx xxxxx.
-
-## Xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxx xxx xxxx-xxxx xxxxxxxxxxxxx
+## Additional background task resource constraints
 
 
-Xx xxxxxxx xxxxxxxx xxxxxx xxxx xxxxxxxxxxx xxxx xxxx-xxxx xxxxxxxxxxxxx xxxxxxxxxxxxx, xxxxxxxxxx xxxxx xxxxx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032) xxx [**XxxxXxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700543) xxxxxxx xxxxxxxxxx XXX xxxxxxxx xxxxxx xxx xxxxx xxxxxxx xxxx. Xxx xxxxxxxx xxxxxx xxx xx xxxxxxxxx xxxxx, xxx xxxxxx xxxxxxxx xxx xxxxx xxxxxxxxxx xxxxx.
+### Memory constraints
 
-Xxxx xxx xxxxx'x xxxx xx xx xxxxxxxx xxxxxxxxxxx xx xxx xxx xxxxxxxxxx xxxxxxxx xxxxxx xxx [**XxxxxxxXxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701032) xxx [**XxxxXxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700543) xxxxxxxxxx xxxxx. Xxx xxxxxx xxxxxx xxxxxx xxxxx xx xxxxxxxx xxxxxxxxxx xxxxx.
+Due to the resource constraints for low-memory devices, background tasks may have a memory limit that determines the maximum amount of memory the background task can use. If your background task attempts an operation that would exceed this limit, the operation will fail and may generate an out-of-memory exception that the task can handle. If the task does not handle the out-of-memory exception, or the nature of the attempted operation is such that an out-of-memory exception was not generated, then the task will be terminated immediately. You can use the [**MemoryManager**](https://msdn.microsoft.com/library/windows/apps/dn633831) APIs to query your current memory usage and limit in order to discover your cap (if any), and to monitor your background task's ongoing memory usage.
 
-## Xxxxxxxxxxx xxxxxxx
+### Per-device limit for apps with background tasks for low-memory devices
 
+On memory-constrained devices, there is a limit to the number of apps that can be installed on a device and use background tasks at any given time. If this number is exceeded, the call to [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485), which is required to register all background tasks, will fail.
 
-Xxxxxxxxxxx xxxxx xxxx xxx xxxx xxx xxxxxx xx xxxxxxx xx xx XX xxxxx. Xxx xxxx xxxx xxx [Xxx x xxxxxxxxxxx xxxxxxx](use-a-maintenance-trigger.md).
+### Battery Saver
 
-## Xxxxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxx
+Unless you exempt your app so that it can still run background tasks and receive push notifications when Battery Saver is on, the Battery Saver feature, when enabled, will prevent background tasks from running when the device is not connected to external power and the battery goes below a specified amount of power remaining. This will not prevent you from registering background tasks.
 
-
-Xxxx xxx xxx xxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxxx xxxx x xxxxxxxxxx xxxx xxxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxxx. Xxx xxx xxx xxxx xxxxxxx xxx xxxx-xxxxxxx xxxxxxxxxx xxxx xx xxxx xxxxxxxxxxxxxxx xx xxxxxxxxxx. Xxxxxx xxxxx xxx xxxxxx xxxxxx, x **XxxxxxXxxXxxxxxx** xxxx xxx xxxx xx xxxxxxxxx xxxxx xxxx xxx xx xxxxxxx xx xxx xxxxxxxxxx xxx xx xxxxxxxxxx xxx xx xxx xx xx.
-
-Xxxx xxxxxxxx xxxxxx xxxxxxxxxx, xxxx xx xxxx xxxxxxx xxxxxxxx xxxxxxx, xxxxxx xx xxxxxxxxx xxxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337). Xxxx xxxxxxxxxx xxx xx xxxxxxxxx xxxx xx xxx XX, xxx xxxx xx x xxxxxxxxxx xxx xxxx xxxx xxx [**XxxxxxXxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297315). X *xxxxxxxxxx xxx* xx xx xxx xxxx xxx xxxxxx'x xxxxxxxxxxxx xxx xxxxxxxxxx xx xxxxxxx xxxxx xxxxxxxxxx. Xxxxxx xxxxxxxx xx xxxx xx xxxxxxx xxxxx xxx, xx xxx, xxx xxxx xxxxxxxxxx xx xxx xxxxxxxxxx xxx xxx x xxxxxx. Xxx xxxx xxxx, xxx [Xxxxxx xxxx xxx xxxxxx xxx Xxxxxxx Xxxxx xxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=306619)
-
-## Xxxxxxxx xxxxxxxxxx xxxxx
+## Background task resource guarantees for real-time communication
 
 
-Xxxxxxxxxx xxxxx xxx xxxxxx xxxxxxxx, xxxxxxxxxx, xxx xxxxxxxxxxxx xx xxxx xxx xxxxx xxxxxx xxx xxxxx xxxxxxx. Xxxx xxx xxx xxxx xxxxx xxxxxxxxxx xxxxxx xx x xxxxxxxxxx xxxx, xxx xxxxxx xxxxxxxxxx xxxx xxxxxxxxxxxx xxxxxx xxx xxxxxxx. Xxx xxxx xxxx xxx:
+To prevent resource quotas from interfering with real-time communication functionality, background tasks using the [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) receive guaranteed CPU resource quotas for every running task. The resource quotas are as mentioned above, and remain constant for these background tasks.
 
-[Xxxxxx x xxxxxxxxx xxxxxxxxxx xxxx](handle-a-cancelled-background-task.md)
+Your app doesn't have to do anything differently to get the guaranteed resource quotas for [**ControlChannelTrigger**](https://msdn.microsoft.com/library/windows/apps/hh701032) and [**PushNotificationTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700543) background tasks. The system always treats these as critical background tasks.
 
-[Xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx](monitor-background-task-progress-and-completion.md)
-
-**Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
-## Xxxxxxx xxxxxx
+## Maintenance trigger
 
 
-**Xxxxxxxxxx xxxxxxxx xxx xxxxxxxxxxxx xx Xxxxxxx YY**
+Maintenance tasks only run when the device is plugged in to AC power. For more info see [Use a maintenance trigger](use-a-maintenance-trigger.md).
 
-* [Xxxxxxxxx, xxxxxxxx, xxx xxxxxxxxxxxx](index.md)
+## Background task for sensors and devices
 
-**Xxxxxxx xxxxxxxxxx xxxx xxxxxxxx**
 
-* [Xxxxxx xxxxxxx xxx xxxxxxx xxxx x xxxxxxxxxx xxxx](access-sensors-and-devices-from-a-background-task.md)
-* [Xxxxxxxxxx xxx xxxxxxxxxx xxxxx](guidelines-for-background-tasks.md)
-* [Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx](create-and-register-a-background-task.md)
-* [Xxxxx x xxxxxxxxxx xxxx](debug-a-background-task.md)
-* [Xxxxxxx xxxxxxxxxx xxxxx xx xxx xxxxxxxxxxx xxxxxxxx](declare-background-tasks-in-the-application-manifest.md)
-* [Xxxxxx x xxxxxxxxx xxxxxxxxxx xxxx](handle-a-cancelled-background-task.md)
-* [Xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx](monitor-background-task-progress-and-completion.md)
-* [Xxxxxxxx x xxxxxxxxxx xxxx](register-a-background-task.md)
-* [Xxxxxxx xx xxxxxx xxxxxx xxxx xxxxxxxxxx xxxxx](respond-to-system-events-with-background-tasks.md)
-* [Xxx x xxxxxxxxxx xxxx xx x xxxxx](run-a-background-task-on-a-timer-.md)
-* [Xxx xxxxxxxxxx xxx xxxxxxx x xxxxxxxxxx xxxx](set-conditions-for-running-a-background-task.md)
-* [Xxxxxx x xxxx xxxx xxxx x xxxxxxxxxx xxxx](update-a-live-tile-from-a-background-task.md)
-* [Xxx x xxxxxxxxxxx xxxxxxx](use-a-maintenance-trigger.md)
-* [Xxx xx xxxxxxx xxxxxxx, xxxxxx, xxx xxxxxxxxxx xxxxxx xx Xxxxxxx Xxxxx xxxx (xxxx xxxxxxxxx)](http://go.microsoft.com/fwlink/p/?linkid=254345)
-* [Xxxxxx xxxx xxx xxxxxx xxx Xxxxxxx Xxxxx xxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=306619)
+Your app can access sensors and peripheral devices from a background task with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) class. You can use this trigger for long-running operations such as data synchronization or monitoring. Unlike tasks for system events, a **DeviceUseTrigger** task can only be triggered while your app is running in the foreground and no conditions can be set on it.
+
+Some critical device operations, such as long running firmware updates, cannot be performed with the [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337). Such operations can be performed only on the PC, and only by a privileged app that uses the [**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315). A *privileged app* is an app that the device's manufacturer has authorized to perform those operations. Device metadata is used to specify which app, if any, has been designated as the privileged app for a device. For more info, see [Device sync and update for Windows Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306619)
+
+## Managing background tasks
+
+
+Background tasks can report progress, completion, and cancellation to your app using events and local storage. Your app can also catch exceptions thrown by a background task, and manage background task registration during app updates. For more info see:
+
+[Handle a cancelled background task](handle-a-cancelled-background-task.md)
+
+[Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+
+**Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
+## Related topics
+
+
+**Conceptual guidance for multitasking in Windows 10**
+
+* [Launching, resuming, and multitasking](index.md)
+
+**Related background task guidance**
+
+* [Access sensors and devices from a background task](access-sensors-and-devices-from-a-background-task.md)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [Create and register a background task](create-and-register-a-background-task.md)
+* [Debug a background task](debug-a-background-task.md)
+* [Declare background tasks in the application manifest](declare-background-tasks-in-the-application-manifest.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Register a background task](register-a-background-task.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Update a live tile from a background task](update-a-live-tile-from-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Device sync and update for Windows Store device apps](http://go.microsoft.com/fwlink/p/?LinkId=306619)
+
  
+
+ 
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

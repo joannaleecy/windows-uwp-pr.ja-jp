@@ -1,101 +1,76 @@
 ---
-Xxxxxxxxxxx: Xxx xxxx xxxxxxx xx xxx xxx xx xx xxxxxxx xxxxxx xx xxxxxxx. Xx x xxxxx-xxxxxxx xxx, xxx xxxxx xx xxx xxxxxxx; xx x xxxxxx xxx, xxxx xxx xxxx xxxxx xxxxxx xxxxxxxxxxxx xx xxx xxxxxxx; xxx xx xx.
-xxxxx: Xxxxxxx xxxxxx xxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx
-xx.xxxxxxx: YYYYYYYX-XYXY-YXYY-XXXX-YYYYYXYYXYYY
-xxxxx: Xxxxxxx xxxxxx xxxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: どのようなアプリでも、主な目的はコンテンツへのアクセスを提供することです。 たとえば、写真編集アプリでは写真がコンテンツであり、旅行アプリでは地図と旅行の目的地に関する情報がコンテンツです。
+title: ユニバーサル Windows プラットフォーム (UWP) アプリのコンテンツ デザインの基本
+ms.assetid: 3102530A-E0D1-4C55-AEFF-99443D39D567
+label: コンテンツ デザインの基本
+template: detail.hbs
 ---
 
-#  Xxxxxxx xxxxxx xxxxxx xxx XXX xxxx
+#  UWP アプリのコンテンツ デザインの基本
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-Xxx xxxx xxxxxxx xx xxx xxx xx xx xxxxxxx xxxxxx xx xxxxxxx: xx x xxxxx-xxxxxxx xxx, xxx xxxxx xx xxx xxxxxxx; xx x xxxxxx xxx, xxxx xxx xxxx xxxxx xxxxxx xxxxxxxxxxxx xx xxx xxxxxxx; xxx xx xx. Xxxxxxxxxx xxxxxxxx xxxxxxx xxxxxx xx xxxxxxx; xxxxxxx xxxxxxxx xxxxxx xxx xxxx xx xxxxxxxx xxxx xxxxxxx; xxxxxxx xxxxxxxx xxxxxxx xxx xxxxxx xxxxxxx.
+どのようなアプリでも、主な目的はコンテンツへのアクセスを提供することです。たとえば、写真編集アプリでは写真がコンテンツであり、旅行アプリでは地図と旅行の目的地に関する情報がコンテンツです。 ナビゲーション要素はコンテンツへのアクセスを提供します。コマンド要素はユーザーがコンテンツを操作できるようにし、コンテンツ要素は実際のコンテンツを表示します。
 
-Xxxx xxxxxxx xxxxxxxx xxxxxxx xxxxxx xxxxxxxxxxxxxxx xxx xxx xxxxx xxxxxxx xxxxxxxxx.
+この記事では、3 つのコンテンツ シナリオでのコンテンツの設計に関する推奨事項を示します。
 
-## <span id="Design_for_the_right_content_scenario">
-            </span>
-            <span id="design_for_the_right_content_scenario">
-            </span>
-            <span id="DESIGN_FOR_THE_RIGHT_CONTENT_SCENARIO">
-            </span>Xxxxxx xxx xxx xxxxx xxxxxxx xxxxxxxx
+## <span id="Design_for_the_right_content_scenario"></span><span id="design_for_the_right_content_scenario"></span><span id="DESIGN_FOR_THE_RIGHT_CONTENT_SCENARIO"></span>適切なコンテンツ シナリオの設計
 
 
-Xxxxx xxx xxxxx xxxx xxxxxxx xxxxxxxxx:
+次の 3 つの主要なコンテンツ シナリオがあります。
 
--   **Xxxxxxxxxxx**: X xxxxxxxxx xxx-xxx xxxxxxxxxx xxxxx xxxxxxx xx xxxxxxxx. Xx xxxxxxxx xxxxx xxxx xxxxxxx, xxxxxxxxx xx xxxxx, xxxxxxxx xxxxxx, xxx xxxxx xxx xxxxx xxxxxxx.
--   **Xxxxxxxx**: X xxxxxxxxx xxx-xxx xxxxxxxxxx xxxxx xxx xxxxx xx xxxxxxxx xxx xxxxxxx. Xx xxx xx xxxxxx xxxx xxxx xxxxxx xxxxxx xxxx xxxxxxx, xxxx xxxxxxxx x xxxxx xx xxxxx, xxxxxxxx x xxx xxxxx xx x xxxxxxxx xxx, xx xxxxxxx x xxxxx xxxxxxxx.
--   **Xxxxxxxxxxx**: X xxx-xxx xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxx, xxxxxxxx, xxx xxxxxxxx xxxxxxx.
+-   **使用**: コンテンツを使用する、主に一方向のエクスペリエンス。 使用は、読む、音楽を聴く、ビデオを見る、写真や画像を表示するなどのタスクです。
+-   **作成**: 新しいコンテンツの作成が焦点となる、主に一方向のエクスペリエンス。 作成は、写真やビデオの撮影のように何かをゼロから作る、描画アプリで新しい画像を作る、新しいドキュメントを開くなどに分かれます。
+-   **対話型**: コンテンツの使用、作成、修正を含む、2 方向のコンテンツ エクスペリエンス。
 
-## <span id="Consumption-focused_apps">
-            </span>
-            <span id="consumption-focused_apps">
-            </span>
-            <span id="CONSUMPTION-FOCUSED_APPS">
-            </span>Xxxxxxxxxxx-xxxxxxx xxxx
+## <span id="Consumption-focused_apps"></span><span id="consumption-focused_apps"></span><span id="CONSUMPTION-FOCUSED_APPS"></span>使用に重点を置いたアプリ
 
 
-Xxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxx xxxxxxxx xx x xxxxxxxxxxx-xxxxxxx xxx, xxxxxxxx xx xxx [xxxxxxxxxx xxxxxxxx](navigation-basics.md) xxxxxx xx xxxx xxxxx xxxx xxx xxxxxxx xxxx xxxx. Xxxxxxxx xx xxxxxxxxxxx-xxxxxxx xxxx xxxxxxx xxxxx xxxxxxx, xxxxxxx xxxx, xxxxx xxxx, xxx xxxxx xxxxxxx.
+使用に重点を置いたアプリでは、コンテンツ要素の優先順位が最も高く、ユーザーが目的のコンテンツを探すために必要な [ナビゲーション要素](navigation-basics.md) が次に続きます。 使用に重点を置いたアプリの例として、ムービー プレーヤー、読書アプリ、音楽アプリ、フォト ビューアーなどがあります。
 
-![x xxxxxxxxxx xxx](images/news-reader/v2/newsreader-v2-tablet-phone.png)
+![ニュースリーダー アプリ](images/news-reader/v2/newsreader-v2-tablet-phone.png)
 
-Xxxxxxx xxxxxxxxxxxxxxx xxx xxxxxxxxxxx-xxxxxxx xxxx:
+使用に重点を置いたアプリに関する一般的な推奨事項:
 
--   Xxxxxxxx xxxxxxxx xxxxxxxxx [xxxxxxxxxx](navigation-basics.md) xxxxx xxx xxxxxxx-xxxxxxx xxxxx, xx xxxx xxxx xxxxx xxxx xxx xxxxxxx xxxx xxx xxxxxxx xxx, xxxx xxx xxxx xx xx x xxxxxxxxx xxxx xxxx xx xxxxxxxxxxxx.
--   Xxxxxxxx xxxxxxxx x xxxx-xxxxxx xxxx xxxxxx xxxx xxxxxxx xxx xxxxxxx xx xxxx xxx xxxxxx xxxxxx xxx xxxxx xxx xxxxx XX xxxxxxxx.
+-   専用の [ナビゲーション](navigation-basics.md) ページとコンテンツ表示ページを作成し、ユーザーが探していたコンテンツを見つけたときに、無駄な情報がない専用のページでそのコンテンツを表示できるようにすることを検討します。
+-   コンテンツを画面全体に拡張し、その他のすべての UI 要素を非表示にする、全画面表示のオプションを作成することを検討します。
 
-## <span id="Creation-focused_apps">
-            </span>
-            <span id="creation-focused_apps">
-            </span>
-            <span id="CREATION-FOCUSED_APPS">
-            </span>Xxxxxxxx-xxxxxxx xxxx
+## <span id="Creation-focused_apps"></span><span id="creation-focused_apps"></span><span id="CREATION-FOCUSED_APPS"></span>作成に重点を置いたアプリ
 
 
-Xxxxxxx xxx [xxxxxxx](commanding-basics.md) xxxxxxxx xxx xxx xxxx xxxxxx XX xxxxxxxx xx x xxxxxxxx-xxxxxxx xxx: xxxxxxx xxxxxxxx xxxxxx xxx xxxx xx xxxxxx xxx xxxxxxx. Xxxxxxxx xxxxxxx xxxxxxxx xxxx, xxxxx xxxxxxx xxxx, xxxxx xxxxxxx xxxx, xxx xxxx xxxxxxxxxx xxxx.
+コンテンツと [コマンド](commanding-basics.md) 要素は、作成に重点を置いたアプリでは最も重要な UI 要素です。コマンド要素により、ユーザーは新しいコンテンツを作成することができます。 この例には、ペイント アプリ、写真編集アプリ、ビデオ編集アプリ、ワード プロセッシング アプリがあります。
 
-Xx xx xxxxxxx, xxxx'x x xxxxxx xxx x xxxxx xxx xxxx xxxx xxxxxxx xxxx xx xxxxxxx xxxxxx xx xxxxx xxx xxxxx xxxxxxxxxxxx xxxxxxx. Xxxxxxx xxx xxx xxxxxxxx xxx xx xxx xxxxxxx xxx, xxx xxx xxx xxxxxx xxxx xx xxx xxxxxx xxxxx xx xxx xxxxxxx, xxx xxxxx xxxxx xxxxxx.
+例として、コマンド バーを使ってツールや写真操作オプションにアクセスできるようにするフォト アプリのデザインを以下に示します。 すべてのコマンドがコマンド バーにあるため、アプリは画面のスペースのほとんどをそのコンテンツ (編集する写真) に充てることができます。
 
-![xxxxxxx xx x xxxxx xxxxxxx xxx xxxxxx xxxx xxxx xxxxxx xxxxxx](images/photo-editor/uap-photo-tabletphone-sbs.png)
+![アクティブなキャンバスを使った写真編集アプリの設計例](images/photo-editor/uap-photo-tabletphone-sbs.png)
 
-Xxxxxxx xxxxxxxxxxxxxxx xxx xxxxxxxx-xxxxxxx xxxx:
+作成に重点を置いたアプリに関する一般的な推奨事項:
 
--   Xxxxxxxx xxx xxx xx [xxxxxxxxxx](navigation-basics.md) xxxxxxxx.
--   [Xxxxxxx](commanding-basics.md) xxxxxxxx xxx xxxxxxxxxx xxxxxxxxx xx xxxxxxxx-xxxxxxx xxxx. Xxxxx xxxxx xxxx xx xxxxxxxxx x xxx xx xxxxxxxx, xx xxxxxxxxx xxxxxxxxx x xxxxxxx xxxxxxx/xxxx xxxxxxxxxxxxx.
+-   [ナビゲーション](navigation-basics.md) 要素の使用を最小限に抑えます。
+-   [コマンド](commanding-basics.md) 要素は、作成に重点を置いたアプリで特に重要です。 ユーザーは多くのコマンドを実行するため、コマンド履歴/元に戻す機能を提供することをお勧めします。
 
-## <span id="Apps_with_interactive_content">
-            </span>
-            <span id="apps_with_interactive_content">
-            </span>
-            <span id="APPS_WITH_INTERACTIVE_CONTENT">
-            </span>Xxxx xxxx xxxxxxxxxxx xxxxxxx
+## <span id="Apps_with_interactive_content"></span><span id="apps_with_interactive_content"></span><span id="APPS_WITH_INTERACTIVE_CONTENT"></span>対話型コンテンツを含むアプリ
 
 
-Xx xx xxx xxxx xxxxxxxxxxx xxxxxxx, xxxxx xxxxxx, xxxx, xxx xxxx xxxxxxx; xxxx xxxx xxx xxxx xxxx xxxxxxxx. Xxxxxxxx xx xxxxx xxxxx xx xxxx xxxxxxx xxxx xx xxxxxxxx xxxx, xxxxxxxxx xxxxxxxxxx xxxx, xxxxxxx xxxx xxxx xxxxxx xxx xxxx xx xxxxxx xx xxxxxx xxxxxxx.
+対話型コンテンツを含むアプリでは、ユーザーはコンテンツを作成、表示、編集します。多くのアプリはこのカテゴリに分類されます。 これらの種類のアプリの例には、基幹業務アプリ、在庫管理アプリ、ユーザーがレシピを作成または変更できる料理のアプリなどがあります。
 
-![x xxxxxx xxx x xxxxxxxxxxxxx xxxx, xx xxx xxxx xxx xxxxxxxxxxx xxxxxxx](images/collaboration-tool/uap-collaboration-tabphone-700.png)
+![コラボレーション ツールの設計、対話型コンテンツを含むアプリ](images/collaboration-tool/uap-collaboration-tabphone-700.png)
 
-Xxxxx xxxx xx xxxx xxxx xx xxxxxxx xxx xxxxx XX xxxxxxxx:
+これらの種類のアプリでは、次の 3 つすべての UI 要素のバランスを取る必要があります。
 
--   [Xxxxxxxxxx](navigation-basics.md) xxxxxxxx xxxx xxxxx xxxx xxx xxxx xxxxxxx. Xx xxxxxxx xxx xxxxxxx xxxxxxx xx xxx xxxx xxxxxxxxx xxxxxxxx, xxxxxxxxxx xxxxxxxxxx xxxxxxxx, xxxxxxxxx xxx xxxxxxx, xxx xxxxxx.
--   [Xxxxxxx](commanding-basics.md) xxxxxxxx xxx xxx xxxx xxxxxx, xxxx, xxx xxxxxxxxxx xxxxxxx.
+-   [ナビゲーション](navigation-basics.md) 要素を使用すると、ユーザーがコンテンツを見つけて表示しやすくなります。 コンテンツの表示と検索が最も重要なシナリオである場合は、ナビゲーション要素、フィルター処理と並べ替え、検索を優先します。
+-   [コマンド](commanding-basics.md) 要素により、ユーザーはコンテンツを作成、編集、操作することができます。
 
-Xxxxxxx xxxxxxxxxxxxxxx xxx xxxx xxxx xxxxxxxxxxx xxxxxxx:
+対話型コンテンツを使ったアプリに関する一般的な推奨事項:
 
--   Xx xxx xx xxxxxxxxx xx xxxxxxx xxxxxxxxxx, xxxxxxx, xxx xxxxxxx xxxxxxxx xxxx xxx xxxxx xxx xxxxxxxxx. Xx xxxxxxxx, xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxx, xxxxxxxx, xxx xxxxxxx xxxxxxx, xx xxxxxxxxx xxxx xxxxxxxx.
+-   3 つすべてが重要であるときに、ナビゲーション、コンテンツ、およびコマンド要素のバランスを取ることは困難である場合があります。 可能であれば、コンテンツの閲覧、作成、編集用の別の画面を作成するか、モード スイッチを提供することを検討します。
 
-## <span id="Commonly_used_content_elements">
-            </span>
-            <span id="commonly_used_content_elements">
-            </span>
-            <span id="COMMONLY_USED_CONTENT_ELEMENTS">
-            </span>Xxxxxxxx xxxx xxxxxxx xxxxxxxx
+## <span id="Commonly_used_content_elements"></span><span id="commonly_used_content_elements"></span><span id="COMMONLY_USED_CONTENT_ELEMENTS"></span>よく使われるコンテンツ要素
 
 
-Xxxx xxx xxxx XX xxxxxxxx xxxxxxxx xxxx xx xxxxxxx xxxxxxx. (Xxx x xxxxxxxx xxxx xx XX xxxxxxxx, xxx [Xxxxxxxx xxx XX xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn611856).)
+コンテンツの表示によく使われるいくつかの UI 要素を次に示します。 UI 要素の全一覧については、「[コントロールと UI 要素](https://msdn.microsoft.com/library/windows/apps/dn611856)」をご覧ください。
 
 <table>
 <colgroup>
@@ -105,47 +80,49 @@ Xxxx xxx xxxx XX xxxxxxxx xxxxxxxx xxxx xx xxxxxxx xxxxxxx. (Xxx x xxxxxxxx xxxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxxx</th>
-<th align="left">Xxxxxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">カテゴリ</th>
+<th align="left">要素</th>
+<th align="left">説明</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Xxxxx xxx xxxxx</td>
+<td align="left">オーディオとビデオ</td>
 <td align="left">[Media playback and transport controls](../controls-and-patterns/media-playback.md)</td>
-<td align="left">Xxxxx xxxxx xxx xxxxx.</td>
+<td align="left">オーディオとビデオを再生します。</td>
 </tr>
 <tr class="even">
-<td align="left">Xxxxx xxxxxxx</td>
-<td align="left">[
-            Flip view](../controls-and-patterns/flipview.md), [image](../controls-and-patterns/images-imagebrushes.md)</td>
-<td align="left">Xxxxxxxx xxxxxx. Xxx xxxx xxxx xxxxxxxx xxxxxx xx x xxxxxxxxxx, xxxx xx xxxxxx xx xx xxxxx xx xxxxx xx x xxxxxxx xxxxxxx xxxx, xxx xxxxx xx x xxxx.</td>
+<td align="left">画像ビューアー</td>
+<td align="left">[Flip view](../controls-and-patterns/flipview.md)、[image](../controls-and-patterns/images-imagebrushes.md)</td>
+<td align="left">画像を表示します。 FlipView は、コレクション内の画像 (アルバム内の写真や製品の詳細ページ内の項目など) を一度に 1 つずつ表示します。</td>
 </tr>
 <tr class="odd">
-<td align="left">Xxxxx</td>
+<td align="left">リスト</td>
 <td align="left">[drop-down list, list box, list view and grid view](../controls-and-patterns/lists.md)</td>
-<td align="left">Xxxxxxxx xxxxx xx xx xxxxxxxxxxx xxxx xx x xxxx. Xxx xxxxx xxxxxxxx xx xxx xxxxx xxxxxx x xxxxx xxxx x xxxx xx xxx xxxxxxxx xx xxxxxx xx xxxxxxxxx.</td>
+<td align="left">対話型のリストまたはグリッド内に項目を表示します。 これらの要素を使うと、ユーザーは新着の一覧からムービーを選んだり、在庫を管理したりすることができます。</td>
 </tr>
 <tr class="even">
-<td align="left">Xxxx xxx xxxx xxxxx</td>
-<td align="left"><p>[
-            Text block](../controls-and-patterns/text-block.md), [text box](../controls-and-patterns/text-box.md), [rich edit box](../controls-and-patterns/rich-edit-box.md)</p>
+<td align="left">テキストとテキスト入力</td>
+<td align="left"><p>[Text block](../controls-and-patterns/text-block.md)、[text box](../controls-and-patterns/text-box.md)、[rich edit box](../controls-and-patterns/rich-edit-box.md)</p>
 </td>
-<td align="left">Xxxxxxxx xxxx. Xxxx xxxxxxxx xxxxxx xxx xxxx xx xxxx xxxx. Xxx xxxx xxxx, xxx [Text controls](../controls-and-patterns/text-controls.md)</td>
+<td align="left">テキストを表示します。 一部の要素を使うと、ユーザーがテキストを編集することができます。 詳しくは、「[Text controls](../controls-and-patterns/text-controls.md)」をご覧ください。</td>
 </tr>
 </tbody>
 </table>
 
  
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

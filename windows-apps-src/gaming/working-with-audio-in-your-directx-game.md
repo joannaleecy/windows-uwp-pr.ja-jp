@@ -1,46 +1,46 @@
 ---
-xxxxx: Xxxxx xxx xxxxx
-xxxxxxxxxxx: Xxxxx xxx xx xxxxxxx xxx xxxxxxxxxxx xxxxx xxx xxxxxx xxxx xxxx XxxxxxX xxxx, xxx xxx xx xxxxxxx xxx xxxxx xxxxxxx xx xxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxx.
-xx.xxxxxxx: xxYYYYYx-YYYY-xYYx-YYxY-YxYYxYYxYYxY
+title: Audio for games
+description: Learn how to develop and incorporate music and sounds into your DirectX game, and how to process the audio signals to create dynamic and positional sounds.
+ms.assetid: ab29297a-9588-c79b-24c5-3b94b85e74a8
 ---
 
-# Xxxxx xxx xxxxx
+# Audio for games
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxx xxx xx xxxxxxx xxx xxxxxxxxxxx xxxxx xxx xxxxxx xxxx xxxx XxxxxxX xxxx, xxx xxx xx xxxxxxx xxx xxxxx xxxxxxx xx xxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxx.
+Learn how to develop and incorporate music and sounds into your DirectX game, and how to process the audio signals to create dynamic and positional sounds.
 
-Xxx xxxxx xxxxxxxxxxx, xx xxxxxxxxx xxxxx xxx XXxxxxY xxxxxxx xx XxxxxxX, xxx xx xxx xx xxxx. XXxxxxY xx x xxx-xxxxx xxxxx xxxxxxx xxxx xxxxxxxx x xxxxxx xxxxxxxxxx xxx xxxxxx xxxxxxxxxx xxx xxxxx, xxx xx xxxxxxxx x xxxxxxx xx xxxxxxx.
+For audio programming, we recommend using the XAudio2 library in DirectX, and we use it here. XAudio2 is a low-level audio library that provides a signal processing and mixing foundation for games, and it supports a variety of formats.
 
-Xxx xxx xxxx xxxxxxxxx xxxxxx xxxxxx xxx xxxxx xxxxxxxx xxxx [Xxxxxxxxx Xxxxx Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ms694197). Xxxxxxxxx Xxxxx Xxxxxxxxxx xx xxxxxxxx xxx xxx xxxxxxxx xx xxxxx xxxxx xxx xxxxxxx, xxxx xxxxx xxx xxxxx, xxx xxx xxxx xx xxxx xx xxxxx, xxx xx xxxxxxxxxxxx xxxxxx xxx xxxxxxxxx xxxxxx xx xxx-xxxxxxxxxxx xxxxxxxxxx xx xxxx xxxx.
+You can also implement simple sounds and music playback with [Microsoft Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms694197). Microsoft Media Foundation is designed for the playback of media files and streams, both audio and video, but can also be used in games, and is particularly useful for cinematic scenes or non-interactive components of your game.
 
-## Xxxxxxxx xx x xxxxxx
-
-
-Xxxx xxx x xxx xxxxx xxxxxxxxxxx xxxxxxxx xx xxx xx xxxx xxxxxxx.
-
--   Xxxxxxx xxx xxx xxxxx xxxx xx xxxxx xxxxxxxxxxx, xxxxxxxxx xx xxxxxx xx xxxxxxxx. Xxx xxxxxxx xxxxxx xxxxxxxxxx (XXXx) xxxx xxxxxxx xxxx xxx xxxx xxx xxxxx xxxxxxx xx xxxx xxxxx. Xxxx xxx xxxxxxxxx xxxxxxx, xx xxxxxxx xxxx, xx xxxxxx xxxx. Xx xxxxxxxxxxx xx xxx XXXx, xxx xxx xxxxx xxxx xxxx'x xxxxx xxxxxxx xxx xxxxx xxxx xx xxxxxx xx xx xxxx xxxxxxxxxx xx xxx xxxx.
--   Xxxxxx xxx xxx xxxxxxxx xxxxxxxxxx xx xxx xx xxxx xxxxxxx. Xxxxx xxx Y xxxxx xx XXxxxxY xxxxx xxxxxxx: xxxxxx, xxxxxx, xxx xxxxxxxxx xxxxxx. Xxxxxx xxxxxx xxxxxxx xx xxxxx xxxx xxxxxxxx xx xxx xxxxxx. Xxxxxx xxx xxxxxx xxxxxx xxxx xxxxx xxxxxx xx xxx xx xxxx xxxxxx xx xxxxxxxxx xxxxxx. Xxxxxx xxx xxxxxxxxx xxxxxx xxx xxx xxxxx xxxx xxx xxxxxx xxxxxxx xxxx, xxx xxxxxxx xx xxx xxxxxx. Xxxxxxxxx xxxxxx xxxxx xxxxx xxxx xx xx xxxxx xxxxxx.
--   Xxxxxx xx xxx xxxxxxx xx xxxxxxxxx xxxxxxx xxxxxxxx xxxxxx, xxxx xx xxx xxxxx xxxxxxx xxx xxx xxxxxxxxxx xxxxx xxxx xxx xxxxxx xxxx xx x xxxxx, xxxx x xxxxxx xxxxxx. Xxxxxxxxx xx xxx xxxxxxx xx xxxxxxxxx xxxxxxx xxxxxxxx xxxxxxx, xxxx xx xxx xxxxxxxxx xxxxxx xx xx xxxxxx xxxxx, xxx xxxxxxxx x xxxxx.
--   Xxxxx xxxxxxx. Xxxxx xxx xxxxx xxxxxxx xxx xx xxxxxx xx x xxxxxxx xx xxxxxxx xxxxxxx xxx xxxx xxxx. Xxxxx xxx xxxxxxxxxxxx xxxxxxx, xxxx XXX, xxx xxxxxxxxxx xxxxxxx xxxx XXY xxx XXX. Xxx xxxx x xxxxxx xx xxxxxxxxxx -- xxxxxxxxx xxxxxxxxxx xx xxx xxx xxxx, xxxxx xxx xxxxx xxx xxx xxxx xx, xxx xxxx xxxxx xxx xxxxxxxxxxx -- xxx xxxxx xxxxxxxx xx xxx. Xxxxxxxx xxx xxxx xxxxxx xxxxxxxxxxx xxxxxxx xxx xxx xxxxx, xx xxxxxxxxxx xxxx xxxx xx xxxx xxxx xxxxx xxxx xxx xxxx xxxx.
--   Xxxxxx xxxx xxx xxxxxxx. Xxxxxx xxx xx xxxxxxx xx xxxxxxxxx xxxxx, xxx xxxxxx xxxxxxx xx x xxxxx xxxx xxxx xxxx xxxxxx xxxxxxxx. Xxx xxxxxx xxxx xxx XX xxxxxxx xx YY.Y Xxx (YYYYY Xx). Xx xxx xxx'x xxxx xxxx xxxxxxxx xxx x xxxxx, xxx xxx xxxxxx x xxxxx xxxxxx xxxx. Xxxxxx xxxxx xxx xx xxxxxxxxxxx xxx xxxxxxxxxxxx xxxxx xxxxxxxxxxxx, xxx xxx xxxxxxxx xxx'x xxxx xxxx xxxxxx xxxx xxxx xxxxxxx xxxxxxxxxxxx xxxxxxxx xxxxx.
--   Xxxxx xxxxxxxx (xx xxxxxxx). Xx XXxxxxY, xxxxx xxxxxxxx xxx xxxxxxxxx xxxx xxxx x xxxxx, xx xx x xxxx xxxx xx x xxxxxxxxxx xxxxx xx x xxxxxxxx xxxx xxxxx xxxxxx xx xx xx-xxxx xxxxxxx. Xxx xxxxxxx xxxxxxxx xx xxxxx xxxxxxxxxxx.
--   Xxxxx xxxxxxxxx. X xxxxx xxxxxxxx xx xxxxx xxx xxxxxx, xx xxxxxxx xx XX xxxxxx xx x xxxx xxxxxxxx xxxx, xxxx xxxxxxxxx xxx xxxxxx xxxxxxxx xxxx x xxxxxxxx. Xxx xxx xxxxxx xxxx xxxxx xxxx xxx xxxxx xxxxxx xxx xxxxxxxx xx xxx xxxxxx, xx xxx xxx xxx xx xx xxxx x xxxxxxxx xx-xxxx xxxxxx, xxxx xxxxxxxxx xx XX xxxxx xxxxxx xx x xxxxxxxx.
-
-## Xxxxxx xxxxxxxxxxxxxx
+## Concepts at a glance
 
 
-Xxxxx xx x xxxxxxxxxxxx xxxxxxxxx xxxx xx xxxx xxxxxx xxx xxxxxxxxxxx. Xxxx xxxxxx xxx xxxxxx x xxxxxxxx xxxx xxxxxxxx xx xxxxxxxxx xxxxxx xxxx xxxxxxx xx x xxxxxxxxx xxxxxxxxxx, xx xxxxx xxxxx xxxx xxx xxxxx xxxxxx, xx xxxxxxx xxxxxxx xxxxx xxxxxxxxxx. Xxxxx xxx xxxxx xxxxxx x xxxx'x xxxxxxxxxxx, xxx xxxxxxxxx xxx xxxx xxxxxx xxxx xxxxxxx xxx xxxx xxx xxxxx xx xxxxx xxxxx xxxx xxxxx xxxxxxx xxxxx. Xxx xxxxxx xxx xxxxx xxxxxxxxx xxx xxxxxxxxxx xxxx xxxx'x xxxxx xxxxxxx xxxx xx xxxx xxxxx xx.
+Here are a few audio programming concepts we use in this section.
 
-Xxxxxxxxxx YX xxxxx xxx xxx x xxxxx xx xxxxxxxxx xxxxxx xxxx xxxxxxxx xx YX xxxxxxxx. Xx xxx xxx xxxxxxxxxx x xxxxxxx xxxx xxxx xxxxxxxxx x xxxxx, xx xxxxx xxxxxxx x xxxxxxxxx xxxxx, xxxxxxxx xxxxx YX xxxxxxxxxx xxxxx xxxxxxxxxx xx xxxxxx xxxx xxx xxxxxx xx.
+-   Signals are the basic unit of sound programming, analogous to pixels in graphics. The digital signal processors (DSPs) that process them are like the pixel shaders of game audio. They can transform signals, or combine them, or filter them. By programming to the DSPs, you can alter your game's sound effects and music with as little or as much complexity as you need.
+-   Voices are the submixed composites of two or more signals. There are 3 types of XAudio2 voice objects: source, submix, and mastering voices. Source voices operate on audio data provided by the client. Source and submix voices send their output to one or more submix or mastering voices. Submix and mastering voices mix the audio from all voices feeding them, and operate on the result. Mastering voices write audio data to an audio device.
+-   Mixing is the process of combining several discrete voices, such as the sound effects and the background audio that are played back in a scene, into a single stream. Submixing is the process of combining several discrete signals, such as the component sounds of an engine noise, and creating a voice.
+-   Audio formats. Music and sound effects can be stored in a variety of digital formats for your game. There are uncompressed formats, like WAV, and compressed formats like MP3 and OGG. The more a sample is compressed -- typically designated by its bit rate, where the lower the bit rate is, the more lossy the compression -- the worse fidelity it has. Fidelity can vary across compression schemes and bit rates, so experiment with them to find what works best for your game.
+-   Sample rate and quality. Sounds can be sampled at different rates, and sounds sampled at a lower rate have much poorer fidelity. The sample rate for CD quality is 44.1 Khz (44100 Hz). If you don't need high fidelity for a sound, you can choose a lower sample rate. Higher rates may be appropriate for professional audio applications, but you probably don't need them unless your game demands professional fidelity sound.
+-   Sound emitters (or sources). In XAudio2, sound emitters are locations that emit a sound, be it a mere blip of a background noise or a snarling rock track played by an in-game jukebox. You specify emitters by world coordinates.
+-   Sound listeners. A sound listener is often the player, or perhaps an AI entity in a more advanced game, that processes the sounds received from a listener. You can submix that sound into the audio stream for playback to the player, or you can use it to take a specific in-game action, like awakening an AI guard marked as a listener.
 
-## XxxxxxX xxxxx xxxxxxxxxxx xxxxxxx
+## Design considerations
 
 
-### XXxxxxY xxxxxxxxxx xxxxxxxxx
+Audio is a tremendously important part of game design and development. Many gamers can recall a mediocre game elevated to legendary status just because of a memorable soundtrack, or great voice work and sound mixing, or overall stellar audio production. Music and sound define a game's personality, and establish the main motive that defines the game and makes it stand apart from other similar games. The effort you spend designing and developing your game's audio profile will be well worth it.
 
-XXxxxxY xx xxx xxxxx xxxxxx xxxxxxx xxx XxxxxxX, xxx xx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxx xxxxxxxxxxx xxxxx xxxxxxx xxx xxxxx. Xxx xxxx xxxxxxxxxx xxx xxxx xx xxx xxxxx xxxxxxx xxx xxxxxxxxxx xxxxx xx xxxxx xxxxxx xxxxx, XXxxxxY xxxxxx xx xxxxx xxxxx xxx xxxxxx xxxxxx xxxx xxx-xxxxxxx xxx xxxxxxx xxx xxxxxxx xxxxxxx, xxxxxxxxxxx xxxxxx-xxxxxxxx xxxxxxxx, xxx xxxxxxxx xxxxxx xxxx xxxxxxxxxx.
+Positional 3D audio can add a level of immersion beyond that provided by 3D graphics. If you are developing a complex game that simulates a world, or which demands a cinematic style, consider using 3D positional audio techniques to really draw the player in.
+
+## DirectX audio development roadmap
+
+
+### XAudio2 conceptual resources
+
+XAudio2 is the audio mixing library for DirectX, and is primarily intended for developing high performance audio engines for games. For game developers who want to add sound effects and background music to their modern games, XAudio2 offers an audio graph and mixing engine with low-latency and support for dynamic buffers, synchronous sample-accurate playback, and implicit source rate conversion.
 
 <table>
 <colgroup>
@@ -49,57 +49,57 @@ XXxxxxY xx xxx xxxxx xxxxxx xxxxxxx xxx XxxxxxX, xxx xx xxxxxxxxx xxxxxxxx xxx x
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[Introduction to XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415813)</p></td>
-<td align="left"><p>Xxx xxxxx xxxxxxxx x xxxx xx xxx xxxxx xxxxxxxxxxx xxxxxxxx xxxxxxxxx xx XXxxxxY.</p></td>
+<td align="left"><p>The topic provides a list of the audio programming features supported by XAudio2.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Getting Started with XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415762)</p></td>
-<td align="left"><p>Xxxx xxxxx xxxxxxxx xxxxxxxxxxx xx xxx XXxxxxY xxxxxxxx, XXxxxxY xxxxxxxx, xxx xxx XXXX xxxxx xxxxxx.</p></td>
+<td align="left"><p>This topic provides information on key XAudio2 concepts, XAudio2 versions, and the RIFF audio format.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Common Audio Programming Concepts](https://msdn.microsoft.com/library/windows/desktop/ee415692)</p></td>
-<td align="left"><p>Xxxx xxxxx xxxxxxxx xx xxxxxxxx xx xxxxxx xxxxx xxxxxxxx xxxx xxxxx xx xxxxx xxxxxxxxx xxxxxx xx xxxxxxxx.</p></td>
+<td align="left"><p>This topic provides an overview of common audio concepts with which an audio developer should be familiar.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[XAudio2 Voices](https://msdn.microsoft.com/library/windows/desktop/ee415825)</p></td>
-<td align="left"><p>Xxxx xxxxx xxxxxxxx xx xxxxxxxx xx XXxxxxY xxxxxx, xxxxx xxx xxxx xx xxxxxx, xxxxxxx xx, xxx xxxxxx xxxxx xxxx.</p></td>
+<td align="left"><p>This topic contains an overview of XAudio2 voices, which are used to submix, operate on, and master audio data.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[XAudio2 Callbacks](https://msdn.microsoft.com/library/windows/desktop/ee415745)</p></td>
-<td align="left"><p>Xxxx xxxxx xxxxxx xxx XXxxxx Y xxxxxxxxx, xxxxx xxx xxxx xx xxxxxxx xxxxxx xx xxx xxxxx xxxxxxxx.</p></td>
+<td align="left"><p>This topic covers the XAudio 2 callbacks, which are used to prevent breaks in the audio playback.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[XAudio2 Audio Graphs](https://msdn.microsoft.com/library/windows/desktop/ee415739)</p></td>
-<td align="left"><p>Xxxx xxxxx xxxxxx xxx XXxxxxY xxxxx xxxxxxxxxx xxxxxx, xxxxx xxxx x xxx xx xxxxx xxxxxxx xxxx xxx xxxxxx xx xxxxx, xxxxxxx xxxx, xxx xxxxxxx xxx xxxxx xxxxxx xx xx xxxxx xxxxxx.</p></td>
+<td align="left"><p>This topic covers the XAudio2 audio processing graphs, which take a set of audio streams from the client as input, process them, and deliver the final result to an audio device.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[XAudio2 Audio Effects](https://msdn.microsoft.com/library/windows/desktop/ee415756)</p></td>
-<td align="left"><p>Xxx xxxxx xxxxxx XXxxxxY xxxxx xxxxxxx, xxxxx xxxx xxxxxxxx xxxxx xxxx xxx xxxxxxx xxxx xxxxxxxxx xx xxx xxxx (xxxx xx x xxxxxx xxxxxx) xxxxxx xxxxxxx xx xx.</p></td>
+<td align="left"><p>The topic covers XAudio2 audio effects, which take incoming audio data and perform some operation on the data (such as a reverb effect) before passing it on.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Streaming Audio Data with XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415821)</p></td>
-<td align="left"><p>Xxxx xxxxx xxxxxx xxxxx xxxxxxxxx xxxx XXxxxxY.</p></td>
+<td align="left"><p>This topic covers audio streaming with XAudio2.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[X3DAudio](https://msdn.microsoft.com/library/windows/desktop/ee415714)</p></td>
-<td align="left"><p>xxxx xxxxx xxxxxx XYXXxxxx, xx XXX xxxx xx xxxxxxxxxxx xxxx XXxxxxY xx xxxxxx xxx xxxxxxxx xx x xxxxx xxxxxx xxxx x xxxxx xx YX xxxxx.</p></td>
+<td align="left"><p>this topic covers X3DAudio, an API used in conjunction with XAudio2 to create the illusion of a sound coming from a point in 3D space.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[XAudio2 Programming Reference](https://msdn.microsoft.com/library/windows/desktop/ee415899)</p></td>
-<td align="left"><p>Xxxx xxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxx xxx xxx XXxxxxY XXXx.</p></td>
+<td align="left"><p>This section contains the complete reference for the XAudio2 APIs.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### XXxxxxY "xxx xx" xxxxxxxxx
+### XAudio2 "how to" resources
 
 <table>
 <colgroup>
@@ -108,87 +108,87 @@ XXxxxxY xx xxx xxxxx xxxxxx xxxxxxx xxx XxxxxxX, xxx xx xxxxxxxxx xxxxxxxx xxx x
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[How to: Initialize XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415779)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxxxxxx XXxxxxY xxx xxxxx xxxxxxxx xx xxxxxxxx xx xxxxxxxx xx xxx XXxxxxY xxxxxx, xxx xxxxxxxx x xxxxxxxxx xxxxx.</p></td>
+<td align="left"><p>Learn how to initialize XAudio2 for audio playback by creating an instance of the XAudio2 engine, and creating a mastering voice.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[How to: Load Audio Data Files in XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415781)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxxxx xxx xxxxxxxxxx xxxxxxxx xx xxxx xxxxx xxxx xx XXxxxxY.</p></td>
+<td align="left"><p>Learn how to populate the structures required to play audio data in XAudio2.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[How to: Play a Sound with XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415787)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxx xxxxxxxxxx-xxxxxx xxxxx xxxx xx XXxxxxY.</p></td>
+<td align="left"><p>Learn how to play previously-loaded audio data in XAudio2.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[How to: Use Submix Voices](https://msdn.microsoft.com/library/windows/desktop/ee415794)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxx xxxxxx xx xxxxxx xx xxxx xxxxx xxxxxx xx xxx xxxx xxxxxx xxxxx.</p></td>
+<td align="left"><p>Learn how to set groups of voices to send their output to the same submix voice.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[How to: Use Source Voice Callbacks](https://msdn.microsoft.com/library/windows/desktop/ee415769)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxx XXxxxxY xxxxxx xxxxx xxxxxxxxx.</p></td>
+<td align="left"><p>Learn how to use XAudio2 source voice callbacks.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[How to: Use Engine Callbacks](https://msdn.microsoft.com/library/windows/desktop/ee415774)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxx XXxxxxY xxxxxx xxxxxxxxx.</p></td>
+<td align="left"><p>Learn how to use XAudio2 engine callbacks.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[How to: Build a Basic Audio Processing Graph](https://msdn.microsoft.com/library/windows/desktop/ee415767)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxx xx xxxxx xxxxxxxxxx xxxxx, xxxxxxxxxxx xxxx x xxxxxx xxxxxxxxx xxxxx xxx x xxxxxx xxxxxx xxxxx.</p></td>
+<td align="left"><p>Learn how to create an audio processing graph, constructed from a single mastering voice and a single source voice.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[How to: Dynamically Add or Remove Voices From an Audio Graph](https://msdn.microsoft.com/library/windows/desktop/ee415772)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxx xx xxxxxx xxxxxx xxxxxx xxxx x xxxxx xxxx xxx xxxx xxxxxxx xxxxxxxxx xxx xxxxx xx [How to: Build a Basic Audio Processing Graph](https://msdn.microsoft.com/library/windows/desktop/ee415767).</p></td>
+<td align="left"><p>Learn how to add or remove submix voices from a graph that has been created following the steps in [How to: Build a Basic Audio Processing Graph](https://msdn.microsoft.com/library/windows/desktop/ee415767).</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[How to: Create an Effect Chain](https://msdn.microsoft.com/library/windows/desktop/ee415789)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxx xx xxxxxx xxxxx xx x xxxxx xx xxxxx xxxxxx xxxxxxxxxx xx xxx xxxxx xxxx xxx xxxx xxxxx.</p></td>
+<td align="left"><p>Learn how to apply an effect chain to a voice to allow custom processing of the audio data for that voice.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[How to: Create an XAPO](https://msdn.microsoft.com/library/windows/desktop/ee415730)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxxxxx [<strong>XXXXX</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxxxxx/xxYYYYYY) xx xxxxxx xx XXxxxxY xxxxx xxxxxxxxxx xxxxxx (XXXX).</p></td>
+<td align="left"><p>Learn how to implement [<strong>IXAPO</strong>](https://msdn.microsoft.com/library/windows/desktop/ee415893) to create an XAudio2 audio processing object (XAPO).</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[How to: Add Run-time Parameter Support to an XAPO](https://msdn.microsoft.com/library/windows/desktop/ee415728)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxx xxx-xxxx xxxxxxxxx xxxxxxx xx xx XXXX xx xxxxxxxxxxxx xxx [<strong>XXXXXXxxxxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxxxxx/xxYYYYYY) xxxxxxxxx.</p></td>
+<td align="left"><p>Learn how to add run-time parameter support to an XAPO by implementing the [<strong>IXAPOParameters</strong>](https://msdn.microsoft.com/library/windows/desktop/ee415896) interface.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[How to: Use an XAPO in XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415733)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxx xx xxxxxx xxxxxxxxxxx xx xx XXXX xx xx XXxxxxY xxxxxx xxxxx.</p></td>
+<td align="left"><p>Learn how to use an effect implemented as an XAPO in an XAudio2 effect chain.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[How to: Use XAPOFX in XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415723)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxx xxx xx xxx xxxxxxx xxxxxxxx xx XXXXXX xx xx XXxxxxY xxxxxx xxxxx.</p></td>
+<td align="left"><p>Learn how to use one of the effects included in XAPOFX in an XAudio2 effect chain.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[How to: Stream a Sound from Disk](https://msdn.microsoft.com/library/windows/desktop/ee415791)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxx xxxxx xxxx xx XXxxxxY xx xxxxxxxx x xxxxxxxx xxxxxx xx xxxx xx xxxxx xxxxxx, xxx xx xxx xxxxxxxxx xx xxxxxxx xxxx xxxxxx.</p></td>
+<td align="left"><p>Learn how to stream audio data in XAudio2 by creating a separate thread to read an audio buffer, and to use callbacks to control that thread.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[How to: Integrate X3DAudio with XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415798)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxx XYXXxxxx xx xxxxxxx xxx xxxxxx xxx xxxxx xxxxxx xxx XXxxxxY xxxxxx xx xxxx xx xxx xxxxxxxxxx xxx xxx XXxxxxY xxxxx-xx xxxxxx xxxxxx.</p></td>
+<td align="left"><p>Learn how to use X3DAudio to provide the volume and pitch values for XAudio2 voices as well as the parameters for the XAudio2 built-in reverb effect.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[How to: Group Audio Methods as an Operation Set](https://msdn.microsoft.com/library/windows/desktop/ee415783)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxx XXxxxxY xxxxxxxxx xxxx xx xxxx x xxxxx xx xxxxxx xxxxx xxxx xxxxxx xx xxx xxxx xxxx.</p></td>
+<td align="left"><p>Learn how to use XAudio2 operation sets to make a group of method calls take effect at the same time.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Debugging Audio Glitches in XAudio2](https://msdn.microsoft.com/library/windows/desktop/ee415765)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxx xxx xxxxx xxxxxxx xxxxx xxx XXxxxxY.</p></td>
+<td align="left"><p>Learn how to set the debug logging level for XAudio2.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### Xxxxx Xxxxxxxxxx xxxxxxxxx
+### Media Foundation resources
 
-Xxxxx Xxxxxxxxxx (XX) xx x xxxxx xxxxxxxx xxx xxxxxxxxx xxxxx xxx xxxxx xxxxxxxx. Xxx xxx xxx xxx Xxxxx Xxxxxxxxxx XXXx xx xxxxxx xxxxx xxx xxxxx xxxxxxx xxx xxxxxxxxxx xxxx x xxxxxxx xx xxxxxxxxxx. Xx xx xxx xxxxxxxx xxx xxxx-xxxx xxxxxxxx xxxxxxxxx; xxxxxxx, xx xxxxxxxx xxxxxxxx xxxxx xxx xxxxx xxxxx xxxxxxx xxx xxxx xxxxxx xxxxxxx xxx xxxxxxxxxxxx xx xxxxx xxx xxxxx xxxxxxxxxx.
+Media Foundation (MF) is a media platform for streaming audio and video playback. You can use the Media Foundation APIs to stream audio and video encoded and compressed with a variety of algorithms. It is not designed for real-time gameplay scenarios; instead, it provides powerful tools and broad codec support for more linear capture and presentation of audio and video components.
 
 <table>
 <colgroup>
@@ -197,59 +197,59 @@ Xxxxx Xxxxxxxxxx (XX) xx x xxxxx xxxxxxxx xxx xxxxxxxxx xxxxx xxx xxxxx xxxxxxxx
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left"><p>[About Media Foundation](https://msdn.microsoft.com/library/windows/desktop/ms696274)</p></td>
-<td align="left"><p>Xxxx xxxxxxx xxxxxxxx xxxxxxx xxxxxxxxxxx xxxxx xxx Xxxxx Xxxxxxxxxx XXXx, xxx xxx xxxxx xxxxxxxxx xx xxxxxxx xxxx.</p></td>
+<td align="left"><p>This section contains general information about the Media Foundation APIs, and the tools available to support them.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Media Foundation: Essential Concepts](https://msdn.microsoft.com/library/windows/desktop/ee663601)</p></td>
-<td align="left"><p>Xxxx xxxxx xxxxxxxxxx xxxx xxxxxxxx xxxx xxx xxxx xxxx xx xxxxxxxxxx xxxxxx xxxxxxx x Xxxxx Xxxxxxxxxx xxxxxxxxxxx.</p></td>
+<td align="left"><p>This topic introduces some concepts that you will need to understand before writing a Media Foundation application.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Media Foundation Architecture](https://msdn.microsoft.com/library/windows/desktop/ms696219)</p></td>
-<td align="left"><p>Xxxx xxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxx xx Xxxxxxxxx Xxxxx Xxxxxxxxxx, xx xxxx xx xxx xxxxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxxx xx xxxx.</p></td>
+<td align="left"><p>This section describes the general design of Microsoft Media Foundation, as well as the media primitives and processing pipeline it uses.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Audio/Video Capture](https://msdn.microsoft.com/library/windows/desktop/dd317910)</p></td>
-<td align="left"><p>Xxxx xxxxx xxxxxxxxx xxx xx xxx Xxxxxxxxx Xxxxx Xxxxxxxxxx xx xxxxxxx xxxxx xxx xxxxx xxxxxxx.</p></td>
+<td align="left"><p>This topic describes how to use Microsoft Media Foundation to perform audio and video capture.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Audio/Video Playback](https://msdn.microsoft.com/library/windows/desktop/dd317914)</p></td>
-<td align="left"><p>Xxxx xxxxx xxxxxxxxx xxx xx xxxxxxxxx xxxxx/xxxxx xxxxxxxx xx xxxx xxx.</p></td>
+<td align="left"><p>This topic describes how to implement audio/video playback in your app.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Supported Media Formats in Media Foundation](https://msdn.microsoft.com/library/windows/desktop/dd757927)</p></td>
-<td align="left"><p>Xxxx xxxxx xxxxx xxx xxxxx xxxxxxx xxxx Xxxxxxxxx Xxxxx Xxxxxxxxxx xxxxxxxx xxxxxxxx. (Xxxxx xxxxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxx xx xxxxxxx xxxxxx xxxx-xxx.)</p></td>
+<td align="left"><p>This topic lists the media formats that Microsoft Media Foundation supports natively. (Third parties can support additional formats by writing custom plug-ins.)</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Encoding and File Authoring](https://msdn.microsoft.com/library/windows/desktop/dd318778)</p></td>
-<td align="left"><p>Xxxx xxxxx xxxxxxxxx xxx xx xxx Xxxxxxxxx Xxxxx Xxxxxxxxxx xx xxxxxxx xxxxx xxx xxxxx xxxxxxxx, xxx xxxxxx xxxxx xxxxx.</p></td>
+<td align="left"><p>This topic describes how to use Microsoft Media Foundation to perform audio and video encoding, and author media files.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Windows Media Codecs](https://msdn.microsoft.com/library/windows/desktop/ff819508)</p></td>
-<td align="left"><p>Xxxx xxxxx xxxxxxxxx xxx xx xxx xxx xxxxxxxx xx xxx Xxxxxxx Xxxxx Xxxxx xxx Xxxxx xxxxxx xx xxxxxxx xxx xxxxxxx xxxxxxxxxx xxxx xxxxxxx.</p></td>
+<td align="left"><p>This topic describes how to use the features of the Windows Media Audio and Video codecs to produce and consume compressed data streams.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Media Foundation Programming Reference](https://msdn.microsoft.com/library/windows/desktop/ms704847)</p></td>
-<td align="left"><p>Xxxx xxxxxxx xxxxxxxx xxxxxxxxx xxxxxxxxxxx xxx xxx Xxxxx Xxxxxxxxxx XXXx.</p></td>
+<td align="left"><p>This section contains reference information for the Media Foundation APIs.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Media Foundation SDK Samples](https://msdn.microsoft.com/library/windows/desktop/aa371827)</p></td>
-<td align="left"><p>Xxxx xxxxxxx xxxxx xxxxxx xxxx xxxx xxxxxxxxxxx xxx xx xxx Xxxxx Xxxxxxxxxx.</p></td>
+<td align="left"><p>This section lists sample apps that demonstrate how to use Media Foundation.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-### Xxxxxxx Xxxxxxx XXXX xxxxx xxxxx
+### Windows Runtime XAML media types
 
-Xx xxx xxx xxxxx [XxxxxxX-XXXX xxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh825871), xxx xxx xxxxxxxxxxx xxx Xxxxxxx Xxxxxxx XXXX xxxxx XXXx xxxx xxxx Xxxxxxx Xxxxx xxxx xxxxx XxxxxxX xxxx X++ xxx xxxxxxx xxxx xxxxxxxxx.
+If you are using [DirectX-XAML interop](https://msdn.microsoft.com/library/windows/apps/hh825871), you can incorporate the Windows Runtime XAML media APIs into your Windows Store apps using DirectX with C++ for simpler game scenarios.
 
 <table>
 <colgroup>
@@ -258,58 +258,62 @@ Xx xxx xxx xxxxx [XxxxxxX-XXXX xxxxxxx](https://msdn.microsoft.com/library/windo
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Topic</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p>[<strong>Xxxxxxx.XX.Xxxx.Xxxxxxxx.XxxxxXxxxxxx</strong>](xxxxx://xxxx.xxxxxxxxx.xxx/xxxxxxx/xxxxxxx/xxxx/xxYYYYYY)</p></td>
-<td align="left"><p>XXXX xxxxxxx xxxx xxxxxxxxxx xx xxxxxx xxxx xxxxxxxx xxxxx, xxxxx, xx xxxx.</p></td>
+<td align="left"><p>[<strong>Windows.UI.Xaml.Controls.MediaElement</strong>](https://msdn.microsoft.com/library/windows/apps/br242926)</p></td>
+<td align="left"><p>XAML element that represents an object that contains audio, video, or both.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[Audio, video, and camera](https://msdn.microsoft.com/library/windows/apps/mt203788)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxxxxxxx xxxxx xxxxx xxx xxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.</p></td>
+<td align="left"><p>Learn how to incorporate basic audio and video in your Universal Windows Platform (UWP) app.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[MediaElement](https://msdn.microsoft.com/library/windows/apps/mt187272)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxx x xxxxxxx-xxxxxx xxxxx xxxx xx xxxx XXX xxx.</p></td>
+<td align="left"><p>Learn how to play a locally-stored media file in your UWP app.</p></td>
 </tr>
 <tr class="even">
 <td align="left"><p>[MediaElement](https://msdn.microsoft.com/library/windows/apps/mt187272)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxxxxx x xxxxx xxxx xxxx xxx-xxxxxxx xx xxxx XXX xxx.</p></td>
+<td align="left"><p>Learn how to stream a media file with low-latency in your UWP app.</p></td>
 </tr>
 <tr class="odd">
 <td align="left"><p>[Media casting](https://msdn.microsoft.com/library/windows/apps/mt282143)</p></td>
-<td align="left"><p>Xxxxx xxx xx xxx xxx Xxxx Xx xxxxxxxx xx xxxxxx xxxxx xxxx xxxx XXX xxx xx xxxxxxx xxxxxx.</p></td>
+<td align="left"><p>Learn how to use the Play To contract to stream media from your UWP app to another device.</p></td>
 </tr>
 </tbody>
 </table>
 
  
 
-## Xxxxxxxxx
+## Reference
 
 
--   [XXxxxxY Xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ee415813)
--   [XXxxxxY Xxxxxxxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/desktop/ee415737)
--   [Xxxxxxxxx Xxxxx Xxxxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ms694197)
+-   [XAudio2 Introduction](https://msdn.microsoft.com/library/windows/desktop/ee415813)
+-   [XAudio2 Programming Guide](https://msdn.microsoft.com/library/windows/desktop/ee415737)
+-   [Microsoft Media Foundation overview](https://msdn.microsoft.com/library/windows/desktop/ms694197)
 
-> **Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
-
- 
-
-## Xxxxxxx xxxxxx
-
-
--   [XXxxxxY Xxxxxxxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/desktop/ee415737)
+> **Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
+## Related topics
+
+
+-   [XAudio2 Programming Guide](https://msdn.microsoft.com/library/windows/desktop/ee415737)
+
  
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

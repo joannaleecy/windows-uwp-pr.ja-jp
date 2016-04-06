@@ -1,32 +1,38 @@
 ---
-xx.xxxxxxx: XXXYYYXY-YYXX-YYXY-XXXY-YYYXXYYYYYXX
-xxxxx: Xxxxxxxxx xxxxxxx
-xxxxxxxxxxx: Xxxxxxx xx x xxxxxx xxxxx xx xxx xxxxxxxxxxxx – xxx xxxxxxx, xxxxxxxxxxxx xxx xxxxxxxxxxx xxxxxx - xxx xxxxxx xx xxxx xx xxxxxxxxxxx xxx xx xxxxxxxxxxxxx xxxxxxx.
+ms.assetid: ECE848C2-33DE-46B0-BAE7-647DB62779BB
+title: センサーの調整
+description: デバイスの磁力計 (コンパス、傾斜計、方位センサー) に基づくセンサーは、環境の要因に応じて調整が必要になることがあります。
 ---
-# Xxxxxxxxx xxxxxxx
+# センサーの調整
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
-** Xxxxxxxxx XXXx **
+** 重要な API **
 
--   [**Xxxxxxx.Xxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206408)
--   [**Xxxxxxx.Xxxxxxx.Xxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
+-   [**Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408)
+-   [**Windows.Devices.Sensors.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn895032)
 
-Xxxxxxx xx x xxxxxx xxxxx xx xxx xxxxxxxxxxxx – xxx xxxxxxx, xxxxxxxxxxxx xxx xxxxxxxxxxx xxxxxx - xxx xxxxxx xx xxxx xx xxxxxxxxxxx xxx xx xxxxxxxxxxxxx xxxxxxx. Xxx [**XxxxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn297552) xxxxxxxxxxx xxx xxxx xxxxxxxxx x xxxxxx xx xxxxxx xxxx xxxx xxxxxx xx xx xxxx xx xxxxxxxxxxx.
+デバイスの磁力計 (コンパス、傾斜計、方位センサー) に基づくのセンサーは、環境の要因に応じて調整が必要になることがあります。 [
+            **MagnetometerAccuracy**](https://msdn.microsoft.com/library/windows/apps/Dn297552) 列挙値は、デバイスの調整が必要になる場合の対応策を決めるのに役立ちます。
 
-## Xxxx xx xxxxxxxxx xxx xxxxxxxxxxxx
+## 磁力計を調整するタイミング
 
-Xxx [**XxxxxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn297552) xxxxxxxxxxx xxx xxxx xxxxxx xxxx xxxx xxx xxxxxxxxx xx xxx xxxxxx xxxx xxx xx xxxxxxx xx xxxxx xx xx xxxxxxxxxx. Xx x xxxxxx xxxxx xx xx xxxxxxxxxx, xxx xxxxxx xxx xxx xxxx xxxx xxxx xxxxxxxxxxx xx xxxxxx. Xxxxxxx, xxx xxxxxx xxx xxxxxx xxx xxxx xx xxxxxxxxx xxx xxxxxxxxxx. Xx xxxxxxxxx xx xxxx xxxx xxxx xxxxx YY xxxxxxx.
+[
+            **MagnetometerAccuracy**](https://msdn.microsoft.com/library/windows/apps/Dn297552) 列挙値には、アプリが実行されているデバイスを調整する必要があるかどうかを判断するのに役立つ 4 つの値があります。 デバイスを調整する必要がある場合は、その旨をユーザーに知らせる必要があります。 ただし、あまりに頻繁に調整を行うようユーザーに促さないでください。 10 分に 1 回を超えないようにします。
 
-| Xxxxx           | Xxxxxxxxxxx                                                                                                                                                      |-----------------|-------------------|                                                                                                                                              | **Xxxxxxx**     | Xxx xxxxxx xxxxxx xxxxx xxx xxxxxx xxx xxxxxxx xxxxxxxx. Xxxx xxxx xxx xxxxxxxxxxx xxxx xxx xxxxxx xx xxx xx xxxxxxxxxxx. Xx xx xx xx xxxx xxx xx xxxxxx xxx xxxx xxxxxx xx xxxxxx xx **Xxxxxxx** xx xxxxxxxx. Xx xxxx xxx xx xxxxxxxxx xx xx xxxxxxxx xxxxxx xxxxxxx, xxx xxx xxxx xx xxxxxx xxx xxxx xx xxxxxxxxx xxx xxxxxx. |
-| **Xxxxxxxxxx**  | Xxxxx xx xxxxxxxxx x xxxx xxxxxx xx xxxxxxxxxx xx xxx xxxxxxxxxxxx. Xxxx xxxxxx xxxxxx xxx xxx x xxxxxxxxxxx xxxx xxx xxxx xxxx xxxx xxxxx xx xxxxx xxxxxxxx. |
-| **Xxxxxxxxxxx** | Xxx xxxx xx xxxxxxxx xxxxxx xxx xxxx xxxxxxxxxxxx. X xxxxxxx xxxxxxx xxx, xxxx xxxx xxxxx xx xxxx xx xxx xxxx xxx xxxxx xxx xxxxxx xx/xxxx xx xxxx/xxxxx, xxx xxxxxxxx xxxxxxx xxxxxxxxxxx. Xxxx xxxx xxxx xx xxxxxxxx xxxxxxx, xxxx x xxxxxxxxxx xxx xxxx xxxxx xx xxxx xxxx xxxxxxxxx xxx xxx xxxxxxx xx xxxxx xx xxxx xxx xxxxxxxxxx, xxxx xx xxx xxx xxxxxxxxxxx. |
-| **Xxxx**        | Xxx xxxx xx xxxxxxx. Xx xxxxxxxxxxx xx xxxxxx, xxxx xxx xxxx xxxx xxxx xx xxxx xx xxxxxxxx xxxxxxx xxxx xx xxxxxxxxx xxxxxxx xx xxxxxxxxxx xxxx. |
+| 値           | 説明                                                                                                                                                      |-----------------|-------------------|                                                                                                                                              | **Unknown**     | センサー ドライバーは現在の精度を報告できませんでした。 これは、必ずしもデバイスが調整されていないことを意味するわけではありません。 **Unknown** が返された場合の最適な対応策は、開発しているアプリによって決まります。 アプリがセンサーの正確な読み取り値を利用しているのであれば、ユーザーにデバイスの調整を促します。 |
+| **Unreliable** | 現在、磁力計の精度が著しく低下しています。 この値が最初に返された時点で、アプリからユーザーに必ず調整を求めます。 |
+| **Approximate** | 一部のアプリにはデータの精度が不十分です。 ユーザーがデバイスを上下または左右に動かしたかどうかがわかればよいだけの仮想現実アプリでは、調整なしで続行できます。 指示を出すためにどの方向に進んでいるか知る必要があるナビゲーション アプリのように、絶対的な進路を必要とするアプリでは、調整を促す必要があります。 |
+| **High**        | データは正確です。 拡張現実アプリ、ナビゲーション アプリなどの絶対的な進路を知る必要があるアプリでも、調整は必要ありません。 |
 
-## Xxx xx xxxxxxxxx xxx xxxxxxxxxxxx
+## 磁力計を調整する方法
 
-Xxxx xxxxx xxxxx xxxxx xx xxxxxxxx xx xxx xx xxxxxxxxx xxx xxxxxxxxxxxx.<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/727bd0e3-9116-49c3-8af6-0b4339324b71/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">Xxx xxx xxxxxx - Xxxxxx Xxxxxxxxxxx</iframe>
+この短いビデオでは、磁力計を調整する方法を概説しています。<iframe src="https://hubs-video.ssl.catalog.video.msn.com/embed/727bd0e3-9116-49c3-8af6-0b4339324b71/IA?csid=ux-en-us&MsnPlayerLeadsWith=html&PlaybackMode=Inline&MsnPlayerDisplayShareBar=false&MsnPlayerDisplayInfoButton=false&iframe=true&QualityOverride=HD" width="720" height="405" allowFullScreen="true" frameBorder="0" scrolling="no">One Dev Minute - センサーの調整</iframe>
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

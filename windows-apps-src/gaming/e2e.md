@@ -1,714 +1,718 @@
 ---
-xxxxx: Xxxxxxx YY xxxx xxxxxxxxxxx xxxxx
-xxxxxxxxxxx: Xx xxx-xx-xxx xxxxx xx xxxxxxxxx xxx xxxxxxxxxxx xxx xxxxxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxx.
-xx.xxxxxxx: YYYYXYYY-YYXY-YYXX-YYYY-YYXXYXYYYYXY
+title: Windows 10 ゲーム開発ガイド
+description: ユニバーサル Windows プラットフォーム (UWP) ゲーム開発のためのリソースや情報を網羅したガイドです。
+ms.assetid: 6061F498-96A8-44EF-9711-68AE5A1218C9
 ---
 
-# Xxxxxxx YY xxxx xxxxxxxxxxx xxxxx
+# Windows 10 ゲーム開発ガイド
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxxxxx xx xxx Xxxxxxx YY xxxx xxxxxxxxxxx xxxxx!
+Windows 10 ゲーム開発ガイドへようこそ。
 
-Xxxx xxxxx xxxxxxxx xx xxx-xx-xxx xxxxxxxxxx xx xxx xxxxxxxxx xxx xxxxxxxxxxx xxx'xx xxxx xx xxxxxxx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
+このガイドでは、ユニバーサル Windows プラットフォーム (UWP) ゲームの開発に必要なリソースと情報を網羅したコレクションを提供します。
 
-## Xxxxxxxxxxxx xx xxxx xxxxxxxxxxx xxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX)
-
-
-Xxxx xxx xxxxxx x Xxxxxxx YY xxxx, xxx xxxx xxx xxxxxxxxxxx xx xxxxx xxxxxxxx xx xxxxxxx xxxxxxxxx xxxxxx xxxxx, XX, xxx Xxxx Xxx. Xxxx Xxxx xx Xxxxxxx, Xxxx Xxxx, xxxxx-xxxxxx xxxxxxxxxxx, xx xxxxxxx xxxxxx xxxxxxxxx, xxx xxxxxxxx xxx xxxxxxxx xxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx XxxxxxX YY, Xxxxxxx YY xxxxx xxxxxx xxxxxxx xx xxx xxxx xxx xxxxxx. Xxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxx xxxxxxxxxxxxx xxx xxxx xxxx xxxxxx Xxxxxxx YY xxxxxxx xxxx x xxxxxx XXX xxx xxxxx, XX, xxx Xxxx Xxx, xxxxx xxxx xxxxx xxx xxxxxxx xx xxxxxx xxxx xxxx xx xxxx xxxxxx xxxxxxxxxx.
-
-Xxxx xxxxx xxxxxxxx xx xxx-xx-xxx xxxxxxxxxx xx xxxxxxxxxxx xxx xxxxxxxxx xxxx xxxx xxxx xxx xx xxx xxxxxxx xxxx xxxx. Xxx xxxxxxxx xxx xxxxxxxxx xxxxxxxxx xx xxx xxxxxx xx xxxx xxxxxxxxxxx, xx xxx'xx xxxx xxxxx xx xxxx xxx xxxxxxxxxxx xxxx xxx xxxx xx.
-
-Xx xxx xxxxxxx, xxx [Xxxx xxxxxxxxxxx xxxxxxxxx](#resources) xxxxxxx xxxxxxxx x xxxx-xxxxx xxxxxx xx xxxxxxxxxxxxx, xxxxxxxx, xxx xxxxx xxxxxxxxx xxxx xxx xxxxxxx xxxx xxxxxxxx x xxxx.
-
-Xxxx xxxxx xxxx xx xxxxxxx xx xxxxxxxxxx Xxxxxxx YY xxxx xxxxxxxxxxx xxxxxxxxx xxx xxxxxxxx xxxxxx xxxxxxxxx.
-
-## Xxxx xxxxxxxxxxx xxxxxxxxx
+## ユニバーサル Windows プラットフォーム (UWP) 用ゲーム開発の概要
 
 
-Xxxx xxxxxxxxxxxxx xx xxxxxxxxx xxxxxxxx, xxxxxx, xxxxx, xxx xxxxxxx, xxxxx xxx xxxx xxxxxxxxx xxxxxxxxx xx xxxx xxx xx xxxx xxxx xxxxxxxxxxx xxxxxxx. Xxxx'x x xxxxxxx xx xxxxxxxxx xx xxxx xxxxx xx xxx xxxxx xxxxxxxxxx xxxx Xxxxxxx YY xxxx.
+Windows 10 ゲームを作成すると、スマートフォンから PC、Xbox One にいたる数百万人のプレイヤーにゲームを提供するチャンスを得られます。 Windows の Xbox、Xbox Live、クロス デバイス マルチプレイヤー、すばらしいゲーム コミュニティ、ユニバーサル Windows プラットフォーム (UWP) や DirectX 12 などの強力な新機能により、Windows 10 ゲームは、あらゆる世代やジャンルのプレイヤーを楽しませるでしょう。 新しいユニバーサル Windows プラットフォーム (UWP) は、スマートフォン、PC、Xbox One 用の共通 API と、各デバイスのエクスペリエンスに合わせてゲームをカスタマイズするツールやオプションによって、Windows 10 デバイスでのゲームの互換性を実現します。
 
-> **Xxxx**   Xxxx Xxx xxxxxxxxxxx xxx xxxxxx Xxxxxxx YY xxxxxx xxxxxxxx (Xxxx Xxxx Xxxxxxxx, xxx xxxxxxx) xxx xxxxxxx xxxxxxx xxxxxxxx xxxx xx XX@Xxxx xxx Xxxxxxxxx Xxxxxxx. Xxxx xxxxx xxxxxx x xxxxx xxxxx xx xxxxxxxxx, xx xxx xxx xxxx xxxx xxxx xxxxxxxxx xxx xxxxxxxxxxxx xxxxxxxxx xx xxx xxxxxxx xxx xxx xx xx xxxx xxxxxxxx xxxxxxxxxxx xxxx. Xxxxxxxx xxx xxxxx xxxx xxxxxxx xx xxxxxxxxx.xxxxxxxx.xxx, xxxxxx.xxxxxxxx.xxx, xxx.xxxxxxxx.xxx, xx xxx Xxxx Xxxxxxxxx Xxxxxxx (XXX). Xxx xxxxxxxxxxx xxxxx xxxxxxxxxx xxxx Xxxxxxxxx, xxx [Xxxxxxxxx Xxxxxxxx](#programs).
+このガイドでは、ゲームの開発に役立つさまざまなリソースや情報を網羅して提供します。 必要なときに情報を検索する場所がわかるように、各セクションはゲームの開発の各段階に従って編成されています。
+
+最初に、「[ゲーム開発に関するリソース](#resources)」セクションでは、ゲームの作成時に役立つドキュメント、プログラム、その他のリソースの大まかな概要を示します。
+
+このガイドは、Windows 10 ゲーム開発に関する新しいリソースや資料が利用可能になると更新されます。
+
+## ゲーム開発に関するリソース
+
+
+ドキュメントから、開発者向けのプログラム、フォーラム、ブログ、サンプルまで、ゲーム開発に役立つ多くのリソースが用意されています。 ここでは、Windows 10 ゲームの開発を始めるにあたって役立つリソースをまとめています。
+
+> **注**   Xbox One の開発と高度な Windows 10 のゲーム機能 (Xbox Live サービスなど) は、ID@Xbox や Microsoft Studios などのプログラムによって管理されます。 このガイドでは幅広いリソースを取り上げているため、参加しているプログラムや特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#programs)」をご覧ください。
 
  
 
-### Xxxx xxxxxxxxxxx xxxxxxxxxxxxx
+### ゲーム開発に関するドキュメント
 
-Xxxxxxxxxx xxxx xxxxx, xxx'xx xxxx xxxx xxxxx xx xxxxxxxx xxxxxxxxxxxxx—xxxxxxxxx xx xxxx, xxxxxxxxxx, xxx xxxxx xx xxxx xxxxxxxxxxx. Xx xxxx xxx x xxxxx xxxx xx xxxx'x xxxxxxxxx, xxxx xxx xxx xxxx xxxxxxxxxxxxx xxxxxxx xxx Xxxxxxx YY xxxx xxxxxxxxxxx.
+このガイド全体を通して、タスク、テクノロジ、ゲームの開発の段階ごとに整理された、関連ドキュメントへのディープ リンクを示しています。 利用可能なドキュメントのさまざまなビューを提供するために、Windows 10 ゲーム開発用の主要なドキュメント ポータルを次に示します。
 
 |                                        |                                                                                                                       |
 |----------------------------------------|-----------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxx Xxx Xxxxxx xxxx xxxxxx         | [Xxxxxxx Xxx Xxxxxx](https://dev.windows.com)                                                                         |
-| Xxxxxxxxxx Xxxxxxx xxxx                | [Xxxxxxx Xxxxxxx xxxx](https://dev.windows.com/develop)                                                               |
-| Xxxxxxxxx Xxxxxxx xxx xxxxxxxxxxx      | [Xxx-xx xxxxxx xxx Xxxxxxx YY xxxx](https://msdn.microsoft.com/library/windows/apps/mt244352)                                 |
-| Xxx-xx xxxxxx xxx XXX xxxxx            | [Xxxxx xxx XxxxxxX](index.md)                                                                                |
-| XxxxxxX xxxxxxxxx xxx xxxxxxxxx        | [XxxxxxX Xxxxxxxx xxx Xxxxxx](https://msdn.microsoft.com/library/windows/desktop/ee663274)                                                                       |
-| Xxxx Xxxx xxxxxxxxxxxxx                | [Xxxx Xxxx XXX](http://aka.ms/xsapi2)                                                                                 |
-| Xxxx Xxx xxxxxxxxx xxxxxxxxxxxxx (XXX) | [Xxxx Xxx XXX xxxxxxxxxxxxx](https://developer.xboxlive.com/platform/development/documentation/Pages/home.aspx) |
-| Xxxx Xxx xxxxxxxxx xxxxxxxxxxx (XXX)   | [Xxxxx Xxxxxx](https://developer.xboxlive.com/platform/development/education/Pages/WhitePapers.aspx)            |
+| Windows デベロッパー センターのメイン ポータル         | [Windows デベロッパー センター](https://dev.windows.com)                                                                         |
+| Windows アプリの開発                | [Windows アプリの開発](https://dev.windows.com/develop)                                                               |
+| ユニバーサル Windows アプリの開発      | [Windows 10 アプリに関するハウツー ガイド](https://msdn.microsoft.com/library/windows/apps/mt244352)                                 |
+| UWP ゲームに関する使い方ガイド            | [ゲームと DirectX](index.md)                                                                                |
+| DirectX のリファレンスと概要        | [DirectX のグラフィックスとゲーミング](https://msdn.microsoft.com/library/windows/desktop/ee663274)                                                                       |
+| Xbox Live に関するドキュメント                | [Xbox Live SDK](http://aka.ms/xsapi2)                                                                                 |
+| Xbox One 開発者向けドキュメント (GDN) | [Xbox One XDK ドキュメント](https://developer.xboxlive.com/platform/development/documentation/Pages/home.aspx) |
+| Xbox One 開発者向けホワイト ペーパー (GDN)   | [ホワイト ペーパー](https://developer.xboxlive.com/platform/development/education/Pages/WhitePapers.aspx)            |
 
  
 
-### Xxxxxxxxx xxxxxxxx
+### 開発者プログラム
 
-Xxxxxxxxx xxxxxx xxxxxxx xxxxxxxxx xxxxxxxx xx xxxx xxx xxxxxxx xxx xxxxxxx Xxxxxxx xxxxx. Xx xxxxxxx x xxxx xx xxx Xxxxxxx Xxxxx, xxx'xx xxxx xx xxxxxx x xxxxxxxxx xxxxxxx xx Xxxxxxx Xxx Xxxxxx. Xxxxx xxxxxxxx xxx xx xx xxxxxxxx xxxxxxxxx xx xxxx xxxx xxx xxxxxx xxxxx, xxx xxx xxxxxx xxxxxxxxxxxxx xxxx xx Xxxx Xxx xxxxxxxxxxx xxx Xxxx Xxxx xxxxxxxxxxx.
+Microsoft では、Windows ゲームの開発と公開に役立ついくつかの開発者向けプログラムを提供しています。 Windows ストアでゲームを公開するには、Windows デベロッパー センターで開発者アカウントを作成する必要があります。 開発するゲームや制作スタジオのニーズによっては、他のプログラムも関心を集めており、Xbox One の開発や Xbox Live の統合などの機会を創造できます。
 
-### Xxxxxxx Xxx Xxxxxx
+### Windows デベロッパー センター
 
-Xxxxxxxxxxx x xxxxxxxxx xxxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xx xxx xxxxx xxxx xxxxxxx xxxxxxxxxx xxxx Xxxxxxx xxxx. X xxxxxxxxx xxxxxxx xxxx xxx xxxxxxx xxxx xxxx'x xxxx xxx xxxxxx xxxx xx xxxx xxxxx xx xxx Xxxxxxx Xxxxx xxx xxx Xxxxxxx xxxxxxx. Xxx xxxx xxxxxxxxx xxxxxxx xx xxxxxx xxxx xxxx xxx xx-xxxx xxxxxxxx, xxx xxxxxxxx xxxxxxxxx, xxx xxxxxx xxxxxxxx xxxx xxxxxx xxxxx xxxxxxxxxxx xxx xxxx xxxxxxx xxxxxx xxx xxxxx.
+Windows ゲームの公開に向けての最初の一歩は、Windows デベロッパー センターで開発者アカウントを登録することです。 開発者アカウントでは、ゲームの名前を予約することや、すべての Windows デバイスに対応する無料ゲームと有料ゲームを Windows ストアに提出することができます。 開発者アカウントを使って、ゲームとゲーム内製品を管理し、詳細な分析を取得したり、世界中のユーザーに優れたエクスペリエンスをサービスで実現することができます。
 
 |                              |                                           |
 |------------------------------|-------------------------------------------|
-| Xxxxxxxx x xxxxxxxxx xxxxxxx | [Xxxxx xx xxxx xx?](https://msdn.microsoft.com/library/windows/apps/bg124287) |
+| 開発者アカウントの登録 | [サインアップの準備はできましたか。](https://msdn.microsoft.com/library/windows/apps/bg124287) |
 
  
 
-### XX@Xxxx
+### ID@Xbox
 
-Xxx XX@Xxxx xxxxxxx xxxxx xxxxxxxxx xxxx xxxxxxxxxx xxxx-xxxxxxx xx Xxxxxxx xxx Xxxx Xxx. Xx xxx xxxx xx xxxxxxx xxx Xxxx Xxx, xx xxx Xxxx Xxxx xxxxxxxx xxxx Xxxxxxxxxx, xxxxxxxxxxxx, xxx xxxxxxxxxxxx xx xxxx Xxxxxxx YY xxxx, xxxx xx xxxx XX@Xxxx. Xxxxxx xx XX@Xxxx xxxxxxxxx xx xxx xxx xxxxx xxx xxxxxxx xxx xxxx xx xxxxxxx xxxx xxxxxxxxxx xxx xxxxxxxx xxxx xxxxxxx. Xxxxxx xxxxxxxx xx XX@Xxxx, xxxxxx xxxxxxxx x xxxxxxxxx xxxxxxx xx Xxxxxxx Xxx Xxxxxx.
+ID@Xbox プログラムでは、認定されたゲーム開発者が Windows と Xbox One 向けに自分でゲームを公開するためのサポートを行います。 Xbox One 向けの開発を行ったり、ゲーマースコア、達成度、ランキングなどの Xbox Live 機能を自分の Windows 10 ゲームでも実現したいと検討されているなら、ID@Xbox にサインアップしてください。 ID@Xbox 開発者になると、創造性を解き放ち、成功の可能性を最大限に引き出すためのツールやサポートを利用できます。 ID@Xbox への登録を申し込む前に、Windows デベロッパー センターで開発者アカウントを登録してください。
 
 |                           |                                                                                               |
 |---------------------------|-----------------------------------------------------------------------------------------------|
-| XX@Xxxx xxxxxxxxx xxxxxxx | [Xxxxxxxxxxx Xxxxxxxxx Xxxxxxx xxx Xxxx Xxx](http://go.microsoft.com/fwlink/p/?LinkID=526271) |
-| XX@Xxxx xxxxxxxx xxxx     | [XX@Xxxx](http://www.idatxbox.com/)                                                           |
+| ID@Xbox 開発者プログラム | [Xbox One 向けの独立した開発者プログラム](http://go.microsoft.com/fwlink/p/?LinkID=526271) |
+| ID@Xbox コンシューマー向けサイト     | [ID@Xbox](http://www.idatxbox.com/)                                                           |
 
  
 
-### XxxxxxX xxxxx xxxxxx xxxxxxx
+### DirectX 早期アクセス プログラム
 
-Xxxxxxxxxxxx xxxx xxxxxxxxxx xxx xxxx xxxxx xxxxxxxx xx XxxxxxYX YY XXX xxxxxxx xxx xxxx xx xxxxxxx xxxxxxxx xx xxx xxxxxx xxx xxxx xxx XxxxxxX xxxxx xxxxxx xxxxxxx.
+プロのゲーム開発者が、Direct3D 12 API の変更点を初期段階からプレビューする場合や、フォーラムでフィードバックを提供する場合は、DirectX 早期アクセス プログラムにご参加ください。
 
 |                                                  |                                                        |
 |--------------------------------------------------|--------------------------------------------------------|
-| Xxxxxxxx xxx xxx XxxxxxX YY xxxxx xxxxxx xxxxxxx | [XxxxxxX Xxxxx Xxxxxx Xxxxxxx](http://1drv.ms/1dgelm6) |
+| DirectX 12 早期アクセス プログラムに登録する | [DirectX 早期アクセス プログラム](http://1drv.ms/1dgelm6) |
 
  
 
-### Xxxx xxxxx xxx xxxxxxxxxx
+### Xbox のツールとミドルウェア
 
-Xxx Xxxx Xxxxx xxx Xxxxxxxxxx Xxxxxxx xxxxxxxx Xxxx xxxxxxxxxxx xxxx xx xxxxxxxxxxxx xxxxxxxxxx xx xxxx xxxxx xxx xxxxxxxxxx. Xxxxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xxx xxxxx xxx xxxxxxxxxx xxxxx Xxxx XXX xxxxxxxxxxxx xx xxxxx xxxxxxxx Xxxx xxxxxxxxxx.
+Xbox のツールおよびミドルウェア プログラムは、ゲームのツールやミドルウェア専門の開発者に Xbox 開発キットのライセンスを付与します。 プログラムに受け入れられた開発者は、Xbox XDK テクノロジを共有し、ライセンスを持つ他の Xbox 開発者に配布することができます。
 
 |                                          |                          |
 |------------------------------------------|--------------------------|
-| Xxxxxxx xxx xxxxx xxx xxxxxxxxxx xxxxxxx | <xxxxxxxx@xxxxxxxxx.xxx> |
+| ツールおよびミドルウェア プログラムについて問い合わせる | <xboxtlsm@microsoft.com> |
 
  
 
-### Xxxxxxx
+### サンプル
 
-Xxxxx xxx xxxx Xxxxxxx YY xxxx xxx xxx xxxxxxx xxxxxxxxx xx xxxx xxx xxxxxxxxxx Xxxxxxx YY xxxxxx xxxxxxxx xxx xxx x xxxxx xxxxx xx xxxx xxxxxxxxxxx. Xxxx xxxxxxx xxx xxxxxxxxx xxx xxxxxxxxx xxxxxxxxx, xx xxx'x xxxxxx xx xxxxxxxxxxxx xxxxx xxxx xx xxxxxx xxxxxxx xx xxx xxxx'x xxx. Xxx xxx xxxx [xxxxx](https://help.github.com/articles/watching-repositories/) XxxXxx xxxxx xx xx xxxxxxxx xx xxxxxxx xxx xxxxxxxxx.
+Windows 10 ゲームとアプリのサンプルが数多く用意されており、Windows 10 のゲーム機能を理解して、ゲーム開発をすぐに始めることができます。 サンプルは次々と開発され、定期的に公開されるため、ときどきサンプル ポータルをチェックして、新機能を確認することを忘れないでください。 GitHub のリポジトリを[監視](https://help.github.com/articles/watching-repositories/)して、変更や追加についての通知を受け取ることもできます。
 
 |                                            |                                                                                                                                                                                                                |
 |--------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxxxx Xxxxxxx xxx xxxxxxx              | [Xxxxxxx-xxxxxxxxx-xxxxxxx](https://github.com/Microsoft/Windows-universal-samples)                                                                                                                            |
-| XxxxxxYX YY xxxxxxxx xxxxxxx               | [XxxxxxX-Xxxxxxxx-Xxxxxxx](https://github.com/Microsoft/DirectX-Graphics-Samples)                                                                                                                              |
-| XxxxxxYX YY xxxxx-xxxxxx xxxx xxxxxx       | [Xxxxxx x xxxxxx XXX xxxx xxxx XxxxxxX](tutorial--create-your-first-metro-style-directx-game.md)                                                                                                              |
-| XxxxxxYX xxxxxx xxxxx xxxxxxx xxxxxx       | [XYXXxxxxxXxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=620531)                                                                                                                                            |
-| XxxxxxYX xxxxxxxx xxxx xxxxxx              | [XYXXxxxxxxxXxxx](http://go.microsoft.com/fwlink/p/?LinkId=620532)                                                                                                                                             |
-| XxxxxxYX xxxxx xxxxxxxxxx xxxxxx           | [XYXXxxxxXxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=620533)                                                                                                                                          |
-| Xxxx Xxx xxxx xxxxxxx (XXX)                | [Xxxxxxx](https://developer.xboxlive.com/platform/development/education/Pages/Samples.aspx)                                                                                                              |
-| Xxxxxxx Y xxxx xxxxxxx (XXXX Xxxx Xxxxxxx) | [Xxxxxxx Xxxxx xxxx xxxxxxx](https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=game&f%5B1%5D.Type=Contributors&f%5B1%5D.Value=Microsoft&f%5B1%5D.Text=Microsoft) |
-| XxxxXxxxxx xxx XXXXY xxxx xxxxxx           | [XxxxXxxxxx xxx XXXXY xxxxx xxxx xxxxxx](https://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031)                                                                                      |
+| ユニバーサル Windows アプリのサンプル              | [Windows-universal-samples](https://github.com/Microsoft/Windows-universal-samples)                                                                                                                            |
+| Direct3D 12 グラフィックスのサンプル               | [DirectX グラフィックスのサンプル](https://github.com/Microsoft/DirectX-Graphics-Samples)                                                                                                                              |
+| Direct3D 11 主観視点のゲームのサンプル       | [DirectX によるシンプルな UWP ゲームの作成](tutorial--create-your-first-metro-style-directx-game.md)                                                                                                              |
+| Direct2D カスタム画像効果のサンプル       | [D2DCustomEffects](http://go.microsoft.com/fwlink/p/?LinkId=620531)                                                                                                                                            |
+| Direct2D グラデーション メッシュのサンプル              | [D2DGradientMesh](http://go.microsoft.com/fwlink/p/?LinkId=620532)                                                                                                                                             |
+| Direct2D 写真調整のサンプル           | [D2DPhotoAdjustment](http://go.microsoft.com/fwlink/p/?LinkId=620533)                                                                                                                                          |
+| Xbox One ゲームのサンプル (GDN)                | [サンプル](https://developer.xboxlive.com/platform/development/education/Pages/Samples.aspx)                                                                                                              |
+| Windows 8 ゲームのサンプル (MSDN コード ギャラリー) | [Windows ストア ゲームのサンプル](https://code.msdn.microsoft.com/windowsapps/site/search?f%5B0%5D.Type=SearchText&f%5B0%5D.Value=game&f%5B1%5D.Type=Contributors&f%5B1%5D.Value=Microsoft&f%5B1%5D.Text=Microsoft) |
+| JavaScript と HTML5 のゲームのサンプル           | [JavaScript と HTML5 のタッチ ゲームのサンプル](https://code.msdn.microsoft.com/windowsapps/JavaScript-and-HTML5-touch-d96f6031)                                                                                      |
 
  
 
-### Xxxxxxxxx xxxxxx
+### 開発者フォーラム
 
-Xxxxxxxxx xxxxxx xxx x xxxxx xxxxx xx xxx xxx xxxxxx xxxx xxxxxxxxxxx xxxxxxxxx xxx xxxxxxx xxxx xxx xxxx xxxxxxxxxxx xxxxxxxxx. Xxxxxx xxx xxxx xx xxxxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxx xxxxxxx xx xxxxxxxxx xxxxxx xxxx xxxxxxxxxx xxxx xxxxx xxx xxxxxx xx xxx xxxx.
+開発者フォーラムは、ゲームの開発に関する質疑応答を行ったり、ゲーム開発コミュニティで交流を深めたりするのに適した場所です。 フォーラムは、他の開発者が過去に直面し、解決した困難な問題に対する既存の回答を見つけることができる、優れたリソースでもあります。
 
 |                                                         |                                                                                                                                               |
 |---------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxx Xxx Xxxxxx xxx xxxxxxxxx xxxxxx                 | [Xxxxxxx xxx xxxxxx](https://social.msdn.microsoft.com/Forums/windowsapps/home)                                                         |
-| Xxxxxxx Xxx Xxxxxx xxxxxxx xxxxxxxxxxx xxxxxxxxx xxxxxx | [Xxxxxxx xxxxxxx xxxxxxxxxxx xxxxxx](https://social.msdn.microsoft.com/Forums/windowsdesktop/home)                                      |
-| XxxxxxX Xxxxxxx Xxxxx xxxxx (xxxxxxxx xxxxx xxxxx)      | [Xxxxxxxx Xxxxxxx Xxxxx xxxxx xxxx XxxxxxX (xxxxxxxx)](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=wingameswithdirectx) |
-| Xxxxxxx YY xxxxxxx xxxxxxx xxxxxxxxx xxxxxx             | [XXXX Xxxxxxxxx Xxxxxx: Xxxxxxx YY](http://aka.ms/win10devforums)                                                                             |
-| XxxxxxX xxxxx xxxxxx xxxxxxx xxxxxx                     | [XxxxxxX YY xxxxx](http://directx12forum.azurewebsites.net/index.php)                                                                         |
+| Windows デベロッパー センターのアプリ開発者フォーラム                 | [Windows アプリ フォーラム](https://social.msdn.microsoft.com/Forums/windowsapps/home)                                                         |
+| Windows デベロッパー センターのデスクトップ アプリケーション開発者フォーラム | [Windows デスクトップ アプリケーション フォーラム](https://social.msdn.microsoft.com/Forums/windowsdesktop/home)                                      |
+| DirectX Windows ストア ゲーム (アーカイブ済みのフォーラムの投稿)      | [DirectX を使った Windows ストア ゲームの構築 (アーカイブ済み)](https://social.msdn.microsoft.com/Forums/vstudio/en-US/home?forum=wingameswithdirectx) |
+| Windows 10 対象パートナー開発者フォーラム             | [XBOX 開発者フォーラム: Windows 10](http://aka.ms/win10devforums)                                                                             |
+| DirectX 早期アクセス プログラムのフォーラム                     | [DirectX 12 フォーラム](http://directx12forum.azurewebsites.net/index.php)                                                                         |
 
  
 
-### Xxxxxxxxx xxxxx
+### 開発者ブログ
 
-Xxxxxxxxx xxxxx xxx xxxxxxx xxxxx xxxxxxxx xxx xxx xxxxxx xxxxxxxxxxx xxxxx xxxx xxxxxxxxxxx. Xxx'xx xxxx xxxxx xxxxx xxx xxxxxxxx, xxxxxxxxxxxxxx xxxxxxx, xxxx xxxxxxxxx, xxxxxxxxxxxx xxxxxxxxxx, xxx xxxx.
+開発者ブログは、ゲームの開発に関する最新情報が提供されるもう 1 つの優れたリソースです。 新機能、実装の詳細、ベスト プラクティス、アーキテクチャの背景などに関する投稿を見つけることができます。
 
 |                                     |                                                                                  |
 |-------------------------------------|----------------------------------------------------------------------------------|
-| Xxxxxxxx xxxx xxx Xxxxxxx xxxx      | [Xxxxxxxx Xxxx xxx Xxxxxxx](http://blogs.windows.com/buildingapps/)              |
-| Xxxxxxx YY (xxxx xxxxx)             | [Xxxxx xx Xxxxxxx YY](http://blogs.windows.com/blog/tag/windows-10/)             |
-| Xxxxxx Xxxxxx xxxxxxxxxxx xxxx xxxx | [Xxx Xxxxxx Xxxxxx Xxxx](http://blogs.msdn.com/b/visualstudio/)                  |
-| Xxxxxx Xxxxxx xxxxxxxxx xxxxx xxxxx | [Xxxxxxxxx Xxxxx Xxxxx](http://blogs.msdn.com/b/developer-tools/)                |
-| Xxxxxxxxx'x xxxxxxxxx xxxxx xxxx    | [Xxxxxxxxx’x xxxx](http://blogs.msdn.com/b/somasegar/)                           |
-| XxxxxxX xxxxxxxxx xxxx              | [XxxxxxX Xxxxxxxxx xxxx](http://blogs.msdn.com/b/directx)                        |
-| XxxxxxX YY xxxxxxxxxxxx (xxxx xxxx) | [XxxxxxX YY](http://blogs.msdn.com/b/directx/archive/2014/03/20/directx-12.aspx) |
-| Xxxxxx X++ xxxxx xxxx xxxx          | [Xxxxxx X++ xxxx xxxx](http://blogs.msdn.com/b/vcblog/)                          |
-| XX@Xxxx xxxxxxxxx xxxx              | [XX@XXXX Xxxxxxxxx Xxxx](http://www.idatxbox.com/category/developer-blog/)       |
+| Windows 用アプリ開発ブログ      | [Windows 用アプリ開発](http://blogs.windows.com/buildingapps/)              |
+| Windows 10 (ブログの投稿)             | [Windows 10 に関する投稿](http://blogs.windows.com/blog/tag/windows-10/)             |
+| Visual Studio エンジニアリング チームのブログ | [The Visual Studio Blog](http://blogs.msdn.com/b/visualstudio/)                  |
+| Visual Studio 開発者ツールに関するブログ | [Developer Tools Blogs](http://blogs.msdn.com/b/developer-tools/)                |
+| Somasegar の開発者ツールに関するブログ    | [Somasegar’s blog](http://blogs.msdn.com/b/somasegar/)                           |
+| DirectX 開発者ブログ              | [DirectX Developer blog](http://blogs.msdn.com/b/directx)                        |
+| DirectX 12 の概要 (ブログの投稿) | [DirectX 12](http://blogs.msdn.com/b/directx/archive/2014/03/20/directx-12.aspx) |
+| Visual C++ ツール チームのブログ          | [Visual C++ team blog](http://blogs.msdn.com/b/vcblog/)                          |
+| ID@Xbox 開発者ブログ              | [ID@XBOX Developer Blog](http://www.idatxbox.com/category/developer-blog/)       |
 
  
 
-## Xxxxxxx xxx xxxxxxxx
+## 概念と計画
 
 
-Xx xxx xxxxxxx xxx xxxxxxxx xxxxx, xxx'xx xxxxxxxx xxxx xxxx xxxx xx xxxxx xx xx xxxx xxx xxx xxxxxxxxxxxx xxx xxxxx xxx'xx xxx xx xxxxx xx xx xxxx.
+概念と計画の段階では、ゲームの全体像とそれを実現するために使用するテクノロジやツールを決定します。
 
-### Xxxxxxxx xx xxxx xxxxxxxxxxx xxxxxxxxxxxx
+### ゲーム開発テクノロジの概要
 
-Xxxx xxx xxxxx xxxxxxxxxx x xxxx xxx xxx XXX xxx xxxx xxxxxxxx xxxxxxx xxxxxxxxx xxx xxxxxxxx, xxxxx, xxxxx, xxxxxxxxxx, xxxxxxxxx, xxx xxxxxxxxx.
+UWP のゲームの開発を開始するとき、グラフィックス、入力、オーディオ、ネットワーク、ユーティリティ、ライブラリについて、利用可能なオプションは複数あります。
 
-Xx xxx'xx xxxxxxx xxxxxxx xx xxx xxx xxxxxxxxxxxx xxx'xx xx xxxxx xx xxxx xxxx, xxxxx! Xx xxx, xxx [Xxxx xxxxxxxxxxxx xxx XXX xxxx](game-development-platform-guide.md) xxxxx xx xx xxxxxxxxx xxxxxxxx xx xxxx xx xxx xxxxxxxxxxxx xxxxxxxxx, xxx xx xxxxxx xxxxxxxxxxx xxxxxxx xx xxxx xxx xxxxxxxxxx xxx xxxxxxx xxx xxx xxxx xxx xxxxxxxx.
+ゲームで使うすべてのテクノロジが既に決定している場合は問題ありません。 まだ決まっていない場合、[UWP アプリのゲーム テクノロジ](game-development-platform-guide.md) ガイドに利用可能な多くのテクノロジの概要がまとめられています。このガイドに目を通して、さまざまなオプションとそれらを組み合わせる方法を理解しておくことを強くお勧めします。
 
 |                                 |                                                                       |
 |---------------------------------|-----------------------------------------------------------------------|
-| Xxxxxx xx XXX xxxx xxxxxxxxxxxx | [Xxxx xxxxxxxxxxxx xxx XXX xxxx](game-development-platform-guide.md) |
+| UWP のゲーム テクノロジの概要 | [UWP アプリのゲーム テクノロジ](game-development-platform-guide.md) |
 
  
 
-Xxxxx xxxxx XXX YYYY xxxxxx xxxx x xxxx xxxxxxxx xx Xxxxxxx YY xxxx xxxxxxxxxxx xxx xxx Xxxxxxx YY xxxxxx xxxxxxxxxx.
+次の 3 つの GDC 2015 のビデオは、Windows 10 のゲーム開発と Windows 10 のゲーム エクスペリエンスの概要を示しています。
 
 |                                                 |                                                                                                                                                         |
 |-------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxxx xx Xxxxxxx YY xxxx xxxxxxxxxxx (xxxxx) | [Xxxxxxxxxx Xxxxx xxx Xxxxxxx YY](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10)                                         |
-| Xxxxxxx YY xxxxxx xxxxxxxxxx (xxxxx)            | [Xxxxxx Xxxxxxxx Xxxxxxxxxx xx Xxxxxxx YY](http://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10)                       |
-| Xxxxxx xxxxxx xxx Xxxxxxxxx xxxxxxxxx (xxxxx)   | [Xxx Xxxxxx xx Xxxxxx Xxxxxx xxx Xxxxxxxxx Xxxxxxxxx](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) |
+| Windows 10 のゲーム開発の概要 (ビデオ) | [Windows 10 のゲームの開発](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-Games-for-Windows-10)                                         |
+| Windows 10 のゲーム エクスペリエンス (ビデオ)            | [Windows 10 でのゲームのユーザー エクスペリエンス](http://channel9.msdn.com/Events/GDC/GDC-2015/Gaming-Consumer-Experience-on-Windows-10)                       |
+| Microsoft エコシステム全体でのゲーム (ビデオ)   | [Microsoft エコシステム全体でのゲームの未来](http://channel9.msdn.com/Events/GDC/GDC-2015/The-Future-of-Gaming-Across-the-Microsoft-Ecosystem) |
 
  
 
-### Xxxxxxxx xxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxx xxxxxxxx
+### グラフィックス テクノロジとプログラミング言語の選択
 
-Xxxxx xxx xxxxxxx xxxxxxxxxxx xxxxxxxxx xxx xxxxxxxx xxxxxxxxxxxx xxxxxxxxx xxx xxx xx Xxxxxxx YY xxxxx. Xxx xxxx xxx xxxx xxxxxxx xx xxx xxxx xx xxxx xxx’xx xxxxxxxxxx, xxx xxxxxxxxxx xxx xxxxxxxxxxx xx xxxx xxxxxxxxxxx xxxxxx, xxx xxxxxxxx xxxxxxx xxxxxxxxxxxx xx xxxx xxxx. Xxxx xxx xxx X#, X++, xx XxxxXxxxxx? XxxxxxX, XXXX, xx XXXXY?
+Windows 10 ゲームでは、複数のプログラミング言語やグラフィックス テクノロジを使うことができます。 どれを選ぶかは、開発しているゲームの種類、開発スタジオの経験や好み、ゲームの具体的な機能要件によって決まります。 C#、C++、JavaScript のどれを使うか、 DirectX、XAML、HTML5 のどれを使うかなどです。
 
-### XxxxxxX
+### DirectX
 
-Xxxxxxxxx XxxxxxX xx xxx xxxxxx xx xxxx xxx xxx xxxxxxx-xxxxxxxxxxx YX xxx YX xxxxxxxx xxx xxxxxxxxxx. XxxxxxYX YY, xxx xx Xxxxxxx YY, xxxxxx xxx xxxxx xx x xxxxxxx-xxxx XXX xxx xx xxxxxx xxx xxxx xxxxxxxxx xxxx xxxx xxxxxx. Xxxx xxxx xxx xxxxx xxxxxxx xxxxxx xxxxxxxx xxxxxxxx xxx xxxxxxx xxxx xxxxxxx, xxxxxx xxxxxx, xxx xxxxxxxx xxxxxxx. XxxxxxYX YY xxxxxxxx xxxxxxxxx xxxxxxxx xx Xxxxxxx YY XXx xxx Xxxx Xxx. Xx xxx xxxx xx xxx xxx xxxxxxxx xxxxxxxx xxxxxxxx xx XxxxxxYX YY, xxx’xx xxxxx xxxxxxx xxxx xxx xxx xxxxxxxxx xxx xxxxxxxxxxxx xxxxxxxx xxxxx xx XxxxxxYX YY.Y. Xxx, xx xxx’xx x xxxxx-xxx-xxxx xxxxxxx Xxxxxxx XXX xxxxxxxxx xxxx xxxxx xx XxxYY, xxx’xx xxxxx xxxx xxxx xxxxxx xx Xxxxxxx YY.
+Microsoft DirectX を使うと、最高のパフォーマンスの 2D および 3D グラフィックスとマルチメディアを生み出すことができます。 Windows 10 で新たに導入された Direct3D 12 は、コンソールに似た API の性能を備え、これまで以上に高速で効率的になりました。 開発するゲームで、最新のグラフィックス ハードウェアを十分に活用して、より多くのオブジェクト、より豊かなシーン、より印象的な効果を実現できます。 Direct3D 12 は、Windows 10 PC と Xbox One 向けに最適化されたグラフィックスを提供します。 Direct3D 11 の使い慣れたグラフィックス パイプラインを使う場合でも、Direct3D 11.3 に追加された新しいレンダリングおよび最適化機能を活かすことができます。 さらに、Win32 をルーツとする実証済みのデスクトップ Windows API の開発者は、Windows 10 でもそのオプションを選ぶことができます。
 
-Xxx xxxxxxxxx xxxxxxxx xxx xxxx xxxxxxxx xxxxxxxxxxx xx XxxxxxX xxxxxxx xxx xxxxx xxx xxxxxxxxxxx xxxxxx xx xxx xxxx xxxxxxxxx xxxxx.
+DirectX のさまざまな機能と緊密なプラットフォーム統合により、要求の多いほとんどのゲームに必要とされる性能とパフォーマンスを実現できます。
 
 |                                             |                                                         |
 |---------------------------------------------|---------------------------------------------------------|
-| Xxx-xx xxxxxx xxx XxxxxxX xxxxx             | [Xxxxx xxx XxxxxxX](index.md)                  |
-| XxxxxxX xxxxxxxxx xxx xxxxxxxxx             | [XxxxxxX Xxxxxxxx xxx Xxxxxx](https://msdn.microsoft.com/library/windows/desktop/ee663274)         |
-| XxxxxxYX YY xxxxxxxxxxx xxxxx xxx xxxxxxxxx | [XxxxxxYX YY Xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/dn903821) |
+| DirectX ゲームに関する使い方ガイド             | [ゲームと DirectX](index.md)                  |
+| DirectX の概要とリファレンス             | [DirectX のグラフィックスとゲーミング](https://msdn.microsoft.com/library/windows/desktop/ee663274)         |
+| Direct3D 12 プログラミング ガイドとリファレンス | [Direct3D 12 グラフィックス](https://msdn.microsoft.com/library/windows/desktop/dn903821) |
 
  
 
-### XXXX
+### XAML
 
-XXXX xx xx xxxx-xx-xxx xxxxxxxxxxx XX xxxxxxxx xxxx xxxxxxxxxx xxxxxxxx xxxx xxxxxxxxxx, xxxxxxxxxxx, xxxx xxxxxxx, xxxxxxxx xxxxxx-xxxxx xxxxxxxx, xxxxxxx xxxxxxxx, xxx xxxxx xxxxxx. XXXX xxxxx xxxxx xxx xxxx XX, xxxxx, xxxxxxx, xxx YX xxxxxxxx. Xx xxxx XX xxxxxx xxxx, XXXX xx xxxxxxxxxx xxxx xxxxxx xxx xxxxxxxxxxx xxxxx xxxx Xxxxxxxxxx Xxxxx xxx Xxxxxxxxx Xxxxxx Xxxxxx. XXXX xx xxxxxxxx xxxx xxxx X#, xxx X++ xx xxxx x xxxx xxxxxx xx xxxx’x xxxx xxxxxxxxx xxxxxxxx xx xx xxxx xxxx xxx xxxx XXX xxxxxxx.
+XAML は、アニメーション、ストーリーボード、データ バインディング、拡張性の高いベクター ベース グラフィックス、動的なサイズ変更、シーン グラフなどの便利な機能を備える、使いやすい宣言型 UI 言語です。 また、XAML はゲーム UI、メニュー、スプライト、2D グラフィックスに最適です。 UI レイアウトを簡単にするため、XAML には、Expression Blend や Microsoft Visual Studio などの設計および開発ツールとの互換性があります。 XAML はよく C# と同時に使用されますが、希望する言語が C++ の場合や、ゲームが多くの CPU を必要とする場合は、C++ も適しています。
 
 |                        |                                                                                     |
 |------------------------|-------------------------------------------------------------------------------------|
-| XXXX xxxxxxxx xxxxxxxx | [XXXX xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt228259)                                  |
-| XXXX XX xxx xxxxxxxx   | [Xxxxxxxx, xxxxxxx, xxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt228348) |
+| XAML プラットフォームの概要 | [XAML プラットフォーム](https://msdn.microsoft.com/library/windows/apps/mt228259)                                  |
+| XAML UI とコントロール   | [コントロール、レイアウト、テキスト](https://msdn.microsoft.com/library/windows/apps/mt228348) |
 
  
 
-### XXXX Y
+### HTML 5
 
-XxxxxXxxx Xxxxxx Xxxxxxxx (XXXX) xx x xxxxxx XX xxxxxx xxxxxxxx xxxx xxx xxx xxxxx, xxxx, xxx xxxx xxxxxxx. Xxxxxxx xxxxx xxx xxx XXXXY xx x xxxx-xxxxxxxx xxxxxxxxxxxx xxxxx xxxx xxx xxxxxxxx xxxxxxxx xx XXXX, xxxxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx, xxx xxxxxxx xxx xxxxxx xxx xxxxxxxx xxxx XxxXxxxx, Xxx Xxxxxxx, xxxxxx, xxxx-xxx-xxxx, xxxxxxxxxxxx xxxxxxxxxxx, xxx XXX. Xxxxxx xxx xxxxxx, XXXX xxxxxxxxx xxxxx xxxxxxxxx xx xxx xxxxx xx XxxxxxX xxxxxxxx xxxxxxxxxxxx, xx xxx xxx xxxxx xxx xxx xxxxxxxxxxx xxxxxxxx xx XxxxxxX xxxxxxx xxxxxxx xxx xxxxx xxxx. XXXXY xx x xxxx xxxxxx xx xxx xxx xxxxxxxxxx xxxx xxx xxxxxxxxxxx, xxxxxxx x xxx xxxx, xx xxxx xx xxx xxxxxxxx xxx xxxxxxxx xxxxxx xxxx xxx xx xxxxxx xx xxxxxxxx xxxx xxx xxxxx xxxxxxx. XXXXY xx xxxx xxxx XxxxXxxxxx, xxx xxx xxxx xxxx xxxx xxxxxxxxxx xxxxxxx xxxx X# xx X++/XX.
+ハイパーテキスト マークアップ言語 (HTML) は、Web ページ、アプリ、リッチ クライアントに使用される一般的な UI マークアップ言語です。 Windows ゲームでは、HTML の使い慣れた機能、ユニバーサル Windows プラットフォーム、AppCache、Web ワーカー、キャンバス、ドラッグ アンド ドロップ、非同期プログラミング、SVG などの最新の Web 機能のサポートを備えた、全機能装備のプレゼンテーション層として HTML5 を使うことができます。 HTML レンダリングの内部では、DirectX ハードウェア アクセラレータの機能が活用されるため、追加のコードを記述しなくても DirectX のパフォーマンスの恩恵を受けることができます。 Web 開発に熟練している場合、Web ゲームを移植する場合、または他の選択肢よりアプローチしやすい言語およびグラフィックス層を使う場合は、HTML5 が最適です。 HTML5 は JavaScript と同時に使用されますが、C# や C++/CX で作成されたコンポーネントを呼び出すこともできます。
 
 |                                             |                                                           |
 |---------------------------------------------|-----------------------------------------------------------|
-| XXXXY xxx Xxxxxxxx Xxxxxx Xxxxx xxxxxxxxxxx | [XXXX xxx XXX xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/br212882.aspx) |
-| Xxx XXXXY XYX Xxxxxxxxxxxxxx                | [XXXXY](http://go.microsoft.com/fwlink/p/?linkid=221374)  |
+| HTML5 とドキュメント オブジェクト モデルに関する情報 | [HTML と DOM のリファレンス](https://msdn.microsoft.com/library/windows/apps/br212882.aspx) |
+| HTML5 W3C 勧告                | [HTML5](http://go.microsoft.com/fwlink/p/?linkid=221374)  |
 
  
 
-### Xxxxxxxxx xxxxxxxxxxxx xxxxxxxxxxxx
+### プレゼンテーション テクノロジの組み合わせ
 
-Xxx Xxxxxxxxx XxxxxxX Xxxxxxxx Xxxxxxxxxxxxxx (XXXX) xxxxxxxx xxxxxxx xxx xxxxxxxxxxxxx xxxxxx xxxxxxxx xxxxxxxx xxxxxxxxxxxx. Xxx xxxx-xxxxxxxxxxx xxxxxxxx, xxx xxx xxxxxxx XXXX xxx XxxxxxX, xxxxx XXXX xxx xxxxx xxx xxxxx xxxxxx XX, xxx XxxxxxX xxx xxxxxxxxx xxxxxxx YX xxx YX xxxxxx. XXXX xxxx xxxxxxxx xxxxxxxxxxxxx xxxxxxx XxxxxxYX, XxxxxxYX, XxxxxxXxxxx, XxxxxxXxxxxxx, xxx xxx Xxxxxxxxx Xxxxx Xxxxxxxxxx.
+Microsoft DirectX Graphic Infrastructure (DXGI) には、複数のグラフィックス テクノロジにおける相互運用性と互換性が備わっています。 高パフォーマンスのグラフィックスを実現するため、メニューや他のシンプルな UI には XAML を使い、複雑な 2D および 3D シーンのレンダリングには DirectX を使うことで、XAML と DirectX を組み合わせることができます。 DXGI には、Direct2D、Direct3D、DirectWrite、DirectCompute、Microsoft メディア ファンデーション間の互換性も備わっています。
 
 |                                                                 |                                                          |
 |-----------------------------------------------------------------|----------------------------------------------------------|
-| XxxxxxX Xxxxxxxx Xxxxxxxxxxxxxx xxxxxxxxxxx xxxxx xxx xxxxxxxxx | [XXXX](https://msdn.microsoft.com/library/windows/desktop/hh404534)                    |
-| Xxxxxxxxx XxxxxxX xxx XXXX                                      | [XxxxxxX xxx XXXX xxxxxxx](directx-and-xaml-interop.md) |
+| DirectX Graphics Infrastructure のプログラミング ガイドとリファレンス | [DXGI](https://msdn.microsoft.com/library/windows/desktop/hh404534)                    |
+| DirectX と XAML の組み合わせ                                      | [DirectX と XAML の相互運用機能](directx-and-xaml-interop.md) |
 
  
 
-### X++
+### C++
 
-X++/XX xx x xxxx-xxxxxxxxxxx, xxx xxxxxxxx xxxxxxxx xxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxx xx xxxxx, xxxxxxxxxxxxx, xxx xxxxxxxx xxxxxx. X++/XX xxxxx xx xxxx xx xxx xxx xx xxx xxxxx xxxxxx xxxxxxxx xx Xxxxxxx YY, xxxxxxxxx XxxxxxX xxx Xxxx Xxxx. Xxx xxx xxxx xxxxx xxxxxxxx X++ xxxx xxx xxxxxxxxx. X++/XX xxxxxxx xxxx, xxxxxx xxxx xxxx xxxxx’x xxxxx xxx xxxxxxxx xx xxxxxxx xxxxxxxxxx, xx xxxx xxxx xxx xxxx xxxxx xxxxxxxxxxx xxx xxx xxxxx xxxxxxxxxxx, xxxxx xxxxx xx xxxxxx xxxxxxx xxxx. Xxx X++/XX xxxx XxxxxxX xx XXXX, xx xxxxxx x xxxx xxxx xxxx x xxxxxxxxxxx xx xxxx.
+C++/CX はオーバーヘッドの低い高パフォーマンスな言語であり、速度、互換性、プラットフォーム アクセスがうまく組み合わせられています。 C++/CX により、DirectX や Xbox Live など、Windows 10 のすばらしいゲーム機能すべてが使いやすくなります。 既にある C++ コードとライブラリを再利用することもできます。 C++/CX を使うと、ガベージ コレクションのオーバーヘッドを生じさせない高速なネイティブ コードが作成されるため、ゲームのパフォーマンスが向上し、電力消費が低くなり、結果としてバッテリ寿命が延びます。 C++/CX を DirectX または XAML と同時に使うか、両方の組み合わせを使って、ゲームを作成することができます。
 
 |                                            |                                                                                                               |
 |--------------------------------------------|---------------------------------------------------------------------------------------------------------------|
-| X++/XX xxxxxxxxx xxx xxxxxxxxx             | [Xxxxxx X++ Xxxxxxxx Xxxxxxxxx (X++/XX)](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx) |
-| Xxxxxx X++ xxxxxxxxxxx xxxxx xxx xxxxxxxxx | [Xxxxxx X++ xx Xxxxxx Xxxxxx YYYY](https://msdn.microsoft.com/library/60k1461a.aspx)                    |
+| C++/CX のリファレンスと概要             | [Visual C++ 言語のリファレンス (C++/CX)](https://msdn.microsoft.com/library/windows/apps/hh699871.aspx) |
+| Visual C++ のプログラミング ガイドとリファレンス | [Visual Studio 2015 の Visual C++](https://msdn.microsoft.com/library/60k1461a.aspx)                    |
 
  
 
-### X#
+### C#
 
-X# (xxxxxxxxxx "X xxxxx") xx x xxxxxx, xxxxxxxxxx xxxxxxxx xxxx xx xxxxxx, xxxxxxxx, xxxx-xxxx, xxx xxxxxx-xxxxxxxx. X# xxxxxxx xxxxx xxxxxxxxxxx xxxxx xxxxxxxxx xxx xxxxxxxxxxx xxx xxxxxxxxxxxxxx xx X-xxxxx xxxxxxxxx. Xxxxxx xxxx xx xxx, X# xxx xxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx xxxx xxxxxxxxxxxx, xxxxxxxxx, xxxxxxx, xxxxxxxx, xxxxxxxx xxxxxxx, xxxxxxxxxx, xxx Xxxxxxxx-Xxxxxxxxxx Xxxxx (XXXX) xxxxxxxxxxx. X# xx xx xxxxxxxxx xxxxxx xx xxx xxx xxxxxxxxx XXXX, xxxx xx xxx x xxxxx xxxxx xxxxxxxxxx xxxx xxxx, xx xxxx xxxxxxxx X# xxxxxxxxxx. X# xx xxxx xxxxxxxxx xxxx XXXX, xx xx xxx xxxx xx xxx XxxxxxX, xxxxxx X++ xxxxxxx, xx xxxxx xxxx xx xxxx xxxx xx x X++ xxxxxxxxx xxxx xxxxxxxxx xxxx XxxxxxX. Xx, xxxxxxxx [XxxYX](https://github.com/Microsoft/Win2D), xx xxxxxxxxx xxxx XxxxxxYX xxxxxxxx xxxxxx xxx X# xxx X++.
+C# ("シー シャープ" と発音) は、タイプ セーフかつオブジェクト指向のシンプルで強力な最新の革新的言語です。 C# を使うと、C スタイル言語の親しみやすさと表現力を維持しながら短期間で開発できます。 C# は使いやすい言語ですが、ポリモーフィズム、デリゲート、ラムダ、クロージャ、反復子メソッド、共変性、統合言語クエリ (LINQ) 式など、多くの高度な言語機能が備わっています。 XAML をターゲットとする場合、ゲームの開発をすぐに始めたい場合、C# を既に使ったことがある場合、C# が最適です。 C# は主に XAML と同時に使われるめ、DirectX を使う場合は、代わりに C++ を選ぶか、ゲームの一部を DirectX とやり取りする C++ コンポーネントとして記述します。 または、C# と C++ 用の即時モード Direct2D グラフィックス ライブラリである [Win2D](https://github.com/Microsoft/Win2D) を使うことを検討します。
 
 |                                     |                                                                            |
 |-------------------------------------|----------------------------------------------------------------------------|
-| X# xxxxxxxxxxx xxxxx xxx xxxxxxxxx | [X# xxxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/kx37x362.aspx) |
+| C# のプログラミング ガイドとリファレンス | [C# 言語のリファレンス](https://msdn.microsoft.com/library/kx37x362.aspx) |
 
  
 
-### XxxxXxxxxx
+### JavaScript
 
-XxxxXxxxxx xx x xxxxxxx xxxxxxxxx xxxxxxxx xxxxxx xxxx xxx xxxxxx xxx xxx xxxx xxxxxx xxxxxxxxxxxx.
+JavaScript は、最新の Web アプリケーションやリッチ クライアント アプリケーションに広く使用されている動的なスクリプト言語です。
 
-Xxxxxxx XxxxXxxxxx xxxx xxx xxxxxx xxx xxxxxxxx xxxxxxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx xx xx xxxx, xxxxxxxxx xxx—xx xxxxxxx xxx xxxxxxxxxx xx xxxxxx-xxxxxxxx XxxxXxxxxx xxxxxxx. XxxxXxxxxx xx x xxxx xxxxxx xxx xxxx xxxx xx xxx’xx xxxxxx xxxx x xxx xxxxxxxxxxx xxxxxxxxxxx, xxx xxxxxxx xxxxxxxx xxxx XxxxXxxxxx, xx xxxx xx xxx XXXXY, XXX, XxxXX, xx XxxxXxxxxx xxxxxxxxx. Xx xxx’xx xxxxxxxxx XxxxxxX xx XXXX, xxxxxx X# xx X++/XX xxxxxxx.
+Windows JavaScript アプリは、ユニバーサル Windows プラットフォームの強力な機能に簡単かつ直感的な方法でアクセスできます (オブジェクト指向 JavaScript クラスのメソッドとプロパティとして)。 JavaScript は、Web 開発環境を使っていた場合、JavaScript に既に慣れている場合、HTML5、CSS、WinJS、または JavaScript ライブラリを使用する場合のゲーム開発に最適です。 DirectX や XAML をターゲットとする場合は、代わりに C# または C++/CX を選択してください。
 
 |                                          |                                                       |
 |------------------------------------------|-------------------------------------------------------|
-| XxxxXxxxxx xxx Xxxxxxx Xxxxxxx xxxxxxxxx | [XxxxXxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/jj613794) |
+| JavaScript と Windows ランタイムのリファレンス | [JavaScript のリファレンス](https://msdn.microsoft.com/library/windows/apps/jj613794) |
 
  
 
-### Xxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx xxxxxxx xxxxxxxxx
+### Windows ランタイム コンポーネントを使って言語を組み合わせる
 
-Xxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx, xx’x xxxx xx xxxxxxx xxxxxxxxxx xxxxxxx xx xxxxxxxxx xxxxxxxxx. Xxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx xx X++, X#, xx Xxxxxx Xxxxx, xxx xxxx xxxx xxxx xxxx xxxx XxxxXxxxxx, X#, X++, xx Xxxxxx Xxxxx. Xxxx xx x xxxxx xxx xx xxxxxxx xxxxxxxx xx xxxx xxxx xx xxx xxxxxxxx xx xxxx xxxxxx. Xxxxxxxxxx xxxx xxx xxx xxxxxxx xxxxxxxx xxxxxxxxx xxxx xxx xxxx xxxxxxxxx xx x xxxxxxxxxx xxxxxxxx, xx xxxx xx xxx xxxxxx xxxx xxx’xx xxxxxxx xxxxxxx.
+ユニバーサル Windows プラットフォームでは、異なる言語で記述されたコンポーネントを簡単に組み合わせることができます。 C++、C#、Visual Basic で Windows ランタイム コンポーネントを作成した後、JavaScript、C#、C++、Visual Basic から呼び出すことができます。 これは、好みの言語でゲームの一部をプログラミングする場合に最適な方法です。 コンポーネントにより、特定の言語でのみ使用可能な外部ライブラリや、既に記述しているレガシ コードを使うこともできるようになります。
 
 |                                          |                                                                                                            |
 |------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| Xxx xx xxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx | [Xxxxxxxx Xxxxxxx Xxxxxxx Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh441572.aspx) |
+| Windows ランタイム コンポーネントを作成する方法 | [Windows ランタイム コンポーネントの作成](https://msdn.microsoft.com/library/windows/apps/hh441572.aspx) |
 
  
 
-### Xxxxx xxxxxxx xx XxxxxxX xxxxxx xxxx xxxx xxx?
+### ゲームで使う Microsoft DirectX のバージョン
 
-Xx xxx xxx xxxxxxxx XxxxxxX xxx xxxx xxxx, xxx'xx xxxx xx xxxxxx xxxxx xxxxxxx xx xxx: Xxxxxxxxx XxxxxxYX YY xx Xxxxxxxxx XxxxxxYX YY.
+ゲームで DirectX を使うことを選択した場合、使うバージョン (Microsoft Direct3D 12 または Microsoft Direct3D 11) を決定する必要があります。
 
-XxxxxxYX YY.Y xx x xxx xxxxx xxxxxxxx XXX xxxx xxxx xxx xxxxxxxx XxxxxxYX xxxxxxxxxxx xxxxx. XxxxxxYX YY xx xxxxx xx xxxxxx xxx x Xxxxxxxxx Xxxxxxx xxx, xxx xxx'xx xxxx xxxxxx xx xxx xxx xxxxxxxxx xxx xxxxxxxxxxxx xxxxxxxx xxxxx xx XxxxxxYX YY.Y.
+Direct3D 11.3 は、一般的な Direct3D プログラミング モデルを使用する低レベルのグラフィックス API です。 ユニバーサル Windows アプリでは、引き続き Direct3D 11 を使うことができ、Direct3D 11.3 で追加された新しいレンダリング機能や最適化機能を利用できます。
 
-XxxxxxYX YY xx xxx xx Xxxxxxx YY xxx xxxxxxxxxx x xxx xxxxxxxx xxxxxxxxxxx xxxxx. XxxxxxYX YY xx xxxxxx xx xxx xxxxxxxx, xxxx xxxx xxxxxxxxxxx, xxx xxxxx xxxx xxxx xxxxxx xxxxxxx xxxx xxxxxxxx xxx. XxxxxxYX YY xxx xxxxxx XXX, XXX, xxx xxxxx xxxxxxxxxxx.
+Direct3D 12 は Windows 10 の新機能で、新しいパイプライン プログラミング モデルが導入されています。 Direct3D 12 はハードウェアにより近くなり、抽象化の使用が少なくなっているため、ゲームでリソースの使用をより細かく制御できます。 Direct3D 12 では、CPU、GPU、消費電力のパフォーマンスが向上しています。
 
-Xx xxx xxxx xx xxxxxxxx xxxxxx xxxxxxx xx XxxxxxYX YY, xxx xxx'xx xxx xxxxx xxxxx xx xxxx xxx xxxx xx XxxxxxYX YY, xxx xxx xxx XxxxxxYX YY xx YY xx xxxxxxx xxxx xxxxxxxxxxx xxxxxxxxxxxx xxx xxxxx xxxx xxxxxxxxxx xx XxxxxxYX YY.
+Direct3D 11 で記述されたエンジンが既にあり、Direct3D 12 への切り替えの準備がまだ整っていない場合は、Direct3D 11 on 12 を使うことによって、ある程度のパフォーマンスの向上を実現し、Direct3D 12 への移行を開始できます。
 
 |                                     |                                                                 |
 |-------------------------------------|-----------------------------------------------------------------|
-| Xxxxxxxx XxxxxxYX YY xx XxxxxxYX YY | [Xxxx xx XxxxxxYX YY?](https://msdn.microsoft.com/library/windows/desktop/dn899228)          |
-| Xxxxxxxx xx XxxxxxYX YY             | [XxxxxxYX YY Xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/ff476080) |
-| Xxxxxxxx xx XxxxxxYX YY xx YY       | [XxxxxxYX YY xx YY](https://msdn.microsoft.com/library/windows/desktop/dn913195)               |
+| Direct3D 12 または Direct3D 11 の選択 | [Direct3D 12 の概要](https://msdn.microsoft.com/library/windows/desktop/dn899228)          |
+| Direct3D 11 の概要             | [Direct3D 11 グラフィックス](https://msdn.microsoft.com/library/windows/desktop/ff476080) |
+| Direct3D 11 on 12 の概要       | [Direct3D 11 on 12](https://msdn.microsoft.com/library/windows/desktop/dn913195)               |
 
  
 
-### Xxxxxxx, xxxx xxxxxxx, xxx xxxxxxxxxx
+### ブリッジ、ゲーム エンジン、ミドルウェア
 
-Xxxxxxxxx xx xxx xxxxx xx xxxx xxxx, xxxxx xxxxxxx, xxxx xxxxxxx, xx xxxxxxxxxx xxx xxxx xxxxxxxxxxx xxx xxxxxxx xxxx xxx xxxxxxxxx. Xxxx xxx xxxx xxxxxxxx xxx xxxxxxxxx xxx xxxxxxx, xxxx xxxxxxx, xxx xxxxxxxxxx xx xxxx xxx xxxxxx xx xxx xxx xxxxx xxx xxx.
+ゲームのニーズに応じて、ブリッジ、ゲーム エンジン、ミドルウェアを使うことにより、開発やテストに費やす時間やリソースを節約できます。 ここでは、ゲームの開発に適しているかどうかを判断できるように、ブリッジ、ゲーム エンジン、ミドルウェアの概要とリソースを示します。
 
 |                                                          |                                                                                                                                                                                                                                                  |
 |----------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxx xxx xxxx xxxxxxx xxx Xxxxxxx YY (xxxx xxxx)      | [Xxxx xxxx xx xxxxx xxxx xxxx xx xxxx-xxxxxxx Xxxxxxx YY Xxxxx](http://blogs.windows.com/buildingapps/2015/09/17/more-ways-to-bring-your-code-to-fast-growing-windows-10-store/)                                                                 |
-| Xxxx Xxxxxxxxxxx xxxx Xxxxxxxxxx (xxxxx)                 | [Xxxxxxxxxxxx Xxxxxxx Xxxxx Xxxx Xxxxxxxxxxx xxxx Xxxxxxxxxx](https://channel9.msdn.com/Events/Build/2013/3-187)                                                                                                                                 |
-| Xxxxxx Xxxxxx xxx Xxxxx, Xxxxxx, xxx XxxxxYx (xxxx xxxx) | [Xxxxxx Xxxxxx xxx Xxxx Xxxxxxxxxxx: Xxx Xxxxxxxxxxxx xxxx Xxxxx, Xxxxxx Xxxxxx xxx XxxxxYx](http://blogs.msdn.com/b/somasegar/archive/2015/04/17/visual-studio-for-game-development-new-partnerships-with-unity-unreal-engine-and-cocos2d.aspx) |
-| Xxxxxxxxxxxx xx xxxx xxxxxxxxxx (xxxx xxxx)              | [Xxxx Xxxxxxxxxxx Xxxxxxxxxx - Xxxx xx xx? Xx X xxxx xx?](http://blogs.msdn.com/b/wsdevsol/archive/2014/05/02/game-development-middleware-what-is-it-do-i-need-it.aspx)                                                                          |
+| Windows 10 のブリッジとゲーム エンジン (ブログの投稿)      | [急成長する Windows 10 ストアにコードを移植するためのさまざまな方法](http://blogs.windows.com/buildingapps/2015/09/17/more-ways-to-bring-your-code-to-fast-growing-windows-10-store/)                                                                 |
+| ミドルウェアを使ったゲーム開発 (ビデオ)                 | [ミドルウェアによる Windows ストア ゲーム開発のスピードアップ](https://channel9.msdn.com/Events/Build/2013/3-187)                                                                                                                                 |
+| Visual Studio と Unity、Unreal、Cocos2d (ブログの投稿) | [ゲーム開発のための Visual Studio: Unity、Unreal Engine、Cocos2d との新しいパートナーシップ](http://blogs.msdn.com/b/somasegar/archive/2015/04/17/visual-studio-for-game-development-new-partnerships-with-unity-unreal-engine-and-cocos2d.aspx) |
+| ゲームのミドルウェアの概要 (ブログの投稿)              | [ゲーム開発ミドルウェア: 概要と 必要性](http://blogs.msdn.com/b/wsdevsol/archive/2014/05/02/game-development-middleware-what-is-it-do-i-need-it.aspx)                                                                          |
 
  
 
-### Xxxxxxxxx Xxxxxxx Xxxxxxxx Xxxxxxx
+### ユニバーサル Windows プラットフォーム ブリッジ
 
-Xxxxxxxxx Xxxxxxx Xxxxxxxx Xxxxxxx xxx xxxxxxxxxxxx xxxx xxxxx xxxx xxxxxxxx xxx xx xxxx xxxx xx xxx XXX. Xxxxxxx xxx x xxxxx xxx xx xxx x xxxxx xxxxx xx XXX xxxx xxxxxxxxxxx.
+ユニバーサル Windows プラットフォーム ブリッジは、既にあるアプリやゲームを UWP に移植するためのテクノロジです。 ブリッジは、すぐに UWP のゲーム開発の始めるときに最適な方法です。
 
 |                                                                  |                                                                                       |
 |------------------------------------------------------------------|---------------------------------------------------------------------------------------|
-| XXX xxxxxxx                                                      | [Xxxxx xxxx xxxx xx Xxxxxxx](https://dev.windows.com/bridges/)                  |
-| Xxxxxxx Xxxxxx xxx xXX                                           | [Xxxxx xxxx xXX xxxx xx Xxxxxxx](https://dev.windows.com/bridges/ios)           |
-| Xxxxxxx Xxxxxx xxx Xxxxxxx                                       | [Xxxxxxx Xxxxxx xxx Xxxxxxx](https://dev.windows.com/bridges/android)           |
-| Xxxxxxx Xxxxxx xxx .XXX xxx XxxYY ("Xxxxxxx Xxxxxxxxxx") xxxxxxx | [Xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=624543) |
+| UWP ブリッジ                                                      | [Windows にコードを移植する](https://dev.windows.com/bridges/)                  |
+| Windows Bridge for iOS                                           | [iOS アプリを Windows に移植する](https://dev.windows.com/bridges/ios)           |
+| Windows Bridge for Android                                       | [Windows Bridge for Android](https://dev.windows.com/bridges/android)           |
+| .NET および Win32 用 Windows ブリッジ ("Project Centennial") のプレビュー | [Windows Developer Preview Programs](http://go.microsoft.com/fwlink/p/?LinkID=624543) |
 
  
 
-### Xxxxx
+### Unity
 
-Xxxxx Y xx xxx xxxx xxxxxxxxxx xx xxx xxxxx-xxxxxxx xxxxxxxxxxx xxxxxxxx xxx xxxxxxxx YX xxx YX xxxxx xxx xxxxxxxxxxx xxxxxxxxxxx. Xxxxx Y xxxxxx xxx xxxxxxxx xxxxx, xxxxxxxx xxxxxxxx xxxxxxxxxxxx, xxx xxxxxxxx xxxxxxxxxx.
+Unity 5 は、2D および 3D ゲームと対話型エクスペリエンスを作成するための受賞歴のある次世代開発プラットフォームです。 Unity 5 により、新しい芸術性、高度なグラフィックス機能、高い効率性を手に入れることができます。
 
-Xx xxx [Xxxxx xxxxxxx](https://unity3d.com/unity/roadmap), xxxxxxx xxx XxxxxxX YY xxxx xx xxxxxx xx x xxxxxx xxxxxxx xx Xxxxx.
+[Unity のロードマップ](https://unity3d.com/unity/roadmap)では、Unity の将来のバージョンで DirectX 12 のサポートが予定されています。
 
 |                                                            |                                                                                                                                           |
 |------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxx Xxxxx xxxx xxxxxx                                      | [Xxxxx - Xxxx Xxxxxx](http://unity3d.com/)                                                                                                |
-| Xxx Xxxxx Y                                                | [Xxx Xxxxx](http://unity3d.com/get-unity)                                                                                                 |
-| Xxxxxxxxx Xxxxxxx xxx xxxxxxx xx Xxxxx Y.Y (xxxx xxxx)     | [Xxxxxxx YY Xxxxxxxxx xxxx xx Xxxxx Y.Y](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/)                     |
-| Xxxxx xxxxxxxxxxxxx xxx Xxxxxxx                            | [Xxxxx Xxxxxx / Xxxxxxx](http://docs.unity3d.com/Manual/Windows.mdl)                                                                     |
-| Xxxxxxx xxxx Xxxxx xxxx xx x Xxxxxxxxx Xxxxxxx xxx (xxxxx) | [Xxx xx xxxxxxx xxxx Xxxxx xxxx xx x XXX xxx](https://channel9.msdn.com/Blogs/One-Dev-Minute/How-to-publish-your-Unity-game-as-a-UWP-app) |
-| Xxx Xxxxx xx xxxx Xxxxxxx xxxxx xxx xxxx (xxxxx)           | [Xxxxxx Xxxxxxx xxxxx xxx xxxx xxxx Xxxxx](https://channel9.msdn.com/Blogs/One-Dev-Minute/Making-games-and-apps-with-Unity)               |
-| Xxxxx xxxx xxxxxxxxxxx xxxxx Xxxxxx Xxxxxx (xxxxx xxxxxx)  | [Xxxxx Xxxxx xxxx Xxxxxx Xxxxxx YYYY](http://go.microsoft.com/fwlink/?LinkId=722359)                                                      |
+| Unity ゲーム エンジン                                      | [Unity - ゲーム エンジン](http://unity3d.com/)                                                                                                |
+| Unity 5 を入手する                                                | [Unity を入手する](http://unity3d.com/get-unity)                                                                                                 |
+| Unity 5.2 でのユニバーサル Windows アプリのサポート (ブログ投稿)     | [Unity 5.2 での Windows 10 ユニバーサル アプリ](http://blogs.unity3d.com/2015/09/09/windows-10-universal-apps-in-unity-5-2/)                     |
+| Windows 向けの Unity に関するドキュメント                            | [Unity マニュアル / Windows](http://docs.unity3d.com/Manual/Windows.mdl)                                                                     |
+| ユニバーサル Windows アプリとして Unity ゲームを公開する (ビデオ) | [UWP アプリとして Unity ゲームを公開する方法](https://channel9.msdn.com/Blogs/One-Dev-Minute/How-to-publish-your-Unity-game-as-a-UWP-app) |
+| Unity を使って Windows 向けゲームとアプリを作成する (ビデオ)           | [Unity を使った Windows 向けゲームとアプリの作成](https://channel9.msdn.com/Blogs/One-Dev-Minute/Making-games-and-apps-with-Unity)               |
+| Visual Studio を使った Unity ゲームの開発 (ビデオ シリーズ)  | [Visual Studio 2015 での Unity の使用](http://go.microsoft.com/fwlink/?LinkId=722359)                                                      |
 
  
 
-### Xxxxx
+### Havok
 
-Xxxxx’x xxxxxxx xxxxx xx xxxxx xxx xxxxxxxxxxxx xxxx xxxx xxxxxxxx xxxxx xxx xxxxxx xx xxxxxxxxxxxxx xxx xxxxxxxxx. Xxxxx xxxxxxx xxxxxx xxxxxxxxx xxxxxxx, xxxxxxxxxxx xxxxxxxxxxx, xxx xxxxxxxx xxxxxxxxxx.
+Havok のモジュール化された一連のツールとテクノロジによって、ゲーム クリエーターは新しいレベルの対話式操作と没入感を提供できます。 Havok により、非常にリアルな物理的効果、対話型のシミュレーション、魅力的な映像を実現できます。
 
 |                      |                                                          |
 |----------------------|----------------------------------------------------------|
-| Xxxxx xxxxxxx        | [Xxxxx](http://www.havok.com/)                           |
-| Xxxxx xxxx xxxxx     | [Xxxxx Xxxxxxx Xxxxxxxx](http://www.havok.com/products/) |
-| Xxxxx xxxxxxx xxxxxx | [Xxxxx](https://software.intel.com/forums/havok/)  |
+| Havok の Web サイト        | [Havok](http://www.havok.com/)                           |
+| Havok ツール スイート     | [Havok 製品の概要](http://www.havok.com/products/) |
+| Havok サポート フォーラム | [Havok](https://software.intel.com/forums/havok/)  |
 
  
 
-### XxxxxYx
+### Cocos2d
 
-XxxxxYx-X xx x xxxxx-xxxxxxxx xxxx xxxxxx xxxx xxxxxxxxxxx xxxxxx xxx xxxxx xxxxx xxxx xxxxxxxx xxxxxxxx XXX xxxxx. Xxxxxxxxx xxxx xxxxxxx Y, YX xxxxxxxx xxx xxxxx xxxxx xx xxxx.
+Cocos2d-X は、オープン ソース、クロス プラットフォームのゲーム開発エンジンおよびツール スイートで、UWP ゲームの構築をサポートしています。 バージョン 3 以降、3 D 機能も追加されています。
 
 |                                       |                                                                                                                                                            |
 |---------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XxxxxYx-x                             | [Xxxx xx XxxxxYx-X?](http://www.cocos2d-x.org/)                                                                                                            |
-| XxxxxYx-x xxxxxxxxxx'x xxxxx          | [XxxxxYx-x Xxxxxxxxxxx Xxxxx xY.Y](http://www.cocos2d-x.org/programmersguide/)                                                                             |
-| XxxxxYx-x xx Xxxxxxx YY (xxxx xxxx)   | [Xxxxxxx XxxxxYx-x xx Xxxxxxx YY](https://blogs.windows.com/buildingapps/2015/06/15/running-cocos2d-x-on-windows-10/)                                      |
-| XxxxxYx-x Xxxxxxx Xxxxx xxxxx (xxxxx) | [Xxxxx x Xxxx xxxx XxxxxYx-x xxx Xxxxxxx Xxxxxxx](http://www.microsoftvirtualacademy.com/training-courses/build-a-game-with-cocos2d-x-for-windows-devices) |
+| Cocos2d-x                             | [Cocos2d-X とは](http://www.cocos2d-x.org/)                                                                                                            |
+| Cocos2d-x プログラマ ガイド          | [Cocos2d-x プログラマ ガイド v3.8](http://www.cocos2d-x.org/programmersguide/)                                                                             |
+| Windows 10 での Cocos2d-x (ブログの投稿)   | [Windows 10 での Cocos2d-x の実行](https://blogs.windows.com/buildingapps/2015/06/15/running-cocos2d-x-on-windows-10/)                                      |
+| Cocos2d-x Windows ストア ゲーム (ビデオ) | [Cocos2d-x を使った Windows デバイス用ゲームの構築](http://www.microsoftvirtualacademy.com/training-courses/build-a-game-with-cocos2d-x-for-windows-devices) |
 
  
 
-### Xxxxxx Xxxxxx
+### Unreal Engine
 
-Xxxxxx Xxxxxx Y xx x xxxxxxxx xxxxx xx xxxx xxxxxxxxxxx xxxxx xxx xxx xxxxx xx xxxxx xxx xxxxxxxxxx. Xxx xxx xxxx xxxxxxxxx xxxxxxx xxx XX xxxxx, Xxxxxx Xxxxxx xx xxxx xx xxxx xxxxxxxxxx xxxxxxxxx. [XxxxxxX YY xxxxx xxxxxx xxxxxxx](#dxeap) xxxxxxx xxx xxxxxxxxx xx Xxxxxx Xxxxxx Y xxx xxxxxxx xxxxxx xx xx Xxxxxx Xxxxxx Y.Y xxxxxxxxxxx xxxxxxx xxxx xxxxxxxx XxxxxxX YY.
+Unreal Engine 4 は、あらゆる種類のゲームや開発者に適したゲーム開発ツールがすべて揃ったスイートです。 最も要求の厳しいコンソールおよび PC ゲームにおいて、Unreal Engine は世界中のゲーム開発者により使用されています。 Unreal Engine 4 を購読している [DirectX 12 早期アクセス プログラム](#dxeap) メンバーは、DirectX 12 をサポートする Unreal Engine 4.4 開発プロジェクトにアクセスできます。
 
 |                        |                                                                                 |
 |------------------------|---------------------------------------------------------------------------------|
-| Xxxxxx Xxxxxx xxxxxxxx | [Xxxx xx Xxxxxx Xxxxxx Y](https://www.unrealengine.com/what-is-unreal-engine-4) |
+| Unreal Engine の概要 | [Unreal Engine 4 とは](https://www.unrealengine.com/what-is-unreal-engine-4) |
 
  
 
-### Xxxxxxxxxx xxx xxxxxxxx
+### ミドルウェアとパートナー
 
-Xxxxx xxx xxxx xxxxx xxxxxxxxxx xxx xxxxxx xxxxxxxx xxxx xxx xxxxxxx xxxxxxxxx xxxxxxxxx xx xxxx xxxx xxxxxxxxxxx xxxxx.
+ほかにも数多くのミドルウェアとエンジンのパートナーが、ゲーム開発のニーズに応じてソリューションを提供しています。
 
 |                                    |                                                                                               |
 |------------------------------------|-----------------------------------------------------------------------------------------------|
-| Xxxxxxx Xxx Xxxxxx xxxxxx xxxxxxxx | [Xxx Xxxxxx Xxxxxxxx (Xxxxxx)](https://devcenterpartners.windows.com/directory#filter=gaming) |
-| Xxxxxxx Xxx Xxxxxx xxxxxxxx        | [Xxx Xxxxxx Xxxxxxxx](https://devcenterpartners.windows.com/directory)                        |
+| Windows デベロッパー センターのゲーム分野のパートナー | [デベロッパー センターのパートナー (ゲーム)](https://devcenterpartners.windows.com/directory#filter=gaming) |
+| Windows デベロッパー センターのパートナー        | [デベロッパー センターのパートナー](https://devcenterpartners.windows.com/directory)                        |
 
  
 
-### Xxxxxxx xxxx xxxx
+### ゲームの移植
 
-Xx xxx xxxx xx xxxxxxxx xxxx, xxxxx xxx xxxx xxxxxxxxx xxx xxxxxx xxxxxxxxx xx xxxx xxx xxxxxxx xxxxx xxxx xxxx xx xxx XXX. Xx xxxxxxxxx xxxx xxxxxxx xxxxxxx, xxx xxxxx xxxx xxxxxxxx xxxxx x [Xxxxxxxxx Xxxxxxx Xxxxxxxx Xxxxxxx](#uwp_bridges).
+既にゲームがある場合は、ゲームを短期間で UWP に移植するのに役立つ多くのリソースやガイドがあります。 移植作業をすぐに開始する場合は、[ユニバーサル Windows プラットフォーム ブリッジ](#uwp_bridges)を使うことも検討してください。
 
 |                                                                     |                                                                                                                                                                               |
 |---------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxx x Xxxxxxx Y xxx xx x Xxxxxxxxx Xxxxxxx xxx                  | [Xxxx xxxx Xxxxxxx Xxxxxxx Y.x xx XXX](https://msdn.microsoft.com/library/windows/apps/mt238322)                                                                                                           |
-| Xxxxxxx x Xxxxxxx Y xxx xx x Xxxxxxxxx Xxxxxxx xxx (xxxxx)          | [Xxxxxxx Y.Y Xxxx xx Xxxxxxx YY](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/21)                                                                        |
-| Xxxxxxx xx xXX xxx xx x Xxxxxxxxx Xxxxxxx xxx                       | [Xxxx xxxx xXX xx XXX](https://msdn.microsoft.com/library/windows/apps/mt238320)                                                                                                                           |
-| Xxxxxxx x Xxxxxxxxxxx xxx xx x Xxxxxxxxx Xxxxxxx xxx                | [Xxxx xxxx Xxxxxxx Xxxxx Xxxxxxxxxxx xx XXX](https://msdn.microsoft.com/library/windows/apps/mt238323)                                                                                                    |
-| Xxxxxxx xxxx XXXX xx Xxxxxxxxxxx xx x Xxxxxxxxx Xxxxxxx xxx (xxxxx) | [Xxxxxxx xx Xxx xxxx XXXX xx Xxxxxxxxxxx xx Xxxxxxx YY](https://channel9.msdn.com/Events/Build/2015/3-741)                                                                    |
-| Xxxxxxx xx Xxxx xxxx xx x Xxxxxxxxx Xxxxxxx xxx                     | [Xxxxxxx xxxx Xxxx Xxx xx Xxxxxxx YY XXX](https://developer.xboxlive.com/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx) |
-| Xxxxxxx xxxx XxxxxxX Y xx XxxxxxX YY                                | [Xxxx xxxx XxxxxxX Y xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX)](porting-your-directx-9-game-to-windows-store.md)                                                                   |
-| Xxxxxxx xxxx XxxxxxYX YY xx XxxxxxYX YY                             | [Xxxxxxx xxxx XxxxxxYX YY xx XxxxxxYX YY](https://msdn.microsoft.com/library/windows/desktop/mt431709)                                                                                 |
-| Xxxxxxx xxxx XxxxXX XX xx XxxxxxYX YY                               | [Xxxx xxxx XxxxXX XX Y.Y xx XxxxxxYX YY](port-from-opengl-es-2-0-to-directx-11-1.md)                                                                                         |
-| XxxxXX XX xx XxxxxxYX YY xxxxx XXXXX                                | [XXXXX](http://go.microsoft.com/fwlink/p/?linkid=618387)                                                                                                                      |
-| Xxxxxxx Xxxxxxx XXX xxxxxxxxxxx xx xxx XXX                          | [Xxxxxxxxxxxx xx Xxxxxxx XXXx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx](https://msdn.microsoft.com/library/windows/apps/hh464945)                                                                         |
+| Windows 8 アプリをユニバーサル Windows アプリに移植する                  | [Windows ランタイム 8.x から UWP への移行](https://msdn.microsoft.com/library/windows/apps/mt238322)                                                                                                           |
+| Windows 8 アプリをユニバーサル Windows アプリに移植する (ビデオ)          | [8.1 アプリの Windows 10 への移植](https://channel9.msdn.com/Series/A-Developers-Guide-to-Windows-10/21)                                                                        |
+| iOS アプリをユニバーサル Windows アプリに移植する                       | [iOS から UWP への移行](https://msdn.microsoft.com/library/windows/apps/mt238320)                                                                                                                           |
+| Silverlight アプリをユニバーサル Windows アプリに移植する                | [Windows Phone Silverlight から UWP への移行](https://msdn.microsoft.com/library/windows/apps/mt238323)                                                                                                    |
+| XAML または Silverlight からユニバーサル Windows アプリに移植する (ビデオ) | [XAML または Silverlight から Windows 10 へのアプリの移植](https://channel9.msdn.com/Events/Build/2015/3-741)                                                                    |
+| Xbox ゲームをユニバーサル Windows アプリに移植する                     | [Xbox One から Windows 10 UWP への移植](https://developer.xboxlive.com/platform/development/education/Documents/Porting%20from%20Xbox%20One%20to%20Windows%2010.aspx) |
+| DirectX 9 から DirectX 11 に移植する                                | [DirectX 9 からユニバーサル Windows プラットフォーム (UWP) への移植](porting-your-directx-9-game-to-windows-store.md)                                                                   |
+| Direct3D 11 から Direct3D 12 に移植する                             | [Direct3D 11 から Direct3D 12 に移植する](https://msdn.microsoft.com/library/windows/desktop/mt431709)                                                                                 |
+| OpenGL ES から Direct3D 11 に移植する                               | [OpenGL ES 2.0 から Direct3D 11 への移植](port-from-opengl-es-2-0-to-directx-11-1.md)                                                                                         |
+| ANGLE を使って OpenGL ES から Direct3D 11 に移行する                                | [ANGLE](http://go.microsoft.com/fwlink/p/?linkid=618387)                                                                                                                      |
+| UWP で従来の Windows API に相当する要素                          | [ユニバーサル Windows プラットフォーム (UWP) アプリでの Windows API の代替](https://msdn.microsoft.com/library/windows/apps/hh464945)                                                                         |
 
  
 
-## Xxxxxxxxx xxx xxxxxx
+## プロトタイプとデザイン
 
 
-Xxx xxxx xxx'xx xxxxxxx xxx xxxx xx xxxx xxx xxxx xx xxxxxx xxx xxx xxxxx xxx xxxxxxxx xxxxxxxxxx xxx'xx xxx xx xxxxx xx, xxx'xx xxxxx xx xxx xxxxxxx xxxx xxx xxxxxx xxx xxxxxxxxx. Xx xxx xxxx, xxxx xxxx xx x Xxxxxxxxx Xxxxxxx xxx, xx xxxx'x xxxxx xxx'xx xxxxx.
+作成するゲームの種類と、ゲームの構築に使うツールとグラフィックス テクノロジが決まったら、すぐにデザインとプロトタイプを開始できます。 ゲームのコアはユニバーサル Windows アプリであるため、そこから作業を開始します。
 
-### Xxxxxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX)
+### ユニバーサル Windows プラットフォーム (UWP) の概要
 
-Xxxxxxx YY xxxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX), xxxxx xxxxxxxx x xxxxxx XXX xxxxxxxx xxxxxx Xxxxxxx YY xxxxxxx. XXX xxxxxxx xxx xxxxxxx xxx Xxxxxxx Xxxxxxx xxxxx xxx xxxxx xx xxxx x xxxxxxxx, xxxxxxx xxxx. Xxxxx xxxx xxxxxx xxx XXX xxx xxxx XxxXX XXXx xxxx xxx xxxxxx xx xxx xxxxxxx. Xxxxxxx xxx XXX xxxxxxxx x xxxxxxxxxx xxxx XXX xxxxx, xxx xxx xxxxxx xx xxxxxx x xxxxxx xxx xxxxxxx xxxx xxxx xxxxxxx xxxxxx Xxxxxxx YY xxxxxxx. Xxx xx xxx xxxx xx, xxxx xxxx xxx xxxxx xxxx XXXx (xxxxxxxxx xxxx xxxxxxx Xxxxxxx XXXx xxxx XxxYY xxx .XXX) xxxx xxx xxxxxxxx xx xxx xxxxxxx xxxx xxxx xxxx xx.
+Windows 10 ではユニバーサル Windows プラットフォーム (UWP) が導入され、Windows 10 デバイス間で共通の API プラットフォームが提供されます。 UWP は、Windows ランタイム モデルを発展させて拡張したもので、まとまりのある統一されたコアとなっています。 UWP を対象とするゲームでは、すべてのデバイスに共通する WinRT API を呼び出すことができます。 UWP により保証されたコア API 層が提供されるため、あらゆる Windows 10 デバイスにインストールできる 1 つのアプリ パッケージを作成することもできます。 また、必要に応じて、ゲームが実行されるデバイスに固有の API (Win32 や .NET の従来の Windows API など) を、ゲームで呼び出すこともできます。
 
-Xxx xxxx xx xxx XXX xx xx xxxx:
+UWP の目的は、次のようなことを実現することです。
 
--   Xxx xxxx xxxxxxxxx xxxxxx
--   Xxx xxxxxxxxxxx xxxxxxxx
--   Xxx xxxxxx xxxxxx xxxxxxx
--   Xxx xxxxx
--   Xxx xxxxxxxxx xxxx
+-   1 つのコア オペレーティング システム
+-   1 つのアプリケーション プラットフォーム
+-   1 つのゲーム ソーシャル ネットワーク
+-   1 つのストア
+-   1 つのインジェスト パス
 
-Xxx xxxxxxxxx xxx xxxxxxxxx xxxxxx xxxx xxxxxxx xxx XXX xxx Xxxxxxxxx Xxxxxxx xxxx xx xxxxxx, xxx xxx xxxxxxxxxxx xxxxxxx xx xxxx xxx xxxxxxxxxx xxx xxxxxxxx.
+次に示すガイドは、UWP とユニバーサル Windows アプリについて詳しく説明している優れたガイドであり、このプラットフォームを理解するために一読することをお勧めします。
 
 |                                        |                                                                               |
 |----------------------------------------|-------------------------------------------------------------------------------|
-| Xxxxxxxxxxxx xx Xxxxxxxxx Xxxxxxx xxxx | [Xxxx'x x Xxxxxxxxx Xxxxxxx xxx?](https://msdn.microsoft.com/library/windows/apps/dn726767)           |
-| Xxxxxxxx xx xxx XXX                    | [Xxxxx xx XXX xxxx](https://msdn.microsoft.com/library/windows/apps/dn894631) |
+| ユニバーサル Windows アプリの概要 | [ユニバーサル Windows アプリとは?](https://msdn.microsoft.com/library/windows/apps/dn726767)           |
+| UWP の概要                    | [UWP アプリ ガイド](https://msdn.microsoft.com/library/windows/apps/dn894631) |
 
  
 
-### Xxxxxxx xxxxxxx xxxx XXX xxxxxxxxxxx
+### UWP 開発の概要
 
-Xxxxxxx xxx xx xxx xxxxx xx xxxxxxx x Xxxxxxxxx Xxxxxxx xxx xx xxxxx xxx xxxx. Xxx xxxxxxxxx xxxxxx xxxx xxx xxxxxxx xxx xxxxxxx xxxx-xx-xxxx.
+ユニバーサル Windows アプリを開発するための準備は非常に簡単です。 以下のガイドでは、プロセスの詳しい手順を説明しています。
 
 |                                      |                                                                           |
 |--------------------------------------|---------------------------------------------------------------------------|
-| Xxxxxxx xxxxxxx xxxx XXX xxxxxxxxxxx | [Xxx xxxxxxx xxxx Xxxxxxx xxxx](https://dev.windows.com/getstarted) |
-| Xxxxxxx xxx xx xxx XXX xxxxxxxxxxx   | [Xxx xxx xx](https://msdn.microsoft.com/library/windows/apps/dn726766)                                     |
+| UWP 開発の概要 | [Windows アプリの概要](https://dev.windows.com/getstarted) |
+| UWP 開発の準備   | [準備](https://msdn.microsoft.com/library/windows/apps/dn726766)                                     |
 
  
 
-Xx xxx'xx xx "xxxxxxxx xxxxxxxx" xx XXX xxxxxxxxxxx, xxx xxx xxxxxxxxxxx xxxxx XXXX xx xxxx xxxx (xxx [Xxxxxxxx xxxx xxxxxxxx xxxxxxxxxx xxx xxxxxxxxxxx xxxxxxxx](#choosing_technology)), xxx [Xxxxxxx YY xxxxxxxxxxx xxx xxxxxxxx xxxxxxxxx](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners) xxxxx xxxxxx xx x xxxx xxxxx xx xxxxx.
+UWP プログラミングについて "文字どおりの初心者" である場合や、ゲームで XAML の使用を検討している場合 (「[グラフィックス テクノロジとプログラミング言語の選択](#choosing_technology)」を参照) は、最初に[文字どおりの初心者のための Windows 10 の開発](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners)に関するビデオ シリーズをご覧になることをお勧めします。
 
 |                                                                            |                                                                                                                                                  |
 |----------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxxxx xxxxx xx Xxxxxxx YY xxxxxxxxxxx xxxx XXXX (Xxxxx xxxxxx)         | [Xxxxxxx YY xxxxxxxxxxx xxx xxxxxxxx xxxxxxxxx](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners)                  |
-| Xxxxxxxxxx xxx Xxxxxxx YY xxxxxxxx xxxxxxxxx xxxxxx xxxxx XXXX (xxxx xxxx) | [Xxxxxxx YY xxxxxxxxxxx xxx xxxxxxxx xxxxxxxxx](http://blogs.windows.com/buildingapps/2015/09/30/windows-10-development-for-absolute-beginners/) |
+| XAML を使った Windows 10 の開発の初心者向けガイド (ビデオ シリーズ)         | [文字どおりの初心者のための Windows 10 の開発](https://channel9.msdn.com/Series/Windows-10-development-for-absolute-beginners)                  |
+| XAML を使う Windows 10 の初心者向けシリーズの発表 (ブログの投稿) | [文字どおりの初心者のための Windows 10 の開発](http://blogs.windows.com/buildingapps/2015/09/30/windows-10-development-for-absolute-beginners/) |
 
  
 
-### XXX xxxxxxxxxxx xxxxxxxx
+### UWP 開発の概念
 
 |                                                                |                                                                                                            |
 |----------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| Xxxxxxxx xx Xxxxxxxxx Xxxxxxx xxx xxxxxxxxxxx                  | [Xxxxxxx Xxxxxxx xxxx](https://dev.windows.com/develop)                                                    |
-| Xxxxxxxx xx xxxxxxx xxxxxxxxxxx xx xxx XXX                     | [Xxxxxxxxxx xxx xxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt280378)                           |
-| Xxxxx Xxxxxxx.Xxx.XXXX xxx Xxxxxxx.Xxxxxxxxxx.Xxxxxxx xx xxxxx | [Xxxxxxxxxx xxx xxxxx](work-with-networking-in-your-directx-game.md)                                      |
-| Xxxxxxxxxxxx xxxxxxxxxxx xxxxxxxx xx xxx XXX                   | [Xxxxxxxxxxxx xxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187335) |
+| ユニバーサル Windows アプリの開発の概要                  | [Windows アプリの開発](https://dev.windows.com/develop)                                                    |
+| UWP のネットワーク プログラミングの概要                     | [ネットワークと Web サービス](https://msdn.microsoft.com/library/windows/apps/mt280378)                           |
+| ゲームでの Windows.Web.HTTP と Windows.Networking.Sockets の使用 | [ゲームのネットワーク](work-with-networking-in-your-directx-game.md)                                      |
+| UWP での非同期プログラミングの概念                   | [非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/mt187335) |
 
  
 
-### Xxxxxxx xxxxxxxx xxxxxxxxxx
+### プロセス ライフタイム管理
 
-Xxxxxxx xxxxxxxx xxxxxxxxxx, xx xxx xxxxxxxx, xxxxxxxxx xxx xxxxxxx xxxxxxxxxx xxxxxx xxxx x Xxxxxxxxx Xxxxxxx xxx xxx xxxxxxxxxx xxxxxxx. Xxxx xxxx xxx xx xxxxxxxxx, xxxxxxxxx, xxxxxxx, xx xxxxxxxxxx, xxx xxx xxxxxxxxxx xxxxxxx xxxxx xxxxxx xx x xxxxxxx xx xxxx.
+プロセス ライフタイム管理、つまりアプリのライフ サイクルは、ユニバーサル Windows アプリで切り替えることができる、さまざまなアクティブ化状態を表します。 ゲームは、アクティブ化、中断、再開、または終了することができ、さまざまな方法でこれらの状態を移行できます。
 
 |                                                          |                                                                                                                                                   |
 |----------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxxx xxx xxxxxxxx xxxxxxxxxxx                        | [Xxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt243287)                                                                                                  |
-| Xxxxx Xxxxxxxxx Xxxxxx Xxxxxx xx xxxxxxx xxx xxxxxxxxxxx | [Xxx xx xxxxxxx xxxxxxx, xxxxxx, xxx xxxxxxxxxx xxxxxx xxx Xxxxxxx Xxxxx xxxx xx Xxxxxx Xxxxxx](https://msdn.microsoft.com/library/hh974425.aspx) |
+| アプリのライフ サイクルの移行の処理                        | [アプリのライフサイクル](https://msdn.microsoft.com/library/windows/apps/mt243287)                                                                                                  |
+| Microsoft Visual Studio を使ったアプリの移行のトリガー | [Visual Studio で Windows ストア アプリの一時停止イベント、再開イベント、バックグラウンド イベントをトリガーする方法](https://msdn.microsoft.com/library/hh974425.aspx) |
 
  
 
-### Xxxxxxxxx xxxx XX
+### ゲーム UX の設計
 
-Xxx xxxxxxx xx x xxxxx xxxx xx xxxxxxxx xxxxxx.
+優れたゲームはすばらしいデザインから始まります。
 
-Xxxxx xxxxx xxxx xxxxxx xxxx xxxxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxxxx xxxx xxxx, xxx xxxxx xxxxx xxxx x xxxxxx xxxx, xxxx, xxx xxxxxx xxxx xxx xxxxx xxxx xxxxxxxxxx. Xxxxx xxxxxxx xxxx xxxxxxxxxx xxxxxx xx xxxxxxx xx xxxx xxxxxxx—xxxx xxxxxx xxxx xxxx xxx xxxxxx XX, xxx xxxx xxxxxx xx xxxxxxx xxx xxxxxxxx? Xxx xxxxxxxxxxxx xxxxxxxxxx xxxx xxx xxxxxx xxx xxxx xxxx—XxxxxxX, XXXX, XXXXY, xx xxxx xxxxxxxxxxx xx xxx xxxxx—xxxx xxxxxxxxx xxxxxxxxxxxxxx xxxxxxx, xxx xxx xxxxxx xxxxxxxxxx xxx xxxxx xxx xxxxxxx xxxxxxxxxxx xx xxxx xxxxxx.
+ゲームは、共通のユーザー インターフェイス要素とデザイン原則をアプリと共有していますが、ユーザー エクスペリエンスの外観、機能、設計目標が独特であることがよくあります。 テストされた UX をゲームで使用すべきなのはいつか、斬新で革新的な UX を使用すべきなのはいつか、という両方の側面に、よく考えられたデザインを当てはめるときにゲームは成功します。 ゲームに選択したプレゼンテーション テクノロジ (DirectX、XAML、HTML5、または 3 つの組み合わせ) は、実装の細部に影響を与える可能性がありますが、適用するデザイン原則はその選択とはほとんど関係がありません。
 
-Xxxxxxxxxx xxxx XX xxxxxx, xxxxxxxx xxxxxx xxxx xx xxxxx xxxxxx, xxxxxx, xxxxx xxxxxx, xxx xxxxx xxxxxxx xx xx xxx xxxx xx xxx xxx—xxx xxxx'x xx xx xxx xxx xxxx xxxx, xxx xxx xxxxxxx xx xxxx xxxxxxxxxxx xxxxx.
+UX デザインとは別に、レベルのデザイン、ペース配分、世界のデザインなどのゲームプレイのデザインには独自の様式があり、開発者や開発チームによって決定されるため、この開発ガイドに記載していません。
 
 |                                                |                                                                                                                                   |
 |------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|
-| XXX xxxxxx xxxxxx xxx xxxxxxxxxx               | [Xxxxxxxxx XXX xxxx](https://dev.windows.com/design)                                                                        |
-| Xxxxxxxxx xxx xxx xxxxxxxxx xxxxxx             | [XX xxxxxxxxxx xxx xxxxxx, xxxxxxx, xxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/dn611862)                           |
-| Xxxxxxxxx xxxxxxxx xxxxxx xxxx xxxxxxx (xxxxx) | [Xxxxxxxxx Xxxxx xxx x Xxxxxxx Xxxx Xxxxx](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World) |
+| UWP の設計の基本とガイドライン               | [UWP アプリの設計](https://dev.windows.com/design)                                                                        |
+| アプリのライフサイクルの状態の設計             | [起動、中断、再開の UX ガイドライン](https://msdn.microsoft.com/library/windows/apps/dn611862)                           |
+| 複数のデバイスのフォーム ファクターをターゲットに設定する (ビデオ) | [Windows コアの世界向けのゲームの設計](http://channel9.msdn.com/Events/GDC/GDC-2015/Designing-Games-for-a-Windows-Core-World) |
 
  
 
-### Xxxxx xxxxxxxxx xxx xxxxxxx
+### 色のガイドラインとパレット
 
-Xxxxxxxxx x xxxxxxxxxx xxxxx xxxxxxxxx xx xxxx xxxx xxxxxxxx xxxxxxxxxx, xxxx xxxxxxxxxx, xxx xx x xxxxxxxx xxxx xx xxxxxx xxx xxxxxx xx xxxx xxx XXX xxxxxxxxxxxxx. Xxxxxxxxxx xxxxxxxx xx xxxx xxxxxxxx xxxx xxxxxxxx, xxxxxx, XX, xxx xxxxxxxxxxxx xxx xxxx xx xxxxxxx XX xxx xxxxxx xxx xxxx xxx xxxxxxxx xxxxxx.
+ゲームで一貫した色のガイドラインに従うと、美しさやナビゲーションの操作性が向上し、メニューや HUD の機能がプレイヤーに伝わりやすくなります。 警告、ダメージ、XP、成績などのゲーム要素の色が一貫していると、UI がわかりやすくなるため、ラベルによって説明する必要性が減ります。
 
 |             |                                                                                                                                                    |
 |-------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxx xxxxx | [Xxxx Xxxxxxxxx: Xxxxx](https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip) |
+| 色のガイド | [ベストプラクティス: 色](https://assets.windowsphone.com/499cd2be-64ed-4b05-a4f5-cd0c9ad3f6a3/101_BestPractices_Color_InvariantCulture_Default.zip) |
 
  
 
-### Xxxxxxxxxx
+### 文字体裁
 
-Xxx xxxxxxxxxxx xxx xx xxxxxxxxxx xxxxxxxx xxxx xxxxxxx xx xxxx xxxx, xxxxxxxxx XX xxxxxx, xxxxxxxxxx, xxxxxxxxxxx, xxxxxxxxxx, xxxxx, xxx xxxxxx xxxxxxxxx.
+文字体裁を適切に使うと、UI のレイアウト、ナビゲーション、読みやすさ、雰囲気、ブランド、プレイヤーの熱中度など、多くの側面が向上します。
 
 |                  |                                                                             |
 |------------------|-----------------------------------------------------------------------------|
-| Xxxxxxxxxx xxxxx | [Xxxx Xxxxxxxxx: Xxxxxxxxxx](http://go.microsoft.com/fwlink/?LinkId=535007) |
+| 文字体裁のガイド | [ベスト プラクティス: 文字体裁](http://go.microsoft.com/fwlink/?LinkId=535007) |
 
  
 
-### XX xxx
+### UI マップ
 
-X XX xxx xx x xxxxxx xx xxxx xxxxxxxxxx xxx xxxxx xxxxxxxxx xx x xxxxxxxxx. Xxx XX xxx xxxxx xxx xxxxxxxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxx’x xxxxxxxxx xxx xxxxxxxxxx xxxxx, xxx xxx xxxxxx xxxxxxxxx xxxxxxxxxx xxx xxxx xxxx xxxxx xx xxx xxxxxxxxxxx xxxxx.
+UI マップとは、ゲーム ナビゲーションのレイアウトとフローチャートで表されるメニューのことです。 UI マップを使うと、すべての関係者が、ゲームのインターフェイスとナビゲーション パスを理解しやすくなり、開発サイクルの初期段階で潜在的な障害や行き詰まりが明らかになります。
 
 |              |                                                                         |
 |--------------|-------------------------------------------------------------------------|
-| XX xxx xxxxx | [Xxxx Xxxxxxxxx: XX Xxx](http://go.microsoft.com/fwlink/?LinkId=535008) |
+| UI マップ ガイド | [ベスト プラクティス: UI マップ](http://go.microsoft.com/fwlink/?LinkId=535008) |
 
  
 
-### XxxxxxX xxxxxxxxxxx
+### DirectX 開発
 
 |                                             |                                                                                                                                                                  |
 |---------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XxxxxxX xxxx xxxxxxxxxxx xx xxx XXX         | [Xxxxx xxx XxxxxxX](index.md)                                                                                                                           |
-| XxxxxxX xxxxxxxxxxx xxxx xxx XXX xxx xxxxx  | [Xxx xxx xxxxxx xxx XxxxxxX](about-the-metro-style-user-interface-and-directx.md)                                                                               |
-| XxxxxxX xxxxxxxxx xxx xxxxxxxxx             | [XxxxxxX Xxxxxxxx xxx Xxxxxx](https://msdn.microsoft.com/library/windows/desktop/ee663274)                                                                                                                  |
-| XxxxxxYX YY xxxxxxxxxxx xxxxx xxx xxxxxxxxx | [XxxxxxYX YY Xxxxxxxx](https://msdn.microsoft.com/library/windows/desktop/dn903821)                                                                                                          |
-| XxxxxxX YY xxxxxxxxxxxx (xxxxx)             | [Xxxxxx Xxxxx, Xxxxxx Xxxxxxxxxxx: Xxxx Xxxx xx XxxxxxX YY](http://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12) |
+| UWP での DirectX ゲームの開発         | [ゲームと DirectX](index.md)                                                                                                                           |
+| UWP アプリ モデルによる DirectX の操作  | [アプリ オブジェクトと DirectX](about-the-metro-style-user-interface-and-directx.md)                                                                               |
+| DirectX の概要とリファレンス             | [DirectX のグラフィックスとゲーミング](https://msdn.microsoft.com/library/windows/desktop/ee663274)                                                                                                                  |
+| Direct3D 12 プログラミング ガイドとリファレンス | [Direct3D 12 グラフィックス](https://msdn.microsoft.com/library/windows/desktop/dn903821)                                                                                                          |
+| DirectX 12 の基本事項 (ビデオ)             | [強化されたパワーとパフォーマンスの向上: DirectX 12 でのゲーム](http://channel9.msdn.com/Events/GDC/GDC-2015/Better-Power-Better-Performance-Your-Game-on-DirectX12) |
 
  
 
-Xxx XxxxxxX Xxxx Xxx, XxxxxxX xxxxxxx xxxxxxxxxx xxxxxxx, xxx XxxxxxXXxxx xxxxxxxx xxxxxxxxxx xxxxxxx xxxxxxx xxxxxxx, xxxx, xxxxxx, xxx xxxxx xxxxxxx xxxxxxxxxxxxx xxx xxxxxx xxxxxxx xxx XxxxxxX xxxxxxxxxxx. Xxxxx xxxxxxxxx xxx xxxx x xxx xx xxxx xxx xxxxxx xxxxxxxx xx xxxxxxxxxxxx xxxxx xxxxxxxx xxxxxxxx. Xxxxxx xxxxxxxxxxx xxxxxxxxx xxx XxxxxxYX YY, xxxx xxxxxxxx xx xxxxx xxxxxxxxx xxxx xxxx xx XxxxxxYX YY.
+DirectX ツール キット、DirectX テクスチャ処理ライブラリ、DirectXMesh ジオメトリ処理ライブラリは、DirectX 開発用のテクスチャ、メッシュ、スプライト、その他のユーティリティ機能とヘルパー クラスを提供します。 これらのライブラリにより、自分でこれらの機能の実装する場合と比較して、多くの時間と労力を節約できます。 これらのライブラリは主に Direct3D 11 用に実装されていますが、その一部は Direct3D 12 でも動作します。
 
 |                                                         |                                                                           |
 |---------------------------------------------------------|---------------------------------------------------------------------------|
-| Xxx xxx XxxxxxX Xxxx Xxx (XxxxxxX YY)                   | [XxxxxxXXX](http://go.microsoft.com/fwlink/?LinkId=248929)                |
-| Xxx xxx XxxxxxX xxxxxxx xxxxxxxxxx xxxxxxx (XxxxxxX YY) | [XxxxxxXXxx](http://go.microsoft.com/fwlink/?LinkId=248926)               |
-| Xxx xxx XxxxxxXXxxx xxxxxxxx xxxxxxxxxx xxxxxxx         | [XxxxxxXXxxx](http://go.microsoft.com/fwlink/?LinkID=324981)              |
-| XxxxxxYX YY xxxxxxx xx xxx XxxxxxXXX (xxxx xxxx)        | [Xxxxxxx xxx XxxxxxX YY](https://github.com/Microsoft/DirectXTK/issues/2) |
+| DirectX ツール キット (DirectX 11) を入手する                   | [DirectXTK](http://go.microsoft.com/fwlink/?LinkId=248929)                |
+| DirectX テクスチャ処理ライブラリ (DirectX 11) を入手する | [DirectXTex](http://go.microsoft.com/fwlink/?LinkId=248926)               |
+| DirectXMesh ジオメトリ処理ライブラリを入手する         | [DirectXMesh](http://go.microsoft.com/fwlink/?LinkID=324981)              |
+| DirectXTK での Direct3D 12 のサポート (ブログの投稿)        | [DirectX 12 のサポート](https://github.com/Microsoft/DirectXTK/issues/2) |
 
  
 
-## Xxxxxxxxxx
+## 制作
 
 
-Xxxx xxxxxx xx xxx xxxxx xxxxxxx xxx xxxxxx xxxx xxx xxxxxxxxxx xxxxx, xxxx xxxx xxxxxxxxxxx xxxxxxxxxx xxxx xxxx. Xxx'xx xxxxxxxxx, xxxxxxxxxxx, xxx xxxxxxxxx xxx xxxxxxxxx xx xxxxx xx xxxx x xxxx xxxx.
+制作スタジオの準備が整ったら、チーム全体に作業を分散して制作サイクルに移行します。 プロトタイプの調整、リファクタリング、拡張によって、ゲームの完成品に仕上げていきます。
 
-### Xxxxxxxxxxxxx xxx xxxx xxxxx
+### 通知とライブ タイル
 
-X xxxx xx xxxx xxxx'x xxxxxxxxxxxxxx xx xxx Xxxxx Xxxx. Xxxxx xxx xxxxxxxxxxxxx xxx xxxxx xxxxxx xxxxxxxx xxxx xxxx xxxx xxxx'x xxxxxxxxx xxxxxxx xxxx xxxx.
+タイルとは、[スタート] メニュー上でゲームを表すものです。 タイルや通知によって、ゲームをプレイしていない場合でも、プレイヤーに興味を持たせることができます。
 
 |                                                                 |                                                                                                                                                                         |
 |-----------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxxxxx xxxxx xxx xxxxxx                                     | [Xxxxx, xxxxxx, xxx xxxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt185606)                                                                          |
-| Xxxxxx xxxxxxxxxxxx xxxx xxxxx xxx xxxxxxxxxxxxx                | [Xxxxxxxxxxxxx xxxxxx](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)                                                        |
-| Xxxxxxxx xxxx xxxxxxxxx (xxxx xxxx)                             | [Xxxxxxxx Xxxx Xxxxxxxxx - Xxxxxx xxx Xxxxxxxxxxxxx](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/06/30/adaptive-tile-templates-schema-and-documentation.aspx) |
-| Xxxxxxxxx xxxxx xxx xxxxxx                                      | [Xxxxxxxxxx xxx xxxxx xxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/hh465403)                                                                                       |
-| Xxxxxxx YY xxx xxx xxxxxxxxxxxxx xxxxxxxxxx xxxx xxxx xxxxxxxxx | [Xxxxxxxxxxxxx Xxxxxxxxxx](https://www.microsoft.com/store/apps/9nblggh5xsl1)                                                                                           |
+| タイルとバッジの開発                                     | [タイル、バッジ、通知](https://msdn.microsoft.com/library/windows/apps/mt185606)                                                                          |
+| ライブ タイルと通知を示すサンプル                | [通知のサンプル](https://github.com/Microsoft/Windows-universal-samples/tree/master/Samples/Notifications)                                                        |
+| アダプティブ タイル テンプレート (ブログの投稿)                             | [アダプティブ タイル テンプレート - スキーマとドキュメント](http://blogs.msdn.com/b/tiles_and_toasts/archive/2015/06/30/adaptive-tile-templates-schema-and-documentation.aspx) |
+| タイルとバッジの設計                                      | [タイルとバッジのガイドライン](https://msdn.microsoft.com/library/windows/apps/hh465403)                                                                                       |
+| ライブ タイル テンプレートを対話形式で開発するための Windows 10 アプリ | [Notifications Visualizer](https://www.microsoft.com/store/apps/9nblggh5xsl1)                                                                                           |
 
  
 
-### Xxxxxx xx-xxx xxxxxxx (XXX) xxxxxxxxx
+### アプリ内製品 (IAP) 購入の有効化
 
-Xx XXX (xx-xxx xxxxxxx) xx x xxxxxxxxxxxxx xxxx xxxx xxxxxxx xxx xxxxxxxx xx-xxxx. XXXx xxx xx xxx xxx-xxx, xxxx xxxxxx, xxxxx, xx xxxxxxxx xxxx xxxx xxxx xxxxxxx xxxxx xxxxx. Xxxx xxxxxxxxxxxxx, XXXx xxx xxxxxxx xxxxxxx xxxxx xxxxxxxxx xxx xxxx xxxxxxxxxx. Xxx xxxxxx xxx xxxxxxx xxxx xxxx'x XXXx xxxxxxx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxx xxxxxx xx-xxx xxxxxxxxx xx xxxx xxxx'x xxxx.
+IAP (アプリ内製品) は、プレイヤーがゲーム内で購入できる補助アイテムです。 IAP には、新しいアドオン、ゲームのレベル、項目、その他のプレーヤーを楽しませるものが含まれます。 適切に使用すると、IAP はゲームのエクスペリエンスを向上させると共に、収益の増加につながります。 ゲームの IAP は Windows デベロッパー センター ダッシュボードで定義して公開します。また、ゲームのコードでアプリ内購入を有効にします。
 
 |                                                  |                                                                                                             |
 |--------------------------------------------------|-------------------------------------------------------------------------------------------------------------|
-| Xxxxxxx xx-xxx xxxxxxxx                          | [Xxxxxx xx-xxx xxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt219684)                       |
-| Xxxxxxxxxx xx-xxx xxxxxxxx                       | [Xxxxxx xxxxxxxxxx xx-xxx xxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt219683) |
-| Xx-xxx xxxxxxx xxxxxxx xxx xxxxxxxxxx            | [XXX xxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt148551)                                                                  |
-| Xxxxxxx XXX xxxxx xxx xxxxxxxxxxxx xxx xxxx xxxx | [XXX xxxxxxxxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/mt148538)                                                |
+| 永続的なアプリ内製品                          | [アプリ内製品購入の有効化](https://msdn.microsoft.com/library/windows/apps/mt219684)                       |
+| コンシューマブルなアプリ内製品                       | [コンシューマブルなアプリ内製品購入の有効化](https://msdn.microsoft.com/library/windows/apps/mt219683) |
+| アプリ内製品の詳細と申請            | [IAP の申請](https://msdn.microsoft.com/library/windows/apps/mt148551)                                                                  |
+| IAP 売り上げとゲームの人口統計の監視 | [IAP 取得レポート](https://msdn.microsoft.com/library/windows/apps/mt148538)                                                |
 
  
 
-### Xxxxxxxx XxxxxxX xxxxxxxxxx xxx xxxxxxxx
+### 高度な DirectX の手法と概念
 
-Xxxx xxxxxxxx xx XxxxxxX xxxxxxxxxxx xxx xx xxxxxxx xxx xxxxxxx. Xxxx xxx xxx xx xxx xxxxx xx xxxxxxxxxx xxxxx xxx xxxx xx xxx xxxx xxxx xxx xxxxxxx xx xxxx XxxxxxX xxxxxx, xx xxxxx xxxxxxxxx xxxxxxxxxxx xxxxxxxx, xxx xxxxxxxxx xxx xxxxxxxxxxx xx xxxx xxxxxxx xxx xxxx.
+DirectX の開発には微妙で複雑な部分があります。 運用環境で、DirectX エンジンの詳細を掘り下げる必要がある場合や、難しいパフォーマンスの問題をデバッグする場合は、このセクションで紹介するリソースや情報が役立ちます。
 
 |                                             |                                                                                                                                                                                           |
 |---------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxxxxx xxxxxxxx xxx xxxxxxxxxxx (xxxxx) | [Xxxxxxxx XxxxxxX YY Xxxxxxxx xxx Xxxxxxxxxxx](http://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance)                                                  |
-| XxxxxxX xxxxxxxx xxxxxxxxx (xxxxx)          | [Xxxxx xxx Xxxxx Xxxxxxxx Xxxxxxxx xxxx Xxxx Xxxx Xxxxx XxxxxxX Xxxxx](http://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools) |
-| XxxxxxYX YY xxxxxxxxxxx xxxxx               | [XxxxxxYX YY Xxxxxxxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/desktop/dn903821)                                                                                                                          |
-| Xxxxxxxxx XxxxxxX xxx XXXX                  | [XxxxxxX xxx XXXX xxxxxxx](directx-and-xaml-interop.md)                                                                                                                                  |
+| グラフィックスとパフォーマンスの最適化 (ビデオ) | [高度な DirectX 12 グラフィックスとパフォーマンス](http://channel9.msdn.com/Events/GDC/GDC-2015/Advanced-DirectX12-Graphics-and-Performance)                                                  |
+| DirectX グラフィックスのデバッグ (ビデオ)          | [DirectX ツールを使用した、ゲームでのグラフィックスの困難な問題の解決](http://channel9.msdn.com/Events/GDC/GDC-2015/Solve-the-Tough-Graphics-Problems-with-your-Game-Using-DirectX-Tools) |
+| Direct3D 12 プログラミング ガイド               | [Direct3D 12 プログラミング ガイド](https://msdn.microsoft.com/library/windows/desktop/dn903821)                                                                                                                          |
+| DirectX と XAML の組み合わせ                  | [DirectX と XAML の相互運用機能](directx-and-xaml-interop.md)                                                                                                                                  |
 
  
 
-Xxx Xxxxxxxxx XxxxxxX xxxxxxx xxxx xxx xxxxxxxx x xxxxxx xx xx-xxxxx xxxxxx xxxxx XxxxxxX YY xxxxxxxxxxx. Xxxx xxxxx xxx xxxxxxx xx xxxxxxxx xxxxxxx, xxxxxxxxxxxx xxxxx, xxxxxxxxx, xxxxxxxx xxxxxxxx, xxx xxxx xxxxx XxxxxxX YY xxxxxxxx. Xxxx xxxxxx xxxx xxxxxxxxxxxx xxxxxxxx xxxxx xxxxxxxxxx.
+Microsoft DirectX の製品チームは、DirectX 12 の開発に関する一連の詳細なビデオを作成しました。 これらは、リソースのバインド、プレゼンテーション モード、デバッグ、リソースの障壁、その他の多くの DirectX 12 の概念を詳しく説明しています。 このシリーズには、ゲスト プレゼンターも出演しています。
 
 |                                                              |                                                                                                         |
 |--------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
-| Xxxxxxxx xxx XxxxxxX YY xxxxxxxxxxx xxxxxx (Xxxxxxx xxxxxxx) | [Xxxxxxxxx XxxxxxX YY xxx Xxxxxxxx Xxxxxxxxx](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA) |
-| XxxxxxYX YY xxxxxxxx xxx xxxx xxxxxxxxxx (xxxxx)             | [Xxxxx xxx Xxxxxxxxx xx XxxxxxX YY](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA)           |
+| グラフィックスおよび DirectX 12 開発に関するビデオ (Youtube チャンネル) | [Microsoft DirectX 12 とグラフィックスに関する教育](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA) |
+| Direct3D 12 のリソースとヒープ管理 (ビデオ)             | [DirectX 12 でのヒープとリソース](https://www.youtube.com/channel/UCiaX2B8XiXR70jaN7NK-FpA)           |
 
  
 
-### Xxxxxxxxxxxxx xxx xxxxxxxxxxxx
+### グローバリゼーションとローカライズ
 
-Xxxxxxx xxxxx-xxxxx xxxxx xxx xxx Xxxxxxx xxxxxxxx xxx xxxxx xxxxx xxx xxxxxxxxxxxxx xxxxxxxx xxxxx xxxx Xxxxxxxxx’x xxx xxxxxxxx.
+Windows プラットフォーム用の多言語対応ゲームを開発し、Microsoft の有力製品に組み込まれている地域と言語の機能について説明します。
 
 |                                              |                                                                                                                               |
 |----------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxxxx xxxx xxxx xxx xxx xxxxxx xxxxxx    | [Xxxxxxxxxx xxxx xxxxxxxxxx xxx x xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/mt186453.aspx)  |
-| Xxxxxxxx xxxxxxxxx, xxxxxxxx, xxx xxxxxxxxxx | [Xxxxxx xxxxxxxx xxx xxxxxxxx xxxxxxxxxxx xxx xxxxxxxx Xxxxxxxxx xxxxxxxxxxx](http://www.microsoft.com/Language/Default.aspx) |
+| 世界市場向けのゲームの準備    | [世界中のユーザーに対応する開発のガイドライン](https://msdn.microsoft.com/library/windows/apps/xaml/mt186453.aspx)  |
+| 言語、文化、およびテクノロジの橋渡し | [言語の規則および Microsoft の標準的な用語のオンライン リソース](http://www.microsoft.com/Language/Default.aspx) |
 
  
 
-## Xxxxxxxxxx xxx xxxxxxxxxx xxxx xxxx
+## ゲームの申請と公開
 
 
-Xxx xxxxxxxxx xxxxxx xxx xxxxxxxxxxx xxxx xxxx xxx xxxxxxxxxx xxx xxxxxxxxxx xxxxxxx xx xxxxxx xx xxxxxxxx.
+次のガイドと情報は、公開と申請のプロセスをできるだけスムーズに進めるのに役立ちます。
 
-### Xxxxxxxxx xxx xxxxxxxxx
+### パッケージ化とアップロード
 
-Xxx'xx xxx xxx xxx xxxxxxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xx xxxxxxx xxx xxxxxx xxxx xxxx xxxxxxxx.
+新しい統合 Windows デベロッパー センター ダッシュボードを使って、すべてのゲーム パッケージを公開し管理することができます。
 
 |                                                          |                                                                                                                                                                                          |
 |----------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxx Xxx Xxxxxx xxx xxxxxxxxxx                        | [Xxxxxxx Xxxxxxx xxxx](https://dev.windows.com/publish)                                                                                                                            |
-| Xxxxxx xxxx xxxx (xxxx xxxx)                             | [Xxxxxx xxxxxxxx xx xxxxxx xxx xxxxxxx xxxxx XXXX xxxxxx](https://blogs.windows.com/buildingapps/2016/01/06/now-available-single-age-rating-system-to-simplify-app-submissions/)         |
-| Xxxxxxxxx xxxx xxxx                                      | [Xxxxxxx xxxx XXXXxxxxxX xxxx](package-your-windows-store-directx-game.md)                                                                                                              |
-| Xxxxxxxxx xxxx xxxx xx x Yxx xxxxx xxxxxxxxx (xxxx xxxx) | [Xxxxxx xxxxxxxxxx xxxxxxxx xxxxxxx xxxxxxxxx'x xxxxx xxxxxxx xxxxxx](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/) |
-| Xxxxxxxxx xxx xxxxxxxxxx xxxx xxxx                       | [Xxxxxx xxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt148542)                                                                                                                                                |
+| Windows デベロッパー センターでのアプリの公開                        | [Windows アプリの公開](https://dev.windows.com/publish)                                                                                                                            |
+| ゲームの評価 (ブログの投稿)                             | [IARC システムを使って年齢区分を割り当てるための単一のワークフロー](https://blogs.windows.com/buildingapps/2016/01/06/now-available-single-age-rating-system-to-simplify-app-submissions/)         |
+| ゲームのパッケージ化                                      | [UWPDirectX ゲームのパッケージ化](package-your-windows-store-directx-game.md)                                                                                                              |
+| サード パーティ開発者としてのゲームのパッケージ化 (ブログ投稿) | [発行元のストア アカウントにアクセスせずにアップロード可能なパッケージの作成](https://blogs.windows.com/buildingapps/2015/12/15/building-an-app-for-a-3rd-party-how-to-package-their-store-app/) |
+| ゲームのアップロードとバージョン管理                       | [アプリ パッケージのアップロード](https://msdn.microsoft.com/library/windows/apps/mt148542)                                                                                                                                                |
 
  
 
-### Xxxxxxxx xxx xxxxxxxxxxxxx
+### ポリシーと認定
 
-Xxx'x xxx xxxxxxxxxxxxx xxxxxx xxxxx xxxx xxxx'x xxxxxxx. Xxxx xxx xxxxxxxx xxx xxxxxx xxxxxxxxxxxxx xxxxxx xx xx xxxxx xx.
+認定に関する問題によってゲームのリリースを延期しないでください。 ここでは、ポリシーと注意が必要な一般的な認定の問題を示します。
 
 |                                                   |                                                                                         |
 |---------------------------------------------------|-----------------------------------------------------------------------------------------|
-| Xxxxxxx Xxxxx Xxx Xxxxxxxxx Xxxxxxxxx             | [Xxx Xxxxxxxxx Xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh694058)                  |
-| Xxxxxxxx xxx xxxxxxxxxx xxxx xx xxx Xxxxxxx Xxxxx | [Xxxxxxx Xxxxx Xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn764944)      |
-| Xxx xx xxxxx xxxx xxxxxx xxx xxxxxxxxxxxxx xxxxxx | [Xxxxx xxxxxx xxxxxxxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/jj657968) |
+| Windows ストア アプリ開発者契約書             | [アプリ開発者契約書](https://msdn.microsoft.com/library/windows/apps/hh694058)                  |
+| Windows ストアでアプリを公開するためのポリシー | [Windows ストア ポリシー](https://msdn.microsoft.com/library/windows/apps/dn764944)      |
+| 一般的なアプリの認定の問題を回避する方法 | [一般的な認定エラーの回避](https://msdn.microsoft.com/library/windows/apps/jj657968) |
 
  
 
-### Xxxxx xxxxxxxx (XxxxxXxxxxxxx.xxx)
+### ストア マニフェスト (StoreManifest.xml)
 
-Xxx xxxxx xxxxxxxx (XxxxxXxxxxxxx.xxx) xx xx xxxxxxxx xxxxxxxxxxxxx xxxx xxxx xxx xx xxxxxxxx xx xxxx xxx xxxxxxx. Xxx xxxxx xxxxxxxx xxxxxxxx xxxxxxxxxx xxxxxxxx xxxx xxx xxx xxxx xx xxx XxxxXxxxxxxx.xxx xxxx. Xxx xxxxxxx, xxx xxx xxx xxx xxxxx xxxxxxxx xx xxxxx xxxxxxxxxxxx xx xxxx xxxx xx x xxxxxx xxxxxx xxxxx'x xxxx xxx xxxxxxxxx xxxxxxx XxxxxxX xxxxxxx xxxxx, xx xxx xxxxxxxxx xxxxxxx xxxxxx xxxxxx.
+ストア マニフェスト (StoreManifest.xml) は、必要に応じてアプリ パッケージに含めることのできる構成ファイルです。 ストア マニフェストには、AppxManifest.xml ファイルに含まれていないその他の機能が用意されています。 たとえば、ターゲット デバイスが指定された DirectX の最小機能レベルまたは指定された最小システム メモリの条件を満たしていない場合に、ストア マニフェストを使ってゲームのインストールをブロックできます。
 
 |                       |                                                                          |
 |-----------------------|--------------------------------------------------------------------------|
-| Xxxxx xxxxxxxx xxxxxx | [XxxxxXxxxxxxx xxxxxx (Xxxxxxx YY)](https://msdn.microsoft.com/library/windows/apps/mt617335) |
+| ストア マニフェストのスキーマ | [StoreManifest のスキーマ (Windows 10)](https://msdn.microsoft.com/library/windows/apps/mt617335) |
 
  
 
-## Xxxx xxxxxxxxx xxxxxxxxxx
+## ゲームのライフサイクル管理
 
 
-Xxxxx xxx'xx xxxxxxxx xxxxxxxxxxx xxx xxxxxxx xxxx xxxx, xx'x xxx "xxxx xxxx". Xxx xxx xx xxxx xxxx xxxxxxxxxxx xx xxxxxxx xxx, xxx xxxx xxxx'x xxxxxxx xx xxx xxxxxxxxxxx xxx xxxx xxxx xxxxx. Xxx'xx xxxx xx xxxxxxx xxxxx xxx xxxxx xxxxxxxxx, xxxxxxx xx xxxx xxxxxxxx, xxx xxxxxxx xxxxxxx xx xxxx xxxx.
+開発が終了し、ゲームを出荷しても、"ゲーム オーバー" というわけではありません。 バージョン 1 の開発は終了ですが、市場でのゲームの旅は始まったばかりです。 使用状況やエラー レポートの監視、ユーザーからのフィードバックへの対応、ゲームの更新プログラムの公開という作業が必要になります。
 
-### Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxx xxxxxxxxx
+### Windows デベロッパー センターの分析と販売促進
 
 |                                |                                                                    |
 |--------------------------------|--------------------------------------------------------------------|
-| Xxxxxxx Xxx Xxxxxx xxxxxxxxx   | [Xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt148522)                                   |
-| Xxxxxxxxxx xx xxxxxxxx xxxxxxx | [Xxxxxxx xx xxxxxxxx xxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt148546)        |
-| Xxxx xx xxxxxxx xxxx xxxx      | [Xxxxxxx xxxx xxxx](https://dev.windows.com/store-promotion) |
+| Windows デベロッパー センターの分析   | [分析](https://msdn.microsoft.com/library/windows/apps/mt148522)                                   |
+| 顧客のレビューへの返信 | [顧客のレビューに返信する](https://msdn.microsoft.com/library/windows/apps/mt148546)        |
+| ゲームの販売を促進する方法      | [アプリの販売促進](https://dev.windows.com/store-promotion) |
 
  
 
-### Xxxxxx Xxxxxx Xxxxxxxxxxx Xxxxxxxx
+### Visual Studio Application Insights
 
-Xxxxxx Xxxxxx Xxxxxxxxxxx Xxxxxxxx xxxxxxxx xxxxxxxxxxx, xxxxxxxxx, xxx xxxxx xxxxxxxxx xxx xxxx xxxxxxxxx xxxx. Xxxxxxxxxxx Xxxxxxxx xxxxx xxx xxxxxx xxx xxxxx xxxxxx xxxxx xxxx xxxx xx xxxxxxxx, xxxxxxxxxxxx xxxxxxx xxx xxxxxxx xxxxx, xxx xxxxxxxxxx xxx xxxxxxx xxx xxxxxxxxxx xx xxxxxxxx xxxx xxxx xxxx. Xxxxxxxxxxx Xxxxxxxx xxxxx xx xxxxxx xx XXX xxxx xxxx xxx, xxxxx xxxxx xxxxxxxxx xx xxx [Xxxxx xxxxxx](http://portal.azure.com/).
+Visual Studio Application Insights は、公開されたゲームのパフォーマンス、利用統計情報、および使用状況の分析を提供します。 Application Insights は、リリース後のゲームの問題の検出と解決、使用状況の継続的な監視と向上、プレイヤーがゲームを操作する方法の把握に役立ちます。 Application Insights は、アプリに SDK を追加することで機能し、[Azure ポータル](http://portal.azure.com/)に利用統計情報を送信します。
 
 |                                             |                                                                                                                                                     |
 |---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxxxxxx xxxxxxxxxxx xxx xxxxx xxxxxxxxx | [Xxxxxx Xxxxxx Xxxxxxxxxxx Xxxxxxxx](https://azure.microsoft.com/documentation/articles/app-insights-get-started/)                            |
-| Xxxxxx Xxxxxxxxxxx Xxxxxxxx xx Xxxxxxx xxxx | [Xxxxxxxxxxx Xxxxxxxx xxx Xxxxxxx Xxxxx xxx Xxxxx xxxx](https://azure.microsoft.com/documentation/articles/app-insights-windows-get-started/) |
+| アプリケーションのパフォーマンスと使用状況の分析 | [Visual Studio Application Insights](https://azure.microsoft.com/documentation/articles/app-insights-get-started/)                            |
+| Windows アプリでの Application Insights の有効化 | [Windows Phone およびストア アプリ向けの Application Insights](https://azure.microsoft.com/documentation/articles/app-insights-windows-get-started/) |
 
  
 
-### Xxxxxxxx xxx xxxxxxxx xxxxxxx xxxxxxx
+### コンテンツの更新プログラムの作成と管理
 
-Xx xxxxxx xxxx xxxxxxxxx xxxx, xxxxxx x xxx xxx xxxxxxx xxxx x xxxxxx xxxxxxx xxxxxx. Xxxxx xxx xxxxxxx xxxxx xxx xxx xxxxxxx xxxxxxxxxx xxx xxxxxxxxxxxxx, xx xxxx xxxxxxxxxxxxx xx xxxxxxxxx xx xxxxxxxxx xx xx xxxxxx.
+公開されたゲームを更新するには、大きいバージョン番号を持つ新しいアプリ パッケージを申請します。 このパッケージの申請と認定が終了すると、自動的にユーザーに更新プログラムとして公開されます。
 
 |                                   |                                                                            |
 |-----------------------------------|----------------------------------------------------------------------------|
-| Xxxxxxxx xxx xxxxxxxxxx xxxx xxxx | [Xxxxxxx xxxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt188602)           |
-| Xxxx xxxxxxx xxxxxxxxxx xxxxxxxx  | [Xxxxxxxx xxx xxx xxxxxxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt188602) |
+| ゲームの更新とバージョン管理 | [パッケージ バージョンの番号付け](https://msdn.microsoft.com/library/windows/apps/mt188602)           |
+| ゲームのパッケージ管理のガイダンス  | [アプリ パッケージ管理のガイダンス](https://msdn.microsoft.com/library/windows/apps/mt188602) |
 
  
 
-## Xxxxxx Xxxx Xxxx xx xxxx xxxx
+## ゲームへの Xbox Live の追加
 
 
-> **Xxxx**   Xxxx Xxxx xxxxxxxxxxx xx xxxxxxx xxxxxxx xxxxxxxx xxxx xx XX@Xxxx xxx Xxxxxxxxx Xxxxxxx. Xxxx xxxxx xxxxxx x xxxxx xxxxx xx xxxxxxxxx, xxx xxx xxx xxxx xxxx xxxx xxxxxxxxx xxx xxxxxxxxxxxx xxxxxxxxx xx xxxx xxxxxxx xxxxxxxxxxxxx xx xxxxxxxx xxxxxxxxxxx xxxx. Xxxxxxxx xxx xxxxx xxxx xxxxxxx xx xxxxxxxxx.xxxxxxxx.xxx, xxxxxx.xxxxxxxx.xxx, xxx.xxxxxxxx.xxx, xx xxx Xxxx Xxxxxxxxx Xxxxxxx (XXX). Xxx xxxxxxxxxxx xxxxx xxxxxxxxxx xxxx Xxxxxxxxx, xxx [Xxxxxxxxx Xxxxxxxx](#programs).
+> **注**   Xbox Live の開発は ID@Xbox や Microsoft Studios などのプログラムで管理されます。 このガイドでは幅広いリソースを取り上げているため、プログラムへの参加や特定の開発の役割によっては、一部のリソースにアクセスできない場合があります。 developer.xboxlive.com、forums.xboxlive.com、xdi.xboxlive.com、Game Developer Network (GDN) に解決されるリンクなどです。 Microsoft との提携について詳しくは、「[開発者プログラム](#programs)」をご覧ください。
 
  
 
 |                                                |                                                                                                                                                                                                                                |
 |------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxxxxx xxx xxxxxx Xxxx Xxxx XXX              | [Xxxx Xxxx XXX](http://aka.ms/xsapi2)                                                                                                                                                                                          |
-| Xxxxxx Xxxx Xxxx xx xxxx Xxxxxxxxx Xxxxxxx xxx | [Xxx xx - Xxx Xxxx Xxxx XXX xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) Xxxx](http://aka.ms/xsapi2uwp)                                                                                                                                 |
-| Xxxxxxxxxxxx xxx xxxxx xxxx xxx Xxxx Xxxx      | [Xxxx Xxxxxxxxxxxx xxx Xxxx Xxxx xx Xxxxxxx YY](http://go.microsoft.com/fwlink/?LinkId=533217)                                                                                                                                 |
-| Xxxxxxxx xx Xxxx Xxxx xxxx xxxxxxxxxxx (xxxxx) | [Xxxxxxxxxx xxxx Xxxx Xxxx xxx Xxxxxxx YY](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10)                                                                                              |
-| Xxxxx-xxxxxxxx xxxxxxxxxxx (xxxxx)             | [Xxxx Xxxx Xxxxxxxxxxx: Xxxxxxxxxxx xxxxxxxx xxx xxxxx-xxxxxxxx xxxxxxxxxxx xxx xxxxxxxx](http://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay) |
-| Xxxxx-xxxxxx xxxxxxxx xx Xxxxx Xxxxxxx (xxxxx) | [Xxxxx Xxxxxxx: Xxxxx-xxxxxx Xxxxxxxx xxxx Xxxx Xxxx](http://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live)                                                                         |
-| Xxxx Xxxx xxxxx xxx xxxxxxxxxxxx (xxxxx)       | [Xxxx Xxxxxxxxx xxx Xxxxxxxxxx Xxxxx-Xxxxx Xxxx Xxxxx xxx Xxxxxxxxxxxx xx Xxxx Xxxx](http://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live)          |
+| 最新の Xbox Live SDK のダウンロード              | [Xbox Live SDK](http://aka.ms/xsapi2)                                                                                                                                                                                          |
+| ユニバーサル Windows アプリへの Xbox Live の追加 | [Xbox Live SDK をユニバーサル Windows プラットフォーム (UWP) アプリに追加する方法](http://aka.ms/xsapi2uwp)                                                                                                                                 |
+| Xbox Live を使うためのゲームの要件      | [Xbox Live on Windows 10 の Xbox の要件](http://go.microsoft.com/fwlink/?LinkId=533217)                                                                                                                                 |
+| Xbox Live のゲーム開発の概要 (ビデオ) | [Windows 10 用の Xbox Live を使った開発](http://channel9.msdn.com/Events/GDC/GDC-2015/Developing-with-Xbox-Live-for-Windows-10)                                                                                              |
+| クロス プラットフォーム マッチメイキング (ビデオ)             | [Xbox Live マルチプレイヤー: クロス プラットフォーム マッチメイキングとゲームプレイのサービスの紹介](http://channel9.msdn.com/Events/GDC/GDC-2015/Xbox-Live-Multiplayer-Introducing-services-for-cross-platform-matchmaking-and-gameplay) |
+| Fable Legends でのクロス デバイスのゲームプレイ (ビデオ) | [Fable Legends: Xbox Live によるクロス デバイス ゲームプレイ](http://channel9.msdn.com/Events/GDC/GDC-2015/Fable-Legends-Cross-device-Gameplay-with-Xbox-Live)                                                                         |
+| Xbox Live の統計情報や達成度 (ビデオ)       | [クラウド ベースのユーザーの統計情報と Xbox Live での達成度の活用のベスト プラクティス](http://channel9.msdn.com/Events/GDC/GDC-2015/Best-Practices-for-Leveraging-Cloud-Based-User-Stats-and-Achievements-in-Xbox-Live)          |
 
  
 
-## Xxxxxxxxxx xxxxxxxxx
+## その他のリソース
 
 
 |                                                      |                                                                                                                                                                     |
 |------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Xxxxx xxxx xxxxxxxxxxx (xxxxx)                       | [Xxx Xxxxxxxxxxxxx xxx Xxxxxxxxxxx Xxxxxxxxxx](http://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers)                           |
-| Xxxxxxxxxxxxxx xxx xxxxx-xxxx xxxxxx xxxxxxx (xxxxx) | [Xxxxxxxxx Xxxxxx Xxxxxxxxxxx xx xxxxx-xxxx xxxxxx xxxxxxx](http://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices) |
-| Xxxxxxxxxx Xxxxxxx YY xxxxxxx xxxxx (xxxxx)          | [XX Xxxxx xxx Xxxxxxx YY](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10)                                                                     |
+| インディーズ ゲーム開発 (ビデオ)                       | [個人開発者のための新しい機会](http://channel9.msdn.com/Events/GDC/GDC-2015/New-Opportunities-for-Independent-Developers)                           |
+| マルチコア モバイル デバイスに関する考慮事項 (ビデオ) | [マルチコア モバイル デバイスでのゲームのパフォーマンスの維持](http://channel9.msdn.com/Events/GDC/GDC-2015/Sustained-gaming-performance-in-multi-core-mobile-devices) |
+| Windows 10 デスクトップ ゲームの開発 (ビデオ)          | [Windows 10 向け PC ゲーム](http://channel9.msdn.com/Events/GDC/GDC-2015/PC-Games-for-Windows-10)                                                                     |
 
  
 
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

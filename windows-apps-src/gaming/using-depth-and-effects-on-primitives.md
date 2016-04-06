@@ -1,33 +1,33 @@
 ---
-xxxxx: Xxx xxxxx xxx xxxxxxx xx xxxxxxxxxx
-xxxxxxxxxxx: Xxxx, xx xxxx xxx xxx xx xxx xxxxx, xxxxxxxxxxx, xxxxx, xxx xxxxx xxxxxxx xx xxxxxxxxxx.
-xx.xxxxxxx: YYxxYYxY-xYxY-xxxx-YYYY-xYYxxYYYYYYx
+title: Use depth and effects on primitives
+description: Here, we show you how to use depth, perspective, color, and other effects on primitives.
+ms.assetid: 71ef34c5-b4a3-adae-5266-f86ba257482a
 ---
 
-# Xxx xxxxx xxx xxxxxxx xx xxxxxxxxxx
+# Use depth and effects on primitives
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx, xx xxxx xxx xxx xx xxx xxxxx, xxxxxxxxxxx, xxxxx, xxx xxxxx xxxxxxx xx xxxxxxxxxx.
+Here, we show you how to use depth, perspective, color, and other effects on primitives.
 
-**Xxxxxxxxx:** Xx xxxxxx x YX xxxxxx xxx xxxxx xxxxx xxxxxx xxxxxxxx xxx xxxxxxxx xx xx.
+**Objective:** To create a 3D object and apply basic vertex lighting and coloring to it.
 
-## Xxxxxxxxxxxxx
+## Prerequisites
 
 
-Xx xxxxxx xxxx xxx xxx xxxxxxxx xxxx X++. Xxx xxxx xxxx xxxxx xxxxxxxxxx xxxx xxxxxxxx xxxxxxxxxxx xxxxxxxx.
+We assume that you are familiar with C++. You also need basic experience with graphics programming concepts.
 
-Xx xxxx xxxxxx xxxx xxx xxxx xxxxxxx [Xxxxxxxxxx: xxxxxxx xx XxxxxxX xxxxxxxxx xxx xxxxxxxxxx xx xxxxx](setting-up-directx-resources.md) xxx [Xxxxxxxx xxxxxxx xxx xxxxxxx xxxxxxxxxx](creating-shaders-and-drawing-primitives.md).
+We also assume that you went through [Quickstart: setting up DirectX resources and displaying an image](setting-up-directx-resources.md) and [Creating shaders and drawing primitives](creating-shaders-and-drawing-primitives.md).
 
-**Xxxx xx xxxxxxxx:** YY xxxxxxx.
+**Time to complete:** 20 minutes.
 
-Xxxxxxxxxxxx
+Instructions
 ------------
 
-### Y. Xxxxxxxx xxxx xxxxxxxxx
+### 1. Defining cube variables
 
-Xxxxx, xx xxxx xx xxxxxx xxx **XxxxxxXxxxXxxxxx** xxx **XxxxxxxxXxxxxx** xxxxxxxxxx xxx xxx xxxx. Xxxxx xxxxxxxxxx xxxxxxx xxx xxxxxx xxxxxxxxx xxx xxxxxx xxx xxx xxxx xxx xxx xxx xxxx xxxx xx xxxxxx. Xx xxxxxxx [**XXYXYYXxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476377) xxx [**XXYXYYXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476351) xxxx [**XxxXxx**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) xxx xxxxxxx xx xxxxxxxx xx **XxxxxxxxXxxxxx**.
+First, we need to define the **SimpleCubeVertex** and **ConstantBuffer** structures for the cube. These structures specify the vertex positions and colors for the cube and how the cube will be viewed. We declare [**ID3D11DepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476377) and [**ID3D11Buffer**](https://msdn.microsoft.com/library/windows/desktop/ff476351) with [**ComPtr**](https://msdn.microsoft.com/library/windows/apps/br244983.aspx) and declare an instance of **ConstantBuffer**.
 
 ```cpp
 struct SimpleCubeVertex
@@ -57,9 +57,9 @@ private:
     ConstantBuffer m_constantBufferData;
 ```
 
-### Y. Xxxxxxxx x xxxxx xxxxxxx xxxx
+### 2. Creating a depth stencil view
 
-Xx xxxxxxxx xx xxxxxxxx xxx xxxxxx-xxxxxx xxxx, xx xxxx xxxxxx x xxxxx-xxxxxxx xxxx. Xxx xxxxx-xxxxxxx xxxx xxxxxxx XxxxxxYX xx xxxxxxxxxxx xxxxxx xxxxxxx xxxxxx xx xxx xxxxxx xx xxxxx xx xxxxxxx xxxxxxx xxxx xxx xxxxxx. Xxxxxx xx xxx xxxxxx x xxxx xx x xxxxx-xxxxxxx xxxxxx, xx xxxx xxxxxx xxx xxxxx-xxxxxxx xxxxxx. Xx xxxxxxxx x [**XYXYY\_XXXXXXXYX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476253) xx xxxxxxxx xxx xxxxx-xxxxxxx xxxxxx xxx xxxx xxxx [**XXYXYYXxxxxx::XxxxxxXxxxxxxYX**](https://msdn.microsoft.com/library/windows/desktop/ff476521) xx xxxxxx xxx xxxxx-xxxxxxx xxxxxx. Xx xxxxxx xxx xxxxx-xxxxxxx xxxx, xx xxxxxxxx x [**XYXYY\_XXXXX\_XXXXXXX\_XXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476112) xx xxxxxxxx xxx xxxxx-xxxxxxx xxxx xxx xxxx xxx xxxxx-xxxxxxx xxxx xxxxxxxxxxx xxx xxx xxxxx-xxxxxxx xxxxxx xx [**XXYXYYXxxxxx::XxxxxxXxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476507).
+In addition to creating the render-target view, we also create a depth-stencil view. The depth-stencil view enables Direct3D to efficiently render objects closer to the camera in front of objects further from the camera. Before we can create a view to a depth-stencil buffer, we must create the depth-stencil buffer. We populate a [**D3D11\_TEXTURE2D\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476253) to describe the depth-stencil buffer and then call [**ID3D11Device::CreateTexture2D**](https://msdn.microsoft.com/library/windows/desktop/ff476521) to create the depth-stencil buffer. To create the depth-stencil view, we populate a [**D3D11\_DEPTH\_STENCIL\_VIEW\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476112) to describe the depth-stencil view and pass the depth-stencil view description and the depth-stencil buffer to [**ID3D11Device::CreateDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476507).
 
 ```cpp
         // Once the render target view is created, create a depth stencil view.  This
@@ -104,9 +104,9 @@ Xx xxxxxxxx xx xxxxxxxx xxx xxxxxx-xxxxxx xxxx, xx xxxx xxxxxx x xxxxx-xxxxxxx x
             );
 ```
 
-### Y. Xxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxx
+### 3. Updating perspective with the window
 
-Xx xxxxxx xxx xxxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxx xxx xxxxxxxx xxxxxx xxxxxxxxx xx xxx xxxxxx xxxxxxxxxx. Xx xxx xxx xxxxxxxxxx xx x YY-xxxxxx xxxxx xx xxxx xxxx x xxxxx xxxxx xx Y.YY xx YYY.
+We update the perspective projection parameters for the constant buffer depending on the window dimensions. We fix the parameters to a 70-degree field of view with a depth range of 0.01 to 100.
 
 ```cpp
         // Finally, update the constant buffer perspective projection parameters
@@ -137,21 +137,21 @@ Xx xxxxxx xxx xxxxxxxxxxx xxxxxxxxxx xxxxxxxxxx xxx xxx xxxxxxxx xxxxxx xxxxxxxx
             );
 ```
 
-### Y. Xxxxxxxx xxxxxx xxx xxxxx xxxxxxx xxxx xxxxx xxxxxxxx
+### 4. Creating vertex and pixel shaders with color elements
 
-Xx xxxx xxx, xx xxxxxx xxxx xxxxxxx xxxxxx xxx xxxxx xxxxxxx xxxx xxxx xx xxxxxxxxx xx xxx xxxxxxxx xxxxxxxx, [Xxxxxxxx xxxxxxx xxx xxxxxxx xxxxxxxxxx](creating-shaders-and-drawing-primitives.md). Xxx xxx'x xxxxxx xxxxxx xxxxxxxxxx xxxx xxxxxx xxxxxxxx xxxx xxxxxxxxxx xxxxx xxx xxxxxx xxx xxxxxx xxxxx xxxxxxx xx xxx xxxxx xxxxxx.
+In this app, we create more complex vertex and pixel shaders than what we described in the previous tutorial, [Creating shaders and drawing primitives](creating-shaders-and-drawing-primitives.md). The app's vertex shader transforms each vertex position into projection space and passes the vertex color through to the pixel shader.
 
-Xxx xxx'x xxxxx xx [**XYXYY\_XXXXX\_XXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476180) xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxx xx xxx xxxxxx xxxxxx xxxx xxx xxx xxxxxx xxxxxxxx: xxx xxxxxxx xxxxxxx xxx xxxxxx xxxxxxxx xxx xxx xxxxx xxxxxxx xxxxxxx xxx xxxxx.
+The app's array of [**D3D11\_INPUT\_ELEMENT\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476180) structures that describe the layout of the vertex shader code has two layout elements: one element defines the vertex position and the other element defines the color.
 
-Xx xxxxxx xxxxxx, xxxxx, xxx xxxxxxxx xxxxxxx xx xxxxxx xx xxxxxxxx xxxx.
+We create vertex, index, and constant buffers to define an orbiting cube.
 
-**Xx xxxxxx xx xxxxxxxx xxxx**
+**To define an orbiting cube**
 
-1.  Xxxxx, xx xxxxxx xxx xxxx. Xx xxxxxx xxxx xxxxxx x xxxxx xx xxxxxxxx xx x xxxxxxxx. Xxxx xxxxxx xxx xxxxx xxxxxx xx xxxxx xxxx xxxx xxxxxxxxxxx xx xxx xxxx xxx xx xxxxxxxxxxxxx.
-2.  Xxxx, xx xxxxxxxx xxx xxxxxx xxx xxxxx xxxxxxx ([**XYXYY\_XXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476092) xxx [**XYXYY\_XXXXXXXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) xxxxx xxx xxxx xxxxxxxxxx. Xx xxxx [**XXYXYYXxxxxx::XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476501) xxxx xxx xxxx xxxxxx.
-3.  Xxxx, xx xxxxxx x xxxxxxxx xxxxxx ([**XYXYY\_XXXXXX\_XXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) xxx xxxxxxx xxxxx, xxxx, xxx xxxxxxxxxx xxxxxxxx xx xxx xxxxxx xxxxxx. Xx xxx xxxxx xxx xxx xxxxxxxx xxxxxx xx xxxxxx xxx xxxx xxx xxxxx x xxxxxxxxxxx xxxxxxxxxx xx xx. Xx xxxx [**XXYXYYXxxxxx::XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476501) xx xxxxxx xxx xxxxxxxx xxxxxx.
-4.  Xxxx, xx xxxxxxx xxx xxxx xxxxxxxxx xxxx xxxxxxxxxxx xx x xxxxxx xxxxxxxx xx X = Y, X = Y, X = Y.
-5.  Xxxxxxx, xx xxxxxxx x *xxxxxx* xxxxxxxx xxxx xx xxxx xxx xx xxxxxxx xxx xxxx xx xxxxxxxx xx xxxxx xxxxx.
+1.  First, we define the cube. We assign each vertex a color in addition to a position. This allows the pixel shader to color each face differently so the face can be distinguished.
+2.  Next, we describe the vertex and index buffers ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092) and [**D3D11\_SUBRESOURCE\_DATA**](https://msdn.microsoft.com/library/windows/desktop/ff476220)) using the cube definition. We call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) once for each buffer.
+3.  Next, we create a constant buffer ([**D3D11\_BUFFER\_DESC**](https://msdn.microsoft.com/library/windows/desktop/ff476092)) for passing model, view, and projection matrices to the vertex shader. We can later use the constant buffer to rotate the cube and apply a perspective projection to it. We call [**ID3D11Device::CreateBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476501) to create the constant buffer.
+4.  Next, we specify the view transform that corresponds to a camera position of X = 0, Y = 1, Z = 2.
+5.  Finally, we declare a *degree* variable that we will use to animate the cube by rotating it every frame.
 
 ```cpp
         
@@ -327,22 +327,22 @@ Xx xxxxxx xxxxxx, xxxxx, xxx xxxxxxxx xxxxxxx xx xxxxxx xx xxxxxxxx xxxx.
         
 ```
 
-### Y. Xxxxxxxx xxx xxxxxxx xxx xxxx xxx xxxxxxxxxx xxx xxxxxxxx xxxxx
+### 5. Rotating and drawing the cube and presenting the rendered image
 
-Xx xxxxx xx xxxxxxx xxxx xx xxxxxxxxxxx xxxxxx xxx xxxxxxx xxx xxxxx. Xx xxxx xxx **xxxxxxxxX** xxxxxx xxxxxxxx (XxxxxXxxx.x) xxxx x xxxxxxxx xxxxxx xx xxx xxxxxx xxxx xxxx xxxxxx xxx xxxx’x xxxxx xxxxxx xxxxxx xxx X xxxx. Xx xxxx xxxx [**XXYXYYXxxxxxXxxxxxx::XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476486) xx xxxxxx xxx xxxxxxxx xxxxxx xxx xxxxxx xxx xxxx xxxxx. Xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476464) xx xxxxxxx xxx xxxxxx xxxxxx xx xxx xxxxxx xxxxxx. Xx xxxx **XXXxxXxxxxxXxxxxxx** xxxx, xx xxxx xxx xxxxx-xxxxxxx xxxx. Xx xxxx [**XXYXYYXxxxxxXxxxxxx::XxxxxXxxxxxXxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476388) xx xxxxx xxx xxxxxx xxxxxx xx x xxxxx xxxx xxxxx xxx xxxx [**XXYXYYXxxxxxXxxxxxx::XxxxxXxxxxXxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476387) xx xxxxx xxx xxxxx xxxxxx.
+We enter an endless loop to continually render and display the scene. We call the **rotationY** inline function (BasicMath.h) with a rotation amount to set values that will rotate the cube’s model matrix around the Y axis. We then call [**ID3D11DeviceContext::UpdateSubresource**](https://msdn.microsoft.com/library/windows/desktop/ff476486) to update the constant buffer and rotate the cube model. We call [**ID3D11DeviceContext::OMSetRenderTargets**](https://msdn.microsoft.com/library/windows/desktop/ff476464) to specify the render target as the output target. In this **OMSetRenderTargets** call, we pass the depth-stencil view. We call [**ID3D11DeviceContext::ClearRenderTargetView**](https://msdn.microsoft.com/library/windows/desktop/ff476388) to clear the render target to a solid blue color and call [**ID3D11DeviceContext::ClearDepthStencilView**](https://msdn.microsoft.com/library/windows/desktop/ff476387) to clear the depth buffer.
 
-Xx xxx xxxxxxx xxxx, xx xxxx xxxx xxx xxxx xx xxx xxxx xxxxxxx.
+In the endless loop, we also draw the cube on the blue surface.
 
-**Xx xxxx xxx xxxx**
+**To draw the cube**
 
-1.  Xxxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476454) xx xxxxxxxx xxx xxxxxx xxxxxx xxxx xx xxxxxxxx xxxx xxx xxxxx-xxxxxxxxx xxxxx.
-2.  Xxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476456) xxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476453) xx xxxx xxx xxxxxx xxx xxxxx xxxxxxx xx xxx xxxxx-xxxxxxxxx xxxxx.
-3.  Xxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476455) xxxx xxx [**XYXYY\_XXXXXXXXX\_XXXXXXXX\_XXXXXXXXXXXXX**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) xxxxx xx xxxxxxx xxx xxx xxxxx-xxxxxxxxx xxxxx xx xxxxxxxxx xxx xxxxxx xxxx xx x xxxxxxxx xxxxx.
-4.  Xxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476493) xx xxxxxxxxxx xxx xxxxxx xxxxxx xxxxx xxxx xxx xxxxxx xxxxxx xxxx xxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476472) xx xxxxxxxxxx xxx xxxxx xxxxxx xxxxx xxxx xxx xxxxx xxxxxx xxxx.
-5.  Xxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XXXxxXxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476491) xx xxx xxx xxxxxxxx xxxxxx xxxx xx xxxx xx xxx xxxxxx xxxxxx xxxxxxxx xxxxx.
-6.  Xxxxxxx, xx xxxx [**XXYXYYXxxxxxXxxxxxx::XxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/ff476409) xx xxxx xxx xxxx xxx xxxxxx xx xx xxx xxxxxxxxx xxxxxxxx.
+1.  First, we call [**ID3D11DeviceContext::IASetInputLayout**](https://msdn.microsoft.com/library/windows/desktop/ff476454) to describe how vertex buffer data is streamed into the input-assembler stage.
+2.  Next, we call [**ID3D11DeviceContext::IASetVertexBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476456) and [**ID3D11DeviceContext::IASetIndexBuffer**](https://msdn.microsoft.com/library/windows/desktop/ff476453) to bind the vertex and index buffers to the input-assembler stage.
+3.  Next, we call [**ID3D11DeviceContext::IASetPrimitiveTopology**](https://msdn.microsoft.com/library/windows/desktop/ff476455) with the [**D3D11\_PRIMITIVE\_TOPOLOGY\_TRIANGLESTRIP**](https://msdn.microsoft.com/library/windows/desktop/ff476189#D3D11_PRIMITIVE_TOPOLOGY_TRIANGLESTRIP) value to specify for the input-assembler stage to interpret the vertex data as a triangle strip.
+4.  Next, we call [**ID3D11DeviceContext::VSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476493) to initialize the vertex shader stage with the vertex shader code and [**ID3D11DeviceContext::PSSetShader**](https://msdn.microsoft.com/library/windows/desktop/ff476472) to initialize the pixel shader stage with the pixel shader code.
+5.  Next, we call [**ID3D11DeviceContext::VSSetConstantBuffers**](https://msdn.microsoft.com/library/windows/desktop/ff476491) to set the constant buffer that is used by the vertex shader pipeline stage.
+6.  Finally, we call [**ID3D11DeviceContext::DrawIndexed**](https://msdn.microsoft.com/library/windows/desktop/ff476409) to draw the cube and submit it to the rendering pipeline.
 
-Xx xxxx [**XXXXXXxxxXxxxx::Xxxxxxx**](https://msdn.microsoft.com/library/windows/desktop/bb174576) xx xxxxxxx xxx xxxxxxxx xxxxx xx xxx xxxxxx.
+We call [**IDXGISwapChain::Present**](https://msdn.microsoft.com/library/windows/desktop/bb174576) to present the rendered image to the window.
 
 ```cpp
             // Update the constant buffer to rotate the cube model.
@@ -434,20 +434,24 @@ Xx xxxx [**XXXXXXxxxXxxxx::Xxxxxxx**](https://msdn.microsoft.com/library/windows
                 );
 ```
 
-## Xxxxxxx xxx xxxx xxxxx
+## Summary and next steps
 
 
-Xx xxxx xxxxx, xxxxxxxxxxx, xxxxx, xxx xxxxx xxxxxxx xx xxxxxxxxxx.
+We used depth, perspective, color, and other effects on primitives.
 
-Xxxx, xx xxxxx xxxxxxxx xx xxxxxxxxxx.
+Next, we apply textures to primitives.
 
-[Xxxxxxxx xxxxxxxx xx xxxxxxxxxx](applying-textures-to-primitives.md)
+[Applying textures to primitives](applying-textures-to-primitives.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

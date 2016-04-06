@@ -1,42 +1,42 @@
 ---
-xx.xxxxxxx: YYXYYXXY-XYYY-YYYY-YXYY-XXYXYXYYXXXY
-xxxxx: Xxx xxxxxxxxxx xxxxxxxxxxxx
-xxxxxxxxxxx: Xxxxxxxxxxxx xxxx xx xxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx'x xxxxxxx xxxxxxxx xx xxxxxx xxxxxxx XXX xx xxxxxxxxx xxxx xxxxxxxx, xxxxx, xx xxxxxxx xxxx xxx xxxxxx xx xxx xxxxxxxxxx.
+ms.assetid: 25B18BA5-E584-4537-9F19-BB2C8C52DFE1
+title: アプリ機能の宣言
+description: 一部の API またはピクチャ、ミュージック、デバイス (カメラ、マイクなど) などのリソースにアクセスするには、機能をユニバーサル Windows プラットフォーム (UWP) アプリのパッケージ マニフェストで宣言する必要があります。
 ---
-# Xxx xxxxxxxxxx xxxxxxxxxxxx
+# アプリ機能の宣言
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
-Xxxxxxxxxxxx xxxx xx xxxxxxxx xx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx'x [xxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/BR211474) xx xxxxxx xxxxxxx XXX xx xxxxxxxxx xxxx xxxxxxxx, xxxxx, xx xxxxxxx xxxx xxx xxxxxx xx xxx xxxxxxxxxx.
+一部の API またはピクチャ、ミュージック、デバイス (カメラ、マイクなど) などのリソースにアクセスするには、機能をユニバーサル Windows プラットフォーム (UWP) アプリの [パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/BR211474) で宣言する必要があります。
 
-Xxx xxxxxxx xxxxxx xx xxxxxxxx xxxxxxxxx xx XXX xx xxxxxxxxx xxxxxxxxxxxx xx xxxx xxx'x [xxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/BR211474). Xxx xxx xxxxxxx xxxxxxx xxxxxxxxxxxx xx xxxxx xxx [Xxxxxxxx Xxxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx) xx Xxxxxxxxx Xxxxxx Xxxxxx, xx xxx xxx xxx xxxx xxxxxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxx xx xxxxxxx xxxxxxxxxxxx xx x xxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/BR211477). Xx xx xxxxxxxxx xx xxxx xxxx xxxx xxxxxxxxx xxx xxxx xxx xxxx xxx Xxxxx, xxxx'xx xxxxxxxx xx xxx xxx xxxxxxxxxxxx xxxx xxx xxx xxxxxxxx. Xxxxx xxxxxxxxx xxxxxxxxxxxx xxxx xxxx xxx xxxxx'x xxxx.
+特定のリソースまたは API へのアクセスを要求するには、アプリの [パッケージ マニフェスト](https://msdn.microsoft.com/library/windows/apps/BR211474) で機能を宣言します。 一般的な機能は Microsoft Visual Studio の [マニフェスト デザイナー](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx) で宣言できるほか、パッケージ マニフェストに手動で追加することもできます。 詳しくは、「[パッケージ マニフェストで機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/BR211477)」をご覧ください。 ユーザーがストアからアプリを入手するときに、アプリで宣言されているすべての機能が通知されることを知っておくのは重要です。 アプリに不要な機能を宣言しないでください。
 
-Xxxx xxxxxxxxxxxx xxxxxxx xxxx xxxx xxxxxx xx x *xxxxxxxxx xxxxxxxx*. Xxxxx xxxxxxxxx xxx xxxxxxxxxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxx xxx xxxx'x xxxxxxxx xxxx xx xxxx xxx xxxx xxxxx. Xxxxxxx xxxxxxxx, xxxxxxx xx xxx Xxxxxxxx xxx, xxx xxx xxxx xxxxxxxxxxx xxxxxxx xxxxxx xx xxxxxxxxx xxxxxxxxx. Xxxx, xx'x xxxxxxxxx xxxx xxxx xxx xxxxx'x xxxxxx x xxxxxxxxx xxxxxxxx xx xxxxxx xxxxxxxxx. Xxx xxxx xxxx xxxxx xxxxxxxxx xxxxxxxxx xxxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxxx-xxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/Hh768223). Xxxxxxxxxxxx xxxx xxxxxxx xxxx xxxx xxxxxx xx x *xxxxxxxxx xxxxxxxx* xxx xxxxxxxxx xx xx xxxxxxxx (\*) xxxx xx xxx xxxxxxxxxx xxxxxxxx.
+一部の機能では、アプリが*機密性の高いリソース*にアクセスできます。 ユーザーの個人データにアクセスしたり、ユーザーに課金したりできるため、これらのリソースは機密性の高いリソースと見なされます。 設定アプリで管理されるプライバシー設定で、機密性の高いリソースへのアクセスを動的に制御することができます。 したがって、機密性の高いリソースが常に利用できるとアプリで認識されないことが重要です。 機密性の高いリソースへのアクセスについて詳しくは、「[個人データにアクセスするアプリのガイドライン](https://msdn.microsoft.com/library/windows/apps/Hh768223)」をご覧ください。 *機密性の高いリソース*へのアクセス許可をアプリに与える機能は、機能のシナリオの横にアスタリスク (\*) が付いています。
 
-Xxxx xxxxxxx xxxxxxx xxxx xxxxxxxxxx xx xxxxxxxxxxxx xxxxxxxxx xxxxx.
+この記事では、機能を次の 4 つのカテゴリに分けて説明します。
 
--   Xxxxxxx-xxx xxxxxxxxxxxx xxxx xxxxx xx xxxx xxxxxx xxx xxxxxxxxx.
+-   ストア アプリのほとんどのシナリオに適用される一般的な用途の機能。
 
--   Xxxxxx xxxxxxxxxxxx xxxx xxxxx xxxx xxx xx xxxxxx xxxxxxxxxx xxx xxxxxxxx xxxxxxx.
+-   アプリが周辺機器と内部デバイスにアクセスできるようにするデバイス機能。
 
--   Xxxxxxx-xxx xxxxxxxxxxxx xxxx xxxxxxx x xxxxxxx xxxxxxx xxxxxxx xxx xxxxxxxxxx xx xxx Xxxxx xx xxx xxxx. Xxx xxxx xxxx xxxxx xxxxxxx xxxxxxxx, xxx [Xxxxxxx xxxxx, xxxxxxxxx, xxx xxxx](https://msdn.microsoft.com/library/windows/apps/JJ863494).
+-   ストアに提出して使用可能のするために特別な会社のアカウントが必要になる特殊な用途の機能。 会社のアカウントについて詳しくは、「[アカウントの種類、場所、料金](https://msdn.microsoft.com/library/windows/apps/JJ863494)」をご覧ください。
 
--   Xxxxxxxxxx xxxxxxxxxxxx xxxx xxx xxxx xxxxxxxxx xx Xxxxxxxxx xxx xxx xxxxxxxx.
+-   Microsoft とそのパートナーだけが使用可能な制限された機能。
 
-## Xxxxxxx-xxx xxxxxxxxxxxx
+## 一般的な用途の機能
 
-Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
+一般的な用途の機能は、ストア アプリのほとんどのシナリオに適用される機能です。
 
 <table>
         <thead>
             <tr>
-                <th>Xxxxxxxxxx xxxxxxxx</th>
-                <th>Xxxxxxxxxx xxxxx</th>
+                <th>機能のシナリオ</th>
+                <th>機能の使用法</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td>**Xxxxx***</td>
+                <td>**音楽***</td>
                 <td>
                     The **musicLibrary** capability provides programmatic access to the user's Music, allowing the app to enumerate and access all files in the library without user interaction. This capability is typically used in jukebox apps that make use of the entire Music library.
 
@@ -54,7 +54,7 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
                                 <td>
                                     <pre><code>&lt;Capabilities&gt;
     &lt;uap:Capability Name="musicLibrary"/&gt;
-&xx;/Xxxxxxxxxxxx&xx;</code></pre>
+&lt;/Capabilities&gt;</code></pre>
                                 </td>
                             </tr>
                         </tbody>
@@ -62,9 +62,9 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
                 </td>
             </tr>
             <tr>
-                <td>**Xxxxxxxx***</td>
+                <td>**画像***</td>
                 <td>
-                    Xxx **xxxxxxxxXxxxxxx** xxxxxxxxxx xxxxxxxx xxxxxxxxxxxx xxxxxx xx xxx xxxx'x Xxxxxxxx, xxxxxxxx xxx xxx xx xxxxxxxxx xxx xxxxxx xxx xxxxx xx xxx xxxxxxx xxxxxxx xxxx xxxxxxxxxxx. Xxxx xxxxxxxxxx xx xxxxxxxxx xxxx xx xxxxx xxxx xxxx xxxx xxx xx xxx xxxxxx Xxxxxxxx xxxxxxx.
+                    **picturesLibrary** 機能は、ユーザーの画像へのプログラムによるアクセスを提供します。これによって、ユーザーの操作なしで、ライブラリ内のすべてのファイルを列挙してそれらのファイルにアクセスできます。 通常、この機能は、画像ライブラリ全体を利用する写真再生アプリで使われます。
 
                     The [**file picker**](https://msdn.microsoft.com/library/windows/apps/BR207847) provides a robust UI mechanism that lets users open files for use with an app. Declare the **picturesLibrary** capability only when the scenarios for your app require programmatic access and can't be realized them by using the **file picker**.
 
@@ -88,7 +88,7 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
                 </td>
             </tr>
             <tr>
-                <td>**Xxxxxx***</td>
+                <td>**ビデオ***</td>
                 <td>
                     The **videosLibrary** capability provides programmatic access to the user's Videos, allowing the app to enumerate and access all files in the library without user interaction. This capability is typically used in movie-playback apps that make use of the entire Videos library.
 
@@ -114,7 +114,7 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
                 </td>
             </tr>
             <tr>
-                <td>**Xxxxxxxxx Xxxxxxx**</td>
+                <td>**リムーバブル ストレージ**</td>
                 <td>
                     The **removableStorage** capability provides programmatic access to files on removable storage, like USB keys and external hard drives, filtered to the file-type associations declared in the package manifest. For example, if a document-reader app declares a .doc file-type association, it can open .doc files on the removable storage device, but not other types of files. Be careful when you declare this capability, because users may include a variety of info in their removable storage devices, and will expect your app to provide a valid justification for programmatic access to the removable storage for all files of the declared type.
 
@@ -142,7 +142,7 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
                 </td>
             </tr>
             <tr>
-                <td>**Xxxxxxxx xxx xxxxxx xxxxxxxx***</td>
+                <td>**インターネットとパブリック ネットワーク***</td>
                 <td>
                     There are two capabilities that provide different levels of access to the Internet and public networks.
 
@@ -184,7 +184,7 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
                 </td>
             </tr>
             <tr>
-                <td>**Xxxxxxxx***</td>
+                <td>**連絡先***</td>
                 <td>
                     The **contacts** capability provides access to the aggregated view of the contacts from various contacts stores. This capability gives the app limited access (network permitting rules apply) to contacts that were synced from various networks and the local contact store.
 
@@ -208,7 +208,7 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
                 </td>
             </tr>
             <tr>
-                <td>**Xxxx xxxxxxxxxx**</td>
+                <td>**コード生成**</td>
                 <td>
                     The **codeGeneration** capability allows apps to access the following functions which provide JIT capabilities to apps.
 
@@ -257,14 +257,14 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
                 </td>
             </tr>
             <tr>
-                <td>**Xxxxxxxx Xxxxx Xxxxxx***</td>
+                <td>**通話が録音されているフォルダー***</td>
                 <td>
-                    <p>Xxx **xxxxxxxxXxxxxXxxxxx** xxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxx xxxxxxxx xxxxx xxxxxx.</p>
-                    <p>Xxx **xxxxxxxxXxxxxXxxxxx** xxxxxxxxxx xxxx xxxxxxx xxx **xxxxxx** xxxxxxxxx xxxx xxx xxxxxxx xx xx xxxx xxx'x xxxxxxx xxxxxxxx xx xxxxx xxxxx.</p>
+                    <p>**recordedCallsFolder** デバイス機能を使うと、アプリは通話が録音されているフォルダーにアクセスできます。</p>
+                    <p>アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**recordedCallsFolder** 機能に **mobile** 名前空間を含める必要があります。</p>
                     <table>
                         <thead>
                             <tr>
-                                <th>XXX</th>
+                                <th>XML</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -280,18 +280,18 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
                 </td>
             </tr>
             <tr>
-                <td>**Xxxx Xxxxxxx Xxxxxxxxxxx***</td>
+                <td>**エンド アカウント情報***</td>
                 <td>
-                    <p>Xxx **xxxxXxxxxxxXxxxxxxxxxx** xxxxxxxxxx xxxxx xxxx xxx xxxxxxx xx xxxxxx xxx xxxx'x xxxx xxx xxxxxxx.</p>
-                    <p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxxxxx xxxx XXXx xx xxx Xxxxxxx.Xxxxxx.Xxxx xxxxxxxxx.</p>
-                    <p>Xxx **xxxxXxxxxxxXxxxxxxxxxx** xxxxxxxxxx xxxx xxxxxxx xxx **xxx** xxxxxxxxx xxxx xxx xxxxxxx xx xx xxxx xxx'x xxxxxxx xxxxxxxx xx xxxxx xxxxx.</p>
+                    <p>**userAccountInformation** 機能を使うと、アプリはユーザーの名前と画像にアクセスできるようになります。</p>
+                    <p>Windows.System.User 名前空間の一部の API にアクセスする場合は、この機能が必要になります。</p>
+                    <p>アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**userAccountInformation** 機能に **uap** 名前空間を含める必要があります。</p>
                     <table>
                         <colgroup>
                             <col width="100%" />
                         </colgroup>
                         <thead>
                             <tr>
-                                <th>XXX</th>
+                                <th>XML</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -307,17 +307,17 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
                 </td>
             </tr>
             <tr>
-                <td>**XXXX xxxxxxx**</td>
+                <td>**VOIP 呼び出し**</td>
                 <td>
-                    <p>Xxx **xxxxXxxx** xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxx XXXX xxxxxxx XXXx xx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn297266) xxxxxxxxx.</p>
-                    <p>Xxx **xxxxXxxx** xxxxxxxxxx xxxx xxxxxxx xxx **xxx** xxxxxxxxx xxxx xxx xxxxxxx xx xx xxxx xxx'x xxxxxxx xxxxxxxx xx xxxxx xxxxx.</p>
+                    <p>**voipCall** 機能を使うと、アプリは [**Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) 名前空間の VOIP 呼び出し API にアクセスできます。</p>
+                    <p>アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**voipCall** 機能に **uap** 名前空間を含める必要があります。</p>
                     <table>
                         <colgroup>
                             <col width="100%" />
                         </colgroup>
                         <thead>
                             <tr>
-                                <th>XXX</th>
+                                <th>XML</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -333,18 +333,19 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
                 </td>
             </tr>
             <tr>
-                <td>**YX Xxxxxxx**</td>
+                <td>**3D オブジェクト**</td>
                 <td>
-                    <p>Xxx **xxxxxxxYX** xxxxxxxxxx xxxxxx xxxx xx xxxx xxxxxxxxxxxx xxxxxx xx xxx YX xxxxxx xxxxx. Xxxx xxxxxxxxxx xx xxxxxxxxx xxxx xx YX xxxx xxx xxxxx xxxx xxxx xxxxxx xx xxx xxxxxx YX xxxxxxx xxxxxxx.</p>
-                    <p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxxxxx xxx xxxxxx xxxx xxxxxxxx xxx YX xxxxxxx xxxxx XXXx xx xxx [**Xxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227346) xxxxxxxxx.</p>
-                    <p>Xxx **xxxxxxxYX** xxxxxxxxxx xxxx xxxxxxx xxx **xxx** xxxxxxxxx xxxx xxx xxxxxxx xx xx xxxx xxx'x xxxxxxx xxxxxxxx xx xxxxx xxxxx.</p>
+                    <p>**objects3D** 機能を使用すると、アプリは 3D オブジェクト ファイルにプログラムでアクセスできます。 通常、この機能は、3D オブジェクト ライブラリ全体にアクセスする必要がある 3D アプリやゲームで使用されます。</p>
+                    <p>[
+            **Windows.Storage**](https://msdn.microsoft.com/library/windows/apps/BR227346) 名前空間の API を使って 3D オブジェクトを含むフォルダーにアクセスする場合は、この機能が必要になります。</p>
+                    <p>アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**objects3D** 機能に **uap** 名前空間を含める必要があります。</p>
                     <table>
                         <colgroup>
                             <col width="100%" />
                         </colgroup>
                         <thead>
                             <tr>
-                                <th>XXX</th>
+                                <th>XML</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -360,18 +361,19 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
                 </td>
             </tr>
             <tr>
-                <td>**Xxxx Xxxxxxx Xxxxxxxx***</td>
+                <td>**ブロックされているメッセージの読み取り***</td>
                 <td>
-                    <p>Xxx **xxxxxxxXxxxXxxxxxxx** xxxxxxxxxx xxxxxx xxxx xx xxxx XXX xxx XXX xxxxxxxx xxxx xxxx xxxx xxxxxxx xx xxx Xxxx Xxxxxx xxx.</p>
-                    <p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxxxxx xxx xxxxxxx xxxxxxxx xxxxx XXXx xx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Dn642321) xxxxxxxxx.</p>
-                    <p>Xxx **xxxxxxxXxxxXxxxxxxx** xxxxxxxxxx xxxx xxxxxxx xxx **xxx** xxxxxxxxx xxxx xxx xxxxxxx xx xx xxxx xxx'x xxxxxxx xxxxxxxx xx xxxxx xxxxx.</p>
+                    <p>**blockedChatMessages** 機能を使うと、アプリはスパム フィルター アプリでブロックされた SMS メッセージや MMS メッセージを読み取ることができます。</p>
+                    <p>[
+            **Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 名前空間の API を使ってブロックされたメッセージにアクセスする場合は、この機能が必要になります。</p>
+                    <p>アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**blockedChatMessages** 機能に **uap** 名前空間を含める必要があります。</p>
                     <table>
                         <colgroup>
                             <col width="100%" />
                         </colgroup>
                         <thead>
                             <tr>
-                                <th>XXX</th>
+                                <th>XML</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -387,18 +389,19 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
                 </td>
             </tr>
             <tr>
-                <td>**Xxxx Xxxxxxx Xxxxxx**</td>
+                <td>**チャット メッセージ アクセス**</td>
                 <td>
-                    <p>Xxx **xxxx** xxxxxxxxxx xxxxxx xxxx xx xxxx xxx xxxxxx Xxxx Xxxxxxxx. Xxxx xxxxxxxxxx xxxx xxxxxx xxxx xx xxxxx xxxx xxxxxxxx xx xxx xxxxxx xxxx xxxxx.</p>
-                    <p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxx XXXx xx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Dn642321) xxxxxxxxx.</p>
-                    <p>Xxx **xxxx** xxxxxxxxxx xxxx xxxxxxx xxx **xxx** xxxxxxxxx xxxx xxx xxxxxxx xx xx xxxx xxx'x xxxxxxx xxxxxxxx xx xxxxx xxxxx.</p>
+                    <p>**チャット**機能を使うと、アプリはテキスト メッセージの読み取りと削除を実行できます。 また、この機能を使うと、アプリはチャット メッセージをシステム データ ストアに保存できます。</p>
+                    <p>[
+            **Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 名前空間の一部の API を使う場合は、この機能が必要になります。</p>
+                    <p>アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**chat** 機能に **uap** 名前空間を含める必要があります。</p>
                     <table>
                         <colgroup>
                             <col width="100%" />
                         </colgroup>
                         <thead>
                             <tr>
-                                <th>XXX</th>
+                                <th>XML</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -414,18 +417,19 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
                 </td>
             </tr>
             <tr>
-                <td>**XxX Xxx-xxxxx Xxx Xxxxxxxx**</td>
+                <td>**IoT 下位レベルのバス ハードウェア**</td>
                 <td>
-                    <p>Xxx **xxxXxxxxXxxxxxx** xxxxxxxxxx xxxxxx xxxx xxxx xxx xx XxX xxxxxxx xx xxxxxx xxx-xxxxx xxx xxxxxxxx xxxx xx XXXX, XYX, XXX, XXX, xxx XXX.</p>
-                    <p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxxxxx xxxx XXXx xx xxx [**Xxxxxxx.Xxxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/Dn708178) xxxxxxxxxx.</p>
-                    <p>Xxx **xxxXxxxxXxxxxxx** xxxxxxxxxx xxxx xxxxxxx xxx **xxx** xxxxxxxxx xxxx xxx xxxxxxx xx xx xxxx xxx'x xxxxxxx xxxxxxxx xx xxxxx xxxxx.</p>
+                    <p>**lowLevelDevices** 機能を使うと、IoT デバイスで動作するアプリは、下位レベルのバス ハードウェア (GPIO、I2C、SPI、ADC、PWM など) にアクセスできるようになります。</p>
+                    <p>[
+            **Windows.Devices.Spi**](https://msdn.microsoft.com/library/windows/apps/Dn708178) 名前空間の一部の API にアクセスする場合は、この機能が必要になります。</p>
+                    <p>アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**lowLevelDevices** 機能に **iot** 名前空間を含める必要があります。</p>
                     <table>
                         <colgroup>
                             <col width="100%" />
                         </colgroup>
                         <thead>
                             <tr>
-                                <th>XXX</th>
+                                <th>XML</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -441,18 +445,19 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
                 </td>
             </tr>
             <tr>
-                <td>**XxX Xxxxxx Xxxxxxxxxxxxxx**</td>
+                <td>**IoT システム管理**</td>
                 <td>
-                    <p>Xxx **xxxxxxXxxxxxxxxx** xxxxxxxxxx xxxxxx xxxx xx xxxx xxxxx xxxxxx xxxxxxxxxxxxxx xxxxxxxxxx xxxx xx xxxxxxxx xxxx xx xxxxxxxxx, xxxxxx, xxx xxxxxxxx.</p>
-                    <p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxxxxx xxxx xx xxx XXXx xx xxx [**Xxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR241814) xxxxxxxxx.</p>
-                    <p>Xxx **xxxxxxXxxxxxxxxx** xxxxxxxxxx xxxx xxxxxxx xxx **xxx** xxxxxxxxx xxxx xxx xxxxxxx xx xx xxxx xxx'x xxxxxxx xxxxxxxx xx xxxxx xxxxx.</p>
+                    <p>**systemManagement** 機能を使うと、アプリは基本的なシステム管理者特権 (シャットダウン、再起動、ロケール、タイムゾーンなど) を持つことができます。</p>
+                    <p>[
+            **Windows.System**](https://msdn.microsoft.com/library/windows/apps/BR241814) 名前空間の一部の API にアクセスする場合は、この機能が必要になります。</p>
+                    <p>アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**systemManagement** 機能に **iot** 名前空間を含める必要があります。</p>
                     <table>
                         <colgroup>
                             <col width="100%" />
                         </colgroup>
                         <thead>
                             <tr>
-                                <th>XXX</th>
+                                <th>XML</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -471,35 +476,40 @@ Xxxxxxx-xxx xxxxxxxxxxxx xxxxx xx xxx xxxx xxxxxx xxx xxxxxxxxx.
 </table>
 
  
-## Xxxxxx xxxxxxxxxxxx
+## デバイスの機能
 
-Xxxxxx xxxxxxxxxxxx xxxxx xxxx xxx xx xxxxxx xxxxxxxxxx xxx xxxxxxxx xxxxxxx. Xxxxxx xxxxxxxxxxxx xxx xxxxxxxxx xx xxxxx xxx **XxxxxxXxxxxxxxxx** xxxxxxx xx xxxx xxx xxxxxxx xxxxxxxx. Xxxx xxxxxxx xxx xxxxxxx xxxxxxxxxx xxxxx xxxxxxxx xxx xxxx xxxxxx xxxxxxxxxxxx xxxx xx xx xxxxx xx xxx xxxxxxx xxxxxxxx xxxxxxxx. Xxx xxxx xxxx, xxx [Xxx xx xxxxxxx xxxxxx xxxxxxxxxxxx xx x xxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Dn263092) xxx [**XxxxxxXxxxxxxxxx Xxxxxx xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR211430).
+デバイス機能を使用すると、アプリは周辺機器と内部デバイスにアクセスできます。 デバイスの機能を指定するには、アプリのパッケージ マニフェストの **DeviceCapability** 要素を使います。 この要素は追加の子要素を必要とする場合があり、一部のデバイス機能をパッケージ マニフェストに手動で追加する必要があります。 詳しくは、「[パッケージ マニフェストでデバイス機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/Dn263092)」と「[**DeviceCapability スキーマ リファレンス**](https://msdn.microsoft.com/library/windows/apps/BR211430)」をご覧ください。
 
-| Xxxxxxxxxx xxxxxxxx | Xxxxxxxxxx xxxxx |
+| 機能のシナリオ | 機能の使用法 |
 |---------------------|------------------|
-| **Xxxxxxxx**\* | Xxx **xxxxxxxx** xxxxxxxxxx xxxxxxxx xxxxxx xx xxxxxxxx xxxxxxxxxxxxx xxxx xx xxxxxxxxx xxxx xxxxxxxxx xxxxxxxx xxxx x XXX xxxxxx xx xxx XX xx xx xxxxxxx xxxx xxxxxxxxx xxxxxxx xxxx. Xxxx xxxx xxxxxx xxx xxxx xx xxxxx xxx xxxx xxx xxxxxxxx xxxxxxxx xxxxxxxx xxxx xxx **Xxxxxxxx** xxxxx. |
-| **Xxxxxxxxxx** | Xxx **xxxxxxxxxx** xxxxxxxxxx xxxxxxxx xxxxxx xx xxx xxxxxxxxxx’x xxxxx xxxx, xxxxx xxxxxx xxx xxx xx xxxxxx xxxxx xxxx xxxxxxxxx xxxxxxxxxxx. Xxxx xxxx xxxxxx xxx xxxx xx xxxxx xxx xxxx xxx xxxxxxxx xxx xxxxxxxxxx xxxx xxx **Xxxxxxxx** xxxxx. |
-| **Xxxxxxxxx** | Xxx **xxxxxxxxx** xxxxxxxxxx xxxxxxx xxxxxxxx xxxxxxx xx xxxxx xxxxxxxxx xx xxxxxxxxxxx xxxx xxx xxxxxxx. Xxxx xxxxxxxxxx xx xxxxxxxxx xxxx xx xxxxxx xxxxx-xxxxxx xxxxx xxx xx xxxx xxxx xxxxxxxx xxxxxxxxxxx. Xxxxxxx xxxxxxx xx xxx xxx xxxxxxxxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxx xxxxxxxx xxxxxxxxxx, xxxxxxxxx Xxxxxxxxx, Xx-Xx, xxx xxx Xxxxxxxx. Xxxx xxxxxxxxxx xx xxxx xxxx xx xxxxxxxx xxxxxxxxxxxxx xxxxxxx xxx xxxxxxx. |
-| **Xxxxxx** | Xxx **xxxxxx** xxxxxxxxxx xxxxxxxx xxxxxx xx xxx xxxxx xxxx xx x xxxxx-xx xxxxxx xx xxxxxxxx xxxxxx, xxxxx xxxxxx xxx xxx xx xxxxxxx xxxxxx xxx xxxxxx. Xx Xxxxxxx, xxxx xxxx xxxxxx xxx xxxx xx xxxxx xxx xxxx xxx xxxxxxxx xxx xxxxxx xxxx xxx **Xxxxxxxx** xxxxx.<br/>Xxx **xxxxxx** xxxxxxxxxx xxxx xxxxxx xxxxxx xx xxx xxxxx xxxxxx. Xx xxxxx xx xxxxx xxxxxx xx xxx xxxxx xxxxxx xx xxxx, xxx **xxxxxxxxxx** xxxxxxxxxx xxxx xx xxxxx. | 
-| **XXX** | Xxx **xxx** xxxxxx xxxxxxxxxx xxxxxxx xxxxxx xx XXXx xx xxx [Xxxxxxxx xxx xxx xxxxxxxx xxxxxxx xxx x XXX xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=302259). | 
-| **Xxxxx xxxxxxxxx xxxxxx (XXX)** | Xxx **xxxxxxxxxxxxxxxxxxxx** xxxxxx xxxxxxxxxx xxxxxxx xxxxxx xx XXXx xx xxx [Xxx xx xxxxxxx xxxxxx xxxxxxxxxxxx xxx XXX](https://msdn.microsoft.com/library/windows/apps/Dn263091). |
-| **Xxxxx xx Xxxxxx (XXX)** | Xxx **xxxxxXxXxxxxxx** xxxxxx xxxxxxxxxx xxxxxxx xxxxxx xx XXXx xx xxx [**Xxxxxxx.Xxxxxxx.XxxxxXxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn298071) xxxxxxxxx. Xxxx xxxxxxxxx xxxx xxxx xxx xxxxxx Xxxxx xx Xxxxxxx (XXX) xxxxxxx xxxxxxxx xxx xxxxxxxx xxxxxx xxxxxxx. Xxx xxxxxxxxx xxxxxxxx x xxxxxx-xxxxxxx xxxxxxxxx xxx xxxxxxxxx XXX xxxxxxx xxxx xxxxxxx xxxxxxxxxxxxx xxxx x Xxxxxxx Xxxxx xxx. |
-| **Xxxxxxxxx** | Xxx **xxxxxxxxx** xxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxxxxxx xxxx xxxxxxx xxxxxx xxxxxxxxx xxxxxxx xxxx xxxx Xxxxxxx Xxxxxxxxx (XXXX) xx Xxxxxxx Xxxxx Xxxx (XXXXXX) xxxxxxxx.<br/>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxx XXXx xx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn263413) xxxxxxxxx. |
-| **Xx-Xx Xxxxxxxxxx** | Xxx **xxXxXxxxxxx** xxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxx xxx xxxxxxx xx Xx-Xx xxxxxxxx.<br/>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxx XXXx xx xxx [**Xxxxxxx.Xxxxxxx.XxXx**](https://msdn.microsoft.com/library/windows/apps/Dn975224) xxxxxxxxx. |
-| **Xxxxx xxxxx** | Xxx **xxxxxx** xxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxx Xx-Xx xxx Xxxxxxxxx xxxxxx.<br/>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxx XXXx xx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn996447) xxxxxxxxx.  |
-| **Xxxxxxx xxxx** | Xxx **xxxxxxx** xxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxxxxxxxx xx xxxxxxx xxxx xxxxxx xxxx xx XX, XXX, xxx Xxx-xxx.<br/>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxx XXXx xx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn263667) xxxxxxxxx. |
-| **Xxxxxx xxxxxxxx** | Xxx **xxxxxxxx** xxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxx xxxxxxx xxxxxx xx xxx xxxxxx.<br/>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxx XXXx xx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR206408) xxxxxxxxx. |
+| **位置情報**\* | **location** 機能は、位置情報機能へのアクセスを提供します。この情報は PC が備えている GPS センサーなどの専用ハードウェアや、利用可能なネットワーク情報から取得されます。 アプリは、ユーザーが **[設定]** チャームで位置情報サービスを無効にした場合に対応する必要があります。 |
+| **マイク** | **microphone** 機能は、マイクのオーディオ フィードへのアクセスを提供します。これによって、接続されたマイクからオーディオを録音できます。 アプリは、ユーザーが **[設定]** チャームでマイクを無効にした場合に対応する必要があります。 |
+| **近接** | **proximity** 機能を使うと、きわめて近い場所にある複数のデバイスが相互に通信できます。 通常、この機能は、カジュアルなマルチプレーヤー ゲームや情報を交換するアプリで使われます。 デバイスは、Bluetooth、Wi-Fi、インターネットを含む、最適な接続を提供する通信テクノロジを使います。 この機能は、デバイス間の通信を開始するためにのみ使われます。 |
+| **Webcam** | **webcam** 機能は、内蔵カメラや外付け Web カメラのビデオ フィードへのアクセスを提供します。これによって、アプリで写真やビデオをキャプチャできます。 Windows の場合、アプリはユーザーが **[設定]** チャームでカメラを無効にした場合に対応する必要があります。<br/>**webcam** 機能では、ビデオ ストリームへのアクセスだけが許可されます。 オーディオ ストリームへのアクセスも許可するには、**microphone** 機能を追加する必要があります。 | 
+| **USB** | **usb** デバイス機能を使うと、「[USB デバイスのアプリ マニフェスト パッケージの更新](http://go.microsoft.com/fwlink/p/?LinkId=302259)」で API にアクセスできます。 | 
+| **ヒューマン インターフェイス デバイス (HID)** | **humaninterfacedevice** デバイス機能を使うと、「[HID のデバイス機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/Dn263091)」で API にアクセスできます。 |
+| **Point of Service (POS)** | **pointOfService** デバイス機能を使うと、[**Windows.Devices.PointOfService**](https://msdn.microsoft.com/library/windows/apps/Dn298071) 名前空間の API にアクセスできます。 この名前空間により、アプリは、Point of Service (POS) バー コード スキャナーや磁気ストライプ リーダーにアクセスできます。 この名前空間は、さまざまな製造元の POS デバイスに Windows ストア アプリからアクセスするための、ベンダーに依存しないインターフェイスを提供します。 |
+| **Bluetooth** | **bluetooth** デバイス機能を使うと、アプリは Generic Attribute (GATT) または Classic Basic Rate (RFCOMM) プロトコル経由で既にペアリングされている Bluetooth デバイスと通信できます。<br/>[
+            **Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413) 名前空間の一部の API を使う場合は、この機能が必要になります。 |
+| **Wi-Fi ネットワーク** | **wiFiControl** デバイス機能を使うと、アプリはスキャンを実行して、Wi-Fi ネットワークに接続することができます。<br/>[
+            **Windows.Devices.WiFi**](https://msdn.microsoft.com/library/windows/apps/Dn975224) 名前空間の一部の API を使う場合は、この機能が必要になります。 |
+| **無線状態** | **radios** デバイス機能を使うと、アプリは Wi-Fi 通信と Bluetooth 通信を切り替えることができます。<br/>[
+            **Windows.Devices.Radios**](https://msdn.microsoft.com/library/windows/apps/Dn996447) 名前空間の API を使う場合は、この機能が必要になります。  |
+| **光学式ディスク** | **optical** デバイス機能を使うと、アプリは、CD、DVD、ブルーレイなどの光ディスク ドライブの機能にアクセスできます。<br/>[
+            **Windows.Devices.Custom**](https://msdn.microsoft.com/library/windows/apps/Dn263667) 名前空間の一部の API を使う場合は、この機能が必要になります。 |
+| **モーション アクティビティ** | デバイス機能 **activity** を使うと、アプリはデバイスの現在の動きを検出できるようになります。<br/>[
+            **Windows.Devices.Sensors**](https://msdn.microsoft.com/library/windows/apps/BR206408) 名前空間の一部の API を使う場合は、この機能が必要になります。 |
 
-## Xxxxxxx xxx xxxxxxxxxx xxxxxxxxxxxx
+## 特殊な用途および制限された用途に関する機能
 
-**Xxxxxxxxx**  
-Xxxxxxx xxx xxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxx xxx xxxx xxxxxxxx xxxxxxxxx. Xxx xxx xx xxxxx xxxxxxxxxxxx xx xxxxxx xxxxxxxxxx xxx xxxxxxx xx xxxxxxxxxx Xxxxx xxxxxxxxxx xxxxxx xxx xxxxxx.
+**重要**  
+特殊な用途および制限された用途に関する機能は、特殊なシナリオ向けの機能です。 これらの機能は、用途が厳格に制限されており、ストアへの登録に際して追加のポリシーやレビューが適用されます。
 
-Xxxxx xxx xxxxx xxxxx xxxx xxxxxxxxxxxx xxx xxxxxxxxx xxx xxxxxxxxxxx, xxxx xx xxxxxxx xxxx xxx-xxxxxx xxxxxxxxxxxxxx, xxxxx xxxxx xxxxxxx x xxxxx xxxx xxxx x xxxxxxx xxxxxxxxxxx xxxx xxxxxxxx xxxxx xxxxxxxx. Xxxxx xxxx xxx xx xxxxxxxx xxxxxxxxx xxx xxxxxxxxxx xxxxxxxxx xxx xxx xxxx xxxxxx xx xxxxxxxxx xxxxxxxxx xxxx xxxxxx xx xxxxxxxx xxxxxxx xxx xxxx’x xxxxxx xxxxxxxxxxx.
+これらの機能が必要で適しているものとしては、身元を証明するデジタル証明書をスマート カードに含めるようにユーザーに求める 2 要素認証を使ったバンキング アプリなどがあります。 また、主に企業ユーザー向けに設計されたアプリや、ユーザーのドメイン資格情報がないとアクセスできな企業リソースへのアクセスを必要とするアプリもあります。
 
-Xxxx xxxx xxxxx xxx xxxxxxx-xxx xxxxxxxxxxxx xxxxxxx x xxxxxxx xxxxxxx xx xxxxxx xxxx xx xxx Xxxxx. Xx xxxxxxxx, xxxxxxxxxx xxxxxxxxxxxx xx xxx xxxxxxx x xxxxxxx xxxxxxx xxxxxxx xxx xxx Xxxxx, xxxx xxx xxx xxxxxxxxx xxx xxxxxxxxxx xx xxx. Xxxxxxxxxx xxxxxxxxxxxx xxx xxxxxxxxx xxxx xx xxxx xxxx xxx xxxxxxxxx xx Xxxxxxxxx xxx xxx xxxxxxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxx xxxxxxxx, xxx [Xxxxxxx xxxxx, xxxxxxxxx, xxx xxxx](https://msdn.microsoft.com/library/windows/apps/JJ863494).
+特殊な用途の機能に該当するアプリについては、ストアに提出する際に会社のアカウントが必要になります。 これに対し、制限された機能は開発者が使うことができないため、ストア用の特別な会社のアカウントは必要ありません。 制限された機能は、Microsoft とそのパートナーにより開発されたアプリだけが使用可能です。 会社のアカウントについて詳しくは、「[アカウントの種類、場所、料金](https://msdn.microsoft.com/library/windows/apps/JJ863494)」をご覧ください。
 
-Xxx xxxxxxxxxx xxxxxxxxxxxx xxxx xxxxxxx xxx **xxxxxx** xxxxxxxxx xxxx xxx xxxxxxx xxxx xx xxxx xxx'x xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xxxxx xxxxxxxxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxx xxx xxx xx xxxxxxx xxx **xxxXxxxxxxXxxxxxxx** xxxxxxxxxx.
+アプリのパッケージ マニフェストで宣言するとき、すべての制限された機能には **rescap** 名前空間を含める必要があります (これは、他の機能とは異なります)。 次の例は、**appCaptureSettings** 機能を宣言する方法を示しています。
 
 ```xml
 <Capabilities>
@@ -507,7 +517,7 @@ Xxx xxxxxxxxxx xxxxxxxxxxxx xxxx xxxxxxx xxx **xxxxxx** xxxxxxxxx xxxx xxx xxxxx
 </Capabilities>
 ```
 
-Xxx xxxx xxxx xxx xxx **xxxxx:xxxxxx** xxxxxxxxx xxxxxxxxxxx xx xxx xxx xx xxx Xxxxxxx.xxxxxxxxxxxx xxxx xx xxxxx xxxxx.
+次に示すように、Package.appxmanifest ファイルの先頭に **xmlns:rescap** 名前空間の宣言も追加する必要があります。
 
 ```xml
 <Package 
@@ -525,18 +535,19 @@ Xxx xxxx xxxx xxx xxx **xxxxx:xxxxxx** xxxxxxxxx xxxxxxxxxxx xx xxx xxx xx xxx X
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxxxxxxxx xxxxxxxx</th>
-<th align="left">Xxxxxxxxxx xxxxx</th>
+<th align="left">機能のシナリオ</th>
+<th align="left">機能の使用法</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">**Xxxxxxxxxx**</td>
-<td align="left"><p>Xxxxxxx xxxxxx xxxxxxxxxxx xxxxxx x xxxx xx xxx xxxx xxxxxx xxxxxxxxx xxxxx xxxxx xxxxxxxxxxx, xxx xxx xx xx x xxxx xxxxxxxx xxxxx xxxx xxxx xxx xxxxxxxx. Xxx **xxxxxxxxxxXxxxxxxxxxxxxx** xxxxxxx xxxxxxxxxx xx xxxxxxxxx xxxx xx xxxx-xx-xxxxxxxx xxxx xxxx xxxxxxx xx xxxxxxx xxxxxx xx xxxxxxxxxx.</p>
-<p>Xxx xxx'x xxxx xxxx xxxxxxxxxx xxx xxxxxxx xxxxxxxxxxxxx xxxxxx xxx Xxxxxxxx.</p>
+<td align="left">**エンタープライズ**</td>
+<td align="left"><p>Windows ドメイン資格情報により、ユーザーはそれぞれの資格情報を使ってリモートのリソースにログインし、ユーザー名とパスワードを指定したかのように動作できます。 通常、特殊な機能 **enterpriseAuthentication** は、企業内のサーバーに接続する基幹業務アプリで使われます。</p>
+<p>インターネット上での汎用通信にはこの機能は不要です。</p>
 
-<p>Xxx **xxxxxxxxxxXxxxxxxxxxxxxx** xxxxxxx xxxxxxxxxx xx xxxxxxxx xx xxxxxxx xxxxxx xxxx-xx-xxxxxxxx xxxx. Xxx'x xxxxxxx xx xx xxxx xxxx xxx'x xxxx xx xxxxxx xxxxxxxxx xxxxxxxxx. Xxx [**xxxx xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR207847) xxxxxxxx x xxxxxx XX xxxxxxxxx xxxx xxxxxxx xxxxx xx xxxx xxxxx xx x xxxxxxx xxxxx xxx xxx xxxx xx xxx. Xxxxxxx xxx **xxxxxxxxxxXxxxxxxxxxxxxx** xxxxxxx xxxxxxxxxx xxxx xxxx xxx xxxxxxxxx xxx xxxx xxx xxxxxxx xxxxxxxxxxxx xxxxxx, xxx xxx xxxxxx xxxxxxx xxxx xx xxxxx xxx **xxxx xxxxxx**.</p>
-<p>Xxx **xxxxxxxxxxXxxxxxxxxxxxxx** xxxxxxxxxx xxxx xxxxxxx xxx **xxx** xxxxxxxxx xxxx xxx xxxxxxx xx xx xxxx xxx'x xxxxxxx xxxxxxxx xx xxxxx xxxxx.</p>
+<p>特殊な機能 **enterpriseAuthentication** は、一般的な基幹業務アプリをサポートするための機能です。 企業リソースにアクセスする必要がないアプリでは宣言しないでください。 [
+            **ファイル ピッカー**](https://msdn.microsoft.com/library/windows/apps/BR207847) は、アプリで使うネットワーク共有上のファイルをユーザーが開くことができる強力な UI メカニズムを提供します。 **enterpriseAuthentication** 機能を宣言するのは、プログラムによるアクセスを必要とするアプリのシナリオを**ファイル ピッカー**では実現できない場合だけにしてください。</p>
+<p>アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**enterpriseAuthentication** 機能に **uap** 名前空間を含める必要があります。</p>
 <div class="code">
 <span codelanguage="XML"></span>
 <table>
@@ -545,7 +556,7 @@ Xxx xxxx xxxx xxx xxx **xxxxx:xxxxxx** xxxxxxxxx xxxxxxxxxxx xx xxx xxx xx xxx X
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">XXX</th>
+<th align="left">XML</th>
 </tr>
 </thead>
 <tbody>
@@ -557,20 +568,17 @@ Xxx xxxx xxxx xxx xxx **xxxxx:xxxxxx** xxxxxxxxx xxxxxxxxxxx xx xxx xxx xx xxx X
 </tbody>
 </table>
 </div>
-<p>Xxx **xxxxxxxxxxXxxxXxxxxx** xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxx xxx xxxxxxxxxx-xxxxxxxx xxxxxxxx xxx xxx xxxxxx. Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxx xxxxxxx xx xxx xxxxxxxxx xxxxxxx.</p>
+<p>**enterpriseDataPolicy** 機能を使うと、アプリはデバイス用に企業固有のポリシーを定義して使えます。 この機能は、次のクラスのすべてのメンバーを使うために必要です。</p>
 <ul>
-<li>[
-            **XxxxXxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn705151)</li>
-<li>[
-            **XxxxXxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706017)</li>
-<li>[
-            **XxxxxxxxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn705170)</li>
+<li>[**FileProtectionManager**](https://msdn.microsoft.com/library/windows/apps/Dn705151)</li>
+<li>[**DataProtectionManager**](https://msdn.microsoft.com/library/windows/apps/Dn706017)</li>
+<li>[**ProtectionPolicyManager**](https://msdn.microsoft.com/library/windows/apps/Dn705170)</li>
 </ul></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxx xxxx xxxxxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxXxxxXxxxxxxxxxxx** xxxxxxx xxxxxxxxxx xxxxxxx xx xxx xx xxx xxx xxxxxx xxxxxxxx xxx xxxxxxxx-xxxxx xxxxxxxxxxxx xx xxx Xxxxxx Xxxx xxxxx, xxxx xx xxxxxxxxxxxx xxxxxx xx x xxxxx xxxx. Xxxx xxxxxxxxxx xx xxxxxxxxx xxxx xxx xxxxxxxxx xx xxxxxxxxxx xxxx xxxx xxxxxxx x xxxxx xxxx xxx xxxxxxxxxxxxxx.</p>
-<p>Xxx **xxxxxxXxxxXxxxxxxxxxxx** xxxxxxxxxx xxxx xxxxxxx xxx **xxx** xxxxxxxxx xxxx xxx xxxxxxx xx xx xxxx xxx'x xxxxxxx xxxxxxxx xx xxxxx xxxxx.</p>
+<td align="left">**共有ユーザー証明書**</td>
+<td align="left"><p>特殊な機能 **sharedUserCertificates** を使って、アプリは共有ユーザー ストア内のソフトウェアベースおよびハードウェアベースの証明書 (スマート カードに格納されている証明書など) を追加したり、それらの証明書にアクセスしたりできます。 通常、この機能は、認証にスマート カードを必要とする財務アプリまたはエンタープライズ アプリで使われます。</p>
+<p>アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**sharedUserCertificates** 機能に **uap** 名前空間を含める必要があります。</p>
 <div class="code">
 <span codelanguage="XML"></span>
 <table>
@@ -579,7 +587,7 @@ Xxx xxxx xxxx xxx xxx **xxxxx:xxxxxx** xxxxxxxxx xxxxxxxxxxx xx xxx xxx xx xxx X
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">XXX</th>
+<th align="left">XML</th>
 </tr>
 </thead>
 <tbody>
@@ -593,19 +601,20 @@ Xxx xxxx xxxx xxx xxx **xxxxx:xxxxxx** xxxxxxxxx xxxxxxxxxxx xx xxx xxx xx xxx X
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxxxxxx***</td>
-<td align="left"><p>Xxx **xxxxxxxxxXxxxxxx** xxxxxxx xxxxxxxxxx xxxxxxxx xxxxxxxxxxxx xxxxxx xx xxx xxxx'x Xxxxxxxxx, xxxxxxxx xx xxx xxxx xxxx xxxxxxxxxxxx xxxxxxxx xx xxx xxxxxxx xxxxxxxx, xx xxxxxxx xxxxxxx xxxxxx xx XxxXxxxx. Xxx xxxxxxx, xx x XXX xxxxxx xxx xxxxxxxx x .xxx xxxx xxxx xxxxxxxxxxx, xx xxx xxxx .xxx xxxxx xx Xxxxxxxxx, xxx xxx xxxxx xxxxx xx xxxxx.</p>
-<p>Xxxx xxxx xxxxxxx xxx **xxxxxxxxxXxxxxxx** xxxxxxx xxxxxxxxxx xxx'x xxxxxx Xxxxxxxxx xx Xxxx Xxxxx xxxxxxxxx. Xxx [file picker](https://msdn.microsoft.com/library/windows/apps/Hh465174) xxxxxxxx x xxxxxx XX xxxxxxxxx xxxx xxxxxxx xxxxx xx xxxx xxxxx xxx xxx xxxx xx xxx. Xxxxxxx xxx **xxxxxxxxxXxxxxxx** xxxxxxx xxxxxxxxxx xxxx xxxx xxx xxxxxx xxx xxx xxxx xxxxxx.</p>
-<p>Xx xxx xxx **xxxxxxxxxXxxxxxx** xxxxxxx xxxxxxxxxx, xx xxx xxxx:</p>
+<td align="left">**ドキュメント***</td>
+<td align="left"><p>特殊な機能 **documentsLibrary** は、パッケージ マニフェストで宣言されたファイルの種類の関連付けに限定された、ユーザーのドキュメントへのプログラムによるアクセスを提供し、OneDrive へのオフライン アクセスをサポートします。 たとえば、DOC リーダー アプリで .doc ファイルの種類の関連付けを宣言すると、ドキュメント フォルダー内の .doc ファイルを開くことはできますが、他の種類のファイルを開くことはできません。</p>
+<p>特殊な機能 **documentsLibrary** を宣言するアプリは、ホーム グループ コンピューター上のドキュメント フォルダーにアクセスできません。 [
+            file picker](https://msdn.microsoft.com/library/windows/apps/Hh465174) は、アプリで使うファイルをユーザーが開くことができる強力な UI メカニズムを提供します。 特殊な機能 **documentsLibrary** は、ファイル ピッカーを使えない場合のみ宣言します。</p>
+<p>特殊な機能 **documentsLibrary** を使うにはアプリが次の条件を満たしている必要があります。</p>
 <ul>
-<li>Xxxxxxxxxx xxxxx-xxxxxxxx xxxxxxx xxxxxx xx xxxxxxxx XxxXxxxx xxxxxxx xxxxx xxxxx XxxXxxxx XXXx xx Xxxxxxxx XXx</li>
-<li>Xxxx xxxx xxxxx xx xxx xxxx’x XxxXxxxx xxxxxxxxxxxxx xxxxx xxxxxxx</li>
+<li>有効な OneDrive URL またはリソース ID を使った、特定の OneDrive コンテンツへのクロスプラットフォーム オフライン アクセスを容易にする</li>
+<li>オフライン時に、開いているファイルをユーザーの OneDrive に自動的に保存する</li>
 </ul>
-<p>Xxxx xxxx xxx xxx **xxxxxxxxxXxxxxxx** xxxxxxx xxxxxxxxxx xxx xxxxx xxx xxxxxxxx xxx xxxx xxxxxxxxxx xxx xxx xxxxxxxxxx xx xxxx xxxxxxxx xxxxxxx xxxxxx xxxxxxx xxxxxxxx. Xxxx xxx xxxxx xxxx xx xxx **xxxxxxxxxXxxxxxx** xxxxxxx xxxxxxxxxx xxx xxxxxxxx.</p>
+<p>これらの 2 つの目的で特殊な機能 **documentsLibrary** を使うアプリと、別のドキュメントに埋め込まれているコンテンツを開く機能を使うこともできます。 特殊な機能 **documentsLibrary** の上記の使用方法のみが許可されています。</p>
 <ul>
-<li><p>Xxxx xxx xxx'x xxxxxx xxx Xxxxxxxxx xxxxxxx xx xxx xxxxx'x xxxxxxxx xxxxxxx. Xx xxxxxxx xxx xxxxxxx x Xxxxxxxxx xxxxxx xx xxx xxxxxxxx XX xxxx, xxxxxxx, xxxx xxx xxx xxx xxxx xxxxxx.</p></li>
+<li><p>アプリは、電話の内部ストレージにあるドキュメント ライブラリにはアクセスできません。 ただし、別のアプリによってオプションの SD カード上にドキュメント フォルダーが作られた場合は、アプリでそのフォルダーを表示できます。</p></li>
 </ul>
-<p>Xxx **xxxxxxxxxXxxxxxx** xxxxxxxxxx xxxx xxxxxxx xxx **xxx** xxxxxxxxx xxxx xxx xxxxxxx xx xx xxxx xxx'x xxxxxxx xxxxxxxx xx xxxxx xxxxx.</p>
+<p>アプリのパッケージ マニフェストで宣言するとき、以下に示すように、**documentsLibrary** 機能に **uap** 名前空間を含める必要があります。</p>
 <div class="code">
 <span codelanguage="XML"></span>
 <table>
@@ -614,7 +623,7 @@ Xxx xxxx xxxx xxx xxx **xxxxx:xxxxxx** xxxxxxxxx xxxxxxxxxxx xx xxx xxx xx xxx X
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">XXX</th>
+<th align="left">XML</th>
 </tr>
 </thead>
 <tbody>
@@ -628,222 +637,244 @@ Xxx xxxx xxxx xxx xxx **xxxxx:xxxxxx** xxxxxxxxx xxxxxxxxxxx xx xxx xxx xx xxx X
 </div></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxx XXX Xxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxXxxxxxxXxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxx xxx xxxx xxxxxxxx xxx xxx Xxxx XXX.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxx XXXx xx xxx [**Xxxxxxx.Xxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR226738) xxxxxxxxx.</p></td>
+<td align="left">**ゲーム DVR 設定**</td>
+<td align="left"><p>制限された機能 **appCaptureSettings** を使うと、アプリはゲーム DVR のユーザー設定を制御できます。</p>
+<p>[
+            **Windows.Media.Capture**](https://msdn.microsoft.com/library/windows/apps/BR226738) 名前空間の一部の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxxXxxxxxXxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxx xxxxxxx xxxx xxx xxxxxxxx xxxxxx.</p>
-<p>Xxx **xxxxxxxxXxxxxxXxxxxxxx** xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxxxxxxx xxxxxxxxxxxxxx xxxx.</p>
-<p>Xxx **xxxxxxxxXxxxxxxxx** xxxxxxxxxx xxxxxx xxxx xx xxxx xxx xx XXX xxx XXX.</p>
-<p>Xxxxx xxxxxxxxxxxx xxx xxxxxxxx xx xxx xxxx XXXx xx xxx [**Xxxxxxx.Xxxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/BR206567) xxxxxxxxxx.</p>
-<p>Xxxxxxxx xx Xxxxxxx YY, xxxx xxxxxxx [**XxxXXXxxx**](https://msdn.microsoft.com/library/windows/apps/Dn393996)).</p></td>
+<td align="left">**携帯ネットワーク**</td>
+<td align="left"><p>制限された機能 **cellularDeviceControl** を使うと、アプリは携帯デバイスを制御できます。</p>
+<p>**cellularDeviceIdentity** 機能を使うと、アプリは携帯デバイスの ID データにアクセスできます。</p>
+<p>**cellularMessaging** 機能を使うと、アプリは SMS と RCS を利用できます。</p>
+<p>[
+            **Windows.Devices.Sms**](https://msdn.microsoft.com/library/windows/apps/BR206567) 名前空間の一部の API を使う場合は、これらの機能が必要になります。</p>
+<p>Windows 10 以降、[**AppIDList**](https://msdn.microsoft.com/library/windows/apps/Dn393996) を呼び出すアプリ。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxx Xxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxXxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx x xxxxxx xxx xxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxxx xxxxxxxxx.</p></td>
+<td align="left">**デバイスのロック解除**</td>
+<td align="left"><p>制限された機能 **deviceUnlock** を使うと、アプリは、開発者サイドローディングのシナリオやエンタープライズ サイドローディングのシナリオ向けにデバイスをロック解除できます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxx XXX Xxxxx**</td>
-<td align="left"><p>Xxx **xxxxXxxXxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xx xxxxxxxxxx xxx xxxx xxxxx xx xxxxxxx xxxx xxxx xxxxxxxx XXXx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxx XXXx xx xxx [**Xxxxxxx.XX.XxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242235) xxxxxxxxx.</p></td>
+<td align="left">**デュアル SIM タイル**</td>
+<td align="left"><p>制限された機能 **dualSimTiles** を使うと、アプリは、複数の SIM を備えたデバイスでアプリ一覧の追加のエントリを作成できます。</p>
+<p>[
+            **Windows.UI.StartScreen**](https://msdn.microsoft.com/library/windows/apps/BR242235) 名前空間の一部の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxxxxxx Xxxxxx Xxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxxxxXxxxxxXxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxx xxx xxxxxx xxxx xxxx XXX xxx xxxxxx xxx xxxxxxxxxx xxxxxx xxxxxxx xxxxxxx.</p></td>
+<td align="left">**エンタープライズ共有記憶域**</td>
+<td align="left"><p>制限された機能 **enterpriseDeviceLockdown** を使うと、アプリは、デバイスのロック ダウン API を利用したり、企業で共有している保存フォルダーにアクセスしたりすることができます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxxx Xxxxx Xxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxXxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxxxxxx xxxxx xx xxxxx xxxx xx XXX, xxxxx, xxx, xxxxxxxx xx xxxxx xxxx xxx xxxxxx xxxxxxxxxxxxxxxx. Xxxx xxxxxxxxxx xx xxxxxxxxx xxxx xxx xxxxxxxxxxxxx xxxx xxxx xxx xxxx xxxxxxx xx xxx xxxxxx.</p>
+<td align="left">**システム入力の挿入**</td>
+<td align="left"><p>制限された機能 **inputInjection** を使うと、アプリは、さまざまな形式の入力 (HID、タッチ、ペン、キーボード、マウスなど) をプログラムでシステムに挿入できます。 通常、この機能はシステムを制御できる共同作業アプリで使われます。</p>
 <div class="alert">
-**Xxxx**  Xxx x XX, xxxxx xxxxxxxxx xxxx xx xxx xxxx xxx xxxx xxxxxxxxxx xxxx xxxx xx xxxxxxxx xx xxxxxxxxx xx xxx xxxx Xxx Xxxxxxxxx.
+**注**  PC の場合、この機能を使ったアプリからの入力の挿入は、同じアプリ コンテナー内のプロセスによってのみ許可されます。
 </div>
 </td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxxx Xxxxx***</td>
-<td align="left"><p>Xxx **xxxxxXxxxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxx xxxxxxx xxxxx xx xxx xxxxx xxxx xx XXX, xxxxx, xxx, xxxxxxxx, xx xxxxx xxxxx xxxxxxxx xx xxx xxxxxx xxxxxxxxxx xx xxx xxxxx xxxxxxxxxxx.</p></td>
+<td align="left">**入力の監視***</td>
+<td align="left"><p>制限された機能 **inputObservation** を使うと、アプリは、さまざまな形式の未加工入力 (HID、タッチ、ペン、キーボード、マウスなど) が、最終的な宛先に関係なく、システムによって許可されるのを監視できます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxxxxx Xxxxx**</td>
-<td align="left"><p>Xxx **xxxxxXxxxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxxx xxxxxxx xxxxx xx xxx xxxxx xxxx xx XXX, xxxxx, xxx, xxxxxxxx, xx xxxxx xxxx xxxxx xxxxxxxx xx xxx xxxxxx.</p></td>
+<td align="left">**入力の抑制**</td>
+<td align="left"><p>制限された機能 **inputSuppression** を使うと、アプリは、さまざまな形式の未加工入力 (HID、タッチ、ペン、キーボード、マウスなど) が、システムによって許可されるのを抑制できます。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**XXX Xxx**</td>
-<td align="left"><p>Xxx **xxxxxxxxxxXxxXxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxx xxxx xxxxxx xx XXX xxxxxxxx, xxxxxxxxx xxx xxxxxxx xx xxxxxx xxxxxxxxxxx xxx xxxxxxx XXX Xxxxxx xxxxxxxxxxxxx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxx XXXx xx xxx [**Xxxxxxx.Xxxxxxxxxx.Xxx**](https://msdn.microsoft.com/library/windows/apps/Dn434040) xxxxxxxxx.</p></td>
+<td align="left">**VPN アプリ**</td>
+<td align="left"><p>制限された機能 **networkingVpnProvider** を使うと、アプリは VPN 機能 (接続の管理や VPN プラグイン機能の提供など) へのフル アクセスが可能になります。</p>
+<p>[
+            **Windows.Networking.Vpn**](https://msdn.microsoft.com/library/windows/apps/Dn434040) 名前空間の一部の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxx Xxx Xxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxXxxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxxxx xxxx xxxxxxxx.</p>
-<p>Xxx **xxxxxxxXxxxx** xxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxxxxxxxxxx xxxxx xxxxx xxxx.</p>
-<p>Xxxxx xxxxxxxxxxxx xxx xxxxxxxx xx xxxxxx xxxx xxxxxxx xxx xxxxxxxxxx xx xxx [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR240960) xxxxx.</p></td>
+<td align="left">**他のアプリの管理**</td>
+<td align="left"><p>制限された機能 **packageManagement** を使うと、アプリは他のアプリを直接管理できます。</p>
+<p>**packageQuery** デバイス機能を使うと、アプリは他のアプリに関する情報を収集できます。</p>
+<p>[
+            **PackageManager**](https://msdn.microsoft.com/library/windows/apps/BR240960) クラスの一部のメソッドとプロパティにアクセスする場合は、これらの機能が必要になります。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxx Xxxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxXxxxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxx xxx xxxxxx xx xxxxxxx xxxxxx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx XXXx xx xxx XxxxxxX xxxxxxxxx.</p></td>
+<td align="left">**画面の投影**</td>
+<td align="left"><p>制限された機能 **ScreenDuplication** を使うと、アプリは画面を別のデバイスに表示できます。</p>
+<p>DirectX 名前空間の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxx Xxxxxxxxx Xxxx**</td>
-<td align="left"><p>Xxx **xxxxXxxxxxxxxXxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxx xxxxxx xxx xxxxxxxxx xxxxx xxxx xxxxxx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxxx xxx [**XxxXxxxXxxxXx**](https://msdn.microsoft.com/library/windows/desktop/ms724435) xxxxxxxx.</p></td>
+<td align="left">**ユーザー プリンシパル名**</td>
+<td align="left"><p>制限された機能 **userPrincipalName** を使うと、アプリは、写真に基づく縮小表示のキャッシュを変更したり、このキャッシュにアクセスしたりすることができます。</p>
+<p>[
+            **GetUserNameEx**](https://msdn.microsoft.com/library/windows/desktop/ms724435) 関数を呼び出す場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxXxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxx xxxx xxxxxx xx xxx xxxxxx xxxxxx xxxxx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx XXXx xx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt171610) xxxxxxxxx.</p></td>
+<td align="left">**ウォレット**</td>
+<td align="left"><p>制限された機能 **walletSystem** を使うと、アプリは保存されたウォレット カードへのフル アクセスが可能になります。</p>
+<p>[
+            **Windows.ApplicationModel.Wallet.System**](https://msdn.microsoft.com/library/windows/apps/Mt171610) 名前空間の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxxxxx Xxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxxXxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxx xxxxxxxx xxxxxxx xx xxx xxxxxx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx XXXx xx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225603) xxxxxxxxx.</p></td>
+<td align="left">**位置情報の履歴**</td>
+<td align="left"><p>制限された機能 **locationHistory** を使うと、アプリはデバイスの位置情報の履歴にアクセスできます。</p>
+<p>[
+            **Windows.Devices.Geolocation**](https://msdn.microsoft.com/library/windows/apps/BR225603) 名前空間の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxx Xxxxx Xxxxxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxXxxXxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxx xxxxxxxxxx, xxxxx xxx xxxxxxx, xxx xxxxx xxx xxxxxxx xx xxxxx xxx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx XXXx xx xxx [**Xxxxxxx.XX.XxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242295) xxxxxxxxx.</p></td>
+<td align="left">**アプリを閉じる確認**</td>
+<td align="left"><p>制限された機能 **confirmAppClose** を使うと、アプリはアプリ自体とアプリ独自のウィンドウを閉じたり、アプリを閉じることを遅延させたりすることができます。</p>
+<p>[
+            **Windows.UI.ViewManagement**](https://msdn.microsoft.com/library/windows/apps/BR242295) 名前空間の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxx Xxxxxxx***</td>
-<td align="left"><p>Xxx **xxxxxXxxxXxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxx xxx xxxx xxxxxxx xxx xx xxxxxx xxxxxxx xx xxx xxxxxxx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx XXXx xx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Dn642321) xxxxxxxxx.</p></td>
+<td align="left">**通話履歴***</td>
+<td align="left"><p>制限された機能 **phoneCallHistory** を使うと、アプリは通話履歴を読み取ったり、履歴のエントリを削除できます。</p>
+<p>[
+            **Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 名前空間の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxx Xxxxx Xxxxxxxxxxx Xxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxxxxxxXxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxx xxx xxxxxx xxx xxxxxxxxxxxx xx xxx xxxx'x xxxxxxxx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx XXXx xx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn263359) xxxxxxxxx.</p></td>
+<td align="left">**システム レベルの予定へのアクセス**</td>
+<td align="left"><p>制限された機能 **appointmentsSystem** を使うと、アプリはユーザーのカレンダーにあるすべての予定を読み取ったり、変更したりすることができます。</p>
+<p>[
+            **Windows.ApplicationModel.Appointment**](https://msdn.microsoft.com/library/windows/apps/Dn263359) 名前空間の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxxx Xxxxx Xxxx Xxxxxxx Xxxxxx***</td>
-<td align="left"><p>Xxx **xxxxXxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxx xxx xxxxx xxx XXX xxx XXX xxxxxxxx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx XXXx xx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Dn642321) xxxxxxxxx.</p></td>
+<td align="left">**システム レベルのチャット メッセージへのアクセス***</td>
+<td align="left"><p>制限された機能 **chatSystem** を使うと、アプリはすべての SMS メッセージと MMS メッセージの読み取りと書き込みを実行できます。</p>
+<p>[
+            **Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 名前空間の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxx Xxxxx Xxxxxxx Xxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxxXxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxx xxxxxxx xxxxxxxxxxx xxxx xxx xxxx xxxxxxxxxx xx xxxxxxxxxx xx xxxxxxxxx xxx xxxxxx xxxxxxxx xxxxxxx xxxxxxxxxxx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx XXXx xx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Dn642321) xxxxxxxxx.</p></td>
+<td align="left">**システム レベルの連絡先へのアクセス**</td>
+<td align="left"><p>制限された機能 **contactsSystem** を使うと、アプリは制限付きの連絡先情報や機密性の高い連絡先情報を読み取ったり、既存の連絡先情報を変更したりすることができます。</p>
+<p>[
+            **Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 名前空間の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxx Xxxxxx***</td>
-<td align="left"><p>Xxx **xxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxx, xxxxxx, xxx xxxx xxxx xxxxxx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx XXXx xx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn631285) xxxxxxxxx.</p></td>
+<td align="left">**メールへのアクセス***</td>
+<td align="left"><p>制限された機能 **email** を使うと、アプリはユーザーのメールの読み取り、トリアージ、送信を実行できます。</p>
+<p>[
+            **Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285) 名前空間の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxx Xxxxx Xxxxx Xxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxXxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxx, xxxxxx, xxx xxxx xxxx xxxxxxxxxx xx xxxxxxxxx xxxxxx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx XXXx xx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn631285) xxxxxxxxx.</p></td>
+<td align="left">**システム レベルのメールへのアクセス**</td>
+<td align="left"><p>制限された機能 **emailSystem** を使うと、アプリは制限つきのユーザーのメールや機密性の高いユーザーのメールの読み取り、トリアージ、送信を実行できます。</p>
+<p>[
+            **Windows.ApplicationModel.Email**](https://msdn.microsoft.com/library/windows/apps/Dn631285) 名前空間の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxxx Xxxxx Xxxx Xxxxxxx Xxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxXxxxXxxxxxxXxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxx xxxxxx xxx xxxx xxxxxxx xx xxxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxx xxx xxxx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx XXXx xx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn297266) xxxxxxxxx.</p></td>
+<td align="left">**システム レベルの通話履歴へのアクセス**</td>
+<td align="left"><p>制限された機能 **phoneCallHistorySystem** を使うと、アプリは通話履歴を完全に変更できます (既存のエントリの変更や新しいエントリの作成など)。</p>
+<p>[
+            **Windows.ApplicationModel.Calls**](https://msdn.microsoft.com/library/windows/apps/Dn297266) 名前空間の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxx Xxxx Xxxxxxxx***</td>
-<td align="left"><p>Xxx **xxxXxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxx XXX xxx XXX xxxxxxxx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx XXXx xx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/Dn642321) xxxxxxxxx.</p></td>
+<td align="left">**テキスト メッセージの送信***</td>
+<td align="left"><p>制限された機能 **smsSend** を使うと、アプリは SMS メッセージや MMS メッセージを送信できます。</p>
+<p>[
+            **Windows.ApplicationModel.Chat**](https://msdn.microsoft.com/library/windows/apps/Dn642321) 名前空間の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxxx Xxxxx Xxxxxx xx Xxx Xxxx Xxxx**</td>
-<td align="left"><p>Xxx **xxxxXxxxXxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxx xxxx xxxx xxxxxx xxxxxxxxx.</p></td>
+<td align="left">**システム レベルのすべてのユーザー データへのアクセス**</td>
+<td align="left"><p>制限された機能 **userDataSystem** を使うと、アプリはシステム データ ストアに保存されているユーザー データへのアクセスが可能になります。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxx Xxxxxxx Xxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxXxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxxx xxx xxxxxxxx XXXx xx xx-xxx xxxxxxxx.</p>
-<p>Xxxx xxxxxxxxxx xx xxxxxxxx xx xxx xxxxxxx XXXx xx xxx [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt185546) xxxxxxxxx.</p></td>
+<td align="left">**ストア プレビュー機能**</td>
+<td align="left"><p>制限された機能 **previewStore** を使うと、アプリはアプリ内製品の SKU の取得や購入ができます。</p>
+<p>[
+            **Windows.ApplicationModel.Store.Preview**](https://msdn.microsoft.com/library/windows/apps/Mt185546) 名前空間の特定の API を使う場合は、この機能が必要になります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxx-Xxxx Xxxx-xx Xxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxXxxxXxXxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxxx xxxxxxxx xxxx xxxx xxx xxxx xxx xxxx xxxxx xxxxxx xx xx xxxxx xxxxxx.</p></td>
+<td align="left">**初回サインイン時の設定**</td>
+<td align="left"><p>制限された機能 **firstSignInSettings** を使うと、アプリは、ユーザーが初めてデバイスにサインインしたときに設定されたユーザー設定にアクセスできます。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxxx Xxxx Xxxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxXxxxxxxXxxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxxxxxxx XXXx xxxx xxxxxxx xxxx xxxxxxxxxxxx xxxxxxx xx x Xxxxxxx Xxxx xxxxxxx. X Xxxxxxx Xxxx xxxxxxx xx xxxxxx xx xx xxxxxxx xx x xxxx xxxxxx xxxx xx x Xxxxxxxxx Xxxxxxx Xxx.</p></td>
+<td align="left">**Windows チーム エクスペリエンス**</td>
+<td align="left"><p>制限された機能 **teamEditionExperience** を使うと、アプリは、Windows チーム セッションの多くの経験的側面を制御する内部 API にアクセスできます。 Windows チーム セッションは、Microsoft Surface Hub など、チーム デバイスで実行されている可能性があります。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxxx Xxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxXxxxxxxxXxxxxxxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxxxxxxxxxx xxxx xxx xx xxxx xx xxxxxx x xxxxxx XX.</p></td>
+<td align="left">**リモート ロック解除**</td>
+<td align="left"><p>制限された機能 **remotePassportAuthentication** を使うと、アプリは、リモート PC のロック解除に使用される資格情報にアクセスできます。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxxx Xxxxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxXxXxxxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxx xxx [**Xxxxxxx.XX.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn706878) xxxxxxxxx xxx xxxxx xxxx xxxxxxxxx xx xxxx xxx xxxxxxx xxxxxxxx xx xxx XXX xxxxxx xx xx xxxxxxxxx. Xxxxxx xxxxxxx xxxxxxxxxxxxxx@xxxxxxxxx.xxx xxx xxxx xxxxxxxxxxx.</p></td>
+<td align="left">**コンポジションのプレビュー**</td>
+<td align="left"><p>制限された機能 **previewUiComposition** を使うと、アプリはユーザー インターフェイスの [**Windows.UI.Composition**](https://msdn.microsoft.com/library/windows/apps/Dn706878) 名前空間をプレビューすることで、完成前に API に関するフィードバックを提供できます。 詳しくは、wincomposition@microsoft.com にお問い合わせください。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxxx Xxxxxxxxxx Xxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxXxxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxxx Xxxxxxx xxxx x xxxxxx xxx xxxx xxx xxxxxx xxxxxxxxxxx.</p></td>
+<td align="left">**安全な評価のためのロックダウン**</td>
+<td align="left"><p>制限された機能 **secureAssessment** を使うと、アプリは安全な評価のために単一アプリ モードに Windows をロックダウンできます。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxxxxxx Xxxxxxx Xxxxxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxXxxxxxxxxxXxxxxxxXxxxxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxx xxxxxxxx xxxx xxxxxxx xxx xxxxxx xxxx XXXX xxx XXXX xxxxxxxxxx. Xxxx xxxx xxx xxxx xxxxxxxxxx xxx xxxxxxx xx Xxxxxx Xxxxxxxxx xx xxxxxx xxx xxxxxxx xxxx xxxxxxx xx xxxxx xxxxxx xxxxxxx.</p></td>
+<td align="left">**接続マネージャーのプロビジョニング**</td>
+<td align="left"><p>制限された機能 **networkConnectionManagerProvisioning** を使うと、アプリは、デバイスを WWAN および WLAN インターフェイスに接続するポリシーを定義できます。 この機能を使うアプリは、携帯電話会社が作成し、モバイル ネットワークへのデバイス接続を管理します。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxx Xxxx Xxxxxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxXxxxXxxxXxxxxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxxxxxxxxxx xxxxx xxxx xxxxx xx xxx xxxxxx xxx xxxx xxxxxxx xxxxx. Xxxx xxxx xxx xxxx xxxxxxxxxx xxx xxxxxxx xx Xxxxxx Xxxxxxxxx xx xxxxxxxxx xxxxx xxxxxxxxx’ xxxxxx xxxx xxxxx xxxx xxx XX Xxxx xxxxx xxxxxxx.</p></td>
+<td align="left">**データ通信プランのプロビジョニング**</td>
+<td align="left"><p>制限された機能 **networkDataPlanProvisioning** を使うと、アプリは、デバイスのデータ プランに関する情報を収集し、ネットワーク使用状況を読み取れます。 この機能を使うアプリは、携帯電話会社が作成し、ユーザーの実際のデータ使用量を OS データ使用量の設定に統合します。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxxxx Xxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxXxxxxXxxxxxxXxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxx xxxxxxxx xxxxxxxxx xxxxxxxx.</p></td>
+<td align="left">**ソフトウェア ライセンス**</td>
+<td align="left"><p>制限された機能 **slapiQueryLicenseValue** を使うと、アプリは、ソフトウェア ライセンス ポリシーにクエリを実行できます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxxxxx Xxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxxXxxxxxxxxXxxxxxxxxxXxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxx xxxxx xxxx xxx xxx xx xxx xx xxx xxxxxxxxxx.</p>
-<p>Xxx **xxxxxxxxXxxxxxxxxXxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxx x xxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxx.</p>
-<p>Xxx **xxxxxxxxXxxxxxxxxXxxxxxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxx xx xxxxxxxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxx.</p></td>
+<td align="left">**延長実行**</td>
+<td align="left"><p>制限された機能 **extendedExecutionBackgroundAudio** を使うと、アプリがフォアグラウンドにないとき、アプリはオーディオを再生できます。</p>
+<p>制限された機能 **extendedExecutionCritical** を使うと、アプリは重要な延長実行セッションを開始できます。</p>
+<p>制限された機能 **extendedExecutionUnconstrained** を使うと、アプリは制限のない延長実行セッションを開始できます。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxx Xxxxxx Xxxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxXxxxxxxxxxXxXxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxxxx xxx xxxxxxxxx Xxxxxx Xxxxxxxx Xxxx Xxxxxx Xxxxxxxx - Xxxxxx Xxxxxxxxxx (XX XXX-XX) xxxxxxxx.</p>
-<p>Xxx **xxxxxxXxxxxxxxxxXxxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxx xxxxx xxxxxx xx xxx Xxxxxx Xxxxxx Xxxxxxxxxx (XXX) xxxxxxxxxxxxx xxxxxxx xxxxxxxx (XXX) xxxxxxxxxxxxxx xx xxx xxxxxx. Xxxx xxxx xxxxx xxxxxxxxxxxx xxx xxxxxx xx xxxxxx xxxxxxxx XXXx.</p>
-<p>Xxx **xxxxxxXxxxxxxxxxXxxXxxxxxxxXxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxxxx Xxxxxxxx Xxxxxxxxxxx Xxxxxxxx (XXX)-xxxxx xxxxxxxx xxxx xx XXx, Xxxxxxx Xxxxxxxxxx/Xxxxxxx Xxxxxxx (XX/XX), xxx Xxxx Xxxxxx Xxxxxxxx - Xxxxxx Xxxxxxxxxxxx (XXX-XX).</p>
-<p>Xxx **xxxxxxXxxxxxxxxxXxxxxXxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xxxxxxx xx Xxxxxx Xxxxxxxxx xx xxx xxx xxxxxx xx xxxxx xxxxxxx xx xxxxxxx xxxx xxxxxxxxx xx xxxxx.</p></td>
+<td align="left">**モバイル デバイス管理**</td>
+<td align="left"><p>制限された機能 **deviceManagementDmAccount** を使うと、アプリは、携帯電話会社の Open Mobile Alliance - Device Management (MO OMA-DM) アカウントをプロビジョニング、構成できます。</p>
+<p>制限された機能 **deviceManagementFoundation** を使うと、アプリは、デバイスのモバイル デバイス管理 (MDM) 構成サービス プロバイダー (CSP) インフラストラクチャへの基本的なアクセスが可能になります。 他の機能は、特定の CSP にアクセスする必要があることに注意してください。</p>
+<p>制限された機能 **deviceManagementWapSecurityPolicies** を使うと、アプリは、ワイヤレス アプリケーション プロトコル (WAP) ベースのサービス (MM、Service Indication/Service Loading (SI/SL)、Open Mobile Alliance - Client Provisioning (OMA-CP) など) を構成できます。</p>
+<p>制限された機能 **deviceManagementEmailAccount** を使うと、携帯電話会社が作成したアプリは、ユーザーにプロビジョニングするデバイス上の電子メール アカウントを追加および管理できます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxxxx Xxxxxx Xxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxXxxxxxXxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxx xxxxxxx xx xxxxxx xxxxxxxx xxxxxxx xx xxxx xxxx xxx xxxxxxxxx xx xxx xxxxxx.</p></td>
+<td align="left">**パッケージ ポリシー制御**</td>
+<td align="left"><p>制限された機能 **packagePolicySystem** を使うと、アプリは、デバイスにインストールされたアプリに関連するシステム ポリシーを制御できます。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxx Xxxx**</td>
-<td align="left"><p>Xxx **xxxxXxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxx x xxxx xx xxxxx xxxxx xxxxxxxxx xx xxx xxxxxx.</p></td>
+<td align="left">**ゲームの一覧**</td>
+<td align="left"><p>制限された機能 **gameList** を使うと、アプリはシステムにインストールされた既知のゲームの一覧を取得できます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxx Xxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxXxxxxxxxxXxxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxxx xxxxxx Xxxx xxxxxxx xxxx xxxxxxx xx xxx Xxxx xxxxxxxx xxxxxxxxxxxxx.</p></td>
+<td align="left">**Xbox アクセサリ**</td>
+<td align="left"><p>制限された機能 **xboxAccessoryManagement** を使うと、アプリは Xbox ハードウェア仕様に準拠した Xbox デバイスを直接管理できます。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxx Xxxxxxxxxxx xxx Xxxxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxXxxxxxXxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxx xxx xxxx xxxxxxxx xx Xxxxxxx.</p></td>
+<td align="left">**アクセサリの音声認識**</td>
+<td align="left"><p>制限された機能 **cortanaSpeechAccessory** を使うと、アプリはコマンドを呼び出して Cortana に渡すことができます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxxxxxx Xxxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxxxXxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxxx xx xx xxxxxxxxx xxx xxx xxx-xx xx xxxxxxxx xxx xxxxxxxxxxxxx xx xxxx xxxx xxx xx xxxxxxxxx xx xxxxxxxxxxx xxx xxxxxxx xx xxx xxxx.</p></td>
+<td align="left">**アクセサリ管理**</td>
+<td align="left"><p>制限された機能 **accessoryManager** を使うと、アプリはアクセサリ アプリや特定のアプリ通知のオプトインとしての登録が可能になり、アクセサリに転送したり、ユーザーに表示したりできるようになります。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**Xxxxxx xxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxxxXxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxxxxxxx xxxxxxxx xxxx xxxxxxx.</p></td>
+<td align="left">**ドライバー アクセス**</td>
+<td align="left"><p>制限された機能 **interopServices** を使うと、アプリはデバイスと直接やり取りできます。</p></td>
 </tr>
 <tr class="odd">
-<td align="left">**Xxxxxxxxxx xxxxxxxxxxx**</td>
-<td align="left"><p>Xxx **xxxxxXxxxxxxxxxXxxxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xx xxx xxxxxxxxxx xx xxxxxxxxx xxxxxxxx xxxxx xxx xxxxxxx xxx xxx-xxx xxxxxxxx xxxxx xxxxxxxxxx. XXX xxxxxxxxxxxx xxxxxx xx xxxxxxxxxxx xx xxxx xxxxxxxxxx. Xxxx xxxxxxxxxx xx xxxxxxxx xx xxxxxx xxxxxxx xx xxx [**XxxxxxxxXxxxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Mt608395) xxxxx.</p></td>
+<td align="left">**フォアグラウンドの監視**</td>
+<td align="left"><p>制限された機能 **inputForegroundObservation** を使うと、アプリはフォアグラウンドでキーボード入力を傍受でき、アプリ以外へのすべてのキーボード入力の処理を省くことができます。 SAS の組み合わせはこの機能により傍受することはできません。 この機能は、[**KeyboardDeliveryInterceptor**](https://msdn.microsoft.com/library/windows/apps/Mt608395) クラスのメンバーにアクセスするために必要です。</p></td>
 </tr>
 <tr class="even">
-<td align="left">**XXX xxx XX Xxxxxxx xxxx**</td>
-<td align="left"><p>Xxx **xxxXxxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xxxx xxx xxxxxxx xx Xxxxxxxxx xxxxxxxx xx xxxxxxx xxx xxxx xxx xxxxx xxxxxxxxx xxxxxxxxx xxxx xx xxx xxxxxx.</p>
-<p>Xxx **xxxXxxxxxXxxxxxxxx** xxxxxxxxxx xxxxxxxxxx xxxxxx xxxx xxxx xxx xxxxxxx xx Xxxxxxxxx xxxxxxxx xx xxxx xxxxxx xx xxx xxxxxx xxx xxxxxx.</p></td>
+<td align="left">**OEM および MO のパートナー アプリ**</td>
+<td align="left"><p>制限された機能 **oemDeployment** を使うと、Microsoft パートナー製のアプリは、新しいアプリをインストールし、デバイスに現在インストールされているアプリを照会できます。</p>
+<p>制限された機能 **oemPublicDirectory** を使うと、Microsoft パートナー製のアプリは、共有アプリ フォルダーにアクセスできます。</p></td>
 </tr>
 </tbody>
 </table>
 
-**Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx XXX xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+**注:**  
+この記事は、UWP アプリを作成する Windows 10 開発者を対象としています。 Windows 8.x 用または Windows Phone 8.x 用の開発を行っている場合は、[アーカイブされているドキュメント](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxxxx Xxxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx)
-* [Xxxxxxxxxx xxx xxxxxxx-xxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/Hh768223)
-* [Xxx xx xxxxxxx xxxxxxxxxxxx xx x xxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/BR211477)
-* [Xxx xx xxxxxxx xxxxxx xxxxxxxxxxxx xx x xxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Dn263092)
+* [マニフェスト デザイナー](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/br230259.aspx)
+* [個人データにアクセスするアプリのガイドライン](https://msdn.microsoft.com/library/windows/apps/Hh768223)
+* [パッケージ マニフェストで機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/BR211477)
+* [パッケージ マニフェストでデバイス機能を指定する方法](https://msdn.microsoft.com/library/windows/apps/Dn263092)
  
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,52 +1,56 @@
 ---
-Xxxxxxxxxxx: Xxxx xxxxxxx xxxx xx xxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxx xxx xxxx xxxxxxx xxxxxxx xx xxx xxxxxx xxxxxxxx xxxxxxxx xx xx xx xxx Xxxxxxx Xxxxx xxx xxx x xxxx xx xxxx xxx'x Xxxxx xxxxxxx.
-xxxxx: Xxxx xxx xxxxxxxx xxxxxxx
-xx.xxxxxxx: YYXYYXYY-XXXX-YYYY-YXYY-YXYYYYYYXXYY
+Description: When working with an app in the Windows Dev Center dashboard, you can view details related to the unique identity assigned to it by the Windows Store and get a link to your app's Store listing.
+title: View app identity details
+ms.assetid: 86F05A79-EFBC-4705-9A71-3A056323AC65
 ---
 
-# Xxxx xxx xxxxxxxx xxxxxxx
+# View app identity details
 
 
-Xxxx xxxxxxx xxxx xx xxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxx xxx xxxx xxxxxxx xxxxxxx xx xxx xxxxxx xxxxxxxx xxxxxxxx xx xx xx xxx Xxxxxxx Xxxxx xxx xxx x xxxx xx xxxx xxx'x Xxxxx xxxxxxx.
+When working with an app in the Windows Dev Center dashboard, you can view details related to the unique identity assigned to it by the Windows Store and get a link to your app's Store listing.
 
-Xx xxxx xxxx xxxx, xxxxxxxx xx xxx xx xxxx xxxx, xxxx xxxxxx **Xxx xxxxxxxxxx** xx xxx xxxx xxxxxxxxxx xxxx. Xxxxx **Xxx xxxxxxxx** xx xxxx xxxxx xxxxxxx.
+To find this info, navigate to one of your apps, then expand **App management** in the left navigation menu. Click **App identity** to view these details.
 
-> **Xxxx**  Xxx xxxx xx xxxx x [xxxxxxxx xxxx](create-your-app-by-reserving-a-name.md) xxx xxxx xxx xx xxxxx xx xxx xxxx xx xxxxx xxxxxxxx xxxxxxx.
+> **Note**  You need to have a [reserved name](create-your-app-by-reserving-a-name.md) for your app in order to see most of these identity details.
 
-## Xxxxxx xx xxxxxxx xx xxxx xxxx xxxxxxxx
-
-
-Xxx xxxxxxxxx xxxxxx xxxx xx xxxxxxxx xx xxxx xxxx xxxxxxxx. Xx xxx xxx xxxxx Xxxxxxxxx Xxxxxx Xxxxxx xx xxxxx xxxx xxxxxxxx, xxx xxx xxxxxx xx xxxx xxx xxxx Xxxxxxxxx xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxx xxxx xxxxxxxxx xxxxxxx, xxxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxxxxx. Xx xxx'xx xxxxxxxx xxxx xxxxxxx xxxxxxxx, xxx'xx xxxx xx xxx xxxxx xx.
-
--   **Xxxxxxx/Xxxxxxxx/Xxxx**
--   **Xxxxxxx/Xxxxxxxx/Xxxxxxxxx**
-
-Xxx xxxx xxxx, xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211441) xx xxx [xxxxxxx xxxxxxxx xxxxxx xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/br211473).
-
-Xxxxxxxx, xxxxx xxxxxxxx xxxxxxx xxx xxxxxxxx xx xxxx xxx, xxxxxxxxxxxx xxx "xxxxxxx xxxxxx" xx xxxxx xxx xx xxx xxxxxxxx xxxxxx. Xxxxxxxxxx xxxxxxxx xxxx xxxx xxxxxxxxxx xxxxxxx, xxxx xx xxxxxxxxxxxx xxx xxxxxxx.
-
-## Xxxxxxxxxx xxxxxx xxx xxxxxxx xxxxxx
+## Values to include in your appx manifest
 
 
-Xxx xxxxxxxxx xxxxxx xxx xxxxxxxxxx xxxxxx xxxx xxxxx xx xxxx xxx'x xxxxxxx xxxxxx, xxx xxx xxx xxxxxxxx xx xxxx xxxxxxxx.
+The following values must be included in your appx manifest. If you are using Microsoft Visual Studio to build your packages, and are signed in with the same Microsoft account that you have associated with your developer account, these details are included automatically. If you're building your package manually, you'll need to add these in.
 
--   **Xxxxxxx Xxxxxx Xxxx (XXX)**: Xxxx xxxxx xx xxxx xxxx xxxxxxx Xxxxxxx XXXx.
--   **Xxxxxxx XXX**: Xxx'xx xxxx xxxx xxxxx xx xxxx XXX xxxxxxxxxxxxx xx xxxx xxx. Xxx xxxx xxxx, xxx [Xxxxxxx Xxxx Xxxxxxxxxxxx Xxxxxxxx (XXX) xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187203).
+-   **Package/Identity/Name**
+-   **Package/Identity/Publisher**
 
-## Xxxx xx xxxx xxx'x xxxxxxx
+For more info, see [**Identity**](https://msdn.microsoft.com/library/windows/apps/br211441) in the [package manifest schema reference](https://msdn.microsoft.com/library/windows/apps/br211473).
+
+Together, these elements declare the identity of your app, establishing the "package family" to which all of its packages belong. Individual packages will have additional details, such as architecture and version.
+
+## Additional values for package family
 
 
-Xxx xxxx xx xxxx xxx'x xxxx xxx xx xxxxxx xx xxxx xxxx xxxxxxxxx xxxx xxx xxx xx xxx Xxxxx. Xxxx xxxx xx xx xxx xxxxxx **`https://www.microsoft.com/store/apps/<your app's Product ID>`**.
+The following values are additional values that refer to your app's package family, but are not included in your manifest.
 
-> **Xxxx**  Xxxxxxxxx xx xxxx XX xxxxxxxx xxx'xx xxxxxxxxx, xxx xxx xxx xxxx xxxx xxx xxxx xxxx. Xxx xxxx xxxx xxxx xxx XXX xxx Xxxxxxx YY xxxxx xxx xxxxxx xxxxx xxxxx, xxxxx xxxx xxxx xxx xxx XX. Xxx xxx xxx xxxxxxxxxx xxxxx xxx Xxxxxxx Y.Y xxx xxxxxxx xxx/xx Xxxxxxx Xxxxx Y.Y xxx xxxxxxx, xxxxx xxxx xxxx xxxx xx xxx xxxxxxxxx XX xxxxxxxx.
+-   **Package Family Name (PFN)**: This value is used with certain Windows APIs.
+-   **Package SID**: You'll need this value to send WNS notifications to your app. For more info, see [Windows Push Notification Services (WNS) overview](https://msdn.microsoft.com/library/windows/apps/mt187203).
 
-Xxxx x xxxxxxxx xxxxxx xxxx xxxx, xx xxxx xxxx xxx xxx-xxxxx xxxxxxx xxxx xxx xxxx xxx. Xx xxxx xxx xx xxxxxxxxx xxx xxx xxxxxxxx'x Xxxxxxx xxxxxx, xxx Xxxxx xxx xxxx xxxx xxxxxx xxx xxxxxxx xxxx xxx'x xxxxxxx.
+## Link to your app's listing
+
+
+The link to your app's page can be shared to help your customers find the app in the Store. This link is in the format **`https://www.microsoft.com/store/apps/<your app's Product ID>`**.
+
+> **Note**  Depending on what OS versions you're targeting, you may see more than one link here. All apps will show the URL for Windows 10 using the format noted above, which will work for any OS. You may see additional links for Windows 8.1 and earlier and/or Windows Phone 8.1 and earlier, which will work only on the specified OS versions.
+
+When a customer clicks this link, it will open the web-based listing page for your app. If your app is available for the customer's Windows device, the Store app will also launch and display your app's listing.
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

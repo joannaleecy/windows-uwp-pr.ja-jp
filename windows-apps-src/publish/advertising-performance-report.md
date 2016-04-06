@@ -1,74 +1,78 @@
 ---
-Xxxxxxxxxxx: Xx xxxx xxxxxxxxxxx xxxx xxx xxx xx xxxxx xx xxxx xxxx, xxx xxx xxx-xxxxx xxx xxxxxxx-xxxxx xxxxxxxxxxx xxxxxxxxxxx xxxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx.
-xxxxx: Xxxxxxxxxxx xxxxxxxxxxx xxxxxx
-xx.xxxxxxx: YYXYYYXY-XYYX-YYYY-YYXX-YXYXYXXXYYYY
+description: アプリ内の広告ユニットのパフォーマンス データを表示するには、Windows デベロッパー センター ダッシュ ボードにあるアプリレベルとアカウントレベルの広告パフォーマンス レポートを使います。
+title: 広告パフォーマンス レポート
+ms.assetid: 32E555C3-C34D-4503-82BB-4C3F5CAE4500
 ---
 
-# Xxxxxxxxxxx xxxxxxxxxxx xxxxxx
+# 広告パフォーマンス レポート
 
 
-Xx xxxx xxxxxxxxxxx xxxx xxx xxx xx xxxxx xx xxxx xxxx, xxx xxx xxx xxx xxxxxxxxx xxxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx:
+アプリ内の広告ユニットのパフォーマンス データを表示するには、Windows デベロッパー センター ダッシュ ボードにある次のレポートを使うことができます。
 
--   [Xxx-xxxxx xxxxxxxxxxx xxxxxxxxxxx xxxxxx](advertising-performance-report.md#app-level-advertising-performance-report). Xxxx xxxxxx xxxxxxxx xxxxxxxxxxx xxxx xxx xxx xx xxxxx xx xxx xxxxxxxxx xxxxxxxx xxx xx xxx xxxxxxxxx.
--   [Xxxxxxx-xxxxx xxxxxxxxxxx xxxxxxxxxxx xxxxxx](advertising-performance-report.md#advertising-performance-summary). Xxx **Xxxxxxxxxxx xxxxxxxxxxx** xxxxxxx xx xxxx **Xxxxxxxxx xxxxxxxx** xxxx xxxxxxxx x xxxxxxx xx xxx xxxxxxx-xxxxx xxxxxxxxxxx xxxxxxxxxxx xxxxxx.
+-   [アプリ レベルの広告パフォーマンス レポート](advertising-performance-report.md#app-level-advertising-performance-report)。 このレポートは、ダッシュ ボードで現在選択されているアプリ内の広告ユニットについてパフォーマンス データを提供します。
+-   [アカウント レベルの広告パフォーマンス レポート](advertising-performance-report.md#advertising-performance-summary)。 **[ダッシュボード概要]** ページの **[広告パフォーマンス]** セクションには、アカウント レベルの広告パフォーマンス レポートの概要が示されます。
 
-Xx xxxxxxx, xxx xxxxxxx xxx xxxxxxxx xx xxxxxxxxxxx xxxx xxx xxxx YY xxxx, xx xxx xxxxxxx. Xx xxxxxx xxxxx xxxxxxx, xxxxx **Xxxx xxxxxxx** xxx xxxxxx x xxxxxxxxx xxxx xxxxx xx xx xxxxxxxxxx xxxxxx xxxx. Xxxx xxxx xxx xxxx xx xxxxxxxxxx xxxxx xxxxx XXX, xxx xxxx xxxxxxxxxx xxxx xxxx.
+既定では、レポートはすべてのデバイスにおける過去 30 日間のパフォーマンスでフィルター処理されます。 これらのフィルターを変更するには、**[ページ フィルター]** をクリックし、異なる期間や個々のデバイスの種類を選択します。 すべてのデータは、特定のタイム ゾーンではなく、UTC に基づいて集計されることに注意してください。
 
-Xxx xxxxxxxxx xxxxxxxx xxxxxxx xxxx xxxxxxx xxxxx xxxxx xxxxxxx.
+以降のセクションでは、これらのレポートについてさらに詳しく説明します。
 
-## Xxx-xxxxx xxxxxxxxxxx xxxxxxxxxxx xxxxxx
-
-
-Xxxx xxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxx, xxxxx xxx, xxx xxxxx xxxx xxx xxx xx xxxxx xx xxx xxxxxxxxx xxxxxxxx xxx xx xxx xxxxxxxxx. Xx xxxx xxxx xxxxxx, xxxxxx xxx xx xxxx xxxx xx xxx xxxxxxxxx xxx xxxxx **Xxxxxxxxx** &xx; **Xxxxxxxxxxx xxxxxxxxxxx** xx xxx xxxxxxxxxx xxxx.
-
-Xxx xxxx xx xxxxxxxx xxxx xxx xxxxxxxxx xxxxx xxxxxxxxxxx xxxxxxx xx xxxxx xxx xxx xxx xx xxxx xxx:
-
--   **Xxxxxxxxx xxxxxxx**: Xxx xxxxxxxxx xxxxxx xx xxxxx xxx xxxxxxxx xxxx xxx xxx xxxxxxx xx xxxx xxx.
--   **xXXX**: Xxxxxxxxx xxxx xxx xxxxxxxx xxxxxxxxxxx.
--   **Xxxxxxxx**: Xxx xxxxxx xx xxxxx xx xx xxxxxxx xxx xxxx xx xxx Xxxxxxxxx Xx Xxxxxxx xxxx xxxx xxx.
--   **Xxxxxxxxxxx**: Xxx xxxxxx xx xxxxx xx xx xxx xxxxx xx xxxx xxx.
--   **Xxxx xxxx**: Xxx xxxxxxxxxx xx xx xxxxxxxx xxxx xxxx xxxx xxx xx xxxxx xx xx xxx xxxxx.
--   **Xxxxxx**: Xxx xxxxxx xx xxxxx xxxxxxx xxxxxxx xx xx xx xx xxxx xxx.
--   **XXX**: Xxxxx-xxxxxxx xxxx, xxxxxxx xxx xxxxxx xx xxxxx xx xx xxx xxxxxxx, xxxxxxx xx xxx xxxxxx xx xxxxxxxxxxx.
-
-Xx xxxxxx xxx xxxxx xxxxxxxxxxx xxxxxxx xxx xxx xx xxxxx xx xxxx xxx, xxxxx xx xxx xxxxx xxxxx xxx xxxxx xxx xxx xxxxx.
-
-Xx xxxxxxx xxx xxxx xxx xxx xx xxxxx xxxxxxx xx x xxxxx xx xxxxx xxx xxxx, xxxxx **Xxxxx** xx **Xxx**. Xxxxx xxx xxxxxxx xxxxx xxx xxxxx xx xxx xx xxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxx. Xx xxxxxxx, xxx xxxxx xxx xxx xxxxx xxxx xxxxxxxxxxx xxxx xxx xxx xx xxx xx xxxxx xx xxxx xxx, xxx xxx xxx xxxxx **Xxxxxx xx xxxxx** xx xxxxxx xx xx xxx xxxxxxxxxx xx xxxxx xx xxxxxxx.
-
-Xx xxx xxx xxxx, xxxxxx xxxxxx xxxxxxxxx xxxxxx xxxxxx xxx xxxxxxx xxxxxx xxxxxxxxx xxxxx xxxxxx. Xxx xxx xxxxx xxxx x xxxxxxxx xxxxxxx xx xxxxxx xx xxx xxx xx xxxxxxx xxx xxxxx xx xxx xxxxxxxx xxxxxx. Xxx xxx xxxx xxxx xx xx xxx xxxx xx xxx xxx xx xxxx xxxx xxx xxxxxxx xxxxxxxxx.
-
-## Xxxxxxx-xxxxx xxxxxxxxxxx xxxxxxxxxxx xxxxxx
+## アプリ レベルの広告パフォーマンス レポート
 
 
-Xxxx xxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxx, xxxxx xxx, xxx xxxxx xxxx xxx xxx xxx xx xxxxx xxxx xx xxxx xxxx xxx xxxxxxxxxx xx xxxx xxxxxxxxx xxxxxxx. Xxxx xxxxxx xxxx xxxxxxxx xxxxxxxxxxx xxxx xxx xxx xxxXxxxxx xx xxxxx xxxx xxxx xxx xxxxxxxxxxxx xxxxxx xx xxxx Xxx Xxxxxx xxxx. Xx xxxx xxxx xxxxxx, xx xx xxxx xxxxxxxxx xxxxxxxx xxxx xxx xxxxx **Xxxxxxxxxxx xxxxxxxxxxx** xx xxx xxxxxxxxxx xxxx.
+このレポートは、ダッシュ ボードで現在選択されているアプリ内の広告ユニットのパフォーマンス データを、グラフ、世界地図、表の形式で提供します。 このレポートを表示するには、ダッシュボードでいずれかのアプリを選択し、ナビゲーション ウィンドウで **[分析]** &gt; **[広告パフォーマンス]** の順にクリックします。
 
-Xxxx xxxxxx xxxxx xxx xxxx xxxxx xxxxxxxxxxx xxxxxxx xxx xxxxx (xxxxx, xxxxx xxx, xxx xxxxx) xx xxx xxx-xxxxx xxxxxxxxxxx xxxxxxxxxxx xxxxxx xxxxxxxxx xxxxx. Xxx xxx xxxxx xxx xxxxxxxxx xxxxxxx xx xxxx xxxxxx:
+データは、アプリの広告について追跡される次の 7 つのパフォーマンス メトリックから取得されます。
 
--   **Xxx xx xxxxx**. Xxxx xxx xxxxxx xxxx xxxxxx, xxx xxx xxxxxx xx xxxxxxx xxxx xxxx xxx xx xxxxx xx xxxx xx xx xxx xxxxxxxx xx xxxxx.
--   **Xxx xxxx**. Xxxx xxx xxxxxx xxxx xxxxxx, xxx xxx xxxxxx xx xxxxxxx xxxx xxxx xxx xxxx xx xxxx xx xx xxx xxxxxxxx xxxx.
--   **Xxxxxxxxxx xxx**. Xxxx xxx xxxxxx xx xxx, xxx xxx xxxxxx xx xxxxxxx xxxx xxxx xxx xx xxxxx xxxx xx xxx xxx xx xxxx xx xx xxx xxxxxxxx xx xxxxx xxxx xx xxx xxx.
+-   **[売上見込み]**: アプリで実行されている広告から受け取った見込み金額。
+-   **[eCPM]**: 1000 回の広告表示あたりの有効な料金。
+-   **[要求]**: アプリからマイクロソフト広告ネットワークに広告要求が送信された回数。
+-   **[インプレッション数]**: 広告がアプリに表示された回数。
+-   **[フィル レート]**: 広告が表示されたアプリから送られた広告要求の割合。
+-   **[クリック数]**: アプリで広告がユーザーによってクリックされた回数。
+-   **[CTR]**: クリック スルー レート、つまり広告がクリックされた回数をインプレッション数で割った値。
 
-### Xxxxxxxxx xxxx xxxx xxxXxxxxx
+アプリ内の広告ユニットについてこれらのパフォーマンス メトリックをすべて確認するには、グラフと地図ビューの下にある表を参照します。
 
-Xx xxx xxxxxxx xx xxxxx xxx xx xxx xxxxx Xxxxxxxxx xxxXxxxxx, xx’x xxxxxxxx xxxx xxx xxx xx xxxx xxxx xxxxxx xxxxxxxxxxxx xx xxxx xxxx xx Xxx Xxxxxx. Xx xxxx xxxxxx, xxxxx xx xxxxx xxx xxxxxxxxxx xxxx xxx xxxxx xxxx xxx xxxxxxxxx xx xxxXxxxxx, xxxx xxx xxxxxx **(xxxXxxxxx)** xxxxxxxx xx xxx xxx xxxx.
+グラフ ビューや世界地図ビューでこれらのメトリックのいずれかを分析するには、**[グラフ]** または **[マップ]** をクリックします。 別のメトリックに切り替えるには、グラフや地図の上のヘッダーをクリックします。 既定では、グラフや地図ビューにはアプリ内のすべての広告ユニットのパフォーマンス データが表示されますが、**[広告ユニットの選択]** をクリックすると、最大 6 つの広告ユニットを選択して比較できます。
 
-Xx xxx xxxxxxx xx xxxxx xxx xx xxx xxxxx xxxXxxxxx, xxx xxx xxx’x xxx xxxx xxx xxxx xx xxxxxx xxxxxx xxxx, xxxxx **Xxxx x xxxXxxxxx xxxxxxx** xx xxxx xxxx xxxxxxx xx xxxx Xxx Xxxxxx xxxxxxx. Xxxxx xxx xxxxx xxxxxxx xxx xxxxxxxxxx xxxx xxxx xxxXxxxxx xxxxxxx xxx xxxx xxxxxxx xxxxxxx xxxx. Xxx xxx xxxx xxx xxxxxxx xxxxxxx xxxx xx xxxxxxx xxxx xxxx xxxXxxxxx xxxxxxx xxx xxxxx xx xxx **Xx xxxxxxxxxxx** xxxx.
+地図ビューで、濃い網掛けは高い値を示し、淡い網掛けは低い値を示します。 地図上の特定の国や地域をポイントすることによって、選択したメトリックの値を分析できます。 地図の任意の領域を拡大して、小さい国々のデータを表示することもできます。
 
-Xxx xxxx xxxxxxxxxxx xxxxx xxxxxxxxx xxxXxxxxx xxxxxxxx xx Xxx Xxxxxx, xxx [xxxXxxxxx-XxxXxxxxx xxxxxxxxxxx](pubcenter-dev-center-integration.md).
-
-## Xxxxxxxxxxx xxxxxxxxxxx xxxxxxx
+## アカウント レベルの広告パフォーマンス レポート
 
 
-Xxx **Xxxxxxxxxxx xxxxxxxxxxx** xxxxxxx xx xxxx **Xxxxxxxxx xxxxxxxx** xxxx xxxxxxxx xxxx xxxx xx xxxxxxx xx xxx xxxxxxx-xxxxx xxxxxxxxxxx xxxxxxxxxxx xxxxxx, xxxx xxx xxxxxxxxx xxxxxxxxxxx:
+このレポートは、開発者アカウントに登録されているアプリ内で使用されるすべての広告ユニットのパフォーマンス データを、グラフ、世界地図、表の形式で提供します。 このレポートには、デベロッパー センターのアプリに正常にマップされていない pubCenter 広告ユニットのパフォーマンス データも含まれます。 このレポートを表示するには、[ダッシュボード概要] ページに移動し、ナビゲーション ウィンドウの **[広告パフォーマンス]** をクリックします。
 
--   Xx xxxxxxxx xxx xxxx xxxx xx xxxxx xxxx. Xxx x xxxxx xxxxxxx xx xxx xxxx, xxx xxx xxxxxxx-xxxxx xxxxxxxxxxx xxxxxxxxxxx xxxxxx.
--   Xxx xxxx xxxxxxx xxxxxxxx xxx xxx xxx xxxx xx xxx xxxxxxxxxx xxxx. Xx xxxxxx xx xx xxxxx, xxx xxx xxxxxxx-xxxxx xxxxxxxxxxx xxxxxxxxxxx xxxxxx.
+このレポートには、前に説明したアプリ レベルの広告パフォーマンス レポートと同じ 7 つのパフォーマンス メトリックとビュー (グラフ、世界地図、表) が表示されます。 このレポートには、次のフィルターを適用できます。
+
+-   **すべての広告ユニット**。 このフィルターを選択すると、すべての広告ユニットまたは最大 6 つの特定の広告ユニットのデータを表示できます。
+-   **すべてのアプリ**。 このフィルターを選択すると、すべてのアプリまたは最大 6 つの特定のアプリのデータを表示できます。
+-   **特定のアプリ**。 アプリを選択したときに、アプリで使用されるすべての広告ユニットまたはアプリで使用される最大 6 つの特定の広告ユニットのデータを表示できます。
+
+### pubCenter からのデータの移行
+
+Microsoft pubCenter を使ってアプリの広告ユニットを作成した場合、すべての広告ユニットがデベロッパー センターのアプリに正常にマップされているとは限りません。 このレポートでは、これらの広告ユニットが pubCenter で指定したアプリ名に関連付けられ、**(pubCenter)** という文字列がアプリ名に追加されます。
+
+pubCenter を使ってアプリの広告ユニットを作成しているが、どちらのレポート ページにもデータが表示されない場合、**[pubCenter アカウントのリンク]** をクリックしてそのアカウントをデベロッパー センター アカウントにリンクします。 この pubCenter アカウントに関連付けられているメール アドレスとアカウント リンク コードを入力します。 アカウント リンク コードは、この pubCenter アカウントにサインインし、**[本人情報]** ページに移動すると確認できます。
+
+デベロッパー センターへの pubCenter アカウントの移行について詳しくは、「[pubCenter-デベロッパー センターの統合](pubcenter-dev-center-integration.md)」をご覧ください。
+
+## 広告パフォーマンスの概要
+
+
+**[ダッシュボード概要]** ページの **[広告パフォーマンス]** セクションには、アカウント レベルの広告パフォーマンス レポートと同様のデータが表示されますが、次のような違いがあります。
+
+-   データはグラフ形式でのみ提供されます。 表形式のデータについては、アカウント レベルの広告パフォーマンス レポートを使います。
+-   提供されているフィルターは、すべてのアプリまたは特定のアプリのみです。 広告ユニットごとにフィルター処理するには、アカウント レベルの広告パフォーマンス レポートを使います。
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

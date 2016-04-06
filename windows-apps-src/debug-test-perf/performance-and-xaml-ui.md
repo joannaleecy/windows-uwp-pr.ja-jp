@@ -1,31 +1,35 @@
 ---
-xx.xxxxxxx: YYXYXXYY-XYXX-YYYY-YXYX-YYYYXYYYYXYX
-xxxxx: Xxxxxxxxxxx
-xxxxxxxxxxx: Xxxxx xxxxxx xxxxx xxxx xx xxxxxx xxxxxxxxxx, xx xxxx xxxxxxx, xxx xxx xx xxxxx xxxxx xxxxxxx.
+ms.assetid: 64F7FC51-E8AC-4098-9C5F-0172E4724B5C
+title: Performance
+description: Users expect their apps to remain responsive, to feel natural, and not to drain their battery.
 ---
-# Xxxxxxxxxxx
+# Performance
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxx xxxxxx xxxxx xxxx xx xxxxxx xxxxxxxxxx, xx xxxx xxxxxxx, xxx xxx xx xxxxx xxxxx xxxxxxx. Xxxxxxxxxxx, xxxxxxxxxxx xx x xxx-xxxxxxxxxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxxxxx xx x xxxxxxx xxxx xxxx xxx xxxxxxx xx xxxx xxxxx' xxxxxxxxxxxx. Xxxxxxxxxx xxxxx, xxx xxxxxxxxx, xxx xxx xxxxxxx. Xxxxxxxxx xxxx xxxx xxxxxxxxxxx-xxxxxxxx xxxxxxxxx xxx; xxxxxx xxxx xxxx xxxxxxxxxxx xxxx. Xxxx xxxxxxx xxxxx xxx xxxxx xxxxxx xxxxxxxxxx xxx xxxxxxxxx xx xxxx xxxxxxx xx xx xxxxxxxxx xxx'xx xxx xxxx xxxxx.. Xxxx xxxxxxx xxxxx xxx xxx xx xxxxxxxx xxxx xxxxxxxxxxx xxxxxxxx, xxx xxxxxxxxx xxxxxxxx xxx xxxxx xxxx xxxxxxxx, xxx xxxx xxxx xxxxxxx xxxx, xxxx xxxxxxxxxx xxxx, xxx xxxxxx xxxxx.
+Users expect their apps to remain responsive, to feel natural, and not to drain their battery. Technically, performance is a non-functional requirement but treating performance as a feature will help you deliver on your users' expectations. Specifying goals, and measuring, are key factors. Determine what your performance-critical scenarios are; define what good performance mean. Then measure early and often enough throughout the lifecycle of your project to be confident you'll hit your goals.. This section shows you how to organize your performance workflow, fix animation glitches and frame rate problems, and tune your startup time, page navigation time, and memory usage.
 
-Xx xxx xxxxx'x xxxx xx xxxxxxx, x xxxx xxxx xx'xx xxxx xxxxxx xx xxxxxxxxxxx xxxxxxxxxxx xxxxxxxxxxxx xx xxxx xxxxxxx xxxx xxx xx xxxxxx Xxxxxxx YY. Xxxxxxx XXXX xxxxxxxxxxxxx (xxx xxxxxxx, [{x:Xxxx}](https://msdn.microsoft.com/library/windows/apps/Mt204783)) xxx xxxx xxxxxxxxx xx Xxxxxxx YY xxxx. Xxx [Xxxxxxx xxxx xx Xxxxxxx YY](https://msdn.microsoft.com/library/windows/apps/Mt238321) xxx xxx //xxxxx/ xxxxxxx [Xxxxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx](http://channel9.msdn.com/Events/Build/2015/3-741).
+If you haven't done so already, a step that we've seen result in significant performance improvements is just porting your app to target Windows 10. Several XAML optimizations (for example, [{x:Bind}](https://msdn.microsoft.com/library/windows/apps/Mt204783)) are only available in Windows 10 apps. See [Porting apps to Windows 10](https://msdn.microsoft.com/library/windows/apps/Mt238321) and the //build/ session [Moving to the Universal Windows Platform](http://channel9.msdn.com/Events/Build/2015/3-741).
 
-| Xxxxx | Xxxxxxxxxxx |
+| Topic | Description |
 |-------|-------------|
-| [Xxxxxxxx xxx xxxxxxxxxxx](planning-and-measuring-performance.md) | Xxxxx xxxxxx xxxxx xxxx xx xxxxxx xxxxxxxxxx, xx xxxx xxxxxxx, xxx xxx xx xxxxx xxxxx xxxxxxx. Xxxxxxxxxxx, xxxxxxxxxxx xx x xxx-xxxxxxxxxx xxxxxxxxxxx xxx xxxxxxxx xxxxxxxxxxx xx x xxxxxxx xxxx xxxx xxx xxxxxxx xx xxxx xxxxx' xxxxxxxxxxxx. Xxxxxxxxxx xxxxx, xxx xxxxxxxxx, xxx xxx xxxxxxx. Xxxxxxxxx xxxx xxxx xxxxxxxxxxx-xxxxxxxx xxxxxxxxx xxx; xxxxxx xxxx xxxx xxxxxxxxxxx xxxx. Xxxx xxxxxxx xxxxx xxx xxxxx xxxxxx xxxxxxxxxx xxx xxxxxxxxx xx xxxx xxxxxxx xx xx xxxxxxxxx xxx'xx xxx xxxx xxxxx. |
-| [XxxxXxxx xxx XxxxXxxx XX xxxxxxxxxxxx](optimize-gridview-and-listview.md) | Xxxxxxx [<strong>XxxxXxxx</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) xxxxxxxxxxx xxx xxxxxxx xxxx xxxxxxx XX xxxxxxxxxxxxxx, xxxxxxx xxxxxxxxx, xxx xxxxxxxxxxx xxxxxxxx xx xxxxx. |
-| [XxxxXxxx xxx XxxxXxxx xxxx xxxxxxxxxxxxxx](listview-and-gridview-data-optimization.md) | Xxxxxxx [<strong>XxxxXxxx</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) xxxxxxxxxxx xxx xxxxxxx xxxx xxxxxxx xxxx xxxxxxxxxxxxxx. |
-| [Xxxxxxx xxxxxxx xxxxxxxxxx xxxxxxxxxxx](improve-garbage-collection-performance.md) | Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxxxxx xx X# xxx Xxxxxx Xxxxx xxx xxxxxxxxx xxxxxx xxxxxxxxxx xxxx xxx .XXX xxxxxxx xxxxxxxxx. Xxxx xxxxxxx xxxxxxxxxx xxx xxxxxxxx xxx xxxxxxxxxxx xxxx xxxxxxxxx xxx xxx .XXX xxxxxxx xxxxxxxxx xx XXX xxxx. |
-| [Xxxx xxx XX xxxxxx xxxxxxxxxx](keep-the-ui-thread-responsive.md) | Xxxxx xxxxxx xx xxx xx xxxxxx xxxxxxxxxx xxxxx xx xxxx xxxxxxxxxxx, xxxxxxxxxx xx xxx xxxx xx xxxxxxx. Xxxx xxxxx xxxxxxxxx xxxxxx xxx xxxxxxxxx xxxx. Xxx xxxx, xxxx xxxxxxxxxx xx xxxxxxxxx xxxx xxxxxxxxx xxxxxxx, xxxxxxx xxxx xxxx xxxx xx xxx xxx xxxxxx, xxxxxxx xxxxxxxxxx xxxxxxx xxxxxx xxx xxxxxxxxxx xxxxxxx xxxxx, xxxxxxx xxxxxxxxxx xx x xxxx, xx xxxxxxx xxxxxxxxxx xxxx. Xxxxxxxxxx xx xxx xxxx xx xxxxxxxxxxx, xxxxx xxxx xxxxx xxx xx xxx xx xxxxx xxxxx xxx xxxxxxxxx xxxxxxxxx xxxxx xx xxxxxxx xxxxxxxxxxxx xxxxx xx &xxxx;xxxxxx&xxxx;. |
-| [Xxxxxxxx xxxx XXXX xxxxxx](optimize-xaml-loading.md) | Xxxxxxx XXXX xxxxxx xx xxxxxxxxx xxxxxxx xx xxxxxx xx xxxx-xxxxxxxxx xxx x xxxxxxx XX. Xxxx xxx xxxx xxxxxx xxx xxx xx xx xxxxxxx XXXX xxxxxx xxxxx xxx xxxx xxxx xxx xxxxxx xxxxxxxxxx xxx xxxx xxx. | 
-| [Xxxxxxxx xxxx XXXX xxxxxx](optimize-your-xaml-layout.md) | Xxxxxx xxx xx xx xxxxxxxxx xxxx xx x XXXX xxx—xxxx xx XXX xxxxx xxx xxxxxx xxxxxxxx. Xxxx xxx xxxx xxxxxx xxxxx xxx xxx xxxx xx xxxxxxx xxx xxxxxx xxxxxxxxxxx xx xxxx XXXX xxx. | 
-| [XXXX xxx xxxxxxxx xxxxxxxxxxx xxxx](mvvm-performance-tips.md) | Xxxx xxxxx xxxxxxxxx xxxx xxxxxxxxxxx xxxxxxxxxxxxxx xxxxxxx xx xxxx xxxxxx xx xxxxxxxx xxxxxx xxxxxxxx, xxx xxxxxxxxxxx xxxxxxxx. |
-| [Xxxx xxxxxxxxx xxx xxxx xxx'x xxxxxxx xxxxxxxxxxx](best-practices-for-your-app-s-startup-performance.md) | Xxxxxx XXX xxxx xxxx xxxxxxx xxxxxxx xxxxx xx xxxxxxxxx xxx xxx xxx xxxxxx xxxxxx xxx xxxxxxxxxx. |
-| [Xxxxxxxx xxxxxxxxxx, xxxxx, xxx xxxxxx](optimize-animations-and-media.md) | Xxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx xxxxxx xxxxxxxxxx, xxxx xxxxx xxxx, xxx xxxx-xxxxxxxxxxx xxxxx xxxxxxx xxx xxxxxxxx. |
-| [Xxxxxxxx xxxxxxx/xxxxxx](optimize-suspend-resume.md) | Xxxxxx XXX xxxx xxxx xxxxxxxxxx xxxxx xxx xx xxx xxxxxxx xxxxxxxx xxxxxx xx xxxxxx xxxxxxxxxxx xxxxx xxxxxxxxxx xx xxxxxxxxxxx. |
-| [Xxxxxxxx xxxx xxxxxx](optimize-file-access.md) | Xxxxxx XXX xxxx xxxx xxxxxx xxx xxxx xxxxxx xxxxxxxxxxx, xxxxxxxx xxxxxxxxxxx xxxxxx xxx xx xxxx xxxxxxx xxx xxxxxx/XXX xxxxxx. |
-| [Xxxxxxx Xxxxxxx Xxxxxxxxxx xxx xxxxxxxxxx xxxxxxx](windows-runtime-components-and-optimizing-interop.md) | Xxxxxx XXX xxxx xxxx xxx XXX Xxxxxxxxxx xxx xxxxxxx xxxxxxx xxxxxx xxx xxxxxxx xxxxx xxxxx xxxxxxxx xxxxxxx xxxxxxxxxxx xxxxxx. |
-| [Xxxxx xxx xxxxxxxxx xxx xxxxxxxxxxx](tools-for-profiling-and-performance.md) | Xxxxxxxxx xxxxxxxx xxxxxxx xxxxx xx xxxx xxx xxxxxxx xxx xxxxxxxxxxx xx xxxx XXX xxx.|
+| [Planning for performance](planning-and-measuring-performance.md) | Users expect their apps to remain responsive, to feel natural, and not to drain their battery. Technically, performance is a non-functional requirement but treating performance as a feature will help you deliver on your users' expectations. Specifying goals, and measuring, are key factors. Determine what your performance-critical scenarios are; define what good performance mean. Then measure early and often enough throughout the lifecycle of your project to be confident you'll hit your goals. |
+| [ListView and GridView UI optimization](optimize-gridview-and-listview.md) | Improve [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) performance and startup time through UI virtualization, element reduction, and progressive updating of items. |
+| [ListView and GridView data virtualization](listview-and-gridview-data-optimization.md) | Improve [<strong>GridView</strong>](https://msdn.microsoft.com/library/windows/apps/BR242705) performance and startup time through data virtualization. |
+| [Improve garbage collection performance](improve-garbage-collection-performance.md) | Universal Windows Platform (UWP) apps written in C# and Visual Basic get automatic memory management from the .NET garbage collector. This section summarizes the behavior and performance best practices for the .NET garbage collector in UWP apps. |
+| [Keep the UI thread responsive](keep-the-ui-thread-responsive.md) | Users expect an app to remain responsive while it does computation, regardless of the type of machine. This means different things for different apps. For some, this translates to providing more realistic physics, loading data from disk or the web faster, quickly presenting complex scenes and navigating between pages, finding directions in a snap, or rapidly processing data. Regardless of the type of computation, users want their app to act on their input and eliminate instances where it appears unresponsive while it &quot;thinks&quot;. |
+| [Optimize your XAML markup](optimize-xaml-loading.md) | Parsing XAML markup to construct objects in memory is time-consuming for a complex UI. Here are some things you can do to improve XAML markup parse and load time and memory efficiency for your app. | 
+| [Optimize your XAML layout](optimize-your-xaml-layout.md) | Layout can be an expensive part of a XAML app—both in CPU usage and memory overhead. Here are some simple steps you can take to improve the layout performance of your XAML app. | 
+| [MVVM and language performance tips](mvvm-performance-tips.md) | This topic discusses some performance considerations related to your choice of software design patterns, and programming language. |
+| [Best practices for your app's startup performance](best-practices-for-your-app-s-startup-performance.md) | Create UWP apps with optimal startup times by improving the way you handle launch and activation. |
+| [Optimize animations, media, and images](optimize-animations-and-media.md) | Create Universal Windows Platform (UWP) apps with smooth animations, high frame rate, and high-performance media capture and playback. |
+| [Optimize suspend/resume](optimize-suspend-resume.md) | Create UWP apps that streamline their use of the process lifetime system to resume efficiently after suspension or termination. |
+| [Optimize file access](optimize-file-access.md) | Create UWP apps that access the file system efficiently, avoiding performance issues due to disk latency and memory/CPU cycles. |
+| [Windows Runtime Components and optimizing interop](windows-runtime-components-and-optimizing-interop.md) | Create UWP apps that use UWP Components and interop between native and managed types while avoiding interop performance issues. |
+| [Tools for profiling and performance](tools-for-profiling-and-performance.md) | Microsoft provides several tools to help you improve the performance of your UWP app.|
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

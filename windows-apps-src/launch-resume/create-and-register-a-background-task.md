@@ -1,44 +1,44 @@
 ---
-xxxxx: Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx
-xxxxxxxxxxx: Xxxxxx x xxxxxxxxxx xxxx xxxxx xxx xxxxxxxx xx xx xxx xxxx xxxx xxx xx xxx xx xxx xxxxxxxxxx.
-xx.xxxxxxx: YXYYXYXY-YXYX-YXXX-XXYX-YYXXYYXXYYYX
+title: Create and register a background task
+description: Create a background task class and register it to run when your app is not in the foreground.
+ms.assetid: 4F98F6A3-0D3D-4EFB-BA8E-30ED37AE098B
 ---
 
-# Xxxxxx xxx xxxxxxxx x xxxxxxxxxx xxxx
+# Create and register a background task
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XXxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224794)
--   [**XxxxxxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768)
--   [**XxxxxxxxxxXxxxXxxxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224781)
+-   [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794)
+-   [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768)
+-   [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781)
 
-Xxxxxx x xxxxxxxxxx xxxx xxxxx xxx xxxxxxxx xx xx xxx xxxx xxxx xxx xx xxx xx xxx xxxxxxxxxx.
+Create a background task class and register it to run when your app is not in the foreground.
 
-## Xxxxxx xxx Xxxxxxxxxx Xxxx xxxxx
+## Create the Background Task class
 
 
-Xxx xxx xxx xxxx xx xxx xxxxxxxxxx xx xxxxxxx xxxxxxx xxxx xxxxxxxxx xxx [**XXxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224794) xxxxxxxxx. Xxxx xxxx xxxx xxx xxxx x xxxxxxxx xxxxx xx xxxxxxxxx xx xxxxx, xxx xxxxxxx, [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224839) xx [**XxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700517).
+You can run code in the background by writing classes that implement the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface. This code will run when a specific event is triggered by using, for example, [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839) or [**MaintenanceTrigger**](https://msdn.microsoft.com/library/windows/apps/hh700517).
 
-Xxx xxxxxxxxx xxxxx xxxx xxx xxx xx xxxxx x xxx xxxxx xxxx xxxxxxxxxx xxx [**XXxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224794) xxxxxxxxx. Xxxxxx xxxxxxx xxxxxxx, xxxxxx x xxx xxxxxxx xx xxxx xxxxxxxx xxx xxxxxxxxxx xxxxx. Xxx x xxx xxxxx xxxxx xxx xxxx xxxxxxxxxx xxxx xxx xxxxxx xxx [Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/br224847) xxxxxxxxx.
+The following steps show you how to write a new class that implements the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface. Before getting started, create a new project in your solution for background tasks. Add a new empty class for your background task and import the [Windows.ApplicationModel.Background](https://msdn.microsoft.com/library/windows/apps/br224847) namespace.
 
-1.  Xxxxxx x xxx xxxxxxx xxx xxxxxxxxxx xxxxx xxx xxx xx xx xxxx xxxxxxxx. Xx xx xxxx, xxxxx-xxxxx xx xxxx xxxxxxxx xxxx xx xxx **Xxxxxxxx Xxxxxxxx** xxx xxxxxx Xxx-&xx;Xxx Xxxxxxx. Xxxx xxxxxx xxx **Xxxxxxx Xxxxxxx Xxxxxxxxx (Xxxxxxxxx Xxxxxxx)** xxxxxxx xxxx, xxxx xxx xxxxxxx, xxx xxxxx XX.
-2.  Xxxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxx xxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxxx.
+1.  Create a new project for background tasks and add it to your solution. To do this, right-click on your solution node in the **Solution Explorer** and select Add-&gt;New Project. Then select the **Windows Runtime Component (Universal Windows)** project type, name the project, and click OK.
+2.  Reference the background tasks project from your Universal Windows Platform (UWP) app project.
 
-    Xxx x X++ xxx, xxxxx-xxxxx xx xxxx xxx xxxxxxx xxx xxxxxx **Xxxxxxxxxx**. Xxxx xx xx **Xxxxxx Xxxxxxxxxx** xxx xxxxx **Xxx Xxx Xxxxxxxxx**, xxxxx xxx xxx xxxx xx xxxx xxxxxxxxxx xxxxx xxxxxxx, xxx xxxxx **XX** xx xxxx xxxxxxx.
+    For a C++ app, right-click on your app project and select **Properties**. Then go to **Common Properties** and click **Add New Reference**, check the box next to your background tasks project, and click **OK** on both dialogs.
 
-    Xxx x X\# xxx, xx xxxx xxx xxxxxxx, xxxxx xxxxx xx **Xxxxxxxxxx** xxx xxxxxx **Xxx Xxx Xxxxxxxxx**. Xxxxx **Xxxxxxxx**, xxxxxx **Xxxxxxxx** xxx xxxx xxxxxx xxx xxxx xx xxxx xxxxxxxxxx xxxx xxxxxxx xxx xxxxx **Xx**.
+    For a C# app, in your app project, right click on **References** and select **Add New Reference**. Under **Solution**, select **Projects** and then select the name of your background task project and click **Ok**.
 
-3.  Xxxxxx x xxx xxxxx xxxx xxxxxxxxxx xxx [**XXxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224794) xxxxxxxxx. Xxx [**Xxx**](https://msdn.microsoft.com/library/windows/apps/br224811) xxxxxx xx x xxxxxxxx xxxxx xxxxx xxxx xxxx xx xxxxxx xxxx xxx xxxxxxxxx xxxxx xx xxxxxxxxx; xxxx xxxxxx xx xxxxxxxx xx xxxxx xxxxxxxxxx xxxx.
+3.  Create a new class that implements the [**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) interface. The [**Run**](https://msdn.microsoft.com/library/windows/apps/br224811) method is a required entry point that will be called when the specified event is triggered; this method is required in every background task.
 
-    > **Xxxx**  Xxx xxxxxxxxxx xxxx xxxxx xxxxxx - xxx xxx xxxxx xxxxxxx xx xxx xxxxxxxxxx xxxx xxxxxxx - xxxx xx xx **xxxxxx** xxxxxxx xxxx xxx **xxxxxx**.
+    > **Note**  The background task class itself - and all other classes in the background task project - need to be **public** classes that are **sealed**.
 
-    Xxx xxxxxxxxx xxxxxx xxxx xxxxx x xxxx xxxxx xxxxxxxx xxxxx xxx x xxxxxxxxxx xxxx xxxxx:
+    The following sample code shows a very basic starting point for a background task class:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 >     //
 >     // ExampleBackgroundTask.cs
@@ -99,13 +99,13 @@ Xxx xxxxxxxxx xxxxx xxxx xxx xxx xx xxxxx x xxx xxxxx xxxx xxxxxxxxxx xxx [**XXx
 >     }
 > ```
 
-4.  Xx xxx xxx xxx xxxxxxxxxxxx xxxx xx xxxx xxxxxxxxxx xxxx, xxxx xxxx xxxxxxxxxx xxxx xxxxx xx xxx x xxxxxxxx. Xx xxx xxx'x xxx x xxxxxxxx, xxxx xxx xxxxxxxxxx xxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxxxx xx xxx Xxx xxxxxx xxxxxxxxx xxxxxx xxxx xxxxxxxxxxxx xxxxxx xxxx xxx xxxxxxxxx.
+4.  If you run any asynchronous code in your background task, then your background task needs to use a deferral. If you don't use a deferral, then the background task process can terminate unexpectedly if the Run method completes before your asynchronous method call has completed.
 
-    Xxxxxxx xxx xxxxxxxx xx xxx Xxx xxxxxx xxxxxx xxxxxxx xxx xxxxxxxxxxxx xxxxxx. Xxxx xxx xxxxxxxx xx x xxxxxx xxxxxxxx xx xx xxx xx xxxxxxxx xxxx xxx xxxxxxxxxxxx xxxxxx. Xxxxxxx xxx xxxxxxxx xxxxxxxx xxxxx xxx xxxxxxxxxxxx xxxx xxxxxxxxx.
+    Request the deferral in the Run method before calling the asynchronous method. Save the deferral to a global variable so it can be accessed from the asynchronous method. Declare the deferral complete after the asynchronous code completes.
 
-    Xxx xxxxxxxxx xxxxxx xxxx xxxx xxx xxxxxxxx, xxxxx xx, xxx xxxxxxxx xx xxxx xxx xxxxxxxxxxxx xxxx xx xxxxxxxx:
+    The following sample code gets the deferral, saves it, and releases it when the asynchronous code is complete:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 >     BackgroundTaskDeferral _deferral = taskInstance.GetDeferral(); // Note: define at class scope
 >     public async void Run(IBackgroundTaskInstance taskInstance)
@@ -138,22 +138,22 @@ Xxx xxxxxxxxx xxxxx xxxx xxx xxx xx xxxxx x xxx xxxxx xxxx xxxxxxxxxx xxx [**XXx
 >     }
 > ```
 
-    **Note**  In C\#, your background task's asynchronous methods can be called using the **async/await** keywords. In C++, a similar result can be achieved by using a task chain.
+    **Note**  In C#, your background task's asynchronous methods can be called using the **async/await** keywords. In C++, a similar result can be achieved by using a task chain.
 
     For more information on asynchronous patterns, see [Asynchronous programming](https://msdn.microsoft.com/library/windows/apps/mt187335). For additional examples of how to use deferrals to keep a background task from stopping early, see the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666).
 
-Xxx xxxxxxxxx xxxxx xxx xxxxxxxxx xx xxx xx xxxx xxx xxxxxxx (xxx xxxxxxx, XxxxXxxx.xxxx.xx).
+The following steps are completed in one of your app classes (for example, MainPage.xaml.cs).
 
-> **Xxxx**  Xxx xxx xxxx xxxxxx x xxxxxxxx xxxxxxxxx xx xxxxxxxxxxx xxxxxxxxxx xxxxx - xxx [Xxxxxxxx x xxxxxxxxxx xxxx](register-a-background-task.md). Xx xxxx xxxx, xxxxxxx xx xxxxx xxx xxxx Y xxxxx, xxx xxx xxxxxx xxxxxxxxx xxx xxxxxxx xxx xxxxxxx xx xx xxx xxxxxxxxxxxx xxxxxxxx xxxxx xxxx xxx xxxx xxxx, xxxx xxxxx xxxxx, xxx (xxxxxxxxxx) x xxxxxxxxx.
+> **Note**  You can also create a function dedicated to registering background tasks - see [Register a background task](register-a-background-task.md). In that case, instead of using the next 3 steps, you can simply construct the trigger and provide it to the registration function along with the task name, task entry point, and (optionally) a condition.
 
  
-**Xxxxxxxx xxx xxxxxxxxxx xxxx xx xxx**
+**Register the background task to run**
 
-1.  Xxxx xxx xx xxx xxxxxxxxxx xxxx xx xxxxxxx xxxxxxxxxx xx xxxxxxxxx xxxxxxx xxx [**XxxxxxxxxxXxxxXxxxxxxxxxxx.XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br224787) xxxxxxxx. Xxxx xxxx xx xxxxxxxxx; xx xxxx xxx xxxxx'x xxxxx xxx xxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxxxxx, xx xxxxx xxxxxx xxxxxxxx xxx xxxx xxxxxxxx xxxxx, xxxxxxx xxxxxx xxxx xxxxxxxxxxx xxx xxxxxx xxx xxx xxxx'x xxxxxxxxx XXX xxxx xxxxxx xxxx xxx xxxxxxxx.
+1.  Find out if the background task is already registered by iterating through the [**BackgroundTaskRegistration.AllTasks**](https://msdn.microsoft.com/library/windows/apps/br224787) property. This step is important; if your app doesn't check for existing background task registrations, it could easily register the task multiple times, causing issues with performance and maxing out the task's available CPU time before work can complete.
 
-    Xxx xxxxxxxxx xxxxxxx xxxxxxxx xx xxx XxxXxxxx xxxxxxxx xxx xxxx x xxxx xxxxxxxx xx xxxx xx xxx xxxx xx xxxxxxx xxxxxxxxxx:
+    The following example iterates on the AllTasks property and sets a flag variable to true if the task is already registered:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 >     var taskRegistered = false;
 >     var exampleTaskName = "ExampleBackgroundTask";
@@ -188,13 +188,13 @@ Xxx xxxxxxxxx xxxxx xxx xxxxxxxxx xx xxx xx xxxx xxx xxxxxxx (xxx xxxxxxx, XxxxX
 >     }
 > ```
 
-2.  Xx xxx xxxxxxxxxx xxxx xx xxx xxxxxxx xxxxxxxxxx, xxx [**XxxxxxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768) xx xxxxxx xx xxxxxxxx xx xxxx xxxxxxxxxx xxxx. Xxx xxxx xxxxx xxxxx xxxxxx xx xxx xxxx xx xxxx xxxxxxxxxx xxxx xxxxx xxxxxxxx xx xxx xxxxxxxxx.
+2.  If the background task is not already registered, use [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) to create an instance of your background task. The task entry point should be the name of your background task class prefixed by the namespace.
 
-    Xxx xxxxxxxxxx xxxx xxxxxxx xxxxxxxx xxxx xxx xxxxxxxxxx xxxx xxxx xxx. Xxx x xxxx xx xxxxxxxx xxxxxxxx, xxx [**XxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224839).
+    The background task trigger controls when the background task will run. For a list of possible triggers, see [**SystemTrigger**](https://msdn.microsoft.com/library/windows/apps/br224839).
 
-    Xxx xxxxxxx, xxxx xxxx xxxxxxx x xxx xxxxxxxxxx xxxx xxx xxxx xx xx xxx xxxx xxx **XxxxXxxxXxxxxxx** xxxxxxx xx xxxxx:
+    For example, this code creates a new background task and sets it to run when the **TimeZoneChanged** trigger is fired:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 >     var builder = new BackgroundTaskBuilder();
 > 
@@ -210,11 +210,11 @@ Xxx xxxxxxxxx xxxxx xxx xxxxxxxxx xx xxx xx xxxx xxx xxxxxxx (xxx xxxxxxx, XxxxX
 >     builder->SetTrigger(ref new SystemTrigger(SystemTriggerType::TimeZoneChange, false));
 > ```
 
-3.  Xxx xxx xxx x xxxxxxxxx xx xxxxxxx xxxx xxxx xxxx xxxx xxx xxxxx xxx xxxxxxx xxxxx xxxxxx (xxxxxxxx). Xxx xxxxxxx, xx xxx xxx'x xxxx xxx xxxx xx xxx xxxxx xxx xxxx xx xxxxxxx, xxx xxx xxxxxxxxx **XxxxXxxxxxx**. Xxx x xxxx xx xxxxxxxx xxxxxxxxxx, xxx [**XxxxxxXxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224835).
+3.  You can add a condition to control when your task will run after the trigger event occurs (optional). For example, if you don't want the task to run until the user is present, use the condition **UserPresent**. For a list of possible conditions, see [**SystemConditionType**](https://msdn.microsoft.com/library/windows/apps/br224835).
 
-    Xxx xxxxxxxxx xxxxxx xxxx xxxxxxx x xxxxxxxxx xxxxxxxxx xxx xxxx xx xx xxxxxxx:
+    The following sample code assigns a condition requiring the user to be present:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cs
 >     builder.AddCondition(new SystemCondition(SystemConditionType.UserPresent));
 > ```
@@ -222,11 +222,11 @@ Xxx xxxxxxxxx xxxxx xxx xxxxxxxxx xx xxx xx xxxx xxx xxxxxxx (xxx xxxxxxx, XxxxX
 >     builder->AddCondition(ref new SystemCondition(SystemConditionType::UserPresent));
 > ```
 
-4.  Xxxxxxxx xxx xxxxxxxxxx xxxx xx xxxxxxx xxx Xxxxxxxx xxxxxx xx xxx [**XxxxxxxxxxXxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224768) xxxxxx. Xxxxx xxx [**XxxxxxxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224786) xxxxxx xx xx xxx xx xxxx xx xxx xxxx xxxx.
+4.  Register the background task by calling the Register method on the [**BackgroundTaskBuilder**](https://msdn.microsoft.com/library/windows/apps/br224768) object. Store the [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) result so it can be used in the next step.
 
-    Xxx xxxxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxx xxxx xxx xxxxxx xxx xxxxxx:
+    The following code registers the background task and stores the result:
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 >     ```cs
 >     BackgroundTaskRegistration task = builder.Register();
 >     ```
@@ -238,16 +238,16 @@ Xxx xxxxxxxxx xxxxx xxx xxxxxxxxx xx xxx xx xxxx xxx xxxxxxx (xxx xxxxxxx, XxxxX
 
     To ensure that your Universal Windows app continues to run properly after you release an update, you must call [**RemoveAccess**](https://msdn.microsoft.com/library/windows/apps/hh700471) and then call [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) when your app launches after being updated. For more information, see [Guidelines for background tasks](guidelines-for-background-tasks.md).
 
-## Xxxxxx xxxxxxxxxx xxxx xxxxxxxxxx xxxxx xxxxx xxxxxxxx
+## Handle background task completion using event handlers
 
 
-Xxx xxxxxx xxxxxxxx x xxxxxx xxxx xxx [**XxxxxxxxxxXxxxXxxxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224781), xx xxxx xxxx xxx xxx xxx xxxxxxx xxxx xxx xxxxxxxxxx xxxx. Xxxx xxx xxx xx xxxxxxxx xx xxxxxxx, xxx xxxx xxxxxx xxxx xx xxxxxx xx xxx xxxxxxxxxx xxxx xxx xxxxxxxxx xxxxx xxx xxxx xxxx xxx xxx xxx xx xxx xxxxxxxxxx. (Xxx XxXxxxxxxxx xxxxxx xxxx xx xxxxxx xxxxxxxxxxx xx xxx xxxxxxxxxx xxxx xxxxxxxxx xxxxx xxxx xxx xx xxxxxxxxx xx xxx xxxxxxxxxx.)
+You should register a method with the [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781), so that your app can get results from the background task. When the app is launched or resumed, the mark method will be called if the background task has completed since the last time the app was in the foreground. (The OnCompleted method will be called immediately if the background task completes while your app is currently in the foreground.)
 
-1.  Xxxxx xx XxXxxxxxxxx xxxxxx xx xxxxxx xxx xxxxxxxxxx xx xxxxxxxxxx xxxxx. Xxx xxxxxxx, xxx xxxxxxxxxx xxxx xxxxxx xxxxx xxxxx x XX xxxxxx. Xxx xxxxxx xxxxxxxxx xxxxx xxxx xx xxxxxxxx xxx xxx XxXxxxxxxxx xxxxx xxxxxxx xxxxxx, xxxx xxxxxx xxxx xxxxxxx xxxx xxx xxx xxx *xxxx* xxxxxxxxx.
+1.  Write an OnCompleted method to handle the completion of background tasks. For example, the background task result might cause a UI update. The method footprint shown here is required for the OnCompleted event handler method, even though this example does not use the *args* parameter.
 
-    Xxx xxxxxxxxx xxxxxx xxxx xxxxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxx xxx xxxxx xx xxxxxxx XX xxxxxx xxxxxx xxxx xxxxx x xxxxxxx xxxxxx.
+    The following sample code recognizes background task completion and calls an example UI update method that takes a message string.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 >     ```cs
 >     private void OnCompleted(IBackgroundTaskRegistration task, BackgroundTaskCompletedEventArgs args)
 >     {
@@ -271,11 +271,11 @@ Xxx xxxxxx xxxxxxxx x xxxxxx xxxx xxx [**XxxxxxxxxxXxxxXxxxxxxxxXxxxxXxxxxxx**](
 
      
 
-2.  Xx xxxx xx xxxxx xxx xxxxxxxxxx xxx xxxxxxxxxx xxxx. Xxxxx xxxx xxxx xx xxxx, xxx x xxx [**XxxxxxxxxxXxxxXxxxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224781) xxxxxx. Xxxxxxx xxxx XxXxxxxxxxx xxxxxx xx xxx xxxxxxxxx xxx xxx **XxxxxxxxxxXxxxXxxxxxxxxXxxxxXxxxxxx** xxxxxxxxxxx.
+2.  Go back to where you registered the background task. After that line of code, add a new [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) object. Provide your OnCompleted method as the parameter for the **BackgroundTaskCompletedEventHandler** constructor.
 
-    Xxx xxxxxxxxx xxxxxx xxxx xxxx x [**XxxxxxxxxxXxxxXxxxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224781) xx xxx [**XxxxxxxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224786):
+    The following sample code adds a [**BackgroundTaskCompletedEventHandler**](https://msdn.microsoft.com/library/windows/apps/br224781) to the [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786):
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 >     ```cs
 >     task.Completed += new BackgroundTaskCompletedEventHandler(OnCompleted);
 >     ```
@@ -283,19 +283,19 @@ Xxx xxxxxx xxxxxxxx x xxxxxx xxxx xxx [**XxxxxxxxxxXxxxXxxxxxxxxXxxxxXxxxxxx**](
 >     task->Completed += ref new BackgroundTaskCompletedEventHandler(this, &amp;ExampleBackgroundTask::OnCompleted);
 >     ```
 
-## Xxxxxxx xxxx xxxx xxx xxxx xxxxxxxxxx xxxxx xx xxx xxx xxxxxxxx
+## Declare that your app uses background tasks in the app manifest
 
 
-Xxxxxx xxxx xxx xxx xxx xxxxxxxxxx xxxxx, xxx xxxx xxxxxxx xxxx xxxxxxxxxx xxxx xx xxx xxx xxxxxxxx. Xx xxxx xxx xxxxxxxx xx xxxxxxxx x xxxxxxxxxx xxxx xxxx x xxxxxxx xxxx xxx'x xxxxxx xx xxx xxxxxxxx, xxx xxxxxxxxxxxx xxxx xxxx.
+Before your app can run background tasks, you must declare each background task in the app manifest. If your app attempts to register a background task with a trigger that isn't listed in the manifest, the registration will fail.
 
-1.  Xxxx xxx xxxxxxx xxxxxxxx xxxxxxxx xx xxxxxxx xxx xxxx xxxxx Xxxxxxx.xxxxxxxxxxxx.
-2.  Xxxx xxx **Xxxxxxxxxxxx** xxx.
-3.  Xxxx xxx **Xxxxxxxxx Xxxxxxxxxxxx** xxxx-xxxx, xxxxxx **Xxxxxxxxxx Xxxxx** xxx xxxxx **Xxx**.
-4.  Xxxxxx xxx **Xxxxxx xxxxx** xxxxxxxx.
-5.  Xx xxx **Xxxxx xxxxx:** xxxxxxx, xxxxx xxx xxxxxxxxx xxx xxxx xx xxxx xxxxxxxxxx xxxxx xxxxx xx xxx xxxx xxxxxxx xx XxxxxxxXxxxxxxxxY.XxxxxxxXxxxxxxxxxXxxx.
-6.  Xxxxx xxx xxxxxxxx xxxxxxxx.
+1.  Open the package manifest designer by opening the file named Package.appxmanifest.
+2.  Open the **Declarations** tab.
+3.  From the **Available Declarations** drop-down, select **Background Tasks** and click **Add**.
+4.  Select the **System event** checkbox.
+5.  In the **Entry point:** textbox, enter the namespace and name of your background class which is for this example is RuntimeComponent1.ExampleBackgroundTask.
+6.  Close the manfiest designer.
 
-    Xxx xxxxxxxxx Xxxxxxxxxx xxxxxxx xx xxxxx xx xxxx Xxxxxxx.xxxxxxxxxxxx xxxx xx xxxxxxxx xxx xxxxxxxxxx xxxx:
+    The following Extensions element is added to your Package.appxmanifest file to register the background task:
 
     ```xaml
     <Extensions>
@@ -307,48 +307,52 @@ Xxxxxx xxxx xxx xxx xxx xxxxxxxxxx xxxxx, xxx xxxx xxxxxxx xxxx xxxxxxxxxx xxxx 
     </Extensions>
     ```
 
-## Xxxxxxx xxx xxxx xxxxx
+## Summary and next steps
 
 
-Xxx xxxxxx xxx xxxxxxxxxx xxx xxxxxx xx xxx xx xxxxx x xxxxxxxxxx xxxx xxxxx, xxx xx xxxxxxxx xxx xxxxxxxxxx xxxx xxxx xxxxxx xxxx xxx, xxx xxx xx xxxx xxxx xxx xxxxxxxxx xxxx xxx xxxxxxxxxx xxxx xx xxxxxxxx. Xxx xxxxxx xxxx xxxxxxxxxx xxx xx xxxxxx xxx xxxxxxxxxxx xxxxxxxx xx xxxx xxxx xxx xxx xxxxxxxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxx.
+You should now understand the basics of how to write a background task class, how to register the background task from within your app, and how to make your app recognize when the background task is complete. You should also understand how to update the application manifest so that your app can successfully register the background task.
 
-> **Xxxx**  Xxxxxxxx xxx [xxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=618666) xx xxx xxxxxxx xxxx xxxxxxxx xx xxx xxxxxxx xx x xxxxxxxx xxx xxxxxx XXX xxx xxxx xxxx xxxxxxxxxx xxxxx.
-
- 
-
-Xxx xxx xxxxxxxxx xxxxxxx xxxxxx xxx XXX xxxxxxxxx, xxxxxxxxxx xxxx xxxxxxxxxx xxxxxxxx, xxx xxxx xxxxxxxx xxxxxxxxxxxx xxx xxxxxxx xxxx xxxx xxx xxxxxxxxxx xxxxx.
-
-> **Xxxx**  Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Note**  Download the [background task sample](http://go.microsoft.com/fwlink/p/?LinkId=618666) to see similar code examples in the context of a complete and robust UWP app that uses background tasks.
 
  
 
-## Xxxxxxx xxxxxx
+See the following related topics for API reference, background task conceptual guidance, and more detailed instructions for writing apps that use background tasks.
+
+> **Note**  This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
+
+ 
+
+## Related topics
 
 
-**Xxxxxxxx xxxxxxxxxx xxxx xxxxxxxxxxxxx xxxxxx**
+**Detailed background task instructional topics**
 
-* [Xxxxxxx xx xxxxxx xxxxxx xxxx xxxxxxxxxx xxxxx](respond-to-system-events-with-background-tasks.md)
-* [Xxxxxxxx x xxxxxxxxxx xxxx](register-a-background-task.md)
-* [Xxx xxxxxxxxxx xxx xxxxxxx x xxxxxxxxxx xxxx](set-conditions-for-running-a-background-task.md)
-* [Xxx x xxxxxxxxxxx xxxxxxx](use-a-maintenance-trigger.md)
-* [Xxxxxx x xxxxxxxxx xxxxxxxxxx xxxx](handle-a-cancelled-background-task.md)
-* [Xxxxxxx xxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxx](monitor-background-task-progress-and-completion.md)
-* [Xxx x xxxxxxxxxx xxxx xx x xxxxx](run-a-background-task-on-a-timer-.md)
+* [Respond to system events with background tasks](respond-to-system-events-with-background-tasks.md)
+* [Register a background task](register-a-background-task.md)
+* [Set conditions for running a background task](set-conditions-for-running-a-background-task.md)
+* [Use a maintenance trigger](use-a-maintenance-trigger.md)
+* [Handle a cancelled background task](handle-a-cancelled-background-task.md)
+* [Monitor background task progress and completion](monitor-background-task-progress-and-completion.md)
+* [Run a background task on a timer](run-a-background-task-on-a-timer-.md)
 
-**Xxxxxxxxxx xxxx xxxxxxxx**
+**Background task guidance**
 
-* [Xxxxxxxxxx xxx xxxxxxxxxx xxxxx](guidelines-for-background-tasks.md)
-* [Xxxxx x xxxxxxxxxx xxxx](debug-a-background-task.md)
-* [Xxx xx xxxxxxx xxxxxxx, xxxxxx, xxx xxxxxxxxxx xxxxxx xx Xxxxxxx Xxxxx xxxx (xxxx xxxxxxxxx)](http://go.microsoft.com/fwlink/p/?linkid=254345)
+* [Guidelines for background tasks](guidelines-for-background-tasks.md)
+* [Debug a background task](debug-a-background-task.md)
+* [How to trigger suspend, resume, and background events in Windows Store apps (when debugging)](http://go.microsoft.com/fwlink/p/?linkid=254345)
 
-**Xxxxxxxxxx Xxxx XXX Xxxxxxxxx**
+**Background Task API Reference**
 
-* [**Xxxxxxx.XxxxxxxxxxxXxxxx.Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224847)
+* [**Windows.ApplicationModel.Background**](https://msdn.microsoft.com/library/windows/apps/br224847)
 
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

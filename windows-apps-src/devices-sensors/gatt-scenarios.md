@@ -1,49 +1,49 @@
 ---
-xx.xxxxxxx: YYXYYYYY-XXYY-YXXY-XXYY-YYYYXYYYXYYY
-xxxxx: Xxxxxxxxx XXXX
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxxxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxxx Xxxxxxx (XXXX) xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx, xxxxx xxxx xxxxxx xxxx xxx xxxxx xxxxxx XXXX xxxxxxxxx.
+ms.assetid: 28B30708-FE08-4BE9-AE11-5429F963C330
+title: Bluetooth GATT
+description: この記事では、ユニバーサル Windows プラットフォーム (UWP) アプリ用の Bluetooth Generic Attribute Profile (GATT) の概要と、3 つの一般的な GATT シナリオについて説明します。
 ---
-# Xxxxxxxxx XXXX
+# Bluetooth GATT
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-** Xxxxxxxxx XXXx
+** 重要な API **
 
--   [**Xxxxxxx.Xxxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
--   [**Xxxxxxx.Xxxxxxx.Xxxxxxxxx.XxxxxxxXxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
+-   [**Windows.Devices.Bluetooth**](https://msdn.microsoft.com/library/windows/apps/Dn263413)
+-   [**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685)
 
-Xxxx xxxxxxx xxxxxxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxxx Xxxxxxx (XXXX) xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx, xxxxx xxxx xxxxxx xxxx xxx xxxxx xxxxxx XXXX xxxxxxxxx: xxxxxxxxxx Xxxxxxxxx xxxx, xxxxxxxxxxx x Xxxxxxxxx XX xxxxxxxxxxx xxxxxx, xxx xxxxxxxxxxx xxx xxxxxxxxxxxx xx Xxxxxxxxx XX xxxxxx xxxx.
+この記事では、3 つの一般的な GATT シナリオのコード例と一緒に、ユニバーサル Windows プラットフォーム (UWP) アプリでの Bluetooth 汎用属性プロファイル (GATT) の概要を説明します。シナリオとは、Bluetooth データの取得、Bluetooth LE 温度測定装置の制御、および Bluetooth LE デバイス データの表示方法の制御です。
 
-## Xxxxxxxx
+## 概要
 
-Xxxxxxxxxx xxx xxx xxx XXXx xx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxx.XxxxxxxXxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn297685) xxxxxxxxx xx xxxxxx Xxxxxxxxx XX xxxxxxxx, xxxxxxxxxxx, xxx xxxxxxxxxxxxxxx. Xxxxxxxxx XX xxxxxxx xxxxxx xxxxx xxxxxxxxxxxxx xxxxxxx x xxxxxxxxxx xx:
+開発者は、[**Windows.Devices.Bluetooth.GenericAttributeProfile**](https://msdn.microsoft.com/library/windows/apps/Dn297685) 名前空間で API を使って Bluetooth LE のサービス、記述子、および特性にアクセスすることができます。 Bluetooth LE デバイスは、その機能をコレクションを通じて公開します。コレクションには次の情報が含まれています。
 
--   Xxxxxxx Xxxxxxxx
--   Xxxxxxxx Xxxxxxxx
--   Xxxxxxxxxxxxxxx
--   Xxxxxxxxxxx
+-   プライマリ サービス
+-   含まれているサービス
+-   特性
+-   記述子
 
-Xxxxxxx xxxxxxxx xxxxxx xxx xxxxxxxxxx xxxxxxxx xx xxx XX xxxxxx xxx xxxxxxx x xxxxxxxxxx xx xxxxxxxxxxxxxxx xxxx xxxxxx xxx xxxxxxx. Xxxxx xxxxxxxxxxxxxxx, xx xxxx, xxxxxxx xxxxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxxxxxxxxx.
+プライマリ サービスは、LE デバイスの機能的なコントラクトを定義するもので、サービスを定義する特性のコレクションを含みます。 これらの特性はさらに、その特性を表す記述子を含みます。
 
-Xxx Xxxxxxxxx XXXX XXXx xxxxxx xxxxxxx xxx xxxxxxxxx, xxxxxx xxxx xxxxxx xx xxx xxx xxxxxxxxx. Xx xxx xxxxxx xxxxx xxxxxxx xxxxxxxx xxx xxxxxxxxxx xx Xxxxx Xxxxxx Xxxxx xx xxx Xxxxxxxxx XX xxxxxx xxxxx xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225459) XXXx.
+Bluetooth GATT API が公開するのは、生のトランスポートへのアクセスではなく、オブジェクトと関数です。 プライマリ サービスは、[**Windows.Devices.Enumeration**](https://msdn.microsoft.com/library/windows/apps/BR225459) API を使い、Bluetooth LE デバイスの子デバイス ノードとしてドライバー レベルで列挙されます。
 
-Xxx Xxxxxxxxx XXXX XXXx xxxx xxxxxx xxxxxxxxxx xx xxxx xxxx Xxxxxxxxx XX xxxxxxx xxxx xxx xxxxxxx xx xxxxxxx xxx xxxxxxxxx xxxxx:
+また、Bluetooth GATT API で Bluetooth LE デバイスと連携することによって、次のことが可能となります。
 
--   Xxxxxxx Xxxxxxx / Xxxxxxxxxxxxxx / Xxxxxxxxxx xxxxxxxxx
--   Xxxx xxx Xxxxx Xxxxxxxxxxxxxx / Xxxxxxxxxx xxxxxx
--   Xxxxxxxx x xxxxxxxx xxx xxx Xxxxxxxxxxxxxx XxxxxXxxxxxx xxxxx
+-   サービス/特性/記述子の探索
+-   特性/記述子の値の読み取りと書き込み
+-   特性の ValueChanged イベントで呼び出されるコールバックの登録
 
-Xxx Xxxxxxxxx XXXX XXXx xxxxxxxx xxxxxxxxxxx xx xxxxxxx xxxx xxxxxx xxxxxxxxxx xxx xxxxxxxxx xxxxxxxxxx xxxxxxxx xx xxx xx xxxxxx xxxxxxxxxx xxx xxxxxxxxxxxxx. Xxxx xxxxxxx x xxxxx xxx xxxxxxxxxx xx xxxxxx xxxxxxxxxxxxx xx x Xxxxxxxxx XX xxxxxx xxxx xx xxx.
+基本的なプロパティの扱いやデバイスの管理と構成の助けとなる妥当な既定値が Bluetooth GATT API によって提供されるため、開発が単純化されます。 開発者は、アプリからこの API を介して Bluetooth LE デバイスの機能を利用することができます。
 
-Xx xxxxxx x xxxxxx xxxxxxxxxxxxxx x xxxxxxxxx xxx xx xxxx xxxxx xxxxxxxxx xx xxx XXXX xxxxxxxx xxx xxxxxxxxxxxxxxx xxx xxxxxxxxxxx xxxxxxx xx xxxxxxx, xxx xx xxxxxxx xxx xxxxxxxx xxxxxxxxxxxxxx xxxxxx xxxx xxxx xxx xxxxxx xxxx xxxxxxxx xx xxx XXX xx xxxxxxxxxxx xxxx xxxxxx xxxx xxxxxx xxxxx xxxxxxxxx xx xxx xxxx. Xxx Xxxxxxxxx XXXX XXXx xxxxxx xxxx xxx xxxxx xxxxxxxxxx xxxxxxxx xx xxxxxxxxxxx xxxx x Xxxxxxxxx XX xxxxxx. Xx xxxxxxxxx xxx xxxx, xx xxxxxxxxxxx xxxxxxx xxxx xx xxxxxxx, xxxxxx xx x Xxxxxxxxx XXX xxxxxxxx xxxxxxx, xx x xxxxxx xxxxxxx xxxxxxxxxxx xx x xxxxxx xxxxxx. X xxxxxxx xxxxxxx x xxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxxxx xxx xxx xxxxxx, xx xx xxxx xxx xxxxxxxxx xxxx xxxxxxxxxx xxx xxx xx xxxxxxxxx xx.
+実用的なアプリケーションを作成するためには、利用する GATT のサービスと特性についての予備知識が開発者に求められます。実際に必要な特性値を処理し、API から提供されるバイナリ データを実用的なデータに変換したうえで、ユーザーに提示しなければなりません。 Bluetooth GATT API が公開するのは、Bluetooth LE デバイスとの通信に必要な基本的なプリミティブだけです。 データを解釈するためには、Bluetooth SIG の標準のプロファイルか、デバイスのベンダーが実装したカスタム プロファイルによって、アプリケーション プロファイルを定義する必要があります。 プロファイルは、交換されるデータが表す内容や、その解釈の方法に関して、アプリケーションとデバイスとの間で交わされるバインド コントラクトを形成します。
 
-Xxx xxxxxxxxxxx xxx Xxxxxxxxx XXX xxxxxxxxx x [xxxx xx xxxxxx xxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=317977) xxxxxxxxx.
+Bluetooth SIG は、利便性向上のため、[一連のプロファイル](http://go.microsoft.com/fwlink/p/?LinkID=317977)を一般公開しています。
 
-## Xxxxxxxx Xxxxxxxxx xxxx
+## Bluetooth データの取得
 
-Xx xxxx xxxxxxx, xxx xxx xxxxxxxx xxxxxxxxxxx xxxxxxxxxxxx xxxx x Xxxxxxxxx xxxxxx xxxx xxxxxxxxxx xxx Xxxxxxxxx XX Xxxxxx Xxxxxxxxxxx Xxxxxxx. Xxx xxx xxxxxxxxx xxxx xx xxxxx xx xx xxxxxxxx xxxx x xxx xxxxxxxxxxx xxxxxxxxxxx xx xxxxxxxxx. Xx xxxxxxxxxxx xx xxxxx xxxxxxx xxx xxx "Xxxxxxxxxxx Xxxxxxxxxxxxxx Xxxxx Xxxxxxx" xxxxx, xxx xxx xxxx xxxxxxx xxxxxxxxxxxxxx xxxxx xxxxxxx xxxxx xxxxxxxxxxxxx xxxxx xx xx xxxxxxx xx xxx xxxxxxxxxx.
+この例のアプリは、Bluetooth LE Health Thermometer Service を実装する Bluetooth デバイスから温度の測定値を取り込みます。 アプリでは、新しい温度測定値が利用可能な状態になったときに通知を受け取ることができるように指定します。 "Thermometer Characteristic Value Changed" イベントのハンドラーを登録することにより、フォアグラウンドでの実行中、特性値が変化したときに、そのイベント通知を受け取ります。
 
-Xxxx xxxx xxxx xxx xxx xx xxxxxxxxx, xx xxxx xxxxxxx xxx xxxxxx xxxxxxxxx xxx xxxx xx xxxxxxx, xx xxxx xxxxxxx xxxxxx xxxxxxxxxxx xxx xxxxxxxxxxxxxx xxxx xxxxx.
+アプリが中断されているときは、デバイスのリソースをすべて解放し、再開された時点で再びデバイスの列挙処理と初期化処理を行う必要がある点に注意してください。
 
 ```csharp
 double convertTemperatureData(byte[] temperatureData)
@@ -160,9 +160,10 @@ void MainPage::TemperatureMeasurementChanged(
 }
 ```
 
-## Xxxxxxx x Xxxxxxxxx XX xxxxxxxxxxx xxxxxx
+## Bluetooth LE 温度計デバイスの制御
 
-Xx xxxx xxxxxxx, xx XXX xxx xxxx xx x xxxxxxxxxx xxx x xxxxxxxxxx Xxxxxxxxx XX Xxxxxxxxxxx xxxxxx. Xxx xxxxxx xxxx xxxxxxxx x xxxxxx xxxxxxxxxxxxxx xxxxx xxxxxx xxxxx xx xxxxxxxx xxx xxxxx xxxxxxx xx xxxxxx Xxxxxxx xx Xxxxxxxxxx xxxxxxx, xx xxxxxxxx xx xxx xxxxxxxx xxxxxxxxxxxxxxx xx xxx [**XxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn297603) xxxxxxx. Xxx xxx xxxx xxxxxxxx xxxxx xxxxxxxxxxxx xx xxxx xxxx xxxx xxx xxxxxx xxx xxxxxxxxxxx xxxxxxxx xxx xxx xx x xxxxxx xxxxx.
+この例の UWP アプリは、架空の Bluetooth LE 温度計デバイスのコントローラーとして機能します。 [
+            **HealthThermometer**](https://msdn.microsoft.com/library/windows/apps/Dn297603) プロファイルの標準的な特性に加え、デバイスには形式特性が宣言されており、ユーザーは摂氏または華氏で温度の測定値を取得することができます。 このアプリは、形式と測定期間を単一の値として確実に設定するために、信頼性の高い書き込みトランザクションを使っています。
 
 ```csharp
 // Uuid of the "Format" Characteristic Value
@@ -280,9 +281,9 @@ void MainPage::Initialize()
 
 ```
 
-## Xxxxxxx xxx xxxxxxxxxxxx xx Xxxxxxxxx XX xxxxxx xxxx
+## Bluetooth LE デバイス データの表示制御
 
-X Xxxxxxxxx XX xxxxxxx xxx xxxxxx x xxxxxxx xxxxxxx xxxx xxxxxxxx xxx xxxxxxx xxxxxxx xxxxx xx xxx xxxx. Xxx xxxxxxx xxxxxxx xxxxxxxx xx xxxxxxxx [**XxxxxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn263742) xxxxxxxxxx xxxxx xxxxxx xxxx xxxxxxxxxxx xx xxxxxxxxxxxxxx xx xxx xxxxxxx xxxxx xxxx. Xxxx xxxxxxxx xxxxxxxx xxxxxxx xx xx xxx xxxx xxxxx xxxx xxxx x xxxxxx xxx xxxx xxx **XxxxxxxxxxxxXxxxxxx** xxxxxxxx xx xxxxxx x xxxxxxxxxxxxxx xxxxx, xxxxxx xxxxxxxxxx xx xx xxx xxxx.
+Bluetooth LE デバイスは、現在のバッテリ レベルをユーザーに知らせるバッテリ サービスを公開している場合があります。 バッテリ サービスには、[**PresentationFormats**](https://msdn.microsoft.com/library/windows/apps/Dn263742) というオプションの記述子があり、バッテリ レベル データの表示に活用することができます。 このシナリオでは、そうしたデバイスと連携し、**PresentationFormats** プロパティを使って特性値の形式を設定したうえでその値をユーザーに表示するアプリの例を紹介します。
 
 ```csharp
 async void Initialize()
@@ -393,4 +394,8 @@ void MainPage::BatteryLevelChanged(
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

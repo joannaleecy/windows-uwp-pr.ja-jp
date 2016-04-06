@@ -1,15 +1,16 @@
 ---
-xxxxx: Xxxxxx xxxxxx xxxxxxx
-xxxxxxxxxxx: Xxxx xxxxxxx xxxx xxxxx xxx xx xxxxxx x xxxxxx xxxxxx xx xxxxxx xxx xxx xx xxxxxxxxxxxx xx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
-xx.xxxxxxx: YYYYYYYY-XYYX-YXXY-YYYX-XXXYYYXYXXXY
+title: Create random numbers
+description: This example code shows how to create a random number or buffer for use in cryptography in an Universal Windows Platform (UWP) app.
+ms.assetid: 15746824-F93A-4DC7-836E-EBA916D2CFD3
+author: awkoren
 ---
 
-# Xxxxxx xxxxxx xxxxxxx
+# Create random numbers
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxx xxxxxxx xxxx xxxxx xxx xx xxxxxx x xxxxxx xxxxxx xx xxxxxx xxx xxx xx xxxxxxxxxxxx xx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx.
+This example code shows how to create a random number or buffer for use in cryptography in an Universal Windows Platform (UWP) app.
 
 ```cs
 public string GenerateRandomData()
@@ -34,11 +35,6 @@ public uint GenerateRandomNumber()
 }
 ```
 
- 
-
- 
+<!--HONumber=Mar16_HO5-->
 
 
-
-
-<!--HONumber=Mar16_HO1-->

@@ -1,30 +1,34 @@
 ---
-xx.xxxxxxx: YxYxxYxY-xYYx-YYYx-YxYx-YYYYxYYYYYxY
-xxxxxxxxxxx: Xxxxxxx xxxxxxxx xxxx xxxx, xxx xxxxxx (xxxx xxxx-xxxxx xxx xxxxxxx-xxxxx), xxxx xxxx, xxx xx-xxx xxxxxxxx.
-xxxxx: Xxxxxxxx xxxx xxx
+ms.assetid: 4e8cc0c0-b14c-472c-9e1c-4601d10289d2
+description: Windows では、無料のアプリ、試用版 (時間ベースと機能ベースの両方)、有料のアプリ、アプリ内製品がサポートされます。
+title: アプリの収益の獲得
 ---
 
-# Xxxxxxxx xxxx xxx
+# アプリの収益の獲得
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxxxxx xxxxxxxx xxxx xxxx, xxx xxxxxx (xxxx xxxx-xxxxx xxx xxxxxxx-xxxxx), xxxx xxxx, xxx xx-xxx xxxxxxxx. Xxxx Xxxxxxx xxx xxx xxx xxxxx xxxxxxxx xx xxx xxxx xxxxxxxxx xxx xxxx xxx xxx xxxx xxx xxxxxx xxxx xxxxx xxx xxxx. Xxx xxxxxx xx xxxx xxxxxxx xxxx xxx xxx xx xxxxx xxxxx xxxxxxxx xxxx xxxx xxx.
+Windows では、無料のアプリ、試用版 (時間ベースと機能ベースの両方)、有料のアプリ、アプリ内製品がサポートされます。 Windows アプリでこれらの機能を使うと、アプリを無料で試してニーズに合った製品を選ぶ機会をユーザーに提供できます。 このセクションのトピックでは、これらの機能をアプリに組み込む方法について説明します。
 
-Xxx xxxxxxx xxxxx xxx xxxx xxxxxxx xx xxx Xxxxxxx Xxxxx xxx xxx xxx xxx xxxx xxx xxx xxxxx xxxx xxx xxxxx, xxx [Xxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt148536).
+Windows ストアの手数料に関する説明とアプリの収益を受け取る方法について詳しくは、「[支払いの受け取り](https://msdn.microsoft.com/library/windows/apps/mt148536)」をご覧ください。
 
-## Xx xxxx xxxxxxx
+## このセクションの内容
 
 
-| Xxxxx                                                                                                       | Xxxxxxxxxxx                 |
+| トピック                                                                                                       | 説明                 |
 |-------------------------------------------------------------------------------------------------------------|-----------------------------|
-| [Xxxxxxx xx xxxxx xxxxxxxx xx x xxxxx xxxxxxx](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | Xx xxx xxxxxx xxxxxxxxx xx xxx xxxx xxx xxx xxxx xxxxxx x xxxxx xxxxxx, xxx xxx xxxxxx xxxx xxxxxxxxx xx xxxxxxx xx xxx xxxx xxxxxxx xx xxxx xxx xx xxxxxxxxx xx xxxxxxxx xxxx xxxxxxxx xxxxxx xxx xxxxx xxxxxx. Xxxxxxxxx xxxxx xxxxxxxx xxxxxx xx xxxxxxx xxxxxx xxx xxxxx xxxxxx, xxxx xxxx xxxx xxxx xxxx xxx xxxx xxxxxx xxxx xx xxxx xxxx x xxxx xxxxxxx xxx xxxx xxxxxxxxx. Xxx xxx xxxx xxxxxx xxxxxxxx, xxxx xx xxxxxxx xx xxxxxxxxxx, xxxx xxx xxxxx xxxx xxxxxx xxx xxxxx, xxxxxx x xxxxxxxx xxxx xxxx xxx. |
-| [Xxxxxx xx-xxx xxxxxxx xxxxxxxxx](enable-in-app-product-purchases.md)                                       | Xxxxxxx xxxx xxx xx xxxx xx xxx, xxx xxx xxxx xxxxxxx, xxxxx xxxx, xx xxx xxx xxxxxxxxxxxxx (xxxx xx xxxxxxxxx xxx xxxx xxxxx xx x xxxx) xxxx xxxxx xxxxxx xxx xxx. Xxxx xx xxxx xxx xxx xx xxxxxx xxxxx xxxxxxxx xx xxxx xxx.    |
-| [Xxx xxx xx xxxx xxxx Xxxxxxxxx Xxxxxxxxxxx](add-ads-to-apps-with-microsoft-advertising.md)      | Xxxx xxxx xxxxx xxxx xxxx Xxxxxxx xxxx xx xxxxxxxxx xxxxx xxx xxxxxx xxx xxxx Xxxxxxxxx Xxxxxxxxxxx. Xxx xxx xxxx xx Xxxxxxx xxxx xxx XXx, xxxxxxx, xxx xxxxxx. Xxx xxx xxxxxxx xxxx xx xxxxxxxxxxx xx xxxx xxxx xx xxxxx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx.   |
-| [Xxx xx xxxxxxxxx xx xxxxxxxx xxxxxxx](use-ad-mediation-to-maximize-revenue.md)                           | Xxxxxxxxx xxxxxxxx xxxxxxx xxx xx xxxxxxxxx, xxxxx xxxx xxx xxxxxxxx xxxx xx-xxx xxxxxxxxxxx xxxxxxx xx xxxxxxxxx xxxxxx xx xxxxxxxx xxxx xxxxxxxx xx xxxxxxxx. Xxxxxxxxx xx xxxxxxxx xxx xxxx xxxxx xxx xxxxxxxxx, xxxx xxxx xxxxxx x xxxxxx xxxx xxx xxxxxxxx xxxxx (xXXX) xx xxxxxx xxxx xxxx (xxxxxxxxxx xx xxx xxxxxx xxxx xxxx xxx xxxxx x xxxxxxx) xx xxxxxxx xxxxxxx xxxx xxxxxx. Xxxx x xxxxxx xx xxxxxxx, xxx xxx xxx xx xxxx xxxxxxxx xx xxxxxxxx, xxxxxxx xxx xx xxxx xxxxxxxxx xxxxxxx. Xx xxxxxxxxx xxxxx xxx xxxxxxxx xxxx xx xxxxxxxxxxxx xx xxxxxx xxxx xxx xxx xxxxxx xxxxxxx x xxxx xx.  |
-| [Xxx Xxxxxxx Xxxxx xxxxxxxx](using-windows-store-services.md)                                    | Xxx Xxxxxxx Xxxxx xxxxxxx xxxxxxx xxxxxxxx xxxx xxx xxx xxxx xxx XXXX XXXx xx xxxxxxxxxxxxxxxx xxxxxx xxxxxxx xxxxx xx xxxx xxx xxxx xxxx xxx xxxxxxxxxx xx xxxx xx xxxx xxxxxxxxxxxx'x Xxxxxxx Xxx Xxxxxx xxxxxxx.    |
+| [試用版での機能の除外または制限](exclude-or-limit-features-in-a-trial-version-of-your-app.md) | ユーザーがアプリを無料で使うことができる試用期間を設け、その期間中は一部の機能を除外または制限することで、アプリを通常版にアップグレードするようユーザーに促すことができます。 どのような機能を制限するかをコーディング開始前に決め、完全なライセンスが購入されたときにだけその機能が正しく動作するようにアプリを設定します。 また、ユーザーがアプリを購入する前の試用期間中にだけバナーや透かしなどを表示する機能を有効にすることもできます。 |
+| [アプリ内製品購入の有効化](enable-in-app-product-purchases.md)                                       | アプリが無料であるかどうかにかかわらず、コンテンツ、その他のアプリ、アプリの新機能 (ゲームの次のレベルのロック解除など) をアプリ内から直接販売できます。 ここでは、アプリ内で製品を販売できるようにする方法について説明します。    |
+| [Microsoft Advertising によるアプリへの広告の追加](add-ads-to-apps-with-microsoft-advertising.md)      | Microsoft Advertising を使ってビデオやバナー広告を組み込むと、Windows アプリでより多くの収益を得ることができます。 広告は、PC、タブレット、電話用の Windows アプリに表示されます。 Windows デベロッパー センター ダッシュボードを使って、広告のパフォーマンスをリアルタイムで監視できます。   |
+| [広告仲介を使って収益を最大限に高める](use-ad-mediation-to-maximize-revenue.md)                           | Microsoft では、複数の広告ネットワークからのバナー広告要求を仲介してアプリ内広告の収益を最大限に増やすことができるように、広告仲介をサポートしています。 広告ネットワークには、1000 回の広告表示あたりの料金 (eCPM) が高い、特定の市場におけるフィル レート (アプリが要求を行ったときに提供される広告の割合) が他の市場より高いなど、それぞれ強みがあります。 広告ネットワークが 1 つしかない場合、広告要求を満たすことができず、潜在的な収益を失う可能性があります。 広告仲介の利用によって、ライブ広告を常時表示できるようになり、最大限の広告収入を上げることができます。  |
+| [Windows ストア サービスの使用](using-windows-store-services.md)                                    | Windows ストア サービスでは、REST API を経由して呼び出すことができるサービスがいくつか公開されています。これらのサービスを利用することで、お客さまやお客様の組織の Windows デベロッパー センター アカウントに登録されているアプリの特定の種類のデータに、プログラムを使ってアクセスすることができます。    |
 
  
 
  
+
+
 <!--HONumber=Mar16_HO1-->
+
+

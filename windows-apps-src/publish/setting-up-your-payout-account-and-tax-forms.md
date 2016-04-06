@@ -1,155 +1,159 @@
 ---
-Xxxxxxxxxxx: Xx xxxxx xx xxxxxxx xxxxx xxxx xxx xxxxx xx xxx Xxxxxxx Xxxxx, xxx xxxx xx xxx xx xxxx xxxxxx xxxxxxx xxx xxxx xxx xxx xxxxxxxxx xxx xxxxx.
-xxxxx: Xxxxxxx xx xxxx xxxxxx xxxxxxx xxx xxx xxxxx
-xx.xxxxxxx: YYYXYXXX-YYXY-YYYY-XYYY-YYXYYXYXYYXY
+Description: In order to receive money from app sales in the Windows Store, you need to set up your payout account and fill out the necessary tax forms.
+title: Setting up your payout account and tax forms
+ms.assetid: 690A2EBC-11B1-4547-B422-54F15A6C26A7
 ---
 
-# Xxxxxxx xx xxxx xxxxxx xxxxxxx xxx xxx xxxxx
+# Setting up your payout account and tax forms
 
 
-Xx xxxxx xx xxxxxxx xxxxx xxxx xxx xxxxx xx xxx Xxxxxxx Xxxxx, xxx xxxx xx xxx xx xxxx xxxxxx xxxxxxx xxx xxxx xxx xxx xxxxxxxxx xxx xxxxx.
+In order to receive money from app sales in the Windows Store, you need to set up your payout account and fill out the necessary tax forms.
 
-> **Xxxx**  Xx xx Xxxxx Yxx, YYYY, xxxx Xxxxxxxxx Xxxxxxxxxxx xxxxxxxx xxxx xx xxxx xx xxx xxxx xxxxxx xxxxxxx xxx'xx xxx xx xx Xxx Xxxxxx. Xxx xxxx xxxx, xxx [xxxXxxxxx-XxxXxxxxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxxxxxxxxxxxx](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
+> **Note**  As of April 1st, 2016, your Microsoft Advertising earnings will be paid to the same payout account you've set up in Dev Center. For more info, see [pubCenter-DevCenter payout account and tax profile consolidation](pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md).
 
-Xx xxx xxxx xxxx xx xxxx xxxx xxxx (xxx xxx'x xxxx xx xxxxx xx-xxx xxxxxxxxx xx xxx Xxxxxxxxx Xxxxxxxxxxx), xxx xxx'x xxxx xx xxx xx x xxxxxx xxxxxxx xx xxxx xxx xxx xxx xxxxx. Xx xxx xxxxxx xxxx xxxx xxxxx xxx xxxxxx xxx xx xxxx xx xxxx xxxx (xx xx-xxx xxxxxxxx), xxx xxx xxx xx xxxx xxxxxx xxxxxxx xxx xxxx xxx xxx xxxxx xx xxxx xxxx. Xxx xxx'x xx xxxx xx xxxxxx xxx xxxx xxxx xx XXXx xxxxx xxxx xxxxxx xxxxxxx xxx xxx xxxxxxx xxx xxxx xxxxxxxxx.
+If you only plan to list free apps (and don't plan to offer in-app purchases or use Microsoft Advertising), you don't need to set up a payout account or fill out any tax forms. If you change your mind later and decide you do want to sell apps (or in-app products), you can set up your payout account and fill out tax forms at that time. You won't be able to submit any paid apps or IAPs until your payout account and tax profile has been completed.
 
-> **Xxxx**[Xxxxxxx xxxxxxx](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) xxxx xxxxx xxx xx xxxx xxxx xxxx. Xx xxxx xxxxxxx xx xxxxxxxxxx xx xxx xx xxxxx xxxxxxx, xxx xxxx xxx xxxx xxx xxxxxx xx xxx xx x xxxxxx xxxxxxx.
-
-
-Xxxxx xxx xxxx [xxx xx xxxx xxxxxxxxx xxxxxxx](opening-a-developer-account.md), xxxxx xxx xxx xxxxxx xxx xxxx xx xx xxxxxx xxx xxx xxxx xxxx (xx XXXx) xx xxx Xxxxxxx Xxxxx:
-
--   [Xxx xx xxxx xxxxxx xxxxxxx](#setting_up_your_payout_account)
--   [Xxxx xxx xxxx xxx xxxxx](#paying_taxes)
-
-> **Xxxx**  Xxx xxxxxxx xxxxx xxx xxx xxxx xxx xxxx xx xxxx xxx xxx xxxxx xxxx xxxx xxxx, xxx [Xxxxxxx xxxx](getting-paid-apps.md).
-
- 
-
-## Xxxxxx xxxxxxx
+> **Note**  [Certain markets](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) only allow you to list free apps. If your account is registered in one of these markets, you will not have the option to set up a payout account.
 
 
-X xxxxxx xxxxxxx xx xxx xxxx xxxxxxx xx xxxxx xx xxxx xxx xxxxxxxx xxxx xxxx xxxxx. Xxxx xxxx xxxxxxx xxxx xx xxxxxxx xx xxx xxxx xxxxxxx xxxxx xxx xxxxxxxxxx xxxx xxxxxxxxx xxxxxxx.
+After you have [set up your developer account](opening-a-developer-account.md), there are two things you need to do before you can sell apps (or IAPs) in the Windows Store:
 
-> **Xxxx**  Xx xxxx xxxxxxx, XxxXxx xxx xx xxxx xxx xxxx xxxxxx xxxxxxx. Xxx [Xxxxxxx xxxxx, xxxxxxxxx, xxx xxxx](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) xx xxxx xxx xx XxxXxx xx xxxxxxxxx xxx x xxxxxxxx xxxxxx, xxx xxxx xxx [XxxXxx xxxx](#paypal) xxxxx xxx xxxx xxxxxxx.
+-   [Set up your payout account](#setting_up_your_payout_account)
+-   [Fill out your tax forms](#paying_taxes)
 
- 
-**Xx xxx xx xxxx xxxxxx xxxxxxx**
-
-1.  Xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxx xxxxx **Xxxxxxx xxxxxxxx** xx xxx xxxx xxxxxxxxxx xxxx.
-2.  Xx xxx xxxx xxxxxxxxxx xxxx xx xxx **Xxxxxxx xxxxxxxx** xxxx, xxxxx **Xxxxxx xxxxxxx**.
-
-   > **Xxxx**  Xxxxxxx xxxx xx xxxxxxxxx xxxx, xxx xxx xx xxxxxxxx xx xxxx xx xxxxx.
-
-3.  Xx xxx xxxxxx xxxx xxxxxxx, xxxx xxx xxx xxxx xxx xxxx xxxxxxx.
-
-   > **Xxxx**  Xxx xxxxxx xxx xxx xx xxxxxxx xxxx xxxxxxx xxxx xxxxxx xxxx xxxxxxxxxxxx xxxxxxxxxx.
-
-4.  Xxxx xxxx xxxx.
-
-Xx xxx xxxx xx xxxxxx xx xxxxxx xxxx xxxxxx xxxxxxx, xxxxxx xxx xxxx xxxxx xxxxx, xxxxxxxxx xxx xxxxxxx xxxx xxxx xxx xxx xxxx.
-
-> **Xxxxxxxxx**  Xxxxxxxx xxxx xxxxxx xxxxxxx xxx xxxxx xxxx xxxxxxxx xx xx xx xxx xxxxxxx xxxxx. Xxxx xxxxx xxxxxx xxxxxxx xx xxxx xx xxxxxx xxx xxxxxxx xxxxxx, xxxx xx xx xxx xxxx xxx xxxxx xxx xx xxx xxxxxx xxxxxxx. Xxx'xx xxxxx xxx xxxx xxx xxx xxxx xxxxxx xxxxx xxxx xxxxxxx xxx xxxx xxxxxxxx; xxx xxxxxxxx xxx xxx xxx xxxxxxx xxxxxxx xxxxx xxxx xx xxxxx xx xxx xxxx xxx. Xxx [Xxxxxxx xxxx](getting-paid-apps.md) xxx xxxx xxxx.
+> **Note**  For details about how and when you will be paid for the money your apps make, see [Getting paid](getting-paid-apps.md).
 
  
 
-### XxxXxx xxxx
-
-Xx xxxxxx xxxxxxxxx xxx xxxxxxx, xxx xxx xxxxxx x xxxxxxx xxxxxxx xx xxxxxxxx xxxx XxxXxx xxxx. Xxxxxxx, xxxxxx xxxxxxxx XxxXxx xx x xxxxxxx xxxxxxx xxxxxx:
-
--   Xxxxx [Xxxxxxx xxxxx, xxxxxxxxx, xxx xxxx](account-types-locations-and-fees.md) xx xxx xx XxxXxx xx x xxxxxxxxx xxxxxxx xxxxxx xx xxxx xxxxxxx xx xxxxxx.
--   Xxxxxx xxx xxxxxxxxx XXXx. Xxxxxxxxx xx xxxx xxxxxxxxx, XxxXxx xxx xxx xx xxx xxxx xxxxxxx xxxxxxx xxxxxx xxx xxx, xxx x xxxx xxxxxxx xxx xx xxxxxxxxx.
-
-Xxxxxx xxxxxxxxx xxxxx xxxxx XxxXxx xx x xxxxxxx xxxxxx:
-
--   **Xxxx XxxXxx xxxxxxxx xx X xxxx xx xxxx xx xxxxx xx xxxxxxx xxxxxxxx?** Xxx xxxx xxxxxx xxxx xxxx XxxXxx xxxxxxx xxxx xxx xxxxx xXxxxx xxxxxxxx. Xxxx xxxxxxx xx xxxxxxx xx XxxXxx’x Xxxxxxx Xxxxxxxxx Xxxxxxxxxxx xxxx. Xxx [XxxXxx’x xxxxxxx xxxxx xxxx](http://go.microsoft.com/fwlink/p/?linkid=513139) xxx xxxx xxxx.
--   **Xx xx xxxxxxx/xxxxxx xxxxxxxxx?** Xxx [Xxxxxxx xxxxx, xxxxxxxxx, xxx xxxx](account-types-locations-and-fees.md) xx xxxx xxx xxxxx XxxXxx xx x xxxxxxxxx xxxxxxx xxxxxx.
--   **Xx xxxxx x xxxxxxxxxxx xx xxx xxxx xx xxxxxxxx xxxx X xxx xxxxxxx xxxxx XxxXxx?** Xxx. XxxXxx xxxxxx xxx xxxxxx xx xxxxx xxxx xxxxx xxx xxxxxxx xx x xxxxxx xxxxxxxxxxx. Xxx xxxxxx xxxx xx xxxxxxxx; xxx [XxxXxx’x xxxxxxxxxxx xxxxx xxxx](http://go.microsoft.com/fwlink/p/?linkid=513108) xxx xxxx xxxxxxxx’x xxxxx. Xx xxx xxxxxxxxxx xxxx xxx xxxx xxxxxxx x xxxxxxx xxxxxxx xxxx xxxx XxxXxx xxxxxxxxxxx xxxxx, xxxxxx xxxx xxxxxxx xxxxxx xx x xxxx xxxxxxx.
--   **Xxxx xx XxxXxx xxxxxxx xxxx xx xx xxxxxxxxxx xx xxx xxxx xxxxxxx/xxxxxx xx xx Xxx Xxxxxx xxxxxxx?** Xx. Xxxx xxx xxx xx x XxxXxx xxxxxxx, xxx xxx xxxxxx xxx xxxxxxx xxxxxxxxxxxxx. Xxx xxxxxxx’x xxxx xxx xxxxxx xxxx xxxxx xxxxxxxxx/xxxxxxx xxx xxxxxxxxxx xxxxxx xxx xxxx xxxxxxx xxxxxxx xx xxxx xxxxxxxxxx. Xxxx xxxxxxx xx xxxxxxx xx XxxXxx’x Xxxxxxx Xxxxxxxxx Xxxxxxxxxxx xxxx.
--   **Xx X xxxx xx xxxxxx XxxXxx xxxxxxxx xxxxxxxx?** Xx. XxxXxx xxxxxxxx xxx xxx xx xxxxxxx xx xxxxxxx xxxxx xx xxxxxx xxxxxxxx xxxxxxxx, xxxxx xxxxx xx xxx xxx’x xxxxxx xxx xxxxxxx xxxxxx YY xxxx, xx xx xxxxxxxx. Xxx xxx xxxxxx xxxx xxxxxxx xx xxxxxxx xxx “Xxx Xx” xx XxxXxx’x Xxxx Xxxxxxxx xxxx.
-
-### Xxxxxxxx xxxxxxxxxxxx xxx xxxxxxx xxxxxxxxx/xxxxxxx
-
-Xx xxxx xxxxxxxxx xxx xxxxxxx, xxxxxxxxxx xxxxxxxxxxxx xxx xxxxxx xxxxxxxx xxxx xx xxxxxxxx. Xx xxx xxx x xxxxxxxx xx Xxxxxxxx, Xxxxxx, xx Xxxxxxx, xxxxxx xxxx xxx xxxxxxxxx xxxxxxxxxxxx.
-
-### Xxxxxxxx
-
-Xxxx-X xx x Xxxxxxxx xxxxxxx xxxxxxxxxx xxxxxxxxxxx. Xx xx xxxx xx xxxxxxxx xxx xxxxxxx xxx xxxxxx xxx xxxxxxx xx xxxxx xxxx xxxxxx. Xxxxxxxxx, xxxxxxx xxxx xxx xxx xxxxxxxx xxx x xxxxxxx xxxxxx xxxx Xxxxxxxxx, xxx xxxx xxxx xx xxxxxx x Xxxx-X xx xxxx xxxx xxxxxx xxx xxxxxx xxx xx xxxxxxxx xx xxxx xxxxxxx. Xxxxxxx xxxx xxxxx xxxx xxxxxx xxx xxxxxxxxxxxx xx xxx xx xxxxxx x xxxx xx Xxxx-X.
-
-Xxx xxxx xxxx xx xxxxxx x Xxxx-X xx xxxx xxxx xxxx xxxxx xxxx xxx xxx xxxxxxxx xxx x xxxxxx. Xxx xxxxxxx, xx xxx xxxxxx xx xxxxxxx x xxxxxx xxxxx xxxxx xx xxx xxxx, xxx xxxx xxxx xx xxxxxx x Xxxx-X YY xxxxx (xxxx xxxx xxxxx).
-
-Xxxx xxx xxxxxx xxx xxxx xxxxxxxxx xx xxxx xxxx, xxx xxxx YY xxxx xx xxxxxx x Xxxx-X. Xx xx xx xxx xxxxxxxxx xxxxxx YY xxxx, xxx xxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx.
-
-### Xxxxxx
-
-Xx xxx’xx x xxxxxxxxx xxx xxxxx xx Xxxxxx, xxx xxx xxxx xx xxxxxxx xxxxxxxxxxxxx xx xxxx xxxx xxxxxx xxxx xxxx xxxx xxxxxxx xxxxx xxxx xxxx xxxxxxx. Xxxx xxx’xx xxxxxxxx xx xx xxxx, xx xxxx xxxxxxx xxx xxxx xxx xxxxxxxxx xxxxxxxxxxxxx xx xx xxxxx xxxxxxx:
-
-1.  Xxxxxxxxxxx xx Xxxxxxxxxx (XxX) – xxxxxxxx xxx xxxxxx xx xxxxxx xxxxx xxxxxxxxxxx xx xxxx xxxxxxx.
-2.  Xxx Xxxxxxxxx Xxxxxxxxx (XXX) – x xxxxxx xxxx xx xxx xxxxxxxxx xxxxxxxxx xxxx xxxxx xx xx xxxxxxx xxxxxx.
-
-Xx xxxxxx xxxx xxxxxx xx xxxxxxxxxx, xxxxxx xxxx xxxx xx xxxx xxx xxxxxxxxx:
-
--   Xxx **Xxxxxxx xxxxxx xxxx** xxxxxxx xxx xxxx xxxxxx xxxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxx xx xxx xxxxx xxxx xxxx xxxxxxxxxx xxxx xxxx xxxx xxxxxxx. Xxx xxxxxxx, xx xxxx xxxx xxxxxxx xxxx xxxxxxxx x xxxxxx xxxx, xxx x xxxxxx xxxx xx xxxx **Xxxxxxx xxxxxx xxxx**.
--   Xxxxxxx xxx xxxxxxxxxxx xxxxxxxx xxxx Xxxxxxxxx xx xxxx xxxx xxxxxxx xx Xxxxx (XXX) xxxxxxxx.
--   Xxxx xxxxxxxxxxx xxxxxxx xx Xxx Xxxxxx xx Xxxxx xxxxxxxxxx xx xxxxxxxxxx xx Xxxxxxxx xxxxxxxxxx.
--   Xxxxxxx xxxx xx xxxx xx x xxxx xxxxxxx xxx xxx xx x xxxx xxxx.
-
-### Xxxxxxx
-
-Xx xxx’xx x xxxxxxxxx xxx xxxxx xx Xxxxxxx, xxx xxx xxxx xx xxxxxxx xxxxxxxxxxxxx xx xxxx xxxx xxxxxx xxxx xxxx xxxx xxxxxxx xxxxx xxxx xxxx xxxxxxx. Xxxx xxx’xx xxxxxxxx xx xx xxxx, xx xxxx xxxxxxx xxx xxxx xxx xxxxxxxxx xxxxxxxxxxxxx xx xx xxxxx xxxxxxx:
-
-1.  Xxxxxxxxxxx xx Xxxxxxxxxx (XxX) – xxxxxxxx xxx xxxxxx xx xxxxxx xxxxx xxxxxxxxxxx xx xxxx xxxxxxx.
-2.  Xxx Xxxxxxxxx Xxxxxxxxx (XXX) – x xxxxxx xxxx xx xxx xxxxxxxxx xxxxxxxxx xxxx xxxxx xx xx xxxxxxx xxxxxx.
-3.  Xxxxxxxxx Xxxxxxxxx (XX) – xxxx xxxxxxxx xxx xx xxxx xx xxxx xxxx xx xxxx xxxxxxxx xxxx xxxxxx xxxxx.
-
-Xxxxxxxxx xxxxxxxx xxx xxxxx xxxxxxxxx xxxx xxxx xxxxx xxxxxx xx xxxxxxxxx. Xxx xxx xxxxxxxxxx xxxxxxx, xxx xxxx xxxx xxxxxxx xxx XxX xxxxxxxx. Xxxxxx xxxxxx xxx XXX xxx XX xxxxxxxxx xx xxxx xxx xxxx xxxx xx xxxxxxx xxxxxx xxxxxxx xxxx xxxx xxxx.
-
-Xx xxxxxx xxxx xxxxxx xx xxxxxxxxxx, xxxxxx xxxx xxxx xx xxxx xxx xxxxxxxxx:
-
--   Xxx **Xxxxxxx xxxxxx xxxx** xxxxxxx xxx xxxx xxxxxx xxxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx xxxx xx xxx xxxxx xxxx xxxx xxxxxxxxxx xxxx xxxx xxxx xxxxxxx. Xxx xxxxxxx, xx xxxx xxxx xxxxxxx xxxx xxxxxxxx x xxxxxx xxxx, xxx x xxxxxx xxxx xx xxxx **Xxxxxxx xxxxxx xxxx**.
--   Xxxxxxx xxx xxxxxxxxxxx xxxxxxxx xxxx Xxxxxxxxx xx xxxx xxxx xxxxxxx xx XXX xxxxxxxx.
--   Xxxx xxxxxxxxxxx xxxxxxx xx Xxx Xxxxxx xx Xxxxx xxxxxxxxxx xx xxxxxxxxxx xx Xxxxxxxx xxxxxxxxxx.
-
-## Xxx xxxxx
+## Payout account
 
 
-Xxxxx xxx xxxx [xxxxxxxxxx xxx x xxxxxxxxx xxxxxxx](opening-a-developer-account.md) xxx xxx xx xxxx [xxxxxx xxxxxxx](#receiving_payments), xxx xxx xxxxxx xxxx *xxx xxxxxxx* xxx xxx Xxxxxxx Xxxxx xx xxxxxxxxxx xxx xxxxxxxxx xxxxx:
+A payout account is the bank account to which we send the proceeds from your sales. This bank account must be located in the same country where you registered your developer account.
 
--   Xxxxxxx xxxx xxxxxxx xx xxxxxxxxx xxx xxxxxxxxxxx.
--   Xxxx xxx xxx xxxxxxxxxxx xxx xxxxx.
-
-Xxx xxx xxxxxxxx xxx xxxxxx xxxx xxx xxxxx xxxxxxxxxxxxxx xx xxxx xxxxxxxxx; xx xxxx xxxxx, xxx xxx'x xxxx xx xxxxx xxx xxxx xxx xxxxx.
-
-> **Xxxxxxxxx**  Xxxxxxxxx xxxxxxxxx xxx xxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxxxx. Xxx xxxxx xxxxxx xxxx xxx xxxx xxx xx xxxxx xxxxxxx xx xxx xxxxxxxxx xxx xxxxxxx xxxxx xxx xxxx xxxx xxxx. Xxx xxx [Xxx Xxxxxxxxx Xxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/hh694058) xx xxxx xxx xxx xxxxx xxxxxxxxx Xxxxxxxxx xxxxxx xxxxx xxx xxx xxx xx xxxx xxxxxx. Xx xxxxx xxxxxxxxx, xxxxxxxxx xx xxxxx xxx xxx xxxxxxxxxx, xxx xxx xxxx xx xxxxx xxxxx xxx xxx xxx xxx xxxx xxx xxxxx xxxxxxxx xx xxx xxxxx xxxxxx xxxxxxxxx. Xx xxxxxxxx, xxx xxx xxxxx xxxxxxxx xxx xxxxxxx xxx xx xxxxxxx xx xxxxxx. Xx xxxxxxxx xxxxxxxxx xxx xx xxxxxxx xxx xxxxxxxx xxxxxxxxx xxx xxxx xxxxxxx xx xxxxxx xxxx xxx xxxx xxxx xxx xxxxxxxxx xxx xxxxx xxx xxxx xxx xxxx Xxxxxxx Xxxxx xxxxxxxxx xxxxxxxxxx.
+> **Note**  In some markets, PayPal can be used for your payout account. See [Account types, locations, and fees](account-types-locations-and-fees.md#developer-account-and-app-submission-markets) to find out if PayPal is supported for a specific market, and read the [PayPal info](#paypal) below for more details.
 
  
-**Xx xxxxxxxx xxxx xxx xxxxxxx**
+**To set up your payout account**
 
-1.  Xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxxxx **Xxxxxxx xxxxxxxx** xx xxx xxxx xxxxxxxxxx xxxx.
-2.  Xx xxx xxxx xxxxxxxxxx xxxx xx xxx **Xxxxxxx xxxxxxxx** xxxx, xxxxx **Xxx xxxxxxx**.
+1.  In the Windows Dev Center dashboard, and click **Account settings** in the left navigation menu.
+2.  In the left navigation menu of the **Account settings** page, click **Payout account**.
 
-   > **Xxxx**  Xxxxxxx xxxx xx xxxxxxxxx xxxx, xxx xxx xx xxxxxxxx xx xxxx xx xxxxx.
+   > **Note**  Because this is sensitive info, you may be prompted to sign in again.
 
-3.  Xxxxxx xxxx xxxxxxx xxx xxxxxxx xxxxxx xxx xxxxx **Xxxx** xx xxxxxxxx xxx xxxxxxxx xxxxx.
-4.  Xxxxxx xxx xxxxxxxxx xxxxx Xxxxxx Xxxxxx xxxxxxxxxxx xxx xxxxxxxxx, xxxx xxxxx **Xxxx**.
-5.  Xx xxxx xxxx xxx xxxxxxx xxxx xxx xxxxxxxxx, xxxxxxx xxxx xxx xxx xxxxxxxx xx xxxxxx xxxxx.
+3.  On the screen that appears, fill out the info for your account.
 
-Xxxx, xxx xxxx xxx xxxxxxxxxx xxxxxxxx xx xxx xxx xxxxx xxxx xxx xxxx xxxxxxxx. Xxxxxxxxxx xx xxxx xxxxxxx xx xxxxxxxxx xx xxxxxxxxxxx, xxx xxxx xxxx xxx Xxxxxx Xxxxxx xxx xxxxx xx xxxx xxx xxxx xx xx-xxx xxxxxxxx xxxxxxx xxx Xxxxxxx Xxxxx. Xxxxxxxxxx xxx xxxxxxx xxxxxxx Xxxxxx Xxxxxx xxxxxxxxx xxxxxxxxxxxx xxxx xxxx xxx xx XXX X-Y xxxx. Xxxxx xxxxxxxxxx xxxxxxx xxx Xxxxxx Xxxxxx xxxx xxxx xxx xx XXX X-Y xxxx. Xxx xxx xxxx xxx xxxxx xxxxx xxxxxx xx xxx xxxxxxxx xxxx xxx xxxxxxx.
+   > **Note**  The fields you use to provide your account info accept only alphanumeric characters.
 
-X Xxxxxx Xxxxxx Xxxxxxxxxx Xxxxxxxx Xxxxxxxxxxxxxx Xxxxxx (xx XXXX) xx xxx xxxxxxxx xx xxxxxxx xxxxxxxx xxxx Xxxxxxxxx xx xx xxxxx xxx xxxxxx xxxxxxxx.
+4.  Save your info.
 
-### Xxxxxxxxxxx xxxxx
+If you need to update or change your payout account, follow the same steps above, replacing the current info with the new info.
 
-Xxx xxxx xxx xxxxxx xx xxxx xxx xxxxx xxxxxxxxxx xxx xxxxxxxxxxx xxx xxxxxxxxxxx xxxx. Xxx xxxxxxxxxxx xxxx xxxxxxx xxxx xx xxxxx xxxx xxx xxxx xxxx xxx Xxxxxx Xxxxxx; xxxxx xxxx xxxx xxx-XX xxxxxxxxx xxx xxx xxxxxxx xx xxxxxxxxxxx. Xxx xxxxxxxxxxx xxxxx xxxx, xxx xxx xxxx xxxxxxxxxx xxxxxxxxxxx xxxxxxx xxx Xxxxxx Xxxxxx, xxx xxxxxxx xxxx xx YY%. Xxx xxxx xxx xxxxxx xx xxxxxxxx xxxx xxxx xx xxxx xxxxxxx xxx xxxxxx xx xx xxxxxx xxx xxxxxx xxxx xxx Xxxxxx Xxxxxx.
-
-### Xxx xxxxxx xxxxxxxx
-
-Xx xxx xxx xxxxxxx xxx Xxxxxx Xxxxxx, xxx xxx xx xxxx xx xxxx xxxxxxxxx xx xxx xxxxxx xxxxxxxx. Xxxxx xxxxxxxx xxxx xxxx xxxxxxx xx xxxxxxx, xxx xxx xxxxx xxx xx xxxxxx xxx xxxxxx xx xxxxx xxxx xxx Xxxxxxx Xxxxx xxxxxxxxx. Xxx xxx xxxxx xxx xxxxxx xxxxxxxx xx xxxxxxxxxx Xxxx XX xx xxx X-YXXX xxxx. Xx xxxxxxxxx xxxx xxx xxxxxxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxxx xx xxxx xxxxxxx xx xxxxxx xx xxxxxxxxx xxxxxxx xxxxx xxxxxxxx xxxxx xx xxx.
+> **Important**  Changing your payout account can delay your payments by up to one payment cycle. This delay occurs because we need to verify the account change, just as we did when you first set up the payout account. You'll still get paid for the full amount after your account has been verified; any payments due for the current payment cycle will be added to the next one. See [Getting paid](getting-paid-apps.md) for more info.
 
  
 
+### PayPal info
+
+In select countries and regions, you can create a payment account by entering your PayPal info. However, before choosing PayPal as a payment account option:
+
+-   Check [Account types, locations, and fees](account-types-locations-and-fees.md) to see if PayPal is a supported payment method in your country or region.
+-   Review the following FAQs. Depending on your situation, PayPal may not be the best payment account option for you, and a bank account may be preferred.
+
+Common questions about using PayPal as a payment method:
+
+-   **What PayPal settings do I need to have in order to receive payments?** You must ensure that your PayPal account does not block eCheck payments. This setting is managed in PayPal’s Payment Receiving Preferences page. See [PayPal’s account setup page](http://go.microsoft.com/fwlink/p/?linkid=513139) for more info.
+-   **Is my country/region supported?** See [Account types, locations, and fees](account-types-locations-and-fees.md) to find out where PayPal is a supported payment method.
+-   **Is there a restriction on the size of payments that I can receive using PayPal?** Yes. PayPal limits the amount of money that users can receive in a single transaction. The limits vary by currency; see [PayPal’s transaction limit page](http://go.microsoft.com/fwlink/p/?linkid=513108) for each currency’s limit. If you anticipate that you will receive a payment greater than your PayPal transaction limit, change your payment method to a bank account.
+-   **Does my PayPal account have to be registered in the same country/region as my Dev Center account?** No. When you set up a PayPal account, you can accept the default configuration. You shouldn’t have any issues with other countries/regions and currencies unless you have blocked payment in some currencies. This setting is managed in PayPal’s Payment Receiving Preferences page.
+-   **Do I have to accept PayPal payments manually?** No. PayPal accounts are set by default to require users to accept payments manually, which means if you don’t accept the payment within 30 days, it is returned. You can change this setting by turning off “Ask Me” in PayPal’s More Settings page.
+
+### Specific requirements for certain countries/regions
+
+In some countries and regions, additional requirements for payout accounts must be followed. If you are a resident of Pakistan, Russia, or Ukraine, please note the following requirements.
+
+### Pakistan
+
+Form-R is a Pakistan banking regulatory requirement. It is used to indicate the purpose and reason for receipt of funds from abroad. Therefore, anytime that you are eligible for a monthly payout from Microsoft, you will need to submit a Form-R to your bank before the payout can be released to your account. Contact your local bank branch for instructions on how to obtain a copy of Form-R.
+
+You will need to submit a Form-R to your bank each month that you are eligible for a payout. For example, if you expect to receive a payout every month of the year, you will need to submit a Form-R 12 times (once each month).
+
+Once the payout has been submitted to your bank, you have 30 days to submit a Form-R. If it is not submitted within 30 days, the funds will be returned to Microsoft.
+
+### Russia
+
+If you’re a developer who lives in Russia, you may need to provide documentation to your bank before your bank will deposit funds into your account. When you’re eligible to be paid, we will provide you with the following documentation in an email message:
+
+1.  Certificate of Acceptance (CoA) – contains the amount of payout being transferred to your account.
+2.  App Developer Agreement (ADA) – a signed copy of the developer agreement that needs to be counter signed.
+
+To ensure your payout is successful, please also keep in mind the following:
+
+-   The **Account holder name** entered for your payout account in the Windows Dev Center dashboard must be the exact same name associated with your bank account. For example, if your bank account name contains a middle name, add a middle name to your **Account holder name**.
+-   Payouts are transferred directly from Microsoft to your bank account in Ruble (RUB) currency.
+-   Bank information entered in Dev Center in Latin characters is translated to Cyrillic characters.
+-   Payouts must be made to a bank account and not to a bank card.
+
+### Ukraine
+
+If you’re a developer who lives in Ukraine, you may need to provide documentation to your bank before your bank will deposit funds into your account. When you’re eligible to be paid, we will provide you with the following documentation in an email message:
+
+1.  Certificate of Acceptance (CoA) – contains the amount of payout being transferred to your account.
+2.  App Developer Agreement (ADA) – a signed copy of the developer agreement that needs to be counter signed.
+3.  Amendment Agreement (AA) – this document can be used by your bank to help identify your payout funds.
+
+Microsoft provides all three documents when your first payout is attempted. For any subsequent payouts, you will only receive the CoA document. Please retain the ADA and AA documents in case you need them to receive future payouts from your bank.
+
+To ensure your payout is successful, please also keep in mind the following:
+
+-   The **Account holder name** entered for your payout account in the Windows Dev Center dashboard must be the exact same name associated with your bank account. For example, if your bank account name contains a middle name, add a middle name to your **Account holder name**.
+-   Payouts are transferred directly from Microsoft to your bank account in USD currency.
+-   Bank information entered in Dev Center in Latin characters is translated to Cyrillic characters.
+
+## Tax forms
+
+
+After you have [registered for a developer account](opening-a-developer-account.md) and set up your [payout account](#receiving_payments), you can create your *tax profile* for the Windows Store by completing the following steps:
+
+-   Specify your country of residence and citizenship.
+-   Fill out the appropriate tax forms.
+
+You can complete and submit your tax forms electronically in your dashboard; in most cases, you don't need to print and mail any forms.
+
+> **Important**  Different countries and regions have different tax requirements. The exact amount that you must pay in taxes depends on the countries and regions where you sell your apps. See the [App Developer Agreement](https://msdn.microsoft.com/library/windows/apps/hh694058) to find out for which countries Microsoft remits sales and use tax on your behalf. In other countries, depending on where you are registered, you may need to remit sales and use tax for your app sales directly to the local taxing authority. In addition, the app sales proceeds you receive may be taxable as income. We strongly encourage you to contact the relevant authority for your country or region that can best help you determine the right tax info for your Windows Store developer activities.
+
  
+**To complete your tax profile**
+
+1.  In the Windows Dev Center dashboard, click **Account settings** in the left navigation menu.
+2.  In the left navigation menu of the **Account settings** page, click **Tax profile**.
+
+   > **Note**  Because this is sensitive info, you may be prompted to sign in again.
+
+3.  Review your current tax profile status and click **Edit** to complete the required forms.
+4.  Answer the questions about United States citizenship and residency, then click **Next**.
+5.  If your name and address info are displayed, confirm them for the purposes of filing taxes.
+
+Next, you will see electronic versions of the tax forms that you must complete. Regardless of your country of residence or citizenship, you must fill out United States tax forms to sell any apps or in-app products through the Windows Store. Developers who satisfy certain United States residency requirements must fill out an IRS W-9 form. Other developers outside the United States must fill out an IRS W-8 form. You can fill out these forms online as you complete your tax profile.
+
+A United States Individual Taxpayer Identification Number (or ITIN) is not required to receive payments from Microsoft or to claim tax treaty benefits.
+
+### Withholding rates
+
+The info you submit in your tax forms determines the appropriate tax withholding rate. The withholding rate applies only to sales that you make into the United States; sales made into non-US locations are not subject to withholding. The withholding rates vary, but for most developers registering outside the United States, the default rate is 30%. You have the option of reducing this rate if your country has agreed to an income tax treaty with the United States.
+
+### Tax treaty benefits
+
+If you are outside the United States, you may be able to take advantage of tax treaty benefits. These benefits vary from country to country, and may allow you to reduce the amount of taxes that the Windows Store withholds. You can claim tax treaty benefits by completing Part II of the W-8BEN form. We recommend that you communicate with the appropriate resources in your country or region to determine whether these benefits apply to you.
+
+ 
+
+ 
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

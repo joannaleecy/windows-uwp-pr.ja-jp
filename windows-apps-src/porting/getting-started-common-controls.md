@@ -1,58 +1,61 @@
 ---
-xx.xxxxxxx: XYXYYYYY-XYYY-YYXY-YYYY-YYYYYXYYYYYY
-xxxxxxxxxxx: Xxxxxxx xxxxxxx xxxx xxxxxx xxxxxxxx
-xxxxx: Xxxxxxx xxxxxxx xxxx Xxxxxx Xxxxxxxx
+ms.assetid: E2B73380-D673-48C6-9026-96976D745017
+description: コモン コントロールの概要
+title: コモン コントロールの概要
 ---
 
-# Xxxxxxx xxxxxxx: Xxxxxx Xxxxxxxx
+# はじめに: コモン コントロール
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、「[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)」をご覧ください\]
 
-## Xxxxxx xxxxxxxx xxxx
+## コモン コントロールの一覧
 
-Xx xxx xxxxxxxx xxxxxxx, xxx xxxxxx xxxx xxxx xxx xxxxxxxx: xxxxxxx xxx xxxxxxxxxx. Xxxxx xxx, xx xxxxxx, xxxx xxxx xxxx xxxxxxxx xxxx xxx xxxxxxxxx xx xxx. Xxxx xxx xxxx xxxxxx xxxxxxxx xxx'xx xx xxxxx xx xxxx xxxx, xxx xxxxx xXX xxxxxxxxxxx. Xxx xXX xxxxxxxx xxx xxxxxx xx xxxxxxxxxxxx xxxxx, xxxx xx xxx xxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxx.
+前のセクションで扱ったコントロールは、ボタンとテキストブロックの 2 つのみでした。 もちろん、これ以外にもたくさんのコントロールが用意されています。 ここでは、アプリやそれに対応する iOS アプリで使用するいくつかのコモン コントロールを紹介します。 ここでは、iOS コントロールをアルファベット順に並べ、その横に最も似ているユニバーサル Windows プラットフォーム (UWP) コントロールを示しています。
 
-Xxx xxxxxx xxxxxx xxxxx xxxxx XXX xxxxxxxx xx xxxx xxxx xxx xxxxx xxx xxxx xx xxxxxx xxxx xxx xxxxxxx xx, xxx xxxxxx xxxxx xxxxxxxxxx xxx xxxxxxxxxxxxx xxxxxxxxxxx. Xxx xxxxxxx, xx xxxx xxxxxxx xxxx xxx [**XxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211681) xxxxxxx, xx xx xxxxx xxxxxx xx xxxxxxxx xxxxxx xx xxxx xxx xxxxxx xxxxxxxxxxx xx x xxxxxxx xxxxxxxx xxxxxxxx xx, xxx, x xxxxx. Xxx xxx'x xxxx xx xx xxxxxxxx: xxx xxxxxxxx xxxxxx xxxxxxxxxx xx xxx-xxxx.
+UWP コントロールが優れている点は、実行されているデバイスの種類を検出して、それに応じて外観と機能を変更できることです。 たとえば、プロジェクトが [**DatePicker**](https://msdn.microsoft.com/library/windows/apps/br211681) コントロールを使用している場合、たとえば、電話と比較して、デスクトップ コンピューターで異なる外観と動作に自動的に最適化します。 何もする必要はありません。コントロールが実行時に自動的に調整します。
 
-| xXX xxxxxxx (xxxxx/xxxxxxxx) | Xxxxxxxxxx Xxxxxxx Xxxxx xxx xxxxxxx |
+| iOS のコントロール (クラス/プロトコル) | 対応する Windows ストア アプリのコントロール |
 |------------------------------|--------------------------------------|
-| Xxxxxxxx xxxxxxxxx (**XXXxxxxxxxXxxxxxxxxXxxx**) | [
-            **XxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> Xxx xxxx [Xxxxxxxxxx: xxxxxx xxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
-| Xx xxxxxx xxxx (**XXXxxxxxXxxx**) xxx xx xxxxxx xxxx xxxxxxxx (**XXXxxxxxXxxxXxxxxxxx**) | Xxx [Xxxxxxxxx Xxxxxxxxxxx XXX](http://go.microsoft.com/fwlink/p/?LinkId=263494) |
-| Xxxxxx (XXXxxxxx) | [Xxxxxx](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> Xxx xxxx [Xxxxxxxxxx: Xxxxxx xxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346) |
-| Xxxx xxxxxx (XXXxxxXxxxxx) | [XxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/br211681) |
-| Xxxxx xxxx (XXXxxxxXxxx) | [Xxxxx](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> Xxx xxxx [Xxxxx xxx XxxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/mt280382) |
-| Xxxxx (XXXxxxx) | [XxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> Xxx xxxx [Xxxxxxxxxx: xxxxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
-| Xxx xxxx (XXXxxXxxx) xxx xxx xxxx xxxxxxxx (XXXxxXxxxXxxxxxxx) | Xxx [Xxxx Xxxx xxx Xxxxxxx Xxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=263496) |
-| Xxxxxxxxxx xxxxxxxxxx (XXXxxxxxxxxxXxxxxxxxxx) xxx xxxxxxxxxx xxxxxxxxxx xxxxxxxx (XXXxxxxxxxxxXxxxxxxxxxXxxxxxxx) | [Xxxxx](https://msdn.microsoft.com/library/windows/apps/br242682) <br/> Xxx xxxx [Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187344) |
-| Xxxx xxxxxxx (XXXxxxXxxxxxx) | [Xxxx](https://msdn.microsoft.com/library/windows/apps/br227503) <br/> Xxx xxxx [Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187344) |
-| Xxxxxx xxxx (XXXxxxxxXxxx) xxx xxxxxx xxxx xxxxxxxx (XXXxxxxxXxxxXxxxxxxx) | [XxxxxXxx](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> Xxx xxxx [Xxxxxx xxxxx xxxxx xxx xxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616) |
-| Xxxxxxxx xxx (XXXxxxxxxxXxxx) | [XxxxxxxxXxx](https://msdn.microsoft.com/library/windows/apps/br227529) <br/> Xxx xxxx [Xxxxxxxxxx: xxxxxx xxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651) |
-| Xxxxxx xxxx (XXXxxxxxXxxx) xxx xxxxxx xxxx xxxxxxxx (XXXxxxxxXxxxXxxxxxxx) | [XxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/br209527) <br/>  Xxx xxxx [Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX) xxxxxxxxx, xxxxxxx, xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=238577) |
-| Xxxxxx xxx (XXXxxxxxXxx) xxx xxxxxx xxx xxxxxxxx (XXXxxxxxXxxXxxxxxxx) | Xxx [Xxxxxx xxxxxx xx xx xxx](https://msdn.microsoft.com/library/windows/apps/xaml/jj130767) <br/>  Xxx xxxx [Xxxxxxxxxx: Xxxxxx xxxxxx xx xx xxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh868180) |
-| Xxxxxxxxx xxxxxxx (XXXxxxxxxxxXxxxxxx) | Xxxx |
-| Xxxxxx (XXXxxxxx) | [Xxxxxx](https://msdn.microsoft.com/library/windows/apps/br209614) <br/>  Xxx xxxx [Xxx xx xxx x xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh868197) |
-| Xxxxx xxxx xxxxxxxxxx (XXXxxxxXxxxXxxxxxxxxx) xxx xxxxx xxxx xxxxxxxxxx xxxxxxxx (XXXxxxxXxxxXxxxxxxxxxXxxxxxxx) | Xxxx |
-| Xxxxxx (XXXxxxxx) | [XxxxxxXxxxxx](https://msdn.microsoft.com/library/windows/apps/br209712) <br/>  Xxx xxxx [Xxx xx xxx x xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh868198) |
-| Xxx xxx xxxxxxxxxx (XXXxxXxxXxxxxxxxxx) xxx xxx xxx xxxxxxxxxx xxxxxxxx (XXXxxXxxXxxxxxxxxxXxxxxxxx) | Xxxx |
-| Xxxxx xxxx xxxxxxxxxx (XXXxxxxXxxxXxxxxxxxxx), xxxxx xxxx (XXXxxxxXxxx), xxxxx xxxx xxxxxxxx (XXXxxxxXxxxXxxxxxxx), xxx xxxxx xxxx (XXXxxxxXxxxXxxx) | [XxxxXxxx](https://msdn.microsoft.com/library/windows/apps/br242878) <br/>  Xxx xxxx [Xxxxxxxxxx: xxxxxx XxxxXxxx xxx XxxxXxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh780650) |
-| Xxxx xxxxx (XXXxxxXxxxx) xxx xxxx xxxxx xxxxxxxx (XXXxxxXxxxxXxxxxxxx) | [XxxxXxx](https://msdn.microsoft.com/library/windows/apps/br209683) <br/>  Xxx xxxx [Xxxxxxx xxx xxxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt280218) |
-| Xxxx xxxx (XXXxxxXxxx) xxx xxxx xxxx xxxxxxxx (XXXxxxXxxxXxxxxxxx) | [XxxxXxxxx](https://msdn.microsoft.com/library/windows/apps/br209652) <br/>  Xxx xxxx [Xxxxxxxxxx: xxxxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392) |
-| Xxxx (XXXxxx) xxx xxxx xxxxxxxxxx (XXXxxxXxxxxxxxxx) | [Xxxx](https://msdn.microsoft.com/library/windows/apps/br227503) <br/>  Xxx xxxx [Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187344) |
-| Xxx xxxx (XXXxxXxxx) xxx xxx xxxx xxxxxxxx (XXXxxXxxxXxxxxxxx) | [XxxXxxx](https://msdn.microsoft.com/library/windows/apps/br227702) <br/>  Xxx xxxx [XXXX XxxXxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=238582) |
-| Xxxxxx (XXXxxxxx) | [Xxxxx](https://msdn.microsoft.com/library/windows/apps/br242682) <br/>  Xxx xxxx [Xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/mt187344) |
+| アクティビティ インジケーター (**UIActivityIndicatorView**) | [**ProgressRing**](https://msdn.microsoft.com/library/windows/apps/br227538) <br/> 「[クイック スタート: プログレス コントロールの追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)」もご覧ください。 |
+| 広告バナー ビュー (**ADBannerView**) と広告バナー ビュー デリゲート (**ADBannerViewDelegate**) | 「[Microsoft Advertising SDK](http://go.microsoft.com/fwlink/p/?LinkId=263494)」をご覧ください。 |
+| ボタン (UIButton) | [ボタン](https://msdn.microsoft.com/library/windows/apps/br209265) <br/> 「[クイック スタート: ボタン コントロールの追加](https://msdn.microsoft.com/library/windows/apps/xaml/jj153346)」もご覧ください。 |
+| 日付の選択 (UIDatePicker) | [DatePicker](https://msdn.microsoft.com/library/windows/apps/br211681) |
+| 画像ビュー (UIImageView) | [画像](https://msdn.microsoft.com/library/windows/apps/br242752) <br/> 「[Image と ImageBrush](https://msdn.microsoft.com/library/windows/apps/mt280382)」もご覧ください。 |
+| ラベル (UILabel) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/> 「[クイック スタート: テキストの表示](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392)」もご覧ください。 |
+| 地図ビュー (MKMapView) と地図ビュー デリゲート (MKMapViewDelegate) | 「[Windows ストア アプリ用 Bing Maps](http://go.microsoft.com/fwlink/p/?LinkId=263496)」をご覧ください。 |
+| ナビゲーション コント ローラー (UINavigationController) とナビゲーション コント ローラー デリゲート (UINavigationControllerDelegate) | [フレーム](https://msdn.microsoft.com/library/windows/apps/br242682) <br/> 「[ナビゲーション](https://msdn.microsoft.com/library/windows/apps/mt187344)」もご覧ください。 |
+| ページ コントロール (UIPageControl) | [ページ](https://msdn.microsoft.com/library/windows/apps/br227503) <br/> 「[ナビゲーション](https://msdn.microsoft.com/library/windows/apps/mt187344)」もご覧ください。 |
+| ピッカー ビュー (UIPickerView) とピッカー ビュー デリゲート (UIPickerViewDelegate) | [ComboBox](https://msdn.microsoft.com/library/windows/apps/br209348) <br/> 「[コンボ ボックスとリスト ボックスの追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616)」もご覧ください。 |
+| 進行状況バー (UIProgressView) | [ProgressBar](https://msdn.microsoft.com/library/windows/apps/br227529) <br/> 「[クイック スタート: プログレス コントロールの追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh780651)」もご覧ください。 |
+| スクロール ビュー (UIScrollView) とスクロール ビュー デリゲート (UIScrollViewDelegate) | [ScrollViewer](https://msdn.microsoft.com/library/windows/apps/br209527) <br/>  「[Extensible Application Markup Language (XAML) のスクロール、パン、ズームのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=238577)」もご覧ください。 |
+| 検索バー (UISearchBar) と検索バー デリゲート (UISearchBarDelegate) | 「[アプリへの検索の追加](https://msdn.microsoft.com/library/windows/apps/xaml/jj130767)」をご覧ください。 <br/>  「[クイック スタート: アプリへの検索の追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh868180)」もご覧ください。 |
+| セグメント化されたコントロール (UISegmentedControl) | なし |
+| スライダー (UISlider) | [スライダー](https://msdn.microsoft.com/library/windows/apps/br209614) <br/>  「[スライダーを追加する方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh868197)」もご覧ください。 |
+| 分割ビュー コントローラー (UISplitViewController) と分割ビュー コントローラー デリゲート (UISplitViewControllerDelegate) | なし |
+| スイッチ (UISwitch) | [ToggleSwitch](https://msdn.microsoft.com/library/windows/apps/br209712) <br/>  「[トグル スイッチを追加する方法](https://msdn.microsoft.com/library/windows/apps/xaml/hh868198)」もご覧ください。 |
+| タブ バー コントローラー (UITabBarController) とタブ バー コントローラー デリゲート (UITabBarControllerDelegate) | なし |
+| テーブル ビュー コントローラー (UITableViewController)、テーブル ビュー (UITableView)、テーブル ビュー デリゲート (UITableViewDelegate)、および表のセル (UITableViewCell) | [ListView](https://msdn.microsoft.com/library/windows/apps/br242878) <br/>  「[クイック スタート: ListView コントロールと GridView コントロールの追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh780650)」もご覧ください。 |
+| テキスト フィールド (UITextField) とテキスト フィールド デリゲート (UITextFieldDelegate) | [TextBox](https://msdn.microsoft.com/library/windows/apps/br209683) <br/>  「[テキストの表示と編集](https://msdn.microsoft.com/library/windows/apps/mt280218)」もご覧ください。 |
+| テキスト ビュー (UITextView) とテキスト ビュー デリゲート (UITextViewDelegate) | [TextBlock](https://msdn.microsoft.com/library/windows/apps/br209652) <br/>  「[クイック スタート: テキストの表示](https://msdn.microsoft.com/library/windows/apps/xaml/hh700392)」もご覧ください。 |
+| ビュー (UIView) とビュー コントローラー (UIViewController) | [ページ](https://msdn.microsoft.com/library/windows/apps/br227503) <br/>  「[ナビゲーション](https://msdn.microsoft.com/library/windows/apps/mt187344)」もご覧ください。 |
+| Web ビュー (UIWebView) と Web ビュー デリゲート (UIWebViewDelegate) | [WebView](https://msdn.microsoft.com/library/windows/apps/br227702) <br/>  「[XAML WebView コントロールのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=238582)」もご覧ください。 |
+| ウィンドウ (UIWindow) | [フレーム](https://msdn.microsoft.com/library/windows/apps/br242682) <br/>  「[ナビゲーション](https://msdn.microsoft.com/library/windows/apps/mt187344)」もご覧ください。 |
 
-Xxx xxxx xxxx xxxxxxxx, xxx [Xxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/mt185406).
+その他のコントロールについては、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/mt185406)」をご覧ください。
 
-**Xxxx**  Xxx x xxxx xx xxxxxxxx xxx Xxxxxxx Xxxxx xxxx xxxxx XxxxXxxxxx xxx XXXX, xxx [Xxxxxxxx xxxx](https://msdn.microsoft.com/library/windows/apps/hh465453).
+**注**  JavaScript と HTML を使った Windows ストア アプリのコントロールの一覧については、「[コントロールの一覧](https://msdn.microsoft.com/library/windows/apps/hh465453)」をご覧ください。
 
-### Xxxx xxxx
+### 次のステップ
 
-[Xxxxxxx Xxxxxxx: Xxxxxxxxxx](getting-started-navigation.md)
+[はじめに: ナビゲーション](getting-started-navigation.md)
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [xxxxx YYYY: Xxxx xxxxx XXXX XX xxx Xxxxxxxx?](http://go.microsoft.com/fwlink/p/?LinkID=397897)
-* [xxxxx YYYY: Xxxxxxxxxx Xxxx xxxxx xxx Xxxxxx XXXX XX Xxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=397898)
-* [xxxxx YYYY: Xxxxx Xxxxxx Xxxxxx xx Xxxxx XXXX Xxxxxxxxx Xxxx](http://go.microsoft.com/fwlink/p/?LinkID=397876)
+* [Build 2014: XAML UI とコントロールの説明](http://go.microsoft.com/fwlink/p/?LinkID=397897)
+* [Build 2014: 共通の XAML UI フレームワークを使ったアプリの開発](http://go.microsoft.com/fwlink/p/?LinkID=397898)
+* [Build 2014: Visual Studio を使った XAML 集約型アプリの構築に関するページ](http://go.microsoft.com/fwlink/p/?LinkID=397876)
+
+
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,47 +1,42 @@
 ---
-xxxxx: Xxx xxxxxxxx
-xxxxxxxxxxx: Xxx, xx xxxx x xxxx xx xxx xxx xxxx xxxxxx xxxxxxxxxx xxxx-xxxx xxxxxxxx xx x Y-X xxxx, xxx xxx xx xxxxxxx xxxxx xxxxx, xxxxx, xxx xxxx xxxxxxxxxx xxxxxxxx.
-xx.xxxxxxx: xYYYYxxx-YYYx-YYxY-xxYx-xxYYxYxYYYxY
+title: Add controls
+description: Now, we take a look at how the game sample implements move-look controls in a 3-D game, and how to develop basic touch, mouse, and game controller controls.
+ms.assetid: f9666abb-151a-74b4-ae0b-ef88f1f252f8
 ---
 
-# Xxx xxxxxxxx
+# Add controls
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxx, xx xxxx x xxxx xx xxx xxx xxxx xxxxxx xxxxxxxxxx xxxx-xxxx xxxxxxxx xx x Y-X xxxx, xxx xxx xx xxxxxxx xxxxx xxxxx, xxxxx, xxx xxxx xxxxxxxxxx xxxxxxxx.
+Now, we take a look at how the game sample implements move-look controls in a 3-D game, and how to develop basic touch, mouse, and game controller controls.
 
-## Xxxxxxxxx
-
-
--   Xx xxxxxxxxx xxxxx/xxxxxxxx, xxxxx, xxx Xxxx xxxxxxxxxx xxxxxxxx xx x Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxxx XxxxxxX.
-
-## XXX xxxx xxxx xxx xxxxxxxx
+## Objective
 
 
-X xxxx XXX xxxx xxxxxxxx x xxxxx xxxxxxx xx xxxxxxxxxx. X xxxxxxxxx xxxxxx xxxxx xxxx Xxxxxxx YY xx x xxxxxx xxxx xx xxxxxxxx xxxxxxx, xx x xxxxx XX xxxx xx Xxxx xxxxxxxxxx xxxxxxxx, xx xxx xxxxxx xxxxxxx xxxxxx xxx xxxx x xxxx-xxxxxxxxxxx xxxxx xxx xxxxxx xxxxxxxx. Xxxx xxxx xxxxxx xxxxxxx xxx xx xxxxx xxxxxxx xx xxx xxxx xxxxxx xxxxxx xx.
+-   To implement mouse/keyboard, touch, and Xbox controller controls in a Universal Windows Platform (UWP) game with DirectX.
 
-Xxxx xxxxxx xxxxxxxx xxx xxxxx. Xx'x x xxxxxx xxxxx-xxxxxx xxxxxxxx xxxx, xxx xxx xxxx-xxxx xxxxxxxx xxxx xxx xxxxxxxx xxx xxxx xxxxx xxx xxxxxx xxxxxxxxxxx xxx xxx xxxxx xxxxx xx xxxxx.
-
-Xxx xxxx xxxx xxxxx xxxxxxxx, xxx xxxx-xxxx xxxxxxxx xxxxxxxxxxxx, xxx [Xxxx-xxxx xxxxxxxx xxx xxxxx](tutorial--adding-move-look-controls-to-your-directx-game.md) xxx [Xxxxx xxxxxxxx xxx xxxxx](tutorial--adding-touch-controls-to-your-directx-game.md).
-
-## Xxxxxx xxxxxxx xxxxxxxxx
+## UWP game apps and controls
 
 
-Xxxxx xxxxxxxx xxx xxxxx/xxxxxxxx xxxxxxxx xxxx x xxxx xxxxxxx xxxx xxxxxxxxxxxxxx. Xx x XXX xxx, x xxxxxxx xx xxxxxx x xxxxx xx xxx xxxxxx. Xxx xxx xxxx xx xx xxxxxxx xxx xxxxx xx xxxxxxx xxxx xxxxxx xx xxx xxxxx xxxxxx. Xx x xxxxxx, xxx xxx xxxxxxxx xxx x xxxxxx xxx xx xxxxxx, xxx xxx xxxxx xxxxx xxxxxxx xxx xxxxxx xx xxxxx x xxxxx xx x xxxxx xxxxxx xx xxxx xxx xxxxx xxx xxxxxxx.
+A good UWP game supports a broad variety of interfaces. A potential player might have Windows 10 on a tablet with no physical buttons, or a media PC with an Xbox controller attached, or the latest desktop gaming rig with a high-performance mouse and gaming keyboard. Your game should support all of these devices if the game design allows it.
 
-Xxxx xxx **XxxxXxxxXxxxxxxxxx** xxxxx xx xxx xxxx xxxxxx xx xxxxxxxxxxx, xx xxxxxxxxx xxx xxxx xxxxxxx-xxxxxxxx xxxxxx xxx xxx xxxxx-xxxxxxxx xxxxx:
+This sample supports all three. It's a simple first-person shooting game, and the move-look controls that are standard for this genre are easily implemented for all three types of input.
 
--   [
-            **XxxxXxxxxx::XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208278). Xxx xxxx xx xxxxx xxxxx xxxxxx xxx xxxxxxx (xxx xxxx), xx xxx xxxxx xxxxxxx xxx xxxxxxx.
--   [
-            **XxxxXxxxxx::XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208276). Xxx xxxxx xxxxx, xx x xxxx xxxxxx xxx xxxx xx xxx xxxxx xxxxxxx.
--   [
-            **XxxxXxxxxx::XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208279). Xxx xxxx xxxxx xxxxxx xxx xxxxxxxx, xx xxx xxxxxx xxxxxxxxxx xxx xxxxx xxxxxxx xxx xxxxxx.
--   [
-            **XxxxXxxxxx::XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208275). Xxx xxxxxxx xxxxx xxx xx xxx xxxx xxxxxx.
--   [
-            **Xxxxxxx::Xxxxxxx::Xxxxx::XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh758356). Xxx xxxxx xxxxx x xxxxxxx xxxxxxxx. Xx xxxxx xxxx xx xxx xxxx xxxxxxxxxx xx xxxxx xxxxxxxx xxxxx xxxxxx, xxx xxx xxx xxxxxxx x-x xxxxxxxx.
+For more info about controls, and move-look controls specifically, see [Move-look controls for games](tutorial--adding-move-look-controls-to-your-directx-game.md) and [Touch controls for games](tutorial--adding-touch-controls-to-your-directx-game.md).
+
+## Common control behaviors
+
+
+Touch controls and mouse/keyboard controls have a very similar core implementation. In a UWP app, a pointer is simply a point on the screen. You can move it by sliding the mouse or sliding your finger on the touch screen. As a result, you can register for a single set of events, and not worry about whether the player is using a mouse or a touch screen to move and press the pointer.
+
+When the **MoveLookController** class in the game sample is initialized, it registers for four pointer-specific events and one mouse-specific event:
+
+-   [**CoreWindow::PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278). The left or right mouse button was pressed (and held), or the touch surface was touched.
+-   [**CoreWindow::PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276). The mouse moved, or a drag action was made on the touch surface.
+-   [**CoreWindow::PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279). The left mouse button was released, or the object contacting the touch surface was lifted.
+-   [**CoreWindow::PointerExited**](https://msdn.microsoft.com/library/windows/apps/br208275). The pointer moved out of the main window.
+-   [**Windows::Devices::Input::MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356). The mouse moved a certain distance. Be aware that we are only interested in mouse movement delta values, and not the current x-y position.
 
 ```cpp
 void MoveLookController::Initialize(
@@ -78,25 +73,25 @@ void MoveLookController::Initialize(
 }
 ```
 
-Xxx Xxxx xxxxxxxxxx xx xxxxxxx xxxxxxxxxx, xxxxx xxx [XXxxxx](https://msdn.microsoft.com/library/windows/desktop/hh405053) XXXx. Xx xxxx xxxxx xxx xxxxxxxxxxxxxx xx xxxx xxxxxxxxxx xxxxxxxx xx x xxx.
+The Xbox controller is handled separately, using the [XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053) APIs. We talk about the implementation of game controller controls in a bit.
 
-Xx xxx xxxx xxxxxx, xxx **XxxxXxxxXxxxxxxxxx** xxxxx xxx xxxxx xxxxxxxxxx-xxxxxxxx xxxxxx, xxxxxxxxxx xx xxx xxxxxxx xxxx:
+In the game sample, the **MoveLookController** class has three controller-specific states, regardless of the control type:
 
--   **Xxxx**. Xxxx xx xxx xxxxxxxxxxx xxxxx xxx xxx xxxxxxxxxx. Xxx xxxx xx xxx xxxxxxxxxxxx xxx xxxxxxxxxx xxxxx.
--   **XxxxXxxXxxxx**. Xxx xxxx xx xxxxxx xxx xx xxxxxxx xxx xxx xxxxxx xx xxxxxxxx.
--   **Xxxxxx**. Xxx xxxx xx xxxxxxx, xxxxxxxxxx xxxxxx xxxxx.
+-   **None**. This is the initialized state for the controller. The game is not anticipating any controller input.
+-   **WaitForInput**. The game is paused and is waiting for the player to continue.
+-   **Active**. The game is running, processing player input.
 
-Xxx **Xxxxxx** xxxxx xx xxx xxxxx xxxx xxx xxxxxx xx xxxxxxxx xxxxxxx xxx xxxx. Xxxxxx xxxx xxxxx, xxx **XxxxXxxxXxxxxxxxxx** xxxxxxxx xx xxxxxxxxxx xxxxx xxxxxx xxxx xxx xxxxxxx xxxxx xxxxxxx xxx xxxxxxxxxxxx xxx xxxxxx'x xxxxxxxxxx xxxxx xx xxx xxxxxxxxxx xxxxx xxxx. Xx x xxxxxx, xx xxxxxxx xxx xxxxxxxx xxx xxxx xxxxxxxxx (xxx xxxx xxxxx xxxxxx) xx xxx xxxxxx'x xxxx xxx xxxxxx xxx xxxxxxx xxxx xxxx xxx xxxx xxxxx Xxxxxx xx xxxxxx xxxx xxx xxxx xxxx.
+The **Active** state is the state when the player is actively playing the game. During this state, the **MoveLookController** instance is processing input events from all enabled input devices and interpreting the player's intentions based on the aggregated event data. As a result, it updates the velocity and look direction (the view plane normal) of the player's view and shares the updated data with the game after Update is called from the game loop.
 
-Xx xxxxx xxxx xxx xxxxxx xxx xxxx xxxx xxxx xxx xxxxxx xx xxx xxxx xxxx. Xxx xxxxxxx, xx xx xxx xxxxx xx xxxxxx xxxxxxx xxxxx xxxxxx xxx xxxxxx. Xxx xx xxxxx xxxxxx xxx xxxxxxx xx xxx **Xxxxxx** xxxxx, xxxx xxxxxxxxx xxxxxxx XXx xxxxxxxxxxxxx xx xxxxxxxxx xxxxxxx xxxxxxx. Xxxx xx xxxxxxxxx xxxxxxx xxxx x xxxxxx'x xxxxxxxxxxx, x xxxxxxx xxxxx xx xxx xxxxxx xxxxxxxxx xx xxxxxxxxx xxxx xxx xx xxx xxxx xxxxxxxxx xx xx xxx xxxx xx xxx xxxxxx.
+Be aware that the player can take more than one action at the same time. For example, he or she could be firing spheres while moving the camera. All of these inputs are tracked in the **Active** state, with different pointer IDs corresponding to different pointer actions. This is necessary because from a player's perspective, a pointer event in the firing rectangle is different from one in the move rectangle or in the rest of the screen.
 
-Xxxx x [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208278) xxxxx xx xxxxxxxx, xxx **XxxxXxxxXxxxxxxxxx** xxxxxxx xxx xxxxxxx XX xxxxx xxxxxxx xx xxx xxxxxx. Xxx xxxxxxx XX xxxxxxxxxx x xxxxxxxx xxxx xx xxxxx. Xxx xxxxxxx, xx x xxxxx-xxxxx xxxxxx, xxxxx xxx xx xxxxxxx xxxxxxxxx xxxxxx xxxxxx xx xxx xxxx xxxx. Xxx XXx xxx xxxx xx xxxx xxxxx xx xxxxx xxxxx xxx xxxxxx xx xxxxx. Xx xxx xxxxx xx xx xxx xxxx xxxxxxxxx xx xxx xxxxx xxxxxx, x xxxxxxx XX xx xxxxxxxx xx xxxxx xxx xxxxxxx xxxxxx xx xxxx xxxxxxxxx. Xxxxx xxxxxxx xxxxxx xx xxx xxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxx, xxxx x xxxxxxxx xxxxxxx XX. (Xx xxxx xxxxx xxxx xxxx xxxx xx xxx xxxxxxx xx xxxxx xxxxxxxx.)
+When a [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) event is received, the **MoveLookController** obtains the pointer ID value created by the window. The pointer ID represents a specific type of input. For example, on a multi-touch device, there may be several different active inputs at the same time. The IDs are used to keep track of which input the player is using. If one event is in the move rectangle of the touch screen, a pointer ID is assigned to track any pointer events in move rectangle. Other pointer events in the fire rectangle are tracked separately, with a separate pointer ID. (We talk about this some more in the section on touch controls.)
 
-Xxxxx xxxx xxx xxxxx xxx xxx xxxxxxx XX xxx xx xxxx xxxxxxx xxxxxxxxxx.
+Input from the mouse has yet another ID and is also handled separately.
 
-Xxxxx xxx xxxxxxx xxxxxx xxxx xxxx xxxxxx xx x xxxxxxxx xxxx xxxxxx, xx'x xxxx xx xxxxxx xxx xxxx xxx **XxxxXxxxXxxxxxxxxx** xxxxxx xxxxxx xxxx xxx xxxx xxxx xxxx.
+After the pointer events have been mapped to a specific game action, it's time to update the data the **MoveLookController** object shares with the main game loop.
 
-Xxxx xxxxxx, xxx **Xxxxxx** xxxxxx xx xxx xxxx xxxxxx xxxxxxxxx xxx xxxxx xxx xxxxxxx xxx xxxxxxxx xxx xxxx xxxxxxxxx xxxxxxxxx (**x\_xxxxxxxx** xxx **x\_xxxxxxxxxxxxx**), xxxxx xxx xxxx xxxx xxxx xxxxxxxxx xx xxxxxxx xxx xxxxxx **Xxxxxxxx** xxx **XxxxXxxxxxxxx** xxxxxxx xx xxx **XxxxXxxxXxxxxxxxxx** xxxxxxxx.
+When called, the **Update** method in the game sample processes the input and updates the velocity and look direction variables (**m\_velocity** and **m\_lookdirection**), which the game loop then retrieves by calling the public **Velocity** and **LookDirection** methods on the **MoveLookController** instance.
 
 ```cpp
 void MoveLookController::Update()
@@ -171,7 +166,7 @@ void MoveLookController::Update()
 }
 ```
 
-Xxx xxxx xxxx xxx xxxx xx xxx xx xxx xxxxxx xx xxxxxx xx xxxxxxx xxx **XxXxxxxx** xxxxxx xx xxx **XxxxXxxxXxxxxxxxxx** xxxxxxxx. Xxx **XxxxXxxxXxxxxxxxxx** xxxxxx xx xxx xx xxx xxxxxx xxx xxxxxxx xxx xxxx xxxxxx xx xxx xx xxx xxxxx xxxxx xxxxx.
+The game loop can test to see if the player is firing by calling the **IsFiring** method on the **MoveLookController** instance. The **MoveLookController** checks to see if the player has pressed the fire button on one of the three input types.
 
 ```cpp
 bool MoveLookController::IsFiring()
@@ -195,18 +190,18 @@ bool MoveLookController::IsFiring()
 }
 ```
 
-Xx xxx xxxxxx xxxxx xxx xxxxxxx xxxxxxx xxx xxxx xxxxxx xx xxx xxxx, xx xxxxxxx xxx xxxxx xxxxxx (xxx X xxx xx xxx Xxxx xxxxxxxxxx xxxxx xxxxxx), xxx xxxx xxxx xx xxxxxx. Xxx **XxxxXxxxXxxxxxxxxx** xxxxxxxxxx xxx xxxxx, xxx xxxxxxx xxx xxxx xxxx xxxx xx xxxxx xxx **XxXxxxxXxxxxxxxx** xxxxxx. Xx xxxx xxxxx, xx **XxXxxxxXxxxxxxxx** xxxxxxx **xxxx**, xxx xxxx xxxx xxxx xxxxx **XxxxXxxXxxxx** xx xxx **XxxxXxxxXxxxxxxxxx** xx xxxx xxx xxxxxxxxxx xxxx xxx **XxxxXxxXxxxx** xxxxx. Xxxx, xxx **XxxxXxxxXxxxxxxxxx** xxxxx xxx xxx xxxxxx xx xxxxxx xxx xx xxx xxxx xxxxx xx xxxx, xxxxxxxx, xx xxxx xxx xxxx, xxx xxxx xxxxxxxxxx xxxxxxxx xxxxx xxxxxx xxxxx xx xxxxxxx xx xxx **Xxxxxx** xxxxx.
+If the player moves the pointer outside the main window of the game, or presses the pause button (the P key or the Xbox controller start button), the game must be paused. The **MoveLookController** registered the press, and informs the game loop when it calls the **IsPauseRequested** method. At that point, if **IsPauseRequested** returns **true**, the game loop then calls **WaitForPress** on the **MoveLookController** to move the controller into the **WaitForInput** state. Then, the **MoveLookController** waits for the player to select one of the menu items to load, continue, or exit the game, and stop processing gameplay input events until it returns to the **Active** state.
 
-Xxx xxx [xxxxxxxx xxxx xxxxxx xxx xxxx xxxxxxx](#code_sample).
+See the [complete code sample for this section](#code_sample).
 
-Xxx, xxx'x xxxx xx xxx xxxxxxxxxxxxxx xx xxxx xx xxx xxxxx xxxxxxx xxxxx xx x xxxxxx xxxx xxxxxx.
+Now, let's look at the implementation of each of the three control types in a little more detail.
 
-## Xxxxxxxxxxxx xxxxxxxx xxxxx xxxxxxxx
+## Implementing relative mouse controls
 
 
-Xx xxxxx xxxxxxxx xx xxxxxxxx, xx xxxx xxx xxxx xxxxxxxx xx xxxxxxxxx xxx xxx xxxxx xxx xxx xx xxx xxxxxx. Xx xx xxxx xx xxxxxxxxxxxx xxxxxxxx xxxxx xxxxxxxx, xxxxx xx xxxxxx xxx xxxxxxxx xxxxxxxx xxx xxxxx xxx xxxxx—xxx xxxxx xxxxxxx xxx xxxxx xx xxx xxxxxxxx xxx xxx xxxx—xx xxxxxxx xx xxxxxxxxx xxx xxxxxxxx x-x xxxxx xxxxxxxxxxx xx xxx xxxxxx.
+If mouse movement is detected, we want use that movement to determine the new pitch and yaw of the camera. We do that by implementing relative mouse controls, where we handle the relative distance the mouse has moved—the delta between the start of the movement and the stop—as opposed to recording the absolute x-y pixel coordinates of the motion.
 
-Xx xx xxxx, xx xxxxxx xxx xxxxxxx xx xxx X (xxx xxxxxxxxxx xxxxxx) xxx xxx X (xxx xxxxxxxx xxxxxx) xxxxxxxxxxx xx xxxxxxxxx xxx [**XxxxxXxxxx::X**](https://msdn.microsoft.com/library/windows/apps/hh758353) xxx **XxxxxXxxxx::X** xxxxxx xx xxx [**Xxxxxxx::Xxxxxx::Xxxxx::XxxxxXxxxxXxxx::XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh758358) xxxxxxxx xxxxxx xxxxxxxx xx xxx [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh758356) xxxxx.
+To do that, we obtain the changes in the X (the horizontal motion) and the Y (the vertical motion) coordinates by examining the [**MouseDelta::X**](https://msdn.microsoft.com/library/windows/apps/hh758353) and **MouseDelta::Y** fields on the [**Windows::Device::Input::MouseEventArgs::MouseDelta**](https://msdn.microsoft.com/library/windows/apps/hh758358) argument object returned by the [**MouseMoved**](https://msdn.microsoft.com/library/windows/apps/hh758356) event.
 
 ```cpp
 void MoveLookController::OnMouseMoved(
@@ -250,12 +245,12 @@ void MoveLookController::OnMouseMoved(
 }
 ```
 
-## Xxxxxxxxxxxx xxxxx xxxxxxxx
+## Implementing touch controls
 
 
-Xxxxx xxxxxxxx xxx xxx xxxxxxxxx xx xxxxxxx, xxxxxxx xxxx xxx xxx xxxx xxxxxxx xxx xxxxxxx xxx xxxx xxxx-xxxxxx xx xx xxxxxxxxx. Xx xxx xxxx xxxxxx, x xxxxxxxxx xx xxx xxxxx xxxx xxxxxxxx xx xxx xxxxxx xx xxxx xx x xxxxxxxxxxx xxx, xxxxx xxxxxxx xxxx xxxxx xxxx xxx xxxxx xx xxxx xxxxx xxxxxx xxx xxxxxx xxxx xxx xxxxx, xxx xxxxxxx xxxx xxxxx xx xxx xxxx xxxxx xxx xxxxxx xxxxxxx xxx xxxxxxxx. X xxxxxxxxx xx xxx xxxxx xxxxx xxxxxxxx xx xxx xxxxxx xxx xx xxxxxxx xx xxxx xxx xxxxxxx. Xxxxxx (xxxxx xxx xxx) xxx xxxxxxxxxx xx xxxxxxx xxxx xxxxxx xx xxx xxxxx xx xxx xxxxxx xxx xxxxxxxx xxx xxxxxx xxx xxxxxx; xx xxxx xxxxxx xxxxx, xxx xxxxxx (xxxx xxxxx xxxxx xxxxx) xxxxx xxxxxxxxx.
+Touch controls are the trickiest to develop, because they are the most complex and require the most fine-tuning to be effective. In the game sample, a rectangle in the lower left quadrant of the screen is used as a directional pad, where sliding your thumb left and right in this space slides the camera left and right, and sliding your thumb up and down moves the camera forward and backward. A rectangle in the lower right quadrant of the screen can be pressed to fire the spheres. Aiming (pitch and yaw) are controlled by sliding your finger on the parts of the screen not reserved for moving and firing; as your finger moves, the camera (with fixed cross hairs) moves similarly.
 
-Xxx xxxx xxx xxxx xxxxxxxxxx xxx xxxxxxx xx xxx xxxxxxx xx xxx xxxxxx xxxx:
+The move and fire rectangles are created by two methods in the sample code:
 
 ```cpp
 void SetMoveRect(
@@ -268,9 +263,9 @@ void SetMoveRect(
         );
 ```
 
-Xx xxxxx xxxxx xxxxxx xxxxxxx xxxxxx xxx xxx xxxxx xxxxxxx xx xxx xxxxxx xx xxxx xxxxxxxx. Xx xxx xxxxxx xx xxxxxxx, xxxxx xxxxxxxxxx xxxx xx xxxxxxxx xxxxx (xxx xxxxxxx).
+We treat touch device pointer events for the other regions of the screen as look commands. If the screen is resized, these rectangles must be computed again (and redrawn).
 
-Xx x xxxxx xxxxxx xxxxxxx xxxxx xx xxxxxx xx xxx xx xxxxx xxxxxxx xxx xxx xxxx xxxxx xx xxx xx **Xxxxxx**, xx'x xxxxxxxx x xxxxxxx XX, xx xx xxxxxxxxx xxxxxxx.
+If a touch device pointer event is raised in one of these regions and the game state is set to **Active**, it's assigned a pointer ID, as we discussed earlier.
 
 ```cpp
 void MoveLookController::OnPointerPressed(
@@ -350,9 +345,9 @@ void MoveLookController::OnPointerPressed(
 }
 ```
 
-Xx x [**XxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208278) xxxxx xxx xxxxxxxx xx xxx xx xxx xxxxx xxxxxxx xxxxxxx, xxx xxxx xxxxxxxxx, xxx xxxx xxxxxxxxx, xx xxx xxxx xx xxx xxxxxx (xxx xxxx xxxxxxx), xxx **XxxxXxxxXxxxxxxxxx** xxxxxxx xxx xxxxxxx XX xxx xxx xxxxxxx xxxx xxxxx xxx xxxxx xx x xxxxxxxx xxxxxxxx xxxx xxxxxxxxxxx xx xxx xxxxxx xx xxx xxxxxx xxx xxxxx xxx xxxxx xx. Xxx xxxxxxx, xx xxx xxxxx xxxxxxxx xx xxx xxxx xxxxxxxxx, xxx **x\_xxxxXxxxxxxXX** xxxxxxxx xx xxx xx xxx xxxxxxx XX xxxx xxxxx xxx xxxxx. X Xxxxxxx "xx xxx" xxxxxxxx (**x\_xxxxXxXxx**, xx xxx xxxxxxx) xx xxxx xxx xx xxxxxxxx xxxx xxx xxxxxxx xxx xxx xxxx xxxxxxxx xxx.
+If a [**PointerPressed**](https://msdn.microsoft.com/library/windows/apps/br208278) event has occurred in one of the three control regions, the move rectangle, the fire rectangle, or the rest of the screen (the look control), the **MoveLookController** assigns the pointer ID for the pointer that fired the event to a specific variable that corresponds to the region of the screen the event was fired in. For example, if the event occurred in the move rectangle, the **m\_movePointerID** variable is set to the pointer ID that fired the event. A Boolean "in use" variable (**m\_lookInUse**, in the example) is also set to indicate that the control has not been released yet.
 
-Xxx, xxx'x xxxx xx xxx xxx xxxx xxxxxx xxxxxxx xxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208276) xxxxx xxxxxx xxxxx.
+Now, let's look at how the game sample handles the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) touch screen event.
 
 ```cpp
 void MoveLookController::OnPointerMoved(
@@ -410,12 +405,12 @@ void MoveLookController::OnPointerMoved(
 }
 ```
 
-Xxx **XxxxXxxxXxxxxxxxxx** xxxxxx xxx xxxxxxx XX xx xxxxxxxxx xxxxx xxx xxxxx xxxxxxxx, xxx xxxxx xxx xx xxx xxxxxxxxx xxxxxxx:
+The **MoveLookController** checks the pointer ID to determine where the event occurred, and takes one of the following actions:
 
--   Xx xxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208276) xxxxx xxxxxxxx xx xxx xxxx xx xxxx xxxxxxxxx, xxxxxx xxx xxxxxxx xxxxxxxx xxx xxx xxxxxxxxxx.
--   Xx xxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208276) xxxxx xxxxxxxx xxxxxxxxx xx xxx xxxx xx xxx xxxxxx (xxxxxxx xx xxx xxxx xxxxxxxx), xxxxxxxxx xxx xxxxxx xx xxxxx xxx xxx xx xxx xxxx xxxxxxxxx xxxxxx.
+-   If the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) event occurred in the move or fire rectangle, update the pointer position for the controller.
+-   If the [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/br208276) event occurred somewhere in the rest of the screen (defined as the look controls), calculate the change in pitch and yaw of the look direction vector.
 
-Xxxxxx, xxx'x xxxx xx xxx xxx xxxx xxxxxx xxxxxxx xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208279) xxxxx xxxxxx xxxxx.
+Lastly, let's look at how the game sample handles the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) touch screen event.
 
 ```cpp
 void MoveLookController::OnPointerReleased(
@@ -465,23 +460,23 @@ void MoveLookController::OnPointerReleased(
 }
 ```
 
-Xx xxx XX xx xxx xxxxxxx xxxx xxxxx xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208279) xxxxx xx xxx XX xx xxx xxxxxxxxxx xxxxxxxx xxxx xxxxxxx, xxx **XxxxXxxxXxxxxxxxxx** xxxx xxx xxxxxxxx xx Y xxxxxxx xxx xxxxxx xxx xxxxxxx xxxxxxxx xxx xxxx xxxxxxxxx. Xx xx xxxx'x xxx xxx xxxxxxxx xx Y, xxx xxxxxx xxxxx xxxx xxxxxx! Xx xxx xxxx xx xxxxxxxxx xxxx xxxx xx xxxxxxx, xxxx xx xxxxx xxx xxx xxx xxxxxx xxxx xxxxxx xxxxxxxxx xxx xxxxxxxx xx Y xxxx xxxxxx xxxxx xx **Xxxxxx** xxxx xxx xxxx xxxx.
+If the ID of the pointer that fired the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) event is the ID of the previously recorded move pointer, the **MoveLookController** sets the velocity to 0 because the player has stopped touching the move rectangle. If it didn't set the velocity to 0, the player would keep moving! If you want to implement some form of inertia, this is where you add the method that begins returning the velocity to 0 over future calls to **Update** from the game loop.
 
-Xxxxxxxxx, xx xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208279) xxxxx xxxxx xx xxx xxxx xxxxxxxxx xx xxx xxxx xxxxxx, xxx **XxxxXxxxXxxxxxxxxx** xxxxxx xxx xxxxxxxx xxxxxxx XXx.
+Otherwise, if the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) event fired in the fire rectangle or the look region, the **MoveLookController** resets the specific pointer IDs.
 
-Xxxx'x xxx xxxxxx xx xxx xxxxx xxxxxx xxxxxxxx xxx xxxxxxxxxxx xx xxx xxxx xxxxxx. Xxx'x xxxx xx xx xxxxx xxx xxxxxxxx xxxxxxxx.
+That's the basics of how touch screen controls are implemented in the game sample. Let's move on to mouse and keyboard controls.
 
-## Xxxxxxxxxxxx xxxxx xxx xxxxxxxx xxxxxxxx
+## Implementing mouse and keyboard controls
 
 
-Xxx xxxx xxxxxx xxxxxxxxxx xxxxx xxxxx xxx xxxxxxxx xxxxxxxx:
+The game sample implements these mouse and keyboard controls:
 
--   Xxx X, X, X, xxx X xxxx xxxx xxx xxxxxx xxxx xxxxxxx, xxxxxxxx, xxxx, xxx xxxxx, xxxxxxxxxxxx. Xxxxxxxx X xxx xxx xxxxx xxx xxxx xxx xxxx xx xxx xxxx, xxxxxxxxxxxx.
--   Xxxxxxxx xxx X xxx xxxxxx xxx xxxx.
--   Xxxxxx xxx xxxxx xxxx xxx xxxxxx xx xxxxxxx xx xxx xxxxxxxx (xxx xxxxx xxx xxx) xx xxx xxxxxx xxxx.
--   Xxxxxxxx xxx xxxx xxxxxx xxxxx x xxxxxx.
+-   The W, S, A, and D keys move the player view forward, backward, left, and right, respectively. Pressing X and the space bar move the view up and down, respectively.
+-   Pressing the P key pauses the game.
+-   Moving the mouse puts the player in control of the rotation (the pitch and yaw) of the camera view.
+-   Clicking the left button fires a sphere.
 
-Xx xxx xxx xxxxxxxx, xxx xxxx xxxxxx xxxxxxxxx xxx xxx xxxxx xxxxxx: [**XxxxXxxxxx::XxxXx**](https://msdn.microsoft.com/library/windows/apps/br208271) xxx [**XxxxXxxxxx::XxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br208270), xxxxx xxxxxx xxx xxxxx xxx xxx xxxxxxx xx x xxx, xxxxxxxxxxxx.
+To use the keyboard, the game sample registers for two extra events: [**CoreWindow::KeyUp**](https://msdn.microsoft.com/library/windows/apps/br208271) and [**CoreWindow::KeyDown**](https://msdn.microsoft.com/library/windows/apps/br208270), which handle the press and the release of a key, respectively.
 
 ```cpp
 window->KeyDown +=
@@ -491,7 +486,7 @@ window->KeyUp +=
         ref new TypedEventHandler<CoreWindow^, KeyEventArgs^>(this, &MoveLookController::OnKeyUp);
 ```
 
-Xxx xxxxx xx xxxxxxx x xxxxxx xxxxxxxxxxx xxxx xxx xxxxx xxxxxxxx, xxxx xxxxxx xx xxxx x xxxxxxx. Xxxxxxxxx, xx xxxxx'x xxx xxx xxxx xxx xxxx xxxxxxxxxx, xx xxxx xxxxx xx xxxx xxxxxxxxxx xxx xxx xxxxxx: xxx xxxxx xxxx xxxxx xxx xxxx xxx xxxx xxxxxxxx xx xxx xxxx xxxx? Xx xxxxx xxxxxxx, xxx **XxxxXxxxXxxxxxxxxx** xxxxxxxxxx xxxxxxx xxx xxxx xxxxxxxx xxxxxxxx xxx xxxxx xx xxxxx, xxx xxxxxxx xxx xxxx xxxxxxxx xxxx xxx xxxx xxxxx xxxxxx xx xxxxxxx, xx xxxxx xxxx.
+The mouse is treated a little differently from the touch controls, even though it uses a pointer. Obviously, it doesn't use the move and fire rectangles, as that would be very cumbersome for the player: how could they press the move and fire controls at the same time? As noted earlier, the **MoveLookController** controller engages the look controls whenever the mouse is moved, and engages the fire controls when the left mouse button is pressed, as shown here.
 
 ```cpp
 void MoveLookController::OnPointerPressed(
@@ -602,7 +597,7 @@ void MoveLookController::OnPointerPressed(
 }
 ```
 
-Xxx, xxx'x xxxx xx xxx xxx xxxx xxxxxx xxxxxxx xxx [**XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208279) xxxxx xxxxx.
+Now, let's look at how the game sample handles the [**PointerReleased**](https://msdn.microsoft.com/library/windows/apps/br208279) mouse event.
 
 ```cpp
 void MoveLookController::OnPointerReleased(
@@ -660,16 +655,16 @@ void MoveLookController::OnPointerReleased(
 }
 ```
 
-Xxxx xxx xxxxxx xxxxx xxxxxxxx xxx xx xxx xxxxx xxxxxxx, xxx xxxxx xx xxxxxxxx: xxx xxxxxxx xxxx xxxxxx. Xxx, xxxxxxx xxxx xx xxxxxx xxxxxxx, xxx xxxx xxxxxxxxx xx xxx xxx xxxx xxxxx xxxxxxx xx xxxxx xxx xxxxxxx xxxx xxxxxx.
+When the player stops pressing one of the mouse buttons, the input is complete: the spheres stop firing. But, because look is always enabled, the game continues to use the same mouse pointer to track the ongoing look events.
 
-Xxx, xxx'x xxxx xx xxx xxxx xx xxxxxxx xxxxx: xxx Xxxx xxxxxxxxxx. Xx'x xxxxxxx xxxxxxxxxx xxxx xxx xxxxx xxx xxxxx xxxxxxxx, xxxxxxx xx xxxxx'x xxx xxx xxxxxxx xxxxxx.
+Now, let's look at the last of control types: the Xbox controller. It's handled separately from the touch and mouse controls, because it doesn't use the pointer object.
 
-## Xxxxxxxxxxxx Xxxx xxxxxxxxxx xxxxxxxx
+## Implementing Xbox controller controls
 
 
-Xx xxx xxxx xxxxxx, Xxxx xxxxxxxxxx xxxxxxx xx xxxxx xx xxxxx xx xxx [XXxxxx](https://msdn.microsoft.com/library/windows/desktop/hh405053) XXXx, xxxxx xxx xxx xx XXXx xxxxxxxx xx xxxxxxxx xxxxxxxxxxx xxx xxxx xxxxxxxxxxx. Xx xxx xxxx xxxxxx, xx xxx xxx Xxxx xxxxxxxxxx'x xxxx xxxxxx xxxxx xxx xxxxxx xxxxxxxx, xxx xxxxx xxxxxx xxxxx xxx xxx xxxx xxxxxxxx, xxx xxx xxxxx xxxxxxx xx xxxx. Xx xxx xxx xxxxx xxxxxx xx xxxxx xxx xxxxxx xxx xxxx.
+In the game sample, Xbox controller support is added by calls to the [XInput](https://msdn.microsoft.com/library/windows/desktop/hh405053) APIs, which are set of APIs designed to simplify programming for game controllers. In the game sample, we use the Xbox controller's left analog stick for player movement, the right analog stick for the look controls, and the right trigger to fire. We use the start button to pause and resume the game.
 
-Xxx **Xxxxxx** xxxxxx xx xxx **XxxxXxxxXxxxxxxxxx** xxxxxxxx xxxxxxxxxxx xxxxxx xx xxx xx x xxxx xxxxxxxxxx xx xxxxxxxxx, xxx xxxx xxxxxx xxx xxxxxxxxxx xxxxx.
+The **Update** method on the **MoveLookController** instance immediately checks to see if a game controller is connected, and then checks the controller state.
 
 ```cpp
 void MoveLookController::UpdateGameController()
@@ -797,23 +792,23 @@ void MoveLookController::UpdateGameController()
 }
 ```
 
-Xx xxx xxxx xxxxxxxxxx xx xx xxx **Xxxxxx** xxxxx, xxxx xxxxxx xxxxxx xx xxx xx x xxxx xxxxx xxx xxxx xxxxxx xxxxx xx x xxxxxxxx xxxxxxxxx. Xxx xxx xxxxxxxx xx xxx xxxxx xx x xxxxxxxx xxxxxxxxx xxxx xxxxxxxx xx xxxxxx xxxx xxx xxxxxx xx xxx xxxx xxxx; xxxxxxxxx, xxxxxxx xxxx xxxxxx. Xxxx xxxx xxxx xxxxxx xx xxxxxxxxx xx xxxxxxx "xxxxxxxx," xxxxx xx xxxx xxx xxxxxxxxxx xxxxx xx xxxxxx xxxxxxxxx xxxx xxx xxxxxx'x xxxxx xx xx xxxxx xx xxx xxxxx. Xx xx xxx'x xxxx xxxx xxxx xxxx, xxx xxxxxx xxx xxx xxxxxxx xxxx xxxxxxx, xx xxx xxxxxxxx xxxx xxxx xxxxxxx.
+If the game controller is in the **Active** state, this method checks to see if a user moved the left analog stick in a specific direction. But the movement on the stick in a specific direction must register as larger than the radius of the dead zone; otherwise, nothing will happen. This dead zone radius is necessary to present "drifting," which is when the controller picks up minute movements from the player's thumb as it rests on the stick. If we don't have this dead zone, the player can get annoyed very quickly, as the controls feel very fidgety.
 
-Xxx **Xxxxxx** xxxxxx xxxx xxxxxxxx xxx xxxx xxxxx xx xxx xxxxx xxxxx, xx xxx xx xxx xxxxxx xxx xxxxxxx xxx xxxxxxxxx xxx xxxxxx xx xxxxxxx, xx xxxx xx xxx xxxxxxxx xx xxx xxxxx xx xxxxxx xxxx xxxxxxx xxxx xxxx xxxxxx.
+The **Update** method then performs the same check on the right stick, to see if the player has changed the direction the camera is looking, as long as the movement on the stick is longer than another dead zone radius.
 
-**Xxxxxx** xxxxxxxx xxx xxx xxxxx xxx xxx, xxx xxxx xxxxxx xx xxx xx xxx xxxx xxxxxxx xxx xxxxx xxxxxx xxxxxxx, xxx xxxx xxxxxx.
+**Update** computes the new pitch and yaw, and then checks to see if the user pressed the right analog trigger, our fire button.
 
-Xxx xxxx'x xxx xxxx xxxxxx xxxxxxxxxx x xxxx xxx xx xxxxxxx xxxxxxx. Xxxxx, xxxxxxxx xxxx x xxxx XXX xxx xxxxxxxx x xxxxx xx xxxxxxx xxxxxxx, xx xxxxxxx xxxx xxxxxxxxx xxxx xxxxxxx xxx xxxxxxx xxx xxxx xx xxx xxx xxxx xxxxxx!
+And that's how this sample implements a full set of control options. Again, remember that a good UWP app supports a range of control options, so players with different form factors and devices can play in the way they prefer!
 
-## Xxxx xxxxx
-
-
-Xx'xx xxxxxxxx xxxxx xxxxx xxxxxxxxx xx x XXX XxxxxxX xxxx xxxxxx xxx: xxxxx! Xxxxx xxx xxxxx xxxxxxx xxx xxxxxxxxx xx xxx xxxx, xx xxx'x xxxxxxx [xxxxxx xxxxx](tutorial--adding-sound.md)!
-
-## Xxxxxxxx xxxxxx xxxx xxx xxxx xxxxxxx
+## Next steps
 
 
-XxxxXxxxXxxxxxxxxx.x
+We've reviewed every major component of a UWP DirectX game except one: audio! Music and sound effects are important to any game, so let's discuss [adding sound](tutorial--adding-sound.md)!
+
+## Complete sample code for this section
+
+
+MoveLookController.h
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -976,7 +971,7 @@ private:
 };
 ```
 
-XxxxXxxxXxxxxxxxxx.xxx
+MoveLookController.cpp
 
 ```cpp
 //// THIS CODE AND INFORMATION IS PROVIDED "AS IS" WITHOUT WARRANTY OF
@@ -1900,21 +1895,25 @@ void MoveLookController::UpdateGameController()
 }
 ```
 
-> **Xxxx**  
-Xxxx xxxxxxx xx xxx Xxxxxxx YY xxxxxxxxxx xxxxxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx. Xx xxx’xx xxxxxxxxxx xxx Xxxxxxx Y.x xx Xxxxxxx Xxxxx Y.x, xxx xxx [xxxxxxxx xxxxxxxxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132).
+> **Note**  
+This article is for Windows 10 developers writing Universal Windows Platform (UWP) apps. If you’re developing for Windows 8.x or Windows Phone 8.x, see the [archived documentation](http://go.microsoft.com/fwlink/p/?linkid=619132).
 
  
 
-## Xxxxxxx xxxxxx
+## Related topics
 
 
-[Xxxxxx x xxxxxx XXX xxxx xxxx XxxxxxX](tutorial--create-your-first-metro-style-directx-game.md)
+[Create a simple UWP game with DirectX](tutorial--create-your-first-metro-style-directx-game.md)
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

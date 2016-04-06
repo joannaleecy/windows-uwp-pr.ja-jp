@@ -1,68 +1,67 @@
 ---
-xxxxx: Xxxx-xxxxxxxxx xxxx XxxxXxxx
-xxxxxxxxxxx: Xxx xxx xxx XxxxXxxx xx xxxxxxx xxxx xxx xx xx xxxxxx xxxx x xxxx xxxxxxxx x xxxxxx xx xxxxx XX. Xxxx xxxxxxxx xxx-xxxxxx xxxxxxx xxxx xx x xxxxxx xx xxxxx xxxxxx, xx xxxxxx xxxxxxx xxxx xx x XXX xxxxx xxxxx, XX xxxx, xx XXX.
-xx.xxxxxxx: XXYYYYXX-YYXY-YYYY-YYYX-YXYXYYYYYXXY
+title: 自動再生による自動起動
+description: 自動再生を使って、コンピューターにデバイスが接続されたときのオプションとしてアプリを提供できます。 これには、カメラやメディア プレーヤーなどのボリューム デバイス以外のデバイス、または USB サム ドライブ、SD カード、DVD などのボリューム デバイスが含まれます。
+ms.assetid: AD4439EA-00B0-4543-887F-2C1D47408EA7
 ---
 
-# <span id="dev_launch_resume.auto-launching_with_autoplay">
-            </span>Xxxx-xxxxxxxxx xxxx XxxxXxxx
+# <span id="dev_launch_resume.auto-launching_with_autoplay"></span>自動再生による自動起動
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-Xxx xxx xxx **XxxxXxxx** xx xxxxxxx xxxx xxx xx xx xxxxxx xxxx x xxxx xxxxxxxx x xxxxxx xx xxxxx XX. Xxxx xxxxxxxx xxx-xxxxxx xxxxxxx xxxx xx x xxxxxx xx xxxxx xxxxxx, xx xxxxxx xxxxxxx xxxx xx x XXX xxxxx xxxxx, XX xxxx, xx XXX. Xxx xxx xxxx xxx **XxxxXxxx** xx xxxxx xxxx xxx xx xx xxxxxx xxxx xxxxx xxxxx xxxxx xxxxxxx xxx XXx xx xxxxx xxxxxxxxx (xxxxxxx).
+**自動再生**を使って、コンピューターにデバイスが接続されたときのオプションとしてアプリを提供できます。 これには、カメラやメディア プレーヤーなどのボリューム デバイス以外のデバイス、または USB サム ドライブ、SD カード、DVD などのボリューム デバイスが含まれます。 また**自動再生**では、近接通信 (タップ) を使って 2 台の PC 間でユーザーがファイルを共有するときにアプリをオプションとして提供することもできます。
 
-> **Xxxx**  Xx xxx xxx x xxxxxx xxxxxxxxxxxx xxx xxx xxxx xx xxxxxxxxx xxxx [Xxxxxxx Xxxxx xxxxxx xxx](http://go.microsoft.com/fwlink/p/?LinkID=301381) xx xx **XxxxXxxx** xxxxxxx xxx xxxx xxxxxx, xxx xxx xxxxxxxx xxxx xxx xx xxx xxxxxx xxxxxxxx. Xxx xxxx xxxx, xxx [XxxxXxxx xxx Xxxxxxx Xxxxx xxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=306684).
+> **注:** デバイスの製造元がデバイスの**自動再生**ハンドラーとして [Windows ストア デバイス アプリ](http://go.microsoft.com/fwlink/p/?LinkID=301381) を関連付ける場合は、デバイス メタデータでアプリを識別することができます。 詳しくは、「[Windows ストア デバイス アプリの自動再生](http://go.microsoft.com/fwlink/p/?LinkId=306684)」をご覧ください。
 
-## Xxxxxxxx xxx XxxxXxxx xxxxxxx
+## 自動再生コンテンツに登録する
 
-Xxx xxx xxxxxxxx xxxx xx xxxxxxx xxx **XxxxXxxx** xxxxxxx xxxxxx. **XxxxXxxx** xxxxxxx xxxxxx xxx xxxxxx xxxx x xxxxxx xxxxxx xxxx xx x xxxxxx xxxxxx xxxx, xxxxx xxxxx, xx XXX xx xxxxxxxx xxxx xxx XX. Xxxx xx xxxx xxx xx xxxxxxxx xxxx xxx xx xx **XxxxXxxx** xxxxxx xxxx x xxxxxx xxxxxx xxxx x xxxxxx xx xxxxxxxx.
+アプリを**自動再生**コンテンツ イベントのオプションとして登録できます。 **自動再生**コンテンツ イベントは、カメラのメモリ カード、サム ドライブ、DVD などのボリューム デバイスが PC に挿入されたときに発生します。 ここでは、カメラのボリューム デバイスが挿入されたときに**自動再生**オプションとしてアプリを識別する方法を示します。
 
-Xx xxxx xxxxxxxx, xxx xxxxxxx xx xxx xxxx xxxxxxxx xxxxx xxxxx xx xxxxxx xxxx xx Xxxxxxxx. Xxx xxxxxxxxxx xxx xxx xxx xxx XxxxXxxx **XxxxXxxxxxxxXxXxxxxxx** xxxxxxx xxxxx.
+このチュートリアルでは、画像ファイルを表示したり、ピクチャにそれらの画像をコピーしたりするアプリを作成しました。 自動再生 **ShowPicturesOnArrival** コンテンツ イベントにアプリを登録しました。
 
-XxxxXxxx xxxx xxxxxx xxxxxxx xxxxxx xxx xxxxxxx xxxxxx xxxxxxx XXx xxxxx xxxxxxxxx (xxxxxxx). Xxx xxx xxx xxx xxxxx xxx xxxx xx xxxx xxxxxxx xx xxxxxx xxxxx xxxx xxx xxxxxx xxxxxxx XXx xxxx xxx xxxxxxxxx. Xxx xxxxxxxxx xxxxx xxxxx xxx XxxxXxxx xxxxxxx xxxxxx xxxx xxx xxxxxxxxx xxx xxxxxxx xxxxxxx xx xxxxx xxxxxxxxx.
+自動再生では、近接通信 (タップ) を使って PC 間で共有されるコンテンツのコンテンツ イベントも発生します。 このセクションで説明した手順とコードを使って、近接通信を使用する PC 間で共有されるファイルを処理できます。 次の表に、近接通信を使ってコンテンツを共有できる自動再生コンテンツ イベントを示します。
 
-| Xxxxxx         | XxxxXxxx xxxxxxx xxxxx  |
+| アクション         | 自動再生コンテンツ イベント  |
 |----------------|-------------------------|
-| Xxxxxxx xxxxx  | XxxxXxxxxXxxxxXxXxxxxxx |
-| Xxxxxxx xxxxxx | XxxxXxxxxXxxxxXxXxxxxxx |
+| 音楽の共有  | PlayMusicFilesOnArrival |
+| ビデオの共有 | PlayVideoFilesOnArrival |
 
  
-Xxxx xxxxx xxx xxxxxx xx xxxxx xxxxxxxxx, xxx **Xxxxx** xxxxxxxx xx xxx **XxxxXxxxxxxxxXxxxxXxxx** xxxxxx xxxxxxxx x xxxxxxxxx xx x xxxx xxxxxx xxxx xxxxxxxx xxx xx xxx xxxxxx xxxxx.
+ファイルが近接通信を使って共有されている場合、**FileActivatedEventArgs** オブジェクトの **Files** プロパティには、すべての共有ファイルを含むルート フォルダーへの参照が含まれます。
 
-### Xxxx Y: Xxxxxx x xxx xxxxxxx xxx xxx XxxxXxxx xxxxxxxxxxxx
+### 手順 1: 新しいプロジェクトを作成し、自動再生宣言を追加する
 
-1.  Xxxx Xxxxxxxxx Xxxxxx Xxxxxx xxx xxxxxx **Xxx Xxxxxxx** xxxx xxx **Xxxx** xxxx. Xx xxx **Xxxxxx X\#** xxxxxxx, xxxxx **Xxxxxxx**, xxxxxx **Xxxxx Xxx (Xxxxxxxxx Xxxxxxx)**. Xxxx xxx xxx **XxxxXxxxXxxxxxxXxXxxxXxxxxx** xxx xxxxx **XX.**
-2.  Xxxx xxx Xxxxxxx.xxxxxxxxxxxx xxxx xxx xxxxxx xxx **Xxxxxxxxxxxx** xxx. Xxxxxx xxx **Xxxxxxxxx Xxxxxxx** xxx **Xxxxxxxx Xxxxxxx** xxxxxxxxxxxx. Xxxx xxxxx xxx xxx xxxxxx xx xxxxxxxxx xxxxxxx xxxxxxx xxx xxxxxx xxxxxx, xxx xxxxxx xx xxxxx xxxxxxxx.
-3.  Xx xxx xxxxxxxx xxxx, xxxxxx xxx **Xxxxxxxxxxxx** xxx. Xx xxx **Xxxxxxxxx Xxxxxxxxxxxx** xxxx-xxxx xxxx, xxxxxx **XxxxXxxx Xxxxxxx** xxx xxxxx **Xxx**. Xxxxxx xxx xxx **XxxxXxxx Xxxxxxx** xxxx xxxx xxx xxxxx xx xxx **Xxxxxxxxx Xxxxxxxxxxxx** xxxx.
-4.  Xx **XxxxXxxx Xxxxxxx** xxxxxxxxxxx xxxxxxxxxx xxxx xxx xx xx xxxxxx xxxx XxxxXxxx xxxxxx x xxxxxxx xxxxx. Xxx xxxxx xx xxxxx xx xxx xxxxxxx xx x xxxxxx xxxxxx xxxx xx x XXX xx x xxxxx xxxxx. XxxxXxxx xxxxxxxx xxx xxxxxxx xx xxx xxxxxx xxxxxx xxx xxxxxxxxxx xxxxx xxxxxxx xxxxx xx xxxxx. Xx xxx xxxx xx xxx xxxxxx xxxxxxxx x XXXX, XXXXX, xx XXXXXXX\\XXXX xxxxxx, xx xx x xxxx xxx xxxxxxx **Xxxxxx xxxx xx xx xxxx xxxx xxxx xx xxxxx** xx xxx XxxxXxxx Xxxxxxx Xxxxx xxx xxxxxxxx xxx xxxxx xx xxx xxxx xx xxx xxxxxx, xxxx XxxxXxxx xxxxxx xxx **XxxxXxxxxxxxXxXxxxxxx** xxxxx. Xx xxx **Xxxxxx Xxxxxxx** xxxxxxx, xxxxx xxx xxxxxx xxxx Xxxxx Y xxxxx xxx xxx xxxxx xxxxxx xxxxxx.
-5.  Xx xxx **Xxxxxx Xxxxxxx** xxxxxxx xxx xxx **XxxxXxxx Xxxxxxx** xxxx, xxxxx **Xxx Xxx** xx xxx x xxxxxx xxxxxx xxxxxx. Xxxxx xxx xxxxxx xx Xxxxx Y xxxxx xxx xxx xxxxxx xxxxxx xxxxxx.
-6.  Xx xxx **Xxxxxxxxx Xxxxxxxxxxxx** xxxx-xxxx xxxx, xxxxxx **Xxxx Xxxx Xxxxxxxxxxxx** xxx xxxxx **Xxx**. Xx xxx Xxxxxxxxxx xx xxx xxx **Xxxx Xxxx Xxxxxxxxxxxx** xxxxxxxxxxx, xxx xxx **Xxxxxxx Xxxx** xxxxx xx **XxxxXxxx Xxxx xx Xxxx Xxxxxx** xxx xxx **Xxxx** xxxxx xx **xxxxx\_xxxxxxxxxxxY**. Xx xxx **Xxxxxxxxx Xxxx Xxxxx** xxxxxxx, xxxxx **Xxx Xxx**. Xxx xxx **Xxxx Xxxx** xxxxx xx **.xxx**. Xx xxx **Xxxxxxxxx Xxxx Xxxxx** xxxxxxx, xxx xxx **Xxxx Xxxx** xxxxx xx xxx xxx xxxx xxxxxxxxxxx xx **.xxx**. Xxx xxxxxxx xxxxxx, XxxxXxxx xxxxxxx xxx xxx xxxx xxxxx xxxx xxx xxx xxxxxxxxxx xxxxxxxxxx xxxx xxxx xxx.
-7.  Xxxx xxx xxxxx xxx xxxxxxxx xxxx.
+1.  Microsoft Visual Studio を開き、**[ファイル]** メニューの **[新しいプロジェクト]** をクリックします。 **Visual C\#** セクションの **[Windows]** で **[空白のアプリ (ユニバーサル Windows)]** を選びます。 アプリに **AutoPlayDisplayOrCopyImages** という名前を付け、**[OK]** をクリックします。
+2.  Package.appxmanifest ファイルを開き、**[機能]** タブをクリックします。 **[リムーバブル記憶域]** 機能と **[画像ライブラリ]** 機能を選びます。 これで、アプリはカメラ メモリのリムーバブル ストレージ デバイスと、ローカルの画像にアクセスできるようになります。
+3.  マニフェスト ファイルで、**[宣言]** タブをクリックします。 **[使用可能な宣言]** ドロップダウン リストで、**[自動再生コンテンツ]** を選び、**[追加]** をクリックします。 **[サポートされる宣言]** ボックスの一覧に追加された新しい **[自動再生コンテンツ]** 項目を選びます。
+4.  **[自動再生コンテンツ]** 宣言は、自動再生でコンテンツ イベントが発生したときに該当のアプリがオプションとして識別されます。 イベントは DVD やサム ドライブなどのボリューム デバイスのコンテンツに基づきます。 自動再生ではボリューム デバイスのコンテンツを調べて、発生させるコンテンツ イベントを決定します。 ボリュームのルートに DCIM、AVCHD、または PRIVATE\\ACHD フォルダーが含まれる場合、または自動再生コントロール パネルで **[各メディア タイプの処理方法を選択する]** を有効にしていてボリュームのルートで画像が見つかった場合、自動再生で **ShowPicturesOnArrival** イベントが発生します。 **[起動アクション]** セクションで、最初の起動アクションに対して下記の表 1 の値を入力します。
+5.  **[自動再生コンテンツ]** 項目の **[起動アクション]** セクションで、**[新規追加]** をクリックし、2 つ目の起動アクションを追加します。 2 つ目の起動アクションについて、下記の表 2 の値を入力します。
+6.  **[使用可能な宣言]** ドロップダウン リストで、**[ファイルの種類の関連付け]** を選び、**[追加]** をクリックします。 新しい **[ファイルの種類の関連付け]** 宣言の [プロパティ] で、**[表示名]** フィールドを **"自動再生コピー" または "画像を表示する"**、**[名前]** フィールドを **image\_association1** に設定します。 **[サポートされるファイルの種類]** セクションで、**[新規追加]** をクリックします。 **[ファイルの種類]** フィールドを **.jpg** に設定します。 **[サポートされるファイルの種類]** セクションで、新しいファイルの関連付けの **[ファイルの種類]** フィールドを **.png** に設定します。 コンテンツ イベントの場合は、自動再生で、アプリに明示的に関連付けられていないファイルの種類はすべて除外されます。
+7.  マニフェスト ファイルを保存して閉じます。
 
 
-**Xxxxx Y**
+**表 1**
 
-| Xxxxxxx             | Xxxxx                 |
+| 設定             | 値                 |
 |---------------------|-----------------------|
-| Xxxx                | xxxx                  |
-| Xxxxxx Xxxxxxx Xxxx | Xxxx Xxxxxxxx         |
-| Xxxxxxx Xxxxx       | XxxxXxxxxxxxXxXxxxxxx |
+| 動詞                | show                  |
+| アクションの表示名 | 画像を表示する         |
+| コンテンツ イベント       | ShowPicturesOnArrival |
 
-Xxx **Xxxxxx Xxxxxxx Xxxx** xxxxxxx xxxxxxxxxx xxx xxxxxx xxxx XxxxXxxx xxxxxxxx xxx xxxx xxx. Xxx **Xxxx** xxxxxxx xxxxxxxxxx x xxxxx xxxx xx xxxxxx xx xxxx xxx xxx xxx xxxxxxxx xxxxxx. Xxx xxx xxxxxxx xxxxxxxx xxxxxx xxxxxxx xxx xx XxxxXxxx xxxxx xxx xxx xxx **Xxxx** xxxxxxx xx xxxxxxxxx xxxxx xxxxxx x xxxx xxx xxxxxxxx xxx xxxx xxx. Xxx xxx xxxx xxxxx xxxxxx xxx xxxx xxxxxxxx xx xxxxxxxx xxx **xxxx** xxxxxxxx xx xxx xxxxxxx xxxxx xxxxxxxxx xxxxxx xx xxxx xxx. Xxx xxx xxx xxx xxxxx xxx xxx **Xxxx** xxxxxxx xxxxxx, **xxxx**, xxxxx xx xxxxxxxx.
+**[アクションの表示名]** 設定では、アプリの自動再生で表示される文字列を指定します。 **[動詞]** 設定では、選んだオプションでアプリに渡される値を指定します。 自動再生のイベントの起動アクションは複数指定できます。また、**[動詞]** 設定を使って、ユーザーがアプリで選んだアクションを確認できます。 アプリに渡される起動イベント引数の **verb** プロパティを調べることでユーザーが選んだオプションを確認できます。 **[動詞]** 設定には任意の値を使うことができます。ただし、予約されている **open** を除きます。
 
-**Xxxxx Y**  
+**表 2**  
 
-| Xxxxxxx             | Xxxxx                      |
+| 設定             | 値                      |
 |---------------------|----------------------------|
-| Xxxx                | xxxx                       |
-| Xxxxxx Xxxxxxx Xxxx | Xxxx Xxxxxxxx Xxxx Xxxxxxx |
-| Xxxxxxx Xxxxx       | XxxxXxxxxxxxXxXxxxxxx      |
+| 動詞                | copy                       |
+| アクションの表示名 | ライブラリに画像をコピーする |
+| コンテンツ イベント       | ShowPicturesOnArrival      |
 
-### Xxxx Y: Xxx XXXX XX
+### 手順 2: XAML UI を追加する
 
-Xxxx xxx XxxxXxxx.xxxx xxxx xxx xxx xxx xxxxxxxxx XXXX xx xxx xxxxxxx &xx;Xxxx&xx; xxxxxxx.
+MainPage.xaml ファイルを開き、次の XAML を既定の &lt;Grid&gt; セクションに追加します。
 
 ```xaml
 <TextBlock FontSize="18">File List</TextBlock>
@@ -72,11 +71,11 @@ Xxxx xxx XxxxXxxx.xxxx xxxx xxx xxx xxx xxxxxxxxx XXXX xx xxx xxxxxxx &xx;Xxxx&x
         Margin="260,20,0,0" Height="280" Width="100"/>
 ```
 
-### Xxxx Y: Xxx xxxxxxxxxxxxxx xxxx
+### 手順 3: 初期化コードを追加する
 
-Xxx xxxx xx xxxx xxxx xxxxxx xxx xxxx xxxxx xx xxx **Xxxx** xxxxxxxx, xxxxx xx xxx xx xxx xxxxxxx xxxxxxxxx xxxxxx xx xxx xxx xxxxxx xxx **XxXxxxXxxxxxxxx** xxxxx. Xxx xxxx xxxx xxxxx x xxxxxx xxxxxxx xx xxx xxxxxx xxxx xxx xxxx xxxxxxxx. Xxx xxx xxxxxx xxxxxx xxxxx, XxxxXxxx xxxxxx xxx xxxx xxxxxx xx xxx xxxxxx xxxxxxx xx xxx xxx. Xxx xxx xxxxxxxx xxxx xxxxxx xxxx xxx xxxxx xxxxxxx xx xxx **Xxxxx** xxxxxxxx.
+この手順のコードでは、**Verb** プロパティの verb 値をチェックします。これは、**OnFileActivated** イベントの間にアプリに渡される起動引数の 1 つです。 次に、ユーザーが選んだオプションに関連するメソッドが呼び出されます。 カメラのメモリ イベントの場合、自動再生により、カメラ ストレージのルート フォルダーがアプリに渡されます。 このフォルダーは **Files** プロパティの最初の要素から取得できます。
 
-Xxxx xxx Xxx.xxxx.xx xxxx xxx xxx xxx xxxxxxxxx xxxx xx xxx **Xxx** xxxxx.
+App.xaml.cs ファイルを開いて、次のコードを **App** クラスに追加します。
 
 ```cs
 protected override void OnFileActivated(FileActivatedEventArgs args)
@@ -103,11 +102,11 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **Xxxx**  Xxx `DisplayImages` xxx `CopyImages` xxxxxxx xxx xxxxx xx xxx xxxxxxxxx xxxxx.
+> **注:** `DisplayImages` メソッドと `CopyImages` メソッドは、以下の手順で追加されます。
 
-### Xxxx Y: Xxx xxxx xx xxxxxxx xxxxxx
+### 手順 4: 画像を表示するコードを追加する
 
-Xx xxx XxxxXxxx.xxxx.xx xxxx xxx xxx xxxxxxxxx xxxx xx xxx **XxxxXxxx** xxxxx.
+MainPage.xaml.cs ファイルで、次のコードを **MainPage** クラスに追加します。
 
 ```cs
 async internal void DisplayImages(Windows.Storage.StorageFolder rootFolder)
@@ -165,9 +164,9 @@ private async void WriteMessageText(string message, bool overwrite = false)
 }
 ```
 
-### Xxxx Y: Xxx xxxx xx xxxx xxxxxx
+### 手順 5: 画像をコピーするコードを追加する
 
-Xx xxx XxxxXxxx.xxxx.xx xxxx xxx xxx xxxxxxxxx xxxx xx xxx **XxxxXxxx** xxxxx.
+MainPage.xaml.cs ファイルで、次のコードを **MainPage** クラスに追加します。
 
 ```cs
 async internal void CopyImages(Windows.Storage.StorageFolder rootFolder)
@@ -211,51 +210,51 @@ async internal void CopyImage(Windows.Storage.IStorageItem file,
 }
 ```
 
-### Xxxx Y: Xxxxx xxx xxx xxx xxx
+### 手順 6: アプリをビルドして実行する
 
-1.  Xxxxx XY xx xxxxx xxx xxxxxx xxx xxx (xx xxxxx xxxx).
-2.  Xx xxx xxxx xxx, xxxxxx x xxxxxx xxxxxx xxxx xx xxxxxxx xxxxxxx xxxxxx xxxx x xxxxxx xxxx xxxx XX. Xxxx, xxxxxx xxx xx xxx xxxxxxx xxxxx xxxxxxx xxxx xxx xxxxxxxxx xx xxxx xxxxxxx.xxxxxxxxxxxx xxxx xxxx xxx XxxxXxxx xxxx xx xxxxxxx. Xxxx xxxxxx xxxx xxxx xxxxxxxx xx xxxxxx xxxxxxxx xx xxx XXXX xxxxxx xx x xxxxxx xxxxxx xxxx. Xx xxxx xxxxxx xxxxxx xxxx xxxxxx xxxxxxxx xx xx XXXXX xx XXXXXXX\\XXXX xxxxxx, xxx xxxx xxxx xx xxxxxx xxx xxxx xxxxxxxxxxx.
-    **Xxxx**  Xx xxx xxx'x xxxx x xxxxxx xxxxxx xxxx, xxx xxx xxx x xxxxx xxxxx xx xx xxx x xxxxxx xxxxx **XXXX** xx xxx xxxx xxx xx xxx XXXX xxxxxx xxx x xxxxxxxxx xxxx xxxxxxxx xxxxxx.
+1.  F5 キーを押して、アプリを (デバッグ モードで) ビルドおよび展開します。
+2.  アプリを実行するには、カメラのメモリ カードまたはカメラの他のストレージ デバイスを PC に挿入します。 次に、自動再生のオプションの一覧から package.appxmanifest ファイルで指定したコンテンツ イベント オプションのいずれかを選びます。 このサンプル コードは、カメラのメモリ カードの DCIM フォルダーにある画像の表示またはコピーのみを行います。 カメラのメモリ カードの AVCHD または PRIVATE\\ACHD フォルダーに画像が格納される場合は、適宜コードを更新する必要があります。
+    **注:** カメラのメモリ カードがない場合は、ルートに **DCIM** という名前のフォルダーがあり、DCIM フォルダーに画像が含まれるサブフォルダーがあれば、フラッシュ ドライブを使うことができます。
 
-## Xxxxxxxx xxx xx XxxxXxxx xxxxxx
+## 自動再生デバイスに登録する
 
 
-Xxx xxx xxxxxxxx xxxx xx xxxxxxx xxx **XxxxXxxx** xxxxxx xxxxxx. **XxxxXxxx** xxxxxx xxxxxx xxx xxxxxx xxxx x xxxxxx xx xxxxxxxxx xx x XX.
+アプリを**自動再生**デバイス イベントのオプションとして登録できます。 **自動再生**デバイス イベントは、デバイスがコンピューターに接続されると発生します。
 
-Xxxx xx xxxx xxx xx xxxxxxxx xxxx xxx xx xx **XxxxXxxx** xxxxxx xxxx x xxxxxx xx xxxxxxxxx xx x XX. Xxx xxx xxxxxxxxx xx x xxxxxxx xxx xxx **XXX\\XxxxxXxxxxxXxxxXxxx** xxxxx. Xxxx xx x xxxxxx xxxxx xxxx xxx Xxxxxxx Xxxxxxxx Xxxxxx (XXX) xxxxxx xxxxxx xxxx xxxxxxx xxx xxxxx xxxxxxx xxxxxxx xxxxxx xx xxxx xxxx xxx xx XxxxxXxxxxx xxxxx XXX. Xxx xxxx xxxx, xxx [Xxxxxxx Xxxxxxxx Xxxxxxx](https://msdn.microsoft.com/library/windows/hardware/ff597729).
+ここでは、PC にカメラが接続されたときに**自動再生**オプションとしてアプリを識別する方法を示します。 アプリは、**WPD\\ImageSourceAutoPlay** イベントのハンドラーとして登録されます。 これは、カメラなどのイメージング デバイスが MTP を使う ImageSource であることを通知するときに Windows ポータブル デバイス (WPD) システムによって生成される一般的なイベントです。 詳しくは、「[Windows ポータブル デバイス](https://msdn.microsoft.com/library/windows/hardware/ff597729)」をご覧ください。
 
-**Xxxxxxxxx**  Xxx [**Xxxxxxx.Xxxxxxx.Xxxxxxxx.XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225654) XXXx xxx xxxx xx xxx [xxxxxxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/dn894631). Xxxx xxx xxx xxxxx XXXx xxxx xx Xxxxxxx YY xxxxxxx xx xxx xxxxxxx xxxxxx xxxxxx, xxxx xx XXx.
+**重要:** [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) API は [デスクトップ デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn894631) の一部です。 アプリでは、デスクトップ デバイス ファミリの Windows 10 デバイス (PC など) でのみこれらの API を使えます。
 
  
 
-### Xxxx Y: Xxxxxx x xxx xxxxxxx xxx xxx XxxxXxxx xxxxxxxxxxxx
+### 手順 1: 新しいプロジェクトを作成し、自動再生宣言を追加する
 
-1.  Xxxx Xxxxxx Xxxxxx xxx xxxxxx **Xxx Xxxxxxx** xxxx xxx **Xxxx** xxxx. Xx xxx **Xxxxxx X\#** xxxxxxx, xxxxx **Xxxxxxx**, xxxxxx **Xxxxx Xxx (Xxxxxxxxx Xxxxxxx)**. Xxxx xxx xxx **XxxxXxxxXxxxxx\_Xxxxxx** xxx xxxxx **XX.**
-2.  Xxxx xxx Xxxxxxx.xxxxxxxxxxxx xxxx xxx xxxxxx xxx **Xxxxxxxxxxxx** xxx. Xxxxxx xxx **Xxxxxxxxx Xxxxxxx** xxxxxxxxxx. Xxxx xxxxx xxx xxx xxxxxx xx xxx xxxx xx xxx xxxxxx xx x xxxxxxxxx xxxxxxx xxxxxx xxxxxx.
-3.  Xx xxx xxxxxxxx xxxx, xxxxxx xxx **Xxxxxxxxxxxx** xxx. Xx xxx **Xxxxxxxxx Xxxxxxxxxxxx** xxxx-xxxx xxxx, xxxxxx **XxxxXxxx Xxxxxx** xxx xxxxx **Xxx**. Xxxxxx xxx xxx **XxxxXxxx Xxxxxx** xxxx xxxx xxx xxxxx xx xxx **Xxxxxxxxx Xxxxxxxxxxxx** xxxx.
-4.  Xx **XxxxXxxx Xxxxxx** xxxxxxxxxxx xxxxxxxxxx xxxx xxx xx xx xxxxxx xxxx XxxxXxxx xxxxxx x xxxxxx xxxxx xxx xxxxx xxxxxx. Xx xxx **Xxxxxx Xxxxxxx** xxxxxxx, xxxxx xxx xxxxxx xx xxx xxxxx xxxxx xxx xxx xxxxx xxxxxx xxxxxx.
-5.  Xx xxx **Xxxxxxxxx Xxxxxxxxxxxx** xxxx-xxxx xxxx, xxxxxx **Xxxx Xxxx Xxxxxxxxxxxx** xxx xxxxx **Xxx**. Xx xxx Xxxxxxxxxx xx xxx xxx **Xxxx Xxxx Xxxxxxxxxxxx** xxxxxxxxxxx, xxx xxx **Xxxxxxx Xxxx** xxxxx xx **Xxxx Xxxxxx xxxx Xxxxxx** xxx xxx **Xxxx** xxxxx xx **xxxxxx\_xxxxxxxxxxxY**. Xx xxx **Xxxxxxxxx Xxxx Xxxxx** xxxxxxx, xxxxx **Xxx Xxx** (xx xxxxxx). Xxx xxx **Xxxx Xxxx** xxxxx xx **.xxx**. Xx xxx **Xxxxxxxxx Xxxx Xxxxx** xxxxxxx, xxxxx **Xxx Xxx** xxxxx. Xxx xxx **Xxxx Xxxx** xxxxx xx xxx xxx xxxx xxxxxxxxxxx xx **.xxx**. Xxx xxxxxxx xxxxxx, XxxxXxxx xxxxxxx xxx xxx xxxx xxxxx xxxx xxx xxx xxxxxxxxxx xxxxxxxxxx xxxx xxxx xxx.
-6.  Xxxx xxx xxxxx xxx xxxxxxxx xxxx.
+1.  Visual Studio を開き、**[ファイル]** メニューの **[新しいプロジェクト]** をクリックします。 **Visual C\#** セクションの **[Windows]** で **[空白のアプリ (ユニバーサル Windows)]** を選びます。 アプリに **AutoPlayDevice\_Camera** という名前を付け、**[OK]** をクリックします。
+2.  Package.appxmanifest ファイルを開き、**[機能]** タブをクリックします。 **[リムーバブル記憶域]** 機能をクリックします。 これで、アプリはリムーバブル記憶域ボリューム デバイスとしてカメラ上のデータにアクセスできるようになります。
+3.  マニフェスト ファイルで、**[宣言]** タブをクリックします。 **[使用可能な宣言]** ドロップダウン リストで、**[自動再生デバイス]** を選び、**[追加]** をクリックします。 **[サポートされる宣言]** ボックスの一覧に追加された新しい **[自動再生デバイス]** 項目を選びます。
+4.  **[自動再生デバイス]** 宣言では、自動再生で既知のイベントのデバイス イベントが発生したときに該当のアプリがオプションとして識別されます。 **[起動アクション]** セクションで、最初の起動アクションに対して下記の表の値を入力します。
+5.  **[使用可能な宣言]** ドロップダウン リストで、**[ファイルの種類の関連付け]** を選び、**[追加]** をクリックします。 新しい **[ファイルの種類の関連付け]** 宣言の [プロパティ] で、**[表示名]** フィールドを **"カメラの画像を表示する"**、**[名前]** フィールドを **camera\_association1** に設定します。 **[サポートされるファイルの種類]** セクションで、**[新規追加]** をクリックします (必要な場合)。 **[ファイルの種類]** フィールドを **.jpg** に設定します。 **[サポートされるファイルの種類]** セクションで、**[新規追加]** をもう一度クリックします。 新しいファイルの関連付けの **[ファイルの種類]** フィールドを **.png** に設定します。 コンテンツ イベントの場合は、自動再生で、アプリに明示的に関連付けられていないファイルの種類はすべて除外されます。
+6.  マニフェスト ファイルを保存して閉じます。
 
-| Xxxxxxx             | Xxxxx            |
+| 設定             | 値            |
 |---------------------|------------------|
-| Xxxx                | xxxx             |
-| Xxxxxx Xxxxxxx Xxxx | Xxxx Xxxxxxxx    |
-| Xxxxxxx Xxxxx       | XXX\\XxxxxXxxxxx |
+| 動詞                | show             |
+| アクションの表示名 | 画像を表示する    |
+| コンテンツ イベント       | WPD\\ImageSource |
 
-Xxx **Xxxxxx Xxxxxxx Xxxx** xxxxxxx xxxxxxxxxx xxx xxxxxx xxxx XxxxXxxx xxxxxxxx xxx xxxx xxx. Xxx **Xxxx** xxxxxxx xxxxxxxxxx x xxxxx xxxx xx xxxxxx xx xxxx xxx xxx xxx xxxxxxxx xxxxxx. Xxx xxx xxxxxxx xxxxxxxx xxxxxx xxxxxxx xxx xx XxxxXxxx xxxxx xxx xxx xxx **Xxxx** xxxxxxx xx xxxxxxxxx xxxxx xxxxxx x xxxx xxx xxxxxxxx xxx xxxx xxx. Xxx xxx xxxx xxxxx xxxxxx xxx xxxx xxxxxxxx xx xxxxxxxx xxx **xxxx** xxxxxxxx xx xxx xxxxxxx xxxxx xxxxxxxxx xxxxxx xx xxxx xxx. Xxx xxx xxx xxx xxxxx xxx xxx **Xxxx** xxxxxxx xxxxxx, **xxxx**, xxxxx xx xxxxxxxx. Xxx xx xxxxxxx xx xxxxx xxxxxxxx xxxxx xx x xxxxxx xxx, xxx [Xxxxxxxx xxx XxxxXxxx xxxxxxx](#autoplaycontent).
+**[アクションの表示名]** 設定では、アプリの自動再生で表示される文字列を指定します。 **[動詞]** 設定では、選んだオプションでアプリに渡される値を指定します。 自動再生のイベントの起動アクションは複数指定できます。また、**[動詞]** 設定を使って、ユーザーがアプリで選んだアクションを確認できます。 アプリに渡される起動イベント引数の **verb** プロパティを調べることでユーザーが選んだオプションを確認できます。 **[動詞]** 設定には任意の値を使うことができます。ただし、予約されている **open** を除きます。 1 つのアプリで複数の動詞を使う例については、「[自動再生コンテンツに登録する](#autoplaycontent)」をご覧ください。
 
-### Xxxx Y: Xxx xxxxxxxx xxxxxxxxx xxx xxx xxxxxxx xxxxxxxxxx
+### 手順 2: デスクトップ拡張機能に対するアセンブリ参照を追加する
 
-Xxx XXXx xxxxxxxx xx xxxxxx xxxxxxx xx x Xxxxxxx Xxxxxxxx Xxxxxx, [**Xxxxxxx.Xxxxxxx.Xxxxxxxx.XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225654), xxx xxxx xx xxx xxxxxxx [xxxxxxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/dn894631). Xxxx xxxxx x xxxxxxx xxxxxxxx xx xxxxxxxx xx xxx xxx XXXx xxx xxxxx xxxxx xxxx xxxx xxxx xx x xxxxxx xx xxx xxxxxxx xxxxxx xxxxxx (xxxx xx x XX).
+Windows ポータブル デバイス上の記憶域にアクセスするために必要な API である [**Windows.Devices.Portable.StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) は、デスクトップ [デスクトップ デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn894631) の一部です。 つまり、この API を使うには特別なアセンブリが必要であり、その呼び出しはデスクトップ デバイス ファミリ (PC など) でのみ機能します。
 
-1.  Xx **Xxxxxxxx Xxxxxxxx**, xxxxx xxxxx xx **Xxxxxxxxxx** xxx xxxx **Xxx Xxxxxxxxx...**.
-2.  Xxxxxx **Xxxxxxxxx Xxxxxxx** xxx xxxxx **Xxxxxxxxxx**.
-3.  Xxxx xxxxxx **Xxxxxxx Xxxxxxx Xxxxxxxxxx xxx xxx XXX** xxx xxxxx **XX**.
+1.  **ソリューション エクスプローラー**で、**[参照設定]** を右クリックし、**[参照の追加]** をクリックします。
+2.  **[ユニバーサル Windows]** を展開し、**[拡張機能]** をクリックします。
+3.  **[Windows Desktop Extensions for the UWP]** を選び、**[OK]** をクリックします。
 
-### Xxxx Y: Xxx XXXX XX
+### 手順 3: XAML UI を追加する
 
-Xxxx xxx XxxxXxxx.xxxx xxxx xxx xxx xxx xxxxxxxxx XXXX xx xxx xxxxxxx &xx;Xxxx&xx; xxxxxxx.
+MainPage.xaml ファイルを開き、次の XAML を既定の &lt;Grid&gt; セクションに追加します。
 
 ```xaml
 <StackPanel Orientation="Vertical" Margin="10,0,-10,0">
@@ -281,11 +280,11 @@ Xxxx xxx XxxxXxxx.xxxx xxxx xxx xxx xxx xxxxxxxxx XXXX xx xxx xxxxxxx &xx;Xxxx&x
 </StackPanel>
 ```
 
-### Xxxx Y: Xxx xxxxxxxxxx xxxx
+### 手順 4: アクティブ化コードを追加する
 
-Xxx xxxx xx xxxx xxxx xxxxxxxxxx xxx xxxxxx xx x [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225654) xx xxxxxxx xxx xxxxxx xxxxxxxxxxx Xx xx xxx xxxxxx xx xxx [**XxxxXx**](https://msdn.microsoft.com/library/windows/apps/br225655) xxxxxx. Xxx xxxxxx xxxxxxxxxxx Xx xx xxx xxxxxx xx xxxxxxxx xx xxxxx xxxxxxx xxx xxxxx xxxxxxxxx xx [**XxxxxxXxxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224710), xxx xxxx xxxxxxx xxx xxxxx xxxx xxx [**XxxxxxXxxxxxxxxxxXx**](https://msdn.microsoft.com/library/windows/apps/br224711) xxxxxxxx.
+この手順のコードは、カメラのデバイス情報 ID を [**FromId**](https://msdn.microsoft.com/library/windows/apps/br225655) メソッドに渡すことによって、カメラを [**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) として参照します。 カメラのデバイス情報 ID を取得するには、まずイベント引数を [**DeviceActivatedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br224710) としてキャストし、次に [**DeviceInformationId**](https://msdn.microsoft.com/library/windows/apps/br224711) プロパティから値を取得します。
 
-Xxxx xxx Xxx.xxxx.xx xxxx xxx xxx xxx xxxxxxxxx xxxx xx xxx **Xxx** xxxxx.
+App.xaml.cs ファイルを開いて、次のコードを **App** クラスに追加します。
 
 ```cs
 protected override void OnActivated(IActivatedEventArgs args)
@@ -333,13 +332,13 @@ protected override void OnActivated(IActivatedEventArgs args)
 }
 ```
 
-> **Xxxx**  Xxx `ShowImages` xxxxxx xx xxxxx xx xxx xxxxxxxxx xxxx.
+> **注:** `ShowImages` メソッドは、次の手順で追加されます。
 
-### Xxxx Y: Xxx xxxx xx xxxxxxx xxxxxx xxxxxxxxxxx
+### 手順 5: デバイス情報を表示するコードを追加する
 
-Xxx xxx xxxxxx xxxxxxxxxxx xxxxx xxx xxxxxx xxxx xxx xxxxxxxxxx xx xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br225654) xxxxx. Xxx xxxx xx xxxx xxxx xxxxxxxx xxx xxxxxx xxxx xxx xxxxx xxxx xx xxx xxxx xxxx xxx xxx xxxx. Xxx xxxx xxxx xxxxx xxx XxxXxxxxXxxx xxx XxxXxxxxxxxx xxxxxxx, xxxxx xxx xxxx xxx xx xxx xxxx xxxx, xx xxxxxxx xxxxxxxxxx xx xxx xxxxxx xxxxxx xx xxx xxxxxx
+カメラに関する情報は、[**StorageDevice**](https://msdn.microsoft.com/library/windows/apps/br225654) クラスのプロパティから取得できます。 この手順のコードは、アプリの実行時にデバイス名などの情報をユーザーに表示します。 続いて、GetImageList メソッドと GetThumbnail メソッドを呼び出します。これらのメソッドは、カメラに格納されている画像のサムネイルを表示するために、次の手順で追加します。
 
-Xx xxx XxxxXxxx.xxxx.xx xxxx, xxx xxx xxxxxxxxx xxxx xx xxx **XxxxXxxx** xxxxx.
+MainPage.xaml.cs ファイルで、次のコードを **MainPage** クラスに追加します。
 
 ```cs
 private Windows.Storage.StorageFolder rootFolder;
@@ -361,15 +360,15 @@ internal async void ShowImages(Windows.Storage.StorageFolder folder)
 }
 ```
 
-> **Xxxx**  Xxx `GetImageList` xxx `GetThumbnail` xxxxxxx xxx xxxxx xx xxx xxxxxxxxx xxxx.
+> **注:** `GetImageList` メソッドと `GetThumbnail` メソッドは、以下の手順で追加されます。
 
  
 
-### Xxxx Y: Xxx xxxx xx xxxxxxx xxxxxx
+### 手順 6: 画像を表示するコードを追加する
 
-Xxx xxxx xx xxxx xxxx xxxxxxxx xxxxxxxxxx xx xxx xxxxxx xxxxxx xx xxx xxxxxx. Xxx xxxx xxxxx xxxxxxxxxxxx xxxxx xx xxx xxxxxx xx xxx xxx xxxxxxxxx xxxxx. Xxxxxxx, xxx xxxx xxxxxxxxxxxx xxxx xxxxx'x xxxxx xxxxx xxx xxxxxxxx xxxxxxxxxxxx xxxx xxxxxxxxx. Xxxx xxxxxxx xxxx xxxx xxx xxxxxxx xx xxxx xx xxx xxxxxx xx x xxxx.
+この手順のコードは、カメラに格納されている画像のサムネイルを表示します。 このコードは、カメラの非同期呼び出しを行ってサムネイル イメージを取得します。 ただし、次の非同期呼び出しは、前の非同期呼び出しが完了するまで行われません。 これにより、カメラに対する要求が一度に 1 つだけ実行されるようになります。
 
-Xx xxx XxxxXxxx.xxxx.xx xxxx, xxx xxx xxxxxxxxx xxxx xx xxx **XxxxXxxx** xxxxx.
+MainPage.xaml.cs ファイルで、次のコードを **MainPage** クラスに追加します。
 
 ```cs
 async private System.Threading.Tasks.Task<List<Windows.Storage.StorageFile>> GetImageList(Windows.Storage.StorageFolder folder) 
@@ -402,55 +401,55 @@ async private System.Threading.Tasks.Task<Image> GetThumbnail(Windows.Storage.St
 }
 ```
 
-### Xxxx Y: Xxxxx xxx xxx xxx xxx
+### 手順 7: アプリをビルドして実行する
 
-1.  Xxxxx XY xx xxxxx xxx xxxxxx xxx xxx (xx xxxxx xxxx).
-2.  Xx xxx xxxx xxx, xxxxxxx x xxxxxx xx xxxx xxxxxxx. Xxxx xxxxxx xxx xxx xxxx xxx XxxxXxxx xxxx xx xxxxxxx.
-    **Xxxx**  Xxx xxx xxxxxxx xxxxxxxxx xxx xxx **XXX\\XxxxxXxxxxx** XxxxXxxx xxxxxx xxxxx.
+1.  F5 キーを押して、アプリを (デバッグ モードで) ビルドおよび展開します。
+2.  アプリを実行するには、コンピューターにカメラを接続します。 次に、自動再生オプションの一覧からアプリを選びます。
+    **注:** すべてのカメラが **WPD\\ImageSource** 自動再生デバイス イベントのためのアドバタイズを行うわけではありません。
 
      
 
-## Xxxxxxxxx xxxxxxxxx xxxxxxx
+## リムーバブル記憶域を構成する
 
 
-Xxx xxx xxxxxxxx x xxxxxx xxxxxx xxxx xx x xxxxxx xxxx xx xxxxx xxxxx xx xx **XxxxXxxx** xxxxxx xxxx xxx xxxxxx xxxxxx xx xxxxxxxxx xx x XX. Xxxx xx xxxxxxxxxx xxxxxx xxxx xxx xxxx xx xxxxxxxxx x xxxxxxxx xxx xxx **XxxxXxxx** xx xxxxxxx xx xxx xxxx xxx xxxx xxxxxx xxxxxx.
+メモリ カードやサム ドライブなどのボリューム デバイスが PC に接続されたとき、そのボリューム デバイスを**自動再生**デバイスとして識別することができます。 これは、特定のアプリを**自動再生**に関連付けて、ボリューム デバイスのユーザーに提示する場合などに活用できます。
 
-Xxxx xx xxxx xxx xx xxxxxxxx xxxx xxxxxx xxxxxx xx xx **XxxxXxxx** xxxxxx.
+ここでは、**自動再生**デバイスとしてボリューム デバイスを識別する方法を示します。
 
-Xx xxxxxxxx xxxx xxxxxx xxxxxx xx xx **XxxxXxxx** xxxxxx, xxx xx xxxxxxx.xxx xxxx xx xxx xxxx xxxxx xx xxxx xxxxxx. Xx xxx xxxxxxx.xxx xxxx, xxx x **XxxxxxXxxxx** xxx xx xxx **XxxxXxx** xxxxxxx. Xxxx xxxx xxxxxx xxxxxx xxxxxxxx xx x XX, **XxxxXxxx** xxxx xxxx xxx xxxxxxx.xxx xxxx xxx xxxxx xxxx xxxxxx xx x xxxxxx. **XxxxXxxx** xxxx xxxxxx xx **XxxxXxxx** xxxxx xx xxxxx xxx xxxx xxxx xxx xxxxxxxx xxx xxx **XxxxxxXxxxx** xxx. Xxx xxx xxxx xxxxxx xx xxx xxx xxxxxxxx xxx xxx xx x xxxxxxx xxx xxxx **XxxxXxxx** xxxxx. Xxxx xxx xxxxxx xx xxxxxxxxx xx xxx XX, **XxxxXxxx** xxxx xxxx xxxx xxx xx x xxxxxxx xxx xxxx xxxxxx xxxxxx. Xxx xxxx xxxx xx xxxxxxx.xxx xxxxx, xxx [xxxxxxx.xxx xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/cc144200).
+ボリューム デバイスを**自動再生**デバイスとして識別するには、デバイスのルート ドライブに autorun.inf ファイルを追加します。 そして、autorun.inf ファイルの **AutoRun** セクションに **CustomEvent** キーを追加します。 PC にボリューム デバイスが接続されると、**自動再生**が autorun.inf ファイルを検索し、ボリュームをデバイスとして扱います。 **自動再生**は、**CustomEvent** キーに指定された名前を使って**自動再生**イベントを作成します。 それからアプリを作成し、その**自動再生**イベントのハンドラーとしてアプリを登録できます。 PC にデバイスが接続されると、**自動再生**が、ボリューム デバイスのハンドラーとしてアプリを表示します。 autorun.inf ファイルについて詳しくは、「[Autorun.inf エントリ](https://msdn.microsoft.com/library/windows/desktop/cc144200)」をご覧ください。
 
-### Xxxx Y: Xxxxxx xx xxxxxxx.xxx xxxx
+### 手順 1: autorun.inf ファイルを作成する
 
-Xx xxx xxxx xxxxx xx xxxx xxxxxx xxxxxx, xxx x xxxx xxxxx xxxxxxx.xxx. Xxxx xxx xxxxxxx.xxx xxxx xxx xxx xxx xxxxxxxxx xxxx.
+ボリューム デバイスのルート ドライブに autorun.inf という名前のファイルを追加します。 autorun.inf ファイルを開き、次のテキストを追加します。
 
 ``` syntax
 [AutoRun]
 CustomEvent=AutoPlayCustomEventQuickstart
 ```
 
-### Xxxx Y: Xxxxxx x xxx xxxxxxx xxx xxx XxxxXxxx xxxxxxxxxxxx
+### 手順 2: 新しいプロジェクトを作成し、自動再生宣言を追加する
 
-1.  Xxxx Xxxxxx Xxxxxx xxx xxxxxx **Xxx Xxxxxxx** xxxx xxx **Xxxx** xxxx. Xx xxx **Xxxxxx X\#** xxxxxxx, xxxxx **Xxxxxxx**, xxxxxx **Xxxxx Xxx (Xxxxxxxxx Xxxxxxx)**. Xxxx xxx xxxxxxxxxxx **XxxxXxxxXxxxxxXxxxx** xxx xxxxx **XX.**
-2.  Xxxx xxx Xxxxxxx.xxxxxxxxxxxx xxxx xxx xxxxxx xxx **Xxxxxxxxxxxx** xxx. Xxxxxx xxx **Xxxxxxxxx Xxxxxxx** xxxxxxxxxx. Xxxx xxxxx xxx xxx xxxxxx xx xxx xxxxx xxx xxxxxxx xx xxxxxxxxx xxxxxxx xxxxxxx.
-3.  Xx xxx xxxxxxxx xxxx, xxxxxx xxx **Xxxxxxxxxxxx** xxx. Xx xxx **Xxxxxxxxx Xxxxxxxxxxxx** xxxx-xxxx xxxx, xxxxxx **XxxxXxxx Xxxxxxx** xxx xxxxx **Xxx**. Xxxxxx xxx xxx **XxxxXxxx Xxxxxxx** xxxx xxxx xxx xxxxx xx xxx **Xxxxxxxxx Xxxxxxxxxxxx** xxxx.
+1.  Visual Studio を開き、**[ファイル]** メニューの **[新しいプロジェクト]** をクリックします。 **Visual C\#** セクションの **[Windows]** で **[空白のアプリ (ユニバーサル Windows)]** を選びます。 アプリに **AutoPlayCustomEvent** という名前を付け、**[OK]** をクリックします。
+2.  Package.appxmanifest ファイルを開き、**[機能]** タブをクリックします。 **[リムーバブル記憶域]** 機能をクリックします。 これで、アプリはリムーバブル記憶域デバイス上のファイルとフォルダーにアクセスできるようになります。
+3.  マニフェスト ファイルで、**[宣言]** タブをクリックします。 **[使用可能な宣言]** ドロップダウン リストで、**[自動再生コンテンツ]** を選び、**[追加]** をクリックします。 **[サポートされる宣言]** ボックスの一覧に追加された新しい **[自動再生コンテンツ]** 項目を選びます。
 
-    **Xxxx**  Xxxxxxxxxxxxx, xxx xxx xxxx xxxxxx xx xxx xx **XxxxXxxx Xxxxxx** xxxxxxxxxxx xxx xxxx xxxxxx XxxxXxxx xxxxx.
+    **注:** また、カスタム自動再生イベントに対して **[自動再生デバイス]** の宣言を追加することもできます。
     
-4.  Xx xxx **Xxxxxx Xxxxxxx** xxxxxxx xxx xxxx **XxxxXxxx Xxxxxxx** xxxxx xxxxxxxxxxx, xxxxx xxx xxxxxx xx xxx xxxxx xxxxx xxx xxx xxxxx xxxxxx xxxxxx.
-5.  Xx xxx **Xxxxxxxxx Xxxxxxxxxxxx** xxxx-xxxx xxxx, xxxxxx **Xxxx Xxxx Xxxxxxxxxxxx** xxx xxxxx **Xxx**. Xx xxx Xxxxxxxxxx xx xxx xxx **Xxxx Xxxx Xxxxxxxxxxxx** xxxxxxxxxxx, xxx xxx **Xxxxxxx Xxxx** xxxxx xx **Xxxx .xx Xxxxx** xxx xxx **Xxxx** xxxxx xx **xx\_xxxxxxxxxxx**. Xx xxx **Xxxxxxxxx Xxxx Xxxxx** xxxxxxx, xxxxx **Xxx Xxx**. Xxx xxx **Xxxx Xxxx** xxxxx xx **.xx**. Xxx xxxxxxx xxxxxx, XxxxXxxx xxxxxxx xxx xxx xxxx xxxxx xxxx xxxx'x xxxxxxxxxx xxxxxxxxxx xxxx xxxx xxx.
-6.  Xxxx xxx xxxxx xxx xxxxxxxx xxxx.
+4.  **[自動再生コンテンツ]** イベント宣言の **[起動アクション]** セクションで、最初の起動アクションについて下記の表の値を入力します。
+5.  **[使用可能な宣言]** ドロップダウン リストで、**[ファイルの種類の関連付け]** を選び、**[追加]** をクリックします。 新しい **[ファイルの種類の関連付け]** 宣言の [プロパティ] で、**[表示名]** フィールドを **".ms ファイルを表示する"**、**[名前]** フィールドを **ms\_association** に設定します。 **[サポートされるファイルの種類]** セクションで、**[新規追加]** をクリックします。 **[ファイルの種類]** フィールドを **.ms** に設定します。 コンテンツ イベントの場合は、自動再生で、アプリに明示的に関連付けられていないファイルの種類はすべて除外されます。
+6.  マニフェスト ファイルを保存して閉じます。
 
-| Xxxxxxx             | Xxxxx                         |
+| 設定             | 値                         |
 |---------------------|-------------------------------|
-| Xxxx                | xxxx                          |
-| Xxxxxx Xxxxxxx Xxxx | Xxxx Xxxxx                    |
-| Xxxxxxx Xxxxx       | XxxxXxxxXxxxxxXxxxxXxxxxxxxxx |
+| 動詞                | show                          |
+| アクションの表示名 | ファイルを表示する                    |
+| コンテンツ イベント       | AutoPlayCustomEventQuickstart |
 
-Xxx **Xxxxxxx Xxxxx** xxxxx xx xxx xxxx xxxx xxx xxxxxxxx xxx xxx **XxxxxxXxxxx** xxx xx xxxx xxxxxxx.xxx xxxx. Xxx **Xxxxxx Xxxxxxx Xxxx** xxxxxxx xxxxxxxxxx xxx xxxxxx xxxx XxxxXxxx xxxxxxxx xxx xxxx xxx. Xxx **Xxxx** xxxxxxx xxxxxxxxxx x xxxxx xxxx xx xxxxxx xx xxxx xxx xxx xxx xxxxxxxx xxxxxx. Xxx xxx xxxxxxx xxxxxxxx xxxxxx xxxxxxx xxx xx XxxxXxxx xxxxx xxx xxx xxx **Xxxx** xxxxxxx xx xxxxxxxxx xxxxx xxxxxx x xxxx xxx xxxxxxxx xxx xxxx xxx. Xxx xxx xxxx xxxxx xxxxxx xxx xxxx xxxxxxxx xx xxxxxxxx xxx **xxxx** xxxxxxxx xx xxx xxxxxxx xxxxx xxxxxxxxx xxxxxx xx xxxx xxx. Xxx xxx xxx xxx xxxxx xxx xxx **Xxxx** xxxxxxx xxxxxx, **xxxx**, xxxxx xx xxxxxxxx.
+**[コンテンツ イベント]** の値は、autorun.inf ファイルの **CustomEvent** キーに指定したテキストです。 **[アクションの表示名]** 設定では、アプリの自動再生で表示される文字列を指定します。 **[動詞]** 設定では、選んだオプションでアプリに渡される値を指定します。 自動再生のイベントの起動アクションは複数指定できます。また、**[動詞]** 設定を使って、ユーザーがアプリで選んだアクションを確認できます。 アプリに渡される起動イベント引数の **verb** プロパティを調べることでユーザーが選んだオプションを確認できます。 **[動詞]** 設定には任意の値を使うことができます。ただし、予約されている **open** を除きます。
 
-### Xxxx Y: Xxx XXXX XX
+### 手順 3: XAML UI を追加する
 
-Xxxx xxx XxxxXxxx.xxxx xxxx xxx xxx xxx xxxxxxxxx XXXX xx xxx xxxxxxx &xx;Xxxx&xx; xxxxxxx.
+MainPage.xaml ファイルを開き、次の XAML を既定の &lt;Grid&gt; セクションに追加します。
 
 ```xaml
 <StackPanel Orientation="Vertical">
@@ -459,11 +458,11 @@ Xxxx xxx XxxxXxxx.xxxx xxxx xxx xxx xxx xxxxxxxxx XXXX xx xxx xxxxxxx &xx;Xxxx&x
 </StackPanel>
 ```
 
-### Xxxx Y: Xxx xxxxxxxxxx xxxx
+### 手順 4: アクティブ化コードを追加する
 
-Xxx xxxx xx xxxx xxxx xxxxx x xxxxxx xx xxxxxxx xxx xxxxxxx xx xxx xxxx xxxxx xx xxxx xxxxxx xxxxxx. Xxx xxx XxxxXxxx xxxxxxx xxxxxx, XxxxXxxx xxxxxx xxx xxxx xxxxxx xx xxx xxxxxxx xxxxxx xx xxx xxxxxxx xxxxxxxxx xxxxxx xx xxx xxxxxxxxxxx xxxxxx xxx **XxXxxxXxxxxxxxx** xxxxx. Xxx xxx xxxxxxxx xxxx xxxxxx xxxx xxx xxxxx xxxxxxx xx xxx **Xxxxx** xxxxxxxx.
+この手順のコードは、ボリューム デバイスのルート ドライブにあるフォルダーを表示するメソッドを呼び出します。 自動再生コンテンツ イベントの場合、自動再生により、**OnFileActivated** イベント中にアプリに渡された起動引数でストレージ デバイスのルート フォルダーが渡されます。 このフォルダーは **Files** プロパティの最初の要素から取得できます。
 
-Xxxx xxx Xxx.xxxx.xx xxxx xxx xxx xxx xxxxxxxxx xxxx xx xxx **Xxx** xxxxx.
+App.xaml.cs ファイルを開いて、次のコードを **App** クラスに追加します。
 
 ```cs
 protected override void OnFileActivated(FileActivatedEventArgs args)
@@ -478,13 +477,13 @@ protected override void OnFileActivated(FileActivatedEventArgs args)
 }
 ```
 
-> **Xxxx**  Xxx `DisplayFiles` xxxxxx xx xxxxx xx xxx xxxxxxxxx xxxx.
+> **注:** `DisplayFiles` メソッドは、次の手順で追加されます。
 
  
 
-### Xxxx Y: Xxx xxxx xx xxxxxxx xxxxxxx
+### 手順 5: フォルダーを表示するコードを追加する
 
-Xx xxx XxxxXxxx.xxxx.xx xxxx xxx xxx xxxxxxxxx xxxx xx xxx **XxxxXxxx** xxxxx.
+MainPage.xaml.cs ファイルで、次のコードを **MainPage** クラスに追加します。
 
 ```cs
 internal async void DisplayFiles(Windows.Storage.StorageFolder folder)
@@ -507,53 +506,53 @@ internal async System.Threading.Tasks.Task<IReadOnlyList<Windows.Storage.Storage
 }
 ```
 
-### Xxxx Y: Xxxxx xxx xxx xxx xxx
+### 手順 6: アプリをビルドして実行する
 
-1.  Xxxxx XY xx xxxxx xxx xxxxxx xxx xxx (xx xxxxx xxxx).
-2.  Xx xxx xxxx xxx, xxxxxx x xxxxxx xxxx xx xxxxxxx xxxxxxx xxxxxx xxxx xxxx XX. Xxxx xxxxxx xxxx xxx xxxx xxx xxxx xx XxxxXxxx xxxxxxx xxxxxxx.
+1.  F5 キーを押して、アプリを (デバッグ モードで) ビルドおよび展開します。
+2.  アプリを実行するには、メモリ カードまたは他のストレージ デバイスを PC に挿入します。 そして、自動再生ハンドラー オプションの一覧からアプリを選びます。
 
-## XxxxXxxx xxxxx xxxxxxxxx
+## 自動再生イベント リファレンス
 
 
-Xxx **XxxxXxxx** xxxxxx xxxxxx xxxx xx xxxxxxxx xxx x xxxxxxx xx xxxxxx xxx xxxxxx (xxxx) xxxxxxx xxxxxx. Xx xxxxxxxx xxx **XxxxXxxx** xxxxxxx xxxxxx, xxx xxxx xxxxxx xxx **Xxxxxxxxx Xxxxxxx** xxxxxxxxxx xx xxxx xxxxxxx xxxxxxxx. Xxxx xxxxx xxxxx xxx xxxxxx xxxx xxx xxx xxxxxxxx xxx xxx xxxx xxxx xxx xxxxxx.
+**自動再生**システムを使うと、さまざまなデバイスやボリューム (ディスク) の到着イベントにアプリを登録できます。 **自動再生**コンテンツ イベントに登録するには、パッケージ マニフェストで **[リムーバブル記憶域]** 機能を有効にする必要があります。 次の表で、登録できるイベントと、それらのイベントが発生するタイミングについて説明します。
 
-| Xxxxxxxx                                                           | Xxxxx   | Xxxxxxxxxxx   |
+| シナリオ                                                           | イベント   | 説明   |
 |--------------------------------------------------------------------|---------|---------------|
-| Xxxxx xxxxxx xx x Xxxxxx                                           | **XXX\XxxxxXxxxxx**                | Xxxxxx xxx xxxxxxx xxxx xxx xxxxxxxxxx xx Xxxxxxx Xxxxxxxx Xxxxxxx xxx xxxxx xxx XxxxxXxxxxx xxxxxxxxxx.                                                                                                                                                                                                                                                                  |
-| Xxxxx xxxxx xx xx xxxxx xxxxxx                                     | **XXX\XxxxxXxxxxx**                | Xxxxxx xxx xxxxx xxxxxxx xxxx xxx xxxxxxxxxx xx Xxxxxxx Xxxxxxxx Xxxxxxx xxx xxxxx xxx XxxxxXxxxxx xxxxxxxxxx.                                                                                                                                                                                                                                                            |
-| Xxxxx xxxxxx xx x xxxxx xxxxxx                                     | **XXX\XxxxxXxxxxx**                | Xxxxxx xxx xxxxx xxxxxxx xxxx xxx xxxxxxxxxx xx Xxxxxxx Xxxxxxxx Xxxxxxx xxx xxxxx xxx XxxxxXxxxxx xxxxxxxxxx.                                                                                                                                                                                                                                                            |
-| Xxxxxx x xxxxxxxxx xxxxx xxxxx xx xxxxxxxx xxxx xxxxx              | **XxxxxxxXxXxxxxxx**               | Xxxxxx xxxx x xxxxx xx xxxxxx xx xxxxxxxxx xx xxx XX.   Xx xxx xxxxx xx xxxxxx xxxxxxxx x XXXX, XXXXX, xx XXXXXXX\XXXX xxxxxx xx xxx xxxx xx xxx xxxx, xxx **XxxxXxxxxxxxXxXxxxxxx** xxxxx xx xxxxxx xxxxxxx.                                                                                                                                                             |
-| Xxxxx xxxxxx xxxx xxxx xxxxxxx (xxxxxx)                            | **XxxxXxxxxxxxXxXxxxxxx**          | Xxxxxx xxxx x xxxxx xx xxxxxx xxxxxxxx x XXXX, XXXXX, xx XXXXXXX\XXXX xxxxxx xx xxx xxxx xx xxx xxxx. XXx x xxxx  xxx xxxxxxx **Xxxxxx xxxx xx xx xxxx xxxx xxxx xx xxxxx** xx xxx XxxxXxxx Xxxxxxx Xxxxx, XxxxXxxx xxxx xxxxxxx x xxxxxx xxxxxxxxx xx xxx XX xx xxxxxxxxx xxx xxxx xx xxxxxxx xx xxx xxxx. Xxxx xxxxxxxx xxx xxxxx, **XxxxXxxxxxxxXxXxxxxxx** xx xxxxxx. |
-| Xxxxxxxxx xxxxxx xxxx Xxxxxxxxx Xxxxxxx (xxx xxx xxxx)             | **XxxxXxxxxxxxXxXxxxxxx**          | Xxxx xxxxx xxxx xxxxxxx xxxx xxxxx xxxxxxxxx (xxx xxx xxxx), XxxxXxxx xxxx xxxxxxx xxx xxxxxx xxxxx xx xxxxxxxxx xxx xxxx xx xxxxxxx. Xx xxxxxxxx xxx xxxxx, **XxxxXxxxxxxxXxXxxxxxx** xx xxxxxx.                                                                                                                                                                         |
-| Xxxxx xxxxx xxxx xxxx xxxxxxx (xxxxxx)                             | **XxxxXxxxxXxxxxXxXxxxxxx**        | Xx x xxxx xxx xxxxxxx **Xxxxxx xxxx xx xx xxxx xxxx xxxx xx xxxxx** xx xxx XxxxXxxx Xxxxxxx Xxxxx, XxxxXxxx xxxx xxxxxxx x xxxxxx xxxxxxxxx xx xxx XX xx xxxxxxxxx xxx xxxx xx xxxxxxx xx xxx xxxx.  Xxxx xxxxx xxxxx xxx xxxxx, **XxxxXxxxxXxxxxXxXxxxxxx** xx xxxxxx.                                                                                                   |
-| Xxxxxxxxx xxxxx xxxx Xxxxxxxxx Xxxxxxx (xxx xxx xxxx)              | **XxxxXxxxxXxxxxXxXxxxxxx**        | Xxxx xxxxx xxxx xxxxxxx xxxx xxxxx xxxxxxxxx (xxx xxx xxxx), XxxxXxxx xxxx xxxxxxx xxx xxxxxx xxxxx xx xxxxxxxxx xxx xxxx xx xxxxxxx. Xx xxxxx xxxxx xxx xxxxx, **XxxxXxxxxXxxxxXxXxxxxxx** xx xxxxxx.                                                                                                                                                                    |
-| Xxxxx xxxxxx xxxx xxxx xxxxxxx (xxxxxx)                            | **XxxxXxxxxXxxxxXxXxxxxxx**        | Xx x xxxx xxx xxxxxxx **Xxxxxx xxxx xx xx xxxx xxxx xxxx xx xxxxx** xx xxx XxxxXxxx Xxxxxxx Xxxxx,, XxxxXxxx xxxx xxxxxxx x xxxxxx xxxxxxxxx xx xxx XX xx xxxxxxxxx xxx xxxx xx xxxxxxx xx xxx xxxx. Xxxx xxxxx xxxxx xxx xxxxx, **XxxxXxxxxXxxxxXxXxxxxxx** xx xxxxxx.                                                                                                   |
-| Xxxxxxxxx xxxxxx xxxx Xxxxxxxxx Xxxxxxx (xxx xxx xxxx)             | **XxxxXxxxxXxxxxXxXxxxxxx**        | Xxxx xxxxx xxxx xxxxxxx xxxx xxxxx xxxxxxxxx (xxx xxx xxxx), XxxxXxxx xxxx xxxxxxx xxx xxxxxx xxxxx xx xxxxxxxxx xxx xxxx xx xxxxxxx. Xx xxxxx xxxxx xxx xxxxx, **XxxxXxxxxXxxxxXxXxxxxxx** xx xxxxxx.                                                                                                                                                                    |
-| Xxxxxxxx xxxxx xxxx xx xxxxx xxxx x xxxxxxxxx xxxxxx               | **XxxxxXxxxxxxXxXxxxxxx**          | Xx x xxxx xxx xxxxxxx **Xxxxxx xxxx xx xx xxxx xxxx xxxx xx xxxxx** xx xxx XxxxXxxx Xxxxxxx Xxxxx, XxxxXxxx xxxx xxxxxxx x xxxxxx xxxxxxxxx xx xxx XX xx xxxxxxxxx xxx xxxx xx xxxxxxx xx xxx xxxx. Xx xx xxxxxxxx xxxxxxx xxxx xx xxxxx (xxx xxxxxxx, xxxxxxxx), **XxxxxXxxxxxxXxXxxxxxx** xx xxxxxx.                                                                    |
-| Xxxxxxxx xxxxx xxxx xx xxxxx xxxx Xxxxxxxxx Xxxxxxx (xxx xxx xxxx) | **XxxxxXxxxxxxXxXxxxxxx**          | Xxxx xxxxx xxxx xxxxxxx xxxx xxxxx xxxxxxxxx (xxx xxx xxxx), XxxxXxxx xxxx xxxxxxx xxx xxxxxx xxxxx xx xxxxxxxxx xxx xxxx xx xxxxxxx. Xx xx xxxxxxxx xxxxxxx xxxx xx xxxxx (xxx xxxxxxx, xxxxxxxx), **XxxxxXxxxxxxXxXxxxxxx** xx xxxxxx.                                                                                                                                  |
-| Xxxxxx xxxxx xxxx xxxxxxx xxxxx                                    | **XxxxXXXXxxxxXxXxxxxxx**          |                                                                                                                                                                                                                                                                                                                                                                           |
+| カメラで写真を使う                                           | **WPD\ImageSource**                | Windows ポータブル デバイスとして指定されているカメラに対して発生し、ImageSource 機能を提供します。                                                                                                                                                                                                                                                                  |
+| オーディオ プレーヤーで音楽を使う                                     | **WPD\AudioSource**                | Windows ポータブル デバイスとして指定されているメディア プレーヤーに対して発生し、AudioSource 機能を提供します。                                                                                                                                                                                                                                                            |
+| ビデオ カメラでビデオを使う                                     | **WPD\VideoSource**                | Windows ポータブル デバイスとして指定されているビデオ カメラに対して発生し、VideoSource 機能を提供します。                                                                                                                                                                                                                                                            |
+| 接続されているフラッシュ ドライブまたは外部ハード ドライブにアクセスする              | **StorageOnArrival**               | ドライブまたはボリュームが PC 接続されると発生します。   ドライブまたはボリュームのディスクのルートに DCIM、AVCHD、または PRIVATE\ACHD フォルダーが含まれている場合、代わりに **ShowPicturesOnArrival** イベントが発生します。                                                                                                                                                             |
+| 大容量記憶装置 (レガシ) の写真を使う                            | **ShowPicturesOnArrival**          | ドライブまたはボリュームのディスクのルートに DCIM、AVCHD、または PRIVATE\ACHD フォルダーが含まれている場合に発生します。 自動再生コントロール パネルで **[各メディア タイプの処理方法を選択する]** を有効にしている場合は、自動再生によって PC に接続されているボリュームが調べられ、ディスク上のコンテンツの種類が確認されます。 画像が見つかると、**ShowPicturesOnArrival** が発生します。 |
+| 近接共有 (タップして送信) で写真を受信する             | **ShowPicturesOnArrival**          | コンテンツを近接通信を使って送信 (タップして送信) すると、自動再生によって共有ファイルが調べられ、コンテンツの種類が確認されます。 画像が見つかった場合、**ShowPicturesOnArrival** が発生します。                                                                                                                                                                         |
+| 大容量記憶装置 (レガシ) の音楽を使う                             | **PlayMusicFilesOnArrival**        | 自動再生コントロール パネルで **[各メディア タイプの処理方法を選択する]** を有効にしている場合は、自動再生によって PC に接続されているボリュームが調べられ、ディスク上のコンテンツの種類が確認されます。  音楽ファイルが見つかると、**PlayMusicFilesOnArrival** が発生します。                                                                                                   |
+| 近接共有 (タップして送信) で音楽を受信する              | **PlayMusicFilesOnArrival**        | コンテンツを近接通信を使って送信 (タップして送信) すると、自動再生によって共有ファイルが調べられ、コンテンツの種類が確認されます。 音楽ファイルが見つかった場合、**PlayMusicFilesOnArrival** が発生します。                                                                                                                                                                    |
+| 大容量記憶装置 (レガシ) のビデオを使う                            | **PlayVideoFilesOnArrival**        | 自動再生コントロール パネルで **[各メディア タイプの処理方法を選択する]** を有効にしている場合は、自動再生によって PC に接続されているボリュームが調べられ、ディスク上のコンテンツの種類が確認されます。 ビデオ ファイルが見つかると、**PlayVideoFilesOnArrival** が発生します。                                                                                                   |
+| 近接共有 (タップして送信) でビデオを受信する             | **PlayVideoFilesOnArrival**        | コンテンツを近接通信を使って送信 (タップして送信) すると、自動再生によって共有ファイルが調べられ、コンテンツの種類が確認されます。 ビデオ ファイルが見つかった場合、**PlayVideoFilesOnArrival** が発生します。                                                                                                                                                                    |
+| 接続先デバイスの混在したファイルのセットを処理する               | **MixedContentOnArrival**          | 自動再生コントロール パネルで **[各メディア タイプの処理方法を選択する]** を有効にしている場合は、自動再生によって PC に接続されているボリュームが調べられ、ディスク上のコンテンツの種類が確認されます。 特定のコンテンツの種類が見つかると (画像など)、**MixedContentOnArrival** が発生します。                                                                    |
+| 近接共有 (タップして送信) で混在したファイルのセットを処理する | **MixedContentOnArrival**          | コンテンツを近接通信を使って送信 (タップして送信) すると、自動再生によって共有ファイルが調べられ、コンテンツの種類が確認されます。 特定のコンテンツの種類が見つかると (画像など)、**MixedContentOnArrival** が発生します。                                                                                                                                  |
+| 光学式メディアのビデオを処理する                                    | **PlayDVDMovieOnArrival**          |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
-|                                                                    | **XxxxXxxXxxXxXxxxxxx**            |                                                                                                                                                                                                                                                                                                                                                                           |
+|                                                                    | **PlayBluRayOnArrival**            |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
-|                                                                    | **XxxxXxxxxXXXxxxxXxXxxxxxx**      |                                                                                                                                                                                                                                                                                                                                                                           |
+|                                                                    | **PlayVideoCDMovieOnArrival**      |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
-|                                                                    | **XxxxXxxxxXxxxxXXXxxxxXxXxxxxxx** |                                                                                                                                                                                                                                                                                                                                                                           |
-| Xxxxxx xxxxx xxxx xxxxxxx xxxxx                                    | **XxxxXXXxxxxXxXxxxxxx**           |                                                                                                                                                                                                                                                                                                                                                                           |
+|                                                                    | **PlaySuperVideoCDMovieOnArrival** |                                                                                                                                                                                                                                                                                                                                                                           |
+| 光学式メディアの音楽を処理する                                    | **PlayCDAudioOnArrival**           |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
-|                                                                    | **XxxxXXXXxxxxXxXxxxxxx**          |                                                                                                                                                                                                                                                                                                                                                                           |
-| Xxxx xxxxxxxx xxxxx                                                | **XxxxXxxxxxxxXXXxXxxxxxx**        |                                                                                                                                                                                                                                                                                                                                                                           |
+|                                                                    | **PlayDVDAudioOnArrival**          |                                                                                                                                                                                                                                                                                                                                                                           |
+| エンハンス ディスクを再生する                                                | **PlayEnhancedCDOnArrival**        |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
-|                                                                    | **XxxxXxxxxxxxXXXXxXxxxxxx**       |                                                                                                                                                                                                                                                                                                                                                                           |
-| Xxxxxx xxxxxxxxx xxxxxxx xxxxx                                     | **XxxxxxXXXxxxxxxXxXxxxxxx**       |                                                                                                                                                                                                                                                                                                                                                                           |
+|                                                                    | **PlayEnhancedDVDOnArrival**       |                                                                                                                                                                                                                                                                                                                                                                           |
+| 書き込み可能な光学式ディスクを処理する                                     | **HandleCDBurningOnArrival**       |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
-|                                                                    | **XxxxxxXXXXxxxxxxXxXxxxxxx**      |                                                                                                                                                                                                                                                                                                                                                                           |
+|                                                                    | **HandleDVDBurningOnArrival**      |                                                                                                                                                                                                                                                                                                                                                                           |
 |                                                                    |                                    |                                                                                                                                                                                                                                                                                                                                                                           |
-|                                                                    | **XxxxxxXXXxxxxxxXxXxxxxxx**       |                                                                                                                                                                                                                                                                                                                                                                           |
-| Xxxxxx xxx xxxxx xxxxxx xx xxxxxx xxxxxxxxxx                       | **XxxxxxxXxxxxxxXxXxxxxxx**        | Xxxxxx xxx xxx xxxxxx xx xxxx xxxxxxx xx xxxxx xxxx xxxx xxx xxxxx xxx xx xxx XxxxXxxx xxxxxxx xxxxxx. Xxx xx xxxx xxxxx xx xxx xxxxxxxxxxx. Xxx xxxxxx xxxx xxxxxxxx xxxx xxxxxxxxxxx xxx xxx xxxxxxxx XxxxXxxx xxxxxx xxxx xx xxx xxxxxx.                                                                                                                               |
+|                                                                    | **HandleBDBurningOnArrival**       |                                                                                                                                                                                                                                                                                                                                                                           |
+| 他のデバイスまたはボリュームの接続を処理する                       | **UnknownContentOnArrival**        | 自動再生コンテンツ イベントのいずれとも一致しないコンテンツが見つかった場合にすべてのイベントで発生します。 このイベントを使うことはお勧めできません。 処理できる特定の自動再生イベントにのみアプリを登録する必要があります。                                                                                                                               |
 
-Xxx xxx xxxxxxx xxxx XxxxXxxx xxxxx x xxxxxx XxxxXxxx Xxxxxxx xxxxx xxxxx xxx **XxxxxxXxxxx** xxxxx xx xxx xxxxxxx.xxx xxxx xxx x xxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxx.xxx xxxxxxx](https://msdn.microsoft.com/library/windows/desktop/cc144200).
+ボリュームの autorun.inf ファイルの **CustomEvent** エントリを使って、自動再生でカスタムの自動再生コンテンツ イベントが発生することを指定できます。 詳しくは、「[Autorun.inf エントリ](https://msdn.microsoft.com/library/windows/desktop/cc144200)」をご覧ください。
 
-Xxx xxx xxxxxxxx xxxx xxx xx xx XxxxXxxx Xxxxxxx xx XxxxXxxx Xxxxxx xxxxx xxxxxxx xx xxxxxx xx xxxxxxxxx xx xxx xxxxxxx.xxxxxxxxxxxx xxxx xxx xxxx xxx. Xx xxx xxx xxxxx Xxxxxx Xxxxxx, xxx xxx xxx xx **XxxxXxxx Xxxxxxx** xx **XxxxXxxx Xxxxxx** xxxxxxxxxxx xx xxx **Xxxxxxxxxxxx** xxx. Xx xxx xxx xxxxxxx xxx xxxxxxx.xxxxxxxxxxxx xxxx xxx xxxx xxx xxxxxxxx, xxx xx [**Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br211400) xxxxxxx xx xxxx xxxxxxx xxxxxxxx xxxx xxxxxxxxx xxxxxx **xxxxxxx.xxxxXxxxXxxxxxx** xx **xxxxxxx.xxxxXxxxXxxxxx** xx xxx **Xxxxxxxx**. Xxx xxxxxxx, xxx xxxxxxxxx xxxxx xx xxx xxxxxxx xxxxxxxx xxxx xx **XxxxXxxx Xxxxxxx** xxxxxxxxx xx xxxxxxxx xxx xxx xx x xxxxxxx xxx xxx **XxxxXxxxxxxxXxXxxxxxx** xxxxx.
+自動再生コンテンツまたは自動再生デバイスのイベント ハンドラーとしてアプリを登録するには、アプリの package.appxmanifest ファイルに拡張機能を追加します。 Visual Studio を使う場合は、**[宣言]** タブで **[自動再生コンテンツ]** または **[自動再生デバイス]** の宣言を追加します。 アプリの package.appxmanifest ファイルを直接編集する場合は、パッケージ マニフェストに [**Extension**](https://msdn.microsoft.com/library/windows/apps/br211400) 要素を追加し、**Category** として **windows.autoPlayContent** または **windows.autoPlayDevice** を指定します。 たとえば、次のパッケージ マニフェストのエントリでは、**自動再生コンテンツ**拡張機能を追加して、アプリを **ShowPicturesOnArrival** イベントのハンドラーとして登録しています。
 
 ```xml
   <Applications>
@@ -576,4 +575,8 @@ Xxx xxx xxxxxxxx xxxx xxx xx xx XxxxXxxx Xxxxxxx xx XxxxXxxx Xxxxxx xxxxx xxxxxx
 
 
 
+
+
 <!--HONumber=Mar16_HO1-->
+
+

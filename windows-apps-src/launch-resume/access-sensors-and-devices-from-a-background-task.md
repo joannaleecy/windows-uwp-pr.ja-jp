@@ -1,56 +1,57 @@
 ---
-xxxxx: Xxxxxx xxxxxxx xxx xxxxxxx xxxx x xxxxxxxxxx xxxx
-xxxxxxxxxxx: XxxxxxXxxXxxxxxx xxxx xxxx Xxxxxxxxx Xxxxxxx xxx xxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxxx xx xxx xxxxxxxxxx, xxxx xxxx xxxx xxxxxxxxxx xxx xx xxxxxxxxx.
-xx.xxxxxxx: XYYYYYYX-YXXY-YYXX-XYYY-YYYYYYYYYYYX
+title: バックグラウンド タスクからのセンサーやデバイスへのアクセス
+description: DeviceUseTrigger を使うと、フォアグラウンド アプリが中断しているときにも、バックグラウンドでユニバーサル Windows アプリからセンサーや周辺機器にアクセスできます。
+ms.assetid: B540200D-9FF2-49AF-A224-50877705156B
 ---
 
-# Xxxxxx xxxxxxx xxx xxxxxxx xxxx x xxxxxxxxxx xxxx
+# バックグラウンド タスクからのセンサーやデバイスへのアクセス
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
+
+
+[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うと、フォアグラウンド アプリが中断しているときにも、バックグラウンドでユニバーサル Windows アプリからセンサーや周辺機器にアクセスできます。 たとえば、アプリが実行されている場所によっては、バックグラウンド タスクを使ってデバイスまたはモニターのセンサーとデータを同期することができます。 バッテリ残量を維持し、適切なユーザーの同意を得るために、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) の使用にはこのトピックで説明するポリシーが適用されます。
+
+バックグラウンドでセンサーまたは周辺機器にアクセスするには、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うバックグラウンド タスクを作成します。 PC でこれを実行する方法を示す例については、[カスタム USB デバイスのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=301975 ) をご覧ください。 電話の例は、[バックグラウンド センサーのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=393307) に関するページをご覧ください。
+
+## デバイス バックグラウンド タスクの概要
+
+
+アプリがユーザーに表示されなくなると、Windows はメモリと CPU リソースを解放するためにそのアプリを中断または終了します。 こうすることで、他のアプリがフォアグラウンドで実行できるようにし、バッテリの消費量を減らします。 このとき、バックグラウンド タスクの助けがないと、進行中のデータ イベントが失われます。 Windows には、バックグラウンド タスク トリガー [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) があり、アプリが中断状態になっても、各種のデバイスやセンサーでの時間のかかる同期操作や監視操作をバックグラウンドで安全に実行できるようにします。 アプリのライフサイクルについて詳しくは、「[起動、再開、バックグラウンド タスク](index.md)」をご覧ください。 バックグラウンド タスクについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
+
+**注**  ユニバーサル Windows アプリでは、バックグラウンドでデバイスを同期するために、アプリによるバックグラウンド同期をユーザーが許可する必要があります。 さらに、デバイスを PC に接続して I/O をアクティブにし、最長 10 分のバックグラウンド処理を実行できるようにする必要があります。 ポリシーの適用については、このトピックの後半で詳しく説明します。
+
+### 制限: 重要なデバイス操作
+
+時間がかかるファームウェア更新など、一部の重要なデバイス操作は、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) では実行できません。 このような操作は PC でのみ、[**DeviceServicingTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297315) を使う特権アプリによってのみ実行できます。 *特権アプリ*とは、これらの操作を実行する権限をデバイス製造元から与えられているアプリです。 デバイス メタデータを使って、どのアプリがデバイスの特権アプリであるか (存在する場合) を指定します。 詳しくは、「[Windows ストア デバイス アプリによるデバイスの同期と更新](http://go.microsoft.com/fwlink/p/?LinkId=306619)」をご覧ください。
+
+## DeviceUseTrigger バックグラウンド タスクでサポートされているプロトコル/API
 
 
 [
-            **XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxx xxxx Xxxxxxxxx Xxxxxxx xxx xxxxxx xxxxxxx xxx xxxxxxxxxx xxxxxxx xx xxx xxxxxxxxxx, xxxx xxxx xxxx xxxxxxxxxx xxx xx xxxxxxxxx. Xxx xxxxxxx, xxxxxxxxx xx xxxxx xxxx xxx xx xxxxxxx, xx xxxxx xxx x xxxxxxxxxx xxxx xx xxxxxxxxxxx xxxx xxxx xxxxxxx xx xxxxxxx xxxxxxx. Xx xxxx xxxxxxxx xxxxxxx xxxx xxx xxxxxx xxx xxxxxxxxxxx xxxx xxxxxxx, xxx xxx xx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xx xxxxxxx xx xxxxxxxx xxxx xxx xxxxxxxxx xx xxxx xxxxx.
+            **DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うバックグラウンド タスクは、システム トリガーのバックグラウンド タスクでサポートされない多くの API またはプロトコルを使うやり取りを、アプリでできるようにします。 ユニバーサル Windows アプリでは、次のプロトコルがサポートされます。
 
-Xx xxxxxx xxxxxxx xx xxxxxxxxxx xxxxxxx xx xxx xxxxxxxxxx, xxxxxx x xxxxxxxxxx xxxx xxxx xxxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337). Xxx xx xxxxxxx xxxx xxxxx xxx xxxx xx xxxx xx x XX, xxx xxx [Xxxxxx XXX xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=301975 ). Xxx xx xxxxxxx xx x xxxxx, xxx xxx [Xxxxxxxxxx Xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=393307).
-
-## Xxxxxx xxxxxxxxxx xxxx xxxxxxxx
-
-
-Xxxx xxxx xxx xx xx xxxxxx xxxxxxx xx xxx xxxx, Xxxxxxx xxxx xxxxxxx xx xxxxxxxxx xxxx xxx xx xxxxxxx xxxxxx xxx XXX xxxxxxxxx. Xxxx xxxxxx xxxxx xxxx xx xxx xx xxx xxxxxxxxxx xxx xxxxxxx xxxxxxx xxxxxxxxxxx. Xxxx xxxx xxxxxxx, xxxxxxx xxx xxxx xx x xxxxxxxxxx xxxx, xxx xxxxxxx xxxx xxxxxx xxxx xx xxxx. Xxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxx xxxxxxx, [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337), xx xxx xxxx xxx xxxxxxx xxxx xxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxxxx xx xxxxxxx xxx xxxxxxx xxxxxx xx xxx xxxxxxxxxx, xxxx xx xxxx xxx xx xxxxxxxxx. Xxx xxxx xxxx xxxxx xxx xxxxxxxxx, xxx [Xxxxxxxxx, xxxxxxxx, xxx xxxxxxxxxx xxxxx](index.md). Xxx xxxx xxxxx xxxxxxxxxx xxxxx, xxx [Xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxx](support-your-app-with-background-tasks.md).
-
-**Xxxx**  Xx x Xxxxxxxxx Xxxxxxx xxx, xxxxxxx x xxxxxx xx xxx xxxxxxxxxx xxxxxxxx xxxx xxxx xxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxx xx xxxx xxx. Xxx xxxxxx xxxx xxxx xx xxxxxxxxx xx xx xxxxxx xxxx xxx XX, xxxx xxxxxx X/X, xxx xx xxxxxxx x xxxxxxx xx YY xxxxxxx xx xxxxxxxxxx xxxxxxxx. Xxxx xxxxxx xx xxxxxx xxxxxxxxxxx xx xxxxxxxxx xxxxx xx xxxx xxxxx.
-
-### Xxxxxxxxxx: xxxxxxxx xxxxxx xxxxxxxxxx
-
-Xxxx xxxxxxxx xxxxxx xxxxxxxxxx, xxxx xx xxxx xxxxxxx xxxxxxxx xxxxxxx, xxxxxx xx xxxxxxxxx xxxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337). Xxxx xxxxxxxxxx xxx xx xxxxxxxxx xxxx xx xxx XX, xxx xxxx xx x xxxxxxxxxx xxx xxxx xxxx xxx [**XxxxxxXxxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297315). X *xxxxxxxxxx xxx* xx xx xxx xxxx xxx xxxxxx'x xxxxxxxxxxxx xxx xxxxxxxxxx xx xxxxxxx xxxxx xxxxxxxxxx. Xxxxxx xxxxxxxx xx xxxx xx xxxxxxx xxxxx xxx, xx xxx, xxx xxxx xxxxxxxxxx xx xxx xxxxxxxxxx xxx xxx x xxxxxx. Xxx xxxx xxxx, xxx [Xxxxxx xxxx xxx xxxxxx xxx Xxxxxxx Xxxxx xxxxxx xxxx](http://go.microsoft.com/fwlink/p/?LinkId=306619).
-
-## Xxxxxxxxx/XXXx xxxxxxxxx xx x XxxxxxXxxXxxxxxx xxxxxxxxxx xxxx
-
-
-Xxxxxxxxxx xxxxx xxxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxx xxxx xxx xxxxxxxxxxx xxxx xxxx xxxxxxxxx/XXXx, xxxx xx xxxxx xxxx'x xxxxxxxxx xx xxxxxx-xxxxxxxxx xxxxxxxxxx xxxxx. Xxx xxxxxxxxx xxx xxxxxxxxx xx x Xxxxxxxxx Xxxxxxx xxx.
-
-| Xxxxxxxx         | XxxxxxXxxXxxxxxx xx x Xxxxxxxxx Xxxxxxx xxx                                                                                                                                                    |
+| プロトコル         | ユニバーサル Windows アプリの DeviceUseTrigger                                                                                                                                                    |
 |------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| XXX              | ![xxxx xxxxxxxx xx xxxxxxxxx.](images/ap-tools.png)                                                                                                                                            |
-| XXX              | ![xxxx xxxxxxxx xx xxxxxxxxx.](images/ap-tools.png)                                                                                                                                            |
-| Xxxxxxxxx XXXXXX | ![xxxx xxxxxxxx xx xxxxxxxxx.](images/ap-tools.png)                                                                                                                                            |
-| Xxxxxxxxx XXXX   | ![xxxx xxxxxxxx xx xxxxxxxxx.](images/ap-tools.png)                                                                                                                                            |
-| XXX              | ![xxxx xxxxxxxx xx xxxxxxxxx.](images/ap-tools.png)                                                                                                                                            |
-| Xxxxxxx xxxxx    | ![xxxx xxxxxxxx xx xxxxxxxxx.](images/ap-tools.png)                                                                                                                                            |
-| Xxxxxxx Xx-Xx    | ![xxxx xxxxxxxx xx xxxxxxxxx.](images/ap-tools.png)                                                                                                                                            |
-| XXxxxxxXXXxxxxxx | ![xxxxxxxxxxxxxxxxxxxxxx xxxxxxxx xxxxxxxxxxxxxxxx](images/ap-tools.png)                                                                                                                       |
-| Xxxxxxx XXX      | ![xxxxxxxxxxxxxxxxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxx xxxx](images/ap-tools.png) (xxxxxxx xx xxxxxxx xx xxx [xxxxxxxxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/dn894631)) |
+| USB              | ![このプロトコルはサポートされています。](images/ap-tools.png)                                                                                                                                            |
+| HID              | ![このプロトコルはサポートされています。](images/ap-tools.png)                                                                                                                                            |
+| Bluetooth RFCOMM | ![このプロトコルはサポートされています。](images/ap-tools.png)                                                                                                                                            |
+| Bluetooth GATT   | ![このプロトコルはサポートされています。](images/ap-tools.png)                                                                                                                                            |
+| MTP              | ![このプロトコルはサポートされています。](images/ap-tools.png)                                                                                                                                            |
+| ネットワーク (有線)    | ![このプロトコルはサポートされています。](images/ap-tools.png)                                                                                                                                            |
+| ネットワーク (Wi-Fi)    | ![このプロトコルはサポートされています。](images/ap-tools.png)                                                                                                                                            |
+| IDeviceIOControl | ![DeviceServicingTrigger でサポートされています。](images/ap-tools.png)                                                                                                                       |
+| センサー API      | ![DeviceServicingTrigger でサポートされています](images/ap-tools.png) ([ユニバーサル デバイス ファミリ](https://msdn.microsoft.com/library/windows/apps/dn894631) のセンサーのみ)。 |
 
  
 
-## Xxxxxxxxxxx xxxxxxxxxx xxxxx xx xxx xxx xxxxxxx xxxxxxxx
+## バックグラウンド タスクをアプリ パッケージ マニフェストに登録する
 
 
-Xxxx xxx xxxx xxxxxxx xxxx xxx xxxxxx xxxxxxxxxx xx xxxx xxxx xxxx xx xxxx xx x xxxxxxxxxx xxxx. Xxxx xxxx xx xxxxxxxx xx x Xxxxxxx Xxxxxxx xxxxx xxxx xxxxxxxxxx [**XXxxxxxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br224794) (xx xx x xxxxxxxxx XxxxXxxxxx xxxx xxx XxxxXxxxxx xxxx). Xx xxx x [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxxxxxxxx xxxx, xxxx xxx xxxx xxxxxxx xx xx xxx xxx xxxxxxxx xxxx xx x xxxxxxxxxx xxx, xxxx xx xxxx xxx xxxxxx-xxxxxxxxx xxxxxxxxxx xxxxx.
+アプリは、バックグランド タスクの一部として動作するコードで同期操作と更新操作を実行します。 このコードは、[**IBackgroundTask**](https://msdn.microsoft.com/library/windows/apps/br224794) を実装する Windows ランタイム クラス (または JavaScript アプリ専用の JavaScript ページ) に埋め込まれます。 [
+            **DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクを使用するには、システム トリガーのバックグラウンド タスクと同じように、フォアグラウンド アプリのマニフェスト ファイルでそれを宣言する必要があります。
 
-Xx xxxx xxxxxxx xx xx xxx xxxxxxx xxxxxxxx xxxx, **XxxxxxXxxxxxx.XxxxXxxxxxx** xx xxx xxxxx xxxxx xxx x xxxxxxxxxx xxxx xxxx xxxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337).
+この例のアプリ パッケージ マニフェスト ファイルでは、**DeviceLibrary.SyncContent** が、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うバックグラウンド タスクのエントリ ポイントとなります。
 
 ```xml
 <Extensions>
@@ -62,134 +63,145 @@ Xx xxxx xxxxxxx xx xx xxx xxxxxxx xxxxxxxx xxxx, **XxxxxxXxxxxxx.XxxxXxxxxxx** x
 </Extensions>
 ```
 
-## Xxxxxxxxxxxx xx xxxxx XxxxxxXxxXxxxxxx
+## DeviceUseTrigger の使用について
 
 
-Xx xxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337), xxxxxx xxxxx xxxxx xxxxx. Xxx xxxx xxxx xxxxx xxxxxxxxxx xxxxx, xxx [Xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxx](support-your-app-with-background-tasks.md).
+[
+            **DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うには、次の基本的な手順を実行します。 バックグラウンド タスクについて詳しくは、「[バックグラウンド タスクによるアプリのサポート](support-your-app-with-background-tasks.md)」をご覧ください。
 
-1.  Xxxx xxx xxxxxxxxx xxx xxxxxxxxxx xxxx xx xxx xxx xxxxxxxx xxx xxxxxx xxx xxxxxxxxxx xxxx xxxx xx x Xxxxxxx Xxxxxxx xxxxx xxxx xxxxxxxxxx XXxxxxxxxxxXxxx xx xx x xxxxxxxxx XxxxXxxxxx xxxx xxx XxxxXxxxxx xxxx.
-2.  Xxxx xxxx xxx xxxxxx, xx xxxx xxxxxx xxx xxxxxxxxx x xxxxxxx xxxxxx xx xxxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337), xxx xxxxx xxx xxxxxxx xxxxxxxx xxx xxxxxx xxx.
-3.  Xxxx xxx xxxxxx xxxxxxx xxx xxxxxxxxxx xxxx xxx xxxx xxxxxxxxxx xxxxxxxxxx xxx, xx xxx, xxxxxxxxx xx xxxxxxx xxx xxxxxxx. Xxxx xxxx xxxx xxx xxx'x xxxxxxx xx xxx xxxxxxxxxx xx xxx xxxx xxxxxxxxxx xxxx xxxx xxxxxxx.
-4.  Xxxx xxxx xxx xxxxx xx xxxxxxx xxx xxxxxxxxxx xxxx, xx xxxx xxxxx xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700485) xx xxxxx xx xxx xxx xx xxxx xx xxxxxxx x xxxxxxxxxx xxxx.
-5.  Xx xxx xxx xxx xxxxxxx xxx xxxxxxxxxx xxxx, xx xxxxx xxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297341) xxxxxxxxxx xxxxxx xx xxx xxxxxx xxxxxxx xxxxxx.
-6.  Xxxx xxxxxxxxxx xxxx xxx’x xxxxxxxxx xxxx xxxxx xxxxxx xxxxxxxxxx xxxxx (xxxxx'x xx XXX xxxx xxxxx) xxx xxxx xxx xxxx xxxxxxx xxxxxxxx xx xxxx xxxxxxxxxx xxxx xxxxxxxxxx.
-7.  Xxxxxxx xxxx xxxx xxxxxxxx, xxxxx xx xxx xxxxxxx xxxx, xxxx xxx xxxxxxxxx xxxxxxxx xxxx xxxx xxx, xxxxxxxxx xxxxxxxxxx xxxx xxxxxxx xxx xxx xxxxxxxxx xxxxxx xxxxxxxx xxx xxxxxxxxxx xxxx.
-8.  Xxxxxxx xxxxxxxx xxxxxx xxxxxxxxxx xxx xxxx xxxxxxx xxx, xx xxxxxxxxx, xxxxxxx xxx xxxx xx xxx xxxxxxxx xxxxxxxxxx xxx xx xxxxxx xxx.
-9.  Xxxx xxx xxxxxxxxxx xxxxx xxxxxxx xxxxxxxx xx xxxxxxxxxx, xxxx xxx xxxx xxxxxxx xxxxx xxxxxx xxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxx xx xxx xxxxxxxxxx xxxx.
+1.  アプリ マニフェストにバックグラウンド タスクを登録し、IBackgroundTask を実装する Windows ランタイム クラスまたは JavaScript アプリ専用の JavaScript ページにバックグラウンド タスク コードを埋め込みます。
+2.  アプリが起動されると、タイプ [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) のトリガー オブジェクトを作成および構成し、後で使用できるようにトリガー インスタンスを格納します。
+3.  バックグラウンド タスクが前に登録されているかどうかをチェックし、登録されていない場合は、トリガーに対してバックグラウンド タスクを登録します。 このトリガーに関連付けられているタスクには条件を設定できないことに注意してください。
+4.  アプリからバックグラウンド タスクをトリガーする必要がある場合は、最初に [**RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出して、アプリがバックグラウンド タスクを要求できるかどうかを確認する必要があります。
+5.  バックグラウンド タスクを要求できる場合は、デバイス トリガー オブジェクトの [**RequestAsync**](https://msdn.microsoft.com/library/windows/apps/dn297341) アクティブ化メソッドを呼び出します。
+6.  バックグラウンド タスクは、(CPU 時間が割り当てられない) 他のシステム バックグラウンド タスクのように抑制されません。ただし、フォアグラウンド アプリの応答性を維持するため、低い優先順位で実行されます。
+7.  次に Windows は、トリガー タイプに応じて、必要なポリシー (バックラウンド タスクを開始する前にユーザーの許可を得るなど) に準拠しているかどうかを検証します。
+8.  Windows はシステム条件とタスクの実行時間を監視し、必要な条件を満たさなくなった場合はタスクを中止します。
+9.  バックグラウンド タスクが進捗状況や完了を報告する際、登録タスクの進捗状況イベントまたは完了イベントとしてアプリに渡されます。
 
-**Xxxxxxxxx**  
-Xxxxxxxx xxxxx xxxxxxxxx xxxxxx xxxx xxxxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337):
+**重要**  
+[
+            **DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使う場合は、次の重要なポイントを検討してください。
 
--   Xxx xxxxxxx xx xxxxxxxxxxxxxxxx xxxxxxx xxxxxxxxxx xxxxx xxxx xxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxx xxxxx xxxxxxxxxx xx Xxxxxxx Y.Y xxx Xxxxxxx Xxxxx Y.Y.
+-   [
+            **DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使うバックグラウンド タスクをプログラムから実行する機能は、Windows 8.1 と Windows Phone 8.1 に初めて導入されたものです。
 
--   Xxxxxxx xxxxxxxx xxx xxxxxxxx xx Xxxxxxx xx xxxxxx xxxx xxxxxxx xxxx xxxxxxxx xxxxxxxxxx xxxxxxx xx xxx XX.
+-   PC で周辺機器を更新するとき、ユーザーの許可を得るためのポリシーが Windows によって適用されます。
 
--   Xxxxxxxxxx xxxxxxx xxx xxxxxxxx xx xxxxxxxx xxxx xxxxxxx xxxx xxxx xxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxx.
+-   周辺機器を同期および更新する際、バッテリ残量を維持するためのポリシーも適用されます。
 
--   Xxxxxxxxxx xxxxx xxxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxxx xx xxxxxxxx xx Xxxxxxx xxxx xxxxxxx xxxxxx xxxxxxxxxxxx xxx xx xxxxxx xxx, xxxxxxxxx x xxxxxxx xxxxxx xx xxxxxxxxxx xxxx (xxxx xxxxx xxxx). Xx'x xxxxxxxxx xx xxxxxxxx xxxxx xxxxxx xxxxxxxxxxxx xxxx xxxxx xxxxx xxxxxxxxxx xxxxx xx xxxxxxxx xxxx xxxx xxxxxxxxxx xxxxxx.
+-   最大バックグラウンド時間 (実時間) など、所定のポリシー要件を満たさなくなった場合、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) を使用するバクグラウンド タスクが Windows によって中止される可能性があります。 バックグラウンド タスクを使って周辺機器を操作するときは、これらのポリシー要件を考慮する必要があります。
 
  
 
-**Xxx**  Xx xxx xxx xxxxx xxxxxxxxxx xxxxx xxxx, xxxxxxxx x xxxxxx. Xxx xx xxxxxxx xxxx xxxxx xxx xxxx xx xxxx xx x XX, xxx xxx [Xxxxxx XXX xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=301975 ). Xxx xx xxxxxxx xx x xxxxx, xxx xxx [Xxxxxxxxxx Xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkId=393307).
+**ヒント**  サンプルをダウンロードして、これらのバックグラウンド タスクの動作を確認してくさい。 PC でこれを実行する方法を示す例については、[カスタム USB デバイスのサンプルに関するページ](http://go.microsoft.com/fwlink/p/?LinkId=301975 ) をご覧ください。 電話の例は、[バックグラウンド センサーのサンプル](http://go.microsoft.com/fwlink/p/?LinkId=393307) に関するページをご覧ください。
 
  
 
-## Xxxxxxxxx xxx xxxxxxxxxx xxxxxxxxxxxx
+## 頻度とフォアグランドの制限
 
 
-Xxxxx xx xx xxxxxxxxxxx xx xxx xxxxxxxxx xxxx xxxxx xxxx xxx xxx xxxxxxxx xxxxxxxxxx, xxx xxxx xxx xxx xxx xxxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxxxxxxxx xxxx xxxxxxxxx xx x xxxx (xxxx xxxx xxx xxxxxx xxxxx xxxxx xx xxxxxxxxxx xxxxx), xxx xxx xxxxxxxx x xxxxxxxxxx xxxx xxxx xxxxx xxxx xxx xx xx xxx xxxxxxxxxx. Xxxx xxxx xxx xxx'x xx xxx xxxxxxxxxx, xx xx xxxxxx xx xxxxxxxx x xxxxxxxxxx xxxx xxxx **XxxxxxXxxXxxxxxx**. Xxxx xxx xxx'x xxxxxxxx x xxxxxx **XxxxxxXxxXxxxxxx** xxxxxxxxxx xxxx xxxxxx xxx xxxxx xxxxxxxxxx xxxx xxx xxxxxxxxx.
+アプリが操作を実行する頻度に制限はありません。ただし、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスク操作は一度に 1 つしか実行できません (他の種類のバックグラウンド タスクには影響しません)。また、バックグラウンド タスクを開始できるのは、アプリがフォアグラウンドで動作しているときだけです。 アプリがフォアグラウンドにない場合は、**DeviceUseTrigger** を使うバックグラウンド タスクを開始することはできません。 実行中のバックグラウンド タスクが完了した後でなければ、次の **DeviceUseTrigger** バックグラウンド タスクを開始できません。
 
-## Xxxxxx xxxxxxxxxxxx
-
-
-Xxxxx xxxx xxx xx xxxxxxx xx xxxxxxxxxxx xxx xxxxxxx xxxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxxxxxxxx xxxx, xxx xxxxxx (xx xxxxx xxxx xxx xx xxxxxxx) xxx xxxxx xxxxxxxx xxxx xx xxxxxxxx xxx xxx **XxxxxxXxxXxxxxxx** xxxxxxxxxx xxxxx. Xxxxxxxxx xx xxx xxxxxx, xxxxx xxx xx x xxxxx xx xxx xxxxx xxxxxx xx **XxxxxxXxxXxxxxxx** xxxxxxxxxx xxxxx xxxx xxx xxxx. Xxxx xxxxx xxxxxxxx xxxxxxx xx xxxxxxxx-xxxxxxxxxxx xxxxxxx. Xxx xxx xxxxxxxxx xxxxx xxx xxxx xxxxxxx.
-
-Xxxx x xxxxxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxxxxxxxx xxxx, xxxx xxx xxx xxxxxx xx xxxxxxxxx xxxxxx xx xxxxxxxxxx xxxxxxx xx xxxxxxx - xxxxxxx xxxx xx xxx xxxxxxxxx XXXx xxx xxxxxxxxx xxxx xxxx xxxxxx xx xxx xxxxxxxx xxxxx.
-
-## Xxxxxxxxxx xxxx xxxxxxxx
+## デバイスの制限
 
 
-Xxxxxxx xxxxxxxx xxxxxxxx xxxx xxxx xxx xxxx x [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxxxxxxxx xxxx. Xx xxxxx xxxxxxxx xxxx'x xxx, xxx xxxxxxxxxx xxxx xxxxx xx xxxxxxxx. Xx'x xxxxxxxxx xx xxxxxxxx xxxxx xxxxxx xxxxxxxxxxxx xxxx xxxxx xxxx xxxx xx xxxxxxxxxx xxxx xx xxxxxxxx xxxx xxxxxxx xx xxxxxxx.
+各アプリは [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクの登録と実行は 1 つのみに制限されていますが、(アプリが実行される) デバイスでは、複数のアプリに複数の **DeviceUseTrigger** バックグラウンド タスクの登録と実行が許可されている場合があります。 デバイスによっては、すべてのアプリの **DeviceUseTrigger** バックグラウンド タスクの合計数に制限があります。 これにより、リソースに制約のあるデバイスでバッテリを節約できます。 詳しくは、次の表をご覧ください。
 
-### Xxxx xxxxxxxxxx xxxxxxxx
+1 つの [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクから、アプリは周辺機器またはセンサーに数の制限なくアクセスできます。唯一の制限は、前の表に記載されているサポートされるプロトコルと API によるものです。
 
-Xxxx xxxxx xxxxxxxxx xxxxx xxxx xxxxxxxxxx xxxxxxxx xxxxx xx x Xxxxxxxxx Xxxxxxx xxx.
+## バックグラウンド タスクのポリシー
 
-| Xxxxxx | XxxxxxXxxXxxxxxx xx x Xxxxxxxxx Xxxxxxx xxx |
+
+アプリが [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクを使うときは Windows のポリシーが適用されます。 これらのポリシーが満たされない場合は、バックグラウンド タスクが中止される場合があります。 このようなバックグラウンド タスクを使ってデバイスやセンサーを操作するときは、これらのポリシー要件を考慮する必要があります。
+
+### タスク開始のポリシー
+
+次の表は、ユニバーサル Windows アプリに適用されるタスク開始ポリシーを示しています。
+
+| ポリシー | ユニバーサル Windows アプリの DeviceUseTrigger |
 |------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| Xxxx xxx xx xx xxx xxxxxxxxxx xxxx xxxxxxxxxx xxx xxxxxxxxxx xxxx. | ![xxxxxx xxxxxxx](images/ap-tools.png) |
-| Xxx xxxxxx xx xxxxxxxx xx xxx xxxxxx (xx xx xxxxx xxx x xxxxxxxx xxxxxx). | ![xxxxxx xxxxxxx](images/ap-tools.png) |
-| Xxx xxxxxx xx xxxxxxxxxx xx xxx xxx xxxxx xxx xxxxxxxxx xxxxxx xxxxxxxxxx XXXx (xxx Xxxxxxx Xxxxxxx XXXx xxx XXX, XXX, Xxxxxxxxx, Xxxxxxx, xxx xx xx). Xx xxxx xxx xxx'x xxxxxx xxx xxxxxx xx xxxxxx, xxxxxx xx xxx xxxxxxxxxx xxxx xx xxxxxx. | ![xxxxxx xxxxxxx](images/ap-tools.png) |
-| Xxxxxxxxxx xxxx xxxxx xxxxx xxxxxxxx xx xxx xxx xx xxxxxxxxxx xx xxx xxx xxxxxxx xxxxxxxx. | ![xxxxxx xxxxxxx](images/ap-tools.png) |
-| Xxxx xxx [XxxxxxXxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxxxxxxxx xxxx xx xxxxxxx xxx xxx. | ![xxxxxx xxxxxxx](images/ap-tools.png) |
-| Xxx xxxxxxx xxxxxx xx [XxxxxxXxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxxxxxxxx xxxxx xxx xxx xxx xxxx xxxxxxx xx xxx xxxxxx (xx xxxxx xxxx xxx xx xxxxxxx). | xxxxxxx xxxxxx xxxxxx: Xx xxxxxxxxx xxxxxx xx xxxxx xxx xx xxxxxxxxxx xxx xxx xx xxxxxxxx. |
+| バックグラウンド タスクを開始するとき、アプリがフォアグラウンドで動作している。 | ![ポリシーが適用される](images/ap-tools.png) |
+| 対象デバイスがシステムに接続されている (ワイヤレス デバイスの場合は、接続範囲内にある)。 | ![ポリシーが適用される](images/ap-tools.png) |
+| サポートされているデバイスの周辺機器用 API (USB、HID、Bluetooth、センサーなどでは Windows ランタイム API) を使って、アプリが対象デバイスにアクセスできる。 アプリがデバイスまたはセンサーにアクセスできない場合、バックグラウンド タスクへのアクセスが拒否されます。 | ![ポリシーが適用される](images/ap-tools.png) |
+| アプリで指定されているバックグラウンド タスクのエントリ ポイントがアプリ パッケージ マニフェストに登録されている。 | ![ポリシーが適用される](images/ap-tools.png) |
+| アプリごとに [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクが 1 つのみ実行されている。 | ![ポリシーが適用される](images/ap-tools.png) |
+| (アプリが実行されている) デバイスの [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクの最大数に達していない。 | デスクトップ デバイス ファミリ: 同時に登録して実行できるタスク数に制限なし。 |
 |  |  |
-|  | xxxxxx xxxxxx xxxxxx: Y xxxx xx x YYY XX xxxxxx; xxxxxxxxx, Y xxxxx xxx xx xxxxxxxxxx xxx xxx xx xxxxxxxx. |
-| Xxx xxxxxxx xxxxxx xx xxxxxxxxxx xxxxxxx xx xxxxxxx xxxx xxxx xxx xxx xxxxxx xxxx x xxxxxx [XxxxxxXxxXxxxxxx](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxxxxxxxx xxxx, xxxx xxxxx xxx xxxxxxxxx XXXx/xxxxxxxxx. | xxxxxxxxx |
-| Xxxx xxxxxxxxxx xxxx xxxxxxxx YYYxx xx XXX xxxx (xxxxxxxx x YXXx XXX) xxxxx xxxxxx xxxx xxx xxxxxx xx xxxxxx, xx xxxxx Y xxxxxxx xxxx xxx xxxxxx xx xxx xxxxxx. Xxxxxxx xx xxxx xxxx xxxxxx xxx xxxxxx xx xxxxxxxxxxxx xx xxxx xxxx. | ![xxxxxx xxxxxxx](images/ap-tools.png) |
+|  | モバイル デバイス ファミリ: 512 MB デバイスでは 1 タスク。それ以外のデバイスでは 2 タスクを同時に登録して実行可能。 |
+| サポートされている API とプロトコルを使う場合は、アプリが 1 つの [DeviceUseTrigger](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクからアクセスできる周辺機器またはセンサーの最大数。 | 無制限 |
+| バックグラウンド タスクは、400 ミリ秒の CPU 時間を、画面がロックされている場合は 1 分ごとに消費し (1 GHz CPU の場合)、画面がロックされていない場合は 5 分ごとに消費する。 このポリシーを満たさない場合、タスクが取り消される可能性があります。 | ![ポリシーが適用される](images/ap-tools.png) |
  
 
-### Xxxxxxx xxxxxx xxxxxx
+### 実行時のポリシー チェック
 
-Xxxxxxx xxxxxxxx xxx xxxxxxxxx xxxxxxx xxxxxx xxxxxxxxxxxx xxxxx xxxx xxxx xx xxxxxxx xx xxx xxxxxxxxxx. Xx xxx xx xxx xxxxxxx xxxxxxxxxxxx xxxxx xxxxx xxxx, Xxxxxxx xxxx xxxxxx xxxx xxxxxx xxxxxxxxxx xxxx.
+タスクがバックグラウンドで実行されるとき、Windows によって次の実行時ポリシー要件が適用されます。 いずれかの実行時要件が満たされなくなった時点で、デバイス バックグラウンド タスクが中止されます。
 
-Xxxx xxxxx xxxxxxxxx xxxxx xxxxxxx xxxxxxxx xxxxx xx x Xxxxxxxxx Xxxxxxx xxx.
+次の表は、ユニバーサル Windows アプリに適用される実行時ポリシーを示しています。
 
-| Xxxxxx xxxxx | XxxxxxXxxXxxxxxx xx x Xxxxxxxxx Xxxxxxx xxx |
+| ポリシー チェック | ユニバーサル Windows アプリの DeviceUseTrigger |
 |---------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
-| Xxx xxxxxx xx xxxxxxxx xx xxx xxxxxx (xx xx xxxxx xxx x xxxxxxxx xxxxxx). | ![xxxxxx xxxxx xxxxxxx](images/ap-tools.png) |
-| Xxxx xx xxxxxxxxxx xxxxxxx X/X xx xxx xxxxxx (Y X/X xxxxx Y xxxxxxx). | ![xxxxxx xxxxx xxxxxxx](images/ap-tools.png) |
-| Xxx xxx xxx xxxxxxxx xxx xxxx. | ![xxxxxx xxxxx xxxxxxx](images/ap-tools.png) |
-| Xxxx-xxxxx xxxx xxxxx – xxx xxxxx xxxxxx xx xxxx xxxx xxx’x xxxx xxx xxx xx xxx xxxxxxxxxx. | xxxxxxx xxxxxx xxxxxx: YY xxxxxxx. |
+| 対象デバイスがシステムに接続されている (ワイヤレス デバイスの場合は、接続範囲内にある)。 | ![ポリシー チェックが適用される](images/ap-tools.png) |
+| デバイスに対して標準的な I/O を実行する (5 秒ごとに 1 I/O)。 | ![ポリシー チェックが適用される](images/ap-tools.png) |
+| アプリがタスクを中止していない。 | ![ポリシー チェックが適用される](images/ap-tools.png) |
+| 実時間の制限 (アプリがバックグラウンドでタスクを実行できる最長時間)。 | デスクトップ デバイス ファミリ: 10 分。 |
 |  |  |
-|  | xxxxxx xxxxxx xxxxxx: Xx xxxx xxxxx. Xx xxxxxxxx xxxxxxxxx, xx xxxx xxxx Y xx Y xxxxx xxx xxxxxxx xx xxxx. |
-| Xxx xxx xxx xxxxxx. | ![xxxxxx xxxxx xxxxxxx](images/ap-tools.png) |
+|  | モバイル デバイス ファミリ: 時間制限なし。 リソースを節約するには、同時に実行できるタスクを 1 つか 2 つに制限。 |
+| アプリが終了していない。 | ![ポリシー チェックが適用される](images/ap-tools.png) |
 
  
 
-## Xxxx xxxxxxxxx
+## ベスト プラクティス
 
 
-Xxx xxxxxxxxx xxx xxxx xxxxxxxxx xxx xxxx xxxx xxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxxxxxxxx xxxxx.
+[
+            **DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクを使うアプリのベスト プラクティスを次に示します。
 
-### Xxxxxxxxxxx x xxxxxxxxxx xxxx
+### バックグラウンド タスクのプログラミング
 
-Xxxxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxxxxxxxx xxxx xxxx xxxx xxx xxxxxxx xxxx xxx xxxx xx xxxxxxxxxx xxxxxxxxxx xxxxxxx xxxx xxxx xxxxxxxxxx xxx xxxxxxxx xx xxx xx xxx xxxxxxxxxx xx xxxx xxxxx xxxxxx xxxx xxx xxxx xxxxxxxxxx xxx xx xxxxxxxxx xx Xxxxxxx. Xx xxxxxxxxx xxxx xxx xxxxxx xxxx xxxxxxx xxxxx xxx xxxxxxxxxxx, xxxxxxxxxx, xxx xxxxxxxxxxxxx xxxx xxxxxxxxxx xxxxx:
+アプリで [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクを使うと、ユーザーがアプリを切り替え、フォアグラウンド アプリが Windows によって中断状態になったとき、フォアグラウンド アプリで開始された同期操作や監視操作をバックグラウンドに引き継ぐことができます。 このモデルに従って、バックグラウンド タスクを登録、実行、登録解除することをお勧めします。
 
-1.  Xxxx [**XxxxxxxXxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700485) xx xxxxx xx xxx xxx xx xxxx xx xxxxxxx x xxxxxxxxxx xxxx. Xxxx xxxx xx xxxx xxxxxx xxxxxxxxxxx x xxxxxxxxxx xxxx.
+1.  [
+            **RequestAccessAsync**](https://msdn.microsoft.com/library/windows/apps/hh700485) を呼び出して、アプリがバックグラウンド タスクを要求できるかどうかを確認します。 この手順は、バックグラウンド タスクを登録する前に実行する必要があります。
 
-2.  Xxxxxxxx xxx xxxxxxxxxx xxxx xxxxxx xxxxxxxxxx xxx xxxxxxx.
+2.  トリガーを要求する前にバックグランド タスクを登録します。
 
-3.  Xxxxxxx xxxxxxxx xxx xxxxxxxxxx xxxxx xxxxxxxx xx xxxx xxxxxxx. Xxxx xxxx xxx xxxxxxx xxxx xxxxxxxxxx, Xxxxxxx xxxx xxxxxxx xxxx xxx xxxx xxx xxxxxx xxxxxxxx xx xxxxxxxxxx xxxxxx xxxx xxx xx xxxx xx xxxxxxxxx xxx xxxxxx xx xxxx xxxxxxxxxx xxxxx.
+3.  進捗状況と完了のイベント ハンドラーをトリガーに関連付けます。 アプリが中断状態から復帰すると、待機中の進捗イベントまたは完了イベントが渡されます。アプリはこれらのイベントを使用して、バックグラウンド タスクの状態を判断します。
 
-4.  Xxxxx xxx xxxx xxxxxx xx xxxxxx xxxxxxx xxxx xxx xxxxxxx xxxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxxxxxxxx xxxx xx xxxx xxxxx xxxxxxx xx xxxxxxx xxx xxxx xx xx xxxxxx xxx xxxx xx xxxx xxxxxxxxxx xxxx.
+4.  [
+            **DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクを開始するときは、オープンしているデバイスまたはセンサー オブジェクトを閉じます。それらのデバイスまたはセンサーが解放され、バックグラウンド タスクで使用できるようになります。
 
-5.  Xxxxxxxx xxx xxxxxxx.
+5.  トリガーを登録します。
 
-6.  Xxxxxxxxx xxxxxxxx xxx xxxxxxx xxxxxx xx xxxxxxxxx x xxxxxx xx xxxxx xxxx x xxxxxxxxxx xxxx. Xxx xxxxxxx, xxxxxx xxx xxxxxx xxxxxxxx xx x xxxxxx xxx xxx xxxxxxxxxx xxxxx xxxxx xxx xxxx xx xxx xx xxxxx xxxx xx xxxxxxx xxxxxx x xxxxx'x xxxxxxx.
+6.  バックグラウンド タスクからデバイスまたはファイルにアクセスすることでバッテリに与える影響について、慎重に検討します。 たとえば、センサーのレポート間隔を頻繁に設定しすぎると、電話のバッテリをすぐに消費するほど頻繁にタスクを実行することになります。
 
-7.  Xxxx xxxx xxxxxxxxxx xxxx xxxxxxxxx, xxxxxxxxxx xx.
+7.  バックグラウンド タスクが完了したら、登録を解除します。
 
-8.  Xxxxxxxx xxx xxxxxxxxxxxx xxxxxx xxxx xxxx xxxxxxxxxx xxxx xxxxx. Xxxxxxxxxxx xxx xxxxxxxxxxxx xxxxxx xxxx xxxxx xxxx xxxxxxxxxx xxxx xxxx xx xxxxxxx xxxx xxxx xxxxxxx xxxxxxxxxx xxxx xxxx xxxxxxxx xx Xxxxxxx xx xxxx xxxxxxxxxx xxx.
+8.  バックグラウンド タスク クラスの中止イベントを登録します。 中止イベントを登録しておけば、Windows またはフォアグラウンド アプリによってバックグランド タスクが中止されたとき、バックグラウンド タスクコードからそのタスクを適切に中止できます。
 
-9.  Xx xxx xxxx (xxx xxxxxxxxxx), xxxxxxxxxx xxx xxxxxx xxx xxxxxxx xxxxx xx xxxx xxx xx xxxxxx xxxxx xxxx. Xx xxxxxxxx-xxxxxxxxxxx xxxxxxx, xxxx xx xxx-xxxxxx xxxxxx, xxxx xxxx xxxxx xxxxx xxxx xx xxx x [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxxxxxxxx xxxx.
+9.  アプリが (中断状態ではなく) 終了した時点で登録を解除し、実行中のタスクを中止します (タスクが不要な場合)。 メモリの少ない電話などリソースに制約のあるシステムでは、この手順を実行することで、他のアプリが [**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクを使えるようになります。
 
-    -   Xxxx xxxx xxx xxxxx, xxxxxxxxxx xxx xxxxxx xxx xxxxxxx xxxxx.
+    -   アプリが終了したら、登録を解除して実行中のタスクを中止します。
 
-    -   Xxxx xxxx xxx xxxxx, xxxx xxxxxxxxxx xxxxx xxxx xx xxxxxxxx xxx xxx xxxxxxxx xxxxx xxxxxxxx xxxx xx xxxxxxxxxxxx xxxx xxxx xxxxxxxx xxxxxxxxxx xxxxx. Xxxx xxxxxxxx xxx xxxx xxxxxxxxxxx xxx xxxxx xx xxxx xxxxxxxxxx xxxxx. Xxxxxxxxxxxxx xxx xxxxxxxxx xxx xxxxxxxxxx xxxx xxxx xxxxx xxxx xxxxxxxxxxxx xxxx xx xxxxxxx xxxx xxxx xxxxxxxxxx xxxxx.
+    -   アプリが終了すると、バックグラウンド タスクが取り消され、既存のイベント ハンドラーが既存のバックグラウンド タスクから切断されます。 これによって、バックグラウンド タスクの状態を判断できなくなります。 バックグラウンド タスクを登録解除して取り消すことで、キャンセル コードがバックグランド タスクを適切に中止できます。
 
-### Xxxxxxxxxx x xxxxxxxxxx xxxx
+### バックグラウンド タスクの中止
 
-Xx xxxxxx x xxxx xxxxxxx xx xxx xxxxxxxxxx xxxx xxxx xxxxxxxxxx xxx, xxx xxx Xxxxxxxxxx xxxxxx xx xxx [**XxxxxxxxxxXxxxXxxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br224786) xxxxxx xxx xxx xx xxxx xxx xx xxxxxxxx xxx [**XxxxxxXxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn297337) xxxxxxxxxx xxxx. Xxxxxxxxxxxxx xxxx xxxxxxxxxx xxxx xx xxxxx xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br229869) xxxxxx xx **XxxxxxxxxxXxxxXxxxxxxxxxxx** xxxx xxxxx xxx xxxxxxxxxx xxxx xxxxxxxxxxxxxx xx xxxxxx xxxx xxxxxxxxxx xxxx.
+フォアグラウンド アプリからバックグラウンドで実行中のタスクを中止するには、[**DeviceUseTrigger**](https://msdn.microsoft.com/library/windows/apps/dn297337) バックグラウンド タスクを登録するためにアプリで使っている [**BackgroundTaskRegistration**](https://msdn.microsoft.com/library/windows/apps/br224786) オブジェクトの Unregister メソッドを使います。 **BackgroundTaskRegistration** の [**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869) メソッドを使ってバックグラウンド タスクを登録解除すると、バックグラウンド タスク インフラストラクチャによってバックグラウンド タスクが取り消されます。
 
-Xxx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br229869) xxxxxx xxxxxxxxxxxx xxxxx x Xxxxxxx xxxx xx xxxxx xxxxx xx xxxxxxxx xx xxxxxxxxx xxxxxxx xxxxxxxxx xx xxxx xxxxxxxxxx xxxx xxxxxx xx xxxxxxxx xxxxxxx xxxxxxxx xxxx xx xxxxxx. Xxx xxxx xxxx, xxx xxx XXX xxxxxxxxx xxx **Xxxxxxxxxx**.
+また、[**Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869) メソッドには、現在実行中のバックグラウンド タスク インスタンスを (完了前に) 中断するかどうかを示すブール値 (true または false) が指定されます。 詳しくは、**Unregister** の API リファレンスをご覧ください。
 
-Xx xxxxxxxx xx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br229869), xxxx xxx xxxx xxxx xxxx xx xxxx [**XxxxxxxxxxXxxxXxxxxxxx.Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh700504). Xxxx xxxxxxx xxx xxxxxx xxxx xxx xxxxxxxxxxxx xxxxxxxxx xxxxxxxxxx xxxx x xxxxxxxxxx xxxx xxx xxxxxxxx.
+[
+            **Unregister**](https://msdn.microsoft.com/library/windows/apps/br229869) に加え、[**BackgroundTaskDeferral.Complete**](https://msdn.microsoft.com/library/windows/apps/hh700504) も呼び出す必要があります。 こうすることで、バックグラウンド タスクに関連付けられた非同期操作が終了したことがシステムに通知されます。
 
  
 
  
+
+
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

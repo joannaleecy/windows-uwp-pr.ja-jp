@@ -1,177 +1,181 @@
 ---
-Xxxxxxxxxxx: Xxxxx xxxxxxx xxx xxxxxx xxxxxxxxxxx xxxx xxxxxxxxxx-xxxxx xxxxxxx.
-xxxxx: Xxxxx
-xx.xxxxxxx: XYYYYYXY-YYYY-YYXY-XYYY-XXXXYYXXYYYY
-xxxxx: Xxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: リストでは、コレクション ベースのコンテンツを表示して操作できます。
+title: リスト
+ms.assetid: C73125E8-3768-46A5-B078-FDDF42AB1077
+label: リスト
+template: detail.hbs
 ---
-# Xxxxx
+# リスト
 
-Xxxxx xxxxxxx xxx xxxxxx xxxxxxxxxxxx xxxx xxxxxxxxxx-xxxxx xxxxxxx. Xxx xxxx xxxx xxxxxxxx xxxxxxx xx xxxx xxxxxxx xxxxxxx:
+リストでは、コレクション ベースのコンテンツを表示して操作できます。 この記事では、次に示す 4 種類のリスト パターンについて説明します。
 
--   Xxxx xxxxx, xxxxx xxx xxxxxxxxx xxxx xx xxxxxxx xxxx-xxxxx xxxxxxx xxxxxxxxxxx
--   Xxxx xxxxx, xxxxx xxx xxxxxxxxx xxxx xx xxxxxxx xxxxx-xxxxx xxxxxxx xxxxxxxxxxx
--   Xxxx-xxxx xxxxx, xxxxx xxx xxxxx xxxxxx xxx xxxx xxxx xx xxxxxxxxx xxxx
--   Xxxx xxxxx, xxxxx xxx xxxxx xxxxxx xxx xxxx xx xxxxxxxx xxxxx xxxx x xxx xxxx xxx xx xxxxxxxx
+-   リスト ビュー: 主に、テキストの多いコンテンツのコレクションを表示するために使います。
+-   グリッド ビュー: 主に、画像の多いコンテンツのコレクションを表示するために使います。
+-   ドロップダウン リスト: 拡張可能なリストから、ユーザーが 1 つの項目を選択できます。
+-   リスト ボックス: スクロール可能なボックスから、ユーザーが 1 つまたは複数の項目を選択できます。
 
-Xxxxxx xxxxxxxxxx, xxxxxxxx, xxx xxxxxxxx xxx xxxxx xxx xxxx xxxx xxxxxxx. Xx xxx xxx xx xxx xxxxxxx xxx xxxxx xx xxxxxxx xxxxxx xxx XXXx.
+ここでは、各リスト パターンについて、設計のガイドライン、特徴、例を示します。 記事の最後には、関連するトピックと API へのリンクがあります。
 
-## Xxxxxxxxx XXXx
+## 重要な API
 
--   [**XxxxXxxx xxxxx **](https://msdn.microsoft.com/library/windows/apps/br242878)
--   [**XxxxXxxx xxxxx **](https://msdn.microsoft.com/library/windows/apps/br242705)
--   [**XxxxxXxx xxxxx **](https://msdn.microsoft.com/library/windows/apps/br209348)
+-   [**ListView クラス **](https://msdn.microsoft.com/library/windows/apps/br242878)
+-   [**GridView クラス **](https://msdn.microsoft.com/library/windows/apps/br242705)
+-   [**ComboBox クラス **](https://msdn.microsoft.com/library/windows/apps/br209348)
 
 
-## Xxxx xxxxx
+## リスト ビュー
 
-Xxxx xxxxx xxx xxx xxxxxxxxxx xxxxx xxx xxxxxx xxxxx xxxxxxx, xxxx xxx xxxx xxxxx, xxxxxx xxxxxxx, xxx xxxxxxx xxxxx.
+リスト ビューでは、項目の分類、グループ ヘッダーの割り当て、項目のドラッグ アンド ドロップ、コンテンツの管理、項目の順序変更を行うことができます。
 
-### Xx xxxx xxx xxxxx xxxxxxx?
+### 適切なコントロールの選択
 
-Xxx x xxxx xxxx xx:
+リスト ビューは、次の用途で使います。
 
--   Xxxxxxx x xxxxxxx xxxxxxxxxx xxxx xxxxxxxxx xxxxxxxx xx xxxx.
--   Xxxxxxxx x xxxxxx xx xxxxxxxxxxx xxxxxxxxxx xx xxxxxxx.
--   Xxxxxx xxx xxxxxx xxxx xx xxx [xxxxxx/xxxxxxx xxxxxxx](master-details.md). X xxxxxx/xxxxxxx xxxxxxx xx xxxxx xxxx xx xxxxx xxxx, xx xxxxx xxx xxxx (xxx xxxxxx) xxx x xxxx xx xxxxxxxxxx xxxxx xxxxx xxx xxxxx xxxx (xxxxxxx) xxx x xxxxxxxx xxxx xx xxx xxxxxxxx xxxx.
+-   主にテキストで構成されるコンテンツのコレクションを表示する。
+-   コンテンツの単一のコレクションまたはカテゴリ別コレクションをナビゲートする。
+-   [マスター/詳細パターン](master-details.md)のマスター ウィンドウを作成する。 マスター/詳細パターンは、メール アプリによく使われます。このパターンでは、選択できる項目の一覧を一方のウィンドウ (マスター) に表示し、選択された項目の詳細ビューをもう一方のウィンドウ (詳細) に表示します。
 
-### Xxxxxxxx
+### 例
 
-Xxxx xxxxx x [xxxxxx/xxxxxxx xxxxxxx](master-details.md), xxx xxx xxx x xxxx xxxx xx xxxxxxxx xxx xxxxxx xxxx. Xxx xxxxxx xxxx xxxxxxxx x xxxx xx xxxxxxxxxx xxxxx. Xxxx x xxxx xxxxxxx xx xxxx xx xxx xxxxxx xxxx, xxxxxxxxxx xxxx xxxxx xxx xxxxxxxx xxxx xx xxxxxxxxx xx xxx xxxxxxx xxxx. Xxx xxxxxxx xxxx xxxxx xxxxxxxx x xxxx xxxx.
+[マスター/詳細パターン](master-details.md)を使う場合、リスト ビューを使ってマスター ウィンドウを整理できます。 マスター ウィンドウには、選択できる項目の一覧が表示されます。 ユーザーがマスター ウィンドウで項目を選ぶと、選んだ項目の追加情報が詳細ウィンドウに表示されます。 詳細ウィンドウには、よくグリッド ビューが含まれます。
 
-![Xxxxxxx xx x xxxxxx-xxxxxxx xxxxxxx](images/Stock_Tracker/uap_finance_desktop700.png)
+![マスター/詳細パターンの例](images/Stock_Tracker/uap_finance_desktop700.png)
 
-Xxx xxx xxxxx xxxxxxxx xxxxxxx xxxxx xx xxxxxx xxxxxxx xxxxxx/xxxxxx xxxxxxxxxxx. Xxx xxxx xxxx, xxx xxx [xxxxxx/xxxxxxx xxxxxxx](master-details.md).
+複数のリストを組み合わせて、マスター/詳細の複雑な階層を作成することができます。 詳しくは、「[マスター/詳細パターンのガイドライン](master-details.md)」をご覧ください。
 
-Xxx xxxxxxx xx x xxxx xxxxxx xxx xxxxx xxxxxxx xxx xxxxxxxx xx x xxxxxx-xxxxxx:
+この例のリスト レイアウトには、グループ ヘッダーがあり、1 列で表示されています。
 
-![Xxxxxxx xx x xxxx xxxx xxxx xxxx xxxx xxxx xxxxx](images/controls_listview_4types.png)
+![4 種類の主要な単位を使ったリスト ビューの例](images/controls_listview_4types.png)
 
-### Xxxxxxxxxxxxxxx
+### 推奨事項
 
--   Xxxxx xxxxxx x xxxx xxxxxx xxxx xxx xxxx xxxxxxxx.
--   Xx xxxx xxxx xx xxxxxxx xxxx xxxxxx, xxx xxx xxx [xxxxxxxx xxxx](semantic-zoom.md) xx xxxx xx xxxxxx xxx xxxxx xx xxxxxxxx xxxxxxx xxxxxxx xxxxxxx.
+-   同じリストに含まれる各項目の動作は同じにする必要があります。
+-   リストがグループに分割されている場合、グループ化されたコンテンツ内をユーザーが移動しやすくなるように、[セマンティック ズーム](semantic-zoom.md)を使うことができます。
 
-## Xxxx xxxxx
+## グリッド ビュー
 
-Xxxx xxxxx xxx xxxxxx xxx xxxxxxxxx xxx xxxxxxxx xxxxx-xxxxx xxxxxxx xxxxxxxxxxx. X xxxx xxxx xxxxxx xxxxxxx xxxxxxxxxx xxx xxxx xxxxxxxxxxxx. Xxxxx xxx xxxx xxx xx x xxxx-xx-xxxxx, xxxx xxx-xx-xxxxxx xxxxxxx xxxxx.
+グリッド ビューは、画像ベースのコンテンツのコレクションを配置および閲覧する場合に適しています。 グリッド ビュー レイアウトでは、スクロールが垂直方向、パンが水平方向で行われます。 項目は、左から右、上から下の読み取り順序で配置されます。
 
-### Xx xxxx xxx xxxxx xxxxxxx?
+### 適切なコントロールの選択
 
-Xxx x xxxx xxxx xx:
+グリッド ビューは、次の用途で使います。
 
--   Xxxxxxx x xxxxxxx xxxxxxxxxx xxxx xxxxxxxxx xxxxxxxx xx xxxxxx.
--   Xxxxxxx xxxxxxx xxxxxxxxx.
--   Xxxxxx xxx xxx xxxxxxx xxxxx xxxxxxxxxx xxxx [xxxxxxxx xxxx](semantic-zoom.md).
+-   主に画像で構成されるコンテンツのコレクションを表示する。
+-   コンテンツ ライブラリを表示する。
+-   [セマンティック ズーム](semantic-zoom.md)に関連付けられた 2 つのコンテンツ ビューの形式を設定する。
 
-### Xxxxxxxx
+### 例
 
-Xxxx xxxxxxx xxxxx x xxxxxxx xxxx xxxx xxxxxx, xx xxxx xxxx xxx xxxxxxxx xxxx. Xxxxxxxx xxx xxxx xxxx xxxxx xx xxxxxxx xxxxxxxxxx xx x xxx xxxxx xx xxxx xxx xx xxxx xxxxxx.
+ここでは、アプリの参照用を例として、標準的なグリッド ビューのレイアウトを示します。 グリッド ビュー項目のメタデータは通常、数行のテキストと項目の評価に制限されます。
 
-![Xxxxxxx xx x xxxx xxxx xxxxxx](images/controls_gridview_example02.png)
+![グリッド ビューのレイアウトの例](images/controls_gridview_example02.png)
 
-X xxxx xxxx xx xx xxxxx xxxxxxxx xxx x xxxxxxx xxxxxxx, xxxxx xx xxxxx xxxx xx xxxxxxx xxxxx xxxx xx xxxxxxxx xxx xxxxxx. Xx x xxxxxxx xxxxxxx, xxxxx xxxxxx xx xx xxxx xx xxx xx xxxx xx xxxxxx xx xxxxxx.
+グリッド ビューは、写真やビデオなどのメディアを表示するためによく使用される、コンテンツ ライブラリに最適なソリューションです。 コンテンツ ライブラリでは、ユーザーが項目をタップして動作を開始します。
 
-![Xxxxxxx xx x xxxxxxx xxxxxxx](images/controls_list_contentlibrary.png)
+![コンテンツ ライブラリの例](images/controls_list_contentlibrary.png)
 
-### Xxxxxxxxxxxxxxx
+### 推奨事項
 
--   Xxxxx xxxxxx x xxxx xxxxxx xxxx xxx xxxx xxxxxxxx.
--   Xx xxxx xxxx xx xxxxxxx xxxx xxxxxx, xxx xxx xxx [xxxxxxxx xxxx](semantic-zoom.md) xx xxxx xx xxxxxx xxx xxxxx xx xxxxxxxx xxxxxxx xxxxxxx xxxxxxx.
+-   同じリストに含まれる各項目の動作は同じにする必要があります。
+-   リストがグループに分割されている場合、グループ化されたコンテンツ内をユーザーが移動しやすくなるように、[セマンティック ズーム](semantic-zoom.md)を使うことができます。
 
-## Xxxx-xxxx xxxxx
+## ドロップダウン リスト
 
-Xxxx-xxxx xxxxx, xxxx xxxxx xx xxxxx xxxxx, xxxxx xx x xxxxxxx xxxxx xxx xxxxxx xx xxxx x xxxx xx xxxxxxxxxx xxxxx. X xxxx-xxxx xxxx xxxxxxxx xxxxxx xxxxxx xxxxxxxxx xx xxxxxxxx xxxxxxxxx. Xxx xxxxxxxx xxxx xx xxxxxx xxxxxxx, xxx xxx-xxxxxxx xxxxx xxx xx xxxxxxx xxxx xxxx xxxx xxx xxxx xxxx xxx xxxxxxxx xxxx.
+ドロップダウン リストはコンボ ボックスとも呼ばれます。最初はコンパクトな状態ですが、拡張して、選択可能な項目の一覧を表示することができます。 ドロップダウン リストでは、単一項目の選択または複数選択がサポートされます。 選択されている項目は常に表示されます。表示されていない項目は、選択されている項目をタップすると表示されます。
 
-### Xx xxxx xxx xxxxx xxxxxxx?
+### 適切なコントロールの選択
 
--   Xxx x xxxx-xxxx xxxx xx xxx xxxxx xxxxxx x xxxxxx xxxxx xxxx x xxx xx xxxxx xxxx xxx xx xxxxxxxxxx xxxxxxxxxxx xxxx xxxxxx xxxxx xx xxxx.
--   Xxx x xxxx xx xxxx xxxx xxxxxxx xx x xxxx-xxxx xx xxxxxxx xxxxx xxxx xxxxxxx xxxxxxxx xxxxx xx xxxx xx xxxxxx.
--   Xxxx xxxxx xxx xxxxx xxxx xxxx xxxxx, xxxxxxxx xxxxx [xxxxx xxxxxxx](radio-button.md) (xx xxxx xxx xxxx xxx xx xxxxxxxx) xx [xxxxx xxxxx](checkbox.md) (xx xxxxxxxx xxxxx xxx xx xxxxxxxx).
--   Xxx x xxxx-xxxx xxxx xxxx xxx xxxxxxxxx xxxxx xxx xx xxxxxxxxx xxxxxxxxxx xx xxx xxxx xx xxxx xxx. Xx xxx xxxxxxx xxxxxx xx xxxxxxxxxxx xxx xxxx xxxxx xx xxxx xxxxxxxxxx, xxxxxxx xxx xxx xxxxx xx xxxxx x xxxx xxx xxxxx xxxx xxxx xxxxxxxxx xx xxx xxxxxxx xxxx xxxxxxxxx. Xxx xxx xxxx xxxxx xxx xxxxxxxx xxxxxxxxxxx xx xxxxx x xxxx-xxxx xxxx.
+-   1 行のテキストで十分に表すことができる項目のセットから単一の値をユーザーが選択できるようにするには、ドロップダウン リストを使います。
+-   項目に複数行のテキストまたは画像が含まれる場合は、ドロップダウン リストではなくリスト ビューまたはグリッド ビューを使います。
+-   項目が 5 個より少ない場合は、[ラジオ ボタン](radio-button.md) (1 つの項目だけを選べる場合) または[チェック ボックス](checkbox.md) (複数の項目を選べる場合) の使用を検討します。
+-   選択項目がアプリのフローにおいて二次的な重要性しか持たない場合に、ドロップダウン リストを使います。 ほとんどのユーザーのほとんどの状況で既定のオプションがお勧めされている場合は、リスト ボックスを使ってすべての項目を表示すると、オプションに必要以上の注意を引いてしまう可能性があります。 ドロップダウン リストを使うことで、領域を節約し、無駄な情報を最小限にすることができます。
 
-### Xxxxxxxx
+### 例
 
-X xxxx-xxxx xxxx xx xxx xxxxxxx xxxxx xxx xxxx x xxxxxx.
+コンパクトな状態のドロップダウン リストには、ヘッダーを表示できます。
 
-![Xxxxxxx xx x xxxx-xxxx xxxx xx xxx xxxxxxx xxxxx](images/combo_box_collapsed.png)
+![コンパクトな状態のドロップダウン リストの例](images/combo_box_collapsed.png)
 
-Xxxxxxxx xxxx-xxxx xxxxx xxxxxx xx xxxxxxx xxxxxx xxxxxx xxxxxxx, xxxxx xxxxxxxxxxx xxxx xxxxxxx xxxx xxx xxxxxxxxx xx xxxx.
+ドロップダウン リストは、長い文字列の幅をサポートするために拡張できますが、読みにくくなるような長すぎる文字列は避けます。
 
-![Xxxxxxx xx x xxxx-xxxx xxxx xxxx xxxx xxxx xxxxxx](images/combo_box_listitemstate.png)
+![長い文字列のドロップダウン リストの例](images/combo_box_listitemstate.png)
 
-Xx xxx xxxxxxxxxx xx x xxxx-xxxx xxxx xx xxxx xxxxxx, x xxxxxx xxx xxxx xxxxxx xx xxxxxxxxxxx xx. Xxxxx xxxxx xxxxxxxxx xx xxx xxxx.
+ドロップダウン リスト内のコレクションが一定の長さに達すると、対応できるようにスクロール バーが表示されます。 リスト内の項目は論理的にグループ化します。
 
-![Xxxxxxx xx x xxxxxx xxx xx x xxxx-xxxx xxxx](images/combo_box_scroll.png)
+![ドロップダウン リストに表示されたスクロール バーの例](images/combo_box_scroll.png)
 
-### Xxxxxxxxxxxxxxx
+### 推奨事項
 
--   Xxxxx xxx xxxx xxxxxxx xx xxx xxxx-xxxx xxxx xxxx xx x xxxxxx xxxx.
--   Xxxx xxxxx xx x xxxx-xxxx xxxx xx xxx xxxx xxxxxxx xxxxx. Xxxxx xxxxxxxx xxxxxxx xxxxxxx, xxxxx xxx xxxx xxxxxx xxxxxxx xx xxx xxx, xxx xxxxx xxxxx xxxxxxxxxxxxxx. Xxxx xxxxx xx xxxxxxxxxxxx xxxxx, xxxxxxx xx xxxxxxxxx xxxxx, xxx xxxxx xx xxxxxxxxxxxxx xxxxx.
+-   ドロップダウン リスト項目のテキスト コンテンツは、単一行に制限します。
+-   ドロップダウン リスト内の項目は、最も論理的な順序に並べ替えます。 関連するオプションをグループ化し、最も一般的なオプションを先頭に配置して、項目をアルファベット順に配置します。 名前はアルファベット順、数値は数値順、日付は時系列順に並べ替えます。
 
-## Xxxx xxxxx
+## リスト ボックス
 
-X xxxx xxx xxxxxx xxx xxxx xx xxxxxx xxxxxx x xxxxxx xxxx xx xxxxxxxx xxxxx xxxx x xxxxxxxxxx. Xxxx xxxxx xxx xxxxxxx xx xxxx-xxxx xxxxx, xxxxxx xxxx xxxx xxxxx xxx xxxxxx xxxx—xxxxx xx xx xxxxxxx (xxx-xxxxxxxx) xxxxx xxx x xxxx xxx. Xxxxx xx xxx xxxx xxx xx xxxxxxxx xx xxxxx xxx'x xxxxx xx xxxx xxxxxxxxxx.
+リスト ボックスを使うと、ユーザーはコレクションから 1 つまたは複数の項目を選択できます。 リスト ボックスはドロップダウン リストと似ていますが、常に開いている点がドロップダウン リストと異なります。リスト ボックスには、コンパクトな (展開されていない) 状態がありません。 すべての項目を表示する領域がない場合には、リスト内の項目をスクロールできます。
 
-### Xx xxxx xxx xxxxx xxxxxxx?
+### 適切なコントロールの選択
 
--   X xxxx xxx xxx xx xxxxxx xxxx xxxxx xx xxx xxxx xxx xxxxxxxxx xxxxxx xx xxxxxxxxxxx xxxxxxx, xxx xxxx xxxxx'x xxxxxx xxxxxx xxxx xxxxxx, xx xxxx xxx xxxx xxxx.
--   X xxxx xxx xxxxxx xxxx xxx xxxx'x xxxxxxxxx xx xxx xxxx xxx xx xxxxxxxxxxxx xx xx xxxxxxxxx xxxxxx. Xx xxxxxxxx, x xxxx-xxxx xxxx xxxxxxxxx xxxxx xxx xxxx'x xxxxxxxxx xx xxx xxxxxxxx xxxx.
--   Xxxxx xxxxx x xxxx xxx xx:
-    -   Xxxxx xx x xxxx xxxxx xxxxxx xx xxxxx xxx xxx xxxx. X xxxxxx-xxxxxx xxxx xxx xxxx xxxxxx xxx xxx xxxx Y xxxxxxx xxxxx xx xxxxxx xxxxxxxxx xx [xxxxx xxxxxxx](radio-button.md). Xxxx xxxxxxxx xxxxx xxxxx xxxxxxx xxxx xxxxx xxx Y xx Y xxxxxx xxxxx xx xxx xxxx.
-    -   Xxx xxxx xxx xx xxxxxx-xxxxxx xxx xx xxxxxx xxx xxx xxxx Y xxxxxxx xxxxx xxx xxx xx xxxxxxx xx xxx xxx xxxxx, xxxx xx "xx" xxx "xxx." Xxx x xxxxxx xxxxx xxx xx x xxxxxx xxxxxx.
-    -   Xxxxx xx x xxxx xxxxx xxxxxx xx xxxxx. X xxxxxx xxxxxx xxx xxxx xxxxx xxx xxxx xxxx xxx xxxx xxxx. Xxx xxxx xxxx xxxxx xx xxxxxxx xxxx, xxxxxxxx xxxx xx xxxxxxxxx.
-    -   Xxx xxxxx xxx xxxxxxxxxx xxxxxxxxx xxxxxx. Xx xxxx'x xxx xxxx, xxxxxxxx xxxxx x [xxxxxx](slider.md).
-    -   Xxx xxxxxxxxx xxxxx xxx xx xxxxxxxxx xxxxxxxxxx xx xxx xxxx xx xxxx xxx xx xxx xxxxxxx xxxxxx xx xxxxxxxxxxx xxx xxxx xxxxx xx xxxx xxxxxxxxxx. Xxx x xxxx-xxxx xxxx xxxxxxx.
+-   リスト ボックスは、リスト内の項目が重要であるため目立つように表示する場合や、項目一式を表示するための十分な画面領域がある場合に便利です。
+-   リスト ボックスでは、重要な選択で完全な代替セットにユーザーの注意を向ける必要があります。 ドロップダウン リストの場合はまず、選択した項目にユーザーの注意を引き付けます。
+-   次のような場合はリスト ボックスの使用を避けてください。
+    -   リスト内の項目が非常に少ない場合。 単一選択のリスト ボックスで常に同じ 2 つのオプションを提示するのであれば、[オプション ボタン](radio-button.md)の方が適している可能性があります。 3 ～ 4 個の静的な項目を提示する場合もオプション ボタンの使用を検討してください。
+    -   リスト ボックスが単一選択であり、リスト内のオプションが常に同じ 2 項目で、その一方が他方の否定を意味している場合 ("オン" と "オフ" など)。 このような場合は、単一のチェック ボックスまたはトグル スイッチを使用してください。
+    -   項目数が非常に多い場合。 長いリストには、グリッド ビューまたはリスト ビューの方が適しています。 グループ化されたデータの非常に長いリストの場合はセマンティック ズームの使用をお勧めします。
+    -   項目が連続する数値である場合。 このような場合は、[スライダー](slider.md)の使用を検討してください。
+    -   選択項目がアプリのフローで二次的な重要性しか持たないか、または大半の状況で大半のユーザーに既定のオプションが推奨される場合。 このような場合は、ドロップダウン リストを使用してください。
 
-### Xxxxxxxxxxxxxxx
+### 推奨事項
 
--   Xxx xxxxx xxxxx xx xxxxx xx x xxxx xxx xx Y xx Y.
--   X xxxx xxx xxxxx xxxx xxxx xxx xxxxx xxx xxxxxxxxxxx xxxx.
--   Xx xxxxxxxx, xxx xxx xxxx xx x xxxx xxx xx xxxx xxx xxxx xx xxxxx xxx'x xxxx xx xx xxxxxx xx xxxxxxxx.
--   Xxxxxx xxxx xxx xxxxxxx xx xxx xxxx xxx, xxx xxxxx xxxxx xxx xxxxxxxxx xxxxxxxx, xx xxxxx.
--   Xxxxxxx xxxxxx xxxxxxx xxx xxxxxxxxxx xxx xxxxx xxxxxxxx, xxx xxx xxx xxxxxxxx xxxxx xx xxxxx.
--   Xxxxx xxx xxxx xxx xxxx'x xxxx xxxxxxx xx x xxxxxx xxxx. Xx xxx xxxxx xxx xxxxxxx, xxx xxx xxxxxxxxx xxx xxxx. Xx xx xxxx xxxxxxxx xxxxxxxx xxxxx xx xxxx xx xxxxxx, xxxxxxx xxx x xxxx xxxx xx xxxx xxxx.
--   Xxx xxx xxxxxxx xxxx xxxxxx xxxx xxxxx xxxxxxxxxx xxxxxxxx xx xxx xxxxxxx.
--   Xxx'x xxx x xxxx xxx xx xxxxxxx xxxxxxxx xx xx xxxxxxxxxxx xxxx xx xxxx xxxxx xxxxxxxx.
+-   リスト ボックス内の項目数の最適な範囲は 3 ～ 9 です。
+-   リスト ボックスは、項目が動的に変化する可能性がある場合に適しています。
+-   可能であれば、項目のリストのパンまたはスクロールが必要にならないように、リスト ボックスのサイズを設定します。
+-   リスト ボックスの目的、および現在選択されている項目が明確であることを確認します。
+-   タッチ フィードバックおよび項目の選択状態の視覚効果とアニメーションを予約します。
+-   リスト ボックス項目のテキストのコンテンツは、単一行に制限します。 項目がビジュアルである場合、サイズをカスタマイズできます。 項目に複数行のテキストまたは画像が含まれる場合は、グリッド ビューまたはリスト ビューを使用してください。
+-   ブランドのガイドラインで別のフォントが指示されていない限り、既定のフォントを使います。
+-   コマンドの実行または他のコントロールの動的な表示と非表示の切り替えのためにリスト ボックスを使わないでください。
 
-## Xxxxxxxxx xxxx
+## 選択モード
 
-Xxxxxxxxx xxxx xxxx xxxxx xxxxxx xxx xxxx xxxxxx xx x xxxxxx xxxx xx xx xxxxxxxx xxxxx. Xx xxx xx xxxxxxx xxxxxxx x xxxxxxx xxxx, xx xxxxx XXXX+xxxxx xx XXXXX+xxxxx xx xx xxxx, xx xx xxxxxxx-xxxx x xxxxxx xx xx xxxx xx x xxxxxxx xxxx. Xxxx xxxxxxxxx xxxx xx xxxxxx, xxxxx xxxxx xxxxxx xxxx xx xxxx xxxx xxxx, xxx xxxxxxx xxx xxxxxx xx xxx xxx xx xxx xxxxxx xx xxx xxxxxx.
+選択モードでは、単一の項目または複数の項目を選択して、それらの項目に対して操作を実行できます。 選択モードは、コンテキスト メニュー、Crtl キーまたは Shift キーを押しながらの項目のクリック、またはギャラリー ビューでの項目に対するターゲットのロールオーバーによって起動できます。 選択モードがアクティブであるとき、各リスト項目の横にチェック ボックスを表示し、画面の上部または下部に操作を表示できます。
 
-Xxxxx xxx xxxxx xxxxxxxxx xxxxx:
+選択モードには、次の 3 つがあります。
 
--   Xxxxxx: Xxx xxxx xxx xxxxxx xxxx xxx xxxx xx x xxxx.
--   Xxxxxxxx: Xxx xxxx xxx xxxxxx xxxxxxxx xxxxx xxxxxxx xxxxx x xxxxxxxx.
--   Xxxxxxxx: Xxx xxxx xxx xxxxxx xxxxxxxx xxxxx xxxx x xxxxxxxx, xxxx xx xxxxxxx xxxx xxx XXXXX xxx.
+-   単一: ユーザーは同時に 1 つの項目だけを選ぶことができます。
+-   複数: ユーザーは修飾キーを使わずに複数の項目を選ぶことができます。
+-   拡張: ユーザーは、Shift キーを押すなど修飾キーを使って複数の項目を選ぶことができます。
 
-Xxxxxxx xxxxxxxx xx xx xxxx xxxxxxx xx. Xxxxxxx xx xxx xxxxxxx xxx xxxxxx xxxxxxx xxx xxxxxxxx xxxxx. Xx xx xxxx xx xxxxxxxx, xxxxxxx xxx xxxxxxx xxxxxx xx xxxxxxxx, xxxxxx xxx "Xxxxxx Xxx".
+項目の任意の場所をタップすると、項目が選ばれます。 コマンド バーの操作をタップすると、選択したすべての項目に影響します。 項目が選ばれていない場合、コマンド バーの操作は [すべて選択] を除いて非アクティブになります。
 
-Xxxxxxxxx xxxx xxxxx'x xxxx x xxxxx xxxxxxx xxxxx; xxxxxxx xxxxxxx xx xxx xxxxx xx xxxxx xxxxxxxxx xxxx xx xxxxxx xxx'x xxxxxx xxx xxxx. Xxxx xx xx xxxxxxx xxxxxxxxxx xxxxxxxxxxxx xx xxx xxxx. Xxxxxxxx xxx xxxx xxxxxx xxxxxxxxx xxx xxxxx-xxxxxx xxxx.
+選択モードには簡易非表示モデルがありません。選択モードがアクティブなフレームの外側をタップしても、モードを取り消すことはできません。 これにより、モードが誤って非アクティブ化されることを防止できます。 戻るボタンをクリックすると、複数選択モードが終了します。
 
-Xxxx x xxxxxx xxxxxxxxxxxx xxxx xx xxxxxx xx xxxxxxxx. Xxxxxxxx xxxxxxxxxx x xxxxxxxxxxxx xxxxxx xxx xxxxxxx xxxxxxx, xxxxxxxxxx xxxxxxxxxxx xxxxxxx xxxx xx xxxxxx.
+操作が選択されているときは、確認できるように視覚的に示します。 特定の操作に対して (特に破棄を伴う削除などの操作に対して)、確認ダイアログを表示することを検討します。
 
-Xxxxxxxxx xxxx xx xxxxxxxx xx xxx xxxx xx xxxxx xx xx xxxxxx, xxx xxx'x xxxxxx xxx xxxxx xxxxxxx xx xxxx xxxx.
+選択モードは、選択モードをアクティブにしたページに限定され、そのページ以外の項目に影響を与えることはできません。
 
-Xxx xxxxx xxxxx xx xxxxxxxxx xxxx xxxxxx xx xxxxxxxxxx xxxxxxx xxx xxxxxxx xx xxxxxxx.
+選択モードへのエントリ ポイントは、そのモードが影響を与えるコンテンツに対して並置する必要があります。
 
-Xxx xxxxxxx xxx xxxxxxxxxxxxxxx, xxx [xxxxxxxxxx xxx xxxxxxx xxxx](app-bars.md).
+コマンド バーの推奨事項については、「[コマンド バーのガイドライン](app-bars.md)」をご覧ください。
 
-\[Xxxx xxxxxxx xxxxxxxx xxxxxxxxxxx xxxx xx xxxxxxxx xx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx xxx Xxxxxxx YY. Xxx Xxxxxxx Y.Y xxxxxxxx, xxxxxx xxxxxxxx xxx [Xxxxxxx Y.Y xxxxxxxxxx XXX](https://go.microsoft.com/fwlink/p/?linkid=258743).\]
+\[この記事には、ユニバーサル Windows プラットフォーム (UWP) アプリと Windows 10 に固有の情報が含まれています。 Windows 8.1 のガイダンスについては、[Windows 8.1 ガイドラインの PDF](https://go.microsoft.com/fwlink/p/?linkid=258743) ファイルをダウンロードしてください。\]
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-**Xxx xxxxxxxxx**
-* [Xxx](hub.md)
-* [Xxxxxx/xxxxxxx](master-details.md)
-* [Xxx xxxx](nav-pane.md)
-* [Xxxxxxxx xxxx](semantic-zoom.md)
+**デザイナー向け**
+* [ハブ](hub.md)
+* [マスター/詳細](master-details.md)
+* [ナビゲーション ウィンドウ](nav-pane.md)
+* [セマンティック ズーム](semantic-zoom.md)
 
-**Xxx xxxxxxxxxx**
-* [**XxxxXxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242878)
-* [**XxxxXxxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242705)
-* [**XxxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br209348)
-* [**XxxxXxx xxxxx**](https://msdn.microsoft.com/library/windows/apps/br242868)
-* [Xxxxxx xxxxx xxxxx xxx xxxx xxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616)
+**開発者向け**
+* [**ListView クラス**](https://msdn.microsoft.com/library/windows/apps/br242878)
+* [**GridView クラス**](https://msdn.microsoft.com/library/windows/apps/br242705)
+* [**ComboBox クラス**](https://msdn.microsoft.com/library/windows/apps/br209348)
+* [**ListBox クラス**](https://msdn.microsoft.com/library/windows/apps/br242868)
+* [コンボ ボックスとリスト ボックスの追加](https://msdn.microsoft.com/library/windows/apps/xaml/hh780616)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

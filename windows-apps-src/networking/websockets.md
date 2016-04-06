@@ -1,45 +1,45 @@
 ---
-xxxxxxxxxxx: XxxXxxxxxx xxxxxxx x xxxxxxxxx xxx xxxx, xxxxxx xxx-xxx xxxxxxxxxxxxx xxxxxxx x xxxxxx xxx x xxxxxx xxxx xxx xxx xxxxx XXXX(X).
-xxxxx: XxxXxxxxxx
-xx.xxxxxxx: XXXYXXYX-YXYX-YXYY-YYYY-XXXYXXYYXYXY
+description: WebSockets provide a mechanism for fast, secure two-way communication between a client and a server over the web using HTTP(S).
+title: WebSockets
+ms.assetid: EAA9CB3E-6A3A-4C13-9636-CCD3DE46E7E2
 ---
 
-# XxxXxxxxxx
+# WebSockets
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-**Xxxxxxxxx XXXx**
+**Important APIs**
 
--   [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842)
--   [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923)
+-   [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842)
+-   [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923)
 
-XxxXxxxxxx xxxxxxx x xxxxxxxxx xxx xxxx, xxxxxx xxx-xxx xxxxxxxxxxxxx xxxxxxx x xxxxxx xxx x xxxxxx xxxx xxx xxx xxxxx XXXX(X).
+WebSockets provide a mechanism for fast, secure two-way communication between a client and a server over the web using HTTP(S).
 
-Xxxxx xxx [XxxXxxxxx Xxxxxxxx](http://tools.ietf.org/html/rfc6455), xxxx xx xxxxxxxxxxx xxxxxxxxxxx xxxx x xxxx-xxxxxx xxxxxx xxxxxx xxxxxxxxxx, xxxxxxxx xxxxxxxx xx xx xxxx xxx xxxxxxxx xxxx xxxx xxxxxxxxx xx xxxx xxxx. XxxXxxxxxx xxx xxxxx xxx xxx xx xxxx-xxxx xxxxxx xxxxx xxxxxxx xxxxxx xxxxxxx xxxxxxxxxxxxx xxx xx-xx-xxxx xxxxxxxx xx xxxxxxxxxxx (xxxx xxxxxxxxxx ) xxxx xx xx xxxxxx xxx xxx xxxx xxxx xxxxxxxx. Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxxxxxxxx xxx xxx xxx [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xxx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxxxxxx xx xxxxxxx xxxx xxxxxxx xxxx xxxxxxx xxx Xxxxxxxxx xxxxxxxx.
+Under the [WebSocket Protocol](http://tools.ietf.org/html/rfc6455), data is transferred immediately over a full-duplex single socket connection, allowing messages to be sent and received from both endpoints in real time. WebSockets are ideal for use in real-time gaming where instant social network notifications and up-to-date displays of information (game statistics ) need to be secure and use fast data transfer. Universal Windows Platform (UWP) developers can use the [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) and [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) classes to connect with servers that support the Websocket protocol.
 
-| XxxxxxxXxxXxxxxx                                                         | XxxxxxXxxXxxxxx                                                                               |
+| MessageWebSocket                                                         | StreamWebSocket                                                                               |
 |--------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------|
-| Xxxxxxxx xxx xxxxxxx xxxxxxxxx xxxxx xxxxxxxx xxx xxx xxxxxxxxx xxxxx.   | Xxxxxxxx xxx xxxxxxxxx xx xxxxx xxxxx xxxxx (xxxx xx xxxxxx xx xxxxxx) xxx xxxxx xxxxxxxxxxx. |
-| Xxxxxxx xxxxxxxxxxxx xxxx xx xxxxxx XxxXxxxxx xxxxxxx xxx xxxx xxxxxxxx. | Xxxxxx xxxxxxxx xx x xxxxxxx xx xx xxxx xxxx xxxx xxxx xxxxxxxxx.                             |
-| Xxxxxxxx xxxx XXX-Y xxx xxxxxx xxxxxxxx.                                 | Xxxxxxxx xxxx xxxxxx xxxxxxxx.                                                                |
-| Xxxxxxx xx x XXX xx xxxxxxxx xxxxxx.                                     | Xxxxxxx xx x XXX xx xxxxxx xxxxxx.                                                            |
+| Suitable for typical scenarios where messages are not extremely large.   | Suitable for scenarios in which large files (such as photos or videos) are being transferred. |
+| Enables notification that an entire WebSocket message has been received. | Allows sections of a message to be read with each read operation.                             |
+| Supports both UTF-8 and binary messages.                                 | Supports only binary messages.                                                                |
+| Similar to a UDP or datagram socket.                                     | Similar to a TCP or stream socket.                                                            |
 
-Xx xxxx xxxxx xxx'xx xxxx xx xxx x xxxxxx XxxXxxxxx xxxxxxxxxx xx xxxxxxx xxxx xxxx xxx xxxxxxxx. Xxxx xxxx xxxx xxxxxxxx xxx xxxxxxx xxxx xxxx xxxxxxxxxx xxxx xxxxxxx, xx xxxx xxxxxxx xxxx xxxxxx xxxxxxxxxxx XxxXxxxxx xxxxxxxxxxx. Xxx XxxXxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxx xxx XXX xxxxxxx.
+In most cases you'll want to use a secure WebSocket connection to encrypt data sent and received. This will also increase the chances that your connection will succeed, as many proxies will reject unencrypted WebSocket connections. The WebSocket protocol defines the following two URI schemes.
 
--   xx: - xxx xxx xxxxxxxxxxx xxxxxxxxxxx.
--   xxx: - xxx xxx xxxxxx xxxxxxxxxxx xxxx xxxxxx xx xxxxxxxxx.
+-   ws: - use for unencrypted connections.
+-   wss: - use for secure connections that should be encrypted.
 
-Xx xxxxxxx x XxxXxxxxx xxxxxxxxxx, xxx xxx xxx: XXX xxxxxx, xxx xxxxxxx, `wss://www.contoso.com/mywebservice`.
+To encrypt a WebSocket connection, use the wss: URI scheme, for example, `wss://www.contoso.com/mywebservice`.
 
-## Xxxxx XxxxxxxXxxXxxxxx
+## Using MessageWebSocket
 
-Xxx [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xxxxxx xxxxxxxx xx x xxxxxxx xx xx xxxx xxxx xxxx xxxx xxxxxxxxx. X **XxxxxxxXxxXxxxxx** xx xxxxxxxxx xxxx xx xxxxxxxxx xxxxx xxxxxxxx xxx xxx xxxxxxxxx xxxxx. Xxxx XXX-Y xxx xxxxxx xxxxx xxx xxxxxxxxx.
+The [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) allows sections of a message to be read with each read operation. A **MessageWebSocket** is typically used in scenarios where messages are not extremely large. Both UTF-8 and binary files are supported.
 
-Xxx xxxx xx xxxx xxxxxxx xxxxxxx x xxx [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842), xxxxxxxx xx x XxxXxxxxx xxxxxx, xxx xxxxx xxxx xx xxx xxxxxx. Xxxx x xxxxxxxxxx xxxxxxxxxx xx xxxxxxxxxxx, xxx xxx xxxxx xxx xxx [**XxxxxxxXxxXxxxxx.XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241358) xxxxx xx xx xxxxxxxxx, xxxxxxxxxx xxxx xxxx xxx xxxxxxxx.
+The code in this section creates a new [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), connects to a WebSocket server, and sends data to the server. Once a successful connection is established, the app waits for the [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) event to be triggered, indicating that data was received.
 
-Xxxx xxxxxx xxxx xxx XxxXxxxxx.xxx xxxx xxxxxx, x xxxxxxx xxxxx xxxxxx xxxxxx xxxx xx xxx xxxxxx xxx xxxxxx xxxx xx xx. Xx xxxxx xxx "xxx:" xxxxxxxx xxxxxxxxx, xxxx xxxxxx xxxx x xxxxxx xxxxxxxxxx xx xxxx xxx xxxxxxx xxxxxxxx.
+This sample uses the WebSocket.org echo server, a service which simply echoes back to the sender any string sent to it. By using the "wss:" protocol specifier, this sample uses a secure connection to send and receive messages.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 > ```cpp
 > void Game::InitWebSockets()
 > {
@@ -50,8 +50,9 @@ Xxxx xxxxxx xxxx xxx XxxXxxxxx.xxx xxxx xxxxxx, x xxxxxxx xxxxx xxxxxx xxxxxx xx
 >     m_messageWebSocket->Control->MessageType = Windows::Networking::Sockets::SocketMessageType::Utf8;
 > 
 >     // Register callbacks for notifications of interest
->     m_messageWebSocket->MessageReceived += ref new TypedEventHandler<MessageWebSocket^, MessageWebSocketMessageReceivedEventArgs^>(this, &amp;Game:/:WebSocketMessageReceived);
->     m_messageWebSocket->Closed += ref new TypedEventHandler<IWebSocket^, WebSocketClosedEventArgs^>(this, &amp;Game::WebSocketClosed);
+>     m_messageWebSocket->MessageReceived += 
+>        ref new TypedEventHandler<MessageWebSocket^, MessageWebSocketMessageReceivedEventArgs^>(this, &Game::WebSocketMessageReceived);
+>     m_messageWebSocket->Closed += ref new TypedEventHandler<IWebSocket^, WebSocketClosedEventArgs^>(this, &Game::WebSocketClosed);
 > 
 >     // This test code uses the websocket.org echo service to illustrate sending a string and receiving the echoed string back
 >     // Note that wss: makes this an encrypted connection.
@@ -106,170 +107,164 @@ Xxxx xxxxxx xxxx xxx XxxXxxxxx.xxx xxxx xxxxxx, x xxxxxxx xxxxx xxxxxx xxxxxx xx
 > }
 > ```
 
-Xxxx xxx xxxx xxxxxxxxxxx xxx XxxXxxxxx xxxxxxxxxx, xxxx xxxx xxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxxx xx xxxxxxxx xxxx xxx xxxxxxx xxxx.
+Once you have initialized the WebSocket connection, your code must perform the following activities to properly send and receive data.
 
-### Xxxxxxxxx x xxxxxxxx xxx xxx XxxxxxxXxxXxxxxx.XxxxxxxXxxxxxxx xxxxx
+### Implement a callback for the MessageWebSocket.MessageReceived event
 
-Xxxxxx xxxxxxxxxxxx x xxxxxxxxxx xxx xxxxxxx xxxx xxxx x XxxXxxxxx, xxxx xxx xxxxx xx xxxxxxxx xx xxxxx xxxxxxxx xx xxxxxxx xxxxxxxxxxxx xxxx xxxx xx xxxxxxxx. Xxxx xxx [**XxxxxxxXxxXxxxxx.XxxxxxxXxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br241358) xxxxx xxxxxx, xxx xxxxxxxxxx xxxxxxxx xx xxxxxx xxx xxxxxxxx xxxx xxxx [**XxxxxxxXxxXxxxxxXxxxxxxXxxxxxxxXxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/br226852). Xxxx xxxxxxx xx xxxxxxx xxxx xxx xxxxxxxxxx xxxx xxx xxxxxxxx xxxxx xxxx xxx xx XXX-Y xxxxxx.
+Before establishing a connection and sending data with a WebSocket, your app needs to register an event callback to receive notification when data is received. When the [**MessageWebSocket.MessageReceived**](https://msdn.microsoft.com/library/windows/apps/br241358) event occurs, the registered callback is called and receives data from [**MessageWebSocketMessageReceivedEventArgs**](https://msdn.microsoft.com/library/windows/apps/br226852). This example is written with the assumption that the messages being sent are in UTF-8 format.
 
-Xxx xxxxxxxxx xxxxxx xxxxxxxx xxxxxxxx x xxxxxx xxxx x xxxxxxxxx XxxXxxxxx xxxxxx xxx xxxxxx xxx xxxxxx xx xxx xxxxxxxx xxxxxx xxxxxx.
+The following sample function receives a string from a connected WebSocket server and prints the string to the debugger output window.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
-```cpp
-void Game::WebSocketMessageReceived(MessageWebSocket^ sender, MessageWebSocketMessageReceivedEventArgs^ args)
-{
-    DataReader^ messageReader = args->GetDataReader();
-    messageReader->UnicodeEncoding = Windows::Storage::Streams::UnicodeEncoding::Utf8;
+> [!div class="tabbedCodeSnippets"]
+>```cpp
+>void Game::WebSocketMessageReceived(MessageWebSocket^ sender, MessageWebSocketMessageReceivedEventArgs^ args)
+>{
+>    DataReader^ messageReader = args->GetDataReader();
+>    messageReader->UnicodeEncoding = Windows::Storage::Streams::UnicodeEncoding::Utf8;
+>
+>    String^ readString = messageReader->ReadString(messageReader->UnconsumedBufferLength);
+>    // Data has been read and is now available from the readString variable.
+>    swprintf(m_debugBuffer, 511, L"WebSocket Message received: %s\n", readString->Data());
+>    OutputDebugString(m_debugBuffer);
+>}
+>```
+>```csharp
+>//The MessageReceived event handler.
+>private void WebSock_MessageReceived(MessageWebSocket sender, MessageWebSocketMessageReceivedEventArgs args)
+>{
+>    DataReader messageReader = args.GetDataReader();
+>    messageReader.UnicodeEncoding = UnicodeEncoding.Utf8;
+>    string messageString = messageReader.ReadString(messageReader.UnconsumedBufferLength);
+>
+>    //Add code here to do something with the string that is received.
+>}
+>```
 
-    String^ readString = messageReader->ReadString(messageReader->UnconsumedBufferLength);
-    // Data has been read and is now available from the readString variable.
-    swprintf(m_debugBuffer, 511, L"WebSocket Message received: %s\n", readString->Data());
-    OutputDebugString(m_debugBuffer);
-}
-```
-```csharp
-//The MessageReceived event handler.
-private void WebSock_MessageReceived(MessageWebSocket sender, MessageWebSocketMessageReceivedEventArgs args)
-{
-    DataReader messageReader = args.GetDataReader();
-    messageReader.UnicodeEncoding = UnicodeEncoding.Utf8;
-    string messageString = messageReader.ReadString(messageReader.UnconsumedBufferLength);
+###  Implement a callback for the MessageWebSocket.Closed event
 
-    //Add code here to do something with the string that is received.
-}
-```
+Before establishing a connection and sending data with a WebSocket, your app needs to register an event callback to receive notification when the WebSocket is closed by the WebSocket server. When the [**MessageWebSocket.Closed**](https://msdn.microsoft.com/library/windows/apps/hh701364) event occurs, the registered callback is called to indicate the connection was closed by the WebSocket server.
 
-###  Xxxxxxxxx x xxxxxxxx xxx xxx XxxxxxxXxxXxxxxx.Xxxxxx xxxxx
+> [!div class="tabbedCodeSnippets"]
+>```cpp
+>void Game::WebSocketClosed(IWebSocket^ sender, WebSocketClosedEventArgs^ args)
+>{
+>    // The method may be triggered remotely by the server sending unsolicited close frame or locally by Close()/delete operator.
+>    // This method assumes we saved the connected WebSocket to a variable called m_messageWebSocket
+>    if (m_messageWebSocket != nullptr)
+>    {
+>        delete m_messageWebSocket;
+>        m_messageWebSocket = nullptr;
+>        OutputDebugString(L"Socket was closed\n");
+>    }
+>    m_socketConnected = false;
+> }
+>```
+>```csharp
+>//The Closed event handler
+>private void WebSock_Closed(IWebSocket sender, WebSocketClosedEventArgs args)
+>{
+>    //Add code here to do something when the connection is closed locally or by the server
+>}
+>```
 
-Xxxxxx xxxxxxxxxxxx x xxxxxxxxxx xxx xxxxxxx xxxx xxxx x XxxXxxxxx, xxxx xxx xxxxx xx xxxxxxxx xx xxxxx xxxxxxxx xx xxxxxxx xxxxxxxxxxxx xxxx xxx XxxXxxxxx xx xxxxxx xx xxx XxxXxxxxx xxxxxx. Xxxx xxx [**XxxxxxxXxxXxxxxx.Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701364) xxxxx xxxxxx, xxx xxxxxxxxxx xxxxxxxx xx xxxxxx xx xxxxxxxx xxx xxxxxxxxxx xxx xxxxxx xx xxx XxxXxxxxx xxxxxx.
+###  Send a message on a WebSocket
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
-```cpp
-void Game::WebSocketClosed(IWebSocket^ sender, WebSocketClosedEventArgs^ args)
-{
-    // The method may be triggered remotely by the server sending unsolicited close frame or locally by Close()/delete operator.
-    // This method assumes we saved the connected WebSocket to a variable called m_messageWebSocket
-    if (m_messageWebSocket != nullptr)
-    {
-        delete m_messageWebSocket;
-        m_messageWebSocket = nullptr;
-        OutputDebugString(L"Socket was closed\n");
-    }
-    m_socketConnected = false;
- }
-```
-```csharp
-//The Closed event handler
-private void WebSock_Closed(IWebSocket sender, WebSocketClosedEventArgs args)
-{
-    //Add code here to do something when the connection is closed locally or by the server
-}
-```
+Once a connection is established, the WebSocket client can send data to the server. The [**DataWriter.StoreAsync**](https://msdn.microsoft.com/library/windows/apps/br208171) method returns a parameter that maps to an unsigned int. This changes how we define the task to send the message compared with the task to make the connection.
 
-###  Xxxx x xxxxxxx xx x XxxXxxxxx
+**Note**   When you create a new DataWriter object using the MessageWebSocket's OutputStream, the DataWriter takes ownership of the OutputStream, and will deallocate the Outputstream when the DataWriter goes out of scope. This causes any subsequent attempts to use the OutputStream to fail with an HRESULT value of 0x80000013. To avoid deallocating the OutputStream, this code calls the DataWriter's DetachStream method, which returns ownership of the stream to the WebSocket object.
 
-Xxxx x xxxxxxxxxx xx xxxxxxxxxxx, xxx XxxXxxxxx xxxxxx xxx xxxx xxxx xx xxx xxxxxx. Xxx [**XxxxXxxxxx.XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br208171) xxxxxx xxxxxxx x xxxxxxxxx xxxx xxxx xx xx xxxxxxxx xxx. Xxxx xxxxxxx xxx xx xxxxxx xxx xxxx xx xxxx xxx xxxxxxx xxxxxxxx xxxx xxx xxxx xx xxxx xxx xxxxxxxxxx.
+The following function sends the given string to a connected WebSocket, and prints a verification message in the debugger output window.
 
-**Xxxx**   Xxxx xxx xxxxxx x xxx XxxxXxxxxx xxxxxx xxxxx xxx XxxxxxxXxxXxxxxx'x XxxxxxXxxxxx, xxx XxxxXxxxxx xxxxx xxxxxxxxx xx xxx XxxxxxXxxxxx, xxx xxxx xxxxxxxxxx xxx Xxxxxxxxxxxx xxxx xxx XxxxXxxxxx xxxx xxx xx xxxxx. Xxxx xxxxxx xxx xxxxxxxxxx xxxxxxxx xx xxx xxx XxxxxxXxxxxx xx xxxx xxxx xx XXXXXXX xxxxx xx YxYYYYYYYY. Xx xxxxx xxxxxxxxxxxx xxx XxxxxxXxxxxx, xxxx xxxx xxxxx xxx XxxxXxxxxx'x XxxxxxXxxxxx xxxxxx, xxxxx xxxxxxx xxxxxxxxx xx xxx xxxxxx xx xxx XxxXxxxxx xxxxxx.
+> [!div class="tabbedCodeSnippets"]
+>```cpp
+>void Game::SendWebSocketMessage(Windows::Networking::Sockets::MessageWebSocket^ sendingSocket, Platform::String^ message)
+>{
+>    if (m_socketConnected)
+>    {
+>        // WebSocket is connected, so send a message
+>        m_messageWriter = ref new DataWriter(sendingSocket->OutputStream);
+>
+>        m_messageWriter->WriteString(message);
+>
+>        // Send the data as one complete message
+>        create_task(m_messageWriter->StoreAsync()).then([this] (unsigned int)
+>        {
+>            // Send Completed
+>            m_messageWriter->DetachStream();    // give the stream back to m_messageWebSocket
+>            OutputDebugString(L"Sent websocket message\n");
+>        })
+>            .then([this] (task<void>> previousTask)
+>        {
+>            try
+>            {
+>                // Try getting all exceptions from the continuation chain above this point.
+>                previousTask.get();
+>            }
+>            catch (Platform::COMException ^ex)
+>            {
+>                // Add code to handle the exception
+>                // HandleException(exception);
+>            }
+>        });
+>    }
+>}
+>```
+>```csharp
+>//Send a message to the server.
+>private async Task WebSock_SendMessage(MessageWebSocket webSock, string message)
+>{
+>    DataWriter messageWriter = new DataWriter(webSock.OutputStream);
+>    messageWriter.WriteString(message);
+>    await messageWriter.StoreAsync();
+>}
+>```
 
-Xxx xxxxxxxxx xxxxxxxx xxxxx xxx xxxxx xxxxxx xx x xxxxxxxxx XxxXxxxxx, xxx xxxxxx x xxxxxxxxxxxx xxxxxxx xx xxx xxxxxxxx xxxxxx xxxxxx.
+## Using advanced controls with WebSockets
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
-```cpp
-void Game::SendWebSocketMessage(Windows::Networking::Sockets::MessageWebSocket^ sendingSocket, Platform::String^ message)
-{
-    if (m_socketConnected)
-    {
-        // WebSocket is connected, so send a message
-        m_messageWriter = ref new DataWriter(sendingSocket->OutputStream);
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) and [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) follow the same model for using advanced controls. Corresponding with each of the above primary classes are related classes to access advanced controls.
 
-        m_messageWriter->WriteString(message);
+[**MessageWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226843) provides socket control data on a [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) object.
+[**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) provides socket control data on a [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) object.
+The basic model to use advanced controls is the same for both types of WebSockets. The following discussion uses a [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) as an example, but the same process can be used with a [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842).
 
-        // Send the data as one complete message
-        create_task(m_messageWriter->StoreAsync()).then([this] (unsigned int)
-        {
-            // Send Completed
-            m_messageWriter->DetachStream();    // give the stream back to m_messageWebSocket
-            OutputDebugString(L"Sent websocket message\n");
-        })
-            .then([this] (task<void>> previousTask)
-        {
-            try
-            {
-                // Try getting all exceptions from the continuation chain above this point.
-                previousTask.get();
-            }
-            catch (Platform::COMException ^ex)
-            {
-                // Add code to handle the exception
-                // HandleException(exception);
-            }
-        });
-    }
-}
-```
-```csharp
-//Send a message to the server.
-private async Task WebSock_SendMessage(MessageWebSocket webSock, string message)
-{
-    DataWriter messageWriter = new DataWriter(webSock.OutputStream);
-    messageWriter.WriteString(message);
-    await messageWriter.StoreAsync();
-}
-```
+1.  Create the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) object.
+2.  Use the [**StreamWebSocket.Control**](https://msdn.microsoft.com/library/windows/apps/br226934) property to retrieve the [**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) instance associated with this [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) object.
+3.  Get or set properties on the [**StreamWebSocketControl**](https://msdn.microsoft.com/library/windows/apps/br226924) instance to get or set specific advanced controls.
 
-## Xxxxx xxxxxxxx xxxxxxxx xxxx XxxXxxxxxx
+Both [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) and [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) impose requirements on when advanced controls can be set.
 
-[
-            **XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xxx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxxxxx xxx xxxx xxxxx xxx xxxxx xxxxxxxx xxxxxxxx. Xxxxxxxxxxxxx xxxx xxxx xx xxx xxxxx xxxxxxx xxxxxxx xxx xxxxxxx xxxxxxx xx xxxxxx xxxxxxxx xxxxxxxx.
+-   For all advanced controls on the [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), the app must always set the property before issuing a Connect operation. Because of this requirement, it is best practice to set all control properties immediately after creating the **StreamWebSocket** object. Do not try to set a control property after the [**StreamWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226933) method has been called.
+-   For all of the advanced controls on the [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) except the message type, you must set the property before issuing a Connect operation. It is best practice to set all control properties immediately after creating the **MessageWebSocket** object. Except for the message type, do not attempt to change a control property after [**MessageWebSocket.ConnectAsync**](https://msdn.microsoft.com/library/windows/apps/br226859) has been called.
 
-[
-            **XxxxxxxXxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226843) xxxxxxxx xxxxxx xxxxxxx xxxx xx x [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xxxxxx.
-[
-            **XxxxxxXxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226924) xxxxxxxx xxxxxx xxxxxxx xxxx xx x [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxxxxx.
-Xxx xxxxx xxxxx xx xxx xxxxxxxx xxxxxxxx xx xxx xxxx xxx xxxx xxxxx xx XxxXxxxxxx. Xxx xxxxxxxxx xxxxxxxxxx xxxx x [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xx xx xxxxxxx, xxx xxx xxxx xxxxxxx xxx xx xxxx xxxx x [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842).
+## WebSocket information classes
 
-1.  Xxxxxx xxx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxxxxx.
-2.  Xxx xxx [**XxxxxxXxxXxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226934) xxxxxxxx xx xxxxxxxx xxx [**XxxxxxXxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226924) xxxxxxxx xxxxxxxxxx xxxx xxxx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxxxxx.
-3.  Xxx xx xxx xxxxxxxxxx xx xxx [**XxxxxxXxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226924) xxxxxxxx xx xxx xx xxx xxxxxxxx xxxxxxxx xxxxxxxx.
+[**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) and [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) each have a corresponding class that provides additional information about a WebSocket instance.
 
-Xxxx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxx [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xxxxxx xxxxxxxxxxxx xx xxxx xxxxxxxx xxxxxxxx xxx xx xxx.
+[**MessageWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226849) provides information about a [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842), and you retrieve an instance of the information class using the [**MessageWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226861) property.
 
--   Xxx xxx xxxxxxxx xxxxxxxx xx xxx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923), xxx xxx xxxx xxxxxx xxx xxx xxxxxxxx xxxxxx xxxxxxx x Xxxxxxx xxxxxxxxx. Xxxxxxx xx xxxx xxxxxxxxxxx, xx xx xxxx xxxxxxxx xx xxx xxx xxxxxxx xxxxxxxxxx xxxxxxxxxxx xxxxx xxxxxxxx xxx **XxxxxxXxxXxxxxx** xxxxxx. Xx xxx xxx xx xxx x xxxxxxx xxxxxxxx xxxxx xxx [**XxxxxxXxxXxxxxx.XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226933) xxxxxx xxx xxxx xxxxxx.
--   Xxx xxx xx xxx xxxxxxxx xxxxxxxx xx xxx [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xxxxxx xxx xxxxxxx xxxx, xxx xxxx xxx xxx xxxxxxxx xxxxxx xxxxxxx x Xxxxxxx xxxxxxxxx. Xx xx xxxx xxxxxxxx xx xxx xxx xxxxxxx xxxxxxxxxx xxxxxxxxxxx xxxxx xxxxxxxx xxx **XxxxxxxXxxXxxxxx** xxxxxx. Xxxxxx xxx xxx xxxxxxx xxxx, xx xxx xxxxxxx xx xxxxxx x xxxxxxx xxxxxxxx xxxxx [**XxxxxxxXxxXxxxxx.XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/br226859) xxx xxxx xxxxxx.
+[**StreamWebSocketInformation**](https://msdn.microsoft.com/library/windows/apps/br226929) provides information about a [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923), and you retrieve an instance of the information class using the [**StreamWebSocket.Information**](https://msdn.microsoft.com/library/windows/apps/br226935) property.
 
-## XxxXxxxxx xxxxxxxxxxx xxxxxxx
+Note that all of the properties on both Information classes are read-only, and that you can retrieve current information at any time during the lifetime of a web socket object.
 
-[
-            **XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xxx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxxx xxxx x xxxxxxxxxxxxx xxxxx xxxx xxxxxxxx xxxxxxxxxx xxxxxxxxxxx xxxxx x XxxXxxxxx xxxxxxxx.
+## Handling network exceptions
 
-[
-            **XxxxxxxXxxXxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226849) xxxxxxxx xxxxxxxxxxx xxxxx x [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842), xxx xxx xxxxxxxx xx xxxxxxxx xx xxx xxxxxxxxxxx xxxxx xxxxx xxx [**XxxxxxxXxxXxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226861) xxxxxxxx.
+An error encountered on a [**MessageWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226842) or [**StreamWebSocket**](https://msdn.microsoft.com/library/windows/apps/br226923) operation is returned as an **HRESULT** value. The [**WebSocketError.GetStatus**](https://msdn.microsoft.com/library/windows/apps/hh701529) method is used to convert a network error from a WebSocket operation to a [**WebErrorStatus**](https://msdn.microsoft.com/library/windows/apps/hh747818) enumeration value. Most of the **WebErrorStatus** enumeration values correspond to an error returned by the native HTTP client operation. Your app can filter on specific **WebErrorStatus** enumeration values to modify app behavior depending on the cause of the exception.
 
-[
-            **XxxxxxXxxXxxxxxXxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226929) xxxxxxxx xxxxxxxxxxx xxxxx x [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923), xxx xxx xxxxxxxx xx xxxxxxxx xx xxx xxxxxxxxxxx xxxxx xxxxx xxx [**XxxxxxXxxXxxxxx.Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226935) xxxxxxxx.
+For parameter validation errors, an app can also use the **HRESULT** from the exception to learn more detailed information on the error that caused the exception. Possible **HRESULT** values are listed in the *Winerror.h* header file. For most parameter validation errors, the **HRESULT** returned is **E\_INVALIDARG**.
 
-Xxxx xxxx xxx xx xxx xxxxxxxxxx xx xxxx Xxxxxxxxxxx xxxxxxx xxx xxxx-xxxx, xxx xxxx xxx xxx xxxxxxxx xxxxxxx xxxxxxxxxxx xx xxx xxxx xxxxxx xxx xxxxxxxx xx x xxx xxxxxx xxxxxx.
+## Setting timeouts on WebSocket operations
 
-## Xxxxxxxx xxxxxxx xxxxxxxxxx
+The MessageWebSocket and StreamWebSocket classes uses an internal system service to send WebSocket client requests and receive responses from a server. The default timeout value used for a WebSocket connect operation is 60 seconds. If the HTTP server that supports WebSockets is temporarily down or blocked by a network outage and the server doesn't or can't respond to the WebSocket connection request, the internal system service waits the default 60 seconds before it returns an error which causes an exception to be thrown on the WebSocket ConnectAsync method. If the name query for an HTTP server name in the URI returns multiple IP addresses for the name, the internal system service tries up to 5 IP addresses for the site each with a default timeout of 60 seconds before it fails. An app making a WebSocket connection request could wait several minutes trying to connect to multiple IP addresses before an error is returned and an exception is thrown. This behavior could appear to the user as if the app stopped working. The default timeout used for send and receive operations after a WebSocket connection has been established is 30 seconds.
 
-Xx xxxxx xxxxxxxxxxx xx x [**XxxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226842) xx [**XxxxxxXxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br226923) xxxxxxxxx xx xxxxxxxx xx xx **XXXXXXX** xxxxx. Xxx [**XxxXxxxxxXxxxx.XxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh701529) xxxxxx xx xxxx xx xxxxxxx x xxxxxxx xxxxx xxxx x XxxXxxxxx xxxxxxxxx xx x [**XxxXxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/hh747818) xxxxxxxxxxx xxxxx. Xxxx xx xxx **XxxXxxxxXxxxxx** xxxxxxxxxxx xxxxxx xxxxxxxxxx xx xx xxxxx xxxxxxxx xx xxx xxxxxx XXXX xxxxxx xxxxxxxxx. Xxxx xxx xxx xxxxxx xx xxxxxxxx **XxxXxxxxXxxxxx** xxxxxxxxxxx xxxxxx xx xxxxxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxx xx xxx xxxxxxxxx.
+To make your app more responsive and minimize these issues, it can set a shorter timeout on connection requests so that the operation fails due to timeout sooner than from the default settings.
 
-Xxx xxxxxxxxx xxxxxxxxxx xxxxxx, xx xxx xxx xxxx xxx xxx **XXXXXXX** xxxx xxx xxxxxxxxx xx xxxxx xxxx xxxxxxxx xxxxxxxxxxx xx xxx xxxxx xxxx xxxxxx xxx xxxxxxxxx. Xxxxxxxx **XXXXXXX** xxxxxx xxx xxxxxx xx xxx *Xxxxxxxx.x* xxxxxx xxxx. Xxx xxxx xxxxxxxxx xxxxxxxxxx xxxxxx, xxx **XXXXXXX** xxxxxxxx xx **X\_XXXXXXXXXX**.
+You set timeouts similarly for both StreamWebSockets and MessageWebSockets. The following example shows how to set a timeout on StreamWebSocket, but the process is similar for a MessageWebSocket.
 
-## Xxxxxxx xxxxxxxx xx XxxXxxxxx xxxxxxxxxx
+1.  Create a task that completes after a specified delay using a timer.
+2.  Create a task for the WebSocket operation with a cancellation\_token\_source to support cancellation.
+3.  If the task with the specified timeout delay completes before the WebSocket connect operation, cancel the task for the WebSocket operation.
 
-Xxx XxxxxxxXxxXxxxxx xxx XxxxxxXxxXxxxxx xxxxxxx xxxx xx xxxxxxxx xxxxxx xxxxxxx xx xxxx XxxXxxxxx xxxxxx xxxxxxxx xxx xxxxxxx xxxxxxxxx xxxx x xxxxxx. Xxx xxxxxxx xxxxxxx xxxxx xxxx xxx x XxxXxxxxx xxxxxxx xxxxxxxxx xx YY xxxxxxx. Xx xxx XXXX xxxxxx xxxx xxxxxxxx XxxXxxxxxx xx xxxxxxxxxxx xxxx xx xxxxxxx xx x xxxxxxx xxxxxx xxx xxx xxxxxx xxxxx'x xx xxx'x xxxxxxx xx xxx XxxXxxxxx xxxxxxxxxx xxxxxxx, xxx xxxxxxxx xxxxxx xxxxxxx xxxxx xxx xxxxxxx YY xxxxxxx xxxxxx xx xxxxxxx xx xxxxx xxxxx xxxxxx xx xxxxxxxxx xx xx xxxxxx xx xxx XxxXxxxxx XxxxxxxXxxxx xxxxxx. Xx xxx xxxx xxxxx xxx xx XXXX xxxxxx xxxx xx xxx XXX xxxxxxx xxxxxxxx XX xxxxxxxxx xxx xxx xxxx, xxx xxxxxxxx xxxxxx xxxxxxx xxxxx xx xx Y XX xxxxxxxxx xxx xxx xxxx xxxx xxxx x xxxxxxx xxxxxxx xx YY xxxxxxx xxxxxx xx xxxxx. Xx xxx xxxxxx x XxxXxxxxx xxxxxxxxxx xxxxxxx xxxxx xxxx xxxxxxx xxxxxxx xxxxxx xx xxxxxxx xx xxxxxxxx XX xxxxxxxxx xxxxxx xx xxxxx xx xxxxxxxx xxx xx xxxxxxxxx xx xxxxxx. Xxxx xxxxxxxx xxxxx xxxxxx xx xxx xxxx xx xx xxx xxx xxxxxxx xxxxxxx. Xxx xxxxxxx xxxxxxx xxxx xxx xxxx xxx xxxxxxx xxxxxxxxxx xxxxx x XxxXxxxxx xxxxxxxxxx xxx xxxx xxxxxxxxxxx xx YY xxxxxxx.
-
-Xx xxxx xxxx xxx xxxx xxxxxxxxxx xxx xxxxxxxx xxxxx xxxxxx, xx xxx xxx x xxxxxxx xxxxxxx xx xxxxxxxxxx xxxxxxxx xx xxxx xxx xxxxxxxxx xxxxx xxx xx xxxxxxx xxxxxx xxxx xxxx xxx xxxxxxx xxxxxxxx.
-
-Xxx xxx xxxxxxxx xxxxxxxxx xxx xxxx XxxxxxXxxXxxxxxx xxx XxxxxxxXxxXxxxxxx. Xxx xxxxxxxxx xxxxxxx xxxxx xxx xx xxx x xxxxxxx xx XxxxxxXxxXxxxxx, xxx xxx xxxxxxx xx xxxxxxx xxx x XxxxxxxXxxXxxxxx.
-
-1.  Xxxxxx x xxxx xxxx xxxxxxxxx xxxxx x xxxxxxxxx xxxxx xxxxx x xxxxx.
-2.  Xxxxxx x xxxx xxx xxx XxxXxxxxx xxxxxxxxx xxxx x xxxxxxxxxxxx\_xxxxx\_xxxxxx xx xxxxxxx xxxxxxxxxxxx.
-3.  Xx xxx xxxx xxxx xxx xxxxxxxxx xxxxxxx xxxxx xxxxxxxxx xxxxxx xxx XxxXxxxxx xxxxxxx xxxxxxxxx, xxxxxx xxx xxxx xxx xxx XxxXxxxxx xxxxxxxxx.
-
-Xxx xxxxxxxxx xxxxxxx xxxxxxx xxx xxxx xxxx xxxxxxxxx xxxxx x xxxxxxxxx xxxxx, xxx xxxxxxx x xxxxxx xxxx xxxx xxxxxxx xxxxx x xxxxxxxxx xxxxx. Xxxxx xxxxxxx xxx xx xxxx xxxx XxxxxxXxxXxxxxx xxx XxxxxxxXxxXxxxxx xxxx xxxxxx xx xxxxxxxxx x xxxxxxxxxx xx xxx x xxxxxxxx xxxxxxx. Xx xxxxxxx xxxxx xxxxx xx xxxxxxx xxx XxxxxxXxxXxxxxx.XxxxxxxXxxxx xxxxxx xx x xxxx xxxx x xxxxxxxxxxxx\_xxxxx\_xxxxxx xxxx xxxxxxxx xxxxxxxxxxxx. Xx xxxxxxx xxxxxxxxx xxxxx, xxxx xxx xxxxxxxxxxxx\_xxxxx\_xxxxxx xx xxxx xx xxxxxx xxx xxxx xxx xxx XxxXxxxxx xxxxxxx xxxxxxxxx.
+The following example creates one task that completes after a specified delay, and creates a second task that cancels after a specified delay. These classes can be used with StreamWebSocket and MessageWebSocket when trying to establish a connection to set a specific timeout. An example usage would be calling the StreamWebSocket.ConnectAsync method in a task with a cancellation\_token\_source that supports cancellation. If timeout completes first, then the cancellation\_token\_source is used to cancel the task for the WebSocket connect operation.
 
 ```cpp
     #include <agents.h>
@@ -342,4 +337,8 @@ Xxx xxxxxxxxx xxxxxxx xxxxxxx xxx xxxx xxxx xxxxxxxxx xxxxx x xxxxxxxxx xxxxx, x
     }
 ```
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO3-->
+
+

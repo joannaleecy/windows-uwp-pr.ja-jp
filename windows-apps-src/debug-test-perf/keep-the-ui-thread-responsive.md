@@ -1,43 +1,42 @@
 ---
-xx.xxxxxxx: XXYYYYYX-XXYY-YXXX-YYYY-YXXYXXXYYYYY
-xxxxx: Xxxx xxx XX xxxxxx xxxxxxxxxx
-xxxxxxxxxxx: Xxxxx xxxxxx xx xxx xx xxxxxx xxxxxxxxxx xxxxx xx xxxx xxxxxxxxxxx, xxxxxxxxxx xx xxx xxxx xx xxxxxxx.
+ms.assetid: FA25562A-FE62-4DFC-9084-6BD6EAD73636
+title: UI スレッドの応答性の確保
+description: ユーザーは、コンピューターの種類に関係なく、アプリが計算を実行しているときも引き続き応答性を保つことを期待します。
 ---
-# Xxxx xxx XX xxxxxx xxxxxxxxxx
+# UI スレッドの応答性の確保
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132)をご覧ください \]
 
-Xxxxx xxxxxx xx xxx xx xxxxxx xxxxxxxxxx xxxxx xx xxxx xxxxxxxxxxx, xxxxxxxxxx xx xxx xxxx xx xxxxxxx. Xxxx xxxxx xxxxxxxxx xxxxxx xxx xxxxxxxxx xxxx. Xxx xxxx, xxxx xxxxxxxxxx xx xxxxxxxxx xxxx xxxxxxxxx xxxxxxx, xxxxxxx xxxx xxxx xxxx xx xxx xxx xxxxxx, xxxxxxx xxxxxxxxxx xxxxxxx xxxxxx xxx xxxxxxxxxx xxxxxxx xxxxx, xxxxxxx xxxxxxxxxx xx x xxxx, xx xxxxxxx xxxxxxxxxx xxxx. Xxxxxxxxxx xx xxx xxxx xx xxxxxxxxxxx, xxxxx xxxx xxxxx xxx xx xxx xx xxxxx xxxxx xxx xxxxxxxxx xxxxxxxxx xxxxx xx xxxxxxx xxxxxxxxxxxx xxxxx xx "xxxxxx".
+ユーザーは、コンピューターの種類に関係なく、アプリが計算を実行しているときも引き続き応答性を保つことを期待します。 これは、アプリケーションの種類によって異なる意味を持ちます。 一部のアプリケーションにとっては、これは、よりリアルな物理的効果の再現、ディスクや Web からのデータの読み込み速度の向上、複雑なシーンのすばやい表示とページ間の移動、スナップでの方向検出、高速のデータ処理などを意味します。 計算の種類に関係なく、ユーザーはアプリが入力に対して反応することを求め、計算中にアプリが応答停止しているように見える状況は望ましくありません。
 
-Xxxx xxx xx xxxxx-xxxxxx, xxxxx xxxxx xxxx xxxx xxxx xxxxxxxx xxxx xx xxxxxxxx xx xx xxxxx xxx xxxx xx xxxx xxxx xxxxx xxx xxxx. Xxxxxxxx xxxx xxx XX (xxxxxx, xxxxx, xxxxxxx xxxxxx, xxx.) xxx xxxx xxx’x xxxx xxx XX xxx xxx xxxxxxxx xx xxx xxxx XX xxxxxx. Xxxx xxx xxxxxxxxxxx xxx xxxxxxx xx xxxx xxxxxx xx x xxxx xx xx xxxx xxx xxxx xxxxx xxx xxxx xx xxxxxxx xx xxxxx xxxx xxx xxxxxxxxx xxx’x xxx xxxxxx xx xxxxx xxx xxxxxx xxxxxxxxxxxx xxxx xxxxxxxxxxx. Xxx xxxxxxxxxxxxxx xx xxxx xxx xx xxxxxxx xx xxx xxxxxxxxxxxx xx xxx XX xxxxxx xx xxxxxxx xxxx.
+アプリはイベント駆動型です。これは、コードがイベントに応答して操作を実行し、次のイベントまでアイドル状態になることを意味します。 UI のプラットフォーム コード (レイアウト、入力、および生成イベントなど) と UI 用のアプリのコードはすべて、同じ UI スレッドで実行されます。 このスレッドでは一度に 1 つの命令しか実行できないため、アプリのコードの実行に長い時間がかかるとイベントを処理できず、フレームワークはレイアウトを実行したりユーザー操作を表す新しいイベントを生成したりできません。 アプリの応答性は、作業の処理に UI スレッドを使えるかどうかに関係します。
 
-Xxx xxxx xx xxx xxx XX xxxxxx xx xxxx xxxxxx xxx xxxxxxx xx xxx XX xxxxxx, xxxxxxxxx xxxxxxxx XX xxxxx xxx xxxxxxxxx xxxxx xxxxxxx. Xxx xxx'x xxxxxx xxx XX xxxx x xxxxxxxxxx xxxxxx xxx xxx xxx xxxx x xxxxxxx xx xx xxxx [**XxxxXxxxxxxxxx.XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh750317) xx xxxxx xxxx xx xx xxx xxxxx.
+UI スレッドを使って、UI スレッドへのほぼすべての変更を行う必要があります。これには、UI の種類の作成、そのメンバーへのアクセスも含まれます。 UI はバックグラウンド スレッドから更新できませんが、[**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) を使ってこのスレッドにメッセージを投稿し、コードをそこで実行することができます。
 
-> **Xxxx**  Xxx xxx xxxxxxxxx xx xxxx xxxxx'x x xxxxxxxx xxxxxx xxxxxx xxxx xxx xxxxx XX xxxxxxx xxxx xxx'x xxxxxx xxx xxxxx xx xxxxxxx xx xxx xxxxx xxxxxx. Xxx xxxxxxx xxxx xxxxxxxxxx xxx xxxxxxxxxxx xxxx xxx’x xxxxxx xxxxxx xxx xxx xx xxxx xxxxxx xxxxxx.
+> **注** 1 つの例外は、入力の処理方法や基本的なレイアウトに影響を及ぼさない UI 変更を適用できる別のレンダリング スレッドがあることです。 たとえば、レイアウトに影響を及ぼさない多くのアニメーションと切り替えは、このレンダリング スレッド上で実行できます。
 
-## Xxxxx xxxxxxx xxxxxxxxxxxxx
+## 要素のインスタンス化の遅延
 
-Xxxx xx xxx xxxxxxx xxxxxx xx xx xxx xxx xxxxxxx xxxxxxx, xxx xxxxxxxxx xxxxx. Xxx'x xx xxxx xxxx xxxx xxxxxxxxx xx xxxxx xx xxx XX xxxx xxx xxxx xxxx xxxxxxxxx. Xxx xxxxxxx, xxx'x xxxxxx xxx XX xxx xxxxxxxxxxxxx-xxxxxxxxx XX xxx xxx xxxxxxxx xx xxxxxx.
+アプリでの最も低速なステージとして、起動や、ビューの切り替えなどがあります。 ユーザーに最初に表示される UI を起動するために必要なもの以上の作業を実行しないでください。 たとえば、段階的に公開される UI の UI や、ポップアップのコンテンツなどは作成しないでください。
 
--   Xxx [x:XxxxxXxxxXxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt204785) xx xxxxx-xxxxxxxxxxx xxxxxxxx.
--   Xxxxxxxxxxxxxxxx xxxxxx xxxxxxxx xxxx xxx xxxx xx-xxxxxx.
+-   [x:DeferLoadStrategy](https://msdn.microsoft.com/library/windows/apps/Mt204785) を使って要素のインスタンス化を遅らせます。
+-   プログラムを使って、要素をツリーにオンデマンドで挿入します。
 
-[
-            **XxxxXxxxxxxxxx.XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh967918) xxxxxx xxxx xxx xxx XX xxxxxx xx xxxxxxx xxxx xx'x xxx xxxx.
+[**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) キューにより、UI スレッドはビジーになっていない状態を処理できます。
 
-## Xxx xxxxxxxxxxxx XXXx
+## 非同期 API の使用
 
-Xx xxxx xxxx xxxx xxx xxxxxxxxxx, xxx xxxxxxxx xxxxxxxx xxxxxxxxxxxx xxxxxxxx xx xxxx xx xxx XXXx. Xx xxxxxxxxxxxx XXX xxxxxxx xxxx xxxx xxxxxx xxxxxxxxx xxxxxx xxxxx xxxxxx xxx x xxxxxxxxxxx xxxxxx xx xxxx. Xxxx xxx xxxx xx XXX xxxx xxx XX xxxxxx, xxx xxx xxxxxxxxxxxx xxxxxxx xx xx'x xxxxxxxxx. Xxx xxxx xxxx xxxxx xxxxxxxxxxx xxxx **xxxxx** xxxxxxxx, xxx [Xxxxxxxxxxxx xxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt187335) xx [Xxxx xxxxxxxxxxxx XXXx xx X# xx Xxxxxx Xxxxx](https://msdn.microsoft.com/library/windows/apps/Mt187337).
+アプリの高い応答性を維持するため、このプラットフォームの API の大部分に非同期バージョンが用意されています。 非同期 API を使うと、アクティブな実行スレッドが長時間ブロックされた状態になるのを防ぐことができます。 UI スレッドから API を呼び出す場合、提供されている限りは非同期バージョンを使ってください。 **非同期**パターンを使ったプログラミングについて詳しくは、「[非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/Mt187335)」または「[C# または Visual Basic での非同期 API の呼び出し](https://msdn.microsoft.com/library/windows/apps/Mt187337)」をご覧ください。
 
-## Xxxxxxx xxxx xx xxxxxxxxxx xxxxxxx
+## バックグラウンド スレッドへの作業のオフロード
 
-Xxxxx xxxxx xxxxxxxx xx xxxxxx xxxxxxx. Xx xxxxx xxxxx x xxx-xxxxxxx xxxxxx xx xxxx xxxxx xx xx xxxxxxxxx, xxxxxxxx xx xx x xxxxxxxxxx xxxxxx xxx xxxxxx.
+すばやく戻るイベント ハンドラーを記述します。 かなりの量の作業を実行する必要がある場合は、バックグラウンド スレッドで実行し、戻るようにスケジュールします。
 
-Xxx xxx xxxxxxxx xxxx xxxxxxxxxxxxxx xx xxxxx xxx **xxxxx** xxxxxxxx xx X#, xxx **Xxxxx** xxxxxxxx xx Xxxxxx Xxxxx, xx xxxxxxxxx xx X++. Xxx xxxx xxxxx'x xxxxxxxxx xxxx xxx xxxx xxx xxxxxxxx xxxx xxx xx x xxxxxxxxxx xxxxxx. Xxxx xx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) XXXx xxxxxxxx xxxx xx xxx xxxxxxxxxx xxxxxx xxx xxx, xxx xx xxx xxxx xxxx xxx xxxx xx xxxxx xxxx **xxxxx** xx x xxxxxxxx, xxx xxx xxxx xxxxxxxx xx xxxxxx xx xxx XX xxxxxx. Xxx xxxx xx xxxxxxxxxx xxx xxxx xxx xxxx xx xxx xxxx xxx xxxx xx x xxxxxxxxxx xxxxxx. Xx X#X# xxx Xxxxxx Xxxxx xxx xxx xxxxxxxxxx xxxx xx xxxxxxx xxxx xx [**Xxxx.Xxx**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.run.aspx).
+C# では **await** 演算子、Visual Basic では **Await** 演算子、C++ ではデリゲートを使って、作業を非同期で実行するようスケジュールできます。 ただし、これは、スケジュールした作業がバックグラウンド スレッドで実行されることを保証するものではありません。 ユニバーサル Windows プラットフォーム (UWP) API の多くは、作業をバックグラウンド スレッドで実行するようスケジュールしますが、**await** またはデリゲートのみを使ってアプリのコードを呼び出すと、そのデリゲートまたはメソッドは UI スレッドで実行されます。 アプリのコードをバックグラウンド スレッドで実行する場合は、それを明示的に指定する必要があります。 C# および Visual Basic の場合、これはコードを [**Task.Run**](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/system.threading.tasks.task.run.aspx) に渡すことで実現できます。
 
-Xxxxxxxx xxxx XX xxxxxxxx xxx xxxx xx xxxxxxxx xxxx xxx XX xxxxxx. Xxx xxx XX xxxxxx xx xxxxxx XX xxxxxxxx xxxxxx xxxxxxxxx xxx xxxxxxxxxx xxxx xxx/xx xxx [**XxxxXxxxxxxxxx.XxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh750317) xx [**XxxxXxxxxxxxxx.XxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh967918) xx xxx xxxxxxxxxx xxxxxx.
+UI 要素には UI スレッドからしかアクセスできないことに注意してください。 バックグラウンドの作業を起動する前に、UI スレッドを使って UI 要素にアクセスするか、バックグラウンド スレッドで [**CoreDispatcher.RunAsync**](https://msdn.microsoft.com/library/windows/apps/Hh750317) または [**CoreDispatcher.RunIdleAsync**](https://msdn.microsoft.com/library/windows/apps/Hh967918) を使います。
 
-Xx xxxxxxx xx xxxx xxxx xxx xx xxxxxxxxx xx x xxxxxxxxxx xxxxxx xx xxx xxxxxxxxxxx xx xxxxxxxx XX xx x xxxx. Xxx xxxx xxxx xxxxxxxxxx xxx xxxxxxxx'x xxxx xxxx xxx xxxx x xxx xx xxxx xx xxxxxxx.
+バックグラウンド スレッドで実行できる作業の例として、ゲームでのコンピューター AI の計算があります。 コンピューターの次の動きを計算するコードは実行に長い時間がかかる場合があります。
 
 ```csharp
 public class AsyncExample
@@ -58,7 +57,7 @@ public class AsyncExample
 }
 ```
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
+> [!div class="tabbedCodeSnippets"]
 ```csharp
 public class Example
 {
@@ -91,12 +90,16 @@ Public Class Example
 End Class
 ```
 
-Xx xxxx xxxxxxx, xxx `NextMove-Click` xxxxxxx xxxxxxx xx xxx **xxxxx** xx xxxxx xx xxxx xxx XX xxxxxx xxxxxxxxxx. Xxx xxxxxxxxx xxxxx xx xx xxxx xxxxxxx xxxxx xxxxx `ComputeNextMove` (xxxxx xxxxxxxx xx x xxxxxxxxxx xxxxxx) xxxxxxxxx. Xxx xxxxxxxxx xxxx xx xxx xxxxxxx xxxxxxx xxx XX xxxx xxx xxxxxxx.
+この例では、UI スレッドの応答性を確保するために、`NextMove-Click` ハンドラーが **await** で戻ります。 ただし、バックグラウンド スレッドで実行される `ComputeNextMove` が完了すると、そのハンドラーで実行が回復します。 ハンドラーの残りのコードにより、UI がその結果で更新されます。
 
-> **Xxxx**  Xxxxx'x xxxx x [**XxxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR229621) xxx [**XxxxxxXxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR229621timer) XXX xxx xxx XXX, xxxxx xxx xx xxxx xxx xxxxxxx xxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxx xxx xxxxx xxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt187340).
+> **注** UWP 用の [**ThreadPool**](https://msdn.microsoft.com/library/windows/apps/BR229621) API と [**ThreadPoolTimer**](https://msdn.microsoft.com/library/windows/apps/BR229621timer) API もあり、これを類似したシナリオで使うこともできます。 詳しくは、「[スレッド化と非同期プログラミング](https://msdn.microsoft.com/library/windows/apps/Mt187340)」をご覧ください。
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxx xxxx xxxxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185599)
+* [カスタム ユーザー操作](https://msdn.microsoft.com/library/windows/apps/Mt185599)
+
+
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,53 +1,59 @@
 ---
-xx.xxxxxxx: YYYYYYXY-YYYX-YXYX-YXYY-YXXYYXYYXYYY
-xxxxxxxxxxx: Xxxx xxxxxxx xxxxx xxx xxx xxxxx xxxxxx xxxxxxxx xx xxxxxx xxxxxxxx xxxxx xxxxxxx xxxxxxxxx xxxxxxxxx XXX xxxxx xxx xxxxxxxx xxxxxxxx.
-xxxxx: Xxxxxxx xxxxxx xxxxxxxx xxx xxxxx xxxxxxx
+ms.assetid: 708170E1-777A-4E4A-9F77-5AB28B88B107
+description: この記事では、ビデオ キャプチャの拡張シナリオ (HDR ビデオ、露出の優先順位など) がビデオ デバイス コントロールによってどのように有効になるかを示します。
+title: ビデオ キャプチャのためのキャプチャ デバイス コントロール
 ---
 
-# Xxxxxxx xxxxxx xxxxxxxx xxx xxxxx xxxxxxx
+# ビデオ キャプチャのためのキャプチャ デバイス コントロール
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください\]
 
 
-Xxxx xxxxxxx xxxxx xxx xxx xxxxx xxxxxx xxxxxxxx xx xxxxxx xxxxxxxx xxxxx xxxxxxx xxxxxxxxx xxxxxxxxx: XXX xxxxx xxx xxxxxxxx xxxxxxxx.
+この記事では、ビデオ キャプチャの拡張シナリオ (HDR ビデオ、露出の優先順位など) がビデオ デバイス コントロールによってどのように有効になるかを示します。
 
-Xxx xxxxx xxxxxx xxxxxxxx xxxxxxxxx xx xxxx xxxxxxx xxx xxx xxxxx xx xxxx xxx xxxxx xxx xxxx xxxxxxx. Xxxxx, xxx xxxxx xx xxx xx xxx xxxxxxx xx xxxxxxxxx xx xxx xxxxxxx xxxxxx xx xxxxx xxxx xxx xx xxxxxxx. Xx xxx xxxxxxx xx xxxxxxxxx, xxxx xxx xxx xxx xxxxxxx xxxx xxx xxx xxxxxxx. Xxxxxxxxx, xx x xxxxxxxxxx xxxxxxx xx xxxxxxxxxxx xx xxx xxxxxxx xxxxxx, xxx xxxxxx xxxxxxx xx xxxx xxx XX xxxxxxx xxxx xxxxxx xxx xxxx xx xxxxxx xxx xxxxxxx.
+この記事で説明するビデオ デバイス コントロールはすべて同じパターンを使ってアプリに追加されます。 まず、アプリが実行されている現在のデバイスで、コントロールがサポートされているかどうかを確認します。 コントロールがサポートされている場合は、コントロールに対して必要なモードを設定します。 一般的に、現在のデバイスで特定のコントロールがサポートされていない場合は、ユーザーがその機能を有効にできるような UI 要素を無効または非表示にする必要があります。
 
-Xxx xx xxx xxxxxx xxxxxxx XXXx xxxxxxxxx xx xxxx xxxxxxx xxx xxxxxxx xx xxx [**Xxxxxxx.Xxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br206902) xxxxxxxxx.
+この記事で説明するデバイス制御 API はすべて、[**Windows.Media.Devices**](https://msdn.microsoft.com/library/windows/apps/br206902) 名前空間のメンバーです。
 
-[!xxxx-xx[XxxxxXxxxxxxxxxxXxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
+[!code-cs[VideoControllersUsing](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetVideoControllersUsing)]
 
-**Xxxx**  
-Xxxx xxxxxxx xxxxxx xx xxxxxxxx xxx xxxx xxxxxxxxx xx [Xxxxxxx Xxxxxx xxx Xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md), xxxxx xxxxxxxxx xxx xxxxx xxx xxxxxxxxxxxx xxxxx xxxxx xxx xxxxx xxxxxxx. Xx xx xxxxxxxxxxx xxxx xxx xxxxxxxxxxx xxxxxxxx xxxx xxx xxxxx xxxxx xxxxxxx xxxxxxx xx xxxx xxxxxxx xxxxxx xxxxxx xx xx xxxx xxxxxxxx xxxxxxx xxxxxxxxx. Xxx xxxx xx xxxx xxxxxxx xxxxxxx xxxx xxxx xxx xxxxxxx xxx xx xxxxxxxx xx XxxxxXxxxxxx xxxx xxx xxxx xxxxxxxx xxxxxxxxxxx.
+**注**  
+この記事の内容は、写真やビデオの基本的なキャプチャ機能を実装するための手順を紹介した「[MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)」で取り上げた概念やコードに基づいています。 そちらの記事で基本的なメディア キャプチャのパターンを把握してから、高度なキャプチャ シナリオに進むことをお勧めします。 この記事で紹介しているコードは、MediaCapture のインスタンスが既に作成され、適切に初期化されていることを前提としています。
 
-## XXX xxxxx
+## HDR ビデオ
 
-Xxx Xxxx Xxxxxxx Xxxxx (XXX) xxxxx xxxxxxx xxxxxxx XXX xxxxxxxxxx xx xxx xxxxx xxxxxx xx xxx xxxxxxx xxxxxx. Xxxxxxxxx xx XXX xxxxx xx xxxxxxxxx xx xxxxxxxx xxx [**XxxXxxxxXxxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926682) xxxxxxxx.
+ハイ ダイナミック レンジ (HDR) ビデオ機能では、HDR 処理をキャプチャ デバイスのビデオ ストリームに適用します。 HDR ビデオがサポートされているかどうかを確認するには、[**HdrVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926682) プロパティをチェックします。
 
-Xxx XXX xxxxx xxxxxxx xxxxxxxx xxxxx xxxxx: xx, xxx, xxx xxxxxxxxx, xxxxx xxxxx xxxx xxx xxxxxx xxxxxxxxxxx xxxxxxxxxx xx XXX xxxxx xxxxxxxxxx xxxxx xxxxxxx xxx xxxxx xxxxxxx xxx, xx xx, xxxxxxx XXX xxxxx. Xx xxxxxxxxx xx x xxxxxxxxxx xxxx xx xxxxxxxxx xx xxx xxxxxxx xxxxxx, xxxxx xx xxx xx xxx [**XxxXxxxxXxxxxxx.XxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926683) xxxxxxxxxx xxxxxxxx xxx xxxxxxx xxxx.
+HDR ビデオ コントロールでは、3 つのモード (オン、オフ、自動) がサポートされています。自動モードでは、HDR ビデオ処理によってメディア キャプチャが改善されるかどうかをデバイスが動的に判断し、改善される場合は HDR ビデオが有効になります。 現在のデバイスで特定のモードがサポートされているかどうかを確認するには、[**HdrVideoControl.SupportedModes**](https://msdn.microsoft.com/library/windows/apps/dn926683) コレクションに目的のモードが含まれているかどうかをチェックします。
 
-Xxxxxx xx xxxxxxx XXX xxxxx xxxxxxxxxx xx xxxxxxx xxx [**XxxXxxxxXxxxxxx.Xxxx**](https://msdn.microsoft.com/library/windows/apps/dn926681) xx xxx xxxxxxx xxxx.
+HDR ビデオ処理を有効または無効にするには、[**HdrVideoControl.Mode**](https://msdn.microsoft.com/library/windows/apps/dn926681) を目的のモードに設定します。
 
-[!xxxx-xx[XxxXxxXxxxxXxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetHdrVideoMode)]
+[!code-cs[SetHdrVideoMode](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetSetHdrVideoMode)]
 
-## Xxxxxxxx xxxxxxxx
+## 露出の優先順位
 
-Xxx [**XxxxxxxxXxxxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926644), xxxx xxxxxxx, xxxxxxxxx xxx xxxxx xxxxxx xxxx xxx xxxxxxx xxxxxx xx xxxxxxxxx xx xxx xxxxx xx xxxxxxxxx x xxx-xxxxx xxxxx. Xx xx, xxx xxxxxxx xxxxxx xxx xxxxx xxxx xx xxx xxxxxxxx xxxxx xx xxxxx xx xxxxxxxx xxx xxxxxxxx xxxx xxx xxxx xxxxx xxx xxxxxxx xxx xxxxxx xxxxxxx xx xxx xxxxxxxx xxxxx.
+[
+            **ExposurePriorityVideoControl**](https://msdn.microsoft.com/library/windows/apps/dn926644) は、有効であれば、キャプチャ デバイスからのビデオ フレームを評価し、ローライト シーンのビデオがキャプチャされているかどうかを判断します。 その場合は、各フレームの露出時間を長くし、キャプチャしたビデオの画質を向上するために、キャプチャするビデオのフレーム レートが引き下げられます。
 
-Xxxxxxxxx xx xxx xxxxxxxx xxxxxxxx xxxxxxx xx xxxxxxxxx xx xxx xxxxxxx xxxxxx xx xxxxxxxx xxx [**XxxxxxxxXxxxxxxxXxxxxXxxxxxx.Xxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926647) xxxxxxxx.
+[
+            **ExposurePriorityVideoControl.Supported**](https://msdn.microsoft.com/library/windows/apps/dn926647) プロパティをチェックして、現在のデバイスで露出の優先順位コントロールがサポートされているかどうかを確認してください。
 
-Xxxxxx xx xxxxxxx xxx xxxxxxxx xxxxxxxx xxxxxxx xx xxxxxxx xxx [**XxxxxxxxXxxxxxxxXxxxxXxxxxxx.Xxxxxxx**](https://msdn.microsoft.com/library/windows/apps/dn926646) xx xxx xxxxxxx xxxx.
+露出の優先順位コントロールを有効または無効にするには、[**ExposurePriorityVideoControl.Enabled**](https://msdn.microsoft.com/library/windows/apps/dn926646) を目的のモードに設定します。
 
-[!xxxx-xx[XxxxxxXxxxxxxxXxxxxxxx](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEnableExposurePriority)]
+[!code-cs[EnableExposurePriority](./code/BasicMediaCaptureWin10/cs/MainPage.xaml.cs#SnippetEnableExposurePriority)]
 
-## Xxxxxxx xxxxxx
+## 関連トピック
 
-* [Xxxxxxx xxxxxx xxx xxxxx xxxx XxxxxXxxxxxx](capture-photos-and-video-with-mediacapture.md)
+* [MediaCapture を使った写真とビデオのキャプチャ](capture-photos-and-video-with-mediacapture.md)
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

@@ -1,88 +1,88 @@
 ---
-xx.xxxxxxx: YYXYYYYY-XYXY-YXYY-XYXX-YXYYXYYYXYYY
-xxxxx: Xxxxxx x Xxxxx, xxxxx xxx (XXXX)
-xxxxxxxxxxx: Xxxx xxxxxxxx xxxxxxx xxx xxx xx xxx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX) xxxx X# xx xxxxxx x xxxxxx Xxxxx, xxxxx xxx xxxx xxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xx Xxxxxxx YY.
+ms.assetid: 03A74239-D4B6-4E41-B2FA-6C04F225B844
+title: Create a Hello, world app (XAML)
+description: This tutorial teaches you how to use Extensible Application Markup Language (XAML) with C# to create a simple Hello, world app that targets the Universal Windows Platform (UWP) on Windows 10.
 ---
 
-# Xxxxxx x "Xxxxx, xxxxx" xxx (XXXX)
+# Create a "Hello, world" app (XAML)
 
-Xxxx xxxxxxxx xxxxxxx xxx xxx xx xxx Xxxxxxxxxx Xxxxxxxxxxx Xxxxxx Xxxxxxxx (XXXX) xxxx X# xx xxxxxx x xxxxxx "Xxxxx, xxxxx" xxx xxxx xxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xx Xxxxxxx YY. Xxxx x xxxxxx xxxxxxx xx Xxxxxxxxx Xxxxxx Xxxxxx, xxx xxx xxxxx xx xxx xxxx xxxx xx xxx Xxxxxxx YY xxxxxx. Xxxx xx xxxxx xx xxxxxxxx xx xxx xxxx xxxx xxxxxxx xxxx xx xxxxxxx xxx xxxxxx xxxxxxx.
+This tutorial teaches you how to use Extensible Application Markup Language (XAML) with C# to create a simple "Hello, world" app that targets the Universal Windows Platform (UWP) on Windows 10. With a single project in Microsoft Visual Studio, you can build an app that runs on any Windows 10 device. Here we focus on creating an app that runs equally well on desktop and mobile devices.
 
-**Xxxxxxxxx**   Xxxx xxxxxxxx xx xxx xxx xxxx Xxxxxxxxx Xxxxxx Xxxxxx YYYY xxx Xxxxxxx YY. Xx xxx'x xxxx xxxxxxxxx xxxx xxxxxxx xxxxxxxx.
+**Important**   This tutorial is for use with Microsoft Visual Studio 2015 and Windows 10. It won't work correctly with earlier versions.
 
-Xxxx xxx'xx xxxxx xxx xx:
+Here you'll learn how to:
 
--   Xxxxxx x xxx Xxxxxx Xxxxxx xxxxxxx xxxx xxxxxxx Xxxxxxx YY xxx xxx XXX.
--   Xxx XXXX xxxxxxx xx xxxx xxxxx xxxx.
--   Xxxxxx xxxxx, xxx, xxx xxxxx xxxxx.
--   Xxx xxx xxxxxxx xx xxx xxxxx xxxxxxx xxx xx xxx xxxxx xxxxxxxx xx Xxxxxx Xxxxxx.
--   Xxxxx xxx XX xx xxxxxxxxx xxxxxx xxxxx.
+-   Create a new Visual Studio project that targets Windows 10 and the UWP.
+-   Add XAML content to your start page.
+-   Handle touch, pen, and mouse input.
+-   Run the project on the local desktop and on the phone emulator in Visual Studio.
+-   Adapt the UI to different screen sizes.
 
-## Xxxxxx xxx xxxxx...
-
-
--   Xx'xx xxxxx xx xxxx xxxxx xxxx xxx xxxxx xxx xxx xx xxxxxx x xxxxxx xxxxxxxxx xxx. Xx xx xxxxxxxx xxxxxxxxx xxxx xxx xxxx xxx xxxxxxxxxx xxx xxxxxxxx xxxxxxxxxxx xx [Xxxx'x xxx xx Xxxxxxx YY](https://dev.windows.com/whats-new-windows-10-dev-preview) xxx [Xxxx'x x Xxxxxxxxx Xxxxxxx xxx](whats-a-uwp.md) xxxxxx xxx xxxxx xxxx xxxxxxxx.
--   Xx xxxxxxxx xxxx xxxxxxxx, xxx xxxx Xxxxxxx YY xxx Xxxxxx Xxxxxx YYYY. Xxx [Xxx xxx xx](get-set-up.md) xxx xxxx xxxx.
--   Xx xxxxxx xxx xxxx x xxxxx xxxxxxxxxxxxx xx XXXX xxx xxx xxxxxxxx xx xxx [XXXX xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185595).
--   Xx xxxx xxxxxx xxx'xx xxxxx xxx xxxxxxx xxxxxx xxxxxx xx Xxxxxx Xxxxxx. Xx xxx xxxxxx xxx xxxxxxx xxxxxx, xxx xxx xxxxx xx xx xxx **Xxxxxx** xxxx xx xxxxx xxx **Xxxxx Xxxxxx Xxxxxx** xxxxxxx.
-
-##  Xxxx Y: Xxxxxx x xxx xxxxxxx xx Xxxxxx Xxxxxx
+## Before you start...
 
 
-1.  Xxxxxx Xxxxxx Xxxxxx YYYY.
+-   We're going to jump right into the steps you use to create a simple universal app. So we strongly recommend that you read and understand the overview information in [What's new in Windows 10](https://dev.windows.com/whats-new-windows-10-dev-preview) and [What's a Universal Windows app](whats-a-uwp.md) before you start this tutorial.
+-   To complete this tutorial, you need Windows 10 and Visual Studio 2015. See [Get set up](get-set-up.md) for more info.
+-   We assume you have a basic understanding of XAML and the concepts in the [XAML overview](https://msdn.microsoft.com/library/windows/apps/Mt185595).
+-   We also assume you're using the default window layout in Visual Studio. If you change the default layout, you can reset it in the **Window** menu by using the **Reset Window Layout** command.
 
-   Xxx Xxxxxx Xxxxxx YYYY Xxxxx xxxx xxxxxxx. (Xxxx xxx xx, xx'xx xxxxx xx Xxxxxx Xxxxxx YYYY xxxxxx xx Xxxxxx Xxxxxx .)
-
-2.  Xx xxx **Xxxx** xxxx, xxxxxx **Xxx** > **Xxxxxxx**.
-
-   Xxx **Xxx Xxxxxxx** xxxxxx xxxxxxx. Xxx xxxx xxxx xx xxx xxxxxx xxxx xxx xxxxxx xxx xxxx xx xxxxxxxxx xx xxxxxxx.
-
-3.  Xx xxx xxxx xxxx, xxxxxx **Xxxxxxxxx > Xxxxxxxxx > Xxxxxx X# > Xxxxxxx**, xxxx xxxx xxx **Xxxxxxxxx** xxxxxxxx xxxxx. Xxx xxxxxx'x xxxxxx xxxx xxxxxxxx x xxxx xx xxxxxxx xxxxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxxx.
-
-   ![Xxx Xxx Xxxxxxx xxxxxx ](images/newproject-cs.png)
-
-4.  Xx xxx xxxxxx xxxx, xxxxxx xxx **Xxxxx Xxx (Xxxxxxxxx Xxxxxxx)** xxxxxxxx.
-
-   Xxx **Xxxxx Xxx** xxxxxxxx xxxxxxx x xxxxxxx XXX xxx xxxx xxxxxxxx xxx xxxx, xxx xxxxxxxx xx xxxx-xxxxxxxxx xxxxxxxx xx xxxx. Xxx xxx xxxxxxxx xx xxx xxx xxxx xxx xxxxxx xx xxxx xxxxxxxx.
-
-5.  Xx xxx **Xxxx** xxxx xxx, xxxx "XxxxxXxxxx".
-6.  Xxxxx **XX** xx xxxxxx xxx xxxxxxx.
-
-   Xxxxxx Xxxxxx xxxxxxx xxxx xxxxxxx xxx xxxxxxxx xx xx xxx **Xxxxxxxx Xxxxxxxx**.
-
-   ![Xxxxxx Xxxxxx Xxxxxxxx Xxxxxxxx xxx xxx XxxxxXxxxx xxxxxxx](images/solutionexplorer-cs.png)
-
-Xxxxxxxx xxx **Xxxxx Xxx** xx x xxxxxxx xxxxxxxx, xx xxxxx xxxxxxxx x xxx xx xxxxx:
-
--   X xxxxxxxx xxxx (Xxxxxxx.xxxxxxxxxxxx) xxxx xxxxxxxxx xxxx xxx (xxx xxxx, xxxxxxxxxxx, xxxx, xxxxx xxxx, xxx xx xx) xxx xxxxx xxx xxxxx xxxx xxxx xxx xxxxxxxx.
--   X xxx xx xxxx xxxxxx (Xxxxxx/XxxxxxYYYxYYYXxxx.xxxxx-YYY.xxx, Xxxxxx/XxxxxxYYxYYXxxx.xxxxx-YYY.xxx, xxx Xxxxxx/XxxxYYYxYYYXxxx.xxxxx-YYY.xxx)xx xxxxxxx xx xxx xxxxx xxxx.
--   Xx xxxxx (Xxxxxx/XxxxxXxxx.xxx) xx xxxxxxxxx xxxx xxx xx xxx Xxxxxxx Xxxxx.
--   X xxxxxx xxxxxx (Xxxxxx/XxxxxxXxxxxx.xxxxx-YYY.xxx) xx xxxxxxx xxxx xxxx xxx xxxxxx.
--   XXXX xxx xxxx xxxxx xxx xxx xxx (Xxx.xxxx xxx Xxx.xxxx.xx).
--   X xxxxx xxxx (XxxxXxxx.xxxx) xxx xx xxxxxxxxxxxx xxxx xxxx (XxxxXxxx.xxxx.xx) xxxx xxx xxxx xxxx xxx xxxxxx.
-
-Xxxxx xxxxx xxx xxxxxxxxx xx xxx XXX xxxx xxxxx X#. Xxxxx xxxxxxx xxxx xxx xxxxxx xx Xxxxxx Xxxxxx xxxxxxxx xxxx.
-
-## Xxxx Y: Xxxxxx xxxx xxxxx xxxx
+##  Step 1: Create a new project in Visual Studio
 
 
-### Xxxx'x xx xxx xxxxx?
+1.  Launch Visual Studio 2015.
 
-Xx xxxx xxx xxxx x xxxx xx xxxx xxxxxxx, xxxxxx-xxxxx xxx xxxx xx xxx **Xxxxxxxx Xxxxxxxx**. Xx xxxxxxx, xxx xxx xxxxxx x XXXX xxxx xxxx xxxx x xxxxxx xx xxx xxx xxxxxxxxxx xxxx xxxx. XXXX xxxxx xxxx xx x xxxxx xxxx xxxx xxxxx xxxx xxx xxxxxx xxxxxxx xxx xxx XXXX xxxxxx.
+   The Visual Studio 2015 Start page appears. (From now on, we'll refer to Visual Studio 2015 simply as Visual Studio .)
 
-Xx xxxx xxxxxxxx, xxx xxxx xxxx xxxx x xxx xx xxx xxxxx xxxxxx xxxxxxxxxx: Xxx.xxxx, XxxxXxxx.xxxx, xxx XxxxXxxx.xxxx.xx.
+2.  On the **File** menu, select **New** > **Project**.
 
-### Xxx.xxxx xxx Xxx.xxxx.xx
+   The **New Project** dialog appears. The left pane of the dialog lets you select the type of templates to display.
 
-Xxx.xxxx xx xxxxx xxx xxxxxxx xxxxxxxxx xxxx xxx xxxx xxxxxx xxx xxx. Xxx.xxxx.xx xx xxx xxxx-xxxxxx xxxx xxx Xxx.xxxx. Xxxx-xxxxxx xx xxx xxxx xxxx xx xxxxxx xxxx xxx XXXX xxxx'x xxxxxxx xxxxx. Xxxxxxxx, xxx XXXX xxx xxxx-xxxxxx xxxx x xxxxxxxx xxxxx. Xxx.xxxx.xx xx xxx xxxxx xxxxx xxx xxxx xxx. Xxxx xxx xxxx-xxxxxx xxxxx, xx xxxxxxxx x xxxxxxxxxxx xxxx xxxxx xxx `InitializeComponent` xxxxxx. Xxx xxx'x xxxxx xxx `InitializeComponent` xxxxxx. Xx'x xxxxxxxxx xx Xxxxxx Xxxxxx, xxx xxx xxxx xxxxxxx xx xx xxxxxxxxxx xxx xxxxxxxx xxxxxxxx xx xxx XXXX xxxx. Xxx.xxxx.xx xxxx xxxxxxxx xxxxxxx xx xxxxxx xxxxxxxxxx xxx xxxxxxxxxx xx xxx xxx.
+3.  In the left pane, expand **Installed > Templates > Visual C# > Windows**, then pick the **Universal** template group. The dialog's center pane displays a list of project templates for Universal Windows Platform (UWP) apps.
 
-### XxxxXxxx.xxxx
+   ![The New Project window ](images/newproject-cs.png)
 
-Xx XxxxXxxx.xxxx xxx xxxxxx xxx XX xxx xxxx xxx. Xxx xxx xxx xxxxxxxx xxxxxxxx xxxxx XXXX xxxxxx, xx xxx xxx xxx xxx xxxxxx xxxxx xxxxxxxx xx Xxxxxx Xxxxxx. XxxxXxxx.xxxx.xx xx xxx xxxx-xxxxxx xxxx xxx XxxxXxxx.xxxx. Xx'x xxxxx xxx xxx xxxx xxx xxxxx xxx xxxxx xxxxxxxx.
+4.  In the center pane, select the **Blank App (Universal Windows)** template.
 
-Xxxxxxxx xxxxx xxx xxxxx xxxxxx x xxx xxxxx xxxxxx `MainPage`, xxxxx xxxxxxxx xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR227503), xx xxx `HelloWorld` xxxxxxxxx.
+   The **Blank App** template creates a minimal UWP app that compiles and runs, but contains no user-interface controls or data. You add controls to the app over the course of this tutorial.
 
-XxxxXxxx.xxxx
+5.  In the **Name** text box, type "HelloWorld".
+6.  Click **OK** to create the project.
+
+   Visual Studio creates your project and displays it in the **Solution Explorer**.
+
+   ![Visual Studio Solution Explorer for the HelloWorld project](images/solutionexplorer-cs.png)
+
+Although the **Blank App** is a minimal template, it still contains a lot of files:
+
+-   A manifest file (Package.appxmanifest) that describes your app (its name, description, tile, start page, and so on) and lists the files that your app contains.
+-   A set of logo images (Assets/Square150x150Logo.scale-200.png, Assets/Square44x44Logo.scale-200.png, and Assets/Wide310x150Logo.scale-200.png)to display in the start menu.
+-   An image (Assets/StoreLogo.png) to represent your app in the Windows Store.
+-   A splash screen (Assets/SplashScreen.scale-200.png) to display when your app starts.
+-   XAML and code files for the app (App.xaml and App.xaml.cs).
+-   A start page (MainPage.xaml) and an accompanying code file (MainPage.xaml.cs) that run when your app starts.
+
+These files are essential to all UWP apps using C#. Every project that you create in Visual Studio contains them.
+
+## Step 2: Modify your start page
+
+
+### What's in the files?
+
+To view and edit a file in your project, double-click the file in the **Solution Explorer**. By default, you can expand a XAML file just like a folder to see its associated code file. XAML files open in a split view that shows both the design surface and the XAML editor.
+
+In this tutorial, you work with just a few of the files listed previously: App.xaml, MainPage.xaml, and MainPage.xaml.cs.
+
+### App.xaml and App.xaml.cs
+
+App.xaml is where you declare resources that are used across the app. App.xaml.cs is the code-behind file for App.xaml. Code-behind is the code that is joined with the XAML page's partial class. Together, the XAML and code-behind make a complete class. App.xaml.cs is the entry point for your app. Like all code-behind pages, it contains a constructor that calls the `InitializeComponent` method. You don't write the `InitializeComponent` method. It's generated by Visual Studio, and its main purpose is to initialize the elements declared in the XAML file. App.xaml.cs also contains methods to handle activation and suspension of the app.
+
+### MainPage.xaml
+
+In MainPage.xaml you define the UI for your app. You can add elements directly using XAML markup, or you can use the design tools provided by Visual Studio. MainPage.xaml.cs is the code-behind page for MainPage.xaml. It's where you add your app logic and event handlers.
+
+Together these two files define a new class called `MainPage`, which inherits from [**Page**](https://msdn.microsoft.com/library/windows/apps/BR227503), in the `HelloWorld` namespace.
+
+MainPage.xaml
 
 ```xml
     <Page
@@ -100,7 +100,7 @@ XxxxXxxx.xxxx
 </Page>
 ```
 
-XxxxXxxx.xxxx.xx
+MainPage.xaml.cs
 
 ```csharp
 using Windows.UI.Xaml;
@@ -121,16 +121,16 @@ namespace HelloWorld
 }
 ```
 
-### Xxxxxx xxx xxxxx xxxx
+### Modify the start page
 
-Xxx, xxx'x xxx xxxx xxxxxxx xx xxx xxx.
+Now, let's add some content to the app.
 
-**Xx xxxxxx xxx xxxxx xxxx**
+**To modify the start page**
 
-1.  Xxxxxx-xxxxx XxxxXxxx.xxxx xx **Xxxxxxxx Xxxxxxxx** xx xxxx xx.
-2.  Xx xxx XXXX xxxxxx, xxx xxx xxxxxxxx xxx xxx XX.
+1.  Double-click MainPage.xaml in **Solution Explorer** to open it.
+2.  In the XAML editor, add the controls for the UI.
 
-   Xx xxx xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704), xxx xxxx XXXX. Xx xxxxxxxx x [**XxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209635) xxxx x xxxxx [**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209652), x **XxxxXxxxx** xxxx xxxx xxx xxxx'x xxxx, x [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/BR209683) xxxxxxx xx xxxxxx xxx xxxx'x xxxx, x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209265), xxx xxxxxxx **XxxxXxxxx** xx xxxx x xxxxxxxx. Xxxx xx xxxxx xxxxxxxx xxxx xxxxx xx xxxx xxx xxx xxxxx xx xxxx xxxxx xx xxxx xxxx.
+   In the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704), add this XAML. It contains a [**StackPanel**](https://msdn.microsoft.com/library/windows/apps/BR209635) with a title [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652), a **TextBlock** that asks the user's name, a [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) element to accept the user's name, a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265), and another **TextBlock** to show a greeting. Some of these controls have names so that you can refer to them later in your code.
 
 ```xml    
     <StackPanel x:Name="contentPanel" Margin="8,32,0,0">
@@ -146,117 +146,117 @@ Xxx, xxx'x xxx xxxx xxxxxxx xx xxx xxx.
 
     The controls that you added in the XAML editor show up in the design view.
 
-## Xxxx Y: Xxxxx xxx xxx
+## Step 3: Start the app
 
 
-Xx xxxx xxxxx, xxx'xx xxxxxxx x xxxx xxxxxx xxx. Xxxx xx x xxxx xxxx xx xxxxx, xxxxxx, xxx xxxxxx xxxx xxx xxx xxx xxxx xx xxxxx xxxx. Xxx xxx xxxxx xxxx xxx xx xxx xxxxx xxxxxxx, xx x xxxxxxxxx xx xxxxxxxx, xx xx x xxxxxx xxxxxx. Xxxx'x xxx xxxxxx xxxxxx xxxx xx Xxxxxx Xxxxxx.
+At this point, you've created a very simple app. This is a good time to build, deploy, and launch your app and see what it looks like. You can debug your app on the local machine, in a simulator or emulator, or on a remote device. Here's the target device menu in Visual Studio.
 
-![Xxxx-xxxx xxxx xx xxxxxx xxxxxxx xxx xxxxxxxxx xxxx xxx](images/uap-debug.png)
+![Drop-down list of device targets for debugging your app](images/uap-debug.png)
 
-### Xxxxx xxx xxx xx x Xxxxxxx xxxxxx
+### Start the app on a Desktop device
 
-Xx xxxxxxx, xxx xxx xxxx xx xxx xxxxx xxxxxxx. Xxx xxxxxx xxxxxx xxxx xxxxxxxx xxxxxxx xxxxxxx xxx xxxxxxxxx xxxx xxx xx xxxxxxx xxxx xxx xxxxxxx xxxxxx xxxxxx.
+By default, the app runs on the local machine. The target device menu provides several options for debugging your app on devices from the desktop device family.
 
--   **Xxxxxxxxx**
--   **Xxxxx Xxxxxxx**
--   **Xxxxxx Xxxxxxx**
+-   **Simulator**
+-   **Local Machine**
+-   **Remote Machine**
 
-**Xx xxxxx xxxxxxxxx xx xxx xxxxx xxxxxxx**
+**To start debugging on the local machine**
 
-1.  Xx xxx xxxxxx xxxxxx xxxx (![Xxxxx xxxxxxxxx xxxx](images/startdebug-full.png)) xx xxx **Xxxxxxxx** xxxxxxx, xxxx xxxx xxxx **Xxxxx Xxxxxxx** xx xxxxxxxx. (Xx'x xxx xxxxxxx xxxxxxxxx.)
-2.  Xxxxx xxx **Xxxxx Xxxxxxxxx** xxxxxx (![Xxxxx xxxxxxxxx xxxxxx](images/startdebug-sm.png)) xx xxx xxxxxxx.
+1.  In the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, make sure that **Local Machine** is selected. (It's the default selection.)
+2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) on the toolbar.
 
-   –xx–
+   –or–
 
-   Xxxx xxx **Xxxxx** xxxx, xxxxx **Xxxxx Xxxxxxxxx**.
+   From the **Debug** menu, click **Start Debugging**.
 
-   –xx–
+   –or–
 
-   Xxxxx XY.
+   Press F5.
 
-Xxx xxx xxxxx xx x xxxxxx, xxx x xxxxxxx xxxxxx xxxxxx xxxxxxx xxxxx. Xxx xxxxxx xxxxxx xx xxxxxxx xx xx xxxxx (XxxxxxXxxxxx.xxx) xxx x xxxxxxxxxx xxxxx (xxxxxxxxx xx xxxx xxx'x xxxxxxxx xxxx).
+The app opens in a window, and a default splash screen appears first. The splash screen is defined by an image (SplashScreen.png) and a background color (specified in your app's manifest file).
 
-Xxx xxxxxx xxxxxx xxxxxxxxxx, xxx xxxx xxxx xxx xxxxxxx. Xx xxxxx xxxx xxxx.
+The splash screen disappears, and then your app appears. It looks like this.
 
-![Xxxxxxx xxx xxxxxx](images/helloworld-1-cs.png)
+![Initial app screen](images/helloworld-1-cs.png)
 
-Xxxxx xxx Xxxxxxx xxx xx xxxx xxx **Xxxxx** xxxx, xxxx xxxx xxx xxxx. Xxxxxx xxxx xxxxxxxxx xxx xxx xxxxxxx xxxx xxx xxxx xx xxx **Xxxxx** xxxx. Xx xxx xxx xxx xxxxx (xxx xx xxxxxxxxx xxxx), xxx xx xxxxx xxx xxxx xx xxx **Xxxxx** xxxx.
+Press the Windows key to open the **Start** menu, then show all apps. Notice that deploying the app locally adds its tile to the **Start** menu. To run the app again (not in debugging mode), tap or click its tile in the **Start** menu.
 
-Xx xxxxx'x xx xxxx—xxx—xxx xxxxxxxxxxxxxxx, xxx'xx xxxxx xxxx xxxxx XXX xxx!
+It doesn't do much—yet—but congratulations, you've built your first UWP app!
 
-**Xx xxxx xxxxxxxxx**
+**To stop debugging**
 
--   Xxxxx xxx **Xxxx Xxxxxxxxx** xxxxxx (![Xxxx xxxxxxxxx xxxxxx](images/stopdebug.png)) xx xxx xxxxxxx.
+-   Click the **Stop Debugging** button (![Stop debugging button](images/stopdebug.png)) in the toolbar.
 
-   –xx–
+   –or–
 
-   Xxxx xxx **Xxxxx** xxxx, xxxxx **Xxxx xxxxxxxxx**.
+   From the **Debug** menu, click **Stop debugging**.
 
-   –xx–
+   –or–
 
-   Xxxxx xxx xxx xxxxxx.
+   Close the app window.
 
-### Xxxxx xxx xxx xx x xxxxxx xxxxxx xxxxxxxx
+### Start the app on a mobile device emulator
 
-Xxxx xxx xxxx xx xxx Xxxxxxx YY xxxxxx, xx xxx’x xxx xxx xx xxxxx xx x Xxxxxxx Xxxxx.
+Your app runs on any Windows 10 device, so let’s see how it looks on a Windows Phone.
 
-Xx xxxxxxxx xx xxx xxxxxxx xx xxxxx xx x xxxxxxx xxxxxx, Xxxxxx Xxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxx xxx xxxxxxxxx xxxx xxx xx x xxxxxxxx xxxxxx xxxxxx xxxxxxxxx xx xxx xxxxxxxx, xx xx x xxxxxx xxxxxx xxxxxxxx. Xxx xxx xxxxxx xxxxx xxxxxxxxx xxx xxxxxxx xxxx xxxxxxxxx xxxxxx xxx xxxxxxx xxxxxxxxxxxxxx.
+In addition to the options to debug on a desktop device, Visual Studio provides options for deploying and debugging your app on a physical mobile device connected to the computer, or on a mobile device emulator. You can choose among emulators for devices with different memory and display configurations.
 
--   **Xxxxxx**
--   **Xxxxxxxx <SDK version> XXXX Y xxxx YYYXX**
--   **Xxxxxxxx <SDK version> XXXX Y xxxx YXX**
--   xxx... (Xxxxxxx xxxxxxxxx xx xxxxx xxxxxxxxxxxxxx)
+-   **Device**
+-   **Emulator <SDK version> WVGA 4 inch 512MB**
+-   **Emulator <SDK version> WVGA 4 inch 1GB**
+-   etc... (Various emulators in other configurations)
 
-Xx'x x xxxx xxxx xx xxxx xxxx xxx xx x xxxxxx xxxx x xxxxx xxxxxx xxx xxxxxxx xxxxxx, xx xxx xxx **Xxxxxxxx YY.Y.YYYYY.Y XXXX Y xxxx YYYXX** xxxxxx.
-**Xx xxxxx xxxxxxxxx xx x xxxxxx xxxxxx xxxxxxxx**
+It's a good idea to test your app on a device with a small screen and limited memory, so use the **Emulator 10.0.10240.0 WVGA 4 inch 512MB** option.
+**To start debugging on a mobile device emulator**
 
-1.  Xx xxx xxxxxx xxxxxx xxxx (![Xxxxx xxxxxxxxx xxxx](images/startdebug-full.png)) xx xxx **Xxxxxxxx** xxxxxxx, xxxx **Xxxxxxxx YY.Y.YYYYY.Y XXXX Y xxxx YYYXX**.
-2.  Xxxxx xxx **Xxxxx Xxxxxxxxx** xxxxxx (![Xxxxx xxxxxxxxx xxxxxx](images/startdebug-sm.png)) xx xxx xxxxxxx.
+1.  In the target device menu (![Start debugging menu](images/startdebug-full.png)) on the **Standard** toolbar, pick **Emulator 10.0.10240.0 WVGA 4 inch 512MB**.
+2.  Click the **Start Debugging** button (![Start debugging button](images/startdebug-sm.png)) in the toolbar.
 
-   –xx–
+   –or–
 
-   Xxxx xxx **Xxxxx** xxxx, xxxxx **Xxxxx Xxxxxxxxx**.
+   From the **Debug** menu, click **Start Debugging**.
 
-   –xx–
+   –or–
 
-   Xxxxx XY.
+   Press F5.
 
-Xxxxxx Xxxxxx xxxxxx xxx xxxxxxxx xxxxxxxx xxx xxxx xxxxxxx xxx xxxxxx xxxx xxx. Xx xxx xxxxxx xxxxxx xxxxxxxx, xxx xxx xxxxx xxxx xxxx.
+Visual Studio starts the selected emulator and then deploys and starts your app. On the mobile device emulator, the app looks like this.
 
-![Xxxxxxx xxx xxxxxx xx xxxxxx xxxxxx](images/helloworld-1-cs-phone.png)
+![Initial app screen on mobile device](images/helloworld-1-cs-phone.png)
 
-Xxx xxxxx xxxxx xxx'xx xxxxxx xx xxx xxxxxx xx xxxxxx xxx xxx xxxxxxx xxxxxx xx x xxxxxx xxxxxx. Xxxxx xx xxxx xxxxxxxx, xxx'xx xxxxx xxx xx xxxxx xxx XX xx xxxxxxxxx xxxxxx xxxxx xx xxxx xxx xxxxxx xxxxx xxxx.
+The first thing you'll notice is the button is pushed off the smaller screen of a mobile device. Later in this tutorial, you'll learn how to adapt the UI to different screen sizes so your app always looks good.
 
-Xxx xxxxx xxxx xxxxxx xxxx xxx xxx xxxx xx xxx [**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/BR209683), xxx xxxxx xxx, xxxxxxxx xx xxxxxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209265) xxxxx'x xx xxxxxxxx. Xx xxx xxxx xxxxx, xxx xxxxxx xx xxxxx xxxxxxx xxx xxx xxxxxx'x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227737) xxxxx xx xxxxxxx x xxxxxxxxxxxx xxxxxxxx. Xxx xxx xxx xxxxx xxxxxxx xxxx xx xxxx XxxxXxxx.xxxx.xx xxxx.
+You might also notice that you can type in the [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683), but right now, clicking or tapping the [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) doesn't do anything. In the next steps, you create an event handler for the button's [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event to display a personalized greeting. You add the event handler code to your MainPage.xaml.cs file.
 
-## Xxxx Y: Xxxxxx xx xxxxx xxxxxxx
+## Step 4: Create an event handler
 
 
-XXXX xxxxxxxx xxx xxxx xxxxxxxx xxxx xxxxxxx xxxxxx xxxxx. Xxxxx xxxxx xxxxxxxx xxxx xxx xxx xxxxxxxxxxx xx xxxx xxxx xxxxxx xx xxxxxxxx xx xxx xxxxx. Xxx xxx xxxx xxxx xx xxxxxxx xx xxx xxxxx xx xx xxxxx xxxxxxx xxxxxx. Xxx xx xxx xxxx xxxxxx xxxxxx xx xxxx xxxx xx x xxxx xxxxxxxx x [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209265).
+XAML elements can send messages when certain events occur. These event messages give you the opportunity to take some action in response to the event. You put your code to respond to the event in an event handler method. One of the most common events in many apps is a user clicking a [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265).
 
-Xxx'x xxxxxx xx xxxxx xxxxxxx xxx xxxx xxxxxx'x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227737) xxxxx. Xxx xxxxx xxxxxxx xxxx xxx xxx xxxx'x xxxx xxxx xxx `nameInput`[**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/BR209683) xxxxxxx xxx xxx xx xx xxxxxx x xxxxxxxx xx xxx `greetingOutput`[**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209652).
+Let's create an event handler for your button's [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event. The event handler will get the user's name from the `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) control and use it to output a greeting to the `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652).
 
-### Xxxxx xxxxxx xxxx xxxx xxx xxxxx, xxxxx, xxx xxx xxxxx
+### Using events that work for touch, mouse, and pen input
 
-Xxxx xxxxxx xxxxxx xxx xxxxxx? Xxxxxxx xxxx xxx xxx xx x xxxxxxx xx xxxxxxx, xxxxxx xxxx Xxxxxxx Xxxxx xxxx xxxx xxxxx xxxxx xx xxxx. Xxxx xxx xxxx xxxx xx xxxx xx xxxxxx xxxxx xxxx x xxxxx xx x xxxxxx. Xxxxxxxxxxx, xxxxxx xxxx xx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227737) xxx [**XxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208922) xxx xxxxxx-xxxxxxxxxxx. Xx xxx'xx xxxxxxxx xxxx Xxxxxxxxx .XXX xxxxxxxxxxx, xxx xxxxx xxxx xxxx xxxxxxxx xxxxxx xxx xxxxx, xxxxx, xxx xxxxxx xxxxx, xxxx **XxxxxXxxx**, **XxxxxXxxx**, xxx **XxxxxxXxxx**. Xx Xxxxxxx Xxxxx xxxx, xxxxx xxxxxxxx xxxxxx xxx xxxxxxxx xxxx x xxxxxx [**XxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208970) xxxxx xxxx xxxxx xxxxxxx xxxx xxx xxxxx, xxxxx, xxx xxxxxx xxxxx.
+What events should you handle? Because they can run on a variety of devices, design your Windows Store apps with touch input in mind. Your app must also be able to handle input from a mouse or a stylus. Fortunately, events such as [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) and [**DoubleTapped**](https://msdn.microsoft.com/library/windows/apps/BR208922) are device-independent. If you're familiar with Microsoft .NET programming, you might have seen separate events for mouse, touch, and stylus input, like **MouseMove**, **TouchMove**, and **StylusMove**. In Windows Store apps, these separate events are replaced with a single [**PointerMoved**](https://msdn.microsoft.com/library/windows/apps/BR208970) event that works equally well for touch, mouse, and stylus input.
 
-**Xx xxx xx xxxxx xxxxxxx**
+**To add an event handler**
 
-1.  Xx XXXX xx xxxxxx xxxx, xxxxxx xxx "Xxx Xxxxx" [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209265) xxxx xxx xxxxx xx XxxxXxxx.xxxx.
-2.  Xx xxx **Xxxxxxxxxx Xxxxxx**, xxxxx xxx Xxxxxx xxxxxx (![Xxxxxx xxxxxx](images/eventsbutton.png)).
-3.  Xxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227737) xxxxx xx xxx xxx xx xxx xxxxx xxxx. Xx xxx xxxx xxx xxx xxx xxxxx, xxxx xxx xxxx xx xxx xxxxxxxx xxxx xxxxxxx xxx **Xxxxx** xxxxx. Xxx xxxx xxxxxxx, xxxx "Xxxxxx\_Xxxxx".
+1.  In XAML or design view, select the "Say Hello" [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) that you added to MainPage.xaml.
+2.  In the **Properties Window**, click the Events button (![Events button](images/eventsbutton.png)).
+3.  Find the [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event at the top of the event list. In the text box for the event, type the name of the function that handles the **Click** event. For this example, type "Button\_Click".
 
-   ![Xxxxxx xxxx xx xxx xxxxxxxxxx xxxxxx](images/xaml-hw-event.png)
+   ![Events list in the properties window](images/xaml-hw-event.png)
 
-4.  Xxxxx Xxxxx. Xxx xxxxx xxxxxxx xxxxxx xx xxxxxxx xxx xxxxxx xx xxx xxxx xxxxxx xx xxx xxx xxx xxxx xx xx xxxxxxxx xxxx xxx xxxxx xxxxxx.
+4.  Press Enter. The event handler method is created and opened in the code editor so you can add code to be executed when the event occurs.
 
-    Xx xxx XXXX xxxxxx, xxx XXXX xxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209265) xx xxxxxxx xx xxxxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227737) xxxxx xxxxxxx xxxx xxxx.
+    In the XAML editor, the XAML for the [**Button**](https://msdn.microsoft.com/library/windows/apps/BR209265) is updated to declare the [**Click**](https://msdn.microsoft.com/library/windows/apps/BR227737) event handler like this.
 
 ```xml   
    <Button x:Name="inputButton" Content="Say &amp;quot;Hello&amp;quot;" Click="Button_Click"/>
 ```    
 
-5.  Xxx xxxx xx xxx xxxxx xxxxxxx xxxx xxx xxxxxxx xx xxx xxxx-xxxxxx xxxx. Xx xxx xxxxx xxxxxxx, xxxxxxxx xxx xxxx'x xxxx xxxx xxx `nameInput`[**XxxxXxx**](https://msdn.microsoft.com/library/windows/apps/BR209683) xxxxxxx xxx xxx xx xx xxxxxx x xxxxxxxx. Xxx xxx `greetingOutput`[**XxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209652) xx xxxxxxx xxx xxxxxx.
+5.  Add code to the event handler that you created in the code-behind page. In the event handler, retrieve the user's name from the `nameInput` [**TextBox**](https://msdn.microsoft.com/library/windows/apps/BR209683) control and use it to create a greeting. Use the `greetingOutput` [**TextBlock**](https://msdn.microsoft.com/library/windows/apps/BR209652) to display the result.
     
 ```csharp    
     private void Button_Click(object sender, RoutedEventArgs e)
@@ -265,16 +265,16 @@ Xxxx xxxxxx xxxxxx xxx xxxxxx? Xxxxxxx xxxx xxx xxx xx x xxxxxxx xx xxxxxxx, xxx
     }
 ```    
 
-6.  Xxxxx xxx xxx xx xxx xxxxx xxxxxxx. Xxxx xxx xxxxx xxxx xxxx xx xxx xxxx xxx xxx xxxxx xxx xxxxxx, xxx xxx xxxxxxxx x xxxxxxxxxxxx xxxxxxxx.
+6.  Debug the app on the local machine. When you enter your name in the text box and click the button, the app displays a personalized greeting.
 
-## Xxxx Y: Xxxxx xxx XX xx xxxxxxxxx xxxxxx xxxxx
+## Step 5: Adapt the UI to different window sizes
 
 
-Xxx xx'xx xxxx xxx XX xxxxx xx xxxxxxxxx xxxxxx xxxxx xx xx xxxxx xxxx xx xxxxxx xxxxxxx. Xx xx xxxx, xxx xxx x [**XxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209021) xxx xxx xxxxxxxxxx xxxx xxx xxxxxxx xxx xxxxxxxxx xxxxxx xxxxxx.
+Now we'll make the UI adapt to different screen sizes so it looks good on mobile devices. To do this, you add a [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) and set properties that are applied for different visual states.
 
-**Xx xxxxxx xxx XX xxxxxx**
+**To adjust the UI layout**
 
-1.  Xx xxx XXXX xxxxxx, xxx xxxx xxxxx xx XXXX xxxxx xxx xxxxxxx xxx xx xxx xxxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704) xxxxxxx.
+1.  In the XAML editor, add this block of XAML after the opening tag of the root [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) element.
 
 ```xml    
     <VisualStateManager.VisualStateGroups>
@@ -297,22 +297,26 @@ Xxx xx'xx xxxx xxx XX xxxxx xx xxxxxxxxx xxxxxx xxxxx xx xx xxxxx xxxx xx xxxxxx
     </VisualStateManager.VisualStateGroups>
 ```    
 
-2.  Xxxxx xxx xxx xx xxx xxxxx xxxxxxx. Xxxxxx xxxx xxx XX xxxxx xxx xxxx xx xxxxxx xxxxxx xxx xxxxxx xxxx xxxxxxxx xxxx YYY xxxxxx.
-3.  Xxxxx xxx xxx xx xxx xxxxxx xxxxxx xxxxxxxx. Xxxxxx xxxx xxx XX xxxx xxx xxxxxxxxxx xxx xxxxxxx xx xxx `narrowState` xxx xxxxxxx xxxxxxxxx xx xxx xxxxx xxxxxx.
+2.  Debug the app on the local machine. Notice that the UI looks the same as before unless the window gets narrower than 641 pixels.
+3.  Debug the app on the mobile device emulator. Notice that the UI uses the properties you defined in the `narrowState` and appears correctly on the small screen.
 
-![Xxxxxx xxx xxxxxx](images/helloworld-2-cs-phone.png)
+![Mobile app screen](images/helloworld-2-cs-phone.png)
 
-Xx xxx'xx xxxx x [**XxxxxxXxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209021) xx xxxxxxxx xxxxxxxx xx XXXX, xxx xxxxx xxxxxx xxxx xxx XXXX xxxx xxxx x xxxxxxxxxx xxxxxx.
+If you've used a [**VisualStateManager**](https://msdn.microsoft.com/library/windows/apps/BR209021) in previous versions of XAML, you might notice that the XAML here uses a simplified syntax.
 
-Xxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209007) xxxxx `wideState` xxx xx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn890382) xxxx xxx [**XxxXxxxxxXxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) xxxxxxxx xxx xx YYY. Xxxx xxxxx xxxx xxx xxxxx xx xx xx xxxxxxx xxxx xxxx xxx xxxxxx xxxxx xx xxx xxxx xxxx xxx xxxxxxx xx YYY xxxxxx. Xxx xxx'x xxxxxx xxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208817) xxxxxxx xxx xxxx xxxxx, xx xx xxxx xxx xxxxxx xxxxxxxxxx xxx xxxxxxx xx xxx XXXX xxx xxx xxxx xxxxxxx.
+The [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007) named `wideState` has an [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) with its [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) property set to 641. This means that the state is to be applied only when the window width is not less than the minimum of 641 pixels. You don't define any [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) objects for this state, so it uses the layout properties you defined in the XAML for the page content.
 
-Xxx xxxxxx [**XxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/BR209007), `narrowState`, xxx xx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn890382) xxxx xxx [**XxxXxxxxxXxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) xxxxxxxx xxx xx Y. Xxxx xxxxx xx xxxxxxx xxxx xxx xxxxxx xxxxx xx xxxxxxx xxxx Y, xxx xxxx xxxx YYY xxxxxx. (Xx YYY xxxxxx, xxx `wideState` xx xxxxxxx.) Xx xxxx xxxxx, xxx xx xxxxxx xxxx [**Xxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208817) xxxxxxx xx xxxxxx xxx xxxxxx xxxxxxxxxx xx xxxxxxxx xx xxx XX:
+The second [**VisualState**](https://msdn.microsoft.com/library/windows/apps/BR209007), `narrowState`, has an [**AdaptiveTrigger**](https://msdn.microsoft.com/library/windows/apps/Dn890382) with its [**MinWindowWidth**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.adaptivetrigger.minwindowwidth) property set to 0. This state is applied when the window width is greater than 0, but less than 641 pixels. (At 641 pixels, the `wideState` is applied.) In this state, you do define some [**Setter**](https://msdn.microsoft.com/library/windows/apps/BR208817) objects to change the layout properties of controls in the UI:
 
--   Xxx xxxxxx xxx [**Xxxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) xx xxx `inputPanel` xxxxxxx xxxx **Xxxxxxxxxx** xx **Xxxxxxxx**.
--   Xxx xxx x xxx xxxxxx xx Y xx xxx `inputButton` xxxxxxx.
+-   You change the [**Orientation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.controls.stackpanel.orientation) of the `inputPanel` element from **Horizontal** to **Vertical**.
+-   You add a top margin of 4 to the `inputButton` element.
 
-## Xxxxxxx
+## Summary
 
 
-Xxxxxxxxxxxxxxx, xxx'xx xxxxxxx xxxx xxxxx xxx xxx Xxxxxxx YY xxx xxx XXX!
+Congratulations, you've created your first app for Windows 10 and the UWP!
+
+
 <!--HONumber=Mar16_HO1-->
+
+

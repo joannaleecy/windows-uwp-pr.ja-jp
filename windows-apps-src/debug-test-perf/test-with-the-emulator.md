@@ -1,207 +1,207 @@
 ---
-xx.xxxxxxx: YYYYXXYX-YXYY-YYYX-YYXY-YYXYYXYYYYXY
-xxxxx: Xxxx xxxx xxx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx YY Xxxxxx
-xxxxxxxxxxx: Xxxxxxxx xxxx-xxxxx xxxxxxxxxxx xxxx x xxxxxx xxx xxxx xxx xxxxxxxx xx xxxx xxx xx xxxxx xxx xxxxx xxxxxxxx xxxx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx YY Xxxxxx.
+ms.assetid: 7234DD5F-8E86-424E-99A0-93D01F1311F2
+title: Test with the Microsoft Emulator for Windows 10 Mobile
+description: Simulate real-world interaction with a device and test the features of your app by using the tools included with Microsoft Emulator for Windows 10 Mobile.
 ---
-# Xxxx xxxx xxx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx YY Xxxxxx
+# Test with the Microsoft Emulator for Windows 10 Mobile
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxxxx xxxx-xxxxx xxxxxxxxxxx xxxx x xxxxxx xxx xxxx xxx xxxxxxxx xx xxxx xxx xx xxxxx xxx xxxxx xxxxxxxx xxxx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx YY Xxxxxx. Xxx xxxxxxxx xx x xxxxxxx xxxxxxxxxxx xxxx xxxxxxxx x xxxxxx xxxxxx xxxxxxx Xxxxxxx YY. Xx xxxxxxxx x xxxxxxxxxxx xxxxxxxxxxx xx xxxxx xxx xxx xxxxx xxx xxxx Xxxxxxx xxxx xxxxxxx x xxxxxxxx xxxxxx. Xx xxxx xxxxxxxx xx xxxxxxxx xxxxxxxxxxx xxx xxxx xxxxxxxxxxx xxxxxxxxxx.
+Simulate real-world interaction with a device and test the features of your app by using the tools included with Microsoft Emulator for Windows 10 Mobile. The emulator is a desktop application that emulates a mobile device running Windows 10. It provides a virtualized environment in which you can debug and test Windows apps without a physical device. It also provides an isolated environment for your application prototypes.
 
-Xxx xxxxxxxx xx xxxxxxxx xx xxxxxxx xxxxxxxxxx xxxxxxxxxxx xx xx xxxxxx xxxxxx. Xxxxxx xxx xxxxxxx xxxx xxx xx xxx Xxxxxxx Xxxxx, xxxxxxx, xx xxxxxxxxx xxxx xxx xxxx xxxx xxx xx x xxxxxxxx xxxxxx.
+The emulator is designed to provide comparable performance to an actual device. Before you publish your app to the Windows Store, however, we recommend that you test your app on a physical device.
 
-Xxx xxx xxxx xxxx xxxxxxxxx xxx xxxxx x xxxxxx Xxxxxxx YY Xxxxxx xxxxxxxx xxxxx xxx xxxxxxx xxxxxx xxxxxxxxxx xxx xxxxxx xxxx xxxxxxxxxxxxxx. Xxx xxx xxxxxxxx xxxx-xxxxx xxxxxxxxxxx xxxx x xxxxxx xxx xxxx xxxxxxx xxxxxxxx xx xxxx xxx xx xxxxx xxx xxxxx xxxxxxxx xx xxx Xxxxxxxxx Xxxxxxxx.
+You can test your universal app using a unique Windows 10 Mobile emulator image for various screen resolution and screen size configurations. You can simulate real-world interaction with a device and test various features of your app by using the tools included in the Microsoft Emulator.
 
-## Xxxxxx xxxxxxxxxxxx
+## System requirements
 
-Xxxx xxxxxxxx xxxx xxxx xxx xxxxxxxxx xxxxxxxxxxxx:
+Your computer must meet the following requirements:
 
-XXXX
+BIOS
 
--   Xxxxxxxx-xxxxxxxx xxxxxxxxxxxxxx.
--   Xxxxxx Xxxxx Xxxxxxx Xxxxxxxxxxx (XXXX).
--   Xxxxxxxx-xxxxx Xxxx Xxxxxxxxx Xxxxxxxxxx (XXX).
+-   Hardware-assisted virtualization.
+-   Second Level Address Translation (SLAT).
+-   Hardware-based Data Execution Prevention (DEP).
 
-XXX
+RAM
 
--   Y XX xx xxxx.
+-   4 GB or more.
 
-Xxxxxxxxx xxxxxx
+Operating system
 
--   Xxxxxxx Y xx xxxxxx (Xxxxxxx YY xxxxxxxx xxxxxxxxxxx)
--   YY-xxx
--   Xxx xxxxxxx xx xxxxxx
+-   Windows 8 or higher (Windows 10 strongly recommended)
+-   64-bit
+-   Pro edition or higher
 
-Xx xxxxx xxx XXXX xxxxxxxxxxxx, xxx [Xxx xx xxxxxx Xxxxx-X xxx xxx xxxxxxxx xxx Xxxxxxx Xxxxx Y](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj863509.aspx).
+To check the BIOS requirements, see [How to enable Hyper-V for the emulator for Windows Phone 8](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/jj863509.aspx).
 
-Xx xxxxx xxxxxxxxxxxx xxx XXX xxx xxxxxxxxx xxxxxx, xx Xxxxxxx Xxxxx, xxxxx **Xxxxxx xxx Xxxxxxxx**, xxx xxxx xxxxx **Xxxxxx**.
+To check requirements for RAM and operating system, in Control Panel, click **System and Security**, and then click **System**.
 
-Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx YY Xxxxxx xxxxxxxx Xxxxxx Xxxxxx YYYY; xx xx xxx xxxxxxxx xxxxxxxxxx xxxx xxxxxxx xxxxxxxx xx Xxxxxx Xxxxxx.
+Microsoft Emulator for Windows 10 Mobile requires Visual Studio 2015; it is not backward compatible with earlier versions of Visual Studio.
 
-Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx YY Xxxxxx xxxxxx xxxx xxxx xxxx xxxxxx xxx Xxxxxxx Xxxxx XX xxxxxxx xxxxxxx xxxx Xxxxxxx Xxxxx XX Y.Y.
+Microsoft Emulator for Windows 10 Mobile cannot load apps that target the Windows Phone OS version earlier than Windows Phone OS 7.1.
 
-## Xxxxxxxxxx xxx xxxxxxxxxxxx
+## Installing and uninstalling
 
--   **Xxxxxxxxxx**.
+-   **Installing**.
 
-    Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx YY Xxxxxx xxxxx xx xxxx xx xxx Xxxxxxx YY XXX. Xxx Xxxxxxx YY XXX xxx xxxxxxxx xxx xx xxxxxxxxx xx xxxx xx xxx Xxxxxx Xxxxxx YYYY xxxxxxx. Xxx xxx [Xxxxxx Xxxxxx xxxxxxxx xxxx](https://go.microsoft.com/fwlink/p/?LinkId=534785).
+    Microsoft Emulator for Windows 10 Mobile ships as part of the Windows 10 SDK. The Windows 10 SDK and emulator can be installed as part of the Visual Studio 2015 install. See the [Visual Studio download page](https://go.microsoft.com/fwlink/p/?LinkId=534785).
 
-    Xxx xxx xxxx xxxxxxx xxx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx YY Xxxxxx xxxxx xxx Xxxxxxxxx Xxxxxxxx xxxxx. Xxx xxx [Xxxxxxx YY Xxxxx xxxxxxxx xxxx](https://go.microsoft.com/fwlink/p/?LinkID=534189).
+    You can also install the Microsoft Emulator for Windows 10 Mobile using the Microsoft Emulator setup. See the [Windows 10 Tools download page](https://go.microsoft.com/fwlink/p/?LinkID=534189).
 
--   **Xxxxxxxxxxxx**.
+-   **Uninstalling**.
 
-    Xxx xxx xxxxxxxxx xxx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx YY Xxxxxx xxxxx Xxxxxx Xxxxxx xxxxx/xxxxxx. Xx xxx xxx xxx **Xxxxxxxx xxx Xxxxxxxx** xxxxx **Xxxxxxx Xxxxx** xx xxxxxx xxx xxxxxxxx.
+    You can uninstall the Microsoft Emulator for Windows 10 Mobile using Visual Studio setup/repair. Or you can use **Programs and Features** under **Control Panel** to remove the emulator.
 
-    Xxxx xxx xxxxxxxxx xxx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx YY Xxxxxx, xxx Xxxxx-X Xxxxxxx Xxxxxxxx Xxxxxxx xxxx xxx xxxxxxx xxx xxx xxxxxxxx xx xxx xx xxx xxxxxxxxxxxxx xxxxxxx. Xxx xxx xxxxxxxx xxxxxx xxxx xxxxxxx xxxxxxx xxxx **Xxxxxxx Xxxxxxxxxxx** xx **Xxxxxxx Xxxxx**.
+    When you uninstall the Microsoft Emulator for Windows 10 Mobile, the Hyper-V Virtual Ethernet Adapter that was created for the emulator to use is not automatically removed. You can manually remove this virtual adapter from **Network Connections** in **Control Panel**.
 
-## Xxxx’x xxx xx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx YY Xxxxxx
+## What’s new in Microsoft Emulator for Windows 10 Mobile
 
-Xx xxxxxxxx xx xxxxxxxxx xxxxxxx xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX), xxx xxxxxxxx xxx xxxxx xxx xxxxxxxxx xxxxxxxxxxxxx:
+In addition to providing support for Universal Windows Platform (UWP), the emulator has added the following functionality:
 
--   Xxxxx xxxxx xxxx xxxxxxx xx xxxxxxxxxxxxx xxxxxxx xxxxx xxx xxxxxx xxxxx xxxxx.
--   XXX Xxxxxxx. Xxx xxxxxxxx xxxxxx xxx xx xxxxxxxx XXX xxx xxxx xx xxxxxxxx xx xxxx xxx xxxxxxx XXX/Xxxxxxxxx-xxxxxxx xxxxxxxxx xxxx.
--   Xxxxxx xxxxxxxx xxxxxxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxxxxx xx xxx xxxxxxxx xx xxxxx xxx xxxxx xxxxxxxx xxxx. Xxx xxxx xxxx x xxxxxxxxx xxxxxxxx xxxx xxxxxxxxx, xxx xxxxxx xxxxxxxxxxxx xx xxx **Xxxxxxx** xxx xx xxx xxxxxxxx'x **Xxxxxxxxxx Xxxxx** xxxxxxxx xxxx xxxxxxxxx xx xxxxx xx xxx xxxxxxxxxxxx.
+-   Mouse input mode support to differentiate between mouse and single touch input.
+-   NFC Support. The emulator allows you to simulate NFC and make it possible to test and develop NFC/Proximity-enabled universal apps.
+-   Native hardware acceleration improves graphics performance in the emulator by using the local graphics card. You must have a supported graphics card installed, and enable acceleration on the **Sensors** tab of the emulator's **Additional Tools** settings user interface in order to use acceleration.
 
-> **Xxxx**  Xxx xxxxxxxxx xxxx xxxxxxxxx xxxxxx xxx xxxx xxxx. Xx xxxx xxxxxxx xx xxx xxxxxxxx, xxx xxxxxxxx xxxxxxxx xx xxxx xx xxxx xxx xxxxxxxx xxxxxxxx xx xxx XY, xxxxxx xx x xxxxxx, xxxxxx xxxx xxx Xxxx Xx/Xxxx Xxxx xxxx xx xxxx xxxx xx xxxxxxx xxxxxxxxx.
+> **Note**  One important user interface change has been made. In this version of the emulator, the keyboard shortcut to show or hide the hardware keyboard is now F4, acting as a toggle, rather than the Page Up/Page Down pair of keys used in earlier emulators.
 
  
 
-## Xxxxxxxx xxxx xxx xxx xxxx xx xxx xxxxxxxx
+## Features that you can test in the emulator
 
-Xx xxxxxxxx xx xxx xxx xxxxxxxx xxxxxxxxx xx xxx xxxxxxxx xxxxxxx, xxx xxx xxxx xxx xxxxxxxxx xxxxxxxx xxxx xxxxxxxx xx xxx Xxxxxxxxx Xxxxxxxx xxx Xxxxxxx YY Xxxxxx.
+In addition to the new features mentioned in the previous section, you can test the following commonly used features in the Microsoft Emulator for Windows 10 Mobile.
 
--   **Xxxxxx xxxxxxxxxx, xxxxxx xxxx, xxx xxxxxx**. Xxxxx x xxxxx xxxxxx xxx xxxx xxx xx xxxxxxx xx xx xxxxxxx xxxxxxxx xxxxxx xx xxxxxxxx xxxxxxx xxxxxx xxxxxxxxxxx, xxxxxxxx xxxxx, xxx xxxxxx xxxxxxxxxxx.
+-   **Screen resolution, screen size, and memory**. Reach a broad market for your app by testing it on various emulator images to simulate various screen resolutions, physical sizes, and memory constraints.
 
-    ![Xxxxxxxxx xxxxxxxxx xxxx xxxxxxxxxx, xxxx, xxx xxxxxx](images/em-list.png)
+    ![Available emulators with resolution, size, and memory](images/em-list.png)
 
--   **Xxxxxx xxxxxxxxxxxxx**. Xxxxxx xxx xxxxxxxx xxxx xxxxxxxx xx xxxxxxxxx xxxx. Xxxxxx xxx xxxx xxxxxxx xx xxx xxx xxxxxxxx xx xxxx xxxxxxx xxxxxx.
+-   **Screen configuration**. Change the emulator from portrait to landscape mode. Change the zoom setting to fit the emulator to your desktop screen.
 
--   **Xxxxxxxxxx**. Xxxxxxxxxx xxxxxxx xx xxxxxxxxxx xxxx Xxxxxxx Xxxxx Xxxxxxxx. Xxxxxxxxxx xx xxxxxxx xx xxxxxxx. Xxx xx xxx xxxx xx xxxxxxx xxxxxxx xxxxxxx xxx Xxxxxxx Xxxxx Xxxxxxxx xx xxxxxxxxx xxxxxxxxxx xxxxxxx xxxxxxxx xx xxxx xxxxxxxxxxxx.
+-   **Networking**. Networking support is integrated with Windows Phone Emulator. Networking is enabled by default. You do not have to install network drivers for Windows Phone Emulator or configure networking options manually in most environments.
 
-    Xxx xxxxxxxx xxxx xxx xxxxxxx xxxxxxxxxx xx xxx xxxx xxxxxxxx. Xx xxxx xxx xxxxxx xx x xxxxxxxx xxxxxx xx xxx xxxxxxx. Xxxx xxxxxxxxxx xxxx xx xxx xxxxxxxxxxxxx xxxxxx xxxx xxxxx xxxxxxxxxxx xxxx xxx Xxxxxxx Xxxxx XXX Y.Y xxxxxxxx.
+    The emulator uses the network connection of the host computer. It does not appear as a separate device on the network. This eliminates some of the configuration issues that users encountered with the Windows Phone SDK 8.0 emulator.
 
--   **Xxxxxxxx xxx xxxxxx xxxxxxxx**. Xxxxxxx xxxx xxx xxx xx xxxxxxxxxxxxx xxxxxx xx xxxxxxxx xxx xxxxxxx xxxxxxxx xxx xxxxxx xxxxxxxx xx Xxxxxxx Xxxxx Xxxxxxxx.
+-   **Language and region settings**. Prepare your app for an international market by changing the display language and region settings in Windows Phone Emulator.
 
-    Xx xxx xxxxxxx xxxxxxxx, xx xx xxx **Xxxxxxxx** xxx, xxxx xxxxxx xxx **xxxxxx** xxxxxxxx, xxxx xxxxxx **xxxxxxxx** xx **xxxxxx**. Xxxxxx xxx xxxxxxxx xxxx xxx xxxx xx xxxx. Xx xxx'xx xxxxxxxx, xxxxx **xxxxxxx xxxxx** xx xxxxx xxx xxx xxxxxxxx xxx xxxxxxx xxx xxxxxxxx.
+    On the running emulator, go to the **Settings** app, then select the **system** settings, then select **language** or **region**. Change the settings that you want to test. If you're prompted, click **restart phone** to apply the new settings and restart the emulator.
 
--   **Xxxxxxxxxxx xxxxxxxxx xxx xxxxxxxxxxx**. Xxxx xxx xxxxxxxx xx xxxx xxx xxxx xx'x xxxxxxxxxxx xx xxxxxxxxxx xx xxxxxxxx xxx xxxxx xx xxx xxxxxx **Xxxxxxxxx xxxx xxxxxxxxxxxx xxxxx xxxxxxxxx** xx xxx **Xxxxx** xxxx xx xxxxxxx xxxxxxxxxx.
+-   **Application lifecycle and tombstoning**. Test the behavior or your app when it's deactivated or tombstoned by changing the value of the option **Tombstone upon deactivation while debugging** on the **Debug** page of project properties.
 
--   **Xxxxx xxxxxx xxxxxxx (xxxxxxxxxx xxxxx xx xxxxxxxx xxxxxxx)**. Xxxx xx xxxxxxxx xxxxxxx xxxxxxxx xxxxx xxx xxxxxxxx xx xxxxxxx, xxx xx xxxx xxxx xxx xxxxxxxx xxxxxx.
+-   **Local folder storage (previously known as isolated storage)**. Data in isolated storage persists while the emulator is running, but is lost once the emulator closes.
 
--   **Xxxxxxxxxx**. Xxxxxxxx xxx xxxx xxx xxxxxxxxxx xx xxx xxxx xxxxxxxx.
+-   **Microphone**. Requires and uses the microphone on the host computer.
 
--   **Xxxx xxxxxx**. Xxxx xxx xxxxxxxx xxxx, xxxxx XYY xx xxxx xxxxxxxx xxxxxxxx xxxxx. Xxx XYY xxx xxxxxxxx xxx xxxxx xxxxxx xx xxx xxxxx. Xxx xxxxx xxx xxxxx xxxxx xxx xxx xxxxxxx. Xxx xxxxxx xxx xxxxx xxxxx xxx xxxxxxx xx xxxxx xxxx xxx xxxx xxxxxx xxxxxxx. Xxxxxx xxx xxxxxx xx xxxxx xxx xxxxx xx xxxxx xxx xxxx xxxxxx xxxxxx.
+-   **Lock screen**. With the emulator open, press F12 on your computer keyboard twice. The F12 key emulates the power button on the phone. The first key press turns off the display. The second key press turns the display on again with the lock screen engaged. Unlock the screen by using the mouse to slide the lock screen upward.
 
-## Xxxxxxxx xxxx xxx xxx'x xxxx xx xxx xxxxxxxx
+## Features that you can't test in the emulator
 
-Xxxx xxx xxxxxxxxx xxxxxxxx xxxx xx x xxxxxxxx xxxxxx.
+Test the following features only on a physical device.
 
--   Xxxxxxx
--   Xxxxxxxxx
--   Xxxxxxxxx xxxxxxxxxx
--   Xxxxxxxxxx. Xxx xxxxxxxxxx xxxxx xx xxx xxxxxxxx xx xxxxxx Xxxx.
--   Xxxx-xxxxxxxxxx xxxxx. Xxxxxx xxxx x xxxxxxxxxx xxxxxx xxxx XXX xxxxxxxxxx (YYY x YYY) xxxxxx xx xxxxxxxxx xxxxxxxx, xxxxxxxxxx xx xxxxxxxx xxxxxx xxxx xxxx YYYXX xx xxxxxx.
+-   Compass
+-   Gyroscope
+-   Vibration controller
+-   Brightness. The brightness level of the emulator is always High.
+-   High-resolution video. Videos with a resolution higher than VGA resolution (640 x 480) cannot be displayed reliably, especially on emulator images with only 512MB of memory.
 
-## Xxxxx xxxxx
+## Mouse input
 
-Xxxxxxxx xxxxx xxxxx xxxxx xxx xxxxxxxx xxxxx xx xxxxxxxx xx xxxx Xxxxxxx XX xxx xxx xxxxx xxxxx xxxxxx xx xxx xxxxxxxx xxxxxxx. Xxxx xxxxxxx xx xxxxxx xx xxxx xxx xxxxxxxx xxx xxxx xxxx xx xxxxxxx xx xxxxxxx x xxxxx xxxxxx xx xxxxx Xxxxxxx YY xxxxxx xx xxxxxxx xxxxx.
+Simulate mouse input using the physical mouse or trackpad on your Windows PC and the mouse input button on the emulator toolbar. This feature is useful if your app provides the user with an ability to utilize a mouse paired to their Windows 10 device to provide input.
 
-Xxx xxx xxxxx xxxxx xxxxxx xx xxx xxxxxxxx xxxxxxx xx xxxxxx xxxxx xxxxx. Xxx xxxxx xxxxxx xxxxxx xxx xxxxxxxx xxxxxx xxxx xxx xx xxxx xx xxx Xxxxxxx YY Xxxxxx XX xxxxxxx xxxxxx xxx xxxxxxxx XX xx xxxxx xxxxxx.
+Tap the mouse input button on the emulator toolbar to enable mouse input. Any click events within the emulator chrome will now be sent to the Windows 10 Mobile OS running inside the emulator VM as mouse events.
 
-![Xxxxxxxx xxxxxx xxxx xxxxx xxxxx xxxxxxx](images/emulator-with-mouse-enabled.png)
+![Emulator screen with mouse input enabled](images/emulator-with-mouse-enabled.png)
 
-Xxx xxxxxxxx xxxxxx xxxx xxx xxxxx xxxxx xxxxxxx.
+The emulator screen with the mouse input enabled.
 
-![Xxx xxxxx xxxxx xxxxxx xx xxx xxxxxxxx xxxxxxx](images/emulator-showing-mouse-input-button-bar.png)
+![The mouse input button on the emulator toolbar](images/emulator-showing-mouse-input-button-bar.png)
 
-Xxx xxxxx xxxxx xxxxxx xx xxx xxxxxxxx xxxxxxx.
+The mouse input button on the emulator toolbar.
 
-## Xxxx Xxxxx Xxxxxxxxxxxxxx (XXX)
+## Near Field Communications (NFC)
 
-Xxxxx xxx xxxx xxxx xxxx xxx Xxxx Xxxxx Xxxxxxxxxxxxx (XXX) xxxxxxx xxxxxxxx xx Xxxxxxx YY Xxxxxx xx xxxxx xxx **XXX** xxx xx xxx xxxxxxxx’x **Xxxxxxxxxx Xxxxx** xxxx. XXX xx xxxxxx xxx x xxxxxx xx xxxxxxxxx xxxxxxx xxxx Xxxxxxxxx xxxxxxxxx (xxxx xx xxx xx xxxxx) xx xxxx xxxxxxxxx (xxxx xx xxx xx xxx).
+Build and test apps that use Near Field Communication (NFC) enabled features on Windows 10 Mobile by using the **NFC** tab of the emulator’s **Additional Tools** menu. NFC is useful for a number of scenarios ranging from Proximity scenarios (such as tap to share) to card emulation (such as tap to pay).
 
-Xxx xxx xxxx xxxx xxx xx xxxxxxxxxx x xxxx xx xxxxxx xxxxxxx xxxxxxxx xx xxxxx x xxxx xx xxxxxxxxx, xx xxx xxx xxxx xxxx xxx xx xxxxxxxxxx x xxx xx x xxx. Xxxx xx Xxxxxxx YY, xxxxxx xxxxxxx xxx xxxxxxx xxxx XXX (Xxxx Xxxx Xxxxxxxxx) xxxxxxx xxx xx xxxxx xxx xxxxx xxxxxxxx xxx xxx xxxxxxxx xxxxxxx xxxx xxxxxx xx x xxxxxxx xxxxxxxx xxx XXXX xxxxxxx-xxxxxxxx xxxxxxx.
+You can test your app by simulating a pair of phones tapping together by using a pair of emulators, or you can test your app by simulating a tap to a tag. Also in Windows 10, mobile devices are enabled with HCE (Host Card Emulation) feature and by using the phone emulator you can simulate tapping your device to a payment terminal for APDU command-response traffic.
 
-Xxx XXX xxx xxxxxxxx xxxxx xxxxx:
+The NFC tab supports three modes:
 
--   Xxxxxxxxx Xxxx
--   XXX (Xxxx Xxxx Xxxxxxxxx) Xxxx
--   Xxxxx Xxxx Xxxxxx Xxxx
+-   Proximity Mode
+-   HCE (Host Card Emulation) Mode
+-   Smart Card Reader Mode
 
-Xx xxx xxxxx, xxx xxxxxxxx xxxxxx xxx xxxxx xxxxx xx xxxxxxxx.
+In all modes, the emulator window has three areas of interest.
 
--   Xxx xxx xxxx xxxxxxx xx xxxxxxxx xx xxx xxxx xxxxxxxx. Xxx xxxxxxxx xx xxxx xxxxxxx xxxxxx xx xxx xxxx, xxx xxx xxxxxxxx xx xxx xxxx-xxxxxxxx xxxxxxxx xxxxx.
--   Xxx xxx xxxxx xxxxxxx xxxxx xxx xxxx. Xxxx xxx xxx x xxxx xx xxxxxxx xxxxxxxx (xx xxx xx xxx XXX xxxxxxxx) xxx xxx xxxxx xx xxxxxx xxx xxxx xxx xxxxxxx xxx xxxxxxxx xxx xxxxx xxxxx xx xxxxxx. Xxxx xxxxxxx xxxx xxxxxxx xx xxxx xxx xxxxxxxxx xxxxxx xxx xxxxxxxxxx xx xxxxxx xx xxx xxxxx xxxxxx xxx xxxx xxxxx xx xxx xxxxxxxx XX xxxx xxxx xxxxxx. Xxxx xxx xxxxxxxxxx xxxxxxx xxxx xxxxxxxx, xxx xxx xxx xxxxx xxx xxxx xx xxx xxxxx xx xxxxxxx xxx **Xxxxx** xxxxxx xxxxx xxx **Xxxx** xxxxxx.
--   Xxx xxxxxx xxxx xx xxx xxxxxx xx xxx xxxxxxx xxx xxx xxxxx xxx xxxxxxxxxx xx xxx xxxxxxxx xxxx xx xxxxxxxx xxxx xxx xxxxxxxxx xxxxxxxx xxxxxxxxxx, xxxxxxxxx xx xxx xxxx xxxxxxxx.
+-   The top left section is specific to the mode selected. The features of this section depend on the mode, and are detailed in the mode-specific sections below.
+-   The top right section lists the logs. When you tap a pair of devices together (or tap to the POS terminal) the tap event is logged and when the devices are untapped the untap event is logged. This section also records if your app responded before the connection is broken or any other action you have taken in the emulator UI with time stamps. Logs are persistent between mode switches, and you can clear the logs at any point by hitting the **Clear** button above the **Logs** screen.
+-   The bottom half of the screen is the message log and shows the transcript of all messages sent or received over the currently selected connection, depending on the mode selected.
 
-> **Xxxxxxxxx**  Xxxx xxx xxxxx xxxxxx xxx xxxxxx xxxx, xxx xxxx xxx x Xxxxxxx Xxxxxxxx xxxxxx. Xxx XXXX xxxxxx XXX Y xxxxx xxxxx xxx xxxxx xxx xxxx xxxxxxx xxx xxxxxxxx, xx xxx xxxx xxxx xxxxxxxx xxxx xx xxxx.
+> **Important**  When you first launch the tapper tool, you will get a Windows Firewall prompt. You MUST select ALL 3 check boxes and allow the tool through the firewall, or the tool will silently fail to work.
 
-Xxxxx xxxxxxxxx xxx xxxxx xxxxx xxxxxxxxx, xxxx xxxx xxx xxxxxx xxx xxxxx xxxxxxxxxxx xx xxxxxx xxx Y xxxxx xxxxx xx xxx xxxxxxxx xxxxxx. Xxxx, xxx xxxxxx xxxx xxxx xx xxxxxxxxx xxx xxxx xx xxx xxxx xxxxxxxx xxxx xxxxxxx xx xxx Xxxxxxxxx Xxxxxxxx.
+After launching the quick start installer, make sure you follow the above instruction to select all 3 check boxes on the firewall prompt. Also, the tapper tool must be installed and used on the same physical host machine as the Microsoft Emulator.
 
-### Xxxxxxxxx xxxx
+### Proximity mode
 
-Xx xxxxxxxx x xxxx xx xxxxxx xxxxxxx xxxxxxxx xxx'xx xxxx xx xxxxxx x xxxx xx Xxxxxxx Xxxxx Y xxxxxxxxx. Xxxxx Xxxxxx Xxxxxx xxxxx'x xxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxxxxx xx xxx xxxx xxxx, xxx'xx xxxx xx xxxxxx xxxxxxxxx xxxxxxxxxxx xxx xxxx xx xxx xxxxxxxxx xx xxxx xxxxxx xx.
+To simulate a pair of phones tapping together you'll need to launch a pair of Windows Phone 8 emulators. Since Visual Studio doesn't support running two identical emulators at the same time, you'll need to select different resolutions for each of the emulators to work around it.
 
-![Xxx XXX Xxxxxxxxx xxxx](images/emulator-nfc-proximity.png)
+![The NFC Proximity page](images/emulator-nfc-proximity.png)
 
-Xxxx xxx xxxxx xxx **Xxxxxx xxxxxxxxx xx xxxx xxxxxxx** xxxxxxxx, xxx **Xxxx xxxxxx** xxxxxxxx xxx xxxxx Xxxxxxxxx Xxxxxxxxx (xxxxxxx xx xxx xxxx xxxxxxxx xxxx xxxxxxx xx xx xxx xxxxx xxxxxxx) xx xxxx xx xxx Xxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxx xxxxxx (xxxxxxx xx xxx xxxx xxxxxxx xx xx xxx xxxxx xxxxxxx).
+When you check the **Enable discovery of peer devices** checkbox, the **Peer device** dropdown box shows Microsoft Emulators (running on the same physical host machine or in the local network) as well as the Windows machines running the simulator driver (running on the same machine or in the local network).
 
-Xxxx xxxx xxxxxxxxx xxx xxxxxxx:
+Once both emulators are running:
 
--   Xxxxxx xxx xxxxxxxx xxx xxxxx xxxx xx xxxxxx xx xxx **Xxxx xxxxxx** xxxx.
--   Xxxxxx xxx **Xxxx xx xxxx xxxxxx** xxxxx xxxxxx.
--   Xxxxx **Xxx** xxxxxx. Xxxx xxxx xxxxxxxx xxx xxx xxxxxxx xxxxxxx xxxxxxxx xxx xxx xxxxxx xx xxxxxxx xxx XXX xxx xxxxxxxxxxxx xxxxx
--   Xx xxxxxxxxxx xxx Y xxxxxxx, xxxxxx xxx xxx **Xxxxx** xxxxxx.
+-   Select the emulator you would like to target in the **Peer device** list.
+-   Select the **Send to peer device** radio button.
+-   Click **Tap** button. This will simulate the two devices tapping together and you should be hearing the NFC tap notification sound
+-   To disconnect the 2 devices, simply hit the **Untap** button.
 
-Xxxxxxxxxxxxx, xxx xxx xxxxxx **Xxxxxxxxxxxxx xxxxx xx (xxxxxxx)** xxxxx xxx xxxxx xxx xxx xxxxxxx xxx xxxxxx xx xxxxxxx xxx xxxx xxx xxxxxxx xx xx xxxxxx xxx xxxx xxxx xx xxxxxxxxxxxxx xxxxxxxx xxxxx xxx xxxxxxxxx xxxxxx xx xxxxxxx (xxxxxxxxxx xxxx xxxxx xx xxxxxxxx xx x xxxx xx xxxx xxxx, xxxx xxxxx xxxx xxxx xxxxx xxxxxx xxxxxxxx xxx x xxxxx xxxx). Xxxx xxxxxxx xxxx xxxxxxxxx xxx xxxxxxx xxx xxx'x xxxxxxxxx xxxxx xxx xxxxxxxxxx xxx xxxx xxxxxxxx.
+Alternatively, you can enable **Automatically untap in (seconds)** check box where you can specify the number of seconds you want the devices to be tapped and they will be automatically untapped after the specified number of seconds (simulating what would be expected of a user in real life, they would only hold their phones together for a short time). Note however that currently the message log isn't available after the connection has been untapped.
 
-Xx xxxxxxxx xxxxxxx xxxxxxxx xxxx x xxx xx xxxxxxxxx xxxxxxxx xxxx xxxxxxx xxxxxx:
+To simulate reading messages from a tag or receiving messages from another device:
 
--   Xxxxxx xxx **Xxxx xx xxxx** xxxxx xxxxxx xx xxxx xxxxxxxxx xxxx xxxxxxx xxxx xxx XXX xxxxxxx xxxxxx.
--   Xxxxx **Xxx** xxxxxx. Xxxx xxxx xxxxxxxx xxx xxxxxxx x xxxxxx xx x xxx xxx xxx xxxxxx xx xxxxxxx xxx XXX xxx xxxxxxxxxxxx xxxxx
--   Xx xxxxxxxxxx, xxxxxx xxx xxx **Xxxxx** xxxxxx.
+-   Select the **Send to self** radio button to test scenarios that require only one NFC enabled device.
+-   Click **Tap** button. This will simulate the tapping a device to a tag and you should be hearing the NFC tap notification sound
+-   To disconnect, simply hit the **Untap** button.
 
-Xxxxx xxx xxxxxxxxx xxxx xxx xxx xxxxxx xxxxxxxx xx xx xxxx xxxx xxxx x xxx xx xxxxxxx xxxx xxxxxx. Xxx xxxxxxxxxx xxx xx xxxx xxxxxxxx xx xxx xxxxxxxxx xxxxx.
+Using the proximity mode you can inject messages as if they came from a tag or another peer device. The toolallows you to send messages of the following types.
 
--   XxxxxxxXXX
--   XxxxxxxXxxx
--   XxxxxxxxXxx
--   Xxxxxxx:Xxxxxxxxx
--   XXXX
--   XXXX:XXXX
--   XXXX:XXX
--   XXXX:xxx.X
+-   WindowsURI
+-   WindowsMime
+-   WritableTag
+-   Pairing:Bluetooth
+-   NDEF
+-   NDEF:MIME
+-   NDEF:URI
+-   NDEF:wkt.U
 
-Xxx xxx xxxxxx xxxxxx xxxxx xxxxxxxx xx xxxxxxx xxx **Xxxxxxx** xxxxxxx xx xxxxxxxxx xxxx xx x xxxx. Xxx xxxx xxxxxxxxxxx xxxxx xxxxx xxxxx xxx xxx xx xxx xxxx xxxxxx xxxxx xx xxx Xxxxxxx xxxxxxx xx xxx[**XxxxxxxxxXxxxxx.XxxxxxxXxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh701129) xxxxxxxxx xxxx.
+You can either create these messages by editing the **Payload** windows or providing them in a file. For more information about these types and how to use them please refer to the Remarks section of the[**ProximityDevice.PublishBinaryMessage**](https://msdn.microsoft.com/library/windows/apps/Hh701129) reference page.
 
-Xxx Xxxxxxx Y Xxxxxx Xxx (XXX) xxxxxxxx x xxxxxx xxxxxx xxxx xxxxxxx xxx xxxx xxxxxxxx xx xxx Xxxxxxx Xxxxx Y xxxxxxxx. Xxx'xx xxxx xx xxxxxxxx xxx XXX, xxxxx xxxx xxxxxx xxxxxx, xxxxxxx xx xx x Xxxxxxx Y xxxxxx, xxxx xxx xxx Xxxxxxx Y xxxxxx'x XX xxxxxxx xx xxxxxxxx xx xxx xxxxxxx xxxx xxx xxx xx xxxxxx xxxx xxxxxxx Xxxxxxx Y xxxxxx xx xxxx x Xxxxxxx Xxxxx Y xxxxxxxx.
+The Windows 8 Driver Kit (WDK) includes a driver sample that exposes the same protocol as the Windows Phone 8 emulator. You'll need to download the DDK, build that sample driver, install it on a Windows 8 device, then add the Windows 8 device's IP address or hostname to the devices list and tap it either with another Windows 8 device or with a Windows Phone 8 emulator.
 
-### Xxxx Xxxx Xxxxxxxxx (XXX) Xxxx
+### Host Card Emulation (HCE) Mode
 
-Xx Xxxx Xxxx Xxxxxxxxx (XXX) xxxx xxx xxx xxxx xxxx XXX-xxxxx xxxx xxxxxxxxx xxxxxxxxxxx xx xxxxxxx xxxx xxx xxxxxx xxxxxxx xx xxxxxxxx x xxxxx xxxx xxxxxx xxxxxxxx, xxxx xx x Xxxxx xx Xxxx (XXX) xxxxxxxx. Xxxx xxxx xxxxxxx xxxx xxx xxx xxxxxxxx xxxx xxx xxxxxxx xxxxxxxx xxxxx (xxxxxxxxx xxxx XXX-YYYY-Y) xxxx xxx xxxx xxxxxxx x xxxxxx xxxxxxxx (xxxx xx XXX, xxxxx xxxxxx xx xxxxxxx xxxx xxxxxx) xxx xxx xxxxx xxxx (xxxx xxx xxx xxxxxxxxx xx xxxx xxxxxxxxxxx).
+In Host Card Emulation (HCE) mode you can test your HCE-based card emulation application by writing your own custom scripts to simulate a smart card reader terminal, such as a Point of Sale (POS) terminal. This tool assumes that you are familiar with the command response pairs (compliant with ISO-7816-4) that are sent between a reader terminal (such as POS, badge reader or transit card reader) and the smart card (that you are emulating in your application).
 
-![Xxx XXX XXX xxxx](images/emulator-nfc-hce.png)
+![The NFC HCE page](images/emulator-nfc-hce.png)
 
--   Xxxxxx x xxx xxxxxx xx xxxxxxxx xxx **Xxx** xxxxxx xx xxx xxxxxx xxxxxx xxxxxxx. Xxx xxx xxxxxxx x xxxx xxx xxxx xxxxxx xxx xxxxx xxx xxx xxxx xxxx xxxxxxx, xxx xxx xxxx xxxx xxxxxx xxxxx xxx **Xxxx** xxxxxx.
--   Xxxx xxxxx xxxxxxx xxxx xx xxxxxxxxx xxx xxxx xxxx xxx xxxxxx xxx xxxxxxxx.
--   Xxx xxxx xxxxxxx xx xxxxxxx xxx **Xxxx** xxxxxx xx xxx xxxxxxx xxxxxx xxxxxx. Xxxx xxxxxx xxxxxxx xx xxxxxxxxxx xx xxxxxxx xxxx xxxxx xx xxx xxxxxxxx xxx xxxxxxx xxxxxxxx xxxxxxx xx xxxx xxxxxx. Xxxxxxxxxxxxx xxx xxx xxx xxx **Xxx** xxxxxx xxx xxxx xxx **Xxxx** xxxxxx, xxxxx xxx xxx **Xxxx** xxx xxxxxx xxxx xxx xxx.
--   Xxxx xxxxxxx xxxxxxxx xx xxxxxxx xxx **Xxxx** xxxxxx, xxxxx xxxxx xxxxxxx xxx xxxxxxxx xx xxxx xxxxxxxxxxx xxx xxx xxxxxxx xxxxxx xxxxxx xxxxx xxx xxx xxx **Xxxxx** xxxxxx.
--   Xxxxxx xxxx xxxxxxx xx xxxxxxxxx xxx xxxxxx xx xxx xxxxxxxx xxxx xxx xxxxxxx **Xxxxxx** xxxxxx.
--   Xxx xxxxxxxx xxxx xxxx xxx xxxxx xxx xxx xxxxxx xx xxxx xxxxxxx xxxxx xxx xxx xxx xxxxxx xxxxx xxx **Xxxx** xxxxxx. Xxx xxxxxxxx xxxx xx xxxx xxxxxx xxx xxxxxxxxx xx xxxx xxxxxxxxxxxxxx xx xxxx xxxx xxxxxxxxx xxx.
+-   Create a new script by clicking the **Add** button in the script editor section. You can provide a name for your script and after you are done with editing, you can save your script using the **Save** button.
+-   Your saved scripts will be available the next time you launch the emulator.
+-   Run your scripts by hitting the **Play** button in the scripts editor window. This action results in simulating of tapping your phone to the terminal and sending commands written in your script. Alternatively you can hit the **Tap** button and then the **Play** button, until you hit **Play** the script will not run.
+-   Stop sending commands by hitting the **Stop** button, which stops sending the commands to your application but the devices remain tapped until you hit the **Untap** button.
+-   Delete your scripts by selecting the script in the dropdown menu and hitting **Delete** button.
+-   The emulator tool does not check for the syntax of your scripts until you run the script using the **Play** button. The messages sent by your script are dependent on your implementation of your card emulation app.
 
-Xxx xxx xxxx xxx xxx xxxxxxxx xxxxxxxxx xxxx xxxx XxxxxxXxxx ([xxxxx://xxx.xxxxxxxxxxxxxxxxx.xxx/](https://www.terminalsimulator.com/ )) xxx xxxxxxxx xxx xxxxxxx.
+You can also use the terminal simulator tool from MasterCard ([https://www.terminalsimulator.com/](https://www.terminalsimulator.com/ )) for payments app testing.
 
--   Xxxxx xxx **Xxxxxx XxxxxxXxxx** xxxxxxxx xxxxxxxx xxxxx xxx xxxxxx xxxxxx xxxxxxx xxx xxxxxx xxx xxxxxxxxx xxxx XxxxxxXxxx.
--   Xxxxx xxx xxxx, xxx xxx xxxxxxxx xxxxxxxx xxxx xxx xxxxxxx xx xxxx xxxxxxxxxxx xxxxxxx xx xxx xxxxxxxx xxxxxxx xxx XXX xxxx.
+-   Check the **Enable MasterCard** listener checkbox below the script editor windows and launch the simulator from MasterCard.
+-   Using the tool, you can generate commands that are relayed to your application running on the emulator through the NFC tool.
 
-Xx xxxxx xxxx xxxxx XXX xxxxxxx xxx xxx xx xxxxxxx XXX xxxx xx Xxxxxxx YY Xxxxxx, xxxxxx xxxxx xx xxx [Xxxxxxxxx XXX Xxxx Xxxx](http://go.microsoft.com/fwlink/?LinkId=534749).
+To learn more about HCE support and how to develop HCE apps in Windows 10 Mobile, please refer to the [Microsoft NFC Team Blog](http://go.microsoft.com/fwlink/?LinkId=534749).
 
-### Xxx xx Xxxxxx Xxxxxxx xxx XXX Xxxxxxx
+### How to Create Scripts for HCE Testing
 
-Xxx xxxxxxx xxx xxxxxxx xx X# xxxx xxx xxxx xxxxxx’x Xxx xxxxxx xx xxxxxx xxxx xxx xxxxx xxx **Xxxx** xxxxxx, xxxx xxxxxx xxxxx xx XXxxxxxXxxxxxxxx xxxxxxxxx xxxxx xx xxxx xx xxxxxxxxxx XXXX xxxxxxxx, xxxxxx xx xxx xxx xxxxxx, xxx xxxxxxx xxx xxxxxxx xxx xxxxxxx xx xx XXXX xxxxxxxx xxxx xxx xxxxx.
+The scripts are written as C# code and your script’s Run method is called when you click the **Play** button, this method takes an IScriptProcessor interface which is used to transceive APDU commands, output to the log window, and control the timeout for waiting on an APDU response from the phone.
 
-Xxxxx xx x xxxxxxxxx xx xxxx xxxxxxxxxxxxx xx xxxxxxxxx:
+Below is a reference on what functionality is available:
 
 ```csharp     
         public interface IScriptProcessor
@@ -224,387 +224,407 @@ Xxxxx xx x xxxxxxxxx xx xxxx xxxxxxxxxxxxx xx xxxxxxxxx:
         }
 ```
 
-### Xxxxx Xxxx Xxxxxx Xxxx
+### Smart Card Reader Mode
 
-Xxx xxxxxxxx xxx xx xxxxxxxxx xx x xxxxx xxxx xxxxxx xxxxxx xx xxxx xxxx xxxxxxxx, xxxx xxxx xxxxx xxxxx xxxxxxxx xx xxxxxx xxxx xxxx xx xx xxxx xxxxx xxxxxxxxxxx xxx xxx xx xxxxxxxxxxxx xx xxxx XXXXx xxxxx xxx [**Xxxxxxx.Xxxxxxx.XxxxxXxxxx.XxxxxXxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Dn608002) xxxxx. Xxx xxxx xx xxxx, xxx xxxx xxxx x xxxxxxxxxx xxxxx xxxx xxxxxx xxxxxx xxxxxxxx xx xxxx xxxxxxxx, XXX xxxxx xxxx xxxxxxx (xxxx XXX/xxxxxxxxxxx xxx xxxxxx/xxxxxxx) xxx xxxxxx xxxxxxxxx. Xx xxxxxx xxx xxxxxxxx xx xxxx xxxx xx xxxxxxxx xxxxx xxxx xxxxxx, xxxxx xxxxxx xxx **Xxxx Xxxxxx** xxxx xxxxx xxxxxx xxxx x xxxxxxxx xxx xxxxxxx xxx xxx xxxxxxxxxx xxxxx xxxx xxxxxxx xxxxxxxx xx xxx xxxx xxxxxx, xxxx xxxxxx xxx xxxxx xxxx xxxxxx xxxxxx xxx’x xxxx xx xx xxxxxxxxx xxxx xxx xxxxxxxx.
+The emulator can be connected to a smart card reader device on your host computer, such that smart cards inserted or tapped will show up to your phone application and can be communicated to with APDUs using the [**Windows.Devices.SmartCards.SmartCardConnection**](https://msdn.microsoft.com/library/windows/apps/Dn608002) class. For this to work, you will need a compatible smart card reader device attached to your computer, USB smart card readers (both NFC/contactless and insert/contact) are widely available. To enable the emulator to work with an attached smart card reader, first choose the **Card Reader** mode which should show a dropdown box listing all the compatible smart card readers attached to the host system, then choose the smart card reader device you’d like to be connected from the dropdown.
 
-Xxxx xxxx xxx xxx XXX-xxxxxxx xxxxx xxxx xxxxxxx xxxxxxx xxxx xxxxx xx XXX xxxxx, xxx xxxx xx xxx xxxxxxx xxx xxxxxxxx XX/XX xxxxxxx xxxx XXXX xxxxxxxx.
+Note that not all NFC-capable smart card readers support some types of NFC cards, and some do not support the standard PC/SC storage card APDU commands.
 
-## Xxxxx-xxxxx xxxxx
+## Multi-point input
 
-Xxxxxxxx xxxxx-xxxxx xxxxx xxx xxxxxxxx xxx xxxxxxx, xxxxxxxx, xxx xxxxxxx xxxxxxx xx xxxxx xxx **Xxxxx-xxxxx Xxxxx** xxxxxx xx xxx xxxxxxxx xxxxxxx. Xxxx xxxxxxx xx xxxxxx xx xxxx xxx xxxxxxxx xxxxxx, xxxx, xx xxxxx xxxxxx xxxxxxxx xxxx xxxxx xxx xxxxx xxx xxxx, xxxxxx, xx xxx.
+Simulate multi-touch input for pinching and zooming, rotating, and panning objects by using the **Multi-touch Input** button on the emulator toolbar. This feature is useful if your app displays photos, maps, or other visual elements that users can pinch and zoom, rotate, or pan.
 
-1.  Xxx xxx **Xxxxx-xxxxx Xxxxx** xxxxxx xx xxx xxxxxxxx xxxxxxx xx xxxxxx xxxxx-xxxxx xxxxx. Xxx xxxxx xxxxxx xxxxxx xx xxx xxxxxxxx xxxxxx xxxxxx x xxxxxx xxxxx.
-2.  Xxxxx-xxxxx xxx xxxx xxx xx xxx xxxxx xxxxxx xx xxxxxxxx xxxx xxxxxxx xxxxxxxx xxx xxxxxx.
-3.  Xxxx-xxxxx xxx xxxx xxx xx xxx xxxxx xxxxxx xx xxxxxxxx xxxxxxxx xxx xxxxxxx, xxxxxxxx, xx xxxxxxx.
-4.  Xxx xxx **Xxxxxx Xxxxx Xxxxx** xxxxxx xx xxx xxxxxxxx xxxxxxx xx xxxxxxx xxxxxx xxxxx.
+1.  Tap the **Multi-touch Input** button on the emulator toolbar to enable multi-point input. Two touch points appear on the emulator screen around a center point.
+2.  Right-click and drag one of the touch points to position them without touching the screen.
+3.  Left-click and drag one of the touch points to simulate pinching and zooming, rotating, or panning.
+4.  Tap the **Single Point Input** button on the emulator toolbar to restore normal input.
 
-Xxx xxxxxxxxx xxxxxxxxxx xxxxx xxxxx-xxxxx xxxxx.
+The following screenshot shows multi-touch input.
 
-1.  Xxx xxxxx xxxx xxxxx xxxxx xxx **Xxxxx-xxxxx Xxxxx** xxxxxx xx xxx xxxxxxxx xxxxxxx.
-2.  Xxx xxxxxx xxxxx xxxxx xxx xxxxxxxx xxxxxx xxxxx xxxxxxx xxx **Xxxxx-xxxxx Xxxxx** xxxxxx xx xxxxxxx xxx xxxxx xxxxxx.
-3.  Xxx xxxxx xxxxx xxxxx xxx xxxxxxxx xxxxxx xxxxx xxxxxxxx xxx xxxxx xxxxxx xx xxxx xxx xxxxx.
+1.  The small left image shows the **Multi-touch Input** button on the emulator toolbar.
+2.  The middle image shows the emulator screen after tapping the **Multi-touch Input** button to display the touch points.
+3.  The right image shows the emulator screen after dragging the touch points to zoom the image.
 
-![Xxxxx-xxxxx xxxxx xxxxxx xx xxx Xxxxxxxx xxxxxxx](images/em-multipoint.png)
+![Multi-point input option on the Emulator toolbar](images/em-multipoint.png)
 
-## Xxxxxxxxxxxxx
+## Accelerometer
 
-Xxxx xxxx xxxx xxxxx xxx xxxxxxxx xx xxx xxxxx xx xxxxx xxx **Xxxxxxxxxxxxx** xxx xx xxx xxxxxxxx'x **Xxxxxxxxxx Xxxxx**.
+Test apps that track the movement of the phone by using the **Accelerometer** tab of the emulator's **Additional Tools**.
 
-Xxx xxx xxxx xxx xxxxxxxxxxxxx xxxxxx xxxx xxxx xxxxx xx xxx-xxxxxxxx xxxxx. Xxx xxxx xxxx xx xxxxxxxx xxxx xxxx’x xxxxxxxxx xxxxxxxxx xxxxxxx xxx xxxxx. Xxx xxx’x xxxxxx xx xxxx xxxx xxx xxxxxxxxxxx xxx xxx xxxxxxxxxxxxx.
+You can test the accelerometer sensor with live input or pre-recorded input. The only type of recorded data that’s available simulates shaking the phone. You can’t record or save your own simulations for the accelerometer.
 
-1.  Xxxxxx xxx xxxxxxx xxxxxxxx xxxxxxxxxxx xx xxx **Xxxxxxxxxxx** xxxx-xxxx xxxx.
+1.  Select the desired starting orientation in the **Orientation** drop-down list.
 
-2.  -   Xxxxxx xxx xxxx xx xxxxx.
+2.  -   Select the type of input.
 
-        **Xx xxx xxx xxxxxxxxxx xxxx xxxx xxxxx**
+        **To run the simulation with live input**
 
-        Xx xxx xxxxxx xx xxx xxxxxxxxxxxxx xxxxxxxxx, xxxx xxx xxxxxxx xxx xx xxxxxxxx xxxxxxxx xx xxx xxxxxx xx x YX xxxxx.
+        In the middle of the accelerometer simulator, drag the colored dot to simulate movement of the device in a 3D plane.
 
-        Xxxxxx xxx xxx xx xxx xxxxxxxxxx xxxxxx xxxxxxx xxx xxxxxxxxx xxxx xxxx xx xxxx. Xxxxxx xxx xxx xx xxx xxxxxxxx xxxxxx xxxxxxx xxx xxxxxxxxx xxxx xxx xxxxx, xxxxxxxx xxxxxx xxx x-xxxx. Xx xxx xxxx xxx xxx, xxx X, X, xxx X xxxxxxxxxxx xxxxxx xxxxx xx xxx xxxxxxxx xxxxxxxxxxxx. Xxx xxxxxx xxxx xxx xxx xxxxxxx xxx xxxxxxxx xxxxxx xx xxx xxxxx xxx xxxx.
+        Moving the dot on the horizontal access rotates the simulator from side to side. Moving the dot on the vertical access rotates the simulator back and forth, rotating around the x-axis. As you drag the dot, the X, Y, and Z coordinates update based on the rotation calculations. You cannot move the dot outside the bounding circle in the touch pad area.
 
-        Xxxxxxxxxx, xxxxx **Xxxxx** xx xxxxxxx xxx xxxxxxxx xxxxxxxxxxx.
+        Optionally, click **Reset** to restore the starting orientation.
 
-    -   **Xx xxx xxx xxxxxxxxxx xxxx xxxxxxxx xxxxx**
+    -   **To run the simulation with recorded input**
 
-        Xx xxx **Xxxxxxxx Xxxx** xxxxxxx, xxxxx xxx **Xxxx** xxxxxx xx xxxxx xxxxxxxx xx xxx xxxxxxxxx xxxx. Xxx xxxx xxxxxx xxxxxxxxx xx xxx **Xxxxxxxx Xxxx** xxxx xx xxxxx. Xxx xxxxxxxxx xxxx xxx xxxx xx xxx xxxxxx xxxx xx xxxxx xxxx xxx xxxx.
+        In the **Recorded Data** section, click the **Play** button to start playback of the simulated data. The only option available in the **Recorded Data** list is shake. The simulator does not move on the screen when it plays back the data.
 
-![Xxxxxxxxxxxxx xxxx xx Xxxxxxxxxx Xxxxx xxx xxx Xxxxxxxx](images/em-accelerometer.png)
+![Accelerometer page in Additional Tools for the Emulator](images/em-accelerometer.png)
 
-## Xxxxxxxx xxx xxxxxxx
+## Location and driving
 
-Xxxx xxxx xxxx xxx xxxxxxxxxx xx xxxxxxxxxx xx xxxxx xxx **Xxxxxxxx** xxx xx xxx xxxxxxxx'x **Xxxxxxxxxx Xxxxx**. Xxxx xxxxxxx xx xxxxxx xxx xxxxxxxxxx xxxxxxx, xxxxxx, xx xxxxxxx xx xxxxxxxxxx xxxxxxx xx xxx xxxx xxxxx.
+Test apps that use navigation or geofencing by using the **Location** tab of the emulator's **Additional Tools**. This feature is useful for simulating driving, biking, or walking in conditions similar to the real world.
 
-Xxx xxx xxxx xxxx xxx xxxxx xxx xxxxxxxx xxxxxx xxxx xxx xxxxxxxx xx xxxxxxx xx xxxxxxxxx xxxxxx xxx xxxx xxxxxxxxx xxxxxxxx xxxxxxxx. Xxx xxxxxxxx xxxxxxxxx xxx xxxx xxx xx xxxxxxxx xxxxxxx xx xxxx xxxxx xx xxx xxxxxxxx XXXx xxxxx xxxx xxxxxxx xxx xxxx xxxxxxxxxx. Xxx xxxxxxx, xxx xxxx xxx xxxx xxx xxxxxxxx xxxx xxx xxxx xx xxxx xxxxxxxx xxxxxxxxxx, xxxx xx xxxx xx xxxxx xxxx, xx xxxxxx xxx xxxxxxxxx xxxxxxxxxxxx xx xxxxxxxxx xxxxxxxxx.
+You can test your app while you simulate moving from one location to another at different speeds and with different accuracy profiles. The location simulator can help you to identify changes in your usage of the location APIs usage that improve the user experience. For example, the tool can help you identify that you have to tune geofence parameters, such as size or dwell time, to detect the geofences successfully in different scenarios.
 
-Xxx **Xxxxxxxx** xxx xxxxxxxx xxxxx xxxxx. Xx xxx xxxxx, xxxx xxx xxxxxxxx xxxxxxxx x xxx xxxxxxxx, xxxx xxxxxxxx xx xxxxxxxxx xx xxxxxxx xxx [**XxxxxxxxXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR225540) xxxxx xx xx xxxxxxx xx x [**XxxXxxxxxxxxxxXxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh973536) xxxx xx xxxx xxxxxxxx-xxxxx xxx.
+The **Location** tab supports three modes. In all modes, when the emulator receives a new position, that position is available to trigger the [**PositionChanged**](https://msdn.microsoft.com/library/windows/apps/BR225540) event or to respond to a [**GetGeopositionAsync**](https://msdn.microsoft.com/library/windows/apps/Hh973536) call in your location-aware app.
 
--   Xx **Xxx** xxxx, xxx xxxxx xxxxxxxx xx xxx xxx. Xxxx xxx xxxxx **Xxxx xxx xxxxxx**, xxx xxxxxxxx xxxxxxxxx xxxxx xxx xxxxxxxx xx xxxx xxx xx xxx xxxxxxxx xxx xxxxx xxxxxxx, xx xxx xxxxxxxx xxxxxxxxx xx xxx **Xxxxxxx xxx xxx** xxxx xxx.
+-   In **Pin** mode, you place pushpins on the map. When you click **Play all points**, the location simulator sends the location of each pin to the emulator one after another, at the interval specified in the **Seconds per pin** text box.
 
--   Xx **Xxxx** xxxx, xxx xxxxx xxxxxxxx xx xxx xxx. Xxx xxxxxxxx xxxxxxxxx xxxxx xxx xxxxxxxx xx xxxx xxx xx xxx xxxxxxxx xxxxxxxxxxx xx xxx xxxxx xxxx xx xxx xxx.
+-   In **Live** mode, you place pushpins on the map. The location simulator sends the location of each pin to the emulator immediately as you place them on the map.
 
--   Xx **Xxxxx** xxxx, xxx xxxxx xxxxxxxx xx xxx xxx xx xxxxxxxx xxxxxxxxx, xxx xxx xxxxxxxx xxxxxxxxx xxxxxxxxxxxxx xxxxxxxxxx x xxxxx. Xxx xxxxx xxxxxxxx xxxxxxxxx xxxx xx xxx-xxxxxx xxxxxxxxx xxxxx xxx xxxxx. Xxx xxxxxxx, xx xxx xxxx xxxxxx xxx **Xxxxxxx** xxxxx xxxxxxx, xxxxx xxxxxxx x xxxxx xx Y xxxxxxxxxx xxx xxxx, xxxx xxxxxxxxx xxxx xxx xxxxxxxxx xx xxxxxxxxx xx Y.YY xxxxxx. Xxxx xxx xxxxx **Xxxx xxx xxxxxx**, xxx xxxxxxxx xxxxxxxxx xxxxx xxx xxxxxxxx xx xxxx xxx xx xxx xxxxxxxx xxx xxxxx xxxxxxx, xx xxx xxxxxxxx xxxxxxxxxx xx xxx xxxxx xxxxxxx xxxxxxxx xx xxx xxxx-xxxx xxxx.
+-   In **Route** mode, you place pushpins on the map to indicate waypoints, and the location simulator automatically calculates a route. The route includes invisible pins at one-second intervals along the route. For example, if you have select the **Walking** speed profile, which assumes a speed of 5 kilometers per hour, then invisible pins are generated at intervals of 1.39 meters. When you click **Play all points**, the location simulator sends the location of each pin to the emulator one after another, at the interval determined by the speed profile selected in the drop-down list.
 
-Xx xxx xxxxx xx xxx xxxxxxxx xxxxxxxxx, xxx xxx xx xxx xxxxxxxxx xxxxxx.
+In all modes of the location simulator, you can do the following things.
 
--   Xxx xxx xxxxxx xxx x xxxxxxxx xx xxxxx xxx **Xxxxxx** xxx.
+-   You can search for a location by using the **Search** box.
 
--   Xxx xxx **Xxxx xx** xxx **Xxxx xxx** xx xxx xxx.
+-   You can **Zoom in** and **Zoom out** on the map.
 
--   Xxx xxx xxxx xxx xxxxxxx xxx xx xxxx xxxxxx xx xx XXX xxxx, xxx xxxxxx xxx xxxx xxxxx xx xxxxx xxx xxxx xxxx xxxxxx.
+-   You can save the current set of data points to an XML file, and reload the file later to reuse the same data points.
 
--   Xxx xxx **Xxxxxx xxxxxxx xxxx xx xx xxx** xxx **Xxxxx xxx xxxxxx**.
+-   You can **Toggle pushpin mode on or off** and **Clear all points**.
 
-Xx Xxx xxx Xxxxx xxxx, xxx xxx xxxx xx xxx xxxxxxxxx xxxxxx.
+In Pin and Route mode, you can also do the following things.
 
--   Xxxx x xxxxx xxx xxxxxxx xxx xxxxx xxx.
+-   Save a route you created for later use.
 
--   Xxxx x xxxxx xxxxxxxxxx xxxxxxx. Xxx xxx xxxx xxxx xxxxx xxxxx xxxxxxx xx xxxxxxxx xxxxxxxx xx xxx xxxx.
+-   Load a route previously created. You can even load route files created in previous versions of the tool.
 
--   Xxxxxx x xxxxx xx xxxxxxxx xxxxxxxx (xx Xxx xxxx) xx xxxxxxxxx (xx Xxxxx xxxx).
+-   Modify a route by deleting pushpins (in Pin mode) or waypoints (in Route mode).
 
-**Xxxxxxxx xxxxxxxx**
+**Accuracy profiles**
 
-Xx xxx xxxxx xx xxx xxxxxxxx xxxxxxxxx, xxx xxx xxxxxx xxx xx xxx xxxxxxxxx xxxxxxxx xxxxxxxx xx xxx **Xxxxxxxx xxxxxxx** xxxx-xxxx xxxx.
+In all modes of the location simulator, you can select one of the following accuracy profiles in the **Accuracy profile** drop-down list.
 
-| Xxxxxxx  | Xxxxxxxxxxx                                        |
+| Profile  | Description                                        |
 |----------|----------------------------------------------------|
-| Xxxxxxxx | Xxxxxxx xxxxxxxxx xxxxxxxx xxxxxxxx xxxxxxxx. Xxxx xxxxxxx xx xxx xxxxxxxxx, xxx xx'x xxxxxx xxx xxxxxxx xxx xxxxx xx xxxx xxx.  |
-| Xxxxx    | Xxxxxxx xxxx xxxxxxxxx xxx xxxxxxxxxxx xxx xxxxxx xx xxxxxxxxxx xx xxxx, xxx xxxxx xx xxxxx x xxxx xxxxxxx xx xxxx xxxxxx xxx Xx-Xx xxxxxx xxxxxx xxxx xxx xx xxxx xxx xxxxxxxxxxx. |
-| Xxxxxxxx | Xxxxxxx xxxx xxxxxxxxx xxxxxxxxxxx xx xxxxxxxxxx xxxx xxx xxxxx xx xxxx xxxxxxx xx xxxx xxxxxx, xxx xxx xxxxxxx xx Xx-Xx xxxxxx xxxxxx xx xxx xxxx.  |
-| Xxxxx    | Xxxxxxx xxxx xxxxxxxxx xxxxxxxxxxx xx xxxx, xxx xxxxx xx xxx xxxxxxx xx xxxx xxxxxx xxx xxxxxx xx Xx-Xx xxxxxx xxxxxx xxxx xxx xx xxxx xxx xxxxxxxxxxx. |
+| Pinpoint | Assumes perfectly accurate location readings. This setting is not realistic, but it's useful for testing the logic of your app.  |
+| Urban    | Assumes that buildings are restricting the number of satellites in view, but there is often a high density of cell towers and Wi-Fi access points that can be used for positioning. |
+| Suburban | Assumes that satellite positioning is relatively good and there is good density of cell towers, but the density of Wi-Fi access points is not high.  |
+| Rural    | Assumes that satellite positioning is good, but there is low density of cell towers and almost no Wi-Fi access points that can be used for positioning. |
 
-**Xxxxx xxxxxxxx**
+**Speed profiles**
 
-Xx **Xxxxx** xxxx, xxx xxx xxxxxx xxx xx xxx xxxxxxxxx xxxxx xxxxxxxx xx xxx xxxx-xxxx xxxx.
+In **Route** mode, you can select one of the following speed profiles in the drop-down list.
 
-| Xxxxxxx | Xxxxx xxx xxxx               | Xxxxx xxx xxxxxx | Xxxxxxxxxxx | 
+| Profile | Speed per hour               | Speed per second | Description | 
 |---------|------------------------------|------------------|-------------|
-| Xxxxx Xxxxx | Xxxxx xxxxx xx xxx xxxxx | Xxx xxxxxxxxxx   | Xxxxxxxx xxx xxxxx xx xxx xxxxxx xxxxx xxxxx. |
-| Xxxxxxx     | Y xx/x                   | Y.YY x           | Xxxxxxxx xxx xxxxx xx x xxxxxxx xxxxxxx xxxx xx Y xx/x. |
-| Xxxxxx      | YY xx/x                  | Y.YY x           | Xxxxxxxx xxx xxxxx xx x xxxxxxx xxxxxx xxxx xx YY xx/x. |
-| Xxxx        |                          |                  |Xxxxxxxx xxx xxxxx xxxxxx xxxx xxx xxxxxx xxxxx xxxxx. | 
+| Speed Limit | Speed limit of the route | Not applicable   | Traverse the route at the posted speed limit. |
+| Walking     | 5 km/h                   | 1.39 m           | Traverse the route at a natural walking pace of 5 km/h. |
+| Biking      | 25 km/h                  | 6.94 m           | Traverse the route at a natural biking pace of 25 km/h. |
+| Fast        |                          |                  |Traverse the route faster than the posted speed limit. | 
 
-**Xxxxx xxxx**
+**Route mode**
 
-Xxxxx xxxx xxx xxx xxxxxxxxx xxxxxxxx xxx xxxxxxxxxxx.
+Route mode has the following features and limitations.
 
--   Xxxxx xxxx xxxxxxxx xx Xxxxxxxx xxxxxxxxxx.
+-   Route mode requires an Internet connection.
 
--   Xxxx xxx Xxxxx, Xxxxxxxx, xx Xxxxx xxxxxxxx xxxxxxx xx xxxxxxxx, xxx xxxxxxxx xxxxxxxxx xxxxxxxxxx x xxxxxxxxx xxxxxxxxx-xxxxx xxxxxxxx, x xxxxxxxxx Xx-Xx xxxxxxxx, xxx x xxxxxxxxx xxxxxxxx xxxxxxxx xxx xxxx xxx. Xxxx xxx xxxxxxxx xxxx xxx xx xxxxx xxxxxxxxx. Xxx xxxxx xxxx xx xxxxxxxxxxx xxx xxx xxxxxxx xxxxxxxx xxx xxxxxxxxx xx xxxxxxxxx xxxxxx xx xxx xxx xxx xx xxx **Xxxxxxx xxxxxxxx** xxxx.
+-   When the Urban, Suburban, or Rural accuracy profile is selected, the location simulator calculates a simulated satellite-based position, a simulated Wi-Fi position, and a simulated cellular position for each pin. Your app receives only one of these positions. The three sets of coordinates for the current location are displayed in different colors on the map and in the **Current location** list.
 
--   Xxx xxxxxxxx xx xxx xxxx xxxxx xxxxx xxx xxxxx xx xxx xxxxxxx. Xxxx xx xxx xxxx xxx xxxxxxxxx xxxxxxxx, xxxx xxx Xx-Xx xxxxxxxx, xxx xxxx xxx xxxxxxxx xxxxxxxx.
+-   The accuracy of the pins along route the route is not uniform. Some of the pins use satellite accuracy, some use Wi-Fi accuracy, and some use cellular accuracy.
 
--   Xxx xxxxxx xxxxxx xxxx xxxx YY xxxxxxxxx xxx xxx xxxxx.
+-   You cannot select more than 20 waypoints for the route.
 
--   Xxxxxxxxx xxx xxx xxxxxxx xxx xxxxxxxxx xxxx xx xxx xxx xxx xxxxxxxxx xxxx xxxx xxxx xxx xxxxxx x xxx xxxxxxxx xxxxxxx. Xxxx xxx xxxx xxx xxxxx xxxx xxxx xxxx xxxx xxx xxxx xxxxxxxx xxxxxxx xxxxxx xxx xxxx xxxxxxxx xxxxxxx, xxx xxxxxxxxxx xxxxxxxxx xxxxxxxxx xxx xxxxxx.
+-   Positions for the visible and invisible pins on the map are generated only once when you select a new accuracy profile. When you play the route more than once with the same accuracy profile during the same emulator session, the previously generated positions are reused.
 
-Xxx xxxxxxxxx xxxxxxxxxx xxxxx Xxxxx xxxx. Xxx xxxxxx xxxx xxxxxxxxx xxx xxxxx. Xxx xxxx xxx xxxxxxxxx xxx xxxxxxxx xxxxxxxx xx xxx xxx xxxxxxxxxx xx xxxxxxxxx-xxxxx xxxxxxxxxxx. Xxx xxx xxx xxxxx xxxx xxxxxxxx xxxx xxxxxxxx xxxxxxxxx xxxxxxxxxx xx xxxxx Xx-Xx xxx xxxxxxxx xxxxxxxxxxx xxx xxx Xxxxxxxx xxxxxxxx xxxxxxx. Xxx xxxxx xxxxxxxxxx xxxxxxxxx xxx xxxx xxxxxxxxx xx xxx **Xxxxxxx xxxxxxxx** xxxx.
+The following screenshot shows Route mode. The orange line indicates the route. The blue dot indicates the accurate location of the car determined by satellite-based positioning. The red and green dots indicate less accurate locations calculated by using Wi-Fi and cellular positioning and the Suburban accuracy profile. The three calculated locations are also displayed in the **Current location** list.
 
-![Xxxxxxxx xxxx xx Xxxxxxxxxx Xxxxx xxx xxx Xxxxxxxx](images/em-drive.png)
+![Location page in Additional Tools for the Emulator](images/em-drive.png)
 
-**Xxxx xxxx xxxxx xxx xxxxxxxx xxxxxxxxx**
+**More info about the location simulator**
 
--   Xxx xxx xxxxxxx x xxxxxxxx xxxx xxx xxxxxxxx xxx xx Xxxxxxx. X xxxxxxxxxx xxxx xxxxxxx xx xxx Xxxxxxx Xxxxx Y xxxxxxx xx xxx xxxxxxxx xxxxxxxxx, xxx xxxxxxxx xxx xx xxxxxxx x xxxxxxxx xxxx xxx xxxxxxxx xxx xx Xxxx, xxx xxxx xxxxx.
+-   You can request a position with the accuracy set to Default. A limitation that existed in the Windows Phone 8 version of the location simulator, and required you to request a position with the accuracy set to High, has been fixed.
 
--   Xxxx xxx xxxx xxxxxxxxxx xx xxx xxxxxxxx, xxxxxx x xxxxxxxxxx xxxx xxxxx xxx xxxxxxxxxx xxxxxx x “xxxx-xx” xxxxxx xx xxxxx xxx xxxxxx xx xxx xxxxxxxx xxxxxxxx.
+-   When you test geofencing in the emulator, create a simulation that gives the geofencing engine a “warm-up” period to learn and adjust to the movement patterns.
 
--   Xxx xxxx xxxxxxxx xxxxxxxxxx xxxx xxx xxxxxxxxx xxx xxx Xxxxxxxx, Xxxxxxxxx, Xxxxxxxx, xxx XxxxxxxxXxxxxx. Xxx xxxxxxxx xxxxxxxxx xxxx xxx xxxxxxxx xxxxx xxxxxxxxxx xxxx xx Xxxxx, Xxxxxxx, xxx xx xxxxx.
+-   The only position properties that are simulated are the Latitude, Longitude, Accuracy, and PositionSource. The location simulator does not simulate other properties such as Speed, Heading, and so forth.
 
-## Xxxxxxx
+## Network
 
-Xxxx xxxx xxx xxxx xxxxxxxxx xxxxxxx xxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxxx xx xxxxx xxx **Xxxxxxx** xxx xx xxx xxxxxxxx'x **Xxxxxxxxxx Xxxxx**. Xxxx xxxxxxx xx xxxxxx xx xxxx xxx xxxxx xxx xxxxxxxx xx xxxxxxxxx xxxx.
+Test your app with different network speeds and different signal strengths by using the **Network** tab of the emulator's **Additional Tools**. This feature is useful if your app calls web services or transfers data.
 
-Xxx xxxxxxx xxxxxxxxxx xxxxxxx xxxxx xxx xx xxxx xxxx xxxx xxxx xxx xxxx xxxx xx xxx xxxx xxxxx. Xxx Xxxxxxx Xxxxx Xxxxxxxx xxxx xx x xxxxxxxx xxxx xxxxxxx xxx x xxxx XxXx xx Xxxxxxxx xxxxxxxxxx. Xxxx xxx, xxxxxxx, xxxx xx xxxxxx xxxx xxx xxxxxxxxx xxxxxxxxx xxxx x xxxxxx xxxxxxxx xxxxxxxxxx.
+The network simulation feature helps you to make sure that your app runs well in the real world. The Windows Phone Emulator runs on a computer that usually has a fast WiFi or Ethernet connection. Your app, however, runs on phones that are typically connected over a slower cellular connection.
 
-1.  Xxxxx **Xxxxxx xxxxxxx xxxxxxxxxx** xx xxxx xxxx xxx xxxx xxxxxxxxx xxxxxxx xxxxxx xxx xxxxxxxxx xxxxxx xxxxxxxxx.
-2.  Xx xxx **Xxxxxxx xxxxx** xxxxxxxx xxxx, xxxxxx xxx xx xxx xxxxxxxxx xxxxxxx:
-    -   Xx xxxxxxx
-    -   YX
-    -   YX
-    -   YX
+1.  Check **Enable network simulation** to test your app with different network speeds and different signal strengths.
+2.  In the **Network speed** dropdown list, select one of the following options:
+    -   No network
+    -   2G
+    -   3G
+    -   4G
 
-3.  Xx xxx **Xxxxxx xxxxxxxx** xxxxxxxx xxxx, xxxxxx xxx xx xxx xxxxxxxxx xxxxxxx:
-    -   Xxxx
-    -   Xxxxxxx
-    -   Xxxx
+3.  In the **Signal strength** dropdown list, select one of the following options:
+    -   Good
+    -   Average
+    -   Poor
 
-4.  Xxxxx **Xxxxxx xxxxxxx xxxxxxxxxx** xx xxxxxxx xxx xxxxxxx xxxxxxxx, xxxxx xxxx xxx xxxxxxx xxxxxxxx xx xxxx xxxxxxxxxxx xxxxxxxx.
+4.  Clear **Enable network simulation** to restore the default behavior, which uses the network settings of your development computer.
 
-Xxx xxx xxxx xxxxxx xxx xxxxxxx xxxxxxx xxxxxxxx xx xxx **Xxxxxxx** xxx.
+You can also review the current network settings on the **Network** tab.
 
-![Xxxxxxx xxxx xx Xxxxxxxxxx Xxxxx xxx xxx Xxxxxxxx](images/em-network.png)
+![Network page in Additional Tools for the Emulator](images/em-network.png)
 
-## XX xxxx
+## SD card
 
-Xxxx xxxx xxx xxxx x xxxxxxxxx xxxxxxxxx XX xxxx xx xxxxx xxx **XX Xxxx** xxx xx xxx xxxxxxxx'x **Xxxxxxxxxx Xxxxx**. Xxxx xxxxxxx xx xxxxxx xx xxxx xxx xxxxx xx xxxxx xxxxx.
+Test your app with a simulated removable SD card by using the **SD Card** tab of the emulator's **Additional Tools**. This feature is useful if your app reads or write files.
 
-![XX Xxxx xxxx xx Xxxxxxxxxx Xxxxx xxx xxx Xxxxxxxx](images/em-sdcard.png)
+![SD Card page in Additional Tools for the Emulator](images/em-sdcard.png)
 
-Xxx **XX Xxxx** xxx xxxx x xxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xx xxxxxxxx x xxxxxxxxx XX xxxx xx xxx xxxxx.
+The **SD Card** tab uses a folder on the development computer to simulate a removable SD card in the phone.
 
-1.  **Xxxxxx x xxxxxx**.
+1.  **Select a folder**.
 
-    Xxxxx **Xxxxxx** xx xxxx x xxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xx xxxx xxx xxxxxxxx xx xxx xxxxxxxxx XX xxxx.
+    Click **Browse** to pick a folder on the development computer to hold the contents of the simulated SD card.
 
-2.  **Xxxxxx xxx XX xxxx**.
+2.  **Insert the SD card**.
 
-    Xxxxx xxxxxxxxx x xxxxxx, xxxxx **Xxxxxx XX xxxx**. Xxxx xxx xxxxxx xxx XX xxxx, xxx xxxxxxxxx xxxxxx xxxxxx:
+    After selecting a folder, click **Insert SD card**. When you insert the SD card, the following things happen:
 
-    -   Xx xxx xxxx'x xxxxxxx x xxxxxx, xx xxx xxxxxx'x xxx xxxxx, xx xxxxx xxxxxx.
-    -   Xxx xxxxx xx xxx xxxxxxxxx xxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxx xxxxxx xx xxx xxxx xxxxxx xx xxx xxxxxxxxx XX xxxx xx xxx xxxxxxxx. X xxxxxxxx xxx xxxxxxxxx xxx xxxxxxxx xx xxx xxxx xxxxxxxxx.
-    -   Xxx **Xxxxxx xxx XX xxxx** xxxxxx xxxxxxx xx **Xxxxx XX xxxx**.
-    -   Xx xxx xxxxx **Xxxxx XX xxxx** xxxxx xxx xxxx xxxxxxxxx xx xx xxxxxxxx, xxx xxxxxxxxx xx xxxxxxxx.
+    -   If you didn't specify a folder, or the folder's not valid, an error occurs.
+    -   The files in the specified folder on the development computer are copied to the root folder of the simulated SD card on the emulator. A progress bar indicates the progress of the sync operation.
+    -   The **Insert the SD card** button changes to **Eject SD card**.
+    -   If you click **Eject SD card** while the sync operation is in progress, the operation is canceled.
 
-3.  Xxxxxxxxxx, xxxxxx xx xxxxx **Xxxx xxxxxxx xxxxx xxxx xx xxx xxxxx xxxxxx xxxx X xxxxx xxx XX xxxx**.
+3.  Optionally, select or clear **Sync updated files back to the local folder when I eject the SD card**.
 
-    Xxxx xxxxxx xx xxxxxxx xx xxxxxxx. Xxxx xxxx xxxxxx xx xxxxxxx, xxxxx xxx xxxxxx xxxx xxx xxxxxxxx xxxx xx xxx xxxxxx xx xxx xxxxxxxxxxx xxxxxxxx xxxx xxx xxxxx xxx XX xxxx.
+    This option is enabled by default. When this option is enabled, files are synced from the emulator back to the folder on the development computer when you eject the SD card.
 
-4.  **Xxxxx xxx XX xxxx**.
+4.  **Eject the SD card**.
 
-    Xxxxx **Xxxxx XX xxxx**. Xxxx xxx xxxxx xxx XX xxxx, xxx xxxxxxxxx xxxxxx xxxxxx:
+    Click **Eject SD card**. When you eject the SD card, the following things happen:
 
-    -   xx xxx xxxx xxxxxxxx **Xxxx xxxxxxx xxxxx xxxx xx xxx xxxxx xxxxxx xxxx X xxxxx xxx XX xxxx**, xxx xxxxxxxxx xxxxxx xxxxxx:
-        -   Xxx xxxxx xx xxx xxxxxxxxx XX xxxx xx xxx xxxxxxxx xxx xxxxxx xx xxx xxxxxxxxx xxxxxx xx xxx xxxxxxxxxxx xxxxxxxx. X xxxxxxxx xxx xxxxxxxxx xxx xxxxxxxx xx xxx xxxx xxxxxxxxx.
-        -   Xxx **Xxxxx XX xxxx** xxxxxx xxxxxxx xx **Xxxxxx xxxx**.
-        -   Xx xxx xxxxx **Xxxxxx xxxx** xxxxx xxx xxxx xxxxxxxxx xx xx xxxxxxxx, xxx xxxx xx xxxxxxx xxx xxx xxxxxxx xx xxx xxxx xxxxxxxxx xxx xxxxxxxxxx.
-    -   Xxx **Xxxxx XX xxxx** xxxxxx xxxxxxx xxxx xx **Xxxxxx XX xxxx**.
+    -   if you have selected **Sync updated files back to the local folder when I eject the SD card**, the following things happen:
+        -   The files on the simulated SD card on the emulator are copied to the specified folder on the development computer. A progress bar indicates the progress of the sync operation.
+        -   The **Eject SD card** button changes to **Cancel sync**.
+        -   If you click **Cancel sync** while the sync operation is in progress, the card is ejected and the results of the sync operation are incomplete.
+    -   The **Eject SD card** button changes back to **Insert SD card**.
 
-> **Xxxx**  Xxxxx xx XX xxxx xxxx xx xxx xxxxx xx xxxxxxxxx xxxx xxx XXXYY xxxx xxxxxx, YYXX xx xxx xxxxxxx xxxx.
+> **Note**  Since an SD card used by the phone is formatted with the FAT32 file system, 32GB is the maximum size.
 
-Xxx xxxxx xx xxxxxxx xxxx xxx xxxxxxx xx xxx xxxxxxxxx XX xxxx xx xxxxxxxxx xx xxxxxxx xxxx-xxxxx xxxxxx. Xxxxxxxxx xx XX xxxx xx xxxxxx xxxx xxxxxxxxx xxx xxxxxxxx'x xxxx xxxxx.
+The speed of reading from and writing to the simulated SD card is throttled to imitate real-world speeds. Accessing an SD card is slower than accessing the computer's hard drive.
 
-## Xxxxxxxxxxxxx
+## Notifications
 
-Xxxx xxxx xxxxxxxxxxxxx xx xxxx xxx xx xxxxx xxx **Xxxxxxxxxxxxx** xxx xx xxx xxxxxxxx'x **Xxxxxxxxxx Xxxxx**. Xxxx xxxxxxx xx xxxxxx xx xxxx xxx xxxxxxxx xxxx xxxxxxxxxxxxx.
+Send push notifications to your app by using the **Notifications** tab of the emulator's **Additional Tools**. This feature is useful if your app receives push notifications.
 
-Xxx xxx xxxxxx xxxx xxxx xxxxxxxxxxxxx xxxxxxx xxxxxxxx xxx xxxxxxx xxxxx xxxxxxx xxxx'x xxxxxxxx xxxxx xxx xxxxxxx xxxx xxx.
+You can easily test push notifications without creating the working cloud service that's required after you publish your app.
 
-1.  **Xxxxxx xxxxxxxxxx.**
+1.  **Enable simulation.**
 
-    Xxxxx xxx xxxxxx **Xxxxxxx**, xxx xxxx xxxxxxxx xx xxx xxxxxxxx xxx xxx xxxxxxxxxx xxxxxx xxxxxxx xx xxx XXX xx XXX xxxxxxx xxxxx xxx xxxxxxx xxxxxxxxxx.
+    After you select **Enabled**, all apps deployed on the emulator use the simulation engine instead of the WNS or MPN service until you disable simulation.
 
-2.  **Xxxxxx xx xxx xx xxxxxxx xxxxxxxxxxxxx.**
+2.  **Select an app to receive notifications.**
 
-    Xxx **XxxXx** xxxx xx xxxxxxxxxxxxx xxxxxxxxx xxxx xxx xxxx xxxxxxxx xx xxx xxxxxxxx xxxx xxx xxxxxxx xxx xxxx xxxxxxxxxxxxx. Xxxxxx xx xxx xx xxx xxxx-xxxx xxxx.
+    The **AppId** list is automatically populated with all apps deployed to the emulator that are enabled for push notifications. Select an app in the drop-down list.
 
-    Xx xxx xxxxxx xxxxxxx xxxx-xxxxxxx xxx xxxxx xxxxxxxx xxxxxxxxxx, xxxxx **Xxxxxxx** xx xxx xxx xxx xx xxx xxxx.
+    If you deploy another push-enabled app after enabling simulation, click **Refresh** to add the app to the list.
 
-3.  **Xxxxxx x xxxxxxxxxxxx xxxxxxx.**
+3.  **Select a notification channel.**
 
-    Xxxxx xxx xxxxxx xx xxx xx xxx **XxxXx** xxxx, xxx **XXX** xxxx xx xxxxxxxxxxxxx xxxxxxxxx xxxx xxx xxx xxxxxxxxxxxx xxxxxxxx xxxxxxxxxx xxx xxx xxxxxxxx xxx. Xxxxxx x xxxxxxxxxxxx xxxxxxx xx xxx xxxx-xxxx xxxx.
+    After you select an app in the **AppId** list, the **URI** list is automatically populated with all the notification channels registered for the selected app. Select a notification channel in the drop-down list.
 
-4.  **Xxxxxx x xxxxxxxxxxxx xxxx.**
+4.  **Select a notification type.**
 
-    Xxxxx xxx xxxxxx x xxxxxxxxxxxx xxxxxxx xx xxx **XXX** xxxx, xxx **Xxxxxxxxxxxx Xxxx** xxxx xx xxxxxxxxxxxxx xxxxxxxxx xxxx xxx xxx xxxxx xxxxxxxxx xxx xxx xxxxxxxxxxxx xxxxxxx. Xxxxxx x xxxxxxxxxxxx xxxx xx xxx xxxx-xxxx xxxx.
+    After you select a notification channel in the **URI** list, the **Notification Type** list is automatically populated with all the types available for the notification service. Select a notification type in the drop-down list.
 
-    Xxx xxxxxxxxx xxxx xxx Xxx xxxxxx xx xxx xxxxxxxxxxxx xxxxxxx xx xxxxxxxxx xxxxxxx xxx xxx xx xxxxx XXX xx XXX xxxx xxxxxxxxxxxxx.
+    The simulator uses the Uri format of the notification channel to determine whether the app is using WNS or MPN push notifications.
 
-    Xxxxxxxxxx xxxxxxxx xxx xxxxxxxxxxxx xxxxx. Xxx xxxxxxx xxxxxxxxxxxx xxxx xx **Xxxx**.
+    Simulation supports all notification types. The default notification type is **Tile**.
 
-    -   Xxx xxxxxxxxx XXX xxxxxxxxxxxx xxxxx xxx xxxxxxxxx.
+    -   The following WNS notification types are supported.
 
-        -   Xxx
-        -   Xxxxx
+        -   Raw
+        -   Toast
 
-            Xxxx xxxx xxx xxxx XXX xxxxxxxxxxxxx xxx xxx xxxxxx xxx **Xxxxx** xxxxxxxxxxxx xxxx, xxx xxxxxxxxxx xxx xxxxxxxx xxx **Xxx** xxx **Xxxxx** xxxxxx. Xxx xxx xxxxxx xxxxx xxxxxxx xxx xxxxx **Xxx** xxx **Xxxxx** xxxxxx xx xxxxxx xxxxx xxxxxxxxxxxxx xx xxx Xxxxxxxxxxxx Xxxxxx.
+            When your app uses WNS notifications and you select the **Toast** notification type, the simulation tab displays the **Tag** and **Group** fields. You can select these options and enter **Tag** and **Group** values to manage toast notifications in the Notification Center.
 
-        -   Xxxx
-        -   Xxxxx
+        -   Tile
+        -   Badge
 
-    -   Xxx xxxxxxxxx XXX xxxxxxxxxxxx xxxxx xxx xxxxxxxxx.
+    -   The following MPN notification types are supported.
 
-        -   Xxx
-        -   Xxxxx
-        -   Xxxx
+        -   Raw
+        -   Toast
+        -   Tile
 
-5.  **Xxxxxx x xxxxxxxxxxxx xxxxxxxx.**
+5.  **Select a notification template.**
 
-    Xxxxx xxx xxxxxx x xxxxxxxxxxxx xxxx xx xxx **Xxxxxxxxxxxx Xxxx** xxxx, xxx **Xxxxxxxxx** xxxx xx xxxxxxxxxxxxx xxxxxxxxx xxxx xxx xxx xxxxxxxxx xxxxxxxxx xxx xxx xxxxxxxxxxxx xxxx. Xxxxxx x xxxxxxxx xx xxx xxxx-xxxx xxxx.
+    After you select a notification type in the **Notification Type** list, the **Templates** list is automatically populated with all the templates available for the notification type. Select a template in the drop-down list.
 
-    Xxxxxxxxxx xxxxxxxx xxx xxxxxxxx xxxxx.
+    Simulation supports all template types.
 
-6.  **Xxxxxxxxxx, xxxxxx xxx xxxxxxxxxxxx xxxxxxx.**
+6.  **Optionally, change the notification payload.**
 
-    Xxxxx xxx xxxxxx x xxxxxxxx xx xxx **Xxxxxxxxx** xxxx, xxx **Xxxxxxxxxxxx Xxxxxxx** xxxx xxx xx xxxxxxxxxxxxx xxxxxxxxx xxxx x xxxxxx xxxxxxx xxx xxx xxxxxxxx. Xxxxxx xxx xxxxxx xxxxxxx xx xxx **Xxxxxxxxxxxx Xxxxxxx** xxxx xxx.
+    After you select a template in the **Templates** list, the **Notification Payload** text box is automatically populated with a sample payload for the template. Review the sample payload in the **Notification Payload** text box.
 
-    -   Xxx xxx xxxx xxx xxxxxx xxxxxxx xxxxxxx xxxxxxxx xx.
+    -   You can send the sample payload without changing it.
 
-    -   Xxx xxx xxxx xxx xxxxxx xxxxxxx xx xxx xxxx xxx.
+    -   You can edit the sample payload in the text box.
 
-    -   Xxx xxx xxxxx **Xxxx** xx xxxx x xxxxxxx xxxx x xxxx xx XXX xxxx.
+    -   You can click **Load** to load a payload from a text or XML file.
 
-    -   Xxx xxx xxxxx **Xxxx** xx xxxx xxx XXX xxxx xx xxx xxxxxxx xx xxx xxxxx xxxxx.
+    -   You can click **Save** to save the XML text of the payload to use again later.
 
-    Xxx xxxxxxxxx xxxx xxx xxxxxxxx xxx XXX xxxx xx xxx xxxxxxx.
+    The simulator does not validate the XML text of the payload.
 
-7.  **Xxxx xxx xxxx xxxxxxxxxxxx.**
+7.  **Send the push notification.**
 
-    Xxxxx **Xxxx** xx xxxxxxx xxx xxxx xxxxxxxxxxxx xx xxx xxxxxxxx xxx.
+    Click **Send** to deliver the push notification to the selected app.
 
-    Xxx xxxxxx xxxxxxxx x xxxxxxx xx xxxxxxxx xxxxxxx xx xxxxxxx.
+    The screen displays a message to indicate success or failure.
 
-![Xxxxxxxxxxxxx xxxx xx Xxxxxxxxxx Xxxxx xxx xxx Xxxxxxxx](images/em-notifications.png)
+![Notifications page in Additional Tools for the Emulator](images/em-notifications.png)
 
-## Xxxxxxx
+## Sensors
 
-Xxxx xxx xxxx xxx xxxxx xx xxx-xxxx xxxxxx xxxx xxx'x xxxx xxx xxx xxxxxxxx xxxxxxx xx xxxxxx xxxxxxxx xx xxxxx xxx **Xxxxxxx** xxx xx xxx xxxxxxxx'x **Xxxxxxxxxx Xxxxx**. Xxxx xxxxxxx xx xxxxxx xx xxxx xxx xxxx xxx xxxxxx xx xxxx xx xxx xxxxx'x xxxxxxx, xxx xxx xxxx xxxx xxx xx xxxxx xxx xxxxxxx xxxxxxxx xxxxxx.
+Test how your app works on low-cost phones that don't have all the optional sensors or camera features by using the **Sensors** tab of the emulator's **Additional Tools**. This feature is useful if your app uses the camera or some of the phone's sensors, and you want your app to reach the largest possible market.
 
--   Xx xxxxxxx, xxx xxxxxxx xxx xxxxxxx xx xxx **Xxxxxxxx xxxxxxx** xxxx. Xxxxxx xx xxxxx xxxxxxxxxx xxxxx xxxxx xx xxxxxx xx xxxxxxx xxxxxxxxxx xxxxxxx.
--   Xxxxx xxx xxxxxx xxxx xxxxxxxxxx, xxxxx **Xxxxx**. Xxxx xxx xxxx xx xxxxxxx xxx xxxxxxxx.
--   Xx xxx xxxx xxxxxxx, xxx xxxx xxx xxxxxx xxxx xx xxxxx xxx **Xxxxxxxxxx Xxxxx** xxxxxx xxxxxxx xxxxxxxx **Xxxxx**, xxxx xxxxxxx xxx xxxxxxxxx.
--   Xxxx xxxxxxxx xxx xxxxxxxxx xxxxxxx xxx xxx xxxxxxxx xxxxxxx xxxxx xxx xxxxxx xxxx xx xxxxx xxxx. Xx xxx xxxxxxx x xxxxxxxxxx, xxx xxxxxxxx xxx xxxxx xxxx xxx xxxxxxxxxx. Xxx xxxxxxxx xxx xxxxxxxxx xxxx xxx xxx xxxxxxxx xxxxxxxx xxxx xxx'xx xxxxx - xxx xxxxxxx, **Xxxxxxxx Y.Y XXXX Y" YYYXX**.
+-   By default, all sensors are enabled in the **Optional sensors** list. Select or clear individual check boxes to enable or disable individual sensors.
+-   After you change your selections, click **Apply**. Then you have to restart the emulator.
+-   If you make changes, and then you switch tabs or close the **Additional Tools** window without clicking **Apply**, your changes are discarded.
+-   Your settings are persisted between for the emulator session until you change them or reset them. If you capture a checkpoint, the settings are saved with the checkpoint. The settings are persisted only for the specific emulator that you're using - for example, **Emulator 8.1 WVGA 4" 512MB**.
 
-![Xxxxxxx xxxx xx Xxxxxxxxxx Xxxxx xxx xxx Xxxxxxxx](images/em-sensors.png)
+![Sensors page in Additional Tools for the Emulator](images/em-sensors.png)
 
-**Xxxxxx xxxxxxx**
+**Sensor options**
 
-Xxx xxx xxxxxx xx xxxxxxx xxx xxxxxxxxx xxxxxxxx xxxxxxxx xxxxxxx:
+You can enable or disable the following optional hardware sensors:
 
--   Xxxxxxx xxxxx xxxxxx
--   Xxxxx-xxxxxx xxxxxx
--   Xxxxxxxxx
--   Xxxxxxx (xxxxxxxxxxxx)
--   XXX
--   Xxxxxxxx xxxxxxx (xxxx xx xxxx xxxx-xxxxxxxxxx xxxxxxxx xxxxxx)
+-   Ambient light sensor
+-   Front-facing camera
+-   Gyroscope
+-   Compass (magnetometer)
+-   NFC
+-   Software buttons (only on some high-resolution emulator images)
 
-**Xxxxxx xxxxxxx**
+**Camera options**
 
-Xxx xxx xxxxxx xx xxxxxxx xxx xxxxxxxx xxxxx-xxxxxx xxxxxx xx xxxxxxxxx xx xxxxxxxx xxx xxxxx xxx xx xxx **Xxxxxxxx xxxxxxx** xxxx.
+You can enable or disable the optional front-facing camera by selecting or clearing the check box in the **Optional sensors** list.
 
-Xxx xxx xxxx xxxxxx xxx xx xxx xxxxxxxxx xxxxxx xxxxxxxx xx xxx **Xxxxxx** xxxxxxxx xxxx.
+You can also select one of the following camera profiles in the **Camera** dropdown list.
 
--   Xxxxxxx Xxxxx Y.Y xxxxxx.
--   Xxxxxxx Xxxxx Y.Y xxxxxx.
+-   Windows Phone 8.0 camera.
+-   Windows Phone 8.1 camera.
 
-Xxxx xx xxx xxxx xx xxxxxx xxxxxxxx xxxxxxxxx xx xxxx xx xxx xxxxxxxx.
+Here is the list of camera features supported by each of the profiles.
 
-| Xxxxxxx            | Xxxxxxx Xxxxx Y.Y xxxxxx | Xxxxxxx Xxxxx Y.Y xxxxxx  |
+| Feature            | Windows Phone 8.0 camera | Windows Phone 8.1 camera  |
 |--------------------|--------------------------|---------------------------|
-| Xxxxxxxxxx         | YYY x YYY (XXX)          | YYY x YYY (XXX) xx xxxxxx |
-| Xxxxxxxxx          | Xxx                      | Xxx                       |
-| Xxxxx              | Xx                       | Xxx                       |
-| Xxxx               | Yx (xxxxxxx xx xxxxxxx)  | Yx (xxxxxxx xx xxxxxxx)   |
-| Xxxxx xxxxxxxxxx   | YYY x YYY (XXX)          | YYY x YYY (XXX) xx xxxxxx |
-| Xxxxxxx xxxxxxxxxx | YYY x YYY (XXX)          | YYY x YYY (XXX)           |
+| Resolution         | 640 x 480 (VGA)          | 640 x 480 (VGA) or better |
+| Autofocus          | Yes                      | Yes                       |
+| Flash              | No                       | Yes                       |
+| Zoom               | 2x (digital or optical)  | 2x (digital or optical)   |
+| Video resolution   | 640 x 480 (VGA)          | 640 x 480 (VGA) or better |
+| Preview resolution | 640 x 480 (VGA)          | 640 x 480 (VGA)           |
 
-## Xxxxx xxxx xxxxxxxx
+## Frame rate counters
 
-Xxx xxx xxxxx xxxx xxxxxxxx xx Xxxxxxx Xxxxx xxxxxxxx xx xxxxxxx xxx xxxxxxxxxxx xx xxxx xxxxxxx xxx.
+Use the frame rate counters in Windows Phone emulator to monitor the performance of your running app.
 
-![Xxxxx xxxx xxxxxxxx xx Xxxxxxx Xxxxx xxxxxxxx](images/em-frameratecounters.png)
+![Frame rate counters in Windows Phone emulator](images/em-frameratecounters.PNG)
 
-**Xxxxxxxxxxxx xx xxx xxxxx xxxx xxxxxxxx**
+**Descriptions of the frame rate counters**
 
-Xxx xxxxxxxxx xxxxx xxxxxxxxx xxxx xxxxx xxxx xxxxxxx.
+The following table describes each frame rate counter.
 
-| Xxxxx xxxx xxxxxxx                           | Xxxxxxxxxxx        |
+| Frame rate counter                           | Description        |
 |----------------------------------------------|--------------------|
-| Xxxxxxxxxxx (Xxxxxx) Xxxxxx Xxxxx Xxxx (XXX) | Xxx xxxx xx xxxxx xxx xxxxxx xx xxxxxxx.  |
-| Xxxx Xxxxxxxxx Xxxxxx Xxxxx Xxxx (XXX)       | Xxx xxxx xx xxxxx xxx XX xxxxxx xx xxxxxxx.    |
-| Xxxxxxx Xxxxxx Xxxxx                         | Xxx xxxxx xxxxxx xxx xxxxxx xxxxxx xxxxxx xx xxxxxxxx xxxxx xxxx xx xxx xxx.    |
-| Xxxxxxx Xxxxxxx                              | Xxx xxxxxx xx xxxxxxxx xxxxxxxx xxxxx xxxxxx xx xxx XXX xxx xxxxxxxxxx.     |
-| Xxxxxxxxxxxx Xxxxxxx Xxxxxxx                 | Xxx xxxxxx xx xxxxxxxx xxxxxxxx xxxxxxxxx xx x xxxxxx xx xxxxxx xxxxxxxx.    |
-| Xxxxxx Xxxx Xxxx Xxxxxxx                     | Xxx xxxxxx xx xxxxxx xxxxx xxxxxxx xxx xxxxx xx xxxxx xx xxxxxxx. X xxxxx xx Y xxxxxxxxxx xxx xxxxxx xx xxxxxx xx xxx xxxxxxx xxxxxx xxxxxxxxxx – xxx xxxxxxx, YYY x YYY xxxxxx. |
+| Composition (Render) Thread Frame Rate (FPS) | The rate at which the screen is updated.  |
+| User Interface Thread Frame Rate (FPS)       | The rate at which the UI thread is running.    |
+| Texture Memory Usage                         | The video memory and system memory copies of textures being used in the app.    |
+| Surface Counter                              | The number of explicit surfaces being passed to the GPU for processing.     |
+| Intermediate Surface Counter                 | The number of implicit surfaces generated as a result of cached surfaces.    |
+| Screen Fill Rate Counter                     | The number of pixels being painted per frame in terms of screens. A value of 1 represents the number of pixels in the current screen resolution – for example, 480 x 800 pixels. |
 
-**Xxxxxxxx xxx xxxxxxxxx xxx xxxxx xxxx xxxxxxxx**
+**Enabling and disabling the frame rate counters**
 
-Xxx xxx xxxxxx xx xxxxxxx xxx xxxxxxx xx xxx xxxxx xxxx xxxxxxxx xx xxxx xxxx. Xxxx xxx xxxxxx x Xxxxxxx Xxxxx xxx xxxxxxx xx Xxxxxx Xxxxxx, xxx xxxxxxxxx xxxx xx xxxxxx xxx xxxxx xxxx xxxxxxxx xx xxxxx xx xxxxxxx xx xxx xxxx Xxx.xxxx.xx. Xx xxxxxxx xxx xxxxx xxxx xxxxxxxx, xxx **XxxxxxXxxxxXxxxXxxxxxx** xx **xxxxx** xx xxxxxxx xxx xxx xxxx xx xxxx.
+You can enable or disable the display of the frame rate counters in your code. When you create a Windows Phone app project in Visual Studio, the following code to enable the frame rate counters is added by default in the file App.xaml.cs. To disable the frame rate counters, set **EnableFrameRateCounter** to **false** or comment out the line of code.
 
-> [!xxx xxxxx="xxxxxxXxxxXxxxxxxx"]
-```csharp
-// Show graphics profiling information while debugging.
-if (System.Diagnostics.Debugger.IsAttached)
-{
-    // Display the current frame rate counters.
-    Application.Current.Host.Settings.EnableFrameRateCounter = true;
-    
-    // other code…
-}
-```
-```vb
-' Show graphics profiling information while debugging.
-If System.Diagnostics.Debugger.IsAttached Then
+> [!div class="tabbedCodeSnippets"]
+>```csharp
+>// Show graphics profiling information while debugging.
+>if (System.Diagnostics.Debugger.IsAttached)
+>{
+>    // Display the current frame rate counters.
+>    Application.Current.Host.Settings.EnableFrameRateCounter = true;
+>    
+>    // other code…
+>}
+>```
+>```vb
+>' Show graphics profiling information while debugging.
+>If System.Diagnostics.Debugger.IsAttached Then
+>
+>    ' Display the current frame rate counters.
+>    Application.Current.Host.Settings.EnableFrameRateCounter = True
+>
+>    ' other code...
+>End If
+>```
 
-    ' Display the current frame rate counters.
-    Application.Current.Host.Settings.EnableFrameRateCounter = True
+## Known Issues
 
-    ' other code...
-End If
-```
+The following are known issues with the emulator, with suggested ways to work around problems if you encounter them.
 
-## Xxxxx Xxxxxx
+### Error message: “Failed while removing virtual Ethernet switch”
 
-Xxx xxxxxxxxx xxx xxxxx xxxxxx xxxx xxx xxxxxxxx, xxxx xxxxxxxxx xxxx xx xxxx xxxxxx xxxxxxxx xx xxx xxxxxxxxx xxxx.
+In certain situations, including after you update to a new Windows 10 flight, a virtual network switch associated with the emulator can get into a state where it can't be deleted through the user interface.
 
-### Xxxxx xxxxxxx: “Xxxxxx xxxxx xxxxxxxx xxxxxxx Xxxxxxxx xxxxxx”
+To recover from this situation run "netcfg -d" from an administrator command prompt: `C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`. When the command is finished running, reboot your computer to complete the recovery process.
 
-Xx xxxxxxx xxxxxxxxxx, xxxxxxxxx xxxxx xxx xxxxxx xx x xxx Xxxxxxx YY xxxxxx, x xxxxxxx xxxxxxx xxxxxx xxxxxxxxxx xxxx xxx xxxxxxxx xxx xxx xxxx x xxxxx xxxxx xx xxx'x xx xxxxxxx xxxxxxx xxx xxxx xxxxxxxxx.
-
-Xx xxxxxxx xxxx xxxx xxxxxxxxx xxx "xxxxxx -x" xxxx xx xxxxxxxxxxxxx xxxxxxx xxxxxx: `C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`. Xxxx xxx xxxxxxx xx xxxxxxxx xxxxxxx, xxxxxx xxxx xxxxxxxx xx xxxxxxxx xxx xxxxxxxx xxxxxxx.
-
-**Xxxx**  Xxxx xxxxxxx xxxx xxxxxx xxx xxxxxxxxxx xxxxxxx, xxx xxxx xxxxx xxxxxxxxxx xxxx xxx xxxxxxxx. Xxxx xxxx xxxxxxxx xxxxxx xxxxx, xxx xxxxxxxx xxxxxxxxxx xxxxxxx xxxx xx xxxxxxxxxx xxxxxxxxxxxxx.
+**Note**  This command will delete all networking devices, not just those associated with the emulator. When your computer starts again, all hardware networking devices will be discovered automatically.
  
-### Xxxxxx xx xxxxxx xxx xxxxxxxxx
+### Unable to launch the emulators
 
-Xxxxxxxxx Xxxxxxxx xxxxxxxx XXXXxxxxxx.xxx, x xxxx xxxx xxxxxxx xxx XXx, xxxx xxxxx, xxx xxxxxxxx xxxxxxxx xxxxxxx xxxxxxxx, xxx xx xxxxx xxxx xxx xxxxxxxx (XXX) xxxxxxxx xxxxxxx. Xxx xxxxxx xxx xxxx xxxx xx xxxxx xx xxxxxxxx XXx xx xxxx xxx xxxx x xxx xxxxx. Xxx xxx xxxx xxxx xx xxxxxxxxxxxxx xxxxxxx xxxxxx:`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
+Microsoft Emulator includes XDECleanup.exe, a tool that deletes all VMs, diff disks, and emulator specific network switches, and it ships with the emulator (XDE) binaries already. You should use this tool to clean up emulator VMs if they get into a bad state. Run the tool from an administrator command prompt:`C:\Program Files (x86)\Microsoft XDE\<version>\XdeCleanup.exe`
 
-> **Xxxx**  XXXXxxxxxx.xxx xxxxxxx xxx xxxxxxxx xxxxxxxx Xxxxx-X XXx, xxx xx xxxx xxxxxxx xxx XX xxxxxxxxxxx xx xxxxx xxxxxx.
+> **Note**  XDECleanup.exe deletes all emulator specific Hyper-V VMs, and it also deletes any VM checkpoints or saved states.
 
-### Xxxxxxxxx Xxxxxxx YY xxx Xxxxxx Xxxxx
+### Uninstall Windows 10 for Mobile Image
 
-Xxxx xxx xxxxxxx xxx xxxxxxxx, x Xxxxxxx YY xxx Xxxxxx XXX xxxxx xx xxxxxxxxx, xxxxx xxxx xxx xxx xxxxx xx xxx **Xxxxxxxx xxx Xxxxxxxx** xxxx xx xxx Xxxxxxx Xxxxx. Xx xxx xxxx xx xxxxxxxxx xxx xxxxx, xxxx **Xxxxxxx YY xxx Xxxxxx Xxxxx - <version>** xx xxx xxxx xx xxxxxxxxx xxxxxxxx, xxxxx-xxxxx xx xx, xxx xxxxxx **Xxxxxxxxx**.
+When you install the emulator, a Windows 10 for Mobile VHD image is installed, which gets its own entry in the **Programs and Features** list in the Control Panel. If you wish to uninstall the image, find **Windows 10 for Mobile Image - <version>** in the list of installed programs, right-click on it, and choose **Uninstall**.
 
-Xx xxx xxxxxxx xxxxxxx, xxx xxxx xxxx xxxxxxxx xxxxxx xxx XXX xxxx xxx xxx xxxxxxxx. Xx xxx xxxxxxxxx xxx xxxxxxxx xx xxx xxxxxxx xxxx, xxx XXX xxxx xx xx X:\\Xxxxxxx Xxxxx (xYY)\\Xxxxxxx Xxxx\\YY\\Xxxxxxxxx\\Xxxxxx\\<version>\\xxxxx.xxx.
+In the current release, you must then manually delete the VHD file for the emulator. If you installed the emulator to the default path, the VHD file is at C:\\Program Files (x86)\\Windows Kits\\10\\Emulation\\Mobile\\<version>\\flash.vhd.
 
-## Xxxxxxx Xxxxxxxxx
+###How to disable hardware accelerated graphics
 
-Xx xxxx xxxxxxx xxx xxxxx xxxxxxxx xx xxx xxxxx xxxxxxx xxxx xxx Xxxxxxx YY xxxxx, xxxxxx xxxxx [Xxxxxxx YY Xxxxx xxxxx](http://go.microsoft.com/fwlink/?LinkId=534765). Xx xxx xxx xxx xxxxxx xxx Xxxxxxx YY xxxxxxxxxxx, xxxxx [xxxx xxxx](http://go.microsoft.com/fwlink/?LinkId=535000).
+By default, Windows 10 Mobile Emulator uses hardware accelerated graphics. If you are having trouble launching the emulator with hardware acceleration enabled, you can turn it off by setting a registry value.
 
-## Xxxxxxx xxxxxx
+To disable hardware acceleration:
 
-* [Xxx Xxxxxxx Xxxxx xxxx xx xxx xxxxxxxx](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn632391.aspx)
-* [Xxxxxxx xxx Xxxxxxx Xxxxx XXX xxxxxxx](https://dev.windows.com/downloads/sdk-archive)
+1. Start Registry Editor.
+2. Create the following registry subkey if it doesn't exist:
+   HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Xde\10.0
+3. Right click the 10.0 folder, point to **New**, and then click **DWORD Value**.
+4. Type **DisableRemoteFx**, and then press Enter.
+5. Double-click **DisableRemoteFx**, enter 1 in the **Value** data box, select the **Decimal** option, and then click **OK**.
+6. Close Registry Editor.
+
+**Note:** After setting this registry value, you must delete the virtual machine in Hyper-V manager for the configuration that you launched in Visual Studio, and then relaunch the emulator with software-rendered graphics.
+
+## Support Resources
+
+To find answers and solve problems as you start working with the Windows 10 tools, please visit [Windows 10 Tools forum](http://go.microsoft.com/fwlink/?LinkId=534765). To see all the forums for Windows 10 development, visit [this link](http://go.microsoft.com/fwlink/?LinkId=535000).
+
+## Related topics
+
+* [Run Windows Phone apps in the emulator](https://msdn.microsoft.com/en-us/library/windows/apps/xaml/dn632391.aspx)
+* [Windows and Windows Phone SDK archive](https://dev.windows.com/downloads/sdk-archive)
  
 
-<!--HONumber=Mar16_HO1-->
+
+
+<!--HONumber=Mar16_HO3-->
+
+

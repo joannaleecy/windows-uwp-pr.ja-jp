@@ -1,52 +1,56 @@
 ---
-xx.xxxxxxx: YYXXXYYY-YXXY-YXYY-XXYX-YYYXYXXYXYYX
-xxxxxxxxxxx: Xxxxxx xxx xxxxxx xxxx xxx, xx xxxxxxxxx xxxxxxx xxxx xx xxxxxxxxx xxxxxxxxxxxxxx.
-xxxxx: Xxxx xxxx xx xxxxxxxxx xxxxxxxxxxxxxx
+ms.assetid: 54ECD653-7FC2-4A95-AC5A-972C4FB5A54B
+description: Before you submit your app, we recommend testing your ad mediation implementation.
+title: Test your ad mediation implementation
 ---
 
-# Xxxx xxxx xx xxxxxxxxx xxxxxxxxxxxxxx
+# Test your ad mediation implementation
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxx xxx xxxxxx xxxx xxx, xx xxxxxxxxx xxxxxxx xxxx xx xxxxxxxxx xxxxxxxxxxxxxx.
+Before you submit your app, we recommend testing your ad mediation implementation.
 
-## Xxxxxxx xxxx xxxx xx xxxxxxx xxxxxxxxxxxxx xxxxxx
+## Testing with test ad network configuration values
 
 
-Xx xxx xxx xxxx xxx xxxxxxx xxxxxxxx xx xxxxxxx xxxxxxxxxxxxx xx xxxxxxxxx **Xxxxxxxxx Xxxxxxxx** xxx xxxx xxxxxxx xx Xxxxxx Xxxxxx, xx xxxxxxxxx xxxx xxxxxxxxxxxxx xxx xxxx xxxxxxxxxxxxx xxxxxx xxxx xxx xxx xxxx xxx xx xxxx xxxxxxxxxxx xxxxxxxx (xxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx Xxxxxxx Y.Y XXXX xxxx) xx xx xxx xxxxxxxx xx xxxxxx (xxx Xxxxxxx Xxxxx xxxx). Xxxx xxxxxxx xxx xx xxxxxxx xxxx xxxx xxx xxx xxxx xxxx xx'x xxxxx xxxxxxxxx xxxxxx xxx'xx xxxxxxx xxxx xx xxxxxxx xxxxxxxx xxxxxxxxxx.
+If you run your app without entering ad network configuration by launching **Connected Services** for your project in Visual Studio, ad mediation will automatically use test configuration values when you run your app on your development computer (for Universal Windows Platform (UWP) and Windows 8.1 XAML apps) or on the emulator or device (for Windows Phone apps). This enables you to quickly test your app and make sure it's coded correctly before you've entered your ad network required parameters.
 
-Xxx xx xxxxxxxx xxxx xxxxxx xx xxxxxxxxxx xxxxx, xxxx xxx xxxxxxx xxxxxxxxx xxxxx xxxxxxx xxx xxxxx xxxxxxx xx xxxx. Xx xxxx xx xxxx xxxx xxxxxx xx xxx xxxxxxx x xxx xxxxxx xx xxx xxx xxxx xxx xx xxxxxxxx xxx xxxxxx xxx xxxxxx xx xxx xxxxxxxxx xxxxxxxxxxxx xxxxxx xxxxx xxx xxxxx.
+The ad networks will rotate in sequential order, with one network displayed after another for equal amounts of time. Be sure to wait long enough to run through a few cycles so you can view all ad networks and reduce the chance of any temporary connectivity issues which may occur.
 
-Xxxx xxx xxxx xx xxxxxxxxx xxx xx xxxxxxxx xxxxx xxxxxxx xxxx. Xxxx xxxx xxx xxxx xxx xxx xxxxxxxxx xxxx xxxx xxxxxx. Xx xxxx xx xxxxxx xxxx xxxxxx xx xxxxxxxxx xx xxxxxx xxxx xxxxxxxx.
+Test ads will be displayed for ad networks which support them. Note that the test ads can sometimes look like errors. Be sure to review your events to determine if errors have occurred.
 
-**Xxxx**  Xxxx xxxxxxx x Xxxxxxx Xxxxx Xxxxxxxxxxx xxx, Xxxxxx XxXxx xxxx xxxxxx xxxxxx xx **Xxxxxxx Xxxxxxx** xxxxx xxxxx xx xxxx xxx xxx xxxx xxxxxxxx. Xx xxxxxx xxxx Xxxxxx XxXxx xxxxxxxxxxxxxx, xxx xxxx xxxxx xxx xxxxxxxx xxxxxxxxxx, xx xxxxxxxxx xx xxx xxxx xxxxxxx.
+**Note**  When testing a Windows Phone Silverlight app, Google AdMob will always return an **Invalid Request** error since it does not use test metadata. To verify your Google AdMob implementation, you must enter the required parameters, as described in the next section.
+
+ 
+
+If you used the event handling code shown in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md), any errors will be shown in the console output.
+
+## Testing with your ad network configuration values
+
+
+After testing your app with test configuration data, you’ll want to test your app with the ad network configuration values that you intend to use for the version of your app that you publish to the Windows Store.
+
+First, open the **Add Connected Service** window (Visual Studio 2015) or **Services Manager** window (Visual Studio 2013) and configure each ad network as described in [Add and use the ad mediator control](add-and-use-the-ad-mediator-control.md). Enter the required parameters for each ad network.
+
+Now you’re ready to test your app. Make sure to run the app long enough to verify that each ad network can properly display an ad. Check for any exceptions and fix coding errors before you submit your app.
+
+When you submit your app package to the Windows Dev Center dashboard, the configuration values you enter in Visual Studio are automatically populated in the **Monetize with ads** dashboard page. You can modify these values to configure ad network behavior for your app in the Windows Store. For more information, see [Submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md).
+
+## Related topics
+
+* [Select and manage your ad networks](select-and-manage-your-ad-networks.md)
+* [Add and use the ad mediation control](add-and-use-the-ad-mediator-control.md)
+* [Submit your app and configure ad mediation](submit-your-app-and-configure-ad-mediation.md)
+* [Troubleshoot ad mediation](troubleshoot-ad-mediation.md)
+ 
 
  
 
-Xx xxx xxxx xxx xxxxx xxxxxxxx xxxx xxxxx xx [Xxx xxx xxx xxx xx xxxxxxxx xxxxxxx](add-and-use-the-ad-mediator-control.md), xxx xxxxxx xxxx xx xxxxx xx xxx xxxxxxx xxxxxx.
 
-## Xxxxxxx xxxx xxxx xx xxxxxxx xxxxxxxxxxxxx xxxxxx
-
-
-Xxxxx xxxxxxx xxxx xxx xxxx xxxx xxxxxxxxxxxxx xxxx, xxx’xx xxxx xx xxxx xxxx xxx xxxx xxx xx xxxxxxx xxxxxxxxxxxxx xxxxxx xxxx xxx xxxxxx xx xxx xxx xxx xxxxxxx xx xxxx xxx xxxx xxx xxxxxxx xx xxx Xxxxxxx Xxxxx.
-
-Xxxxx, xxxx xxx **Xxx Xxxxxxxxx Xxxxxxx** xxxxxx (Xxxxxx Xxxxxx YYYY) xx **Xxxxxxxx Xxxxxxx** xxxxxx (Xxxxxx Xxxxxx YYYY) xxx xxxxxxxxx xxxx xx xxxxxxx xx xxxxxxxxx xx [Xxx xxx xxx xxx xx xxxxxxxx xxxxxxx](add-and-use-the-ad-mediator-control.md). Xxxxx xxx xxxxxxxx xxxxxxxxxx xxx xxxx xx xxxxxxx.
-
-Xxx xxx’xx xxxxx xx xxxx xxxx xxx. Xxxx xxxx xx xxx xxx xxx xxxx xxxxxx xx xxxxxx xxxx xxxx xx xxxxxxx xxx xxxxxxxx xxxxxxx xx xx. Xxxxx xxx xxx xxxxxxxxxx xxx xxx xxxxxx xxxxxx xxxxxx xxx xxxxxx xxxx xxx.
-
-Xxxx xxx xxxxxx xxxx xxx xxxxxxx xx xxx Xxxxxxx Xxx Xxxxxx xxxxxxxxx, xxx xxxxxxxxxxxxx xxxxxx xxx xxxxx xx Xxxxxx Xxxxxx xxx xxxxxxxxxxxxx xxxxxxxxx xx xxx **Xxxxxxxx xxxx xxx** xxxxxxxxx xxxx. Xxx xxx xxxxxx xxxxx xxxxxx xx xxxxxxxxx xx xxxxxxx xxxxxxxx xxx xxxx xxx xx xxx Xxxxxxx Xxxxx. Xxx xxxx xxxxxxxxxxx, xxx [Xxxxxx xxxx xxx xxx xxxxxxxxx xx xxxxxxxxx](submit-your-app-and-configure-ad-mediation.md).
-
-## Xxxxxxx xxxxxx
-
-* [Xxxxxx xxx xxxxxx xxxx xx xxxxxxxx](select-and-manage-your-ad-networks.md)
-* [Xxx xxx xxx xxx xx xxxxxxxxx xxxxxxx](add-and-use-the-ad-mediator-control.md)
-* [Xxxxxx xxxx xxx xxx xxxxxxxxx xx xxxxxxxxx](submit-your-app-and-configure-ad-mediation.md)
-* [Xxxxxxxxxxxx xx xxxxxxxxx](troubleshoot-ad-mediation.md)
- 
-
- 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

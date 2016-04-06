@@ -1,39 +1,34 @@
 ---
-Xxxxxxxxxxx: Xxxxxxx xx xxxxx xxxxx xx xxxx xxxx xx xxxxxxxx xxx xxxx xxxxx xxxxxxx xxxxxx xxxx xxx xxx xxx xxxxx xxx xxx xxxxx.
-xxxxx: Xxxxx xxxxxxxxxxxx
-xx.xxxxxxx: XYXYYYXX-YYXY-YXXY-XYYY-YXYYYYYYYYXX
-xxxxx: Xxxxx
-xxxxxxxx: xxxxxx.xxx
+Description: Respond to mouse input in your apps by handling the same basic pointer events that you use for touch and pen input.
+title: Mouse interactions
+ms.assetid: C8A158EF-70A9-4BA2-A270-7D08125700AC
+label: Mouse
+template: detail.hbs
 ---
 
-# Xxxxx xxxxxxxxxxxx
+# Mouse interactions
 
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Updated for UWP apps on Windows 10. For Windows 8.x articles, see the [archive](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
 
-Xxxxxxxx xxxx Xxxxxxxxx Xxxxxxx Xxxxxxxx (XXX) xxx xxxxxx xxx xxxxx xxxxx xxx xxx xxxxx xxxxx xxxxxxx xx xxxxxxx.
+Optimize your Universal Windows Platform (UWP) app design for touch input and get basic mouse support by default.
 
  
 
-![xxxxx](images/input-patterns/input-mouse.jpg)
+![mouse](images/input-patterns/input-mouse.jpg)
 
 
 
-Xxxxx xxxxx xx xxxx xxxxxx xxx xxxx xxxxxxxxxxxx xxxx xxxxxxx xxxxxxxxx xxxx xxxxxxxx xxx xxxxxxxx. Xxxx xxxxxxxx xxxxxxxxx xx xxxxxxxxx xxxxxxxxx xx xxx XX xx Xxxxxxx, xxxxx xx xxxxxxxxx xxx xxx xxxxxxxxx xxxxxx xx xxxxx.
+Mouse input is best suited for user interactions that require precision when pointing and clicking. This inherent precision is naturally supported by the UI of Windows, which is optimized for the imprecise nature of touch.
 
-Xxxxx xxxxx xxx xxxxx xxxxx xxxxxxx xx xxx xxxxxxx xxx xxxxx xx xxxx xxxxxxx xxxxxxx xxx xxxxxx xxxxxxxxxxxx xx XX xxxxxxxx xxxxxxx xxxxxxxx xxxxxxxx xxxxxxxxx xxxxxxxx xx xxxxx xxxxxxx (xxxx xx xxxxxxx, xxxxxxx, xxxxxxxx, xxxxxxxx, xxx xx xx). Xxxxxxxxxxxxx xxxx x xxxxx xxxxxxxxx xxxxxxx xxxx xxxxx XX xxxxxxxxxx, xxxx xx xxx xxx xx xxxxxxx xx xxxxxx xx xxxxxx xx xxxxxx.
+Where mouse and touch input diverge is the ability for touch to more closely emulate the direct manipulation of UI elements through physical gestures performed directly on those objects (such as swiping, sliding, dragging, rotating, and so on). Manipulations with a mouse typically require some other UI affordance, such as the use of handles to resize or rotate an object.
 
-Xxxx xxxxx xxxxxxxxx xxxxxx xxxxxxxxxxxxxx xxx xxxxx xxxxxxxxxxxx.
+This topic describes design considerations for mouse interactions.
 
-## <span id="The_UWP_app_mouse_language">
-            </span>
-            <span id="the_uwp_app_mouse_language">
-            </span>
-            <span id="THE_UWP_APP_MOUSE_LANGUAGE">
-            </span>Xxx XXX xxx xxxxx xxxxxxxx
+## <span id="The_UWP_app_mouse_language"></span><span id="the_uwp_app_mouse_language"></span><span id="THE_UWP_APP_MOUSE_LANGUAGE"></span>The UWP app mouse language
 
 
-X xxxxxxx xxx xx xxxxx xxxxxxxxxxxx xxx xxxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxx.
+A concise set of mouse interactions are used consistently throughout the system.
 
 <table>
 <colgroup>
@@ -42,128 +37,121 @@ X xxxxxxx xxx xx xxxxx xxxxxxxxxxxx xxx xxxx xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxx.
 </colgroup>
 <thead>
 <tr class="header">
-<th align="left">Xxxx</th>
-<th align="left">Xxxxxxxxxxx</th>
+<th align="left">Term</th>
+<th align="left">Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><p><span id="Hover_to_learn"></span><span id="hover_to_learn"></span><span id="HOVER_TO_LEARN"></span>Xxxxx xx xxxxx</p></td>
-<td align="left"><p>Xxxxx xxxx xx xxxxxxx xx xxxxxxx xxxx xxxxxxxx xxxx xx xxxxxxxx xxxxxxx (xxxx xx x xxxxxxx) xxxxxxx x xxxxxxxxxx xx xx xxxxxx.</p></td>
+<td align="left"><p><span id="Hover_to_learn"></span><span id="hover_to_learn"></span><span id="HOVER_TO_LEARN"></span>Hover to learn</p></td>
+<td align="left"><p>Hover over an element to display more detailed info or teaching visuals (such as a tooltip) without a commitment to an action.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Left-click_for_primary_action"></span><span id="left-click_for_primary_action"></span><span id="LEFT-CLICK_FOR_PRIMARY_ACTION"></span>Xxxx-xxxxx xxx xxxxxxx xxxxxx</p></td>
-<td align="left"><p>Xxxx-xxxxx xx xxxxxxx xx xxxxxx xxx xxxxxxx xxxxxx (xxxx xx xxxxxxxxx xx xxx xx xxxxxxxxx x xxxxxxx).</p></td>
+<td align="left"><p><span id="Left-click_for_primary_action"></span><span id="left-click_for_primary_action"></span><span id="LEFT-CLICK_FOR_PRIMARY_ACTION"></span>Left-click for primary action</p></td>
+<td align="left"><p>Left-click an element to invoke its primary action (such as launching an app or executing a command).</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Scroll_to_change_view"></span><span id="scroll_to_change_view"></span><span id="SCROLL_TO_CHANGE_VIEW"></span>Xxxxxx xx xxxxxx xxxx</p></td>
-<td align="left"><p>Xxxxxxx xxxxxx xxxx xx xxxx xx, xxxx, xxxx, xxx xxxxx xxxxxx x xxxxxxx xxxx. Xxxxx xxx xxxxxx xx xxxxxxxx xxxxxx xxxx xx xxxxxxxx xxx xxxxx xxxxx. Xxxxxx xxxx xxx xxxxxxxx xxx xxxxxxxx xx xxx xxxxxxx xxxx xxxxxx xxx xxxxxxx xxxx (xxxxxxx xxxx xxxxx xxxxxxxx x xxxxxxx XX).</p></td>
+<td align="left"><p><span id="Scroll_to_change_view"></span><span id="scroll_to_change_view"></span><span id="SCROLL_TO_CHANGE_VIEW"></span>Scroll to change view</p></td>
+<td align="left"><p>Display scroll bars to move up, down, left, and right within a content area. Users can scroll by clicking scroll bars or rotating the mouse wheel. Scroll bars can indicate the location of the current view within the content area (panning with touch displays a similar UI).</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Right-click_to_select_and_command"></span><span id="right-click_to_select_and_command"></span><span id="RIGHT-CLICK_TO_SELECT_AND_COMMAND"></span>Xxxxx-xxxxx xx xxxxxx xxx xxxxxxx</p></td>
-<td align="left"><p>Xxxxx-xxxxx xx xxxxxxx xxx xxxxxxxxxx xxx (xx xxxxxxxxx) xxx xxx xxx xxx xxxx xxxxxx xxxxxxxx. Xxxxx-xxxxx xx xxxxxxx xx xxxxxx xx xxx xxxxxxx xxx xxx xxx xxxx xxxxxxxxxx xxxxxxxx xxx xxx xxxxxxxx xxxxxxx.</p>
+<td align="left"><p><span id="Right-click_to_select_and_command"></span><span id="right-click_to_select_and_command"></span><span id="RIGHT-CLICK_TO_SELECT_AND_COMMAND"></span>Right-click to select and command</p></td>
+<td align="left"><p>Right-click to display the navigation bar (if available) and the app bar with global commands. Right-click an element to select it and display the app bar with contextual commands for the selected element.</p>
 <div class="alert">
-<strong>Xxxx</strong>  Xxxxx-xxxxx xx xxxxxxx x xxxxxxx xxxx xx xxxxxxxxx xx xxx xxx xxxxxxxx xxx xxx xxxxxxxxxxx XX xxxxxxxxx. Xxx xx xxxxxxxx xxxxxxxxx xxxx xxx xxx xxx xxx xxx xxx xxx xxxxxxx xxxxxxxxx.
+<strong>Note</strong>  Right-click to display a context menu if selection or app bar commands are not appropriate UI behaviors. But we strongly recommend that you use the app bar for all command behaviors.
 </div>
 <div>
  
 </div></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="UI_commands_to_zoom"></span><span id="ui_commands_to_zoom"></span><span id="UI_COMMANDS_TO_ZOOM"></span>XX xxxxxxxx xx xxxx</p></td>
-<td align="left"><p>Xxxxxxx XX xxxxxxxx xx xxx xxx xxx (xxxx xx + xxx -), xx xxxxx Xxxx xxx xxxxxx xxxxx xxxxx, xx xxxxxxx xxxxx xxx xxxxxxx xxxxxxxx xxx xxxxxxx.</p></td>
+<td align="left"><p><span id="UI_commands_to_zoom"></span><span id="ui_commands_to_zoom"></span><span id="UI_COMMANDS_TO_ZOOM"></span>UI commands to zoom</p></td>
+<td align="left"><p>Display UI commands in the app bar (such as + and -), or press Ctrl and rotate mouse wheel, to emulate pinch and stretch gestures for zooming.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="UI_commands_to_rotate"></span><span id="ui_commands_to_rotate"></span><span id="UI_COMMANDS_TO_ROTATE"></span>XX xxxxxxxx xx xxxxxx</p></td>
-<td align="left"><p>Xxxxxxx XX xxxxxxxx xx xxx xxx xxx, xx xxxxx Xxxx+Xxxxx xxx xxxxxx xxxxx xxxxx, xx xxxxxxx xxx xxxx xxxxxxx xxx xxxxxxxx. Xxxxxx xxx xxxxxx xxxxxx xx xxxxxx xxx xxxxxx xxxxxx.</p></td>
+<td align="left"><p><span id="UI_commands_to_rotate"></span><span id="ui_commands_to_rotate"></span><span id="UI_COMMANDS_TO_ROTATE"></span>UI commands to rotate</p></td>
+<td align="left"><p>Display UI commands in the app bar, or press Ctrl+Shift and rotate mouse wheel, to emulate the turn gesture for rotating. Rotate the device itself to rotate the entire screen.</p></td>
 </tr>
 <tr class="odd">
-<td align="left"><p><span id="Left-click_and_drag_to_rearrange"></span><span id="left-click_and_drag_to_rearrange"></span><span id="LEFT-CLICK_AND_DRAG_TO_REARRANGE"></span>Xxxx-xxxxx xxx xxxx xx xxxxxxxxx</p></td>
-<td align="left"><p>Xxxx-xxxxx xxx xxxx xx xxxxxxx xx xxxx xx.</p></td>
+<td align="left"><p><span id="Left-click_and_drag_to_rearrange"></span><span id="left-click_and_drag_to_rearrange"></span><span id="LEFT-CLICK_AND_DRAG_TO_REARRANGE"></span>Left-click and drag to rearrange</p></td>
+<td align="left"><p>Left-click and drag an element to move it.</p></td>
 </tr>
 <tr class="even">
-<td align="left"><p><span id="Left-click_and_drag_to_select_text"></span><span id="left-click_and_drag_to_select_text"></span><span id="LEFT-CLICK_AND_DRAG_TO_SELECT_TEXT"></span>Xxxx-xxxxx xxx xxxx xx xxxxxx xxxx</p></td>
-<td align="left"><p>Xxxx-xxxxx xxxxxx xxxxxxxxxx xxxx xxx xxxx xx xxxxxx xx. Xxxxxx-xxxxx xx xxxxxx x xxxx.</p></td>
+<td align="left"><p><span id="Left-click_and_drag_to_select_text"></span><span id="left-click_and_drag_to_select_text"></span><span id="LEFT-CLICK_AND_DRAG_TO_SELECT_TEXT"></span>Left-click and drag to select text</p></td>
+<td align="left"><p>Left-click within selectable text and drag to select it. Double-click to select a word.</p></td>
 </tr>
 </tbody>
 </table>
 
-## Xxxxx xxxxxx
+## Mouse events
 
-Xxxxxxx xx xxxxx xxxxx xx xxxx xxxx xx xxxxxxxx xxx xxxx xxxxx xxxxxxx xxxxxx xxxx xxx xxx xxx xxxxx xxx xxx xxxxx.
+Respond to mouse input in your apps by handling the same basic pointer events that you use for touch and pen input.
 
-Xxx [**XXXxxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208911) xxxxxx xx xxxxxxxxx xxxxx xxxxx xxxxxxxxxxxxx xxxxxxx xxxxxx xx xxxxx xxxx xxx xxxx xxxxxxx xxxxx xxxxxx. Xxxxxxx, xxx xxx xxxxx xxxx xxxxxxxxx xx xxx xxxxxxx xxxxxxxxxxxx xx xxxx xxxxxx (xxxx xx xxxxx xxxxx xxxxxx) xxxxx xxx xxxxxxx, xxxxxxx, xxx xxxxxxxxxxxx xxxxxx xx xxxx xxxxxx.
+Use [**UIElement**](https://msdn.microsoft.com/library/windows/apps/br208911) events to implement basic input functionality without having to write code for each pointer input device. However, you can still take advantage of the special capabilities of each device (such as mouse wheel events) using the pointer, gesture, and manipulation events of this object.
 
-**Xxxxxxx:  **Xxx xxxx xxxxxxxxxxxxx xx xxxxxx xx xxx [xxx xxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=264996).
-
-
-- [Xxxxx: Xxxxxx xxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231530)
-
-- [Xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226855)
-
-- [Xxxxx: Xxxxxxxx xxx xxxxxxxxxxxxx xxxx XxxxxxxXxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=231605)
-
-## <span id="Guidelines_for_visual_feedback">
-            </span>
-            <span id="guidelines_for_visual_feedback">
-            </span>
-            <span id="GUIDELINES_FOR_VISUAL_FEEDBACK">
-            </span>Xxxxxxxxxx xxx xxxxxx xxxxxxxx
+**Samples:  **See this functionality in action in our [app samples](http://go.microsoft.com/fwlink/p/?LinkID=264996).
 
 
--   Xxxx x xxxxx xx xxxxxxxx (xxxxxxx xxxx xx xxxxx xxxxxx), xxxx xxxxx-xxxxxxxx XX xx xxxxxxxx xxxxxxxxxxxxx xxxxxxx xx xxx xxxxxxx. Xx xxx xxxxx xxxxx'x xxxx xxx x xxxxxxx xxxxxx xx xxxx, xx xx xxx xxxx xxxxxxxxx x xxxxx xxxxxxxxxxx, xxxx xxx xxxxx XX xxxxxxxxx xxxx xxxx. Xxxx xxxxx xxx XX xxxxx xxx xxxxxxxxxxx.
--   Xxx'x xxx xxx xxxxxx xxx xxxxx xxxxxxxx, xxx xxxxxxxx xxxxxxxx xx xxx xxxxxxx xx xxxxxxxxxx (xxx Xxxxxxx xxxxx).
--   Xxx'x xxxxxxx xxxxxx xxxxxxxx xx xx xxxxxxx xxxxx'x xxxxxxx xxxxxxxxxxx (xxxx xx xxxxxx xxxx).
--   Xxx'x xxx xxxxx xxxxxxxxxx xxxx xxxxx xxxxxxxxxxxx. Xxxxxxx xxxxx xxx xxxxxxxx xxxxxxxxxxxx.
--   Xxxxxxx xxxxxx xxxxxxxx xxxxxxxxxxxx xxx xxx xxxxxxxx xxxx xxxxxxxxx xxx xxxx xxxxx xxxxxx.
--   Xxxxxxx xxxxxxx (xxxx xx + xxx -) xxx xxxxxxxxx xxxxx-xxxxx xxxxxxxxxxxxx xxxx xx xxxxxxx, xxxxxxxx, xxxxxxx, xxx xx xx.
+- [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
 
-Xxx xxxx xxxxxxx xxxxxxxx xx xxxxxx xxxxxxxx, xxx [Xxxxxxxxxx xxx xxxxxx xxxxxxxx](guidelines-for-visualfeedback.md).
+- [Input sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
 
+- [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
 
-## <span id="Cursors">
-            </span>
-            <span id="cursors">
-            </span>
-            <span id="CURSORS">
-            </span>Xxxxxxx
+## <span id="Guidelines_for_visual_feedback"></span><span id="guidelines_for_visual_feedback"></span><span id="GUIDELINES_FOR_VISUAL_FEEDBACK"></span>Guidelines for visual feedback
 
 
-X xxx xx xxxxxxxx xxxxxxx xx xxxxxxxxx xxx x xxxxx xxxxxxx. Xxxxx xxx xxxx xx xxxxxxxx xxx xxxxxxx xxxxxx xx xx xxxxxxx.
+-   When a mouse is detected (through move or hover events), show mouse-specific UI to indicate functionality exposed by the element. If the mouse doesn't move for a certain amount of time, or if the user initiates a touch interaction, make the mouse UI gradually fade away. This keeps the UI clean and uncluttered.
+-   Don't use the cursor for hover feedback, the feedback provided by the element is sufficient (see Cursors below).
+-   Don't display visual feedback if an element doesn't support interaction (such as static text).
+-   Don't use focus rectangles with mouse interactions. Reserve these for keyboard interactions.
+-   Display visual feedback concurrently for all elements that represent the same input target.
+-   Provide buttons (such as + and -) for emulating touch-based manipulations such as panning, rotating, zooming, and so on.
 
-Xxxx xxxxxxxx xxxxxx xxx x xxxxxxxxxxxxx xxxxxxx xxxxx xxxxxxxxxx xxxx xx. Xxx xxxx xx xx xxx xxx xxxxxxx xxx xxxxxxx xxxxx xxxxxxxxxx xxxx xxx xxxxxxxx xxxxxx xx xxx xxxx. Xxxxxxx x xxxxxx xxxxx xxxxxxx xxx [**XxxxxxxXxxxxx**](https://msdn.microsoft.com/library/windows/apps/br208273) xxxxxxxx.
+For more general guidance on visual feedback, see [Guidelines for visual feedback](guidelines-for-visualfeedback.md).
 
-Xx xxx xxxx xx xxxxxxxxx xxx xxxxx xxxxxx:
 
--   Xxxxxx xxx xxx xxxxx xxxxxx (![xxxxx xxxxxx](images/cursor-arrow.png)) xxx xxxxxxxxx xxxxxxxx. xxx'x xxx xxx xxxxxxxx xxxx xxxxxx (![xxxxxxxx xxxx xxxxxx](images/cursor-pointinghand.png)) xxx xxxxx xx xxxxx xxxxxxxxxxx xxxxxxxx. Xxxxxxx, xxx xxxxx xxxxxxx (xxxxxxxxx xxxxxxx).
--   Xxx xxx xxxx xxxxxx (![xxxx xxxxxx](images/cursor-text.png)) xxx xxxxxxxxxx xxxx.
--   Xxx xxx xxxx xxxxxx (![xxxx xxxxxx](images/cursor-move.png)) xxxx xxxxxx xx xxx xxxxxxx xxxxxx (xxxx xx xxxxxxxx xx xxxxxxxx). Xxx'x xxx xxx xxxx xxxxxx xxx xxxxxxxx xxxxx xxx xxxxxxx xxxxxx xx xxxxxxxxxx (xxxx xx Xxxxx xxxxx).
--   Xxx xxx xxxxxxxxxx, xxxxxxxx xxx xxxxxxxx xxxxxx xxxxxxx (![xxxxxxxx xxxxxx xxxxxx](images/cursor-vertical.png), ![xxxxxxxxxx xxxxxx xxxxxx](images/cursor-horizontal.png), ![xxxxxxxx xxxxxx xxxxxx (xxxxx xxxx, xxxxx xxxxx)](images/cursor-diagonal2.png), ![xxxxxxxx xxxxxx xxxxxx (xxxxx xxxx, xxxxx xxxxx)](images/cursor-diagonal1.png)), xxxx xx xxxxxx xx xxxxxxxxx.
--   Xxx xxx xxxxxxxx xxxx xxxxxxx (![xxxxxxxx xxxx xxxxxx (xxxx)](images/cursor-pan1.png), ![xxxxxxxx xxxx xxxxxx (xxxxxx)](images/cursor-pan2.png)) xxxx xxxxxxx xxxxxxx xxxxxx x xxxxx xxxxxx (xxxx xx x xxx).
+## <span id="Cursors"></span><span id="cursors"></span><span id="CURSORS"></span>Cursors
 
-## <span id="related_topics">
-            </span>Xxxxxxx xxxxxxxx
 
-* [Xxxxxx xxxxxxx xxxxx](handle-pointer-input.md)
-* [Xxxxxxxx xxxxx xxxxxxx](identify-input-devices.md)
+A set of standard cursors is available for a mouse pointer. These are used to indicate the primary action of an element.
 
-**Xxxxxxx**
-* [Xxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620302)
-* [Xxx xxxxxxx xxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=620304)
-* [Xxxx xxxxxxxxxxx xxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619894)
-* [Xxxxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+Each standard cursor has a corresponding default image associated with it. The user or an app can replace the default image associated with any standard cursor at any time. Specify a cursor image through the [**PointerCursor**](https://msdn.microsoft.com/library/windows/apps/br208273) function.
 
-**Xxxxxxx Xxxxxxx**
-* [Xxxxx: Xxxxxx xxxxxxxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=231530)
-* [Xxxxx: XXXX xxxx xxxxx xxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=226855)
-* [XXXX xxxxxxxxx, xxxxxxx, xxx xxxxxxx xxxxxx](http://go.microsoft.com/fwlink/p/?linkid=251717)
-* [Xxxxx: Xxxxxxxx xxx xxxxxxxxxxxxx xxxx XxxxxxxXxxxxxxxxx](http://go.microsoft.com/fwlink/p/?LinkID=231605)
+If you need to customize the mouse cursor:
+
+-   Always use the arrow cursor (![arrow cursor](images/cursor-arrow.png)) for clickable elements. don't use the pointing hand cursor (![pointing hand cursor](images/cursor-pointinghand.png)) for links or other interactive elements. Instead, use hover effects (described earlier).
+-   Use the text cursor (![text cursor](images/cursor-text.png)) for selectable text.
+-   Use the move cursor (![move cursor](images/cursor-move.png)) when moving is the primary action (such as dragging or cropping). Don't use the move cursor for elements where the primary action is navigation (such as Start tiles).
+-   Use the horizontal, vertical and diagonal resize cursors (![vertical resize cursor](images/cursor-vertical.png), ![horizontal resize cursor](images/cursor-horizontal.png), ![diagonal resize cursor (lower left, upper right)](images/cursor-diagonal2.png), ![diagonal resize cursor (upper left, lower right)](images/cursor-diagonal1.png)), when an object is resizable.
+-   Use the grasping hand cursors (![grasping hand cursor (open)](images/cursor-pan1.png), ![grasping hand cursor (closed)](images/cursor-pan2.png)) when panning content within a fixed canvas (such as a map).
+
+## <span id="related_topics"></span>Related articles
+
+* [Handle pointer input](handle-pointer-input.md)
+* [Identify input devices](identify-input-devices.md)
+
+**Samples**
+* [Basic input sample](http://go.microsoft.com/fwlink/p/?LinkID=620302)
+* [Low latency input sample](http://go.microsoft.com/fwlink/p/?LinkID=620304)
+* [User interaction mode sample](http://go.microsoft.com/fwlink/p/?LinkID=619894)
+* [Focus visuals sample](http://go.microsoft.com/fwlink/p/?LinkID=619895)
+
+**Archive Samples**
+* [Input: Device capabilities sample](http://go.microsoft.com/fwlink/p/?linkid=231530)
+* [Input: XAML user input events sample](http://go.microsoft.com/fwlink/p/?linkid=226855)
+* [XAML scrolling, panning, and zooming sample](http://go.microsoft.com/fwlink/p/?linkid=251717)
+* [Input: Gestures and manipulations with GestureRecognizer](http://go.microsoft.com/fwlink/p/?LinkID=231605)
  
  
 
  
+
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+

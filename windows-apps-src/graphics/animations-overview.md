@@ -1,124 +1,124 @@
 ---
-xx.xxxxxxx: YXYXXXYY-XXYX-YXYY-YYXY-YYXYXYYXXYYY
-xxxxx: Xxxxxxxxxx xxxxxxxx
-xxxxxxxxxxx: Xxx xxx xxxxxxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxxxxxx xxxxxxx xx xxxxxxxxx xxx Xxxxxxx xxxx xxx xxxx xxxx xxxx xxx.
+ms.assetid: 0C8DEE75-FB7B-4E59-81E3-55F8D65CD982
+title: アニメーションの概要
+description: Windows ランタイム アニメーション ライブラリのアニメーションを使って、Windows の見た目や操作感を自分のアプリに取り入れることができます。
 ---
-# Xxxxxxxxxx xxxxxxxx
+# アニメーションの概要
 
-\[ Xxxxxxx xxx XXX xxxx xx Xxxxxxx YY. Xxx Xxxxxxx Y.x xxxxxxxx, xxx xxx [xxxxxxx](http://go.microsoft.com/fwlink/p/?linkid=619132) \]
+\[ Windows 10 の UWP アプリ向けに更新。 Windows 8.x の記事については、[アーカイブ](http://go.microsoft.com/fwlink/p/?linkid=619132) をご覧ください \]
 
 
-Xxxxxxxxxx xx xxx Xxxxxxx Xxxxxxx xxx xxxxxxx xxxx xxx xx xxxxxx xxxxxxxx xxx xxxxxxxxxxxxx. Xx xxxxx xxx xxxxxxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxxxxxx xxxxxxx, xxx xxx xxxxxxxxx xxx Xxxxxxx xxxx xxx xxxx xxxx xxxx xxx. Xxxx xxxxx xxxxxxxx x xxxxxxx xx xxx xxxxxxxxxx xxx xxxxxxxx xx xxxxxxx xxxxxxxxx xxxxx xxxx xx xxxx.
+Windows ランタイムのアニメーションは、アプリに躍動感と双方向性を与えます。 Windows ランタイム アニメーション ライブラリのアニメーションを使って、Windows の見た目や操作感を自分のアプリに取り入れることができます。 ここでは、アニメーションの概要と、それぞれのアニメーションが適用される通常のシナリオ例について説明します。
 
-**Xxx**  Xxx Xxxxxxx Xxxxxxx xxxxxxxx xxx XXXX xxxxxxx xxxxxxx xxxxx xx xxxxxxxxxx xx xxxxx-xx xxxxxxxxx xxxx xxxx xxxx xx xxxxxxxxx xxxxxxx. Xx xxxxx xxxxx xxxxxxxx xx xxxx xxx, xxx xxx xxx xxx xxxxxxxx xxxx xxx xxxx xxxxxxx xxxxxx xx xxxxxxx xx xxxxxxxx.
+**ヒント**  XAML 用の Windows ランタイム コントロールには、特定の種類のアニメーションが、アニメーション ライブラリから取得される組み込みの動作として含まれています。 こうしたコントロールを利用することで、アニメーション化された見た目や操作感を自分でプログラミングしなくてもアプリに取り入れることができます。
 
-Xxxxxxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxxxxxx xxxxxxx xxxxxxx xxxxx xxxxxxxx:
+Windows ランタイム アニメーション ライブラリのアニメーションには次のような利点があります。
 
--   Xxxxxxx xxxx xxxxx xx xxx [Xxxxxxxxxx xxx xxxxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Dn611854)
--   Xxxx, xxxxx xxxxxxxxxxx xxxxxxx XX xxxxxx xxxx xxxxxx xxx xx xxx xxxxxxxx xxx xxxx
--   Xxxxxx xxxxxxxx xxxx xxxxxxxxx xxxxxxxxxxx xxxxxx xx xxx xx xxx xxxx
+-   「[アニメーションのガイドライン](https://msdn.microsoft.com/library/windows/apps/Dn611854)」に従った動き
+-   ユーザーの気をそらさずに必要な情報を伝える、UI 状態の高速で滑らかな切り替え
+-   アプリ内の画面切り替えをユーザーに示す視覚的動作
 
-Xxx xxxxxxx, xxxx xxx xxxx xxxx xx xxxx xx x xxxx, xxxxxxx xx xxx xxx xxxx xxxxxxxxx xxxxxxxxx xx xxx xxxx, xxx xxx xxxx xxxxxxxx xxxx xxxxx. Xxx xxxxx xxxxx xx xxx xxxx xxxxxxx xx xxxxx xxx xxxxxxxxx xxxx x xxxxx xxxxxx xx xxxx, xxxxxx xxxx xxx xxx xxxxx xxxx. Xxx xxxxxxxxxx xxxxxxxx xxxx xxxxx xxx xxxxxxx xxxxxxxxxxx xxxx xxxxxxxx xx xxx xxxx.
+たとえば、ユーザーがリストに項目を追加すると、新しい項目が即座に表示されてリストが瞬間的に更新されるのではなく、新しい項目が動きを伴ってリストの中に入ります。 他のリスト項目は短時間で移動されて、追加のためのスペースが確保されます。 この画面切り替え動作により、ユーザーはコントロールの動作をはっきりと理解することができます。
 
-Xxx xxxxxxxxx xxxxxxx xxxx xxx xxxxxxx xxxxxxxxxx xxx xxxxx xxxxxxxx xxxxxxxx. Xxxxx xxx xxxxx xxxxx xxx xxxxx xxxx xx xxxxxx x xxxxxx xxxxxxxxx xx XXXX. Xxx xxxx xxxx, xxx [Xxxxxxxxxxxx xxxxxxxxxx](storyboarded-animations.md).
+すべてのシナリオに対応するアニメーションがアニメーション ライブラリに用意されているわけではありません。 XAML でカスタム アニメーションを作ることが必要になる場合もあります。 詳しくは、「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」をご覧ください。
 
-## Xxxxx xx xxxxxxxxxx
+## アニメーションの種類
 
-Xxx Xxxxxxx Xxxxxxx xxxxxxxxx xxxxxx xxx xxx xxxxxxxxx xxxxxxx xxxxx xxx xxxxxx xxxx xx xxxxxxxx xxxxxxxx xxx xxxxx xxxxx xx XX xx xxxx xx xxxxxxxx xxxxxxxx. Xxxxx xxx xxxxxxx xxxxxxxx xxxxx xx xxxxxxxxxx.
+Windows ランタイム アニメーション システムとアニメーション ライブラリには、コントロールと UI のその他の部分が動作をアニメーション化できるようにするという、より大きな目的があります。 アニメーションには、いくつかの個別の種類があります。
 
--   *Xxxxx xxxxxxxxxxx* xxx xxxxxxx xxxxxxxxxxxxx xxxx xxxxxxx xxxxxxxxxx xxxxxx xx xxx XX, xxxxxxxxx xxxxxxxx xx xxxxxxxx xxxx xxx xxxxxxxxxx Xxxxxxx Xxxxxxx XXXX XX xxxxx. Xxxxx xxx xxxxxx *xxxxx xxxxxxxxxxx* xxxxxxx xxx xxxxxxxxxx xxxxxxx xxx Xxxxxxx xxxx xxx xxxx, xxx xxxxxx xxxx xxx xxxx xx xxx xxxxxxxxxx XX xxxxxxxxx xxxx xxxx xxxxxx xxxx xxx xxxxxxxxxxx xxxx xx xxxxxxx. Xxx xxxxx xxxxxxxxxxx xxx xxxx xx xxx xxxxxxxxx xxxxxxx.
--   *Xxxxx xxxxxxxxxx* xxx xxxxxxxxxx xx xxx xx xxxx xxxxxxxxxx xx xxxxxxxxxx Xxxxxxx Xxxxxxx XXXX XX xxxxx. Xxxxx xxxxxxxxxx xxxxxx xxxx xxxxx xxxxxxxxxxx xxxxxxx xxxxx xxxxxxxxxx xxxxxx xxx xxxxxxxx xxxxxxx xxx xxxxx xx xxxxxxxx xxxxxx xxxxxx xxxxxx x xxxxxxx, xxxxxxx xxx xxxxx xxxxxxxxxxx xxx xxxxxxxx xx xxxxxxxxxx xx xxx xxxxxxx xxxx xxxxx xxxxxxx xx xxx xxxxxx xxxxxx xxx xxxxxxxxx xxx xxxxxxxxxxx xxxxxxx xxxxx xxxxxx. Xxxx xx xxx Xxxxxxx Xxxxxxx XXXX xxxxxxxx xxxxxxx xxxxx xxxxxxxxxx xxxxxx xxxxxxxxxxx xxxx xxx xxxx xx xxxxx xxxxxxx xxxxxxxx, xxxx xxx xxxxxxxxxx xxxxxxxxx xx xxxxxx xxxxxx. Xx xxxx xx xxx'xx xxx xxxxxxxxx xxx xxxxxxxxx, xxx'xx xxxx xxxxx xxxxx-xx xxxxx xxxxxxxxxx xxxxxxxxx xxx xxx xxxxxxxx xx xxxx XX. Xxxxxxx, xx xxx xx xxxxxxx xxxxxxxxx, xxxx xxx'xx xx xxxxxxxx xxx xxxxx-xx xxxxxxx xxxxx xxxxxxxxxx xxx. Xx xxx xxxx xxxx, xxx xxxx xxxxxx x xxxxxxxxxx xxxx xxxxxxxx xxxxx xxxxxxxxxx xxxxxx xxx xxxxxxx'x xxx xx xxxxxx xxxxxx. Xxx xxx xxxx xxx xxxxx xxxxxxxxxx xxxx xxxxxxxxxxx xxxx xxxx'x xxxxxx xxxxxx xxxxxx xxx xxxxx xxxx xxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210491) xxxxxx, xxx xxxx'x xxxx xxxxxx. Xxxxx xxxxxxxxxx xxx xxxx xx xxx xxxxxxxxx xxxxxxx.
--   *Xxxxxx xxxxxxxxxxx* xxx xxxxxxx xxxx x xxxxxxx xxxxxxxxxxx xxxx xxx xx xxx xxxxxxx xxxxxx xxxxxx xx xxxxxxx xxxxx. Xxxxx xxx xxxxxx xxxxxxxxxx xxxx xxx xxxxx, xxx xxx xxxxxxxxx xxxxxxx xx xxx xxxxxx xxxxxxxx xxx xxxxx xxx x xxxxxxx xxx xxx xxxxxx xxxxx xxxxxxxxxxx xxxxxx xxxx xxxxxxxx. Xxx xxxxxxxxx xxxx xxxx xxxxxx xxx xxxx xxxxxxx xxxxxx, xxx xxxx'x xxxxxxxxx x xxxxx xxxxxx xx xxxx, x xxx xxxxxxx xx xxxx. Xxx xxxx xxxx, xxx ["XxxxxxXxxxxxxxxx" xxxxxxx xx Xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808#VisualTransition).
--   *Xxxxxxxxxxxx xxxxxxxxxx* xxx xxxxxxx xxxx xxxx xxx xxxxxxxxxxxx xxxxxxx xx xxxx xxx xxxx, xx xx xxxx xxxx xxxxx xxxx x xxxxxxxxx xxxx x xxxxxxx xxxx xxx'xx xxxxxxxx. Xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxx xxx xxxxx xx xxx Xxxxxxx Xxxxxxx xxxxxxxxxx xxxxxxxx xxxx xxxx. Xxxxxxxxxxxx xxxxxxxxxx xxxx'x xxxxxxx xx XX xxxxxxxxx; xx xxxx xx xxxxx xx xxxxxx xx xxxxx xx xxxx xx x xxxxx xxxxxxx xxxxxxxxx, xx xxx'xx xxxxxxxx xxxx xxxx xxxxxxx. X xxxxxxxxxxxx xxxxxxxxx xx xxx xxxxxxx xx xxx xxxxxxxxxx xxxx xxxxxxx xxxxxx xxxxxx; xx xxxxx xx xxx xx xxx xxxx xxxxxxxxxx xx x xxxxxxx xxxxx xxxxxx, xxx xxx xxxxxxxxx xxx xxxxxxxxxxx xxx xxxxxxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxxxxx xxxxxxxxxx](storyboarded-animations.md). Xxx xxxx xxxx xxxxx xxxxxxxxxx xxxxxxxxxx xxx xxxxx xxxx xxxxx, xxx [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185583).
+-   *テーマ切り替え*は、UI で特定の条件が変化したときに自動的に適用されます。定義済みの Windows ランタイム XAML UI 型のコントロールまたは要素が対象になります。 これらのアニメーションは、Windows の外観と操作性をサポートし、すべてのアプリが操作モードを切り替えるときに特定の UI シナリオに対して行うことを定義しているので、*テーマ切り替え*と呼ばれます。 テーマ切り替えは、アニメーション ライブラリの一部です。
+-   *テーマ アニメーション*は、定義済み Windows ランタイム XAML UI 型の 1 つ以上のプロパティに対するアニメーションです。 テーマ アニメーションは、特定の 1 要素を対象とし、コントロール内に特定の表示状態で存在するという点でテーマ切り替えとは異なります。一方、テーマ切り替えは、表示状態の外側に存在するコントロールのプロパティに割り当てられ、表示状態間の切り替えに影響を及ぼします。 Windows ランタイム XAML コントロールの多くは、コントロール テンプレートの一部であり、表示状態がアニメーションのきっかけとなるテーマ アニメーションをストーリーボード内に含んでいます。 テンプレートを変更しない限り、UI のコントロールでこの組み込みのテーマ アニメーションを使うことができます。 ただし、テンプレートを置き換えた場合は、組み込みのテーマ アニメーションも削除されます。 テーマ アニメーションを元に戻すには、コントロールの表示状態セット内にテーマ アニメーションを含むストーリーボードを定義する必要があります。 また、ストーリーボードから表示状態内にないテーマ アニメーションを実行し、[**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491) メソッドを使って開始することもできますが、これは一般的ではありません。 テーマ アニメーションはアニメーション ライブラリの一部です。
+-   *視覚的な切り替え*は、コントロールが定義済みの 1 つの表示状態から別の状態に切り替えられたときに適用されます。 これらは、開発者が記述するカスタム アニメーションです。通常は、コントロールのために記述したカスタム テンプレートと、そのテンプレート内の表示状態の定義に関連しています。 アニメーションは状態間の切り替え中だけに実行され、通常は、最大でも数秒間のわずかな時間です。 詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808#VisualTransition)」の「視覚的な切り替え」のセクションをご覧ください。
+-   *ストーリーボードに設定されたアニメーション*は、アプリのコードによって明確に開始されるか、読み込んだコントロールのようなコンポーネント内にあるコードによって開始されるときに適用されます。 ストーリーボードに設定されたアニメーションは、時間の経過と共に Windows ランタイム依存関係プロパティの値を変更することができます。 ストーリーボードに設定されたアニメーションは、UI シナリオに限定されません。実際、状態マシンという概念に慣れている場合、これは状態マシンの技法と考えると便利です。 ストーリーボードに設定されたアニメーションは、表示状態間の切り替え中だけに限定されません。コントロール状態の変化に関係なく、いつでも実行でき、アニメーションを連続して実行することもできます。 詳しくは、「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」をご覧ください。 依存関係プロパティとその存在場所について詳しくは、「[依存関係プロパティの概要](https://msdn.microsoft.com/library/windows/apps/Mt185583)」をご覧ください。
 
-## Xxxxxxxxxx xxxxxxxxx xx xxx xxxxxxx
+## ライブラリに用意されているアニメーション
 
-Xxx xxxxxxxxx xxxxxxxxxx xxx xxxxxxxx xx xxx xxxxxxxxx xxxxxxx. Xxxxx xx xxx xxxx xx xx xxxxxxxxx xx xxxxx xxxx xxxxx xxxxx xxxx xxxxx xxxxxxxxx, xxx xx xxxxxx xxxx, xxx xx xxx xx xxxxxxx xx xxx xxxxxxxxx.
+アニメーション ライブラリには、次のアニメーションが用意されています。 アニメーションの名前をクリックすると、主な使用シナリオ、その定義方法、アニメーション例の詳しい情報が表示されます。
 
--   [Xxxxxxx xxx xxxxxxxx xxxxxxxxxx](./animations-overview.md#content-transition-and-entrance-transition): Xxxxxxxx xxx xxxxx xx xxx xx xxxxxxx xxxx xx xxx xx xxxx.
--   [Xxxx xx/xxx, xxx xxxxxxxxx](./animations-overview.md#fade-in-out-and-crossfade): Xxxxx xxxxxxxxx xxxxxxxx xx xxxxxxxx, xx xxxxxxxxx x xxxxxxx xxxx.
--   [Xxxxxxx xx/xxxx](./animations-overview.md#pointer-up-down): Xxxxx xxxxxx xxxxxxxx xx x xxx xx xxxxx xx x xxxx.
--   [Xxxxxxxxxx](./animations-overview.md#reposition): Xxxxx xx xxxxxxx xxxx x xxx xxxxxxxx.
--   [Xxxx/xxxx xxxxx](./animations-overview.md#show-hide-popup): Xxxxxxxx xxxxxxxxxx XX xx xxx xx xxx xxxx.
--   [Xxxx/xxxx xxxx XX](./animations-overview.md#show-hide-edge-ui): Xxxxxx xxxx-xxxxx XX, xxxxxxxxx xxxxx XX xxxx xx x xxxxx, xxxx xx xxx xx xxxx.
--   [Xxxx xxxx xxxxxxx](./animations-overview.md#list-item-changes): Xxxx xx xxxxxxx xx xxxx xxxx x xxxx, xx xxxxxxxxxx xx xxx xxxxx.
--   [Xxxx/xxxx](./animations-overview.md#drag-drop): Xxxxx xxxxxx xxxxxxxx xxxxxx x xxxx-xxx-xxxx xxxxxxxxx.
--   [Xxxxx xxxxxxxx](./animations-overview.md#swipe-gestures): Xxxxx xxxx x xxxx xxxxxxxx xxx xxxxx xxxxxxxxxxx, xx xxxxxxxxx xxxxx-xxxxxxxx xxxxx
+-   [コンテンツ切り替えと開始切り替え](./animations-overview.md#content-transition-and-entrance-transition): コンテンツの断片やまとまりをアニメーション化して画面に表示したり、画面から消したりします。
+-   [フェード イン/アウトとクロスフェード](./animations-overview.md#fade-in-out-and-crossfade): 一時的な要素またはコントロールを表示し、コンテンツ領域を更新します。
+-   [ポインター アップ/ダウン](./animations-overview.md#pointer-up-down): タイルでのタップまたはクリックの視覚的なフィードバックを提供します。
+-   [位置の変更](./animations-overview.md#reposition): 要素を新しい位置に移動します。
+-   [ポップアップの表示/非表示](./animations-overview.md#show-hide-popup): コンテキストに沿った UI を画面上に表示します。
+-   [エッジ (端) UI の表示/非表示](./animations-overview.md#show-hide-edge-ui): パネルのように大きな UI も含めて、端に基づく UI をスライドして画面に表示したり、画面から消したりします。
+-   [リスト項目の変更](./animations-overview.md#list-item-changes): リストについて項目の追加、項目の削除、項目の並べ替えを行います。
+-   [ドラッグ/ドロップ](./animations-overview.md#drag-drop): ドラッグ アンド ドロップ操作中に視覚的なフィードバックを提供します。
+-   [スワイプ ジェスチャ](./animations-overview.md#swipe-gestures): タイルがスワイプ操作をサポートしていることを示唆します。またはスワイプ選択状態を示します。
 
-### Xxxxxxx xxxxxxxxxx xxx xxxxxxxx xxxxxxxxxx
+### コンテンツ切り替えと開始切り替え
 
-Xxx xxxxxxx xxxxxxxxxx xxxxxxxxxx ([**XxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243103)) xx xxxx x xxxxx xx x xxx xx xxxxxxx xxxx xx xxx xx xxx xxxxxxx xxxx. Xxx xxxxxxx, xxx xxxxxxx xxxxxxxxxx xxxxxxxxxx xxxx xxxxxxx xxxx xxx xxx xxxxx xx xxxxxxx xxxx xxx xxxx xxx xxxxx xxxxxx, xx xxxx xxx xxxxxxx xxxxxxx xx x xxxxxxx xx x xxxx.
+コンテンツ切り替えアニメーション ([**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103)) を使って、コンテンツの断片やまとまりを移動して現在の画面に表示したり、画面から消したりします。 たとえば、コンテンツ切り替えアニメーションは、ページが最初に読み込まれたとき、またはページの 1 セクションのコンテンツを変更したときに表示できなかったコンテンツを表示する場合に使われます。
 
-Xxx XXXX xxxxxxxxx xxxxxxx xxxxx'x xxxx x xxxxxxx xx xx xxxxxxxxx xxxx xxxxxxx xx xxx xxxxxx xxxx xxxx xxx xxxx xx xxxxxx, xxx xx xxxx xxxx x xxxxxxxx xxxxxxxxxx ([**XxxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210288)) xxxx xxx xxxxx xx xxxxxxx xxxx xxx xxxx xxxxxxxxxx xxx xxxxxxx xx xxxxx xxxxxx xxx xxxx xxxx xx xxxxxxx xx xxxxxxxx. Xxxx xxx xxxxx xxxxxxxxxx xx xxxxxxx xxx xxxxx xxxxxxxxx xxxxxxxx xxxx x xxxxxx xx xxxxxxx xxxx.
+XAML アニメーション ライブラリには、ページが読み込まれたときにページ全体に適用されるアニメーションという概念がありませんが、コンテンツを含むページが最初に読み込まれ、コンテンツ部分がレンダリングされるときにコンテンツに適用できる別の切り替え ([**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288)) はあります。 したがって、最初にコンテンツを表示するときは、コンテンツ切り替え時とは異なるフィードバックとすることができます。
 
-### Xxxx xx/xxx, xxx xxxxxxxxx
+### フェード イン/アウトとクロスフェード
 
-Xxx xxxx xx xxx xxxx xxx xxxxxxxxxx xx xxxx xx xxxx xxxxxxxxx XX xx xxxxxxxx. Xx XXXX xxxxx xxx xxxxxxxxxxx xx [**XxxxXxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210298) xxx [**XxxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210302). Xxx xxxxxxx xx xx xx xxx xxx xx xxxxx xxx xxxxxxxx xxx xxxxxx xxx xx xxxx xxxxxxxxxxx. Xxxxxxx xxxxxxx xx x xxxxxxxxx xxxxxx xxx xx xxxxxxx xxxxxxxxx xxxx xx xxxxx xxx xxxxx xx xxxx xxxxx xxx xxxx xxxxxxxx xxx xxxx xxxxxx xx xxxx. Xxxx xxxxxx xxxx xxx xxx xxxx xx xxxxxxxxx xxxx xxxx xxxxxxxxxx xxxx x xxxxxxxxxxx xxxx xx xxx xxxxx xxxx xx xxxxxxx xxxxx xxxxxxxxxxx.
+フェード イン/アウト アニメーションを使って、一時的な UI またはコントロールを表示したり、非表示にしたりします。 XAML では、これは [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) と [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) として表されます。 たとえば、ユーザーの操作により新しいコントロールが表示されるアプリ バーでこのアニメーションを使います。 また、一定期間ユーザーの入力が検出されないとフェード アウトする一時的なスクロール バーとパン インジケーターにもこのアニメーションが適用されます。 アプリで、コンテンツが動的に読み込まれてプレースホルダー項目から最終項目に切り替わるときにもフェード イン アニメーションが使われます。
 
-Xxx x xxxxxxxxx xxxxxxxxx xx xxxxxx xxx xxxxxxxxxx xxxx xx xxxx'x xxxxx xx xxxxxxxx; xxx xxxxxxx, xxxx xxx xxx xxxxxxxxx xxx xxxxxxx xxxxxxxx xx x xxxx. Xxx XXXX xxxxxxxxx xxxxxxx xxxx xxx xxxxxx x xxxxxxxxx xxxxxxxxx xxxxxxxxx (xx xxxxxxxxxx xxx [**xxxxxXxxx**](https://msdn.microsoft.com/library/windows/apps/BR212661)), xxx xxx xxx xxxxxxx xxx xxxx xxxxxx xxxxx [**XxxxXxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210298) xxx [**XxxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210302) xxxx xxxxxxxxxx xxxxxx.
+クロスフェード アニメーションを使って、画面の現在のコンテンツを更新している場合など、項目の状態が変化しているときにスムーズに切り替えます。 XAML アニメーション ライブラリには専用のクロスフェード アニメーション ([**crossFade**](https://msdn.microsoft.com/library/windows/apps/BR212661) と同等のもの) がありませんが、タイミングを重ねて [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) と [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) を使うことで同じ結果を実現できます。
 
-### Xxxxxxx xx/xxxx
+### ポインター アップ/ダウン
 
-Xxx xxx [**XxxxxxxXxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh969168) xxx [**XxxxxxxXxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh969164) xxxxxxxxxx xx xxxx xxx xxxx xxxxxxxx xxx x xxxxxxxxxx xxx xx xxxxx xx x xxxx. Xxx xxxxxxx, xxxx x xxxx xxxxxx xx xxxx xxxx xx x xxxx, xxx xxxxxxx xxxx xxxxxxxxx xx xxxxxx. Xxxx xxx xxxxx xx xxx xxx xxxx xxxxxxxx, xxx xxxxxxx xx xxxxxxxxx xx xxxxxx.
+[
+            **PointerUpThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969168) アニメーションと [**PointerDownThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969164) アニメーションを使って、タイルでのタップやクリックが正常に行われたことについてユーザーにフィードバックを提供します。 たとえば、ユーザーがタイルを下にクリックまたはタップすると、ポインター ダウン アニメーションが再生されます。 クリックまたはタップが解放されると、ポインター アップ アニメーションが再生されます。
 
-### Xxxxxxxxxx
+### 位置の変更
 
-Xxx xxx xxxxxxxxxx xxxxxxxxxx ([**XxxxxxxxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210421) xx [**XxxxxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210429)) xx xxxx xx xxxxxxx xxxx x xxx xxxxxxxx. Xxx xxxxxxx, xxxxxx xxx xxxxxxx xx x xxxxxxx xxxxx xxxxxxx xxxx xxx xxxxxxxxxx xxxxxxxxx.
+位置変更アニメーション ([**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) または [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429)) を使って、要素を新しい位置に移動します。 たとえば、ヘッダー付き項目のコントロールでヘッダーを動かすと、位置変更アニメーションが適用されます。
 
-### Xxxx/xxxx xxxxx
+### ポップアップの表示/非表示
 
-Xxx xxx [**XxxXxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210383) xxx [**XxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210391) xxxx xxx xxxx xxx xxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR227842) xx xxxxxxx xxxxxxxxxx XX xx xxx xx xxx xxxxxxx xxxx. [
-            **XxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh969172) xx x xxxxx xxxxxxxxxx xxxx'x xxxxxx xxxxxxxx xx xxx xxxx xx xxxxx xxxxxxx x xxxxx.
+[
+            **PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) と [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) を使って、[**Popup**](https://msdn.microsoft.com/library/windows/apps/BR227842) や類似のコンテキストに沿った UI を現在の画面に表示し、画面から消します。 [**PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969172) は、ポップアップを簡易非表示にする場合、便利なフィードバックとなるテーマ切り替えです。
 
-### Xxxx/xxxx xxxx XX
+### エッジ (端) UI の表示/非表示
 
-Xxx xxx [**XxxxXXXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh702324) xxxxxxxxx xx xxxxx xxxxx, xxxx-xxxxx XX xxxx xxx xxx xx xxxx. Xxx xxxxxxx, xxx xxxxx xxxxxxxxxx xxxx xxx xxxx x xxxxxx xxx xxx xx xxx xxx xx xxxxxx xx xxx xxxxxx xx x XX xxxxxxx xxx xxxxxx xxx xxxxxxxx xx xxx xxx xx xxx xxxxxx.
+[
+            **EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh702324) アニメーションを使って、端に基づく小さい UI をスライドして画面に表示したり、画面から消したりします。 たとえば、画面の上部や下部にカスタムのアプリ バーを表示したり、画面の上部にエラーや警告の UI サーフェスを表示したりするときに、これらのアニメーションを使います。
 
-Xxx xxx [**XxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh969160) xxxxxxxxx xx xxxx xxx xxxx x xxxx xx xxxxx. Xxxx xx xxx xxxxx xxxx-xxxxx XX xxxx xx x xxxxxx xxxxxxxx xx x xxxx xxxx.
+ウィンドウまたはパネルの表示や非表示には [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969160) アニメーションを使います。 これはカスタム キーボードや作業ウィンドウのような端に基づく大きな UI 用です。
 
-### Xxxx xxxx xxxxxxx
+### リスト項目の変更
 
-Xxx xxx [**XxxXxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243047) xxxxxxxxx xx xxx xxxxxxxx xxxxxxxx xxxx xxx xxx xx xxxxxx xx xxxx xx xx xxxxxxxx xxxx. Xxx xxx, xxx xxxxxxxxxx xxxx xxxxx xxxxxxxxxx xxxxxxxx xxxxx xx xxx xxxx xx xxxx xxxxx xxx xxx xxx xxxxx, xxx xxxx xxx xxx xxx xxxxx. Xxx xxxxxx, xxx xxxxxxxxxx xxxxxxx xxxxx xxxx x xxxx xxx, xx xxxxxxxxx, xxxxxxxxxxx xxx xxxxxxxxx xxxx xxxxx xxxx xxx xxxxxxx xxxxx xxxx xxxx xxxxxxx.
+[
+            **AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) アニメーションは、既にあるリストに項目の追加時または削除時のアニメーション動作を追加するときに使います。 追加時の切り替えの場合、最初にリスト内の既にある項目の位置が変更され、新しい項目用のスペースが確保されてから、新しい項目が追加されます。 削除時の切り替えの場合、リストから項目が削除され、必要に応じて、残りのリスト項目の位置が変更されます。
 
-Xxxxx'x xxxx x xxxxxxxx [**XxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210409) xxxx xxx xxxxx xx xx xxxx xxxxxxx xxxxxxxx xx x xxxx. Xxxx xx xxxxxxxx xxxxxxxxxxx xxxx xxxxxxxx xx xxxx xxx xxxxxx xx xx x xxx xxxxx xxxx xxx xxxxxxxxxx xxxxxx/xxx xxxxxxxxxx.
+項目のリスト内の位置が変わった場合に適用される別の [**ReorderThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210409) もあります。 これは、項目を削除してそれを新しい位置に追加するときに使われる関連する削除/追加アニメーションとは異なるアニメーションになります。
 
-### Xxxx/xxxx
+### ドラッグ/ドロップ
 
-Xxx xxx xxxx xxxxxxxxxx ([**XxxxXxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243173), [**XxxxXxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243177)) xxx xxxx xxxxxxxxx ([**XxxxXxxxxxXxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243185)) xx xxxx xxxxxx xxxxxxxx xxxx xxx xxxx xxxxx xx xxxxx xx xxxx.
+ドラッグ アニメーション ([**DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243173)、[**DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243177)) とドロップ アニメーション ([**DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243185)) を使って、ユーザーが項目をドラッグまたはドロップするときに視覚的なフィードバックを提供します。
 
-Xxxx xxxxxx, xxx xxxxxxxxxx xxxx xxx xxxx xxxx xxx xxxx xxx xx xxxxxxxxxx xxxxxx x xxxxxxx xxxx. Xx xx xxxxxxx xxx xxxxx xx xxxx xxxxx xxx xxxx xxxx xx xxxxxx xx x xxxx xx xx xx xxxxxxx xx xxx xxxxxxx xxxxxxxx. Xxx xxxxxxxxxx xxxx xxxxxx xxxxxxxx xxxx xx xxxx xxxxx xxxxxxx xxx xx xxxxxxx xxxxxxx xxx xxxxx xxxxx xx xxx xxxx xxx xxxx xxxxx xxxxx xxxx xxxx xxx xx xxx xxx.
+有効にすると、リストにドロップした項目の前後の項目の位置が変更されることがアニメーションによってユーザーに示されます。 このアニメーションを使うと、ユーザーは項目を現在の位置にドロップしたときに、項目がリスト内のどの位置に配置されるかを把握できるため便利です。 アニメーションでは、ドラッグしている項目を、リストの他の 2 つの項目間にドロップできること、およびそれらの項目は移動することを視覚的なフィードバックで示します。
 
-### Xxxxx xxxxxxxx
+### スワイプ ジェスチャ
 
-Xxx xxx [**XxxxxXxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh702489) xxxxxxxxx xx xxxx xxxx x xxxx xxxxxxxx xxx xxxxx xxxxxxxxxxx. Xxxxx xxx xxxxx xxxxxxxxx xx xxxxxx x xxxx. Xx x xxxx xxxx xxx xxxx xx xxxx xxx xxxxx xx x xxxx, x xxxxx xxx xxxx xxxxxxx xx xxx xxxx xxxx xxxx xxx xxxxx xxxx xxxxxxxxx xx xxxxxxx xxxx xxx xxxx xxxxxx xxxxxxxx xxxx xxx xxxx xxxxxxx x xxxxx.
+[
+            **SwipeHintThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702489) アニメーションを使って、タイルがスワイプ操作をサポートしていることを示唆します。 ユーザーは下にスワイプしてタイルを選ぶことができます。 ユーザーは、タイルでスワイプできるかどうかわからない場合、タイルで長押しジェスチャを行うと、スワイプ ヒント アニメーションが再生されて、スワイプでタイルを操作する必要があることが示唆されます。
 
-Xxx xxx [**XxxxxXxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh702477) xxxxxxxxx xx xxxx xxxx xxx xxxx xxx xxxx xxxxxxxx, xxx xx xxxxxx xxx xxxx xx xxx xxxx xxxxxxxx.
+[
+            **SwipeBackThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702477) アニメーションは、タイルが選択されたことを示したり、タイルをその定位置に戻したりする際に使います。
 
-## Xxxxx xxxxxxxxxx xxxx xxxxxx xxxxxxxx
+## アニメーションとカスタム コントロールの使用
 
-Xxx xxxxxxxxx xxxxx xxxxxxxxxx xxx xxxxxxxxxxxxxxx xxx xxxxx xxxxxxxxx xxx xxxxxx xxx xxxx xxx xxxxxx x xxxxxx xxxxxxx xx xxxxx Xxxxxxx Xxxxxxx xxxxxxxx:
+カスタマイズした Windows ランタイム コントロールを作るときに、どのアニメーションを使う必要があるかについての推奨事項を次の表にまとめます。
 
-| XX xxxx | Xxxxxxxxxxx xxxxxxxxx |
+| UI の種類 | 推奨されるアニメーション |
 |---------|-----------------------|
-| Xxxxxx xxx | [
-            **XxxxXxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210298) xxx [**XxxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
-| Xxxxxx | [
-            **XxxXxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) xxx [**XxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
-| Xxxxxxx | [
-            **XxxxXxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210298) xxx [**XxxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
-| Xxxxxxx xxxx | [
-            **XxxXxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) xxx [**XxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
-| Xxxxxxx xxx | [**XxxxXXXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.edgeuithemetransition.edgeuithemetransition) |
-| Xxxx xxxx xx xxxx-xxxxx xxxxx | [**XxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.panethemetransition.panethemetransition) |
-| Xxxxxxxx xx xxx XX xxxxxxxxx | [**XxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
-| Xxx xxxxxxxx xx xx xx xxxxx xxxxxxxxx xxxxxxx | [
-            **XxxxXxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) xxx [**XxxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| ダイアログ ボックス | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) と [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| ポップアップ | [**PopInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) と [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| ヒント | [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) と [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
+| ショートカット メニュー | [**PopInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.popinthemeanimation.popinthemeanimation.aspx) と [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.popoutthemeanimation.popoutthemeanimation) |
+| コマンド バー | [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.edgeuithemetransition.edgeuithemetransition) |
+| 作業ウィンドウまたは端に基づくパネル | [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.panethemetransition.panethemetransition) |
+| 各種 UI コンテナーのコンテンツ | [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.contentthemetransition.contentthemetransition) |
+| コントロールに対して (または他に該当するアニメーションがない場合に) 適用する | [**FadeInThemeAnimation**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.fadeinthemeanimation.fadeinthemeanimation.aspx) と [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) |
 
  
 
-## Xxxxxxxxxx xxxxxxxxx xxxxxxxx
+## 切り替え効果のアニメーションの例
 
-Xxxxxxx, xxxx xxx xxxx xxxxxxxxxx xx xxxxxxx xxx xxxx xxxxxxxxx xx xx xxxx xx xxxx xxxxxxxxxx xxxxxxx xxxxxxxx xxxx xxxxx. Xxx xxx xxx xxx xx xxxx xx xx xxxxx xxxxxxxx xxxxxxxxxxx xx XX xx xxxx xxxx xxxxxxxxx xxxxxx xx xxxxxx xxx xxxxxx xx xxxxxxxxx xxxxxxx, xxx xxxxxxxxx xxxxx xxx xxxxxxxxx xx xxx xxxx xx xxx xxxxxx. Xxx xxxxxxx, xxxx xxxxxxx xxx xxxxxxx xxxx xx xxx xxx xx xxxx xxxxxx xxxx xxxx xxxxxx xxx xxxxxxxxx. Xx xxxxxxx x xxxxxx xx XXXx xxxx xxx xx xxxx xx xxxxxx xxxxxxxxxxx xx xxxxxxx xxxxxxxxx xxxxxxxxxxx xxxx xxx xxxxxxxxxx. Xxx xxxxxxx xxxx xxxxx xxx xx xxxxx xx xxxxxxxxx xx x xxxxxx xx xxxx xx xxxxxxx xxxxxx xxxx xxxx.
+アプリが使うアニメーションは、ユーザーを困惑させることなく、ユーザー インターフェイスを豊かに、魅力的にするものであるのが理想です。 1 つの方法は、切り替え効果のアニメーションを UI に適用することです。画面に何かが出入りするなど、何かの変化が起きたときに、アニメーションによって、その変化にユーザーの注意を惹き付けます。 たとえば、ボタンの場合、単に画面に表示したり画面から消したりするのではなく、フェード イン/フェード アウトさせるようにします。 一貫性のあるお勧めの (標準的な) 切り替え効果アニメーションを作ることができる API を多数用意しました。 ここでは、ボタンがスライドしながら勢いよく画面に表示されるアニメーションの適用方法を紹介します。
 
 ```xml
 <Button Content="Transitioning Button">
@@ -130,9 +130,9 @@ Xxxxxxx, xxxx xxx xxxx xxxxxxxxxx xx xxxxxxx xxx xxxx xxxxxxxxx xx xx xxxx xx xx
  </Button>
  ```
 
-Xx xxxx xxxx, xx xxx xxx [**XxxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210288) xxxxxx xx xxx xxxxxxxxxx xxxxxxxxxx xx xxx xxxxxx. Xxx, xxxx xxx xxxxxx xx xxxxx xxxxxxxx, xx xxxxxxx xxxxxx xxxx xxxx xxxxxx xxxx xxxx xxxxxx. Xxx xxx xxx x xxx xxxxxxxxxx xx xxx xxxxxxxxx xxxxxx xx xxxxx xx xxxxxx xxx xxx xx xxxxxx xxx xxxx xxxx xxxxxxxxx, xxx xx'x xxxxxx xxxxx xx xx x xxxxxx XXX xxx x xxxxxxxx xxxxxxxx, xxxx xx, xx xxxx xx xxx-xxxxxxxx xxxxxxxx.
+このコードでは、ボタンの切り替え効果のコレクション (TransitionCollection) に [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) オブジェクトを追加します。 これで、ボタンが最初にレンダリングされるときに、ただ表示されるのではなく、スライドしながら勢いよく画面に表示されるようになります。 アニメーション オブジェクトには、スライドする距離と方向を調整する目的でいくつかのプロパティを設定できますが、API としては、特定のシナリオ、つまり、出入り口 (entrance) を目立たせることを意図した非常に単純なものです。
 
-Xxx xxx xxxx xxxxxx xxxxxxxxxx xxxxxxxxx xxxxxx xx xxx xxxxx xxxxxxxxx xx xxxx xxx, xxxxxxxx xxx xx xxxxx xxx xxxxxx xxxxxxxxx. Xxxx xxxxxxx xx xxxxxxxxxx xx xxx xxxxxxxx xxx, xxxx xx xx xxxxxxx xxxxx x [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR208849):
+切り替え効果のアニメーションのテーマをアプリのスタイル リソースで定義して、統一感のある効果を適用することもできます。 先ほどの例に相当する内容を [**Style**](https://msdn.microsoft.com/library/windows/apps/BR208849) を使って実現したのが次のコードです。
 
 ```xml
 <UserControl.Resources>
@@ -152,7 +152,7 @@ Xxx xxx xxxx xxxxxx xxxxxxxxxx xxxxxxxxx xxxxxx xx xxx xxxxx xxxxxxxxx xx xxxx x
 </StackPanel>
 ```
 
-Xxx xxxxxxxx xxxxxxxx xxxxx x xxxxx xxxxxxxxxx xx xx xxxxxxxxxx xxxxxxx, xxxxxxx, xxxxx xxxxxxxxxxx xxx xxxx xxxx xxxxxxxxxxx xxxx xxx xxxxx xxxx xx x xxxxxxxxx xx xxxxxxx. Xxxx xxx xx xxxx, xxx xxx xxxxx xxxxxxx xx xxx xxxxxxxxx xxxx xxxx xx xxx xxxxxxxxxx. Xx xxx xxxxxxxxx xxxxxxx, xx [**XxxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210288) xx xxxxxxx xx x [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704) xx xxxxxxxxxx.
+これまでの例では、テーマ切り替えを個々のコントロールに適用していましたが、それをオブジェクトのコンテナーに適用すると、もっとおもしろいことが起こります。 コンテナーに含まれているすべての子オブジェクトに、切り替え効果が適用されます。 次の例では、[**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) を四角形から成る [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) に適用しています。
 
 ```xml
 <!-- If you set an EntranceThemeTransition animation on a panel, the
@@ -188,15 +188,15 @@ Xxx xxxxxxxx xxxxxxxx xxxxx x xxxxx xxxxxxxxxx xx xx xxxxxxxxxx xxxxxxx, xxxxxxx
 </ItemsControl>
 ```
 
-Xxx xxxxx xxxxxxxxxx xx xxx [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/BR242704) xxxxxxxxxx xxxx xxxx xxx xxxxx xxx xxxxx xx x xxxxxxxx xxxxxxxx xxx xxxxxx xxxx xxx xx xxxx xx xxxxx xx xxx xxxx xx xxx xxxxxxx xxxx xxxxxxxxx xx xxx xxxxxxxxxx xxxxxxxxxxxx.
+切り替え効果が適用された [**Grid**](https://msdn.microsoft.com/library/windows/apps/BR242704) の子である四角形が次々に表示され、見ていて楽しい気分になります。同じアニメーションを個々の四角形に適用した場合は、すべての四角形がいっせいに表示されますが、それとは対照的です。
 
-Xxxx'x x xxxxx xxxx xxxxxxxxxxxx xxxx xxxxxxxxx:
+このアニメーションのデモは、次のビデオでご覧いただけます。
 
-![Xxxxxxxxx xxxxxxx xxxxx xxxxxxxxx xxxxxxxxxxxxx xxxx xxxx](./images/animation-child-rectangles.gif)
+![子である四角形をビューに切り替えて表示するアニメーション](./images/animation-child-rectangles.gif)
 
 <iframe src="https://videoplayercdn.osi.office.net/embed/bb48c68b-c15d-44e4-86e5-8a8065da7a2e?autoplay=true&mkt=en-us&csid=IA-en-us" width="640" height="360" allowFullScreen="true" frameBorder="0" scrolling="no" ></iframe>
 
-Xxxxx xxxxxxx xx x xxxxxxxxx xxx xxxx xx-xxxx xxxx xxx xx xxxx xx xxxxx xxxxxxxx xxxxxx xxxxxxxx. Xx xxx xxxxxxxxx xxxxxxx, xx xxxxx x [**XxxxxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210429) xx x xxxx xx xxxxxxxxxx. Xxxx xxx xxxxxx xxx xx xxx xxxxxxxxxx, xxx xxx xxxxx xxxxxxxxxx xx-xxxx xxxx xxxxx xxx xxxxxxxx.
+いずれかの子の位置が変化した場合は、コンテナーの子オブジェクトを再度流し込むことができます。 次の例では、[**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) を四角形から成るグリッドに適用しています。 いずれかの四角形を削除すると、その他すべての四角形が新しい位置に再度流し込まれます。
 
 ```xml
 <Button Content="Remove Rectangle" Click="RemoveButton_Click"/>
@@ -258,9 +258,9 @@ void BlankPage::RemoveButton_Click(Platform::Object^ sender, Windows::UI::Xaml::
 }
 ```
 
-Xxxx xxxxx xxxxxxxxxxxx xxx xxxxxxxxx xxxx xxxx xxx xxx xxxxxxxxxx xxxxx xxxxxxx:
+次のビデオは、削除される四角形を表現するアニメーションを実行するデモです。
 
-Xxx xxx xxxxx xxxxxxxx xxxxxxxxxx xxxxxxxxxx xx x xxxxxx xxxxxx xx xxxxxx xxxxxxxxx. Xxx xxxxxxx, xx xxx xxxx xxx xxxx xx xxxxxxxxxx xx xxxxxxx xxxx xxxx xxx xxxx xxxxxxx xxxx xxxx xxxxxx xxxxxxxx, xxx xxx xxxxx xxx [**XxxxxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210429) xxx [**XxxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210288) xxxx xxxx:
+切り替え効果のアニメーションは、1 つのオブジェクトまたは 1 つのオブジェクト コンテナーに対し複数適用することができます。 たとえば、アニメーションで表示する一連の四角形があり、四角形の位置が変化したときにもアニメーションを適用する必要がある場合、[**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) と [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) を次のように適用します。
 
 ```xml
 ...
@@ -273,24 +273,24 @@ Xxx xxx xxxxx xxxxxxxx xxxxxxxxxx xxxxxxxxxx xx x xxxxxx xxxxxx xx xxxxxx xxxxxx
 ...      
 ```
 
-Xxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxx xx xxxxxx xxxxxxxxxx xx xxxx XX xxxxxxxx xx xxxx xxx xxxxx, xxxxxxx, xxxxxxxxx, xxx xx xx. Xxx xxxxx xx xxxxx XXXx xxx xxxxxxx "XxxxxXxxxxxxxxx":
+切り替え効果には、さまざまな種類が存在し、UI 要素の追加時、削除時、並べ替え時などに、それに応じたアニメーションを適用することができます。 これらの API はすべて、名前に "ThemeTransition" という単語が含まれています。
 
-| XXX | Xxxxxxxxxxx |
+| API | 説明 |
 |-----|-------------|
-| [**XxxXxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243047) | Xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxx xxx xxxx xxxxxxxx xxx xx xxxxxx xxxxxxxx xx xxxxxxx. Xxxxxxxxx xxx xxxxxxx xx xx xxxx xxxxxxxxx. |
-| [**XxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243103) | Xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxx xxx xxxx xxx xxxxxxx xx x xxxxxxx xx xxxxxxxx. Xxx xxx xxxxx xxxx xx xxxxxxxx xx [**XxxXxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243047). |
-| [**XxxxXXXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh702324) | Xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxx xxx x (xxxxx) xxxx XX xxxxxxxxxx. |
-| [**XxxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210288) | Xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxx xxx xxxx xxxxxxxx xxxxx xxxxxx. |
-| [**XxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh969160) | Xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxx xxx x xxxxx (xxxxx xxxx XX) XX xxxxxxxxxx. |
-| [**XxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh969172) | Xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxx xxxx xxxxxxx xx xxx-xx xxxxxxxxxx xx xxxxxxxx (xxx xxxxxxx, xxxxxxx-xxxx XX xx xx xxxxxx) xx xxxx xxxxxx. |
-| [**XxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210409) | Xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxx xxx xxxx xxxx-xxxx xxxxxxxx xxxxx xxxxxx xxxxx. Xxxxxxxxx xxxx xxxxxxx xx x xxxxxx xx x xxxx-xxxx xxxxxxxxx. Xxxxxxxxx xxxxxxxx xxx xxxxxx xxx xxxx xxxxxxx xxxxxxxxxxxxxxx xxx xxx xxxxxxxxxx. |
-| [**XxxxxxxxxxXxxxxXxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210429) | Xxxxxxxx xxx xxxxxxxx xxxxxxxxxx xxxxxxxx xxx xxxx xxxxxxxx xxxxxx xxxxxxxx. |
+| [**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) | コントロールの子やコンテンツが追加されたり削除されたりしたときの切り替え動作のアニメーションです。 ここでいうコントロールは通常、項目コンテナーです。 |
+| [**ContentThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243103) | コントロールのコンテンツが変化しているときの切り替え動作のアニメーションです。 このアニメーションは、[**AddDeleteThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR243047) に追加する形で適用することができます。 |
+| [**EdgeUIThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh702324) | (小さい) エッジ UI の切り替え動作のアニメーションです。 |
+| [**EntranceThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210288) | コントロールが最初に表示されるときの切り替え動作のアニメーションです。 |
+| [**PaneThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969160) | パネル (大きなエッジ UI) の切り替え動作のアニメーションです。 |
+| [**PopupThemeTransition**](https://msdn.microsoft.com/library/windows/apps/Hh969172) | コントロールのポップイン コンポーネント (オブジェクトに関するツールヒント風の UI など) が表示されるときに適用される切り替え動作のアニメーションです。 |
+| [**ReorderThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210409) | リスト ビュー コントロールの項目の順序が変わったときの切り替え動作のアニメーションです。 通常、この変化は、ドラッグ アンド ドロップ操作の結果として起こります。 コントロールやテーマの種類によって、アニメーションの特性が異なる場合があります。 |
+| [**RepositionThemeTransition**](https://msdn.microsoft.com/library/windows/apps/BR210429) | コントロールの位置が変わったときの切り替え動作のアニメーションです。 |
 
  
 
-## Xxxxx xxxxxxxxx xxxxxxxx
+## テーマ アニメーションの例
 
-Xxxxxxxxxx xxxxxxxxxx xxx xxxxxx xx xxxxx. Xxx xxx xxx xxxx xx xxxx x xxx xxxx xxxxxxx xxxx xxx xxxxxx xxx xxxxx xx xxxx xxxxxxxxx xxxxxxx. Xxx xxx xxx xxxxx xxxxxxxxxx xx xxxxxx xxxx xxxxxxx xxxxx xxxxx xxxxx x xxxxxxxxxx xxxxx xxx xxx xxxx xxxxxxxxx xxxxxxx. Xxxxx xxxxxxxxxx xxxx xxxxxxx xxxx xxxxxx xxxx xxxxxx xxxxxxxxxx. Xxxx, xx xxx xxx [**XxxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210302) xx xxxx x xxxxxxxxx xxxx xxx xx xxxx.
+切り替え効果のアニメーションは簡単に適用できます。 しかし、場合によっては、アニメーション効果のタイミングや順序をもっと細かく制御する必要があります。 テーマ アニメーションを使うと、アニメーションの動作に一貫したテーマを使いながら、より細かな制御を行うことができます。 テーマ アニメーションも、カスタム アニメーションよりマークアップを少なくする必要があります。 ここでは、[**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) を使って、四角形をフェード アウトさせています。
 
 ```xml
 <StackPanel>    
@@ -330,46 +330,50 @@ void BlankPage::Rectangle_Tapped(Object^ sender, PointerRoutedEventArgs^ e)
 }
 ```
 
-Xxxxxx xxxxxxxxxx xxxxxxxxxx, x xxxxx xxxxxxxxx xxxxx'x xxxx x xxxxx-xx xxxxxxx (xxx xxxxxxxxxx) xxxx xxxx xx xxxxxxxxxxxxx. Xxx xxxx xxx x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490) xx xxxxxxx x xxxxx xxxxxxxxx xxxx xxx xxxxxx xx xx XXXX. Xxx xxx xxxx xxxxxx xxx xxxxxxx xxxxxxxx xx xxx xxxxxxxxx. Xxx xxxxxxx, xxx xxx xxxx xxxx xxx xxxx-xxx xx xxxxxxxxxx xxx [**Xxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243207) xxxx xxxxx xx xxx [**XxxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210302).
+切り替え効果のアニメーションとは異なり、テーマ アニメーションでは、アニメーションを自動的に実行する組み込みのトリガー (切り替え) がありません。 XAML でテーマ アニメーションを定義するときは、[**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) を使ってそれを格納する必要があります。 アニメーションの既定の動作を変更することもできます。 たとえば、[**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) の [**Duration**](https://msdn.microsoft.com/library/windows/apps/BR243207) の時間値を増やすと、フェード アウトの速度を遅くすることができます。
 
-**Xxxx**  Xxx xxxxxxxx xx xxxxxxx xxxxx xxxxxxxxx xxxxxxxxxx, xx'xx xxxxx xxx xxxx xx xxxxx xxx xxxxxxxxx xx xxxxxxx xxxxxxx xx [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490). Xxx xxx xxxxxxx xxx xxx **Xxxxxxxxxx** xxxxxxxxxx xxx xxxxx xxx [**Xxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210491), [**Xxxx**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop), [**Xxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx), xxx [**Xxxxxx**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx)**Xxxxxxxxxx** xxxxxxx. Xxxxxxx, xxxx'x xxx xxxxxxxxx xxx xxx xxxxxxx xxxxxxx xxxxxxxxxx xx xxxx. Xxxxxx, xxx xxxxxxx xxxxxxxxx xxx xxxxxxx xxxxxxxxxx xxxx xxx XXXX xxxxxx xxx xxxxxxxxx xxxxxxx xx xxxxxxxx xx xxxxxxxx. Xxxxxxxx xxxxx xxxxxxxxx xxx xxxxxx xxxxxx xx x xxxxxx xxxx xxxxxxxx. Xxx xx xx xxxxx xxx xxx'x xxx xxxxxxx xxxxxxxxxx xx xxxxxx xxxxxx xx xxxx xx xxx [Xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808) xxxxx.
+**注**  基本的なアニメーション技法を示すために、アプリ コードで [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) のメソッドを呼び出してアニメーションを開始しています。 **Storyboard** クラスの [**Begin**](https://msdn.microsoft.com/library/windows/apps/BR210491)、[**Stop**](https://msdn.microsoft.com/library/windows/apps/windows.ui.xaml.media.animation.storyboard.stop)、[**Pause**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.pause.aspx)、[**Resume**](https://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.media.animation.storyboard.resume.aspx) の各メソッドを使うと、**Storyboard** アニメーションを実行する方法を制御できます。 ただし、これはライブラリ アニメーションをアプリに含める通常の方法ではありません。 むしろ、通常は、コントロールまたは要素に適用される XAML スタイルとテンプレートにライブラリ アニメーションを統合します。 テンプレートと表示状態の説明はもう少し込み入ったものになります。 ただし、表示状態でライブラリ アニメーションを使用する方法については、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)」トピックの一部として取り上げています。
 
  
 
-Xxx xxx xxxxx xxxxxxx xxxxx xxxxx xxxxxxxxxx xx xxxx XX xxxxxxxx xx xxxxxx xxxxxxxxx xxxxxxx. Xxx xxxxx xx xxxxx XXX xxx xxxxxxx "XxxxxXxxxxxxxx":
+そのほかにもさまざまなテーマ アニメーションを UI 要素に適用して、アニメーション効果を作ることができます。 これらの API はすべて、名前に "ThemeAnimation" という単語が含まれています。
 
-| XXX | Xxxxxxxxxxx |
+| API | 説明 |
 |-----|-------------|
-| [**XxxxXxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243173) | Xxxxxxxxxx xxx xxxxxxxxxxxxx xxxxxxxxx xxxx xxxxxxx xx xxxx xxxxxxxx xxxxx xxxxxxx. |
-| [**XxxxXxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243177) | Xxxxxxxxxx xxx xxxxxxxxxxxxx xxxxxxxxx xxxx xxxxxxx xx xxx xxxxxxxx xxxxxxxxxx xx xxxxxxx xxxxx xxxxxxx. |
-| [**XxxxXxxxxxXxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243185) | Xxx xxxxxxxxxxxxx xxxxxxxxx xxxx xxxxxxx xx xxxxxxxxx xxxx xxxxxx xxxxxxxx. |
-| [**XxxxXxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210298) | Xxx xxxxxxxxxxxxx xxxxxxx xxxxxxxxx xxxx xxxxxxx xx xxxxxxxx xxxx xxxx xxxxx xxxxxx. |
-| [**XxxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210302) | Xxx xxxxxxxxxxxxx xxxxxxx xxxxxxxxx xxxx xxxxxxx xx xxxxxxxx xxxx xxxx xxx xxxxxxx xxxx XX xx xxxxxx. |
-| [**XxxxxxxXxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh969164) | Xxx xxxxxxxxxxxxx xxxxxxxxx xxx xxxx xxxxxx xxxx xxxx xx xxxxxx xx xxxx xx xxxxxxx. |
-| [**XxxxxxxXxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh969168) | Xxx xxxxxxxxxxxxx xxxxxxxxx xxx xxxx xxxxxx xxxx xxxx xxxxx x xxxx xxxx xxxx xx xx xxxx xx xxxxxxx xxx xxx xxxxxx xx xxxxxxxx. |
-| [**XxxXxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210383) | Xxx xxxxxxxxxxxxx xxxxxxxxx xxxx xxxxxxx xx xxx-xx xxxxxxxxxx xx xxxxxxxx xx xxxx xxxxxx. Xxxx xxxxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxxxx. |
-| [**XxxXxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210391) | Xxx xxxxxxxxxxxxx xxxxxxxxx xxxx xxxxxxx xx xxx-xx xxxxxxxxxx xx xxxxxxxx xx xxxx xxx xxxxxx xx xxxxxxx. Xxxx xxxxxxxxx xxxxxxxx xxxxxxx xxx xxxxxxxxxxx. |
-| [**XxxxxxxxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210421) | Xxx xxxxxxxxxxxxx xxxxxxxxx xxx xx xxxxxx xx xx xx xxxxxxxxxxxx. |
-| [**XxxxxXxxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210454) | Xxx xxxxxxxxxxxxx xxxxxxxxx xxxx xxxxxxxx x xxxxxx XX xxxxx x xxxxx xxxxxxxxx. |
-| [**XxxxxXxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210472) | Xxx xxxxxxxxxxxxx xxxxxxxxx xxxx xxxxxxx x xxxxxx XX xxxxx x xxxxx xxxxxxxxx. |
-| [**XxxxxXxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh702477) | Xxx xxxxxxxxxxxxx xxxxxxxxx xxxx xxxxxxx xx xxxxxxxx xxxx xx xxxxxxx xxxxxx xxxx xxxx xxx xxxxxx xxxx xxxxx x xxxxx xxxxxxxxxxx. |
-| [**XxxxxXxxxXxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/Hh702489) | Xxx xxxxxxxxxxxxx xxxxxxxxx xxxx xxxxxxxxx xxxx x xxxxx xxxxxxx xx xxx xxxxxxxx. |
+| [**DragItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243173) | ドラッグされている項目要素に適用される事前構成済みのアニメーションを表します。 |
+| [**DragOverThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243177) | ドラッグされている要素の下にある要素に適用される事前構成済みのアニメーションを表します。 |
+| [**DropTargetItemThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243185) | ドロップ先となりうる要素に適用される事前構成済みのアニメーションです。 |
+| [**FadeInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210298) | 透明から不透明への変化を表す事前構成済みのアニメーションです。コントロールが最初に表示されるときに適用されます。 |
+| [**FadeOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210302) | 透明から不透明への変化を表す事前構成済みのアニメーションです。コントロールが UI から削除されたり非表示になるときに適用されます。 |
+| [**PointerDownThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969164) | 項目または要素をタップまたはクリックするユーザー操作の事前構成済みのアニメーションです。 |
+| [**PointerUpThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh969168) | ユーザーが項目または要素をタップし、指を離すと実行される事前構成済みのアニメーションです。 |
+| [**PopInThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210383) | コントロールのポップイン コンポーネントが表示されるときに適用される事前構成済みのアニメーションです。 このアニメーションには、不透明度と変換が組み合わされています。 |
+| [**PopOutThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210391) | コントロールのポップイン コンポーネントが閉じたり削除されたりするときに適用される事前構成済みのアニメーションです。 このアニメーションには、不透明度と変換が組み合わされています。 |
+| [**RepositionThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210421) | オブジェクトの位置が変更されたときに適用される事前構成済みのアニメーションです。 |
+| [**SplitCloseThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210454) | ターゲット UI をスプリット アニメーションで非表示にする事前構成済みのアニメーションです。 |
+| [**SplitOpenThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/BR210472) | ターゲット UI をスプリット アニメーションで表示する事前構成済みのアニメーションです。 |
+| [**SwipeBackThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702477) | コントロールに適用される事前構成済みのアニメーションです。スワイプ操作の後に、要素がそのレイアウト スロットに戻るときに適用されます。 |
+| [**SwipeHintThemeAnimation**](https://msdn.microsoft.com/library/windows/apps/Hh702489) | 現在スワイプ ジェスチャが可能であることを示す事前構成済みのアニメーションです。 |
 
  
 
-## Xxxxxx xxxx xxx xxxxxxxxxx
+## カスタム アニメーションの作成
 
-Xxxx xxxxx xxxxxxxxxx xxx xxx xxxxxx xxx xxxx xxxxx, xxx xxx xxxxxx xxxx xxx xxxxxxxxxx. Xxx xxxxxxx xxxxxxx xx xxxxxxxxx xxx xx xxxx xx xxxxx xxxxxxxx xxxxxx. Xxx xxxxxxx, xxx xxx xxxxxxx xxx xxxxx xx x xxxxxxxxx, xxx xxxxx xx x [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR242932), xx xxx xxxxx xxxxx xx x xxxxxx. Xx xxxx xxxx xxxx xx xxxxxx xxxxxxxxx x xxxxxxxxxxxx xxxxxxxxx, xx xxxxxxxxxxx xx xxxx xxx xxxxxxx xxxxxxxxxx xxxx xxx Xxxxxxx Xxxxxxx xxxxxxx xxxxxxxx xx x xxxxxxxxxxxxx xxxxxxxxx xxxx. Xxx xxxxxxxxxxxx xxxxxxxxxx, xxx xxx xx xxxxxxxxx xxxx xxx xxxxxx xxxxxx xx x xxxxxxxxxx xxxx (xxx xxxxxxx [**XxxxxxXxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR243136) xx xxxxxxx x **Xxxxxx**) xxx xxx xxxx xxxxxxxxx xxxxxx x [**Xxxxxxxxxx**](https://msdn.microsoft.com/library/windows/apps/BR210490) xx xxxxxxx xx.
+テーマ アニメーションでは自分のニーズが満たせない場合は、アニメーションを独自に作ることができます。 オブジェクトのプロパティ値のいくつかをアニメーション化することによって、オブジェクトに動きを与えることができます。 たとえば、四角形の幅や [**RotateTransform**](https://msdn.microsoft.com/library/windows/apps/BR242932) の角度、ボタンの色の値をアニメーション化することができます。 この種のカスタム アニメーションは、事前構成済みのアニメーションの種類として Windows ランタイムに既に用意されているライブラリ アニメーションと区別するために、"ストーリーボードに設定されたアニメーション" と呼ばれています。 ストーリーボードに設定されたアニメーションの場合、特定の型の値を変更できるアニメーション (**Double** をアニメーションできる [**DoubleAnimation**](https://msdn.microsoft.com/library/windows/apps/BR243136) など) を使い、そのアニメーションを [**Storyboard**](https://msdn.microsoft.com/library/windows/apps/BR210490) 内に配置して制御します。
 
-Xx xxxxx xx xx xxxxxxxx, xxx xxxxxxxx xxx xxx xxxxxxxxx xxxx xx x *xxxxxxxxxx xxxxxxxx*. Xxx xxxx xxxx xxxxx xxxxxxxxxx xxxxxxxxxx, xxx [Xxxxxxxxxx xxxxxxxxxx xxxxxxxx](https://msdn.microsoft.com/library/windows/apps/Mt185583). Xxx xxxx xxxx xx xxxxxxxx xxxxxx xxxxxxxxxxxx xxxxxxxxxx, xxxxxxxxx xxx xx xxxxxx xxx xxxxxxx xxxx, xxx [Xxxxxxxxxxxx xxxxxxxxxx](storyboarded-animations.md).
+アニメーション化するためには、アニメーション化しているプロパティが*依存関係プロパティ*である必要があります。 依存関係プロパティについて詳しくは、「[依存関係プロパティの概要](https://msdn.microsoft.com/library/windows/apps/Mt185583)」をご覧ください。 ストーリーボードに設定されたカスタム アニメーションの作成について詳しくは、対象に選ぶ方法や制御方法も含め、「[ストーリーボードに設定されたアニメーション](storyboarded-animations.md)」をご覧ください。
 
-Xxx xxxxxxx xxxx xx xxx XX xxxxxxxxxx xx XXXX xxxxx xxx'xx xxxxxx xxxxxx xxxxxxxxxxxx xxxxxxxxxx xx xx xxx xxx xxxxxxxx xxxxxx xxxxxx xxx xxxxxxxx xx XXXX. Xxx'xx xx xxxxx xxxx xxxxxx xxxxxxx xxx xxx xxxxxxxx x xxx xxxxxxx xxxxx, xx xxxxxxx xxx xxx xx-xxxxxxxxxx xx xxxxxxxx xxxxxxx xxxx xxx xxxxxx xxxxxx xx xxx xxxxxxx xxxxxxxx. Xxx xxxx xxxx, xxx [Xxxxxxxxxxxx xxxxxxxxxx xxx xxxxxx xxxxxx](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808). Xxxxx xxxxxxxxxx xxxx'x xxxxxxx xxxxxxxxxxx xxxx xxxx xx xxx, xxxx xxxxxx xxxxxxxxxxxxxxx, xxx xxx xxxxxx xxxx xx x xxxxxxxxx xxx xxxxxxxx x xxx xx xxxxxxxx xxxxxxx xxx x xxxxx. Xxxx xxx'x xxxxxxxxxxx xxxxx x xxxxxxxx xxxxxxxx xxxxxxxx xx x XX, xxxxxxxx xx xxx'xx xxx xxx xxxxxx xxxxxx xxx xxxxxxxx xxxxx xxxxxxx xxx xxxxxxx xxxxxxxxxx xxxxxxxxxx. Xx xxxx xxxx xxx xxxxx xxxxxxxxxx xx xxxxx x xxxxxx xxxx xxxx, xxxxxx xx'x xxxxxxx x xxxxx xxxxxxxx.
+ストーリーボードに設定されたカスタム アニメーションを定義する際に XAML のアプリ UI 定義で最大となるのは、XAML でコントロールの表示状態を定義する場合です。 これを行うのは、新たにコントロール クラスを作成するか、既にあるコントロールのうち、コントロール テンプレートに表示状態があるものに対してもう一度テンプレートを作成する場合です。 詳しくは、「[表示状態用にストーリーボードに設定されたアニメーション](https://msdn.microsoft.com/library/windows/apps/xaml/JJ819808)」をご覧ください。 ここに挙げたアニメーションは通常、時間の経過と共に切り替わるのではなく、即座に実行されるものであり、ある状態に対してプロパティの変更を定義する技術です。 必ずしもアニメーションによって視覚に訴える動作を UI に適用するわけではありません。ただし、コントロールの表示状態はしばしばライブラリ アニメーション自体を含みます。 その場合、テーマ アニメーションは時間の経過と共に変更を適用しますが、通常は短い時間で終了します。
+
+ 
 
  
 
- 
+
 
 
 
 
 <!--HONumber=Mar16_HO1-->
+
+
