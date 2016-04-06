@@ -3746,6 +3746,9 @@
   "00de660fa7d41a6b9b0698d0857864d25036ace3": [
     "windows-apps-src\\networking\\which-networking-technology.md"
   ],
+  "a5e5ea1140b58d83ae1e80742293cb5de8fd83b2": [
+    "windows-apps-src\\packaging\\app-capability-declarations.md"
+  ],
   "2d319c00f892a84468ac511fc92621c1ddabc765": [
     "windows-apps-src\\packaging\\app-capability-declarations.md"
   ],

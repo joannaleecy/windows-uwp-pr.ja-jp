@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\controls-and-patterns\nav-pane.md](https://github.com/Microsoft/windows-apps/blob/53b0cb3347abfee912121883af18e5f198ee15cf/windows-apps-src/controls-and-patterns/nav-pane.md) | OutofSyncHandedBackSuccess | [Details](#6728e75a84c1b07044a77fde531fddc9c24897681824)
+ [windows-apps-src\packaging\app-capability-declarations.md](https://github.com/Microsoft/windows-apps/blob/cf423961378c635ced07faed6494c21b79301a13/windows-apps-src/packaging/app-capability-declarations.md) | OutofSyncHandedBackSuccess | [Details](#a5e5ea1140b58d83ae1e80742293cb5de8fd83b23259)
 
 ## Item Details
-##### <a name='6728e75a84c1b07044a77fde531fddc9c24897681824'></a> Source: [windows-apps-src\controls-and-patterns\nav-pane.md](https://github.com/Microsoft/windows-apps/blob/53b0cb3347abfee912121883af18e5f198ee15cf/windows-apps-src/controls-and-patterns/nav-pane.md)
+##### <a name='a5e5ea1140b58d83ae1e80742293cb5de8fd83b23259'></a> Source: [windows-apps-src\packaging\app-capability-declarations.md](https://github.com/Microsoft/windows-apps/blob/cf423961378c635ced07faed6494c21b79301a13/windows-apps-src/packaging/app-capability-declarations.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/306884377ca8075e97a98baab533178ef5aa33eb/ol-handoff/Microsoft/windows-apps.ja-jp/master/nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf)
-* Handoff Datetime: 2016-04-06 20:32:24
+* Handoff File: [app-capability-declarations.c1be49045a94593bb6dd91c3e9a479397dc4d939.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/9a449a0ccd56ef3a7e4b6bef617a63b189621854/ol-handoff/Microsoft/windows-apps.ja-jp/master/app-capability-declarations.c1be49045a94593bb6dd91c3e9a479397dc4d939.ja-jp.xlf)
+* Handoff Datetime: 2016-04-06 21:32:01
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\controls-and-patterns\nav-pane.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/dee4c3324ead0690fa3e447fd7f5085331d0784d/windows-apps-src/controls-and-patterns/nav-pane.md)
-* Current Handback File: [nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/2a1ec2256b9610dcd43bcd242bd11a0ec6af4104/ol-handback/Microsoft/windows-apps.ja-jp/master/nav-pane.d6c3b77138be76c3243ad01a275a61809f6018b6.ja-jp.xlf)
+* Current Target File: [windows-apps-src\packaging\app-capability-declarations.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/dee4c3324ead0690fa3e447fd7f5085331d0784d/windows-apps-src/packaging/app-capability-declarations.md)
+* Current Handback File: [app-capability-declarations.c1be49045a94593bb6dd91c3e9a479397dc4d939.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/2a1ec2256b9610dcd43bcd242bd11a0ec6af4104/ol-handback/Microsoft/windows-apps.ja-jp/master/app-capability-declarations.c1be49045a94593bb6dd91c3e9a479397dc4d939.ja-jp.xlf)
 * Current Handback Datetime: 2016-04-06 10:36:57
 * [Back to Top](#report-top)
 
