@@ -4232,6 +4232,9 @@
   "cfc4be71bfdb1f540823f88f9e5c69a82e36a0fd": [
     "windows-apps-src\\publish\\notes-for-certification.md"
   ],
+  "6cfa07e5c6adea8bedaf0f9ab56848f439df5b1d": [
+    "windows-apps-src\\publish\\opening-a-developer-account.md"
+  ],
   "2b07eedf5596703ef4cb07cdf6fbd946e33ff050": [
     "windows-apps-src\\publish\\opening-a-developer-account.md"
   ],
@@ -4247,8 +4250,14 @@
   "0ec54286c148ec04bc7a958911971fe4ec4cdc71": [
     "windows-apps-src\\publish\\payout-summary.md"
   ],
+  "0d1790d80d2e3ed97b41f07cbc13875849931565": [
+    "windows-apps-src\\publish\\pubcenter-dev-center-integration.md"
+  ],
   "036422a7346b7269bea42802e50a30dfa5f92768": [
     "windows-apps-src\\publish\\pubcenter-dev-center-integration.md"
+  ],
+  "47f789cc54c1ff53e91891ec3745769dcf82493e": [
+    "windows-apps-src\\publish\\pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md"
   ],
   "bc823dd568e501f07dff3af9d92dd06271773d9a": [
     "windows-apps-src\\publish\\pubcenter-devcenter-payout-account-and-tax-profile-consolidation.md"
@@ -4576,6 +4585,9 @@
   ],
   "cbfd24134820acbb570a5b81c2b04b99b0eb1543": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "0db23c440d5f5d73731979ae38fb3aefbe49ded8": [
+    "windows-apps-src\\TOC.md"
   ],
   "6e79f94a49e1a61f99eb947a1ba34cb09a40145e": [
     "windows-apps-src\\TOC.md"
