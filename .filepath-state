@@ -3884,6 +3884,9 @@
   "b5adbbb1bff8b457b0eb968d79d01d518673e709": [
     "windows-apps-src\\porting\\getting-started-with-uwp-for-ios-developers.md"
   ],
+  "5b164a84864f98d36e9a00a38324416ec17c1109": [
+    "windows-apps-src\\porting\\index.md"
+  ],
   "874e5a8bb98d2dac94c9f6898bff4354d2533015": [
     "windows-apps-src\\porting\\index.md"
   ],
@@ -4585,6 +4588,9 @@
   ],
   "cbfd24134820acbb570a5b81c2b04b99b0eb1543": [
     "windows-apps-src\\threading-async\\use-a-timer-to-submit-a-work-item.md"
+  ],
+  "4fb9d55fa80b269621db1ee68987b73867246e1f": [
+    "windows-apps-src\\TOC.md"
   ],
   "0db23c440d5f5d73731979ae38fb3aefbe49ded8": [
     "windows-apps-src\\TOC.md"
@@ -5558,5 +5564,14 @@
   ],
   "432353da052ac7e9e4f304cf03536a8d738e5202": [
     "windows-apps-src\\style\\images\\icons-grid-1-4.png"
+  ],
+  "d006e4eab8e536db1d7f315a60af2ad16eeb5347": [
+    "windows-apps-src\\porting\\desktop-to-uwp-deploy-and-debug.md"
+  ],
+  "c59957f2627efd0e0c6a3b2046c074820481aae4": [
+    "windows-apps-src\\porting\\desktop-to-uwp-root.md"
+  ],
+  "ab80b002d3db8089f4f6c9aafcad90890b8bfa82": [
+    "windows-apps-src\\porting\\desktop-to-uwp-run-desktop-app-converter.md"
   ]
 }
