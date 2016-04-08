@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "fa28f3dc396e47dbdc6ac97efb0dbdfcc10a2e92",
+  "LastProcessedCommit": "1848f0dc5813ad060fdd8dec0b9a98c01032a34d",
   "LastTranslatedCommit": "8ca18deb49eacd3d3b566ea2e3acf27b7af90d82",
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -61067,6 +61067,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\desktop-to-uwp-root.7513f52e089e9b95deeb36130fca887605ce1b3a.ja-jp.xlf",
       "HandoffFileCommit": "8d113fe21e47f4edd5ccbe9a844b7c7aae31f4c1",
       "HandoffDateTime": "2016-04-07T23:36:49.4277964Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "c3e2ff6efd2a944ec550f9421c0ed1629709a6ca": {
+      "FileHash": "c3e2ff6efd2a944ec550f9421c0ed1629709a6ca",
+      "SourceFileCommit": "1848f0dc5813ad060fdd8dec0b9a98c01032a34d",
+      "SourceFilePath": "windows-apps-src\\publish\\mobile-operator-billing.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\publish\\mobile-operator-billing.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\mobile-operator-billing.96a8e95eb21d2af1a509785b0af929f9738e7604.ja-jp.xlf",
+      "HandoffFileCommit": "27b4154fb0714fdd7391baee18114da23054b8b3",
+      "HandoffDateTime": "2016-04-08T20:11:09.6031933Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
