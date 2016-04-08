@@ -1,26 +1,55 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 1
+ Total Files | 3
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/19b171c056659bba30970778f3eeb8ef0933d747/windows-apps-src/security/companion-device-unlock.md) | OutofSyncHandedBackSuccess | [Details](#65a9a4ffb229a5babed2763ebfd3fc770ab98a573448)
+ [windows-apps-src\debug-test-perf\device-portal.md](https://github.com/Microsoft/windows-apps/blob/0db460b8f965be759f448e6b2021e00289ad1e3b/windows-apps-src/debug-test-perf/device-portal.md) | OutofSyncHandedBackSuccess | [Details](#20b909ee22b8dc714579c1c0a8d28f83099a0d1d1893)
+ [windows-apps-src\debug-test-perf\device-portal-desktop.md](https://github.com/Microsoft/windows-apps/blob/0db460b8f965be759f448e6b2021e00289ad1e3b/windows-apps-src/debug-test-perf/device-portal-desktop.md) | HandedOffSuccess | [Details](#6e2bdc86eecfbba5858faa451f0f603ed7074a6d1889)
+ [windows-apps-src\debug-test-perf\device-portal-xbox.md](https://github.com/Microsoft/windows-apps/blob/0db460b8f965be759f448e6b2021e00289ad1e3b/windows-apps-src/debug-test-perf/device-portal-xbox.md) | OutofSyncHandedBackSuccess | [Details](#235deea8371b0652e1332418447c934fafeaf3a21892)
 
 ## Item Details
-##### <a name='65a9a4ffb229a5babed2763ebfd3fc770ab98a573448'></a> Source: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/19b171c056659bba30970778f3eeb8ef0933d747/windows-apps-src/security/companion-device-unlock.md)
+##### <a name='20b909ee22b8dc714579c1c0a8d28f83099a0d1d1893'></a> Source: [windows-apps-src\debug-test-perf\device-portal.md](https://github.com/Microsoft/windows-apps/blob/0db460b8f965be759f448e6b2021e00289ad1e3b/windows-apps-src/debug-test-perf/device-portal.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/addfcb4dd5b13cedd99ce9dd5df3a5544006543a/ol-handoff/Microsoft/windows-apps.ja-jp/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.ja-jp.xlf)
-* Handoff Datetime: 2016-04-08 21:35:56
+* Handoff File: [device-portal.42fc9b6666795a143b3fca2c18dcbbe09f5edd1d.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/73808d7b70f308f9c64129259029b89a0702e7ac/ol-handoff/Microsoft/windows-apps.ja-jp/master/device-portal.42fc9b6666795a143b3fca2c18dcbbe09f5edd1d.ja-jp.xlf)
+* Handoff Datetime: 2016-04-08 22:37:46
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/dee4c3324ead0690fa3e447fd7f5085331d0784d/windows-apps-src/security/companion-device-unlock.md)
-* Current Handback File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/2a1ec2256b9610dcd43bcd242bd11a0ec6af4104/ol-handback/Microsoft/windows-apps.ja-jp/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.ja-jp.xlf)
+* Current Target File: [windows-apps-src\debug-test-perf\device-portal.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/dee4c3324ead0690fa3e447fd7f5085331d0784d/windows-apps-src/debug-test-perf/device-portal.md)
+* Current Handback File: [device-portal.42fc9b6666795a143b3fca2c18dcbbe09f5edd1d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/2a1ec2256b9610dcd43bcd242bd11a0ec6af4104/ol-handback/Microsoft/windows-apps.ja-jp/master/device-portal.42fc9b6666795a143b3fca2c18dcbbe09f5edd1d.ja-jp.xlf)
+* Current Handback Datetime: 2016-04-06 10:36:57
+* [Back to Top](#report-top)
+
+##### <a name='6e2bdc86eecfbba5858faa451f0f603ed7074a6d1889'></a> Source: [windows-apps-src\debug-test-perf\device-portal-desktop.md](https://github.com/Microsoft/windows-apps/blob/0db460b8f965be759f448e6b2021e00289ad1e3b/windows-apps-src/debug-test-perf/device-portal-desktop.md)
+* Status: HandedOffSuccess
+* Target File: 
+* Handoff File: [device-portal-desktop.fd7534db4bc282ba12485780a908bce2871720e5.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/73808d7b70f308f9c64129259029b89a0702e7ac/ol-handoff/Microsoft/windows-apps.ja-jp/master/device-portal-desktop.fd7534db4bc282ba12485780a908bce2871720e5.ja-jp.xlf)
+* Handoff Datetime: 2016-04-08 22:37:46
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* [Back to Top](#report-top)
+
+##### <a name='235deea8371b0652e1332418447c934fafeaf3a21892'></a> Source: [windows-apps-src\debug-test-perf\device-portal-xbox.md](https://github.com/Microsoft/windows-apps/blob/0db460b8f965be759f448e6b2021e00289ad1e3b/windows-apps-src/debug-test-perf/device-portal-xbox.md)
+* Status: OutofSyncHandedBackSuccess
+* Target File: 
+* Handoff File: [device-portal-xbox.99bf4955fdefdf6b9c5dfab22556e4df4c7dd8b6.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/73808d7b70f308f9c64129259029b89a0702e7ac/ol-handoff/Microsoft/windows-apps.ja-jp/master/device-portal-xbox.99bf4955fdefdf6b9c5dfab22556e4df4c7dd8b6.ja-jp.xlf)
+* Handoff Datetime: 2016-04-08 22:37:46
+* Handoff Reason: Include
+* Archive File: 
+* Archive Datetime: 0001-01-01 00:00:00
+* Handback File: 
+* Handback Datetime: 0001-01-01 00:00:00
+* Current Target File: [windows-apps-src\debug-test-perf\device-portal-xbox.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/dee4c3324ead0690fa3e447fd7f5085331d0784d/windows-apps-src/debug-test-perf/device-portal-xbox.md)
+* Current Handback File: [device-portal-xbox.99bf4955fdefdf6b9c5dfab22556e4df4c7dd8b6.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/2a1ec2256b9610dcd43bcd242bd11a0ec6af4104/ol-handback/Microsoft/windows-apps.ja-jp/master/device-portal-xbox.99bf4955fdefdf6b9c5dfab22556e4df4c7dd8b6.ja-jp.xlf)
 * Current Handback Datetime: 2016-04-06 10:36:57
 * [Back to Top](#report-top)
 
