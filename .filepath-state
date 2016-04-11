@@ -5158,10 +5158,13 @@
     "windows-apps-src\\monetize\\images\\feedback_appbar_placement.png"
   ],
   "17324ec7248a681bfd744ca4fb8a3d48be2aad25": [
-    "windows-apps-src\\monetize\\images\\feedback_icon.png"
+    "windows-apps-src\\monetize\\images\\feedback_icon.PNG"
   ],
   "586b601969c28d6a25ed64ae30d78f0575c015c2": [
     "windows-apps-src\\monetize\\images\\feedback_settings_placement.png"
+  ],
+  "d8a64552426e5ea60619bb2c3f7da71cf4deda52": [
+    "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
   ],
   "50c342c49ee1aacc2beceb68acf828aca54928b3": [
     "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"

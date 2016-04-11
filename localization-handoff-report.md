@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/ec3ba5402ab4dc42e9f584e6956fe23487a36f3e/windows-apps-src/security/companion-device-unlock.md) | OutofSyncHandedBackSuccess | [Details](#e073ddda47d9461a687bdf277e60a20dc103e3fd3449)
+ [windows-apps-src\monetize\launch-feedback-hub-from-your-app.md](https://github.com/Microsoft/windows-apps/blob/264b13a3abd266da3a7212fa8926d74dd15f3873/windows-apps-src/monetize/launch-feedback-hub-from-your-app.md) | OutofSyncHandedBackSuccess | [Details](#d8a64552426e5ea60619bb2c3f7da71cf4deda523230)
 
 ## Item Details
-##### <a name='e073ddda47d9461a687bdf277e60a20dc103e3fd3449'></a> Source: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps/blob/ec3ba5402ab4dc42e9f584e6956fe23487a36f3e/windows-apps-src/security/companion-device-unlock.md)
+##### <a name='d8a64552426e5ea60619bb2c3f7da71cf4deda523230'></a> Source: [windows-apps-src\monetize\launch-feedback-hub-from-your-app.md](https://github.com/Microsoft/windows-apps/blob/264b13a3abd266da3a7212fa8926d74dd15f3873/windows-apps-src/monetize/launch-feedback-hub-from-your-app.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/7c4138394c81e93c92d7e178c8f950b0378bbe37/ol-handoff/Microsoft/windows-apps.ja-jp/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.ja-jp.xlf)
-* Handoff Datetime: 2016-04-08 23:08:20
+* Handoff File: [launch-feedback-hub-from-your-app.adb9d4633668667defe2db33668d7915b1b359a9.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/4c13422a462eaeca42d7b29e84b25dd6bbac40bb/ol-handoff/Microsoft/windows-apps.ja-jp/master/launch-feedback-hub-from-your-app.adb9d4633668667defe2db33668d7915b1b359a9.ja-jp.xlf)
+* Handoff Datetime: 2016-04-11 16:10:03
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\security\companion-device-unlock.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/dee4c3324ead0690fa3e447fd7f5085331d0784d/windows-apps-src/security/companion-device-unlock.md)
-* Current Handback File: [companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/2a1ec2256b9610dcd43bcd242bd11a0ec6af4104/ol-handback/Microsoft/windows-apps.ja-jp/master/companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.ja-jp.xlf)
+* Current Target File: [windows-apps-src\monetize\launch-feedback-hub-from-your-app.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/dee4c3324ead0690fa3e447fd7f5085331d0784d/windows-apps-src/monetize/launch-feedback-hub-from-your-app.md)
+* Current Handback File: [launch-feedback-hub-from-your-app.adb9d4633668667defe2db33668d7915b1b359a9.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/2a1ec2256b9610dcd43bcd242bd11a0ec6af4104/ol-handback/Microsoft/windows-apps.ja-jp/master/launch-feedback-hub-from-your-app.adb9d4633668667defe2db33668d7915b1b359a9.ja-jp.xlf)
 * Current Handback Datetime: 2016-04-06 10:36:57
 * [Back to Top](#report-top)
 

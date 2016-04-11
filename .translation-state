@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "ec3ba5402ab4dc42e9f584e6956fe23487a36f3e",
+  "LastProcessedCommit": "264b13a3abd266da3a7212fa8926d74dd15f3873",
   "LastTranslatedCommit": "8ca18deb49eacd3d3b566ea2e3acf27b7af90d82",
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -54139,7 +54139,8 @@
       ],
       "TokenReference": null,
       "FilePathList": [
-        "windows-apps-src\\monetize\\images\\feedback_icon.png"
+        "windows-apps-src\\monetize\\images\\feedback_icon.png",
+        "windows-apps-src\\monetize\\images\\feedback_icon.PNG"
       ],
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\17324ec7248a681bfd744ca4fb8a3d48be2aad25.png",
       "HandoffFileCommit": "4903129c636b6f0a10e1aafca8f328c50099f9ff",
@@ -61241,6 +61242,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\companion-device-unlock.01334c661f175cfd14017b7b4662584b9b11224d.ja-jp.xlf",
       "HandoffFileCommit": "7c4138394c81e93c92d7e178c8f950b0378bbe37",
       "HandoffDateTime": "2016-04-08T23:08:20.8616685Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "d8a64552426e5ea60619bb2c3f7da71cf4deda52": {
+      "FileHash": "d8a64552426e5ea60619bb2c3f7da71cf4deda52",
+      "SourceFileCommit": "264b13a3abd266da3a7212fa8926d74dd15f3873",
+      "SourceFilePath": "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\monetize\\launch-feedback-hub-from-your-app.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\launch-feedback-hub-from-your-app.adb9d4633668667defe2db33668d7915b1b359a9.ja-jp.xlf",
+      "HandoffFileCommit": "4c13422a462eaeca42d7b29e84b25dd6bbac40bb",
+      "HandoffDateTime": "2016-04-11T16:10:03.35287Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
