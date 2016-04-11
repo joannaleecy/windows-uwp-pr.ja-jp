@@ -1,9 +1,15 @@
 {
+  "e6de46e50bd43b55177dc428ac58306d67e49f84": [
+    "windows-apps-src\\accessibility\\accessibility-checklist.md"
+  ],
   "570860edd5e479238749968324c50259343b5bed": [
     "windows-apps-src\\accessibility\\accessibility-checklist.md"
   ],
   "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": [
     "windows-apps-src\\accessibility\\accessibility-checklist.md"
+  ],
+  "ba165569dd9f4f6a3eaf51a11d9128cd3252bc77": [
+    "windows-apps-src\\accessibility\\accessibility-in-the-store.md"
   ],
   "6c6bca587394f2fc16048d1d112f95d55b47c99e": [
     "windows-apps-src\\accessibility\\accessibility-in-the-store.md"
@@ -11,11 +17,17 @@
   "6e80a91434b48569a5b71c3780194933310b408d": [
     "windows-apps-src\\accessibility\\accessibility-in-the-store.md"
   ],
+  "d8a54d2068da194b1b8dd7b8ffad59b5abff03ef": [
+    "windows-apps-src\\accessibility\\accessibility-overview.md"
+  ],
   "b366d8b183c6234ad472aaed58c6aafa8f13cedb": [
     "windows-apps-src\\accessibility\\accessibility-overview.md"
   ],
   "5664362e618659c6c59b4a30f16a3029c56f66ef": [
     "windows-apps-src\\accessibility\\accessibility-overview.md"
+  ],
+  "9482142f5b85f016f5355f8fd02d0ad5edea3ee1": [
+    "windows-apps-src\\accessibility\\accessibility-testing.md"
   ],
   "91d9cc26941ad765697fc3c5b5280cf9604d2528": [
     "windows-apps-src\\accessibility\\accessibility-testing.md"
@@ -26,6 +38,9 @@
   "8f3ec44999f8dcc62af1bd7ee0b058db077f24ac": [
     "windows-apps-src\\accessibility\\images\\inspect.png"
   ],
+  "e4a5b24f1329f6421a07fd660ced13dd040be96a": [
+    "windows-apps-src\\accessibility\\accessibility.md"
+  ],
   "4aac60e92317fab8f6fd6646ea21bada37fd4b80": [
     "windows-apps-src\\accessibility\\accessibility.md"
   ],
@@ -35,11 +50,17 @@
   "94485e3d471da7803e86eb6f3bfd7db1751db17c": [
     "windows-apps-src\\accessibility\\accessibility.md"
   ],
+  "2d4da4f565130202461e70357e47324edd094c00": [
+    "windows-apps-src\\accessibility\\accessible-text-requirements.md"
+  ],
   "92337741c76ec75eaf62d70566435d86403e2d70": [
     "windows-apps-src\\accessibility\\accessible-text-requirements.md"
   ],
   "ce748a86b572d3e05a9019a82b4421a9149c3619": [
     "windows-apps-src\\accessibility\\accessible-text-requirements.md"
+  ],
+  "0626899a28c6d49bb5bbbe39588a6bca2b176e17": [
+    "windows-apps-src\\accessibility\\basic-accessibility-information.md"
   ],
   "9e9a59ca8e78b9ce37c83ea078133474741ceca2": [
     "windows-apps-src\\accessibility\\basic-accessibility-information.md"
@@ -47,14 +68,23 @@
   "be5c600c95b0e6a95272a915e2bd337498db6e39": [
     "windows-apps-src\\accessibility\\basic-accessibility-information.md"
   ],
+  "cf5d2a81eb3b440d9c2ae5f93f1238c591223313": [
+    "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
+  ],
   "892c142ac16f2ad78ac54737ed14246b894cd875": [
     "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
   ],
   "70accacb24ef18e60101ded39f5d2e48bbc8eb28": [
     "windows-apps-src\\accessibility\\control-patterns-and-interfaces.md"
   ],
+  "dbbb6c7f7d77c5a57440fe977e4eb8ca8f2bb7f9": [
+    "windows-apps-src\\accessibility\\custom-automation-peers.md"
+  ],
   "e70851c5854ae44edf3156ceba368be1f6ac7e88": [
     "windows-apps-src\\accessibility\\custom-automation-peers.md"
+  ],
+  "5ba7e1e1cc7749e8ea02191e5f2bfa07fbae0768": [
+    "windows-apps-src\\accessibility\\high-contrast-themes.md"
   ],
   "13a7bb3c54b9a4c42a776170f0eca4613d75ad9f": [
     "windows-apps-src\\accessibility\\high-contrast-themes.md"
@@ -62,11 +92,17 @@
   "8ceef4fdbba03047cf2068b843e7080ec17ba777": [
     "windows-apps-src\\accessibility\\high-contrast-themes.md"
   ],
+  "d1ea4b22f5f97f1bf99af9670e0a3e53485bb479": [
+    "windows-apps-src\\accessibility\\keyboard-accessibility.md"
+  ],
   "b6dc41d865e9c0960a8cf0acc164babcb8d4d12f": [
     "windows-apps-src\\accessibility\\keyboard-accessibility.md"
   ],
   "f66209914d1fcdccf3541c28cdf7e4a61d34d8c3": [
     "windows-apps-src\\accessibility\\keyboard-accessibility.md"
+  ],
+  "2d4d06d0779ec9f6f1b56acd42b840970d1daefb": [
+    "windows-apps-src\\accessibility\\practices-to-avoid.md"
   ],
   "6fea9292bbdd3024d4bc09a195efeae5aef58731": [
     "windows-apps-src\\accessibility\\practices-to-avoid.md"
@@ -4902,8 +4938,14 @@
   "6feae624441c686128bb5af6b8980435f1e6f7c4": [
     "windows-apps-src\\monetize\\get-app-failures.md"
   ],
+  "b99c563dec6ee5ade980d2d8954d3822cc4c5ada": [
+    "windows-apps-src\\accessibility\\designing-inclusive-software.md"
+  ],
   "4f472617f767a2e5a69d16825dc26ad8c13cbc42": [
     "windows-apps-src\\accessibility\\designing-inclusive-software.md"
+  ],
+  "87632006b1ed636ef10274b3ad9a1de56de3e370": [
+    "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
   ],
   "18926811ddf7746b1698c3e2a4ca630b4a9d94ce": [
     "windows-apps-src\\accessibility\\developing-inclusive-windows-apps.md"
