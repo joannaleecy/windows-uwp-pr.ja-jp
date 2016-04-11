@@ -2485,8 +2485,14 @@
   "5399898eefb667a30e2106fe76255f219a69d035": [
     "windows-apps-src\\get-started\\sign-up.md"
   ],
+  "67b2137f8ffeffc6428047583736dbf9e8230766": [
+    "windows-apps-src\\get-started\\universal-application-platform-guide.md"
+  ],
   "1c448e5ef3e74c744ff8f5225e22616b5e49be80": [
     "windows-apps-src\\get-started\\universal-application-platform-guide.md"
+  ],
+  "ef5e5d3d444ca57a8ae13980cb4a45d0a51d488e": [
+    "windows-apps-src\\get-started\\images\\universalapps-overview.png"
   ],
   "b2ca7d04ca3c349f42c21b15c57678d9f5319bb5": [
     "windows-apps-src\\get-started\\images\\universalapps-overview.png"
