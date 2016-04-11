@@ -1,5 +1,5 @@
 {
-  "LastProcessedCommit": "264b13a3abd266da3a7212fa8926d74dd15f3873",
+  "LastProcessedCommit": "e749e470c283de3337ad2428ef398f58b0441f68",
   "LastTranslatedCommit": "8ca18deb49eacd3d3b566ea2e3acf27b7af90d82",
   "Items": {
     "e5a3ba81407e65db2addcb6fb7b6485ee12b97de": {
@@ -61271,6 +61271,35 @@
       "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\launch-feedback-hub-from-your-app.adb9d4633668667defe2db33668d7915b1b359a9.ja-jp.xlf",
       "HandoffFileCommit": "4c13422a462eaeca42d7b29e84b25dd6bbac40bb",
       "HandoffDateTime": "2016-04-11T16:10:03.35287Z",
+      "HandoffPriority": "",
+      "HandoffException": null,
+      "HandoffFailureTimes": 0,
+      "TargetFileCommit": null,
+      "TargetFilePath": null,
+      "HandbackFilePath": null,
+      "HandbackFileCommit": null,
+      "HandbackDateTime": "0001-01-01T00:00:00",
+      "HandbackException": null,
+      "HandbackFailureTimes": 0,
+      "UpdatedDateTime": "0001-01-01T00:00:00",
+      "ArchiveFilePath": null,
+      "ArchiveFileCommit": null,
+      "ArchiveFileDateTime": "0001-01-01T00:00:00",
+      "ArchiveException": null
+    },
+    "dd94b0ff290e24c215307035d577d1b8e6044303": {
+      "FileHash": "dd94b0ff290e24c215307035d577d1b8e6044303",
+      "SourceFileCommit": "e749e470c283de3337ad2428ef398f58b0441f68",
+      "SourceFilePath": "windows-apps-src\\gaming\\e2e.md",
+      "HandoffReason": 1,
+      "DependencyFrom": null,
+      "TokenReference": null,
+      "FilePathList": [
+        "windows-apps-src\\gaming\\e2e.md"
+      ],
+      "HandoffFilePath": "ol-handoff\\Microsoft\\windows-apps.ja-jp\\master\\e2e.40fddb66c16c630e55b73b8224d1043b6f587bc2.ja-jp.xlf",
+      "HandoffFileCommit": "cf0d66d2316e1c10deb0b18fa6a66b4e3b2b8b9e",
+      "HandoffDateTime": "2016-04-11T17:33:53.4026106Z",
       "HandoffPriority": "",
       "HandoffException": null,
       "HandoffFailureTimes": 0,
