@@ -6,21 +6,21 @@
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps/blob/18e4b9b39540525a210786b6f7ce0ceb47412379/windows-apps-src/xbox-apps/index.md) | OutofSyncHandedBackSuccess | [Details](#03e28c2cd6a3e2e26a97c436680843b80c7d67f23730)
+ [windows-apps-src\files\quickstart-listing-files-and-folders.md](https://github.com/Microsoft/windows-apps/blob/00a89155136cd754d7f9b60a4c7d969688a492d9/windows-apps-src/files/quickstart-listing-files-and-folders.md) | OutofSyncHandedBackSuccess | [Details](#515edfea148f0c677ed544feb1f5d5f1b6311b262056)
 
 ## Item Details
-##### <a name='03e28c2cd6a3e2e26a97c436680843b80c7d67f23730'></a> Source: [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps/blob/18e4b9b39540525a210786b6f7ce0ceb47412379/windows-apps-src/xbox-apps/index.md)
+##### <a name='515edfea148f0c677ed544feb1f5d5f1b6311b262056'></a> Source: [windows-apps-src\files\quickstart-listing-files-and-folders.md](https://github.com/Microsoft/windows-apps/blob/00a89155136cd754d7f9b60a4c7d969688a492d9/windows-apps-src/files/quickstart-listing-files-and-folders.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/744e0591567f0501847ac0d4c4c19aa3e403a884/ol-handoff/Microsoft/windows-apps.ja-jp/master/index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ja-jp.xlf)
-* Handoff Datetime: 2016-04-12 20:04:27
+* Handoff File: [quickstart-listing-files-and-folders.8e017a17f24a62b887486336251317a846ccb099.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/334e1a6fea1f12d424c4153df6e85c4f0eed6e46/ol-handoff/Microsoft/windows-apps.ja-jp/master/quickstart-listing-files-and-folders.8e017a17f24a62b887486336251317a846ccb099.ja-jp.xlf)
+* Handoff Datetime: 2016-04-12 22:06:17
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xbox-apps\index.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/dee4c3324ead0690fa3e447fd7f5085331d0784d/windows-apps-src/xbox-apps/index.md)
-* Current Handback File: [index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/2a1ec2256b9610dcd43bcd242bd11a0ec6af4104/ol-handback/Microsoft/windows-apps.ja-jp/master/index.d16e2a2199b17d4f07cbc6956844a04c9911bc85.ja-jp.xlf)
+* Current Target File: [windows-apps-src\files\quickstart-listing-files-and-folders.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/dee4c3324ead0690fa3e447fd7f5085331d0784d/windows-apps-src/files/quickstart-listing-files-and-folders.md)
+* Current Handback File: [quickstart-listing-files-and-folders.8e017a17f24a62b887486336251317a846ccb099.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/2a1ec2256b9610dcd43bcd242bd11a0ec6af4104/ol-handback/Microsoft/windows-apps.ja-jp/master/quickstart-listing-files-and-folders.8e017a17f24a62b887486336251317a846ccb099.ja-jp.xlf)
 * Current Handback Datetime: 2016-04-06 10:36:57
 * [Back to Top](#report-top)
 
