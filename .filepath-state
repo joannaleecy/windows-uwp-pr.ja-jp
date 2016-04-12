@@ -3866,6 +3866,9 @@
   "c4e8db5479b9908eeee9a5406b91b1de7299b2b9": [
     "windows-apps-src\\porting\\getting-started-common-controls.md"
   ],
+  "6f6226ca3e4d50e1a8cd206e0c04414832577084": [
+    "windows-apps-src\\porting\\getting-started-creating-a-project.md"
+  ],
   "6efc091cd203c7f75cbe73e23432a13fccb7bc40": [
     "windows-apps-src\\porting\\getting-started-creating-a-project.md"
   ],
@@ -3926,8 +3929,14 @@
   "69e47a39f1b570323497f1c17411cbc23d248454": [
     "windows-apps-src\\porting\\images\\ios-to-uwp\\vs-add-back-button.png"
   ],
+  "dcbbc69eda6ee11c0b03f76a3e9ec6826f83a233": [
+    "windows-apps-src\\porting\\getting-started-what-next.md"
+  ],
   "16ee901b4e095dbeabeef48d6e48bb318976bea7": [
     "windows-apps-src\\porting\\getting-started-what-next.md"
+  ],
+  "7e0842c010f733558436564d0aa9f5a09fca2239": [
+    "windows-apps-src\\porting\\getting-started-with-uwp-for-ios-developers.md"
   ],
   "b5adbbb1bff8b457b0eb968d79d01d518673e709": [
     "windows-apps-src\\porting\\getting-started-with-uwp-for-ios-developers.md"
