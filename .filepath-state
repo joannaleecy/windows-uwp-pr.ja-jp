@@ -158,6 +158,9 @@
   "38f2349a274f59376240e301236742d0bd1b44dd": [
     "windows-apps-src\\app-to-app\\index.md"
   ],
+  "0311e6ac1293f3841a596aa4ee99066a3c4ff35d": [
+    "windows-apps-src\\app-to-app\\receive-data.md"
+  ],
   "c188ac4937a66bc547ce4cac64e653160c2fc7aa": [
     "windows-apps-src\\app-to-app\\receive-data.md"
   ],
@@ -3386,6 +3389,9 @@
   "d7c8c0917d0c97ff28f3d8efcf74468088b8f865": [
     "windows-apps-src\\layout\\alignment-margin-padding.md"
   ],
+  "ee4b680f4517ddc50ca08d6cf2c3ba5af0fcb763": [
+    "windows-apps-src\\layout\\boxpanel-example-custom-panel.md"
+  ],
   "17e150899ea6384307712c5c97b8d8722f1bb027": [
     "windows-apps-src\\layout\\boxpanel-example-custom-panel.md"
   ],
@@ -3403,6 +3409,9 @@
   ],
   "3310d397d6034a75924d76b50962449ac2eac843": [
     "windows-apps-src\\layout\\images\\photo-editor\\uap-photo-tabletphone-sbs.png"
+  ],
+  "a9033672d04e09dc029cf3da7d95c27327ba01cb": [
+    "windows-apps-src\\layout\\custom-panels-overview.md"
   ],
   "5908cd03b58d09a8ba793deeb737f7f8ed738492": [
     "windows-apps-src\\layout\\custom-panels-overview.md"
@@ -4714,6 +4723,9 @@
   ],
   "c20a0d1bcfda3c28c6289b7c745ef2e7f8a612cb": [
     "windows-apps-src\\xaml-platform\\attached-properties-overview.md"
+  ],
+  "3a79cc61f39fbb803deebe621966b9b6d4b39de2": [
+    "windows-apps-src\\xaml-platform\\binding-markup-extension.md"
   ],
   "462849c03887dcef8de6d73fe5c6f694469ede84": [
     "windows-apps-src\\xaml-platform\\binding-markup-extension.md"
