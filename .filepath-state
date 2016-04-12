@@ -3938,11 +3938,11 @@
   "874e5a8bb98d2dac94c9f6898bff4354d2533015": [
     "windows-apps-src\\porting\\index.md"
   ],
-  "96f64adb8831783f84cc8cb3b4d85e897c414308": [
+  "a46f8c17bf494a54bbfcb1d4f0a06ebcf2b3b3c2": [
     "windows-apps-src\\porting\\ios-to-uwp-root.md"
   ],
-  "a8df73e0add1a2764f3786b6288bfbea53849b62": [
-    "windows-apps-src\\porting\\images\\ios-to-uwp\\mixedup.png"
+  "96f64adb8831783f84cc8cb3b4d85e897c414308": [
+    "windows-apps-src\\porting\\ios-to-uwp-root.md"
   ],
   "483404efdc87db8da2715a061b33712b8e95f234": [
     "windows-apps-src\\porting\\selecting-an-approach-to-ios-and-uwp-app-development.md"
