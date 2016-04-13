@@ -4857,11 +4857,17 @@
   "1db4a5eaec99196851fcd7fb8dc3d938a1f5ccc5": [
     "windows-apps-src\\monetize\\run-app-experiments-with-a-b-testing.md"
   ],
+  "b56706396d32ef16c33cd167d8ccabf5e3d9ef8c": [
+    "windows-apps-src\\publish\\about-affiliate-ads.md"
+  ],
   "5e13fea9b0846e7e3e49e4b9a9693d3f23990548": [
     "windows-apps-src\\publish\\about-affiliate-ads.md"
   ],
   "0e8a118804a36ad1bff0d21344cb375aaac6565d": [
     "windows-apps-src\\publish\\about-community-ads.md"
+  ],
+  "a9c9e788e079d4c3f0881bd7c16e1fc76ede36c2": [
+    "windows-apps-src\\publish\\affiliates-performance-report.md"
   ],
   "9efbaff58f03eb073f20b303613ab0e5c5f998a0": [
     "windows-apps-src\\publish\\affiliates-performance-report.md"

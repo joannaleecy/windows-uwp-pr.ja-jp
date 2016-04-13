@@ -1,75 +1,43 @@
 # <a name='report-top'></a> Localization Handoff Report
 
 ## Summary
- Total Files | 4
+ Total Files | 2
 
 ## File List
  Source File | Status | Details 
  ----------- | ------ | ------- 
- [windows-apps-src\app-to-app\receive-data.md](https://github.com/Microsoft/windows-apps/blob/183aee7a262d7120692e051c484199a1eeca0c96/windows-apps-src/app-to-app/receive-data.md) | OutofSyncHandedBackSuccess | [Details](#0311e6ac1293f3841a596aa4ee99066a3c4ff35d121)
- [windows-apps-src\layout\boxpanel-example-custom-panel.md](https://github.com/Microsoft/windows-apps/blob/183aee7a262d7120692e051c484199a1eeca0c96/windows-apps-src/layout/boxpanel-example-custom-panel.md) | OutofSyncHandedBackSuccess | [Details](#ee4b680f4517ddc50ca08d6cf2c3ba5af0fcb7632920)
- [windows-apps-src\layout\custom-panels-overview.md](https://github.com/Microsoft/windows-apps/blob/183aee7a262d7120692e051c484199a1eeca0c96/windows-apps-src/layout/custom-panels-overview.md) | OutofSyncHandedBackSuccess | [Details](#a9033672d04e09dc029cf3da7d95c27327ba01cb2923)
- [windows-apps-src\xaml-platform\binding-markup-extension.md](https://github.com/Microsoft/windows-apps/blob/183aee7a262d7120692e051c484199a1eeca0c96/windows-apps-src/xaml-platform/binding-markup-extension.md) | OutofSyncHandedBackSuccess | [Details](#3a79cc61f39fbb803deebe621966b9b6d4b39de23655)
+ [windows-apps-src\publish\about-affiliate-ads.md](https://github.com/Microsoft/windows-apps/blob/d795dadeed5702b7eec0ce5246d9589ba826f296/windows-apps-src/publish/about-affiliate-ads.md) | OutofSyncHandedBackSuccess | [Details](#b56706396d32ef16c33cd167d8ccabf5e3d9ef8c3362)
+ [windows-apps-src\publish\affiliates-performance-report.md](https://github.com/Microsoft/windows-apps/blob/d795dadeed5702b7eec0ce5246d9589ba826f296/windows-apps-src/publish/affiliates-performance-report.md) | OutofSyncHandedBackSuccess | [Details](#a9c9e788e079d4c3f0881bd7c16e1fc76ede36c23369)
 
 ## Item Details
-##### <a name='0311e6ac1293f3841a596aa4ee99066a3c4ff35d121'></a> Source: [windows-apps-src\app-to-app\receive-data.md](https://github.com/Microsoft/windows-apps/blob/183aee7a262d7120692e051c484199a1eeca0c96/windows-apps-src/app-to-app/receive-data.md)
+##### <a name='b56706396d32ef16c33cd167d8ccabf5e3d9ef8c3362'></a> Source: [windows-apps-src\publish\about-affiliate-ads.md](https://github.com/Microsoft/windows-apps/blob/d795dadeed5702b7eec0ce5246d9589ba826f296/windows-apps-src/publish/about-affiliate-ads.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2ed411a7eb1701d41cd2afdffa798f8aeb248e9e/ol-handoff/Microsoft/windows-apps.ja-jp/master/receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.ja-jp.xlf)
-* Handoff Datetime: 2016-04-12 23:36:41
+* Handoff File: [about-affiliate-ads.57fb89f5b0908c2b6f71032b0dd30a68037727f0.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/862b8fb28f9288ac03d55d482171f306e4e96b46/ol-handoff/Microsoft/windows-apps.ja-jp/master/about-affiliate-ads.57fb89f5b0908c2b6f71032b0dd30a68037727f0.ja-jp.xlf)
+* Handoff Datetime: 2016-04-13 17:39:51
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\app-to-app\receive-data.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/dee4c3324ead0690fa3e447fd7f5085331d0784d/windows-apps-src/app-to-app/receive-data.md)
-* Current Handback File: [receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/2a1ec2256b9610dcd43bcd242bd11a0ec6af4104/ol-handback/Microsoft/windows-apps.ja-jp/master/receive-data.f19df9b3eaaa5031aaff9466ca58c05d88244e16.ja-jp.xlf)
-* Current Handback Datetime: 2016-04-06 10:36:57
+* Current Target File: [windows-apps-src\publish\about-affiliate-ads.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/ede73b1a80d40d88b22b4a79f571f892d6d3809b/windows-apps-src/publish/about-affiliate-ads.md)
+* Current Handback File: [about-affiliate-ads.57fb89f5b0908c2b6f71032b0dd30a68037727f0.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/a5742cb2d83625361cba5b5a0ead558fec4ff91c/ol-handback/Microsoft/windows-apps.ja-jp/master/about-affiliate-ads.57fb89f5b0908c2b6f71032b0dd30a68037727f0.ja-jp.xlf)
+* Current Handback Datetime: 2016-04-13 14:10:35
 * [Back to Top](#report-top)
 
-##### <a name='ee4b680f4517ddc50ca08d6cf2c3ba5af0fcb7632920'></a> Source: [windows-apps-src\layout\boxpanel-example-custom-panel.md](https://github.com/Microsoft/windows-apps/blob/183aee7a262d7120692e051c484199a1eeca0c96/windows-apps-src/layout/boxpanel-example-custom-panel.md)
+##### <a name='a9c9e788e079d4c3f0881bd7c16e1fc76ede36c23369'></a> Source: [windows-apps-src\publish\affiliates-performance-report.md](https://github.com/Microsoft/windows-apps/blob/d795dadeed5702b7eec0ce5246d9589ba826f296/windows-apps-src/publish/affiliates-performance-report.md)
 * Status: OutofSyncHandedBackSuccess
 * Target File: 
-* Handoff File: [boxpanel-example-custom-panel.c6816343707c2ace8d4ca2f7dee85ede4dd6628b.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2ed411a7eb1701d41cd2afdffa798f8aeb248e9e/ol-handoff/Microsoft/windows-apps.ja-jp/master/boxpanel-example-custom-panel.c6816343707c2ace8d4ca2f7dee85ede4dd6628b.ja-jp.xlf)
-* Handoff Datetime: 2016-04-12 23:36:41
+* Handoff File: [affiliates-performance-report.7f08304ede76a2f8a487483ad6c187b58448153f.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/862b8fb28f9288ac03d55d482171f306e4e96b46/ol-handoff/Microsoft/windows-apps.ja-jp/master/affiliates-performance-report.7f08304ede76a2f8a487483ad6c187b58448153f.ja-jp.xlf)
+* Handoff Datetime: 2016-04-13 17:39:51
 * Handoff Reason: Include
 * Archive File: 
 * Archive Datetime: 0001-01-01 00:00:00
 * Handback File: 
 * Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\layout\boxpanel-example-custom-panel.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/dee4c3324ead0690fa3e447fd7f5085331d0784d/windows-apps-src/layout/boxpanel-example-custom-panel.md)
-* Current Handback File: [boxpanel-example-custom-panel.c6816343707c2ace8d4ca2f7dee85ede4dd6628b.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/2a1ec2256b9610dcd43bcd242bd11a0ec6af4104/ol-handback/Microsoft/windows-apps.ja-jp/master/boxpanel-example-custom-panel.c6816343707c2ace8d4ca2f7dee85ede4dd6628b.ja-jp.xlf)
-* Current Handback Datetime: 2016-04-06 10:36:57
-* [Back to Top](#report-top)
-
-##### <a name='a9033672d04e09dc029cf3da7d95c27327ba01cb2923'></a> Source: [windows-apps-src\layout\custom-panels-overview.md](https://github.com/Microsoft/windows-apps/blob/183aee7a262d7120692e051c484199a1eeca0c96/windows-apps-src/layout/custom-panels-overview.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [custom-panels-overview.423abd174e674623fd68be188279782ddf319cd8.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2ed411a7eb1701d41cd2afdffa798f8aeb248e9e/ol-handoff/Microsoft/windows-apps.ja-jp/master/custom-panels-overview.423abd174e674623fd68be188279782ddf319cd8.ja-jp.xlf)
-* Handoff Datetime: 2016-04-12 23:36:41
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\layout\custom-panels-overview.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/dee4c3324ead0690fa3e447fd7f5085331d0784d/windows-apps-src/layout/custom-panels-overview.md)
-* Current Handback File: [custom-panels-overview.423abd174e674623fd68be188279782ddf319cd8.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/2a1ec2256b9610dcd43bcd242bd11a0ec6af4104/ol-handback/Microsoft/windows-apps.ja-jp/master/custom-panels-overview.423abd174e674623fd68be188279782ddf319cd8.ja-jp.xlf)
-* Current Handback Datetime: 2016-04-06 10:36:57
-* [Back to Top](#report-top)
-
-##### <a name='3a79cc61f39fbb803deebe621966b9b6d4b39de23655'></a> Source: [windows-apps-src\xaml-platform\binding-markup-extension.md](https://github.com/Microsoft/windows-apps/blob/183aee7a262d7120692e051c484199a1eeca0c96/windows-apps-src/xaml-platform/binding-markup-extension.md)
-* Status: OutofSyncHandedBackSuccess
-* Target File: 
-* Handoff File: [binding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ja-jp.xlf](https://github.com/Microsoft/WDG.handoff/blob/2ed411a7eb1701d41cd2afdffa798f8aeb248e9e/ol-handoff/Microsoft/windows-apps.ja-jp/master/binding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ja-jp.xlf)
-* Handoff Datetime: 2016-04-12 23:36:41
-* Handoff Reason: Include
-* Archive File: 
-* Archive Datetime: 0001-01-01 00:00:00
-* Handback File: 
-* Handback Datetime: 0001-01-01 00:00:00
-* Current Target File: [windows-apps-src\xaml-platform\binding-markup-extension.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/dee4c3324ead0690fa3e447fd7f5085331d0784d/windows-apps-src/xaml-platform/binding-markup-extension.md)
-* Current Handback File: [binding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/2a1ec2256b9610dcd43bcd242bd11a0ec6af4104/ol-handback/Microsoft/windows-apps.ja-jp/master/binding-markup-extension.904b37b26579ee352288d9a458f8d78a4e9dcf54.ja-jp.xlf)
-* Current Handback Datetime: 2016-04-06 10:36:57
+* Current Target File: [windows-apps-src\publish\affiliates-performance-report.md](https://github.com/Microsoft/windows-apps.ja-jp/blob/ede73b1a80d40d88b22b4a79f571f892d6d3809b/windows-apps-src/publish/affiliates-performance-report.md)
+* Current Handback File: [affiliates-performance-report.7f08304ede76a2f8a487483ad6c187b58448153f.ja-jp.xlf](https://github.com/Microsoft/WDG.handback/blob/a5742cb2d83625361cba5b5a0ead558fec4ff91c/ol-handback/Microsoft/windows-apps.ja-jp/master/affiliates-performance-report.7f08304ede76a2f8a487483ad6c187b58448153f.ja-jp.xlf)
+* Current Handback Datetime: 2016-04-13 14:10:35
 * [Back to Top](#report-top)
 
 
